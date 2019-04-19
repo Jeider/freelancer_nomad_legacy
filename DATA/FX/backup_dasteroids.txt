@@ -1,0 +1,284 @@
+
+[explosion]
+nickname = explosion_planet_asteroid
+lifetime = 0.000000
+process = none
+effect = explosion_large_mine
+debris_impulse = 130
+debris_type = debris_3_minute_a, 0.330000
+debris_type = debris_3_minute_b, 0.330000
+debris_type = debris_3_minute_c, 0.330000
+innards_debris_start_time = 0.000000
+innards_debris_num = 20
+innards_debris_radius = 30
+innards_debris_object = simple_ast_frag_planet_1
+innards_debris_object = simple_ast_frag_planet_2
+
+[explosion]
+nickname = explosion_planet_asteroid_small
+lifetime = 0.000000
+process = none
+effect = explosion_large_mine
+debris_impulse = 100
+debris_type = debris_3_minute_a, 0.330000
+debris_type = debris_3_minute_b, 0.330000
+debris_type = debris_3_minute_c, 0.330000
+innards_debris_start_time = 0.000000
+innards_debris_num = 12
+innards_debris_radius = 20
+innards_debris_object = simple_ast_frag_planet_1
+innards_debris_object = simple_ast_frag_planet_2
+
+[Simple]
+nickname = simple_ast_frag_planet_1
+DA_archetype = solar\asteroids\models\ast_planet_frag_10.3db
+material_library = solar\ast_fragments.mat
+Mass = 200
+hit_pts = 400
+
+[Simple]
+nickname = simple_ast_frag_planet_2
+DA_archetype = solar\asteroids\models\ast_planet_frag_30.3db
+material_library = solar\ast_fragments.mat
+Mass = 400
+hit_pts = 1000
+
+[explosion]
+nickname = explosion_lava02_asteroid
+lifetime = 0.000000
+process = none
+effect = explosion_large_mine
+debris_impulse = 120
+debris_type = debris_3_minute_a, 0.330000
+debris_type = debris_3_minute_b, 0.330000
+debris_type = debris_3_minute_c, 0.330000
+innards_debris_start_time = 0.000000
+innards_debris_num = 20
+innards_debris_radius = 30
+innards_debris_object = simple_ast_lava02_1
+innards_debris_object = simple_ast_lava02_2
+
+[Simple]
+nickname = simple_ast_lava02_1
+DA_archetype = solar\asteroids\models\ast_lava02_10.3db
+material_library = solar\ast_lava.mat
+Mass = 200
+hit_pts = 400
+
+[Simple]
+nickname = simple_ast_lava02_2
+DA_archetype = solar\asteroids\models\ast_lava02_30.3db
+material_library = solar\ast_lava.mat
+Mass = 400
+hit_pts = 1000
+
+
+[explosion]
+nickname = explosion_badlands_asteroid
+lifetime = 0.000000
+process = none
+effect = explosion_large_mine
+debris_impulse = 150
+debris_type = debris_3_minute_a, 0.330000
+debris_type = debris_3_minute_b, 0.330000
+debris_type = debris_3_minute_c, 0.330000
+innards_debris_start_time = 0.000000
+innards_debris_num = 10
+innards_debris_radius = 30
+;innards_debris_object = simple_ast_badlands_m1
+;innards_debris_object = simple_ast_badlands_m2
+innards_debris_object = simple_ast_badlands_sm
+
+[Simple]
+nickname = simple_ast_badlands_m1
+DA_archetype = solar\asteroids\models\badlands_medium01.3db
+material_library = solar\ast_badlands.mat
+Mass = 500
+
+[Simple]
+nickname = simple_ast_badlands_m2
+DA_archetype = solar\asteroids\models\badlands_medium02.3db
+material_library = solar\ast_badlands.mat
+Mass = 400
+
+[Simple]
+nickname = simple_ast_badlands_sm
+DA_archetype = solar\asteroids\models\badlands_small.3db
+material_library = solar\ast_badlands.mat
+Mass = 200
+
+
+[explosion]
+nickname = explosion_lava01_asteroid
+lifetime = 0.000000
+process = none
+effect = explosion_large_mine
+debris_impulse = 120
+debris_type = debris_3_minute_a, 0.330000
+debris_type = debris_3_minute_b, 0.330000
+debris_type = debris_3_minute_c, 0.330000
+innards_debris_start_time = 0.000000
+innards_debris_num = 30
+innards_debris_radius = 30
+innards_debris_object = simple_ast_lava01_1
+innards_debris_object = simple_ast_lava01_2
+
+[explosion]
+nickname = explosion_lava01_asteroid_small
+lifetime = 0.000000
+process = none
+effect = explosion_large_mine
+debris_impulse = 120
+debris_type = debris_3_minute_a, 0.330000
+debris_type = debris_3_minute_b, 0.330000
+debris_type = debris_3_minute_c, 0.330000
+innards_debris_start_time = 0.000000
+innards_debris_num = 30
+innards_debris_radius = 30
+innards_debris_object = simple_ast_lava01_1
+innards_debris_object = simple_ast_lava01_2
+
+[Simple]
+nickname = simple_ast_lava01_1
+DA_archetype = solar\asteroids\models\ast_lava01_10.3db
+material_library = solar\ast_lava.mat
+Mass = 200
+hit_pts = 400
+
+[Simple]
+nickname = simple_ast_lava01_2
+DA_archetype = solar\asteroids\models\ast_lava01_30.3db
+material_library = solar\ast_lava.mat
+Mass = 400
+hit_pts = 1000
+
+
+[explosion]
+nickname = explosion_icecrystal_asteroid
+lifetime = 0.000000
+process = none
+effect = explosion_li_elite
+debris_impulse = 30
+debris_type = debris_solar_long, 1.000000
+innards_debris_start_time = 0.000000
+innards_debris_num = 4
+innards_debris_radius = 20
+innards_debris_object = simple_ast_icecr_1
+
+
+[explosion]
+nickname = explosion_icecrystal_phantom
+lifetime = 0.000000
+process = none
+effect = li_capexplosion_01
+debris_impulse = 800
+debris_type = debris_solar_long, 1.000000
+innards_debris_start_time = 0.000000
+innards_debris_num = 200
+innards_debris_radius = 50
+innards_debris_object = simple_ast_icecr_2
+innards_debris_object = simple_ast_icecr_3
+
+[Simple]
+nickname = simple_ast_icecr_1
+DA_archetype = solar\asteroids\models\ast_icecrystal_40.3db
+material_library = solar\ast_ice.mat
+
+[Simple]
+nickname = simple_ast_icecr_2
+DA_archetype = solar\asteroids\models\ast_icecrystal_80.3db
+material_library = solar\ast_ice.mat
+
+[Simple]
+nickname = simple_ast_icecr_3
+DA_archetype = solar\asteroids\models\ast_icecrystal_120.3db
+material_library = solar\ast_ice.mat
+
+[Debris]
+nickname = debris_asteroids_minable_piece
+death_method = exploding
+lifetime = 3.000000, 8.00000
+linear_drag = 0.010000
+angular_drag = 0.000000, 0.000000, 0.000000
+explosion = explosion_asteroid_minable_piece
+
+[explosion]
+nickname = explosion_asteroid_minable_piece
+lifetime = 0.00000, 0.1
+process = dissapear
+effect = explosion_large_mine, 0.000000
+debris_type = explosion_small_debris, 1.000000
+innards_debris_start_time = 0.000000
+debris_impulse = 200
+innards_debris_start_time = 0.000000
+innards_debris_num = 5
+innards_debris_radius = 6
+innards_debris_object = simple_ast_nonmineable_10
+innards_debris_object = simple_ast_outmineable_10
+effect = explosion_small_debris, 0.000000
+
+[explosion]
+nickname = explosion_minednonout_asteroid
+lifetime = 0.000000
+process = none
+effect = explosion_large_mine
+debris_impulse = 60
+debris_type = debris_asteroids_minable_piece, 1.000000
+innards_debris_start_time = 0.000000
+innards_debris_num = 6
+innards_debris_radius = 30
+;innards_debris_object = simple_ast_nonmineable_10
+innards_debris_object = simple_ast_nonmineable_30
+;innards_debris_object = simple_ast_outmineable_10
+innards_debris_object = simple_ast_outmineable_30
+
+[Simple]
+nickname = simple_ast_nonmineable_10
+DA_archetype = solar\asteroids\models\ast_mineable_plain_10.3db
+material_library = solar\ast_mineable.mat
+mass = 10
+
+[Simple]
+nickname = simple_ast_nonmineable_30
+DA_archetype = solar\asteroids\models\ast_mineable_plain_30.3db
+material_library = solar\ast_mineable.mat
+mass = 300
+
+[Simple]
+nickname = simple_ast_outmineable_10
+DA_archetype = solar\asteroids\models\ast_minedout_10.3db
+material_library = solar\ast_mineable.mat
+mass = 10
+
+[Simple]
+nickname = simple_ast_outmineable_30
+DA_archetype = solar\asteroids\models\ast_minedout_30.3db
+material_library = solar\ast_mineable.mat
+mass = 300
+
+
+[explosion]
+nickname = explosion_beryl_asteroid
+lifetime = 0.000000
+process = none
+effect = explosion_li_elite
+debris_impulse = 30
+debris_type = debris_solar_long, 1.000000
+innards_debris_start_time = 0.000000
+innards_debris_num = 8
+innards_debris_radius = 20
+innards_debris_object = simple_ast_beryl_1
+innards_debris_object = simple_ast_beryl_2
+
+
+[Simple]
+nickname = simple_ast_beryl_1
+DA_archetype = solar\asteroids\models\ast_beryl_10.3db
+material_library = solar\ast_berylium.mat
+
+[Simple]
+nickname = simple_ast_beryl_2
+DA_archetype = solar\asteroids\models\ast_beryl_30.3db
+material_library = solar\ast_berylium.mat
+
+
