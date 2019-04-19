@@ -1,0 +1,206 @@
+
+[Object]
+nickname = bw_wrw_03_BARREL_space_research01
+pos = -30000,9000,4920
+rotate = 0, 0, 0
+archetype = space_research
+parent = br_wrw_03
+
+[Object]
+nickname = bw_wrw_03_BARREL_space_research02
+pos = -30120,8800,4920
+rotate = 0, 0, -50
+archetype = space_research
+parent = br_wrw_03
+
+[Object]
+nickname = bw_wrw_03_BARREL_space_research03
+pos = -29880,8800,4920
+rotate = 0, 0, 50
+archetype = space_research
+parent = br_wrw_03
+
+[Object]
+nickname = bw_wrw_03_BARREL_small_ring01
+pos = -30000,8864,6650
+rotate = 0, 0, 0
+archetype = small_ring
+parent = br_wrw_03
+
+[Object]
+nickname = bw_wrw_03_BARREL_small_ring02
+pos = -30000,8864,6550
+rotate = 0, 0, 0
+archetype = small_ring
+parent = br_wrw_03
+
+[Object]
+nickname = bw_wrw_03_BARREL_small_ring03
+pos = -30000,8864,6450
+rotate = 0, 0, 0
+archetype = small_ring
+parent = br_wrw_03
+
+[Object]
+nickname = bw_wrw_03_BARREL_small_ring04
+pos = -30000,8864,6350
+rotate = 0, 0, 0
+archetype = small_ring
+parent = br_wrw_03
+
+[Object]
+nickname = bw_wrw_03_BARREL_small_ring05
+pos = -30000,8864,6200
+rotate = 0, 0, 0
+archetype = small_ring
+parent = br_wrw_03
+
+[Object]
+nickname = bw_wrw_03_BARREL_small_ring06
+pos = -30000,8864,6100
+rotate = 0, 0, 0
+archetype = small_ring
+parent = br_wrw_03
+
+[Object]
+nickname = bw_wrw_03_BARREL_small_ring07
+pos = -30000,8864,6000
+rotate = 0, 0, 0
+archetype = small_ring
+parent = br_wrw_03
+
+[Object]
+nickname = bw_wrw_03_BARREL_small_ring08
+pos = -30000,8864,5900
+rotate = 0, 0, 0
+archetype = small_ring
+parent = br_wrw_03
+
+[Object]
+nickname = bw_wrw_03_BARREL_small_ring09
+pos = -30000,8864,5750
+rotate = 0, 0, 0
+archetype = small_ring
+parent = br_wrw_03
+
+[Object]
+nickname = bw_wrw_03_BARREL_small_ring10
+pos = -30000,8864,5650
+rotate = 0, 0, 0
+archetype = small_ring
+parent = br_wrw_03
+
+[Object]
+nickname = bw_wrw_03_BARREL_small_ring11
+pos = -30000,8864,5550
+rotate = 0, 0, 0
+archetype = small_ring
+parent = br_wrw_03
+
+[Object]
+nickname = bw_wrw_03_BARREL_small_ring12
+pos = -30000,8864,5450
+rotate = 0, 0, 0
+archetype = small_ring
+parent = br_wrw_03
+
+[Object]
+nickname = bw_wrw_03_BARREL_small_ring13
+pos = -30000,8864,5300
+rotate = 0, 0, 0
+archetype = small_ring
+parent = br_wrw_03
+
+[Object]
+nickname = bw_wrw_03_BARREL_small_ring14
+pos = -30000,8864,5200
+rotate = 0, 0, 0
+archetype = small_ring
+parent = br_wrw_03
+
+[Object]
+nickname = bw_wrw_03_BARREL_small_ring15
+pos = -30000,8864,5100
+rotate = 0, 0, 0
+archetype = small_ring
+parent = br_wrw_03
+
+[Object]
+nickname = bw_wrw_03_BARREL_small_ring16
+pos = -30000,8864,5000
+rotate = 0, 0, 0
+archetype = small_ring
+parent = br_wrw_03
+
+
+[Object]
+nickname = bw_wrw_03_BARREL_RING_space_girder05a
+pos = -30135,8600,4810
+rotate = -60, 0, 0
+archetype = space_girder_nosur
+parent = br_wrw_03
+
+[Object]
+nickname = bw_wrw_03_BARREL_RING_space_girder06a
+pos = -30135,8600,4860
+rotate = -60, 0, 0
+archetype = space_girder_nosur
+parent = br_wrw_03
+
+[Object]
+nickname = bw_wrw_03_BARREL_RING_space_girder07
+pos = -29865,8600,4810
+rotate = -60, 0, 0
+archetype = space_girder_nosur
+parent = br_wrw_03
+
+[Object]
+nickname = bw_wrw_03_BARREL_RING_space_girder08
+pos = -29865,8600,4860
+rotate = -60, 0, 0
+archetype = space_girder_nosur
+parent = br_wrw_03
+
+
+
+[Object]
+nickname = bw_wrw_03_BARREL_RING_space_girder09
+pos = -30100,8920,4850
+rotate = -90, 0, -30
+archetype = space_girder
+parent = br_wrw_03
+
+[Object]
+nickname = bw_wrw_03_BARREL_RING_space_girder10
+pos = -29900,8920,4850
+rotate = -90, 0, 30
+archetype = space_girder
+parent = br_wrw_03
+
+[Object]
+nickname = bw_wrw_03_BARREL_RING_space_girder11
+pos = -30000,8755,4850
+rotate = 0, 90, 0
+archetype = space_girder
+parent = br_wrw_03
+
+[Object]
+nickname = bw_wrw_03_BARREL_RING_space_girder12
+pos = -30100,8920,6795
+rotate = -90, 0, -30
+archetype = space_girder
+parent = br_wrw_03
+
+[Object]
+nickname = bw_wrw_03_BARREL_RING_space_girder13
+pos = -29900,8920,6795
+rotate = -90, 0, 30
+archetype = space_girder
+parent = br_wrw_03
+
+[Object]
+nickname = bw_wrw_03_BARREL_RING_space_girder14
+pos = -30000,8755,6795
+rotate = 0, 90, 0
+archetype = space_girder
+parent = br_wrw_03

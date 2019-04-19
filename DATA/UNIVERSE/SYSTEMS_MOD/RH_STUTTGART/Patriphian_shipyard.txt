@@ -1,0 +1,147 @@
+
+[Object]
+nickname = Rh_stut_shipyard_1
+pos = -30500, -210, 11150
+archetype = shipyard
+reputation = rh_grp
+parent = Rh_stut_02
+loadout = rh_shipyard
+
+[Object]
+nickname = Rh_stut_shipyard_1_cruiser_1
+pos = -30500, -210, 11450
+archetype = rh_cruiser_satellite
+
+parent = Rh_stut_02
+
+[Object]
+nickname = Rh_stut_shipyard_1_cruiser_2
+pos = -30500, -210, 11150
+archetype = rh_cruiser_satellite
+
+parent = Rh_stut_02
+
+[Object]
+nickname = Rh_stut_shipyard_1_cruiser_3
+pos = -30500, -210, 10850
+archetype = rh_cruiser_satellite
+
+parent = Rh_stut_02
+
+[Object]
+nickname = Rh_stut_shipyard_1a
+rotate = 0, 0, 180
+pos = -30500, 210, 11150
+archetype = shipyard
+reputation = rh_grp
+parent = Rh_stut_02
+loadout = rh_shipyard
+
+[Object]
+nickname = Rh_stut_train_1
+pos = -30500, 210, 11000
+archetype = trainx4_satellite
+;reputation = rh_grp
+parent = Rh_stut_02
+
+[Object]
+nickname = Rh_stut_train_2
+pos = -30500, 210, 11300
+archetype = trainx4_satellite
+;reputation = rh_grp
+parent = Rh_stut_02
+
+[Object]
+nickname = Rh_stut_shipyard_2
+pos = -30250, -210, 11150
+archetype = shipyard
+reputation = rh_grp
+parent = Rh_stut_02
+loadout = rh_shipyard
+
+
+[Object]
+nickname = Rh_stut_shipyard_2_gb_1
+pos = -30250, -210, 10850
+archetype = rh_gb_satellite
+;reputation = rh_grp
+parent = Rh_stut_02
+
+[Object]
+nickname = Rh_stut_shipyard_2_gb_2
+pos = -30250, -210, 11150
+archetype = rh_gb_satellite
+;reputation = rh_grp
+parent = Rh_stut_02
+
+[Object]
+nickname = Rh_stut_shipyard_2_gb_3
+pos = -30250, -210, 11450
+archetype = rh_gb_satellite
+;reputation = rh_grp
+parent = Rh_stut_02
+
+
+[Object]
+nickname = Rh_stut_shipyard_2a
+rotate = 0, 0, 180
+pos = -30250, 210, 11150
+archetype = shipyard
+reputation = rh_grp
+parent = Rh_stut_02
+loadout = rh_shipyard
+
+[Object]
+nickname = Rh_stut_transport_sh_1
+pos = -30250, 210, 11000
+archetype = large_transport
+;reputation = rh_grp
+parent = Rh_stut_02
+
+[Object]
+nickname = Rh_stut_transport_sh_2
+pos = -30250, 210, 11300
+archetype = large_transport
+;reputation = rh_grp
+parent = Rh_stut_02
+
+[Object]
+nickname = Rh_stut_shipyard_3
+pos = -30750, -210, 11150
+archetype = shipyard
+reputation = rh_grp
+parent = Rh_stut_02
+loadout = rh_shipyard
+
+[Object]
+nickname = Rh_stut_shipyard_2_gb_4
+pos = -30750, -210, 10850
+archetype = rh_gb_satellite
+;reputation = rh_grp
+parent = Rh_stut_02
+
+[Object]
+nickname = Rh_stut_shipyard_2_gb_5
+pos = -30750, -210, 11150
+archetype = rh_gb_satellite
+;reputation = rh_grp
+parent = Rh_stut_02
+
+[Object]
+nickname = Rh_stut_shipyard_2_gb_6
+pos = -30750, -210, 11450
+archetype = rh_gb_satellite
+;reputation = rh_grp
+parent = Rh_stut_02
+
+[Object]
+nickname = Rh_stut_shipyard_dock
+rotate = 0, 0, 180
+pos = -30750, 210, 11150
+archetype = shipyard_dockable
+loadout = rh_shipyard
+dock_with = Rh_stut_02_base
+reputation = rh_grp
+behavior = NOTHING
+base = Rh_stut_02_base
+ids_name = 196677

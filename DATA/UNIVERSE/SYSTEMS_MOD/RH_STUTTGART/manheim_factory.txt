@@ -1,0 +1,195 @@
+[Object]
+nickname = rh_stut_06_TEST_FACTORY_ind01
+pos = 11000, 0, 40000
+rotate = 90, 45, 90
+archetype = space_industriala
+parent = rh_stut_06
+
+[Object]
+nickname = rh_stut_06_TEST_FACTORY_ind02
+pos = 11000, 400, 40000
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_stut_06
+
+[Object]
+nickname = rh_stut_06_TEST_FACTORY_ind03
+pos = 11000, -400, 40000
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_stut_06
+
+[Object]
+nickname = rh_stut_06_TEST_FACTORY_ind04
+pos = 11000, 200, 40350
+rotate = 90, 49, 90
+archetype = space_industrial02a
+parent = rh_stut_06
+
+[Object]
+nickname = rh_stut_06_TEST_FACTORY_ind05
+pos = 11000, -200, 40350
+rotate = 90, 41, 90
+archetype = space_industrial02a
+parent = rh_stut_06
+
+[Object]
+nickname = rh_stut_06_TEST_FACTORY_ind06
+pos = 11000, 0, 40270
+rotate = 90, 45, 90
+archetype = space_industriala
+parent = rh_stut_06
+
+[Object]
+nickname = rh_stut_06_TEST_FACTORY_ind07
+pos = 11000, 200, 39650
+rotate = 90, 41, 90
+archetype = space_industrial02a
+parent = rh_stut_06
+
+[Object]
+nickname = rh_stut_06_TEST_FACTORY_ind08
+pos = 11000, -200, 39650
+rotate = 90, 49, 90
+archetype = space_industrial02a
+parent = rh_stut_06
+
+[Object]
+nickname = rh_stut_06_TEST_FACTORY_ind09
+pos = 11000, 0, 39730
+rotate = 90, 45, 90
+archetype = space_industriala
+parent = rh_stut_06
+
+[Object]
+nickname = rh_stut_06_TEST_FACTORY_conn01
+pos = 11080, 115, 40270
+rotate = 0, 180, 0
+archetype = space_industrial03
+parent = rh_stut_06
+
+[Object]
+nickname = rh_stut_06_TEST_FACTORY_conn02
+pos = 10920, 115, 40270
+rotate = 0, 180, 0
+archetype = space_industrial03
+parent = rh_stut_06
+
+[Object]
+nickname = rh_stut_06_TEST_FACTORY_conn03
+pos = 11080, -115, 40270
+rotate = 180, 0, 0
+archetype = space_industrial03
+parent = rh_stut_06
+
+[Object]
+nickname = rh_stut_06_TEST_FACTORY_conn04
+pos = 10920, -115, 40270
+rotate = 180, 0, 0
+archetype = space_industrial03
+parent = rh_stut_06
+
+[Object]
+nickname = rh_stut_06_TEST_FACTORY_conn05
+pos = 11080, 115, 39730
+rotate = 0, 0, 0
+archetype = space_industrial03
+parent = rh_stut_06
+
+[Object]
+nickname = rh_stut_06_TEST_FACTORY_conn06
+pos = 10920, 115, 39730
+rotate = 0, 0, 0
+archetype = space_industrial03
+parent = rh_stut_06
+
+[Object]
+nickname = rh_stut_06_TEST_FACTORY_conn07
+pos = 11080, -115, 39730
+rotate = 0, 0, 180
+archetype = space_industrial03
+parent = rh_stut_06
+
+[Object]
+nickname = rh_stut_06_TEST_FACTORY_conn08
+pos = 10920, -115, 39730
+rotate = 0, 0, 180
+archetype = space_industrial03
+parent = rh_stut_06
+
+[Object]
+nickname = rh_stut_06_TEST_FACTORY_prod01
+pos = 11000, 40, 40130
+rotate = 0, 180, 0
+archetype = space_production
+parent = rh_stut_06
+
+[Object]
+nickname = rh_stut_06_TEST_FACTORY_prod02
+pos = 11000, -40, 40130
+rotate = 180, 0, 0
+archetype = space_production
+parent = rh_stut_06
+
+[Object]
+nickname = rh_stut_06_TEST_FACTORY_prod03
+pos = 11000, 40, 39870
+rotate = 0, 0, 0
+archetype = space_production
+parent = rh_stut_06
+
+[Object]
+nickname = rh_stut_06_TEST_FACTORY_prod04
+pos = 11000, -40, 39870
+rotate = 0, 0, 180
+archetype = space_production
+parent = rh_stut_06
+
+[Object]
+nickname = rh_stut_06_TEST_FACTORY_gird01
+pos = 11000, 200, 40350
+rotate = 90, 0, 0
+archetype = space_girdera
+parent = rh_stut_06
+
+[Object]
+nickname = rh_stut_06_TEST_FACTORY_gird02
+pos = 11000, 200, 40350
+rotate = -41, 180, 0
+archetype = space_girdera
+parent = rh_stut_06
+
+[Object]
+nickname = rh_stut_06_TEST_FACTORY_gird03
+pos = 11000, -200, 40350
+rotate = 41, 180, 0
+archetype = space_girdera
+parent = rh_stut_06
+
+[Object]
+nickname = rh_stut_06_TEST_FACTORY_gird04
+pos = 11000, 200, 39650
+rotate = 90, 0, 0
+archetype = space_girdera
+parent = rh_stut_06
+
+[Object]
+nickname = rh_stut_06_TEST_FACTORY_gird05
+pos = 11000, 200, 39650
+rotate = -41, 0, 0
+archetype = space_girdera
+parent = rh_stut_06
+
+[Object]
+nickname = rh_stut_06_TEST_FACTORY_gird06
+pos = 11000, -200, 39650
+rotate = 41, 0, 0
+archetype = space_girdera
+parent = rh_stut_06
+
+[Object]
+nickname = rh_stut_06_TEST_FACTORY_tube01
+pos = 11000, 400, 40000
+rotate = 90, 0, 0
+archetype = space_short_tube
+parent = rh_stut_06

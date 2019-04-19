@@ -1,0 +1,83 @@
+[Object]
+nickname = br_uls_02_TOP_indA01
+pos = 10000, 1100, 45424
+rotate = 0, 90, 0
+archetype = space_industrial01a
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_TOP_indA02
+pos = 10000, 1100, 44576
+rotate = 0, 90, 0
+archetype = space_industrial01a
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_TOP_indA03
+pos = 10424, 1100, 45000
+rotate = 0, 0, 0
+archetype = space_industrial01a
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_TOP_indA04
+pos = 9576, 1100, 45000
+rotate = 0, 0, 0
+archetype = space_industrial01a
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_TOP_indA05
+pos = 10210, 1100, 45368
+rotate = 0, 120, 0
+archetype = space_industrial01a
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_TOP_indA06
+pos = 9790, 1100, 45368
+rotate = 0, 60, 0
+archetype = space_industrial01a
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_TOP_indA07
+pos = 10210, 1100, 44632
+rotate = 0, 60, 0
+archetype = space_industrial01a
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_TOP_indA08
+pos = 9790, 1100, 44632
+rotate = 0, 120, 0
+archetype = space_industrial01a
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_TOP_indA09
+pos = 10368, 1100, 45210
+rotate = 0, 150, 0
+archetype = space_industrial01a
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_TOP_indA10
+pos = 10368, 1100, 44790
+rotate = 0, 30, 0
+archetype = space_industrial01a
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_TOP_indA11
+pos = 9632, 1100, 45210
+rotate = 0, 30, 0
+archetype = space_industrial01a
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_TOP_indA12
+pos = 9632, 1100, 44790
+rotate = 0, 150, 0
+archetype = space_industrial01a
+parent = br_uls_02

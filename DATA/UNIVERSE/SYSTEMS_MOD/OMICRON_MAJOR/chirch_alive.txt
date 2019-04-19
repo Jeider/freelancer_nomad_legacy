@@ -1,0 +1,251 @@
+[Object]
+nickname = omicron1_02_ind01
+pos = 27500, 3000, 11000
+rotate = 0, 0, 0
+archetype = space_industrial01a
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_ind02
+pos = 27450, 3000, 10800
+rotate = 0, 30, 0
+archetype = space_industrial01a
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_ind03
+pos = 27300, 3000, 10650
+rotate = 0, 60, 0
+archetype = space_industrial01a
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_ind04
+pos = 27100, 3000, 10600
+rotate = 0, 90, 0
+archetype = space_industrial01a
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_ind05
+pos = 26900, 3000, 10650
+rotate = 0, -60, 0
+archetype = space_industrial01a
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_ind06
+pos = 26750, 3000, 10800
+rotate = 0, -30, 0
+archetype = space_industrial01a
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_ind07
+pos = 26700, 3000, 11000
+rotate = 0, 0, 0
+archetype = space_industrial01a
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_ind08
+pos = 27450, 3000, 11200
+rotate = 0, -30, 0
+archetype = space_industrial01a
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_ind09
+pos = 27300, 3000, 11350
+rotate = 0, -60, 0
+archetype = space_industrial01a
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_ind10
+pos = 27100, 3000, 11400
+rotate = 0, 90, 0
+archetype = space_industrial01a
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_ind11
+pos = 26900, 3000, 11350
+rotate = 0, 60, 0
+archetype = space_industrial01a
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_ind12
+pos = 26750, 3000, 11200
+rotate = 0, 30, 0
+archetype = space_industrial01a
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_ind13
+pos = 27350, 3000, 10942
+rotate = 0, 90, 0
+archetype = space_industrial02a
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_ind14
+pos = 27350, 3000, 11058
+rotate = 0, 90, 0
+archetype = space_industrial02a
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_ind15
+pos = 26850, 3000, 11000
+rotate = 0, 90, 0
+archetype = space_industriala
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_ind16
+pos = 27100, 3000, 10750
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_ind17
+pos = 27100, 3000, 11250
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_tanks01
+pos = 26500, 3000, 11000
+rotate = 90, 0, 90
+archetype = space_tankl4x4
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_tanks02
+pos = 26235, 3000, 11000
+rotate = 90, 0, 90
+archetype = space_tankl4x4
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_tanks03
+pos = 25970, 3000, 11000
+rotate = 90, 0, 90
+archetype = space_tankl4x4
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_tanks04
+pos = 27100, 3000, 11600
+rotate = 0, 0, 90
+archetype = space_tankl4x4
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_tanks05
+pos = 27100, 3000, 10400
+rotate = 0, 0, 90
+archetype = space_tankl4x4
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_tanks06
+pos = 27700, 3000, 11000
+rotate = 90, 0, 90
+archetype = space_tankl4x4
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_habitat01
+pos = 27100, 3000, 11000
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_habitat02
+pos = 27200, 3000, 11000
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_habitat03
+pos = 27000, 3000, 11000
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_habitat04
+pos = 27100, 3000, 11100
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_habitat05
+pos = 27100, 3000, 10900
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_habitat06
+pos = 27030, 3000, 11070
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_habitat07
+pos = 27170, 3000, 11070
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_habitat08
+pos = 27030, 3000, 10930
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_habitat09
+pos = 27170, 3000, 10930
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02
+pos = 27470, 3040, 11000
+rotate = 0, 90, 0
+archetype = space_control_block
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_control02
+pos = 27100, 3000, 11000
+rotate = 0, 0, 0
+archetype = space_control_tower
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_control03
+pos = 27100, 3085, 11000
+rotate = 0, 0, 0
+archetype = space_medium_control_tower
+parent = omicron1_02
+
+[Object]
+nickname = omicron1_02_control04
+pos = 27100, 2915, 11000
+rotate = 0, 0, 0
+archetype = space_medium_control_tower
+parent = omicron1_02

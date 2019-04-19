@@ -1,0 +1,118 @@
+[Object];police blockpost
+nickname = rh_stut_03
+ids_name = 202633
+pos = -7000, 0, -27500
+rotate = 0, 0, 0
+archetype = space_police01
+ids_info = 066632
+reputation = rh_grp
+behavior = NOTHING
+difficulty_level = 12
+loadout = space_port_junkers_sig8
+base = rh_stut_03_base
+dock_with = rh_stut_03_base
+
+[Object]
+nickname = rh_stut_03_girder01
+pos = -7250, 0, -27500
+rotate = 0, 90, 0
+archetype = space_girder
+parent = Rh_stut_03
+
+[Object]
+nickname = rh_stut_03_girder02
+pos = -6750, 0, -27500
+rotate = 0, 90, 0
+archetype = space_girder
+parent = Rh_stut_03
+
+[Object]
+nickname = rh_stut_03_industrial01
+pos = -7450, 0, -27500
+rotate = 90, 0, 0
+archetype = space_industriala
+parent = Rh_stut_03
+
+[Object]
+nickname = rh_stut_03_industrial02
+pos = -6550, 0, -27500
+rotate = 90, 0, 0
+archetype = space_industriala
+parent = Rh_stut_03
+
+[Object]
+nickname = rh_stut_03_tanks01
+pos = -7450, -190, -27500
+rotate = 90, 0, 0
+archetype = space_tanks4x4
+parent = Rh_stut_03
+
+[Object]
+nickname = rh_stut_03_tanks02
+pos = -7450, -190, -27500
+rotate = 90, 90, 0
+archetype = space_tanks4x4
+parent = Rh_stut_03
+
+[Object]
+nickname = rh_stut_03_tanks03
+pos = -7450, -322, -27500
+rotate = 90, 0, 0
+archetype = space_tanks4x4
+parent = Rh_stut_03
+
+[Object]
+nickname = rh_stut_03_tanks04
+pos = -7450, -322, -27500
+rotate = 90, 90, 0
+archetype = space_tanks4x4
+parent = Rh_stut_03
+
+[Object]
+nickname = rh_stut_03_tanks05
+pos = -6550, -190, -27500
+rotate = 90, 0, 0
+archetype = space_tanks4x4
+parent = Rh_stut_03
+
+[Object]
+nickname = rh_stut_03_tanks06
+pos = -6550, -190, -27500
+rotate = 90, 90, 0
+archetype = space_tanks4x4
+parent = Rh_stut_03
+
+[Object]
+nickname = rh_stut_03_tanks07
+pos = -6550, -322, -27500
+rotate = 90, 0, 0
+archetype = space_tanks4x4
+parent = Rh_stut_03
+
+[Object]
+nickname = rh_stut_03_tanks08
+pos = -6550, -322, -27500
+rotate = 90, 90, 0
+archetype = space_tanks4x4
+parent = Rh_stut_03
+
+[Object]
+nickname = rh_stut_03_shipyard
+pos = -7450, 125, -27500
+rotate = 0, -75, 0
+archetype = space_solar_pnl
+parent = Rh_stut_03
+
+[Object]
+nickname = rh_stut_03_habitat01
+pos = -6550, 205, -27500
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = Rh_stut_03
+
+[Object]
+nickname = rh_stut_03_habitat02
+pos = -6550, 415, -27500
+rotate = 0, 0, 0
+archetype = space_habitat_tall
+parent = Rh_stut_03

@@ -1,0 +1,30 @@
+
+
+
+[Object]
+nickname = up1_02_engine01
+pos = 40080, -30, 70
+rotate = 90, 0, 0
+archetype = space_engine
+parent = up1_02
+
+[Object]
+nickname = up1_02_engine02
+pos = 39940, -40, 70
+rotate = 90, 0, 0
+archetype = space_engine
+parent = up1_02
+
+[Object]
+nickname = up1_02_ind01
+pos = 40080, -50, 50
+rotate = 0, 90, 0
+archetype = space_industrial02b
+parent = up1_02
+
+[Object]
+nickname = up1_02_ind02
+pos = 39920, -35, 50
+rotate = 90, 0, 0
+archetype = space_industrial02b
+parent = up1_02

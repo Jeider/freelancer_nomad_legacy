@@ -1,0 +1,105 @@
+
+[Object]
+nickname = rmbase01
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = space_industrial01d
+
+[Object]
+nickname = rmbase01_ring01
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = smallest_ring
+loadout = space_ind01_reactor
+
+[Object]
+nickname = rmbase01_ring02
+pos = 0, 0, 30
+rotate = 0, 0, 0
+archetype = smallest_ring
+loadout = space_ind01_reactor
+
+[Object]
+nickname = rmbase01_ring03
+pos = 0, 0, -30
+rotate = 0, 0, 0
+archetype = smallest_ring
+loadout = space_ind01_reactor
+
+[Object]
+nickname = rmbase01_control_tower01
+pos = 0, 0, 110
+rotate = 90, 0, 0
+archetype = space_medium_control_tower
+
+[Object]
+nickname = rmbase01_control_tower02
+pos = 0, 0, -110
+rotate = 90, 0, 0
+archetype = space_medium_control_tower
+
+[Object]
+nickname = rmbase01_control_tower03
+pos = 0, -180, 0
+rotate = 0, 0, 0
+archetype = space_small_control_tower
+
+[Object]
+nickname = rmbase01_ind01
+pos = 0, 110, 0
+rotate = 0, 0, 0
+archetype = space_industrial02d
+
+[Object]
+nickname = rmbase01_ind02
+pos = 60, -100, 0
+rotate = 0, 0, 30
+archetype = space_industrial02d
+
+[Object]
+nickname = rmbase01_ind03
+pos = -60, -100, 0
+rotate = 0, 0, -30
+archetype = space_industrial02d
+
+[Object]
+nickname = rmbase01_ind04
+pos = 130, -50, 0
+rotate = 0, 0, 0
+archetype = space_industriala
+
+[Object]
+nickname = rmbase01_ind05
+pos = -130, -50, 0
+rotate = 0, 0, 0
+archetype = space_industriala
+
+[Object]
+nickname = rmbase01_ind06
+pos = 0, -120, 0
+rotate = 0, 0, 90
+archetype = space_industrial02d
+
+[Object]
+nickname = rmbase01_habitat01
+pos = 0, 180, 0
+rotate = 0, 0, 0
+archetype = space_pirate_control_block
+
+[Object]
+nickname = rmbase01_habitat02
+pos = 0, -240, 0
+rotate = 180, 0, 0
+archetype = space_pirate_control_block
+
+[Object]
+nickname = rmbase01_panel01
+pos = -100, 50, 0
+rotate = 0, 0, 0
+archetype = space_debris_panel
+
+[Object]
+nickname = rmbase01_panel02
+pos = 100, 50, 0
+rotate = 0, 180, 0
+archetype = space_debris_panel

@@ -1,0 +1,255 @@
+[Object]
+nickname = ku_tgk_CENTER_industrial01
+pos = -20000, 1000, 26100
+rotate = 0, 90, 0
+archetype = space_industrial02a
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_SECTA_industrial02
+pos = -20000, 1000, 26520
+rotate = 0, 180, 0
+archetype = space_industrial02
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_SECTA_industrial03
+pos = -20000, 1300, 26008
+rotate = 0, 0, 0
+archetype = space_industrial02a
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_SECTA_industrial04
+pos = -20000, 1300, 26520
+rotate = 180, 0, 0
+archetype = space_industrial
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_SECTA_industrial05
+pos = -20000, 1000, 26880
+rotate = 0, 90, 0
+archetype = space_industrial01a
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_SECTA_girder01
+pos = -20000, 1150, 26055
+rotate = 60, 0, 0
+archetype = space_girder
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_SECTA_girder02
+pos = -20000, 1180, 26759
+rotate = 45, 0, 0
+archetype = space_girder
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_SECTA_girder03
+pos = -20000, 1000, 26720
+rotate = 0, 0, 0
+archetype = space_girder
+parent = ku_TGK_01
+
+
+
+[Object]
+nickname = ku_tgk_CENTER_girder01
+pos = -20630, 1000, 25924
+rotate = 0, -116, 0
+archetype = space_girder
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_CENTER_girder02
+pos = -20250, 1000, 26078
+rotate = 0, 79, 0
+archetype = space_girder
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_CENTER_girder03
+pos = -19750, 1000, 26078
+rotate = 0, -79, 0
+archetype = space_girder
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_CENTER_girder04
+pos = -19370, 1000, 25924
+rotate = 0, 116, 0
+archetype = space_girder
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_CENTER_girder05
+pos = -18913, 1000, 25200
+rotate = 0, 169, 0
+archetype = space_girder
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_CENTER_girder06
+pos = -19062, 1000, 25595
+rotate = 0, 154, 0
+archetype = space_girder
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_CENTER_girder07
+pos = -21087, 1000, 24800
+rotate = 0, 169, 0
+archetype = space_girder
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_CENTER_girder08
+pos = -21087, 1000, 25200
+rotate = 0, -169, 0
+archetype = space_girder
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_CENTER_girder09
+pos = -20938, 1000, 25595
+rotate = 0, -154, 0
+archetype = space_girder
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_CENTER_girder10
+pos = -18913, 1000, 24800
+rotate = 0, -169, 0
+archetype = space_girder
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_CENTER_girder11
+pos = -19062, 1000, 24405
+rotate = 0, -154, 0
+archetype = space_girder
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_CENTER_girder12
+pos = -19370, 1000, 24076
+rotate = 0, -116, 0
+archetype = space_girder
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_CENTER_girder13
+pos = -19750, 1000, 23922
+rotate = 0, 79, 0
+archetype = space_girder
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_CENTER_girder14
+pos = -20200, 1000, 23913
+rotate = 0, 102, 0
+archetype = space_girder
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_CENTER_girder15
+pos = -20630, 1000, 24076
+rotate = 0, 116, 0
+archetype = space_girder
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_CENTER_girder16
+pos = -20938, 1000, 24405
+rotate = 0, 154, 0
+archetype = space_girder
+parent = ku_TGK_01
+
+;panels
+
+[Object]
+nickname = ku_tgk_TEST_panel01
+pos = -18220, 1098, 25000
+rotate = 0, 0, 0
+archetype = space_solar_pnl_rotated
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_TEST_panel02
+pos = -18228, 1098, 25175
+rotate = 0, -5.6, 0
+archetype = space_solar_pnl_rotated
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_TEST_panel03
+pos = -18255, 1098, 25348
+rotate = 0, -11.2, 0
+archetype = space_solar_pnl_rotated
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_TEST_panel04
+pos = -18298, 1098, 25517
+rotate = 0, -16.8, 0
+archetype = space_solar_pnl_rotated
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_TEST_panel05
+pos = -18358, 1098, 25680
+rotate = 0, -22.5, 0
+archetype = space_solar_pnl_rotated
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_TEST_panel06
+pos = -18300, 1178, 25080
+rotate = 0, -3, 0
+archetype = space_solar_pnl_rotated
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_TEST_panel07
+pos = -18315, 1178, 25240
+rotate = 0, -9, 0
+archetype = space_solar_pnl_rotated
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_TEST_panel08
+pos = -18347, 1178, 25405
+rotate = 0, -15, 0
+archetype = space_solar_pnl_rotated
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_TEST_panel09
+pos = -18402, 1178, 25560
+rotate = 0, -18, 0
+archetype = space_solar_pnl_rotated
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_TEST_panel10
+pos = -18405, 1270, 25145
+rotate = 0, -6, 0
+archetype = space_solar_pnl_rotated
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_TEST_panel11
+pos = -18380, 1210, 25325
+rotate = 0, -11, 0
+archetype = space_panel45
+parent = ku_TGK_01
+
+[Object]
+nickname = ku_tgk_TEST_panel12
+pos = -18473, 1270, 25490
+rotate = 0, -17, 0
+archetype = space_solar_pnl_rotated
+parent = ku_TGK_01

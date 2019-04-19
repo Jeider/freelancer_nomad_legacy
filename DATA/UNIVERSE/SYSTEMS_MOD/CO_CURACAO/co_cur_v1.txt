@@ -1,0 +1,23 @@
+[Object]
+nickname = co_cur_02_industrial01
+pos = -34850, 0, -25087
+rotate = 90, 30, 0
+archetype = space_industrial01a
+loadout = space_ind01_reactor
+parent = co_cur_02_ROOT
+
+[Object]
+nickname = co_cur_02_industrial02
+pos = -35150, 0, -25086
+rotate = 90, 60, 0
+archetype = space_industrial01a
+loadout = space_ind01_reactor
+parent = co_cur_02_ROOT
+
+[Object]
+nickname = co_cur_02_industrial03
+pos = -35000, 0, -24830
+rotate = 90, 0, 0
+archetype = space_industrial01a
+loadout = space_ind01_reactor
+parent = co_cur_02_ROOT

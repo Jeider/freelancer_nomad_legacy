@@ -1,0 +1,89 @@
+[Object]
+nickname = wplatform01_ROOT
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = space_wplatform_core02
+
+[Object]
+nickname = wplatform01_pad01
+pos = 90, -32, 0
+rotate = 0, 0, 0
+archetype = space_pad
+loadout = rh_weapon_platform_one_turret
+faction = rx_grp
+reputation = rx_grp
+behavior = NOTHING
+difficulty_level = 5 ;12
+pilot = pilot_solar_hardest
+
+[Object]
+nickname = wplatform01_pad02
+pos = -90, -32, 0
+rotate = 0, 180, 0
+archetype = space_pad
+loadout = rh_weapon_platform_one_turret
+faction = rx_grp
+reputation = rx_grp
+behavior = NOTHING
+difficulty_level = 5 ;12
+pilot = pilot_solar_hardest
+
+[Object]
+nickname = wplatform01_pad03
+pos = 0, -32, 90
+rotate = 0, -90, 0
+archetype = space_pad
+loadout = rh_weapon_platform_one_turret
+faction = rx_grp
+reputation = rx_grp
+behavior = NOTHING
+difficulty_level = 5 ;12
+pilot = pilot_solar_hardest
+
+[Object]
+nickname = wplatform01_pad04
+pos = 0, -32, -90
+rotate = 0, 90, 0
+archetype = space_pad
+loadout = rh_weapon_platform_one_turret
+faction = rx_grp
+reputation = rx_grp
+behavior = NOTHING
+difficulty_level = 5 ;12
+pilot = pilot_solar_hardest
+
+[Object]
+nickname = wplatform01_pad05
+pos = 0, -100, 0
+rotate = -180, 0, 0
+archetype = space_turret_pad
+loadout = rh_weapon_platform_one_turret
+faction = rx_grp
+reputation = rx_grp
+behavior = NOTHING
+difficulty_level = 5 ;12
+pilot = pilot_solar_hardest
+
+[Object]
+nickname = wplatform01_ctrl_twr01
+pos = 0, 43, 0
+rotate = 0, 0, 0
+archetype = space_turret_pad
+
+[Object]
+nickname = wplatform01_ctrl_block01
+pos = 0, 40, 0
+rotate = 0, 0, 0
+archetype = space_small_control_block
+
+[Object]
+nickname = wplatform01_shieldgen01
+pos = 0, 20, 0
+rotate = 0, 0, 0
+archetype = space_shieldgen
+loadout = rh_weapon_platform_many_turret
+faction = rx_grp
+reputation = rx_grp
+behavior = NOTHING
+difficulty_level = 5 ;12
+pilot = pilot_solar_hardest

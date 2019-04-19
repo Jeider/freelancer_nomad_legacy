@@ -1,0 +1,83 @@
+
+[Object]
+nickname = lab01
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = space_port_dmg
+
+[Object]
+nickname = lab01_shield01
+pos = -150, 118, 0
+rotate = 0, 0, 0
+archetype = space_shieldgen
+parent = lab01
+
+[Object]
+nickname = lab01_shield02
+pos = 150, 118, 0
+rotate = 0, 0, 0
+archetype = space_shieldgen
+parent = lab01
+
+[Object]
+nickname = lab01_tower01
+pos = -150, 75, 0
+rotate = 0, 0, 0
+archetype = space_small_control_tower
+parent = lab01
+
+[Object]
+nickname = lab01_tower02
+pos = 150, 75, 0
+rotate = 0, 0, 0
+archetype = space_small_control_tower
+parent = lab01
+
+[Object]
+nickname = lab01_girder01
+pos = 0, 0, 0
+rotate = 0, 90, 0
+archetype = space_girder
+parent = lab01
+
+[Object]
+nickname = lab01_ind01
+pos = -150, 0, 0
+rotate = 0, 0, 0
+archetype = space_industrial02a
+parent = lab01
+
+[Object]
+nickname = lab01_ind02
+pos = 150, 0, 0
+rotate = 0, 0, 0
+archetype = space_industrial02a
+parent = lab01
+
+[Object]
+nickname = lab01_habitat01
+pos = -268, 0, 0
+rotate = 0, 0, 90
+archetype = space_small_control_block
+parent = lab01
+
+[Object]
+nickname = lab01_habitat02
+pos = 268, 0, 0
+rotate = 0, 0, -90
+archetype = space_small_control_block
+parent = lab01
+
+[Object]
+nickname = lab01_tanks01
+pos = -150, -150, 0
+rotate = 0, 0, 0
+archetype = space_tankl2
+parent = lab01
+
+[Object]
+nickname = lab01_tanks02
+pos = 150, -150, 0
+rotate = 0, 0, 0
+archetype = space_tankl2
+parent = lab01

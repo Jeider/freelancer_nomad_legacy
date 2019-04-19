@@ -1,0 +1,212 @@
+
+
+[Object]
+nickname = rmbase04_root
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = space_industrial01f
+
+[Object]
+nickname = rmbase04_airlock01
+pos = 0, 200, 0
+rotate = 90, 0, 0
+archetype = space_airlock_tunnel
+
+[Object]
+nickname = rmbase04_airlock02
+pos = 0, -200, 0
+rotate = -90, 0, 0
+archetype = space_airlock_tunnel
+
+[Object]
+nickname = rmbase04_door01
+pos = 0, 230, 0
+rotate = 90, 0, 0
+archetype = space_airlock_door
+
+[Object]
+nickname = rmbase04_door02
+pos = 0, 120, 0
+rotate = 90, 0, 0
+archetype = space_airlock_door
+
+[Object]
+nickname = rmbase04_door03
+pos = 0, -230, 0
+rotate = 90, 0, 0
+archetype = space_airlock_door
+
+[Object]
+nickname = rmbase04_door04
+pos = 0, -120, 0
+rotate = 90, 0, 0
+archetype = space_airlock_door
+
+[Object]
+nickname = rmbase04_ring01
+pos = 0, 120, 0
+rotate = 90, -15, 0
+archetype = small_ring
+
+[Object]
+nickname = rmbase04_ring02
+pos = 0, -120, 0
+rotate = 90, -15, 0
+archetype = small_ring
+
+[Object]
+nickname = rmbase04_ind01
+pos = 0, 0, 110
+rotate = -90, 0, 0
+archetype = space_industrial02d
+
+[Object]
+nickname = rmbase04_ind02
+pos = 0, 0, -110
+rotate = 90, 0, 0
+archetype = space_industrial02d
+
+[Object]
+nickname = rmbase04_ind03
+pos = 110, 0, 0
+rotate = 90, 90, 0
+archetype = space_industrial02d
+
+[Object]
+nickname = rmbase04_ind04
+pos = -110, 0, 0
+rotate = 90, 90, 0
+archetype = space_industrial02d
+
+[Object]
+nickname = rmbase04_ind05
+pos = 85, 0, 85
+rotate = 90, 0, 0
+archetype = space_industriala
+
+[Object]
+nickname = rmbase04_ind06
+pos = 85, 0, -85
+rotate = 90, 0, 0
+archetype = space_industriala
+
+[Object]
+nickname = rmbase04_ind07
+pos = -85, 0, 85
+rotate = 90, 0, 0
+archetype = space_industriala
+
+[Object]
+nickname = rmbase04_ind08
+pos = -85, 0, -85
+rotate = 90, 0, 0
+archetype = space_industriala
+
+[Object]
+nickname = rmbase04_tanks01
+pos = 0, 0, 280
+rotate = 0, 0, 90
+archetype = space_tankl4x4
+
+[Object]
+nickname = rmbase04_tanks02
+pos = 0, 0, 480
+rotate = 0, 0, 90
+archetype = space_tankl2x2
+
+[Object]
+nickname = rmbase04_tanks03
+pos = 0, 0, -280
+rotate = 0, 0, 90
+archetype = space_tankl4x4
+
+[Object]
+nickname = rmbase04_tanks04
+pos = 0, 0, -480
+rotate = 0, 0, 90
+archetype = space_tankl2x2
+
+
+[Object]
+nickname = rmbase04_girder01
+pos = 0, 0, -450
+rotate = 15, 0, 0
+archetype = space_girdera
+
+[Object]
+nickname = rmbase04_girder02
+pos = 0, 0, -450
+rotate = -15, 0, 0
+archetype = space_girdera
+
+[Object]
+nickname = rmbase04_girder03
+pos = 0, 0, 450
+rotate = -15, 180, 0
+archetype = space_girdera
+
+[Object]
+nickname = rmbase04_girder04
+pos = 0, 0, 450
+rotate = 15, 180, 0
+archetype = space_girdera
+
+[Object]
+nickname = rmbase04_girder05
+pos = 180, 80, 0
+rotate = 30, 90, 0
+archetype = space_girderb
+
+[Object]
+nickname = rmbase04_girder06
+pos = 175, 70, -50
+rotate = 25, 90, 0
+archetype = space_girderb
+
+[Object]
+nickname = rmbase04_girder07
+pos = 175, 70, 50
+rotate = 25, 90, 0
+archetype = space_girderb
+
+[Object]
+nickname = rmbase04_girder08
+pos = 192, -80, 0
+rotate = -30, 90, 0
+archetype = space_girderb
+
+[Object]
+nickname = rmbase04_girder09
+pos = 175, -80, -50
+rotate = -25, 90, 0
+archetype = space_girderb
+
+[Object]
+nickname = rmbase04_girder10
+pos = 175, -80, 50
+rotate = -25, 90, 0
+archetype = space_girderb
+
+[Object]
+nickname = rmbase04_shipyard01
+pos = 220, -18, 0
+rotate = 0, 180, 0
+archetype = shipyard_medium
+
+[Object]
+nickname = rmbase04_shipyard02
+pos = -220, -18, 0
+rotate = 0, 0, 0
+archetype = shipyard_medium
+
+[Object]
+nickname = rmbase04_transport01
+pos = 250, 0, 0
+rotate = 0, 0, 0
+archetype = large_transport
+
+[Object]
+nickname = rmbase04_transport02
+pos = -250, 0, 0
+rotate = 0, 0, 0
+archetype = large_transport

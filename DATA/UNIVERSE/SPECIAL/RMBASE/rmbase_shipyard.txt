@@ -1,0 +1,247 @@
+
+[Object]
+nickname = rmbase05_root
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = space_industrial01d
+
+[Object]
+nickname = rmbase05_shield
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = space_medium_shield
+loadout = rmbase_military_shipyard_demo_fx
+
+[Object]
+nickname = rmbase05_ring01
+pos = 0, 0, 0
+rotate = 0, 0, 90
+archetype = large_ring
+
+[Object]
+nickname = rmbase05_ring02
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = smallest_ring
+
+[Object]
+nickname = rmbase05_ring03
+pos = 0, 0, -30
+rotate = 0, 0, 0
+archetype = smallest_ring
+
+[Object]
+nickname = rmbase05_ring04
+pos = 0, 0, 30
+rotate = 0, 0, 0
+archetype = smallest_ring
+
+[Object]
+nickname = rmbase05_ring05
+pos = 0, 0, 500
+rotate = 90, 0, 0
+archetype = small_ring
+
+[Object]
+nickname = rmbase05_ring06
+pos = 0, 0, -500
+rotate = 90, 0, 0
+archetype = small_ring
+
+[Object]
+nickname = rmbase05_ring07
+pos = 0, 0, -500
+rotate = 0, 0, 0
+archetype = smallest_ring
+
+[Object]
+nickname = rmbase05_ring08
+pos = 0, 0, -530
+rotate = 0, 0, 0
+archetype = smallest_ring
+
+[Object]
+nickname = rmbase05_ring09
+pos = 0, 0, -470
+rotate = 0, 0, 0
+archetype = smallest_ring
+
+[Object]
+nickname = rmbase05_ring10
+pos = 0, 0, 470
+rotate = 0, 0, 0
+archetype = smallest_ring
+
+[Object]
+nickname = rmbase05_ring11
+pos = 0, 0, 500
+rotate = 0, 0, 0
+archetype = smallest_ring
+
+[Object]
+nickname = rmbase05_ring12
+pos = 0, 0, 530
+rotate = 0, 0, 0
+archetype = smallest_ring
+
+[Object]
+nickname = rmbase05_ind01
+pos = 0, 0, 240
+rotate = 0, 0, 0
+archetype = space_industriala
+
+[Object]
+nickname = rmbase05_ind02
+pos = 0, 0, -240
+rotate = 0, 0, 0
+archetype = space_industriala
+
+[Object]
+nickname = rmbase05_ind03
+pos = 0, 0, 500
+rotate = 0, 0, 0
+archetype = space_industrial01d
+
+[Object]
+nickname = rmbase05_ind04
+pos = 0, 0, -500
+rotate = 0, 0, 0
+archetype = space_industrial01d
+
+[Object]
+nickname = rmbase05_girder01
+pos = 0, 0, 110
+rotate = 90, 0, 0
+archetype = space_girderc
+
+[Object]
+nickname = rmbase05_girder02
+pos = 0, 0, -110
+rotate = 90, 0, 0
+archetype = space_girderc
+
+[Object]
+nickname = rmbase05_girder03
+pos = 110, 0, 0
+rotate = 90, 0, 0
+archetype = space_girderc
+
+[Object]
+nickname = rmbase05_girder04
+pos = -110, 0, 0
+rotate = 90, 0, 0
+archetype = space_girderc
+
+[Object]
+nickname = rmbase05_girder05
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = space_girder
+
+[Object]
+nickname = rmbase05_girder06
+pos = 0, 0, 600
+rotate = 180, 0, 0
+archetype = space_girdera
+
+[Object]
+nickname = rmbase05_girder07
+pos = 0, 0, -600
+rotate = 0, 0, 0
+archetype = space_girdera
+
+[Object]
+nickname = rmbase05_ctrl_twr01
+pos = 0, 100, 0
+rotate = 0, 0, 0
+archetype = space_medium_control_tower
+
+[Object]
+nickname = rmbase05_ctrl_twr02
+pos = 0, -100, 0
+rotate = 0, 0, 0
+archetype = space_medium_control_tower
+
+[Object]
+nickname = rmbase05_ctrl_twr03
+pos = 0, 280, 0
+rotate = 180, 0, 0
+archetype = space_medium_control_tower
+
+[Object]
+nickname = rmbase05_ctrl_twr04
+pos = 0, -280, 0
+rotate = 0, 0, 0
+archetype = space_medium_control_tower
+
+[Object]
+nickname = rmbase05_hab01
+pos = 50, 190, 50
+rotate = 0, 45, 0
+archetype = space_habitat_wide
+
+[Object]
+nickname = rmbase05_hab02
+pos = 50, 190, -50
+rotate = 0, 45, 0
+archetype = space_habitat_wide
+
+[Object]
+nickname = rmbase05_hab03
+pos = -50, 190, 50
+rotate = 0, 45, 0
+archetype = space_habitat_wide
+
+[Object]
+nickname = rmbase05_hab04
+pos = -50, 190, -50
+rotate = 0, 45, 0
+archetype = space_habitat_wide
+
+[Object]
+nickname = rmbase05_hab05
+pos = 0, 190, 0
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+
+[Object]
+nickname = rmbase05_hab06
+pos = 50, -190, 50
+rotate = 0, 45, 0
+archetype = space_habitat_wide
+
+[Object]
+nickname = rmbase05_hab07
+pos = 50, -190, -50
+rotate = 0, 45, 0
+archetype = space_habitat_wide
+
+[Object]
+nickname = rmbase05_hab08
+pos = -50, -190, 50
+rotate = 0, 45, 0
+archetype = space_habitat_wide
+
+[Object]
+nickname = rmbase05_hab09
+pos = -50, -190, -50
+rotate = 0, 45, 0
+archetype = space_habitat_wide
+
+[Object]
+nickname = rmbase05_hab10
+pos = 0, -190, 0
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+
+[Object]
+nickname = rmbase05_shipyard01
+pos = 160, 0, 0
+rotate = 0, 0, -90
+archetype = shipyard_medium
+
+[Object]
+nickname = rmbase05_shipyard02
+pos = -160, 0, 0
+rotate = 0, 0, 90
+archetype = shipyard_medium

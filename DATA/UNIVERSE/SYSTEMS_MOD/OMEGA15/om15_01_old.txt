@@ -1,0 +1,103 @@
+[Object];Станция Бриветхазер
+nickname = om15_01
+ids_name = 196830
+pos = -14000, 0, 34000
+rotate = 0, 180, 0
+archetype = space_shipping01
+ids_info = 65583
+dock_with = om15_01_base
+base = om15_01_Base
+reputation = rh_grp
+behavior = NOTHING
+voice = atc_leg_m01
+space_costume = br_bartender_head, rh_shipdealer_body, prop_neuralnet_a_right
+difficulty_level = 13
+loadout = space_shipping_rh01
+pilot = pilot_solar_hardest
+
+[Object]
+nickname = om15_01_space_research_1
+pos = -14650, -88, 34000
+archetype = space_research
+reputation = rh_grp
+parent = om15_01
+
+[Object]
+nickname = om15_01_space_research_2
+pos = -14650, -215, 34000
+rotate = 0, 90, 0
+archetype = space_research
+reputation = rh_grp
+parent = om15_01
+
+[Object]
+nickname = om15_01_space_tankl4_1
+ids_name = 60251
+pos = -14650, -215, 34200
+archetype = space_tankl4
+reputation = rh_grp
+parent = om15_01
+
+[Object]
+nickname = om15_01_space_tankl4_2
+ids_name = 60251
+pos = -14650, -215, 33800
+archetype = space_tankl4
+reputation = rh_grp
+parent = om15_01
+
+[Object]
+nickname = om15_01_space_tankl4_3
+ids_name = 60251
+pos = -12850, -215, 34200
+archetype = space_tankl4
+reputation = rh_grp
+parent = om15_01
+
+[Object]
+nickname = om15_01_space_tankl4_4
+ids_name = 60251
+pos = -12850, -215, 33800
+archetype = space_tankl4
+reputation = rh_grp
+parent = om15_01
+
+[Object]
+nickname = om15_01_mining_sattelite_1
+ids_name = 60251
+pos = -14480, -75, 35800
+rotate = 0, 90, 0
+archetype = mining_tuck_satellite
+reputation = rh_grp
+parent = om15_01
+
+[Object]
+nickname = om15_01_mining_sattelite_2
+ids_name = 60251
+pos = -14820, -75, 35800
+rotate = 0, -90, 0
+archetype = mining_tuck_satellite
+reputation = rh_grp
+parent = om15_01
+
+[Object]
+nickname = om15_01_space_habitat_wide
+ids_name = 60251
+pos = -14650, 45, 35800
+archetype = space_habitat_wide
+reputation = rh_grp
+parent = om15_01
+
+
+
+
+[;Object] Стыкуемая верфь. Устарела
+nickname = om15_01_moor_dock
+rotate = 0, 0, 180
+pos = -12850, 0, 34200
+archetype = shipyard_dockable
+loadout = rh_shipyard
+dock_with = om15_01_base
+reputation = rh_grp
+base = om15_01_base
+ids_name = 196677

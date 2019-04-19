@@ -1,0 +1,293 @@
+[Object]
+nickname = sig17_01_industrial01
+pos = -35100, -2508, -6115
+rotate = 0, 90, 0
+archetype = space_industrial01b
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_industrial02
+pos = -35100, -2508, -6058
+rotate = 0, 90, 0
+archetype = space_industrial01b
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_industrial03
+pos = -35100, -2508, -5942
+rotate = 0, 90, 0
+archetype = space_industrial01b
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_industrial04
+pos = -35100, -2508, -5885
+rotate = 0, 90, 0
+archetype = space_industrial01b
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_industrial05
+pos = -35350, -2508, -6115
+rotate = 90, 90, 0
+archetype = space_industrial01b
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_industrial06
+pos = -35250, -2508, -6058
+rotate = 0, 90, 0
+archetype = space_industrial01b
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_industrial07
+pos = -35250, -2508, -5942
+rotate = 0, 90, 0
+archetype = space_industrial01b
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_industrial08
+pos = -35350, -2508, -5885
+rotate = 90, 90, 0
+archetype = space_industrial01b
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_industrial09
+pos = -35450, -2508, -6058
+rotate = 0, 90, 0
+archetype = space_industrial01b
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_industrial10
+pos = -35450, -2508, -5942
+rotate = 0, 90, 0
+archetype = space_industrial01b
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_dome01
+pos = -35350, -2450, -5885
+rotate = 0, 0, 0
+archetype = space_domeb
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_dome02
+pos = -35350, -2566, -5885
+rotate = 180, 0, 0
+archetype = space_domeb
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_dome03
+pos = -35350, -2450, -6115
+rotate = 0, 0, 0
+archetype = space_domeb
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_dome04
+pos = -35350, -2566, -6115
+rotate = 180, 0, 0
+archetype = space_domeb
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_girder01
+pos = -35175, -2508, -6115
+rotate = 0, 90, 0
+archetype = space_girder
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_girder02
+pos = -35300, -2508, -6058
+rotate = 0, 90, 0
+archetype = space_girder
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_girder03
+pos = -35300, -2508, -5942
+rotate = 0, 90, 0
+archetype = space_girder
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_girder04
+pos = -35175, -2508, -5885
+rotate = 0, 90, 0
+archetype = space_girder
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_girder05
+pos = -35000, -2500, -6000
+rotate = 0, 0, 0
+archetype = space_girder
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_girder06
+pos = -35000, -2500, -6000
+rotate = 0, 0, 0
+archetype = space_girder
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_girder07
+pos = -35000, -2500, -6000
+rotate = 0, 0, 0
+archetype = space_girder
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_girder08
+pos = -35000, -2500, -6000
+rotate = 0, 0, 0
+archetype = space_girder
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_girder09
+pos = -35000, -2500, -6000
+rotate = 0, 0, 0
+archetype = space_girder
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_girder10
+pos = -35000, -2500, -6000
+rotate = 0, 0, 0
+archetype = space_girder
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_tanks01
+pos = -35250, -2420, -5901
+rotate = 90, 180, 0
+archetype = space_tanks4
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_tanks02
+pos = -35250, -2420, -5942
+rotate = 90, 90, 0
+archetype = space_tanks4x4
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_tanks03
+pos = -35250, -2420, -6099
+rotate = 90, 0, 0
+archetype = space_tanks4
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_tanks04
+pos = -35250, -2420, -6058
+rotate = 90, 90, 0
+archetype = space_tanks4x4
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_tanks05
+pos = -35250, -2596, -5901
+rotate = 90, 180, 0
+archetype = space_tanks4
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_tanks06
+pos = -35250, -2596, -5942
+rotate = 90, 90, 0
+archetype = space_tanks4x4
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_tanks07
+pos = -35250, -2596, -6099
+rotate = 90, 0, 0
+archetype = space_tanks4
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_tanks08
+pos = -35250, -2596, -6058
+rotate = 90, 90, 0
+archetype = space_tanks4x4
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_tanks09
+pos = -35450, -2420, -5901
+rotate = 90, 180, 0
+archetype = space_tanks4
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_tanks10
+pos = -35450, -2420, -5942
+rotate = 90, 90, 0
+archetype = space_tanks4x4
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_tanks11
+pos = -35450, -2420, -6099
+rotate = 90, 0, 0
+archetype = space_tanks4
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_tanks12
+pos = -35450, -2420, -6058
+rotate = 90, 90, 0
+archetype = space_tanks4x4
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_tanks13
+pos = -35450, -2596, -5901
+rotate = 90, 180, 0
+archetype = space_tanks4
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_tanks14
+pos = -35450, -2596, -5942
+rotate = 90, 90, 0
+archetype = space_tanks4x4
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_tanks15
+pos = -35450, -2596, -6099
+rotate = 90, 0, 0
+archetype = space_tanks4
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_tanks16
+pos = -35450, -2596, -6058
+rotate = 90, 90, 0
+archetype = space_tanks4x4
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_tanks17
+pos = -35535, -2508, -6058
+rotate = 0, 45, -90
+archetype = space_tanksx4
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_tanks18
+pos = -35535, -2508, -5942
+rotate = 0, 45, -90
+archetype = space_tanksx4
+parent = sig17_01

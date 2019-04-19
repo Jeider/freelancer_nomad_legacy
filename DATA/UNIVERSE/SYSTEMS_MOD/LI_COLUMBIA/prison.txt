@@ -1,0 +1,31 @@
+[Object]
+nickname = li_col_02_space_dome_1
+pos = 21000, 18998, 35400
+rotate = 0, 90, 0
+archetype = space_dome_dmg
+reputation = li_grp
+parent = li_col_02
+
+[Object]
+nickname = li_col_02_space_dome_2
+pos = 21000, 18998, 34600
+rotate = 0, -90, 0
+archetype = space_dome_dmg
+reputation = li_grp
+parent = li_col_02
+
+[Object]
+nickname = li_col_02_space_ind
+pos = 21500, 19000, 35000
+rotate = 0, -90, 0
+archetype = space_industrial02
+reputation = li_grp
+parent = li_col_02
+
+[Object]
+nickname = li_col_02_shipyard_1
+pos = 21500, 18790, 35065
+rotate = 0, 0, 0
+archetype = shipyard
+reputation = li_grp
+parent = li_col_02

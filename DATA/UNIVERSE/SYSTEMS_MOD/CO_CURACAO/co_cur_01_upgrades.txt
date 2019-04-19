@@ -1,0 +1,84 @@
+
+[Object]
+nickname = co_cur_01_habitat_A01
+pos = -300, 8400, 20100
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = co_cur_01
+
+[Object]
+nickname = co_cur_01_habitat_A02
+pos = -300, 8400, 20030
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = co_cur_01
+
+[Object]
+nickname = co_cur_01_habitat_A03
+pos = -230, 8400, 20100
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = co_cur_01
+
+[Object]
+nickname = co_cur_01_habitat_A04
+pos = -230, 8400, 20030
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = co_cur_01
+
+[Object]
+nickname = co_cur_01_habitat_B01
+pos = 500, 8250, 20000
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = co_cur_01
+
+[Object]
+nickname = co_cur_01_habitat_B02
+pos = 500, 8250, 20070
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = co_cur_01
+
+[Object]
+nickname = co_cur_01_habitat_B03
+pos = 570, 8250, 20000
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = co_cur_01
+
+[Object]
+nickname = co_cur_01_habitat_B04
+pos = 570, 8250, 20070
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = co_cur_01
+
+[Object]
+nickname = co_cur_01_habitat_B05
+pos = 535, 8340, 20035
+rotate = 0, 0, 0
+archetype = space_habitat_tall
+parent = co_cur_01
+
+[Object]
+nickname = co_cur_01_control_tower01
+pos = -265, 8480, 20065
+rotate = 0, 0, 0
+archetype = space_small_control_tower
+parent = co_cur_01
+
+[Object]
+nickname = co_cur_01_control_tower02
+pos = 535, 8338, 20035
+rotate = 0, 0, 0
+archetype = space_small_control_tower
+parent = co_cur_01
+
+[Object]
+nickname = co_cur_01_dome01
+pos = -265, 8507, 20065
+rotate = 0, 0, 0
+archetype = space_domeb
+parent = co_cur_01
