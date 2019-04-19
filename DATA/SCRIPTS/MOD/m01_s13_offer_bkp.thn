@@ -1,0 +1,2018 @@
+duration=54 --54 --44
+
+
+--
+-- 
+--
+--
+--
+--
+--
+--
+
+entities={
+	{
+		entity_name="Scene_M01_bar_x1",
+		type=SCENE,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={
+				0,
+				0,
+				0
+			},
+			orient={
+				{
+					1,
+					0,
+					0
+				},
+				{
+					0,
+					1,
+					0
+				},
+				{
+					0,
+					0,
+					1
+				}
+			}
+		},
+		up=Y_AXIS,
+		front=Z_AXIS,
+		ambient={
+			128,
+			128,
+			128
+		}
+	},
+	
+	{
+		entity_name="Monitor_1",
+		type=MONITOR,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0
+	},
+	{
+		entity_name="cam_trent",
+		type=CAMERA,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				4,
+				1.2,
+				0.6
+			},
+			orient={
+				
+			}
+		},
+		cameraprops={
+			fovh=20,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="head_trent",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				5.533378,
+				1.2,
+				-1
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	{
+		entity_name="cam_alaric2",
+		type=CAMERA,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				5,
+				1.2,
+				-0.8
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		cameraprops={
+			fovh=20,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_alaric",
+		type=CAMERA,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				4,
+				1.2,
+				-0.6
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		cameraprops={
+			fovh=20,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="head_alaric",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				5.533378,
+				1.2,
+				0.518612
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	{
+		entity_name="char_alaric",
+		type=DEFORMABLE,
+		template_name="Alaric",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={
+			pos={
+				5.533378,
+				0,
+				1.018612
+			},
+			orient={
+				{
+					0.999981,
+					0,
+					-0.006235
+				},
+				{
+					0,
+					1,
+					0
+				},
+				{
+					0.006235,
+					0,
+					0.999981
+				}
+			}
+		},
+		compoundprops={
+			floor_height=0
+		},
+		userprops={
+			category="Character",
+			actor="Alaric",
+		}
+	},
+	{
+		entity_name="char_trent",
+		type=DEFORMABLE,
+		template_name="Trent",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={
+			pos={
+				111.533378,
+				0,
+				1.018612
+			},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		},
+		compoundprops={
+			floor_height=0
+		},
+		userprops={
+			category="Character",
+			actor="Trent",
+		}
+	},
+	{
+		entity_name="trent_pos",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				4.86,
+				0,
+				-1.018612
+			},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		},
+	},
+	{
+		entity_name="eyes_alaric",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={
+				0,0,0
+			},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		}
+	},
+	{
+		entity_name="eyes_trent",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={
+				0,0,0
+			},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		}
+	},
+
+	{
+		entity_name="DX_m1_100_alaric",
+		type=SOUND,
+		template_name="DX_m1_100_alaric",
+		lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=1,
+			pan=0,
+			dmin=50,
+			dmax=1000,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio"
+		}
+	},
+	{
+		entity_name="DX_m1_101_trent",
+		type=SOUND,
+		template_name="DX_m1_101_trent",
+		lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=1,
+			pan=0,
+			dmin=50,
+			dmax=1000,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio"
+		}
+	},
+	{
+		entity_name="DX_m1_102_alaric",
+		type=SOUND,
+		template_name="DX_m1_102_alaric",
+		lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=1,
+			pan=0,
+			dmin=50,
+			dmax=1000,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio"
+		}
+	},
+	{
+		entity_name="DX_m1_103_trent",
+		type=SOUND,
+		template_name="DX_m1_103_trent",
+		lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=1,
+			pan=0,
+			dmin=50,
+			dmax=1000,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio"
+		}
+	},
+	{
+		entity_name="DX_m1_104_alaric",
+		type=SOUND,
+		template_name="DX_m1_104_alaric",
+		lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=1,
+			pan=0,
+			dmin=50,
+			dmax=1000,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio"
+		}
+	},
+	{
+		entity_name="DX_m1_105_alaric",
+		type=SOUND,
+		template_name="DX_m1_105_alaric",
+		lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=1,
+			pan=0,
+			dmin=50,
+			dmax=1000,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio"
+		}
+	},
+	{
+		entity_name="DX_m1_106_alaric",
+		type=SOUND,
+		template_name="DX_m1_106_alaric",
+		lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=1,
+			pan=0,
+			dmin=50,
+			dmax=1000,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio"
+		}
+	},
+	{
+		entity_name="DX_m1_107_trent",
+		type=SOUND,
+		template_name="DX_m1_107_trent",
+		lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=1,
+			pan=0,
+			dmin=50,
+			dmax=1000,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio"
+		}
+	},
+	{
+		entity_name="DX_m1_108_trent",
+		type=SOUND,
+		template_name="DX_m1_108_trent",
+		lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=1,
+			pan=0,
+			dmin=50,
+			dmax=1000,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio"
+		}
+	},
+	{
+		entity_name="sfx_pick_up_bottle02",
+		type=SOUND,
+		template_name="sfx_pick_up_bottle02",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=-25,
+			pan=0,
+			dmin=50,
+			dmax=300,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio",
+			Priority="Story_Sound_1"
+		}
+	},
+	{
+		entity_name="sfx_put_down_glass05",
+		type=SOUND,
+		template_name="sfx_put_down_glass05",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=-25,
+			pan=0,
+			dmin=50,
+			dmax=300,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio",
+			Priority="Story_Sound_1"
+		}
+	},
+	{
+		entity_name="sfx_pick_up_glass01",
+		type=SOUND,
+		template_name="sfx_pick_up_glass01",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=-25,
+			pan=1,
+			dmin=50,
+			dmax=300,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio",
+			Priority="Story_Sound_1"
+		}
+	},
+	{
+		entity_name="sfx_gulp01",
+		type=SOUND,
+		template_name="sfx_gulp01",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=-25,
+			pan=0,
+			dmin=50,
+			dmax=300,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio",
+			Priority="Story_Sound_1"
+		}
+	},
+	
+	{
+		entity_name="cam_default",
+		type=CAMERA,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+
+				-- dbg -- 4.033378, 3, -3 --0				
+				
+				3.533378, 3, 0
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}				
+			}
+		},
+		cameraprops={
+			fovh=20,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_default_point",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,srt_grp=0,usr_flg=0,flags=HIDDEN,
+		spatialprops={
+			pos={
+				5.533378,
+				1,
+				0
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}				
+			}
+		},
+	},
+	
+	{
+		entity_name="marker_trent_glass_last",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={
+				5.57,
+				0.797669,
+				-0.38
+			},
+			orient={
+				{
+					-0.268862,
+					-0.007261,
+					-0.963151
+				},
+				{
+					-0.962984,
+					-0.018055,
+					0.268952
+				},
+				{
+					-0.019342,
+					0.999811,
+					-0.002138
+				}
+			}
+		}
+	},
+	{
+		entity_name="trent_glass",
+		type=COMPOUND,
+		template_name="glass",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={
+			pos={
+				5.57,
+				0.797669,
+				0.3
+			},
+			orient={
+				{
+					-0.268862,
+					-0.007261,
+					-0.963151
+				},
+				{
+					-0.962984,
+					-0.018055,
+					0.268952
+				},
+				{
+					-0.019342,
+					0.999811,
+					-0.002138
+				}
+			}
+		},
+		userprops={
+			category="Prop"
+		}
+	},
+
+	
+	{
+		entity_name="cam_sit",
+		type=CAMERA,
+		template_name="",
+		lt_grp=0,srt_grp=0,usr_flg=0,flags=HIDDEN,
+		spatialprops={
+			pos={
+				7,
+				1.8,
+				-2
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}				
+			}
+		},
+		cameraprops={
+			fovh=20,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_sit_point",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,srt_grp=0,usr_flg=0,flags=HIDDEN,
+		spatialprops={
+			pos={
+				5.5,
+				1,
+				0
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}				
+			}
+		},
+	},
+	{
+		entity_name="cam_alaric_talking",
+		type=CAMERA,
+		template_name="",
+		lt_grp=0,srt_grp=0,usr_flg=0,flags=HIDDEN,
+		spatialprops={
+			pos={
+				5,
+				0.9,
+				-0.5
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}				
+			}
+		},
+		cameraprops={
+			fovh=20,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_alaric_talking_pos2",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,srt_grp=0,usr_flg=0,flags=HIDDEN,
+		spatialprops={
+			pos={
+				5,
+				0.9,
+				-0.6
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}				
+			}
+		},
+	},
+	{
+		entity_name="cam_alaric_talking_point",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,srt_grp=0,usr_flg=0,flags=HIDDEN,
+		spatialprops={
+			pos={
+				5.8,
+				1.25,
+				1
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}				
+			}
+		},
+	},
+	
+	
+	{
+		entity_name="cam_trent_talking",
+		type=CAMERA,
+		template_name="",
+		lt_grp=0,srt_grp=0,usr_flg=0,flags=HIDDEN,
+		spatialprops={
+			pos={
+				6.25,
+				1.2,
+				1
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}				
+			}
+		},
+		cameraprops={
+			fovh=20,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_trent_talking_point",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,srt_grp=0,usr_flg=0,flags=HIDDEN,
+		spatialprops={
+			pos={
+				5,
+				1,
+				-1
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}				
+			}
+		},
+	},
+	
+	{
+		entity_name="cam_trent_drinking",
+		type=CAMERA,
+		template_name="",
+		lt_grp=0,srt_grp=0,usr_flg=0,flags=HIDDEN,
+		spatialprops={
+			pos={
+				4.9,
+				1.4,
+				1.6
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}				
+			}
+		},
+		cameraprops={
+			fovh=20,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_trent_drinking_pos2",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,srt_grp=0,usr_flg=0,flags=HIDDEN,
+		spatialprops={
+			pos={
+				5,
+				1.4,
+				1.5
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}				
+			}
+		},
+	},
+	{
+		entity_name="cam_trent_drinking_point",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,srt_grp=0,usr_flg=0,flags=HIDDEN,
+		spatialprops={
+			pos={
+				6,
+				1,
+				-1
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}				
+			}
+		},
+	},
+	{
+		entity_name="cam_full_scene",
+		type=CAMERA,
+		template_name="",
+		lt_grp=0,srt_grp=0,usr_flg=0,flags=HIDDEN,
+		spatialprops={
+			pos={
+				2,
+				2,
+				0
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}				
+			}
+		},
+		cameraprops={
+			fovh=20,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_full_scene_pos2",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,srt_grp=0,usr_flg=0,flags=HIDDEN,
+		spatialprops={
+			pos={
+				2.5,
+				1.75,
+				0
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}				
+			}
+		},
+	},
+	{
+		entity_name="cam_full_scene_point",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,srt_grp=0,usr_flg=0,flags=HIDDEN,
+		spatialprops={
+			pos={
+				6,
+				1,
+				0
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}				
+			}
+		},
+	},
+}
+
+events={
+	{
+		0,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_sit"
+		}
+	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_default",
+			"cam_default_point"
+		},
+		{
+			duration=300,
+			offset={0,0,0},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="",
+			target_type=ROOT,
+			flags=LOOK_AT
+		}
+	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_sit",
+			"cam_sit_point"
+		},
+		{
+			duration=300,
+			offset={0,0,0},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="",
+			target_type=ROOT,
+			flags=LOOK_AT
+		}
+	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_alaric_talking",
+			"cam_alaric_talking_point"
+		},
+		{
+			duration=300,
+			offset={0,0,0},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="",
+			target_type=ROOT,
+			flags=LOOK_AT
+		}
+	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_trent_drinking",
+			"cam_trent_drinking_point"
+		},
+		{
+			duration=300,
+			offset={0,0,0},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="",
+			target_type=ROOT,
+			flags=LOOK_AT
+		}
+	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_full_scene",
+			"cam_full_scene_point"
+		},
+		{
+			duration=300,
+			offset={0,0,0},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="",
+			target_type=ROOT,
+			flags=LOOK_AT
+		}
+	},
+	
+	
+	
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_trent_talking",
+			"cam_trent_talking_point"
+		},
+		{
+			duration=300,
+			offset={0,0,0},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="",
+			target_type=ROOT,
+			flags=LOOK_AT
+		}
+	},
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	{
+		0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"char_trent",
+			"trent_pos"
+		},
+		{
+			duration=0.0001,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0}
+			}
+		}
+	},	
+	
+	
+	{
+		0,
+		START_IK,
+		{
+			"char_alaric",
+			"char_trent"
+		},
+		{
+			duration=5,
+			end_effector="Body_Head",
+			count_to_root=1,
+			target_part="Body_Neck",
+			target_type=PART,
+			damping=1,
+			up=NEG_Y_AXIS,
+			front=Z_AXIS,
+			point_at=1,
+			move_to=0,
+			transition_duration=1,
+			event_flags=128
+		}
+	},
+	-- {
+		-- 0,
+		-- START_IK,
+		-- {
+			-- "char_trent",
+			-- "head_alaric"
+		-- },
+		-- {
+			-- duration=220,
+			-- end_effector="Body_Head",
+			-- count_to_root=1,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- damping=1,
+			-- up=NEG_Y_AXIS,
+			-- front=Z_AXIS,
+			-- point_at=1,
+			-- move_to=0,
+			-- transition_duration=1,
+			-- event_flags=128
+		-- }
+	-- },
+	
+	
+	
+
+	-- FAST SIT
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"char_trent"},
+		-- {animation="Sc_MLBODY_STND_SITCR_TRNS_180DN_XA_06",
+		 -- duration=10, time_scale=100000000, weight=1, heading=-1}
+	-- },	
+
+	
+	-- PRODUCTION
+	
+	
+	{
+		0,
+		START_MOTION,
+		{"char_trent"},
+		{animation="Sc_MLBODY_STND_SITCR_TRNS_180DN_XA_06",
+		 duration=10, time_scale=1, weight=1, heading=-1}
+	},
+	{
+		0,
+		START_MOTION,
+		{"char_alaric"},
+		{animation="Sc_MLBODY_CHRB_WAVE_LHND_000LV_XA_03",
+		 duration=10, time_scale=1, weight=1, heading=-1}
+	},	
+	
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"char_alaric"},
+		-- {animation="Sc_MLBODY_CHRB_CHRF_TRNS_000LV_XA_02",
+		 -- duration=1, time_scale=1000000, weight=1, heading=-1, start_time=1}
+	-- },	
+	-- {
+		-- 1,
+		-- START_MOTION,
+		-- {"char_alaric"},
+		-- {animation="Sc_MLBODY_CHRF_CONV_HNDS_CASL_000LV_xa_04",
+		 -- duration=20, time_scale=1, weight=1, heading=-1, start_time=1}
+	-- },	
+	
+	
+		
+	{
+		0.5,
+		START_SOUND,
+		{
+			"DX_m1_100_alaric"
+		},
+		{
+			duration=19
+		}
+	},	
+	{
+		0.3,
+		START_MOTION,
+		{"char_alaric"},
+		{animation="Sc_dx_s038x_1701_Kress",
+		 duration=3.2, time_scale=1, weight=1, heading=-1}
+	}, 
+	{
+		3.8,
+		START_SOUND,
+		{
+			"DX_m1_101_trent"
+		},
+		{
+			duration=19
+		}
+	},
+	{
+		3.5,
+		START_MOTION,
+		{"char_trent"},
+		{animation="Sc_dx_s010x_1101_Trent",
+		 duration=2, time_scale=1, weight=1, heading=-1}
+	}, 
+
+	{
+		6,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_alaric_talking"
+		}
+	},
+	{
+		6,
+		START_MOTION,
+		{"char_alaric"},
+		{animation="Sc_MLBODY_CHRB_PUSH_DRINK_TABL_000LV_XA_06",
+		 duration=10, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		7.5,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"trent_glass",
+			"marker_trent_glass_last"
+		},
+		{
+			duration=3.2,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0}
+			}
+		}
+	},
+	{
+		8,
+		START_SOUND,
+		{
+			"sfx_pick_up_bottle02"
+		},
+		{
+			duration=10
+		}
+	},
+	{
+		6,
+		START_SOUND,
+		{"DX_m1_102_alaric"},
+		{duration=19}
+	},
+	{
+		6.2,
+		START_MOTION,
+		{"char_alaric"},
+		{animation="Sc_dx_s038x_2803_Kress",
+		 duration=10, time_scale=1, weight=1, heading=-1}
+	}, 
+	
+	
+	{
+		12,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_trent_drinking"
+		}
+	},		
+	{
+		12,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_trent_drinking",
+			"cam_trent_drinking_pos2"
+		},
+		{
+			duration=10,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0}
+			}
+		}
+	},	
+	{
+		15,
+		START_MOTION,
+		{"char_trent"},
+		{animation="Sc_MLBODY_CHRB_GRABL_DRINK_TABL_000LV_XA_02",
+		 duration=3, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		20,
+		START_MOTION,
+		{"char_trent"},
+		{animation="Sc_MLBODY_CHRB_DRINK_LHND_SIP_000LV_XA_04",
+		 duration=10, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		20,
+		CONNECT_HARDPOINTS,
+		{
+			"trent_glass",
+			"char_trent"
+		},
+		{
+			duration=4,
+			hardpoint="hpleftconnect_prop_glass_green",
+			parent_hardpoint="hpleftconnect"
+		}
+	},
+	{
+		20,
+		START_SOUND,
+		{
+			"sfx_pick_up_glass01"
+		},
+		{
+			duration=10
+		}
+	},
+	{
+		21,
+		START_MOTION,
+		{"char_trent"},
+		{animation="Sc_MLHEAD_MOTION_DRINK_SWALLOW_TRENT_000LV_XA_%",
+		 duration=2, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		22,
+		START_SOUND,
+		{
+			"sfx_gulp01"
+		},
+		{
+			duration=10
+		}
+	},	
+	{
+		24,
+		START_SOUND,
+		{
+			"sfx_put_down_glass05"
+		},
+		{
+			duration=10
+		}
+	},
+	{
+		12,
+		START_SOUND,
+		{"DX_m1_103_trent"},
+		{duration=19}
+	},	
+	{
+		12,
+		START_MOTION,
+		{"char_trent"},
+		{animation="Sc_dx_s034x_1301_Trent",
+		 duration=6, time_scale=1, weight=1, heading=-1}
+	}, 
+	{
+		18,
+		START_MOTION,
+		{"char_trent"},
+		{animation="Sc_dx_s026c_0301_Trent",
+		 duration=6, time_scale=1, weight=1, heading=-1}
+	}, 
+
+	
+	
+	{
+		24,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_alaric_talking"
+		}
+	},	
+	{
+		24,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_alaric_talking",
+			"cam_alaric_talking_pos2"
+		},
+		{
+			duration=8,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0}
+			}
+		}
+	},
+
+	{
+		24,
+		START_MOTION,
+		{"char_alaric"},
+		{animation="Sc_MLBODY_CHRB_CONV_RHNDUP_TRNS_000LV_XA_02",
+		 duration=10, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		26,
+		START_MOTION,
+		{"char_alaric"},
+		{animation="Sc_MLBODY_CHRB_CONV_RHND_CASL_000LV_xb_02",
+		 duration=10, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		29,
+		START_MOTION,
+		{"char_alaric"},
+		{animation="Sc_MLBODY_CHRB_CONV_RHNDDN_TRNS_000LV_XA_02",
+		 duration=10, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		24,
+		START_SOUND,
+		{
+			"DX_m1_104_alaric"
+		},
+		{
+			duration=19
+		}
+	},	
+	{
+		24,
+		START_MOTION,
+		{"char_alaric"},
+		{animation="Sc_dx_s038x_1701_Kress",
+		 duration=10, time_scale=1, weight=1, heading=-1}
+	}, 
+	{
+		29,
+		START_MOTION,
+		{"char_alaric"},
+		{animation="Sc_dx_s038x_3702_Kress",
+		 duration=10, time_scale=1, weight=1, heading=-1}
+	}, 
+	
+	
+	
+	{
+		32,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_full_scene"
+		}
+	},	
+	{
+		32,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_full_scene",
+			"cam_full_scene_pos2"
+		},
+		{
+			duration=10,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0}
+			}
+		}
+	},
+	
+	{
+		32,
+		START_MOTION,
+		{"char_trent"},
+		{animation="Sc_MLBODY_CHRF_LEAN_ARMB_000LV_A_10",
+		 duration=30, time_scale=0.7, weight=1, heading=-1}
+	},	
+	{
+		32,
+		START_MOTION,
+		{"char_alaric"},
+		{animation="Sc_MLBODY_CHRF_TALK_HNSTBL_000LV_A_34",
+		 duration=20, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		32,
+		START_IK,
+		{
+			"char_alaric",
+			"char_trent"
+		},
+		{
+			duration=25,
+			end_effector="Body_Head",
+			count_to_root=1,
+			target_part="Body_Neck",
+			target_type=PART,
+			damping=1,
+			up=NEG_Y_AXIS,
+			front=Z_AXIS,
+			point_at=1,
+			move_to=0,
+			transition_duration=1,
+			event_flags=128
+		}
+	},
+	{
+		32,
+		START_SOUND,
+		{
+			"DX_m1_105_alaric"
+		},
+		{
+			duration=19
+		}
+	},	
+	{
+		32,
+		START_MOTION,
+		{"char_alaric"},
+		{animation="Sc_dx_s038x_1701_Kress",
+		 duration=10, time_scale=1, weight=1, heading=-1}
+	}, 
+	{
+		36.5,
+		START_MOTION,
+		{"char_alaric"},
+		{animation="Sc_dx_s038x_3702_Kress",
+		 duration=10, time_scale=1, weight=1, heading=-1}
+	}, 
+		
+
+	-- {
+		-- 40,
+		-- START_MOTION,
+		-- {"char_alaric"},
+		-- {animation="Sc_MLBODY_CHRF_TALK_HNSTBL_000LV_A_34",
+		 -- duration=10, time_scale=1, weight=1, heading=-1, start_time=1}
+	-- },	
+	{
+		41,
+		START_SOUND,
+		{
+			"DX_m1_106_alaric"
+		},
+		{
+			duration=19
+		}
+	},	
+	{
+		41,
+		START_MOTION,
+		{"char_alaric"},
+		{animation="Sc_dx_s038x_2803_Kress",
+		 duration=10, time_scale=1, weight=1, heading=-1}
+	}, 
+	
+	-- {
+		-- 44,
+		-- START_MOTION,
+		-- {"char_trent"},
+		-- {animation="Sc_MLBODY_CHRF_CHRB_TRNS_000LV_XA_02",
+		 -- duration=10, time_scale=1, weight=1, heading=-1}
+	-- },
+	{
+		47,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_trent_talking"
+		}
+	},	
+	{
+		47,
+		START_MOTION,
+		{"char_alaric"},
+		{animation="Sc_MLBODY_CHRF_CHRB_TRNS_000LV_XA_02",
+		 duration=10, time_scale=1, weight=1, heading=-1}
+	},
+	{
+		47,
+		START_MOTION,
+		{"char_trent"},
+		{animation="Sc_MLBODY_CHRB_GRABR_CHIN_RLEASE_000LV_XA_01",
+		 duration=10, time_scale=0.8, weight=1, heading=-1}
+	},	
+	{
+		50.5,
+		START_MOTION,
+		{"char_trent"},
+		{animation="Sc_MLBODY_CHRB_CHIN_HOLDR_000LV_XA_04",
+		 duration=10, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		47,
+		START_SOUND,
+		{
+			"DX_m1_107_trent"
+		},
+		{
+			duration=19
+		}
+	},	
+	{
+		47,
+		START_MOTION,
+		{"char_trent"},
+		{animation="Sc_dx_s034x_1301_Trent",
+		 duration=10, time_scale=1, weight=1, heading=-1}
+	}, 
+	{
+		52,
+		START_MOTION,
+		{"char_trent"},
+		{animation="Sc_dx_s050b_0101_Trent",
+		 duration=2, time_scale=1, weight=1, heading=-1}
+	}, 
+
+		
+	-- {
+		-- 10,
+		-- START_MOTION,
+		-- {"char_trent"},
+		-- {animation="Sc_MLBODY_CHRB_HOLD_CHIN_RLEASE_000LV_XA_04",
+		 -- duration=10, time_scale=1, weight=1, heading=-1}
+	-- },
+	-- {
+		-- 13,
+		-- START_MOTION,
+		-- {"char_trent"},
+		-- {animation="Sc_MLBODY_CHRB_GRABL_DRINK_TABL_000LV_XA_02",
+		 -- duration=2, time_scale=1, weight=1, heading=-1, start_time=1}
+	-- },
+	-- {
+		-- 15,
+		-- START_MOTION,
+		-- {"char_trent"},
+		-- {animation="Sc_MLBODY_CHRB_DRINK_LHND_SIP_000LV_XA_04",
+		 -- duration=10, time_scale=1, weight=1, heading=-1}
+	-- },	
+	-- {
+		-- 10,
+		-- START_SOUND,
+		-- {
+			-- "DX_m1_108_trent"
+		-- },
+		-- {
+			-- duration=19
+		-- }
+	-- },	
+	-- {
+		-- 10,
+		-- START_MOTION,
+		-- {"char_trent"},
+		-- {animation="Sc_dx_s034x_1301_Trent",
+		 -- duration=5, time_scale=1, weight=1, heading=-1}
+	-- }, 
+	
+	
+	
+	
+	
+	
+	-- {
+		-- 110,
+		-- CONNECT_HARDPOINTS,
+		-- {
+			-- "alaric_glass",
+			-- "char_alaric"
+		-- },
+		-- {
+			-- duration=10,
+			-- hardpoint="hpleftconnect_prop_glass_green",
+			-- parent_hardpoint="hpleftconnect"
+		-- }
+	-- },
+	-- {
+		-- 11,
+		-- CONNECT_HARDPOINTS,
+		-- {
+			-- "trent_glass",
+			-- "char_trent"
+		-- },
+		-- {
+			-- duration=10,
+			-- hardpoint="hpleftconnect_prop_glass_green",
+			-- parent_hardpoint="hpleftconnect"
+		-- }
+	-- },
+	
+	-- drink it -- Sc_MLBODY_CHRB_DRINK_LHND_LARG_000LV_XA_06
+	-- point head -- Sc_MLBODY_CHRB_POINTL_OVRTHRE_000LV_XA_03
+	-- fill drink -- Sc_MLBODY_CHRB_GRABR_PRDRNK_TABL_000LV_XA_08
+	
+	
+	-- {
+		-- 0,
+		-- SET_CAMERA,
+		-- {
+			-- "Monitor_1",
+			-- "cam_alaric"
+		-- }
+	-- },
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"char_alaric"},
+		-- {animation="Sc_MLBODY_CHRB_IDLE_BIG_000LV_XA_05",
+		 -- duration=10, time_scale=1, weight=1, heading=-1}
+	-- },	
+	-- {
+		-- 8,
+		-- START_MOTION,
+		-- {"char_alaric"},
+		-- {animation="Sc_MLBODY_CHRB_IDLE_BIG_000LV_XA_05",
+		 -- duration=10, time_scale=1, weight=1, heading=-1}
+	-- },	
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"char_alaric"},
+		-- {animation="Sc_dx_s015x_0501_Walker",
+		 -- duration=10, time_scale=1, weight=1, heading=-1}
+	-- },	
+	-- {
+		-- 3,
+		-- START_MOTION,
+		-- {"char_alaric"},
+		-- {animation="Sc_dx_s015x_0901_Walker",
+		 -- duration=10, time_scale=1, weight=1, heading=-1}
+	-- },	
+	-- {
+		-- 6,
+		-- START_MOTION,
+		-- {"char_alaric"},
+		-- {animation="Sc_dx_s015x_0501_Walker",
+		 -- duration=10, time_scale=1, weight=1, heading=-1}
+	-- },	
+	-- {
+		-- 9,
+		-- START_MOTION,
+		-- {"char_alaric"},
+		-- {animation="Sc_dx_s015x_0901_Walker",
+		 -- duration=10, time_scale=1, weight=1, heading=-1}
+	-- },	
+	-- {
+		-- 12,
+		-- START_MOTION,
+		-- {"char_alaric"},
+		-- {animation="Sc_dx_s015x_0501_Walker",
+		 -- duration=10, time_scale=1, weight=1, heading=-1}
+	-- },	
+	-- {
+		-- 16,
+		-- START_MOTION,
+		-- {"char_alaric"},
+		-- {animation="Sc_dx_s015x_0501_Walker",
+		 -- duration=10, time_scale=1, weight=1, heading=-1}
+	-- },	
+	-- {
+		-- 18,
+		-- START_MOTION,
+		-- {"char_alaric"},
+		-- {animation="Sc_dx_s015x_0901_Walker",
+		 -- duration=10, time_scale=1, weight=1, heading=-1}
+	-- },	
+	-- {
+		-- 21,
+		-- START_MOTION,
+		-- {"char_alaric"},
+		-- {animation="Sc_dx_s015x_0901_Walker",
+		 -- duration=10, time_scale=1, weight=1, heading=-1}
+	-- },	
+	-- {
+		-- 24,
+		-- START_MOTION,
+		-- {"char_alaric"},
+		-- {animation="Sc_dx_s015x_0501_Walker",
+		 -- duration=10, time_scale=1, weight=1, heading=-1}
+	-- },
+	-- {
+		-- 19,
+		-- SET_CAMERA,
+		-- {
+			-- "Monitor_1",
+			-- "cam_alaric2"
+		-- }
+	-- },
+	-- {
+		-- 19,
+		-- START_SOUND,
+		-- {
+			-- "voice_2_alaric"
+		-- },
+		-- {
+			-- duration=10
+		-- }
+	-- },
+	
+	-- {
+		-- 29,
+		-- SET_CAMERA,
+		-- {
+			-- "Monitor_1",
+			-- "cam_trent"
+		-- }
+	-- },
+	
+	-- {
+		-- 29,
+		-- START_MOTION,
+		-- {"char_trent"},
+		-- {animation="Sc_MLBODY_CHRF_LSTN_000LV_A_10",
+		 -- duration=10, time_scale=1, weight=1, heading=-1}
+	-- },
+	-- {
+		-- 29,
+		-- START_MOTION,
+		-- {"char_trent"},
+		-- {animation="Sc_dx_s006x_0201_Trent",
+		 -- duration=10, time_scale=1, weight=1, heading=-1}
+	-- },	
+	-- {
+		-- 32,
+		-- START_MOTION,
+		-- {"char_trent"},
+		-- {animation="Sc_dx_s028x_0101_Trent",
+		 -- duration=10, time_scale=1, weight=1, heading=-1}
+	-- },	
+	-- {
+		-- 29,
+		-- START_SOUND,
+		-- {
+			-- "voice_3_trent"
+		-- },
+		-- {
+			-- duration=10
+		-- }
+	-- },
+
+	-- {
+		-- 35,
+		-- SET_CAMERA,
+		-- {
+			-- "Monitor_1",
+			-- "cam_alaric"
+		-- }
+	-- },
+	-- {
+		-- 35,
+		-- START_MOTION,
+		-- {"char_alaric"},
+		-- {animation="Sc_MLBODY_CHRF_CHRB_TRNS_000LV_XA_02",
+		 -- duration=10, time_scale=1, weight=1, heading=-1}
+	-- },	
+	-- {
+		-- 43,
+		-- START_MOTION,
+		-- {"char_alaric"},
+		-- {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+		 -- duration=10, time_scale=1, weight=1, heading=-1}
+	-- },	
+	-- {
+		-- 35,
+		-- START_MOTION,
+		-- {"char_alaric"},
+		-- {animation="Sc_dx_s015x_0901_Walker",
+		 -- duration=10, time_scale=1, weight=1, heading=-1}
+	-- },		
+	-- {
+		-- 38,
+		-- START_MOTION,
+		-- {"char_alaric"},
+		-- {animation="Sc_dx_s015x_0901_Walker",
+		 -- duration=10, time_scale=1, weight=1, heading=-1}
+	-- },	
+	-- {
+		-- 38,
+		-- START_MOTION,
+		-- {"char_alaric"},
+		-- {animation="Sc_dx_s015x_0901_Walker",
+		 -- duration=10, time_scale=1, weight=1, heading=-1}
+	-- },	
+	-- {
+		-- 41,
+		-- START_MOTION,
+		-- {"char_alaric"},
+		-- {animation="Sc_dx_GCS_F03aR01_RVP01",
+		 -- duration=10, time_scale=1, weight=1, heading=-1}
+	-- },	
+	
+	
+	-- {
+		-- 35.5,
+		-- START_SOUND,
+		-- {
+			-- "voice_4_alaric"
+		-- },
+		-- {
+			-- duration=10
+		-- }
+	-- },
+}
+
+

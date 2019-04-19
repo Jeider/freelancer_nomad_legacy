@@ -1,0 +1,1017 @@
+duration=40
+
+entities={
+	{
+		entity_name="scene_m06_prison_in",
+		type=SCENE,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		up=Y_AXIS,
+		front=Z_AXIS,
+		ambient={0,0,0}
+	},
+	{
+		entity_name="Monitor_1",
+		type=MONITOR,
+		template_name="",
+		template_id=0
+	},	
+	{
+		entity_name="Camera_1",
+		type=CAMERA,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={12, 1.5, 12},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		cameraprops={
+			fovh=35,
+			hvaspect=1.333333,
+			nearplane=0.1,
+			farplane=100000
+		}
+	},
+	
+	{
+		entity_name="Marker_1",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={-4,-2,7},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		}
+	},
+	{
+		entity_name="doors",
+		type=COMPOUND,
+		template_name="prison_doors",
+		lt_grp=9,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		userprops={
+			category="Prop"
+		}
+	},
+	{
+		entity_name="Guard",
+		type=DEFORMABLE,
+		template_name="m06_gunner_leader",
+		lt_grp=9,srt_grp=0,usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={8, 0, 9.5},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		},
+		compoundprops={floor_height=0},
+		userprops={
+			actor="GuardMan",
+			category="Character"
+		}
+	},
+	
+	{
+		entity_name="Marker_SydDialog",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={10, 0, 9.25},
+			orient={
+				{0,0,-1},
+				{0,1,0},
+				{1,0,0}
+			}
+		}
+	},
+	{
+		entity_name="Path_Cam_Start",
+		type=MOTION_PATH,
+		template_name="", template_id=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		pathprops={
+			path_type="CV_CROrientationSplinePath",
+			path_data="OPEN, {16, 2, 13}, {1,0,0,0}, {0, 2, 10}, {1,0,0,0}"
+		}
+	},
+	{
+		entity_name="Path_Mrk_Start",
+		type=MOTION_PATH,
+		template_name="", template_id=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		pathprops={
+			path_type="CV_CROrientationSplinePath",
+			path_data="OPEN, {6,2,7}, {1,0,0,0}, {0,2,7}, {1,0,0,0}"
+		}
+	},
+	{
+		entity_name="Path_Cam_Inside1",
+		type=MOTION_PATH,
+		template_name="", template_id=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		pathprops={
+			path_type="CV_CROrientationSplinePath",
+			path_data="OPEN, {1, 1, 6.5}, {1,0,0,0}, {0, 1, -1}, {1,0,0,0}"
+		}
+	},
+	{
+		entity_name="Path_Mrk_Inside1",
+		type=MOTION_PATH,
+		template_name="", template_id=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		pathprops={
+			path_type="CV_CROrientationSplinePath",
+			path_data="OPEN, {-2,1,6}, {1,0,0,0}, {0,1,6}, {1,0,0,0}"
+		}
+	},
+	{
+		entity_name="Path_Cam_SydAppear",
+		type=MOTION_PATH,
+		template_name="", template_id=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		pathprops={
+			path_type="CV_CROrientationSplinePath",
+			path_data="OPEN, {8, 2, 12}, {1,0,0,0}, {11, 2, 12}, {1,0,0,0}"
+		}
+	},
+	{
+		entity_name="Path_Mrk_SydAppear",
+		type=MOTION_PATH,
+		template_name="", template_id=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		pathprops={
+			path_type="CV_CROrientationSplinePath",
+			path_data="OPEN, {10, 2, 1}, {1,0,0,0}, {11, 2, 1}, {1,0,0,0}"
+		}
+	},
+	
+	{
+		entity_name="Marker_Cam_Last",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={10, 1.5, 10},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		}
+	},
+	{
+		entity_name="Marker_Mrk_Last",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={8, 1.5, 9},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		}
+	},
+	
+	{
+		entity_name="Trent",
+		type=DEFORMABLE,
+		template_name="trent",
+		lt_grp=9,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={-1.5,0,2},
+			orient={
+				{0,0,1},
+				{0,1,0},
+				{-1,0,0}
+			}
+		},
+		compoundprops={
+			floor_height=0
+		},
+		userprops={
+			actor="Trent",
+			category="Character"
+		}
+	},
+	{
+		entity_name="Prisoner1",
+		type=DEFORMABLE,
+		template_name="m06_asf_prisoner01",
+		lt_grp=9,srt_grp=0,usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={1.5,0,4.75},
+			orient={
+				{0,0,-1},
+				{0,1,0},
+				{1,0,0}
+			}
+		},
+		compoundprops={floor_height=0},
+		userprops={
+			actor="Prisoner1",
+			category="Character"
+		}
+	},
+	{
+		entity_name="Prisoner2",
+		type=DEFORMABLE,
+		template_name="m06_asf_prisoner02",
+		lt_grp=9,srt_grp=0,usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={1.5,0,2.5},
+			orient={
+				{0,0,-1},
+				{0,1,0},
+				{1,0,0}
+			}
+		},
+		compoundprops={floor_height=0},
+		userprops={
+			actor="Prisoner2",
+			category="Character"
+		}
+	},
+	{
+		entity_name="Prisoner3",
+		type=DEFORMABLE,
+		template_name="m06_asf_prisoner03",
+		lt_grp=9,srt_grp=0,usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={-1.5,0,5.25},
+			orient={
+				{0,0,1},
+				{0,1,0},
+				{-1,0,0}
+			}
+		},
+		compoundprops={floor_height=0},
+		userprops={
+			actor="Prisoner3",
+			category="Character"
+		}
+	},
+	{
+		entity_name="Prisoner4",
+		type=DEFORMABLE,
+		template_name="m06_asf_prisoner04",
+		lt_grp=9,srt_grp=0,usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={-1.5,0,3},
+			orient={
+				{0,0,1},
+				{0,1,0},
+				{-1,0,0}
+			}
+		},
+		compoundprops={floor_height=0},
+		userprops={
+			actor="Prisoner4",
+			category="Character"
+		}
+	},
+	
+	
+	{
+		entity_name="Syd",
+		type=DEFORMABLE,
+		template_name="syd",
+		lt_grp=9,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={12, 0, 3},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		},
+		compoundprops={
+			floor_height=0
+		},
+		userprops={
+			actor="Syd",
+			category="Character"
+		}
+	},
+
+	{
+		entity_name="ambience_hall",
+		type=SOUND,
+		template_name="ambience_deck_space_smaller",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=0,
+			pan=0,
+			dmin=50,
+			dmax=300,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio",
+			Priority="Story_Sound_1"
+		}
+	},
+	{
+		entity_name="ambience_room",
+		type=SOUND,
+		template_name="ambience_deck_space_larger",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=0,
+			pan=0,
+			dmin=50,
+			dmax=300,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio",
+			Priority="Story_Sound_1"
+		}
+	},
+	
+	{
+		entity_name="step1",
+		type=SOUND,
+		template_name="fs_ml_steel04",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=-15,
+			pan=0,
+			dmin=50,
+			dmax=300,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio"
+		}
+	},
+	{
+		entity_name="step2",
+		type=SOUND,
+		template_name="fs_ml_steel01",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=-15,
+			pan=0,
+			dmin=50,
+			dmax=300,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio"
+		}
+	},
+	{
+		entity_name="step3",
+		type=SOUND,
+		template_name="fs_ml_steel03",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=-15,
+			pan=0,
+			dmin=50,
+			dmax=300,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio"
+		}
+	},
+	{
+		entity_name="stepX1",
+		type=SOUND,
+		template_name="fs_ml_stone04",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=-10,
+			pan=0,
+			dmin=50,
+			dmax=300,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio"
+		}
+	},
+	{
+		entity_name="stepX2",
+		type=SOUND,
+		template_name="fs_mr_stone04",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=-10,
+			pan=0,
+			dmin=50,
+			dmax=300,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio"
+		}
+	},
+	{
+		entity_name="stepX3",
+		type=SOUND,
+		template_name="fs_ml_stone03",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=-10,
+			pan=0,
+			dmin=50,
+			dmax=300,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio"
+		}
+	},
+	
+}
+
+events = {
+	{
+		0,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"Camera_1"
+		}
+	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"Camera_1",
+			"Marker_1"
+		},
+		{
+			duration=300,
+			offset={0,0,0},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="",
+			target_type=ROOT,
+			flags=LOOK_AT
+		}
+	},
+	{
+		0,
+		START_PATH_ANIMATION,
+		{
+			"Camera_1",
+			"Path_Cam_Start"
+		},
+		{
+			duration=10.5,
+			start_percent=0,
+			stop_percent=1,
+			offset={0,0,0},
+			up=Y_AXIS,front=NEG_Z_AXIS,flags=POSITION,
+			param_curve={
+				CLSID="FreeFormPCurve",
+				points={{0,0,0,0},{1,1,0,0}}
+			},
+			pcurve_period=-1000
+		}
+	},
+	{
+		0,
+		START_PATH_ANIMATION,
+		{
+			"Marker_1",
+			"Path_Mrk_Start"
+		},
+		{
+			duration=10,
+			start_percent=0,
+			stop_percent=1,
+			offset={0,0,0},
+			up=Y_AXIS,front=NEG_Z_AXIS,flags=POSITION,
+			param_curve={
+				CLSID="FreeFormPCurve",
+				points={{0,0,0,0},{1,1,0,0}}
+			},
+			pcurve_period=-1000
+		}
+	},
+	{
+		10,
+		START_PATH_ANIMATION,
+		{
+			"Camera_1",
+			"Path_Cam_Inside1"
+		},
+		{
+			duration=10,
+			start_percent=0,
+			stop_percent=1,
+			offset={0,0,0},
+			up=Y_AXIS,front=NEG_Z_AXIS,flags=POSITION,
+			param_curve={
+				CLSID="FreeFormPCurve",
+				points={{0,0,0,0},{1,1,0,0}}
+			},
+			pcurve_period=-1000
+		}
+	},
+	{
+		10,
+		START_PATH_ANIMATION,
+		{
+			"Marker_1",
+			"Path_Mrk_Inside1"
+		},
+		{
+			duration=10,
+			start_percent=0,
+			stop_percent=1,
+			offset={0,0,0},
+			up=Y_AXIS,front=NEG_Z_AXIS,flags=POSITION,
+			param_curve={
+				CLSID="FreeFormPCurve",
+				points={{0,0,0,0},{1,1,0,0}}
+			},
+			pcurve_period=-1000
+		}
+	},	
+	
+	
+	{
+		22,
+		START_PATH_ANIMATION,
+		{
+			"Camera_1",
+			"Path_Cam_SydAppear"
+		},
+		{
+			duration=10,
+			start_percent=0,
+			stop_percent=1,
+			offset={0,0,0},
+			up=Y_AXIS,front=NEG_Z_AXIS,flags=POSITION,
+			param_curve={
+				CLSID="FreeFormPCurve",
+				points={{0,0,0,0},{1,1,0,0}}
+			},
+			pcurve_period=-1000
+		}
+	},
+	{
+		22,
+		START_PATH_ANIMATION,
+		{
+			"Marker_1",
+			"Path_Mrk_SydAppear"
+		},
+		{
+			duration=10,
+			start_percent=0,
+			stop_percent=1,
+			offset={0,0,0},
+			up=Y_AXIS,front=NEG_Z_AXIS,flags=POSITION,
+			param_curve={
+				CLSID="FreeFormPCurve",
+				points={{0,0,0,0},{1,1,0,0}}
+			},
+			pcurve_period=-1000
+		}
+	},
+	{
+		32,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Camera_1",
+			"Marker_Cam_Last"
+		},
+		{
+			duration=0.001,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			}
+		}
+	},
+	{
+		32,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Marker_1",
+			"Marker_Mrk_Last"
+		},
+		{
+			duration=0.001,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			}
+		}
+	},
+	
+	
+	
+
+	{
+		110,
+		START_MOTION,
+		{
+			"doors"
+		},
+		{
+			animation="Sc_cv_prison_cell",
+			duration=3.332,
+			time_scale=1,
+			weight=1,
+			trans_scale=1
+		}
+	},
+
+	{
+		0,
+		START_MOTION,
+		{"Guard"},
+		{animation="Sc_MLBODY_STND_STRCH_YAWN_000LV_XA_06",
+		 duration=51, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		6.3,
+		START_MOTION,
+		{"Guard"},
+		{animation="Sc_MLBODY_STND_STRCH_YAWN_000LV_XA_06",
+		 duration=51, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		14,
+		START_MOTION,
+		{"Prisoner1"},
+		{animation="Sc_MLBODY_CHRB_LOOK_AROU_CASL_000LV_XA_04",
+		 duration=51, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		16,
+		START_MOTION,
+		{"Prisoner2"},
+		{animation="Sc_MLBODY_CHRB_IDLE_BIG_000LV_XA_05",
+		 duration=51, time_scale=1, weight=1, heading=-1}
+	},
+	{
+		21,
+		START_MOTION,
+		{"Prisoner2"},
+		{animation="Sc_MLBODY_CHRB_IDLE_BIG_000LV_XA_05",
+		 duration=51, time_scale=1, weight=1, heading=-1}
+	},
+	{
+		10,
+		START_MOTION,
+		{"Prisoner3"},
+		{animation="Sc_MLBODY_CHRB_TWSTU_C-CL_LESS_000LV_A_14",
+		 duration=51, time_scale=1, weight=1, heading=-1}
+	},
+	{
+		10,
+		START_MOTION,
+		{"Prisoner4"},
+		{animation="Sc_MLBODY_CHRB_HEAD_HOLDR_000LV_XA_03",
+		 duration=51, time_scale=1, weight=1, heading=-1}
+		-- next Sc_MLBODY_CHRB_HOLD_HEAD_RLEASE_000LV_XA_03
+	},
+	{
+		17,
+		START_MOTION,
+		{"Prisoner4"},
+		{animation="Sc_MLBODY_CHRB_HOLD_HEAD_RLEASE_000LV_XA_03",
+		 duration=51, time_scale=1, weight=1, heading=-1}
+		-- next 
+	},
+	{
+		16,
+		START_MOTION,
+		{"Trent"},
+		{animation="Sc_MLBODY_CHRB_LOOK_AROU_CASL_000LV_XA_04",
+		 duration=51, time_scale=1, weight=1, heading=-1}
+	},
+	
+	{
+		27,
+		START_MOTION,
+		{"Syd"},
+		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 duration=5, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		28.3,
+		START_MOTION,
+		{"Syd"},
+		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 duration=5, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		29.6,
+		START_MOTION,
+		{"Syd"},
+		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 duration=5, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		30.9,
+		START_MOTION,
+		{"Syd"},
+		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 duration=5, time_scale=1, weight=1, heading=-1}
+	},
+	
+	{
+		21,
+		START_MOTION,
+		{"Guard"},
+		{animation="Sc_MLBODY_STND_BEND_FOTR_SWNGARMS_000DN_XA_12",
+		 duration=51, time_scale=1, weight=1, heading=-1}
+	},	
+
+	
+	
+	
+	
+	{
+		32,
+		START_MOTION,
+		{"Guard"},
+		{animation="Sc_MLBODY_STND_TURN_270LV_XA_04",
+		 duration=51, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		36,
+		START_MOTION,
+		{"Guard"},
+		{animation="Sc_MLBODY_STND_SALUT_000LV_XA_03",
+		 duration=51, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		34,
+		START_MOTION,
+		{"Guard"},
+		{animation="Sc_MLHEAD_SURPRSE_000LV_XA_%",
+		 duration=51, time_scale=1, weight=1, heading=-1}
+	},		
+	{
+		37,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Syd",
+			"Marker_SydDialog"
+		},
+		{
+			duration=0.001,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			}
+		}
+	},
+	{
+		34,
+		START_MOTION,
+		{"Syd"},
+		{animation="Sc_MLBODY_WALK_STND_TRNS_000LV_XA_02",
+		 duration=51, time_scale=0.5, weight=1, heading=-1}
+	},	
+	
+	
+	{0, START_SOUND, {"ambience_hall"}, {duration=10, flags=LOOP}},
+	{10, START_SOUND, {"ambience_room"}, {duration=12, flags=LOOP}},
+	{22, START_SOUND, {"ambience_hall"}, {duration=150000000, flags=LOOP}},
+	
+	
+	{27.7, START_SOUND, {"step1"}, {duration=5}},
+	{28.4, START_SOUND, {"step2"}, {duration=5}},
+	{29.1, START_SOUND, {"step3"}, {duration=5}},
+	{29.8, START_SOUND, {"step2"}, {duration=5}},
+	{30.5, START_SOUND, {"step1"}, {duration=5}},
+	{31.2, START_SOUND, {"step3"}, {duration=5}},
+	{31.9, START_SOUND, {"step2"}, {duration=5}},
+	{32.6, START_SOUND, {"step1"}, {duration=5}},
+	{33.3, START_SOUND, {"step3"}, {duration=5}},
+	{34.0, START_SOUND, {"step2"}, {duration=5}},
+	{34.7, START_SOUND, {"step3"}, {duration=5}},
+	{35.4, START_SOUND, {"step3"}, {duration=5}},
+	{36.1, START_SOUND, {"step2"}, {duration=5}},
+	{36.8, START_SOUND, {"step2"}, {duration=5}},
+	{37.5, START_SOUND, {"step2"}, {duration=5}},
+	
+	
+	{33, START_SOUND, {"stepX3"}, {duration=5}},
+	{33.8, START_SOUND, {"stepX2"}, {duration=5}},
+	{34.6, START_SOUND, {"stepX3"}, {duration=5}},
+	
+	
+	
+}
+--Sc_MLBODY_CHRB_HEAD_HOLDR_000LV_XA_03
+--Sc_MLBODY_CHRB_TWSTU_C-CL_LESS_000LV_A_14
+--Sc_MLBODY_CHRB_LOOK_AROU_CASL_000LV_XA_04
+
+
+

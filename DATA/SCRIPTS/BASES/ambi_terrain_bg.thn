@@ -1,0 +1,130 @@
+duration=10000
+
+entities={
+	
+	
+	
+	{
+		entity_name="Ambi_Layer_Terrain_Background",
+		type=SCENE,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={
+				0,
+				0,
+				0
+			},
+			orient={
+				{
+					1,
+					0,
+					0
+				},
+				{
+					0,
+					1,
+					0
+				},
+				{
+					0,
+					0,
+					1
+				}
+			}
+		},
+		up=Y_AXIS,
+		front=Z_AXIS,
+		ambient={
+			0,
+			0,
+			0
+		}
+	},
+
+	
+	
+	{
+		srt_grp=-100,
+		userprops={
+			NoFog="Y",
+			category="Prop"
+		},
+		lt_grp=23,
+		type=1,
+		entity_name="ambi_starsphere_nebula",
+		flags=4,
+		template_name="$terrain_tiny",
+		spatialprops={
+			orient={
+				{
+					1,
+					0,
+					0
+				},
+				{
+					0,
+					1,
+					0
+				},
+				{
+					0,
+					0,
+					1
+				}
+			},
+			pos={
+				0,
+				0,
+				0
+			}
+		},
+		usr_flg=1
+	},
+	{
+		entity_name="starsphere_stars",
+		type=COMPOUND,
+		template_name="$terrain_sml",
+		lt_grp=2,
+		srt_grp=-100,
+		usr_flg=1,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				0,
+				0,
+				0
+			},
+			orient={
+				{
+					1,
+					0,
+					0
+				},
+				{
+					0,
+					1,
+					0
+				},
+				{
+					0,
+					0,
+					1
+				}
+			}
+		},
+		userprops={
+			category="Prop"
+		}
+	},
+	
+}
+
+events={
+	
+
+}
+
+

@@ -1,0 +1,1026 @@
+duration=23.5
+
+
+--floor 0.89
+-- 
+--
+--
+--
+--
+--
+--
+
+entities={
+	{
+		entity_name="Scene_M01_intro_cityscape",
+		type=SCENE,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={
+				0,0,0
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		up=Y_AXIS,
+		front=Z_AXIS,
+		ambient={
+			128,
+			128,
+			128
+		}
+	},
+	{
+		entity_name="offscreen",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				10000, 10000, 1000
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		}
+	},
+	
+	
+	{
+		entity_name="Char_trent",
+		type=DEFORMABLE,
+		template_name="trent",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				0,
+				0.894049,
+				100000
+			},
+			orient={
+				-- {-0.7071068,0,0.7071068},
+				-- {0,1,0},
+				-- {-0.7071068,0,-0.7071068}
+				
+				{-0.5,0,-0.8660254},
+				{0,1,0},
+				{0.8660254,0,-0.5}
+				
+				-- {0,0,-1},
+				-- {0,1,0},
+				-- {1,0,0}
+			}
+		},
+		compoundprops={
+			floor_height=1
+		},
+		userprops={
+			actor="Player",
+			category="Character"
+		}
+	},
+	
+	
+	
+	
+	{
+		entity_name="Wingman1",
+		type=COMPOUND,
+		template_name="li_elite",
+		lt_grp=3,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				-20,
+				20,
+				-1070
+			},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		},
+		userprops={
+			category="Spaceship",
+			loadout="level_li_elite_loadout04",
+			running_lights="true"
+		}
+	},	
+	{
+		entity_name="Wingman1_path",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				-10,
+				20,
+				130
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		}
+	},
+	
+	{
+		entity_name="Wingman2",
+		type=COMPOUND,
+		template_name="li_elite",
+		lt_grp=3,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				-25,
+				25,
+				-1030
+			},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		},
+		userprops={
+			category="Spaceship",
+			loadout="level_li_elite_loadout04",
+			running_lights="true"
+		}
+	},	
+	{
+		entity_name="Wingman2_path",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				-15,
+				25,
+				170
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		}
+	},
+	
+	{
+		entity_name="Wingman3",
+		type=COMPOUND,
+		template_name="li_elite",
+		lt_grp=3,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				-35,
+				20,
+				-1050
+			},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		},
+		userprops={
+			category="Spaceship",
+			loadout="level_li_elite_loadout04",
+			running_lights="true"
+		}
+	},	
+	{
+		entity_name="Wingman3_path",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				-25,
+				20,
+				150
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		}
+	},
+	
+
+	{
+		entity_name="Prop_armored_transport",
+		type=COMPOUND,
+		template_name="ge_armored",
+		lt_grp=3,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				0, 10, 0
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		userprops={
+			category="Spaceship",
+			loadout="intro_armored_default",
+			running_lights="True"
+		}
+	},
+	{
+		entity_name="armored_pos2",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				0, 30, 0
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		}
+	},
+	{
+		entity_name="armored_pos3",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				0, 30, 100
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		}
+	},
+	{
+		entity_name="armored_lookat",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				10,
+				10,
+				25
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		}
+	},
+	{
+		entity_name="armored_lookat_pos2",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				0,
+				30,
+				25
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		}
+	},
+	{
+		entity_name="armored_lookat_pos3",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				0,
+				10,
+				150
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		}
+	},
+	
+
+				
+
+				
+
+	{
+		entity_name="Monitor_1",
+		type=MONITOR,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0
+	},
+	{
+		entity_name="cam_dbg",
+		type=CAMERA,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				0,
+				25,
+				50
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		cameraprops={
+			fovh=45,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_dbg_mrk",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				0, 0, 0
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		}
+	},
+	
+	{
+		entity_name="cam_bar",
+		type=CAMERA,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				-10, 10, -250
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		cameraprops={
+			fovh=25,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_bar_pos2",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				0, 20, 50
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		}
+	},
+	{
+		entity_name="cam_bar_pos3",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				0, 5, 50
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		}
+	},
+	{
+		entity_name="cam_bar_pos4",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				0, 7, 52
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		}
+	},
+	{
+		entity_name="cam_bar_marker",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				-10, 40, -350
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		}
+	},
+	{
+		entity_name="cam_bar_marker_pos2",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				0, 20, 0
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		}
+	},
+	{
+		entity_name="cam_bar_marker_pos3",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				0, 40, 0
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		}
+	},
+	{
+		entity_name="launch_start",
+		template_name="engine_playership_launch_turbine",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=-5,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="launch_continue",
+		template_name="engine_playership_launch",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=-5,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="ambient_sound",
+		template_name="ambience_cityscape_medium",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=-5,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	
+	
+	{
+		entity_name="Ship_l_elite_1_engine_li_small_1",
+		type=SOUND,
+		template_name="engine_li_small",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=SPATIAL,
+		spatialprops={
+			pos={
+				0,
+				0,
+				0
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=0,
+			pan=0,
+			dmin=100,
+			dmax=300,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio"
+		}
+	},
+}
+
+events={
+	{
+		0,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			--"cam_dbg"
+			"cam_bar"
+		}
+	},
+	-- {
+		-- 15,
+		-- SET_CAMERA,
+		-- {
+			-- "Monitor_1",
+			-- "cam_trooper"
+		-- }
+	-- },
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_dbg",
+			"Prop_armored_transport"
+		},
+		{
+			duration=100,
+			offset={0,0,0},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="Body_Head",
+			target_type=PART,
+			flags=LOOK_AT
+		}
+	},
+	
+	
+	
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_bar",
+			"cam_bar_marker"
+		},
+		{
+			duration=100,
+			offset={0,0,0},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="",
+			target_type=ROOT,
+			flags=LOOK_AT
+		}
+	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_building",
+			"cam_building_marker"
+		},
+		{
+			duration=100,
+			offset={0,0,0},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="",
+			target_type=ROOT,
+			flags=LOOK_AT
+		}
+	},
+
+		
+		
+		
+	{
+		0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_bar",
+			"cam_bar_pos2"
+		},
+		{
+			duration=10,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={pos={0,0,0},q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		10,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_bar",
+			"cam_bar_pos3"
+		},
+		{
+			duration=10,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={pos={0,0,0},q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		20,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_bar",
+			"cam_bar_pos4"
+		},
+		{
+			duration=5,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={pos={0,0,0},q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		5,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_bar_marker",
+			"cam_bar_marker_pos2"
+		},
+		{
+			duration=10,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={pos={0,0,0},q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		15,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_bar_marker",
+			"cam_bar_marker_pos3"
+		},
+		{
+			duration=10,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={pos={0,0,0},q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		5,
+		START_CAMERA_PROP_ANIM,
+		{
+			"cam_bar"
+		},
+		{
+			duration=15,
+			cameraprops={
+				fovh=45
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	
+	
+	
+	
+	
+	
+	
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"Prop_armored_transport",
+			"armored_lookat"
+		},
+		{
+			duration=100,
+			offset={0,0,0},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="Body_Head",
+			target_type=PART,
+			flags=LOOK_AT
+		}
+	},
+	{
+		12,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Prop_armored_transport",
+			"armored_pos2"
+		},
+		{
+			duration=7,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={pos={0,0,0},q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		19,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Prop_armored_transport",
+			"armored_pos3"
+		},
+		{
+			duration=5,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={pos={0,0,0},q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		12,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"armored_lookat",
+			"armored_lookat_pos2"
+		},
+		{
+			duration=7,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={pos={0,0,0},q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		19,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"armored_lookat",
+			"armored_lookat_pos3"
+		},
+		{
+			duration=5,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={pos={0,0,0},q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	
+	
+	
+	
+	
+	
+	{
+		0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Wingman1",
+			"Wingman1_path"
+		},
+		{
+			duration=10,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={pos={0,0,0}},
+		}
+	},
+	{
+		0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Wingman2",
+			"Wingman2_path"
+		},
+		{
+			duration=10,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={pos={0,0,0}},
+		}
+	},
+	{
+		0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Wingman3",
+			"Wingman3_path"
+		},
+		{
+			duration=10,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={pos={0,0,0}},
+		}
+	},
+		
+	
+
+		
+	{
+		12, START_SOUND, {"launch_start"}, {duration=500}
+	},
+	{
+		18.25, START_SOUND, {"launch_continue"}, {duration=500}
+	},
+
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"Ship_l_elite_1_engine_li_small_1",
+			"Wingman2"
+		},
+		{
+			duration=60,
+			offset={
+				0,
+				0,
+				0
+			},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="HpEngine01",
+			target_type=HARDPOINT,
+			flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},
+	{
+		0, START_SOUND, {"Ship_l_elite_1_engine_li_small_1"}, {duration=15, flags=LOOP}
+	},
+	{
+		0, START_SOUND, {"ambient_sound"}, {duration=25, flags=LOOP}
+	},
+	
+		{
+		0,
+		START_MOTION,
+		{
+			"Wingman1"
+		},
+		{
+			animation="Sc_force extend",
+			duration=30,
+			time_scale=1,
+			weight=1,
+			trans_scale=1
+		}
+	},
+	
+	{
+		0,
+		START_MOTION,
+		{
+			"Wingman2"
+		},
+		{
+			animation="Sc_force extend",
+			duration=30,
+			time_scale=1,
+			weight=1,
+			trans_scale=1
+		}
+	},
+	
+	{
+		0,
+		START_MOTION,
+		{
+			"Wingman3"
+		},
+		{
+			animation="Sc_force extend",
+			duration=30,
+			time_scale=1,
+			weight=1,
+			trans_scale=1
+		}
+	},
+	
+		
+}
+
+

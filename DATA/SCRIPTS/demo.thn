@@ -1,0 +1,759 @@
+duration=6012312.187
+
+entities={
+	{
+		entity_name="Scene_Trailer_Hatcher_Bar",
+		type=SCENE,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				0,
+				0,
+				0
+			},
+			orient={
+				{
+					1,
+					0,
+					0
+				},
+				{
+					0,
+					1,
+					0
+				},
+				{
+					0,
+					0,
+					1
+				}
+			}
+		},
+		up=Y_AXIS,
+		front=Z_AXIS,
+		ambient={
+			128,
+			128,
+			128
+		}
+		-- ,
+		-- userprops={
+			-- TextStart="0.75000",
+			-- TextString="259608.00000"
+		-- }
+	},
+		{
+		entity_name="handie_backdrop",
+		type=COMPOUND,
+		template_name="handie_back",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_AMBIENT,
+		spatialprops={
+			pos={
+				0,
+				0,
+				5	
+			},
+			orient={
+				{
+					1,
+					0,
+					0
+				},
+				{
+					0,
+					1,
+					0
+				},
+				{
+					0,
+					0,
+					1
+				}
+			}
+		},
+		userprops={
+			category="Room"
+		}
+	},
+	{
+		entity_name="CoreMarker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				0,
+				0,
+				0
+			},
+			orient={
+				{
+					1,
+					0,
+					0
+				},
+				{
+					0,
+					1,
+					0
+				},
+				{
+					0,
+					0,
+					1
+				}
+			}
+		}
+	},
+	{
+		entity_name="CameraMarker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				0,
+				0,
+				0
+			},
+			orient={
+				{
+					1,
+					0,
+					0
+				},
+				{
+					0,
+					1,
+					0
+				},
+				{
+					0,
+					0,
+					1
+				}
+			}
+		}
+	},
+	{
+		entity_name="Monitor_1",
+		type=MONITOR,
+		template_name="",
+		template_id=0
+	},
+	{
+		entity_name="Light_SCENE",
+		type=LIGHT,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		lightprops={
+			on=Y,
+			color={
+				255,
+				255,
+				255
+			},
+			diffuse={
+				0.5,
+				0.5,
+				0.5
+			},
+			specular={
+				1,
+				1,
+				1
+			},
+			ambient={
+				0.0,
+				0.0,
+				0.0
+			},
+			direction={
+				0,
+				1,
+				0
+			},
+			range=2000,
+			cutoff=90,
+			type=L_DIRECT,
+			theta=90,
+			atten={
+				1,
+				0,
+				4e-006
+			}
+		}
+	},
+	{
+		entity_name="Light_SCENE2",
+		type=LIGHT,
+		template_name="",
+		lt_grp=3,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		lightprops={
+			on=Y,
+			color={
+				255,
+				255,
+				255
+			},
+			diffuse={
+				0.5,
+				0.5,
+				0.5
+			},
+			specular={
+				1,
+				1,
+				1
+			},
+			ambient={
+				1.0,
+				1.0,
+				1.0
+			},
+			direction={
+				0,
+				1,
+				0
+			},
+			range=2000,
+			cutoff=90,
+			type=L_DIRECT,
+			theta=90,
+			atten={
+				1,
+				0,
+				4e-006
+			}
+		}
+	},
+	{
+		entity_name="Alaric",
+		type=DEFORMABLE,
+		template_name="trent",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={
+			pos={
+				0,
+				0,
+				0
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		compoundprops={
+			floor_height=0
+		},
+		userprops={
+			actor="Alaric",
+			category="Character"
+		}
+	},
+
+	{
+		entity_name="Camera_0",
+		type=CAMERA,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				--2, 2, -2
+				0,2.5,-2.5
+			},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		},
+		cameraprops={
+			fovh=50,
+			hvaspect=1.333333,
+			nearplane=0.1,
+			farplane=100000
+		}
+	},
+	{
+		entity_name="the_stars",
+		type=COMPOUND,
+		template_name="starsphere_li01",
+		lt_grp=0,
+		srt_grp=-100,
+		usr_flg=1,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				0,
+				0,
+				0
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		userprops={
+			category="Prop"
+		}
+	},
+	{
+		entity_name="ship_l_elite_Juni",
+		type=COMPOUND,
+		template_name="PlayerShip",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={
+			pos={
+				-50,
+				0,
+				20
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		userprops={
+			category="Spaceship"
+		}
+	},
+	{
+		entity_name="PlayerHand",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={
+				2,0,0
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		}
+	},
+	{
+		entity_name="the_handie",
+		type=COMPOUND,
+		template_name="subtitles_test",
+		lt_grp=3,
+		srt_grp=-99,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={
+			pos={
+				0,
+				0,
+				0
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		userprops={
+			category="Prop"
+		}
+	},
+	
+	{
+		entity_name="ambience_hall",
+		type=SOUND,
+		template_name="music_bar_ku01",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=0,
+			pan=0,
+			dmin=50,
+			dmax=300,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio",
+			Priority="Story_Sound_1"
+		}
+	},
+}
+
+events = {
+	{
+		0,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"Camera_0"
+		}
+	},
+	-- {
+		-- 0,
+		-- ATTACH_ENTITY,
+		-- {
+			-- "Camera_0",
+			-- "Alaric"
+		-- },
+		-- {
+			-- duration=300,
+			-- offset={0,0,0},
+			-- up=Y_AXIS,
+			-- front=NEG_Z_AXIS,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- flags=LOOK_AT
+		-- }
+	-- },
+	{
+		0,
+		START_MOTION,
+		{
+			"Alaric"
+		},
+		{
+			animation="Sc_MLBODY_STND_DANC_000LV_A_28",
+			duration=1000,
+			time_scale=0.6,
+			weight=1,
+			heading=-1
+		}
+	},
+	{
+		0,
+		START_IK,
+		{
+			"Alaric",
+			"Camera_0"
+		},
+		{
+			duration=500,
+			end_effector="Body_Head",
+			count_to_root=1,
+			target_part="",
+			target_type=ROOT,
+			damping=1,
+			up=NEG_Y_AXIS,
+			front=Z_AXIS,
+			point_at=1,
+			move_to=0,
+			transition_duration=1,
+			event_flags=128
+		}
+	},
+		
+	
+
+	{
+		1,
+		START_CAMERA_PROP_ANIM,
+		{
+			"Camera_0"
+		},
+		{
+			duration=50,
+			cameraprops={
+				fovh=18
+			},
+			param_curve={
+				CLSID="FreeFormPCurve",
+				points={
+					{
+						0,
+						0,
+						0,
+						0
+					},
+					{
+						0.5320510000000001,
+						0.807692,
+						0.9375,
+						1.058824
+					},
+					{
+						1,
+						1,
+						0,
+						0
+					}
+				}
+			},
+			pcurve_period=-1000
+		}
+	},
+	{
+		0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Camera_0"
+		},
+		{
+			duration=15,
+			spatialprops={
+				pos={
+					0.05,1.51,-2.6
+				}
+			},
+			param_curve={
+				CLSID="FreeFormPCurve",
+				points={
+					{
+						0,
+						0,
+						0,
+						0
+					},
+					{
+						1,
+						1,
+						0,
+						0
+					}
+				}
+			},
+			pcurve_period=-1000
+		}
+	},
+	{
+		20,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Camera_0"
+		},
+		{
+			duration=20,
+			spatialprops={
+				pos={
+					-0.03,1.49,-2.55
+				}
+			},
+			param_curve={
+				CLSID="FreeFormPCurve",
+				points={
+					{
+						0,
+						0,
+						0,
+						0
+					},
+					{
+						1,
+						1,
+						0,
+						0
+					}
+				}
+			},
+			pcurve_period=-1000
+		}
+	},
+	
+	
+	-- {
+		-- 0.25,
+		-- ATTACH_ENTITY,
+		-- {
+			-- "PlayerHand",
+			-- "Alaric"
+		-- },
+		-- {
+			-- duration=220,
+			-- offset={
+				-- 0,
+				-- 0,
+				-- 0
+			-- },
+			-- up=Y_AXIS,
+			-- front=NEG_Z_AXIS,
+			-- target_part="Head01",
+			-- target_type=PART,
+			-- flags=POSITION+ORIENTATION
+		-- }
+	-- },
+	
+
+	-- {
+		-- 0,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "Alaric"
+		-- },
+		-- {
+			-- duration=2,
+			-- spatialprops={
+				-- pos={
+					-- 1,
+					-- 0,
+					-- 0
+				-- }
+			-- },
+			-- param_curve={
+				-- CLSID="FreeFormPCurve",
+				-- points={
+					-- {
+						-- 0,
+						-- 0,
+						-- 0,
+						-- 0
+					-- },
+					-- {
+						-- 1,
+						-- 1,
+						-- 0,
+						-- 0
+					-- }
+				-- }
+			-- },
+			-- pcurve_period=-1000
+		-- }
+	-- },
+	
+	
+	
+	-- EXAMPLE VERY INTERESTING
+	-- {
+		-- 1.65300000000001,
+		-- START_CAMERA_PROP_ANIM,
+		-- {
+			-- "Camera_0"
+		-- },
+		-- {
+			-- duration=2.032,
+			-- cameraprops={
+				-- fovh=55
+			-- },
+			-- param_curve={
+				-- CLSID="FreeFormPCurve",
+				-- points={
+					-- {
+						-- 0,
+						-- 0,
+						-- 0,
+						-- 0
+					-- },
+					-- {
+						-- 0.5320510000000001,
+						-- 0.807692,
+						-- 0.9375,
+						-- 1.058824
+					-- },
+					-- {
+						-- 1,
+						-- 1,
+						-- 0,
+						-- 0
+					-- }
+				-- }
+			-- },
+			-- pcurve_period=-1000
+		-- }
+	-- },
+	{0, START_SOUND, {"ambience_hall"}, {duration=1000, flags=LOOP}},
+	
+
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"CameraMarker",
+			"Camera_0"
+		},
+		{
+			duration=60,
+			offset={0, -0.3,  -0.7},
+			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT,
+			flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"the_handie",
+			"CameraMarker"
+		},
+		{
+			duration=60,
+			offset={
+				0,
+				0,
+				0
+			},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="",
+			target_type=ROOT,
+			flags=POSITION + ORIENTATION
+		}
+	},
+
+	{
+		5,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Camera_0"
+		},
+		{
+			duration=20,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					360,
+					Y_AXIS
+				}
+			}
+		}
+	},
+
+}
+
+

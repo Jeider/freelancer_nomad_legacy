@@ -1,0 +1,43 @@
+duration=0.01
+
+entities={
+	{
+		entity_name="Scene_Static_Null_camera",
+		type=SCENE,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				0,
+				0,
+				0
+			},
+			orient={
+				{
+					1,
+					0,
+					0
+				},
+				{
+					0,
+					1,
+					0
+				},
+				{
+					0,
+					0,
+					1
+				}
+			}
+		},
+		up=Y_AXIS,
+		front=Z_AXIS,
+		ambient={
+			128,
+			128,
+			128
+		}
+	}
+}
+
+

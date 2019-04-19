@@ -1,0 +1,826 @@
+duration=25
+
+entities={
+	{
+		entity_name="scene_m06_prison_in_end",
+		type=SCENE,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		up=Y_AXIS,
+		front=Z_AXIS,
+		ambient={0,0,0}
+	},
+	{
+		entity_name="Monitor_1",
+		type=MONITOR,
+		template_name="",
+		template_id=0
+	},	
+	{
+		entity_name="Camera_1",
+		type=CAMERA,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={10, 1.2, 11.5},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		cameraprops={
+			fovh=35,
+			hvaspect=1.333333,
+			nearplane=0.1,
+			farplane=100000
+		}
+	},
+	
+	{
+		entity_name="Marker_1",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={7.5, 1.5, 9},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		}
+	},
+	{
+		entity_name="Marker_Offscreen",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={71111.5, 1.5, 9},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		}
+	},
+	{
+		entity_name="Guard",
+		type=DEFORMABLE,
+		template_name="m06_gunner_leader",
+		lt_grp=9,srt_grp=0,usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={7, 0, 10.5},
+			orient={
+				{0,0,1},
+				{0,1,0},
+				{-1,0,0}
+			}
+		},
+		compoundprops={floor_height=0},
+		userprops={
+			actor="GuardMan",
+			category="Character"
+		}
+	},
+	
+	
+	{
+		entity_name="Syd",
+		type=DEFORMABLE,
+		template_name="syd",
+		lt_grp=9,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={8, 0, 9.5},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		},
+		compoundprops={
+			floor_height=0
+		},
+		userprops={
+			actor="Syd",
+			category="Character"
+		}
+	},
+	{
+		entity_name="cigarette",
+		type=COMPOUND,
+		template_name="cigarette_3",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		userprops={
+			category="Prop"
+		}
+	},
+	{
+		entity_name="Marker_Cigarette_floor",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={7.75, 0, 9.5},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		}
+	},
+	{
+		entity_name="Path_Cam_Cigarette",
+		type=MOTION_PATH,
+		template_name="", template_id=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		pathprops={
+			path_type="CV_CROrientationSplinePath",
+			path_data="OPEN, {9, 1.2, 11.5}, {1,0,0,0}, {10, 1.2, 11}, {1,0,0,0}"
+		}
+	},
+	{
+		entity_name="Path_Cam_Start",
+		type=MOTION_PATH,
+		template_name="", template_id=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		pathprops={
+			path_type="CV_CROrientationSplinePath",
+			path_data="OPEN, {9, 1.5, 9.25}, {1,0,0,0}, {15, 1.5, 9.25}, {1,0,0,0}"
+		}
+	},
+	{
+		entity_name="Path_Mrk_Start",
+		type=MOTION_PATH,
+		template_name="", template_id=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		pathprops={
+			path_type="CV_CROrientationSplinePath",
+			path_data="OPEN, {6, 1.5, 9.25}, {1,0,0,0}, {8, 1.5, 9.25}, {1,0,0,0}"
+		}
+	},
+	{
+		entity_name="Path_Cam_End",
+		type=MOTION_PATH,
+		template_name="", template_id=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		pathprops={
+			path_type="CV_CROrientationSplinePath",
+			path_data="OPEN, {12, 1.5, 6}, {1,0,0,0}, {12, 1.5, 5}, {1,0,0,0}"
+		}
+	},
+	{
+		entity_name="Path_Mrk_End",
+		type=MOTION_PATH,
+		template_name="", template_id=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		pathprops={
+			path_type="CV_CROrientationSplinePath",
+			path_data="OPEN, {12, 1.5, 8}, {1,0,0,0}, {12, 1.5, 8.1}, {1,0,0,0}"
+		}
+	},
+	{
+		entity_name="Marker_Outdoor",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={12,1.5,-0.6},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		}
+	},
+	{
+		entity_name="doors",
+		type=COMPOUND,
+		template_name="prison_doors",
+		lt_grp=9,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		userprops={
+			category="Prop"
+		}
+	},
+	
+
+
+	{
+		entity_name="ambience_hall",
+		type=SOUND,
+		template_name="ambience_deck_space_smaller",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=0,
+			pan=0,
+			dmin=50,
+			dmax=300,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio",
+			Priority="Story_Sound_1"
+		}
+	},
+	
+	{
+		entity_name="step1",
+		type=SOUND,
+		template_name="fs_ml_steel04",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=-15,
+			pan=0,
+			dmin=50,
+			dmax=300,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio"
+		}
+	},
+	{
+		entity_name="step2",
+		type=SOUND,
+		template_name="fs_ml_steel01",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=-15,
+			pan=0,
+			dmin=50,
+			dmax=300,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio"
+		}
+	},
+	{
+		entity_name="step3",
+		type=SOUND,
+		template_name="fs_ml_steel03",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=-15,
+			pan=0,
+			dmin=50,
+			dmax=300,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio"
+		}
+	},
+	{
+		entity_name="stepX1",
+		type=SOUND,
+		template_name="fs_ml_stone04",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=-10,
+			pan=0,
+			dmin=50,
+			dmax=300,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio"
+		}
+	},
+	{
+		entity_name="stepX2",
+		type=SOUND,
+		template_name="fs_mr_stone04",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=-10,
+			pan=0,
+			dmin=50,
+			dmax=300,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio"
+		}
+	},
+	{
+		entity_name="stepX3",
+		type=SOUND,
+		template_name="fs_ml_stone03",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=-10,
+			pan=0,
+			dmin=50,
+			dmax=300,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio"
+		}
+	},
+	
+}
+
+events = {
+	{
+		0,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"Camera_1"
+		}
+	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"Camera_1",
+			"Marker_1"
+		},
+		{
+			duration=300,
+			offset={0,0,0},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="",
+			target_type=ROOT,
+			flags=LOOK_AT
+		}
+	},
+	
+	{
+		0,
+		START_PATH_ANIMATION,
+		{
+			"Camera_1",
+			"Path_Cam_Cigarette"
+		},
+		{
+			duration=12,
+			start_percent=0,
+			stop_percent=1,
+			offset={0,0,0},
+			up=Y_AXIS,front=NEG_Z_AXIS,flags=POSITION,
+			param_curve={
+				CLSID="FreeFormPCurve",
+				points={{0,0,0,0},{1,1,0,0}}
+			},
+			pcurve_period=-1000
+		}
+	},
+	{
+		12,
+		START_PATH_ANIMATION,
+		{
+			"Camera_1",
+			"Path_Cam_Start"
+		},
+		{
+			duration=5,
+			start_percent=0,
+			stop_percent=1,
+			offset={0,0,0},
+			up=Y_AXIS,front=NEG_Z_AXIS,flags=POSITION,
+			param_curve={
+				CLSID="FreeFormPCurve",
+				points={{0,0,0,0},{1,1,0,0}}
+			},
+			pcurve_period=-1000
+		}
+	},
+	{
+		12,
+		START_PATH_ANIMATION,
+		{
+			"Marker_1",
+			"Path_Mrk_Start"
+		},
+		{
+			duration=10,
+			start_percent=0,
+			stop_percent=1,
+			offset={0,0,0},
+			up=Y_AXIS,front=NEG_Z_AXIS,flags=POSITION,
+			param_curve={
+				CLSID="FreeFormPCurve",
+				points={{0,0,0,0},{1,1,0,0}}
+			},
+			pcurve_period=-1000
+		}
+	},
+	{
+		19,
+		START_PATH_ANIMATION,
+		{
+			"Camera_1",
+			"Path_Cam_End"
+		},
+		{
+			duration=10,
+			start_percent=0,
+			stop_percent=1,
+			offset={0,0,0},
+			up=Y_AXIS,front=NEG_Z_AXIS,flags=POSITION,
+			param_curve={
+				CLSID="FreeFormPCurve",
+				points={{0,0,0,0},{1,1,0,0}}
+			},
+			pcurve_period=-1000
+		}
+	},
+	{
+		19,
+		START_PATH_ANIMATION,
+		{
+			"Marker_1",
+			"Path_Mrk_End"
+		},
+		{
+			duration=10,
+			start_percent=0,
+			stop_percent=1,
+			offset={0,0,0},
+			up=Y_AXIS,front=NEG_Z_AXIS,flags=POSITION,
+			param_curve={
+				CLSID="FreeFormPCurve",
+				points={{0,0,0,0},{1,1,0,0}}
+			},
+			pcurve_period=-1000
+		}
+	},
+	
+	
+	
+	
+	{
+		0,
+		START_MOTION,
+		{"Guard"},
+		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 duration=15, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		1.3,
+		START_MOTION,
+		{"Guard"},
+		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 duration=15, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		2.6,
+		START_MOTION,
+		{"Guard"},
+		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 duration=15, time_scale=1, weight=1, heading=-1}
+	},	
+	
+
+	{
+		5,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Guard",
+			"Marker_Offscreen"
+		},
+		{
+			duration=0.0001,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			}
+		}
+	},
+	
+	
+	
+	{
+		0,
+		START_MOTION,
+		{"Syd"},
+		{animation="Sc_SPCBODY_s002x_syd_XE_STND_000LV_11",
+		 duration=100, time_scale=1, weight=1, heading=-1}
+	},	
+	
+	{
+		0,
+		CONNECT_HARDPOINTS,
+		{
+			"cigarette",
+			"Syd"
+		},
+		{
+			duration=10,
+			hardpoint="hprightconnect_cigarette",
+			parent_hardpoint="hprightconnect"
+		}
+	},
+	{
+		10,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cigarette",
+			"Marker_Cigarette_floor"
+		},
+		{
+			duration=0.5,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			}
+		}
+	},
+	
+	{
+		12,
+		START_MOTION,
+		{"Syd"},
+		{animation="Sc_MLBODY_STND_WALK_TRNS_270LV_XA_02",
+		 duration=100, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		14,
+		START_MOTION,
+		{"Syd"},
+		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 duration=100, time_scale=1, weight=1, heading=-1}
+	},
+	{
+		15.3,
+		START_MOTION,
+		{"Syd"},
+		{animation="Sc_MLBODY_WALK_STND_TRNS_000LV_XA_02",
+		 duration=100, time_scale=1, weight=1, heading=-1}
+	},
+	{
+		17.5,
+		START_MOTION,
+		{"Syd"},
+		{animation="Sc_MLBODY_STND_TURN_270LV_XA_04",
+		 duration=100, time_scale=1, weight=1, heading=-1}
+	},
+	{
+		22,
+		START_MOTION,
+		{"Syd"},
+		{animation="Sc_MLBODY_STND_WALK_TRNS_270LV_XA_02",
+		 duration=100, time_scale=1, weight=1, heading=-1}
+	},
+	{
+		24,
+		START_MOTION,
+		{"Syd"},
+		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 duration=100, time_scale=1, weight=1, heading=-1}
+	},
+	{
+		25.3,
+		START_MOTION,
+		{"Syd"},
+		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 duration=100, time_scale=1, weight=1, heading=-1}
+	},
+	
+	{
+		16,
+		START_IK,
+		{
+			"Syd",
+			"Marker_Outdoor"
+		},
+		{
+			duration=7,
+			end_effector="Body_Head",
+			count_to_root=1,
+			target_part="",
+			target_type=ROOT,
+			damping=1,
+			up=NEG_Y_AXIS,
+			front=Z_AXIS,
+			point_at=1,
+			move_to=0,
+			transition_duration=2,
+			event_flags=128
+		}
+	},
+		
+	
+	{0, START_SOUND, {"ambience_hall"}, {duration=25, flags=LOOP}},
+	
+	{0.7, START_SOUND, {"stepX1"}, {duration=5}},
+	{1.4, START_SOUND, {"stepX2"}, {duration=5}},
+	{2.1, START_SOUND, {"stepX3"}, {duration=5}},
+	{2.8, START_SOUND, {"stepX2"}, {duration=5}},
+	{3.5, START_SOUND, {"stepX1"}, {duration=5}},
+	{4.2, START_SOUND, {"stepX3"}, {duration=5}},
+	{4.9, START_SOUND, {"stepX2"}, {duration=5}},
+	{5.6, START_SOUND, {"stepX1"}, {duration=5}},
+	{6.3, START_SOUND, {"stepX3"}, {duration=5}},
+	
+	{13.0, START_SOUND, {"step1"}, {duration=5}},
+	{13.7, START_SOUND, {"step1"}, {duration=5}},
+	{14.4, START_SOUND, {"step2"}, {duration=5}},
+	{15.1, START_SOUND, {"step3"}, {duration=5}},
+	{15.8, START_SOUND, {"step2"}, {duration=5}},
+	{16.5, START_SOUND, {"step1"}, {duration=5}},
+	{17.2, START_SOUND, {"step3"}, {duration=5}},
+	
+	{19.0, START_SOUND, {"step3"}, {duration=5}},
+	{20.2, START_SOUND, {"step1"}, {duration=5}},
+
+	{23.0, START_SOUND, {"step2"}, {duration=5}},
+	{23.7, START_SOUND, {"step1"}, {duration=5}},
+	{24.4, START_SOUND, {"step2"}, {duration=5}},
+	{25.1, START_SOUND, {"step3"}, {duration=5}},
+	{25.8, START_SOUND, {"step2"}, {duration=5}},
+	{26.5, START_SOUND, {"step1"}, {duration=5}},
+	{27.2, START_SOUND, {"step3"}, {duration=5}},
+}
+
+--smoking
+--Sc_SPCBODY_s002x_syd_XE_STND_000LV_11
+--look left
+--Sc_MLBODY_STND_LOOK_LEFT_225LV_A_04
+--just look
+--Sc_MLBODY_STND_TWSTU_LOOK_225LV_XA_02
+--180 deg
+--Sc_MLBODY_STND_TURN_RGHT_180LV_XA_03
+--go left
+--Sc_MLBODY_STND_WALK_TRNS_090LV_XA_02
+--go right
+--Sc_MLBODY_STND_WALK_TRNS_270LV_XA_02

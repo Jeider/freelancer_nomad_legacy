@@ -1,0 +1,10 @@
+rh_grp_main_defend   >> gun_elite, gun_fighter, missile_fighter
+rh_grp_main_scout    >> gun_elite, gun_elite >>   missile_elite, gun_fighter
+rh_grp_main_trade    >> freighter, gun_elite, missile_elite, gun_fighter
+rh_grp_main_cruiser  >> cruiser
+rh_grp_main_gunboat  >> gunship
+rh_grp_main_elite2   >> elite2, elite2
+bh_grp_rh_scout	     >> gun_fighter2, missile_fighter2, gun_fighter
+bh_grp_rh_trade      >> ge_armored, missile_fighter2, gun_elite2
+tr_grp_rh_transport  >> transport, gun_fighter2, missile_fighter2, missile_elite, gun_fighter
+tr_grp_rh_freighter  >> freighter, freighter, gun_fighter2, gun_fighter2, missile_elite, gun_fighter

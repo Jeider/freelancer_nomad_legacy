@@ -1,0 +1,277 @@
+duration=1500
+
+entities={
+	{
+		entity_name="scene_intro1",
+		type=SCENE,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				0,
+				0,
+				0
+			},
+			orient={
+				{
+					1,
+					0,
+					0
+				},
+				{
+					0,
+					1,
+					0
+				},
+				{
+					0,
+					0,
+					1
+				}
+			}
+		},
+		up=Y_AXIS,
+		front=Z_AXIS,
+		ambient={
+			128,
+			128,
+			128
+		}
+	},
+	{
+		entity_name="Monitor_1",
+		type=MONITOR,
+		template_name="",
+		template_id=0
+	},
+
+
+	{
+		entity_name="cam",
+		type=CAMERA,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				-32300, 0, -32450
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		cameraprops={
+			fovh=25,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_path",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				-32900, 0, -32400
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		}
+	},
+	{
+		entity_name="cam_path2",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				-32900, 0, -32000
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		}
+	},
+	
+	
+	{
+		entity_name="cam_marker",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				-32300, 0, -32000
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		}
+	},
+	{
+		entity_name="cam_marker_path",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				-33000, 0, -32000
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		}
+	},
+	{
+		entity_name="main_object",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				0,
+				0,
+				0
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		userprops={
+			main_object="main_object"
+		}
+	},
+
+}
+
+events={
+	{
+		0,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam"
+		}
+	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam",
+			"cam_marker"
+		},
+		{
+			duration=300,
+			offset={
+				0,
+				0,
+				0
+			},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="",
+			target_type=ROOT,
+			flags=LOOK_AT
+		}
+	},
+	{
+		0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam",
+			"cam_path"
+		},
+		{
+			duration=10,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={pos={0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	-- {
+		-- 11,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "cam",
+			-- "cam_path2"
+		-- },
+		-- {
+			-- duration=5,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- spatialprops={pos={0,0,0}},
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			-- pcurve_period=-1000
+		-- }
+	-- },
+	-- {
+		-- 11,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "cam_marker",
+			-- "main_object"
+		-- },
+		-- {
+			-- duration=2,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- spatialprops={pos={0,0,0}},
+		-- }
+	-- },
+	-- {
+		-- 11,
+		-- ATTACH_ENTITY,
+		-- {
+			-- "cam_marker",
+			-- "main_object"
+		-- },
+		-- {
+			-- duration=60,
+			-- offset={
+				-- 0,
+				-- 0,
+				-- 0
+			-- },
+			-- up=Y_AXIS,
+			-- front=NEG_Z_AXIS,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- flags=POSITION,
+			-- trans_time=3
+		-- }
+	-- },
+		
+}
+
+

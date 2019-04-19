@@ -1,0 +1,25 @@
+Friendly:
+
+Bretonia Elite
+2x elite
+
+Bretonia Fighter
+3x fighters
+
+Bretonia Destroyer
+1x destroyer
+
+
+
+Enemy
+
+Pirate Fighters
+3x Pirate Br Eagle
+
+Pirate Freighter convoy
+1x Clydesdale
+2x Pirate Br Fighter
+
+Pirate Bomber
+2x Pirate Br Elite (bomber)
+

@@ -1,0 +1,223 @@
+duration=300
+
+entities={
+	{
+		entity_name="Scene_m06_convoy_decision",
+		type=SCENE,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		up=Y_AXIS,
+		front=Z_AXIS,
+		ambient={128,128,128}
+	},
+	
+	{
+		entity_name="ambi_LtG03_Inf_Steel_9oc",
+		type=LIGHT,
+		template_name="",
+		lt_grp=3,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={
+				18,
+				1,
+				3.5
+			},
+			orient={
+				{
+					0.252562,
+					0,
+					-0.967581
+				},
+				{
+					-0.292028,
+					0.953367,
+					-0.076226
+				},
+				{
+					0.92246,
+					0.301813,
+					0.240785
+				}
+			}
+		},
+		lightprops={
+			on=Y,
+			color={
+				255,
+				255,
+				255
+			},
+			diffuse={
+				0.411765,
+				0.4470590000000001,
+				0.494118
+			},
+			specular={
+				0,
+				0,
+				0
+			},
+			ambient={
+				0,
+				0,
+				0
+			},
+			direction={
+				-1,
+				0,
+				0
+			},
+			range=2000,
+			cutoff=98.999977,
+			type=L_DIRECT,
+			theta=90,
+			atten={
+				1,
+				0,
+				0
+			}
+		}
+	},
+	{
+		entity_name="Monitor_1",
+		type=MONITOR,template_name="",lt_grp=0,srt_grp=0,usr_flg=0
+	},
+
+	{
+		entity_name="Camera_0",
+		type=CAMERA,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={20, 2, 3},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		cameraprops={
+			fovh=35,
+			hvaspect=1.333333,
+			nearplane=0.1,
+			farplane=100000
+		}
+	},
+	{
+		entity_name="marker_camera",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={15, 1, 5},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		}
+	},
+	{
+		entity_name="Syd",
+		type=DEFORMABLE,
+		template_name="syd",
+		lt_grp=3,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={16.7, 0, 5},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		compoundprops={
+			floor_height=0
+		},
+		userprops={
+			actor="Syd",
+			category="Character"
+		}
+	},
+	
+	{
+		entity_name="Gunner_Leader",
+		type=DEFORMABLE,
+		template_name="m06_gunner_leader",
+		lt_grp=3,srt_grp=0,usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={16.7, 0, 3},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		},
+		compoundprops={floor_height=0},
+		userprops={
+			actor="Gunner1",
+			category="Character"
+		}
+	},
+	
+}
+
+events={
+	{
+		0,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"Camera_0"
+		}
+	},
+	
+	{
+		0,
+		START_MOTION,
+		{"Syd"},
+		{animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+		 duration=5, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		0,
+		START_MOTION,
+		{"Gunner_Leader"},
+		{animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+		 duration=5, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"Camera_0",
+			"marker_camera"
+		},
+		{
+			duration=100,
+			offset={0,0,0},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="",
+			target_type=ROOT,
+			flags=LOOK_AT
+		}
+	},
+	
+}
+
+--Sc_MLBODY_STND_SALUT_000LV_XA_03
+--Sc_MLBODY_STND_IDLE_000LV_xa_04

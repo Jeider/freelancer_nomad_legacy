@@ -1,0 +1,144 @@
+duration=10000
+
+entities={
+	
+	
+	
+	{
+		entity_name="Ambi_Layer_Terrain_BackgroundX1",
+		type=SCENE,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={
+				0,
+				0,
+				0
+			},
+			orient={
+				{
+					1,
+					0,
+					0
+				},
+				{
+					0,
+					1,
+					0
+				},
+				{
+					0,
+					0,
+					1
+				}
+			}
+		},
+		up=Y_AXIS,
+		front=Z_AXIS,
+		ambient={
+			0,
+			0,
+			0
+		}
+	},
+
+	
+	
+	{
+		entity_name="banner01",
+		type=COMPOUND,
+		template_name="$terrain_mdm",
+		lt_grp=0,srt_grp=0,usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				0.860000,
+				1.740000,
+				9.865000
+			},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		},
+		userprops={
+			category="Prop"
+		}
+	},
+	{
+		entity_name="banner02",
+		type=COMPOUND,
+		template_name="$terrain_lrg",
+		lt_grp=0,srt_grp=0,usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				-0.860000,
+				1.740000,
+				9.865000
+			},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		},
+		userprops={
+			category="Prop"
+		}
+	},
+	{
+		entity_name="banner03",
+		type=COMPOUND,
+		template_name="$terrain_mdm",
+		lt_grp=0,srt_grp=0,usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				0.860000,
+				1.740000,
+				-9.865000
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		userprops={
+			category="Prop"
+		}
+	},
+	{
+		entity_name="banner04",
+		type=COMPOUND,
+		template_name="$terrain_lrg",
+		lt_grp=0,srt_grp=0,usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				-0.860000,
+				1.740000,
+				-9.865000
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		userprops={
+			category="Prop"
+		}
+	},
+}
+
+events={
+	
+
+}
+
+

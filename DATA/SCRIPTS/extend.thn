@@ -1,0 +1,109 @@
+duration=19.25
+
+entities={
+	{
+		entity_name="ship_l_elite_Juni",
+		type=COMPOUND,
+		template_name="PlayerShip",
+		lt_grp=3,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				0,
+				10,
+				10
+			},
+			orient={
+				{
+					0.975765,
+					0,
+					-0.21882
+				},
+				{
+					0,
+					1,
+					0
+				},
+				{
+					0.21882,
+					0,
+					0.975765
+				}
+			}
+		},
+		userprops={
+			category="Spaceship"
+		}
+	},
+	{
+		spatialprops={
+			orient={
+				{
+					0.975765,
+					0,
+					-0.21882
+				},
+				{
+					0,
+					1,
+					0
+				},
+				{
+					0.21882,
+					0,
+					0.975765
+				}
+			},
+			pos={
+				0,
+				10,
+				-10
+			}
+		},
+		usr_flg=0,
+		template_name="rtcprop_juni_elite",
+		type=1,
+		lt_grp=3,
+		userprops={
+			category="Spaceship",
+			running_lights="true"
+		},
+		srt_grp=0,
+		entity_name="xPlayerShip",
+		flags=4
+	},
+}
+events={
+	{
+		0,
+		START_MOTION,
+		{
+			"xPlayerShip"
+		},
+		{
+			animation="Sc_extend wing",
+			duration=30,
+			time_scale=1,
+			weight=1,
+			trans_scale=1
+		}
+	},
+	{
+		0,
+		START_MOTION,
+		{
+			"ship_l_elite_Juni"
+		},
+		{
+			animation="Sc_extend wing",
+			duration=30,
+			time_scale=1,
+			weight=1,
+			trans_scale=1
+		}
+	},
+
+
+}
