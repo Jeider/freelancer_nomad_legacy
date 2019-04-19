@@ -1,0 +1,53 @@
+
+[Object]
+nickname = ku_tgk_space_arch_chunk1a_1
+pos = -36645, 800, 11560
+rotate = 0, -70, 0
+Archetype = space_arch_chunk1a
+
+[Object]
+nickname = ku_tgk_space_arch_chunk1b_1
+pos = -30552, 1200, 6758
+rotate = 0, -60, 0
+Archetype = space_arch_chunk1b
+
+[Object]
+nickname = ku_tgk_space_arch_chunk2a_1
+pos = -44163, 1000, 22818
+rotate = 20, -20, 0
+Archetype = space_arch_chunk2a
+
+[Object]
+nickname = ku_tgk_space_arch_chunk2b_1
+pos = -33067, 500, 15756
+rotate = -110, -49, 102
+Archetype = space_arch_chunk2b
+
+[Object]
+nickname = ku_tgk_space_arch_chunk3a_1
+pos = -39265, 1000, 15147
+rotate = 30, 60, 0
+Archetype = space_arch_chunk3a
+
+[Object]
+nickname = ku_tgk_space_arch_chunk3b_1
+pos = -40084, 1000, 25233
+rotate = 0, -20, 0
+Archetype = space_arch_chunk3b
+
+[Object]
+nickname = ku_tgk_space_arch_chunk3c_1
+pos = -45852, 1000, 9329
+Archetype = space_arch_chunk3c
+
+[Object]
+nickname = ku_tgk_space_arch_chunk3d_1
+pos = -36382, 1000, 17292
+rotate = 0, -20, 0
+Archetype = space_arch_chunk3d
+
+[Object]
+nickname = ku_tgk_space_arch_chunk3e_1
+pos = -44401, 1000, 18303
+rotate = 115, -20, 0
+Archetype = space_arch_chunk3e
