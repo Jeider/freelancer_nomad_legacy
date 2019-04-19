@@ -1,0 +1,6 @@
+#Automatically generated. Do not edit!
+UIWinObject AccountBoxShort -.316731770833333  .3056640625  .625  .559895833333333 -1.0000 interface\intro\objects\MULTI_AccountBoxShort.cmp 
+UITextMsgButton SelectServer  .208984375 -.40559375  .3125  6.51041666666667E-02 "Select Server" 1002.0000 "<default>"  393220 
+UITextMsgButton Back -.507161458333333 -.405598958333333  .3125  6.51041666666667E-02 "< Back" 1001.0000 "<default>"  393251 
+UITextEdit AccountID -.2646484375 -.1435546875  .517578125  6.51041666666667E-02 ""
+UIRichTextWin Explain -.297200520833333  .271484375  .563151041666667  .400390625 
