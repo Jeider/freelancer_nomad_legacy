@@ -1,0 +1,105 @@
+[Player]
+name = %%NAME%%
+;initial_rep = li_n_grp
+rank = 0
+
+money = 50000
+;voice = %%VOICE%%
+;All must be Trent!
+voice = trent_voice
+
+costume = %%BASE_COSTUME%%
+com_costume = %%COMM_COSTUME%%
+
+system = sig13
+base = sig13_01_base
+
+house = 0, li_n_grp
+house = 0, li_lsf_grp
+house = 0, li_p_grp
+house = 0, br_n_grp
+house = 0, br_p_grp
+house = 0, ku_n_grp
+house = 0, ku_p_grp
+house = 0, rh_n_grp
+house = 0, rh_p_grp
+house = 0, co_alg_grp
+house = 0, co_be_grp
+house = 0, br_m_grp
+house = 0, co_nws_grp
+house = 0, co_hsp_grp
+house = 0, co_ic_grp
+house = 0, co_khc_grp
+house = 0, co_kt_grp
+house = 0, rh_m_grp
+house = 0, co_me_grp
+house = 0, co_ni_grp
+house = 0, co_os_grp
+house = 0, co_rs_grp
+house = 0, co_shi_grp
+house = 0, co_ss_grp
+house = 0, co_ti_grp
+house = 0, co_vr_grp
+house = 0, fc_bd_grp
+house = 0, fc_b_grp
+house = 0, fc_c_grp
+house = 0, fc_fa_grp
+house = 0, fc_g_grp
+house = 0, fc_gc_grp
+house = 0, fc_h_grp
+house = 0, fc_j_grp
+house = 0, fc_lh_grp
+house = 0, fc_lr_grp
+house = 0, fc_lwb_grp
+house = 0, fc_m_grp
+house = 0, fc_ou_grp
+house = 0, fc_rh_grp
+house = 0, fc_or_grp
+house = 0, fc_u_grp
+house = 0, fc_x_grp
+house = 0, gd_gm_grp
+house = 0, fc_uk_grp
+house = 0, fc_n_grp
+house = 0, fc_ln_grp
+house = 0, fc_kn_grp
+house = 0, fc_rn_grp
+house = 0, fc_ouk_grp
+house = 0, fc_q_grp
+house = 0, fc_f_grp
+house = 0, gd_im_grp
+house = 0, gd_z_grp
+house = 0, gd_bh_grp
+
+
+;ROWER TEST REPUTATION
+house = 0, rh_grp
+house = 0.3, rc_grp
+house = -0.3, rx_grp
+house = 0, li_grp
+house = 0.3, lc_grp
+house = -0.3, lx_grp
+house = 0, br_grp
+house = 0, bc_grp
+house = -0.3, bx_grp
+house = 0, ku_grp
+house = 0.3, kc_grp
+house = -0.3, kx_grp
+house = -0.65, co_grp
+house = -0.3, edv_grp
+house = 0, bh_grp
+house = 0, tr_grp
+house = 0, pi_grp
+house = -0.65, cx_grp
+house = -0.65, sl_grp
+house = -0.65, no_grp
+house = 0, ordef_grp
+house = 0, orres_grp
+house = -0.65, nokr_grp
+house = 0, nomk_grp
+house = 0, s22_fp_grp
+house = 0, t4_fp_grp
+house = 0, t29_fp_grp
+house = 0, rber_fp_grp
+
+%%PACKAGE%%
+

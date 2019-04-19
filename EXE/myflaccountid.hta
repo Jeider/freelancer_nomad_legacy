@@ -1,0 +1,60 @@
+<HTML>
+<!-- Jan 30, 2003 -->
+<HEAD>
+	<meta name=vs_targetSchema content="http://schemas.microsoft.com/intellisense/ie5">
+<HTA:APPLICATION 
+	ID="oHTA" 
+	APPLICATIONNAME="MyFLMPKey" 
+	SINGLEINSTANCE="yes" 
+	CONTEXTMENU="no" 
+	MAXIMIZEBUTTON="no" 
+	ICON="help.ico" 
+>
+	<SCRIPT language="VBScript">
+		On Error Resume Next
+		installKey=""
+		statusText=""
+		regKey="HKEY_CURRENT_USER\Software\Microsoft\Microsoft Games\Freelancer\1.0\"
+		regKeyBeta="HKEY_CURRENT_USER\Software\Microsoft\Microsoft Games\Freelancer Beta\3.0\"
+
+		Sub window_OnLoad
+			Set WS=CreateObject("Wscript.Shell")
+				On Error Resume Next
+				installKey=WS.RegRead(regKey&"InstallKey")
+				statusText = "Your account is properly installed"
+				If Err Then
+					Err=false
+					installKey = WS.RegRead(regKeyBeta&"InstallKey")
+					if Err Then
+						installKey = "<Not found>"
+						statusText = "You do not have a Freelancer multiplayer account"
+					Else
+						HEADER.innerText="My Freelancer Beta MP Account ID"						
+					End If
+				End If
+			Set WS=Nothing
+
+			INSTKEY.innerText=UCase(installKey)
+			INSTSTATUS.innerText=statusText
+			window.resizeto 600, 300
+		End Sub
+		
+		Sub DOPRINT_OnClick
+			window.print()
+		End Sub
+	</SCRIPT>
+	<TITLE>My Freelancer Multiplayer Account ID</TITLE>
+</HEAD>
+<BODY BACKGROUND="BackgroundPattern.bmp" style="color: #87C3E0; font-family: Agency FB" SCROLL="no" bgcolor=Black>
+<font color="#87C3E0">
+<H1 align="center" ID="HEADER">My <I>Freelancer</I> MP Account ID</H1>
+<H2 align="center" ID="INSTKEY"></H2>
+<p>
+This is your account ID. <b>Don't lose it!</b> If you lose it, you will lose all of the characters on all of the servers
+on which you have played <I>Freelancer</I>.
+</p>
+<H3 align="center" ID="INSTSTATUS"></H3>
+<p align="center"><BUTTON id="DOPRINT">Print My Account ID</BUTTON></p>
+</font>
+</BODY>
+</HTML>

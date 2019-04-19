@@ -1,0 +1,77 @@
+<HTML>
+<!-- Jan 30, 2003 -->
+<HEAD>
+	<meta name=vs_targetSchema content="http://schemas.microsoft.com/intellisense/ie5">
+<HTA:APPLICATION
+	ID="oHTA"
+	APPLICATIONNAME="MyFLMPKey"
+	SINGLEINSTANCE="yes"
+	CONTEXTMENU="no" 
+	MAXIMIZEBUTTON="no" 
+>
+	<SCRIPT language="VBScript">
+		On Error Resume Next
+		Sub window_OnLoad
+			window.resizeto 600, 450
+			IPADDRESS.focus()
+			PORT.value = "2302"
+		End Sub
+		
+		Sub ADDSERVER_OnClick
+			if (PORT.value = "") then PORT.value = "2302"
+			FLOPTIONS.innerText = FLOPTIONS.innerText & " -s" & IPADDRESS.value & ":" & PORT.value
+			IPADDRESS.value = ""
+			PORT.value = "2302"
+			IPADDRESS.focus()
+		End Sub	
+		
+		Sub LAUNCH_OnClick
+			Set WS=CreateObject("Wscript.Shell")
+				On Error Resume Next
+				regAppKey="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Games\Freelancer\1.0\"
+				appPath=WS.RegRead(regAppKey&"AppPath")
+				If Err Then
+					Err=false
+					'Assume the current directory
+					appPath="Freelancer.exe"
+				Else
+					'Put in the rest of the path
+					appPath=""""&appPath&"\EXE\Freelancer.exe"""
+				End If
+				result=WS.Run(appPath & FLOPTIONS.innerText, 1, 0)
+			Set WS=Nothing
+			Window.close()
+		End Sub
+	</SCRIPT>
+	<title>Direct Freelancer Server Connection</title>
+</HEAD>
+<BODY BACKGROUND="BackgroundPattern.bmp" style="color: #87C3E0; font-family: Agency FB" SCROLL="no">
+<font color="#87C3E0">
+<H1 align="center" ID="HEADER">Connect to a <I>Freelancer</I> Server via IP Address</H1>
+<p>
+This feature allows you to connect to a Freelancer server without having to connect to the global server.
+This is useful for when the server admin does not want to advertise the server to the rest of the Internet,
+or when the global server is down.
+</p>
+<p>
+To add an IP address and port to the list: enter the address and port below, then click the "Add Server" button.
+</p>
+<p>
+Once you have entered all of the IP addresses you want, click the "Launch Freelancer" button.
+</p>
+<table align=center>
+<tr><td align="right">IP Address:</td><td><INPUT type="text" ID="IPADDRESS" NAME="IPADDRESS"/></td></tr>
+<tr><td align="right">Port:</td><td><INPUT type="text" ID="PORT" NAME="PORT"/></td></tr>
+</table>
+<p align="center">
+	<BUTTON id="ADDSERVER">Add Server</BUTTON>
+</p>
+<p>
+Command line: Freelancer.exe <b id="FLOPTIONS"></b>
+</p>
+<p align="center">
+  <BUTTON id="LAUNCH">Launch Freelancer</BUTTON>
+</p>
+</font>
+</BODY>
+</HTML>
