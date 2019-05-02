@@ -1,0 +1,159 @@
+--FACTIONS AND REPUTATIONS--
+
+Фракции делятся на 2 типа: ГЛОБАЛЬНЫЕ и ЛОКАЛЬНЫЕ
+
+К ГЛОБАЛЬНЫМ фракциям относят ТОРГОВЦЕВ, ПИРАТОВ и НАЕМНИКОВ. Вы можете встретить их в большинстве систем сектора Сириуса.
+
+К ЛОКАЛЬНЫМ фракциям относят те фракции, которые привязаны к одной из четырех локаций: Рейнланд, Либерти, Бретония и Кусари. Внутри каждой из этих локаций есть местная БАЗОВАЯ, ТОРГОВАЯ и ПИРАТСКАЯ фракция.
+
+Есть еще специальная локация - ИСПАНИЯ. Эта территория настолько большая, что правила форм
+
+-- SHIP CLASSES -- raise on m1
+
+Все корабли в моде разделены по фракциям. Корабль внутри фракции получает специальные фракционные штрафы и бонусы. Например, все корабли Рейнланда имеют пониженную массу, но зато получают заметный штраф к объему трюма. 
+
+
+--EQUPEMNT-- raise on m1 (after get ship)
+
+ОБОРУДОВАНИЕ
+
+В этой подсказке я постараюсь объяснить местную классификацию оборудования. Чтобы было проще, будем проходить по каждому типу и объяснять его подробно.
+
+БОЕВЫЕ УСТАНОВКИ
+
+Все виды пушек можно установить практически на любой корабль, за исключением специальных элитных пушек (они предназначены только для Элитныъ 
+
+
+
+Вы можете менять любую установку или систему своего корабля. Можно менять двигатель, генератор, устанавливать усиления брони и т.д.
+
+Оборудование делится на два типа: ФРАКЦИОННОЕ и ОБЩЕЕ
+
+Оборудование общего типа имеет мало моделей и они в основном отличаются мощность или уникальными особенностями. 
+
+Есть фракционное и общее оборудование.
+Общее оборудование имеет небольшое количество моделей и обычно различается по мощности или уникальным особенностям.
+Фракционное оборудование 
+
+
+
+
+
+--MANEUVERS-- raise on m1 (after launch)
+
+
+
+--EXPLORE AND SECRETS--
+
+--MINING--
+
+
+
+Has problem in mission, bag founded or you just want to write review about mod? You can connect with author by links in readme file inside archive with mod files.
+
+WARNING! Mod is not compatible with another mods!
+
+CURRENT DEVELOPMENT PROGRESS: 75%
+
+Mod released in protoype. It's released with contains not full completed Sirius Sector and 6 storyline missions.
+
+ABOUT BALANCE
+
+Mod has different balance of ships and equipment. All equipment associated with 5 factions: Rheinland, Liberty, Bretonia, Kusari and Corsairs. All this faction has same ships and equipment, but with many diffirences. Anything has bonuses and penalties.
+
+EQUIPMENT
+
+You can change anything on your ship. Engine, powerplant, scanner and more.
+
+All equipment is more efficient with every next level. For example, with first engine you ship is too slow. You can upgrade your engine to get maximum speed. 
+
+BE CAREFUL - AFTERBURN IS NOT UNLIMITED
+
+Speeds changed in mod. All base speed was moved from thruster to main engine. Thruster now is just temporary raise your speed. Thrust capacity has very long regeneration. You must use your thurster very careful. Thrust capacity raising together with upgrading of your powerplant.
+
+SHIP CLASSES
+
+As we know all ships associated with 5 factions. But what about bounty hunters and civilian ships? Was chosen best ships of it and associated with one of 5 factions. All another ships was removed. Eagle, Sabre, Hammerhead and Titan placed between Interceptor (for example, Patriot and Elite Fighter class (for example, Defender). But it's not mean "this ships is bad". All ships use same equipment. Interceptor and Elite Fighter can mount best engine and best powerplant. But this ships has differences in base hold size, armor, manueverment and  mounting of some types of weapons.
+
+SIRIUS SECTOR
+
+Universe has difference, but not so big. On some bases you only can buy commodities and can't repair. On prison you can sell commodity by random prices. You can dock on military bases. To dock with it you must to have special access keys.
+
+NEW BUTTONS
+
+Every Fighter (Sabre) and Elite Fighter (Valkyrie) can exptend our wing. It's doing by SECONDARY cruise start button (combination must be with Ctrl).
+
+In game you can mount Cloaking devices (only on CM hardpoints). Invisibility toggling by SECONDARY tractor all loot button (combination must be with Ctrl).
+
+
+That's all. Good luck in space!
+
+
+Возник баг, произошла проблема в ходе миссии, или хочется просто оставить отзыв о моде? В папке с модом лежит readme-файл, в котором есть ссылка на тему на конференции elite-games.ru и группу во вконтакте, в которых можно связаться с автором.
+
+ВНИМАНИЕ! Проект не совместим с другими модами и, следственно, баги, связанные с совмещением модов, решаться не будут.
+
+ТЕКУЩИЙ СТАТУС МОДА
+
+Прогресс: 75 процентов
+
+Мод выпущен в виде прототипа. Игроку доступен Сектор Сириуса в базовом виде и с 6 сюжетными миссиями в комплекте.
+
+БАЛАНС
+
+Мод использует баланс оборудования и кораблей, отличный от оригинального фриловского. Начнем с того, что большая часть оборудования приписана всего к 5 фракциям: Рейнланд, Либерти, Бретония, Кусари и Корсары. У всех этих фракций одинаковый набор оборудования и кораблей-истребителей, которые отличаются набором преимуществ и недостатков. Внимательно читайте описания, чтобы не ошибиться.
+
+ОБОРУДОВАНИЕ
+
+Вы можете менять практически всё оборудование корабля, в том числе и двигатель, генератор, радар и тому подобное. Из-за этого поменялась модель развития корабля. Куда большее значение имеет то, что у вас внутри корабля, чем то, на каком корабле вы летаете. 
+
+Всё оборудование прогрессирует с новым уровнем. Поэтому не удивляйтесь, что ваш первый корабль очень медленно летает. Это из-за того, что у него установлен двигатель базового уровня. В дальнейшем вы сможете устанавливать двигатели больших уровней и таким образом значительно повысите максимальную скорость корабля. 
+
+БУДЬТЕ ВНИМАТЕЛЬНЫ - ФОРСАЖ ТЕПЕРЬ НЕБЕСКОНЕЧЕН
+
+Это самое главное уточнение. В моде изменена система скоростей. Основная часть скорости корабля перенесена из форсажа в двигатель корабля. Форсаж теперь является просто временным ускорителем. И временным в прямом смысле слова - он практически не восстанавливается. Поэтому будьте внимательны и если чувствуете, что вашему кораблю недостаточно скорости, то либо покупайте более мощный двигатель, либо покупайте корабль, на который можно поставить 2 форсажа.
+
+КЛАССЫ ИСТРЕБИТЕЛЕЙ
+
+Я уже писал, что корабли теперь поделены всего по 5 фракциям. А что же стало с гражданскими, изгойскими кораблями и кораблями охотников за головами? Был выбран самый топовый из этих кораблей и отдан одной из фракций. Остальные корабли были выведены из баланса. Орел, Сабля, Хаммерхед и Титан (у корсар основные корабли - корабли бродяг Либерти из обычного фрила) занимают промежуточное место между классом Перехватчик (Патриот) и Элитный истребитель (Защитник). Но это не значит они совсем слабые, ведь, как уже сказано ранее, основный акцент в балансе перенесен в сторону оборудования и Сабля с элитным обвесом будет сильнее и быстрее Валькирии с базовым оборудованием.
+
+СЕКТОР СИРИУСА
+
+Тут особо в подробности вдаваться не буду. Главные отличия от оригинала - теперь есть чисто профильные базы, на которых можно только покупать товары и нельзя даже отремонтироваться. Некоторые системы и базы теперь заблокированы, но не стоит отчаиваться. Если у вас есть нужный ключ доступа, то Access Denied вам говорить не будут. 
+ПРИМЕЧАНИЕ: корабль Клинок не может устанавливать ключи доступа.
+
+НОВЫЕ КНОПКИ
+
+Все корабли класса Истребитель и Элитный истребитель могут складывать крылья. Это делается ВТОРИЧНОЙ кнопкой активации круиза.
+
+Если у вас установлено устройство невидимости, то она включается/выключается ВТОРИЧНОЙ кнопкой сбора лута.
+
+Эти кнопки так же дополнительно помечены в интерфейсе их редактирования.
+
+На этом всё. Удачных полетов!
+
+
+
+
+
+
+
+
+
+-- ABOUT CURRENT MOD SITUATION -- 
+-- EQUIPMENT --
+-- SHIPS --
+-- UNIVERSE -- 
+-- EXPLORE --
+-- MINING --
+
+
+
+
+
+
+
+
+
+
+
