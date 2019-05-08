@@ -1,4 +1,4 @@
-duration=10000
+duration=193
 
 entities={
 	{
@@ -516,13 +516,6 @@ entities={
 		userprops={category="Prop"}
 	},
 	{
-		entity_name="subtitles_m02_offer14a",
-		template_name="subtitles_m02_offer14a",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},
-	{
 		entity_name="subtitles_m02_offer14",
 		template_name="subtitles_m02_offer14",
 		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
@@ -651,6 +644,41 @@ entities={
 	{
 		entity_name="subtitles_m02_offer32",
 		template_name="subtitles_m02_offer32",
+		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		userprops={category="Prop"}
+	},
+	{
+		entity_name="subtitles_m02_offer33",
+		template_name="subtitles_m02_offer33",
+		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		userprops={category="Prop"}
+	},
+	{
+		entity_name="subtitles_m02_offer34",
+		template_name="subtitles_m02_offer34",
+		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		userprops={category="Prop"}
+	},
+	{
+		entity_name="subtitles_m02_offer35",
+		template_name="subtitles_m02_offer35",
+		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		userprops={category="Prop"}
+	},
+	{
+		entity_name="subtitles_m02_offer36",
+		template_name="subtitles_m02_offer36",
+		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		userprops={category="Prop"}
+	},
+	{
+		entity_name="subtitles_m02_offer44",
+		template_name="subtitles_m02_offer44",
 		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
@@ -927,6 +955,42 @@ entities={
 				-0.8,
 				1.25,
 				1.7
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	{
+		entity_name="head_wilham_left",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-0.8,
+				1.25,
+				1.5
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	{
+		entity_name="head_wilham_right",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-0.8,
+				1.25,
+				1.9
 			},
 			orient={
 				{1,0,0},
@@ -1770,6 +1834,24 @@ entities={
 		}
 	},
 	{
+		entity_name="cam_wilham_near_pos2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-2.5,
+				1.2,
+				2.15
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	{
 		entity_name="cam_wilham_near_point",
 		type=MARKER,
 		template_name="",
@@ -2004,6 +2086,206 @@ entities={
 	},
 	{
 		entity_name="cam_wilham_msn1_point3",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-0.8,
+				1.0,
+				1.7
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	
+	
+	{
+		entity_name="cam_wilham_middle",
+		type=CAMERA,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				-3,
+				1.25,
+				2.25
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+				
+			}
+		},
+		cameraprops={
+			fovh=25,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_wilham_middle_point",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-0.8,
+				1.0,
+				1.5
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	
+	
+	
+	{
+		entity_name="cam_wilham_msn2",
+		type=CAMERA,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				-2.5,
+				1.15,
+				1.5
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+				
+			}
+		},
+		cameraprops={
+			fovh=25,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_wilham_msn2_pos2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-2.5,
+				1.2,
+				2.1
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	{
+		entity_name="cam_wilham_msn2_point",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-0.8,
+				1.0,
+				1.7
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	{
+		entity_name="cam_wilham_msn2_point2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-0.8,
+				1.0,
+				1.5
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	
+	
+	
+	{
+		entity_name="cam_wilham_msn3",
+		type=CAMERA,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				-2.3,
+				1.2,
+				1.3
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+				
+			}
+		},
+		cameraprops={
+			fovh=25,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_wilham_msn3_point",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-0.8,
+				1.0,
+				1.55
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	{
+		entity_name="cam_wilham_msn3_point2",
 		type=MARKER,
 		template_name="",
 		template_id=0,
@@ -2260,6 +2542,57 @@ events={
 		{
 			"cam_wilham_msn1",
 			"cam_wilham_msn1_point"
+		},
+		{
+			duration=300,
+			offset={0,0,0},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="",
+			target_type=ROOT,
+			flags=LOOK_AT
+		}
+	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_wilham_middle",
+			"cam_wilham_middle_point"
+		},
+		{
+			duration=300,
+			offset={0,0,0},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="",
+			target_type=ROOT,
+			flags=LOOK_AT
+		}
+	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_wilham_msn2",
+			"cam_wilham_msn2_point"
+		},
+		{
+			duration=300,
+			offset={0,0,0},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="",
+			target_type=ROOT,
+			flags=LOOK_AT
+		}
+	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_wilham_msn3",
+			"cam_wilham_msn3_point"
 		},
 		{
 			duration=300,
@@ -3391,7 +3724,7 @@ events={
 			"cam_wilham_near"
 		},
 		{
-			duration=6, offset={0, -0.1,  -0.65},
+			duration=6, offset={0, -0.125,  -0.65},
 			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
 			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
 		}
@@ -3617,7 +3950,7 @@ events={
 		69,
 		ATTACH_ENTITY,
 		{
-			"subtitles_m02_offer14_a",
+			"subtitles_m02_offer44",
 			"cam_msn_begins"
 		},
 		{
@@ -3630,7 +3963,7 @@ events={
 		71.0001,
 		START_SPATIAL_PROP_ANIM,
 		{
-			"subtitles_m02_offer14_a",
+			"subtitles_m02_offer44",
 			"offscreen"
 		},
 		{
@@ -4361,13 +4694,13 @@ events={
 			"Char_wilham"
 		},
 		{
-			duration=20,
+			duration=28,
 			hardpoint="hprightconnect_cigarette",
 			parent_hardpoint="hprightconnect"
 		}
 	},
 	{
-		117.001,
+		125.001,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"prop_cigarette_2",
@@ -4403,7 +4736,7 @@ events={
 			"vfx_rtc_cigaretteglow_4"
 		},
 		{
-			duration=25
+			duration=28
 		}
 	},
 	{
@@ -4413,11 +4746,65 @@ events={
 			"vfx_rtc_sydsmoke_3"
 		},
 		{
-			duration=25
+			duration=28
+		}
+	},
+
+
+	
+
+	{
+		120,
+		START_IK,
+		{
+			"Char_trent",
+			"trent_eye_ik"
+		},
+		{
+			duration=30,
+			end_effector="Eye IK Left",
+			target_part="",
+			target_type=ROOT,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
 		}
 	},
 	
-
+	{
+		120,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_trent_near"
+		}
+	},
+		
+	{
+		120,
+		ATTACH_ENTITY,
+		{
+			"subtitles_m02_offer22",
+			"cam_trent_near"
+		},
+		{
+			duration=3, offset={0, -0.12,  -0.65},
+			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},	
+	{
+		123.0001,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"subtitles_m02_offer22",
+			"offscreen"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},	
+	
+	
 	{
 		120,
 		START_SOUND,
@@ -4428,11 +4815,988 @@ events={
 			duration=15
 		}
 	},
+	{
+		120,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_dx_s045b_0101_trent",
+		 duration=6,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	
+	{
+		120,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_CHRB_IDLE_SMALL_000LV_XA_07",
+		 duration=0.5, time_scale=1, weight=1, heading=-1}
+	},
+	{
+		120.5,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_CHRB_SHRG_SHLDRS_SMALL_000LV_XA_03",
+		 duration=3, time_scale=0.8, weight=1, trans_time=0.5, heading=-1}
+	},
+		
+		
+		
+	{
+		123,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_wilham_msn3"
+		}
+	},
+	{
+		123,
+		ATTACH_ENTITY,
+		{
+			"subtitles_m02_offer23",
+			"cam_wilham_msn3"
+		},
+		{
+			duration=6, offset={0, -0.125,  -0.65},
+			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},	
+	{
+		129.0001,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"subtitles_m02_offer23",
+			"offscreen"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},	
+	{
+		129,
+		ATTACH_ENTITY,
+		{
+			"subtitles_m02_offer24",
+			"cam_wilham_msn3"
+		},
+		{
+			duration=4, offset={0, -0.125,  -0.65},
+			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},	
+	{
+		133.0001,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"subtitles_m02_offer24",
+			"offscreen"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},	
+	{
+		133,
+		ATTACH_ENTITY,
+		{
+			"subtitles_m02_offer25",
+			"cam_wilham_msn3"
+		},
+		{
+			duration=6.5, offset={0, -0.125,  -0.65},
+			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},	
+	{
+		139.5001,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"subtitles_m02_offer25",
+			"offscreen"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},	
+	
+	{
+		123,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_wilham_msn3_point",
+			"cam_wilham_msn3_point2"
+		},
+		{
+			duration=17,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	
+	{
+		124,
+		START_SOUND,
+		{
+			"DX_m02_offer_0150_wilham"
+		},
+		{
+			duration=35
+		}
+	},
+	{
+		124,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_dx_s015x_0701_walker",
+		 duration=5,  time_scale=1, trans_time=0.25, start_time=1, weight=1, heading=-1}
+	}, 
+	{
+		129,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_dx_s015x_0701_walker",
+		 duration=5.5,  time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+	}, 
+	{
+		134.5,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_dx_s015x_0701_walker",
+		 duration=5.5,  time_scale=1, trans_time=0.25, start_time=1.25,  weight=1, heading=-1}
+	}, 
+	
+	{
+		123,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_MLBODY_CHRF_HOLD_CHIN_RLEASE_000LV_XA_03",
+		 duration=3, time_scale=1, weight=1, heading=-1}
+	},
+	{
+		125,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_MLBODY_CHRF_IDLE_000LV_XA_06",
+		 duration=3, time_scale=1, weight=1, trans_time=1, heading=-1}
+	},
+	{
+		128.5,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_MLBODY_CHRF_CONV_RHNDUP_TRNS_000LV_XA_02",
+		 duration=5, time_scale=1, weight=1, trans_time=1, heading=-1}
+	},
+	{
+		130,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_MLBODY_CHRF_CONV_RHND_CASL_000LV_XA_04",
+		 duration=8, time_scale=1, weight=1, trans_time=1, heading=-1, event_flags=2}
+	},
+	{
+		138,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_MLBODY_CHRF_CONV_RHNDDN_TRNS_000LV_XA_02",
+		 duration=3, time_scale=1, weight=1, trans_time=0.5, heading=-1}
+	},
+	
+	{
+		129,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_MLHAND_HNEUT_POINT_RGHT_CASL_000LV_00",
+		 duration=4, time_scale=2, trans_time=0.25, weight=1, heading=-1}
+	},
+	{
+		133,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_MLHAND_HNEUT_GESTR_CASL_000LV_00",
+		 duration=4, time_scale=0.75, trans_time=0.25, weight=1, heading=-1}
+	},
+	
+	{
+		137,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_MLHAND_HNEUT_POINT_RGHT_CASL_000LV_00",
+		 duration=4, time_scale=2, trans_time=0.5, start_time=3, weight=1, heading=-1}
+	},
 	
 	
 	
-}
+	
+	
+	{
+		140,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_trent_near"
+		}
+	},
+	{
+		140,
+		ATTACH_ENTITY,
+		{
+			"subtitles_m02_offer26",
+			"cam_trent_near"
+		},
+		{
+			duration=4, offset={0, -0.12,  -0.65},
+			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},	
+	{
+		144.0001,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"subtitles_m02_offer26",
+			"offscreen"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},	
+	{
+		144,
+		ATTACH_ENTITY,
+		{
+			"subtitles_m02_offer27",
+			"cam_trent_near"
+		},
+		{
+			duration=4.5, offset={0, -0.12,  -0.65},
+			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},	
+	{
+		148.5001,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"subtitles_m02_offer27",
+			"offscreen"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},
+			
+	
+	{
+		140,
+		START_SOUND,
+		{
+			"DX_m02_offer_0160_trent"
+		},
+		{
+			duration=15
+		}
+	},
+	{
+		140,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_dx_s038x_2601_trent",
+		 duration=4.5,  time_scale=1, trans_time=0.25, start_time=1.7, weight=1, heading=-1}
+	}, 
+	{
+		142.8,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_dx_s038x_2601_trent",
+		 duration=5,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	
 
+	{
+		140,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_CHRB_TALK_000UP_A_17",
+		 duration=9, time_scale=1, start_time=1, weight=1, heading=-1}
+	},
+	
+	
+
+	
+	{
+		148,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_wilham_msn2"
+		}
+	},
+	{
+		148,
+		ATTACH_ENTITY,
+		{
+			"subtitles_m02_offer28",
+			"cam_wilham_msn2"
+		},
+		{
+			duration=5.5, offset={0, -0.125,  -0.65},
+			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},	
+	{
+		153.5001,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"subtitles_m02_offer28",
+			"offscreen"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},
+	{
+		153.5,
+		ATTACH_ENTITY,
+		{
+			"subtitles_m02_offer29",
+			"cam_wilham_msn2"
+		},
+		{
+			duration=4.5, offset={0, -0.125,  -0.65},
+			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},	
+	{
+		158.0001,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"subtitles_m02_offer29",
+			"offscreen"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},
+	{
+		158,
+		ATTACH_ENTITY,
+		{
+			"subtitles_m02_offer30",
+			"cam_wilham_msn2"
+		},
+		{
+			duration=5, offset={0, -0.125,  -0.65},
+			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},	
+	{
+		163.0001,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"subtitles_m02_offer30",
+			"offscreen"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},
+			
+	{
+		148,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_wilham_msn2",
+			"cam_wilham_msn2_pos2"
+		},
+		{
+			duration=15,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},	
+	{
+		148,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_wilham_msn2_point",
+			"cam_wilham_msn2_point2"
+		},
+		{
+			duration=15,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+
+	{
+		148,
+		START_SOUND,
+		{
+			"DX_m02_offer_0170_wilham"
+		},
+		{
+			duration=35
+		}
+	},
+	{
+		148,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_dx_s032a_0301_dexter",
+		 duration=5,  time_scale=1, trans_time=0.25, start_time=0.1, weight=1, heading=-1}
+	}, 
+	{
+		149,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_dx_s015x_0701_walker",
+		 duration=5.5,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 	
+	{
+		154.5,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_dx_s015x_0701_walker",
+		 duration=5.5,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 	
+	{
+		160,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_dx_s015x_0701_walker",
+		 duration=5.5,  time_scale=1, trans_time=0.25, start_time=3.1, weight=1, heading=-1}
+	}, 	
+
+	{
+		148,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_MLBODY_CHRF_NOD_YES_EMPH_000LV_XA_02",
+		 duration=1.8, time_scale=0.5, start_time=1, weight=1, heading=-1}
+	},
+	{
+		149.8,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_MLBODY_CHRF_CONV_HNDSUP_TRNS_000LV_XA_02",
+		 duration=5, time_scale=0.75, trans_time=0.5, weight=1, heading=-1}
+	},
+	{
+		151.5,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_MLBODY_CHRF_CONV_HNDS_CASL_000LV_xb_03",
+		 duration=3, time_scale=0.75, trans_time=0.5, weight=1, heading=-1, event_flags=2}
+	},
+	{
+		154.5,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_MLBODY_CHRF_CONV_HNDSDN_TRNS_000LV_XA_02",
+		 duration=3, time_scale=1, trans_time=0.5, weight=1, heading=-1}
+	},
+	{
+		156,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_MLBODY_CHRF_CONV_LHNDUP_TRNS_000LV_XA_02",
+		 duration=5, time_scale=0.75, trans_time=0.5, weight=1, heading=-1}
+	},
+	{
+		157.5,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_MLBODY_CHRF_CONV_LHND_CASL_000LV_xa_03",
+		 duration=3.5, time_scale=0.75, trans_time=0.5, weight=1, heading=-1, event_flags=2}
+	},
+	{
+		161,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_MLBODY_CHRF_CONV_LHNDDN_TRNS_000LV_XA_02",
+		 duration=5, time_scale=1, trans_time=0.5, weight=1, heading=-1}
+	},
+	{
+		162.5,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_MLBODY_CHRF_IDLE_SMALL_000LV_XA_05",
+		 duration=0.5, time_scale=1, trans_time=0.5, weight=1, heading=-1}
+	},
+	
+	
+	
+	
+	
+	
+
+	{
+		160,
+		START_IK,
+		{
+			"Char_trent",
+			"trent_eye_ik"
+		},
+		{
+			duration=8,
+			end_effector="Eye IK Left",
+			target_part="",
+			target_type=ROOT,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		}
+	},
+	{
+		163,
+		START_IK,
+		{
+			"Char_wilham",
+			"wilham_head_ik"
+		},
+		{
+			duration=20,
+			end_effector="Body_Head",
+			target_part="",
+			target_type=ROOT,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		}
+	},
+	
+	{
+		163,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"wilham_head_ik",
+			"head_trent_middle"
+		},
+		{
+			duration=2,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	
+	{
+		163,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_MLBODY_CHRF_IDLE_SMALL_000LV_XA_05",
+		 duration=1, time_scale=1, weight=1, heading=-1}
+	},
+
+	
+	{
+		163,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_trent_closest"
+		}
+	},
+	
+	{
+		163.3,
+		START_SOUND,
+		{
+			"DX_m02_offer_0180_trent"
+		},
+		{
+			duration=15
+		}
+	},
+	{
+		163,
+		ATTACH_ENTITY,
+		{
+			"subtitles_m02_offer31",
+			"cam_trent_closest"
+		},
+		{
+			duration=2, offset={0, -0.125,  -0.75},
+			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},	
+	{
+		165.0001,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"subtitles_m02_offer31",
+			"offscreen"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},	
+	
+	{
+		163.3,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_dx_s064x_2001_trent",
+		 duration=4.5,  time_scale=1, trans_time=0.25, start_time=0.25, weight=1, heading=-1}
+	}, 
+	
+	{
+		163,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_CHRB_IDLE_SMALL_000LV_XA_07",
+		 duration=7, time_scale=1, weight=1, heading=-1, start_time=2}
+	},
+	
+	{
+		165,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_wilham_near"
+		}
+	},
+	{
+		165,
+		ATTACH_ENTITY,
+		{
+			"subtitles_m02_offer32",
+			"cam_wilham_near"
+		},
+		{
+			duration=7, offset={0, -0.125,  -0.65},
+			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},	
+	{
+		172.0001,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"subtitles_m02_offer32",
+			"offscreen"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},	
+	{
+		172,
+		ATTACH_ENTITY,
+		{
+			"subtitles_m02_offer33",
+			"cam_wilham_near"
+		},
+		{
+			duration=5, offset={0, -0.125,  -0.65},
+			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},	
+	{
+		177.0001,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"subtitles_m02_offer33",
+			"offscreen"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},
+	{
+		177,
+		ATTACH_ENTITY,
+		{
+			"subtitles_m02_offer34",
+			"cam_wilham_near"
+		},
+		{
+			duration=5, offset={0, -0.125,  -0.65},
+			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},	
+	{
+		182.0001,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"subtitles_m02_offer34",
+			"offscreen"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},
+	{
+		182,
+		ATTACH_ENTITY,
+		{
+			"subtitles_m02_offer35",
+			"cam_wilham_near"
+		},
+		{
+			duration=5, offset={0, -0.125,  -0.65},
+			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},	
+	{
+		187.0001,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"subtitles_m02_offer35",
+			"offscreen"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},
+	{
+		187,
+		ATTACH_ENTITY,
+		{
+			"subtitles_m02_offer36",
+			"cam_wilham_near"
+		},
+		{
+			duration=6, offset={0, -0.125,  -0.65},
+			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},	
+	{
+		193.0001,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"subtitles_m02_offer36",
+			"offscreen"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},
+	{
+		165,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_wilham_near",
+			"cam_wilham_near_pos2"
+		},
+		{
+			duration=28,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	
+	
+	{
+		165,
+		START_SOUND,
+		{
+			"DX_m02_offer_0190_wilham"
+		},
+		{
+			duration=45
+		}
+	},
+	{
+		165,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_dx_s038x_1501_big_man_01",
+		 duration=5,  time_scale=1, trans_time=0.25, start_time=0, weight=1, heading=-1}
+	}, 
+	{
+		167,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_dx_s032d_0301_dexter",
+		 duration=4.5,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 		
+	{
+		171.5,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_dx_s015x_0701_walker",
+		 duration=5.5,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 			
+	{
+		177,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_dx_s032d_0301_dexter",
+		 duration=4.5,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 	
+	{
+		181.5,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_dx_s015x_0701_walker",
+		 duration=5.5,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	{
+		187,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_dx_s015x_0701_walker",
+		 duration=5.5,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	{
+		192.5,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_MLHEAD_BASEPOSE_000LV_02_01",
+		 duration=5,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	
+	
+	{
+		165,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_MLBODY_CHRF_EMPH_RHNDUP_TRNS_000LV_XA_01",
+		 duration=2, time_scale=0.7, weight=1, start_time=0.5, heading=-1}
+	},
+	{
+		166,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_MLBODY_CHRF_EMPH_RHNDDN_TRNS_000LV_XA_00",
+		 duration=3, time_scale=0.75, weight=1, trans_time=0.25, heading=-1}
+	},
+	
+	{
+		165,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_MLHAND_HNEUT_POINT_RGHT_CASL_000LV_00",
+		 duration=1, time_scale=1, trans_time=0.5, start_time=3, weight=1, heading=-1}
+	},
+	{
+		166,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_MLHAND_HNEUT_POINT_RGHT_CASL_000LV_00",
+		 duration=2, time_scale=1, trans_time=0.5, start_time=6, weight=1, heading=-1}
+	},
+	{
+		167.3,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_MLBODY_CHRF_CHRB_TRNS_000LV_XA_02",
+		 duration=2, time_scale=1, weight=1, trans_time=1, heading=-1}
+	},
+	{
+		171,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_MLBODY_CHRB_CONV_LHNDUP_TRNS_000LV_XA_02",
+		 duration=5, time_scale=0.75, weight=1, trans_time=1, heading=-1}
+	},
+	{
+		172.5,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_MLBODY_CHRB_CONV_LHND_CASL_000LV_xa_03",
+		 duration=4.5, time_scale=0.6, weight=1, trans_time=1, heading=-1, event_flags=2}
+	},
+	{
+		177,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_MLBODY_CHRB_CONV_LHNDDN_TRNS_000LV_XA_02",
+		 duration=5, time_scale=0.75, weight=1, trans_time=1, heading=-1}
+	},
+	{
+		179,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_MLBODY_CHRB_IDLE_SMALL_000LV_XA_07",
+		 duration=8, time_scale=1, weight=1, trans_time=1, heading=-1, event_flags=2}
+	},
+	
+	
+	
+	{
+		188,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_MLBODY_CHRB_NOD_YES_SLGHTLY_000LV_XA_03",
+		 duration=4, time_scale=0.75, weight=1, trans_time=0.2, heading=-1}
+	},
+	{
+		192,
+		START_MOTION,
+		{"Char_wilham"},
+		{animation="Sc_MLBODY_CHRB_IDLE_SMALL_000LV_XA_07",
+		 duration=3, time_scale=1, weight=1, trans_time=1, heading=-1, event_flags=2}
+	},
+	
+		
+}
+	
+	
+	
+	
+	-- {
+		-- 0,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "Char_trent",
+			-- "point_trent_sit"
+		-- },
+		-- {
+			-- duration=0.00001,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- pos={0,0,0},
+				-- q_orient={1,0,0,0}
+			-- }
+		-- }
+	-- },	
 
 	-- {
 		-- 0.25,
