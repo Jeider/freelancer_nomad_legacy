@@ -427,259 +427,259 @@ entities={
 	{
 		entity_name="subtitles_m02_offer01",
 		template_name="subtitles_m02_offer01",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer02",
 		template_name="subtitles_m02_offer02",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer03",
 		template_name="subtitles_m02_offer03",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer04",
 		template_name="subtitles_m02_offer04",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer05",
 		template_name="subtitles_m02_offer05",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer06",
 		template_name="subtitles_m02_offer06",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer07",
 		template_name="subtitles_m02_offer07",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer08",
 		template_name="subtitles_m02_offer08",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer09",
 		template_name="subtitles_m02_offer09",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer10",
 		template_name="subtitles_m02_offer10",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer11",
 		template_name="subtitles_m02_offer11",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer12",
 		template_name="subtitles_m02_offer12",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer13",
 		template_name="subtitles_m02_offer13",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer14",
 		template_name="subtitles_m02_offer14",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer15",
 		template_name="subtitles_m02_offer15",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer16",
 		template_name="subtitles_m02_offer16",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer17",
 		template_name="subtitles_m02_offer17",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer18",
 		template_name="subtitles_m02_offer18",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer19",
 		template_name="subtitles_m02_offer19",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer20",
 		template_name="subtitles_m02_offer20",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer21",
 		template_name="subtitles_m02_offer21",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer22",
 		template_name="subtitles_m02_offer22",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer23",
 		template_name="subtitles_m02_offer23",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer24",
 		template_name="subtitles_m02_offer24",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer25",
 		template_name="subtitles_m02_offer25",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer26",
 		template_name="subtitles_m02_offer26",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer27",
 		template_name="subtitles_m02_offer27",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer28",
 		template_name="subtitles_m02_offer28",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer29",
 		template_name="subtitles_m02_offer29",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer30",
 		template_name="subtitles_m02_offer30",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer31",
 		template_name="subtitles_m02_offer31",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer32",
 		template_name="subtitles_m02_offer32",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer33",
 		template_name="subtitles_m02_offer33",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer34",
 		template_name="subtitles_m02_offer34",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer35",
 		template_name="subtitles_m02_offer35",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer36",
 		template_name="subtitles_m02_offer36",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
 	{
 		entity_name="subtitles_m02_offer44",
 		template_name="subtitles_m02_offer44",
-		type=COMPOUND, lt_grp=3,srt_grp=1,usr_flg=0, flags=LIT_AMBIENT,
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		userprops={category="Prop"}
 	},
@@ -2248,9 +2248,9 @@ entities={
 		flags=HIDDEN,
 		spatialprops={
 			pos={
-				-2.3,
-				1.2,
-				1.3
+				-2.5,
+				1.05,
+				1.5
 			},
 			orient={
 				{1,0,0},
@@ -2266,6 +2266,25 @@ entities={
 			farplane=5000
 		}
 	},
+	
+	{
+		entity_name="cam_wilham_msn3_pos2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-2.5,
+				1.2,
+				1.5
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
 	{
 		entity_name="cam_wilham_msn3_point",
 		type=MARKER,
@@ -2274,8 +2293,8 @@ entities={
 		spatialprops={
 			pos={
 				-0.8,
-				1.0,
-				1.55
+				1.001,
+				1.7
 			},
 			orient={
 				{1,0,0},
@@ -4928,6 +4947,25 @@ events={
 		123,
 		START_SPATIAL_PROP_ANIM,
 		{
+			"cam_wilham_msn3",
+			"cam_wilham_msn3_pos2"
+		},
+		{
+			duration=17,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		123,
+		START_SPATIAL_PROP_ANIM,
+		{
 			"cam_wilham_msn3_point",
 			"cam_wilham_msn3_point2"
 		},
@@ -5764,13 +5802,13 @@ events={
 		START_MOTION,
 		{"Char_wilham"},
 		{animation="Sc_MLBODY_CHRB_NOD_YES_SLGHTLY_000LV_XA_03",
-		 duration=4, time_scale=0.75, weight=1, trans_time=0.2, heading=-1}
+		 duration=3, time_scale=0.75, weight=1, trans_time=0.2, heading=-1}
 	},
 	{
-		192,
+		191,
 		START_MOTION,
 		{"Char_wilham"},
-		{animation="Sc_MLBODY_CHRB_IDLE_SMALL_000LV_XA_07",
+		{animation="Sc_MLBODY_CHRB_IDLE_MED_000LV_XA_07",
 		 duration=3, time_scale=1, weight=1, trans_time=1, heading=-1, event_flags=2}
 	},
 	
