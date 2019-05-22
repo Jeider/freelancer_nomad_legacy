@@ -178,6 +178,43 @@ entities={
 		}
 	},
 	
+	{
+		entity_name="Prop_ashtray_extra_1",
+		type=COMPOUND,
+		template_name="ashtray_2",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				-1.575085,
+				0.829229,
+				1.5
+			},
+			orient={
+				{
+					0.780959,
+					0,
+					-0.624582
+				},
+				{
+					0,
+					1,
+					0
+				},
+				{
+					0.624582,
+					0,
+					0.780959
+				}
+			}
+		},
+		userprops={
+			category="Prop",
+			Priority="Room_Prop_1"
+		}
+	},
 	
 	
 	
@@ -2390,7 +2427,7 @@ events={
 		ATTACH_ENTITY,
 		{
 			"cam_start",
-			"cam_start_point"
+			"cam_start_point" --   Prop_ashtray_extra_1
 		},
 		{
 			duration=300,
@@ -4593,6 +4630,21 @@ events={
 		 duration=5, time_scale=1, weight=1, trans_time=0.5, heading=-1}
 	},
 	
+	{
+		97,
+		START_MOTION,
+		{
+			"Char_wilham"
+		},
+		{
+			animation="Sc_MLHAND_NEUT_ATEASE_RGHT_000LV_XB_%",
+			duration=2.533,
+			trans_time=0.5,
+			time_scale=1,
+			weight=1,
+			heading=-1
+		}
+	},
 	
 		
 	{
@@ -4714,7 +4766,7 @@ events={
 		},
 		{
 			duration=28,
-			hardpoint="hprightconnect_cigarette",
+			hardpoint="hprightconnect_cigarette2",
 			parent_hardpoint="hprightconnect"
 		}
 	},
