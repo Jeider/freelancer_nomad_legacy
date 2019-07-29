@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<Subtitles>
+
+  
+  
+  <Static AudioFile="DIALOGUE\TRENT\dx_s003x_0101_trent.wav" TextArea="Cinematic">A Sidewinder Fang.</Static>
+  <Static AudioFile="DIALOGUE\TRENT\dx_s003x_0301_trent.wav" TextArea="Cinematic">Fine.</Static>
+  <Static AudioFile="DIALOGUE\TRENT\dx_s003x_0501_trent.wav" TextArea="Cinematic">Oh, why is that?</Static>
+  <Static AudioFile="DIALOGUE\TRENT\dx_s003x_0701_trent.wav" TextArea="Cinematic">Oh, the only thing I'm looking for right now is this drink.</Static>
+  <!-- These two don't appear to be used in the game. Liberty Ale doesn't sound like a great drink. -->
+  <Static AudioFile="DIALOGUE\TRENT\dx_s003x_0801_trent.wav" TextArea="Cinematic">Ack!</Static>
+  <Static AudioFile="DIALOGUE\TRENT\dx_s003x_0802_trent.wav" TextArea="Cinematic">What is this stuff?</Static>
+  <Static AudioFile="DIALOGUE\TRENT\dx_s003x_0901_trent.wav" TextArea="Cinematic">What?</Static>
+  <Static AudioFile="DIALOGUE\TRENT\dx_s003x_1101_trent.wav" TextArea="Cinematic">No. No, I don't think so.</Static>
+  <Static AudioFile="DIALOGUE\TRENT\dx_s003x_1301_trent.wav" TextArea="Cinematic">Yeah.</Static>
+  <Static AudioFile="DIALOGUE\TRENT\dx_s003x_1501_trent.wav" TextArea="Cinematic">Hah.</Static>
+  <Static AudioFile="DIALOGUE\TRENT\dx_s003x_1701_trent.wav" TextArea="Cinematic">Why?</Static>
+  <Static AudioFile="DIALOGUE\TRENT\dx_s003x_1901_trent.wav" TextArea="Cinematic">Well, it can't get any worse.</Static>
+  <Static AudioFile="DIALOGUE\TRENT\dx_s003x_2001_trent.wav" TextArea="Cinematic">Hm.</Static>
+  
+  
+<Static AudioFile="mod\intro\intro_0010_trent.wav" TextArea="Cinematic">One</Static>
+
+<Static AudioFile="mod\intro\intro_0020_barman.wav" TextArea="Cinematic">Two</Static>
+
+<Static AudioFile="mod\intro\intro_0030_trent.wav" TextArea="Cinematic">Three</Static>
+
+
+
+
+
+
+<Static AudioFile="mod\intro\intro_0040_barman.wav" TextArea="Cinematic">____</Static>
+
+
+
+
+
+
+<Static AudioFile="mod\intro\intro_0050_trent.wav" TextArea="Cinematic">____</Static>
+
+
+
+
+
+
+<Static AudioFile="mod\intro\intro_0060_barman.wav" TextArea="Cinematic">____</Static>
+
+
+
+
+
+
+<Static AudioFile="mod\intro\intro_0070_trent.wav" TextArea="Cinematic">____</Static>
+
+
+
+
+
+
+<Static AudioFile="mod\intro\intro_0080_barman.wav" TextArea="Cinematic">____</Static>
+
+
+
+
+
+
+<Static AudioFile="mod\intro\intro_0090_trent.wav" TextArea="Cinematic">____</Static>
+
+
+
+
+
+
+<Static AudioFile="mod\intro\intro_0100_trent.wav" TextArea="Cinematic">____</Static>
+
+
+
+
+
+
+<Static AudioFile="mod\intro\intro_0105_trent.wav" TextArea="Cinematic">____</Static>
+
+
+
+
+
+
+<Static AudioFile="mod\intro\intro_0110_alaric.wav" TextArea="Cinematic">____</Static>
+
+
+
+
+
+
+<Static AudioFile="mod\intro\intro_0120_trent.wav" TextArea="Cinematic">____</Static>
+
+
+
+
+
+
+<Static AudioFile="mod\intro\intro_0130_barman.wav" TextArea="Cinematic">____</Static>
+
+
+
+
+
+
+<Static AudioFile="mod\intro\intro_0140_trent.wav" TextArea="Cinematic">____</Static>
+
+
+
+
+
+
+<Static AudioFile="mod\intro\intro_0150_barman.wav" TextArea="Cinematic">____</Static>
+
+
+
+
+
+
+<Static AudioFile="mod\intro\intro_0160_trent.wav" TextArea="Cinematic">____</Static>
+
+
+
+
+
+
+<Static AudioFile="mod\intro\intro_0170_barman.wav" TextArea="Cinematic">____</Static>
+
+
+
+
+
+
+<Static AudioFile="mod\intro\intro_0180_trent.wav" TextArea="Cinematic">____</Static>
+
+
+
+
+
+
+<Static AudioFile="mod\intro\intro_0190_barman.wav" TextArea="Cinematic">____</Static>
+
+
+
+</Subtitles>
