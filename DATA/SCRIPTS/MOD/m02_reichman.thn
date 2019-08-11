@@ -56,8 +56,131 @@ entities={
 			}
 		}
 	},
+	
+	
 	{
-		entity_name="Wilham_Ship",
+		entity_name="DX_m02_done_0010_reichman",
+		template_name="DX_m02_done_0010_reichman",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m02_done_0020_trent",
+		template_name="DX_m02_done_0020_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m02_done_0030_reichman",
+		template_name="DX_m02_done_0030_reichman",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m02_done_0040_trent",
+		template_name="DX_m02_done_0040_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m02_done_0050_reichman",
+		template_name="DX_m02_done_0050_reichman",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m02_done_0060_trent",
+		template_name="DX_m02_done_0060_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m02_done_0070_reichman",
+		template_name="DX_m02_done_0070_reichman",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m02_done_0080_reichman",
+		template_name="DX_m02_done_0080_reichman",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m02_done_0090_wilham",
+		template_name="DX_m02_done_0090_wilham",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m02_done_0100_reichman",
+		template_name="DX_m02_done_0100_reichman",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m02_done_0110_wilham",
+		template_name="DX_m02_done_0110_wilham",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m02_done_0120_reichman",
+		template_name="DX_m02_done_0120_reichman",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m02_done_0130_wilham",
+		template_name="DX_m02_done_0130_wilham",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m02_done_0140_reichman",
+		template_name="DX_m02_done_0140_reichman",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	{
+		entity_name="main_ship",
 		type=COMPOUND,
 		template_name="rh_elite",
 		lt_grp=3,
@@ -66,47 +189,9 @@ entities={
 		flags=LIT_DYNAMIC,
 		spatialprops={
 			pos={
-				0,
+				-12.744206,
 				3.5,
-				0
-			},
-			orient={
-				{
-					0.768601,
-					0,
-					0.639728
-				},
-				{
-					0,
-					1,
-					0
-				},
-				{
-					-0.639728,
-					0,
-					0.768601
-				}
-			}
-		},
-		userprops={
-			category="Spaceship",
-			loadout="level_rh_elite_loadout04",
-		}
-	},	
-	
-	{
-		entity_name="PlayerShip",
-		type=MARKER,
-		template_name="PlayerShip",
-		lt_grp=0,
-		srt_grp=0,
-		usr_flg=0,
-		spatialprops={
-			pos={
-			0, 3, 0
-				-- -12.744206,
-				-- 3.5,
-				-- -17.392485
+				-17.392485
 			},
 			orient={
 				{
@@ -125,8 +210,33 @@ entities={
 					-0.455762
 				}
 			}
+		},
+		userprops={
+			category="Spaceship",
+			loadout="level_rh_elite_loadout04",
 		}
 	},	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	{
@@ -139,9 +249,9 @@ entities={
 		flags=HIDDEN,
 		spatialprops={
 			pos={
-				-1,
-				2.5,
-				-3
+				10.5,
+				1.1,
+				10.2
 			},
 			orient={
 				{1,0,0},
@@ -164,8 +274,8 @@ entities={
 		template_id=0,
 		spatialprops={
 			pos={
+				-15,
 				2,
-				1.25,
 				0
 			},
 			orient={
@@ -205,6 +315,24 @@ entities={
 		}
 	},
 	{
+		entity_name="cam_start_pos2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				10.5,
+				1.75,
+				10.2
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	{
 		entity_name="cam_start_marker",
 		type=MARKER,
 		template_name="",
@@ -213,6 +341,24 @@ entities={
 			pos={
 				4,
 				2,
+				10.5
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	{
+		entity_name="cam_start_marker_pos2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				8,
+				1,
 				10.5
 			},
 			orient={
@@ -233,7 +379,8 @@ events={
 		SET_CAMERA,
 		{
 			"Monitor_1",
-			"cam_start"
+			"cam_dbg"
+			--"cam_start"
 		}
 	},
 
@@ -272,4 +419,45 @@ events={
 		}
 	},
 	
+	
+	
+	
+	{
+		0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_start",
+			"cam_start_pos2"
+		},
+		{
+			duration=6,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_start_marker",
+			"cam_start_marker_pos2"
+		},
+		{
+			duration=6,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
 }
