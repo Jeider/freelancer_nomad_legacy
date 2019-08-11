@@ -2,7 +2,7 @@ duration=104
 
 entities={
 	{
-		entity_name="Scene_M02_bar_scene",
+		entity_name="Scene_M02_jacobo_scene",
 		type=SCENE,
 		template_name="",
 		lt_grp=0,
