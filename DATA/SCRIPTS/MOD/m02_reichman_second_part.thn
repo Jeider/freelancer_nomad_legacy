@@ -1,4 +1,4 @@
-duration=86
+duration=104
 
 entities={
 	{
@@ -309,7 +309,7 @@ entities={
 	{
 		entity_name="Char_trooper1",
 		type=DEFORMABLE,
-		template_name="ms2_trooper1",
+		template_name="ms2_trooper2",
 		lt_grp=3,
 		srt_grp=0,
 		usr_flg=0,
@@ -349,7 +349,7 @@ entities={
 	{
 		entity_name="Char_trooper2",
 		type=DEFORMABLE,
-		template_name="ms2_trooper2",
+		template_name="ms2_trooper1",
 		lt_grp=3,
 		srt_grp=0,
 		usr_flg=0,
@@ -1187,7 +1187,7 @@ entities={
 			}
 		},
 		cameraprops={
-			fovh=23,
+			fovh=25,
 			hvaspect=1.85,
 			nearplane=0.2,
 			farplane=5000
@@ -1833,13 +1833,13 @@ events={
 		 duration=1,  time_scale=1, weight=1, heading=-1}
 	}, 
 	{
-		0,
+		1110,
 		SET_CAMERA,
 		{
 			"Monitor_1",
 			-- "cam_dbg"
-			"cam_start"
-			-- "cam_reichman_looktrent"
+			-- "cam_start"
+			"cam_reichman_looktrent"
 		}
 	},
 
@@ -2053,972 +2053,972 @@ events={
 	
 	
 	
-	{
-		0,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"cam_start",
-			"cam_start_pos2"
-		},
-		{
-			duration=6,
-			target_part="",
-			target_type=ROOT,
-			spatialprops={
-				pos={0,0,0},
-				q_orient={1,0,0,0}
-			},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			pcurve_period=-1000
-		}
-	},
-	{
-		0,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"cam_start_marker",
-			"cam_start_marker_pos2"
-		},
-		{
-			duration=6,
-			target_part="",
-			target_type=ROOT,
-			spatialprops={
-				pos={0,0,0},
-				q_orient={1,0,0,0}
-			},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			pcurve_period=-1000
-		}
-	},
+	-- {
+		-- 0,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "cam_start",
+			-- "cam_start_pos2"
+		-- },
+		-- {
+			-- duration=6,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- pos={0,0,0},
+				-- q_orient={1,0,0,0}
+			-- },
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			-- pcurve_period=-1000
+		-- }
+	-- },
+	-- {
+		-- 0,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "cam_start_marker",
+			-- "cam_start_marker_pos2"
+		-- },
+		-- {
+			-- duration=6,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- pos={0,0,0},
+				-- q_orient={1,0,0,0}
+			-- },
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			-- pcurve_period=-1000
+		-- }
+	-- },
 	
 	
 	
-	{
-		0,
-		START_IK,
-		{
-			"Char_trent",
-			"trent_head_ik"
-		},
-		{
-			duration=10,
-			end_effector="Body_Head",
-			target_part="",
-			target_type=ROOT,
-			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
-		}
-	},
-	{
-		0,
-		START_IK,
-		{
-			"Char_wilham",
-			"wilham_head_ik"
-		},
-		{
-			duration=10,
-			end_effector="Body_Head",
-			target_part="",
-			target_type=ROOT,
-			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
-		}
-	},
-	{
-		0,
-		START_IK,
-		{
-			"Char_reichman",
-			"reichman_eye_ik"
-		},
-		{
-			duration=15,
-			end_effector="Eye IK Left",
-			target_part="",
-			target_type=ROOT,
-			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=0.1, event_flags=128
-		}
-	},
+	-- {
+		-- 0,
+		-- START_IK,
+		-- {
+			-- "Char_trent",
+			-- "trent_head_ik"
+		-- },
+		-- {
+			-- duration=10,
+			-- end_effector="Body_Head",
+			-- target_part="",
+			-- target_type=ROOT,
+			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		-- }
+	-- },
+	-- {
+		-- 0,
+		-- START_IK,
+		-- {
+			-- "Char_wilham",
+			-- "wilham_head_ik"
+		-- },
+		-- {
+			-- duration=10,
+			-- end_effector="Body_Head",
+			-- target_part="",
+			-- target_type=ROOT,
+			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		-- }
+	-- },
+	-- {
+		-- 0,
+		-- START_IK,
+		-- {
+			-- "Char_reichman",
+			-- "reichman_eye_ik"
+		-- },
+		-- {
+			-- duration=15,
+			-- end_effector="Eye IK Left",
+			-- target_part="",
+			-- target_type=ROOT,
+			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=0.1, event_flags=128
+		-- }
+	-- },
 	
-	{
-		3,
-		START_IK,
-		{
-			"Char_trooper2",
-			"Char_wilham"
-		},
-		{
-			duration=25,
-			end_effector="Body_Head",
-			target_part="Body_Head",
-			target_type=PART,
-			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=3, event_flags=128
-		}
-	},
+	-- {
+		-- 3,
+		-- START_IK,
+		-- {
+			-- "Char_trooper2",
+			-- "Char_wilham"
+		-- },
+		-- {
+			-- duration=25,
+			-- end_effector="Body_Head",
+			-- target_part="Body_Head",
+			-- target_type=PART,
+			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=3, event_flags=128
+		-- }
+	-- },
 	
 	
 	
-	{
-		0,
-		START_MOTION,
-		{
-			"Char_trooper2"
-		},
-		{animation="Sc_MLBODY_STND_000LV_E_20",
-		duration=1555, time_scale=0.5, weight=1, heading=-1, event_flags=2}
-	},	
-	{
-		0,
-		START_MOTION,
-		{
-			"Char_trooper1"
-		},	--Sc_MLBODY_STND_HOLD_RIFLE_MILI_000LV_XA_05
-		{animation="Sc_MLBODY_STND_000LV_E_20",
-		duration=1555, time_scale=0.5, weight=1, heading=-1, event_flags=2}
-	},
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {
+			-- "Char_trooper2"
+		-- },
+		-- {animation="Sc_MLBODY_STND_000LV_E_20",
+		-- duration=1555, time_scale=0.5, weight=1, heading=-1, event_flags=2}
+	-- },	
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {
+			-- "Char_trooper1"
+		-- },
+		-- {animation="Sc_MLBODY_STND_HOLD_RIFLE_MILI_000LV_XA_05",
+		-- duration=1555, time_scale=0.5, weight=1, heading=-1, event_flags=2}
+	-- },	
 
 	
-	{
-		0,
-		START_MOTION,
-		{"Char_trent"},
-		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
-		 duration=3.6, time_scale=1, start_time=0.3,  weight=1, heading=-1, event_flags=2}
-	},
-	{
-		3.6,
-		START_MOTION,
-		{"Char_trent"},
-		{animation="Sc_MLBODY_WALK_STND_TRNS_000LV_XA_02",
-		 duration=4, time_scale=1,  weight=1, heading=-1}
-	},
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 -- duration=3.6, time_scale=1, start_time=0.3,  weight=1, heading=-1, event_flags=2}
+	-- },
+	-- {
+		-- 3.6,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_MLBODY_WALK_STND_TRNS_000LV_XA_02",
+		 -- duration=4, time_scale=1,  weight=1, heading=-1}
+	-- },
 	
-	{
-		0,
-		START_MOTION,
-		{"Char_wilham"},
-		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
-		 duration=3.8, time_scale=1,  weight=1, heading=-1, event_flags=2, start_time=0.1}
-	},
-	{
-		3.8,
-		START_MOTION,
-		{"Char_wilham"},
-		{animation="Sc_MLBODY_WALK_STND_TRNS_000LV_XA_02",
-		 duration=4, time_scale=1,  weight=1, heading=-1}
-	},
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_wilham"},
+		-- {animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 -- duration=3.8, time_scale=1,  weight=1, heading=-1, event_flags=2, start_time=0.1}
+	-- },
+	-- {
+		-- 3.8,
+		-- START_MOTION,
+		-- {"Char_wilham"},
+		-- {animation="Sc_MLBODY_WALK_STND_TRNS_000LV_XA_02",
+		 -- duration=4, time_scale=1,  weight=1, heading=-1}
+	-- },
 
 	
 	
-	{
-		4.5,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"reichman_eye_ik",
-			"head_reichman_back_left"
-		},
-		{
-			duration=2,
-			target_part="", target_type=ROOT,
-			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		}
-	},
-	{
-		7.5,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"reichman_eye_ik",
-			"head_reichman_front"
-		},
-		{
-			duration=1,
-			target_part="", target_type=ROOT,
-			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		}
-	},
+	-- {
+		-- 4.5,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "reichman_eye_ik",
+			-- "head_reichman_back_left"
+		-- },
+		-- {
+			-- duration=2,
+			-- target_part="", target_type=ROOT,
+			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		-- }
+	-- },
+	-- {
+		-- 7.5,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "reichman_eye_ik",
+			-- "head_reichman_front"
+		-- },
+		-- {
+			-- duration=1,
+			-- target_part="", target_type=ROOT,
+			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		-- }
+	-- },
 
 
-	{
-		0,
-		START_MOTION,
-		{"Char_reichman"},
-		{animation="Sc_MLBODY_STND_HOLD_ARMS_CROSSED_000LV_XA_02",
-		 duration=5, time_scale=1,  weight=1, heading=-1}
-	},
-	{
-		4,
-		START_MOTION,
-		{"Char_reichman"},
-		{animation="Sc_MLHEAD_NEUT_BLINK_EYES_000LV_A_00",
-		 duration=2, time_scale=0.2,  weight=1, heading=-1}
-	},
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_reichman"},
+		-- {animation="Sc_MLBODY_STND_HOLD_ARMS_CROSSED_000LV_XA_02",
+		 -- duration=5, time_scale=1,  weight=1, heading=-1}
+	-- },
+	-- {
+		-- 4,
+		-- START_MOTION,
+		-- {"Char_reichman"},
+		-- {animation="Sc_MLHEAD_NEUT_BLINK_EYES_000LV_A_00",
+		 -- duration=2, time_scale=0.2,  weight=1, heading=-1}
+	-- },
 
-	{
-		5,
-		START_MOTION,
-		{"Char_reichman"},
-		{animation="Sc_MLBODY_STND_UNCRSS_ARMS_000LV_XA_02",
-		 duration=5, time_scale=1,  weight=1, heading=-1}
-	},
-	{
-		6,
-		START_MOTION,
-		{"Char_reichman"},
-		{animation="Sc_MLBODY_STND_TURN_180LV_XA_04",
-		 duration=5, time_scale=0.75,  weight=1, heading=-1, trans_time=0.5}
-	},
+	-- {
+		-- 5,
+		-- START_MOTION,
+		-- {"Char_reichman"},
+		-- {animation="Sc_MLBODY_STND_UNCRSS_ARMS_000LV_XA_02",
+		 -- duration=5, time_scale=1,  weight=1, heading=-1}
+	-- },
+	-- {
+		-- 6,
+		-- START_MOTION,
+		-- {"Char_reichman"},
+		-- {animation="Sc_MLBODY_STND_TURN_180LV_XA_04",
+		 -- duration=5, time_scale=0.75,  weight=1, heading=-1, trans_time=0.5}
+	-- },
 
-	{
-		11,
-		START_MOTION,
-		{"Char_reichman"},
-		{animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
-		 duration=5, time_scale=0.6, weight=1, heading=-1, trans_time=2, event_flags=2}
-	},
+	-- {
+		-- 11,
+		-- START_MOTION,
+		-- {"Char_reichman"},
+		-- {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+		 -- duration=5, time_scale=0.6, weight=1, heading=-1, trans_time=2, event_flags=2}
+	-- },
 	
 	
 	
-	{
-		5,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"reichman_head_ik",
-			"head_trent"
-		},
-		{
-			duration=1,
-			target_part="", target_type=ROOT,
-			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		}
-	},
+	-- {
+		-- 5,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "reichman_head_ik",
+			-- "head_trent"
+		-- },
+		-- {
+			-- duration=1,
+			-- target_part="", target_type=ROOT,
+			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		-- }
+	-- },
 	
-	{
-		10,
-		START_IK,
-		{
-			"Char_reichman",
-			"reichman_head_ik"
-		},
-		{
-			duration=5,
-			end_effector="Body_Head",
-			target_part="",
-			target_type=ROOT,
-			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
-		}
-	},
+	-- {
+		-- 10,
+		-- START_IK,
+		-- {
+			-- "Char_reichman",
+			-- "reichman_head_ik"
+		-- },
+		-- {
+			-- duration=5,
+			-- end_effector="Body_Head",
+			-- target_part="",
+			-- target_type=ROOT,
+			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		-- }
+	-- },
 	
-	{
-		7,
-		SET_CAMERA,
-		{
-			"Monitor_1",
-			"cam_reichman_top"
-		}
-	},
-	
-	
-	
-	{
-		7,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"cam_reichman_top",
-			"cam_reichman_top_pos2"
-		},
-		{
-			duration=5,
-			target_part="",
-			target_type=ROOT,
-			spatialprops={
-				pos={0,0,0},
-				q_orient={1,0,0,0}
-			},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			pcurve_period=-1000
-		}
-	},
-	{
-		7,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"cam_reichman_top_marker",
-			"cam_reichman_top_marker_pos2"
-		},
-		{
-			duration=6,
-			target_part="",
-			target_type=ROOT,
-			spatialprops={
-				pos={0,0,0},
-				q_orient={1,0,0,0}
-			},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			pcurve_period=-1000
-		}
-	},
-	
-	
-	{
-		10,
-		START_SOUND,
-		{
-			"DX_m02_done_0010_reichman"
-		},
-		{
-			duration=10
-		}
-	},	
-	{
-		10,
-		START_MOTION,
-		{"Char_reichman"},
-		{animation="Sc_dx_s037d_0101_quintaine",
-		 duration=4,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
-	}, 
-	
-	
-	{
-		13,
-		SET_CAMERA,
-		{
-			"Monitor_1",
-			"cam_trent_far"
-		}
-	},
-	{
-		13.2,
-		START_SOUND,
-		{
-			"DX_m02_done_0020_trent"
-		},
-		{
-			duration=10
-		}
-	},	
-	{
-		13.2,
-		START_MOTION,
-		{"Char_trent"},
-		{animation="Sc_dx_s050b_0101_trent",
-		 duration=2.1,  time_scale=1, trans_time=0.25, weight=1, heading=-1, start_time=0.6,}
-	}, 
-	
-	{
-		15.5,
-		START_MOTION,
-		{"Char_trent"},
-		{animation="Sc_MLHEAD_BASEPOSE_TRENT_000LV_01_01",
-		 duration=5,  time_scale=1, trans_time=1, weight=1, heading=-1}
-	}, 
-	
-	{
-		13,
-		START_MOTION,
-		{"Char_trent"},
-		{animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
-		 duration=4, time_scale=1, weight=1, heading=-1, trans_time=2,}
-	},
+	-- {
+		-- 7,
+		-- SET_CAMERA,
+		-- {
+			-- "Monitor_1",
+			-- "cam_reichman_top"
+		-- }
+	-- },
 	
 	
 	
-	{
-		16,
-		SET_CAMERA,
-		{
-			"Monitor_1",
-			"cam_reichman_near"
-		}
-	},
-	{
-		16,
-		START_SOUND,
-		{
-			"DX_m02_done_0030_reichman"
-		},
-		{
-			duration=10
-		}
-	},	
-	{
-		16,
-		START_MOTION,
-		{"Char_reichman"},
-		{animation="Sc_dx_s037a_3201_quintaine",
-		 duration=4,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
-	}, 
+	-- {
+		-- 7,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "cam_reichman_top",
+			-- "cam_reichman_top_pos2"
+		-- },
+		-- {
+			-- duration=5,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- pos={0,0,0},
+				-- q_orient={1,0,0,0}
+			-- },
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			-- pcurve_period=-1000
+		-- }
+	-- },
+	-- {
+		-- 7,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "cam_reichman_top_marker",
+			-- "cam_reichman_top_marker_pos2"
+		-- },
+		-- {
+			-- duration=6,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- pos={0,0,0},
+				-- q_orient={1,0,0,0}
+			-- },
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			-- pcurve_period=-1000
+		-- }
+	-- },
 	
-	{
-		16,
-		START_MOTION,
-		{"Char_reichman"},
-		{animation="Sc_MLBODY_STND_BOW_ASNSTYL_RSPCTFLY_000LV_xa_03",
-		 duration=3, time_scale=1,  weight=1, heading=-1}
-	},
-	{
-		19,
-		START_MOTION,
-		{"Char_reichman"},
-		{animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
-		 duration=5, time_scale=0.6, weight=1, heading=-1, trans_time=2}
-	},
+	
+	-- {
+		-- 10,
+		-- START_SOUND,
+		-- {
+			-- "DX_m02_done_0010_reichman"
+		-- },
+		-- {
+			-- duration=10
+		-- }
+	-- },	
+	-- {
+		-- 10,
+		-- START_MOTION,
+		-- {"Char_reichman"},
+		-- {animation="Sc_dx_s037d_0101_quintaine",
+		 -- duration=4,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	
+	
+	-- {
+		-- 13,
+		-- SET_CAMERA,
+		-- {
+			-- "Monitor_1",
+			-- "cam_trent_far"
+		-- }
+	-- },
+	-- {
+		-- 13.2,
+		-- START_SOUND,
+		-- {
+			-- "DX_m02_done_0020_trent"
+		-- },
+		-- {
+			-- duration=10
+		-- }
+	-- },	
+	-- {
+		-- 13.2,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_dx_s050b_0101_trent",
+		 -- duration=2.1,  time_scale=1, trans_time=0.25, weight=1, heading=-1, start_time=0.6,}
+	-- }, 
+	
+	-- {
+		-- 15.5,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_MLHEAD_BASEPOSE_TRENT_000LV_01_01",
+		 -- duration=5,  time_scale=1, trans_time=1, weight=1, heading=-1}
+	-- }, 
+	
+	-- {
+		-- 13,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+		 -- duration=4, time_scale=1, weight=1, heading=-1, trans_time=2,}
+	-- },
+	
+	
+	
+	-- {
+		-- 16,
+		-- SET_CAMERA,
+		-- {
+			-- "Monitor_1",
+			-- "cam_reichman_near"
+		-- }
+	-- },
+	-- {
+		-- 16,
+		-- START_SOUND,
+		-- {
+			-- "DX_m02_done_0030_reichman"
+		-- },
+		-- {
+			-- duration=10
+		-- }
+	-- },	
+	-- {
+		-- 16,
+		-- START_MOTION,
+		-- {"Char_reichman"},
+		-- {animation="Sc_dx_s037a_3201_quintaine",
+		 -- duration=4,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	
+	-- {
+		-- 16,
+		-- START_MOTION,
+		-- {"Char_reichman"},
+		-- {animation="Sc_MLBODY_STND_BOW_ASNSTYL_RSPCTFLY_000LV_xa_03",
+		 -- duration=3, time_scale=1,  weight=1, heading=-1}
+	-- },
+	-- {
+		-- 19,
+		-- START_MOTION,
+		-- {"Char_reichman"},
+		-- {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+		 -- duration=5, time_scale=0.6, weight=1, heading=-1, trans_time=2}
+	-- },
 
-	{
-		20,
-		SET_CAMERA,
-		{
-			"Monitor_1",
-			"cam_trent_top"
-		}
-	},
-	{
-		20,
-		START_SOUND,
-		{
-			"DX_m02_done_0040_trent"
-		},
-		{
-			duration=10
-		}
-	},	
-	{
-		20,
-		START_MOTION,
-		{"Char_trent"},
-		{animation="Sc_dx_s038x_2601_trent",
-		 duration=8, start_time=1.8, time_scale=1, trans_time=0.25, weight=1, heading=-1}
-	}, 
-	{
-		18,
-		START_MOTION,
-		{"Char_trent"},
-		{animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
-		 duration=7, time_scale=1, weight=1, heading=-1, trans_time=2,}
-	},
+	-- {
+		-- 20,
+		-- SET_CAMERA,
+		-- {
+			-- "Monitor_1",
+			-- "cam_trent_top"
+		-- }
+	-- },
+	-- {
+		-- 20,
+		-- START_SOUND,
+		-- {
+			-- "DX_m02_done_0040_trent"
+		-- },
+		-- {
+			-- duration=10
+		-- }
+	-- },	
+	-- {
+		-- 20,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_dx_s038x_2601_trent",
+		 -- duration=8, start_time=1.8, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 18,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+		 -- duration=7, time_scale=1, weight=1, heading=-1, trans_time=2,}
+	-- },
 	
 	
 			
-	{
-		24,
-		START_IK,
-		{
-			"Char_reichman",
-			"reichman_head_ik"
-		},
-		{
-			duration=30,
-			end_effector="Body_Head",
-			target_part="",
-			target_type=ROOT,
-			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
-		}
-	},
-	{
-		24,
-		START_IK,
-		{
-			"Char_reichman",
-			"reichman_eye_ik"
-		},
-		{
-			duration=30,
-			end_effector="Eye IK Left",
-			target_part="",
-			target_type=ROOT,
-			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
-		}
-	},
-	{
-		20,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"reichman_eye_ik",
-			"head_trent"
-		},
-		{
-			duration=2,
-			target_part="", target_type=ROOT,
-			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		}
-	},
-	{
-		20,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"reichman_head_ik",
-			"head_trent"
-		},
-		{
-			duration=2,
-			target_part="", target_type=ROOT,
-			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		}
-	},
-	{
-		28,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"reichman_eye_ik",
-			"head_wilham"
-		},
-		{
-			duration=2,
-			target_part="", target_type=ROOT,
-			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		}
-	},
-	{
-		29,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"reichman_head_ik",
-			"head_wilham_trent_half"
-		},
-		{
-			duration=2,
-			target_part="", target_type=ROOT,
-			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		}
-	},
+	-- {
+		-- 24,
+		-- START_IK,
+		-- {
+			-- "Char_reichman",
+			-- "reichman_head_ik"
+		-- },
+		-- {
+			-- duration=30,
+			-- end_effector="Body_Head",
+			-- target_part="",
+			-- target_type=ROOT,
+			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		-- }
+	-- },
+	-- {
+		-- 24,
+		-- START_IK,
+		-- {
+			-- "Char_reichman",
+			-- "reichman_eye_ik"
+		-- },
+		-- {
+			-- duration=30,
+			-- end_effector="Eye IK Left",
+			-- target_part="",
+			-- target_type=ROOT,
+			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		-- }
+	-- },
+	-- {
+		-- 20,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "reichman_eye_ik",
+			-- "head_trent"
+		-- },
+		-- {
+			-- duration=2,
+			-- target_part="", target_type=ROOT,
+			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		-- }
+	-- },
+	-- {
+		-- 20,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "reichman_head_ik",
+			-- "head_trent"
+		-- },
+		-- {
+			-- duration=2,
+			-- target_part="", target_type=ROOT,
+			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		-- }
+	-- },
+	-- {
+		-- 28,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "reichman_eye_ik",
+			-- "head_wilham"
+		-- },
+		-- {
+			-- duration=2,
+			-- target_part="", target_type=ROOT,
+			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		-- }
+	-- },
+	-- {
+		-- 29,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "reichman_head_ik",
+			-- "head_wilham_trent_half"
+		-- },
+		-- {
+			-- duration=2,
+			-- target_part="", target_type=ROOT,
+			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		-- }
+	-- },
 	
 	
-	{
-		26,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"cam_reichman_far",
-			"cam_reichman_far_pos2"
-		},
-		{
-			duration=6,
-			target_part="",
-			target_type=ROOT,
-			spatialprops={
-				pos={0,0,0},
-				q_orient={1,0,0,0}
-			},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			pcurve_period=-1000
-		}
-	},
-	{
-		24,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"cam_reichman_far_marker",
-			"cam_reichman_far_marker_pos2"
-		},
-		{
-			duration=8,
-			target_part="",
-			target_type=ROOT,
-			spatialprops={
-				pos={0,0,0},
-				q_orient={1,0,0,0}
-			},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			pcurve_period=-1000
-		}
-	},
-	{
-		24,
-		SET_CAMERA,
-		{
-			"Monitor_1",
-			"cam_reichman_far"
-		}
-	},
-	{
-		24,
-		START_SOUND,
-		{
-			"DX_m02_done_0050_reichman"
-		},
-		{
-			duration=10
-		}
-	},	
-	{
-		24,
-		START_MOTION,
-		{"Char_reichman"},
-		{animation="Sc_dx_s038x_2401_quintaine",
-		 duration=4,  time_scale=0.9, trans_time=0.25, weight=1, heading=-1}
-	}, 
-	{
-		28.4,
-		START_MOTION,
-		{"Char_reichman"},
-		{animation="Sc_dx_s038x_0701_quintaine",
-		 duration=4,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
-	}, 
+	-- {
+		-- 26,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "cam_reichman_far",
+			-- "cam_reichman_far_pos2"
+		-- },
+		-- {
+			-- duration=6,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- pos={0,0,0},
+				-- q_orient={1,0,0,0}
+			-- },
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			-- pcurve_period=-1000
+		-- }
+	-- },
+	-- {
+		-- 24,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "cam_reichman_far_marker",
+			-- "cam_reichman_far_marker_pos2"
+		-- },
+		-- {
+			-- duration=8,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- pos={0,0,0},
+				-- q_orient={1,0,0,0}
+			-- },
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			-- pcurve_period=-1000
+		-- }
+	-- },
+	-- {
+		-- 24,
+		-- SET_CAMERA,
+		-- {
+			-- "Monitor_1",
+			-- "cam_reichman_far"
+		-- }
+	-- },
+	-- {
+		-- 24,
+		-- START_SOUND,
+		-- {
+			-- "DX_m02_done_0050_reichman"
+		-- },
+		-- {
+			-- duration=10
+		-- }
+	-- },	
+	-- {
+		-- 24,
+		-- START_MOTION,
+		-- {"Char_reichman"},
+		-- {animation="Sc_dx_s038x_2401_quintaine",
+		 -- duration=4,  time_scale=0.9, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 28.4,
+		-- START_MOTION,
+		-- {"Char_reichman"},
+		-- {animation="Sc_dx_s038x_0701_quintaine",
+		 -- duration=4,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
 	
 	
-	{
-		28,
-		START_MOTION,
-		{"Char_reichman"},
-		{animation="Sc_MLBODY_STND_CONV_RHNDUP_TRNS_000LV_XA_01",
-		 duration=3, time_scale=1, weight=1, trans_time=1.5, heading=-1}
-	},
-	{
-		29,
-		START_MOTION,
-		{"Char_reichman"},
-		{animation="Sc_MLBODY_STND_CONV_RHND_CASL_000LV_xa_01",
-		 duration=2, time_scale=1, weight=1,trans_time=1.5, heading=-1, event_flags=2}
-	},
-	{
-		30,
-		START_MOTION,
-		{"Char_reichman"},
-		{animation="Sc_MLBODY_STND_CONV_RHNDDN_TRNS_000LV_XA_02",
-		 duration=3, time_scale=1, weight=1, trans_time=1.5, heading=-1}
-	},
+	-- {
+		-- 28,
+		-- START_MOTION,
+		-- {"Char_reichman"},
+		-- {animation="Sc_MLBODY_STND_CONV_RHNDUP_TRNS_000LV_XA_01",
+		 -- duration=3, time_scale=1, weight=1, trans_time=1.5, heading=-1}
+	-- },
+	-- {
+		-- 29,
+		-- START_MOTION,
+		-- {"Char_reichman"},
+		-- {animation="Sc_MLBODY_STND_CONV_RHND_CASL_000LV_xa_01",
+		 -- duration=2, time_scale=1, weight=1,trans_time=1.5, heading=-1, event_flags=2}
+	-- },
+	-- {
+		-- 30,
+		-- START_MOTION,
+		-- {"Char_reichman"},
+		-- {animation="Sc_MLBODY_STND_CONV_RHNDDN_TRNS_000LV_XA_02",
+		 -- duration=3, time_scale=1, weight=1, trans_time=1.5, heading=-1}
+	-- },
 	
 	
-	{
-		29,
-		START_MOTION,
-		{"Char_reichman"},
-		{animation="Sc_MLHAND_HNEUT_GESTR_CASL_000LV_00",
-		 duration=4, time_scale=0.75, trans_time=0.25, weight=1, heading=-1}
-	},
-	
-	
-	
-	{
-		30,
-		START_IK,
-		{
-			"Char_trent",
-			"trent_head_ik"
-		},
-		{
-			duration=10,
-			end_effector="Body_Head",
-			target_part="",
-			target_type=ROOT,
-			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
-		}
-	},
-	{
-		30,
-		START_IK,
-		{
-			"Char_trent",
-			"trent_eye_ik"
-		},
-		{
-			duration=10,
-			end_effector="Eye IK Left",
-			target_part="",
-			target_type=ROOT,
-			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
-		}
-	},
-	{
-		28,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"trent_eye_ik",
-			"head_reichman"
-		},
-		{
-			duration=2,
-			target_part="", target_type=ROOT,
-			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		}
-	},
-	{
-		28,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"trent_head_ik",
-			"head_reichman"
-		},
-		{
-			duration=2,
-			target_part="", target_type=ROOT,
-			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		}
-	},
-	{
-		30,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"trent_eye_ik",
-			"head_wilham"
-		},
-		{
-			duration=2,
-			target_part="", target_type=ROOT,
-			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		}
-	},
-	{
-		30,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"trent_head_ik",
-			"head_reichman_wilham_half"
-		},
-		{
-			duration=2,
-			target_part="", target_type=ROOT,
-			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		}
-	},
-	{
-		32.5,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"trent_eye_ik",
-			"head_reichman"
-		},
-		{
-			duration=1,
-			target_part="", target_type=ROOT,
-			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		}
-	},
-	{
-		32.5,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"trent_head_ik",
-			"head_reichman"
-		},
-		{
-			duration=3.5,
-			target_part="", target_type=ROOT,
-			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		}
-	},
+	-- {
+		-- 29,
+		-- START_MOTION,
+		-- {"Char_reichman"},
+		-- {animation="Sc_MLHAND_HNEUT_GESTR_CASL_000LV_00",
+		 -- duration=4, time_scale=0.75, trans_time=0.25, weight=1, heading=-1}
+	-- },
 	
 	
 	
-	{
-		32,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"cam_trent_near_marker",
-			"cam_trent_near_marker_pos2"
-		},
-		{
-			duration=4,
-			target_part="",
-			target_type=ROOT,
-			spatialprops={
-				pos={0,0,0},
-				q_orient={1,0,0,0}
-			},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			pcurve_period=-1000
-		}
-	},
-	{
-		32,
-		SET_CAMERA,
-		{
-			"Monitor_1",
-			"cam_trent_near"
-		}
-	},
-	{
-		33.2,
-		START_SOUND,
-		{
-			"DX_m02_done_0060_trent"
-		},
-		{
-			duration=10
-		}
-	},	
-	{
-		33.2,
-		START_MOTION,
-		{"Char_trent"},
-		{animation="Sc_dx_s062x_0601_trent",
-		 duration=4.5,  time_scale=1, trans_time=0.25, start_time=0.25, weight=1, heading=-1}
-	}, 
-	{
-		36,
-		START_MOTION,
-		{"Char_trent"},
-		{animation="Sc_MLHEAD_BASEPOSE_TRENT_000LV_01_01",
-		 duration=1,  time_scale=1, trans_time=1, weight=1, heading=-1}
-	}, 
+	-- {
+		-- 30,
+		-- START_IK,
+		-- {
+			-- "Char_trent",
+			-- "trent_head_ik"
+		-- },
+		-- {
+			-- duration=10,
+			-- end_effector="Body_Head",
+			-- target_part="",
+			-- target_type=ROOT,
+			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		-- }
+	-- },
+	-- {
+		-- 30,
+		-- START_IK,
+		-- {
+			-- "Char_trent",
+			-- "trent_eye_ik"
+		-- },
+		-- {
+			-- duration=10,
+			-- end_effector="Eye IK Left",
+			-- target_part="",
+			-- target_type=ROOT,
+			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		-- }
+	-- },
+	-- {
+		-- 28,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "trent_eye_ik",
+			-- "head_reichman"
+		-- },
+		-- {
+			-- duration=2,
+			-- target_part="", target_type=ROOT,
+			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		-- }
+	-- },
+	-- {
+		-- 28,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "trent_head_ik",
+			-- "head_reichman"
+		-- },
+		-- {
+			-- duration=2,
+			-- target_part="", target_type=ROOT,
+			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		-- }
+	-- },
+	-- {
+		-- 30,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "trent_eye_ik",
+			-- "head_wilham"
+		-- },
+		-- {
+			-- duration=2,
+			-- target_part="", target_type=ROOT,
+			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		-- }
+	-- },
+	-- {
+		-- 30,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "trent_head_ik",
+			-- "head_reichman_wilham_half"
+		-- },
+		-- {
+			-- duration=2,
+			-- target_part="", target_type=ROOT,
+			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		-- }
+	-- },
+	-- {
+		-- 32.5,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "trent_eye_ik",
+			-- "head_reichman"
+		-- },
+		-- {
+			-- duration=1,
+			-- target_part="", target_type=ROOT,
+			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		-- }
+	-- },
+	-- {
+		-- 32.5,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "trent_head_ik",
+			-- "head_reichman"
+		-- },
+		-- {
+			-- duration=3.5,
+			-- target_part="", target_type=ROOT,
+			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		-- }
+	-- },
 	
 	
-	{
-		34,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"reichman_eye_ik",
-			"head_trent"
-		},
-		{
-			duration=1,
-			target_part="", target_type=ROOT,
-			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		}
-	},
-	{
-		34,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"reichman_head_ik",
-			"head_trent"
-		},
-		{
-			duration=1,
-			target_part="", target_type=ROOT,
-			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		}
-	},
+	
+	-- {
+		-- 32,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "cam_trent_near_marker",
+			-- "cam_trent_near_marker_pos2"
+		-- },
+		-- {
+			-- duration=4,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- pos={0,0,0},
+				-- q_orient={1,0,0,0}
+			-- },
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			-- pcurve_period=-1000
+		-- }
+	-- },
+	-- {
+		-- 32,
+		-- SET_CAMERA,
+		-- {
+			-- "Monitor_1",
+			-- "cam_trent_near"
+		-- }
+	-- },
+	-- {
+		-- 33.2,
+		-- START_SOUND,
+		-- {
+			-- "DX_m02_done_0060_trent"
+		-- },
+		-- {
+			-- duration=10
+		-- }
+	-- },	
+	-- {
+		-- 33.2,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_dx_s062x_0601_trent",
+		 -- duration=4.5,  time_scale=1, trans_time=0.25, start_time=0.25, weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 36,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_MLHEAD_BASEPOSE_TRENT_000LV_01_01",
+		 -- duration=1,  time_scale=1, trans_time=1, weight=1, heading=-1}
+	-- }, 
+	
+	
+	-- {
+		-- 34,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "reichman_eye_ik",
+			-- "head_trent"
+		-- },
+		-- {
+			-- duration=1,
+			-- target_part="", target_type=ROOT,
+			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		-- }
+	-- },
+	-- {
+		-- 34,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "reichman_head_ik",
+			-- "head_trent"
+		-- },
+		-- {
+			-- duration=1,
+			-- target_part="", target_type=ROOT,
+			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		-- }
+	-- },
 	
 	
 
 	
 	
-	{
-		36,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"cam_reichman_reward",
-			"cam_reichman_reward_pos2"
-		},
-		{
-			duration=10,
-			target_part="",
-			target_type=ROOT,
-			spatialprops={
-				pos={0,0,0},
-				q_orient={1,0,0,0}
-			},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			pcurve_period=-1000
-		}
-	},
-	{
-		36,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"cam_reichman_reward_marker",
-			"cam_reichman_reward_marker_pos2"
-		},
-		{
-			duration=10,
-			target_part="",
-			target_type=ROOT,
-			spatialprops={
-				pos={0,0,0},
-				q_orient={1,0,0,0}
-			},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			pcurve_period=-1000
-		}
-	},
+	-- {
+		-- 36,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "cam_reichman_reward",
+			-- "cam_reichman_reward_pos2"
+		-- },
+		-- {
+			-- duration=10,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- pos={0,0,0},
+				-- q_orient={1,0,0,0}
+			-- },
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			-- pcurve_period=-1000
+		-- }
+	-- },
+	-- {
+		-- 36,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "cam_reichman_reward_marker",
+			-- "cam_reichman_reward_marker_pos2"
+		-- },
+		-- {
+			-- duration=10,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- pos={0,0,0},
+				-- q_orient={1,0,0,0}
+			-- },
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			-- pcurve_period=-1000
+		-- }
+	-- },
+	
+	-- {
+		-- 36,
+		-- SET_CAMERA,
+		-- {
+			-- "Monitor_1",
+			-- "cam_reichman_reward"
+		-- }
+	-- },
+	-- {
+		-- 36,
+		-- START_SOUND,
+		-- {
+			-- "DX_m02_done_0070_reichman"
+		-- },
+		-- {
+			-- duration=10
+		-- }
+	-- },	
+	-- {
+		-- 36,
+		-- START_MOTION,
+		-- {"Char_reichman"},
+		-- {animation="Sc_dx_s037a_1202_quintaine",
+		 -- duration=5,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 41,
+		-- START_MOTION,
+		-- {"Char_reichman"},
+		-- {animation="Sc_dx_s037a_3201_quintaine",
+		 -- duration=7, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 44.25,
+		-- START_MOTION,
+		-- {"Char_reichman"},
+		-- {animation="Sc_dx_s037a_1201_quintaine",
+		 -- duration=7, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	
+	
+	
+	
+	-- {
+		-- 36,
+		-- START_MOTION,
+		-- {"Char_reichman"},
+		-- {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+		 -- duration=1, time_scale=1,  weight=1, heading=-1}
+	-- },
+	
+	
+	-- {
+		-- 37,
+		-- START_MOTION,
+		-- {"Char_reichman"},
+		-- {animation="Sc_MLBODY_STND_GESTL_STOP_000LV_XA_03",
+		 -- duration=4.5,  time_scale=0.6, trans_time=1, weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 41.5,
+		-- START_MOTION,
+		-- {"Char_reichman"},
+		-- {animation="Sc_MLBODY_STND_AT-EASE_HSEC_RLEASE_000LV_XA_03",
+		 -- duration=5,  time_scale=0.6, trans_time=1, weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 44,
+		-- START_MOTION,
+		-- {"Char_reichman"},
+		-- {animation="Sc_MLBODY_STND_AT-EASE_HOLD_000LV_XA_01",
+		 -- duration=5,  time_scale=0.6, trans_time=1, weight=1, heading=-1, event_flags=2}
+	-- }, 
+	
+	
+	
+	
+	
+	
+	
 	
 	{
-		36,
-		SET_CAMERA,
-		{
-			"Monitor_1",
-			"cam_reichman_reward"
-		}
-	},
-	{
-		36,
-		START_SOUND,
-		{
-			"DX_m02_done_0070_reichman"
-		},
-		{
-			duration=10
-		}
-	},	
-	{
-		36,
-		START_MOTION,
-		{"Char_reichman"},
-		{animation="Sc_dx_s037a_1202_quintaine",
-		 duration=5,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
-	}, 
-	{
-		41,
-		START_MOTION,
-		{"Char_reichman"},
-		{animation="Sc_dx_s037a_3201_quintaine",
-		 duration=7, time_scale=1, trans_time=0.25, weight=1, heading=-1}
-	}, 
-	{
-		44.25,
-		START_MOTION,
-		{"Char_reichman"},
-		{animation="Sc_dx_s037a_1201_quintaine",
-		 duration=7, time_scale=1, trans_time=0.25, weight=1, heading=-1}
-	}, 
-	
-	
-	
-	
-	{
-		36,
-		START_MOTION,
-		{"Char_reichman"},
-		{animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
-		 duration=1, time_scale=1,  weight=1, heading=-1}
-	},
-	
-	
-	{
-		37,
-		START_MOTION,
-		{"Char_reichman"},
-		{animation="Sc_MLBODY_STND_GESTL_STOP_000LV_XA_03",
-		 duration=4.5,  time_scale=0.6, trans_time=1, weight=1, heading=-1}
-	}, 
-	{
-		41.5,
-		START_MOTION,
-		{"Char_reichman"},
-		{animation="Sc_MLBODY_STND_AT-EASE_HSEC_RLEASE_000LV_XA_03",
-		 duration=5,  time_scale=0.6, trans_time=1, weight=1, heading=-1}
-	}, 
-	{
-		44,
-		START_MOTION,
-		{"Char_reichman"},
-		{animation="Sc_MLBODY_STND_AT-EASE_HOLD_000LV_XA_01",
-		 duration=5,  time_scale=0.6, trans_time=1, weight=1, heading=-1, event_flags=2}
-	}, 
-	
-	
-	
-	
-	
-	
-	
-	
-	{
-		47,
+		0,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"cam_trent_away",
@@ -3037,7 +3037,7 @@ events={
 		}
 	},
 	{
-		47,
+		0,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"cam_trent_away_marker",
@@ -3056,7 +3056,7 @@ events={
 		}
 	},
 	{
-		57,
+		10,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"cam_trent_away",
@@ -3075,7 +3075,7 @@ events={
 		}
 	},
 	{
-		57,
+		10,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"cam_trent_away_marker",
@@ -3093,11 +3093,48 @@ events={
 			pcurve_period=-1000
 		}
 	},
-
+	-- {
+		-- 20,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "cam_trent_away",
+			-- "cam_trent_away_pos4"
+		-- },
+		-- {
+			-- duration=10,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- pos={0,0,0},
+				-- q_orient={1,0,0,0}
+			-- },
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			-- pcurve_period=-1000
+		-- }
+	-- },
+	-- {
+		-- 20,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "cam_trent_away_marker",
+			-- "cam_trent_away_marker_pos4"
+		-- },
+		-- {
+			-- duration=10,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- pos={0,0,0},
+				-- q_orient={1,0,0,0}
+			-- },
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			-- pcurve_period=-1000
+		-- }
+	-- },
 	
 	
 	{
-		47,
+		0,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"Char_trooper1",
@@ -3114,7 +3151,7 @@ events={
 		}
 	},	
 	{
-		47,
+		0,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"Char_trooper2",
@@ -3135,7 +3172,7 @@ events={
 	
 	
 	{
-		47,
+		0,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"Char_trent",
@@ -3153,7 +3190,7 @@ events={
 	},	
 	
 	{
-		47,
+		0,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"Char_wilham",
@@ -3170,7 +3207,7 @@ events={
 		}
 	},
 	{
-		47,
+		0,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"Char_reichman",
@@ -3190,17 +3227,18 @@ events={
 	
 	
 	{
-		47,
+		0,
 		SET_CAMERA,
 		{
 			"Monitor_1",
 			"cam_trent_away"
+			-- "cam_reichman_looktrent"
 		}
 	},
 	
 	
 	{
-		47.1,
+		0.1,
 		START_IK,
 		{
 			"Char_wilham",
@@ -3215,7 +3253,7 @@ events={
 		}
 	},
 	{
-		47.1,
+		0.1,
 		START_IK,
 		{
 			"Char_wilham",
@@ -3232,23 +3270,29 @@ events={
 	
 	
 	{
-		47,
+		0,
 		START_MOTION,
 		{"Char_trent"},
 		{animation="Sc_MLBODY_STND_WALK_TRNS_180LV_XA_02",
-		 duration=5,  time_scale=0.6, trans_time=1, weight=1, heading=-1}
+		 duration=5,  time_scale=0.75, trans_time=1, weight=1, heading=-1}
 	}, 
-
+	-- {
+		-- 3, --2.65
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 -- duration=3,  time_scale=0.75, weight=1, heading=-1, event_flags=2}
+	-- }, 
 	
 	{
-		47,
+		0,
 		START_MOTION,
 		{"Char_wilham"},
 		{animation="Sc_MLBODY_STND_TURN_090LV_XA_02",
 		 duration=5,  time_scale=0.5,  weight=1, heading=-1}
 	}, 
 	{
-		52,
+		5,
 		START_MOTION,
 		{"Char_wilham"},
 		{animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
@@ -3257,7 +3301,7 @@ events={
 	
 	
 	{
-		51,
+		4,
 		START_MOTION,
 		{"Char_reichman"},
 		{animation="Sc_MLBODY_WALK_STND_TRNS_000LV_XA_02",
@@ -3266,7 +3310,7 @@ events={
 	
 	
 	{
-		55,
+		8,
 		START_SOUND,
 		{
 			"DX_m02_done_0080_reichman"
@@ -3276,7 +3320,7 @@ events={
 		}
 	},	
 	{
-		55,
+		8,
 		START_MOTION,
 		{"Char_reichman"},
 		{animation="Sc_dx_s038x_4103_quintaine",
@@ -3286,7 +3330,7 @@ events={
 	
 	
 	{
-		57,
+		10,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"Char_trent",
@@ -3305,7 +3349,7 @@ events={
 	
 	
 	{
-		55,
+		8,
 		START_IK,
 		{
 			"Char_wilham",
@@ -3320,7 +3364,7 @@ events={
 		}
 	},
 	{
-		55,
+		8,
 		START_IK,
 		{
 			"Char_wilham",
@@ -3335,7 +3379,7 @@ events={
 		}
 	},
 	{
-		54,
+		7,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"wilham_eye_ik",
@@ -3349,7 +3393,7 @@ events={
 		}
 	},
 	{
-		54,
+		7,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"wilham_head_ik",
@@ -3363,7 +3407,7 @@ events={
 		}
 	},
 	{
-		55,
+		8,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"wilham_eye_ik",
@@ -3377,7 +3421,7 @@ events={
 		}
 	},
 	{
-		55,
+		8,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"wilham_head_ik",
@@ -3393,7 +3437,7 @@ events={
 	
 	
 	{
-		57,
+		10,
 		START_IK,
 		{
 			"Char_reichman",
@@ -3408,7 +3452,7 @@ events={
 		}
 	},
 	{
-		57,
+		10,
 		START_IK,
 		{
 			"Char_reichman",
@@ -3423,7 +3467,7 @@ events={
 		}
 	},
 	{
-		52,
+		5,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"reichman_eye_ik",
@@ -3437,7 +3481,7 @@ events={
 		}
 	},
 	{
-		52,
+		5,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"reichman_head_ik",
@@ -3451,7 +3495,7 @@ events={
 		}
 	},
 	{
-		57,
+		10,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"reichman_eye_ik",
@@ -3465,7 +3509,7 @@ events={
 		}
 	},
 	{
-		57,
+		10,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"reichman_head_ik",
@@ -3479,7 +3523,7 @@ events={
 		}
 	},
 	{
-		61,
+		14,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"reichman_eye_ik",
@@ -3493,7 +3537,7 @@ events={
 		}
 	},
 	{
-		61,
+		14,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"reichman_head_ik",
@@ -3509,7 +3553,7 @@ events={
 	
 	
 	{
-		60,
+		13,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"wilham_eye_ik",
@@ -3523,7 +3567,7 @@ events={
 		}
 	},
 	{
-		60,
+		13,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"wilham_head_ik",
@@ -3540,7 +3584,7 @@ events={
 
 	
 	{
-		58,
+		11,
 		START_SOUND,
 		{
 			"DX_m02_done_0090_wilham"
@@ -3550,7 +3594,7 @@ events={
 		}
 	},	
 	{
-		58,
+		11,
 		START_MOTION,
 		{"Char_wilham"},
 		{animation="Sc_dx_s015x_0701_walker",
@@ -3561,7 +3605,7 @@ events={
 	
 	
 	{
-		64,
+		17,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"reichman_eye_ik",
@@ -3575,7 +3619,7 @@ events={
 		}
 	},
 	{
-		64,
+		17,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"reichman_head_ik",
@@ -3590,7 +3634,7 @@ events={
 	},
 	
 	{
-		64,
+		17,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"wilham_eye_ik",
@@ -3604,7 +3648,7 @@ events={
 		}
 	},
 	{
-		65,
+		18,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"wilham_head_ik",
@@ -3621,7 +3665,7 @@ events={
 
 	
 	{
-		64,
+		17,
 		START_SOUND,
 		{
 			"DX_m02_done_0100_reichman"
@@ -3631,7 +3675,7 @@ events={
 		}
 	},	
 	{
-		64,
+		17,
 		START_MOTION,
 		{"Char_reichman"},
 		{animation="Sc_dx_s037d_0101_quintaine",
@@ -3640,7 +3684,7 @@ events={
 	
 	
 	{
-		65.6,
+		18.6,
 		START_SOUND,
 		{
 			"DX_m02_done_0110_wilham"
@@ -3650,7 +3694,7 @@ events={
 		}
 	},
 	{
-		65.6,
+		18.6,
 		START_MOTION,
 		{"Char_wilham"},
 		{animation="Sc_dx_s038x_1501_big_man_01",
@@ -3660,7 +3704,7 @@ events={
 	
 	
 	{
-		70,
+		23,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"reichman_eye_ik",
@@ -3674,7 +3718,7 @@ events={
 		}
 	},
 	{
-		70,
+		23,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"reichman_head_ik",
@@ -3689,7 +3733,7 @@ events={
 	},
 	
 	{
-		67.5,
+		20.5,
 		SET_CAMERA,
 		{
 			"Monitor_1",
@@ -3697,7 +3741,7 @@ events={
 		}
 	},
 	{
-		68,
+		21,
 		START_SOUND,
 		{
 			"DX_m02_done_0120_reichman"
@@ -3707,14 +3751,14 @@ events={
 		}
 	},	
 	{
-		68,
+		21,
 		START_MOTION,
 		{"Char_reichman"},
 		{animation="Sc_dx_s038x_4103_quintaine",
 		 duration=2.5,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
 	}, 
 	{
-		70.5,
+		23.5,
 		START_MOTION,
 		{"Char_reichman"},
 		{animation="Sc_dx_s037a_1201_quintaine",
@@ -3726,7 +3770,7 @@ events={
 	
 	
 	{
-		75,
+		28,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"reichman_eye_ik",
@@ -3740,7 +3784,7 @@ events={
 		}
 	},
 	{
-		75,
+		28,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"reichman_head_ik",
@@ -3754,7 +3798,7 @@ events={
 		}
 	},
 	{
-		77,
+		30,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"reichman_eye_ik",
@@ -3768,7 +3812,7 @@ events={
 		}
 	},
 	{
-		77,
+		30,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"reichman_head_ik",
@@ -3785,7 +3829,7 @@ events={
 	
 
 	{
-		73.5,
+		26.5,
 		SET_CAMERA,
 		{
 			"Monitor_1",
@@ -3793,7 +3837,7 @@ events={
 		}
 	},
 	{
-		73.5,
+		26.5,
 		START_SOUND,
 		{
 			"DX_m02_done_0130_wilham"
@@ -3803,14 +3847,14 @@ events={
 		}
 	},	
 	{
-		73.5,
+		26.5,
 		START_MOTION,
 		{"Char_wilham"},
 		{animation="Sc_dx_s038x_1401_big_man_01",
 		 duration=5,  time_scale=1, start_time=1, trans_time=0.25, weight=1, heading=-1}
 	}, 	
 	{
-		76,
+		29,
 		START_MOTION,
 		{"Char_wilham"},
 		{animation="Sc_MLHEAD_BASEPOSE_000LV_02_01",
@@ -3819,21 +3863,21 @@ events={
 	
 	
 	{
-		73.5,
+		26.5,
 		START_MOTION,
 		{"Char_wilham"},
 		{animation="Sc_MLBODY_STND_SALUT_000LV_XA_03",
 		 duration=15,  time_scale=0.8,  weight=1, heading=-1}
 	}, 
 	{
-		72.5,
+		25.5,
 		START_MOTION,
 		{"Char_reichman"},
 		{animation="Sc_MLBODY_STND_AT-EASE_HSEC_RLEASE_000LV_XA_03",
 		 duration=15,  time_scale=0.6,  weight=1, heading=-1}
 	}, 
 	{
-		75.5,
+		29,
 		START_MOTION,
 		{"Char_reichman"},
 		{animation="Sc_MLBODY_STND_AT-EASE_HOLD_000LV_XA_01",
@@ -3843,7 +3887,7 @@ events={
 
 	
 	{
-		76.5,
+		29.5,
 		START_SOUND,
 		{
 			"DX_m02_done_0140_reichman"
@@ -3853,23 +3897,16 @@ events={
 		}
 	},	
 	{
-		76.5,
+		29.5,
 		START_MOTION,
 		{"Char_reichman"},
 		{animation="Sc_dx_s037d_0101_quintaine",
 		 duration=4,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
 	}, 
 	
-	{
-		82,
-		START_MOTION,
-		{"Char_reichman"},
-		{animation="Sc_MLHEAD_NEUT_BLINK_EYES_000LV_A_00",
-		 duration=2, time_scale=0.2,  weight=1, heading=-1}
-	},
 	
 	{
-		79,
+		32,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"wilham_eye_ik",
@@ -3883,7 +3920,7 @@ events={
 		}
 	},
 	{
-		79,
+		32,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"wilham_head_ik",
@@ -3897,7 +3934,7 @@ events={
 		}
 	},
 	{
-		80,
+		33,
 		START_MOTION,
 		{"Char_wilham"},
 		{animation="Sc_MLBODY_STND_WALK_TRNS_090LV_XA_02",
@@ -3906,7 +3943,7 @@ events={
 
 
 	{
-		76,
+		29,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"cam_final",
@@ -3925,7 +3962,7 @@ events={
 		}
 	},
 	{
-		76,
+		29,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"cam_final_marker",
