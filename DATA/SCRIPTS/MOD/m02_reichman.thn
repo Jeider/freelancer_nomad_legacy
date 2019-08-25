@@ -173,7 +173,125 @@ entities={
 	
 	
 	
-	
+	{
+		entity_name="subtitles_pack3",
+		template_name="subtitles_pack3",
+		type=COMPOUND, lt_grp=3,srt_grp=0,usr_flg=0, flags=LIT_AMBIENT,
+		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		userprops={category="Prop"}
+	},
+	{
+		entity_name="subtitles_m02_done01",
+		template_name="subtitles_m02_done01",
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
+		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		userprops={category="Prop"}
+	},
+	{
+		entity_name="subtitles_m02_done02",
+		template_name="subtitles_m02_done02",
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
+		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		userprops={category="Prop"}
+	},
+	{
+		entity_name="subtitles_m02_done03",
+		template_name="subtitles_m02_done03",
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
+		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		userprops={category="Prop"}
+	},
+	{
+		entity_name="subtitles_m02_done04",
+		template_name="subtitles_m02_done04",
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
+		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		userprops={category="Prop"}
+	},
+	{
+		entity_name="subtitles_m02_done05",
+		template_name="subtitles_m02_done05",
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
+		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		userprops={category="Prop"}
+	},
+	{
+		entity_name="subtitles_m02_done06",
+		template_name="subtitles_m02_done06",
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
+		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		userprops={category="Prop"}
+	},
+	{
+		entity_name="subtitles_m02_done07",
+		template_name="subtitles_m02_done07",
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
+		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		userprops={category="Prop"}
+	},
+	{
+		entity_name="subtitles_m02_done08",
+		template_name="subtitles_m02_done08",
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
+		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		userprops={category="Prop"}
+	},
+	{
+		entity_name="subtitles_m02_done09",
+		template_name="subtitles_m02_done09",
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
+		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		userprops={category="Prop"}
+	},
+	{
+		entity_name="subtitles_m02_done10",
+		template_name="subtitles_m02_done10",
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
+		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		userprops={category="Prop"}
+	},
+	{
+		entity_name="subtitles_m02_done11",
+		template_name="subtitles_m02_done11",
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
+		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		userprops={category="Prop"}
+	},
+	{
+		entity_name="subtitles_m02_done12",
+		template_name="subtitles_m02_done12",
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
+		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		userprops={category="Prop"}
+	},
+	{
+		entity_name="subtitles_m02_done13",
+		template_name="subtitles_m02_done13",
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
+		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		userprops={category="Prop"}
+	},
+	{
+		entity_name="subtitles_m02_done14",
+		template_name="subtitles_m02_done14",
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
+		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		userprops={category="Prop"}
+	},
+	{
+		entity_name="subtitles_m02_done15",
+		template_name="subtitles_m02_done15",
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
+		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		userprops={category="Prop"}
+	},
+	{
+		entity_name="subtitles_m02_done16",
+		template_name="subtitles_m02_done16",
+		type=COMPOUND, lt_grp=3,srt_grp=-1,usr_flg=0, flags=LIT_AMBIENT,
+		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		userprops={category="Prop"}
+	},
 	
 	
 	
@@ -1839,10 +1957,10 @@ events={
 			"Monitor_1",
 			-- "cam_dbg"
 			"cam_start"
-			-- "cam_reichman_looktrent"
 		}
 	},
 
+	
 	{
 		0,
 		ATTACH_ENTITY,
@@ -2372,6 +2490,34 @@ events={
 			duration=10
 		}
 	},	
+	
+	
+	
+	{
+		10,
+		ATTACH_ENTITY,
+		{
+			"subtitles_m02_done01",
+			"cam_reichman_top"
+		},
+		{
+			duration=3, offset={0, -0.125,  -0.9},
+			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},	
+	{
+		13.0001,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"subtitles_m02_done01",
+			"offscreen"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},	
 	{
 		10,
 		START_MOTION,
@@ -2399,6 +2545,34 @@ events={
 			duration=10
 		}
 	},	
+	
+	{
+		13.2,
+		ATTACH_ENTITY,
+		{
+			"subtitles_m02_done02",
+			"cam_trent_far"
+		},
+		{
+			duration=2.5, offset={-0.06, -0.125,  -0.8},
+			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},	
+	{
+		16.0001,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"subtitles_m02_done02",
+			"offscreen"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},	
+	
+	
 	{
 		13.2,
 		START_MOTION,
@@ -2443,6 +2617,32 @@ events={
 			duration=10
 		}
 	},	
+	
+	{
+		16,
+		ATTACH_ENTITY,
+		{
+			"subtitles_m02_done03",
+			"cam_reichman_near"
+		},
+		{
+			duration=4, offset={-0, -0.12,  -1.0},
+			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},	
+	{
+		20.0001,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"subtitles_m02_done03",
+			"offscreen"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},
 	{
 		16,
 		START_MOTION,
@@ -2484,6 +2684,32 @@ events={
 			duration=10
 		}
 	},	
+	
+	{
+		20,
+		ATTACH_ENTITY,
+		{
+			"subtitles_m02_done04",
+			"cam_trent_top"
+		},
+		{
+			duration=4, offset={-0, -0.125,  -0.9},
+			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},	
+	{
+		24.0001,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"subtitles_m02_done04",
+			"offscreen"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},
 	{
 		20,
 		START_MOTION,
@@ -2643,6 +2869,56 @@ events={
 		},
 		{
 			duration=10
+		}
+	},	
+	{
+		24,
+		ATTACH_ENTITY,
+		{
+			"subtitles_m02_done05",
+			"cam_reichman_far"
+		},
+		{
+			duration=4, offset={-0, -0.125,  -0.7},
+			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},	
+	{
+		28.0001,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"subtitles_m02_done05",
+			"offscreen"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},	
+	{
+		28,
+		ATTACH_ENTITY,
+		{
+			"subtitles_m02_done06",
+			"cam_reichman_far"
+		},
+		{
+			duration=4, offset={-0, -0.125,  -0.7},
+			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},	
+	{
+		32.0001,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"subtitles_m02_done06",
+			"offscreen"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
 		}
 	},	
 	{
@@ -2848,6 +3124,33 @@ events={
 			duration=10
 		}
 	},	
+	
+	{
+		33.2,
+		ATTACH_ENTITY,
+		{
+			"subtitles_m02_done07",
+			"cam_trent_near"
+		},
+		{
+			duration=2.7, offset={-0, -0.125,  -1.0},
+			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},	
+	{
+		35.9001,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"subtitles_m02_done07",
+			"offscreen"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},	
+	
 	{
 		33.2,
 		START_MOTION,
@@ -2952,6 +3255,57 @@ events={
 		},
 		{
 			duration=10
+		}
+	},	
+	
+	{
+		36,
+		ATTACH_ENTITY,
+		{
+			"subtitles_m02_done08",
+			"cam_reichman_reward"
+		},
+		{
+			duration=5, offset={-0, -0.125,  -1.0},
+			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},	
+	{
+		41.0001,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"subtitles_m02_done08",
+			"offscreen"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},	
+	{
+		41,
+		ATTACH_ENTITY,
+		{
+			"subtitles_m02_done09",
+			"cam_reichman_reward"
+		},
+		{
+			duration=6, offset={-0, -0.125,  -1.0},
+			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},	
+	{
+		47.0001,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"subtitles_m02_done09",
+			"offscreen"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
 		}
 	},	
 	{
@@ -3277,6 +3631,31 @@ events={
 	},	
 	{
 		55,
+		ATTACH_ENTITY,
+		{
+			"subtitles_m02_done10",
+			"cam_trent_away"
+		},
+		{
+			duration=3, offset={-0, -0.13,  -1.1},
+			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},	
+	{
+		58.0001,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"subtitles_m02_done10",
+			"offscreen"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},	
+	{
+		55,
 		START_MOTION,
 		{"Char_reichman"},
 		{animation="Sc_dx_s038x_4103_quintaine",
@@ -3551,6 +3930,31 @@ events={
 	},	
 	{
 		58,
+		ATTACH_ENTITY,
+		{
+			"subtitles_m02_done11",
+			"cam_trent_away"
+		},
+		{
+			duration=6, offset={-0, -0.13,  -1.1},
+			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},	
+	{
+		64.0001,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"subtitles_m02_done11",
+			"offscreen"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},	
+	{
+		58,
 		START_MOTION,
 		{"Char_wilham"},
 		{animation="Sc_dx_s015x_0701_walker",
@@ -3632,6 +4036,31 @@ events={
 	},	
 	{
 		64,
+		ATTACH_ENTITY,
+		{
+			"subtitles_m02_done12",
+			"cam_trent_away"
+		},
+		{
+			duration=1.6, offset={-0, -0.13,  -1.1},
+			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},	
+	{
+		65.6001,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"subtitles_m02_done12",
+			"offscreen"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},
+	{
+		64,
 		START_MOTION,
 		{"Char_reichman"},
 		{animation="Sc_dx_s037d_0101_quintaine",
@@ -3649,6 +4078,31 @@ events={
 			duration=10
 		}
 	},
+	{
+		65.6,
+		ATTACH_ENTITY,
+		{
+			"subtitles_m02_done13",
+			"cam_trent_away"
+		},
+		{
+			duration=2, offset={-0, -0.13,  -1.1},
+			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},	
+	{
+		67.6001,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"subtitles_m02_done13",
+			"offscreen"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},	
 	{
 		65.6,
 		START_MOTION,
@@ -3704,6 +4158,31 @@ events={
 		},
 		{
 			duration=10
+		}
+	},	
+	{
+		68,
+		ATTACH_ENTITY,
+		{
+			"subtitles_m02_done14",
+			"cam_reichman_looktrent"
+		},
+		{
+			duration=5.5, offset={-0, -0.125,  -0.85},
+			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},	
+	{
+		73.5001,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"subtitles_m02_done14",
+			"offscreen"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
 		}
 	},	
 	{
@@ -3804,6 +4283,31 @@ events={
 	},	
 	{
 		73.5,
+		ATTACH_ENTITY,
+		{
+			"subtitles_m02_done15",
+			"cam_final"
+		},
+		{
+			duration=3, offset={-0, -0.125,  -0.65},
+			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},	
+	{
+		76.5001,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"subtitles_m02_done15",
+			"offscreen"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},	
+	{
+		73.5,
 		START_MOTION,
 		{"Char_wilham"},
 		{animation="Sc_dx_s038x_1401_big_man_01",
@@ -3850,6 +4354,31 @@ events={
 		},
 		{
 			duration=10
+		}
+	},	
+	{
+		76.5,
+		ATTACH_ENTITY,
+		{
+			"subtitles_m02_done16",
+			"cam_final"
+		},
+		{
+			duration=3, offset={-0, -0.125,  -0.65},
+			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		}
+	},	
+	{
+		79.5001,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"subtitles_m02_done16",
+			"offscreen"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
 		}
 	},	
 	{
@@ -3945,7 +4474,41 @@ events={
 	},
 
 	
+
+	-- {
+		-- 1,
+		-- SET_CAMERA,
+		-- {
+			-- "Monitor_1",
+			-- "cam_reichman_reward"
+		-- }
+	-- },
+	-- {
+		-- 1,
+		-- ATTACH_ENTITY,
+		-- {
+			-- "subtitles_m02_done08",
+			-- "cam_reichman_reward"
+		-- },
+		-- {
+			-- duration=4, offset={-0, -0.125,  -1.0},
+			-- up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
+			-- target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
+		-- }
+	-- },	
+	-- {
+		-- 24.0001,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "subtitles_m02_done07",
+			-- "offscreen"
+		-- },
+		-- {
+			-- duration=0.001,
+			-- target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		-- }
+	-- },	
 	
-	
-	
+
+		
 }
