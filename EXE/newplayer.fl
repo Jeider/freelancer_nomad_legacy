@@ -9,11 +9,14 @@ voice = trent_voice
 costume = trent
 com_costume = trent
 
-system = the_intro
-base = the_intro_base
+;system = the_intro
+;base = the_intro_base
 
+system = the_intro_dark
 
 ship_archetype = ge_fighter
+
+pos = -5000, -5000, -5000
 
 
 ;HELP
@@ -33,9 +36,11 @@ equip = DockingLightRedSmall, HpDockLight02, 1
 
 
 wg = 0, HpWeapon01
-wg = 0, HpWeapon02
-wg = 0, HpWeapon04
+;wg = 0, HpWeapon02 ;;; hbr missile 02
 wg = 0, HpWeapon03
+wg = 0, HpWeapon04
+wg = 0, HpWeapon05
+wg = 0, HpWeapon06
 
 
 

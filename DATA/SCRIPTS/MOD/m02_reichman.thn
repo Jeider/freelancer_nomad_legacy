@@ -59,6 +59,67 @@ entities={
 	
 	
 	{
+		entity_name="music_main",
+		type=SOUND,
+		template_name="music_discordant_psychosis",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=-10,
+			pan=0,
+			dmin=50,
+			dmax=300,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio",
+			Priority="Story_Sound_1"
+		}
+	},
+	{
+		entity_name="music_second",
+		type=SOUND,
+		template_name="music_anticipation_more_forboding",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=-10,
+			pan=0,
+			dmin=50,
+			dmax=300,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio",
+			Priority="Story_Sound_1"
+		}
+	},
+	
+	{
 		entity_name="DX_m02_done_0010_reichman",
 		template_name="DX_m02_done_0010_reichman",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
@@ -1943,6 +2004,56 @@ entities={
 
 events={
 
+	{
+		0, START_SOUND, {"music_main"}, {duration=47, flags=LOOP}
+	},
+	{
+		42,
+		START_AUDIO_PROP_ANIM,
+		{
+			"music_main"
+		},
+		{
+			duration=5,
+			audioprops={
+				attenuation=-100
+			}
+		}
+	},
+	{
+		47, START_SOUND, {"music_second"}, {duration=60, flags=LOOP}
+	},
+	{
+		47,
+		START_AUDIO_PROP_ANIM,
+		{
+			"music_second"
+		},
+		{
+			duration=5,
+			audioprops={
+				attenuation=0
+			}
+		}
+	},
+	{
+		83,
+		START_AUDIO_PROP_ANIM,
+		{
+			"music_second"
+		},
+		{
+			duration=3,
+			audioprops={
+				attenuation=-8
+			}
+		}
+	},
+	
+	
+	
+	
+	
 	{
 		0,
 		START_MOTION,
