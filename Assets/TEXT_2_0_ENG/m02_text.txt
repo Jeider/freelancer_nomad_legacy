@@ -1,0 +1,8 @@
+﻿OBJECTIVE:
+Find destroyed ship, extract information from it and return back to Wilhelm.
+
+DIFFICULTY:
+Easy.
+
+REWARD:
+5 000 credits.

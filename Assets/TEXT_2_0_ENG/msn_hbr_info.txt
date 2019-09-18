@@ -1,0 +1,178 @@
+Êâåñò «Îïåğàöèÿ Âàòåğëîî»
+
+èíôî - óîğèê - èíôîğìàòîğ ïåğåä íà÷àëîì ìèññèè
+
+
+[b]«Operation Waterloo» quest[/b]
+
+[b]Mission's goal[/b]
+The Bretonian intelligence discovered an enormous base of the Irish Republican Army on a planet in the Tau-81 system. High command decided to deliver a fatal blow upon the IRA forces, with the help of the Triumph orbital cannon. Help Bretonia clean the system up, and receive a generous reward.
+
+[b]Reward[/b]
+Access key for the Baltimore station in the Avalon system.
+
+[b]Mission requirements[/b]
+At least one shield, engine, or power plant of class 3 or above. (Improved or Elite)
+
+
+
+
+èíôî - óîğèê2 - èíôîğìàöèÿ î ìèññèè îêîëî ëèíêîğà
+
+[b]Mission briefing[/b]
+The IRA forces appeared to be prepared for prolonged defense. They've deployed a powerful force field around their planet, preventing our ships from landing and defending their planet from being destroyed by the Triumph cannon. 
+
+We need your help. Dock with Battleship Orion and install the special charger. With the help of this charger, we can overcharge the Triumph cannon, and finally destroy the IRA base!
+
+Unfortunately, we can’t provide you with enough ammo to fully charge all of the Triumph cannon’s generators. You can find additional charger gun ammo at various points in the Tau-81 system, such as:
+- friendly repair shipyards;
+- hostile solar power plants;
+- hostile asteroid bases.
+
+You can get more info on these objects in the bar aboard Battleship Orion.
+
+[b]How to charge the Triumph cannon[/b]
+To charge the Triumph cannon, you need to shoot the generators attached to it. These generators will be marked in your target list. Be careful–your charger gun’s ammo is limited! If you miss too many shots, you won’t have enough left to fully charge the Triumph cannon!
+
+Charging one generator requires 15 direct hits from the charger gun.
+
+[b]How to start the mission[/b]
+To start the mission, you need to activate the Tau-81 Jump Gate. 
+
+You can only dock with it if you have a pre-loaded charger gun installed.
+
+[b]How to get the reward[/b]
+After destroying the planet, its debris and the hostile base’s debris will remain. Your reward will be in the base’s debris. The debris containing the reward will be marked with a special orange marker. Shoot the marked debris to get your reward.
+
+
+
+èíôî - òàó-81 - èíôîğìàöèÿ âíóòğè ñèñòåìû
+
+[b]Mission briefing[/b]
+The IRA forces appeared to be prepared for prolonged defense. They've deployed a powerful force field around their planet, preventing our ships from landing and defending their planet from being destroyed by the Triumph cannon. 
+
+We need your help. Dock with Battleship Orion and install the special charger gun. With the help of this charger, we can overcharge the Triumph cannon, and finally destroy the IRA base!
+
+Unfortunately, we can’t provide you with enough ammo to fully charge all of the Triumph cannon’s generators. You can find additional charger gun ammo at various points in the Tau-81 system, such as:
+- friendly repair shipyards;
+- hostile solar power plants;
+- hostile asteroid bases.
+
+[b]How to charge the Triumph cannon[/b]
+To charge the Triumph cannon, you need to shoot the generators attached to it. These generators will be marked in your target list. Be careful – your charger’s ammo is limited! If you miss too many shots, you won’t have enough left to fully charge the Triumph cannon!
+
+Charging one generator requires 15 direct hits from the charger gun.
+
+[b]How to get the reward[/b]
+After destroying the planet, its debris and the hostile base’s debris will remain. Your reward will be in the base’s debris. The debris containing the reward will be marked with a special orange marker. Shoot the marked debris to get your reward.
+
+
+
+
+
+èíôî - âğàæåñêàÿ áàçà
+
+This is the Irish Republican Army’s base. Affiliation: Hostile.
+
+
+èíôî - êîíòåéíåğ
+
+Destroy this container to get more ammo for the charger gun.
+
+It’s not recommended to destroy the container if your charger’s ammo is full.
+
+
+
+
+èíôî - êâåñò
+
+This tradelane will send you to the mission’s starting point. Make sure you read the mission’s description, written in the nearby informant’s infocard.
+
+Attention! To start the mission, you must first fulfill its starting conditions. Otherwise, access will be denied!
+
+
+
+èíôî - ïîêèíóòü êâåñò
+
+You can leave the mission using this trade lane. You can start it again any time.
+
+
+èíôî - ãåíåğàòîğ 
+
+Shoot the generator with your charger gun to charge it. When it’s charged, the generator will light up.
+
+Necessary amount of hits to charge: 15.
+
+
+
+
+èíôî - ñîşçíàÿ áàçà
+
+This is a friendly base. Next to it is a repair zone, inside which you can repair your ship.
+
+
+èíôî - ğåìîíòíàÿ çîíà
+
+This is a repair zone.Fly into it to repair your ship. The ship's hull, its components and external equipment (guns, shield, etc.) will be repaired.
+
+
+èíôî - çàğÿæàşùàÿ ïóøêà
+
+This gun is designed to charge the generators of the Triumph orbital cannon.
+
+To charge one generator 15 shots with this gun are required.
+
+The ammo is limited, so try to aim very carefully.
+
+
+
+Èíôî - ñíàğÿä çàğÿæàëêè
+
+Charger gun ammo.
+
+
+
+èíôî - ñòàğòîâûé ıêğàí èãğû
+
+[b]Welcome to Nomad Legacy![/b]
+
+Click [b]Yes[/b] if you want to start a story campaign.
+
+Click [b]No[/b] if you want to run the “Operation Waterloo” quest.
+
+
+
+
+èíôî - çàïóñê êâåñòà
+
+Welcome! You have selected the «Operation Waterloo» quest.
+
+This quest can be run in ordinary Sirius. The only differences are that you can’t change your ship’s loadout, nor can you leave this system, because the gates are blocked.
+
+[b]How to play the mission[/b]
+
+The rules are quite simple. You have a special [b]Charger Gun[/b]. Fly to the [b]Triumph Cannon[/b] and shoot at the marked generators using your Charger Gun. The generators will be charged after 15 hits.
+
+The ammo of your Charger Gun is limited, so use it [b]very carefully[/b]. You can replenish ammo both at hostile and friendly stations. You can find them using the patrol map. For instance, fly to the nearest shipyard. You’ll notice there are ammo containers nearby. To get ammo, you must destroy these containers. It’s not recommended to destroy them before you actually need the ammo. Try to approach them only when your Charger Gun’s ammo is depleted.
+
+To complete the mission, you need to charge all of the Triumph Cannon’s generators. Shoot the generators, replenish your ammo, and in the end – the cannon will destroy the planet.
+
+[b]Additional features[/b]
+
+Tip: There’s an informant near you. You can always see the mission’s description in its infocard.
+
+Repair Zones:You’re no longer limited to repairs by nanobots. There’s a repair zone at the shipyard near you. Just fly into it to repair your ship.
+
+
+
+èíôî - ìèññèÿ âûïîëíåíà
+
+Congratulations! Mission accomplished.
+
+Would you like to begin the story campaign?
+
+Click [b]Yes[/b] to start the campaign.
+
+Click [b]No[/b]to continue exploring this system.
+
+
