@@ -881,7 +881,7 @@ entities={
 		flags=LIT_DYNAMIC + LIT_AMBIENT,
 		spatialprops={
 			pos={
-				-11, 0, 8.5
+				-11, -10, 8.5
 			},
 			orient={
 				{0,0,-1},
@@ -907,7 +907,7 @@ entities={
 		flags=LIT_DYNAMIC + LIT_AMBIENT,
 		spatialprops={
 			pos={
-				-8, 0, 8
+				-8, -10, 8
 			},
 			orient={
 				{0,0,-1},
