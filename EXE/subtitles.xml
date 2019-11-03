@@ -21,129 +21,47 @@
   
   
 <Static AudioFile="mod\intro\intro_0010_trent.wav" TextArea="Cinematic">The savior of souls!</Static>
-
 <Static AudioFile="mod\intro\intro_0020_barman.wav" TextArea="Cinematic">Welcome back, Trent. The usual?</Static>
-
 <Static AudioFile="mod\intro\intro_0030_trent.wav" TextArea="Cinematic">Sure, I’ll have 2!</Static>
-
-
-
-
-
-
 <Static AudioFile="mod\intro\intro_0040_barman.wav" TextArea="Cinematic">Any reason for this celebration?</Static>
-
-
-
-
-
-
 <Static AudioFile="mod\intro\intro_0050_trent.wav" TextArea="Cinematic">Absolutely. Got twice the reason! First of all, I, finally, have managed to pay all my debts!</Static>
-
-
-
-
-
-
 <Static AudioFile="mod\intro\intro_0060_barman.wav" TextArea="Cinematic">For the beginning of a new life! This one’s on me!</Static>
-
-
-
-
-
-
 <Static AudioFile="mod\intro\intro_0070_trent.wav" TextArea="Cinematic">Thanks, friend! You are definitely the best person in this godforsaken place!</Static>
-
-
-
-
-
-
 <Static AudioFile="mod\intro\intro_0080_barman.wav" TextArea="Cinematic">But if there’s a "first of all", there should be "second of all". Go on and tell me, or else I’ll die of curiousity.</Static>
-
-
-
-
-
-
 <Static AudioFile="mod\intro\intro_0090_trent.wav" TextArea="Cinematic">Don’t you dare die on me! I’ll never get over the loss .</Static>
-
-
-
-
-
-
 <Static AudioFile="mod\intro\intro_0100_trent.wav" TextArea="Cinematic">An old friend sent me a message.</Static>
-
-
-
-
-
-
 <Static AudioFile="mod\intro\intro_0105_trent.wav" TextArea="Cinematic">Look</Static>
-
-
-
-
-
-
 <Static AudioFile="mod\intro\intro_0110_alaric.wav" TextArea="Cinematic">Greetings, Trent! This is Alaric! Good news. I think we can fix the hole in your finnances. Meet me at Magderburg, Sigma-13 System. See you soon!</Static>
-
-
-
-
-
-
 <Static AudioFile="mod\intro\intro_0120_trent.wav" TextArea="Cinematic">What do you think?</Static>
-
-
-
-
-
-
 <Static AudioFile="mod\intro\intro_0130_barman.wav" TextArea="Cinematic"> I think you're the lucking son of a bitch on this junkpile of a planet.</Static>
-
-
-
-
-
-
 <Static AudioFile="mod\intro\intro_0140_trent.wav" TextArea="Cinematic">No, I mean.. Should I agree? Go there?</Static>
-
-
-
-
-
-
 <Static AudioFile="mod\intro\intro_0150_barman.wav" TextArea="Cinematic">You could, of course, let things be as they are and do nothing. Got enough money to sustain yourself; a risk-free life, other than dying in your 40s working in the mine. But, I think, if life gives you a chance to get out of this mud-hole - it’s a sin not to take that chance. But, it’s your call. </Static>
-
-
-
-
-
-
 <Static AudioFile="mod\intro\intro_0160_trent.wav" TextArea="Cinematic">So why aren’t you flying away from this “mud-hole” yourself?</Static>
-
-
-
-
-
-
 <Static AudioFile="mod\intro\intro_0170_barman.wav" TextArea="Cinematic">That, friend, is my mud-hole. I’ve grown into it and I love it. And I don’t have friends like yours, asking me to drop everything I’m doing and come over to Magdeburgh. And then, if I leave, who’s going to be the savior of strangers’ souls?.</Static>
-
-
-
-
-
-
 <Static AudioFile="mod\intro\intro_0180_trent.wav" TextArea="Cinematic">You’re right, without you this place would’ve been gloomy. I’ll head to the spaceport, then?</Static>
-
-
-
-
-
-
 <Static AudioFile="mod\intro\intro_0190_barman.wav" TextArea="Cinematic">Good luck, Trent! Hopefully, we’ll never meet here again.</Static>
+
+
+<Static AudioFile="mod\m03\m03_offer_0010_trent.wav" TextArea="Cinematic">Greetings, gentlemen.</Static>
+<Static AudioFile="mod\m03\m03_offer_0020_wilham.wav" TextArea="Cinematic">There you are, Herr Trent. Meet Herr Hassler. This mission will require both of you to tightly work together.</Static>
+<Static AudioFile="mod\m03\m03_offer_0030_trent.wav" TextArea="Cinematic">An honor to meet you, Herr Hassler.</Static>
+<Static AudioFile="mod\m03\m03_offer_0040_trent.wav" TextArea="Cinematic">And what will we do on this mission?</Static>
+<Static AudioFile="mod\m03\m03_offer_0050_wilham.wav" TextArea="Cinematic">The usual thing. Fly, shoot, nothing new.</Static>
+<Static AudioFile="mod\m03\m03_offer_0060_trent.wav" TextArea="Cinematic">And someone is watching from a safe distance. Definitely nothing new. Can you be more specific?</Static>
+<Static AudioFile="mod\m03\m03_offer_0070_wilham.wav" TextArea="Cinematic">Of course. Our intelligence managed to track down Dietrich's position. He's on an ex-military base in Konigsberg.</Static>
+<Static AudioFile="mod\m03\m03_offer_0075_wilham.wav" TextArea="Cinematic">A strike fleet is preparing to attack that base as we speak. However, our analytics predict that a direct attack on Konigsberg would cause severe losses on our side. </Static>
+<Static AudioFile="mod\m03\m03_offer_0077_wilham.wav" TextArea="Cinematic">That's why we're forming a mobile strike team, whose task will be to neutralize the base's defense systems by the time our main strike fleet approaches it.</Static>
+<Static AudioFile="mod\m03\m03_offer_0080_trent.wav" TextArea="Cinematic">You mean, those will be the guys who drag fire away from your asses.</Static>
+<Static AudioFile="mod\m03\m03_offer_0090_wilham.wav" TextArea="Cinematic">Correct, Herr Trent. By the way, Admiral Reichmann personally insisted on your participation in this mission.</Static>
+<Static AudioFile="mod\m03\m03_offer_0100_trent.wav" TextArea="Cinematic">I'm flattered. Could you tell me how an elite military base, with top class defense systems, practically in the very center of Rheinland's territory, got abandoned and fell into the hands of rebels and Corsairs?</Static>
+<Static AudioFile="mod\m03\m03_offer_0110_hassler.wav" TextArea="Cinematic">Herr Trent, at that time there were two such bases in Rheinland territory – Konigsberg and Regensburg, both in the Munich system, on the border with Kusari. The Kusari military saw Regensburg as nothing more than a pain in their ass.</Static>
+<Static AudioFile="mod\m03\m03_offer_0115_hassler.wav" TextArea="Cinematic">During our last conflict with Kusari, we suffered a crushing defeat, and under the terms of a peace treaty we were forced to demilitarize Munich. The construction of Konigsberg was halted just before it was finished... </Static>
+<Static AudioFile="mod\m03\m03_offer_0120_hassler.wav" TextArea="Cinematic">Our government couldn't bother destroying Konigsberg, or disassembling it. Maybe they hoped for the peace treaty to be re-negotiated so they can put the base into use, I don't know. Eventually, it appeared that Dietrich, one of the highest-ranking military personnel, having all the access keys, simply occupied it...</Static>
+<Static AudioFile="mod\m03\m03_offer_0130_trent.wav" TextArea="Cinematic">It seems that asking all sorts of stupid questions, like whether I have a choice, is inappropriate in this situation.</Static>
+<!--<Static AudioFile="mod\m03\m03_offer_0140_wilham.wav" TextArea="Cinematic">You're a wise man, Herr Trent. </Static>-->
+<Static AudioFile="mod\m03\m03_offer_0150_hassler.wav" TextArea="Cinematic">Herr Trent, ninety percent of the local freelancers can only dream of being in your place. You're being paid generously, and supervised directly by Admiral Reichmann.</Static>
+<Static AudioFile="mod\m03\m03_offer_0155_hassler.wav" TextArea="Cinematic">Why are you as nervous as a high-school student before graduation? Let's fly. I'll see you in space.</Static>
+
 
 
 
