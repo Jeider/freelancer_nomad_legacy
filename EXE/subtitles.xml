@@ -58,7 +58,7 @@
 <Static AudioFile="mod\m03\m03_offer_0115_hassler.wav" TextArea="Cinematic">During our last conflict with Kusari, we suffered a crushing defeat, and under the terms of a peace treaty we were forced to demilitarize Munich. The construction of Konigsberg was halted just before it was finished... </Static>
 <Static AudioFile="mod\m03\m03_offer_0120_hassler.wav" TextArea="Cinematic">Our government couldn't bother destroying Konigsberg, or disassembling it. Maybe they hoped for the peace treaty to be re-negotiated so they can put the base into use, I don't know. Eventually, it appeared that Dietrich, one of the highest-ranking military personnel, having all the access keys, simply occupied it...</Static>
 <Static AudioFile="mod\m03\m03_offer_0130_trent.wav" TextArea="Cinematic">It seems that asking all sorts of stupid questions, like whether I have a choice, is inappropriate in this situation.</Static>
-<!--<Static AudioFile="mod\m03\m03_offer_0140_wilham.wav" TextArea="Cinematic">You're a wise man, Herr Trent. </Static>-->
+<Static AudioFile="mod\m03\m03_offer_0140_wilham.wav" TextArea="Cinematic">You're a wise man, Herr Trent. </Static>
 <Static AudioFile="mod\m03\m03_offer_0150_hassler.wav" TextArea="Cinematic">Herr Trent, ninety percent of the local freelancers can only dream of being in your place. You're being paid generously, and supervised directly by Admiral Reichmann.</Static>
 <Static AudioFile="mod\m03\m03_offer_0155_hassler.wav" TextArea="Cinematic">Why are you as nervous as a high-school student before graduation? Let's fly. I'll see you in space.</Static>
 
