@@ -1,8 +1,8 @@
-duration=86
+duration=46
 
 entities={
 	{
-		entity_name="Scene_M02_bar_scene",
+		entity_name="Scene_M03_last_deck_scene",
 		type=SCENE,
 		template_name="",
 		lt_grp=0,
@@ -59,8 +59,24 @@ entities={
 	
 	
 	{
-		entity_name="DX_m02_done_0010_reichman",
-		template_name="DX_m02_done_0010_reichman",
+		entity_name="DX_m03_reward_0010_hassler",
+		template_name="DX_m03_reward_0010_hassler",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m03_reward_0020_trent",
+		template_name="DX_m03_reward_0020_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m03_reward_0030_hassler",
+		template_name="DX_m03_reward_0030_hassler",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
@@ -73,15 +89,15 @@ entities={
 		entity_name="Char_trent",
 		type=DEFORMABLE,
 		template_name="trent",
-		lt_grp=3,
+		lt_grp=0,
 		srt_grp=0,
 		usr_flg=0,
 		flags=LIT_DYNAMIC + LIT_AMBIENT,
 		spatialprops={
 			pos={
-				3,
+				6.5,
 				0,
-				6
+				8
 			},
 			orient={
 				{0,0,1},
@@ -97,12 +113,824 @@ entities={
 			category="Character"
 		}
 	},
+	{
+		entity_name="Char_hassler",
+		type=DEFORMABLE,
+		template_name="hassler",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={
+			pos={
+				11.5,
+				0,
+				8
+			},
+			orient={
+				{0,0,1},
+				{0,1,0},
+				{-1,0,0}
+			}
+		},
+		compoundprops={
+			floor_height=0
+		},
+		userprops={
+			actor="hassler",
+			category="Character"
+		}
+	},
+	{
+		entity_name="Char_outcast",
+		type=DEFORMABLE,
+		template_name="m03_deck_informer",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={
+			pos={
+				13,
+				0,
+				8
+			},
+			orient={
+				{0,0,-1},
+				{0,1,0},
+				{1,0,0}
+			}
+		},
+		compoundprops={
+			floor_height=0
+		},
+		userprops={
+			category="Character"
+		}
+	},
+	
+	
+		
+	{
+		entity_name="point_hassler",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				8.05,
+				0,
+				8
+			},
+			orient={
+				{0,0,-1},
+				{0,1,0},
+				{1,0,0}
+			}
+		},
+	},
+	
+	
+	{
+		entity_name="head_trent",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				6.5,
+				1.65,
+				8
+			},
+			orient={
+				{0,0,1},
+				{0,1,0},
+				{-1,0,0}
+			}
+		},
+	},
+	{
+		entity_name="head_hassler",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				8.05,
+				1.65,
+				8
+			},
+			orient={
+				{0,0,1},
+				{0,1,0},
+				{-1,0,0}
+			}
+		},
+	},
+	
+	{
+		entity_name="cam_dbg",
+		type=CAMERA,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				10,
+				5,
+				15
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+				
+			}
+		},
+		cameraprops={
+			fovh=35,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_dbg_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				8,
+				1,
+				5
+				-- 12,
+				-- 1,
+				-- 8
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	
+	
+	
+	{
+		entity_name="cam_start",
+		type=CAMERA,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				12,
+				4,
+				15
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+				
+			}
+		},
+		cameraprops={
+			fovh=35,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_start_pos2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				9,
+				2.5,
+				13
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	{
+		entity_name="cam_start_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				10,
+				1,
+				6
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	{
+		entity_name="cam_start_marker_pos2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				7,
+				0.5,
+				5
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	
+	
+	
+	{
+		entity_name="cam_hassler",
+		type=CAMERA,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				6.5,
+				1.8,
+				8.45
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+				
+			}
+		},
+		cameraprops={
+			fovh=15,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_hassler_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				8.05,
+				1.65,
+				7.85
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	
+	
+	{
+		entity_name="cam_trent",
+		type=CAMERA,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				8,
+				1.8,
+				8.6
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+				
+			}
+		},
+		cameraprops={
+			fovh=15,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_trent_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				6.5,
+				1.65,
+				7.95
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	
+	
 	
 }
 
 
 events={
+	{
+		0,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			-- "cam_dbg"
+			"cam_start"
+			-- "cam_hassler"
+		}
+	},
+	
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_dbg",
+			-- "prop_pointer"
+			"cam_dbg_marker"
+		},
+		{
+			duration=300,
+			offset={0,0,0},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="",
+			target_type=ROOT,
+			flags=LOOK_AT
+		}
+	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_start",
+			"cam_start_marker"
+		},
+		{
+			duration=300,
+			offset={0,0,0},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="",
+			target_type=ROOT,
+			flags=LOOK_AT
+		}
+	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_hassler",
+			"cam_hassler_marker"
+		},
+		{
+			duration=300,
+			offset={0,0,0},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="",
+			target_type=ROOT,
+			flags=LOOK_AT
+		}
+	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_trent",
+			"cam_trent_marker"
+		},
+		{
+			duration=300,
+			offset={0,0,0},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="",
+			target_type=ROOT,
+			flags=LOOK_AT
+		}
+	},
+
+		
+	
+	{
+		9,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_start",
+			"cam_start_pos2"
+		},
+		{
+			duration=5,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		9,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_start_marker",
+			"cam_start_marker_pos2"
+		},
+		{
+			duration=5,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	
+	
+	
+	
+	
+	{
+		0,
+		START_MOTION,
+		{"Char_hassler"},
+		{animation="Sc_MLBODY_STND_CONV_HNDSUP_TRNS_000LV_XA_00",
+		 duration=3, time_scale=0.5, weight=1,  heading=-1}
+	},
+	{
+		1.5,
+		START_MOTION,
+		{"Char_hassler"},
+		{animation="Sc_MLBODY_STND_CONV_HNDS_CASL_000LV_xc_01",
+		 duration=2, time_scale=0.5, weight=1,trans_time=1.5, heading=-1, event_flags=2}
+	},
+	{
+		3.5,
+		START_MOTION,
+		{"Char_hassler"},
+		{animation="Sc_MLBODY_STND_CONV_HNDSDN_TRNS_000LV_XA_01",
+		 duration=3, time_scale=0.5, weight=1, trans_time=1.5, heading=-1}
+	},
+	{
+		6,
+		START_MOTION,
+		{"Char_hassler"},
+		{animation="Sc_MLBODY_STND_NOD_YES_SLGHTLY_000LV_XA_02",
+		 duration=3, time_scale=0.5, weight=1, trans_time=1,  heading=-1}
+	},
+	{
+		9,
+		START_MOTION,
+		{"Char_hassler"},
+		{animation="Sc_MLBODY_STND_WALK_TRNS_180LV_XA_02",
+		 duration=4, time_scale=0.8, weight=1, trans_time=1,  heading=-1}
+	},
+	{
+		12.3,
+		START_MOTION,
+		{"Char_hassler"},
+		{animation="Sc_MLBODY_WALK_STND_TRNS_000LV_XA_02",
+		 duration=4, time_scale=0.8, weight=1, trans_time=0.2,  heading=-1}
+	},
+		
+	{
+		0,
+		START_MOTION,
+		{"Char_outcast"},
+		{animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+		 duration=3, time_scale=0.5, weight=1,  heading=-1, event_flags=2}
+	},
+	{
+		3,
+		START_MOTION,
+		{"Char_outcast"},
+		{animation="Sc_MLBODY_STND_SHAKHEAD_NO_SLGHTLY_000LV_XA_02",
+		 duration=3, time_scale=0.5, trans_time=1, weight=1,  heading=-1}
+	},
+	{
+		6,
+		START_MOTION,
+		{"Char_outcast"},
+		{animation="Sc_MLBODY_STND_SHRG_SHLDRS_SMALL_000LV_XA_01",
+		 duration=5, time_scale=0.5, trans_time=1, weight=1,  heading=-1}
+	},
+
+	{
+		10,
+		START_MOTION,
+		{"Char_outcast"},
+		{animation="Sc_MLBODY_STND_WALK_TRNS_270LV_XA_02",
+		 duration=5, time_scale=0.8, trans_time=1, weight=1,  heading=-1}
+	},
+	{
+		12.5,
+		START_MOTION,
+		{"Char_outcast"},
+		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 duration=33, time_scale=0.8, weight=1, trans_time=0.02,  heading=-1, event_flags=2}
+	},
+	
+	{
+		0,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_STND_LOOK_AROU_CASL_000LV_XA_08",
+		 duration=10, time_scale=0.8, weight=1,  heading=-1}
+	},
+	{
+		10,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+		 duration=10, time_scale=0.8, weight=1, trans_time=1, heading=-1}
+	},
+	
+	{
+		12,
+		START_IK,
+		{
+			"Char_hassler",
+			"head_trent"
+		},
+		{
+			duration=31,
+			end_effector="Eye IK Left",
+			target_part="",
+			target_type=ROOT,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		}
+	},
+	{
+		12,
+		START_IK,
+		{
+			"Char_trent",
+			"head_hassler"
+		},
+		{
+			duration=90,
+			end_effector="Eye IK Left",
+			target_part="",
+			target_type=ROOT,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		}
+	},
+	
+	
+	
+	{
+		14,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_hassler"
+		}
+	},
+
+	{
+		15,
+		START_SOUND,
+		{
+			"DX_m03_reward_0010_hassler"
+		},
+		{
+			duration=25
+		}
+	},	
 
 	
-		
+	{
+		15,
+		START_MOTION,
+		{"Char_hassler"},
+		{animation="Sc_dx_s033x_0101_dexter",
+		 duration=3.5,  time_scale=1,  trans_time=0.5, weight=1, heading=-1}
+	}, 	
+	{
+		18.5,
+		START_MOTION,
+		{"Char_hassler"},
+		{animation="Sc_dx_s033x_0302_dexter",
+		 duration=5.5,  time_scale=1,  trans_time=0.25, weight=1, heading=-1}
+	}, 	
+	{
+		24,
+		START_MOTION,
+		{"Char_hassler"},
+		{animation="Sc_dx_s032a_0701_dexter",
+		 duration=5,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 	
+
+	
+	{
+		18,
+		START_MOTION,
+		{"Char_hassler"},
+		{animation="Sc_MLBODY_STND_CROSS_ARMS_000LV_xa_06",
+		duration=10, time_scale=0.4, trans_time=1, weight=1, heading=-1}
+	},
+	
+	
+	
+	{
+		29,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_trent"
+		}
+	},
+	
+	{
+		29,
+		START_SOUND,
+		{
+			"DX_m03_reward_0020_trent"
+		},
+		{
+			duration=25
+		}
+	},	
+	{
+		29,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_dx_s050c_0101_trent",
+		 duration=3,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	{
+		32,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_dx_s050c_0101_trent",
+		 duration=3,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	{
+		35,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_dx_s059x_0701_trent",
+		 duration=5,  time_scale=1, start_time=0.5, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	{
+		37.25,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLHEAD_BASEPOSE_TRENT_000LV_01_01",
+		 duration=5,  time_scale=1,  trans_time=1, weight=1, heading=-1}
+	}, 
+	
+	{
+		32,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
+		 duration=2.5, time_scale=0.5, weight=1, trans_time=0.25, heading=-1}
+	},
+	
+	
+	
+	
+	
+	{
+		38,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_hassler"
+		}
+	},
+	
+	{
+		38,
+		START_SOUND,
+		{
+			"DX_m03_reward_0030_hassler"
+		},
+		{
+			duration=25
+		}
+	},	
+
+	
+	
+
+	{
+		38,
+		START_MOTION,
+		{"Char_hassler"},
+		{animation="Sc_dx_s032a_0502_dexter",
+		 duration=4,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 	
+	{
+		42,
+		START_MOTION,
+		{"Char_hassler"},
+		{animation="Sc_MLHEAD_BASEPOSE_000LV_02_01",
+		 duration=4,  time_scale=1, trans_time=0.5, weight=1, heading=-1}
+	}, 	
+	
+	{
+		39,
+		START_MOTION,
+		{"Char_hassler"},
+		{animation="Sc_MLBODY_STND_UNCRSS_ARMS_000LV_XA_02",
+		duration=10, time_scale=0.4, trans_time=1, weight=1, heading=-1}
+	},
+	
+	{
+		43,
+		START_MOTION,
+		{"Char_hassler"},
+		{animation="Sc_MLBODY_STND_WALK_TRNS_090LV_XA_02",
+		duration=10, time_scale=0.8, trans_time=1, weight=1, heading=-1}
+	},
+	
+	{
+		45.5,
+		START_MOTION,
+		{"Char_hassler"},
+		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 duration=33, time_scale=0.8, weight=1, trans_time=0.02,  heading=-1, event_flags=2}
+	},
+
+	
+
+
+	-- {
+		-- 0.01,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "Char_hassler",
+			-- "point_hassler"
+		-- },
+		-- {
+			-- duration=0.00001,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- pos={0,0,0},
+				-- q_orient={1,0,0,0}
+			-- }
+		-- }
+	-- },	
+	
+	-- {
+		-- 0.1,
+		-- START_MOTION,
+		-- {"Char_hassler"},
+		-- {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+		 -- duration=3, time_scale=0.5, weight=1,  heading=-1, event_flags=2}
+	-- },
+	-- {
+		-- 0.1,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+		 -- duration=3, time_scale=0.5, weight=1,  heading=-1, event_flags=2}
+	-- },	
+
+	
 }

@@ -63,6 +63,8 @@
 <Static AudioFile="mod\m03\m03_offer_0155_hassler.wav" TextArea="Cinematic">Why are you as nervous as a high-school student before graduation? Let's fly. I'll see you in space.</Static>
 
 
-
+<Static AudioFile="mod\m03\m03_reward_0010_hassler.wav" TextArea="Cinematic">I ask ed the locals, they don't know shit. Anyways, thank you. Trent. Your work here is done, we'll be looking for the transport on our channels. Unfortunately, since we screwed up, Reichmann significantly cut the payment.</Static>
+<Static AudioFile="mod\m03\m03_reward_0020_trent.wav" TextArea="Cinematic">Strange. The base was destroyed, Dietrich's dead, and Reichmann freaks out because of some transport. I don't like this.</Static>
+<Static AudioFile="mod\m03\m03_reward_0030_hassler.wav" TextArea="Cinematic">Me neither... The money's been transferred to your account. See you later.</Static>
 
 </Subtitles>
