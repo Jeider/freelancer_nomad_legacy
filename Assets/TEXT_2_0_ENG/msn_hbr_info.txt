@@ -138,7 +138,9 @@ Charger gun ammo.
 
 Click [b]Yes[/b] if you want to start a story campaign.
 
-Click [b]No[/b] if you want to run the “Operation Waterloo” quest.
+Click [b]No[/b] if you want to start a story campaign and [b]skip intro[/b].
+
+Click [b]Later[/b] if you want to run the “Operation Waterloo” quest.
 
 
 
