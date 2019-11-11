@@ -199,7 +199,7 @@ entities={
 		lt_grp=0,
 		srt_grp=0,
 		usr_flg=0,
-		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		flags=LIT_DYNAMIC,
 		spatialprops={
 			pos={
 				5.533378,
@@ -239,7 +239,7 @@ entities={
 		lt_grp=0,
 		srt_grp=0,
 		usr_flg=0,
-		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		flags=LIT_DYNAMIC,
 		spatialprops={
 			pos={
 				1111111.533378,
@@ -267,7 +267,7 @@ entities={
 		lt_grp=0,
 		srt_grp=0,
 		usr_flg=0,
-		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		flags=LIT_DYNAMIC,
 		spatialprops={
 			pos={
 				5.533378,
