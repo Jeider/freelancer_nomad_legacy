@@ -1,0 +1,240 @@
+[Object]
+nickname = rh_mnh_06
+ids_name = 203781
+pos = 15000, 0, -6000
+rotate = 90, 0, 0
+archetype = space_industrial01a
+ids_info = 1
+reputation = fc_uk_grp
+behavior = NOTHING
+
+[Object]
+nickname = rh_mnh_06_industrial01
+pos = 15000, 245, -6300
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_industrial02
+pos = 15000, 245, -5700
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_industrial03
+pos = 15000, -245, -6300
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_industrial04
+pos = 15000, -245, -5700
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_industrial05
+pos = 15440, 0, -6000
+rotate = 0, 90, 0
+archetype = space_industrial02a
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_industrial06
+pos = 15440, 0, -6150
+rotate = 0, 90, 0
+archetype = space_industrial02a
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_industrial07
+pos = 15440, 0, -6300
+rotate = 0, 90, 0
+archetype = space_industrial02a
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_industrial08
+pos = 15440, 0, -5850
+rotate = 0, 90, 0
+archetype = space_industrial02a
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_industrial09
+pos = 15440, 0, -5700
+rotate = 0, 90, 0
+archetype = space_industrial02a
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_industrial10
+pos = 14560, 0, -6000
+rotate = 0, 90, 0
+archetype = space_industrial02a
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_industrial11
+pos = 14560, 0, -6150
+rotate = 0, 90, 0
+archetype = space_industrial02a
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_industrial12
+pos = 14560, 0, -6300
+rotate = 0, 90, 0
+archetype = space_industrial02a
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_industrial13
+pos = 14560, 0, -5850
+rotate = 0, 90, 0
+archetype = space_industrial02a
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_industrial14
+pos = 14560, 0, -5700
+rotate = 0, 90, 0
+archetype = space_industrial02a
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_industrial15
+pos = 15000, 245, -6000
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_industrial16
+pos = 15000, -245, -6000
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_industrial17
+pos = 15000, 0, -6300
+rotate = 90, 0, 0
+archetype = space_industrial01a
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_industrial18
+pos = 15000, 0, -5700
+rotate = 90, 0, 0
+archetype = space_industrial01a
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_girder01
+pos = 15060, 245, -6300
+rotate = 45, 90, 0
+archetype = space_girdera
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_girder02
+pos = 14940, 245, -6300
+rotate = 45, -90, 0
+archetype = space_girdera
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_girder03
+pos = 15060, -245, -6300
+rotate = -45, 90, 0
+archetype = space_girdera
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_girder04
+pos = 14940, -245, -6300
+rotate = -45, -90, 0
+archetype = space_girdera
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_girder05
+pos = 15060, 245, -5700
+rotate = 45, 90, 0
+archetype = space_girdera
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_girder06
+pos = 14940, 245, -5700
+rotate = 45, -90, 0
+archetype = space_girdera
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_girder07
+pos = 15060, -245, -5700
+rotate = -45, 90, 0
+archetype = space_girdera
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_girder08
+pos = 14940, -245, -5700
+rotate = -45, -90, 0
+archetype = space_girdera
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_girder09
+pos = 15000, 0, -6000
+rotate = 90,  0, 0
+archetype = space_girder
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_girder10
+pos = 15000, 0, -6300
+rotate = 90,  0, 0
+archetype = space_girder
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_girder11
+pos = 15000, 0, -5700
+rotate = 90,  0, 0
+archetype = space_girder
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_shipyard01
+pos = 15440, 150, -6000
+rotate = 0, 0, 0
+archetype = shipyard
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_shipyard02
+pos = 15440, -150, -6000
+rotate = 0, 0, 180
+archetype = shipyard
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_shipyard03
+pos = 14540, 150, -6000
+rotate = 0, 180, 0
+archetype = shipyard
+parent = rh_mnh_06
+
+[Object]
+nickname = rh_mnh_06_shipyard04
+pos = 14540, -150, -6000
+rotate = 0, 180, 180
+archetype = shipyard
+parent = rh_mnh_06
