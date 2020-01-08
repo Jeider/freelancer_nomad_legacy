@@ -5628,7 +5628,7 @@ entities={
 			}
 		},
 		cameraprops={
-			fovh=45,
+			fovh=35,
 			hvaspect=1.333333,
 			nearplane=1,
 			farplane=2000
@@ -5655,7 +5655,7 @@ entities={
 			}
 		},
 		cameraprops={
-			fovh=45,
+			fovh=35,
 			hvaspect=1.333333,
 			nearplane=1,
 			farplane=2000
