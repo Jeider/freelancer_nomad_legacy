@@ -1,0 +1,508 @@
+[Courier jobs]
+
+[center][b]Legal cargo delivery jobs[/b][/center]
+
+Courier jobs are one-time jobs where you have to take the cargo objective to a specified destination.
+
+[b]How to activate a job[/b]
+1. Land on a base and install a trading license into your special slot.
+2. Launch to space and select the job you want to activate.
+3. Shoot the down the barrel with the job you want using your trading license as ammo (you'll see a special effect)
+4. Make another shot with any cannon on the same barrel and you'll get the cargo for the delivery.
+5. Sell the specified cargo at the target base. You'll have to sell the cargo to a local merchant of the target base.
+
+[b][color=#990000]Beware![/color][/b]
+1. Courier jobs can be activated only once. It is very important to have enough free space in the cargo hold (25 units). If you activated a job and were unable to pick up the cargo, you won't be able to retry it. For this reason, it's better to use cargo ships for these jobs, or at least land on a base to create an autosave.
+2. All the pirates will be highly interested to rob you of your cargo. That's why, even if you are not hostile with pirates, it's still better to avoid them.
+3. If you don't know the exact coordinates of job's destination, you can ask for them at the nearest station. The residents will tell you the exact location for a small fee.
+4. All jobs have a time limit. If you fail or forget to deliver the cargo in time it will "spoil" and disappear from your cargo.
+5. For the activation of different trading jobs you'll need different licenses. In the description of the courier job you'll see what type of license it will require. Please make sure beforehand, that your license-gun matches the license needed for the courier job.
+
+
+
+
+[General trade license]
+
+[center][b]Trade Federation Courier License[/b][/center]
+
+This license will allow you to activate most courier jobs.
+
+This gun can only be installed into the special slot of your ship.
+
+For proper use of this license, first check with the informant, which is located near the activation point of courier jobs.
+
+For this license to work, you'll have to buy special shells that are usually sold at the nearest trading base.
+
+[b][color=#990000]Warning![/color][/b] It is not recommended to use this gun in one group with the rest of the guns, as this may affect the accuracy of all the guns in the group!
+
+[b]Additional[/b]
+Mass: 5
+Durability: 1500
+
+
+
+
+[Trade License -- ammo]
+
+[center][b]Ammo for the Trade Federation Courier License[/b][/center]
+
+These shells are necessary for the trade license to work.
+
+
+
+
+[Siemens Trade License]
+
+[center][b]Siemens corporation trade license[/b][/center]
+
+This license activates courier jobs located near Mannheim station in Stuttgart system.
+
+This gun can only be installed into the special slot of your ship.
+
+For proper use of this license, first check with the informant, which is located near the activation point of courier jobs.
+
+[b][color=#990000]Warning![/color][/b] It is not recommended to use this gun in one group with the rest of the guns, as this may affect the accuracy of all the guns in the group!
+
+[b]Additional[/b]
+Mass: 5
+Durability: 1500
+
+
+
+
+[Marker Gun]
+
+[center][b]Interactive Marker Gun[/b][/center]
+
+You can use this gun to determine the value of a large asteroid, garbage blocks, etc. without the need to use a mining gun.
+
+After hitting an object, you will see a special colored signal indicating the value. Namely:
+[b]White: [/b] common value, you can get only a small amount of goods
+[color=#FF9900][b]Orange: [/b][/color] increased value, you can get more goods and get a useful standard optimizer
+[color=#00FF00][b]Green: [/b][/color] high value, you can get a high amount of goods and get a useful advanced optimizer
+
+This gun can be mounted in any slot, except the special slot.
+
+[b][color=#990000]Warning![/color][/b] It is not recommended to use this gun in one group with the rest of the guns, as this may affect the accuracy of all the guns in the group!
+
+[b]This gun can evaluate following objects:[/b]
+1. Large asteroids with ore;
+2. Large ice asteroids;
+3. Radioactive waste blocks.
+
+[b]Additional[/b]
+Mass: 5
+Durability: 1500
+
+
+[Mining Gun]
+
+[center][b]Standard Mining Gun[/b][/center]
+
+This gun allows you to extract valuable goods from the majority* of mineable objects** with lowest speed.
+* Mining gun can't hack control panels of destroyed stations and can't mine goods out of maximal value objects. 
+** We are talking about static objects. Dynamic asteroids and garbage can be gathered more effectively using regular guns.
+
+This gun can only be installed in a special "mining gun" slot of your ship.
+
+Instructions on using guns for each type of object can be recieved from special informants located next to the corresponding objects.
+
+[center][b]Gun efficiency[/b][/center]
+
+[b]Ore mining: [/b]low
+[b]Gas mining: [/b]low
+[b]Garbage mining: [/b]low
+[b]Control panel hacking: [/b][color=#990000]not possible[/color]
+[b]Damage to station shields: [/b]2000
+
+[b][color=#990000]Warning![/color][/b] It is not recommended to use this gun in one group with the rest of the guns, as this may affect the accuracy of all the guns in the group!
+
+[b]Additional[/b]
+Mass: 5
+Durability: 1500
+
+
+
+[Asteroid Mining Gun]
+
+[center][b]Advanced Mining Gun[/b][/center]
+
+This mining gun is capable of quickly extracting goods from large asteroids, as well as extracting goods from especially valuable secret asteroids. At the same time, the gun is still able to extract goods from most* other mineable objects**.
+* Mining gun can't mine goods out of maximal value objects of other types. 
+** We are talking about static objects. Dynamic asteroids and garbage can be gathered more effectively using regular guns.
+
+This gun can only be installed in a special "mining gun" slot of your ship.
+
+Instructions on using guns for each type of object can be recieved from special informants located next to the corresponding objects.
+
+[center][b]Gun efficiency[/b][/center]
+
+[b]Ore mining: [/b][color=#00FF00]high[/color]
+[b]Gas mining: [/b]low
+[b]Garbage mining: [/b]low
+[b]Control panel hacking: [/b]low
+[b]Damage to station shields: [/b]2000
+
+[b][color=#990000]Warning![/color][/b] It is not recommended to use this gun in one group with the rest of the guns, as this may affect the accuracy of all the guns in the group!
+
+[b]Additional[/b]
+Mass: 5
+Durability: 1500
+
+
+
+[Gas Liquefying Gun]
+
+[center][b]Advanced Gas Mining Gun[/b][/center]
+
+Gas mining gun is the fastest one capable of liquefying dense gas clouds and extracting valuable goods from them, and it is also the only one capable of extracting goods from anomalous secret gas clouds. At the same time, the gun is still able to extract goods from most* other mineable objects**.
+* Gas mining gun can't mine goods out of maximal value objects of other types. 
+** We are talking about static objects. Dynamic asteroids and garbage can be gathered more effectively using regular guns.
+
+This gun can only be installed in a special "mining gun" slot of your ship.
+
+Instructions on using guns for each type of object can be recieved from special informants located next to the corresponding objects.
+
+[center][b]Gun efficiency[/b][/center]
+
+[b]Ore mining: [/b]low.
+[b]Gas mining: [/b][color=#00FF00]high[/color]
+[b]Garbage mining: [/b]low
+[b]Control panel hacking: [/b]low
+[b]Damage to station shields: [/b]2000
+
+[b][color=#990000]Warning![/color][/b] It is not recommended to use this gun in one group with the rest of the guns, as this may affect the accuracy of all the guns in the group!
+
+[b]Additional[/b]
+Mass: 5
+Durability: 3000
+
+
+
+[Garbage gun]
+
+[center][b]Advanced Garbage Mining Gun[/b][/center]
+
+Advanced garbage mining gun is the best for destroying radioactive garbage blocks, and is also capable of crushing particularly strong top-secret garbage objects. At the same time, the gun is still able to extract goods from most* other mineable objects**.
+* Garbage mining gun can't mine goods out of maximal value objects of other types. 
+** We are talking about static objects. Dynamic asteroids and garbage can be gathered more effectively using regular guns.
+
+This gun can only be installed in a special "mining gun" slot of your ship.
+
+Instructions on using guns for each type of object can be recieved from special informants located next to the corresponding objects.
+
+[center][b]Gun efficiency[/b][/center]
+
+[b]Ore mining: [/b]low
+[b]Gas mining: [/b]low
+[b]Garbage mining: [/b][color=#00FF00]high[/color]
+[b]Control panel hacking: [/b]low
+[b]Damage to station shields: [/b]2000
+
+[b][color=#990000]Warning![/color][/b] It is not recommended to use this gun in one group with the rest of the guns, as this may affect the accuracy of all the guns in the group!
+
+[b]Additional[/b]
+Mass: 5
+Durability: 3000
+
+
+[Sabotage gun]
+
+[center][b]Advanced Sabotage Gun[/b][/center]
+
+This gun is capable of carrying out effective attacks against shields of stations, namely the protective shields of miners' and gas producing stations' cargo containers as well as the shields of gun platforms. This gun is also capable of sabotaging special impenetrable shields of some trading stations. At the same time, the gun is still able to extract goods from most* mineable objects**.
+* Sabotage gun can't mine goods out of maximal value objects of other types. 
+** We are talking about static objects. Dynamic asteroids and garbage can be gathered more effectively using regular guns.
+
+This gun can only be installed in a special "mining gun" slot of your ship.
+
+Instructions on using guns for each type of object can be recieved from special informants located next to the corresponding objects.
+
+[center][b]Gun efficiency[/b][/center]
+
+[b]Ore mining: [/b]low
+[b]Gas mining: [/b]low
+[b]Garbage mining: [/b]low
+[b]Control panel hacking: [/b]low
+[b]Damage to station shields: [/b][color=#00FF00]10000[/color]
+
+[b][color=#990000]Warning![/color][/b] It is not recommended to use this gun in one group with the rest of the guns, as this may affect the accuracy of all the guns in the group!
+
+[b]Additional[/b]
+Mass: 5
+Durability: 3000
+
+
+
+[Hacking gun]
+
+[center][b]Advanced hacking gun[/b][/center]
+
+This gun is capable of hacking special control panels on destroyed ships and stations faster than any other. At the same time, the gun is still able to extract goods from most* mineable objects**.
+* Hacking gun can't mine goods out of maximal value objects of other types. 
+** We are talking about static objects. Dynamic asteroids and garbage can be gathered more effectively using regular guns.
+
+[center][b]Gun efficiency[/b][/center]
+
+[b]Ore mining: [/b]low
+[b]Gas mining: [/b]low
+[b]Garbage mining: [/b]low
+[b]Control panel hacking: [/b][color=#00FF00]high[/color]
+[b]Damage to station shields: [/b]2000
+
+[b][color=#990000]Warning![/color][/b] It is not recommended to use this gun in one group with the rest of the guns, as this may affect the accuracy of all the guns in the group!
+
+[b]Additional[/b]
+Mass: 5
+Durability: 3000
+
+
+[CSV Manipulator]
+
+[center][b]Standard Ship Manipulator CSV[/b][/center]
+
+[center][b]Efficiency[/b][/center]
+
+[b]Ore mining: [/b]medium
+[b]Gas mining: [/b]medium
+[b]Garbage mining: [/b]medium
+[b]Control panel hacking: [/b]medium
+[b]Damage to station shields: [/b]2000
+
+[b][color=#990000]Warning![/color][/b] It is not recommended to use this gun in one group with the rest of the guns, as this may affect the accuracy of all the guns in the group!
+
+[b]Additional[/b]
+Mass: 5
+Durability: 3000
+
+
+
+
+
+[Zone: Large Asteroids]
+Large asteroids can be mined for great amounts of ore, as well as valuable mass optimizers for your ship.
+
+Ore can be mined using special mining guns. Any mining gun is suitable for this. If you don’t have one, you can buy a mining gun at the nearest mining vessel.
+
+The most efficient way of mining ore is by using a Heavy Drill or a Ship Manipulator CSV.
+
+Each asteroid has 3 weak points from which you can can extract resources. Shoot the asteroid to detect these points. If you hear a characteristic sound and asteroid started losing chunks, then you found one of the weak points. Continue shooting it and you will be rewarded.
+
+Not all asteroids have the same value. You can find asteroids with highest value by using a special Marker Gun.
+
+[b][color=#990000]Warning![/color][/b] Asteroids in this zone are non-renewable. If you extracted all the resources from an asteroid, when you revisit the asteroid later, you [b]won’t get resources again[/b].
+
+
+[Zone: Dense Gas]
+Special automatic installations collect dense gas, so that the resulting clouds might regularly yield cylinders with liquefied gas.
+
+Gas can be mined using special mining guns. Any mining gun is suitable for this. If you don’t have one, you can buy a mining gun at the nearest gas mining station.
+
+The most efficient way of mining gas is by using a Gas Liquefying Gun or a Ship Manipulator CSV.
+
+[b][color=#990000]Warning![/color][/b] This zone is [b]renewable[/b]. You can mine more gas on your next visit.
+
+
+
+[Zone: Large Ice Asteroids]
+Large ice asteroids contain especially valuable and dense gases. You can get from them not only a large amount of liquefied gas, but also very valuable speed optimizers for your ship.
+
+Large ice asteroids can be mined using special mining guns. Any mining gun is suitable for this. If you don’t have one, you can buy a mining gun at the nearest station.
+
+The most efficient way of mining gas is by using a Gas Liquefying Gun or a Ship Manipulator CSV.
+
+To get to the precious gases you will have to destroy ice asteroids with your mining gun. Most valueable dense gas clouds are hidden inside those ice asteroids.
+
+Not all gas clouds in the asteroids have the same value. You can find ice asteroids with highest value by using a special Marker Gun.
+
+[b][color=#990000]Warning![/color][/b] Gas clouds in this zone are non-renewable. If you extracted all the resources from a gas cloud, when you revisit the gas cloud later, you [b]won’t get resources again[/b].
+
+
+[Garbage Smelter]
+Using ships in the radioactive zone isn't very smart, therefore garbage collection is mostly done by automatic smelters. Special unmanned garbage collection vessels deliver the collected garbage to the smelters, and the smelters merge the garbage into large garbage blocks. Later these blocks are delivered to stations in bulk for further analysis and final recycling of the remaining resources.
+
+
+[Zone: Radioactive garbage]
+The radioactive garbage collected by the smelters still contains a large amount of useful resources. It might contain not only scrap metal, but also extremely useful power optimizers for your ship.
+
+Radioactive garbage can be mined using special mining guns. Any mining gun is suitable for this. If you don’t have one, you can buy a mining gun at the nearest station.
+
+The most efficient way of mining radioactive garbage is by using a Garbage gun or a Ship Manipulator CSV.
+
+To get the most useful resources from one smelter, you have to destroy all the garbage blocks that are on it.
+
+Not all smelters contain the same value of garbage. You can find smelters with highest value by using a special Marker Gun. Please note, that the Marker Gun calculates the entire value for all garbage blocks on the platform. 
+
+[b][color=#990000]Warning![/color][/b] Garbage blocks in this zone are non-renewable. If you extracted all the resources from garbage blocks, when you revisit the smelter later, you [b]won’t get resources again[/b].
+
+
+[Zone: Space Debree]
+Destroyed spaceships, abandoned stations and other derelicts might contain many secrets. Of course, scavengers have long gotten to the most valuable places outside the object, but they obviously did not get inside yet. Find and hack special control panels on the object to open hidden bays containing treasures. Bear in mind that you will have to hack treasure containers to get to their content.
+
+To hack a station you will need a special gun. You won't be able to hack control panels with a regular mining gun. Before buying a mining gun, check whether it has a hacking function. You can buy a hacking gun at any base in this system.
+
+The most efficient way of hacking is by using an Hacking Gun or a Ship Manipulator CSV.
+
+[b][color=#990000]Warning![/color][/b] The contents of treasure containers are not renewable. If you extracted the treasures, when you revisit them later, you [b]won’t get resources again[/b].
+
+
+
+[Shipwreck]
+The pilot of this ship was a bit unlucky, may his soul rest in peace. This ship still has some value though. Shoot the ship to get what's left of it, just try not to damage it's external equipment, otherwise there will be nothing to take!
+
+[b][color=#990000]Warning![/color][/b] Shipwrecks are not renewable! If you already extracted the equipment from a shipwreck, you [b]won’t get it again[/b] if you revisit it later.
+
+
+
+
+
+
+
+[Std. Mass Optimizer]
+
+[center][b]Standard Optimizer of Ship Mass[/b][/center]
+
+Due to the modified hull panels, this optimizer will slightly reduce the weight of your ship. This will improve the acceleration and reduce speed loss of your ship.
+
+Mass: -10
+
+
+[Adv. Mass Optimizer]
+
+[center][b]Advanced Optimizer of Ship Mass[/b][/center]
+
+Advanced hull components will significantly reduce the weight of your ship, which will significantly improve the acceleration and reduce speed loss of your ship.
+
+Mass: -25
+
+
+[Elite Mass Optimizer]
+
+[center][b]Elite Optimizer of Ship Mass[/b][/center]
+
+Unique hull components made from especially valuable rare ore will reduce the weight of your ship and make it as light as possible. This will extremely improve the acceleration and reduce speed loss of your ship.
+
+Mass: -100
+
+
+[Std. Drag Optimizer]
+
+[center][b]Standard Optimizer of Ship's Drag[/b][/center]
+
+Standard optimization of your fuel system will allow you to slightly increase the maximum speed of your ship. This will affect both your main engine and afterburner. The greater your ship's speed, the stronger the effect of optimization will be.
+
+Speed: +1%
+
+
+[Adv. Drag Optimizer]
+
+[center][b]Advanced Optimizer of Ship's Drag[/b][/center]
+
+The improved hydrogen fuel supplied to your fuel system will significantly increase the maximum speed of your ship. This will affect both your main engine and afterburner. The greater your ship's speed, the stronger the effect of optimization will be.
+
+Speed: +2.5%
+
+
+[Elite Drag Optimizer]
+
+[center][b]Elite Optimizer of Ship's Drag[/b][/center]
+
+A mixture of unique components of the fuel system, as well as secret catalytic additives in hydrogen fuel, will increase the speed of your ship to the highest possible value. This will extremely improve both the speed of your main engine and your afterburner. The greater your ship's speed, the stronger the effect of optimization will be.
+
+Speed: +10%
+
+
+
+[Std. Power Optimizer]
+
+[center][b]Standard Optimizer of Ship's Power[/b][/center]
+
+Standard optimization of the power system will correct the basic errors in your power mapping and get rid of minor leaks during energy recuperation.
+
+Energy regeneration: +10
+
+
+
+[Adv. Power Optimizer]
+
+[center][b]Advanced Optimizer of Ship's Power[/b][/center]
+
+Advanced nuclear fuel will significantly improve your ship’s energy regeneration rate.
+
+Energy regeneration: +25
+
+
+[Elite Power Optimizer]
+
+[center][b]Elite Optimizer of Ship's Power[/b][/center]
+
+The maximum optimization of your power system, correcting the shortcomings of the power generator, as well as the use of modified nuclear fuel, will allow your ship to get the maximum possible bonus to the speed of energy recovery.
+
+Energy regeneration: +100
+
+
+
+
+
+[Rheinland Gun Cooling]
+
+[center][b]Cooling Device for Rheinland Guns[/b][/center]
+
+The guns of the improved class have high power output, but take damage when used. Cooling device Gamma-800 will prevent your Rheinland Guns from overheating.
+
+You can only use one cooling device at a time.
+
+[b]Cools following guns:[/b]
+Гремучий змей Mk.III
+Пламенное проклятие Mk.III
+
+
+[Liberty Gun Cooling]
+
+[center][b]Cooling Device for Liberty Guns[/b][/center]
+
+The guns of the improved class have high power output, but take damage when used. Cooling device Ion-4 will prevent your Liberty Guns from overheating.
+
+You can only use one cooling device at a time.
+
+[b]Cools following guns:[/b]
+Справедливость Mk.III
+Молот магмы Mk.III
+
+[Bretonia Gun Cooling]
+
+[center][b]Cooling Device for Bretonia Guns[/b][/center]
+
+The guns of the improved class have high power output, but take damage when used. Cooling device Driver Mk.4 will prevent your Bretonia Guns from overheating.
+
+You can only use one cooling device at a time.
+
+[b]Cools following guns:[/b]
+Потрошитель Тип 3
+Небесный путь Тип 3
+
+
+[Kusari Gun Cooling]
+
+[center][b]Cooling Device for Kusari Guns[/b][/center]
+
+The guns of the improved class have high power output, but take damage when used. Cooling device H.Hanzo will prevent your Bretonia Guns from overheating.
+
+You can only use one cooling device at a time.
+
+[b]Cools following guns:[/b]
+Гром Тип В
+Дезинфектор Тип В
+
+
+[Corsair Gun Cooling]
+
+[center][b]Cooling Device for Corsair Guns[/b][/center]
+
+The guns of the improved class have high power output, but take damage when used. Cooling device Tesla will prevent your Bretonia Guns from overheating.
+
+You can only use one cooling device at a time.
+
+[b]Cools following guns:[/b]
+Кракен тип В
+Шокер тип В
