@@ -45,7 +45,7 @@ entities={
 		template_id=0,
 		spatialprops={
 			pos={
-				-14760, 2550, -23900
+				-14760, 50, -23900
 			},
 			orient={
 				{
@@ -79,7 +79,7 @@ entities={
 		template_id=0,
 		spatialprops={
 			pos={
-				-14760, 2480, -23600
+				-14760, -20, -23600
 			},
 			orient={
 				{
