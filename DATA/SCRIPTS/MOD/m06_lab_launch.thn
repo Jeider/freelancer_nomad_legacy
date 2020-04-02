@@ -404,7 +404,7 @@ entities={
 		},
 		userprops={
 			category="Spaceship",
-			loadout="lod_ms4_alaric_cloak"
+			loadout="lod_ms6_alaric_cloak"
 		}
 	},
 

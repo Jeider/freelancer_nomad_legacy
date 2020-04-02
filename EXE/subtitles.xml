@@ -206,7 +206,7 @@
 <Static AudioFile="mod\m04\m04_reward_0110_trent.wav" TextArea="Cinematic">Then we won’t hesitate to fulfill them. That is, unless these tasks make us enemies of the Liberty state, too.</Static>
 <Static AudioFile="mod\m04\m04_reward_0120_hatcher.wav" TextArea="Cinematic">Oh dear, no, I don’t think it’ll ever come to this.</Static>
 <Static AudioFile="mod\m04\m04_reward_0130_trent.wav" TextArea="Cinematic">Sure hope so...</Static>
-
+-->
 
 <Static AudioFile="mod\m04\m04_final_0010_alaric.wav" TextArea="Cinematic">Awesome, Trent! Who knew you’re so good at finding clients and closing deals?</Static>
 <Static AudioFile="mod\m04\m04_final_0020_trent.wav" TextArea="Cinematic">I’m also good at making enemies and almost getting murdered.</Static>
@@ -222,7 +222,7 @@
 <Static AudioFile="mod\m04\m04_final_0120_trent.wav" TextArea="Cinematic">Then how do you know that, Alaric?</Static>
 <Static AudioFile="mod\m04\m04_final_0130_alaric.wav" TextArea="Cinematic">А... E-e-e...</Static>
 <Static AudioFile="mod\m04\m04_final_0140_trent.wav" TextArea="Cinematic">Well, we’re screwed... Again...</Static>
--->
+
 
 
 
