@@ -1,0 +1,15 @@
+XMLUTF.exe -O echo_m04_player.utf echo_m04_player.xml/echo_m04.utf.xml
+XMLUTF.exe -O echo_m04_mod.utf echo_m04.xml/echo_m04.utf.xml
+XMLUTF.exe -O echo_m04_female.utf echo_m04_female.xml/echo_m04.utf.xml
+XMLUTF.exe -O echo_m04_player.utf echo_m04_player.xml/echo_m04_player.utf.xml
+
+XMLUTF.exe -O echo_m03_mod.utf echo_m03.xml/echo_m03.utf.xml
+XMLUTF.exe -O echo_m03_player.utf echo_m03_player.xml/echo_m03.utf.xml
+XMLUTF.exe -O echo_m03_player.utf echo_m03_player.xml/echo_m03_player.utf.xml
+
+XMLUTF.exe -O echo_m02_mod.utf echo_m02.xml/echo_m02.utf.xml
+
+
+UTFXML.exe -i -o ke_mod3.xml ku_elite_mod3.cmp
+XMLUTF.exe -O ke_mod.cmp ke_or.xml/ku_elite_or.cmp.xml
+UTFXML.exe -i -o echo_m02.xml echo_m02.utf
