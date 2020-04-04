@@ -1,0 +1,12 @@
+
+
+sc_dx_s037a_1702_sinclair
+sc_dx_s038x_4001_sinclair
+sc_dx_s038x_4002_sinclair
+sc_dx_s070x_0801_Jacobi (sarcastic)
+sc_dx_s070x_1101_Jacobi (node up)
+sc_dx_s070x_2501_Jacobi (node no)
+sc_dx_s070x_2701_Jacobi
+sc_dx_s070x_3001_Jacobi
+Sc_dx_s072a_0401_sinclair
+Sc_dx_s072a_0402_sinclair

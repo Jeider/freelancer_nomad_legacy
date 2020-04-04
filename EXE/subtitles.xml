@@ -192,12 +192,13 @@
 <Static AudioFile="echo_m04.utf|0x9B797FCD" TextArea="Cinematic">Herr Creitmire, you're being misled! Manipulated! Let go of the escort!</Static>
 <Static AudioFile="echo_m04.utf|0x89A49807" TextArea="Cinematic">Words – they take too much time. Torpedoes are faster. </Static>
 
-<!--
 <Static AudioFile="mod\m04\m04_reward_0010_hatcher.wav" TextArea="Cinematic">Gentlemen.</Static>
 <Static AudioFile="mod\m04\m04_reward_0020_trent.wav" TextArea="Cinematic">Miss Hatcher.</Static>
 <Static AudioFile="mod\m04\m04_reward_0030_alaric.wav" TextArea="Cinematic">Miss Hatcher, you have such lovely, deep eyes.</Static>
-<Static AudioFile="mod\m04\m04_reward_0040_hatcher.wav" TextArea="Cinematic">Cut this nonsense immediately, you don’t want to irritate me. Let’s get to our business.</Static>
-<Static AudioFile="mod\m04\m04_reward_0050_hatcher.wav" TextArea="Cinematic">You’ve done a fine job. I won’t bother asking how you managed to escape Rheinland with THIS kind of documents. I’m a delicate lady, I’m afraid I won’t be able to handle it.</Static>
+<Static AudioFile="mod\m04\m04_reward_0040_hatcher.wav" TextArea="Cinematic">Cut this nonsense immediately, you don’t want to irritate me.</Static>
+<Static AudioFile="mod\m04\m04_reward_0045_hatcher.wav" TextArea="Cinematic">Let’s get to our business. You’ve done a fine job.</Static>
+<Static AudioFile="mod\m04\m04_reward_0050_hatcher.wav" TextArea="Cinematic">I won’t bother asking how you managed to escape Rheinland with THIS kind of documents.</Static>
+<Static AudioFile="mod\m04\m04_reward_0055_hatcher.wav" TextArea="Cinematic">I’m a delicate lady, I’m afraid I won’t be able to handle it.</Static>
 <Static AudioFile="mod\m04\m04_reward_0060_trent.wav" TextArea="Cinematic">We did what we had to do.</Static>
 <Static AudioFile="mod\m04\m04_reward_0070_hatcher.wav" TextArea="Cinematic">Heh, seems like you had fun. And by the way, we’re looking for top-notch skilled workers such as yourselves to help us perform, say, some non-standard tasks. Have you got any plans for the near future?</Static>
 <Static AudioFile="mod\m04\m04_reward_0080_alaric.wav" TextArea="Cinematic">We’ll always have time for you...</Static>
@@ -206,7 +207,6 @@
 <Static AudioFile="mod\m04\m04_reward_0110_trent.wav" TextArea="Cinematic">Then we won’t hesitate to fulfill them. That is, unless these tasks make us enemies of the Liberty state, too.</Static>
 <Static AudioFile="mod\m04\m04_reward_0120_hatcher.wav" TextArea="Cinematic">Oh dear, no, I don’t think it’ll ever come to this.</Static>
 <Static AudioFile="mod\m04\m04_reward_0130_trent.wav" TextArea="Cinematic">Sure hope so...</Static>
--->
 
 <Static AudioFile="mod\m04\m04_final_0010_alaric.wav" TextArea="Cinematic">Awesome, Trent! Who knew you’re so good at finding clients and closing deals?</Static>
 <Static AudioFile="mod\m04\m04_final_0020_trent.wav" TextArea="Cinematic">I’m also good at making enemies and almost getting murdered.</Static>
@@ -221,7 +221,7 @@
 <Static AudioFile="mod\m04\m04_final_0110_alaric.wav" TextArea="Cinematic">You don’t get it. It’s such a special secret service, that other special secret services don’t even suspect that it exists.</Static>
 <Static AudioFile="mod\m04\m04_final_0120_trent.wav" TextArea="Cinematic">Then how do you know that, Alaric?</Static>
 <Static AudioFile="mod\m04\m04_final_0130_alaric.wav" TextArea="Cinematic">А... E-e-e...</Static>
-<Static AudioFile="mod\m04\m04_final_0140_trent.wav" TextArea="Cinematic">Well, we’re screwed... Again...</Static>
+<Static AudioFile="mod\m04\m04_final_0140_trent.wav" TextArea="Cinematic">I can't believe I got into this botch again!</Static>
 
 
 
