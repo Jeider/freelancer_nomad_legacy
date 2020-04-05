@@ -2858,7 +2858,7 @@ events={
 		}
 	},
 	{
-		50.5,
+		51,
 		START_SOUND,
 		{
 			"DX_m04_reward_0070_hatcher"
@@ -2868,7 +2868,7 @@ events={
 		}
 	},
 	{
-		50.5,
+		51,
 		START_MOTION,
 		{"Char_hatcher"},
 		{animation="Sc_dx_s072a_0401_sinclair",
@@ -2876,33 +2876,27 @@ events={
 	},
 
 	{
-		52.5,
+		53,
 		START_MOTION,
 		{"Char_hatcher"},
 		{animation="sc_dx_s070x_2701_Jacobi",
 		 duration=3.6, time_scale=1, trans_time=1, weight=1, heading=-1}
 	},
 	{
-		56.1,
+		56.6,
 		START_MOTION,
 		{"Char_hatcher"},
 		{animation="sc_dx_s070x_2701_Jacobi",
 		 duration=3.4, time_scale=1, trans_time=1, weight=1, heading=-1}
 	},
 	{
-		59.5,
+		60,
 		START_MOTION,
 		{"Char_hatcher"},
 		{animation="sc_dx_s070x_2701_Jacobi",
 		 duration=3.6, time_scale=0.9, trans_time=1, weight=1, heading=-1}
 	},
-	{
-		63.1,
-		START_MOTION,
-		{"Char_hatcher"},
-		{animation="sc_dx_s070x_2701_Jacobi",
-		 duration=5, time_scale=0.8, start_time=3.3, trans_time=1, weight=1, heading=-1}
-	},
+
 
 	
 
