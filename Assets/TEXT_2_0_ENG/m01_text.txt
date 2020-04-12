@@ -1,20 +1,16 @@
-Приветствуем вас в моде [b]Наследие Номадов![/b]
+Welcome to [b]The Nomad Legacy[/b]!
 
-Вы уже могли заметить, что набор оборудования в этом моде кардинально отличается от того, что привычно видеть во Freelancer.
+This mod uses different equipment system. This first information well help you with understanding of current speed system.
 
-Сейчас я постараюсь вам рассказать про скоростную систему.
+Your ship have [b]Engine[/b] and one or two of [b]Thrusters[/b].
 
-За скорость вашего корабля отвечают 2 устройства:
-[b]Двигатель[/b] и [b]Форсаж[/b]
+You have a Basic Engine for now. This Engine have minimal speed. Don't worry, this is just first model of Engine. You can upgrade all of your systems and in future your Engine will accelerate up to 200 m/s without help of thrusters! Cruise speed will raise too!
 
-Двигатель не связан с вашем кораблем и вы можете его менять.
+That's why your Thruster have small speed. Your thruster can be upgraded too.
 
-Сейчас у вас установлен базовый двигатель. Он имеет очень маленькую скорость. Не волнуйтесь, это только начало. Позднее вы сможете купить более мощные двигатели и довести свою скорость вплоть до 200 м/с! Это еще не учитывая, что более мощный двигатель имеет и более высокую скорость в круизном режиме!
-
-Так как основная скорость сейчас в двигателе, то форсаж имеет меньшее значение. Тем не менее, в будущем вы можете выбрать более эффективные модели форсажного устройства. А многие другие корабли могут устанавливать даже 2 форсажа!
+That's enought for now. Good flights!
 
 
-На этом пока всё. Удачных полетов. Первичный инструктаж окончен.
 
 
 
