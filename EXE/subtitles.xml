@@ -121,7 +121,7 @@
 <Static AudioFile="mod\m02\m02_done_0090_wilham.wav" TextArea="Cinematic">Undoubtedly, Herr Admiral. He's the one who can help us accomplish all our tasks at hand.</Static>
 <Static AudioFile="mod\m02\m02_done_0100_reichman.wav" TextArea="Cinematic">Can you guarantee that?</Static>
 <Static AudioFile="mod\m02\m02_done_0110_wilham.wav" TextArea="Cinematic">Absolutely!</Static>
-<Static AudioFile="mod\m02\m02_done_0120_reichman.wav" TextArea="Cinematic">Alright, your wish is our command.</Static>
+<Static AudioFile="mod\m02\m02_done_0120_reichman.wav" TextArea="Cinematic">Alright, we'll make deeds of your words.</Static>
 <Static AudioFile="mod\m02\m02_done_0130_wilham.wav" TextArea="Cinematic">Thank you for your trust.</Static>
 <Static AudioFile="mod\m02\m02_done_0140_reichman.wav" TextArea="Cinematic">We'll see what comes out of that. You're dismissed, Herr Wilhelm.</Static>
 
