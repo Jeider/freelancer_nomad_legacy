@@ -25,15 +25,15 @@
 
 <Static AudioFile="mod\m01\m01_offer_0010_alaric.wav" TextArea="Cinematic">Hi Trent, glad to see you!</Static>
 <Static AudioFile="mod\m01\m01_offer_0020_trent.wav" TextArea="Cinematic">You too, Alaric.</Static>
-<Static AudioFile="mod\m01\m01_offer_0030_alaric.wav" TextArea="Cinematic">I heard that you’ve finally dealt with all your problems. No more debts, no more duties, right?</Static>
-<Static AudioFile="mod\m01\m01_offer_0040_trent.wav" TextArea="Cinematic">Mhm, no ship and no money either. But it has its benefits - no problems with cargo holds. What’s mine is mine. </Static>
+<Static AudioFile="mod\m01\m01_offer_0030_alaric.wav" TextArea="Cinematic">I heard that you’ve finally dealt with that problem. No more debts, no more duties, right?</Static>
+<Static AudioFile="mod\m01\m01_offer_0040_trent.wav" TextArea="Cinematic">Mhm, no ship and no money either. But it has its benefits - no problems with cargo holds. What’s mine is mine.</Static>
 <Static AudioFile="mod\m01\m01_offer_0050_alaric.wav" TextArea="Cinematic">A great time to start a new page in your life, isn’t it?</Static>
 <Static AudioFile="mod\m01\m01_offer_0060_alaric.wav" TextArea="Cinematic">I could use a partner for a well-paid job.</Static>
 <Static AudioFile="mod\m01\m01_offer_0070_alaric.wav" TextArea="Cinematic">I’ll give you a ship. An old one, of course, but it will definitely survive a few flights till decommission.</Static>
-<Static AudioFile="mod\m01\m01_offer_0080_alaric.wav" TextArea="Cinematic">Gotta escort a few Rheinlanders from New Berlin to Bismark. They pay generously.</Static>
+<Static AudioFile="mod\m01\m01_offer_0080_alaric.wav" TextArea="Cinematic">Gotta escort a few Rheinlanders from New Berlin to Bismark. They pay good, real good.</Static>
 <Static AudioFile="mod\m01\m01_offer_0090_trent.wav" TextArea="Cinematic">Interesting, why would Rheinlanders hire escorts to fly from one system to another, inside their own territory?</Static>
 <Static AudioFile="mod\m01\m01_offer_0100_trent.wav" TextArea="Cinematic">And a spaceship, you say? You’re leaving me no choice, Al!</Static>
-<Static AudioFile="mod\m01\m01_offer_0110_alaric.wav" TextArea="Cinematic">It's a deal, then. The ship's already waiting for you in the hangar. You should check if everything's ok with it. I'll wait for you in space.</Static>
+<Static AudioFile="mod\m01\m01_offer_0110_alaric.wav" TextArea="Cinematic">Excellent! The ship’s waiting for you in the hangar. Check everything over, and I’ll meet you outside when you’re ready.</Static>
 
 
 <Static AudioFile="mod\m01\m01_cityscape_0010_stuard.wav" TextArea="Cinematic">Your ticket and documents, sir.</Static>
