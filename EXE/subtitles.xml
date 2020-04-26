@@ -203,7 +203,7 @@
 <Static AudioFile="mod\m04\m04_reward_0050_hatcher.wav" TextArea="Cinematic">I will avoid asking how you managed to escape Rheinland with THIS kind of material.</Static>
 <Static AudioFile="mod\m04\m04_reward_0055_hatcher.wav" TextArea="Cinematic">I'm a delicate lady, I'm afraid I might not be able to handle it.</Static>
 <Static AudioFile="mod\m04\m04_reward_0060_trent.wav" TextArea="Cinematic">We did what we had to do.</Static>
-<Static AudioFile="mod\m04\m04_reward_0070_hatcher.wav" TextArea="Cinematic">Heh, seems like you had fun. And by the way, We Are looking for top-notch skilled workers such as yourselves to help us perform, say, some non-standard tasks. Have you got any plans for the near future?</Static>
+<Static AudioFile="mod\m04\m04_reward_0070_hatcher.wav" TextArea="Cinematic">Heh, seems like you had fun. And by the way, We Are looking for top-notch skilled Freelancers such as yourselves to help us perform, say, some non-standard tasks. Have you got any plans for the near future?</Static>
 <Static AudioFile="mod\m04\m04_reward_0080_alaric.wav" TextArea="Cinematic">We've always got time for you...</Static>
 <Static AudioFile="mod\m04\m04_reward_0090_trent.wav" TextArea="Cinematic">Shut up, Alaric. Since we're now considered enemies of the Rheinland state, I suppose we don't have any plans yet.</Static>
 <Static AudioFile="mod\m04\m04_reward_0100_hatcher.wav" TextArea="Cinematic">So, if we have a couple of well-paid tasks that fit your field of work...</Static>
