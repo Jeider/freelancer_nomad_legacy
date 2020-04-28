@@ -79,7 +79,7 @@
 <Static AudioFile="mod\m02\m02_offer_0120_wilham.wav" TextArea="Cinematic">Very well. Not so long ago, one of our informants contacted us via secure channel, reporting that he had extremely critical information and headed to our dedicated data transmission point. And, as traditional detective stories go, he never arrived there. No sign received from him during the last week, neither in the transmission point, nor through emergency channels. It can only mean one thing - he is dead.</Static>
 <Static AudioFile="mod\m02\m02_offer_0130_wilham.wav" TextArea="Cinematic">Based on the analysis of chatter between station dispatchers and operators of emergency services in the area of our interest, with a probability of over ninety-nine percent, we've established that the ship of our informant was attacked, and he was killed.</Static>
 <Static AudioFile="mod\m02\m02_offer_0140_trent.wav" TextArea="Cinematic">My condolences. But what do I have to do with it?</Static>
-<Static AudioFile="mod\m02\m02_offer_0150_wilham.wav" TextArea="Cinematic">Your mission is to find that ship and remove the data of interest from it. It has to be done as soon as possible, since the activity of so-called â€œJunkersâ€ in the area is extremely high. You have to get ahead of them.</Static>
+<Static AudioFile="mod\m02\m02_offer_0150_wilham.wav" TextArea="Cinematic">Your mission is to find that ship and remove the data of interest from it. It has to be done as soon as possible, since the activity of so-called "Junkers" in the area is extremely high. You have to get ahead of them.</Static>
 <Static AudioFile="mod\m02\m02_offer_0160_trent.wav" TextArea="Cinematic">I doubt that I can get ahead of them. First of all, I don't know the area as well as they do. Secondly, unlike them, I'll be there on my own.</Static>
 <Static AudioFile="mod\m02\m02_offer_0170_wilham.wav" TextArea="Cinematic">You can. The thing is, there's a tech enthusiast who's developing devices that can track them and listen to their radio comms. We've been interested in luring him into our department for a while now, so we're closely watching him.</Static>
 <Static AudioFile="mod\m02\m02_offer_0180_trent.wav" TextArea="Cinematic">Like you're watching me?</Static>
@@ -203,7 +203,7 @@
 <Static AudioFile="mod\m04\m04_reward_0050_hatcher.wav" TextArea="Cinematic">I will avoid asking how you managed to escape Rheinland with THIS kind of material.</Static>
 <Static AudioFile="mod\m04\m04_reward_0055_hatcher.wav" TextArea="Cinematic">I'm a delicate lady, I'm afraid I might not be able to handle it.</Static>
 <Static AudioFile="mod\m04\m04_reward_0060_trent.wav" TextArea="Cinematic">We did what we had to do.</Static>
-<Static AudioFile="mod\m04\m04_reward_0070_hatcher.wav" TextArea="Cinematic">Heh, seems like you had fun. And by the way, We Are looking for top-notch skilled Freelancers such as yourselves to help us perform, say, some non-standard tasks. Have you got any plans for the near future?</Static>
+<Static AudioFile="mod\m04\m04_reward_0070_hatcher.wav" TextArea="Cinematic">Heh, seems like you had fun. And by the way, we are looking for top-notch skilled Freelancers such as yourselves to help us perform, say, some non-standard tasks. Have you got any plans for the near future?</Static>
 <Static AudioFile="mod\m04\m04_reward_0080_alaric.wav" TextArea="Cinematic">We've always got time for you...</Static>
 <Static AudioFile="mod\m04\m04_reward_0090_trent.wav" TextArea="Cinematic">Shut up, Alaric. Since we're now considered enemies of the Rheinland state, I suppose we don't have any plans yet.</Static>
 <Static AudioFile="mod\m04\m04_reward_0100_hatcher.wav" TextArea="Cinematic">So, if we have a couple of well-paid tasks that fit your field of work...</Static>
@@ -221,7 +221,7 @@
 <Static AudioFile="mod\m04\m04_final_0080_trent.wav" TextArea="Cinematic">Well, of course I do! I've known her for a whole three hours! Screw you, Alaric.</Static>
 <Static AudioFile="mod\m04\m04_final_0090_alaric.wav" TextArea="Cinematic">She's an officer in one of Liberty's secret service agencies.</Static>
 <Static AudioFile="mod\m04\m04_final_0100_trent.wav" TextArea="Cinematic">God dammit! Not again...</Static>
-<Static AudioFile="mod\m04\m04_final_0110_alaric.wav" TextArea="Cinematic">"You don't get it. It's such a special and secret service, that not even their own counterparts in their own government know they exist."</Static>
+<Static AudioFile="mod\m04\m04_final_0110_alaric.wav" TextArea="Cinematic">You don't get it. It's such a special and secret service, that not even their own counterparts in their own government know they exist.</Static>
 <Static AudioFile="mod\m04\m04_final_0120_trent.wav" TextArea="Cinematic">Then how do you know that, Alaric?</Static>
 <Static AudioFile="mod\m04\m04_final_0130_alaric.wav" TextArea="Cinematic">Ah... E-e-e...</Static>
 <Static AudioFile="mod\m04\m04_final_0140_trent.wav" TextArea="Cinematic">I can't believe I got into this mess again!</Static>
