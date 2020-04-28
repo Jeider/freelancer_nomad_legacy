@@ -191,7 +191,7 @@
 
 
 <Static AudioFile="echo_m04.utf|0xAAD01AC4" TextArea="Cinematic">This is commander Marcus Creitmire of the Hessian Lions special operations unit.</Static>
-<Static AudioFile="echo_m04.utf|0x96D304C4" TextArea="Cinematic">Power down your weapon systems immediately, and follow our lead. If you try to resist, we have the authority to destroy you.</Static>
+<Static AudioFile="echo_m04.utf|0x96D304C4" TextArea="Cinematic">Power your weapon systems down immediately, and follow our lead. If you try to resist, we have the authority to destroy you.</Static>
 <Static AudioFile="echo_m04.utf|0x9B797FCD" TextArea="Cinematic">Herr Creitmire, you're being misled! Manipulated! Let go of the escort!</Static>
 <Static AudioFile="echo_m04.utf|0x89A49807" TextArea="Cinematic">Words - they take too much time. Torpedoes are faster.</Static>
 
