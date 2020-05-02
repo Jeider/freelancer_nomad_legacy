@@ -1,0 +1,390 @@
+duration=50000
+
+entities={
+	{
+		entity_name="Scene_M05_new_offer_scene_decision",
+		type=SCENE,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		up=Y_AXIS,
+		front=Z_AXIS,
+		ambient={
+			128,
+			128,
+			128
+		}
+	},
+
+
+	{
+		entity_name="ambi_LtG00_Tbl_rTable4/01",
+		type=LIGHT,
+		template_name="",
+		lt_grp=5,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={
+				0.148405,
+				1.2,
+				3.461587
+			},
+			orient={
+				{
+					1,
+					0,
+					0
+				},
+				{
+					0,
+					1,
+					0
+				},
+				{
+					0,
+					0,
+					1
+				}
+			}
+		},
+		lightprops={
+			on=Y,
+			color={
+				214,
+				187,
+				133
+			},
+			diffuse={
+				1,
+				1,
+				1
+			},
+			specular={
+				0,
+				0,
+				0
+			},
+			ambient={
+				0.141176,
+				0.141176,
+				0.141176
+			},
+			direction={
+				0,
+				0,
+				1
+			},
+			range=451,
+			cutoff=180,
+			type=L_POINT,
+			theta=180,
+			atten={
+				0.009999999799999999,
+				0,
+				5.1500000954
+			}
+		}
+	},
+	
+
+	{
+		entity_name="ambi_LtG00_Bar_Ovrhd01A",
+		type=LIGHT,
+		template_name="",
+		lt_grp=5,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={
+				0.842814,
+				3,
+				-1.992643
+			},
+			orient={
+				{
+					0.531346,
+					0,
+					0.847155
+				},
+				{
+					-0.635356,
+					0.661452,
+					0.398503
+				},
+				{
+					-0.560352,
+					-0.749987,
+					0.35146
+				}
+			}
+		},
+		lightprops={
+			on=Y,
+			color={
+				233,
+				208,
+				150
+			},
+			diffuse={
+				0.596078,
+				0.572549,
+				0.403922
+			},
+			specular={
+				0,
+				0,
+				0
+			},
+			ambient={
+				0.223529,
+				0.2,
+				0.192157
+			},
+			direction={
+				0,
+				0,
+				1
+			},
+			range=15,
+			cutoff=18,
+			type=L_POINT,
+			theta=15,
+			atten={
+				0.8999999762000001,
+				0,
+				0.0060000001
+			}
+		}
+	},
+	
+	{
+		entity_name="Monitor_1",
+		type=MONITOR,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0
+	},
+	{
+		entity_name="offscreen",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				0, -10000, 0
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		}
+	},
+
+
+	
+	
+	
+	{
+		entity_name="Char_hatcher",
+		type=DEFORMABLE,
+		template_name="hatcher",
+		lt_grp=5,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				-0.5,
+				0.005088,
+				4.1
+			},
+			orient={
+				{
+					0.7071068,
+					0,
+					0.7071068
+				},
+				{
+					0,
+					1,
+					0
+				},
+				{
+					-0.7071068,
+					0,
+					0.7071068
+				}
+			}
+		},
+		compoundprops={
+			floor_height=0
+		},
+		userprops={
+			actor="Hatcher",
+			category="Character"
+		}
+	},
+	{
+		entity_name="Char_trent",
+		type=DEFORMABLE,
+		template_name="trent",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				0.6,
+				0.005088,
+				2.85
+			},
+			orient={
+				{
+					-0.7071068,
+					0,
+					-0.7071068
+				},
+				{
+					0,
+					1,
+					0
+				},
+				{
+					0.7071068,
+					0,
+					-0.7071068
+				}
+			}
+		},
+		compoundprops={
+			floor_height=0
+		},
+		userprops={
+			Actor="Player",
+			category="Character"
+		}
+	},
+	
+	
+	{
+		entity_name="cam_table",
+		type=CAMERA,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+			    4,
+				5,
+				3
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+				
+			}
+		},
+		cameraprops={
+			fovh=25,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_table_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				0.1,
+				0.8,
+				3.4
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	
+}
+
+
+events={
+	{
+		0,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_table"
+		}
+	},
+	
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_table",
+			"cam_table_marker"
+		},
+		{
+			duration=300,
+			offset={0,0,0},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="",
+			target_type=ROOT,
+			flags=LOOK_AT
+		}
+	},
+	
+	
+	
+		
+	{
+		0,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+		 duration=50000, time_scale=1, weight=1,  heading=-1, event_flags=2}
+	},
+	
+	{
+		0,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_FMBODY_CHRB_IDLE_000LV_XA_06",
+		 duration=50000, time_scale=1, weight=1,  heading=-1, event_flags=2}
+	},
+	
+	
+	
+	
+	
+	
+	
+	
+}
+
+
