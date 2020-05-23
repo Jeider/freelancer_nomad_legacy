@@ -2191,16 +2191,9 @@ events={
 		START_MOTION,
 		{"Char_trent"},
 		{animation="Sc_MLBODY_CHRB_CHRF_TRNS_000LV_XA_02",
-		 duration=1.5, time_scale=1, weight=1, trans_time=0.25,  heading=-1}
+		 duration=3, time_scale=0.92, weight=1, trans_time=0.25,  heading=-1}
 	},
-	{
-		67,
-		START_MOTION,
-		{"Char_trent"},
-		{animation="Sc_MLBODY_CHRF_IDLE_000LV_XA_06",
-		 duration=2, time_scale=1, weight=1, trans_time=0.25,  heading=-1}
-	},
-	
+
 	{
 		64,
 		START_IK,

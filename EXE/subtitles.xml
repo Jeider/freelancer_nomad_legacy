@@ -18,7 +18,7 @@
 <Static AudioFile="mod\intro\intro_0130_barman.wav" TextArea="Cinematic">I think you're the luckiest son of a bitch on this junkpile of a planet.</Static>
 <Static AudioFile="mod\intro\intro_0140_trent.wav" TextArea="Cinematic">No, I mean... Should I agree and go there?</Static>
 <Static AudioFile="mod\intro\intro_0150_barman.wav" TextArea="Cinematic">You could, of course, let things be as they are and do nothing. Got enough money to sustain yourself; a risk-free life, other than dying in your 40s working in the mine. But, I think, if life gives you a chance to get out of this mud-hole - it's a sin not to take that chance. But, it's your call.</Static>
-<Static AudioFile="mod\intro\intro_0160_trent.wav" TextArea="Cinematic">So why aren't you flying away from this "mud-hole" yourself?</Static>
+<Static AudioFile="mod\intro\intro_0160_trent.wav" TextArea="Cinematic">So why aren't you flying away from this "mud-hole" yourself?</Static>
 <Static AudioFile="mod\intro\intro_0170_barman.wav" TextArea="Cinematic">This, friend, is my mud-hole. I've grown into it and I love it. And I don't have friends like yours, asking me to drop everything I'm doing and come over to Magdeburg. And if I would leave, who's going to be the savior of strangers' souls?</Static>
 <Static AudioFile="mod\intro\intro_0180_trent.wav" TextArea="Cinematic">You're right, without you this place would've been gloomy. I guess I'll head to the spaceport, then.</Static>
 <Static AudioFile="mod\intro\intro_0190_barman.wav" TextArea="Cinematic">Good luck, Trent! Hopefully, we'll never meet here again.</Static>
@@ -225,6 +225,51 @@
 <Static AudioFile="mod\m04\m04_final_0120_trent.wav" TextArea="Cinematic">Then how do you know that, Alaric?</Static>
 <Static AudioFile="mod\m04\m04_final_0130_alaric.wav" TextArea="Cinematic">Ah... E-e-e...</Static>
 <Static AudioFile="mod\m04\m04_final_0140_trent.wav" TextArea="Cinematic">I can't believe I got into this botch again!</Static>
+
+
+
+<Static AudioFile="mod\m05\m05_offer_0010_hatcher.wav" TextArea="Cinematic">How are you, Mr. Trent? Doing fine?</Static>
+<Static AudioFile="mod\m05\m05_offer_0020_trent.wav" TextArea="Cinematic">Well, Miss Hatcher, yesterday I twisted my ankle. And today, when I got out of the shower, I felt stinging pain in my back. But everything's fine regardless.</Static>
+<Static AudioFile="mod\m05\m05_offer_0030_hatcher.wav" TextArea="Cinematic">Mr. Trent! Let's try not to turn a polite greeting into a massive joke. </Static>
+<Static AudioFile="mod\m05\m05_offer_0040_trent.wav" TextArea="Cinematic">Then why won't we skip the politeness and get straight to business?</Static>
+<Static AudioFile="mod\m05\m05_offer_0050_hatcher.wav" TextArea="Cinematic">You're not making it any easier for me...</Static>
+<Static AudioFile="mod\m05\m05_offer_0060_hatcher.wav" TextArea="Cinematic">We've analyzed the documents you brought us, they proved to be of great value to us. However, there's only one problem.</Static>
+<Static AudioFile="mod\m05\m05_offer_0070_trent.wav" TextArea="Cinematic">There's always a problem.</Static>
+<Static AudioFile="mod\m05\m05_offer_0080_hatcher.wav" TextArea="Cinematic">They're complicated scientific papers, consisting of very advanced scientific calculations. So advanced, in fact, that our scientists couldn't stop arguing over their meanings.</Static>
+<Static AudioFile="mod\m05\m05_offer_0090_hatcher.wav" TextArea="Cinematic">You know, Mr. Trent, watching scientists fight each other is very entertaining.</Static>
+<Static AudioFile="mod\m05\m05_offer_0100_trent.wav" TextArea="Cinematic">Shame I couldn't watch them. So where do I come in? Surely you don't want me to watch over your scientists...</Static>
+<Static AudioFile="mod\m05\m05_offer_0110_hatcher.wav" TextArea="Cinematic">We'll need the help of a very experienced scientist, an expert in his field. Someone who could give us an accurate interpretation of these documents.</Static>
+<Static AudioFile="mod\m05\m05_offer_0120_hatcher.wav" TextArea="Cinematic">Luckily, I happen know a person of such skill; Professor Mandrake. If he can't figure it out, no one can.</Static>
+<Static AudioFile="mod\m05\m05_offer_0130_trent.wav" TextArea="Cinematic">And you can't just call him and ask for his help, because...</Static>
+<Static AudioFile="mod\m05\m05_offer_0140_hatcher.wav" TextArea="Cinematic">Because he works for Deep Space Engineering, and he's currently occupied with a research expedition. A very important one it seems, because it serves to counter industrial espionage that has ears deep inside our companies.</Static>
+<Static AudioFile="mod\m05\m05_offer_0150_trent.wav" TextArea="Cinematic">And my assignment will be...</Static>
+<Static AudioFile="mod\m05\m05_offer_0160_hatcher.wav" TextArea="Cinematic">Flying in space... Enough, Mr. Trent. You'll need to fly to Detroit station, which is DSE's HQ. Fond Professor Mandrake, and bring him to me.</Static>
+<Static AudioFile="mod\m05\m05_offer_0170_hatcher.wav" TextArea="Cinematic">I'll give you my business card in case you encounter any problems with DSE's security officers. Tell them you're working for me.</Static>
+<Static AudioFile="mod\m05\m05_offer_0180_trent.wav" TextArea="Cinematic">Alliance Security Force? Never heard of it.</Static>
+<Static AudioFile="mod\m05\m05_offer_0190_hatcher.wav" TextArea="Cinematic">It matters not, Mr. Trent. Your reward for completing this assignment will be very generous.</Static>
+<Static AudioFile="mod\m05\m05_offer_0200_trent.wav" TextArea="Cinematic">Ok, I'll get you what you need.</Static>
+<Static AudioFile="mod\m05\m05_offer_0210_hatcher.wav" TextArea="Cinematic">O-kay freelancer, now let's see what you are all about. You've got quite a mouth there, now it's time to prove your worth in complicated situations. I'll be watching over you... From afar.</Static>
+
+
+
+<Static AudioFile="mod\m05\m05_piratebar_0010_trent.wav" TextArea="Cinematic">Hey, bro! Got some more of that? I've been flying in space all day long, could use something to clear my mind...</Static>
+<Static AudioFile="mod\m05\m05_piratebar_0020_smith.wav" TextArea="Cinematic">No way, man! Been doing this shit for hours now, that's some of the good stuff!</Static>
+<Static AudioFile="mod\m05\m05_piratebar_0030_trent.wav" TextArea="Cinematic">Those jackasses from DSE really pissed me off. I did a fair job for them, and they can't even let me land on Detroit! Not even for a quick drop-off, these assholes just won't let me in! </Static>
+<Static AudioFile="mod\m05\m05_piratebar_0040_trent.wav" TextArea="Cinematic">And I have some really fine stuff in my cargo hold... Went on a months-long journey all the way to Omicron, and that stupid businessman just fends me off like I'm nothing.</Static>
+<Static AudioFile="mod\m05\m05_piratebar_0050_trent.wav" TextArea="Cinematic">And now, since they're apparently ready to kill me, I'm sitting here dunking myself in poison... Heck knows when they're gonna calm down...</Static>
+<Static AudioFile="mod\m05\m05_piratebar_0055_trent.wav" TextArea="Cinematic">Ah, could be really nice if I just stumbled upon a security pass... I'd just go and grab my hard-earned payment and get out with my hands full...</Static>
+<Static AudioFile="mod\m05\m05_piratebar_0060_smith.wav" TextArea="Cinematic">Listen, friend... What's your name? </Static>
+<Static AudioFile="mod\m05\m05_piratebar_0070_trent.wav" TextArea="Cinematic">Trent. And you are?</Static>
+<Static AudioFile="mod\m05\m05_piratebar_0080_smith.wav" TextArea="Cinematic">Smith. Mr. Smith.</Static>
+<Static AudioFile="mod\m05\m05_piratebar_0090_trent.wav" TextArea="Cinematic">Nice to meet you, Mr. Smith. You were saying...?</Static>
+<Static AudioFile="mod\m05\m05_piratebar_0100_smith.wav" TextArea="Cinematic">Yeah? Yeah... Oh, yeah! I know where you can get a security pass.</Static>
+<Static AudioFile="mod\m05\m05_piratebar_0110_trent.wav" TextArea="Cinematic">Oh, really? Where?</Static>
+<Static AudioFile="mod\m05\m05_piratebar_0120_smith.wav" TextArea="Cinematic">Look. There's a secret warehouse in this area. They got a couple of security passes kept there just in case, that I know for sure. You could try negotiating with them, but, you're a... Nobody. And the warehouse is top secret!</Static>
+<Static AudioFile="mod\m05\m05_piratebar_0130_trent.wav" TextArea="Cinematic">Gotcha, bro! </Static>
+<Static AudioFile="mod\m05\m05_piratebar_0140_smith.wav" TextArea="Cinematic">Come back with those full hands of yours...</Static>
+
+
+
 
 
 
