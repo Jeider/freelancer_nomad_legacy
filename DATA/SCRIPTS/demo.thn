@@ -168,7 +168,7 @@ entities={
 		spatialprops={
 			pos={
 				-- 0.3, 1.65, -2
-				-0.1, 1.7, -0.6
+				-0.1, 1.7, -1
 			},
 			orient={
 				{1,0,0},
@@ -270,29 +270,67 @@ events = {
 		}
 	},
 
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_FMBODY_STND_SALUT_000LV_XA_03",
+		 -- duration=15, time_scale=1,  weight=1,  heading=-1, event_flags=2}
+	-- },
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {
+			-- "Char_hatcher"
+		-- },
+		-- {
+			-- animation="Sc_FMHAND_HNEUT_POINT_RGHT_MILI_000LV_00",
+			-- duration=0.1,
+			-- time_scale=5,
+			-- weight=1,
+			-- heading=-1
+		-- }
+	-- },
+	
+	
+	
+	{
+		0.5,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_FMBODY_STND_SALUT_000LV_XA_03",
+		 duration=15, time_scale=1, start_time=1, weight=1,  heading=-1}
+	},
 	{
 		0,
 		START_MOTION,
-		{"Char_hatcher"},
-		{animation="Sc_FMBODY_STND_000DN_A_07",
-		 duration=0.1, time_scale=0.1,  weight=1,  heading=-1, event_flags=2}
-	},
-	
-	
-	{
-		0,
-		START_SPATIAL_PROP_ANIM,
 		{
-			"cam_dbg",
-			"cam_dbg2"
+			"Char_hatcher"
 		},
 		{
-			duration=10,
-			target_part="", target_type=ROOT,
-			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+			animation="Sc_FMHAND_HNEUT_POINT_RGHT_MILI_000LV_00",
+			duration=0.1,
+			time_scale=5,
+			weight=1,
+			heading=-1
 		}
 	},
+	
+	
+	-- {
+		-- 0,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "cam_dbg",
+			-- "cam_dbg2"
+		-- },
+		-- {
+			-- duration=10,
+			-- target_part="", target_type=ROOT,
+			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		-- }
+	-- },
 }
 
 

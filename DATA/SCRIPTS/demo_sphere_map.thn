@@ -1,0 +1,627 @@
+duration=6012312.187
+
+entities={
+	{
+		entity_name="Scene_Trailer_Hatcher_Bar",
+		type=SCENE,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				0,
+				0,
+				0
+			},
+			orient={
+				{
+					1,
+					0,
+					0
+				},
+				{
+					0,
+					1,
+					0
+				},
+				{
+					0,
+					0,
+					1
+				}
+			}
+		},
+		up=Y_AXIS,
+		front=Z_AXIS,
+		ambient={
+			128,
+			128,
+			128
+		}
+		-- ,
+		-- userprops={
+			-- TextStart="0.75000",
+			-- TextString="259608.00000"
+		-- }
+	},
+		
+	{
+		entity_name="Monitor_1",
+		type=MONITOR,
+		template_name="",
+		template_id=0
+	},
+	{
+		entity_name="Light_SCENE",
+		type=LIGHT,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		lightprops={
+			on=Y,
+			color={
+				255,
+				255,
+				255
+			},
+			diffuse={
+				0.5,
+				0.5,
+				0.5
+			},
+			specular={
+				1,
+				1,
+				1
+			},
+			ambient={
+				0.0,
+				0.0,
+				0.0
+			},
+			direction={
+				0,
+				1,
+				0
+			},
+			range=2000,
+			cutoff=90,
+			type=L_DIRECT,
+			theta=90,
+			atten={
+				1,
+				0,
+				4e-006
+			}
+		}
+	},
+	
+
+	{
+		entity_name="the_stars",
+		type=COMPOUND,
+		template_name="li_05_deck",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=1,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				-0.55,
+				-11.7,
+				0
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		userprops={
+			category="Room"
+		}
+	},
+	{
+		entity_name="ship_l_elite_Juni",
+		type=COMPOUND,
+		template_name="PlayerShip",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={
+			pos={
+				-50,
+				-11110,
+				20
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		userprops={
+			category="Spaceship"
+		}
+	},
+	
+	
+	{
+		entity_name="prop_test",
+		type=COMPOUND,
+		template_name="m6_sphere_map",
+		lt_grp=3,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={
+			pos={
+				0.15, 1.45, -0.35
+			},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		},
+		userprops={
+			category="Prop"
+		}
+	},
+	{
+		entity_name="prop_test2",
+		type=COMPOUND,
+		template_name="m6_fiber_struts",
+		lt_grp=3,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={
+			pos={
+				0, 4, 25
+			},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		},
+		userprops={
+			category="Prop"
+		}
+	},
+	
+	{
+		entity_name="cam_fiber_struts",
+		type=CAMERA,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				0, 4.5, 10
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+				
+			}
+		},
+		cameraprops={
+			fovh=12,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	
+	
+	{
+		entity_name="cam_fiber_struts_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				0, 4.5, 25
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	
+	{
+		entity_name="cam_dbg",
+		type=CAMERA,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				-2, 2, 0
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+				
+			}
+		},
+		cameraprops={
+			fovh=15,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_dbg2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-1.2, 2, -1.2
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	{
+		entity_name="cam_dbg3",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				0, 2, -2
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	{
+		entity_name="cam_dbg4",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				1.2, 2, -1.2
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+
+	{
+		entity_name="cam_dbg5",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				2, 2, 0
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	{
+		entity_name="cam_dbg_top",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				0.1, 3, -2
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	{
+		entity_name="cam_dbg_top2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-0.5, 3, -0.5
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	{
+		entity_name="cam_dbg_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				0.1, 1.4, -0.2
+		
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	
+	{
+		entity_name="Char_hatcher",
+		type=DEFORMABLE,
+		template_name="hatcher_test",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={
+			pos={
+				0, 0, 0
+			},
+			orient={
+			}
+		},
+		compoundprops={
+			floor_height=0 --0.42
+		},
+		userprops={
+			actor="Hatcher",
+			category="Character"
+		}
+	},
+
+	{
+		entity_name="ambience_hall",
+		type=SOUND,
+		template_name="music_bar_li02",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		audioprops={
+			attenuation=0,
+			pan=0,
+			dmin=50,
+			dmax=300,
+			ain=360,
+			aout=360,
+			atout=0,
+			rmix=0
+		},
+		userprops={
+			category="Audio",
+			Priority="Story_Sound_1"
+		}
+	},
+}
+
+events = {
+	{
+		0,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_fiber_struts"
+		}
+	},
+	
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_dbg",
+			"cam_dbg_marker"
+		},
+		{
+			duration=300,
+			offset={0,0,0},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="",
+			target_type=ROOT,
+			flags=LOOK_AT
+		}
+	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_fiber_struts",
+			"cam_fiber_struts_marker"
+		},
+		{
+			duration=300,
+			offset={0,0,0},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="",
+			target_type=ROOT,
+			flags=LOOK_AT
+		}
+	},
+
+
+	
+	{
+		0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_dbg",
+			"cam_dbg2"
+		},
+		{
+			duration=10,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			
+		}
+	},
+	{
+		10,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_dbg",
+			"cam_dbg3"
+		},
+		{
+			duration=10,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			
+		}
+	},
+	{
+		20,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_dbg",
+			"cam_dbg4"
+		},
+		{
+			duration=10,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			
+		}
+	},
+	{
+		30,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_dbg",
+			"cam_dbg5"
+		},
+		{
+			duration=10,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			
+		}
+	},
+	{
+		45,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_dbg",
+			"cam_dbg_top"
+		},
+		{
+			duration=20,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+			
+		}
+	},
+	{
+		68,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_dbg",
+			"cam_dbg_top2"
+		},
+		{
+			duration=20,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+			
+		}
+	},
+	{
+		0,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_FMBODY_STND_CONV_RHNDUP_TRNS_000LV_XA_01",
+		 duration=15, time_scale=10, start_time=1, weight=1,  heading=-1}
+	},
+	
+	{0, START_SOUND, {"ambience_hall"}, {duration=1000, flags=LOOP}},
+	
+	{
+		0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"prop_test"
+		},
+		{
+			duration=60,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					360,
+					Y_AXIS
+				}
+			}
+		}
+	},
+	{
+		60,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"prop_test"
+		},
+		{
+			duration=60,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					360,
+					Y_AXIS
+				}
+			}
+		}
+	},
+}
+
+
