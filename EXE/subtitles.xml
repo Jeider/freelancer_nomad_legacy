@@ -23,6 +23,11 @@
 <Static AudioFile="mod\intro\intro_0180_trent.wav" TextArea="Cinematic">You're right, without you this place would've been gloomy. I guess I'll head to the spaceport, then.</Static>
 <Static AudioFile="mod\intro\intro_0190_barman.wav" TextArea="Cinematic">Good luck, Trent! Hopefully, we'll never meet here again.</Static>
 
+<Static AudioFile="mod\m01\m01_cityscape_0010_stuard.wav" TextArea="Cinematic">Your ticket and documents, sir.</Static>
+<Static AudioFile="mod\m01\m01_cityscape_0020_stuard.wav" TextArea="Cinematic">Trent?.. Are you...</Static>
+<Static AudioFile="mod\m01\m01_cityscape_0030_trent.wav" TextArea="Cinematic">No, just a coincidence.</Static>
+<Static AudioFile="mod\m01\m01_cityscape_0040_trent.wav" TextArea="Cinematic">I'm so sick of it. While my namesake was saving the universe, I was working my ass off to pay off those stupid debts...</Static>
+
 <Static AudioFile="mod\m01\m01_offer_0010_alaric.wav" TextArea="Cinematic">Hi Trent, glad to see you!</Static>
 <Static AudioFile="mod\m01\m01_offer_0020_trent.wav" TextArea="Cinematic">You too, Alaric.</Static>
 <Static AudioFile="mod\m01\m01_offer_0030_alaric.wav" TextArea="Cinematic">I heard that you've finally dealt with that problem. No more debts, no more duties, right?</Static>
@@ -34,13 +39,6 @@
 <Static AudioFile="mod\m01\m01_offer_0090_trent.wav" TextArea="Cinematic">Interesting, why would Rheinlanders hire escorts to fly from one system to another, inside their own territory?</Static>
 <Static AudioFile="mod\m01\m01_offer_0100_trent.wav" TextArea="Cinematic">And a spaceship, you say? You're leaving me no choice, Al!</Static>
 <Static AudioFile="mod\m01\m01_offer_0110_alaric.wav" TextArea="Cinematic">Excellent! The ship's waiting for you in the hangar. Check everything over, and I'll meet you outside when you're ready.</Static>
-
-
-<Static AudioFile="mod\m01\m01_cityscape_0010_stuard.wav" TextArea="Cinematic">Your ticket and documents, sir.</Static>
-<Static AudioFile="mod\m01\m01_cityscape_0020_stuard.wav" TextArea="Cinematic">Trent?.. Are you...</Static>
-<Static AudioFile="mod\m01\m01_cityscape_0030_trent.wav" TextArea="Cinematic">No, just a coincidence.</Static>
-<Static AudioFile="mod\m01\m01_cityscape_0040_trent.wav" TextArea="Cinematic">I'm so sick of it. While my namesake was saving the universe, I was working my ass off to pay off those stupid debts...</Static>
-
 
 <Static AudioFile="mod\m01\m01_berlin_0010_alaric.wav" TextArea="Cinematic">Guten tag, gentlemen. This is Trent, my friend I was telling you about.</Static>
 <Static AudioFile="mod\m01\m01_berlin_0020_adelmar.wav" TextArea="Cinematic">Excellent. We're glad to see you. We have a few problems in our system. Hopefully, they didn't bother you too much.</Static>
@@ -269,7 +267,15 @@
 <Static AudioFile="mod\m05\m05_piratebar_0140_smith.wav" TextArea="Cinematic">Come back with those full hands of yours...</Static>
 
 
-
+<Static AudioFile="mod\m05\m05_detroit_0010_trent.wav" TextArea="Cinematic">Hey friend, I'm looking for some professor named Mandrake. Have you seen him around here?</Static>
+<Static AudioFile="mod\m05\m05_detroit_0020_barman.wav" TextArea="Cinematic">I've never heard this name before.</Static>
+<Static AudioFile="mod\m05\m05_detroit_0030_trent.wav" TextArea="Cinematic">Aren't you a nice one. Take a look, friend. I'm from the bartender's union.</Static>
+<Static AudioFile="mod\m05\m05_detroit_0040_barman.wav" TextArea="Cinematic">Oh shit, you're one of these... Could you just show it to the camera over there, so that I can verify later?</Static>
+<Static AudioFile="mod\m05\m05_detroit_0045_barman.wav" TextArea="Cinematic">Aha, thanks. He's on a research station in Sigma-17.</Static>
+<Static AudioFile="mod\m05\m05_detroit_0050_trent.wav" TextArea="Cinematic">What station?</Static>
+<Static AudioFile="mod\m05\m05_detroit_0060_barman.wav" TextArea="Cinematic">R-e-s-e-a-r-c-h Station. Got it? Strange, your kind are usually the smart ones.</Static>
+<Static AudioFile="mod\m05\m05_detroit_0070_trent.wav" TextArea="Cinematic">OK, thanks for the info. You see how easy it is to just go ahead and melt the ice? </Static>
+<Static AudioFile="mod\m05\m05_detroit_0080_trent.wav" TextArea="Cinematic">That's exactly what Humanity lacks – a little bit of warmth.</Static>
 
 
 

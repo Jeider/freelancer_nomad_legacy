@@ -2,7 +2,7 @@ duration=119
 
 entities={
 	{
-		entity_name="Scene_M05_new_offer_scene",
+		entity_name="Scene_M05_piratebar",
 		type=SCENE,
 		template_name="",
 		lt_grp=0,
@@ -464,42 +464,6 @@ entities={
 		},
 	},
 	
-	{
-		entity_name="trent_head_ik",
-		type=MARKER,
-		template_name="",
-		template_id=0,
-		spatialprops={
-			pos={ -- initial: head_smith
-				5.5,
-				1.2,
-				-0.95
-			},
-			orient={
-				{1,0,0},
-				{0,1,0},
-				{0,0,1}
-			}
-		},
-	},
-	{
-		entity_name="trent_eye_ik",
-		type=MARKER,
-		template_name="",
-		template_id=0,
-		spatialprops={
-			pos={ -- initial: head_smith
-				5.5,
-				1.2,
-				-0.95
-			},
-			orient={
-				{1,0,0},
-				{0,1,0},
-				{0,0,1}
-			}
-		},
-	},
 
 	{
 		entity_name="smith_head_ik",
