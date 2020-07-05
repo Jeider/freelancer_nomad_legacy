@@ -1,0 +1,1021 @@
+ 
+	
+	-- {
+		-- 0.2,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_FMBODY_STND_WALK_TRNS_090LV_XA_02",
+		 -- duration=2, time_scale=1, trans_time=0.5,  weight=1, heading=-1}
+	-- },
+	
+	-- {
+		-- 2.2,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_FMBODY_WALK_STND_TRNS_000LV_XA_01",
+		 -- duration=2, time_scale=0.8,  start_time=0.1, weight=1, heading=-1}
+	-- },
+	
+		
+	
+	-- {
+		-- 0.1,
+		-- SET_CAMERA,
+		-- {
+			-- "Monitor_1",
+			-- "cam_hatcher_descript2"
+		-- }
+	-- },
+	
+	
+	
+	-- {
+		-- 0.5,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "cam_hatcher_descript2",
+			-- "cam_hatcher_descript2_pos2"
+		-- },
+		-- {
+			-- duration=15,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- pos={0,0,0},
+				-- q_orient={1,0,0,0}
+			-- },
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			-- pcurve_period=-1000
+		-- }
+	-- },
+	-- {
+		-- 0.5,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "cam_hatcher_descript2_marker",
+			-- "cam_hatcher_descript2_marker_pos2"
+		-- },
+		-- {
+			-- duration=15,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- pos={0,0,0},
+				-- q_orient={1,0,0,0}
+			-- },
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			-- pcurve_period=-1000
+		-- }
+	-- },
+	
+	
+	-- {
+		-- 0.5,
+		-- START_SOUND,
+		-- {
+			-- "DX_m05_equip_0210_hatcher"
+		-- },
+		-- {
+			-- duration=25
+		-- }
+	-- },
+	
+	
+	
+	
+	
+	-- {
+		-- 0.1,
+		-- SET_CAMERA,
+		-- {
+			-- "Monitor_1",
+			-- "cam_hatcher_descript3"
+		-- }
+	-- },
+	
+	
+	-- {
+		-- 0.2,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_FMBODY_STND_WALK_TRNS_090LV_XA_02",
+		 -- duration=1, time_scale=2, trans_time=0.5,  weight=1, heading=-1}
+	-- },
+	
+	-- {
+		-- 1.2,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_FMBODY_WALK_STND_TRNS_000LV_XA_01",
+		 -- duration=1, time_scale=5,  start_time=0.1, weight=1, heading=-1}
+	-- },
+	-- {
+		-- 2,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_FMBODY_STND_TURN_180LV_XA_04",
+		 -- duration=4, time_scale=5, trans_time=1,   weight=1, heading=-1}
+	-- },
+	
+	
+	-- {
+		-- 2,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "cam_hatcher_descript3",
+			-- "cam_hatcher_descript3_pos2"
+		-- },
+		-- {
+			-- duration=15,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- pos={0,0,0},
+				-- q_orient={1,0,0,0}
+			-- },
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			-- pcurve_period=-1000
+		-- }
+	-- },
+	-- {
+		-- 2,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "cam_hatcher_descript3_marker",
+			-- "cam_hatcher_descript3_marker_pos2"
+		-- },
+		-- {
+			-- duration=15,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- pos={0,0,0},
+				-- q_orient={1,0,0,0}
+			-- },
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			-- pcurve_period=-1000
+		-- }
+	-- },
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	-- {
+		-- 0,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "Char_hatcher",
+			-- "point_hatcher_near_mandrake"
+		-- },
+		-- {
+			-- duration=0.001,
+			-- target_part="", target_type=ROOT,
+			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+		-- }
+	-- },
+	
+	-- {
+		-- 0.1,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_FMBODY_STND_FSTHIPB_HOLD_000LV_XA_01",
+		 -- duration=0.1, time_scale=1,   weight=1, heading=-1}
+	-- },
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_mandrake"},
+		-- {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+		 -- duration=0.1, time_scale=1, weight=1, heading=-1}
+	-- },
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_MLBODY_STND_IDLE_000LV_XB_04",
+		 -- duration=2, time_scale=1, weight=1, heading=-1, event_flags=2}
+	-- },
+	
+	-- {
+		-- 1,
+		-- START_IK,
+		-- {
+			-- "Char_hatcher",
+			-- "hatcher_head_ik"
+		-- },
+		-- {
+			-- duration=500,
+			-- end_effector="Body_Head",
+			-- target_part="",
+			-- target_type=ROOT,
+			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		-- }
+	-- },
+	-- {
+		-- 1,
+		-- START_IK,
+		-- {
+			-- "Char_hatcher",
+			-- "hatcher_eye_ik"
+		-- },
+		-- {
+			-- duration=500,
+			-- end_effector="Eye IK Left",
+			-- target_part="",
+			-- target_type=ROOT,
+			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		-- }
+	-- },
+	-- {
+		-- 1,
+		-- START_IK,
+		-- {
+			-- "Char_mandrake",
+			-- "mandrake_head_ik"
+		-- },
+		-- {
+			-- duration=500,
+			-- end_effector="Body_Head",
+			-- target_part="",
+			-- target_type=ROOT,
+			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		-- }
+	-- },
+	-- {
+		-- 1,
+		-- START_IK,
+		-- {
+			-- "Char_mandrake",
+			-- "mandrake_eye_ik"
+		-- },
+		-- {
+			-- duration=500,
+			-- end_effector="Eye IK Left",
+			-- target_part="",
+			-- target_type=ROOT,
+			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		-- }
+	-- },
+	-- {
+		-- 0,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "Char_trent"
+		-- },
+		-- {
+			-- duration=0.01,
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- axisrot={
+					-- 45,
+					-- Y_AXIS
+				-- }
+			-- },
+		-- }
+	-- },
+	-- {
+		-- 0.05,
+		-- START_IK,
+		-- {
+			-- "Char_trent",
+			-- "trent_head_ik"
+		-- },
+		-- {
+			-- duration=500,
+			-- end_effector="Body_Head",
+			-- target_part="",
+			-- target_type=ROOT,
+			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		-- }
+	-- },
+	-- {
+		-- 0.05,
+		-- START_IK,
+		-- {
+			-- "Char_trent",
+			-- "trent_eye_ik"
+		-- },
+		-- {
+			-- duration=500,
+			-- end_effector="Eye IK Left",
+			-- target_part="",
+			-- target_type=ROOT,
+			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		-- }
+	-- },
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	{
+		0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_hatcher",
+			"point_hatcher_near_mandrake"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+		}
+	},
+	
+	{
+		0.1,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_FMBODY_STND_IDLE_000LV_xa_05",
+		 duration=0.1, time_scale=1,   weight=1, heading=-1}
+	},
+	{
+		0,
+		START_MOTION,
+		{"Char_mandrake"},
+		{animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+		 duration=0.1, time_scale=1, weight=1, heading=-1}
+	},
+	{
+		0,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_STND_IDLE_000LV_XB_04",
+		 duration=2, time_scale=1, weight=1, heading=-1, event_flags=2}
+	},
+	
+	{
+		1,
+		START_IK,
+		{
+			"Char_mandrake",
+			"mandrake_head_ik"
+		},
+		{
+			duration=500,
+			end_effector="Body_Head",
+			target_part="",
+			target_type=ROOT,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		}
+	},
+	{
+		1,
+		START_IK,
+		{
+			"Char_mandrake",
+			"mandrake_eye_ik"
+		},
+		{
+			duration=500,
+			end_effector="Eye IK Left",
+			target_part="",
+			target_type=ROOT,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		}
+	},
+	{
+		0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_trent"
+		},
+		{
+			duration=0.01,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					45,
+					Y_AXIS
+				}
+			},
+		}
+	},
+	{
+		0.05,
+		START_IK,
+		{
+			"Char_trent",
+			"trent_head_ik"
+		},
+		{
+			duration=500,
+			end_effector="Body_Head",
+			target_part="",
+			target_type=ROOT,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		}
+	},
+	{
+		0.05,
+		START_IK,
+		{
+			"Char_trent",
+			"trent_eye_ik"
+		},
+		{
+			duration=500,
+			end_effector="Eye IK Left",
+			target_part="",
+			target_type=ROOT,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		}
+	},
+	
+	
+	
+	{
+		1,
+		START_IK,
+		{
+			"Char_hatcher",
+			"hatcher_head_ik"
+		},
+		{
+			duration=55,
+			end_effector="Body_Head",
+			target_part="",
+			target_type=ROOT,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		}
+	},
+	{
+		1,
+		START_IK,
+		{
+			"Char_hatcher",
+			"hatcher_eye_ik"
+		},
+		{
+			duration=55,
+			end_effector="Eye IK Left",
+			target_part="",
+			target_type=ROOT,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		}
+	},
+	
+	
+	
+	
+	{
+		0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"hatcher_head_ik",
+			"head_trent_mandrake_half"
+		},
+		{
+			duration=0.01,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"hatcher_eye_ik",
+			"head_trent"
+		},
+		{
+			duration=0.01,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	
+	
+	
+	{
+		13.5,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"hatcher_head_ik",
+			"head_hatcher_road_left"
+		},
+		{
+			duration=3,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		13.5,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"hatcher_eye_ik",
+			"head_hatcher_road_left"
+		},
+		{
+			duration=2.5,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	
+	{
+		24,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"hatcher_head_ik",
+			"head_hatcher_description3_look_left_nearest"
+		},
+		{
+			duration=3,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		24,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"hatcher_eye_ik",
+			"head_hatcher_description3_look_left"
+		},
+		{
+			duration=2.5,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	
+	{
+		28,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"hatcher_head_ik",
+			"head_trent"
+		},
+		{
+			duration=4,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		28,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"hatcher_eye_ik",
+			"head_trent"
+		},
+		{
+			duration=2.5,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+
+	
+	
+	{
+		0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"trent_head_ik",
+			"head_hatcher_description3"
+		},
+		{
+			duration=1,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"trent_eye_ik",
+			"head_hatcher_description3"
+		},
+		{
+			duration=1,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+
+	
+	
+	{
+		0.15,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_hatcher_descript1"
+		}
+	},
+	
+	
+	
+	{
+		2,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_STND_IDLE_000LV_XB_04",
+		 duration=30, time_scale=1,   weight=1, heading=-1, event_flags=2}
+	},
+	
+	{
+		2,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_FMBODY_STND_SHRG_SHLDRS_SMALL_000LV_XA_02",
+		 duration=4, time_scale=0.7,   weight=1, heading=-1}
+	},
+	{
+		5,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_FMBODY_STND_CONV_RHNDUP_TRNS_000LV_XA_01",
+		 duration=7, time_scale=0.7, trans_time=0.25, weight=1,  heading=-1}
+	},
+	{
+		7,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_FMBODY_STND_CONV_RHND_CASL_000LV_xa_03",
+		 duration=6, time_scale=0.75, trans_time=1, weight=1, heading=-1, event_flags=2}
+	},
+	{
+		13,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_FMBODY_STND_CONV_RHNDDN_TRNS_000LV_XA_01",
+		 duration=1, time_scale=0.75, trans_time=1, weight=1,  heading=-1}
+	},
+	{
+		5,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_FMHAND_HNEUT_GESTR_CASL_000LV_00",
+		 duration=6, time_scale=0.8, trans_time=0.25, weight=1, heading=-1, event_flags=2}
+	},
+	{
+		11,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_FMHAND_NEUT_RGHT_000LV_A_00",
+		 duration=2, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	},
+	
+	
+	{
+		2,
+		START_SOUND,
+		{
+			"DX_m05_equip_0200_hatcher"
+		},
+		{
+			duration=25
+		}
+	},
+	
+	{
+		2,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_dx_s070x_3001_Jacobi",
+		 duration=5.5,  time_scale=1,  trans_time=0.2, weight=1, heading=-1}
+	},
+	{
+		7.5,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_dx_s070x_2701_Jacobi",
+		 duration=3.5,  time_scale=1,  trans_time=0.2, weight=1, heading=-1}
+	},
+	{
+		11,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_dx_s070x_3001_Jacobi",
+		 duration=5.5,  time_scale=1,  trans_time=0.2, start_time=2.2, weight=1, heading=-1}
+	},
+	
+	
+	
+	{
+		16,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_hatcher_descript2"
+		}
+	},
+	
+	{
+		16,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_hatcher_descript2",
+			"cam_hatcher_descript2_pos2"
+		},
+		{
+			duration=16,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		16,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_hatcher_descript2_marker",
+			"cam_hatcher_descript2_marker_pos2"
+		},
+		{
+			duration=16,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	
+	
+	{
+		14,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_FMBODY_STND_WALK_TRNS_090LV_XA_02",
+		 duration=2, time_scale=1, trans_time=0.5,  weight=1, heading=-1}
+	},
+	
+	{
+		16,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_FMBODY_WALK_STND_TRNS_000LV_XA_01",
+		 duration=2, time_scale=0.8,  start_time=0.1, weight=1, heading=-1}
+	},
+	
+	
+	{
+		17,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_FMBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
+		 duration=3, time_scale=0.4, trans_time=0.5,   weight=1, heading=-1}
+	},
+	{
+		20,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_FMBODY_STND_FSTHIPB_HOLD_000LV_XA_01",
+		 duration=6, time_scale=0.6, trans_time=0.5,  weight=1, heading=-1, event_flags=2}
+	},
+	{
+		26,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_FMBODY_STND_FSTHIPB_RLEASE_000LV_XA_01",
+		 duration=2, time_scale=0.7, trans_time=0.5,   weight=1, heading=-1}
+	},
+	{
+		28,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_FMBODY_STND_TURN_180LV_XA_04",
+		 duration=4, time_scale=0.8, trans_time=1,   weight=1, heading=-1}
+	},
+	
+	
+	{
+		16,
+		START_SOUND,
+		{
+			"DX_m05_equip_0210_hatcher"
+		},
+		{
+			duration=25
+		}
+	},
+	
+	
+	{
+		16,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_dx_s070x_2501_Jacobi",
+		 duration=5,  time_scale=0.9, trans_time=0.2, start_time=1, weight=1, heading=-1}
+	},
+	{
+		21.2,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_dx_s070x_3001_Jacobi",
+		 duration=6,  time_scale=0.9,  trans_time=0.2, weight=1, heading=-1}
+	},
+	{
+		27,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_dx_s070x_2701_Jacobi",
+		 duration=6,  time_scale=0.9,  trans_time=0.2, start_time=1.4, weight=1, heading=-1}
+	},
+	
+	
+		
+	{
+		31,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_hatcher_descript3"
+		}
+	},
+	
+	{
+		31,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_hatcher_descript3",
+			"cam_hatcher_descript3_pos2"
+		},
+		{
+			duration=16,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		31,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_hatcher_descript3_marker",
+			"cam_hatcher_descript3_marker_pos2"
+		},
+		{
+			duration=16,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	
+	{
+		32,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_FMBODY_STND_CONV_LHNDUP_TRNS_000LV_XA_01",
+		 duration=1.3, time_scale=0.75, trans_time=0.25, weight=1,  heading=-1}
+	},
+	{
+		33.3,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_FMBODY_STND_CONV_LHND_CASL_000LV_xa_04",
+		 duration=3.7, time_scale=0.5, trans_time=0.1, weight=1, heading=-1, event_flags=2}
+	},
+	{
+		37,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_FMBODY_STND_CONV_LHNDDN_TRNS_000LV_XA_00",
+		 duration=1.5, time_scale=0.5, trans_time=1, weight=1,  heading=-1}
+	},
+
+	
+	{
+		32,
+		START_SOUND,
+		{
+			"DX_m05_equip_0220_hatcher"
+		},
+		{
+			duration=25
+		}
+	},
+	
+	{
+		32,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="sc_dx_s070x_2701_Jacobi",
+		 duration=4, time_scale=0.9, trans_time=0.2, start_time=0.5, weight=1, heading=-1}
+	},
+	{
+		36,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_dx_s070x_3001_Jacobi",
+		 duration=2.5, time_scale=0.85, trans_time=0.2, start_time=3.4, weight=1, heading=-1}
+	},
+	
+
+	{
+		38.5,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_FMBODY_STND_CROSS_ARMS_000LV_xa_03",
+		 duration=3.6, time_scale=0.8, trans_time=0.5,  weight=1, heading=-1}
+	},
+	{
+		42.1,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_FMBODY_STND_HOLD_ARMS_CROSSED_000LV_XA_03",
+		 duration=1.4, time_scale=0.8, trans_time=0.5,  weight=1, heading=-1, event_flags=2}
+	},
+	{
+		43.5,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_FMBODY_STND_UNCRSS_ARMS_000LV_XA_03",
+		 duration=8, time_scale=0.8, trans_time=0.5,  weight=1, heading=-1}
+	},
+	
+	{
+		38.5,
+		START_SOUND,
+		{
+			"DX_m05_equip_0230_hatcher"
+		},
+		{
+			duration=25
+		}
+	},
+	
+	
+	{
+		38.5,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="sc_dx_s070x_2701_Jacobi",
+		 duration=4, time_scale=0.9, trans_time=0.2, weight=1, heading=-1}
+	},
+	{
+		42.5,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_dx_s070x_3001_Jacobi",
+		 duration=2, time_scale=0.9, trans_time=0.2, weight=1, heading=-1}
+	},
+	{
+		44.5,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="sc_dx_s070x_2701_Jacobi",
+		 duration=4, time_scale=0.9, trans_time=0.2, start_time=1, weight=1, heading=-1}
+	},
+	
