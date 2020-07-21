@@ -495,6 +495,7 @@ events={
 		0,
 		START_PATH_ANIMATION,
 		{
+		{
 			"pod",
 			"Path_pod_bottom"
 		},
