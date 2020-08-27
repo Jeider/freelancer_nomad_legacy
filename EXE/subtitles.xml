@@ -248,8 +248,6 @@
 <Static AudioFile="mod\m05\m05_offer_0200_trent.wav" TextArea="Cinematic">Ok, I'll get you what you need.</Static>
 <Static AudioFile="mod\m05\m05_offer_0210_hatcher.wav" TextArea="Cinematic">O-kay freelancer, now let's see what you are all about. You've got quite a mouth there, now it's time to prove your worth in complicated situations. I'll be watching over you... From afar.</Static>
 
-
-
 <Static AudioFile="mod\m05\m05_piratebar_0010_trent.wav" TextArea="Cinematic">Hey, bro! Got some more of that? I've been flying in space all day long, could use something to clear my mind...</Static>
 <Static AudioFile="mod\m05\m05_piratebar_0020_smith.wav" TextArea="Cinematic">No way, man! Been doing this shit for hours now, that's some of the good stuff!</Static>
 <Static AudioFile="mod\m05\m05_piratebar_0030_trent.wav" TextArea="Cinematic">Those jackasses from DSE really pissed me off. I did a fair job for them, and they can't even let me land on Detroit! Not even for a quick drop-off, these assholes just won't let me in! </Static>
@@ -266,6 +264,12 @@
 <Static AudioFile="mod\m05\m05_piratebar_0130_trent.wav" TextArea="Cinematic">Gotcha, bro! </Static>
 <Static AudioFile="mod\m05\m05_piratebar_0140_smith.wav" TextArea="Cinematic">Come back with those full hands of yours...</Static>
 
+<Static AudioFile="echo_m05_player.utf|0xBB166EC9" TextArea="Cinematic">Hello? Is anyone home?</Static>
+<Static AudioFile="echo_m05.utf|0x87C69209" TextArea="Cinematic">Hey, what the hell was that?</Static>
+<Static AudioFile="echo_m05.utf|0xA7C752C9" TextArea="Cinematic">Hey stranger! You don`t look like you belong here. Did you lose something?</Static>
+<Static AudioFile="echo_m05_player.utf|0x9B1622CA" TextArea="Cinematic">A little bird named Mr. Smith told me that I can get a Detroit security pass for a reasonable price here.</Static>
+<Static AudioFile="echo_m05.utf|0x87C47F48" TextArea="Cinematic">That stupid... I`m gonna finish that stoner off right now! He smoked his last blunt.</Static>
+<Static AudioFile="echo_m05.utf|0xA7C4FF08" TextArea="Cinematic">Let's deal with this douchebag first.</Static>
 
 <Static AudioFile="mod\m05\m05_detroit_0010_trent.wav" TextArea="Cinematic">Hey friend, I'm looking for some professor named Mandrake. Have you seen him around here?</Static>
 <Static AudioFile="mod\m05\m05_detroit_0020_barman.wav" TextArea="Cinematic">I've never heard this name before.</Static>

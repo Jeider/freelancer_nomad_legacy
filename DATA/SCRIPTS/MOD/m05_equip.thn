@@ -1,4 +1,4 @@
-duration=320
+duration=330
 
 entities={
 	{
@@ -80,6 +80,81 @@ entities={
 		template_id=0
 	},
 	
+	
+	{
+		entity_name="sound_cart_start",
+		template_name="equipment_cart_start",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=-5,pan=0,dmin=50,dmax=250,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="sound_cart_stop",
+		template_name="equipment_cart_stop",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=-5,pan=0,dmin=50,dmax=250,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="sound_cart_loop",
+		template_name="equipment_cart_loop",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=-25,pan=0,dmin=50,dmax=250,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="sound_cart_start",
+		template_name="equipment_cart_start",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=-5,pan=0,dmin=50,dmax=250,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="sound_syd_clang",
+		template_name="sfx_syd_clang",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=-10,pan=0,dmin=50,dmax=250,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	
+	{
+		entity_name="music_hall_ambient",
+		template_name="ambience_equip_ground_larger",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio",Priority="Story_Sound_1"}
+	},
+	{
+		entity_name="music_reveal_and_exposition",
+		template_name="rtc_music_reveal_and_exposition",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=-12,pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio",Priority="Story_Sound_1"}
+	},
+	{
+		entity_name="music_anticipation_light",
+		template_name="rtc_music_anticipation_light",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=-8,pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio",Priority="Story_Sound_1"}
+	},
+	{
+		entity_name="music_reveal_special_mystery",
+		template_name="rtc_music_reveal_special_mystery",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=-12,pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio",Priority="Story_Sound_1"}
+	},
+
 	
 	{
 		entity_name="DX_m05_equip_0010_hatcher",
@@ -8936,6 +9011,193 @@ events={
 	}, 
 	
 	
+	
+	
+	
+	
+	
+	{
+		0.3,
+		START_SOUND,
+		{
+			"sound_cart_loop"
+		},
+		{
+			duration=3.2, flags=LOOP
+		}
+	},	
+	{
+		3.5,
+		START_SOUND,
+		{
+			"sound_cart_stop"
+		},
+		{
+			duration=2
+		}
+	},	
+	{
+		5,
+		START_SOUND,
+		{
+			"sound_cart_start"
+		},
+		{
+			duration=2
+		}
+	},	
+	{
+		6.3,
+		START_SOUND,
+		{
+			"sound_cart_loop"
+		},
+		{
+			duration=10, flags=LOOP
+		}
+	},	
+	
+	
+	{
+		0,
+		START_AUDIO_PROP_ANIM,
+		{
+			"sound_cart_loop"
+		},
+		{
+			duration=1,
+			audioprops={
+				attenuation=-5
+			}
+		}
+	},
+	
+	{
+		6,
+		START_AUDIO_PROP_ANIM,
+		{
+			"sound_cart_loop"
+		},
+		{
+			duration=5,
+			audioprops={
+				attenuation=-25
+			}
+		}
+	},
+	{
+		4.5,
+		START_SOUND,
+		{
+			"sound_syd_clang"
+		},
+		{
+			duration=2
+		}
+	},	
+	
+	
+	
+	{
+		0, START_SOUND, {"music_hall_ambient"}, {duration=108, flags=LOOP}
+	},
+	
+	{
+		8,
+		START_AUDIO_PROP_ANIM,
+		{
+			"music_hall_ambient"
+		},
+		{
+			duration=2,
+			audioprops={
+				attenuation=-10
+			}
+		}
+	},
+
+	{
+		100,
+		START_AUDIO_PROP_ANIM,
+		{
+			"music_hall_ambient"
+		},
+		{
+			duration=8,
+			audioprops={
+				attenuation=-100
+			}
+		}
+	},
+	
+	
+	{
+		108, START_SOUND, {"music_anticipation_light"}, {duration=90, flags=LOOP}
+	},
+	{
+		197,
+		START_AUDIO_PROP_ANIM,
+		{
+			"music_anticipation_light"
+		},
+		{
+			duration=1,
+			audioprops={
+				attenuation=-100
+			}
+		}
+	},
+	{
+		199, START_SOUND, {"music_reveal_and_exposition"}, {duration=77, flags=LOOP}
+	},
+	{
+		273,
+		START_AUDIO_PROP_ANIM,
+		{
+			"music_reveal_and_exposition"
+		},
+		{
+			duration=3,
+			audioprops={
+				attenuation=-25
+			}
+		}
+	},
+	
+	{
+		279, START_SOUND, {"music_reveal_special_mystery"}, {duration=31, flags=LOOP}
+	},
+
+	{
+		310,
+		START_AUDIO_PROP_ANIM,
+		{
+			"music_reveal_special_mystery"
+		},
+		{
+			duration=0.001,
+			audioprops={
+				attenuation=-5
+			}
+		}
+	},
+	{
+		310, START_SOUND, {"music_reveal_special_mystery"}, {duration=10000, start_time=16500}
+	},
+	
+	
+
+	
 }
+
+
+-- order first stats: music_anticipation_light
+
+
+
+-- sphere info: music_reveal_and_exposition
+
+-- music_friendly_encourage
+-- music_anticipation_light
 	
 	
