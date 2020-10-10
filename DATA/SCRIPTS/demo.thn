@@ -33,9 +33,9 @@ entities={
 		up=Y_AXIS,
 		front=Z_AXIS,
 		ambient={
-			128,
-			128,
-			128
+			170,
+			170,
+			170
 		}
 		-- ,
 		-- userprops={
@@ -168,7 +168,7 @@ entities={
 		spatialprops={
 			pos={
 				-- 0.3, 1.65, -2
-				-0.1, 1.7, -1
+				-0.5, 1.8, -0.8
 			},
 			orient={
 				{1,0,0},
@@ -178,7 +178,7 @@ entities={
 			}
 		},
 		cameraprops={
-			fovh=25,
+			fovh=20,
 			hvaspect=1.85,
 			nearplane=0.2,
 			farplane=5000
@@ -191,7 +191,7 @@ entities={
 		template_id=0,
 		spatialprops={
 			pos={
-				-0.6, 1.7, -0.3
+				-0.6, 1.9, -0.3
 			},
 			orient={
 				{1,0,0},
@@ -207,7 +207,7 @@ entities={
 		template_id=0,
 		spatialprops={
 			pos={
-				0, 1.6, 0
+				0, 1.4, 0
 				-- 0, 1.6, 0
 			},
 			orient={
@@ -218,9 +218,9 @@ entities={
 		},
 	},
 	{
-		entity_name="Char_hatcher",
+		entity_name="Char_trent",
 		type=DEFORMABLE,
-		template_name="hatcher_test",
+		template_name="alaric",
 		lt_grp=0,
 		srt_grp=0,
 		usr_flg=0,
@@ -236,7 +236,7 @@ entities={
 			floor_height=0 --0.42
 		},
 		userprops={
-			actor="Hatcher",
+			actor="Player123",
 			category="Character"
 		}
 	},
@@ -294,27 +294,34 @@ events = {
 	
 	
 	
-	{
-		0.5,
-		START_MOTION,
-		{"Char_hatcher"},
-		{animation="Sc_FMBODY_STND_SALUT_000LV_XA_03",
-		 duration=15, time_scale=1, start_time=1, weight=1,  heading=-1}
-	},
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_FMBODY_STND_CROSS_ARMS_000LV_xa_03",
+		 -- duration=1, time_scale=1,  weight=1,  heading=-1}
+	-- },
 	{
 		0,
 		START_MOTION,
-		{
-			"Char_hatcher"
-		},
-		{
-			animation="Sc_FMHAND_HNEUT_POINT_RGHT_MILI_000LV_00",
-			duration=0.1,
-			time_scale=5,
-			weight=1,
-			heading=-1
-		}
+		{"Char_trent"},
+		{animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+		 duration=1, time_scale=1,  weight=1,  heading=-1}
 	},
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {
+			-- "Char_hatcher"
+		-- },
+		-- {
+			-- animation="Sc_FMHAND_HNEUT_POINT_RGHT_MILI_000LV_00",
+			-- duration=0.1,
+			-- time_scale=5,
+			-- weight=1,
+			-- heading=-1
+		-- }
+	-- },
 	
 	
 	-- {
