@@ -20,14 +20,14 @@ Hope you enjoy SweetFX and ReShade.
 // Set to 1 for ON or 0 for OFF
 #define USE_ASCII         	0 //[0 or 1] Ascii : Converts the image to Ascii-art.
 #define USE_CARTOON       	0 //[0 or 1] Cartoon : "Toon"s the image.
-#define USE_SMAA         	0 //[0 or 1] SMAA Anti-aliasing : Smoothens jagged lines using the SMAA technique.
+#define USE_SMAA         	1 //[0 or 1] SMAA Anti-aliasing : Smoothens jagged lines using the SMAA technique.
 #define USE_FXAA          	1 //[0 or 1] FXAA Anti-aliasing : Smoothens jagged lines using the FXAA technique.
 #define USE_EXPLOSION     	0 //[0 or 1] Explosion : Scatters the pixels, making the image look fuzzy.
 #define USE_CA            	0 //[0 or 1] Chromatic Aberration : Mimics the look of a cheap camera lens, by distorting the colors.
 #define USE_ADVANCED_CRT  	0 //[0 or 1] Advanced CRT : Simulates an old CRT TV display. (has a very high performance cost)
 #define USE_PIXELART_CRT  	0 //[0 or 1] PixelArt CRT : Scanlines for pixel art (high performance cost)
 #define USE_BLOOM         	0 //[0 or 1] Bloom : Makes bright lights bleed their light into their surroundings (relatively high performance cost)
-#define USE_HDR           	0 //[0 or 1] HDR : Not actual HDR - It just tries to mimic an HDR look (relatively high performance cost)
+#define USE_HDR           	1 //[0 or 1] HDR : Not actual HDR - It just tries to mimic an HDR look (relatively high performance cost)
 #define USE_LUMASHARPEN   	1 //[0 or 1] LumaSharpen : Sharpens the image.
 #define USE_LENS_DISTORTION 0 //[0 or 1] Cubic Lens Distortion : Distorts the lens cubicly. (WIP) - EV_0
 
