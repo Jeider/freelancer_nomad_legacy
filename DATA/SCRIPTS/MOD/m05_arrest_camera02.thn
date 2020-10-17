@@ -1,4 +1,4 @@
-duration=30
+duration=300
 
 entities={
 	{
@@ -156,7 +156,7 @@ entities={
 		},
 		pathprops={
 			path_type="CV_CROrientationSplinePath",
-			path_data="OPEN, {5,20,10}, {1,0,0,0}, {25,50,200}, {1,0,0,0}, "
+			path_data="OPEN, {-25,5,-5}, {1,0,0,0}, {-25,50,200}, {1,0,0,0}, "
 		}
 	},
 	

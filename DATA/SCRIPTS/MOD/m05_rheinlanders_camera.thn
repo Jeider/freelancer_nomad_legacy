@@ -1,4 +1,4 @@
-duration=10
+duration=300
 
 entities={
 	{
@@ -45,7 +45,7 @@ entities={
 		template_id=0,
 		spatialprops={
 			pos={
-				-17945, -3639, 28469
+				-18945, -39, 28469
 			},
 			orient={
 				{
@@ -131,7 +131,7 @@ events={
 			"main_object"
 		},
 		{
-			duration=30,
+			duration=5,
 			offset={
 				0,
 				0,

@@ -1,4 +1,4 @@
-duration=30
+duration=300
 
 entities={
 	{
@@ -56,7 +56,7 @@ entities={
 		flags=HIDDEN,
 		spatialprops={
 			pos={
-				-16780, 10, 28620
+				-16750, 5, 28620
 			},
 			orient={
 				{1,0,0},
@@ -155,7 +155,7 @@ events={
 		{
 			duration=300,
 			offset={
-				0,
+				-10,
 				-15,
 				0
 			},

@@ -1,4 +1,4 @@
-duration=30
+duration=300
 
 entities={
 	{
@@ -156,9 +156,9 @@ events={
 		{
 			duration=300,
 			offset={
-				-1,
+				15,
 				2,
-				-25
+				-10
 			},
 			up=Y_AXIS,
 			front=NEG_Z_AXIS,
@@ -177,9 +177,9 @@ events={
 		{
 			duration=300,
 			offset={
-				7,
+				-5,
 				0,
-				5
+				0
 			},
 			up=Y_AXIS,
 			front=NEG_Z_AXIS,
