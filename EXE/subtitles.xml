@@ -281,6 +281,70 @@
 <Static AudioFile="mod\m05\m05_detroit_0070_trent.wav" TextArea="Cinematic">OK, thanks for the info. You see how easy it is to just go ahead and melt the ice? </Static>
 <Static AudioFile="mod\m05\m05_detroit_0080_trent.wav" TextArea="Cinematic">That's exactly what Humanity lacks – a little bit of warmth.</Static>
 
+<Static AudioFile="echo_m05.utf|0xB8D06E41" TextArea="Cinematic">Freelancer alpha-one, turn your weapons down and follow us to battleship Griffin.</Static>
+<Static AudioFile="echo_m05_player.utf|0x9BCE24CA" TextArea="Cinematic">What the... I was just flying to Forbes, what's the matter?</Static>
+<Static AudioFile="echo_m05.utf|0xB8086841" TextArea="Cinematic">Freelancer alpha-one, I repeat, turn your weapons down and follow us to battleship Griffin. That's an order from commander Tilton. If you fail to comply, we will open fire.</Static>
+<Static AudioFile="echo_m05_female.utf|0x8E3E0F8C" TextArea="Cinematic">Hey there, boys! This freelancer is under my jurisdiction. Calm down. He's on our side. Is that clear?</Static>
+<Static AudioFile="echo_m05.utf|0x9DE4630B" TextArea="Cinematic">Miss Hatcher! Long time no see. Your agents have been quite a pain in the ass lately. But now, oh, now you've crossed the line! </Static>
+<Static AudioFile="echo_m05.utf|0x9DF06201" TextArea="Cinematic">This freelancer is responsible for no less than the destruction of the Clark research station! And I have the authority, by all means, to deal with him as I please!</Static>
+<Static AudioFile="echo_m05_player.utf|0xBBCF48C1" TextArea="Cinematic">I'm responsible for WHAT? The station blew up from the inside, while I was out in space waiting for...</Static>
+<Static AudioFile="echo_m05.utf|0xBE32F78C" TextArea="Cinematic">Shut up, Trent!</Static>
+<Static AudioFile="echo_m05.utf|0x9133830B" TextArea="Cinematic">Shut up, freelancer!</Static>
+<Static AudioFile="echo_m05.utf|0xB4838B4B" TextArea="Cinematic">Attention, we're reading hostiles on our radar!</Static>
+<Static AudioFile="echo_m05.utf|0x8CCD2DC9" TextArea="Cinematic">What a coincidence, Herr Trent! Do you know what's the penalty for treason in Rheinland? That's right, death! All wingmen, engage!</Static>
+
+<Static AudioFile="mod\m05\m05_equip_0010_hatcher.wav" TextArea="Cinematic">Professor Mandrake.</Static>
+<Static AudioFile="mod\m05\m05_equip_0020_mandrake.wav" TextArea="Cinematic">Miss Hatcher.</Static>
+<Static AudioFile="mod\m05\m05_equip_0030_hatcher.wav" TextArea="Cinematic">Professor, I apologize in Tilton's name for keeping you in your capsule an extra hour.</Static>
+<Static AudioFile="mod\m05\m05_equip_0040_mandrake.wav" TextArea="Cinematic">That bastard, I thought he was over you but he can't stop trying to catch you, Miss Hatcher.</Static>
+<Static AudioFile="mod\m05\m05_equip_0050_hatcher.wav" TextArea="Cinematic">The more he tries, the simpler and dumber his schemes become.</Static>
+<Static AudioFile="mod\m05\m05_equip_0060_mandrake.wav" TextArea="Cinematic">You'd better be wary of this kind of person. Statistically, if he tried enough times, he will eventually achieve his goal.</Static>
+<Static AudioFile="mod\m05\m05_equip_0070_hatcher.wav" TextArea="Cinematic">With Tilton? That's highly unlikely. He thinks that doing the same thing over and over again, expecting different results, is not considered crazy.</Static>
+<Static AudioFile="mod\m05\m05_equip_0080_mandrake.wav" TextArea="Cinematic">Yeah, but it's all about his "progressive ideas" that the Order have already outlived their purpose, and it's time for Liberty to stop playing around and end them once and for all...</Static>
+<Static AudioFile="mod\m05\m05_equip_0090_hatcher.wav" TextArea="Cinematic">Only childish morons like him would support his ideas.</Static>
+<Static AudioFile="mod\m05\m05_equip_0100_trent.wav" TextArea="Cinematic">Wait, wait, wait! Am I just a decoration here? Please explain what's going on.</Static>
+<Static AudioFile="mod\m05\m05_equip_0110_mandrake.wav" TextArea="Cinematic">It'll be very difficult and time consuming.</Static>
+<Static AudioFile="mod\m05\m05_equip_0120_trent.wav" TextArea="Cinematic">Let's start with the simple things, what's the Order?</Static>
+<Static AudioFile="mod\m05\m05_equip_0130_hatcher.wav" TextArea="Cinematic">It's not that simple, Trent… It's an organization...</Static>
+<Static AudioFile="mod\m05\m05_equip_0140_trent.wav" TextArea="Cinematic">That much I understand. Let's not force the information out of Miss Hatcher; give her the freedom of choice.</Static>
+<Static AudioFile="mod\m05\m05_equip_0150_mandrake.wav" TextArea="Cinematic">Tell him.</Static>
+<Static AudioFile="mod\m05\m05_equip_0160_hatcher.wav" TextArea="Cinematic">Fine. But what I'm about to say shouldn't just stay between us. This information is highly classified, and Trent, if you ever disclose it...</Static>
+<Static AudioFile="mod\m05\m05_equip_0170_trent.wav" TextArea="Cinematic">Yeah, yeah, I get it. You'll personally kick my balls.</Static>
+<Static AudioFile="mod\m05\m05_equip_0180_hatcher.wav" TextArea="Cinematic">Don't flatter yourself. It's a job for guys like Tilton.</Static>
+<Static AudioFile="mod\m05\m05_equip_0190_trent.wav" TextArea="Cinematic">Okay, I'm shaking in fear. Now let's get down to business. </Static>
+<Static AudioFile="mod\m05\m05_equip_0200_hatcher.wav" TextArea="Cinematic">Nobody knows how the Order was formed, or who formed it. All we know is that it used to be a powerful organization founded by people of massive influence. Their goal was to ensure humanity's survival by monitoring threats,</Static>
+<Static AudioFile="mod\m05\m05_equip_0210_hatcher.wav" TextArea="Cinematic">and they weren't interested in wars between nations. Not even the 80-year war, although they do deserve credit for making it an 80-year war rather than 200.</Static>
+<Static AudioFile="mod\m05\m05_equip_0220_hatcher.wav" TextArea="Cinematic">The Order only takes care of serious threats to humanity as a whole. One such threat has already come upon us a good while ago,</Static>
+<Static AudioFile="mod\m05\m05_equip_0230_hatcher.wav" TextArea="Cinematic">when we faced a parasitic alien race. That threat was isolated, all thanks to the Order.</Static>
+<Static AudioFile="mod\m05\m05_equip_0240_trent.wav" TextArea="Cinematic">A series of mysterious deaths among government officials of several nations, which the media described as unfortunate events.</Static>
+<Static AudioFile="mod\m05\m05_equip_0250_hatcher.wav" TextArea="Cinematic">Exactly. The media hushed it, even though humanity was on the verge of war between all nations, played by an alien race called "Nomads".</Static>
+<Static AudioFile="mod\m05\m05_equip_0260_trent.wav" TextArea="Cinematic">Disguised as "cross-border incidents". </Static>
+<Static AudioFile="mod\m05\m05_equip_0270_hatcher.wav" TextArea="Cinematic">Precise. Although, they were never really incidents. It was a full-on war involving everyone, Nomads included. A silent war, however, with the influence of the Order. </Static>
+<Static AudioFile="mod\m05\m05_equip_0280_hatcher.wav" TextArea="Cinematic">All those involved received their awards discretely, and everyone agreed it should never be spoken of again. </Static>
+<Static AudioFile="mod\m05\m05_equip_0290_trent.wav" TextArea="Cinematic">Major King, my own namesake, Jun'Ko Zhane?</Static>
+<Static AudioFile="mod\m05\m05_equip_0300_mandrake.wav" TextArea="Cinematic">He's smarter than he looks.</Static>
+<Static AudioFile="mod\m05\m05_equip_0310_hatcher.wav" TextArea="Cinematic">I picked him myself... And so, Trent, the Order gained massive influence over our geopolitical systems, putting the organization under immediate risk. </Static>
+<Static AudioFile="mod\m05\m05_equip_0320_hatcher.wav" TextArea="Cinematic">But, in our conservatively democratic society, the king of the hill rules. Whoever gets a chance to climb over by pushing others down, wins.</Static>
+<Static AudioFile="mod\m05\m05_equip_0330_hatcher.wav" TextArea="Cinematic">And so, an aspiring group of warriors decided to rise against the Order for no apparent reason.</Static>
+<Static AudioFile="mod\m05\m05_equip_0340_hatcher.wav" TextArea="Cinematic">If you sent them to battle against a Nomad fleet, they'll shit their pants and cry for their moms. But in the peaceful days of modern Liberty, they'll happily wage war against the Order.</Static>
+<Static AudioFile="mod\m05\m05_equip_0350_hatcher.wav" TextArea="Cinematic">And it goes without saying that the Order is run by people, not robots. Where there's people involved, conflict arises...</Static>
+<Static AudioFile="mod\m05\m05_equip_0360_trent.wav" TextArea="Cinematic">And they lived happily ever after, right?</Static>
+<Static AudioFile="mod\m05\m05_equip_0370_hatcher.wav" TextArea="Cinematic">The story's not over yet… And there's not really a happy ending. The Order split into two independent organizations: The Alliance Security Force, and the New Order.</Static>
+<Static AudioFile="mod\m05\m05_equip_0380_trent.wav" TextArea="Cinematic">So the Order is no more.</Static>
+<Static AudioFile="mod\m05\m05_equip_0390_hatcher.wav" TextArea="Cinematic">Well, not exactly. The Alliance Security Force oversees Liberty territories, among other things, despite resistance from some of Liberty's powers. Those powers are run by douchebags like Tilton.</Static>
+<Static AudioFile="mod\m05\m05_equip_0400_hatcher.wav" TextArea="Cinematic">But in no way does it mean that we forgot our main goal – to protect humanity from external threats.</Static>
+<Static AudioFile="mod\m05\m05_equip_0410_trent.wav" TextArea="Cinematic">If you say so...</Static>
+<Static AudioFile="mod\m05\m05_equip_0420_hatcher.wav" TextArea="Cinematic">Now, Trent, can I finally...</Static>
+<Static AudioFile="mod\m05\m05_equip_0430_trent.wav" TextArea="Cinematic">Sure.</Static>
+<Static AudioFile="mod\m05\m05_equip_0440_hatcher.wav" TextArea="Cinematic">Professor, Rheinland officials have gotten their hands on intel about Omicron Alpha...</Static>
+<Static AudioFile="mod\m05\m05_equip_0450_mandrake.wav" TextArea="Cinematic">And...</Static>
+<Static AudioFile="mod\m05\m05_equip_0460_hatcher.wav" TextArea="Cinematic">They've captured the objective and are making progress with it.</Static>
+<Static AudioFile="mod\m05\m05_equip_0470_mandrake.wav" TextArea="Cinematic">Rheinlanders are running experiments on the sphere in Omicron Alpha??? Are you out of your mind??? What have you done??? Mr. Trent was right… The Order really is no more...</Static>
+<Static AudioFile="mod\m05\m05_equip_0480_trent.wav" TextArea="Cinematic">About that Mr. Trent...</Static>
+<Static AudioFile="mod\m05\m05_equip_0490_hatcher.wav" TextArea="Cinematic">What else do you need?</Static>
+<Static AudioFile="mod\m05\m05_equip_0500_trent.wav" TextArea="Cinematic">Toss a coin to your freelancer.</Static>
+<Static AudioFile="mod\m05\m05_equip_0510_hatcher.wav" TextArea="Cinematic">Ah, yes, sorry. I'm transferring your credits. We'll be in touch.</Static>
+
 
 
 

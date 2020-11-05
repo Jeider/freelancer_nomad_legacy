@@ -1,0 +1,23 @@
+095404
+
+
+Help: [b]Bases with vulnerable parts[/b]
+
+[b]Short info[/b]
+This is bases combined with 3 types of elements:
+1. Outer parts
+2. Core
+3. Vulnerable parts.
+
+[b]How to destroy[/b]
+You can pass the core by closed tunnels.
+You need attack vulnerable parts to get this pass to core.
+Vulnerable parts have different color on your interface.
+Attack the core to destroy this base.
+
+[b]Where I can find bases like that[/b]
+Missions in bar.
+
+[b]What a profit of this missions[/b]
+Additonal commodities and reward, dropped after destruction of this base.
+

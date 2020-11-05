@@ -1,0 +1,423 @@
+Пиранья
+
+
+[b]Hull: [/b]3500
+[b]Mass: [/b]75
+[b]Cargo: [/b]40
+[b]Nanobots/Batteries: [/b]6/6
+[b]Weapons/missiles level:[/b]Stand.
+[b]Shield/internal equip. level:[/b]Adv.
+[b]Weapons count: [/b]4
+[b]Thrusters count: [/b]2
+[b]Additional battle equip:[/b]MIS, CD
+[b]Defence equipment:[/b]Mine, CM
+[b]Additional internal equip:[/b]OPT(3)
+[b]Spec./roleplay gun:[/b]+
+
+[b]Hull: [/b]
+[b]Mass: [/b]
+[b]Cargo: [/b]
+[b]Nanobots/Batteries: [/b]
+[b]Weapons/missiles level:[/b]
+[b]Shield/internal equip. level:[/b]
+[b]Weapons count: [/b]
+[b]Thrusters count: [/b]
+[b]Additional battle equip:[/b]
+[b]Defence equipment:[/b]
+[b]Additional internal equip:[/b]
+[b]Spec./roleplay gun:[/b]
+
+3500
+75
+40
+6/6
+Stand.
+Adv.
+4
+2
+MIS, CD
+Mine, CM
+OPT(3)
++
+
+
+
+Патриот
+
+
+
+[b]Hull: [/b]6000
+[b]Mass: [/b]75
+[b]Cargo: [/b]50
+[b]Nanobots/Batteries: [/b]8/8
+[b]Weapons/missiles level:[/b]Adv.
+[b]Shield/internal equip. level:[/b]Elite
+[b]Weapons count: [/b]4
+[b]Thrusters count: [/b]2
+[b]Additional battle equip:[/b]MIS, CD
+[b]Defence equipment:[/b]Mine, CM
+[b]Additional internal equip:[/b]OPT(3), COOL
+[b]Spec./roleplay gun:[/b]+
+
+
+[b]Hull: [/b]
+[b]Mass: [/b]
+[b]Cargo: [/b]
+[b]Nanobots/Batteries: [/b]
+[b]Weapons/missiles level:[/b]
+[b]Shield/internal equip. level:[/b]
+[b]Weapons count: [/b]
+[b]Thrusters count: [/b]
+[b]Additional battle equip:[/b]
+[b]Defence equipment:[/b]
+[b]Additional internal equip:[/b]
+[b]Spec./roleplay gun:[/b]
+
+
+6000
+75
+50
+8/8
+Adv.
+Elite
+4
+2
+MIS, CD
+Mine, CM
+OPT(3), COOL
++
+
+
+
+
+
+
+Барракуда
+
+
+
+[b]Hull: [/b]4500
+[b]Mass: [/b]125
+[b]Cargo: [/b]50
+[b]Nanobots/Batteries: [/b]6/6
+[b]Weapons/missiles level:[/b]Stand.
+[b]Shield/internal equip. level:[/b]Adv.
+[b]Weapons count: [/b]6
+[b]Thrusters count: [/b]2
+[b]Additional battle equip:[/b]MIS/TORP, CD
+[b]Defence equipment:[/b]Mine, CM
+[b]Additional internal equip:[/b]OPT(3)
+[b]Spec./roleplay gun:[/b]+
+
+
+
+[b]Hull: [/b]
+[b]Mass: [/b]
+[b]Cargo: [/b]
+[b]Nanobots/Batteries: [/b]
+[b]Weapons/missiles level:[/b]
+[b]Shield/internal equip. level:[/b]
+[b]Weapons count: [/b]
+[b]Thrusters count: [/b]
+[b]Additional battle equip:[/b]
+[b]Defence equipment:[/b]
+[b]Additional internal equip:[/b]
+[b]Spec./roleplay gun:[/b]
+
+
+4500
+125
+50
+6/6
+Stand.
+Adv.
+6
+2
+MIS/TORP, CD
+Mine, CM
+OPT(3)
++
+
+
+Рыба-молот
+
+
+[b]Hull: [/b]9000
+[b]Mass: [/b]125
+[b]Cargo: [/b]75
+[b]Nanobots/Batteries: [/b]8/8
+[b]Weapons/missiles level:[/b]Adv.
+[b]Shield/internal equip. level:[/b]Elite
+[b]Weapons count: [/b]6
+[b]Thrusters count: [/b]2
+[b]Additional battle equip:[/b]MIS/TORP, CD
+[b]Defence equipment:[/b]Mine, CM
+[b]Additional internal equip:[/b]OPT(3), COOL
+[b]Spec./roleplay gun:[/b]+
+
+
+[b]Hull: [/b]
+[b]Mass: [/b]
+[b]Cargo: [/b]
+[b]Nanobots/Batteries: [/b]
+[b]Weapons/missiles level:[/b]
+[b]Shield/internal equip. level:[/b]
+[b]Weapons count: [/b]
+[b]Thrusters count: [/b]
+[b]Additional battle equip:[/b]
+[b]Defence equipment:[/b]
+[b]Additional internal equip:[/b]
+[b]Spec./roleplay gun:[/b]
+
+
+9000
+125
+75
+8/8
+Adv.
+Elite
+6
+2
+MIS/TORP, CD
+Mine, CM
+OPT(3), COOL
++
+
+
+Защитник
+
+
+[b]Hull: [/b]12000
+[b]Mass: [/b]125
+[b]Cargo: [/b]100
+[b]Nanobots/Batteries: [/b]10/10
+[b]Weapons/missiles level:[/b]Elite
+[b]Shield/internal equip. level:[/b]Elite
+[b]Weapons count: [/b]6(Ул.)/2(Эл.)
+[b]Thrusters count: [/b]2
+[b]Additional battle equip:[/b]MIS/TORP, CD
+[b]Defence equipment:[/b]Mine, CM
+[b]Additional internal equip:[/b]OPT(3), COOL
+[b]Spec./roleplay gun:[/b]+
+
+
+[b]Hull: [/b]
+[b]Mass: [/b]
+[b]Cargo: [/b]
+[b]Nanobots/Batteries: [/b]
+[b]Weapons/missiles level:[/b]
+[b]Shield/internal equip. level:[/b]
+[b]Weapons count: [/b]
+[b]Thrusters count: [/b]
+[b]Additional battle equip:[/b]
+[b]Defence equipment:[/b]
+[b]Additional internal equip:[/b]
+[b]Spec./roleplay gun:[/b]
+
+
+12000
+125
+100
+10/10
+Elite
+Elite
+6(Ул.)/2(Эл.)
+2
+MIS/TORP, CD
+Mine, CM
+OPT(3), COOL
++
+
+
+Носорог
+
+
+[b]Hull: [/b]20000
+[b]Mass: [/b]250
+[b]Cargo: [/b]300
+[b]Nanobots/Batteries: [/b]10/10
+[b]Weapons/missiles level:[/b]Adv.
+[b]Shield/internal equip. level:[/b]Elite
+[b]Weapons count: [/b]6
+[b]Thrusters count: [/b]2
+[b]Defence equipment:[/b]Mine, CM
+[b]Additional internal equip:[/b]OPT(3), COOL
+[b]Spec./roleplay gun:[/b]+
+
+
+[b]Hull: [/b]
+[b]Mass: [/b]
+[b]Cargo: [/b]
+[b]Nanobots/Batteries: [/b]
+[b]Weapons/missiles level:[/b]
+[b]Shield/internal equip. level:[/b]
+[b]Weapons count: [/b]
+[b]Thrusters count: [/b]
+[b]Defence equipment:[/b]
+[b]Additional internal equip:[/b]
+[b]Spec./roleplay gun:[/b]
+
+
+20000
+250
+300
+10/10
+Adv.
+Elite
+6
+2
+Mine, CM
+OPT(3), COOL
++
+
+
+старфлаер
+
+[b]Hull: [/b]2500
+[b]Mass: [/b]75
+[b]Cargo: [/b]20
+[b]Nanobots/Batteries: [/b]3/3
+[b]Weapons level:[/b]Basic.
+[b]Shield/internal equip. level:[/b]Stand.
+[b]Weapons count: [/b]3
+[b]Thrusters count: [/b]2
+[b]Defence equipment:[/b]Mine, CM
+
+[b]Hull: [/b]
+[b]Mass: [/b]
+[b]Cargo: [/b]
+[b]Nanobots/Batteries: [/b]
+[b]Weapons level:[/b]
+[b]Shield/internal equip. level:[/b]
+[b]Weapons count: [/b]
+[b]Thrusters count: [/b]
+[b]Defence equipment:[/b]
+
+2500
+75
+20
+3/3
+Basic.
+Stand.
+3
+2
+Mine, CM
+
+
+дромадер
+
+
+[b]Hull: [/b]10000
+[b]Mass: [/b]250
+[b]Cargo: [/b]150
+[b]Nanobots/Batteries: [/b]8/8
+[b]Weapons/missiles level:[/b]Stand.
+[b]Shield/internal equip. level:[/b]Adv.
+[b]Weapons count: [/b]6
+[b]Thrusters count: [/b]2
+[b]Defence equipment:[/b]Mine, CM
+[b]Additional internal equip:[/b]OPT(3)
+[b]Spec./roleplay gun:[/b]+
+
+[b]Hull: [/b]
+[b]Mass: [/b]
+[b]Cargo: [/b]
+[b]Nanobots/Batteries: [/b]
+[b]Weapons/missiles level:[/b]
+[b]Shield/internal equip. level:[/b]
+[b]Weapons count: [/b]
+[b]Thrusters count: [/b]
+[b]Defence equipment:[/b]
+[b]Additional internal equip:[/b]
+[b]Spec./roleplay gun:[/b]
+
+10000
+250
+150
+8/8
+Stand.
+Adv.
+6
+2
+Mine, CM
+OPT(3)
++
+
+
+csv
+
+
+[b]Hull: [/b]15000
+[b]Mass: [/b]250
+[b]Cargo: [/b]250
+[b]Nanobots/Batteries: [/b]10/10
+[b]Weapons/missiles level:[/b]Adv.
+[b]Shield/internal equip. level:[/b]Elite
+[b]Weapons count: [/b]5
+[b]Thrusters count: [/b]2
+[b]Defence equipment:[/b]Mine, CM
+[b]Additional internal equip:[/b]OPT(3), COOL
+[b]Spec./roleplay gun:[/b]+
+[b]CSV Manipulator:[/b]+
+
+[b]Hull: [/b]
+[b]Mass: [/b]
+[b]Cargo: [/b]
+[b]Nanobots/Batteries: [/b]
+[b]Weapons/missiles level:[/b]
+[b]Shield/internal equip. level:[/b]
+[b]Weapons count: [/b]
+[b]Thrusters count: [/b]
+[b]Defence equipment:[/b]
+[b]Additional internal equip:[/b]
+[b]Spec./roleplay gun:[/b]
+[b]CSV Manipulator:[/b]
+
+
+15000
+250
+250
+10/10
+Adv.
+Elite
+5
+2
+Mine, CM
+OPT(3), COOL
++
++
+
+
+
+
+
+
+
+
+[b]Hull: [/b]5500
+[b]Mass: [/b]75
+[b]Cargo: [/b]40
+[b]Nanobots/Batteries: [/b]10/10
+[b]Weapons/missiles level: [/b]Stand.
+[b]Shield/internal eq. level: [/b]Adv.
+[b]Thrusters count: [/b]6
+[b]Thrusters count: [/b]2
+[b]Additional battle equip: [/b]MIS/TORP, CD
+[b]Defence equipment: [/b]Mine, CM
+[b]Additional internal equip: [/b]OPT(3)
+[b]Spec./roleplay gun: [/b]+
+
+
+[b]Hull: [/b]12000
+[b]Mass: [/b]125
+[b]Cargo: [/b]100
+[b]Nanobots/Batteries: [/b]10/10
+[b]Weapons/missiles level:[/b]Elite
+[b]Shield/internal equip. level:[/b]Elite
+[b]Weapons count: [/b]6(Ул.)/2(Эл.)
+[b]Thrusters count: [/b]2
+[b]Additional battle equip:[/b]MIS/TORP, CD
+[b]Defence equipment:[/b]Mine, CM
+[b]Additional internal equip:[/b]OPT(3), COOL
+[b]Spec./roleplay gun:[/b]+
+

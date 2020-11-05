@@ -1,0 +1,118 @@
+--- без класса --- 
+
+[left][color=#00CCFF]This ship can mount only [b]common[/b] equipment.[/color][/left][left][/left]
+
+--- перехватчик ---
+
+[left][color=#00CCFF]This ship can mount [b]common[/b] and [b]interceptor[/b] equipment.[/color][/left][left][/left]
+
+--- истребитель ---
+
+[left][color=#00CCFF]This ship can mount [b]common[/b] and [b]fighter[/b] equipment.[/color][/left][left][/left]
+
+--- грузовик ---
+
+[left][color=#00CCFF]This ship can mount [b]common[/b] and [b]freighter[/b] equipment.[/color][/left][left][/left]
+
+
+
+
+Старфлаер
+
+
+
+
+[center][b]Basic ship «Starflier»[/b][/center]
+
+[left][color=#00CCFF]This ship can mount only [b]common[/b] equipment.[/color][/left][left][/left]
+
+
+[center][b]Standard freighter «Dromader»[/b][/center]
+
+[left][color=#00CCFF]This ship can mount [b]common[/b] and [b]freighter[/b] equipment.[/color][/left][left][/left]
+
+
+[center][b]Advanced support ship «CSV»[/b][/center]
+
+[left][color=#00CCFF]This ship can mount [b]common[/b] and [b]freighter[/b] equipment.[/color][/left][left][/left]
+
+
+[center][b]Standard interceptor Rheinland «Dagger»[/b][/center]
+
+[left][color=#00CCFF]This ship can mount [b]common[/b] and [b]interceptor[/b] equipment.[/color][/left][left][/left]
+
+
+[center][b]Advanced interceptor Rheinland «Banshee»[/b][/center]
+
+[left][color=#00CCFF]This ship can mount [b]common[/b] and [b]interceptor[/b] equipment.[/color][/left][left][/left]
+
+
+[center][b]Standard fighter Rheinland «Stiletto»[/b][/center]
+
+[left][color=#00CCFF]This ship can mount [b]common[/b] and [b]fighter[/b] equipment.[/color][/left][left][/left]
+
+
+[center][b]Advanced fighter Rheinland «Saber»[/b][/center]
+
+[left][color=#00CCFF]This ship can mount [b]common[/b] and [b]fighter[/b] equipment.[/color][/left][left][/left]
+
+
+[center][b]Elite fighter Rheinland «Valkyrie»[/b][/center]
+
+[left][color=#00CCFF]This ship can mount [b]common[/b] and [b]fighter[/b] equipment.[/color][/left][left][/left]
+
+
+[center][b]Advanced freighter Rheinland «Humpback»[/b][/center]
+
+[left][color=#00CCFF]This ship can mount [b]common[/b] and [b]freighter[/b] equipment.[/color][/left][left][/left]
+
+
+[center][b]Standard interceptor Liberty «Piranha»[/b][/center]
+
+[left][color=#00CCFF]This ship can mount [b]common[/b] and [b]interceptor[/b] equipment.[/color][/left][left][/left]
+
+
+[center][b]Advanced interceptor Liberty «Patriot»[/b][/center]
+
+[left][color=#00CCFF]This ship can mount [b]common[/b] and [b]interceptor[/b] equipment.[/color][/left][left][/left]
+
+
+[center][b]Standard fighter Liberty «Barracuda»[/b][/center]
+
+[left][color=#00CCFF]This ship can mount [b]common[/b] and [b]fighter[/b] equipment.[/color][/left][left][/left]
+
+
+[center][b]Advanced fighter Liberty «Hammerhead»[/b][/center]
+
+[left][color=#00CCFF]This ship can mount [b]common[/b] and [b]fighter[/b] equipment.[/color][/left][left][/left]
+
+
+[center][b]Elite fighter Liberty «Defender»[/b][/center]
+
+[left][color=#00CCFF]This ship can mount [b]common[/b] and [b]fighter[/b] equipment.[/color][/left][left][/left]
+
+
+[center][b]Advanced freighter Liberty «Rhino»[/b][/center]
+
+[left][color=#00CCFF]This ship can mount [b]common[/b] and [b]freighter[/b] equipment.[/color][/left][left][/left]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
