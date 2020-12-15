@@ -1,0 +1,120 @@
+
+
+[Object]
+nickname = surv1_mount_point_lvl1_01
+pos = -285, 190, -50
+rotate = 0, 0, 0
+archetype = space_cargo_mount_icon1_non_target
+
+[Object]
+nickname = surv1_lvl1_cargo01
+pos = -300, 200, -50
+rotate = 0, 0, 0
+archetype = surv1_extra_munitions
+loadout = cargo_surv1_extra_munitions
+
+[Object]
+nickname = surv1_mount_point_lvl1_02
+pos = -285, 190, 0
+rotate = 0, 0, 0
+archetype = space_cargo_mount_icon1_non_target
+
+[Object]
+nickname = surv1_lvl1_cargo02
+pos = -300, 200, 0
+rotate = 0, 0, 0
+archetype = surv1_extra_repair
+loadout = cargo_surv1_extra_repair
+
+[Object]
+nickname = surv1_mount_point_lvl1_03
+pos = -285, 190, 50
+rotate = 0, 0, 0
+archetype = space_cargo_mount_icon1_non_target
+
+[Object]
+nickname = surv1_lvl1_cargo03
+pos = -300, 200, 50
+rotate = 0, 0, 0
+archetype = surv1_ship_upgrade
+
+
+
+[Object]
+nickname = surv1_mount_point_lvl2_01
+pos = 285, 190, 50
+rotate = 0, 180, 0
+archetype = space_cargo_mount_icon2_non_target
+
+[Object]
+nickname = surv1_lvl2_cargo01
+pos = 300, 200, 50
+rotate = 0, 0, 0
+archetype = surv1_extra_munitions
+loadout = cargo_surv1_extra_munitions
+
+[Object]
+nickname = surv1_mount_point_lvl2_02
+pos = 285, 190, 0
+rotate = 0, 180, 0
+archetype = space_cargo_mount_icon2_non_target
+
+[Object]
+nickname = surv1_lvl2_cargo02
+pos = 300, 200, 0
+rotate = 0, 0, 0
+archetype = surv1_extra_repair
+loadout = cargo_surv1_extra_repair
+
+[Object]
+nickname = surv1_mount_point_lvl2_03
+pos = 285, 190, -50
+rotate = 0, 180, 0
+archetype = space_cargo_mount_icon2_non_target
+
+[Object]
+nickname = surv1_lvl2_cargo03
+pos = 300, 200, -50
+rotate = 0, 0, 0
+archetype = surv1_ship_upgrade
+
+
+
+
+[Object]
+nickname = surv1_mount_point_lvl3_01
+pos = 50, 360, -135
+rotate = 0, -90, 0
+archetype = space_cargo_mount_icon3_non_target
+
+[Object]
+nickname = surv1_lvl3_cargo01
+pos = 50, 370, -150
+rotate = 0, 90, 0
+archetype = surv1_extra_munitions
+loadout = cargo_surv1_extra_munitions
+
+[Object]
+nickname = surv1_mount_point_lvl3_02
+pos = 0, 360, -135
+rotate = 0, -90, 0
+archetype = space_cargo_mount_icon3_non_target
+
+[Object]
+nickname = surv1_lvl3_cargo02
+pos = 0, 370, -150
+rotate = 0, 90, 0
+archetype = surv1_extra_repair
+loadout = cargo_surv1_extra_repair
+
+[Object]
+nickname = surv1_mount_point_lvl3_03
+pos = -50, 360, -135
+rotate = 0, -90, 0
+archetype = space_cargo_mount_icon3_non_target
+
+[Object]
+nickname = surv1_lvl3_cargo03
+pos = -50, 370, -150
+rotate = 0, 90, 0
+archetype = surv1_ship_upgrade

@@ -182,27 +182,27 @@ events={
 			"cam"
 		}
 	},
+{
+	0,
+	ATTACH_ENTITY,
 	{
-		0,
-		ATTACH_ENTITY,
-		{
-			"cam",
-			"cam_marker"
-		},
-		{
-			duration=300,
-			offset={
-				0,
-				0,
-				0
-			},
-			up=Y_AXIS,
-			front=NEG_Z_AXIS,
-			target_part="",
-			target_type=ROOT,
-			flags=LOOK_AT
-		}
+		"cam",
+		"cam_marker"
 	},
+	{
+		duration=300,
+		offset={
+			0,
+			0,
+			0
+		},
+		up=Y_AXIS,
+		front=NEG_Z_AXIS,
+		target_part="",
+		target_type=ROOT,
+		flags=LOOK_AT
+	}
+},
 	{
 		0,
 		START_SPATIAL_PROP_ANIM,
