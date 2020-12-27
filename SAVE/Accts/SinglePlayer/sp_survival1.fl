@@ -2,7 +2,6 @@
 [Player]
 description = 005300750072007600690061006c0020004d0069007300730069006f006e00200031
 
-;tstamp = 30857828,1931366912
 tstamp = 35043000,1931366912
 name = 005400720065006e0074
 rank = 15
@@ -111,8 +110,8 @@ lefthand = 2479975689
 righthand = 2264565644
 
 system = surv1
-pos = -650, 300, 350
-rotate = 0, -30, 0
+pos = -650, 300, -500
+rotate = 0, 210, 0
 
 ship_archetype = rh_elite
 hull_status = 0.25
@@ -128,13 +127,13 @@ equip = rh_afterburn02, HpThruster02
 equip = armor_scale_player_survival1
 equip = rh_lightgun03, HpWeapon05
 equip = rh_lightgun03, HpWeapon06
-equip = rh_lightgun03, HpWeapon03
-equip = rh_lightgun03, HpWeapon04
-equip = ge_heavygun02, HpWeapon02
-equip = rh_missile_02, HpWeapon01
-equip = stinger, HpTorpedo01
-equip = rh_mine02, HpMine01
-equip = cm_03, HpCM01
+equip = rh_ubergun01_surv1, HpWeapon03
+equip = rh_ubergun01_surv1, HpWeapon04
+equip = rh_lightgun03, HpWeapon02
+equip = rh_lightgun03, HpWeapon01
+equip = hornet, HpTorpedo01
+equip = surv1_mine01, HpMine01
+equip = cm_02, HpCM01
 equip = LargeWhiteSpecial, HpHeadlight
 equip = SlowSmallYellow, HpRunningLight01
 equip = SlowSmallYellow, HpRunningLight02
@@ -158,7 +157,11 @@ equip = surv1_speed_25pct_down, HpSurvSpeed03
 ; equip = surv1_mass_25pct_down, HpSurvMass01
 ; equip = surv1_mass_25pct_down, HpSurvMass02
 ; equip = surv1_mass_25pct_down, HpSurvMass03
+; cargo = rh_ubergun01_surv1_ammo, 100000
+; cargo = surv1_mine01_ammo, 500
 
+cargo = hornet_ammo, 25
+cargo = cm_02_ammo, 25
 
 
 
@@ -167,6 +170,7 @@ wg = 0, HpWeapon04
 wg = 0, HpWeapon05
 wg = 0, HpWeapon06
 wg = 0, HpWeapon02
+wg = 0, HpWeapon01
 
 
 interface = 3
