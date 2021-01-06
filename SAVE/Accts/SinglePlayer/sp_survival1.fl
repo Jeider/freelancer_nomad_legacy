@@ -1,6 +1,6 @@
 
 [Player]
-description = 005300750072007600690061006c0020004d0069007300730069006f006e00200031
+description = 0053007500720076006900760061006c0020004d0069007300730069006f006e00200031
 
 tstamp = 35043000,1931366912
 name = 005400720065006e0074
@@ -81,7 +81,6 @@ wg = 0, HpWeapon06
 wg = 0, HpWeapon02
 wg = 0, HpWeapon01
 
-
 interface = 3
 
 [mPlayer]
@@ -112,7 +111,6 @@ Mission = GenericMission, missions/custom/survival1.ini
 MissionNum = 0
 delta_worth = -1.000000
 debug = 1
-
 
 
 [Time]
