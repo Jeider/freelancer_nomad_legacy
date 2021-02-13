@@ -148,14 +148,25 @@ delta_worth = -1
 
 ;; These gates will be locked in single player, but not necessarily multiplayer.
 [mPlayer]
+;matrix
+locked_gate = 2242919685 ; rh_biz_02_matrix_entrypoint01
+locked_gate = 2361801031 ; rh_mnh_02_matrix_entrypoint01
+locked_gate = 2208168783 ; om15_04_matrix_entrypoint01
+locked_gate = 2516111626 ; rh_stut_04_matrix_entrypoint01
 ;stations
-locked_gate = 2551124493
-locked_gate = 2945896837
-locked_gate = 2503379852
-locked_gate = 3040278412
-locked_gate = 2548024070
+locked_gate = 2551124493 ; li_col_06
+locked_gate = 2945896837 ; br_avl_06_dock
+locked_gate = 2503379852 ; rh_biz_05_dock01
+locked_gate = 3040278412 ; rh_biz_05_dock02
+locked_gate = 2548024070 ; ku_ksu_02_dock
 locked_gate = 2342654979 ; rh_ber_07
 ;sp gates
+locked_gate = 2216425088 ; MNH_TO_SP1
+locked_gate = 2713834567 ; SIG8_TO_SP1
+locked_gate = 2518019016 ; SIG8_TO_FOR
+
+
+;;;;;
 locked_gate = 2216425088
 locked_gate = 2770614732
 locked_gate = 2713834567
