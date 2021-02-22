@@ -1,0 +1,326 @@
+[подпись для описания товара в интерфейсе]
+
+[left]Sell this commodity at the destination point to get the reward.[/left]
+
+
+
+[подпись для текста после разговора с НПЦ в баре]
+
+[left]Do you want to discover location of the destination point?[/left]\n[left][b]That requires 500 credits.[/b][/left]
+
+
+
+[подпись для описания пункта выдачи в космосе]
+
+[left]Is recommended to read Info about trade missions near this object.[/left]
+
+
+
+Rh MNH 01
+
+[М]Mining ships electronix
+
+[center][b]Courier mission[/b][/center]
+[left]
+Pick-up point: №1
+Commodity: Mining ships electronix
+Destination point: Omega-3 system, Oito Depot
+Reward: 3000 credits
+Deliver in: 8 hours
+Required space in the hold: 25
+Mass penalty: 25
+Required license: Trade Federation License
+[/left]
+%PLACEHOLDER%
+
+
+
+
+RH_MNH 02
+
+[М]Solar plant parts
+
+[center][b]Courier mission[/b][/center]
+[left]
+Pick-up point: №2
+Commodity: Solar plant parts
+Destination point: Sirius system, Unity Station
+Reward: 2500 credits
+Deliver in: 8 hours
+Required space in the hold: 25
+Mass penalty: 25
+Required license: Trade Federation License
+[/left]
+%PLACEHOLDER%
+
+
+
+
+RH_MNH 03
+
+
+[М]Damaged turrets
+
+[center][b]Courier mission[/b][/center]
+[left]
+Pick-up point: №3
+Commodity: Damaged turrets
+Destination point: Sigma-8 system, Starke station
+Reward: 2500 credits
+Deliver in: 8 hours
+Required space in the hold: 25
+Mass penalty: 25
+Required license: Trade Federation License
+[/left]
+%PLACEHOLDER%
+
+
+
+RH_MNH 04
+
+
+[М]Luxury food
+
+[center][b]Courier mission[/b][/center]
+[left]
+Pick-up point: №4
+Commodity: Luxury food
+Destination point: Omega-15 system, Elster Station
+Reward: 4000 credits
+Deliver in: 1 hour
+Required space in the hold: 25
+Mass penalty: 25
+Required license: Trade Federation License
+[/left]
+%PLACEHOLDER%
+
+
+
+
+
+
+OM_15 01
+
+
+[М]Asteroid base panels
+
+[center][b]Courier mission[/b][/center]
+[left]
+Pick-up point: №1
+Commodity: Asteroid base panels
+Destination point: Munchen system, Vigo base
+Reward: 3000 credits
+Deliver in: 8 hours
+Required space in the hold: 25
+Mass penalty: 25
+Required license: Trade Federation License
+[/left]
+%PLACEHOLDER%
+
+
+
+
+OM_15 02
+
+
+[М]Scanner components
+
+[center][b]Courier mission[/b][/center]
+[left]
+Pick-up point: №2
+Commodity: Scanner components
+Destination point: Sigma-8 system, Starke station
+Reward: 2500 credits
+Deliver in: 8 hours
+Required space in the hold: 25
+Mass penalty: 25
+Required license: Trade Federation License
+[/left]
+%PLACEHOLDER%
+
+
+
+
+OM_15 03
+
+
+[М]Hospital equipment
+
+[center][b]Courier mission[/b][/center]
+[left]
+Pick-up point: №3
+Commodity: Hospital equipment
+Destination point: Omega-7 system, Harajuku station
+Reward: 4000 credits
+Deliver in: 1 hour
+Required space in the hold: 25
+Mass penalty: 25
+Required license: Trade Federation License
+[/left]
+%PLACEHOLDER%
+
+
+
+
+RH_BIZ 01
+
+
+[М]Smelter equipment
+
+[center][b]Courier mission[/b][/center]
+[left]
+Pick-up point: №1
+Commodity: Smelter equipment
+Destination point: Hokkaido system, Kusiro station
+Reward: 4000 credits
+Deliver in: 8 hours
+Required space in the hold: 25
+Mass penalty: 25
+Required license: Trade Federation License
+[/left]
+%PLACEHOLDER%
+
+
+RH_BIZ 02
+
+
+[М]Heavy lazer components
+
+[center][b]Courier mission[/b][/center]
+[left]
+Pick-up point: №2
+Commodity: Heavy lazer components
+Destination point: Warwick system, Triumph Orbital Weapon
+Reward: 4500 credits
+Deliver in: 8 hours
+Required space in the hold: 25
+Mass penalty: 25
+Required license: Trade Federation License
+[/left]
+%PLACEHOLDER%
+
+
+RH_BIZ 03
+
+
+[М]Mining ship components
+
+[center][b]Courier mission[/b][/center]
+[left]
+Pick-up point: №3
+Commodity: Mining ship components
+Destination point: California system, Morton station
+Reward: 4500 credits
+Deliver in: 8 hours
+Required space in the hold: 25
+Mass penalty: 25
+Required license: Trade Federation License
+[/left]
+%PLACEHOLDER%
+
+
+RH_BIZ 04
+
+
+[М]Light weapons
+
+[center][b]Courier mission[/b][/center]
+[left]
+Pick-up point: №4
+Commodity: Light weapons
+Destination point: Forbes system, Planet Forbes
+Reward: 6000 credits
+Deliver in: 2 hourа
+Required space in the hold: 25
+Mass penalty: 25
+Required license: Trade Federation License
+[/left]
+%PLACEHOLDER%
+
+
+
+
+
+RH_STUT 01
+
+
+[М]Military prod.machines
+
+[center][b]Courier mission[/b][/center]
+[left]
+Pick-up point: №1
+Commodity: Military prod.machines
+Destination point: Avalon system, Barbican station
+Reward: 12500 credits
+Deliver in: 8 hours
+Required space in the hold: 25
+Mass penalty: 25
+Required license: Siemens Corp. License
+[/left]
+%PLACEHOLDER%
+
+
+
+RH_STUT 02
+
+
+[М]Adv.smelter equipment
+
+[center][b]Courier mission[/b][/center]
+[left]
+Pick-up point: №2
+Commodity: Adv.smelter equipment
+Destination point: Columbia system, Camdon Manuf.platform
+Reward: 17500 credits
+Deliver in: 8 hours
+Required space in the hold: 25
+Mass penalty: 25
+Required license: Siemens Corp. License
+[/left]
+%PLACEHOLDER%
+
+
+
+RH_STUT 03
+
+
+[М]Gas discharge pumps 
+
+[center][b]Courier mission[/b][/center]
+[left]
+Pick-up point: №3
+Commodity: Gas discharge pumps 
+Destination point: Kyushu system, Planet Kyoto
+Reward: 15000 credits
+Deliver in: 1 hour
+Required space in the hold: 25
+Mass penalty: 25
+Required license: Siemens Corp. License
+[/left]
+%PLACEHOLDER%
+
+
+
+RH_STUT 04
+
+
+[М]Battleship components
+
+[center][b]Courier mission[/b][/center]
+[left]
+Pick-up point: №4
+Commodity: Battleship components
+Destination point: Berlin system, Planet Berlin
+Reward: 15000 credits
+Deliver in: 1 hour
+Required space in the hold: 25
+Mass penalty: 25
+Required license: Siemens Corp. License
+[/left]
+%PLACEHOLDER%
+
+
+
+
+
+

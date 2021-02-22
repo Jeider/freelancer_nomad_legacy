@@ -1,3 +1,84 @@
+[Курьерские миссии Торговой Федерации]
+
+[center][b]Trade Federation Delivery Missions[/b][/center]
+
+Courier jobs are one-time jobs where you have to take the cargo objective to a specified destination.
+
+This missions requires [b]Trade Federation Courier License[/b].
+Mount license in your License Slot (item in the list 3 of your equipment). This opens access to pick-up point. Enter the pick-up point and get the missions.
+
+[b]Don't forget to read informer inside puck-up point.[/b]
+
+
+
+[Курьерские миссии корпорации Сименс]
+
+[center][b]Siemens corproration Delivery Missions[/b][/center]
+
+Courier jobs are one-time jobs where you have to take the cargo objective to a specified destination.
+
+This missions requires [b]Siemens corporation trade license[/b].
+
+Mount license in your License Slot (item in the list 3 of your equipment). This opens access to pick-up point. Enter the pick-up point and get the missions.
+
+[b]Don't forget to read informer inside puck-up point.[/b]
+
+
+
+
+
+[Торговая лицензия Общая]
+
+[center][b]Trade Federation Courier License[/b][/center]
+
+This license opens access to [b]delivery missions of Trade Federation[/b].
+
+
+
+[Торговая лицензия Сименс]
+
+[center][b]Siemens corporation trade license[/b][/center]
+
+This license opens access to [b]delivery missiosn of Corporation Siemens[/b], placed near Mannhaim Station in Stuttgart System.
+
+
+
+
+[Пункт выдачи миссий]
+
+Allows you to get delivery missions. Read the informer near this object.
+
+[Exit]
+
+Allows you to return to space.
+
+
+[Инфо о миссиях внутри Матрицы]
+
+[center][b]How to get mission[/b][/center]
+[left]
+1. Watch infocard of cargo pod with mission.
+2. Do one shot on cargo pod.
+3. Loot the dropped commodity.
+4. Sell looted commodity on destination point. You need to just sell it in regular trader room at the destination point.
+[/left]
+[center][b][color=#990000]Beware![/color][/b][/center]
+[left]
+1. Courier jobs can be activated only once. It is very important to have enough free space in the cargo hold (25 units). If you activated a job and were unable to pick up the cargo, you won't be able to retry it. For this reason, it's better to use cargo ships for these jobs, or at least land on a base to create an autosave.
+2. All the pirates will be highly interested to rob you of your cargo. That's why, even if you are not hostile with pirates, it's still better to avoid them.
+3. If you don't know the exact coordinates of job's destination, you can ask for them at the nearest station. The residents will tell you the exact location for a small fee.
+4. All jobs have a time limit. If you fail or forget to deliver the cargo in time it will "spoil" and disappear from your cargo.
+[/left]
+
+
+
+
+
+
+
+
+
+
 [Courier jobs]
 
 [center][b]Legal cargo delivery jobs[/b][/center]
