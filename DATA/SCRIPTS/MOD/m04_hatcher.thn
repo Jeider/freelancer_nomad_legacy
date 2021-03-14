@@ -1,5 +1,13 @@
 duration=100
 
+readfrom('thn_settings.txt')
+
+sp_short_cutscenes_mode = read()
+if sp_short_cutscenes_mode == '1' then
+	duration = 26
+end
+readfrom()
+
 entities={
 	{
 		entity_name="Scene_M04_hatcher_meeting_scene",

@@ -1,14 +1,12 @@
 duration=52 --54 --44
 
+readfrom('thn_settings.txt')
 
---
--- 
---
---
---
---
---
---
+sp_short_cutscenes_mode = read()
+if sp_short_cutscenes_mode == '1' then
+	duration = 5
+end
+readfrom()
 
 entities={
 	{

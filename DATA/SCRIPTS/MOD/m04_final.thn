@@ -1,5 +1,13 @@
 duration=72
 
+readfrom('thn_settings.txt')
+
+sp_short_cutscenes_mode = read()
+if sp_short_cutscenes_mode == '1' then
+	duration = 15
+end
+readfrom()
+
 entities={
 	{
 		entity_name="Scene_M04_cityscape_Final_scene",
