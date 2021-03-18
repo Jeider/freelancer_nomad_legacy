@@ -350,7 +350,7 @@ entities={
 			}
 		},
 	},
-		{
+	{
 		entity_name="alaric_head_ik",
 		type=MARKER,
 		template_name="",
