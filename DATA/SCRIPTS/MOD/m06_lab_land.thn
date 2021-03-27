@@ -1,0 +1,618 @@
+duration=22
+duration=2211
+
+entities={
+	{
+		entity_name="Scene_m06_lab1_land",
+		type=SCENE,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		up=Y_AXIS,
+		front=Z_AXIS,
+		ambient={128,128,128}
+	},
+
+	{
+		entity_name="Monitor_1",
+		type=MONITOR,
+		template_name="",
+		template_id=0
+	},	
+	{
+		entity_name="prop_pda",
+		type=COMPOUND,
+		template_name="pda",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		userprops={
+			category="Prop"
+		}
+	},
+	
+	{
+		entity_name="PlayerShip",
+		type=COMPOUND,
+		template_name="PlayerShip",
+		lt_grp=3,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={40,7,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		userprops={
+			category="Spaceship"
+		}
+	},
+	{
+		entity_name="alaric_ship",
+		type=COMPOUND,
+		template_name="li_elite",
+		lt_grp=3,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={-15,3,-5},
+			orient={
+				{-0.7071068,0,0.7071068},
+				{0,1,0},
+				{-0.7071068,0,-0.7071068}
+			}
+		},
+		userprops={
+			category="Spaceship",
+			loadout="lod_ms4_alaric_cloak"
+		}
+	},
+	{
+		entity_name="doors_sound",
+		template_name="hanger_doors_opening",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=250,ain=360,aout=360,atout=0,rmix=0},
+	},
+	{
+		entity_name="cart_sound1",
+		template_name="equipment_cart_start",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=-10,pan=0,dmin=50,dmax=250,ain=360,aout=360,atout=0,rmix=0},
+	},
+	{
+		entity_name="cart_sound2",
+		template_name="equipment_cart_loop",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=-10,pan=0,dmin=50,dmax=250,ain=360,aout=360,atout=0,rmix=0},
+	},
+	{
+		entity_name="cart_sound3",
+		template_name="equipment_cart_stop",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=-10,pan=0,dmin=50,dmax=250,ain=360,aout=360,atout=0,rmix=0},
+	},
+	{
+		entity_name="turbine_sound",
+		template_name="engine_rh_freighter_loop",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=-50,pan=0,dmin=50,dmax=250,ain=360,aout=360,atout=0,rmix=0},
+	},
+	{
+		entity_name="landed_sound",
+		template_name="engine_rh_freighter_kill",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=2,pan=0,dmin=50,dmax=250,ain=360,aout=360,atout=0,rmix=0},
+	},
+	
+	{
+		entity_name="DX_m06_lab_land_0010_alaric",
+		template_name="DX_m06_lab_land_0010_alaric",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_lab_land_0020_trent",
+		template_name="DX_m06_lab_land_0020_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_lab_land_0030_alaric",
+		template_name="DX_m06_lab_land_0030_alaric",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_lab_land_0040_trent",
+		template_name="DX_m06_lab_land_0040_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_lab_room_0010_trent",
+		template_name="DX_m06_lab_room_0010_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_lab_room_0020_alaric",
+		template_name="DX_m06_lab_room_0020_alaric",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	
+	
+	
+	
+	{
+		entity_name="cam_land",
+		type=CAMERA,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={6,8,10},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		cameraprops={
+			fovh=35,
+			hvaspect=1.333333,
+			nearplane=0.1,
+			farplane=100000
+		}
+	},
+	{
+		entity_name="cam_land_pos2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-6,14,20
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	{
+		entity_name="cam_land_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				40,5,0
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+
+	
+				
+	{
+		entity_name="Path_Landing",
+		type=MOTION_PATH,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		pathprops={
+			path_type="CV_CROrientationSplinePath",
+			path_data="OPEN, {45,5,0}, {0.5,0,0.5,0}, {20,5,0}, {0.5,0,0.5,0}, {0,0,0}, {0.25,0,0.75,0} "
+		}
+	},	
+
+	{
+		entity_name="Char_alaric",
+		type=DEFORMABLE,
+		template_name="alaric",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={-3.253091,
+				0.545586,
+				12.41142},
+			orient={
+				{0,0,-1},
+				{0,1,0},
+				{1,0,0}
+			}
+		},
+		compoundprops={
+			floor_height=0
+		},
+		userprops={
+			actor="alaric",
+			category="Character"
+		}
+	},
+
+	
+	
+	{
+		entity_name="Char_trent",
+		type=DEFORMABLE,
+		template_name="trent",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={
+			--pos={-11112, -550, 11115},
+			pos={-2, 0, 5},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		},
+		compoundprops={
+			floor_height=0
+		},
+		userprops={
+			actor="trent",
+			category="Character"
+		}
+	},
+	
+	{
+		entity_name="Mrk_PlayerPlace",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={-2, 0, 5},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		}
+	},
+	
+	
+	
+	{
+		entity_name="cam_start",
+		type=CAMERA,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				3, 2, 10
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		cameraprops={
+			fovh=35,
+			hvaspect=1.333333,
+			nearplane=0.1,
+			farplane=100000
+		}
+	},
+	{
+		entity_name="cam_start_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-3.253091,
+				1.65,
+				8
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+}
+
+events={
+
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_land",
+			"PlayerShip"
+		},
+		{
+			duration=30,
+			offset={0,0,0},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="HpRoot",
+			target_type=HARDPOINT,
+			flags=LOOK_AT
+		}
+	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_start",
+			"cam_start_marker"
+		},
+		{
+			duration=30,
+			offset={0,0,0},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="",
+			target_type=ROOT,
+			flags=LOOK_AT
+		}
+	},
+
+	
+	
+	{
+		0,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_land"
+		}
+	},
+	{
+		0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_land",
+			"cam_land_pos2"
+		},
+		{
+			duration=14,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	
+	{
+		0,
+		START_PATH_ANIMATION,
+		{
+			"PlayerShip",
+			"Path_Landing"
+		},
+		{
+			duration=15,
+			start_percent=0,
+			stop_percent=1,
+			offset={
+				0,
+				0,
+				0
+			},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			flags=POSITION + ORIENTATION,
+			param_curve={
+				CLSID="FreeFormPCurve",
+				points={
+					{
+						0,
+						0,
+						0,
+						0
+					},
+					{
+						0.791667,
+						0.977564,
+						0.2,
+						0.214286
+					},
+					{
+						1,
+						1,
+						0,
+						0
+					}
+				}
+			},
+			pcurve_period=-1
+		}
+	},
+	
+	
+	
+	{
+		0,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+		 duration=1, time_scale=1, weight=1, heading=-1}
+	},
+	{
+		0,
+		START_MOTION,
+		{"Char_alaric"},
+		{animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+		 duration=1, time_scale=1, weight=1, heading=-1}
+	},
+	
+	
+	
+	
+	{
+		0.1,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_start"
+		}
+	},
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	{
+		0.25,
+		START_SOUND,
+		{
+			"doors_sound"
+		},
+		{
+			duration=15
+		}
+	},
+	{
+		0,
+		START_SOUND,
+		{
+			"turbine_sound"
+		},
+		{
+			duration=20,
+			flags=LOOP
+		}
+	},
+	{
+		0,
+		START_AUDIO_PROP_ANIM,
+		{
+			"turbine_sound"
+		},
+		{
+			duration=4,
+			audioprops={
+				attenuation=0
+			}
+		}
+	},
+	{
+		13,
+		START_AUDIO_PROP_ANIM,
+		{
+			"turbine_sound"
+		},
+		{
+			duration=7,
+			audioprops={
+				attenuation=-100
+			}
+		}
+	},
+	{
+		14,
+		START_SOUND,
+		{
+			"landed_sound"
+		},
+		{
+			duration=5
+		}
+	},
+	{
+		12,
+		START_SOUND,
+		{
+			"cart_sound1"
+		},
+		{
+			duration=2
+		}
+	},
+	{
+		13.5,
+		START_SOUND,
+		{
+			"cart_sound2"
+		},
+		{
+			duration=4,
+			flags=LOOP
+		}
+	},
+	{
+		17,
+		START_SOUND,
+		{
+			"cart_sound3"
+		},
+		{
+			duration=2
+		}
+	},
+
+}
