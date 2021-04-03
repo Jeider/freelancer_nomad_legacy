@@ -1,5 +1,6 @@
 duration=22
 duration=2211
+duration=40
 
 entities={
 	{
@@ -17,7 +18,7 @@ entities={
 		},
 		up=Y_AXIS,
 		front=Z_AXIS,
-		ambient={128,128,128}
+		ambient={0,0,0}
 	},
 
 	{
@@ -36,6 +37,26 @@ entities={
 		flags=LIT_DYNAMIC,
 		spatialprops={
 			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		userprops={
+			category="Prop"
+		}
+	},
+	{
+		entity_name="prop_pilot",
+		type=COMPOUND,
+		template_name="the_ship_pilot_trent",
+		lt_grp=3,
+		srt_grp=1,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={0,-100,0},
 			orient={
 				{1,0,0},
 				{0,1,0},
@@ -163,23 +184,6 @@ entities={
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
-	{
-		entity_name="DX_m06_lab_room_0010_trent",
-		template_name="DX_m06_lab_room_0010_trent",
-		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
-		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
-		userprops={category="Audio"}
-	},
-	{
-		entity_name="DX_m06_lab_room_0020_alaric",
-		template_name="DX_m06_lab_room_0020_alaric",
-		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
-		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
-		userprops={category="Audio"}
-	},
-	
 	
 	
 	
@@ -259,46 +263,92 @@ entities={
 		}
 	},	
 
+	
+
 	{
-		entity_name="Char_alaric",
-		type=DEFORMABLE,
-		template_name="alaric",
-		lt_grp=0,
+		entity_name="Xambi_ltg00_point_trader_key_yellow",
+		type=LIGHT,
+		template_name="",
+		lt_grp=5,
 		srt_grp=0,
 		usr_flg=0,
-		flags=LIT_DYNAMIC,
 		spatialprops={
-			pos={-3.253091,
-				0.545586,
-				12.41142},
+			pos={
+				3,
+				1,
+				13.5
+			},
 			orient={
-				{0,0,-1},
-				{0,1,0},
-				{1,0,0}
+				{
+					-0.997542,
+					-0.045773,
+					0.053059
+				},
+				{
+					-0.045071,
+					0.998881,
+					0.014356
+				},
+				{
+					-0.053656,
+					0.011929,
+					-0.998488
+				}
 			}
 		},
-		compoundprops={
-			floor_height=0
-		},
-		userprops={
-			actor="alaric",
-			category="Character"
+		lightprops={
+			on=Y,
+			color={
+				255,
+				255,
+				255
+			},
+			diffuse={
+				1,
+				1,
+				1
+			},
+			specular={
+				0,
+				0,
+				0
+			},
+			ambient={
+				0.18,
+				0.2,
+				0.18
+			},
+			direction={
+				0,
+				0,
+				1
+			},
+			range=2000,
+			cutoff=98.999977,
+			type=L_POINT,
+			theta=90,
+			atten={
+				1,
+				0,
+				4e-006
+			}
 		}
 	},
-
+	
+	
+	
 	
 	
 	{
 		entity_name="Char_trent",
 		type=DEFORMABLE,
 		template_name="trent",
-		lt_grp=0,
+		lt_grp=5,
 		srt_grp=0,
 		usr_flg=0,
 		flags=LIT_DYNAMIC + LIT_AMBIENT,
 		spatialprops={
-			--pos={-11112, -550, 11115},
-			pos={-2, 0, 5},
+			pos={-11112, -550, 11115},
 			orient={
 				{-1,0,0},
 				{0,1,0},
@@ -313,25 +363,60 @@ entities={
 			category="Character"
 		}
 	},
-	
-	{
-		entity_name="Mrk_PlayerPlace",
-		type=MARKER,
-		template_name="",
-		lt_grp=0,
+{
+		entity_name="Char_alaric",
+		type=DEFORMABLE,
+		template_name="alaric",
+		lt_grp=5,
 		srt_grp=0,
 		usr_flg=0,
+		flags=LIT_DYNAMIC,
 		spatialprops={
-			pos={-2, 0, 5},
+			pos={-11112, -550, 11115},
+			orient={
+				{0,0,-1},
+				{0,1,0},
+				{1,0,0}
+			}
+		},
+		compoundprops={
+			floor_height=0
+		},
+		userprops={
+			actor="alaric",
+			category="Character"
+		}
+	},
+	{
+		entity_name="point_trent",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={-1.75, 0, 8},
 			orient={
 				{-1,0,0},
 				{0,1,0},
 				{0,0,-1}
 			}
-		}
+		},
 	},
 	
-	
+	{
+		entity_name="point_alaric",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={-2, 0, 15},
+			orient={
+				{0,0,-1},
+				{0,1,0},
+				{1,0,0}
+			}
+		},
+	},
+
 	
 	{
 		entity_name="cam_start",
@@ -340,7 +425,7 @@ entities={
 		template_id=0,
 		spatialprops={
 			pos={
-				3, 2, 10
+				3, 3, 7			
 			},
 			orient={
 				{1,0,0},
@@ -349,11 +434,27 @@ entities={
 			}
 		},
 		cameraprops={
-			fovh=35,
+			fovh=25,
 			hvaspect=1.333333,
 			nearplane=0.1,
 			farplane=100000
 		}
+	},
+	{
+		entity_name="cam_start_pos2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-1.5, 1.8, 14	
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
 	},
 	{
 		entity_name="cam_start_marker",
@@ -362,9 +463,228 @@ entities={
 		template_id=0,
 		spatialprops={
 			pos={
-				-3.253091,
-				1.65,
-				8
+				-3,
+				1,
+				12
+				
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	{
+		entity_name="cam_start_marker_pos2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-2.4,
+				1.5,
+				15.5
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	
+		
+	{
+		entity_name="cam_trent",
+		type=CAMERA,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				-1.2,
+				1.5,
+				15.5
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+				
+			}
+		},
+		cameraprops={
+			fovh=25,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_trent_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-2.1,
+				1.5,
+				14
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	
+	
+	
+	
+	{
+		entity_name="cam_alaric",
+		type=CAMERA,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				-1,
+				2.2,
+				13
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+				
+			}
+		},
+		cameraprops={
+			fovh=22,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_alaric_pos2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-0.8,
+				2.2,
+				13.2
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	{
+		entity_name="cam_alaric_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-2.1,
+				1.4,
+				15
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	{
+		entity_name="cam_alaric_marker_pos2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-2.1,
+				1.4,
+				14.8
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	
+	
+	
+	{
+		entity_name="cam_final",
+		type=CAMERA,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				2,
+				2.5,
+				16
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		cameraprops={
+			fovh=25,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_final_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-1.5,
+				1.5,
+				14.5
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	{
+		entity_name="cam_final_marker_pos2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-1.7,
+				1.5,
+				15
 			},
 			orient={
 				{1,0,0},
@@ -376,7 +696,32 @@ entities={
 }
 
 events={
-
+	{
+		0,
+		CONNECT_HARDPOINTS,
+		{
+			"prop_pda",
+			"Char_alaric"
+		},
+		{
+			duration=66.389,
+			hardpoint="Hp_LHand_PDA",
+			parent_hardpoint="HpLeftConnect"
+		}
+	},
+	{
+		0,
+		CONNECT_HARDPOINTS,
+		{
+			"prop_pilot",
+			"PlayerShip"
+		},
+		{
+			duration=66.389,
+			hardpoint="HpConnect",
+			parent_hardpoint="HpPilot"
+		}
+	},
 	{
 		0,
 		ATTACH_ENTITY,
@@ -411,7 +756,57 @@ events={
 			flags=LOOK_AT
 		}
 	},
-
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_trent",
+			"cam_trent_marker"
+		},
+		{
+			duration=1,
+			offset={0,0,0},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="",
+			target_type=ROOT,
+			flags=LOOK_AT
+		}
+	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_alaric",
+			"cam_alaric_marker"
+		},
+		{
+			duration=51,
+			offset={0,0,0},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="",
+			target_type=ROOT,
+			flags=LOOK_AT
+		}
+	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_final",
+			"cam_final_marker"
+		},
+		{
+			duration=111,
+			offset={0,0,0},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="",
+			target_type=ROOT,
+			flags=LOOK_AT
+		}
+	},
 	
 	
 	{
@@ -488,44 +883,376 @@ events={
 		}
 	},
 	
+
 	
 	
+
 	{
-		0,
-		START_MOTION,
-		{"Char_trent"},
-		{animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
-		 duration=1, time_scale=1, weight=1, heading=-1}
+		15.999,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_alaric",
+			"point_alaric"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+		}
 	},
 	{
-		0,
+		15.999,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_trent",
+			"point_trent"
+		},
+		{
+			duration=0.001,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+		}
+	},
+	
+	
+	
+
+	{
+		16,
+		START_MOTION,
+		{"Char_alaric"},
+		{animation="Sc_MLBODY_STND_DEALR_PDA_000LV_XA_09",
+		 duration=5, time_scale=1, start_time=2, weight=1,  heading=-1}
+	},
+	{
+		21,
+		START_MOTION,
+		{"Char_alaric"},
+		{animation="Sc_MLBODY_STND_TURN_090LV_XA_02",
+		 duration=6, time_scale=0.8, trans_time=1.5, weight=1,  heading=-1}
+	},
+	{
+		26,
 		START_MOTION,
 		{"Char_alaric"},
 		{animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
-		 duration=1, time_scale=1, weight=1, heading=-1}
+		 duration=1, time_scale=1, trans_time=2, weight=1,  heading=-1}
 	},
 	
 	
 	
-	
 	{
-		0.1,
+		16,
 		SET_CAMERA,
 		{
 			"Monitor_1",
 			"cam_start"
 		}
 	},
+	{
+		16,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_start",
+			"cam_start_pos2"
+		},
+		{
+			duration=10,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		16,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_start_marker",
+			"cam_start_marker_pos2"
+		},
+		{
+			duration=10,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	
+	{
+		22,
+		START_SOUND,
+		{
+			"DX_m06_lab_land_0010_alaric"
+		},
+		{
+			duration=15
+		}
+	},
+	{
+		22,
+		START_MOTION,
+		{"Char_alaric"},
+		{animation="Sc_dx_s033x_0801_dexter",
+		 duration=6.5, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	},
+
+	
+	
+		
+	{
+		16,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 duration=5, time_scale=0.75, weight=1, start_time=0.15,  heading=-1, event_flags=2}
+	},
+	{
+		21,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_WALK_STND_TRNS_000LV_XA_02",
+		 duration=4, time_scale=0.75,  weight=1, heading=-1}
+	},
+	
+	{
+		27,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_trent"
+		}
+	},
+	
+	{
+		27,
+		START_SOUND,
+		{
+			"DX_m06_lab_land_0020_trent"
+		},
+		{
+			duration=15
+		}
+	},
+	{
+		27,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_dx_s012x_0601_trent",
+		 duration=15,  time_scale=0.9, trans_time=0.25, weight=1, heading=-1}
+	}, 
+		
+	{
+		27.5,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
+		 duration=6, time_scale=0.6, weight=1,  heading=-1}
+	},
+	
+	
+	
+	{
+		30,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_alaric"
+		}
+	},
+	
+	
+	{
+		30,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_alaric",
+			"cam_alaric_pos2"
+		},
+		{
+			duration=5,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		30,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_alaric_marker",
+			"cam_alaric_marker_pos2"
+		},
+		{
+			duration=5,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+
+
+	{
+		30,
+		START_SOUND,
+		{
+			"DX_m06_lab_land_0030_alaric"
+		},
+		{
+			duration=15
+		}
+	},
+	{
+		30,
+		START_MOTION,
+		{"Char_alaric"},
+		{animation="Sc_dx_s026b_1701_vance",
+		 duration=6.5, time_scale=1.1, trans_time=0.25, weight=1, heading=-1}
+	},
+	
+	
+	{
+		32,
+		START_MOTION,
+		{"Char_alaric"},
+		{animation="Sc_MLBODY_STND_TURN_270LV_XA_04",
+		 duration=6, time_scale=1, trans_time=1.5, weight=1,  heading=-1}
+	},
+	{
+		35,
+		START_MOTION,
+		{"Char_alaric"},
+		{animation="Sc_MLBODY_STND_DEALR_PDA_000LV_XA_09",
+		 duration=6, time_scale=1, trans_time=1.5, weight=1,  heading=-1}
+	},
+	{
+		31,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_STND_FSTHIPB_RLEASE_000LV_XA_01",
+		 duration=6, time_scale=0.6, weight=1,  heading=-1}
+	},
+	
+	{
+		34.7,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_STND_1STEP_SIDWYSL_000LV_XA_02",
+		 duration=3, time_scale=1.2, weight=1,  heading=-1}
+	},
+	{
+		35,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_trent"
+		},
+		{
+			duration=1.5,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					12,
+					Y_AXIS
+				}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	
+	
+	{
+		36.5,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_STND_RUN_TRNS_000LV_XA_02",
+		 duration=16, time_scale=0.8, trans_time=1, weight=1,  heading=-1}
+	},
+	{
+		39,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_RNNG_000LV_XA_01",
+		 duration=16, time_scale=0.6, weight=1,  heading=-1}
+	},
+	
+
+
 	
 	
 	
 	
 	
+	{
+		35.5,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_final"
+		}
+	},
+	{
+		35.5,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_final_marker",
+			"cam_final_marker_pos2"
+		},
+		{
+			duration=5,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+
+
 	
+	{
+		35.5,
+		START_SOUND,
+		{
+			"DX_m06_lab_land_0040_trent"
+		},
+		{
+			duration=15
+		}
+	},
+	{
+		35.5,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_dx_s020x_3801_trent",
+		 duration=15,  time_scale=1, trans_time=0.25, start_time=0.3, weight=1, heading=-1}
+	}, 
 	
-	
-	
-	
+
+
+
+
 	{
 		0.25,
 		START_SOUND,
@@ -561,6 +1288,19 @@ events={
 		}
 	},
 	{
+		10,
+		START_AUDIO_PROP_ANIM,
+		{
+			"turbine_sound"
+		},
+		{
+			duration=3,
+			audioprops={
+				attenuation=-5
+			}
+		}
+	},
+	{
 		13,
 		START_AUDIO_PROP_ANIM,
 		{
@@ -583,36 +1323,6 @@ events={
 			duration=5
 		}
 	},
-	{
-		12,
-		START_SOUND,
-		{
-			"cart_sound1"
-		},
-		{
-			duration=2
-		}
-	},
-	{
-		13.5,
-		START_SOUND,
-		{
-			"cart_sound2"
-		},
-		{
-			duration=4,
-			flags=LOOP
-		}
-	},
-	{
-		17,
-		START_SOUND,
-		{
-			"cart_sound3"
-		},
-		{
-			duration=2
-		}
-	},
+
 
 }
