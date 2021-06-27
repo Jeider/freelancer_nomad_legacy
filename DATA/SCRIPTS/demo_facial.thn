@@ -26,162 +26,240 @@ entities={
 		template_id=0
 	},
 	
-	
 	{
-		entity_name="DX_m06_mount_0010_trent",
-		template_name="DX_m06_mount_0010_trent",
+		entity_name="DX_m06_briefing_0010_hatcher",
+		template_name="DX_m06_briefing_0010_hatcher",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="DX_m06_mount_0020_alaric",
-		template_name="DX_m06_mount_0020_alaric",
+		entity_name="DX_m06_briefing_0020_trent",
+		template_name="DX_m06_briefing_0020_trent",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="DX_m06_mount_0030_trent",
-		template_name="DX_m06_mount_0030_trent",
+		entity_name="DX_m06_briefing_0030_hatcher",
+		template_name="DX_m06_briefing_0030_hatcher",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="DX_m06_mount_0040_alaric",
-		template_name="DX_m06_mount_0040_alaric",
+		entity_name="DX_m06_briefing_0040_hatcher",
+		template_name="DX_m06_briefing_0040_hatcher",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="DX_m06_mount_0050_trent",
-		template_name="DX_m06_mount_0050_trent",
+		entity_name="DX_m06_briefing_0050_hatcher",
+		template_name="DX_m06_briefing_0050_hatcher",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="DX_m06_mount_0060_alaric",
-		template_name="DX_m06_mount_0060_alaric",
+		entity_name="DX_m06_briefing_0060_hatcher",
+		template_name="DX_m06_briefing_0060_hatcher",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="DX_m06_mount_0070_trent",
-		template_name="DX_m06_mount_0070_trent",
+		entity_name="DX_m06_briefing_0070_hatcher",
+		template_name="DX_m06_briefing_0070_hatcher",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="DX_m06_mount_0080_alaric",
-		template_name="DX_m06_mount_0080_alaric",
+		entity_name="DX_m06_briefing_0080_alaric",
+		template_name="DX_m06_briefing_0080_alaric",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="DX_m06_mount_0090_trent",
-		template_name="DX_m06_mount_0090_trent",
-		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
-		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
-		userprops={category="Audio"}
-	},
-	
-	
-	{
-		entity_name="DX_m06_lab_land_0010_alaric",
-		template_name="DX_m06_lab_land_0010_alaric",
+		entity_name="DX_m06_briefing_0090_trent",
+		template_name="DX_m06_briefing_0090_trent",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="DX_m06_lab_land_0020_trent",
-		template_name="DX_m06_lab_land_0020_trent",
+		entity_name="DX_m06_briefing_0100_hatcher",
+		template_name="DX_m06_briefing_0100_hatcher",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="DX_m06_lab_land_0030_alaric",
-		template_name="DX_m06_lab_land_0030_alaric",
+		entity_name="DX_m06_briefing_0110_trent",
+		template_name="DX_m06_briefing_0110_trent",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="DX_m06_lab_land_0040_trent",
-		template_name="DX_m06_lab_land_0040_trent",
+		entity_name="DX_m06_briefing_0120_hatcher",
+		template_name="DX_m06_briefing_0120_hatcher",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="DX_m06_lab_room_0010_trent",
-		template_name="DX_m06_lab_room_0010_trent",
+		entity_name="DX_m06_briefing_0130_hatcher",
+		template_name="DX_m06_briefing_0130_hatcher",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="DX_m06_lab_room_0020_alaric",
-		template_name="DX_m06_lab_room_0020_alaric",
-		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
-		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
-		userprops={category="Audio"}
-	},
-	
-	{
-		entity_name="DX_m06_torpedo_alert_0010_hatcher",
-		template_name="DX_m06_torpedo_alert_0010_hatcher",
+		entity_name="DX_m06_briefing_0140_hatcher",
+		template_name="DX_m06_briefing_0140_hatcher",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="DX_m06_torpedo_alert_0020_hatcher",
-		template_name="DX_m06_torpedo_alert_0020_hatcher",
+		entity_name="DX_m06_briefing_0150_hatcher",
+		template_name="DX_m06_briefing_0150_hatcher",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="DX_m06_torpedo_alert_0040_trent",
-		template_name="DX_m06_torpedo_alert_0040_trent",
+		entity_name="DX_m06_briefing_0160_hatcher",
+		template_name="DX_m06_briefing_0160_hatcher",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="DX_m06_torpedo_alert_0050_hatcher",
-		template_name="DX_m06_torpedo_alert_0050_hatcher",
+		entity_name="DX_m06_briefing_0170_hatcher",
+		template_name="DX_m06_briefing_0170_hatcher",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
+	{
+		entity_name="DX_m06_briefing_0180_hatcher",
+		template_name="DX_m06_briefing_0180_hatcher",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_briefing_0190_trent",
+		template_name="DX_m06_briefing_0190_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_briefing_0200_hatcher",
+		template_name="DX_m06_briefing_0200_hatcher",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_briefing_0210_hatcher",
+		template_name="DX_m06_briefing_0210_hatcher",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_briefing_0220_hatcher",
+		template_name="DX_m06_briefing_0220_hatcher",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_briefing_0230_alaric",
+		template_name="DX_m06_briefing_0230_alaric",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_briefing_0240_hatcher",
+		template_name="DX_m06_briefing_0240_hatcher",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_briefing_0250_hatcher",
+		template_name="DX_m06_briefing_0250_hatcher",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_briefing_0260_alaric",
+		template_name="DX_m06_briefing_0260_alaric",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_briefing_0270_hatcher",
+		template_name="DX_m06_briefing_0270_hatcher",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_briefing_0280_hatcher",
+		template_name="DX_m06_briefing_0280_hatcher",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_briefing_0290_hatcher",
+		template_name="DX_m06_briefing_0290_hatcher",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+
+
 	
 	
 	{
@@ -423,7 +501,7 @@ entities={
 		flags=HIDDEN,
 		spatialprops={
 			pos={
-			    0.4, 1.4, -22.2
+			    0.4, 1.65, -22.2
 			},
 			orient={
 				{1,0,0},
@@ -433,7 +511,7 @@ entities={
 			}
 		},
 		cameraprops={
-			fovh=22,
+			fovh=13,
 			hvaspect=1.85,
 			nearplane=0.2,
 			farplane=5000
@@ -446,7 +524,7 @@ entities={
 		template_id=0,
 		spatialprops={
 			pos={
-				-0.7, 1.45, -23
+				-0.7, 1.55, -22.8
 			},
 			orient={
 				{1,0,0},
@@ -553,328 +631,715 @@ events={
 	
 	
 	
+	
+	
+	
+	
 	-- {
-		-- 1,
+		-- 0,
 		-- START_SOUND,
 		-- {
-			-- "DX_m06_mount_0010_trent"
+			-- "DX_m06_briefing_0010_hatcher"
 		-- },
 		-- {
 			-- duration=15
 		-- }
 	-- },
+
+	
 	-- {
-		-- 1,
+		-- 0,
 		-- START_MOTION,
-		-- {"Char_trent"},
-		-- {animation="Sc_dx_s037b_0401_trent",
-		 -- duration=15,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
-	-- }, 
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_2501_Jacobi",
+		 -- duration=2,  time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+	-- {
+		-- 2,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_2701_Jacobi",
+		 -- duration=5, start_time=1, time_scale=0.85, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+	
 	
 	
 	
 	
 	-- {
-		-- 1,
+		-- 0,
 		-- START_SOUND,
 		-- {
-			-- "DX_m06_mount_0030_trent"
+			-- "DX_m06_briefing_0030_hatcher"
 		-- },
 		-- {
 			-- duration=15
 		-- }
 	-- },
+
+	
 	-- {
-		-- 1,
+		-- 0,
 		-- START_MOTION,
-		-- {"Char_trent"},
-		-- {animation="Sc_dx_s046x_1401_trent",
-		 -- duration=15,  time_scale=0.8, trans_time=0.25, weight=1, heading=-1}
-	-- }, 
-	
-	
-	
-	
-	-- {
-		-- 1,
-		-- START_SOUND,
-		-- {
-			-- "DX_m06_mount_0050_trent"
-		-- },
-		-- {
-			-- duration=15
-		-- }
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s069x_1301_Jacobi",
+		 -- duration=2.8, start_time=0.6,  time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
 	-- },
 	-- {
-		-- 1,
+		-- 2.8,
 		-- START_MOTION,
-		-- {"Char_trent"},
-		-- {animation="Sc_dx_s012x_1301_trent",
-		 -- duration=15,  time_scale=0.8, trans_time=0.25, weight=1, heading=-1}
-	-- }, 
-	
-	
-	
-	
-	-- {
-		-- 1,
-		-- START_SOUND,
-		-- {
-			-- "DX_m06_mount_0070_trent"
-		-- },
-		-- {
-			-- duration=15
-		-- }
-	-- },
-	-- {
-		-- 1,
-		-- START_MOTION,
-		-- {"Char_trent"},
-		-- {animation="Sc_dx_s037b_0201_trent",
-		 -- duration=15,  time_scale=0.86, trans_time=0.25, weight=1, heading=-1}
-	-- }, 
-	
-	
-	
-	-- {
-		-- 1,
-		-- START_SOUND,
-		-- {
-			-- "DX_m06_mount_0090_trent"
-		-- },
-		-- {
-			-- duration=15
-		-- }
-	-- },
-	-- {
-		-- 1,
-		-- START_MOTION,
-		-- {"Char_trent"},
-		-- {animation="Sc_dx_s064x_2001_trent",
-		 -- duration=15,  time_scale=0.86, trans_time=0.25, weight=1, heading=-1}
-	-- }, 
-	
-	
-	
-	
-	-- {
-		-- 1,
-		-- START_SOUND,
-		-- {
-			-- "DX_m06_mount_0020_alaric"
-		-- },
-		-- {
-			-- duration=15
-		-- }
-	-- },
-	-- {
-		-- 1,
-		-- START_MOTION,
-		-- {"Char_alaric"},
-		-- {animation="Sc_dx_s032a_0301_dexter",
-		 -- duration=12, time_scale=1.1, trans_time=0.25, weight=1, heading=-1}
-	-- },
-	
-	
-	
-	-- {
-		-- 1,
-		-- START_SOUND,
-		-- {
-			-- "DX_m06_mount_0040_alaric"
-		-- },
-		-- {
-			-- duration=15
-		-- }
-	-- },
-	-- {
-		-- 1,
-		-- START_MOTION,
-		-- {"Char_alaric"},
-		-- {animation="Sc_dx_s021x_0301_tobias",
-		 -- duration=12, time_scale=1, start_time=0.2, trans_time=0.25, weight=1, heading=-1}
-	-- },
-	
-	
-	-- {
-		-- 1,
-		-- START_SOUND,
-		-- {
-			-- "DX_m06_mount_0060_alaric"
-		-- },
-		-- {
-			-- duration=15
-		-- }
-	-- },
-	-- {
-		-- 1,
-		-- START_MOTION,
-		-- {"Char_alaric"},
-		-- {animation="Sc_dx_s037a_2001_tobias",
-		 -- duration=12, time_scale=0.9, start_time=0.25, trans_time=0.25, weight=1, heading=-1}
-	-- },
-	
-	
-	-- {
-		-- 1,
-		-- START_SOUND,
-		-- {
-			-- "DX_m06_mount_0080_alaric"
-		-- },
-		-- {
-			-- duration=15
-		-- }
-	-- },
-	-- {
-		-- 1,
-		-- START_MOTION,
-		-- {"Char_alaric"},
-		-- {animation="Sc_dx_s038x_2301_kress",
-		 -- duration=4, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s069x_1701_Jacobi",
+		 -- duration=2.2,  time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
 	-- },
 	-- {
 		-- 5,
 		-- START_MOTION,
-		-- {"Char_alaric"},
-		-- {animation="Sc_dx_s038x_2802_kress",
-		 -- duration=12, time_scale=1, start_time=1.3, trans_time=0.75, weight=1, heading=-1}
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s069x_1301_Jacobi",
+		 -- duration=3,  time_scale=1, start_time=1.5, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+
+
+
+
+	-- {
+		-- 0,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_briefing_0040_hatcher"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+
+	
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_0601_Jacobi",
+		 -- duration=6, start_time=1, time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
 	-- },
 	
 	
 	
 	-- {
-		-- 1,
+		-- 0,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_briefing_0050_hatcher"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+
+	
+	-- {
+		-- 0,
 		-- START_MOTION,
-		-- {"Char_alaric"},
-		-- {animation="Sc_dx_s038x_2301_kress",
-		 -- duration=12, time_scale=1.0, trans_time=0.25, weight=1, heading=-1}
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s069x_2201_Jacobi",
+		 -- duration=2.5, start_time=0.3, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+	-- {
+		-- 2.5,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s069x_1301_Jacobi",
+		 -- duration=2, start_time=0.6,  time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+	-- {
+		-- 4.5,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s069x_2201_Jacobi",
+		 -- duration=2.5, start_time=0.3, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+	
+	-- {
+		-- 7,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s069x_0901_Jacobi",
+		 -- duration=4, start_time=2, time_scale=0.7, trans_time=0.25,  weight=1, heading=-1}
 	-- },
 	
 	
 	
+	-- {
+		-- 0,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_briefing_0060_hatcher"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_2501_Jacobi",
+		 -- duration=15, time_scale=1.1, trans_time=0.25,  weight=1, heading=-1}
+	-- },
 	
 	
 	
 	-- {
-		-- 1,
+		-- 0,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_briefing_0070_hatcher"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+
+	-- {
+		-- 0,
 		-- START_MOTION,
-		-- {"Char_alaric"},
-		-- {animation="Sc_MLBODY_STND_HOLD_HEAD_RLEASE_000LV_XA_01",
-		 -- duration=6, time_scale=0.8,  start_time=0.4, weight=1,  heading=-1}
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s069x_2201_Jacobi",
+		 -- duration=2.5, start_time=0.3, trans_time=0.25,  weight=1, heading=-1}
 	-- },
 	-- {
-		-- 3,
+		-- 2.5,
 		-- START_MOTION,
-		-- {"Char_alaric"},
-		-- {animation="Sc_MLBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
-		 -- duration=6, time_scale=0.8,   weight=1,  heading=-1}
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s069x_0901_Jacobi",
+		 -- duration=4, start_time=3, time_scale=0.7, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+	
+	
+	
+	-- {
+		-- 0,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_briefing_0120_hatcher"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+
+	
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_2701_Jacobi",
+		 -- duration=5, start_time=2.5, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+
+
+	-- {
+		-- 1.4,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_2701_Jacobi",
+		 -- duration=5, start_time=1.23, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+	
+	-- {
+		-- 4,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_2501_Jacobi",
+		 -- duration=8, time_scale=0.9, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+
+
+	-- {
+		-- 0,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_briefing_0130_hatcher"
+		-- },
+		-- {
+			-- duration=18
+		-- }
+	-- },
+
+	
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_2701_Jacobi",
+		 -- duration=3.5, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+	-- {
+		-- 3.5,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_2701_Jacobi",
+		 -- duration=5, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 	-- },
 	-- {
 		-- 7,
 		-- START_MOTION,
-		-- {"Char_alaric"},
-		-- {animation="Sc_MLBODY_STND_FSTHIPB_RLEASE_000LV_XA_01",
-		 -- duration=6, time_scale=0.8,   weight=1,  heading=-1}
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_3001_Jacobi",
+		 -- duration=7, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 	-- },
-	
-	
 	-- {
-		-- 1,
+		-- 12.5,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_2501_Jacobi",
+		 -- duration=7, start_time=2.3, time_scale=1, trans_time=0.7,  weight=1, heading=-1}
+	-- },
+
+
+	-- {
+		-- 0.5,
 		-- START_SOUND,
 		-- {
-			-- "DX_m06_lab_land_0010_alaric"
+			-- "DX_m06_briefing_0140_hatcher"
 		-- },
 		-- {
-			-- duration=15
+			-- duration=18
 		-- }
 	-- },
+
+	
 	-- {
-		-- 1,
+		-- 0.5,
 		-- START_MOTION,
-		-- {"Char_alaric"},
-		-- {animation="Sc_dx_s033x_0801_dexter",
-		 -- duration=6.5, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_2701_Jacobi",
+		 -- duration=3.5, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 	-- },
+	-- {
+		-- 3.5,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_2701_Jacobi",
+		 -- duration=5, time_scale=0.9, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+	-- {
+		-- 7,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_3001_Jacobi",
+		 -- duration=7, time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
+	-- }, 
+	
+	
+	
+	-- {
+		-- 0,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_briefing_0160_hatcher"
+		-- },
+		-- {
+			-- duration=18
+		-- }
+	-- },
+
+	
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_2701_Jacobi",
+		 -- duration=3.5, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+	-- {
+		-- 3,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_2701_Jacobi",
+		 -- duration=5, time_scale=0.9, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+	-- {
+		-- 6.5,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_3001_Jacobi",
+		 -- duration=7, time_scale=0.85, trans_time=0.25,  weight=1, heading=-1}
+	-- }, 
 
 	
 	
 	-- {
-		-- 1,
+		-- 0,
 		-- START_SOUND,
 		-- {
-			-- "DX_m06_lab_land_0030_alaric"
+			-- "DX_m06_briefing_0170_hatcher"
 		-- },
 		-- {
-			-- duration=15
+			-- duration=18
 		-- }
 	-- },
+
+	
 	-- {
-		-- 1,
+		-- 0,
 		-- START_MOTION,
-		-- {"Char_alaric"},
-		-- {animation="Sc_dx_s026b_1701_vance",
-		 -- duration=6.5, time_scale=1.1, trans_time=0.25, weight=1, heading=-1}
-	-- },
-	
-	
-	
-	-- {
-		-- 1,
-		-- START_SOUND,
-		-- {
-			-- "DX_m06_lab_land_0020_trent"
-		-- },
-		-- {
-			-- duration=15
-		-- }
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_2701_Jacobi",
+		 -- duration=3.5, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 	-- },
 	-- {
-		-- 1,
+		-- 3,
 		-- START_MOTION,
-		-- {"Char_trent"},
-		-- {animation="Sc_dx_s012x_0601_trent",
-		 -- duration=15,  time_scale=0.9, trans_time=0.25, weight=1, heading=-1}
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_2701_Jacobi",
+		 -- duration=5, time_scale=0.9, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+	-- {
+		-- 6.5,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_3001_Jacobi",
+		 -- duration=7, start_time=4, time_scale=0.85, trans_time=0.25,  weight=1, heading=-1}
 	-- }, 
 	
 	
 	
 	-- {
-		-- 1,
+		-- 0,
 		-- START_SOUND,
 		-- {
-			-- "DX_m06_lab_land_0040_trent"
+			-- "DX_m06_briefing_0180_hatcher"
+		-- },
+		-- {
+			-- duration=18
+		-- }
+	-- },
+
+	
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_2701_Jacobi",
+		 -- duration=3.5, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+	-- {
+		-- 3,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_2701_Jacobi",
+		 -- duration=5, time_scale=0.9, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+	-- {
+		-- 6.5,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_3001_Jacobi",
+		 -- duration=7, start_time=4, time_scale=0.85, trans_time=0.25,  weight=1, heading=-1}
+	-- }, 
+	
+	
+	
+	{
+		0,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_hatcher"
+		}
+	},
+
+	
+	-- {
+		-- 0,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_briefing_0200_hatcher"
+		-- },
+		-- {
+			-- duration=18
+		-- }
+	-- },
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_2701_Jacobi",
+		 -- duration=5, time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+
+
+	
+	-- {
+		-- 0,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_briefing_0210_hatcher"
+		-- },
+		-- {
+			-- duration=18
+		-- }
+	-- },
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_2701_Jacobi",
+		 -- duration=4, time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+	-- {
+		-- 4,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_2701_Jacobi",
+		 -- duration=5, time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+	-- {
+		-- 8,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_3001_Jacobi",
+		 -- duration=7, time_scale=0.85, trans_time=0.25,  weight=1, heading=-1}
+	-- }, 
+	
+	
+	
+	-- {
+		-- 0,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_briefing_0220_hatcher"
+		-- },
+		-- {
+			-- duration=18
+		-- }
+	-- },
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_2701_Jacobi",
+		 -- duration=4, time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+	-- {
+		-- 4,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_2701_Jacobi",
+		 -- duration=5, time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+	-- {
+		-- 6,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_3001_Jacobi",
+		 -- duration=7, time_scale=0.85, trans_time=0.25,  weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 10.5,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_2701_Jacobi",
+		 -- duration=5, time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+	
+	
+	
+	-- {
+		-- 0,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_briefing_0240_hatcher"
+		-- },
+		-- {
+			-- duration=18
+		-- }
+	-- },
+
+	
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s069x_1301_Jacobi",
+		 -- duration=2, start_time=1,  time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+	-- {
+		-- 1.5,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_0801_Jacobi",
+		 -- duration=4.5, start_time=1,  time_scale=0.9, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+	-- {
+		-- 6,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_2501_Jacobi",
+		 -- duration=5,  time_scale=0.9, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+	-- {
+		-- 11,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_2701_Jacobi",
+		 -- duration=5, start_time=1, time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+
+
+	-- {
+		-- 0,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_briefing_0250_hatcher"
+		-- },
+		-- {
+			-- duration=18
+		-- }
+	-- },
+
+	
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_2701_Jacobi",
+		 -- duration=5, time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+
+	
+	-- {
+		-- 0,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_briefing_0270_hatcher"
+		-- },
+		-- {
+			-- duration=18
+		-- }
+	-- },
+
+	
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_0801_Jacobi",
+		 -- duration=5, start_time=2.5, time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+	-- {
+		-- 3,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_2701_Jacobi",
+		 -- duration=7, time_scale=0.7, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+	
+	
+	-- {
+		-- 0,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_briefing_0280_hatcher"
+		-- },
+		-- {
+			-- duration=18
+		-- }
+	-- },
+
+	
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_0801_Jacobi",
+		 -- duration=5, start_time=4, time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+	-- {
+		-- 1,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_2501_Jacobi",
+		 -- duration=7,  time_scale=0.95, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+	-- {
+		-- 7.5,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s070x_2701_Jacobi",
+		 -- duration=7, time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
+	-- },
+	
+		
+	
+	{
+		0,
+		START_SOUND,
+		{
+			"DX_m06_briefing_0290_hatcher"
+		},
+		{
+			duration=18
+		}
+	},
+
+	
+	{
+		0,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_dx_s070x_2701_Jacobi",
+		 duration=7, start_time=1, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+	},
+	
+
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_FMBODY_STND_IDLE_MED_000LV_xa_05",
+		 -- duration=10, time_scale=1, trans_time=1, weight=1, heading=-1}
+	-- },
+	
+	
+	
+	-- {
+		-- 0,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_briefing_0020_trent"
 		-- },
 		-- {
 			-- duration=15
 		-- }
 	-- },
 	-- {
-		-- 1,
+		-- 0,
 		-- START_MOTION,
 		-- {"Char_trent"},
-		-- {animation="Sc_dx_s020x_3801_trent",
-		 -- duration=15,  time_scale=1, trans_time=0.25, start_time=0.3, weight=1, heading=-1}
+		-- {animation="Sc_dx_s045b_1801_trent",
+		 -- duration=15,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
 	-- }, 
 	
-	
 	-- {
-		-- 1,
+		-- 0,
 		-- START_SOUND,
 		-- {
-			-- "DX_m06_lab_room_0010_trent"
+			-- "DX_m06_briefing_0090_trent"
 		-- },
 		-- {
 			-- duration=15
 		-- }
 	-- },
 	-- {
-		-- 1,
+		-- 0,
 		-- START_MOTION,
 		-- {"Char_trent"},
-		-- {animation="Sc_dx_s038x_3901_trent",
-		 -- duration=15,  time_scale=0.5, trans_time=0.25,  weight=1, heading=-1}
+		-- {animation="Sc_dx_s062x_0401_trent",
+		 -- duration=15,  time_scale=1.1, trans_time=0.25, weight=1, heading=-1}
 	-- }, 
-	
 	
 	-- {
 		-- 0,
@@ -883,157 +1348,13 @@ events={
 			-- "Monitor_1",
 			-- "cam_dbg_trent"
 		-- }
-	-- },
-	
-	-- {
-		-- 0,
-		-- START_MOTION,
-		-- {"Char_trent"},
-		-- {animation="Sc_MLBODY_STND_RUN_TRNS_000LV_XA_02",
-		 -- duration=16, time_scale=0.8,  weight=1,  heading=-1}
-	-- },
-	
-	-- {
-		-- 2.5,
-		-- START_MOTION,
-		-- {"Char_trent"},
-		-- {animation="Sc_MLBODY_RNNG_000LV_XA_01",
-		 -- duration=16, time_scale=0.6, weight=1,  heading=-1}
-	-- },
-	
-
+	-- },	
 	
 	-- {
 		-- 0,
 		-- START_SOUND,
 		-- {
-			-- "DX_m06_torpedo_alert_0010_hatcher"
-		-- },
-		-- {
-			-- duration=18
-		-- }
-	-- },
-
-
-	-- {
-		-- 0,
-		-- START_MOTION,
-		-- {"Char_hatcher"},
-		-- {animation="Sc_dx_s070x_0801_Jacobi",
-		 -- duration=1.5,  time_scale=1.3, trans_time=0.25,  weight=1, heading=-1}
-	-- },
-	-- {
-		-- 1.5,
-		-- START_MOTION,
-		-- {"Char_hatcher"},
-		-- {animation="Sc_dx_s070x_3001_Jacobi",
-		 -- duration=5,  time_scale=1.6, trans_time=0.25,  weight=1, heading=-1}
-	-- },
-	-- {
-		-- 5,
-		-- START_MOTION,
-		-- {"Char_hatcher"},
-		-- {animation="Sc_FMHEAD_BASEPOSE_000LV_02_01",
-		 -- duration=0.5,  time_scale=1, trans_time=0.25,  weight=1, heading=-1}
-	-- },
-	
-	-- {
-		-- 5.5,
-		-- START_SOUND,
-		-- {
-			-- "DX_m06_torpedo_alert_0020_hatcher"
-		-- },
-		-- {
-			-- duration=18
-		-- }
-	-- },
-	
-
-	-- {
-		-- 5.5,
-		-- START_MOTION,
-		-- {"Char_hatcher"},
-		-- {animation="Sc_dx_s069x_1701_Jacobi",
-		 -- duration=6,  time_scale=0.6, trans_time=0.25,  weight=1, heading=-1}
-	-- },
-	
-	
-	-- {
-		-- 0,
-		-- START_SOUND,
-		-- {
-			-- "DX_m06_torpedo_alert_0020_hatcher"
-		-- },
-		-- {
-			-- duration=18
-		-- }
-	-- },
-	
-
-	-- {
-		-- 0,
-		-- START_MOTION,
-		-- {"Char_hatcher"},
-		-- {animation="Sc_dx_s069x_1301_Jacobi",
-		 -- duration=3,  time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
-	-- },
-	-- {
-		-- 3,
-		-- START_MOTION,
-		-- {"Char_hatcher"},
-		-- {animation="Sc_dx_s069x_1701_Jacobi",
-		 -- duration=1.8,  time_scale=0.6, trans_time=0.25,  weight=1, heading=-1}
-	-- },
-	-- {
-		-- 4.8,
-		-- START_MOTION,
-		-- {"Char_hatcher"},
-		-- {animation="Sc_dx_s069x_1301_Jacobi",
-		 -- duration=1,  time_scale=1, start_time=2, trans_time=0.25,  weight=1, heading=-1}
-	-- },
-	-- {
-		-- 5.4,
-		-- START_MOTION,
-		-- {"Char_hatcher"},
-		-- {animation="Sc_FMHEAD_BASEPOSE_000LV_02_01",
-		 -- duration=1,  time_scale=1, trans_time=1,  weight=1, heading=-1}
-	-- },
-	
-	-- {
-		-- 0,
-		-- START_SOUND,
-		-- {
-			-- "DX_m06_torpedo_alert_0050_hatcher"
-		-- },
-		-- {
-			-- duration=18
-		-- }
-	-- },
-
-
-	
-	-- {
-		-- 0,
-		-- START_MOTION,
-		-- {"Char_hatcher"},
-		-- {animation="Sc_dx_s069x_1301_Jacobi",
-		 -- duration=2,  time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
-	-- },
-	-- {
-		-- 2,
-		-- START_MOTION,
-		-- {"Char_hatcher"},
-		-- {animation="Sc_dx_s069x_2201_Jacobi",
-		 -- duration=5,  start_time=0.5, time_scale=0.9, trans_time=0.25,  weight=1, heading=-1}
-	-- },
-	
-	
-		
-	-- {
-		-- 0,
-		-- START_SOUND,
-		-- {
-			-- "DX_m06_torpedo_alert_0040_trent"
+			-- "DX_m06_briefing_0110_trent"
 		-- },
 		-- {
 			-- duration=15
@@ -1043,41 +1364,137 @@ events={
 		-- 0,
 		-- START_MOTION,
 		-- {"Char_trent"},
-		-- {animation="Sc_dx_s012x_0601_trent",
-		 -- duration=15,  time_scale=0.9, trans_time=0.25, weight=1, heading=-1}
+		-- {animation="Sc_dx_s026b_1301_trent",
+		 -- duration=3.5,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 3.5,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_dx_s038x_2602_trent",
+		 -- duration=3.3,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 6.8,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_dx_s020x_2501_trent",
+		 -- duration=6,  time_scale=0.9, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	
+	
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_MLBODY_STND_GESTR_THMBSUP_000LV_XA_02",
+		 -- duration=4, time_scale=0.7, weight=1, heading=-1}
+	-- },
+	-- {
+		-- 4,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_MLBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
+		 -- duration=3, time_scale=0.7, trans_time=0.5, weight=1, heading=-1}
+	-- },
+	-- {
+		-- 6,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_MLBODY_STND_FSTHIPB_HOLD_000LV_XA_02",
+		 -- duration=10, time_scale=0.7, trans_time=0.5, weight=1, heading=-1, event_flags=2}
+	-- },
+	
+	
+	
+	
+	-- {
+		-- 0,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_briefing_0190_trent"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_dx_s076x_0801_trent",
+		 -- duration=15, start_time=1.5, time_scale=1, trans_time=0.25, weight=1, heading=-1}
 	-- }, 
 
-	{
-		0,
-		SET_CAMERA,
-		{
-			"Monitor_1",
-			"cam_hatcher"
-		}
-	},	
 	
 	
-	{
-		5,
-		START_MOTION,
-		{"Char_hatcher"},
-		{animation="Sc_FMBODY_STND_CONV_HNDSUP_TRNS_000LV_XA_01",
-		 duration=5, time_scale=1, trans_time=0.5, weight=1,  heading=-1}
-	},
-	{
-		7,
-		START_MOTION,
-		{"Char_hatcher"},
-		{animation="Sc_FMBODY_STND_CONV_HNDS_CASL_000LV_xa_03",
-		 duration=3, time_scale=1, weight=1,  heading=-1, event_flags=2}
-	},
-	{
-		10,
-		START_MOTION,
-		{"Char_hatcher"},
-		{animation="Sc_FMBODY_STND_CONV_HNDSDN_TRNS_000LV_XA_01",
-		 duration=5, time_scale=1, trans_time=0.5, weight=1,  heading=-1}
-	},
+	
+	
+	-- {
+		-- 0,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_briefing_0080_alaric"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_alaric"},
+		-- {animation="Sc_dx_s038x_3702_kress",
+		 -- duration=12, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- },
+	
+	
+	
+	-- {
+		-- 0,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_briefing_0230_alaric"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_alaric"},
+		-- {animation="Sc_dx_s038x_4401_kress",
+		 -- duration=12, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- },
+	-- {
+		-- 2.5,
+		-- START_MOTION,
+		-- {"Char_alaric"},
+		-- {animation="Sc_dx_s038x_2803_kress",
+		 -- duration=12, start_time=4.4, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- },
+	
+	
+	
+	-- {
+		-- 0,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_briefing_0260_alaric"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_alaric"},
+		-- {animation="Sc_dx_s037a_2001_tobias",
+		 -- duration=12, start_time=1, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- },
+	
 	
 	
 }

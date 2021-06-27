@@ -1,0 +1,83 @@
+
+	-- {
+		-- 0.01,
+		-- SET_CAMERA,
+		-- {
+			-- "Monitor_1",
+			-- "cam_dbg"
+		-- }
+	-- },
+	
+	
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_FMBODY_STND_IDLE_000LV_xa_05",
+		 -- duration=1, time_scale=1, weight=1, heading=-1}
+	-- },
+	-- {
+		-- 1,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_FMBODY_STND_SALUT_000LV_XA_03",
+		 -- duration=5, start_time=1, trans_time=1, time_scale=1, weight=1, heading=-1}
+	-- },
+	
+	
+	-- {
+		-- 0,
+		-- CONNECT_HARDPOINTS,
+		-- {
+			-- "prop_glasses",
+			-- "Char_hatcher"
+		-- },
+		-- {
+			-- duration=2,
+			-- hardpoint="hp_eyewear",
+			-- parent_hardpoint="hp_eyewear"
+		-- }
+	-- },
+	-- {
+		-- 1,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_FMHAND_HNEUT_PROBE_RGHT_000LV_00",
+		 -- duration=1, time_scale=1, weight=1, heading=-1}
+	-- },
+	
+	-- {
+		-- 2.15,
+		-- CONNECT_HARDPOINTS,
+		-- {
+			-- "prop_glasses",
+			-- "Char_hatcher"
+		-- },
+		-- {
+			-- duration=3,
+			-- hardpoint="HpRightTouch",
+			-- parent_hardpoint="HpRightGlassTouch"
+		-- }
+	-- },
+	-- {
+		-- 5.16,
+		-- CONNECT_HARDPOINTS,
+		-- {
+			-- "prop_glasses",
+			-- "Char_hatcher"
+		-- },
+		-- {
+			-- duration=2,
+			-- hardpoint="hp_eyewear",
+			-- parent_hardpoint="hp_eyewear"
+		-- }
+	-- },
+	
+	
+	-- {
+		-- 4,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_FMBODY_STND_SALUT_000LV_XA_03",
+		 -- duration=5, start_time=1, trans_time=1, time_scale=1, weight=1, heading=-1}
+	-- },
