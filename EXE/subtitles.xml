@@ -345,6 +345,72 @@
 <Static AudioFile="mod\m05\m05_equip_0500_trent.wav" TextArea="Cinematic">Toss a coin to your freelancer.</Static>
 <Static AudioFile="mod\m05\m05_equip_0510_hatcher.wav" TextArea="Cinematic">Ah, yes, sorry. I'm transferring your credits. We'll be in touch.</Static>
 
+<Static AudioFile="mod\m06\m06_offer_0010_trent.wav" TextArea="Cinematic">Miss Hatcher. Alaric, I didn't expect to see you here so soon.</Static>
+<Static AudioFile="mod\m06\m06_offer_0020_alaric.wav" TextArea="Cinematic">Well, as soon as you contacted me, I flew to see Miss Hatcher right away. Looks like I was closer to Norwich than you were.</Static>
+<Static AudioFile="mod\m06\m06_offer_0030_hatcher.wav" TextArea="Cinematic">Gentlemen, now that we've all figured out when and how we all got here, shall we get down to business?</Static>
+<Static AudioFile="mod\m06\m06_offer_0040_hatcher.wav" TextArea="Cinematic">Great! So, as I mentioned before, there's an alien object called The Sphere. Originally discovered by The Order, nobody could understand what it is or how it works back then. And so, it got lost in time.</Static>
+<Static AudioFile="mod\m06\m06_offer_0050_hatcher.wav" TextArea="Cinematic">We’ve learned that Rheinlanders have discovered its key, and are currently running their experiments on it. We have reasons to believe that this will not end well for us. That's why we need your help in... ceasing these experiments, so to speak.</Static>
+<Static AudioFile="mod\m06\m06_offer_0060_trent.wav" TextArea="Cinematic">Ha-ha-ha! Perfect. So, if you guys can't find the key to The Sphere, then no one can! And if someone else finds it, then either the key or The Sphere itself have to go. Bravo! This way no one will ever get in there.</Static>
+<Static AudioFile="mod\m06\m06_offer_0070_hatcher.wav" TextArea="Cinematic">I don't appreciate you being sarcastic about it, Mr. Trent. It already happened once, when another group of Rheinland scientists discovered something in the Omicron sector… Oh, how I despise these Rheinlanders...</Static>
+<Static AudioFile="mod\m06\m06_offer_0080_hatcher.wav" TextArea="Cinematic">It escalated into the crisis that I told you about when Prof. Mandrake was here. You get the idea, right?</Static>
+<Static AudioFile="mod\m06\m06_offer_0090_trent.wav" TextArea="Cinematic">Yeah, I get it. Don’t open Pandora's Box.</Static>
+<Static AudioFile="mod\m06\m06_offer_0100_hatcher.wav" TextArea="Cinematic">Very well. Now that we’re done with the theory, let’s get practical. You’ll be receiving triple the usual payment, and you’ll be granted the privilege of being official partners of the ASF.</Static>
+<Static AudioFile="mod\m06\m06_offer_0110_alaric.wav" TextArea="Cinematic">Hell yeah, I'm in! Where do I sign? I can make it a blood oath!</Static>
+<Static AudioFile="mod\m06\m06_offer_0120_trent.wav" TextArea="Cinematic">Calm down, Alaric. Miss Hatcher, what exactly is the objective? Destroy The Sphere? Kill the scientists? I can’t just do that - I'm not an assassin, after all.</Static>
+<Static AudioFile="mod\m06\m06_offer_0130_hatcher.wav" TextArea="Cinematic">Oh, is that so? Just kidding. No, it's nothing like that. Based on the secret documents you handed over, Professor Mandrake found a way to render The Sphere insensitive to external influences. To “seal it shut”, as the professor says.</Static>
+<Static AudioFile="mod\m06\m06_offer_0140_hatcher.wav" TextArea="Cinematic">I'll provide the full details, but only if you accept this mission.</Static>
+<Static AudioFile="mod\m06\m06_offer_0150_trent.wav" TextArea="Cinematic">I'm having a de-ja-vu. Only last time, I was called "Herr Trent", not "Mr. Trent"... On the other hand, it was a lot of fun. Alright, count me in.</Static>
+<Static AudioFile="mod\m06\m06_offer_0160_hatcher.wav" TextArea="Cinematic">Then I'll meet you in the orbit; we'll continue our conversation there.</Static>
+
+<Static AudioFile="mod\m06\m06_briefing_0010_hatcher.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_briefing_0020_trent.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_briefing_0030_hatcher.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_briefing_0040_hatcher.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_briefing_0050_hatcher.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_briefing_0060_hatcher.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_briefing_0070_hatcher.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_briefing_0080_alaric.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_briefing_0090_trent.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_briefing_0100_hatcher.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_briefing_0110_trent.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_briefing_0120_hatcher.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_briefing_0130_hatcher.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_briefing_0140_hatcher.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_briefing_0150_hatcher.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_briefing_0160_hatcher.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_briefing_0170_hatcher.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_briefing_0180_hatcher.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_briefing_0190_trent.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_briefing_0200_hatcher.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_briefing_0210_hatcher.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_briefing_0220_hatcher.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_briefing_0230_alaric.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_briefing_0240_hatcher.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_briefing_0250_hatcher.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_briefing_0260_alaric.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_briefing_0270_hatcher.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_briefing_0280_hatcher.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_briefing_0290_hatcher.wav" TextArea="Cinematic"></Static>
+
+<Static AudioFile="mod\m06\m06_mount_0010_trent.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_mount_0020_alaric.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_mount_0030_trent.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_mount_0040_alaric.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_mount_0050_trent.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_mount_0060_alaric.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_mount_0070_trent.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_mount_0080_alaric.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_mount_0090_trent.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_lab_land_0010_alaric.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_lab_land_0020_trent.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_lab_land_0030_alaric.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_lab_land_0040_trent.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_lab_room_0010_trent.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_lab_room_0020_alaric.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_torpedo_alert_0010_hatcher.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_torpedo_alert_0020_hatcher.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_torpedo_alert_0040_trent.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_torpedo_alert_0050_hatcher.wav" TextArea="Cinematic"></Static>
 
 
 

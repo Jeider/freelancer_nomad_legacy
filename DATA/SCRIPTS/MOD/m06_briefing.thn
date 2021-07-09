@@ -1,5 +1,12 @@
 duration=243
--- duration=5
+
+readfrom('thn_settings.txt')
+
+sp_short_cutscenes_mode = read()
+if sp_short_cutscenes_mode == '1' then
+	duration = 5
+end
+readfrom()
 
 entities={
 	{
@@ -38,6 +45,25 @@ entities={
 		spatialprops={
 			pos={
 				0, -10000, 0
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		}
+	},
+	{
+		entity_name="offscreen_top",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				0, 10000, 0
 			},
 			orient={
 				{1,0,0},
@@ -572,6 +598,28 @@ entities={
 			category="Prop"
 		}
 	},
+	{
+		entity_name="infopanel_monitor",
+		type=COMPOUND,
+		template_name="m6_monitor",
+		lt_grp=3,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={
+			pos={
+				2, 111.5, 0
+			},
+			orient={
+				{-0.8660254,0,0.5},
+				{0,1,0},
+				{-0.5,0,-0.8660254}
+			}
+		},
+		userprops={
+			category="Prop"
+		}
+	},
 	
 	
 	{
@@ -590,6 +638,25 @@ entities={
 			}
 		},
 	},
+	
+	
+	{
+		entity_name="monitor_start_point",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				2, -8, 0
+			},
+			orient={
+				{-0.8660254,0,0.5},
+				{0,1,0},
+				{-0.5,0,-0.8660254}
+			}
+		},
+	},
+	
 	
 	
 	{
@@ -3315,6 +3382,40 @@ events={
 
 	
 	{
+		69,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"infopanel_monitor",
+			"monitor_start_point"
+		},
+		{
+			duration=0.01,
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0}
+			}
+		}
+	},
+	{
+		70,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"infopanel_monitor",
+			"monitor_viewpoint"
+		},
+		{
+			duration=10,
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	
+	
+	{
 		80.5,
 		START_SPATIAL_PROP_ANIM,
 		{
@@ -4394,6 +4495,39 @@ events={
 			}
 		}
 	},
+	{
+		205,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"infopanel_monitor",
+			"monitor_start_point"
+		},
+		{
+			duration=10,
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		216,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"infopanel_monitor",
+			"monitor_start_point"
+		},
+		{
+			duration=0.01,
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0}
+			}
+		}
+	},
+  
 	
 	
 	{

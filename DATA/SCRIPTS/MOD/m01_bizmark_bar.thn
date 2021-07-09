@@ -1,5 +1,13 @@
 duration=137
 
+readfrom('thn_settings.txt')
+
+sp_short_cutscenes_mode = read()
+if sp_short_cutscenes_mode == '1' then
+	duration = 5
+end
+readfrom()
+
 entities={
 	{
 		entity_name="Layer_Fidget_Male_Sit_03",
