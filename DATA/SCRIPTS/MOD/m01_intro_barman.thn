@@ -8,6 +8,8 @@ if sp_short_cutscenes_mode == '1' then
 end
 readfrom()
 
+
+
 entities={
 	{
 		entity_name="Scene_M01_intro_barman",

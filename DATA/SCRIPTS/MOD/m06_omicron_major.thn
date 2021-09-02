@@ -2421,5 +2421,18 @@ events={
 	{
 		52, START_SOUND, {"close_baydoor"}, {duration=15}
 	},
+	{
+		50,
+		START_AUDIO_PROP_ANIM,
+		{
+			"music_main"
+		},
+		{
+			duration=10,
+			audioprops={
+				attenuation=-25
+			}
+		}
+	},
 	
 }
