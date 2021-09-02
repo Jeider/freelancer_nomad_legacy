@@ -2,365 +2,727 @@
 
 <Subtitles>
 
-<Static AudioFile="mod\intro\intro_0010_trent.wav" TextArea="Cinematic">The savior of souls!</Static>
-<Static AudioFile="mod\intro\intro_0020_barman.wav" TextArea="Cinematic">Welcome back, Trent. The usual?</Static>
-<Static AudioFile="mod\intro\intro_0030_trent.wav" TextArea="Cinematic">Sure, I'll have two!</Static>
-<Static AudioFile="mod\intro\intro_0040_barman.wav" TextArea="Cinematic">Any reason for this celebration?</Static>
-<Static AudioFile="mod\intro\intro_0050_trent.wav" TextArea="Cinematic">Absolutely. Two reasons actually! First of all, I have finally managed to pay off all my debts!</Static>
-<Static AudioFile="mod\intro\intro_0060_barman.wav" TextArea="Cinematic">For the beginning of a new life! This one's on me!</Static>
-<Static AudioFile="mod\intro\intro_0070_trent.wav" TextArea="Cinematic">Thanks, friend! You are definitely the best person in this godforsaken place!</Static>
-<Static AudioFile="mod\intro\intro_0080_barman.wav" TextArea="Cinematic">But if there's a "first of all", there should be "second of all". Go on and tell me, or else I'll die of curiousity.</Static>
-<Static AudioFile="mod\intro\intro_0090_trent.wav" TextArea="Cinematic">Don't you dare die on me! I'd never get over the loss.</Static>
-<Static AudioFile="mod\intro\intro_0100_trent.wav" TextArea="Cinematic">An old friend sent me a message.</Static>
-<Static AudioFile="mod\intro\intro_0105_trent.wav" TextArea="Cinematic">Look.</Static>
-<Static AudioFile="mod\intro\intro_0110_alaric.wav" TextArea="Cinematic">Greetings, Trent! This is Alaric! Good news. I think we can fix the hole in your finnances. Meet me at Magdeburg, Sigma-13 System. See you soon!</Static>
-<Static AudioFile="mod\intro\intro_0120_trent.wav" TextArea="Cinematic">What do you think?</Static>
-<Static AudioFile="mod\intro\intro_0130_barman.wav" TextArea="Cinematic">I think you're the luckiest son of a bitch on this junkpile of a planet.</Static>
-<Static AudioFile="mod\intro\intro_0140_trent.wav" TextArea="Cinematic">No, I mean... Should I agree and go there?</Static>
-<Static AudioFile="mod\intro\intro_0150_barman.wav" TextArea="Cinematic">You could, of course, let things be as they are and do nothing. Got enough money to sustain yourself; a risk-free life, other than dying in your 40s working in the mine. But, I think, if life gives you a chance to get out of this mud-hole - it's a sin not to take that chance. But, it's your call.</Static>
-<Static AudioFile="mod\intro\intro_0160_trent.wav" TextArea="Cinematic">So why aren't you flying away from this "mud-hole" yourself?</Static>
-<Static AudioFile="mod\intro\intro_0170_barman.wav" TextArea="Cinematic">This, friend, is my mud-hole. I've grown into it and I love it. And I don't have friends like yours, asking me to drop everything I'm doing and come over to Magdeburg. And if I would leave, who's going to be the savior of strangers' souls?</Static>
-<Static AudioFile="mod\intro\intro_0180_trent.wav" TextArea="Cinematic">You're right, without you this place would've been gloomy. I guess I'll head to the spaceport, then.</Static>
-<Static AudioFile="mod\intro\intro_0190_barman.wav" TextArea="Cinematic">Good luck, Trent! Hopefully, we'll never meet here again.</Static>
+<!-- <Static AudioFile="mod\intro\intro_0010_trent.wav" TextArea="Cinematic">The savior of souls!</Static> -->
+<!-- <Static AudioFile="mod\intro\intro_0020_barman.wav" TextArea="Cinematic">Welcome back, Trent. The usual?</Static> -->
+<!-- <Static AudioFile="mod\intro\intro_0030_trent.wav" TextArea="Cinematic">Sure, I'll have two!</Static> -->
+<!-- <Static AudioFile="mod\intro\intro_0040_barman.wav" TextArea="Cinematic">Any reason for this celebration?</Static> -->
+<!-- <Static AudioFile="mod\intro\intro_0050_trent.wav" TextArea="Cinematic">Absolutely. Two reasons actually! First of all, I have finally managed to pay off all my debts!</Static> -->
+<!-- <Static AudioFile="mod\intro\intro_0060_barman.wav" TextArea="Cinematic">For the beginning of a new life! This one's on me!</Static> -->
+<!-- <Static AudioFile="mod\intro\intro_0070_trent.wav" TextArea="Cinematic">Thanks, friend! You are definitely the best person in this godforsaken place!</Static> -->
+<!-- <Static AudioFile="mod\intro\intro_0080_barman.wav" TextArea="Cinematic">But if there's a "first of all", there should be "second of all". Go on and tell me, or else I'll die of curiousity.</Static> -->
+<!-- <Static AudioFile="mod\intro\intro_0090_trent.wav" TextArea="Cinematic">Don't you dare die on me! I'd never get over the loss.</Static> -->
+<!-- <Static AudioFile="mod\intro\intro_0100_trent.wav" TextArea="Cinematic">An old friend sent me a message.</Static> -->
+<!-- <Static AudioFile="mod\intro\intro_0105_trent.wav" TextArea="Cinematic">Look.</Static> -->
+<!-- <Static AudioFile="mod\intro\intro_0110_alaric.wav" TextArea="Cinematic">Greetings, Trent! This is Alaric! Good news. I think we can fix the hole in your finnances. Meet me at Magdeburg, Sigma-13 System. See you soon!</Static> -->
+<!-- <Static AudioFile="mod\intro\intro_0120_trent.wav" TextArea="Cinematic">What do you think?</Static> -->
+<!-- <Static AudioFile="mod\intro\intro_0130_barman.wav" TextArea="Cinematic">I think you're the luckiest son of a bitch on this junkpile of a planet.</Static> -->
+<!-- <Static AudioFile="mod\intro\intro_0140_trent.wav" TextArea="Cinematic">No, I mean... Should I agree and go there?</Static> -->
+<!-- <Static AudioFile="mod\intro\intro_0150_barman.wav" TextArea="Cinematic">You could, of course, let things be as they are and do nothing. Got enough money to sustain yourself; a risk-free life, other than dying in your 40s working in the mine. But, I think, if life gives you a chance to get out of this mud-hole - it's a sin not to take that chance. But, it's your call.</Static> -->
+<!-- <Static AudioFile="mod\intro\intro_0160_trent.wav" TextArea="Cinematic">So why aren't you flying away from this "mud-hole" yourself?</Static> -->
+<!-- <Static AudioFile="mod\intro\intro_0170_barman.wav" TextArea="Cinematic">This, friend, is my mud-hole. I've grown into it and I love it. And I don't have friends like yours, asking me to drop everything I'm doing and come over to Magdeburg. And if I would leave, who's going to be the savior of strangers' souls?</Static> -->
+<!-- <Static AudioFile="mod\intro\intro_0180_trent.wav" TextArea="Cinematic">You're right, without you this place would've been gloomy. I guess I'll head to the spaceport, then.</Static> -->
+<!-- <Static AudioFile="mod\intro\intro_0190_barman.wav" TextArea="Cinematic">Good luck, Trent! Hopefully, we'll never meet here again.</Static> -->
 
-<Static AudioFile="mod\m01\m01_cityscape_0010_stuard.wav" TextArea="Cinematic">Your ticket and documents, sir.</Static>
-<Static AudioFile="mod\m01\m01_cityscape_0020_stuard.wav" TextArea="Cinematic">Trent?.. Are you...</Static>
-<Static AudioFile="mod\m01\m01_cityscape_0030_trent.wav" TextArea="Cinematic">No, just a coincidence.</Static>
-<Static AudioFile="mod\m01\m01_cityscape_0040_trent.wav" TextArea="Cinematic">I'm so sick of it. While my namesake was saving the universe, I was working my ass off to pay off those stupid debts...</Static>
+<!-- <Static AudioFile="mod\m01\m01_cityscape_0010_stuard.wav" TextArea="Cinematic">Your ticket and documents, sir.</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_cityscape_0020_stuard.wav" TextArea="Cinematic">Trent?.. Are you...</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_cityscape_0030_trent.wav" TextArea="Cinematic">No, just a coincidence.</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_cityscape_0040_trent.wav" TextArea="Cinematic">I'm so sick of it. While my namesake was saving the universe, I was working my ass off to pay off those stupid debts...</Static> -->
 
-<Static AudioFile="mod\m01\m01_offer_0010_alaric.wav" TextArea="Cinematic">Hi Trent, glad to see you!</Static>
-<Static AudioFile="mod\m01\m01_offer_0020_trent.wav" TextArea="Cinematic">You too, Alaric.</Static>
-<Static AudioFile="mod\m01\m01_offer_0030_alaric.wav" TextArea="Cinematic">I heard that you've finally dealt with that problem. No more debts, no more duties, right?</Static>
-<Static AudioFile="mod\m01\m01_offer_0040_trent.wav" TextArea="Cinematic">Mhm, no ship and no money either. But it has its benefits - no problems with cargo holds. What's mine is mine.</Static>
-<Static AudioFile="mod\m01\m01_offer_0050_alaric.wav" TextArea="Cinematic">A great time to start a new page in your life, isn't it?</Static>
-<Static AudioFile="mod\m01\m01_offer_0060_alaric.wav" TextArea="Cinematic">I could use a partner for a well-paid job.</Static>
-<Static AudioFile="mod\m01\m01_offer_0070_alaric.wav" TextArea="Cinematic">I'll give you a ship. An old one, of course, but it will definitely survive a few flights till decommission.</Static>
-<Static AudioFile="mod\m01\m01_offer_0080_alaric.wav" TextArea="Cinematic">Gotta escort a few Rheinlanders from New Berlin to Bismark. They pay good, real good.</Static>
-<Static AudioFile="mod\m01\m01_offer_0090_trent.wav" TextArea="Cinematic">Interesting, why would Rheinlanders hire escorts to fly from one system to another, inside their own territory?</Static>
-<Static AudioFile="mod\m01\m01_offer_0100_trent.wav" TextArea="Cinematic">And a spaceship, you say? You're leaving me no choice, Al!</Static>
-<Static AudioFile="mod\m01\m01_offer_0110_alaric.wav" TextArea="Cinematic">Excellent! The ship's waiting for you in the hangar. Check everything over, and I'll meet you outside when you're ready.</Static>
+<!-- <Static AudioFile="mod\m01\m01_offer_0010_alaric.wav" TextArea="Cinematic">Hi Trent, glad to see you!</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_offer_0020_trent.wav" TextArea="Cinematic">You too, Alaric.</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_offer_0030_alaric.wav" TextArea="Cinematic">I heard that you've finally dealt with that problem. No more debts, no more duties, right?</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_offer_0040_trent.wav" TextArea="Cinematic">Mhm, no ship and no money either. But it has its benefits - no problems with cargo holds. What's mine is mine.</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_offer_0050_alaric.wav" TextArea="Cinematic">A great time to start a new page in your life, isn't it?</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_offer_0060_alaric.wav" TextArea="Cinematic">I could use a partner for a well-paid job.</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_offer_0070_alaric.wav" TextArea="Cinematic">I'll give you a ship. An old one, of course, but it will definitely survive a few flights till decommission.</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_offer_0080_alaric.wav" TextArea="Cinematic">Gotta escort a few Rheinlanders from New Berlin to Bismark. They pay good, real good.</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_offer_0090_trent.wav" TextArea="Cinematic">Interesting, why would Rheinlanders hire escorts to fly from one system to another, inside their own territory?</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_offer_0100_trent.wav" TextArea="Cinematic">And a spaceship, you say? You're leaving me no choice, Al!</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_offer_0110_alaric.wav" TextArea="Cinematic">Excellent! The ship's waiting for you in the hangar. Check everything over, and I'll meet you outside when you're ready.</Static> -->
 
-<Static AudioFile="mod\m01\m01_berlin_0010_alaric.wav" TextArea="Cinematic">Guten tag, gentlemen. This is Trent, my friend I was telling you about.</Static>
-<Static AudioFile="mod\m01\m01_berlin_0020_adelmar.wav" TextArea="Cinematic">Excellent. We're glad to see you. We have a few problems in our system. Hopefully, they didn't bother you too much.</Static>
-<Static AudioFile="mod\m01\m01_berlin_0030_trent.wav" TextArea="Cinematic">A little bit. I'm just glad we made it here.</Static>
-<Static AudioFile="mod\m01\m01_berlin_0040_luz.wav" TextArea="Cinematic">Great. If you're doing fine, then let's begin.</Static>
+<!-- <Static AudioFile="mod\m01\m01_berlin_0010_alaric.wav" TextArea="Cinematic">Guten tag, gentlemen. This is Trent, my friend I was telling you about.</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_berlin_0020_adelmar.wav" TextArea="Cinematic">Excellent. We're glad to see you. We have a few problems in our system. Hopefully, they didn't bother you too much.</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_berlin_0030_trent.wav" TextArea="Cinematic">A little bit. I'm just glad we made it here.</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_berlin_0040_luz.wav" TextArea="Cinematic">Great. If you're doing fine, then let's begin.</Static> -->
 
-<Static AudioFile="mod\m01\m01_bizmark_0010_adelmar.wav" TextArea="Cinematic">Thank you for the escort! The money's already being transferred to your accounts!</Static>
-<Static AudioFile="mod\m01\m01_bizmark_0020_trent.wav" TextArea="Cinematic">You're welcome.</Static>
-<Static AudioFile="mod\m01\m01_bizmark_0030_luc.wav" TextArea="Cinematic">Additionally, we, as members of the Hanseatic trading community, have added you to our freelancers' whitelist.</Static>
-<Static AudioFile="mod\m01\m01_bizmark_0040_luc.wav" TextArea="Cinematic">From now on, you can take any missions offered by the Hanseatic merchants.</Static>
-<Static AudioFile="mod\m01\m01_bizmark_0050_alaric.wav" TextArea="Cinematic">And here's for a special thanks to you, gentlemen! Trent, have you heard? We are no longer some kind of beggers in Rheinland territory, but official freelancers accredited by the Hanseatic trading community!</Static>
-<Static AudioFile="mod\m01\m01_bizmark_0060_trent.wav" TextArea="Cinematic">Will I live...</Static>
-<Static AudioFile="mod\m01\m01_bizmark_0070_luc.wav" TextArea="Cinematic">And... Trent, a quick word of advice: As soon as you can, get yourself a newer ship to fly around in. No offense, but such antiquities are bought for novelty reasons. Not to actually fly in space.</Static>
-<Static AudioFile="mod\m01\m01_bizmark_0080_trent.wav" TextArea="Cinematic">I'll think about it.</Static>
-<Static AudioFile="mod\m01\m01_bizmark_0090_alaric.wav" TextArea="Cinematic">So, how's your new life going, Trent?</Static>
-<Static AudioFile="mod\m01\m01_bizmark_0100_trent.wav" TextArea="Cinematic">Exciting. But... Now that I have my own ship, I'm ready to go down the devil's throat.</Static>
-<Static AudioFile="mod\m01\m01_bizmark_0110_alaric.wav" TextArea="Cinematic">Now that you have the money to maintain and refurbish it. And to think it through - you should buy a new one. As painful as it may sound, Luts made a great point.</Static>
-<Static AudioFile="mod\m01\m01_bizmark_0120_trent.wav" TextArea="Cinematic">He can suck it. Maybe he has enough money to change ships every goddamn year, but I'm not a millionaire yet.</Static>
-<Static AudioFile="mod\m01\m01_bizmark_0125_alaric.wav" TextArea="Cinematic">Then just think about upgrading what you already have.</Static>
-<Static AudioFile="mod\m01\m01_bizmark_0130_alaric.wav" TextArea="Cinematic">On that battle, in the asteroid field, you most certainly didn't have enough energy. It certainly won't hurt you to get a better power generator. And take a look at the rest of the package. This chassis is very flexible in terms of upgrades. Most of its modules can be replaced with better ones...</Static>
-<Static AudioFile="mod\m01\m01_bizmark_0140_alaric.wav" TextArea="Cinematic">OK Trent, I got some business to take care of. It requires my immediate attention so I better get going. Will you manage here without me?</Static>
-<Static AudioFile="mod\m01\m01_bizmark_0150_trent.wav" TextArea="Cinematic"> I'll try... Good luck, Alaric!!!</Static>
+<!-- <Static AudioFile="mod\m01\m01_bizmark_0010_adelmar.wav" TextArea="Cinematic">Thank you for the escort! The money's already being transferred to your accounts!</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_bizmark_0020_trent.wav" TextArea="Cinematic">You're welcome.</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_bizmark_0030_luc.wav" TextArea="Cinematic">Additionally, we, as members of the Hanseatic trading community, have added you to our freelancers' whitelist.</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_bizmark_0040_luc.wav" TextArea="Cinematic">From now on, you can take any missions offered by the Hanseatic merchants.</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_bizmark_0050_alaric.wav" TextArea="Cinematic">And here's for a special thanks to you, gentlemen! Trent, have you heard? We are no longer some kind of beggers in Rheinland territory, but official freelancers accredited by the Hanseatic trading community!</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_bizmark_0060_trent.wav" TextArea="Cinematic">Will I live...</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_bizmark_0070_luc.wav" TextArea="Cinematic">And... Trent, a quick word of advice: As soon as you can, get yourself a newer ship to fly around in. No offense, but such antiquities are bought for novelty reasons. Not to actually fly in space.</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_bizmark_0080_trent.wav" TextArea="Cinematic">I'll think about it.</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_bizmark_0090_alaric.wav" TextArea="Cinematic">So, how's your new life going, Trent?</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_bizmark_0100_trent.wav" TextArea="Cinematic">Exciting. But... Now that I have my own ship, I'm ready to go down the devil's throat.</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_bizmark_0110_alaric.wav" TextArea="Cinematic">Now that you have the money to maintain and refurbish it. And to think it through - you should buy a new one. As painful as it may sound, Luts made a great point.</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_bizmark_0120_trent.wav" TextArea="Cinematic">He can suck it. Maybe he has enough money to change ships every goddamn year, but I'm not a millionaire yet.</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_bizmark_0125_alaric.wav" TextArea="Cinematic">Then just think about upgrading what you already have.</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_bizmark_0130_alaric.wav" TextArea="Cinematic">On that battle, in the asteroid field, you most certainly didn't have enough energy. It certainly won't hurt you to get a better power generator. And take a look at the rest of the package. This chassis is very flexible in terms of upgrades. Most of its modules can be replaced with better ones...</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_bizmark_0140_alaric.wav" TextArea="Cinematic">OK Trent, I got some business to take care of. It requires my immediate attention so I better get going. Will you manage here without me?</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_bizmark_0150_trent.wav" TextArea="Cinematic"> I'll try... Good luck, Alaric!!!</Static> -->
+<!-- <Static AudioFile="mod\m01\m01_bizmark_0160_alaric.wav" TextArea="Cinematic">Bye-bye!</Static> -->
+
+<!-- <Static AudioFile="mod\m02\m02_offer_0010_trent.wav" TextArea="Cinematic">Wilhelm, I assume?</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_offer_0020_wilham.wav" TextArea="Cinematic">Indeed, Herr Trent. I'm glad that you've chosen to work with us.</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_offer_0030_trent.wav" TextArea="Cinematic">I haven't agreed yet, but I'm definitely interested. It's not every day that a representative of the Rheinland military messages my PDA, with a proposal to meet in person, on board a Rheinland military battleship.</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_offer_0040_wilham.wav" TextArea="Cinematic">Which messages are you referring to?</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_offer_0050_trent.wav" TextArea="Cinematic">These ones... Shit. What's going on? They were right there...</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_offer_0060_wilham.wav" TextArea="Cinematic">To hell with those messages, Herr Trent, let's get to the point. And so, I hope you understand, that regardless of how our conversation ends, all its details should remain between us?</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_offer_0070_trent.wav" TextArea="Cinematic">Should - means they would. You military guys don't like messing around... By the way, why me?</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_offer_0080_wilham.wav" TextArea="Cinematic">Why not? You proved yourself well in the Brandenburg Outpost incident.</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_offer_0090_trent.wav" TextArea="Cinematic">Gotcha. Let's get to the mission, shall we?</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_offer_0100_wilham.wav" TextArea="Cinematic">Alright. Like any other government, we have some informants in territories of our, let's say, geopolitical rivals. You understand?</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_offer_0110_trent.wav" TextArea="Cinematic">Sure.</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_offer_0120_wilham.wav" TextArea="Cinematic">Very well. Not so long ago, one of our informants contacted us via secure channel, reporting that he had extremely critical information and headed to our dedicated data transmission point. And, as traditional detective stories go, he never arrived there. No sign received from him during the last week, neither in the transmission point, nor through emergency channels. It can only mean one thing - he is dead.</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_offer_0130_wilham.wav" TextArea="Cinematic">Based on the analysis of chatter between station dispatchers and operators of emergency services in the area of our interest, with a probability of over ninety-nine percent, we've established that the ship of our informant was attacked, and he was killed.</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_offer_0140_trent.wav" TextArea="Cinematic">My condolences. But what do I have to do with it?</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_offer_0150_wilham.wav" TextArea="Cinematic">Your mission is to find that ship and remove the data of interest from it. It has to be done as soon as possible, since the activity of so-called "Junkers" in the area is extremely high. You have to get ahead of them.</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_offer_0160_trent.wav" TextArea="Cinematic">I doubt that I can get ahead of them. First of all, I don't know the area as well as they do. Secondly, unlike them, I'll be there on my own.</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_offer_0170_wilham.wav" TextArea="Cinematic">You can. The thing is, there's a tech enthusiast who's developing devices that can track them and listen to their radio comms. We've been interested in luring him into our department for a while now, so we're closely watching him.</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_offer_0180_trent.wav" TextArea="Cinematic">Like you're watching me?</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_offer_0190_wilham.wav" TextArea="Cinematic">Even closer. He's been testing his devices in our area of interest. Therefore, he has the best intel regarding every event that recently occurred in that area of space. You'll have to get in touch with him, make an arrangement to get the informant's ship's wreckage coordinates, remove the data from it, and transfer it to us... Without letting any scavenger get to it before you do, naturally.</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_offer_0200_trent.wav" TextArea="Cinematic">And that's it? Can I start now?</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_offer_0210_wilham.wav" TextArea="Cinematic">If you agree, there's no "I", but a "We". I'll be assigned as your partner for the duration of this mission.</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_offer_0220_trent.wav" TextArea="Cinematic">Will you be in control of my actions?</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_offer_0230_wilham.wav" TextArea="Cinematic">No. I'll be your wingman and help you interact with the authorities - I have a fairly high level of clearance in Rheinland systems. The strategical and tactical sides of this operation are entirely on you, Herr Trent.</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_offer_0240_trent.wav" TextArea="Cinematic">Thanks for trusting me... Where do I sign?</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_offer_0250_wilham.wav" TextArea="Cinematic">Ha-ha-ha. Why would we require such formalities? I'll meet you in space, Herr Trent!</Static> -->
+
+
+<!-- <Static AudioFile="mod\m02\m02_miner_0010_trent.wav" TextArea="Cinematic">Greetings!</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_miner_0020_jacobo.wav" TextArea="Cinematic">Likewise. What'cha need?</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_miner_0030_trent.wav" TextArea="Cinematic">Wilhelm sent me.</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_miner_0040_jacobo.wav" TextArea="Cinematic">Very well.</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_miner_0045_jacobo.wav" TextArea="Cinematic">And what does Herr Wilhelm need this time?</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_miner_0050_trent.wav" TextArea="Cinematic">Coordinates of some wrecked ship.</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_miner_0060_jacobo.wav" TextArea="Cinematic">Ah! Piece of cake. I'll throw in all the points of accidents involving damage to ships over the past month. Accuracy of twenty millimeters, give or take a few. Choose the one you need, filtered by criteria. No need to thank me.</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_miner_0070_trent.wav" TextArea="Cinematic">We'll fly there together.</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_miner_0080_jacobo.wav" TextArea="Cinematic">And why's that?</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_miner_0090_trent.wav" TextArea="Cinematic">Wilhelm said that you'll point me to the place of our interest, and I'll have to find it. And how can I possibly know that you're not bullshitting me, to make a half-an-hour trip last till dawn? The military has their own quirks, and so does the freelancer.</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_miner_0100_jacobo.wav" TextArea="Cinematic">A hundred times I curse the day I agreed to help Wilhelm.</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_miner_0110_jacobo.wav" TextArea="Cinematic">And where's he now? Chilling in a bar on a nearby trading outpost?</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_miner_0120_jacobo.wav" TextArea="Cinematic">Whatever happens out there, he has nothing to do with it, while you and I are the main characters.</Static> -->
+
+
+
+
+
+<!-- <Static AudioFile="mod\m02\m02_done_0010_reichman.wav" TextArea="Cinematic">So here's the famous Trent.</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_done_0020_trent.wav" TextArea="Cinematic">And what am I so famous for, Mr... Umm...</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_done_0030_reichman.wav" TextArea="Cinematic">Reichmann. Admiral Reichmann, if you may.</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_done_0040_trent.wav" TextArea="Cinematic">It's my honor, Admiral Reichmann! So, what am I so famous for?</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_done_0050_reichman.wav" TextArea="Cinematic">Oh, Herr Trent, lately some of the higher circles have all been talking about you! I hope Herr Wilhelm adequately pays for your work.</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_done_0060_trent.wav" TextArea="Cinematic">I'm not complaining.</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_done_0070_reichman.wav" TextArea="Cinematic">Modesty - a commendable virtue, Herr Trent, I see virtue often taken for granted. I'll make sure the payment for your last mission will be doubled. All the best to you, Herr Trent!</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_done_0080_reichman.wav" TextArea="Cinematic">So you think that he's the one we need?</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_done_0090_wilham.wav" TextArea="Cinematic">Undoubtedly, Herr Admiral. He's the one who can help us accomplish all our tasks at hand.</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_done_0100_reichman.wav" TextArea="Cinematic">Can you guarantee that?</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_done_0110_wilham.wav" TextArea="Cinematic">Absolutely!</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_done_0120_reichman.wav" TextArea="Cinematic">Very well, We execute your plan.</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_done_0130_wilham.wav" TextArea="Cinematic">Thank you for your trust.</Static> -->
+<!-- <Static AudioFile="mod\m02\m02_done_0140_reichman.wav" TextArea="Cinematic">We will see what comes out of that. You're dismissed, Herr Wilhelm.</Static> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <Static AudioFile="mod\m03\m03_offer_0010_trent.wav" TextArea="Cinematic">Greetings, gentlemen.</Static> -->
+<!-- <Static AudioFile="mod\m03\m03_offer_0020_wilham.wav" TextArea="Cinematic">There you are, Herr Trent. Meet Herr Hassler. This mission will require both of you to tightly work together.</Static> -->
+<!-- <Static AudioFile="mod\m03\m03_offer_0030_trent.wav" TextArea="Cinematic">An honor to meet you, Herr Hassler.</Static> -->
+<!-- <Static AudioFile="mod\m03\m03_offer_0040_trent.wav" TextArea="Cinematic">And what will we do on this mission?</Static> -->
+<!-- <Static AudioFile="mod\m03\m03_offer_0050_wilham.wav" TextArea="Cinematic">The usual thing. Fly, shoot, nothing new.</Static> -->
+<!-- <Static AudioFile="mod\m03\m03_offer_0060_trent.wav" TextArea="Cinematic">And someone is watching from a safe distance. Definitely nothing new. Can you be more specific?</Static> -->
+<!-- <Static AudioFile="mod\m03\m03_offer_0070_wilham.wav" TextArea="Cinematic">Of course. Our intelligence managed to track down Dietrich's position. He's on an ex-military base in Konigsberg.</Static> -->
+<!-- <Static AudioFile="mod\m03\m03_offer_0075_wilham.wav" TextArea="Cinematic">A strike fleet is preparing to attack that base as we speak. However, our analytics predict that a direct attack on Konigsberg would cause severe losses on our side. </Static> -->
+<!-- <Static AudioFile="mod\m03\m03_offer_0077_wilham.wav" TextArea="Cinematic">That's why we're forming a mobile strike team, whose task will be to neutralize the base's defense systems by the time our main strike fleet approaches it.</Static> -->
+<!-- <Static AudioFile="mod\m03\m03_offer_0080_trent.wav" TextArea="Cinematic">You mean, those will be the guys who drag fire away from your asses.</Static> -->
+<!-- <Static AudioFile="mod\m03\m03_offer_0090_wilham.wav" TextArea="Cinematic">Correct, Herr Trent. By the way, Admiral Reichmann personally insisted on your participation in this mission.</Static> -->
+<!-- <Static AudioFile="mod\m03\m03_offer_0100_trent.wav" TextArea="Cinematic">I'm flattered. Could you tell me how an elite military base, with top class defense systems, practically in the very center of Rheinland's territory, got abandoned and fell into the hands of rebels and Corsairs?</Static> -->
+<!-- <Static AudioFile="mod\m03\m03_offer_0110_hassler.wav" TextArea="Cinematic">Herr Trent, at that time there were two such bases in Rheinland territory - Konigsberg and Regensburg, both in the Munich system, on the border with Kusari. The Kusari military saw Regensburg as nothing more than a pain in their ass.</Static> -->
+<!-- <Static AudioFile="mod\m03\m03_offer_0115_hassler.wav" TextArea="Cinematic">During our last conflict with Kusari, we suffered a crushing defeat, and under the terms of a peace treaty we were forced to demilitarize Munich. The construction of Konigsberg was halted just before it was finished... </Static> -->
+<!-- <Static AudioFile="mod\m03\m03_offer_0120_hassler.wav" TextArea="Cinematic">Our government couldn't bother destroying Konigsberg, or disassembling it. Maybe they hoped for the peace treaty to be re-negotiated so they can put the base into use, I don't know. Eventually, it appeared that Dietrich, one of the highest-ranking military personnel, having all the access keys, simply occupied it...</Static> -->
+<!-- <Static AudioFile="mod\m03\m03_offer_0130_trent.wav" TextArea="Cinematic">It seems that asking all sorts of stupid questions, like whether I have a choice, is inappropriate in this situation.</Static> -->
+<!-- <Static AudioFile="mod\m03\m03_offer_0140_wilham.wav" TextArea="Cinematic">You're a wise man, Herr Trent. </Static> -->
+<!-- <Static AudioFile="mod\m03\m03_offer_0150_hassler.wav" TextArea="Cinematic">Herr Trent, ninety percent of the local freelancers can only dream of being in your shoes. You're being paid generously, and reporting directly to Admiral Reichmann.</Static> -->
+<!-- <Static AudioFile="mod\m03\m03_offer_0155_hassler.wav" TextArea="Cinematic">Why are you as nervous as a high-school student before graduation? Let's fly. I'll see you in space.</Static> -->
+
+
+<!-- <Static AudioFile="mod\m03\m03_reward_0010_hassler.wav" TextArea="Cinematic">I asked the locals, they don't know shit. Anyways, thank you, Trent. Your work here is done, we'll be looking for the transport on our channels. Unfortunately, since we screwed up, Reichmann significantly cut the payment.</Static> -->
+<!-- <Static AudioFile="mod\m03\m03_reward_0020_trent.wav" TextArea="Cinematic">Strange. The base was destroyed, Dietrich's dead, and Reichmann freaks out because of some transport. I don't like this.</Static> -->
+<!-- <Static AudioFile="mod\m03\m03_reward_0030_hassler.wav" TextArea="Cinematic">Me neither... The money's been transferred to your account. See you later.</Static> -->
+
+
+
+<!-- <Static AudioFile="mod\m04\m04_offer_0010_jacobo.wav" TextArea="Cinematic">Herr Trent, is that you?</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_offer_0020_jacobo.wav" TextArea="Cinematic">Herr Trent, thank you so much for coming. I'm in trouble. The Rheinland authorities are looking for me.</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_offer_0030_trent.wav" TextArea="Cinematic">I already guessed that. And I'm getting that familiar sense of someone trying to get me into trouble.</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_offer_0040_jacobo.wav" TextArea="Cinematic">Herr Trent, you do not understand. A matter of utmost importance. I need to deliver important documents to Liberty.</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_offer_0050_trent.wav" TextArea="Cinematic">And yet again I'm being dragged into a game of espionage... Jacobo, are you aware that I'm currently working for the very same Rheinland authorities you're trying to avoid?</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_offer_0060_jacobo.wav" TextArea="Cinematic">Herr Trent, you're a freelancer. You did not take an oath. After the job is done, nothing connects you to your client.</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_offer_0062_jacobo.wav" TextArea="Cinematic">Herr Trent, if we can deliver these VERY important documents to Liberty, to the Forbes system, they'll pay us a lot of money, and I mean a LOT, you see?</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_offer_0065_jacobo.wav" TextArea="Cinematic">I probably won't make it alone, but with you on my side...</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_offer_0067_jacobo.wav" TextArea="Cinematic">And if you don't help me, they'll probably just kill me...</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_offer_0070_trent.wav" TextArea="Cinematic">I'm gonna regret doing that... So, what's the plan?</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_offer_0080_jacobo.wav" TextArea="Cinematic">Herr Trent, thank you! You won't regret it! Launch into space. My friends will help me get to the landing pad quietly. Meet me in orbit.</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_offer_0090_trent.wav" TextArea="Cinematic">See you there.</Static> -->
+
+
+<!-- <Static AudioFile="echo_m04.utf|0xAAD01AC4" TextArea="Cinematic">This is commander Marcus Creitmire of the Hessian Lions special operations unit.</Static> -->
+<!-- <Static AudioFile="echo_m04.utf|0x96D304C4" TextArea="Cinematic">Power your weapon systems down immediately, and follow our lead. If you try to resist, we have the authority to destroy you.</Static> -->
+<!-- <Static AudioFile="echo_m04.utf|0x9B797FCD" TextArea="Cinematic">Herr Creitmire, you're being misled! Manipulated! Let go of the escort!</Static> -->
+<!-- <Static AudioFile="echo_m04.utf|0x89A49807" TextArea="Cinematic">Words - they take too much time. Torpedoes are faster.</Static> -->
+
+<!-- <Static AudioFile="mod\m04\m04_reward_0010_hatcher.wav" TextArea="Cinematic">Gentlemen.</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_reward_0020_trent.wav" TextArea="Cinematic">Miss Hatcher.</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_reward_0030_alaric.wav" TextArea="Cinematic">Miss Hatcher, you have such lovely, deep eyes.</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_reward_0040_hatcher.wav" TextArea="Cinematic">Cut this nonsense immediately, you don't want to irritate me.</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_reward_0045_hatcher.wav" TextArea="Cinematic">Let's get to our business. You've done a fine job.</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_reward_0050_hatcher.wav" TextArea="Cinematic">I will avoid asking how you managed to escape Rheinland with THIS kind of material.</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_reward_0055_hatcher.wav" TextArea="Cinematic">I'm a delicate lady, I'm afraid I might not be able to handle it.</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_reward_0060_trent.wav" TextArea="Cinematic">We did what we had to do.</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_reward_0070_hatcher.wav" TextArea="Cinematic">Heh, seems like you had fun. And by the way, we are looking for top-notch skilled Freelancers such as yourselves to help us perform, say, some non-standard tasks. Have you got any plans for the near future?</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_reward_0080_alaric.wav" TextArea="Cinematic">We've always got time for you...</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_reward_0090_trent.wav" TextArea="Cinematic">Shut up, Alaric. Since we're now considered enemies of the Rheinland state, I suppose we don't have any plans yet.</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_reward_0100_hatcher.wav" TextArea="Cinematic">So, if we have a couple of well-paid tasks that fit your field of work...</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_reward_0110_trent.wav" TextArea="Cinematic">Then we won't hesitate to fulfill them. That is, unless these tasks make us enemies of the Liberty state, too.</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_reward_0120_hatcher.wav" TextArea="Cinematic">Oh dear, no, I don't think it'll ever come to this.</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_reward_0130_trent.wav" TextArea="Cinematic">Sure hope so...</Static> -->
+
+<!-- <Static AudioFile="mod\m04\m04_final_0010_alaric.wav" TextArea="Cinematic">Awesome, Trent! Who knew you'd be so good at finding clients and closing deals?</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_final_0020_trent.wav" TextArea="Cinematic">I'm also good at making enemies and getting close to being murdered.</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_final_0030_alaric.wav" TextArea="Cinematic">Oh come on... You just started your freelancing career, a complete newbie, and now you're taking jobs for the government with appropriate payments!</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_final_0040_trent.wav" TextArea="Cinematic">Mhm, one of those governments have already put a price on my head. And oh do I hope they forget about me soon with everything that's going on there.</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_final_0050_alaric.wav" TextArea="Cinematic">Seriously, the Rheinland military will most likely fall apart soon. They won't bother looking for us.</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_final_0060_trent.wav" TextArea="Cinematic">You seem very confident. Come on, Alaric, what are you hiding from me?</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_final_0070_alaric.wav" TextArea="Cinematic">That Miss Hatcher, do you know who she is?</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_final_0080_trent.wav" TextArea="Cinematic">Well, of course I do! I've known her for a whole three hours! Screw you, Alaric.</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_final_0090_alaric.wav" TextArea="Cinematic">She's an officer in one of Liberty's secret service agencies.</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_final_0100_trent.wav" TextArea="Cinematic">God dammit! Not again...</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_final_0110_alaric.wav" TextArea="Cinematic">You don't get it. It's such a special and secret service, that not even their own counterparts in their own government know they exist.</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_final_0120_trent.wav" TextArea="Cinematic">Then how do you know that, Alaric?</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_final_0130_alaric.wav" TextArea="Cinematic">Ah... E-e-e...</Static> -->
+<!-- <Static AudioFile="mod\m04\m04_final_0140_trent.wav" TextArea="Cinematic">I can't believe I got into this botch again!</Static> -->
+
+
+
+<!-- <Static AudioFile="mod\m05\m05_offer_0010_hatcher.wav" TextArea="Cinematic">How are you, Mr. Trent? Doing fine?</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_offer_0020_trent.wav" TextArea="Cinematic">Well, Miss Hatcher, yesterday I twisted my ankle. And today, when I got out of the shower, I felt stinging pain in my back. But everything's fine regardless.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_offer_0030_hatcher.wav" TextArea="Cinematic">Mr. Trent! Let's try not to turn a polite greeting into a massive joke. </Static> -->
+<!-- <Static AudioFile="mod\m05\m05_offer_0040_trent.wav" TextArea="Cinematic">Then why won't we skip the politeness and get straight to business?</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_offer_0050_hatcher.wav" TextArea="Cinematic">You're not making it any easier for me...</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_offer_0060_hatcher.wav" TextArea="Cinematic">We've analyzed the documents you brought us, they proved to be of great value to us. However, there's only one problem.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_offer_0070_trent.wav" TextArea="Cinematic">There's always a problem.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_offer_0080_hatcher.wav" TextArea="Cinematic">They're complicated scientific papers, consisting of very advanced scientific calculations. So advanced, in fact, that our scientists couldn't stop arguing over their meanings.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_offer_0090_hatcher.wav" TextArea="Cinematic">You know, Mr. Trent, watching scientists fight each other is very entertaining.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_offer_0100_trent.wav" TextArea="Cinematic">Shame I couldn't watch them. So where do I come in? Surely you don't want me to watch over your scientists...</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_offer_0110_hatcher.wav" TextArea="Cinematic">We'll need the help of a very experienced scientist, an expert in his field. Someone who could give us an accurate interpretation of these documents.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_offer_0120_hatcher.wav" TextArea="Cinematic">Luckily, I happen know a person of such skill; Professor Mandrake. If he can't figure it out, no one can.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_offer_0130_trent.wav" TextArea="Cinematic">And you can't just call him and ask for his help, because...</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_offer_0140_hatcher.wav" TextArea="Cinematic">Because he works for Deep Space Engineering, and he's currently occupied with a research expedition. A very important one it seems, because it serves to counter industrial espionage that has ears deep inside our companies.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_offer_0150_trent.wav" TextArea="Cinematic">And my assignment will be...</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_offer_0160_hatcher.wav" TextArea="Cinematic">Flying in space... Enough, Mr. Trent. You'll need to fly to Detroit station, which is DSE's HQ. Fond Professor Mandrake, and bring him to me.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_offer_0170_hatcher.wav" TextArea="Cinematic">I'll give you my business card in case you encounter any problems with DSE's security officers. Tell them you're working for me.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_offer_0180_trent.wav" TextArea="Cinematic">Alliance Security Force? Never heard of it.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_offer_0190_hatcher.wav" TextArea="Cinematic">It matters not, Mr. Trent. Your reward for completing this assignment will be very generous.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_offer_0200_trent.wav" TextArea="Cinematic">Ok, I'll get you what you need.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_offer_0210_hatcher.wav" TextArea="Cinematic">O-kay freelancer, now let's see what you are all about. You've got quite a mouth there, now it's time to prove your worth in complicated situations. I'll be watching over you... From afar.</Static> -->
+
+<!-- <Static AudioFile="mod\m05\m05_piratebar_0010_trent.wav" TextArea="Cinematic">Hey, bro! Got some more of that? I've been flying in space all day long, could use something to clear my mind...</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_piratebar_0020_smith.wav" TextArea="Cinematic">No way, man! Been doing this shit for hours now, that's some of the good stuff!</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_piratebar_0030_trent.wav" TextArea="Cinematic">Those jackasses from DSE really pissed me off. I did a fair job for them, and they can't even let me land on Detroit! Not even for a quick drop-off, these assholes just won't let me in! </Static> -->
+<!-- <Static AudioFile="mod\m05\m05_piratebar_0040_trent.wav" TextArea="Cinematic">And I have some really fine stuff in my cargo hold... Went on a months-long journey all the way to Omicron, and that stupid businessman just fends me off like I'm nothing.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_piratebar_0050_trent.wav" TextArea="Cinematic">And now, since they're apparently ready to kill me, I'm sitting here dunking myself in poison... Heck knows when they're gonna calm down...</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_piratebar_0055_trent.wav" TextArea="Cinematic">Ah, could be really nice if I just stumbled upon a security pass... I'd just go and grab my hard-earned payment and get out with my hands full...</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_piratebar_0060_smith.wav" TextArea="Cinematic">Listen, friend... What's your name? </Static> -->
+<!-- <Static AudioFile="mod\m05\m05_piratebar_0070_trent.wav" TextArea="Cinematic">Trent. And you are?</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_piratebar_0080_smith.wav" TextArea="Cinematic">Smith. Mr. Smith.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_piratebar_0090_trent.wav" TextArea="Cinematic">Nice to meet you, Mr. Smith. You were saying...?</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_piratebar_0100_smith.wav" TextArea="Cinematic">Yeah? Yeah... Oh, yeah! I know where you can get a security pass.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_piratebar_0110_trent.wav" TextArea="Cinematic">Oh, really? Where?</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_piratebar_0120_smith.wav" TextArea="Cinematic">Look. There's a secret warehouse in this area. They got a couple of security passes kept there just in case, that I know for sure. You could try negotiating with them, but, you're a... Nobody. And the warehouse is top secret!</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_piratebar_0130_trent.wav" TextArea="Cinematic">Gotcha, bro! </Static> -->
+<!-- <Static AudioFile="mod\m05\m05_piratebar_0140_smith.wav" TextArea="Cinematic">Come back with those full hands of yours...</Static> -->
+
+<!-- <Static AudioFile="echo_m05_player.utf|0xBB166EC9" TextArea="Cinematic">Hello? Is anyone home?</Static> -->
+<!-- <Static AudioFile="echo_m05.utf|0x87C69209" TextArea="Cinematic">Hey, what the hell was that?</Static> -->
+<!-- <Static AudioFile="echo_m05.utf|0xA7C752C9" TextArea="Cinematic">Hey stranger! You don`t look like you belong here. Did you lose something?</Static> -->
+<!-- <Static AudioFile="echo_m05_player.utf|0x9B1622CA" TextArea="Cinematic">A little bird named Mr. Smith told me that I can get a Detroit security pass for a reasonable price here.</Static> -->
+<!-- <Static AudioFile="echo_m05.utf|0x87C47F48" TextArea="Cinematic">That stupid... I`m gonna finish that stoner off right now! He smoked his last blunt.</Static> -->
+<!-- <Static AudioFile="echo_m05.utf|0xA7C4FF08" TextArea="Cinematic">Let's deal with this douchebag first.</Static> -->
+
+<!-- <Static AudioFile="mod\m05\m05_detroit_0010_trent.wav" TextArea="Cinematic">Hey friend, I'm looking for some professor named Mandrake. Have you seen him around here?</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_detroit_0020_barman.wav" TextArea="Cinematic">I've never heard this name before.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_detroit_0030_trent.wav" TextArea="Cinematic">Aren't you a nice one. Take a look, friend. I'm from the bartender's union.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_detroit_0040_barman.wav" TextArea="Cinematic">Oh shit, you're one of these... Could you just show it to the camera over there, so that I can verify later?</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_detroit_0045_barman.wav" TextArea="Cinematic">Aha, thanks. He's on a research station in Sigma-17.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_detroit_0050_trent.wav" TextArea="Cinematic">What station?</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_detroit_0060_barman.wav" TextArea="Cinematic">R-e-s-e-a-r-c-h Station. Got it? Strange, your kind are usually the smart ones.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_detroit_0070_trent.wav" TextArea="Cinematic">OK, thanks for the info. You see how easy it is to just go ahead and melt the ice? </Static> -->
+<!-- <Static AudioFile="mod\m05\m05_detroit_0080_trent.wav" TextArea="Cinematic">That's exactly what Humanity lacks – a little bit of warmth.</Static> -->
+
+<!-- <Static AudioFile="echo_m05.utf|0xB8D06E41" TextArea="Cinematic">Freelancer alpha-one, turn your weapons down and follow us to battleship Griffin.</Static> -->
+<!-- <Static AudioFile="echo_m05_player.utf|0x9BCE24CA" TextArea="Cinematic">What the... I was just flying to Forbes, what's the matter?</Static> -->
+<!-- <Static AudioFile="echo_m05.utf|0xB8086841" TextArea="Cinematic">Freelancer alpha-one, I repeat, turn your weapons down and follow us to battleship Griffin. That's an order from commander Tilton. If you fail to comply, we will open fire.</Static> -->
+<!-- <Static AudioFile="echo_m05_female.utf|0x8E3E0F8C" TextArea="Cinematic">Hey there, boys! This freelancer is under my jurisdiction. Calm down. He's on our side. Is that clear?</Static> -->
+<!-- <Static AudioFile="echo_m05.utf|0x9DE4630B" TextArea="Cinematic">Miss Hatcher! Long time no see. Your agents have been quite a pain in the ass lately. But now, oh, now you've crossed the line! </Static> -->
+<!-- <Static AudioFile="echo_m05.utf|0x9DF06201" TextArea="Cinematic">This freelancer is responsible for no less than the destruction of the Clark research station! And I have the authority, by all means, to deal with him as I please!</Static> -->
+<!-- <Static AudioFile="echo_m05_player.utf|0xBBCF48C1" TextArea="Cinematic">I'm responsible for WHAT? The station blew up from the inside, while I was out in space waiting for...</Static> -->
+<!-- <Static AudioFile="echo_m05.utf|0xBE32F78C" TextArea="Cinematic">Shut up, Trent!</Static> -->
+<!-- <Static AudioFile="echo_m05.utf|0x9133830B" TextArea="Cinematic">Shut up, freelancer!</Static> -->
+<!-- <Static AudioFile="echo_m05.utf|0xB4838B4B" TextArea="Cinematic">Attention, we're reading hostiles on our radar!</Static> -->
+<!-- <Static AudioFile="echo_m05.utf|0x8CCD2DC9" TextArea="Cinematic">What a coincidence, Herr Trent! Do you know what's the penalty for treason in Rheinland? That's right, death! All wingmen, engage!</Static> -->
+
+<!-- <Static AudioFile="mod\m05\m05_equip_0010_hatcher.wav" TextArea="Cinematic">Professor Mandrake.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0020_mandrake.wav" TextArea="Cinematic">Miss Hatcher.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0030_hatcher.wav" TextArea="Cinematic">Professor, I apologize in Tilton's name for keeping you in your capsule an extra hour.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0040_mandrake.wav" TextArea="Cinematic">That bastard, I thought he was over you but he can't stop trying to catch you, Miss Hatcher.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0050_hatcher.wav" TextArea="Cinematic">The more he tries, the simpler and dumber his schemes become.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0060_mandrake.wav" TextArea="Cinematic">You'd better be wary of this kind of person. Statistically, if he tried enough times, he will eventually achieve his goal.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0070_hatcher.wav" TextArea="Cinematic">With Tilton? That's highly unlikely. He thinks that doing the same thing over and over again, expecting different results, is not considered crazy.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0080_mandrake.wav" TextArea="Cinematic">Yeah, but it's all about his "progressive ideas" that the Order have already outlived their purpose, and it's time for Liberty to stop playing around and end them once and for all...</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0090_hatcher.wav" TextArea="Cinematic">Only childish morons like him would support his ideas.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0100_trent.wav" TextArea="Cinematic">Wait, wait, wait! Am I just a decoration here? Please explain what's going on.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0110_mandrake.wav" TextArea="Cinematic">It'll be very difficult and time consuming.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0120_trent.wav" TextArea="Cinematic">Let's start with the simple things, what's the Order?</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0130_hatcher.wav" TextArea="Cinematic">It's not that simple, Trent… It's an organization...</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0140_trent.wav" TextArea="Cinematic">That much I understand. Let's not force the information out of Miss Hatcher; give her the freedom of choice.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0150_mandrake.wav" TextArea="Cinematic">Tell him.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0160_hatcher.wav" TextArea="Cinematic">Fine. But what I'm about to say shouldn't just stay between us. This information is highly classified, and Trent, if you ever disclose it...</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0170_trent.wav" TextArea="Cinematic">Yeah, yeah, I get it. You'll personally kick my balls.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0180_hatcher.wav" TextArea="Cinematic">Don't flatter yourself. It's a job for guys like Tilton.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0190_trent.wav" TextArea="Cinematic">Okay, I'm shaking in fear. Now let's get down to business. </Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0200_hatcher.wav" TextArea="Cinematic">Nobody knows how the Order was formed, or who formed it. All we know is that it used to be a powerful organization founded by people of massive influence. Their goal was to ensure humanity's survival by monitoring threats,</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0210_hatcher.wav" TextArea="Cinematic">and they weren't interested in wars between nations. Not even the 80-year war, although they do deserve credit for making it an 80-year war rather than 200.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0220_hatcher.wav" TextArea="Cinematic">The Order only takes care of serious threats to humanity as a whole. One such threat has already come upon us a good while ago,</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0230_hatcher.wav" TextArea="Cinematic">when we faced a parasitic alien race. That threat was isolated, all thanks to the Order.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0240_trent.wav" TextArea="Cinematic">A series of mysterious deaths among government officials of several nations, which the media described as unfortunate events.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0250_hatcher.wav" TextArea="Cinematic">Exactly. The media hushed it, even though humanity was on the verge of war between all nations, played by an alien race called "Nomads".</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0260_trent.wav" TextArea="Cinematic">Disguised as "cross-border incidents". </Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0270_hatcher.wav" TextArea="Cinematic">Precise. Although, they were never really incidents. It was a full-on war involving everyone, Nomads included. A silent war, however, with the influence of the Order. </Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0280_hatcher.wav" TextArea="Cinematic">All those involved received their awards discretely, and everyone agreed it should never be spoken of again. </Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0290_trent.wav" TextArea="Cinematic">Major King, my own namesake, Jun'Ko Zhane?</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0300_mandrake.wav" TextArea="Cinematic">He's smarter than he looks.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0310_hatcher.wav" TextArea="Cinematic">I picked him myself... And so, Trent, the Order gained massive influence over our geopolitical systems, putting the organization under immediate risk. </Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0320_hatcher.wav" TextArea="Cinematic">But, in our conservatively democratic society, the king of the hill rules. Whoever gets a chance to climb over by pushing others down, wins.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0330_hatcher.wav" TextArea="Cinematic">And so, an aspiring group of warriors decided to rise against the Order for no apparent reason.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0340_hatcher.wav" TextArea="Cinematic">If you sent them to battle against a Nomad fleet, they'll shit their pants and cry for their moms. But in the peaceful days of modern Liberty, they'll happily wage war against the Order.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0350_hatcher.wav" TextArea="Cinematic">And it goes without saying that the Order is run by people, not robots. Where there's people involved, conflict arises...</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0360_trent.wav" TextArea="Cinematic">And they lived happily ever after, right?</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0370_hatcher.wav" TextArea="Cinematic">The story's not over yet… And there's not really a happy ending. The Order split into two independent organizations: The Alliance Security Force, and the New Order.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0380_trent.wav" TextArea="Cinematic">So the Order is no more.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0390_hatcher.wav" TextArea="Cinematic">Well, not exactly. The Alliance Security Force oversees Liberty territories, among other things, despite resistance from some of Liberty's powers. Those powers are run by douchebags like Tilton.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0400_hatcher.wav" TextArea="Cinematic">But in no way does it mean that we forgot our main goal – to protect humanity from external threats.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0410_trent.wav" TextArea="Cinematic">If you say so...</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0420_hatcher.wav" TextArea="Cinematic">Now, Trent, can I finally...</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0430_trent.wav" TextArea="Cinematic">Sure.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0440_hatcher.wav" TextArea="Cinematic">Professor, Rheinland officials have gotten their hands on intel about Omicron Alpha...</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0450_mandrake.wav" TextArea="Cinematic">And...</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0460_hatcher.wav" TextArea="Cinematic">They've captured the objective and are making progress with it.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0470_mandrake.wav" TextArea="Cinematic">Rheinlanders are running experiments on the sphere in Omicron Alpha??? Are you out of your mind??? What have you done??? Mr. Trent was right… The Order really is no more...</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0480_trent.wav" TextArea="Cinematic">About that Mr. Trent...</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0490_hatcher.wav" TextArea="Cinematic">What else do you need?</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0500_trent.wav" TextArea="Cinematic">Toss a coin to your freelancer.</Static> -->
+<!-- <Static AudioFile="mod\m05\m05_equip_0510_hatcher.wav" TextArea="Cinematic">Ah, yes, sorry. I'm transferring your credits. We'll be in touch.</Static> -->
+
+<!-- <Static AudioFile="mod\m06\m06_offer_0010_trent.wav" TextArea="Cinematic">Miss Hatcher. Alaric, I didn't expect to see you here so soon.</Static> -->
+<!-- <Static AudioFile="mod\m06\m06_offer_0020_alaric.wav" TextArea="Cinematic">Well, as soon as you contacted me, I flew to see Miss Hatcher right away. Looks like I was closer to Norwich than you were.</Static> -->
+<!-- <Static AudioFile="mod\m06\m06_offer_0030_hatcher.wav" TextArea="Cinematic">Gentlemen, now that we've all figured out when and how we all got here, shall we get down to business?</Static> -->
+<!-- <Static AudioFile="mod\m06\m06_offer_0040_hatcher.wav" TextArea="Cinematic">Great! So, as I mentioned before, there's an alien object called The Sphere. Originally discovered by The Order, nobody could understand what it is or how it works back then. And so, it got lost in time.</Static> -->
+<!-- <Static AudioFile="mod\m06\m06_offer_0050_hatcher.wav" TextArea="Cinematic">We’ve learned that Rheinlanders have discovered its key, and are currently running their experiments on it. We have reasons to believe that this will not end well for us. That's why we need your help in... ceasing these experiments, so to speak.</Static> -->
+<!-- <Static AudioFile="mod\m06\m06_offer_0060_trent.wav" TextArea="Cinematic">Ha-ha-ha! Perfect. So, if you guys can't find the key to The Sphere, then no one can! And if someone else finds it, then either the key or The Sphere itself have to go. Bravo! This way no one will ever get in there.</Static> -->
+<!-- <Static AudioFile="mod\m06\m06_offer_0070_hatcher.wav" TextArea="Cinematic">I don't appreciate you being sarcastic about it, Mr. Trent. It already happened once, when another group of Rheinland scientists discovered something in the Omicron sector… Oh, how I despise these Rheinlanders...</Static> -->
+<!-- <Static AudioFile="mod\m06\m06_offer_0080_hatcher.wav" TextArea="Cinematic">It escalated into the crisis that I told you about when Prof. Mandrake was here. You get the idea, right?</Static> -->
+<!-- <Static AudioFile="mod\m06\m06_offer_0090_trent.wav" TextArea="Cinematic">Yeah, I get it. Don’t open Pandora's Box.</Static> -->
+<!-- <Static AudioFile="mod\m06\m06_offer_0100_hatcher.wav" TextArea="Cinematic">Very well. Now that we’re done with the theory, let’s get practical. You’ll be receiving triple the usual payment, and you’ll be granted the privilege of being official partners of the ASF.</Static> -->
+<!-- <Static AudioFile="mod\m06\m06_offer_0110_alaric.wav" TextArea="Cinematic">Hell yeah, I'm in! Where do I sign? I can make it a blood oath!</Static> -->
+<!-- <Static AudioFile="mod\m06\m06_offer_0120_trent.wav" TextArea="Cinematic">Calm down, Alaric. Miss Hatcher, what exactly is the objective? Destroy The Sphere? Kill the scientists? I can’t just do that - I'm not an assassin, after all.</Static> -->
+<!-- <Static AudioFile="mod\m06\m06_offer_0130_hatcher.wav" TextArea="Cinematic">Oh, is that so? Just kidding. No, it's nothing like that. Based on the secret documents you handed over, Professor Mandrake found a way to render The Sphere insensitive to external influences. To “seal it shut”, as the professor says.</Static> -->
+<!-- <Static AudioFile="mod\m06\m06_offer_0140_hatcher.wav" TextArea="Cinematic">I'll provide the full details, but only if you accept this mission.</Static> -->
+<!-- <Static AudioFile="mod\m06\m06_offer_0150_trent.wav" TextArea="Cinematic">I'm having a de-ja-vu. Only last time, I was called "Herr Trent", not "Mr. Trent"... On the other hand, it was a lot of fun. Alright, count me in.</Static> -->
+<!-- <Static AudioFile="mod\m06\m06_offer_0160_hatcher.wav" TextArea="Cinematic">Then I'll meet you in the orbit; we'll continue our conversation there.</Static> -->
+
+<!-- <Static AudioFile="mod\m06\m06_briefing_0010_hatcher.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_briefing_0020_trent.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_briefing_0030_hatcher.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_briefing_0040_hatcher.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_briefing_0050_hatcher.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_briefing_0060_hatcher.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_briefing_0070_hatcher.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_briefing_0080_alaric.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_briefing_0090_trent.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_briefing_0100_hatcher.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_briefing_0110_trent.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_briefing_0120_hatcher.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_briefing_0130_hatcher.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_briefing_0140_hatcher.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_briefing_0150_hatcher.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_briefing_0160_hatcher.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_briefing_0170_hatcher.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_briefing_0180_hatcher.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_briefing_0190_trent.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_briefing_0200_hatcher.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_briefing_0210_hatcher.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_briefing_0220_hatcher.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_briefing_0230_alaric.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_briefing_0240_hatcher.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_briefing_0250_hatcher.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_briefing_0260_alaric.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_briefing_0270_hatcher.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_briefing_0280_hatcher.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_briefing_0290_hatcher.wav" TextArea="Cinematic"></Static> -->
+
+<!-- <Static AudioFile="mod\m06\m06_mount_0010_trent.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_mount_0020_alaric.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_mount_0030_trent.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_mount_0040_alaric.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_mount_0050_trent.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_mount_0060_alaric.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_mount_0070_trent.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_mount_0080_alaric.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_mount_0090_trent.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_lab_land_0010_alaric.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_lab_land_0020_trent.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_lab_land_0030_alaric.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_lab_land_0040_trent.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_lab_room_0010_trent.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_lab_room_0020_alaric.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_torpedo_alert_0010_hatcher.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_torpedo_alert_0020_hatcher.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_torpedo_alert_0040_trent.wav" TextArea="Cinematic"></Static> -->
+<!-- <Static AudioFile="mod\m06\m06_torpedo_alert_0050_hatcher.wav" TextArea="Cinematic"></Static> -->
+
+
+
+
+<Static AudioFile="mod\intro\intro_0010_trent.wav" TextArea="Cinematic">Le sauveur des âmes!</Static>
+<Static AudioFile="mod\intro\intro_0020_barman.wav" TextArea="Cinematic">Bienvenue, Trent. Comme d'habitude ? </Static>
+<Static AudioFile="mod\intro\intro_0030_trent.wav" TextArea="Cinematic">Bien sûr, j'en prendrai deux!</Static>
+<Static AudioFile="mod\intro\intro_0040_barman.wav" TextArea="Cinematic">Une raison pour cette fête ? </Static>
+<Static AudioFile="mod\intro\intro_0050_trent.wav" TextArea="Cinematic">Absolument. Deux raisons en fait ! Tout d'abord, j'ai enfin réussi à rembourser toutes mes dettes!</Static>
+<Static AudioFile="mod\intro\intro_0060_barman.wav" TextArea="Cinematic">Pour le début d'une nouvelle vie ! Celui-là est pour moi!</Static>
+<Static AudioFile="mod\intro\intro_0070_trent.wav" TextArea="Cinematic">Merci, mon ami ! Tu es certainement la meilleure personne dans cet endroit paumé !</Static>
+<Static AudioFile="mod\intro\intro_0080_barman.wav" TextArea="Cinematic">Mais s'il y a un "premier de tous", il devrait y avoir un "second de tous". Allez-y, dites-le moi, sinon je mourrai de curiosité. </Static>
+<Static AudioFile="mod\intro\intro_0090_trent.wav" TextArea="Cinematic">Ne t'avise pas de mourir sur moi ! Je ne me remettrais jamais de cette perte. </Static>
+<Static AudioFile="mod\intro\intro_0100_trent.wav" TextArea="Cinematic">Un vieil ami m'a envoyé un message.</Static>
+<Static AudioFile="mod\intro\intro_0105_trent.wav" TextArea="Cinematic">Regardez.</Static>
+<Static AudioFile="mod\intro\intro_0110_alaric.wav" TextArea="Cinematic">Bonjour, Trent ! C'est Alaric ! Bonne nouvelle. Je pense que nous pouvons réparer le trou dans vos finances. Retrouve-moi à Magdeburg, dans le système Sigma-13. A bientôt!</Static>
+<Static AudioFile="mod\intro\intro_0120_trent.wav" TextArea="Cinematic">Que pensez-vous ? </Static>
+<Static AudioFile="mod\intro\intro_0130_barman.wav" TextArea="Cinematic">Je pense que tu es le fils de pute le plus chanceux sur ce tas de ferraille de planète.</Static>
+<Static AudioFile="mod\intro\intro_0140_trent.wav" TextArea="Cinematic">Non, je veux dire... Dois-je accepter et y aller ? </Static>
+<Static AudioFile="mod\intro\intro_0150_barman.wav" TextArea="Cinematic">Vous pourriez, bien sûr, laisser les choses en l'état et ne rien faire. Vous avez assez d'argent pour subvenir à vos besoins ; une vie sans risque, à part celui de mourir dans la quarantaine en travaillant à la mine. Mais, je pense que si la vie vous donne une chance de sortir de ce trou de boue - c'est un péché de ne pas saisir cette chance. Mais, c'est à vous de voir. </Static>
+<Static AudioFile="mod\intro\intro_0160_trent.wav" TextArea="Cinematic">Alors pourquoi ne vous envolez-vous pas vous-même de ce "trou de boue" ? </Static>
+<Static AudioFile="mod\intro\intro_0170_barman.wav" TextArea="Cinematic">Voici, mon ami, mon trou de boue. J'ai grandi dedans et je l'aime. Et je n'ai pas d'amis comme les tiens, qui me demandent de laisser tomber tout ce que je fais pour venir à Magdebourg. Et si je partais, qui serait le sauveur des âmes des étrangers ? </Static>
+<Static AudioFile="mod\intro\intro_0180_trent.wav" TextArea="Cinematic">Vous avez raison, sans vous cet endroit aurait été lugubre. Je suppose que je vais me diriger vers le spatioport, alors. </Static>
+<Static AudioFile="mod\intro\intro_0190_barman.wav" TextArea="Cinematic">Bonne chance, Trent ! Avec un peu de chance, nous ne nous reverrons plus jamais ici.</Static>
+
+<Static AudioFile="mod\m01\m01_cityscape_0010_stuard.wav" TextArea="Cinematic">Votre billet et vos documents, monsieur.</Static>
+<Static AudioFile="mod\m01\m01_cityscape_0020_stuard.wav" TextArea="Cinematic">Trent ... Es-tu...</Static>
+<Static AudioFile="mod\m01\m01_cityscape_0030_trent.wav" TextArea="Cinematic">Non, juste une coïncidence.</Static>
+<Static AudioFile="mod\m01\m01_cityscape_0040_trent.wav" TextArea="Cinematic">J'en ai tellement marre. Pendant que mon homonyme sauvait l'univers, je travaillais comme un fou pour rembourser ces stupides dettes... </Static>
+
+<Static AudioFile="mod\m01\m01_offer_0010_alaric.wav" TextArea="Cinematic">Hi Trent, content de te voir!</Static>
+<Static AudioFile="mod\m01\m01_offer_0020_trent.wav" TextArea="Cinematic">Toi aussi, Alaric.</Static>
+<Static AudioFile="mod\m01\m01_offer_0030_alaric.wav" TextArea="Cinematic">J'ai entendu dire que tu avais enfin réglé ce problème. Plus de dettes, plus de devoirs, n'est-ce pas ? </Static>
+<Static AudioFile="mod\m01\m01_offer_0040_trent.wav" TextArea="Cinematic">Mhm, pas de bateau et pas d'argent non plus. Mais ça a ses avantages - pas de problèmes avec les cales. Ce qui est à moi est à moi. </Static>
+<Static AudioFile="mod\m01\m01_offer_0050_alaric.wav" TextArea="Cinematic">C'est le moment idéal pour commencer une nouvelle page de votre vie, n'est-ce pas ? </Static>
+<Static AudioFile="mod\m01\m01_offer_0060_alaric.wav" TextArea="Cinematic">Je pourrais utiliser un partenaire pour un travail bien payé.</Static>
+<Static AudioFile="mod\m01\m01_offer_0070_alaric.wav" TextArea="Cinematic">Je vais vous donner un vaisseau. Un vieux, bien sûr, mais il survivra certainement à quelques vols jusqu'au déclassement.</Static>
+<Static AudioFile="mod\m01\m01_offer_0080_alaric.wav" TextArea="Cinematic">Je dois escorter quelques Rhénans de New Berlin à Bismark. Ils paient bien.</Static>
+
+<Static AudioFile="mod\m01\m01_offer_0090_trent.wav" TextArea="Cinematic">Intéressant, pourquoi les Rhénans engageraient-ils des escortes pour voler d'un système à l'autre, à l'intérieur de leur propre territoire ? </Static>
+<Static AudioFile="mod\m01\m01_offer_0100_trent.wav" TextArea="Cinematic">Et un vaisseau spatial, vous dites ? Tu ne me laisses pas le choix, Al!</Static>
+<Static AudioFile="mod\m01\m01_offer_0110_alaric.wav" TextArea="Cinematic">Excellent ! Le vaisseau vous attend dans le hangar. Vérifiez tout, et je vous retrouverai dehors quand vous serez prêt.</Static>
+
+<Static AudioFile="mod\m01\m01_berlin_0010_alaric.wav" TextArea="Cinematic">Guten tag, messieurs. Voici Trent, mon ami dont je vous ai parlé.</Static>
+<Static AudioFile="mod\m01\m01_berlin_0020_adelmar.wav" TextArea="Cinematic">Excellent. Nous sommes heureux de vous voir. Nous avons quelques problèmes dans notre système. J'espère qu'ils ne vous ont pas trop dérangé.</Static>
+<Static AudioFile="mod\m01\m01_berlin_0030_trent.wav" TextArea="Cinematic">Un peu. Je suis juste heureux que nous soyons arrivés ici. </Static>
+<Static AudioFile="mod\m01\m01_berlin_0040_luz.wav" TextArea="Cinematic">Génial. Si tout va bien, alors commençons. </Static>
+
+<Static AudioFile="mod\m01\m01_bizmark_0010_adelmar.wav" TextArea="Cinematic">Merci pour l'escorte ! L'argent est déjà transféré sur vos comptes!</Static>
+<Static AudioFile="mod\m01\m01_bizmark_0020_trent.wav" TextArea="Cinematic">Vous êtes les bienvenus.</Static>
+<Static AudioFile="mod\m01\m01_bizmark_0030_luc.wav" TextArea="Cinematic">En outre, en tant que membres de la communauté commerciale hanséatique, nous vous avons ajouté à notre liste blanche de free-lances.</Static>
+<Static AudioFile="mod\m01\m01_bizmark_0040_luc.wav" TextArea="Cinematic">Dès à présent, vous pouvez accepter toutes les missions proposées par les marchands hanséatiques.</Static>
+<Static AudioFile="mod\m01\m01_bizmark_0050_alaric.wav" TextArea="Cinematic">Et voici pour un remerciement spécial à vous, messieurs ! Trent, tu as entendu ? Nous ne sommes plus des sortes de mendiants en territoire rhénan, mais des indépendants officiels accrédités par la communauté commerciale hanséatique !</Static>
+<Static AudioFile="mod\m01\m01_bizmark_0060_trent.wav" TextArea="Cinematic">Vais-je vivre...</Static>
+<Static AudioFile="mod\m01\m01_bizmark_0070_luc.wav" TextArea="Cinematic">Et... Trent, un petit conseil : Dès que tu le peux, trouve-toi un vaisseau plus récent pour voler. Ne le prends pas mal, mais ces antiquités sont achetées pour des raisons de nouveauté. Pas pour voler dans l'espace. </Static>
+<Static AudioFile="mod\m01\m01_bizmark_0080_trent.wav" TextArea="Cinematic">Je vais y réfléchir.</Static>
+<Static AudioFile="mod\m01\m01_bizmark_0090_alaric.wav" TextArea="Cinematic">Alors, comment se passe ta nouvelle vie, Trent ? </Static>
+<Static AudioFile="mod\m01\m01_bizmark_0100_trent.wav" TextArea="Cinematic">Excitant. Mais... Maintenant que j'ai mon propre vaisseau, je suis prêt à descendre dans la gorge du diable. </Static>
+<Static AudioFile="mod\m01\m01_bizmark_0110_alaric.wav" TextArea="Cinematic">Maintenant que vous avez l'argent pour l'entretenir et le remettre à neuf. Et pour bien y réfléchir - vous devriez en acheter un nouveau. Aussi douloureux que cela puisse paraître, Luts a soulevé un excellent point.</Static>
+<Static AudioFile="mod\m01\m01_bizmark_0120_trent.wav" TextArea="Cinematic">Il peut aller se faire voir. Il a peut-être assez d'argent pour changer de bateau tous les ans, mais je ne suis pas encore millionnaire. </Static>
+<Static AudioFile="mod\m01\m01_bizmark_0125_alaric.wav" TextArea="Cinematic">Puis pense juste à améliorer ce que tu as déjà.</Static>
+<Static AudioFile="mod\m01\m01_bizmark_0130_alaric.wav" TextArea="Cinematic">Lors de cette bataille, dans le champ d'astéroïdes, vous n'aviez très certainement pas assez d'énergie. Cela ne vous fera certainement pas de mal d'avoir un meilleur générateur d'énergie. Et jetez un coup d'œil au reste de l'ensemble. Ce châssis est très flexible en termes d'améliorations. La plupart de ses modules peuvent être remplacés par des modules plus performants...</Static>
+<Static AudioFile="mod\m01\m01_bizmark_0140_alaric.wav" TextArea="Cinematic">OK Trent, j'ai quelques affaires à régler. Cela requiert mon attention immédiate, donc je ferais mieux d'y aller. Tu vas te débrouiller ici sans moi ? </Static>
+<Static AudioFile="mod\m01\m01_bizmark_0150_trent.wav" TextArea="Cinematic">Je vais essayer... Bonne chance, Alaric ! !! </Static>
 <Static AudioFile="mod\m01\m01_bizmark_0160_alaric.wav" TextArea="Cinematic">Bye-bye!</Static>
 
-<Static AudioFile="mod\m02\m02_offer_0010_trent.wav" TextArea="Cinematic">Wilhelm, I assume?</Static>
-<Static AudioFile="mod\m02\m02_offer_0020_wilham.wav" TextArea="Cinematic">Indeed, Herr Trent. I'm glad that you've chosen to work with us.</Static>
-<Static AudioFile="mod\m02\m02_offer_0030_trent.wav" TextArea="Cinematic">I haven't agreed yet, but I'm definitely interested. It's not every day that a representative of the Rheinland military messages my PDA, with a proposal to meet in person, on board a Rheinland military battleship.</Static>
-<Static AudioFile="mod\m02\m02_offer_0040_wilham.wav" TextArea="Cinematic">Which messages are you referring to?</Static>
-<Static AudioFile="mod\m02\m02_offer_0050_trent.wav" TextArea="Cinematic">These ones... Shit. What's going on? They were right there...</Static>
-<Static AudioFile="mod\m02\m02_offer_0060_wilham.wav" TextArea="Cinematic">To hell with those messages, Herr Trent, let's get to the point. And so, I hope you understand, that regardless of how our conversation ends, all its details should remain between us?</Static>
-<Static AudioFile="mod\m02\m02_offer_0070_trent.wav" TextArea="Cinematic">Should - means they would. You military guys don't like messing around... By the way, why me?</Static>
-<Static AudioFile="mod\m02\m02_offer_0080_wilham.wav" TextArea="Cinematic">Why not? You proved yourself well in the Brandenburg Outpost incident.</Static>
-<Static AudioFile="mod\m02\m02_offer_0090_trent.wav" TextArea="Cinematic">Gotcha. Let's get to the mission, shall we?</Static>
-<Static AudioFile="mod\m02\m02_offer_0100_wilham.wav" TextArea="Cinematic">Alright. Like any other government, we have some informants in territories of our, let's say, geopolitical rivals. You understand?</Static>
+<Static AudioFile="mod\m02\m02_offer_0010_trent.wav" TextArea="Cinematic">Wilhelm, je suppose ? </Static>
+<Static AudioFile="mod\m02\m02_offer_0020_wilham.wav" TextArea="Cinematic">En effet, Herr Trent. Je suis heureux que vous ayez choisi de travailler avec nous. </Static>
+<Static AudioFile="mod\m02\m02_offer_0030_trent.wav" TextArea="Cinematic">Je n'ai pas encore accepté, mais je suis définitivement intéressé. Ce n'est pas tous les jours qu'un représentant de l'armée de la Rhénanie envoie un message à mon PDA, avec une proposition de rencontre en personne, à bord d'un cuirassé militaire de la Rhénanie.</Static>
+<Static AudioFile="mod\m02\m02_offer_0040_wilham.wav" TextArea="Cinematic">De quels messages parlez-vous ? </Static>
+
+<Static AudioFile="mod\m02\m02_offer_0050_trent.wav" TextArea="Cinematic">Ceux-là... Merde. Qu'est-ce qui se passe ? Ils étaient juste là...</Static>
+<Static AudioFile="mod\m02\m02_offer_0060_wilham.wav" TextArea="Cinematic">Au diable ces messages, Herr Trent, allons droit au but. Et donc, j'espère que vous comprenez, que quelle que soit la fin de notre conversation, tous ses détails doivent rester entre nous ? </Static>
+<Static AudioFile="mod\m02\m02_offer_0070_trent.wav" TextArea="Cinematic">Devrait - signifie qu'ils le feraient. Vous, les militaires, vous n'aimez pas déconner... Au fait, pourquoi moi ? </Static>
+<Static AudioFile="mod\m02\m02_offer_0080_wilham.wav" TextArea="Cinematic">Pourquoi pas ? Vous avez fait vos preuves lors de l'incident de l'avant-poste de Brandenburg. </Static>
+<Static AudioFile="mod\m02\m02_offer_0090_trent.wav" TextArea="Cinematic">Gotcha. Allons à la mission, d'accord ? </Static>
+<Static AudioFile="mod\m02\m02_offer_0100_wilham.wav" TextArea="Cinematic">D'accord. Comme tout autre gouvernement, nous avons quelques informateurs dans les territoires de nos, disons, rivaux géopolitiques. Vous comprenez ? </Static>
 <Static AudioFile="mod\m02\m02_offer_0110_trent.wav" TextArea="Cinematic">Sure.</Static>
-<Static AudioFile="mod\m02\m02_offer_0120_wilham.wav" TextArea="Cinematic">Very well. Not so long ago, one of our informants contacted us via secure channel, reporting that he had extremely critical information and headed to our dedicated data transmission point. And, as traditional detective stories go, he never arrived there. No sign received from him during the last week, neither in the transmission point, nor through emergency channels. It can only mean one thing - he is dead.</Static>
-<Static AudioFile="mod\m02\m02_offer_0130_wilham.wav" TextArea="Cinematic">Based on the analysis of chatter between station dispatchers and operators of emergency services in the area of our interest, with a probability of over ninety-nine percent, we've established that the ship of our informant was attacked, and he was killed.</Static>
-<Static AudioFile="mod\m02\m02_offer_0140_trent.wav" TextArea="Cinematic">My condolences. But what do I have to do with it?</Static>
-<Static AudioFile="mod\m02\m02_offer_0150_wilham.wav" TextArea="Cinematic">Your mission is to find that ship and remove the data of interest from it. It has to be done as soon as possible, since the activity of so-called "Junkers" in the area is extremely high. You have to get ahead of them.</Static>
-<Static AudioFile="mod\m02\m02_offer_0160_trent.wav" TextArea="Cinematic">I doubt that I can get ahead of them. First of all, I don't know the area as well as they do. Secondly, unlike them, I'll be there on my own.</Static>
-<Static AudioFile="mod\m02\m02_offer_0170_wilham.wav" TextArea="Cinematic">You can. The thing is, there's a tech enthusiast who's developing devices that can track them and listen to their radio comms. We've been interested in luring him into our department for a while now, so we're closely watching him.</Static>
-<Static AudioFile="mod\m02\m02_offer_0180_trent.wav" TextArea="Cinematic">Like you're watching me?</Static>
-<Static AudioFile="mod\m02\m02_offer_0190_wilham.wav" TextArea="Cinematic">Even closer. He's been testing his devices in our area of interest. Therefore, he has the best intel regarding every event that recently occurred in that area of space. You'll have to get in touch with him, make an arrangement to get the informant's ship's wreckage coordinates, remove the data from it, and transfer it to us... Without letting any scavenger get to it before you do, naturally.</Static>
-<Static AudioFile="mod\m02\m02_offer_0200_trent.wav" TextArea="Cinematic">And that's it? Can I start now?</Static>
-<Static AudioFile="mod\m02\m02_offer_0210_wilham.wav" TextArea="Cinematic">If you agree, there's no "I", but a "We". I'll be assigned as your partner for the duration of this mission.</Static>
-<Static AudioFile="mod\m02\m02_offer_0220_trent.wav" TextArea="Cinematic">Will you be in control of my actions?</Static>
-<Static AudioFile="mod\m02\m02_offer_0230_wilham.wav" TextArea="Cinematic">No. I'll be your wingman and help you interact with the authorities - I have a fairly high level of clearance in Rheinland systems. The strategical and tactical sides of this operation are entirely on you, Herr Trent.</Static>
-<Static AudioFile="mod\m02\m02_offer_0240_trent.wav" TextArea="Cinematic">Thanks for trusting me... Where do I sign?</Static>
-<Static AudioFile="mod\m02\m02_offer_0250_wilham.wav" TextArea="Cinematic">Ha-ha-ha. Why would we require such formalities? I'll meet you in space, Herr Trent!</Static>
+<Static AudioFile="mod\m02\m02_offer_0120_wilham.wav" TextArea="Cinematic">Très bien. Il n'y a pas si longtemps, l'un de nos informateurs nous a contactés via un canal sécurisé, signalant qu'il détenait des informations extrêmement critiques et qu'il se dirigeait vers notre point de transmission de données dédié. Et, comme le veut la tradition des romans policiers, il n'y est jamais arrivé. Aucun signe reçu de lui au cours de la dernière semaine, ni au point de transmission, ni par les canaux d'urgence. Cela ne peut signifier qu'une chose - il est mort.</Static>
+<Static AudioFile="mod\m02\m02_offer_0130_wilham.wav" TextArea="Cinematic">Sur la base de l'analyse du bavardage entre les répartiteurs des stations et les opérateurs des services d'urgence dans la zone qui nous intéresse, avec une probabilité de plus de quatre-vingt-dix-neuf pour cent, nous avons établi que le vaisseau de notre informateur a été attaqué, et qu'il a été tué.</Static>
+<Static AudioFile="mod\m02\m02_offer_0140_trent.wav" TextArea="Cinematic">Mes condoléances. Mais qu'est-ce que j'ai à voir avec ça ? </Static>
+<Static AudioFile="mod\m02\m02_offer_0150_wilham.wav" TextArea="Cinematic">Votre mission est de trouver ce vaisseau et d'en retirer les données intéressantes. Cela doit être fait le plus rapidement possible, car l'activité des "Junkers" dans la région est extrêmement élevée. Vous devez les devancer.</Static>
+<Static AudioFile="mod\m02\m02_offer_0160_trent.wav" TextArea="Cinematic">Je doute de pouvoir les devancer. Tout d'abord, je ne connais pas la région aussi bien qu'eux. Deuxièmement, contrairement à eux, je serai là-bas tout seul.</Static>
+<Static AudioFile="mod\m02\m02_offer_0170_wilham.wav" TextArea="Cinematic">Vous pouvez. Le truc, c'est qu'il y a un passionné de technologie qui développe des appareils qui peuvent les suivre et écouter leurs communications radio. Cela fait un moment que nous souhaitons l'attirer dans notre service, alors nous le surveillons de près.</Static>
+<Static AudioFile="mod\m02\m02_offer_0180_trent.wav" TextArea="Cinematic">Comme si vous me regardiez ? </Static>
+<Static AudioFile="mod\m02\m02_offer_0190_wilham.wav" TextArea="Cinematic">Encore plus près. Il a testé ses appareils dans notre zone d'intérêt. Par conséquent, il a les meilleures informations sur tous les événements qui se sont produits récemment dans cette zone de l'espace. Vous devrez entrer en contact avec lui, vous arranger pour obtenir les coordonnées de l'épave du vaisseau de l'informateur, en extraire les données et nous les transférer... Sans laisser aucun charognard s'en emparer avant vous, naturellement.</Static>
+<Static AudioFile="mod\m02\m02_offer_0200_trent.wav" TextArea="Cinematic">Et c'est tout ? Je peux commencer maintenant ? </Static>
+<Static AudioFile="mod\m02\m02_offer_0210_wilham.wav" TextArea="Cinematic">Si vous êtes d'accord, il n'y a pas de "Je", mais un "Nous". Je serai désigné comme votre partenaire pour la durée de cette mission.</Static>
+<Static AudioFile="mod\m02\m02_offer_0220_trent.wav" TextArea="Cinematic">Vous contrôlerez mes actions ? </Static>
+<Static AudioFile="mod\m02\m02_offer_0230_wilham.wav" TextArea="Cinematic">Non. Je serai ton ailier et t'aiderai à interagir avec les autorités - j'ai un niveau d'autorisation assez élevé dans les systèmes de Rhénanie. Les côtés stratégiques et tactiques de cette opération sont entièrement sur vous, Herr Trent.</Static>
+<Static AudioFile="mod\m02\m02_offer_0240_trent.wav" TextArea="Cinematic">Merci de me faire confiance... Où dois-je signer ? </Static>
+<Static AudioFile="mod\m02\m02_offer_0250_wilham.wav" TextArea="Cinematic">Ha-ha-ha. Pourquoi aurions-nous besoin de telles formalités ? Je vous retrouve dans l'espace, Herr Trent !</Static>
 
 
-<Static AudioFile="mod\m02\m02_miner_0010_trent.wav" TextArea="Cinematic">Greetings!</Static>
-<Static AudioFile="mod\m02\m02_miner_0020_jacobo.wav" TextArea="Cinematic">Likewise. What'cha need?</Static>
-<Static AudioFile="mod\m02\m02_miner_0030_trent.wav" TextArea="Cinematic">Wilhelm sent me.</Static>
-<Static AudioFile="mod\m02\m02_miner_0040_jacobo.wav" TextArea="Cinematic">Very well.</Static>
-<Static AudioFile="mod\m02\m02_miner_0045_jacobo.wav" TextArea="Cinematic">And what does Herr Wilhelm need this time?</Static>
-<Static AudioFile="mod\m02\m02_miner_0050_trent.wav" TextArea="Cinematic">Coordinates of some wrecked ship.</Static>
-<Static AudioFile="mod\m02\m02_miner_0060_jacobo.wav" TextArea="Cinematic">Ah! Piece of cake. I'll throw in all the points of accidents involving damage to ships over the past month. Accuracy of twenty millimeters, give or take a few. Choose the one you need, filtered by criteria. No need to thank me.</Static>
-<Static AudioFile="mod\m02\m02_miner_0070_trent.wav" TextArea="Cinematic">We'll fly there together.</Static>
-<Static AudioFile="mod\m02\m02_miner_0080_jacobo.wav" TextArea="Cinematic">And why's that?</Static>
-<Static AudioFile="mod\m02\m02_miner_0090_trent.wav" TextArea="Cinematic">Wilhelm said that you'll point me to the place of our interest, and I'll have to find it. And how can I possibly know that you're not bullshitting me, to make a half-an-hour trip last till dawn? The military has their own quirks, and so does the freelancer.</Static>
-<Static AudioFile="mod\m02\m02_miner_0100_jacobo.wav" TextArea="Cinematic">A hundred times I curse the day I agreed to help Wilhelm.</Static>
-<Static AudioFile="mod\m02\m02_miner_0110_jacobo.wav" TextArea="Cinematic">And where's he now? Chilling in a bar on a nearby trading outpost?</Static>
-<Static AudioFile="mod\m02\m02_miner_0120_jacobo.wav" TextArea="Cinematic">Whatever happens out there, he has nothing to do with it, while you and I are the main characters.</Static>
+<Static AudioFile="mod\m02\m02_miner_0010_trent.wav" TextArea="Cinematic">Vœux!</Static>
+<Static AudioFile="mod\m02\m02_miner_0020_jacobo.wav" TextArea="Cinematic">Simplement. What'cha need ? </Static>
+<Static AudioFile="mod\m02\m02_miner_0030_trent.wav" TextArea="Cinematic">Wilhelm m'envoie.</Static>
+<Static AudioFile="mod\m02\m02_miner_0040_jacobo.wav" TextArea="Cinematic">Très bien.</Static>
 
+<Static AudioFile="mod\m02\m02_miner_0045_jacobo.wav" TextArea="Cinematic">Et de quoi Herr Wilhelm a-t-il besoin cette fois ? </Static>
+<Static AudioFile="mod\m02\m02_miner_0050_trent.wav" TextArea="Cinematic">Coordonnées d'une épave de navire.</Static>
+<Static AudioFile="mod\m02\m02_miner_0060_jacobo.wav" TextArea="Cinematic">Ah ! C'est du gâteau. J'ajouterai tous les points d'accidents impliquant des dégâts sur des vaisseaux au cours du mois dernier. Précision de vingt millimètres, à quelques uns près. Choisissez celui dont vous avez besoin, filtré par des critères. Pas besoin de me remercier.</Static>
+<Static AudioFile="mod\m02\m02_miner_0070_trent.wav" TextArea="Cinematic">Nous volerons là-bas ensemble.</Static>
+<Static AudioFile="mod\m02\m02_miner_0080_jacobo.wav" TextArea="Cinematic">Et pourquoi ça ? </Static>
+<Static AudioFile="mod\m02\m02_miner_0090_trent.wav" TextArea="Cinematic">Wilhelm a dit que tu m'indiquerais le lieu qui nous intéresse, et que je devrais le trouver. Et comment puis-je savoir que tu ne me racontes pas d'histoires pour faire durer un voyage d'une demi-heure jusqu'à l'aube ? Les militaires ont leurs propres bizarreries, et les indépendants aussi.</Static>
+<Static AudioFile="mod\m02\m02_miner_0100_jacobo.wav" TextArea="Cinematic">Je maudis cent fois le jour où j'ai accepté d'aider Wilhelm.</Static>
+<Static AudioFile="mod\m02\m02_miner_0110_jacobo.wav" TextArea="Cinematic">Et où est-il maintenant ? Il se détend dans un bar sur un avant-poste commercial voisin ? </Static>
+<Static AudioFile="mod\m02\m02_miner_0120_jacobo.wav" TextArea="Cinematic">Quoi qu'il arrive là-bas, il n'y est pour rien, alors que vous et moi sommes les personnages principaux.</Static>
 
+<Static AudioFile="mod\m02\m02_done_0010_reichman.wav" TextArea="Cinematic">Voici donc le fameux Trent.</Static>
+<Static AudioFile="mod\m02\m02_done_0020_trent.wav" TextArea="Cinematic">Et qu'est-ce qui me rend si célèbre, Monsieur... Umm...</Static>
+<Static AudioFile="mod\m02\m02_done_0030_reichman.wav" TextArea="Cinematic">Reichmann. Amiral Reichmann, si vous le permettez.</Static>
+<Static AudioFile="mod\m02\m02_done_0040_trent.wav" TextArea="Cinematic">C'est un honneur pour moi, Amiral Reichmann ! Alors, pourquoi suis-je si célèbre ? </Static>
+<Static AudioFile="mod\m02\m02_done_0050_reichman.wav" TextArea="Cinematic">Oh, Herr Trent, ces derniers temps, les hautes sphères ne parlent que de vous ! J'espère que Herr Wilhelm paie convenablement votre travail. </Static>
+<Static AudioFile="mod\m02\m02_done_0060_trent.wav" TextArea="Cinematic">Je ne me plains pas.</Static>
+<Static AudioFile="mod\m02\m02_done_0070_reichman.wav" TextArea="Cinematic">Modestie - une vertu louable, Herr Trent, je vois une vertu souvent prise pour acquise. Je m'assurerai que le paiement de votre dernière mission soit doublé. Bonne chance à vous, Herr Trent !</Static>
+<Static AudioFile="mod\m02\m02_done_0080_reichman.wav" TextArea="Cinematic">Vous pensez donc que c'est lui qu'il nous faut ? </Static>
+<Static AudioFile="mod\m02\m02_done_0090_wilham.wav" TextArea="Cinematic">Indubitablement, Herr Admiral. Il est celui qui peut nous aider à accomplir toutes nos tâches à portée de main.</Static>
+<Static AudioFile="mod\m02\m02_done_0100_reichman.wav" TextArea="Cinematic">Pouvez-vous le garantir ? </Static>
+<Static AudioFile="mod\m02\m02_done_0110_wilham.wav" TextArea="Cinematic">Absolument!</Static>
+<Static AudioFile="mod\m02\m02_done_0120_reichman.wav" TextArea="Cinematic">Très bien, nous exécutons votre plan.</Static>
+<Static AudioFile="mod\m02\m02_done_0130_wilham.wav" TextArea="Cinematic">Merci pour votre confiance.</Static>
+<Static AudioFile="mod\m02\m02_done_0140_reichman.wav" TextArea="Cinematic">Nous verrons ce qu'il en ressort. Vous êtes congédié, Herr Wilhelm. </Static>
 
+<Static AudioFile="mod\m03\m03_offer_0010_trent.wav" TextArea="Cinematic">Vœux, messieurs.</Static>
+<Static AudioFile="mod\m03\m03_offer_0020_wilham.wav" TextArea="Cinematic">Vous voilà, Herr Trent. Je vous présente Herr Hassler. Cette mission va nécessiter que vous travailliez tous les deux en étroite collaboration.</Static>
+<Static AudioFile="mod\m03\m03_offer_0030_trent.wav" TextArea="Cinematic">Un honneur de vous rencontrer, Herr Hassler.</Static>
+<Static AudioFile="mod\m03\m03_offer_0040_trent.wav" TextArea="Cinematic">Et que ferons-nous lors de cette mission ? </Static>
+<Static AudioFile="mod\m03\m03_offer_0050_wilham.wav" TextArea="Cinematic">La chose habituelle. Voler, tirer, rien de nouveau.</Static>
+<Static AudioFile="mod\m03\m03_offer_0060_trent.wav" TextArea="Cinematic">Et quelqu'un observe à bonne distance. Rien de bien nouveau. Pouvez-vous être plus précis ? </Static>
+<Static AudioFile="mod\m03\m03_offer_0070_wilham.wav" TextArea="Cinematic">Bien sûr. Nos services ont réussi à localiser la position de Dietrich. Il est sur une ancienne base militaire à Konigsberg. </Static>
+<Static AudioFile="mod\m03\m03_offer_0075_wilham.wav" TextArea="Cinematic">Une flotte d'assaut se prépare à attaquer cette base en ce moment même. Cependant, nos analyses prévoient qu'une attaque directe sur Konigsberg causerait de graves pertes de notre côté. </Static>
 
+<Static AudioFile="mod\m03\m03_offer_0077_wilham.wav" TextArea="Cinematic">C'est pourquoi nous formons une équipe de frappe mobile, dont la tâche sera de neutraliser les systèmes de défense de la base au moment où notre flotte de frappe principale s'en approchera.</Static>
+<Static AudioFile="mod\m03\m03_offer_0080_trent.wav" TextArea="Cinematic">Vous voulez dire que ce seront les gars qui éloigneront le feu de vos fesses.</Static>
+<Static AudioFile="mod\m03\m03_offer_0090_wilham.wav" TextArea="Cinematic">Correct, Herr Trent. Au fait, l'amiral Reichmann a personnellement insisté pour que vous participiez à cette mission.</Static>
+<Static AudioFile="mod\m03\m03_offer_0100_trent.wav" TextArea="Cinematic">Je suis flatté. Pourriez-vous me dire comment une base militaire d'élite, dotée de systèmes de défense de premier ordre, pratiquement au centre même du territoire de la Rhénanie, a été abandonnée et est tombée aux mains des rebelles et des Corsaires ? </Static>
+<Static AudioFile="mod\m03\m03_offer_0110_hassler.wav" TextArea="Cinematic">Monsieur Trent, à cette époque, il y avait deux bases de ce type sur le territoire de Rheinland - Konigsberg et Regensburg, toutes deux dans le système de Munich, à la frontière avec Kusari. Les militaires de Kusari considéraient Regensburg comme rien de plus qu'un casse-pieds.</Static>
+<Static AudioFile="mod\m03\m03_offer_0115_hassler.wav" TextArea="Cinematic">Durant notre dernier conflit avec Kusari, nous avons subi une défaite écrasante, et selon les termes d'un traité de paix, nous avons été forcés de démilitariser Munich. La construction de Konigsberg a été stoppée juste avant d'être achevée... </Static>
+<Static AudioFile="mod\m03\m03_offer_0120_hassler.wav" TextArea="Cinematic">Notre gouvernement n'a pas pris la peine de détruire Konigsberg, ou de le désassembler. Peut-être espéraient-ils que le traité de paix soit renégocié afin de pouvoir utiliser la base, je ne sais pas. Finalement, il est apparu que Dietrich, l'un des militaires les plus gradés, disposant de toutes les clés d'accès, l'a tout simplement occupée...</Static>
+<Static AudioFile="mod\m03\m03_offer_0130_trent.wav" TextArea="Cinematic">Il semble que poser toutes sortes de questions stupides, comme celle de savoir si j'ai le choix, soit inapproprié dans cette situation.</Static>
+<Static AudioFile="mod\m03\m03_offer_0140_wilham.wav" TextArea="Cinematic">Vous êtes un homme sage, Herr Trent. </Static>
+<Static AudioFile="mod\m03\m03_offer_0150_hassler.wav" TextArea="Cinematic">Herr Trent, quatre-vingt-dix pour cent des pigistes locaux ne peuvent que rêver d'être à votre place. Vous êtes généreusement payé, et vous rendez compte directement à l'amiral Reichmann.</Static>
+<Static AudioFile="mod\m03\m03_offer_0155_hassler.wav" TextArea="Cinematic">Pourquoi es-tu aussi nerveux qu'un lycéen avant la remise des diplômes ? Allons-y. Je te verrai dans l'espace.</Static>
 
-<Static AudioFile="mod\m02\m02_done_0010_reichman.wav" TextArea="Cinematic">So here's the famous Trent.</Static>
-<Static AudioFile="mod\m02\m02_done_0020_trent.wav" TextArea="Cinematic">And what am I so famous for, Mr... Umm...</Static>
-<Static AudioFile="mod\m02\m02_done_0030_reichman.wav" TextArea="Cinematic">Reichmann. Admiral Reichmann, if you may.</Static>
-<Static AudioFile="mod\m02\m02_done_0040_trent.wav" TextArea="Cinematic">It's my honor, Admiral Reichmann! So, what am I so famous for?</Static>
-<Static AudioFile="mod\m02\m02_done_0050_reichman.wav" TextArea="Cinematic">Oh, Herr Trent, lately some of the higher circles have all been talking about you! I hope Herr Wilhelm adequately pays for your work.</Static>
-<Static AudioFile="mod\m02\m02_done_0060_trent.wav" TextArea="Cinematic">I'm not complaining.</Static>
-<Static AudioFile="mod\m02\m02_done_0070_reichman.wav" TextArea="Cinematic">Modesty - a commendable virtue, Herr Trent, I see virtue often taken for granted. I'll make sure the payment for your last mission will be doubled. All the best to you, Herr Trent!</Static>
-<Static AudioFile="mod\m02\m02_done_0080_reichman.wav" TextArea="Cinematic">So you think that he's the one we need?</Static>
-<Static AudioFile="mod\m02\m02_done_0090_wilham.wav" TextArea="Cinematic">Undoubtedly, Herr Admiral. He's the one who can help us accomplish all our tasks at hand.</Static>
-<Static AudioFile="mod\m02\m02_done_0100_reichman.wav" TextArea="Cinematic">Can you guarantee that?</Static>
-<Static AudioFile="mod\m02\m02_done_0110_wilham.wav" TextArea="Cinematic">Absolutely!</Static>
-<Static AudioFile="mod\m02\m02_done_0120_reichman.wav" TextArea="Cinematic">Very well, We execute your plan.</Static>
-<Static AudioFile="mod\m02\m02_done_0130_wilham.wav" TextArea="Cinematic">Thank you for your trust.</Static>
-<Static AudioFile="mod\m02\m02_done_0140_reichman.wav" TextArea="Cinematic">We will see what comes out of that. You're dismissed, Herr Wilhelm.</Static>
+<Static AudioFile="mod\m03\m03_reward_0010_hassler.wav" TextArea="Cinematic">J'ai demandé aux gens du coin, ils ne savent rien. Quoi qu'il en soit, merci, Trent. Votre travail ici est terminé, nous allons chercher le transport sur nos canaux. Malheureusement, comme nous avons merdé, Reichmann a considérablement réduit le paiement.</Static>
+<Static AudioFile="mod\m03\m03_reward_0020_trent.wav" TextArea="Cinematic">Étrange. La base a été détruite, Dietrich est mort, et Reichmann panique à cause d'un transport. Je n'aime pas ça. </Static>
+<Static AudioFile="mod\m03\m03_reward_0030_hassler.wav" TextArea="Cinematic">Moi non plus... L'argent a été transféré sur votre compte. A plus tard.</Static>
 
+<Static AudioFile="mod\m04\m04_offer_0010_jacobo.wav" TextArea="Cinematic">Herr Trent, c'est vous ? </Static>
+<Static AudioFile="mod\m04\m04_offer_0020_jacobo.wav" TextArea="Cinematic">Monsieur Trent, merci beaucoup d'être venu. Je suis dans le pétrin. Les autorités de Rheinland sont à ma recherche.</Static>
+<Static AudioFile="mod\m04\m04_offer_0030_trent.wav" TextArea="Cinematic">Je l'avais déjà deviné. Et j'ai cette impression familière que quelqu'un essaie de me mettre dans le pétrin. </Static>
+<Static AudioFile="mod\m04\m04_offer_0040_jacobo.wav" TextArea="Cinematic">Her Trent, vous ne comprenez pas. Une affaire de la plus haute importance. Je dois livrer des documents importants à Liberty.</Static>
+<Static AudioFile="mod\m04\m04_offer_0050_trent.wav" TextArea="Cinematic">Et encore une fois, je suis entraîné dans un jeu d'espionnage... Jacobo, savez-vous que je travaille actuellement pour les mêmes autorités de la Rhénanie que vous essayez d'éviter ? </Static>
+<Static AudioFile="mod\m04\m04_offer_0060_jacobo.wav" TextArea="Cinematic">Her Trent, vous êtes un indépendant. Vous n'avez pas prêté serment. Une fois le travail terminé, rien ne vous relie à votre client.</Static>
+<Static AudioFile="mod\m04\m04_offer_0062_jacobo.wav" TextArea="Cinematic">Her Trent, si nous pouvons livrer ces documents TRES importants à Liberty, au système Forbes, ils nous paieront beaucoup d'argent, et je dis bien BEAUCOUP, vous voyez ? </Static>
+<Static AudioFile="mod\m04\m04_offer_0065_jacobo.wav" TextArea="Cinematic">Je n'y arriverai probablement pas seul, mais avec toi à mes côtés...</Static>
 
+<Static AudioFile="mod\m04\m04_offer_0067_jacobo.wav" TextArea="Cinematic">Et si tu ne m'aides pas, ils vont probablement me tuer...</Static>
+<Static AudioFile="mod\m04\m04_offer_0070_trent.wav" TextArea="Cinematic">Je vais regretter d'avoir fait ça... Alors, quel est le plan ? </Static>
+<Static AudioFile="mod\m04\m04_offer_0080_jacobo.wav" TextArea="Cinematic">Monsieur Trent, merci ! Vous ne le regretterez pas ! Lancez-vous dans l'espace. Mes amis m'aideront à rejoindre l'aire d'atterrissage en douceur. Retrouvez-moi en orbite.</Static>
+<Static AudioFile="mod\m04\m04_offer_0090_trent.wav" TextArea="Cinematic">Vous y serez. </Static>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<Static AudioFile="mod\m03\m03_offer_0010_trent.wav" TextArea="Cinematic">Greetings, gentlemen.</Static>
-<Static AudioFile="mod\m03\m03_offer_0020_wilham.wav" TextArea="Cinematic">There you are, Herr Trent. Meet Herr Hassler. This mission will require both of you to tightly work together.</Static>
-<Static AudioFile="mod\m03\m03_offer_0030_trent.wav" TextArea="Cinematic">An honor to meet you, Herr Hassler.</Static>
-<Static AudioFile="mod\m03\m03_offer_0040_trent.wav" TextArea="Cinematic">And what will we do on this mission?</Static>
-<Static AudioFile="mod\m03\m03_offer_0050_wilham.wav" TextArea="Cinematic">The usual thing. Fly, shoot, nothing new.</Static>
-<Static AudioFile="mod\m03\m03_offer_0060_trent.wav" TextArea="Cinematic">And someone is watching from a safe distance. Definitely nothing new. Can you be more specific?</Static>
-<Static AudioFile="mod\m03\m03_offer_0070_wilham.wav" TextArea="Cinematic">Of course. Our intelligence managed to track down Dietrich's position. He's on an ex-military base in Konigsberg.</Static>
-<Static AudioFile="mod\m03\m03_offer_0075_wilham.wav" TextArea="Cinematic">A strike fleet is preparing to attack that base as we speak. However, our analytics predict that a direct attack on Konigsberg would cause severe losses on our side. </Static>
-<Static AudioFile="mod\m03\m03_offer_0077_wilham.wav" TextArea="Cinematic">That's why we're forming a mobile strike team, whose task will be to neutralize the base's defense systems by the time our main strike fleet approaches it.</Static>
-<Static AudioFile="mod\m03\m03_offer_0080_trent.wav" TextArea="Cinematic">You mean, those will be the guys who drag fire away from your asses.</Static>
-<Static AudioFile="mod\m03\m03_offer_0090_wilham.wav" TextArea="Cinematic">Correct, Herr Trent. By the way, Admiral Reichmann personally insisted on your participation in this mission.</Static>
-<Static AudioFile="mod\m03\m03_offer_0100_trent.wav" TextArea="Cinematic">I'm flattered. Could you tell me how an elite military base, with top class defense systems, practically in the very center of Rheinland's territory, got abandoned and fell into the hands of rebels and Corsairs?</Static>
-<Static AudioFile="mod\m03\m03_offer_0110_hassler.wav" TextArea="Cinematic">Herr Trent, at that time there were two such bases in Rheinland territory - Konigsberg and Regensburg, both in the Munich system, on the border with Kusari. The Kusari military saw Regensburg as nothing more than a pain in their ass.</Static>
-<Static AudioFile="mod\m03\m03_offer_0115_hassler.wav" TextArea="Cinematic">During our last conflict with Kusari, we suffered a crushing defeat, and under the terms of a peace treaty we were forced to demilitarize Munich. The construction of Konigsberg was halted just before it was finished... </Static>
-<Static AudioFile="mod\m03\m03_offer_0120_hassler.wav" TextArea="Cinematic">Our government couldn't bother destroying Konigsberg, or disassembling it. Maybe they hoped for the peace treaty to be re-negotiated so they can put the base into use, I don't know. Eventually, it appeared that Dietrich, one of the highest-ranking military personnel, having all the access keys, simply occupied it...</Static>
-<Static AudioFile="mod\m03\m03_offer_0130_trent.wav" TextArea="Cinematic">It seems that asking all sorts of stupid questions, like whether I have a choice, is inappropriate in this situation.</Static>
-<Static AudioFile="mod\m03\m03_offer_0140_wilham.wav" TextArea="Cinematic">You're a wise man, Herr Trent. </Static>
-<Static AudioFile="mod\m03\m03_offer_0150_hassler.wav" TextArea="Cinematic">Herr Trent, ninety percent of the local freelancers can only dream of being in your shoes. You're being paid generously, and reporting directly to Admiral Reichmann.</Static>
-<Static AudioFile="mod\m03\m03_offer_0155_hassler.wav" TextArea="Cinematic">Why are you as nervous as a high-school student before graduation? Let's fly. I'll see you in space.</Static>
-
-
-<Static AudioFile="mod\m03\m03_reward_0010_hassler.wav" TextArea="Cinematic">I asked the locals, they don't know shit. Anyways, thank you, Trent. Your work here is done, we'll be looking for the transport on our channels. Unfortunately, since we screwed up, Reichmann significantly cut the payment.</Static>
-<Static AudioFile="mod\m03\m03_reward_0020_trent.wav" TextArea="Cinematic">Strange. The base was destroyed, Dietrich's dead, and Reichmann freaks out because of some transport. I don't like this.</Static>
-<Static AudioFile="mod\m03\m03_reward_0030_hassler.wav" TextArea="Cinematic">Me neither... The money's been transferred to your account. See you later.</Static>
-
-
-
-<Static AudioFile="mod\m04\m04_offer_0010_jacobo.wav" TextArea="Cinematic">Herr Trent, is that you?</Static>
-<Static AudioFile="mod\m04\m04_offer_0020_jacobo.wav" TextArea="Cinematic">Herr Trent, thank you so much for coming. I'm in trouble. The Rheinland authorities are looking for me.</Static>
-<Static AudioFile="mod\m04\m04_offer_0030_trent.wav" TextArea="Cinematic">I already guessed that. And I'm getting that familiar sense of someone trying to get me into trouble.</Static>
-<Static AudioFile="mod\m04\m04_offer_0040_jacobo.wav" TextArea="Cinematic">Herr Trent, you do not understand. A matter of utmost importance. I need to deliver important documents to Liberty.</Static>
-<Static AudioFile="mod\m04\m04_offer_0050_trent.wav" TextArea="Cinematic">And yet again I'm being dragged into a game of espionage... Jacobo, are you aware that I'm currently working for the very same Rheinland authorities you're trying to avoid?</Static>
-<Static AudioFile="mod\m04\m04_offer_0060_jacobo.wav" TextArea="Cinematic">Herr Trent, you're a freelancer. You did not take an oath. After the job is done, nothing connects you to your client.</Static>
-<Static AudioFile="mod\m04\m04_offer_0062_jacobo.wav" TextArea="Cinematic">Herr Trent, if we can deliver these VERY important documents to Liberty, to the Forbes system, they'll pay us a lot of money, and I mean a LOT, you see?</Static>
-<Static AudioFile="mod\m04\m04_offer_0065_jacobo.wav" TextArea="Cinematic">I probably won't make it alone, but with you on my side...</Static>
-<Static AudioFile="mod\m04\m04_offer_0067_jacobo.wav" TextArea="Cinematic">And if you don't help me, they'll probably just kill me...</Static>
-<Static AudioFile="mod\m04\m04_offer_0070_trent.wav" TextArea="Cinematic">I'm gonna regret doing that... So, what's the plan?</Static>
-<Static AudioFile="mod\m04\m04_offer_0080_jacobo.wav" TextArea="Cinematic">Herr Trent, thank you! You won't regret it! Launch into space. My friends will help me get to the landing pad quietly. Meet me in orbit.</Static>
-<Static AudioFile="mod\m04\m04_offer_0090_trent.wav" TextArea="Cinematic">See you there.</Static>
-
-
-<Static AudioFile="echo_m04.utf|0xAAD01AC4" TextArea="Cinematic">This is commander Marcus Creitmire of the Hessian Lions special operations unit.</Static>
-<Static AudioFile="echo_m04.utf|0x96D304C4" TextArea="Cinematic">Power your weapon systems down immediately, and follow our lead. If you try to resist, we have the authority to destroy you.</Static>
-<Static AudioFile="echo_m04.utf|0x9B797FCD" TextArea="Cinematic">Herr Creitmire, you're being misled! Manipulated! Let go of the escort!</Static>
-<Static AudioFile="echo_m04.utf|0x89A49807" TextArea="Cinematic">Words - they take too much time. Torpedoes are faster.</Static>
+<Static AudioFile="echo_m04.utf|0xAAD01AC4" TextArea="Cinematic">Voici le commandant Marcus Creitmire de l'unité d'opérations spéciales Hessian Lions. </Static>
+<Static AudioFile="echo_m04.utf|0x96D304C4" TextArea="Cinematic">Abaissez immédiatement vos systèmes d'armes et suivez-nous. Si vous tentez de résister, nous avons le pouvoir de vous détruire.</Static>
+<Static AudioFile="echo_m04.utf|0x9B797FCD" TextArea="Cinematic">Herr Creitmire, vous êtes trompé ! Manipulé ! Lâchez l'escorte!</Static>
+<Static AudioFile="echo_m04.utf|0x89A49807" TextArea="Cinematic">Les mots - ils prennent trop de temps. Les torpilles sont plus rapides. </Static>
 
 <Static AudioFile="mod\m04\m04_reward_0010_hatcher.wav" TextArea="Cinematic">Gentlemen.</Static>
 <Static AudioFile="mod\m04\m04_reward_0020_trent.wav" TextArea="Cinematic">Miss Hatcher.</Static>
-<Static AudioFile="mod\m04\m04_reward_0030_alaric.wav" TextArea="Cinematic">Miss Hatcher, you have such lovely, deep eyes.</Static>
-<Static AudioFile="mod\m04\m04_reward_0040_hatcher.wav" TextArea="Cinematic">Cut this nonsense immediately, you don't want to irritate me.</Static>
-<Static AudioFile="mod\m04\m04_reward_0045_hatcher.wav" TextArea="Cinematic">Let's get to our business. You've done a fine job.</Static>
-<Static AudioFile="mod\m04\m04_reward_0050_hatcher.wav" TextArea="Cinematic">I will avoid asking how you managed to escape Rheinland with THIS kind of material.</Static>
-<Static AudioFile="mod\m04\m04_reward_0055_hatcher.wav" TextArea="Cinematic">I'm a delicate lady, I'm afraid I might not be able to handle it.</Static>
-<Static AudioFile="mod\m04\m04_reward_0060_trent.wav" TextArea="Cinematic">We did what we had to do.</Static>
-<Static AudioFile="mod\m04\m04_reward_0070_hatcher.wav" TextArea="Cinematic">Heh, seems like you had fun. And by the way, we are looking for top-notch skilled Freelancers such as yourselves to help us perform, say, some non-standard tasks. Have you got any plans for the near future?</Static>
-<Static AudioFile="mod\m04\m04_reward_0080_alaric.wav" TextArea="Cinematic">We've always got time for you...</Static>
-<Static AudioFile="mod\m04\m04_reward_0090_trent.wav" TextArea="Cinematic">Shut up, Alaric. Since we're now considered enemies of the Rheinland state, I suppose we don't have any plans yet.</Static>
-<Static AudioFile="mod\m04\m04_reward_0100_hatcher.wav" TextArea="Cinematic">So, if we have a couple of well-paid tasks that fit your field of work...</Static>
-<Static AudioFile="mod\m04\m04_reward_0110_trent.wav" TextArea="Cinematic">Then we won't hesitate to fulfill them. That is, unless these tasks make us enemies of the Liberty state, too.</Static>
-<Static AudioFile="mod\m04\m04_reward_0120_hatcher.wav" TextArea="Cinematic">Oh dear, no, I don't think it'll ever come to this.</Static>
+<Static AudioFile="mod\m04\m04_reward_0030_alaric.wav" TextArea="Cinematic">Miss Hatcher, vous avez des yeux si beaux et si profonds.</Static>
+<Static AudioFile="mod\m04\m04_reward_0040_hatcher.wav" TextArea="Cinematic">Coupez cette absurdité immédiatement, vous ne voulez pas m'irriter.</Static>
+<Static AudioFile="mod\m04\m04_reward_0045_hatcher.wav" TextArea="Cinematic">Passons aux choses sérieuses. Vous avez fait un excellent travail. </Static>
+<Static AudioFile="mod\m04\m04_reward_0050_hatcher.wav" TextArea="Cinematic">Je vais éviter de vous demander comment vous avez réussi à vous échapper de Rheinland avec CE genre de matériel.</Static>
+<Static AudioFile="mod\m04\m04_reward_0055_hatcher.wav" TextArea="Cinematic">Je suis une dame délicate, j'ai peur de ne pas pouvoir le supporter.</Static>
+<Static AudioFile="mod\m04\m04_reward_0060_trent.wav" TextArea="Cinematic">Nous avons fait ce que nous devions faire.</Static>
+<Static AudioFile="mod\m04\m04_reward_0070_hatcher.wav" TextArea="Cinematic">Heh, on dirait que vous vous êtes amusés. Et d'ailleurs, nous recherchons des freelances de premier ordre comme vous pour nous aider à effectuer, disons, certaines tâches non standard. Avez-vous des projets pour un avenir proche ? </Static>
+<Static AudioFile="mod\m04\m04_reward_0080_alaric.wav" TextArea="Cinematic">Nous avons toujours du temps pour vous...</Static>
+<Static AudioFile="mod\m04\m04_reward_0090_trent.wav" TextArea="Cinematic">Tais-toi, Alaric. Puisque nous sommes maintenant considérés comme des ennemis de l'État de Rheinland, je suppose que nous n'avons pas encore de plans.</Static>
+<Static AudioFile="mod\m04\m04_reward_0100_hatcher.wav" TextArea="Cinematic">Donc, si nous avons quelques tâches bien rémunérées qui correspondent à votre domaine de travail...</Static>
+<Static AudioFile="mod\m04\m04_reward_0110_trent.wav" TextArea="Cinematic">Alors nous n'hésiterons pas à les remplir. C'est-à-dire, à moins que ces tâches ne fassent de nous aussi des ennemis de l'État de Liberté.</Static>
+<Static AudioFile="mod\m04\m04_reward_0120_hatcher.wav" TextArea="Cinematic">Oh mon cher, non, je ne pense pas que nous en arriverons là.</Static>
 <Static AudioFile="mod\m04\m04_reward_0130_trent.wav" TextArea="Cinematic">Sure hope so...</Static>
 
-<Static AudioFile="mod\m04\m04_final_0010_alaric.wav" TextArea="Cinematic">Awesome, Trent! Who knew you'd be so good at finding clients and closing deals?</Static>
-<Static AudioFile="mod\m04\m04_final_0020_trent.wav" TextArea="Cinematic">I'm also good at making enemies and getting close to being murdered.</Static>
-<Static AudioFile="mod\m04\m04_final_0030_alaric.wav" TextArea="Cinematic">Oh come on... You just started your freelancing career, a complete newbie, and now you're taking jobs for the government with appropriate payments!</Static>
-<Static AudioFile="mod\m04\m04_final_0040_trent.wav" TextArea="Cinematic">Mhm, one of those governments have already put a price on my head. And oh do I hope they forget about me soon with everything that's going on there.</Static>
-<Static AudioFile="mod\m04\m04_final_0050_alaric.wav" TextArea="Cinematic">Seriously, the Rheinland military will most likely fall apart soon. They won't bother looking for us.</Static>
-<Static AudioFile="mod\m04\m04_final_0060_trent.wav" TextArea="Cinematic">You seem very confident. Come on, Alaric, what are you hiding from me?</Static>
-<Static AudioFile="mod\m04\m04_final_0070_alaric.wav" TextArea="Cinematic">That Miss Hatcher, do you know who she is?</Static>
-<Static AudioFile="mod\m04\m04_final_0080_trent.wav" TextArea="Cinematic">Well, of course I do! I've known her for a whole three hours! Screw you, Alaric.</Static>
-<Static AudioFile="mod\m04\m04_final_0090_alaric.wav" TextArea="Cinematic">She's an officer in one of Liberty's secret service agencies.</Static>
-<Static AudioFile="mod\m04\m04_final_0100_trent.wav" TextArea="Cinematic">God dammit! Not again...</Static>
-<Static AudioFile="mod\m04\m04_final_0110_alaric.wav" TextArea="Cinematic">You don't get it. It's such a special and secret service, that not even their own counterparts in their own government know they exist.</Static>
-<Static AudioFile="mod\m04\m04_final_0120_trent.wav" TextArea="Cinematic">Then how do you know that, Alaric?</Static>
+<Static AudioFile="mod\m04\m04_final_0010_alaric.wav" TextArea="Cinematic">Très bien, Trent ! Qui aurait cru que tu serais si doué pour trouver des clients et conclure des affaires ? </Static>
+<Static AudioFile="mod\m04\m04_final_0020_trent.wav" TextArea="Cinematic">Je suis aussi doué pour me faire des ennemis et passer tout près du meurtre.</Static>
+<Static AudioFile="mod\m04\m04_final_0030_alaric.wav" TextArea="Cinematic">Oh allez... Vous venez de commencer votre carrière de freelance, un débutant complet, et maintenant vous prenez des emplois pour le gouvernement avec des paiements appropriés!</Static>
+<Static AudioFile="mod\m04\m04_final_0040_trent.wav" TextArea="Cinematic">Mhm, un de ces gouvernements a déjà mis ma tête à prix. Et oh j'espère qu'ils m'oublieront bientôt avec tout ce qui se passe là-bas.</Static>
+<Static AudioFile="mod\m04\m04_final_0050_alaric.wav" TextArea="Cinematic">Sérieusement, l'armée du Rheinland va très probablement s'effondrer bientôt. Ils ne prendront pas la peine de nous chercher.</Static>
+<Static AudioFile="mod\m04\m04_final_0060_trent.wav" TextArea="Cinematic">Vous semblez très confiant. Allez, Alaric, qu'est-ce que tu me caches ? </Static>
+<Static AudioFile="mod\m04\m04_final_0070_alaric.wav" TextArea="Cinematic">Cette Mlle Hatcher, tu sais qui elle est ? </Static>
+<Static AudioFile="mod\m04\m04_final_0080_trent.wav" TextArea="Cinematic">Bien sûr que oui ! Je la connais depuis trois heures ! Va te faire voir, Alaric. </Static>
+<Static AudioFile="mod\m04\m04_final_0090_alaric.wav" TextArea="Cinematic">Elle est officier dans une des agences des services secrets de Liberty.</Static>
+<Static AudioFile="mod\m04\m04_final_0100_trent.wav" TextArea="Cinematic">Dieu du ciel ! Pas encore...</Static>
+<Static AudioFile="mod\m04\m04_final_0110_alaric.wav" TextArea="Cinematic">Vous ne comprenez pas. C'est un service tellement spécial et secret, que même leurs propres homologues dans leur propre gouvernement ne savent pas qu'ils existent.</Static>
+<Static AudioFile="mod\m04\m04_final_0120_trent.wav" TextArea="Cinematic">Alors comment le sais-tu, Alaric ? </Static>
 <Static AudioFile="mod\m04\m04_final_0130_alaric.wav" TextArea="Cinematic">Ah... E-e-e...</Static>
-<Static AudioFile="mod\m04\m04_final_0140_trent.wav" TextArea="Cinematic">I can't believe I got into this botch again!</Static>
+<Static AudioFile="mod\m04\m04_final_0140_trent.wav" TextArea="Cinematic">Je n'arrive pas à croire que je me suis encore mis dans ce pétrin!</Static>
 
+<Static AudioFile="mod\m05\m05_offer_0010_hatcher.wav" TextArea="Cinematic">Comment allez-vous, M. Trent ? Vous allez bien ? </Static>
+<Static AudioFile="mod\m05\m05_offer_0020_trent.wav" TextArea="Cinematic">Eh bien, Mlle Hatcher, hier je me suis tordu la cheville. Et aujourd'hui, en sortant de la douche, j'ai ressenti une douleur lancinante dans le dos. Mais tout va bien quand même.</Static>
+<Static AudioFile="mod\m05\m05_offer_0030_hatcher.wav" TextArea="Cinematic">Monsieur Trent ! Essayons de ne pas transformer une salutation polie en une énorme blague. </Static>
+<Static AudioFile="mod\m05\m05_offer_0040_trent.wav" TextArea="Cinematic">Alors pourquoi ne pas sauter les politesses et aller directement aux affaires?</Static>
+<Static AudioFile="mod\m05\m05_offer_0050_hatcher.wav" TextArea="Cinematic">Vous ne me facilitez pas la tâche...</Static>
+<Static AudioFile="mod\m05\m05_offer_0060_hatcher.wav" TextArea="Cinematic">Nous avons analysé les documents que vous nous avez apportés, ils se sont avérés d'une grande valeur pour nous. Cependant, il n'y a qu'un seul problème.</Static>
+<Static AudioFile="mod\m05\m05_offer_0070_trent.wav" TextArea="Cinematic">Il y a toujours un problème.</Static>
+<Static AudioFile="mod\m05\m05_offer_0080_hatcher.wav" TextArea="Cinematic">Ce sont des documents scientifiques compliqués, composés de calculs scientifiques très avancés. Si avancés, en fait, que nos scientifiques n'ont pas pu s'empêcher de se disputer sur leurs significations.</Static>
+<Static AudioFile="mod\m05\m05_offer_0090_hatcher.wav" TextArea="Cinematic">Vous savez, M. Trent, regarder des scientifiques se battre entre eux est très divertissant.</Static>
+<Static AudioFile="mod\m05\m05_offer_0100_trent.wav" TextArea="Cinematic">Dommage que je ne puisse pas les regarder. Alors, où est-ce que j'interviens ? Vous ne voulez sûrement pas que je surveille vos scientifiques...</Static>
+<Static AudioFile="mod\m05\m05_offer_0110_hatcher.wav" TextArea="Cinematic">Nous aurons besoin de l'aide d'un scientifique très expérimenté, un expert dans son domaine. Quelqu'un qui pourrait nous donner une interprétation précise de ces documents.</Static>
+<Static AudioFile="mod\m05\m05_offer_0120_hatcher.wav" TextArea="Cinematic">Heureusement, il se trouve que je connais une personne de cette compétence ; le professeur Mandrake. S'il ne peut pas le comprendre, personne ne le peut.</Static>
+<Static AudioFile="mod\m05\m05_offer_0130_trent.wav" TextArea="Cinematic">Et vous ne pouvez pas simplement l'appeler et lui demander son aide, parce que...</Static>
+<Static AudioFile="mod\m05\m05_offer_0140_hatcher.wav" TextArea="Cinematic">Parce qu'il travaille pour Deep Space Engineering, et qu'il est actuellement occupé par une expédition de recherche. Une très importante semble-t-il, car elle sert à contrer l'espionnage industriel qui a des oreilles au plus profond de nos entreprises.</Static>
+<Static AudioFile="mod\m05\m05_offer_0150_trent.wav" TextArea="Cinematic">Et ma mission sera...</Static>
+<Static AudioFile="mod\m05\m05_offer_0160_hatcher.wav" TextArea="Cinematic">Voler dans l'espace... Ça suffit, M. Trent. Vous devez vous rendre à la station de Détroit, qui est le QG de la DSE. Fond Professeur Mandrake, et amenez-le moi.</Static>
+<Static AudioFile="mod\m05\m05_offer_0170_hatcher.wav" TextArea="Cinematic">Je vous donne ma carte de visite au cas où vous auriez des problèmes avec les agents de sécurité de la DSE. Dites-leur que vous travaillez pour moi.</Static>
+<Static AudioFile="mod\m05\m05_offer_0180_trent.wav" TextArea="Cinematic">Alliance Security Force ? Jamais entendu parler.</Static>
+<Static AudioFile="mod\m05\m05_offer_0190_hatcher.wav" TextArea="Cinematic">Il n'y a aucune importance, M. Trent. Votre récompense pour avoir accompli cette mission sera très généreuse.</Static>
+<Static AudioFile="mod\m05\m05_offer_0200_trent.wav" TextArea="Cinematic">Ok, je vais vous donner ce dont vous avez besoin.</Static>
+<Static AudioFile="mod\m05\m05_offer_0210_hatcher.wav" TextArea="Cinematic">O-kay freelancer, voyons maintenant de quoi vous êtes capable. Tu as une sacrée bouche, maintenant il est temps de prouver ta valeur dans des situations compliquées. Je veillerai sur toi... De loin. </Static>
+<Static AudioFile="mod\m05\m05_piratebar_0010_trent.wav" TextArea="Cinematic">Hey, bro ! T'en as encore ? J'ai volé dans l'espace toute la journée, j'aurais bien besoin de quelque chose pour me vider l'esprit...</Static>
+<Static AudioFile="mod\m05\m05_piratebar_0020_smith.wav" TextArea="Cinematic">Non, mec ! Ça fait des heures que je fais cette merde, et ça c'est de la bonne !</Static>
+<Static AudioFile="mod\m05\m05_piratebar_0030_trent.wav" TextArea="Cinematic">Ces crétins de la DSE m'ont vraiment fait chier. J'ai fait un bon travail pour eux, et ils ne peuvent même pas me laisser atterrir à Détroit ! Même pas pour un dépôt rapide, ces trous du cul ne me laissent pas entrer ! </Static>
+<Static AudioFile="mod\m05\m05_piratebar_0040_trent.wav" TextArea="Cinematic">Et j'ai de très belles choses dans ma soute... J'ai fait un voyage de plusieurs mois jusqu'à Omicron, et ce stupide homme d'affaires me repousse comme si je n'étais rien.</Static>
+<Static AudioFile="mod\m05\m05_piratebar_0050_trent.wav" TextArea="Cinematic">Et maintenant, puisqu'ils sont apparemment prêts à me tuer, je suis assis là à me tremper dans du poison... Dieu sait quand ils vont se calmer...</Static>
+<Static AudioFile="mod\m05\m05_piratebar_0055_trent.wav" TextArea="Cinematic">Ah, ce serait vraiment bien si je tombais sur un passe de sécurité... J'irais juste prendre mon paiement durement gagné et je sortirais les mains pleines...</Static>
+<Static AudioFile="mod\m05\m05_piratebar_0060_smith.wav" TextArea="Cinematic">Écoute, mon ami... Quel est ton nom ? </Static>
+<Static AudioFile="mod\m05\m05_piratebar_0070_trent.wav" TextArea="Cinematic">Trent. Et vous êtes ? </Static>
+<Static AudioFile="mod\m05\m05_piratebar_0080_smith.wav" TextArea="Cinematic">Smith. M. Smith.</Static>
+<Static AudioFile="mod\m05\m05_piratebar_0090_trent.wav" TextArea="Cinematic">Enchanté, M. Smith. Vous disiez...?</Static>
+<Static AudioFile="mod\m05\m05_piratebar_0100_smith.wav" TextArea="Cinematic">Ouais ? Ouais... Oh, ouais ! Je sais où vous pouvez obtenir un laissez-passer de sécurité. </Static>
+<Static AudioFile="mod\m05\m05_piratebar_0110_trent.wav" TextArea="Cinematic">Oh, vraiment ? Où ? </Static>
+<Static AudioFile="mod\m05\m05_piratebar_0120_smith.wav" TextArea="Cinematic">Regardez. Il y a un entrepôt secret dans cette zone. Ils y ont gardé quelques laissez-passer de sécurité juste au cas où, ça j'en suis sûr. Tu pourrais essayer de négocier avec eux, mais, tu es une... Personne. Et l'entrepôt est top secret!</Static>
+<Static AudioFile="mod\m05\m05_piratebar_0130_trent.wav" TextArea="Cinematic">Allez-y, mon frère ! </Static>
+<Static AudioFile="mod\m05\m05_piratebar_0140_smith.wav" TextArea="Cinematic">Revenez avec vos mains pleines...</Static>
 
+<Static AudioFile="echo_m05_player.utf|0xBB166EC9" TextArea="Cinematic">Allô ? Y a-t-il quelqu'un à la maison ? </Static>
+<Static AudioFile="echo_m05.utf|0x87C69209" TextArea="Cinematic">Hey, c'était quoi ça ? </Static>
+<Static AudioFile="echo_m05.utf|0xA7C752C9" TextArea="Cinematic">Hey étranger ! Tu n'as pas l'air d'être à ta place ici. Tu as perdu quelque chose ? </Static>
+<Static AudioFile="echo_m05_player.utf|0x9B1622CA" TextArea="Cinematic">Un petit oiseau nommé M. Smith m'a dit que je pouvais obtenir un laissez-passer de sécurité de Détroit pour un prix raisonnable ici.</Static>
+<Static AudioFile="echo_m05.utf|0x87C47F48" TextArea="Cinematic">Ce stupide... Je vais achever ce drogué tout de suite ! Il a fumé son dernier blunt. </Static>
+<Static AudioFile="echo_m05.utf|0xA7C4FF08" TextArea="Cinematic">Allons d'abord nous occuper de ce connard.</Static>
 
-<Static AudioFile="mod\m05\m05_offer_0010_hatcher.wav" TextArea="Cinematic">How are you, Mr. Trent? Doing fine?</Static>
-<Static AudioFile="mod\m05\m05_offer_0020_trent.wav" TextArea="Cinematic">Well, Miss Hatcher, yesterday I twisted my ankle. And today, when I got out of the shower, I felt stinging pain in my back. But everything's fine regardless.</Static>
-<Static AudioFile="mod\m05\m05_offer_0030_hatcher.wav" TextArea="Cinematic">Mr. Trent! Let's try not to turn a polite greeting into a massive joke. </Static>
-<Static AudioFile="mod\m05\m05_offer_0040_trent.wav" TextArea="Cinematic">Then why won't we skip the politeness and get straight to business?</Static>
-<Static AudioFile="mod\m05\m05_offer_0050_hatcher.wav" TextArea="Cinematic">You're not making it any easier for me...</Static>
-<Static AudioFile="mod\m05\m05_offer_0060_hatcher.wav" TextArea="Cinematic">We've analyzed the documents you brought us, they proved to be of great value to us. However, there's only one problem.</Static>
-<Static AudioFile="mod\m05\m05_offer_0070_trent.wav" TextArea="Cinematic">There's always a problem.</Static>
-<Static AudioFile="mod\m05\m05_offer_0080_hatcher.wav" TextArea="Cinematic">They're complicated scientific papers, consisting of very advanced scientific calculations. So advanced, in fact, that our scientists couldn't stop arguing over their meanings.</Static>
-<Static AudioFile="mod\m05\m05_offer_0090_hatcher.wav" TextArea="Cinematic">You know, Mr. Trent, watching scientists fight each other is very entertaining.</Static>
-<Static AudioFile="mod\m05\m05_offer_0100_trent.wav" TextArea="Cinematic">Shame I couldn't watch them. So where do I come in? Surely you don't want me to watch over your scientists...</Static>
-<Static AudioFile="mod\m05\m05_offer_0110_hatcher.wav" TextArea="Cinematic">We'll need the help of a very experienced scientist, an expert in his field. Someone who could give us an accurate interpretation of these documents.</Static>
-<Static AudioFile="mod\m05\m05_offer_0120_hatcher.wav" TextArea="Cinematic">Luckily, I happen know a person of such skill; Professor Mandrake. If he can't figure it out, no one can.</Static>
-<Static AudioFile="mod\m05\m05_offer_0130_trent.wav" TextArea="Cinematic">And you can't just call him and ask for his help, because...</Static>
-<Static AudioFile="mod\m05\m05_offer_0140_hatcher.wav" TextArea="Cinematic">Because he works for Deep Space Engineering, and he's currently occupied with a research expedition. A very important one it seems, because it serves to counter industrial espionage that has ears deep inside our companies.</Static>
-<Static AudioFile="mod\m05\m05_offer_0150_trent.wav" TextArea="Cinematic">And my assignment will be...</Static>
-<Static AudioFile="mod\m05\m05_offer_0160_hatcher.wav" TextArea="Cinematic">Flying in space... Enough, Mr. Trent. You'll need to fly to Detroit station, which is DSE's HQ. Fond Professor Mandrake, and bring him to me.</Static>
-<Static AudioFile="mod\m05\m05_offer_0170_hatcher.wav" TextArea="Cinematic">I'll give you my business card in case you encounter any problems with DSE's security officers. Tell them you're working for me.</Static>
-<Static AudioFile="mod\m05\m05_offer_0180_trent.wav" TextArea="Cinematic">Alliance Security Force? Never heard of it.</Static>
-<Static AudioFile="mod\m05\m05_offer_0190_hatcher.wav" TextArea="Cinematic">It matters not, Mr. Trent. Your reward for completing this assignment will be very generous.</Static>
-<Static AudioFile="mod\m05\m05_offer_0200_trent.wav" TextArea="Cinematic">Ok, I'll get you what you need.</Static>
-<Static AudioFile="mod\m05\m05_offer_0210_hatcher.wav" TextArea="Cinematic">O-kay freelancer, now let's see what you are all about. You've got quite a mouth there, now it's time to prove your worth in complicated situations. I'll be watching over you... From afar.</Static>
+<Static AudioFile="mod\m05\m05_detroit_0010_trent.wav" TextArea="Cinematic">Hey mon ami, je cherche un professeur nommé Mandrake. L'avez-vous vu dans le coin ? </Static>
+<Static AudioFile="mod\m05\m05_detroit_0020_barman.wav" TextArea="Cinematic">Je n'ai jamais entendu ce nom auparavant.</Static>
+<Static AudioFile="mod\m05\m05_detroit_0030_trent.wav" TextArea="Cinematic">Vous êtes sympa. Regarde, mon ami. Je suis du syndicat des barmen.</Static>
+<Static AudioFile="mod\m05\m05_detroit_0040_barman.wav" TextArea="Cinematic">Oh merde, vous êtes un de ces... Pourriez-vous juste le montrer à la caméra là-bas, pour que je puisse vérifier plus tard ? </Static>
+<Static AudioFile="mod\m05\m05_detroit_0045_barman.wav" TextArea="Cinematic">Aha, merci. Il est dans une station de recherche à Sigma-17. </Static>
+<Static AudioFile="mod\m05\m05_detroit_0050_trent.wav" TextArea="Cinematic">Quelle station ? </Static>
+<Static AudioFile="mod\m05\m05_detroit_0060_barman.wav" TextArea="Cinematic">R-e-s-e-a-r-c-h Station. C'est compris ? C'est étrange, les gens de ton espèce sont généralement les plus intelligents. </Static>
+<Static AudioFile="mod\m05\m05_detroit_0070_trent.wav" TextArea="Cinematic">OK, merci pour l'info. Tu vois comme c'est facile d'aller de l'avant et de faire fondre la glace ? </Static>
+<Static AudioFile="mod\m05\m05_detroit_0080_trent.wav" TextArea="Cinematic">C'est exactement ce qui manque à l'humanité - un peu de chaleur.</Static>
 
-<Static AudioFile="mod\m05\m05_piratebar_0010_trent.wav" TextArea="Cinematic">Hey, bro! Got some more of that? I've been flying in space all day long, could use something to clear my mind...</Static>
-<Static AudioFile="mod\m05\m05_piratebar_0020_smith.wav" TextArea="Cinematic">No way, man! Been doing this shit for hours now, that's some of the good stuff!</Static>
-<Static AudioFile="mod\m05\m05_piratebar_0030_trent.wav" TextArea="Cinematic">Those jackasses from DSE really pissed me off. I did a fair job for them, and they can't even let me land on Detroit! Not even for a quick drop-off, these assholes just won't let me in! </Static>
-<Static AudioFile="mod\m05\m05_piratebar_0040_trent.wav" TextArea="Cinematic">And I have some really fine stuff in my cargo hold... Went on a months-long journey all the way to Omicron, and that stupid businessman just fends me off like I'm nothing.</Static>
-<Static AudioFile="mod\m05\m05_piratebar_0050_trent.wav" TextArea="Cinematic">And now, since they're apparently ready to kill me, I'm sitting here dunking myself in poison... Heck knows when they're gonna calm down...</Static>
-<Static AudioFile="mod\m05\m05_piratebar_0055_trent.wav" TextArea="Cinematic">Ah, could be really nice if I just stumbled upon a security pass... I'd just go and grab my hard-earned payment and get out with my hands full...</Static>
-<Static AudioFile="mod\m05\m05_piratebar_0060_smith.wav" TextArea="Cinematic">Listen, friend... What's your name? </Static>
-<Static AudioFile="mod\m05\m05_piratebar_0070_trent.wav" TextArea="Cinematic">Trent. And you are?</Static>
-<Static AudioFile="mod\m05\m05_piratebar_0080_smith.wav" TextArea="Cinematic">Smith. Mr. Smith.</Static>
-<Static AudioFile="mod\m05\m05_piratebar_0090_trent.wav" TextArea="Cinematic">Nice to meet you, Mr. Smith. You were saying...?</Static>
-<Static AudioFile="mod\m05\m05_piratebar_0100_smith.wav" TextArea="Cinematic">Yeah? Yeah... Oh, yeah! I know where you can get a security pass.</Static>
-<Static AudioFile="mod\m05\m05_piratebar_0110_trent.wav" TextArea="Cinematic">Oh, really? Where?</Static>
-<Static AudioFile="mod\m05\m05_piratebar_0120_smith.wav" TextArea="Cinematic">Look. There's a secret warehouse in this area. They got a couple of security passes kept there just in case, that I know for sure. You could try negotiating with them, but, you're a... Nobody. And the warehouse is top secret!</Static>
-<Static AudioFile="mod\m05\m05_piratebar_0130_trent.wav" TextArea="Cinematic">Gotcha, bro! </Static>
-<Static AudioFile="mod\m05\m05_piratebar_0140_smith.wav" TextArea="Cinematic">Come back with those full hands of yours...</Static>
+<Static AudioFile="echo_m05.utf|0xB8D06E41" TextArea="Cinematic">Freelancer alpha-one, baissez vos armes et suivez-nous sur le cuirassé Griffin. </Static>
+<Static AudioFile="echo_m05_player.utf|0x9BCE24CA" TextArea="Cinematic">Qu'est-ce que... J'étais juste en train de voler vers Forbes, quel est le problème ? </Static>
+<Static AudioFile="echo_m05.utf|0xB8086841" TextArea="Cinematic">Freelancer alpha-one, je répète, baissez vos armes et suivez-nous sur le cuirassé Griffin. C'est un ordre du commandant Tilton. Si vous n'obtempérez pas, nous ouvrirons le feu.</Static>
+<Static AudioFile="echo_m05_female.utf|0x8E3E0F8C" TextArea="Cinematic">Hey there, boys ! Ce freelance est sous ma juridiction. Calmez-vous. Il est de notre côté. Est-ce que c'est clair ? </Static>
+<Static AudioFile="echo_m05.utf|0x9DE4630B" TextArea="Cinematic">Miss Hatcher ! Ca fait longtemps qu'on ne s'est pas vu. Vos agents ont été un peu casse-pieds ces derniers temps. Mais maintenant, oh, maintenant vous avez dépassé les bornes ! </Static>
+<Static AudioFile="echo_m05.utf|0x9DF06201" TextArea="Cinematic">Cet indépendant est responsable de rien de moins que la destruction de la station de recherche Clark ! Et j'ai l'autorité, par tous les moyens, pour traiter avec lui comme bon me semble !</Static>
+<Static AudioFile="echo_m05_player.utf|0xBBCF48C1" TextArea="Cinematic">Je suis responsable de QUOI ? La station a explosé de l'intérieur, pendant que j'étais dans l'espace à attendre...</Static>
+<Static AudioFile="echo_m05.utf|0xBE32F78C" TextArea="Cinematic">La ferme, Trent!</Static>
+<Static AudioFile="echo_m05.utf|0x9133830B" TextArea="Cinematic">Tais-toi, freelancer!</Static>
+<Static AudioFile="echo_m05.utf|0xB4838B4B" TextArea="Cinematic">Attention, nous lisons des hostiles sur notre radar!</Static>
+<Static AudioFile="echo_m05.utf|0x8CCD2DC9" TextArea="Cinematic">Quelle coïncidence, Herr Trent ! Savez-vous quelle est la peine pour trahison en Rhénanie ? C'est exact, la mort ! A tous les ailiers, engagez-vous !</Static>
 
-<Static AudioFile="echo_m05_player.utf|0xBB166EC9" TextArea="Cinematic">Hello? Is anyone home?</Static>
-<Static AudioFile="echo_m05.utf|0x87C69209" TextArea="Cinematic">Hey, what the hell was that?</Static>
-<Static AudioFile="echo_m05.utf|0xA7C752C9" TextArea="Cinematic">Hey stranger! You don`t look like you belong here. Did you lose something?</Static>
-<Static AudioFile="echo_m05_player.utf|0x9B1622CA" TextArea="Cinematic">A little bird named Mr. Smith told me that I can get a Detroit security pass for a reasonable price here.</Static>
-<Static AudioFile="echo_m05.utf|0x87C47F48" TextArea="Cinematic">That stupid... I`m gonna finish that stoner off right now! He smoked his last blunt.</Static>
-<Static AudioFile="echo_m05.utf|0xA7C4FF08" TextArea="Cinematic">Let's deal with this douchebag first.</Static>
-
-<Static AudioFile="mod\m05\m05_detroit_0010_trent.wav" TextArea="Cinematic">Hey friend, I'm looking for some professor named Mandrake. Have you seen him around here?</Static>
-<Static AudioFile="mod\m05\m05_detroit_0020_barman.wav" TextArea="Cinematic">I've never heard this name before.</Static>
-<Static AudioFile="mod\m05\m05_detroit_0030_trent.wav" TextArea="Cinematic">Aren't you a nice one. Take a look, friend. I'm from the bartender's union.</Static>
-<Static AudioFile="mod\m05\m05_detroit_0040_barman.wav" TextArea="Cinematic">Oh shit, you're one of these... Could you just show it to the camera over there, so that I can verify later?</Static>
-<Static AudioFile="mod\m05\m05_detroit_0045_barman.wav" TextArea="Cinematic">Aha, thanks. He's on a research station in Sigma-17.</Static>
-<Static AudioFile="mod\m05\m05_detroit_0050_trent.wav" TextArea="Cinematic">What station?</Static>
-<Static AudioFile="mod\m05\m05_detroit_0060_barman.wav" TextArea="Cinematic">R-e-s-e-a-r-c-h Station. Got it? Strange, your kind are usually the smart ones.</Static>
-<Static AudioFile="mod\m05\m05_detroit_0070_trent.wav" TextArea="Cinematic">OK, thanks for the info. You see how easy it is to just go ahead and melt the ice? </Static>
-<Static AudioFile="mod\m05\m05_detroit_0080_trent.wav" TextArea="Cinematic">That's exactly what Humanity lacks – a little bit of warmth.</Static>
-
-<Static AudioFile="echo_m05.utf|0xB8D06E41" TextArea="Cinematic">Freelancer alpha-one, turn your weapons down and follow us to battleship Griffin.</Static>
-<Static AudioFile="echo_m05_player.utf|0x9BCE24CA" TextArea="Cinematic">What the... I was just flying to Forbes, what's the matter?</Static>
-<Static AudioFile="echo_m05.utf|0xB8086841" TextArea="Cinematic">Freelancer alpha-one, I repeat, turn your weapons down and follow us to battleship Griffin. That's an order from commander Tilton. If you fail to comply, we will open fire.</Static>
-<Static AudioFile="echo_m05_female.utf|0x8E3E0F8C" TextArea="Cinematic">Hey there, boys! This freelancer is under my jurisdiction. Calm down. He's on our side. Is that clear?</Static>
-<Static AudioFile="echo_m05.utf|0x9DE4630B" TextArea="Cinematic">Miss Hatcher! Long time no see. Your agents have been quite a pain in the ass lately. But now, oh, now you've crossed the line! </Static>
-<Static AudioFile="echo_m05.utf|0x9DF06201" TextArea="Cinematic">This freelancer is responsible for no less than the destruction of the Clark research station! And I have the authority, by all means, to deal with him as I please!</Static>
-<Static AudioFile="echo_m05_player.utf|0xBBCF48C1" TextArea="Cinematic">I'm responsible for WHAT? The station blew up from the inside, while I was out in space waiting for...</Static>
-<Static AudioFile="echo_m05.utf|0xBE32F78C" TextArea="Cinematic">Shut up, Trent!</Static>
-<Static AudioFile="echo_m05.utf|0x9133830B" TextArea="Cinematic">Shut up, freelancer!</Static>
-<Static AudioFile="echo_m05.utf|0xB4838B4B" TextArea="Cinematic">Attention, we're reading hostiles on our radar!</Static>
-<Static AudioFile="echo_m05.utf|0x8CCD2DC9" TextArea="Cinematic">What a coincidence, Herr Trent! Do you know what's the penalty for treason in Rheinland? That's right, death! All wingmen, engage!</Static>
-
-<Static AudioFile="mod\m05\m05_equip_0010_hatcher.wav" TextArea="Cinematic">Professor Mandrake.</Static>
+<Static AudioFile="mod\m05\m05_equip_0010_hatcher.wav" TextArea="Cinematic">Professeur Mandrake.</Static>
 <Static AudioFile="mod\m05\m05_equip_0020_mandrake.wav" TextArea="Cinematic">Miss Hatcher.</Static>
-<Static AudioFile="mod\m05\m05_equip_0030_hatcher.wav" TextArea="Cinematic">Professor, I apologize in Tilton's name for keeping you in your capsule an extra hour.</Static>
-<Static AudioFile="mod\m05\m05_equip_0040_mandrake.wav" TextArea="Cinematic">That bastard, I thought he was over you but he can't stop trying to catch you, Miss Hatcher.</Static>
-<Static AudioFile="mod\m05\m05_equip_0050_hatcher.wav" TextArea="Cinematic">The more he tries, the simpler and dumber his schemes become.</Static>
-<Static AudioFile="mod\m05\m05_equip_0060_mandrake.wav" TextArea="Cinematic">You'd better be wary of this kind of person. Statistically, if he tried enough times, he will eventually achieve his goal.</Static>
-<Static AudioFile="mod\m05\m05_equip_0070_hatcher.wav" TextArea="Cinematic">With Tilton? That's highly unlikely. He thinks that doing the same thing over and over again, expecting different results, is not considered crazy.</Static>
-<Static AudioFile="mod\m05\m05_equip_0080_mandrake.wav" TextArea="Cinematic">Yeah, but it's all about his "progressive ideas" that the Order have already outlived their purpose, and it's time for Liberty to stop playing around and end them once and for all...</Static>
-<Static AudioFile="mod\m05\m05_equip_0090_hatcher.wav" TextArea="Cinematic">Only childish morons like him would support his ideas.</Static>
-<Static AudioFile="mod\m05\m05_equip_0100_trent.wav" TextArea="Cinematic">Wait, wait, wait! Am I just a decoration here? Please explain what's going on.</Static>
-<Static AudioFile="mod\m05\m05_equip_0110_mandrake.wav" TextArea="Cinematic">It'll be very difficult and time consuming.</Static>
-<Static AudioFile="mod\m05\m05_equip_0120_trent.wav" TextArea="Cinematic">Let's start with the simple things, what's the Order?</Static>
-<Static AudioFile="mod\m05\m05_equip_0130_hatcher.wav" TextArea="Cinematic">It's not that simple, Trent… It's an organization...</Static>
-<Static AudioFile="mod\m05\m05_equip_0140_trent.wav" TextArea="Cinematic">That much I understand. Let's not force the information out of Miss Hatcher; give her the freedom of choice.</Static>
-<Static AudioFile="mod\m05\m05_equip_0150_mandrake.wav" TextArea="Cinematic">Tell him.</Static>
-<Static AudioFile="mod\m05\m05_equip_0160_hatcher.wav" TextArea="Cinematic">Fine. But what I'm about to say shouldn't just stay between us. This information is highly classified, and Trent, if you ever disclose it...</Static>
-<Static AudioFile="mod\m05\m05_equip_0170_trent.wav" TextArea="Cinematic">Yeah, yeah, I get it. You'll personally kick my balls.</Static>
-<Static AudioFile="mod\m05\m05_equip_0180_hatcher.wav" TextArea="Cinematic">Don't flatter yourself. It's a job for guys like Tilton.</Static>
-<Static AudioFile="mod\m05\m05_equip_0190_trent.wav" TextArea="Cinematic">Okay, I'm shaking in fear. Now let's get down to business. </Static>
-<Static AudioFile="mod\m05\m05_equip_0200_hatcher.wav" TextArea="Cinematic">Nobody knows how the Order was formed, or who formed it. All we know is that it used to be a powerful organization founded by people of massive influence. Their goal was to ensure humanity's survival by monitoring threats,</Static>
-<Static AudioFile="mod\m05\m05_equip_0210_hatcher.wav" TextArea="Cinematic">and they weren't interested in wars between nations. Not even the 80-year war, although they do deserve credit for making it an 80-year war rather than 200.</Static>
-<Static AudioFile="mod\m05\m05_equip_0220_hatcher.wav" TextArea="Cinematic">The Order only takes care of serious threats to humanity as a whole. One such threat has already come upon us a good while ago,</Static>
-<Static AudioFile="mod\m05\m05_equip_0230_hatcher.wav" TextArea="Cinematic">when we faced a parasitic alien race. That threat was isolated, all thanks to the Order.</Static>
-<Static AudioFile="mod\m05\m05_equip_0240_trent.wav" TextArea="Cinematic">A series of mysterious deaths among government officials of several nations, which the media described as unfortunate events.</Static>
-<Static AudioFile="mod\m05\m05_equip_0250_hatcher.wav" TextArea="Cinematic">Exactly. The media hushed it, even though humanity was on the verge of war between all nations, played by an alien race called "Nomads".</Static>
-<Static AudioFile="mod\m05\m05_equip_0260_trent.wav" TextArea="Cinematic">Disguised as "cross-border incidents". </Static>
-<Static AudioFile="mod\m05\m05_equip_0270_hatcher.wav" TextArea="Cinematic">Precise. Although, they were never really incidents. It was a full-on war involving everyone, Nomads included. A silent war, however, with the influence of the Order. </Static>
-<Static AudioFile="mod\m05\m05_equip_0280_hatcher.wav" TextArea="Cinematic">All those involved received their awards discretely, and everyone agreed it should never be spoken of again. </Static>
-<Static AudioFile="mod\m05\m05_equip_0290_trent.wav" TextArea="Cinematic">Major King, my own namesake, Jun'Ko Zhane?</Static>
-<Static AudioFile="mod\m05\m05_equip_0300_mandrake.wav" TextArea="Cinematic">He's smarter than he looks.</Static>
-<Static AudioFile="mod\m05\m05_equip_0310_hatcher.wav" TextArea="Cinematic">I picked him myself... And so, Trent, the Order gained massive influence over our geopolitical systems, putting the organization under immediate risk. </Static>
-<Static AudioFile="mod\m05\m05_equip_0320_hatcher.wav" TextArea="Cinematic">But, in our conservatively democratic society, the king of the hill rules. Whoever gets a chance to climb over by pushing others down, wins.</Static>
-<Static AudioFile="mod\m05\m05_equip_0330_hatcher.wav" TextArea="Cinematic">And so, an aspiring group of warriors decided to rise against the Order for no apparent reason.</Static>
-<Static AudioFile="mod\m05\m05_equip_0340_hatcher.wav" TextArea="Cinematic">If you sent them to battle against a Nomad fleet, they'll shit their pants and cry for their moms. But in the peaceful days of modern Liberty, they'll happily wage war against the Order.</Static>
-<Static AudioFile="mod\m05\m05_equip_0350_hatcher.wav" TextArea="Cinematic">And it goes without saying that the Order is run by people, not robots. Where there's people involved, conflict arises...</Static>
-<Static AudioFile="mod\m05\m05_equip_0360_trent.wav" TextArea="Cinematic">And they lived happily ever after, right?</Static>
-<Static AudioFile="mod\m05\m05_equip_0370_hatcher.wav" TextArea="Cinematic">The story's not over yet… And there's not really a happy ending. The Order split into two independent organizations: The Alliance Security Force, and the New Order.</Static>
-<Static AudioFile="mod\m05\m05_equip_0380_trent.wav" TextArea="Cinematic">So the Order is no more.</Static>
-<Static AudioFile="mod\m05\m05_equip_0390_hatcher.wav" TextArea="Cinematic">Well, not exactly. The Alliance Security Force oversees Liberty territories, among other things, despite resistance from some of Liberty's powers. Those powers are run by douchebags like Tilton.</Static>
-<Static AudioFile="mod\m05\m05_equip_0400_hatcher.wav" TextArea="Cinematic">But in no way does it mean that we forgot our main goal – to protect humanity from external threats.</Static>
-<Static AudioFile="mod\m05\m05_equip_0410_trent.wav" TextArea="Cinematic">If you say so...</Static>
-<Static AudioFile="mod\m05\m05_equip_0420_hatcher.wav" TextArea="Cinematic">Now, Trent, can I finally...</Static>
-<Static AudioFile="mod\m05\m05_equip_0430_trent.wav" TextArea="Cinematic">Sure.</Static>
-<Static AudioFile="mod\m05\m05_equip_0440_hatcher.wav" TextArea="Cinematic">Professor, Rheinland officials have gotten their hands on intel about Omicron Alpha...</Static>
-<Static AudioFile="mod\m05\m05_equip_0450_mandrake.wav" TextArea="Cinematic">And...</Static>
-<Static AudioFile="mod\m05\m05_equip_0460_hatcher.wav" TextArea="Cinematic">They've captured the objective and are making progress with it.</Static>
-<Static AudioFile="mod\m05\m05_equip_0470_mandrake.wav" TextArea="Cinematic">Rheinlanders are running experiments on the sphere in Omicron Alpha??? Are you out of your mind??? What have you done??? Mr. Trent was right… The Order really is no more...</Static>
-<Static AudioFile="mod\m05\m05_equip_0480_trent.wav" TextArea="Cinematic">About that Mr. Trent...</Static>
-<Static AudioFile="mod\m05\m05_equip_0490_hatcher.wav" TextArea="Cinematic">What else do you need?</Static>
-<Static AudioFile="mod\m05\m05_equip_0500_trent.wav" TextArea="Cinematic">Toss a coin to your freelancer.</Static>
-<Static AudioFile="mod\m05\m05_equip_0510_hatcher.wav" TextArea="Cinematic">Ah, yes, sorry. I'm transferring your credits. We'll be in touch.</Static>
+<Static AudioFile="mod\m05\m05_equip_0030_hatcher.wav" TextArea="Cinematic">Professeur, je m'excuse au nom de Tilton de vous avoir gardé dans votre capsule une heure de plus.</Static>
+<Static AudioFile="mod\m05\m05_equip_0040_mandrake.wav" TextArea="Cinematic">Ce salaud, je pensais qu'il en avait fini avec vous mais il n'arrête pas d'essayer de vous attraper, Mlle Hatcher.</Static>
+<Static AudioFile="mod\m05\m05_equip_0050_hatcher.wav" TextArea="Cinematic">Plus il essaie, plus ses plans deviennent simples et idiots.</Static>
+<Static AudioFile="mod\m05\m05_equip_0060_mandrake.wav" TextArea="Cinematic">Il vaut mieux se méfier de ce genre de personne. Statistiquement, s'il a essayé suffisamment de fois, il finira par atteindre son but.</Static>
+<Static AudioFile="mod\m05\m05_equip_0070_hatcher.wav" TextArea="Cinematic">Avec Tilton ? C'est très peu probable. Il pense que faire la même chose encore et encore, en espérant des résultats différents, n'est pas considéré comme de la folie.</Static>
+<Static AudioFile="mod\m05\m05_equip_0080_mandrake.wav" TextArea="Cinematic">Oui, mais il s'agit de ses "idées progressistes" selon lesquelles l'Ordre a déjà fait son temps et il est temps pour Liberty d'arrêter de jouer et d'en finir une fois pour toutes...</Static>
+<Static AudioFile="mod\m05\m05_equip_0090_hatcher.wav" TextArea="Cinematic">Seuls des crétins puérils comme lui pourraient soutenir ses idées.</Static>
+<Static AudioFile="mod\m05\m05_equip_0100_trent.wav" TextArea="Cinematic">Attends, attends, attends ! Je ne suis qu'une décoration ici ? S'il vous plaît, expliquez-moi ce qui se passe. </Static>
+<Static AudioFile="mod\m05\m05_equip_0110_mandrake.wav" TextArea="Cinematic">Ce sera très difficile et prendra beaucoup de temps.</Static>
+<Static AudioFile="mod\m05\m05_equip_0120_trent.wav" TextArea="Cinematic">Commençons par les choses simples, quel est l'Ordre ? </Static>
+<Static AudioFile="mod\m05\m05_equip_0130_hatcher.wav" TextArea="Cinematic">Ce n'est pas si simple, Trent... C'est une organisation...</Static>
+<Static AudioFile="mod\m05\m05_equip_0140_trent.wav" TextArea="Cinematic">Ceci, je le comprends. Ne forçons pas l'information de Mlle Hatcher ; laissons-lui la liberté de choisir. </Static>
+<Static AudioFile="mod\m05\m05_equip_0150_mandrake.wav" TextArea="Cinematic">Dis-lui. </Static>
+<Static AudioFile="mod\m05\m05_equip_0160_hatcher.wav" TextArea="Cinematic">D'accord. Mais ce que je m'apprête à dire ne doit pas rester entre nous. Cette information est hautement classifiée, et Trent, si jamais tu la divulgues...</Static>
+<Static AudioFile="mod\m05\m05_equip_0170_trent.wav" TextArea="Cinematic">Ouais, ouais, j'ai compris. Tu vas personnellement me casser les couilles. </Static>
+<Static AudioFile="mod\m05\m05_equip_0180_hatcher.wav" TextArea="Cinematic">Ne te flatte pas. C'est un travail pour des gars comme Tilton. </Static>
 
-<Static AudioFile="mod\m06\m06_offer_0010_trent.wav" TextArea="Cinematic">Miss Hatcher. Alaric, I didn't expect to see you here so soon.</Static>
-<Static AudioFile="mod\m06\m06_offer_0020_alaric.wav" TextArea="Cinematic">Well, as soon as you contacted me, I flew to see Miss Hatcher right away. Looks like I was closer to Norwich than you were.</Static>
-<Static AudioFile="mod\m06\m06_offer_0030_hatcher.wav" TextArea="Cinematic">Gentlemen, now that we've all figured out when and how we all got here, shall we get down to business?</Static>
-<Static AudioFile="mod\m06\m06_offer_0040_hatcher.wav" TextArea="Cinematic">Great! So, as I mentioned before, there's an alien object called The Sphere. Originally discovered by The Order, nobody could understand what it is or how it works back then. And so, it got lost in time.</Static>
-<Static AudioFile="mod\m06\m06_offer_0050_hatcher.wav" TextArea="Cinematic">We’ve learned that Rheinlanders have discovered its key, and are currently running their experiments on it. We have reasons to believe that this will not end well for us. That's why we need your help in... ceasing these experiments, so to speak.</Static>
-<Static AudioFile="mod\m06\m06_offer_0060_trent.wav" TextArea="Cinematic">Ha-ha-ha! Perfect. So, if you guys can't find the key to The Sphere, then no one can! And if someone else finds it, then either the key or The Sphere itself have to go. Bravo! This way no one will ever get in there.</Static>
-<Static AudioFile="mod\m06\m06_offer_0070_hatcher.wav" TextArea="Cinematic">I don't appreciate you being sarcastic about it, Mr. Trent. It already happened once, when another group of Rheinland scientists discovered something in the Omicron sector… Oh, how I despise these Rheinlanders...</Static>
-<Static AudioFile="mod\m06\m06_offer_0080_hatcher.wav" TextArea="Cinematic">It escalated into the crisis that I told you about when Prof. Mandrake was here. You get the idea, right?</Static>
-<Static AudioFile="mod\m06\m06_offer_0090_trent.wav" TextArea="Cinematic">Yeah, I get it. Don’t open Pandora's Box.</Static>
-<Static AudioFile="mod\m06\m06_offer_0100_hatcher.wav" TextArea="Cinematic">Very well. Now that we’re done with the theory, let’s get practical. You’ll be receiving triple the usual payment, and you’ll be granted the privilege of being official partners of the ASF.</Static>
-<Static AudioFile="mod\m06\m06_offer_0110_alaric.wav" TextArea="Cinematic">Hell yeah, I'm in! Where do I sign? I can make it a blood oath!</Static>
-<Static AudioFile="mod\m06\m06_offer_0120_trent.wav" TextArea="Cinematic">Calm down, Alaric. Miss Hatcher, what exactly is the objective? Destroy The Sphere? Kill the scientists? I can’t just do that - I'm not an assassin, after all.</Static>
-<Static AudioFile="mod\m06\m06_offer_0130_hatcher.wav" TextArea="Cinematic">Oh, is that so? Just kidding. No, it's nothing like that. Based on the secret documents you handed over, Professor Mandrake found a way to render The Sphere insensitive to external influences. To “seal it shut”, as the professor says.</Static>
-<Static AudioFile="mod\m06\m06_offer_0140_hatcher.wav" TextArea="Cinematic">I'll provide the full details, but only if you accept this mission.</Static>
-<Static AudioFile="mod\m06\m06_offer_0150_trent.wav" TextArea="Cinematic">I'm having a de-ja-vu. Only last time, I was called "Herr Trent", not "Mr. Trent"... On the other hand, it was a lot of fun. Alright, count me in.</Static>
-<Static AudioFile="mod\m06\m06_offer_0160_hatcher.wav" TextArea="Cinematic">Then I'll meet you in the orbit; we'll continue our conversation there.</Static>
+
+<Static AudioFile="mod\m05\m05_equip_0430_trent.wav" TextArea="Cinematic">Sure.</Static>
+<Static AudioFile="mod\m05\m05_equip_0440_hatcher.wav" TextArea="Cinematic">Professeur, les officiels de Rheinland ont mis la main sur des informations concernant Omicron Alpha...</Static>
+<Static AudioFile="mod\m05\m05_equip_0450_mandrake.wav" TextArea="Cinematic">Et...</Static>
+<Static AudioFile="mod\m05\m05_equip_0460_hatcher.wav" TextArea="Cinematic">Ils ont capturé l'objectif et progressent avec lui.</Static>
+<Static AudioFile="mod\m05\m05_equip_0470_mandrake.wav" TextArea="Cinematic">Les Rheinlanders mènent des expériences sur la sphère dans Omicron Alpha ??? As-tu perdu la tête ??? Qu'est-ce que tu as fait ??? M. Trent avait raison... L'Ordre n'est vraiment plus...</Static>
+<Static AudioFile="mod\m05\m05_equip_0480_trent.wav" TextArea="Cinematic">À propos de ce M. Trent... </Static>
+<Static AudioFile="mod\m05\m05_equip_0490_hatcher.wav" TextArea="Cinematic">Qu'est-ce qu'il te faut de plus ? </Static>
+<Static AudioFile="mod\m05\m05_equip_0500_trent.wav" TextArea="Cinematic">Lancez une pièce à votre pigiste.</Static>
+<Static AudioFile="mod\m05\m05_equip_0510_hatcher.wav" TextArea="Cinematic">Ah, oui, désolé. Je transfère vos crédits. Nous resterons en contact.</Static>
+
+<Static AudioFile="mod\m06\m06_offer_0010_trent.wav" TextArea="Cinematic">Miss Hatcher. Alaric, je ne m'attendais pas à te voir ici si tôt.</Static>
+<Static AudioFile="mod\m06\m06_offer_0020_alaric.wav" TextArea="Cinematic">Eh bien, dès que vous m'avez contacté, j'ai pris l'avion pour voir Mlle Hatcher immédiatement. On dirait que j'étais plus proche de Norwich que tu ne l'étais.</Static>
+<Static AudioFile="mod\m06\m06_offer_0030_hatcher.wav" TextArea="Cinematic">Messieurs, maintenant que nous avons tous compris quand et comment nous sommes arrivés ici, pouvons-nous passer aux choses sérieuses ? </Static>
+<Static AudioFile="mod\m06\m06_offer_0040_hatcher.wav" TextArea="Cinematic">Génial ! Donc, comme je l'ai déjà mentionné, il y a un objet extraterrestre appelé la Sphère. Découvert à l'origine par l'Ordre, personne ne pouvait comprendre ce que c'est ou comment ça marche à l'époque. Et donc, elle s'est perdue dans le temps. </Static>
+<Static AudioFile="mod\m06\m06_offer_0050_hatcher.wav" TextArea="Cinematic">Nous avons appris que les Rhénans ont découvert sa clé, et qu'ils mènent actuellement leurs expériences dessus. Nous avons des raisons de croire que cela ne va pas bien se terminer pour nous. C'est pourquoi nous avons besoin de votre aide pour... mettre fin à ces expériences, pour ainsi dire.</Static>
+<Static AudioFile="mod\m06\m06_offer_0060_trent.wav" TextArea="Cinematic">Ha-ha-ha ! Parfait. Donc, si vous ne pouvez pas trouver la clé de la Sphère, alors personne ne le peut ! Et si quelqu'un d'autre la trouve, alors soit la clé, soit la sphère elle-même doit disparaître. Bravo ! De cette façon, personne ne pourra jamais y entrer.</Static>
+<Static AudioFile="mod\m06\m06_offer_0070_hatcher.wav" TextArea="Cinematic">Je n'apprécie pas que vous soyez sarcastique à ce sujet, M. Trent. C'est déjà arrivé une fois, lorsqu'un autre groupe de scientifiques du Rheinland a découvert quelque chose dans le secteur Omicron... Oh, comme je méprise ces Rheinlanders...</Static>
+<Static AudioFile="mod\m06\m06_offer_0080_hatcher.wav" TextArea="Cinematic">Cela a dégénéré en la crise dont je vous ai parlé lorsque le professeur Mandrake était ici. Vous comprenez l'idée, n'est-ce pas ? </Static>
+<Static AudioFile="mod\m06\m06_offer_0090_trent.wav" TextArea="Cinematic">Ouais, j'ai compris. N'ouvre pas la boîte de Pandore. </Static>
+<Static AudioFile="mod\m06\m06_offer_0100_hatcher.wav" TextArea="Cinematic">Très bien. Maintenant que nous en avons fini avec la théorie, passons à la pratique. Vous recevrez le triple de la rémunération habituelle, et vous aurez le privilège d'être des partenaires officiels de la FAA.</Static>
+<Static AudioFile="mod\m06\m06_offer_0110_alaric.wav" TextArea="Cinematic">Hell yeah, I'm in ! Où est-ce que je signe ? Je peux en faire un serment de sang!</Static>
+<Static AudioFile="mod\m06\m06_offer_0120_trent.wav" TextArea="Cinematic">Calme-toi, Alaric. Mlle Hatcher, quel est exactement l'objectif ? Détruire la sphère ? Tuer les scientifiques ? Je ne peux pas faire ça - je ne suis pas un assassin, après tout.</Static>
+<Static AudioFile="mod\m06\m06_offer_0130_hatcher.wav" TextArea="Cinematic">Oh, c'est ainsi ? Je plaisante. Non, ce n'est pas du tout ça. En se basant sur les documents secrets que vous nous avez remis, le Professeur Mandrake a trouvé un moyen de rendre la Sphère insensible aux influences extérieures. Pour la "fermer hermétiquement", comme le professeur le dit.</Static>
+<Static AudioFile="mod\m06\m06_offer_0140_hatcher.wav" TextArea="Cinematic">Je vous donnerai tous les détails, mais seulement si vous acceptez cette mission.</Static>
+<Static AudioFile="mod\m06\m06_offer_0150_trent.wav" TextArea="Cinematic">J'ai une impression de déjà-vu. La dernière fois, on m'a appelé "Herr Trent", pas "Mr. Trent"... D'un autre côté, c'était très amusant. Très bien, comptez sur moi. </Static>
+
+<Static AudioFile="mod\m06\m06_offer_0160_hatcher.wav" TextArea="Cinematic">Puis je vous retrouverai sur l'orbite, nous continuerons notre conversation là-bas.</Static>
 
 <Static AudioFile="mod\m06\m06_briefing_0010_hatcher.wav" TextArea="Cinematic"></Static>
 <Static AudioFile="mod\m06\m06_briefing_0020_trent.wav" TextArea="Cinematic"></Static>

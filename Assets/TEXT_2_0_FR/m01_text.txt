@@ -1,0 +1,47 @@
+Bienvenue dans [b]Nomad Legacy[/b] !
+
+Ce mod utilise un système d'équipement différent. Ces premières informations vous aideront à comprendre le système de vitesse actuel.
+
+Votre navire possède un [b]Moteur[/b] et un ou deux [b]Propulseurs[/b].
+
+Vous avez un moteur de base pour le moment. Ce moteur a une vitesse minimale. Ne vous inquiétez pas, ce n'est que le premier modèle du moteur. Vous pouvez améliorer tous vos systèmes et, à l'avenir, votre moteur pourra atteindre une vitesse de 200 m/s sans l'aide de propulseurs ! La vitesse de croisière augmentera également !
+
+C'est pourquoi votre propulseur a une petite vitesse. Votre propulseur peut aussi être amélioré.
+
+C'est suffisant pour le moment. Bons vols !
+
+
+
+
+
+
+
+Félicitations, la mission 1 est terminée ! Vous avez reçu votre première récompense et votre capacité à installer de nouveaux équipements a été débloquée.
+
+La mission entre maintenant dans la phase de [b]vol libre[/b]. Vous pouvez maintenant vous familiariser avec le monde et commencer à l'explorer.
+
+Malheureusement, toutes les façons de gagner de l'argent ne sont pas encore disponibles. Progressez, et vous débloquerez de nouvelles façons de vous enrichir. Alors, qu'est-ce que c'est ?
+
+[b]Missions du bar[/b].
+Remplissez les missions classiques du bar et vous gagnerez de l'argent, ainsi que la réputation des factions locales. N'oubliez pas que c'est le seul moyen d'obtenir une réputation maximale pour la faction principale locale (dans ce cas, Rhineland).
+
+[b]Commerce[/b].
+Vous pouvez effectuer des transactions de la manière habituelle. Économisez de l'argent et après la prochaine mission, vous pourrez acheter un Dromoder. Ce camion est vendu à Omega-15 et à Munich et est idéal pour commencer une carrière de négociant. Qu'est-ce que le Dromoder a de si remarquable ? Seuls les camions peuvent utiliser une licence commerciale et commencer à effectuer des missions commerciales. Vous pouvez donc l'essayer. Les missions commerciales les plus proches se trouvent dans les entrepôts de Munich et d'Omega-15, ainsi que dans l'avant-poste commercial de Brême.
+Une fois encore, je vous rappelle que les missions de courrier ne peuvent être effectuées que sur des camions.
+Faites attention ! Car votre cargaison peut être la chasse aux pirates !
+
+[b]Contrebande[/b].
+Si vous êtes doué pour gagner de l'argent illégalement, vous pouvez également obtenir des missions spéciales de contrebande dans les docks pirates. Les exigences sont à peu près les mêmes que pour les missions normales de coursier commercial. La seule exception est que vous devez avoir une bonne relation avec les pirates pour obtenir la mission. Il est également fortement recommandé de ne pas se faire attraper par la police locale. En général, vous pouvez gagner beaucoup d'argent, mais soyez extrêmement prudent !
+
+[b]Extraction des ressources[/b]
+Vous pouvez extraire des ressources non seulement en faisant exploser un astéroïde, mais aussi en détruisant d'énormes astéroïdes spéciaux. Après la prochaine mission, vous pourrez installer des canons miniers. Ils vous permettront non seulement d'exploiter de précieuses ressources, mais aussi d'obtenir des modules uniques qui renforceront votre vaisseau.
+Il existe 3 types d'extraction de ressources :
+- l'extraction du minerai des astéroïdes ;
+- la destruction des débris radioactifs compressés ;
+- l'extraction de gaz.
+
+L'exploitation des ressources a encore plus d'astuces. Vous pouvez vous renseigner auprès des clients des bars des stations d'extraction.
+
+[b]Pirater les bases détruites[/b]
+Vous pouvez commencer à chercher des épaves dès maintenant, mais vous pouvez également trouver beaucoup de stations détruites intéressantes dans le mod. Pour l'instant, vous ne pouvez rien faire avec eux, mais après un certain temps, vous pourrez obtenir des canons spéciaux de piratage. Ils vous permettront d'ouvrir les meurtrières très intéressantes de ces stations, qui stockeront beaucoup de choses intéressantes.
+Mais faites attention. En plus de vous, il y a des charognards et des fouilleurs noirs qui s'intéressent activement à ces stations.
