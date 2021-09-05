@@ -1,5 +1,13 @@
 duration=60
 
+readfrom('thn_settings.txt')
+
+sp_short_cutscenes_mode = read()
+if sp_short_cutscenes_mode == '1' then
+	duration = 1
+end
+readfrom()
+
 entities={
 	{
 		entity_name="Scene_System_Omicron_Major",
@@ -1019,7 +1027,7 @@ entities={
 			}
 		},
 		audioprops={
-			attenuation=0,
+			attenuation=-15,
 			pan=0,
 			dmin=50,
 			dmax=300,
@@ -2420,6 +2428,19 @@ events={
 	},
 	{
 		52, START_SOUND, {"close_baydoor"}, {duration=15}
+	},
+	{
+		0,
+		START_AUDIO_PROP_ANIM,
+		{
+			"music_main"
+		},
+		{
+			duration=5,
+			audioprops={
+				attenuation=0
+			}
+		}
 	},
 	{
 		50,

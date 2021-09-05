@@ -13,6 +13,9 @@
 <test_voice name="0x9A994189" type="file" filename="echo_m06_utf\DX_M06_0320_hatcher.wav"/>
 <test_voice name="0x8E984B89" type="file" filename="echo_m06_utf\DX_M06_0330_hatcher.wav"/>
 <test_voice name="0xB69E3789" type="file" filename="echo_m06_utf\DX_M06_0350_hatcher.wav"/>
+<test_voice name="0xB39BC1CD" type="file" filename="echo_m06_utf\DX_M06_1200_hatcher.wav"/>
+<test_voice name="0xA79ACBCD" type="file" filename="echo_m06_utf\DX_M06_1210_hatcher.wav"/>
+
 
 
    </UTF_ROOT>

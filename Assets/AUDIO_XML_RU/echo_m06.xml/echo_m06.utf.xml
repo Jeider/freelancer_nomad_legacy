@@ -14,6 +14,7 @@
 <test_voice name="0xB5F30D8D" type="file" filename="echo_m06_utf\DX_M06_0180_alaric.wav"/>
 <test_voice name="0x88D01B8D" type="file" filename="echo_m06_utf\DX_M06_0200_alaric.wav"/>
 <test_voice name="0x8CF86F49" type="file" filename="echo_m06_utf\DX_M06_0220_scient.wav"/>
+<test_voice name="0xA8988D88" type="file" filename="echo_m06_utf\DX_M06_0225_alaric.wav"/>
 <test_voice name="0x888C1887" type="file" filename="echo_m06_utf\DX_M06_0230_alaric.wav"/>
 <test_voice name="0x92B0E94E" type="file" filename="echo_m06_utf\DX_M06_0300_captain.wav"/>
 <test_voice name="0x86B1E34E" type="file" filename="echo_m06_utf\DX_M06_0310_captain.wav"/>
@@ -27,6 +28,18 @@
 <test_voice name="0xA11C3E0F" type="file" filename="echo_m06_utf\DX_M06_0460_delta1.wav"/>
 <test_voice name="0xA1083F05" type="file" filename="echo_m06_utf\DX_M06_0470_delta1.wav"/>
 <test_voice name="0xA0E4300F" type="file" filename="echo_m06_utf\DX_M06_0480_delta1.wav"/>
+
+<test_voice name="0x8A205343" type="file" filename="echo_m06_utf\DX_M06_1010_professor.wav"/>
+<test_voice name="0xB88B5E43" type="file" filename="echo_m06_utf\DX_M06_1020_runner.wav"/>
+<test_voice name="0xB89F5F49" type="file" filename="echo_m06_utf\DX_M06_1030_runner.wav"/>
+<test_voice name="0xB8535843" type="file" filename="echo_m06_utf\DX_M06_1040_runner.wav"/>
+<test_voice name="0xB8475949" type="file" filename="echo_m06_utf\DX_M06_1050_runner.wav"/>
+<test_voice name="0xB81B5A43" type="file" filename="echo_m06_utf\DX_M06_1060_runner.wav"/>
+<test_voice name="0xB45A03C8" type="file" filename="echo_m06_utf\DX_M06_1100_outpost.wav"/>
+<test_voice name="0xBBB2690A" type="file" filename="echo_m06_utf\DX_M06_1220_captain.wav"/>
+	
+
+
 
 
 

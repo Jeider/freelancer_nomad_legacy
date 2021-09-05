@@ -1,8 +1,8 @@
-duration=10
+duration=25
 
 entities={
 	{
-		entity_name="scene_nomad_area_camera2",
+		entity_name="scene_nomad_area_camera4",
 		type=SCENE,
 		template_name="",
 		template_id=0,
@@ -46,48 +46,13 @@ entities={
 	},
 
 	{
-		entity_name="Path_1",
-		type=MOTION_PATH,
-		template_name="",
-		template_id=0,
-		spatialprops={
-			pos={
-				0,
-				0,
-				0
-			},
-			orient={
-				{
-					1,
-					0,
-					0
-				},
-				{
-					0,
-					1,
-					0
-				},
-				{
-					0,
-					0,
-					1
-				}
-			}
-		},
-		pathprops={
-			path_type="CV_CROrientationSplinePath",
-			--path_data="OPEN, {0.000000,0.000000,0.000000}, {1.000000,0.000000,0.000000,0.000000}, {-20.000000,20.000000,5.000000}, {1.000000,0.000000,0.000000,0.000000}, "
-			path_data="OPEN, {-6400, 200, -26200}, {0.4,0,-0.6,0}, {-5800, -825, -23000}, {0,0,-1,0}, "
-		}
-	},
-	{
 		entity_name="Shot06_Camera_0",
 		type=CAMERA,
 		template_name="",
 		template_id=0,
 		spatialprops={
 			pos={
-				 -16828, -3599, 28921 -- -16520, -3607, 29120
+				-8000, 1300, -23500
 			},
 			orient={
 				{
@@ -114,6 +79,62 @@ entities={
 			farplane=100000
 		}
 	},
+	{
+		entity_name="Shot06_Camera_0_Position2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-8000, 1300, -24000
+			},
+			orient={
+				{
+					1,
+					0,
+					0
+				},
+				{
+					0,
+					1,
+					0
+				},
+				{
+					0,
+					0,
+					1
+				}
+			}
+		}
+	},
+	{
+		entity_name="Marker_Nomad_Kernel",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-10800, 300, -25600
+			},
+			orient={
+				{
+					1,
+					0,
+					0
+				},
+				{
+					0,
+					1,
+					0
+				},
+				{
+					0,
+					0,
+					1
+				}
+			}
+		}
+	},
 }
 
 events={
@@ -127,15 +148,13 @@ events={
 	},
 	{
 		0,
-		START_PATH_ANIMATION,
+		ATTACH_ENTITY,
 		{
 			"Shot06_Camera_0",
-			"Path_1"
+			"Marker_Nomad_Kernel"
 		},
 		{
-			duration=7,
-			start_percent=0,
-			stop_percent=1,
+			duration=30,
 			offset={
 				0,
 				0,
@@ -143,24 +162,29 @@ events={
 			},
 			up=Y_AXIS,
 			front=NEG_Z_AXIS,
-			flags=POSITION + ORIENTATION,
-			param_curve={
-				CLSID="FreeFormPCurve",
-				points={
-					{
-						0,
-						0,
-						0,
-						0
-					},
-					{
-						1,
-						1,
-						0,
-						0
-					}
-				}
+			target_part="",
+			target_type=ROOT,
+			flags=LOOK_AT
+		}
+	},
+	
+	
+	{
+		0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Shot06_Camera_0",
+			"Shot06_Camera_0_Position2"
+		},
+		{
+			duration=15,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
 			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
 			pcurve_period=-1000
 		}
 	},
