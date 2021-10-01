@@ -362,55 +362,103 @@
 <Static AudioFile="mod\m06\m06_offer_0150_trent.wav" TextArea="Cinematic">I'm having a de-ja-vu. Only last time, I was called "Herr Trent", not "Mr. Trent"... On the other hand, it was a lot of fun. Alright, count me in.</Static>
 <Static AudioFile="mod\m06\m06_offer_0160_hatcher.wav" TextArea="Cinematic">Then I'll meet you in the orbit; we'll continue our conversation there.</Static>
 
-<Static AudioFile="mod\m06\m06_briefing_0010_hatcher.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_briefing_0020_trent.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_briefing_0030_hatcher.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_briefing_0040_hatcher.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_briefing_0050_hatcher.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_briefing_0060_hatcher.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_briefing_0070_hatcher.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_briefing_0080_alaric.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_briefing_0090_trent.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_briefing_0100_hatcher.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_briefing_0110_trent.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_briefing_0120_hatcher.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_briefing_0130_hatcher.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_briefing_0140_hatcher.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_briefing_0150_hatcher.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_briefing_0160_hatcher.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_briefing_0170_hatcher.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_briefing_0180_hatcher.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_briefing_0190_trent.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_briefing_0200_hatcher.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_briefing_0210_hatcher.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_briefing_0220_hatcher.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_briefing_0230_alaric.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_briefing_0240_hatcher.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_briefing_0250_hatcher.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_briefing_0260_alaric.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_briefing_0270_hatcher.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_briefing_0280_hatcher.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_briefing_0290_hatcher.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_briefing_0010_hatcher.wav" TextArea="Cinematic">Alright, gentlemen, our main objective is to eliminate a Rheinland scientist named Professor Rotterman.</Static>
+<Static AudioFile="mod\m06\m06_briefing_0020_trent.wav" TextArea="Cinematic"> Damn it, thought so.</Static>
+<Static AudioFile="mod\m06\m06_briefing_0030_hatcher.wav" TextArea="Cinematic">Don't interrupt me, Trent! "Thought so". Perhaps you also thought that for three times the money all you'd be doing is sushi delivery?</Static>
+<Static AudioFile="mod\m06\m06_briefing_0040_hatcher.wav" TextArea="Cinematic">Time to grow up, Mr. Trent.. </Static>
+<Static AudioFile="mod\m06\m06_briefing_0050_hatcher.wav" TextArea="Cinematic"> Alright, so, you will eliminate Dr. Rotterman and find two artifacts: the Nomad Crystal and the Proteus Tome, which should be either in his possession or somewhere around.</Static>
+<Static AudioFile="mod\m06\m06_briefing_0060_hatcher.wav" TextArea="Cinematic">These artifacts used to be kept hidden by The Order, but during the "tumultuous" times, they got lost.</Static>
+<Static AudioFile="mod\m06\m06_briefing_0070_hatcher.wav" TextArea="Cinematic">You grab the artifacts, get them far away, and The Sphere will close by itself.</Static>
+<Static AudioFile="mod\m06\m06_briefing_0080_alaric.wav" TextArea="Cinematic">The Order? "Tumultuous" times?</Static>
+<Static AudioFile="mod\m06\m06_briefing_0090_trent.wav" TextArea="Cinematic">Later, Alaric.</Static>
+<Static AudioFile="mod\m06\m06_briefing_0100_hatcher.wav" TextArea="Cinematic">Stop interrupting me, god damn it! We're discussing an extremely important mission here!</Static>
+<Static AudioFile="mod\m06\m06_briefing_0110_trent.wav" TextArea="Cinematic">The most important mission in your life, Miss Hatcher? Don't forget that "we" are the ones doing the dirty work, and as the guys doing the dirty work, we'd like to know "all" the details leading up to our main objective.</Static>
+<Static AudioFile="mod\m06\m06_briefing_0120_hatcher.wav" TextArea="Cinematic">Very well, Trent. So, first, getting inside The Sphere. It is extremely heavily guarded. I'm not sure that even Kaiser himself is as heavily guarded.</Static>
+<Static AudioFile="mod\m06\m06_briefing_0130_hatcher.wav" TextArea="Cinematic">There is a military base near The Sphere, which looks like a shipyard capable of housing two battleships and four mid-sized vessels simultaneously. Do you understand the scale of the operation now? That's why a brute force solution is impossible.</Static>
+<Static AudioFile="mod\m06\m06_briefing_0140_hatcher.wav" TextArea="Cinematic">In order to infiltrate the base, you'll need the devices which are currently in those little containers you picked up earlier. Those are cloaking devices which make your ships invisible both visually and to enemy radars.</Static>
+<Static AudioFile="mod\m06\m06_briefing_0150_hatcher.wav" TextArea="Cinematic">They work by locally changing the curvature of space, therefore causing your ships to shift to a parallel universe.</Static>
+<Static AudioFile="mod\m06\m06_briefing_0160_hatcher.wav" TextArea="Cinematic">To mount these devices on your ships, simply install them inside the ship, connect to the power generator, and route the cloak control button to your HUD. There's only one button - even you geniuses won't get it wrong.</Static>
+<Static AudioFile="mod\m06\m06_briefing_0170_hatcher.wav" TextArea="Cinematic">Push the button once, and you're cloaked. Push it twice, and you're visible again. </Static>
+<Static AudioFile="mod\m06\m06_briefing_0180_hatcher.wav" TextArea="Cinematic">But... there's one problem. I'll just say it as a non-scientist: after turning it off, something happens that makes the device nothing more than a useless piece of plastic and metal, all melted together.</Static>
+<Static AudioFile="mod\m06\m06_briefing_0190_trent.wav" TextArea="Cinematic">Should we bring fire extinguishers, then?</Static>
+<Static AudioFile="mod\m06\m06_briefing_0200_hatcher.wav" TextArea="Cinematic">No, it's safe. Everything happens within the device itself, and you won't even smell it.</Static>
+<Static AudioFile="mod\m06\m06_briefing_0210_hatcher.wav" TextArea="Cinematic">Now about the timing. Not only is this a one-time use device, it also won't work forever, so make sure to use it effectively. Our big brain scientists guarantee 30 minutes of work time. Potentially up to 40 minutes, but probably no longer than that.</Static>
+<Static AudioFile="mod\m06\m06_briefing_0220_hatcher.wav" TextArea="Cinematic">If 30 minutes isn't enough for you, you could try staying cloacked longer, but at your own risk. If the cloaking device gets fried during active use, the local space curvature collapses along with the ship.</Static>
+<Static AudioFile="mod\m06\m06_briefing_0230_alaric.wav" TextArea="Cinematic">And what happens to the ship? It goes into a different dimension?</Static>
+<Static AudioFile="mod\m06\m06_briefing_0240_hatcher.wav" TextArea="Cinematic">I have no idea. Would you like to figure it out? That look on your face tells me the answer is no. Oh, and one more thing: you can't shoot while the device is working. Your projectiles won't be able to escape the local space curvature zone. </Static>
+<Static AudioFile="mod\m06\m06_briefing_0250_hatcher.wav" TextArea="Cinematic">Here is the 3D map of The Sphere and all the other intel we managed to collect.</Static>
+<Static AudioFile="mod\m06\m06_briefing_0260_alaric.wav" TextArea="Cinematic">Wow, just look at it...</Static>
+<Static AudioFile="mod\m06\m06_briefing_0270_hatcher.wav" TextArea="Cinematic">I'm glad you've come to appreciate its magnitude, Mr. Alaric. Please upload these data into your computer. During the operation you will send the necessary data to Mr. Trent.</Static>
+<Static AudioFile="mod\m06\m06_briefing_0280_hatcher.wav" TextArea="Cinematic">And lastly, after you arrive in Rheinland, there will be absolutely no radio exchange between you and me or anyone in the Liberty territory. Otherwise, you will be pinged and the mission will fail before it has even started.</Static>
+<Static AudioFile="mod\m06\m06_briefing_0290_hatcher.wav" TextArea="Cinematic">That's about it. Man your cavalry, gentlemen.</Static>
 
-<Static AudioFile="mod\m06\m06_mount_0010_trent.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_mount_0020_alaric.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_mount_0030_trent.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_mount_0040_alaric.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_mount_0050_trent.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_mount_0060_alaric.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_mount_0070_trent.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_mount_0080_alaric.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_mount_0090_trent.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_lab_land_0010_alaric.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_lab_land_0020_trent.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_lab_land_0030_alaric.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_lab_land_0040_trent.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_lab_room_0010_trent.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_lab_room_0020_alaric.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_torpedo_alert_0010_hatcher.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_torpedo_alert_0020_hatcher.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_torpedo_alert_0040_trent.wav" TextArea="Cinematic"></Static>
-<Static AudioFile="mod\m06\m06_torpedo_alert_0050_hatcher.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="mod\m06\m06_mount_0010_trent.wav" TextArea="Cinematic">You have a rare talent of getting into sticky situations, Alaric.</Static>
+<Static AudioFile="mod\m06\m06_mount_0020_alaric.wav" TextArea="Cinematic">What are you talking about?</Static>
+<Static AudioFile="mod\m06\m06_mount_0030_trent.wav" TextArea="Cinematic">About what will happen very soon.</Static>
+<Static AudioFile="mod\m06\m06_mount_0040_alaric.wav" TextArea="Cinematic">Are you talking about our mission?</Static>
+<Static AudioFile="mod\m06\m06_mount_0050_trent.wav" TextArea="Cinematic">About our SUICIDE mission.</Static>
+<Static AudioFile="mod\m06\m06_mount_0060_alaric.wav" TextArea="Cinematic">Ah, but think of the profits!!! Besides, you could've said "no" at any time.</Static>
+<Static AudioFile="mod\m06\m06_mount_0070_trent.wav" TextArea="Cinematic">I'm afraid if I had said "no", I'd already be flying in space without a space suit.</Static>
+<Static AudioFile="mod\m06\m06_mount_0080_alaric.wav" TextArea="Cinematic">Trent, we signed up, so let's finish this. Let's go, Trent. Next time, you choose the job. I promise you.</Static>
+<Static AudioFile="mod\m06\m06_mount_0090_trent.wav" TextArea="Cinematic">Assuming there is a "next time" in the first place.</Static>
+
+<Static AudioFile="mod\m06\m06_lab_land_0010_alaric.wav" TextArea="Cinematic">Trent, we don't have much time. I already installed a time bomb.</Static>
+<Static AudioFile="mod\m06\m06_lab_land_0020_trent.wav" TextArea="Cinematic">I thought we were going to close the sphere, not blow it up!</Static>
+<Static AudioFile="mod\m06\m06_lab_land_0030_alaric.wav" TextArea="Cinematic">We will. Hatcher decided to have a plan B, just in case. We're gonna blow up the lab.</Static>
+<Static AudioFile="mod\m06\m06_lab_land_0040_trent.wav" TextArea="Cinematic">Got it.</Static>
+
+<Static AudioFile="mod\m06\m06_lab_room_0010_trent.wav" TextArea="Cinematic">Holy moly, look...</Static>
+<Static AudioFile="mod\m06\m06_lab_room_0020_alaric.wav" TextArea="Cinematic">Trent, let's run! You can look at it later</Static>
+
+<Static AudioFile="mod\m06\m06_torpedo_alert_0010_hatcher.wav" TextArea="Cinematic">Trent, we have a critical situation! Rheinland gunboats have just fired torpedos upon Missouri.</Static>
+<Static AudioFile="mod\m06\m06_torpedo_alert_0020_hatcher.wav" TextArea="Cinematic">Our hyperdrive is not ready yet, and our point defense systems won't be able to shoot down all the torpedoes.</Static>
+<Static AudioFile="mod\m06\m06_torpedo_alert_0040_trent.wav" TextArea="Cinematic">But we need to unload the artifacts first...</Static>
+<Static AudioFile="mod\m06\m06_torpedo_alert_0050_hatcher.wav" TextArea="Cinematic">No, right now they'll be much safer in your cargo hold than on Missouri. Get our of here and quickly!</Static>
+
+
+<Static AudioFile="echo_m06.utf|0x8CE3460F" TextArea="Cinematic">Delta-Leader: This is Delta leader, I'm sending you the coordinates for Sigma-17 jumphole.</Static>
+<Static AudioFile="echo_m06.utf|0x8C0DEC04" TextArea="Cinematic">Order fighter: Captain Syd, targets successfully intercepted.</Static>
+<Static AudioFile="echo_m06.utf|0xBC3C1443" TextArea="Cinematic">Captain Syd: Freeze them and deliver them to Nebuchadnezzar.</Static>
+
+
+<Static AudioFile="mod\m06\m06_order_deck_0010_orderpilot.wav" TextArea="Cinematic">Captain Syd, we found artifacts in this Freelancer's cargo hold.</Static>
+<Static AudioFile="mod\m06\m06_order_deck_0020_syd.wav" TextArea="Cinematic">Excellent. Good work, guys. Send the artifacts to the storage facility, and put the prisoners into the wardroom.</Static>
+
+
+<Static AudioFile="mod\m06\m06_order_prison_0010_syd.wav" TextArea="Cinematic">At ease, soldier. Go to control room and tell them to order a transport to deliver the prisoners to our base. Meanwhile, I'll begin interrogating them.</Static>
+<Static AudioFile="mod\m06\m06_order_prison_0020_guard.wav" TextArea="Cinematic">Sir, but what if...</Static>
+<Static AudioFile="mod\m06\m06_order_prison_0030_syd.wav" TextArea="Cinematic">No. They got shockers on them - they'll regret even thinking about it.</Static>
+<Static AudioFile="mod\m06\m06_order_prison_0040_guard.wav" TextArea="Cinematic">Yes, sir.</Static>
+<Static AudioFile="mod\m06\m06_order_prison_0050_syd.wav" TextArea="Cinematic">Don't worry, lads, I don't bite. Consider yourself lucky that it all happened while I was on duty.</Static>
+<Static AudioFile="mod\m06\m06_order_prison_0060_syd.wav" TextArea="Cinematic">Ah, forgot to introduce myself. Hari Syd, captain in The Order, and also an ASF lieutenant working here undercover, as you can see. We're going to wait here a little while, and then I'll help you get off the inhospitable floor of Nebuchadnezzar.</Static>
+<Static AudioFile="mod\m06\m06_order_prison_0070_delta3.wav" TextArea="Cinematic">Guys, I have a feeling that this is yet another trick from The Order and that this lovely captain is about to put us in front of a squad of fighters with assault rifles...</Static>
+<Static AudioFile="mod\m06\m06_order_prison_0080_delta1.wav" TextArea="Cinematic">You have better suggestions? Either way, being shot is probably a better alternative to being interrogated by Order specialists.</Static>
+<Static AudioFile="mod\m06\m06_order_prison_0090_trent.wav" TextArea="Cinematic">Captain, what about the artifacts?</Static>
+<Static AudioFile="mod\m06\m06_order_prison_0100_syd.wav" TextArea="Cinematic">They're being transported to an Order base.</Static>
+<Static AudioFile="mod\m06\m06_order_prison_0110_delta1.wav" TextArea="Cinematic">So you just let them?</Static>
+<Static AudioFile="mod\m06\m06_order_prison_0120_syd.wav" TextArea="Cinematic">And what was I supposed to do? If I started messing with The Order, I'd be sitting down here with you, except not with a cigarette in teeth, but with a cute little shocker on my neck.</Static>
+<Static AudioFile="mod\m06\m06_order_prison_0130_trent.wav" TextArea="Cinematic">So how are you planning to help us escape?</Static>
+<Static AudioFile="mod\m06\m06_order_prison_0140_syd.wav" TextArea="Cinematic">First, put this on. Then all of you guys will go to the docking bay and to Mr. Trent's ship, peacefully and calmly. </Static>
+<Static AudioFile="mod\m06\m06_order_prison_0150_syd.wav" TextArea="Cinematic">Unfortunately, all the other ships are already being harvested for spare parts, but luckily Trent's ship is still in one piece. As you say, the more people at a party, the merrier.</Static>
+<Static AudioFile="mod\m06\m06_order_prison_0160_trent.wav" TextArea="Cinematic">And after we're gone, how is this gonna affect you? You certainly won't be sitting here smoking a cigarette. Rather, you'll likely be trying to smoke a shocker off your neck.</Static>
+<Static AudioFile="mod\m06\m06_order_prison_0170_syd.wav" TextArea="Cinematic">Ah, no. Conveniently, you will have knocked me unconscious, as will be evidenced by me being, well, unconscious.</Static>
+<Static AudioFile="mod\m06\m06_order_prison_0180_syd.wav" TextArea="Cinematic">Besides, a few escaped prisoners pales in comparison to shipping the artifacts which are sought by the whole Sirius sector into the hands of The Order.</Static>
+<Static AudioFile="mod\m06\m06_order_prison_0190_trent.wav" TextArea="Cinematic">Clever, indeed.</Static>
+
+
+<Static AudioFile="mod\m06\m06_freeport_0010_delta1.wav" TextArea="Cinematic">Mr. Trent, I'd like to thank you for your work. Please accept our apologies for dragging you into such a dangerous situation, and I promise you that I'll do everything I can to restore your credibility with us.</Static>
+<Static AudioFile="mod\m06\m06_freeport_0020_trent.wav" TextArea="Cinematic">This is all well and good, but what should I do now?</Static>
+<Static AudioFile="mod\m06\m06_freeport_0030_delta1.wav" TextArea="Cinematic">Keep a low profile. Feel free to work a few odd jobs on this freeport, other independent stations, or hell, possibly even with the pirates. But under no circumstances should you return to legal space.</Static>
+<Static AudioFile="mod\m06\m06_freeport_0040_delta1.wav" TextArea="Cinematic">If you're caught there, we won't be able to help you. You'll be turned into a scapegoat.</Static>
+<Static AudioFile="mod\m06\m06_freeport_0050_delta1.wav" TextArea="Cinematic">Right now I must contact with ASF headquarters to discuss the new situation and develop an action plan.</Static>
+<Static AudioFile="mod\m06\m06_freeport_0060_delta1.wav" TextArea="Cinematic">As a token of gratitute, I'm transferring you 5,000 credits from my personal account. Additionally, the promised reward from this mission still stands, and you should receive it as soon as our situation is resolved.</Static>
+<Static AudioFile="mod\m06\m06_freeport_0070_trent.wav" TextArea="Cinematic">And what about compensating moral damages?</Static>
+<Static AudioFile="mod\m06\m06_freeport_0090_delta1.wav" TextArea="Cinematic">Mr. Trent, frankly speaking, you never gave the impression of a greedy man. You operate very patiently and very effectively in risky life-and-death situations. And you survived thus far.</Static>
+<Static AudioFile="mod\m06\m06_freeport_0100_delta1.wav" TextArea="Cinematic">Greedy people, on the other hand, tend to live much shorter, I've come to notice. I'll be in touch once I have any news, Mr. Trent.</Static>
+
+
+
+
 
 
 

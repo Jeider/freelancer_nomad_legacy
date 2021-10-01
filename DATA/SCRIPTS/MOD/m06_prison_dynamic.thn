@@ -341,4 +341,22 @@ entities={
 			category="Prop"
 		}
 	},
+	
+	{
+		entity_name="PlayerPosDbg",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				10000,0,0
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	
 }

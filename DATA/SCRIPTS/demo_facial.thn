@@ -276,9 +276,161 @@ entities={
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
-
-
 	
+
+	{
+		entity_name="DX_m06_order_prison_0010_syd",
+		template_name="DX_m06_order_prison_0010_syd",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_order_prison_0020_guard",
+		template_name="DX_m06_order_prison_0020_guard",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_order_prison_0030_syd",
+		template_name="DX_m06_order_prison_0030_syd",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_order_prison_0040_guard",
+		template_name="DX_m06_order_prison_0040_guard",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_order_prison_0050_syd",
+		template_name="DX_m06_order_prison_0050_syd",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_order_prison_0060_syd",
+		template_name="DX_m06_order_prison_0060_syd",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_order_prison_0070_delta3",
+		template_name="DX_m06_order_prison_0070_delta3",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_order_prison_0080_delta1",
+		template_name="DX_m06_order_prison_0080_delta1",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_order_prison_0090_trent",
+		template_name="DX_m06_order_prison_0090_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_order_prison_0100_syd",
+		template_name="DX_m06_order_prison_0100_syd",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_order_prison_0110_delta1",
+		template_name="DX_m06_order_prison_0110_delta1",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_order_prison_0120_syd",
+		template_name="DX_m06_order_prison_0120_syd",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_order_prison_0130_trent",
+		template_name="DX_m06_order_prison_0130_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_order_prison_0140_syd",
+		template_name="DX_m06_order_prison_0140_syd",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_order_prison_0150_syd",
+		template_name="DX_m06_order_prison_0150_syd",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_order_prison_0160_trent",
+		template_name="DX_m06_order_prison_0160_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_order_prison_0170_syd",
+		template_name="DX_m06_order_prison_0170_syd",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_order_prison_0180_syd",
+		template_name="DX_m06_order_prison_0180_syd",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_order_prison_0190_trent",
+		template_name="DX_m06_order_prison_0190_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+
 	
 	{
 		entity_name="Char_trent",
@@ -361,8 +513,56 @@ entities={
 	
 	
 	
+	{
+		entity_name="Char_syd",
+		type=DEFORMABLE,
+		template_name="syd",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				-9, 0, -11
+			},
+			orient={
+				{0.7071068,0,-0.7071068},
+				{0,1,0},
+				{0.7071068,0,0.7071068}
+			}
+		},
+		compoundprops={
+			floor_height=0
+		},
+		userprops={
+			Actor="Syd",
+			category="Character"
+		}
+	},
 	
 	
+	{
+		entity_name="Char_commander",
+		type=DEFORMABLE,
+		template_name="m06_gunner_leader",
+		lt_grp=9,srt_grp=0,usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				-9, 0, -11
+			},
+			orient={
+				{0.7071068,0,-0.7071068},
+				{0,1,0},
+				{0.7071068,0,0.7071068}
+			}
+		},
+		compoundprops={floor_height=0},
+		userprops={
+			actor="Gunner_commander",
+			category="Character"
+		}
+	},
 	
 	
 	{
@@ -551,6 +751,54 @@ entities={
 			}
 		},
 	},
+	
+	
+	
+	{
+		entity_name="cam_syd",
+		type=CAMERA,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				
+				-9.8, 1.7, -11.7
+				
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+				
+			}
+		},
+		cameraprops={
+			fovh=22,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_syd_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-9, 1.65, -11
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+
 
 }
 
@@ -623,6 +871,25 @@ events={
 			flags=LOOK_AT
 		}
 	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_syd",
+			"cam_syd_marker"
+		},
+		{
+			duration=1,
+			offset={0,0,0},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="",
+			target_type=ROOT,
+			flags=LOOK_AT
+		}
+	},
+
+
 
 	
 	{
@@ -646,11 +913,13 @@ events={
 		{animation="Sc_FMBODY_STND_IDLE_000LV_xa_05",
 		 duration=0.1, time_scale=1, weight=1, heading=-1}
 	},
-	
-	
-	
-	
-	
+	{
+		0,
+		START_MOTION,
+		{"Char_commander"},
+		{animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+		 duration=0.1, time_scale=1, weight=1, heading=-1}
+	},
 	
 	
 	-- {
@@ -1507,22 +1776,132 @@ events={
 	
 	
 	
+	-- {
+		-- 0,
+		-- SET_CAMERA,
+		-- {
+			-- "Monitor_1",
+			-- "cam_dbg_trent"
+		-- }
+	-- },
+
+	
+	
+	-- {
+		-- 1,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_lab_room_0010_trent"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	-- {
+		-- 1,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_dx_s062x_0601_trent",
+		 -- duration=15, start_time=0.25, time_scale=0.6, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	
+	
+	
 	{
-		0,
+		0.001,
 		SET_CAMERA,
 		{
 			"Monitor_1",
-			"cam_dbg_trent"
+			"cam_syd"
 		}
 	},
+	-- {
+		-- 0,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_order_prison_0010_syd"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_syd"},
+		-- {animation="Sc_dx_s067d_0101_orillion",
+		 -- duration=4.7, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 4.7,
+		-- START_MOTION,
+		-- {"Char_syd"},
+		-- {animation="Sc_dx_s064x_2601_orillion",
+		 -- duration=4.4, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	
 
+	-- {
+		-- 0,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_order_prison_0030_syd"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_syd"},
+		-- {animation="Sc_dx_s070x_0101_orillion",
+		 -- duration=1.5, time_scale=1.2, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 1.25,
+		-- START_MOTION,
+		-- {"Char_syd"},
+		-- {animation="Sc_dx_s064x_1903_orillion",
+		 -- duration=6, start_time=0.3, time_scale=1, trans_time=0.5, weight=1, heading=-1}
+	-- }, 
+	
+	
+	
+	
+	-- {
+		-- 1,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_order_prison_0020_guard"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	-- {
+		-- 1,
+		-- START_MOTION,
+		-- {"Char_commander"},
+		-- {animation="Sc_dx_s064x_1101_king",
+		 -- duration=4, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 1.5,
+		-- START_MOTION,
+		-- {"Char_commander"},
+		-- {animation="Sc_dx_s009a_0101_king",
+		 -- duration=4, time_scale=0.8, start_time=0.3, trans_time=1, weight=1, heading=-1}
+	-- }, 
+	
+	
 	
 	
 	{
 		1,
 		START_SOUND,
 		{
-			"DX_m06_lab_room_0010_trent"
+			"DX_m06_order_prison_0040_guard"
 		},
 		{
 			duration=15
@@ -1531,10 +1910,18 @@ events={
 	{
 		1,
 		START_MOTION,
-		{"Char_trent"},
-		{animation="Sc_dx_s062x_0601_trent",
-		 duration=15, start_time=0.25, time_scale=0.6, trans_time=0.25, weight=1, heading=-1}
+		{"Char_commander"},
+		{animation="Sc_dx_s074x_0301_odr_tech01",
+		 duration=4, time_scale=1, start_time=0.5, trans_time=0.25, weight=1, heading=-1}
 	}, 
+	
+	-- {
+		-- 1.25,
+		-- START_MOTION,
+		-- {"Char_syd"},
+		-- {animation="Sc_dx_s064x_1903_orillion",
+		 -- duration=6, start_time=0.3, time_scale=1, trans_time=0.5, weight=1, heading=-1}
+	-- }, 
 	
 	
 }

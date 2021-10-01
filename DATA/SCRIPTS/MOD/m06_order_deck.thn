@@ -447,7 +447,7 @@ entities={
 		}
 	},
 
-{
+	{
 		entity_name="Char_syd",
 		type=DEFORMABLE,
 		template_name="syd",

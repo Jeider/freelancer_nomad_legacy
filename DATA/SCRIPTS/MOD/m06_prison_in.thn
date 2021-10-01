@@ -276,7 +276,7 @@ entities={
 			floor_height=0
 		},
 		userprops={
-			actor="Trent",
+			actor="Player",
 			category="Character"
 		}
 	},
