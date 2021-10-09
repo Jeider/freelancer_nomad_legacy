@@ -61,26 +61,7 @@ entities={
 			category="Prop"
 		}
 	},
-	{
-		entity_name="side_chairs1",
-		type=COMPOUND,
-		template_name="li_chair_line",
-		lt_grp=9,
-		srt_grp=0,
-		usr_flg=0,
-		flags=LIT_DYNAMIC,
-		spatialprops={
-			pos={3.5,0,5},
-			orient={
-				{1,0,0},
-				{0,1,0},
-				{0,0,1}
-			}
-		},
-		userprops={
-			category="Prop"
-		}
-	},
+
 	{
 		entity_name="side_chairs2",
 		type=COMPOUND,
