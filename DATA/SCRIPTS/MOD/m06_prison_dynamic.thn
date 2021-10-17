@@ -42,7 +42,7 @@ entities={
 	},
 		
 	{
-		entity_name="side_chairs12",
+		entity_name="side_chairs1",
 		type=COMPOUND,
 		template_name="li_chair_line",
 		lt_grp=9,
@@ -50,7 +50,7 @@ entities={
 		usr_flg=0,
 		flags=LIT_DYNAMIC,
 		spatialprops={
-			pos={2.5,-2,5},
+			pos={3.5,0,5},
 			orient={
 				{1,0,0},
 				{0,1,0},
@@ -171,7 +171,7 @@ entities={
 		usr_flg=0,
 		flags=LIT_DYNAMIC,
 		spatialprops={
-			pos={1.5,0,5.25},
+			pos={1.5,0,3},
 			orient={
 				{0,0,-1},
 				{0,1,0},
@@ -182,26 +182,26 @@ entities={
 			category="Prop"
 		}
 	},
-	{
-		entity_name="chairs2",
-		type=COMPOUND,
-		template_name="li_chair_line2",
-		lt_grp=9,
-		srt_grp=0,
-		usr_flg=0,
-		flags=LIT_DYNAMIC,
-		spatialprops={
-			pos={1.5,0,2.25},
-			orient={
-				{0,0,-1},
-				{0,1,0},
-				{1,0,0}
-			}
-		},
-		userprops={
-			category="Prop"
-		}
-	},
+	-- {
+		-- entity_name="chairs2",
+		-- type=COMPOUND,
+		-- template_name="li_chair_line2",
+		-- lt_grp=9,
+		-- srt_grp=0,
+		-- usr_flg=0,
+		-- flags=LIT_DYNAMIC,
+		-- spatialprops={
+			-- pos={1.5,0,2.25},
+			-- orient={
+				-- {0,0,-1},
+				-- {0,1,0},
+				-- {1,0,0}
+			-- }
+		-- },
+		-- userprops={
+			-- category="Prop"
+		-- }
+	-- },
 	{
 		entity_name="chairs3",
 		type=COMPOUND,
@@ -211,7 +211,7 @@ entities={
 		usr_flg=0,
 		flags=LIT_DYNAMIC,
 		spatialprops={
-			pos={-1.5,0,5.25},
+			pos={-1.5,0,3},
 			orient={
 				{0,0,1},
 				{0,1,0},
@@ -222,26 +222,26 @@ entities={
 			category="Prop"
 		}
 	},
-	{
-		entity_name="chairs4",
-		type=COMPOUND,
-		template_name="li_chair_line2",
-		lt_grp=9,
-		srt_grp=0,
-		usr_flg=0,
-		flags=LIT_DYNAMIC,
-		spatialprops={
-			pos={-1.5,0,2.25},
-			orient={
-				{0,0,1},
-				{0,1,0},
-				{-1,0,0}
-			}
-		},
-		userprops={
-			category="Prop"
-		}
-	},
+	-- {
+		-- entity_name="chairs4",
+		-- type=COMPOUND,
+		-- template_name="li_chair_line2",
+		-- lt_grp=9,
+		-- srt_grp=0,
+		-- usr_flg=0,
+		-- flags=LIT_DYNAMIC,
+		-- spatialprops={
+			-- pos={-1.5,0,2.25},
+			-- orient={
+				-- {0,0,1},
+				-- {0,1,0},
+				-- {-1,0,0}
+			-- }
+		-- },
+		-- userprops={
+			-- category="Prop"
+		-- }
+	-- },
 	{
 		entity_name="console1",
 		type=COMPOUND,

@@ -1,0 +1,265 @@
+	-- {
+		-- 0,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "Char_trent"
+		-- },
+		-- {
+			-- duration=0.5,
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- axisrot={
+					-- -20,
+					-- Y_AXIS
+				-- }
+			-- },
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		-- }
+	-- },	
+	-- {
+		-- 1,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "Char_trent"
+		-- },
+		-- {
+			-- duration=3,
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- axisrot={
+					-- -60,
+					-- Y_AXIS
+				-- }
+			-- },
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		-- }
+	-- },	
+	
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+		 -- duration=0.1, time_scale=1, weight=1, heading=-1}
+	-- },	
+	
+	-- {
+		-- 0.2,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_MLBODY_WALK_STND_TRNS_000LV_XA_02",
+		 -- duration=5, start_time=0, trans_time=0.8, time_scale=0.6, weight=1, heading=-1}
+	-- },	
+	
+	
+	-- {
+		-- 1,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "Char_prisoner4"
+		-- },
+		-- {
+			-- duration=2,
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- axisrot={
+					-- -60,
+					-- Y_AXIS
+				-- }
+			-- },
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		-- }
+	-- },	
+	
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_prisoner4"},
+		-- {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+		 -- duration=0.1, time_scale=1, weight=1, heading=-1}
+	-- },	
+	
+	-- {
+		-- 1,
+		-- START_MOTION,
+		-- {"Char_prisoner4"},
+		-- {animation="Sc_MLBODY_WALK_STND_TRNS_000LV_XA_02",
+		 -- duration=5, start_time=1, trans_time=0.8, time_scale=0.5, weight=1, heading=-1}
+	-- },	
+	
+	
+	
+	-- {
+		-- 0.2,
+		-- START_IK,
+		-- {
+			-- "Char_trent",
+			-- "head_syd"
+		-- },
+		-- {
+			-- duration=13,
+			-- end_effector="Body_Head", transition_duration=2, 
+			-- target_part="",
+			-- target_type=ROOT,
+			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+		-- }
+	-- },
+	-- {
+		-- 0.2,
+		-- START_IK,
+		-- {
+			-- "Char_prisoner4",
+			-- "head_syd"
+		-- },
+		-- {
+			-- duration=13,
+			-- end_effector="Body_Head", transition_duration=2, 
+			-- target_part="",
+			-- target_type=ROOT,
+			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+		-- }
+	-- },
+	
+	
+	
+	
+	
+	
+	
+	{
+		10.5,
+		START_IK,
+		{
+			"Char_alaric",
+			"alaric_head_ik"`
+		},
+		{
+			duration=250,
+			end_effector="Body_Head",
+			target_part="",
+			target_type=ROOT,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		}
+	},
+	{
+		10.5,
+		START_IK,
+		{
+			"Char_alaric",
+			"alaric_eye_ik"
+		},
+		{
+			duration=250,
+			end_effector="Eye IK Left",
+			target_part="",
+			target_type=ROOT,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		}
+	},
+	
+	
+	
+	-- {
+		-- 0,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "panel",
+			-- "panel_pos_open"
+		-- },
+		-- {
+			-- duration=3,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- pos={0,0,0}
+				
+			-- },
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			-- pcurve_period=-1000
+		-- }
+	-- },
+	
+	
+	-- {
+		-- 0,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "panel"
+		-- },
+		-- {
+			-- duration=3,
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- axisrot={
+					-- -90,
+					-- Z_AXIS
+				-- }
+			-- },
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		-- }
+	-- },
+	
+	
+
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_prisoner1"},
+		-- {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+		 -- duration=15, time_scale=1, weight=1, heading=-1}
+	-- },	
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_prisoner2"},
+		-- {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+		 -- duration=15, time_scale=1, weight=1, heading=-1}
+	-- },
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_prisoner3"},
+		-- {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+		 -- duration=2, time_scale=1, weight=1, heading=-1}
+	-- },
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_prisoner4"},
+		-- {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+		 -- duration=2, time_scale=1, weight=1, heading=-1}
+	-- },
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+		 -- duration=2, time_scale=1, weight=1, heading=-1}
+	-- },
+	
+	
+	-- {
+		-- 0,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "Char_syd",
+			-- "point_syd_inside"
+		-- },
+		-- {
+			-- duration=0.001,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- pos={0,0,0},
+				-- q_orient={1,0,0,0}
+			-- }
+		-- }
+	-- },
+	
+	-- {
+		-- 0.01,
+		-- START_MOTION,
+		-- {"Char_syd"},
+		-- {animation="Sc_MLBODY_STND_LOOK_AROU_CASL_000LV_XA_08",
+		 -- duration=8, time_scale=1,  weight=1, heading=-1}
+	-- },
