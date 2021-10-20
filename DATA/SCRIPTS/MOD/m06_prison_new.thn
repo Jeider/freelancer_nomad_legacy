@@ -433,6 +433,48 @@ entities={
 			Priority="Story_Sound_1"
 		}
 	},
+	{
+		entity_name="step1",
+		template_name="fs_ml_steel04",
+		type=SOUND, lt_grp=0,srt_grp=0,usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=-45, pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio",Priority="Story_Sound_1"}
+	},
+	{
+		entity_name="step2",
+		template_name="fs_ml_steel01",
+		type=SOUND, lt_grp=0,srt_grp=0,usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=-45, pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio",Priority="Story_Sound_1"}
+	},
+	{
+		entity_name="step3",
+		template_name="fs_ml_steel03",
+		type=SOUND, lt_grp=0,srt_grp=0,usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=-45, pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio",Priority="Story_Sound_1"}
+	},
+	{
+		entity_name="step1_cmdr",
+		template_name="fs_ml_steel04",
+		type=SOUND, lt_grp=0,srt_grp=0,usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=-20, pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio",Priority="Story_Sound_1"}
+	},
+	{
+		entity_name="step2_cmdr",
+		template_name="fs_ml_steel01",
+		type=SOUND, lt_grp=0,srt_grp=0,usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=-20, pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio",Priority="Story_Sound_1"}
+	},
+	{
+		entity_name="step3_cmdr",
+		template_name="fs_ml_steel03",
+		type=SOUND, lt_grp=0,srt_grp=0,usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=-20, pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio",Priority="Story_Sound_1"}
+	},
 	
 	{
 		entity_name="snd_open_door",
@@ -942,6 +984,16 @@ entities={
 		},
 	},	
 	{
+		entity_name="head_prisoner3",
+		type=MARKER, template_name="", template_id=0,
+		spatialprops={
+			pos={
+				-1.5,1.25,4
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+	{
 		entity_name="lookpoint_clothesbox",
 		type=MARKER, template_name="", template_id=0,
 		spatialprops={
@@ -1020,7 +1072,7 @@ entities={
 		flags=HIDDEN,
 		spatialprops={
 			pos={
-				1, 1, 6.5
+				1, 1, 5.5
 			},
 			orient={{1,0,0},{0,1,0},{0,0,1}}
 		},
@@ -1050,7 +1102,7 @@ entities={
 		template_id=0,
 		spatialprops={
 			pos={
-				-2,1,6
+				-2,1,5
 			},
 			orient={{1,0,0},{0,1,0},{0,0,1}}
 		},
@@ -1722,6 +1774,93 @@ entities={
 	
 	
 	{
+		entity_name="cam_delta3",
+		type=CAMERA,
+		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				-0.5,1.2,2.8
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+		cameraprops={
+			fovh=15,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_delta3_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				1.5,1.1,2.49
+				
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+	{
+		entity_name="cam_delta3_marker_pos2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				1.5,1.1,2.5
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+	
+	{
+		entity_name="cam_delta1",
+		type=CAMERA,
+		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				0.5,0.95,2.3
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+		cameraprops={
+			fovh=15,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_delta1_pos2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				0.2,1,2.35
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+	{
+		entity_name="cam_delta1_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-1.5,1.15,3.1
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+		
+	{
 		entity_name="cam_dbg",
 		type=CAMERA,
 		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
@@ -1782,7 +1921,7 @@ events = {
 			"cam_dbg_marker"
 		},
 		{
-			duration=30, offset={0,0,0},
+			duration=70, offset={0,0,0},
 			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
 		}
 	},
@@ -1794,7 +1933,7 @@ events = {
 			"cam_start_outside_marker"
 		},
 		{
-			duration=30, offset={0,0,0},
+			duration=70, offset={0,0,0},
 			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
 		}
 	},
@@ -1803,11 +1942,10 @@ events = {
 		ATTACH_ENTITY,
 		{
 			"cam_start_inside",
-			-- "Char_trent"
 			"cam_start_inside_marker"
 		},
 		{
-			duration=30, offset={0,0,0},
+			duration=70, offset={0,0,0},
 			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
 		}
 	},
@@ -1819,7 +1957,7 @@ events = {
 			"cam_syd_appear_marker"
 		},
 		{
-			duration=55, offset={0,0,0},
+			duration=70, offset={0,0,0},
 			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
 		}
 	},
@@ -1831,7 +1969,7 @@ events = {
 			"cam_salut_marker"
 		},
 		{
-			duration=120, offset={0,0,0},
+			duration=70, offset={0,0,0},
 			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
 		}
 	},
@@ -1843,7 +1981,7 @@ events = {
 			"cam_syd_gives_order_marker"
 		},
 		{
-			duration=55, offset={0,0,0},
+			duration=70, offset={0,0,0},
 			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
 		}
 	},
@@ -1855,12 +1993,12 @@ events = {
 			"cam_syd_order_marker"
 		},
 		{
-			duration=55, offset={0,0,0},
+			duration=70, offset={0,0,0},
 			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
 		}
 	},
 	{
-		0,
+		60,
 		ATTACH_ENTITY,
 		{
 			"cam_syd_opendoor",
@@ -1872,7 +2010,7 @@ events = {
 		}
 	},
 	{
-		0,
+		60,
 		ATTACH_ENTITY,
 		{
 			"cam_syd_doorclosed",
@@ -1884,43 +2022,43 @@ events = {
 		}
 	},
 	{
-		0,
+		60,
 		ATTACH_ENTITY,
 		{
 			"cam_sydgreet_begin",
 			"cam_sydgreet_begin_marker"
 		},
 		{
-			duration=50, offset={0,0,0},
+			duration=150, offset={0,0,0},
 			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
 		}
 	},
 	{
-		0,
+		60,
 		ATTACH_ENTITY,
 		{
 			"cam_sydgreet_captapprove",
 			"cam_sydgreet_captapprove_marker"
 		},
 		{
-			duration=50, offset={0,0,0},
+			duration=150, offset={0,0,0},
 			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
 		}
 	},
 	{
-		0,
+		60,
 		ATTACH_ENTITY,
 		{
 			"cam_syd_reveal",
 			"cam_syd_reveal_marker"
 		},
 		{
-			duration=50, offset={0,0,0},
+			duration=150, offset={0,0,0},
 			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
 		}
 	},
 	{
-		0,
+		60,
 		ATTACH_ENTITY,
 		{
 			"cam_trent",
@@ -1932,35 +2070,59 @@ events = {
 		}
 	},
 	{
-		0,
+		60,
 		ATTACH_ENTITY,
 		{
 			"cam_syd_trentside",
 			"cam_syd_trentside_marker"
 		},
 		{
-			duration=50, offset={0,0,0},
+			duration=150, offset={0,0,0},
 			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
 		}
 	},
 	{
-		0,
+		120,
 		ATTACH_ENTITY,
 		{
 			"cam_captain_sydanswer",
 			"cam_captain_sydanswer_marker"
 		},
 		{
-			duration=50, offset={0,0,0},
+			duration=150, offset={0,0,0},
 			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
 		}
 	},
 	{
-		0,
+		120,
 		ATTACH_ENTITY,
 		{
 			"cam_syd_captside",
 			"cam_syd_captside_marker"
+		},
+		{
+			duration=150, offset={0,0,0},
+			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+		}
+	},
+	{
+		120,
+		ATTACH_ENTITY,
+		{
+			"cam_syd_clothesbox",
+			"cam_syd_clothesbox_marker"
+		},
+		{
+			duration=150, offset={0,0,0},
+			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+		}
+	},
+	{
+		80,
+		ATTACH_ENTITY,
+		{
+			"cam_delta3",
+			"cam_delta3_marker"
 		},
 		{
 			duration=50, offset={0,0,0},
@@ -1968,11 +2130,11 @@ events = {
 		}
 	},
 	{
-		0,
+		80,
 		ATTACH_ENTITY,
 		{
-			"cam_syd_clothesbox",
-			"cam_syd_clothesbox_marker"
+			"cam_delta1",
+			"cam_delta1_marker"
 		},
 		{
 			duration=50, offset={0,0,0},
@@ -1998,165 +2160,226 @@ events = {
 	
 	
 	
-	-- {0, START_SOUND, {"ambience_hall"}, {duration=5000, flags=LOOP}},
-	-- {0, START_SOUND, {"ambience_room"}, {duration=5000, flags=LOOP}},
+	{0, START_SOUND, {"ambience_hall"}, {duration=5000, flags=LOOP}},
+	{0, START_SOUND, {"ambience_room"}, {duration=5000, flags=LOOP}},
 	
-	-- {9.9, START_AUDIO_PROP_ANIM, {"ambience_hall"}, {duration=0.1, audioprops={attenuation=-100}}},
-	-- {10, START_AUDIO_PROP_ANIM, {"ambience_room"}, {duration=0.1, audioprops={attenuation=0}}},
+	{9.9, START_AUDIO_PROP_ANIM, {"ambience_hall"}, {duration=0.1, audioprops={attenuation=-100}}},
+	{10, START_AUDIO_PROP_ANIM, {"ambience_room"}, {duration=0.1, audioprops={attenuation=0}}},
 	
-	-- {21.9, START_AUDIO_PROP_ANIM, {"ambience_hall"}, {duration=0.1, audioprops={attenuation=0}}},
-	-- {22, START_AUDIO_PROP_ANIM, {"ambience_room"}, {duration=0.1, audioprops={attenuation=-100}}},
+	{21.9, START_AUDIO_PROP_ANIM, {"ambience_hall"}, {duration=0.1, audioprops={attenuation=0}}},
+	{22, START_AUDIO_PROP_ANIM, {"ambience_room"}, {duration=0.1, audioprops={attenuation=-100}}},
 	
-	-- {32, START_AUDIO_PROP_ANIM, {"ambience_hall"}, {duration=0.1, audioprops={attenuation=-2}}},
+	{32, START_AUDIO_PROP_ANIM, {"ambience_hall"}, {duration=0.1, audioprops={attenuation=-2}}},
 	
 	
-	
-	-- { -- intro + talk with commander
-		-- 0,
-		-- SET_CAMERA,
-		-- {
-			-- "Monitor_1",
-			-- "cam_start_outside"
-		-- }
-	-- },
-	-- {
-		-- 0,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "cam_start_outside",
-			-- "cam_start_outside_pos2"
-		-- },
-		-- {
-			-- duration=10,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },
-	-- {
-		-- 0,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "cam_start_outside_marker",
-			-- "cam_start_outside_marker_pos2"
-		-- },
-		-- {
-			-- duration=10,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },
+	{22.7, START_SOUND, {"step1"}, {duration=5}},
+	{23.4, START_SOUND, {"step2"}, {duration=5}},
+	{24.1, START_SOUND, {"step3"}, {duration=5}},
+	{24.8, START_SOUND, {"step2"}, {duration=5}},
+	{25.5, START_SOUND, {"step1"}, {duration=5}},
+	{26.2, START_SOUND, {"step3"}, {duration=5}},
+	{26.7, START_SOUND, {"step1"}, {duration=5}},
+	{27.3, START_SOUND, {"step2"}, {duration=5}},
+	{27.9, START_SOUND, {"step3"}, {duration=5}},
+	{28.6, START_SOUND, {"step1"}, {duration=5}},
+	{29.3, START_SOUND, {"step3"}, {duration=5}},
+	{30.0, START_SOUND, {"step2"}, {duration=5}},
+	{30.7, START_SOUND, {"step3"}, {duration=5}},
+	{31.4, START_SOUND, {"step3"}, {duration=5}},
+
+
+	{23, START_AUDIO_PROP_ANIM, {"step1"}, {duration=3, audioprops={attenuation=-15}}},
+	{23, START_AUDIO_PROP_ANIM, {"step2"}, {duration=3, audioprops={attenuation=-15}}},
+	{23, START_AUDIO_PROP_ANIM, {"step3"}, {duration=3, audioprops={attenuation=-15}}},
+	{28, START_AUDIO_PROP_ANIM, {"step1"}, {duration=3, audioprops={attenuation=-30}}},
+	{28, START_AUDIO_PROP_ANIM, {"step2"}, {duration=3, audioprops={attenuation=-30}}},
+	{28, START_AUDIO_PROP_ANIM, {"step3"}, {duration=3, audioprops={attenuation=-30}}},
 	
 	
 	
-	-- {
-		-- 10,
-		-- SET_CAMERA,
-		-- {
-			-- "Monitor_1",
-			-- "cam_start_inside"
-		-- }
-	-- },
-	-- {
-		-- 10,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "cam_start_inside",
-			-- "cam_start_inside_pos2"
-		-- },
-		-- {
-			-- duration=10,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },
-	-- {
-		-- 10,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "cam_start_inside_marker",
-			-- "cam_start_inside_marker_pos2"
-		-- },
-		-- {
-			-- duration=10,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },
+	{35, START_AUDIO_PROP_ANIM, {"step1"}, {duration=3, audioprops={attenuation=-20}}},
+	{35, START_AUDIO_PROP_ANIM, {"step2"}, {duration=3, audioprops={attenuation=-20}}},
+	{35, START_AUDIO_PROP_ANIM, {"step3"}, {duration=3, audioprops={attenuation=-20}}},
+
+	
+	{51.7, START_SOUND, {"step1_cmdr"}, {duration=5}},
+	{52.4, START_SOUND, {"step2_cmdr"}, {duration=5}},
+	{53.1, START_SOUND, {"step3_cmdr"}, {duration=5}},
+	{53.8, START_SOUND, {"step2_cmdr"}, {duration=5}},
+	{54.5, START_SOUND, {"step1_cmdr"}, {duration=5}},
+	{55.2, START_SOUND, {"step3_cmdr"}, {duration=5}},
+	{55.7, START_SOUND, {"step1_cmdr"}, {duration=5}},
+	{56.3, START_SOUND, {"step2_cmdr"}, {duration=5}},
+	{56.9, START_SOUND, {"step3_cmdr"}, {duration=5}},
+	{57.6, START_SOUND, {"step1_cmdr"}, {duration=5}},
+	{58.3, START_SOUND, {"step3_cmdr"}, {duration=5}},
+	{59.0, START_SOUND, {"step2_cmdr"}, {duration=5}},
+	{59.7, START_SOUND, {"step3_cmdr"}, {duration=5}},
+	{60.4, START_SOUND, {"step3_cmdr"}, {duration=5}},
+	
+	{53, START_AUDIO_PROP_ANIM, {"step1_cmdr"}, {duration=5, audioprops={attenuation=-50}}},
+	{53, START_AUDIO_PROP_ANIM, {"step2_cmdr"}, {duration=5, audioprops={attenuation=-50}}},
+	{53, START_AUDIO_PROP_ANIM, {"step3_cmdr"}, {duration=5, audioprops={attenuation=-50}}},
 	
 	
-	-- {
-		-- 22,
-		-- SET_CAMERA,
-		-- {
-			-- "Monitor_1",
-			-- "cam_syd_appear"
-		-- }
-	-- },
-	-- {
-		-- 22,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "cam_syd_appear",
-			-- "cam_syd_appear_pos2"
-		-- },
-		-- {
-			-- duration=6,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },
-	-- {
-		-- 22,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "cam_syd_appear_marker",
-			-- "cam_syd_appear_marker_pos2"
-		-- },
-		-- {
-			-- duration=6,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },
+	{56.7, START_SOUND, {"step1"}, {duration=5}},
+	{57.4, START_SOUND, {"step2"}, {duration=5}},
+	{58.1, START_SOUND, {"step3"}, {duration=5}},
+	{58.8, START_SOUND, {"step2"}, {duration=5}},
+	{59.5, START_SOUND, {"step1"}, {duration=5}},
+	{60.2, START_SOUND, {"step3"}, {duration=5}},
+	{60.7, START_SOUND, {"step1"}, {duration=5}},
+	{61.3, START_SOUND, {"step2"}, {duration=5}},
+	{61.9, START_SOUND, {"step3"}, {duration=5}},
+	{62.6, START_SOUND, {"step1"}, {duration=5}},
+	{63.3, START_SOUND, {"step3"}, {duration=5}},
+	{64.0, START_SOUND, {"step2"}, {duration=5}},
+	{64.7, START_SOUND, {"step3"}, {duration=5}},
+	
+	
+	{ -- intro + talk with commander
+		0,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_start_outside"
+		}
+	},
+	{
+		0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_start_outside",
+			"cam_start_outside_pos2"
+		},
+		{
+			duration=10,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_start_outside_marker",
+			"cam_start_outside_marker_pos2"
+		},
+		{
+			duration=10,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
 	
 	
 	
+	{
+		10,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_start_inside"
+		}
+	},
+	{
+		10,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_start_inside",
+			"cam_start_inside_pos2"
+		},
+		{
+			duration=10,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		10,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_start_inside_marker",
+			"cam_start_inside_marker_pos2"
+		},
+		{
+			duration=10,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	
+	
+	{
+		22,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_syd_appear"
+		}
+	},
+	{
+		22,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_syd_appear",
+			"cam_syd_appear_pos2"
+		},
+		{
+			duration=6,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		22,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_syd_appear_marker",
+			"cam_syd_appear_marker_pos2"
+		},
+		{
+			duration=6,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
 	
 	
 	
@@ -2164,96 +2387,99 @@ events = {
 	
 	
 	
-	-- {
-		-- 0,
-		-- START_MOTION,
-		-- {"Char_commander"},
-		-- {animation="Sc_MLBODY_STND_STRCH_YAWN_000LV_XA_06",
-		 -- duration=11, time_scale=1, weight=1, heading=-1, event_flags=2}
-	-- },	
 	
 	
-	-- {
-		-- 14,
-		-- START_MOTION,
-		-- {"Char_trent"},
-		-- {animation="Sc_MLBODY_CHRB_LOOK_AROU_CASL_000LV_XA_04",
-		 -- duration=20, time_scale=1, weight=1, heading=-1}
-	-- },	
-	-- {
-		-- 16,
-		-- START_MOTION,
-		-- {"Char_prisoner2"},
-		-- {animation="Sc_MLBODY_CHRB_IDLE_BIG_000LV_XA_05",
-		 -- duration=20, time_scale=1, weight=1, heading=-1, event_flags=2}
-	-- },
-	-- {
-		-- 10,
-		-- START_MOTION,
-		-- {"Char_prisoner3"},
-		-- {animation="Sc_MLBODY_CHRB_TWSTU_C-CL_LESS_000LV_A_14",
-		 -- duration=20, time_scale=1, weight=1, heading=-1}
-	-- },
-	-- {
-		-- 10,
-		-- START_MOTION,
-		-- {"Char_prisoner4"},
-		-- {animation="Sc_MLBODY_CHRB_HEAD_HOLDR_000LV_XA_03",
-		 -- duration=20, time_scale=1, weight=1, heading=-1}
-	-- },
-	-- {
-		-- 17,
-		-- START_MOTION,
-		-- {"Char_prisoner4"},
-		-- {animation="Sc_MLBODY_CHRB_HOLD_HEAD_RLEASE_000LV_XA_03",
-		 -- duration=20, time_scale=1, weight=1, heading=-1}
-	-- },
-	-- {
-		-- 16,
-		-- START_MOTION,
-		-- {"Char_prisoner1"},
-		-- {animation="Sc_MLBODY_CHRB_LOOK_AROU_CASL_000LV_XA_04",
-		 -- duration=20, time_scale=1, weight=1, heading=-1}
-	-- },
+	
+	{
+		0,
+		START_MOTION,
+		{"Char_commander"},
+		{animation="Sc_MLBODY_STND_STRCH_YAWN_000LV_XA_06",
+		 duration=11, time_scale=1, weight=1, heading=-1, event_flags=2}
+	},	
 	
 	
-	-- {
-		-- 21,
-		-- START_MOTION,
-		-- {"Char_commander"},
-		-- {animation="Sc_MLBODY_STND_BEND_FOTR_SWNGARMS_000DN_XA_12",
-		 -- duration=11, time_scale=1, trans_time=1, weight=1, heading=-1, event_flags=2}
-	-- },	
+	{
+		14,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_CHRB_LOOK_AROU_CASL_000LV_XA_04",
+		 duration=20, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		16,
+		START_MOTION,
+		{"Char_prisoner2"},
+		{animation="Sc_MLBODY_CHRB_IDLE_BIG_000LV_XA_05",
+		 duration=20, time_scale=1, weight=1, heading=-1, event_flags=2}
+	},
+	{
+		10,
+		START_MOTION,
+		{"Char_prisoner3"},
+		{animation="Sc_MLBODY_CHRB_TWSTU_C-CL_LESS_000LV_A_14",
+		 duration=20, time_scale=1, weight=1, heading=-1}
+	},
+	{
+		10,
+		START_MOTION,
+		{"Char_prisoner4"},
+		{animation="Sc_MLBODY_CHRB_HEAD_HOLDR_000LV_XA_03",
+		 duration=20, time_scale=1, weight=1, heading=-1}
+	},
+	{
+		17,
+		START_MOTION,
+		{"Char_prisoner4"},
+		{animation="Sc_MLBODY_CHRB_HOLD_HEAD_RLEASE_000LV_XA_03",
+		 duration=20, time_scale=1, weight=1, heading=-1}
+	},
+	{
+		16,
+		START_MOTION,
+		{"Char_prisoner1"},
+		{animation="Sc_MLBODY_CHRB_LOOK_AROU_CASL_000LV_XA_04",
+		 duration=20, time_scale=1, weight=1, heading=-1}
+	},
 	
-	-- {
-		-- 22,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_MLBODY_WLKG_000LV_XA_01",
-		 -- duration=7.9999, time_scale=1, weight=1, heading=-1, event_flags=2}
-	-- },	
+	
+	{
+		21,
+		START_MOTION,
+		{"Char_commander"},
+		{animation="Sc_MLBODY_STND_BEND_FOTR_SWNGARMS_000DN_XA_12",
+		 duration=11, time_scale=1, trans_time=1, weight=1, heading=-1, event_flags=2}
+	},	
+	
+	{
+		22,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 duration=7.9999, time_scale=1, weight=1, heading=-1, event_flags=2}
+	},	
 
 	
 	
 	
-	-- {
-		-- 24,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "Char_syd"
-		-- },
-		-- {
-			-- duration=5.99,
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- axisrot={
-					-- -15,
-					-- Y_AXIS
-				-- }
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },
+	{
+		24,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_syd"
+		},
+		{
+			duration=5.99,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					-15,
+					Y_AXIS
+				}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
 	
 
 	
@@ -2266,457 +2492,457 @@ events = {
 	
 	
 	
-	-- {
-		-- 30,
-		-- SET_CAMERA,
-		-- {
-			-- "Monitor_1",
-			-- "cam_syd_order"
-		-- }
-	-- },
-	-- {
-		-- 30,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "cam_syd_order",
-			-- "cam_syd_order_pos2"
-		-- },
-		-- {
-			-- duration=10,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },
-	-- {
-		-- 30,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "cam_syd_order_marker",
-			-- "cam_syd_order_marker_pos2"
-		-- },
-		-- {
-			-- duration=10,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },
+	{
+		30,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_syd_order"
+		}
+	},
+	{
+		30,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_syd_order",
+			"cam_syd_order_pos2"
+		},
+		{
+			duration=10,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		30,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_syd_order_marker",
+			"cam_syd_order_marker_pos2"
+		},
+		{
+			duration=10,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
 	
 
 	
-	-- {
-		-- 28,
-		-- START_MOTION,
-		-- {"Char_commander"},
-		-- {animation="Sc_MLBODY_STND_TURN_270LV_XA_04",
-		 -- duration=5, time_scale=1, weight=1, heading=-1}
-	-- },	
-	-- {
-		-- 31,
-		-- START_MOTION,
-		-- {"Char_commander"},
-		-- {animation="Sc_MLBODY_STND_SALUT_000LV_XA_03",
-		 -- duration=5, trans_time=0.25, time_scale=1, weight=1, heading=-1}
-	-- },	
-	-- {
-		-- 29.25,
-		-- START_MOTION,
-		-- {"Char_commander"},
-		-- {animation="Sc_MLHEAD_SURPRSE_000LV_XA_%",
-		 -- duration=5, trans_time=0.25, time_scale=1, weight=1, heading=-1}
-	-- },	
-	-- {
-		-- 30,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "Char_syd",
-			-- "point_syd_around_commander"
-		-- },
-		-- {
-			-- duration=0.001,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- }
-		-- }
-	-- },
-	-- {
-		-- 30.01,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_MLBODY_WALK_STND_TRNS_000LV_XA_02",
-		 -- duration=6, time_scale=0.85, weight=1, heading=-1}
-	-- },	
-	-- {
-		-- 33,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_MLBODY_STND_GESTR_180LV_XA_02",
-		 -- duration=6, time_scale=0.6, trans_time=1, weight=1, heading=-1}
-	-- },	
-	-- {
-		-- 37,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_MLBODY_STND_AT-EASE_HSEC_RLEASE_000LV_XA_03",
-		 -- duration=6, time_scale=0.54, trans_time=1, weight=1, heading=-1}
-	-- },	
+	{
+		28,
+		START_MOTION,
+		{"Char_commander"},
+		{animation="Sc_MLBODY_STND_TURN_270LV_XA_04",
+		 duration=5, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		31,
+		START_MOTION,
+		{"Char_commander"},
+		{animation="Sc_MLBODY_STND_SALUT_000LV_XA_03",
+		 duration=5, trans_time=0.25, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		29.25,
+		START_MOTION,
+		{"Char_commander"},
+		{animation="Sc_MLHEAD_SURPRSE_000LV_XA_%",
+		 duration=5, trans_time=0.25, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		30,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_syd",
+			"point_syd_around_commander"
+		},
+		{
+			duration=0.001,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			}
+		}
+	},
+	{
+		30.01,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_MLBODY_WALK_STND_TRNS_000LV_XA_02",
+		 duration=6, time_scale=0.85, weight=1, heading=-1}
+	},	
+	{
+		33,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_MLBODY_STND_GESTR_180LV_XA_02",
+		 duration=6, time_scale=0.6, trans_time=1, weight=1, heading=-1}
+	},	
+	{
+		37,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_MLBODY_STND_AT-EASE_HSEC_RLEASE_000LV_XA_03",
+		 duration=6, time_scale=0.54, trans_time=1, weight=1, heading=-1}
+	},	
 	
-	-- {
-		-- 40.5,
-		-- START_MOTION,
-		-- {"Char_commander"},
-		-- {animation="Sc_MLBODY_STND_CONV_HNDS_CASL_000LV_xa_04",
-		 -- duration=3, time_scale=0.8, trans_time=2, weight=1, heading=-1}
-	-- },	
-	-- {
-		-- 44.5,
-		-- START_MOTION,
-		-- {"Char_commander"},
-		-- {animation="Sc_MLBODY_STND_CONV_HNDSDN_TRNS_000LV_XA_01",
-		 -- duration=4, time_scale=0.8, trans_time=1, weight=1, heading=-1}
-	-- },	
+	{
+		40.5,
+		START_MOTION,
+		{"Char_commander"},
+		{animation="Sc_MLBODY_STND_CONV_HNDS_CASL_000LV_xa_04",
+		 duration=3, time_scale=0.8, trans_time=2, weight=1, heading=-1}
+	},	
+	{
+		44.5,
+		START_MOTION,
+		{"Char_commander"},
+		{animation="Sc_MLBODY_STND_CONV_HNDSDN_TRNS_000LV_XA_01",
+		 duration=4, time_scale=0.8, trans_time=1, weight=1, heading=-1}
+	},	
 	
 	
-	-- {
-		-- 44,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_MLBODY_STND_AT-EASE_RLEASE_000LV_XA_01",
-		 -- duration=6, time_scale=0.6, trans_time=1, weight=1, heading=-1}
-	-- },	
+	{
+		44,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_MLBODY_STND_AT-EASE_RLEASE_000LV_XA_01",
+		 duration=6, time_scale=0.6, trans_time=1, weight=1, heading=-1}
+	},	
 	
-	-- {
-		-- 48,
-		-- START_MOTION,
-		-- {"Char_commander"},
-		-- {animation="Sc_MLBODY_STND_SALUT_000LV_XA_03",
-		 -- duration=5, trans_time=0.25, time_scale=1.3, weight=1, heading=-1}
-	-- },	
+	{
+		48,
+		START_MOTION,
+		{"Char_commander"},
+		{animation="Sc_MLBODY_STND_SALUT_000LV_XA_03",
+		 duration=5, trans_time=0.25, time_scale=1.3, weight=1, heading=-1}
+	},	
 		
-	-- {
-		-- 50.7,
-		-- START_MOTION,
-		-- {"Char_commander"},
-		-- {animation="Sc_MLBODY_STND_WALK_TRNS_000LV_XA_01",
-		 -- duration=5, trans_time=0.25, time_scale=1, weight=1, heading=-1}
-	-- },	
-	-- {
-		-- 51.75,
-		-- START_MOTION,
-		-- {"Char_commander"},
-		-- {animation="Sc_MLBODY_WLKG_000LV_XA_01",
-		 -- duration=55, time_scale=1, weight=1, heading=-1, event_flags=2}
-	-- },	
+	{
+		50.7,
+		START_MOTION,
+		{"Char_commander"},
+		{animation="Sc_MLBODY_STND_WALK_TRNS_000LV_XA_01",
+		 duration=5, trans_time=0.25, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		51.75,
+		START_MOTION,
+		{"Char_commander"},
+		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 duration=55, time_scale=1, weight=1, heading=-1, event_flags=2}
+	},	
 	
 	
 
 	
-	-- {
-		-- 50.5,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "Char_commander"
-		-- },
-		-- {
-			-- duration=1,
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- axisrot={
-					-- -25,
-					-- Y_AXIS
-				-- }
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },
-	-- {
-		-- 51.5,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "Char_commander"
-		-- },
-		-- {
-			-- duration=2,
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- axisrot={
-					-- 25,
-					-- Y_AXIS
-				-- }
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },
-	-- {
-		-- 53.5,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "Char_commander"
-		-- },
-		-- {
-			-- duration=2.5,
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- axisrot={
-					-- 90,
-					-- Y_AXIS
-				-- }
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },
+	{
+		50.5,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_commander"
+		},
+		{
+			duration=1,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					-25,
+					Y_AXIS
+				}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		51.5,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_commander"
+		},
+		{
+			duration=2,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					25,
+					Y_AXIS
+				}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		53.5,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_commander"
+		},
+		{
+			duration=2.5,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					90,
+					Y_AXIS
+				}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
 	
 	
 	
 	
-	-- {
-		-- 47,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
-		 -- duration=3, time_scale=1, trans_time=1, weight=1, heading=-1, event_flags=2}
-	-- },	
+	{
+		47,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+		 duration=3, time_scale=1, trans_time=1, weight=1, heading=-1, event_flags=2}
+	},	
 	
 	
-	-- {
-		-- 50,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_MLBODY_STND_1STEP_BKWD_PVOTL_270LV_XA_06",
-		 -- duration=6, time_scale=1, trans_time=1, weight=1, heading=-1}
-	-- },	
+	{
+		50,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_MLBODY_STND_1STEP_BKWD_PVOTL_270LV_XA_06",
+		 duration=6, time_scale=1, trans_time=1, weight=1, heading=-1}
+	},	
 	
-	-- {
-		-- 55.5,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_MLBODY_STND_WALK_TRNS_000LV_XA_01",
-		 -- duration=5, trans_time=0.25, time_scale=1, weight=1, heading=-1}
-	-- },	
-	-- {
-		-- 56.55,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_MLBODY_WLKG_000LV_XA_01",
-		 -- duration=3.45, time_scale=1, weight=1, heading=-1, event_flags=2}
-	-- },	
+	{
+		55.5,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_MLBODY_STND_WALK_TRNS_000LV_XA_01",
+		 duration=5, trans_time=0.25, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		56.55,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 duration=3.4499, time_scale=1, weight=1, heading=-1, event_flags=2}
+	},	
 		
 		
-	-- {
-		-- 32,
-		-- START_SOUND,
-		-- {
-			-- "DX_m06_order_prison_0010_syd"
-		-- },
-		-- {
-			-- duration=15
-		-- }
-	-- },
-	-- {
-		-- 32,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_dx_s067d_0101_orillion",
-		 -- duration=4.7, time_scale=1, trans_time=0.25, weight=1, heading=-1}
-	-- }, 
-	-- {
-		-- 36.7,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_dx_s064x_2601_orillion",
-		 -- duration=4.4, time_scale=1, trans_time=0.25, weight=1, heading=-1}
-	-- }, 
+	{
+		32,
+		START_SOUND,
+		{
+			"DX_m06_order_prison_0010_syd"
+		},
+		{
+			duration=15
+		}
+	},
+	{
+		32,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_dx_s067d_0101_orillion",
+		 duration=4.7, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	{
+		36.7,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_dx_s064x_2601_orillion",
+		 duration=4.4, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 
 	
 	
-	-- {
-		-- 41,
-		-- SET_CAMERA,
-		-- {
-			-- "Monitor_1",
-			-- "cam_salut"
-		-- }
-	-- },
+	{
+		41,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_salut"
+		}
+	},
 	
-	-- {
-		-- 41,
-		-- START_SOUND,
-		-- {
-			-- "DX_m06_order_prison_0020_guard"
-		-- },
-		-- {
-			-- duration=15
-		-- }
-	-- },
-	-- {
-		-- 41,
-		-- START_MOTION,
-		-- {"Char_commander"},
-		-- {animation="Sc_dx_s064x_1101_king",
-		 -- duration=4, time_scale=1, trans_time=0.25, weight=1, heading=-1}
-	-- }, 
-	-- {
-		-- 41.5,
-		-- START_MOTION,
-		-- {"Char_commander"},
-		-- {animation="Sc_dx_s009a_0101_king",
-		 -- duration=4, time_scale=0.8, start_time=0.3, trans_time=1, weight=1, heading=-1}
-	-- }, 
+	{
+		41,
+		START_SOUND,
+		{
+			"DX_m06_order_prison_0020_guard"
+		},
+		{
+			duration=15
+		}
+	},
+	{
+		41,
+		START_MOTION,
+		{"Char_commander"},
+		{animation="Sc_dx_s064x_1101_king",
+		 duration=4, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	{
+		41.5,
+		START_MOTION,
+		{"Char_commander"},
+		{animation="Sc_dx_s009a_0101_king",
+		 duration=4, time_scale=0.8, start_time=0.3, trans_time=1, weight=1, heading=-1}
+	}, 
 	
-	-- {
-		-- 43,
-		-- SET_CAMERA,
-		-- {
-			-- "Monitor_1",
-			-- "cam_syd_gives_order"
-		-- }
-	-- },
+	{
+		43,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_syd_gives_order"
+		}
+	},
 	
-	-- {
-		-- 43,
-		-- START_SOUND,
-		-- {
-			-- "DX_m06_order_prison_0030_syd"
-		-- },
-		-- {
-			-- duration=15
-		-- }
-	-- },
-	-- {
-		-- 43,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_dx_s070x_0101_orillion",
-		 -- duration=1.5, time_scale=1.2, trans_time=0.25, weight=1, heading=-1}
-	-- }, 
-	-- {
-		-- 44.25,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_dx_s064x_1903_orillion",
-		 -- duration=6, start_time=0.3, time_scale=1, trans_time=0.5, weight=1, heading=-1}
-	-- }, 
-	
-	
-	-- {
-		-- 48,
-		-- SET_CAMERA,
-		-- {
-			-- "Monitor_1",
-			-- "cam_salut"
-		-- }
-	-- },
-	-- {
-		-- 46,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "cam_salut",
-			-- "cam_salut_pos2"
-		-- },
-		-- {
-			-- duration=1,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },
-	-- {
-		-- 48,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "cam_salut",
-			-- "cam_salut_pos3"
-		-- },
-		-- {
-			-- duration=12,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },
-	-- {
-		-- 46,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "cam_salut_marker",
-			-- "cam_salut_marker_pos2"
-		-- },
-		-- {
-			-- duration=1,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },
-	-- {
-		-- 48,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "cam_salut_marker",
-			-- "cam_salut_marker_pos3"
-		-- },
-		-- {
-			-- duration=10,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },
+	{
+		43,
+		START_SOUND,
+		{
+			"DX_m06_order_prison_0030_syd"
+		},
+		{
+			duration=15
+		}
+	},
+	{
+		43,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_dx_s070x_0101_orillion",
+		 duration=1.5, time_scale=1.2, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	{
+		44.25,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_dx_s064x_1903_orillion",
+		 duration=6, start_time=0.3, time_scale=1, trans_time=0.5, weight=1, heading=-1}
+	}, 
 	
 	
+	{
+		48,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_salut"
+		}
+	},
+	{
+		46,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_salut",
+			"cam_salut_pos2"
+		},
+		{
+			duration=1,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		48,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_salut",
+			"cam_salut_pos3"
+		},
+		{
+			duration=12,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		46,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_salut_marker",
+			"cam_salut_marker_pos2"
+		},
+		{
+			duration=1,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		48,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_salut_marker",
+			"cam_salut_marker_pos3"
+		},
+		{
+			duration=10,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
 	
 	
 	
-	-- {
-		-- 48.5,
-		-- START_SOUND,
-		-- {
-			-- "DX_m06_order_prison_0040_guard"
-		-- },
-		-- {
-			-- duration=15
-		-- }
-	-- },
-	-- {
-		-- 48.5,
-		-- START_MOTION,
-		-- {"Char_commander"},
-		-- {animation="Sc_dx_s074x_0301_odr_tech01",
-		 -- duration=4, time_scale=1, start_time=0.5, trans_time=0.25, weight=1, heading=-1}
-	-- }, 
+	
+	
+	{
+		48.5,
+		START_SOUND,
+		{
+			"DX_m06_order_prison_0040_guard"
+		},
+		{
+			duration=15
+		}
+	},
+	{
+		48.5,
+		START_MOTION,
+		{"Char_commander"},
+		{animation="Sc_dx_s074x_0301_odr_tech01",
+		 duration=4, time_scale=1, start_time=0.5, trans_time=0.25, weight=1, heading=-1}
+	}, 
 	
 	
 	
@@ -2731,507 +2957,538 @@ events = {
 
 	
 	
-	-- { -- syd enterning
-		-- 0,
-		-- SET_CAMERA,
-		-- {
-			-- "Monitor_1",
-			-- "cam_syd_opendoor"
-		-- }
-	-- },
+	{ -- syd enterning
+		60,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_syd_opendoor"
+		}
+	},
 
-	-- {
-		-- 0,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "cam_syd_opendoor",
-			-- "cam_syd_opendoor_pos2"
-		-- },
-		-- {
-			-- duration=10,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },
-
-	
-	-- {
-		-- 0,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "Char_syd",
-			-- "point_syd_walk_to_doors"
-		-- },
-		-- {
-			-- duration=0.001,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- }
-		-- }
-	-- },
-
-	-- {
-		-- 0,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_MLBODY_WLKG_000LV_XA_01",
-		 -- duration=3, time_scale=1, weight=1, start_time=0.9,  heading=-1, event_flags=2}
-	-- },
-	-- {
-		-- 3,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_MLBODY_WALK_STND_TRNS_000LV_XA_02",
-		 -- duration=4, time_scale=1,  weight=1, heading=-1}
-	-- },
-	-- {
-		-- 0,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "Char_syd"
-		-- },
-		-- {
-			-- duration=1,
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- axisrot={
-					-- -45,
-					-- Y_AXIS
-				-- }
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },	
-	
-	-- {
-		-- 3,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "Char_syd"
-		-- },
-		-- {
-			-- duration=2,
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- axisrot={
-					-- -45,
-					-- Y_AXIS
-				-- }
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },	
-
-
-	-- {
-		-- 5.3,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_MLBODY_STND_WAVE_LHND_000LV_XA_02",
-		 -- duration=8, time_scale=1, trans_time=0.5, weight=1, heading=-1}
-	-- },	
-	-- {
-		-- 8,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_MLBODY_STND_WALK_TRNS_000LV_XA_01",
-		 -- duration=4, time_scale=1, trans_time=1, weight=1, heading=-1}
-	-- },
-	-- {
-		-- 9.12,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_MLBODY_WALK_STND_TRNS_000LV_XA_02",
-		 -- duration=4, time_scale=1,  weight=1, heading=-1}
-	-- },
-
-	-- {
-		-- 11.5,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_MLBODY_STND_LOOK_AROU_CASL_000LV_XA_08",
-		 -- duration=8, time_scale=1, trans_time=1, weight=1, heading=-1}
-	-- },
+	{
+		60,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_syd_opendoor",
+			"cam_syd_opendoor_pos2"
+		},
+		{
+			duration=10,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
 
 	
+	{
+		60,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_syd",
+			"point_syd_walk_to_doors"
+		},
+		{
+			duration=0.001,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			}
+		}
+	},
+
+	{
+		60,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 duration=3, time_scale=1, weight=1, start_time=0.9,  heading=-1, event_flags=2}
+	},
+	{
+		63,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_MLBODY_WALK_STND_TRNS_000LV_XA_02",
+		 duration=4, time_scale=1,  weight=1, heading=-1}
+	},
+	{
+		60,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_syd"
+		},
+		{
+			duration=1,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					-45,
+					Y_AXIS
+				}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},	
 	
-	-- {
-		-- 7.3,
-		-- START_MOTION,
-		-- {
-			-- "doors"
-		-- },
-		-- {
-			-- animation="Sc_cv_prison_cell",
-			-- duration=3.332,
-			-- time_scale=1,
-			-- weight=1,
-			-- trans_scale=1
-		-- }
-	-- },
-	-- {
-		-- 10.6,
-		-- START_MOTION,
-		-- {
-			-- "doors"
-		-- },
-		-- {
-			-- animation="Sc_cv_prison_cell",
-			-- duration=3.332,
-			-- start_time=3.332,
-			-- time_scale=1,
-			-- weight=1,
-			-- trans_scale=1
-		-- }
-	-- },
-	-- {7, START_SOUND, {"snd_open_door"}, {duration=10}},
-	-- {10.6, START_SOUND, {"snd_close_door"}, {duration=10}},
-	
-	-- {12, START_AUDIO_PROP_ANIM, {"snd_close_door"}, {duration=0.1, audioprops={attenuation=-2}}},
-	
-	
-	
-	-- {
-		-- 0,
-		-- START_MOTION,
-		-- {"Char_trent"},
-		-- {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
-		 -- duration=25, time_scale=1, weight=1, heading=-1, event_flags=2}
-	-- },	
-	-- {
-		-- 0,
-		-- START_MOTION,
-		-- {"Char_prisoner2"},
-		-- {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
-		 -- duration=25, time_scale=1, weight=1, heading=-1, event_flags=2}
-	-- },
-	-- {
-		-- 0,
-		-- START_MOTION,
-		-- {"Char_prisoner3"},
-		-- {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
-		 -- duration=2, time_scale=1, weight=1, heading=-1}
-	-- },
-	-- {
-		-- 0,
-		-- START_MOTION,
-		-- {"Char_prisoner4"},
-		-- {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
-		 -- duration=2, time_scale=1, weight=1, heading=-1}
-	-- },
-	-- {
-		-- 0,
-		-- START_MOTION,
-		-- {"Char_prisoner1"},
-		-- {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
-		 -- duration=2, time_scale=1, weight=1, heading=-1}
-	-- },
+	{
+		63,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_syd"
+		},
+		{
+			duration=2,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					-45,
+					Y_AXIS
+				}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},	
+
+
+	{
+		65.3,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_MLBODY_STND_WAVE_LHND_000LV_XA_02",
+		 duration=8, time_scale=1, trans_time=0.5, weight=1, heading=-1}
+	},	
+	{
+		68,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_MLBODY_STND_WALK_TRNS_000LV_XA_01",
+		 duration=4, time_scale=1, trans_time=1, weight=1, heading=-1}
+	},
+	{
+		69.12,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_MLBODY_WALK_STND_TRNS_000LV_XA_02",
+		 duration=4, time_scale=1,  weight=1, heading=-1}
+	},
+
+	{
+		71.5,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_MLBODY_STND_LOOK_AROU_CASL_000LV_XA_08",
+		 duration=8, time_scale=1, trans_time=1, weight=1, heading=-1}
+	},
+
 	
 	
+	{
+		67.3,
+		START_MOTION,
+		{
+			"doors"
+		},
+		{
+			animation="Sc_cv_prison_cell",
+			duration=3.332,
+			time_scale=1,
+			weight=1,
+			trans_scale=1
+		}
+	},
+	{
+		70.6,
+		START_MOTION,
+		{
+			"doors"
+		},
+		{
+			animation="Sc_cv_prison_cell",
+			duration=3.332,
+			start_time=3.332,
+			time_scale=1,
+			weight=1,
+			trans_scale=1
+		}
+	},
+	{67, START_SOUND, {"snd_open_door"}, {duration=10}},
+	{70.6, START_SOUND, {"snd_close_door"}, {duration=10}},
 	
-	-- {
-		-- 8,
-		-- START_IK,
-		-- {
-			-- "Char_prisoner1",
-			-- "Char_syd"
-		-- },
-		-- {
-			-- duration=10,
-			-- end_effector="Body_Head", transition_duration=3, 
-			-- target_part="Body_Head", target_type=PART,
-			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
-		-- }
-	-- },
-	-- {
-		-- 9,
-		-- START_IK,
-		-- {
-			-- "Char_prisoner3",
-			-- "Char_syd"
-		-- },
-		-- {
-			-- duration=10,
-			-- end_effector="Body_Head", transition_duration=2,
-			-- target_part="Body_Head", target_type=PART,
-			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
-		-- }
-	-- },
-	-- {
-		-- 8.5,
-		-- START_IK,
-		-- {
-			-- "Char_trent",
-			-- "Char_syd"
-		-- },
-		-- {
-			-- duration=10,
-			-- end_effector="Body_Head", transition_duration=4, 
-			-- target_part="Body_Head", target_type=PART,
-			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
-		-- }
-	-- },
-	-- {
-		-- 8.5,
-		-- START_IK,
-		-- {
-			-- "Char_prisoner4",
-			-- "Char_syd"
-		-- },
-		-- {
-			-- duration=5,
-			-- end_effector="Body_Head", transition_duration=2.5, 
-			-- target_part="Body_Head", target_type=PART,
-			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
-		-- }
-	-- },
-	
-	-- {
-		-- 8,
-		-- START_IK,
-		-- {
-			-- "Char_prisoner2",
-			-- "prisoner2_head_ik"
-		-- },
-		-- {
-			-- duration=25,
-			-- end_effector="Body_Head", transition_duration=1, 
-			-- target_part="", target_type=ROOT,
-			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
-		-- }
-	-- },
-	-- {
-		-- 8,
-		-- START_IK,
-		-- {
-			-- "Char_prisoner2",
-			-- "prisoner2_eye_ik"
-		-- },
-		-- {
-			-- duration=25,
-			-- end_effector="Eye IK Left", transition_duration=1, 
-			-- target_part="", target_type=ROOT,
-			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
-		-- }
-	-- },
-	
-	-- {
-		-- 7.2,
-		-- START_MOTION,
-		-- {"Char_prisoner1"},
-		-- {animation="Sc_MLBODY_CHRB_TWSTS_LOOK_090LV_XA_02",
-		 -- duration=5, time_scale=0.8, weight=1, heading=-1}
-	-- },
-	-- {
-		-- 7.5,
-		-- START_MOTION,
-		-- {"Char_prisoner4"},
-		-- {animation="Sc_MLBODY_CHRB_TWSTS_LOOK_090LV_XA_02",
-		 -- duration=5, time_scale=0.8, weight=1, heading=-1}
-	-- },
-	-- {
-		-- 7.8,
-		-- START_MOTION,
-		-- {"Char_prisoner2"},
-		-- {animation="Sc_MLBODY_CHRB_TWSTS_LOOK_270LV_XA_03",
-		 -- duration=5, time_scale=0.8, weight=1, heading=-1}
-	-- },
-	-- {
-		-- 8,
-		-- START_MOTION,
-		-- {"Char_trent"},
-		-- {animation="Sc_MLBODY_CHRB_TWSTS_LOOK_270LV_XA_03",
-		 -- duration=5, time_scale=0.6, weight=1, heading=-1}
-	-- },
+	{72, START_AUDIO_PROP_ANIM, {"snd_close_door"}, {duration=0.1, audioprops={attenuation=-2}}},
 	
 	
 	
+	{
+		60,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+		 duration=25, time_scale=1, weight=1, heading=-1, event_flags=2}
+	},	
+	{
+		60,
+		START_MOTION,
+		{"Char_prisoner2"},
+		{animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+		 duration=25, time_scale=1, weight=1, heading=-1, event_flags=2}
+	},
+	{
+		60,
+		START_MOTION,
+		{"Char_prisoner3"},
+		{animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+		 duration=2, time_scale=1, weight=1, heading=-1}
+	},
+	{
+		60,
+		START_MOTION,
+		{"Char_prisoner4"},
+		{animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+		 duration=2, time_scale=1, weight=1, heading=-1}
+	},
+	{
+		60,
+		START_MOTION,
+		{"Char_prisoner1"},
+		{animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+		 duration=2, time_scale=1, weight=1, heading=-1}
+	},
 	
 	
-	-- { -- syd enterning part 2
-		-- 14,
-		-- START_MOTION,
-		-- {"Char_prisoner2"},
-		-- {animation="Sc_MLBODY_CHRB_TWSTS_FROM_270LV_XA_03",
-		 -- duration=2.5, time_scale=0.2, weight=1, heading=-1}
-	-- },	
+	
+	{
+		68,
+		START_IK,
+		{
+			"Char_prisoner1",
+			"Char_syd"
+		},
+		{
+			duration=10,
+			end_effector="Body_Head", transition_duration=3, 
+			target_part="Body_Head", target_type=PART,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+		}
+	},
+	{
+		69,
+		START_IK,
+		{
+			"Char_prisoner3",
+			"Char_syd"
+		},
+		{
+			duration=10,
+			end_effector="Body_Head", transition_duration=2,
+			target_part="Body_Head", target_type=PART,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+		}
+	},
+	{
+		68.5,
+		START_IK,
+		{
+			"Char_trent",
+			"Char_syd"
+		},
+		{
+			duration=10,
+			end_effector="Body_Head", transition_duration=4, 
+			target_part="Body_Head", target_type=PART,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+		}
+	},
+	{
+		68.5,
+		START_IK,
+		{
+			"Char_prisoner4",
+			"Char_syd"
+		},
+		{
+			duration=5,
+			end_effector="Body_Head", transition_duration=2.5, 
+			target_part="Body_Head", target_type=PART,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+		}
+	},
+	
+	{
+		68,
+		START_IK,
+		{
+			"Char_prisoner2",
+			"prisoner2_head_ik"
+		},
+		{
+			duration=20,
+			end_effector="Body_Head", transition_duration=1, 
+			target_part="", target_type=ROOT,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+		}
+	},
+	{
+		68,
+		START_IK,
+		{
+			"Char_prisoner2",
+			"prisoner2_eye_ik"
+		},
+		{
+			duration=20,
+			end_effector="Eye IK Left", transition_duration=1, 
+			target_part="", target_type=ROOT,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+		}
+	},
+	
+	{
+		67.2,
+		START_MOTION,
+		{"Char_prisoner1"},
+		{animation="Sc_MLBODY_CHRB_TWSTS_LOOK_090LV_XA_02",
+		 duration=5, time_scale=0.8, weight=1, heading=-1}
+	},
+	{
+		67.5,
+		START_MOTION,
+		{"Char_prisoner4"},
+		{animation="Sc_MLBODY_CHRB_TWSTS_LOOK_090LV_XA_02",
+		 duration=5, time_scale=0.8, weight=1, heading=-1}
+	},
+	{
+		67.8,
+		START_MOTION,
+		{"Char_prisoner2"},
+		{animation="Sc_MLBODY_CHRB_TWSTS_LOOK_270LV_XA_03",
+		 duration=5, time_scale=0.8, weight=1, heading=-1}
+	},
+	{
+		68,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_CHRB_TWSTS_LOOK_270LV_XA_03",
+		 duration=5, time_scale=0.6, weight=1, heading=-1}
+	},
 	
 	
 	
 	
-	-- {
-		-- 12,
-		-- SET_CAMERA,
-		-- {
-			-- "Monitor_1",
-			-- "cam_sydgreet_begin"
-		-- }
-	-- },
-	-- {
-		-- 12,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "cam_sydgreet_begin",
-			-- "cam_sydgreet_begin_pos2"
-		-- },
-		-- {
-			-- duration=5,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },
-	-- {
-		-- 12,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "cam_sydgreet_begin_marker",
-			-- "cam_sydgreet_begin_marker_pos2"
-		-- },
-		-- {
-			-- duration=5,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },
+	
+	{ -- syd enterning part 2
+		74,
+		START_MOTION,
+		{"Char_prisoner2"},
+		{animation="Sc_MLBODY_CHRB_TWSTS_FROM_270LV_XA_03",
+		 duration=2.5, time_scale=0.2, weight=1, heading=-1}
+	},	
+	
+	
+	
+	
+	{
+		72,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_sydgreet_begin"
+		}
+	},
+	{
+		72,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_sydgreet_begin",
+			"cam_sydgreet_begin_pos2"
+		},
+		{
+			duration=5.5,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		72,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_sydgreet_begin_marker",
+			"cam_sydgreet_begin_marker_pos2"
+		},
+		{
+			duration=5.5,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
 	
 
 	
 	
 		
-	-- {
-		-- 13,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "prisoner2_head_ik",
-			-- "head_asf_captain_p2_near"
-		-- },
-		-- {
-			-- duration=2.5,
-			-- target_part="", target_type=ROOT,
-			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },
-	-- {
-		-- 13,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "prisoner2_eye_ik",
-			-- "head_asf_captain"
-		-- },
-		-- {
-			-- duration=1.25,
-			-- target_part="", target_type=ROOT,
-			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },
+	{
+		73.5,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"prisoner2_head_ik",
+			"head_asf_captain_p2_near"
+		},
+		{
+			duration=2.5,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		73.5,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"prisoner2_eye_ik",
+			"head_asf_captain"
+		},
+		{
+			duration=1.25,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		80,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"prisoner2_head_ik",
+			"head_asf_captain_p2_near"
+		},
+		{
+			duration=2,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		80,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"prisoner2_eye_ik",
+			"head_asf_captain"
+		},
+		{
+			duration=2,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
 	
 	
-	-- {
-		-- 17,
-		-- SET_CAMERA,
-		-- {
-			-- "Monitor_1",
-			-- "cam_sydgreet_captapprove"
-		-- }
-	-- },
 	
-	-- {
-		-- 17,
-		-- START_MOTION,
-		-- {"Char_prisoner4"},
-		-- {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
-		 -- duration=1, time_scale=1, weight=1, heading=-1, start_time=2}
-	-- },	
-	-- {
-		-- 17.5,
-		-- START_MOTION,
-		-- {"Char_prisoner4"},
-		-- {animation="Sc_MLBODY_CHRB_YESS_000LV_A_01",
-		 -- duration=2, time_scale=1, trans_time=0.25, weight=1, heading=-1}
-	-- },	
-	-- {
-		-- 17.5,
-		-- START_MOTION,
-		-- {"Char_prisoner4"},
-		-- {animation="Sc_MLHEAD_NEUT_BLINK_EYES_000LV_A_00",
-		 -- duration=1, time_scale=0.4, trans_time=0.25, weight=1, heading=-1}
-	-- },	
+	{
+		77,
+		START_IK,
+		{
+			"Char_prisoner2",
+			"prisoner2_head_ik"
+		},
+		{
+			duration=25,
+			end_effector="Body_Head", transition_duration=1, 
+			target_part="", target_type=ROOT,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+		}
+	},
+	{
+		68,
+		START_IK,
+		{
+			"Char_prisoner2",
+			"prisoner2_eye_ik"
+		},
+		{
+			duration=25,
+			end_effector="Eye IK Left", transition_duration=1, 
+			target_part="", target_type=ROOT,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+		}
+	},
+	
+	
+	{
+		77.5,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_sydgreet_captapprove"
+		}
+	},
+	
+	{
+		77.5,
+		START_MOTION,
+		{"Char_prisoner4"},
+		{animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+		 duration=1, time_scale=1, weight=1, heading=-1, start_time=2}
+	},	
+	{
+		78,
+		START_MOTION,
+		{"Char_prisoner4"},
+		{animation="Sc_MLBODY_CHRB_YESS_000LV_A_01",
+		 duration=2, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	},	
+	{
+		78,
+		START_MOTION,
+		{"Char_prisoner4"},
+		{animation="Sc_MLHEAD_NEUT_BLINK_EYES_000LV_A_00",
+		 duration=1, time_scale=0.4, trans_time=0.25, weight=1, heading=-1}
+	},	
 
 	
+	{
+		80,
+		START_IK,
+		{
+			"Char_prisoner4",
+			"Char_syd"
+		},
+		{
+			duration=10,
+			end_effector="Body_Head", transition_duration=2.5, 
+			target_part="Body_Head", target_type=PART,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+		}
+	},
+	
 	-- {
-		-- 19.5,
+		-- 79.5,
 		-- SET_CAMERA,
 		-- {
 			-- "Monitor_1",
 			-- "cam_syd_doorclosed"
 		-- }
 	-- },
-	
-	
-	
-	
-	
-	
-	
-	-- { --syd reveal
-		-- 0,
-		-- START_MOTION,
-		-- {"Char_trent"},
-		-- {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
-		 -- duration=25, time_scale=1, weight=1, heading=-1, event_flags=2}
-	-- },	
-	-- {
-		-- 0,
-		-- START_MOTION,
-		-- {"Char_prisoner2"},
-		-- {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
-		 -- duration=25, time_scale=1, weight=1, heading=-1, event_flags=2}
-	-- },
-	-- {
-		-- 0,
-		-- START_MOTION,
-		-- {"Char_prisoner3"},
-		-- {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
-		 -- duration=2, time_scale=1, weight=1, heading=-1}
-	-- },
-	-- {
-		-- 0,
-		-- START_MOTION,
-		-- {"Char_prisoner4"},
-		-- {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
-		 -- duration=2, time_scale=1, weight=1, heading=-1}
-	-- },
-	-- {
-		-- 0,
-		-- START_MOTION,
-		-- {"Char_prisoner1"},
-		-- {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
-		 -- duration=2, time_scale=1, weight=1, heading=-1}
-	-- },
-	
 	
 	
 	-- {
@@ -3254,539 +3511,539 @@ events = {
 		
 	
 	
-	-- {
-		-- 0.01,
-		-- START_IK,
-		-- {
-			-- "Char_syd",
-			-- "syd_head_ik"
-		-- },
-		-- {
-			-- duration=11.8,
-			-- end_effector="Body_Head",
-			-- target_part="", target_type=ROOT,
-			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
-		-- }
-	-- },
-	-- {
-		-- 0.01,
-		-- START_IK,
-		-- {
-			-- "Char_syd",
-			-- "syd_eye_ik"
-		-- },
-		-- {
-			-- duration=11.8,
-			-- end_effector="Eye IK Left",
-			-- target_part="", target_type=ROOT,
-			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
-		-- }
-	-- },
-	-- {
-		-- 19.2,
-		-- START_IK,
-		-- {
-			-- "Char_syd",
-			-- "syd_head_ik"
-		-- },
-		-- {
-			-- duration=25,
-			-- end_effector="Body_Head",
-			-- target_part="", target_type=ROOT,
-			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
-		-- }
-	-- },
-	-- {
-		-- 19.2,
-		-- START_IK,
-		-- {
-			-- "Char_syd",
-			-- "syd_eye_ik"
-		-- },
-		-- {
-			-- duration=25,
-			-- end_effector="Eye IK Left",
-			-- target_part="", target_type=ROOT,
-			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
-		-- }
-	-- },
+	{
+		80,
+		START_IK,
+		{
+			"Char_syd",
+			"syd_head_ik"
+		},
+		{
+			duration=11.8,
+			end_effector="Body_Head",
+			target_part="", target_type=ROOT,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		}
+	},
+	{
+		80,
+		START_IK,
+		{
+			"Char_syd",
+			"syd_eye_ik"
+		},
+		{
+			duration=11.8,
+			end_effector="Eye IK Left",
+			target_part="", target_type=ROOT,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		}
+	},
+	{
+		99.2,
+		START_IK,
+		{
+			"Char_syd",
+			"syd_head_ik"
+		},
+		{
+			duration=25,
+			end_effector="Body_Head",
+			target_part="", target_type=ROOT,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		}
+	},
+	{
+		99.2,
+		START_IK,
+		{
+			"Char_syd",
+			"syd_eye_ik"
+		},
+		{
+			duration=25,
+			end_effector="Eye IK Left",
+			target_part="", target_type=ROOT,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		}
+	},
 	
 	
-	-- {
-		-- 0,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "syd_head_ik",
-			-- "head_prisoner2"
-		-- },
-		-- {
-			-- duration=2,
-			-- target_part="", target_type=ROOT,
-			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },
-	-- {
-		-- 0,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "syd_eye_ik",
-			-- "head_prisoner2"
-		-- },
-		-- {
-			-- duration=1.5,
-			-- target_part="", target_type=ROOT,
-			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },
+	{
+		80,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"syd_head_ik",
+			"head_prisoner2"
+		},
+		{
+			duration=2,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		80,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"syd_eye_ik",
+			"head_prisoner2"
+		},
+		{
+			duration=1.5,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
 	
-	-- {
-		-- 3,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "syd_head_ik",
-			-- "head_asf_captain"
-		-- },
-		-- {
-			-- duration=3,
-			-- target_part="", target_type=ROOT,
-			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },
-	-- {
-		-- 3,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "syd_eye_ik",
-			-- "head_asf_captain"
-		-- },
-		-- {
-			-- duration=1.5,
-			-- target_part="", target_type=ROOT,
-			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },
+	{
+		83,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"syd_head_ik",
+			"head_asf_captain"
+		},
+		{
+			duration=3,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		83,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"syd_eye_ik",
+			"head_asf_captain"
+		},
+		{
+			duration=1.5,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
 	
 	
 	
-	-- {
-		-- 7,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "syd_head_ik",
-			-- "head_last_prisoner"
-		-- },
-		-- {
-			-- duration=2,
-			-- target_part="", target_type=ROOT,
-			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },
-	-- {
-		-- 7,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "syd_eye_ik",
-			-- "head_last_prisoner"
-		-- },
-		-- {
-			-- duration=1.5,
-			-- target_part="", target_type=ROOT,
-			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },
+	{
+		87,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"syd_head_ik",
+			"head_last_prisoner"
+		},
+		{
+			duration=2,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		87,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"syd_eye_ik",
+			"head_last_prisoner"
+		},
+		{
+			duration=1.5,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
 	
-	-- {
-		-- 9,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "syd_head_ik",
-			-- "head_syd_front"
-		-- },
-		-- {
-			-- duration=3,
-			-- target_part="", target_type=ROOT,
-			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },
-	-- {
-		-- 9,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "syd_eye_ik",
-			-- "head_syd_front"
-		-- },
-		-- {
-			-- duration=2,
-			-- target_part="", target_type=ROOT,
-			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },
+	{
+		89,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"syd_head_ik",
+			"head_syd_front"
+		},
+		{
+			duration=3,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		89,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"syd_eye_ik",
+			"head_syd_front"
+		},
+		{
+			duration=2,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
 	
-	-- {
-		-- 20,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "syd_head_ik",
-			-- "head_prisoner2_around"
-		-- },
-		-- {
-			-- duration=3,
-			-- target_part="", target_type=ROOT,
-			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },
-	-- {
-		-- 20,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "syd_eye_ik",
-			-- "head_prisoner2"
-		-- },
-		-- {
-			-- duration=2,
-			-- target_part="", target_type=ROOT,
-			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },
+	{
+		100,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"syd_head_ik",
+			"head_prisoner2_around"
+		},
+		{
+			duration=3,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		100,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"syd_eye_ik",
+			"head_prisoner2"
+		},
+		{
+			duration=2,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
 	
-	-- {
-		-- 23,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "syd_head_ik",
-			-- "head_last_prisoner"
-		-- },
-		-- {
-			-- duration=3,
-			-- target_part="", target_type=ROOT,
-			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },
-	-- {
-		-- 23,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "syd_eye_ik",
-			-- "head_last_prisoner"
-		-- },
-		-- {
-			-- duration=1.5,
-			-- target_part="", target_type=ROOT,
-			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },
+	{
+		103,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"syd_head_ik",
+			"head_last_prisoner"
+		},
+		{
+			duration=3,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		103,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"syd_eye_ik",
+			"head_last_prisoner"
+		},
+		{
+			duration=1.5,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
 	
-	-- {
-		-- 25.5,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "syd_head_ik",
-			-- "head_syd_front"
-		-- },
-		-- {
-			-- duration=2.5,
-			-- target_part="", target_type=ROOT,
-			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },
-	-- {
-		-- 25.5,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "syd_eye_ik",
-			-- "head_syd_front"
-		-- },
-		-- {
-			-- duration=1.5,
-			-- target_part="", target_type=ROOT,
-			-- spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },
+	{
+		105.5,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"syd_head_ik",
+			"head_syd_front"
+		},
+		{
+			duration=2.5,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		105.5,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"syd_eye_ik",
+			"head_syd_front"
+		},
+		{
+			duration=1.5,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
 	
-	-- {
-		-- 0,
-		-- SET_CAMERA,
-		-- {
-			-- "Monitor_1",
-			-- "cam_syd_reveal"
-		-- }
-	-- },
+	{
+		80,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_syd_reveal"
+		}
+	},
 	
-	-- {
-		-- 0,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "cam_syd_reveal",
-			-- "cam_syd_reveal_pos2"
-		-- },
-		-- {
-			-- duration=20,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },
-	-- {
-		-- 0,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "cam_syd_reveal_marker",
-			-- "cam_syd_reveal_marker_pos2"
-		-- },
-		-- {
-			-- duration=20,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },	
+	{
+		80,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_syd_reveal",
+			"cam_syd_reveal_pos2"
+		},
+		{
+			duration=20,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		80,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_syd_reveal_marker",
+			"cam_syd_reveal_marker_pos2"
+		},
+		{
+			duration=20,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},	
 
 	
-	-- {
-		-- 0,
-		-- ATTACH_ENTITY,
-		-- {
-			-- "vfx_rtc_sydsmoke_3",
-			-- "prop_cigarette"
-		-- },
-		-- {
-			-- duration=70,
-			-- offset={0,0,0},
-			-- up=Y_AXIS,front=NEG_Z_AXIS,
-			-- target_part="hp_cigarette_tip_smoke",
-			-- target_type=HARDPOINT,
-			-- flags=POSITION
-		-- }
-	-- },
-	-- {
-		-- 0,
-		-- ATTACH_ENTITY,
-		-- {
-			-- "vfx_rtc_cigaretteglow_4",
-			-- "prop_cigarette"
-		-- },
-		-- {
-			-- duration=70,
-			-- offset={0,0,0},
-			-- up=Y_AXIS,front=NEG_Z_AXIS,
-			-- target_part="hp_cigarette_tip_smoke",
-			-- target_type=HARDPOINT,
-			-- flags=POSITION + ORIENTATION
-		-- }
-	-- },
+	{
+		80,
+		ATTACH_ENTITY,
+		{
+			"vfx_rtc_sydsmoke_3",
+			"prop_cigarette"
+		},
+		{
+			duration=500,
+			offset={0,0,0},
+			up=Y_AXIS,front=NEG_Z_AXIS,
+			target_part="hp_cigarette_tip_smoke",
+			target_type=HARDPOINT,
+			flags=POSITION
+		}
+	},
+	{
+		80,
+		ATTACH_ENTITY,
+		{
+			"vfx_rtc_cigaretteglow_4",
+			"prop_cigarette"
+		},
+		{
+			duration=500,
+			offset={0,0,0},
+			up=Y_AXIS,front=NEG_Z_AXIS,
+			target_part="hp_cigarette_tip_smoke",
+			target_type=HARDPOINT,
+			flags=POSITION + ORIENTATION
+		}
+	},
 	
-	-- {
-		-- 0.01,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_MLBODY_STND_GESTR_NO_000LV_XA_02",
-		 -- duration=5, time_scale=0.7, weight=1, heading=-1}
-	-- },	
-	-- {
-		-- 4,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_MLBODY_STND_AT-EASE_HSEC_RLEASE_000LV_XA_03",
-		 -- duration=5, time_scale=0.8, trans_time=1, weight=1, heading=-1}
-	-- },	
-	-- {
-		-- 9,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_MLBODY_STND_AT-EASE_RLEASE_000LV_XA_01",
-		 -- duration=5, time_scale=0.6, trans_time=1, weight=1, heading=-1}
-	-- },	
-	
-	
-
-	-- {
-		-- 11.8,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_MLBODY_STND_GIVE_VEND_000LV_B_07",
-		 -- duration=5,  time_scale=0.5, trans_time=0.5, weight=1, heading=-1}
-	-- },	
-
-
-	
-	
-	-- {
-		-- 13.5,
-		-- CONNECT_HARDPOINTS,
-		-- {
-			-- "prop_cigarette",
-			-- "Char_syd"
-		-- },
-		-- {
-			-- duration=55,
-			-- hardpoint="hprightconnect_cigarette",
-			-- parent_hardpoint="hprightconnect"
-		-- }
-	-- },
-	-- {
-		-- 13.5,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_MLHAND_HNEUT_POINT_RGHT_MILI_000LV_00",
-		 -- duration=3, time_scale=1, weight=1, heading=-1}
-	-- },
-	-- {
-		-- 14.4,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_SPCBODY_s002x_syd_XE_STND_000LV_11",
-		 -- duration=6, start_time=1.3, time_scale=1.5, trans_time=2.5, weight=1, heading=-1}
-	-- },	
-	
-	-- {
-		-- 13,
-		-- START_PSYS,
-		-- {
-			-- "vfx_rtc_cigaretteglow_4"
-		-- },
-		-- {
-			-- duration=500
-		-- }
-	-- },
-	-- {
-		-- 16,
-		-- START_PSYS,
-		-- {
-			-- "vfx_rtc_sydsmoke_3"
-		-- },
-		-- {
-			-- duration=500
-		-- }
-	-- },
-
-	-- {
-		-- 19,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_MLBODY_STND_CONV_RHNDUP_TRNS_000LV_XA_01",
-		 -- duration=7, time_scale=0.7, trans_time=1, weight=1,  heading=-1}
-	-- },
-	-- {
-		-- 21,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_MLBODY_STND_CONV_RHND_CASL_000LV_xa_01",
-		 -- duration=6, time_scale=0.75, trans_time=1, weight=1, heading=-1, event_flags=2}
-	-- },
-	-- {
-		-- 25,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_MLBODY_STND_CONV_RHNDDN_TRNS_000LV_XA_02",
-		 -- duration=3, time_scale=0.75, trans_time=1, weight=1,  heading=-1}
-	-- },
+	{
+		80,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_MLBODY_STND_GESTR_NO_000LV_XA_02",
+		 duration=5, time_scale=0.7, weight=1, heading=-1}
+	},	
+	{
+		84,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_MLBODY_STND_AT-EASE_HSEC_RLEASE_000LV_XA_03",
+		 duration=5, time_scale=0.8, trans_time=1, weight=1, heading=-1}
+	},	
+	{
+		89,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_MLBODY_STND_AT-EASE_RLEASE_000LV_XA_01",
+		 duration=5, time_scale=0.6, trans_time=1, weight=1, heading=-1}
+	},	
 	
 	
 
-	
-	-- {
-		-- 0,
-		-- START_SOUND,
-		-- {
-			-- "DX_m06_order_prison_0050_syd"
-		-- },
-		-- {
-			-- duration=15
-		-- }
-	-- },
-	-- {
-		-- 0,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_dx_s067d_0101_orillion",
-		 -- duration=4.2, time_scale=1, trans_time=0.25, weight=1, heading=-1}
-	-- }, 
-	-- {
-		-- 4.2,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_dx_s064x_2103_orillion",
-		 -- duration=4.4, start_time=2.2, time_scale=1, trans_time=0.25, weight=1, heading=-1}
-	-- }, 
+	{
+		91.8,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_MLBODY_STND_GIVE_VEND_000LV_B_07",
+		 duration=5,  time_scale=0.5, trans_time=0.5, weight=1, heading=-1}
+	},	
+
+
 	
 	
-	-- {
-		-- 8,
-		-- START_SOUND,
-		-- {
-			-- "DX_m06_order_prison_0060_syd"
-		-- },
-		-- {
-			-- duration=15
-		-- }
-	-- },
-	-- {
-		-- 8,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_dx_s076x_1302_orillion",
-		 -- duration=7, time_scale=1, trans_time=0.25, weight=1, heading=-1}
-	-- }, 
-	-- {
-		-- 9.5,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_dx_s064x_1702_orillion",
-		 -- duration=7, time_scale=1, trans_time=0.5, weight=1, heading=-1}
-	-- }, 
+	{
+		93.5,
+		CONNECT_HARDPOINTS,
+		{
+			"prop_cigarette",
+			"Char_syd"
+		},
+		{
+			duration=500,
+			hardpoint="hprightconnect_cigarette",
+			parent_hardpoint="hprightconnect"
+		}
+	},
+	{
+		93.5,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_MLHAND_HNEUT_POINT_RGHT_MILI_000LV_00",
+		 duration=3, time_scale=1, weight=1, heading=-1}
+	},
+	{
+		94.4,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_SPCBODY_s002x_syd_XE_STND_000LV_11",
+		 duration=6, start_time=1.3, time_scale=1.5, trans_time=2.5, weight=1, heading=-1}
+	},	
+	
+	{
+		93,
+		START_PSYS,
+		{
+			"vfx_rtc_cigaretteglow_4"
+		},
+		{
+			duration=500
+		}
+	},
+	{
+		96,
+		START_PSYS,
+		{
+			"vfx_rtc_sydsmoke_3"
+		},
+		{
+			duration=500
+		}
+	},
+
+	{
+		99,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_MLBODY_STND_CONV_RHNDUP_TRNS_000LV_XA_01",
+		 duration=7, time_scale=0.7, trans_time=1, weight=1,  heading=-1}
+	},
+	{
+		101,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_MLBODY_STND_CONV_RHND_CASL_000LV_xa_01",
+		 duration=6, time_scale=0.75, trans_time=1, weight=1, heading=-1, event_flags=2}
+	},
+	{
+		105,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_MLBODY_STND_CONV_RHNDDN_TRNS_000LV_XA_02",
+		 duration=3, time_scale=0.75, trans_time=1, weight=1,  heading=-1}
+	},
+	
+	
+
+	
+	{
+		80,
+		START_SOUND,
+		{
+			"DX_m06_order_prison_0050_syd"
+		},
+		{
+			duration=15
+		}
+	},
+	{
+		80,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_dx_s067d_0101_orillion",
+		 duration=4.2, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	{
+		84.2,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_dx_s064x_2103_orillion",
+		 duration=4.4, start_time=2.2, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	
+	
+	{
+		88,
+		START_SOUND,
+		{
+			"DX_m06_order_prison_0060_syd"
+		},
+		{
+			duration=15
+		}
+	},
+	{
+		88,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_dx_s076x_1302_orillion",
+		 duration=7, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	{
+		89.5,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_dx_s064x_1702_orillion",
+		 duration=7, time_scale=1, trans_time=0.5, weight=1, heading=-1}
+	}, 
+	
+	{
+		99,
+		START_SOUND,
+		{
+			"DX_m06_order_prison_0065_syd"
+		},
+		{
+			duration=15
+		}
+	},
+	{
+		99,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_dx_s064x_2401_orillion",
+		 duration=7, time_scale=1, trans_time=0.5, weight=1, heading=-1}
+	}, 
+	{
+		102.25,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_dx_s064x_1903_orillion",
+		 duration=7, time_scale=1, start_time=0.2, trans_time=0.5, weight=1, heading=-1}
+	}, 
+	
 	
 	-- {
-		-- 19,
-		-- START_SOUND,
-		-- {
-			-- "DX_m06_order_prison_0065_syd"
-		-- },
-		-- {
-			-- duration=15
-		-- }
-	-- },
-	-- {
-		-- 19,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_dx_s064x_2401_orillion",
-		 -- duration=7, time_scale=1, trans_time=0.5, weight=1, heading=-1}
-	-- }, 
-	-- {
-		-- 22.25,
-		-- START_MOTION,
-		-- {"Char_syd"},
-		-- {animation="Sc_dx_s064x_1903_orillion",
-		 -- duration=7, time_scale=1, start_time=0.2, trans_time=0.5, weight=1, heading=-1}
-	-- }, 
-	
-	
-	-- {
-		-- 27,
+		-- 107,
 		-- SET_CAMERA,
 		-- {
 			-- "Monitor_1",
@@ -3795,8 +4052,354 @@ events = {
 	-- },
 	
 	
-	{ -- reveal reaction
-		0,
+	
+		
+	
+	{ --reveal reaction 
+		105,
+		START_IK,
+		{
+			"Char_prisoner2",
+			"prisoner2_head_ik"
+		},
+		{
+			duration=25,
+			end_effector="Body_Head", transition_duration=1, 
+			target_part="", target_type=ROOT,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+		}
+	},
+	{
+		105,
+		START_IK,
+		{
+			"Char_prisoner2",
+			"prisoner2_eye_ik"
+		},
+		{
+			duration=25,
+			end_effector="Eye IK Left", transition_duration=1, 
+			target_part="", target_type=ROOT,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+		}
+	},
+	
+	
+	{
+		107,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"prisoner2_head_ik",
+			"head_last_prisoner"
+		},
+		{
+			duration=3,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		107,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"prisoner2_eye_ik",
+			"head_last_prisoner"
+		},
+		{
+			duration=2,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		110,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"prisoner2_head_ik",
+			"head_prisoner3"
+		},
+		{
+			duration=2.5,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		110,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"prisoner2_eye_ik",
+			"head_prisoner3"
+		},
+		{
+			duration=1.25,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		113,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"prisoner2_head_ik",
+			"head_last_prisoner"
+		},
+		{
+			duration=2.5,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		113,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"prisoner2_eye_ik",
+			"head_last_prisoner"
+		},
+		{
+			duration=1.25,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		116,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"prisoner2_head_ik",
+			"head_asf_captain"
+		},
+		{
+			duration=2.5,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		116,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"prisoner2_eye_ik",
+			"head_prisoner3"
+		},
+		{
+			duration=1.25,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	
+	{
+		107,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_delta3"
+		}
+	},
+	{
+		107,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_delta3_marker",
+			"cam_delta3_marker_pos2"
+		},
+		{
+			duration=10,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	
+	
+	{
+		107,
+		START_MOTION,
+		{"Char_prisoner2"},
+		{animation="Sc_MLBODY_CHRB_TWSTS_FROM_270LV_XA_03",
+		 duration=5, time_scale=0.7, weight=1, heading=-1}
+	},
+	{
+		110,
+		START_MOTION,
+		{"Char_prisoner2"},
+		{animation="Sc_MLBODY_CHRF_TALK_EMPH_000UP_A_18",
+		 duration=11, time_scale=0.8, trans_time=1, weight=1, heading=-1}
+	},	
+	
+	
+	{
+		107,
+		START_SOUND,
+		{
+			"DX_m06_order_prison_0070_delta3"
+		},
+		{
+			duration=15
+		}
+	}, 
+	{
+		107,
+		START_MOTION,
+		{"Char_prisoner2"},
+		{animation="Sc_dx_s037a_2101_rh_agent01",
+		 duration=15,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	{
+		111.5,
+		START_MOTION,
+		{"Char_prisoner2"},
+		{animation="Sc_dx_s037a_2501_rh_agent01",
+		 duration=15,  time_scale=0.8, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	
+	
+	{
+		107,
+		START_MOTION,
+		{"Char_prisoner4"},
+		{animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+		 duration=1, time_scale=1, weight=1, heading=-1}
+	},	
+	
+	
+	
+	
+	
+	{
+		117,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"prisoner4_head_ik",
+			"head_prisoner2"
+		},
+		{
+			duration=0.01,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	
+	{
+		118,
+		START_IK,
+		{
+			"Char_prisoner4",
+			"prisoner4_head_ik"
+		},
+		{
+			duration=4,
+			end_effector="Body_Head", transition_duration=1, 
+			target_part="", target_type=ROOT,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+		}
+	},
+	{
+		124,
+		START_IK,
+		{
+			"Char_prisoner4",
+			"prisoner4_head_ik"
+		},
+		{
+			duration=4,
+			end_effector="Body_Head", transition_duration=1, 
+			target_part="", target_type=ROOT,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+		}
+	},
+	
+	
+	{
+		118,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_delta1"
+		}
+	},
+	{
+		118,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_delta1",
+			"cam_delta1_pos2"
+		},
+		{
+			duration=8,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	
+	
+	{
+		118,
+		START_MOTION,
+		{"Char_prisoner4"},
+		{animation="Sc_MLBODY_CHRB_SHRG_SHLDRS_BIG_000LV_XA_03",
+		 duration=5, time_scale=0.7, weight=1, heading=-1}
+	},	
+	{
+		122,
+		START_MOTION,
+		{"Char_prisoner4"},
+		{animation="Sc_MLBODY_CHRB_GESTR_180LV_XA_03",
+		 duration=5, time_scale=0.7, trans_time=0.5, weight=1, heading=-1}
+	},	
+	
+	
+	{
+		118,
+		START_SOUND,
+		{
+			"DX_m06_order_prison_0080_delta1"
+		},
+		{
+			duration=15
+		}
+	}, 
+	{
+		118,
+		START_MOTION,
+		{"Char_prisoner4"},
+		{animation="Sc_dx_s037a_2402_tobias",
+		 duration=15,  time_scale=1, start_time=4, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	{
+		120,
+		START_MOTION,
+		{"Char_prisoner4"},
+		{animation="Sc_dx_s037a_2402_tobias",
+		 duration=15,  time_scale=1, start_time=1.4, trans_time=0.25, weight=1, heading=-1}
+	}, 
+			
+	
+	
+	{
+		126,
 		SET_CAMERA,
 		{
 			"Monitor_1",
@@ -3804,8 +4407,12 @@ events = {
 		}
 	},
 	
+	
+	
+
+	
 	{ -- define syd
-		0,
+		125,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"Char_syd",
@@ -3822,90 +4429,16 @@ events = {
 		}
 	},
 	{
-		0.01,
+		125,
 		START_MOTION,
 		{"Char_syd"},
 		{animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
-		 duration=8, time_scale=1,  weight=1, heading=-1}
+		 duration=1, time_scale=1,  weight=1, heading=-1}
 	},
 	
-	{
-		0,
-		ATTACH_ENTITY,
-		{
-			"vfx_rtc_sydsmoke_3",
-			"prop_cigarette"
-		},
-		{
-			duration=150,
-			offset={0,0,0},
-			up=Y_AXIS,front=NEG_Z_AXIS,
-			target_part="hp_cigarette_tip_smoke",
-			target_type=HARDPOINT,
-			flags=POSITION
-		}
-	},
-	{
-		0,
-		ATTACH_ENTITY,
-		{
-			"vfx_rtc_cigaretteglow_4",
-			"prop_cigarette"
-		},
-		{
-			duration=150,
-			offset={0,0,0},
-			up=Y_AXIS,front=NEG_Z_AXIS,
-			target_part="hp_cigarette_tip_smoke",
-			target_type=HARDPOINT,
-			flags=POSITION + ORIENTATION
-		}
-	},
 	
 	{
-		0,
-		CONNECT_HARDPOINTS,
-		{
-			"prop_cigarette",
-			"Char_syd"
-		},
-		{
-			duration=150,
-			hardpoint="hprightconnect_cigarette",
-			parent_hardpoint="hprightconnect"
-		}
-	},
-	{
-		0,
-		START_MOTION,
-		{"Char_syd"},
-		{animation="Sc_MLHAND_HNEUT_POINT_RGHT_MILI_000LV_00",
-		 duration=3, time_scale=1, weight=1, heading=-1}
-	},
-	
-	{
-		0,
-		START_PSYS,
-		{
-			"vfx_rtc_cigaretteglow_4"
-		},
-		{
-			duration=500
-		}
-	},
-	{
-		0,
-		START_PSYS,
-		{
-			"vfx_rtc_sydsmoke_3"
-		},
-		{
-			duration=500
-		}
-	},
-	
-	{
-		0.01,
+		125,
 		START_IK,
 		{
 			"Char_syd",
@@ -3919,7 +4452,7 @@ events = {
 		}
 	},
 	{
-		0.01,
+		125,
 		START_IK,
 		{
 			"Char_syd",
@@ -3932,32 +4465,12 @@ events = {
 			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
 		}
 	},
-	
-	{ -- define prisoners
-		0,
-		START_MOTION,
-		{"Char_prisoner2"},
-		{animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
-		 duration=5, time_scale=0.8, weight=1, heading=-1}
-	},
+		
+		
+		
+		
 	{
-		0,
-		START_MOTION,
-		{"Char_prisoner4"},
-		{animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
-		 duration=5, time_scale=0.8, weight=1, heading=-1}
-	},
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	{
-		0,
+		126,
 		START_MOTION,
 		{"Char_trent"},
 		{animation="Sc_MLBODY_CHRB_TWSTS_LOOK_270LV_XA_03",
@@ -3966,35 +4479,35 @@ events = {
 	
 	
 	{
-		0.001,
+		120,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"trent_head_ik",
 			"head_trent_front"
 		},
 		{
-			duration=0.001,
+			duration=1,
 			target_part="", target_type=ROOT,
 			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
 			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
 		}
 	},
 	{
-		0.001,
+		120,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"trent_eye_ik",
 			"head_trent_front"
 		},
 		{
-			duration=0.001,
+			duration=1,
 			target_part="", target_type=ROOT,
 			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
 			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
 		}
 	},
 	{
-		0.01,
+		126,
 		START_IK,
 		{
 			"Char_trent",
@@ -4009,14 +4522,14 @@ events = {
 		}
 	},
 	{
-		0.01,
+		126,
 		START_IK,
 		{
 			"Char_trent",
 			"trent_eye_ik"
 		},
 		{
-			duration=100,
+			duration=25,
 			end_effector="Eye IK Left",
 			target_part="",
 			target_type=ROOT,
@@ -4027,7 +4540,7 @@ events = {
 	
 	
 	{
-		0.5,
+		126.5,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"trent_head_ik",
@@ -4041,7 +4554,7 @@ events = {
 		}
 	},
 	{
-		0.5,
+		126.5,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"trent_eye_ik",
@@ -4062,7 +4575,7 @@ events = {
 
 	
 	{
-		1,
+		127,
 		START_SOUND,
 		{
 			"DX_m06_order_prison_0090_trent"
@@ -4072,7 +4585,7 @@ events = {
 		}
 	},
 	{
-		1,
+		127,
 		START_MOTION,
 		{"Char_trent"},
 		{animation="Sc_dx_s032d_0201_trent",
@@ -4081,11 +4594,11 @@ events = {
 	
 	
 	
-	
+	--------------------------
 	
 	
 	{
-		3.5,
+		129.5,
 		SET_CAMERA,
 		{
 			"Monitor_1",
@@ -4095,7 +4608,7 @@ events = {
 	
 	
 	{
-		3.5,
+		129.5,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"syd_head_ik",
@@ -4109,7 +4622,7 @@ events = {
 		}
 	},
 	{
-		3.5,
+		129.5,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"syd_eye_ik",
@@ -4124,7 +4637,7 @@ events = {
 	},
 	
 	{
-		4.5,
+		130.5,
 		START_SOUND,
 		{
 			"DX_m06_order_prison_0100_syd"
@@ -4134,7 +4647,7 @@ events = {
 		}
 	},
 	{
-		4.5,
+		130.5,
 		START_MOTION,
 		{"Char_syd"},
 		{animation="Sc_dx_s019b_1201_syd",
@@ -4143,7 +4656,7 @@ events = {
 	
 	
 	{
-		7,
+		133,
 		START_MOTION,
 		{"Char_syd"},
 		{animation="Sc_SPCBODY_s002x_syd_XE_STND_000LV_11",
@@ -4151,8 +4664,23 @@ events = {
 	},
 	
 	
+	
 	{
-		5,
+		125,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"prisoner4_head_ik",
+			"head_syd"
+		},
+		{
+			duration=0.01,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		131,
 		START_IK,
 		{
 			"Char_prisoner4",
@@ -4168,7 +4696,7 @@ events = {
 	
 	
 	{
-		7,
+		133,
 		SET_CAMERA,
 		{
 			"Monitor_1",
@@ -4176,7 +4704,7 @@ events = {
 		}
 	},
 	{
-		7,
+		133,
 		START_MOTION,
 		{"Char_prisoner4"},
 		{animation="Sc_MLBODY_CHRB_TWSTS_LOOK_090LV_XA_02",
@@ -4184,7 +4712,7 @@ events = {
 	},
 	
 	{
-		7,
+		133,
 		START_SOUND,
 		{
 			"DX_m06_order_prison_0110_delta1"
@@ -4194,7 +4722,7 @@ events = {
 		}
 	}, 
 	{
-		7,
+		133,
 		START_MOTION,
 		{"Char_prisoner4"},
 		{animation="Sc_dx_s037a_2402_tobias",
@@ -4203,7 +4731,7 @@ events = {
 	
 	
 	{
-		9,
+		135,
 		SET_CAMERA,
 		{
 			"Monitor_1",
@@ -4211,7 +4739,7 @@ events = {
 		}
 	},
 	{
-		9,
+		135,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"cam_syd_captside",
@@ -4233,14 +4761,14 @@ events = {
 	
 	
 	{
-		9,
+		135,
 		START_MOTION,
 		{"Char_syd"},
 		{animation="Sc_SPCBODY_s002x_syd_XE_STND_000LV_11",
 		 duration=6, start_time=6.5, time_scale=1,  weight=1, heading=-1}
 	},	
 	{
-		11,
+		137,
 		START_MOTION,
 		{"Char_syd"},
 		{animation="Sc_MLBODY_STND_TALK_EMPH_000DN_A_20",
@@ -4249,21 +4777,21 @@ events = {
 	
 	
 	{
-		16,
+		142,
 		START_MOTION,
 		{"Char_syd"},
 		{animation="Sc_MLBODY_STND_CONV_RHNDUP_TRNS_000LV_XA_01",
 		 duration=7, time_scale=0.7, trans_time=1, weight=1,  heading=-1}
 	},
 	{
-		18,
+		144,
 		START_MOTION,
 		{"Char_syd"},
 		{animation="Sc_MLBODY_STND_CONV_RHNDDN_TRNS_000LV_XA_02",
 		 duration=3, time_scale=0.75, trans_time=1, weight=1,  heading=-1}
 	},
 	{
-		22,
+		148,
 		START_MOTION,
 		{"Char_syd"},
 		{animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
@@ -4271,7 +4799,7 @@ events = {
 	},
 	
 	{
-		8,
+		134,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"syd_head_ik",
@@ -4285,7 +4813,7 @@ events = {
 		}
 	},
 	{
-		8,
+		134,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"syd_eye_ik",
@@ -4299,7 +4827,7 @@ events = {
 		}
 	},
 	{
-		13,
+		139,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"syd_head_ik",
@@ -4313,7 +4841,7 @@ events = {
 		}
 	},
 	{
-		13,
+		139,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"syd_eye_ik",
@@ -4327,7 +4855,7 @@ events = {
 		}
 	},
 	{
-		18,
+		144,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"syd_head_ik",
@@ -4341,7 +4869,7 @@ events = {
 		}
 	},
 	{
-		18,
+		144,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"syd_eye_ik",
@@ -4355,7 +4883,7 @@ events = {
 		}
 	},
 	{
-		23,
+		149,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"syd_head_ik",
@@ -4369,7 +4897,7 @@ events = {
 		}
 	},
 	{
-		23,
+		49,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"syd_eye_ik",
@@ -4387,7 +4915,7 @@ events = {
 	
 	
 	{
-		9.5,
+		135.5,
 		START_SOUND,
 		{
 			"DX_m06_order_prison_0120_syd"
@@ -4397,21 +4925,21 @@ events = {
 		}
 	},
 	{
-		9.5,
+		135.5,
 		START_MOTION,
 		{"Char_syd"},
 		{animation="Sc_dx_s020x_2102_vanpelt",
 		 duration=2.2, time_scale=1.2, start_time=1, trans_time=0.25, weight=1, heading=-1}
 	}, 
 	{
-		11.7,
+		137.7,
 		START_MOTION,
 		{"Char_syd"},
 		{animation="Sc_dx_s070x_2801_orillion",
 		 duration=9, time_scale=1, trans_time=0.5, weight=1, heading=-1}
 	},
 	{
-		18,
+		144,
 		START_MOTION,
 		{"Char_syd"},
 		{animation="Sc_dx_s075x_0304_orillion",
@@ -4420,7 +4948,7 @@ events = {
 	
 	
 	{
-		23,
+		149,
 		SET_CAMERA,
 		{
 			"Monitor_1",
@@ -4429,7 +4957,7 @@ events = {
 	},
 		
 	{
-		23,
+		149,
 		START_SOUND,
 		{
 			"DX_m06_order_prison_0130_trent"
@@ -4439,7 +4967,7 @@ events = {
 		}
 	},
 	{
-		23,
+		149,
 		START_MOTION,
 		{"Char_trent"},
 		{animation="Sc_dx_s045d_0201_trent",
@@ -4449,7 +4977,7 @@ events = {
 		
 	
 	{
-		32,
+		158,
 		START_IK,
 		{
 			"Char_syd",
@@ -4463,7 +4991,7 @@ events = {
 		}
 	},
 	{
-		32,
+		158,
 		START_IK,
 		{
 			"Char_syd",
@@ -4478,7 +5006,7 @@ events = {
 	},
 	
 	{
-		33,
+		159,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"syd_head_ik",
@@ -4492,7 +5020,7 @@ events = {
 		}
 	},
 	{
-		33,
+		159,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"syd_eye_ik",
@@ -4506,7 +5034,7 @@ events = {
 		}
 	},
 	{
-		36.5,
+		162.5,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"syd_head_ik",
@@ -4520,7 +5048,7 @@ events = {
 		}
 	},
 	{
-		36.5,
+		162.5,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"syd_eye_ik",
@@ -4535,7 +5063,7 @@ events = {
 	},
 	
 	{
-		40,
+		166,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"syd_head_ik",
@@ -4549,7 +5077,7 @@ events = {
 		}
 	},
 	{
-		40,
+		166,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"syd_eye_ik",
@@ -4564,7 +5092,7 @@ events = {
 	},
 	
 	{
-		44,
+		170,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"syd_head_ik",
@@ -4578,7 +5106,7 @@ events = {
 		}
 	},
 	{
-		44,
+		170,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"syd_eye_ik",
@@ -4595,7 +5123,7 @@ events = {
 	
 	
 	{
-		26,
+		152,
 		SET_CAMERA,
 		{
 			"Monitor_1",
@@ -4603,7 +5131,7 @@ events = {
 		}
 	},
 	{
-		26,
+		152,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"cam_syd_clothesbox",
@@ -4622,7 +5150,7 @@ events = {
 		}
 	},
 	{
-		26,
+		152,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"cam_syd_clothesbox_marker",
@@ -4643,7 +5171,7 @@ events = {
 	
 	
 	{
-		28,
+		154,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"panel1",
@@ -4663,7 +5191,7 @@ events = {
 	},
 	
 	{
-		28,
+		154,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"panel1"
@@ -4680,11 +5208,11 @@ events = {
 			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
 		}
 	},
-	{28, START_SOUND, {"snd_close_door_clothesbox"}, {start_time=500,duration=5}},
-	{30, START_AUDIO_PROP_ANIM, {"snd_close_door_clothesbox"}, {duration=3, audioprops={attenuation=-100}}},
+	{154, START_SOUND, {"snd_close_door_clothesbox"}, {start_time=500,duration=5}},
+	{156, START_AUDIO_PROP_ANIM, {"snd_close_door_clothesbox"}, {duration=3, audioprops={attenuation=-100}}},
 	
 	{
-		26,
+		152,
 		START_MOTION,
 		{"Char_syd"},
 		{animation="Sc_MLBODY_STND_GESTR_RGHT_000LV_XA_02",
@@ -4692,14 +5220,14 @@ events = {
 	},
 	
 	{
-		39,
+		165,
 		START_MOTION,
 		{"Char_syd"},
 		{animation="Sc_MLBODY_STND_CONV_RHNDUP_TRNS_000LV_XA_01",
 		 duration=7, time_scale=0.7, trans_time=1, weight=1,  heading=-1}
 	},
 	{
-		41,
+		167,
 		START_MOTION,
 		{"Char_syd"},
 		{animation="Sc_MLBODY_STND_CONV_RHNDDN_TRNS_000LV_XA_02",
@@ -4709,7 +5237,7 @@ events = {
 	
 	
 	{
-		26,
+		152,
 		START_SOUND,
 		{
 			"DX_m06_order_prison_0140_syd"
@@ -4720,7 +5248,7 @@ events = {
 	},
 	
 	{
-		26,
+		152,
 		START_MOTION,
 		{"Char_syd"},
 		{animation="Sc_dx_s070x_2802_orillion",
@@ -4729,7 +5257,7 @@ events = {
 	
 	
 	{
-		30,
+		156,
 		START_SOUND,
 		{
 			"DX_m06_order_prison_0145_syd"
@@ -4739,14 +5267,14 @@ events = {
 		}
 	},
 	{
-		30,
+		156,
 		START_MOTION,
 		{"Char_syd"},
 		{animation="Sc_dx_s070x_2802_orillion",
 		 duration=1, time_scale=1, start_time=2, trans_time=0.25, weight=1, heading=-1}
 	},
 	{
-		31,
+		157,
 		START_MOTION,
 		{"Char_syd"},
 		{animation="Sc_dx_s076x_1301_orillion",
@@ -4755,7 +5283,7 @@ events = {
 	
 	
 	{
-		36,
+		162,
 		SET_CAMERA,
 		{
 			"Monitor_1",
@@ -4764,7 +5292,7 @@ events = {
 	},
 	
 	{
-		36,
+		162,
 		START_SOUND,
 		{
 			"DX_m06_order_prison_0150_syd"
@@ -4775,21 +5303,21 @@ events = {
 	},
 	
 	{
-		36,
+		162,
 		START_MOTION,
 		{"Char_syd"},
 		{animation="Sc_dx_s075x_0302_orillion",
 		 duration=9, time_scale=0.8, start_time=2.8, trans_time=0.25, weight=1, heading=-1}
 	},
 	{
-		39.8,
+		165.8,
 		START_MOTION,
 		{"Char_syd"},
 		{animation="Sc_dx_s064x_1904_orillion",
 		 duration=9, time_scale=0.8, start_time=1, trans_time=0.5, weight=1, heading=-1}
 	},
 	{
-		43,
+		169,
 		START_MOTION,
 		{"Char_syd"},
 		{animation="Sc_dx_s070x_2801_orillion",
@@ -4798,7 +5326,7 @@ events = {
 	
 	
 	{
-		48,
+		174,
 		SET_CAMERA,
 		{
 			"Monitor_1",
@@ -4807,7 +5335,7 @@ events = {
 	},
 	
 	{
-		48,
+		174,
 		START_SOUND,
 		{
 			"DX_m06_order_prison_0160_trent"
@@ -4817,14 +5345,14 @@ events = {
 		}
 	},
 	{
-		48,
+		174,
 		START_MOTION,
 		{"Char_trent"},
 		{animation="Sc_dx_s038x_1301_trent",
 		 duration=15,  time_scale=0.9, trans_time=0.25, weight=1, heading=-1}
 	}, 
 	{
-		51,
+		177,
 		START_MOTION,
 		{"Char_trent"},
 		{animation="Sc_dx_s037b_0201_trent",
@@ -4834,7 +5362,7 @@ events = {
 	
 	
 	{
-		55,
+		181,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"syd_head_ik",
@@ -4848,7 +5376,7 @@ events = {
 		}
 	},
 	{
-		55,
+		181,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"syd_eye_ik",
@@ -4865,7 +5393,7 @@ events = {
 	
 	
 	{
-		57,
+		183,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"syd_head_ik",
@@ -4879,7 +5407,7 @@ events = {
 		}
 	},
 	{
-		57,
+		183,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"syd_eye_ik",
@@ -4895,7 +5423,7 @@ events = {
 	
 	
 	{
-		57,
+		183,
 		START_MOTION,
 		{"Char_syd"},
 		{animation="Sc_SPCBODY_s002x_syd_XE_STND_000LV_11",
@@ -4903,7 +5431,7 @@ events = {
 	},
 	
 	{
-		64,
+		190,
 		START_MOTION,
 		{"Char_syd"},
 		{animation="Sc_MLBODY_STND_CROSS_ARMS_000LV_xa_06",
@@ -4918,7 +5446,7 @@ events = {
 	
 	
 	{
-		61.5,
+		187.5,
 		START_IK,
 		{
 			"Char_syd",
@@ -4932,7 +5460,7 @@ events = {
 		}
 	},
 	{
-		61.5,
+		187.5,
 		START_IK,
 		{
 			"Char_syd",
@@ -4948,7 +5476,7 @@ events = {
 	
 	
 	{
-		62,
+		188,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"syd_head_ik",
@@ -4962,7 +5490,7 @@ events = {
 		}
 	},
 	{
-		62,
+		188,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"syd_eye_ik",
@@ -4976,7 +5504,7 @@ events = {
 		}
 	},
 	{
-		64,
+		190,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"syd_head_ik",
@@ -4990,7 +5518,7 @@ events = {
 		}
 	},
 	{
-		64,
+		190,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"syd_eye_ik",
@@ -5004,7 +5532,7 @@ events = {
 		}
 	},
 	{
-		68,
+		194,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"syd_head_ik",
@@ -5018,7 +5546,7 @@ events = {
 		}
 	},
 	{
-		68,
+		194,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"syd_eye_ik",
@@ -5034,7 +5562,7 @@ events = {
 	
 	
 	{
-		55,
+		181,
 		SET_CAMERA,
 		{
 			"Monitor_1",
@@ -5044,7 +5572,7 @@ events = {
 	
 	
 	{
-		55,
+		181,
 		START_SOUND,
 		{
 			"DX_m06_order_prison_0170_syd"
@@ -5055,7 +5583,7 @@ events = {
 	},
 	
 	{
-		55,
+		181,
 		START_MOTION,
 		{"Char_syd"},
 		{animation="Sc_dx_s038x_2301_kress",
@@ -5064,7 +5592,7 @@ events = {
 	
 	
 	{
-		61,
+		187,
 		START_SOUND,
 		{
 			"DX_m06_order_prison_0180_syd"
@@ -5075,7 +5603,7 @@ events = {
 	},
 	
 	{
-		61,
+		187,
 		START_MOTION,
 		{"Char_syd"},
 		{animation="Sc_dx_s026b_1901_vance",
@@ -5083,7 +5611,7 @@ events = {
 	},
 	
 	{
-		67,
+		193,
 		START_MOTION,
 		{"Char_syd"},
 		{animation="Sc_dx_s059x_1002_jonner",
@@ -5094,7 +5622,7 @@ events = {
 	
 	
 	{
-		74,
+		200,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"trent_head_ik",
@@ -5108,7 +5636,7 @@ events = {
 		}
 	},
 	{
-		74,
+		200,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"trent_eye_ik",
@@ -5123,7 +5651,7 @@ events = {
 	},
 	
 	{
-		74,
+		200,
 		START_MOTION,
 		{"Char_trent"},
 		{animation="Sc_MLBODY_CHRB_TWSTS_FROM_270LV_XA_03",
@@ -5131,7 +5659,7 @@ events = {
 	},	
 	
 	{
-		72,
+		198,
 		SET_CAMERA,
 		{
 			"Monitor_1",
@@ -5141,7 +5669,7 @@ events = {
 	
 	
 	{
-		72,
+		198,
 		START_SOUND,
 		{
 			"DX_m06_order_prison_0190_trent"
@@ -5151,7 +5679,7 @@ events = {
 		}
 	},
 	{
-		72,
+		198,
 		START_MOTION,
 		{"Char_trent"},
 		{animation="Sc_dx_s006x_0401_trent",
@@ -5161,7 +5689,7 @@ events = {
 	
 	
 	{
-		77,
+		203,
 		SET_CAMERA,
 		{
 			"Monitor_1",
@@ -5169,7 +5697,7 @@ events = {
 		}
 	},
 	
-	
+
 	
 }
 

@@ -585,7 +585,7 @@ entities={
 	{
 		entity_name="Char_syd",
 		type=DEFORMABLE,
-		template_name="syd", --syd
+		template_name="m06_asf_prisoner02", --syd
 		lt_grp=0,
 		srt_grp=0,
 		usr_flg=0,
@@ -2422,6 +2422,34 @@ events={
 		 -- duration=15,  time_scale=1, start_time=4.8, trans_time=0.25, weight=1, heading=-1}
 	-- }, 
 
+	
+	-- {
+		-- 1,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_order_prison_0070_delta3"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- }, 
+	-- {
+		-- 1,
+		-- START_MOTION,
+		-- {"Char_syd"},
+		-- {animation="Sc_dx_s037a_2101_rh_agent01",
+		 -- duration=15,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 5.5,
+		-- START_MOTION,
+		-- {"Char_syd"},
+		-- {animation="Sc_dx_s037a_2501_rh_agent01",
+		 -- duration=15,  time_scale=0.8, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+
+
+	
 	
 	
 	
