@@ -430,7 +430,8 @@
 <Static AudioFile="mod\m06\m06_order_prison_0030_syd.wav" TextArea="Cinematic">No. They got shockers on them - they'll regret even thinking about it.</Static>
 <Static AudioFile="mod\m06\m06_order_prison_0040_guard.wav" TextArea="Cinematic">Yes, sir.</Static>
 <Static AudioFile="mod\m06\m06_order_prison_0050_syd.wav" TextArea="Cinematic">Don't worry, lads, I don't bite. Consider yourself lucky that it all happened while I was on duty.</Static>
-<Static AudioFile="mod\m06\m06_order_prison_0060_syd.wav" TextArea="Cinematic">Ah, forgot to introduce myself. Hari Syd, captain in The Order, and also an ASF lieutenant working here undercover, as you can see. We're going to wait here a little while, and then I'll help you get off the inhospitable floor of Nebuchadnezzar.</Static>
+<Static AudioFile="mod\m06\m06_order_prison_0060_syd.wav" TextArea="Cinematic">Ah, forgot to introduce myself. Hari Syd, captain in The Order, and also an ASF lieutenant working here undercover, as you can see.</Static>
+<Static AudioFile="mod\m06\m06_order_prison_0065_syd.wav" TextArea="Cinematic">We're going to wait here a little while, and then I'll help you get off the inhospitable floor of Nebuchadnezzar.</Static>
 <Static AudioFile="mod\m06\m06_order_prison_0070_delta3.wav" TextArea="Cinematic">Guys, I have a feeling that this is yet another trick from The Order and that this lovely captain is about to put us in front of a squad of fighters with assault rifles...</Static>
 <Static AudioFile="mod\m06\m06_order_prison_0080_delta1.wav" TextArea="Cinematic">You have better suggestions? Either way, being shot is probably a better alternative to being interrogated by Order specialists.</Static>
 <Static AudioFile="mod\m06\m06_order_prison_0090_trent.wav" TextArea="Cinematic">Captain, what about the artifacts?</Static>
@@ -438,7 +439,8 @@
 <Static AudioFile="mod\m06\m06_order_prison_0110_delta1.wav" TextArea="Cinematic">So you just let them?</Static>
 <Static AudioFile="mod\m06\m06_order_prison_0120_syd.wav" TextArea="Cinematic">And what was I supposed to do? If I started messing with The Order, I'd be sitting down here with you, except not with a cigarette in teeth, but with a cute little shocker on my neck.</Static>
 <Static AudioFile="mod\m06\m06_order_prison_0130_trent.wav" TextArea="Cinematic">So how are you planning to help us escape?</Static>
-<Static AudioFile="mod\m06\m06_order_prison_0140_syd.wav" TextArea="Cinematic">First, put this on. Then all of you guys will go to the docking bay and to Mr. Trent's ship, peacefully and calmly. </Static>
+<Static AudioFile="mod\m06\m06_order_prison_0140_syd.wav" TextArea="Cinematic">First, put this on.</Static>
+<Static AudioFile="mod\m06\m06_order_prison_0145_syd.wav" TextArea="Cinematic">Then all of you guys will go to the docking bay and to Mr. Trent's ship, peacefully and calmly. </Static>
 <Static AudioFile="mod\m06\m06_order_prison_0150_syd.wav" TextArea="Cinematic">Unfortunately, all the other ships are already being harvested for spare parts, but luckily Trent's ship is still in one piece. As you say, the more people at a party, the merrier.</Static>
 <Static AudioFile="mod\m06\m06_order_prison_0160_trent.wav" TextArea="Cinematic">And after we're gone, how is this gonna affect you? You certainly won't be sitting here smoking a cigarette. Rather, you'll likely be trying to smoke a shocker off your neck.</Static>
 <Static AudioFile="mod\m06\m06_order_prison_0170_syd.wav" TextArea="Cinematic">Ah, no. Conveniently, you will have knocked me unconscious, as will be evidenced by me being, well, unconscious.</Static>

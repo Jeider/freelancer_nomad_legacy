@@ -858,7 +858,7 @@ entities={
 		template_id=0,
 		spatialprops={
 			pos={
-				-9, 1.5, -11
+				-9, 1.0, -11
 			},
 			orient={
 				{1,0,0},
@@ -2449,6 +2449,13 @@ events={
 	-- }, 
 
 
+	{
+		0.1,
+		START_MOTION,
+		{"Char_syd"},
+		{animation="Sc_MLBODY_CHRB_SHRG_SHLDRS_SMALL_000LV_XA_03",
+		 duration=15, time_scale=0.6, weight=1, heading=-1}
+	},
 	
 	
 	

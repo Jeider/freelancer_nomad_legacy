@@ -1,4 +1,4 @@
-duration=4011
+duration=230
 
 readfrom('thn_settings.txt')
 
@@ -116,6 +116,13 @@ entities={
 		}
 	},
 	{
+		entity_name="panel1_init_pos",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={pos={1.8,0.05,5.5},orient={{0,0,1},{0,1,0},{-1,0,0}}},
+	},
+	{
 		entity_name="panel1_pos_open",
 		type=MARKER,
 		template_name="",
@@ -231,7 +238,7 @@ entities={
 		srt_grp=0,
 		usr_flg=0,
 		flags=HIDDEN,
-		spatialprops={pos={0,-10000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		spatialprops={pos={-100,-10000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 	},
 	
 	
@@ -684,6 +691,112 @@ entities={
 			category="Character"
 		}
 	},
+	
+	{
+		entity_name="Char_trent_classic",
+		type=DEFORMABLE,
+		template_name="trent_original",
+		lt_grp=9,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={-110.75,-110,2.25},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		},
+		compoundprops={
+			floor_height=0
+		},
+		userprops={
+			actor="TrentOriginal",
+			category="Character"
+		}
+	},
+	{
+		entity_name="Char_prisoner1b",
+		type=DEFORMABLE,
+		template_name="m06_asf_prisoner01b",
+		lt_grp=9,srt_grp=0,usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={-110.75,-110,2.25},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		},
+		compoundprops={floor_height=0},
+		userprops={
+			actor="Prisoner1b",
+			category="Character"
+		}
+	},
+	{
+		entity_name="Char_prisoner2b",
+		type=DEFORMABLE,
+		template_name="m06_asf_prisoner02b",
+		lt_grp=9,srt_grp=0,usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={-110.75,-110,2.25},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		},
+		compoundprops={floor_height=0},
+		userprops={
+			actor="Prisoner2b",
+			category="Character"
+		}
+	},
+	{
+		entity_name="Char_prisoner3b",
+		type=DEFORMABLE,
+		template_name="m06_asf_prisoner03b",
+		lt_grp=9,srt_grp=0,usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={-110.75,-110,2.25},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		},
+		compoundprops={floor_height=0},
+		userprops={
+			actor="Prisoner3b",
+			category="Character"
+		}
+	},
+	
+	{
+		entity_name="Char_prisoner4b",
+		type=DEFORMABLE,
+		template_name="m06_asf_prisoner04b",
+		lt_grp=9,srt_grp=0,usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={-110.75,-110,2.25},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		},
+		compoundprops={floor_height=0},
+		userprops={
+			actor="Prisoner4b",
+			category="Character"
+		}
+	},
 
 	{
 		entity_name="point_syd_around_commander",
@@ -750,6 +863,101 @@ entities={
 			}
 		}
 	},
+	{
+		entity_name="point_prisoner4_stand",
+		type=MARKER,
+		template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+		spatialprops={
+			pos={0.5,0,3},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		}
+	},
+	{
+		entity_name="point_prisoner1_stand",
+		type=MARKER,
+		template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+		spatialprops={
+			pos={0.4,0,2},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		}
+	},
+
+
+	{
+		entity_name="point_trent_classic",
+		type=MARKER,
+		template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+		spatialprops={
+			pos={0,0,0.75},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		}
+	},
+	{
+		entity_name="point_prisoner1b",
+		type=MARKER,
+		template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+		spatialprops={
+			pos={-0.75,0,3},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		}
+	},
+	{
+		entity_name="point_prisoner2b",
+		type=MARKER,
+		template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+		spatialprops={
+			pos={-0.6,0,1.5},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		}
+	},
+	{
+		entity_name="point_prisoner3b",
+		type=MARKER,
+		template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+		spatialprops={
+			pos={1,0,3.5},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		}
+	},
+	{
+		entity_name="point_prisoner4b",
+		type=MARKER,
+		template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+		spatialprops={
+			pos={0.75,0,2.25},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		}
+	},
+
+
 
 
 
@@ -949,6 +1157,26 @@ entities={
 		spatialprops={
 			pos={
 				1,1.25,4
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},	
+	{
+		entity_name="head_trent_front_upper_exitway",
+		type=MARKER, template_name="", template_id=0,
+		spatialprops={
+			pos={
+				0,1.75,5
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},	
+	{
+		entity_name="head_trent_front_upper",
+		type=MARKER, template_name="", template_id=0,
+		spatialprops={
+			pos={
+				0,1.65,4
 			},
 			orient={{1,0,0},{0,1,0},{0,0,1}}
 		},
@@ -1495,7 +1723,7 @@ entities={
 		flags=HIDDEN,
 		spatialprops={
 			pos={
-				0,1.2,2.85
+				1.5,0.8,0.5
 			},
 			orient={{1,0,0},{0,1,0},{0,0,1}}
 		},
@@ -1513,7 +1741,7 @@ entities={
 		template_id=0,
 		spatialprops={
 			pos={
-				-1.5,1.18,3.1
+				-1.5,1.1,3
 			},
 			orient={{1,0,0},{0,1,0},{0,0,1}}
 		},
@@ -1529,7 +1757,7 @@ entities={
 		flags=HIDDEN,
 		spatialprops={
 			pos={
-				-2, 1, -1
+				-1.5, 1, 0
 			},
 			orient={{1,0,0},{0,1,0},{0,0,1}}
 		},
@@ -1859,6 +2087,107 @@ entities={
 			orient={{1,0,0},{0,1,0},{0,0,1}}
 		},
 	},
+	
+	{
+		entity_name="cam_trent_finalword",
+		type=CAMERA,
+		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				0.2,1.5,4.75
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+		cameraprops={
+			fovh=15,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_trent_finalword_pos2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-0.3,1.6,4.75
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+	{
+		entity_name="cam_trent_finalword_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				1.5,1.2,4
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+
+
+	{
+		entity_name="cam_exit",
+		type=CAMERA,
+		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				-4.5,2.5,13 -- v2
+				-- -2.5,2.5,15 -- v1
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+		cameraprops={
+			fovh=20,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_exit_pos2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-0.1,1.65,10
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+	{
+		entity_name="cam_exit_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				0,1.35,11  -- v2
+				-- 0,1,10 -- v1
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+	{
+		entity_name="cam_exit_marker_pos2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				0,1.55,7
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
 		
 	{
 		entity_name="cam_dbg",
@@ -1867,8 +2196,9 @@ entities={
 		flags=HIDDEN,
 		spatialprops={
 			pos={
-				-0.25, 1.5, 4 --syd revealed dbg
-				-- -3, 3, 0 --inside dbg
+				-- -1.2,2.5,4.75 --trent the final
+				-- -0.25, 1.5, 4 --syd revealed dbg
+				-3, 3, 0 --inside dbg
 				-- 2,1.8,7 -- trent stand			
 				-- -2, 2, 16 --outside doors dbg
 				-- 2, 2, 5 --panel dbg
@@ -1895,8 +2225,9 @@ entities={
 		template_id=0,
 		spatialprops={
 			pos={
-				0.4, 1.6, 5.94 --syd revealed dbg
-				-- 0, 0, 5 --inside dbg
+				-- 0.5,1.2,4 --trent the final
+				-- 0.4, 1.6, 5.94 --syd revealed dbg
+				0, 0, 5 --inside dbg
 				-- -2,1,2 -- trent stand				
 				-- 1, 1.5, 12 --outside doors dbg
 				-- 3,0.5,5 --panel dbg
@@ -1917,7 +2248,6 @@ events = {
 		ATTACH_ENTITY,
 		{
 			"cam_dbg",
-			-- "case"
 			"cam_dbg_marker"
 		},
 		{
@@ -2141,7 +2471,30 @@ events = {
 			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
 		}
 	},
-	
+	{
+		190,
+		ATTACH_ENTITY,
+		{
+			"cam_trent_finalword",
+			"cam_trent_finalword_marker"
+		},
+		{
+			duration=50, offset={0,0,0},
+			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+		}
+	},
+	{
+		190,
+		ATTACH_ENTITY,
+		{
+			"cam_exit",
+			"cam_exit_marker"
+		},
+		{
+			duration=50, offset={0,0,0},
+			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+		}
+	},
 	
 	
 	
@@ -2432,7 +2785,7 @@ events = {
 		START_MOTION,
 		{"Char_prisoner4"},
 		{animation="Sc_MLBODY_CHRB_HOLD_HEAD_RLEASE_000LV_XA_03",
-		 duration=20, time_scale=1, weight=1, heading=-1}
+		 duration=20, time_scale=0.7, weight=1, heading=-1}
 	},
 	{
 		16,
@@ -2946,18 +3299,11 @@ events = {
 	
 	
 	
-	-- {
-		-- 60,
-		-- SET_CAMERA,
-		-- {
-			-- "Monitor_1",
-			-- "cam_dbg"
-		-- }
-	-- },
+	
 
 	
 	
-	{ -- syd enterning
+	{ -- syd enterning -- 60
 		60,
 		SET_CAMERA,
 		{
@@ -3172,7 +3518,7 @@ events = {
 			"Char_syd"
 		},
 		{
-			duration=10,
+			duration=6,
 			end_effector="Body_Head", transition_duration=3, 
 			target_part="Body_Head", target_type=PART,
 			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
@@ -3186,7 +3532,7 @@ events = {
 			"Char_syd"
 		},
 		{
-			duration=10,
+			duration=6,
 			end_effector="Body_Head", transition_duration=2,
 			target_part="Body_Head", target_type=PART,
 			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
@@ -3293,6 +3639,8 @@ events = {
 	
 	
 	
+	{72, START_AUDIO_PROP_ANIM, {"ambience_hall"}, {duration=2, audioprops={attenuation=-100}}},
+	{72, START_AUDIO_PROP_ANIM, {"ambience_room"}, {duration=2, audioprops={attenuation=0}}},
 	
 	{
 		72,
@@ -3455,15 +3803,63 @@ events = {
 		START_MOTION,
 		{"Char_prisoner4"},
 		{animation="Sc_MLBODY_CHRB_YESS_000LV_A_01",
-		 duration=2, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+		 duration=4, time_scale=0.6, trans_time=0.25, weight=1, heading=-1}
 	},	
 	{
-		78,
+		78.1,
 		START_MOTION,
 		{"Char_prisoner4"},
 		{animation="Sc_MLHEAD_NEUT_BLINK_EYES_000LV_A_00",
-		 duration=1, time_scale=0.4, trans_time=0.25, weight=1, heading=-1}
+		 duration=1, time_scale=0.3, trans_time=0.25, weight=1, heading=-1}
 	},	
+	{
+		80,
+		START_MOTION,
+		{"Char_prisoner4"},
+		{animation="Sc_MLBODY_CHRB_TWSTS_LOOK_090LV_XA_02",
+		 duration=5, time_scale=0.5, trans_time=1, weight=1, heading=-1}
+	},
+	{
+		80,
+		START_MOTION,
+		{"Char_prisoner4"},
+		{animation="Sc_MLHEAD_SURPRSE_QUZZCLLY_000LV_XA_%",
+		 duration=1, time_scale=0.8, trans_time=0.25, weight=1, heading=-1}
+	},	
+	
+	
+	
+	{
+		75.5,
+		START_MOTION,
+		{"Char_prisoner1"},
+		{animation="Sc_MLBODY_CHRB_IDLE_BIG_000LV_XA_05",
+		 duration=2, time_scale=1, weight=1, heading=-1, event_flags=2}
+	},
+	{
+		76.5,
+		START_MOTION,
+		{"Char_prisoner1"},
+		{animation="Sc_MLBODY_CHRB_SHRG_SHLDRS_SMALL_000LV_XA_03",
+		 duration=11, time_scale=0.4, trans_time=1, weight=1, heading=-1}
+	},
+	
+	{
+		80.5,
+		START_MOTION,
+		{"Char_prisoner1"},
+		{animation="Sc_MLBODY_CHRB_TWSTS_LOOK_090LV_XA_02",
+		 duration=5, time_scale=0.5, trans_time=1, weight=1, heading=-1}
+	},
+	
+	
+	{
+		76,
+		START_MOTION,
+		{"Char_prisoner3"},
+		{animation="Sc_MLBODY_CHRB_TWSTU_C-CL_LESS_000LV_A_14",
+		 duration=8, time_scale=1, weight=1, heading=-1}
+	},
 
 	
 	{
@@ -3475,40 +3871,39 @@ events = {
 		},
 		{
 			duration=10,
-			end_effector="Body_Head", transition_duration=2.5, 
+			end_effector="Body_Head", transition_duration=2, 
 			target_part="Body_Head", target_type=PART,
 			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
 		}
 	},
-	
-	-- {
-		-- 79.5,
-		-- SET_CAMERA,
-		-- {
-			-- "Monitor_1",
-			-- "cam_syd_doorclosed"
-		-- }
-	-- },
-	
-	
-	-- {
-		-- 0,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "Char_syd",
-			-- "point_syd_inside"
-		-- },
-		-- {
-			-- duration=0.001,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- }
-		-- }
-	-- },
-		
+	{
+		80,
+		START_IK,
+		{
+			"Char_prisoner3",
+			"Char_syd"
+		},
+		{
+			duration=10,
+			end_effector="Body_Head", transition_duration=2, 
+			target_part="Body_Head", target_type=PART,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+		}
+	},
+	{
+		80.5,
+		START_IK,
+		{
+			"Char_prisoner1",
+			"Char_syd"
+		},
+		{
+			duration=10,
+			end_effector="Body_Head", transition_duration=2, 
+			target_part="Body_Head", target_type=PART,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+		}
+	},
 	
 	
 	{
@@ -3775,7 +4170,7 @@ events = {
 	},
 	
 	{
-		80,
+		82,
 		SET_CAMERA,
 		{
 			"Monitor_1",
@@ -3784,14 +4179,14 @@ events = {
 	},
 	
 	{
-		80,
+		82,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"cam_syd_reveal",
 			"cam_syd_reveal_pos2"
 		},
 		{
-			duration=20,
+			duration=18,
 			target_part="",
 			target_type=ROOT,
 			spatialprops={
@@ -3803,14 +4198,14 @@ events = {
 		}
 	},
 	{
-		80,
+		82,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"cam_syd_reveal_marker",
 			"cam_syd_reveal_marker_pos2"
 		},
 		{
-			duration=20,
+			duration=18,
 			target_part="",
 			target_type=ROOT,
 			spatialprops={
@@ -3831,7 +4226,7 @@ events = {
 			"prop_cigarette"
 		},
 		{
-			duration=500,
+			duration=110,
 			offset={0,0,0},
 			up=Y_AXIS,front=NEG_Z_AXIS,
 			target_part="hp_cigarette_tip_smoke",
@@ -3847,7 +4242,7 @@ events = {
 			"prop_cigarette"
 		},
 		{
-			duration=500,
+			duration=110,
 			offset={0,0,0},
 			up=Y_AXIS,front=NEG_Z_AXIS,
 			target_part="hp_cigarette_tip_smoke",
@@ -3926,7 +4321,7 @@ events = {
 			"vfx_rtc_cigaretteglow_4"
 		},
 		{
-			duration=500
+			duration=106
 		}
 	},
 	{
@@ -3936,7 +4331,7 @@ events = {
 			"vfx_rtc_sydsmoke_3"
 		},
 		{
-			duration=500
+			duration=106
 		}
 	},
 
@@ -4042,20 +4437,9 @@ events = {
 	}, 
 	
 	
-	-- {
-		-- 107,
-		-- SET_CAMERA,
-		-- {
-			-- "Monitor_1",
-			-- "cam_salut"
-		-- }
-	-- },
-	
-	
-	
 		
 	
-	{ --reveal reaction 
+	{ --reveal reaction  --107
 		105,
 		START_IK,
 		{
@@ -4081,6 +4465,34 @@ events = {
 			end_effector="Eye IK Left", transition_duration=1, 
 			target_part="", target_type=ROOT,
 			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+		}
+	},
+	{
+		100,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"prisoner2_head_ik",
+			"head_syd"
+		},
+		{
+			duration=1,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		100,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"prisoner2_eye_ik",
+			"head_syd"
+		},
+		{
+			duration=1,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
 		}
 	},
 	
@@ -4483,7 +4895,7 @@ events = {
 		START_SPATIAL_PROP_ANIM,
 		{
 			"trent_head_ik",
-			"head_trent_front"
+			"head_asf_captain"
 		},
 		{
 			duration=1,
@@ -4497,7 +4909,7 @@ events = {
 		START_SPATIAL_PROP_ANIM,
 		{
 			"trent_eye_ik",
-			"head_trent_front"
+			"head_asf_captain"
 		},
 		{
 			duration=1,
@@ -4507,7 +4919,7 @@ events = {
 		}
 	},
 	{
-		126,
+		124,
 		START_IK,
 		{
 			"Char_trent",
@@ -4522,7 +4934,7 @@ events = {
 		}
 	},
 	{
-		126,
+		124,
 		START_IK,
 		{
 			"Char_trent",
@@ -4540,28 +4952,28 @@ events = {
 	
 	
 	{
-		126.5,
+		126,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"trent_head_ik",
 			"head_syd"
 		},
 		{
-			duration=2,
+			duration=2.2,
 			target_part="", target_type=ROOT,
 			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
 			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
 		}
 	},
 	{
-		126.5,
+		126,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"trent_eye_ik",
 			"head_syd"
 		},
 		{
-			duration=1.5,
+			duration=1.7,
 			target_part="", target_type=ROOT,
 			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
 			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
@@ -4594,7 +5006,7 @@ events = {
 	
 	
 	
-	--------------------------
+	
 	
 	
 	{
@@ -4666,7 +5078,7 @@ events = {
 	
 	
 	{
-		125,
+		131,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"prisoner4_head_ik",
@@ -5440,6 +5852,31 @@ events = {
 	
 	
 	
+	{
+		192,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"vfx_rtc_cigaretteglow_4",
+			"offscreen"
+		},
+		{
+			duration=0.001, target_part="",target_type=ROOT,
+			spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},
+	
+	{
+		192,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"vfx_rtc_sydsmoke_3",
+			"offscreen"
+		},
+		{
+			duration=0.001, target_part="",target_type=ROOT,
+			spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},
 	
 	
 	
@@ -5626,7 +6063,7 @@ events = {
 		START_SPATIAL_PROP_ANIM,
 		{
 			"trent_head_ik",
-			"head_trent_front"
+			"head_trent_front_upper"
 		},
 		{
 			duration=2.5,
@@ -5640,13 +6077,44 @@ events = {
 		START_SPATIAL_PROP_ANIM,
 		{
 			"trent_eye_ik",
-			"head_trent_front"
+			"head_trent_front_upper"
 		},
 		{
 			duration=1.4,
 			target_part="", target_type=ROOT,
 			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
 			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		201.5,
+		ATTACH_ENTITY,
+		{
+			"trent_head_ik",
+			"Char_prisoner1"
+		},
+		{
+			duration=4,
+			offset={0,0,0},
+			up=Y_AXIS,front=NEG_Z_AXIS,
+			target_part="Body_Head",
+			target_type=PART,
+			flags=POSITION + ORIENTATION
+		}
+	},
+	{
+		204,
+		START_IK,
+		{
+			"Char_trent",
+			"Char_prisoner1"
+		},
+		{
+			duration=3,
+			end_effector="Eye IK Left",
+			target_part="Body_Head",
+			target_type=PART,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
 		}
 	},
 	
@@ -5663,9 +6131,29 @@ events = {
 		SET_CAMERA,
 		{
 			"Monitor_1",
-			"cam_trent"
+			"cam_trent_finalword"
 		}
 	},
+	{
+		198,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_trent_finalword",
+			"cam_trent_finalword_pos2"
+		},
+		{
+			duration=5,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+
 	
 	
 	{
@@ -5688,15 +6176,555 @@ events = {
 	
 	
 	
+		
+	
 	{
-		203,
-		SET_CAMERA,
+		197,
+		START_SPATIAL_PROP_ANIM,
 		{
-			"Monitor_1",
-			"cam_syd_opendoor"
+			"Char_prisoner4",
+			"point_prisoner4_stand"
+		},
+		{
+			duration=0.001, target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},
+	{
+		197,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_prisoner1",
+			"point_prisoner1_stand"
+		},
+		{
+			duration=0.001, target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
 		}
 	},
 	
+	
+	{
+		198,
+		START_MOTION,
+		{"Char_prisoner4"},
+		{animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+		 duration=8, time_scale=1,  weight=1, heading=-1}
+	},
+	{
+		198,
+		START_MOTION,
+		{"Char_prisoner1"},
+		{animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+		 duration=8, time_scale=1,  weight=1, heading=-1}
+	},
+	
+	{
+		199,
+		START_MOTION,
+		{"Char_prisoner4"},
+		{animation="Sc_MLBODY_STROLL_000LV_XA_01",
+		 duration=8, time_scale=1,  weight=1, heading=-1, event_flags=2}
+	},
+	{
+		199,
+		START_MOTION,
+		{"Char_prisoner1"},
+		{animation="Sc_MLBODY_STROLL_000LV_XA_01",
+		 duration=8, time_scale=1,  weight=1, heading=-1, event_flags=2}
+	},
+	
+
+
+
+	
+	{
+		207.2,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"panel1",
+			"panel1_init_pos"
+		},
+		{
+			duration=0.001,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+				
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		207.1,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"body1",
+			"offscreen"
+		},
+		{
+			duration=0.001, target_part="",target_type=ROOT,
+			spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},
+	{
+		207.1,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"body2",
+			"offscreen"
+		},
+		{
+			duration=0.001, target_part="",target_type=ROOT,
+			spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},
+	{
+		207.1,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"body3",
+			"offscreen"
+		},
+		{
+			duration=0.001, target_part="",target_type=ROOT,
+			spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},
+	{
+		207,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_trent",
+			"offscreen"
+		},
+		{
+			duration=0.001, target_part="",target_type=ROOT,
+			spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},
+	{
+		207,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_syd",
+			"offscreen"
+		},
+		{
+			duration=0.001, target_part="",target_type=ROOT,
+			spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},
+	{
+		207,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_prisoner1",
+			"offscreen"
+		},
+		{
+			duration=0.001, target_part="",target_type=ROOT,
+			spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},
+	{
+		207,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_prisoner2",
+			"offscreen"
+		},
+		{
+			duration=0.001, target_part="",target_type=ROOT,
+			spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},
+	{
+		207,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_prisoner3",
+			"offscreen"
+		},
+		{
+			duration=0.001, target_part="",target_type=ROOT,
+			spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},
+	{
+		207,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_prisoner4",
+			"offscreen"
+		},
+		{
+			duration=0.001, target_part="",target_type=ROOT,
+			spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},
+
+
+
+
+
+	
+	{205.9, START_AUDIO_PROP_ANIM, {"ambience_hall"}, {duration=0.1, audioprops={attenuation=0}}},
+	{206, START_AUDIO_PROP_ANIM, {"ambience_room"}, {duration=0.1, audioprops={attenuation=-100}}},
+
+
+	{
+		206,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_exit"
+		}
+	},	
+	{
+		206,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_exit",
+			"cam_exit_pos2"
+		},
+		{
+			duration=12,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		206,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_exit_marker",
+			"cam_exit_marker_pos2"
+		},
+		{
+			duration=12,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	
+
+	
+	{
+		208,
+		START_MOTION,
+		{
+			"doors"
+		},
+		{
+			animation="Sc_cv_prison_cell",
+			duration=3.332,
+			time_scale=1,
+			weight=1,
+			trans_scale=1
+		}
+	},
+	{
+		225,
+		START_MOTION,
+		{
+			"doors"
+		},
+		{
+			animation="Sc_cv_prison_cell",
+			duration=3.332,
+			start_time=3.332,
+			time_scale=1,
+			weight=1,
+			trans_scale=1
+		}
+	},
+	{208, START_SOUND, {"snd_open_door"}, {duration=10}},
+	{225, START_SOUND, {"snd_close_door"}, {duration=10}},
+	
+	
+	{
+		206,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_trent_classic",
+			"point_trent_classic"
+		},
+		{
+			duration=0.001, target_part="",target_type=ROOT,
+			spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},
+	{
+		206,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_prisoner1b",
+			"point_prisoner1b"
+		},
+		{
+			duration=0.001, target_part="",target_type=ROOT,
+			spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},
+	{
+		206,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_prisoner2b",
+			"point_prisoner2b"
+		},
+		{
+			duration=0.001, target_part="",target_type=ROOT,
+			spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},
+	{
+		206,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_prisoner3b",
+			"point_prisoner3b"
+		},
+		{
+			duration=0.001, target_part="",target_type=ROOT,
+			spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},
+	{
+		206,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_prisoner4b",
+			"point_prisoner4b"
+		},
+		{
+			duration=0.001, target_part="",target_type=ROOT,
+			spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},
+		
+
+	{
+		208,
+		START_MOTION,
+		{"Char_prisoner1b"},
+		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 duration=25, start_time=0.5, time_scale=1, weight=1, heading=-1, event_flags=2}
+	},	
+	{
+		208,
+		START_MOTION,
+		{"Char_prisoner2b"},
+		{animation="Sc_MLBODY_WLKG_000LV_XB_01",
+		 duration=25, time_scale=1, weight=1, heading=-1, event_flags=2}
+	},	
+	{
+		208,
+		START_MOTION,
+		{"Char_prisoner3b"},
+		{animation="Sc_MLBODY_WLKG_000LV_XB_01",
+		 duration=25, start_time=0.5, time_scale=1, weight=1, heading=-1, event_flags=2}
+	},	
+	{
+		208,
+		START_MOTION,
+		{"Char_prisoner4b"},
+		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 duration=25, time_scale=1, weight=1, heading=-1, event_flags=2}
+	},	
+	
+	
+	{
+		213,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_prisoner1b"
+		},
+		{
+			duration=4,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					90,
+					Y_AXIS
+				}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		212,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_prisoner3b"
+		},
+		{
+			duration=4,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					90,
+					Y_AXIS
+				}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		214,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_prisoner2b"
+		},
+		{
+			duration=4,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					90,
+					Y_AXIS
+				}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		214,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_prisoner4b"
+		},
+		{
+			duration=4,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					90,
+					Y_AXIS
+				}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	
+	
+	{
+		208,
+		START_MOTION,
+		{"Char_trent_classic"},
+		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 duration=5.6, time_scale=1, weight=1, start_time=0.9,  heading=-1, event_flags=2}
+	},
+	{
+		213.6, -- 8.3
+		START_MOTION,
+		{"Char_trent_classic"},
+		{animation="Sc_MLBODY_WALK_STND_TRNS_000LV_XA_02",
+		 duration=4, time_scale=1,  weight=1, heading=-1}
+	},
+	
+	{
+		216, -- 10.9, -- 7.5, 
+		START_MOTION,
+		{"Char_trent_classic"},
+		{animation="Sc_MLBODY_STND_LOOK_AROU_000LV_XA_09",
+		 duration=10, time_scale=1, trans_time=0.5, weight=1, heading=-1}
+	},	
+	{
+		216.5, -- 11.4, -- 8
+		START_MOTION,
+		{"Char_trent_classic"},
+		{animation="Sc_MLHEAD_HAPPY_SMILE_SNEER_TRENT_000LV_XA_%",
+		 duration=10, time_scale=0.7, trans_time=0.25, weight=1, heading=-1}
+	},	
+	{
+		219.2,
+		START_MOTION,
+		{"Char_trent_classic"},
+		{animation="Sc_MLHEAD_MOTION_EYES_OPENBG_TRENT_000LV_XA_%",
+		 duration=10, time_scale=0.7, trans_time=0.25, weight=1, heading=-1}
+	},	
+	
+	{
+		225, -- 20, -- 17
+		START_MOTION,
+		{"Char_trent_classic"},
+		{animation="Sc_MLBODY_STND_WALK_TRNS_270LV_XA_02",
+		 duration=10, time_scale=1, trans_time=0.5, weight=1, heading=-1}
+	},	
+	{
+		227, -- 22, -- 19
+		START_MOTION,
+		{"Char_trent_classic"},
+		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 duration=10, time_scale=1, weight=1, heading=-1, event_flags=2}
+	},	
+	
+	
+	
+	-- {
+		-- 0,
+		-- SET_CAMERA,
+		-- {
+			-- "Monitor_1",
+			-- "cam_sydgreet_captapprove"
+		-- }
+	-- },
+	
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_prisoner1"},
+		-- {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+		 -- duration=1, time_scale=1, weight=1, heading=-1, start_time=2}
+	-- },	
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_prisoner3"},
+		-- {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+		 -- duration=1, time_scale=1, weight=1, heading=-1, start_time=2}
+	-- },	
+	
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_prisoner4"},
+		-- {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+		 -- duration=1, time_scale=1, weight=1, heading=-1, start_time=2}
+	-- },	
+	
+	
+	
+	
+	-- {
+		-- 0,
+		-- ATTACH_ENTITY,
+		-- {
+			-- "cam_sydgreet_captapprove",
+			-- "cam_sydgreet_captapprove_marker"
+		-- },
+		-- {
+			-- duration=150, offset={0,0,0},
+			-- up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+		-- }
+	-- },
 
 	
 }

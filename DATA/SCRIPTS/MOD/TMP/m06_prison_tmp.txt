@@ -263,3 +263,321 @@
 		-- {animation="Sc_MLBODY_STND_LOOK_AROU_CASL_000LV_XA_08",
 		 -- duration=8, time_scale=1,  weight=1, heading=-1}
 	-- },
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+	-- {
+		-- 5,
+		-- SET_CAMERA,
+		-- {
+			-- "Monitor_1",
+			-- "cam_exit"
+		-- }
+	-- },	
+	-- {
+		-- 5,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "cam_exit",
+			-- "cam_exit_pos2"
+		-- },
+		-- {
+			-- duration=12,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- pos={0,0,0},
+				-- q_orient={1,0,0,0}
+			-- },
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			-- pcurve_period=-1000
+		-- }
+	-- },
+	-- {
+		-- 5,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "cam_exit_marker",
+			-- "cam_exit_marker_pos2"
+		-- },
+		-- {
+			-- duration=12,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- pos={0,0,0},
+				-- q_orient={1,0,0,0}
+			-- },
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			-- pcurve_period=-1000
+		-- }
+	-- },
+	
+
+	
+	-- {
+		-- 7,
+		-- START_MOTION,
+		-- {
+			-- "doors"
+		-- },
+		-- {
+			-- animation="Sc_cv_prison_cell",
+			-- duration=3.332,
+			-- time_scale=1,
+			-- weight=1,
+			-- trans_scale=1
+		-- }
+	-- },
+	-- {
+		-- 24,
+		-- START_MOTION,
+		-- {
+			-- "doors"
+		-- },
+		-- {
+			-- animation="Sc_cv_prison_cell",
+			-- duration=3.332,
+			-- start_time=3.332,
+			-- time_scale=1,
+			-- weight=1,
+			-- trans_scale=1
+		-- }
+	-- },
+	-- {7, START_SOUND, {"snd_open_door"}, {duration=10}},
+	-- {24, START_SOUND, {"snd_close_door"}, {duration=10}},
+	
+	
+	-- {
+		-- 5,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "Char_trent_classic",
+			-- "point_trent_classic"
+		-- },
+		-- {
+			-- duration=0.001, target_part="",target_type=ROOT,
+			-- spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		-- }
+	-- },
+	-- {
+		-- 5,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "Char_prisoner1b",
+			-- "point_prisoner1b"
+		-- },
+		-- {
+			-- duration=0.001, target_part="",target_type=ROOT,
+			-- spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		-- }
+	-- },
+	-- {
+		-- 5,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "Char_prisoner2b",
+			-- "point_prisoner2b"
+		-- },
+		-- {
+			-- duration=0.001, target_part="",target_type=ROOT,
+			-- spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		-- }
+	-- },
+	-- {
+		-- 5,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "Char_prisoner3b",
+			-- "point_prisoner3b"
+		-- },
+		-- {
+			-- duration=0.001, target_part="",target_type=ROOT,
+			-- spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		-- }
+	-- },
+	-- {
+		-- 5,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "Char_prisoner4b",
+			-- "point_prisoner4b"
+		-- },
+		-- {
+			-- duration=0.001, target_part="",target_type=ROOT,
+			-- spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		-- }
+	-- },
+		
+
+	-- {
+		-- 7,
+		-- START_MOTION,
+		-- {"Char_prisoner1b"},
+		-- {animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 -- duration=25, start_time=0.5, time_scale=1, weight=1, heading=-1, event_flags=2}
+	-- },	
+	-- {
+		-- 7,
+		-- START_MOTION,
+		-- {"Char_prisoner2b"},
+		-- {animation="Sc_MLBODY_WLKG_000LV_XB_01",
+		 -- duration=25, time_scale=1, weight=1, heading=-1, event_flags=2}
+	-- },	
+	-- {
+		-- 7,
+		-- START_MOTION,
+		-- {"Char_prisoner3b"},
+		-- {animation="Sc_MLBODY_WLKG_000LV_XB_01",
+		 -- duration=25, start_time=0.5, time_scale=1, weight=1, heading=-1, event_flags=2}
+	-- },	
+	-- {
+		-- 7,
+		-- START_MOTION,
+		-- {"Char_prisoner4b"},
+		-- {animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 -- duration=25, time_scale=1, weight=1, heading=-1, event_flags=2}
+	-- },	
+	
+	
+	-- {
+		-- 12,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "Char_prisoner1b"
+		-- },
+		-- {
+			-- duration=4,
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- axisrot={
+					-- 90,
+					-- Y_AXIS
+				-- }
+			-- },
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		-- }
+	-- },
+	-- {
+		-- 11,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "Char_prisoner3b"
+		-- },
+		-- {
+			-- duration=4,
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- axisrot={
+					-- 90,
+					-- Y_AXIS
+				-- }
+			-- },
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		-- }
+	-- },
+	-- {
+		-- 13,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "Char_prisoner2b"
+		-- },
+		-- {
+			-- duration=4,
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- axisrot={
+					-- 90,
+					-- Y_AXIS
+				-- }
+			-- },
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		-- }
+	-- },
+	-- {
+		-- 13,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "Char_prisoner4b"
+		-- },
+		-- {
+			-- duration=4,
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- axisrot={
+					-- 90,
+					-- Y_AXIS
+				-- }
+			-- },
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		-- }
+	-- },
+	
+	
+	-- {
+		-- 7,
+		-- START_MOTION,
+		-- {"Char_trent_classic"},
+		-- {animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 -- duration=5.6, time_scale=1, weight=1, start_time=0.9,  heading=-1, event_flags=2}
+	-- },
+	-- {
+		-- 12.6, -- 8.3
+		-- START_MOTION,
+		-- {"Char_trent_classic"},
+		-- {animation="Sc_MLBODY_WALK_STND_TRNS_000LV_XA_02",
+		 -- duration=4, time_scale=1,  weight=1, heading=-1}
+	-- },
+	
+	-- {
+		-- 15, -- 10.9, -- 7.5, 
+		-- START_MOTION,
+		-- {"Char_trent_classic"},
+		-- {animation="Sc_MLBODY_STND_LOOK_AROU_000LV_XA_09",
+		 -- duration=10, time_scale=1, trans_time=0.5, weight=1, heading=-1}
+	-- },	
+	-- {
+		-- 15.5, -- 11.4, -- 8
+		-- START_MOTION,
+		-- {"Char_trent_classic"},
+		-- {animation="Sc_MLHEAD_HAPPY_SMILE_SNEER_TRENT_000LV_XA_%",
+		 -- duration=10, time_scale=0.7, trans_time=0.25, weight=1, heading=-1}
+	-- },	
+	-- {
+		-- 18.2,
+		-- START_MOTION,
+		-- {"Char_trent_classic"},
+		-- {animation="Sc_MLHEAD_MOTION_EYES_OPENBG_TRENT_000LV_XA_%",
+		 -- duration=10, time_scale=0.7, trans_time=0.25, weight=1, heading=-1}
+	-- },	
+	
+	-- {
+		-- 24, -- 20, -- 17
+		-- START_MOTION,
+		-- {"Char_trent_classic"},
+		-- {animation="Sc_MLBODY_STND_WALK_TRNS_270LV_XA_02",
+		 -- duration=10, time_scale=1, trans_time=0.5, weight=1, heading=-1}
+	-- },	
+	-- {
+		-- 26, -- 22, -- 19
+		-- START_MOTION,
+		-- {"Char_trent_classic"},
+		-- {animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 -- duration=10, time_scale=1, weight=1, heading=-1, event_flags=2}
+	-- },	
+	
