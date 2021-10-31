@@ -715,19 +715,19 @@ events={
 			parent_hardpoint="HpLeftConnect"
 		}
 	},
-	{
-		0,
-		CONNECT_HARDPOINTS,
-		{
-			"prop_pilot",
-			"PlayerShip"
-		},
-		{
-			duration=66.389,
-			hardpoint="HpConnect",
-			parent_hardpoint="HpPilot"
-		}
-	},
+	-- {
+		-- 0,
+		-- CONNECT_HARDPOINTS,
+		-- {
+			-- "prop_pilot",
+			-- "PlayerShip"
+		-- },
+		-- {
+			-- duration=66.389,
+			-- hardpoint="HpConnect",
+			-- parent_hardpoint="HpPilot"
+		-- }
+	-- },
 	{
 		0,
 		ATTACH_ENTITY,
