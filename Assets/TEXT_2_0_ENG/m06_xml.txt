@@ -1,0 +1,96 @@
+[Цель миссии:096302]
+OBJECTIVE:
+Infiltrate "The Sphere". Locate and eliminate the Rheinland scientist and extract artifacts from his laboratory. Deliver these artifacts to Alliance Security Forces.
+
+DIFFICULTY:
+Risky.
+
+Reward:
+250,000 credits.
+
+
+
+
+[Инфо - устройство невидимости:096303]
+Cloaking device is already in your cargo hold.
+
+Make sure to equip it as your countermeasure device.
+
+
+
+[Инфо - зона невидимости:096404]
+You are entering a high danger zone. Infiltrate The Sphere, avoiding the security line. The entrance to The Sphere is guarded by [b]Rheinland patrols equipped with cloaking detectors[/b]. Do not get caught. Additionally, there are several outposts located around the perimeter which can also locate you even when cloked - be careful.
+
+[b]Cloaking detectors[/b]
+
+When your are dangerously close to a detector, your ship will sound an alarm. If this happens, you must immediately leave the area or else the mission will be failed.
+
+[b]Too difficult? Wish to decrease difficulty?[/b]
+
+Navigate to an object called [b]Decrease mission difficulty[/b] and follow the instructions. You may also turn on your navigator, which will reveal useful hints.
+
+
+
+[Инфо - выключить невидимость:096405]
+In order to enter combat, you will need to turn off your cloaking device.
+
+Assign a secondary key combination for [b]TRACTOR BEAM (all) / CLOAK ON[/b]. This combination must contain Ctrl, e.g. Ctrl+S. This will allow you to turn the cloak off.
+
+
+
+
+[Справка стелс-режим:096450]
+The enemy has deployed telescopes along the perimeter. To distract nearby enemy patrols, hit the telescope. Note: you do not need to uncloak before doing so.
+
+[b]Navigator[/b]
+
+The navigator will guide you through this area with minimal difficulty.
+
+Activate the navigator?
+
+
+
+
+
+
+
+[Справка зона номадов:096451]
+You will find a generator beneath a small hall under The Seed. Eliminate the generator to release a powerful energy beam that will damage The Seed and the ships guarding it.
+
+[b]Warning![/b] The energy beam may easily destroy your ship, so you must leave the area immediately.
+
+[b]Warning![/b] Infiltrate the lower hall. If you are discovered by the Nomads, they will attack at once and the entrance to the lower hall will be sealed.
+
+[b]Navigator[/b]
+
+The navigator will guide you through this area with minimal difficulty.
+
+Activate the navigator?
+
+
+
+[Справка зона номадов:096452]
+There are control panels located on the mini-bases which are operated by the scientist and his assistant. Destroy them in order to seal their docking bays. Hacking guns and CSV mining devics will facilitate this process.
+
+Your sabotage may trigger a lockdown. Nonetheless, the scientist and his assistant will attempt to escape the core via the main tunnel. Plan your actions so that they won't escape successfully.
+
+Science ship scanners are not very efficient. Keep your distance and you should be able to move freely around the core without being detected.
+
+[b]Navigator[/b]
+
+The navigator will guide you through this area with minimal difficulty.
+
+Activate the navigator?
+
+
+
+
+
+[TO BE CONTINUED (2):096413]
+Mission 6 is finished, but Mission 7 is not ready yet.
+
+As soon as it's ready, install the mod and load the "To be continued" save file to continue your campaign.
+
+Ask questions on Freelancer2.space website
+
+P.S. You can try playing Mission 7, but at your own risk - it is a work in progress. 

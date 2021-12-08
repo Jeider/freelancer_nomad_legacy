@@ -235,16 +235,922 @@ Read: Static echo_m05.utf|0xBE32F78C None Cinematic
 Read: Static echo_m05.utf|0x9133830B None Cinematic
 Read: Static echo_m05.utf|0xB4838B4B None Cinematic
 Read: Static echo_m05.utf|0x8CCD2DC9 None Cinematic
+Read: Static mod\m05\m05_equip_0010_hatcher.wav None Cinematic
+Read: Static mod\m05\m05_equip_0020_mandrake.wav None Cinematic
+Read: Static mod\m05\m05_equip_0030_hatcher.wav None Cinematic
+Read: Static mod\m05\m05_equip_0040_mandrake.wav None Cinematic
+Read: Static mod\m05\m05_equip_0050_hatcher.wav None Cinematic
+Read: Static mod\m05\m05_equip_0060_mandrake.wav None Cinematic
+Read: Static mod\m05\m05_equip_0070_hatcher.wav None Cinematic
+Read: Static mod\m05\m05_equip_0080_mandrake.wav None Cinematic
+Read: Static mod\m05\m05_equip_0090_hatcher.wav None Cinematic
+Read: Static mod\m05\m05_equip_0100_trent.wav None Cinematic
+Read: Static mod\m05\m05_equip_0110_mandrake.wav None Cinematic
+Read: Static mod\m05\m05_equip_0120_trent.wav None Cinematic
+Read: Static mod\m05\m05_equip_0130_hatcher.wav None Cinematic
+Read: Static mod\m05\m05_equip_0140_trent.wav None Cinematic
+Read: Static mod\m05\m05_equip_0150_mandrake.wav None Cinematic
+Read: Static mod\m05\m05_equip_0160_hatcher.wav None Cinematic
+Read: Static mod\m05\m05_equip_0170_trent.wav None Cinematic
+Read: Static mod\m05\m05_equip_0180_hatcher.wav None Cinematic
+Read: Static mod\m05\m05_equip_0190_trent.wav None Cinematic
+Read: Static mod\m05\m05_equip_0200_hatcher.wav None Cinematic
+Read: Static mod\m05\m05_equip_0210_hatcher.wav None Cinematic
+Read: Static mod\m05\m05_equip_0220_hatcher.wav None Cinematic
+Read: Static mod\m05\m05_equip_0230_hatcher.wav None Cinematic
+Read: Static mod\m05\m05_equip_0240_trent.wav None Cinematic
+Read: Static mod\m05\m05_equip_0250_hatcher.wav None Cinematic
+Read: Static mod\m05\m05_equip_0260_trent.wav None Cinematic
+Read: Static mod\m05\m05_equip_0270_hatcher.wav None Cinematic
+Read: Static mod\m05\m05_equip_0280_hatcher.wav None Cinematic
+Read: Static mod\m05\m05_equip_0290_trent.wav None Cinematic
+Read: Static mod\m05\m05_equip_0300_mandrake.wav None Cinematic
+Read: Static mod\m05\m05_equip_0310_hatcher.wav None Cinematic
+Read: Static mod\m05\m05_equip_0320_hatcher.wav None Cinematic
+Read: Static mod\m05\m05_equip_0330_hatcher.wav None Cinematic
+Read: Static mod\m05\m05_equip_0340_hatcher.wav None Cinematic
+Read: Static mod\m05\m05_equip_0350_hatcher.wav None Cinematic
+Read: Static mod\m05\m05_equip_0360_trent.wav None Cinematic
+Read: Static mod\m05\m05_equip_0370_hatcher.wav None Cinematic
+Read: Static mod\m05\m05_equip_0380_trent.wav None Cinematic
+Read: Static mod\m05\m05_equip_0390_hatcher.wav None Cinematic
+Read: Static mod\m05\m05_equip_0400_hatcher.wav None Cinematic
+Read: Static mod\m05\m05_equip_0410_trent.wav None Cinematic
+Read: Static mod\m05\m05_equip_0420_hatcher.wav None Cinematic
+Read: Static mod\m05\m05_equip_0430_trent.wav None Cinematic
+Read: Static mod\m05\m05_equip_0440_hatcher.wav None Cinematic
+Read: Static mod\m05\m05_equip_0450_mandrake.wav None Cinematic
+Read: Static mod\m05\m05_equip_0460_hatcher.wav None Cinematic
+Read: Static mod\m05\m05_equip_0470_mandrake.wav None Cinematic
+Read: Static mod\m05\m05_equip_0480_trent.wav None Cinematic
+Read: Static mod\m05\m05_equip_0490_hatcher.wav None Cinematic
+Read: Static mod\m05\m05_equip_0500_trent.wav None Cinematic
+Read: Static mod\m05\m05_equip_0510_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_offer_0010_trent.wav None Cinematic
+Read: Static mod\m06\m06_offer_0020_alaric.wav None Cinematic
+Read: Static mod\m06\m06_offer_0030_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_offer_0040_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_offer_0050_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_offer_0060_trent.wav None Cinematic
+Read: Static mod\m06\m06_offer_0070_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_offer_0080_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_offer_0090_trent.wav None Cinematic
+Read: Static mod\m06\m06_offer_0100_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_offer_0110_alaric.wav None Cinematic
+Read: Static mod\m06\m06_offer_0120_trent.wav None Cinematic
+Read: Static mod\m06\m06_offer_0130_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_offer_0140_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_offer_0150_trent.wav None Cinematic
+Read: Static mod\m06\m06_offer_0160_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_briefing_0010_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_briefing_0020_trent.wav None Cinematic
+Read: Static mod\m06\m06_briefing_0030_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_briefing_0040_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_briefing_0050_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_briefing_0060_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_briefing_0070_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_briefing_0080_alaric.wav None Cinematic
+Read: Static mod\m06\m06_briefing_0090_trent.wav None Cinematic
+Read: Static mod\m06\m06_briefing_0100_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_briefing_0110_trent.wav None Cinematic
+Read: Static mod\m06\m06_briefing_0120_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_briefing_0130_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_briefing_0140_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_briefing_0150_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_briefing_0160_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_briefing_0170_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_briefing_0180_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_briefing_0190_trent.wav None Cinematic
+Read: Static mod\m06\m06_briefing_0200_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_briefing_0210_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_briefing_0220_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_briefing_0230_alaric.wav None Cinematic
+Read: Static mod\m06\m06_briefing_0240_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_briefing_0250_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_briefing_0260_alaric.wav None Cinematic
+Read: Static mod\m06\m06_briefing_0270_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_briefing_0280_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_briefing_0290_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_mount_0010_trent.wav None Cinematic
+Read: Static mod\m06\m06_mount_0020_alaric.wav None Cinematic
+Read: Static mod\m06\m06_mount_0030_trent.wav None Cinematic
+Read: Static mod\m06\m06_mount_0040_alaric.wav None Cinematic
+Read: Static mod\m06\m06_mount_0050_trent.wav None Cinematic
+Read: Static mod\m06\m06_mount_0060_alaric.wav None Cinematic
+Read: Static mod\m06\m06_mount_0070_trent.wav None Cinematic
+Read: Static mod\m06\m06_mount_0080_alaric.wav None Cinematic
+Read: Static mod\m06\m06_mount_0090_trent.wav None Cinematic
+Read: Static echo_m06_player.utf|0x9B17460C None Cinematic
+Read: Static echo_m06.utf|0xB41F0287 None Cinematic
+Read: Static echo_m06.utf|0xB5F30D8D None Cinematic
+Read: Static echo_m06.utf|0x9B16F600 None Cinematic
+Read: Static mod\m06\m06_lab_land_0010_alaric.wav None Cinematic
+Read: Static mod\m06\m06_lab_land_0020_trent.wav None Cinematic
+Read: Static mod\m06\m06_lab_land_0030_alaric.wav None Cinematic
+Read: Static mod\m06\m06_lab_land_0040_trent.wav None Cinematic
+Read: Static mod\m06\m06_lab_room_0010_trent.wav None Cinematic
+Read: Static mod\m06\m06_lab_room_0020_alaric.wav None Cinematic
+Read: Static mod\m06\m06_torpedo_alert_0010_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_torpedo_alert_0020_hatcher.wav None Cinematic
+Read: Static mod\m06\m06_torpedo_alert_0040_trent.wav None Cinematic
+Read: Static mod\m06\m06_torpedo_alert_0050_hatcher.wav None Cinematic
+Read: Static echo_m06.utf|0x8CE3460F None Cinematic
+Read: Static echo_m06.utf|0x8C0DEC04 None Cinematic
+Read: Static echo_m06.utf|0xBC3C1443 None Cinematic
+Read: Static mod\m06\m06_order_deck_0010_orderpilot.wav None Cinematic
+Read: Static mod\m06\m06_order_deck_0020_syd.wav None Cinematic
+Read: Static mod\m06\m06_order_prison_0010_syd.wav None Cinematic
+Read: Static mod\m06\m06_order_prison_0020_guard.wav None Cinematic
+Read: Static mod\m06\m06_order_prison_0030_syd.wav None Cinematic
+Read: Static mod\m06\m06_order_prison_0040_guard.wav None Cinematic
+Read: Static mod\m06\m06_order_prison_0050_syd.wav None Cinematic
+Read: Static mod\m06\m06_order_prison_0060_syd.wav None Cinematic
+Read: Static mod\m06\m06_order_prison_0065_syd.wav None Cinematic
+Read: Static mod\m06\m06_order_prison_0070_delta3.wav None Cinematic
+Read: Static mod\m06\m06_order_prison_0080_delta1.wav None Cinematic
+Read: Static mod\m06\m06_order_prison_0090_trent.wav None Cinematic
+Read: Static mod\m06\m06_order_prison_0100_syd.wav None Cinematic
+Read: Static mod\m06\m06_order_prison_0110_delta1.wav None Cinematic
+Read: Static mod\m06\m06_order_prison_0120_syd.wav None Cinematic
+Read: Static mod\m06\m06_order_prison_0130_trent.wav None Cinematic
+Read: Static mod\m06\m06_order_prison_0140_syd.wav None Cinematic
+Read: Static mod\m06\m06_order_prison_0145_syd.wav None Cinematic
+Read: Static mod\m06\m06_order_prison_0150_syd.wav None Cinematic
+Read: Static mod\m06\m06_order_prison_0160_trent.wav None Cinematic
+Read: Static mod\m06\m06_order_prison_0170_syd.wav None Cinematic
+Read: Static mod\m06\m06_order_prison_0180_syd.wav None Cinematic
+Read: Static mod\m06\m06_order_prison_0190_trent.wav None Cinematic
 *** Reader done ***
-*** ERROR ***
-EntryPointNotFoundException: ?? ??????? ????? ????? ????? "MakeSubtitleKey" ? DLL "d3d8.dll".
-   ? Converter.AudioProcessing.Native.MakeSubtitleKey(Byte* data, UInt32 size, Byte* target)
-   ? Converter.AudioProcessing.AudioHasher.Hash(Stream str, Hack hack)
-   ? Converter.Pipeline.EntryConverter.Run()
-   ? System.Threading.Tasks.Task.InnerInvoke()
-   ? System.Threading.Tasks.Task.Execute()
---- ????? ??????????? ????? ?? ??????????? ????????????, ??? ???????? ?????????? ---
-   ? Converter.Pipeline.EntryConverter.Wait()
-   ? Converter.Program.Main(String[] args)
+Convert: mod\intro\intro_0030_trent.wav -> BC7A024E-D636
+Convert: mod\intro\intro_0040_barman.wav -> 923EF3C1-E000
+Write: BC7A024E-D636 Cinematic Static
+Write: 923EF3C1-E000 Cinematic Static
+Convert: mod\intro\intro_0010_trent.wav -> B2CA9AE9-E000
+Write: B2CA9AE9-E000 Cinematic Static
+Convert: mod\intro\intro_0020_barman.wav -> B79352EC-5E0C
+Write: B79352EC-5E0C Cinematic Static
+Convert: mod\intro\intro_0060_barman.wav -> ADB2E870-653A
+Write: ADB2E870-653A Cinematic Static
+Convert: mod\intro\intro_0050_trent.wav -> 3F974E79-B0FC
+Write: 3F974E79-B0FC Cinematic Static
+Convert: mod\intro\intro_0070_trent.wav -> 0BAE6C13-E5E2
+Write: 0BAE6C13-E5E2 Cinematic Static
+Convert: mod\intro\intro_0080_barman.wav -> 8B94675E-89CC
+Write: 8B94675E-89CC Cinematic Static
+Convert: mod\intro\intro_0105_trent.wav -> A18EA391-1C16
+Write: A18EA391-1C16 Cinematic Static
+Convert: mod\intro\intro_0090_trent.wav -> 3F4BEBE6-0494
+Write: 3F4BEBE6-0494 Cinematic Static
+Convert: mod\intro\intro_0120_trent.wav -> 00034BF9-4D10
+Write: 00034BF9-4D10 Cinematic Static
+Convert: mod\intro\intro_0100_trent.wav -> D31C2E0B-4A74
+Write: D31C2E0B-4A74 Cinematic Static
+Convert: mod\intro\intro_0130_barman.wav -> 2D560C3D-A87E
+Write: 2D560C3D-A87E Cinematic Static
+Convert: mod\intro\intro_0140_trent.wav -> 12538117-2344
+Write: 12538117-2344 Cinematic Static
+Convert: mod\intro\intro_0160_trent.wav -> 18020484-2344
+Write: 18020484-2344 Cinematic Static
+Convert: mod\intro\intro_0110_alaric.wav -> 0C39F262-F3A6
+Write: 0C39F262-F3A6 Cinematic Static
+Convert: mod\intro\intro_0180_trent.wav -> 913BD264-8000
+Write: 913BD264-8000 Cinematic Static
+Convert: mod\intro\intro_0190_barman.wav -> 49757774-7054
+Write: 49757774-7054 Cinematic Static
+Convert: mod\m01\m01_cityscape_0010_stuard.wav -> 916F0A6B-3C00
+Write: 916F0A6B-3C00 Cinematic Static
+Convert: mod\m01\m01_cityscape_0020_stuard.wav -> 3E8B7012-9700
+Write: 3E8B7012-9700 Cinematic Static
+Convert: mod\intro\intro_0170_barman.wav -> C45B1378-9D64
+Write: C45B1378-9D64 Cinematic Static
+Convert: mod\intro\intro_0150_barman.wav -> 15D3B24A-70FC
+Write: 15D3B24A-70FC Cinematic Static
+Convert: mod\m01\m01_cityscape_0030_trent.wav -> 1A9FDE5D-6074
+Write: 1A9FDE5D-6074 Cinematic Static
+Convert: mod\m01\m01_offer_0020_trent.wav -> 4CF64E26-1532
+Write: 4CF64E26-1532 Cinematic Static
+Convert: mod\m01\m01_offer_0010_alaric.wav -> 7A6CF7A0-E7D2
+Write: 7A6CF7A0-E7D2 Cinematic Static
+Convert: mod\m01\m01_cityscape_0040_trent.wav -> 5CDCA9DC-4720
+Write: 5CDCA9DC-4720 Cinematic Static
+Convert: mod\m01\m01_offer_0050_alaric.wav -> 89A6980A-BB5A
+Write: 89A6980A-BB5A Cinematic Static
+Convert: mod\m01\m01_offer_0060_alaric.wav -> B29DCF89-B4C2
+Write: B29DCF89-B4C2 Cinematic Static
+Convert: mod\m01\m01_offer_0030_alaric.wav -> 4CC2EF3B-9DF2
+Write: 4CC2EF3B-9DF2 Cinematic Static
+Convert: mod\m01\m01_offer_0040_trent.wav -> 9A43CF76-B132
+Write: 9A43CF76-B132 Cinematic Static
+Convert: mod\m01\m01_offer_0070_alaric.wav -> B4CF6419-E132
+Write: B4CF6419-E132 Cinematic Static
+Convert: mod\m01\m01_offer_0100_trent.wav -> 0A285276-7C44
+Write: 0A285276-7C44 Cinematic Static
+Convert: mod\m01\m01_offer_0090_trent.wav -> 21FC687C-4F04
+Write: 21FC687C-4F04 Cinematic Static
+Convert: mod\m01\m01_offer_0080_alaric.wav -> EF6CFB3A-8052
+Write: EF6CFB3A-8052 Cinematic Static
+Convert: mod\m01\m01_berlin_0010_alaric.wav -> 0CD6DD8A-9C08
+Write: 0CD6DD8A-9C08 Cinematic Static
+Convert: mod\m01\m01_berlin_0030_trent.wav -> 2A8004EC-8A12
+Write: 2A8004EC-8A12 Cinematic Static
+Convert: mod\m01\m01_berlin_0020_adelmar.wav -> 01CEABF2-4700
+Write: 01CEABF2-4700 Cinematic Static
+Convert: mod\m01\m01_offer_0110_alaric.wav -> 4135BB95-4D52
+Write: 4135BB95-4D52 Cinematic Static
+Convert: mod\m01\m01_bizmark_0020_trent.wav -> 553E22DC-5ED0
+Write: 553E22DC-5ED0 Cinematic Static
+Convert: mod\m01\m01_berlin_0040_luz.wav -> FAFF3779-CFFC
+Write: FAFF3779-CFFC Cinematic Static
+Convert: mod\m01\m01_bizmark_0010_adelmar.wav -> 54CF6884-022A
+Write: 54CF6884-022A Cinematic Static
+Convert: mod\m01\m01_bizmark_0060_trent.wav -> 8E3965D8-E742
+Write: 8E3965D8-E742 Cinematic Static
+Convert: mod\m01\m01_bizmark_0040_luc.wav -> C76A2ED6-4600
+Write: C76A2ED6-4600 Cinematic Static
+Convert: mod\m01\m01_bizmark_0030_luc.wav -> 8272EE33-C100
+Write: 8272EE33-C100 Cinematic Static
+Convert: mod\m01\m01_bizmark_0080_trent.wav -> 7A052FE1-09AA
+Write: 7A052FE1-09AA Cinematic Static
+Convert: mod\m01\m01_bizmark_0090_alaric.wav -> 9661B7FE-A300
+Write: 9661B7FE-A300 Cinematic Static
+Convert: mod\m01\m01_bizmark_0100_trent.wav -> 81CA24BD-0758
+Write: 81CA24BD-0758 Cinematic Static
+Convert: mod\m01\m01_bizmark_0050_alaric.wav -> CD576309-9F06
+Write: CD576309-9F06 Cinematic Static
+Convert: mod\m01\m01_bizmark_0070_luc.wav -> 3B5FCC43-974A
+Write: 3B5FCC43-974A Cinematic Static
+Convert: mod\m01\m01_bizmark_0110_alaric.wav -> 8DEB631E-6DE4
+Write: 8DEB631E-6DE4 Cinematic Static
+Convert: mod\m01\m01_bizmark_0120_trent.wav -> 1883A607-4098
+Write: 1883A607-4098 Cinematic Static
+Convert: mod\m01\m01_bizmark_0125_alaric.wav -> B0F230EB-FE00
+Write: B0F230EB-FE00 Cinematic Static
+Convert: mod\m01\m01_bizmark_0150_trent.wav -> 9FDB81E4-4836
+Write: 9FDB81E4-4836 Cinematic Static
+Convert: mod\m01\m01_bizmark_0160_alaric.wav -> F0DC695D-9AA0
+Write: F0DC695D-9AA0 Cinematic Static
+Convert: mod\m02\m02_offer_0010_trent.wav -> 0F0A815C-EB4A
+Write: 0F0A815C-EB4A Cinematic Static
+Convert: mod\m01\m01_bizmark_0140_alaric.wav -> 4394BFBC-3600
+Write: 4394BFBC-3600 Cinematic Static
+Convert: mod\m02\m02_offer_0020_wilham.wav -> 6975276B-3188
+Write: 6975276B-3188 Cinematic Static
+Convert: mod\m02\m02_offer_0040_wilham.wav -> A2E0A2A2-9AFC
+Write: A2E0A2A2-9AFC Cinematic Static
+Convert: mod\m02\m02_offer_0050_trent.wav -> E0571A16-4E62
+Write: E0571A16-4E62 Cinematic Static
+Convert: mod\m01\m01_bizmark_0130_alaric.wav -> C4414584-4600
+Write: C4414584-4600 Cinematic Static
+Convert: mod\m02\m02_offer_0070_trent.wav -> F8CD2C7A-5342
+Write: F8CD2C7A-5342 Cinematic Static
+Convert: mod\m02\m02_offer_0030_trent.wav -> 118E1007-5186
+Write: 118E1007-5186 Cinematic Static
+Convert: mod\m02\m02_offer_0090_trent.wav -> 1E1A1DA1-10DC
+Write: 1E1A1DA1-10DC Cinematic Static
+Convert: mod\m02\m02_offer_0110_trent.wav -> 389D7FDF-2F50
+Write: 389D7FDF-2F50 Cinematic Static
+Convert: mod\m02\m02_offer_0080_wilham.wav -> FA2E9044-A932
+Write: FA2E9044-A932 Cinematic Static
+Convert: mod\m02\m02_offer_0060_wilham.wav -> 48248045-9916
+Write: 48248045-9916 Cinematic Static
+Convert: mod\m02\m02_offer_0140_trent.wav -> C30DCCDC-AA5C
+Write: C30DCCDC-AA5C Cinematic Static
+Convert: mod\m02\m02_offer_0100_wilham.wav -> 93CB9AF4-8916
+Write: 93CB9AF4-8916 Cinematic Static
+Convert: mod\m02\m02_offer_0160_trent.wav -> D3D0F96C-5B4A
+Write: D3D0F96C-5B4A Cinematic Static
+Convert: mod\m02\m02_offer_0130_wilham.wav -> 55C69BFE-C19E
+Write: 55C69BFE-C19E Cinematic Static
+Convert: mod\m02\m02_offer_0180_trent.wav -> 15BC4057-015E
+Write: 15BC4057-015E Cinematic Static
+Convert: mod\m02\m02_offer_0150_wilham.wav -> EA6DA6F5-6380
+Write: EA6DA6F5-6380 Cinematic Static
+Convert: mod\m02\m02_offer_0200_trent.wav -> D0FB358B-C322
+Write: D0FB358B-C322 Cinematic Static
+Convert: mod\m02\m02_offer_0120_wilham.wav -> 4C953136-A308
+Write: 4C953136-A308 Cinematic Static
+Convert: mod\m02\m02_offer_0220_trent.wav -> 018D1E45-90B2
+Write: 018D1E45-90B2 Cinematic Static
+Convert: mod\m02\m02_offer_0210_wilham.wav -> 0852AE0D-CD5E
+Write: 0852AE0D-CD5E Cinematic Static
+Convert: mod\m02\m02_offer_0170_wilham.wav -> FE83662D-D834
+Write: FE83662D-D834 Cinematic Static
+Convert: mod\m02\m02_offer_0240_trent.wav -> 652A22DC-1B0E
+Write: 652A22DC-1B0E Cinematic Static
+Convert: mod\m02\m02_miner_0010_trent.wav -> 5BDB2F7D-5582
+Write: 5BDB2F7D-5582 Cinematic Static
+Convert: mod\m02\m02_offer_0250_wilham.wav -> 3DEB7A00-3E88
+Write: 3DEB7A00-3E88 Cinematic Static
+Convert: mod\m02\m02_miner_0020_jacobo.wav -> 8A2BA0A2-507E
+Write: 8A2BA0A2-507E Cinematic Static
+Convert: mod\m02\m02_miner_0030_trent.wav -> DA0F267D-123A
+Write: DA0F267D-123A Cinematic Static
+Convert: mod\m02\m02_miner_0040_jacobo.wav -> 0738CE73-7248
+Write: 0738CE73-7248 Cinematic Static
+Convert: mod\m02\m02_miner_0045_jacobo.wav -> 3023305D-EC1E
+Write: 3023305D-EC1E Cinematic Static
+Convert: mod\m02\m02_miner_0050_trent.wav -> EDCC3873-633E
+Write: EDCC3873-633E Cinematic Static
+Convert: mod\m02\m02_miner_0070_trent.wav -> 65CCE7BD-AAE2
+Write: 65CCE7BD-AAE2 Cinematic Static
+Convert: mod\m02\m02_offer_0230_wilham.wav -> 679552B2-1D9E
+Write: 679552B2-1D9E Cinematic Static
+Convert: mod\m02\m02_miner_0080_jacobo.wav -> 3ACD1644-F612
+Write: 3ACD1644-F612 Cinematic Static
+Convert: mod\m02\m02_miner_0100_jacobo.wav -> 05F186A3-50BA
+Write: 05F186A3-50BA Cinematic Static
+Convert: mod\m02\m02_offer_0190_wilham.wav -> 8F9CF86F-7F10
+Write: 8F9CF86F-7F10 Cinematic Static
+Convert: mod\m02\m02_miner_0110_jacobo.wav -> F2C38FD8-B988
+Write: F2C38FD8-B988 Cinematic Static
+Convert: mod\m02\m02_done_0010_reichman.wav -> C6D99ED0-3707
+Write: C6D99ED0-3707 Cinematic Static
+Convert: mod\m02\m02_miner_0060_jacobo.wav -> 3AD3A3E5-2FEC
+Write: 3AD3A3E5-2FEC Cinematic Static
+Convert: mod\m02\m02_done_0020_trent.wav -> BB3B876F-D321
+Write: BB3B876F-D321 Cinematic Static
+Convert: mod\m02\m02_miner_0120_jacobo.wav -> B6984543-7C94
+Write: B6984543-7C94 Cinematic Static
+Convert: mod\m02\m02_done_0030_reichman.wav -> 53FCEA7D-25AC
+Write: 53FCEA7D-25AC Cinematic Static
+Convert: mod\m02\m02_done_0060_trent.wav -> E3A3B38F-AC96
+Write: E3A3B38F-AC96 Cinematic Static
+Convert: mod\m02\m02_done_0040_trent.wav -> 9ACE0F82-3CFB
+Write: 9ACE0F82-3CFB Cinematic Static
+Convert: mod\m02\m02_miner_0090_trent.wav -> 34F98F74-23E4
+Write: 34F98F74-23E4 Cinematic Static
+Convert: mod\m02\m02_done_0080_reichman.wav -> 8B1A4064-9EFD
+Write: 8B1A4064-9EFD Cinematic Static
+Convert: mod\m02\m02_done_0100_reichman.wav -> AC7A18AE-F9A9
+Write: AC7A18AE-F9A9 Cinematic Static
+Convert: mod\m02\m02_done_0050_reichman.wav -> B1E0B6D4-3C65
+Write: B1E0B6D4-3C65 Cinematic Static
+Convert: mod\m02\m02_done_0110_wilham.wav -> 7D645A4F-BCA9
+Write: 7D645A4F-BCA9 Cinematic Static
+Convert: mod\m02\m02_done_0090_wilham.wav -> D1A31B36-13FC
+Write: D1A31B36-13FC Cinematic Static
+Convert: mod\m02\m02_done_0130_wilham.wav -> 2E256A2F-7A89
+Write: 2E256A2F-7A89 Cinematic Static
+Convert: mod\m02\m02_done_0120_reichman.wav -> 305CA854-0CF8
+Write: 305CA854-0CF8 Cinematic Static
+Convert: mod\m03\m03_offer_0010_trent.wav -> 12C854B6-FD92
+Write: 12C854B6-FD92 Cinematic Static
+Convert: mod\m02\m02_done_0140_reichman.wav -> CC2F7778-A1E8
+Write: CC2F7778-A1E8 Cinematic Static
+Convert: mod\m02\m02_done_0070_reichman.wav -> 6B987C5A-6339
+Write: 6B987C5A-6339 Cinematic Static
+Convert: mod\m03\m03_offer_0030_trent.wav -> 0B9D3EBB-C7C3
+Write: 0B9D3EBB-C7C3 Cinematic Static
+Convert: mod\m03\m03_offer_0040_trent.wav -> 28019BF4-88C9
+Write: 28019BF4-88C9 Cinematic Static
+Convert: mod\m03\m03_offer_0050_wilham.wav -> 57455C88-ABD8
+Write: 57455C88-ABD8 Cinematic Static
+Convert: mod\m03\m03_offer_0020_wilham.wav -> FC763656-F3D6
+Write: FC763656-F3D6 Cinematic Static
+Convert: mod\m03\m03_offer_0060_trent.wav -> F97445E5-80B7
+Write: F97445E5-80B7 Cinematic Static
+Convert: mod\m03\m03_offer_0070_wilham.wav -> F716BC01-E988
+Write: F716BC01-E988 Cinematic Static
+Convert: mod\m03\m03_offer_0080_trent.wav -> C491C1C7-6F26
+Write: C491C1C7-6F26 Cinematic Static
+Convert: mod\m03\m03_offer_0077_wilham.wav -> 5AFF9B45-5A19
+Write: 5AFF9B45-5A19 Cinematic Static
+Convert: mod\m03\m03_offer_0090_wilham.wav -> 70C45ED0-7B36
+Write: 70C45ED0-7B36 Cinematic Static
+Convert: mod\m03\m03_offer_0075_wilham.wav -> C365EF3D-E66D
+Write: C365EF3D-E66D Cinematic Static
+Convert: mod\m03\m03_offer_0110_hassler.wav -> 18E85104-40BC
+Write: 18E85104-40BC Cinematic Static
+Convert: mod\m03\m03_offer_0100_trent.wav -> D8ADBAB1-8283
+Write: D8ADBAB1-8283 Cinematic Static
+Convert: mod\m03\m03_offer_0140_wilham.wav -> FF899F23-BF18
+Write: FF899F23-BF18 Cinematic Static
+Convert: mod\m03\m03_offer_0115_hassler.wav -> 9F43CE8F-F876
+Write: 9F43CE8F-F876 Cinematic Static
+Convert: mod\m03\m03_offer_0130_trent.wav -> 87B42C49-75E3
+Write: 87B42C49-75E3 Cinematic Static
+Convert: mod\m03\m03_offer_0120_hassler.wav -> 10DAD5C3-E5A0
+Write: 10DAD5C3-E5A0 Cinematic Static
+Convert: mod\m03\m03_offer_0155_hassler.wav -> E37AEBCF-5D7D
+Write: E37AEBCF-5D7D Cinematic Static
+Convert: mod\m03\m03_offer_0150_hassler.wav -> DD61F213-7352
+Write: DD61F213-7352 Cinematic Static
+Convert: mod\m04\m04_offer_0010_jacobo.wav -> 3FC1F16D-FA55
+Write: 3FC1F16D-FA55 Cinematic Static
+Convert: mod\m03\m03_reward_0030_hassler.wav -> 092CFE64-0F00
+Write: 092CFE64-0F00 Cinematic Static
+Convert: mod\m03\m03_reward_0020_trent.wav -> B969E0FF-5D22
+Write: B969E0FF-5D22 Cinematic Static
+Convert: mod\m03\m03_reward_0010_hassler.wav -> 219812E9-E100
+Write: 219812E9-E100 Cinematic Static
+Convert: mod\m04\m04_offer_0020_jacobo.wav -> 0E37C628-D429
+Write: 0E37C628-D429 Cinematic Static
+Convert: mod\m04\m04_offer_0030_trent.wav -> 8C359ABA-B2A7
+Write: 8C359ABA-B2A7 Cinematic Static
+Convert: mod\m04\m04_offer_0040_jacobo.wav -> 16F0B8DF-7BA9
+Write: 16F0B8DF-7BA9 Cinematic Static
+Convert: mod\m04\m04_offer_0050_trent.wav -> AF492B43-F1A7
+Write: AF492B43-F1A7 Cinematic Static
+Convert: mod\m04\m04_offer_0065_jacobo.wav -> 21C2AC0D-5436
+Write: 21C2AC0D-5436 Cinematic Static
+Convert: mod\m04\m04_offer_0067_jacobo.wav -> D5E7035E-F0F2
+Write: D5E7035E-F0F2 Cinematic Static
+Convert: mod\m04\m04_offer_0060_jacobo.wav -> A4E6ED3B-CAE4
+Write: A4E6ED3B-CAE4 Cinematic Static
+Convert: mod\m04\m04_offer_0070_trent.wav -> A23EAC89-8D46
+Write: A23EAC89-8D46 Cinematic Static
+Convert: mod\m04\m04_offer_0062_jacobo.wav -> C1BD142F-4DDE
+Write: C1BD142F-4DDE Cinematic Static
+Convert: mod\m04\m04_offer_0090_trent.wav -> A57F16ED-A6B3
+Write: A57F16ED-A6B3 Cinematic Static
+Convert: echo_m04.utf|0xAAD01AC4 -> 1965ACD6-1887
+Write: 1965ACD6-1887 Cinematic Static
+Convert: echo_m04.utf|0x9B797FCD -> FFC9E892-2F2F
+Write: FFC9E892-2F2F Cinematic Static
+Convert: mod\m04\m04_reward_0010_hatcher.wav -> 12B61C52-930E
+Write: 12B61C52-930E Cinematic Static
+Convert: mod\m04\m04_offer_0080_jacobo.wav -> E809D568-0CA3
+Write: E809D568-0CA3 Cinematic Static
+Convert: echo_m04.utf|0x89A49807 -> 95B756D2-3EF6
+Write: 95B756D2-3EF6 Cinematic Static
+Convert: echo_m04.utf|0x96D304C4 -> B5B87989-FCC2
+Write: B5B87989-FCC2 Cinematic Static
+Convert: mod\m04\m04_reward_0020_trent.wav -> 23138703-A5D0
+Write: 23138703-A5D0 Cinematic Static
+Convert: mod\m04\m04_reward_0045_hatcher.wav -> A5AB1182-2042
+Write: A5AB1182-2042 Cinematic Static
+Convert: mod\m04\m04_reward_0040_hatcher.wav -> DD3C4512-7E8D
+Write: DD3C4512-7E8D Cinematic Static
+Convert: mod\m04\m04_reward_0060_trent.wav -> 4EB9D6AF-BCE8
+Write: 4EB9D6AF-BCE8 Cinematic Static
+Convert: mod\m04\m04_reward_0030_alaric.wav -> B6BFC471-4A64
+Write: B6BFC471-4A64 Cinematic Static
+Convert: mod\m04\m04_reward_0050_hatcher.wav -> 44A42C7B-7787
+Write: 44A42C7B-7787 Cinematic Static
+Convert: mod\m04\m04_reward_0055_hatcher.wav -> 6B842697-3EE6
+Write: 6B842697-3EE6 Cinematic Static
+Convert: mod\m04\m04_reward_0080_alaric.wav -> 9E7046D6-82B9
+Write: 9E7046D6-82B9 Cinematic Static
+Convert: mod\m04\m04_reward_0100_hatcher.wav -> 9CC8E07E-887B
+Write: 9CC8E07E-887B Cinematic Static
+Convert: mod\m04\m04_reward_0090_trent.wav -> BEA8AF1D-8C32
+Write: BEA8AF1D-8C32 Cinematic Static
+Convert: mod\m04\m04_reward_0120_hatcher.wav -> ACBF0295-70C1
+Write: ACBF0295-70C1 Cinematic Static
+Convert: mod\m04\m04_reward_0130_trent.wav -> ABE782DB-87CC
+Write: ABE782DB-87CC Cinematic Static
+Convert: mod\m04\m04_reward_0110_trent.wav -> 05E9FD28-D48E
+Write: 05E9FD28-D48E Cinematic Static
+Convert: mod\m04\m04_reward_0070_hatcher.wav -> A36B0702-0676
+Write: A36B0702-0676 Cinematic Static
+Convert: mod\m04\m04_final_0020_trent.wav -> FAAE15DB-78DF
+Write: FAAE15DB-78DF Cinematic Static
+Convert: mod\m04\m04_final_0010_alaric.wav -> 89B1E55D-CCC2
+Write: 89B1E55D-CCC2 Cinematic Static
+Convert: mod\m04\m04_final_0060_trent.wav -> E919E73D-C4F7
+Write: E919E73D-C4F7 Cinematic Static
+Convert: mod\m04\m04_final_0040_trent.wav -> 33C03B99-341A
+Write: 33C03B99-341A Cinematic Static
+Convert: mod\m04\m04_final_0050_alaric.wav -> 52CA7F61-561A
+Write: 52CA7F61-561A Cinematic Static
+Convert: mod\m04\m04_final_0030_alaric.wav -> 39B475C3-DF71
+Write: 39B475C3-DF71 Cinematic Static
+Convert: mod\m04\m04_final_0070_alaric.wav -> 66944247-B7F7
+Write: 66944247-B7F7 Cinematic Static
+Convert: mod\m04\m04_final_0100_trent.wav -> 0210B834-B492
+Write: 0210B834-B492 Cinematic Static
+Convert: mod\m04\m04_final_0090_alaric.wav -> 3CC91B40-4361
+Write: 3CC91B40-4361 Cinematic Static
+Convert: mod\m04\m04_final_0080_trent.wav -> DD555B61-6925
+Write: DD555B61-6925 Cinematic Static
+Convert: mod\m04\m04_final_0130_alaric.wav -> BC7FE557-05E8
+Write: BC7FE557-05E8 Cinematic Static
+Convert: mod\m04\m04_final_0120_trent.wav -> 919F0019-00AB
+Write: 919F0019-00AB Cinematic Static
+Convert: mod\m04\m04_final_0140_trent.wav -> 8C9FFC3C-A71C
+Write: 8C9FFC3C-A71C Cinematic Static
+Convert: mod\m04\m04_final_0110_alaric.wav -> 33DB6015-20C8
+Write: 33DB6015-20C8 Cinematic Static
+Convert: mod\m05\m05_offer_0010_hatcher.wav -> 61625940-AD94
+Write: 61625940-AD94 Cinematic Static
+Convert: mod\m05\m05_offer_0050_hatcher.wav -> 080721EF-6577
+Write: 080721EF-6577 Cinematic Static
+Convert: mod\m05\m05_offer_0040_trent.wav -> D1E16943-A8B1
+Write: D1E16943-A8B1 Cinematic Static
+Convert: mod\m05\m05_offer_0030_hatcher.wav -> A22CCFB6-E415
+Write: A22CCFB6-E415 Cinematic Static
+Convert: mod\m05\m05_offer_0070_trent.wav -> A80F4642-33E5
+Write: A80F4642-33E5 Cinematic Static
+Convert: mod\m05\m05_offer_0020_trent.wav -> 1BA5F49D-ED86
+Write: 1BA5F49D-ED86 Cinematic Static
+Convert: mod\m05\m05_offer_0100_trent.wav -> D06ECEED-E49B
+Write: D06ECEED-E49B Cinematic Static
+Convert: mod\m05\m05_offer_0090_hatcher.wav -> 9F5D2926-234A
+Write: 9F5D2926-234A Cinematic Static
+Convert: mod\m05\m05_offer_0060_hatcher.wav -> 0AA530AF-5598
+Write: 0AA530AF-5598 Cinematic Static
+Convert: mod\m05\m05_offer_0080_hatcher.wav -> 5514976C-4CAA
+Write: 5514976C-4CAA Cinematic Static
+Convert: mod\m05\m05_offer_0130_trent.wav -> DB8C785C-78BA
+Write: DB8C785C-78BA Cinematic Static
+Convert: mod\m05\m05_offer_0120_hatcher.wav -> 62FBD095-4F30
+Write: 62FBD095-4F30 Cinematic Static
+Convert: mod\m05\m05_offer_0110_hatcher.wav -> 14392222-DB7A
+Write: 14392222-DB7A Cinematic Static
+Convert: mod\m05\m05_offer_0150_trent.wav -> 80BE5129-EE4B
+Write: 80BE5129-EE4B Cinematic Static
+Convert: mod\m05\m05_offer_0180_trent.wav -> 9E0DF661-6B69
+Write: 9E0DF661-6B69 Cinematic Static
+Convert: mod\m05\m05_offer_0170_hatcher.wav -> 490B1DCE-884F
+Write: 490B1DCE-884F Cinematic Static
+Convert: mod\m05\m05_offer_0140_hatcher.wav -> 6D41D879-3F07
+Write: 6D41D879-3F07 Cinematic Static
+Convert: mod\m05\m05_offer_0200_trent.wav -> D36B9306-4632
+Convert: mod\m05\m05_offer_0160_hatcher.wav -> 0DA02646-3DB5
+Write: D36B9306-4632 Cinematic Static
+Write: 0DA02646-3DB5 Cinematic Static
+Convert: mod\m05\m05_offer_0190_hatcher.wav -> A9BD209B-4479
+Write: A9BD209B-4479 Cinematic Static
+Convert: mod\m05\m05_piratebar_0020_smith.wav -> 47ED45E2-E318
+Write: 47ED45E2-E318 Cinematic Static
+Convert: mod\m05\m05_piratebar_0010_trent.wav -> 818F9129-55D9
+Write: 818F9129-55D9 Cinematic Static
+Convert: mod\m05\m05_offer_0210_hatcher.wav -> A2E3C562-61AE
+Write: A2E3C562-61AE Cinematic Static
+Convert: mod\m05\m05_piratebar_0030_trent.wav -> 26BEADA1-0D36
+Write: 26BEADA1-0D36 Cinematic Static
+Convert: mod\m05\m05_piratebar_0040_trent.wav -> 879E866A-9135
+Write: 879E866A-9135 Cinematic Static
+Convert: mod\m05\m05_piratebar_0050_trent.wav -> 112A9FF5-3807
+Write: 112A9FF5-3807 Cinematic Static
+Convert: mod\m05\m05_piratebar_0060_smith.wav -> 1C377FAC-79DD
+Write: 1C377FAC-79DD Cinematic Static
+Convert: mod\m05\m05_piratebar_0070_trent.wav -> 33EA2EC4-853D
+Write: 33EA2EC4-853D Cinematic Static
+Convert: mod\m05\m05_piratebar_0080_smith.wav -> ACAC0579-F54A
+Write: ACAC0579-F54A Cinematic Static
+Convert: mod\m05\m05_piratebar_0055_trent.wav -> D66BF184-8C94
+Write: D66BF184-8C94 Cinematic Static
+Convert: mod\m05\m05_piratebar_0090_trent.wav -> 694351ED-0536
+Write: 694351ED-0536 Cinematic Static
+Convert: mod\m05\m05_piratebar_0110_trent.wav -> 59AC6ACB-AA0E
+Write: 59AC6ACB-AA0E Cinematic Static
+Convert: mod\m05\m05_piratebar_0130_trent.wav -> 6CC94CD9-FC7A
+Write: 6CC94CD9-FC7A Cinematic Static
+Convert: mod\m05\m05_piratebar_0140_smith.wav -> 2A647B99-29AA
+Write: 2A647B99-29AA Cinematic Static
+Convert: mod\m05\m05_piratebar_0100_smith.wav -> EBCEFD3C-7E9B
+Write: EBCEFD3C-7E9B Cinematic Static
+Convert: echo_m05_player.utf|0xBB166EC9 -> 7CF8E9A6-51DA
+Write: 7CF8E9A6-51DA Cinematic Static
+Convert: echo_m05.utf|0x87C69209 -> B9EB3133-9EB0
+Write: B9EB3133-9EB0 Cinematic Static
+Convert: echo_m05_player.utf|0x9B1622CA -> 2C1CE38B-2924
+Write: 2C1CE38B-2924 Cinematic Static
+Convert: echo_m05.utf|0xA7C752C9 -> 50123BD1-7BF8
+Write: 50123BD1-7BF8 Cinematic Static
+Convert: echo_m05.utf|0x87C47F48 -> 3B6A9307-1DA3
+Write: 3B6A9307-1DA3 Cinematic Static
+Convert: echo_m05.utf|0xA7C4FF08 -> 5219633F-57E6
+Write: 5219633F-57E6 Cinematic Static
+Convert: mod\m05\m05_detroit_0020_barman.wav -> 9A3A43A3-96C1
+Write: 9A3A43A3-96C1 Cinematic Static
+Convert: mod\m05\m05_detroit_0010_trent.wav -> DFA4319A-B978
+Write: DFA4319A-B978 Cinematic Static
+Convert: mod\m05\m05_piratebar_0120_smith.wav -> DF9C5C29-13A5
+Write: DF9C5C29-13A5 Cinematic Static
+Convert: mod\m05\m05_detroit_0050_trent.wav -> 6C22486F-003B
+Write: 6C22486F-003B Cinematic Static
+Convert: mod\m05\m05_detroit_0030_trent.wav -> 91C0EDEF-E983
+Write: 91C0EDEF-E983 Cinematic Static
+Convert: mod\m05\m05_detroit_0045_barman.wav -> F26A49F5-0797
+Write: F26A49F5-0797 Cinematic Static
+Convert: mod\m05\m05_detroit_0040_barman.wav -> CED5EC70-B6DE
+Write: CED5EC70-B6DE Cinematic Static
+Convert: mod\m05\m05_detroit_0080_trent.wav -> 54EEE4D1-31BB
+Write: 54EEE4D1-31BB Cinematic Static
+Convert: mod\m05\m05_detroit_0070_trent.wav -> D4B7E6AF-BAB3
+Write: D4B7E6AF-BAB3 Cinematic Static
+Convert: echo_m05_player.utf|0x9BCE24CA -> 81F5E058-1432
+Write: 81F5E058-1432 Cinematic Static
+Convert: echo_m05.utf|0xB8D06E41 -> BCA7C3CE-0830
+Write: BCA7C3CE-0830 Cinematic Static
+Convert: mod\m05\m05_detroit_0060_barman.wav -> 897EA79A-0187
+Write: 897EA79A-0187 Cinematic Static
+Convert: echo_m05_female.utf|0x8E3E0F8C -> 8E6DE520-BFE5
+Write: 8E6DE520-BFE5 Cinematic Static
+Convert: echo_m05.utf|0xB8086841 -> 5E6E1A3B-5A2A
+Write: 5E6E1A3B-5A2A Cinematic Static
+Convert: echo_m05.utf|0x9DE4630B -> F43EED80-8818
+Write: F43EED80-8818 Cinematic Static
+Convert: echo_m05_player.utf|0xBBCF48C1 -> C59683AA-C68D
+Write: C59683AA-C68D Cinematic Static
+Convert: echo_m05.utf|0x9DF06201 -> D3A75D9E-23BB
+Write: D3A75D9E-23BB Cinematic Static
+Convert: echo_m05.utf|0x9133830B -> F2E9F1AC-4D62
+Write: F2E9F1AC-4D62 Cinematic Static
+Convert: echo_m05.utf|0xB4838B4B -> E2450D6A-BD7F
+Write: E2450D6A-BD7F Cinematic Static
+Convert: mod\m05\m05_equip_0010_hatcher.wav -> 5CAA64EE-DF29
+Write: 5CAA64EE-DF29 Cinematic Static
+Convert: mod\m05\m05_equip_0020_mandrake.wav -> 164095FC-EDFF
+Write: 164095FC-EDFF Cinematic Static
+Convert: mod\m05\m05_equip_0030_hatcher.wav -> E3BC2396-02E8
+Write: E3BC2396-02E8 Cinematic Static
+Convert: mod\m05\m05_equip_0050_hatcher.wav -> 0602DCE8-8522
+Write: 0602DCE8-8522 Cinematic Static
+Convert: echo_m05.utf|0x8CCD2DC9 -> FE5AD516-52DB
+Write: FE5AD516-52DB Cinematic Static
+Convert: mod\m05\m05_equip_0040_mandrake.wav -> 8A79CD02-28B6
+Write: 8A79CD02-28B6 Cinematic Static
+Convert: mod\m05\m05_equip_0060_mandrake.wav -> 7220D1C8-FF38
+Write: 7220D1C8-FF38 Cinematic Static
+Convert: mod\m05\m05_equip_0070_hatcher.wav -> 955D033C-26AA
+Write: 955D033C-26AA Cinematic Static
+Convert: mod\m05\m05_equip_0090_hatcher.wav -> 21830ACB-D648
+Write: 21830ACB-D648 Cinematic Static
+Convert: mod\m05\m05_equip_0080_mandrake.wav -> 63C2A1F8-A6F8
+Write: 63C2A1F8-A6F8 Cinematic Static
+Convert: mod\m05\m05_equip_0100_trent.wav -> D42D0867-EA4B
+Write: D42D0867-EA4B Cinematic Static
+Convert: mod\m05\m05_equip_0110_mandrake.wav -> 1B7F66E3-1214
+Write: 1B7F66E3-1214 Cinematic Static
+Convert: mod\m05\m05_equip_0120_trent.wav -> 3063C753-794F
+Write: 3063C753-794F Cinematic Static
+Convert: mod\m05\m05_equip_0130_hatcher.wav -> 994BD2E5-526A
+Write: 994BD2E5-526A Cinematic Static
+Convert: mod\m05\m05_equip_0150_mandrake.wav -> B37CABB4-A8DD
+Write: B37CABB4-A8DD Cinematic Static
+Convert: mod\m05\m05_equip_0170_trent.wav -> 8706ABBD-459E
+Write: 8706ABBD-459E Cinematic Static
+Convert: mod\m05\m05_equip_0140_trent.wav -> B1CC383B-E30C
+Write: B1CC383B-E30C Cinematic Static
+Convert: mod\m05\m05_equip_0180_hatcher.wav -> 988DDDF2-25C9
+Write: 988DDDF2-25C9 Cinematic Static
+Convert: mod\m05\m05_equip_0160_hatcher.wav -> BF8EC67D-B800
+Convert: mod\m05\m05_equip_0190_trent.wav -> 3BFC6F79-86A8
+Write: BF8EC67D-B800 Cinematic Static
+Write: 3BFC6F79-86A8 Cinematic Static
+Convert: mod\m05\m05_equip_0220_hatcher.wav -> 53000CC8-76D8
+Write: 53000CC8-76D8 Cinematic Static
+Convert: mod\m05\m05_equip_0200_hatcher.wav -> A51C15FC-275A
+Write: A51C15FC-275A Cinematic Static
+Convert: mod\m05\m05_equip_0210_hatcher.wav -> 4049FBEA-ABE3
+Write: 4049FBEA-ABE3 Cinematic Static
+Convert: mod\m05\m05_equip_0230_hatcher.wav -> 4E7D56CB-A6E0
+Write: 4E7D56CB-A6E0 Cinematic Static
+Convert: mod\m05\m05_equip_0240_trent.wav -> D2A79806-92CA
+Write: D2A79806-92CA Cinematic Static
+Convert: mod\m05\m05_equip_0260_trent.wav -> 897620E6-2E72
+Write: 897620E6-2E72 Cinematic Static
+Convert: mod\m05\m05_equip_0250_hatcher.wav -> E735D5F8-33A6
+Write: E735D5F8-33A6 Cinematic Static
+Convert: mod\m05\m05_equip_0270_hatcher.wav -> D1D0B37F-9B8E
+Write: D1D0B37F-9B8E Cinematic Static
+Convert: mod\m05\m05_equip_0290_trent.wav -> E021FB1C-0938
+Write: E021FB1C-0938 Cinematic Static
+Convert: mod\m05\m05_equip_0300_mandrake.wav -> D4C7B510-DFA1
+Write: D4C7B510-DFA1 Cinematic Static
+Convert: mod\m05\m05_equip_0280_hatcher.wav -> 9A3CC34B-58FD
+Write: 9A3CC34B-58FD Cinematic Static
+Convert: mod\m05\m05_equip_0330_hatcher.wav -> B7F1B3EC-7C6B
+Write: B7F1B3EC-7C6B Cinematic Static
+Convert: mod\m05\m05_equip_0310_hatcher.wav -> 3546F2DC-EB2D
+Write: 3546F2DC-EB2D Cinematic Static
+Convert: mod\m05\m05_equip_0320_hatcher.wav -> A11C4807-CFDC
+Write: A11C4807-CFDC Cinematic Static
+Convert: mod\m05\m05_equip_0360_trent.wav -> 927CA4D6-006F
+Write: 927CA4D6-006F Cinematic Static
+Convert: mod\m05\m05_equip_0350_hatcher.wav -> 22CEADEF-BFB2
+Write: 22CEADEF-BFB2 Cinematic Static
+Convert: mod\m05\m05_equip_0340_hatcher.wav -> 086E00DA-D7F0
+Write: 086E00DA-D7F0 Cinematic Static
+Convert: mod\m05\m05_equip_0380_trent.wav -> 225207B5-4CE1
+Write: 225207B5-4CE1 Cinematic Static
+Convert: mod\m05\m05_equip_0370_hatcher.wav -> C08F02BB-DD84
+Write: C08F02BB-DD84 Cinematic Static
+Convert: mod\m05\m05_equip_0410_trent.wav -> 40BC255B-F36D
+Write: 40BC255B-F36D Cinematic Static
+Convert: mod\m05\m05_equip_0400_hatcher.wav -> CA7058C5-335A
+Write: CA7058C5-335A Cinematic Static
+Convert: mod\m05\m05_equip_0430_trent.wav -> 024CDA3B-8037
+Write: 024CDA3B-8037 Cinematic Static
+Convert: mod\m05\m05_equip_0420_hatcher.wav -> D3C229B5-2FFF
+Write: D3C229B5-2FFF Cinematic Static
+Convert: mod\m05\m05_equip_0450_mandrake.wav -> 21D825B3-6772
+Write: 21D825B3-6772 Cinematic Static
+Convert: mod\m05\m05_equip_0460_hatcher.wav -> D4481ECE-89F4
+Write: D4481ECE-89F4 Cinematic Static
+Convert: mod\m05\m05_equip_0440_hatcher.wav -> A8137082-B812
+Write: A8137082-B812 Cinematic Static
+Convert: mod\m05\m05_equip_0390_hatcher.wav -> 596523F4-E42B
+Write: 596523F4-E42B Cinematic Static
+Convert: mod\m05\m05_equip_0490_hatcher.wav -> 1ADEFF7C-AF43
+Write: 1ADEFF7C-AF43 Cinematic Static
+Convert: mod\m05\m05_equip_0480_trent.wav -> 670E3268-66A2
+Write: 670E3268-66A2 Cinematic Static
+Convert: mod\m05\m05_equip_0500_trent.wav -> E11FA50D-80A6
+Write: E11FA50D-80A6 Cinematic Static
+Convert: mod\m05\m05_equip_0510_hatcher.wav -> 8637FF5F-DA84
+Write: 8637FF5F-DA84 Cinematic Static
+Convert: mod\m06\m06_offer_0010_trent.wav -> 437B5DE0-71A9
+Write: 437B5DE0-71A9 Cinematic Static
+Convert: mod\m06\m06_offer_0020_alaric.wav -> 041D4E1A-82B9
+Write: 041D4E1A-82B9 Cinematic Static
+Convert: mod\m05\m05_equip_0470_mandrake.wav -> 5C261834-A878
+Write: 5C261834-A878 Cinematic Static
+Convert: mod\m06\m06_offer_0030_hatcher.wav -> 3188BCEA-7FCD
+Write: 3188BCEA-7FCD Cinematic Static
+Convert: mod\m06\m06_offer_0040_hatcher.wav -> 9E46F873-AC8A
+Write: 9E46F873-AC8A Cinematic Static
+Convert: mod\m06\m06_offer_0050_hatcher.wav -> 10E65A26-9917
+Write: 10E65A26-9917 Cinematic Static
+Convert: mod\m06\m06_offer_0060_trent.wav -> B0E0204A-5680
+Write: B0E0204A-5680 Cinematic Static
+Convert: mod\m06\m06_offer_0090_trent.wav -> 15F4B15E-EBDD
+Write: 15F4B15E-EBDD Cinematic Static
+Convert: mod\m06\m06_offer_0070_hatcher.wav -> 69C7C6C2-02B5
+Write: 69C7C6C2-02B5 Cinematic Static
+Convert: mod\m06\m06_offer_0080_hatcher.wav -> A44FB343-8092
+Write: A44FB343-8092 Cinematic Static
+Convert: mod\m06\m06_offer_0110_alaric.wav -> 47CB1421-F330
+Write: 47CB1421-F330 Cinematic Static
+Convert: mod\m06\m06_offer_0120_trent.wav -> 905B2F46-0BAB
+Write: 905B2F46-0BAB Cinematic Static
+Convert: mod\m06\m06_offer_0100_hatcher.wav -> A0F6ABFF-4080
+Write: A0F6ABFF-4080 Cinematic Static
+Convert: mod\m06\m06_offer_0140_hatcher.wav -> 3BAEE36B-560E
+Write: 3BAEE36B-560E Cinematic Static
+Convert: mod\m06\m06_offer_0160_hatcher.wav -> 4F0E9E48-DFFD
+Write: 4F0E9E48-DFFD Cinematic Static
+Convert: mod\m06\m06_offer_0150_trent.wav -> DD9DA1AB-4343
+Write: DD9DA1AB-4343 Cinematic Static
+Convert: mod\m06\m06_offer_0130_hatcher.wav -> 3618D76C-F53B
+Write: 3618D76C-F53B Cinematic Static
+Convert: mod\m06\m06_briefing_0020_trent.wav -> DAC315A9-D33F
+Write: DAC315A9-D33F Cinematic Static
+Convert: mod\m06\m06_briefing_0010_hatcher.wav -> 37A1A21C-5227
+Write: 37A1A21C-5227 Cinematic Static
+Convert: mod\m06\m06_briefing_0040_hatcher.wav -> 2A8A84E6-C680
+Write: 2A8A84E6-C680 Cinematic Static
+Convert: mod\m06\m06_briefing_0030_hatcher.wav -> 9790286E-728A
+Write: 9790286E-728A Cinematic Static
+Convert: mod\m06\m06_briefing_0060_hatcher.wav -> 938C491D-4E80
+Write: 938C491D-4E80 Cinematic Static
+Convert: mod\m06\m06_briefing_0070_hatcher.wav -> A717FC2A-0A80
+Write: A717FC2A-0A80 Cinematic Static
+Convert: mod\m06\m06_briefing_0090_trent.wav -> ADA66BD5-9284
+Write: ADA66BD5-9284 Cinematic Static
+Convert: mod\m06\m06_briefing_0050_hatcher.wav -> 5BBEE71B-9800
+Write: 5BBEE71B-9800 Cinematic Static
+Convert: mod\m06\m06_briefing_0080_alaric.wav -> 8651846D-2AE1
+Write: 8651846D-2AE1 Cinematic Static
+Convert: mod\m06\m06_briefing_0100_hatcher.wav -> D009D37D-46E9
+Write: D009D37D-46E9 Cinematic Static
+Convert: mod\m06\m06_briefing_0120_hatcher.wav -> 70B64CEA-D7F9
+Write: 70B64CEA-D7F9 Cinematic Static
+Convert: mod\m06\m06_briefing_0110_trent.wav -> 50E91AF6-1909
+Write: 50E91AF6-1909 Cinematic Static
+Convert: mod\m06\m06_briefing_0150_hatcher.wav -> D29BE7AF-7D99
+Write: D29BE7AF-7D99 Cinematic Static
+Convert: mod\m06\m06_briefing_0130_hatcher.wav -> DD65A1EB-9991
+Write: DD65A1EB-9991 Cinematic Static
+Convert: mod\m06\m06_briefing_0140_hatcher.wav -> 367532AF-ECA2
+Write: 367532AF-ECA2 Cinematic Static
+Convert: mod\m06\m06_briefing_0170_hatcher.wav -> 0809278E-292C
+Write: 0809278E-292C Cinematic Static
+Convert: mod\m06\m06_briefing_0190_trent.wav -> 5CD88DBE-3442
+Write: 5CD88DBE-3442 Cinematic Static
+Convert: mod\m06\m06_briefing_0180_hatcher.wav -> 146E7CA4-A244
+Write: 146E7CA4-A244 Cinematic Static
+Convert: mod\m06\m06_briefing_0160_hatcher.wav -> 33EED0F0-6F40
+Write: 33EED0F0-6F40 Cinematic Static
+Convert: mod\m06\m06_briefing_0200_hatcher.wav -> EE64BB2B-BCDC
+Write: EE64BB2B-BCDC Cinematic Static
+Convert: mod\m06\m06_briefing_0230_alaric.wav -> 07E0BC4A-0F00
+Write: 07E0BC4A-0F00 Cinematic Static
+Convert: mod\m06\m06_briefing_0210_hatcher.wav -> D50E7B89-0DA0
+Write: D50E7B89-0DA0 Cinematic Static
+Convert: mod\m06\m06_briefing_0220_hatcher.wav -> 3D510531-5EE8
+Write: 3D510531-5EE8 Cinematic Static
+Convert: mod\m06\m06_briefing_0250_hatcher.wav -> D7C508E5-8178
+Write: D7C508E5-8178 Cinematic Static
+Convert: mod\m06\m06_briefing_0260_alaric.wav -> CE7FD502-830B
+Write: CE7FD502-830B Cinematic Static
+Convert: mod\m06\m06_briefing_0240_hatcher.wav -> DE82D439-3696
+Write: DE82D439-3696 Cinematic Static
+Convert: mod\m06\m06_briefing_0290_hatcher.wav -> F9B5729F-0954
+Write: F9B5729F-0954 Cinematic Static
+Convert: mod\m06\m06_briefing_0270_hatcher.wav -> 5F468770-365E
+Write: 5F468770-365E Cinematic Static
+Convert: mod\m06\m06_mount_0020_alaric.wav -> F43FB067-A67A
+Write: F43FB067-A67A Cinematic Static
+Convert: mod\m06\m06_mount_0010_trent.wav -> C885322B-BE27
+Write: C885322B-BE27 Cinematic Static
+Convert: mod\m06\m06_mount_0030_trent.wav -> BA2D8BA6-1408
+Write: BA2D8BA6-1408 Cinematic Static
+Convert: mod\m06\m06_briefing_0280_hatcher.wav -> 5EE79D9E-2D43
+Write: 5EE79D9E-2D43 Cinematic Static
+Convert: mod\m06\m06_mount_0040_alaric.wav -> D94A981F-0953
+Write: D94A981F-0953 Cinematic Static
+Convert: mod\m06\m06_mount_0050_trent.wav -> D13C0A2B-99D8
+Write: D13C0A2B-99D8 Cinematic Static
+Convert: mod\m06\m06_mount_0060_alaric.wav -> 62075875-6F34
+Write: 62075875-6F34 Cinematic Static
+Convert: mod\m06\m06_mount_0070_trent.wav -> 31B0BF34-AA0C
+Write: 31B0BF34-AA0C Cinematic Static
+Convert: mod\m06\m06_mount_0090_trent.wav -> 9A296743-47E1
+Write: 9A296743-47E1 Cinematic Static
+Convert: echo_m06_player.utf|0x9B17460C -> A4A5B7AB-2177
+Write: A4A5B7AB-2177 Cinematic Static
+Convert: mod\m06\m06_mount_0080_alaric.wav -> 877C2896-86DA
+Write: 877C2896-86DA Cinematic Static
+Convert: echo_m06.utf|0xB5F30D8D -> D8D89D11-98C9
+Write: D8D89D11-98C9 Cinematic Static
+Convert: echo_m06.utf|0xB41F0287 -> 6647EFCC-D6BB
+Write: 6647EFCC-D6BB Cinematic Static
+Convert: mod\m06\m06_lab_land_0010_alaric.wav -> 3B344978-3748
+Write: 3B344978-3748 Cinematic Static
+Convert: mod\m06\m06_lab_land_0020_trent.wav -> B254A09B-A15D
+Write: B254A09B-A15D Cinematic Static
+Convert: mod\m06\m06_lab_land_0040_trent.wav -> 06603FE3-5B5A
+Write: 06603FE3-5B5A Cinematic Static
+Convert: mod\m06\m06_lab_room_0010_trent.wav -> F27BA59D-1D21
+Write: F27BA59D-1D21 Cinematic Static
+Convert: mod\m06\m06_lab_land_0030_alaric.wav -> DDA1EFD6-D35A
+Write: DDA1EFD6-D35A Cinematic Static
+Convert: mod\m06\m06_lab_room_0020_alaric.wav -> 9CB4CE03-8780
+Write: 9CB4CE03-8780 Cinematic Static
+Convert: mod\m06\m06_torpedo_alert_0010_hatcher.wav -> 857DDC46-D8AF
+Write: 857DDC46-D8AF Cinematic Static
+Convert: mod\m06\m06_torpedo_alert_0020_hatcher.wav -> 46ADB113-D7B1
+Write: 46ADB113-D7B1 Cinematic Static
+Convert: mod\m06\m06_torpedo_alert_0040_trent.wav -> BB580CDD-963D
+Write: BB580CDD-963D Cinematic Static
+Convert: mod\m06\m06_torpedo_alert_0050_hatcher.wav -> 559D3D37-B063
+Write: 559D3D37-B063 Cinematic Static
+Convert: echo_m06.utf|0x8CE3460F -> 2054088C-4C70
+Write: 2054088C-4C70 Cinematic Static
+Convert: echo_m06.utf|0x8C0DEC04 -> 99BB2FEE-2211
+Write: 99BB2FEE-2211 Cinematic Static
+Convert: echo_m06.utf|0xBC3C1443 -> 17B3B706-21D6
+Write: 17B3B706-21D6 Cinematic Static
+Convert: mod\m06\m06_order_deck_0010_orderpilot.wav -> 7870CAD1-D9B4
+Write: 7870CAD1-D9B4 Cinematic Static
+Convert: mod\m06\m06_order_deck_0020_syd.wav -> 2DAF2862-4EEE
+Write: 2DAF2862-4EEE Cinematic Static
+Convert: mod\m06\m06_order_prison_0020_guard.wav -> EC5F1E50-4400
+Write: EC5F1E50-4400 Cinematic Static
+Convert: mod\m06\m06_order_prison_0010_syd.wav -> 9BC5F1F0-6CA5
+Write: 9BC5F1F0-6CA5 Cinematic Static
+Convert: mod\m06\m06_order_prison_0040_guard.wav -> DBA2B7AC-7167
+Write: DBA2B7AC-7167 Cinematic Static
+Convert: mod\m06\m06_order_prison_0030_syd.wav -> 573B0308-62C1
+Write: 573B0308-62C1 Cinematic Static
+Convert: mod\m06\m06_order_prison_0050_syd.wav -> C5D5C09D-4026
+Write: C5D5C09D-4026 Cinematic Static
+Convert: mod\m06\m06_order_prison_0060_syd.wav -> 7142899B-9927
+Write: 7142899B-9927 Cinematic Static
+Convert: mod\m06\m06_order_prison_0065_syd.wav -> AC89AB27-F0C8
+Write: AC89AB27-F0C8 Cinematic Static
+Convert: mod\m06\m06_order_prison_0070_delta3.wav -> 22B5989A-B193
+Write: 22B5989A-B193 Cinematic Static
+Convert: mod\m06\m06_order_prison_0090_trent.wav -> EF785627-6878
+Write: EF785627-6878 Cinematic Static
+Convert: mod\m06\m06_order_prison_0080_delta1.wav -> E4208EE1-50A9
+Write: E4208EE1-50A9 Cinematic Static
+Convert: mod\m06\m06_order_prison_0100_syd.wav -> 23B3501B-00BD
+Write: 23B3501B-00BD Cinematic Static
+Convert: mod\m06\m06_order_prison_0110_delta1.wav -> 107CF645-B880
+Write: 107CF645-B880 Cinematic Static
+Convert: mod\m06\m06_order_prison_0130_trent.wav -> E8506CC8-8F71
+Write: E8506CC8-8F71 Cinematic Static
+Convert: mod\m06\m06_order_prison_0140_syd.wav -> 1E04622B-BBD0
+Write: 1E04622B-BBD0 Cinematic Static
+Convert: mod\m06\m06_order_prison_0145_syd.wav -> 0B494DD2-070F
+Write: 0B494DD2-070F Cinematic Static
+Convert: mod\m06\m06_order_prison_0120_syd.wav -> 23DB7E63-023C
+Write: 23DB7E63-023C Cinematic Static
+Convert: mod\m06\m06_order_prison_0160_trent.wav -> 5608B92C-E8C4
+Write: 5608B92C-E8C4 Cinematic Static
+Convert: mod\m06\m06_order_prison_0150_syd.wav -> FAE851EA-88DD
+Write: FAE851EA-88DD Cinematic Static
+Convert: mod\m06\m06_order_prison_0170_syd.wav -> 59B6715A-5309
+Write: 59B6715A-5309 Cinematic Static
+Convert: mod\m06\m06_order_prison_0190_trent.wav -> B17FA561-2446
+Write: B17FA561-2446 Cinematic Static
+Convert: mod\m06\m06_order_prison_0180_syd.wav -> 5AE46B8C-BF34
+*** Converter done ***
+Write: 5AE46B8C-BF34 Cinematic Static
+*** Writer done ***
 
-Press Enter to continue...
+Total Hashes: 380
+
+All the audio files (not UTF) have been found.
+
+
+There are not duplicated hashes with different lines.
+
+There are not duplicated hashes with same lines.
+
+All done, quitting in 3...All done, quitting in 2...
