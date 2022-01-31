@@ -1,6 +1,6 @@
 [Player]
 name = Trent
-rank = 1
+rank = 0
 Description = NewPlayer
 
 money = 2500
@@ -20,7 +20,7 @@ pos = -5000, -5000, -5000
 
 
 ;HELP
-;ABSOLETE
+;OBSOLETE
 ;log = 030002, 0
 ;log = 030003, 0
 ;log = 030004, 0
