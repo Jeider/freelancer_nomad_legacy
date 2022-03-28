@@ -1,0 +1,115 @@
+duration=38.366
+
+entities={
+	{
+		spatialprops={
+			orient={
+				{
+					1,
+					0,
+					0
+				},
+				{
+					0,
+					1,
+					0
+				},
+				{
+					0,
+					0,
+					1
+				}
+			},
+			pos={
+				0,
+				0,
+				0
+			}
+		},
+		front=2,
+		srt_grp=0,
+		entity_name="workaround___1",
+		lt_grp=0,
+		type=9,
+		up=1,
+		usr_flg=0,
+		ambient={
+			168,
+			168,
+			168
+		},
+		template_name=""
+	},
+	
+	{
+		template_name="",
+		lt_grp=0,
+		entity_name="X/Shipcentre/01",
+		usr_flg=0,
+		srt_grp=0,
+		spatialprops={
+			orient={
+				{
+					-0.371334,
+					0,
+					0.9285
+				},
+				{
+					0,
+					1,
+					0
+				},
+				{
+					-0.9285,
+					0,
+					-0.371334
+				}
+			},
+			pos={
+				0.012363,
+				0,
+				0.010679
+			}
+		},
+		type=7
+	},
+	{
+		template_name="",
+		lt_grp=0,
+		entity_name="Zg/PC/Player/01/A/Stand",
+		usr_flg=0,
+		srt_grp=0,
+		spatialprops={
+			orient={
+				{
+					-0.938999,
+					0,
+					-0.343921
+				},
+				{
+					0,
+					1,
+					0
+				},
+				{
+					0.343921,
+					0,
+					-0.938999
+				}
+			},
+			pos={
+				400.015289,
+				0,
+				-46.91021
+			}
+		},
+		type=7
+	},
+	
+}
+
+events={
+
+}
+
+
