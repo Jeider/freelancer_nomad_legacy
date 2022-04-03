@@ -17,8 +17,8 @@ entities={
 		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={ pos={0,0,0}, orient={{1,0,0},{0,1,0},{0,0,1}}},
 		up=Y_AXIS,front=Z_AXIS,
-		--ambient={0,0,0}
-		ambient={180,180,180}
+		ambient={0,0,0}
+		-- ambient={180,180,180}
 	},
 	
 	
@@ -112,6 +112,9 @@ entities={
 		userprops={category="Audio"}
 	},
 	
+	
+	
+	
 	{
 		entity_name="Light_SPACE",
 		type=LIGHT,
@@ -156,6 +159,141 @@ entities={
 				1,
 				0,
 				4e-006
+			}
+		}
+	},
+	{
+		entity_name="Light_ROOM",
+		type=LIGHT,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				-11.071396,
+				0.406968,
+				9.729919000000001
+			},
+			orient={
+				{
+					0.715735,
+					-0.017723,
+					-0.698147
+				},
+				{
+					0.003304,
+					0.999753,
+					-0.021992
+				},
+				{
+					0.698364,
+					0.013434,
+					0.715617
+				}
+			}
+		},
+		lightprops={
+			on=Y,
+			color={
+				255,
+				255,
+				255
+			},
+			diffuse={
+				0.6,
+				0.6,
+				0.6
+			},
+			specular={
+				1,
+				1,
+				1
+			},
+			ambient={
+				0.25,
+				0.25,
+				0.25
+			},
+			direction={
+				0,
+				0,
+				-1
+			},
+			range=2000,
+			cutoff=90,
+			type=L_DIRECT,
+			theta=90,
+			atten={
+				1,
+				0,
+				4e-006
+			}
+		}
+	},
+	{
+		entity_name="light_shield_damage",
+		type=LIGHT,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={300, 1, 220},
+			orient={
+				{
+					1,
+					0,
+					0
+				},
+				{
+					0,
+					0.980574,
+					-0.196151
+				},
+				{
+					0,
+					0.196151,
+					0.980574
+				}
+			}
+		},
+		lightprops={
+			on=Y,
+			color={
+				255,
+				255,
+				255
+			},
+			diffuse={
+				0,
+				0,
+				0
+			},
+			specular={
+				0,
+				0,
+				0
+			},
+			ambient={
+				0,
+				0,
+				0
+			},
+			direction={
+				0,
+				0,
+				-1
+			},
+			range=5000,
+			cutoff=98.999977,
+			type=L_DIRECT,
+			theta=90,
+			atten={
+				1,
+				0,
+				0
 			}
 		}
 	},
@@ -258,6 +396,16 @@ entities={
 		psysprops={sparam=0}
 	},
 	{
+		entity_name="fx_shield_offline",
+		type=PSYS,
+		template_name="gf_li_bang01",
+		lt_grp=0,srt_grp=0,usr_flg=0,flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={pos={0,0,0}, orient={{1,0,0},{0,1,0},{0,0,1}}},
+		psysprops={sparam=0}
+	},
+	
+	
+	{
 		entity_name="the_stars",
 		type=COMPOUND,
 		template_name="generic_stars",
@@ -268,17 +416,17 @@ entities={
 			category="Prop"
 		}
 	},
-	{
-		entity_name="the_background",
-		type=COMPOUND,
-		template_name="starsphere_Ew01",
-		lt_grp=110, srt_grp=-100, usr_flg=1,
-		flags=LIT_DYNAMIC,
-		spatialprops={pos={0,0,0}, orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={
-			category="Prop"
-		}
-	},
+	-- {
+		-- entity_name="the_background",
+		-- type=COMPOUND,
+		-- template_name="starsphere_Ew01",
+		-- lt_grp=110, srt_grp=-100, usr_flg=1,
+		-- flags=LIT_DYNAMIC,
+		-- spatialprops={pos={0,0,0}, orient={{1,0,0},{0,1,0},{0,0,1}}},
+		-- userprops={
+			-- category="Prop"
+		-- }
+	-- },
 	{
 		entity_name="fx_rockford_engine01",
 		type=PSYS,
@@ -341,6 +489,45 @@ entities={
 		entity_name="launcher01",
 		type=COMPOUND,
 		template_name="rtcprop_weapons_br_slugger_launcher",
+		lt_grp=5,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				0, 2111, 180
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+		userprops={
+			category="Equipment"
+		}
+	},
+	
+	
+	
+	{
+		entity_name="cockpit_gun01",
+		type=COMPOUND,
+		template_name="rtcprop_weapons_br_mass_driver",
+		lt_grp=5,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				0, 2111, 180
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+		userprops={
+			category="Equipment"
+		}
+	},
+	{
+		entity_name="cockpit_gun02",
+		type=COMPOUND,
+		template_name="rtcprop_weapons_br_mass_driver",
 		lt_grp=5,
 		srt_grp=0,
 		usr_flg=0,
@@ -556,13 +743,153 @@ entities={
 			sparam=0
 		}
 	},
+	{
+		entity_name="gun_fireblast01",
+		type=PSYS,
+		template_name="gf_msn7_gunfire",
+		lt_grp=0,
+		srt_grp=12,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		psysprops={
+			sparam=0
+		}
+	},
+	{
+		entity_name="gun_fireblast02",
+		type=PSYS,
+		template_name="gf_msn7_gunfire",
+		lt_grp=0,
+		srt_grp=12,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		psysprops={
+			sparam=0
+		}
+	},
+	{
+		entity_name="gun_impact_01",
+		type=PSYS,
+		template_name="gf_li_shield01",
+		lt_grp=0,
+		srt_grp=12,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={
+			pos={300, 1.15, 205},
+			orient={
+				{1,0,0},
+				{0,0,-1},
+				{0,1,0}
+			}
+		},
+		psysprops={
+			sparam=0
+		}
+	},
+	{
+		entity_name="gun_impact_02",
+		type=PSYS,
+		template_name="gf_li_shield01",
+		lt_grp=0,
+		srt_grp=12,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={
+			pos={301, 1.25, 205},
+			orient={
+				{1,0,0},
+				{0,0,-1},
+				{0,1,0}
+			}
+		},
+		psysprops={
+			sparam=0
+		}
+	},
+	{
+		entity_name="gun_impact_03",
+		type=PSYS,
+		template_name="gf_li_shield01",
+		lt_grp=0,
+		srt_grp=12,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={
+			pos={299, 1.0, 205},
+			orient={
+				{1,0,0},
+				{0,0,-1},
+				{0,1,0}
+			}
+		},
+		psysprops={
+			sparam=0
+		}
+	},
+	{
+		entity_name="gun_impact_04",
+		type=PSYS,
+		template_name="gf_li_shield01",
+		lt_grp=0,
+		srt_grp=12,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={
+			pos={300.5, 1.75, 205},
+			orient={
+				{1,0,0},
+				{0,0,-1},
+				{0,1,0}
+			}
+		},
+		psysprops={
+			sparam=0
+		}
+	},
+	{
+		entity_name="gun_impact_05",
+		type=PSYS,
+		template_name="gf_li_shield01",
+		lt_grp=0,
+		srt_grp=12,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={
+			pos={300, 0.5, 205},
+			orient={
+				{1,0,0},
+				{0,0,-1},
+				{0,1,0}
+			}
+		},
+		psysprops={
+			sparam=0
+		}
+	},
 
 
 	{
 		entity_name="Char_trent",
 		type=DEFORMABLE,
 		template_name="trent",
-		lt_grp=5,
+		lt_grp=0,
 		srt_grp=0,
 		usr_flg=0,
 		flags=LIT_DYNAMIC,
@@ -604,6 +931,18 @@ entities={
 		}
 	},
 	
+
+	
+	{
+		entity_name="trent_head_ik",
+		type=MARKER, template_name="", template_id=0,
+		spatialprops={
+			pos={ -- initial: just front
+				300, 1.15, 250
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
 	
 	{
 		entity_name="mrk_rockford_pilot",
@@ -671,12 +1010,22 @@ entities={
 	{
 		entity_name="mrk_rockford_standing_before_fire",
 		type=MARKER, template_name="", template_id=0,
-		spatialprops={pos={0, 2, 230},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		spatialprops={pos={10, 2, 215},orient={{1,0,0},{0,1,0},{0,0,1}}},
 	},
 	{
 		entity_name="mrk_rockford_ready_to_fire",
 		type=MARKER, template_name="", template_id=0,
 		spatialprops={pos={0, 2, 200},orient={{1,0,0},{0,1,0},{0,0,1}}},
+	},
+	{
+		entity_name="mrk_rockford_ready_to_fire_looking_point",
+		type=MARKER, template_name="", template_id=0,
+		spatialprops={pos={-75, 2, 25},orient={{1,0,0},{0,1,0},{0,0,1}}},
+	},
+	{
+		entity_name="mrk_rockford_ready_to_fire_playerpoint",
+		type=MARKER, template_name="", template_id=0,
+		spatialprops={pos={0, 2, 0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 	},
 	{
 		entity_name="PlayerShip",
@@ -750,6 +1099,31 @@ entities={
 	},
 	
 
+	{
+		entity_name="rockford_cockpit",
+		type=COMPOUND,
+		template_name="ge_fighter6",
+		lt_grp=5,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				300, 0, 420
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		userprops={
+			category="Spaceship",
+			-- loadout="ms7_rockford_video_loadout",
+			-- running_lights="true"
+		}
+	},
+	
 
 
 	{
@@ -759,11 +1133,15 @@ entities={
 		flags=HIDDEN,
 		spatialprops={
 			pos={
-				-- 0, 6, 15
+				-- 100, 6, 100
 				-- 15, 10, 200 -- rockford front
-				10, 10, 180 -- testpos2 
+				-- 10, 10, 180 -- testpos2 
+				-- 55, 25, 200 -- rockford top
 				-- 3, 2, 190 -- rockford inside
-				-- 310, 3, 210 -- cockpit front
+				310, 3, 210 -- cockpit front
+				-- 300.5, 1.15, 197 -- cockpit inside
+				-- 320, 150, 320 -- rockford cockpitside
+				-- 500, 3, 275 -- cockpit left
 			},
 			orient={
 				{1,0,0},
@@ -788,9 +1166,13 @@ entities={
 			pos={
 				-- 0, 2, 0
 				-- 0, 4, 200 -- rockford front
-				0, 7, 200 -- testpos2 
+				-- 0, 7, 200 -- testpos2 
+				-- 3, 3, 210 -- rockford top
 				-- 0, 1, 195 -- rockford inside
-				-- 300, 1.15, 200 -- cockpit front
+				300, 1.15, 200 -- cockpit front
+				-- 300, 1.15, 400 -- cockpit inside
+				-- 300, 0, 340 -- rockford cockpitside
+				-- 300, 1.15, 275 -- cockpit left
 			},
 			orient={
 				{1,0,0},
@@ -799,27 +1181,7 @@ entities={
 			}
 		},
 	},
-	
-	{
-		entity_name="cam_dbg__testpos2",
-		type=MARKER,
-		template_name="",
-		template_id=0,
-		spatialprops={
-			pos={
-				-- 0, 0, 0
-				10, 10, 180 -- rockford front
-			},
-			orient={
-				{1,0,0},
-				{0,1,0},
-				{0,0,1}
-			}
-		},
-	},
-	
-	
-	
+
 
 	{
 		entity_name="cam_start",
@@ -948,7 +1310,7 @@ entities={
 		template_id=0,
 		spatialprops={
 			pos={
-				0, 2, 206
+				8, 2, 206
 			},
 			orient={{1,0,0},{0,1,0},{0,0,1}}
 		},
@@ -967,6 +1329,125 @@ entities={
 	},
 	
 	
+	{
+		entity_name="cam_trent_shield_damage",
+		type=CAMERA,
+		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				300.5, 1.15, 198
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+		cameraprops={
+			fovh=12,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=100000
+		}
+	},
+	{
+		entity_name="cam_trent_shield_damage_pos2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				300.5, 1.15, 197.25
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+	{
+		entity_name="cam_trent_shield_damage_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				295, 1.15, 400
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+	
+	
+	{
+		entity_name="cam_shield_destroyed",
+		type=CAMERA,
+		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				75, 50, 75
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+		cameraprops={
+			fovh=12,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	
+	
+	
+	{
+		entity_name="cam_launcher_start",
+		type=CAMERA,
+		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				10, 6, 190
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+		cameraprops={
+			fovh=10,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_launcher_start_pos2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				6, 6, 186
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+	{
+		entity_name="cam_launcher_start_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				2.6, 2, 194
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+	{
+		entity_name="cam_launcher_start_marker_pos2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				2.3, 0.8, 194
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
 }
 
 events={
@@ -1006,6 +1487,14 @@ events={
 	{0,START_PSYS,{"blackhole_lighting"}, {duration=36000}},
 	{0,START_SPATIAL_PROP_ANIM,{"planet_1"},
 		{duration=100, target_type=ROOT, spatialprops={axisrot={125,Y_AXIS}}}},
+	
+	{
+		0,
+		START_MOTION,
+		{"rockford_cockpit"},
+		{animation="Sc_launch extend",
+		 duration=2, start_time=0, time_scale=35, weight=1, heading=-1}
+	},	
 	
 	{
 		0,
@@ -1049,6 +1538,42 @@ events={
 		{
 			"cam_rockford_gunfire",
 			"cam_rockford_gunfire_marker"
+		},
+		{
+			duration=70, offset={0,0,0},
+			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+		}
+	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_trent_shield_damage",
+			"cam_trent_shield_damage_marker"
+		},
+		{
+			duration=70, offset={0,0,0},
+			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+		}
+	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_shield_destroyed",
+			"PlayerShip"
+		},
+		{
+			duration=70, offset={0,0,0},
+			up=Y_AXIS, front=NEG_Z_AXIS, target_part="HpPilot", target_type=HARDPOINT, flags=LOOK_AT
+		}
+	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_launcher_start",
+			"cam_launcher_start_marker"
 		},
 		{
 			duration=70, offset={0,0,0},
@@ -1100,7 +1625,7 @@ events={
 		{
 			"fx_player_trapped"
 		},
-		{duration=60}
+		{duration=610}
 	},
 	{
 		0,
@@ -1118,16 +1643,6 @@ events={
 	},
 	
 	
-	
-	-- {0, ATTACH_ENTITY, {"cam_dbg", "missile01"},
-		-- { duration=0.1, offset={5, 5, -12}, up=Y_AXIS,front=NEG_Z_AXIS,
-		  -- target_part="HpFire01",target_type=HARDPOINT, flags=POSITION}},
-	
-	-- {0, ATTACH_ENTITY, {"cam_dbg_marker", "missile01"},
-		-- { duration=0.1, offset={0, 0, -2}, up=Y_AXIS,front=NEG_Z_AXIS,
-		  -- target_part="HpFire01",target_type=HARDPOINT, flags=POSITION}},
-	
-	
 	{
 		0,
 		SET_CAMERA,
@@ -1141,201 +1656,6 @@ events={
 	
 	
 	
-	
-	
-	
-
-	{0, ATTACH_ENTITY, {"mrk_missile01_start_pos", "launcher01"},
-		{ duration=1, offset={0, 0, 0.7}, up=Y_AXIS,front=NEG_Z_AXIS,
-		  target_part="HpFire01",target_type=HARDPOINT, flags=POSITION+ORIENTATION}},
-		  
-	{0, ATTACH_ENTITY, {"mrk_missile01_ready_to_load", "launcher01"},
-		{ duration=1, offset={0, 0, -0.5}, up=Y_AXIS,front=NEG_Z_AXIS,
-		  target_part="HpFire01",target_type=HARDPOINT, flags=POSITION+ORIENTATION}},
-		    
-	{0, ATTACH_ENTITY, {"mrk_missile01_final_hp", "launcher01"},
-		{ duration=15, offset={0, 0, -0.7}, up=Y_AXIS,front=NEG_Z_AXIS,
-		  target_part="HpFire01",target_type=HARDPOINT, flags=POSITION+ORIENTATION}},
-		
-	{0, ATTACH_ENTITY, {"mrk_missile01_firepoint", "launcher01"},
-		{ duration=1, offset={0, 0, -200}, up=Y_AXIS,front=NEG_Z_AXIS,
-		  target_part="HpFire01",target_type=HARDPOINT, flags=POSITION+ORIENTATION}},
-		  
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	-- {
-		-- 0,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "missile01",
-			-- "mrk_missile01_start_pos"
-		-- },
-		-- {
-			-- duration=0.01,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- }
-		-- }
-	-- }, 
-	
-	
-	-- {
-		-- 3,
-		-- START_MOTION,
-		-- {"launcher01"},
-		-- {animation="Sc_br_slugger_launcher",
-		 -- duration=1, time_scale=1, weight=1, heading=-1}
-	-- },	
-	-- {
-		-- 3,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "missile01",
-			-- "mrk_missile01_final_hp"
-		-- },
-		-- {
-			-- duration=1.99,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- }
-		-- }
-	-- }, 
-	
-	-- {4.999, ATTACH_ENTITY, {"missile01", "launcher01"},
-		-- { duration=2, offset={0, 0, -0.7}, up=Y_AXIS,front=NEG_Z_AXIS,
-		  -- target_part="HpFire01",target_type=HARDPOINT, flags=POSITION+ORIENTATION}},
-	
-	-- {
-		-- 5,
-		-- START_MOTION,
-		-- {"launcher01"},
-		-- {animation="Sc_br_slugger_launcher",
-		 -- duration=1, start_time=1, trans_time=0.25, time_scale=1, weight=1, heading=-1}
-	-- },	
-	
-	
-	
-	
-	-- {
-		-- 7,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "missile01",
-			-- "mrk_missile01_firepoint"
-		-- },
-		-- {
-			-- duration=20,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- },
-		-- }
-	-- },
-	-- {
-		-- 7,
-		-- START_MOTION,
-		-- {"launcher01"},
-		-- {animation="Sc_br_slugger_launcher",
-		 -- duration=1, time_scale=1, weight=1, heading=-1}
-	-- },	
-	
-	
-	-- {
-		-- 7,
-		-- START_PSYS,
-		-- {
-			-- "fx_missile"
-		-- },
-		-- {duration=25}
-	-- },
-	-- {
-		-- 6,
-		-- ATTACH_ENTITY,
-		-- {
-			-- "fx_missile",
-			-- "missile01"
-		-- },
-		-- {
-			-- duration=25,offset={0,0,0},
-			-- up=Y_AXIS,front=NEG_Z_AXIS,
-			-- target_part="HpExhaust",
-			-- target_type=HARDPOINT,flags=POSITION + ORIENTATION
-		-- }
-	-- },
-	
-	
-	-- {
-		-- 7,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "missile01"
-		-- },
-		-- {
-			-- duration=25,
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- axisrot={
-					-- 3600,
-					-- Z_AXIS
-				-- }
-			-- }
-		-- }
-	-- },
-	
-	
-	
-	
-	
-	
-	
-	
-	-- {
-		-- 0,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "cam_dbg",
-			-- "cam_dbg__testpos2"
-		-- },
-		-- {
-			-- duration=15,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },
-	
-	
-
 
 
 
@@ -1414,6 +1734,8 @@ events={
 			pcurve_period=-1000
 		}
 	},
+	{5,START_PSYS_PROP_ANIM,{"fx_rockford_engine01"},{duration=9,psysprops={sparam=1}}},
+	{5,START_PSYS_PROP_ANIM,{"fx_rockford_engine02"},{duration=9,psysprops={sparam=1}}},
 	
 	
 	{
@@ -1439,10 +1761,8 @@ events={
 	
 	
 	
-	
-	
 	{
-		8,
+		7,
 		SET_CAMERA,
 		{
 			"Monitor_1",
@@ -1452,16 +1772,16 @@ events={
 	
 	
 	{
-		8,
+		7,
 		START_MOTION,
 		{"Char_trent"},
 		{animation="Sc_SPCBODY_s020x_VanPelt_XC_CHRF_TYPE_000DN_06",
-		 duration=25, time_scale=2, weight=1, heading=-1, event_flags=2}
+		 duration=20, time_scale=1.6, start_time=0.2, weight=1, heading=-1, event_flags=2}
 	},	
 	
 	
 	{
-		9,
+		7.5,
 		START_SOUND,
 		{
 			"DX_m07_omega13_0030_trent"
@@ -1471,7 +1791,7 @@ events={
 		}
 	},
 	{
-		9,
+		7.5,
 		START_SOUND,
 		{
 			"DX_m07_omega13_0030b_trent"
@@ -1481,32 +1801,20 @@ events={
 		}
 	},
 	
-	{11.5, START_AUDIO_PROP_ANIM, {"DX_m07_omega13_0030_trent"}, {duration=0.01, audioprops={attenuation=-100}}},
-	{11.5, START_AUDIO_PROP_ANIM, {"DX_m07_omega13_0030b_trent"}, {duration=0.01, audioprops={attenuation=0}}},
+	{10, START_AUDIO_PROP_ANIM, {"DX_m07_omega13_0030_trent"}, {duration=0.01, audioprops={attenuation=-100}}},
+	{10, START_AUDIO_PROP_ANIM, {"DX_m07_omega13_0030b_trent"}, {duration=0.01, audioprops={attenuation=0}}},
 	
 	
 	{
-		9,
+		7.5,
 		START_MOTION,
 		{"Char_trent"},
 		{animation="Sc_dx_s038x_2602_trent",
 		 duration=15,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
 	}, 
 	
-	-- {
-		-- 11.5,
-		-- SET_CAMERA,
-		-- {
-			-- "Monitor_1",
-			-- "cam_dbg"
-		-- }
-	-- },
-	
-	
-	
-	
 	{
-		11.5,
+		10,
 		SET_CAMERA,
 		{
 			"Monitor_1",
@@ -1515,14 +1823,14 @@ events={
 	},
 	
 	{
-		11.5,
+		10,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"cam_rockford_gunfire",
 			"cam_rockford_gunfire_pos2"
 		},
 		{
-			duration=6,
+			duration=6.5,
 			target_part="",
 			target_type=ROOT,
 			spatialprops={
@@ -1534,14 +1842,14 @@ events={
 		}
 	},
 	{
-		11.5,
+		10,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"cam_rockford_gunfire_marker",
 			"cam_rockford_gunfire_marker_pos2"
 		},
 		{
-			duration=6,
+			duration=5.5,
 			target_part="",
 			target_type=ROOT,
 			spatialprops={
@@ -1555,7 +1863,7 @@ events={
 	
 	
 	{
-		14,
+		12.5,
 		START_SOUND,
 		{
 			"DX_m07_omega13_0040_rockford"
@@ -1566,9 +1874,11 @@ events={
 	},
 	
 	
+	{8,START_PSYS_PROP_ANIM,{"fx_rockford_engine01"},{duration=2,psysprops={sparam=0.5}}},
+	{8,START_PSYS_PROP_ANIM,{"fx_rockford_engine02"},{duration=2,psysprops={sparam=0.5}}},
 	
-	{12,START_PSYS_PROP_ANIM,{"fx_rockford_engine01"},{duration=2,psysprops={sparam=0}}},
-	{12,START_PSYS_PROP_ANIM,{"fx_rockford_engine02"},{duration=2,psysprops={sparam=0}}},
+	{12,START_PSYS_PROP_ANIM,{"fx_rockford_engine01"},{duration=2,psysprops={sparam=0.2}}},
+	{12,START_PSYS_PROP_ANIM,{"fx_rockford_engine02"},{duration=2,psysprops={sparam=0.2}}},
 	{
 		9.1,
 		START_SPATIAL_PROP_ANIM,
@@ -1588,8 +1898,40 @@ events={
 			pcurve_period=-1000
 		}
 	},
+	{
+		9.15,
+		ATTACH_ENTITY,
+		{
+			"rockford_front",
+			"mrk_rockford_ready_to_fire_looking_point"
+		},
+		{
+			duration=1500, offset={0,0,0},
+			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+		}
+	},
 	
 	
+	{
+		9.2,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"mrk_rockford_ready_to_fire_looking_point",
+			"mrk_rockford_ready_to_fire_playerpoint"
+		},
+		{
+			duration=5,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}	
+				
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
 	{
 		9.2,
 		START_SPATIAL_PROP_ANIM,
@@ -1598,7 +1940,7 @@ events={
 			"mrk_rockford_ready_to_fire"
 		},
 		{
-			duration=8.3,
+			duration=6.3,
 			target_part="",
 			target_type=ROOT,
 			spatialprops={
@@ -1615,26 +1957,26 @@ events={
 	
 	
 	{
-		12,
+		10,
 		START_MOTION,
 		{"rockford_front"},
 		{animation="Sc_launch extend",
-		 duration=221, start_time=4, time_scale=1, weight=1, heading=-1}
+		 duration=221, start_time=4, time_scale=0.9, weight=1, heading=-1}
 	},	
 	
 	{
-		14,
+		12,
 		START_MOTION,
 		{"gun01"},
 		{animation="Sc_fire",
-		 duration=8, time_scale=1, weight=1, heading=-1, event_flags=2}
+		 duration=9, time_scale=1, weight=1, heading=-1, event_flags=2}
 	},	
 	{
-		14,
+		12,
 		START_MOTION,
 		{"gun02"},
 		{animation="Sc_fire",
-		 duration=8, time_scale=1, weight=1, heading=-1, event_flags=2}
+		 duration=9, time_scale=1, weight=1, heading=-1, event_flags=2}
 	},	
 	{0, ATTACH_ENTITY, {"gun_flash_01", "gun01"},
 		{ duration=11111, offset={0, 0, 0}, up=Y_AXIS,front=NEG_Z_AXIS,
@@ -1654,10 +1996,18 @@ events={
 	{0, ATTACH_ENTITY, {"gun02_proj_02", "gun02"},
 		{ duration=11111, offset={0, 0, -4}, up=Y_AXIS,front=NEG_Z_AXIS,
 		  target_part="HpFire01",target_type=HARDPOINT, flags=POSITION}},
-	{16, START_PSYS, { "gun_flash_01" }, { duration=6 } },
-	{16, START_PSYS, { "gun_flash_02" }, { duration=6 } },
+	{14, START_PSYS, { "gun_flash_01" }, { duration=6 } },
+	{14, START_PSYS, { "gun_flash_02" }, { duration=6 } },
 	
 	
+	{14, START_PSYS, { "gun01_proj_01" }, { duration=0.5 } },
+	{14.25, START_PSYS, { "gun01_proj_02" }, { duration=0.5 } },
+	{14.5, START_PSYS, { "gun01_proj_01" }, { duration=0.5 } },
+	{14.75, START_PSYS, { "gun01_proj_02" }, { duration=0.5 } },
+	{15, START_PSYS, { "gun01_proj_01" }, { duration=0.5 } },
+	{15.25, START_PSYS, { "gun01_proj_02" }, { duration=0.5 } },
+	{15.5, START_PSYS, { "gun01_proj_01" }, { duration=0.5 } },
+	{15.75, START_PSYS, { "gun01_proj_02" }, { duration=0.5 } },
 	{16, START_PSYS, { "gun01_proj_01" }, { duration=0.5 } },
 	{16.25, START_PSYS, { "gun01_proj_02" }, { duration=0.5 } },
 	{16.5, START_PSYS, { "gun01_proj_01" }, { duration=0.5 } },
@@ -1674,12 +2024,16 @@ events={
 	{19.25, START_PSYS, { "gun01_proj_02" }, { duration=0.5 } },
 	{19.5, START_PSYS, { "gun01_proj_01" }, { duration=0.5 } },
 	{19.75, START_PSYS, { "gun01_proj_02" }, { duration=0.5 } },
-	{20, START_PSYS, { "gun01_proj_01" }, { duration=0.5 } },
-	{20.25, START_PSYS, { "gun01_proj_02" }, { duration=0.5 } },
-	{20.5, START_PSYS, { "gun01_proj_01" }, { duration=0.5 } },
-	{20.75, START_PSYS, { "gun01_proj_02" }, { duration=0.5 } },
-
 	
+	{14, START_PSYS, { "gun02_proj_01" }, { duration=0.5 } },
+	{14.25, START_PSYS, { "gun02_proj_02" }, { duration=0.5 } },
+	{14.5, START_PSYS, { "gun02_proj_01" }, { duration=0.5 } },
+	{14.75, START_PSYS, { "gun02_proj_02" }, { duration=0.5 } },
+	{15, START_PSYS, { "gun02_proj_01" }, { duration=0.5 } },
+	{15.25, START_PSYS, { "gun02_proj_02" }, { duration=0.5 } },
+	{15.5, START_PSYS, { "gun02_proj_01" }, { duration=0.5 } },
+	{15.75, START_PSYS, { "gun02_proj_02" }, { duration=0.5 } },
+	{16, START_PSYS, { "gun02_proj_01" }, { duration=0.5 } },
 	{16.25, START_PSYS, { "gun02_proj_02" }, { duration=0.5 } },
 	{16.5, START_PSYS, { "gun02_proj_01" }, { duration=0.5 } },
 	{16.75, START_PSYS, { "gun02_proj_02" }, { duration=0.5 } },
@@ -1695,14 +2049,601 @@ events={
 	{19.25, START_PSYS, { "gun02_proj_02" }, { duration=0.5 } },
 	{19.5, START_PSYS, { "gun02_proj_01" }, { duration=0.5 } },
 	{19.75, START_PSYS, { "gun02_proj_02" }, { duration=0.5 } },
-	{20, START_PSYS, { "gun02_proj_01" }, { duration=0.5 } },
-	{20.25, START_PSYS, { "gun02_proj_02" }, { duration=0.5 } },
-	{20.5, START_PSYS, { "gun02_proj_01" }, { duration=0.5 } },
-	{20.75, START_PSYS, { "gun02_proj_02" }, { duration=0.5 } },
 
 
+	
+	{10, CONNECT_HARDPOINTS, {"cockpit_gun01", "rockford_cockpit"},
+	 {duration=1000, hardpoint="HpConnect", parent_hardpoint="HpWeapon04"}},
+	{10, CONNECT_HARDPOINTS, {"cockpit_gun02", "rockford_cockpit"},
+	 {duration=1000, hardpoint="HpConnect", parent_hardpoint="HpWeapon03"}},
 
+	 
+	 {
+		12,
+		START_MOTION,
+		{"cockpit_gun01"},
+		{animation="Sc_fire",
+		 duration=25, time_scale=1, weight=1, heading=-1, event_flags=2}
+	},	
+	{
+		12,
+		START_MOTION,
+		{"cockpit_gun02"},
+		{animation="Sc_fire",
+		 duration=25, time_scale=1, weight=1, heading=-1, event_flags=2}
+	},	
+	
+	{12, ATTACH_ENTITY, {"gun_fireblast01", "cockpit_gun01"},
+		{ duration=11111, offset={0, 0, -2}, up=NEG_Z_AXIS, front=NEG_Y_AXIS,
+		  target_part="HpFire01",target_type=HARDPOINT, flags=POSITION }},
 
+	{12, START_PSYS, { "gun_fireblast01" }, { duration=10 } },
+	
+	{
+		12,
+		ATTACH_ENTITY,
+		{
+			"gun_fireblast01",
+			"Char_trent"
+		},
+		{
+			duration=70, offset={0,0,0},
+			up=NEG_Z_AXIS, front=Y_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+		}
+	},
+	
+	
+	{12, ATTACH_ENTITY, {"gun_fireblast02", "cockpit_gun02"},
+		{ duration=11111, offset={0, 0, -2}, up=NEG_Z_AXIS, front=NEG_Y_AXIS,
+		  target_part="HpFire01",target_type=HARDPOINT, flags=POSITION }},
 
+	{12, START_PSYS, { "gun_fireblast02" }, { duration=10 } },
+	
+	{
+		12,
+		ATTACH_ENTITY,
+		{
+			"gun_fireblast02",
+			"Char_trent"
+		},
+		{
+			duration=70, offset={0,0,0},
+			up=NEG_Z_AXIS, front=Y_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+		}
+	},
+	
+	
+	
+	{16, START_LIGHT_PROP_ANIM, {"light_shield_damage"},
+	    {duration=0.3, lightprops={ diffuse={0.5,0.6,1}, ambient={0.5,0.6,1},},
+		param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000}},
+	{16.3, START_LIGHT_PROP_ANIM, {"light_shield_damage"},
+	    {duration=0.3, lightprops={ diffuse={0.25,0.3,0.5}, ambient={0.25,0.3,0.5},},
+		param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000}},
+	{16.6, START_LIGHT_PROP_ANIM, {"light_shield_damage"},
+	    {duration=0.3, lightprops={ diffuse={0.5,0.6,1}, ambient={0.5,0.6,1},},
+		param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000}},
+	{16.9, START_LIGHT_PROP_ANIM, {"light_shield_damage"},
+	    {duration=0.3, lightprops={ diffuse={0.25,0.3,0.5}, ambient={0.25,0.3,0.5},},
+		param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000}},
+	{17.2, START_LIGHT_PROP_ANIM, {"light_shield_damage"},
+	    {duration=0.3, lightprops={ diffuse={0.5,0.6,1}, ambient={0.5,0.6,1},},
+		param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000}},
+	{17.5, START_LIGHT_PROP_ANIM, {"light_shield_damage"},
+	    {duration=0.3, lightprops={ diffuse={0.25,0.3,0.5}, ambient={0.25,0.3,0.5},},
+		param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000}},
+	{17.8, START_LIGHT_PROP_ANIM, {"light_shield_damage"},
+	    {duration=0.3, lightprops={ diffuse={0.5,0.6,1}, ambient={0.5,0.6,1},},
+		param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000}},
+	{18.1, START_LIGHT_PROP_ANIM, {"light_shield_damage"},
+	    {duration=0.3, lightprops={ diffuse={0.25,0.3,0.5}, ambient={0.25,0.3,0.5},},
+		param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000}},
+	{18.5, START_LIGHT_PROP_ANIM, {"light_shield_damage"},
+	    {duration=0.3, lightprops={ diffuse={0.5,0.6,1}, ambient={0.5,0.6,1},},
+		param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000}},
+	{18.8, START_LIGHT_PROP_ANIM, {"light_shield_damage"},
+	    {duration=0.3, lightprops={ diffuse={0.25,0.3,0.5}, ambient={0.25,0.3,0.5},},
+		param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000}},
+	{19.1, START_LIGHT_PROP_ANIM, {"light_shield_damage"},
+	    {duration=0.3, lightprops={ diffuse={0.5,0.6,1}, ambient={0.5,0.6,1},},
+		param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000}},
+	{19.4, START_LIGHT_PROP_ANIM, {"light_shield_damage"},
+	    {duration=0.3, lightprops={ diffuse={0.25,0.3,0.5}, ambient={0.25,0.3,0.5},},
+		param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000}},
+	{19.7, START_LIGHT_PROP_ANIM, {"light_shield_damage"},
+	    {duration=0.3, lightprops={ diffuse={0.5,0.6,1}, ambient={0.5,0.6,1},},
+		param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000}},
+		
+		
+
+		
+	{20, START_LIGHT_PROP_ANIM, {"light_shield_damage"},
+	    {duration=0.5, lightprops={ diffuse={0,0,0}, ambient={0,0,0},},
+		param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000}},
+		
+	
+
+	
+	
+	
+	
+	{
+		16,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_trent_shield_damage"
+		}
+	},
+	
+	{
+		16,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_trent_shield_damage",
+			"cam_trent_shield_damage_pos2"
+		},
+		{
+			duration=2,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			}
+		}
+	},
+	
+	{16.0,START_PSYS, {"gun_impact_01"}, {duration=60} },
+	{16.5,START_PSYS, {"gun_impact_02"}, {duration=60} },
+	{16.8,START_PSYS, {"gun_impact_03"}, {duration=60} },
+	{17.3,START_PSYS, {"gun_impact_04"}, {duration=60} },
+	{17.7,START_PSYS, {"gun_impact_05"}, {duration=60} },
+	
+	{18.0,START_PSYS, {"gun_impact_01"}, {duration=60} },
+	{18.5,START_PSYS, {"gun_impact_02"}, {duration=60} },
+	{18.8,START_PSYS, {"gun_impact_03"}, {duration=60} },
+	{19.3,START_PSYS, {"gun_impact_04"}, {duration=60} },
+	{19.7,START_PSYS, {"gun_impact_05"}, {duration=60} },
+	
+	{20.0,START_PSYS, {"gun_impact_01"}, {duration=60} },
+	{20.5,START_PSYS, {"gun_impact_02"}, {duration=60} },
+	{20.8,START_PSYS, {"gun_impact_03"}, {duration=60} },
+	{21.3,START_PSYS, {"gun_impact_04"}, {duration=60} },
+	{21.7,START_PSYS, {"gun_impact_05"}, {duration=60} },
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	{
+		18,
+		START_IK,
+		{
+			"Char_trent",
+			"trent_head_ik"
+		},
+		{
+			duration=5,
+			end_effector="Body_Head",
+			target_part="",
+			target_type=ROOT,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		}
+	},
+	
+	{
+		18,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_trent_pilot"
+		}
+	},
+	
+	{
+		18,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_dx_s046x_1101_trent",
+		 duration=15,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	
+	{
+		18,
+		START_SOUND,
+		{
+			"DX_m07_omega13_0050_trent"
+		},
+		{
+			duration=15
+		}
+	},	
+	
+	
+	{
+		20.2,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_shield_destroyed"
+		}
+	},
+	
+	
+	
+	{
+		20.4,
+		START_PSYS,
+		{
+			"fx_shield_offline"
+		},
+		{duration=60}
+	},
+	{
+		20,
+		ATTACH_ENTITY,
+		{
+			"fx_shield_offline",
+			"PlayerShip"
+		},
+		{
+			duration=260,offset={0,0,0},
+			up=Y_AXIS,front=NEG_Z_AXIS,
+			target_part="HpRoot",
+			target_type=HARDPOINT,flags=POSITION + ORIENTATION
+		}
+	},
+	
+	
+	
+	
+	
+	{
+		22.5,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_launcher_start"
+		}
+	},
+	{
+		22,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_launcher_start",
+			"cam_launcher_start_pos2"
+		},
+		{
+			duration=6,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		23,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_launcher_start_marker",
+			"cam_launcher_start_marker_pos2"
+		},
+		{
+			duration=5,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	
+	
+	{
+		23,
+		START_SOUND,
+		{
+			"DX_m07_omega13_0060_rockford"
+		},
+		{
+			duration=15
+		}
+	},
+	
+	
+
+	{20, ATTACH_ENTITY, {"mrk_missile01_start_pos", "launcher01"},
+		{ duration=1, offset={0, 0, 0.7}, up=Y_AXIS,front=NEG_Z_AXIS,
+		  target_part="HpFire01",target_type=HARDPOINT, flags=POSITION+ORIENTATION}},
+		  
+	{20, ATTACH_ENTITY, {"mrk_missile01_ready_to_load", "launcher01"},
+		{ duration=1, offset={0, 0, -0.5}, up=Y_AXIS,front=NEG_Z_AXIS,
+		  target_part="HpFire01",target_type=HARDPOINT, flags=POSITION+ORIENTATION}},
+		    
+	{20, ATTACH_ENTITY, {"mrk_missile01_final_hp", "launcher01"},
+		{ duration=15, offset={0, 0, -0.7}, up=Y_AXIS,front=NEG_Z_AXIS,
+		  target_part="HpFire01",target_type=HARDPOINT, flags=POSITION+ORIENTATION}},
+		
+	{20, ATTACH_ENTITY, {"mrk_missile01_firepoint", "launcher01"},
+		{ duration=1, offset={0, 0, -200}, up=Y_AXIS,front=NEG_Z_AXIS,
+		  target_part="HpFire01",target_type=HARDPOINT, flags=POSITION+ORIENTATION}},
+		  
+		
+	
+	{
+		23,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"missile01",
+			"mrk_missile01_start_pos"
+		},
+		{
+			duration=0.01,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			}
+		}
+	}, 
+	
+	
+	{
+		25,
+		START_MOTION,
+		{"launcher01"},
+		{animation="Sc_br_slugger_launcher",
+		 duration=1, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		25,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"missile01",
+			"mrk_missile01_final_hp"
+		},
+		{
+			duration=1.99,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			}
+		}
+	}, 
+	
+	{26.999, ATTACH_ENTITY, {"missile01", "launcher01"},
+		{ duration=2, offset={0, 0, -0.7}, up=Y_AXIS,front=NEG_Z_AXIS,
+		  target_part="HpFire01",target_type=HARDPOINT, flags=POSITION+ORIENTATION}},
+	
+	{
+		27,
+		START_MOTION,
+		{"launcher01"},
+		{animation="Sc_br_slugger_launcher",
+		 duration=1, start_time=1, trans_time=0.25, time_scale=1, weight=1, heading=-1}
+	},	
+	
+	
+	
+	
+	-- {
+		-- 28,
+		-- SET_CAMERA,
+		-- {
+			-- "Monitor_1",
+			-- "cam_trent_pilot"
+		-- }
+	-- },
+	
+	
+	
+	
+	
+	
+	
+	-- {2, START_LIGHT_PROP_ANIM, {"light_shield_damage"},
+	    -- {duration=0.3, lightprops={ diffuse={0.5,0.6,1}, ambient={0.5,0.6,1},},
+		-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000}},
+	-- {2.3, START_LIGHT_PROP_ANIM, {"light_shield_damage"},
+	    -- {duration=0.3, lightprops={ diffuse={0.25,0.3,0.5}, ambient={0.25,0.3,0.5},},
+		-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000}},
+	-- {2.6, START_LIGHT_PROP_ANIM, {"light_shield_damage"},
+	    -- {duration=0.3, lightprops={ diffuse={0.5,0.6,1}, ambient={0.5,0.6,1},},
+		-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000}},
+	-- {2.9, START_LIGHT_PROP_ANIM, {"light_shield_damage"},
+	    -- {duration=0.3, lightprops={ diffuse={0.25,0.3,0.5}, ambient={0.25,0.3,0.5},},
+		-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000}},
+	-- {3.2, START_LIGHT_PROP_ANIM, {"light_shield_damage"},
+	    -- {duration=0.3, lightprops={ diffuse={0.5,0.6,1}, ambient={0.5,0.6,1},},
+		-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000}},
+	-- {3.5, START_LIGHT_PROP_ANIM, {"light_shield_damage"},
+	    -- {duration=0.3, lightprops={ diffuse={0,0,0}, ambient={0,0,0},},
+		-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000}},
+		
+		
+	
+	
+	
+	-- {
+		-- 0.01,
+		-- SET_CAMERA,
+		-- {
+			-- "Monitor_1",
+			-- "cam_trent_shield_damage"
+		-- }
+	-- },
+	
+	
+	
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_SPCBODY_s020x_VanPelt_XC_CHRF_TYPE_000DN_06",
+		 -- duration=20, time_scale=1.6, start_time=0.2, weight=1, heading=-1, event_flags=2}
+	-- },	
+	
+	
+	
+	
+	
+	
+	
+	-- {
+		-- 7,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "missile01",
+			-- "mrk_missile01_firepoint"
+		-- },
+		-- {
+			-- duration=20,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- pos={0,0,0},
+				-- q_orient={1,0,0,0}
+			-- },
+		-- }
+	-- },
+	-- {
+		-- 7,
+		-- START_MOTION,
+		-- {"launcher01"},
+		-- {animation="Sc_br_slugger_launcher",
+		 -- duration=1, time_scale=1, weight=1, heading=-1}
+	-- },	
+	
+	
+	-- {
+		-- 7,
+		-- START_PSYS,
+		-- {
+			-- "fx_missile"
+		-- },
+		-- {duration=25}
+	-- },
+	-- {
+		-- 6,
+		-- ATTACH_ENTITY,
+		-- {
+			-- "fx_missile",
+			-- "missile01"
+		-- },
+		-- {
+			-- duration=25,offset={0,0,0},
+			-- up=Y_AXIS,front=NEG_Z_AXIS,
+			-- target_part="HpExhaust",
+			-- target_type=HARDPOINT,flags=POSITION + ORIENTATION
+		-- }
+	-- },
+	
+	
+	-- {
+		-- 7,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "missile01"
+		-- },
+		-- {
+			-- duration=25,
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- axisrot={
+					-- 3600,
+					-- Z_AXIS
+				-- }
+			-- }
+		-- }
+	-- },
+	
+	
+	
+	
+	
+	{
+		28,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_trent_shield_damage"
+		}
+	},
+	{
+		28,
+		START_MOTION,
+		{
+			"Char_trent"
+		},
+		{
+			animation="Sc_MLBODY_CHRB_TWSTS_LOOK_270LV_XA_03",
+			duration=113,
+			time_scale=0.75,
+			weight=1,
+			heading=-1
+		}
+	},
+	{
+		28.5,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_trent"
+		},
+		{
+			duration=3,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					90,
+					Y_AXIS
+				}
+			}
+		}
+	},
+	{
+		28.5,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"chair"
+		},
+		{
+			duration=3,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					90,
+					Y_AXIS
+				}
+			}
+		}
+	},
+	
+	
+	
+	
+	
+	
+	-- {0, ATTACH_ENTITY, {"cam_dbg", "missile01"},
+		-- { duration=0.1, offset={5, 5, -12}, up=Y_AXIS,front=NEG_Z_AXIS,
+		  -- target_part="HpFire01",target_type=HARDPOINT, flags=POSITION}},
+	
+	-- {0, ATTACH_ENTITY, {"cam_dbg_marker", "missile01"},
+		-- { duration=0.1, offset={0, 0, -2}, up=Y_AXIS,front=NEG_Z_AXIS,
+		  -- target_part="HpFire01",target_type=HARDPOINT, flags=POSITION}},
 	
 }
