@@ -271,7 +271,7 @@ entities={
 		flags=LIT_DYNAMIC,
 		spatialprops={
 			pos={
-				-0.5,
+				-2,
 				0,
 				7.355458
 			},
@@ -312,15 +312,15 @@ entities={
 		flags=LIT_DYNAMIC,
 		spatialprops={
 			pos={
-				-0.5,
+				3.2,
 				0,
-				7.355458
+				14
 			},
 			orient={
 				{
-					0.997377,
+					1,
 					0,
-					0.072376
+					0
 				},
 				{
 					0,
@@ -328,9 +328,9 @@ entities={
 					0
 				},
 				{
-					-0.072376,
 					0,
-					0.997377
+					0,
+					1
 				}
 			}
 		},
@@ -343,11 +343,94 @@ entities={
 		}
 	},
 	
+		
+	{
+		entity_name="cam_start",
+		type=CAMERA,
+		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				3.4, 2, 15
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+		cameraprops={
+			fovh=20,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_start_pos2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				4, 2.3, 9
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+	{
+		entity_name="cam_start_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				2, 1, 4
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+	{
+		entity_name="cam_start_marker_pos2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-3, 1, 4
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
 
 
 	
-	
-	
+	{
+		entity_name="cam_delta_sit",
+		type=CAMERA,
+		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				-2, 1.2, 3.8
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+		cameraprops={
+			fovh=20,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_delta_sit_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-3.4, 1.2, 3.2
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
 
 		
 	{
@@ -381,7 +464,7 @@ entities={
 		template_id=0,
 		spatialprops={
 			pos={
-				-2, 0, 6 --dbg
+				-1, 0, 6 --dbg
 				-- -2, 0, 5 --table
 			},
 			orient={
@@ -408,6 +491,31 @@ events = {
 			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
 		}
 	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_start",
+			"cam_start_marker"
+		},
+		{
+			duration=70, offset={0,0,0},
+			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+		}
+	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_delta_sit",
+			"cam_delta_sit_marker"
+		},
+		{
+			duration=70, offset={0,0,0},
+			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+		}
+	},
+	
 	
 	
 	{
@@ -474,15 +582,81 @@ events = {
 	
 	
 	
+	
+	{
+		4,
+		START_MOTION,
+		{"Char_prisoner2b"},
+		{animation="Sc_MLBODY_CHRF_TWSTS_LOOK_090LV_XA_02",
+		 duration=21, time_scale=0.6, trans_time=1, weight=1, heading=-1}
+	},	
+	{
+		10,
+		START_MOTION,
+		{"Char_prisoner2b"},
+		{animation="Sc_MLBODY_CHRF_TWSTS_FROM_090LV_XA_02",
+		 duration=21, time_scale=0.6, trans_time=1, weight=1, heading=-1}
+	},	
+	{
+		2,
+		START_MOTION,
+		{"Char_prisoner3b"},
+		{animation="Sc_MLBODY_CHRB_TWSTU_C-CL_LESS_000LV_A_14",
+		 duration=21, start_time=7, time_scale=1, trans_time=1, weight=1, heading=-1}
+	},	
+	{
+		4.5,
+		START_MOTION,
+		{"Char_delta"},
+		{animation="Sc_MLBODY_CHRB_WAVE_RHND_000LV_XA_03",
+		 duration=21, time_scale=0.7, trans_time=1, weight=1, heading=-1}
+	},	
+
+	
+	
 	{
 		0,
 		START_MOTION,
-		{"Char_delta"},
-		{animation="Sc_MLBODY_CHRB_STNDCL_TRNS_270LV_XA_06",
-		 duration=21, time_scale=1, weight=1, heading=-1}
+		{"Char_trent"},
+		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 duration=12, time_scale=1, weight=1, heading=-1, event_flags=2}
 	},	
-	
-	
+	{
+		2,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_trent"
+		},
+		{
+			duration=4,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					28,
+					Y_AXIS
+				}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		10,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_trent"
+		},
+		{
+			duration=2,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					35,
+					Y_AXIS
+				}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
 	
 	
 	-- {
@@ -490,28 +664,119 @@ events = {
 		-- START_MOTION,
 		-- {"Char_trent"},
 		-- {animation="Sc_MLBODY_WLKG_000LV_XA_01",
-		 -- duration=6, time_scale=1, weight=1, heading=-1, event_flags=2}
+		 -- duration=0.1, time_scale=1, weight=1, heading=-1, event_flags=2}
 	-- },	
+		
+		
+		
+		
+		
+		
+	
+	{
+		0,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_start"
+		}
+	},
+	{
+		0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_start",
+			"cam_start_pos2"
+		},
+		{
+			duration=7,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0},q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		2,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_start_marker",
+			"cam_start_marker_pos2"
+		},
+		{
+			duration=5,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0},q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+		
+		
+		
+		
+		
+		
+		
+	{
+		5,
+		START_IK,
+		{
+			"Char_prisoner4b",
+			"Char_trent"
+		},
+		{
+			duration=5,
+			end_effector="Body_Head", transition_duration=3, 
+			target_part="Body_Head", target_type=PART,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+		}
+	},
+		
+	{
+		0,
+		START_IK,
+		{
+			"Char_trent",
+			"Char_delta"
+		},
+		{
+			duration=25,
+			end_effector="Body_Head", transition_duration=3, 
+			target_part="Body_Head", target_type=PART,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+		}
+	},
+		
+		
 	-- {
-		-- 3,
-		-- START_SPATIAL_PROP_ANIM,
+		-- 0,
+		-- START_IK,
 		-- {
+			-- "Char_delta",
 			-- "Char_trent"
 		-- },
 		-- {
-			-- duration=3,
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- axisrot={
-					-- 90,
-					-- Y_AXIS
-				-- }
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+			-- duration=25,
+			-- end_effector="Body_Head", transition_duration=3, 
+			-- target_part="Body_Head", target_type=PART,
+			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
 		-- }
 	-- },
+
+
+
 	
-		
+	{
+		0.1,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_delta_sit"
+		}
+	},
+
+
 }
 
 
