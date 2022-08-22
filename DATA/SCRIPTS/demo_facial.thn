@@ -2826,58 +2826,58 @@ events={
 		 -- duration=8, time_scale=1, start_time=1, trans_time=0.5, weight=1, heading=-1}
 	-- }, 
 	
-	-- {
-		-- 0,
-		-- START_SOUND,
-		-- {
-			-- "DX_m06_freeport_0090_delta1"
-		-- },
-		-- {
-			-- duration=15
-		-- }
-	-- },
+	{
+		0,
+		START_SOUND,
+		{
+			"DX_m06_freeport_0090_delta1"
+		},
+		{
+			duration=15
+		}
+	},
 	
-	-- {
-		-- 0,
-		-- START_MOTION,
-		-- {"Char_delta"},
-		-- {animation="Sc_dx_s070x_2801_Orillion",
-		 -- duration=8, time_scale=1, trans_time=0.25, weight=1, heading=-1}
-	-- }, 
-	-- {
-		-- 6,
-		-- START_MOTION,
-		-- {"Char_delta"},
-		-- {animation="Sc_dx_s070x_0501_Orillion",
-		 -- duration=8, time_scale=1,trans_time=0.25, weight=1, heading=-1}
-	-- },	
+	{
+		0,
+		START_MOTION,
+		{"Char_delta"},
+		{animation="Sc_dx_s070x_2801_Orillion",
+		 duration=8, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	{
+		6,
+		START_MOTION,
+		{"Char_delta"},
+		{animation="Sc_dx_s070x_0501_Orillion",
+		 duration=8, time_scale=1,trans_time=0.25, weight=1, heading=-1}
+	},	
 	
 	
-	-- {
-		-- 0,
-		-- START_SOUND,
-		-- {
-			-- "DX_m06_freeport_0100_delta1"
-		-- },
-		-- {
-			-- duration=15
-		-- }
-	-- },
+	{
+		10,
+		START_SOUND,
+		{
+			"DX_m06_freeport_0100_delta1"
+		},
+		{
+			duration=15
+		}
+	},
 	
-	-- {
-		-- 0,
-		-- START_MOTION,
-		-- {"Char_delta"},
-		-- {animation="Sc_dx_s070x_2801_Orillion",
-		 -- duration=8, time_scale=1, trans_time=0.25, weight=1, heading=-1}
-	-- }, 
-	-- {
-		-- 3,
-		-- START_MOTION,
-		-- {"Char_delta"},
-		-- {animation="Sc_dx_s070x_0501_Orillion",
-		 -- duration=8, start_time=0, time_scale=1,trans_time=0.25, weight=1, heading=-1}
-	-- },	
+	{
+		10,
+		START_MOTION,
+		{"Char_delta"},
+		{animation="Sc_dx_s070x_2801_Orillion",
+		 duration=8, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	{
+		13,
+		START_MOTION,
+		{"Char_delta"},
+		{animation="Sc_dx_s070x_0501_Orillion",
+		 duration=8, start_time=0, time_scale=1,trans_time=0.25, weight=1, heading=-1}
+	},	
 	
 	-- {
 		-- 0,
@@ -2907,164 +2907,173 @@ events={
 	-- }, 
 	
 	
+	-- {
+		-- 0,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_freeport_0070_trent"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_dx_s052x_0401_trent",
+		 -- duration=6,  time_scale=0.8, start_time=1.6, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
 	
-	{
-		0.001,
-		SET_CAMERA,
-		{
-			"Monitor_1",
-			"cam_syd"
-		}
-	},
 	
+	
+	
+	-- {
+		-- 0,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_freeport_0030_delta1"
+		-- },
+		-- {
+			-- duration=11
+		-- }
+	-- },
+	
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_delta"},
+		-- {animation="Sc_dx_s070x_2801_Orillion",
+		 -- duration=8, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 6,
+		-- START_MOTION,
+		-- {"Char_delta"},
+		-- {animation="Sc_dx_s070x_2804_Orillion",
+		 -- duration=5, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 10,
+		-- START_MOTION,
+		-- {
+			-- "Char_delta"
+		-- },
+		-- {
+			-- animation="Sc_MLHEAD_BASEPOSE_000LV_02_01",
+			-- duration=1,
+			-- trans_time=0.5,
+			-- time_scale=0.9,
+			-- weight=1,
+			-- heading=-1
+		-- }
+	-- },
+	
+
+	-- {
+		-- 11,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_freeport_0040_delta1"
+		-- },
+		-- {
+			-- duration=7
+		-- }
+	-- },
+	
+	-- {
+		-- 11,
+		-- START_MOTION,
+		-- {"Char_delta"},
+		-- {animation="Sc_dx_s070x_2801_Orillion",
+		 -- duration=8, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 15,
+		-- START_MOTION,
+		-- {"Char_delta"},
+		-- {animation="Sc_dx_s070x_0501_Orillion",
+		 -- duration=8, time_scale=1, start_time=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 18,
+		-- START_MOTION,
+		-- {
+			-- "Char_delta"
+		-- },
+		-- {
+			-- animation="Sc_MLHEAD_BASEPOSE_000LV_02_01",
+			-- duration=1,
+			-- trans_time=0.5,
+			-- time_scale=0.9,
+			-- weight=1,
+			-- heading=-1
+		-- }
+	-- },
+	
+
+	-- {
+		-- 19,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_freeport_0050_delta1"
+		-- },
+		-- {
+			-- duration=9
+		-- }
+	-- },
+	
+	-- {
+		-- 19,
+		-- START_MOTION,
+		-- {"Char_delta"},
+		-- {animation="Sc_dx_s070x_2801_Orillion",
+		 -- duration=8, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 23.5,
+		-- START_MOTION,
+		-- {"Char_delta"},
+		-- {animation="Sc_dx_s070x_0501_Orillion",
+		 -- duration=8, time_scale=1, start_time=1, trans_time=0.25, weight=1, heading=-1}
+	-- },
+
+	-- {
+		-- 27,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_freeport_0060_delta1"
+		-- },
+		-- {
+			-- duration=16
+		-- }
+	-- },
+	
+	-- {
+		-- 27,
+		-- START_MOTION,
+		-- {"Char_delta"},
+		-- {animation="Sc_dx_s070x_2801_Orillion",
+		 -- duration=8, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 33,
+		-- START_MOTION,
+		-- {"Char_delta"},
+		-- {animation="Sc_dx_s070x_0501_Orillion",
+		 -- duration=8, time_scale=1,trans_time=0.25, weight=1, heading=-1}
+	-- },	
+	-- {
+		-- 37,
+		-- START_MOTION,
+		-- {"Char_delta"},
+		-- {animation="Sc_dx_s070x_2801_Orillion",
+		 -- duration=8, time_scale=1, start_time=1, trans_time=0.5, weight=1, heading=-1}
+	-- }, 
 	
 	
 	{
 		0,
-		START_SOUND,
-		{
-			"DX_m06_freeport_0030_delta1"
-		},
-		{
-			duration=11
-		}
-	},
-	
-	{
-		0,
-		START_MOTION,
-		{"Char_delta"},
-		{animation="Sc_dx_s070x_2801_Orillion",
-		 duration=8, time_scale=1, trans_time=0.25, weight=1, heading=-1}
-	}, 
-	{
-		6,
-		START_MOTION,
-		{"Char_delta"},
-		{animation="Sc_dx_s070x_2804_Orillion",
-		 duration=5, time_scale=1, trans_time=0.25, weight=1, heading=-1}
-	}, 
-	{
-		10,
-		START_MOTION,
-		{
-			"Char_delta"
-		},
-		{
-			animation="Sc_MLHEAD_BASEPOSE_000LV_02_01",
-			duration=1,
-			trans_time=0.5,
-			time_scale=0.9,
-			weight=1,
-			heading=-1
-		}
-	},
-	
-
-	{
-		11,
-		START_SOUND,
-		{
-			"DX_m06_freeport_0040_delta1"
-		},
-		{
-			duration=7
-		}
-	},
-	
-	{
-		11,
-		START_MOTION,
-		{"Char_delta"},
-		{animation="Sc_dx_s070x_2801_Orillion",
-		 duration=8, time_scale=1, trans_time=0.25, weight=1, heading=-1}
-	}, 
-	{
-		15,
-		START_MOTION,
-		{"Char_delta"},
-		{animation="Sc_dx_s070x_0501_Orillion",
-		 duration=8, time_scale=1, start_time=1, trans_time=0.25, weight=1, heading=-1}
-	}, 
-	{
-		18,
-		START_MOTION,
-		{
-			"Char_delta"
-		},
-		{
-			animation="Sc_MLHEAD_BASEPOSE_000LV_02_01",
-			duration=1,
-			trans_time=0.5,
-			time_scale=0.9,
-			weight=1,
-			heading=-1
-		}
-	},
-	
-
-	{
-		19,
-		START_SOUND,
-		{
-			"DX_m06_freeport_0050_delta1"
-		},
-		{
-			duration=9
-		}
-	},
-	
-	{
-		19,
-		START_MOTION,
-		{"Char_delta"},
-		{animation="Sc_dx_s070x_2801_Orillion",
-		 duration=8, time_scale=1, trans_time=0.25, weight=1, heading=-1}
-	}, 
-	{
-		23.5,
-		START_MOTION,
-		{"Char_delta"},
-		{animation="Sc_dx_s070x_0501_Orillion",
-		 duration=8, time_scale=1, start_time=1, trans_time=0.25, weight=1, heading=-1}
-	},
-
-	{
-		27,
-		START_SOUND,
-		{
-			"DX_m06_freeport_0060_delta1"
-		},
-		{
-			duration=16
-		}
-	},
-	
-	{
-		27,
-		START_MOTION,
-		{"Char_delta"},
-		{animation="Sc_dx_s070x_2801_Orillion",
-		 duration=8, time_scale=1, trans_time=0.25, weight=1, heading=-1}
-	}, 
-	{
-		33,
-		START_MOTION,
-		{"Char_delta"},
-		{animation="Sc_dx_s070x_0501_Orillion",
-		 duration=8, time_scale=1,trans_time=0.25, weight=1, heading=-1}
-	},	
-	{
-		37,
-		START_MOTION,
-		{"Char_delta"},
-		{animation="Sc_dx_s070x_2801_Orillion",
-		 duration=8, time_scale=1, start_time=1, trans_time=0.5, weight=1, heading=-1}
-	}, 
-	
-	
-	{
-		43,
 		SET_CAMERA,
 		{
 			"Monitor_1",

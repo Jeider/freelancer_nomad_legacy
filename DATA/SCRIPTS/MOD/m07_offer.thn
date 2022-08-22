@@ -44,11 +44,24 @@ entities={
 		flags=LIT_DYNAMIC,
 		spatialprops={pos={-100,-10000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		compoundprops={
-			floor_height=-110
+			floor_height==-110
 		},
 		userprops={
 			actor="bartender",
 			category="Character"
+		}
+	},
+	{
+		entity_name="prop_cigarette_2",
+		type=COMPOUND,
+		template_name="cigarette_2",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={pos={-100,-10000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		userprops={
+			category="Prop"
 		}
 	},
 	
@@ -129,6 +142,97 @@ entities={
 
 
 
+
+
+
+	{
+		entity_name="DX_m07_offer_0010_barman",
+		template_name="DX_m07_offer_0010_barman",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_offer_0020_trent",
+		template_name="DX_m07_offer_0020_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_offer_0030_barman",
+		template_name="DX_m07_offer_0030_barman",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_offer_0040_trent",
+		template_name="DX_m07_offer_0040_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_offer_0050_barman",
+		template_name="DX_m07_offer_0050_barman",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_offer_0060_trent",
+		template_name="DX_m07_offer_0060_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_offer_0070_barman",
+		template_name="DX_m07_offer_0070_barman",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_offer_0080_barman",
+		template_name="DX_m07_offer_0080_barman",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_offer_0090_barman",
+		template_name="DX_m07_offer_0090_barman",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_offer_0100_barman",
+		template_name="DX_m07_offer_0100_barman",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_offer_0110_trent",
+		template_name="DX_m07_offer_0110_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
 
 
 	{
@@ -313,7 +417,7 @@ entities={
 		}
 	},
 	
-		{
+	{
 		entity_name="point_trent_sit_down",
 		type=MARKER,
 		template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
@@ -343,7 +447,47 @@ entities={
 		}
 	},
 		
-		
+	
+	{
+		entity_name="Char_barman",
+		type=DEFORMABLE,
+		template_name="vance",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				7,
+				0,
+				1
+			},
+			orient={
+				{
+					0.870835,
+					0,
+					-0.491575
+				},
+				{
+					0,
+					1,
+					0
+				},
+				{
+					0.491575,
+					0,
+					0.870835
+				}
+			}
+		},
+		compoundprops={
+			floor_height==-110
+		},
+		userprops={
+			actor="m6_bartender",
+			category="Character"
+		}
+	},	
 		
 		
 		
@@ -531,7 +675,7 @@ entities={
 		flags=HIDDEN,
 		spatialprops={
 			pos={
-				-1, 1.2, 2
+				-0.8, 1.3, 2.5
 			},
 			orient={{1,0,0},{0,1,0},{0,0,1}}
 		},
@@ -549,7 +693,7 @@ entities={
 		template_id=0,
 		spatialprops={
 			pos={
-				-1, 1.1, 1.5
+				-1, 1.1, 2
 			},
 			orient={{1,0,0},{0,1,0},{0,0,1}}
 		},
@@ -561,7 +705,7 @@ entities={
 		template_id=0,
 		spatialprops={
 			pos={
-				-2.3, 0.9, 1.5
+				-1, 1.3, 2
 			},
 			orient={{1,0,0},{0,1,0},{0,0,1}}
 		},
@@ -604,6 +748,54 @@ entities={
 	},
 
 
+
+
+	{
+		entity_name="cam_delta_warning",
+		type=CAMERA,
+		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				-1.5, 1.05, 2.7
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+		cameraprops={
+			fovh=15,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_delta_warning_pos2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-1.2, 1.2, 2.5
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+	{
+		entity_name="cam_delta_warning_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-3, 1.1, 3.2
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+	
+	
+
+
 		
 	{
 		entity_name="cam_dbg",
@@ -612,8 +804,9 @@ entities={
 		flags=HIDDEN,
 		spatialprops={
 			pos={
-				-- 2, 3, -2 --dbg
-				-2, 4, 1 --table
+				-- 2, 3, -2 --dbg1
+				-- -2, 4, 0 --table
+				18, 6, -1 --dbg2
 			},
 			orient={
 				{1,0,0},
@@ -636,8 +829,9 @@ entities={
 		template_id=0,
 		spatialprops={
 			pos={
-				-- -1, 0, 6 --dbg
-				-2, 0, 3 --table
+				-- -1, 0, 6 --dbg1
+				-- -2, 0, 2 --table
+				2, 0,1  --dbg2
 			},
 			orient={
 				{1,0,0},
@@ -723,6 +917,19 @@ events = {
 			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
 		}
 	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_delta_warning",
+			"cam_delta_warning_marker"
+		},
+		{
+			duration=100, offset={0,0,0},
+			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+		}
+	},
+	
 	
 	
 	
@@ -1014,6 +1221,13 @@ events = {
 	-- },
 
 
+	-- {
+		-- 10,
+		-- START_MOTION,
+		-- {"Char_prisoner4b"},
+		-- {animation="Sc_MLBODY_CHRF_TAP_RHND_000LV_A_02",
+		 -- duration=17, time_scale=0.3, trans_time=1, weight=1, heading=-1, event_flags=2}
+	-- },
 
 	-- {
 		-- 15,
@@ -1114,6 +1328,7 @@ events = {
 	-- }, 
 	
 
+	
 	-- {
 		-- 28,
 		-- SET_CAMERA,
@@ -1138,14 +1353,14 @@ events = {
 		-- }
 	-- },
 	-- {
-		-- 28,
+		-- 53,
 		-- START_SPATIAL_PROP_ANIM,
 		-- {
-			-- "cam_delta_explaining_marker",
-			-- "cam_delta_explaining_marker_pos2"
+			-- "cam_delta_explaining",
+			-- "cam_delta_explaining_pos3"
 		-- },
 		-- {
-			-- duration=20,
+			-- duration=15,
 			-- target_part="", target_type=ROOT,
 			-- spatialprops={pos={0,0,0},q_orient={1,0,0,0}},
 			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
@@ -1153,10 +1368,8 @@ events = {
 		-- }
 	-- },
 	
-
+	
 		
-		
-
 	-- {
 		-- 28,
 		-- START_SOUND,
@@ -1301,309 +1514,445 @@ events = {
 	-- }, 
 	
 	
+	
+
+	
+	-- {
+		-- 28,
+		-- START_MOTION,
+		-- {"Char_delta"},
+		-- {animation="Sc_MLBODY_CHRF_TALK_HNSTBL_000LV_A_34",
+		 -- duration=20, time_scale=0.8, trans_time=1,   weight=1, heading=-1}
+	-- },
+	-- {
+		-- 48,
+		-- START_MOTION,
+		-- {"Char_delta"},
+		-- {animation="Sc_MLBODY_CHRF_IDLE_000LV_XA_06",
+		 -- duration=15,  time_scale=1, trans_time=3,   weight=1, heading=-1,event_flags=2}
+	-- },
+	-- {
+		-- 54,
+		-- START_MOTION,
+		-- {"Char_delta"},
+		-- {animation="Sc_MLBODY_CHRF_CONV_RHNDUP_TRNS_000LV_XA_02",
+		 -- duration=2, time_scale=0.75, trans_time=0.25, weight=1,  heading=-1}
+	-- },
+	-- {
+		-- 56,
+		-- START_MOTION,
+		-- {"Char_delta"},
+		-- {animation="Sc_MLBODY_CHRF_CONV_RHND_CASL_000LV_XA_04",
+		 -- duration=3.7, time_scale=0.75, trans_time=0.25, weight=1, heading=-1, event_flags=2}
+	-- },
+	-- {
+		-- 59,
+		-- START_MOTION,
+		-- {"Char_delta"},
+		-- {animation="Sc_MLBODY_CHRF_CONV_RHNDDN_TRNS_000LV_XA_02",
+		 -- duration=3, time_scale=0.5, trans_time=1, weight=1,  heading=-1}
+	-- },
+	
+	-- {
+		-- 63.5,
+		-- START_MOTION,
+		-- {"Char_delta"},
+		-- {animation="Sc_MLBODY_CHRF_CHRB_TRNS_000LV_XA_02",
+		 -- duration=15, time_scale=0.4, trans_time=1,   weight=1, heading=-1}
+	-- },
+	
+	
+	
+	
+	
+	-- {
+		-- 28,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_MLBODY_CHRB_IDLE_MED_000LV_XA_07",
+		 -- duration=62, time_scale=0.6, weight=1, heading=-1, event_flags=2}
+	-- },
+	
+	
+	
+	-- {
+		-- 28,
+		-- START_MOTION,
+		-- {"Char_prisoner4b"},
+		-- {animation="Sc_MLBODY_CHRF_IDLE_BIG_000LV_XA_06",
+		 -- duration=10, start_time=2, time_scale=0.6,  weight=1, heading=-1, event_flags=2}
+	-- },
+
+	
+	-- {
+		-- 38,
+		-- START_MOTION,
+		-- {"Char_prisoner4b"},
+		-- {animation="Sc_MLBODY_CHRF_TAP_RHND_000LV_A_02",
+		 -- duration=5, time_scale=0.4, trans_time=1, weight=1, heading=-1, event_flags=2}
+	-- },
+	
+	-- {
+		-- 43,
+		-- START_MOTION,
+		-- {"Char_prisoner4b"},
+		-- {animation="Sc_MLBODY_CHRF_GRABR_CHIN_RLEASE_000LV_XA_02",
+		 -- duration=5, time_scale=0.5, weight=1, trans_time=1, heading=-1}
+	-- },
+	-- {
+		-- 47,
+		-- START_MOTION,
+		-- {"Char_prisoner4b"},
+		-- {animation="Sc_MLBODY_CHRF_CHIN_HOLDR_000LV_XA_03",
+		 -- duration=5, time_scale=0.5, weight=1, trans_time=0.5, heading=-1, event_flags=2}
+	-- },
+	-- {
+		-- 52,
+		-- START_MOTION,
+		-- {"Char_prisoner4b"},
+		-- {animation="Sc_MLBODY_CHRF_HOLD_CHIN_RLEASE_000LV_XA_03",
+		 -- duration=5, time_scale=0.5, weight=1, trans_time=0.5, heading=-1}
+	-- },
+	-- {
+		-- 56,
+		-- START_MOTION,
+		-- {"Char_prisoner4b"},
+		-- {animation="Sc_MLBODY_CHRF_TAP_RHND_000LV_A_02",
+		 -- duration=5, time_scale=0.4, trans_time=1, weight=1, heading=-1, event_flags=2}
+	-- },
+	-- {
+		-- 61,
+		-- START_MOTION,
+		-- {"Char_prisoner4b"},
+		-- {animation="Sc_MLBODY_CHRF_GRABR_CHIN_RLEASE_000LV_XA_02",
+		 -- duration=5, time_scale=0.5, weight=1, trans_time=1, heading=-1}
+	-- },
+	-- {
+		-- 65,
+		-- START_MOTION,
+		-- {"Char_prisoner4b"},
+		-- {animation="Sc_MLBODY_CHRF_CHIN_HOLDR_000LV_XA_03",
+		 -- duration=5, time_scale=0.5, weight=1, trans_time=0.5, heading=-1, event_flags=2}
+	-- },
+	-- {
+		-- 69,
+		-- START_MOTION,
+		-- {"Char_prisoner4b"},
+		-- {animation="Sc_MLBODY_CHRF_HOLD_CHIN_RLEASE_000LV_XA_03",
+		 -- duration=5, time_scale=0.5, weight=1, trans_time=0.5, heading=-1}
+	-- },
+	
 	{
-		71,
-		SET_CAMERA,
+		28,
+		START_MOTION,
 		{
-			"Monitor_1",
-			"cam_trent_sit"
+			"Char_prisoner4b"
+		},
+		{
+			animation="Sc_MLHAND_HNEUT_POINT_RGHT_MILI_000LV_00",
+			duration=3,
+			time_scale=1,
+			weight=1,
+			heading=-1
 		}
 	},
 	
+	-- {
+		-- 28,
+		-- CONNECT_HARDPOINTS,
+		-- {
+			-- "prop_cigarette_2",
+			-- "Char_prisoner4b"
+		-- },
+		-- {
+			-- duration=50,
+			-- hardpoint="hprightconnect_cigarette",
+			-- parent_hardpoint="hprightconnect"
+		-- }
+	-- },
+	-- {
+		-- 28,
+		-- START_IK,
+		-- {
+			-- "Char_delta",
+			-- "Char_trent"
+		-- },
+		-- {
+			-- duration=65,
+			-- end_effector="Eye IK Left", 
+			-- target_part="Body_Head", target_type=PART,
+			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=2, event_flags=128
+		-- }
+	-- },
+	-- {
+		-- 28,
+		-- START_IK,
+		-- {
+			-- "Char_delta",
+			-- "Char_trent"
+		-- },
+		-- {
+			-- duration=65,
+			-- end_effector="Body_Head", transition_duration=4, 
+			-- target_part="Body_Head", target_type=PART,
+			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+		-- }
+	-- },
+	
+	
+	-- {
+		-- 71,
+		-- SET_CAMERA,
+		-- {
+			-- "Monitor_1",
+			-- "cam_trent_sit"
+		-- }
+	-- },
+	-- {
+		-- 71,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_freeport_0070_trent"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	-- {
+		-- 71,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_dx_s052x_0401_trent",
+		 -- duration=6,  time_scale=0.8, start_time=1.6, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	
+	-- {
+		-- 74,
+		-- SET_CAMERA,
+		-- {
+			-- "Monitor_1",
+			-- "cam_delta_warning"
+		-- }
+	-- },
+	-- {
+		-- 84,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "cam_delta_warning",
+			-- "cam_delta_warning_pos2"
+		-- },
+		-- {
+			-- duration=5,
+			-- target_part="", target_type=ROOT,
+			-- spatialprops={pos={0,0,0},q_orient={1,0,0,0}},
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			-- pcurve_period=-1000
+		-- }
+	-- },
+	
+	-- {
+		-- 74,
+		-- START_MOTION,
+		-- {"Char_delta"},
+		-- {animation="Sc_MLBODY_CHRF_IDLE_000LV_XA_06",
+		 -- duration=15,  time_scale=1,   weight=1, heading=-1,event_flags=2}
+	-- },
+	
+	
+	-- {
+		-- 75,
+		-- START_MOTION,
+		-- {"Char_delta"},
+		-- {animation="Sc_MLBODY_CHRF_CONV_RHNDUP_TRNS_000LV_XA_02",
+		 -- duration=2, time_scale=0.75, trans_time=0.25, weight=1,  heading=-1}
+	-- },
+	-- {
+		-- 77,
+		-- START_MOTION,
+		-- {"Char_delta"},
+		-- {animation="Sc_MLBODY_CHRF_CONV_RHND_CASL_000LV_XA_04",
+		 -- duration=3.7, time_scale=0.75, trans_time=0.25, weight=1, heading=-1, event_flags=2}
+	-- },
+	-- {
+		-- 80,
+		-- START_MOTION,
+		-- {"Char_delta"},
+		-- {animation="Sc_MLBODY_CHRF_CONV_RHNDDN_TRNS_000LV_XA_02",
+		 -- duration=3, time_scale=0.5, trans_time=1, weight=1,  heading=-1}
+	-- },
+	-- {
+		-- 85,
+		-- START_MOTION,
+		-- {"Char_delta"},
+		-- {animation="Sc_MLBODY_CHRF_CHRB_TRNS_000LV_XA_02",
+		 -- duration=15, time_scale=0.5, trans_time=1,  weight=1, heading=-1}
+	-- },
+	
+	
+	-- {
+		-- 89,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_MLBODY_CHRB_STNDCR_TRNS_090LV_XA_05",
+		 -- duration=15, time_scale=0.8, trans_time=1,  weight=1, heading=-1}
+	-- },
+	
+
+
+	-- {
+		-- 74,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_freeport_0090_delta1"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	
+	-- {
+		-- 74,
+		-- START_MOTION,
+		-- {"Char_delta"},
+		-- {animation="Sc_dx_s070x_2801_Orillion",
+		 -- duration=8, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 80,
+		-- START_MOTION,
+		-- {"Char_delta"},
+		-- {animation="Sc_dx_s070x_0501_Orillion",
+		 -- duration=8, time_scale=1,trans_time=0.25, weight=1, heading=-1}
+	-- },	
+	
+	
+	-- {
+		-- 84.5,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_freeport_0100_delta1"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	
+	-- {
+		-- 84.5,
+		-- START_MOTION,
+		-- {"Char_delta"},
+		-- {animation="Sc_dx_s070x_2801_Orillion",
+		 -- duration=8, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 87.5,
+		-- START_MOTION,
+		-- {"Char_delta"},
+		-- {animation="Sc_dx_s070x_0501_Orillion",
+		 -- duration=8, start_time=0, time_scale=1,trans_time=0.25, weight=1, heading=-1}
+	-- },	
+	
+	
+	
+	-- {
+		-- 93,
+		-- SET_CAMERA,
+		-- {
+			-- "Monitor_1",
+			-- "cam_start"
+		-- }
+	-- },
+	
 	
 	
 	{
-		0.33,
+		0,
 		SET_CAMERA,
 		{
 			"Monitor_1",
-			"cam_delta_explaining"
+			"cam_dbg"
 		}
 	},
-	-- {
-		-- 1,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "cam_delta_explaining",
-			-- "cam_delta_explaining_pos2"
-		-- },
-		-- {
-			-- duration=10,
-			-- target_part="", target_type=ROOT,
-			-- spatialprops={pos={0,0,0},q_orient={1,0,0,0}},
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },
-	-- {
-		-- 1,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "cam_delta_explaining_marker",
-			-- "cam_delta_explaining_marker_pos2"
-		-- },
-		-- {
-			-- duration=10,
-			-- target_part="", target_type=ROOT,
-			-- spatialprops={pos={0,0,0},q_orient={1,0,0,0}},
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },
-	-- {
-		-- 11,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "cam_delta_explaining",
-			-- "cam_delta_explaining_pos3"
-		-- },
-		-- {
-			-- duration=10,
-			-- target_part="", target_type=ROOT,
-			-- spatialprops={pos={0,0,0},q_orient={1,0,0,0}},
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },
-	-- {
-		-- 11,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "cam_delta_explaining_marker",
-			-- "cam_delta_explaining_marker_pos3"
-		-- },
-		-- {
-			-- duration=10,
-			-- target_part="", target_type=ROOT,
-			-- spatialprops={pos={0,0,0},q_orient={1,0,0,0}},
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },
-	
 	
 	
 		
 	{
 		0,
-		START_SOUND,
+		START_SPATIAL_PROP_ANIM,
 		{
-			"DX_m06_freeport_0030_delta1"
+			"Char_trent",
+			"point_trent_sit_down"
 		},
 		{
-			duration=11
+			duration=0.001,
+			target_part="",target_type=ROOT,spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
 		}
 	},
-	
 	{
-		0,
+		0.2,
 		START_MOTION,
-		{"Char_delta"},
-		{animation="Sc_dx_s070x_2801_Orillion",
-		 duration=8, time_scale=1, trans_time=0.25, weight=1, heading=-1}
-	}, 
+		{"Char_trent"},
+		{animation="Sc_MLBODY_STND_SITCR_TRNS_180DN_XA_06",
+		 duration=0.5, time_scale=50000000,  weight=1, heading=-1}
+	},
 	{
-		6,
+		1,
 		START_MOTION,
-		{"Char_delta"},
-		{animation="Sc_dx_s070x_2804_Orillion",
-		 duration=5, time_scale=1, trans_time=0.25, weight=1, heading=-1}
-	}, 
-	{
-		10,
-		START_MOTION,
-		{
-			"Char_delta"
-		},
-		{
-			animation="Sc_MLHEAD_BASEPOSE_000LV_02_01",
-			duration=1,
-			trans_time=0.5,
-			time_scale=0.9,
-			weight=1,
-			heading=-1
-		}
+		{"Char_trent"},
+		{animation="Sc_MLBODY_CHRB_WALK_TRNS_090LV_XA_10",
+		 duration=15, time_scale=1, trans_time=1,  weight=1, heading=-1}
 	},
 	
-
-	{
-		11,
-		START_SOUND,
-		{
-			"DX_m06_freeport_0040_delta1"
-		},
-		{
-			duration=7
-		}
-	},
+	
+	
 	
 	{
-		11,
+		6.15,
 		START_MOTION,
-		{"Char_delta"},
-		{animation="Sc_dx_s070x_2801_Orillion",
-		 duration=8, time_scale=1, trans_time=0.25, weight=1, heading=-1}
-	}, 
-	{
-		15,
-		START_MOTION,
-		{"Char_delta"},
-		{animation="Sc_dx_s070x_0501_Orillion",
-		 duration=8, time_scale=1, start_time=1, trans_time=0.25, weight=1, heading=-1}
-	}, 
-	{
-		18,
-		START_MOTION,
-		{
-			"Char_delta"
-		},
-		{
-			animation="Sc_MLHEAD_BASEPOSE_000LV_02_01",
-			duration=1,
-			trans_time=0.5,
-			time_scale=0.9,
-			weight=1,
-			heading=-1
-		}
-	},
-	
-
-	{
-		19,
-		START_SOUND,
-		{
-			"DX_m06_freeport_0050_delta1"
-		},
-		{
-			duration=9
-		}
-	},
-	
-	{
-		19,
-		START_MOTION,
-		{"Char_delta"},
-		{animation="Sc_dx_s070x_2801_Orillion",
-		 duration=8, time_scale=1, trans_time=0.25, weight=1, heading=-1}
-	}, 
-	{
-		23.5,
-		START_MOTION,
-		{"Char_delta"},
-		{animation="Sc_dx_s070x_0501_Orillion",
-		 duration=8, time_scale=1, start_time=1, trans_time=0.25, weight=1, heading=-1}
-	},
-
-	{
-		27,
-		START_SOUND,
-		{
-			"DX_m06_freeport_0060_delta1"
-		},
-		{
-			duration=16
-		}
-	},
-	
-	{
-		27,
-		START_MOTION,
-		{"Char_delta"},
-		{animation="Sc_dx_s070x_2801_Orillion",
-		 duration=8, time_scale=1, trans_time=0.25, weight=1, heading=-1}
-	}, 
-	{
-		33,
-		START_MOTION,
-		{"Char_delta"},
-		{animation="Sc_dx_s070x_0501_Orillion",
-		 duration=8, time_scale=1,trans_time=0.25, weight=1, heading=-1}
+		{"Char_trent"},
+		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 duration=10, time_scale=1, weight=1,  heading=-1, event_flags=2}
 	},	
 	{
-		37,
-		START_MOTION,
-		{"Char_delta"},
-		{animation="Sc_dx_s070x_2801_Orillion",
-		 duration=8, time_scale=1, start_time=1, trans_time=0.5, weight=1, heading=-1}
-	}, 
+		4,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_trent"
+		},
+		{
+			duration=4,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					-90,
+					Y_AXIS
+				}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
 	
 	
 	
-
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	{
 		0,
 		START_MOTION,
-		{"Char_delta"},
-		{animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
-		 duration=15,  time_scale=1, trans_time=1,   weight=1, heading=-1,event_flags=2}
-	},
-	{
-		5,
-		START_MOTION,
-		{"Char_delta"},
-		{animation="Sc_MLBODY_CHRB_CHRF_TRNS_000LV_XA_02",
-		 duration=5, time_scale=0.6, trans_time=1,   weight=1, heading=-1}
-	},
-	-- {
-		-- 11,
-		-- START_MOTION,
-		-- {"Char_delta"},
-		-- {animation="Sc_MLBODY_CHRB_CHRF_TRNS_000LV_XA_02",
-		 -- duration=15, time_scale=0.6, trans_time=1,   weight=1, heading=-1}
-	-- },
-	{
-		10,
-		START_MOTION,
-		{"Char_delta"},
-		{animation="Sc_MLBODY_CHRF_CONV_RHNDUP_TRNS_000LV_XA_02",
-		 duration=2, time_scale=0.75, trans_time=0.25, weight=1,  heading=-1}
-	},
-	
-	{
-		12,
-		START_MOTION,
-		{"Char_delta"},
-		{animation="Sc_MLBODY_CHRF_CONV_RHND_CASL_000LV_XA_04",
-		 duration=3.7, time_scale=0.75, trans_time=0.25, weight=1, heading=-1, event_flags=2}
-	},
-	{
-		15,
-		START_MOTION,
-		{"Char_delta"},
-		{animation="Sc_MLBODY_CHRF_CONV_RHNDDN_TRNS_000LV_XA_02",
-		 duration=1.5, time_scale=0.75, trans_time=1, weight=1,  heading=-1}
+		{"Char_barman"},
+		{animation="Sc_MLBODY_STND_IDLE_BART_000LV_XA_10",
+		 duration=15, time_scale=0.8,  weight=1, heading=-1}
 	},
 	
 	
-	-- {
-		-- 1,
-		-- START_MOTION,
-		-- {"Char_hatcher"},
-		-- {animation="Sc_FMHAND_HNEUT_GESTR_CASL_000LV_00",
-		 -- duration=7, time_scale=0.8, trans_time=0.25, weight=1, heading=-1, event_flags=2}
-	-- },		
-	
-	-- {
-		-- 1,
-		-- START_MOTION,
-		-- {"Char_delta"},
-		-- {animation="Sc_MLBODY_CHRB_CONV_RHNDUP_TRNS_000LV_XA_02",
-		 -- duration=7, time_scale=0.7, trans_time=0.25, weight=1,  heading=-1}
-	-- },
-	-- {
-		-- 3,
-		-- START_MOTION,
-		-- {"Char_delta"},
-		-- {animation="Sc_MLBODY_CHRB_CONV_RHND_CASL_000LV_xa_04",
-		 -- duration=3, time_scale=0.75, trans_time=1, weight=1, heading=-1, event_flags=2}
-	-- },
-	-- {
-		-- 6,
-		-- START_MOTION,
-		-- {"Char_delta"},
-		-- {animation="Sc_MLBODY_CHRB_CONV_RHNDDN_TRNS_000LV_XA_02",
-		 -- duration=1, time_scale=0.75, trans_time=1, weight=1,  heading=-1}
-	-- },
 		
 }
 
@@ -1646,3 +1995,36 @@ events = {
 	-- },	
 		
 		
+		
+		
+		
+		
+		
+		
+	-- {
+		-- 0,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "Char_trent",
+			-- "point_trent_sit_down"
+		-- },
+		-- {
+			-- duration=0.001,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- pos={0,0,0},
+				-- q_orient={1,0,0,0}
+			-- }
+		-- }
+	-- },
+	-- {
+		-- 0.2,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_MLBODY_STND_SITCR_TRNS_180DN_XA_06",
+		 -- duration=1, time_scale=50000000,  weight=1, heading=-1}
+	-- },
+	
+	
+	
