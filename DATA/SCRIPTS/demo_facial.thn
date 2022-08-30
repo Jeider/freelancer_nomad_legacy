@@ -79,6 +79,95 @@ entities={
 	},
 	
 	
+
+	{
+		entity_name="DX_m07_offer_0010_barman",
+		template_name="DX_m07_offer_0010_barman",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_offer_0020_trent",
+		template_name="DX_m07_offer_0020_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_offer_0030_barman",
+		template_name="DX_m07_offer_0030_barman",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_offer_0040_trent",
+		template_name="DX_m07_offer_0040_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_offer_0050_barman",
+		template_name="DX_m07_offer_0050_barman",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_offer_0060_trent",
+		template_name="DX_m07_offer_0060_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_offer_0070_barman",
+		template_name="DX_m07_offer_0070_barman",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_offer_0080_barman",
+		template_name="DX_m07_offer_0080_barman",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_offer_0090_barman",
+		template_name="DX_m07_offer_0090_barman",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_offer_0100_barman",
+		template_name="DX_m07_offer_0100_barman",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_offer_0110_trent",
+		template_name="DX_m07_offer_0110_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
 	
 	{
 		entity_name="DX_m06_freeport_0010_delta1",
@@ -659,9 +748,9 @@ entities={
 	
 	
 	{
-		entity_name="Char_delta",
+		entity_name="Char_barman",
 		type=DEFORMABLE,
-		template_name="m06_asf_prisoner01b",
+		template_name="m07_bartender",
 		lt_grp=0,
 		srt_grp=0,
 		usr_flg=0,
@@ -680,10 +769,37 @@ entities={
 			floor_height=0
 		},
 		userprops={
-			Actor="Syd1",
+			Actor="Syd2",
 			category="Character"
 		}
 	},
+	
+	-- {
+		-- entity_name="Char_delta",
+		-- type=DEFORMABLE,
+		-- template_name="m06_asf_prisoner01b",
+		-- lt_grp=0,
+		-- srt_grp=0,
+		-- usr_flg=0,
+		-- flags=LIT_DYNAMIC,
+		-- spatialprops={
+			-- pos={
+				-- -9, 0, -11
+			-- },
+			-- orient={
+				-- {0.7071068,0,-0.7071068},
+				-- {0,1,0},
+				-- {0.7071068,0,0.7071068}
+			-- }
+		-- },
+		-- compoundprops={
+			-- floor_height=0
+		-- },
+		-- userprops={
+			-- Actor="Syd1",
+			-- category="Character"
+		-- }
+	-- },
 	
 	
 	{
@@ -1062,7 +1178,7 @@ events={
 	{
 		0,
 		START_MOTION,
-		{"Char_delta"},
+		{"Char_barman"},
 		{animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
 		 duration=1, time_scale=1, weight=1, heading=-1}
 	},
@@ -2826,58 +2942,58 @@ events={
 		 -- duration=8, time_scale=1, start_time=1, trans_time=0.5, weight=1, heading=-1}
 	-- }, 
 	
-	{
-		0,
-		START_SOUND,
-		{
-			"DX_m06_freeport_0090_delta1"
-		},
-		{
-			duration=15
-		}
-	},
+	-- {
+		-- 0,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_freeport_0090_delta1"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
 	
-	{
-		0,
-		START_MOTION,
-		{"Char_delta"},
-		{animation="Sc_dx_s070x_2801_Orillion",
-		 duration=8, time_scale=1, trans_time=0.25, weight=1, heading=-1}
-	}, 
-	{
-		6,
-		START_MOTION,
-		{"Char_delta"},
-		{animation="Sc_dx_s070x_0501_Orillion",
-		 duration=8, time_scale=1,trans_time=0.25, weight=1, heading=-1}
-	},	
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_delta"},
+		-- {animation="Sc_dx_s070x_2801_Orillion",
+		 -- duration=8, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 6,
+		-- START_MOTION,
+		-- {"Char_delta"},
+		-- {animation="Sc_dx_s070x_0501_Orillion",
+		 -- duration=8, time_scale=1,trans_time=0.25, weight=1, heading=-1}
+	-- },	
 	
 	
-	{
-		10,
-		START_SOUND,
-		{
-			"DX_m06_freeport_0100_delta1"
-		},
-		{
-			duration=15
-		}
-	},
+	-- {
+		-- 10,
+		-- START_SOUND,
+		-- {
+			-- "DX_m06_freeport_0100_delta1"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
 	
-	{
-		10,
-		START_MOTION,
-		{"Char_delta"},
-		{animation="Sc_dx_s070x_2801_Orillion",
-		 duration=8, time_scale=1, trans_time=0.25, weight=1, heading=-1}
-	}, 
-	{
-		13,
-		START_MOTION,
-		{"Char_delta"},
-		{animation="Sc_dx_s070x_0501_Orillion",
-		 duration=8, start_time=0, time_scale=1,trans_time=0.25, weight=1, heading=-1}
-	},	
+	-- {
+		-- 10,
+		-- START_MOTION,
+		-- {"Char_delta"},
+		-- {animation="Sc_dx_s070x_2801_Orillion",
+		 -- duration=8, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 13,
+		-- START_MOTION,
+		-- {"Char_delta"},
+		-- {animation="Sc_dx_s070x_0501_Orillion",
+		 -- duration=8, start_time=0, time_scale=1,trans_time=0.25, weight=1, heading=-1}
+	-- },	
 	
 	-- {
 		-- 0,
@@ -3072,13 +3188,244 @@ events={
 	-- }, 
 	
 	
+	-- {
+		-- 0.001,
+		-- SET_CAMERA,
+		-- {
+			-- "Monitor_1",
+			-- "cam_syd"
+		-- }
+	-- },
+	
+	-- {
+		-- 1,
+		-- START_SOUND,
+		-- {
+			-- "DX_m07_offer_0010_barman"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	-- {
+		-- 1,
+		-- START_MOTION,
+		-- {"Char_barman"},
+		-- {animation="Sc_dx_s074x_0301_odr_tech01",
+		 -- duration=4.7, start_time=0.5, time_scale=1.3, trans_time=0.1, weight=1, heading=-1}
+	-- }, 
+	
+	
+	-- {
+		-- 1,
+		-- START_SOUND,
+		-- {
+			-- "DX_m07_offer_0030_barman"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	-- {
+		-- 1,
+		-- START_MOTION,
+		-- {"Char_barman"},
+		-- {animation="Sc_dx_s063x_0301_botzler",
+		 -- duration=6, start_time=0, time_scale=1, trans_time=0.1, weight=1, heading=-1}
+	-- }, 
+	
+	-- {
+		-- 1,
+		-- START_SOUND,
+		-- {
+			-- "DX_m07_offer_0050_barman"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	-- {
+		-- 1,
+		-- START_MOTION,
+		-- {"Char_barman"},
+		-- {animation="Sc_dx_s076x_1303_orillion",
+		 -- duration=6, start_time=0.5, time_scale=0.8, trans_time=0.1, weight=1, heading=-1}
+	-- }, 
+	
+	
+	-- {
+		-- 1,
+		-- START_SOUND,
+		-- {
+			-- "DX_m07_offer_0070_barman"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	-- {
+		-- 1,
+		-- START_MOTION,
+		-- {"Char_barman"},
+		-- {animation="Sc_dx_s063x_0502_botzler",
+		 -- duration=6, start_time=3, time_scale=1, trans_time=0.2, weight=1, heading=-1}
+	-- }, 
+	
+	-- {
+		-- 3.5,
+		-- START_SOUND,
+		-- {
+			-- "DX_m07_offer_0080_barman"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	-- {
+		-- 3.5,
+		-- START_MOTION,
+		-- {"Char_barman"},
+		-- {animation="Sc_dx_s063x_0301_botzler",
+		 -- duration=6,  time_scale=1, trans_time=0.2, weight=1, heading=-1}
+	-- }, 
+	
+	
+	-- {
+		-- 8.5,
+		-- START_SOUND,
+		-- {
+			-- "DX_m07_offer_0090_barman"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	-- {
+		-- 8.5,
+		-- START_MOTION,
+		-- {"Char_barman"},
+		-- {animation="Sc_dx_s063x_0301_botzler",
+		 -- duration=6,  time_scale=0.8, trans_time=0.2, weight=1, heading=-1}
+	-- }, 
+	
+	-- {
+		-- 14.5,
+		-- START_SOUND,
+		-- {
+			-- "DX_m07_offer_0100_barman"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	-- {
+		-- 14.5,
+		-- START_MOTION,
+		-- {"Char_barman"},
+		-- {animation="Sc_dx_s063x_0502_botzler",
+		 -- duration=6, start_time=3,  time_scale=1, trans_time=0.5, weight=1, heading=-1}
+	-- }, 
+	
+	
+	-- {
+		-- 17.5,
+		-- SET_CAMERA,
+		-- {
+			-- "Monitor_1",
+			-- "cam_dbg_trent"
+		-- }
+	-- },
+	
+	
 	{
 		0,
 		SET_CAMERA,
 		{
 			"Monitor_1",
-			"cam_syd"
+			"cam_dbg_trent"
+		}
+	},	
+	
+	-- {
+		-- 1,
+		-- START_SOUND,
+		-- {
+			-- "DX_m07_offer_0020_trent"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	-- {
+		-- 1,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_dx_s076x_0801_trent",
+		 -- duration=6,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+		
+	
+	-- {
+		-- 1,
+		-- START_SOUND,
+		-- {
+			-- "DX_m07_offer_0040_trent"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	-- {
+		-- 1,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_dx_s076x_0801_trent",
+		 -- duration=6,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 4.5,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_dx_s020x_3101_trent",
+		 -- duration=6,  time_scale=0.8, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	
+	-- {
+		-- 1,
+		-- START_SOUND,
+		-- {
+			-- "DX_m07_offer_0060_trent"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	-- {
+		-- 1,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_dx_GCS_D05aP02_Trent",
+		 -- duration=6,  start_time=0.5, time_scale=0.8, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	
+		
+	{
+		1,
+		START_SOUND,
+		{
+			"DX_m07_offer_0110_trent"
+		},
+		{
+			duration=15
 		}
 	},
+	{
+		1,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_dx_s026c_0501_trent",
+		 duration=6, time_scale=0.7, trans_time=0.25, weight=1, heading=-1}
+	}, 
+		
 }
 
