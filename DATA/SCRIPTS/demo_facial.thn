@@ -721,7 +721,7 @@ entities={
 	{
 		entity_name="Char_hatcher",
 		type=DEFORMABLE,
-		template_name="hatcher",
+		template_name="jacobi",
 		lt_grp=0,
 		srt_grp=0,
 		usr_flg=0,
@@ -740,7 +740,7 @@ entities={
 			floor_height=0
 		},
 		userprops={
-			actor="Hatcher",
+			actor="Hatcher1",
 			category="Character"
 		}
 	},
@@ -3337,14 +3337,14 @@ events={
 	-- },
 	
 	
-	{
-		0,
-		SET_CAMERA,
-		{
-			"Monitor_1",
-			"cam_dbg_trent"
-		}
-	},	
+	-- {
+		-- 0,
+		-- SET_CAMERA,
+		-- {
+			-- "Monitor_1",
+			-- "cam_dbg_trent"
+		-- }
+	-- },	
 	
 	-- {
 		-- 1,
@@ -3409,22 +3409,40 @@ events={
 	-- }, 
 	
 		
+	-- {
+		-- 1,
+		-- START_SOUND,
+		-- {
+			-- "DX_m07_offer_0110_trent"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	-- {
+		-- 1,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_dx_s026c_0501_trent",
+		 -- duration=6, time_scale=0.7, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	
+	
+	
 	{
-		1,
-		START_SOUND,
+		0,
+		SET_CAMERA,
 		{
-			"DX_m07_offer_0110_trent"
-		},
-		{
-			duration=15
+			"Monitor_1",
+			"cam_hatcher"
 		}
-	},
+	},	
 	{
-		1,
+		0,
 		START_MOTION,
-		{"Char_trent"},
-		{animation="Sc_dx_s026c_0501_trent",
-		 duration=6, time_scale=0.7, trans_time=0.25, weight=1, heading=-1}
+		{"Char_hatcher"},
+		{animation="Sc_dx_s070x_2701_Jacobi",
+		 duration=25, time_scale=1, trans_time=0.25, weight=1, heading=-1, event_flags=2}
 	}, 
 		
 }

@@ -1,0 +1,177 @@
+duration=140
+
+readfrom('thn_settings.txt')
+
+sp_short_cutscenes_mode = read()
+if sp_short_cutscenes_mode == '1' then
+	duration = 5
+end
+readfrom()
+
+entities={
+	{
+		entity_name="scene_m07_offer",
+		type=SCENE,
+		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={ pos={0,0,0}, orient={{1,0,0},{0,1,0},{0,0,1}}},
+		up=Y_AXIS,front=Z_AXIS,
+		ambient={0,0,0}
+	},
+	{
+		entity_name="Monitor_1",
+		type=MONITOR,
+		template_name="",
+		template_id=0
+	},	
+	
+	{
+		entity_name="offscreen",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={pos={-10000000,-10000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+	},
+	{
+		entity_name="Char_bartender_Fixture",
+		type=DEFORMABLE,
+		template_name="li_bartender_1",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={pos={-100,-10000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		compoundprops={
+			floor_height==-110
+		},
+		userprops={
+			actor="bartender",
+			category="Character"
+		}
+	},
+	{
+		entity_name="prop_cigarette_2",
+		type=COMPOUND,
+		template_name="cigarette_2",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={pos={-100,-10000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		userprops={
+			category="Prop"
+		}
+	},
+	
+	
+	{
+		entity_name="DX_m06_freeport_0010_delta1",
+		template_name="DX_m06_freeport_0010_delta1",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	
+	
+	{
+		entity_name="Char_trent",
+		type=DEFORMABLE,
+		template_name="trent",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				-211,
+				11110,
+				711.355458
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+		compoundprops={
+			floor_height=-1000
+		},
+		userprops={
+			Actor="Player",
+			category="Character"
+		}
+	},
+	
+		
+	{
+		entity_name="cam_dbg",
+		type=CAMERA,
+		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				10, 4, -1
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+				
+			}
+		},
+		cameraprops={
+			fovh=25,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_dbg_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				0, 1, 0
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	
+	
+}
+
+events = {
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_dbg",
+			"cam_dbg_marker"
+		},
+		{
+			duration=70, offset={0,0,0},
+			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+		}
+	},
+
+	
+	{
+		0,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_dbg"
+		}
+	},
+	
+	
+	
+	
+	
+}
+
