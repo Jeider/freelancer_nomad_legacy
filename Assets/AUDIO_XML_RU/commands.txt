@@ -28,9 +28,9 @@ space sounds
 find (from excel)
 (.*?)	(.*)$
 replace to xml
-<test_voice name="\1" type="file" filename="echo_m06_utf\\\2.wav"/>
+<test_voice name="\2" type="file" filename="echo_m06_utf\\\1.wav"/>
 replace to ini
-\[Sound\]\n;\1\nmsg = \2\nattenuation = 0\n
+\[Sound\]\n;\2\nmsg = \1\nattenuation = 0\n
 
 
 
