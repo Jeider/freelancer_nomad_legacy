@@ -4,10 +4,38 @@
    <UTF_ROOT>	
 
 
-<test_voice name="0x82ccccc9" type="file" filename="echo_m08_utf\dx_m08_5000_darcy.wav"/>
-<test_voice name="0xa2ccc8c8" type="file" filename="echo_m08_utf\dx_m08_5010_darcy.wav"/>
-<test_voice name="0x82cc84cb" type="file" filename="echo_m08_utf\dx_m08_5020_darcy.wav"/>
-<test_voice name="0xa2cc80ca" type="file" filename="echo_m08_utf\dx_m08_5030_darcy.wav"/>
+<test_voice name="0xa266c1c6" type="file" filename="echo_m08_utf\dx_m08_0150_brighton.wav"/>
+<test_voice name="0xaf86c18d" type="file" filename="echo_m08_utf\dx_m08_0180_brighton.wav"/>
+<test_voice name="0xa2677d06" type="file" filename="echo_m08_utf\dx_m08_0250_brighton.wav"/>
+<test_voice name="0xa1677d0a" type="file" filename="echo_m08_utf\dx_m08_0260_brighton.wav"/>
+<test_voice name="0x8aab4781" type="file" filename="echo_m08_utf\dx_m08_0390_tilton.wav"/>
+<test_voice name="0xa78c3981" type="file" filename="echo_m08_utf\dx_m08_0410_tilton.wav"/>
+<test_voice name="0xa7083c8b" type="file" filename="echo_m08_utf\dx_m08_0440_tilton.wav"/>
+<test_voice name="0x8a557b46" type="file" filename="echo_m08_utf\dx_m08_0450_captain.wav"/>
+<test_voice name="0xa7403e8b" type="file" filename="echo_m08_utf\dx_m08_0460_tilton.wav"/>
+<test_voice name="0xa7543f81" type="file" filename="echo_m08_utf\dx_m08_0470_tilton.wav"/>
+<test_voice name="0xa6b8308b" type="file" filename="echo_m08_utf\dx_m08_0480_tilton.wav"/>
+<test_voice name="0xa6ac3181" type="file" filename="echo_m08_utf\dx_m08_0490_tilton.wav"/>
+<test_voice name="0xb399328b" type="file" filename="echo_m08_utf\dx_m08_0500_tilton.wav"/>
+<test_voice name="0x9b511342" type="file" filename="echo_m08_utf\dx_m08_0510_captain.wav"/>
+<test_voice name="0xb3d1308b" type="file" filename="echo_m08_utf\dx_m08_0520_tilton.wav"/>
+<test_voice name="0xb31d3781" type="file" filename="echo_m08_utf\dx_m08_0550_tilton.wav"/>
+<test_voice name="0xb7566542" type="file" filename="echo_m08_utf\dx_m08_0560_captain.wav"/>
+<test_voice name="0xb3553581" type="file" filename="echo_m08_utf\dx_m08_0570_tilton.wav"/>
+<test_voice name="0xa7056c06" type="file" filename="echo_m08_utf\dx_m08_0600_brighton.wav"/>
+<test_voice name="0xa5056c0e" type="file" filename="echo_m08_utf\dx_m08_0620_brighton.wav"/>
+<test_voice name="0xa3656c03" type="file" filename="echo_m08_utf\dx_m08_0640_brighton.wav"/>
+<test_voice name="0xa1656c0b" type="file" filename="echo_m08_utf\dx_m08_0660_brighton.wav"/>
+<test_voice name="0xa0656c0f" type="file" filename="echo_m08_utf\dx_m08_0670_brighton.wav"/>
+<test_voice name="0xaf856c4c" type="file" filename="echo_m08_utf\dx_m08_0680_brighton.wav"/>
+<test_voice name="0xae856c48" type="file" filename="echo_m08_utf\dx_m08_0690_brighton.wav"/>
+<test_voice name="0xa505f84e" type="file" filename="echo_m08_utf\dx_m08_0720_brighton.wav"/>
+<test_voice name="0xa265f847" type="file" filename="echo_m08_utf\dx_m08_0750_brighton.wav"/>
+<test_voice name="0xa065f84f" type="file" filename="echo_m08_utf\dx_m08_0770_brighton.wav"/>
+<test_voice name="0xae85f808" type="file" filename="echo_m08_utf\dx_m08_0790_brighton.wav"/>
+<test_voice name="0xa7027785" type="file" filename="echo_m08_utf\dx_m08_0800_brighton.wav"/>
+<test_voice name="0x9cc8edc3" type="file" filename="echo_m08_utf\dx_m08_0880_red.wav"/>
+<test_voice name="0x99d7ef49" type="file" filename="echo_m08_utf\dx_m08_0940_red.wav"/>
 
 
 

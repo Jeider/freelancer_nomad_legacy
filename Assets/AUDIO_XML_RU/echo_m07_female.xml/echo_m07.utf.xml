@@ -4,11 +4,11 @@
    <UTF_ROOT>	
 
 
-<test_voice name="0x82ccccc9" type="file" filename="echo_m08_utf\dx_m08_5000_darcy.wav"/>
-<test_voice name="0xa2ccc8c8" type="file" filename="echo_m08_utf\dx_m08_5010_darcy.wav"/>
-<test_voice name="0x82cc84cb" type="file" filename="echo_m08_utf\dx_m08_5020_darcy.wav"/>
-<test_voice name="0xa2cc80ca" type="file" filename="echo_m08_utf\dx_m08_5030_darcy.wav"/>
-
+<test_voice name="0xa64a2001" type="file" filename="echo_m07_utf\dx_m07_0510_darcy.wav"/>
+<test_voice name="0x864a6c02" type="file" filename="echo_m07_utf\dx_m07_0520_darcy.wav"/>
+<test_voice name="0xa64a6803" type="file" filename="echo_m07_utf\dx_m07_0530_darcy.wav"/>
+<test_voice name="0x864afc06" type="file" filename="echo_m07_utf\dx_m07_0560_darcy.wav"/>
+<test_voice name="0xa64af807" type="file" filename="echo_m07_utf\dx_m07_0570_darcy.wav"/>
 
 
 

@@ -39,3 +39,13 @@ find (any line)
 (.*)$
 replace to ini
 \[Sound\]\nnickname = DX_\1\ntype = voice\nattenuation = 0\nfile = audio\\mod\\m05\\\1.wav\nis_2d = true\n
+
+
+generate sound ids
+$A = 'dx_m08_0000_darcy','dx_m08_0010_darcy', ...
+$A | foreach-object  {./createid.exe -h -oc $_ } 
+
+copy cound files
+$B = 'dx_m08_0000_darcy.wav','dx_m08_0010_darcy.wav', ...
+$B | foreach-object  {Copy-Item dx_m08_5000_darcy.wav $_ } 
+

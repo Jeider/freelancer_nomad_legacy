@@ -4,10 +4,38 @@
    <UTF_ROOT>	
 
 
-<test_voice name="0x82ccccc9" type="file" filename="echo_m08_utf\dx_m08_5000_darcy.wav"/>
-<test_voice name="0xa2ccc8c8" type="file" filename="echo_m08_utf\dx_m08_5010_darcy.wav"/>
-<test_voice name="0x82cc84cb" type="file" filename="echo_m08_utf\dx_m08_5020_darcy.wav"/>
-<test_voice name="0xa2cc80ca" type="file" filename="echo_m08_utf\dx_m08_5030_darcy.wav"/>
+<test_voice name="0x95582189" type="file" filename="echo_m07_utf\dx_m07_0020_barman.wav"/>
+<test_voice name="0xa25e0447" type="file" filename="echo_m07_utf\dx_m07_0040_rockford.wav"/>
+<test_voice name="0xa05e044f" type="file" filename="echo_m07_utf\dx_m07_0060_rockford.wav"/>
+<test_voice name="0xa15e044b" type="file" filename="echo_m07_utf\dx_m07_0070_rockford.wav"/>
+<test_voice name="0xafbe040c" type="file" filename="echo_m07_utf\dx_m07_0090_rockford.wav"/>
+<test_voice name="0xa73e9006" type="file" filename="echo_m07_utf\dx_m07_0110_rockford.wav"/>
+<test_voice name="0xa53e900e" type="file" filename="echo_m07_utf\dx_m07_0130_rockford.wav"/>
+<test_voice name="0xa35e9003" type="file" filename="echo_m07_utf\dx_m07_0150_rockford.wav"/>
+<test_voice name="0xa15e900b" type="file" filename="echo_m07_utf\dx_m07_0170_rockford.wav"/>
+<test_voice name="0xaebe9048" type="file" filename="echo_m07_utf\dx_m07_0180_rockford.wav"/>
+<test_voice name="0xa63f2cc2" type="file" filename="echo_m07_utf\dx_m07_0200_rockford.wav"/>
+<test_voice name="0xa73f2cc6" type="file" filename="echo_m07_utf\dx_m07_0210_rockford.wav"/>
+<test_voice name="0xa43f2cca" type="file" filename="echo_m07_utf\dx_m07_0220_rockford.wav"/>
+<test_voice name="0xa25f2cc7" type="file" filename="echo_m07_utf\dx_m07_0240_rockford.wav"/>
+<test_voice name="0xa05f2ccf" type="file" filename="echo_m07_utf\dx_m07_0260_rockford.wav"/>
+<test_voice name="0xa15f2ccb" type="file" filename="echo_m07_utf\dx_m07_0270_rockford.wav"/>
+<test_voice name="0xaebf2c88" type="file" filename="echo_m07_utf\dx_m07_0280_rockford.wav"/>
+<test_voice name="0xa63fb882" type="file" filename="echo_m07_utf\dx_m07_0300_rockford.wav"/>
+<test_voice name="0xa73fb886" type="file" filename="echo_m07_utf\dx_m07_0310_rockford.wav"/>
+<test_voice name="0xa43fb88a" type="file" filename="echo_m07_utf\dx_m07_0320_rockford.wav"/>
+<test_voice name="0x95bfbc81" type="file" filename="echo_m07_utf\dx_m07_0330_tortuga.wav"/>
+<test_voice name="0xb9b8ca81" type="file" filename="echo_m07_utf\dx_m07_0340_tortuga.wav"/>
+<test_voice name="0xa05fb88f" type="file" filename="echo_m07_utf\dx_m07_0360_rockford.wav"/>
+<test_voice name="0xa15fb88b" type="file" filename="echo_m07_utf\dx_m07_0370_rockford.wav"/>
+<test_voice name="0xaebfb8c8" type="file" filename="echo_m07_utf\dx_m07_0380_rockford.wav"/>
+<test_voice name="0xa63c1543" type="file" filename="echo_m07_utf\dx_m07_0400_rockford.wav"/>
+<test_voice name="0xa43c154b" type="file" filename="echo_m07_utf\dx_m07_0420_rockford.wav"/>
+<test_voice name="0xa53c154f" type="file" filename="echo_m07_utf\dx_m07_0430_rockford.wav"/>
+<test_voice name="0xa25c1546" type="file" filename="echo_m07_utf\dx_m07_0440_rockford.wav"/>
+<test_voice name="0xa05c154e" type="file" filename="echo_m07_utf\dx_m07_0460_rockford.wav"/>
+<test_voice name="0xaebc1509" type="file" filename="echo_m07_utf\dx_m07_0480_rockford.wav"/>
+<test_voice name="0xb4f216cd" type="file" filename="echo_m07_utf\dx_m07_0550_bandit.wav"/>
 
 
 

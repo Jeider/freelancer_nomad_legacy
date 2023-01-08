@@ -1,4 +1,4 @@
-duration=140
+duration=136
 
 readfrom('thn_settings.txt')
 
@@ -2643,41 +2643,41 @@ events = {
 	}, 
 	
 	
-	{
-		136,
-		SET_CAMERA,
-		{
-			"Monitor_1",
-			"cam_trent_deal"
-		}
-	},
-	{
-		136,
-		START_SOUND,
-		{
-			"DX_m07_offer_0110_trent"
-		},
-		{
-			duration=15
-		}
-	},
-	{
-		136,
-		START_MOTION,
-		{"Char_trent"},
-		{animation="Sc_dx_s026c_0501_trent",
-		 duration=6, time_scale=0.7, trans_time=0.25, weight=1, heading=-1}
-	}, 
+	-- {
+		-- 136,
+		-- SET_CAMERA,
+		-- {
+			-- "Monitor_1",
+			-- "cam_trent_deal"
+		-- }
+	-- },
+	-- {
+		-- 136,
+		-- START_SOUND,
+		-- {
+			-- "DX_m07_offer_0110_trent"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	-- {
+		-- 136,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_dx_s026c_0501_trent",
+		 -- duration=6, time_scale=0.7, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
 	
 		
 	
-	{
-		137,
-		START_MOTION,
-		{"Char_trent"},
-		{animation="Sc_MLBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
-		 duration=15, time_scale=0.5, trans_time=1, weight=1, heading=-1}
-	},
+	-- {
+		-- 137,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_MLBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
+		 -- duration=15, time_scale=0.5, trans_time=1, weight=1, heading=-1}
+	-- },
 
 	-- {
 		-- 140,

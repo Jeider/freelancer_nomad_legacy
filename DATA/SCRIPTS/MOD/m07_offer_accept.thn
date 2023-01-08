@@ -1,0 +1,572 @@
+duration=4
+
+readfrom('thn_settings.txt')
+
+sp_short_cutscenes_mode = read()
+if sp_short_cutscenes_mode == '1' then
+	duration = 5
+end
+readfrom()
+
+entities={
+	{
+		entity_name="scene_m07_offer",
+		type=SCENE,
+		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={ pos={0,0,0}, orient={{1,0,0},{0,1,0},{0,0,1}}},
+		up=Y_AXIS,front=Z_AXIS,
+		ambient={0,0,0}
+	},
+	{
+		entity_name="Monitor_1",
+		type=MONITOR,
+		template_name="",
+		template_id=0
+	},	
+	
+	{
+		entity_name="offscreen",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={pos={-10000000,-10000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+	},
+	{
+		entity_name="Char_bartender_Fixture",
+		type=DEFORMABLE,
+		template_name="li_bartender_1",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={pos={-100,-10000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		compoundprops={
+			floor_height==-110
+		},
+		userprops={
+			actor="bartender",
+			category="Character"
+		}
+	},
+	{
+		entity_name="prop_cigarette_2",
+		type=COMPOUND,
+		template_name="cigarette_2",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={pos={-100,-10000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		userprops={
+			category="Prop"
+		}
+	},
+	
+	
+	{
+		entity_name="DX_m06_freeport_0010_delta1",
+		template_name="DX_m06_freeport_0010_delta1",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_freeport_0020_trent",
+		template_name="DX_m06_freeport_0020_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_freeport_0030_delta1",
+		template_name="DX_m06_freeport_0030_delta1",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_freeport_0040_delta1",
+		template_name="DX_m06_freeport_0040_delta1",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_freeport_0050_delta1",
+		template_name="DX_m06_freeport_0050_delta1",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_freeport_0060_delta1",
+		template_name="DX_m06_freeport_0060_delta1",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_freeport_0070_trent",
+		template_name="DX_m06_freeport_0070_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_freeport_0090_delta1",
+		template_name="DX_m06_freeport_0090_delta1",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m06_freeport_0100_delta1",
+		template_name="DX_m06_freeport_0100_delta1",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+
+
+
+
+
+
+
+	{
+		entity_name="DX_m07_offer_0010_barman",
+		template_name="DX_m07_offer_0010_barman",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_offer_0020_trent",
+		template_name="DX_m07_offer_0020_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_offer_0030_barman",
+		template_name="DX_m07_offer_0030_barman",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_offer_0040_trent",
+		template_name="DX_m07_offer_0040_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_offer_0050_barman",
+		template_name="DX_m07_offer_0050_barman",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_offer_0060_trent",
+		template_name="DX_m07_offer_0060_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_offer_0070_barman",
+		template_name="DX_m07_offer_0070_barman",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_offer_0080_barman",
+		template_name="DX_m07_offer_0080_barman",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_offer_0090_barman",
+		template_name="DX_m07_offer_0090_barman",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_offer_0100_barman",
+		template_name="DX_m07_offer_0100_barman",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_offer_0110_trent",
+		template_name="DX_m07_offer_0110_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio"}
+	},
+
+
+
+	{
+		entity_name="Char_trent_base",
+		type=DEFORMABLE,
+		template_name="trent",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				-211,
+				11110,
+				711.355458
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+		compoundprops={
+			floor_height=-1000
+		},
+		userprops={
+			Actor="Player",
+			category="Character"
+		}
+	},
+	
+	{
+		entity_name="Char_trent",
+		type=DEFORMABLE,
+		template_name="trent_original",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				5.5,
+				0,
+				0.6
+			},
+			orient={{0,0,-1},{0,1,0},{-1,0,0}}
+		},
+		compoundprops={
+			floor_height=0
+		},
+		userprops={
+			actor="TrentOriginal",
+			category="Character"
+		}
+	},
+	
+	
+	{
+		entity_name="Char_barman",
+		type=DEFORMABLE,
+		template_name="m07_bartender",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				6.8,
+				0,
+				1.1
+			},
+			orient={
+				{
+					0.870835,
+					0,
+					-0.491575
+				},
+				{
+					0,
+					1,
+					0
+				},
+				{
+					0.491575,
+					0,
+					0.870835
+				}
+			}
+		},
+		compoundprops={
+			floor_height==-110
+		},
+		userprops={
+			actor="m6_bartender",
+			category="Character"
+		}
+	},	
+	{
+		entity_name="head_barman_near",
+		type=MARKER, template_name="", template_id=0,
+		spatialprops={
+			pos={
+				6.8, 1.65, 1.1
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},	
+		
+	{
+		entity_name="cam_trent_deal",
+		type=CAMERA,
+		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				7.2, 1.7, 0.2
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+		cameraprops={
+			fovh=15,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_trent_deal_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				6, 1.63, 0.5
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+	
+	
+	
+}
+
+events = {
+	
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_trent_deal",
+			"cam_trent_deal_marker"
+		},
+		{
+			duration=70, offset={0,0,0},
+			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+		}
+	},
+	
+	
+	{
+		0, -- just remove bartender
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_bartender_Fixture",
+			"offscreen"
+		},
+		{
+			duration=0,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},
+	{
+		0, -- remove real trent
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_trent_base",
+			"offscreen"
+		},
+		{
+			duration=0,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
+		}
+	},
+	
+	{
+		0,
+		START_MOTION,
+		{"Char_barman"},
+		{animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+		 duration=10000, time_scale=1,  weight=1, heading=-1, event_flags=2}
+	},
+	
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+		 -- duration=10000, time_scale=1,  weight=1, heading=-1, event_flags=2}
+	-- },
+		
+	{
+		0,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_trent_deal"
+		}
+	},
+	{
+		0,
+		START_SOUND,
+		{
+			"DX_m07_offer_0110_trent"
+		},
+		{
+			duration=15
+		}
+	},
+	{
+		0,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_dx_s026c_0501_trent",
+		 duration=6, time_scale=0.7, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	
+		
+	
+	{
+		0,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
+		 duration=15, time_scale=0.5, weight=1, heading=-1}
+	},
+	
+	
+	{
+		0,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_trent_deal"
+		}
+	},
+	
+	{
+		0,
+		START_IK,
+		{
+			"Char_trent",
+			"head_barman_near"
+		},
+		{
+			duration=100,
+			end_effector="Body_Head",
+			target_part="",
+			target_type=ROOT,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		}
+	},
+
+}
+
+
+	-- {
+		-- 0,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "Char_trent",
+			-- "point_trent_sit_down"
+		-- },
+		-- {
+			-- duration=0.001,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- pos={0,0,0},
+				-- q_orient={1,0,0,0}
+			-- }
+		-- }
+	-- },
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_MLBODY_STND_SITCR_TRNS_180DN_XA_06",
+		 -- duration=15, time_scale=5,  weight=1, heading=-1}
+	-- },
+	
+
+
+
+
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 -- duration=0.1, time_scale=1, weight=1, heading=-1, event_flags=2}
+	-- },	
+		
+		
+		
+		
+		
+		
+		
+		
+	-- {
+		-- 0,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "Char_trent",
+			-- "point_trent_sit_down"
+		-- },
+		-- {
+			-- duration=0.001,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- pos={0,0,0},
+				-- q_orient={1,0,0,0}
+			-- }
+		-- }
+	-- },
+	-- {
+		-- 0.2,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_MLBODY_STND_SITCR_TRNS_180DN_XA_06",
+		 -- duration=1, time_scale=50000000,  weight=1, heading=-1}
+	-- },
+	
+	
+	
