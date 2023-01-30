@@ -1,4 +1,4 @@
-duration=14021
+duration=68
 
 readfrom('thn_settings.txt')
 
@@ -53,6 +53,32 @@ entities={
 	},
 	
 	{
+		entity_name="music_hall_ambient",
+		template_name="ambience_bar_space",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=-12,pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio",Priority="Story_Sound_1"}
+	},
+	{
+		entity_name="music_bar",
+		template_name="music_bar_generic03",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=-5,pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio",Priority="Story_Sound_1"}
+	},
+	{
+		entity_name="music_danger",
+		template_name="rtc_m07_bg_mix",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=-100,pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio",Priority="Story_Sound_1"}
+	},
+
+	
+	{
 		entity_name="music_fire_attempt",
 		type=SOUND,
 		template_name="rtc_m07_fire_attempt",
@@ -93,6 +119,55 @@ entities={
 	},
 	
 	
+	
+	{
+		entity_name="Prop_barcloth_wadded_Bart",
+		type=COMPOUND,
+		template_name="barcloth_wadded",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={
+			pos={
+				0,
+				-10,
+				0
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		userprops={
+			category="Prop"
+		}
+	},
+	{
+		entity_name="Prop_glass_green",
+		type=COMPOUND,
+		template_name="glass_green",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				-3.0,
+				-10,
+				1.3
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		userprops={
+			category="Prop"
+		}
+	},
 	
 	{
 		entity_name="prop_jester_gun",
@@ -305,7 +380,7 @@ entities={
 			floor_height=0
 		},
 		userprops={
-			Actor="jester",
+			Actor="hammer",
 			category="Character"
 		}
 	},
@@ -329,7 +404,44 @@ entities={
 			floor_height=0
 		},
 		userprops={
-			Actor="hammer",
+			Actor="jester",
+			category="Character"
+		}
+	},
+	{
+		entity_name="point_jester_ask",
+		type=MARKER,
+		template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+		spatialprops={
+			pos={
+				2.18,
+				0,
+				4.52
+			},
+			orient={{-1,0,0},{0,1,0},{0,0,-1}}
+		}
+	},
+	{
+		entity_name="Char_jester2",
+		type=DEFORMABLE,
+		template_name="jester",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				112.18,
+				0,
+				114.52
+			},
+			orient={{-1,0,0},{0,1,0},{0,0,-1}}
+		},
+		compoundprops={
+			floor_height=0
+		},
+		userprops={
+			Actor="jester2",
 			category="Character"
 		}
 	},
@@ -498,7 +610,24 @@ entities={
 	
 	
 	{
-		entity_name="cam_jester_reveal",
+		12.9,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_trent",
+			"point_trent_stand_to_sit"
+		},
+		{
+			duration=0.001,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			}
+		}
+	},
+	{
+		entity_name="cam_hammer_reveal",
 		type=CAMERA,
 		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
 		flags=HIDDEN,
@@ -516,7 +645,7 @@ entities={
 		}
 	},
 	{
-		entity_name="cam_jester_reveal_pos2",
+		entity_name="cam_hammer_reveal_pos2",
 		type=MARKER,
 		template_name="",
 		template_id=0,
@@ -529,7 +658,7 @@ entities={
 	},
 
 	{
-		entity_name="cam_jester_reveal_marker",
+		entity_name="cam_hammer_reveal_marker",
 		type=MARKER,
 		template_name="",
 		template_id=0,
@@ -541,7 +670,7 @@ entities={
 		},
 	},
 	{
-		entity_name="cam_jester_reveal_marker_pos2",
+		entity_name="cam_hammer_reveal_marker_pos2",
 		type=MARKER,
 		template_name="",
 		template_id=0,
@@ -554,7 +683,7 @@ entities={
 	},
 	
 	{
-		entity_name="cam_hammer_ready",
+		entity_name="cam_jester_ready",
 		type=CAMERA,
 		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
 		flags=HIDDEN,
@@ -572,7 +701,7 @@ entities={
 		}
 	},
 	{
-		entity_name="cam_hammer_ready_pos2",
+		entity_name="cam_jester_ready_pos2",
 		type=MARKER,
 		template_name="",
 		template_id=0,
@@ -584,7 +713,7 @@ entities={
 		},
 	},
 	{
-		entity_name="cam_hammer_ready_marker",
+		entity_name="cam_jester_ready_marker",
 		type=MARKER,
 		template_name="",
 		template_id=0,
@@ -596,7 +725,7 @@ entities={
 		},
 	},
 	{
-		entity_name="cam_hammer_ready_marker_pos2",
+		entity_name="cam_jester_ready_marker_pos2",
 		type=MARKER,
 		template_name="",
 		template_id=0,
@@ -610,7 +739,7 @@ entities={
 	
 	
 	{
-		entity_name="cam_hammer_standing",
+		entity_name="cam_jester_standing",
 		type=CAMERA,
 		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
 		flags=HIDDEN,
@@ -628,7 +757,7 @@ entities={
 		}
 	},
 	{
-		entity_name="cam_hammer_standing_marker",
+		entity_name="cam_jester_standing_marker",
 		type=MARKER,
 		template_name="",
 		template_id=0,
@@ -800,7 +929,7 @@ entities={
 		flags=HIDDEN,
 		spatialprops={
 			pos={
-				1.2, 1.35, 7.4
+				1.15, 1.35, 7.4
 			},
 			orient={{1,0,0},{0,1,0},{0,0,1}}
 		},
@@ -819,7 +948,7 @@ entities={
 		template_id=0,
 		spatialprops={
 			pos={
-				0.3, 1.16, 9
+				0.25, 1.16, 9
 			},
 			orient={{1,0,0},{0,1,0},{0,0,1}}
 		},
@@ -952,7 +1081,7 @@ entities={
 			pos={
 				-- 0, 1.2, -4 --barside
 				-- 0, 1, 7  --trent side
-				-- 0, 1, 5  --trent side2
+				-- 0, 0, 5  --trent side2
 				-- 2, 1, 4  --jester table
 				-- 1, 1, 3.6  --jester table near
 				2, 1.2, -2 --rockford
@@ -1045,8 +1174,8 @@ events = {
 		0,
 		ATTACH_ENTITY,
 		{
-			"cam_jester_reveal",
-			"cam_jester_reveal_marker"
+			"cam_hammer_reveal",
+			"cam_hammer_reveal_marker"
 		},
 		{
 			duration=70, offset={0,0,0},
@@ -1057,8 +1186,8 @@ events = {
 		0,
 		ATTACH_ENTITY,
 		{
-			"cam_hammer_ready",
-			"cam_hammer_ready_marker"
+			"cam_jester_ready",
+			"cam_jester_ready_marker"
 		},
 		{
 			duration=70, offset={0,0,0},
@@ -1069,8 +1198,8 @@ events = {
 		0,
 		ATTACH_ENTITY,
 		{
-			"cam_hammer_standing",
-			"cam_hammer_standing_marker"
+			"cam_jester_standing",
+			"cam_jester_standing_marker"
 		},
 		{
 			duration=70, offset={0,0,0},
@@ -1182,383 +1311,119 @@ events = {
 
 	
 	
-	-- {
-		-- 0,
-		-- SET_CAMERA,
-		-- {
-			-- "Monitor_1",
-			-- "cam_start"
-		-- }
-	-- },
+	{
+		0,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_start"
+		}
+	},
 
 	
 	
-	-- {
-		-- 0,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "cam_start",
-			-- "cam_start_pos2"
-		-- },
-		-- {
-			-- duration=7,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },
-	-- {
-		-- 0,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "cam_start_marker",
-			-- "cam_start_marker_pos2"
-		-- },
-		-- {
-			-- duration=7,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },
+	{
+		0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_start",
+			"cam_start_pos2"
+		},
+		{
+			duration=7,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_start_marker",
+			"cam_start_marker_pos2"
+		},
+		{
+			duration=7,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
 	
 	
-	-- {
-		-- 0,
-		-- START_MOTION,
-		-- {"Char_hammer"},
-		-- {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
-		 -- duration=15, time_scale=1, weight=1, heading=-1, event_flags=2}
-	-- },
-	-- {
-		-- 0,
-		-- START_MOTION,
-		-- {"Char_jester"},
-		-- {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
-		 -- duration=15, time_scale=1, weight=1, heading=-1, event_flags=2}
-	-- },
+	{
+		0,
+		START_MOTION,
+		{"Char_hammer"},
+		{animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+		 duration=15, time_scale=1, weight=1, heading=-1, event_flags=2}
+	},
+	{
+		0,
+		START_MOTION,
+		{"Char_jester"},
+		{animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+		 duration=15, time_scale=1, weight=1, heading=-1, event_flags=2}
+	},
 	
 	
-	-- {
-		-- 0,
-		-- START_MOTION,
-		-- {"Char_trent"},
-		-- {animation="Sc_MLBODY_WLKG_000LV_XA_01",
-		 -- duration=10, time_scale=1, weight=1, heading=-1, event_flags=2}
-	-- },	
+	{
+		0,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 duration=10, time_scale=1, weight=1, heading=-1, event_flags=2}
+	},	
 	
 	
-	-- {
-		-- 0.25,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "Char_trent"
-		-- },
-		-- {
-			-- duration=2,
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- axisrot={
-					-- 25,
-					-- Y_AXIS
-				-- }
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },
+	{
+		0.25,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_trent"
+		},
+		{
+			duration=2,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					25,
+					Y_AXIS
+				}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
 	
-	-- {
-		-- 3.25,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "Char_trent"
-		-- },
-		-- {
-			-- duration=4,
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- axisrot={
-					-- -115,
-					-- Y_AXIS
-				-- }
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },
-	
-	
-	
-	-- {
-		-- 10,
-		-- SET_CAMERA,
-		-- {
-			-- "Monitor_1",
-			-- "cam_barman"
-		-- }
-	-- },
-	-- {
-		-- 7,
-		-- START_MOTION,
-		-- {"Char_barman"},
-		-- {animation="Sc_MLBODY_STND_CLEAN_GLAS_000LV_A_26",
-		 -- duration=10, start_time=4, time_scale=1, weight=1, heading=-1}
-	-- },	
-	-- {
-		-- 8,
-		-- START_MOTION,
-		-- {"Char_peasant"},
-		-- {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
-		 -- duration=10, time_scale=1, weight=1, heading=-1, event_flags=2}
-	-- },	
-	-- {
-		-- 7,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "Char_barman"
-		-- },
-		-- {
-			-- duration=1,
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- axisrot={
-					-- -45,
-					-- Y_AXIS
-				-- }
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },
-	
-
-	
-	-- {
-		-- 14,
-		-- SET_CAMERA,
-		-- {
-			-- "Monitor_1",
-			-- "cam_jester_reveal"
-		-- }
-	-- },
-	-- {
-		-- 14,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "cam_jester_reveal",
-			-- "cam_jester_reveal_pos2"
-		-- },
-		-- {
-			-- duration=8,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },
-	-- {
-		-- 14,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "cam_jester_reveal_marker",
-			-- "cam_jester_reveal_marker_pos2"
-		-- },
-		-- {
-			-- duration=8,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },	
-	
-	-- {
-		-- 19,
-		-- START_MOTION,
-		-- {"Char_hammer"},
-		-- {animation="Sc_MLBODY_CHRB_GESTR_180LV_XA_03",
-		 -- duration=15, time_scale=0.4, trans_time=1, weight=1, heading=-1}
-	-- },
-	-- {
-		-- 19,
-		-- START_MOTION,
-		-- {"Char_hammer"},
-		-- {animation="Sc_MLHAND_HNEUT_GESTR_THUMB_000LV_00",
-		 -- duration=0.2, start_time=2, time_scale=1, weight=1, heading=-1}
-	-- },
-	
-	
-		
-	-- {
-		-- 12.9,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "Char_trent",
-			-- "point_trent_stand_to_sit"
-		-- },
-		-- {
-			-- duration=0.001,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- }
-		-- }
-	-- },
-	-- {
-		-- 13,
-		-- START_MOTION,
-		-- {"Char_trent"},
-		-- {animation="Sc_MLBODY_STND_SITCR_TRNS_090DN_XA_07",
-		 -- duration=15, start_time=1, time_scale=1, weight=1, heading=-1}
-	-- },
-	-- {
-		-- 17,
-		-- START_MOTION,
-		-- {"Char_trent"},
-		-- {animation="Sc_MLBODY_CHRB_CHRF_TRNS_000LV_XA_02",
-		 -- duration=15, trans_time=1, time_scale=1, weight=1, heading=-1}
-	-- },
-	-- {
-		-- 19,
-		-- START_MOTION,
-		-- {"Char_trent"},
-		-- {animation="Sc_MLBODY_CHRF_TWSTS_LOOK_090LV_XA_02",
-		 -- duration=15, trans_time=1, time_scale=0.8, weight=1, heading=-1}
-	-- },
-	-- {
-		-- 22,
-		-- START_MOTION,
-		-- {"Char_trent"},
-		-- {animation="Sc_MLBODY_CHRF_TWSTS_FROM_090LV_XA_02",
-		 -- duration=15, trans_time=1, time_scale=0.8, weight=1, heading=-1}
-	-- },
-	
-	
-	
-	-- {
-		-- 15,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "Char_trent"
-		-- },
-		-- {
-			-- duration=1,
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- axisrot={
-					-- -20,
-					-- Y_AXIS
-				-- }
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },
-	
-	
-	-- {
-		-- 25,
-		-- SET_CAMERA,
-		-- {
-			-- "Monitor_1",
-			-- "cam_hammer_ready"
-		-- }
-	-- },
-	
-	-- {
-		-- 28.8,
-		-- SET_CAMERA,
-		-- {
-			-- "Monitor_1",
-			-- "cam_hammer_standing"
-		-- }
-	-- },
-	
-	
-	-- {
-		-- 0,
-		-- CONNECT_HARDPOINTS,
-		-- {
-			-- "prop_jester_gun",
-			-- "Char_jester"
-		-- },
-		-- {
-			-- duration=59.45,
-			-- hardpoint="hprightconnect_gun",
-			-- parent_hardpoint="hprightconnect"
-		-- }
-	-- },
-	
-	-- {
-		-- 0,
-		-- START_MOTION,
-		-- {"Char_jester"},
-		-- {animation="Sc_MLHAND_HNEUT_GUN_RGHT_000LV_XB_00",
-		 -- duration=0.2, time_scale=1, weight=1, heading=-1}
-	-- },
-	
-	-- {
-		-- 25,
-		-- START_MOTION,
-		-- {"Char_jester"},
-		-- {animation="Sc_MLBODY_CHRB_CHRF_TRNS_000LV_XA_02",
-		 -- duration=15, time_scale=0.6, weight=1, heading=-1}
-	-- },
-	-- {
-		-- 29,
-		-- START_MOTION,
-		-- {"Char_jester"},
-		-- {animation="Sc_MLBODY_CHRB_WALK_TRNS_270LV_XA_10",
-		 -- duration=15, time_scale=0.8, start_time=1.5, trans_time=1, weight=1, heading=-1}
-	-- },
-	
-	
-	
-	-- {
-		-- 31,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "Char_jester"
-		-- },
-		-- {
-			-- duration=3,
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- axisrot={
-					-- -80,
-					-- Y_AXIS
-				-- }
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	{
+		3.25,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_trent"
+		},
+		{
+			duration=4,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					-115,
+					Y_AXIS
+				}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
 	
 	
 	
@@ -1566,6 +1431,144 @@ events = {
 	
 	{
 		0,
+		CONNECT_HARDPOINTS,
+		{
+			"Prop_barcloth_wadded_Bart",
+			"Char_barman"
+		},
+		{
+			duration=35,
+			hardpoint="hprightconnect_prop_barcloth_wadded",
+			parent_hardpoint="hprightconnect"
+		}
+	},
+
+	{
+		0,
+		CONNECT_HARDPOINTS,
+		{
+			"Prop_glass_green",
+			"Char_barman"
+		},
+		{
+			duration=35,
+			hardpoint="hpleftconnect_prop_glass_green",
+			parent_hardpoint="hpleftconnect"
+		}
+	},
+	
+	
+	
+	
+	{
+		8,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_barman"
+		}
+	},
+	{
+		7,
+		START_MOTION,
+		{"Char_barman"},
+		{animation="Sc_MLBODY_STND_CLEAN_GLAS_000LV_A_26",
+		 duration=10, start_time=4, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		8,
+		START_MOTION,
+		{"Char_peasant"},
+		{animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+		 duration=10, time_scale=1, weight=1, heading=-1, event_flags=2}
+	},	
+	{
+		7,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_barman"
+		},
+		{
+			duration=1,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					-45,
+					Y_AXIS
+				}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	
+
+	
+	{
+		14,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_hammer_reveal"
+		}
+	},
+	{
+		14,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_hammer_reveal",
+			"cam_hammer_reveal_pos2"
+		},
+		{
+			duration=8,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		14,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_hammer_reveal_marker",
+			"cam_hammer_reveal_marker_pos2"
+		},
+		{
+			duration=8,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},	
+	
+	{
+		19,
+		START_MOTION,
+		{"Char_hammer"},
+		{animation="Sc_MLBODY_CHRB_GESTR_180LV_XA_03",
+		 duration=15, time_scale=0.4, trans_time=1, weight=1, heading=-1}
+	},
+	{
+		19,
+		START_MOTION,
+		{"Char_hammer"},
+		{animation="Sc_MLHAND_HNEUT_GESTR_THUMB_000LV_00",
+		 duration=0.2, start_time=2, time_scale=1, weight=1, heading=-1}
+	},
+	
+	
+		
+	{
+		12.9,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"Char_trent",
@@ -1582,16 +1585,38 @@ events = {
 		}
 	},
 	{
-		0.1,
+		13,
 		START_MOTION,
 		{"Char_trent"},
 		{animation="Sc_MLBODY_STND_SITCR_TRNS_090DN_XA_07",
-		 duration=15, start_time=1, time_scale=2, weight=1, heading=-1}
+		 duration=15, start_time=1, time_scale=1, weight=1, heading=-1}
+	},
+	{
+		17,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_CHRB_CHRF_TRNS_000LV_XA_02",
+		 duration=15, trans_time=1, time_scale=1, weight=1, heading=-1}
+	},
+	{
+		19,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_CHRF_TWSTS_LOOK_090LV_XA_02",
+		 duration=15, trans_time=1, time_scale=0.8, weight=1, heading=-1}
+	},
+	{
+		22,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_CHRF_TWSTS_FROM_090LV_XA_02",
+		 duration=15, trans_time=1, time_scale=0.65, weight=1, heading=-1}
 	},
 	
-
+	
+	
 	{
-		1,
+		15,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"Char_trent"
@@ -1610,16 +1635,178 @@ events = {
 	},
 	
 	
+	{
+		25,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_jester_ready"
+		}
+	},
+	
+	{
+		28.8,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_jester_standing"
+		}
+	},
 	
 	
+	{
+		24,
+		CONNECT_HARDPOINTS,
+		{
+			"prop_jester_gun",
+			"Char_jester"
+		},
+		{
+			duration=159.45,
+			hardpoint="hprightconnect_gun",
+			parent_hardpoint="hprightconnect"
+		}
+	},
 	
-	
+	{
+		24,
+		START_MOTION,
+		{"Char_jester"},
+		{animation="Sc_MLHAND_HNEUT_GUN_RGHT_000LV_XB_00",
+		 duration=0.2, time_scale=1, weight=1, heading=-1}
+	},
 	
 	
 	
 	
 	{
-		0.1,
+		28,
+		CONNECT_HARDPOINTS,
+		{
+			"prop_hammer_gun",
+			"Char_hammer"
+		},
+		{
+			duration=159.45,
+			hardpoint="hprightconnect_gun",
+			parent_hardpoint="hprightconnect"
+		}
+	},
+	{
+		28,
+		START_MOTION,
+		{"Char_hammer"},
+		{animation="Sc_MLHAND_HNEUT_GUN_RGHT_000LV_XB_00",
+		 duration=0.2, time_scale=1, weight=1, heading=-1}
+	},
+	
+	
+	{
+		25,
+		START_MOTION,
+		{"Char_jester"},
+		{animation="Sc_MLBODY_CHRB_CHRF_TRNS_000LV_XA_02",
+		 duration=15, time_scale=0.6, weight=1, heading=-1}
+	},
+	{
+		29,
+		START_MOTION,
+		{"Char_jester"},
+		{animation="Sc_MLBODY_CHRB_WALK_TRNS_270LV_XA_10",
+		 duration=3.9, time_scale=0.8, start_time=1.5, trans_time=1, weight=1, heading=-1}
+	},
+	
+	
+	
+	{
+		30,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_jester"
+		},
+		{
+			duration=3,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					-80,
+					Y_AXIS
+				}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	
+	{
+		30,
+		START_MOTION,
+		{
+			"Char_peasant"
+		},
+		{
+			animation="Sc_MLBODY_STND_RUN_TRNS_000LV_XD_02",
+			duration=10,
+			trans_time=1,
+			time_scale=0.68,
+			weight=1,
+			heading=-1
+		}
+	},
+	{
+		31.5,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_peasant"
+		},
+		{
+			duration=2,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					-45,
+					Y_AXIS
+				}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	
+	
+	{
+		29,
+		START_MOTION,
+		{"Char_barman"},
+		{animation="Sc_MLBODY_STND_CLEAN_GLAS_000LV_A_26",
+		 duration=3, start_time=7, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		32,
+		START_MOTION,
+		{
+			"Char_barman"
+		},
+		{
+			animation="Sc_MLBODY_CROUCHNG_IDLE_000DN_XA_03",
+			duration=10,
+			trans_time=2,
+			time_scale=1,
+			weight=1,
+			heading=-1
+		}
+	},
+	
+	
+	{
+		32,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+		 duration=10, time_scale=1, weight=1, heading=-1, event_flags=2}
+	},
+	
+	
+	{
+		33,
 		SET_CAMERA,
 		{
 			"Monitor_1",
@@ -1627,7 +1814,7 @@ events = {
 		}
 	},
 	{
-		4,
+		33,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"cam_greet",
@@ -1646,7 +1833,7 @@ events = {
 		}
 	},
 	{
-		4,
+		33,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"cam_greet_marker",
@@ -1666,7 +1853,7 @@ events = {
 	},	
 	
 	{
-		3,
+		32,
 		START_MOTION,
 		{"Char_hammer"},
 		{animation="Sc_MLBODY_CHRB_STNDCR_TRNS_090LV_XA_05",
@@ -1676,7 +1863,7 @@ events = {
 	
 	
 	{
-		3.1,
+		32.1,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"Char_hammer"
@@ -1694,39 +1881,62 @@ events = {
 		}
 	},	
 	
-	
+		
 	{
-		0,
-		START_MOTION,
-		{"Char_jester"},
-		{animation="Sc_MLBODY_CHRB_WALK_TRNS_270LV_XA_10",
-		 duration=15, time_scale=0.8, start_time=1.5, weight=1, heading=-1}
-	},
-	
-	
-	{
-		1,
+		32.95,
 		START_SPATIAL_PROP_ANIM,
 		{
-			"Char_jester"
+			"Char_jester",
+			"point_jester_ask"
 		},
 		{
-			duration=3,
+			duration=0,
+			target_part="",
 			target_type=ROOT,
 			spatialprops={
-				axisrot={
-					-80,
-					Y_AXIS
-				}
-			},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			}
+		}
+	},
+	{
+		34,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_peasant",
+			"offscreen"
+		},
+		{
+			duration=0,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			}
+		}
+	},
+	{
+		34,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_barman",
+			"offscreen"
+		},
+		{
+			duration=0,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			}
 		}
 	},
 	
 	
-	
 	{
-		4,
+		33,
 		START_MOTION,
 		{"Char_jester"},
 		{animation="Sc_MLBODY_WALK_STND_TRNS_000LV_XA_02",
@@ -1734,7 +1944,7 @@ events = {
 	},
 	
 	{
-		4,
+		33,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"Char_jester"
@@ -1744,7 +1954,7 @@ events = {
 			target_type=ROOT,
 			spatialprops={
 				axisrot={
-					-45,
+					-40,
 					Y_AXIS
 				}
 			},
@@ -1755,7 +1965,7 @@ events = {
 	
 	
 	{
-		5,
+		33.3,
 		START_IK,
 		{
 			"Char_trent",
@@ -1769,7 +1979,7 @@ events = {
 		}
 	},
 	{
-		4,
+		33,
 		START_IK,
 		{
 			"Char_jester",
@@ -1783,7 +1993,7 @@ events = {
 		}
 	},
 	{
-		5,
+		34,
 		START_IK,
 		{
 			"Char_hammer",
@@ -1799,7 +2009,7 @@ events = {
 	
 	
 	{
-		5,
+		34,
 		START_SOUND,
 		{
 			"DX_m07_cadiz_0010_enemy1"
@@ -1809,15 +2019,31 @@ events = {
 		}
 	},
 	{
-		5,
+		34,
 		START_MOTION,
 		{"Char_jester"},
 		{animation="Sc_dx_s033x_0502_dexter",
 		 duration=6, start_time=0, time_scale=1.1, trans_time=0.2, weight=1, heading=-1}
 	}, 
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	{
-		8,
+		37,
 		START_SOUND,
 		{
 			"DX_m07_cadiz_0020_trent"
@@ -1827,7 +2053,7 @@ events = {
 		}
 	},
 	{
-		8,
+		37,
 		START_MOTION,
 		{"Char_trent"},
 		{animation="Sc_dx_s021x_0401_trent",
@@ -1836,7 +2062,7 @@ events = {
 	
 	
 	{
-		11,
+		40,
 		START_MOTION,
 		{
 			"Char_trent"
@@ -1856,7 +2082,7 @@ events = {
 	
 	
 	{
-		10,
+		39,
 		SET_CAMERA,
 		{
 			"Monitor_1",
@@ -1866,7 +2092,7 @@ events = {
 		
 	
 	{
-		10,
+		39,
 		START_SOUND,
 		{
 			"DX_m07_cadiz_0030_enemy2"
@@ -1876,32 +2102,39 @@ events = {
 		}
 	},
 	{
-		10,
+		39,
 		START_MOTION,
 		{"Char_hammer"},
 		{animation="Sc_dx_s026b_1501_vance",
-		 duration=12, start_time=0.5, time_scale=1, trans_time=0.2, weight=1, heading=-1}
+		 duration=12, start_time=0.5, time_scale=1.1, trans_time=0.2, weight=1, heading=-1}
 	}, 
 	{
-		15.5,
+		44.5,
 		START_MOTION,
 		{"Char_hammer"},
 		{animation="Sc_dx_s026b_2402_vance",
-		 duration=12, start_time=0.5, time_scale=1, trans_time=0.2, weight=1, heading=-1}
+		 duration=12, start_time=1, time_scale=1, trans_time=0.2, weight=1, heading=-1}
 	}, 
 	
 	{
-		11,
+		40,
 		START_MOTION,
 		{"Char_hammer"},
 		{animation="Sc_MLBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
 		 duration=15, trans_time=1, time_scale=0.6, weight=1, heading=-1}
 	},
+	{
+		43.5,
+		START_MOTION,
+		{"Char_hammer"},
+		{animation="Sc_MLBODY_STND_FSTHIPB_HOLD_000LV_XA_02",
+		 duration=15, trans_time=1, time_scale=0.8, weight=1, heading=-1, event_flags=2}
+	},
 	
 	
 	
 	{
-		18,
+		47,
 		SET_CAMERA,
 		{
 			"Monitor_1",
@@ -1911,7 +2144,7 @@ events = {
 		
 	
 	{
-		18,
+		47,
 		START_SOUND,
 		{
 			"DX_m07_cadiz_0040_enemy3"
@@ -1921,7 +2154,7 @@ events = {
 		}
 	},
 	{
-		18,
+		47,
 		START_MOTION,
 		{"Char_jester"},
 		{animation="Sc_dx_s004x_0501_li_diplomt",
@@ -1932,7 +2165,7 @@ events = {
 	
 	
 	{
-		19,
+		48,
 		START_MOTION,
 		{"Char_jester"},
 		{animation="Sc_SPCBODY_s019b_Drake_XA_STND_000LV_13",
@@ -1940,7 +2173,7 @@ events = {
 	},
 	
 	{
-		20,
+		49,
 		START_SOUND,
 		{
 			"DX_m07_cadiz_0050_enemy4"
@@ -1950,7 +2183,7 @@ events = {
 		}
 	},
 	{
-		20,
+		49,
 		START_MOTION,
 		{"Char_jester"},
 		{animation="Sc_dx_s004x_0501_li_diplomt",
@@ -1961,7 +2194,7 @@ events = {
 
 	
 	{
-		22.5,
+		51.5,
 		SET_CAMERA,
 		{
 			"Monitor_1",
@@ -1969,7 +2202,7 @@ events = {
 		}
 	},
 	{
-		22.5,
+		51.5,
 		START_CAMERA_PROP_ANIM,
 		{
 			"cam_trent_fire"
@@ -1984,7 +2217,7 @@ events = {
 		}
 	},
 	{
-		22.3,
+		51.3,
 		START_MOTION,
 		{"Char_trent"},
 		{animation="Sc_MLHEAD_MOTION_EYES_OPENBG_TRENT_000LV_XA_%",
@@ -1992,7 +2225,7 @@ events = {
 	}, 
 	
 	{
-		22.5,
+		51.5,
 		START_MOTION,
 		{"Char_trent"},
 		{animation="Sc_MLBODY_CHRB_GEST_HNDS_WAIT_000LV_XA_03",
@@ -2003,7 +2236,7 @@ events = {
 	
 	
 	{
-		25,
+		54,
 		START_CAMERA_PROP_ANIM,
 		{
 			"cam_jester_fire"
@@ -2018,7 +2251,7 @@ events = {
 		}
 	},
 	{
-		25.5,
+		54.5,
 		SET_CAMERA,
 		{
 			"Monitor_1",
@@ -2028,14 +2261,14 @@ events = {
 	
 	
 	{
-		25.5,
+		54.5,
 		START_MOTION,
 		{"Char_jester"},
 		{animation="Sc_SPCBODY_s019b_Drake_XB_STND_000LV_%",
 		 duration=6, time_scale=1, weight=1, heading=-1, event_flags=2}
 	},
 	{
-		25.5,
+		54.5,
 		START_MOTION,
 		{"Char_jester"},
 		{animation="Sc_MLHEAD_MAD_COLD_000LV_XA_%",
@@ -2043,52 +2276,11 @@ events = {
 	},
 	
 	
-	{
-		0,
-		CONNECT_HARDPOINTS,
-		{
-			"prop_jester_gun",
-			"Char_jester"
-		},
-		{
-			duration=59.45,
-			hardpoint="hprightconnect_gun",
-			parent_hardpoint="hprightconnect"
-		}
-	},
-	{
-		0,
-		START_MOTION,
-		{"Char_jester"},
-		{animation="Sc_MLHAND_HNEUT_GUN_RGHT_000LV_XB_00",
-		 duration=0.2, time_scale=1, weight=1, heading=-1}
-	},
+	
 	
 	
 	{
-		0,
-		CONNECT_HARDPOINTS,
-		{
-			"prop_hammer_gun",
-			"Char_hammer"
-		},
-		{
-			duration=59.45,
-			hardpoint="hprightconnect_gun",
-			parent_hardpoint="hprightconnect"
-		}
-	},
-	{
-		0,
-		START_MOTION,
-		{"Char_hammer"},
-		{animation="Sc_MLHAND_HNEUT_GUN_RGHT_000LV_XB_00",
-		 duration=0.2, time_scale=1, weight=1, heading=-1}
-	},
-	
-	
-	{
-		27,
+		56,
 		START_PSYS_PROP_ANIM,
 		{
 			"fadenegative_variable_1"
@@ -2101,7 +2293,7 @@ events = {
 		}
 	},
 	{
-		27.7,
+		56.7,
 		ATTACH_ENTITY,
 		{
 			"fadenegative_variable_1",
@@ -2122,7 +2314,7 @@ events = {
 		}
 	},
 	{
-		27.7,
+		56.7,
 		START_PSYS,
 		{
 			"fadenegative_variable_1"
@@ -2132,7 +2324,7 @@ events = {
 		}
 	},
 	{
-		27.7,
+		56.7,
 		START_PSYS_PROP_ANIM,
 		{
 			"fadenegative_variable_1"
@@ -2150,7 +2342,7 @@ events = {
 
 	
 	{
-		28.2,
+		57.2,
 		START_PSYS_PROP_ANIM,
 		{
 			"fadenegative_variable_1"
@@ -2163,7 +2355,7 @@ events = {
 		}
 	},
 	{
-		28.5,
+		57.5,
 		ATTACH_ENTITY,
 		{
 			"fadenegative_variable_1",
@@ -2184,7 +2376,7 @@ events = {
 		}
 	},
 	{
-		28.5,
+		57.5,
 		START_PSYS,
 		{
 			"fadenegative_variable_1"
@@ -2194,7 +2386,7 @@ events = {
 		}
 	},
 	{
-		28.5,
+		57.5,
 		START_PSYS_PROP_ANIM,
 		{
 			"fadenegative_variable_1"
@@ -2209,23 +2401,23 @@ events = {
 		}
 	},
 	
-	{19, START_SOUND, {"music_fire_attempt"}, {duration=20}},
+	{48, START_SOUND, {"music_fire_attempt"}, {duration=20}},
 
-	{27.7, START_SOUND, {"sound_fire_rockford"}, {duration=20}},
-	{28.5, START_SOUND, {"sound_fire_rockford2"}, {duration=20}},
+	{56.7, START_SOUND, {"sound_fire_rockford"}, {duration=20}},
+	{57.5, START_SOUND, {"sound_fire_rockford2"}, {duration=20}},
 	
-	{28.5, START_AUDIO_PROP_ANIM, {"music_fire_attempt"}, {duration=1, audioprops={attenuation=-100}}},
+	{57.5, START_AUDIO_PROP_ANIM, {"music_fire_attempt"}, {duration=1, audioprops={attenuation=-100}}},
 	
 	
 	{
-		27.9,
+		56.9,
 		START_MOTION,
 		{"Char_jester"},
 		{animation="Sc_dx_s019b_2704_Drake",
 		 duration=2, time_scale=1, trans_time=0.15, weight=1, heading=-1}
 	},
 	{
-		27.9,
+		56.9,
 		START_MOTION,
 		{"Char_jester"},
 		{animation="Sc_SPCBODY_s051x_ku_guard01_XC_STND_DEATH_225DN_03",
@@ -2233,7 +2425,7 @@ events = {
 	},
 	
 	{
-		28.4,
+		57.4,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"Char_jester"
@@ -2255,21 +2447,21 @@ events = {
 	
 	
 	{
-		28,
+		57,
 		START_MOTION,
 		{"Char_hammer"},
 		{animation="Sc_SPCBODY_s002x_Vance_XD_STND_000DN_03",
 		 duration=15, time_scale=1.3, trans_time=1, weight=1, heading=-1}
 	},
 	{
-		28.5,
+		57.5,
 		START_MOTION,
 		{"Char_hammer"},
 		{animation="Sc_dx_s019b_2704_Drake",
 		 duration=2, time_scale=1, trans_time=0.15, weight=1, heading=-1}
 	},
 	{
-		28,
+		57,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"Char_hammer"
@@ -2289,7 +2481,7 @@ events = {
 	
 	
 	{
-		28.1,
+		57.1,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"Char_hammer"
@@ -2309,7 +2501,7 @@ events = {
 	
 	
 	{
-		28,
+		57,
 		SET_CAMERA,
 		{
 			"Monitor_1",
@@ -2319,7 +2511,7 @@ events = {
 	
 	
 	{
-		29,
+		58,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"Char_rockford",
@@ -2338,7 +2530,7 @@ events = {
 	
 
 	{
-		29,
+		58,
 		START_MOTION,
 		{
 			"Char_rockford"
@@ -2352,7 +2544,7 @@ events = {
 		}
 	},
 	{
-		29,
+		58,
 		START_MOTION,
 		{
 			"Char_rockford"
@@ -2368,7 +2560,7 @@ events = {
 
 
 	{
-		29,
+		58,
 		CONNECT_HARDPOINTS,
 		{
 			"prop_rockford_rifle",
@@ -2382,7 +2574,7 @@ events = {
 	},
 	
 	{
-		31,
+		60,
 		SET_CAMERA,
 		{
 			"Monitor_1",
@@ -2390,7 +2582,7 @@ events = {
 		}
 	},
 	{
-		31,
+		60,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"cam_rockford_appear",
@@ -2409,7 +2601,7 @@ events = {
 		}
 	},
 	{
-		31,
+		60,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"cam_rockford_appear_marker",
@@ -2430,7 +2622,7 @@ events = {
 
 	
 	{
-		31,
+		60,
 		START_CAMERA_PROP_ANIM,
 		{
 			"cam_rockford_appear"
@@ -2446,7 +2638,7 @@ events = {
 	},
 	
 	{
-		30,
+		59,
 		START_MOTION,
 		{"Char_rockford"},
 		{animation="Sc_SPCBODY_s010x_Rh_agent01_XA_STND_000LV_03",
@@ -2454,14 +2646,14 @@ events = {
 	},
 		
 	{
-		35,
+		63.5,
 		START_MOTION,
 		{"Char_rockford"},
 		{animation="Sc_MLBODY_STND_WALK_TRNS_000LV_XA_01",
 		 duration=15, trans_time=1, time_scale=1, weight=1, heading=-1}
 	},
 	{
-		36.05,
+		64.55,
 		START_MOTION,
 		{"Char_rockford"},
 		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
@@ -2471,7 +2663,7 @@ events = {
 	
 	
 	{
-		32.5,
+		61.5,
 		START_SOUND,
 		{
 			"DX_m07_cadiz_0060_rockford"
@@ -2481,7 +2673,7 @@ events = {
 		}
 	},
 	{
-		32.5,
+		61.5,
 		START_MOTION,
 		{"Char_rockford"},
 		{animation="Sc_dx_s032a_0301_dexter",
@@ -2492,7 +2684,7 @@ events = {
 
 	
 	{
-		35,
+		64,
 		START_SOUND,
 		{
 			"DX_m07_cadiz_0065_rockford"
@@ -2504,789 +2696,57 @@ events = {
 	
 	
 	
+	{
+		0, START_SOUND, {"music_hall_ambient"}, {duration=108, flags=LOOP}
+	},
+	{
+		0, START_SOUND, {"music_bar"}, {duration=25, flags=LOOP}
+	},
+	{
+		25,
+		START_AUDIO_PROP_ANIM,
+		{
+			"music_bar"
+		},
+		{
+			duration=5,
+			audioprops={
+				attenuation=-100
+			}
+		}
+	},
+	{
+		20, START_SOUND, {"music_danger"}, {duration=28, flags=LOOP}
+	},
+	{
+		20,
+		START_AUDIO_PROP_ANIM,
+		{
+			"music_danger"
+		},
+		{
+			duration=5,
+			audioprops={
+				attenuation=-5
+			}
+		}
+	},
+	{
+		48,
+		START_AUDIO_PROP_ANIM,
+		{
+			"music_danger"
+		},
+		{
+			duration=3,
+			audioprops={
+				attenuation=-100
+			}
+		}
+	},
 	
 	
 
-
-
-
-	-- {
-		-- 0,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "Char_trent",
-			-- "point_trent_stand_to_sit"
-		-- },
-		-- {
-			-- duration=0.001,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- }
-		-- }
-	-- },
-
-
-
-	-- {
-		-- 0.1,
-		-- SET_CAMERA,
-		-- {
-			-- "Monitor_1",
-			-- "cam_dbg"
-		-- }
-	-- },
-	
-	-- {
-		-- 0,
-		-- SET_CAMERA,
-		-- {
-			-- "Monitor_1",
-			-- "cam_rockford_appear"
-		-- }
-	-- },
-	-- {
-		-- 0,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "cam_rockford_appear",
-			-- "cam_rockford_appear_pos2"
-		-- },
-		-- {
-			-- duration=4,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },
-	-- {
-		-- 0,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "cam_rockford_appear_marker",
-			-- "cam_rockford_appear_marker_pos2"
-		-- },
-		-- {
-			-- duration=4,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- pos={0,0,0},
-				-- q_orient={1,0,0,0}
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },	
-
-	
-	-- {
-		-- 0,
-		-- START_CAMERA_PROP_ANIM,
-		-- {
-			-- "cam_rockford_appear"
-		-- },
-		-- {
-			-- duration=4,
-			-- cameraprops={
-				-- fovh=22
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },
-	
-	-- {
-		-- 0,
-		-- START_MOTION,
-		-- {"Char_rockford"},
-		-- {animation="Sc_SPCBODY_s010x_Rh_agent01_XA_STND_000LV_03",
-		 -- duration=0.2, start_time=2, time_scale=1, weight=1, heading=-1}
-	-- },
-	
-	-- {
-		-- 4,
-		-- START_MOTION,
-		-- {"Char_rockford"},
-		-- {animation="Sc_MLBODY_STND_WALK_TRNS_000LV_XA_01",
-		 -- duration=15, trans_time=1, time_scale=1, weight=1, heading=-1}
-	-- },
-	-- {
-		-- 5.05,
-		-- START_MOTION,
-		-- {"Char_rockford"},
-		-- {animation="Sc_MLBODY_WLKG_000LV_XA_01",
-		 -- duration=15, time_scale=1, weight=1, heading=-1, event_flags=2}
-	-- },
-	
-	
-	
-	-- {
-		-- 2,
-		-- START_SOUND,
-		-- {
-			-- "DX_m07_cadiz_0060_rockford"
-		-- },
-		-- {
-			-- duration=15
-		-- }
-	-- },
-	-- {
-		-- 2,
-		-- START_MOTION,
-		-- {"Char_rockford"},
-		-- {animation="Sc_dx_s032a_0301_dexter",
-		 -- duration=6, start_time=0, time_scale=0.8, trans_time=0.2, weight=1, heading=-1}
-	-- }, 
-	
-	-- {
-		-- 4,
-		-- START_SOUND,
-		-- {
-			-- "DX_m07_cadiz_0065_rockford"
-		-- },
-		-- {
-			-- duration=15
-		-- }
-	-- },
-	
-
-	
-
-	-- {
-		-- 0,
-		-- START_MOTION,
-		-- {
-			-- "Char_rockford"
-		-- },
-		-- {
-			-- animation="Sc_MLHAND_HNEUT_GUN_RGHT_000LV_00",
-			-- duration=1,
-			-- time_scale=2,
-			-- weight=1,
-			-- heading=-1,
-		-- }
-	-- },
-	-- {
-		-- 0,
-		-- START_MOTION,
-		-- {
-			-- "Char_rockford"
-		-- },
-		-- {
-			-- animation="Sc_MLHAND_HNEUT_RIFLE_LEFT_000LV_00",
-			-- duration=0.4,
-			-- time_scale=2,
-			-- weight=1,
-			-- heading=-1
-		-- }
-	-- },
-
-
-	-- {
-		-- 0,
-		-- CONNECT_HARDPOINTS,
-		-- {
-			-- "prop_rockford_rifle",
-			-- "Char_rockford"
-		-- },
-		-- {
-			-- duration=59.45,
-			-- hardpoint="hp_male_rhand_rifle",
-			-- parent_hardpoint="hprightconnect"
-		-- }
-	-- },
-
-
-
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	-- {
-		-- 0,
-		-- CONNECT_HARDPOINTS,
-		-- {
-			-- "prop_jester_gun",
-			-- "Char_jester"
-		-- },
-		-- {
-			-- duration=59.45,
-			-- hardpoint="hprightconnect_gun",
-			-- parent_hardpoint="hprightconnect"
-		-- }
-	-- },
-	-- {
-		-- 0,
-		-- START_MOTION,
-		-- {"Char_jester"},
-		-- {animation="Sc_MLHAND_HNEUT_GUN_RGHT_000LV_XB_00",
-		 -- duration=0.2, time_scale=1, weight=1, heading=-1}
-	-- },
-	
-	
-	-- {
-		-- 0,
-		-- CONNECT_HARDPOINTS,
-		-- {
-			-- "prop_hammer_gun",
-			-- "Char_hammer"
-		-- },
-		-- {
-			-- duration=59.45,
-			-- hardpoint="hprightconnect_gun",
-			-- parent_hardpoint="hprightconnect"
-		-- }
-	-- },
-	-- {
-		-- 0,
-		-- START_MOTION,
-		-- {"Char_hammer"},
-		-- {animation="Sc_MLHAND_HNEUT_GUN_RGHT_000LV_XB_00",
-		 -- duration=0.2, time_scale=1, weight=1, heading=-1}
-	-- },
-	
-	
-	
-	-- {
-		-- 3,
-		-- START_MOTION,
-		-- {"Char_hammer"},
-		-- {animation="Sc_MLBODY_CHRB_STNDCR_TRNS_090LV_XA_05",
-		 -- duration=15, weight=1, heading=-1}
-	-- },
-	
-	
-	
-	-- {
-		-- 3.1,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "Char_hammer"
-		-- },
-		-- {
-			-- duration=3,
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- axisrot={
-					-- -90,
-					-- Y_AXIS
-				-- }
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },	
-	
-	
-	-- {
-		-- 0,
-		-- START_MOTION,
-		-- {"Char_jester"},
-		-- {animation="Sc_MLBODY_CHRB_WALK_TRNS_270LV_XA_10",
-		 -- duration=15, time_scale=0.8, start_time=1.5, weight=1, heading=-1}
-	-- },
-	
-	
-	-- {
-		-- 1,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "Char_jester"
-		-- },
-		-- {
-			-- duration=3,
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- axisrot={
-					-- -80,
-					-- Y_AXIS
-				-- }
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },
-	
-	
-	
-	-- {
-		-- 4,
-		-- START_MOTION,
-		-- {"Char_jester"},
-		-- {animation="Sc_MLBODY_WALK_STND_TRNS_000LV_XA_02",
-		 -- duration=15, time_scale=0.8, start_time=0.5, weight=1, heading=-1}
-	-- },
-	
-	-- {
-		-- 4,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "Char_jester"
-		-- },
-		-- {
-			-- duration=2,
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- axisrot={
-					-- -45,
-					-- Y_AXIS
-				-- }
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },
-	
-	
-
-	
-	
-	
-	-- {
-		-- 0.1,
-		-- SET_CAMERA,
-		-- {
-			-- "Monitor_1",
-			-- "cam_dbg"
-		-- }
-	-- },
-		
-	
-	-- {
-		-- 7,
-		-- START_MOTION,
-		-- {"Char_jester"},
-		-- {animation="Sc_SPCBODY_s019b_Drake_XB_STND_000LV_%",
-		 -- duration=0.5, time_scale=5, weight=1, heading=-1}
-	-- },
-	
-	
-	
-	-- {
-		-- 7.9,
-		-- START_MOTION,
-		-- {"Char_jester"},
-		-- {animation="Sc_dx_s019b_2704_Drake",
-		 -- duration=2, time_scale=1, trans_time=0.15, weight=1, heading=-1}
-	-- },
-	-- {
-		-- 7.9,
-		-- START_MOTION,
-		-- {"Char_jester"},
-		-- {animation="Sc_SPCBODY_s051x_ku_guard01_XC_STND_DEATH_225DN_03",
-		 -- duration=5, start_time=1, trans_time=1.5, time_scale=0.8, weight=1, heading=-1}
-	-- },
-	
-	-- {
-		-- 8.4,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "Char_jester"
-		-- },
-		-- {
-			-- duration=2,
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- axisrot={
-					-- 33,
-					-- Y_AXIS
-				-- }
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },
-	
-	
-	
-	
-	-- {
-		-- 8,
-		-- START_MOTION,
-		-- {"Char_hammer"},
-		-- {animation="Sc_SPCBODY_s002x_Vance_XD_STND_000DN_03",
-		 -- duration=15, time_scale=1, trans_time=1, weight=1, heading=-1}
-	-- },
-	-- {
-		-- 8,
-		-- START_MOTION,
-		-- {"Char_hammer"},
-		-- {animation="Sc_dx_s019b_2704_Drake",
-		 -- duration=2, time_scale=1, trans_time=0.15, weight=1, heading=-1}
-	-- },
-	-- {
-		-- 8,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "Char_hammer"
-		-- },
-		-- {
-			-- duration=0,
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- axisrot={
-					-- 45,
-					-- Y_AXIS
-				-- }
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },	
-	
-	
-	-- {
-		-- 8.1,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "Char_hammer"
-		-- },
-		-- {
-			-- duration=2,
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- axisrot={
-					-- 45,
-					-- Y_AXIS
-				-- }
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },	
-	
-	
-	
-	
-	
-	
-	-- {
-		-- 0,
-		-- START_CAMERA_PROP_ANIM,
-		-- {
-			-- "cam_jester_fire"
-		-- },
-		-- {
-			-- duration=3,
-			-- cameraprops={
-				-- fovh=17
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },
-	-- {
-		-- 0.5,
-		-- SET_CAMERA,
-		-- {
-			-- "Monitor_1",
-			-- "cam_jester_fire"
-		-- }
-	-- },
-	
-	-- {
-		-- 8,
-		-- SET_CAMERA,
-		-- {
-			-- "Monitor_1",
-			-- "cam_hammer_death"
-		-- }
-	-- },
-	
-	
-	-- {
-		-- 7,
-		-- START_PSYS_PROP_ANIM,
-		-- {
-			-- "fadenegative_variable_1"
-		-- },
-		-- {
-			-- duration=0,
-			-- psysprops={
-				-- sparam=1
-			-- }
-		-- }
-	-- },
-	-- {
-		-- 7.5,
-		-- ATTACH_ENTITY,
-		-- {
-			-- "fadenegative_variable_1",
-			-- "cam_jester_fire"
-		-- },
-		-- {
-			-- duration=0.508,
-			-- offset={
-				-- 0,
-				-- 0,
-				-- -0.5
-			-- },
-			-- up=Y_AXIS,
-			-- front=NEG_Z_AXIS,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		-- }
-	-- },
-	-- {
-		-- 7.5,
-		-- START_PSYS,
-		-- {
-			-- "fadenegative_variable_1"
-		-- },
-		-- {
-			-- duration=0.507
-		-- }
-	-- },
-	-- {
-		-- 7.5,
-		-- START_PSYS_PROP_ANIM,
-		-- {
-			-- "fadenegative_variable_1"
-		-- },
-		-- {
-			-- duration=0.507,
-			-- psysprops={
-				-- sparam=0
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },
-	
-	
-	-- {
-		-- 8.1,
-		-- START_PSYS_PROP_ANIM,
-		-- {
-			-- "fadenegative_variable_1"
-		-- },
-		-- {
-			-- duration=0,
-			-- psysprops={
-				-- sparam=1
-			-- }
-		-- }
-	-- },
-	-- {
-		-- 8.5,
-		-- ATTACH_ENTITY,
-		-- {
-			-- "fadenegative_variable_1",
-			-- "cam_hammer_death"
-		-- },
-		-- {
-			-- duration=0.508,
-			-- offset={
-				-- 0,
-				-- 0,
-				-- -0.5
-			-- },
-			-- up=Y_AXIS,
-			-- front=NEG_Z_AXIS,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		-- }
-	-- },
-	-- {
-		-- 8.5,
-		-- START_PSYS,
-		-- {
-			-- "fadenegative_variable_1"
-		-- },
-		-- {
-			-- duration=0.507
-		-- }
-	-- },
-	-- {
-		-- 8.5,
-		-- START_PSYS_PROP_ANIM,
-		-- {
-			-- "fadenegative_variable_1"
-		-- },
-		-- {
-			-- duration=0.507,
-			-- psysprops={
-				-- sparam=0
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },
-	
-	
-	
-	
-	
-	-- {7.5, START_SOUND, {"sound_fire_rockford"}, {duration=20}},
-	-- {8.5, START_SOUND, {"sound_fire_rockford2"}, {duration=20}},
-	
-	
-	-- {
-		-- 24.5,
-		-- START_PSYS_PROP_ANIM,
-		-- {
-			-- "fadenegative_variable_1"
-		-- },
-		-- {
-			-- duration=0,
-			-- psysprops={
-				-- sparam=1
-			-- }
-		-- }
-	-- },
-	-- {
-		-- 25,
-		-- ATTACH_ENTITY,
-		-- {
-			-- "fadenegative_variable_1",
-			-- "cam_trent_fire"
-		-- },
-		-- {
-			-- duration=0.508,
-			-- offset={
-				-- 0,
-				-- 0,
-				-- -0.5
-			-- },
-			-- up=Y_AXIS,
-			-- front=NEG_Z_AXIS,
-			-- target_part="",
-			-- target_type=ROOT,
-			-- flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		-- }
-	-- },
-	-- {
-		-- 25,
-		-- START_PSYS,
-		-- {
-			-- "fadenegative_variable_1"
-		-- },
-		-- {
-			-- duration=0.507
-		-- }
-	-- },
-	-- {
-		-- 25,
-		-- START_PSYS_PROP_ANIM,
-		-- {
-			-- "fadenegative_variable_1"
-		-- },
-		-- {
-			-- duration=0.507,
-			-- psysprops={
-				-- sparam=0
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			-- pcurve_period=-1000
-		-- }
-	-- },
-	
-	-- {
-		-- 1,
-		-- SET_CAMERA,
-		-- {
-			-- "Monitor_1",
-			-- "cam_jester_fire"
-		-- }
-	-- },
-	
-	
-	
-	
-	-- {
-		-- 0,
-		-- START_MOTION,
-		-- {
-			-- "Char_barman"
-		-- },
-		-- {
-			-- animation="Sc_MLBODY_STND_CLEAN_GLAS_000LV_A_26",
-			-- duration=25,
-			-- start_time=5,
-			-- time_scale=1,
-			-- weight=1,
-			-- heading=-1
-		-- }
-	-- },
-	-- {
-		-- 6,
-		-- START_MOTION,
-		-- {
-			-- "Char_barman"
-		-- },
-		-- {
-			-- animation="Sc_MLBODY_CROUCHNG_IDLE_000DN_XA_03",
-			-- trans_time=1,
-			-- duration=10,
-			-- time_scale=1,
-			-- weight=1,
-			-- heading=-1
-		-- }
-	-- },
-	-- {
-		-- 0,
-		-- START_MOTION,
-		-- {
-			-- "Char_peasant"
-		-- },
-		-- {
-			-- animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
-			-- duration=10,
-			-- time_scale=1,
-			-- weight=1,
-			-- heading=-1
-		-- }
-	-- },
-	-- {
-		-- 3,
-		-- START_MOTION,
-		-- {
-			-- "Char_peasant"
-		-- },
-		-- {
-			-- animation="Sc_MLBODY_STND_RUN_TRNS_000LV_XD_02",
-			-- duration=10,
-			-- trans_time=1,
-			-- time_scale=1,
-			-- weight=1,
-			-- heading=-1
-		-- }
-	-- },
-	-- {
-		-- 3.5,
-		-- START_SPATIAL_PROP_ANIM,
-		-- {
-			-- "Char_peasant"
-		-- },
-		-- {
-			-- duration=2,
-			-- target_type=ROOT,
-			-- spatialprops={
-				-- axisrot={
-					-- 180,
-					-- Y_AXIS
-				-- }
-			-- },
-			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		-- }
-	-- },
-	
 	
 	
 }

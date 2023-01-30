@@ -3520,7 +3520,7 @@ events={
 		START_MOTION,
 		{"Char_barman"},
 		{animation="Sc_dx_s026b_2402_vance",
-		 duration=12, start_time=0.5, time_scale=1, trans_time=0.2, weight=1, heading=-1}
+		 duration=12, start_time=1, time_scale=1, trans_time=0.2, weight=1, heading=-1}
 	}, 
 	
 	

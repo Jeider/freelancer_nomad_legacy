@@ -478,6 +478,16 @@
 
 
 
+
+<Static AudioFile="mod\m07\m07_cadiz_0010_enemy1.wav" TextArea="Cinematic">Hey, bro, where Rockford is?</Static>
+<Static AudioFile="mod\m07\m07_cadiz_0020_trent.wav" TextArea="Cinematic">This is none of your business.</Static>
+<Static AudioFile="mod\m07\m07_cadiz_0030_enemy2.wav" TextArea="Cinematic">Playing brave, shithead? Answer the question before you'll dive deeper into the problems</Static>
+<Static AudioFile="mod\m07\m07_cadiz_0040_enemy3.wav" TextArea="Cinematic"> This will make you talk.</Static>
+<Static AudioFile="mod\m07\m07_cadiz_0050_enemy4.wav" TextArea="Cinematic">Where Rockford is, prick?</Static>
+<Static AudioFile="mod\m07\m07_cadiz_0060_rockford.wav" TextArea="Cinematic">I'm Rockford</Static>
+<Static AudioFile="mod\m07\m07_cadiz_0065_rockford.wav" TextArea="Cinematic">Follow me! Quick!</Static>
+
+
 <!--
 <Static AudioFile="mod\m06\m06_freeport_0010_delta1.wav" TextArea="Cinematic">Mr. Trent, I'd like to thank you for your work. Please accept our apologies for dragging you into such a dangerous situation, and I promise that I'll do everything I can to restore your reputation with us.</Static>
 <Static AudioFile="mod\m06\m06_freeport_0020_trent.wav" TextArea="Cinematic">This is all well and good, but what should I do now?</Static>
