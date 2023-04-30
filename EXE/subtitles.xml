@@ -482,10 +482,34 @@
 <Static AudioFile="mod\m07\m07_cadiz_0010_enemy1.wav" TextArea="Cinematic">Hey, bro, where Rockford is?</Static>
 <Static AudioFile="mod\m07\m07_cadiz_0020_trent.wav" TextArea="Cinematic">This is none of your business.</Static>
 <Static AudioFile="mod\m07\m07_cadiz_0030_enemy2.wav" TextArea="Cinematic">Playing brave, shithead? Answer the question before you'll dive deeper into the problems</Static>
-<Static AudioFile="mod\m07\m07_cadiz_0040_enemy3.wav" TextArea="Cinematic"> This will make you talk.</Static>
+<Static AudioFile="mod\m07\m07_cadiz_0040_enemy3.wav" TextArea="Cinematic">This will make you talk.</Static>
 <Static AudioFile="mod\m07\m07_cadiz_0050_enemy4.wav" TextArea="Cinematic">Where Rockford is, prick?</Static>
 <Static AudioFile="mod\m07\m07_cadiz_0060_rockford.wav" TextArea="Cinematic">I'm Rockford</Static>
-<Static AudioFile="mod\m07\m07_cadiz_0065_rockford.wav" TextArea="Cinematic">Follow me! Quick!</Static>
+
+
+<Static AudioFile="mod\m07\m07_cadiz_0065_rockford.wav" TextArea="Cinematic">Follow me! Now!</Static>
+
+
+<Static AudioFile="mod\m07\m07_check_artifact_0010_trent.wav" TextArea="Cinematic">Wow! Looks like this guy's area of interests is wast.</Static>
+
+<Static AudioFile="mod\m07\m07_check_artifact_0020_jabba.wav" TextArea="Cinematic">I'm interested in rare trinkets, that are profitable to buy and even more profitable to sell.</Static>
+
+<Static AudioFile="mod\m07\m07_check_artifact_0030_jabba.wav" TextArea="Cinematic">Greetings, Darcy.</Static>
+
+<Static AudioFile="mod\m07\m07_check_artifact_0040_darcy.wav" TextArea="Cinematic">Hi, Jabba. I want you to check out something.</Static>
+
+<Static AudioFile="mod\m07\m07_check_artifact_0050_jabba.wav" TextArea="Cinematic">Wow! Quite an interesting thing, clearly of alien origin.</Static>
+
+<Static AudioFile="mod\m07\m07_check_artifact_0060_jabba.wav" TextArea="Cinematic">If you're so happened to be broke right now, I can pay you ten thosands credits right away.</Static>
+
+<Static AudioFile="mod\m07\m07_check_artifact_0070_darcy.wav" TextArea="Cinematic">Oh, shit... So much for "drink a beer at the bar". Okay, Trent, we're leaving.</Static>
+
+<Static AudioFile="mod\m07\m07_check_artifact_0080_darcy.wav" TextArea="Cinematic">Jabba, you aren't a fool, are you? You will keep your mouth shut, am I right?</Static>
+
+<Static AudioFile="mod\m07\m07_check_artifact_0090_jabba.wav" TextArea="Cinematic">Of course, Darcy, of course...  </Static>
+
+
+
 
 
 <!--
