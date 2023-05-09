@@ -1,4 +1,4 @@
-duration=72
+duration=61.5
 
 readfrom('thn_settings.txt')
 
@@ -16,6 +16,7 @@ entities={
 		spatialprops={ pos={0,0,0}, orient={{1,0,0},{0,1,0},{0,0,1}}},
 		up=Y_AXIS,front=Z_AXIS,
 		ambient={0,0,0}
+		-- ambient={128,128,128}
 	},
 	{
 		entity_name="Monitor_1",
@@ -49,81 +50,310 @@ entities={
 	
 	
 	{
-		entity_name="DX_m07_check_artifact_0010_trent",
-		template_name="DX_m07_check_artifact_0010_trent",
+		entity_name="DX_m07_reward_0010_darcy",
+		template_name="DX_m07_reward_0010_darcy",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
 	},
 	{
-		entity_name="DX_m07_check_artifact_0020_jabba",
-		template_name="DX_m07_check_artifact_0020_jabba",
+		entity_name="DX_m07_reward_0020_darcy",
+		template_name="DX_m07_reward_0020_darcy",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
 	},
 	{
-		entity_name="DX_m07_check_artifact_0030_jabba",
-		template_name="DX_m07_check_artifact_0030_jabba",
+		entity_name="DX_m07_reward_0030_darcy",
+		template_name="DX_m07_reward_0030_darcy",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
 	},
 	{
-		entity_name="DX_m07_check_artifact_0040_darcy",
-		template_name="DX_m07_check_artifact_0040_darcy",
+		entity_name="DX_m07_reward_0040_trent",
+		template_name="DX_m07_reward_0040_trent",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
 	},
 	{
-		entity_name="DX_m07_check_artifact_0050_jabba",
-		template_name="DX_m07_check_artifact_0050_jabba",
+		entity_name="DX_m07_reward_0050_darcy",
+		template_name="DX_m07_reward_0050_darcy",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
 	},
 	{
-		entity_name="DX_m07_check_artifact_0060_jabba",
-		template_name="DX_m07_check_artifact_0060_jabba",
-		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
-	},
-	{
-		entity_name="DX_m07_check_artifact_0070_darcy",
-		template_name="DX_m07_check_artifact_0070_darcy",
-		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
-	},
-	{
-		entity_name="DX_m07_check_artifact_0080_darcy",
-		template_name="DX_m07_check_artifact_0080_darcy",
-		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
-	},
-	{
-		entity_name="DX_m07_check_artifact_0090_jabba",
-		template_name="DX_m07_check_artifact_0090_jabba",
+		entity_name="DX_m07_reward_0060_trent",
+		template_name="DX_m07_reward_0060_trent",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
 	},
 
-
-
-
-	
 	{
-		entity_name="Prop_server00",
-		type=COMPOUND,
-		template_name="m7_server",
-		lt_grp=6,
+		entity_name="step1",
+		template_name="fs_fl_stone01",
+		type=SOUND, lt_grp=0,srt_grp=0,usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=-100, pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio",Priority="Story_Sound_1"}
+	},
+	{
+		entity_name="step2",
+		template_name="fs_fl_stone02",
+		type=SOUND, lt_grp=0,srt_grp=0,usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=-100, pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio",Priority="Story_Sound_1"}
+	},
+	{
+		entity_name="step3",
+		template_name="fs_fl_stone03",
+		type=SOUND, lt_grp=0,srt_grp=0,usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=-100, pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio",Priority="Story_Sound_1"}
+	},
+	{
+		entity_name="step4",
+		template_name="fs_fl_stone04",
+		type=SOUND, lt_grp=0,srt_grp=0,usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=-100, pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio",Priority="Story_Sound_1"}
+	},
+	{
+		entity_name="step1_cmdr",
+		template_name="fs_fl_stone02",
+		type=SOUND, lt_grp=0,srt_grp=0,usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=-20, pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio",Priority="Story_Sound_1"}
+	},
+	{
+		entity_name="step2_cmdr",
+		template_name="fs_fl_stone03",
+		type=SOUND, lt_grp=0,srt_grp=0,usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=-20, pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio",Priority="Story_Sound_1"}
+	},
+	{
+		entity_name="step3_cmdr",
+		template_name="fs_fl_stone04",
+		type=SOUND, lt_grp=0,srt_grp=0,usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+		audioprops={attenuation=-20, pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
+		userprops={category="Audio",Priority="Story_Sound_1"}
+	},
+
+	{
+		entity_name="LIGHT_barocameras_left",
+		type=LIGHT,
+		template_name="",
+		lt_grp=55,
 		srt_grp=0,
 		usr_flg=0,
-		flags=LIT_DYNAMIC + LIT_AMBIENT,
 		spatialprops={
-			pos={
-				-1,
-				0,
-				5
-
-			},
+			pos={0,1,0},
 			orient={
-				{-1,0,0},
+				{1,0,0},
 				{0,1,0},
-				{0,0,-1}
+				{0,0,1}
 			}
 		},
-		userprops={
-			category="Prop"
+		lightprops={
+			on=Y,
+			color={
+				255,
+				255,
+				255
+			},
+			diffuse={
+				0.6,
+				0.6,
+				0.8
+			},
+			specular={
+				0,
+				0,
+				0
+			},
+			ambient={
+				0.2,
+				0.4,
+				0.1
+			},
+			direction={
+				-1,
+				0,
+				0
+			},
+			range=150555,
+			cutoff=30,
+			type=L_DIRECT,
+			theta=26.999985,
+			atten={
+				1,
+				0,
+				0.003
+			}
 		}
 	},
-	
+
+
+	{
+		entity_name="LIGHT_barocameras_trentlook",
+		type=LIGHT,
+		template_name="",
+		lt_grp=56,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={0,1,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		lightprops={
+			on=Y,
+			color={
+				255,
+				255,
+				255
+			},
+			diffuse={
+				0.6,
+				0.6,
+				0.8
+			},
+			specular={
+				0,
+				0,
+				0
+			},
+			ambient={
+				0.2,
+				0.4,
+				0.1
+			},
+			direction={
+				-1,
+				0,
+				0
+			},
+			range=150555,
+			cutoff=30,
+			type=L_DIRECT,
+			theta=26.999985,
+			atten={
+				1,
+				0,
+				0.003
+			}
+		}
+	},
+
+
+	{
+		entity_name="LIGHT_trentchars_jabbaside",
+		type=LIGHT,
+		template_name="",
+		lt_grp=56,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={0,1,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		lightprops={
+			on=N,
+			color={
+				255,
+				255,
+				255
+			},
+			diffuse={
+				0.5,
+				0.5,
+				0.5
+			},
+			specular={
+				0,
+				0,
+				0
+			},
+			ambient={
+				0.2,
+				0.2,
+				0.2
+			},
+			direction={
+				1,
+				0,
+				0
+			},
+			range=150555,
+			cutoff=30,
+			type=L_DIRECT,
+			theta=26.999985,
+			atten={
+				1,
+				0,
+				0.003
+			}
+		}
+	},
+
+
+	{
+		entity_name="LIGHT_darcy_and_girlfriend",
+		type=LIGHT,
+		template_name="",
+		lt_grp=60,
+		srt_grp=0,
+		usr_flg=0,
+		spatialprops={
+			pos={0,1,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		lightprops={
+			on=Y,
+			color={
+				255,
+				255,
+				255
+			},
+			diffuse={
+				1,
+				1,
+				1
+			},
+			specular={
+				0,
+				0,
+				0
+			},
+			ambient={
+				0.3,
+				0.4,
+				0.55
+			},
+			direction={
+				1,
+				0,
+				0
+			},
+			range=150555,
+			cutoff=30,
+			type=L_DIRECT,
+			theta=26.999985,
+			atten={
+				1,
+				0,
+				0.003
+			}
+		}
+	},
+
+
+
+
+
+
 	{
 		entity_name="Prop_server01",
 		type=COMPOUND,
@@ -184,9 +414,33 @@ entities={
 		flags=LIT_DYNAMIC + LIT_AMBIENT,
 		spatialprops={
 			pos={
-				2.5,
+				2.7,
 				0,
-				1
+				0.5
+			},
+			orient={
+				{0,0,1},
+				{0,1,0},
+				{-1,0,0}
+			}
+		},
+		userprops={
+			category="Prop"
+		}
+	},
+	{
+		entity_name="Prop_server05",
+		type=COMPOUND,
+		template_name="m7_server",
+		lt_grp=6,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={
+			pos={
+				2.7,
+				0,
+				4.2
 			},
 			orient={
 				{0,0,1},
@@ -209,7 +463,7 @@ entities={
 		flags=LIT_DYNAMIC + LIT_AMBIENT,
 		spatialprops={
 			pos={
-				1.5,
+				2.8,
 				0,
 				2.4
 			},
@@ -234,7 +488,7 @@ entities={
 		flags=LIT_DYNAMIC + LIT_AMBIENT,
 		spatialprops={
 			pos={
-				-1.6,
+				-2.5,
 				0,
 				2
 			},
@@ -567,7 +821,7 @@ entities={
 		flags=LIT_DYNAMIC + LIT_AMBIENT,
 		spatialprops={
 			pos={
-				1.5,
+				2.8,
 				1.3,
 				2.32
 			},
@@ -629,7 +883,7 @@ entities={
 		flags=LIT_DYNAMIC + LIT_AMBIENT,
 		spatialprops={
 			pos={
-				-1.65,
+				-2.65,
 				0,
 				2.1
 			},
@@ -870,113 +1124,12 @@ entities={
 			}
 		}
 	},
-	{
-		entity_name="LIGHT_trentchars_init",
-		type=LIGHT,
-		template_name="",
-		lt_grp=12,
-		srt_grp=0,
-		usr_flg=0,
-		spatialprops={
-			pos={0,1,0},
-			orient={
-				{0,0,-1},
-				{0,1,0},
-				{1,0,0}
-			}
-		},
-		lightprops={
-			on=Y,
-			color={
-				255,
-				255,
-				255
-			},
-			diffuse={
-				0.6,
-				0.6,
-				0.8
-			},
-			specular={
-				0,
-				0,
-				0
-			},
-			ambient={
-				0.2,
-				0.4,
-				0.1
-			},
-			direction={
-				-1,
-				0,
-				0
-			},
-			range=150555,
-			cutoff=30,
-			type=L_DIRECT,
-			theta=26.999985,
-			atten={
-				1,
-				0,
-				0.003
-			}
-		}
-	},
+
 	
-	{
-		entity_name="LIGHT_trentchars_jabbaside",
-		type=LIGHT,
-		template_name="",
-		lt_grp=12,
-		srt_grp=0,
-		usr_flg=0,
-		spatialprops={
-			pos={0,1,0},
-			orient={
-				{1,0,0},
-				{0,1,0},
-				{0,0,1}
-			}
-		},
-		lightprops={
-			on=N,
-			color={
-				255,
-				255,
-				255
-			},
-			diffuse={
-				0.8,
-				0.8,
-				0.9
-			},
-			specular={
-				0,
-				0,
-				0
-			},
-			ambient={
-				0.2,
-				0.3,
-				0.2
-			},
-			direction={
-				1,
-				0,
-				0
-			},
-			range=150555,
-			cutoff=30,
-			type=L_DIRECT,
-			theta=26.999985,
-			atten={
-				1,
-				0,
-				0.003
-			}
-		}
-	},
+	
+	
+	
+	
 	
 	{
 		entity_name="LIGHT_barocamera_inside_samus",
@@ -1241,35 +1394,20 @@ entities={
 	},
 	
 	
-	{
-		entity_name="point_worm_down",
-		type=MARKER,
-		template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
-		spatialprops={
-			pos={
-				-1.6,
-				30,
-				0
-			},
-			orient={{1,0,0},{0,0,1},{0,-1,0}}
-		}
-	},
-	
-	
 	
 	{
 		entity_name="Char_trent",
 		type=DEFORMABLE,
 		template_name="trent",
-		lt_grp=12,
+		lt_grp=56,
 		srt_grp=0,
 		usr_flg=0,
 		flags=LIT_DYNAMIC + LIT_AMBIENT,
 		spatialprops={
 			pos={
+				1,
 				0,
-				0,
-				2.2
+				3.8
 			},
 			orient={{0,0,-1},{0,1,0},{1,0,0}}
 		},
@@ -1282,76 +1420,20 @@ entities={
 		}
 	},
 	
-	{
-		entity_name="point_trent_offscreen",
-		type=MARKER,
-		template_name="",
-		template_id=0,
-		spatialprops={
-			pos={
-				1.5,
-				-15,
-				2.2
-			},
-			orient={
-				{-1,0,0},
-				{0,1,0},
-				{0,0,-1}
-			}
-		},
-	},
-
-	{
-		entity_name="point_trent_hold_artifact_virtual",
-		type=MARKER,
-		template_name="",
-		template_id=0,
-		spatialprops={
-			pos={
-				0,
-				1.1,
-				-2
-			},
-			orient={
-				{-1,0,0},
-				{0,1,0},
-				{0,0,-1}
-			}
-		},
-	},
-	{
-		entity_name="point_darcy_head_near_jabba_virtual",
-		type=MARKER,
-		template_name="",
-		template_id=0,
-		spatialprops={
-			pos={
-				-1,
-				1.5,
-				-2.1
-			},
-			orient={
-				{-1,0,0},
-				{0,1,0},
-				{0,0,-1}
-			}
-		},
-	},
-	
 	
 	{
 		entity_name="Char_jabba",
 		type=DEFORMABLE,
 		template_name="jabba",
-		lt_grp=3,
+		lt_grp=55,
 		srt_grp=0,
 		usr_flg=0,
-		flags=LIT_DYNAMIC,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
 		spatialprops={
 			pos={
-				-1.8,
+				-1,
 				0,
-				-8.5
+				-3
 			},
 			orient={{-1,0,0},{0,1,0},{0,0,-1}}
 		},
@@ -1367,15 +1449,15 @@ entities={
 		entity_name="Char_darcy",
 		type=DEFORMABLE,
 		template_name="darcy",
-		lt_grp=12,
+		lt_grp=60,
 		srt_grp=0,
 		usr_flg=0,
-		flags=LIT_DYNAMIC,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
 		spatialprops={
 			pos={
-				-0.8,
+				2,
 				0,
-				110.5
+				-7.5
 			},
 			orient={{1,0,0},{0,1,0},{0,0,1}}
 		},
@@ -1388,19 +1470,116 @@ entities={
 		}
 	},
 	{
-		entity_name="point_darcy_init",
-		type=MARKER,
-		template_name="",
-		template_id=0,
+		entity_name="Char_assistant",
+		type=DEFORMABLE,
+		template_name="m07_female_br_officer",
+		lt_grp=60,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
 		spatialprops={
 			pos={
-				-0.8,
+				2,
 				0,
-				0.8
+				-8.5
 			},
-			orient={{1,0,0},{0,1,0},{0,0,1}}
+			orient={{-1,0,0},{0,1,0},{0,0,-1}}
 		},
+		compoundprops={
+			floor_height=0
+		},
+		userprops={
+			Actor="Assistant",
+			category="Character"
+		}
 	},
+	
+	
+	
+	{
+		entity_name="Char_gunner",
+		type=DEFORMABLE,
+		template_name="m07_male_br_officer_gunner",
+		lt_grp=55,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				-1,
+				0,
+				-5
+			},
+			orient={{-1,0,0},{0,1,0},{0,0,-1}}
+		},
+		compoundprops={
+			floor_height=0
+		},
+		userprops={
+			Actor="Gunner",
+			category="Character"
+		}
+	},
+	
+	{
+		entity_name="Char_doorkeeper",
+		type=DEFORMABLE,
+		template_name="m07_male_br_officer_marksman",
+		lt_grp=55,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={
+			pos={
+				-1.8,
+				0,
+				-0.5
+			},
+			orient={
+				{-0.7071068,0,0.7071068},
+				{0,1,0},
+				{-0.7071068,0,-0.7071068}
+			}
+		},
+		compoundprops={
+			floor_height=0
+		},
+		userprops={
+			Actor="Doorkeeper",
+			category="Character"
+		}
+	},
+	
+	
+	{
+		entity_name="Char_leader",
+		type=DEFORMABLE,
+		template_name="m07_male_br_officer",
+		lt_grp=3,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={
+			pos={
+				-1.8,
+				0,
+				-8.5
+			},
+			orient={
+				{0.7071068,0,-0.7071068},
+				{0,1,0},
+				{0.7071068,0,0.7071068}
+			}
+		},
+		compoundprops={
+			floor_height=0
+		},
+		userprops={
+			Actor="Policeleader",
+			category="Character"
+		}
+	},
+	
 	
 	
 	{
@@ -1410,7 +1589,7 @@ entities={
 		flags=HIDDEN,
 		spatialprops={
 			pos={
-				0.5, 1.7, 1.5
+				1, 2.5, 5
 			},
 			orient={{1,0,0},{0,1,0},{0,0,1}}
 		},
@@ -1428,7 +1607,7 @@ entities={
 		template_id=0,
 		spatialprops={
 			pos={
-				0.8, 1.7, 1.6
+				1.5, 1.7, 5
 			},
 			orient={{1,0,0},{0,1,0},{0,0,1}}
 		},
@@ -1440,7 +1619,7 @@ entities={
 		template_id=0,
 		spatialprops={
 			pos={
-				-1.6, 1.7, 2.2
+				-2, 1.3, 3
 			},
 			orient={{1,0,0},{0,1,0},{0,0,1}}
 		},
@@ -1452,21 +1631,63 @@ entities={
 		template_id=0,
 		spatialprops={
 			pos={
-				-1.6, 1.7, 2.2
+				-0.5, 1.3, 2
 			},
 			orient={{1,0,0},{0,1,0},{0,0,1}}
 		},
 	},
 	
-	
 	{
-		entity_name="cam_intro",
+		entity_name="cam_darcy_meeting",
 		type=CAMERA,
 		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
 		flags=HIDDEN,
 		spatialprops={
 			pos={
-				-1.1, 1.75, 2.13
+				0.5, 4, -12
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+		cameraprops={
+			fovh=20,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_darcy_meeting_pos2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				0.5, 3.8, -12
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+	{
+		entity_name="cam_darcy_meeting_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				1.5, 0.5, -5
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+	
+	{
+		entity_name="cam_darcy",
+		type=CAMERA,
+		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				2.4, 1.7, -5.8
 			},
 			orient={{1,0,0},{0,1,0},{0,0,1}}
 		},
@@ -1478,145 +1699,25 @@ entities={
 		}
 	},
 	{
-		entity_name="cam_intro_marker",
+		entity_name="cam_darcy_marker",
 		type=MARKER,
 		template_name="",
 		template_id=0,
 		spatialprops={
 			pos={
-				0.2, 1.65, 2.23
+				1.9, 1.5, -7.5
 			},
 			orient={{1,0,0},{0,1,0},{0,0,1}}
 		},
 	},
-	
 	{
-		entity_name="cam_roomview",
+		entity_name="cam_darcy_top",
 		type=CAMERA,
 		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
 		flags=HIDDEN,
 		spatialprops={
 			pos={
-				0, 3.5, 4
-			},
-			orient={{1,0,0},{0,1,0},{0,0,1}}
-		},
-		cameraprops={
-			fovh=25,
-			hvaspect=1.85,
-			nearplane=0.2,
-			farplane=5000
-		}
-	},
-	{
-		entity_name="cam_roomview_pos2",
-		type=MARKER,
-		template_name="",
-		template_id=0,
-		spatialprops={
-			pos={
-				0, 2, 1
-			},
-			orient={{1,0,0},{0,1,0},{0,0,1}}
-		},
-	},
-	{
-		entity_name="cam_roomview_marker",
-		type=MARKER,
-		template_name="",
-		template_id=0,
-		spatialprops={
-			pos={
-				0, 1, -3
-			},
-			orient={{1,0,0},{0,1,0},{0,0,1}}
-		},
-	},
-	{
-		entity_name="cam_roomview_marker_pos2",
-		type=MARKER,
-		template_name="",
-		template_id=0,
-		spatialprops={
-			pos={
-				0, 1.3, -3
-			},
-			orient={{1,0,0},{0,1,0},{0,0,1}}
-		},
-	},
-	
-	
-	{
-		entity_name="cam_jabba_lookatdarcy",
-		type=CAMERA,
-		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
-		flags=HIDDEN,
-		spatialprops={
-			pos={
-				-1.0, 1.7, -3.1
-			},
-			orient={{1,0,0},{0,1,0},{0,0,1}}
-		},
-		cameraprops={
-			fovh=22,
-			hvaspect=1.85,
-			nearplane=0.2,
-			farplane=5000
-		}
-	},
-	{
-		entity_name="cam_jabba_lookatdarcy_marker",
-		type=MARKER,
-		template_name="",
-		template_id=0,
-		spatialprops={
-			pos={
-				-1.2, 1.65, -4
-			},
-			orient={{1,0,0},{0,1,0},{0,0,1}}
-		},
-	},
-	
-	
-	{
-		entity_name="cam_jabba_check_artifact",
-		type=CAMERA,
-		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
-		flags=HIDDEN,
-		spatialprops={
-			pos={
-				-1.29, 1.7, -3
-			},
-			orient={{1,0,0},{0,1,0},{0,0,1}}
-		},
-		cameraprops={
-			fovh=22,
-			hvaspect=1.85,
-			nearplane=0.2,
-			farplane=5000
-		}
-	},
-	{
-		entity_name="cam_jabba_check_artifact_marker",
-		type=MARKER,
-		template_name="",
-		template_id=0,
-		spatialprops={
-			pos={
-				-1.15, 1.65, -4
-			},
-			orient={{1,0,0},{0,1,0},{0,0,1}}
-		},
-	},
-	
-	{
-		entity_name="cam_darcy_offer",
-		type=CAMERA,
-		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
-		flags=HIDDEN,
-		spatialprops={
-			pos={
-				-0.7, 1.47, -3.3
+				2.3, 2, -5.3
 			},
 			orient={{1,0,0},{0,1,0},{0,0,1}}
 		},
@@ -1628,13 +1729,37 @@ entities={
 		}
 	},
 	{
-		entity_name="cam_darcy_offer_marker",
+		entity_name="cam_darcy_top_pos2",
 		type=MARKER,
 		template_name="",
 		template_id=0,
 		spatialprops={
 			pos={
-				-1.1, 1.52, -2.1
+				2.6, 2, -5.3
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+	{
+		entity_name="cam_darcy_top_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				1.9, 1.2, -8
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+	{
+		entity_name="cam_darcy_top_marker_pos2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				1.8, 1.2, -8
 			},
 			orient={{1,0,0},{0,1,0},{0,0,1}}
 		},
@@ -1642,115 +1767,93 @@ entities={
 	
 	
 	{
-		entity_name="cam_darcy_final",
+		entity_name="cam_darcy_official",
 		type=CAMERA,
 		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
 		flags=HIDDEN,
 		spatialprops={
 			pos={
-				0, 1.7, -3.4
+				3.5, 0.6, -4
 			},
 			orient={{1,0,0},{0,1,0},{0,0,1}}
 		},
 		cameraprops={
-			fovh=15,
+			fovh=13,
 			hvaspect=1.85,
 			nearplane=0.2,
 			farplane=5000
 		}
 	},
 	{
-		entity_name="cam_darcy_final_pos2",
+		entity_name="cam_darcy_official_pos2",
 		type=MARKER,
 		template_name="",
 		template_id=0,
 		spatialprops={
 			pos={
-				-0.8, 1.5, -3.4
+				3.6, 0.6, -4.3
 			},
 			orient={{1,0,0},{0,1,0},{0,0,1}}
 		},
 	},
 	{
-		entity_name="cam_darcy_final_marker",
+		entity_name="cam_darcy_official_marker",
 		type=MARKER,
 		template_name="",
 		template_id=0,
 		spatialprops={
 			pos={
-				-1.1, 1.5, -2.1
+				1.4, 1.6, -8
 			},
 			orient={{1,0,0},{0,1,0},{0,0,1}}
 		},
 	},
 	{
-		entity_name="cam_darcy_final_marker_pos2",
+		entity_name="cam_darcy_official_marker_pos2",
 		type=MARKER,
 		template_name="",
 		template_id=0,
 		spatialprops={
 			pos={
-				-1.1, 1.57, -2.1
+				1.4, 1.6, -7.9
 			},
 			orient={{1,0,0},{0,1,0},{0,0,1}}
 		},
 	},
-
-
+	
+	
+	
+	
 	{
-		entity_name="cam_jabba_affirmative",
+		entity_name="cam_trent",
 		type=CAMERA,
 		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
 		flags=HIDDEN,
 		spatialprops={
 			pos={
-				-0.8, 1.2, -2.5
+				2.4, 1.568, -6.5
 			},
 			orient={{1,0,0},{0,1,0},{0,0,1}}
 		},
 		cameraprops={
-			fovh=22,
+			fovh=18,
 			hvaspect=1.85,
 			nearplane=0.2,
 			farplane=5000
 		}
 	},
 	{
-		entity_name="cam_jabba_affirmative_pos2",
+		entity_name="cam_trent_marker",
 		type=MARKER,
 		template_name="",
 		template_id=0,
 		spatialprops={
 			pos={
-				-0.8, 1.2, -1
+				1.8, 1.65, -5.3
 			},
 			orient={{1,0,0},{0,1,0},{0,0,1}}
 		},
-	},	
-	{
-		entity_name="cam_jabba_affirmative_marker",
-		type=MARKER,
-		template_name="",
-		template_id=0,
-		spatialprops={
-			pos={
-				-1.2, 1.6, -4
-			},
-			orient={{1,0,0},{0,1,0},{0,0,1}}
-		},
-	},	
-	{
-		entity_name="cam_jabba_affirmative_marker_pos2",
-		type=MARKER,
-		template_name="",
-		template_id=0,
-		spatialprops={
-			pos={
-				-1.2, 1.4, -4
-			},
-			orient={{1,0,0},{0,1,0},{0,0,1}}
-		},
-	},	
+	},
 
 	{
 		entity_name="cam_dbg",
@@ -1759,7 +1862,7 @@ entities={
 		flags=HIDDEN,
 		spatialprops={
 			pos={
-				0, 3, 4 --def
+				0, 7, 9 --def
 				-- 0.3, 2, -1 --jabba
 				-- 0, 1.25, 8 --xeno
 				-- 1, 5, -10 --intro
@@ -1783,7 +1886,7 @@ entities={
 			}
 		},
 		cameraprops={
-			fovh=25,
+			fovh=35,
 			hvaspect=1.85,
 			nearplane=0.2,
 			farplane=5000
@@ -1851,8 +1954,8 @@ events = {
 		0,
 		ATTACH_ENTITY,
 		{
-			"cam_intro",
-			"cam_intro_marker"
+			"cam_darcy_meeting",
+			"cam_darcy_meeting_marker"
 		},
 		{
 			duration=70, offset={0,0,0},
@@ -1863,8 +1966,8 @@ events = {
 		0,
 		ATTACH_ENTITY,
 		{
-			"cam_roomview",
-			"cam_roomview_marker"
+			"cam_darcy",
+			"cam_darcy_marker"
 		},
 		{
 			duration=70, offset={0,0,0},
@@ -1875,8 +1978,8 @@ events = {
 		0,
 		ATTACH_ENTITY,
 		{
-			"cam_jabba_lookatdarcy",
-			"cam_jabba_lookatdarcy_marker"
+			"cam_darcy_top",
+			"cam_darcy_top_marker"
 		},
 		{
 			duration=70, offset={0,0,0},
@@ -1887,8 +1990,8 @@ events = {
 		0,
 		ATTACH_ENTITY,
 		{
-			"cam_jabba_check_artifact",
-			"cam_jabba_check_artifact_marker"
+			"cam_darcy_official",
+			"cam_darcy_official_marker"
 		},
 		{
 			duration=70, offset={0,0,0},
@@ -1899,32 +2002,8 @@ events = {
 		0,
 		ATTACH_ENTITY,
 		{
-			"cam_darcy_offer",
-			"cam_darcy_offer_marker"
-		},
-		{
-			duration=70, offset={0,0,0},
-			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
-		}
-	},
-	{
-		30,
-		ATTACH_ENTITY,
-		{
-			"cam_darcy_final",
-			"cam_darcy_final_marker"
-		},
-		{
-			duration=70, offset={0,0,0},
-			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
-		}
-	},
-	{
-		50,
-		ATTACH_ENTITY,
-		{
-			"cam_jabba_affirmative",
-			"cam_jabba_affirmative_marker"
+			"cam_trent",
+			"cam_trent_marker"
 		},
 		{
 			duration=70, offset={0,0,0},
@@ -1932,7 +2011,7 @@ events = {
 		}
 	},
 	
-			
+	
 	
 	
 	
@@ -1971,15 +2050,27 @@ events = {
 			}
 		}
 	},
-
+	
 	
 	{
-		0,
-		START_MOTION,
-		{"Char_trent"},
-		{animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
-		 duration=100, time_scale=1, weight=1, heading=-1, event_flags=2}
-	},	
+		0.0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"LIGHT_darcy_and_girlfriend"
+		},
+		{
+			duration=0,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					25,
+					Y_AXIS
+				}
+			}
+		}
+	},
+
+	
 	
 	{
 		0,
@@ -2013,9 +2104,39 @@ events = {
 		START_MOTION,
 		{"Char_worm"},
 		{animation="Sc_Sc_s069x_worm_A",
-		 duration=10, time_scale=0.25, weight=1, heading=-1}
+		 duration=12.5, time_scale=0.125, weight=1, heading=-1}
 	},	
 	
+	
+	
+	{
+		0,
+		START_MOTION,
+		{"Char_jabba"},
+		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 duration=100, time_scale=1, weight=1, heading=-1, event_flags=2}
+	},	
+	{
+		0,
+		START_MOTION,
+		{"Char_gunner"},
+		{animation="Sc_MLBODY_WALK_HOLD_GUN_RHAND_000LV_XB_01",
+		 duration=100, time_scale=1, weight=1, heading=-1, event_flags=2}
+	},	
+	{
+		0,
+		START_MOTION,
+		{"Char_doorkeeper"},
+		{animation="Sc_MLBODY_STND_HOLD_RIFLE_MILI_000LV_XA_05",
+		 duration=100, time_scale=1, weight=1, heading=-1, event_flags=2}
+	},	
+	{
+		0,
+		START_MOTION,
+		{"Char_leader"},
+		{animation="Sc_MLBODY_STND_LOOK_AROU_CASL_000LV_XA_08",
+		 duration=100, time_scale=1, weight=1, heading=-1, event_flags=2}
+	},	
 	
 	
 	
@@ -2030,7 +2151,7 @@ events = {
 			target_type=ROOT,
 			spatialprops={
 				axisrot={
-					-15,
+					15,
 					Y_AXIS
 				}
 			},
@@ -2039,11 +2160,65 @@ events = {
 	},
 
 	{
-		0,
-		SET_CAMERA,
+		10,
+		START_SPATIAL_PROP_ANIM,
 		{
-			"Monitor_1",
-			"cam_dbg"
+			"Char_trent"
+		},
+		{
+			duration=2,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					-15,
+					Y_AXIS
+				}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	
+	{
+		0,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_STND_FSTHIPB_HOLD_000LV_XA_02",
+		 duration=5, time_scale=0.5, weight=1, heading=-1}
+	},	
+	{
+		10,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_STND_WALK_TRNS_090LV_XA_02",
+		 duration=5, time_scale=1, trans_time=1, weight=1, heading=-1}
+	},	
+	
+	{
+		0,
+		START_IK,
+		{
+			"Char_trent",
+			"Char_jabba"
+		},
+		{
+			duration=9.01,
+			end_effector="Body_Head", transition_duration=2, 
+			target_part="Body_Head", target_type=PART,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+		}
+	},
+	{
+		10,
+		START_IK,
+		{
+			"Char_trent",
+			"Char_darcy"
+		},
+		{
+			duration=25,
+			end_effector="Body_Head", transition_duration=2, 
+			target_part="Body_Head", target_type=PART,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
 		}
 	},
 	
@@ -2074,379 +2249,249 @@ events = {
 			pcurve_period=-1000
 		}
 	},
-
-
-	
-	
-	{
-		10,
-		SET_CAMERA,
-		{
-			"Monitor_1",
-			"cam_intro"
-		}
-	},
-	
-	
-	{
-		10,
-		START_SOUND,
-		{
-			"DX_m07_check_artifact_0010_trent"
-		},
-		{
-			duration=15
-		}
-	},
-	{
-		10,
-		START_MOTION,
-		{"Char_trent"},
-		{animation="Sc_dx_s046x_0101_trent",
-		 duration=15, time_scale=0.9, trans_time=0.25, weight=1, heading=-1}
-	}, 		
-	{
-		15,
-		START_MOTION,
-		{"Char_trent"},
-		{animation="Sc_MLBODY_STND_WALK_TRNS_090LV_XA_02",
-		 duration=10, time_scale=0.6, trans_time=0.25, weight=1, heading=-1}
-	},	
-	
-	
 	{
 		0,
 		START_SPATIAL_PROP_ANIM,
 		{
-			"Prop_alien01"
+			"cam_start_marker",
+			"cam_start_marker_pos2"
 		},
 		{
-			duration=0,
-			target_type=ROOT,
-			spatialprops={
-				axisrot={
-					-35,
-					Y_AXIS
-				}
-			},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		}
-	},
-	
-	
-	{
-		13,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"Prop_alien01"
-		},
-		{
-			duration=8,
-			target_type=ROOT,
-			spatialprops={
-				axisrot={
-					-15,
-					Y_AXIS
-				}
-			},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		}
-	},
-	{
-		13,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"Prop_alien01",
-			"point_alien01_top"
-		},
-		{
-			duration=8,
+			duration=10,
 			target_part="",
 			target_type=ROOT,
 			spatialprops={
-				pos={0,0,0}
+				pos={0,0,0},
+				q_orient={1,0,0,0}
 			},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
 		}
 	},
 	
 	
 	
 	
+	{12.5, START_LIGHT_PROP_ANIM, {"LIGHT_barocameras_trentlook"}, {duration=0, lightprops={ on=N},},},
+	{12.5, START_LIGHT_PROP_ANIM, {"LIGHT_trentchars_jabbaside"}, {duration=0, lightprops={ on=Y},},},
+	
+	
+	{18, START_LIGHT_PROP_ANIM, {"LIGHT_trentchars_jabbaside"}, {duration=2, lightprops={ 
+			diffuse={
+				1,
+				1,
+				1
+			},
+			ambient={
+				0.3,
+				0.4,
+				0.55
+			}
+			
+	},},},
+	
+	
 	{
-		19,
+		12.5,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_darcy_meeting"
+		}
+	},
+	{
+		12.5,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_darcy_meeting",
+			"cam_darcy_meeting_pos2"
+		},
+		{
+			duration=5,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	
+	{
+		12.5,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 duration=5.2, time_scale=1, weight=1, heading=-1, event_flags=2}
+	},	
+	{
+		17.7,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_WALK_STND_TRNS_000LV_XA_02",
+		 duration=6.5, time_scale=1,  weight=1, heading=-1}
+	},	
+	
+	{
+		12.51,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"Char_trent"
 		},
 		{
-			duration=0,
+			duration=3,
 			target_type=ROOT,
 			spatialprops={
 				axisrot={
-					30,
+					-12,
 					Y_AXIS
 				}
 			},
 			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
 		}
 	},
+	{
+		17,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_trent"
+		},
+		{
+			duration=4,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					7,
+					Y_AXIS
+				}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	
+	
+	{
+		0,
+		START_MOTION,
+		{"Char_darcy"},
+		{animation="Sc_FMBODY_STND_AT-EASE_HOLD_000LV_XA_01",
+		 duration=100, time_scale=1, weight=1, heading=-1}
+	},	
+	
+
+
 
 	
-	
-	
 	{
-		22,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"Char_jabba"
-		},
-		{
-			duration=2,
-			target_type=ROOT,
-			spatialprops={
-				axisrot={
-					25,
-					Y_AXIS
-				}
-			},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		}
-	},
-	
-	
-	
-	
-	{20, START_LIGHT_PROP_ANIM, {"LIGHT_trentchars_init"}, {duration=0, lightprops={ on=N},},},
-	{20, START_LIGHT_PROP_ANIM, {"LIGHT_trentchars_jabbaside"}, {duration=0, lightprops={ on=Y},},},
-	
-	
-	{
-		20,
-		SET_CAMERA,
-		{
-			"Monitor_1",
-			"cam_roomview"
-		}
-	},
-	
-	
-	{
-		20,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"cam_roomview",
-			"cam_roomview_pos2"
-		},
-		{
-			duration=8,
-			target_part="",
-			target_type=ROOT,
-			spatialprops={
-				pos={0,0,0},
-				q_orient={1,0,0,0}
-			},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			pcurve_period=-1000
-		}
-	},
-	{
-		20,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"cam_roomview_marker",
-			"cam_roomview_marker_pos2"
-		},
-		{
-			duration=8,
-			target_part="",
-			target_type=ROOT,
-			spatialprops={
-				pos={0,0,0},
-				q_orient={1,0,0,0}
-			},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			pcurve_period=-1000
-		}
-	},
-	
-	
-	{
-		20.5,
-		START_SOUND,
-		{
-			"DX_m07_check_artifact_0020_jabba"
-		},
-		{
-			duration=15
-		}
-	},
-	{
-		20,
+		13,
 		START_MOTION,
-		{"Char_jabba"},
-		{animation="Sc_dx_s037a_2001_tobias",
-		 duration=12, time_scale=1, trans_time=0.2, weight=1, heading=-1}
+		{"Char_darcy"},
+		{animation="Sc_FMBODY_STND_AT-EASE_RLEASE_000LV_XA_02",
+		 duration=2, time_scale=0.7, trans_time=1, weight=1, heading=-1}
+	},	
+	{
+		15,
+		START_MOTION,
+		{"Char_darcy"},
+		{animation="Sc_FMBODY_STND_POINT_RHND_000LV_A_03",
+		 duration=100, time_scale=0.8, trans_time=0.5, weight=1, heading=-1}
+	},	
+		
+	{
+		13,
+		START_MOTION,
+		{"Char_darcy"},
+		{animation="Sc_dx_s070x_3001_Jacobi",
+		 duration=25,  time_scale=0.8, trans_time=0.25, weight=1, heading=-1}
 	}, 
 	{
-		22.5,
+		18,
 		START_MOTION,
-		{"Char_jabba"},
-		{animation="Sc_dx_s021x_0102_tobias",
-		 duration=12, time_scale=1, trans_time=0.4, weight=1, heading=-1}
-	}, 
-	
-	{
-		20,
-		START_MOTION,
-		{"Char_jabba"},
-		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
-		 duration=2.6, time_scale=1, weight=1, heading=-1, event_flags=2}
-	},	
-	{
-		22.6,
-		START_MOTION,
-		{"Char_jabba"},
-		{animation="Sc_MLBODY_WALK_STND_TRNS_000LV_XA_02",
-		 duration=10, time_scale=1, weight=1, heading=-1}
-	},	
-	
-	
-	{
-		20,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"Char_trent",
-			"point_trent_offscreen"
-		},
-		{
-			duration=0,
-			target_part="",
-			target_type=ROOT,
-			spatialprops={
-				pos={0,0,0}
-			}
-		}
+		{"Char_darcy"},
+		{animation="Sc_FMBODY_STND_TURN_180LV_XA_04",
+		 duration=100, time_scale=1, trans_time=1, weight=1, heading=-1}
 	},
 	
+	
 	{
-		22,
+		0,
 		START_MOTION,
-		{"Char_trent"},
-		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
-		 duration=2.6, time_scale=1, weight=1, heading=-1, event_flags=2}
+		{"Char_assistant"},
+		{animation="Sc_FMBODY_STND_IDLE_000LV_xa_05",
+		 duration=100, time_scale=1, weight=1, heading=-1, event_flags=2}
 	},	
 	
 	{
-		24.6,
+		11,
 		START_MOTION,
-		{"Char_trent"},
-		{animation="Sc_MLBODY_WALK_STND_TRNS_000LV_XA_02",
-		 duration=10, time_scale=1, weight=1, heading=-1}
+		{"Char_assistant"},
+		{animation="Sc_FMBODY_STND_CONV_HNDS_CASL_000LV_xa_03",
+		 duration=100, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		14,
+		START_MOTION,
+		{"Char_assistant"},
+		{animation="Sc_FMBODY_STND_CONV_HNDSDN_TRNS_000LV_XA_01",
+		 duration=100, time_scale=0.8, weight=1, trans_time=1, heading=-1}
 	},	
 
 	{
-		24,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"Char_darcy",
-			"point_darcy_init"
-		},
-		{
-			duration=0,
-			target_part="",
-			target_type=ROOT,
-			spatialprops={
-				pos={0,0,0}
-			}
-		}
-	},
-	{
-		24,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"Char_darcy"
-		},
-		{
-			duration=0,
-			target_type=ROOT,
-			spatialprops={
-				axisrot={
-					10,
-					Y_AXIS
-				}
-			},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
-		}
-	},
-	{
-		24,
+		16,
 		START_MOTION,
-		{"Char_darcy"},
-		{animation="Sc_FMBODY_STROLL_000LV_XA_01",
-		 duration=3.4, time_scale=1, weight=1, heading=-1, event_flags=2}
+		{"Char_assistant"},
+		{animation="Sc_FMBODY_STND_SALUT_000LV_XA_03",
+		 duration=100, time_scale=1, weight=1, trans_time=1, heading=-1}
 	},	
 	{
-		27.4,
+		18,
 		START_MOTION,
-		{"Char_darcy"},
-		{animation="Sc_FMBODY_STROLL_STND_TRNS_000LV_XA_01",
-		 duration=10, time_scale=1, weight=1, heading=-1}
+		{"Char_assistant"},
+		{animation="Sc_FMBODY_STND_WALK_TRNS_180LV_XA_02",
+		 duration=100, time_scale=1, weight=1, trans_time=1, heading=-1}
 	},	
 	
 	
 	
-	
 	{
-		27,
-		SET_CAMERA,
-		{
-			"Monitor_1",
-			"cam_jabba_lookatdarcy"
-		}
-	},
-	
-	
-	{
-		27.5,
+		20,
 		START_IK,
 		{
-			"Char_jabba",
-			"Char_darcy"
+			"Char_darcy",
+			"Char_trent"
 		},
 		{
-			duration=5,
-			end_effector="Body_Head", transition_duration=1, 
+			duration=25,
+			end_effector="Body_Head", transition_duration=2, 
 			target_part="Body_Head", target_type=PART,
 			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
 		}
 	},
+	-- {
+		-- 5,
+		-- START_IK,
+		-- {
+			-- "Char_darcy",
+			-- "Char_trent"
+		-- },
+		-- {
+			-- duration=20,
+			-- end_effector="Eye IK Left", transition_duration=1, 
+			-- target_part="Body_Head", target_type=PART,
+			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+		-- }
+	-- },
+	
+	
 	
 	
 	{
-		28,
-		START_SOUND,
-		{
-			"DX_m07_check_artifact_0030_jabba"
-		},
-		{
-			duration=15
-		}
-	},
-	{
-		28,
-		START_MOTION,
-		{"Char_jabba"},
-		{animation="Sc_dx_s021x_1305_tobias",
-		 duration=12, start_time=0.5, time_scale=0.85, trans_time=0.2, weight=1, heading=-1}
-	}, 
-	
-	
-	{
-		29,
+		20,
 		START_SPATIAL_PROP_ANIM,
 		{
-			"Char_worm",
+			"Char_assistant",
 			"offscreen"
 		},
 		{
@@ -2459,300 +2504,145 @@ events = {
 			}
 		}
 	},
+	
+	
+	{
+		20,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_darcy_official"
+		}
+	},
+	{
+		20,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_darcy_official",
+			"cam_darcy_official_pos2"
+		},
+		{
+			duration=10,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+		}
+	},
+	{
+		20,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_darcy_official_marker",
+			"cam_darcy_official_marker_pos2"
+		},
+		{
+			duration=10,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+		}
+	},
+	
+	{
+		30,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_darcy_top"
+		}
+	},
+	
+
+	{
+		30,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_darcy_top",
+			"cam_darcy_top_pos2"
+		},
+		{
+			duration=17,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+		}
+	},
+	{
+		30,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_darcy_top_marker",
+			"cam_darcy_top_marker_pos2"
+		},
+		{
+			duration=17,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+		}
+	},
+	
+	
+
 
 	
-	
 	{
-		30,
-		START_IK,
-		{
-			"Char_darcy",
-			"Char_jabba"
-		},
-		{
-			duration=5,
-			end_effector="Body_Head", transition_duration=1, 
-			target_part="Body_Head", target_type=PART,
-			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
-		}
-	},
-	
-	
-	{
-		30,
-		SET_CAMERA,
-		{
-			"Monitor_1",
-			"cam_darcy_offer"
-		}
-	},
-	
-	
-	
-	{
-		30,
-		START_SOUND,
-		{
-			"DX_m07_check_artifact_0040_darcy"
-		},
-		{
-			duration=15
-		}
-	},
-	
-	{
-		30,
+		22,
 		START_MOTION,
 		{"Char_darcy"},
-		{animation="Sc_dx_s070x_0801_Jacobi",
-		 duration=5, start_time=1, time_scale=1, trans_time=0.25, weight=1, heading=-1}
-	}, 
-	{
-		34,
-		START_MOTION,
-		{"Char_darcy"},
-		{animation="Sc_FMHEAD_BASEPOSE_000LV_02_01",
-		 duration=5, time_scale=1, trans_time=1, weight=1, heading=-1}
-	}, 
-	
-	
-	{
-		34,
-		SET_CAMERA,
-		{
-			"Monitor_1",
-			"cam_jabba_check_artifact"
-		}
-	},
-	
-	
-	
-	
-	{
-		34,
-		START_IK,
-		{
-			"Char_jabba",
-			"point_trent_hold_artifact_virtual"
-		},
-		{
-			duration=6,
-			end_effector="Body_Head", transition_duration=1, 
-			target_part="", target_type=ROOT,
-			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
-		}
-	},
-	{
-		41,
-		START_IK,
-		{
-			"Char_jabba",
-			"point_darcy_head_near_jabba_virtual"
-		},
-		{
-			duration=15,
-			end_effector="Body_Head", transition_duration=1, 
-			target_part="", target_type=ROOT,
-			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
-		}
-	},
-	
-	
-	
-	{
-		35,
-		START_MOTION,
-		{"Char_jabba"},
-		{animation="Sc_SPCBODY_s021x_Tobias_XA_STND_RUBH_000LV_05",
-		 duration=8, time_scale=0.6, trans_time=1, weight=1, heading=-1}
+		{animation="Sc_FMBODY_STND_CROSS_ARMS_000LV_xa_03",
+		 duration=100, time_scale=0.9, trans_time=1, weight=1, heading=-1, }
 	},	
 	{
-		43.5,
-		START_MOTION,
-		{"Char_jabba"},
-		{animation="Sc_MLBODY_STND_CROSS_ARMS_000LV_xa_06",
-		 duration=8, time_scale=0.58, trans_time=1, weight=1, heading=-1}
-	},	
-	{
-		50,
-		START_MOTION,
-		{"Char_jabba"},
-		{animation="Sc_MLBODY_STND_UNCRSS_ARMS_000LV_XA_02",
-		 duration=5, time_scale=1, trans_time=1, weight=1, heading=-1}
-	},	
-	
-	{
-		35,
-		START_SOUND,
-		{
-			"DX_m07_check_artifact_0050_jabba"
-		},
-		{
-			duration=15
-		}
-	},
-	{
-		35,
-		START_MOTION,
-		{"Char_jabba"},
-		{animation="Sc_dx_s037a_2001_tobias",
-		 duration=12, time_scale=1, trans_time=0.2, weight=1, heading=-1}
-	}, 
-	{
-		38,
-		START_MOTION,
-		{"Char_jabba"},
-		{animation="Sc_dx_s029x_1001_tobias",
-		 duration=12, time_scale=1, trans_time=0.2, weight=1, heading=-1}
-	}, 
-	
-	
-	{
-		41.7,
-		START_SOUND,
-		{
-			"DX_m07_check_artifact_0060_jabba"
-		},
-		{
-			duration=15
-		}
-	},
-	{
-		41.7,
-		START_MOTION,
-		{"Char_jabba"},
-		{animation="Sc_dx_s037a_2001_tobias",
-		 duration=12, time_scale=1, trans_time=0.2, weight=1, heading=-1}
-	}, 
-	{
-		46,
-		START_MOTION,
-		{"Char_jabba"},
-		{animation="Sc_dx_s029x_1001_tobias",
-		 duration=12, time_scale=0.9, trans_time=0.2, weight=1, heading=-1}
-	}, 
-	
-	
-	{
-		50,
-		SET_CAMERA,
-		{
-			"Monitor_1",
-			"cam_darcy_final"
-		}
-	},
-	
-	{
-		50,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"cam_darcy_final",
-			"cam_darcy_final_pos2"
-		},
-		{
-			duration=15,
-			target_part="",
-			target_type=ROOT,
-			spatialprops={
-				pos={0,0,0},
-				q_orient={1,0,0,0}
-			},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			pcurve_period=-1000
-		}
-	},
-	{
-		50,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"cam_darcy_final_marker",
-			"cam_darcy_final_marker_pos2"
-		},
-		{
-			duration=15,
-			target_part="",
-			target_type=ROOT,
-			spatialprops={
-				pos={0,0,0},
-				q_orient={1,0,0,0}
-			},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			pcurve_period=-1000
-		}
-	},
-	
-	{
-		50,
-		START_SOUND,
-		{
-			"DX_m07_check_artifact_0070_darcy"
-		},
-		{
-			duration=15
-		}
-	},
-	
-	{
-		50,
+		27,
 		START_MOTION,
 		{"Char_darcy"},
-		{animation="Sc_dx_s070x_0701_Jacobi",
-		 duration=25, start_time=0.2, time_scale=0.7, trans_time=0.25, weight=1, heading=-1}
-	}, 
+		{animation="Sc_FMBODY_STND_UNCRSS_ARMS_000LV_XA_03",
+		 duration=100, time_scale=0.8, trans_time=1, weight=1, heading=-1, }
+	},	
+
 	{
-		56,
-		START_MOTION,
-		{"Char_darcy"},
-		{animation="Sc_dx_s072a_1601_jacobi",
-		 duration=1.5, time_scale=0.8, trans_time=0.6, weight=1, heading=-1}
-	},
-	
-	
-	{
-		50,
+		31,
 		START_MOTION,
 		{"Char_darcy"},
 		{animation="Sc_FMBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
-		 duration=6, time_scale=1, weight=1, heading=-1}
+		 duration=100, time_scale=0.6, trans_time=1, weight=1, heading=-1, }
 	},	
 	{
-		55,
+		36,
 		START_MOTION,
 		{"Char_darcy"},
 		{animation="Sc_FMBODY_STND_FSTHIPB_RLEASE_000LV_XA_01",
-		 duration=6, time_scale=1, weight=1, heading=-1}
+		 duration=100, time_scale=0.4, trans_time=1, weight=1, heading=-1, }
 	},	
 	
-
-	
 	{
-		56,
+		40,
 		START_MOTION,
 		{"Char_darcy"},
-		{animation="Sc_FMBODY_STND_1STEP_BKWD_PVOTR_090LV_XA_05",
-		 duration=10, time_scale=1, trans_time=1, weight=1, heading=-1}
+		{animation="Sc_FMBODY_STND_AT-EASE_HSEC_RLEASE_000LV_XA_02",
+		 duration=100, time_scale=0.8, trans_time=1, weight=1, heading=-1, }
 	},
 	
-	{
-		58,
-		START_IK,
-		{
-			"Char_darcy",
-			"Char_jabba"
-		},
-		{
-			duration=15,
-			end_effector="Body_Head", transition_duration=2, 
-			target_part="Body_Head", target_type=PART,
-			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
-		}
-	},
+	
 	
 	{
-		59,
+		20,
 		START_SOUND,
 		{
-			"DX_m07_check_artifact_0080_darcy"
+			"DX_m07_reward_0010_darcy"
 		},
 		{
 			duration=15
@@ -2760,155 +2650,291 @@ events = {
 	},
 
 	{
-		59,
+		20,
 		START_MOTION,
 		{"Char_darcy"},
 		{animation="Sc_dx_s070x_0801_Jacobi",
 		 duration=25, start_time=1, time_scale=0.7, trans_time=0.25, weight=1, heading=-1}
 	}, 
 	
+	{
+		25,
+		START_MOTION,
+		{"Char_darcy"},
+		{animation="Sc_dx_s070x_2701_Jacobi",
+		 duration=25, time_scale=0.8, trans_time=0.25, weight=1, heading=-1}
+	}, 
 	
 	
 	{
-		65,
-		START_SPATIAL_PROP_ANIM,
+		30,
+		START_SOUND,
 		{
-			"Char_darcy",
-			"offscreen_back"
+			"DX_m07_reward_0020_darcy"
 		},
 		{
-			duration=0,
-			target_part="",
-			target_type=ROOT,
-			spatialprops={
-				pos={0,0,0},
-				q_orient={1,0,0,0}
-			}
-		}
-	},
-	{
-		65,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"Char_trent",
-			"offscreen_back"
-		},
-		{
-			duration=0,
-			target_part="",
-			target_type=ROOT,
-			spatialprops={
-				pos={0,0,0},
-				q_orient={1,0,0,0}
-			}
+			duration=15
 		}
 	},
 
+	{
+		30,
+		START_MOTION,
+		{"Char_darcy"},
+		{animation="Sc_dx_s070x_0801_Jacobi",
+		 duration=25, start_time=1, time_scale=0.7, trans_time=0.25, weight=1, heading=-1}
+	}, 
 	
 	{
-		65,
+		35,
+		START_MOTION,
+		{"Char_darcy"},
+		{animation="Sc_dx_s070x_2701_Jacobi",
+		 duration=25, time_scale=0.8, trans_time=0.25, weight=1, heading=-1}
+	},
+	
+	
+	{
+		40.5,
+		START_SOUND,
+		{
+			"DX_m07_reward_0030_darcy"
+		},
+		{
+			duration=15
+		}
+	},
+
+	{
+		40.5,
+		START_MOTION,
+		{"Char_darcy"},
+		{animation="Sc_dx_s070x_3001_Jacobi",
+		 duration=25,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	
+	
+	
+
+	
+	
+	{
+		46.8,
 		SET_CAMERA,
 		{
 			"Monitor_1",
-			"cam_jabba_affirmative"
-		}
-	},
-	
-
-
-	
-	{
-		64,
-		START_IK,
-		{
-			"Char_jabba",
-			"point_darcy_head_near_jabba_virtual"
-		},
-		{
-			duration=6,
-			end_effector="Body_Head", transition_duration=1, 
-			target_part="", target_type=ROOT,
-			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
-		}
-	},
-	
-	{
-		67,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"cam_jabba_affirmative",
-			"cam_jabba_affirmative_pos2"
-		},
-		{
-			duration=8,
-			target_part="",
-			target_type=ROOT,
-			spatialprops={
-				pos={0,0,0},
-				q_orient={1,0,0,0}
-			},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			pcurve_period=-1000
-		}
-	},
-	{
-		67,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"cam_jabba_affirmative_marker",
-			"cam_jabba_affirmative_marker_pos2"
-		},
-		{
-			duration=8,
-			target_part="",
-			target_type=ROOT,
-			spatialprops={
-				pos={0,0,0},
-				q_orient={1,0,0,0}
-			},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			pcurve_period=-1000
+			"cam_trent"
 		}
 	},
 	
 	
-	
-		
 	{
-		65,
-		START_MOTION,
-		{"Char_jabba"},
-		{animation="Sc_MLBODY_STND_AT-EASE_HSEC_RLEASE_000LV_XA_03",
-		 duration=10, time_scale=0.6, weight=1, heading=-1}
-	},		
-	{
-		70,
-		START_MOTION,
-		{"Char_jabba"},
-		{animation="Sc_MLBODY_STND_WALK_TRNS_180LV_XA_02",
-		 duration=10, time_scale=1, trans_time=2, weight=1, heading=-1}
-	},	
-	
-	
-	
-	{
-		65,
+		46.8,
 		START_SOUND,
 		{
-			"DX_m07_check_artifact_0090_jabba"
+			"DX_m07_reward_0040_trent"
 		},
 		{
 			duration=15
 		}
 	},
 	{
-		65,
+		46.8,
 		START_MOTION,
-		{"Char_jabba"},
-		{animation="Sc_dx_s069x_1101_niemann",
-		 duration=12, time_scale=1, start_time=1, trans_time=0.2, weight=1, heading=-1}
+		{"Char_trent"},
+		{animation="Sc_dx_s038x_2601_trent",
+		 duration=6, start_time=2.2,  time_scale=0.8, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	
+	
+	
+	{
+		46,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+		 duration=10, time_scale=1, weight=1, heading=-1, event_flags=2}
+	},	
+	
+	
+	{
+		50.5,
+		START_IK,
+		{
+			"Char_darcy",
+			"Char_trent"
+		},
+		{
+			duration=5,
+			end_effector="Body_Head", transition_duration=2, 
+			target_part="Body_Head", target_type=PART,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+		}
+	},
+	{
+		50.5,
+		START_IK,
+		{
+			"Char_darcy",
+			"Char_trent"
+		},
+		{
+			duration=5,
+			end_effector="Eye IK Left", transition_duration=1, 
+			target_part="Body_Head", target_type=PART,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+		}
+	},
+	
+	{
+		50.5,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_darcy"
+		}
+	},
+	
+	{
+		50.5,
+		START_SOUND,
+		{
+			"DX_m07_reward_0050_darcy"
+		},
+		{
+			duration=15
+		}
+	},
+
+
+	{
+		50.5,
+		START_MOTION,
+		{"Char_darcy"},
+		{animation="Sc_dx_s070x_0801_Jacobi",
+		 duration=25, start_time=2.5,  time_scale=0.8, trans_time=0.25, weight=1, heading=-1}
+	}, 
+
+	{
+		53.3,
+		START_MOTION,
+		{"Char_darcy"},
+		{animation="Sc_dx_s070x_2701_Jacobi",
+		 duration=1.2, start_time=1.7,  time_scale=0.8, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	
+	
+	{
+		54.5,
+		START_MOTION,
+		{"Char_darcy"},
+		{animation="Sc_FMHEAD_MOTION_WINK_000LV_XA_%",
+		 duration=25, start_time=0.8,  time_scale=0.5, trans_time=0.2, weight=1, heading=-1}
+	}, 
+	
+	
+	{
+		50.5,
+		START_MOTION,
+		{"Char_darcy"},
+		{animation="Sc_FMBODY_STND_AT-EASE_HSEC_RLEASE_000LV_XA_02",
+		 duration=100, time_scale=0.8, trans_time=1, weight=1, heading=-1, }
+	},
+	
+	{
+		55.5,
+		START_MOTION,
+		{"Char_darcy"},
+		{animation="Sc_FMBODY_STND_WALK_TRNS_090LV_XA_02",
+		 duration=100, time_scale=1, trans_time=1, weight=1, heading=-1, }
+	},
+	
+	{
+		56.5,
+		START_IK,
+		{
+			"Char_trent",
+			"Char_darcy"
+		},
+		{
+			duration=25,
+			end_effector="Body_Head", transition_duration=4, 
+			target_part="Body_Head", target_type=PART,
+			count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+		}
+	},
+	
+	{
+		57.5,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_trent"
+		}
+	},
+
+	{
+		57.5,
+		START_SOUND,
+		{
+			"DX_m07_reward_0060_trent"
+		},
+		{
+			duration=15
+		}
+	},
+	{
+		57.5,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_dx_s003x_1901_trent",
+		 duration=6, start_time=0,  time_scale=0.8, trans_time=0.25, weight=1, heading=-1}
 	}, 
 	
 
+
+	{0.2, START_SOUND, {"step3"}, {duration=5}},
+	{0.7, START_SOUND, {"step1"}, {duration=5}},
+	{1.4, START_SOUND, {"step2"}, {duration=5}},
+	{2.1, START_SOUND, {"step3"}, {duration=5}},
+	{2.8, START_SOUND, {"step2"}, {duration=5}},
+	{3.5, START_SOUND, {"step1"}, {duration=5}},
+	{4.2, START_SOUND, {"step3"}, {duration=5}},
+	{4.7, START_SOUND, {"step4"}, {duration=5}},
+	{5.3, START_SOUND, {"step2"}, {duration=5}},
+	{5.9, START_SOUND, {"step3"}, {duration=5}},
+	{6.6, START_SOUND, {"step1"}, {duration=5}},
+	{7.3, START_SOUND, {"step3"}, {duration=5}},
+	{8.0, START_SOUND, {"step2"}, {duration=5}},
+	{8.7, START_SOUND, {"step3"}, {duration=5}},
+	{9.4, START_SOUND, {"step4"}, {duration=5}},
+	{10.1, START_SOUND, {"step3"}, {duration=5}},
+	{10.6, START_SOUND, {"step1"}, {duration=5}},
+	{11.0, START_SOUND, {"step3"}, {duration=5}},
+	{11.5, START_SOUND, {"step2"}, {duration=5}},
+	{12.1, START_SOUND, {"step3"}, {duration=5}},
+	
+
+	{11.2, START_SOUND, {"step1_cmdr"}, {duration=5}},
+	{11.7, START_SOUND, {"step2_cmdr"}, {duration=5}},
+	{12.2, START_SOUND, {"step1_cmdr"}, {duration=5}},
+	{12.5, START_SOUND, {"step3_cmdr"}, {duration=5}},
+	
+	
+	{0, START_AUDIO_PROP_ANIM, {"step1"}, {duration=3, audioprops={attenuation=-15}}},
+	{0, START_AUDIO_PROP_ANIM, {"step2"}, {duration=3, audioprops={attenuation=-15}}},
+	{0, START_AUDIO_PROP_ANIM, {"step3"}, {duration=3, audioprops={attenuation=-15}}},
+	
+	{8, START_AUDIO_PROP_ANIM, {"step1"}, {duration=3, audioprops={attenuation=-30}}},
+	{8, START_AUDIO_PROP_ANIM, {"step2"}, {duration=3, audioprops={attenuation=-30}}},
+	{8, START_AUDIO_PROP_ANIM, {"step3"}, {duration=3, audioprops={attenuation=-30}}},
+	
 }
+
+
+
+
+
+
+
 

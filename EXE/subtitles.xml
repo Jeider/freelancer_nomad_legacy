@@ -509,6 +509,16 @@
 <Static AudioFile="mod\m07\m07_check_artifact_0090_jabba.wav" TextArea="Cinematic">Of course, Darcy, of course...  </Static>
 
 
+<Static AudioFile="mod\m07\m07_reward_0010_darcy.wav" TextArea="Cinematic">Thank you, Trent. I understand that one good turn deserves another, but can't it wait a bit? Turns out not all of the trinkets this bastard had were "bought".</Static>
+<Static AudioFile="mod\m07\m07_reward_0020_darcy.wav" TextArea="Cinematic">To convince some of the least conforming customers, he used the guys we just burnt near the station. All of this needs to be sorted out...</Static>
+<Static AudioFile="mod\m07\m07_reward_0030_darcy.wav" TextArea="Cinematic">By the way, here is the official payment for your help from the Bretonian goverment. Ten thousands credits.</Static>
+<Static AudioFile="mod\m07\m07_reward_0040_trent.wav" TextArea="Cinematic">I'm still not going to sell you the artifact, Darcy.</Static>
+<Static AudioFile="mod\m07\m07_reward_0050_darcy.wav" TextArea="Cinematic">Yeah-yeah. Very funny, Trent. See you later.</Static>
+<Static AudioFile="mod\m07\m07_reward_0060_trent.wav" TextArea="Cinematic">Try not to drag this, Darcy.</Static>
+
+
+
+
 
 
 

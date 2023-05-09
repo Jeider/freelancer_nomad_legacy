@@ -67,14 +67,95 @@ entities={
 	
 	
 	{
-		entity_name="DX_m06_freeport_0010_delta1",
-		template_name="DX_m06_freeport_0010_delta1",
-		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
-		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
-		userprops={category="Audio"}
+		entity_name="DX_m07_battleship_0010_trent",
+		template_name="DX_m07_battleship_0010_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
 	},
-	
+	{
+		entity_name="DX_m07_battleship_0020_barman",
+		template_name="DX_m07_battleship_0020_barman",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_battleship_0030_barman",
+		template_name="DX_m07_battleship_0030_barman",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_battleship_0040_trent",
+		template_name="DX_m07_battleship_0040_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_battleship_0050_darcy",
+		template_name="DX_m07_battleship_0050_darcy",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_battleship_0060_darcy",
+		template_name="DX_m07_battleship_0060_darcy",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_battleship_0070_darcy",
+		template_name="DX_m07_battleship_0070_darcy",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_battleship_0080_trent",
+		template_name="DX_m07_battleship_0080_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_battleship_0090_trent",
+		template_name="DX_m07_battleship_0090_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_battleship_0100_darcy",
+		template_name="DX_m07_battleship_0100_darcy",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_battleship_0110_darcy",
+		template_name="DX_m07_battleship_0110_darcy",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_battleship_0120_trent",
+		template_name="DX_m07_battleship_0120_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_battleship_0130_darcy",
+		template_name="DX_m07_battleship_0130_darcy",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_battleship_0140_darcy",
+		template_name="DX_m07_battleship_0140_darcy",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_battleship_0150_darcy",
+		template_name="DX_m07_battleship_0150_darcy",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_battleship_0160_trent",
+		template_name="DX_m07_battleship_0160_trent",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_battleship_0170_darcy",
+		template_name="DX_m07_battleship_0170_darcy",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+	},
+	{
+		entity_name="DX_m07_battleship_0180_darcy",
+		template_name="DX_m07_battleship_0180_darcy",
+		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+	},
 	
 	{
 		entity_name="Char_trent",
