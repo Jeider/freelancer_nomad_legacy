@@ -154,3 +154,7 @@ IniLog.txt
 Interceptor_or.dll
 WIDE_HUD_ADDON/
 drvmgt.dll
+
+__pycache__/
+*.py[cod]
+*$py.class

@@ -1,19 +1,21 @@
-from world.equipment import Equipment, Engine
+from world.equipment import Equipment, MainMiscEquip
+from world.engine import Engine
+
 
 def main():
     engines = []
 
-    for engine_type in Engine.ALL_ENGINES:
+    for equip_type in MainMiscEquip.ALL_EQUIP_TYPES:
         for shipclass in Equipment.SHIPCLASSES:
             for equipment_class in Equipment.BASE_CLASSES:
-                engine = Engine(engine_type, shipclass, equipment_class, 500, 200)
+                engine = Engine(equip_type, shipclass, equipment_class, 500, 200)
                 engines.append(engine)
 
-                # print(engine.get_equip())
-                # print('')
+                print(engine.get_good())
+                print('')
 
-    import ipdb
-    ipdb.set_trace()
+    # import ipdb
+    # ipdb.set_trace()
 
 main()
 
