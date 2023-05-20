@@ -1,188 +1,236 @@
-from world.equipment import MainMiscEquip, Equipment
+from world.power import Power
 
 
-class Power(MainMiscEquip):
+class Shield(Power):
 
-    MAX_POWER_ELITE = 12000
-    MAX_REGEN = 1200
+    MAX_SHIELD_CAPACITY_FIGHTER = 7500
+    MAX_SHIELD_CAPACITY_ELITE = 8500
+    MAX_SHIELD_CAPACITY_FREIGHTER = 10000
 
-    BASE_THRUST_CAPACITY = 1000
-    BASE_THRUST_REGEN = 100
+    MAX_SHIELD_REGEN_FIGHTER = 200
+    MAX_SHIELD_REGEN_ELITE = 225
+    MAX_SHIELD_REGEN_FREIGHTER = 250
 
-    POWER_MAX_HIT_PTS = 8000
+    SHIELD_ACTIVE_POWER_FACTOR = 0.3
+    SHIELD_PASSIVE_POWER_FACTOR = 0.2
 
+    SHIELD_MAX_HIT_PTS = 8000
 
-DA_archetype = equipment\models\st\rh_radiation_shield.3db
-material_library = equipment\models\rh_equip.mat
+    SHIELD_OFFLINE_REBUILD_TIME = 10
 
-DA_archetype = equipment\models\st\li_disruptor_shield.3db
-material_library = equipment\models\li_equip.mat
+    SHIELD_TEMPLATE = '''[ShieldGenerator]
+nickname = {nickname}
+ids_name = {ids_name}
+ids_info = {ids_info}
+hp_type = {hp_type}
+shield_type = {shield_type}
+hit_pts = {hit_pts}
+offline_rebuild_time = {offline_rebuild_time}
+max_capacity = {max_capacity}
+regeneration_rate = {regeneration_rate}
+rebuild_power_draw = {rebuild_power_draw}
+constant_power_draw = {constant_power_draw}{loot_props}{shield_defaults}{faction_shield_core}'''
 
-DA_archetype = equipment\models\st\br_conversion_shield.3db
-material_library = equipment\models\br_equip.mat
-
-DA_archetype = equipment\models\st\ku_displacement_shield.3db
-material_library = equipment\models\ku_equip.mat
-
-DA_archetype = equipment\models\st\li_refractor_shield.3db
-material_library = equipment\models\li_equip.mat
-
-
-
-[ShieldGenerator]
-nickname = rh_shield01_ELITE
-ids_name = 263870
-ids_info = 273696
+    SHIELD_DEFAULTS = '''
 HP_child = HpConnect
 explosion_resistance = 0.25
-debris_type = debris_normal
-parent_impulse = 20
-child_impulse = 80
 volume = 0
-mass = 5
-toughness = 10
-hp_type = hp_elite_shield_special_1
-shield_type = S_rh_elite
+mass = 10
+offline_threshold = 0.15
+LODranges = 0, 600
+lootable = true
 shield_collapse_sound = shield_offline
-shield_rebuilt_sound = shield_rebuilt
-shield_hit_effects = 0, gf_rh_shield01
-shield_hit_effects = 200, gf_rh_shield02
-shield_hit_effects = 500, gf_rh_shield03
+shield_rebuilt_sound = shield_rebuilt'''
+
+    RH_SHIELD_CORE = '''
+DA_archetype = equipment\\models\\st\\rh_radiation_shield.3db
+material_library = equipment\\models\\rh_equip.mat
 shield_collapse_particle = rh_shield_offline
-separation_explosion = sever_debris
-LODranges = 0, 600
-lootable = false
-offline_rebuild_time = 10
-offline_threshold = 0.15
-hit_pts = 3000
-max_capacity = 649.6875
-regeneration_rate = 15.75
-rebuild_power_draw = 27.72
-constant_power_draw = 16.8
+shield_hit_effects = {hit_one}, gf_rh_shield01
+shield_hit_effects = {hit_two}, gf_rh_shield02
+shield_hit_effects = {hit_three}, gf_rh_shield03'''
 
-
-
-[ShieldGenerator]
-nickname = li_shield01_ELITE
-ids_name = 263897
-ids_info = 273674
-HP_child = HpConnect
-explosion_resistance = 0.25
-debris_type = debris_normal
-parent_impulse = 20
-child_impulse = 80
-volume = 0
-mass = 5
-toughness = 10
-shield_type = S_li_elite
-shield_collapse_sound = shield_offline
-shield_rebuilt_sound = shield_rebuilt
-shield_hit_effects = 0, gf_li_shield01
-shield_hit_effects = 200, gf_li_shield02
-shield_hit_effects = 500, gf_li_shield03
-separation_explosion = sever_debris
+    LI_SHIELD_CORE = '''
+DA_archetype = equipment\\models\\st\\li_disruptor_shield.3db
+material_library = equipment\\models\\li_equip.mat
 shield_collapse_particle = li_shield_offline
-LODranges = 0, 600
-lootable = false
-offline_rebuild_time = 10
-offline_threshold = 0.15
-hit_pts = 3000
-hp_type = hp_elite_shield_special_1
-max_capacity = 590.625
-regeneration_rate = 15.75
-rebuild_power_draw = 18.9
-constant_power_draw = 16.8
+shield_hit_effects = {hit_one}, gf_li_shield01
+shield_hit_effects = {hit_two}, gf_li_shield02
+shield_hit_effects = {hit_three}, gf_li_shield03'''
 
-[ShieldGenerator]
-nickname = br_shield01_ELITE
-ids_name = 263924
-ids_info = 273674
-HP_child = HpConnect
-explosion_resistance = 0.25
-debris_type = debris_normal
-parent_impulse = 20
-child_impulse = 80
-volume = 0
-mass = 5
-toughness = 10
-shield_type = S_br_elite
-shield_collapse_sound = shield_offline
-shield_rebuilt_sound = shield_rebuilt
-shield_hit_effects = 0, gf_br_shield01
-shield_hit_effects = 200, gf_br_shield02
-shield_hit_effects = 500, gf_br_shield03
-separation_explosion = sever_debris
+    BR_SHIELD_CORE = '''
+DA_archetype = equipment\\models\\st\\br_conversion_shield.3db
+material_library = equipment\\models\\br_equip.mat
 shield_collapse_particle = br_shield_offline
-LODranges = 0, 600
-lootable = false
-offline_rebuild_time = 8
-offline_threshold = 0.15
-hit_pts = 3000
-hp_type = hp_elite_shield_special_1
-max_capacity = 590.625
-regeneration_rate = 15.75
-rebuild_power_draw = 25.2
-constant_power_draw = 16.8
+shield_hit_effects = {hit_one}, gf_br_shield01
+shield_hit_effects = {hit_two}, gf_br_shield02
+shield_hit_effects = {hit_three}, gf_br_shield03'''
 
-
-[ShieldGenerator]
-nickname = ku_shield01_ELITE
-ids_name = 263951
-ids_info = 273674
-HP_child = HpConnect
-explosion_resistance = 0.25
-debris_type = debris_normal
-parent_impulse = 20
-child_impulse = 80
-volume = 0
-mass = 5
-toughness = 10
-shield_type = S_ku_elite
-shield_collapse_sound = shield_offline
-shield_rebuilt_sound = shield_rebuilt
-shield_hit_effects = 0, gf_ku_shield01
-shield_hit_effects = 200, gf_ku_shield02
-shield_hit_effects = 500, gf_ku_shield03
-separation_explosion = sever_debris
+    KU_SHIELD_CORE = '''
+DA_archetype = equipment\\models\\st\\ku_displacement_shield.3db
+material_library = equipment\\models\\ku_equip.mat
 shield_collapse_particle = ku_shield_offline
-LODranges = 0, 600
-lootable = false
-offline_rebuild_time = 10
-offline_threshold = 0.15
-hit_pts = 3000
-hp_type = hp_elite_shield_special_1
-max_capacity = 590.625
-regeneration_rate = 17.325
-rebuild_power_draw = 25.2
-constant_power_draw = 21
+shield_hit_effects = {hit_one}, gf_ku_shield01
+shield_hit_effects = {hit_two}, gf_ku_shield02
+shield_hit_effects = {hit_three}, gf_ku_shield03'''
 
-[ShieldGenerator]
-nickname = co_shield01_ELITE
-ids_name = 263978
-ids_info = 273674
+    CO_SHIELD_CORE = '''
+DA_archetype = equipment\\models\\st\\li_refractor_shield.3db
+material_library = equipment\\models\\li_equip.mat
+shield_collapse_particle = co_shield_offline
+shield_hit_effects = {hit_one}, gf_pi_shield01
+shield_hit_effects = {hit_two}, gf_pi_shield02
+shield_hit_effects = {hit_three}, gf_pi_shield03'''
+
+    def get_shield_core_template_params(self):
+        return {
+            'hit_one': 0,
+            'hit_two': 250,
+            'hit_three': 500,
+        }
+
+    def get_shield_core_template(self):
+        if self.equip_type in self.RH_EQUIP:
+            return self.RH_SHIELD_CORE
+        if self.equip_type in self.LI_EQUIP:
+            return self.LI_SHIELD_CORE
+        if self.equip_type in self.BR_EQUIP:
+            return self.BR_SHIELD_CORE
+        if self.equip_type in self.KU_EQUIP:
+            return self.KU_SHIELD_CORE
+        if self.equip_type in self.CO_EQUIP:
+            return self.CO_SHIELD_CORE
+
+        raise Exception('unknown shield core')
+
+    def get_shield_core(self):
+        self.get_shield_core_template().format(self.get_shield_core_template_params())
+
+    def get_nickname(self):
+        return '{name}_shield_{digit}_{shipclass}'.format(
+            name=self.get_base_nickname(),
+            digit=self.get_equipment_class_digit(),
+            shipclass=self.get_shipclass_name()
+        )
+
+    def get_shield_hit_pts(self):
+        return self.SHIELD_MAX_HIT_PTS * self.rate
+
+    def get_shield_hp_type(self):
+        return 'hp_{shipclass}_shield_special_{equipment_class}'.format(
+            shipclass=self.get_shipclass_hp_type_string(),
+            equipment_class=self.equipment_class
+        )
+
+    def get_offline_rebuild_time(self):
+        offline_time = self.SHIELD_OFFLINE_REBUILD_TIME
+
+        if self.equip_type in self.BR_EQUIP:
+            offline_time -= 2
+
+        return offline_time
+
+    def get_max_shield_capacity(self):
+        if self.ship_class == self.SHIPCLASS_FIGHTER:
+            return self.MAX_SHIELD_CAPACITY_FIGHTER
+        if self.ship_class == self.SHIPCLASS_ELITE:
+            return self.MAX_SHIELD_CAPACITY_ELITE
+        if self.ship_class == self.SHIPCLASS_FREIGHTER:
+            return self.MAX_SHIELD_CAPACITY_FREIGHTER
+
+        raise Exception('unkown ship shield capacity')
+
+    def get_shield_capacity(self):
+        capacity = self.get_max_shield_capacity()
+
+        if self.equip_type in self.RH_EQUIP:
+            capacity *= 1.1
+        elif self.equip_type in self.CO_EQUIP:
+            capacity *= 0.9
+
+        return capacity
+
+    def get_max_shield_regen(self):
+        if self.ship_class == self.SHIPCLASS_FIGHTER:
+            return self.MAX_SHIELD_REGEN_FIGHTER
+        if self.ship_class == self.SHIPCLASS_ELITE:
+            return self.MAX_SHIELD_REGEN_ELITE
+        if self.ship_class == self.SHIPCLASS_FREIGHTER:
+            return self.MAX_SHIELD_REGEN_FREIGHTER
+
+        raise Exception('unkown ship shield regen')
+
+    def get_shield_regeneration_rate(self):
+        regen = self.get_max_shield_regen()
+
+        if self.equip_type in self.KU_EQUIP:
+            regen *= 1.1
+        elif self.equip_type in self.CO_EQUIP:
+            regen *= 0.9
+
+        return regen
+
+    def get_shield_rebuild_power_draw(self):
+        required_power = self.get_power_regen() * self.SHIELD_ACTIVE_POWER_FACTOR
+
+        if self.equip_type in self.RH_EQUIP:
+            required_power *= 1.1
+        elif self.equip_type in self.LI_EQUIP:
+            required_power *= 0.75
+
+        return required_power
+
+    def get_shield_constant_power_draw(self):
+        required_power = self.get_power_regen() * self.SHIELD_PASSIVE_POWER_FACTOR
+
+        if self.equip_type in self.KU_EQUIP:
+            required_power *= 1.25
+        elif self.equip_type in self.BR_EQUIP:
+            required_power *= 0.6
+
+        return required_power
+
+    def get_shield_template_params(self):
+        return {
+            'nickname': self.get_nickname(),
+            'ids_name': self.ids_name,
+            'ids_info': self.ids_info,
+            'hp_type': self.get_shield_hp_type(),
+            'hit_pts': self.get_shield_hit_pts(),
+            'offline_rebuild_time': self.get_offline_rebuild_time(),
+            'max_capacity': self.get_shield_capacity(),
+            'regeneration_rate': self.get_shield_regeneration_rate(),
+            'rebuild_power_draw': self.get_shield_rebuild_power_draw(),
+            'constant_power_draw': self.get_shield_constant_power_draw(),
+            'loot_props': self.LOOT_DEFAULTS,
+            'shield_defaults': self.SHIELD_DEFAULTS,
+            'faction_shield_core': self.get_shield_core(),
+        }
+
+    def get_equip(self):
+        return self.SHIELD_TEMPLATE.format(**self.get_shield_template_params())
+
+
+class ShieldNPC(Shield):
+
+    MAX_SHIELD_REGEN_FIGHTER = 50
+    MAX_SHIELD_REGEN_ELITE = 75
+    MAX_SHIELD_REGEN_FREIGHTER = 100
+
+    SHIELD_DEFAULTS = '''
 HP_child = HpConnect
 explosion_resistance = 0.25
-debris_type = debris_normal
-parent_impulse = 20
-child_impulse = 80
 volume = 0
-mass = 5
-toughness = 10
-shield_type = S_co_elite
-shield_collapse_sound = shield_offline
-shield_rebuilt_sound = shield_rebuilt
-shield_hit_effects = 0, gf_pi_shield01
-shield_hit_effects = 200, gf_pi_shield02
-shield_hit_effects = 500, gf_pi_shield03
-separation_explosion = sever_debris
-shield_collapse_particle = co_shield_offline
+mass = 10
+offline_threshold = 0.15
 LODranges = 0, 600
 lootable = false
-offline_rebuild_time = 10
-offline_threshold = 0.15
-hit_pts = 3000
-hp_type = hp_elite_shield_special_1
-max_capacity = 561.09375
-regeneration_rate = 14.9625
-rebuild_power_draw = 25.2
-constant_power_draw = 10.08
+shield_collapse_sound = shield_offline
+shield_rebuilt_sound = shield_rebuilt'''
+
+    def get_nickname(self):
+        return '{name}_shield_{digit}_{shipclass}_npc'.format(
+            name=self.get_base_nickname(),
+            digit=self.get_equipment_class_digit(),
+            shipclass=self.get_shipclass_name()
+        )

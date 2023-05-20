@@ -96,7 +96,8 @@ class Equipment(object):
     LOOT_DEFAULTS = '''
 debris_type = debris_normal
 parent_impulse = 20
-child_impulse = 80'''
+child_impulse = 80
+separation_explosion = sever_debris'''
 
     DEFAULT_GOOD_TEMPLATE = '''[Good]
 nickname = {nickname}
@@ -178,6 +179,23 @@ class MainMiscEquip(Equipment):
     MAIN_EQUIP = [RH_MAIN, LI_MAIN, BR_MAIN, KU_MAIN, CO_MAIN]
     CIV_EQUIP = [RH_CIV, LI_CIV, BR_CIV, KU_CIV]
     PIRATE_EQUIP = [RH_PIRATE, LI_PIRATE, BR_PIRATE, KU_PIRATE]
+
+    def __init__(self, equip_type, ship_class, equipment_class, ids_name, ids_info):
+        self.equip_type = equip_type
+        self.ship_class = ship_class
+        self.equipment_class = equipment_class
+
+        if self.equip_type in self.MAIN_EQUIP:
+            self.rate = self.get_main_rate()
+        if self.equip_type in self.CIV_EQUIP:
+            self.rate = self.get_civ_rate()
+        if self.equip_type in self.PIRATE_EQUIP:
+            self.rate = self.get_pirate_rate()
+        if self.equip_type == self.CO_OUTCAST:
+            self.rate = self.get_civ_rate()
+
+        self.ids_name = ids_name
+        self.ids_info = ids_info
 
     def get_base_nickname(self):
         if self.equip_type == self.RH_MAIN:

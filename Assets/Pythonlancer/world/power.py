@@ -3,13 +3,12 @@ from world.equipment import MainMiscEquip, Equipment
 
 class Power(MainMiscEquip):
 
-
     MAX_POWER_FIGHTER = 12000
     MAX_POWER_ELITE = 12000
     MAX_POWER_FREIGHTER = 12000
-    MAX_REGEN_FIGHTER = 1200
-    MAX_REGEN_ELITE = 1200
-    MAX_REGEN_FREIGHTER = 1200
+    MAX_POWER_REGEN_FIGHTER = 1200
+    MAX_POWER_REGEN_ELITE = 1200
+    MAX_POWER_REGEN_FREIGHTER = 1200
 
     BASE_THRUST_CAPACITY = 1000
     BASE_THRUST_REGEN = 100
@@ -64,23 +63,6 @@ material_library = Equipment\\models\\hardware.mat'''
     KU_POWER_ICON = 'equipment\\models\\icons\\ku\\ku_power.3db'
     CO_POWER_ICON = 'equipment\\models\\icons\\co\\co_power.3db'
 
-    def __init__(self, equip_type, ship_class, equipment_class, ids_name, ids_info):
-        self.equip_type = equip_type
-        self.ship_class = ship_class
-        self.equipment_class = equipment_class
-
-        if self.equip_type in self.MAIN_EQUIP:
-            self.rate = self.get_main_rate()
-        if self.equip_type in self.CIV_EQUIP:
-            self.rate = self.get_civ_rate()
-        if self.equip_type in self.PIRATE_EQUIP:
-            self.rate = self.get_pirate_rate()
-        if self.equip_type == self.CO_OUTCAST:
-            self.rate = self.get_civ_rate()
-
-        self.ids_name = ids_name
-        self.ids_info = ids_info
-
     def get_power_core(self):
         if self.equip_type in self.RH_EQUIP:
             return self.RH_POWER_CORE
@@ -93,7 +75,7 @@ material_library = Equipment\\models\\hardware.mat'''
         if self.equip_type in self.CO_EQUIP:
             return self.CO_POWER_CORE
 
-        raise Exception('unknown engine core')
+        raise Exception('unknown power core')
 
     def get_nickname(self):
         return '{name}_power_{digit}_{shipclass}'.format(
@@ -111,8 +93,18 @@ material_library = Equipment\\models\\hardware.mat'''
             equipment_class=self.equipment_class
         )
 
-    def get_power_capacity():
-        capacity = self.MAX_POWER
+    def get_max_power_capacity(self)
+        if self.ship_class == self.SHIPCLASS_FIGHTER:
+            return self.MAX_POWER_FIGHTER
+        if self.ship_class == self.SHIPCLASS_ELITE:
+            return self.MAX_POWER_ELITE
+        if self.ship_class == self.SHIPCLASS_FREIGHTER:
+            return self.MAX_POWER_FREIGHTER
+
+        raise Exception('unkown ship power capacity')
+
+    def get_power_capacity(self):
+        capacity = self.get_max_power_capacity()
 
         if self.equip_type in self.RH_EQUIP:
             capacity *= 1.1
@@ -121,8 +113,18 @@ material_library = Equipment\\models\\hardware.mat'''
 
         return capacity
 
-    def get_power_regen():
-        regen = self.MAX_REGEN
+    def get_max_power_regen(self)
+        if self.ship_class == self.SHIPCLASS_FIGHTER:
+            return self.MAX_POWER_REGEN_FIGHTER
+        if self.ship_class == self.SHIPCLASS_ELITE:
+            return self.MAX_POWER_REGEN_ELITE
+        if self.ship_class == self.SHIPCLASS_FREIGHTER:
+            return self.MAX_POWER_REGEN_FREIGHTER
+
+        raise Exception('unkown ship power regen')
+
+    def get_power_regen(self):
+        regen = self.get_max_power_regen()
 
         if self.equip_type in self.KU_EQUIP:
             regen *= 1.1
@@ -131,7 +133,7 @@ material_library = Equipment\\models\\hardware.mat'''
 
         return regen
 
-    def get_thrust_capacity():
+    def get_thrust_capacity(self):
         thrust_capacity = self.BASE_THRUST_CAPACITY
 
         if self.equip_type in self.LI_EQUIP:
@@ -141,7 +143,7 @@ material_library = Equipment\\models\\hardware.mat'''
 
         return thrust_capacity
 
-    def get_thrust_regen():
+    def get_thrust_regen(self):
         thrust_regen = self.BASE_THRUST_REGEN
 
         if self.equip_type in self.CO_EQUIP:

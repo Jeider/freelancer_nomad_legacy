@@ -1,4 +1,4 @@
-from world.equipment import MainMiscEquip, Equipment
+from world.equipment import Power
 
 
 class Engine(MainMiscEquip):
@@ -354,23 +354,6 @@ engine_kill_sound = engine_pi_freighter_kill'''
     KU_ENGINE_ICON = 'equipment\\models\\icons\\ku\\ku_engine.3db'
     CO_ENGINE_ICON = 'equipment\\models\\icons\\co\\co_engine.3db'
 
-    def __init__(self, equip_type, ship_class, equipment_class, ids_name, ids_info):
-        self.equip_type = equip_type
-        self.ship_class = ship_class
-        self.equipment_class = equipment_class
-
-        if self.equip_type in self.MAIN_EQUIP:
-            self.rate = self.get_main_rate()
-        if self.equip_type in self.CIV_EQUIP:
-            self.rate = self.get_civ_rate()
-        if self.equip_type in self.PIRATE_EQUIP:
-            self.rate = self.get_pirate_rate()
-        if self.equip_type == self.CO_OUTCAST:
-            self.rate = self.get_civ_rate()
-
-        self.ids_name = ids_name
-        self.ids_info = ids_info
-
     def get_engine_core(self):
         if self.equip_type in self.RH_EQUIP:
             return self.RH_ENGINE_CORE
@@ -577,10 +560,10 @@ engine_kill_sound = engine_pi_freighter_kill'''
         return self.get_linear_drag() + self.EXTRA_DRAG
 
     def get_base_power(self):
-        return self.MAX_POWER_REGEN * self.BASE_POWER_DRAIN_MULTIPLER * self.rate
+        return self.get_max_power_regen() * self.BASE_POWER_DRAIN_MULTIPLER * self.rate
 
     def get_cruise_power(self):
-        return self.MAX_POWER_REGEN * self.CRUISE_POWER_DRAIN_MULTIPLER * self.rate
+        return self.get_max_power_regen() * self.CRUISE_POWER_DRAIN_MULTIPLER * self.rate
 
     def get_cruise_charge_time(self):
         charge_time = self.BASE_CRUISE_CHARGE_TIME
