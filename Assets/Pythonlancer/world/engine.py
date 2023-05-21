@@ -1,7 +1,8 @@
-from world.equipment import Power
+from world.equipment import Equipment, AdoxaEquipClassGood
+from world.power import BasePower
 
 
-class Engine(MainMiscEquip):
+class Engine(AdoxaEquipClassGood, BasePower):
     SPEED_PER_RATE = {
         Equipment.RATE_1: 76,
         Equipment.RATE_2: 78,

@@ -1,7 +1,7 @@
-from world.equipment import MainMiscEquip, Equipment
+from world.equipment import MainInternalEquip, Equipment, AdoxaEquipClassGood
 
 
-class Power(MainMiscEquip):
+class BasePower(MainInternalEquip):
 
     MAX_POWER_FIGHTER = 12000
     MAX_POWER_ELITE = 12000
@@ -93,7 +93,7 @@ material_library = Equipment\\models\\hardware.mat'''
             equipment_class=self.equipment_class
         )
 
-    def get_max_power_capacity(self)
+    def get_max_power_capacity(self):
         if self.ship_class == self.SHIPCLASS_FIGHTER:
             return self.MAX_POWER_FIGHTER
         if self.ship_class == self.SHIPCLASS_ELITE:
@@ -113,7 +113,7 @@ material_library = Equipment\\models\\hardware.mat'''
 
         return capacity
 
-    def get_max_power_regen(self)
+    def get_max_power_regen(self):
         if self.ship_class == self.SHIPCLASS_FIGHTER:
             return self.MAX_POWER_REGEN_FIGHTER
         if self.ship_class == self.SHIPCLASS_ELITE:
@@ -149,8 +149,10 @@ material_library = Equipment\\models\\hardware.mat'''
         if self.equip_type in self.CO_EQUIP:
             thrust_regen *= 1.33
 
-        return thrust_capacity
+        return thrust_regen
 
+
+class Power(AdoxaEquipClassGood, BasePower):
     def get_power_template_params(self):
         return {
             'nickname': self.get_nickname(),
@@ -199,5 +201,3 @@ material_library = Equipment\\models\\hardware.mat'''
             return self.CO_POWER_ICON
 
         raise Exception('unknown power icon')
-
-

@@ -124,6 +124,9 @@ combinable = {combinable}'''
         if self.ship_class == self.SHIPCLASS_FREIGHTER:
             return 'FREIGHTER'
 
+    def get_shipclass_name_lower(self):
+        self.get_shipclass_name().lower()
+
     def get_shipclass_hp_type_string(self):
         if self.ship_class == self.SHIPCLASS_FIGHTER:
             return 'fighter'
@@ -180,19 +183,11 @@ class MainMiscEquip(Equipment):
     CIV_EQUIP = [RH_CIV, LI_CIV, BR_CIV, KU_CIV]
     PIRATE_EQUIP = [RH_PIRATE, LI_PIRATE, BR_PIRATE, KU_PIRATE]
 
-    def __init__(self, equip_type, ship_class, equipment_class, ids_name, ids_info):
+    def __init__(self, equip_type, equipment_class, ids_name, ids_info):
         self.equip_type = equip_type
-        self.ship_class = ship_class
         self.equipment_class = equipment_class
 
-        if self.equip_type in self.MAIN_EQUIP:
-            self.rate = self.get_main_rate()
-        if self.equip_type in self.CIV_EQUIP:
-            self.rate = self.get_civ_rate()
-        if self.equip_type in self.PIRATE_EQUIP:
-            self.rate = self.get_pirate_rate()
-        if self.equip_type == self.CO_OUTCAST:
-            self.rate = self.get_civ_rate()
+        self.set_rate()
 
         self.ids_name = ids_name
         self.ids_info = ids_info
@@ -231,22 +226,107 @@ class MainMiscEquip(Equipment):
         if self.equip_type == self.CO_OUTCAST:
             return 'out'
 
-        raise Exception('unknown engine base nickname')
+        raise Exception('unknown base nickname')
+
+    def set_rate(self):
+        if self.equip_type in self.MAIN_EQUIP:
+            self.rate = self.get_main_rate()
+        if self.equip_type in self.CIV_EQUIP:
+            self.rate = self.get_civ_rate()
+        if self.equip_type in self.PIRATE_EQUIP:
+            self.rate = self.get_pirate_rate()
+        if self.equip_type == self.CO_OUTCAST:
+            self.rate = self.get_civ_rate()
+
+    def get_faction_code(self):
+        if self.equip_type in self.RH_EQUIP:
+            return 'rh'
+        if self.equip_type in self.LI_EQUIP:
+            return 'li'
+        if self.equip_type in self.BR_EQUIP:
+            return 'br'
+        if self.equip_type in self.KU_EQUIP:
+            return 'ku'
+        if self.equip_type in self.CO_EQUIP:
+            return 'ku'
+
+        raise Exception('unknown faction code')
+
+
+class MainInternalEquip(MainMiscEquip):
+
+    MAIN_INTERNAL_GOOD_TEMPLATE = '''[Good]
+nickname = {nickname}
+equipment = {nickname}
+category = equipment
+price = {price}
+item_icon = {icon}
+combinable = {combinable}
+shop_archetype = {model}
+attachment_archetype = {model}'''
+
+    def __init__(self, equip_type, ship_class, equipment_class, ids_name, ids_info):
+        self.equip_type = equip_type
+        self.ship_class = ship_class
+        self.equipment_class = equipment_class
+
+        self.set_rate()
+
+        self.ids_name = ids_name
+        self.ids_info = ids_info
+
+    def get_equip_model(self):
+        raise NotImplementedError
+
+    def get_good_template(self):
+        return self.MAIN_INTERNAL_GOOD_TEMPLATE
+
+    def get_good_template_params(self):
+        nickname = self.get_nickname()
+        return {
+            'nickname': nickname,
+            'equipment': nickname,
+            'price': self.get_price(),
+            'icon': self.get_icon(),
+            'model': self.get_equip_model(),
+            'combinable': False
+        }
+
+
+class DefaultGood(object):
+
+    DEFAULT_GOOD_TEMPLATE = '''[Good]
+nickname = {nickname}
+equipment = {nickname}
+category = equipment
+price = {price}
+item_icon = {icon}
+combinable = {combinable}'''
+
+    def get_price(self):
+        raise NotImplementedError
 
     def get_icon(self):
         raise NotImplementedError
 
     def get_good_template(self):
-        raise NotImplementedError
+        return self.DEFAULT_GOOD_TEMPLATE
 
     def get_good_template_params(self):
-        raise NotImplementedError
+        nickname = self.get_nickname()
+        return {
+            'nickname': nickname,
+            'equipment': nickname,
+            'price': self.get_price(),
+            'icon': self.get_icon(),
+            'combinable': False
+        }
 
     def get_good(self):
         return self.get_good_template().format(**self.get_good_template_params())
 
 
-class MainInternalEquip(MainMiscEquip):
+class AdoxaEquipClassGood(DefaultGood):
 
     MAIN_INTERNAL_GOOD_TEMPLATE = '''[Good]
 nickname = {nickname}
@@ -274,4 +354,3 @@ attachment_archetype = {model}'''
             'model': self.get_equip_model(),
             'combinable': False
         }
-

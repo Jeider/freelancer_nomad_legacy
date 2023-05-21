@@ -1,7 +1,10 @@
-from world.power import Power
+from world.equipment import DefaultGood
+from world.power import BasePower
 
 
-class Shield(Power):
+
+
+class Shield(DefaultGood, BasePower):
 
     MAX_SHIELD_CAPACITY_FIGHTER = 7500
     MAX_SHIELD_CAPACITY_ELITE = 8500
@@ -82,10 +85,16 @@ shield_hit_effects = {hit_one}, gf_pi_shield01
 shield_hit_effects = {hit_two}, gf_pi_shield02
 shield_hit_effects = {hit_three}, gf_pi_shield03'''
 
+    RH_SHIELD_ICON = 'equipment\\models\\icons\\rh\\rh_shield.3db'
+    LI_SHIELD_ICON = 'equipment\\models\\icons\\li\\li_shield.3db'
+    BR_SHIELD_ICON = 'equipment\\models\\icons\\br\\br_shield.3db'
+    KU_SHIELD_ICON = 'equipment\\models\\icons\\ku\\ku_shield.3db'
+    CO_SHIELD_ICON = 'equipment\\models\\icons\\co\\co_shield.3db'
+
     def get_shield_core_template_params(self):
         return {
             'hit_one': 0,
-            'hit_two': 250,
+            'hit_two': 100,
             'hit_three': 500,
         }
 
@@ -104,7 +113,7 @@ shield_hit_effects = {hit_three}, gf_pi_shield03'''
         raise Exception('unknown shield core')
 
     def get_shield_core(self):
-        self.get_shield_core_template().format(self.get_shield_core_template_params())
+        return self.get_shield_core_template().format(**self.get_shield_core_template_params())
 
     def get_nickname(self):
         return '{name}_shield_{digit}_{shipclass}'.format(
@@ -115,6 +124,12 @@ shield_hit_effects = {hit_three}, gf_pi_shield03'''
 
     def get_shield_hit_pts(self):
         return self.SHIELD_MAX_HIT_PTS * self.rate
+
+    def get_shield_type(self):
+        return 'S_{faction_code}_{shipclass_lower}'.format(
+            faction_code=self.get_faction_code(),
+            shipclass_lower=self.get_shipclass_name_lower()
+        )
 
     def get_shield_hp_type(self):
         return 'hp_{shipclass}_shield_special_{equipment_class}'.format(
@@ -197,6 +212,7 @@ shield_hit_effects = {hit_three}, gf_pi_shield03'''
             'ids_info': self.ids_info,
             'hp_type': self.get_shield_hp_type(),
             'hit_pts': self.get_shield_hit_pts(),
+            'shield_type': self.get_shield_type(),
             'offline_rebuild_time': self.get_offline_rebuild_time(),
             'max_capacity': self.get_shield_capacity(),
             'regeneration_rate': self.get_shield_regeneration_rate(),
@@ -209,6 +225,23 @@ shield_hit_effects = {hit_three}, gf_pi_shield03'''
 
     def get_equip(self):
         return self.SHIELD_TEMPLATE.format(**self.get_shield_template_params())
+
+    def get_price(self):
+        return 100  # TODO: correct price
+
+    def get_icon(self):
+        if self.equip_type in self.RH_EQUIP:
+            return self.RH_SHIELD_ICON
+        if self.equip_type in self.LI_EQUIP:
+            return self.LI_SHIELD_ICON
+        if self.equip_type in self.BR_EQUIP:
+            return self.BR_SHIELD_ICON
+        if self.equip_type in self.KU_EQUIP:
+            return self.KU_SHIELD_ICON
+        if self.equip_type in self.CO_EQUIP:
+            return self.CO_SHIELD_ICON
+
+        raise Exception('unknown shield icon')
 
 
 class ShieldNPC(Shield):
