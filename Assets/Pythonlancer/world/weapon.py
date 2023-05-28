@@ -1,4 +1,4 @@
-from world.equipment import Equipment 
+from world.equipment import Equipment, Icon, DefaultGood
 
 
 
@@ -268,7 +268,7 @@ const_effect = {const_effect}'''
         return self.MUNITION_TEMPLATE.format(**self.get_template_params())
 
 
-class Gun(Equipment):
+class Weapon(Equipment):
     ARCHETYPE = 'Gun'
     EXTRA = '''
 turn_rate = 90'''
@@ -336,12 +336,51 @@ LODranges = {lod_ranges}{extra}'''
     RH_GAMMA_BEAMER = 'rh_gamma_beamer.cmp'
     RH_PLASMA_GAT_CANNON = 'rh_plasma_gat_cannon.cmp'
     RH_PROTON_BLASTER = 'rh_proton_blaster.cmp'
-    RH_SEEKER_LAUNCHER = 'rh_seeker_launcher.cmp'
     RH_THRUSTGUN = 'rh_thrustgun.cmp'
+
+    ICON_PER_WEAPON_MODEL = {
+        BR_SLUGGER: Icon.ICON_BR_LAUNCHER,
+        KU_HORNET: Icon.ICON_KU_LAUNCHER,
+        KU_RECOGNIZER: Icon.ICON_GE_HARPOON,
+        GE_MINE: Icon.ICON_LI_LAUNCHER,
+        GE_TORPEDO: Icon.ICON_GE_TRP_LAUNCHER,
+        LI_CM: Icon.ICON_LI_LAUNCHER,
+        LI_RAD: Icon.ICON_LI_LAUNCHER,
+        RH_SEEKER: Icon.ICON_RH_LAUNCHER,
+
+        BR_AUTO_SHOTGUN: Icon.ICON_BR_UBERGUN,
+        BR_MASS_DRIVER: Icon.ICON_BR_LIGHTGUN,
+        BR_RAILGUN: Icon.ICON_BR_HEAVYGUN,
+        BR_THRUSTGUN: Icon.ICON_BR_THRUSTGUN,
+
+        CO_PROTON_COOKER: Icon.ICON_CO_UBERGUN,
+        CO_RAILDADDY: Icon.ICON_CO_LIGHTGUN,
+        CO_SHOCK_THERAPY: Icon.ICON_CO_HEAVYGUN,
+        CO_THRUSTGUN: Icon.ICON_LI_LIGHTGUN,
+
+        GE_SHREDDER_SHOTGUN: Icon.ICON_GE_UBERGUN,
+
+        KU_AUTO_BLASTER: Icon.ICON_KU_UBERGUN,
+        KU_AUTO_TESLA: Icon.ICON_KU_HEAVYGUN,
+        KU_ION_BLASTER: Icon.ICON_KU_LIGHTGUN,
+        KU_THRUSTGUN: Icon.ICON_KU_THRUSTGUN,
+
+        LI_AUTO_CANNON: Icon.ICON_LI_UBERGUN,
+        LI_CANNON: Icon.ICON_LI_HEAVYGUN,
+        LI_LASER_BEAM: Icon.ICON_LI_LIGHTGUN,
+        LI_PLASMA_BLASTER: Icon.ICON_LI_HEAVYGUN,
+        LI_SMLTURRET: Icon.ICON_LI_LIGHTGUN,
+        LI_THRUSTGUN: Icon.ICON_LI_THRUSTGUN,
+
+        RH_GAMMA_BEAMER: Icon.ICON_RH_LIGHTGUN,
+        RH_PLASMA_GAT_CANNON: Icon.ICON_RH_UBERGUN,
+        RH_PROTON_BLASTER: Icon.ICON_RH_HEAVYGUN,
+        RH_THRUSTGUN: Icon.ICON_RH_THRUSTGUN,
+    }  
 
     RH_MODELS = [
         RH_SEEKER, RH_GAMMA_BEAMER, RH_PLASMA_GAT_CANNON,
-        RH_PROTON_BLASTER, RH_SEEKER_LAUNCHER, RH_THRUSTGUN,
+        RH_PROTON_BLASTER, RH_THRUSTGUN,
     ]
 
     LI_MODELS = [
@@ -494,7 +533,12 @@ LODranges = {lod_ranges}{extra}'''
         return self.DEFAULT_LOD_RANGES
 
     def get_gun_hit_pts(self):
-        return self.GUN_MAX_HIT_PTS * self.rate
+        hit_pts = self.GUN_MAX_HIT_PTS * self.rate
+
+        if self.faction == Equipment.FACTION_BR:
+            hit_pts *= 1.5
+
+        return hit_pts
 
     def get_explosion_resistance(self):
         explosion_resistance = self.DEFAULT_EXPLOSION_RESISTANCE
@@ -615,14 +659,26 @@ LODranges = {lod_ranges}{extra}'''
         return self.EQUIP_TEMPLATE.format(**self.get_equip_template_params())
 
 
-class MineDropper(Gun):
+class MineDropper(Weapon):
     ARCHETYPE = 'MineDropper'
     EXTRA = '''
 dry_fire_sound = fire_dry'''
 
-class Launcher(Gun):
+class Launcher(Weapon):
     EXTRA = '''
 dry_fire_sound = fire_dry'''
+
+
+class Gun(Weapon, DefaultGood):
+
+    def get_price(self):
+        return 100  # TODO: correct price
+
+    def get_icon(self):
+        icon = self.ICON_PER_WEAPON_MODEL[self.model]
+        return Icon.get_icon_path(icon)
+
+
 
 
 class WeaponFactory(object):

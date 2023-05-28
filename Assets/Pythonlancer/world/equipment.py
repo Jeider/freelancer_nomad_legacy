@@ -368,3 +368,50 @@ attachment_archetype = {model}'''
             'model': self.get_equip_model(),
             'combinable': False
         }
+
+
+
+class Icon(object):
+    ICONS_FOLDER = 'equipment\\models\\icons\\'
+
+    ICON_RH_LIGHTGUN = 'rh\\rh_lightgun.3db'
+    ICON_RH_HEAVYGUN = 'rh\\rh_heavygun.3db'
+    ICON_RH_THRUSTGUN = 'rh\\rh_thrustgun.3db'
+    ICON_RH_LAUNCHER = 'rh\\rh_launcher.3db'
+    ICON_RH_UBERGUN = 'rh\\rh_ubergun.3db'
+
+    ICON_LI_LIGHTGUN = 'li\\li_lightgun.3db'
+    ICON_LI_HEAVYGUN = 'li\\li_heavygun.3db'
+    ICON_LI_THRUSTGUN = 'li\\li_thrustgun.3db'
+    ICON_LI_LAUNCHER = 'li\\li_launcher.3db'
+    ICON_LI_UBERGUN = 'li\\li_ubergun.3db'
+
+    ICON_BR_LIGHTGUN = 'br\\br_lightgun.3db'
+    ICON_BR_HEAVYGUN = 'br\\br_heavygun.3db'
+    ICON_BR_THRUSTGUN = 'br\\br_thrustgun.3db'
+    ICON_BR_LAUNCHER = 'br\\br_launcher.3db'
+    ICON_BR_UBERGUN = 'br\\br_ubergun.3db'
+
+    ICON_KU_LIGHTGUN = 'ku\\ku_lightgun.3db'
+    ICON_KU_HEAVYGUN = 'ku\\ku_heavygun.3db'
+    ICON_KU_THRUSTGUN = 'ku\\ku_thrustgun.3db'
+    ICON_KU_LAUNCHER = 'ku\\ku_launcher.3db'
+    ICON_KU_UBERGUN = 'ku\\ku_ubergun.3db'
+
+    ICON_CO_LIGHTGUN = 'co\\co_lightgun.3db'
+    ICON_CO_HEAVYGUN = 'co\\co_heavygun.3db'
+    ICON_CO_THRUSTGUN = 'co\\co_thrustgun.3db'
+    ICON_CO_LAUNCHER = 'co\\co_launcher.3db'
+    ICON_CO_UBERGUN = 'co\\co_ubergun.3db'
+
+    ICON_GE_HARPOON = 'ge\\ge_harpoon.3db'
+    ICON_GE_TRP_LAUNCHER = 'ge\\ge_trp_launcher.3db'
+    ICON_GE_UBERGUN = 'ge\\ge_ubergun.3db'
+
+    ICON_PATH_TEMPLATE = '{root}{icon}'
+
+    @staticmethod
+    def get_icon_path(icon):
+        return Icon.ICON_PATH_TEMPLATE.format(root=Icon.ICONS_FOLDER, icon=icon)
+
+

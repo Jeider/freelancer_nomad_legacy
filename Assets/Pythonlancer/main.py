@@ -36,7 +36,7 @@ def main():
     guns = weapon_factory.get_rh_guns()
 
     for gun in guns:
-        print(gun.get_equip())
+        print(gun.get_good())
         print('')
 
 
