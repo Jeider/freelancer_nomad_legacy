@@ -92,6 +92,20 @@ class Equipment(object):
     SHIPCLASS_FREIGHTER = 3
 
     SHIPCLASSES = [SHIPCLASS_FIGHTER, SHIPCLASS_ELITE, SHIPCLASS_FREIGHTER]
+
+    FACTION_RH = 1
+    FACTION_LI = 2
+    FACTION_BR = 3
+    FACTION_KU = 4
+    FACTION_CO = 5
+
+    RH_LETTER = 'rh'
+    LI_LETTER = 'li'
+    BR_LETTER = 'br'
+    KU_LETTER = 'ku'
+    CO_LETTER = 'co'
+    GE_LETTER = 'ge'
+    PI_LETTER = 'pi'
     
     LOOT_DEFAULTS = '''
 debris_type = debris_normal

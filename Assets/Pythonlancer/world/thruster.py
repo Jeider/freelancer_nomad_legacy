@@ -124,7 +124,12 @@ particles = gf_co_thruster01'''
         return resistance
 
     def get_thruster_hit_pts(self):
-        return self.THRUSTER_MAX_HIT_PTS * self.rate
+        hit_pts =  self.THRUSTER_MAX_HIT_PTS * self.rate
+
+        if self.equip_type in self.BR_EQUIP:
+            hit_pts *= 1.5       
+
+        return hit_pts
 
     def get_thruster_force(self):
         force = self.SPEED_PER_RATE[self.rate] * self.LINEAR_DRAG
@@ -184,4 +189,4 @@ particles = gf_co_thruster01'''
         if self.equip_type in self.CO_EQUIP:
             return self.CO_THRUSTER_ICON
 
-        raise Exception('unknown shield icon')
+        raise Exception('unknown thruster icon')

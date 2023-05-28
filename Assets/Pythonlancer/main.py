@@ -3,6 +3,7 @@ from world.power import Power
 from world.engine import Engine
 from world.shield import Shield, ShieldNPC
 from world.thruster import Thruster
+from world.weapon import WeaponFactory
 
 
 def main():
@@ -31,8 +32,13 @@ def main():
             thruster = Thruster(equip_type, equipment_class, 500, 200)
             thrusters.append(thruster)
 
-    import ipdb
-    ipdb.set_trace()
+    weapon_factory = WeaponFactory()
+    guns = weapon_factory.get_rh_guns()
+
+    for gun in guns:
+        print(gun.get_equip())
+        print('')
+
 
 main()
 
