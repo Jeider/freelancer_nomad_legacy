@@ -1,3 +1,4 @@
+from world.equipment import Equipment
 from world.weapon import Gun
 
 
@@ -13,7 +14,7 @@ class WeaponManager(object):
 
     GUNS = [
         {
-            'base_nickname': WeaponManager.RH_LIGHTGUN,
+            'base_nickname': RH_LIGHTGUN,
             'model': Gun.RH_GAMMA_BEAMER,
             'equip_type': Gun.EQUIP_MAIN,
             'refire_rate': Gun.REFIRE_RATE_6,
@@ -23,7 +24,7 @@ class WeaponManager(object):
             'ids_info': 1,
         },
         {
-            'base_nickname': WeaponManager.RH_HEAVYGUN,
+            'base_nickname': RH_HEAVYGUN,
             'model': Gun.RH_PROTON_BLASTER,
             'equip_type': Gun.EQUIP_MAIN,
             'refire_rate': Gun.REFIRE_RATE_2,
@@ -33,7 +34,7 @@ class WeaponManager(object):
             'ids_info': 1,
         },
         {
-            'base_nickname': WeaponManager.RH_CIVGUN,
+            'base_nickname': RH_CIVGUN,
             'model': Gun.GE_SHREDDER_SHOTGUN,
             'equip_type': Gun.EQUIP_CIV,
             'refire_rate': Gun.REFIRE_RATE_4,
@@ -43,7 +44,7 @@ class WeaponManager(object):
             'ids_info': 1,
         },
         {
-            'base_nickname': WeaponManager.RH_HUNTERGUN,
+            'base_nickname': RH_HUNTERGUN,
             'model': Gun.GE_SHREDDER_SHOTGUN,
             'equip_type': Gun.EQUIP_PIRATE,
             'refire_rate': Gun.REFIRE_RATE_8,
@@ -53,7 +54,7 @@ class WeaponManager(object):
             'ids_info': 1,
         },
         {
-            'base_nickname': WeaponManager.RH_SHIELDGUN,
+            'base_nickname': RH_SHIELDGUN,
             'model': Gun.RH_PROTON_BLASTER,
             'equip_type': Gun.EQUIP_MAIN,
             'refire_rate': Gun.REFIRE_RATE_4,
@@ -64,7 +65,7 @@ class WeaponManager(object):
             'shieldgun': True,
         },
         {
-            'base_nickname': WeaponManager.RH_PIRATEGUN,
+            'base_nickname': RH_PIRATEGUN,
             'model': Gun.CO_RAILDADDY,
             'equip_type': Gun.EQUIP_CIV,
             'refire_rate': Gun.REFIRE_RATE_8,
@@ -74,7 +75,7 @@ class WeaponManager(object):
             'ids_info': 1,
         },
         {
-            'base_nickname': WeaponManager.RH_HESSIANGUN,
+            'base_nickname': RH_HESSIANGUN,
             'model': Gun.RH_GAMMA_BEAMER,
             'equip_type': Gun.EQUIP_PIRATE,
             'refire_rate': Gun.REFIRE_RATE_6,
@@ -84,7 +85,7 @@ class WeaponManager(object):
             'ids_info': 1,
         },
         {
-            'base_nickname': WeaponManager.RH_JUNKERGUN,
+            'base_nickname': RH_JUNKERGUN,
             'model': Gun.CO_RAILDADDY,
             'equip_type': Gun.EQUIP_PIRATE,
             'refire_rate': Gun.REFIRE_RATE_8,
@@ -100,8 +101,10 @@ class WeaponManager(object):
 
         self.load_game_data()
 
-    def load_game_data():
+    def load_game_data(self):
         for gun in self.GUNS:
+            self.guns_db[gun['base_nickname']] = {}
+
             for equipment_class in Equipment.BASE_CLASSES:
                 self.guns_db[gun['base_nickname']][equipment_class] = Gun(equipment_class=equipment_class, faction=Equipment.FACTION_RH, **gun)
 

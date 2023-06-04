@@ -3,7 +3,6 @@ from world.power import Power
 from world.engine import Engine
 from world.shield import Shield, ShieldNPC
 from world.thruster import Thruster
-from world.weapon import WeaponFactory
 
 
 class MiscEquipManager(object):

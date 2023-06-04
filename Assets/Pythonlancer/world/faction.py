@@ -1,5 +1,8 @@
+from fx.contrail import Contrail
+from fx.light import Light
+
+from managers.weapon import WeaponManager as wp
 from world.equipment import MainMiscEquip as misc
-from world.weapon import WeaponFactory as wp
 from world.npc import NPC
 from world import ship
 
@@ -10,11 +13,6 @@ class Faction(object):
     ELITE1 = None
     ELITE2 = None
     ELITE3 = None
-
-    @staticmethod
-    def get_interceptor_by_level(level):
-
-
 
 
 class LawfulFaction(Faction):
@@ -33,13 +31,10 @@ class RhenlandFleet(object):
     ELITE3 = ship.Valkyrie
 
     SHIPS = [
-        RhenlandFleet.INTERCEPTOR1, RhenlandFleet.INTERCEPTOR2,
-        RhenlandFleet.ELITE1, RhenlandFleet.ELITE2,
-        RhenlandFleet.ELITE3
+        INTERCEPTOR1, INTERCEPTOR2,
+        ELITE1, ELITE2,
+        ELITE3
     ]
-
-
-
 
 
 class RheinlandMain(LawfulFaction, RhenlandFleet):
@@ -54,8 +49,9 @@ class RheinlandMain(LawfulFaction, RhenlandFleet):
     ENGINE = misc.RH_MAIN
     POWER = misc.RH_MAIN
     SHIELD = misc.RH_MAIN
+    CONTRAIL = Contrail.CONTRAIL_RH
 
-    LIGHT = 'SlowSmallYellow'
+    LIGHT = Light.SMALL_YELLOW
 
 
 class RheinlandCivilians(LawfulFaction, RhenlandFleet):
@@ -70,8 +66,9 @@ class RheinlandCivilians(LawfulFaction, RhenlandFleet):
     ENGINE = misc.RH_CIV
     POWER = misc.RH_CIV
     SHIELD = misc.RH_CIV
+    CONTRAIL = Contrail.CONTRAIL_RH
 
-    LIGHT = 'SlowSmallYellow'
+    LIGHT = Light.SMALL_YELLOW
 
 
 class RheinlandHunters(LawfulFaction, RhenlandFleet):
@@ -86,8 +83,9 @@ class RheinlandHunters(LawfulFaction, RhenlandFleet):
     ENGINE = misc.RH_CIV
     POWER = misc.RH_CIV
     SHIELD = misc.RH_CIV
+    CONTRAIL = Contrail.CONTRAIL_RH
 
-    LIGHT = 'SlowSmallYellow'
+    LIGHT = Light.SMALL_YELLOW
 
 
 class RheinlandPirate(UnlawfulFaction, RhenlandFleet):
@@ -102,8 +100,9 @@ class RheinlandPirate(UnlawfulFaction, RhenlandFleet):
     ENGINE = misc.RH_PIRATE
     POWER = misc.RH_PIRATE
     SHIELD = misc.RH_PIRATE
+    CONTRAIL = Contrail.CONTRAIL_RH
 
-    LIGHT = 'SlowSmallYellow'
+    LIGHT = Light.SMALL_YELLOW
 
 
 class Hessians(UnlawfulFaction, RhenlandFleet):
@@ -118,8 +117,9 @@ class Hessians(UnlawfulFaction, RhenlandFleet):
     ENGINE = misc.RH_PIRATE
     POWER = misc.RH_PIRATE
     SHIELD = misc.RH_PIRATE
+    CONTRAIL = Contrail.CONTRAIL_RH
 
-    LIGHT = 'SlowSmallYellow'
+    LIGHT = Light.SMALL_YELLOW
 
 
 class Junkers(UnlawfulFaction, RhenlandFleet):
@@ -134,5 +134,6 @@ class Junkers(UnlawfulFaction, RhenlandFleet):
     ENGINE = misc.RH_PIRATE
     POWER = misc.RH_PIRATE
     SHIELD = misc.RH_PIRATE
+    CONTRAIL = Contrail.CONTRAIL_RH
 
-    LIGHT = 'SlowSmallYellow'
+    LIGHT = Light.SMALL_YELLOW

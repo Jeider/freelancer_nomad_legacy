@@ -5,9 +5,37 @@ from world.npc import NPC
 class Ship(object):
     ARCHETYPE = None
     MISSILE_MOUNT_POINT = None
+    EQUIP_TEMPLATE= '''
+equip = {nickname}, {hardpoint}'''
     CARGO_TEMPLATE = '''
 cargo = {nickname}, {amount}'''
     EXTRA_CLASSES = []
+    HP_TORPEDO = 'HpTorpedo01'
+    HP_CM = 'HpCM01'
+    HP_MINE = 'HpMine01'
+    DEFAULTS = {
+        'scanner': 'scanner_npc',
+        'tractor': 'tractor01',
+        'armor': 'armor_scale_fighter_level1',
+    }
+
+    @staticmethod
+    def get_extra_content(torpedo, cm, mine, torpedo_ammo, cm_ammo, mine_ammo):
+        extra = []
+        if torpedo:
+            extra.append(Ship.EQUIP_TEMPLATE, format(torpedo, Ship.HP_TORPEDO))
+            if torpedo_ammo:
+                extra.append(Ship.CARGO_TEMPLATE, format(torpedo, torpedo_ammo))
+
+        if cm:
+            extra.append(Ship.EQUIP_TEMPLATE, format(cm, Ship.HP_CM))
+            if cm_ammo:
+                extra.append(Ship.CARGO_TEMPLATE, format(torpedo, cm_ammo))
+
+        if mine:
+            extra.append(Ship.EQUIP_TEMPLATE, format(mine, Ship.HP_MINE))
+            if mine_ammo:
+                extra.append(Ship.CARGO_TEMPLATE, format(torpedo, mine_ammo))
 
 
 class Ship1(object):
@@ -43,6 +71,7 @@ class ShipFreighter(Ship):
 
 class Dagger(ShipInterceptor, Ship1):
     ARCHETYPE = 'bw_fighter'
+    HP_TORPEDO = 'HpTorpedo01'
 
     SHIP_TEMPLATE = '''[Loadout]
 nickname = {loadout_nickname}
@@ -50,17 +79,16 @@ archetype = {ship_archetype}
 equip = launch_extend
 equip = {engine}
 equip = infinite_power
+cargo = {power}, 1
 equip = {scanner}
 equip = {tractor}
 equip = {armor}
-equip = {shield}, HpShield01
+equip = {shield_npc}, HpShield01
+cargo = {shield}, 1
 equip = {weapon1}, HpWeapon01
 equip = {weapon2}, HpWeapon02
 equip = {weapon3}, HpWeapon03
 equip = {weapon4}, HpWeapon04
-equip = {torpedo}, HpTorpedo01
-equip = {cm}, HpCM01
-equip = {mine}, HpMine01
 equip = {afterburn1}, HpThruster01
 equip = {afterburn2}, HpThruster02
 equip = LargeWhiteSpecial, HpHeadlight
@@ -83,6 +111,7 @@ equip = single_eng_weight, HpCockpit
 
 class Banshee(ShipInterceptor, Ship2):
     ARCHETYPE = 'rh_fighter'
+    TORPEDO_HP = 'HpTorpedo01'
 
     SHIP_TEMPLATE = '''[Loadout]
 nickname = {loadout_nickname}
@@ -90,17 +119,16 @@ archetype = {ship_archetype}
 equip = launch_extend
 equip = {engine}
 equip = infinite_power
+cargo = {power}, 1
 equip = {scanner}
 equip = {tractor}
 equip = {armor}
-equip = {shield}, HpShield01
+equip = {shield_npc}, HpShield01
+cargo = {shield}, 1
 equip = {weapon1}, HpWeapon01
 equip = {weapon2}, HpWeapon02
 equip = {weapon3}, HpWeapon03
 equip = {weapon4}, HpWeapon04
-equip = {torpedo}, HpTorpedo01
-equip = {cm}, HpCM01
-equip = {mine}, HpMine01
 equip = {afterburn1}, HpThruster01
 equip = {afterburn2}, HpThruster02
 equip = LargeWhiteSpecial, HpHeadlight
@@ -123,6 +151,7 @@ equip = single_eng_weight, HpCockpit
 
 class Stiletto(ShipElite, Ship1):
     ARCHETYPE = 'bw_elite'
+    TORPEDO_HP = 'HpTorpedo01'
 
     SHIP_TEMPLATE = '''[Loadout]
 nickname = {loadout_nickname}
@@ -130,19 +159,18 @@ archetype = {ship_archetype}
 equip = launch_extend
 equip = {engine}
 equip = infinite_power
+cargo = {power}, 1
 equip = {scanner}
 equip = {tractor}
 equip = {armor}
-equip = {shield}, HpTurret01
+equip = {shield_npc}, HpTurret01
+cargo = {shield}, 1
 equip = {weapon1}, HpWeapon01
 equip = {weapon2}, HpWeapon02
 equip = {weapon3}, HpWeapon03
 equip = {weapon4}, HpWeapon04
 equip = {weapon5}, HpWeapon05
 equip = {weapon6}, HpWeapon06
-equip = {torpedo}, HpTorpedo01
-equip = {cm}, HpCM01
-equip = {mine}, HpMine01
 equip = {afterburn1}, HpThruster01
 equip = {afterburn2}, HpShield01
 equip = LargeWhiteSpecial, HpHeadlight
@@ -168,6 +196,7 @@ equip = double_eng_weight, HpCockpit
 
 class Sabre(ShipElite, Ship2):
     ARCHETYPE = 'bw_elite2'
+    TORPEDO_HP = 'HpTorpedo01'
 
     SHIP_TEMPLATE = '''[Loadout]
 nickname = {loadout_nickname}
@@ -175,19 +204,18 @@ archetype = {ship_archetype}
 equip = launch_extend
 equip = {engine}
 equip = infinite_power
+cargo = {power}, 1
 equip = {scanner}
 equip = {tractor}
 equip = {armor}
-equip = {shield}, HpTurret01
+equip = {shield_npc}, HpTurret01
+cargo = {shield}, 1
 equip = {weapon1}, HpWeapon01
 equip = {weapon2}, HpWeapon02
 equip = {weapon3}, HpWeapon03
 equip = {weapon4}, HpWeapon04
 equip = {weapon5}, HpWeapon05
 equip = {weapon6}, HpWeapon06
-equip = {torpedo}, HpTorpedo01
-equip = {cm}, HpCM01
-equip = {mine}, HpMine01
 equip = {afterburn1}, HpThruster01
 equip = {afterburn2}, HpShield01
 equip = LargeWhiteSpecial, HpHeadlight
@@ -213,6 +241,7 @@ equip = double_eng_weight, HpCockpit
 
 class Valkyrie(ShipElite, Ship3):
     ARCHETYPE = 'rh_elite'
+    TORPEDO_HP = 'HpTorpedo01'
 
     SHIP_TEMPLATE = '''[Loadout]
 nickname = {loadout_nickname}
@@ -220,19 +249,18 @@ archetype = {ship_archetype}
 equip = launch_extend
 equip = {engine}
 equip = infinite_power
+cargo = {power}, 1
 equip = {scanner}
 equip = {tractor}
 equip = {armor}
-equip = {shield}, HpShield01
+equip = {shield_npc}, HpShield01
+cargo = {shield}, 1
 equip = {weapon1}, HpWeapon01
 equip = {weapon2}, HpWeapon02
 equip = {weapon3}, HpWeapon03
 equip = {weapon4}, HpWeapon04
 equip = {weapon5}, HpWeapon05
 equip = {weapon6}, HpWeapon06
-equip = {torpedo}, HpTorpedo01
-equip = {cm}, HpCM01
-equip = {mine}, HpMine01
 equip = {afterburn1}, HpThruster01
 equip = {afterburn2}, HpThruster02
 equip = LargeWhiteSpecial, HpHeadlight
