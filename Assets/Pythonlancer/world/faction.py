@@ -1,7 +1,7 @@
 from fx.contrail import Contrail
 from fx.light import Light
 
-from managers.weapon import WeaponManager as wp
+from world.gun import Gun
 from world.equipment import MainMiscEquip as misc
 from world.npc import NPC
 from world import ship
@@ -40,8 +40,8 @@ class RhenlandFleet(object):
 class RheinlandMain(LawfulFaction, RhenlandFleet):
     CODE = 'rh_grp'
 
-    WEAPON = wp.RH_LIGHTGUN
-    SHIELD_WEAPON = wp.RH_SHIELDGUN
+    WEAPON = Gun.RH_LIGHTGUN
+    SHIELD_WEAPON = Gun.RH_SHIELDGUN
     AFTERBURN = misc.RH_MAIN
     TORPEDO = None
     CM = None
@@ -57,8 +57,8 @@ class RheinlandMain(LawfulFaction, RhenlandFleet):
 class RheinlandCivilians(LawfulFaction, RhenlandFleet):
     CODE = 'rc_grp'
 
-    WEAPON = wp.RH_CIVGUN
-    SHIELD_WEAPON = wp.RH_SHIELDGUN
+    WEAPON = Gun.RH_CIVGUN
+    SHIELD_WEAPON = Gun.RH_SHIELDGUN
     AFTERBURN = misc.RH_CIV
     TORPEDO = None
     CM = None
@@ -74,8 +74,8 @@ class RheinlandCivilians(LawfulFaction, RhenlandFleet):
 class RheinlandHunters(LawfulFaction, RhenlandFleet):
     CODE = 'bh_grp_rh'
 
-    WEAPON = wp.RH_HUNTERGUN
-    SHIELD_WEAPON = wp.RH_SHIELDGUN
+    WEAPON = Gun.RH_HUNTERGUN
+    SHIELD_WEAPON = Gun.RH_SHIELDGUN
     AFTERBURN = misc.RH_MAIN
     TORPEDO = None
     CM = None
@@ -91,8 +91,8 @@ class RheinlandHunters(LawfulFaction, RhenlandFleet):
 class RheinlandPirate(UnlawfulFaction, RhenlandFleet):
     CODE = 'pi_grp_rh'
 
-    WEAPON = wp.RH_PIRATEGUN
-    SHIELD_WEAPON = wp.RH_SHIELDGUN
+    WEAPON = Gun.RH_PIRATEGUN
+    SHIELD_WEAPON = Gun.RH_SHIELDGUN
     AFTERBURN = misc.RH_PIRATE
     TORPEDO = None
     CM = None
@@ -108,8 +108,8 @@ class RheinlandPirate(UnlawfulFaction, RhenlandFleet):
 class Hessians(UnlawfulFaction, RhenlandFleet):
     CODE = 'rx_grp'
 
-    WEAPON = wp.RH_HESSIANGUN
-    SHIELD_WEAPON = wp.RH_SHIELDGUN
+    WEAPON = Gun.RH_HESSIANGUN
+    SHIELD_WEAPON = Gun.RH_SHIELDGUN
     AFTERBURN = misc.RH_PIRATE
     TORPEDO = None
     CM = None
@@ -125,8 +125,8 @@ class Hessians(UnlawfulFaction, RhenlandFleet):
 class Junkers(UnlawfulFaction, RhenlandFleet):
     CODE = 'junk_grp'
 
-    WEAPON = wp.RH_JUNKERGUN
-    SHIELD_WEAPON = wp.RH_SHIELDGUN
+    WEAPON = Gun.RH_JUNKERGUN
+    SHIELD_WEAPON = Gun.RH_SHIELDGUN
     AFTERBURN = misc.RH_PIRATE
     TORPEDO = None
     CM = None

@@ -1,4 +1,6 @@
-class Equipment(object):
+from world.lootable import LootableEquip
+
+class Equipment(LootableEquip):
     CLASS_1 = 1
     CLASS_2 = 2
     CLASS_3 = 3
@@ -138,6 +140,8 @@ combinable = {combinable}'''
         if self.ship_class == self.SHIPCLASS_FREIGHTER:
             return 'FREIGHTER'
 
+        raise Exception('unknown shipclass for shipclass name')
+
     def get_shipclass_name_lower(self):
         self.get_shipclass_name().lower()
 
@@ -149,6 +153,8 @@ combinable = {combinable}'''
         if self.ship_class == self.SHIPCLASS_FREIGHTER:
             return 'freighter'
 
+        raise Exception('unknown shipclass for hp type string')
+
     def get_main_rate(self):
         return self.MAIN_RATES.get(self.equipment_class)
 
@@ -157,6 +163,25 @@ combinable = {combinable}'''
 
     def get_pirate_rate(self):
         return self.PIRATE_RATES.get(self.equipment_class)
+
+    DROP_WORTH_PER_CLASS = {
+        CLASS_1: 5000,
+        CLASS_2: 8000,
+        CLASS_3: 11000,
+        CLASS_4: 25396,
+        CLASS_5: 52183,
+        CLASS_6: 105206,
+        CLASS_7: 211397,
+        CLASS_8: 378331,
+        CLASS_9: 646965,
+        CLASS_10: 646965,
+    }
+
+    def get_drop_min_worth(self):
+        return self.DROP_WORTH_PER_CLASS[self.equipment_class]
+
+    def get_drop_worth_mult(self):
+        return self.get_drop_min_worth()
 
 
 class MainMiscEquip(Equipment):
@@ -196,6 +221,10 @@ class MainMiscEquip(Equipment):
     MAIN_EQUIP = [RH_MAIN, LI_MAIN, BR_MAIN, KU_MAIN, CO_MAIN]
     CIV_EQUIP = [RH_CIV, LI_CIV, BR_CIV, KU_CIV]
     PIRATE_EQUIP = [RH_PIRATE, LI_PIRATE, BR_PIRATE, KU_PIRATE]
+
+    MAX_PRICE_FIGHTER = 240000
+    MAX_PRICE_ELITE = 260000
+    MAX_PRICE_FREIGHTER = 320000
 
     def __init__(self, equip_type, equipment_class, ids_name, ids_info):
         self.equip_type = equip_type
@@ -265,6 +294,18 @@ class MainMiscEquip(Equipment):
             return 'ku'
 
         raise Exception('unknown faction code')
+
+    def get_max_price(self):
+        if self.ship_class == self.SHIPCLASS_FIGHTER:
+            return self.MAX_PRICE_FIGHTER
+        if self.ship_class == self.SHIPCLASS_ELITE:
+            return self.MAX_PRICE_ELITE
+        if self.ship_class == self.SHIPCLASS_FREIGHTER:
+            return self.MAX_PRICE_FREIGHTER
+
+        raise Exception('unknown max price')
+
+
 
 
 class MainInternalEquip(MainMiscEquip):
@@ -415,3 +456,41 @@ class Icon(object):
         return Icon.ICON_PATH_TEMPLATE.format(root=Icon.ICONS_FOLDER, icon=icon)
 
 
+class MiscEquipPrice(object):
+
+    PRICE_PER_RATE = {
+        Equipment.RATE_1: 0.0038,
+        Equipment.RATE_2: 0.0040,
+        Equipment.RATE_3: 0.0042,
+        Equipment.RATE_4: 0.0063,
+        Equipment.RATE_5: 0.0068,
+        Equipment.RATE_6: 0.0075,
+        Equipment.RATE_7: 0.0130,
+        Equipment.RATE_8: 0.0140,
+        Equipment.RATE_9: 0.0155,
+        Equipment.RATE_10: 0.0280,
+        Equipment.RATE_11: 0.0300,
+        Equipment.RATE_12: 0.0320,
+        Equipment.RATE_13: 0.0600,
+        Equipment.RATE_14: 0.0610,
+        Equipment.RATE_15: 0.0650,
+        Equipment.RATE_16: 0.1000,
+        Equipment.RATE_17: 0.1100,
+        Equipment.RATE_18: 0.1200,
+        Equipment.RATE_19: 0.1800,
+        Equipment.RATE_20: 0.1950,
+        Equipment.RATE_21: 0.2100,
+        Equipment.RATE_22: 0.4000,
+        Equipment.RATE_23: 0.4300,
+        Equipment.RATE_24: 0.4600,
+        Equipment.RATE_25: 0.8200,
+        Equipment.RATE_26: 0.9600,
+        Equipment.RATE_27: 1.0000,
+        Equipment.RATE_28: 1.5000,
+    }
+
+    def get_price_multipler(self):
+        return self.PRICE_PER_RATE[self.rate]
+
+    def get_price(self):
+        return int(self.get_max_price() * self.get_price_multipler())

@@ -1,10 +1,11 @@
-from world.equipment import DefaultGood
+from world.equipment import DefaultGood, MiscEquipPrice
 from world.power import BasePower
 
 
 
 
-class Shield(DefaultGood, BasePower):
+class Shield(MiscEquipPrice, DefaultGood, BasePower):
+    DROP_CHANCE = 6
 
     MAX_SHIELD_CAPACITY_FIGHTER = 7500
     MAX_SHIELD_CAPACITY_ELITE = 8500
@@ -225,9 +226,6 @@ shield_hit_effects = {hit_three}, gf_pi_shield03'''
 
     def get_equip(self):
         return self.SHIELD_TEMPLATE.format(**self.get_shield_template_params())
-
-    def get_price(self):
-        return 100  # TODO: correct price
 
     def get_icon(self):
         if self.equip_type in self.RH_EQUIP:

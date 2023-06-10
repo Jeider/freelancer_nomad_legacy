@@ -667,13 +667,3 @@ dry_fire_sound = fire_dry'''
 class Launcher(Weapon):
     EXTRA = '''
 dry_fire_sound = fire_dry'''
-
-
-class Gun(Weapon, DefaultGood):
-
-    def get_price(self):
-        return 100  # TODO: correct price
-
-    def get_icon(self):
-        icon = self.ICON_PER_WEAPON_MODEL[self.model]
-        return Icon.get_icon_path(icon)

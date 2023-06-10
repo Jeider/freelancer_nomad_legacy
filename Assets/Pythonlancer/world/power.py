@@ -1,7 +1,8 @@
-from world.equipment import MainInternalEquip, Equipment, AdoxaEquipClassGood
+from world.equipment import MainInternalEquip, Equipment, AdoxaEquipClassGood, MiscEquipPrice
 
 
 class BasePower(MainInternalEquip):
+    DROP_CHANCE = 4
 
     MAX_POWER_FIGHTER = 12000
     MAX_POWER_ELITE = 12000
@@ -152,7 +153,7 @@ material_library = Equipment\\models\\hardware.mat'''
         return thrust_regen
 
 
-class Power(AdoxaEquipClassGood, BasePower):
+class Power(AdoxaEquipClassGood, BasePower, MiscEquipPrice):
     def get_power_template_params(self):
         return {
             'nickname': self.get_nickname(),
@@ -170,9 +171,6 @@ class Power(AdoxaEquipClassGood, BasePower):
 
     def get_equip(self):
         return self.POWER_TEMPLATE.format(**self.get_power_template_params())
-
-    def get_price(self):
-        return 100  # TODO: correct price
 
     def get_equip_model(self):
         if self.equip_type in self.RH_EQUIP:

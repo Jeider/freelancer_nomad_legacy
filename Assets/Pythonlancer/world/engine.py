@@ -1,8 +1,10 @@
-from world.equipment import Equipment, AdoxaEquipClassGood
+from world.equipment import Equipment, AdoxaEquipClassGood, MiscEquipPrice
 from world.power import BasePower
 
 
-class Engine(AdoxaEquipClassGood, BasePower):
+class Engine(AdoxaEquipClassGood, BasePower, MiscEquipPrice):
+    DROP_CHANCE = 5
+
     SPEED_PER_RATE = {
         Equipment.RATE_1: 76,
         Equipment.RATE_2: 78,
@@ -641,9 +643,6 @@ engine_kill_sound = engine_pi_freighter_kill'''
 
     def get_equip(self):
         return self.ENGINE_TEMPLATE.format(**self.get_engine_template_params())
-
-    def get_price(self):
-        return 100  # TODO: correct price
 
     def get_equip_model(self):
         if self.equip_type in self.RH_EQUIP:
