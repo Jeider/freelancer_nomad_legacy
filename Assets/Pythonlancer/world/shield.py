@@ -1,10 +1,8 @@
-from world.equipment import DefaultGood, MiscEquipPrice
+from world.equipment import DefaultGood, MainEquipPrice, MainMiscEquip
 from world.power import BasePower
 
 
-
-
-class Shield(MiscEquipPrice, DefaultGood, BasePower):
+class Shield(MainEquipPrice, DefaultGood, BasePower):
     DROP_CHANCE = 6
 
     MAX_SHIELD_CAPACITY_FIGHTER = 7500
@@ -242,6 +240,36 @@ shield_hit_effects = {hit_three}, gf_pi_shield03'''
         raise Exception('unknown shield icon')
 
 
+    RU_NAME_PER_TYPE = {
+        MainMiscEquip.RH_MAIN: 'Бастион',
+        MainMiscEquip.RH_CIV: 'Укрытие',
+        MainMiscEquip.RH_PIRATE: 'Частокол',
+
+        MainMiscEquip.LI_MAIN: 'Заступник',
+        MainMiscEquip.LI_CIV: 'Охранник',
+        MainMiscEquip.LI_PIRATE: 'Хранитель',
+
+        MainMiscEquip.BR_MAIN: 'Бригантина',
+        MainMiscEquip.BR_CIV: 'Армет',
+        MainMiscEquip.BR_PIRATE: 'Куиззе',
+
+        MainMiscEquip.KU_MAIN: 'Барьер',
+        MainMiscEquip.KU_CIV: 'Амулет',
+        MainMiscEquip.KU_PIRATE: 'Оберег',
+
+        MainMiscEquip.CO_ORDER: 'Кираса',
+        MainMiscEquip.CO_CORSAIR: 'Дублет',
+        MainMiscEquip.CO_OUTCAST: 'Морион',
+    }
+
+    def get_ru_equip_name(self):
+        return 'Щит'
+
+    def get_ru_base_name(self):
+        return self.RU_NAME_PER_TYPE[self.equip_type]
+
+
+
 class ShieldNPC(Shield):
 
     MAX_SHIELD_REGEN_FIGHTER = 50
@@ -265,3 +293,6 @@ shield_rebuilt_sound = shield_rebuilt'''
             digit=self.get_equipment_class_digit(),
             shipclass=self.get_shipclass_name()
         )
+
+    def get_price(self):
+        return 100  # NPC equipment - not for sell

@@ -458,10 +458,11 @@ LODranges = {lod_ranges}{extra}'''
     EQUIP_PIRATE = 2
     EQUIP_CIV = 3
 
-    def __init__(self, faction, base_nickname, ids_name, ids_info, model,
+    def __init__(self, faction, ru_name, base_nickname, ids_name, ids_info, model,
                  equipment_class, equip_type, refire_rate, muzzle_velocity,
                  lifetime, shieldgun=False, extra_shield_damage_factor=0):
         self.faction = faction
+        self.ru_name = ru_name
         self.base_nickname = base_nickname
         self.ids_name = ids_name
         self.ids_info = ids_info

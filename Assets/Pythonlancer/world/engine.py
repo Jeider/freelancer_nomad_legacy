@@ -1,8 +1,8 @@
-from world.equipment import Equipment, AdoxaEquipClassGood, MiscEquipPrice
+from world.equipment import Equipment, MainMiscEquip, AdoxaEquipClassGood, MainEquipPrice
 from world.power import BasePower
 
 
-class Engine(AdoxaEquipClassGood, BasePower, MiscEquipPrice):
+class Engine(MainEquipPrice, AdoxaEquipClassGood, BasePower):
     DROP_CHANCE = 5
 
     SPEED_PER_RATE = {
@@ -297,24 +297,24 @@ flame_effect = gf_co_smallengine02_fire
 trail_effect = gf_co_smallengine02_trail
 trail_effect_player = gf_co_smallengine02_trail'''
 
-    CO_MAIN_ENGINE_GENERICS = '''
+    CORSAIR_ENGINE_GENERICS = '''
 cruise_start_sound = engine_bw_cruise_start
 cruise_loop_sound = engine_bw_cruise_loop
 cruise_stop_sound = engine_bw_cruise_stop'''
 
-    CO_MAIN_ENGINE_FIGHTER = '''
+    CORSAIR_ENGINE_FIGHTER = '''
 character_start_sound = engine_pi_fighter_start
 character_loop_sound = engine_pi_fighter_loop
 rumble_sound = rumble_pi_fighter
 engine_kill_sound = engine_pi_fighter_kill'''
 
-    CO_MAIN_ENGINE_ELITE = '''
+    CORSAIR_ENGINE_ELITE = '''
 character_start_sound = engine_pi_fighter_start
 character_loop_sound = engine_pi_fighter_loop
 rumble_sound = rumble_oe_h_fighter
 engine_kill_sound = engine_pi_fighter_kill'''
 
-    CO_MAIN_ENGINE_FREIGHTER = '''
+    CORSAIR_ENGINE_FREIGHTER = '''
 character_start_sound = engine_pi_freighter_start
 character_loop_sound = engine_pi_freighter_loop
 rumble_sound = rumble_pi_freighter
@@ -357,6 +357,94 @@ engine_kill_sound = engine_pi_freighter_kill'''
     KU_ENGINE_ICON = 'equipment\\models\\icons\\ku\\ku_engine.3db'
     CO_ENGINE_ICON = 'equipment\\models\\icons\\co\\co_engine.3db'
 
+    GENERICS_PER_TYPE = {
+        MainMiscEquip.RH_MAIN: RH_MAIN_ENGINE_GENERICS,
+        MainMiscEquip.RH_CIV: CIV_ENGINE_GENERICS,
+        MainMiscEquip.RH_PIRATE: PIRATE_ENGINE_GENERICS,
+
+        MainMiscEquip.LI_MAIN: LI_MAIN_ENGINE_GENERICS,
+        MainMiscEquip.LI_CIV: CIV_ENGINE_GENERICS,
+        MainMiscEquip.LI_PIRATE: PIRATE_ENGINE_GENERICS,
+
+        MainMiscEquip.BR_MAIN: BR_MAIN_ENGINE_GENERICS,
+        MainMiscEquip.BR_CIV: CIV_ENGINE_GENERICS,
+        MainMiscEquip.BR_PIRATE: PIRATE_ENGINE_GENERICS,
+
+        MainMiscEquip.KU_MAIN: KU_MAIN_ENGINE_GENERICS,
+        MainMiscEquip.KU_CIV: CIV_ENGINE_GENERICS,
+        MainMiscEquip.KU_PIRATE: PIRATE_ENGINE_GENERICS,
+
+        MainMiscEquip.CO_ORDER: OUTCAST_ENGINE_GENERICS,
+        MainMiscEquip.CO_CORSAIR: CORSAIR_ENGINE_GENERICS,
+        MainMiscEquip.CO_OUTCAST: OUTCAST_ENGINE_GENERICS,
+    }
+
+    FIGHTER_ENGINE_PER_TYPE = {
+        MainMiscEquip.RH_MAIN: RH_MAIN_ENGINE_FIGHTER,
+        MainMiscEquip.RH_CIV: CIV_ENGINE_FIGHTER,
+        MainMiscEquip.RH_PIRATE: PIRATE_ENGINE_FIGHTER,
+
+        MainMiscEquip.LI_MAIN: LI_MAIN_ENGINE_FIGHTER,
+        MainMiscEquip.LI_CIV: CIV_ENGINE_FIGHTER,
+        MainMiscEquip.LI_PIRATE: PIRATE_ENGINE_FIGHTER,
+
+        MainMiscEquip.BR_MAIN: BR_MAIN_ENGINE_FIGHTER,
+        MainMiscEquip.BR_CIV: CIV_ENGINE_FIGHTER,
+        MainMiscEquip.BR_PIRATE: PIRATE_ENGINE_FIGHTER,
+
+        MainMiscEquip.KU_MAIN: KU_MAIN_ENGINE_FIGHTER,
+        MainMiscEquip.KU_CIV: CIV_ENGINE_FIGHTER,
+        MainMiscEquip.KU_PIRATE: PIRATE_ENGINE_FIGHTER,
+
+        MainMiscEquip.CO_ORDER: OUTCAST_ENGINE_FIGHTER,
+        MainMiscEquip.CO_CORSAIR: CORSAIR_ENGINE_FIGHTER,
+        MainMiscEquip.CO_OUTCAST: OUTCAST_ENGINE_FIGHTER,
+    }
+
+    ELITE_ENGINE_PER_TYPE = {
+        MainMiscEquip.RH_MAIN: RH_MAIN_ENGINE_ELITE,
+        MainMiscEquip.RH_CIV: CIV_ENGINE_ELITE,
+        MainMiscEquip.RH_PIRATE: PIRATE_ENGINE_ELITE,
+
+        MainMiscEquip.LI_MAIN: LI_MAIN_ENGINE_ELITE,
+        MainMiscEquip.LI_CIV: CIV_ENGINE_ELITE,
+        MainMiscEquip.LI_PIRATE: PIRATE_ENGINE_ELITE,
+
+        MainMiscEquip.BR_MAIN: BR_MAIN_ENGINE_ELITE,
+        MainMiscEquip.BR_CIV: CIV_ENGINE_ELITE,
+        MainMiscEquip.BR_PIRATE: PIRATE_ENGINE_ELITE,
+
+        MainMiscEquip.KU_MAIN: KU_MAIN_ENGINE_ELITE,
+        MainMiscEquip.KU_CIV: CIV_ENGINE_ELITE,
+        MainMiscEquip.KU_PIRATE: PIRATE_ENGINE_ELITE,
+
+        MainMiscEquip.CO_ORDER: OUTCAST_ENGINE_ELITE,
+        MainMiscEquip.CO_CORSAIR: CORSAIR_ENGINE_ELITE,
+        MainMiscEquip.CO_OUTCAST: OUTCAST_ENGINE_ELITE,
+    }
+
+    FREIGHTER_ENGINE_PER_TYPE = {
+        MainMiscEquip.RH_MAIN: RH_MAIN_ENGINE_FREIGHTER,
+        MainMiscEquip.RH_CIV: CIV_ENGINE_FREIGHTER,
+        MainMiscEquip.RH_PIRATE: PIRATE_ENGINE_FREIGHTER,
+
+        MainMiscEquip.LI_MAIN: LI_MAIN_ENGINE_FREIGHTER,
+        MainMiscEquip.LI_CIV: CIV_ENGINE_FREIGHTER,
+        MainMiscEquip.LI_PIRATE: PIRATE_ENGINE_FREIGHTER,
+
+        MainMiscEquip.BR_MAIN: BR_MAIN_ENGINE_FREIGHTER,
+        MainMiscEquip.BR_CIV: CIV_ENGINE_FREIGHTER,
+        MainMiscEquip.BR_PIRATE: PIRATE_ENGINE_FREIGHTER,
+
+        MainMiscEquip.KU_MAIN: KU_MAIN_ENGINE_FREIGHTER,
+        MainMiscEquip.KU_CIV: CIV_ENGINE_FREIGHTER,
+        MainMiscEquip.KU_PIRATE: PIRATE_ENGINE_FREIGHTER,
+
+        MainMiscEquip.CO_ORDER: OUTCAST_ENGINE_FREIGHTER,
+        MainMiscEquip.CO_CORSAIR: CORSAIR_ENGINE_FREIGHTER,
+        MainMiscEquip.CO_OUTCAST: OUTCAST_ENGINE_FREIGHTER,
+    }
+
     def get_engine_core(self):
         if self.equip_type in self.RH_EQUIP:
             return self.RH_ENGINE_CORE
@@ -372,148 +460,16 @@ engine_kill_sound = engine_pi_freighter_kill'''
         raise Exception('unknown engine core')
 
     def get_engine_generics(self):
-        if self.equip_type == self.RH_MAIN:
-            return self.RH_MAIN_ENGINE_GENERICS
-        if self.equip_type == self.RH_CIV:
-            return self.CIV_ENGINE_GENERICS
-        if self.equip_type == self.RH_PIRATE:
-            return self.PIRATE_ENGINE_GENERICS
-
-        if self.equip_type == self.LI_MAIN:
-            return self.LI_MAIN_ENGINE_GENERICS
-        if self.equip_type == self.LI_CIV:
-            return self.CIV_ENGINE_GENERICS
-        if self.equip_type == self.LI_PIRATE:
-            return self.PIRATE_ENGINE_GENERICS
-
-        if self.equip_type == self.BR_MAIN:
-            return self.BR_MAIN_ENGINE_GENERICS
-        if self.equip_type == self.BR_CIV:
-            return self.CIV_ENGINE_GENERICS
-        if self.equip_type == self.BR_PIRATE:
-            return self.PIRATE_ENGINE_GENERICS
-
-        if self.equip_type == self.KU_MAIN:
-            return self.KU_MAIN_ENGINE_GENERICS
-        if self.equip_type == self.KU_CIV:
-            return self.CIV_ENGINE_GENERICS
-        if self.equip_type == self.KU_PIRATE:
-            return self.PIRATE_ENGINE_GENERICS
-
-        if self.equip_type == self.CO_MAIN:
-            return self.CO_MAIN_ENGINE_GENERICS
-        if self.equip_type == self.CO_OUTCAST:
-            return self.OUTCAST_ENGINE_GENERICS
-
-        raise Exception('unknown engine generic')
+        return self.GENERICS_PER_TYPE.get(self.equip_type)
 
     def get_fighter_engine(self):
-        if self.equip_type == self.RH_MAIN:
-            return self.RH_MAIN_ENGINE_FIGHTER
-        if self.equip_type == self.RH_CIV:
-            return self.CIV_ENGINE_FIGHTER
-        if self.equip_type == self.RH_PIRATE:
-            return self.PIRATE_ENGINE_FIGHTER
-
-        if self.equip_type == self.LI_MAIN:
-            return self.LI_MAIN_ENGINE_FIGHTER
-        if self.equip_type == self.LI_CIV:
-            return self.CIV_ENGINE_FIGHTER
-        if self.equip_type == self.LI_PIRATE:
-            return self.PIRATE_ENGINE_FIGHTER
-
-        if self.equip_type == self.BR_MAIN:
-            return self.BR_MAIN_ENGINE_FIGHTER
-        if self.equip_type == self.BR_CIV:
-            return self.CIV_ENGINE_FIGHTER
-        if self.equip_type == self.BR_PIRATE:
-            return self.PIRATE_ENGINE_FIGHTER
-
-        if self.equip_type == self.KU_MAIN:
-            return self.KU_MAIN_ENGINE_FIGHTER
-        if self.equip_type == self.KU_CIV:
-            return self.CIV_ENGINE_FIGHTER
-        if self.equip_type == self.KU_PIRATE:
-            return self.PIRATE_ENGINE_FIGHTER
-
-        if self.equip_type == self.CO_MAIN:
-            return self.CO_MAIN_ENGINE_FIGHTER
-        if self.equip_type == self.CO_OUTCAST:
-            return self.OUTCAST_ENGINE_FIGHTER
-
-        raise Exception('unkown fighter engine')
+        return self.FIGHTER_ENGINE_PER_TYPE.get(self.equip_type)
 
     def get_elite_engine(self):
-        if self.equip_type == self.RH_MAIN:
-            return self.RH_MAIN_ENGINE_ELITE
-        if self.equip_type == self.RH_CIV:
-            return self.CIV_ENGINE_ELITE
-        if self.equip_type == self.RH_PIRATE:
-            return self.PIRATE_ENGINE_ELITE
-
-        if self.equip_type == self.LI_MAIN:
-            return self.LI_MAIN_ENGINE_ELITE
-        if self.equip_type == self.LI_CIV:
-            return self.CIV_ENGINE_ELITE
-        if self.equip_type == self.LI_PIRATE:
-            return self.PIRATE_ENGINE_ELITE
-
-        if self.equip_type == self.BR_MAIN:
-            return self.BR_MAIN_ENGINE_ELITE
-        if self.equip_type == self.BR_CIV:
-            return self.CIV_ENGINE_ELITE
-        if self.equip_type == self.BR_PIRATE:
-            return self.PIRATE_ENGINE_ELITE
-
-        if self.equip_type == self.KU_MAIN:
-            return self.KU_MAIN_ENGINE_ELITE
-        if self.equip_type == self.KU_CIV:
-            return self.CIV_ENGINE_ELITE
-        if self.equip_type == self.KU_PIRATE:
-            return self.PIRATE_ENGINE_ELITE
-
-        if self.equip_type == self.CO_MAIN:
-            return self.CO_MAIN_ENGINE_ELITE
-        if self.equip_type == self.CO_OUTCAST:
-            return self.OUTCAST_ENGINE_ELITE
-
-        raise Exception('unkown elite engine')
+        return self.ELITE_ENGINE_PER_TYPE.get(self.equip_type)
 
     def get_freighter_engine(self):
-        if self.equip_type == self.RH_MAIN:
-            return self.RH_MAIN_ENGINE_FREIGHTER
-        if self.equip_type == self.RH_CIV:
-            return self.CIV_ENGINE_FREIGHTER
-        if self.equip_type == self.RH_PIRATE:
-            return self.PIRATE_ENGINE_FREIGHTER
-
-        if self.equip_type == self.LI_MAIN:
-            return self.LI_MAIN_ENGINE_FREIGHTER
-        if self.equip_type == self.LI_CIV:
-            return self.CIV_ENGINE_FREIGHTER
-        if self.equip_type == self.LI_PIRATE:
-            return self.PIRATE_ENGINE_FREIGHTER
-
-        if self.equip_type == self.BR_MAIN:
-            return self.BR_MAIN_ENGINE_FREIGHTER
-        if self.equip_type == self.BR_CIV:
-            return self.CIV_ENGINE_FREIGHTER
-        if self.equip_type == self.BR_PIRATE:
-            return self.PIRATE_ENGINE_FREIGHTER
-
-        if self.equip_type == self.KU_MAIN:
-            return self.KU_MAIN_ENGINE_FREIGHTER
-        if self.equip_type == self.KU_CIV:
-            return self.CIV_ENGINE_FREIGHTER
-        if self.equip_type == self.KU_PIRATE:
-            return self.PIRATE_ENGINE_FREIGHTER
-
-        if self.equip_type == self.CO_MAIN:
-            return self.CO_MAIN_ENGINE_FREIGHTER
-        if self.equip_type == self.CO_OUTCAST:
-            return self.OUTCAST_ENGINE_FREIGHTER
-
-        raise Exception('unkown freighter engine')
+        return self.FREIGHTER_ENGINE_PER_TYPE.get(self.equip_type)
 
     def get_ship_engine(self):
         if self.ship_class == self.SHIPCLASS_FIGHTER:
@@ -672,3 +628,30 @@ engine_kill_sound = engine_pi_freighter_kill'''
 
         raise Exception('unknown engine icon')
 
+    RU_NAME_PER_TYPE = {
+        MainMiscEquip.RH_MAIN: 'Хенкель',
+        MainMiscEquip.RH_CIV: 'Хорьх',
+        MainMiscEquip.RH_PIRATE: 'Шенкер',
+
+        MainMiscEquip.LI_MAIN: 'Континенталь',
+        MainMiscEquip.LI_CIV: 'Виллис',
+        MainMiscEquip.LI_PIRATE: 'Нортон',
+
+        MainMiscEquip.BR_MAIN: 'Макрей',
+        MainMiscEquip.BR_CIV: 'Аскари',
+        MainMiscEquip.BR_PIRATE: 'Вайтлинк',
+
+        MainMiscEquip.KU_MAIN: 'Накаджима',
+        MainMiscEquip.KU_CIV: 'Харима',
+        MainMiscEquip.KU_PIRATE: 'Ниппон',
+
+        MainMiscEquip.CO_ORDER: 'Кронос',
+        MainMiscEquip.CO_CORSAIR: 'Трамон',
+        MainMiscEquip.CO_OUTCAST: 'Гиспакарт',
+    }
+
+    def get_ru_equip_name(self):
+        return 'Двиг.'
+
+    def get_ru_base_name(self):
+        return self.RU_NAME_PER_TYPE[self.equip_type]

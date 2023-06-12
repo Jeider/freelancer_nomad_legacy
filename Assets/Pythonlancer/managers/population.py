@@ -1,6 +1,9 @@
 from world import faction
 from world.npc import NPC
 
+DIVIDER = "\n\n"
+SINGLE_DIVIDER = "\n"
+
 
 class PopulationManager(object):
 
@@ -18,7 +21,9 @@ class PopulationManager(object):
         self.weapons = weapons
 
         self.npc_db = {}
+        self.npc_list = []
         self.loadouts_db = {}
+        self.loadouts_list = []
 
         self.load_game_data()
 
@@ -49,11 +54,43 @@ class PopulationManager(object):
             self.npc_db[faction.CODE] = []
             self.loadouts_db[faction.CODE] = []
 
-
             for ship in faction.SHIPS:
                 for level in ship.NPC_LEVELS:
                     npc = NPC(faction, ship, level)
                     npc.set_equipment_package(self.get_equipment_package(faction, npc))
 
                     self.npc_db[faction.CODE].append(npc)
-                    self.loadouts_db[faction.CODE].append(npc.get_loadout())
+                    self.npc_list.append(npc)
+
+                    loadout = npc.get_loadout()
+                    self.loadouts_db[faction.CODE].append(loadout)
+                    self.loadouts_list.append(loadout)
+
+    def get_npcships(self):
+        data = ''
+
+        for npc in self.npc_list:
+            data += npc.get_npc_shiparch() + DIVIDER
+
+        return data
+
+    def get_npc_names(self):
+        data = ''
+
+        for faction, npcs in self.npc_db.items():
+            data += 'affilitation = ' + faction + SINGLE_DIVIDER
+
+            for npc in npcs:
+                data += 'npc_ship = ' + npc.get_npc_shiparch_nickname() + SINGLE_DIVIDER
+
+            data += SINGLE_DIVIDER
+
+        return data
+
+    def get_loadouts(self):
+        data = ''
+
+        for loadout in self.loadouts_list:
+            data += loadout + DIVIDER
+
+        return data

@@ -183,6 +183,42 @@ combinable = {combinable}'''
     def get_drop_worth_mult(self):
         return self.get_drop_min_worth()
 
+    CLASS_TO_MARK = {
+        CLASS_1: 'Mk.I',
+        CLASS_2: 'Mk.II',
+        CLASS_3: 'Mk.III',
+        CLASS_4: 'Mk.IV',
+        CLASS_5: 'Mk.V',
+        CLASS_6: 'Mk.VI',
+        CLASS_7: 'Mk.VII',
+        CLASS_8: 'Mk.VIII',
+        CLASS_9: 'Mk.IX',
+        CLASS_10: 'Mk.X',
+    }
+
+    def get_mark_name(self):
+        return self.CLASS_TO_MARK[self.equipment_class]
+
+    def get_ru_equip_name(self):
+        raise NotImplementedError('ru equip name must be defined')
+
+    def get_ru_base_name(self):
+        raise NotImplementedError('ru base name must be defined')
+
+    def get_ru_shipclass_name(self):
+        if self.ship_class == self.SHIPCLASS_FIGHTER:
+            return 'Перехв'
+        if self.ship_class == self.SHIPCLASS_ELITE:
+            return 'Истреб'
+        if self.ship_class == self.SHIPCLASS_FREIGHTER:
+            return 'Груз'
+
+        raise Exception('unknown ship class')
+
+    def get_ru_name(self):
+        raise NotImplementedError('ru name builder not defined')
+
+
 
 class MainMiscEquip(Equipment):
     FACTION_RH = 1
@@ -207,20 +243,21 @@ class MainMiscEquip(Equipment):
     KU_CIV = 11
     KU_PIRATE = 12
 
-    CO_MAIN = 13
-    CO_OUTCAST = 14
+    CO_ORDER = 13
+    CO_CORSAIR = 14
+    CO_OUTCAST = 15
 
     RH_EQUIP = [RH_MAIN, RH_CIV, RH_PIRATE]
     LI_EQUIP = [LI_MAIN, LI_CIV, LI_PIRATE]
     BR_EQUIP = [BR_MAIN, BR_CIV, BR_PIRATE]
     KU_EQUIP = [KU_MAIN, KU_CIV, KU_PIRATE]
-    CO_EQUIP = [CO_MAIN, CO_OUTCAST]
+    CO_EQUIP = [CO_ORDER, CO_CORSAIR, CO_OUTCAST]
 
     ALL_EQUIP_TYPES = RH_EQUIP + LI_EQUIP + BR_EQUIP + KU_EQUIP + CO_EQUIP
 
-    MAIN_EQUIP = [RH_MAIN, LI_MAIN, BR_MAIN, KU_MAIN, CO_MAIN]
-    CIV_EQUIP = [RH_CIV, LI_CIV, BR_CIV, KU_CIV]
-    PIRATE_EQUIP = [RH_PIRATE, LI_PIRATE, BR_PIRATE, KU_PIRATE]
+    MAIN_EQUIP = [RH_MAIN, LI_MAIN, BR_MAIN, KU_MAIN, CO_ORDER]
+    CIV_EQUIP = [RH_CIV, LI_CIV, BR_CIV, KU_CIV, CO_OUTCAST]
+    PIRATE_EQUIP = [RH_PIRATE, LI_PIRATE, BR_PIRATE, KU_PIRATE, CO_CORSAIR]
 
     MAX_PRICE_FIGHTER = 240000
     MAX_PRICE_ELITE = 260000
@@ -264,7 +301,9 @@ class MainMiscEquip(Equipment):
         if self.equip_type == self.KU_PIRATE:
             return 'ku_pirate'
 
-        if self.equip_type == self.CO_MAIN:
+        if self.equip_type == self.CO_ORDER:
+            return 'or'
+        if self.equip_type == self.CO_CORSAIR:
             return 'co'
         if self.equip_type == self.CO_OUTCAST:
             return 'out'
@@ -278,8 +317,6 @@ class MainMiscEquip(Equipment):
             self.rate = self.get_civ_rate()
         if self.equip_type in self.PIRATE_EQUIP:
             self.rate = self.get_pirate_rate()
-        if self.equip_type == self.CO_OUTCAST:
-            self.rate = self.get_civ_rate()
 
     def get_faction_code(self):
         if self.equip_type in self.RH_EQUIP:
@@ -291,20 +328,9 @@ class MainMiscEquip(Equipment):
         if self.equip_type in self.KU_EQUIP:
             return 'ku'
         if self.equip_type in self.CO_EQUIP:
-            return 'ku'
+            return 'co'
 
         raise Exception('unknown faction code')
-
-    def get_max_price(self):
-        if self.ship_class == self.SHIPCLASS_FIGHTER:
-            return self.MAX_PRICE_FIGHTER
-        if self.ship_class == self.SHIPCLASS_ELITE:
-            return self.MAX_PRICE_ELITE
-        if self.ship_class == self.SHIPCLASS_FREIGHTER:
-            return self.MAX_PRICE_FREIGHTER
-
-        raise Exception('unknown max price')
-
 
 
 
@@ -347,6 +373,24 @@ attachment_archetype = {model}'''
             'combinable': False
         }
 
+    def get_max_price(self):
+        if self.ship_class == self.SHIPCLASS_FIGHTER:
+            return self.MAX_PRICE_FIGHTER
+        if self.ship_class == self.SHIPCLASS_ELITE:
+            return self.MAX_PRICE_ELITE
+        if self.ship_class == self.SHIPCLASS_FREIGHTER:
+            return self.MAX_PRICE_FREIGHTER
+
+        raise Exception('unknown max price')
+
+    def get_ru_name(self):
+        return '{equip} {model} {mark} [{shipclass}]'.format(
+            equip=self.get_ru_equip_name(),
+            model=self.get_ru_base_name(),
+            mark=self.get_mark_name(),
+            shipclass=self.get_ru_shipclass_name(),
+        )
+
 
 class DefaultGood(object):
 
@@ -359,7 +403,7 @@ item_icon = {icon}
 combinable = {combinable}'''
 
     def get_price(self):
-        raise NotImplementedError
+        raise NotImplementedError()
 
     def get_icon(self):
         raise NotImplementedError
@@ -456,7 +500,7 @@ class Icon(object):
         return Icon.ICON_PATH_TEMPLATE.format(root=Icon.ICONS_FOLDER, icon=icon)
 
 
-class MiscEquipPrice(object):
+class MainEquipPrice(object):
 
     PRICE_PER_RATE = {
         Equipment.RATE_1: 0.0038,

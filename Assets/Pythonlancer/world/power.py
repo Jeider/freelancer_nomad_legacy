@@ -1,4 +1,4 @@
-from world.equipment import MainInternalEquip, Equipment, AdoxaEquipClassGood, MiscEquipPrice
+from world.equipment import MainInternalEquip, MainMiscEquip, Equipment, AdoxaEquipClassGood, MainEquipPrice
 
 
 class BasePower(MainInternalEquip):
@@ -153,7 +153,7 @@ material_library = Equipment\\models\\hardware.mat'''
         return thrust_regen
 
 
-class Power(AdoxaEquipClassGood, BasePower, MiscEquipPrice):
+class Power(MainEquipPrice, AdoxaEquipClassGood, BasePower):
     def get_power_template_params(self):
         return {
             'nickname': self.get_nickname(),
@@ -199,3 +199,31 @@ class Power(AdoxaEquipClassGood, BasePower, MiscEquipPrice):
             return self.CO_POWER_ICON
 
         raise Exception('unknown power icon')
+
+    RU_NAME_PER_TYPE = {
+        MainMiscEquip.RH_MAIN: 'Гайзенберг',
+        MainMiscEquip.RH_CIV: 'Гейгер',
+        MainMiscEquip.RH_PIRATE: 'Дёпель',
+
+        MainMiscEquip.LI_MAIN: 'Ферми',
+        MainMiscEquip.LI_CIV: 'Комптон',
+        MainMiscEquip.LI_PIRATE: 'Сиборг',
+
+        MainMiscEquip.BR_MAIN: 'Резерфорд',
+        MainMiscEquip.BR_CIV: 'Содди',
+        MainMiscEquip.BR_PIRATE: 'Чедвик',
+
+        MainMiscEquip.KU_MAIN: 'Генкай',
+        MainMiscEquip.KU_CIV: 'Иката',
+        MainMiscEquip.KU_PIRATE: 'Омагава',
+
+        MainMiscEquip.CO_ORDER: 'Юпитер',
+        MainMiscEquip.CO_CORSAIR: 'Трильо',
+        MainMiscEquip.CO_OUTCAST: 'Конфрентес',
+    }
+
+    def get_ru_equip_name(self):
+        return 'Генер.'
+
+    def get_ru_base_name(self):
+        return self.RU_NAME_PER_TYPE[self.equip_type]

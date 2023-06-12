@@ -1,7 +1,7 @@
-from world.equipment import MainMiscEquip, Equipment, DefaultGood
+from world.equipment import MainMiscEquip, Equipment, DefaultGood, MainEquipPrice
 
 
-class Thruster(DefaultGood, MainMiscEquip):
+class Thruster(MainEquipPrice, DefaultGood, MainMiscEquip):
 
     SPEED_PER_RATE = {
         Equipment.RATE_1: 18,
@@ -95,6 +95,8 @@ particles = gf_co_thruster01'''
     KU_THRUSTER_ICON = 'equipment\\models\\icons\\ku\\ku_afterburn.3db'
     CO_THRUSTER_ICON = 'equipment\\models\\icons\\co\\co_afterburn.3db'
 
+    MAX_PRICE = 60000
+
     def get_thruster_core(self):
         if self.equip_type in self.RH_EQUIP:
             return self.RH_THRUSTER_CORE
@@ -174,9 +176,6 @@ particles = gf_co_thruster01'''
     def get_equip(self):
         return self.THRUSTER_TEMPLATE.format(**self.get_thruster_template_params())
 
-    def get_price(self):
-        return 100  # TODO: correct price
-
     def get_icon(self):
         if self.equip_type in self.RH_EQUIP:
             return self.RH_THRUSTER_ICON
@@ -190,3 +189,37 @@ particles = gf_co_thruster01'''
             return self.CO_THRUSTER_ICON
 
         raise Exception('unknown thruster icon')
+
+    RU_NAME_PER_TYPE = {
+        MainMiscEquip.RH_MAIN: 'Форсаж Цвай',
+        MainMiscEquip.RH_CIV: 'Форсаж Нуль',
+        MainMiscEquip.RH_PIRATE: 'Форсаж Айн',
+
+        MainMiscEquip.LI_MAIN: 'Форсаж Гамма',
+        MainMiscEquip.LI_CIV: 'Форсаж Альфа',
+        MainMiscEquip.LI_PIRATE: 'Форсаж Бета',
+
+        MainMiscEquip.BR_MAIN: 'Улучшенный форсаж',
+        MainMiscEquip.BR_CIV: 'Стандартный форсаж',
+        MainMiscEquip.BR_PIRATE: 'Продвинутый форсаж',
+
+        MainMiscEquip.KU_MAIN: 'Форсаж тип В',
+        MainMiscEquip.KU_CIV: 'Форсаж тип А',
+        MainMiscEquip.KU_PIRATE: 'Форсаж тип Б',
+
+        MainMiscEquip.CO_ORDER: 'Элитный форсаж',
+        MainMiscEquip.CO_CORSAIR: 'Тяжелый форсаж',
+        MainMiscEquip.CO_OUTCAST: 'Перегруженный форсаж',
+    }
+
+    def get_max_price(self):
+        return self.MAX_PRICE
+
+    def get_ru_base_name(self):
+        return self.RU_NAME_PER_TYPE[self.equip_type]
+
+    def get_ru_name(self):
+        return '{model} {mark}'.format(
+            model=self.get_ru_base_name(),
+            mark=self.get_mark_name(),
+        )

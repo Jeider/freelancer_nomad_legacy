@@ -34,12 +34,12 @@ class NPC(object):
         D1, D2, D3, D4,
         D5, D6, D7, D8,
         D9, D10, D11, D12,
-        # D13, D14, D15, D16,
-        # D17, D18, D19
+        D13, D14, D15, D16,
+        D17, D18, D19
     ]
 
     SHIP2_LEVELS = [
-        # D1, D2, D3, D4,
+        D1, D2, D3, D4,
         D5, D6, D7, D8,
         D9, D10, D11, D12,
         D13, D14, D15, D16,
@@ -47,8 +47,8 @@ class NPC(object):
     ]
 
     SHIP3_LEVELS = [
-        # D1, D2, D3, D4,
-        # D5, D6, D7, D8,
+        D1, D2, D3, D4,
+        D5, D6, D7, D8,
         D9, D10, D11, D12,
         D13, D14, D15, D16,
         D17, D18, D19
@@ -121,7 +121,7 @@ class NPC(object):
     }
 
     PILOT = 'mod_fighter_level_basic'
-    CLASS_FIGHTER = 'class_figher'
+    CLASS_FIGHTER = 'class_fighter'
 
     NPC_SHIPARCH_TEMPLATE = '''[NPCShipArch]
 nickname = {npc_shiparch_nickname}
@@ -142,9 +142,10 @@ npc_class = {classes_list}'''
         return 'd{}'.format(self.level)
 
     def get_npc_shiparch_nickname(self):
-        return 'gen_{faction_code}_{shipclass_name}_{level_code}'.format(
+        return 'gen_{faction_code}_{shipclass_name}_{ship_archetype}_{level_code}'.format(
             faction_code=self.faction.CODE,
             shipclass_name=self.ship.SHIPCLASS_NAME,
+            ship_archetype=self.ship.ARCHETYPE,
             level_code=self.get_npc_level_code()
         )
 

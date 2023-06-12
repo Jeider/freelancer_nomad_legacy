@@ -3,9 +3,12 @@ from managers.weapon import WeaponManager
 from managers.population import PopulationManager
 
 
+INITIAL_STRING_ID = 280000
+
+
 class LancerCore(object):
 
 	def __init__(self):
-		self.misc_equip = MiscEquipManager()
-		self.weapons = WeaponManager()
+		self.misc_equip = MiscEquipManager(INITIAL_STRING_ID)
+		self.weapons = WeaponManager(self.misc_equip.last_string_id)
 		self.population = PopulationManager(self.misc_equip, self.weapons)

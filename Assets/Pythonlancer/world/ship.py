@@ -1,6 +1,13 @@
 from world.equipment import Equipment
 from world.npc import NPC
 
+DIVIDER = "\n"
+CLASS_INTERCEPTOR = 'class_interceptor'
+CLASS_ELITE = 'class_elite_fighter'
+
+CLASS_RHEINLAND_INTERCEPTOR = 'class_rheinland_interceptor'
+CLASS_RHEINLAND_ELITE = 'class_rheinland_elite'
+CLASS_RHEINLAND_FIGHTER_ONLY = 'class_rheinland_fighter_only'
 
 class Ship(object):
     ARCHETYPE = None
@@ -37,6 +44,8 @@ cargo = {nickname}, {amount}'''
             if mine_ammo:
                 extra.append(Ship.CARGO_TEMPLATE, format(torpedo, mine_ammo))
 
+        return DIVIDER.join(extra)
+
 
 class Ship1(object):
     NPC_LEVELS = NPC.SHIP1_LEVELS
@@ -53,14 +62,19 @@ class Ship3(object):
 class ShipInterceptor(Ship):
     SHIPCLASS_NAME = 'interceptor'
     EQUIPMENT_SHIPCLASS = Equipment.SHIPCLASS_FIGHTER
-    EXTRA_CLASSES = ['class_interceptor']
+    EXTRA_CLASSES = [CLASS_INTERCEPTOR]
 
+
+class ShipFighter(Ship):
+    SHIPCLASS_NAME = 'fighter'
+    EQUIPMENT_SHIPCLASS = Equipment.SHIPCLASS_ELITE
+    EXTRA_CLASSES = [CLASS_ELITE]
 
 
 class ShipElite(Ship):
     SHIPCLASS_NAME = 'elite'
     EQUIPMENT_SHIPCLASS = Equipment.SHIPCLASS_ELITE
-    EXTRA_CLASSES = ['class_elite_fighter']
+    EXTRA_CLASSES = [CLASS_ELITE]
 
 
 class ShipFreighter(Ship):
@@ -70,6 +84,8 @@ class ShipFreighter(Ship):
 
 
 class Dagger(ShipInterceptor, Ship1):
+    EXTRA_CLASSES = [CLASS_INTERCEPTOR, CLASS_RHEINLAND_INTERCEPTOR]
+
     ARCHETYPE = 'bw_fighter'
     HP_TORPEDO = 'HpTorpedo01'
 
@@ -110,6 +126,8 @@ equip = single_eng_weight, HpCockpit
 
 
 class Banshee(ShipInterceptor, Ship2):
+    EXTRA_CLASSES = [CLASS_INTERCEPTOR, CLASS_RHEINLAND_INTERCEPTOR]
+
     ARCHETYPE = 'rh_fighter'
     TORPEDO_HP = 'HpTorpedo01'
 
@@ -149,7 +167,9 @@ equip = single_eng_weight, HpCockpit
 {extra}'''
 
 
-class Stiletto(ShipElite, Ship1):
+class Stiletto(ShipFighter, Ship1):
+    EXTRA_CLASSES = [CLASS_ELITE, CLASS_RHEINLAND_ELITE, CLASS_RHEINLAND_FIGHTER_ONLY]
+
     ARCHETYPE = 'bw_elite'
     TORPEDO_HP = 'HpTorpedo01'
 
@@ -194,7 +214,9 @@ equip = double_eng_weight, HpCockpit
 {extra}'''
 
 
-class Sabre(ShipElite, Ship2):
+class Sabre(ShipFighter, Ship2):
+    EXTRA_CLASSES = [CLASS_ELITE, CLASS_RHEINLAND_ELITE, CLASS_RHEINLAND_FIGHTER_ONLY]
+
     ARCHETYPE = 'bw_elite2'
     TORPEDO_HP = 'HpTorpedo01'
 
@@ -240,6 +262,8 @@ equip = double_eng_weight, HpCockpit
 
 
 class Valkyrie(ShipElite, Ship3):
+    EXTRA_CLASSES = [CLASS_ELITE, CLASS_RHEINLAND_ELITE]
+
     ARCHETYPE = 'rh_elite'
     TORPEDO_HP = 'HpTorpedo01'
 

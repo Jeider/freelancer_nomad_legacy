@@ -8,8 +8,7 @@ class Lootable(object):
 
     LOOTPROP_TEMPLATE = '''[mLootProps]
 nickname = {nickname}
-drop_properties = {chance}, {min_worth}, {worth_mult}, {min}, {max1}, {max2}
-'''
+drop_properties = {chance}, {min_worth}, {worth_mult}, {min}, {max1}, {max2}'''
 
     def get_drop_chance(self):
         if self.DROP_CHANCE is None:
@@ -60,7 +59,7 @@ class LootableEquip(Lootable):
     DROP_CHANCE = 5
     DROP_MIN = 0
     DROP_MAX1 = 2
-    DROP_MAX2 = 0
+    DROP_MAX2 = 1
 
 
 class LootableAmmo(Lootable):
