@@ -6,6 +6,7 @@ from world.engine import Engine
 from world.shield import Shield, ShieldNPC
 from world.thruster import Thruster
 
+SINGLE_DIVIDER = "\n"
 DIVIDER = "\n\n"
 
 
@@ -185,3 +186,28 @@ class MiscEquipManager(object):
             items[thruster.ids_name] = thruster.get_ru_name()
 
         return StringCompiler.compile_names(items)
+
+    def get_demo_marketdata(self):
+        data = ''
+
+        for engine in self.engines_list:
+            data += engine.get_marketdata() + SINGLE_DIVIDER
+
+        data += SINGLE_DIVIDER
+
+        for powerplant in self.powerplants_list:
+            data += powerplant.get_marketdata() + SINGLE_DIVIDER
+
+        data += SINGLE_DIVIDER
+
+        for shield in self.shields_list:
+            data += shield.get_marketdata() + SINGLE_DIVIDER
+
+        data += SINGLE_DIVIDER
+
+        for thruster in self.thrusters_list:
+            data += thruster.get_marketdata() + SINGLE_DIVIDER
+
+        data += SINGLE_DIVIDER
+
+        return data

@@ -3,7 +3,7 @@ from world.power import BasePower
 
 
 class Engine(MainEquipPrice, AdoxaEquipClassGood, BasePower):
-    DROP_CHANCE = 5
+    DROP_CHANCE = 10
 
     SPEED_PER_RATE = {
         Equipment.RATE_1: 76,
@@ -76,8 +76,8 @@ class Engine(MainEquipPrice, AdoxaEquipClassGood, BasePower):
     CRUISE_MULTIPLER = 1.0
 
     MAX_POWER_REGEN = 1200
-    BASE_POWER_DRAIN_MULTIPLER = 0.5
-    CRUISE_POWER_DRAIN_MULTIPLER = 1
+    BASE_POWER_DRAIN_FACTOR = 0.4
+    CRUISE_POWER_DRAIN_FACTOR = 0.5
 
     BASE_CRUISE_CHARGE_TIME = 5
 
@@ -519,10 +519,10 @@ engine_kill_sound = engine_pi_freighter_kill'''
         return self.get_linear_drag() + self.EXTRA_DRAG
 
     def get_base_power(self):
-        return self.get_max_power_regen() * self.BASE_POWER_DRAIN_MULTIPLER * self.rate
+        return self.get_max_power_regen() * self.BASE_POWER_DRAIN_FACTOR * self.rate
 
     def get_cruise_power(self):
-        return self.get_max_power_regen() * self.CRUISE_POWER_DRAIN_MULTIPLER * self.rate
+        return self.get_max_power_regen() * self.CRUISE_POWER_DRAIN_FACTOR * self.rate
 
     def get_cruise_charge_time(self):
         charge_time = self.BASE_CRUISE_CHARGE_TIME

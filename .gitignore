@@ -137,6 +137,7 @@ SAVE/Accts/OUTDATED
 SAVE/Accts/SinglePlayer/*
 SAVE/Accts/SinglePlayer/!sp_survival1.fl
 SAVE/Accts/SinglePlayer/!sp_br_megacannon.fl
+SAVE/Accts/SinglePlayer/!sp_vlk_demo.fl
 DLLS/BIN/ContentX.dll
 DLLS/BIN/Content_m.dll
 DLLS/BIN/Content_m13.dll

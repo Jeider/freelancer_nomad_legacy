@@ -3,7 +3,7 @@ from world.power import BasePower
 
 
 class Shield(MainEquipPrice, DefaultGood, BasePower):
-    DROP_CHANCE = 6
+    DROP_CHANCE = 10
 
     MAX_SHIELD_CAPACITY_FIGHTER = 7500
     MAX_SHIELD_CAPACITY_ELITE = 8500
@@ -13,7 +13,7 @@ class Shield(MainEquipPrice, DefaultGood, BasePower):
     MAX_SHIELD_REGEN_ELITE = 225
     MAX_SHIELD_REGEN_FREIGHTER = 250
 
-    SHIELD_ACTIVE_POWER_FACTOR = 0.3
+    SHIELD_ACTIVE_POWER_FACTOR = 0.1
     SHIELD_PASSIVE_POWER_FACTOR = 0.2
 
     SHIELD_MAX_HIT_PTS = 8000
@@ -162,7 +162,7 @@ shield_hit_effects = {hit_three}, gf_pi_shield03'''
         elif self.equip_type in self.CO_EQUIP:
             capacity *= 0.9
 
-        return capacity
+        return capacity * self.rate
 
     def get_max_shield_regen(self):
         if self.ship_class == self.SHIPCLASS_FIGHTER:
@@ -182,7 +182,7 @@ shield_hit_effects = {hit_three}, gf_pi_shield03'''
         elif self.equip_type in self.CO_EQUIP:
             regen *= 0.9
 
-        return regen
+        return regen * self.rate
 
     def get_shield_rebuild_power_draw(self):
         required_power = self.get_power_regen() * self.SHIELD_ACTIVE_POWER_FACTOR

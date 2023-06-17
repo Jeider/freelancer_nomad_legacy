@@ -2,6 +2,7 @@ from world.equipment import MainMiscEquip, Equipment, DefaultGood, MainEquipPric
 
 
 class Thruster(MainEquipPrice, DefaultGood, MainMiscEquip):
+    DROP_CHANCE = 12
 
     SPEED_PER_RATE = {
         Equipment.RATE_1: 18,

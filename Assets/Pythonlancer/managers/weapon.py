@@ -3,6 +3,7 @@ from text.strings import StringCompiler
 from world.equipment import Equipment
 from world.gun import Gun
 
+SINGLE_DIVIDER = "\n"
 DIVIDER = "\n\n"
 
 
@@ -66,3 +67,21 @@ class WeaponManager(object):
             items[gun.ids_name] = gun.get_ru_name()
 
         return StringCompiler.compile_names(items)
+
+    def get_weapon_equip(self):
+        data = ''
+
+        for gun in self.guns_list:
+            data += gun.get_equip() + DIVIDER
+
+        return data
+
+    def get_demo_marketdata(self):
+        data = ''
+
+        for gun in self.guns_list:
+            data += gun.get_marketdata() + SINGLE_DIVIDER
+
+        data += SINGLE_DIVIDER
+
+        return data

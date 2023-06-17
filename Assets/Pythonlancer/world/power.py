@@ -2,13 +2,13 @@ from world.equipment import MainInternalEquip, MainMiscEquip, Equipment, AdoxaEq
 
 
 class BasePower(MainInternalEquip):
-    DROP_CHANCE = 4
+    DROP_CHANCE = 8
 
     MAX_POWER_FIGHTER = 12000
     MAX_POWER_ELITE = 12000
     MAX_POWER_FREIGHTER = 12000
     MAX_POWER_REGEN_FIGHTER = 1200
-    MAX_POWER_REGEN_ELITE = 1200
+    MAX_POWER_REGEN_ELITE = 3000
     MAX_POWER_REGEN_FREIGHTER = 1200
 
     BASE_THRUST_CAPACITY = 1000
@@ -112,7 +112,7 @@ material_library = Equipment\\models\\hardware.mat'''
         elif self.equip_type in self.BR_EQUIP:
             capacity *= 1.05
 
-        return capacity
+        return capacity * self.rate
 
     def get_max_power_regen(self):
         if self.ship_class == self.SHIPCLASS_FIGHTER:
@@ -132,7 +132,7 @@ material_library = Equipment\\models\\hardware.mat'''
         elif self.equip_type in self.BR_EQUIP:
             regen *= 1.05
 
-        return regen
+        return regen * self.rate
 
     def get_thrust_capacity(self):
         thrust_capacity = self.BASE_THRUST_CAPACITY

@@ -3,7 +3,7 @@ from world.weapon import Weapon
 
 
 class Gun(MainEquipPrice, Weapon, DefaultGood):
-    DROP_CHANCE = 5
+    DROP_CHANCE = 12
     MAX_PRICE = 120000
 
     RH_LIGHTGUN = 'rh_lightgun'

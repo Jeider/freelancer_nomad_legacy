@@ -1,6 +1,7 @@
 from world.lootable import LootableEquip
+from world.markets import MarketEquip
 
-class Equipment(LootableEquip):
+class Equipment(LootableEquip, MarketEquip):
     CLASS_1 = 1
     CLASS_2 = 2
     CLASS_3 = 3
