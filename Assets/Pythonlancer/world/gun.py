@@ -37,7 +37,7 @@ class Gun(MainEquipPrice, Weapon, DefaultGood):
         {
             'ru_name': 'Звездный луч',
             'base_nickname': RH_CIVGUN,
-            'model': Weapon.GE_SHREDDER_SHOTGUN,
+            'model': Weapon.RH_THRUSTGUN,
             'equip_type': Weapon.EQUIP_CIV,
             'refire_rate': Weapon.REFIRE_RATE_4,
             'muzzle_velocity': 600,
@@ -46,7 +46,7 @@ class Gun(MainEquipPrice, Weapon, DefaultGood):
         {
             'ru_name': 'Незримый клинок',
             'base_nickname': RH_HUNTERGUN,
-            'model': Weapon.GE_SHREDDER_SHOTGUN,
+            'model': Weapon.RH_GAMMA_BEAMER,
             'equip_type': Weapon.EQUIP_PIRATE,
             'refire_rate': Weapon.REFIRE_RATE_8,
             'muzzle_velocity': 750,
@@ -65,7 +65,7 @@ class Gun(MainEquipPrice, Weapon, DefaultGood):
         {
             'ru_name': 'Наттер',
             'base_nickname': RH_PIRATEGUN,
-            'model': Weapon.CO_RAILDADDY,
+            'model': Weapon.RH_THRUSTGUN,
             'equip_type': Weapon.EQUIP_CIV,
             'refire_rate': Weapon.REFIRE_RATE_8,
             'muzzle_velocity': 750,
@@ -83,7 +83,7 @@ class Gun(MainEquipPrice, Weapon, DefaultGood):
         {
             'ru_name': 'Скорпион',
             'base_nickname': RH_JUNKERGUN,
-            'model': Weapon.CO_RAILDADDY,
+            'model': Weapon.CO_SHOCK_THERAPY,
             'equip_type': Weapon.EQUIP_PIRATE,
             'refire_rate': Weapon.REFIRE_RATE_8,
             'muzzle_velocity': 600,
