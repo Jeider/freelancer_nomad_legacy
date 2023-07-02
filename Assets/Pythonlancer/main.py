@@ -44,6 +44,9 @@ def main():
 
         ('demo_marketdata.ini', DIVIDER.join(markets_demo_data)),
 
+        #('shiparch.ini', str(core.shiparch.params)),
+        ('shiparch.ini', str(core.shiparch.get_file_content())),
+
     ]
 
     for file, content in files_map:

@@ -67,7 +67,186 @@ cargo = {nickname}, {amount}'''
     COLLISION_HIT_PTS_PERCENT = {}
     COLLISION_EXPLOSION_RESISTANCE = {}
 
-    HULL_HIT_PTS = None
+    HULL_HIT_PTS = 1000
+    HP_SHIELD = 'HpShield01'
+    HP_ENGINE = 'HpDrive01'
+    HP_POWERPLANT = 'HpPower01'
+    SHIP_MASS = 100
+    HOLD_SIZE = 10
+    STRAFE_FORCE = 20000
+    STRAFE_POWER_USAGE = 5
+    NANOBOTS = 1
+
+    DAMAGE_MINIMAL_PCT = 0.3
+    DAMAGE_HEAVY_PCT = 0.2
+    DAMAGE_CRITICAL_PCT = 0.1
+
+    DAMAGE_FUSES = {
+        'intermed_damage_smallship01': DAMAGE_MINIMAL_PCT,
+        'intermed_damage_smallship02': DAMAGE_HEAVY_PCT,
+        'intermed_damage_smallship03': DAMAGE_CRITICAL_PCT,
+    }
+
+    FUSE_TEMPLATE = '{fuse}, 0.000000, {hit_pts}'
+
+    HP_TYPE_TEMPLATE = 'hp_type = {hp_class}, {hardpoints}'
+    GUN_CLASS_TEMPLATE = 'hp_gun_special_{class_digit}'
+    TORPEDO_MAIN_CLASS = 'hp_torpedo_special_1'
+    TORPEDO_CD_CLASS = 'hp_torpedo_special_2'
+    TORPEDO_CLASSES = []
+
+    THRUSTER_CLASS = 'hp_thruster'
+    MINE_CLASS = 'hp_mine_dropper'
+    CM_CLASS = 'hp_countermeasure_dropper'
+
+    SHIELD_CLASS_TEMPLATE = None
+    ENGINE_CLASS_TEMPLATE = None
+    POWERPLANT_CLASS_TEMPLATE = None
+
+    THRUSTERS = 'HpThruster01, HpThruster02'
+    MAIN_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06'
+    MAX_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04'
+
+    EQUIPMENT_LEVEL = Equipment.CLASS_1
+    MAIN_WEAPON_CLASS = Equipment.CLASS_1
+    MAX_WEAPON_CLASS = None
+
+    def get_fuses(self):
+        lines = []
+        for fuse, hit_pts_pct in self.DAMAGE_FUSES.items():
+            lines.append(self.FUSE_TEMPLATE.format(
+                fuse=fuse,
+                hit_pts=self.HULL_HIT_PTS*hit_pts_pct,
+            ))
+        return DIVIDER.join(lines)
+
+    def build_equip_line(self, hp_class, hardpoints):
+        return self.HP_TYPE_TEMPLATE.format(
+            hp_class=hp_class,
+            hardpoints=hardpoints,
+        )
+
+    def build_weapon_equip_line(self, equipment_class, hardpoints):
+        return self.HP_TYPE_TEMPLATE.format(
+            hp_class=self.GUN_CLASS_TEMPLATE.format(class_digit=equipment_class),
+            hardpoints=hardpoints,
+        )
+
+    def build_torpedo_equip_line(self, hp_class):
+        return self.HP_TYPE_TEMPLATE.format(hp_class=hp_class, hardpoints=self.HP_TORPEDO)
+
+    def build_shield_equip_line(self, equipment_class):
+        return self.HP_TYPE_TEMPLATE.format(
+            hp_class=self.SHIELD_CLASS_TEMPLATE.format(class_digit=equipment_class), 
+            hardpoints=self.HP_SHIELD,
+        )
+
+    def build_engine_equip_line(self, equipment_class):
+        return self.HP_TYPE_TEMPLATE.format(
+            hp_class=self.ENGINE_CLASS_TEMPLATE.format(class_digit=equipment_class), 
+            hardpoints=self.HP_ENGINE,
+        )
+
+    def build_powerplant_equip_line(self, equipment_class):
+        return self.HP_TYPE_TEMPLATE.format(
+            hp_class=self.POWERPLANT_CLASS_TEMPLATE.format(class_digit=equipment_class), 
+            hardpoints=self.HP_POWERPLANT,
+        )
+
+    def get_weapon_lines(self):
+        lines = []
+
+        for equipment_class in Equipment.BASE_CLASSES:
+            if equipment_class > self.EQUIPMENT_LEVEL:
+                break
+            elif equipment_class == self.EQUIPMENT_LEVEL and self.MAX_WEAPON_CLASS is not None:
+                lines.append(self.build_weapon_equip_line(equipment_class, self.MAX_WEAPONS))
+            else:
+                lines.append(self.build_weapon_equip_line(equipment_class, self.MAIN_WEAPONS))
+
+        return lines
+
+    def get_torpedo_lines(self):
+        lines = []
+
+        for torpedo_item in self.TORPEDO_CLASSES:
+            lines.append(self.build_torpedo_equip_line(torpedo_item))
+
+        return lines
+
+    def get_misc_equip_lines(self):
+        lines = []
+
+        for equipment_class in Equipment.BASE_CLASSES:
+            if equipment_class > self.EQUIPMENT_LEVEL:
+                break
+            else:
+                lines.append(self.build_shield_equip_line(equipment_class))
+
+        for equipment_class in Equipment.BASE_CLASSES:
+            if equipment_class > self.EQUIPMENT_LEVEL:
+                break
+            else:
+                lines.append(self.build_engine_equip_line(equipment_class))
+
+        for equipment_class in Equipment.BASE_CLASSES:
+            if equipment_class > self.EQUIPMENT_LEVEL:
+                break
+            else:
+                lines.append(self.build_powerplant_equip_line(equipment_class))
+
+        return lines
+
+    def get_generic_equip_lines(self):
+        lines = []
+
+        if self.THRUSTERS:
+            lines.append(self.build_equip_line(self.THRUSTER_CLASS, self.THRUSTERS))
+
+        lines.append(self.build_equip_line(self.MINE_CLASS, self.HP_MINE))
+        lines.append(self.build_equip_line(self.CM_CLASS, self.HP_CM))
+
+        return lines
+
+    def get_equipment_table(self):
+        lines = self.get_weapon_lines() + self.get_torpedo_lines() + self.get_misc_equip_lines() + self.get_generic_equip_lines()
+        return DIVIDER.join(lines)
+
+    def ship_param(self, param):
+        return '{ship_code}_{param}'.format(
+            ship_code=self.TEMPLATE_CODE,
+            param=param,
+        )
+
+    def get_base_template_params(self):
+        return {
+            self.ship_param('shield_link'): self.HP_SHIELD,
+            self.ship_param('mass'): self.SHIP_MASS,
+            self.ship_param('hold_size'): self.HOLD_SIZE,
+            self.ship_param('strafe_force'): self.STRAFE_FORCE,
+            self.ship_param('strafe_power_usage'): self.STRAFE_POWER_USAGE,
+            self.ship_param('nanobot'): self.NANOBOTS,
+            self.ship_param('hit_pts'): self.HULL_HIT_PTS,
+            self.ship_param('fuses'): self.get_fuses(),
+            self.ship_param('equipment'): self.get_equipment_table(),
+        }
+
+    def get_collision_group_template_params(self):
+        params = {}
+
+        for name, hit_pts_pct in self.COLLISION_HIT_PTS_PERCENT.items():
+            params[name] = self.HULL_HIT_PTS * hit_pts_pct
+
+        for name, resistance in self.COLLISION_EXPLOSION_RESISTANCE.items():
+            params[name] = resistance
+
+        return params
+
+    def get_shiparch_params(self):
+        params = {}
+        params.update(self.get_base_template_params())
+        params.update(self.get_collision_group_template_params())
+        return params
 
     @staticmethod
     def get_extra_content(torpedo, cm, mine, torpedo_ammo, cm_ammo, mine_ammo):
@@ -89,17 +268,6 @@ cargo = {nickname}, {amount}'''
 
         return DIVIDER.join(extra)
 
-    def get_shiparch_params():
-        params = {}
-
-        for hp_key, hp_pct in COLLISION_HIT_PTS_PERCENT.values():
-            params[hp_key] = HULL_HIT_PTS * hp_pct
-
-        for resist_key, resist_val in COLLISION_EXPLOSION_RESISTANCE.values():
-            params[resist_key] = resist_val
-
-        return params
-
 
 class Ship1(object):
     NPC_LEVELS = NPC.SHIP1_LEVELS
@@ -118,23 +286,41 @@ class ShipInterceptor(Ship):
     EQUIPMENT_SHIPCLASS = Equipment.SHIPCLASS_FIGHTER
     EXTRA_CLASSES = [CLASS_INTERCEPTOR]
 
+    SHIELD_CLASS_TEMPLATE = 'hp_fighter_shield_special_{class_digit}'
+    ENGINE_CLASS_TEMPLATE = 'hp_fighter_engine_special_{class_digit}'
+    POWERPLANT_CLASS_TEMPLATE = 'hp_fighter_power_special_{class_digit}'
+
 
 class ShipFighter(Ship):
     SHIPCLASS_NAME = 'fighter'
     EQUIPMENT_SHIPCLASS = Equipment.SHIPCLASS_ELITE
     EXTRA_CLASSES = [CLASS_ELITE]
+    TORPEDO_CLASSES = [Ship.TORPEDO_CD_CLASS]
+
+    SHIELD_CLASS_TEMPLATE = 'hp_elite_shield_special_{class_digit}'
+    ENGINE_CLASS_TEMPLATE = 'hp_elite_engine_special_{class_digit}'
+    POWERPLANT_CLASS_TEMPLATE = 'hp_elite_power_special_{class_digit}'
 
 
 class ShipElite(Ship):
     SHIPCLASS_NAME = 'elite'
     EQUIPMENT_SHIPCLASS = Equipment.SHIPCLASS_ELITE
     EXTRA_CLASSES = [CLASS_ELITE]
+    TORPEDO_CLASSES = [Ship.TORPEDO_MAIN_CLASS, Ship.TORPEDO_CD_CLASS]
+
+    SHIELD_CLASS_TEMPLATE = 'hp_elite_shield_special_{class_digit}'
+    ENGINE_CLASS_TEMPLATE = 'hp_elite_engine_special_{class_digit}'
+    POWERPLANT_CLASS_TEMPLATE = 'hp_elite_power_special_{class_digit}'
 
 
 class ShipFreighter(Ship):
     EQUIPMENT_SHIPCLASS = Equipment.SHIPCLASS_FREIGHTER
     SHIPCLASS_NAME = 'freighter'
     EXTRA_CLASSES = []
+
+    SHIELD_CLASS_TEMPLATE = 'hp_freighter_shield_special_{class_digit}'
+    ENGINE_CLASS_TEMPLATE = 'hp_freighter_engine_special_{class_digit}'
+    POWERPLANT_CLASS_TEMPLATE = 'hp_freighter_power_special_{class_digit}'
 
 
 # RHEINLAND
@@ -245,6 +431,10 @@ equip = single_eng_weight, HpCockpit
         'rf_engine_expl_resist': EXPL_RESIST_ENGINE,
     }
 
+    EQUIPMENT_LEVEL = Equipment.CLASS_9
+    MAIN_WEAPON_CLASS = Equipment.CLASS_9
+    MAX_WEAPON_CLASS = Equipment.CLASS_8
+
 
 class Stiletto(ShipFighter, Ship1):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_RHEINLAND_ELITE, CLASS_RHEINLAND_FIGHTER_ONLY]
@@ -294,8 +484,8 @@ equip = double_eng_weight, HpCockpit
 {extra}'''
 
     COLLISION_HIT_PTS_PERCENT = {
-        'bwe_wing1_hit_pts': ,
-        'bwe_wing2_hit_pts': ,
+        'bwe_wing1_hit_pts': HP_PCT_WING,
+        'bwe_wing2_hit_pts': HP_PCT_WING,
         'bwe_engine1_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
         'bwe_engine2_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
     }
@@ -356,8 +546,8 @@ equip = double_eng_weight, HpCockpit
 {extra}'''
 
     COLLISION_HIT_PTS_PERCENT = {
-        'bwe2_wing1_hit_pts': ,
-        'bwe2_wing2_hit_pts': ,
+        'bwe2_wing1_hit_pts': HP_PCT_WING,
+        'bwe2_wing2_hit_pts': HP_PCT_WING,
         'bwe2_engine1_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
         'bwe2_engine2_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
     }
@@ -427,6 +617,10 @@ equip = double_eng_weight, HpCockpit
         're_engine_expl_resist': EXPL_RESIST_ENGINE,
     }
 
+    EQUIPMENT_LEVEL = Equipment.CLASS_9
+    MAIN_WEAPON_CLASS = Equipment.CLASS_9
+    MAX_WEAPON_CLASS = Equipment.CLASS_8
+
 
 class ValkyrieMk2(ShipElite, Ship3):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_RHEINLAND_ELITE]
@@ -453,7 +647,7 @@ class Humpback(ShipFreighter):
     TEMPLATE_CODE = 'rfr'
 
     COLLISION_HIT_PTS_PERCENT = {
-        'rfr_panel_hit_pts': ,
+        'rfr_panel_hit_pts': HP_PCT_WING,
         'rfr_engine_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
     }
 
@@ -461,6 +655,10 @@ class Humpback(ShipFreighter):
         'rfr_panel_expl_resist': EXPL_RESIST_WING,
         'rfr_engine_expl_resist': EXPL_RESIST_ENGINE,
     }
+
+    EQUIPMENT_LEVEL = Equipment.CLASS_9
+    MAIN_WEAPON_CLASS = Equipment.CLASS_9
+    MAX_WEAPON_CLASS = Equipment.CLASS_8
 
 
 # LIBERTY
@@ -599,7 +797,7 @@ class Rhino(ShipFreighter):
     TEMPLATE_CODE = 'lfr'
 
     COLLISION_HIT_PTS_PERCENT = {
-        'lfr_panel_hit_pts': ,
+        'lfr_panel_hit_pts': HP_PCT_WING,
         'lfr_engine_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
     }
 
@@ -832,7 +1030,7 @@ class Dragon(ShipElite, Ship3):
     TORPEDO_HP = 'HpTorpedo01'
 
     COLLISION_HIT_PTS_PERCENT = {
-        'ke_wing_hit_pts': HP_PCT_MAIN,
+        'ke_wing_hit_pts': HP_PCT_MISC,
         'ke_tail_hit_pts': HP_PCT_TAIL,
         'ke_spike_hit_pts': HP_PCT_WING,
         'ke_engine_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
@@ -854,7 +1052,7 @@ class DragonMk2(ShipElite, Ship3):
     TORPEDO_HP = 'HpTorpedo01'
 
     COLLISION_HIT_PTS_PERCENT = {
-        'ke2_wing_hit_pts': HP_PCT_MAIN,
+        'ke2_wing_hit_pts': HP_PCT_MISC,
         'ke2_tail_hit_pts': HP_PCT_TAIL,
         'ke2_spike_hit_pts': HP_PCT_WING,
         'ke2_engine_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
@@ -874,7 +1072,7 @@ class Dron(ShipFreighter):
 
     COLLISION_HIT_PTS_PERCENT = {
         'kfr_wing_hit_pts': HP_PCT_WING,
-        'kfr_engine_hit_pts': ,
+        'kfr_engine_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
     }
 
     COLLISION_EXPLOSION_RESISTANCE = {
@@ -890,7 +1088,7 @@ class Bloodhound(ShipFighter, Ship1):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_CORSAIR_ELITE, CLASS_CORSAIR_FIGHTER_ONLY]
 
     ARCHETYPE = 'pi_fighter'
-    TEMPLATE_CODE = 'pe'
+    TEMPLATE_CODE = 'pf'
     TORPEDO_HP = 'HpTorpedo01'
 
     COLLISION_HIT_PTS_PERCENT = {
@@ -993,7 +1191,7 @@ class Starflier(ShipInterceptor, Ship1):
     EXTRA_CLASSES = [CLASS_INTERCEPTOR, CLASS_GENERIC_INTERCEPTOR]
 
     ARCHETYPE = 'ge_fighter'
-    TEMPLATE_CODE = 'gf'
+    TEMPLATE_CODE = 'gf1'
     HP_TORPEDO = 'HpTorpedo01'
 
     COLLISION_HIT_PTS_PERCENT = {
@@ -1011,7 +1209,7 @@ class Startracker(ShipInterceptor, Ship2):
     EXTRA_CLASSES = [CLASS_INTERCEPTOR, CLASS_GENERIC_INTERCEPTOR]
 
     ARCHETYPE = 'ge_fighter2'
-    TEMPLATE_CODE = 'gf'
+    TEMPLATE_CODE = 'gf2'
     HP_TORPEDO = 'HpTorpedo01'
 
     COLLISION_HIT_PTS_PERCENT = {
@@ -1029,7 +1227,7 @@ class Starblazer(ShipElite, Ship2):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_GENERIC_ELITE]
 
     ARCHETYPE = 'ge_fighter3'
-    TEMPLATE_CODE = 'gf'
+    TEMPLATE_CODE = 'gf3'
     HP_TORPEDO = 'HpTorpedo01'
 
     COLLISION_HIT_PTS_PERCENT = {

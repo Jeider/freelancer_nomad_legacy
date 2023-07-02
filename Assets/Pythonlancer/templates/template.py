@@ -1,2 +1,6 @@
 class Template(object):
-	pass
+    TEMPLATE = None
+
+    def format(self, params):
+        return self.TEMPLATE.format(**params)
+
