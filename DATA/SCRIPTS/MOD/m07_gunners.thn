@@ -608,24 +608,24 @@ entities={
 		},
 	},
 	
-	
-	{
-		12.9,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"Char_trent",
-			"point_trent_stand_to_sit"
-		},
-		{
-			duration=0.001,
-			target_part="",
-			target_type=ROOT,
-			spatialprops={
-				pos={0,0,0},
-				q_orient={1,0,0,0}
-			}
-		}
-	},
+	-- ????????????
+	-- {
+		-- 12.9,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "Char_trent",
+			-- "point_trent_stand_to_sit"
+		-- },
+		-- {
+			-- duration=0.001,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- pos={0,0,0},
+				-- q_orient={1,0,0,0}
+			-- }
+		-- }
+	-- },
 	{
 		entity_name="cam_hammer_reveal",
 		type=CAMERA,
