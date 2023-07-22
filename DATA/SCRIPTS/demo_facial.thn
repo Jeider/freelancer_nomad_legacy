@@ -4114,14 +4114,14 @@ events={
 	
 	
 	
-	{
-		0,
-		SET_CAMERA,
-		{
-			"Monitor_1",
-			"cam_syd"
-		}
-	},
+	-- {
+		-- 0,
+		-- SET_CAMERA,
+		-- {
+			-- "Monitor_1",
+			-- "cam_syd"
+		-- }
+	-- },
 	
 	-- {
 		-- 1,
@@ -4428,24 +4428,24 @@ events={
 	-- }, 
 	
 	
-	{
-		1,
-		START_SOUND,
-		{
-			"DX_m08_osiris_0300_king"
-		},
-		{
-			duration=15
-		}
-	},
+	-- {
+		-- 1,
+		-- START_SOUND,
+		-- {
+			-- "DX_m08_osiris_0300_king"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
  
-	{
-		1,
-		START_MOTION,
-		{"Char_king"},
-		{animation="Sc_dx_s006x_0701_king",
-		 duration=12, start_time=0.4,  time_scale=0.8, trans_time=0.25, weight=1, heading=-1}
-	}, 
+	-- {
+		-- 1,
+		-- START_MOTION,
+		-- {"Char_king"},
+		-- {animation="Sc_dx_s006x_0701_king",
+		 -- duration=12, start_time=0.4,  time_scale=0.8, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
 	
 	-- {
 		-- 0.01,
@@ -4631,14 +4631,14 @@ events={
 
 
 
-	-- {
-		-- 0.1,
-		-- SET_CAMERA,
-		-- {
-			-- "Monitor_1",
-			-- "cam_dbg_alaric"
-		-- }
-	-- },	
+	{
+		0.1,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_dbg_alaric"
+		}
+	},	
 	
 	
 	
@@ -4657,8 +4657,8 @@ events={
 		-- 1,
 		-- START_MOTION,
 		-- {"Char_alaric"},
-		-- {animation="Sc_dx_s026b_2401_vance",
-		 -- duration=12, start_time=3, time_scale=0.6, trans_time=0.25, weight=1, heading=-1}
+		-- {animation="Sc_dx_s068x_0201_walker",
+		 -- duration=12, start_time=0, time_scale=1, trans_time=0.25, weight=1, heading=-1}
 	-- },
 	
 	
@@ -4676,8 +4676,8 @@ events={
 		-- 1,
 		-- START_MOTION,
 		-- {"Char_alaric"},
-		-- {animation="Sc_dx_s032c_0202_dexter",
-		 -- duration=12, start_time=2, time_scale=0.6, trans_time=0.25, weight=1, heading=-1}
+		-- {animation="Sc_dx_s068x_0201_walker",
+		 -- duration=12, start_time=0, time_scale=1, trans_time=0.25, weight=1, heading=-1}
 	-- },
 	
 	-- {
@@ -4698,11 +4698,11 @@ events={
 		 -- duration=12, start_time=0, time_scale=1, trans_time=0.25, weight=1, heading=-1}
 	-- },
 	-- {
-		-- 6,
+		-- 5,
 		-- START_MOTION,
 		-- {"Char_alaric"},
 		-- {animation="Sc_dx_s032a_0502_dexter",
-		 -- duration=12, start_time=0.6, time_scale=1, trans_time=0.5, weight=1, heading=-1}
+		 -- duration=12, start_time=0.4, time_scale=1, trans_time=0.5, weight=1, heading=-1}
 	-- },
 	
 	
@@ -4721,10 +4721,10 @@ events={
 		-- START_MOTION,
 		-- {"Char_alaric"},
 		-- {animation="Sc_dx_s033x_0701_dexter",
-		 -- duration=12, start_time=0.5, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+		 -- duration=12, start_time=0, time_scale=1, trans_time=0.25, weight=1, heading=-1}
 	-- },
 	-- {
-		-- 3.3,
+		-- 3.7,
 		-- START_MOTION,
 		-- {"Char_alaric"},
 		-- {animation="Sc_dx_s032d_0101_dexter",
@@ -4748,7 +4748,7 @@ events={
 		-- START_MOTION,
 		-- {"Char_alaric"},
 		-- {animation="Sc_dx_s068x_0302_walker",
-		 -- duration=12, start_time=0, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+		 -- duration=12, start_time=0, time_scale=1, trans_time=0.1, weight=1, heading=-1}
 	-- },
 	-- {
 		-- 4,
@@ -4785,24 +4785,24 @@ events={
 	-- },
 	
 		
-	-- {
-		-- 1,
-		-- START_SOUND,
-		-- {
-			-- "DX_m08_osiris_0290_major"
-		-- },
-		-- {
-			-- duration=15
-		-- }
-	-- },
+	{
+		1,
+		START_SOUND,
+		{
+			"DX_m08_osiris_0290_major"
+		},
+		{
+			duration=15
+		}
+	},
 
-	-- {
-		-- 1,
-		-- START_MOTION,
-		-- {"Char_alaric"},
-		-- {animation="Sc_dx_s068x_0501_walker",
-		 -- duration=12, start_time=0.5, time_scale=1, trans_time=0.25, weight=1, heading=-1}
-	-- },
+	{
+		1,
+		START_MOTION,
+		{"Char_alaric"},
+		{animation="Sc_dx_s068x_0501_walker",
+		 duration=12, start_time=0.2, time_scale=1.2, trans_time=0.25, weight=1, heading=-1}
+	},
 
 	-- {
 		-- 0.2,
