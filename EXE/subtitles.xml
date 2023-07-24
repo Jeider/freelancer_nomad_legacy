@@ -518,6 +518,46 @@
 
 
 
+<Static AudioFile="mod\m08\m08_osiris_0010_hatcher.wav" TextArea="Cinematic">Mayo... uhhm... Sorry, general King, mayor Screw, Trent has been delivired.</Static>
+<Static AudioFile="mod\m08\m08_osiris_0020_king.wav" TextArea="Cinematic">Thanks, Miss Hatcher.</Static>
+<Static AudioFile="mod\m08\m08_osiris_0030_king.wav" TextArea="Cinematic">Mr.Trent, I know, it was a wild ... ehem... couple of days for you...</Static>
+<Static AudioFile="mod\m08\m08_osiris_0040_trent.wav" TextArea="Cinematic">Weeks...</Static>
+<Static AudioFile="mod\m08\m08_osiris_0050_king.wav" TextArea="Cinematic">Even mounths, but there are things beyond moral and physical exhaustion. At this moment it's very important to locate the tome of Proteus, so familiar to you, and the key. </Static>
+<Static AudioFile="mod\m08\m08_osiris_0060_king.wav" TextArea="Cinematic">For this reason, tell me, please, everything that has happened to you since the moment Miss Hatcher ordered you to go to Sigma-19 with squad Delta.</Static>
+<Static AudioFile="mod\m08\m08_osiris_0070_trent.wav" TextArea="Cinematic">We were intercepted in Omicron Major, we didn't make it to Sigma-19.</Static>
+<Static AudioFile="mod\m08\m08_osiris_0080_king.wav" TextArea="Cinematic">Intercepted by who?</Static>
+<Static AudioFile="mod\m08\m08_osiris_0090_trent.wav" TextArea="Cinematic">I don't know, some tough guys from a battleship named "Orillion". Then captain Sid helped us to escape it.</Static>
+<Static AudioFile="mod\m08\m08_osiris_0100_king.wav" TextArea="Cinematic">Captain Sid...</Static>
+<Static AudioFile="mod\m08\m08_osiris_0110_major.wav" TextArea="Cinematic">Captain Sid...</Static>
+<Static AudioFile="mod\m08\m08_osiris_0120_trent.wav" TextArea="Cinematic">Then agent Rockford contacted me. Or rather I contacted him...</Static>
+<Static AudioFile="mod\m08\m08_osiris_0130_king.wav" TextArea="Cinematic">Rockford?</Static>
+<Static AudioFile="mod\m08\m08_osiris_0140_trent.wav" TextArea="Cinematic">Rockford. And he helped me retrieve the artifacts. But later it turned out he wanted to retrieve them to himself, and tried to destroy me. And he almost managed to.</Static>
+<Static AudioFile="mod\m08\m08_osiris_0145_trent.wav" TextArea="Cinematic">In the very last moment, I sliped and saved this:</Static>
+<Static AudioFile="mod\m08\m08_osiris_0150_king.wav" TextArea="Cinematic">So Rockford knows</Static>
+<Static AudioFile="mod\m08\m08_osiris_0160_major.wav" TextArea="Cinematic">And in the game</Static>
+<Static AudioFile="mod\m08\m08_osiris_0170_king.wav" TextArea="Cinematic">And in the game ... yet... We need to fix that.</Static>
+<Static AudioFile="mod\m08\m08_osiris_0180_major.wav" TextArea="Cinematic">At this moment he is somewhere around  state of New Order. We need an agent in New Order. An agent, that will track down his coordinates.</Static>
+<Static AudioFile="mod\m08\m08_osiris_0190_king.wav" TextArea="Cinematic">And will you provide him to us?</Static>
+<Static AudioFile="mod\m08\m08_osiris_0200_major.wav" TextArea="Cinematic">No, I won't. There are only a few of my agents left in the Order, they are being shot like partridges there.</Static>
+<Static AudioFile="mod\m08\m08_osiris_0210_king.wav" TextArea="Cinematic">Perhaps... Mr.Trent will help us?</Static>
+<Static AudioFile="mod\m08\m08_osiris_0220_hatcher.wav" TextArea="Cinematic">Trent has wasted two artifacts, one cover squadron, and what are we going to offer him? To become an agent in Order ... General King, are you out of your mind???</Static>
+<Static AudioFile="mod\m08\m08_osiris_0230_major.wav" TextArea="Cinematic">Let alone he probably is an agent of Order.</Static>
+<Static AudioFile="mod\m08\m08_osiris_0240_king.wav" TextArea="Cinematic">But I trust this guy. Trent, let's do it this way: you're helping us, and we're going to erase your background before ASF and paying you triple the rate.</Static>
+<Static AudioFile="mod\m08\m08_osiris_0250_trent.wav" TextArea="Cinematic">You know what? Screw you, general King. Lately, the only thing I'm doing is trying to fix my reputation and get big money.</Static>
+<Static AudioFile="mod\m08\m08_osiris_0260_trent.wav" TextArea="Cinematic">But it always ends up with me being hunted and accused in even more severe crimes.</Static>
+<Static AudioFile="mod\m08\m08_osiris_0270_major.wav" TextArea="Cinematic">General King, can you remind us what was the name of the agent we introduced into the Order before Trent?</Static>
+<Static AudioFile="mod\m08\m08_osiris_0280_king.wav" TextArea="Cinematic">Who cares? We lost contact to him, he must be dead.</Static>
+<Static AudioFile="mod\m08\m08_osiris_0290_major.wav" TextArea="Cinematic">Nevertheless, General.</Static>
+<Static AudioFile="mod\m08\m08_osiris_0300_king.wav" TextArea="Cinematic">Alaric. I think, Alaric.</Static>
+<Static AudioFile="mod\m08\m08_osiris_0310_trent.wav" TextArea="Cinematic">Bastards! What happened to Alaric?</Static>
+<Static AudioFile="mod\m08\m08_osiris_0320_major.wav" TextArea="Cinematic">We don't know. We lost contact to him somewhere at Kusari teritory. </Static>
+<Static AudioFile="mod\m08\m08_osiris_0330_hatcher.wav" TextArea="Cinematic">He almost made it. He had to transfer a data base to us, but he did not get in touch. We don't know who got their hands on Alaric and his information.</Static>
+<Static AudioFile="mod\m08\m08_osiris_0340_king.wav" TextArea="Cinematic">You can help us and your friend. Find him, transfer the date your friend was supposed to transfer and you're free.</Static>
+<Static AudioFile="mod\m08\m08_osiris_0345_king.wav" TextArea="Cinematic">And don't even think about doing anything stupid, don't even think. </Static>
+<Static AudioFile="mod\m08\m08_osiris_0350_trent.wav" TextArea="Cinematic">Fine...</Static>
+<Static AudioFile="mod\m08\m08_osiris_0360_king.wav" TextArea="Cinematic">Miss Hatcher, retrieve all data on Agent Alaric and hand it over to mister Trent.</Static>
+<Static AudioFile="mod\m08\m08_osiris_0370_king.wav" TextArea="Cinematic">Next, your task will be to escortthe  tome of Proteus along with Trent and Miss Darcy to the research base.</Static>
+<Static AudioFile="mod\m08\m08_osiris_0380_hatcher.wav" TextArea="Cinematic">Roger!</Static>
 
 
 

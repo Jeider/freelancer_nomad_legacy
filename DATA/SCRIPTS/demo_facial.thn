@@ -4447,6 +4447,102 @@ events={
 		 -- duration=12, start_time=0.4,  time_scale=0.8, trans_time=0.25, weight=1, heading=-1}
 	-- }, 
 	
+	
+	-- {
+		-- 1,
+		-- START_SOUND,
+		-- {
+			-- "DX_m08_osiris_0340_king"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+ 
+	-- {
+		-- 1,
+		-- START_MOTION,
+		-- {"Char_king"},
+		-- {animation="Sc_dx_s006x_0502_king",
+		 -- duration=12, start_time=0,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 4,
+		-- START_MOTION,
+		-- {"Char_king"},
+		-- {animation="Sc_dx_s009b_0401_king",
+		 -- duration=12, start_time=0,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	
+	
+	
+	-- {
+		-- 9.5,
+		-- START_SOUND,
+		-- {
+			-- "DX_m08_osiris_0345_king"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+ 
+	-- {
+		-- 9.5,
+		-- START_MOTION,
+		-- {"Char_king"},
+		-- {animation="Sc_dx_s006x_0803_king",
+		 -- duration=12, start_time=0.4,  time_scale=0.7, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+
+
+	-- {
+		-- 1,
+		-- START_SOUND,
+		-- {
+			-- "DX_m08_osiris_0360_king"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+ 
+	-- {
+		-- 1,
+		-- START_MOTION,
+		-- {"Char_king"},
+		-- {animation="Sc_dx_s009b_0401_king",
+		 -- duration=12, start_time=0,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	
+	-- {
+		-- 6.4,
+		-- START_SOUND,
+		-- {
+			-- "DX_m08_osiris_0370_king"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+ 
+	-- {
+		-- 6.4,
+		-- START_MOTION,
+		-- {"Char_king"},
+		-- {animation="Sc_dx_s071a_0101_king",
+		 -- duration=12, start_time=0.5,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 8.4,
+		-- START_MOTION,
+		-- {"Char_king"},
+		-- {animation="Sc_dx_s009b_0401_king",
+		 -- duration=12, start_time=0.4,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- },  
+	
+	
+	
 	-- {
 		-- 0.01,
 		-- SET_CAMERA,
@@ -4630,15 +4726,53 @@ events={
 	-- }, 
 
 
+	-- {
+		-- 1,
+		-- START_SOUND,
+		-- {
+			-- "DX_m08_osiris_0310_trent"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	-- {
+		-- 1,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_dx_s037a_1801_trent",
+		 -- duration=6, start_time=0,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
 
-	{
-		0.1,
-		SET_CAMERA,
-		{
-			"Monitor_1",
-			"cam_dbg_alaric"
-		}
-	},	
+
+	
+	-- {
+		-- 1,
+		-- START_SOUND,
+		-- {
+			-- "DX_m08_osiris_0350_trent"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	-- {
+		-- 1,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_dx_s020x_0801_trent",
+		 -- duration=6, start_time=0,  time_scale=0.7, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+
+
+	-- {
+		-- 0.1,
+		-- SET_CAMERA,
+		-- {
+			-- "Monitor_1",
+			-- "cam_dbg_alaric"
+		-- }
+	-- },	
 	
 	
 	
@@ -4785,33 +4919,62 @@ events={
 	-- },
 	
 		
-	{
-		1,
-		START_SOUND,
-		{
-			"DX_m08_osiris_0290_major"
-		},
-		{
-			duration=15
-		}
-	},
-
-	{
-		1,
-		START_MOTION,
-		{"Char_alaric"},
-		{animation="Sc_dx_s068x_0501_walker",
-		 duration=12, start_time=0.2, time_scale=1.2, trans_time=0.25, weight=1, heading=-1}
-	},
+	-- {
+		-- 1,
+		-- START_SOUND,
+		-- {
+			-- "DX_m08_osiris_0290_major"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
 
 	-- {
-		-- 0.2,
-		-- SET_CAMERA,
+		-- 1,
+		-- START_MOTION,
+		-- {"Char_alaric"},
+		-- {animation="Sc_dx_s068x_0501_walker",
+		 -- duration=12, start_time=0.2, time_scale=1.2, trans_time=0.25, weight=1, heading=-1}
+	-- },
+	
+	
+	-- {
+		-- 1,
+		-- START_SOUND,
 		-- {
-			-- "Monitor_1",
-			-- "cam_hatcher"
+			-- "DX_m08_osiris_0320_major"
+		-- },
+		-- {
+			-- duration=15
 		-- }
-	-- },	
+	-- },
+
+	-- {
+		-- 1,
+		-- START_MOTION,
+		-- {"Char_alaric"},
+		-- {animation="Sc_dx_s068x_0501_walker",
+		 -- duration=12, start_time=1.2, time_scale=1.2, trans_time=0.25, weight=1, heading=-1}
+	-- },
+
+	-- {
+		-- 2,
+		-- START_MOTION,
+		-- {"Char_alaric"},
+		-- {animation="Sc_dx_s015x_0502_walker",
+		 -- duration=12, start_time=1, time_scale=1.2, trans_time=0.25, weight=1, heading=-1}
+	-- },
+
+
+	{
+		0.2,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_hatcher"
+		}
+	},	
 
 	-- {
 		-- 1,
@@ -4883,6 +5046,67 @@ events={
 		 -- duration=100, time_scale=0.5, start_time=0, trans_time=1, weight=1, heading=-1}
 	-- },	
 
+
+	-- {
+		-- 1,
+		-- START_SOUND,
+		-- {
+			-- "DX_m08_osiris_0330_hatcher"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	
+	-- {
+		-- 1,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s027x_2801_sinclair",
+		 -- duration=5, start_time=0, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 2.5,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s028x_0702_sinclair",
+		 -- duration=12, start_time=0, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 4.7,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_dx_s029x_1401_sinclair",
+		 -- duration=12, start_time=0, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	
+	
+	{
+		1,
+		START_SOUND,
+		{
+			"DX_m08_osiris_0380_hatcher"
+		},
+		{
+			duration=15
+		}
+	},
+	
+	{
+		1,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_dx_s070x_2701_Jacobi",
+		 duration=5, start_time=3, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 
+
+	{
+		1,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_FMBODY_STND_SALUT_000LV_XA_03",
+		 duration=10, time_scale=1, start_time=1.5, weight=1, heading=-1}
+	},	
 
 
 }

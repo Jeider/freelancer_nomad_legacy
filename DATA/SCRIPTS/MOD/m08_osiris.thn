@@ -1,4 +1,4 @@
-duration=6111
+duration=226
 
 readfrom('thn_settings.txt')
 
@@ -321,6 +321,15 @@ entities={
 		}
 	},
 	{
+		entity_name="point_trent_sit_forward",
+		type=MARKER,
+		template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+		spatialprops={
+			pos={-0.2, 0, -6.2},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		}
+	},
+	{
 		entity_name="point_captain_aim",
 		type=MARKER,
 		template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
@@ -333,6 +342,35 @@ entities={
 			}
 		}
 	},
+	{
+		entity_name="point_rifleman_initial",
+		type=MARKER,
+		template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+		spatialprops={
+			pos={
+				1.5,
+				0,
+				-7
+			},
+			orient={{0,0,-1},{0,1,0},{1,0,0}}
+		},
+	},
+	{
+		entity_name="point_rifleman_near_trent",
+		type=MARKER,
+		template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+		spatialprops={
+			pos={
+				0.7,
+				0,
+				-6.8
+			},
+			orient={{0,0,-1},{0,1,0},{1,0,0}}
+		},
+	},
+	
+	
+	
 	{
 		entity_name="point_king_init",
 		type=MARKER,
@@ -494,6 +532,26 @@ entities={
 		},
 	},
 	{
+		entity_name="head_hatcher_right",
+		type=MARKER, template_name="", template_id=0,
+		spatialprops={
+			pos={
+				-2, 1.55, -6.2
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+	{
+		entity_name="head_hatcher_right_far",
+		type=MARKER, template_name="", template_id=0,
+		spatialprops={
+			pos={
+				-2.5, 1.55, -6.2
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+	{
 		entity_name="head_trent",
 		type=MARKER, template_name="", template_id=0,
 		spatialprops={
@@ -509,6 +567,16 @@ entities={
 		spatialprops={
 			pos={
 				-0.15, 1.35, -6
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+	{
+		entity_name="head_trent_upper_forward",
+		type=MARKER, template_name="", template_id=0,
+		spatialprops={
+			pos={
+				-0.15, 1.3, -7.5
 			},
 			orient={{1,0,0},{0,1,0},{0,0,1}}
 		},
@@ -1027,7 +1095,72 @@ entities={
 		template_id=0,
 		spatialprops={
 			pos={
-				0.1, 1.2, -5.6
+				0, 1.2, -5.7
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+
+
+	
+	{
+		entity_name="cam_trent_reaction",
+		type=CAMERA,
+		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				-0.3, 1.9, -9
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+		cameraprops={
+			fovh=15,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_trent_reaction_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				0.5, 1, -5.5
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+	
+	
+	{
+		entity_name="cam_hatcher_sad",
+		type=CAMERA,
+		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				-0.1, 1.5, -6.9
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+		cameraprops={
+			fovh=15,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_hatcher_sad_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				-1.5, 1.5, -5.9
 			},
 			orient={{1,0,0},{0,1,0},{0,0,1}}
 		},
@@ -1045,7 +1178,8 @@ entities={
 				-- 0, 7, 12 --entrance
 				-- 4, 5, -4 --def left
 				-- -2, 2, -6 --king
-				-2, 2, -9 --trent
+				-- -2, 2, -9 --trent
+				0, 2, -9 --rifleman reaction
 			},
 			orient={
 				{1,0,0},
@@ -1072,7 +1206,8 @@ entities={
 				-- 0, 1, 2 --entrance
 				-- 0, 1, -6 --def left
 				-- 0, 1, -9 --king
-				0, 0.5, -6 --trent
+				-- 0, 0.5, -6 --trent
+				0, 0.5, -6 --rifleman reaction
 			},
 			orient={
 				{1,0,0},
@@ -1217,8 +1352,31 @@ events = {
 			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
 		}
 	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_trent_reaction",
+			"cam_trent_reaction_marker"
+		},
+		{
+			duration=200, offset={0,0,0},
+			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+		}
+	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_hatcher_sad",
+			"cam_hatcher_sad_marker"
+		},
+		{
+			duration=200, offset={0,0,0},
+			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+		}
+	},
 	
-
 
 
 	{
@@ -1471,7 +1629,7 @@ events = {
 			"hatcher_head_ik"
 		},
 		{
-			duration=13,
+			duration=2555,
 			end_effector="Body_Head",
 			target_part="",
 			target_type=ROOT,
@@ -1486,7 +1644,7 @@ events = {
 			"hatcher_eye_ik"
 		},
 		{
-			duration=13,
+			duration=2555,
 			end_effector="Eye IK Left",
 			target_part="",
 			target_type=ROOT,
@@ -1558,10 +1716,7 @@ events = {
 	
 	
 	
-	
-	
-	
-	
+
 
 
 	{
@@ -1620,7 +1775,7 @@ events = {
 			"king_head_ik"
 		},
 		{
-			duration=200,
+			duration=500,
 			end_effector="Body_Head",
 			target_part="",
 			target_type=ROOT,
@@ -1635,7 +1790,7 @@ events = {
 			"king_eye_ik"
 		},
 		{
-			duration=200,
+			duration=500,
 			end_effector="Eye IK Left",
 			target_part="",
 			target_type=ROOT,
@@ -1904,7 +2059,6 @@ events = {
 		}
 	},	
 	
-
 	
 	{
 		25,
@@ -3054,6 +3208,35 @@ events = {
 	},
 	
 	
+	{
+		122,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"hatcher_head_ik",
+			"head_king"
+		},
+		{
+			duration=2.5,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		122,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"hatcher_eye_ik",
+			"head_king"
+		},
+		{
+			duration=1.5,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	
 	
 	{
 		123,
@@ -3330,14 +3513,14 @@ events = {
 	
 	
 	{
-		148.3,
+		151.3,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"cam_trent_decline",
 			"cam_trent_decline_pos2"
 		},
 		{
-			duration=16,
+			duration=13,
 			target_part="",
 			target_type=ROOT,
 			spatialprops={
@@ -3349,14 +3532,14 @@ events = {
 		}
 	},
 	{
-		148.3,
+		151.3,
 		START_SPATIAL_PROP_ANIM,
 		{
 			"cam_trent_decline_marker",
 			"cam_trent_decline_marker_pos2"
 		},
 		{
-			duration=16,
+			duration=13,
 			target_part="",
 			target_type=ROOT,
 			spatialprops={
@@ -3600,13 +3783,603 @@ events = {
 		SET_CAMERA,
 		{
 			"Monitor_1",
-			"cam_trent_artifact"
+			"cam_trent_reaction"
+		}
+	},
+	
+	{
+		180,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_trent",
+			"point_trent_sit_forward"
+		},
+		{
+			duration=0,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			}
+		}
+	},
+	{
+		180,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_rifleman",
+			"point_rifleman_near_trent"
+		},
+		{
+			duration=0,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			}
+		}
+	},
+	{
+		180.005,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_rifleman"
+		},
+		{
+			duration=0,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					-25,
+					Y_AXIS
+				}
+			}
+		}
+	},
+
+	{
+		180.3,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_SPCBODY_s051x_Trent_XC_CHRF_RLLV_29",
+		 duration=6, time_scale=1, start_time=24.8, weight=1, heading=-1}
+	},	
+
+
+
+	{
+		180.3,
+		START_MOTION,
+		{"Char_rifleman"},
+		{animation="Sc_SPCBODY_s051x_ku_guard01_XB_STND_000LV_05",
+		 duration=6, time_scale=1, weight=1, heading=-1}
+	},	
+
+
+
+	{
+		180.3,
+		START_SOUND,
+		{
+			"DX_m08_osiris_0310_trent"
+		},
+		{
+			duration=15
+		}
+	},
+	{
+		180.3,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_dx_s037a_1801_trent",
+		 duration=6, start_time=0,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 
+
+	
+	{
+		184,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_major_near"
+		}
+	},
+
+
+	{
+		184,
+		START_SOUND,
+		{
+			"DX_m08_osiris_0320_major"
+		},
+		{
+			duration=15
+		}
+	},
+
+	{
+		184,
+		START_MOTION,
+		{"Char_major"},
+		{animation="Sc_dx_s068x_0501_walker",
+		 duration=12, start_time=1.2, time_scale=1.2, trans_time=0.25, weight=1, heading=-1}
+	},
+
+	{
+		185,
+		START_MOTION,
+		{"Char_major"},
+		{animation="Sc_dx_s015x_0502_walker",
+		 duration=12, start_time=1, time_scale=1.2, trans_time=0.25, weight=1, heading=-1}
+	},
+
+
+	{
+		184,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"major_head_ik",
+			"head_trent_upper"
+		},
+		{
+			duration=2,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		184,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"major_eye_ik",
+			"head_trent"
+		},
+		{
+			duration=1.5,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+
+
+	
+	{
+		188.5,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_hatcher_sad"
 		}
 	},
 	
 	
+	{
+		188.5,
+		START_SOUND,
+		{
+			"DX_m08_osiris_0330_hatcher"
+		},
+		{
+			duration=15
+		}
+	},
+	
+	{
+		188.5,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_dx_s027x_2801_sinclair",
+		 duration=5, start_time=0, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	{
+		190,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_dx_s028x_0702_sinclair",
+		 duration=12, start_time=0, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	{
+		192.2,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_dx_s029x_1401_sinclair",
+		 duration=12, start_time=0, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 
 	
 	
+
+	
+	
+	{
+		188,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_FMBODY_STND_IDLE_000LV_xa_05",
+		 duration=100, time_scale=1, weight=1, heading=-1, event_flags=2}
+	},	
+	
+	
+	{
+		188.5,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"hatcher_head_ik",
+			"head_trent_upper_forward"
+		},
+		{
+			duration=2.5,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		188.5,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"hatcher_eye_ik",
+			"head_trent"
+		},
+		{
+			duration=1.5,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	
+
+	{
+		197.5,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_king_near"
+		}
+	},
+	
+
+	
+	{
+		197.5,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"king_head_ik",
+			"head_trent_upper"
+		},
+		{
+			duration=2,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		197.5,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"king_eye_ik",
+			"head_trent"
+		},
+		{
+			duration=1.3,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+
+	{
+		197.5,
+		START_SOUND,
+		{
+			"DX_m08_osiris_0340_king"
+		},
+		{
+			duration=15
+		}
+	},
+ 
+	{
+		197.5,
+		START_MOTION,
+		{"Char_king"},
+		{animation="Sc_dx_s006x_0502_king",
+		 duration=12, start_time=0,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	{
+		200.5,
+		START_MOTION,
+		{"Char_king"},
+		{animation="Sc_dx_s009b_0401_king",
+		 duration=12, start_time=0,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	
+	
+	
+	{
+		206,
+		START_SOUND,
+		{
+			"DX_m08_osiris_0345_king"
+		},
+		{
+			duration=15
+		}
+	},
+ 
+	{
+		206,
+		START_MOTION,
+		{"Char_king"},
+		{animation="Sc_dx_s006x_0803_king",
+		 duration=12, start_time=0.4,  time_scale=0.7, trans_time=0.25, weight=1, heading=-1}
+	}, 
+
+
+	{
+		209,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_rifleman",
+			"offscreen"
+		},
+		{
+			duration=0,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			}
+		}
+	},
+	
+	{
+		209,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_trent",
+			"point_trent_sit"
+		},
+		{
+			duration=0,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			}
+		}
+	},
+	{
+		209.1,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+		 duration=100, time_scale=0.6, weight=1, heading=-1, event_flags=2}
+	},	
+
+
+	{
+		209.5,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_trent_near"
+		}
+	},
+	
+	{
+		209.5,
+		START_SOUND,
+		{
+			"DX_m08_osiris_0350_trent"
+		},
+		{
+			duration=15
+		}
+	},
+	{
+		209.5,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_dx_s020x_0801_trent",
+		 duration=6, start_time=0,  time_scale=0.7, trans_time=0.25, weight=1, heading=-1}
+	}, 
+
+
+	{
+		211.5,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_king_far"
+		}
+	},
+	
+	{
+		211.5,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"king_head_ik",
+			"head_hatcher_right"
+		},
+		{
+			duration=2,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		211.5,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"king_eye_ik",
+			"head_hatcher_right_far"
+		},
+		{
+			duration=1.5,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	
+	{
+		211.5,
+		START_SOUND,
+		{
+			"DX_m08_osiris_0360_king"
+		},
+		{
+			duration=15
+		}
+	},
+ 
+	{
+		211.5,
+		START_MOTION,
+		{"Char_king"},
+		{animation="Sc_dx_s009b_0401_king",
+		 duration=12, start_time=0,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	
+	{
+		216.9,
+		START_SOUND,
+		{
+			"DX_m08_osiris_0370_king"
+		},
+		{
+			duration=15
+		}
+	},
+ 
+	{
+		216.9,
+		START_MOTION,
+		{"Char_king"},
+		{animation="Sc_dx_s071a_0101_king",
+		 duration=12, start_time=0.5,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	{
+		218.9,
+		START_MOTION,
+		{"Char_king"},
+		{animation="Sc_dx_s009b_0401_king",
+		 duration=12, start_time=0.4,  time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	},  
+	
+	
+	
+	{
+		219,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"hatcher_head_ik",
+			"head_king"
+		},
+		{
+			duration=2.5,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	{
+		219,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"hatcher_eye_ik",
+			"head_king"
+		},
+		{
+			duration=1.5,
+			target_part="", target_type=ROOT,
+			spatialprops={pos={0,0,0}, q_orient={1,0,0,0}},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	
+	
+	{
+		223.5,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_start_hatcher"
+		}
+	},
+	
+	
+	{
+		223.5,
+		START_SOUND,
+		{
+			"DX_m08_osiris_0380_hatcher"
+		},
+		{
+			duration=15
+		}
+	},
+	
+	{
+		223.5,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_dx_s070x_2701_Jacobi",
+		 duration=5, start_time=3, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	}, 
+
+	{
+		223.5,
+		START_MOTION,
+		{"Char_hatcher"},
+		{animation="Sc_FMBODY_STND_SALUT_000LV_XA_03",
+		 duration=10, time_scale=1, start_time=1.5, weight=1, heading=-1}
+	},	
+	
+	
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	
 	-- {
