@@ -5,6 +5,8 @@ from world.power import Power
 from world.engine import Engine
 from world.shield import Shield, ShieldNPC
 from world.thruster import Thruster
+from world.armor import ArmorNPC
+from world.ship import Ship
 
 SINGLE_DIVIDER = "\n"
 DIVIDER = "\n\n"
@@ -23,6 +25,8 @@ class MiscEquipManager(object):
         self.npc_shields_list = []
         self.thrusters_db = {}
         self.thrusters_list = []
+        self.npc_armors_db = {}
+        self.npc_armors_list = []
 
         self.last_string_id = last_string_id
 
@@ -75,6 +79,13 @@ class MiscEquipManager(object):
                 self.thrusters_db[equip_type][equipment_class] = thruster
                 self.thrusters_list.append(thruster)
 
+        # NPC shiparch features
+
+        for armor_index, armor_scale in Ship.ARMOR_INDICES.items():
+            npc_armor = ArmorNPC(armor_index, armor_scale)
+            self.npc_armors_db[armor_index] = npc_armor
+            self.npc_armors_list.append(npc_armor)
+
     def get_engine(self, shipclass, equip_type, equipment_class):
         return self.engines_db[shipclass][equip_type][equipment_class]
 
@@ -89,6 +100,9 @@ class MiscEquipManager(object):
 
     def get_thruster(self, equip_type, equipment_class):
         return self.thrusters_db[equip_type][equipment_class]
+
+    def get_npc_armor(self, armor_index):
+        return self.npc_armors_db[armor_index]
 
     def get_engine_equip(self):
         data = ''
@@ -147,6 +161,14 @@ class MiscEquipManager(object):
 
         for thruster in self.thrusters_list:
             data += thruster.get_good() + DIVIDER
+
+        return data
+
+    def get_select_equip(self):
+        data = ''
+
+        for armor in self.npc_armors_list:
+            data += armor.get_equip() + DIVIDER
 
         return data
 

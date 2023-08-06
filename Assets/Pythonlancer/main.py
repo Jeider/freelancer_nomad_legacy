@@ -31,6 +31,7 @@ def main():
         ('power_good.ini', core.misc_equip.get_powerplant_good()),
         ('st_equip.ini', core.misc_equip.get_st_equip()),
         ('st_good.ini', core.misc_equip.get_st_good()),
+        ('select_equip.ini', core.misc_equip.get_select_equip()),
 
         ('faction_prop_helper.ini', core.population.get_npc_names()),
         ('npcships.ini', core.population.get_npcships()),

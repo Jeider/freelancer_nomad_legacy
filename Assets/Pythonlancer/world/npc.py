@@ -57,6 +57,7 @@ class NPC(object):
     ENGINE = 'engine'
     POWER = 'power'
     SHIELD = 'shield'
+    ARMOR = 'armor'
     WEAPON_1 = 'weapon1'
     WEAPON_2 = 'weapon2'
     WEAPON_3 = 'weapon3'
@@ -228,6 +229,11 @@ npc_class = {classes_list}'''
     def get_mine_ammo(self):
         return self.equipment[self.MINE_AMMO]
 
+    def get_armor_index(self):
+        start_index = self.ship.START_ARMOR_INDEX_PER_SHIP_INDEX[self.ship.SHIP_INDEX]
+        required_index = start_index + self.level - 1
+        return required_index
+
     def set_equipment_package(self, package):
         self.package = package
 
@@ -239,6 +245,7 @@ npc_class = {classes_list}'''
             self.POWER: self.package[self.POWER].get_nickname(),
             self.SHIELD: self.package[self.SHIELD].get_nickname(),
             self.SHIELD_NPC: self.package[self.SHIELD_NPC].get_nickname(),
+            self.ARMOR:  self.package[self.ARMOR].get_nickname(),
             self.WEAPON_1: self.package[self.WEAPON_1].get_nickname(),
             self.WEAPON_2: self.package[self.WEAPON_2].get_nickname(),
             self.WEAPON_3: self.package[self.WEAPON_3].get_nickname(),

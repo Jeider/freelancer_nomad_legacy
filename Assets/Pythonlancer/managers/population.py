@@ -33,6 +33,7 @@ class PopulationManager(object):
             NPC.POWER: self.misc_equip.get_powerplant(npc.ship.EQUIPMENT_SHIPCLASS, faction.POWER, npc.get_powerplant_class()),
             NPC.SHIELD: self.misc_equip.get_shield(npc.ship.EQUIPMENT_SHIPCLASS, faction.SHIELD, npc.get_shield_class()),
             NPC.SHIELD_NPC: self.misc_equip.get_npc_shield(npc.ship.EQUIPMENT_SHIPCLASS, faction.SHIELD, npc.get_shield_class()),
+            NPC.ARMOR: self.misc_equip.get_npc_armor(npc.get_armor_index()),
             NPC.WEAPON_1: self.weapons.get_gun(faction.WEAPON, npc.get_weapon1_class()),
             NPC.WEAPON_2: self.weapons.get_gun(faction.WEAPON, npc.get_weapon2_class()),
             NPC.WEAPON_3: self.weapons.get_gun(faction.WEAPON, npc.get_weapon3_class()),

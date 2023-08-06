@@ -114,6 +114,37 @@ WEAPON_MAX_CLASS_PER_INDEX = {
 BOT_REPAIR = 600
 NUM_REPAIRS = 3
 
+ARMOR_INDEX_1 = 1
+ARMOR_INDEX_2 = 2
+ARMOR_INDEX_3 = 3
+ARMOR_INDEX_4 = 4
+ARMOR_INDEX_5 = 5
+ARMOR_INDEX_6 = 6
+ARMOR_INDEX_7 = 7
+ARMOR_INDEX_8 = 8
+ARMOR_INDEX_9 = 9
+ARMOR_INDEX_10 = 10
+ARMOR_INDEX_11 = 11
+ARMOR_INDEX_12 = 12
+ARMOR_INDEX_13 = 13
+ARMOR_INDEX_14 = 14
+ARMOR_INDEX_15 = 15
+ARMOR_INDEX_16 = 16
+ARMOR_INDEX_17 = 17
+ARMOR_INDEX_18 = 18
+ARMOR_INDEX_19 = 19
+ARMOR_INDEX_20 = 20
+ARMOR_INDEX_21 = 21
+ARMOR_INDEX_22 = 22
+ARMOR_INDEX_23 = 23
+ARMOR_INDEX_24 = 24
+ARMOR_INDEX_25 = 25
+ARMOR_INDEX_26 = 26
+ARMOR_INDEX_27 = 27
+ARMOR_INDEX_28 = 28
+ARMOR_INDEX_29 = 29
+ARMOR_INDEX_30 = 30
+
 
 class Ship(object):
     ARCHETYPE = None
@@ -123,13 +154,11 @@ equip = {nickname}, {hardpoint}'''
     CARGO_TEMPLATE = '''
 cargo = {nickname}, {amount}'''
     EXTRA_CLASSES = []
-    HP_TORPEDO = 'HpTorpedo01'
     HP_CM = 'HpCM01'
     HP_MINE = 'HpMine01'
     DEFAULTS = {
         'scanner': 'scanner_npc',
         'tractor': 'tractor01',
-        'armor': 'armor_scale_fighter_level1',
     }
     COLLISION_HIT_PTS_PERCENT = {}
     COLLISION_EXPLOSION_RESISTANCE = {}
@@ -193,10 +222,55 @@ cargo = {nickname}, {amount}'''
     POWERPLANT_CLASS_TEMPLATE = None
 
     THRUSTERS = 'HpThruster01, HpThruster02'
+    HP_TORPEDO = 'HpTorpedo01'
     MAIN_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06'
     MAX_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04'
 
     CARGO_PER_INDEX = {}
+
+    ARMOR_INDICES = {
+        ARMOR_INDEX_1: 0.42,
+        ARMOR_INDEX_2: 0.47,
+        ARMOR_INDEX_3: 0.5,
+        ARMOR_INDEX_4: 0.55,
+        ARMOR_INDEX_5: 0.6,
+        ARMOR_INDEX_6: 0.68,
+        ARMOR_INDEX_7: 0.75,
+        ARMOR_INDEX_8: 0.83,
+        ARMOR_INDEX_9: 0.92,
+        ARMOR_INDEX_10: 1,
+        ARMOR_INDEX_11: 1.1,
+        ARMOR_INDEX_12: 1.2,
+        ARMOR_INDEX_13: 1.5,
+        ARMOR_INDEX_14: 1.8,
+        ARMOR_INDEX_15: 2,
+        ARMOR_INDEX_16: 2.4,
+        ARMOR_INDEX_17: 3,
+        ARMOR_INDEX_18: 3.5,
+        ARMOR_INDEX_19: 4,
+        ARMOR_INDEX_20: 4.5,
+        ARMOR_INDEX_21: 5,
+        ARMOR_INDEX_22: 6,
+        ARMOR_INDEX_23: 7.5,
+        ARMOR_INDEX_24: 9,
+        ARMOR_INDEX_25: 12,
+        ARMOR_INDEX_26: 15,
+        ARMOR_INDEX_27: 20,
+        ARMOR_INDEX_28: 30,
+    }
+
+    START_ARMOR_INDEX_PER_SHIP_INDEX = {
+        SHIP_INDEX_1: ARMOR_INDEX_10,
+        SHIP_INDEX_2: ARMOR_INDEX_10,
+        SHIP_INDEX_3: ARMOR_INDEX_9,
+        SHIP_INDEX_4: ARMOR_INDEX_9,
+        SHIP_INDEX_5: ARMOR_INDEX_8,
+        SHIP_INDEX_6: ARMOR_INDEX_7,
+        SHIP_INDEX_7: ARMOR_INDEX_6,
+        SHIP_INDEX_8: ARMOR_INDEX_5,
+        SHIP_INDEX_9: ARMOR_INDEX_4,
+        SHIP_INDEX_10: ARMOR_INDEX_3,
+    }
 
     def get_equipment_level(self):
         return EQUIPMENT_PER_INDEX[self.SHIP_INDEX]
@@ -550,6 +624,13 @@ class Dagger(RheinlandShip, ShipInterceptor, Ship1):
     ARCHETYPE = 'bw_fighter'
     TEMPLATE_CODE = 'bwf'
     HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04'
+    MAX_WEAPONS = 'HpWeapon01, HpWeapon02'
+
+    # mk2 
+    # HP_TORPEDO = 'HpTorpedo01'
+    # MAIN_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpTurret01'
+    # MAX_WEAPONS = 'HpWeapon01, HpWeapon02, HpTurret01'
 
     SHIP_TEMPLATE = '''[Loadout]
 nickname = {loadout_nickname}
@@ -603,7 +684,9 @@ class Banshee(RheinlandShip, ShipInterceptor, Ship2):
 
     ARCHETYPE = 'rh_fighter'
     TEMPLATE_CODE = 'rf'
-    TORPEDO_HP = 'HpTorpedo01'
+    HP_TORPEDO = 'HpTorpedo02'
+    MAIN_WEAPONS = 'HpTorpedo01, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04'
+    MAX_WEAPONS = 'HpTorpedo01, HpWeapon03, HpWeapon04'
 
     SHIP_TEMPLATE = '''[Loadout]
 nickname = {loadout_nickname}
@@ -657,7 +740,15 @@ class Stiletto(RheinlandShip, ShipFighter, Ship1):
 
     ARCHETYPE = 'bw_elite'
     TEMPLATE_CODE = 'bwe'
-    TORPEDO_HP = 'HpTorpedo01'
+    HP_TORPEDO = 'HpWeapon06'
+    MAIN_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05'
+    MAX_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03'
+
+    # mk2: minds??
+
+    # HP_TORPEDO = 'HpTorpedo01'
+    # MAIN_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06'
+    # MAX_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04'
 
     SHIP_TEMPLATE = '''[Loadout]
 nickname = {loadout_nickname}
@@ -720,7 +811,9 @@ class Sabre(RheinlandShip, ShipFighter, Ship2):
 
     ARCHETYPE = 'bw_elite2'
     TEMPLATE_CODE = 'bwe2'
-    TORPEDO_HP = 'HpTorpedo01'
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06'
+    MAX_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04'
 
     SHIP_TEMPLATE = '''[Loadout]
 nickname = {loadout_nickname}
@@ -783,7 +876,9 @@ class Valkyrie(RheinlandShip, ShipElite, Ship3):
 
     ARCHETYPE = 'rh_elite'
     TEMPLATE_CODE = 're'
-    TORPEDO_HP = 'HpTorpedo01'
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06'
+    MAX_WEAPONS = 'HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06'
 
     SHIP_TEMPLATE = '''[Loadout]
 nickname = {loadout_nickname}
@@ -842,7 +937,9 @@ class ValkyrieMk2(RheinlandShip, ShipElite, Ship3):
 
     ARCHETYPE = 'rh_elite2'
     TEMPLATE_CODE = 're2'
-    TORPEDO_HP = 'HpTorpedo01'
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06'
+    MAX_WEAPONS = 'HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06'
 
     COLLISION_HIT_PTS_PERCENT = {
         're2_wing_hit_pts': HP_PCT_WING,
@@ -862,6 +959,8 @@ class Humpback(RheinlandShip, ShipFreighter):
     SHIP_INDEX = SHIP_INDEX_6
 
     TEMPLATE_CODE = 'rfr'
+    MAIN_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon05, HpWeapon06, HpWeapon10'
+    MAX_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon05, HpWeapon06'
 
     COLLISION_HIT_PTS_PERCENT = {
         'rfr_panel_hit_pts': HP_PCT_WING,
@@ -884,6 +983,8 @@ class Piranha(LibertyShip, ShipInterceptor, Ship1):
     ARCHETYPE = 'bh_fighter'
     TEMPLATE_CODE = 'bhf'
     HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04'
+    MAX_WEAPONS = 'HpWeapon03, HpWeapon04'
 
     COLLISION_HIT_PTS_PERCENT = {
         'bhf_fin_hit_pts': HP_PCT_FIN,
@@ -902,7 +1003,9 @@ class Patriot(LibertyShip, ShipInterceptor, Ship2):
 
     ARCHETYPE = 'li_fighter'
     TEMPLATE_CODE = 'lf'
-    TORPEDO_HP = 'HpTorpedo01'
+    HP_TORPEDO = 'HpTorpedo02'
+    MAIN_WEAPONS = 'HpTorpedo01, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04'
+    MAX_WEAPONS = 'HpWeapon03, HpWeapon04'
 
     COLLISION_HIT_PTS_PERCENT = {
         'lf_fin_hit_pts': HP_PCT_FIN,
@@ -921,7 +1024,14 @@ class Barracuda(LibertyShip, ShipFighter, Ship1):
 
     ARCHETYPE = 'bh_elite'
     TEMPLATE_CODE = 'bhe'
-    TORPEDO_HP = 'HpTorpedo01'
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05'
+    MAX_WEAPONS = 'HpWeapon03, HpWeapon04, HpWeapon05'
+
+    # mk 2
+    # HP_TORPEDO = 'HpTorpedo02'
+    # MAIN_WEAPONS = 'HpTorpedo01, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05'
+    # MAX_WEAPONS = 'HpTorpedo01, HpWeapon03, HpWeapon04, HpWeapon05'
 
     COLLISION_HIT_PTS_PERCENT = {
         'bhe_fin1_hit_pts': HP_PCT_FIN,
@@ -946,7 +1056,9 @@ class Hammerhead(LibertyShip, ShipFighter, Ship2):
 
     ARCHETYPE = 'bh_elite2'
     TEMPLATE_CODE = 'bhe2'
-    TORPEDO_HP = 'HpTorpedo01'
+    HP_TORPEDO = 'HpWeapon06'
+    MAIN_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon07'
+    MAX_WEAPONS = 'HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon07'
 
     COLLISION_HIT_PTS_PERCENT = {
         'bhe2_fin1_hit_pts': HP_PCT_FIN,
@@ -971,7 +1083,9 @@ class Defender(LibertyShip, ShipElite, Ship3):
 
     ARCHETYPE = 'li_elite'
     TEMPLATE_CODE = 'le'
-    TORPEDO_HP = 'HpTorpedo01'
+    HP_TORPEDO = 'HpTorpedo02'
+    MAIN_WEAPONS = 'HpTorpedo01, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05'
+    MAX_WEAPONS = 'HpTorpedo01, HpWeapon03, HpWeapon04'
 
     COLLISION_HIT_PTS_PERCENT = {
         'le_wing_hit_pts': HP_PCT_WING,
@@ -994,7 +1108,9 @@ class DefenderJuni(LibertyShip, ShipElite, Ship3):
 
     ARCHETYPE = 'li_elite2'
     TEMPLATE_CODE = 'le2'
-    TORPEDO_HP = 'HpTorpedo01'
+    HP_TORPEDO = 'HpTorpedo02'
+    MAIN_WEAPONS = 'HpTorpedo01, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05'
+    MAX_WEAPONS = 'HpTorpedo01, HpWeapon03, HpWeapon04'
 
     COLLISION_HIT_PTS_PERCENT = {
         'le2_wing_hit_pts': HP_PCT_WING,
@@ -1016,6 +1132,8 @@ class Rhino(LibertyShip, ShipFreighter):
     SHIP_INDEX = SHIP_INDEX_6
 
     TEMPLATE_CODE = 'lfr'
+    MAIN_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpTurret01, HpTurret02, HpTurret03'
+    MAX_WEAPONS = 'HpWeapon02, HpWeapon03, HpTurret01, HpTurret02'
 
     COLLISION_HIT_PTS_PERCENT = {
         'lfr_panel_hit_pts': HP_PCT_WING,
@@ -1038,6 +1156,8 @@ class Legionnaire(BretoniaShip, ShipInterceptor, Ship1):
     ARCHETYPE = 'co_fighter'
     TEMPLATE_CODE = 'cf'
     HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04'
+    MAX_WEAPONS = 'HpWeapon03, HpWeapon04'
 
     COLLISION_HIT_PTS_PERCENT = {
         'cf_wing_hit_pts': HP_PCT_WING,
@@ -1056,7 +1176,9 @@ class Cavalier(BretoniaShip, ShipInterceptor, Ship2):
 
     ARCHETYPE = 'br_fighter'
     TEMPLATE_CODE = 'bf'
-    TORPEDO_HP = 'HpTorpedo01'
+    HP_TORPEDO = 'HpTorpedo02'
+    MAIN_WEAPONS = 'HpTorpedo01, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04'
+    MAX_WEAPONS = 'HpTorpedo01, HpWeapon03, HpWeapon04'
 
     COLLISION_HIT_PTS_PERCENT = {
         'bf_tail_hit_pts': HP_PCT_TAIL,
@@ -1075,7 +1197,14 @@ class Centurion(BretoniaShip, ShipFighter, Ship1):
 
     ARCHETYPE = 'co_elite'
     TEMPLATE_CODE = 'ce'
-    TORPEDO_HP = 'HpTorpedo01'
+    HP_TORPEDO = 'HpTorpedo02'
+    MAIN_WEAPONS = 'HpTorpedo01, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04'
+    MAX_WEAPONS = 'HpTorpedo01, HpWeapon03, HpWeapon04'
+
+    # mk 2 version
+    # HP_TORPEDO = 'HpTorpedo01'
+    # MAIN_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06'
+    # MAX_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04'
 
     COLLISION_HIT_PTS_PERCENT = {
         'ce_wing_hit_pts': HP_PCT_WING,
@@ -1096,7 +1225,14 @@ class Titan(BretoniaShip, ShipFighter, Ship2):
 
     ARCHETYPE = 'co_elite2'
     TEMPLATE_CODE = 'ce2'
-    TORPEDO_HP = 'HpTorpedo01'
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06'
+    MAX_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04'
+
+    # mk 2
+    # HP_TORPEDO = 'HpTorpedo02'
+    # MAIN_WEAPONS = 'HpTorpedo01, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06'
+    # MAX_WEAPONS = 'HpTorpedo01, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04'
 
     COLLISION_HIT_PTS_PERCENT = {
         'ce2_wing_hit_pts': HP_PCT_WING,
@@ -1117,7 +1253,9 @@ class Crusader(BretoniaShip, ShipElite, Ship3):
 
     ARCHETYPE = 'br_elite'
     TEMPLATE_CODE = 'be'
-    TORPEDO_HP = 'HpTorpedo01'
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06'
+    MAX_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon05, HpWeapon06'
 
     COLLISION_HIT_PTS_PERCENT = {
         'be_wing_hit_pts': HP_PCT_WING,
@@ -1138,7 +1276,9 @@ class CrusaderMk2(BretoniaShip, ShipElite, Ship3):
 
     ARCHETYPE = 'br_elite2'
     TEMPLATE_CODE = 'be2'
-    TORPEDO_HP = 'HpTorpedo01'
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06'
+    MAX_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon05, HpWeapon06'
 
     COLLISION_HIT_PTS_PERCENT = {
         'be2_wing_hit_pts': HP_PCT_WING,
@@ -1159,6 +1299,8 @@ class Clydesdale(BretoniaShip, ShipFreighter):
     SHIP_INDEX = SHIP_INDEX_6
 
     TEMPLATE_CODE = 'bfr'
+    MAIN_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpTurret01, HpTurret02, HpTurret03'
+    MAX_WEAPONS = 'HpWeapon02, HpWeapon03, HpTurret01, HpTurret02'
 
     COLLISION_HIT_PTS_PERCENT = {
         'bfr_wing_hit_pts': HP_PCT_WING,
@@ -1199,15 +1341,17 @@ class Drake(KusariShip, ShipInterceptor, Ship2):
 
     ARCHETYPE = 'ku_fighter'
     TEMPLATE_CODE = 'kf'
-    TORPEDO_HP = 'HpTorpedo01'
+    HP_TORPEDO = 'HpTorpedo02'
+    MAIN_WEAPONS = 'HpTorpedo01, HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04'
+    MAX_WEAPONS = 'HpWeapon01, HpWeapon02'
 
     COLLISION_HIT_PTS_PERCENT = {
-        'kf_wing_hit_pts': HP_PCT_MISC,
+        'kf_wing_hit_pts': HP_PCT_WING,
         'kf_engine_hit_pts': HP_PCT_ENGINE_SINGLE,
     }
 
     COLLISION_EXPLOSION_RESISTANCE = {
-        'kf_wing_expl_resist': EXPL_RESIST_MISC,
+        'kf_wing_expl_resist': EXPL_RESIST_WING,
         'kf_engine_expl_resist': EXPL_RESIST_ENGINE,
     }
 
@@ -1218,7 +1362,7 @@ class Falcon(KusariShip, ShipFighter, Ship1):
 
     ARCHETYPE = 'ge_fighter5'
     TEMPLATE_CODE = 'gf5'
-    TORPEDO_HP = 'HpTorpedo01'
+    HP_TORPEDO = 'HpTorpedo01'
 
     COLLISION_HIT_PTS_PERCENT = {
         'gf5_wing_hit_pts': HP_PCT_WING,
@@ -1239,7 +1383,15 @@ class Eagle(KusariShip, ShipFighter, Ship2):
 
     ARCHETYPE = 'ge_fighter6'
     TEMPLATE_CODE = 'gf6'
-    TORPEDO_HP = 'HpTorpedo01'
+
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06'
+    MAX_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04'
+
+    # HP_SHIELD = 'HpShield02'
+    # HP_TORPEDO = 'HpTorpedo01'
+    # MAIN_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06, HpWeapon07'
+    # MAX_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon07'
 
     COLLISION_HIT_PTS_PERCENT = {
         'gf6_wing_hit_pts': HP_PCT_WING,
@@ -1262,7 +1414,9 @@ class Dragon(KusariShip, ShipElite, Ship3):
 
     ARCHETYPE = 'ku_elite'
     TEMPLATE_CODE = 'ke'
-    TORPEDO_HP = 'HpTorpedo01'
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06'
+    MAX_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon05, HpWeapon06'
 
     COLLISION_HIT_PTS_PERCENT = {
         'ke_wing_hit_pts': HP_PCT_MISC,
@@ -1285,7 +1439,9 @@ class DragonMk2(KusariShip, ShipElite, Ship3):
 
     ARCHETYPE = 'ku_elite2'
     TEMPLATE_CODE = 'ke2'
-    TORPEDO_HP = 'HpTorpedo01'
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon04, HpWeapon05, HpWeapon06'
+    MAX_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon05, HpWeapon06'
 
     COLLISION_HIT_PTS_PERCENT = {
         'ke2_wing_hit_pts': HP_PCT_MISC,
@@ -1308,6 +1464,8 @@ class Dron(KusariShip, ShipFreighter):
     SHIP_INDEX = SHIP_INDEX_6
 
     TEMPLATE_CODE = 'kfr'
+    MAIN_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon03, HpTurret01, HpTurret02'
+    MAX_WEAPONS = 'HpWeapon01, HpWeapon02, HpWeapon03, HpWeapon03'
 
     COLLISION_HIT_PTS_PERCENT = {
         'kfr_wing_hit_pts': HP_PCT_WING,
@@ -1329,7 +1487,7 @@ class Bloodhound(CorsairShip, ShipFighter, Ship1):
 
     ARCHETYPE = 'pi_fighter'
     TEMPLATE_CODE = 'pf'
-    TORPEDO_HP = 'HpTorpedo01'
+    HP_TORPEDO = 'HpTorpedo01'
 
     COLLISION_HIT_PTS_PERCENT = {
         'pf_fin_hit_pts': HP_PCT_FIN,
@@ -1348,7 +1506,7 @@ class Wolfhound(CorsairShip, ShipFighter, Ship2):
 
     ARCHETYPE = 'pi_elite'
     TEMPLATE_CODE = 'pe'
-    TORPEDO_HP = 'HpTorpedo01'
+    HP_TORPEDO = 'HpTorpedo01'
 
     COLLISION_HIT_PTS_PERCENT = {
         'pe_fin_hit_pts': HP_PCT_FIN,
@@ -1367,7 +1525,7 @@ class Anubis(CorsairShip, ShipElite, Ship3):
 
     ARCHETYPE = 'or_elite'
     TEMPLATE_CODE = 'oe'
-    TORPEDO_HP = 'HpTorpedo01'
+    HP_TORPEDO = 'HpTorpedo01'
 
     COLLISION_HIT_PTS_PERCENT = {
         'oe_wing_hit_pts': HP_PCT_WING,
