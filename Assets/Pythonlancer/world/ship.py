@@ -151,22 +151,18 @@ ENGINE_DOUBLE_DIFF = 3
 ENGINE_TRIPLE_SAME = 4
 
 ENGINE_FORCE_PER_TYPE = {
-    ENGINE_SINGLE: '''
-equip = single_eng_force, HpEngine01
+    ENGINE_SINGLE: '''equip = single_eng_force, HpEngine01
 equip = single_eng_weight, HpCockpit''',
 
-    ENGINE_DOUBLE_SAME: '''
-equip = double_same_eng_force, HpEngine01
+    ENGINE_DOUBLE_SAME: '''equip = double_same_eng_force, HpEngine01
 equip = double_same_eng_force, HpEngine02
 equip = double_eng_weight, HpCockpit''',
 
-    ENGINE_DOUBLE_DIFF: '''
-equip = double_diff_eng_force01, HpEngine01
+    ENGINE_DOUBLE_DIFF: '''equip = double_diff_eng_force01, HpEngine01
 equip = double_diff_eng_force02, HpEngine02
 equip = double_eng_weight, HpCockpit''',
 
-    ENGINE_TRIPLE_SAME: '''
-equip = triple_same_eng_force, HpEngine01
+    ENGINE_TRIPLE_SAME: '''equip = triple_same_eng_force, HpEngine01
 equip = triple_same_eng_force, HpEngine02
 equip = triple_same_eng_force, HpEngine03
 equip = triple_eng_weight, HpCockpit''',
@@ -746,41 +742,6 @@ class Dagger(RheinlandShip, ShipInterceptor, Ship1):
     # MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04, HpTurret01']
     # MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02, HpTurret01']
 
-    SHIP_TEMPLATE = '''[Loadout]
-nickname = {loadout_nickname}
-archetype = {ship_archetype}
-equip = launch_extend
-equip = {engine}
-equip = infinite_power
-cargo = {power}, 1
-equip = {scanner}
-equip = {tractor}
-equip = {armor}
-equip = {shield_npc}, HpShield01
-cargo = {shield}, 1
-equip = {weapon1}', 'HpWeapon01
-equip = {weapon2}', 'HpWeapon02
-equip = {weapon3}', 'HpWeapon03
-equip = {weapon4}', 'HpWeapon04
-equip = {afterburn1}, HpThruster01
-equip = {afterburn2}, HpThruster02
-equip = LargeWhiteSpecial, HpHeadlight
-equip = {small_light}, HpRunningLight01
-equip = {small_light}, HpRunningLight02
-equip = {small_light}, HpRunningLight03
-equip = {small_light}, HpRunningLight04
-equip = {small_light}, HpRunningLight05
-equip = {small_light}, HpRunningLight08
-equip = DockingLightRedSmall, HpDockLight01
-equip = DockingLightRedSmall, HpDockLight02
-equip = {contrail}, HpContrail01
-equip = {contrail}, HpContrail02
-equip = {contrail}, HpContrail03
-equip = {contrail}, HpContrail04
-equip = single_eng_force, HpEngine01
-equip = single_eng_weight, HpCockpit
-{extra}'''
-
     COLLISION_HIT_PTS_PERCENT = {
         'wing_hit_pts': HP_PCT_WING,
         'engine_hit_pts': HP_PCT_ENGINE_SINGLE,
@@ -804,41 +765,6 @@ class Banshee(RheinlandShip, ShipInterceptor, Ship2):
     HP_TORPEDO = 'HpTorpedo02'
     MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
     MAX_WEAPONS = ['HpTorpedo01', 'HpWeapon03', 'HpWeapon04']
-
-    SHIP_TEMPLATE = '''[Loadout]
-nickname = {loadout_nickname}
-archetype = {ship_archetype}
-equip = launch_extend
-equip = {engine}
-equip = infinite_power
-cargo = {power}, 1
-equip = {scanner}
-equip = {tractor}
-equip = {armor}
-equip = {shield_npc}, HpShield01
-cargo = {shield}, 1
-equip = {weapon1}', 'HpWeapon01
-equip = {weapon2}', 'HpWeapon02
-equip = {weapon3}', 'HpWeapon03
-equip = {weapon4}', 'HpWeapon04
-equip = {afterburn1}, HpThruster01
-equip = {afterburn2}, HpThruster02
-equip = LargeWhiteSpecial, HpHeadlight
-equip = {small_light}, HpRunningLight01
-equip = {small_light}, HpRunningLight02
-equip = {small_light}, HpRunningLight03
-equip = {small_light}, HpRunningLight04
-equip = {small_light}, HpRunningLight05
-equip = {small_light}, HpRunningLight06
-equip = DockingLightRedSmall, HpDockLight01
-equip = DockingLightRedSmall, HpDockLight02
-equip = {contrail}, HpContrail01
-equip = {contrail}, HpContrail02
-equip = {contrail}, HpContrail03
-equip = {contrail}, HpContrail04
-equip = single_eng_force, HpEngine01
-equip = single_eng_weight, HpCockpit
-{extra}'''
 
     COLLISION_HIT_PTS_PERCENT = {
         'wing_hit_pts': HP_PCT_WING,
@@ -870,46 +796,6 @@ class Stiletto(RheinlandShip, ShipFighter, Ship1):
     # MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
     # MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
 
-    SHIP_TEMPLATE = '''[Loadout]
-nickname = {loadout_nickname}
-archetype = {ship_archetype}
-equip = launch_extend
-equip = {engine}
-equip = infinite_power
-cargo = {power}, 1
-equip = {scanner}
-equip = {tractor}
-equip = {armor}
-equip = {shield_npc}, HpTurret01
-cargo = {shield}, 1
-equip = {weapon1}', 'HpWeapon01
-equip = {weapon2}', 'HpWeapon02
-equip = {weapon3}', 'HpWeapon03
-equip = {weapon4}', 'HpWeapon04
-equip = {weapon5}', 'HpWeapon05
-equip = {weapon6}', 'HpWeapon06
-equip = {afterburn1}, HpThruster01
-equip = {afterburn2}, HpShield01
-equip = LargeWhiteSpecial, HpHeadlight
-equip = {small_light}, HpRunningLight01
-equip = {small_light}, HpRunningLight02
-equip = {small_light}, HpRunningLight03
-equip = {small_light}, HpRunningLight04
-equip = {small_light}, HpRunningLight05
-equip = {small_light}, HpRunningLight06
-equip = {small_light}, HpRunningLight07
-equip = {small_light}, HpRunningLight08
-equip = DockingLightRedSmall, HpDockLight01
-equip = DockingLightRedSmall, HpDockLight02
-equip = {contrail}, HpContrail01
-equip = {contrail}, HpContrail02
-equip = {contrail}, HpContrail03
-equip = {contrail}, HpContrail04
-equip = double_same_eng_force, HpEngine01
-equip = double_same_eng_force, HpEngine02
-equip = double_eng_weight, HpCockpit
-{extra}'''
-
     COLLISION_HIT_PTS_PERCENT = {
         'wing1_hit_pts': HP_PCT_WING,
         'wing2_hit_pts': HP_PCT_WING,
@@ -938,46 +824,6 @@ class Sabre(RheinlandShip, ShipFighter, Ship2):
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
     MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
 
-    SHIP_TEMPLATE = '''[Loadout]
-nickname = {loadout_nickname}
-archetype = {ship_archetype}
-equip = launch_extend
-equip = {engine}
-equip = infinite_power
-cargo = {power}, 1
-equip = {scanner}
-equip = {tractor}
-equip = {armor}
-equip = {shield_npc}, HpTurret01
-cargo = {shield}, 1
-equip = {weapon1}', 'HpWeapon01
-equip = {weapon2}', 'HpWeapon02
-equip = {weapon3}', 'HpWeapon03
-equip = {weapon4}', 'HpWeapon04
-equip = {weapon5}', 'HpWeapon05
-equip = {weapon6}', 'HpWeapon06
-equip = {afterburn1}, HpThruster01
-equip = {afterburn2}, HpShield01
-equip = LargeWhiteSpecial, HpHeadlight
-equip = {small_light}, HpRunningLight01
-equip = {small_light}, HpRunningLight02
-equip = {small_light}, HpRunningLight03
-equip = {small_light}, HpRunningLight04
-equip = {small_light}, HpRunningLight05
-equip = {small_light}, HpRunningLight06
-equip = {small_light}, HpRunningLight07
-equip = {small_light}, HpRunningLight08
-equip = DockingLightRedSmall, HpDockLight01
-equip = DockingLightRedSmall, HpDockLight02
-equip = {contrail}, HpContrail01
-equip = {contrail}, HpContrail02
-equip = {contrail}, HpContrail03
-equip = {contrail}, HpContrail04
-equip = double_same_eng_force, HpEngine01
-equip = double_same_eng_force, HpEngine02
-equip = double_eng_weight, HpCockpit
-{extra}'''
-
     COLLISION_HIT_PTS_PERCENT = {
         'wing1_hit_pts': HP_PCT_WING,
         'wing2_hit_pts': HP_PCT_WING,
@@ -1005,44 +851,6 @@ class Valkyrie(RheinlandShip, ShipElite, Ship3):
     HP_TORPEDO = 'HpTorpedo01'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
     MAX_WEAPONS = ['HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
-
-    SHIP_TEMPLATE = '''[Loadout]
-nickname = {loadout_nickname}
-archetype = {ship_archetype}
-equip = launch_extend
-equip = {engine}
-equip = infinite_power
-cargo = {power}, 1
-equip = {scanner}
-equip = {tractor}
-equip = {armor}
-equip = {shield_npc}, HpShield01
-cargo = {shield}, 1
-equip = {weapon1}', 'HpWeapon01
-equip = {weapon2}', 'HpWeapon02
-equip = {weapon3}', 'HpWeapon03
-equip = {weapon4}', 'HpWeapon04
-equip = {weapon5}', 'HpWeapon05
-equip = {weapon6}', 'HpWeapon06
-equip = {afterburn1}, HpThruster01
-equip = {afterburn2}, HpThruster02
-equip = LargeWhiteSpecial, HpHeadlight
-equip = {small_light}, HpRunningLight01
-equip = {small_light}, HpRunningLight02
-equip = {small_light}, HpRunningLight03
-equip = {small_light}, HpRunningLight04
-equip = {small_light}, HpRunningLight05
-equip = {small_light}, HpRunningLight06
-equip = DockingLightRedSmall, HpDockLight01
-equip = DockingLightRedSmall, HpDockLight02
-equip = {contrail}, HpContrail01
-equip = {contrail}, HpContrail02
-equip = {contrail}, HpContrail03
-equip = {contrail}, HpContrail04
-equip = double_same_eng_force, HpEngine01
-equip = double_same_eng_force, HpEngine02
-equip = double_eng_weight, HpCockpit
-{extra}'''
 
     COLLISION_HIT_PTS_PERCENT = {
         'wing_hit_pts': HP_PCT_WING,
