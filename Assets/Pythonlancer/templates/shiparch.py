@@ -16,7 +16,7 @@ ids_info1 = 066430
 ids_info2 = 066431
 ids_info3 = 066432
 ship_class = 4
-nickname = li_fighter
+{ship_li_fighter}
 LODranges = 0, 1000, 5000, 10000
 msg_id_prefix = gcs_refer_shiparch_Liblf
 mission_property = can_use_berths
@@ -50,16 +50,6 @@ HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
 num_exhaust_nozzles = 1
 HP_tractor_source = HpTractor_Source
-shield_link = l_fighter_shield01, HpMount, {lf_shield_link}
-mass = {lf_mass}
-hold_size = {lf_hold_size}
-strafe_force = {lf_strafe_force}
-strafe_power_usage = {lf_strafe_power_usage}
-nanobot_limit = {lf_nanobot}
-shield_battery_limit = {lf_nanobot}
-hit_pts = {lf_hit_pts}
-{lf_fuses}
-{lf_equipment}
 
 [CollisionGroup]
 obj = port fin_lod1
@@ -134,7 +124,7 @@ ids_info1 = 066442
 ids_info2 = 066443
 ids_info3 = 066444
 ship_class = 5
-nickname = li_elite
+{ship_li_elite}
 msg_id_prefix = gcs_refer_shiparch_Libhf
 mission_property = can_use_berths ;can_use_med_moors ;
 LODranges = 0, 1000, 5000, 10000
@@ -169,16 +159,6 @@ HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
 HP_tractor_source = HpTractor_Source
 num_exhaust_nozzles = 2
-shield_link = l_elite_shield01, HpMount, {le_shield_link}
-mass = {le_mass}
-hold_size = {le_hold_size}
-strafe_force = {le_strafe_force}
-strafe_power_usage = {le_strafe_power_usage}
-nanobot_limit = {le_nanobot}
-shield_battery_limit = {le_nanobot}
-hit_pts = {le_hit_pts}
-{le_fuses}
-{le_equipment}
 
 [CollisionGroup]
 obj = Li_star_wing_lod1
@@ -304,7 +284,7 @@ ids_info1 = 066442
 ids_info2 = 066443
 ids_info3 = 066444
 ship_class = 6
-nickname = li_elite2
+{ship_li_elite2}
 msg_id_prefix = gcs_refer_shiparch_Libhf
 mission_property = can_use_berths
 LODranges = 0, 1000, 5000, 10000
@@ -336,16 +316,6 @@ HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
 HP_tractor_source = HpTractor_Source
 num_exhaust_nozzles = 2
-shield_link = l_elite2_shield01, HpMount, {le2_shield_link}
-mass = {le2_mass}
-hold_size = {le2_hold_size}
-strafe_force = {le2_strafe_force}
-strafe_power_usage = {le2_strafe_power_usage}
-nanobot_limit = {le2_nanobot}
-shield_battery_limit = {le2_nanobot}
-hit_pts = {le2_hit_pts}
-{le2_fuses}
-{le2_equipment}
 
 [CollisionGroup]
 obj = Li_star_wing_lod1
@@ -429,7 +399,7 @@ ids_info1 = 066446
 ids_info2 = 066447
 ids_info3 = 066448
 ship_class = 8
-nickname = li_freighter
+{ship_li_freighter}
 LODranges = 0, 1000, 5000, 10000
 msg_id_prefix = gcs_refer_shiparch_Libf
 mission_property = can_use_berths
@@ -460,16 +430,6 @@ num_exhaust_nozzles = 2
 steering_torque = 54000.000000, 54000.000000, 104000.000000
 angular_drag = 60000.000000, 60000.000000, 60000.000000
 rotation_inertia = 16800.000000, 16800.000000, 16800.000000
-shield_link = l_freighter_shield01, HpMount, {lfr_shield_link}
-mass = {lfr_mass}
-hold_size = {lfr_hold_size}
-strafe_force = {lfr_strafe_force}
-strafe_power_usage = {lfr_strafe_power_usage}
-nanobot_limit = {lfr_nanobot}
-shield_battery_limit = {lfr_nanobot}
-hit_pts = {lfr_hit_pts}
-{lfr_fuses}
-{lfr_equipment}
 
 
 [CollisionGroup]
@@ -1085,7 +1045,7 @@ ids_info1 = 066550
 ids_info2 = 066551
 ids_info3 = 066552
 ship_class = 4
-nickname = br_fighter
+{ship_br_fighter}
 LODranges = 0, 1000, 5000, 10000
 msg_id_prefix = gcs_refer_shiparch_Brelf
 mission_property = can_use_berths
@@ -1116,16 +1076,6 @@ HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
 HP_tractor_source = HpTractor_Source
 num_exhaust_nozzles = 1
-shield_link = b_fighter_shield01, HpMount, {bf_shield_link}
-mass = {bf_mass}
-hold_size = {bf_hold_size}
-strafe_force = {bf_strafe_force}
-strafe_power_usage = {bf_strafe_power_usage}
-nanobot_limit = {bf_nanobot}
-shield_battery_limit = {bf_nanobot}
-hit_pts = {bf_hit_pts}
-{bf_fuses}
-{bf_equipment}
 
 [CollisionGroup]
 obj = br_fighter_tail_lod1
@@ -1178,7 +1128,7 @@ ids_info1 = 066554
 ids_info2 = 066555
 ids_info3 = 066556
 ship_class = 5
-nickname = br_elite
+{ship_br_elite}
 msg_id_prefix = gcs_refer_shiparch_Brehf
 mission_property = can_use_berths
 LODranges = 0, 1000, 5000, 10000
@@ -1209,16 +1159,6 @@ num_exhaust_nozzles = 2
 steering_torque = 43000.000000, 43000.000000, 230000.000000
 angular_drag = 41000.000000, 41000.000000, 141000.000000
 rotation_inertia = 8400.000000, 8400.000000, 8400.000000
-shield_link = b_elite_shield01, HpMount, {be_shield_link}
-mass = {be_mass}
-hold_size = {be_hold_size}
-strafe_force = {be_strafe_force}
-strafe_power_usage = {be_strafe_power_usage}
-nanobot_limit = {be_nanobot}
-shield_battery_limit = {be_nanobot}
-hit_pts = {be_hit_pts}
-{be_fuses}
-{be_equipment}
 
 [CollisionGroup]
 obj = br_port_wing_lod1
@@ -1302,7 +1242,7 @@ ids_info1 = 066562
 ids_info2 = 066563
 ids_info3 = 066564
 ship_class = 6
-nickname = br_elite2
+{ship_br_elite2}
 msg_id_prefix = gcs_refer_shiparch_Brehf
 mission_property = can_use_berths
 LODranges = 0, 1000, 5000, 10000
@@ -1333,16 +1273,6 @@ num_exhaust_nozzles = 2
 steering_torque = 43000.000000, 43000.000000, 230000.000000
 angular_drag = 41000.000000, 41000.000000, 141000.000000
 rotation_inertia = 8400.000000, 8400.000000, 8400.000000
-shield_link = b_elite_shield01, HpMount, {be2_shield_link}
-mass = {be2_mass}
-hold_size = {be2_hold_size}
-strafe_force = {be2_strafe_force}
-strafe_power_usage = {be2_strafe_power_usage}
-nanobot_limit = {be2_nanobot}
-shield_battery_limit = {be2_nanobot}
-hit_pts = {be2_hit_pts}
-{be2_fuses}
-{be2_equipment}
 
 [CollisionGroup]
 obj = br_port_wing_lod1
@@ -1461,7 +1391,7 @@ ids_info1 = 066558
 ids_info2 = 066559
 ids_info3 = 066560
 ship_class = 8
-nickname = br_freighter
+{ship_br_freighter}
 msg_id_prefix = gcs_refer_shiparch_Bref
 mission_property = can_use_berths
 LODranges = 0, 1000, 5000, 10000
@@ -1492,16 +1422,6 @@ HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
 HP_tractor_source = HpTractor_Source
 num_exhaust_nozzles = 2
-shield_link = b_freighter_shield01, HpMount, {bfr_shield_link}
-mass = {bfr_mass}
-hold_size = {bfr_hold_size}
-strafe_force = {bfr_strafe_force}
-strafe_power_usage = {bfr_strafe_power_usage}
-nanobot_limit = {bfr_nanobot}
-shield_battery_limit = {bfr_nanobot}
-hit_pts = {bfr_hit_pts}
-{bfr_fuses}
-{bfr_equipment}
 
 [CollisionGroup]
 obj = br_freighter_port_wing_lod1
@@ -2161,7 +2081,7 @@ ids_info1 = 066534
 ids_info2 = 066535
 ids_info3 = 066536
 ship_class = 4
-nickname = ku_fighter
+{ship_ku_fighter}
 msg_id_prefix = gcs_refer_shiparch_Kuslf
 mission_property = can_use_berths
 LODranges = 0, 1000, 5000, 10000
@@ -2192,16 +2112,6 @@ HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
 HP_tractor_source = HpTractor_Source
 num_exhaust_nozzles = 1
-shield_link = k_fighter_shield01, HpMount, {kf_shield_link}
-mass = {kf_mass}
-hold_size = {kf_hold_size}
-strafe_force = {kf_strafe_force}
-strafe_power_usage = {kf_strafe_power_usage}
-nanobot_limit = {kf_nanobot}
-shield_battery_limit = {kf_nanobot}
-hit_pts = {kf_hit_pts}
-{kf_fuses}
-{kf_equipment}
 
 [CollisionGroup]
 obj = wing_starboard_lod1
@@ -2277,7 +2187,7 @@ ids_info1 = 066538
 ids_info2 = 066539
 ids_info3 = 066540
 ship_class = 5
-nickname = ku_elite
+{ship_ku_elite}
 msg_id_prefix = gcs_refer_shiparch_Kushf
 mission_property = can_use_berths
 LODranges = 0, 1000, 5000, 10000
@@ -2311,16 +2221,6 @@ HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
 HP_tractor_source = HpTractor_Source
 num_exhaust_nozzles = 2
-shield_link = k_elite_shield01, HpMount, {ke_shield_link}
-mass = {ke_mass}
-hold_size = {ke_hold_size}
-strafe_force = {ke_strafe_force}
-strafe_power_usage = {ke_strafe_power_usage}
-nanobot_limit = {ke_nanobot}
-shield_battery_limit = {ke_nanobot}
-hit_pts = {ke_hit_pts}
-{ke_fuses}
-{ke_equipment}
 
 [CollisionGroup]
 obj = starboard_wing_lod1
@@ -2486,7 +2386,7 @@ ids_info1 = 066546
 ids_info2 = 066547
 ids_info3 = 066548
 ship_class = 6
-nickname = ku_dragon
+{ship_ku_elite2}
 msg_id_prefix = gcs_refer_shiparch_hfighter
 mission_property = can_use_berths
 LODranges = 0, 1000, 5000, 10000
@@ -2520,16 +2420,6 @@ HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
 HP_tractor_source = HpTractor_Source
 num_exhaust_nozzles = 2
-shield_link = k_elite_shield01, HpMount, {ke2_shield_link}
-mass = {ke2_mass}
-hold_size = {ke2_hold_size}
-strafe_force = {ke2_strafe_force}
-strafe_power_usage = {ke2_strafe_power_usage}
-nanobot_limit = {ke2_nanobot}
-shield_battery_limit = {ke2_nanobot}
-hit_pts = {ke2_hit_pts}
-{ke2_fuses}
-{ke2_equipment}
 
 [CollisionGroup]
 obj = starboard_wing_lod1
@@ -2646,7 +2536,7 @@ ids_info1 = 066542
 ids_info2 = 066543
 ids_info3 = 066544
 ship_class = 8
-nickname = ku_freighter
+{ship_ku_freighter}
 LODranges = 0, 1000, 5000, 10000
 msg_id_prefix = gcs_refer_shiparch_Kusf
 mission_property = can_use_berths
@@ -2680,16 +2570,6 @@ HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
 HP_tractor_source = HpTractor_Source
 num_exhaust_nozzles = 2
-shield_link = k_freighter_shield01, HpMount, {kfr_shield_link}
-mass = {kfr_mass}
-hold_size = {kfr_hold_size}
-strafe_force = {kfr_strafe_force}
-strafe_power_usage = {kfr_strafe_power_usage}
-nanobot_limit = {kfr_nanobot}
-shield_battery_limit = {kfr_nanobot}
-hit_pts = {kfr_hit_pts}
-{kfr_fuses}
-{kfr_equipment}
 
 [CollisionGroup]
 obj = starboard_wing_lod1
@@ -3416,7 +3296,7 @@ ids_info1 = 066405
 ids_info2 = 066406
 ids_info3 = 066407
 ship_class = 4
-nickname = rh_fighter
+{ship_rh_fighter}
 LODranges = 0, 1000, 5000, 10000
 msg_id_prefix = gcs_refer_shiparch_Rhelf
 mission_property = can_use_berths
@@ -3447,16 +3327,6 @@ HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
 HP_tractor_source = HpTractor_Source
 num_exhaust_nozzles = 1
-shield_link = r_fighter_shield01, HpMount, {rf_shield_link}
-mass = {rf_mass}
-hold_size = {rf_hold_size}
-strafe_force = {rf_strafe_force}
-strafe_power_usage = {rf_strafe_power_usage}
-nanobot_limit = {rf_nanobot}
-shield_battery_limit = {rf_nanobot}
-hit_pts = {rf_hit_pts}
-{rf_fuses}
-{rf_equipment}
 
 [CollisionGroup]
 obj = port_wing_lod1
@@ -3533,7 +3403,7 @@ ids_info1 = 066417
 ids_info2 = 066418
 ids_info3 = 066419
 ship_class = 5
-nickname = rh_elite
+{ship_rh_elite}
 LODranges = 0, 1000, 5000, 10000
 msg_id_prefix = gcs_refer_shiparch_Rhehf
 mission_property = can_use_berths
@@ -3563,16 +3433,6 @@ bay_doors_close_snd = cargo_doors_close
 HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
 num_exhaust_nozzles = 2
-shield_link = r_elite_shield01, HpMount, {re_shield_link}
-mass = {re_mass}
-hold_size = {re_hold_size}
-strafe_force = {re_strafe_force}
-strafe_power_usage = {re_strafe_power_usage}
-nanobot_limit = {re_nanobot}
-shield_battery_limit = {re_nanobot}
-hit_pts = {re_hit_pts}
-{re_fuses}
-{re_equipment}
 
 [CollisionGroup]
 obj = Rh_port_wing_lod1
@@ -3691,7 +3551,7 @@ ids_info1 = 066522
 ids_info2 = 066523
 ids_info3 = 066524
 ship_class = 6
-nickname = rh_elite2
+{ship_rh_elite2}
 LODranges = 0, 1000, 5000, 10000
 msg_id_prefix = gcs_refer_shiparch_Rhehf
 mission_property = can_use_berths
@@ -3721,16 +3581,6 @@ HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
 HP_tractor_source = HpTractor_Source
 num_exhaust_nozzles = 2
-shield_link = r_elite_shield01, HpMount, {re2_shield_link}
-mass = {re2_mass}
-hold_size = {re2_hold_size}
-strafe_force = {re2_strafe_force}
-strafe_power_usage = {re2_strafe_power_usage}
-nanobot_limit = {re2_nanobot}
-shield_battery_limit = {re2_nanobot}
-hit_pts = {re2_hit_pts}
-{re2_fuses}
-{re2_equipment}
 
 [CollisionGroup]
 obj = Rh_port_wing_lod1
@@ -3816,7 +3666,7 @@ ids_info1 = 066421
 ids_info2 = 066422
 ids_info3 = 066423
 ship_class = 8
-nickname = rh_freighter
+{ship_rh_freighter}
 LODranges = 0, 1000, 5000, 10000
 msg_id_prefix = gcs_refer_shiparch_Rhef
 mission_property = can_use_berths
@@ -3847,17 +3697,6 @@ HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
 HP_tractor_source = HpTractor_Source
 num_exhaust_nozzles = 2
-shield_link = r_freighter_shield01, HpMount, {rfr_shield_link}
-mass = {rfr_mass}
-hold_size = {rfr_hold_size}
-strafe_force = {rfr_strafe_force}
-strafe_power_usage = {rfr_strafe_power_usage}
-nanobot_limit = {rfr_nanobot}
-shield_battery_limit = {rfr_nanobot}
-hit_pts = {rfr_hit_pts}
-{rfr_fuses}
-{rfr_equipment}
-
 
 [CollisionGroup]
 obj = rh_port_side_lod1
@@ -4432,7 +4271,7 @@ ids_info1 = 066426
 ids_info2 = 066427
 ids_info3 = 066428
 ship_class = 0
-nickname = bh_fighter
+{ship_bh_fighter}
 LODranges = 0, 1000, 5000, 10000
 msg_id_prefix = gcs_refer_shiparch_lfighter
 mission_property = can_use_berths
@@ -4469,16 +4308,6 @@ HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
 num_exhaust_nozzles = 1
 HP_tractor_source = HpTractor_Source
-shield_link = bh_fighter_shield01, HpMount, {bhf_shield_link}
-mass = {bhf_mass}
-hold_size = {bhf_hold_size}
-strafe_force = {bhf_strafe_force}
-strafe_power_usage = {bhf_strafe_power_usage}
-nanobot_limit = {bhf_nanobot}
-shield_battery_limit = {bhf_nanobot}
-hit_pts = {bhf_hit_pts}
-{bhf_fuses}
-{bhf_equipment}
 
 [CollisionGroup]
 obj = bh_topfin_lod1
@@ -4560,7 +4389,7 @@ ids_info1 = 066434
 ids_info2 = 066435
 ids_info3 = 066436
 ship_class = 1
-nickname = bh_elite
+{ship_bh_elite}
 LODranges = 0, 1000, 5000, 10000
 msg_id_prefix = gcs_refer_shiparch_hfighter
 mission_property = can_use_berths
@@ -4594,16 +4423,6 @@ HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
 HP_tractor_source = HpTractor_Source
 num_exhaust_nozzles = 2
-shield_link = bw_elite_shield01, HpMount, {bhe_shield_link}
-mass = {bhe_mass}
-hold_size = {bhe_hold_size}
-strafe_force = {bhe_strafe_force}
-strafe_power_usage = {bhe_strafe_power_usage}
-nanobot_limit = {bhe_nanobot}
-shield_battery_limit = {bhe_nanobot}
-hit_pts = {bhe_hit_pts}
-{bhe_fuses}
-{bhe_equipment}
 
 [CollisionGroup]
 obj = bh_eng02_lod1
@@ -4703,7 +4522,7 @@ ids_info1 = 066438
 ids_info2 = 066439
 ids_info3 = 066440
 ship_class = 7
-nickname = bh_elite2
+{ship_bh_elite2}
 LODranges = 0, 1000, 5000, 10000
 msg_id_prefix = gcs_refer_shiparch_hfighter
 mission_property = can_use_berths
@@ -4738,16 +4557,6 @@ HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
 HP_tractor_source = HpTractor_Source
 num_exhaust_nozzles = 2
-shield_link = bh_elite_shield01, HpMount, {bhe2_shield_link}
-mass = {bhe2_mass}
-hold_size = {bhe2_hold_size}
-strafe_force = {bhe2_strafe_force}
-strafe_power_usage = {bhe2_strafe_power_usage}
-nanobot_limit = {bhe2_nanobot}
-shield_battery_limit = {bhe2_nanobot}
-hit_pts = {bhe2_hit_pts}
-{bhe2_fuses}
-{bhe2_equipment}
 
 [CollisionGroup]
 obj = bh_eng02_lod1
@@ -4854,7 +4663,7 @@ ids_info1 = 066574
 ids_info2 = 066575
 ids_info3 = 066576
 ship_class = 4
-nickname = pi_fighter
+{ship_pi_fighter}
 LODranges = 0, 2000, 5000, 10000
 msg_id_prefix = gcs_refer_shiparch_pirlf
 mission_property = can_use_berths
@@ -4888,16 +4697,6 @@ HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
 HP_tractor_source = HpTractor_Source
 num_exhaust_nozzles = 2
-shield_link = pi_fighter_shield01, HpMount, {pf_shield_link}
-mass = {pf_mass}
-hold_size = {pf_hold_size}
-strafe_force = {pf_strafe_force}
-strafe_power_usage = {pf_strafe_power_usage}
-nanobot_limit = {pf_nanobot}
-shield_battery_limit = {pf_nanobot}
-hit_pts = {pf_hit_pts}
-{pf_fuses}
-{pf_equipment}
 
 [CollisionGroup]
 obj = fins_mid_lod1
@@ -4958,7 +4757,7 @@ ids_info1 = 066578
 ids_info2 = 066579
 ids_info3 = 066580
 ship_class = 5
-nickname = pi_elite
+{ship_pi_elite}
 LODranges = 0, 1000, 2000, 10000
 msg_id_prefix = gcs_refer_shiparch_pirhf
 mission_property = can_use_berths
@@ -4992,17 +4791,6 @@ HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
 HP_tractor_source = HpTractor_Source
 num_exhaust_nozzles = 3
-shield_link = pi_elite_shield01, HpMount, {pe_shield_link}
-mass = {pe_mass}
-hold_size = {pe_hold_size}
-strafe_force = {pe_strafe_force}
-strafe_power_usage = {pe_strafe_power_usage}
-nanobot_limit = {pe_nanobot}
-shield_battery_limit = {pe_nanobot}
-hit_pts = {pe_hit_pts}
-{pe_fuses}
-{pe_equipment}
-
 
 [CollisionGroup]
 obj = fins_top1_lod1
@@ -5129,7 +4917,7 @@ ids_info1 = 066582
 ids_info2 = 066583
 ids_info3 = 066584
 ship_class = 8
-nickname = pi_freighter
+{ship_pi_freighter}
 LODranges = 0, 1000, 5000, 10000
 msg_id_prefix = gcs_refer_shiparch_pirf
 mission_property = can_use_berths
@@ -5163,16 +4951,6 @@ HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
 HP_tractor_source = HpTractor_Source
 num_exhaust_nozzles = 2
-shield_link = pi_freighter_shield01, HpMount, {pfr_shield_link}
-mass = {pfr_mass}
-hold_size = {pfr_hold_size}
-strafe_force = {pfr_strafe_force}
-strafe_power_usage = {pfr_strafe_power_usage}
-nanobot_limit = {pfr_nanobot}
-shield_battery_limit = {pfr_nanobot}
-hit_pts = {pfr_hit_pts}
-{pfr_fuses}
-{pfr_equipment}
 
 [CollisionGroup]
 obj = starboard_wing_lod1
@@ -5246,7 +5024,7 @@ ids_info1 = 66549
 ids_info2 = 66608
 ids_info3 = 66550
 ship_class = 0
-nickname = co_fighter
+{ship_co_fighter}
 LODranges = 0, 1000, 5000, 10000
 msg_id_prefix = gcs_refer_shiparch_lfighter
 mission_property = can_use_berths
@@ -5279,16 +5057,6 @@ bay_doors_open_snd = cargo_doors_open
 bay_doors_close_snd = cargo_doors_close
 HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
-shield_link = co_fighter_shield01, HpMount, {cf_shield_link}
-mass = {cf_mass}
-hold_size = {cf_hold_size}
-strafe_force = {cf_strafe_force}
-strafe_power_usage = {cf_strafe_power_usage}
-nanobot_limit = {cf_nanobot}
-shield_battery_limit = {cf_nanobot}
-hit_pts = {cf_hit_pts}
-{cf_fuses}
-{cf_equipment}
 
 [CollisionGroup]
 obj = wing_port_lod1
@@ -5413,7 +5181,7 @@ ids_info1 = 66546
 ids_info2 = 66608
 ids_info3 = 66547
 ship_class = 1
-nickname = co_elite
+{ship_co_elite}
 LODranges = 0, 1000, 5000, 10000
 msg_id_prefix = gcs_refer_shiparch_hfighter
 mission_property = can_use_berths
@@ -5445,16 +5213,6 @@ bay_doors_open_snd = cargo_doors_open
 bay_doors_close_snd = cargo_doors_close
 HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
-shield_link = co_elite_shield01, HpMount, {ce_shield_link}
-mass = {ce_mass}
-hold_size = {ce_hold_size}
-strafe_force = {ce_strafe_force}
-strafe_power_usage = {ce_strafe_power_usage}
-nanobot_limit = {ce_nanobot}
-shield_battery_limit = {ce_nanobot}
-hit_pts = {ce_hit_pts}
-{ce_fuses}
-{ce_equipment}
 
 [CollisionGroup]
 obj = wing_port_lod1
@@ -5553,7 +5311,7 @@ ids_info1 = 066566
 ids_info2 = 066567
 ids_info3 = 066568
 ship_class = 7
-nickname = co_elite2
+{ship_co_elite2}
 LODranges = 0, 1000, 5000, 10000
 msg_id_prefix = gcs_refer_shiparch_hfighter
 mission_property = can_use_berths
@@ -5588,16 +5346,6 @@ HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
 HP_tractor_source = HpTractor_Source
 num_exhaust_nozzles = 2
-shield_link = co_elite2_shield01, HpMount, {ce2_shield_link}
-mass = {ce2_mass}
-hold_size = {ce2_hold_size}
-strafe_force = {ce2_strafe_force}
-strafe_power_usage = {ce2_strafe_power_usage}
-nanobot_limit = {ce2_nanobot}
-shield_battery_limit = {ce2_nanobot}
-hit_pts = {ce2_hit_pts}
-{ce2_fuses}
-{ce2_equipment}
 
 [CollisionGroup]
 obj = wing_port_lod1
@@ -5739,7 +5487,7 @@ ids_info1 = 066351
 ids_info2 = 066352
 ids_info3 = 066353
 ship_class = 19
-nickname = ge_fighter
+{ship_ge_fighter}
 LODranges = 0, 300, 500, 1000, 5000, 10000
 msg_id_prefix = gcs_refer_shiparch_starflier
 mission_property = can_use_berths
@@ -5774,16 +5522,6 @@ HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
 HP_tractor_source = HpTractor_Source
 num_exhaust_nozzles = 1
-shield_link = cv_fighter_shield01, HpMount, {gf1_shield_link}
-mass = {gf1_mass}
-hold_size = {gf1_hold_size}
-strafe_force = {gf1_strafe_force}
-strafe_power_usage = {gf1_strafe_power_usage}
-nanobot_limit = {gf1_nanobot}
-shield_battery_limit = {gf1_nanobot}
-hit_pts = {gf1_hit_pts}
-{gf1_fuses}
-{gf1_equipment}
 
 [CollisionGroup]
 obj = port_wing_lod1
@@ -5838,7 +5576,7 @@ ids_info1 = 66531
 ids_info2 = 66608
 ids_info3 = 66532
 ship_class = 4
-nickname = ge_fighter2
+{ship_ge_fighter2}
 LODranges = 0, 1000, 5000, 10000
 msg_id_prefix = gcs_refer_shiparch_startracker
 mission_property = can_use_berths
@@ -5872,16 +5610,6 @@ HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
 HP_tractor_source = HpTractor_Source
 num_exhaust_nozzles = 2
-shield_link = cv_fighter_shield01, HpMount, {gf2_shield_link}
-mass = {gf2_mass}
-hold_size = {gf2_hold_size}
-strafe_force = {gf2_strafe_force}
-strafe_power_usage = {gf2_strafe_power_usage}
-nanobot_limit = {gf2_nanobot}
-shield_battery_limit = {gf2_nanobot}
-hit_pts = {gf2_hit_pts}
-{gf2_fuses}
-{gf2_equipment}
 
 [CollisionGroup]
 obj = port_wing_lod1
@@ -5950,7 +5678,7 @@ ids_info1 = 66531
 ids_info2 = 66608
 ids_info3 = 66532
 ship_class = 4
-nickname = ge_fighter3
+{ship_ge_fighter3}
 LODranges = 0, 1000, 5000, 10000
 msg_id_prefix = gcs_refer_shiparch_startracker
 mission_property = can_use_berths
@@ -5984,16 +5712,6 @@ HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
 HP_tractor_source = HpTractor_Source
 num_exhaust_nozzles = 2
-shield_link = cv_fighter_shield01, HpMount, {gf3_shield_link}
-mass = {gf3_mass}
-hold_size = {gf3_hold_size}
-strafe_force = {gf3_strafe_force}
-strafe_power_usage = {gf3_strafe_power_usage}
-nanobot_limit = {gf3_nanobot}
-shield_battery_limit = {gf3_nanobot}
-hit_pts = {gf3_hit_pts}
-{gf3_fuses}
-{gf3_equipment}
 
 [CollisionGroup]
 obj = port_wing_lod1
@@ -6077,7 +5795,7 @@ ids_info1 = 66534
 ids_info2 = 66608
 ids_info3 = 66535
 ship_class = 4
-nickname = ge_fighter4
+{ship_ge_fighter4}
 LODranges = 0, 1000, 5000, 10000
 msg_id_prefix = gcs_refer_shiparch_lfighter
 mission_property = can_use_berths
@@ -6112,16 +5830,6 @@ HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
 num_exhaust_nozzles = 1
 HP_tractor_source = HpTractor_Source
-shield_link = cv_fighter4_shield01, HpMount, {gf4_shield_link}
-mass = {gf4_mass}
-hold_size = {gf4_hold_size}
-strafe_force = {gf4_strafe_force}
-strafe_power_usage = {gf4_strafe_power_usage}
-nanobot_limit = {gf4_nanobot}
-shield_battery_limit = {gf4_nanobot}
-hit_pts = {gf4_hit_pts}
-{gf4_fuses}
-{gf4_equipment}
 
 [CollisionGroup]
 obj = cv_port_wing_lod1
@@ -6218,7 +5926,7 @@ ids_info1 = 66537
 ids_info2 = 66608
 ids_info3 = 66538
 ship_class = 1
-nickname = ge_fighter5
+{ship_ge_fighter5}
 msg_id_prefix = gcs_refer_shiparch_hfighter
 mission_property = can_use_berths
 LODranges = 0, 1000, 5000, 10000
@@ -6252,16 +5960,6 @@ HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
 HP_tractor_source = HpTractor_Source
 num_exhaust_nozzles = 2
-shield_link = cv_fighter5_shield01, HpMount, {gf5_shield_link}
-mass = {gf5_mass}
-hold_size = {gf5_hold_size}
-strafe_force = {gf5_strafe_force}
-strafe_power_usage = {gf5_strafe_power_usage}
-nanobot_limit = {gf5_nanobot}
-shield_battery_limit = {gf5_nanobot}
-hit_pts = {gf5_hit_pts}
-{gf5_fuses}
-{gf5_equipment}
 
 [CollisionGroup]
 obj = cv_port_wing_lod1
@@ -6345,7 +6043,7 @@ ids_info1 = 066570
 ids_info2 = 066571
 ids_info3 = 066572
 ship_class = 7
-nickname = ge_fighter6
+{ship_ge_fighter6}
 LODranges = 0, 1000, 5000, 10000
 msg_id_prefix = gcs_refer_shiparch_hfighter
 mission_property = can_use_berths
@@ -6380,16 +6078,6 @@ HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
 HP_tractor_source = HpTractor_Source
 num_exhaust_nozzles = 2
-shield_link = cv_fighter6_shield01, HpMount, {gf6_shield_link}
-mass = {gf6_mass}
-hold_size = {gf6_hold_size}
-strafe_force = {gf6_strafe_force}
-strafe_power_usage = {gf6_strafe_power_usage}
-nanobot_limit = {gf6_nanobot}
-shield_battery_limit = {gf6_nanobot}
-hit_pts = {gf6_hit_pts}
-{gf6_fuses}
-{gf6_equipment}
 
 [CollisionGroup]
 obj = cv_port_wing_lod1
@@ -6518,7 +6206,7 @@ ids_info1 = 066401
 ids_info2 = 066402
 ids_info3 = 066403
 ship_class = 4
-nickname = bw_fighter
+{ship_bw_fighter}
 LODranges = 0, 500, 1000, 10000
 msg_id_prefix = gcs_refer_shiparch_Rhelf
 mission_property = can_use_berths
@@ -6549,16 +6237,6 @@ HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
 HP_tractor_source = HpTractor_Source
 num_exhaust_nozzles = 1
-shield_link = bw_fighter_shield01, HpMount, {bwf_shield_link}
-mass = {bwf_mass}
-hold_size = {bwf_hold_size}
-strafe_force = {bwf_strafe_force}
-strafe_power_usage = {bwf_strafe_power_usage}
-nanobot_limit = {bwf_nanobot}
-shield_battery_limit = {bwf_nanobot}
-hit_pts = {bwf_hit_pts}
-{bwf_fuses}
-{bwf_equipment}
 
 [CollisionGroup]
 obj = bw_port_wing01_lod1
@@ -6613,7 +6291,7 @@ ids_info1 = 066409
 ids_info2 = 066410
 ids_info3 = 066411
 ship_class = 7
-nickname = bw_elite
+{ship_bw_elite}
 LODranges = 0, 1000, 5000, 10000
 msg_id_prefix = gcs_refer_shiparch_Rhehf
 mission_property = can_use_berths
@@ -6647,16 +6325,6 @@ HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
 HP_tractor_source = HpTractor_Source
 num_exhaust_nozzles = 2
-shield_link = bw_elite_shield01, HpMount, {bwe_shield_link}
-mass = {bwe_mass}
-hold_size = {bwe_hold_size}
-strafe_force = {bwe_strafe_force}
-strafe_power_usage = {bwe_strafe_power_usage}
-nanobot_limit = {bwe_nanobot}
-shield_battery_limit = {bwe_nanobot}
-hit_pts = {bwe_hit_pts}
-{bwe_fuses}
-{bwe_equipment}
 
 [CollisionGroup]
 obj = bw_port_wing01_lod1
@@ -6798,7 +6466,7 @@ ids_info1 = 066413
 ids_info2 = 066414
 ids_info3 = 066415
 ship_class = 7
-nickname = bw_elite2
+{ship_bw_elite2}
 LODranges = 0, 1000, 5000, 10000
 msg_id_prefix = gcs_refer_shiparch_borhf
 mission_property = can_use_berths
@@ -6832,16 +6500,6 @@ HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
 HP_tractor_source = HpTractor_Source
 num_exhaust_nozzles = 2
-shield_link = bw_vheavy_shield01, HpMount, {bwe2_shield_link}
-mass = {bwe2_mass}
-hold_size = {bwe2_hold_size}
-strafe_force = {bwe2_strafe_force}
-strafe_power_usage = {bwe2_strafe_power_usage}
-nanobot_limit = {bwe2_nanobot}
-shield_battery_limit = {bwe2_nanobot}
-hit_pts = {bwe2_hit_pts}
-{bwe2_fuses}
-{bwe2_equipment}
 
 [CollisionGroup]
 obj = bw_port_wing01_lod1
@@ -6940,7 +6598,7 @@ ids_info1 = 066355
 ids_info2 = 066356
 ids_info3 = 066357
 ship_class = 8
-nickname = bw_freighter
+{ship_bw_freighter}
 LODranges = 0, 1000, 5000, 10000
 msg_id_prefix = gcs_refer_shiparch_borf
 mission_property = can_use_berths
@@ -6974,16 +6632,6 @@ num_exhaust_nozzles = 3
 steering_torque = 54000.000000, 54000.000000, 54000.000000
 angular_drag = 60000.000000, 60000.000000, 60000.000000
 rotation_inertia = 16800.000000, 16800.000000, 16800.000000
-shield_link = bw_freighter_shield01, HpMount, {bwfr_shield_link}
-mass = {bwfr_mass}
-hold_size = {bwfr_hold_size}
-strafe_force = {bwfr_strafe_force}
-strafe_power_usage = {bwfr_strafe_power_usage}
-nanobot_limit = {bwfr_nanobot}
-shield_battery_limit = {bwfr_nanobot}
-hit_pts = {bwfr_hit_pts}
-{bwfr_fuses}
-{bwfr_equipment}
 
 [CollisionGroup]
 obj = bw_port_wing_lod1
@@ -7089,7 +6737,7 @@ ids_info1 = 066586
 ids_info2 = 066587
 ids_info3 = 066588
 ship_class = 6
-nickname = or_elite
+{ship_or_elite}
 LODranges = 0, 1000, 5000, 10000
 msg_id_prefix = gcs_refer_shiparch_Ordhf
 mission_property = can_use_berths
@@ -7123,16 +6771,6 @@ HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
 HP_tractor_source = HpTractor_Source
 num_exhaust_nozzles = 3
-shield_link = or_elite_shield01, HpMount, {oe_shield_link}
-mass = {oe_mass}
-hold_size = {oe_hold_size}
-strafe_force = {oe_strafe_force}
-strafe_power_usage = {oe_strafe_power_usage}
-nanobot_limit = {oe_nanobot}
-shield_battery_limit = {oe_nanobot}
-hit_pts = {oe_hit_pts}
-{oe_fuses}
-{oe_equipment}
 
 [CollisionGroup]
 obj = Or_star_wing_lod1
@@ -7993,7 +7631,7 @@ root_health_proxy = false
 [Ship]
 ids_name = 237104
 ids_info = 66493
-nickname = ge_armored
+{ship_ge_armored}
 LODranges = 0, 2000, 5000, 10000
 msg_id_prefix = gcs_refer_shiparch_atransport
 mission_property = can_use_berths
@@ -8028,16 +7666,6 @@ HP_bay_surface = HpBayDoor01
 HP_bay_external = HpBayDoor02
 HP_tractor_source = HpTractor_Source
 num_exhaust_nozzles = 2
-shield_link = l_fighter_shield01, HpMount, {armored_shield_link}
-mass = {armored_mass}
-hold_size = {armored_hold_size}
-strafe_force = {armored_strafe_force}
-strafe_power_usage = {armored_strafe_power_usage}
-nanobot_limit = {armored_nanobot}
-shield_battery_limit = {armored_nanobot}
-hit_pts = {armored_hit_pts}
-{armored_fuses}
-{armored_equipment}
 
 [Ship]
 ids_name = 237057
@@ -8568,7 +8196,7 @@ ids_info = 066358
 ids_info1 = 066359
 ids_info2 = 066360
 ids_info3 = 066361
-nickname = ge_csv
+{ship_ge_csv}
 LODranges = 0, 1000, 5000, 10000
 msg_id_prefix = gcs_refer_shiparch_support
 mission_property = can_use_berths
@@ -8602,16 +8230,88 @@ camera_vertical_turn_up_angle = 5
 camera_vertical_turn_down_angle = 25 
 camera_turn_look_ahead_slerp_amount = 1.000000 
 cockpit = cockpits\\liberty\\or_elite.ini 
-shield_link = csv_shield01, HpMount, {csv_shield_link}
-mass = {csv_mass}
-hold_size = {csv_hold_size}
-strafe_force = {csv_strafe_force}
-strafe_power_usage = {csv_strafe_power_usage}
-nanobot_limit = {csv_nanobot}
-shield_battery_limit = {csv_nanobot}
-hit_pts = {csv_hit_pts}
-{csv_fuses}
-{csv_equipment}
+
+[Ship]
+ids_name = 237103
+ids_info = 066358
+ids_info1 = 066359
+ids_info2 = 066360
+ids_info3 = 066361
+{ship_ge_csv2}
+LODranges = 0, 1000, 5000, 10000
+msg_id_prefix = gcs_refer_shiparch_support
+mission_property = can_use_berths
+type = FIGHTER
+DA_archetype = ships\\utility\\csv\\csv.cmp
+material_library = ships\\utility\\utility_ships.mat
+material_library = fx\\envmapbasic.mat
+envmap_material = envmapship
+linear_drag = 1.000000
+explosion_arch = explosion_li
+surface_hit_effects = 0, small_hull_hit_light01, small_hull_hit_light02, small_hull_hit_light03
+surface_hit_effects = 150, small_hull_hit_medium01, small_hull_hit_medium02, small_hull_hit_medium03
+surface_hit_effects = 300, small_hull_hit_heavy01, small_hull_hit_heavy02, small_hull_hit_heavy03
+steering_torque = 33000.000000, 33000.000000, 230000.000000
+angular_drag = 41000.000000, 41000.000000, 141000.000000
+rotation_inertia = 8400.000000, 8400.000000, 8400.000000
+nudge_force = 30000.000000
+bay_door_anim = Sc_open door
+bay_doors_open_snd = cargo_doors_open
+bay_doors_close_snd = cargo_doors_close
+HP_bay_surface = HpBayDoor01
+HP_bay_external = HpBayDoor02
+HP_tractor_source = HpTractor_Source
+num_exhaust_nozzles = 1
+pilot_mesh = generic_pilot
+camera_offset = 10, 30
+;camera_offset = 12, 46 
+camera_angular_acceleration = 0.050000 
+camera_horizontal_turn_angle = 25 
+camera_vertical_turn_up_angle = 5 
+camera_vertical_turn_down_angle = 25 
+camera_turn_look_ahead_slerp_amount = 1.000000 
+cockpit = cockpits\\liberty\\or_elite.ini 
+
+[Ship]
+ids_name = 237103
+ids_info = 066358
+ids_info1 = 066359
+ids_info2 = 066360
+ids_info3 = 066361
+{ship_ge_csv3}
+LODranges = 0, 1000, 5000, 10000
+msg_id_prefix = gcs_refer_shiparch_support
+mission_property = can_use_berths
+type = FIGHTER
+DA_archetype = ships\\utility\\csv\\csv.cmp
+material_library = ships\\utility\\utility_ships.mat
+material_library = fx\\envmapbasic.mat
+envmap_material = envmapship
+linear_drag = 1.000000
+explosion_arch = explosion_li
+surface_hit_effects = 0, small_hull_hit_light01, small_hull_hit_light02, small_hull_hit_light03
+surface_hit_effects = 150, small_hull_hit_medium01, small_hull_hit_medium02, small_hull_hit_medium03
+surface_hit_effects = 300, small_hull_hit_heavy01, small_hull_hit_heavy02, small_hull_hit_heavy03
+steering_torque = 33000.000000, 33000.000000, 230000.000000
+angular_drag = 41000.000000, 41000.000000, 141000.000000
+rotation_inertia = 8400.000000, 8400.000000, 8400.000000
+nudge_force = 30000.000000
+bay_door_anim = Sc_open door
+bay_doors_open_snd = cargo_doors_open
+bay_doors_close_snd = cargo_doors_close
+HP_bay_surface = HpBayDoor01
+HP_bay_external = HpBayDoor02
+HP_tractor_source = HpTractor_Source
+num_exhaust_nozzles = 1
+pilot_mesh = generic_pilot
+camera_offset = 10, 30
+;camera_offset = 12, 46 
+camera_angular_acceleration = 0.050000 
+camera_horizontal_turn_angle = 25 
+camera_vertical_turn_up_angle = 5 
+camera_vertical_turn_down_angle = 25 
+camera_turn_look_ahead_slerp_amount = 1.000000 
+cockpit = cockpits\\liberty\\or_elite.ini 
 
 [Ship]
 ids_name = 237001

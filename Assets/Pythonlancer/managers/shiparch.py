@@ -43,6 +43,8 @@ class ShiparchManager(object):
 
         Dromader,
         CSV,
+        CSV_Mk2,
+        CSV_Mk3,
         Armored,
         Starflier,
 

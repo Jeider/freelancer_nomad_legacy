@@ -135,7 +135,7 @@ npc_class = {classes_list}'''
 
     def __init__(self, faction, ship, level):
         self.faction = faction
-        self.ship = ship
+        self.ship = ship()
         self.level = level
         self.equipment = self.get_required_equipment()
 
@@ -268,4 +268,4 @@ npc_class = {classes_list}'''
         return params
 
     def get_loadout(self):
-        return self.ship.SHIP_TEMPLATE.format(**self.get_loadout_template_params())
+        return self.ship.get_loadout_template().format(**self.get_loadout_template_params())
