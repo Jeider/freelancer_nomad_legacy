@@ -46,6 +46,8 @@ class MarketBase(object):
 base = {base_nickname}
 {items}'''
 
+    DEFAULT_ITEMS = []
+
     def __init__(self, base_nickname, items):
         self.base_nickname = base_nickname
         self.items = items
@@ -57,7 +59,9 @@ base = {base_nickname}
         return self.items
 
     def get_item_markets(self):
-        return [item.get_marketdata() for item in self.get_items()]
+        items = [item.get_marketdata() for item in self.get_items()]
+        items.extend(self.DEFAULT_ITEMS)
+        return items
 
     def get_items_string(self):
         return SINGLE_DIVIDER.join(self.get_item_markets())
@@ -71,6 +75,9 @@ base = {base_nickname}
 
 class EquipDealer(MarketBase):
     MARKET_KIND = MARKET_EQUIP
+    DEFAULT_ITEMS = [
+        'MarketGood = ge_s_repair_01, 0, -1, 15, 15, 0, 1',
+    ]
 
 
 class CommodityDealer(MarketBase):

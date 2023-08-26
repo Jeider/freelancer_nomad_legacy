@@ -1,4 +1,4 @@
-from world import faction
+from universe.faction import Faction
 from world.npc import NPC
 
 from text.dividers import SINGLE_DIVIDER, DIVIDER
@@ -6,14 +6,7 @@ from text.dividers import SINGLE_DIVIDER, DIVIDER
 class PopulationManager(object):
 
     def __init__(self, misc_equip, weapons):
-        self.factions = [
-            faction.RheinlandMain,
-            faction.RheinlandCivilians,
-            faction.RheinlandHunters,
-            faction.RheinlandPirate,
-            faction.Hessians,
-            faction.Junkers,
-        ]
+        self.factions = Faction.subclasses
 
         self.misc_equip = misc_equip
         self.weapons = weapons

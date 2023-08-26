@@ -16,7 +16,6 @@ class UniverseManager(object):
         self.equip_dealers_list = []
 
         self.load_bases()
-        # import pdb;pdb.set_trace()
 
     def load_bases(self):
         for base_class in Base.subclasses:
@@ -52,6 +51,11 @@ class UniverseManager(object):
             for equip_class in equip_classes:
                 for shipclass in Equipment.SHIPCLASSES:
                     items.append(self.misc_equip.get_shield(shipclass, base.SHIELD, equip_class))
+
+        if base.THRUSTER:
+            equip_classes = base.get_thruster_classes()
+            for equip_class in equip_classes:
+                items.append(self.misc_equip.get_thruster(base.THRUSTER, equip_class))
 
         return items
 

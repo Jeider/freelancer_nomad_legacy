@@ -33,9 +33,9 @@ entities={
 		up=Y_AXIS,
 		front=Z_AXIS,
 		ambient={
-			170,
-			170,
-			170
+			0,
+			0,
+			0
 		}
 		-- ,
 		-- userprops={
@@ -74,9 +74,9 @@ entities={
 				255
 			},
 			diffuse={
-				0.5,
-				0.5,
-				0.5
+				0.8,
+				0.8,
+				0.8
 			},
 			specular={
 				1,
@@ -84,13 +84,13 @@ entities={
 				1
 			},
 			ambient={
-				0.0,
-				0.0,
-				0.0
+				0.35,
+				0.35,
+				0.35
 			},
 			direction={
-				0,
 				1,
+				0,
 				0
 			},
 			range=2000,
@@ -109,10 +109,10 @@ entities={
 	{
 		entity_name="the_stars",
 		type=COMPOUND,
-		template_name="starsphere_ew01",
-		lt_grp=0,
-		srt_grp=-100,
-		usr_flg=1,
+		template_name="starsphere_ew02",
+		lt_grp=5,
+		srt_grp=0,
+		usr_flg=0,
 		flags=LIT_DYNAMIC,
 		spatialprops={
 			pos={
@@ -168,7 +168,7 @@ entities={
 		spatialprops={
 			pos={
 				-- 0.3, 1.65, -2
-				-0.5, 1.8, -0.8
+				0, 1.4, -3
 			},
 			orient={
 				{1,0,0},
@@ -207,7 +207,7 @@ entities={
 		template_id=0,
 		spatialprops={
 			pos={
-				0, 1.4, 0
+				0, 1.2, 0
 				-- 0, 1.6, 0
 			},
 			orient={
@@ -220,7 +220,7 @@ entities={
 	{
 		entity_name="Char_trent",
 		type=DEFORMABLE,
-		template_name="alaric",
+		template_name="trent",
 		lt_grp=0,
 		srt_grp=0,
 		usr_flg=0,
@@ -305,8 +305,8 @@ events = {
 		0,
 		START_MOTION,
 		{"Char_trent"},
-		{animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
-		 duration=1, time_scale=1,  weight=1,  heading=-1}
+		{animation="Sc_SPCBODY_s038x_Trent_XB_STND_BHIP_RHAND_045DN_02",
+		 duration=4, time_scale=1,  weight=1,  heading=-1}
 	},
 	-- {
 		-- 0,
@@ -338,6 +338,27 @@ events = {
 			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
 		-- }
 	-- },
+	
+	
+	{
+		0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Light_SCENE"
+		},
+		{
+			duration=0,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					-25,
+					Y_AXIS
+				}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}}, pcurve_period=-1000
+		}
+	},
+	
 }
 
 

@@ -1,6 +1,5 @@
 from universe.system import *
 from world.gun import *
-from world.faction import *
 from world.equipment import MainMiscEquip as misc
 from world.equipment import Equipment
 from world.ship import *
@@ -45,6 +44,9 @@ class Base(object):
     SHIELD = None
     SHIELD_LEVEL = None
 
+    THRUSTER = None
+    THRUSTER_LEVEL = None
+
     REWARD_LEVEL = None
 
     REWARD_GUN = None
@@ -58,6 +60,9 @@ class Base(object):
 
     REWARD_SHIELD = None
     REWARD_SHIELD_LEVEL = None
+
+    REWARD_THRUSTER = None
+    REWARD_THRUSTER_LEVEL = None
 
     subclasses = []
 
@@ -90,6 +95,11 @@ class Base(object):
             return self.SHIELD_LEVEL
         return self.LEVEL
 
+    def get_thruster_level(self):
+        if self.THRUSTER_LEVEL:
+            return self.THRUSTER_LEVEL
+        return self.LEVEL
+
     def get_gun_classes(self):
         return EQUIP_CLASSES_PER_LEVEL[self.get_gun_level()]
 
@@ -101,6 +111,9 @@ class Base(object):
 
     def get_shield_classes(self):
         return EQUIP_CLASSES_PER_LEVEL[self.get_shield_level()]
+
+    def get_thruster_classes(self):
+        return EQUIP_CLASSES_PER_LEVEL[self.get_thruster_level()]
 
 
 
@@ -120,6 +133,7 @@ class Bizmark_base(Base):
     ENGINE = misc.RH_CIV
     POWER = misc.RH_CIV
     SHIELD = misc.RH_CIV
+    THRUSTER = misc.RH_CIV
 
 
 
@@ -127,12 +141,14 @@ class Bizmark_base(Base):
 class rh_biz_02_Base(Base):
     NAME = 'rh_biz_02_Base'
     SYSTEM = rh_biz
-    LEVEL = LEVEL_1
 
-    GUN = RheinlandCivgun
-    ENGINE = misc.RH_CIV
-    POWER = misc.RH_CIV
-    SHIELD = misc.RH_CIV
+    LEVEL = LEVEL_2
+
+    GUN = RheinlandHuntergun
+    ENGINE = misc.RH_PIRATE
+    POWER = misc.RH_PIRATE
+    SHIELD = misc.RH_PIRATE
+    THRUSTER = misc.RH_PIRATE
 
 
 # Battleship
@@ -143,11 +159,13 @@ class rh_biz_03_Base(Base):
         Valkyrie,
     ]
 
-    LEVEL = LEVEL_1
-    GUN = RheinlandHeavygun
+    LEVEL = LEVEL_2
+
+    GUN = RheinlandLightgun
     ENGINE = misc.RH_MAIN
     POWER = misc.RH_MAIN
     SHIELD = misc.RH_MAIN
+    THRUSTER = misc.RH_MAIN
 
 
 # Scient
@@ -155,11 +173,13 @@ class rh_biz_04_Base(Base):
     NAME = 'rh_biz_04_Base'
     SYSTEM = rh_biz
 
-    LEVEL = LEVEL_1
+    LEVEL = LEVEL_2
+
     GUN = RheinlandShieldgun
     ENGINE = misc.RH_CIV
     POWER = misc.RH_CIV
     SHIELD = misc.RH_CIV
+    THRUSTER = misc.RH_CIV
 
 
 # Military Base (Kologne)
@@ -168,10 +188,12 @@ class rh_biz_05_Base(Base):
     SYSTEM = rh_biz
 
     LEVEL = LEVEL_2
+
     GUN = RheinlandHeavygun
     ENGINE = misc.RH_MAIN
     POWER = misc.RH_MAIN
     SHIELD = misc.RH_MAIN
+    THRUSTER = misc.RH_MAIN
 
 
 # West Pirates
@@ -180,10 +202,12 @@ class rh_biz_06_Base(Base):
     SYSTEM = rh_biz
 
     LEVEL = LEVEL_1
+
     GUN = RheinlandHessiangun
     ENGINE = misc.RH_PIRATE
     POWER = misc.RH_PIRATE
     SHIELD = misc.RH_PIRATE
+    THRUSTER = misc.RH_PIRATE
 
 
 # East Pirates
@@ -192,40 +216,96 @@ class rh_biz_07_Base(Base):
     SYSTEM = rh_biz
 
     LEVEL = LEVEL_1
+
     GUN = RheinlandPirategun
     ENGINE = misc.RH_PIRATE
     POWER = misc.RH_PIRATE
     SHIELD = misc.RH_PIRATE
+    THRUSTER = misc.RH_PIRATE
 
 
+# Starke Largestation
 class sig8_01_Base(Base):
     NAME = 'sig8_01_Base'
     SYSTEM = sig8
 
+    LEVEL = LEVEL_1
 
+    GUN = RheinlandLightgun
+    ENGINE = misc.RH_MAIN
+    POWER = misc.RH_MAIN
+    SHIELD = misc.RH_MAIN
+    THRUSTER = misc.RH_MAIN
+
+
+# Junker Station
 class sig8_02_Base(Base):
     NAME = 'sig8_02_Base'
     SYSTEM = sig8
 
+    LEVEL = LEVEL_2
 
+    GUN = RheinlandJunkergun
+    ENGINE = misc.RH_PIRATE
+    POWER = misc.RH_PIRATE
+    SHIELD = misc.RH_PIRATE
+    THRUSTER = misc.RH_PIRATE
+
+
+# Police outpost
 class sig8_04_Base(Base):
     NAME = 'sig8_04_Base'
     SYSTEM = sig8
 
+    LEVEL = LEVEL_1
 
+    GUN = RheinlandHuntergun
+    ENGINE = misc.RH_PIRATE
+    POWER = misc.RH_PIRATE
+    SHIELD = misc.RH_PIRATE
+    THRUSTER = misc.RH_PIRATE
+
+
+# mining space shipping
 class om15_01_Base(Base):
     NAME = 'om15_01_Base'
     SYSTEM = om15
 
+    LEVEL = LEVEL_2
 
+    GUN = RheinlandCivgun
+    ENGINE = misc.RH_CIV
+    POWER = misc.RH_CIV
+    SHIELD = misc.RH_CIV
+    THRUSTER = misc.RH_CIV
+
+
+# junkers
 class om15_03_Base(Base):
     NAME = 'om15_03_Base'
     SYSTEM = om15
 
+    LEVEL = LEVEL_1
 
+    GUN = RheinlandJunkergun
+    ENGINE = misc.RH_PIRATE
+    POWER = misc.RH_PIRATE
+    SHIELD = misc.RH_PIRATE
+    THRUSTER = misc.RH_PIRATE
+
+
+# Traders
 class om15_04_Base(Base):
     NAME = 'om15_04_Base'
     SYSTEM = om15
+
+    LEVEL = LEVEL_1
+
+    GUN = RheinlandHuntergun
+    ENGINE = misc.RH_PIRATE
+    POWER = misc.RH_PIRATE
+    SHIELD = misc.RH_PIRATE
+    THRUSTER = misc.RH_PIRATE
 
 
 class om15_miner_01(Base):
@@ -273,51 +353,133 @@ class rh_stut_06_Base(Base):
     SYSTEM = rh_stut
 
 
+# Berlin 
 class rh_ber_01_Base(Base):
     NAME = 'rh_ber_01_Base'
     SYSTEM = rh_ber
 
+    LEVEL = LEVEL_2
 
+    GUN = RheinlandCivgun
+    ENGINE = misc.RH_CIV
+    POWER = misc.RH_CIV
+    SHIELD = misc.RH_CIV
+    THRUSTER = misc.RH_CIV
+
+
+# Prison
 class rh_ber_02_Base(Base):
     NAME = 'rh_ber_02_Base'
     SYSTEM = rh_ber
 
+    LEVEL = LEVEL_2
 
+    GUN = RheinlandCivgun
+    ENGINE = misc.RH_MAIN
+    POWER = misc.RH_MAIN
+    SHIELD = misc.RH_MAIN
+    THRUSTER = misc.RH_MAIN
+
+
+# Solar plant
 class rh_ber_03_Base(Base):
     NAME = 'rh_ber_03_Base'
     SYSTEM = rh_ber
 
+    LEVEL = LEVEL_1
 
+    GUN = RheinlandShieldgun
+    ENGINE = misc.RH_CIV
+    POWER = misc.RH_CIV
+    SHIELD = misc.RH_CIV
+    THRUSTER = misc.RH_CIV
+
+
+# Junker Freeport
 class rh_ber_04_Base(Base):
     NAME = 'rh_ber_04_Base'
     SYSTEM = rh_ber
 
+    LEVEL = LEVEL_1
 
+    GUN = RheinlandJunkergun
+    ENGINE = misc.RH_PIRATE
+    POWER = misc.RH_PIRATE
+    SHIELD = misc.RH_PIRATE
+    THRUSTER = misc.RH_PIRATE
+
+
+# Hessian outpost
 class rh_ber_05_Base(Base):
     NAME = 'rh_ber_05_Base'
     SYSTEM = rh_ber
 
+    LEVEL = LEVEL_2
 
+    GUN = RheinlandHessiangun
+    ENGINE = misc.RH_PIRATE
+    POWER = misc.RH_PIRATE
+    SHIELD = misc.RH_PIRATE
+    THRUSTER = misc.RH_PIRATE
+
+
+# Police
 class rh_ber_06_Base(Base):
     NAME = 'rh_ber_06_Base'
     SYSTEM = rh_ber
 
+    LEVEL = LEVEL_2
 
+    GUN = RheinlandHuntergun
+    ENGINE = misc.RH_PIRATE
+    POWER = misc.RH_PIRATE
+    SHIELD = misc.RH_PIRATE
+    THRUSTER = misc.RH_PIRATE
+
+
+# ALG ?
 class rh_ber_07_Base(Base):
     NAME = 'rh_ber_07_Base'
     SYSTEM = rh_ber
 
+    LEVEL = LEVEL_1
 
+    GUN = RheinlandCivgun
+    ENGINE = misc.RH_CIV
+    POWER = misc.RH_CIV
+    SHIELD = misc.RH_CIV
+    THRUSTER = misc.RH_CIV
+
+
+# Junkers
 class rh_ber_08_Base(Base):
     NAME = 'rh_ber_08_Base'
     SYSTEM = rh_ber
 
+    LEVEL = LEVEL_2
 
+    GUN = RheinlandJunkergun
+    ENGINE = misc.RH_PIRATE
+    POWER = misc.RH_PIRATE
+    SHIELD = misc.RH_PIRATE
+    THRUSTER = misc.RH_PIRATE
+
+
+# Rheinland miner
 class sig13_01_Base(Base):
     NAME = 'sig13_01_Base'
     SYSTEM = sig13
 
+    LEVEL = LEVEL_1
 
+    GUN = RheinlandCivgun
+    ENGINE = misc.RH_CIV
+    POWER = misc.RH_CIV
+    SHIELD = misc.RH_CIV
+    THRUSTER = misc.RH_CIV
+
+
+# Liberty miner
 class sig13_02_Base(Base):
     NAME = 'sig13_02_Base'
     SYSTEM = sig13

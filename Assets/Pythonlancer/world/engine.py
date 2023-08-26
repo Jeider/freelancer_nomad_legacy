@@ -120,15 +120,31 @@ mass = 10'''
 
     RH_ENGINE_CORE = '''
 DA_archetype = Equipment\\models\\hardware\\rh_coaxial_nuclear_drive.3db
-material_library = Equipment\\models\\hardware.mat
-flame_effect = gf_rh_smallengine02_fire
-trail_effect = gf_rh_smallengine02_trail
-trail_effect_player = gf_rh_smallengine02_trail'''
+material_library = Equipment\\models\\hardware.mat'''
 
     RH_MAIN_ENGINE_GENERICS = '''
 cruise_start_sound = engine_rh_cruise_start
 cruise_loop_sound = engine_rh_cruise_loop
-cruise_stop_sound = engine_rh_cruise_stop'''
+cruise_stop_sound = engine_rh_cruise_stop
+flame_effect = gf_rh_smallengine02_fire
+trail_effect = gf_rh_smallengine02_trail
+trail_effect_player = gf_rh_smallengine02_trail'''
+
+    RH_CIV_ENGINE_GENERICS = '''
+cruise_start_sound = engine_ci_cruise_start
+cruise_loop_sound = engine_ci_cruise_loop
+cruise_stop_sound = engine_ci_cruise_stop
+flame_effect = gf_rh_smallengine06_fire
+trail_effect = gf_rh_smallengine06_trail
+trail_effect_player = gf_rh_smallengine06_trail'''
+
+    RH_PIRATE_ENGINE_GENERICS = '''
+cruise_start_sound = engine_bw_cruise_start
+cruise_loop_sound = engine_bw_cruise_loop
+cruise_stop_sound = engine_bw_cruise_stop
+flame_effect = gf_rh_smallengine05_fire
+trail_effect = gf_rh_smallengine05_trail
+trail_effect_player = gf_rh_smallengine05_trail'''
 
     RH_MAIN_ENGINE_FIGHTER = '''
 character_start_sound = engine_rh_fighter_start
@@ -359,8 +375,8 @@ engine_kill_sound = engine_pi_freighter_kill'''
 
     GENERICS_PER_TYPE = {
         MainMiscEquip.RH_MAIN: RH_MAIN_ENGINE_GENERICS,
-        MainMiscEquip.RH_CIV: CIV_ENGINE_GENERICS,
-        MainMiscEquip.RH_PIRATE: PIRATE_ENGINE_GENERICS,
+        MainMiscEquip.RH_CIV: RH_CIV_ENGINE_GENERICS,
+        MainMiscEquip.RH_PIRATE: RH_PIRATE_ENGINE_GENERICS,
 
         MainMiscEquip.LI_MAIN: LI_MAIN_ENGINE_GENERICS,
         MainMiscEquip.LI_CIV: CIV_ENGINE_GENERICS,
