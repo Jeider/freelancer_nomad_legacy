@@ -1,7 +1,7 @@
 from fx.contrail import Contrail
 from fx.light import Light
 
-from world.gun import Gun
+from world.gun import *
 from world.equipment import MainMiscEquip as misc
 from world.npc import NPC
 from world import ship
@@ -37,11 +37,16 @@ class RhenlandFleet(object):
     ]
 
 
-class RheinlandMain(LawfulFaction, RhenlandFleet):
+class BaseRheinland(object):
+    SHIELD_WEAPON = RheinlandShieldgun
+    CONTRAIL = Contrail.CONTRAIL_RH
+    LIGHT = Light.SMALL_YELLOW
+
+
+class RheinlandMain(LawfulFaction, RhenlandFleet, BaseRheinland):
     CODE = 'rh_grp'
 
-    WEAPON = Gun.RH_LIGHTGUN
-    SHIELD_WEAPON = Gun.RH_SHIELDGUN
+    WEAPON = RheinlandLightgun
     AFTERBURN = misc.RH_MAIN
     TORPEDO = None
     CM = None
@@ -49,16 +54,12 @@ class RheinlandMain(LawfulFaction, RhenlandFleet):
     ENGINE = misc.RH_MAIN
     POWER = misc.RH_MAIN
     SHIELD = misc.RH_MAIN
-    CONTRAIL = Contrail.CONTRAIL_RH
-
-    LIGHT = Light.SMALL_YELLOW
 
 
-class RheinlandCivilians(LawfulFaction, RhenlandFleet):
+class RheinlandCivilians(LawfulFaction, RhenlandFleet, BaseRheinland):
     CODE = 'rc_grp'
 
-    WEAPON = Gun.RH_CIVGUN
-    SHIELD_WEAPON = Gun.RH_SHIELDGUN
+    WEAPON = RheinlandCivgun
     AFTERBURN = misc.RH_CIV
     TORPEDO = None
     CM = None
@@ -66,16 +67,12 @@ class RheinlandCivilians(LawfulFaction, RhenlandFleet):
     ENGINE = misc.RH_CIV
     POWER = misc.RH_CIV
     SHIELD = misc.RH_CIV
-    CONTRAIL = Contrail.CONTRAIL_RH
-
-    LIGHT = Light.SMALL_YELLOW
 
 
-class RheinlandHunters(LawfulFaction, RhenlandFleet):
+class RheinlandHunters(LawfulFaction, RhenlandFleet, BaseRheinland):
     CODE = 'bh_grp_rh'
 
-    WEAPON = Gun.RH_HUNTERGUN
-    SHIELD_WEAPON = Gun.RH_SHIELDGUN
+    WEAPON = RheinlandHuntergun
     AFTERBURN = misc.RH_MAIN
     TORPEDO = None
     CM = None
@@ -83,16 +80,12 @@ class RheinlandHunters(LawfulFaction, RhenlandFleet):
     ENGINE = misc.RH_CIV
     POWER = misc.RH_CIV
     SHIELD = misc.RH_CIV
-    CONTRAIL = Contrail.CONTRAIL_RH
-
-    LIGHT = Light.SMALL_YELLOW
 
 
-class RheinlandPirate(UnlawfulFaction, RhenlandFleet):
+class RheinlandPirate(UnlawfulFaction, RhenlandFleet, BaseRheinland):
     CODE = 'pi_grp_rh'
 
-    WEAPON = Gun.RH_PIRATEGUN
-    SHIELD_WEAPON = Gun.RH_SHIELDGUN
+    WEAPON = RheinlandPirategun
     AFTERBURN = misc.RH_PIRATE
     TORPEDO = None
     CM = None
@@ -100,16 +93,12 @@ class RheinlandPirate(UnlawfulFaction, RhenlandFleet):
     ENGINE = misc.RH_PIRATE
     POWER = misc.RH_PIRATE
     SHIELD = misc.RH_PIRATE
-    CONTRAIL = Contrail.CONTRAIL_RH
-
-    LIGHT = Light.SMALL_YELLOW
 
 
-class Hessians(UnlawfulFaction, RhenlandFleet):
+class Hessians(UnlawfulFaction, RhenlandFleet, BaseRheinland):
     CODE = 'rx_grp'
 
-    WEAPON = Gun.RH_HESSIANGUN
-    SHIELD_WEAPON = Gun.RH_SHIELDGUN
+    WEAPON = RheinlandHessiangun
     AFTERBURN = misc.RH_PIRATE
     TORPEDO = None
     CM = None
@@ -117,16 +106,12 @@ class Hessians(UnlawfulFaction, RhenlandFleet):
     ENGINE = misc.RH_PIRATE
     POWER = misc.RH_PIRATE
     SHIELD = misc.RH_PIRATE
-    CONTRAIL = Contrail.CONTRAIL_RH
-
-    LIGHT = Light.SMALL_YELLOW
 
 
-class Junkers(UnlawfulFaction, RhenlandFleet):
+class Junkers(UnlawfulFaction, RhenlandFleet, BaseRheinland):
     CODE = 'junk_grp'
 
-    WEAPON = Gun.RH_JUNKERGUN
-    SHIELD_WEAPON = Gun.RH_SHIELDGUN
+    WEAPON = RheinlandJunkergun
     AFTERBURN = misc.RH_PIRATE
     TORPEDO = None
     CM = None
@@ -134,6 +119,3 @@ class Junkers(UnlawfulFaction, RhenlandFleet):
     ENGINE = misc.RH_PIRATE
     POWER = misc.RH_PIRATE
     SHIELD = misc.RH_PIRATE
-    CONTRAIL = Contrail.CONTRAIL_RH
-
-    LIGHT = Light.SMALL_YELLOW

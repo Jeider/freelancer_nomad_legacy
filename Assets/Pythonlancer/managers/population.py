@@ -1,9 +1,7 @@
 from world import faction
 from world.npc import NPC
 
-DIVIDER = "\n\n"
-SINGLE_DIVIDER = "\n"
-
+from text.dividers import SINGLE_DIVIDER, DIVIDER
 
 class PopulationManager(object):
 

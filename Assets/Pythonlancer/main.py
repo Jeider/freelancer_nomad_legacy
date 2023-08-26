@@ -44,6 +44,8 @@ def main():
         ('lootprops.ini', DIVIDER.join(lootprops_data)),
 
         ('demo_marketdata.ini', DIVIDER.join(markets_demo_data)),
+        ('market_equip.ini', core.universe.get_market_equip()),
+
 
         #('shiparch.ini', str(core.shiparch.params)),
         ('shiparch.ini', str(core.shiparch.get_file_content())),

@@ -458,42 +458,32 @@ LODranges = {lod_ranges}{extra}'''
     EQUIP_PIRATE = 2
     EQUIP_CIV = 3
 
-    def __init__(self, faction, ru_name, base_nickname, ids_name, ids_info, model,
-                 equipment_class, equip_type, refire_rate, muzzle_velocity,
-                 lifetime, shieldgun=False, extra_shield_damage_factor=0):
+    SHIELDGUN = False
+    EXTRA_SHIELD_DAMAGE_FACTOR = 0
+
+    def __init__(self, faction, ids_name, ids_info, equipment_class):
         self.faction = faction
-        self.ru_name = ru_name
-        self.base_nickname = base_nickname
         self.ids_name = ids_name
         self.ids_info = ids_info
 
-        self.model = model
         self.validate_model()
 
         self.equipment_class = equipment_class
-        self.equip_type = equip_type
 
         self.set_rate()
-
-        self.refire_rate = refire_rate
-        self.muzzle_velocity = muzzle_velocity
-        self.lifetime = lifetime
-        self.shieldgun = shieldgun
-
-        self.extra_shield_damage_factor = extra_shield_damage_factor
 
         self.munition = self.create_munition()
 
     def validate_model(self):
-        if self.model not in self.MODELS:
+        if self.MODEL not in self.MODELS:
             raise Exception('unknown gun model')
 
     def set_rate(self):
-        if self.equip_type == self.EQUIP_MAIN:
+        if self.EQUIP_TYPE == self.EQUIP_MAIN:
             self.rate = self.get_main_rate()
-        elif self.equip_type == self.EQUIP_CIV:
+        elif self.EQUIP_TYPE == self.EQUIP_CIV:
             self.rate = self.get_civ_rate()
-        elif self.equip_type == self.EQUIP_PIRATE:
+        elif self.EQUIP_TYPE == self.EQUIP_PIRATE:
             self.rate = self.get_pirate_rate()
 
         if not self.rate:
@@ -501,7 +491,7 @@ LODranges = {lod_ranges}{extra}'''
 
     def get_nickname(self):
         return '{name}{digit}'.format(
-            name=self.base_nickname,
+            name=self.BASE_NICKNAME,
             digit=self.get_equipment_class_digit(),
         )
 
@@ -511,18 +501,18 @@ LODranges = {lod_ranges}{extra}'''
         )
 
     def get_da_archetype(self):
-        return self.DA_ARCHETYPE_PATH_TEMPLATE.format(model=self.model)
+        return self.DA_ARCHETYPE_PATH_TEMPLATE.format(model=self.MODEL)
 
     def get_faction_letter_by_model(self):
-        if self.model in self.RH_MODELS:
+        if self.MODEL in self.RH_MODELS:
             return self.RH_LETTER
-        if self.model in self.LI_MODELS:
+        if self.MODEL in self.LI_MODELS:
             return self.LI_LETTER
-        if self.model in self.BR_MODELS:
+        if self.MODEL in self.BR_MODELS:
             return self.BR_LETTER
-        if self.model in self.KU_MODELS:
+        if self.MODEL in self.KU_MODELS:
             return self.KU_LETTER
-        if self.model in self.GE_MODELS:
+        if self.MODEL in self.GE_MODELS:
             return self.GE_LETTER
 
         raise Exception('Unknown faction for model')
@@ -558,7 +548,7 @@ LODranges = {lod_ranges}{extra}'''
         return self.DEFAULT_DAMAGE_PER_FIRE
 
     def get_refire_delay(self):
-        return self.REFIRE_DELAY_PER_REFIRE_RATE[self.refire_rate]
+        return self.REFIRE_DELAY_PER_REFIRE_RATE[self.REFIRE_RATE]
 
     def get_refire_rate_multipler(self):
         return self.get_refire_delay()
@@ -567,26 +557,26 @@ LODranges = {lod_ranges}{extra}'''
         return self.MAX_POWER_USAGE * self.rate * self.get_refire_rate_multipler()
 
     def get_muzzle_velocity(self):
-        return self.muzzle_velocity
+        return self.MUZZLE_VELOCITY
 
     def get_flash_particle_name(self):
         return 'li_laser_01_flash'
 
     def get_damage_multipler(self):
-        return self.DAMAGE_PER_REFIRE_RATE_FACTOR[self.refire_rate]
+        return self.DAMAGE_PER_REFIRE_RATE_FACTOR[self.REFIRE_RATE]
 
     def get_hull_damage(self):
-        if self.shieldgun:
+        if self.SHIELDGUN:
             return 0
 
         return self.MAX_HULL_DAMAGE * self.rate * self.get_refire_rate_multipler() * \
             self.get_damage_multipler()
 
     def get_energy_damage(self):
-        if not self.shieldgun:
-            if self.extra_shield_damage_factor != 0:
+        if not self.SHIELDGUN:
+            if self.EXTRA_SHIELD_DAMAGE_FACTOR != 0:
                 hull_damage = self.get_hull_damage()
-                return hull_damage * self.extra_shield_damage_factor
+                return hull_damage * self.EXTRA_SHIELD_DAMAGE_FACTOR
             else:
                 return 0
 
@@ -595,7 +585,7 @@ LODranges = {lod_ranges}{extra}'''
             self.get_damage_multipler()
 
     def get_munition_lifetime(self):
-        lifetime = self.lifetime
+        lifetime = self.LIFETIME
 
         if self.faction == Equipment.FACTION_RH:
             lifetime += 0.2
@@ -603,7 +593,7 @@ LODranges = {lod_ranges}{extra}'''
         return lifetime
 
     def get_weapon_type(self):
-        if self.shieldgun:
+        if self.SHIELDGUN:
             return self.WEAPON_TYPE_SHIELDGUN
 
         return self.WEAPON_TYPE_DEFAULT

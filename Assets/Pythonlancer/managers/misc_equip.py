@@ -1,4 +1,5 @@
 from text.strings import StringCompiler
+from text.dividers import SINGLE_DIVIDER, DIVIDER
 
 from world.equipment import Equipment, MainMiscEquip
 from world.power import Power
@@ -7,9 +8,6 @@ from world.shield import Shield, ShieldNPC
 from world.thruster import Thruster
 from world.armor import ArmorNPC
 from world.ship import Ship
-
-SINGLE_DIVIDER = "\n"
-DIVIDER = "\n\n"
 
 
 class MiscEquipManager(object):

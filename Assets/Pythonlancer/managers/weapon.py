@@ -1,10 +1,15 @@
 from text.strings import StringCompiler
+from text.dividers import SINGLE_DIVIDER, DIVIDER
 
 from world.equipment import Equipment
-from world.gun import Gun
+from world.gun import *
 
-SINGLE_DIVIDER = "\n"
-DIVIDER = "\n\n"
+RH_GUNS = [
+    RheinlandLightgun, RheinlandHeavygun, RheinlandCivgun,
+    RheinlandHuntergun, RheinlandShieldgun, RheinlandPirategun,
+    RheinlandHessiangun, RheinlandJunkergun,
+]
+
 
 
 class WeaponManager(object):
@@ -22,19 +27,19 @@ class WeaponManager(object):
         return self.last_string_id
 
     def load_game_data(self):
-        for gun in Gun.RH_GUNS:
-            self.guns_db[gun['base_nickname']] = {}
+        for gun in RH_GUNS:
+            self.guns_db[gun.BASE_NICKNAME] = {}
 
             for equipment_class in Equipment.BASE_CLASSES:
-                the_gun = Gun(
+                the_gun = gun(
                     equipment_class=equipment_class, faction=Equipment.FACTION_RH, 
-                    ids_name=self.get_next_string_id(), ids_info=1, **gun
+                    ids_name=self.get_next_string_id(), ids_info=1
                 )
-                self.guns_db[gun['base_nickname']][equipment_class] = the_gun
+                self.guns_db[gun.BASE_NICKNAME][equipment_class] = the_gun
                 self.guns_list.append(the_gun)
 
-    def get_gun(self, gun_base_nickname, equipment_class):
-        return self.guns_db[gun_base_nickname][equipment_class]
+    def get_gun(self, gun, equipment_class):
+        return self.guns_db[gun.BASE_NICKNAME][equipment_class]
 
     def get_weapon_equip(self):
         data = ''

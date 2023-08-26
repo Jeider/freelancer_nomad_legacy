@@ -1,5 +1,5 @@
 from world.lootable import LootableEquip
-from world.markets import MarketEquip
+from universe.markets import MarketEquip
 
 class Equipment(LootableEquip, MarketEquip):
     CLASS_1 = 1
