@@ -58,7 +58,7 @@ class MarketShip(MarketItem):
 
     def get_market_item_params(self):
         return {
-            'item_nickname': self.get_nickname(),
+            'item_nickname': self.get_package_nickname(),
             'level': self.get_market_level(),
         }
 

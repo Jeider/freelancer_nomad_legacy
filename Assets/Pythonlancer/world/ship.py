@@ -1,9 +1,10 @@
-from world.equipment import Equipment
+from world.equipment import Equipment, MainMiscEquip
 from world.npc import NPC
 import math
 from universe.markets import MarketShip
+from text.dividers import SINGLE_DIVIDER
+from fx.light import Light
 
-DIVIDER = "\n"
 CLASS_INTERCEPTOR = 'class_interceptor'
 CLASS_ELITE = 'class_elite_fighter'
 
@@ -73,6 +74,19 @@ SHIP_INDICES = [
     SHIP_INDEX_10,
 ]
 
+PACKAGE_EQUIPMENT_PER_INDEX = {
+    SHIP_INDEX_1: Equipment.CLASS_1,
+    SHIP_INDEX_2: Equipment.CLASS_1,
+    SHIP_INDEX_3: Equipment.CLASS_2,
+    SHIP_INDEX_4: Equipment.CLASS_3,
+    SHIP_INDEX_5: Equipment.CLASS_3,
+    SHIP_INDEX_6: Equipment.CLASS_4,
+    SHIP_INDEX_7: Equipment.CLASS_5,
+    SHIP_INDEX_8: Equipment.CLASS_6,
+    SHIP_INDEX_9: Equipment.CLASS_7,
+    SHIP_INDEX_10: Equipment.CLASS_8,
+}
+
 EQUIPMENT_PER_INDEX = {
     SHIP_INDEX_1: Equipment.CLASS_2,
     SHIP_INDEX_2: Equipment.CLASS_3,
@@ -87,16 +101,16 @@ EQUIPMENT_PER_INDEX = {
 }
 
 WEAPON_MAIN_CLASS_PER_INDEX = {
-    SHIP_INDEX_1: Equipment.CLASS_2,
-    SHIP_INDEX_2: Equipment.CLASS_3,
-    SHIP_INDEX_3: Equipment.CLASS_4,
-    SHIP_INDEX_4: Equipment.CLASS_5,
-    SHIP_INDEX_5: Equipment.CLASS_5,
-    SHIP_INDEX_6: Equipment.CLASS_6,
-    SHIP_INDEX_7: Equipment.CLASS_7,
-    SHIP_INDEX_8: Equipment.CLASS_8,
-    SHIP_INDEX_9: Equipment.CLASS_9,
-    SHIP_INDEX_10: Equipment.CLASS_10,
+    SHIP_INDEX_1: Equipment.CLASS_1,
+    SHIP_INDEX_2: Equipment.CLASS_2,
+    SHIP_INDEX_3: Equipment.CLASS_2,
+    SHIP_INDEX_4: Equipment.CLASS_3,
+    SHIP_INDEX_5: Equipment.CLASS_4,
+    SHIP_INDEX_6: Equipment.CLASS_5,
+    SHIP_INDEX_7: Equipment.CLASS_6,
+    SHIP_INDEX_8: Equipment.CLASS_7,
+    SHIP_INDEX_9: Equipment.CLASS_8,
+    SHIP_INDEX_10: Equipment.CLASS_9,
 }
 
 WEAPON_MAX_CLASS_PER_INDEX = {
@@ -277,41 +291,41 @@ cargo = {nickname}, {amount}'''
     ]
 
     HAS_ANIMATION = True
-    LAUNCH_ANIMATION = 'equip = launch_extend'
-    LIGHT_TEMPLATE = 'equip = {{small_light}}, HpRunningLight{light_id}'
-    CONTRAIL_TEMPLATE = 'equip = {{contrail}}, HpContrail{contrail_id}'
-    THRUSTER_TEMPLATE = 'equip = {{afterburn{thruster_index}}}, {hp_thruster}'
-    WEAPON_TEMPLATE = 'equip = {{weapon{weapon_index}}}, {hp_weapon}'
+    LOADOUT_LAUNCH_ANIMATION = 'equip = launch_extend'
+    LOADOUT_LIGHT_TEMPLATE = 'equip = {{small_light}}, HpRunningLight{light_id}'
+    LOADOUT_CONTRAIL_TEMPLATE = 'equip = {{contrail}}, HpContrail{contrail_id}'
+    LOADOUT_THRUSTER_TEMPLATE = 'equip = {{afterburn{thruster_index}}}, {hp_thruster}'
+    LOADOUT_WEAPON_TEMPLATE = 'equip = {{weapon{weapon_index}}}, {hp_weapon}'
 
     def get_loadout_components(self):
         components = []
         components.extend(self.LOADOUT_TEMPLATE_BASE_COMPONENTS)
 
         if self.HAS_ANIMATION:
-            components.append(self.LAUNCH_ANIMATION)
+            components.append(self.LOADOUT_LAUNCH_ANIMATION)
 
         i = 1
         for hp_weapon in self.MAIN_WEAPONS:
-            components.append(self.WEAPON_TEMPLATE.format(weapon_index=i, hp_weapon=hp_weapon))
+            components.append(self.LOADOUT_WEAPON_TEMPLATE.format(weapon_index=i, hp_weapon=hp_weapon))
             i += 1
 
         i = 1
         for hp_thruster in self.THRUSTERS:
-            components.append(self.THRUSTER_TEMPLATE.format(thruster_index=i, hp_thruster=hp_thruster))
+            components.append(self.LOADOUT_THRUSTER_TEMPLATE.format(thruster_index=i, hp_thruster=hp_thruster))
             i += 1
 
         for i in range(1, self.CONTRAILS_COUNT + 1):
-            components.append(self.CONTRAIL_TEMPLATE.format(contrail_id=f'0{i}'))
+            components.append(self.LOADOUT_CONTRAIL_TEMPLATE.format(contrail_id=f'0{i}'))
 
         for i in range(1, self.LIGHTS + 1):
-            components.append(self.LIGHT_TEMPLATE.format(light_id=f'0{i}'))
+            components.append(self.LOADOUT_LIGHT_TEMPLATE.format(light_id=f'0{i}'))
 
         components.append(ENGINE_FORCE_PER_TYPE[self.ENGINE_TYPE])
 
         return components
 
     def get_loadout_template(self):
-        return self.BASE_LOADOUT.format(loadout=DIVIDER.join(self.get_loadout_components()))
+        return self.BASE_LOADOUT.format(loadout=SINGLE_DIVIDER.join(self.get_loadout_components()))
 
     subclasses = []
 
@@ -319,8 +333,97 @@ cargo = {nickname}, {amount}'''
         super().__init_subclass__(**kwargs)
         cls.subclasses.append(cls)
 
+    def get_package_nickname(self):
+        return '{archetype}_package'.format(archetype=self.ARCHETYPE)
+
     def get_nickname(self):
-        return self.ARCHETYPE
+        return self.get_package_nickname()
+
+    def get_hull_nickname(self):
+        return '{archetype}_hull'.format(archetype=self.ARCHETYPE)
+
+    HP_HEADLIGHT = 'HpHeadlight'
+
+    HAS_ANIMATION = True
+    PACKAGE_LAUNCH_ANIMATION = 'addon = launch_extend, internal, 1'
+    PACKAGE_LIGHT_TEMPLATE = 'equip = {{small_light}}, HpRunningLight{light_id}, 1'
+    PACKAGE_CONTRAIL_TEMPLATE = 'equip = player_contrail, HpContrail{contrail_id}, 1'
+
+    PACKAGE_BASE_TEMPLATE = '''[Good]
+nickname = {package_nickname}
+category = ship
+hull = {hull_nickname}
+addon = LargeWhiteSpecialPlayer, {hp_headlight}, 1
+addon = DockingLightRedSmall, HpDockLight01, 1
+addon = DockingLightRedSmall, HpDockLight02, 1
+addon = scanner01, internal, 1
+addon = tractor01, internal, 1
+addon = {shield}, {hp_shield}, 1
+addon = {engine}, HpDrive01, 1
+addon = {power}, HpPower01, 1'''
+
+    def get_package_extra_template(self):
+        components = []
+
+        if self.HAS_ANIMATION:
+            components.append(self.PACKAGE_LAUNCH_ANIMATION)
+
+        for i in range(1, self.CONTRAILS_COUNT + 1):
+            components.append(self.PACKAGE_CONTRAIL_TEMPLATE.format(contrail_id=f'0{i}'))
+
+        for i in range(1, self.LIGHTS + 1):
+            components.append(self.PACKAGE_LIGHT_TEMPLATE.format(light_id=f'0{i}'))
+
+        return SINGLE_DIVIDER.join(components)
+
+    def get_package_equipment_class(self):
+        return PACKAGE_EQUIPMENT_PER_INDEX[self.SHIP_INDEX]
+
+    def get_package(self, shield, engine, power, small_light):
+        extra_content = self.get_package_extra_template()
+        template = self.PACKAGE_BASE_TEMPLATE + SINGLE_DIVIDER + extra_content
+        return template.format(
+            package_nickname=self.get_package_nickname(),
+            hull_nickname=self.get_hull_nickname(),
+            hp_headlight=self.HP_HEADLIGHT,
+            hp_shield=self.HP_SHIELD,
+            shield=shield,
+            engine=engine,
+            power=power,
+            small_light=small_light
+        )
+
+    HULL_BASE_TEMPLATE = '''[Good]
+nickname = {hull_nickname}
+category = shiphull
+ship = {ship_archetype}
+price = {price}
+item_icon = Equipment\\models\\commodities\\nn_icons\\{icon}'''
+
+    MAX_PRICE = None  # must redefine
+
+    PRICE_PER_INDEX = {
+        SHIP_INDEX_2: 0.012,
+        SHIP_INDEX_3: 0.015,
+        SHIP_INDEX_4: 0.03,
+        SHIP_INDEX_5: 0.05,
+        SHIP_INDEX_6: 0.1,
+        SHIP_INDEX_7: 0.25,
+        SHIP_INDEX_8: 0.6,
+        SHIP_INDEX_9: 0.78,
+        SHIP_INDEX_10: 1,
+    }
+    
+    def get_ship_price(self):
+        return self.MAX_PRICE * self.PRICE_PER_INDEX[self.SHIP_INDEX]
+
+    def get_hull(self):
+        return self.HULL_BASE_TEMPLATE.format(
+            hull_nickname=self.get_hull_nickname(),
+            ship_archetype=self.ARCHETYPE,
+            price=self.get_ship_price(),
+            icon=self.ICON,
+        )
 
     CARGO_PER_INDEX = {}
 
@@ -384,7 +487,7 @@ cargo = {nickname}, {amount}'''
                 fuse=fuse,
                 hit_pts=self.get_hit_pts()*hit_pts_pct,
             ))
-        return DIVIDER.join(lines)
+        return SINGLE_DIVIDER.join(lines)
 
     def build_equip_line(self, hp_class, hardpoints):
         return self.HP_TYPE_TEMPLATE.format(
@@ -480,7 +583,7 @@ cargo = {nickname}, {amount}'''
 
     def get_equipment_table(self):
         lines = self.get_weapon_lines() + self.get_torpedo_lines() + self.get_misc_equip_lines() + self.get_generic_equip_lines()
-        return DIVIDER.join(lines)
+        return SINGLE_DIVIDER.join(lines)
 
     def ship_param(self, param):
         return '{ship_code}_{param}'.format(
@@ -572,11 +675,13 @@ hit_pts = {hit_pts}
             if mine_ammo:
                 extra.append(Ship.CARGO_TEMPLATE, format(torpedo, mine_ammo))
 
-        return DIVIDER.join(extra)
+        return SINGLE_DIVIDER.join(extra)
 
 
 class BaseInterceptorShip(object):
     MAX_HIT_PTS = 12000
+
+    MAX_PRICE = 500000
 
     CARGO_PER_INDEX = {
         SHIP_INDEX_1: 20,
@@ -595,6 +700,8 @@ class BaseInterceptorShip(object):
 class BaseFighterShip(object):
     MAX_HIT_PTS = 10000
 
+    MAX_PRICE = 650000
+
     CARGO_PER_INDEX = {
         SHIP_INDEX_1: 25,
         SHIP_INDEX_2: 30,
@@ -611,6 +718,8 @@ class BaseFighterShip(object):
 
 class BaseFreighterShip(object):
     MAX_HIT_PTS = 14000
+
+    MAX_PRICE = 800000
 
     CARGO_PER_INDEX = {
         SHIP_INDEX_1: 60,
@@ -635,6 +744,9 @@ class RheinlandShip(object):
     HULL_HIT_PTS_MULTIPLER = 1.02
     STRAFE_FORCE_MULTIPLER = 0.9
 
+    PACKAGE_EQUIPMENT_TYPE = MainMiscEquip.RH_CIV
+    PACKAGE_LIGHT = Light.SMALL_YELLOW
+
 
 class LibertyShip(object):
     # MAIN
@@ -642,6 +754,9 @@ class LibertyShip(object):
     # ADDITIONAL
     STRAFE_POWER_USAGE_MULTIPLER = 1.5
     NANOBOTS_COUNT_MULTIPLER = 1.1
+
+    PACKAGE_EQUIPMENT_TYPE = MainMiscEquip.LI_CIV
+    PACKAGE_LIGHT = Light.SMALL_BLUE
 
 
 class BretoniaShip(object):
@@ -651,6 +766,9 @@ class BretoniaShip(object):
     EXTRA_CARGO = 2
     STRAFE_FORCE_MULTIPLER = 0.95
     SHIP_MASS_MULTIPLER = 1.1
+
+    PACKAGE_EQUIPMENT_TYPE = MainMiscEquip.BR_CIV
+    PACKAGE_LIGHT = Light.SMALL_RED
 
 
 class KusariShip(object):
@@ -662,6 +780,9 @@ class KusariShip(object):
     HULL_HIT_PTS_MULTIPLER = 0.95
     EXTRA_CARGO = -1
 
+    PACKAGE_EQUIPMENT_TYPE = MainMiscEquip.KU_CIV
+    PACKAGE_LIGHT = Light.SMALL_ORANGE
+
 
 class CorsairShip(object):
     # MAIN
@@ -669,6 +790,9 @@ class CorsairShip(object):
     NANOBOTS_COUNT_MULTIPLER = 0.5
     # ADDITIONAL
     HULL_HIT_PTS_MULTIPLER = 1.06
+
+    PACKAGE_EQUIPMENT_TYPE = MainMiscEquip.CO_CORSAIR
+    PACKAGE_LIGHT = Light.SMALL_PURPLE
 
 
 class GenericShip(object):
@@ -678,6 +802,9 @@ class GenericShip(object):
     EXTRA_CARGO = -1
     STRAFE_POWER_USAGE_MULTIPLER = 1.1
     SHIP_MASS_MULTIPLER = 1.05
+
+    PACKAGE_EQUIPMENT_TYPE = MainMiscEquip.RH_CIV
+    PACKAGE_LIGHT = Light.SMALL_YELLOW
 
 
 class Ship1(object):
@@ -1666,6 +1793,7 @@ class CSV(GenericShip, ShipFreighter, Ship):
     SHIP_INDEX = SHIP_INDEX_2
     ARCHETYPE = 'ge_csv'
     TEMPLATE_CODE = 'csv'
+    ICON = 'co_freighter.3db'
     SHIELD_LINK = 'csv_shield01'
     ENGINE_TYPE = ENGINE_SINGLE
     LIGHTS = 8
@@ -1696,17 +1824,20 @@ class Armored(GenericShip, ShipFreighter, Ship):
     SHIP_INDEX = SHIP_INDEX_10
     ARCHETYPE = 'ge_armored'
     TEMPLATE_CODE = 'armored'
+    ICON = 'ku_freighter.3db'
+    LIGHTS = 7
 
 
 class Starflier(GenericShip, ShipInterceptor, Ship1, Ship):
     EXTRA_CLASSES = [CLASS_INTERCEPTOR, CLASS_GENERIC_INTERCEPTOR]
-    SHIP_INDEX = SHIP_INDEX_1
+    SHIP_INDEX = SHIP_INDEX_2
     SHIELD_LINK = 'cv_fighter_shield01'
     ENGINE_TYPE = ENGINE_SINGLE
     LIGHTS = 5
 
     ARCHETYPE = 'ge_fighter'
     TEMPLATE_CODE = 'gf1'
+    ICON = 'cv_starflier.3db'
     HP_TORPEDO = 'HpTorpedo01'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03']
     MAX_WEAPONS = ['HpWeapon03']
@@ -1746,6 +1877,7 @@ class Startracker(GenericShip, ShipInterceptor, Ship2, Ship):
 
     ARCHETYPE = 'ge_fighter2'
     TEMPLATE_CODE = 'gf2'
+    ICON = 'cv_startracker.3db'
     HP_TORPEDO = 'HpTorpedo02'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03, HpTorpedo01']
     MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02']
@@ -1775,6 +1907,7 @@ class Starblazer(GenericShip, ShipElite, Ship2, Ship):
 
     ARCHETYPE = 'ge_fighter3'
     TEMPLATE_CODE = 'gf3'
+    ICON = 'cv_starblazer.3db'
     HP_TORPEDO = 'HpWeapon04'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon05', 'HpWeapon06']
     MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03']

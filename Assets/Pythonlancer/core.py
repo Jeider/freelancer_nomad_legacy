@@ -15,4 +15,4 @@ class LancerCore(object):
 		self.weapons = WeaponManager(self.misc_equip.last_string_id)
 		self.population = PopulationManager(self.misc_equip, self.weapons)
 		self.universe = UniverseManager(self.misc_equip, self.weapons)
-		self.shiparch = ShiparchManager()
+		self.shiparch = ShiparchManager(self.misc_equip)

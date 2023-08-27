@@ -80,5 +80,3 @@ class UniverseManager(object):
             data += dealer.get_market_content() + DIVIDER
 
         return data
-
-
