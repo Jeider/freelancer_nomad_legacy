@@ -5,11 +5,12 @@ from text.dividers import SINGLE_DIVIDER, DIVIDER
 
 class PopulationManager(object):
 
-    def __init__(self, misc_equip, weapons):
+    def __init__(self, misc_equip, weapons, shiparch):
         self.factions = Faction.subclasses
 
         self.misc_equip = misc_equip
         self.weapons = weapons
+        self.shiparch = shiparch
 
         self.npc_db = {}
         self.npc_list = []
@@ -48,6 +49,7 @@ class PopulationManager(object):
 
             for ship in faction.SHIPS:
                 for level in ship.NPC_LEVELS:
+                    ship = self.shiparch.get_ship_by_archetype(ship.ARCHETYPE)
                     npc = NPC(faction, ship, level)
                     npc.set_equipment_package(self.get_equipment_package(faction, npc))
 

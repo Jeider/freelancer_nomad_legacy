@@ -1,22 +1,46 @@
 from world.ship import Ship
 from templates.shiparch import ShiparchTemplate
 from text.dividers import SINGLE_DIVIDER, DIVIDER
+from text.infocards import InfocardBuilder, INFO_SHIP_ABOUT, INFO_SHIP_TABLE, INFO_SHIP_KEYS, INFO_SHIP_VALUES
+from text.strings import StringCompiler
 
 
 class ShiparchManager(object):
 
-    def __init__(self, misc_equip):
+    def __init__(self, misc_equip, last_string_id, last_infocard_id):
         self.misc_equip = misc_equip
 
         self.params = {}
         self.ships = []
+        self.ships_db = {}
+
+        self.last_string_id = last_string_id
+        self.last_infocard_id = last_infocard_id
 
         for ship in Ship.subclasses:
-            instance = ship()
+            instance = ship(
+                self.get_next_string_id(),
+                self.get_next_infocard_id(),
+                self.get_next_infocard_id(),
+                self.get_next_infocard_id(),
+                self.get_next_infocard_id(),
+            )
             self.params.update(instance.get_shiparch_params())
             self.ships.append(instance)
+            self.ships_db[instance.ARCHETYPE] = instance
 
-    def get_file_content(self):
+    def get_next_string_id(self):
+        self.last_string_id += 1
+        return self.last_string_id
+
+    def get_next_infocard_id(self):
+        self.last_infocard_id += 1
+        return self.last_infocard_id
+
+    def get_ship_by_archetype(self, archetype):
+        return self.ships_db[archetype]
+
+    def get_shiparch_content(self):
         return ShiparchTemplate().format(self.params)
 
     def get_ship_goods(self):
@@ -32,6 +56,26 @@ class ShiparchManager(object):
             shield = self.misc_equip.get_shield(shipclass, equip_type, equipment_class).get_nickname()
 
             data += ship.get_hull() + DIVIDER
-            data += ship.get_package(engine, power, shield, ship.PACKAGE_LIGHT) + DIVIDER
+            data += ship.get_package(shield, engine, power, ship.PACKAGE_LIGHT) + DIVIDER
 
         return data
+
+    def get_ship_ru_names(self):
+        items = {}
+
+        for ship in self.ships:
+            items[ship.ids_name] = ship.get_ru_name()
+
+        return StringCompiler.compile_names(items)
+
+    def get_ship_ru_infocards(self):
+        infocards = {}
+
+        for ship in self.ships:
+            ship_stats = ship.get_infocard_values()
+            infocards[ship.ids_info] = InfocardBuilder.build_infocard(INFO_SHIP_TABLE, ship_stats)
+            infocards[ship.ids_info1] = InfocardBuilder.build_infocard(INFO_SHIP_ABOUT, {})
+            infocards[ship.ids_info2] = InfocardBuilder.build_infocard(INFO_SHIP_KEYS, {})
+            infocards[ship.ids_info3] = InfocardBuilder.build_infocard(INFO_SHIP_VALUES, ship_stats)
+
+        return StringCompiler.compile_infocards(infocards)

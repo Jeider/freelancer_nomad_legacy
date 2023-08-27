@@ -8,9 +8,10 @@ from text.dividers import SINGLE_DIVIDER, DIVIDER
 
 class UniverseManager(object):
 
-    def __init__(self, misc_equip, weapons):
+    def __init__(self, misc_equip, weapons, shiparch):
         self.misc_equip = misc_equip
         self.weapons = weapons
+        self.shiparch = shiparch
 
         self.bases = []
         self.equip_dealers_list = []
@@ -29,7 +30,7 @@ class UniverseManager(object):
                 self.equip_dealers_list.append(dealer)
 
             if len(base.SHIPS) > 0:
-                dealer = ShipDealer(base.NAME, [ship() for ship in base.SHIPS])
+                dealer = ShipDealer(base.NAME, [self.shiparch.get_ship_by_archetype(ship.ARCHETYPE) for ship in base.SHIPS])
                 self.ship_dealers_list.append(dealer)
 
 

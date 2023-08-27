@@ -135,7 +135,7 @@ npc_class = {classes_list}'''
 
     def __init__(self, faction, ship, level):
         self.faction = faction
-        self.ship = ship()
+        self.ship = ship
         self.level = level
         self.equipment = self.get_required_equipment()
 

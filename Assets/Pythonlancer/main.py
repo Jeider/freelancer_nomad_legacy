@@ -10,7 +10,12 @@ def main():
 
     nicknames_data = [
         core.misc_equip.get_ru_names(),
-        core.weapons.get_ru_names() 
+        core.weapons.get_ru_names(),
+        core.shiparch.get_ship_ru_names(),
+    ]
+
+    infocards_data = [
+        core.shiparch.get_ship_ru_infocards(),
     ]
 
     lootprops_data = [
@@ -41,6 +46,7 @@ def main():
         ('weapon_good.ini', core.weapons.get_weapon_good()),
 
         ('nicknames.txt', ''.join(nicknames_data)),
+        ('infocards.txt', ''.join(infocards_data)),
         ('lootprops.ini', DIVIDER.join(lootprops_data)),
 
         ('demo_marketdata.ini', DIVIDER.join(markets_demo_data)),
@@ -49,7 +55,7 @@ def main():
 
         ('ship_packages.ini', core.shiparch.get_ship_goods()),
 
-        ('shiparch.ini', str(core.shiparch.get_file_content())),
+        ('shiparch.ini', str(core.shiparch.get_shiparch_content())),
 
     ]
 

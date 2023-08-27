@@ -2,14 +2,7 @@ from text.strings import StringCompiler
 from text.dividers import SINGLE_DIVIDER, DIVIDER
 
 from world.equipment import Equipment
-from world.gun import *
-
-RH_GUNS = [
-    RheinlandLightgun, RheinlandHeavygun, RheinlandCivgun,
-    RheinlandHuntergun, RheinlandShieldgun, RheinlandPirategun,
-    RheinlandHessiangun, RheinlandJunkergun,
-]
-
+from world.gun import Gun
 
 
 class WeaponManager(object):
@@ -27,7 +20,7 @@ class WeaponManager(object):
         return self.last_string_id
 
     def load_game_data(self):
-        for gun in RH_GUNS:
+        for gun in Gun.subclasses:
             self.guns_db[gun.BASE_NICKNAME] = {}
 
             for equipment_class in Equipment.BASE_CLASSES:

@@ -10,11 +10,6 @@ LODranges = 0, 250
 MinSpecLOD = 2
 
 [Ship]
-ids_name = 237122
-ids_info = 066429
-ids_info1 = 066430
-ids_info2 = 066431
-ids_info3 = 066432
 ship_class = 4
 {ship_li_fighter}
 LODranges = 0, 1000, 5000, 10000
@@ -118,11 +113,6 @@ mass = 5.000000
 LODranges = 0, 500, 2000
 
 [Ship]
-ids_name = 237125
-ids_info = 066441
-ids_info1 = 066442
-ids_info2 = 066443
-ids_info3 = 066444
 ship_class = 5
 {ship_li_elite}
 msg_id_prefix = gcs_refer_shiparch_Libhf
@@ -278,11 +268,6 @@ mass = 5.000000
 LODranges = 0, 500, 2000
 
 [Ship]
-ids_name = 237127
-ids_info = 066441
-ids_info1 = 066442
-ids_info2 = 066443
-ids_info3 = 066444
 ship_class = 6
 {ship_li_elite2}
 msg_id_prefix = gcs_refer_shiparch_Libhf
@@ -393,11 +378,6 @@ root_health_proxy = false
 explosion_resistance = {le2_engine2_expl_resist}
 
 [Ship]
-ids_name = 237126
-ids_info = 066445
-ids_info1 = 066446
-ids_info2 = 066447
-ids_info3 = 066448
 ship_class = 8
 {ship_li_freighter}
 LODranges = 0, 1000, 5000, 10000
@@ -1039,11 +1019,6 @@ hit_pts = 200
 LODranges = 0, 20000
 
 [Ship]
-ids_name = 237132
-ids_info = 066549
-ids_info1 = 066550
-ids_info2 = 066551
-ids_info3 = 066552
 ship_class = 4
 {ship_br_fighter}
 LODranges = 0, 1000, 5000, 10000
@@ -1122,11 +1097,6 @@ mass = 5.000000
 LODranges = 0, 500, 2000
 
 [Ship]
-ids_name = 237135
-ids_info = 066553
-ids_info1 = 066554
-ids_info2 = 066555
-ids_info3 = 066556
 ship_class = 5
 {ship_br_elite}
 msg_id_prefix = gcs_refer_shiparch_Brehf
@@ -1236,11 +1206,6 @@ root_health_proxy = false
 explosion_resistance = {be_engine_expl_resist}
 
 [Ship]
-ids_name = 237137
-ids_info = 066561
-ids_info1 = 066562
-ids_info2 = 066563
-ids_info3 = 066564
 ship_class = 6
 {ship_br_elite2}
 msg_id_prefix = gcs_refer_shiparch_Brehf
@@ -1385,11 +1350,6 @@ mass = 5.000000
 LODranges = 0, 500, 2000
 
 [Ship]
-ids_name = 237136
-ids_info = 066557
-ids_info1 = 066558
-ids_info2 = 066559
-ids_info3 = 066560
 ship_class = 8
 {ship_br_freighter}
 msg_id_prefix = gcs_refer_shiparch_Bref
@@ -1512,11 +1472,6 @@ mass = 5.000000
 LODranges = 0, 500, 2200
 
 [Ship]
-ids_name = 237010
-ids_info = 066601
-ids_info1 = 066605
-ids_info2 = 066602
-ids_info3 = 066603
 ship_class = 12
 nickname = br_gunboat
 LODranges = 0, 5000, 10000, 25000
@@ -2075,11 +2030,6 @@ material_library = ships\\bretonia\\br_capships.mat
 LODranges = 0, 20000
 
 [Ship]
-ids_name = 237142
-ids_info = 066533
-ids_info1 = 066534
-ids_info2 = 066535
-ids_info3 = 066536
 ship_class = 4
 {ship_ku_fighter}
 msg_id_prefix = gcs_refer_shiparch_Kuslf
@@ -2181,11 +2131,6 @@ mass = 5.000000
 LODranges = 0, 200, 2000
 
 [Ship]
-ids_name = 237145
-ids_info = 066537
-ids_info1 = 066538
-ids_info2 = 066539
-ids_info3 = 066540
 ship_class = 5
 {ship_ku_elite}
 msg_id_prefix = gcs_refer_shiparch_Kushf
@@ -2380,11 +2325,6 @@ mass = 5.000000
 LODranges = 0, 500, 2000
 
 [Ship]
-ids_name = 237147
-ids_info = 066545
-ids_info1 = 066546
-ids_info2 = 066547
-ids_info3 = 066548
 ship_class = 6
 {ship_ku_elite2}
 msg_id_prefix = gcs_refer_shiparch_hfighter
@@ -2530,11 +2470,6 @@ explosion_resistance = {ke2_engine_expl_resist}
 
 
 [Ship]
-ids_name = 237146
-ids_info = 066541
-ids_info1 = 066542
-ids_info2 = 066543
-ids_info3 = 066544
 ship_class = 8
 {ship_ku_freighter}
 LODranges = 0, 1000, 5000, 10000
@@ -3290,11 +3225,6 @@ mass = 1000.000000
 LODranges = 0, 900, 20000
 
 [Ship]
-ids_name = 237112
-ids_info = 066404
-ids_info1 = 066405
-ids_info2 = 066406
-ids_info3 = 066407
 ship_class = 4
 {ship_rh_fighter}
 LODranges = 0, 1000, 5000, 10000
@@ -3397,11 +3327,6 @@ LODranges = 0, 1000, 2000
 
 ;RH_SHIP
 [Ship]
-ids_name = 237115
-ids_info = 066416
-ids_info1 = 066417
-ids_info2 = 066418
-ids_info3 = 066419
 ship_class = 5
 {ship_rh_elite}
 LODranges = 0, 1000, 5000, 10000
@@ -3545,11 +3470,6 @@ mass = 5.000000
 LODranges = 0, 1000, 2000
 
 [Ship]
-ids_name = 237117
-ids_info = 066521
-ids_info1 = 066522
-ids_info2 = 066523
-ids_info3 = 066524
 ship_class = 6
 {ship_rh_elite2}
 LODranges = 0, 1000, 5000, 10000
@@ -3660,11 +3580,6 @@ explosion_resistance = {re2_engine_expl_resist}
 
 ;RH_SHIP
 [Ship]
-ids_name = 237116
-ids_info = 066420
-ids_info1 = 066421
-ids_info2 = 066422
-ids_info3 = 066423
 ship_class = 8
 {ship_rh_freighter}
 LODranges = 0, 1000, 5000, 10000
@@ -4265,11 +4180,6 @@ mass = 1000.000000
 LODranges = 0, 9000, 20000
 
 [Ship]
-ids_name = 237121
-ids_info = 066425
-ids_info1 = 066426
-ids_info2 = 066427
-ids_info3 = 066428
 ship_class = 0
 {ship_bh_fighter}
 LODranges = 0, 1000, 5000, 10000
@@ -4383,11 +4293,6 @@ mass = 5.000000
 LODranges = 0, 200, 2000
 
 [Ship]
-ids_name = 237123
-ids_info = 066433
-ids_info1 = 066434
-ids_info2 = 066435
-ids_info3 = 066436
 ship_class = 1
 {ship_bh_elite}
 LODranges = 0, 1000, 5000, 10000
@@ -4516,11 +4421,6 @@ root_health_proxy = false
 explosion_resistance = {bhe_engine1_expl_resist}
 
 [Ship]
-ids_name = 237124
-ids_info = 066437
-ids_info1 = 066438
-ids_info2 = 066439
-ids_info3 = 066440
 ship_class = 7
 {ship_bh_elite2}
 LODranges = 0, 1000, 5000, 10000
@@ -4657,11 +4557,6 @@ LODranges = 0, 500, 2000
 
 
 [Ship] ; real corsair fighter
-ids_name = 237153
-ids_info = 066573
-ids_info1 = 066574
-ids_info2 = 066575
-ids_info3 = 066576
 ship_class = 4
 {ship_pi_fighter}
 LODranges = 0, 2000, 5000, 10000
@@ -4751,11 +4646,6 @@ root_health_proxy = false
 explosion_resistance = {pf_engine_expl_resist}
 
 [Ship] ; real corsair elite fighter
-ids_name = 237155
-ids_info = 066577
-ids_info1 = 066578
-ids_info2 = 066579
-ids_info3 = 066580
 ship_class = 5
 {ship_pi_elite}
 LODranges = 0, 1000, 2000, 10000
@@ -4911,11 +4801,6 @@ mass = 5.000000
 LODranges = 0, 200, 2000
 
 [Ship] ; real corsair freighter
-ids_name = 237156
-ids_info = 066581
-ids_info1 = 066582
-ids_info2 = 066583
-ids_info3 = 066584
 ship_class = 8
 {ship_pi_freighter}
 LODranges = 0, 1000, 5000, 10000
@@ -5018,11 +4903,6 @@ root_health_proxy = false
 explosion_resistance = {pfr_engine_expl_resist}
 
 [Ship]
-ids_name = 237141
-ids_info = 66548
-ids_info1 = 66549
-ids_info2 = 66608
-ids_info3 = 66550
 ship_class = 0
 {ship_co_fighter}
 LODranges = 0, 1000, 5000, 10000
@@ -5175,11 +5055,6 @@ mass = 5.000000
 LODranges = 0, 200, 2000
 
 [Ship]
-ids_name = 237143
-ids_info = 66545
-ids_info1 = 66546
-ids_info2 = 66608
-ids_info3 = 66547
 ship_class = 1
 {ship_co_elite}
 LODranges = 0, 1000, 5000, 10000
@@ -5305,11 +5180,6 @@ root_health_proxy = false
 explosion_resistance = {ce_engine_expl_resist}
 
 [Ship]
-ids_name = 237144
-ids_info = 066565
-ids_info1 = 066566
-ids_info2 = 066567
-ids_info3 = 066568
 ship_class = 7
 {ship_co_elite2}
 LODranges = 0, 1000, 5000, 10000
@@ -5481,11 +5351,6 @@ LODranges = 0, 200, 2000
 
 
 [Ship]
-ids_name = 237101
-ids_info = 066350
-ids_info1 = 066351
-ids_info2 = 066352
-ids_info3 = 066353
 ship_class = 19
 {ship_ge_fighter}
 LODranges = 0, 300, 500, 1000, 5000, 10000
@@ -5573,11 +5438,6 @@ explosion_resistance = {gf1_engine_expl_resist}
 
 
 [Ship]
-ids_name = 237101
-ids_info = 066350
-ids_info1 = 066351
-ids_info2 = 066352
-ids_info3 = 066353
 ship_class = 19
 {ship_ge_fighter_mk2}
 LODranges = 0, 300, 500, 1000, 5000, 10000
@@ -5662,11 +5522,6 @@ explosion_resistance = {gf1_mk2_engine_expl_resist}
 
 
 [Ship]
-ids_name = 237151
-ids_info = 66530
-ids_info1 = 66531
-ids_info2 = 66608
-ids_info3 = 66532
 ship_class = 4
 {ship_ge_fighter2}
 LODranges = 0, 1000, 5000, 10000
@@ -5764,11 +5619,6 @@ explosion_resistance = {gf2_engine_expl_resist}
 
 
 [Ship]
-ids_name = 237151
-ids_info = 66530
-ids_info1 = 66531
-ids_info2 = 66608
-ids_info3 = 66532
 ship_class = 4
 {ship_ge_fighter3}
 LODranges = 0, 1000, 5000, 10000
@@ -5881,11 +5731,6 @@ explosion_resistance = {gf3_engine_expl_resist}
 
 
 [Ship]
-ids_name = 237131
-ids_info = 66533
-ids_info1 = 66534
-ids_info2 = 66608
-ids_info3 = 66535
 ship_class = 4
 {ship_ge_fighter4}
 LODranges = 0, 1000, 5000, 10000
@@ -6012,11 +5857,6 @@ mass = 5.000000
 LODranges = 0, 200, 2000
 
 [Ship]
-ids_name = 237133
-ids_info = 66536
-ids_info1 = 66537
-ids_info2 = 66608
-ids_info3 = 66538
 ship_class = 1
 {ship_ge_fighter5}
 msg_id_prefix = gcs_refer_shiparch_hfighter
@@ -6129,11 +5969,6 @@ root_health_proxy = false
 explosion_resistance = {gf5_engine_expl_resist}
 
 [Ship]
-ids_name = 237134
-ids_info = 066569
-ids_info1 = 066570
-ids_info2 = 066571
-ids_info3 = 066572
 ship_class = 7
 {ship_ge_fighter6}
 LODranges = 0, 1000, 5000, 10000
@@ -6292,11 +6127,6 @@ LODranges = 0, 200, 2000
 
 ;RH_SHIP
 [Ship]
-ids_name = 237111
-ids_info = 066400
-ids_info1 = 066401
-ids_info2 = 066402
-ids_info3 = 066403
 ship_class = 4
 {ship_bw_fighter}
 LODranges = 0, 500, 1000, 10000
@@ -6377,11 +6207,6 @@ explosion_resistance = {bwf_engine_expl_resist}
 
 ;RH_SHIP
 [Ship]
-ids_name = 237113
-ids_info = 066408
-ids_info1 = 066409
-ids_info2 = 066410
-ids_info3 = 066411
 ship_class = 7
 {ship_bw_elite}
 LODranges = 0, 1000, 5000, 10000
@@ -6552,11 +6377,6 @@ LODranges = 0, 200, 2000
 
 ;RH_SHIP
 [Ship]
-ids_name = 237114
-ids_info = 066412
-ids_info1 = 066413
-ids_info2 = 066414
-ids_info3 = 066415
 ship_class = 7
 {ship_bw_elite2}
 LODranges = 0, 1000, 5000, 10000
@@ -6684,11 +6504,6 @@ root_health_proxy = false
 explosion_resistance = {bwe2_engine2_expl_resist}
 
 [Ship]
-ids_name = 237102
-ids_info = 066354
-ids_info1 = 066355
-ids_info2 = 066356
-ids_info3 = 066357
 ship_class = 8
 {ship_bw_freighter}
 LODranges = 0, 1000, 5000, 10000
@@ -6823,11 +6638,6 @@ mass = 5.000000
 LODranges = 0, 500, 2200
 
 [Ship]
-ids_name = 237154
-ids_info = 066585
-ids_info1 = 066586
-ids_info2 = 066587
-ids_info3 = 066588
 ship_class = 6
 {ship_or_elite}
 LODranges = 0, 1000, 5000, 10000
@@ -7721,8 +7531,6 @@ hit_pts = 400
 root_health_proxy = false
 
 [Ship]
-ids_name = 237104
-ids_info = 66493
 {ship_ge_armored}
 LODranges = 0, 2000, 5000, 10000
 msg_id_prefix = gcs_refer_shiparch_atransport
@@ -8283,11 +8091,6 @@ hit_pts = 25000
 root_health_proxy = false
 
 [Ship]
-ids_name = 237103
-ids_info = 066358
-ids_info1 = 066359
-ids_info2 = 066360
-ids_info3 = 066361
 {ship_ge_csv}
 LODranges = 0, 1000, 5000, 10000
 msg_id_prefix = gcs_refer_shiparch_support
@@ -8324,11 +8127,6 @@ camera_turn_look_ahead_slerp_amount = 1.000000
 cockpit = cockpits\\liberty\\or_elite.ini 
 
 [Ship]
-ids_name = 237103
-ids_info = 066358
-ids_info1 = 066359
-ids_info2 = 066360
-ids_info3 = 066361
 {ship_ge_csv2}
 LODranges = 0, 1000, 5000, 10000
 msg_id_prefix = gcs_refer_shiparch_support
@@ -8365,11 +8163,6 @@ camera_turn_look_ahead_slerp_amount = 1.000000
 cockpit = cockpits\\liberty\\or_elite.ini 
 
 [Ship]
-ids_name = 237103
-ids_info = 066358
-ids_info1 = 066359
-ids_info2 = 066360
-ids_info3 = 066361
 {ship_ge_csv3}
 LODranges = 0, 1000, 5000, 10000
 msg_id_prefix = gcs_refer_shiparch_support
