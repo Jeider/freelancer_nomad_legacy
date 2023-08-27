@@ -1,5 +1,5 @@
 from universe.base import Base, EQUIP_CLASSES_PER_LEVEL
-from universe.markets import EquipDealer
+from universe.markets import EquipDealer, ShipDealer
 
 from world.equipment import Equipment
 
@@ -14,6 +14,7 @@ class UniverseManager(object):
 
         self.bases = []
         self.equip_dealers_list = []
+        self.ship_dealers_list = []
 
         self.load_bases()
 
@@ -23,9 +24,14 @@ class UniverseManager(object):
             self.bases.append(base)
 
             if base.LEVEL:
-                items = self.load_base_equip_items(base)
-                dealer = EquipDealer(base.NAME, items)
+                equip_items = self.load_base_equip_items(base)
+                dealer = EquipDealer(base.NAME, equip_items)
                 self.equip_dealers_list.append(dealer)
+
+            if len(base.SHIPS) > 0:
+                dealer = ShipDealer(base.NAME, [ship() for ship in base.SHIPS])
+                self.ship_dealers_list.append(dealer)
+
 
     def load_base_equip_items(self, base):
         items = []
@@ -66,3 +72,13 @@ class UniverseManager(object):
             data += dealer.get_market_content() + DIVIDER
 
         return data
+
+    def get_market_ships(self):
+        data = ''
+
+        for dealer in self.ship_dealers_list:
+            data += dealer.get_market_content() + DIVIDER
+
+        return data
+
+

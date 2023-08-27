@@ -1,6 +1,7 @@
 from world.equipment import Equipment
 from world.npc import NPC
 import math
+from universe.markets import MarketShip
 
 DIVIDER = "\n"
 CLASS_INTERCEPTOR = 'class_interceptor'
@@ -169,7 +170,7 @@ equip = triple_eng_weight, HpCockpit''',
 }
 
 
-class Ship(object):
+class Ship(MarketShip):
     ARCHETYPE = None
     MISSILE_MOUNT_POINT = None
     EQUIP_TEMPLATE= '''
@@ -311,6 +312,15 @@ cargo = {nickname}, {amount}'''
 
     def get_loadout_template(self):
         return self.BASE_LOADOUT.format(loadout=DIVIDER.join(self.get_loadout_components()))
+
+    subclasses = []
+
+    def __init_subclass__(cls, **kwargs):
+        super().__init_subclass__(**kwargs)
+        cls.subclasses.append(cls)
+
+    def get_nickname(self):
+        return self.ARCHETYPE
 
     CARGO_PER_INDEX = {}
 
@@ -565,7 +575,7 @@ hit_pts = {hit_pts}
         return DIVIDER.join(extra)
 
 
-class BaseInterceptorShip(Ship):
+class BaseInterceptorShip(object):
     MAX_HIT_PTS = 12000
 
     CARGO_PER_INDEX = {
@@ -582,7 +592,7 @@ class BaseInterceptorShip(Ship):
     }
 
 
-class BaseFighterShip(Ship):
+class BaseFighterShip(object):
     MAX_HIT_PTS = 10000
 
     CARGO_PER_INDEX = {
@@ -599,7 +609,7 @@ class BaseFighterShip(Ship):
     }
 
 
-class BaseFreighterShip(Ship):
+class BaseFreighterShip(object):
     MAX_HIT_PTS = 14000
 
     CARGO_PER_INDEX = {
@@ -616,7 +626,7 @@ class BaseFreighterShip(Ship):
     }
 
 
-class RheinlandShip(Ship):
+class RheinlandShip(object):
     # MAIN
     SHIP_MASS_MULTIPLER = 0.66
     CARGO_HOLD_MULTIPLER = 0.84
@@ -626,7 +636,7 @@ class RheinlandShip(Ship):
     STRAFE_FORCE_MULTIPLER = 0.9
 
 
-class LibertyShip(Ship):
+class LibertyShip(object):
     # MAIN
     HULL_HIT_PTS_MULTIPLER = 0.83
     # ADDITIONAL
@@ -634,7 +644,7 @@ class LibertyShip(Ship):
     NANOBOTS_COUNT_MULTIPLER = 1.1
 
 
-class BretoniaShip(Ship):
+class BretoniaShip(object):
     # MAIN
     HULL_HIT_PTS_MULTIPLER = 1.15
     # ADDITIONAL
@@ -643,7 +653,7 @@ class BretoniaShip(Ship):
     SHIP_MASS_MULTIPLER = 1.1
 
 
-class KusariShip(Ship):
+class KusariShip(object):
     # MAIN
     NANOBOTS_COUNT_MULTIPLER = 1.5
     STRAFE_FORCE_MULTIPLER = 0.5
@@ -653,7 +663,7 @@ class KusariShip(Ship):
     EXTRA_CARGO = -1
 
 
-class CorsairShip(Ship):
+class CorsairShip(object):
     # MAIN
     CARGO_HOLD_MULTIPLER = 1.1
     NANOBOTS_COUNT_MULTIPLER = 0.5
@@ -661,7 +671,7 @@ class CorsairShip(Ship):
     HULL_HIT_PTS_MULTIPLER = 1.06
 
 
-class GenericShip(Ship):
+class GenericShip(object):
     # MAIN
     HULL_HIT_PTS_MULTIPLER = 0.92
     # ADDITIONAL
@@ -723,7 +733,7 @@ class ShipFreighter(BaseFreighterShip):
 # RHEINLAND
 
 
-class Dagger(RheinlandShip, ShipInterceptor, Ship1):
+class Dagger(RheinlandShip, ShipInterceptor, Ship1, Ship):
     EXTRA_CLASSES = [CLASS_INTERCEPTOR, CLASS_RHEINLAND_INTERCEPTOR]
     SHIP_INDEX = SHIP_INDEX_3
     SHIELD_LINK = 'bw_fighter_shield01'
@@ -733,6 +743,7 @@ class Dagger(RheinlandShip, ShipInterceptor, Ship1):
 
     ARCHETYPE = 'bw_fighter'
     TEMPLATE_CODE = 'bwf'
+    ICON = 'bw_fighter.3db'
     HP_TORPEDO = 'HpTorpedo01'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
     MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02']
@@ -753,7 +764,7 @@ class Dagger(RheinlandShip, ShipInterceptor, Ship1):
     }
 
 
-class Banshee(RheinlandShip, ShipInterceptor, Ship2):
+class Banshee(RheinlandShip, ShipInterceptor, Ship2, Ship):
     EXTRA_CLASSES = [CLASS_INTERCEPTOR, CLASS_RHEINLAND_INTERCEPTOR]
     SHIP_INDEX = SHIP_INDEX_7
     SHIELD_LINK = 'r_fighter_shield01'
@@ -762,6 +773,7 @@ class Banshee(RheinlandShip, ShipInterceptor, Ship2):
 
     ARCHETYPE = 'rh_fighter'
     TEMPLATE_CODE = 'rf'
+    ICON = 'rh_fighter.3db'
     HP_TORPEDO = 'HpTorpedo02'
     MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
     MAX_WEAPONS = ['HpTorpedo01', 'HpWeapon03', 'HpWeapon04']
@@ -777,7 +789,7 @@ class Banshee(RheinlandShip, ShipInterceptor, Ship2):
     }
 
 
-class Stiletto(RheinlandShip, ShipFighter, Ship1):
+class Stiletto(RheinlandShip, ShipFighter, Ship1, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_RHEINLAND_ELITE, CLASS_RHEINLAND_FIGHTER_ONLY]
     SHIP_INDEX = SHIP_INDEX_3
     SHIELD_LINK = 'bw_elite_shield01'
@@ -786,6 +798,7 @@ class Stiletto(RheinlandShip, ShipFighter, Ship1):
 
     ARCHETYPE = 'bw_elite'
     TEMPLATE_CODE = 'bwe'
+    ICON = 'bw_elite.3db'
     HP_TORPEDO = 'HpWeapon06'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05']
     MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03']
@@ -811,7 +824,7 @@ class Stiletto(RheinlandShip, ShipFighter, Ship1):
     }
 
 
-class Sabre(RheinlandShip, ShipFighter, Ship2):
+class Sabre(RheinlandShip, ShipFighter, Ship2, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_RHEINLAND_ELITE, CLASS_RHEINLAND_FIGHTER_ONLY]
     SHIP_INDEX = SHIP_INDEX_7
     SHIELD_LINK = 'bw_vheavy_shield01'
@@ -820,6 +833,7 @@ class Sabre(RheinlandShip, ShipFighter, Ship2):
 
     ARCHETYPE = 'bw_elite2'
     TEMPLATE_CODE = 'bwe2'
+    ICON = 'bw_heavy.3db'
     HP_TORPEDO = 'HpTorpedo01'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
     MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
@@ -839,7 +853,7 @@ class Sabre(RheinlandShip, ShipFighter, Ship2):
     }
 
 
-class Valkyrie(RheinlandShip, ShipElite, Ship3):
+class Valkyrie(RheinlandShip, ShipElite, Ship3, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_RHEINLAND_ELITE]
     SHIP_INDEX = SHIP_INDEX_8
     SHIELD_LINK = 'r_elite_shield01'
@@ -848,6 +862,7 @@ class Valkyrie(RheinlandShip, ShipElite, Ship3):
 
     ARCHETYPE = 'rh_elite'
     TEMPLATE_CODE = 're'
+    ICON = 'rh_elite.3db'
     HP_TORPEDO = 'HpTorpedo01'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
     MAX_WEAPONS = ['HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
@@ -865,13 +880,14 @@ class Valkyrie(RheinlandShip, ShipElite, Ship3):
     }
 
 
-class ValkyrieMk2(RheinlandShip, ShipElite, Ship3):
+class ValkyrieMk2(RheinlandShip, ShipElite, Ship3, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_RHEINLAND_ELITE]
     SHIP_INDEX = SHIP_INDEX_10
     LIGHTS = 6
 
     ARCHETYPE = 'rh_elite2'
     TEMPLATE_CODE = 're2'
+    ICON = 'rh_elite.3db'
     HP_TORPEDO = 'HpTorpedo01'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
     MAX_WEAPONS = ['HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
@@ -889,7 +905,7 @@ class ValkyrieMk2(RheinlandShip, ShipElite, Ship3):
     }
 
 
-class Humpback(RheinlandShip, ShipFreighter):
+class Humpback(RheinlandShip, ShipFreighter, Ship):
     ARCHETYPE = 'rh_freighter'
     SHIELD_LINK = 'r_freighter_shield01'
     ENGINE_TYPE = ENGINE_DOUBLE_SAME
@@ -897,6 +913,7 @@ class Humpback(RheinlandShip, ShipFreighter):
     LIGHTS = 7
 
     TEMPLATE_CODE = 'rfr'
+    ICON = 'rh_freighter.3db'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon05', 'HpWeapon06', 'HpWeapon10']
     MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon05', 'HpWeapon06']
 
@@ -914,7 +931,7 @@ class Humpback(RheinlandShip, ShipFreighter):
 # LIBERTY
 
 
-class Piranha(LibertyShip, ShipInterceptor, Ship1):
+class Piranha(LibertyShip, ShipInterceptor, Ship1, Ship):
     EXTRA_CLASSES = [CLASS_INTERCEPTOR, CLASS_LIBERTY_INTERCEPTOR]
     SHIP_INDEX = SHIP_INDEX_3
     SHIELD_LINK = 'bh_fighter_shield01'
@@ -923,6 +940,7 @@ class Piranha(LibertyShip, ShipInterceptor, Ship1):
 
     ARCHETYPE = 'bh_fighter'
     TEMPLATE_CODE = 'bhf'
+    ICON = 'bh_fighter.3db'
     HP_TORPEDO = 'HpTorpedo01'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
     MAX_WEAPONS = ['HpWeapon03', 'HpWeapon04']
@@ -938,7 +956,7 @@ class Piranha(LibertyShip, ShipInterceptor, Ship1):
     }
 
 
-class Patriot(LibertyShip, ShipInterceptor, Ship2):
+class Patriot(LibertyShip, ShipInterceptor, Ship2, Ship):
     EXTRA_CLASSES = [CLASS_INTERCEPTOR, CLASS_LIBERTY_INTERCEPTOR]
     SHIP_INDEX = SHIP_INDEX_7
     LIGHTS = 4
@@ -947,6 +965,7 @@ class Patriot(LibertyShip, ShipInterceptor, Ship2):
     SHIELD_LINK = 'l_fighter_shield01'
     ENGINE_TYPE = ENGINE_SINGLE
     TEMPLATE_CODE = 'lf'
+    ICON = 'li_fighter.3db'
     HP_TORPEDO = 'HpTorpedo02'
     MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
     MAX_WEAPONS = ['HpWeapon03', 'HpWeapon04']
@@ -962,7 +981,7 @@ class Patriot(LibertyShip, ShipInterceptor, Ship2):
     }
 
 
-class Barracuda(LibertyShip, ShipFighter, Ship1):
+class Barracuda(LibertyShip, ShipFighter, Ship1, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_LIBERTY_ELITE, CLASS_LIBERTY_FIGHTER_ONLY]
     SHIP_INDEX = SHIP_INDEX_3
     SHIELD_LINK = 'bh_elite_shield01'
@@ -971,6 +990,7 @@ class Barracuda(LibertyShip, ShipFighter, Ship1):
 
     ARCHETYPE = 'bh_elite'
     TEMPLATE_CODE = 'bhe'
+    ICON = 'bh_elite.3db'
     HP_TORPEDO = 'HpTorpedo01'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05']
     MAX_WEAPONS = ['HpWeapon03', 'HpWeapon04', 'HpWeapon05']
@@ -997,7 +1017,7 @@ class Barracuda(LibertyShip, ShipFighter, Ship1):
     }
 
 
-class Hammerhead(LibertyShip, ShipFighter, Ship2):
+class Hammerhead(LibertyShip, ShipFighter, Ship2, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_LIBERTY_ELITE, CLASS_LIBERTY_FIGHTER_ONLY]
     SHIP_INDEX = SHIP_INDEX_7
     SHIELD_LINK = 'bh_elite2_shield01'
@@ -1006,6 +1026,7 @@ class Hammerhead(LibertyShip, ShipFighter, Ship2):
 
     ARCHETYPE = 'bh_elite2'
     TEMPLATE_CODE = 'bhe2'
+    ICON = 'bh_heavy.3db'
     HP_TORPEDO = 'HpWeapon06'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon07']
     MAX_WEAPONS = ['HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon07']
@@ -1027,7 +1048,7 @@ class Hammerhead(LibertyShip, ShipFighter, Ship2):
     }
 
 
-class Defender(LibertyShip, ShipElite, Ship3):
+class Defender(LibertyShip, ShipElite, Ship3, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_LIBERTY_ELITE]
     SHIP_INDEX = SHIP_INDEX_8
     SHIELD_LINK = 'l_elite_shield01'
@@ -1036,6 +1057,7 @@ class Defender(LibertyShip, ShipElite, Ship3):
 
     ARCHETYPE = 'li_elite'
     TEMPLATE_CODE = 'le'
+    ICON = 'li_elite.3db'
     HP_TORPEDO = 'HpTorpedo02'
     MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05']
     MAX_WEAPONS = ['HpTorpedo01', 'HpWeapon03', 'HpWeapon04']
@@ -1055,7 +1077,7 @@ class Defender(LibertyShip, ShipElite, Ship3):
     }
 
 
-class DefenderJuni(LibertyShip, ShipElite, Ship3):
+class DefenderJuni(LibertyShip, ShipElite, Ship3, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_LIBERTY_ELITE]
     SHIP_INDEX = SHIP_INDEX_10
     SHIELD_LINK = 'l_elite2_shield01'
@@ -1064,6 +1086,7 @@ class DefenderJuni(LibertyShip, ShipElite, Ship3):
 
     ARCHETYPE = 'li_elite2'
     TEMPLATE_CODE = 'le2'
+    ICON = 'li_elite.3db'
     HP_TORPEDO = 'HpTorpedo02'
     MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05']
     MAX_WEAPONS = ['HpTorpedo01', 'HpWeapon03', 'HpWeapon04']
@@ -1083,7 +1106,7 @@ class DefenderJuni(LibertyShip, ShipElite, Ship3):
     }
 
 
-class Rhino(LibertyShip, ShipFreighter):
+class Rhino(LibertyShip, ShipFreighter, Ship):
     ARCHETYPE = 'li_freighter'
     SHIP_INDEX = SHIP_INDEX_6
     SHIELD_LINK = 'l_freighter_shield01'
@@ -1091,6 +1114,7 @@ class Rhino(LibertyShip, ShipFreighter):
     LIGHTS = 7
 
     TEMPLATE_CODE = 'lfr'
+    ICON = 'li_freighter.3db'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03, HpTurret01, HpTurret02, HpTurret03']
     MAX_WEAPONS = ['HpWeapon02', 'HpWeapon03, HpTurret01, HpTurret02']
 
@@ -1108,7 +1132,7 @@ class Rhino(LibertyShip, ShipFreighter):
 # BRETONIA
 
 
-class Legionnaire(BretoniaShip, ShipInterceptor, Ship1):
+class Legionnaire(BretoniaShip, ShipInterceptor, Ship1, Ship):
     EXTRA_CLASSES = [CLASS_INTERCEPTOR, CLASS_BRETONIA_INTERCEPTOR]
     SHIP_INDEX = SHIP_INDEX_3
     SHIELD_LINK = 'co_fighter_shield01'
@@ -1117,6 +1141,7 @@ class Legionnaire(BretoniaShip, ShipInterceptor, Ship1):
 
     ARCHETYPE = 'co_fighter'
     TEMPLATE_CODE = 'cf'
+    ICON = 'pi_fighter.3db'
     HP_TORPEDO = 'HpTorpedo01'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
     MAX_WEAPONS = ['HpWeapon03', 'HpWeapon04']
@@ -1132,7 +1157,7 @@ class Legionnaire(BretoniaShip, ShipInterceptor, Ship1):
     }
 
 
-class Cavalier(BretoniaShip, ShipInterceptor, Ship2):
+class Cavalier(BretoniaShip, ShipInterceptor, Ship2, Ship):
     EXTRA_CLASSES = [CLASS_INTERCEPTOR, CLASS_BRETONIA_INTERCEPTOR]
     SHIP_INDEX = SHIP_INDEX_7
     SHIELD_LINK = 'b_fighter_shield01'
@@ -1141,6 +1166,7 @@ class Cavalier(BretoniaShip, ShipInterceptor, Ship2):
 
     ARCHETYPE = 'br_fighter'
     TEMPLATE_CODE = 'bf'
+    ICON = 'br_fighter.3db'
     HP_TORPEDO = 'HpTorpedo02'
     MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
     MAX_WEAPONS = ['HpTorpedo01', 'HpWeapon03', 'HpWeapon04']
@@ -1156,7 +1182,7 @@ class Cavalier(BretoniaShip, ShipInterceptor, Ship2):
     }
 
 
-class Centurion(BretoniaShip, ShipFighter, Ship1):
+class Centurion(BretoniaShip, ShipFighter, Ship1, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_BRETONIA_ELITE, CLASS_BRETONIA_FIGHTER_ONLY]
     SHIP_INDEX = SHIP_INDEX_3
     SHIELD_LINK = 'co_elite_shield01'
@@ -1165,6 +1191,7 @@ class Centurion(BretoniaShip, ShipFighter, Ship1):
 
     ARCHETYPE = 'co_elite'
     TEMPLATE_CODE = 'ce'
+    ICON = 'pi_elite.3db'
     HP_TORPEDO = 'HpTorpedo02'
     MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
     MAX_WEAPONS = ['HpTorpedo01', 'HpWeapon03', 'HpWeapon04']
@@ -1187,7 +1214,7 @@ class Centurion(BretoniaShip, ShipFighter, Ship1):
     }
 
 
-class Titan(BretoniaShip, ShipFighter, Ship2):
+class Titan(BretoniaShip, ShipFighter, Ship2, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_BRETONIA_ELITE, CLASS_BRETONIA_FIGHTER_ONLY]
     SHIP_INDEX = SHIP_INDEX_7
     SHIELD_LINK = 'co_elite2_shield01'
@@ -1196,6 +1223,7 @@ class Titan(BretoniaShip, ShipFighter, Ship2):
 
     ARCHETYPE = 'co_elite2'
     TEMPLATE_CODE = 'ce2'
+    ICON = 'pi_heavy.3db'
     HP_TORPEDO = 'HpTorpedo01'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
     MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
@@ -1218,7 +1246,7 @@ class Titan(BretoniaShip, ShipFighter, Ship2):
     }
 
 
-class Crusader(BretoniaShip, ShipElite, Ship3):
+class Crusader(BretoniaShip, ShipElite, Ship3, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_BRETONIA_ELITE]
     SHIP_INDEX = SHIP_INDEX_8
     SHIELD_LINK = 'b_elite_shield01'
@@ -1227,6 +1255,7 @@ class Crusader(BretoniaShip, ShipElite, Ship3):
 
     ARCHETYPE = 'br_elite'
     TEMPLATE_CODE = 'be'
+    ICON = 'br_elite.3db'
     HP_TORPEDO = 'HpTorpedo01'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
     MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon05', 'HpWeapon06']
@@ -1244,13 +1273,14 @@ class Crusader(BretoniaShip, ShipElite, Ship3):
     }
 
 
-class CrusaderMk2(BretoniaShip, ShipElite, Ship3):
+class CrusaderMk2(BretoniaShip, ShipElite, Ship3, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_BRETONIA_ELITE]
     SHIP_INDEX = SHIP_INDEX_10
     LIGHTS = 6
 
     ARCHETYPE = 'br_elite2'
     TEMPLATE_CODE = 'be2'
+    ICON = 'br_elite.3db'
     HP_TORPEDO = 'HpTorpedo01'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
     MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon05', 'HpWeapon06']
@@ -1268,7 +1298,7 @@ class CrusaderMk2(BretoniaShip, ShipElite, Ship3):
     }
 
 
-class Clydesdale(BretoniaShip, ShipFreighter):
+class Clydesdale(BretoniaShip, ShipFreighter, Ship):
     ARCHETYPE = 'br_freighter'
     SHIELD_LINK = 'b_freighter_shield01'
     ENGINE_TYPE = ENGINE_DOUBLE_SAME
@@ -1277,6 +1307,7 @@ class Clydesdale(BretoniaShip, ShipFreighter):
     SHIP_INDEX = SHIP_INDEX_6
 
     TEMPLATE_CODE = 'bfr'
+    ICON = 'br_freighter.3db'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03, HpTurret01, HpTurret02, HpTurret03']
     MAX_WEAPONS = ['HpWeapon02', 'HpWeapon03, HpTurret01, HpTurret02']
 
@@ -1294,7 +1325,7 @@ class Clydesdale(BretoniaShip, ShipFreighter):
 # KUSARI
 
 
-class Hawk(KusariShip, ShipInterceptor, Ship1):
+class Hawk(KusariShip, ShipInterceptor, Ship1, Ship):
     EXTRA_CLASSES = [CLASS_INTERCEPTOR, CLASS_KUSARI_INTERCEPTOR]
     SHIP_INDEX = SHIP_INDEX_3
     SHIELD_LINK = 'cv_fighter4_shield01'
@@ -1303,6 +1334,7 @@ class Hawk(KusariShip, ShipInterceptor, Ship1):
 
     ARCHETYPE = 'ge_fighter4'
     TEMPLATE_CODE = 'gf4'
+    ICON = 'cv_fighter.3db'
     HP_TORPEDO = 'HpTorpedo01'
 
     COLLISION_HIT_PTS_PERCENT = {
@@ -1316,7 +1348,7 @@ class Hawk(KusariShip, ShipInterceptor, Ship1):
     }
 
 
-class Drake(KusariShip, ShipInterceptor, Ship2):
+class Drake(KusariShip, ShipInterceptor, Ship2, Ship):
     EXTRA_CLASSES = [CLASS_INTERCEPTOR, CLASS_KUSARI_INTERCEPTOR]
     SHIP_INDEX = SHIP_INDEX_7
     SHIELD_LINK = 'k_fighter_shield01'
@@ -1325,6 +1357,7 @@ class Drake(KusariShip, ShipInterceptor, Ship2):
 
     ARCHETYPE = 'ku_fighter'
     TEMPLATE_CODE = 'kf'
+    ICON = 'ku_fighter.3db'
     HP_TORPEDO = 'HpTorpedo02'
     MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
     MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02']
@@ -1340,7 +1373,7 @@ class Drake(KusariShip, ShipInterceptor, Ship2):
     }
 
 
-class Falcon(KusariShip, ShipFighter, Ship1):
+class Falcon(KusariShip, ShipFighter, Ship1, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_KUSARI_ELITE, CLASS_KUSARI_FIGHTER_ONLY]
     SHIP_INDEX = SHIP_INDEX_3
     SHIELD_LINK = 'cv_fighter5_shield01'
@@ -1349,6 +1382,7 @@ class Falcon(KusariShip, ShipFighter, Ship1):
 
     ARCHETYPE = 'ge_fighter5'
     TEMPLATE_CODE = 'gf5'
+    ICON = 'cv_elite.3db'
     HP_TORPEDO = 'HpTorpedo01'
 
     COLLISION_HIT_PTS_PERCENT = {
@@ -1364,7 +1398,7 @@ class Falcon(KusariShip, ShipFighter, Ship1):
     }
 
 
-class Eagle(KusariShip, ShipFighter, Ship2):
+class Eagle(KusariShip, ShipFighter, Ship2, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_KUSARI_ELITE, CLASS_KUSARI_FIGHTER_ONLY]
     SHIP_INDEX = SHIP_INDEX_7
     SHIELD_LINK = 'cv_fighter6_shield01'
@@ -1373,6 +1407,7 @@ class Eagle(KusariShip, ShipFighter, Ship2):
 
     ARCHETYPE = 'ge_fighter6'
     TEMPLATE_CODE = 'gf6'
+    ICON = 'cv_heavy.3db'
 
     HP_TORPEDO = 'HpTorpedo01'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
@@ -1398,7 +1433,7 @@ class Eagle(KusariShip, ShipFighter, Ship2):
     }
 
 
-class Dragon(KusariShip, ShipElite, Ship3):
+class Dragon(KusariShip, ShipElite, Ship3, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_KUSARI_ELITE]
     SHIP_INDEX = SHIP_INDEX_8
     SHIELD_LINK = 'k_elite_shield01'
@@ -1407,6 +1442,7 @@ class Dragon(KusariShip, ShipElite, Ship3):
 
     ARCHETYPE = 'ku_elite'
     TEMPLATE_CODE = 'ke'
+    ICON = 'ku_elite.3db'
     HP_TORPEDO = 'HpTorpedo01'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
     MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon05', 'HpWeapon06']
@@ -1426,13 +1462,14 @@ class Dragon(KusariShip, ShipElite, Ship3):
     }
 
 
-class DragonMk2(KusariShip, ShipElite, Ship3):
+class DragonMk2(KusariShip, ShipElite, Ship3, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_KUSARI_ELITE]
     SHIP_INDEX = SHIP_INDEX_10
     LIGHTS = 10
 
     ARCHETYPE = 'ku_elite2'
     TEMPLATE_CODE = 'ke2'
+    ICON = 'ku_elite.3db'
     HP_TORPEDO = 'HpTorpedo01'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
     MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon05', 'HpWeapon06']
@@ -1452,7 +1489,7 @@ class DragonMk2(KusariShip, ShipElite, Ship3):
     }
 
 
-class Dron(KusariShip, ShipFreighter):
+class Dron(KusariShip, ShipFreighter, Ship):
     ARCHETYPE = 'ku_freighter'
     SHIELD_LINK = 'k_freighter_shield01'
     ENGINE_TYPE = ENGINE_DOUBLE_SAME
@@ -1461,6 +1498,7 @@ class Dron(KusariShip, ShipFreighter):
     SHIP_INDEX = SHIP_INDEX_6
 
     TEMPLATE_CODE = 'kfr'
+    ICON = 'ku_freighter.3db'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon03, HpTurret01, HpTurret02']
     MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon03']
 
@@ -1478,7 +1516,7 @@ class Dron(KusariShip, ShipFreighter):
 # CORSAIR / ORDER
 
 
-class Bloodhound(CorsairShip, ShipFighter, Ship1):
+class Bloodhound(CorsairShip, ShipFighter, Ship1, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_CORSAIR_ELITE, CLASS_CORSAIR_FIGHTER_ONLY]
     SHIP_INDEX = SHIP_INDEX_3
     SHIELD_LINK = 'pi_fighter_shield01'
@@ -1487,6 +1525,7 @@ class Bloodhound(CorsairShip, ShipFighter, Ship1):
 
     ARCHETYPE = 'pi_fighter'
     TEMPLATE_CODE = 'pf'
+    ICON = 'co_fighter.3db'
     HP_TORPEDO = 'HpTorpedo01'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05']
     MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03']
@@ -1507,7 +1546,7 @@ class Bloodhound(CorsairShip, ShipFighter, Ship1):
     }
 
 
-class Wolfhound(CorsairShip, ShipFighter, Ship2):
+class Wolfhound(CorsairShip, ShipFighter, Ship2, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_CORSAIR_ELITE, CLASS_CORSAIR_FIGHTER_ONLY]
     SHIP_INDEX = SHIP_INDEX_7
     SHIELD_LINK = 'pi_elite_shield01'
@@ -1516,6 +1555,7 @@ class Wolfhound(CorsairShip, ShipFighter, Ship2):
 
     ARCHETYPE = 'pi_elite'
     TEMPLATE_CODE = 'pe'
+    ICON = 'co_elite.3db'
     HP_TORPEDO = 'HpTorpedo01'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
     MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
@@ -1536,7 +1576,7 @@ class Wolfhound(CorsairShip, ShipFighter, Ship2):
     }
 
 
-class Anubis(CorsairShip, ShipElite, Ship3):
+class Anubis(CorsairShip, ShipElite, Ship3, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_CORSAIR_ELITE]
     SHIP_INDEX = SHIP_INDEX_8
     SHIELD_LINK = 'or_elite_shield01'
@@ -1545,6 +1585,7 @@ class Anubis(CorsairShip, ShipElite, Ship3):
 
     ARCHETYPE = 'or_elite'
     TEMPLATE_CODE = 'oe'
+    ICON = 'or_elite.3db'
     HP_TORPEDO = 'HpTorpedo01'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
     MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
@@ -1568,7 +1609,7 @@ class Anubis(CorsairShip, ShipElite, Ship3):
     }
 
 
-class Mule(CorsairShip, ShipFreighter):
+class Mule(CorsairShip, ShipFreighter, Ship):
     ARCHETYPE = 'pi_freighter'
     SHIELD_LINK = 'pi_freighter_shield01'
     ENGINE_TYPE = ENGINE_DOUBLE_SAME
@@ -1577,6 +1618,7 @@ class Mule(CorsairShip, ShipFreighter):
     SHIP_INDEX = SHIP_INDEX_6
 
     TEMPLATE_CODE = 'pfr'
+    ICON = 'co_freighter.3db'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
     MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
 
@@ -1600,10 +1642,11 @@ class Mule(CorsairShip, ShipFreighter):
 # GENERIC
 
 
-class Dromader(GenericShip, ShipFreighter):
+class Dromader(GenericShip, ShipFreighter, Ship):
     SHIP_INDEX = SHIP_INDEX_3
     ARCHETYPE = 'bw_freighter'
     TEMPLATE_CODE = 'bwfr'
+    ICON = 'bw_freighter.3db'
     SHIELD_LINK = 'bw_freighter_shield01'
     ENGINE_TYPE = ENGINE_TRIPLE_SAME
     LIGHTS = 8
@@ -1619,7 +1662,7 @@ class Dromader(GenericShip, ShipFreighter):
     }
 
 
-class CSV(GenericShip, ShipFreighter):
+class CSV(GenericShip, ShipFreighter, Ship):
     SHIP_INDEX = SHIP_INDEX_2
     ARCHETYPE = 'ge_csv'
     TEMPLATE_CODE = 'csv'
@@ -1649,13 +1692,13 @@ class CSV_Mk3(CSV):
     MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04, HpTurret01']
 
 
-class Armored(GenericShip, ShipFreighter):
+class Armored(GenericShip, ShipFreighter, Ship):
     SHIP_INDEX = SHIP_INDEX_10
     ARCHETYPE = 'ge_armored'
     TEMPLATE_CODE = 'armored'
 
 
-class Starflier(GenericShip, ShipInterceptor, Ship1):
+class Starflier(GenericShip, ShipInterceptor, Ship1, Ship):
     EXTRA_CLASSES = [CLASS_INTERCEPTOR, CLASS_GENERIC_INTERCEPTOR]
     SHIP_INDEX = SHIP_INDEX_1
     SHIELD_LINK = 'cv_fighter_shield01'
@@ -1684,7 +1727,17 @@ class Starflier(GenericShip, ShipInterceptor, Ship1):
     }
 
 
-class Startracker(GenericShip, ShipInterceptor, Ship2):
+class Starflier2(Starflier):
+    SHIP_INDEX = SHIP_INDEX_2
+
+    ARCHETYPE = 'ge_fighter_mk2'
+    TEMPLATE_CODE = 'gf1_mk2'
+    HP_TORPEDO = 'HpTorpedo02'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03, HpTorpedo01']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02']
+
+
+class Startracker(GenericShip, ShipInterceptor, Ship2, Ship):
     EXTRA_CLASSES = [CLASS_INTERCEPTOR, CLASS_GENERIC_INTERCEPTOR]
     SHIP_INDEX = SHIP_INDEX_5
     SHIELD_LINK = 'cv_fighter_shield01'
@@ -1713,7 +1766,7 @@ class Startracker(GenericShip, ShipInterceptor, Ship2):
     }
 
 
-class Starblazer(GenericShip, ShipElite, Ship2):
+class Starblazer(GenericShip, ShipElite, Ship2, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_GENERIC_ELITE]
     SHIP_INDEX = SHIP_INDEX_5
     SHIELD_LINK = 'cv_fighter_shield01'

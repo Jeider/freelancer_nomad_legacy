@@ -35,6 +35,28 @@ class Thruster(MainEquipPrice, DefaultGood, MainMiscEquip):
         Equipment.RATE_28: 50,
     }
 
+    THRUSTER_FX_PER_TYPE = {
+        MainMiscEquip.RH_MAIN: 'gf_rh_thruster01',
+        MainMiscEquip.RH_CIV: 'gf_rh_thruster02',
+        MainMiscEquip.RH_PIRATE: 'gf_rh_thruster03',
+
+        MainMiscEquip.LI_MAIN: 'gf_li_thruster01',
+        MainMiscEquip.LI_CIV: 'gf_li_thruster01',
+        MainMiscEquip.LI_PIRATE: 'gf_li_thruster01',
+
+        MainMiscEquip.BR_MAIN: 'gf_br_thruster01',
+        MainMiscEquip.BR_CIV: 'gf_br_thruster01',
+        MainMiscEquip.BR_PIRATE: 'gf_br_thruster01',
+
+        MainMiscEquip.KU_MAIN: 'gf_ku_thruster01',
+        MainMiscEquip.KU_CIV: 'gf_ku_thruster01',
+        MainMiscEquip.KU_PIRATE: 'gf_ku_thruster01',
+        
+        MainMiscEquip.CO_ORDER: 'gf_co_thruster01',
+        MainMiscEquip.CO_CORSAIR: 'gf_co_thruster01',
+        MainMiscEquip.CO_OUTCAST: 'gf_co_thruster01',
+    }
+
     LINEAR_DRAG = 600
 
     RH_THRUST_POWER = 110  # 220
@@ -52,6 +74,7 @@ nickname = {nickname}
 ids_name = {ids_name}
 ids_info = {ids_info}
 hit_pts = {hit_pts}
+particles = {thruster_fx}
 explosion_resistance = {explosion_resistance}
 max_force = {max_force}
 power_usage = {power_usage}{thruster_defaults}{faction_thruster_core}'''
@@ -67,28 +90,23 @@ LODranges = 0, 600'''
 
     RH_THRUSTER_CORE = '''
 DA_archetype = equipment\\models\\st\\rh_thruster02.3db
-material_library = equipment\\models\\rh_equip.mat
-particles = gf_rh_thruster01'''
+material_library = equipment\\models\\rh_equip.mat'''
 
     LI_THRUSTER_CORE = '''
 DA_archetype = equipment\\models\\st\\li_thruster02.3db
-material_library = equipment\\models\\li_equip.mat
-particles = gf_li_thruster01'''
+material_library = equipment\\models\\li_equip.mat'''
 
     BR_THRUSTER_CORE = '''
 DA_archetype = equipment\\models\\st\\br_thruster02.3db
-material_library = equipment\\models\\br_equip.mat
-particles = gf_br_thruster01'''
+material_library = equipment\\models\\br_equip.mat'''
 
     KU_THRUSTER_CORE = '''
 DA_archetype = equipment\\models\\st\\ku_thruster02.3db
-material_library = equipment\\models\\ku_equip.mat
-particles = gf_ku_thruster01'''
+material_library = equipment\\models\\ku_equip.mat'''
 
     CO_THRUSTER_CORE = '''
 DA_archetype = equipment\\models\\st\\co_thruster02.3db
-material_library = equipment\\models\\ge_equip.mat
-particles = gf_co_thruster01'''
+material_library = equipment\\models\\ge_equip.mat'''
 
     RH_THRUSTER_ICON = 'equipment\\models\\icons\\rh\\rh_afterburn.3db'
     LI_THRUSTER_ICON = 'equipment\\models\\icons\\li\\li_afterburn.3db'
@@ -111,6 +129,9 @@ particles = gf_co_thruster01'''
             return self.CO_THRUSTER_CORE
 
         raise Exception('unknown thruster core')
+
+    def get_thruster_fx(self):
+        return self.THRUSTER_FX_PER_TYPE[self.equip_type]
 
     def get_nickname(self):
         return '{name}_afterburn_{digit}'.format(
@@ -166,6 +187,7 @@ particles = gf_co_thruster01'''
             'ids_name': self.ids_name,
             'ids_info': self.ids_info,
             'hit_pts': self.get_thruster_hit_pts(),
+            'thruster_fx': self.get_thruster_fx(),
             'explosion_resistance': self.get_explosion_resistance(),
             'max_force': self.get_thruster_force(),
             'power_usage': self.get_thruster_power(),

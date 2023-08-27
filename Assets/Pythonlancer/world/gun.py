@@ -16,6 +16,12 @@ class Gun(MainEquipPrice, Weapon, DefaultGood):
     DROP_CHANCE = 12
     MAX_PRICE = 120000
 
+    subclasses = []
+
+    def __init_subclass__(cls, **kwargs):
+        super().__init_subclass__(**kwargs)
+        cls.subclasses.append(cls)
+
     def get_icon(self):
         icon = self.ICON_PER_WEAPON_MODEL[self.MODEL]
         return Icon.get_icon_path(icon)
@@ -59,7 +65,7 @@ class RheinlandCivgun(Gun):
     BASE_NICKNAME = RH_CIVGUN
     MODEL = Weapon.RH_THRUSTGUN
     EQUIP_TYPE = Weapon.EQUIP_CIV
-    REFIRE_RATE = Weapon.REFIRE_RATE_4
+    REFIRE_RATE = Weapon.REFIRE_RATE_8
     MUZZLE_VELOCITY = 600
     LIFETIME = 0.8
 
@@ -69,7 +75,7 @@ class RheinlandHuntergun(Gun):
     BASE_NICKNAME = RH_HUNTERGUN
     MODEL = Weapon.RH_GAMMA_BEAMER
     EQUIP_TYPE = Weapon.EQUIP_PIRATE
-    REFIRE_RATE = Weapon.REFIRE_RATE_8
+    REFIRE_RATE = Weapon.REFIRE_RATE_6
     MUZZLE_VELOCITY = 750
     LIFETIME = 0.8
 

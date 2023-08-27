@@ -45,9 +45,8 @@ def main():
 
         ('demo_marketdata.ini', DIVIDER.join(markets_demo_data)),
         ('market_equip.ini', core.universe.get_market_equip()),
+        ('market_ships.ini', core.universe.get_market_ships()),
 
-
-        #('shiparch.ini', str(core.shiparch.params)),
         ('shiparch.ini', str(core.shiparch.get_file_content())),
 
     ]

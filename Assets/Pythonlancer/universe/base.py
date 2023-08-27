@@ -8,6 +8,9 @@ from world.ship import *
 LEVEL_1 = 1
 LEVEL_2 = 2
 LEVEL_3 = 3
+LEVEL_4 = 3
+LEVEL_5 = 3
+LEVEL_6 = 3
 
 EQUIP_CLASSES_PER_LEVEL = {
     LEVEL_1: [
@@ -25,12 +28,30 @@ EQUIP_CLASSES_PER_LEVEL = {
         Equipment.CLASS_6,
         Equipment.CLASS_9,
     ],
+    LEVEL_4: [
+        Equipment.CLASS_1,
+        Equipment.CLASS_3,
+        Equipment.CLASS_6,
+        Equipment.CLASS_8,
+    ],
+    LEVEL_5: [
+        Equipment.CLASS_2,
+        Equipment.CLASS_4,
+        Equipment.CLASS_7,
+        Equipment.CLASS_9,
+    ],
+    LEVEL_6: [
+        Equipment.CLASS_1,
+        Equipment.CLASS_3,
+        Equipment.CLASS_5,
+        Equipment.CLASS_7,
+    ],
 }
 
 
 class Base(object):
     SHIPS = []
-    LEVEL = None 
+    LEVEL = None
 
     GUN = None
     GUN_LEVEL = None
@@ -127,13 +148,13 @@ class Bizmark_base(Base):
         Stiletto,
     ]
 
-    LEVEL = LEVEL_2
+    LEVEL = LEVEL_6
 
-    GUN = RheinlandCivgun
-    ENGINE = misc.RH_CIV
-    POWER = misc.RH_CIV
-    SHIELD = misc.RH_CIV
-    THRUSTER = misc.RH_CIV
+    GUN = RheinlandHuntergun
+    ENGINE = misc.RH_PIRATE
+    POWER = misc.RH_PIRATE
+    SHIELD = misc.RH_PIRATE
+    THRUSTER = misc.RH_PIRATE
 
 
 
@@ -141,14 +162,17 @@ class Bizmark_base(Base):
 class rh_biz_02_Base(Base):
     NAME = 'rh_biz_02_Base'
     SYSTEM = rh_biz
+    SHIPS = [
+        Humpback,
+    ]
 
     LEVEL = LEVEL_2
 
-    GUN = RheinlandHuntergun
-    ENGINE = misc.RH_PIRATE
-    POWER = misc.RH_PIRATE
-    SHIELD = misc.RH_PIRATE
-    THRUSTER = misc.RH_PIRATE
+    GUN = RheinlandCivgun
+    ENGINE = misc.RH_CIV
+    POWER = misc.RH_CIV
+    SHIELD = misc.RH_CIV
+    THRUSTER = misc.RH_CIV
 
 
 # Battleship
@@ -161,7 +185,7 @@ class rh_biz_03_Base(Base):
 
     LEVEL = LEVEL_2
 
-    GUN = RheinlandLightgun
+    GUN = RheinlandHeavygun
     ENGINE = misc.RH_MAIN
     POWER = misc.RH_MAIN
     SHIELD = misc.RH_MAIN
@@ -186,8 +210,11 @@ class rh_biz_04_Base(Base):
 class rh_biz_05_Base(Base):
     NAME = 'rh_biz_05_Base'
     SYSTEM = rh_biz
+    SHIPS = [
+        # ???
+    ]
 
-    LEVEL = LEVEL_2
+    LEVEL = LEVEL_4
 
     GUN = RheinlandHeavygun
     ENGINE = misc.RH_MAIN
@@ -229,7 +256,7 @@ class sig8_01_Base(Base):
     NAME = 'sig8_01_Base'
     SYSTEM = sig8
 
-    LEVEL = LEVEL_1
+    LEVEL = LEVEL_4
 
     GUN = RheinlandLightgun
     ENGINE = misc.RH_MAIN
@@ -256,6 +283,9 @@ class sig8_02_Base(Base):
 class sig8_04_Base(Base):
     NAME = 'sig8_04_Base'
     SYSTEM = sig8
+    SHIPS = [
+        Banshee,
+    ]
 
     LEVEL = LEVEL_1
 
@@ -270,6 +300,9 @@ class sig8_04_Base(Base):
 class om15_01_Base(Base):
     NAME = 'om15_01_Base'
     SYSTEM = om15
+    SHIPS = [
+        CSV_Mk2,
+    ]
 
     LEVEL = LEVEL_2
 
@@ -357,6 +390,11 @@ class rh_stut_06_Base(Base):
 class rh_ber_01_Base(Base):
     NAME = 'rh_ber_01_Base'
     SYSTEM = rh_ber
+    SHIPS = [
+        Starflier2,
+        CSV,
+        Sabre,
+    ]
 
     LEVEL = LEVEL_2
 

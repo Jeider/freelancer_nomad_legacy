@@ -177,6 +177,22 @@ combinable = {combinable}'''
     def get_pirate_rate(self):
         return self.PIRATE_RATES.get(self.equipment_class)
 
+    DROP_CHANCE_PER_CLASS = {
+        CLASS_1: 17,
+        CLASS_2: 14,
+        CLASS_3: 12,
+        CLASS_4: 10,
+        CLASS_5: 8,
+        CLASS_6: 7,
+        CLASS_7: 6,
+        CLASS_8: 5,
+        CLASS_9: 3,
+        CLASS_10: 1,
+    }
+
+    def get_drop_chance(self):
+        return self.DROP_CHANCE_PER_CLASS[self.equipment_class]
+
     DROP_WORTH_PER_CLASS = {
         CLASS_1: 5000,
         CLASS_2: 8000,

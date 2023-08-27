@@ -1,6 +1,20 @@
 from text.dividers import SINGLE_DIVIDER
 
-class MarketEquip(object):
+
+MARKET_EQUIP = 'equip_dealer'
+MARKET_COMMODITY = 'commodity_dealer'
+MARKET_SHIPS = 'ship_dealer'
+
+
+class MarketItem(object):
+    def get_nickname(self):
+        raise NotImplementedError
+
+    def get_marketdata(self):
+        raise NotImplementedError
+
+
+class MarketEquip(MarketItem):
     MARKET_ITEM_TEMPLATE = 'MarketGood = {item_nickname}, {level}, {reputation}, {stock}, {price_mult}'
 
     MARKET_STOCK_AVAILABLE = '50, 50, 0'
@@ -35,9 +49,21 @@ class MarketEquip(object):
         return self.MARKET_ITEM_TEMPLATE.format(**self.get_market_item_params())
 
 
-MARKET_EQUIP = 'equip_dealer'
-MARKET_COMMODITY = 'commodity_dealer'
-MARKET_SHIPS = 'ship_dealer'
+class MarketShip(MarketItem):
+    MARKET_ITEM_TEMPLATE = 'MarketGood = {item_nickname}, {level}, -1, 1, 1, 0, 1, 1'
+    MARKET_DEFAULT_LEVEL = 0
+
+    def get_market_level(self):
+        return self.MARKET_DEFAULT_LEVEL
+
+    def get_market_item_params(self):
+        return {
+            'item_nickname': self.get_nickname(),
+            'level': self.get_market_level(),
+        }
+
+    def get_marketdata(self):
+        return self.MARKET_ITEM_TEMPLATE.format(**self.get_market_item_params())
 
 
 class MarketBase(object):

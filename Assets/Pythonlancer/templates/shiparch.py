@@ -5569,6 +5569,98 @@ root_health_proxy = false
 explosion_resistance = {gf1_engine_expl_resist}
 
 
+
+
+
+[Ship]
+ids_name = 237101
+ids_info = 066350
+ids_info1 = 066351
+ids_info2 = 066352
+ids_info3 = 066353
+ship_class = 19
+{ship_ge_fighter_mk2}
+LODranges = 0, 300, 500, 1000, 5000, 10000
+msg_id_prefix = gcs_refer_shiparch_starflier
+mission_property = can_use_berths
+type = FIGHTER
+DA_archetype = ships\\civilian\\cv_starflier\\cv_starflier.cmp
+material_library = ships\\civilian\\cv_ships.mat
+material_library = fx\\envmapbasic.mat
+envmap_material = envmapship02
+cockpit = cockpits\\civilian\\civilian.ini
+pilot_mesh = generic_pilot
+linear_drag = 1.000000
+max_bank_angle = 5 ;35
+camera_offset = 13, 42
+; camera_offset = 10, 42
+camera_angular_acceleration = 0.050000
+camera_horizontal_turn_angle = 20
+camera_vertical_turn_up_angle = 5
+camera_vertical_turn_down_angle = 30
+camera_turn_look_ahead_slerp_amount = 1.000000
+explosion_arch = explosion_ku
+surface_hit_effects = 0, small_hull_hit_light01, small_hull_hit_light02, small_hull_hit_light03
+surface_hit_effects = 150, small_hull_hit_medium01, small_hull_hit_medium02, small_hull_hit_medium03
+surface_hit_effects = 300, small_hull_hit_heavy01, small_hull_hit_heavy02, small_hull_hit_heavy03
+steering_torque = 25000.000000, 25000.000000, 58000.000000
+angular_drag = 15000.000000, 15000.000000, 35000.000000
+rotation_inertia = 3800.000000, 3800.000000, 1000.000000
+nudge_force = 30000.000000
+bay_door_anim = Sc_open baydoor
+bay_doors_open_snd = cargo_doors_open
+bay_doors_close_snd = cargo_doors_close
+HP_bay_surface = HpBayDoor01
+HP_bay_external = HpBayDoor02
+HP_tractor_source = HpTractor_Source
+num_exhaust_nozzles = 1
+
+[CollisionGroup]
+obj = port_wing_lod1
+separable = true
+parent_impulse = 120.000000
+child_impulse = 60.000000
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+dmg_hp = DpPort_Wing
+dmg_obj = cv_dmg_port_wing01_cap
+type = Port_Wing
+hit_pts = {gf1_mk2_wing_hit_pts}
+root_health_proxy = false
+explosion_resistance = {gf1_mk2_wing_expl_resist}
+
+[CollisionGroup]
+obj = star_wing_lod1
+separable = true
+parent_impulse = 120.000000
+child_impulse = 60.000000
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+dmg_hp = DpStarboard_Wing
+dmg_obj = cv_dmg_starboard_wing01_cap
+type = Starboard_Wing
+hit_pts = {gf1_mk2_wing_hit_pts}
+root_health_proxy = false
+explosion_resistance = {gf1_mk2_wing_expl_resist}
+
+[CollisionGroup]
+obj = engine_lod1
+separable = true
+parent_impulse = 120.000000
+child_impulse = 60.000000
+debris_type = debris_small_ship
+separation_explosion = explosion_small_ship_breakoff
+mass = 5.000000
+type = Engine
+dmg_hp = DpEngine
+dmg_obj = cv_dmg_engine01
+hit_pts = {gf1_mk2_engine_hit_pts}
+root_health_proxy = false
+explosion_resistance = {gf1_mk2_engine_expl_resist}
+
+
 [Ship]
 ids_name = 237151
 ids_info = 66530
