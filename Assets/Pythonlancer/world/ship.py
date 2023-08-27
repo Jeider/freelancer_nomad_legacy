@@ -656,6 +656,8 @@ hit_pts = {hit_pts}
             'equipment': self.get_equipment_table(),
         }
 
+    ADDITIONAL_EQUIP = ''
+
     def get_infocard_values(self):
         return {
             'value_gun_count': len(self.MAIN_WEAPONS),
@@ -665,7 +667,7 @@ hit_pts = {hit_pts}
             'value_bot_bats': int(self.get_bots_count()),
             'value_max_equip_class': self.get_max_weapon_class(),
             'value_max_weapon_class': self.get_max_weapon_class(),
-            'value_additional_equipment': 'M, CM, CD/T',
+            'value_additional_equipment': self.ADDITIONAL_EQUIP,
         }
 
     def get_collision_group_template_params(self):
@@ -718,6 +720,8 @@ class BaseInterceptorShip(object):
 
     MAX_PRICE = 500000
 
+    ADDITIONAL_EQUIP = 'M, CM, CD'
+
     CARGO_PER_INDEX = {
         SHIP_INDEX_1: 20,
         SHIP_INDEX_2: 25,
@@ -737,6 +741,8 @@ class BaseFighterShip(object):
 
     MAX_PRICE = 650000
 
+    ADDITIONAL_EQUIP = 'M, CM, CD/T'
+
     CARGO_PER_INDEX = {
         SHIP_INDEX_1: 25,
         SHIP_INDEX_2: 30,
@@ -753,6 +759,8 @@ class BaseFighterShip(object):
 
 class BaseFreighterShip(object):
     MAX_HIT_PTS = 14000
+
+    ADDITIONAL_EQUIP = 'M, CM'
 
     MAX_PRICE = 800000
 
