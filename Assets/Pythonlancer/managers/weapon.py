@@ -1,3 +1,6 @@
+from managers.tools.mixins import StringsMixin
+from managers.tools.helpers import extract_equips, extract_goods, extract_lootprops
+
 from text.strings import StringCompiler
 from text.dividers import SINGLE_DIVIDER, DIVIDER
 
@@ -5,19 +8,16 @@ from world.equipment import Equipment
 from world.gun import Gun
 
 
-class WeaponManager(object):
+class WeaponManager(StringsMixin):
 
-    def __init__(self, initial_id):
+    def __init__(self, last_string_id, last_infocard_id):
         self.guns_db = {}
         self.guns_list = []
 
-        self.last_string_id = initial_id
+        self.last_string_id = last_string_id
+        self.last_infocard_id = last_infocard_id
 
         self.load_game_data()
-
-    def get_next_string_id(self):
-        self.last_string_id += 1
-        return self.last_string_id
 
     def load_game_data(self):
         for gun in Gun.subclasses:
@@ -35,51 +35,17 @@ class WeaponManager(object):
         return self.guns_db[gun.BASE_NICKNAME][equipment_class]
 
     def get_weapon_equip(self):
-        data = ''
-
-        for gun in self.guns_list:
-            data += gun.get_equip() + DIVIDER
-
-        return data
+        return extract_equips(self.guns_list)
 
     def get_weapon_good(self):
-        data = ''
-
-        for gun in self.guns_list:
-            data += gun.get_good() + DIVIDER
-
-        return data
+        return extract_goods(self.guns_list)
 
     def get_lootprops(self):
-        data = ''
-
-        for gun in self.guns_list:
-            data += gun.get_lootprops() + DIVIDER
-
-        return data
+        return extract_lootprops(self.guns_list)
 
     def get_ru_names(self):
-        items = {}
-
-        for gun in self.guns_list:
-            items[gun.ids_name] = gun.get_ru_name()
-
+        items = {gun.ids_name: gun.get_ru_name() for gun in self.guns_list}
         return StringCompiler.compile_names(items)
 
-    def get_weapon_equip(self):
-        data = ''
-
-        for gun in self.guns_list:
-            data += gun.get_equip() + DIVIDER
-
-        return data
-
     def get_demo_marketdata(self):
-        data = ''
-
-        for gun in self.guns_list:
-            data += gun.get_marketdata() + SINGLE_DIVIDER
-
-        data += SINGLE_DIVIDER
-
-        return data
+        return SINGLE_DIVIDER.join([gun.get_marketdata() for gun in self.guns_list])

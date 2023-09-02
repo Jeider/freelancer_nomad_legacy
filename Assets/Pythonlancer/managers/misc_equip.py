@@ -1,3 +1,6 @@
+from managers.tools.mixins import StringsMixin
+from managers.tools.helpers import extract_equips, extract_goods, extract_lootprops
+
 from text.strings import StringCompiler
 from text.dividers import SINGLE_DIVIDER, DIVIDER
 
@@ -10,9 +13,10 @@ from world.armor import ArmorNPC
 from world.ship import Ship
 
 
-class MiscEquipManager(object):
 
-    def __init__(self, last_string_id):
+class MiscEquipManager(StringsMixin):
+
+    def __init__(self, last_string_id, last_infocard_id):
         self.engines_db = {}
         self.engines_list = []
         self.powerplants_db = {}
@@ -27,6 +31,7 @@ class MiscEquipManager(object):
         self.npc_armors_list = []
 
         self.last_string_id = last_string_id
+        self.last_infocard_id = last_infocard_id
 
         self.load_game_data()
 
@@ -103,92 +108,34 @@ class MiscEquipManager(object):
         return self.npc_armors_db[armor_index]
 
     def get_engine_equip(self):
-        data = ''
-
-        for engine in self.engines_list:
-            data += engine.get_equip() + DIVIDER
-
-        return data
+        return extract_equips(self.engines_list)
 
     def get_engine_good(self):
-        data = ''
-
-        for engine in self.engines_list:
-            data += engine.get_good() + DIVIDER
-
-        return data
+        return extract_goods(self.engines_list)
 
     def get_powerplant_equip(self):
-        data = ''
-
-        for powerplant in self.powerplants_list:
-            data += powerplant.get_equip() + DIVIDER
-
-        return data
+        return extract_equips(self.powerplants_list)
 
     def get_powerplant_good(self):
-        data = ''
-
-        for powerplant in self.powerplants_list:
-            data += powerplant.get_good() + DIVIDER
-
-        return data
+        return extract_goods(self.powerplants_list)
 
     def get_st_equip(self):
-        data = ''
-
-        for shield in self.shields_list:
-            data += shield.get_equip() + DIVIDER
-
-        for shield in self.npc_shields_list:
-            data += shield.get_equip() + DIVIDER
-
-        for thruster in self.thrusters_list:
-            data += thruster.get_equip() + DIVIDER
-
-        return data
+        return extract_equips(self.shields_list, self.npc_shields_list, self.thrusters_list)
 
     def get_st_good(self):
-        data = ''
-
-        for shield in self.shields_list:
-            data += shield.get_good() + DIVIDER
-
-        for shield in self.npc_shields_list:
-            data += shield.get_good() + DIVIDER
-
-        for thruster in self.thrusters_list:
-            data += thruster.get_good() + DIVIDER
-
-        return data
+        return extract_goods(self.shields_list, self.npc_shields_list, self.thrusters_list)
 
     def get_select_equip(self):
-        data = ''
-
-        for armor in self.npc_armors_list:
-            data += armor.get_equip() + DIVIDER
-
-        return data
+        return extract_equips(self.npc_armors_list)
 
     def get_lootprops(self):
-        data = ''
-
-        for engine in self.engines_list:
-            data += engine.get_lootprops() + DIVIDER
-
-        for powerplant in self.powerplants_list:
-            data += powerplant.get_lootprops() + DIVIDER
-
-        for shield in self.shields_list:
-            data += shield.get_lootprops() + DIVIDER
-
-        for shield in self.npc_shields_list:
-            data += shield.get_lootprops() + DIVIDER
-
-        for thruster in self.thrusters_list:
-            data += thruster.get_lootprops() + DIVIDER
-
-        return data
+        return extract_lootprops(
+            self.engines_list,
+            self.powerplants_list,
+            self.shields_list,
+            self.npc_shields_list,
+            self.thrusters_list
+        )
 
     def get_ru_names(self):
         items = {}

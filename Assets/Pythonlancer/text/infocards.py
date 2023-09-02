@@ -115,3 +115,30 @@ INFO_SHIP_VALUES = [
     '<POP/>',
     '</RDL>',
 ]
+
+'''
+Пушка рейнландских наемников "Гремучий змей Мк 3"
+'''
+
+
+INFO_EQUIPMENT = [
+    '<?xml version="1.0" encoding="UTF-16"?>',
+    '<RDL>',
+    '<PUSH/>',
+    '<TEXT> </TEXT>',
+    '<PARA/>',
+    '<TRA data="1" mask="1" def="-2"/>',
+    '<JUST loc="center"/>',
+    '<TEXT>{equipment_fullname}</TEXT>',
+    '<PARA/>',
+    '<TRA data="0" mask="1" def="-1"/>',
+    '<JUST loc="left"/>',
+    '<TEXT></TEXT>',
+    '<PARA/>',
+    '{equipment_description}'
+    '<PARA/>',
+    '<POP/>',
+    '</RDL>',
+]
+
+INFO_EQUIPMENT_DESCRIPTION_ROW = '<TEXT>{text_additional_equipment}: {value_additional_equipment}</TEXT><PARA/>'

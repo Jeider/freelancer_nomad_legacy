@@ -67,17 +67,7 @@ class UniverseManager(object):
         return items
 
     def get_market_equip(self):
-        data = ''
-
-        for dealer in self.equip_dealers_list:
-            data += dealer.get_market_content() + DIVIDER
-
-        return data
+        return DIVIDER.join([dealer.get_market_content() for dealer in self.equip_dealers_list])
 
     def get_market_ships(self):
-        data = ''
-
-        for dealer in self.ship_dealers_list:
-            data += dealer.get_market_content() + DIVIDER
-
-        return data
+        return DIVIDER.join([dealer.get_market_content() for dealer in self.ship_dealers_list])

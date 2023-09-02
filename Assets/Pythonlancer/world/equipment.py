@@ -236,16 +236,18 @@ combinable = {combinable}'''
 
     def get_ru_shipclass_name(self):
         if self.ship_class == self.SHIPCLASS_FIGHTER:
-            return 'Перехв'
+            return 'ЛИ'
         if self.ship_class == self.SHIPCLASS_ELITE:
-            return 'Истреб'
+            return 'ТИ'
         if self.ship_class == self.SHIPCLASS_FREIGHTER:
-            return 'Груз'
+            return 'Г'
 
         raise Exception('unknown ship class')
 
     def get_ru_name(self):
         raise NotImplementedError('ru name builder not defined')
+
+
 
 
 

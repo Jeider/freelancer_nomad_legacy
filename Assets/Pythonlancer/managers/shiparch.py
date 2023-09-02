@@ -1,3 +1,5 @@
+from managers.tools.mixins import StringsMixin
+
 from world.ship import Ship
 from templates.shiparch import ShiparchTemplate
 from text.dividers import SINGLE_DIVIDER, DIVIDER
@@ -5,7 +7,7 @@ from text.infocards import InfocardBuilder, INFO_SHIP_ABOUT, INFO_SHIP_TABLE, IN
 from text.strings import StringCompiler
 
 
-class ShiparchManager(object):
+class ShiparchManager(StringsMixin):
 
     def __init__(self, misc_equip, last_string_id, last_infocard_id):
         self.misc_equip = misc_equip

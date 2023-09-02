@@ -69,22 +69,18 @@ class PopulationManager(object):
         return data
 
     def get_npc_names(self):
-        data = ''
+        faction_data = []
 
         for faction, npcs in self.npc_db.items():
-            data += 'affilitation = ' + faction + SINGLE_DIVIDER
+            item = [
+                'affilitation = ',
+                faction,
+                SINGLE_DIVIDER,
+                SINGLE_DIVIDER.join(['npc_ship = ' + npc.get_npc_shiparch_nickname() for npc in npcs])
+            ]
+            faction_data.append(''.join(item))
 
-            for npc in npcs:
-                data += 'npc_ship = ' + npc.get_npc_shiparch_nickname() + SINGLE_DIVIDER
-
-            data += SINGLE_DIVIDER
-
-        return data
+        return DIVIDER.join(faction_data)
 
     def get_loadouts(self):
-        data = ''
-
-        for loadout in self.loadouts_list:
-            data += loadout + DIVIDER
-
-        return data
+        return DIVIDER.join([loadout for loadout in self.loadouts_list])
