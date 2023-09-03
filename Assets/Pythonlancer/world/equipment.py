@@ -242,12 +242,18 @@ combinable = {combinable}'''
         if self.ship_class == self.SHIPCLASS_FREIGHTER:
             return 'Г'
 
+    def get_ru_shipclass_fullname(self):
+        if self.ship_class == self.SHIPCLASS_FIGHTER:
+            return '(для легких истребителей)'
+        if self.ship_class == self.SHIPCLASS_ELITE:
+            return '(для тяжелых истребителей)'
+        if self.ship_class == self.SHIPCLASS_FREIGHTER:
+            return '(для грузовиков)'
+
         raise Exception('unknown ship class')
 
     def get_ru_name(self):
         raise NotImplementedError('ru name builder not defined')
-
-
 
 
 
@@ -363,6 +369,27 @@ class MainMiscEquip(Equipment):
 
         raise Exception('unknown faction code')
 
+    def get_faction(self):
+        if self.equip_type in self.RH_EQUIP:
+            return self.FACTION_RH
+        if self.equip_type in self.LI_EQUIP:
+            return self.FACTION_LI
+        if self.equip_type in self.BR_EQUIP:
+            return self.FACTION_BR
+        if self.equip_type in self.KU_EQUIP:
+            return self.FACTION_KU
+        if self.equip_type in self.CO_EQUIP:
+            return self.FACTION_CO
+
+        raise Exception('unknown faction code')
+
+    def get_ru_equip_efficienty(self):
+        if self.equip_type in self.MAIN_EQUIP:
+            return 'Класс эффективности: гражданский'
+        if self.equip_type in self.CIV_EQUIP:
+            return 'Класс эффективности: профессиональный'
+        if self.equip_type in self.PIRATE_EQUIP:
+            return 'Класс эффективности: военный'
 
 
 class MainInternalEquip(MainMiscEquip):
@@ -420,6 +447,17 @@ attachment_archetype = {model}'''
             model=self.get_ru_base_name(),
             mark=self.get_mark_name(),
             shipclass=self.get_ru_shipclass_name(),
+        )
+
+    def get_ru_equip_fullname(self):
+        raise NotImplementedError
+
+    def get_ru_fullname(self):
+        return '{equip} {model} {mark} [{shipclass}]'.format(
+            equip=self.get_ru_equip_fullname(),
+            model=self.get_ru_base_name(),
+            mark=self.get_mark_name(),
+            shipclass=self.get_ru_shipclass_fullname(),
         )
 
 

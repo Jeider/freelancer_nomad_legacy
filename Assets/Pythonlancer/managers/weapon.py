@@ -1,5 +1,5 @@
 from managers.tools.mixins import StringsMixin
-from managers.tools.helpers import extract_equips, extract_goods, extract_lootprops
+from managers.tools.helpers import ManagerHelper
 
 from text.strings import StringCompiler
 from text.dividers import SINGLE_DIVIDER, DIVIDER
@@ -26,7 +26,7 @@ class WeaponManager(StringsMixin):
             for equipment_class in Equipment.BASE_CLASSES:
                 the_gun = gun(
                     equipment_class=equipment_class, faction=Equipment.FACTION_RH, 
-                    ids_name=self.get_next_string_id(), ids_info=1
+                    ids_name=self.get_next_string_id(), ids_info=self.get_next_infocard_id()
                 )
                 self.guns_db[gun.BASE_NICKNAME][equipment_class] = the_gun
                 self.guns_list.append(the_gun)
@@ -35,17 +35,21 @@ class WeaponManager(StringsMixin):
         return self.guns_db[gun.BASE_NICKNAME][equipment_class]
 
     def get_weapon_equip(self):
-        return extract_equips(self.guns_list)
+        return ManagerHelper.extract_equips(self.guns_list)
 
     def get_weapon_good(self):
-        return extract_goods(self.guns_list)
+        return ManagerHelper.extract_goods(self.guns_list)
 
     def get_lootprops(self):
-        return extract_lootprops(self.guns_list)
+        return ManagerHelper.extract_lootprops(self.guns_list)
 
     def get_ru_names(self):
-        items = {gun.ids_name: gun.get_ru_name() for gun in self.guns_list}
+        items = ManagerHelper.extract_ru_names(self.guns_list)
         return StringCompiler.compile_names(items)
 
+    def get_ru_infocards(self):
+        infocards = ManagerHelper.extract_ru_infocards(self.guns_list)
+        return StringCompiler.compile_infocards(infocards)
+
     def get_demo_marketdata(self):
-        return SINGLE_DIVIDER.join([gun.get_marketdata() for gun in self.guns_list])
+        return ManagerHelper.extract_marketdata(self.guns_list)

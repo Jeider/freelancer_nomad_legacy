@@ -4,6 +4,7 @@ class Language(object):
 
 class Lang_RU(Language):
     TRANSLATIONS = {
+        # SHIPS
         'text_stats': 'Характеристики',
         'text_gun_count': 'Число пушек',
         'text_armor': 'Броня',

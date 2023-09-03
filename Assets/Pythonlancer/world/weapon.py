@@ -554,7 +554,10 @@ LODranges = {lod_ranges}{extra}'''
         return self.get_refire_delay()
 
     def get_power_usage(self):
-        return self.MAX_POWER_USAGE * self.rate * self.get_refire_rate_multipler()
+        power_usage = self.MAX_POWER_USAGE * self.rate * self.get_refire_rate_multipler()
+        if self.faction == Equipment.FACTION_CO:
+            power_usage *= 0.9
+        return power_usage
 
     def get_muzzle_velocity(self):
         return self.MUZZLE_VELOCITY
@@ -571,6 +574,17 @@ LODranges = {lod_ranges}{extra}'''
 
         return self.MAX_HULL_DAMAGE * self.rate * self.get_refire_rate_multipler() * \
             self.get_damage_multipler()
+
+    def get_extra_shield_damage_factor(self):
+        factor = 0
+
+        if self.EXTRA_SHIELD_DAMAGE_FACTOR > 0:
+            factor += self.self.EXTRA_SHIELD_DAMAGE_FACTOR
+
+        if self.faction == Equipment.FACTION_KU:
+            factor += 0.1
+
+        return factor
 
     def get_energy_damage(self):
         if not self.SHIELDGUN:

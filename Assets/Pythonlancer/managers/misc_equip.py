@@ -1,5 +1,5 @@
 from managers.tools.mixins import StringsMixin
-from managers.tools.helpers import extract_equips, extract_goods, extract_lootprops
+from managers.tools.helpers import ManagerHelper
 
 from text.strings import StringCompiler
 from text.dividers import SINGLE_DIVIDER, DIVIDER
@@ -55,21 +55,22 @@ class MiscEquipManager(StringsMixin):
                 self.npc_shields_db[shipclass][equip_type] = {}
 
                 for equipment_class in Equipment.BASE_CLASSES:
-                    engine = Engine(equip_type, shipclass, equipment_class, self.get_next_string_id(), 1)
+                    engine = Engine(equip_type, shipclass, equipment_class, self.get_next_string_id(), self.get_next_infocard_id())
                     self.engines_db[shipclass][equip_type][equipment_class] = engine
                     self.engines_list.append(engine)
 
-                    powerplant = Power(equip_type, shipclass, equipment_class, self.get_next_string_id(), 1)
+                    powerplant = Power(equip_type, shipclass, equipment_class, self.get_next_string_id(), self.get_next_infocard_id())
                     self.powerplants_db[shipclass][equip_type][equipment_class] = powerplant
                     self.powerplants_list.append(powerplant)
 
                     shield_name_id = self.get_next_string_id()
+                    shield_infocard_id = self.get_next_string_id()
 
-                    shield = Shield(equip_type, shipclass, equipment_class, shield_name_id, 1)
+                    shield = Shield(equip_type, shipclass, equipment_class, shield_name_id, shield_infocard_id)
                     self.shields_db[shipclass][equip_type][equipment_class] = shield
                     self.shields_list.append(shield)
 
-                    shield_npc = ShieldNPC(equip_type, shipclass, equipment_class, shield_name_id, 1)
+                    shield_npc = ShieldNPC(equip_type, shipclass, equipment_class, shield_name_id, shield_infocard_id)
                     self.npc_shields_db[shipclass][equip_type][equipment_class] = shield_npc
                     self.npc_shields_list.append(shield_npc)
 
@@ -78,7 +79,7 @@ class MiscEquipManager(StringsMixin):
             self.thrusters_db[equip_type] = {}
 
             for equipment_class in Equipment.BASE_CLASSES:
-                thruster = Thruster(equip_type, equipment_class, self.get_next_string_id(), 1)
+                thruster = Thruster(equip_type, equipment_class, self.get_next_string_id(), self.get_next_infocard_id())
                 self.thrusters_db[equip_type][equipment_class] = thruster
                 self.thrusters_list.append(thruster)
 
@@ -108,73 +109,56 @@ class MiscEquipManager(StringsMixin):
         return self.npc_armors_db[armor_index]
 
     def get_engine_equip(self):
-        return extract_equips(self.engines_list)
+        return ManagerHelper.extract_equips(self.engines_list)
 
     def get_engine_good(self):
-        return extract_goods(self.engines_list)
+        return ManagerHelper.extract_goods(self.engines_list)
 
     def get_powerplant_equip(self):
-        return extract_equips(self.powerplants_list)
+        return ManagerHelper.extract_equips(self.powerplants_list)
 
     def get_powerplant_good(self):
-        return extract_goods(self.powerplants_list)
+        return ManagerHelper.extract_goods(self.powerplants_list)
 
     def get_st_equip(self):
-        return extract_equips(self.shields_list, self.npc_shields_list, self.thrusters_list)
+        return ManagerHelper.extract_equips(self.shields_list, self.npc_shields_list, self.thrusters_list)
 
     def get_st_good(self):
-        return extract_goods(self.shields_list, self.npc_shields_list, self.thrusters_list)
+        return ManagerHelper.extract_goods(self.shields_list, self.npc_shields_list, self.thrusters_list)
 
     def get_select_equip(self):
-        return extract_equips(self.npc_armors_list)
+        return ManagerHelper.extract_equips(self.npc_armors_list)
 
     def get_lootprops(self):
-        return extract_lootprops(
+        return ManagerHelper.extract_lootprops(
             self.engines_list,
             self.powerplants_list,
             self.shields_list,
-            self.npc_shields_list,
             self.thrusters_list
         )
 
     def get_ru_names(self):
-        items = {}
-
-        for engine in self.engines_list:
-            items[engine.ids_name] = engine.get_ru_name()
-
-        for powerplant in self.powerplants_list:
-            items[powerplant.ids_name] = powerplant.get_ru_name()
-
-        for shield in self.shields_list:
-            items[shield.ids_name] = shield.get_ru_name()
-
-        for thruster in self.thrusters_list:
-            items[thruster.ids_name] = thruster.get_ru_name()
-
+        items = ManagerHelper.extract_ru_names(
+            self.engines_list,
+            self.powerplants_list,
+            self.shields_list,
+            self.thrusters_list
+        )
         return StringCompiler.compile_names(items)
 
+    def get_ru_infocards(self):
+        infocards = ManagerHelper.extract_ru_infocards(
+            self.engines_list,
+            # self.powerplants_list,
+            # self.shields_list,
+            # self.thrusters_list
+        )
+        return StringCompiler.compile_infocards(infocards)
+
     def get_demo_marketdata(self):
-        data = ''
-
-        for engine in self.engines_list:
-            data += engine.get_marketdata() + SINGLE_DIVIDER
-
-        data += SINGLE_DIVIDER
-
-        for powerplant in self.powerplants_list:
-            data += powerplant.get_marketdata() + SINGLE_DIVIDER
-
-        data += SINGLE_DIVIDER
-
-        for shield in self.shields_list:
-            data += shield.get_marketdata() + SINGLE_DIVIDER
-
-        data += SINGLE_DIVIDER
-
-        for thruster in self.thrusters_list:
-            data += thruster.get_marketdata() + SINGLE_DIVIDER
-
-        data += SINGLE_DIVIDER
-
-        return data
+        return ManagerHelper.extract_marketdata(
+            self.engines_list,
+            self.powerplants_list,
+            self.shields_list,
+            self.thrusters_list
+        )

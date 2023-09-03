@@ -265,6 +265,9 @@ shield_hit_effects = {hit_three}, gf_pi_shield03'''
     def get_ru_equip_name(self):
         return 'Щит'
 
+    def get_ru_equip_fullname(self):
+        return 'Щит'
+
     def get_ru_base_name(self):
         return self.RU_NAME_PER_TYPE[self.equip_type]
 
@@ -296,3 +299,28 @@ shield_rebuilt_sound = shield_rebuilt'''
 
     def get_price(self):
         return 100  # NPC equipment - not for sell
+
+
+RU_FEATURES_PER_FACTION = {
+    MainMiscEquip.FACTION_RH: 'Рейнландские двигатели обладают удвоенной силой стрейфа и реверса, но при этом имеют ослабленную на 10% силу форсажа',
+    MainMiscEquip.FACTION_LI: 'Двигатели Либерти развивают на 5% большую скорость круиза, но при этом требуют больше времени для его зарядки',
+    MainMiscEquip.FACTION_BR: 'Бретонские двигатели развивают на 10% большую скорость движения в обычном движении, но имеют самую низкую скорость стрейфов и реверса',
+    MainMiscEquip.FACTION_KU: 'Двигатели Кусари получают бонус 10% к скорости в режиме форсажа, но при этом развивают на 5% меньшую максимальную скорость в обычном режиме движения',
+    MainMiscEquip.FACTION_CO: 'Двигатели пограничных миров на 2 секунды быстрее развивают скорость круиза, но при этом требуют на 10% больше энергии в обычном и круизных режимах полета',
+}
+
+
+RU_RESTRICTIONS_PER_SHIPCLASS = {
+    MainMiscEquip.SHIPCLASS_FIGHTER: 'Этот двигатель можно установить только на легкий истребитель',
+    MainMiscEquip.SHIPCLASS_ELITE: 'Этот двигатель можно установить только на тяжелый истребитель',
+    MainMiscEquip.SHIPCLASS_FREIGHTER: 'Этот двигатель можно установить только на грузовик или CSV',
+}
+
+
+RU_FEATURES_PER_SHIPCLASS = {
+    MainMiscEquip.SHIPCLASS_FIGHTER: 'Двигатели легких истребителей быстрее всех набирают круизную скорость',
+    MainMiscEquip.SHIPCLASS_ELITE: 'Двигатели тяжелых истребителей имеют увеличенную скорость стрейфов и реверса',
+    MainMiscEquip.SHIPCLASS_FREIGHTER: 'Двигатели грузовиков характеризуются дополнительными 5% скорости круиза за счет на 1 секунду повышенной скорости загрузки круиза',
+}
+
+SHIELD_HINT = 'Совет: полностью заряженный щит потребляет меньше энергии, чем заряжаемый/отключенный'

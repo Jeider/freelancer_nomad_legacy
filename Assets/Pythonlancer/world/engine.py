@@ -669,5 +669,63 @@ engine_kill_sound = engine_pi_freighter_kill'''
     def get_ru_equip_name(self):
         return 'Двиг.'
 
+    def get_ru_equip_fullname(self):
+        return 'Двигатель'
+
     def get_ru_base_name(self):
         return self.RU_NAME_PER_TYPE[self.equip_type]
+
+    def get_ru_description_content(self):
+        content = []
+
+        efficient_text = self.get_ru_equip_efficienty()
+        if efficient_text:
+            content.append(efficient_text)
+
+        faction_features_text = RU_FEATURES_PER_FACTION.get(self.get_faction())
+        if faction_features_text:
+            content.append(faction_features_text)
+
+        shipclass_restrict_text = RU_RESTRICTIONS_PER_SHIPCLASS.get(self.ship_class)
+        if shipclass_restrict_text:
+            content.append(shipclass_restrict_text)
+
+        shipclass_features_text = RU_FEATURES_PER_SHIPCLASS.get(self.ship_class)
+        if shipclass_features_text:
+            content.append(shipclass_features_text)
+
+        content.append(ENGINE_WARNING)
+        content.append(ENGINE_HINT)
+
+        return content
+
+
+POWERPLANT_WARNING = 'Корабль не сможет взлететь без установленного генератора!'
+
+SHIELD_HINT = 'Совет: полностью заряженный щит потребляет меньше энергии, чем заряжаемый/отключенный'
+
+
+RU_FEATURES_PER_FACTION = {
+    MainMiscEquip.FACTION_RH: 'Рейнландские двигатели обладают удвоенной силой стрейфа и реверса, но при этом имеют ослабленную на 10% силу форсажа',
+    MainMiscEquip.FACTION_LI: 'Двигатели Либерти развивают на 5% большую скорость круиза, но при этом требуют больше времени для его зарядки',
+    MainMiscEquip.FACTION_BR: 'Бретонские двигатели развивают на 10% большую скорость движения в обычном движении, но имеют самую низкую скорость стрейфов и реверса',
+    MainMiscEquip.FACTION_KU: 'Двигатели Кусари получают бонус 10% к скорости в режиме форсажа, но при этом развивают на 5% меньшую максимальную скорость в обычном режиме движения',
+    MainMiscEquip.FACTION_CO: 'Двигатели пограничных миров на 2 секунды быстрее развивают скорость круиза, но при этом требуют на 10% больше энергии в обычном и круизных режимах полета',
+}
+
+
+RU_RESTRICTIONS_PER_SHIPCLASS = {
+    MainMiscEquip.SHIPCLASS_FIGHTER: 'Этот двигатель можно установить только на легкий истребитель',
+    MainMiscEquip.SHIPCLASS_ELITE: 'Этот двигатель можно установить только на тяжелый истребитель',
+    MainMiscEquip.SHIPCLASS_FREIGHTER: 'Этот двигатель можно установить только на грузовик или CSV',
+}
+
+
+RU_FEATURES_PER_SHIPCLASS = {
+    MainMiscEquip.SHIPCLASS_FIGHTER: 'Двигатели легких истребителей быстрее всех набирают круизную скорость',
+    MainMiscEquip.SHIPCLASS_ELITE: 'Двигатели тяжелых истребителей имеют увеличенную скорость стрейфов и реверса',
+    MainMiscEquip.SHIPCLASS_FREIGHTER: 'Двигатели грузовиков характеризуются дополнительными 5% скорости круиза за счет на 1 секунду повышенной скорости загрузки круиза',
+}
+
+ENGINE_WARNING = 'Корабль не сможет взлететь без установленного двигателя!'
+ENGINE_HINT = 'Совет: используйте Выключение двигателя (кнопка Z), чтобы времени отключить потребление энергии двигателем'

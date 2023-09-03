@@ -10,6 +10,30 @@ class InfocardBuilder(object):
 
         return inline_template.format(**template_params)
 
+    @staticmethod
+    def build_row(infocard_template, content):
+        inline_template = ''.join(infocard_template)
+        template_params = {
+            KEY_CONTENT: content
+        }
+        template_params.update(Lang_RU.TRANSLATIONS)
+
+        return inline_template.format(**template_params)
+
+    @staticmethod
+    def build_equip_infocard(equip_name, equip_raw_info):
+        compiled_content = []
+        for item_content in equip_raw_info:
+            compiled_content.append(
+                InfocardBuilder.build_row(INFO_ROW_BASIC, item_content)
+            )
+
+        template_params = {
+            KEY_EQUIP_NAME: equip_name,
+            KEY_EQUIP_DESCRIPTION: INFO_EXTRA_DIVIDER.join(compiled_content)
+        }
+        return InfocardBuilder.build_infocard(INFO_EQUIPMENT, template_params)
+
 
 INFO_SHIP_ABOUT = [
     '<?xml version="1.0" encoding="UTF-16"?>',
@@ -21,7 +45,6 @@ INFO_SHIP_ABOUT = [
     '<POP/>',
     '</RDL>',
 ]
-
 
 INFO_SHIP_TABLE = [
     '<?xml version="1.0" encoding="UTF-16"?>',
@@ -116,29 +139,47 @@ INFO_SHIP_VALUES = [
     '</RDL>',
 ]
 
-'''
-Пушка рейнландских наемников "Гремучий змей Мк 3"
-'''
-
+KEY_CONTENT = 'content'
+KEY_EQUIP_NAME = 'equipment_fullname'
+KEY_EQUIP_DESCRIPTION = 'equipment_description'
 
 INFO_EQUIPMENT = [
     '<?xml version="1.0" encoding="UTF-16"?>',
     '<RDL>',
     '<PUSH/>',
-    '<TEXT> </TEXT>',
-    '<PARA/>',
     '<TRA data="1" mask="1" def="-2"/>',
     '<JUST loc="center"/>',
     '<TEXT>{equipment_fullname}</TEXT>',
     '<PARA/>',
     '<TRA data="0" mask="1" def="-1"/>',
     '<JUST loc="left"/>',
-    '<TEXT></TEXT>',
+    '<TEXT> </TEXT>',
     '<PARA/>',
     '{equipment_description}'
+    '<TEXT> </TEXT>',
     '<PARA/>',
     '<POP/>',
     '</RDL>',
 ]
 
-INFO_EQUIPMENT_DESCRIPTION_ROW = '<TEXT>{text_additional_equipment}: {value_additional_equipment}</TEXT><PARA/>'
+
+INFO_ROW_BASIC = [
+    '<TEXT>{content}</TEXT>',
+    '<PARA/>',
+]
+
+INFO_ROW_BOLD = [
+    '<TRA data="1" mask="1" def="-2"/>',
+    '<TEXT>{content}</TEXT>',
+    '<PARA/>',
+    '<TRA data="0" mask="1" def="-1"/>',
+]
+
+INFO_ROW_DANGER = [
+    '<TRA data="65281" mask="-31" def="30"/>',
+    '<TEXT>{content}</TEXT>',
+    '<PARA/>',
+    '<TRA data="96" mask="-31" def="-1"/>',
+]
+
+INFO_EXTRA_DIVIDER = '<TEXT> </TEXT><PARA/>'

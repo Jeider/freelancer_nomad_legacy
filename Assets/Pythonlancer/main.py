@@ -15,6 +15,8 @@ def main():
     ]
 
     infocards_data = [
+        core.misc_equip.get_ru_infocards(),
+        core.weapons.get_ru_infocards(),
         core.shiparch.get_ship_ru_infocards(),
     ]
 

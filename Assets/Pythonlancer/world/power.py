@@ -225,5 +225,27 @@ class Power(MainEquipPrice, AdoxaEquipClassGood, BasePower):
     def get_ru_equip_name(self):
         return 'Генер.'
 
+    def get_ru_equip_fullname(self):
+        return 'Генератор'
+
+
     def get_ru_base_name(self):
         return self.RU_NAME_PER_TYPE[self.equip_type]
+
+
+RU_FEATURES_PER_FACTION = {
+    MainMiscEquip.FACTION_RH: 'Рейнландские генераторы характеризуются на 10% большим объемом хранимой энергии',
+    MainMiscEquip.FACTION_LI: 'Генераторы Либертиотличаются на 50% большим объемом энергии для форсажа',
+    MainMiscEquip.FACTION_BR: 'Бретонские генераторы имеют на 5% больше объема и генерации, но при этом имеют на треть меньший объем энергии для форсажа',
+    MainMiscEquip.FACTION_KU: 'Генераторы Кусари на 10% быстрее регенерируют энергию',
+    MainMiscEquip.FACTION_CO: 'Генераторы кораблей пограничных миров на 33% быстрее регенерируют форсаж',
+}
+
+
+RU_RESTRICTIONS_PER_SHIPCLASS = {
+    MainMiscEquip.SHIPCLASS_FIGHTER: 'Этот генератор можно установить только на легкий истребитель',
+    MainMiscEquip.SHIPCLASS_ELITE: 'Этот генератор можно установить только на тяжелый истребитель',
+    MainMiscEquip.SHIPCLASS_FREIGHTER: 'Этот генератор можно установить только на грузовик или CSV',
+}
+
+POWERPLANT_WARNING = 'Корабль не сможет взлететь без установленного генератора!'
