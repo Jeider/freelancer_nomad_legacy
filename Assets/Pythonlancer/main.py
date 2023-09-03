@@ -47,8 +47,8 @@ def main():
         ('weapon_equip.ini', core.weapons.get_weapon_equip()),
         ('weapon_good.ini', core.weapons.get_weapon_good()),
 
-        ('nicknames.txt', ''.join(nicknames_data)),
-        ('infocards.txt', ''.join(infocards_data)),
+        ('nicknames_ru.ini', ''.join(nicknames_data)),
+        ('infocards_ru.ini', ''.join(infocards_data)),
         ('lootprops.ini', DIVIDER.join(lootprops_data)),
 
         ('demo_marketdata.ini', DIVIDER.join(markets_demo_data)),

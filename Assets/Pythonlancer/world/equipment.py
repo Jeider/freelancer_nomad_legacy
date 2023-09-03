@@ -385,11 +385,11 @@ class MainMiscEquip(Equipment):
 
     def get_ru_equip_efficienty(self):
         if self.equip_type in self.MAIN_EQUIP:
-            return 'Класс эффективности: гражданский'
-        if self.equip_type in self.CIV_EQUIP:
-            return 'Класс эффективности: профессиональный'
-        if self.equip_type in self.PIRATE_EQUIP:
             return 'Класс эффективности: военный'
+        if self.equip_type in self.CIV_EQUIP:
+            return 'Класс эффективности: гражданский'
+        if self.equip_type in self.PIRATE_EQUIP:
+            return 'Класс эффективности: профессиональный'
 
 
 class MainInternalEquip(MainMiscEquip):
@@ -453,7 +453,7 @@ attachment_archetype = {model}'''
         raise NotImplementedError
 
     def get_ru_fullname(self):
-        return '{equip} {model} {mark} [{shipclass}]'.format(
+        return '{equip} {model} {mark} {shipclass}'.format(
             equip=self.get_ru_equip_fullname(),
             model=self.get_ru_base_name(),
             mark=self.get_mark_name(),

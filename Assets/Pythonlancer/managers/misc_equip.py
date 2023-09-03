@@ -149,9 +149,9 @@ class MiscEquipManager(StringsMixin):
     def get_ru_infocards(self):
         infocards = ManagerHelper.extract_ru_infocards(
             self.engines_list,
-            # self.powerplants_list,
-            # self.shields_list,
-            # self.thrusters_list
+            self.powerplants_list,
+            self.shields_list,
+            self.thrusters_list
         )
         return StringCompiler.compile_infocards(infocards)
 

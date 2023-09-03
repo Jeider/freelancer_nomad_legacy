@@ -271,6 +271,53 @@ shield_hit_effects = {hit_three}, gf_pi_shield03'''
     def get_ru_base_name(self):
         return self.RU_NAME_PER_TYPE[self.equip_type]
 
+    def get_ru_description_content(self):
+        content = []
+
+        efficient_text = self.get_ru_equip_efficienty()
+        if efficient_text:
+            content.append(efficient_text)
+
+        faction_features_text = RU_FEATURES_PER_FACTION.get(self.get_faction())
+        if faction_features_text:
+            content.append(faction_features_text)
+
+        shipclass_restrict_text = RU_RESTRICTIONS_PER_SHIPCLASS.get(self.ship_class)
+        if shipclass_restrict_text:
+            content.append(shipclass_restrict_text)
+
+        shipclass_features_text = RU_FEATURES_PER_SHIPCLASS.get(self.ship_class)
+        if shipclass_features_text:
+            content.append(shipclass_features_text)
+
+        content.append(SHIELD_HINT)
+
+        return content
+
+
+RU_FEATURES_PER_FACTION = {
+    MainMiscEquip.FACTION_RH: 'Рейнландские щиты на 10% объемнее, но при этом тратят на 10% больше энергии во время восстановления',
+    MainMiscEquip.FACTION_LI: 'Щиты Либерти тратят на 25% меньше энергии во время восстановления',
+    MainMiscEquip.FACTION_BR: 'Бретонские щиты на 2 секунды меньше находятся в выключенном состоянии',
+    MainMiscEquip.FACTION_KU: 'Щиты Кусари на 10% быстрее регенерируются, но постоянно тратят на 25% больше энергии',
+    MainMiscEquip.FACTION_CO: 'Щиты кораблей пограничных миров тратят на 40% меньше посстоянно затрачиваемой энергии, но при этом на 10% менее объемны и на 10% медленнее регенерируются',
+}
+
+
+RU_RESTRICTIONS_PER_SHIPCLASS = {
+    MainMiscEquip.SHIPCLASS_FIGHTER: 'Этот щит можно установить только на легкий истребитель',
+    MainMiscEquip.SHIPCLASS_ELITE: 'Этот щит можно установить только на тяжелый истребитель',
+    MainMiscEquip.SHIPCLASS_FREIGHTER: 'Этот щит можно установить только на грузовик или CSV',
+}
+
+
+RU_FEATURES_PER_SHIPCLASS = {
+    MainMiscEquip.SHIPCLASS_FIGHTER: 'Щиты легких истребителей лучше сопротивляются орудиям станций и крупных кораблей',
+    MainMiscEquip.SHIPCLASS_ELITE: None,
+    MainMiscEquip.SHIPCLASS_FREIGHTER: 'Щиты грузовиков имеют 75% защиту от всех противощитовых пушек',
+}
+
+SHIELD_HINT = 'Совет: Полностью заряженный щит потребляет меньше энергии, чем заряжаемый/отключенный'
 
 
 class ShieldNPC(Shield):
@@ -299,28 +346,3 @@ shield_rebuilt_sound = shield_rebuilt'''
 
     def get_price(self):
         return 100  # NPC equipment - not for sell
-
-
-RU_FEATURES_PER_FACTION = {
-    MainMiscEquip.FACTION_RH: 'Рейнландские двигатели обладают удвоенной силой стрейфа и реверса, но при этом имеют ослабленную на 10% силу форсажа',
-    MainMiscEquip.FACTION_LI: 'Двигатели Либерти развивают на 5% большую скорость круиза, но при этом требуют больше времени для его зарядки',
-    MainMiscEquip.FACTION_BR: 'Бретонские двигатели развивают на 10% большую скорость движения в обычном движении, но имеют самую низкую скорость стрейфов и реверса',
-    MainMiscEquip.FACTION_KU: 'Двигатели Кусари получают бонус 10% к скорости в режиме форсажа, но при этом развивают на 5% меньшую максимальную скорость в обычном режиме движения',
-    MainMiscEquip.FACTION_CO: 'Двигатели пограничных миров на 2 секунды быстрее развивают скорость круиза, но при этом требуют на 10% больше энергии в обычном и круизных режимах полета',
-}
-
-
-RU_RESTRICTIONS_PER_SHIPCLASS = {
-    MainMiscEquip.SHIPCLASS_FIGHTER: 'Этот двигатель можно установить только на легкий истребитель',
-    MainMiscEquip.SHIPCLASS_ELITE: 'Этот двигатель можно установить только на тяжелый истребитель',
-    MainMiscEquip.SHIPCLASS_FREIGHTER: 'Этот двигатель можно установить только на грузовик или CSV',
-}
-
-
-RU_FEATURES_PER_SHIPCLASS = {
-    MainMiscEquip.SHIPCLASS_FIGHTER: 'Двигатели легких истребителей быстрее всех набирают круизную скорость',
-    MainMiscEquip.SHIPCLASS_ELITE: 'Двигатели тяжелых истребителей имеют увеличенную скорость стрейфов и реверса',
-    MainMiscEquip.SHIPCLASS_FREIGHTER: 'Двигатели грузовиков характеризуются дополнительными 5% скорости круиза за счет на 1 секунду повышенной скорости загрузки круиза',
-}
-
-SHIELD_HINT = 'Совет: полностью заряженный щит потребляет меньше энергии, чем заряжаемый/отключенный'

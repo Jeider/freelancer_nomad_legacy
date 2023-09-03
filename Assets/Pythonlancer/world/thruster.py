@@ -155,17 +155,20 @@ material_library = equipment\\models\\ge_equip.mat'''
 
         return hit_pts
 
-    def get_thruster_force(self):
-        force = self.SPEED_PER_RATE[self.rate] * self.LINEAR_DRAG
+    def get_speed(self):
+        speed = self.SPEED_PER_RATE[self.rate]
 
         if self.equip_type in self.RH_EQUIP:
-            force *= 1.1
+            speed *= 1.1
         elif self.equip_type in self.BR_EQUIP:
-            force *= 0.9
+            speed *= 0.9
         elif self.equip_type in self.CO_EQUIP:
-            force *= 1.2
+            speed *= 1.2
 
-        return int(force)
+        return speed
+
+    def get_thruster_force(self):
+        return int(self.get_speed() * self.LINEAR_DRAG)
 
     def get_thruster_power(self):
         if self.equip_type in self.RH_EQUIP:
@@ -246,3 +249,38 @@ material_library = equipment\\models\\ge_equip.mat'''
             model=self.get_ru_base_name(),
             mark=self.get_mark_name(),
         )
+
+    def get_ru_fullname(self):
+        return self.get_ru_name()
+
+    def get_ru_thrust_speed_text(self):
+        return 'Скорость: {speed}'.format(
+            speed=int(self.get_speed()),
+        )
+
+    def get_ru_description_content(self):
+        content = []
+
+        efficient_text = self.get_ru_equip_efficienty()
+        if efficient_text:
+            content.append(efficient_text)
+
+        faction_features_text = RU_FEATURES_PER_FACTION.get(self.get_faction())
+        if faction_features_text:
+            content.append(faction_features_text)
+
+        content.append(self.get_ru_thrust_speed_text())
+        content.append(THRUSTER_SPEED_HINT)
+
+        return content
+
+
+RU_FEATURES_PER_FACTION = {
+    MainMiscEquip.FACTION_RH: 'Рейнландские форсажи развивают повышенную скорость, но тратят больше энергии',
+    MainMiscEquip.FACTION_LI: 'Форсажи Либерти на 50% лучше защищены от взрывов ракет, мин и т.п.',
+    MainMiscEquip.FACTION_BR: 'Бретонские форсажи развивают низкую скорость, но при этом тратят значительно меньше энергии',
+    MainMiscEquip.FACTION_KU: 'Форсажи Кусари тратят немного меньше энергии',
+    MainMiscEquip.FACTION_CO: 'Форсажи кораблей пограничных миров развивают большую скорость, но при этом тратят значительно больше энергии',
+}
+
+THRUSTER_SPEED_HINT = 'Совет: Двигатель может влиять на скорость форсажа. С двигателями Рейнланда форсажи становятся медленнее, с двигателями Кусари быстрее'

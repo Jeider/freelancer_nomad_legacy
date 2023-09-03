@@ -228,9 +228,27 @@ class Power(MainEquipPrice, AdoxaEquipClassGood, BasePower):
     def get_ru_equip_fullname(self):
         return 'Генератор'
 
-
     def get_ru_base_name(self):
         return self.RU_NAME_PER_TYPE[self.equip_type]
+
+    def get_ru_description_content(self):
+        content = []
+
+        efficient_text = self.get_ru_equip_efficienty()
+        if efficient_text:
+            content.append(efficient_text)
+
+        faction_features_text = RU_FEATURES_PER_FACTION.get(self.get_faction())
+        if faction_features_text:
+            content.append(faction_features_text)
+
+        shipclass_restrict_text = RU_RESTRICTIONS_PER_SHIPCLASS.get(self.ship_class)
+        if shipclass_restrict_text:
+            content.append(shipclass_restrict_text)
+
+        content.append(POWERPLANT_WARNING)
+
+        return content
 
 
 RU_FEATURES_PER_FACTION = {
