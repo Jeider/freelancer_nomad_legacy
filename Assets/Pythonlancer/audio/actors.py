@@ -39,7 +39,7 @@ class Brighton(Actor):
     NAME = 'brighton'
 
 
-class MaleCaptain(Actor)
+class MaleCaptain(Actor):
     TYPE = ACTOR_MALE
     NAME = 'captain'
 

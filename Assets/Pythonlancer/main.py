@@ -31,6 +31,11 @@ def main():
     ]
 
     files_map = [
+        ('audio_ingame.ini', core.audio.get_ingame_sounds_ini()),
+        ('audio_ingame.xml', core.audio.get_ingame_sounds_xml()),
+
+        ('audio_cutscenes.ini', core.audio.get_cutscene_sounds_ini()),
+        ('audio_cutscenes.lua', core.audio.get_cutscene_sounds_thn()),
 
         ('engine_equip.ini', core.misc_equip.get_engine_equip()),
         ('engine_good.ini', core.misc_equip.get_engine_good()),
@@ -58,7 +63,6 @@ def main():
         ('ship_packages.ini', core.shiparch.get_ship_goods()),
 
         ('shiparch.ini', str(core.shiparch.get_shiparch_content())),
-
     ]
 
     for file, content in files_map:
@@ -66,10 +70,3 @@ def main():
 
 
 main()
-
-
-
-
-# print(engine.get_good())
-# print('')
-

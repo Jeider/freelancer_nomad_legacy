@@ -359,6 +359,11 @@ class om15_miner_03(Base):
 class rh_stut_01_Base(Base):
     NAME = 'rh_stut_01_Base'
     SYSTEM = rh_stut
+    SHIPS = [
+        Banshee,
+        # Humpback2,
+        Sabre,
+    ]
 
 
 class rh_stut_02_Base(Base):
@@ -393,7 +398,7 @@ class rh_ber_01_Base(Base):
     SHIPS = [
         Starflier2,
         CSV,
-        Sabre,
+        Starblazer,
     ]
 
     LEVEL = LEVEL_2
@@ -600,11 +605,19 @@ class sig42_02_Base(Base):
 class li_mnh_01_Base(Base):
     NAME = 'li_mnh_01_Base'
     SYSTEM = li_mnh
+    SHIPS = [
+        # Piranha2,
+        # Barracuda2,
+        # Rhino2,
+    ]
 
 
 class li_mnh_02_Base(Base):
     NAME = 'li_mnh_02_Base'
     SYSTEM = li_mnh
+    SHIPS = [
+        # Dromader2,
+    ]
 
 
 class li_mnh_03_Base(Base):
@@ -640,7 +653,11 @@ class li_mnh_09_Base(Base):
 class li_for_01_Base(Base):
     NAME = 'li_for_01_Base'
     SYSTEM = li_for
-
+    SHIPS = [
+        Startracker,
+        Starblazer,
+        CSV_Mk2,
+    ]
 
 class li_for_02_Base(Base):
     NAME = 'li_for_02_Base'

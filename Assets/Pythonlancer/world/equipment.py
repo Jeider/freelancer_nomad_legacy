@@ -240,7 +240,7 @@ combinable = {combinable}'''
         if self.ship_class == self.SHIPCLASS_ELITE:
             return 'ТИ'
         if self.ship_class == self.SHIPCLASS_FREIGHTER:
-            return 'Г'
+            return 'Гр'
 
     def get_ru_shipclass_fullname(self):
         if self.ship_class == self.SHIPCLASS_FIGHTER:

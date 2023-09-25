@@ -5,7 +5,7 @@ from tools.create_id import CreateId
 
 
 XML_INIT = '<?xml version="1.0" encoding="ISO-8859-1"?>'
-XML_FILE_TEMPLATE = '<UTFXML filename="{filename}">'
+XML_FILE_TEMPLATE = '<UTFXML filename="{filename}.utf">'
 XML_ROOT_OPEN = '<UTF_ROOT>'
 
 XML_ITEM_TEMPLATE = '<test_voice name="{voiceline_hash}" type="file" filename="{folder}\\{voiceline_nickname}.wav"/>'
@@ -13,12 +13,17 @@ XML_ITEM_TEMPLATE = '<test_voice name="{voiceline_hash}" type="file" filename="{
 XML_ROOT_CLOSE = '</UTF_ROOT>'
 XML_FINAL = '</UTFXML>'
 
+THN_SOUND_START = r'{'
+THN_SOUND_CONTENT = 'entity_name="{nickname}", template_name="{nickname}"'
+THN_SOUND_END = r', type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}},'
+
+
 
 class MissionAudio(object):
     VOICEPACK_NAME_TEMPLATE_PER_ACTOR = {
-        ACTOR_MALE: 'm{mission}',
-        ACTOR_TRENT: 'm{mission}_player',
-        ACTOR_FEMALE: 'm{mission}_female',
+        ACTOR_MALE: 'echo_m{mission}',
+        ACTOR_TRENT: 'echo_m{mission}_player',
+        ACTOR_FEMALE: 'echo_m{mission}_female',
     }
 
     FILE_TEMPLATE = '{file}.utf'
@@ -38,13 +43,21 @@ class MissionAudio(object):
         ]
     }
 
-    MALE_VOICELINES = []
-    FEMALE_VOICELINES = []
-    TRENT_VOICELINES = []
-
     VOICE_ARCH = '[Voice]'
     SOUND_ARCH = '[Sound]'
     MISSION_ID = 1
+
+    CUTSCENE_VOICES = []
+
+    ATTENUATION = 'attenuation = 0'
+
+    CUTSCENE_SOUND_DEFAULTS = [
+        'type = voice',
+        ATTENUATION,
+        'is_2d = true',
+    ]
+
+    TRENT_VOICELINE = 'trent'
 
     subclasses = []
 
@@ -52,10 +65,31 @@ class MissionAudio(object):
         super().__init_subclass__(**kwargs)
         cls.subclasses.append(cls)
 
-    def __init__(self, male_voicelines, trent_voicelines, female_voicelines):
-        self.male_voicelines = male_voicelines
-        self.trent_voicelines = trent_voicelines
-        self.female_voicelines = female_voicelines
+    def __init__(self, male_actors, female_actors):
+        self.male_voicelines = []
+        self.trent_voicelines = []
+        self.female_voicelines = []
+
+        self.male_actors = male_actors
+        self.female_actors = female_actors
+
+        self.parse_actors()
+
+    def get_actor_from_voiceline(self, voiceline):
+        return voiceline.split('_')[-1]
+
+    def parse_actors(self):
+        for voiceline, _ in self.INGAME_VOICES_MAP:
+            actor = self.get_actor_from_voiceline(voiceline)
+
+            if actor in self.male_actors:
+                self.male_voicelines.append(voiceline)
+
+            if actor in self.female_actors:
+                self.female_voicelines.append(voiceline)
+
+            if actor == self.TRENT_VOICELINE:
+                self.trent_voicelines.append(voiceline)
 
     def get_mission_index(self):
         return '0{mission_id}'.format(mission_id=self.MISSION_ID)
@@ -65,23 +99,23 @@ class MissionAudio(object):
 
     def get_male_voicepack_name(self):
         return self.get_voicepack_name(
-            template=self.VOICEPACK_NAME_TEMPLATE_PER_ACTOR(ACTOR_MALE)
+            template=self.VOICEPACK_NAME_TEMPLATE_PER_ACTOR[ACTOR_MALE]
         )
 
     def get_trent_voicepack_name(self):
         return self.get_voicepack_name(
-            template=self.VOICEPACK_NAME_TEMPLATE_PER_ACTOR(ACTOR_TRENT)
+            template=self.VOICEPACK_NAME_TEMPLATE_PER_ACTOR[ACTOR_TRENT]
         )
 
     def get_female_voicepack_name(self):
-        redturn self.get_voicepack_name(
-            template=self.VOICEPACK_NAME_TEMPLATE_PER_ACTOR(ACTOR_FEMALE)
+        return self.get_voicepack_name(
+            template=self.VOICEPACK_NAME_TEMPLATE_PER_ACTOR[ACTOR_FEMALE]
         )
 
     def get_voice_root(self, nickname, actor):
         items = [
             self.VOICE_ARCH,
-            'nickname = {nickname}',
+            'nickname = {nickname}'.format(nickname=nickname),
         ]
         animations = self.ANIMATIONS_PER_ACTOR[actor]
         for animation in animations:
@@ -106,66 +140,105 @@ class MissionAudio(object):
             actor=ACTOR_FEMALE,
         )
 
-    def get_sound_item(self, voiceline):
-        items = [
+    def get_ingame_sound_item(self, voiceline):
+        lines = [
             self.SOUND_ARCH,
             'msg = {voiceline}'.format(voiceline=voiceline),
             'attenuation = 0',
         ]
-        return SINGLE_DIVIDER.join(items)
+        return SINGLE_DIVIDER.join(lines)
 
 
-    def get_ini_voicedata(self, voicelines, voice_root):
+    def get_ini_ingame_voicedata(self, voicelines, voice_root):
         items = []
         items.append(voice_root)
 
         for voiceline in voicelines:
             items.append(
-                self.get_sound_item(voiceline)
+                self.get_ingame_sound_item(voiceline)
             )
 
-        return DIVIDER.join(voicelines)
+        return DIVIDER.join(items)
 
-
-    def get_ini_voicefile_content(self):
+    def get_ini_ingame_voicefile_content(self):
         items = [
-            self.get_ini_voicedata(self.male_voicelines, self.get_male_voice_root),
-            self.get_ini_voicedata(self.trent_voicelines, self.get_trent_voice_root),
-            self.get_ini_voicedata(self.female_voicelines, self.get_female_voice_root),
+            self.get_ini_ingame_voicedata(self.male_voicelines, self.get_male_voice_root()),
+            self.get_ini_ingame_voicedata(self.trent_voicelines, self.get_trent_voice_root()),
+            self.get_ini_ingame_voicedata(self.female_voicelines, self.get_female_voice_root()),
         ]
-        return DIVIDER.join(item)
+        return DIVIDER.join(items)
 
     def get_hash_for_voiceline(self, voiceline_nickname):
         return CreateId.get_id(voiceline_nickname)
 
-    def _get_utf_file_content(self, filename, voicelines, folder_name):
+    def _get_utf_file_content(self, voicelines, voicepack_nickname):
         items = [
             XML_INIT,
-            XML_FILE_TEMPLATE.format(filename=filename),
+            XML_FILE_TEMPLATE.format(filename=voicepack_nickname),
             XML_ROOT_OPEN,
         ]
         for voiceline_nickname in voicelines:
             template_params = {
                 'voiceline_nickname': voiceline_nickname,
                 'voiceline_hash': self.get_hash_for_voiceline(voiceline_nickname),
-                'folder': folder_name,
+                'folder': voicepack_nickname,
             }
             items.append(XML_ITEM_TEMPLATE.format(**template_params))
         items.append(XML_ROOT_CLOSE)
         items.append(XML_FINAL)
-        return DIVIDER.join(items)
+        return SINGLE_DIVIDER.join(items)
 
     def get_utf_male_voicefile_content(self):
-        voicelines = self.get_voicedata(self.male_voicelines, self.get_male_voice_root)
-        folder_name = self.get_male_voicepack_name()
-        return self._get_utf_file_content(voicelines, folder_name)
+        voicepack_nickname = self.get_male_voicepack_name()
+        return self._get_utf_file_content(self.male_voicelines, voicepack_nickname)
 
     def get_utf_trent_voicefile_content(self):
-        voicelines = self.get_voicedata(self.trent_voicelines, self.get_trent_voice_root)
-        folder_name = self.get_trent_voicepack_name()
-        return self._get_utf_file_content(voicelines, folder_name)
+        voicepack_nickname = self.get_trent_voicepack_name()
+        return self._get_utf_file_content(self.trent_voicelines, voicepack_nickname)
 
     def get_utf_female_voicefile_content(self):
-        voicelines = self.get_voicedata(self.female_voicelines, self.get_female_voice_root)
-        folder_name = self.get_female_voicepack_name()
-        return _get_utf_file_content(voicelines, folder_name)
+        voicepack_nickname = self.get_female_voicepack_name()
+        return self._get_utf_file_content(self.female_voicelines, voicepack_nickname)
+
+    def get_utf_file_content(self):
+        items = [
+            self.get_utf_male_voicefile_content(),
+            self.get_utf_trent_voicefile_content(),
+            self.get_utf_female_voicefile_content(),
+        ]
+        return DIVIDER.join(items)
+
+    def get_cutscene_sound_nickname(self, voiceline):
+        return 'DX_{voiceline}'.format(voiceline=voiceline)
+
+    def get_cutscene_sound_file_destination(self, voiceline):
+        return 'audio\\mod\\m{mission_index}\\{voiceline}.wav'.format(
+            mission_index=self.get_mission_index(),
+            voiceline=voiceline
+        )
+
+    def get_cutscene_sound_item(self, voiceline):
+        nickname = self.get_cutscene_sound_nickname(voiceline)
+        lines = [
+            self.SOUND_ARCH,
+            'nickname = {voice_nickname}'.format(voice_nickname=self.get_cutscene_sound_nickname(voiceline)),
+            'file = {file_destination}'.format(file_destination=self.get_cutscene_sound_file_destination(voiceline)),
+        ]
+        lines.extend(self.CUTSCENE_SOUND_DEFAULTS)
+        return SINGLE_DIVIDER.join(lines)
+
+    def get_ini_cutscene_sounds_content(self):
+        items = [self.get_cutscene_sound_item(voiceline) for voiceline in self.CUTSCENE_VOICES]
+        return DIVIDER.join(items)
+
+    def get_cutscene_thn_sound_item(self, voiceline):
+        lines = [
+            THN_SOUND_START,
+            THN_SOUND_CONTENT.format(nickname=self.get_cutscene_sound_nickname(voiceline)),
+            THN_SOUND_END,
+        ]
+        return ''.join(lines)
+
+    def get_thn_cutscene_sounds_content(self):
+        items = [self.get_cutscene_thn_sound_item(voiceline) for voiceline in self.CUTSCENE_VOICES]
+        return SINGLE_DIVIDER.join(items)
