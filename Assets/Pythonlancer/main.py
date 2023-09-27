@@ -37,6 +37,9 @@ def main():
         ('audio_cutscenes.ini', core.audio.get_cutscene_sounds_ini()),
         ('audio_cutscenes.lua', core.audio.get_cutscene_sounds_thn()),
 
+        ('audio_ether_comm_strings.ini', core.audio.get_ether_comm_ru_strings()),
+        ('audio_ether_comm_text.ini', core.audio.get_ether_comm_mission_texts()),
+
         ('engine_equip.ini', core.misc_equip.get_engine_equip()),
         ('engine_good.ini', core.misc_equip.get_engine_good()),
         ('power_equip.ini', core.misc_equip.get_powerplant_equip()),

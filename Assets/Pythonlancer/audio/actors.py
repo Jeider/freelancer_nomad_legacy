@@ -13,10 +13,23 @@ class Actor(object):
         super().__init_subclass__(**kwargs)
         cls.subclasses.append(cls)
 
+    @classmethod
+    def is_male(cls):
+        return cls.TYPE == ACTOR_MALE
+
+    @classmethod
+    def is_female(cls):
+        return cls.TYPE == ACTOR_FEMALE
+
+    @classmethod
+    def is_player(cls):
+        return cls.TYPE == ACTOR_TRENT
+
 
 class Trent(Actor):
     TYPE = ACTOR_TRENT
     NAME = 'trent'
+    COMM_APPEARANCE = 'pi_pirate5_head, player_body, player_commhelmet'
 
 
 class Hatcher(Actor):
@@ -45,5 +58,5 @@ class MaleCaptain(Actor):
 
 
 class RedLeader(Actor):
-    TYOE = ACTOR_MALE
+    TYPE = ACTOR_MALE
     NAME = 'red'
