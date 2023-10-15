@@ -1,4 +1,4 @@
-duration=226
+duration=226111
 
 readfrom('thn_settings.txt')
 
@@ -47,6 +47,259 @@ entities={
 		spatialprops={pos={0,-10000,-10000000},orient={{1,0,0},{0,1,0},{0,0,1}}},
 	},
 	
+	
+	{
+		entity_name="Char_kaytlin",
+		type=DEFORMABLE,
+		template_name="kaytlin",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				-- 3.7, 0, -1.8
+				2, 0, -3.05
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		compoundprops={
+			floor_height=0
+		},
+		userprops={
+			actor="Kaytlin",
+			category="Character"
+		}
+	},
+	{
+		entity_name="Char_brighton",
+		type=DEFORMABLE,
+		template_name="brighton",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				-- 3.7, 0, -1.8
+				1.6, 0, -1.9
+			},
+			orient={{0,0,-1},{0,1,0},{-1,0,0}}
+		},
+		compoundprops={
+			floor_height=0
+		},
+		userprops={
+			actor="Brighton",
+			category="Character"
+		}
+	},
+	{
+		entity_name="Char_darcy",
+		type=DEFORMABLE,
+		template_name="darcy",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				7, 0, 2
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+		compoundprops={
+			floor_height=0
+		},
+		userprops={
+			Actor="Darcy",
+			category="Character"
+		}
+	},
+	{
+		entity_name="Char_trent",
+		type=DEFORMABLE,
+		template_name="trent",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				12.6, 0, 1.5
+			},
+			orient={{0,0,-1},{0,1,0},{1,0,0}}
+		},
+		compoundprops={
+			floor_height=0
+		},
+		userprops={
+			Actor="Player",
+			category="Character"
+		}
+	},
+	
+	
+	
+	{
+		--rotate -25 deg !!!!
+		entity_name="point_darcy_sit",
+		type=MARKER,
+		template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+		spatialprops={
+			pos={
+				2.4, 0, -1.2
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		}
+	},
+	{
+		--rotate 20 deg !!!!
+		entity_name="point_trent_sit",
+		type=MARKER,
+		template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+		spatialprops={
+			pos={4, 0, -2.5},
+			orient={{0,0,-1},{0,1,0},{1,0,0}}
+		}
+	},
+	
+	
+	{
+		entity_name="cam_start",
+		type=CAMERA,
+		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				2, 5, -2
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+		cameraprops={
+			fovh=20,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_start_pos2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				4, 3, 0
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+	{
+		entity_name="cam_start_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				8, 1, 1
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+	{
+		entity_name="cam_start_marker_pos2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				8, 1, 1.5
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+	
+	
+	
+	{
+		entity_name="cam_start_darcy",
+		type=CAMERA,
+		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				9, 1.5, 2
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+		cameraprops={
+			fovh=20,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_start_darcy_pos2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				7, 1.5, 2
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+	{
+		entity_name="cam_start_darcy_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				7, 1.5, 2
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
+	
+	
+	{
+		entity_name="cam_start_trent",
+		type=CAMERA,
+		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				7, 1.65, 1.2
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+		cameraprops={
+			fovh=20,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=5000
+		}
+	},
+	{
+		entity_name="cam_start_trent_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				9, 1.65, 2.2
+			},
+			orient={{1,0,0},{0,1,0},{0,0,1}}
+		},
+	},
 
 	{
 		entity_name="cam_dbg",
@@ -55,7 +308,10 @@ entities={
 		flags=HIDDEN,
 		spatialprops={
 			pos={
-				0, 5, 1 --def
+				-3, 5, 2 --def
+				-- 0, 1.8, -2.2 --kayltin
+				-- 5, 2, -2 --kayltin rot
+				-- 5.2, 1.6, -1.8 --kayltin rot trent
 			},
 			orient={
 				{1,0,0},
@@ -65,7 +321,7 @@ entities={
 			}
 		},
 		cameraprops={
-			fovh=30,
+			fovh=20,
 			hvaspect=1.85,
 			nearplane=0.2,
 			farplane=5000
@@ -78,7 +334,10 @@ entities={
 		template_id=0,
 		spatialprops={
 			pos={
-				0, 1, -6 --def
+				6, 1, 0 --def
+				-- 3, 1.1, -2.2 --kayltin
+				-- 3, 1, -2 --kayltin rot
+				-- 4, 1.3, -2 --kayltin rot trent
 			},
 			orient={
 				{1,0,0},
@@ -103,4 +362,315 @@ events = {
 			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
 		}
 	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_start",
+			"cam_start_marker"
+		},
+		{
+			duration=70, offset={0,0,0},
+			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+		}
+	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_start_darcy",
+			"cam_start_darcy_marker"
+		},
+		{
+			duration=70, offset={0,0,0},
+			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+		}
+	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_start_trent",
+			"cam_start_trent_marker"
+		},
+		{
+			duration=70, offset={0,0,0},
+			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+		}
+	},
+	
+
+	{
+		0.02,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_start_trent"
+		}
+	},
+	
+
+	{
+		0,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_dbg"
+		}
+	},
+	
+
+	
+	{
+		0,
+		START_MOTION,
+		{"Char_kaytlin"},
+		{animation="Sc_FMBODY_CHRF_HEAD_HOLDR_000LV_XA_02",
+		 duration=10, time_scale=1, start_time=0, weight=1, heading=-1}
+	},	
+	{
+		0.01,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_kaytlin"
+		},
+		{
+			duration=0,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					-125,
+					Y_AXIS
+				}
+			}
+		}
+	},
+	
+	{
+		0,
+		START_MOTION,
+		{"Char_brighton"},
+		{animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+		 duration=100, time_scale=1, weight=1, heading=-1, event_flags=2}
+	},	
+	{
+		0.01,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_brighton"
+		},
+		{
+			duration=0,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					10,
+					Y_AXIS
+				}
+			}
+		}
+	},
+	
+	
+	
+	{
+		0.01,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_start"
+		}
+	},
+	
+	{
+		0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_start",
+			"cam_start_pos2"
+		},
+		{
+			duration=7,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	{
+		0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"cam_start_marker",
+			"cam_start_marker_pos2"
+		},
+		{
+			duration=7,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={
+				pos={0,0,0},
+				q_orient={1,0,0,0}
+			},
+			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			pcurve_period=-1000
+		}
+	},
+	
+	
+	{
+		0,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_WLKG_000LV_XA_01",
+		 duration=2.6, time_scale=1, weight=1, heading=-1, event_flags=2}
+	},
+	{
+		2.6,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_WALK_STND_TRNS_000LV_XA_02",
+		 duration=6, time_scale=1, weight=1, heading=-1}
+	},	
+	{
+		2.6,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_trent"
+		},
+		{
+			duration=1,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					5,
+					Y_AXIS
+				}
+			}
+		}
+	},
+	
+		
+	
+	
+	{
+		0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_darcy"
+		},
+		{
+			duration=0,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					-67,
+					Y_AXIS
+				}
+			}
+		}
+	},
+	
+	{
+		0,
+		START_MOTION,
+		{"Char_darcy"},
+		{animation="Sc_FMBODY_STND_HOLD_ARMS_CROSSED_000LV_XA_03",
+		 duration=1, time_scale=1, start_time=0, weight=1, heading=-1}
+	},	
+	
+	
+	
+	
+	
 }
+
+
+
+	
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+		 -- duration=100, time_scale=0.6, weight=1, heading=-1, event_flags=2}
+	-- },	
+	-- {
+		-- 0.01,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "Char_trent"
+		-- },
+		-- {
+			-- duration=0,
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- axisrot={
+					-- 20,
+					-- Y_AXIS
+				-- }
+			-- }
+		-- }
+	-- },
+	
+	
+	
+	
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_darcy"},
+		-- {animation="Sc_FMBODY_CHRB_IDLE_000LV_XA_06",
+		 -- duration=1, time_scale=1, start_time=0, weight=1, heading=-1}
+	-- },	
+	-- {
+		-- 0.01,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "Char_darcy"
+		-- },
+		-- {
+			-- duration=0,
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- axisrot={
+					-- -25,
+					-- Y_AXIS
+				-- }
+			-- }
+		-- }
+	-- },
+	
+	
+	-- {
+		-- 0.01,
+		-- START_IK,
+		-- {
+			-- "Char_brighton",
+			-- "Char_trent"
+		-- },
+		-- {
+			-- duration=15,
+			-- end_effector="Body_Head", transition_duration=3, 
+			-- target_part="Body_Head", target_type=PART,
+			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+		-- }
+	-- },
+	-- {
+		-- 0.01,
+		-- START_IK,
+		-- {
+			-- "Char_darcy",
+			-- "Char_trent"
+		-- },
+		-- {
+			-- duration=15,
+			-- end_effector="Body_Head", transition_duration=3, 
+			-- target_part="Body_Head", target_type=PART,
+			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+		-- }
+	-- },

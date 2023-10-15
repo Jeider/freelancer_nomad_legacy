@@ -1378,20 +1378,8 @@ events = {
 	},
 	
 
-
 	{
 		0,
-		SET_CAMERA,
-		{
-			"Monitor_1",
-			"cam_dbg"
-		}
-	},
-	
-
-	
-	{
-		0.01,
 		SET_CAMERA,
 		{
 			"Monitor_1",
