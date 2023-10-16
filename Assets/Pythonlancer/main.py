@@ -4,9 +4,12 @@ from core import LancerCore
 
 DIVIDER = '\n\n'
 
+ENABLE_STORY = False
+
+
 
 def main():
-    core = LancerCore()
+    core = LancerCore(enable_story=False)
 
     nicknames_data = [
         core.misc_equip.get_ru_names(),
@@ -31,15 +34,6 @@ def main():
     ]
 
     files_map = [
-        ('audio_ingame.ini', core.audio.get_ingame_sounds_ini()),
-        ('audio_ingame.xml', core.audio.get_ingame_sounds_xml()),
-
-        ('audio_cutscenes.ini', core.audio.get_cutscene_sounds_ini()),
-        ('audio_cutscenes.lua', core.audio.get_cutscene_sounds_thn()),
-
-        ('audio_ether_comm_strings.ini', core.audio.get_ether_comm_ru_strings()),
-        ('audio_ether_comm_text.ini', core.audio.get_ether_comm_mission_texts()),
-
         ('engine_equip.ini', core.misc_equip.get_engine_equip()),
         ('engine_good.ini', core.misc_equip.get_engine_good()),
         ('power_equip.ini', core.misc_equip.get_powerplant_equip()),
@@ -67,6 +61,19 @@ def main():
 
         ('shiparch.ini', str(core.shiparch.get_shiparch_content())),
     ]
+
+    if core.has_story:
+        story_files = [
+            ('audio_ingame.ini', core.audio.get_ingame_sounds_ini()),
+            ('audio_ingame.xml', core.audio.get_ingame_sounds_xml()),
+
+            ('audio_cutscenes.ini', core.audio.get_cutscene_sounds_ini()),
+            ('audio_cutscenes.lua', core.audio.get_cutscene_sounds_thn()),
+
+            ('audio_ether_comm_strings.ini', core.audio.get_ether_comm_ru_strings()),
+            ('audio_ether_comm_text.ini', core.audio.get_ether_comm_mission_texts()),
+        ]
+        files_map.extend(story_files)
 
     for file, content in files_map:
         FileWriter.write(file, content)

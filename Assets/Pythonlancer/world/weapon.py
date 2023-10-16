@@ -461,7 +461,7 @@ LODranges = {lod_ranges}{extra}'''
     SHIELDGUN = False
     EXTRA_SHIELD_DAMAGE_FACTOR = 0
 
-    def __init__(self, faction, ids_name, ids_info, equipment_class):
+    def __init__(self, faction, ids_name, ids_info, equipment_class, weapon_fx):
         self.faction = faction
         self.ids_name = ids_name
         self.ids_info = ids_info
@@ -469,6 +469,7 @@ LODranges = {lod_ranges}{extra}'''
         self.validate_model()
 
         self.equipment_class = equipment_class
+        self.weapon_fx = weapon_fx
 
         self.set_rate()
 
@@ -563,7 +564,16 @@ LODranges = {lod_ranges}{extra}'''
         return self.MUZZLE_VELOCITY
 
     def get_flash_particle_name(self):
-        return 'li_laser_01_flash'
+        return self.weapon_fx.get_flash_particle_name()
+
+    def get_one_shot_sound(self):
+        return self.weapon_fx.get_one_shot_sound()
+
+    def get_munition_hit_effect(self):
+        return self.weapon_fx.get_munition_hit_effect()
+
+    def get_const_effect(self):
+        return self.weapon_fx.get_const_effect()
 
     def get_damage_multipler(self):
         return self.DAMAGE_PER_REFIRE_RATE_FACTOR[self.REFIRE_RATE]
@@ -618,9 +628,9 @@ LODranges = {lod_ranges}{extra}'''
             'hull_damage': self.get_hull_damage(),
             'energy_damage': self.get_energy_damage(),
             'weapon_type': self.get_weapon_type(),
-            'one_shot_sound': 'fire_laser1',
-            'munition_hit_effect': 'li_laser_01_impact',
-            'const_effect': 'li_laser_01_proj',
+            'one_shot_sound': self.get_one_shot_sound(),
+            'munition_hit_effect': self.get_munition_hit_effect(),
+            'const_effect': self.get_const_effect(),
             'lifetime': self.get_munition_lifetime(),
         }
 
