@@ -5547,42 +5547,42 @@ events={
 	-- }, 
 	
 	
-	{
-		1,
-		START_SOUND,
-		{
-			"DX_m08_offer_0440_trent"
-		},
-		{
-			duration=15
-		}
-	},
-	{
-		1,
-		START_MOTION,
-		{"Char_trent"},
-		{animation="Sc_dx_s006x_0201_trent",
-		 duration=7, start_time=0, time_scale=0.9, trans_time=0.25, weight=1, heading=-1}
-	}, 
-	{
-		4.5,
-		START_MOTION,
-		{"Char_trent"},
-		{animation="Sc_dx_s068x_0401_trent",
-		 duration=7, start_time=0, time_scale=0.8, trans_time=0.25, weight=1, heading=-1}
-	}, 
-	
-	
-	
-	
 	-- {
-		-- 0.001,
-		-- SET_CAMERA,
+		-- 1,
+		-- START_SOUND,
 		-- {
-			-- "Monitor_1",
-			-- "cam_syd"
+			-- "DX_m08_offer_0440_trent"
+		-- },
+		-- {
+			-- duration=15
 		-- }
 	-- },
+	-- {
+		-- 1,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_dx_s006x_0201_trent",
+		 -- duration=7, start_time=0, time_scale=0.9, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 4.5,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_dx_s068x_0401_trent",
+		 -- duration=7, start_time=0, time_scale=0.8, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	
+	
+	
+	
+	{
+		0.001,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_syd"
+		}
+	},
 
 	
 	-- {
@@ -6052,6 +6052,25 @@ events={
 		-- {animation="Sc_dx_s062x_0703_vonclaussn",
 		 -- duration=8, start_time=0, time_scale=0.9, trans_time=0.25, weight=1, heading=-1}
 	-- }, 
+
+
+	{
+		1,
+		START_SOUND,
+		{
+			"DX_m08_offer_0470_brighton"
+		},
+		{
+			duration=15
+		}
+	},
+	{
+		1,
+		START_MOTION,
+		{"Char_brighton"},
+		{animation="Sc_dx_s062x_0703_vonclaussn",
+		 duration=8, start_time=0, time_scale=0.8, trans_time=0.25, weight=1, heading=-1}
+	}, 
 
 	
 	
