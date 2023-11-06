@@ -2816,7 +2816,7 @@ events = {
 		START_MOTION,
 		{"Char_trent"},
 		{animation="Sc_dx_s045c_0501_trent",
-		 duration=3.5, start_time=2.3, time_scale=0.6, trans_time=0.25, weight=1, heading=-1}
+		 duration=3.5, start_time=2.3, time_scale=0.6, weight=1, heading=-1}
 	}, 
 	
 	{
@@ -2943,7 +2943,7 @@ events = {
 		START_MOTION,
 		{"Char_trent"},
 		{animation="Sc_dx_s006x_0401_trent",
-		 duration=3.5, start_time=0, time_scale=0.5, trans_time=0.25, weight=1, heading=-1}
+		 duration=3.5, start_time=0, time_scale=0.5, weight=1, heading=-1}
 	}, 
 	
 	{
@@ -3012,7 +3012,150 @@ events = {
 		SET_CAMERA,
 		{
 			"Monitor_1",
-			"cam_trent_far"
+			"cam_trent_near"
+		}
+	},
+	
+	{
+		51,
+		START_SOUND,
+		{
+			"DX_m08_offer_0300_trent"
+		},
+		{
+			duration=15
+		}
+	},
+	{
+		51,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_dx_s003x_1701_trent",
+		 duration=3.5, start_time=0, time_scale=1, weight=1, heading=-1}
+	}, 
+	
+	{
+		52.8,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_brighton_near"
+		}
+	},
+	
+	{
+		52.8,
+		START_SOUND,
+		{
+			"DX_m08_offer_0310_brighton"
+		},
+		{
+			duration=15
+		}
+	},
+	{
+		52.8,
+		START_MOTION,
+		{"Char_brighton"},
+		{animation="Sc_dx_s063x_0701_vonclaussn",
+		 duration=4.3, start_time=0, time_scale=1.1, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	
+	{
+		57.3,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_trent_near"
+		}
+	},
+	
+	{
+		57.3,
+		START_SOUND,
+		{
+			"DX_m08_offer_0320_trent"
+		},
+		{
+			duration=15
+		}
+	},
+	{
+		57.3,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_dx_s009b_0101_trent",
+		 duration=3.5, start_time=0, time_scale=1, weight=1, heading=-1}
+	}, 
+	{
+		59,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_dx_s045b_1001_trent",
+		 duration=3.5, start_time=0, time_scale=0.6, trans_time=0.25, weight=1, heading=-1}
+	}, 
+	
+	{
+		61.3,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_brighton"
+		}
+	},
+	{
+		61.3,
+		START_SOUND,
+		{
+			"DX_m08_offer_0330_brighton"
+		},
+		{
+			duration=15
+		}
+	},
+	{
+		61.3,
+		START_MOTION,
+		{"Char_brighton"},
+		{animation="Sc_dx_s063x_0701_vonclaussn",
+		 duration=7, start_time=0, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	},
+	
+	
+	{
+		68,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_trent_sit"
+		}
+	},
+	
+	{
+		68,
+		START_SOUND,
+		{
+			"DX_m08_offer_0340_trent"
+		},
+		{
+			duration=15
+		}
+	},
+	{
+		68,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_dx_s038x_4501_trent",
+		 duration=7, start_time=0, time_scale=0.9, weight=1, heading=-1}
+	}, 
+	
+	
+	{
+		74.4,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_kaytlin"
 		}
 	},
 	
