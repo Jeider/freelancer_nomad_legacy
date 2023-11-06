@@ -5457,11 +5457,101 @@ events={
 		 -- duration=3.5, start_time=0, time_scale=0.6, trans_time=0.25, weight=1, heading=-1}
 	-- }, 
 	
+	-- {
+		-- 1,
+		-- START_SOUND,
+		-- {
+			-- "DX_m08_offer_0340_trent"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	-- {
+		-- 1,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_dx_s038x_4501_trent",
+		 -- duration=7, start_time=0, time_scale=0.9, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	
+	-- {
+		-- 1,
+		-- START_SOUND,
+		-- {
+			-- "DX_m08_offer_0360_trent"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	-- {
+		-- 1,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_dx_s006x_0201_trent",
+		 -- duration=7, start_time=0, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	
+	
+	
+	-- {
+		-- 1,
+		-- START_SOUND,
+		-- {
+			-- "DX_m08_offer_0390_trent"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	-- {
+		-- 1,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_dx_s006x_0201_trent",
+		 -- duration=7, start_time=1, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	
+	
+	-- {
+		-- 1,
+		-- START_SOUND,
+		-- {
+			-- "DX_m08_offer_0420_trent"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	-- {
+		-- 1,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_dx_s006x_0201_trent",
+		 -- duration=7, start_time=0, time_scale=0.7, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 5.6,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_dx_s034x_0901_trent",
+		 -- duration=7, start_time=2, time_scale=0.6, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	-- {
+		-- 7,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_dx_s045c_0501_trent",
+		 -- duration=7, start_time=1.5, time_scale=0.8, trans_time=0.5, weight=1, heading=-1}
+	-- }, 
+	
+	
 	{
 		1,
 		START_SOUND,
 		{
-			"DX_m08_offer_0340_trent"
+			"DX_m08_offer_0440_trent"
 		},
 		{
 			duration=15
@@ -5471,11 +5561,16 @@ events={
 		1,
 		START_MOTION,
 		{"Char_trent"},
-		{animation="Sc_dx_s038x_4501_trent",
+		{animation="Sc_dx_s006x_0201_trent",
 		 duration=7, start_time=0, time_scale=0.9, trans_time=0.25, weight=1, heading=-1}
 	}, 
-	
-	
+	{
+		4.5,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_dx_s068x_0401_trent",
+		 duration=7, start_time=0, time_scale=0.8, trans_time=0.25, weight=1, heading=-1}
+	}, 
 	
 	
 	
@@ -5900,6 +5995,65 @@ events={
 		-- {animation="Sc_dx_s063x_0701_vonclaussn",
 		 -- duration=7, start_time=0, time_scale=1, trans_time=0.25, weight=1, heading=-1}
 	-- }, 
+	
+	
+	-- {
+		-- 1,
+		-- START_SOUND,
+		-- {
+			-- "DX_m08_offer_0380_brighton"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	-- {
+		-- 1,
+		-- START_MOTION,
+		-- {"Char_brighton"},
+		-- {animation="Sc_dx_s063x_0601_vonclaussn",
+		 -- duration=8, start_time=2.2, time_scale=1, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+	
+	-- {
+		-- 1,
+		-- START_SOUND,
+		-- {
+			-- "DX_m08_offer_0400_brighton"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	-- {
+		-- 1,
+		-- START_MOTION,
+		-- {"Char_brighton"},
+		-- {animation="Sc_dx_s062x_0703_vonclaussn",
+		 -- duration=8, start_time=0, time_scale=0.9, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+
+
+
+	-- {
+		-- 8,
+		-- START_SOUND,
+		-- {
+			-- "DX_m08_offer_0410_brighton"
+		-- },
+		-- {
+			-- duration=15
+		-- }
+	-- },
+	-- {
+		-- 8,
+		-- START_MOTION,
+		-- {"Char_brighton"},
+		-- {animation="Sc_dx_s062x_0703_vonclaussn",
+		 -- duration=8, start_time=0, time_scale=0.9, trans_time=0.25, weight=1, heading=-1}
+	-- }, 
+
+	
 	
 }
 
