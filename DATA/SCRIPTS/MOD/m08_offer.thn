@@ -2170,7 +2170,7 @@ events = {
 		}
 	},
 	{
-		41, --disabled ??
+		41,
 		START_IK,
 		{
 			"Char_trent",
