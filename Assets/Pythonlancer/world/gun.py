@@ -1,6 +1,8 @@
 from world.equipment import DefaultGood, MainEquipPrice, Icon
 from world.weapon import Weapon
 
+from fx.weapon import WeaponFX
+
 
 RH_LIGHTGUN = 'rh_lightgun'
 RH_HEAVYGUN = 'rh_heavygun'
@@ -46,6 +48,8 @@ RU_EFFICIENT_TEXT_PER_EQUIP_TYPE = {
 class Gun(MainEquipPrice, Weapon, DefaultGood):
     DROP_CHANCE = 12
     MAX_PRICE = 120000
+    FX_FACTION = WeaponFX.FX_LI
+    FX_APPEARANCE = WeaponFX.FX_LASER
 
     subclasses = []
 
@@ -105,6 +109,8 @@ class RheinlandLightgun(Gun):
     REFIRE_RATE = Weapon.REFIRE_RATE_6
     MUZZLE_VELOCITY = 700
     LIFETIME = 1.0
+    FX_FACTION = WeaponFX.FX_RH
+    FX_APPEARANCE = WeaponFX.FX_TACHYON
 
 
 class RheinlandHeavygun(Gun):
@@ -116,6 +122,8 @@ class RheinlandHeavygun(Gun):
     REFIRE_RATE = Weapon.REFIRE_RATE_2
     MUZZLE_VELOCITY = 500
     LIFETIME = 1.2
+    FX_FACTION = WeaponFX.FX_RH
+    FX_APPEARANCE = WeaponFX.FX_PLASMA
 
 
 class RheinlandCivgun(Gun):
@@ -127,6 +135,8 @@ class RheinlandCivgun(Gun):
     REFIRE_RATE = Weapon.REFIRE_RATE_8
     MUZZLE_VELOCITY = 600
     LIFETIME = 0.8
+    FX_FACTION = WeaponFX.FX_GE
+    FX_APPEARANCE = WeaponFX.FX_LASER
 
 
 class RheinlandHuntergun(Gun):
@@ -138,6 +148,8 @@ class RheinlandHuntergun(Gun):
     REFIRE_RATE = Weapon.REFIRE_RATE_6
     MUZZLE_VELOCITY = 750
     LIFETIME = 0.8
+    FX_FACTION = WeaponFX.FX_PI
+    FX_APPEARANCE = WeaponFX.FX_LASER
 
 
 class RheinlandShieldgun(Gun):
@@ -150,6 +162,8 @@ class RheinlandShieldgun(Gun):
     MUZZLE_VELOCITY = 600
     LIFETIME = 1.0
     SHIELDGUN = True
+    FX_FACTION = WeaponFX.FX_GE
+    FX_APPEARANCE = WeaponFX.FX_PULSE
 
 
 class RheinlandPirategun(Gun):
@@ -161,6 +175,8 @@ class RheinlandPirategun(Gun):
     REFIRE_RATE = Weapon.REFIRE_RATE_8
     MUZZLE_VELOCITY = 750
     LIFETIME = 0.8
+    FX_FACTION = WeaponFX.FX_PI
+    FX_APPEARANCE = WeaponFX.FX_LASER
 
 
 class RheinlandHessiangun(Gun):
@@ -172,6 +188,8 @@ class RheinlandHessiangun(Gun):
     REFIRE_RATE = Weapon.REFIRE_RATE_6
     MUZZLE_VELOCITY = 700
     LIFETIME = 1
+    FX_FACTION = WeaponFX.FX_PI
+    FX_APPEARANCE = WeaponFX.FX_LASER
 
 
 class RheinlandJunkergun(Gun):
@@ -183,4 +201,6 @@ class RheinlandJunkergun(Gun):
     REFIRE_RATE = Weapon.REFIRE_RATE_8
     MUZZLE_VELOCITY = 600
     LIFETIME = 1
+    FX_FACTION = WeaponFX.FX_RH
+    FX_APPEARANCE = WeaponFX.FX_LASER
 

@@ -1,7 +1,6 @@
 from world.equipment import Equipment, Icon, DefaultGood
 
 
-
 class Motor(object):
 
     MOTOR_TEMPLATE = '''[Motor]
@@ -23,7 +22,6 @@ delay = {delay}'''
             'accel': self.accel,
             'delay': self.delay,
         }
-
 
     def get_motor(self):
         return self.MOTOR_TEMPLATE.format(**self.get_template_params())
@@ -270,8 +268,7 @@ const_effect = {const_effect}'''
 
 class Weapon(Equipment):
     ARCHETYPE = 'Gun'
-    EXTRA = '''
-turn_rate = 90'''
+    EXTRA = ['turn_rate = 90']
     
     GUN_TEMPLATE = '''[{archetype}]
 nickname = {nickname}
@@ -296,7 +293,7 @@ turn_rate = 90
 projectile_archetype = {projectile_archetype}
 auto_turret = false
 lootable = true
-LODranges = {lod_ranges}{extra}'''
+LODranges = {lod_ranges}'''
 
     EQUIP_TEMPLATE = '''{munition}
 
@@ -501,6 +498,16 @@ LODranges = {lod_ranges}{extra}'''
             name=self.get_nickname(),
         )
 
+    def get_explosion_archetype_name(self):
+        return '{name}_explosion'.format(
+            name=self.get_nickname(),
+        )
+
+    def get_motor_archetype_name(self):
+        return '{name}_motor'.format(
+            name=self.get_nickname(),
+        )
+
     def get_da_archetype(self):
         return self.DA_ARCHETYPE_PATH_TEMPLATE.format(model=self.MODEL)
 
@@ -661,8 +668,14 @@ LODranges = {lod_ranges}{extra}'''
             'extra': self.EXTRA,
         }
 
+    def get_extra_template_content(self):
+        return SINGLE_DIVIDER.join(self.EXTRA)
+
     def get_gun(self):
-        return self.GUN_TEMPLATE.format(**self.get_gun_template_params())
+        template = self.GUN_TEMPLATE.format(**self.get_gun_template_params())
+        if len(self.EXTRA > 0):
+            template += SINGLE_DIVIDER + self.get_extra_template_content()
+        return template
 
     def get_equip_template_params(self):
         return {
@@ -679,6 +692,90 @@ class MineDropper(Weapon):
     EXTRA = '''
 dry_fire_sound = fire_dry'''
 
-class Launcher(Weapon):
-    EXTRA = '''
-dry_fire_sound = fire_dry'''
+
+
+
+class MissileLauncher(Weapon):
+    EXTRA = ['dry_fire_sound = fire_dry']
+    DEFAULT_SEEKER_RANGE = 1000
+    DEFAULT_SEEKER_FOV_DEG = 35
+    DEFAULT_DETONATION_DIST = 4
+
+    def __init__(self, ids_name, ids_info, explodable_fx, *args, **kwargs):
+        self.munition_ids_name = munition_ids_name
+        self.munition_ids_info = munition_ids_info
+        self.explodable_fx = explodable_fx
+
+        self.explosion = self.ceate_explosion()
+        self.motor = self.create_motor()
+
+        super(self.__init__(*args, **kwargs))
+
+    def get_const_effect(self):
+        self.explodable_fx.get_const_effect()
+
+    def get_detonation_dist(self):
+        return self.DEFAULT_DETONATION_DIST
+
+    def get_munition_params(self):
+        x = {
+            'nickname': self.get_projectile_archetype_name(),
+            'hull_damage': self.get_hull_damage(),
+            'energy_damage': self.get_energy_damage(),
+            'weapon_type': self.get_weapon_type(),
+            'one_shot_sound': self.get_one_shot_sound(),
+            'munition_hit_effect': self.get_munition_hit_effect(),
+            'const_effect': self.get_const_effect(),
+            'lifetime': self.get_munition_lifetime(),
+        }
+        return {
+            'nickname': self.get_projectile_archetype_name(),
+            'explosion_arch': self.get_explosion_archetype_name(),
+            'detonation_dist': self.get_detonation_dist(),
+            'lifetime': self.get_munition_lifetime(),
+            'motor': self.get_motor_archetype_name(),
+            'const_effect': self.get_const_effect(),
+            'seeker_range': self.get_seeker_range(),
+            'seeker_fov_deg': self.seeker_fov_deg(),
+            'max_angular_velocity': self.max_angular_velocity,
+            'ids_name': self.munition_ids_name,
+            'ids_info': self.munition_ids_info,
+            'appearance': self.appearance,
+        }
+
+    def create_munition(self):
+        return MissileMunition(**self.get_munition_params())
+
+    def get_munition(self):
+        return self.munition.get_munition()
+
+
+
+
+
+[Munition]
+nickname = missile01_mark01_rtc_ammo
+explosion_arch = missile01_mark01_rtc_explosion
+loot_appearance = ammo_crate
+units_per_container = 10
+hp_type = hp_gun
+requires_ammo = true
+hit_pts = 2
+one_shot_sound = fire_missile_regular
+detonation_dist = 4
+lifetime = 6.250000
+Motor = missile01_mark01_rtc_motor
+force_gun_ori = false
+const_effect = li_missile02_drive
+HP_trail_parent = HPExhaust
+seeker = LOCK
+time_to_lock = 0
+seeker_range = 1000
+seeker_fov_deg = 35
+max_angular_velocity = 2.903330
+DA_archetype = equipment\models\weapons\li_rad_missile.3db
+material_library = equipment\models\li_equip.mat
+ids_name = 265146
+ids_info = 266146
+mass = 1
+volume = 0.000000

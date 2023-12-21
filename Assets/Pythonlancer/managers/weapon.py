@@ -22,10 +22,6 @@ class WeaponManager(StringsMixin):
         self.load_game_data()
 
     def load_game_data(self):
-        default_fx_params = {
-            'faction': WeaponFX.FX_LI,
-            'fx_appearance': WeaponFX.FX_LASER,
-        }
         for gun in Gun.subclasses:
             self.guns_db[gun.BASE_NICKNAME] = {}
 
@@ -33,7 +29,7 @@ class WeaponManager(StringsMixin):
                 the_gun = gun(
                     equipment_class=equipment_class, faction=Equipment.FACTION_RH, 
                     ids_name=self.get_next_string_id(), ids_info=self.get_next_infocard_id(),
-                    weapon_fx=WeaponFX(equip_class=equipment_class, **default_fx_params)
+                    weapon_fx=WeaponFX(equip_class=equipment_class, faction=gun.FX_FACTION, fx_appearance=gun.FX_APPEARANCE)
                 )
                 self.guns_db[gun.BASE_NICKNAME][equipment_class] = the_gun
                 self.guns_list.append(the_gun)

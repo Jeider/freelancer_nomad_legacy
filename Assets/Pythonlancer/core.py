@@ -31,4 +31,3 @@ class LancerCore(object):
     @property
     def has_story(self):
         return self.enable_story
-    

@@ -7,7 +7,6 @@ DIVIDER = '\n\n'
 ENABLE_STORY = False
 
 
-
 def main():
     core = LancerCore(enable_story=False)
 
