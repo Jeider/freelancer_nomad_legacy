@@ -1,0 +1,260 @@
+duration=10000
+
+-- stand
+-- goingback
+-- missile
+-- touch
+-- flying
+-- front
+-- hit
+-- explode
+
+
+entities={
+	{
+		entity_name="scene_m07_tau_arrival",
+		type=SCENE,
+		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+		spatialprops={ pos={0,0,0}, orient={{1,0,0},{0,1,0},{0,0,1}}},
+		up=Y_AXIS,front=Z_AXIS,
+		-- ambient={0,0,0}
+		ambient={180,180,180}
+	},
+	
+	
+	{
+		entity_name="Monitor_1",
+		type=MONITOR,
+		template_name="",
+		template_id=0
+	},
+	{
+		entity_name="offscreen",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={pos={-100,-10000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
+	},
+	
+	
+
+	{
+		entity_name="ambi_LtG11_Puffs_Amb",
+		lt_grp=11,
+		lightprops={
+			on=1,
+			cutoff=98.999977,
+			direction={
+				0,
+				0,
+				1
+			},
+			range=2000,
+			ambient={
+				0.5,
+				0.5,
+				0.55
+			},
+			specular={
+				0,
+				0,
+				0
+			},
+			type=3,
+			diffuse={
+				0,
+				0,
+				0
+			},
+			atten={
+				1,
+				0,
+				0
+			},
+			color={
+				255,
+				255,
+				255
+			},
+			theta=90
+		},
+		template_name="",
+		spatialprops={
+			pos={
+				2.675188,
+				0,
+				0.158034
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		type=5,
+		usr_flg=0,
+		srt_grp=0
+	},
+	
+	
+	{
+		entity_name="ambi_skydome_clouds_snow",
+		lt_grp=23,
+		flags=4,
+		userprops={
+			category="Prop",
+			NoFog="Y"
+		},
+		template_name="exclusion_barrier_m7",
+		spatialprops={
+			pos={
+				0,
+				0,
+				0
+			},
+			orient={
+				{0.1,0,0},
+				{0,0.1,0},
+				{0,0,0.1}
+			}
+		},
+		type=1,
+		usr_flg=2,
+		srt_grp=-100
+	},
+
+	
+	{
+		entity_name="the_cockpit",
+		type=COMPOUND,
+		template_name="m7_cockpit",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={
+			pos={
+				0, 0, 0
+			},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		},
+		userprops={
+			category="Prop"
+		}
+	},
+	
+	{
+		entity_name="Char_trent",
+		type=DEFORMABLE,
+		template_name="trent",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={
+			pos={0,0,-2},
+			orient={
+				{-1,0,0},
+				{0,1,0},
+				{0,0,-1}
+			}
+		},
+		compoundprops={
+			floor_height=-1.15
+		},
+		userprops={
+			Actor="Player",
+			category="Character"
+		}
+	},
+	
+	
+	
+
+	{
+		entity_name="cam_dbg",
+		type=CAMERA,
+		template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={
+			pos={
+				2, 2, 5 -- inside
+				-- 84, 2, -2 -- outview
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+				
+			}
+		},
+		cameraprops={
+			fovh=15,
+			hvaspect=1.85,
+			nearplane=0.2,
+			farplane=100000
+		}
+	},
+	{
+		entity_name="cam_dbg_marker",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				0, -0.5, -2 -- inside
+				-- 0, -0.5, 2 -- outview
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+	
+	
+}
+
+events={
+
+	
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"cam_dbg",
+			"Char_trent"
+		},
+		{
+			duration=70, offset={0,0,0},
+			up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+		}
+	},
+
+	{
+		0,
+		SET_CAMERA,
+		{
+			"Monitor_1",
+			"cam_dbg"
+		}
+	},
+	
+	{
+		0,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_spcbody_s010x_trent_xf_prone_000up_13",
+		 duration=25, time_scale=1, weight=1, heading=-1}
+	},	
+	
+	
+}
