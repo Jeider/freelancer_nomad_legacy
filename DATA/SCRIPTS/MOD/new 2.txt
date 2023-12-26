@@ -1,0 +1,51 @@
+<Static AudioFile="mod\m08\m08_offer_0010_darcy.wav" TextArea="Cinematic">Привет. Мы сейчас пройдем в одну комнату, в которой будет пара очень больших шишек. </Static>
+<Static AudioFile="mod\m08\m08_offer_0020_darcy.wav" TextArea="Cinematic">Очень прошу, постарайся вести себя посдержаннее.</Static>
+<Static AudioFile="mod\m08\m08_offer_0030_trent.wav" TextArea="Cinematic">Ничего не понял, но постараюсь.</Static>
+<Static AudioFile="mod\m08\m08_offer_0040_brighton.wav" TextArea="Cinematic">А это мисс Дерси, наша краса и надежда на светлое будущее.</Static>
+<Static AudioFile="mod\m08\m08_offer_0050_kaitlyn.wav" TextArea="Cinematic">А это, если я все правильно поняла, эксперт по Ордену, о котором мне столько рассказывали.</Static>
+<Static AudioFile="mod\m08\m08_offer_0060_darcy.wav" TextArea="Cinematic">Да, это мистер Трент. Трент, это адмирал Брайтон и принцесса Кейтлин.</Static>
+<Static AudioFile="mod\m08\m08_offer_0070_brighton.wav" TextArea="Cinematic">И у нас к вам, мистер Трент, чрезвычайно важное дело.</Static>
+<Static AudioFile="mod\m08\m08_offer_0080_trent.wav" TextArea="Cinematic">Шо, опять?</Static>
+<Static AudioFile="mod\m08\m08_offer_0090_brighton.wav" TextArea="Cinematic">Мистер Трент, давайте чуточку серьёзнее. Речь идет о государственной безопасности Бретонии.</Static>
+<Static AudioFile="mod\m08\m08_offer_0100_trent.wav" TextArea="Cinematic">Я постараюсь.</Static>
+<Static AudioFile="mod\m08\m08_offer_0110_brighton.wav" TextArea="Cinematic">У нас для вас, мистер Трент, будет небольшое задание (акцент, медленно)по вашему профилю.</Static>
+<Static AudioFile="mod\m08\m08_offer_0120_trent.wav" TextArea="Cinematic">Моему профилю?</Static>
+<Static AudioFile="mod\m08\m08_offer_0130_brighton.wav" TextArea="Cinematic">Орден, мистер Трент, Орден.</Static>
+<Static AudioFile="mod\m08\m08_offer_0140_trent.wav" TextArea="Cinematic">А... Аааа…</Static>
+<Static AudioFile="mod\m08\m08_offer_0150_brighton.wav" TextArea="Cinematic">Мистер Трент, смею вас заверить, что данная миссия находится на контроле (акцент, выделить) у самых высокопоставленных лиц Бретонии. </Static>
+<Static AudioFile="mod\m08\m08_offer_0160_brighton.wav" TextArea="Cinematic">Одно то, что на встрече с вами присутствует принцесса Кейтлин, должно о многом вам говорить.</Static>
+<Static AudioFile="mod\m08\m08_offer_0170_trent.wav" TextArea="Cinematic">Минуй нас пуще всех печалей и барский гнев, и барская любовь...  (это отсылочка, нагуглить цитату)</Static>
+<Static AudioFile="mod\m08\m08_offer_0180_brighton.wav" TextArea="Cinematic">Я не понимаю вашего скептицизма, мистер Трент, будьте чуточку прозорливее.</Static>
+<Static AudioFile="mod\m08\m08_offer_0190_brighton.wav" TextArea="Cinematic">Вы окажете услугу нам, а мы, при случае, окажем услугу вам.</Static>
+<Static AudioFile="mod\m08\m08_offer_0200_trent.wav" TextArea="Cinematic">Допустим. (пауза) А в чём задание-то?</Static>
+<Static AudioFile="mod\m08\m08_offer_0210_brighton.wav" TextArea="Cinematic">Вот это уже серьёзный разговор, мистер Трент.  (вопрос) Принцесса?</Static>
+<Static AudioFile="mod\m08\m08_offer_0215_kaitlyn.wav" TextArea="Cinematic">Угу…</Static>
+<Static AudioFile="mod\m08\m08_offer_0220_brighton.wav" TextArea="Cinematic">Мистер Трент, в свое время правительство Бретонии заключило некое соглашение с Орденом.</Static>
+<Static AudioFile="mod\m08\m08_offer_0230_brighton.wav" TextArea="Cinematic">Оно сводилось к тому, что Бретония, хм…</Static>
+<Static AudioFile="mod\m08\m08_offer_0235_brighton.wav" TextArea="Cinematic">Мистер Трент, а вы слышали о проблеме кочевников? </Static>
+<Static AudioFile="mod\m08\m08_offer_0240_trent.wav" TextArea="Cinematic">В общем и целом.</Static>
+<Static AudioFile="mod\m08\m08_offer_0250_brighton.wav" TextArea="Cinematic">Отлично. Чуточку осторожности не помешает, вы же меня понимаете?</Static>
+<Static AudioFile="mod\m08\m08_offer_0260_brighton.wav" TextArea="Cinematic">Так вот, по этому соглашению Бретония отказывалась от своих интересов в секторах так называемого "Наследия Номадов", кочевников то есть. (намёкающе) Вы понимаете, о чем я, мистер Трент?</Static>
+<Static AudioFile="mod\m08\m08_offer_0270_trent.wav" TextArea="Cinematic">Чуточку</Static>
+<Static AudioFile="mod\m08\m08_offer_0280_brighton.wav" TextArea="Cinematic">Гхм, хорошо. Взамен Орден обязался ограничить доступ к этим системам для всех. То есть совсем ограничить. Вы меня понимаете, мистер Трент?</Static>
+<Static AudioFile="mod\m08\m08_offer_0290_brighton.wav" TextArea="Cinematic">И мы наивно полагали, что СБА, как прямой наследник Ордена, будет придерживаться достигнутых договоренностей. (смена акцента) И что же мы видим сейчас?</Static>
+<Static AudioFile="mod\m08\m08_offer_0300_trent.wav" TextArea="Cinematic">Что?...</Static>
+<Static AudioFile="mod\m08\m08_offer_0310_brighton.wav" TextArea="Cinematic">А то, что эти ублюдки из ИРА во всю осваивают Тау-44.</Static>
+<Static AudioFile="mod\m08\m08_offer_0320_trent.wav" TextArea="Cinematic">(поддерживает агрессию) Вот сволочи. (пауза, так, стоп, о чём вообще речь??) А Ира - это кто?</Static>
+<Static AudioFile="mod\m08\m08_offer_0330_brighton.wav" TextArea="Cinematic">Не "кто" а "что". Группа фанатиков, в том числе религиозных, требующих независимости Ирландии от Британской короны.</Static>
+<Static AudioFile="mod\m08\m08_offer_0340_trent.wav" TextArea="Cinematic">Достаточно забавно, учитывая что в секторе Сириуса нет ни Ирландии, ни Британской короны.</Static>
+<Static AudioFile="mod\m08\m08_offer_0350_kaitlyn.wav" TextArea="Cinematic">Мистер Трент...</Static>
+<Static AudioFile="mod\m08\m08_offer_0360_trent.wav" TextArea="Cinematic">А что? Дома Ирландии, насколько я знаю, нет.</Static>
+<Static AudioFile="mod\m08\m08_offer_0370_kaitlyn.wav" TextArea="Cinematic">А ирландцы, к сожалению, есть…</Static>
+<Static AudioFile="mod\m08\m08_offer_0380_brighton.wav" TextArea="Cinematic">Теперь вы понимаете, мистер Трент, насколько все это дико?</Static>
+<Static AudioFile="mod\m08\m08_offer_0390_trent.wav" TextArea="Cinematic">Допустим. Что требуется от меня?</Static>
+<Static AudioFile="mod\m08\m08_offer_0400_brighton.wav" TextArea="Cinematic">(легко) Чуточку помочь нам. (задание, явно и четко) В составе оперативного отряда вылететь в Тау-44, и очистить систему от присутствия ИРА.</Static>
+<Static AudioFile="mod\m08\m08_offer_0410_brighton.wav" TextArea="Cinematic">Кроме всего прочего, мы подозреваем что СБА напрямую во всем этом замешано. (отдельно выделить) И здесь нам пригодитесь вы.</Static>
+<Static AudioFile="mod\m08\m08_offer_0420_trent.wav" TextArea="Cinematic">В качестве кого? Того, кто ткнет на кого-нибудь пальцем и скажет "он из СБА"? Звучит не очень убедительно.</Static>
+<Static AudioFile="mod\m08\m08_offer_0430_kaitlyn.wav" TextArea="Cinematic">Ахх… </Static>
+<Static AudioFile="mod\m08\m08_offer_0435_kaitlyn.wav" TextArea="Cinematic">А пятьдесят тысяч звучат достаточно убедительно? (отвлекается, точит ноготки) Вы просто примите участие в заплыве, вам не обязательно становиться победителем.</Static>
+<Static AudioFile="mod\m08\m08_offer_0440_trent.wav" TextArea="Cinematic">Олимпийский принцип? За пятьдесят тысяч? Возможно, я сильно поторопился, сказав, что в секторе Сириуса нет британской короны.</Static>
+<Static AudioFile="mod\m08\m08_offer_0450_kaitlyn.wav" TextArea="Cinematic">И были достаточно умны, чтобы это признать. Непосредственное руководство миссией возложено на адмирала Брайтона, все детали обсудите с ним...</Static>
+<Static AudioFile="mod\m08\m08_offer_0460_kaitlyn.wav" TextArea="Cinematic">Джентльмены...</Static>
+<Static AudioFile="mod\m08\m08_offer_0470_brighton.wav" TextArea="Cinematic">Мистер Трент, на орбите планеты находится Принц Уэльский, мой линкор. Стыкуйтесь к нему, все необходимые допуски и разрешения я вам выдам.</Static>
+<Static AudioFile="mod\m08\m08_offer_0480_darcy.wav" TextArea="Cinematic">Трент, увидимся на Принце Уэльском.</Static>
