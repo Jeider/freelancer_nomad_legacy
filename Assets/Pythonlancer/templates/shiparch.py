@@ -2326,7 +2326,7 @@ LODranges = 0, 500, 2000
 
 [Ship]
 ship_class = 6
-{ship_ku_elite2}
+{ship_ku_dragon}
 msg_id_prefix = gcs_refer_shiparch_hfighter
 mission_property = can_use_berths
 LODranges = 0, 1000, 5000, 10000

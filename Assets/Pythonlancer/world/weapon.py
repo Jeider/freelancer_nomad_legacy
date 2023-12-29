@@ -1,4 +1,5 @@
 from world.equipment import Equipment, Icon, DefaultGood
+from text.dividers import SINGLE_DIVIDER
 
 
 class Motor(object):
@@ -673,7 +674,7 @@ LODranges = {lod_ranges}'''
 
     def get_gun(self):
         template = self.GUN_TEMPLATE.format(**self.get_gun_template_params())
-        if len(self.EXTRA > 0):
+        if len(self.EXTRA) > 0:
             template += SINGLE_DIVIDER + self.get_extra_template_content()
         return template
 
@@ -753,29 +754,29 @@ class MissileLauncher(Weapon):
 
 
 
-[Munition]
-nickname = missile01_mark01_rtc_ammo
-explosion_arch = missile01_mark01_rtc_explosion
-loot_appearance = ammo_crate
-units_per_container = 10
-hp_type = hp_gun
-requires_ammo = true
-hit_pts = 2
-one_shot_sound = fire_missile_regular
-detonation_dist = 4
-lifetime = 6.250000
-Motor = missile01_mark01_rtc_motor
-force_gun_ori = false
-const_effect = li_missile02_drive
-HP_trail_parent = HPExhaust
-seeker = LOCK
-time_to_lock = 0
-seeker_range = 1000
-seeker_fov_deg = 35
-max_angular_velocity = 2.903330
-DA_archetype = equipment\models\weapons\li_rad_missile.3db
-material_library = equipment\models\li_equip.mat
-ids_name = 265146
-ids_info = 266146
-mass = 1
-volume = 0.000000
+# [Munition]
+# nickname = missile01_mark01_rtc_ammo
+# explosion_arch = missile01_mark01_rtc_explosion
+# loot_appearance = ammo_crate
+# units_per_container = 10
+# hp_type = hp_gun
+# requires_ammo = true
+# hit_pts = 2
+# one_shot_sound = fire_missile_regular
+# detonation_dist = 4
+# lifetime = 6.250000
+# Motor = missile01_mark01_rtc_motor
+# force_gun_ori = false
+# const_effect = li_missile02_drive
+# HP_trail_parent = HPExhaust
+# seeker = LOCK
+# time_to_lock = 0
+# seeker_range = 1000
+# seeker_fov_deg = 35
+# max_angular_velocity = 2.903330
+# DA_archetype = equipment\models\weapons\li_rad_missile.3db
+# material_library = equipment\models\li_equip.mat
+# ids_name = 265146
+# ids_info = 266146
+# mass = 1
+# volume = 0.000000

@@ -4,11 +4,11 @@ from core import LancerCore
 
 DIVIDER = '\n\n'
 
-ENABLE_STORY = False
+ENABLE_STORY = True
 
 
 def main():
-    core = LancerCore(enable_story=False)
+    core = LancerCore(enable_story=ENABLE_STORY)
 
     nicknames_data = [
         core.misc_equip.get_ru_names(),
@@ -71,6 +71,9 @@ def main():
 
             ('audio_ether_comm_strings.ini', core.audio.get_ether_comm_ru_strings()),
             ('audio_ether_comm_text.ini', core.audio.get_ether_comm_mission_texts()),
+
+            ('misc_ru_strings.ini', core.audio.get_misc_ru_strings()),
+            ('misc_ru_infocards.ini', core.audio.get_misc_ru_infocards()),
         ]
         files_map.extend(story_files)
 

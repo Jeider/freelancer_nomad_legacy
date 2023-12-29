@@ -1,0 +1,95 @@
+[Object]
+nickname = tortuga
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = smallest_ring
+
+[Object]
+nickname = tortuga_sat
+pos = 0, 0, 0
+rotate = 90, 0, 0
+archetype = com_sat
+
+[Object]
+nickname = tortuga_panel01
+pos = 0, -65, 0
+rotate = 0, 0, 0
+archetype = space_industrial02d
+
+[Object]
+nickname = tortuga_panel02
+pos = 0, 65, 0
+rotate = 0, 0, 0
+archetype = space_industrial02d
+
+[Object]
+nickname = tortuga_panel03
+pos = 65, 0, 2
+rotate = 0, 0, 90
+archetype = space_industrial02d
+
+[Object]
+nickname = tortuga_panel04
+pos = -65, 0, 2
+rotate = 0, 0, 90
+archetype = space_industrial02d
+
+[Object]
+nickname = tortuga_ring01
+pos = 0, 0, 42
+rotate = 0, 0, 0
+archetype = small_ring
+
+[Object]
+nickname = tortuga_ring02
+pos = 0, 0, -42
+rotate = 0, 0, 0
+archetype = small_ring
+
+[Object]
+nickname = tortuga_ring03
+pos = 0, 0, -120
+rotate = 0, 0, 0
+archetype = smallest_ring
+
+[Object]
+nickname = tortuga_ring04
+pos = 0, 0, 120
+rotate = 0, 0, 0
+archetype = smallest_ring
+
+[Object]
+nickname = tortuga_ring05
+pos = 0, 0, 55
+rotate = 0, 0, 0
+archetype = xsmall_ring
+
+[Object]
+nickname = tortuga_ring06
+pos = 0, 0, -55
+rotate = 0, 0, 0
+archetype = xsmall_ring
+
+[Object]
+nickname = tortuga_girder01
+pos = 20, 0, -100
+rotate = 90, 0, 0
+archetype = space_girderb
+
+[Object]
+nickname = tortuga_girder02
+pos = -20, 0, -100
+rotate = 90, 0, 0
+archetype = space_girderb
+
+[Object]
+nickname = tortuga_girder03
+pos = -20, 0, 100
+rotate = 90, 0, 0
+archetype = space_girderb
+
+[Object]
+nickname = tortuga_girder04
+pos = -20, 0, 100
+rotate = 90, 0, 0
+archetype = space_girderb

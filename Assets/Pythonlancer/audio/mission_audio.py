@@ -1,6 +1,7 @@
 from audio.actors import ACTOR_MALE, ACTOR_TRENT, ACTOR_FEMALE, Trent
 
 from text.dividers import DIVIDER, SINGLE_DIVIDER
+from text.infocards import InfocardBuilder, INFO_BASIC, KEY_CONTENT
 from tools.create_id import CreateId
 
 
@@ -66,6 +67,8 @@ class MissionAudio(object):
     START_HISTORY_ID = 1
 
     CUTSCENE_VOICES = []
+    MISC_NAMES_MAP = []
+    MISC_INFOCARDS_MAP = []
 
     ATTENUATION = 'attenuation = 0'
 
@@ -127,7 +130,7 @@ class MissionAudio(object):
                 actor = Trent
 
             else:
-                raise Exception('Unknown actor %s' % actor)
+                raise Exception('Unknown actor %s' % actor_name)
 
             ether_comm = EtherComm(
                 voiceline=voiceline,
@@ -322,8 +325,20 @@ class MissionAudio(object):
                     voiceline=ether_comm.voiceline,
                     dialog_id=ether_comm.dialog_id,
                     history_id=ether_comm.history_id,
-                    comm_appearance='tmp',
+                    comm_appearance=ether_comm.actor.COMM_APPEARANCE,
                 )
             )
 
         return DIVIDER.join(items)
+
+    def get_misc_rus_strings(self):
+        items = {}
+        for string_id, ru_text, en_text in self.MISC_NAMES_MAP:
+            items[string_id] = ru_text
+        return items
+
+    def get_misc_rus_infocards(self):
+        items = {}
+        for infocard_id, ru_text, en_text in self.MISC_INFOCARDS_MAP:
+            items[infocard_id] = InfocardBuilder.build_infocard(INFO_BASIC, {KEY_CONTENT: ru_text})
+        return items

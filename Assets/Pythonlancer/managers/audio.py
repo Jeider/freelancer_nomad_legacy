@@ -1,4 +1,5 @@
 from audio.mission_audio import MissionAudio
+from audio.mission7 import Mission7Audio
 from audio.mission8 import Mission8Audio
 from audio.actors import Actor
 
@@ -15,6 +16,8 @@ class AudioManager(object):
         self.cutscene_sounds_thn = []
         self.ether_comm_ru_strings = {}
         self.ether_comm_mission_texts = []
+        self.misc_ru_strings = {}
+        self.misc_ru_infocards = {}
 
         self.male_actors = {}
         self.female_actors = {}
@@ -37,6 +40,8 @@ class AudioManager(object):
             self.ether_comm_ru_strings.update(mission_sound.get_ingame_rus_dialog_strings())
             self.ether_comm_ru_strings.update(mission_sound.get_ingame_rus_history_strings())
             self.ether_comm_mission_texts.append(mission_sound.get_ingame_ether_comms())
+            self.misc_ru_strings.update(mission_sound.get_misc_rus_strings())
+            self.misc_ru_infocards.update(mission_sound.get_misc_rus_infocards())
 
     def get_ingame_sounds_ini(self):
         return DIVIDER.join(self.ingame_sounds_ini)
@@ -55,3 +60,9 @@ class AudioManager(object):
 
     def get_ether_comm_mission_texts(self):
         return DIVIDER.join(self.ether_comm_mission_texts)
+
+    def get_misc_ru_strings(self):
+        return StringCompiler.compile_names(self.misc_ru_strings)
+
+    def get_misc_ru_infocards(self):
+        return StringCompiler.compile_infocards(self.misc_ru_infocards)

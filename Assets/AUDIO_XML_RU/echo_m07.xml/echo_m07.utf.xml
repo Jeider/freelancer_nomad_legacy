@@ -36,6 +36,8 @@
 <test_voice name="0xa05c154e" type="file" filename="echo_m07_utf\dx_m07_0460_rockford.wav"/>
 <test_voice name="0xaebc1509" type="file" filename="echo_m07_utf\dx_m07_0480_rockford.wav"/>
 <test_voice name="0xb4f216cd" type="file" filename="echo_m07_utf\dx_m07_0550_bandit.wav"/>
+<test_voice name="0x97102381" type="file" filename="echo_m07_utf\dx_m07_2000_barman.wav"/>
+<test_voice name="0x9704228b" type="file" filename="echo_m07_utf\dx_m07_2010_barman.wav"/>
 
 
 

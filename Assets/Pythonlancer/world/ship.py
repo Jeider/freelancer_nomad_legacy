@@ -1663,7 +1663,7 @@ class DragonMk2(KusariShip, ShipElite, Ship3, Ship):
     SHIP_INDEX = SHIP_INDEX_10
     LIGHTS = 10
 
-    ARCHETYPE = 'ku_elite2'
+    ARCHETYPE = 'ku_dragon'
     RU_NAME = 'Дракон Мk.II'
     TEMPLATE_CODE = 'ke2'
     ICON = 'ku_elite.3db'

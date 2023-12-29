@@ -21,6 +21,10 @@ class InfocardBuilder(object):
         return inline_template.format(**template_params)
 
     @staticmethod
+    def merge_rows(rows):
+        return ''.join([INFO_ROW_BASIC_INLINE.format(content=row) for row in rows])
+
+    @staticmethod
     def build_equip_infocard(equip_name, equip_raw_info):
         compiled_content = []
         for item_content in equip_raw_info:
@@ -167,6 +171,13 @@ INFO_ROW_BASIC = [
     '<TEXT>{content}</TEXT>',
     '<PARA/>',
 ]
+INFO_ROW_BASIC_DOUBLE_DIVIDED = [
+    '<TEXT>{content}</TEXT>',
+    '<PARA/>',
+    '<TEXT> </TEXT>',
+    '<PARA/>',
+]
+INFO_ROW_BASIC_INLINE = ''.join(INFO_ROW_BASIC_DOUBLE_DIVIDED)
 
 INFO_ROW_BOLD = [
     '<TRA data="1" mask="1" def="-2"/>',
@@ -183,3 +194,13 @@ INFO_ROW_DANGER = [
 ]
 
 INFO_EXTRA_DIVIDER = '<TEXT> </TEXT><PARA/>'
+
+
+INFO_BASIC = [
+    '<?xml version="1.0" encoding="UTF-16"?>',
+    '<RDL>',
+    '<PUSH/>',
+    '{content}'
+    '<POP/>',
+    '</RDL>',
+]
