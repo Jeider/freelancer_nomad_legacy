@@ -3,6 +3,7 @@
 <UTFXML filename="echo_m08_player.utf">
    <UTF_ROOT>	
 
+<test_voice name="0x97032e84" type="file" filename="echo_m08_utf\dx_m08_7040_trent.wav"/>
 <test_voice name="0xab44c000" type="file" filename="echo_m08_utf\dx_m08_0005_trent.wav"/>
 <test_voice name="0xbb048082" type="file" filename="echo_m08_utf\dx_m08_0020_trent.wav"/>
 <test_voice name="0xbb045884" type="file" filename="echo_m08_utf\dx_m08_0040_trent.wav"/>

@@ -4,6 +4,8 @@
    <UTF_ROOT>	
 
 
+
+<test_voice name="0xaace00cf" type="file" filename="echo_m08_utf\dx_m08_7060_darcy.wav"/>
 <test_voice name="0x86c9aec9" type="file" filename="echo_m08_utf\dx_m08_0000_darcy.wav"/>
 <test_voice name="0xa6c9aac8" type="file" filename="echo_m08_utf\dx_m08_0010_darcy.wav"/>
 <test_voice name="0xa6c9e2ca" type="file" filename="echo_m08_utf\dx_m08_0030_darcy.wav"/>

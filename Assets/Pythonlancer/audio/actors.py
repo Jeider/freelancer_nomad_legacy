@@ -58,6 +58,7 @@ class Rockford(Actor):
 class Brighton(Actor):
     TYPE = ACTOR_MALE
     NAME = 'brighton'
+    COMM_APPEARANCE = 'br_brighton_head, br_brighton_body'
 
 
 class MaleCaptain(Actor):
