@@ -487,7 +487,40 @@
 <Static AudioFile="mod\m07\m07_cadiz_0060_rockford.wav" TextArea="Cinematic">I'm Rockford</Static>
 
 
-<Static AudioFile="mod\m07\m07_cadiz_0065_rockford.wav" TextArea="Cinematic">Follow me! Now!</Static>
+<Static AudioFile="mod\m07\m07_cadiz_0065_rockford.wav" TextArea="Cinematic">Follow me! Immediately!</Static>
+
+
+
+<Static AudioFile="mod\m07\m07_omega13_0010b_trent.wav" TextArea="Cinematic">Damn, Rockford, I'm immobilized!</Static>
+<Static AudioFile="mod\m07\m07_omega13_0020_rockford.wav" TextArea="Cinematic">I know.</Static>
+<Static AudioFile="mod\m07\m07_omega13_0030_trent.wav" TextArea="Cinematic">Rockford, what's happening? You are an ASF agent, you must help me.</Static>
+<Static AudioFile="mod\m07\m07_omega13_0040_rockford.wav" TextArea="Cinematic">I'm not an ASF agent.</Static>
+<Static AudioFile="mod\m07\m07_omega13_0050_trent.wav" TextArea="Cinematic">But you're going to destroy the artifacts.</Static>
+<Static AudioFile="mod\m07\m07_omega13_0060_rockford.wav" TextArea="Cinematic">The artifacts will survive the explosion of the ship.</Static>
+<Static AudioFile="mod\m07\m07_omega13_0100_trent.wav" TextArea="Cinematic">Come-on old-junk. Turn on!</Static>
+
+
+
+
+<Static AudioFile="mod\m07\m07_battleship_0010_trent.wav" TextArea="Cinematic">I need help! It is a matter of national importance!</Static>
+<Static AudioFile="mod\m07\m07_battleship_0020_barman.wav" TextArea="Cinematic">Huh, is it really? If so, then you should ask someone representitive of the State.</Static>
+<Static AudioFile="mod\m07\m07_battleship_0030_barman.wav" TextArea="Cinematic">Up there we have officer Darcy, she is one of a kind.</Static>
+<Static AudioFile="mod\m07\m07_battleship_0040_trent.wav" TextArea="Cinematic">My name is Trent. I work for a secret organisation tied to Order, and I must contact them ASAP.</Static>
+<Static AudioFile="mod\m07\m07_battleship_0050_darcy.wav" TextArea="Cinematic">And another one... Mister, don't you know that trading artifacts of alien origin is illegal?</Static>
+<Static AudioFile="mod\m07\m07_battleship_0060_darcy.wav" TextArea="Cinematic">We caught a pair of dealers just like you recently. They were claiming to be agents of the Order too, when we jailed them.</Static>
+<Static AudioFile="mod\m07\m07_battleship_0070_darcy.wav" TextArea="Cinematic">Do you want to keep a company to them or, perhaps, their friend, Napoleon in a mental assylum? </Static>
+<Static AudioFile="mod\m07\m07_battleship_0080_trent.wav" TextArea="Cinematic">I must deliver an artifact of great importance to the headquarters of our organistation as soon as possible.</Static>
+<Static AudioFile="mod\m07\m07_battleship_0090_trent.wav" TextArea="Cinematic">Or else I will be put to death and possibly you too. Speaking of artifacts...</Static>
+<Static AudioFile="mod\m07\m07_battleship_0100_darcy.wav" TextArea="Cinematic">Oh, wow... Impressive.</Static>
+<Static AudioFile="mod\m07\m07_battleship_0110_darcy.wav" TextArea="Cinematic">How do I know that it isn't from some souvenir shop for tourists?</Static>
+<Static AudioFile="mod\m07\m07_battleship_0120_trent.wav" TextArea="Cinematic">God damn it...</Static>
+<Static AudioFile="mod\m07\m07_battleship_0130_darcy.wav" TextArea="Cinematic">All righty then, I have a friend who is an expert on various rarities at a nearby station.</Static>
+<Static AudioFile="mod\m07\m07_battleship_0140_darcy.wav" TextArea="Cinematic">Let him take a look at this thing, and if you're telling the truth, I promice you any help I can offer.</Static>
+<Static AudioFile="mod\m07\m07_battleship_0150_darcy.wav" TextArea="Cinematic">But if it is indeed a souvenir, mister joker, I promice you a teaparty today with Napoleon.</Static>
+<Static AudioFile="mod\m07\m07_battleship_0160_trent.wav" TextArea="Cinematic">There is a problem. Almost all of the electric circuits on my ship is scorched, I'm not even sure how I managed to make it to this base.</Static>
+<Static AudioFile="mod\m07\m07_battleship_0170_darcy.wav" TextArea="Cinematic">All right, I will give you one of our ships.</Static>
+<Static AudioFile="mod\m07\m07_battleship_0180_darcy.wav" TextArea="Cinematic">But if you decide to use it to escape, keep in mind, that all of our ships are equipped with track beacons, so I'll find you anywhere. </Static>
+
 
 
 <Static AudioFile="mod\m07\m07_check_artifact_0010_trent.wav" TextArea="Cinematic">Wow! Looks like this guy's area of interests is wast.</Static>
@@ -516,6 +549,57 @@
 <Static AudioFile="mod\m07\m07_reward_0050_darcy.wav" TextArea="Cinematic">Yeah-yeah. Very funny, Trent. See you later.</Static>
 <Static AudioFile="mod\m07\m07_reward_0060_trent.wav" TextArea="Cinematic">Try not to drag this, Darcy.</Static>
 
+<Static AudioFile="mod\m08\m08_offer_0010_darcy.wav" TextArea="Cinematic">Hello. We're going to go into one room now, where there will be a couple of very big shots.</Static>
+<Static AudioFile="mod\m08\m08_offer_0020_darcy.wav" TextArea="Cinematic">Please try to behave more restrained.</Static>
+<Static AudioFile="mod\m08\m08_offer_0030_trent.wav" TextArea="Cinematic">Didn't understand anything, but I will try.</Static>
+<Static AudioFile="mod\m08\m08_offer_0040_brighton.wav" TextArea="Cinematic">Ah, this is Mrs.Darcy - our beauty and a hope for a bright future.</Static>
+<Static AudioFile="mod\m08\m08_offer_0050_kaitlyn.wav" TextArea="Cinematic">And this is, if I'm not mistaken, the expert on Order I was told so much about.</Static>
+<Static AudioFile="mod\m08\m08_offer_0060_darcy.wav" TextArea="Cinematic">Yes, this is mister Trent. Trent, this is admiral Brighton and princess Caitlin.</Static>
+<Static AudioFile="mod\m08\m08_offer_0070_brighton.wav" TextArea="Cinematic">And we have a matter of great importance for you, mister Trent.</Static>
+<Static AudioFile="mod\m08\m08_offer_0080_trent.wav" TextArea="Cinematic">What?Again?</Static>
+<Static AudioFile="mod\m08\m08_offer_0090_brighton.wav" TextArea="Cinematic">Mr.Trent, let's keep it serious. The matter of discussion is Bretonian's state integrity.</Static>
+<Static AudioFile="mod\m08\m08_offer_0100_trent.wav" TextArea="Cinematic">I'll try.</Static>
+<Static AudioFile="mod\m08\m08_offer_0110_brighton.wav" TextArea="Cinematic">We have a mission for you ... a mission corresponding to your specialty.</Static>
+<Static AudioFile="mod\m08\m08_offer_0120_trent.wav" TextArea="Cinematic">My specialty?</Static>
+<Static AudioFile="mod\m08\m08_offer_0130_brighton.wav" TextArea="Cinematic">Odrer, Mr.Trent, Order.</Static>
+<Static AudioFile="mod\m08\m08_offer_0140_trent.wav" TextArea="Cinematic">Ah...Aaaaah...</Static>
+<Static AudioFile="mod\m08\m08_offer_0150_brighton.wav" TextArea="Cinematic">Mr.Trent, I must inform you, that this mission is monitored by ... the most high rank officials of Bretonia.</Static>
+<Static AudioFile="mod\m08\m08_offer_0160_brighton.wav" TextArea="Cinematic">The lone fact, that Princess Caitlin is present on this meeting, should speak volumes to you.</Static>
+<Static AudioFile="mod\m08\m08_offer_0170_trent.wav" TextArea="Cinematic">Of all the woes may God deliver us from both:  from their love and their wrath.</Static>
+<Static AudioFile="mod\m08\m08_offer_0180_brighton.wav" TextArea="Cinematic">I don't share your scepticism, Mr.Trent, try to be more sagacious. </Static>
+<Static AudioFile="mod\m08\m08_offer_0190_brighton.wav" TextArea="Cinematic">You will do us a favor, and we, upon an opportunity, will do an offer to you in exchange.</Static>
+<Static AudioFile="mod\m08\m08_offer_0200_trent.wav" TextArea="Cinematic">Okay. What the task even is?</Static>
+<Static AudioFile="mod\m08\m08_offer_0210_brighton.wav" TextArea="Cinematic">Now that's the spirit, Mr.Trent. Princess?</Static>
+<Static AudioFile="mod\m08\m08_offer_0215_kaitlyn.wav" TextArea="Cinematic">Yeah...</Static>
+<Static AudioFile="mod\m08\m08_offer_0220_brighton.wav" TextArea="Cinematic">Mr.Trent, at some point in time, Bretonia have come to some agreement with Order.</Static>
+<Static AudioFile="mod\m08\m08_offer_0230_brighton.wav" TextArea="Cinematic">In essense it was summing up to Bretonia, ehem...</Static>
+<Static AudioFile="mod\m08\m08_offer_0235_brighton.wav" TextArea="Cinematic">Mr.Trent, have you heard of the Nomad problem?</Static>
+<Static AudioFile="mod\m08\m08_offer_0240_trent.wav" TextArea="Cinematic">More or less.</Static>
+<Static AudioFile="mod\m08\m08_offer_0250_brighton.wav" TextArea="Cinematic">Good. A bit of caution won't hurt, you understand me?</Static>
+<Static AudioFile="mod\m08\m08_offer_0260_brighton.wav" TextArea="Cinematic">So, according to this agreement, Bretonia abandoned its interests in the sectors of so called "Nomad Legacy". Do you know what I mean, Mr.Trent?</Static>
+<Static AudioFile="mod\m08\m08_offer_0270_trent.wav" TextArea="Cinematic">Slightly.</Static>
+<Static AudioFile="mod\m08\m08_offer_0280_brighton.wav" TextArea="Cinematic">Ehem, okay. In return, Order pledged to restrict the access to these systems for everyone. That is, to limit it completely. Do you understand me, Mr.Trent?</Static>
+<Static AudioFile="mod\m08\m08_offer_0290_brighton.wav" TextArea="Cinematic">And we naively believed, that ASF, as a direct successor, would adhere to the established agreements. But what do we have now?</Static>
+<Static AudioFile="mod\m08\m08_offer_0300_trent.wav" TextArea="Cinematic">What?...</Static>
+<Static AudioFile="mod\m08\m08_offer_0310_brighton.wav" TextArea="Cinematic">The fact, that those bastards from IRA are colonising Tau-44 at full speed.</Static>
+<Static AudioFile="mod\m08\m08_offer_0320_trent.wav" TextArea="Cinematic">Such bastards. Who's IRA by the way?</Static>
+<Static AudioFile="mod\m08\m08_offer_0330_brighton.wav" TextArea="Cinematic">Not "who" but "what". A group of fanatics, including religious ones, demanding the independence of Ireland from the Crown of Britain.</Static>
+<Static AudioFile="mod\m08\m08_offer_0340_trent.wav" TextArea="Cinematic">Funny enough, considering that in the Sirius sector there is neither Ireland, nor Britain Crown.</Static>
+<Static AudioFile="mod\m08\m08_offer_0350_kaitlyn.wav" TextArea="Cinematic">Mr.Trent...</Static>
+<Static AudioFile="mod\m08\m08_offer_0360_trent.wav" TextArea="Cinematic">What? As far As I know, there is no house of Ireland.</Static>
+<Static AudioFile="mod\m08\m08_offer_0370_kaitlyn.wav" TextArea="Cinematic">But there are Irish, unfortunately...</Static>
+<Static AudioFile="mod\m08\m08_offer_0380_brighton.wav" TextArea="Cinematic">Do you realize now how wild this is, Mr.Trent?</Static>
+<Static AudioFile="mod\m08\m08_offer_0390_trent.wav" TextArea="Cinematic">Let's assume I do. What do you want me to do?</Static>
+<Static AudioFile="mod\m08\m08_offer_0400_brighton.wav" TextArea="Cinematic">To help us a bit. To fly to Tau-44 as a member of an operating squad and purge it from the IRA pressense.</Static>
+<Static AudioFile="mod\m08\m08_offer_0410_brighton.wav" TextArea="Cinematic">Meanwhile, we suspect that ASF is directly involved in all of this. And here is where you come in handy.</Static>
+<Static AudioFile="mod\m08\m08_offer_0420_trent.wav" TextArea="Cinematic">As who? As someone, who will point at someone and say "He is from ASF"? Doesn't sound very convincing.</Static>
+<Static AudioFile="mod\m08\m08_offer_0430_kaitlyn.wav" TextArea="Cinematic">Uhhh...</Static>
+<Static AudioFile="mod\m08\m08_offer_0435_kaitlyn.wav" TextArea="Cinematic">Do fifty thosands sound convincing? You will just participate in a race, you don't have to become the winner.</Static>
+<Static AudioFile="mod\m08\m08_offer_0440_trent.wav" TextArea="Cinematic">The Olympic principle? For fifty thosands? Maybe I was too quick to say that there is no Britain Crown in the Sirius sector.</Static>
+<Static AudioFile="mod\m08\m08_offer_0450_kaitlyn.wav" TextArea="Cinematic">And you were smart enough to admit that. The direct leadership of this mission is on admiral Brighton, discuss all the details with him.</Static>
+<Static AudioFile="mod\m08\m08_offer_0460_kaitlyn.wav" TextArea="Cinematic">Gentlemen...</Static>
+<Static AudioFile="mod\m08\m08_offer_0470_brighton.wav" TextArea="Cinematic">Trent, there is my battleship, Prince of Wales, on the orbit of the planet. Dock it, I will grant all the necessary passes and permits.</Static>
+<Static AudioFile="mod\m08\m08_offer_0480_darcy.wav" TextArea="Cinematic">Trent, cya at "Prince of Wales".</Static>
 
 
 <Static AudioFile="mod\m08\m08_osiris_0010_hatcher.wav" TextArea="Cinematic">Mayo... uhhm... Sorry, general King, mayor Screw, Trent has been delivired.</Static>
