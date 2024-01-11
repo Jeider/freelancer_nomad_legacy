@@ -56,7 +56,7 @@ entities={
 		flags=HIDDEN,
 		spatialprops={
 			pos={
-				10550, -370, -30000
+				-3230, 50, 50
 			},
 			orient={
 				{1,0,0},
@@ -82,7 +82,7 @@ entities={
 		flags=HIDDEN,
 		spatialprops={
 			pos={
-				10600, -380, -30020
+				-3180, 0, 200
 			},
 			orient={
 				{1,0,0},
