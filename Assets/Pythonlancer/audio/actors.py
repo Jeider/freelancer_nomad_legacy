@@ -47,6 +47,7 @@ class Darcy(Actor):
 class Tilton(Actor):
     TYPE = ACTOR_MALE
     NAME = 'tilton'
+    COMM_APPEARANCE = 'pl_male4_head, li_tilton_body'
 
 
 class Rockford(Actor):
@@ -64,6 +65,7 @@ class Brighton(Actor):
 class MaleCaptain(Actor):
     TYPE = ACTOR_MALE
     NAME = 'captain'
+    COMM_APPEARANCE = 'li_captain_head, li_male_elite_body'
 
 
 class RedLeader(Actor):

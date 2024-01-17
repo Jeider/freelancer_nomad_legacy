@@ -3,44 +3,41 @@
 <UTFXML filename="echo_m08_player.utf">
    <UTF_ROOT>	
 
-<test_voice name="0x97032e84" type="file" filename="echo_m08_utf\dx_m08_7040_trent.wav"/>
-<test_voice name="0xab44c000" type="file" filename="echo_m08_utf\dx_m08_0005_trent.wav"/>
-<test_voice name="0xbb048082" type="file" filename="echo_m08_utf\dx_m08_0020_trent.wav"/>
-<test_voice name="0xbb045884" type="file" filename="echo_m08_utf\dx_m08_0040_trent.wav"/>
-<test_voice name="0xbb041086" type="file" filename="echo_m08_utf\dx_m08_0060_trent.wav"/>
-<test_voice name="0xbb05e888" type="file" filename="echo_m08_utf\dx_m08_0080_trent.wav"/>
-<test_voice name="0x9b05ec89" type="file" filename="echo_m08_utf\dx_m08_0090_trent.wav"/>
-<test_voice name="0x9b10cd8b" type="file" filename="echo_m08_utf\dx_m08_0110_trent.wav"/>
-<test_voice name="0x9b108589" type="file" filename="echo_m08_utf\dx_m08_0130_trent.wav"/>
-<test_voice name="0x9b10158d" type="file" filename="echo_m08_utf\dx_m08_0170_trent.wav"/>
-<test_voice name="0xbb4cca80" type="file" filename="echo_m08_utf\dx_m08_0200_trent.wav"/>
-<test_voice name="0x9b4c8683" type="file" filename="echo_m08_utf\dx_m08_0230_trent.wav"/>
-<test_voice name="0xbb4c5a84" type="file" filename="echo_m08_utf\dx_m08_0240_trent.wav"/>
-<test_voice name="0x9b4c1687" type="file" filename="echo_m08_utf\dx_m08_0270_trent.wav"/>
-<test_voice name="0xbb58cb8a" type="file" filename="echo_m08_utf\dx_m08_0300_trent.wav"/>
-<test_voice name="0xbb588388" type="file" filename="echo_m08_utf\dx_m08_0320_trent.wav"/>
-<test_voice name="0xbb585b8e" type="file" filename="echo_m08_utf\dx_m08_0340_trent.wav"/>
-<test_voice name="0xbb58138c" type="file" filename="echo_m08_utf\dx_m08_0360_trent.wav"/>
-<test_voice name="0xbb59eb82" type="file" filename="echo_m08_utf\dx_m08_0380_trent.wav"/>
-<test_voice name="0xbb94cc80" type="file" filename="echo_m08_utf\dx_m08_0400_trent.wav"/>
-<test_voice name="0x9b948083" type="file" filename="echo_m08_utf\dx_m08_0430_trent.wav"/>
-<test_voice name="0xbb805d8e" type="file" filename="echo_m08_utf\dx_m08_0540_trent.wav"/>
-<test_voice name="0x9b81e983" type="file" filename="echo_m08_utf\dx_m08_0590_trent.wav"/>
-<test_voice name="0x9bdc8283" type="file" filename="echo_m08_utf\dx_m08_0630_trent.wav"/>
-<test_voice name="0x9bdc5a85" type="file" filename="echo_m08_utf\dx_m08_0650_trent.wav"/>
-<test_voice name="0xbbc8cf8a" type="file" filename="echo_m08_utf\dx_m08_0700_trent.wav"/>
-<test_voice name="0x9bc88389" type="file" filename="echo_m08_utf\dx_m08_0730_trent.wav"/>
-<test_voice name="0xba248882" type="file" filename="echo_m08_utf\dx_m08_0820_trent.wav"/>
-<test_voice name="0xba245084" type="file" filename="echo_m08_utf\dx_m08_0840_trent.wav"/>
-<test_voice name="0xba241886" type="file" filename="echo_m08_utf\dx_m08_0860_trent.wav"/>
-<test_voice name="0xba31e182" type="file" filename="echo_m08_utf\dx_m08_0980_trent.wav"/>
-<test_voice name="0xaf055284" type="file" filename="echo_m08_utf\dx_m08_1040_trent.wav"/>
-<test_voice name="0xaf051a86" type="file" filename="echo_m08_utf\dx_m08_1060_trent.wav"/>
-<test_voice name="0xaf04e288" type="file" filename="echo_m08_utf\dx_m08_1080_trent.wav"/>
-<test_voice name="0xaf11c38a" type="file" filename="echo_m08_utf\dx_m08_1100_trent.wav"/>
-<test_voice name="0xaf111b8c" type="file" filename="echo_m08_utf\dx_m08_1160_trent.wav"/>
-
-
+<test_voice name="0x97032E84" type="file" filename="echo_m08_player\dx_m08_7040_trent.wav"/>
+<test_voice name="0xBB048082" type="file" filename="echo_m08_player\dx_m08_0020_trent.wav"/>
+<test_voice name="0xBB045884" type="file" filename="echo_m08_player\dx_m08_0040_trent.wav"/>
+<test_voice name="0xBB041086" type="file" filename="echo_m08_player\dx_m08_0060_trent.wav"/>
+<test_voice name="0xBB05E888" type="file" filename="echo_m08_player\dx_m08_0080_trent.wav"/>
+<test_voice name="0x9B05EC89" type="file" filename="echo_m08_player\dx_m08_0090_trent.wav"/>
+<test_voice name="0x9B10CD8B" type="file" filename="echo_m08_player\dx_m08_0110_trent.wav"/>
+<test_voice name="0x9B108589" type="file" filename="echo_m08_player\dx_m08_0130_trent.wav"/>
+<test_voice name="0x9B10158D" type="file" filename="echo_m08_player\dx_m08_0170_trent.wav"/>
+<test_voice name="0xBB4CCA80" type="file" filename="echo_m08_player\dx_m08_0200_trent.wav"/>
+<test_voice name="0x9B4C8683" type="file" filename="echo_m08_player\dx_m08_0230_trent.wav"/>
+<test_voice name="0xBB4C5A84" type="file" filename="echo_m08_player\dx_m08_0240_trent.wav"/>
+<test_voice name="0x9B4C1687" type="file" filename="echo_m08_player\dx_m08_0270_trent.wav"/>
+<test_voice name="0xBB58CB8A" type="file" filename="echo_m08_player\dx_m08_0300_trent.wav"/>
+<test_voice name="0xBB588388" type="file" filename="echo_m08_player\dx_m08_0320_trent.wav"/>
+<test_voice name="0xBB585B8E" type="file" filename="echo_m08_player\dx_m08_0340_trent.wav"/>
+<test_voice name="0xBB58138C" type="file" filename="echo_m08_player\dx_m08_0360_trent.wav"/>
+<test_voice name="0xBB59EB82" type="file" filename="echo_m08_player\dx_m08_0380_trent.wav"/>
+<test_voice name="0xBB94CC80" type="file" filename="echo_m08_player\dx_m08_0400_trent.wav"/>
+<test_voice name="0x9B948083" type="file" filename="echo_m08_player\dx_m08_0430_trent.wav"/>
+<test_voice name="0xBB805D8E" type="file" filename="echo_m08_player\dx_m08_0540_trent.wav"/>
+<test_voice name="0x9B81E983" type="file" filename="echo_m08_player\dx_m08_0590_trent.wav"/>
+<test_voice name="0x9BDC8283" type="file" filename="echo_m08_player\dx_m08_0630_trent.wav"/>
+<test_voice name="0x9BDC5A85" type="file" filename="echo_m08_player\dx_m08_0650_trent.wav"/>
+<test_voice name="0xBBC8CF8A" type="file" filename="echo_m08_player\dx_m08_0700_trent.wav"/>
+<test_voice name="0x9BC88389" type="file" filename="echo_m08_player\dx_m08_0730_trent.wav"/>
+<test_voice name="0xBA248882" type="file" filename="echo_m08_player\dx_m08_0820_trent.wav"/>
+<test_voice name="0xBA245084" type="file" filename="echo_m08_player\dx_m08_0840_trent.wav"/>
+<test_voice name="0xBA241886" type="file" filename="echo_m08_player\dx_m08_0860_trent.wav"/>
+<test_voice name="0xBA31E182" type="file" filename="echo_m08_player\dx_m08_0980_trent.wav"/>
+<test_voice name="0xAF055284" type="file" filename="echo_m08_player\dx_m08_1040_trent.wav"/>
+<test_voice name="0xAF051A86" type="file" filename="echo_m08_player\dx_m08_1060_trent.wav"/>
+<test_voice name="0xAF04E288" type="file" filename="echo_m08_player\dx_m08_1080_trent.wav"/>
+<test_voice name="0xAF11C38A" type="file" filename="echo_m08_player\dx_m08_1100_trent.wav"/>
+<test_voice name="0xAF111B8C" type="file" filename="echo_m08_player\dx_m08_1160_trent.wav"/>
 
 
 

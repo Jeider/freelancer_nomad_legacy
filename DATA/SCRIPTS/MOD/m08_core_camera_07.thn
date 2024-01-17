@@ -2,7 +2,7 @@ duration=30
 
 entities={
 	{
-		entity_name="scene_tau44_li",
+		entity_name="scene_core_cam7",
 		type=SCENE,
 		template_name="",
 		template_id=0,
@@ -56,7 +56,7 @@ entities={
 		flags=HIDDEN,
 		spatialprops={
 			pos={
-				-3230, 50, 50
+				-25, 0, -1000
 			},
 			orient={
 				{1,0,0},
@@ -82,7 +82,7 @@ entities={
 		flags=HIDDEN,
 		spatialprops={
 			pos={
-				-3180, 0, 200
+				45, 0, -970
 			},
 			orient={
 				{1,0,0},
@@ -146,6 +146,25 @@ events={
 		}
 	},
 	
+	-- {
+		-- 0,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "cam",
+			-- "cam_pos2"
+		-- },
+		-- {
+			-- duration=5,
+			-- target_part="",
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- pos={0,0,0},
+				-- q_orient={1,0,0,0}
+			-- },
+			-- param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
+			-- pcurve_period=-1000
+		-- }
+	-- },
 		
 }
 

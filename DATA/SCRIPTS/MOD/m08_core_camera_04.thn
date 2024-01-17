@@ -2,7 +2,7 @@ duration=30
 
 entities={
 	{
-		entity_name="scene_tau44_li",
+		entity_name="scene_core_cam4",
 		type=SCENE,
 		template_name="",
 		template_id=0,
@@ -56,7 +56,7 @@ entities={
 		flags=HIDDEN,
 		spatialprops={
 			pos={
-				-3230, 50, 50
+				-10, 2, -800
 			},
 			orient={
 				{1,0,0},
@@ -71,26 +71,7 @@ entities={
 			farplane=5000
 		}
 	},
-	
-	{
-		entity_name="cam_marker",
-		type=MARKER,
-		template_name="",
-		lt_grp=0,
-		srt_grp=0,
-		usr_flg=0,
-		flags=HIDDEN,
-		spatialprops={
-			pos={
-				-3180, 0, 200
-			},
-			orient={
-				{1,0,0},
-				{0,1,0},
-				{0,0,1}
-			}
-		}
-	},
+
 	{
 		entity_name="main_object",
 		type=MARKER,
@@ -129,7 +110,7 @@ events={
 		ATTACH_ENTITY,
 		{
 			"cam",
-			"cam_marker"
+			"main_object"
 		},
 		{
 			duration=300,
@@ -146,6 +127,7 @@ events={
 		}
 	},
 	
+
 		
 }
 

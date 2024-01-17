@@ -4,7 +4,7 @@ from audio.mission8 import Mission8Audio
 from audio.actors import Actor
 
 from text.strings import StringCompiler
-from text.dividers import DIVIDER
+from text.dividers import DIVIDER, SINGLE_DIVIDER
 
 
 class AudioManager(object):
@@ -12,6 +12,7 @@ class AudioManager(object):
     def __init__(self):
         self.ingame_sounds_ini = []
         self.ingame_sounds_xml = []
+        self.space_subtitle_xml = []
         self.cutscene_sounds_ini = []
         self.cutscene_sounds_thn = []
         self.ether_comm_ru_strings = {}
@@ -35,6 +36,7 @@ class AudioManager(object):
             mission_sound = mission_sound_class(self.male_actors, self.female_actors)
             self.ingame_sounds_ini.append(mission_sound.get_ini_ingame_voicefile_content())
             self.ingame_sounds_xml.append(mission_sound.get_utf_file_content())
+            self.space_subtitle_xml.append(mission_sound.get_space_subtitles())
             self.cutscene_sounds_ini.append(mission_sound.get_ini_cutscene_sounds_content())
             self.cutscene_sounds_thn.append(mission_sound.get_thn_cutscene_sounds_content())
             self.ether_comm_ru_strings.update(mission_sound.get_ingame_rus_dialog_strings())
@@ -48,6 +50,9 @@ class AudioManager(object):
 
     def get_ingame_sounds_xml(self):
         return DIVIDER.join(self.ingame_sounds_xml)
+
+    def get_space_subtitles_xml(self):
+        return DIVIDER.join(self.space_subtitle_xml)
 
     def get_cutscene_sounds_ini(self):
         return DIVIDER.join(self.cutscene_sounds_ini)

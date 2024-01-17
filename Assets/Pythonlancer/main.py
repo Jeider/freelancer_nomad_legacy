@@ -66,6 +66,8 @@ def main():
             ('audio_ingame.ini', core.audio.get_ingame_sounds_ini()),
             ('audio_ingame.xml', core.audio.get_ingame_sounds_xml()),
 
+            ('audio_space_subtitle.xml', core.audio.get_space_subtitles_xml()),
+
             ('audio_cutscenes.ini', core.audio.get_cutscene_sounds_ini()),
             ('audio_cutscenes.lua', core.audio.get_cutscene_sounds_thn()),
 

@@ -24,6 +24,8 @@ ETHER_COMM_TEMPLATE = (
     'Act_NNIds = {history_id}, HISTORY'
 )
 
+SPACE_XML_TEMPLATE = '<Static AudioFile="{voicepack_name}.utf|{voiceline_hash}" TextArea="Cinematic">{text}</Static>'
+
 
 class EtherComm(object):
 
@@ -69,6 +71,7 @@ class MissionAudio(object):
     CUTSCENE_VOICES = []
     MISC_NAMES_MAP = []
     MISC_INFOCARDS_MAP = []
+    SPACE_XML_LINES = []
 
     ATTENUATION = 'attenuation = 0'
 
@@ -113,7 +116,7 @@ class MissionAudio(object):
         return voiceline.split('_')[-1] 
 
     def parse_ingame_audio(self):
-        for voiceline, rus_text in self.INGAME_VOICES_MAP:
+        for voiceline, rus_text, eng_text in self.INGAME_VOICES_MAP:
             actor_name = self.get_actor_from_voiceline(voiceline)
             actor = None
 
@@ -138,7 +141,7 @@ class MissionAudio(object):
                 dialog_id=self.get_next_dialog_id(),
                 history_id=self.get_next_history_id(),
                 rus_text=rus_text,
-                eng_text='',
+                eng_text=eng_text,
             )
             self.ether_comms.append(ether_comm)
 
@@ -230,6 +233,12 @@ class MissionAudio(object):
     def get_hash_for_voiceline(self, voiceline_nickname):
         return CreateId.get_id(voiceline_nickname)
 
+    def get_hash_for_voiceline_upper(self, voiceline_nickname):
+        the_id = self.get_hash_for_voiceline(voiceline_nickname)
+        return '0x{upper_id}'.format(
+            upper_id=str(the_id)[2:].upper()
+        )
+
     def _get_utf_file_content(self, voicelines, voicepack_nickname):
         items = [
             XML_INIT,
@@ -239,7 +248,7 @@ class MissionAudio(object):
         for voiceline_nickname in voicelines:
             template_params = {
                 'voiceline_nickname': voiceline_nickname,
-                'voiceline_hash': self.get_hash_for_voiceline(voiceline_nickname),
+                'voiceline_hash': self.get_hash_for_voiceline_upper(voiceline_nickname),
                 'folder': voicepack_nickname,
             }
             items.append(XML_ITEM_TEMPLATE.format(**template_params))
@@ -328,6 +337,23 @@ class MissionAudio(object):
                     comm_appearance=ether_comm.actor.COMM_APPEARANCE,
                 )
             )
+
+        return DIVIDER.join(items)
+
+    def get_space_subtitles(self):
+        items = []
+
+        for ether_comm in self.ether_comms:
+            if ether_comm.voiceline not in self.SPACE_XML_LINES:
+                continue
+
+            items.append(
+                SPACE_XML_TEMPLATE.format(
+                    voicepack_name=self.get_voicepack_by_actor(ether_comm.actor),
+                    voiceline_hash=self.get_hash_for_voiceline_upper(ether_comm.voiceline),
+                    text=ether_comm.eng_text,
+                )
+            )        
 
         return DIVIDER.join(items)
 

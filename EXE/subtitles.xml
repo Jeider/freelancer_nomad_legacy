@@ -524,22 +524,20 @@
 
 
 <Static AudioFile="mod\m07\m07_check_artifact_0010_trent.wav" TextArea="Cinematic">Wow! Looks like this guy's area of interests is wast.</Static>
-
 <Static AudioFile="mod\m07\m07_check_artifact_0020_jabba.wav" TextArea="Cinematic">I'm interested in rare trinkets, that are profitable to buy and even more profitable to sell.</Static>
-
 <Static AudioFile="mod\m07\m07_check_artifact_0030_jabba.wav" TextArea="Cinematic">Greetings, Darcy.</Static>
-
 <Static AudioFile="mod\m07\m07_check_artifact_0040_darcy.wav" TextArea="Cinematic">Hi, Jabba. I want you to check out something.</Static>
-
 <Static AudioFile="mod\m07\m07_check_artifact_0050_jabba.wav" TextArea="Cinematic">Wow! Quite an interesting thing, clearly of alien origin.</Static>
-
 <Static AudioFile="mod\m07\m07_check_artifact_0060_jabba.wav" TextArea="Cinematic">If you're so happened to be broke right now, I can pay you ten thosands credits right away.</Static>
-
 <Static AudioFile="mod\m07\m07_check_artifact_0070_darcy.wav" TextArea="Cinematic">Oh, shit... So much for "drink a beer at the bar". Okay, Trent, we're leaving.</Static>
-
 <Static AudioFile="mod\m07\m07_check_artifact_0080_darcy.wav" TextArea="Cinematic">Jabba, you aren't a fool, are you? You will keep your mouth shut, am I right?</Static>
-
 <Static AudioFile="mod\m07\m07_check_artifact_0090_jabba.wav" TextArea="Cinematic">Of course, Darcy, of course...  </Static>
+
+
+
+<Static AudioFile="echo_m07.utf|0xB4F216CD" TextArea="Cinematic">Freelancer, you have something we really need. Give it to us the easy way.</Static>
+<Static AudioFile="echo_m07_female.utf|0xA64AF807" TextArea="Cinematic">Guys, are you nuts? This is my spot and I'm the cop here. Come on, Trent, let's beat these goons.</Static>
+
 
 
 <Static AudioFile="mod\m07\m07_reward_0010_darcy.wav" TextArea="Cinematic">Thank you, Trent. I understand that one good turn deserves another, but can't it wait a bit? Turns out not all of the trinkets this bastard had were "bought".</Static>
@@ -601,6 +599,32 @@
 <Static AudioFile="mod\m08\m08_offer_0470_brighton.wav" TextArea="Cinematic">Trent, there is my battleship, Prince of Wales, on the orbit of the planet. Dock it, I will grant all the necessary passes and permits.</Static>
 <Static AudioFile="mod\m08\m08_offer_0480_darcy.wav" TextArea="Cinematic">Trent, cya at "Prince of Wales".</Static>
 
+<Static AudioFile="echo_m08_female.utf|0xA695E1C0" TextArea="Cinematic">Trent, there must be a door.</Static>
+<Static AudioFile="echo_m08_player.utf|0xBB585B8E" TextArea="Cinematic">But there is none.</Static>
+<Static AudioFile="echo_m08_female.utf|0xA69539C6" TextArea="Cinematic">Then make it yourself.</Static>
+<Static AudioFile="echo_m08_player.utf|0xBB58138C" TextArea="Cinematic">I'm starting to fear you, woman.</Static>
+<Static AudioFile="echo_m08_female.utf|0xA69571C4" TextArea="Cinematic">The core? God damn it...</Static>
+<Static AudioFile="echo_m08_player.utf|0xBB59EB82" TextArea="Cinematic">We're lucky we got here.</Static>
+<Static AudioFile="echo_m08.utf|0x8AAB4781" TextArea="Cinematic">Trent??? How did you get there? Especially accompanied by a Betonian officer.</Static>
+<Static AudioFile="echo_m08_player.utf|0xBB94CC80" TextArea="Cinematic">What are you doing here yourself? And where "here" even is?</Static>
+<Static AudioFile="echo_m08.utf|0xA78C3981" TextArea="Cinematic">I will tell you, Trent. Until then, don't do anything stupid, or else my guys will incinerate you in a moment together with your Bretonian chick.</Static>
+<Static AudioFile="echo_m08_female.utf|0x8659E2CB" TextArea="Cinematic">"Your bretonian chick"?! Who dou you think...</Static>
+<Static AudioFile="echo_m08_player.utf|0x9B948083" TextArea="Cinematic">Darcy, not now.</Static>
+<Static AudioFile="echo_m08.utf|0xA7083C8B" TextArea="Cinematic">Yeah, Darcy, you better listen to your boyfriend - this way you'll remain intact. The firearm superiority is on my side. Captain Warfish, are cruiser's cannons ready? </Static>
+<Static AudioFile="echo_m08.utf|0x8A557B46" TextArea="Cinematic">The capacitors are forty-three percent charged.</Static>
+<Static AudioFile="echo_m08.utf|0xA7403E8B" TextArea="Cinematic">We have a couple of minutes, Trent. What is "here"? "Here" is the Nomad Lair. Why am I here? By my goverment's order.</Static>
+<Static AudioFile="echo_m08.utf|0xA7543F81" TextArea="Cinematic">The Order has betrayed us. The goverment of Liberty has patronized order at the time of it becoming unlike any other goverment did, but as soon as Order has grown to it's full power, all of it was forgotten.</Static>
+<Static AudioFile="echo_m08.utf|0xA6B8308B" TextArea="Cinematic">All the data on Nomad technology was seized and classified by the top of the Order. After the split, our agents managed to get access to the ASF part of the archive, related to the Nomad Lair.</Static>
+<Static AudioFile="echo_m08.utf|0xA6AC3181" TextArea="Cinematic">This is a huge facility for the production of the Nomad attack fighter squadrons. If I manage to activate it, it will endlessly produce nomad seeds.</Static>
+<Static AudioFile="echo_m08.utf|0xB399328B" TextArea="Cinematic">Each such seed, deployed to an enemy zone, will unfold as a hive of fighters.</Static>
+<Static AudioFile="echo_m08.utf|0x9B511342" TextArea="Cinematic">The capacitors are charged.</Static>
+<Static AudioFile="echo_m08.utf|0xB3D1308B" TextArea="Cinematic">And you are honoured to be here at this historic moment.</Static>
+<Static AudioFile="echo_m08_female.utf|0xA64DE7C0" TextArea="Cinematic">Stupid bastard.</Static>
+<Static AudioFile="echo_m08_player.utf|0xBB805D8E" TextArea="Cinematic">Tilton, are you even sure, that after the activation, everything will be just as you said? That nothing will blow up, stuff like that? That the fighters won't attack us?</Static>
+<Static AudioFile="echo_m08.utf|0xB31D3781" TextArea="Cinematic">Captain Warfish, open fire!</Static>
+<Static AudioFile="echo_m08.utf|0xB7566542" TextArea="Cinematic">Uhhhm. Commander Tilton, are you sure?</Static>
+<Static AudioFile="echo_m08.utf|0xB3553581" TextArea="Cinematic">Yes! Hell yes, I am! And if you don't open fire, Warfish, I swear, I'll come to your bridge and smear your head against a nearest bulkhead.</Static>
+
 
 <Static AudioFile="mod\m08\m08_osiris_0010_hatcher.wav" TextArea="Cinematic">Mayo... uhhm... Sorry, general King, mayor Screw, Trent has been delivired.</Static>
 <Static AudioFile="mod\m08\m08_osiris_0020_king.wav" TextArea="Cinematic">Thanks, Miss Hatcher.</Static>
@@ -642,6 +666,8 @@
 <Static AudioFile="mod\m08\m08_osiris_0360_king.wav" TextArea="Cinematic">Miss Hatcher, retrieve all data on Agent Alaric and hand it over to mister Trent.</Static>
 <Static AudioFile="mod\m08\m08_osiris_0370_king.wav" TextArea="Cinematic">Next, your task will be to escortthe  tome of Proteus along with Trent and Miss Darcy to the research base.</Static>
 <Static AudioFile="mod\m08\m08_osiris_0380_hatcher.wav" TextArea="Cinematic">Roger!</Static>
+
+
 
 
 
