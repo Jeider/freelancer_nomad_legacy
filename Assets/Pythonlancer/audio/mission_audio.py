@@ -355,7 +355,7 @@ class MissionAudio(object):
                 )
             )        
 
-        return DIVIDER.join(items)
+        return SINGLE_DIVIDER.join(items)
 
     def get_misc_rus_strings(self):
         items = {}

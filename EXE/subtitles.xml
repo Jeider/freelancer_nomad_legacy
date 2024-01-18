@@ -599,6 +599,7 @@
 <Static AudioFile="mod\m08\m08_offer_0470_brighton.wav" TextArea="Cinematic">Trent, there is my battleship, Prince of Wales, on the orbit of the planet. Dock it, I will grant all the necessary passes and permits.</Static>
 <Static AudioFile="mod\m08\m08_offer_0480_darcy.wav" TextArea="Cinematic">Trent, cya at "Prince of Wales".</Static>
 
+<Static AudioFile="echo_m08_player.utf|0xBB588388" TextArea="Cinematic">Dead end. Your suggestions?</Static>
 <Static AudioFile="echo_m08_female.utf|0xA695E1C0" TextArea="Cinematic">Trent, there must be a door.</Static>
 <Static AudioFile="echo_m08_player.utf|0xBB585B8E" TextArea="Cinematic">But there is none.</Static>
 <Static AudioFile="echo_m08_female.utf|0xA69539C6" TextArea="Cinematic">Then make it yourself.</Static>
