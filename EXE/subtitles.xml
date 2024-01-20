@@ -626,6 +626,20 @@
 <Static AudioFile="echo_m08.utf|0xB7566542" TextArea="Cinematic">Uhhhm. Commander Tilton, are you sure?</Static>
 <Static AudioFile="echo_m08.utf|0xB3553581" TextArea="Cinematic">Yes! Hell yes, I am! And if you don't open fire, Warfish, I swear, I'll come to your bridge and smear your head against a nearest bulkhead.</Static>
 
+<Static AudioFile="echo_m08_female.utf|0xA7E9A2C8" TextArea="Cinematic">Trent, Brighton was the only... The only human worth something among these...</Static>
+<Static AudioFile="echo_m08_player.utf|0xBA248882" TextArea="Cinematic">I understand, Darcy, but we need to...</Static>
+<Static AudioFile="echo_m08_female.utf|0x9E98BBCE" TextArea="Cinematic">You need to freeze and hold your breath.</Static>
+<Static AudioFile="echo_m08_player.utf|0xBA245084" TextArea="Cinematic">Hatcher.</Static>
+<Static AudioFile="echo_m08_female.utf|0xA69EC7CE" TextArea="Cinematic">Mister Trent, you haven't forget me, have you?</Static>
+<Static AudioFile="echo_m08_player.utf|0xBA241886" TextArea="Cinematic">Mrs.Hatcher, you're unforgetable.</Static>
+<Static AudioFile="echo_m08_female.utf|0x8E9CD3CE" TextArea="Cinematic">You're such an asshole, Trent. Red-One, keep this character at gunpoint. If he bursts - I allow you to open fire to kill. You answer for it with your head.</Static>
+<Static AudioFile="echo_m08.utf|0x9CC8EDC3" TextArea="Cinematic">Understood.</Static>
+<Static AudioFile="echo_m08_female.utf|0x96923FCE" TextArea="Cinematic">And, Trent, why it is so, that whenever I see any exploding pile of crap, you're always there nearby? Are you a sanitation worker? A plumber? WHO THE HELL ARE YOU ???</Static>
+<Static AudioFile="echo_m08_female.utf|0x87FDA7C3" TextArea="Cinematic">Perhaps, it'd better be me to answer that. One of yours, commander Tilton, decided to activate the Nomad combat fighters construction facility.</Static>
+<Static AudioFile="echo_m08_female.utf|0xA7FDA3C2" TextArea="Cinematic">But instead, he overloaded it, and his cruiser, battleship "Prince of Wales", which came to aid us, and a bunch of people from both sides.</Static>
+<Static AudioFile="echo_m08_female.utf|0x8B99B1CA" TextArea="Cinematic">Tilton... Sick megalomaniac bastard. I hope he died in agony. </Static>
+<Static AudioFile="echo_m08_female.utf|0x9F98BBCA" TextArea="Cinematic">Okay. You'll follow me to our base. Red-One, you'll stay here near the object's debris, conduct surface scan, I'll send some eggheads from the base to assist.</Static>
+<Static AudioFile="echo_m08.utf|0x99D7EF49" TextArea="Cinematic">Affirmative!</Static>
 
 <Static AudioFile="mod\m08\m08_osiris_0010_hatcher.wav" TextArea="Cinematic">Mayo... uhhm... Sorry, general King, mayor Screw, Trent has been delivired.</Static>
 <Static AudioFile="mod\m08\m08_osiris_0020_king.wav" TextArea="Cinematic">Thanks, Miss Hatcher.</Static>

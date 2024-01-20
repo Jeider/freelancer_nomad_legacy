@@ -36,6 +36,7 @@ class Trent(Actor):
 class Hatcher(Actor):
     TYPE = ACTOR_FEMALE
     NAME = 'hatcher'
+    COMM_APPEARANCE = 'pl_female2_head, li_hatcher_body, comm_li_hatcher_female'
 
 
 class Darcy(Actor):
@@ -71,6 +72,7 @@ class MaleCaptain(Actor):
 class RedLeader(Actor):
     TYPE = ACTOR_MALE
     NAME = 'red'
+    COMM_APPEARANCE = 'li_captain_head, li_male_elite_body, comm_li_elite'
 
 
 class Bandit(Actor):

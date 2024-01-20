@@ -449,72 +449,72 @@ class Mission8Audio(MissionAudio):
         (
             'dx_m08_0810_darcy',
             r'Дерси:\nТрент, Брайтон был единственным... Единственным человеком... Единственным стоящим человеком среди всех этих...',
-            '',
+            'Trent, Brighton was the only... The only human worth something among these...',
         ),
         (
             'dx_m08_0820_trent',
             r'Трент:\nЯ понимаю, Дерси, но нам надо...',
-            '',
+            'I understand, Darcy, but we need to...',
         ),
         (
             'dx_m08_0830_hatcher',
             r'Хетчер:\nВам надо замереть на месте и даже не дышать.',
-            '',
+            'You need to freeze and hold your breath.',
         ),
         (
             'dx_m08_0840_trent',
             r'Трент:\nХетчер.',
-            '',
+            'Hatcher.',
         ),
         (
             'dx_m08_0850_hatcher',
             r'Хетчер:\nМистер Трент. Вы меня не забыли?',
-            '',
+            "Mister Trent, you haven't forget me, have you?",
         ),
         (
             'dx_m08_0860_trent',
             r'Трент:\nМисс Хетчер, вы незабываемы.',
-            '',
+            "Mrs.Hatcher, you're unforgetable.",
         ),
         (
             'dx_m08_0870_hatcher',
             r'Хетчер:\nНу ты и засранец, Трент. Красный-один, держите этого персонажа на мушке, если рыпнется - разрешаю открыть огонь на поражение. Отвечаешь за него головой...',
-            '',
+            "You're such an asshole, Trent. Red-One, keep this character at gunpoint. If he bursts - I allow you to open fire to kill. You answer for it with your head.",
         ),
         (
             'dx_m08_0880_red',
             r'Красный 1:\nПринял.',
-            '',
+            'Understood.',
         ),
         (
             'dx_m08_0890_hatcher',
             r'Хетчер:\nИтак, что тут случилось? И, Трент, почему, стоит мне увидеть на горизонте прорыв какого-нибудь дерьма, ты обязательно оказываешься рядом? Ты ассенизатор? Сантехник? КТО ТЫ, ТВОЮ МАТЬ???',
-            '',
+            "And, Trent, why it is so, that whenever I see any exploding pile of crap, you're always there nearby? Are you a sanitation worker? A plumber? WHO THE HELL ARE YOU ???",
         ),
         (
             'dx_m08_0900_darcy',
             r'Дерси:\nНаверное, лучше я расскажу. Один из ваших - коммандер Тилтон - решил запустить фабрику кочевников по производству боевых истребителей. ',
-            '',
+            "Perhaps, it'd better be me to answer that. One of yours, commander Tilton, decided to activate the Nomad combat fighters construction facility.",
         ),
         (
             'dx_m08_0910_darcy',
             r'Дерси:\nНо вместо этого перегрузил ее и пустил вразнос, при этом погиб его крейсер, линкор "Принц Уэльский" пришедший к нам на выручку, и куча людей с обеих сторон.',
-            '',
+            'But instead, he overloaded it, and his cruiser, battleship "Prince of Wales", which came to aid us, and a bunch of people from both sides.',
         ),
         (
             'dx_m08_0920_hatcher',
             r'Хетчер:\nТилтон... Больной ублюдок с манией величия... Я надеюсь, он мучился перед смертью.',
-            '',
+            'Tilton... Sick megalomaniac bastard. I hope he died in agony. ',
         ),
         (
             'dx_m08_0930_hatcher',
             r'Хетчер:\nХорошо. Вы проследуете со мной до нашей базы. Красный-один, вы остаетесь рядом с обломками объекта, начните поверхностное изучение, я пришлю вам с базы яйцеголовых в помощь.',
-            '',
+            "Okay. You'll follow me to our base. Red-One, you'll stay here near the object's debris, conduct surface scan, I'll send some eggheads from the base to assist.",
         ),
         (
             'dx_m08_0940_red',
             r'Красный 1:\nТак точно!',
-            '',
+            'Affirmative!',
         ),
         (
             'dx_m08_0950_hatcher',
@@ -833,4 +833,22 @@ class Mission8Audio(MissionAudio):
         'dx_m08_0550_tilton',
         'dx_m08_0560_captain',
         'dx_m08_0570_tilton',
+        'dx_m08_0810_darcy',
+        'dx_m08_0820_trent',
+        'dx_m08_0830_hatcher',
+        'dx_m08_0840_trent',
+        'dx_m08_0850_hatcher',
+        'dx_m08_0860_trent',
+        'dx_m08_0870_hatcher',
+        'dx_m08_0880_red',
+        'dx_m08_0890_hatcher',
+        'dx_m08_0900_darcy',
+        'dx_m08_0910_darcy',
+        'dx_m08_0920_hatcher',
+        'dx_m08_0930_hatcher',
+        'dx_m08_0940_red',
     ]
+
+
+
+
