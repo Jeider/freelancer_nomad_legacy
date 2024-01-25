@@ -4,43 +4,6 @@ from world.weapon import Weapon
 from fx.weapon import WeaponFX
 
 
-# TEMPORARY
-
-BR_SLUGGER = 'br_slugger_launcher.cmp'
-KU_HORNET = 'ku_hornet_launcher.cmp'
-KU_RECOGNIZER = 'ku_recognizer_launcher.cmp'
-GE_MINE = 'ge_mine_dropper.cmp'
-GE_TORPEDO = 'ge_torpedo_launcher.cmp'
-LI_CM = 'li_cm_dropper01.cmp'
-LI_RAD = 'li_rad_launcher.cmp'
-RH_SEEKER = 'rh_seeker_launcher.cmp'
-
-BR_AUTO_SHOTGUN = 'br_auto_shotgun.cmp'
-BR_MASS_DRIVER = 'br_mass_driver.cmp'
-BR_RAILGUN = 'br_railgun.cmp'
-BR_THRUSTGUN = 'br_thrustgun.cmp'
-CO_PROTON_COOKER = 'co_proton_cooker.cmp'
-CO_RAILDADDY = 'co_raildaddy.cmp'
-CO_SHOCK_THERAPY = 'co_shock_therapy.cmp'
-CO_THRUSTGUN = 'co_thrustgun.cmp'
-GE_SHREDDER_SHOTGUN = 'ge_shredder_shotgun.cmp'
-KU_AUTO_BLASTER = 'ku_auto_blaster.cmp'
-KU_AUTO_TESLA = 'ku_auto_tesla.cmp'
-KU_ION_BLASTER = 'ku_ion_blaster.cmp'
-KU_THRUSTGUN = 'ku_thrustgun.cmp'
-LI_AUTO_CANNON = 'li_auto_cannon.cmp'
-LI_CANNON = 'li_cannon.cmp'
-LI_LASER_BEAM = 'li_laser_beam.cmp'
-LI_HEAVY_ION_BLASTER = 'li_heavy_ion_blaster.cmp'
-LI_PLASMA_BLASTER = 'li_plasma_blaster.cmp'
-LI_SMLTURRET = 'li_smlturret.cmp'
-LI_THRUSTGUN = 'li_thrustgun.cmp'
-RH_GAMMA_BEAMER = 'rh_gamma_beamer.cmp'
-RH_PLASMA_GAT_CANNON = 'rh_plasma_gat_cannon.cmp'
-RH_PROTON_BLASTER = 'rh_proton_blaster.cmp'
-RH_THRUSTGUN = 'rh_thrustgun.cmp'
-
-
 RU_MINING_GAS_BONUS = 'Повышенные повреждения по газовым облакам и ледяным астероидам'
 RU_MINING_JUNK_BONUS = 'Повышенные повреждения по залежам прессованного мусора'
 RU_MINING_AST_BONUS = 'Повышенные повреждения по добываемым астероидам'
