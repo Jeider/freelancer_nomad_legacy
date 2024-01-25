@@ -328,6 +328,7 @@ LODranges = {lod_ranges}'''
     LI_AUTO_CANNON = 'li_auto_cannon.cmp'
     LI_CANNON = 'li_cannon.cmp'
     LI_LASER_BEAM = 'li_laser_beam.cmp'
+    LI_HEAVY_ION_BLASTER = 'li_heavy_ion_blaster.cmp'
     LI_PLASMA_BLASTER = 'li_plasma_blaster.cmp'
     LI_SMLTURRET = 'li_smlturret.cmp'
     LI_THRUSTGUN = 'li_thrustgun.cmp'
@@ -367,6 +368,7 @@ LODranges = {lod_ranges}'''
         LI_CANNON: Icon.ICON_LI_HEAVYGUN,
         LI_LASER_BEAM: Icon.ICON_LI_LIGHTGUN,
         LI_PLASMA_BLASTER: Icon.ICON_LI_HEAVYGUN,
+        LI_HEAVY_ION_BLASTER: Icon.ICON_LI_HEAVYGUN,
         LI_SMLTURRET: Icon.ICON_LI_LIGHTGUN,
         LI_THRUSTGUN: Icon.ICON_LI_THRUSTGUN,
 
@@ -383,7 +385,7 @@ LODranges = {lod_ranges}'''
 
     LI_MODELS = [
         LI_CM, LI_RAD, LI_AUTO_CANNON, LI_CANNON, LI_THRUSTGUN,
-        LI_LASER_BEAM, LI_PLASMA_BLASTER, LI_SMLTURRET,
+        LI_LASER_BEAM, LI_PLASMA_BLASTER, LI_SMLTURRET, LI_HEAVY_ION_BLASTER
     ]
 
     BR_MODELS = [
@@ -475,7 +477,7 @@ LODranges = {lod_ranges}'''
 
     def validate_model(self):
         if self.MODEL not in self.MODELS:
-            raise Exception('unknown gun model')
+            raise Exception('unknown gun model %s' % self.MODEL)
 
     def set_rate(self):
         if self.EQUIP_TYPE == self.EQUIP_MAIN:

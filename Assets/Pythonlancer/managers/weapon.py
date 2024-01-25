@@ -27,7 +27,7 @@ class WeaponManager(StringsMixin):
 
             for equipment_class in Equipment.BASE_CLASSES:
                 the_gun = gun(
-                    equipment_class=equipment_class, faction=Equipment.FACTION_RH, 
+                    equipment_class=equipment_class, faction=gun.WEAPON_FACTION, 
                     ids_name=self.get_next_string_id(), ids_info=self.get_next_infocard_id(),
                     weapon_fx=WeaponFX(equip_class=equipment_class, faction=gun.FX_FACTION, fx_appearance=gun.FX_APPEARANCE)
                 )

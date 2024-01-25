@@ -4,14 +4,42 @@ from world.weapon import Weapon
 from fx.weapon import WeaponFX
 
 
-RH_LIGHTGUN = 'rh_lightgun'
-RH_HEAVYGUN = 'rh_heavygun'
-RH_CIVGUN = 'rh_civgun'
-RH_HUNTERGUN = 'rh_huntergun'
-RH_SHIELDGUN = 'rh_shieldgun'
-RH_PIRATEGUN = 'rh_pirategun'
-RH_HESSIANGUN = 'rh_heassiangun'
-RH_JUNKERGUN = 'rh_junkergun'
+# TEMPORARY
+
+BR_SLUGGER = 'br_slugger_launcher.cmp'
+KU_HORNET = 'ku_hornet_launcher.cmp'
+KU_RECOGNIZER = 'ku_recognizer_launcher.cmp'
+GE_MINE = 'ge_mine_dropper.cmp'
+GE_TORPEDO = 'ge_torpedo_launcher.cmp'
+LI_CM = 'li_cm_dropper01.cmp'
+LI_RAD = 'li_rad_launcher.cmp'
+RH_SEEKER = 'rh_seeker_launcher.cmp'
+
+BR_AUTO_SHOTGUN = 'br_auto_shotgun.cmp'
+BR_MASS_DRIVER = 'br_mass_driver.cmp'
+BR_RAILGUN = 'br_railgun.cmp'
+BR_THRUSTGUN = 'br_thrustgun.cmp'
+CO_PROTON_COOKER = 'co_proton_cooker.cmp'
+CO_RAILDADDY = 'co_raildaddy.cmp'
+CO_SHOCK_THERAPY = 'co_shock_therapy.cmp'
+CO_THRUSTGUN = 'co_thrustgun.cmp'
+GE_SHREDDER_SHOTGUN = 'ge_shredder_shotgun.cmp'
+KU_AUTO_BLASTER = 'ku_auto_blaster.cmp'
+KU_AUTO_TESLA = 'ku_auto_tesla.cmp'
+KU_ION_BLASTER = 'ku_ion_blaster.cmp'
+KU_THRUSTGUN = 'ku_thrustgun.cmp'
+LI_AUTO_CANNON = 'li_auto_cannon.cmp'
+LI_CANNON = 'li_cannon.cmp'
+LI_LASER_BEAM = 'li_laser_beam.cmp'
+LI_HEAVY_ION_BLASTER = 'li_heavy_ion_blaster.cmp'
+LI_PLASMA_BLASTER = 'li_plasma_blaster.cmp'
+LI_SMLTURRET = 'li_smlturret.cmp'
+LI_THRUSTGUN = 'li_thrustgun.cmp'
+RH_GAMMA_BEAMER = 'rh_gamma_beamer.cmp'
+RH_PLASMA_GAT_CANNON = 'rh_plasma_gat_cannon.cmp'
+RH_PROTON_BLASTER = 'rh_proton_blaster.cmp'
+RH_THRUSTGUN = 'rh_thrustgun.cmp'
+
 
 RU_MINING_GAS_BONUS = 'Повышенные повреждения по газовым облакам и ледяным астероидам'
 RU_MINING_JUNK_BONUS = 'Повышенные повреждения по залежам прессованного мусора'
@@ -43,6 +71,26 @@ RU_EFFICIENT_TEXT_PER_EQUIP_TYPE = {
     Weapon.EQUIP_PIRATE: 'Класс эффективности: профессиональный',
     Weapon.EQUIP_MAIN: 'Класс эффективности: военный',
 }
+
+
+class RheinlandGun(object):
+    WEAPON_FACTION = Weapon.FACTION_RH
+
+
+class LibertyGun(object):
+    WEAPON_FACTION = Weapon.FACTION_LI
+
+
+class BretoniaGun(object):
+    WEAPON_FACTION = Weapon.FACTION_BR
+
+
+class KusariGun(object):
+    WEAPON_FACTION = Weapon.FACTION_KU
+
+
+class BorderWorldGun(object):
+    WEAPON_FACTION = Weapon.FACTION_CO
 
 
 class Gun(MainEquipPrice, Weapon, DefaultGood):
@@ -93,17 +141,17 @@ class Gun(MainEquipPrice, Weapon, DefaultGood):
         if self.SHIELDGUN:
             content.append(RU_SHIELDGUN_BONUS)
 
-        faction_bonus_text = RU_FEATURES_PER_FACTION.get(self.faction)
+        faction_bonus_text = RU_FEATURES_PER_FACTION.get(self.WEAPON_FACTION)
         if faction_bonus_text:
             content.append(faction_bonus_text)
 
         return content
 
 
-class RheinlandLightgun(Gun):
+class RheinlandLightgun(Gun, RheinlandGun):
     RU_NAME = 'Гремучий змей'
     RU_NAME_DESC = 'Легкая пушка рейнландских военных'
-    BASE_NICKNAME = RH_LIGHTGUN
+    BASE_NICKNAME = 'rh_lightgun'
     MODEL = Weapon.RH_GAMMA_BEAMER
     EQUIP_TYPE = Weapon.EQUIP_MAIN
     REFIRE_RATE = Weapon.REFIRE_RATE_6
@@ -113,10 +161,10 @@ class RheinlandLightgun(Gun):
     FX_APPEARANCE = WeaponFX.FX_TACHYON
 
 
-class RheinlandHeavygun(Gun):
+class RheinlandHeavygun(Gun, RheinlandGun):
     RU_NAME = 'Огненный поцелуй'
     RU_NAME_DESC = 'Тяжелая пушка рейнландских военных'
-    BASE_NICKNAME = RH_HEAVYGUN
+    BASE_NICKNAME = 'rh_heavygun'
     MODEL = Weapon.RH_PROTON_BLASTER
     EQUIP_TYPE = Weapon.EQUIP_MAIN
     REFIRE_RATE = Weapon.REFIRE_RATE_2
@@ -126,81 +174,489 @@ class RheinlandHeavygun(Gun):
     FX_APPEARANCE = WeaponFX.FX_PLASMA
 
 
-class RheinlandCivgun(Gun):
+class RheinlandCivgun(Gun, RheinlandGun):
     RU_NAME = 'Звездный луч'
     RU_NAME_DESC = 'Базовая рейнландская пушка'
-    BASE_NICKNAME = RH_CIVGUN
+    BASE_NICKNAME = 'rh_civgun'
     MODEL = Weapon.RH_THRUSTGUN
     EQUIP_TYPE = Weapon.EQUIP_CIV
-    REFIRE_RATE = Weapon.REFIRE_RATE_8
-    MUZZLE_VELOCITY = 600
-    LIFETIME = 0.8
-    FX_FACTION = WeaponFX.FX_GE
-    FX_APPEARANCE = WeaponFX.FX_LASER
-
-
-class RheinlandHuntergun(Gun):
-    RU_NAME = 'Незримый клинок'
-    RU_NAME_DESC = 'Пушка рейнландских наемников'
-    BASE_NICKNAME = RH_HUNTERGUN
-    MODEL = Weapon.RH_GAMMA_BEAMER
-    EQUIP_TYPE = Weapon.EQUIP_PIRATE
-    REFIRE_RATE = Weapon.REFIRE_RATE_6
-    MUZZLE_VELOCITY = 750
-    LIFETIME = 0.8
-    FX_FACTION = WeaponFX.FX_PI
-    FX_APPEARANCE = WeaponFX.FX_LASER
-
-
-class RheinlandShieldgun(Gun):
-    RU_NAME = 'Пламенное проклятие'
-    RU_NAME_DESC = 'Рейнландская противощитовая пушка'
-    BASE_NICKNAME = RH_SHIELDGUN
-    MODEL = Weapon.RH_PROTON_BLASTER
-    EQUIP_TYPE = Weapon.EQUIP_CIV
-    REFIRE_RATE = Weapon.REFIRE_RATE_4
-    MUZZLE_VELOCITY = 600
-    LIFETIME = 1.0
-    SHIELDGUN = True
-    FX_FACTION = WeaponFX.FX_GE
-    FX_APPEARANCE = WeaponFX.FX_PULSE
-
-
-class RheinlandPirategun(Gun):
-    RU_NAME = 'Наттер'
-    RU_NAME_DESC = 'Пушка рейнландских пиратов'
-    BASE_NICKNAME = RH_PIRATEGUN
-    MODEL = Weapon.RH_THRUSTGUN
-    EQUIP_TYPE = Weapon.EQUIP_CIV
-    REFIRE_RATE = Weapon.REFIRE_RATE_8
-    MUZZLE_VELOCITY = 750
-    LIFETIME = 0.8
-    FX_FACTION = WeaponFX.FX_PI
-    FX_APPEARANCE = WeaponFX.FX_LASER
-
-
-class RheinlandHessiangun(Gun):
-    RU_NAME = 'Ротер Блиц'
-    RU_NAME_DESC = 'Пушка гессенцев'
-    BASE_NICKNAME = RH_HESSIANGUN
-    MODEL = Weapon.RH_GAMMA_BEAMER
-    EQUIP_TYPE = Weapon.EQUIP_PIRATE
-    REFIRE_RATE = Weapon.REFIRE_RATE_6
-    MUZZLE_VELOCITY = 700
-    LIFETIME = 1
-    FX_FACTION = WeaponFX.FX_PI
-    FX_APPEARANCE = WeaponFX.FX_LASER
-
-
-class RheinlandJunkergun(Gun):
-    RU_NAME = 'Скорпион'
-    RU_NAME_DESC = 'Пушка рейнландских мусорщиков'
-    BASE_NICKNAME = RH_JUNKERGUN
-    MODEL = Weapon.CO_SHOCK_THERAPY
-    EQUIP_TYPE = Weapon.EQUIP_PIRATE
     REFIRE_RATE = Weapon.REFIRE_RATE_8
     MUZZLE_VELOCITY = 600
     LIFETIME = 1
     FX_FACTION = WeaponFX.FX_RH
     FX_APPEARANCE = WeaponFX.FX_LASER
 
+
+class RheinlandHuntergun(Gun, RheinlandGun):
+    RU_NAME = 'Незримый клинок'
+    RU_NAME_DESC = 'Пушка рейнландских наемников'
+    BASE_NICKNAME = 'rh_huntergun'
+    MODEL = Weapon.RH_GAMMA_BEAMER
+    EQUIP_TYPE = Weapon.EQUIP_PIRATE
+    REFIRE_RATE = Weapon.REFIRE_RATE_6
+    MUZZLE_VELOCITY = 750
+    LIFETIME = 0.8
+    FX_FACTION = WeaponFX.FX_RH
+    FX_APPEARANCE = WeaponFX.FX_PARTICLE
+
+
+class RheinlandPirategun(Gun, RheinlandGun):
+    RU_NAME = 'Наттер'
+    RU_NAME_DESC = 'Пушка рейнландских пиратов'
+    BASE_NICKNAME = 'rh_pirategun'
+    MODEL = Weapon.RH_THRUSTGUN
+    EQUIP_TYPE = Weapon.EQUIP_CIV
+    REFIRE_RATE = Weapon.REFIRE_RATE_8
+    MUZZLE_VELOCITY = 750
+    LIFETIME = 0.8
+    FX_FACTION = WeaponFX.FX_PI
+    FX_APPEARANCE = WeaponFX.FX_LASER
+
+
+class RheinlandHessiangun(Gun, RheinlandGun):
+    RU_NAME = 'Ротер Блиц'
+    RU_NAME_DESC = 'Пушка гессенцев'
+    BASE_NICKNAME = 'rh_hessiangun'
+    MODEL = Weapon.RH_GAMMA_BEAMER
+    EQUIP_TYPE = Weapon.EQUIP_PIRATE
+    REFIRE_RATE = Weapon.REFIRE_RATE_6
+    MUZZLE_VELOCITY = 700
+    LIFETIME = 1
+    FX_FACTION = WeaponFX.FX_PI
+    FX_APPEARANCE = WeaponFX.FX_PARTICLE
+
+
+class RheinlandJunkergun(Gun, RheinlandGun):
+    RU_NAME = 'Стервятник'
+    RU_NAME_DESC = 'Пушка мусорщиков'
+    BASE_NICKNAME = 'rh_junkergun'
+    MODEL = Weapon.CO_SHOCK_THERAPY
+    EQUIP_TYPE = Weapon.EQUIP_PIRATE
+    REFIRE_RATE = Weapon.REFIRE_RATE_8
+    MUZZLE_VELOCITY = 600
+    LIFETIME = 1
+    FX_FACTION = WeaponFX.FX_PI
+    FX_APPEARANCE = WeaponFX.FX_PHOTON
+
+
+class RheinlandShieldgun(Gun, RheinlandGun):
+    RU_NAME = 'Пламенное проклятие'
+    RU_NAME_DESC = 'Рейнландская противощитовая пушка'
+    BASE_NICKNAME = 'rh_shieldgun'
+    MODEL = Weapon.RH_PROTON_BLASTER
+    EQUIP_TYPE = Weapon.EQUIP_CIV
+    REFIRE_RATE = Weapon.REFIRE_RATE_4
+    MUZZLE_VELOCITY = 600
+    LIFETIME = 1.0
+    SHIELDGUN = True
+    FX_FACTION = WeaponFX.FX_RH
+    FX_APPEARANCE = WeaponFX.FX_PULSE
+
+
+class LibertyLightgun(Gun, LibertyGun):
+    RU_NAME = 'Возмездие'
+    RU_NAME_DESC = 'Легкая пушка военных Либерти'
+    BASE_NICKNAME = 'li_lightgun'
+    MODEL = Weapon.LI_LASER_BEAM
+    EQUIP_TYPE = Weapon.EQUIP_MAIN
+    REFIRE_RATE = Weapon.REFIRE_RATE_8
+    MUZZLE_VELOCITY = 750
+    LIFETIME = 0.8
+    FX_FACTION = WeaponFX.FX_LI
+    FX_APPEARANCE = WeaponFX.FX_LASER
+
+
+class LibertyHeavygun(Gun, LibertyGun):
+    RU_NAME = 'Молот магмы'
+    RU_NAME_DESC = 'Тяжелая пушка военных Либерти'
+    BASE_NICKNAME = 'li_heavygun'
+    MODEL = Weapon.LI_HEAVY_ION_BLASTER
+    EQUIP_TYPE = Weapon.EQUIP_MAIN
+    REFIRE_RATE = Weapon.REFIRE_RATE_2
+    MUZZLE_VELOCITY = 500
+    LIFETIME = 1.2
+    FX_FACTION = WeaponFX.FX_LI
+    FX_APPEARANCE = WeaponFX.FX_PLASMA
+
+
+class LibertyCivgun(Gun, LibertyGun):
+    RU_NAME = 'Справедливость'
+    RU_NAME_DESC = 'Базовая пушка Либерти'
+    BASE_NICKNAME = 'li_civgun'
+    MODEL = Weapon.LI_THRUSTGUN
+    EQUIP_TYPE = Weapon.EQUIP_CIV
+    REFIRE_RATE = Weapon.REFIRE_RATE_8
+    MUZZLE_VELOCITY = 750
+    LIFETIME = 0.8
+    FX_FACTION = WeaponFX.FX_CI
+    FX_APPEARANCE = WeaponFX.FX_LASER
+
+
+class LibertyHuntergun(Gun, LibertyGun):
+    RU_NAME = 'Винтчестер'
+    RU_NAME_DESC = 'Пушка наемников Либерти'
+    BASE_NICKNAME = 'li_huntergun'
+    MODEL = Weapon.LI_PLASMA_BLASTER
+    EQUIP_TYPE = Weapon.EQUIP_PIRATE
+    REFIRE_RATE = Weapon.REFIRE_RATE_4
+    MUZZLE_VELOCITY = 700
+    LIFETIME = 1
+    FX_FACTION = WeaponFX.FX_CI
+    FX_APPEARANCE = WeaponFX.FX_TACHYON
+
+
+class LibertyPirategun(Gun, LibertyGun):
+    RU_NAME = 'Азраель'
+    RU_NAME_DESC = 'Пушка пиратов Либерти'
+    BASE_NICKNAME = 'li_pirategun'
+    MODEL = Weapon.RH_THRUSTGUN
+    EQUIP_TYPE = Weapon.EQUIP_CIV
+    REFIRE_RATE = Weapon.REFIRE_RATE_8
+    MUZZLE_VELOCITY = 600
+    LIFETIME = 1
+    FX_FACTION = WeaponFX.FX_PI
+    FX_APPEARANCE = WeaponFX.FX_PHOTON
+
+
+class LibertyRoguegun(Gun, LibertyGun):
+    RU_NAME = 'Вассаго'
+    RU_NAME_DESC = 'Пушка разбойников Либерти'
+    BASE_NICKNAME = 'li_roguegun'
+    MODEL = Weapon.LI_PLASMA_BLASTER
+    EQUIP_TYPE = Weapon.EQUIP_PIRATE
+    REFIRE_RATE = Weapon.REFIRE_RATE_8
+    MUZZLE_VELOCITY = 750
+    LIFETIME = 0.8
+    FX_FACTION = WeaponFX.FX_PI
+    FX_APPEARANCE = WeaponFX.FX_LASER
+
+
+class LibertyStarlinegun(Gun, LibertyGun):
+    RU_NAME = 'Разбойник'
+    RU_NAME_DESC = 'Пушка банды Старлайна'
+    BASE_NICKNAME = 'li_starlinegun'
+    MODEL = Weapon.LI_LASER_BEAM
+    EQUIP_TYPE = Weapon.EQUIP_PIRATE
+    REFIRE_RATE = Weapon.REFIRE_RATE_8
+    MUZZLE_VELOCITY = 700
+    LIFETIME = 1
+    FX_FACTION = WeaponFX.FX_PI
+    FX_APPEARANCE = WeaponFX.FX_PARTICLE
+
+
+class LibertyShieldgun(Gun, LibertyGun):
+    RU_NAME = 'Клинок лавы'
+    RU_NAME_DESC = 'Либертийская противощитовая пушка'
+    BASE_NICKNAME = 'li_shieldgun'
+    MODEL = Weapon.LI_HEAVY_ION_BLASTER
+    EQUIP_TYPE = Weapon.EQUIP_CIV
+    REFIRE_RATE = Weapon.REFIRE_RATE_3
+    MUZZLE_VELOCITY = 600
+    LIFETIME = 1.0
+    SHIELDGUN = True
+    FX_FACTION = WeaponFX.FX_LI
+    FX_APPEARANCE = WeaponFX.FX_PULSE
+
+
+class BretoniaLightgun(Gun, BretoniaGun):
+    RU_NAME = 'Растворитель'
+    RU_NAME_DESC = 'Легкая пушка бретонских военных'
+    BASE_NICKNAME = 'br_lightgun'
+    MODEL = Weapon.BR_MASS_DRIVER
+    EQUIP_TYPE = Weapon.EQUIP_MAIN
+    REFIRE_RATE = Weapon.REFIRE_RATE_6
+    MUZZLE_VELOCITY = 700
+    LIFETIME = 1.0
+    FX_FACTION = WeaponFX.FX_BR
+    FX_APPEARANCE = WeaponFX.FX_TACHYON
+
+
+class BretoniaHeavygun(Gun, BretoniaGun):
+    RU_NAME = 'Небесный путь'
+    RU_NAME_DESC = 'Тяжелая пушка бретонских военных'
+    BASE_NICKNAME = 'br_heavygun'
+    MODEL = Weapon.BR_RAILGUN
+    EQUIP_TYPE = Weapon.EQUIP_MAIN
+    REFIRE_RATE = Weapon.REFIRE_RATE_4
+    MUZZLE_VELOCITY = 700
+    LIFETIME = 1
+    FX_FACTION = WeaponFX.FX_BR
+    FX_APPEARANCE = WeaponFX.FX_PARTICLE
+
+
+class BretoniaCivgun(Gun, BretoniaGun):
+    RU_NAME = 'Флешпоинт'
+    RU_NAME_DESC = 'Базовая бретонская пушка'
+    BASE_NICKNAME = 'br_civgun'
+    MODEL = Weapon.BR_THRUSTGUN
+    EQUIP_TYPE = Weapon.EQUIP_CIV
+    REFIRE_RATE = Weapon.REFIRE_RATE_6
+    MUZZLE_VELOCITY = 600
+    LIFETIME = 1
+    FX_FACTION = WeaponFX.FX_BR
+    FX_APPEARANCE = WeaponFX.FX_PHOTON
+
+
+class BretoniaHuntergun(Gun, BretoniaGun):
+    RU_NAME = 'Потрошитель'
+    RU_NAME_DESC = 'Пушка бретонских наемников'
+    BASE_NICKNAME = 'br_huntergun'
+    MODEL = Weapon.BR_MASS_DRIVER
+    EQUIP_TYPE = Weapon.EQUIP_PIRATE
+    REFIRE_RATE = Weapon.REFIRE_RATE_8
+    MUZZLE_VELOCITY = 600
+    LIFETIME = 1
+    FX_FACTION = WeaponFX.FX_BR
+    FX_APPEARANCE = WeaponFX.FX_NEUTRON
+
+
+class BretoniaPirategun(Gun, BretoniaGun):
+    RU_NAME = 'Скорпион'
+    RU_NAME_DESC = 'Пушка бретонских пиратов'
+    BASE_NICKNAME = 'br_pirategun'
+    MODEL = Weapon.BR_THRUSTGUN
+    EQUIP_TYPE = Weapon.EQUIP_CIV
+    REFIRE_RATE = Weapon.REFIRE_RATE_4
+    MUZZLE_VELOCITY = 700
+    LIFETIME = 1
+    FX_FACTION = WeaponFX.FX_PI
+    FX_APPEARANCE = WeaponFX.FX_PARTICLE
+
+
+class BretoniaXenosgun(Gun, BretoniaGun):
+    RU_NAME = 'Тарантул'
+    RU_NAME_DESC = 'Пушка ксеносов'
+    BASE_NICKNAME = 'br_xenosgun'
+    MODEL = Weapon.CO_RAILDADDY
+    EQUIP_TYPE = Weapon.EQUIP_PIRATE
+    REFIRE_RATE = Weapon.REFIRE_RATE_3
+    MUZZLE_VELOCITY = 700
+    LIFETIME = 1
+    FX_FACTION = WeaponFX.FX_PI
+    FX_APPEARANCE = WeaponFX.FX_PLASMA
+
+
+class BretoniaIragun(Gun, BretoniaGun):
+    RU_NAME = 'Маттертиф'
+    RU_NAME_DESC = 'Пушка ирландских сепаратистов'
+    BASE_NICKNAME = 'br_iragun'
+    MODEL = Weapon.BR_MASS_DRIVER
+    EQUIP_TYPE = Weapon.EQUIP_PIRATE
+    REFIRE_RATE = Weapon.REFIRE_RATE_4
+    MUZZLE_VELOCITY = 700
+    LIFETIME = 1
+    FX_FACTION = WeaponFX.FX_PI
+    FX_APPEARANCE = WeaponFX.FX_NEUTRON
+
+
+class BretoniaShieldgun(Gun, BretoniaGun):
+    RU_NAME = 'Солнечный путь'
+    RU_NAME_DESC = 'Бретонская противощитовая пушка'
+    BASE_NICKNAME = 'br_shieldgun'
+    MODEL = Weapon.BR_RAILGUN
+    EQUIP_TYPE = Weapon.EQUIP_CIV
+    REFIRE_RATE = Weapon.REFIRE_RATE_6
+    MUZZLE_VELOCITY = 600
+    LIFETIME = 1.0
+    SHIELDGUN = True
+    FX_FACTION = WeaponFX.FX_BR
+    FX_APPEARANCE = WeaponFX.FX_PULSE
+
+
+
+
+class KusariLightgun(Gun, KusariGun):
+    RU_NAME = 'Гром'
+    RU_NAME_DESC = 'Легкая пушка кусарийских военных'
+    BASE_NICKNAME = 'ku_lightgun'
+    MODEL = Weapon.KU_ION_BLASTER
+    EQUIP_TYPE = Weapon.EQUIP_MAIN
+    REFIRE_RATE = Weapon.REFIRE_RATE_8
+    MUZZLE_VELOCITY = 750
+    LIFETIME = 0.8
+    FX_FACTION = WeaponFX.FX_KU
+    FX_APPEARANCE = WeaponFX.FX_PHOTON
+
+
+class KusariHeavygun(Gun, KusariGun):
+    RU_NAME = 'Дезинфектор'
+    RU_NAME_DESC = 'Тяжелая пушка кусарийских военных'
+    BASE_NICKNAME = 'ku_heavygun'
+    MODEL = Weapon.KU_AUTO_TESLA
+    EQUIP_TYPE = Weapon.EQUIP_MAIN
+    REFIRE_RATE = Weapon.REFIRE_RATE_4
+    MUZZLE_VELOCITY = 600
+    LIFETIME = 1
+    FX_FACTION = WeaponFX.FX_KU
+    FX_APPEARANCE = WeaponFX.FX_NEUTRON
+
+
+class KusariCivgun(Gun, KusariGun):
+    RU_NAME = 'Гелиос'
+    RU_NAME_DESC = 'Базовая кусарийская пушка'
+    BASE_NICKNAME = 'ku_civgun'
+    MODEL = Weapon.KU_THRUSTGUN
+    EQUIP_TYPE = Weapon.EQUIP_CIV
+    REFIRE_RATE = Weapon.REFIRE_RATE_6
+    MUZZLE_VELOCITY = 600
+    LIFETIME = 1
+    FX_FACTION = WeaponFX.FX_CI
+    FX_APPEARANCE = WeaponFX.FX_PHOTON
+
+
+class KusariHuntergun(Gun, KusariGun):
+    RU_NAME = 'Ярость'
+    RU_NAME_DESC = 'Пушка кусарийская наемников'
+    BASE_NICKNAME = 'ku_huntergun'
+    MODEL = Weapon.KU_ION_BLASTER
+    EQUIP_TYPE = Weapon.EQUIP_PIRATE
+    REFIRE_RATE = Weapon.REFIRE_RATE_8
+    MUZZLE_VELOCITY = 600
+    LIFETIME = 1
+    FX_FACTION = WeaponFX.FX_KU
+    FX_APPEARANCE = WeaponFX.FX_LASER
+
+
+class KusariPirategun(Gun, KusariGun):
+    RU_NAME = 'Танто'
+    RU_NAME_DESC = 'Пушка кусарийская пиратов'
+    BASE_NICKNAME = 'ku_pirategun'
+    MODEL = Weapon.KU_THRUSTGUN
+    EQUIP_TYPE = Weapon.EQUIP_CIV
+    REFIRE_RATE = Weapon.REFIRE_RATE_8
+    MUZZLE_VELOCITY = 600
+    LIFETIME = 1
+    FX_FACTION = WeaponFX.FX_PI
+    FX_APPEARANCE = WeaponFX.FX_NEUTRON
+
+
+class KusariShinobigun(Gun, KusariGun):
+    RU_NAME = 'Ниндзято'
+    RU_NAME_DESC = 'Пушка клана Шиноби'
+    BASE_NICKNAME = 'ku_shinobigun'
+    MODEL = Weapon.CO_SHOCK_THERAPY
+    EQUIP_TYPE = Weapon.EQUIP_PIRATE
+    REFIRE_RATE = Weapon.REFIRE_RATE_6
+    MUZZLE_VELOCITY = 750
+    LIFETIME = 0.8
+    FX_FACTION = WeaponFX.FX_PI
+    FX_APPEARANCE = WeaponFX.FX_TACHYON
+
+
+class KusariDragongun(Gun, KusariGun):
+    RU_NAME = 'Вакидзаси'
+    RU_NAME_DESC = 'Пушка кровавых драконов'
+    BASE_NICKNAME = 'ku_dragongun'
+    MODEL = Weapon.KU_ION_BLASTER
+    EQUIP_TYPE = Weapon.EQUIP_PIRATE
+    REFIRE_RATE = Weapon.REFIRE_RATE_8
+    MUZZLE_VELOCITY = 750
+    LIFETIME = 0.8
+    FX_FACTION = WeaponFX.FX_PI
+    FX_APPEARANCE = WeaponFX.FX_LASER
+
+
+class KusariShieldgun(Gun, KusariGun):
+    RU_NAME = 'Успокоитель'
+    RU_NAME_DESC = 'Кусарийская противощитовая пушка'
+    BASE_NICKNAME = 'ku_shieldgun'
+    MODEL = Weapon.KU_AUTO_TESLA
+    EQUIP_TYPE = Weapon.EQUIP_CIV
+    REFIRE_RATE = Weapon.REFIRE_RATE_4
+    MUZZLE_VELOCITY = 600
+    LIFETIME = 1.0
+    SHIELDGUN = True
+    FX_FACTION = WeaponFX.FX_KU
+    FX_APPEARANCE = WeaponFX.FX_PULSE
+
+
+class OrderLightgun(Gun, BorderWorldGun):
+    RU_NAME = 'Цербер'
+    RU_NAME_DESC = 'Легкая пушка Ордена'
+    BASE_NICKNAME = 'or_lightgun'
+    MODEL = Weapon.CO_PROTON_COOKER
+    EQUIP_TYPE = Weapon.EQUIP_MAIN
+    REFIRE_RATE = Weapon.REFIRE_RATE_8
+    MUZZLE_VELOCITY = 750
+    LIFETIME = 0.8
+    FX_FACTION = WeaponFX.FX_PI
+    FX_APPEARANCE = WeaponFX.FX_TACHYON
+
+
+class OrderHeavygun(Gun, BorderWorldGun):
+    RU_NAME = 'Оникс'
+    RU_NAME_DESC = 'Тяжелая пушка Ордена'
+    BASE_NICKNAME = 'or_heavygun'
+    MODEL = Weapon.CO_SHOCK_THERAPY
+    EQUIP_TYPE = Weapon.EQUIP_MAIN
+    REFIRE_RATE = Weapon.REFIRE_RATE_3
+    MUZZLE_VELOCITY = 700
+    LIFETIME = 3
+    FX_FACTION = WeaponFX.FX_PI
+    FX_APPEARANCE = WeaponFX.FX_PLASMA
+
+
+class CorsairMainGun(Gun, BorderWorldGun):
+    RU_NAME = 'Саламанка'
+    RU_NAME_DESC = 'Пушка Корсаров'
+    BASE_NICKNAME = 'bw_corsairgun'
+    MODEL = Weapon.CO_RAILDADDY
+    EQUIP_TYPE = Weapon.EQUIP_PIRATE
+    REFIRE_RATE = Weapon.REFIRE_RATE_4
+    MUZZLE_VELOCITY = 600
+    LIFETIME = 1
+    FX_FACTION = WeaponFX.FX_PI
+    FX_APPEARANCE = WeaponFX.FX_NEUTRON
+
+
+class CorsairShieldGun(Gun, BorderWorldGun):
+    RU_NAME = 'Рапира'
+    RU_NAME_DESC = 'Противощитовая пушка пограничья'
+    BASE_NICKNAME = 'bw_shieldgun'
+    MODEL = Weapon.CO_SHOCK_THERAPY
+    EQUIP_TYPE = Weapon.EQUIP_PIRATE
+    REFIRE_RATE = Weapon.REFIRE_RATE_4
+    MUZZLE_VELOCITY = 600
+    LIFETIME = 1.0
+    SHIELDGUN = True
+    FX_FACTION = WeaponFX.FX_PI
+    FX_APPEARANCE = WeaponFX.FX_PULSE
+
+
+class OutcastGun(Gun, BorderWorldGun):
+    RU_NAME = 'Вирм'
+    RU_NAME_DESC = 'Пушка Изгоев'
+    BASE_NICKNAME = 'bw_outcastgun'
+    MODEL = Weapon.CO_RAILDADDY
+    EQUIP_TYPE = Weapon.EQUIP_PIRATE
+    REFIRE_RATE = Weapon.REFIRE_RATE_4
+    MUZZLE_VELOCITY = 700
+    LIFETIME = 1
+    FX_FACTION = WeaponFX.FX_PI
+    FX_APPEARANCE = WeaponFX.FX_PARTICLE
+
+
+class BorderWorldCivgun(Gun, BorderWorldGun):
+    RU_NAME = 'Ангелито'
+    RU_NAME_DESC = 'Гражданская пушка пограничья'
+    BASE_NICKNAME = 'bw_civgun'
+    MODEL = Weapon.CO_THRUSTGUN
+    EQUIP_TYPE = Weapon.EQUIP_CIV
+    REFIRE_RATE = Weapon.REFIRE_RATE_6
+    MUZZLE_VELOCITY = 600
+    LIFETIME = 1
+    FX_FACTION = WeaponFX.FX_PI
+    FX_APPEARANCE = WeaponFX.FX_PHOTON
+
+
+class BorderWorldPirategun(Gun, BorderWorldGun):
+    RU_NAME = 'Драгун'
+    RU_NAME_DESC = 'Пушка пиратов пограничья'
+    BASE_NICKNAME = 'bw_pirategun'
+    MODEL = Weapon.CO_THRUSTGUN
+    EQUIP_TYPE = Weapon.EQUIP_CIV
+    REFIRE_RATE = Weapon.REFIRE_RATE_8
+    MUZZLE_VELOCITY = 600
+    LIFETIME = 1
+    FX_FACTION = WeaponFX.FX_PI
+    FX_APPEARANCE = WeaponFX.FX_LASER

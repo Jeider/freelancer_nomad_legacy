@@ -11,7 +11,7 @@ TIER_PER_CLASS = {
     6: TIER_THREE,
     7: TIER_FOUR,
     8: TIER_FOUR,
-    9: TIER_FIVE,
+    9: TIER_FOUR,
 }
 
 
@@ -36,6 +36,7 @@ class WeaponFX(object):
     FX_KU = 'ku'
     FX_PI = 'pi'
     FX_GE = 'ge'
+    FX_CI = 'ci'
 
     SOUND_CLASS_PER_APPEARANCE = {
         FX_LASER: SoundLaser,
