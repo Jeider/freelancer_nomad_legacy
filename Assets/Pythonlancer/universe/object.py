@@ -1,4 +1,5 @@
 from text.dividers import SINGLE_DIVIDER, DIVIDER
+from random import randint
 
 TOP = 'top'
 BOTTOM = 'bottom'
@@ -18,6 +19,9 @@ ROT_KEY = 'rotate'
 SIZE_KEY = 'size'
 
 TLR_DISTANCE = 7000
+
+TLR_HUGE_SIZE_RINGS_COUNT = 5
+TLR_SMALL_SIZE_RINGS_COUNT = 4
 
 
 def get_reversed_direction(direction):
@@ -151,7 +155,80 @@ class PirateBase(DockableObject):
 
 
 
-class Tradelane(SystemObject):
+class PatrolObjective(SystemObject):
+    PATROL_NAME = None
+
+    TRACKS_PATROL_HEADING = '[Path]'
+    TRACKS_PATROL_NAME = 'name = {name}, {index}'
+    TRACKS_PATROL_ITEM = 'pos = {pos}'
+
+    SPACE_PARAMS = '''
+toughness = 1
+density = 1
+repop_time = 90
+max_battle_size = 3
+pop_type = lane_patrol
+relief_time = 30
+attack_ids = 10
+tradelane_attack = 50
+mission_eligible = true
+faction_weight = rx_grp, 10
+density_restriction = 1, patroller
+density_restriction = 1, police_patroller
+density_restriction = 1, pirate_patroller
+density_restriction = 4, lawfuls
+density_restriction = 4, unlawfuls
+encounter = patrol_tlr, 1, 0.330000
+faction = rx_grp, 1.000000
+'''
+    
+    def __init__(self, index, positions):
+        self.index = index
+        self.positions = positions
+        self.raw_paths = []
+
+    def get_tracks_request_content(self):
+        items = [
+            self.TRACKS_PATROL_HEADING,
+            self.TRACKS_PATROL_NAME.format(name=self.PATROL_NAME, index=self.index),
+        ]
+
+        for pos_item in self.positions:
+            items.append(
+                self.TRACKS_PATROL_ITEM.format(pos='{0}, {1}, {2}'.format(*pos_item))
+            )
+
+        return SINGLE_DIVIDER.join(items)
+
+    def add_raw_path(self, tracks_raw_zone):
+        self.raw_paths.append(tracks_raw_zone)
+
+    def get_path_label(self):
+        return '{0}{1}'.format(self.PATROL_NAME, self.index)
+
+    def get_system_content(self):
+        system_content = []
+        for path in self.raw_paths:
+            lines = ['[Zone]'] + path.raw_lines
+            zone_item = SINGLE_DIVIDER.join(lines) + self.SPACE_PARAMS
+            system_content.append(zone_item)
+
+        return DIVIDER.join(system_content)
+
+
+class PolicePatrol(PatrolObjective):
+    PATROL_NAME = 'police'
+
+
+class HuntersPatrol(PatrolObjective):
+    PATROL_NAME = 'bounty_hunter'
+
+
+class PiratePatrol(PatrolObjective):
+    PATROL_NAME = 'pirate'
+
+
+class Tradelane(object):
 
     RING_TEMPLATE = '''[Object]
 nickname = {ring_nickname}
@@ -183,6 +260,9 @@ pilot = pilot_solar_hard
             letter=self.trade_connection.TRADELANE_LETTER,
             index=self.tradelane_index,
         )
+
+    def get_tradelane_pos(self):
+        return self.tracks_raw_tradelane.lines[POS_KEY]
 
     def get_system_object(self):
         template_params = {
@@ -217,6 +297,11 @@ class TradeConnection(SystemObject):
     SIDE_FROM = None
     SIDE_TO = None
     TRADELANE_LETTER = None
+    HUNTER_DEFENCE_REL = None
+    ATTACKED_BY = []
+
+    HUNTER_PATROL_OFFSET = 10000
+    HUNTER_PATROL_DRIFT = 3000
 
     TRACKS_TLR_TEMPLATE = '''[TradeLane]
 number = 1
@@ -305,6 +390,12 @@ faction = bh_grp, 1.00000
         self.last_tradelane_index = 1
         self.tradelanes = []
         self.tracks_raw_outer_zone = None
+        self.police_patrol = self.get_police_patrol()
+        self.system.add_patrol(self.police_patrol)
+        self.bounty_hunter_patrol = self.get_bountry_hunter_patrol()
+        if self.bounty_hunter_patrol:
+            self.system.add_patrol(self.bounty_hunter_patrol)
+        self.attacker_patrols = []
 
     def add_tradelane(self, tracks_raw_tradelane):
         self.tradelanes.append(Tradelane(self, tracks_raw_tradelane, self.last_tradelane_index))
@@ -352,17 +443,87 @@ faction = bh_grp, 1.00000
 
         return DIVIDER.join(system_content)
 
+    def get_police_patrol(self):
+        obj_from, obj_to = self.get_destination_objects()
+        return PolicePatrol(
+            index=self.system.get_next_police_patrol_id(),
+            positions=[
+                (obj_from.POS[0], 0, obj_from.POS[2]),
+                (obj_to.POS[0], 0, obj_to.POS[2]),
+            ]
+        ) 
+
+    def get_bountry_hunter_patrol(self):
+        patrol_rel = self.HUNTER_DEFENCE_REL
+        if patrol_rel is None:
+            return
+
+        obj_from, obj_to = self.get_destination_objects()
+        obj_from_pos2_x = obj_from.POS[0]
+        obj_from_pos2_z = obj_from.POS[2]
+        obj_to_pos2_x = obj_to.POS[0]
+        obj_to_pos2_z = obj_to.POS[2]
+
+        if patrol_rel == LEFT:
+            obj_from_pos2_x -= self.HUNTER_PATROL_OFFSET
+            obj_from_pos2_z += self.HUNTER_PATROL_DRIFT
+            obj_to_pos2_x -= self.HUNTER_PATROL_OFFSET
+            obj_to_pos2_z -= self.HUNTER_PATROL_DRIFT
+        
+        if patrol_rel == RIGHT:
+            obj_from_pos2_x += self.HUNTER_PATROL_OFFSET
+            obj_from_pos2_z += self.HUNTER_PATROL_DRIFT
+            obj_to_pos2_x += self.HUNTER_PATROL_OFFSET
+            obj_to_pos2_z -= self.HUNTER_PATROL_DRIFT
+
+        if patrol_rel == TOP:
+            obj_from_pos2_x += self.HUNTER_PATROL_DRIFT
+            obj_from_pos2_z -= self.HUNTER_PATROL_OFFSET
+            obj_to_pos2_x -= self.HUNTER_PATROL_DRIFT
+            obj_to_pos2_z -= self.HUNTER_PATROL_OFFSET
+
+        if patrol_rel == BOTTOM:
+            obj_from_pos2_x += self.HUNTER_PATROL_DRIFT
+            obj_from_pos2_z += self.HUNTER_PATROL_OFFSET
+            obj_to_pos2_x -= self.HUNTER_PATROL_DRIFT
+            obj_to_pos2_z += self.HUNTER_PATROL_OFFSET
+
+        return HuntersPatrol(
+            index=self.system.get_next_bounty_hunter_patrol_id(),
+            positions=[
+                (obj_from.POS[0], 0, obj_from.POS[2]),
+                (obj_from_pos2_x, 0, obj_from_pos2_z),
+                (obj_to_pos2_x, 0, obj_to_pos2_z),
+                (obj_to.POS[0], 0, obj_to.POS[2]),
+            ]
+        ) 
+
+    def define_attacker_patrols(self):
+        for attacker_base in self.ATTACKED_BY:
+            attacker_patrol = self.get_pirate_attacker_patrol(attacker_base)
+            self.attacker_patrols.append(attacker_patrol)
+            self.system.add_patrol(attacker_patrol)
+
+    def get_pirate_attacker_patrol(self, attacker_base):
+        obj_from, obj_to = self.get_destination_objects()
+
+        tlrs_len = len(self.tradelanes)
+
+        if tlrs_len <= TLR_SMALL_SIZE_RINGS_COUNT:
+            first_tradelane_index = 1
+        else:
+            first_tradelane_index = randint(1, tlrs_len-2)
 
 
-class PatrolObjective(SystemObject):
-    pass
+        lane1_pos = self.tradelanes[first_tradelane_index].get_tradelane_pos()
+        lane2_pos = self.tradelanes[first_tradelane_index+1].get_tradelane_pos()
 
-
-
-class TradelaneAssault(PatrolObjective):
-    pass
-
-
-
-class HuntersDefence(PatrolObjective):
-    pass
+        return PiratePatrol(
+            index=self.system.get_next_police_patrol_id(),
+            positions=[
+                (attacker_base.POS[0], 0, attacker_base.POS[2]),
+                (lane1_pos[0], 0, lane1_pos[2]),
+                (lane2_pos[0], 0, lane2_pos[2]),
+                (attacker_base.POS[0], 0, attacker_base.POS[2]),
+            ]
+        )

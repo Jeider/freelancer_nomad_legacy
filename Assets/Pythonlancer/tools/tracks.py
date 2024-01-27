@@ -1,6 +1,7 @@
 import subprocess
 import pathlib
 import os
+import re
 
 
 TRACKS_DIR = 'TRACKS'
@@ -23,16 +24,19 @@ class TracksResponseItem(object):
     ZONE = 'zone'
     NAME_KEY = 'nickname'
     TRADELANE_MARKER = '_Tradelane_'
-    PATH_MARKER = '_Path_'
+    PATH_MARKER = '_path_'
+    PATH_LABEL_KEY = 'path_label'
 
     def __init__(self):
         self.title = None
         self.lines = {}
+        self.raw_lines = []
 
     def set_title(self, title):
         self.title = title.replace('[', '').replace(']', '')
 
     def add_line(self, line):
+        self.raw_lines.append(line)
         split_line = line.split('=')
         line_key = split_line[0].strip()
         line_value = split_line[1].strip()
@@ -65,6 +69,26 @@ class TracksResponseItem(object):
 
     def is_path_zone(self):
         return self.is_zone() and self.PATH_MARKER in self.lines[self.NAME_KEY] 
+
+    def get_path_label(self):
+        if not self.is_path_zone():
+            raise Exception('Is not a path zone')
+
+        return self.lines[self.PATH_LABEL_KEY].split(',')[0].strip()
+        
+
+'''
+
+
+[Zone]
+nickname = Zone_br_wrw_path_bounty_hunter1_1
+pos = -55000, 0, -16500
+rotate = -90, -73, 0
+shape = CYLINDER
+size = 750, 10440
+usage = patrol
+path_label = bounty_hunter1, 1
+'''
 
 
 class Tracks(object):
@@ -145,6 +169,7 @@ class Tracks(object):
 
     @staticmethod
     def clear_temp_files():
+        return
         tracks_path = Tracks.get_tracks_path()
         request_path = tracks_path / FILES_DIR / TMP_REQUEST_FILE_NAME
         if request_path.exists():

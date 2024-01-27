@@ -1,5 +1,5 @@
 from universe.systems import br_wrw as br_wrw_objects
-from universe.object import SystemObject, TradeConnection, TradelaneAssault, HuntersDefence, JumpableObject, DockableObject
+from universe.object import SystemObject, TradeConnection, JumpableObject, DockableObject
 
 from text.dividers import DIVIDER
 
@@ -12,13 +12,7 @@ TLR_DISTANCE = 3000
 class System(object):
     NAME = ''
     CONTENT = None
-    jumps = []
-    dockables = []
-    trade_connections = []
-    pirate_assaults = []
-    hunter_patrols = []
 
-    zones = []
 
     subclasses = []
 
@@ -32,6 +26,22 @@ distance = {tlr_distance}
         cls.subclasses.append(cls)
 
     def __init__(self):
+        self.last_police_patrol_id = 0
+        self.last_bounty_hunter_patrol_id = 0
+        self.last_pirate_patrol_id = 0
+        self.police_patrols_list = []
+        self.bounty_hunters_patrols_list = []
+        self.pirate_patrols_list = []
+        self.patrols_db = {}
+
+        self.trade_connections = []
+
+        # self.jumps = []
+        # self.dockables = []
+        # self.pirate_assaults = []
+        # self.hunter_patrols = []
+        # self.zones = []
+
         if self.CONTENT is not None:
             self.init_content()
 
@@ -40,37 +50,53 @@ distance = {tlr_distance}
             if not isinstance(item, type) or not issubclass(item, SystemObject):
                 continue
 
-            if item in (JumpableObject, DockableObject, TradeConnection, TradelaneAssault, HuntersDefence):
+            if item in (JumpableObject, DockableObject, TradeConnection):
                 continue
 
-            if issubclass(item, JumpableObject):
-                self.jumps.append(item(self))
-            elif issubclass(item, DockableObject):
-                self.dockables.append(item(self))
-            elif issubclass(item, TradeConnection):
+            if issubclass(item, TradeConnection):
                 self.trade_connections.append(item(self))
-            elif issubclass(item, TradelaneAssault):
-                self.pirate_assaults.append(item(self))
-            elif issubclass(item, HuntersDefence):
-                self.hunter_patrols.append(item(self))
+            # elif issubclass(item, JumpableObject):
+            #     self.jumps.append(item(self))
+            # elif issubclass(item, DockableObject):
+            #     self.dockables.append(item(self))
+            # elif issubclass(item, TradelaneAssault):
+            #     self.pirate_assaults.append(item(self))
+            # elif issubclass(item, HuntersDefence):
+            #     self.hunter_patrols.append(item(self))
 
         system_content = []
 
         if len(self.trade_connections) > 0:
-            tlr_response = self.get_tradelane_creation_response()
-
-            trade_connection_index = 0
-            for response_item in tlr_response:
-                if response_item.is_object():
-                    self.trade_connections[trade_connection_index].add_tradelane(response_item)
-                if response_item.is_tlr_zone():
-                    self.trade_connections[trade_connection_index].set_tradelane_zone(response_item)
-                    trade_connection_index += 1
+            self.generate_tradelanes()
+            self.define_attacker_patrols()
 
             for item in self.trade_connections:
                 system_content.append(item.get_system_content())
 
+        self.generate_patrols()
+
+        for patrol in self.get_patrols_list():
+            system_content.append(patrol.get_system_content())
+
         self.system_content_str = DIVIDER.join(system_content)
+
+    def get_next_police_patrol_id(self):
+        self.last_police_patrol_id += 1
+        return self.last_police_patrol_id
+
+    def get_next_bounty_hunter_patrol_id(self):
+        self.last_bounty_hunter_patrol_id += 1
+        return self.last_bounty_hunter_patrol_id
+
+    def get_next_pirate_patrol_id(self):
+        self.last_pirate_patrol_id += 1
+        return self.last_pirate_patrol_id
+
+    def add_patrol(self, patrol):
+        self.patrols_db[patrol.get_path_label()] = patrol
+
+    def get_patrols_list(self):
+        return self.patrols_db.values()
 
     @classmethod
     def get_tracks_request_content(cls):
@@ -87,6 +113,34 @@ distance = {tlr_distance}
         tradelanes_request = self.get_tradelane_creation_request()
         return Tracks.get_tracks(tradelanes_request)
 
+    def get_path_creation_request(self):
+        request_items = [self.get_tracks_request_content()] + [patrol.get_tracks_request_content() for patrol in self.get_patrols_list()]
+        return DIVIDER.join(request_items)
+
+    def get_path_creation_response(self):
+        path_request = self.get_path_creation_request()
+        return Tracks.get_tracks(path_request)
+
+    def generate_tradelanes(self):
+        tlr_response = self.get_tradelane_creation_response()
+
+        trade_connection_index = 0
+        for response_item in tlr_response:
+            if response_item.is_object():
+                self.trade_connections[trade_connection_index].add_tradelane(response_item)
+            if response_item.is_tlr_zone():
+                self.trade_connections[trade_connection_index].set_tradelane_zone(response_item)
+                trade_connection_index += 1
+
+    def define_attacker_patrols(self):
+        for item in self.trade_connections:
+            item.define_attacker_patrols()
+
+    def generate_patrols(self):
+        patrols_response = self.get_path_creation_response()
+
+        for response_item in patrols_response:
+            self.patrols_db[response_item.get_path_label()].add_raw_path(response_item)
 
     # def get_path_creation_request(self):
     #     pass

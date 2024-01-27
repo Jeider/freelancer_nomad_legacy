@@ -1,5 +1,5 @@
 # from universe.base import br_wrw_01_Base, br_wrw_02_Base, br_wrw_03_Base, br_wrw_04_Base
-from universe.object import TradeConnection, TradelaneAssault, HuntersDefence, Jumpgate, Dockring, Station, TradeStation, PirateBase, TOP, BOTTOM, LEFT, RIGHT
+from universe.object import TradeConnection, Jumpgate, Dockring, Station, TradeStation, PirateBase, TOP, BOTTOM, LEFT, RIGHT
 
 
 class WarwickSysObject(object):
@@ -53,6 +53,9 @@ class WarwickConnection1(TradeConnection, WarwickSysObject):
     SIDE_TO = RIGHT
     TRADELANE_LETTER = 'A'
     HUNTER_DEFENCE_REL = BOTTOM
+    ATTACKED_BY = [
+        WarwickIrelandBase
+    ]
 
 
 class WarwickConnection2(TradeConnection, WarwickSysObject):
@@ -62,6 +65,9 @@ class WarwickConnection2(TradeConnection, WarwickSysObject):
     SIDE_TO = BOTTOM
     TRADELANE_LETTER = 'B'
     HUNTER_DEFENCE_REL = LEFT
+    ATTACKED_BY = [
+        WarwickIrelandBase
+    ]
 
 
 class WarwickConnection3(TradeConnection, WarwickSysObject):
@@ -79,6 +85,9 @@ class WarwickConnection4(TradeConnection, WarwickSysObject):
     SIDE_TO = RIGHT
     TRADELANE_LETTER = 'D'
     HUNTER_DEFENCE_REL = BOTTOM
+    ATTACKED_BY = [
+        WarwickPirateBase
+    ]
 
 
 class WarwickConnection5(TradeConnection, WarwickSysObject):
@@ -88,38 +97,6 @@ class WarwickConnection5(TradeConnection, WarwickSysObject):
     SIDE_TO = BOTTOM
     TRADELANE_LETTER = 'E'
     HUNTER_DEFENCE_REL = LEFT
-
-
-class WarwickPirateTradeAttack1(TradelaneAssault, WarwickSysObject):
-    LAUNCH_BASE = WarwickIrelandBase
-    ATTACKED_ROUTE = WarwickConnection1
-
-
-class WarwickPirateTradeAttack2(TradelaneAssault, WarwickSysObject):
-    LAUNCH_BASE = WarwickIrelandBase
-    ATTACKED_ROUTE = WarwickConnection2
-
-
-class WarwickPirateTradeAttack3(TradelaneAssault, WarwickSysObject):
-    LAUNCH_BASE = WarwickIrelandBase
-    ATTACKED_ROUTE = WarwickConnection5
-
-
-class WarwickHuntersDefence1(HuntersDefence, WarwickSysObject):
-    DEFENCED_ROUTE = WarwickConnection1
-    REL = BOTTOM
-
-
-class WarwickHuntersDefence2(HuntersDefence, WarwickSysObject):
-    DEFENCED_ROUTE = WarwickConnection2
-    REL = LEFT
-
-
-class WarwickHuntersDefence3(HuntersDefence, WarwickSysObject):
-    DEFENCED_ROUTE = WarwickConnection4
-    REL = BOTTOM
-
-
-class WarwickHuntersDefence4(HuntersDefence, WarwickSysObject):
-    DEFENCED_ROUTE = WarwickConnection4
-    REL = LEFT
+    ATTACKED_BY = [
+        WarwickIrelandBase
+    ]
