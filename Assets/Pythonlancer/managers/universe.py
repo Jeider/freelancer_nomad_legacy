@@ -1,3 +1,4 @@
+from universe.system import  System
 from universe.base import Base, EQUIP_CLASSES_PER_LEVEL
 from universe.markets import EquipDealer, ShipDealer
 
@@ -13,11 +14,22 @@ class UniverseManager(object):
         self.weapons = weapons
         self.shiparch = shiparch
 
+        self.systems = []
+        self.system_content_test = []
         self.bases = []
         self.equip_dealers_list = []
         self.ship_dealers_list = []
 
+        self.load_systems()
         self.load_bases()
+
+    def load_systems(self):
+        for system in System.subclasses:
+            if system.CONTENT:
+                system = system()
+                self.systems.append(system)
+                self.system_content_test.append(system.system_content_str)
+
 
     def load_bases(self):
         for base_class in Base.subclasses:
@@ -71,3 +83,7 @@ class UniverseManager(object):
 
     def get_market_ships(self):
         return DIVIDER.join([dealer.get_market_content() for dealer in self.ship_dealers_list])
+
+    def get_system_content_test(self):
+        return DIVIDER.join(self.system_content_test)
+

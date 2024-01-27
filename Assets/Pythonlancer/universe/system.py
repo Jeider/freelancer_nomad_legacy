@@ -1,5 +1,107 @@
+from universe.systems import br_wrw as br_wrw_objects
+from universe.object import SystemObject, TradeConnection, TradelaneAssault, HuntersDefence, JumpableObject, DockableObject
+
+from text.dividers import DIVIDER
+
+from tools.tracks import Tracks
+
+
+TLR_DISTANCE = 3000
+
+
 class System(object):
     NAME = ''
+    CONTENT = None
+    jumps = []
+    dockables = []
+    trade_connections = []
+    pirate_assaults = []
+    hunter_patrols = []
+
+    zones = []
+
+    subclasses = []
+
+    TRACKS_SYSTEM_TEMPLATE = '''[Settings]
+system = {system_name}
+distance = {tlr_distance}
+'''
+
+    def __init_subclass__(cls, **kwargs):
+        super().__init_subclass__(**kwargs)
+        cls.subclasses.append(cls)
+
+    def __init__(self):
+        if self.CONTENT is not None:
+            self.init_content()
+
+    def init_content(self):
+        for item in self.CONTENT.__dict__.values():
+            if not isinstance(item, type) or not issubclass(item, SystemObject):
+                continue
+
+            if item in (JumpableObject, DockableObject, TradeConnection, TradelaneAssault, HuntersDefence):
+                continue
+
+            if issubclass(item, JumpableObject):
+                self.jumps.append(item(self))
+            elif issubclass(item, DockableObject):
+                self.dockables.append(item(self))
+            elif issubclass(item, TradeConnection):
+                self.trade_connections.append(item(self))
+            elif issubclass(item, TradelaneAssault):
+                self.pirate_assaults.append(item(self))
+            elif issubclass(item, HuntersDefence):
+                self.hunter_patrols.append(item(self))
+
+        system_content = []
+
+        if len(self.trade_connections) > 0:
+            tlr_response = self.get_tradelane_creation_response()
+
+            trade_connection_index = 0
+            for response_item in tlr_response:
+                if response_item.is_object():
+                    self.trade_connections[trade_connection_index].add_tradelane(response_item)
+                if response_item.is_tlr_zone():
+                    self.trade_connections[trade_connection_index].set_tradelane_zone(response_item)
+                    trade_connection_index += 1
+
+            for item in self.trade_connections:
+                system_content.append(item.get_system_content())
+
+        self.system_content_str = DIVIDER.join(system_content)
+
+    @classmethod
+    def get_tracks_request_content(cls):
+        return cls.TRACKS_SYSTEM_TEMPLATE.format(
+            system_name=cls.NAME,
+            tlr_distance=TLR_DISTANCE,
+        )
+
+    def get_tradelane_creation_request(self):
+        request_items = [self.get_tracks_request_content()] + [item.get_tracks_request_content() for item in self.trade_connections]
+        return DIVIDER.join(request_items)
+
+    def get_tradelane_creation_response(self):
+        tradelanes_request = self.get_tradelane_creation_request()
+        return Tracks.get_tracks(tradelanes_request)
+
+
+    # def get_path_creation_request(self):
+    #     pass
+
+
+
+class BretoniaSystem(object):
+
+    FACTION_CODE = None
+
+    def get_faction(self):
+        if self.FACTION_CODE is None:
+            raise Exception('unknown faction for system %s' % self.NAME)
+        return self.FACTION_CODE
+
 
 
 class rh_mnh(System):
@@ -58,8 +160,10 @@ class tau31(System):
     NAME = 'tau31'
 
 
-class br_wrw(System):
+class br_wrw(BretoniaSystem, System):
     NAME = 'br_wrw'
+    FACTION_CODE = 'br_grp'
+    CONTENT = br_wrw_objects
 
 
 class tau29(System):

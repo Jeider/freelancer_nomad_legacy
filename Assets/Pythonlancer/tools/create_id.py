@@ -13,11 +13,11 @@ class CreateId(object):
         return current_path.parent.parent
 
     @staticmethod
-    def run_command(executable, main_params, nickname):
+    def run_command(nickname):
         root_path = CreateId.get_root_path()
-        exec_path = root_path / executable
+        exec_path = root_path / CreateId.EXECUTABLE
         exec_params = [exec_path]
-        exec_params.extend(main_params)
+        exec_params.extend(CreateId.GET_ID_PARAMS)
         exec_params.append(nickname)
 
         cmd_output = subprocess.run(exec_params, cwd=root_path, capture_output=True)
@@ -28,8 +28,4 @@ class CreateId(object):
 
     @staticmethod
     def get_id(nickname):
-        return CreateId.run_command(
-            CreateId.EXECUTABLE,
-            CreateId.GET_ID_PARAMS,
-            nickname,
-        )
+        return CreateId.run_command(nickname)

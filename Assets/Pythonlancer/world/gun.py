@@ -559,7 +559,7 @@ class OrderHeavygun(Gun, BorderWorldGun):
     FX_APPEARANCE = WeaponFX.FX_PLASMA
 
 
-class CorsairMainGun(Gun, BorderWorldGun):
+class BorderWorldCorsairgun(Gun, BorderWorldGun):
     RU_NAME = 'Саламанка'
     RU_NAME_DESC = 'Пушка Корсаров'
     BASE_NICKNAME = 'bw_corsairgun'
@@ -572,7 +572,7 @@ class CorsairMainGun(Gun, BorderWorldGun):
     FX_APPEARANCE = WeaponFX.FX_NEUTRON
 
 
-class CorsairShieldGun(Gun, BorderWorldGun):
+class BorderWorldShieldgun(Gun, BorderWorldGun):
     RU_NAME = 'Рапира'
     RU_NAME_DESC = 'Противощитовая пушка пограничья'
     BASE_NICKNAME = 'bw_shieldgun'
@@ -586,7 +586,7 @@ class CorsairShieldGun(Gun, BorderWorldGun):
     FX_APPEARANCE = WeaponFX.FX_PULSE
 
 
-class OutcastGun(Gun, BorderWorldGun):
+class BorderWorldOutcastgun(Gun, BorderWorldGun):
     RU_NAME = 'Вирм'
     RU_NAME_DESC = 'Пушка Изгоев'
     BASE_NICKNAME = 'bw_outcastgun'

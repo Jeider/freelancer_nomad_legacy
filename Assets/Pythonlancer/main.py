@@ -55,6 +55,7 @@ def main():
         ('demo_marketdata.ini', DIVIDER.join(markets_demo_data)),
         ('market_equip.ini', core.universe.get_market_equip()),
         ('market_ships.ini', core.universe.get_market_ships()),
+        ('system_content_test.ini', core.universe.get_system_content_test()),
 
         ('ship_packages.ini', core.shiparch.get_ship_goods()),
 
