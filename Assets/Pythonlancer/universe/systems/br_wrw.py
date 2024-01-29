@@ -1,6 +1,9 @@
 # from universe.base import br_wrw_01_Base, br_wrw_02_Base, br_wrw_03_Base, br_wrw_04_Base
-from universe.object import TradeConnection, Jumpgate, Dockring, Station, TradeStation, PirateBase, TOP, BOTTOM, LEFT, RIGHT
+from universe.object import TradeConnection, Jumpgate, Dockring, Station, TradeStation, PirateBase, Sattelite, TOP, BOTTOM, LEFT, RIGHT
 from templates.space_objects.pirate_base_bizmark import PirateBaseBizmark
+from templates.space_objects.tekagi_megabase import TekagiMegabase
+from templates.space_objects.nomad_babylon import Babylon
+from templates.space_objects.nomad_asf_hq import AsfHQ
 
 
 class WarwickSysObject(object):
@@ -47,6 +50,69 @@ class WarwickIrelandBase(PirateBase, WarwickSysObject):
 class WarwickPirateBase(PirateBase, WarwickSysObject):
     POS = (50000, 0, -5000)
     REL = RIGHT
+
+
+class WarwickTest1(Sattelite, WarwickSysObject):
+    POS = (8000, 0, 0)
+    REL = RIGHT
+    SPACE_OBJECT_TEMPLATE = TekagiMegabase
+    SPACE_OBJECT_NAME = 'br_wrw_21'
+
+
+class WarwickTest2(Sattelite, WarwickSysObject):
+    POS = (0, 0, 4000)
+    REL = RIGHT
+    SPACE_OBJECT_TEMPLATE = TekagiMegabase
+    SPACE_OBJECT_NAME = 'br_wrw_22'
+
+
+class WarwickTest3(Sattelite, WarwickSysObject):
+    POS = (-4000, 0, 0)
+    REL = RIGHT
+    SPACE_OBJECT_TEMPLATE = TekagiMegabase
+    SPACE_OBJECT_NAME = 'br_wrw_23'
+
+class WarwickTest4(Sattelite, WarwickSysObject):
+    POS = (0, 0, -4000)
+    REL = RIGHT
+    SPACE_OBJECT_TEMPLATE = TekagiMegabase
+    SPACE_OBJECT_NAME = 'br_wrw_24'
+
+class WarwickTest5(Sattelite, WarwickSysObject):
+    POS = (2000, 500, -2000)
+    REL = RIGHT
+    SPACE_OBJECT_TEMPLATE = Babylon
+    SPACE_OBJECT_NAME = 'br_wrw_25'
+
+class WarwickTest6(Sattelite, WarwickSysObject):
+    POS = (-2000, 500, -2000)
+    REL = RIGHT
+    SPACE_OBJECT_TEMPLATE = Babylon
+    SPACE_OBJECT_NAME = 'br_wrw_26'
+
+class WarwickTest7(Sattelite, WarwickSysObject):
+    POS = (2000, 500, 2000)
+    REL = RIGHT
+    SPACE_OBJECT_TEMPLATE = Babylon
+    SPACE_OBJECT_NAME = 'br_wrw_27'
+
+class WarwickTest8(Sattelite, WarwickSysObject):
+    POS = (-2000, 500, 2000)
+    REL = RIGHT
+    SPACE_OBJECT_TEMPLATE = Babylon
+    SPACE_OBJECT_NAME = 'br_wrw_28'
+
+class WarwickTest9(Sattelite, WarwickSysObject):
+    POS = (5000, 0, -4000)
+    REL = RIGHT
+    SPACE_OBJECT_TEMPLATE = AsfHQ
+    SPACE_OBJECT_NAME = 'br_wrw_29'
+
+class WarwickTest10(Sattelite, WarwickSysObject):
+    POS = (5000, 0, 4000)
+    REL = RIGHT
+    SPACE_OBJECT_TEMPLATE = AsfHQ
+    SPACE_OBJECT_NAME = 'br_wrw_30'
 
 
 class WarwickConnection1(TradeConnection, WarwickSysObject):

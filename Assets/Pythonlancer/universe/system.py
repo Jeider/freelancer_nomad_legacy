@@ -1,5 +1,5 @@
 from universe.systems import br_wrw as br_wrw_objects
-from universe.object import SystemObject, TradeConnection, JumpableObject, DockableObject
+from universe.object import SystemObject, TradeConnection, JumpableObject, DockableObject, StaticObject
 
 from text.dividers import DIVIDER
 
@@ -38,6 +38,7 @@ distance = {tlr_distance}
 
         # self.jumps = []
         self.dockables = []
+        self.statics = []
         # self.pirate_assaults = []
         # self.hunter_patrols = []
         # self.zones = []
@@ -50,15 +51,20 @@ distance = {tlr_distance}
             if not isinstance(item, type) or not issubclass(item, SystemObject):
                 continue
 
-            if item in (JumpableObject, DockableObject, TradeConnection):
+            if item is issubclass(item, StaticObject) and item.is_abstract():
+                continue
+
+            if item in (TradeConnection, DockableObject, TradeConnection):
                 continue
 
             if issubclass(item, TradeConnection):
                 self.trade_connections.append(item(self))
             # elif issubclass(item, JumpableObject):
             #     self.jumps.append(item(self))
-            elif issubclass(item, DockableObject):
-                self.dockables.append(item(self))
+            # elif issubclass(item, DockableObject):
+            #     self.dockables.append(item(self))
+            elif issubclass(item, StaticObject):
+                self.statics.append(item(self))
             # elif issubclass(item, TradelaneAssault):
             #     self.pirate_assaults.append(item(self))
             # elif issubclass(item, HuntersDefence):
@@ -102,7 +108,7 @@ distance = {tlr_distance}
         return self.patrols_db.values()
 
     def get_appearable_objects(self):
-        return [item for item in self.dockables if item.has_appearance()]
+        return [item for item in self.statics if item.has_appearance()]
 
     @classmethod
     def get_tracks_request_content(cls):

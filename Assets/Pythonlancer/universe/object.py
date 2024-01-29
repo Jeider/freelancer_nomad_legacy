@@ -118,16 +118,7 @@ class SystemObject(object):
         self.system = system
 
 
-class JumpableObject(SystemObject):
-    pass
-
-
-class Jumpgate(JumpableObject):
-    REL_DRIFT = 500
-    REL_APPEND = 2000
-
-
-class AppearableObject(object):
+class AppearableObject(SystemObject):
     SPACE_OBJECT_TEMPLATE = None
     SPACE_OBJECT_NAME = None
 
@@ -144,29 +135,51 @@ class AppearableObject(object):
         )
 
 
-class DockableObject(AppearableObject, SystemObject):
+class StaticObject(AppearableObject):
+    ABSTRACT = True
+
+    @classmethod
+    def is_abstract(cls):
+        return cls.ABSTRACT
+
+
+class JumpableObject(StaticObject):
+    pass
+
+
+class Jumpgate(JumpableObject):
+    ABSTRACT = False
+
+    REL_DRIFT = 500
+    REL_APPEND = 2000
+
+
+class Sattelite(StaticObject):
+    ABSTRACT = False
+
+
+class DockableObject(AppearableObject):
     pass
 
 
 class Dockring(DockableObject):
+    ABSTRACT = False
+
     REL_DRIFT = 1000
     REL_APPEND = 5000
 
 
 
 class Station(DockableObject):
-    pass
-
+    ABSTRACT = False
 
 
 class TradeStation(DockableObject):
-    pass
-
+    ABSTRACT = False
 
 
 class PirateBase(DockableObject):
-    pass
-
+    ABSTRACT = False
 
 
 class PatrolObjective(SystemObject):
