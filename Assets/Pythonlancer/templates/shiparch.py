@@ -1,6 +1,6 @@
-from templates.template import Template
+from templates.simple_template import SimpleTemplate
 
-class ShiparchTemplate(Template):
+class ShiparchTemplate(SimpleTemplate):
     TEMPLATE = '''
 [Simple]
 nickname = generic_pilot

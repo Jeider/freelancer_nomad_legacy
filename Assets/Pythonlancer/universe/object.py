@@ -122,16 +122,30 @@ class JumpableObject(SystemObject):
     pass
 
 
-
 class Jumpgate(JumpableObject):
     REL_DRIFT = 500
     REL_APPEND = 2000
 
 
+class AppearableObject(object):
+    SPACE_OBJECT_TEMPLATE = None
+    SPACE_OBJECT_NAME = None
 
-class DockableObject(SystemObject):
+    def has_appearance(self):
+        return self.SPACE_OBJECT_TEMPLATE is not None
+
+    def get_system_content(self):
+        if not self.POS:
+            raise Exception('POS is required for getting object instance when it has appaerance')
+
+        return self.SPACE_OBJECT_TEMPLATE().get_instance(
+            new_space_object_name=self.SPACE_OBJECT_NAME,
+            move_to=self.POS,
+        )
+
+
+class DockableObject(AppearableObject, SystemObject):
     pass
-
 
 
 class Dockring(DockableObject):

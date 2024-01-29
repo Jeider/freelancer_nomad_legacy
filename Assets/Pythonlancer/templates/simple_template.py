@@ -1,4 +1,4 @@
-class Template(object):
+class SimpleTemplate(object):
     TEMPLATE = None
 
     def format(self, params):

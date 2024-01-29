@@ -75,20 +75,6 @@ class TracksResponseItem(object):
             raise Exception('Is not a path zone')
 
         return self.lines[self.PATH_LABEL_KEY].split(',')[0].strip()
-        
-
-'''
-
-
-[Zone]
-nickname = Zone_br_wrw_path_bounty_hunter1_1
-pos = -55000, 0, -16500
-rotate = -90, -73, 0
-shape = CYLINDER
-size = 750, 10440
-usage = patrol
-path_label = bounty_hunter1, 1
-'''
 
 
 class Tracks(object):
@@ -181,7 +167,8 @@ class Tracks(object):
 
     @staticmethod
     def demo_request():
-        DEMO_REQUEST_CONTENT = '''[Settings]
+        DEMO_REQUEST_CONTENT = '''
+        [Settings]
         system = test
         distance = 7000
 

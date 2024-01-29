@@ -1,5 +1,6 @@
 # from universe.base import br_wrw_01_Base, br_wrw_02_Base, br_wrw_03_Base, br_wrw_04_Base
 from universe.object import TradeConnection, Jumpgate, Dockring, Station, TradeStation, PirateBase, TOP, BOTTOM, LEFT, RIGHT
+from templates.space_objects.pirate_base_bizmark import PirateBaseBizmark
 
 
 class WarwickSysObject(object):
@@ -39,6 +40,8 @@ class WarwickTradingOutpost(TradeStation, WarwickSysObject):
 class WarwickIrelandBase(PirateBase, WarwickSysObject):
     POS = (-45000, 0, 20000)
     REL = LEFT
+    SPACE_OBJECT_TEMPLATE = PirateBaseBizmark
+    SPACE_OBJECT_NAME = 'br_wrw_10'
 
 
 class WarwickPirateBase(PirateBase, WarwickSysObject):

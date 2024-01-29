@@ -37,7 +37,7 @@ distance = {tlr_distance}
         self.trade_connections = []
 
         # self.jumps = []
-        # self.dockables = []
+        self.dockables = []
         # self.pirate_assaults = []
         # self.hunter_patrols = []
         # self.zones = []
@@ -57,8 +57,8 @@ distance = {tlr_distance}
                 self.trade_connections.append(item(self))
             # elif issubclass(item, JumpableObject):
             #     self.jumps.append(item(self))
-            # elif issubclass(item, DockableObject):
-            #     self.dockables.append(item(self))
+            elif issubclass(item, DockableObject):
+                self.dockables.append(item(self))
             # elif issubclass(item, TradelaneAssault):
             #     self.pirate_assaults.append(item(self))
             # elif issubclass(item, HuntersDefence):
@@ -77,6 +77,9 @@ distance = {tlr_distance}
 
         for patrol in self.get_patrols_list():
             system_content.append(patrol.get_system_content())
+
+        for app_obj in self.get_appearable_objects():
+            system_content.append(app_obj.get_system_content())
 
         self.system_content_str = DIVIDER.join(system_content)
 
@@ -97,6 +100,9 @@ distance = {tlr_distance}
 
     def get_patrols_list(self):
         return self.patrols_db.values()
+
+    def get_appearable_objects(self):
+        return [item for item in self.dockables if item.has_appearance()]
 
     @classmethod
     def get_tracks_request_content(cls):
@@ -141,6 +147,9 @@ distance = {tlr_distance}
 
         for response_item in patrols_response:
             self.patrols_db[response_item.get_path_label()].add_raw_path(response_item)
+
+
+
 
     # def get_path_creation_request(self):
     #     pass

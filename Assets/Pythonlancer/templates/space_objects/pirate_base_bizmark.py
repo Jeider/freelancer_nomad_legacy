@@ -1,0 +1,147 @@
+from templates.space_object_template import SpaceObjectTemplate
+
+class PirateBaseBizmark(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'rh_biz_06'
+    TEMPLATE = '''[Object]
+nickname = rh_biz_06
+ids_name = 203885
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = space_police01
+ids_info = 1
+base = rh_biz_06_base
+dock_with = rh_biz_06_base
+reputation = rx_grp
+behavior = NOTHING
+voice = atc_leg_f01
+space_costume = rh_gruenwald_head_gen, pl_female2_journeyman_body
+difficulty_level = 5
+loadout = rh_space_police01
+pilot = pilot_solar_hardest
+
+[Object]
+nickname = rh_biz_06_industrial01
+pos = 0, -200, 0
+rotate = 0, 0, 0
+archetype = space_industrial02a
+parent = rh_biz_06
+
+[Object]
+nickname = rh_biz_06_industrial02
+pos = 0, -450, 0
+rotate = 0, 0, 0
+archetype = space_industrial02a
+parent = rh_biz_06
+
+[Object]
+nickname = rh_biz_06_industrial03
+pos = 0, -725, 0
+rotate = 0, 0, 0
+archetype = space_industrial02a
+parent = rh_biz_06
+
+[Object]
+nickname = rh_biz_06_industrial04
+pos = -175, -490, 0
+rotate = 0, 0, -60
+archetype = space_industriala
+parent = rh_biz_06
+
+[Object]
+nickname = rh_biz_06_industrial05
+pos = 175, -490, 0
+rotate = 0, 0, 60
+archetype = space_industriala
+parent = rh_biz_06
+
+[Object]
+nickname = rh_biz_06_industrial06
+pos = -315, -250, 0
+rotate = 0, 0, -60
+archetype = space_industriala
+parent = rh_biz_06
+
+[Object]
+nickname = rh_biz_06_industrial07
+pos = 315, -250, 0
+rotate = 0, 0, 60
+archetype = space_industriala
+parent = rh_biz_06
+
+[Object]
+nickname = rh_biz_06_girder01
+pos = 0, -200, 0
+rotate = 90, 0, 0
+archetype = space_girder
+parent = rh_biz_06
+
+[Object]
+nickname = rh_biz_06_girder02
+pos = 0, -600, 0
+rotate = 90, 0, 0
+archetype = space_girder
+parent = rh_biz_06
+
+[Object]
+nickname = rh_biz_06_girder03
+pos = -25, -750, 0
+rotate = -60, -90, 0
+archetype = space_girdera
+parent = rh_biz_06
+
+[Object]
+nickname = rh_biz_06_girder04
+pos = 25, -750, 0
+rotate = -60, 90, 0
+archetype = space_girdera
+parent = rh_biz_06
+
+[Object]
+nickname = rh_biz_06_girder05
+pos = -160, -520, 0
+rotate = -60, -90, 0
+archetype = space_girdera
+parent = rh_biz_06
+
+[Object]
+nickname = rh_biz_06_girder06
+pos = 160, -520, 0
+rotate = -60, 90, 0
+archetype = space_girdera
+parent = rh_biz_06
+
+[Object]
+nickname = rh_biz_06_girder07
+pos = 100, -455, 0
+rotate = 10, 90, 0
+archetype = space_girderc
+parent = rh_biz_06
+
+[Object]
+nickname = rh_biz_06_girder08
+pos = -100, -455, 0
+rotate = -10, 90, 0
+archetype = space_girderc
+parent = rh_biz_06
+
+[Object]
+nickname = rh_biz_06_girder09
+pos = 150, -208, 0
+rotate = 5, 90, 0
+archetype = space_girder
+parent = rh_biz_06
+
+[Object]
+nickname = rh_biz_06_girder10
+pos = -150, -208, 0
+rotate = -5, 90, 0
+archetype = space_girder
+parent = rh_biz_06
+
+[Object]
+nickname = rh_biz_06_habitat01
+pos = 0, -840, 0
+rotate = 180, 0, 0
+archetype = space_small_control_block
+parent = rh_biz_06
+'''
