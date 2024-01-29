@@ -338,3 +338,385 @@ rotate = 0, 90, 0
 archetype = old_panel_x2
 parent = ku_hns_03
 '''
+
+
+class BerlinPrison(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'rh_ber_02'
+    TEMPLATE = '''[Object]
+nickname = rh_ber_02
+ids_name = 203630
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = space_police01_prison
+ids_info = 066627
+base = Rh_Ber_02_Base
+dock_with = Rh_Ber_02_Base
+visit = 16
+reputation = rh_grp
+behavior = NOTHING
+voice = atc_leg_F01
+space_costume = br_newscaster_head_gen_hat, rh_female_elite_body, prop_hat_female_rh_elite
+difficulty_level = 12
+pilot = pilot_solar_hardest
+
+[Object]
+nickname = rh_ber_02_prison
+pos = -500, 0, 0
+rotate = 0, 180, 0
+archetype = space_prison
+parent = rh_ber_02
+
+[Object]
+nickname = rh_ber_02_tankl01
+pos = -500, -290, 0
+rotate = 90, 0, 0
+archetype = space_tankl4x4
+parent = rh_ber_02
+
+[Object]
+nickname = rh_ber_02_tankl02
+pos = -500, -290, 0
+rotate = 90, 90, 0
+archetype = space_tankl4x4
+parent = rh_ber_02
+
+[Object]
+nickname = rh_ber_02_tankl03
+pos = -500, -460, 0
+rotate = 0, 0, 0
+archetype = space_tanklx4
+parent = rh_ber_02
+
+[Object]
+nickname = rh_ber_02_industrial01
+pos = -500, 0, 450
+rotate = 0, 180, 0
+archetype = space_industrial
+parent = rh_ber_02
+
+[Object]
+nickname = rh_ber_02_industrial02
+pos = -500, 0, -450
+rotate = 0, 0, 0
+archetype = space_industrial02
+parent = rh_ber_02
+
+[Object]
+nickname = rh_ber_02_industrial03
+pos = -300, 0, 0
+rotate = 0, 90, 0
+archetype = space_industrial01b_lod
+parent = rh_ber_02
+
+[Object]
+nickname = rh_ber_02_girder01
+pos = -265, 0, 0
+rotate = 0, 90, 0
+archetype = space_girder
+parent = rh_ber_02
+
+[Object]
+nickname = rh_ber_02_dome01
+pos = -840, 30, 450
+rotate = 0, 90, 0
+archetype = space_dome_lod
+parent = rh_ber_02
+
+[Object]
+nickname = rh_ber_02_dome02
+pos = -500, 30, 700
+rotate = 0, 180, 0
+archetype = space_dome_lod
+parent = rh_ber_02
+
+[Object]
+nickname = rh_ber_02_shipyard01
+pos = -680, -215, -450
+rotate = 0, -90, 0
+archetype = shipyard
+parent = rh_ber_02
+
+[Object]
+nickname = rh_ber_02_habitat01
+pos = -500, 180, 0
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = rh_ber_02
+
+[Object]
+nickname = rh_ber_02_habitat02
+pos = -500, 270, 0
+rotate = 0, 0, 0
+archetype = space_habitat_tall
+parent = rh_ber_02
+'''
+
+
+class AlaskaPrison(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'li_mnh_05'
+    TEMPLATE = '''[Object]
+nickname = li_mnh_05
+pos = 0, 0, 0
+rotate = 0, 90, 0
+archetype = prison
+loadout = prison_li
+ids_name = 208615
+ids_info = 067009
+visit = 0
+base = li_mnh_05_base
+dock_with = li_mnh_05_base
+reputation = li_grp
+behavior = NOTHING
+difficulty_level = 6
+voice = atc_leg_m01
+space_costume = ge_male7_head, li_tilton_body, prop_hat_male_li_grd, prop_neuralnet_d
+
+[Object]
+nickname = li_mnh_05_indA01
+pos = 0, 0, -600
+rotate = 90, 0, 0
+archetype = space_industrial02a
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_indA02
+pos = 190, 0, -600
+rotate = 0, 90, 0
+archetype = space_industrial01
+loadout = space_ind01_reactor
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_indA03
+pos = -190, 0, -600
+rotate = 0, -90, 0
+archetype = space_industrial01
+loadout = space_ind01_reactor
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_indA04
+pos = 0, 0, -405
+rotate = 0, 0, 0
+archetype = space_industrial01
+loadout = space_ind01_reactor
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_indA05
+pos = 0, 0, -795
+rotate = 0, 180, 0
+archetype = space_industrial01
+loadout = space_ind01_reactor
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_indA06
+pos = 0, 220, -600
+rotate = 90, 0, 0
+archetype = space_industriala
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_indA07
+pos = 0, -110, -600
+rotate = 90, 45, 0
+archetype = space_industrialc
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_indA08
+pos = 0, 0, -230
+rotate = 0, 0, 0
+archetype = space_industrial01c
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_domeA01
+pos = 0, 25, -1200
+rotate = 0, 90, 0
+archetype = space_domea
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_domeA02
+pos = 0, -25, -1200
+rotate = 180, 90, 0
+archetype = space_domea
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_domeA03
+pos = 600, 25, -600
+rotate = 0, 0, 0
+archetype = space_domea
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_domeA04
+pos = 600, -25, -600
+rotate = 180, 0, 0
+archetype = space_domea
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_domeA05
+pos = -600, 25, -600
+rotate = 0, 0, 0
+archetype = space_domea
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_domeA06
+pos = -600, -25, -600
+rotate = 180, 0, 0
+archetype = space_domea
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_cntrl_twrA01
+pos = 0, 0, -1200
+rotate = 0, 0, 0
+archetype = space_medium_control_tower
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_cntrl_twrA02
+pos = 600, 0, -600
+rotate = 0, 0, 0
+archetype = space_medium_control_tower
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_cntrl_twrA03
+pos = -600, 0, -600
+rotate = 0, 0, 0
+archetype = space_medium_control_tower
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_cntrl_twrB01
+pos = 0, 220, -600
+rotate = 0, 45, 0
+archetype = space_medium_control_tower
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_cntrl_twrB02
+pos = 0, 400, -600
+rotate = 180, 45, 0
+archetype = space_medium_control_tower
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_cntrl_twrB03
+pos = 0, 180, -600
+rotate = 0, 0, 0
+archetype = space_small_control_tower
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_cntrl_twrB04
+pos = 0, 430, -600
+rotate = 0, 0, 0
+archetype = space_small_control_tower
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_habitat01
+pos = 90, 310, -600
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_habitat02
+pos = -90, 310, -600
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_habitat03
+pos = 0, 310, -510
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_habitat04
+pos = 0, 310, -680
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_habitat05
+pos = 0, 310, -600
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_habitat06
+pos = 0, 455, -600
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_habitat07
+pos = 90, 535, -600
+rotate = 0, -80, 0
+archetype = space_habitat_tall
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_control_block01
+pos = 0, 545, -600
+rotate = 0, 0, 0
+archetype = space_small_control_block
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_control_block02
+pos = -90, 350, -600
+rotate = 0, 135, 0
+archetype = space_small_control_block
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_tanks01
+pos = 0, -360, -600
+rotate = 90, 0, 0
+archetype = space_tankl4x4
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_tanks02
+pos = 0, -360, -600
+rotate = 90, 90, 0
+archetype = space_tankl4x4
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_tanks03
+pos = 0, -360, -600
+rotate = 90, 45, 0
+archetype = space_tankl4x4
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_tanks04
+pos = 0, -360, -600
+rotate = 90, -45, 0
+archetype = space_tankl4x4
+parent = li_mnh_05
+
+[Object]
+nickname = li_mnh_05_tanks05
+pos = 0, -500, -600
+rotate = 0, 0, 0
+archetype = space_tanklx4
+parent = li_mnh_05
+'''

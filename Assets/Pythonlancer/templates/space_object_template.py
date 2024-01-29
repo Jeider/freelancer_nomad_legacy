@@ -42,9 +42,9 @@ class SpaceObjectTemplate(object):
                 return pos_val
 
         try:
-            move_x = int(move_to[0])
-            move_y = int(move_to[1])
-            move_z = int(move_to[2])
+            move_x = float(move_to[0])
+            move_y = float(move_to[1])
+            move_z = float(move_to[2])
         except IndexError:
             raise Exception('Invalid move_to format')
         except ValueError:

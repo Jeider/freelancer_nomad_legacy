@@ -426,3 +426,252 @@ rotate = 180, 0, 0
 archetype = space_habitat_tall
 parent = ku_hkd_07
 '''
+
+
+class AlgBaseBerlin(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'ku_hkd_07'
+    TEMPLATE = '''[Object]
+nickname = rh_ber_07
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = space_police01
+base = rh_ber_07_base
+dock_with = rh_ber_07_base
+ids_name = 203883
+ids_info = 1
+reputation = rh_grp
+behavior = NOTHING
+voice = atc_leg_m01
+space_costume = rh_captain_head, rh_male_guard_body, prop_hat_male_rh_grd_visor, prop_neuralnet_b_right
+
+[Object]
+nickname = rh_ber_07_station_root
+pos = 1350, 100, 0
+rotate = 0, 90, 0
+archetype = space_station_root
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_girder01
+pos = 380, 0, 0
+rotate = 0, 0, 0
+archetype = space_girderb
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_girder02
+pos = 520, 0, 0
+rotate = 0, 0, 0
+archetype = space_girderb
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_girder03
+pos = 800, 0, 0
+rotate = 0, 0, 0
+archetype = space_girderb
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_girder04
+pos = 970, 0, 0
+rotate = 0, 0, 0
+archetype = space_girderb
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_girder05
+pos = 150, 0, 0
+rotate = 0, 90, 0
+archetype = space_girderc
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_prod01
+pos = 850, 0, -80
+rotate = 0, 90, 0
+archetype = space_large_production
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_prod02
+pos = 850, 0, 80
+rotate = 0, 90, 0
+archetype = space_large_production
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_prod03
+pos = 400, 0, -80
+rotate = 0, 90, 0
+archetype = space_large_production
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_prod04
+pos = 400, 0, 80
+rotate = 0, 90, 0
+archetype = space_large_production
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_industrial01
+pos = 1070, 0, -80
+rotate = 0, 90, 0
+archetype = space_industrial01b_lod
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_industrial02
+pos = 1070, 0, 80
+rotate = 0, 90, 0
+archetype = space_industrial01b_lod
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_industrial03
+pos = 625, 0, -80
+rotate = 0, 90, 0
+archetype = space_industrial01b_lod
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_industrial04
+pos = 625, 0, 80
+rotate = 0, 90, 0
+archetype = space_industrial01b_lod
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_industrial05
+pos = 250, 0, 0
+rotate = 0, 0, 0
+archetype = space_industrial01b_lod
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_flamer01
+pos = 185, 0, -80
+rotate = 0, 15, 90
+archetype = space_cloakgen_flamer
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_flamer02
+pos = 185, 0, 80
+rotate = 0, 15, 90
+archetype = space_cloakgen_flamer
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_pad01
+pos = 970, 5, -170
+rotate = 0, 90, 0
+archetype = space_pad_plane
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_pad02
+pos = 820, 5, -170
+rotate = 0, 90, 0
+archetype = space_pad_plane
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_pad03
+pos = 520, 5, -170
+rotate = 0, 90, 0
+archetype = space_pad_plane
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_pad04
+pos = 370, 5, -170
+rotate = 0, 90, 0
+archetype = space_pad_plane
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_pad05
+pos = 970, 5, 170
+rotate = 0, -90, 0
+archetype = space_pad_plane
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_pad06
+pos = 820, 5, 170
+rotate = 0, -90, 0
+archetype = space_pad_plane
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_pad07
+pos = 520, 0, 170
+rotate = 0, -90, 0
+archetype = space_pad_plane
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_pad08
+pos = 370, 0, 170
+rotate = 0, -90, 0
+archetype = space_pad_plane
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_hangar01
+pos = 700, 0, -140
+rotate = 0, 180, 0
+archetype = space_hangar
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_hangar02
+pos = 250, 0, -140
+rotate = 0, 180, 0
+archetype = space_hangar
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_hangar03
+pos = 700, 0, 140
+rotate = 0, 0, 0
+archetype = space_hangar
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_hangar04
+pos = 250, 0, 140
+rotate = 0, 0, 0
+archetype = space_hangar
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_small_pad01
+pos = 700, 0, -184
+rotate = 0, 90, 0
+archetype = space_small_pad
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_small_pad02
+pos = 250, 0, -184
+rotate = 0, 90, 0
+archetype = space_small_pad
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_small_pad03
+pos = 700, 0, 184
+rotate = 0, -90, 0
+archetype = space_small_pad
+parent = rh_ber_07
+
+[Object]
+nickname = rh_ber_07_small_pad04
+pos = 250, 0, 184
+rotate = 0, -90, 0
+archetype = space_small_pad
+parent = rh_ber_07
+'''
