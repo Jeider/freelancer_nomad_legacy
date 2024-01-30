@@ -1075,3 +1075,131 @@ rotate = -20, 160, 80
 archetype = space_girdera
 parent = rh_biz_04
 '''
+
+
+class ForbesResearch(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'li_for_05'
+    TEMPLATE = '''[Object]
+nickname = li_for_05
+pos = 0, 0, 0
+rotate = 0, 90, 0
+archetype = space_police01
+base = li_for_05_base
+dock_with = li_for_05_base
+reputation = li_grp
+behavior = NOTHING
+difficulty_level = 10
+loadout = li_space_police01
+pilot = pilot_solar_hardest
+ids_name = 203668
+ids_info = 065587
+voice = atc_leg_m01
+space_costume = rh_deidrich_head, sc_scientist2_body, prop_neuralnet_a_right
+
+[Object]
+nickname = li_for_05_solar_plant
+pos = 0, 0, -900
+rotate = 0, 90, 0
+archetype = space_solar_plant
+parent = li_for_05
+
+[Object]
+nickname = li_for_05_ind01
+pos = 0, 0, -735
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = li_for_05
+
+[Object]
+nickname = li_for_05_ind02
+pos = -200, 0, -735
+rotate = 0, 90, 0
+archetype = space_industrial01a
+loadout = space_ind01_reactor
+parent = li_for_05
+
+[Object]
+nickname = li_for_05_ind03
+pos = 200, 0, -735
+rotate = 0, 90, 0
+archetype = space_industrial01a
+loadout = space_ind01_reactor
+parent = li_for_05
+
+[Object]
+nickname = li_for_05_ind04
+pos = 0, 0, -510
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = li_for_05
+
+[Object]
+nickname = li_for_05_ind05
+pos = 0, 0, -280
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = li_for_05
+
+[Object]
+nickname = li_for_05_cntrl_twr01
+pos = 0, 0, -600
+rotate = 90, 0, 45
+archetype = space_medium_control_tower
+parent = li_for_05
+
+[Object]
+nickname = li_for_05_cntrl_twr02
+pos = 0, 0, -420
+rotate = 90, 0, 45
+archetype = space_medium_control_tower
+parent = li_for_05
+
+[Object]
+nickname = li_for_05_habitat01
+pos = 0, -90, -510
+rotate = 90, 0, 0
+archetype = space_habitat_wide
+parent = li_for_05
+
+[Object]
+nickname = li_for_05_habitat02
+pos = 0, 90, -510
+rotate = 90, 0, 0
+archetype = space_habitat_wide
+parent = li_for_05
+
+[Object]
+nickname = li_for_05_habitat03
+pos = -90, 0, -510
+rotate = 90, 0, 0
+archetype = space_habitat_wide
+parent = li_for_05
+
+[Object]
+nickname = li_for_05_habitat04
+pos = 90, 0, -510
+rotate = 90, 0, 0
+archetype = space_habitat_wide
+parent = li_for_05
+
+[Object]
+nickname = li_for_05_girder01
+pos = 0, 0, -250
+rotate = 0, 0, 0
+archetype = space_girder
+parent = li_for_05
+
+[Object]
+nickname = li_for_05_tanks01
+pos = 120, 0, -280
+rotate = 0, 0, 90
+archetype = space_tanklx4
+parent = li_for_05
+
+[Object]
+nickname = li_for_05_tanks02
+pos = -120, 0, -280
+rotate = 0, 0, -90
+archetype = space_tanklx4
+parent = li_for_05
+'''

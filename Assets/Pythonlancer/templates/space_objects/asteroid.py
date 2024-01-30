@@ -915,3 +915,77 @@ rotate = 0, 40, 0
 archetype = space_tanks4
 parent = li_mnh_09
 '''
+
+
+class CaliforniaAsteroidBase(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'li_cal_09'
+    TEMPLATE = '''[Object]
+nickname = li_cal_09
+pos = 0, 0, 0
+rotate = 0, -90, 0
+archetype = miningbase_FragA
+base = li_cal_09_base
+dock_with = li_cal_09_base
+voice = atc_leg_m01
+space_costume = pi_pirate2_head, pi_pirate2_body, prop_neuralnet_b
+ids_name = 203891
+ids_info = 1
+reputation = lx_grp
+behavior = NOTHING
+
+[Object]
+nickname = li_cal_09_hand01
+pos = 70, 45, -40
+rotate = 0, 10, 60
+archetype = space_hand
+parent = li_cal_09
+
+[Object]
+nickname = li_cal_09_hand02
+pos = 70, 45, 0
+rotate = 0, 10, 60
+archetype = space_hand
+parent = li_cal_09
+
+[Object]
+nickname = li_cal_09_transport01
+pos = 140, 0, -25
+rotate = 0, 0, -30
+archetype = suprise_transport
+parent = li_cal_09
+
+[Object]
+nickname = li_cal_09_ctrl_twr01
+pos = 100, 50, -20
+rotate = 0, 0, 0
+archetype = space_small_control_tower
+parent = li_cal_09
+
+[Object]
+nickname = li_cal_09_pad01
+pos = 118, -45, 0
+rotate = 0, 0, 0
+archetype = space_small_pad
+parent = li_cal_09
+
+[Object]
+nickname = li_cal_09_pad02
+pos = 118, -45, -40
+rotate = 0, 0, 0
+archetype = space_small_pad
+parent = li_cal_09
+
+[Object]
+nickname = li_cal_09_hangar01
+pos = 75, -45, 0
+rotate = 0, 90, 0
+archetype = space_hangar
+parent = li_cal_09
+
+[Object]
+nickname = li_cal_09_hangar02
+pos = 75, -45, -40
+rotate = 0, 90, 0
+archetype = space_hangar
+parent = li_cal_09
+'''

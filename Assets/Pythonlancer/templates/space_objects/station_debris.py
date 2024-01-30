@@ -1155,3 +1155,556 @@ rotate = 100, 0, 0
 archetype = space_girder
 parent = rh_stut_07
 '''
+
+
+class ForbesDebris(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'li_for_07'
+    TEMPLATE = '''[Object]
+nickname = li_for_07
+pos = 0, 0, 0
+rotate = 0, 90, 0
+archetype = space_police_dmg_visible
+ids_name = 203894
+ids_info = 1
+behavior = NOTHING
+
+[Object]
+nickname = li_for_07_beam01
+pos = 0, -165, 0
+rotate = 0, 0, 0
+archetype = space_beamx_dmg
+parent = li_for_07
+
+[Object]
+nickname = li_for_07_industrial01
+pos = -165, -112, 0
+rotate = 0, 90, -10
+archetype = space_industrial01d
+parent = li_for_07
+
+[Object]
+nickname = li_for_07_industrial02
+pos = 200, -180, 0
+rotate = -80, 60, -100
+archetype = space_industrial01d
+parent = li_for_07
+
+[Object]
+nickname = li_for_07_industrial03
+pos = 0, -112, -170
+rotate = 10, 0, 0
+archetype = space_industrial01d
+parent = li_for_07
+
+[Object]
+nickname = li_for_07_industrial04
+pos = 0, -135, 150
+rotate = 2, 0, 15
+archetype = space_industrial01d
+parent = li_for_07
+
+[Object]
+nickname = li_for_07_shipyard01
+pos = 0, -250, -200
+rotate = 30, 60, 30
+archetype = shipyard_dmgB
+parent = li_for_07
+
+[Object]
+nickname = li_for_07_shipyard02
+pos = 100, -250, 300
+rotate = 30, -60, -30
+archetype = shipyard_dmgB
+parent = li_for_07
+'''
+
+
+class ColumbiaDebris(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'li_col_05'
+    TEMPLATE = '''[Object]
+nickname = li_col_05
+pos = 0, 0, 0
+rotate = 0, -90, 0
+archetype = space_police_dmg_clickable
+ids_name = 208614
+ids_info = 067006
+base = li_col_05_base
+dock_with = li_col_05_base
+reputation = fc_uk_grp
+behavior = NOTHING
+
+[Object]
+nickname = li_col_05_industrial_A01
+pos = 187.5, 105, -1035
+rotate = 0, 1, 45
+archetype = space_industriala
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_industrial_A02
+pos = 62.5, 105, -1035
+rotate = 0, 0, 45.5
+archetype = space_industriala
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_industrial_A03
+pos = -62.5, 105, -1035
+rotate = 0, 0, 45.5
+archetype = space_industriala
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_industrial_A04
+pos = -187.5, 105, -1035
+rotate = 0, 0, 45.34
+archetype = space_industriala
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_industrial_A05
+pos = 125, 0, -1035
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_industrial_A06
+pos = 0, 0, -1035
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_industrial_A07
+pos = -125, 0, -1035
+rotate = 0, 0.5, 0
+archetype = space_industriala
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_industrial_A08
+pos = 187.5, -105, -1035
+rotate = 0, -0.6, 45
+archetype = space_industriala
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_industrial_A09
+pos = 62.5, -105, -1035
+rotate = 0, 0, 45
+archetype = space_industriala
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_industrial_A10
+pos = -62.5, -105, -1035
+rotate = 0, 0.2, 45
+archetype = space_industriala
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_industrial_A11
+pos = -187.5, -105, -1035
+rotate = 0.2, 0.134, 45
+archetype = space_industriala
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_industrial_B01
+pos = 0, 0, -685
+rotate = 0, 90, 0
+archetype = space_industrial02a
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_industrial_B02
+pos = 0, 0, -535
+rotate = 0, 90, 0
+archetype = space_industrial02a
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_industrial_B03
+pos = 85, 0, -610
+rotate = 0, 1, 0
+archetype = space_industrial01a
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_industrial_B04
+pos = -88, 0, -610
+rotate = -2, 0, 0
+archetype = space_industrial01a
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_industrial_B05
+pos = 0, 0, -145
+rotate = 1, 90, 0
+archetype = space_industrial02a
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_girder_A01
+pos = 62.5, 105, -915
+rotate = 20, -10, 0
+archetype = space_girdera
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_girder_A02
+pos = -62.5, 105, -915
+rotate = 20, 10, 0
+archetype = space_girdera
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_girder_A03
+pos = -187.5, 105, -915
+rotate = 20, 35, 0
+archetype = space_girdera
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_girder_A04
+pos = 187.5, 105, -915
+rotate = 20, -35, 0
+archetype = space_girdera
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_girder_A05
+pos = 62.5, -105, -915
+rotate = -20, -10, 0
+archetype = space_girdera
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_girder_A06
+pos = -62.5, -105, -915
+rotate = -20, 10, 0
+archetype = space_girdera
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_girder_A07
+pos = -187.5, -105, -915
+rotate = -20, 35, 0
+archetype = space_girdera
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_girder_A08
+pos = 187.5, -105, -915
+rotate = -20, -35, 0
+archetype = space_girdera
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_girder_A09
+pos = 125, 0, -915
+rotate = 0, -20, 0
+archetype = space_girdera
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_girder_A10
+pos = 0, 0, -915
+rotate = 0, 0, 0
+archetype = space_girdera
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_girder_A11
+pos = -125, 0, -915
+rotate = 0, 20, 0
+archetype = space_girdera
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_tanks_A01
+pos = 55.5, -32, -405
+rotate = -2, 0, -45
+archetype = space_tanks4
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_tanks_A02
+pos = 55.5, 26, -405
+rotate = 0, 0, -135
+archetype = space_tanks4
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_tanks_A03
+pos = -59.5, -32, -405
+rotate = 0, 2, 45
+archetype = space_tanks4
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_tanks_A04
+pos = -59.5, 26, -405
+rotate = 0, 0, 135
+archetype = space_tanks4
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_tanks_A05
+pos = 55.5, -32, -265
+rotate = 0, 0, -45
+archetype = space_tanks4
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_tanks_A06
+pos = 55.5, 26, -265
+rotate = 5, 0, -135
+archetype = space_tanks4
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_tanks_A07
+pos = -59.5, -32, -265
+rotate = 0, 0, 45
+archetype = space_tanks4
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_tanks_A08
+pos = -59.5, 26, -265
+rotate = 1, 0, 135
+archetype = space_tanks4
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_tanks_A09
+pos = 0, -41, -405
+rotate = 3, 0, 0
+archetype = space_tanks4
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_tanks_A10
+pos = 0, 41, -405
+rotate = 0, 0, 180
+archetype = space_tanks4
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_tanks_A11
+pos = 0, -41, -265
+rotate = 0, 0, 0
+archetype = space_tanks4
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_tanks_A12
+pos = 0, 41, -265
+rotate = 5, 2, 180
+archetype = space_tanks4
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_habitat01
+pos = 0, 65, -610
+rotate = 0, 0, 0
+archetype = space_habitat_dmg
+parent = li_col_05
+'''
+
+
+class CaliforniaDebris(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'li_cal_10'
+    TEMPLATE = '''[Object]
+nickname = li_cal_10
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = space_industriala_base_root
+ids_name = 203892
+ids_info = 1
+behavior = NOTHING
+
+[Object]
+nickname = li_cal_10_ctrl_twr01
+pos = 0, 80, 0
+rotate = 0, 0, 5
+archetype = space_medium_control_tower
+parent = li_cal_10
+
+[Object]
+nickname = li_cal_10_ctrl_twr02
+pos = 0, 110, 0
+rotate = 0, 0, 10
+archetype = space_control_tower
+parent = li_cal_10
+
+[Object]
+nickname = li_cal_10_ctrl_twr03
+pos = 0, 275, 0
+rotate = 0, 0, 10
+archetype = space_small_control_tower
+parent = li_cal_10
+
+[Object]
+nickname = li_cal_10_industrial01
+pos = 0, 0, -220
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = li_cal_10
+
+[Object]
+nickname = li_cal_10_industrial02
+pos = 0, 0, 220
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = li_cal_10
+
+[Object]
+nickname = li_cal_10_industrial03
+pos = -125, 0, 0
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = li_cal_10
+
+[Object]
+nickname = li_cal_10_industrial04
+pos = 180, 0, -20
+rotate = 0, 30, 0
+archetype = space_industrial_dmg
+parent = li_cal_10
+
+[Object]
+nickname = li_cal_10_industrial05
+pos = 0, -150, 0
+rotate = -10, 0, 0
+archetype = space_industriala
+parent = li_cal_10
+
+[Object]
+nickname = li_cal_10_tunnel01
+pos = 0, 0, -423
+rotate = 0, 0, 0
+archetype = space_tunnel
+parent = li_cal_10
+
+[Object]
+nickname = li_cal_10_tunnel02
+pos = 0, 0, 420
+rotate = 0, 180, 0
+archetype = space_tunnel
+parent = li_cal_10
+
+[Object]
+nickname = li_cal_10_girder01
+pos = 0, 200, -120
+rotate = -55, 0, 0
+archetype = space_girderc
+parent = li_cal_10
+
+[Object]
+nickname = li_cal_10_girder02
+pos = 0, 200, 120
+rotate = 55, 0, 0
+archetype = space_girderc
+parent = li_cal_10
+
+[Object]
+nickname = li_cal_10_girder03
+pos = -120, 200, 0
+rotate = 140, 90, 0
+archetype = space_beaml_dmg
+parent = li_cal_10
+
+[Object]
+nickname = li_cal_10_girder04
+pos = 120, 210, 0
+rotate = 55, 90, 0
+archetype = space_girderc
+parent = li_cal_10
+
+[Object]
+nickname = li_cal_10_girder05
+pos = 0, 200, 0
+rotate = 90, 0, 0
+archetype = space_girderc
+parent = li_cal_10
+
+[Object]
+nickname = li_cal_10_girder07
+pos = 0, -90, 172
+rotate = -35, 0, 0
+archetype = space_girderc
+parent = li_cal_10
+
+[Object]
+nickname = li_cal_10_girder08
+pos = -90, 0, -172
+rotate = 0, -35, 0
+archetype = space_girderc
+parent = li_cal_10
+
+[Object]
+nickname = li_cal_10_girder10
+pos = -90, 0, 172
+rotate = 0, 35, 0
+archetype = space_girderc
+parent = li_cal_10
+
+[Object]
+nickname = li_cal_10_habitat01
+pos = 0, 360, 0
+rotate = 180, 0, 0
+archetype = space_habitat_dmg
+parent = li_cal_10
+
+[Object]
+nickname = li_cal_10_shipyard01
+pos = -600, -50, 0
+rotate = 0, 30, 0
+archetype = shipyard_dmgA
+parent = li_cal_10
+
+[Object]
+nickname = li_cal_10_shipyard02
+pos = 300, -250, -300
+rotate = -30, 0, 0
+archetype = shipyard_dmgB
+parent = li_cal_10
+
+[Object]
+nickname = li_cal_10_mining01
+pos = 300, 100, 500
+rotate = -20, 60, 0
+archetype = mining_debris_satellite_non_targetable
+parent = li_cal_10
+
+[Object]
+nickname = li_cal_10_control_panel01
+pos = 0, 55, 485
+rotate = 0, 0, 90
+archetype = space_control_panel
+parent = li_cal_10
+
+[Object]
+nickname = li_cal_10_control_panel02
+pos = -55, 0, 500
+rotate = 0, 180, 0
+archetype = space_control_panel
+parent = li_cal_10
+
+[Object]
+nickname = li_cal_10_control_panel03
+pos = 0, 55, -490
+rotate = 0, 0, 90
+archetype = space_control_panel
+parent = li_cal_10
+
+[Object]
+nickname = li_cal_10_control_panel04
+pos = 55, 0, -505
+rotate = 0, 0, 0
+archetype = space_control_panel
+parent = li_cal_10
+'''

@@ -13,13 +13,12 @@ class System(object):
     NAME = ''
     CONTENT = None
 
-
-    subclasses = []
-
     TRACKS_SYSTEM_TEMPLATE = '''[Settings]
 system = {system_name}
 distance = {tlr_distance}
 '''
+
+    subclasses = []
 
     def __init_subclass__(cls, **kwargs):
         super().__init_subclass__(**kwargs)

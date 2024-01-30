@@ -650,3 +650,108 @@ rotate = 90, 90, 0
 archetype = space_solar_pnl
 parent = om15_03
 '''
+
+
+class ForbesJunker(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'li_for_06'
+    TEMPLATE = '''[Object]
+nickname = li_for_06
+pos = 0, 0, 0
+rotate = 0, 90, 0
+archetype = space_port_dmg
+base = li_for_06_base
+dock_with = li_for_06_base
+reputation = pi_grp
+behavior = NOTHING
+difficulty_level = 10
+;loadout = prison_li
+pilot = pilot_solar_hardest
+ids_name = 203893 
+ids_info = 1
+voice = atc_leg_m01
+space_costume = pi_pirate1_head, pi_pirate6_body, prop_neuralnet_f_right
+
+[Object]
+nickname = li_for_06_industrial01
+pos = 0, -300, 0
+rotate = 90, 45, 90
+archetype = space_industrial02a
+parent = li_for_06
+
+[Object]
+nickname = li_for_06_industrial02
+pos = 0, -450, 0
+rotate = 90, 90, 90
+archetype = space_industrial02d
+parent = li_for_06
+
+[Object]
+nickname = li_for_06_industrial03
+pos = 0, -390, -90
+rotate = 90, -45, 90
+archetype = space_industrial02a
+parent = li_for_06
+
+[Object]
+nickname = li_for_06_industrial04
+pos = 0, -390, 90
+rotate = 90, 45, 90
+archetype = space_industrial02a
+parent = li_for_06
+
+[Object]
+nickname = li_for_06_girder01
+pos = 0, -380, 0
+rotate = -90, 0, 0
+archetype = space_girderc
+parent = li_for_06
+
+[Object]
+nickname = li_for_06_tank01
+pos = 0, -490, 0
+rotate = 0, 90, 0
+archetype = space_tankl4
+parent = li_for_06
+
+[Object]
+nickname = li_for_06_tank02
+pos = 0, -450, 80
+rotate = 0, 90, 0
+archetype = space_tankl4
+parent = li_for_06
+
+[Object]
+nickname = li_for_06_tank03
+pos = 0, -450, -80
+rotate = 0, 90, 0
+archetype = space_tankl4
+parent = li_for_06
+
+[Object]
+nickname = li_for_06_tank04
+pos = 0, -410, 150
+rotate = 0, 90, 0
+archetype = space_tankl4
+parent = li_for_06
+
+[Object]
+nickname = li_for_06_tank05
+pos = 0, -410, -150
+rotate = 0, 90, 0
+archetype = space_tankl4
+parent = li_for_06
+
+[Object]
+nickname = li_for_06_panel01
+pos = 0, -320, 120
+rotate = 0, 90, 0
+archetype = space_debris_panel
+parent = li_for_06
+
+[Object]
+nickname = li_for_06_panel02
+pos = 0, -320, -125
+rotate = 0, -90, 0
+archetype = space_debris_panel
+parent = li_for_06
+'''

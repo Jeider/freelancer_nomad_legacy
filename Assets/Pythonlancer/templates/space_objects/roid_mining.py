@@ -729,3 +729,213 @@ rotate = 0, 70, 0
 archetype = space_solar_pnl
 parent = om15_01
 '''
+
+
+class LibertyRoidMining(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'li_cal_05'
+    TEMPLATE = '''[Object]
+nickname = li_cal_05
+ids_name = 203656
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = space_mining01
+ids_info = 065575
+dock_with = li_cal_05_base
+base = li_cal_05_base
+reputation = li_grp
+behavior = NOTHING
+voice = atc_leg_m01
+space_costume = li_manhattan_bartender_head, li_manhattan_bartender_body, prop_neuralnet_e
+difficulty_level = 12
+loadout = space_mining01_li
+pilot = pilot_solar_hardest
+
+[Object]
+nickname = li_cal_05_research01
+pos = 220, -380, 373
+rotate = 0, 0, 0
+archetype = space_research
+parent = li_cal_05
+
+[Object]
+nickname = li_cal_05_research02
+pos = -220, -380, 373
+rotate = 0, 0, 0
+archetype = space_research
+parent = li_cal_05
+
+[Object]
+nickname = li_cal_05_girder01
+pos = 135, -235, 373
+rotate = 45, 90, 0
+archetype = space_girder
+parent = li_cal_05
+
+[Object]
+nickname = li_cal_05_girder02
+pos = -135, -235, 373
+rotate = -45, 90, 0
+archetype = space_girder
+parent = li_cal_05
+
+[Object]
+nickname = li_cal_05_industrial01
+pos = 650, -380, 373
+rotate = 0, -90, 0
+archetype = space_industrial
+parent = li_cal_05
+
+[Object]
+nickname = li_cal_05_industrial02
+pos = -650, -380, 373
+rotate = 0, 90, 0
+archetype = space_industrial
+parent = li_cal_05
+
+[Object]
+nickname = li_cal_05_industrial03
+pos = 650, -380, 2173
+rotate = 0, -90, 0
+archetype = space_industrial
+parent = li_cal_05
+
+[Object]
+nickname = li_cal_05_industrial04
+pos = -650, -380, 2173
+rotate = 0, 90, 0
+archetype = space_industrial
+parent = li_cal_05
+
+[Object]
+nickname = li_cal_05_shipyard01
+pos = 0, -550, 750
+rotate = 0, 90, 0
+archetype = shipyard
+parent = li_cal_05
+
+[Object]
+nickname = li_cal_05_shipyard02
+pos = 0, -550, 1300
+rotate = 0, -90, 0
+archetype = shipyard
+parent = li_cal_05
+
+[Object]
+nickname = li_cal_05_shipyard03
+pos = 0, -550, 1850
+rotate = 0, 90, 0
+archetype = shipyard
+parent = li_cal_05
+
+[Object]
+nickname = li_cal_05_panel01
+pos = -220, -360, 675
+rotate = 0, 45, 0
+archetype = space_solar_pnl
+parent = li_cal_05
+
+[Object]
+nickname = li_cal_05_panel02
+pos = 220, -360, 1075
+rotate = 0, 45, 0
+archetype = space_solar_pnl
+parent = li_cal_05
+
+[Object]
+nickname = li_cal_05_panel03
+pos = -220, -360, 1475
+rotate = 0, 45, 0
+archetype = space_solar_pnl
+parent = li_cal_05
+
+[Object]
+nickname = li_cal_05_panel04
+pos = 220, -360, 1875
+rotate = 0, 45, 0
+archetype = space_solar_pnl
+parent = li_cal_05
+
+[Object]
+nickname = li_cal_05_tankl01
+pos = 220, -360, 675
+rotate = 180, 0, 0
+archetype = space_tankl4
+parent = li_cal_05
+
+[Object]
+nickname = li_cal_05_tankl02
+pos = -220, -360, 1075
+rotate = 180, 0, 0
+archetype = space_tankl4
+parent = li_cal_05
+
+[Object]
+nickname = li_cal_05_tankl03
+pos = 220, -360, 1475
+rotate = 180, 0, 0
+archetype = space_tankl4
+parent = li_cal_05
+
+[Object]
+nickname = li_cal_05_tankl04
+pos = -220, -360, 1875
+rotate = 180, 0, 0
+archetype = space_tankl4
+parent = li_cal_05
+
+[Object]
+nickname = li_cal_05_habitat01
+pos = 650, -135, 373
+rotate = 0, 0, 0
+archetype = space_habitat_tall
+parent = li_cal_05
+
+[Object]
+nickname = li_cal_05_habitat02
+pos = -650, -70, 373
+rotate = 0, 0, 0
+archetype = space_habitat_tall
+parent = li_cal_05
+
+[Object]
+nickname = li_cal_05_habitat03
+pos = 650, -100, 2173
+rotate = 0, 0, 0
+archetype = space_habitat_tall
+parent = li_cal_05
+
+[Object]
+nickname = li_cal_05_habitat04
+pos = -650, -160, 2173
+rotate = 0, 0, 0
+archetype = space_habitat_tall
+parent = li_cal_05
+
+[Object]
+nickname = li_cal_05_habitat05
+pos = 650, -235, 373
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = li_cal_05
+
+[Object]
+nickname = li_cal_05_habitat06
+pos = -650, -235, 373
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = li_cal_05
+
+[Object]
+nickname = li_cal_05_habitat07
+pos = 650, -235, 2173
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = li_cal_05
+
+[Object]
+nickname = li_cal_05_habitat08
+pos = -650, -235, 2173
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = li_cal_05
+'''

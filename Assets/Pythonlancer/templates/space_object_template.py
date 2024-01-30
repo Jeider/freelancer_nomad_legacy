@@ -1,11 +1,18 @@
 from text.dividers import SINGLE_DIVIDER
 
 POS = 'pos'
+NICKNAME = 'nickname'
 
 
 class SpaceObjectTemplate(object):
     TEMPLATE = None
     SPACE_OBJECT_NAME = None
+
+    subclasses = []
+
+    def __init_subclass__(cls, **kwargs):
+        super().__init_subclass__(**kwargs)
+        cls.subclasses.append(cls)
 
     def __init__(self):
         if not self.TEMPLATE:
@@ -15,6 +22,7 @@ class SpaceObjectTemplate(object):
             raise Exception('SPACE_OBJECT_NAME not defined')
 
         self.instance = self.TEMPLATE
+        self.last_nickname = ''
 
     def get_instance(self, new_space_object_name=None, move_to=None):
         replaces = []
@@ -54,9 +62,12 @@ class SpaceObjectTemplate(object):
         for line in self.instance.splitlines():
             if line.startswith(POS):
                 pos_split = line.split('=')[1].strip().split(',')
-                pos_x = float(pos_split[0]) + move_x
-                pos_y = float(pos_split[1]) + move_y
-                pos_z = float(pos_split[2]) + move_z
+                try:
+                    pos_x = float(pos_split[0]) + move_x
+                    pos_y = float(pos_split[1]) + move_y
+                    pos_z = float(pos_split[2]) + move_z
+                except ValueError as e:
+                    raise Exception('Could not convert value. Last nickname: {nick}. Reason: {ex}'.format(nick=self.last_nickname, ex=e))
                 lines.append('{0} = {1}, {2}, {3}'.format(
                     POS,
                     prepare_pos(pos_x),
@@ -65,6 +76,8 @@ class SpaceObjectTemplate(object):
                 ))
 
             else:
+                if line.startswith(NICKNAME):
+                    self.last_nickname = line
                 lines.append(line)
 
         self.instance = SINGLE_DIVIDER.join(lines)

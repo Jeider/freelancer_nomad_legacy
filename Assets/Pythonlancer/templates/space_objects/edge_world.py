@@ -652,3 +652,695 @@ rotate = 0, 180, 20
 archetype = space_tanklx4_dmg
 parent = om11_04
 '''
+
+
+class OchoRiosResearch(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'co_och_04'
+    TEMPLATE = '''[Object]
+nickname = co_och_04
+pos = 0, 0, 0
+rotate = 0, 90, 0
+archetype = space_police01
+base = co_och_04_base
+dock_with = co_och_04_base
+ids_name = 203825
+ids_info = 065734
+reputation = co_grp ;orres_grp
+behavior = NOTHING
+voice = atc_leg_m01
+space_costume = sh_male2_head, sh_male3_body, prop_neuralnet_d_right
+
+[Object]
+nickname = co_och_04_dome01
+pos = 0, 402, 0
+rotate = 0, 0, 0
+archetype = space_domea
+parent = co_och_04
+
+[Object]
+nickname = co_och_04_ctrl_twr01
+pos = 0, 372, 0
+rotate = 0, 0, 0
+archetype = space_medium_control_tower
+parent = co_och_04
+
+[Object]
+nickname = co_och_04_ctrl_twr02
+pos = 0, 192, 0
+rotate = 0, 0, 0
+archetype = space_medium_control_tower
+parent = co_och_04
+
+[Object]
+nickname = co_och_04_panel01
+pos = 0, 192, -120
+rotate = -90, 0, 0
+archetype = space_solar_pnl
+parent = co_och_04
+
+[Object]
+nickname = co_och_04_panel02
+pos = 0, 192, 120
+rotate = 90, 0, 0
+archetype = space_solar_pnl
+parent = co_och_04
+
+[Object]
+nickname = co_och_04_ind01
+pos = 0, 282, 0
+rotate = 90, 0, 0
+archetype = space_industriala
+parent = co_och_04
+
+[Object]
+nickname = co_och_04_ind02
+pos = 0, 172, 0
+rotate = 90, 0, 0
+archetype = space_industrialc
+parent = co_och_04
+
+[Object]
+nickname = co_och_04_ctrl_block01
+pos = 0, -89, 0
+rotate = 180, 0, 0
+archetype = space_small_control_block
+parent = co_och_04
+
+[Object]
+nickname = co_och_04_habitat01
+pos = 100, 282, 0
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = co_och_04
+
+[Object]
+nickname = co_och_04_habitat02
+pos = -100, 282, 0
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = co_och_04
+
+[Object]
+nickname = co_och_04_habitat03
+pos = 0, 282, -100
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = co_och_04
+
+[Object]
+nickname = co_och_04_habitat04
+pos = 0, 282, 100
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = co_och_04
+'''
+
+
+class MadridProduction(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'co_mad_03'
+    TEMPLATE = '''[Object]
+nickname = co_mad_03
+pos = 0, 0, 0
+rotate = 0, 170, -10
+archetype = space_police02_production
+ids_name = 203813
+ids_info = 065720
+behavior = NOTHING
+reputation = co_grp
+burn_color = 255, 222, 160
+dock_with = co_mad_03_base
+base = co_mad_03_base
+voice = atc_leg_m01
+space_costume = pi_pirate3_head, sh_male3_body, prop_neuralnet_c_combo
+
+[Object]
+nickname = co_mad_03_dock_connect
+pos = 0, 0, 10
+rotate = 90, -10, -10
+archetype = space_medium_control_tower
+parent = co_mad_03
+
+[Object]
+nickname = co_mad_03_arch
+pos = 66, -2, -374
+rotate = 10, -15, -103
+archetype = space_long_large_arch
+parent = co_mad_03
+
+[Object]
+nickname = co_mad_03_core
+pos = 25, -5, -140
+rotate = -10, -145, 0
+archetype = sw_center_150
+parent = co_mad_03
+
+[Object]
+nickname = co_mad_03_ind01
+pos = 215, -25, -340
+rotate = 10, 80, 0
+archetype = space_industrial01a
+parent = co_mad_03
+
+[Object]
+nickname = co_mad_03_ind02
+pos = -85, 25, -390
+rotate = 10, 80, 0
+archetype = space_industrial01a
+parent = co_mad_03
+
+[Object]
+nickname = co_mad_03_ind03
+pos = 55, -2, -295
+rotate = 100, 80, 0
+archetype = space_industrial02d
+parent = co_mad_03
+
+[Object]
+nickname = co_mad_03_LEFT_side
+pos = -95, 17, -162
+rotate = 80, -100, 0
+archetype = space_medium_control_tower
+loadout = co_ring_horizontal_side
+parent = co_mad_03
+
+[Object]
+nickname = co_mad_03_RIGHT_side
+pos = 145, -35, -120
+rotate = 100, -280, 0
+archetype = space_medium_control_tower
+loadout = co_ring_horizontal_side
+parent = co_mad_03
+
+[Object]
+nickname = co_mad_03_TOP_side
+pos = 50, 145, -133
+rotate = 0, -10, -10
+archetype = space_control_tower
+loadout = co_ring_vertical_side
+parent = co_mad_03
+
+[Object]
+nickname = co_mad_03_BOTTOM_side
+pos = -5, -155, -145
+rotate = 0, 10, -190
+archetype = space_control_tower
+loadout = co_ring_vertical_side
+parent = co_mad_03
+'''
+
+
+
+class CadizFreeport(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'co_cad_03'
+    TEMPLATE = '''[Object]
+nickname = co_cad_03
+pos = 0, 0, 0
+rotate = 0, 90, 0
+archetype = space_police01
+ids_name = 203865
+ids_info = 065777
+dock_with = co_cad_03_base
+base = co_cad_03_base
+behavior = NOTHING
+reputation = co_grp
+voice = atc_leg_m01
+space_costume = br_sales_head, pi_pirate6_body, prop_neuralnet_d
+
+[Object]
+nickname = co_cad_03_DOCK_habitat01
+pos = 0, -300, 0
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_DOCK_habitat01
+pos = 0, -220, 0
+rotate = 90, 0, 0
+archetype = space_girder
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_CORE_tube01
+pos = 0, -525, 0
+rotate = 90, 0, 0
+archetype = space_short_tube_station_root
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_CORE_ind01
+pos = 0, -450, 0
+rotate = 0, 0, 0
+archetype = space_industrial02a
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_CORE_ind02
+pos = 0, -900, -150
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_CORE_ind03
+pos = 0, -900, 150
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_CORE_ind04
+pos = 0, -900, 0
+rotate = 0, 90, 250
+archetype = space_industrial
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_CORE_ind05
+pos = 0, -900, 0
+rotate = 0, 90, -70
+archetype = space_industrial
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_BOTTOM_airlock01_top
+pos = 0, -700, 450
+rotate = 0, 0, 0
+archetype = space_small_control_tower
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_BOTTOM_airlock01
+pos = 0, -750, 450
+rotate = 90, 0, 0
+archetype = space_airlock_dummy
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_BOTTOM_ctrl_twr01
+pos = 0, -900, 450
+rotate = 0, 0, 0
+archetype = space_control_tower
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_BOTTOM_ctrl_twr02
+pos = 0, -870, 450
+rotate = 0, 45, 0
+archetype = space_medium_control_tower
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_BOTTOM_ctrl_twr03
+pos = 0, -930, 450
+rotate = 0, 45, 0
+archetype = space_medium_control_tower
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_BOTTOM_ctrl_twr04
+pos = 0, -1125, 450
+rotate = 0, 45, 0
+archetype = space_medium_control_tower
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_BOTTOM_ctrl_twr05
+pos = 0, -1300, 450
+rotate = 0, 0, 0
+archetype = space_small_control_tower
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_BOTTOM_ctrl_block01
+pos = 0, -1465, 450
+rotate = 180, 0, 0
+archetype = space_small_control_block
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_BOTTOM_habitat01
+pos = -50, -1027, 450
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_BOTTOM_habitat02
+pos = 50, -1027, 450
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_BOTTOM_habitat03
+pos = 0, -1027, 500
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_BOTTOM_habitat04
+pos = 0, -1027, 400
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_BOTTOM_habitat05
+pos = -40, -1223, 450
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_BOTTOM_habitat06
+pos = 40, -1223, 450
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_BOTTOM_habitat07
+pos = 0, -1223, 490
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_BOTTOM_habitat08
+pos = 0, -1223, 410
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_BOTTOM_habitat09
+pos = 0, -1380, 450
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_BOTTOM_panel01
+pos = 0, -825, 565
+rotate = 0, 90, 0
+archetype = space_panel45
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_BOTTOM_panel02
+pos = 0, -825, 335
+rotate = 0, -90, 0
+archetype = space_panel45
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_BOTTOM_panel03
+pos = -115, -825, 450
+rotate = 0, 0, 0
+archetype = space_panel45
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_BOTTOM_panel04
+pos = 115, -825, 450
+rotate = 0, 180, 0
+archetype = space_panel45
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_TOP_airlock01_top
+pos = 0, -700, -450
+rotate = 0, 0, 0
+archetype = space_small_control_tower
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_TOP_airlock01
+pos = 0, -750, -450
+rotate = 90, 0, 0
+archetype = space_airlock_dummy
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_TOP_ctrl_twr01
+pos = 0, -900, -450
+rotate = 0, 0, 0
+archetype = space_control_tower
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_TOP_ctrl_twr02
+pos = 0, -870, -450
+rotate = 0, 45, 0
+archetype = space_medium_control_tower
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_TOP_ctrl_twr03
+pos = 0, -930, -450
+rotate = 0, 45, 0
+archetype = space_medium_control_tower
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_TOP_ctrl_twr04
+pos = 0, -1125, -450
+rotate = 0, 45, 0
+archetype = space_medium_control_tower
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_TOP_ctrl_twr05
+pos = 0, -1300, -450
+rotate = 0, 0, 0
+archetype = space_small_control_tower
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_TOP_ctrl_block01
+pos = 0, -1465, -450
+rotate = 180, 0, 0
+archetype = space_small_control_block
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_TOP_habitat01
+pos = -50, -1027, -450
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_TOP_habitat02
+pos = 50, -1027, -450
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_TOP_habitat03
+pos = 0, -1027, -500
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_TOP_habitat04
+pos = 0, -1027, -400
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_TOP_habitat05
+pos = -40, -1223, -450
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_TOP_habitat06
+pos = 40, -1223, -450
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_TOP_habitat07
+pos = 0, -1223, -490
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_TOP_habitat08
+pos = 0, -1223, -410
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_TOP_habitat09
+pos = 0, -1380, -450
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_TOP_panel01
+pos = 0, -825, -565
+rotate = 0, -90, 0
+archetype = space_panel45
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_TOP_panel02
+pos = 0, -825, -335
+rotate = 0, 90, 0
+archetype = space_panel45
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_TOP_panel03
+pos = -115, -825, -450
+rotate = 0, 0, 0
+archetype = space_panel45
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_TOP_panel04
+pos = 115, -825, -450
+rotate = 0, 180, 0
+archetype = space_panel45
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_RIGHT_ind01
+pos = 250, -575, 0
+rotate = 0, 0, 45
+archetype = space_industrial02a
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_RIGHT_ind02
+pos = 400, -900, 0
+rotate = 90, 0, 0
+archetype = space_industrial02a
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_RIGHT_ind03
+pos = 400, -1350, 0
+rotate = -90, 0, 0
+archetype = space_industrial02
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_RIGHT_ind04
+pos = 200, -900, 0
+rotate = 0, 90, 0
+archetype = space_industrial01a
+loadout = space_ind01_reactor
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_RIGHT_ind05
+pos = 135, -1350, 0
+rotate = 0, 90, 0
+archetype = space_industrial02a
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_RIGHT_girder01
+pos = 235, -530, 0
+rotate = 90, 0, 35
+archetype = space_girdera
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_RIGHT_girder02
+pos = 300, -580, 0
+rotate = -90, 0, 60
+archetype = space_girdera
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_RIGHT_girder03
+pos = 250, -575, 0
+rotate = 135, 90, 0
+archetype = space_girdera
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_RIGHT_girder04
+pos = 200, -1350, 0
+rotate = 0, 90, 0
+archetype = space_girder
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_LEFT_ind01
+pos = -250, -575, 0
+rotate = 0, 0, 45
+archetype = space_industrial02a
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_LEFT_ind02
+pos = -400, -900, 0
+rotate = 90, 0, 0
+archetype = space_industrial02a
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_LEFT_ind03
+pos = -400, -1350, 0
+rotate = -90, 0, 0
+archetype = space_industrial02
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_LEFT_ind04
+pos = -200, -900, 0
+rotate = 0, 90, 0
+archetype = space_industrial01a
+loadout = space_ind01_reactor
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_LEFT_ind05
+pos = -135, -1350, 0
+rotate = 0, 90, 0
+archetype = space_industrial02a
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_LEFT_girder01
+pos = -235, -530, 0
+rotate = 90, 0, -35
+archetype = space_girdera
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_LEFT_girder02
+pos = -300, -580, 0
+rotate = -90, 0, -60
+archetype = space_girdera
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_LEFT_girder03
+pos = -250, -575, 0
+rotate = 45, 90, 0
+archetype = space_girdera
+parent = co_cad_03
+
+[Object]
+nickname = co_cad_03_LEFT_girder04
+pos = -200, -1350, 0
+rotate = 0, 90, 0
+archetype = space_girder
+parent = co_cad_03
+'''

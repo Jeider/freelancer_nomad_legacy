@@ -720,3 +720,214 @@ rotate = 0, 0, 0
 archetype = space_tanklx4
 parent = li_mnh_05
 '''
+
+
+class ColumbiaPrison(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'li_col_02'
+    TEMPLATE = '''[Object]
+nickname = li_col_02
+ids_name = 203695
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = space_police01_prison
+ids_info = 065608
+dock_with = li_col_02_Base
+base = li_col_02_Base
+reputation = li_grp
+behavior = NOTHING
+voice = atc_leg_m01
+space_costume = li_rockford_head, li_male_guard_body, prop_hat_male_li_elite_visor
+difficulty_level = 12
+loadout = li_space_police01
+pilot = pilot_solar_hardest
+visit = 16
+
+[Object]
+nickname = li_col_02_control_tower01
+pos = 650, 0, 0
+rotate = 0, 0, 0
+archetype = space_control_tower
+parent = li_col_02
+
+[Object]
+nickname = li_col_02_control_tower02
+pos = 650, 82, 0
+rotate = 0, 0, 180
+archetype = space_control_tower
+parent = li_col_02
+
+[Object]
+nickname = li_col_02_control_tower03
+pos = 650, -82, 0
+rotate = 0, 0, 0
+archetype = space_control_tower
+parent = li_col_02
+
+[Object]
+nickname = li_col_02_space_habitat_wide01
+pos = 490, 0, 0
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = li_col_02
+
+[Object]
+nickname = li_col_02_space_habitat_wide02
+pos = 810, 0, 0
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = li_col_02
+
+[Object]
+nickname = li_col_02_space_habitat_wide03
+pos = 650, 0, 160
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = li_col_02
+
+[Object]
+nickname = li_col_02_space_habitat_wide04
+pos = 650, 0, -160
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = li_col_02
+
+[Object]
+nickname = li_col_02_space_habitat_wide05
+pos = 650, 0, 0
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = li_col_02
+
+[Object]
+nickname = li_col_02_habitat_wide06
+pos = 650, 158, 0
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = li_col_02
+
+[Object]
+nickname = li_col_02_habitat_tall01
+pos = 650, 250, 0
+rotate = 0, 0, 0
+archetype = space_habitat_tall
+parent = li_col_02
+
+[Object]
+nickname = li_col_02_industrial01
+pos = 650, 0, 210
+rotate = 0, 0, 0
+archetype = space_industrial01b
+parent = li_col_02
+
+[Object]
+nickname = li_col_02_industrial02
+pos = 650, 0, -210
+rotate = 0, 0, 0
+archetype = space_industrial01b
+parent = li_col_02
+
+[Object]
+nickname = li_col_02_industrial03
+pos = 860, 0, 0
+rotate = 0, 90, 0
+archetype = space_industrial01b
+parent = li_col_02
+
+[Object]
+nickname = li_col_02_industrial04
+pos = 440, 0, 0
+rotate = 0, 90, 0
+archetype = space_industrial01b
+parent = li_col_02
+
+[Object]
+nickname = li_col_02_industrial05
+pos = 1280, 0, 0
+rotate = 0, -90, 0
+archetype = space_industrial02
+parent = li_col_02
+
+[Object]
+nickname = li_col_02_prison01
+pos = 650, 0, -440
+rotate = 0, 90, 0
+archetype = space_prison
+parent = li_col_02
+
+[Object]
+nickname = li_col_02_prison02
+pos = 650, 0, 440
+rotate = 0, -90, 0
+archetype = space_prison
+parent = li_col_02
+
+[Object]
+nickname = li_col_02_dome01
+pos = 950, 30, 300
+rotate = 0, 225, 0
+archetype = space_dome
+parent = li_col_02
+
+[Object]
+nickname = li_col_02_dome02
+pos = 950, 30, -300
+rotate = 0, -45, 0
+archetype = space_dome
+parent = li_col_02
+
+[Object]
+nickname = li_col_02_dome03
+pos = 350, 30, 300
+rotate = 0, 135, 0
+archetype = space_dome
+parent = li_col_02
+
+[Object]
+nickname = li_col_02_dome04
+pos = 350, 30, -300
+rotate = 0, 45, 0
+archetype = space_dome
+parent = li_col_02
+
+[Object]
+nickname = li_col_02_tanks01
+pos = 650, -240, 0
+rotate = 90, 0, 0
+archetype = space_tankl4x4
+parent = li_col_02
+
+[Object]
+nickname = li_col_02_tanks02
+pos = 650, -240, 0
+rotate = 90, 90, 0
+archetype = space_tankl4x4
+parent = li_col_02
+
+[Object]
+nickname = li_col_02_tanks03
+pos = 650, -410, 0
+rotate = 0, 0, 0
+archetype = space_tanklx4
+parent = li_col_02
+
+[Object]
+nickname = li_col_02_girder01
+pos = 250, 0, 0
+rotate = 0, -90, 0
+archetype = space_girder
+parent = li_col_02
+
+[Object]
+nickname = li_col_02_shipyard01
+pos = 1280, 190, 0
+rotate = 180,90,0
+archetype = shipyard
+parent = li_col_02
+
+[Object]
+nickname = li_col_02_shipyard02
+pos = 1280, -190, 0
+rotate = 0, 90, 0
+archetype = shipyard
+parent = li_col_02
+'''

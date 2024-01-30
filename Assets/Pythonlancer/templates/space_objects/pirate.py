@@ -1115,3 +1115,194 @@ rotate = 0, 90, 0
 archetype = space_girderc
 parent = li_for_04
 '''
+
+
+class PirateBaseColumbia(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'rh_biz_06'
+    TEMPLATE = '''[Object]
+nickname = li_col_07
+pos = 0, 0, 0
+rotate = 0, 90, 0
+archetype = space_port_dmg
+reputation = lx_grp ;junk_grp
+behavior = NOTHING
+base = li_col_07_base
+dock_with = li_col_07_base
+ids_name = 203694
+ids_info = 065611
+voice = atc_leg_m01
+space_costume = pi_pirate1_head, pi_pirate4_body, prop_neuralnet_c_right
+
+
+[Object]
+nickname = li_col_07_ind01
+pos = 0, -250, 0
+rotate = 90, 0, 0
+archetype = space_industriala
+parent = li_col_07
+
+[Object]
+nickname = li_col_07_ind02
+pos = 0, -250, -500
+rotate = 0, 0, 0
+archetype = space_industrial
+parent = li_col_07
+
+[Object]
+nickname = li_col_07_ind03
+pos = 0, -250, 500
+rotate = 180, 0, 0
+archetype = space_industrial
+parent = li_col_07
+
+[Object]
+nickname = li_col_07_ind04
+pos = 0, -500, 0
+rotate = 0, 0, 0
+archetype = space_industrial02d
+parent = li_col_07
+
+[Object]
+nickname = li_col_07_ind05
+pos = 0, -500, 250
+rotate = 0, 0, 0
+archetype = space_industrial02d
+parent = li_col_07
+
+[Object]
+nickname = li_col_07_ind06
+pos = 0, -500, -250
+rotate = 0, 0, 0
+archetype = space_industrial02d
+parent = li_col_07
+
+[Object]
+nickname = li_col_07_girder01
+pos = 0, -400, 0
+rotate = 90, 0, 0
+archetype = space_girderc
+parent = li_col_07
+
+[Object]
+nickname = li_col_07_girder02
+pos = 0, -500, 370
+rotate = -55, 0, 0
+archetype = space_girdera
+parent = li_col_07
+
+[Object]
+nickname = li_col_07_girder03
+pos = 0, -500, -370
+rotate = -55, 180, 0
+archetype = space_girdera
+parent = li_col_07
+
+[Object]
+nickname = li_col_07_tank01
+pos = 40, -475, 200
+rotate = 0, 0, 180
+archetype = space_tankl4
+parent = li_col_07
+
+[Object]
+nickname = li_col_07_tank02
+pos = -40, -475, 200
+rotate = 0, 0, 180
+archetype = space_tankl4
+parent = li_col_07
+
+[Object]
+nickname = li_col_07_tank03
+pos = 40, -475, -200
+rotate = 0, 0, 180
+archetype = space_tankl4
+parent = li_col_07
+
+[Object]
+nickname = li_col_07_tank04
+pos = -40, -475, -200
+rotate = 0, 0, 180
+archetype = space_tankl4
+parent = li_col_07
+'''
+
+
+class PirateBaseCalifornia(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'li_cal_08'
+    TEMPLATE = '''[Object]
+nickname = li_cal_08
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = space_police01
+base = li_cal_08_base
+dock_with = li_cal_08_base
+voice = atc_leg_m01
+space_costume = pi_pirate3_head, pi_pirate2_body, prop_neuralnet_a
+ids_name = 203890
+ids_info = 1
+reputation = pi_grp
+behavior = NOTHING
+
+[Object]
+nickname = li_cal_08_industrial01
+pos = 0, -400, 0
+rotate = 0, 0, 0
+archetype = space_industrial02a
+parent = li_cal_08
+
+[Object]
+nickname = li_cal_08_industrial02
+pos = 250, -400, 0
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = li_cal_08
+
+[Object]
+nickname = li_cal_08_industrial03
+pos = -250, -400, 0
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = li_cal_08
+
+[Object]
+nickname = li_cal_08_industrial04
+pos = 0, -650, 0
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = li_cal_08
+
+[Object]
+nickname = li_cal_08_ctrl_twr01
+pos = 0, -200, 0
+rotate = 0, 0, 0
+archetype = space_small_control_tower
+parent = li_cal_08
+
+[Object]
+nickname = li_cal_08_girder01
+pos = 0, -230, 0
+rotate = 90, 0, 0
+archetype = space_girder
+parent = li_cal_08
+
+[Object]
+nickname = li_cal_08_girder02
+pos = 0, -400, 0
+rotate = 0, 90, 0
+archetype = space_girder
+parent = li_cal_08
+
+[Object]
+nickname = li_cal_08_girder03
+pos = 0, -550, 0
+rotate = 90, 0, 0
+archetype = space_girderc
+parent = li_cal_08
+
+[Object]
+nickname = li_cal_08_tanks01
+pos = 0, -850, 0
+rotate = 90, 0, 0
+archetype = space_tankl4x4
+parent = li_cal_08
+'''

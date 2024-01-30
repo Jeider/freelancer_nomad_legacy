@@ -706,3 +706,157 @@ rotate = 0, 0, 180
 archetype = space_tanks4
 parent = sig13_03
 '''
+
+
+class CadizGasMiner(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'co_cad_04'
+    TEMPLATE = '''[Object]
+nickname = co_cad_04
+ids_name = 203866
+pos = 0, 0, 0
+rotate = 0, 180, 0
+archetype = gas_miner_dock
+ids_info = 065778
+base = co_cad_04_Base
+dock_with = co_cad_04_Base
+behavior = NOTHING
+reputation = co_grp
+voice = atc_leg_m01
+space_costume = br_brighton_head, pi_pirate5_body, prop_hat_male_miner
+
+[Object]
+nickname = co_cad_04_gasminer01
+pos = 95, -100, -150
+rotate = 0, 0, -90
+archetype = gas_miner_core
+parent = co_cad_04
+
+[Object]
+nickname = co_cad_04_gasminer02
+pos = -95, -100, -150
+rotate = 0, 0, 90
+archetype = gas_miner_core
+parent = co_cad_04
+
+[Object]
+nickname = co_cad_04_ind01
+pos = 44.5, -100, -270
+rotate = 0, 0, 0
+archetype = space_industrial01b
+parent = co_cad_04
+
+[Object]
+nickname = co_cad_04_ind02
+pos = -44.5, -100, -270
+rotate = 0, 0, 0
+archetype = space_industrial01b
+parent = co_cad_04
+
+[Object]
+nickname = co_cad_04_ind03
+pos = 44.5, -100, 0
+rotate = 0, 0, 0
+archetype = space_industrial01b
+parent = co_cad_04
+
+[Object]
+nickname = co_cad_04_ind04
+pos = -44.5, -100, 0
+rotate = 0, 0, 0
+archetype = space_industrial01b
+parent = co_cad_04
+
+[Object]
+nickname = co_cad_04_ind05
+pos = 0, -100, -150
+rotate = 90, 0, 0
+archetype = space_industrial02b
+parent = co_cad_04
+
+[Object]
+nickname = co_cad_04_ind06
+pos = 0, -100, -225
+rotate = 0, 0, 0
+archetype = space_industrial02b
+parent = co_cad_04
+
+[Object]
+nickname = co_cad_04_ind07
+pos = 0, -100, -75
+rotate = 0, 0, 0
+archetype = space_industrial02b
+parent = co_cad_04
+
+[Object]
+nickname = co_cad_04_ind08
+pos = 0, -75, 0
+rotate = 90, 0, 0
+archetype = space_industrial02b
+parent = co_cad_04
+
+[Object]
+nickname = co_cad_04_ind09
+pos = 75, -60, 0
+rotate = 90, 0, 0
+archetype = space_industrial02b
+parent = co_cad_04
+
+[Object]
+nickname = co_cad_04_ind10
+pos = -75, -60, 0
+rotate = 90, 0, 0
+archetype = space_industrial02b
+parent = co_cad_04
+
+[Object]
+nickname = co_cad_04_girder01
+pos = 40, -30, 30
+rotate = 75, 90, 0
+archetype = space_girderb
+parent = co_cad_04
+
+[Object]
+nickname = co_cad_04_girder02
+pos = -40, -30, 30
+rotate = 75, -90, 0
+archetype = space_girderb
+parent = co_cad_04
+
+[Object]
+nickname = co_cad_04_girder03
+pos = 0, -100, 35
+rotate = 0, 90, 0
+archetype = space_girderb
+parent = co_cad_04
+
+[Object]
+nickname = co_cad_04_girder04
+pos = 0, -75, -75
+rotate = 0, 0, 0
+archetype = space_girderb
+parent = co_cad_04
+
+[;Object] ;wrong idea
+nickname = co_cad_04_disc01
+pos = 0, 2.5, 55
+rotate = 0, -90, 0
+archetype = gas_miner_disc
+spin = 0.2, 0, 0
+parent = co_cad_04
+
+[Object]
+nickname = co_cad_04_disc02
+pos = 44.5, -100, -320
+rotate = 0, 90, 0
+archetype = gas_miner_small_disc
+;spin = 0.2, 0, 0
+parent = co_cad_04
+
+[Object]
+nickname = co_cad_04_disc03
+pos = -44.5, -100, -320
+rotate = 4, 90, 0
+archetype = gas_miner_small_disc
+;spin = -0.2, 0, 0
+parent = co_cad_04
+'''

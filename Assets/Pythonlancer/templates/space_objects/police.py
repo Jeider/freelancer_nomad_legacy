@@ -817,3 +817,185 @@ rotate = 90, 0, 0
 archetype = space_habitat_tall
 parent = om2_03
 '''
+
+
+class PoliceOutpostLiberty(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'li_cal_06'
+    TEMPLATE = '''[Object]
+nickname = li_cal_06
+ids_name = 203657
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = space_police01
+ids_info = 065576
+base = li_cal_06_base
+dock_with = li_cal_06_base
+reputation = li_grp
+behavior = NOTHING
+voice = atc_leg_f01
+space_costume = pl_female1_head, li_female_elite_body, prop_neuralnet_a
+difficulty_level = 12
+pilot = pilot_solar_hardest
+
+[Object]
+nickname = li_cal_06_shipyard01
+pos = -800, 60, 0
+rotate = 0, 0, 0
+archetype = shipyard_medium
+parent = li_cal_06
+
+[Object]
+nickname = li_cal_06_shipyard02
+pos = -800, -60, 0
+rotate = 0, 0, 180
+archetype = shipyard_medium
+parent = li_cal_06
+
+[Object]
+nickname = li_cal_06_panel01
+pos = -400, 135, -100
+rotate = -75, 0, 0
+archetype = space_station_panel
+loadout = co_dread_panel_with_windows
+parent = li_cal_06
+
+[Object]
+nickname = li_cal_06_panel02
+pos = -500, 135, 0
+rotate = -75, 90, 0
+archetype = space_station_panel
+loadout = co_dread_panel_with_windows
+parent = li_cal_06
+
+[Object]
+nickname = li_cal_06_panel03
+pos = -300, 135, 0
+rotate = -75, -90, 0
+archetype = space_station_panel
+loadout = co_dread_panel_with_windows
+parent = li_cal_06
+
+[Object]
+nickname = li_cal_06_panel04
+pos = -400, 135, 100
+rotate = -75, 180, 0
+archetype = space_station_panel
+loadout = co_dread_panel_with_windows
+parent = li_cal_06
+
+[Object]
+nickname = li_cal_06_panel05
+pos = -400, -135, -100
+rotate = -75, 0, 180
+archetype = space_station_panel
+loadout = co_dread_panel_with_windows
+parent = li_cal_06
+
+[Object]
+nickname = li_cal_06_panel06
+pos = -500, -135, 0
+rotate = -75, -90, 180
+archetype = space_station_panel
+loadout = co_dread_panel_with_windows
+parent = li_cal_06
+
+[Object]
+nickname = li_cal_06_panel07
+pos = -300, -135, 0
+rotate = -75, 90, 180
+archetype = space_station_panel
+loadout = co_dread_panel_with_windows
+parent = li_cal_06
+
+[Object]
+nickname = li_cal_06_panel08
+pos = -400, -135, 100
+rotate = -75, 180, 180
+archetype = space_station_panel
+loadout = co_dread_panel_with_windows
+parent = li_cal_06
+
+[Object]
+nickname = li_cal_06_ind01
+pos = -485, 0, 0
+rotate = 0, 0, 0
+archetype = space_industrial02a
+parent = li_cal_06
+
+[Object]
+nickname = li_cal_06_ind02
+pos = -315, 0, 0
+rotate = 0, 0, 0
+archetype = space_industrial02a
+parent = li_cal_06
+
+[Object]
+nickname = li_cal_06_ind03
+pos = -400, 0, -120
+rotate = 90, 0, 90
+archetype = space_industrial02d
+parent = li_cal_06
+
+[Object]
+nickname = li_cal_06_ind04
+pos = -400, 0, 120
+rotate = 90, 0, 90
+archetype = space_industrial02d
+parent = li_cal_06
+
+[Object]
+nickname = li_cal_06_ind05
+pos = -800, 0, 0
+rotate = 0, 0, 0
+archetype = space_industrial02d
+parent = li_cal_06
+
+[Object]
+nickname = li_cal_06_girder01
+pos = -400, 0, 0
+rotate = 0, 90, 0
+archetype = space_girdera
+parent = li_cal_06
+
+[Object]
+nickname = li_cal_06_girder02
+pos = -400, 0, 0
+rotate = 0, -90, 0
+archetype = space_girdera
+parent = li_cal_06
+
+[Object]
+nickname = li_cal_06_ctrl_twr01
+pos = -400, 265, 0
+rotate = 0, 45, 0
+archetype = space_small_control_tower
+parent = li_cal_06
+
+[Object]
+nickname = li_cal_06_ctrl_twr02
+pos = -400, 0, 0
+rotate = 0, 0, 0
+archetype = space_control_tower
+parent = li_cal_06
+
+[Object]
+nickname = li_cal_06_ctrl_twr03
+pos = -400, -265, 0
+rotate = 0, -45, 0
+archetype = space_small_control_tower
+parent = li_cal_06
+
+[Object]
+nickname = li_cal_06_dome01
+pos = -400, 285, 0
+rotate = 0, 45, 0
+archetype = space_domeb
+parent = li_cal_06
+
+[Object]
+nickname = li_cal_06_dome02
+pos = -400, -285, 0
+rotate = 180, 45, 0
+archetype = space_domeb
+parent = li_cal_06
+'''
