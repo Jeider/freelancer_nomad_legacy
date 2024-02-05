@@ -554,3 +554,23 @@ faction = bh_grp, 1.00000
                 (attacker_base.POS[0], 0, attacker_base.POS[2]),
             ]
         )
+
+
+
+
+
+
+class AsteroidField(SystemObject):
+    CORE_EXCLUSION_SIZE = 500
+    OUTER_SIZE = 2000
+    ASTEROID_ARCHETYPE = 'om15_mineast_super'
+    
+
+
+
+
+
+
+
+
+

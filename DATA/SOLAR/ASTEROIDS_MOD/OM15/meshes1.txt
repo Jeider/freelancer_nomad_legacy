@@ -1,3 +1,0 @@
-Found 2 mesh(es)
-grabbing mesh 0 with 1613 vertices!
-grabbing mesh 1 with 1611 vertices!

@@ -1344,3 +1344,192 @@ rotate = 0, 90, 0
 archetype = space_girder
 parent = co_cad_03
 '''
+
+
+class NeutronResearch(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'tau26_02'
+    TEMPLATE = '''[Object]
+nickname = tau26_02
+ids_name = 203794
+pos = 0, 0, 0
+rotate = 0, 90, 0
+archetype = space_police01
+ids_info = 065704
+base = Tau26_02_base
+dock_with = Tau26_02_base
+visit = 0
+reputation = co_grp
+behavior = NOTHING
+voice = atc_leg_m01
+space_costume = ge_male4_head, sc_scientist1_body, prop_neuralnet_f
+difficulty_level = 5
+pilot = pilot_solar_hardest
+
+[Object]
+nickname = tau26_02_industrial01
+pos = 0, -280, 0
+rotate = 0, 0, 0
+archetype = space_industrial02a
+parent = tau26_02
+
+[Object]
+nickname = tau26_02_industrial02
+pos = -120, -280, 0
+rotate = 0, 0, 0
+archetype = space_industrial01a
+parent = tau26_02
+
+[Object]
+nickname = tau26_02_industrial03
+pos = 120, -280, 0
+rotate = 0, 0, 0
+archetype = space_industrial01a
+parent = tau26_02
+
+[Object]
+nickname = tau26_02_girder01
+pos = 0, -330, 0
+rotate = -90, 0, 0
+archetype = space_girdera
+parent = tau26_02
+
+[Object]
+nickname = tau26_02_girder02
+pos = 0, -280, -100
+rotate = 0, 0, 0
+archetype = space_girdera
+parent = tau26_02
+
+[Object]
+nickname = tau26_02_girder03
+pos = -100, -280, 0
+rotate = 0, 90, 0
+archetype = space_girdera
+parent = tau26_02
+
+[Object]
+nickname = tau26_02_girder04
+pos = 0, -280, 100
+rotate = 0, 180, 0
+archetype = space_girdera
+parent = tau26_02
+
+[Object]
+nickname = tau26_02_girder05
+pos = 100, -280, 0
+rotate = 0, -90, 0
+archetype = space_girdera
+parent = tau26_02
+
+[Object]
+nickname = tau26_02_panel01
+pos = -252, -280, 0
+rotate = 0, 0, 0
+archetype = space_panel
+parent = tau26_02
+
+[Object]
+nickname = tau26_02_panel02
+pos = 252, -280, 0
+rotate = 0, 0, 0
+archetype = space_panel
+parent = tau26_02
+
+[Object]
+nickname = tau26_02_panel03
+pos = 0, -280, 252
+rotate = 0, 90, 0
+archetype = space_panel
+parent = tau26_02
+
+[Object]
+nickname = tau26_02_panel04
+pos = 0, -280, -252
+rotate = 0, 90, 0
+archetype = space_panel
+parent = tau26_02
+
+[Object]
+nickname = tau26_02_panel05
+pos = -175, -280, 175
+rotate = 0, 45, 0
+archetype = space_panel
+parent = tau26_02
+
+[Object]
+nickname = tau26_02_panel06
+pos = -175, -280, -175
+rotate = 0, -45, 0
+archetype = space_panel
+parent = tau26_02
+
+[Object]
+nickname = tau26_02_panel07
+pos = 175, -280, 175
+rotate = 0, -45, 0
+archetype = space_panel
+parent = tau26_02
+
+[Object]
+nickname = tau26_02_panel08
+pos = 175, -280, -175
+rotate = 0, 45, 0
+archetype = space_panel
+parent = tau26_02
+
+[Object]
+nickname = tau26_02_ctrl_twr01
+pos = 0, -200, 0
+rotate = 0, 0, 0
+archetype = space_medium_control_tower
+parent = tau26_02
+
+[Object]
+nickname = tau26_02_ctrl_twr02
+pos = 0, -360, 0
+rotate = 0, 0, 0
+archetype = space_medium_control_tower
+parent = tau26_02
+
+[Object]
+nickname = tau26_02_ctrl_twr03
+pos = 0, -100, 0
+rotate = 0, 0, 0
+archetype = space_small_control_tower
+parent = tau26_02
+
+[Object]
+nickname = tau26_02_tanks01
+pos = 0, -480, 0
+rotate = 0, 0, 0
+archetype = space_tanklx4
+parent = tau26_02
+
+[Object]
+nickname = tau26_02_tanks02
+pos = 0, -522.5, 150
+rotate = 0, 0, 0
+archetype = space_tankl2
+parent = tau26_02
+
+[Object]
+nickname = tau26_02_tanks03
+pos = 0, -522.5, -150
+rotate = 0, 0, 0
+archetype = space_tankl2
+parent = tau26_02
+
+[Object]
+nickname = tau26_02_tanks04
+pos = -150, -522.5, 0
+rotate = 0, 90, 0
+archetype = space_tankl2
+parent = tau26_02
+
+[Object]
+nickname = tau26_02_tanks05
+pos = 150, -522.5, 0
+rotate = 0, 90, 0
+archetype = space_tankl2
+parent = tau26_02
+'''

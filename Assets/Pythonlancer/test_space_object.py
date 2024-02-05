@@ -1,71 +1,147 @@
+import sys
+import pathlib
+from text.dividers import DIVIDER
 from templates.space_object_template import SpaceObjectTemplate
 
 # XLARGE
 
-# from templates.space_objects.tekagi_megabase import TekagiMegabase
-# from templates.space_objects.nomad_babylon import Babylon
-# from templates.space_objects.nomad_asf_hq import AsfHQ
-# from templates.space_objects.megacannon import MegaCannon
-# from templates.space_objects.kusari_palace import KusariPalace
-# from templates.space_objects.odissey import Odissey
-# from templates.space_objects.potsdam import Potsdam
-# from templates.space_objects.manhattan_megabase import ManhattanMegabase
-# from templates.space_objects.valensia import ValensiaOutside
-# from templates.space_objects.terraforming import Terraforming
-# from templates.space_objects.gavana import Gavana
-# from templates.space_objects.ulster_megabase import UlsterMegabase
-# from templates.space_objects.sphere_megabase import SphereMegabase, SphereMegabaseShort
+from templates.combined.tekagi_megabase import TekagiMegabase
+from templates.combined.kusari_palace import KusariPalace
+from templates.combined.nomad_asf_hq import AsfHQ
+
+
+
+
+# from templates.combined.nomad_babylon import Babylon
+# from templates.combined.sphere_megabase import SphereMegabase, SphereMegabaseShort
+
+# from templates.combined.upsilon_gasinside import UpsilonMegabase, UpsilonLostResearch
+# from templates.combined.ulster_megabase import UlsterMegabase
+
+
+
+
+# from templates.combined.stuttgart_megabase import StuttgartMegabase
+
+# from templates.combined.megacannon import MegaCannon
+# from templates.combined.odissey import Odissey
+# from templates.combined.potsdam import Potsdam
+# from templates.combined.manhattan_megabase import ManhattanMegabase
+
+# from templates.combined.gavana import Gavana
+# from templates.combined.valensia import ValensiaOutside
+# from templates.combined.terraforming import Terraforming
 
 # LARGE
 
-# from templates.space_objects.cloakgen import Cloakgen
-# from templates.space_objects.avalon_megabase import AvalonMegabase
-# from templates.space_objects.cambridge_research import CambridgeResearch
-# from templates.space_objects.olaf import Olaf
-# from templates.space_objects.honshu_military import HonshuMilitary
-# from templates.space_objects.kyushu_megashipyard import KyushuMegashipyard
-# from templates.space_objects.constanta import Constanta
-# from templates.space_objects.stuttgart_megabase import StuttgartMegabase
-# from templates.space_objects.rheinland_military import RheinlandMilitary
-# from templates.space_objects.tortuga import Tortuga
-# from templates.space_objects.corsair_dreadnought import CorsairDreadnoughtDestroyed, CorsairDreadnoughtAlive
-# from templates.space_objects.forbes_megafactory import ForbesMegafactory
-# from templates.space_objects.columbia_production import ColumbiaProduction
-# from templates.space_objects.liberty_military import LibertyMilitary
-# from templates.space_objects.california_tradestation import CaliforniaTradestation
+# from templates.combined.cloakgen import Cloakgen
+# from templates.combined.avalon_megabase import AvalonMegabase
+# from templates.combined.cambridge_research import CambridgeResearch
+# from templates.combined.olaf import Olaf
+# from templates.combined.honshu_military import HonshuMilitary
+# from templates.combined.kyushu_megashipyard import KyushuMegashipyard
+# from templates.combined.constanta import Constanta
+# from templates.combined.rheinland_military import RheinlandMilitary
+# from templates.combined.tortuga import Tortuga
+# from templates.combined.corsair_dreadnought import CorsairDreadnoughtDestroyed, CorsairDreadnoughtAlive
+# from templates.combined.forbes_megafactory import ForbesMegafactory
+# from templates.combined.columbia_production import ColumbiaProduction
+# from templates.combined.liberty_military import LibertyMilitary
+# from templates.combined.california_tradestation import CaliforniaTradestation
 
 # DEFAULT
 
-# from templates.space_objects.edge_world import BlackHoleResearch, BlackHoleOutpost, BlackHoleDestroyedStation, ShinobiAbandonedResearch, OchoRiosResearch, MadridProduction, CadizFreeport
-# from templates.space_objects.bounty_hunter import PortRoyal, ChurchAlive, ChurchDestroyed
-# from templates.space_objects.gmg_hq import GmgHQAlive, GmgHQDestroyed
-# from templates.space_objects.alg import AlgBaseHokkaido, AlgBaseBerlin
-# from templates.space_objects.pirate import PirateBaseBizmark, PirateBaseHokkaido, LibertyRombicPirateBase, PirateBaseStuttgart, PirateBaseCambridge, ManhattanPirateBase, PirateBaseForbes, PirateBaseColumbia, PirateBaseCalifornia
-# from templates.space_objects.prisons import AvalonPrison, HonshuPrison, BerlinPrison, AlaskaPrison, ColumbiaPrison
-# from templates.space_objects.shipyards import CambridgeShipyard, HokkaidoShipyard, StuttgartShipyard, ForbesShipyard, UlsterShipyardDestroyed, UlsterShipyardAlive, HeavyBarrelShipyard
-# from templates.space_objects.trade_storages import HokkaidoStorage, HonshuStorage, TekagiStorage, LibertyLongStorage, RheinlandOmegaStorage, ManhattanStorage
-# from templates.space_objects.junker import HonshuJunker, SigmaEightJunker, StuttgartJunker, BerlinJunker, OmegaSmelter, ForbesJunker
-# from templates.space_objects.roid_mining import BretoniaRoidMining, RheinlandRoidMining, LibertyRoidMining
-# from templates.space_objects.research import KyushuResearch, SiriusResearch, RheinlandResearch, ForbesResearch
-# from templates.space_objects.asteroid import KyushuAsteroidBase, NomadAsteroidBase, MunchenAsteroidBase, BizmarkAsteroidBase, BerlinAsteroidBase, ManhattanAsteroidBase, CaliforniaAsteroidBase
-# from templates.space_objects.gas_miner import BretoniaPirateGasMiner, BretoniaCivilianGasMiner, RheinlandCivilianGasMiner, RheinlandPirateGasMiner, CadizGasMiner
-# from templates.space_objects.trading_outposts import LibertyTradingOutpost, RheinlandTradingOutpost
-# from templates.space_objects.police import PoliceOutpostBretonia, SigmaEightPoliceOutpost, StuttgartPoliceOutpost, BerlinPoliceOutpost, OmicronPoliceOutpost, PoliceOutpostLiberty
-from templates.space_objects.station_debris import TekagiDebris, MunchenBattleStationDebris, MunchenCivilianStationDebris, OmegaDanzigDebris, StuttgartDestroyedOutpost, ForbesDebris, ColumbiaDebris, CaliforniaDebris
+# from templates.combined.station_debris import TekagiDebris, MunchenBattleStationDebris, MunchenCivilianStationDebris, OmegaDanzigDebris, StuttgartDestroyedOutpost, ForbesDebris, ColumbiaDebris, CaliforniaDebris
+# from templates.combined.edge_world import BlackHoleResearch, BlackHoleOutpost, BlackHoleDestroyedStation, ShinobiAbandonedResearch, OchoRiosResearch, MadridProduction, CadizFreeport, NeutronResearch
 
-from text.dividers import DIVIDER
+# from templates.combined.bounty_hunter import PortRoyal, ChurchAlive, ChurchDestroyed
+# from templates.combined.gmg_hq import GmgHQAlive, GmgHQDestroyed
+# from templates.combined.alg import AlgBaseHokkaido, AlgBaseBerlin
+
+
+
+# from templates.combined.prisons import AvalonPrison, HonshuPrison, BerlinPrison, AlaskaPrison, ColumbiaPrison
+# from templates.combined.shipyards import CambridgeShipyard, HokkaidoShipyard, StuttgartShipyard, ForbesShipyard, UlsterShipyardDestroyed, UlsterShipyardAlive, HeavyBarrelShipyard
+
+# from templates.combined.roid_mining import BretoniaRoidMining, RheinlandRoidMining, LibertyRoidMining, UpsilonRoidMining
+# from templates.combined.gas_miner import BretoniaPirateGasMiner, BretoniaCivilianGasMiner, RheinlandCivilianGasMiner, RheinlandPirateGasMiner, CadizGasMiner
+# from templates.combined.research import KyushuResearch, SiriusResearch, RheinlandResearch, ForbesResearch
+
+
+
+
+# from templates.combined.pirate import PirateBaseBizmark, PirateBaseHokkaido, LibertyRombicPirateBase, PirateBaseStuttgart, PirateBaseCambridge, ManhattanPirateBase, PirateBaseForbes, PirateBaseColumbia, PirateBaseCalifornia
+# from templates.combined.asteroid import KyushuAsteroidBase, NomadAsteroidBase, MunchenAsteroidBase, BizmarkAsteroidBase, BerlinAsteroidBase, ManhattanAsteroidBase, CaliforniaAsteroidBase
+# from templates.combined.junker import HonshuJunker, SigmaEightJunker, StuttgartJunker, BerlinJunker, OmegaSmelter, ForbesJunker
+
+# from templates.combined.trading_outposts import LibertyTradingOutpost, RheinlandTradingOutpost
+# from templates.combined.police import PoliceOutpostBretonia, SigmaEightPoliceOutpost, StuttgartPoliceOutpost, BerlinPoliceOutpost, OmicronPoliceOutpost, PoliceOutpostLiberty
+# from templates.combined.trade_storages import HokkaidoStorage, HonshuStorage, TekagiStorage, LibertyLongStorage, RheinlandOmegaStorage, ManhattanStorage
+
+
+
+
+# base = KyushuMegashipyard().get_instance(new_space_object_name=None, move_to=(30000, 8000, 25000))
+
+# print(base)
+
+
+# sys.exit()
+
 
 
 output = []
 pos_x = 0
 pos_y = 0
-append = 2500
-max_y = 20000
+# append = 5000  # XLARGE
+# append = 3500  # LARGE
+append = 2500  # DEFAULT
+max_y = 10000
 
 offset = 0
 limit = 1000
 
-index = 1
+
+# index = 1
+# demo_file_name = 'demo1.ini'
+# append = 1500
+
+
+# index = 100
+# demo_file_name = 'demo2.ini'
+# append = 2500
+
+
+# index = 200
+# demo_file_name = 'demo3.ini'
+# append = 2500
+
+
+# index = 300
+# demo_file_name = 'demo4.ini'
+# append = 3500
+# max_y = 13000
+
+
+# index = 400
+# demo_file_name = 'demo5.ini'
+# append = 5000
+
+
+# index = 500
+# demo_file_name = 'demo6.ini'
+# append = 6000
+# max_y = 15000
+
+
+index = 600
+demo_file_name = 'demo7.ini'
+append = 6000
+max_y = 15000
+
+
+
+
 for base in SpaceObjectTemplate.subclasses:
     name = 'test_base_{index:02}'.format(index=index)
     # print((pos_x, 0, pos_y))
@@ -82,8 +158,7 @@ for base in SpaceObjectTemplate.subclasses:
     if index > limit:
         break
 
-DEMO_CONTENT = '''
-[SystemInfo]
+DEMO_CONTENT = '''[SystemInfo]
 name = demo_sys
 space_color = 20, 20, 20
 local_faction = br_grp
@@ -115,11 +190,17 @@ archetype = jumpgate
 
 [LightSource]
 nickname = Xdemo_system_light
-pos = 50000, 50000, 50000
+pos = -50000, 30000, -50000
 color = 255, 255, 255
 range = 150000
 type = DIRECTIONAL
 atten_curve = DYNAMIC_DIRECTION
+
 '''
 
-print(DEMO_CONTENT + DIVIDER.join(output))
+final_out = DEMO_CONTENT + DIVIDER.join(output)
+
+demo_file_path = pathlib.Path().resolve().parent.parent / 'DATA' / 'UNIVERSE' / 'SPECIAL' / 'DEMO' / demo_file_name
+demo_file_path.write_text(final_out, encoding='utf-8')
+
+

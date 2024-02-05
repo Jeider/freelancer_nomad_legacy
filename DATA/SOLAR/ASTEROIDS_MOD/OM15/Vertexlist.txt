@@ -1,5 +1,0 @@
-Magic number: 458
-x,y,z for first selected vertex: -22.1894 358.864 118.854 !
-total number of verts: 1611
-number of unique verts found: 458
-number of selected vertices: 458

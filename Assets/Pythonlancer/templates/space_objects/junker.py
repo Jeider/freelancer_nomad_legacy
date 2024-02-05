@@ -254,153 +254,156 @@ parent = sig8_02
 
 
 class StuttgartJunker(SpaceObjectTemplate):
-    SPACE_OBJECT_NAME = 'ku_hns_04'
+    SPACE_OBJECT_NAME = 'rh_stut_05'
     TEMPLATE = '''[Object]
-nickname = rh_stut_06
+nickname = rh_stut_05
+ids_name = 203618
 pos = 0, 0, 0
 rotate = 0, 0, 0
-archetype = space_police01
-ids_name = 203881
-ids_info = 1
-base = rh_stut_06_base
-dock_with = rh_stut_06_base
-reputation = rx_grp
+archetype = space_port_dmg_front_dock
+ids_info = 065557
+base = rh_stut_05_base
+dock_with = rh_stut_05_base
+reputation = junk_grp
 behavior = NOTHING
+difficulty_level = 12
+loadout = space_port_junkers_sig8
 voice = atc_leg_m01
-space_costume = rh_sales_head, pi_pirate1_body
+space_costume = sh_male4_head, pi_pirate1_body, prop_neuralnet_a_combo
+ring = Zone_rh_stut_RING_FX_1, solar/asteroids_mod/debris/debris_dust.ini
 
 [Object]
-nickname = rh_stut_06_industrial01
-pos = -120, -470, 0
-rotate = 0, 90, 60
-archetype = space_industrial02a
-parent = rh_stut_06
+nickname = rh_stut_05_ind01
+pos = 0, 0, -200
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = Rh_stut_05
 
 [Object]
-nickname = rh_stut_06_industrial02
-pos = 120, -470, 0
-rotate = 0, 90, -60
-archetype = space_industrial02a
-parent = rh_stut_06
+nickname = rh_stut_05_ind02
+pos = 0, 0, -470
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = Rh_stut_05
 
 [Object]
-nickname = rh_stut_06_industrial03
-pos = -120, -470, 200
-rotate = 0, 90, 60
-archetype = space_industrial02a
-parent = rh_stut_06
-
-[Object]
-nickname = rh_stut_06_industrial04
-pos = 120, -470, 200
-rotate = 0, 90, -60
-archetype = space_industrial02a
-parent = rh_stut_06
-
-[Object]
-nickname = rh_stut_06_industrial05
-pos = -120, -470, -200
-rotate = 0, 90, 60
-archetype = space_industrial02a
-parent = rh_stut_06
-
-[Object]
-nickname = rh_stut_06_industrial06
-pos = 120, -470, -200
-rotate = 0, 90, -60
-archetype = space_industrial02a
-parent = rh_stut_06
-
-[Object]
-nickname = rh_stut_06_industrial07
-pos = 0, -580, 0
+nickname = rh_stut_05_ind03
+pos = 110, 0, 0
 rotate = 0, 90, 0
-archetype = space_industrial02d
-parent = rh_stut_06
+archetype = space_industrial01b
+parent = Rh_stut_05
 
 [Object]
-nickname = rh_stut_06_industrial08
-pos = 0, -580, 200
+nickname = rh_stut_05_ind04
+pos = 285, 0, 0
 rotate = 0, 90, 0
-archetype = space_industrial02d
-parent = rh_stut_06
+archetype = space_industriala
+parent = Rh_stut_05
 
 [Object]
-nickname = rh_stut_06_industrial09
-pos = 0, -580, -200
-rotate = 0, 90, 0
-archetype = space_industrial02d
-parent = rh_stut_06
+nickname = rh_stut_05_ind05
+pos = 285, 0, -300
+rotate = 0, 0, 0
+archetype = space_industrial_dmg
+parent = Rh_stut_05
 
 [Object]
-nickname = rh_stut_06_industrial10
-pos = 0, -330, 135
-rotate = 0, 0, 45
-archetype = space_industrial02a
-parent = rh_stut_06
+nickname = rh_stut_05_tanks01
+pos = 75, 0, -200
+rotate = 0, 0, 0
+archetype = space_tankl4x4
+parent = Rh_stut_05
 
 [Object]
-nickname = rh_stut_06_industrial11
-pos = 0, -330, -135
-rotate = 0, 0, 45
-archetype = space_industrial02a
-parent = rh_stut_06
+nickname = rh_stut_05_tanks02
+pos = 75, 0, -470
+rotate = 0, 0, 0
+archetype = space_tankl4x4
+parent = Rh_stut_05
 
 [Object]
-nickname = rh_stut_06_industrial12
-pos = 0, -200, 0
-rotate = 0, 90, 90
-archetype = space_industrial02d
-parent = rh_stut_06
+nickname = rh_stut_05_tanks03
+pos = 580, 0, -100
+rotate = 30, 120, 30
+archetype = space_tankl4x4_dmg
+parent = Rh_stut_05
 
 [Object]
-nickname = rh_stut_06_industrial13
-pos = 0, -730, 0
-rotate = 0, 90, 90
-archetype = space_industrial02d
-parent = rh_stut_06
-
-[Object]
-nickname = rh_stut_06_control_block01
-pos = 0, -900, 0
+nickname = rh_stut_05_habitat01
+pos = 0, -110, -470
 rotate = 180, 0, 0
 archetype = space_small_control_block
-parent = rh_stut_06
+parent = Rh_stut_05
 
 [Object]
-nickname = rh_stut_06_girder01
-pos = -120, -470, 0
-rotate = 0, 0, 60
-archetype = space_girder
-parent = rh_stut_06
+nickname = rh_stut_05_habitat02
+pos = 0, -80, -200
+rotate = 180, 0, 0
+archetype = space_habitat_dmg
+parent = Rh_stut_05
 
 [Object]
-nickname = rh_stut_06_girder02
-pos = 120, -470, 0
-rotate = 0, 0, 30
-archetype = space_girder
-parent = rh_stut_06
-
-[Object]
-nickname = rh_stut_06_girder03
-pos = 0, -580, 0
+nickname = rh_stut_05_habitat03
+pos = 285, -105, 0
 rotate = 0, 0, 0
-archetype = space_girder
-parent = rh_stut_06
+archetype = space_habitat_dmg
+parent = Rh_stut_05
 
 [Object]
-nickname = rh_stut_06_girder04
-pos = 0, 0, 0
-rotate = 90, 0, 0
-archetype = space_girdera
-parent = rh_stut_06
+nickname = rh_stut_05_habitat04
+pos = 285, 100, 0
+rotate = 0, 0, 0
+archetype = space_habitat_dmg
+parent = Rh_stut_05
 
 [Object]
-nickname = rh_stut_06_girder04
-pos = 0, 0, 0
-rotate = 90, 0, 0
-archetype = space_girdera
-parent = rh_stut_06
+nickname = rh_stut_05_panel01
+pos = 180, 40, 40
+rotate = 0, 90, 0
+archetype = space_panel45
+parent = Rh_stut_05
+
+[Object]
+nickname = rh_stut_05_panel02
+pos = 390, 40, 40
+rotate = 0, 90, 0
+archetype = space_panel45
+parent = Rh_stut_05
+
+[Object]
+nickname = rh_stut_05_panel03
+pos = -40, -40, -335
+rotate = 180, 0, 0
+archetype = space_panel45
+parent = Rh_stut_05
+
+[Object]
+nickname = rh_stut_05_debris01
+pos = -10, 80, -470
+rotate = 0, 0, 0
+archetype = space_debris_panel
+parent = Rh_stut_05
+
+[Object]
+nickname = rh_stut_05_debris02
+pos = -10, 80, -200
+rotate = 0, 0, 0
+archetype = space_debris_panel
+parent = Rh_stut_05
+
+[Object]
+nickname = rh_stut_05_girder01
+pos = 0, 0, -350
+rotate = 0, 0, 0
+archetype = space_girderc
+parent = Rh_stut_05
+
+[Object]
+nickname = rh_stut_05_girder02
+pos = 500, 0, 0
+rotate = -1, 88, 0
+archetype = space_beaml_dmg
+parent = Rh_stut_05
 '''
 
 

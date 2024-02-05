@@ -939,3 +939,396 @@ rotate = 0, 0, 0
 archetype = space_habitat_wide
 parent = li_cal_05
 '''
+
+
+class UpsilonRoidMining(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'up1_01'
+    TEMPLATE = '''[Object]
+nickname = up1_01
+pos = 0, 0, 0
+rotate = 0, 90, 0
+archetype = space_mining01
+ids_name = 203802
+ids_info = 065709
+base = up1_01_base
+dock_with = up1_01_base
+visit = 0
+reputation = co_grp
+behavior = NOTHING
+voice = atc_leg_m01
+space_costume = rh_hassler_head, pl_male3_journeyman_body
+difficulty_level = 5
+loadout = miningbase_FragC_pi_03
+pilot = pilot_solar_hardest
+
+[Object]
+nickname = up1_01_ind01
+pos = 880, -155, 0
+rotate = 0, 90, 0
+archetype = space_industriala
+parent = up1_01
+
+[Object]
+nickname = up1_01_girder01
+pos = 627, 145, 0
+rotate = 0, 90, 0
+archetype = space_girder
+parent = up1_01
+
+[Object]
+nickname = up1_01_girder02
+pos = 1000, -155, 0
+rotate = 0, 90, 0
+archetype = space_girder
+parent = up1_01
+
+[Object]
+nickname = up1_01_ctrl_block01
+pos = 1250, -90, 0
+rotate = 0, 90, 0
+archetype = space_small_control_block
+parent = up1_01
+
+[Object]
+nickname = up1_01_ctrl_twr01
+pos = 1250, -155, 0
+rotate = 0, 90, 0
+archetype = space_small_control_tower
+parent = up1_01
+
+[Object]
+nickname = up1_01_indA01
+pos = 376, -156, -365
+rotate = 0, 0, 0
+archetype = space_industrial01a
+parent = up1_01
+
+[Object]
+nickname = up1_01_indA02
+pos = 376, -156, 365
+rotate = 0, 180, 0
+archetype = space_industrial01a
+parent = up1_01
+
+[Object]
+nickname = up1_01_indA03
+pos = 376, 145, 0
+rotate = 0, 0, 0
+archetype = space_industrial02a
+parent = up1_01
+
+[Object]
+nickname = up1_01_girderA01
+pos = 376, -100, -377
+rotate = -45, 0, 0
+archetype = space_girdera
+parent = up1_01
+
+[Object]
+nickname = up1_01_girderA02
+pos = 376, -100, 377
+rotate = -45, 180, 0
+archetype = space_girdera
+parent = up1_01
+
+[Object]
+nickname = up1_01_girderA03
+pos = 376, -156, -200
+rotate = 0, 0, 0
+archetype = space_girder
+parent = up1_01
+
+[Object]
+nickname = up1_01_girderA04
+pos = 376, -156, 200
+rotate = 0, 0, 0
+archetype = space_girder
+parent = up1_01
+
+[Object]
+nickname = up1_01_habitatA01
+pos = 376, -290, 365
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = up1_01
+
+[Object]
+nickname = up1_01_habitatA02
+pos = 376, -290, 0
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = up1_01
+
+[Object]
+nickname = up1_01_habitatA03
+pos = 376, -290, -365
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = up1_01
+
+[Object]
+nickname = up1_01_habitatA04
+pos = 376, -325, 365
+rotate = 180, 0, 0
+archetype = space_habitat_tall
+parent = up1_01
+
+[Object]
+nickname = up1_01_habitatA05
+pos = 376, -345, -365
+rotate = 180, 0, 0
+archetype = space_small_control_block
+parent = up1_01
+
+[Object]
+nickname = up1_01_panelA01
+pos = 376, -300, 0
+rotate = 180, 60, 0
+archetype = space_solar_pnl
+parent = up1_01
+
+[Object]
+nickname = up1_01_shipyardA01
+pos = 376, 280, 0
+rotate = 0, 0, 0
+archetype = shipyard
+parent = up1_01
+
+[Object]
+nickname = up1_01_tanksA01
+pos = 376, -43, 0
+rotate = 90, 0, 0
+archetype = space_tanks4x4
+parent = up1_01
+
+[Object]
+nickname = up1_01_tanksA02
+pos = 376, 55, 0
+rotate = 90, 0, 0
+archetype = space_tanks2x2
+parent = up1_01
+
+[Object]
+nickname = up1_01_indB01
+pos = 627, -156, -365
+rotate = 0, 0, 0
+archetype = space_industrial01a
+parent = up1_01
+
+[Object]
+nickname = up1_01_indB02
+pos = 627, -156, 365
+rotate = 0, 180, 0
+archetype = space_industrial01a
+parent = up1_01
+
+[Object]
+nickname = up1_01_indB03
+pos = 627, 145, 0
+rotate = 0, 0, 0
+archetype = space_industrial02a
+parent = up1_01
+
+[Object]
+nickname = up1_01_girderB01
+pos = 627, -100, -377
+rotate = -45, 0, 0
+archetype = space_girdera
+parent = up1_01
+
+[Object]
+nickname = up1_01_girderB02
+pos = 627, -100, 377
+rotate = -45, 180, 0
+archetype = space_girdera
+parent = up1_01
+
+[Object]
+nickname = up1_01_girderB03
+pos = 627, -156, -200
+rotate = 0, 0, 0
+archetype = space_girder
+parent = up1_01
+
+[Object]
+nickname = up1_01_girderB04
+pos = 627, -156, 200
+rotate = 0, 0, 0
+archetype = space_girder
+parent = up1_01
+
+[Object]
+nickname = up1_01_habitatB01
+pos = 627, -290, 365
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = up1_01
+
+[Object]
+nickname = up1_01_habitatB02
+pos = 627, -290, 0
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = up1_01
+
+[Object]
+nickname = up1_01_habitatB03
+pos = 627, -290, -365
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = up1_01
+
+[Object]
+nickname = up1_01_habitatB04
+pos = 627, -325, 365
+rotate = 180, 0, 0
+archetype = space_habitat_tall
+parent = up1_01
+
+[Object]
+nickname = up1_01_habitatB05
+pos = 627, -345, -365
+rotate = 180, 0, 0
+archetype = space_small_control_block
+parent = up1_01
+
+[Object]
+nickname = up1_01_panelB01
+pos = 627, -300, 0
+rotate = 180, 60, 0
+archetype = space_solar_pnl
+parent = up1_01
+
+[Object]
+nickname = up1_01_shipyardB01
+pos = 627, 280, 0
+rotate = 0, 0, 0
+archetype = shipyard
+parent = up1_01
+
+[Object]
+nickname = up1_01_tanksB01
+pos = 627, -43, 0
+rotate = 90, 0, 0
+archetype = space_tanks4x4
+parent = up1_01
+
+[Object]
+nickname = up1_01_tanksB02
+pos = 627, 55, 0
+rotate = 90, 0, 0
+archetype = space_tanks2x2
+parent = up1_01
+
+[Object]
+nickname = up1_01_indC01
+pos = 880, -156, -365
+rotate = 0, 0, 0
+archetype = space_industrial01a
+parent = up1_01
+
+[Object]
+nickname = up1_01_indC02
+pos = 880, -156, 365
+rotate = 0, 180, 0
+archetype = space_industrial01a
+parent = up1_01
+
+[Object]
+nickname = up1_01_indC03
+pos = 880, 145, 0
+rotate = 0, 0, 0
+archetype = space_industrial02a
+parent = up1_01
+
+[Object]
+nickname = up1_01_girderC01
+pos = 880, -100, -377
+rotate = -45, 0, 0
+archetype = space_girdera
+parent = up1_01
+
+[Object]
+nickname = up1_01_girderC02
+pos = 880, -100, 377
+rotate = -45, 180, 0
+archetype = space_girdera
+parent = up1_01
+
+[Object]
+nickname = up1_01_girderC03
+pos = 880, -156, -200
+rotate = 0, 0, 0
+archetype = space_girder
+parent = up1_01
+
+[Object]
+nickname = up1_01_girderC04
+pos = 880, -156, 200
+rotate = 0, 0, 0
+archetype = space_girder
+parent = up1_01
+
+[Object]
+nickname = up1_01_habitatC01
+pos = 880, -290, 365
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = up1_01
+
+[Object]
+nickname = up1_01_habitatC02
+pos = 880, -290, 0
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = up1_01
+
+[Object]
+nickname = up1_01_habitatC03
+pos = 880, -290, -365
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = up1_01
+
+[Object]
+nickname = up1_01_habitatC04
+pos = 880, -325, 365
+rotate = 180, 0, 0
+archetype = space_habitat_tall
+parent = up1_01
+
+[Object]
+nickname = up1_01_habitatC05
+pos = 880, -345, -365
+rotate = 180, 0, 0
+archetype = space_small_control_block
+parent = up1_01
+
+[Object]
+nickname = up1_01_panelC01
+pos = 880, -300, 0
+rotate = 180, 60, 0
+archetype = space_solar_pnl
+parent = up1_01
+
+[Object]
+nickname = up1_01_shipyardC01
+pos = 880, 280, 0
+rotate = 0, 0, 0
+archetype = shipyard
+parent = up1_01
+
+[Object]
+nickname = up1_01_tanksC01
+pos = 880, -43, 0
+rotate = 90, 0, 0
+archetype = space_tanks4x4
+parent = up1_01
+
+[Object]
+nickname = up1_01_tanksC02
+pos = 880, 55, 0
+rotate = 90, 0, 0
+archetype = space_tanks2x2
+parent = up1_01
+'''

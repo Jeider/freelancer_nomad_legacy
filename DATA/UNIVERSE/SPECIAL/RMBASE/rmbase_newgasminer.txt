@@ -1,0 +1,132 @@
+
+[Object]
+nickname = rmbase08_ROOT
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = space_industrial01j
+
+[Object]
+nickname = rmbase08_door01
+pos = 0, 9, 165
+rotate = 0, 0, 0
+archetype = space_circle_door
+
+[Object]
+nickname = rmbase08_door02
+pos = 0, 9, 100
+rotate = 0, 0, 0
+archetype = space_circle_door
+
+[Object]
+nickname = rmbase08_door03
+pos = 0, 9, -165
+rotate = 0, 0, 0
+archetype = space_circle_door
+
+[Object]
+nickname = rmbase08_door04
+pos = 0, 9, -100
+rotate = 0, 0, 0
+archetype = space_circle_door
+
+[Object]
+nickname = rmbase08_miner01
+pos = 0, 150, 0
+rotate = 0, 0, 0
+archetype = gas_miner_core
+
+[Object]
+nickname = rmbase08_tunnel01
+pos = 0, 15, 132
+rotate = 180, 0, 0
+archetype = gas_miner_tunnel
+
+[Object]
+nickname = rmbase08_tunnel02
+pos = 0, 15, -132
+rotate = 0, 0, 180
+archetype = gas_miner_tunnel
+
+[Object]
+nickname = rmbase08_panel01
+pos = 0, 45, -125
+rotate = 0, 0, 0
+archetype = space_short_station_panel
+
+[Object]
+nickname = rmbase08_panel02
+pos = 0, 45, 125
+rotate = 0, 180, 0
+archetype = space_short_station_panel
+
+[Object]
+nickname = rmbase08_control01
+pos = 0, 280, 0
+rotate = 0, 90, 0
+archetype = space_pirate_control_block
+
+[Object]
+nickname = rmbase08_ind01
+pos = 0, -75, 0
+rotate = 0, 0, 0
+archetype = space_industrial02d
+
+[Object]
+nickname = rmbase08_ind02
+pos = 75, -25, 0.1
+rotate = 0, 0, 60
+archetype = space_industrial02d
+
+[Object]
+nickname = rmbase08_ind03
+pos = -75, -25, -0.1
+rotate = 0, 0, -60
+archetype = space_industrial02d
+
+[Object]
+nickname = rmbase08_ind04
+pos = -50, 50, 0.1
+rotate = 0, 0, 10
+archetype = space_industrial02d
+
+[Object]
+nickname = rmbase08_ind05
+pos = 50, 50, -0.1
+rotate = 0, 0, -10
+archetype = space_industrial02d
+
+[Object]
+nickname = rmbase08_ring01
+pos = 0, 0, 41
+rotate = 0, 0, 0
+archetype = small_ring
+
+[Object]
+nickname = rmbase08_ring02
+pos = 0, 0, -41
+rotate = 0, 0, 0
+archetype = small_ring
+
+[Object]
+nickname = rmbase08_tank01
+pos = 45, -95, 0
+rotate = 0, 0, 0
+archetype = space_tankl4
+
+[Object]
+nickname = rmbase08_tank02
+pos = -45, -95, 0
+rotate = 0, 0, 0
+archetype = space_tankl4
+
+[Object]
+nickname = rmbase08_tank03
+pos = 110, -40, 0
+rotate = 0, 0, 0
+archetype = space_tankl4
+
+[Object]
+nickname = rmbase08_tank04
+pos = -110, -40, 0
+rotate = 0, 0, 0
+archetype = space_tankl4
