@@ -1,9 +1,9 @@
 # from universe.base import br_wrw_01_Base, br_wrw_02_Base, br_wrw_03_Base, br_wrw_04_Base
-from universe.object import TradeConnection, Jumpgate, Dockring, Station, TradeStation, PirateBase, Sattelite, TOP, BOTTOM, LEFT, RIGHT
-from templates.space_objects.pirate_base_bizmark import PirateBaseBizmark
-from templates.space_objects.tekagi_megabase import TekagiMegabase
-from templates.space_objects.nomad_babylon import Babylon
-from templates.space_objects.nomad_asf_hq import AsfHQ
+from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
+from universe.content.main_objects import TradeConnection, Jumpgate, Dockring, Station, TradeStation, PirateBase, Sattelite
+from universe.content.mineable import RewardAsteroidField
+from templates.solar.asteroid import AsteroidOmega15
+from templates.dockable.pirate import PirateBaseBizmark
 
 
 class WarwickSysObject(object):
@@ -43,8 +43,8 @@ class WarwickTradingOutpost(TradeStation, WarwickSysObject):
 class WarwickIrelandBase(PirateBase, WarwickSysObject):
     POS = (-45000, 0, 20000)
     REL = LEFT
-    SPACE_OBJECT_TEMPLATE = PirateBaseBizmark
-    SPACE_OBJECT_NAME = 'br_wrw_10'
+    # SPACE_OBJECT_TEMPLATE = PirateBaseBizmark
+    # SPACE_OBJECT_NAME = 'br_wrw_10'
 
 
 class WarwickPirateBase(PirateBase, WarwickSysObject):
@@ -106,3 +106,11 @@ class WarwickConnection5(TradeConnection, WarwickSysObject):
     ATTACKED_BY = [
         WarwickIrelandBase
     ]
+
+
+class AsteroidFieldOne(RewardAsteroidField, WarwickSysObject):
+    POS = (5000, 0, 20000)
+    ASTEROID_SOLAR = AsteroidOmega15
+    # MINING_ULTRA_REWARD = 'rh_lightgun01'
+    # 
+

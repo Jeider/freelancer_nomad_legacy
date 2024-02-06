@@ -1,5 +1,7 @@
 from universe.systems import br_wrw as br_wrw_objects
-from universe.object import SystemObject, TradeConnection, JumpableObject, DockableObject, StaticObject
+from universe.content.system_object import SystemObject
+from universe.content.main_objects import TradeConnection, JumpableObject, DockableObject, StaticObject
+from universe.content.mineable import Mineable, RewardAsteroidField
 
 from text.dividers import DIVIDER
 
@@ -38,6 +40,7 @@ distance = {tlr_distance}
         # self.jumps = []
         self.dockables = []
         self.statics = []
+        self.mineable = []
         # self.pirate_assaults = []
         # self.hunter_patrols = []
         # self.zones = []
@@ -47,14 +50,24 @@ distance = {tlr_distance}
 
     def init_content(self):
         for item in self.CONTENT.__dict__.values():
+
             if not isinstance(item, type) or not issubclass(item, SystemObject):
                 continue
 
             if item is issubclass(item, StaticObject) and item.is_abstract():
                 continue
 
+            if item is issubclass(item, Mineable) and item.is_abstract():
+                continue
+
             if item in (TradeConnection, DockableObject, TradeConnection):
                 continue
+
+            if item in (RewardAsteroidField,):
+                continue
+
+                
+
 
             if issubclass(item, TradeConnection):
                 self.trade_connections.append(item(self))
@@ -68,6 +81,8 @@ distance = {tlr_distance}
             #     self.pirate_assaults.append(item(self))
             # elif issubclass(item, HuntersDefence):
             #     self.hunter_patrols.append(item(self))
+            elif issubclass(item, Mineable):
+                self.mineable.append(item(self))
 
         system_content = []
 
@@ -85,6 +100,9 @@ distance = {tlr_distance}
 
         for app_obj in self.get_appearable_objects():
             system_content.append(app_obj.get_system_content())
+
+        for mineable_obj in self.get_mineable_objects():
+            system_content.append(mineable_obj.get_system_content())
 
         self.system_content_str = DIVIDER.join(system_content)
 
@@ -108,6 +126,9 @@ distance = {tlr_distance}
 
     def get_appearable_objects(self):
         return [item for item in self.statics if item.has_appearance()]
+
+    def get_mineable_objects(self):
+        return self.mineable
 
     @classmethod
     def get_tracks_request_content(cls):

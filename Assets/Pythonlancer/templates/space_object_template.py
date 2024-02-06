@@ -14,21 +14,23 @@ class SpaceObjectTemplate(object):
         super().__init_subclass__(**kwargs)
         cls.subclasses.append(cls)
 
-    def __init__(self):
-        if not self.TEMPLATE:
+    def __init__(self, template=None, space_object_name=None):
+        self.template = template if template else self.TEMPLATE
+        if not self.template:
             raise Exception('TEMPLATE not defined')
 
-        if not self.SPACE_OBJECT_NAME:
+        self.space_object_name = space_object_name if space_object_name else self.SPACE_OBJECT_NAME
+        if not self.space_object_name:
             raise Exception('SPACE_OBJECT_NAME not defined')
 
-        self.instance = self.TEMPLATE
+        self.instance = self.template
         self.last_nickname = ''
 
     def get_instance(self, new_space_object_name=None, move_to=None):
         replaces = []
 
         if new_space_object_name:
-            replaces.append(tuple((self.SPACE_OBJECT_NAME, new_space_object_name)))
+            replaces.append(tuple((self.space_object_name, new_space_object_name)))
 
         if len(replaces):
             self.apply_replaces(replaces)

@@ -4,7 +4,7 @@ from core import LancerCore
 
 DIVIDER = '\n\n'
 
-ENABLE_STORY = True
+ENABLE_STORY = False
 
 
 def main():
