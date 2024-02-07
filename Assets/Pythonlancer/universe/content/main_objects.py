@@ -63,7 +63,6 @@ class Dockring(DockableObject):
     REL_APPEND = 5000
 
 
-
 class Station(DockableObject):
     ABSTRACT = False
 

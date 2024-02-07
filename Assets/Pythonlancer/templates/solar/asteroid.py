@@ -38,18 +38,18 @@ FUSE_MAIN = 'xast_dmg_ast'
 
 CHUNKS = 10
 
-EXPLODER_EQUIP = 'attached_xast_exploder'
+INIT_ITEMS_TEMPLATE = 'equip = attached_xast_exploder, {hp}'
 
 
 class AsteroidSolar(object):
     def __init__(self):
-        collis = []
-        fuses = []
-        hardpoints = []
+        self.collis = []
+        self.fuses = []
+        self.hardpoints = []
         for i in range(1, CHUNKS+1):
-            collis.append(COLLISION_TEMPLATE.format(fuse_name=fuse_name, index=i))
-            fuses.append(FUSE_TEMPLATE.format(fuse_main_name=FUSE_MAIN, index=i))
-            hardpoints.append(HARDPOINT_NAME_TEMPLATE.format(index=i))
+            self.collis.append(COLLISION_TEMPLATE.format(fuse_name=FUSE_MAIN, index=i))
+            self.fuses.append(FUSE_TEMPLATE.format(fuse_main_name=FUSE_MAIN, index=i))
+            self.hardpoints.append(HARDPOINT_NAME_TEMPLATE.format(index=i))
 
     def get_collisions_string(self):
         return DIVIDER.join(self.collis)
@@ -60,12 +60,16 @@ class AsteroidSolar(object):
     def get_hardpoints(self):
         return self.hardpoints
 
+    def get_init_loadout_items(self):
+        return [INIT_ITEMS_TEMPLATE.format(hp=hp) for hp in self.hardpoints]
+
+
 
 class AsteroidOmega15(AsteroidSolar):
     DEFAULT_ARCHETYPE = 'om15_mineast_super'
-    MEDIUM_REWARD_ARCHETYPE = 'om15_mineast_super_medium'
-    HIGH_REWARD_ARCHETYPE = 'om15_mineast_super_huge'
-    ULTRA_REWARD_ARCHETYPE = 'om15_mineast_super_ultra'
+    ARCHETYPE_REWARD_MEDIUM = 'om15_mineast_super_medium'
+    ARCHETYPE_REWARD_HIGH = 'om15_mineast_super_huge'
+    ARCHETYPE_REWARD_ULTRA = 'om15_mineast_super_ultra'
 
 
 # AsteroidTagaki

@@ -19,6 +19,7 @@ class UniverseManager(object):
         self.bases = []
         self.equip_dealers_list = []
         self.ship_dealers_list = []
+        self.loadouts = []
 
         self.load_systems()
         self.load_bases()
@@ -29,6 +30,7 @@ class UniverseManager(object):
                 system = system()
                 self.systems.append(system)
                 self.system_content_test.append(system.system_content_str)
+                self.loadouts += system.loadouts
 
 
     def load_bases(self):
@@ -86,4 +88,8 @@ class UniverseManager(object):
 
     def get_system_content_test(self):
         return DIVIDER.join(self.system_content_test)
+
+    def get_system_loadouts(self):
+        return DIVIDER.join([loadout.build_loadout() for loadout in self.loadouts])
+
 

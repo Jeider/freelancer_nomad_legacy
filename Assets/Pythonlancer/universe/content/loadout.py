@@ -1,6 +1,6 @@
 import random
 
-from text.divider impots SINGLE_DIVIER
+from text.dividers import SINGLE_DIVIDER
 
 
 class Loadout(object):
@@ -11,10 +11,10 @@ class Loadout(object):
     INTERNAL_CARGO_TEMPLATE = 'cargo = {item}, {count}'
     ATTACHED_CARGO_TEMPLATE = 'cargo = {item}, {count}, {hp}'
 
-    def __init__(self, nickname, init_items)
+    def __init__(self, nickname, init_items=None):
         self.nickname = nickname
         self.items = []
-        if len(init_items) > 0:
+        if init_items is not None and len(init_items) > 0:
             self.items += init_items
 
     def add_equip(self, item, hardpoint=None):
@@ -33,24 +33,28 @@ class Loadout(object):
 
     def build_loadout(self):
         final_items = [
-            TITLE,
-            self.NICKNAME_TEMPLATE.format(nickname=nickname)
+            self.TITLE,
+            self.NICKNAME_TEMPLATE.format(nickname=self.nickname)
         ] + self.items
 
-        return SINGLE_DIVIER.join(final_items)
+        return SINGLE_DIVIDER.join(final_items)
+
+    def get_loadout_nickname(self):
+        return self.nickname
 
 
 class DynamicAttachedCargoLoadout(Loadout):
     INITIAL_ITEMS = []
 
-    def __init__(self, loadout_nickname, cargo_item, hardpoints, min, max, empty_chance=0):
+    def __init__(self, loadout_nickname, cargo_item, hardpoints, min, max, empty_chance=0, init_items=None):
         try:
             self.loadout_nickname = loadout_nickname
             self.cargo_item = cargo_item
             self.hardpoints = list(hardpoints)
             self.min = int(min)
             self.max = int(max)
-            self.empty_percent = float(empty_percent)
+            self.empty_chance = float(empty_chance)
+            self.init_items = list(init_items) if init_items and len(init_items) > 0 else None
 
         except TypeError:
             raise Exception('Wrong types passed to DynamicCargoLoadout')
@@ -59,13 +63,13 @@ class DynamicAttachedCargoLoadout(Loadout):
             raise Exception('DynamicCargoLoadout min value should be larger than 1')
         if self.max <= self.min:
             raise Exception('DynamicCargoLoadout max value must be larger than min')
-        if self.empty_percent > 1 or self.empty_percent < 0:
+        if self.empty_chance > 1 or self.empty_chance < 0:
             raise Exception('DynamicCargoLoadout empty_chance should be between 0 and 1')
 
         self.empty_hardpoints = []
         self.select_empty_hardpoints()
 
-        self.loadout = Loadout(self.loadout_nickname)
+        self.loadout = Loadout(self.loadout_nickname, init_items=init_items)
 
         self.fill_loadout()
 
@@ -82,7 +86,7 @@ class DynamicAttachedCargoLoadout(Loadout):
                 continue
 
             self.loadout.add_cargo(
-                cargo_item,
+                self.cargo_item,
                 random.randint(self.min, self.max),
                 hp
             )

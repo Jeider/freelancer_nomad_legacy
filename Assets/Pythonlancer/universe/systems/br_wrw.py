@@ -1,7 +1,7 @@
 # from universe.base import br_wrw_01_Base, br_wrw_02_Base, br_wrw_03_Base, br_wrw_04_Base
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content.main_objects import TradeConnection, Jumpgate, Dockring, Station, TradeStation, PirateBase, Sattelite
-from universe.content.mineable import RewardAsteroidField
+from universe.content.mineable import RewardsGroup, RewardAsteroidField
 from templates.solar.asteroid import AsteroidOmega15
 from templates.dockable.pirate import PirateBaseBizmark
 
@@ -108,9 +108,19 @@ class WarwickConnection5(TradeConnection, WarwickSysObject):
     ]
 
 
+class Omega15NiobiumAsteroid(RewardsGroup):
+    NAME = 'om15_niobium'
+    ASTEROID_SOLAR = AsteroidOmega15
+
+
 class AsteroidFieldOne(RewardAsteroidField, WarwickSysObject):
     POS = (5000, 0, 20000)
-    ASTEROID_SOLAR = AsteroidOmega15
+    FIELD_NAME = 'om15_field1'
+    REWARDS_GROUP_CLASS = Omega15NiobiumAsteroid
+    MEDIUM_REWARD_CHANCE = 0.5
+    HIGH_REWARD_CHANCE = 0.25
+    ULTRA_REWARD = True
+
     # MINING_ULTRA_REWARD = 'rh_lightgun01'
     # 
 

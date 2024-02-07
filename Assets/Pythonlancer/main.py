@@ -56,6 +56,7 @@ def main():
         ('market_equip.ini', core.universe.get_market_equip()),
         ('market_ships.ini', core.universe.get_market_ships()),
         ('system_content_test.ini', core.universe.get_system_content_test()),
+        ('system_loadouts.ini', core.universe.get_system_loadouts()),
 
         ('ship_packages.ini', core.shiparch.get_ship_goods()),
 

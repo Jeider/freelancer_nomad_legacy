@@ -1,7 +1,7 @@
 from universe.systems import br_wrw as br_wrw_objects
 from universe.content.system_object import SystemObject
 from universe.content.main_objects import TradeConnection, JumpableObject, DockableObject, StaticObject
-from universe.content.mineable import Mineable, RewardAsteroidField
+from universe.content.mineable import Mineable, RewardAsteroidField, RewardsGroup
 
 from text.dividers import DIVIDER
 
@@ -35,6 +35,12 @@ distance = {tlr_distance}
         self.pirate_patrols_list = []
         self.patrols_db = {}
 
+        self.rewards_groups_list = []
+        self.rewards_groups_db = {}
+        self.loadouts = []
+
+
+
         self.trade_connections = []
 
         # self.jumps = []
@@ -50,6 +56,11 @@ distance = {tlr_distance}
 
     def init_content(self):
         for item in self.CONTENT.__dict__.values():
+            if isinstance(item, type) and issubclass(item, RewardsGroup) and item != RewardsGroup:
+                reward_group_instance = item()
+                self.rewards_groups_list.append(reward_group_instance)
+                self.rewards_groups_db[item.__class__] = reward_group_instance
+                continue
 
             if not isinstance(item, type) or not issubclass(item, SystemObject):
                 continue
@@ -66,9 +77,6 @@ distance = {tlr_distance}
             if item in (RewardAsteroidField,):
                 continue
 
-                
-
-
             if issubclass(item, TradeConnection):
                 self.trade_connections.append(item(self))
             # elif issubclass(item, JumpableObject):
@@ -83,6 +91,8 @@ distance = {tlr_distance}
             #     self.hunter_patrols.append(item(self))
             elif issubclass(item, Mineable):
                 self.mineable.append(item(self))
+
+        self.process_reward_groups()
 
         system_content = []
 
@@ -105,6 +115,13 @@ distance = {tlr_distance}
             system_content.append(mineable_obj.get_system_content())
 
         self.system_content_str = DIVIDER.join(system_content)
+
+    def process_reward_groups(self):
+        for rewards_group in self.rewards_groups_list:
+            self.loadouts += rewards_group.get_loadouts()
+
+    def get_rewards_group_by_class(self, reward_group_class):
+        return self.rewards_groups_db[reward_group_class.__class__]
 
     def get_next_police_patrol_id(self):
         self.last_police_patrol_id += 1
