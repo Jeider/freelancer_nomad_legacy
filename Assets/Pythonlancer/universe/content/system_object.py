@@ -33,6 +33,8 @@ def get_reversed_direction(direction):
 
 
 class SystemObject(object):
+    ABSTRACT = True
+
     POS = None
     REL = None
 

@@ -1,6 +1,7 @@
 import random
 
 from text.dividers import DIVIDER
+from templates.solar.base_solar import MineableSolar
 
 
 FUSE_TEMPLATE = '''[fuse]
@@ -42,6 +43,13 @@ INIT_ITEMS_TEMPLATE = 'equip = attached_xast_exploder, {hp}'
 
 
 class AsteroidSolar(object):
+    ALIAS = 'asteroid'
+    
+    DEFAULT_ARCHETYPE = None
+    ARCHETYPE_REWARD_MEDIUM = None
+    ARCHETYPE_REWARD_HIGH = None
+    ARCHETYPE_REWARD_ULTRA = None
+
     def __init__(self):
         self.collis = []
         self.fuses = []
@@ -50,6 +58,7 @@ class AsteroidSolar(object):
             self.collis.append(COLLISION_TEMPLATE.format(fuse_name=FUSE_MAIN, index=i))
             self.fuses.append(FUSE_TEMPLATE.format(fuse_main_name=FUSE_MAIN, index=i))
             self.hardpoints.append(HARDPOINT_NAME_TEMPLATE.format(index=i))
+        self.init_loadout_items = [INIT_ITEMS_TEMPLATE.format(hp=hp) for hp in self.hardpoints]
 
     def get_collisions_string(self):
         return DIVIDER.join(self.collis)
@@ -61,15 +70,29 @@ class AsteroidSolar(object):
         return self.hardpoints
 
     def get_init_loadout_items(self):
-        return [INIT_ITEMS_TEMPLATE.format(hp=hp) for hp in self.hardpoints]
+        return self.init_loadout_items
 
 
 
-class AsteroidOmega15(AsteroidSolar):
+class AsteroidOmega15(AsteroidSolar, MineableSolar):
     DEFAULT_ARCHETYPE = 'om15_mineast_super'
     ARCHETYPE_REWARD_MEDIUM = 'om15_mineast_super_medium'
-    ARCHETYPE_REWARD_HIGH = 'om15_mineast_super_huge'
+    ARCHETYPE_REWARD_HIGH = 'om15_mineast_super_high'
     ARCHETYPE_REWARD_ULTRA = 'om15_mineast_super_ultra'
+
+    def get_default_archetype(self):
+        return self.DEFAULT_ARCHETYPE
+
+    def get_medium_reward_archetype(self):
+        return self.ARCHETYPE_REWARD_MEDIUM
+
+    def get_high_reward_archetype(self):
+        return self.ARCHETYPE_REWARD_HIGH
+
+    def get_ultra_reward_archetype(self):
+        return self.ARCHETYPE_REWARD_ULTRA
+
+
 
 
 # AsteroidTagaki

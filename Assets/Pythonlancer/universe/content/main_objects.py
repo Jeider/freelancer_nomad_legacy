@@ -42,14 +42,15 @@ class JumpableObject(StaticObject):
 
 
 class Jumpgate(JumpableObject):
-    ABSTRACT = False
+    # ABSTRACT = False
 
     REL_DRIFT = 500
     REL_APPEND = 2000
 
 
 class Sattelite(StaticObject):
-    ABSTRACT = False
+    # ABSTRACT = True
+    pass
 
 
 class DockableObject(AppearableObject):
@@ -64,15 +65,18 @@ class Dockring(DockableObject):
 
 
 class Station(DockableObject):
-    ABSTRACT = False
+    # ABSTRACT = True
+    pass
 
 
 class TradeStation(DockableObject):
-    ABSTRACT = False
+    # ABSTRACT = True
+    pass
 
 
 class PirateBase(DockableObject):
-    ABSTRACT = False
+    # ABSTRACT = True
+    pass
 
 
 class PatrolObjective(SystemObject):

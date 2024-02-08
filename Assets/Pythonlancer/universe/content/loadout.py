@@ -42,10 +42,11 @@ class Loadout(object):
     def get_loadout_nickname(self):
         return self.nickname
 
+    def get_loadout(self):
+        return self.loadout
+
 
 class DynamicAttachedCargoLoadout(Loadout):
-    INITIAL_ITEMS = []
-
     def __init__(self, loadout_nickname, cargo_item, hardpoints, min, max, empty_chance=0, init_items=None):
         try:
             self.loadout_nickname = loadout_nickname
@@ -57,14 +58,14 @@ class DynamicAttachedCargoLoadout(Loadout):
             self.init_items = list(init_items) if init_items and len(init_items) > 0 else None
 
         except TypeError:
-            raise Exception('Wrong types passed to DynamicCargoLoadout')
+            raise Exception('Wrong types passed to DynamicAttachedCargoLoadout')
 
         if self.min < 1:
-            raise Exception('DynamicCargoLoadout min value should be larger than 1')
+            raise Exception('DynamicAttachedCargoLoadout min value should be larger than 1')
         if self.max <= self.min:
-            raise Exception('DynamicCargoLoadout max value must be larger than min')
+            raise Exception('DynamicAttachedCargoLoadout max value must be larger than min')
         if self.empty_chance > 1 or self.empty_chance < 0:
-            raise Exception('DynamicCargoLoadout empty_chance should be between 0 and 1')
+            raise Exception('DynamicAttachedCargoLoadout empty_chance should be between 0 and 1')
 
         self.empty_hardpoints = []
         self.select_empty_hardpoints()
@@ -91,5 +92,51 @@ class DynamicAttachedCargoLoadout(Loadout):
                 hp
             )
 
-    def get_loadout(self):
-        return self.loadout
+
+class DynamicInternalCargoLoadout(Loadout):
+    def __init__(self, loadout_nickname, cargo_item, min, max, init_items=None):
+        try:
+            self.loadout_nickname = loadout_nickname
+            self.cargo_item = cargo_item
+            self.min = int(min)
+            self.max = int(max)
+            self.init_items = list(init_items) if init_items and len(init_items) > 0 else None
+
+        except TypeError:
+            raise Exception('Wrong types passed to DynamicInternalCargoLoadout')
+
+        if self.min < 1:
+            raise Exception('DynamicInternalCargoLoadout min value should be larger than 1')
+        if self.max <= self.min:
+            raise Exception('DynamicInternalCargoLoadout max value must be larger than min')
+
+        self.loadout = Loadout(self.loadout_nickname, init_items=init_items)
+
+        self.fill_loadout()
+
+    def fill_loadout(self):
+        self.loadout.add_cargo(
+            self.cargo_item,
+            random.randint(self.min, self.max),
+        )
+
+
+class SingleInternalCargoLoadout(Loadout):
+    def __init__(self, loadout_nickname, cargo_item, init_items=None):
+        try:
+            self.loadout_nickname = loadout_nickname
+            self.cargo_item = cargo_item
+            self.init_items = list(init_items) if init_items and len(init_items) > 0 else None
+
+        except TypeError:
+            raise Exception('Wrong types passed to DynamicInternalCargoLoadout')
+
+        self.loadout = Loadout(self.loadout_nickname, init_items=init_items)
+
+        self.fill_loadout()
+
+    def fill_loadout(self):
+        self.loadout.add_cargo(
+            self.cargo_item,
+            1,
+        )

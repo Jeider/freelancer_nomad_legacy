@@ -1,7 +1,7 @@
 from universe.systems import br_wrw as br_wrw_objects
 from universe.content.system_object import SystemObject
 from universe.content.main_objects import TradeConnection, JumpableObject, DockableObject, StaticObject
-from universe.content.mineable import Mineable, RewardAsteroidField, RewardsGroup
+from universe.content.mineable import Mineable, RewardField, Field, RewardsGroup
 
 from text.dividers import DIVIDER
 
@@ -39,8 +39,6 @@ distance = {tlr_distance}
         self.rewards_groups_db = {}
         self.loadouts = []
 
-
-
         self.trade_connections = []
 
         # self.jumps = []
@@ -56,26 +54,27 @@ distance = {tlr_distance}
 
     def init_content(self):
         for item in self.CONTENT.__dict__.values():
-            if isinstance(item, type) and issubclass(item, RewardsGroup) and item != RewardsGroup:
+            if not isinstance(item, type):
+                continue
+
+            if not issubclass(item, RewardsGroup) and not issubclass(item, SystemObject):
+                continue
+
+            if (item.ABSTRACT and item != br_wrw_objects.WarwickSysObject) or item == br_wrw_objects.WarwickSysObject:
+                continue
+
+            if issubclass(item, RewardsGroup):
                 reward_group_instance = item()
                 self.rewards_groups_list.append(reward_group_instance)
-                self.rewards_groups_db[item.__class__] = reward_group_instance
+                self.rewards_groups_db[item.__name__] = reward_group_instance
                 continue
 
             if not isinstance(item, type) or not issubclass(item, SystemObject):
                 continue
 
-            if item is issubclass(item, StaticObject) and item.is_abstract():
-                continue
-
-            if item is issubclass(item, Mineable) and item.is_abstract():
-                continue
-
             if item in (TradeConnection, DockableObject, TradeConnection):
                 continue
 
-            if item in (RewardAsteroidField,):
-                continue
 
             if issubclass(item, TradeConnection):
                 self.trade_connections.append(item(self))
@@ -121,7 +120,7 @@ distance = {tlr_distance}
             self.loadouts += rewards_group.get_loadouts()
 
     def get_rewards_group_by_class(self, reward_group_class):
-        return self.rewards_groups_db[reward_group_class.__class__]
+        return self.rewards_groups_db[reward_group_class.__name__]
 
     def get_next_police_patrol_id(self):
         self.last_police_patrol_id += 1

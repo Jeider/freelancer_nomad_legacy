@@ -2,7 +2,7 @@ import random
 
 from templates.space_object_template import SpaceObjectTemplate
 from universe.content.system_object import SystemObject
-from universe.content.loadout import DynamicAttachedCargoLoadout
+from universe.content.loadout import DynamicAttachedCargoLoadout, DynamicInternalCargoLoadout, SingleInternalCargoLoadout
 
 from text.dividers import DIVIDER
 
@@ -11,6 +11,7 @@ MINING_REWARD_LOW = 'low'
 MINING_REWARD_MEDIUM = 'medium'
 MINING_REWARD_HIGH = 'high'
 MINING_REWARD_ULTRA = 'ultra'
+MINING_REWARD_ULTRA_ADDITIONAL = 'ultra_additional'
 
 
 class Mineable(SystemObject):
@@ -41,13 +42,12 @@ class FieldBox(object):
     def get_reward_type(self):
         return self.reward_type
 
-    def get_position(self):
-
+    def get_position(self, x_adjust=0, y_adjust=0, z_adjust=0):
         center_x = self.left_x + self.center_append + random.randint(-abs(self.drift_x), self.drift_x)
         center_y = 0 + self.center_append + random.randint(-abs(self.drift_y), self.drift_y)
         center_z = self.top_z + self.center_append + random.randint(-abs(self.drift_z), self.drift_z)
 
-        return (center_x, center_y, center_z)
+        return (center_x + x_adjust, center_y + y_adjust, center_z + z_adjust)
 
     def get_rotate(self):
         return (
@@ -58,6 +58,8 @@ class FieldBox(object):
 
 
 class Field(object):
+    ABSTRACT = True
+
     BOX_SIZE = 300
     DENSITY_MULTIPLER = 1
     DRIFT_X = 0.1
@@ -120,61 +122,91 @@ class DefaultField(Field):
     EMPTY_CHANCE = 0
 
 
-
 class RewardProps(object):
+    ABSTRACT = True
+
     REWARD_TYPE = None
     MIN = 1
     MAX = 2
     LOADOUTS_COUNT = 5
 
 
-class RewardPropsLow(object):
+class AsteroidRewardPropsLow(object):
     REWARD_TYPE = MINING_REWARD_LOW
     MIN = 1
     MAX = 3
     LOADOUTS_COUNT = 5
-    REWARD_ITEM = 'comm_roid_niobium'
 
 
-class RewardPropsMedium(object):
+class AsteroidRewardPropsMedium(object):
     REWARD_TYPE = MINING_REWARD_MEDIUM
     MIN = 5
     MAX = 10
     LOADOUTS_COUNT = 5
-    REWARD_ITEM = 'comm_roid_niobium'
 
 
-class RewardPropsHigh(object):
+class AsteroidRewardPropsHigh(object):
     REWARD_TYPE = MINING_REWARD_HIGH
     MIN = 10
     MAX = 20
     LOADOUTS_COUNT = 5
-    REWARD_ITEM = 'comm_roid_niobium'
 
 
-class RewardPropsUltra(object):
+class AsteroidRewardPropsUltra(object):
     REWARD_TYPE = MINING_REWARD_ULTRA
     MIN = 10
     MAX = 25
     LOADOUTS_COUNT = 1
-    REWARD_ITEM = 'comm_roid_niobium'
-    ULTRA_REWARD_ITEM = 'rh_lightgun01'
+
+
+class DebrisBoxRewardPropsLow(object):
+    REWARD_TYPE = MINING_REWARD_LOW
+    MIN = 1
+    MAX = 3
+    LOADOUTS_COUNT = 10
+
+
+class DebrisBoxRewardPropsMedium(object):
+    REWARD_TYPE = MINING_REWARD_MEDIUM
+    MIN = 5
+    MAX = 10
+    LOADOUTS_COUNT = 10
+
+
+class DebrisBoxRewardPropsHigh(object):
+    REWARD_TYPE = MINING_REWARD_HIGH
+    MIN = 10
+    MAX = 20
+    LOADOUTS_COUNT = 10
+
+
+class DebrisBoxRewardPropsUltra(object):
+    REWARD_TYPE = MINING_REWARD_ULTRA
+    LOADOUTS_COUNT = 1
+
+
+class DebrisBoxRewardPropsUltraAdditional(object):
+    REWARD_TYPE = MINING_REWARD_ULTRA_ADDITIONAL
+    MIN = 10
+    MAX = 25
+    LOADOUTS_COUNT = 10
 
 
 class RewardsGroup(object):
-    REWARD_PROPS = [
-        RewardPropsLow,
-        RewardPropsMedium,
-        RewardPropsHigh,
-    ]
-    ULTRA_REWARD_PROP = RewardPropsUltra
-    ASTEROID_SOLAR = None
+    ABSTRACT = True
+
+    REWARD_PROPS = []
+    ULTRA_REWARD_PROP = None
+    SOLAR = None
+
+    REWARD_ITEM = None
+    ULTRA_REWARD_ITEM = None
 
     NAME = 'any'
     LOADOUT_NICKNAME_TEMPLATE = '{name}_{reward_type}_loadout_{index}'
 
     def __init__(self):
-        self.asteroid_solar = self.ASTEROID_SOLAR()
+        self.solar = self.SOLAR()
 
         self.loadouts_list = []
         self.loadouts_db = {}
@@ -184,69 +216,10 @@ class RewardsGroup(object):
         self.fill_loadouts()
 
     def fill_loadouts(self):
-        hardpoints = self.asteroid_solar.get_hardpoints()
-        init_items = self.asteroid_solar.get_init_loadout_items()
-
-        for reward_prop in self.REWARD_PROPS:
-            self.loadouts_db[reward_prop.REWARD_TYPE] = []
-            for i in range(1, reward_prop.LOADOUTS_COUNT + 1):
-                nickname = self.LOADOUT_NICKNAME_TEMPLATE.format(
-                    name=self.NAME,
-                    reward_type=reward_prop.REWARD_TYPE,
-                    index=i
-                )
-                loadout = DynamicAttachedCargoLoadout(
-                    loadout_nickname=nickname,
-                    cargo_item=reward_prop.REWARD_ITEM,
-                    hardpoints=hardpoints,
-                    min=reward_prop.MIN,
-                    max=reward_prop.MAX,
-                    init_items=init_items,
-                ).get_loadout()
-                self.loadouts_list.append(loadout)
-                self.loadouts_db[reward_prop.REWARD_TYPE].append(loadout)
-
-        if self.ULTRA_REWARD_PROP:
-            if self.ULTRA_REWARD_PROP.ULTRA_REWARD_ITEM is None:
-                raise Exception('Ultra reward item is mandatory for ultra reward prop')
-
-            ultra_hardpoint = random.choice(hardpoints)
-            no_ultra_hardpoints = [item for item in hardpoints if item != ultra_hardpoint]
-
-            nickname = self.LOADOUT_NICKNAME_TEMPLATE.format(
-                name=self.NAME,
-                reward_type='ultra',
-                index=1
-            )
-            self.loadout_ultra_reward = DynamicAttachedCargoLoadout(
-                loadout_nickname=nickname,
-                cargo_item=self.ULTRA_REWARD_PROP.REWARD_ITEM,
-                hardpoints=no_ultra_hardpoints,
-                min=self.ULTRA_REWARD_PROP.MIN,
-                max=self.ULTRA_REWARD_PROP.MAX,
-                init_items=init_items,
-            ).get_loadout()
-            self.loadout_ultra_reward.add_cargo(
-                self.ULTRA_REWARD_PROP.ULTRA_REWARD_ITEM,
-                1,
-                ultra_hardpoint
-            )
-            self.loadouts_list.append(self.loadout_ultra_reward)
+        raise NotImplementedError
 
     def get_loadouts(self):
         return self.loadouts_list
-
-    def get_archetype_by_reward_type(self, reward_type):
-        if reward_type == MINING_REWARD_LOW: 
-            return self.asteroid_solar.DEFAULT_ARCHETYPE
-        if reward_type == MINING_REWARD_MEDIUM:
-            return self.asteroid_solar.ARCHETYPE_REWARD_MEDIUM
-        if reward_type == MINING_REWARD_HIGH:
-            return self.asteroid_solar.ARCHETYPE_REWARD_HIGH
-        if reward_type == MINING_REWARD_ULTRA:
-            return self.asteroid_solar.ARCHETYPE_REWARD_ULTRA
-
-        raise Exception('unknown reward_type %s' % reward_type)
 
     def get_loadout_by_reward_type(self, reward_type):
         try:
@@ -260,10 +233,132 @@ class RewardsGroup(object):
     def get_loadout_name_by_reward_type(self, reward_type):
         return self.get_loadout_by_reward_type(reward_type).get_loadout_nickname()
 
+    def get_multiple_loadouts_by_reward_type(self, reward_type, count):
+        try:
+            if reward_type == MINING_REWARD_ULTRA:
+                additional_items_count = count - 1
+                ultra_items = random.choices(self.loadouts_db[MINING_REWARD_ULTRA_ADDITIONAL], k=count)
+                ultra_items.append(self.loadout_ultra_reward)
+                random.shuffle(ultra_items)
+                return ultra_items
+            else:
+                return random.choices(self.loadouts_db[reward_type], k=count)
+        except IndexError as e:
+            raise Exception('reward_type %s isnt defined for this reward group' % reward_type)
 
-class RewardAsteroidField(Mineable):
-    ABSTRACT = False
-    FIELD_CLASS = DefaultField
+    def get_loadout_names_by_reward_type(self, reward_type, count):
+        return [loadout.get_loadout_nickname() for loadout in self.get_multiple_loadouts_by_reward_type(reward_type, count)]
+
+
+class AsteroidRewardsGroup(RewardsGroup):
+    def fill_loadouts(self):
+        hardpoints = self.solar.get_hardpoints()
+        init_items = self.solar.get_init_loadout_items()
+
+        for reward_prop in self.REWARD_PROPS:
+            self.loadouts_db[reward_prop.REWARD_TYPE] = []
+            for i in range(1, reward_prop.LOADOUTS_COUNT + 1):
+                nickname = self.LOADOUT_NICKNAME_TEMPLATE.format(
+                    name=self.NAME,
+                    reward_type=reward_prop.REWARD_TYPE,
+                    index=i
+                )
+                loadout = DynamicAttachedCargoLoadout(
+                    loadout_nickname=nickname,
+                    cargo_item=self.REWARD_ITEM,
+                    hardpoints=hardpoints,
+                    min=reward_prop.MIN,
+                    max=reward_prop.MAX,
+                    init_items=init_items,
+                ).get_loadout()
+                self.loadouts_list.append(loadout)
+                self.loadouts_db[reward_prop.REWARD_TYPE].append(loadout)
+
+        if self.ULTRA_REWARD_PROP:
+            if self.ULTRA_REWARD_ITEM is None:
+                raise Exception('Ultra reward item is mandatory for ultra reward prop')
+
+            ultra_hardpoint = random.choice(hardpoints)
+            no_ultra_hardpoints = [item for item in hardpoints if item != ultra_hardpoint]
+
+            nickname = self.LOADOUT_NICKNAME_TEMPLATE.format(
+                name=self.NAME,
+                reward_type=MINING_REWARD_ULTRA,
+                index=1
+            )
+            self.loadout_ultra_reward = DynamicAttachedCargoLoadout(
+                loadout_nickname=nickname,
+                cargo_item=self.ULTRA_REWARD_ITEM,
+                hardpoints=no_ultra_hardpoints,
+                min=self.ULTRA_REWARD_PROP.MIN,
+                max=self.ULTRA_REWARD_PROP.MAX,
+                init_items=init_items,
+            ).get_loadout()
+            self.loadout_ultra_reward.add_cargo(
+                self.ULTRA_REWARD_ITEM,
+                1,
+                ultra_hardpoint
+            )
+            self.loadouts_list.append(self.loadout_ultra_reward)
+
+
+class DebrisBoxRewardsGroup(RewardsGroup):
+
+    def fill_loadouts(self):
+        for reward_prop in self.REWARD_PROPS:
+            self.loadouts_db[reward_prop.REWARD_TYPE] = []
+            for i in range(1, reward_prop.LOADOUTS_COUNT + 1):
+                nickname = self.LOADOUT_NICKNAME_TEMPLATE.format(
+                    name=self.NAME,
+                    reward_type=reward_prop.REWARD_TYPE,
+                    index=i
+                )
+                loadout = DynamicInternalCargoLoadout(
+                    loadout_nickname=nickname,
+                    cargo_item=self.REWARD_ITEM,
+                    min=reward_prop.MIN,
+                    max=reward_prop.MAX,
+                ).get_loadout()
+                self.loadouts_list.append(loadout)
+                self.loadouts_db[reward_prop.REWARD_TYPE].append(loadout)
+
+        if self.ULTRA_REWARD_PROP:
+            if self.ULTRA_REWARD_ITEM is None:
+                raise Exception('Ultra reward item is mandatory for ultra reward prop')
+
+            nickname = self.LOADOUT_NICKNAME_TEMPLATE.format(
+                name=self.NAME,
+                reward_type=MINING_REWARD_ULTRA,
+                index=1
+            )
+            self.loadout_ultra_reward = SingleInternalCargoLoadout(
+                loadout_nickname=nickname,
+                cargo_item=self.ULTRA_REWARD_ITEM,
+            ).get_loadout()
+            self.loadouts_list.append(self.loadout_ultra_reward)
+
+
+class DefaultAsteroidRewardsGroup(AsteroidRewardsGroup):
+    REWARD_PROPS = [
+        AsteroidRewardPropsLow,
+        AsteroidRewardPropsMedium,
+        AsteroidRewardPropsHigh,
+    ]
+    ULTRA_REWARD_PROP = AsteroidRewardPropsUltra
+
+
+class DefaultDebrisBoxRewardsGroup(DebrisBoxRewardsGroup):
+    REWARD_PROPS = [
+        DebrisBoxRewardPropsLow,
+        DebrisBoxRewardPropsMedium,
+        DebrisBoxRewardPropsHigh,
+        DebrisBoxRewardPropsUltraAdditional,
+    ]
+    ULTRA_REWARD_PROP = DebrisBoxRewardPropsUltra
+
+
+class RewardField(Mineable):
+    FIELD_CLASS = None
     REWARDS_GROUP_CLASS = None
     FIELD_NAME = None
 
@@ -271,16 +366,9 @@ class RewardAsteroidField(Mineable):
     HIGH_REWARD_CHANCE = 0
     ULTRA_REWARD = False
 
-    SYSTEM_OBJECT_TEMPLATE = '''[Object]
-nickname = {nickname}
-pos = {pos}
-rotate = {rotate}
-archetype = {archetype}
-loadout = {loadout}'''
+    DUMMY_NAME = 'reward_item_dummy'
 
-    DUMMY_NAME = 'xast_dummy'
-
-    NICKNAME_TEMPLATE = '{dummy_name}_asteroid_{index}'
+    NICKNAME_TEMPLATE = '{dummy_name}_{solar_alias}_{index}'
 
     def __init__(self, system):
         self.system = system
@@ -289,7 +377,7 @@ loadout = {loadout}'''
         self.mark_rewards()
 
         self.rewards_group = self.system.get_rewards_group_by_class(self.REWARDS_GROUP_CLASS)
-        self.dummy_system_object_string = self.generate_asteroids()
+        self.dummy_system_object_string = self.generate_box_content()
 
     def mark_rewards(self):
         available_boxes = self.field.get_boxes_without_reward()
@@ -325,8 +413,7 @@ loadout = {loadout}'''
             elif index in medium_indexes:
                 box.set_reward_type(MINING_REWARD_MEDIUM)
 
-
-    def generate_asteroids(self):
+    def generate_box_content(self):
         items = []
         index = 1
 
@@ -337,22 +424,18 @@ loadout = {loadout}'''
             box_reward_type = box.get_reward_type()
             reward_type = box_reward_type if box_reward_type else MINING_REWARD_LOW
 
-
             items.append(
-                self.SYSTEM_OBJECT_TEMPLATE.format(
-                    nickname=self.create_nickname(index),
-                    pos='{}, {}, {}'.format(*box.get_position()),
-                    rotate='{}, {}, {}'.format(*box.get_rotate()),
-                    archetype=self.rewards_group.get_archetype_by_reward_type(reward_type),
-                    loadout=self.rewards_group.get_loadout_name_by_reward_type(reward_type)
-                )
+                self.generate_box_content_item(box, reward_type, index)
             )
             index += 1
 
         return DIVIDER.join(items)
 
+    def generate_box_content_item(self):
+        raise NotImplementedError
+
     def create_nickname(self, index):
-        return self.NICKNAME_TEMPLATE.format(dummy_name=self.DUMMY_NAME, index=index)
+        return self.NICKNAME_TEMPLATE.format(dummy_name=self.DUMMY_NAME, solar_alias=self.rewards_group.solar.ALIAS, index=index)
 
     def get_system_content(self):
         real_object = SpaceObjectTemplate(
@@ -363,6 +446,154 @@ loadout = {loadout}'''
         return real_object.get_instance(new_space_object_name=self.FIELD_NAME, move_to=self.POS)
 
 
-# class MediumRewardField(RewardAsteroidField):
-#     MEDIUM_REWARD_CHANCE = 0.4
-#     HUGE_REWARD_CHANCE = 0
+class AsteroidRewardField(RewardField):
+
+    SYSTEM_OBJECT_TEMPLATE = '''[Object]
+nickname = {nickname}
+pos = {pos}
+rotate = {rotate}
+archetype = {archetype}
+loadout = {loadout}'''
+
+    def get_archetype_by_reward_type(self, reward_type):
+        if reward_type == MINING_REWARD_LOW: 
+            return self.rewards_group.solar.get_default_archetype()
+        if reward_type == MINING_REWARD_MEDIUM:
+            return self.rewards_group.solar.get_medium_reward_archetype()
+        if reward_type == MINING_REWARD_HIGH:
+            return self.rewards_group.solar.get_high_reward_archetype()
+        if reward_type == MINING_REWARD_ULTRA:
+            return self.rewards_group.solar.get_ultra_reward_archetype()
+
+        raise Exception('unknown reward_type %s' % reward_type)
+
+    def generate_box_content_item(self, box, reward_type, index):
+        return self.SYSTEM_OBJECT_TEMPLATE.format(
+            nickname=self.create_nickname(index),
+            pos='{}, {}, {}'.format(*box.get_position()),
+            rotate='{}, {}, {}'.format(*box.get_rotate()),
+            archetype=self.get_archetype_by_reward_type(reward_type),
+            loadout=self.rewards_group.get_loadout_name_by_reward_type(reward_type)
+        )
+
+
+class DebrisBoxRewardField(RewardField):
+
+    SYSTEM_OBJECT_TEMPLATE = '''[Object]
+nickname = {nickname}_box01
+pos = {pos_1}
+rotate = 0, 0, 0
+archetype = {archetype}
+loadout = {loadout_1}
+
+[Object]
+nickname = {nickname}_box02
+pos = {pos_2}
+rotate = 0, 90, 0
+archetype = {archetype}
+loadout = {loadout_2}
+
+[Object]
+nickname = {nickname}_box03
+pos = {pos_3}
+rotate = 0, 180, 0
+archetype = {archetype}
+loadout = {loadout_3}
+
+[Object]
+nickname = {nickname}_box04
+pos = {pos_4}
+rotate = 0, -90, 0
+archetype = {archetype}
+loadout = {loadout_4}
+
+[Object]
+nickname = {nickname}_box05
+pos = {pos_5}
+rotate = 180, -90, 0
+archetype = {archetype}
+loadout = {loadout_5}
+
+[Object]
+nickname = {nickname}_box06
+pos = {pos_6}
+rotate = 180, 0, 0
+archetype = {archetype}
+loadout = {loadout_6}
+
+[Object]
+nickname = {nickname}_box07
+pos = {pos_7}
+rotate = 180, 90, 0
+archetype = {archetype}
+loadout = {loadout_7}
+
+[Object]
+nickname = {nickname}_box08
+pos = {pos_8}
+rotate = 180, 180, 0
+archetype = {archetype}
+loadout = {loadout_8}'''
+
+    # POSITIONS = [
+    #     (0, 0, 0),
+    #     (0, 0, -5),
+    #     (-5, 0, -5),
+    #     (-5, 0, 0),
+    #     (0, -0.5, 0),
+    #     (0, -0.5, -5),
+    #     (-5, -0.5, -5),
+    #     (-5, -0.5, 0),
+    # ]
+
+    POSITIONS = [
+        (0, 0, 0),
+        (0, 0, -4.8),
+        (-4.8, 0, -4.8),
+        (-4.8, 0, 0),
+        (0, -0.1, 0),
+        (0, -0.1, -4.8),
+        (-4.8, -0.1, -4.8),
+        (-4.8, -0.1, 0),
+    ]
+
+
+    ITEMS_COUNT = 8
+
+    POS_KEY_TEMPLATE = 'pos_{i}'
+    LOADOUT_KEY_TEMPLATE = 'loadout_{i}'
+
+    def get_archetype_by_reward_type(self, reward_type):
+        if reward_type == MINING_REWARD_LOW: 
+            return self.rewards_group.solar.get_default_archetype()
+        if reward_type == MINING_REWARD_MEDIUM:
+            return self.rewards_group.solar.get_medium_reward_archetype()
+        if reward_type == MINING_REWARD_HIGH:
+            return self.rewards_group.solar.get_high_reward_archetype()
+        if reward_type == MINING_REWARD_ULTRA:
+            return self.rewards_group.solar.get_ultra_reward_archetype()
+
+        raise Exception('unknown reward_type %s' % reward_type)
+
+    def generate_box_content_item(self, box, reward_type, index):
+        archetype = self.get_archetype_by_reward_type(reward_type)
+        loadouts = self.rewards_group.get_loadout_names_by_reward_type(reward_type, self.ITEMS_COUNT)
+
+        template_params = {
+            'nickname': self.create_nickname(index),
+            'archetype': archetype,
+        }
+
+        box_pos = box.get_position()
+
+        for i in range(1, self.ITEMS_COUNT + 1):
+            item_key = i-1
+            i_pos_x, i_pos_y, i_pos_z = self.POSITIONS[item_key]
+            pos_x = box_pos[0] + i_pos_x
+            pos_y = box_pos[1] + i_pos_y
+            pos_z = box_pos[2] + i_pos_z
+            template_params[self.POS_KEY_TEMPLATE.format(i=i)] = '{}, {}, {}'.format(pos_x, pos_y, pos_z)
+            template_params[self.LOADOUT_KEY_TEMPLATE.format(i=i)] = loadouts[item_key]
+
+
+        return self.SYSTEM_OBJECT_TEMPLATE.format(**template_params)

@@ -1,58 +1,60 @@
 # from universe.base import br_wrw_01_Base, br_wrw_02_Base, br_wrw_03_Base, br_wrw_04_Base
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content.main_objects import TradeConnection, Jumpgate, Dockring, Station, TradeStation, PirateBase, Sattelite
-from universe.content.mineable import RewardsGroup, RewardAsteroidField
+from universe.content.mineable import DefaultAsteroidRewardsGroup, DefaultDebrisBoxRewardsGroup, DefaultField, AsteroidRewardField, DebrisBoxRewardField
 from templates.solar.asteroid import AsteroidOmega15
+from templates.solar.debris_box import DebrisBox
 from templates.dockable.pirate import PirateBaseBizmark
 
 
 class WarwickSysObject(object):
     FACTION = 'br_grp'
+    ABSTRACT = False
 
 
-class WarwickJumpgateLeft(Jumpgate, WarwickSysObject):
+class WarwickJumpgateLeft(WarwickSysObject, Jumpgate):
     POS = (-60000, 0, -15000)
     REL = LEFT
 
 
-class WarwickJumpgateRight(Jumpgate, WarwickSysObject):
+class WarwickJumpgateRight(WarwickSysObject, Jumpgate):
     POS = (55000, 0, -35000)
     REL = LEFT
 
 
-class WarwickJumpgateBottom(Jumpgate, WarwickSysObject):
+class WarwickJumpgateBottom(WarwickSysObject, Jumpgate):
     POS = (-27000, 0, 45000)
     REL = LEFT
 
 
-class WarwickDock(Dockring, WarwickSysObject):
+class WarwickDock(WarwickSysObject, Dockring):
     POS = (-25000, 0, -25000)
     REL = TOP
 
 
-class WarwickProdStation(Station, WarwickSysObject):
+class WarwickProdStation(WarwickSysObject, Station):
     POS = (25000, 0, -25000)
     REL = TOP
 
 
-class WarwickTradingOutpost(TradeStation, WarwickSysObject):
+class WarwickTradingOutpost(WarwickSysObject, TradeStation):
     POS = (-20000, 0, 10000)
     REL = LEFT
 
 
-class WarwickIrelandBase(PirateBase, WarwickSysObject):
+class WarwickIrelandBase(WarwickSysObject, PirateBase):
     POS = (-45000, 0, 20000)
     REL = LEFT
     # SPACE_OBJECT_TEMPLATE = PirateBaseBizmark
     # SPACE_OBJECT_NAME = 'br_wrw_10'
 
 
-class WarwickPirateBase(PirateBase, WarwickSysObject):
+class WarwickPirateBase(WarwickSysObject, PirateBase):
     POS = (50000, 0, -5000)
     REL = RIGHT
 
 
-class WarwickConnection1(TradeConnection, WarwickSysObject):
+class WarwickConnection1(WarwickSysObject, TradeConnection):
     OBJ_FROM = WarwickJumpgateLeft
     OBJ_TO = WarwickDock
     SIDE_FROM = LEFT
@@ -64,7 +66,7 @@ class WarwickConnection1(TradeConnection, WarwickSysObject):
     ]
 
 
-class WarwickConnection2(TradeConnection, WarwickSysObject):
+class WarwickConnection2(WarwickSysObject, TradeConnection):
     OBJ_FROM = WarwickDock
     OBJ_TO = WarwickTradingOutpost
     SIDE_FROM = TOP
@@ -76,7 +78,7 @@ class WarwickConnection2(TradeConnection, WarwickSysObject):
     ]
 
 
-class WarwickConnection3(TradeConnection, WarwickSysObject):
+class WarwickConnection3(WarwickSysObject, TradeConnection):
     OBJ_FROM = WarwickDock
     OBJ_TO = WarwickProdStation
     SIDE_FROM = LEFT
@@ -84,7 +86,7 @@ class WarwickConnection3(TradeConnection, WarwickSysObject):
     TRADELANE_LETTER = 'C'
 
 
-class WarwickConnection4(TradeConnection, WarwickSysObject):
+class WarwickConnection4(WarwickSysObject, TradeConnection):
     OBJ_FROM = WarwickProdStation
     OBJ_TO = WarwickJumpgateRight
     SIDE_FROM = LEFT
@@ -96,7 +98,7 @@ class WarwickConnection4(TradeConnection, WarwickSysObject):
     ]
 
 
-class WarwickConnection5(TradeConnection, WarwickSysObject):
+class WarwickConnection5(WarwickSysObject, TradeConnection):
     OBJ_FROM = WarwickTradingOutpost
     OBJ_TO = WarwickJumpgateBottom
     SIDE_FROM = TOP
@@ -108,18 +110,58 @@ class WarwickConnection5(TradeConnection, WarwickSysObject):
     ]
 
 
-class Omega15NiobiumAsteroid(RewardsGroup):
+class Omega15NiobiumAsteroid(WarwickSysObject, DefaultAsteroidRewardsGroup):
     NAME = 'om15_niobium'
-    ASTEROID_SOLAR = AsteroidOmega15
+    SOLAR = AsteroidOmega15
+    REWARD_ITEM = 'comm_roid_niobium'
+    ULTRA_REWARD_ITEM = 'rh_lightgun01'
 
 
-class AsteroidFieldOne(RewardAsteroidField, WarwickSysObject):
-    POS = (5000, 0, 20000)
-    FIELD_NAME = 'om15_field1'
-    REWARDS_GROUP_CLASS = Omega15NiobiumAsteroid
+class DebrisBoxCheckField(WarwickSysObject, DefaultDebrisBoxRewardsGroup):
+    NAME = 'debris_box_check'
+    SOLAR = DebrisBox
+    REWARD_ITEM = 'comm_scrap_metal'
+    ULTRA_REWARD_ITEM = 'rh_shieldgun09'
+
+
+class WarwickField1(DefaultField):
+    BOX_SIZE = 1000
+    DENSITY_MULTIPLER = 3
+
+
+class WarwickField2(DefaultField):
+    BOX_SIZE = 500
+    DENSITY_MULTIPLER = 3
+    DRIFT_X = 0.3
+    DRIFT_Y = 0.2
+    DRIFT_Z = 0.3
+    ROTATE_MIN = 0
+    ROTATE_MAX = 0
+    EMPTY_CHANCE = 0
+
+
+# class AsteroidFieldOne(WarwickSysObject, AsteroidRewardField):
+#     POS = (5000, 0, 20000)
+#     FIELD_NAME = 'om15_field1'
+#     FIELD_CLASS = WarwickField1
+#     REWARDS_GROUP_CLASS = Omega15NiobiumAsteroid
+#     MEDIUM_REWARD_CHANCE = 0.5
+#     HIGH_REWARD_CHANCE = 0.25
+#     ULTRA_REWARD = True
+
+
+class DebrisBoxSuperField(WarwickSysObject, DebrisBoxRewardField):
+    POS = (20000, 0, 10000)
+    FIELD_NAME = 'om15_field2'
+    FIELD_CLASS = WarwickField2
+    REWARDS_GROUP_CLASS = DebrisBoxCheckField
     MEDIUM_REWARD_CHANCE = 0.5
     HIGH_REWARD_CHANCE = 0.25
     ULTRA_REWARD = True
+
+
+
+
 
     # MINING_ULTRA_REWARD = 'rh_lightgun01'
     # 
