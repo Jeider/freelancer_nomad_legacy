@@ -325,7 +325,7 @@ class DebrisBoxFactory(object):
 
     def __init__(self):
         init = 2.35
-        step = 4.8
+        step = 5.3
 
         pos_x = 0
         pos_y = init

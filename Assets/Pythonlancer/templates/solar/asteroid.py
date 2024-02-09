@@ -42,9 +42,9 @@ CHUNKS = 10
 INIT_ITEMS_TEMPLATE = 'equip = attached_xast_exploder, {hp}'
 
 
-class AsteroidSolar(object):
+class AsteroidSolar(MineableSolar):
     ALIAS = 'asteroid'
-    
+
     DEFAULT_ARCHETYPE = None
     ARCHETYPE_REWARD_MEDIUM = None
     ARCHETYPE_REWARD_HIGH = None

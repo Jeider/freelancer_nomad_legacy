@@ -14,3 +14,6 @@ class MineableSolar(object):
 
     def get_ultra_reward_archetype(self):
         raise NotImplementedError
+
+    def get_init_loadout_items(self):
+        return None
