@@ -336,7 +336,7 @@ class HardpointRewardsGroup(RewardsGroup):
             )
             self.loadout_ultra_reward = DynamicAttachedCargoLoadout(
                 loadout_nickname=nickname,
-                cargo_item=self.ULTRA_REWARD_ITEM,
+                cargo_item=self.REWARD_ITEM,
                 hardpoints=no_ultra_hardpoints,
                 min=self.ULTRA_REWARD_PROP.MIN,
                 max=self.ULTRA_REWARD_PROP.MAX,

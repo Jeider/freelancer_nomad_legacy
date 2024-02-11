@@ -226,7 +226,6 @@ class ComplexGasCrystalSuperField(WarwickSysObject, SupriseRewardField):
     FIELD_NAME = 'om15_field5'
     FIELD_CLASS = WarwickField4
     REWARDS_GROUP_CLASS = SupriseRheinlandCheck
-    MEDIUM_REWARD_CHANCE = 0.5
     ULTRA_REWARD = True
 
 
