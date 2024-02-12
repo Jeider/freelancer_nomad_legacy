@@ -1,0 +1,149 @@
+
+
+[Object]
+nickname = ast01
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = ice_asteroid_insane
+
+[Object]
+nickname = gas_inner01
+pos = 0, 0, -10
+rotate = 0, 0, 0
+archetype = sig13_mineable_gas_static
+loadout = sig13_mineable_gas_static_adv
+
+[Object]
+nickname = gas_inner02
+pos = -80, -300, 0
+rotate = 0, 0, 0
+archetype = sig13_mineable_gas_static
+loadout = sig13_mineable_gas_static_adv
+
+[Object]
+nickname = gas_inner03
+pos = -40, -200, 0
+rotate = 0, 0, 0
+archetype = sig13_mineable_gas_static
+loadout = sig13_mineable_gas_static_adv
+
+[Object]
+nickname = gas_inner04
+pos = -180, 130, 0
+rotate = 0, 0, 0
+archetype = sig13_mineable_gas_static
+loadout = sig13_mineable_gas_static_adv
+
+[Object]
+nickname = gas_inner05
+pos = -80, 110, 20
+rotate = 0, 0, 0
+archetype = sig13_mineable_gas_static
+loadout = sig13_mineable_gas_static_adv
+
+[Object]
+nickname = gas_inner06
+pos = -130, 30, 50
+rotate = 0, 0, 0
+archetype = sig13_mineable_gas_static
+loadout = sig13_mineable_gas_static_adv
+
+[Object]
+nickname = gas_inner07
+pos = 100, 00, 100
+rotate = 0, 0, 0
+archetype = sig13_mineable_gas_static
+loadout = sig13_mineable_gas_static_adv
+
+[Object]
+nickname = gas_inner08
+pos = 40, 100, 130
+rotate = 0, 0, 0
+archetype = sig13_mineable_gas_static
+loadout = sig13_mineable_gas_static_adv
+
+[Object]
+nickname = gas_inner09
+pos = 80, -150, 120
+rotate = 0, 0, 0
+archetype = sig13_mineable_gas_static
+loadout = sig13_mineable_gas_static_adv
+
+[Object]
+nickname = gas_inner10
+pos = -30, -200, 80
+rotate = 0, 0, 0
+archetype = sig13_mineable_gas_static
+loadout = sig13_mineable_gas_static_adv
+
+[Object]
+nickname = gas_inner11
+pos = 10, -100, -70
+rotate = 0, 0, 0
+archetype = sig13_mineable_gas_static
+loadout = sig13_mineable_gas_static_adv
+
+[Object]
+nickname = gas_inner12
+pos = -30, 200, 32
+rotate = 0, 0, 0
+archetype = sig13_mineable_gas_static
+loadout = sig13_mineable_gas_static_adv
+
+[Object]
+nickname = gas_inner13
+pos = -125, 200, 45
+rotate = 0, 0, 0
+archetype = sig13_mineable_gas_static
+loadout = sig13_mineable_gas_static_adv
+
+[Object]
+nickname = gas_inner14
+pos = -5, 165, -100
+rotate = 0, 0, 0
+archetype = sig13_mineable_gas_static
+loadout = sig13_mineable_gas_static_adv
+
+[Object]
+nickname = gas_inner15
+pos = 50, -30, -180
+rotate = 0, 0, 0
+archetype = sig13_mineable_gas_static
+loadout = sig13_mineable_gas_static_adv
+
+[Object]
+nickname = gas_inner16
+pos = 22, 100, -140
+rotate = 0, 0, 0
+archetype = sig13_mineable_gas_static
+loadout = sig13_mineable_gas_static_adv
+
+[Object]
+nickname = gas_inner17
+pos = 80, -85, 100
+rotate = 0, 0, 0
+archetype = sig13_mineable_gas_static
+loadout = sig13_mineable_gas_static_adv
+
+[Object]
+nickname = gas_inner18
+pos = 90, 150, 95
+rotate = 0, 0, 0
+archetype = sig13_mineable_gas_static
+loadout = sig13_mineable_gas_static_adv
+
+[Object]
+nickname = gas_inner19
+pos = 100, 80, -20
+rotate = 0, 0, 0
+archetype = sig13_mineable_gas_static
+loadout = sig13_mineable_gas_static_adv
+
+[Object]
+nickname = gas_inner20
+pos = 20, -115, 10
+rotate = 0, 0, 0
+archetype = sig13_mineable_gas_static
+loadout = sig13_mineable_gas_static_adv
+
+
