@@ -151,7 +151,7 @@ VMESH_LIB_HACKER_ROOT = '''
 </valid_hack_root.lod0-112.vms>
 '''
 
-COLOR_BOX_VMESH_NAME_TEMPLATE = 'hacker_color_box_{color_int:02d}.lod0-112.vms'
+COLOR_BOX_VMESH_NAME_TEMPLATE = 'hacker_{panel_index:02d}_color_box_{button_index:02d}.lod0-112.vms'
 
 VMESH_LIB_COLOR_BOX_TEMPLATE = '''
 <{button_color_vmesh_library}>
@@ -177,33 +177,45 @@ VMESH_LIB_COLOR_BOX_TEMPLATE = '''
       </index>
       <vertex FVF="0x112" count="20">
          <!-- Vertex           X                  Y                  Z               X Normal        Y Normal        Z Normal          U                 V      -->
-         <!--     0 -->     -0.8049383200,      0.8005211900,      0.8051477700;   0.0000000000,   0.0000000000,   1.0000000000;     0.0000000000,     0.0000000000
-         <!--     1 -->     -0.8049383200,     -0.8027710900,      0.8051477700;   0.0000000000,   0.0000000000,   1.0000000000;     0.0000000000,     1.0000000000
-         <!--     2 -->      0.8049383200,      0.8005211900,      0.8051477700;   0.0000000000,   0.0000000000,   1.0000000000;     1.0000000000,     0.0000000000
-         <!--     3 -->      0.8049383200,     -0.8027710900,      0.8051477700;   0.0000000000,   0.0000000000,   1.0000000000;     1.0000000000,     1.0000000000
-         <!--     4 -->      0.8049383200,      0.8005211900,      0.8051477700;   1.0000000000,   0.0000000000,   0.0000000000;     0.0000000000,     0.0000000000
-         <!--     5 -->      0.8049383200,     -0.8027710900,      0.8051477700;   1.0000000000,   0.0000000000,   0.0000000000;     0.0000000000,     1.0000000000
-         <!--     6 -->      0.8049383200,      0.8005211900,     -0.8047288100;   0.7071067700,   0.7071067700,   0.0000000000;     1.0000000000,     0.0000000000
-         <!--     7 -->      0.8049383200,     -0.8027710900,     -0.8047288100;   0.7071067700,  -0.7071067700,   0.0000000000;     1.0000000000,     1.0000000000
-         <!--     8 -->      0.8049383200,      0.8005211900,     -0.8047288100;   0.0000000000,   0.0000000000,  -1.0000000000;     0.0000000000,     0.0000000000
-         <!--     9 -->      0.8049383200,     -0.8027710900,     -0.8047288100;   0.0000000000,   0.0000000000,  -1.0000000000;     0.0000000000,     1.0000000000
-         <!--    10 -->     -0.8049383200,      0.8005211900,     -0.8047288100;   0.0000000000,   0.0000000000,  -1.0000000000;     1.0000000000,     0.0000000000
-         <!--    11 -->     -0.8049383200,     -0.8027710900,     -0.8047288100;   0.0000000000,   0.0000000000,  -1.0000000000;     1.0000000000,     1.0000000000
-         <!--    12 -->     -0.8049383200,      0.8005211900,     -0.8047288100;  -0.7071067700,   0.7071067700,   0.0000000000;     0.0000000000,     0.0000000000
-         <!--    13 -->     -0.8049383200,     -0.8027710900,     -0.8047288100;  -0.7071067700,  -0.7071067700,   0.0000000000;     0.0000000000,     1.0000000000
-         <!--    14 -->     -0.8049383200,      0.8005211900,      0.8051477700;  -1.0000000000,   0.0000000000,   0.0000000000;     1.0000000000,     0.0000000000
-         <!--    15 -->     -0.8049383200,     -0.8027710900,      0.8051477700;  -1.0000000000,   0.0000000000,   0.0000000000;     1.0000000000,     1.0000000000
-         <!--    16 -->     -0.8049383200,      0.8005211900,      0.8051477700;   0.0000000000,   1.0000000000,   0.0000000000;     0.0000000000,     1.0000000000
-         <!--    17 -->      0.8049383200,      0.8005211900,      0.8051477700;   0.0000000000,   1.0000000000,   0.0000000000;     1.0000000000,     1.0000000000
-         <!--    18 -->     -0.8049383200,     -0.8027710900,      0.8051477700;   0.0000000000,  -1.0000000000,   0.0000000000;     0.0000000000,     0.0000000000
-         <!--    19 -->      0.8049383200,     -0.8027710900,      0.8051477700;   0.0000000000,  -1.0000000000,   0.0000000000;     1.0000000000,     0.0000000000
+         <!--     0 -->     -{scale}049383200,      {scale}005211900,      {scale}051477700;   0.0000000000,   0.0000000000,   1.0000000000;     0.0000000000,     0.0000000000
+         <!--     1 -->     -{scale}049383200,     -{scale}027710900,      {scale}051477700;   0.0000000000,   0.0000000000,   1.0000000000;     0.0000000000,     1.0000000000
+         <!--     2 -->      {scale}049383200,      {scale}005211900,      {scale}051477700;   0.0000000000,   0.0000000000,   1.0000000000;     1.0000000000,     0.0000000000
+         <!--     3 -->      {scale}049383200,     -{scale}027710900,      {scale}051477700;   0.0000000000,   0.0000000000,   1.0000000000;     1.0000000000,     1.0000000000
+         <!--     4 -->      {scale}049383200,      {scale}005211900,      {scale}051477700;   1.0000000000,   0.0000000000,   0.0000000000;     0.0000000000,     0.0000000000
+         <!--     5 -->      {scale}049383200,     -{scale}027710900,      {scale}051477700;   1.0000000000,   0.0000000000,   0.0000000000;     0.0000000000,     1.0000000000
+         <!--     6 -->      {scale}049383200,      {scale}005211900,     -{scale}047288100;   0.7071067700,   0.7071067700,   0.0000000000;     1.0000000000,     0.0000000000
+         <!--     7 -->      {scale}049383200,     -{scale}027710900,     -{scale}047288100;   0.7071067700,  -0.7071067700,   0.0000000000;     1.0000000000,     1.0000000000
+         <!--     8 -->      {scale}049383200,      {scale}005211900,     -{scale}047288100;   0.0000000000,   0.0000000000,  -1.0000000000;     0.0000000000,     0.0000000000
+         <!--     9 -->      {scale}049383200,     -{scale}027710900,     -{scale}047288100;   0.0000000000,   0.0000000000,  -1.0000000000;     0.0000000000,     1.0000000000
+         <!--    10 -->     -{scale}049383200,      {scale}005211900,     -{scale}047288100;   0.0000000000,   0.0000000000,  -1.0000000000;     1.0000000000,     0.0000000000
+         <!--    11 -->     -{scale}049383200,     -{scale}027710900,     -{scale}047288100;   0.0000000000,   0.0000000000,  -1.0000000000;     1.0000000000,     1.0000000000
+         <!--    12 -->     -{scale}049383200,      {scale}005211900,     -{scale}047288100;  -0.7071067700,   0.7071067700,   0.0000000000;     0.0000000000,     0.0000000000
+         <!--    13 -->     -{scale}049383200,     -{scale}027710900,     -{scale}047288100;  -0.7071067700,  -0.7071067700,   0.0000000000;     0.0000000000,     1.0000000000
+         <!--    14 -->     -{scale}049383200,      {scale}005211900,      {scale}051477700;  -1.0000000000,   0.0000000000,   0.0000000000;     1.0000000000,     0.0000000000
+         <!--    15 -->     -{scale}049383200,     -{scale}027710900,      {scale}051477700;  -1.0000000000,   0.0000000000,   0.0000000000;     1.0000000000,     1.0000000000
+         <!--    16 -->     -{scale}049383200,      {scale}005211900,      {scale}051477700;   0.0000000000,   1.0000000000,   0.0000000000;     0.0000000000,     1.0000000000
+         <!--    17 -->      {scale}049383200,      {scale}005211900,      {scale}051477700;   0.0000000000,   1.0000000000,   0.0000000000;     1.0000000000,     1.0000000000
+         <!--    18 -->     -{scale}049383200,     -{scale}027710900,      {scale}051477700;   0.0000000000,  -1.0000000000,   0.0000000000;     0.0000000000,     0.0000000000
+         <!--    19 -->      {scale}049383200,     -{scale}027710900,      {scale}051477700;   0.0000000000,  -1.0000000000,   0.0000000000;     1.0000000000,     0.0000000000
       </vertex>
    </VMeshData>
 </{button_color_vmesh_library}>
 '''
 
 COLOR_VMESH_OBJECT_TEMPLATE = '''
-  <{button_object_name}>
+  <{button_file_name}>
+     <Hardpoints>
+        <Fixed>
+           <HpAttachedFX{button_index:02d}>
+              <Position type="Vector">0, {button_fx_drift_y}, 0</Position>
+              <Orientation type="Matrix">
+                   1.0000000000,   0.0000000000,   0.0000000000,
+                   0.0000000000,   1.0000000000,   0.0000000000,
+                   0.0000000000,   0.0000000000,   1.0000000000
+              </Orientation>
+           </HpAttachedFX{button_index:02d}>
+        </Fixed>
+     </Hardpoints>
     <VMeshPart>
      <VMeshRef type="VMeshRef">
         <!-- header size  --> 60,
@@ -220,7 +232,7 @@ COLOR_VMESH_OBJECT_TEMPLATE = '''
         <!-- radius       --> 1.392296
      </VMeshRef>
     </VMeshPart>
-  </{button_object_name}>
+  </{button_file_name}>
 '''
 
 
@@ -273,14 +285,14 @@ v 0.210526 -5.831266 -0.210526
 v 0.210526 -6.252319 -0.210526
 v -0.210526 -5.831266 -0.210526
 v -0.210526 -6.252319 -0.210526
-v -0.804938 0.800521 0.805148
-v -0.804938 -0.802771 0.805148
-v 0.804938 0.800521 0.805148
-v 0.804938 -0.802771 0.805148
-v 0.804938 0.800521 -0.804729
-v 0.804938 -0.802771 -0.804729
-v -0.804938 0.800521 -0.804729
-v -0.804938 -0.802771 -0.804729
+v -1.458951 1.450945 1.459330
+v -1.458951 -1.455023 1.459330
+v 1.458951 1.450945 1.459330
+v 1.458951 -1.455023 1.459330
+v 1.458951 1.450945 -1.458571
+v 1.458951 -1.455023 -1.458571
+v -1.458951 1.450945 -1.458571
+v -1.458951 -1.455023 -1.458571
 # 16 vertices
 
 vt 0.000000 1.000000
@@ -345,19 +357,20 @@ f 16/2/6 14/4/6 12/3/6
 
 '''
 
-VALID_PART_HIT_PTS = 500
+VALID_PART_HIT_PTS = 1250
 VALID_PART_TURN_FUSE_HIT_PTS = VALID_PART_HIT_PTS - 10
-INVALID_PART_HIT_PTS = 500
+INVALID_PART_HIT_PTS = 1250
 INVALID_PART_TURN_FUSE_HIT_PTS = INVALID_PART_HIT_PTS - 10
 VALID_PART_DEATH_FUSE_NAME_TEMPLATE = 'fuse_hacker_{panel_index:02d}_box_{button_index:02d}_valid_death'
 VALID_PART_HIT_FUSE_NAME_TEMPLATE = 'fuse_hacker_{panel_index:02d}_box_{button_index:02d}_hit'
 INVALID_PART_HIT_FUSE_TEMPLATE = 'fuse_hacker_{panel_index:02d}_box_{button_index:02d}_hit'
 
-NEAR_COLORS_LEVELS_COUNT = 5
-
-FX_HIT_VALID = 'gf_hacker_valid'
-FX_HIT_NEAR_LEVEL_TEMPLATE = 'gf_hacker_near_level{level}'
-FX_HIT_HARDPOINT_TEMPLATE = 'HpFX{index:02d}'
+FX_SOUND_VALID = 'gf_hacker_sound_valid'
+FX_IMPACT_VALID = 'gf_hacker_impact_valid'
+FX_SOUND_NEAR_LEVEL_TEMPLATE = 'gf_hacker_sound_near_level{level}'
+FX_IMPACT_NEAR_LEVEL_TEMPLATE = 'gf_hacker_impact_level{level}'
+FX_SOUND_HARDPOINT_TEMPLATE = 'HpFX{index:02d}'
+FX_IMPACT_HARDPOINT_TEMPLATE = 'HpAttachedFX{index:02d}'
 
 VALID_COLLISION_GROUP_TEMPLATE = '''[CollisionGroup]
 obj = btn{layer_button_index:02d}_lod1
@@ -402,11 +415,18 @@ fate = disappear
 [fuse]
 name = {fuse_hit_name}
 lifetime = 0.100000
-death_fuse = true
+death_fuse = false
 
 [start_effect]
-effect = {particles}
-hardpoint = {hardpoint}
+effect = {impact_particles}
+hardpoint = {impact_hardpoint}
+at_t = 0.9
+pos_offset = 0, 0, 0
+ori_offset = 0, 0, 0
+
+[start_effect]
+effect = {sound_particles}
+hardpoint = {sound_hardpoint}
 at_t = 0.9
 pos_offset = 0, 0, 0
 ori_offset = 0, 0, 0'''
@@ -414,11 +434,18 @@ ori_offset = 0, 0, 0'''
 FUSE_INVALID_HIT_TEMPLATE = '''[fuse]
 name = {fuse_name}
 lifetime = 0.100000
-death_fuse = true
+death_fuse = false
 
 [start_effect]
-effect = {particles}
-hardpoint = {hardpoint}
+effect = {impact_particles}
+hardpoint = {impact_hardpoint}
+at_t = 0.9
+pos_offset = 0, 0, 0
+ori_offset = 0, 0, 0
+
+[start_effect]
+effect = {sound_particles}
+hardpoint = {sound_hardpoint}
 at_t = 0.9
 pos_offset = 0, 0, 0
 ori_offset = 0, 0, 0'''
@@ -479,24 +506,30 @@ COLOR_19 = 19
 COLOR_20 = 20
 
 RGB = [
+    (126, 0, 0),
+    (166, 0, 0),
+    (210, 0, 0),
     (255, 0, 0),
-    (255, 0, 38),
-    (255, 0, 63),
-    (255, 0, 88),
-    (255, 0, 114),
-    (243, 0, 143),
-    (220, 0, 172),
-    (188, 0, 202),
-    (138, 0, 230),
-    (0, 0, 255),
+    (255, 105, 0),
+    (255, 161, 0),
+    (243, 210, 0),
+    (221, 255, 0),
+    (180, 255, 0),
+    (127, 255, 0),
+    (0, 255, 0),
+    (0, 152, 7),
+    (1, 60, 1),
+
 ]
 
 COLORS = [
     COLOR_1, COLOR_2, COLOR_3, COLOR_4, COLOR_5,
     COLOR_6, COLOR_7, COLOR_8, COLOR_9, COLOR_10,
-    COLOR_11, COLOR_12, # COLOR_13, COLOR_14, COLOR_15,
+    COLOR_11, COLOR_12, COLOR_13, # COLOR_14, COLOR_15,
     #COLOR_16, COLOR_17, COLOR_18, # COLOR_19, COLOR_20,
 ]
+
+NEAR_COLORS_LEVELS_COUNT = len(COLORS)  # too much as possible
 
 CRC_PER_COLOR = {
     COLOR_1: 'EFF37772',
@@ -521,14 +554,19 @@ CRC_PER_COLOR = {
     COLOR_20: '1C3E2566',
 }
 
-COLOR_FILE_NAME_TEMPLATE = 'hacker_button_color_{color_int:02d}.3db'
+COLOR_FILE_NAME_TEMPLATE = 'hacker_button_{panel_index:02d}_{button_index:02d}.3db'
 
 VISIBLE_DRIFT = 5
 LAYER_DRIFT = 2
 LAYER_CHILD_LIMIT = 29
 
-BUTTON_SIZE = 2
-BUTTONS_PER_LINE = 9
+BUTTON_VISUAL_SCALE = 1.45
+BUTTON_SIZE = 3
+BUTTON_FX_DRIFT_Y = (BUTTON_SIZE / 2) + 0.2
+
+BUTTONS_PER_LINE = 8
+
+NOT_RANDOMIZED_COLORS = 2
 
 HACKER_PANELS_TOTAL = 1
 
@@ -583,7 +621,10 @@ class HackerButton(object):
         return self.button_index
 
     def get_file(self):
-        return COLOR_FILE_NAME_TEMPLATE.format(color_int=self.color)
+        return COLOR_FILE_NAME_TEMPLATE.format(panel_index=self.layer.hacker_panel.panel_index, button_index=self.button_index)
+
+    def get_vmesh_lib_name(self):
+        return COLOR_BOX_VMESH_NAME_TEMPLATE.format(panel_index=self.layer.hacker_panel.panel_index, button_index=self.button_index)
 
     def get_part_obj(self):
         return PART_OBJ_TEMPLATE.format(index=self.layer_button_index, color_file=self.get_file())
@@ -599,6 +640,26 @@ class HackerButton(object):
             pos_y=pos_y,
             pos_z=self.pos_y,
         )
+
+    def get_vmesh_lib(self):
+        vmesh_lib_name = self.get_vmesh_lib_name()
+        crc = CRC_PER_COLOR.get(self.color)
+        return VMESH_LIB_COLOR_BOX_TEMPLATE.format(
+            button_color_vmesh_library=vmesh_lib_name,
+            material_crc=crc,
+            scale=BUTTON_VISUAL_SCALE,
+        )
+
+    def get_vmesh_object(self):
+        vmesh_lib_name = self.get_vmesh_lib_name()
+        file_name = self.get_file()
+        return COLOR_VMESH_OBJECT_TEMPLATE.format(
+            button_file_name=file_name,
+            button_index=self.button_index,
+            button_fx_drift_y=BUTTON_FX_DRIFT_Y,
+            button_vmesh_library=vmesh_lib_name,
+        )
+            
 
 class HackerLayer(object):
 
@@ -653,25 +714,28 @@ class HackerLayer(object):
                 panel_index=self.hacker_panel.panel_index,
                 button_index=button.button_index,
             )
-            hardpoint = FX_HIT_HARDPOINT_TEMPLATE.format(index=button.layer_button_index)
             fuses.append(
                 FUSE_VALID_HIT_TEMPLATE.format(
                     layer_button_index=button.layer_button_index,
                     fuse_hit_name=fuse_hit_name,
                     fuse_death_name=fuse_death_name,
-                    hardpoint=hardpoint,
                     damage=damage,
-                    particles=FX_HIT_VALID,
+                    sound_particles=FX_SOUND_VALID,
+                    impact_particles=FX_IMPACT_VALID,
+                    sound_hardpoint=FX_SOUND_HARDPOINT_TEMPLATE.format(index=button.layer_button_index),
+                    impact_hardpoint=FX_IMPACT_HARDPOINT_TEMPLATE.format(index=button.button_index),
+
                 )
             )
+
         return fuses
 
     def get_invalid_collision_groups(self):
         collision_groups = []
         for button in self.buttons:
             invalid_part_hit_fuse = ''
-            particles = self.hacker_panel.get_near_fx_for_color(button.get_color())
-            if particles:
+            level = self.hacker_panel.get_level_for_color(button.get_color())
+            if level:
                 fuse_hit_name = INVALID_PART_HIT_FUSE_TEMPLATE.format(
                     panel_index=self.hacker_panel.panel_index,
                     button_index=button.button_index,
@@ -694,24 +758,27 @@ class HackerLayer(object):
     def get_invalid_fuses(self):
         fuses = []
         for button in self.buttons:
-            particles = self.hacker_panel.get_near_fx_for_color(button.get_color())
-            if not particles:
+            level = self.hacker_panel.get_level_for_color(button.get_color())
+            if not level:
                 continue
+
+            sound_particles = FX_SOUND_NEAR_LEVEL_TEMPLATE.format(level=level)
+            impact_particles = FX_IMPACT_NEAR_LEVEL_TEMPLATE.format(level=level)
 
             fuse_name = INVALID_PART_HIT_FUSE_TEMPLATE.format(
                 panel_index=self.hacker_panel.panel_index,
                 button_index=button.button_index,
             )
-            hardpoint = FX_HIT_HARDPOINT_TEMPLATE.format(index=button.layer_button_index)
 
-            if particles:
-                fuses.append(
-                    FUSE_INVALID_HIT_TEMPLATE.format(
-                        fuse_name=fuse_name,
-                        hardpoint=hardpoint,
-                        particles=particles,
-                    )
+            fuses.append(
+                FUSE_INVALID_HIT_TEMPLATE.format(
+                    fuse_name=fuse_name,
+                    sound_particles=sound_particles,
+                    impact_particles=impact_particles,
+                    sound_hardpoint=FX_SOUND_HARDPOINT_TEMPLATE.format(index=button.layer_button_index),
+                    impact_hardpoint=FX_IMPACT_HARDPOINT_TEMPLATE.format(index=button.button_index),
                 )
+            )
         return fuses
 
     def get_valid_solar(self):
@@ -730,6 +797,12 @@ class HackerLayer(object):
     def get_invalid_solararch(self):
         return [self.get_invalid_solar()] + self.get_invalid_collision_groups()
 
+    def get_vmesh_libs(self):
+        return [button.get_vmesh_lib() for button in self.buttons]
+
+    def get_vmesh_objects(self):
+        return [button.get_vmesh_object() for button in self.buttons]
+
 
 class HackerPanel(object):
 
@@ -737,7 +810,8 @@ class HackerPanel(object):
         self.factory = factory
         self.buttons = []
         self.panel_index = panel_index
-        self.valid_color = COLORS[5]
+        self.valid_color = random.choice(COLORS[NOT_RANDOMIZED_COLORS:-NOT_RANDOMIZED_COLORS])
+        print(self.valid_color)
         self.near_colors_levels = {}
         self.define_near_colors()
 
@@ -759,17 +833,14 @@ class HackerPanel(object):
             possible_next_color = ColorHelper.get_next_color(next_color)
             possible_prev_color = ColorHelper.get_prev_color(prev_color)
             if possible_next_color:
-                self.near_colors_levels[next_color] = level
+                self.near_colors_levels[possible_next_color] = level
                 next_color = possible_next_color
             if possible_prev_color:
-                self.near_colors_levels[prev_color] = level
+                self.near_colors_levels[possible_prev_color] = level
                 prev_color = possible_prev_color
 
-    def get_near_fx_for_color(self, color):
-        near_color_level = self.near_colors_levels.get(color)
-        if near_color_level:
-            return FX_HIT_NEAR_LEVEL_TEMPLATE.format(level=near_color_level)
-        return None
+    def get_level_for_color(self, color):
+        return self.near_colors_levels.get(color)
 
     def create_buttons(self):
         for index, position in enumerate(self.positions, start=1):
@@ -882,6 +953,18 @@ class HackerPanel(object):
     def get_valid_buttons_count(self):
         return len(self.valid_layer.get_buttons())
 
+    def get_valid_vmesh_libs(self):
+        return self.valid_layer.get_vmesh_libs()
+
+    def get_valid_vmesh_objects(self):
+        return self.valid_layer.get_vmesh_objects()
+
+    def get_layer_vmesh_libs(self, layer):
+        return layer.get_vmesh_libs()
+
+    def get_layer_vmesh_objects(self, layer):
+        return layer.get_vmesh_objects()
+
 
 class XMLFile(object):
 
@@ -896,10 +979,7 @@ class HackerPanelFactory(object):
         self.positions = []
         self.generate_positions()
         self.hacker_panels = self.generate_hacker_panels()
-        self.vmesh_libs_string = None
-        self.vmesh_objects_string = None
         self.extra_hardpoints = self.generate_extra_hardpoints()
-        self.define_vmesh_libs()
         self.xmls = []
         self.init_xmls()
 
@@ -926,62 +1006,44 @@ class HackerPanelFactory(object):
     def generate_hacker_panels(self):
         return [HackerPanel(self, panel_index=i) for i in range(1, HACKER_PANELS_TOTAL+1)]
 
-    def define_vmesh_libs(self):
-        vmesh_libs = [VMESH_LIB_HACKER_ROOT]
-        vmesh_objects = []
-
-        for color in COLORS:
-            vmesh_lib_name = COLOR_BOX_VMESH_NAME_TEMPLATE.format(color_int=color)
-            button_object_name = COLOR_FILE_NAME_TEMPLATE.format(color_int=color)
-            crc = CRC_PER_COLOR.get(color)
-            vmesh_libs.append(
-                VMESH_LIB_COLOR_BOX_TEMPLATE.format(
-                    button_color_vmesh_library=vmesh_lib_name,
-                    material_crc=crc,
-                )
-            )
-            vmesh_objects.append(
-                COLOR_VMESH_OBJECT_TEMPLATE.format(
-                    button_object_name=button_object_name,
-                    button_vmesh_library=vmesh_lib_name,
-                )
-            )
-
-        self.vmesh_libs_string = DIVIDER.join(vmesh_libs)
-        self.vmesh_objects_string = DIVIDER.join(vmesh_objects)
-
     def generate_extra_hardpoints(self):
         return DIVIDER.join(
             [
                 HARDPOINT_TEMPLATE.format(
-                    hardpoint_name=FX_HIT_HARDPOINT_TEMPLATE.format(index=i)
+                    hardpoint_name=FX_SOUND_HARDPOINT_TEMPLATE.format(index=i)
                 ) for i in range(1, LAYER_CHILD_LIMIT+1)
             ]
         )
 
-    def get_xml(self, out_file, cmpnd):
+    def get_xml(self, out_file, cmpnd, vmesh_libs, vmesh_objects):
+        vmesh_libs = [VMESH_LIB_HACKER_ROOT] + vmesh_libs
         content = XML_MAIN_TEMPLATE.format(
-            vmesh_libs=self.vmesh_libs_string,
-            vmesh_objects=self.vmesh_objects_string,
+            vmesh_libs=DIVIDER.join(vmesh_libs),
+            vmesh_objects=DIVIDER.join(vmesh_objects),
             out_file=out_file,
             cmpnd=cmpnd,
             extra_hardpoints=self.extra_hardpoints,
         )
         return XMLFile(out_file, content)
 
+
     def init_xmls(self):
         for hacker_panel in self.hacker_panels:
             for layer in hacker_panel.layers:
                 out_file = layer.get_invalid_file_name()
                 cmpnd = hacker_panel.get_layer_cmpnd(layer)
+                vmesh_libs = hacker_panel.get_layer_vmesh_libs(layer)
+                vmesh_objects = hacker_panel.get_layer_vmesh_objects(layer)
                 self.xmls.append(
-                    self.get_xml(out_file, cmpnd)
+                    self.get_xml(out_file, cmpnd, vmesh_libs, vmesh_objects)
                 )
 
             valid_out_file = hacker_panel.valid_layer.get_valid_file_name()
             valid_cmpnd = hacker_panel.get_valid_cmpnd()
+            valid_vmesh_libs = hacker_panel.get_valid_vmesh_libs()
+            valid_vmesh_objects = hacker_panel.get_valid_vmesh_objects()
             self.xmls.append(
-                self.get_xml(valid_out_file, valid_cmpnd)
+                self.get_xml(valid_out_file, valid_cmpnd, valid_vmesh_libs, valid_vmesh_objects)
             )
 
     def get_xmls_content(self):

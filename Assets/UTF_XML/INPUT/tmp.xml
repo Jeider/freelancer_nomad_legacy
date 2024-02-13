@@ -10,7 +10,7 @@
  <hacker01>
     <Dc type="RGB">0, 0, 0</Dc>
     <Type type="text">DcDtEc</Type>
-    <Ec type="RGB">255, 0, 0</Ec>
+    <Ec type="RGB">126, 0, 0</Ec>
  </hacker01>
 
 
@@ -18,7 +18,7 @@
  <hacker02>
     <Dc type="RGB">0, 0, 0</Dc>
     <Type type="text">DcDtEc</Type>
-    <Ec type="RGB">255, 0, 38</Ec>
+    <Ec type="RGB">166, 0, 0</Ec>
  </hacker02>
 
 
@@ -26,7 +26,7 @@
  <hacker03>
     <Dc type="RGB">0, 0, 0</Dc>
     <Type type="text">DcDtEc</Type>
-    <Ec type="RGB">255, 0, 63</Ec>
+    <Ec type="RGB">210, 0, 0</Ec>
  </hacker03>
 
 
@@ -34,7 +34,7 @@
  <hacker04>
     <Dc type="RGB">0, 0, 0</Dc>
     <Type type="text">DcDtEc</Type>
-    <Ec type="RGB">255, 0, 88</Ec>
+    <Ec type="RGB">255, 0, 0</Ec>
  </hacker04>
 
 
@@ -42,7 +42,7 @@
  <hacker05>
     <Dc type="RGB">0, 0, 0</Dc>
     <Type type="text">DcDtEc</Type>
-    <Ec type="RGB">255, 0, 114</Ec>
+    <Ec type="RGB">255, 105, 0</Ec>
  </hacker05>
 
 
@@ -50,7 +50,7 @@
  <hacker06>
     <Dc type="RGB">0, 0, 0</Dc>
     <Type type="text">DcDtEc</Type>
-    <Ec type="RGB">243, 0, 143</Ec>
+    <Ec type="RGB">255, 161, 0</Ec>
  </hacker06>
 
 
@@ -58,7 +58,7 @@
  <hacker07>
     <Dc type="RGB">0, 0, 0</Dc>
     <Type type="text">DcDtEc</Type>
-    <Ec type="RGB">220, 0, 172</Ec>
+    <Ec type="RGB">243, 210, 0</Ec>
  </hacker07>
 
 
@@ -66,7 +66,7 @@
  <hacker08>
     <Dc type="RGB">0, 0, 0</Dc>
     <Type type="text">DcDtEc</Type>
-    <Ec type="RGB">188, 0, 202</Ec>
+    <Ec type="RGB">221, 255, 0</Ec>
  </hacker08>
 
 
@@ -74,7 +74,7 @@
  <hacker09>
     <Dc type="RGB">0, 0, 0</Dc>
     <Type type="text">DcDtEc</Type>
-    <Ec type="RGB">138, 0, 230</Ec>
+    <Ec type="RGB">180, 255, 0</Ec>
  </hacker09>
 
 
@@ -82,8 +82,32 @@
  <hacker10>
     <Dc type="RGB">0, 0, 0</Dc>
     <Type type="text">DcDtEc</Type>
-    <Ec type="RGB">0, 0, 255</Ec>
+    <Ec type="RGB">127, 255, 0</Ec>
  </hacker10>
+
+
+
+ <hacker11>
+    <Dc type="RGB">0, 0, 0</Dc>
+    <Type type="text">DcDtEc</Type>
+    <Ec type="RGB">0, 255, 0</Ec>
+ </hacker11>
+
+
+
+ <hacker12>
+    <Dc type="RGB">0, 0, 0</Dc>
+    <Type type="text">DcDtEc</Type>
+    <Ec type="RGB">0, 152, 7</Ec>
+ </hacker12>
+
+
+
+ <hacker13>
+    <Dc type="RGB">0, 0, 0</Dc>
+    <Type type="text">DcDtEc</Type>
+    <Ec type="RGB">1, 60, 1</Ec>
+ </hacker13>
 
       </Material_library>
    </UTF_ROOT>
