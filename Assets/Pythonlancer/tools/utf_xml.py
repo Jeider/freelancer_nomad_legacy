@@ -1,7 +1,5 @@
 import subprocess
 import pathlib
-import os
-import re
 
 
 UTF_XML_DIR = 'UTF_XML'
@@ -22,7 +20,6 @@ class XML_UTF(object):
     def run_command(request_file_name):
         utf_xml_path = XML_UTF.get_utf_xml_path()
         exec_path = utf_xml_path / XML_UTF.EXECUTABLE
-        exec_params = [exec_path]
         exec_params = [exec_path]
         exec_params.append('-O')
         exec_params.append(utf_xml_path / OUT_DIR)

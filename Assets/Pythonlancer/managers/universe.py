@@ -1,4 +1,5 @@
-from universe.system import  System
+from universe.universe import Universe
+from universe.system import System
 from universe.base import Base, EQUIP_CLASSES_PER_LEVEL
 from universe.markets import EquipDealer, ShipDealer
 

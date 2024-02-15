@@ -1,6 +1,6 @@
 # from universe.base import br_wrw_01_Base, br_wrw_02_Base, br_wrw_03_Base, br_wrw_04_Base
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
-from universe.content.main_objects import TradeConnection, Jumpgate, Dockring, Station, TradeStation, PirateBase, Sattelite
+from universe.content.main_objects import TradeConnection, Jumpgate, Dockring, Station, TradingBase, PirateBase, Sattelite
 from universe.content.mineable import DefaultAsteroidRewardsGroup, DefaultDebrisBoxRewardsGroup, DefaultGasCrystalRewardsGroup, DefaultSupriseRewardsGroup, DefaultField, AsteroidRewardField, DebrisBoxRewardField, GasCrystalRewardField, SupriseRewardField
 from templates.solar.asteroid import AsteroidOmega15
 from templates.solar.debris_box import DebrisBox
@@ -39,7 +39,7 @@ class WarwickProdStation(WarwickSysObject, Station):
     REL = TOP
 
 
-class WarwickTradingOutpost(WarwickSysObject, TradeStation):
+class WarwickTradingOutpost(WarwickSysObject, TradingBase):
     POS = (-20000, 0, 10000)
     REL = LEFT
 

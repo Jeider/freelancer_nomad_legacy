@@ -457,7 +457,7 @@ ids_info = 1
 type = NON_TARGETABLE
 DA_archetype = solar\\misc\\hacker\\{valid_file_name}.cmp
 material_library = solar\\Solar_mat_hacker.mat
-LODranges = 0, 5000
+LODranges = 0, 3000
 mass = 10000.000000
 ;hit_pts = 59 000 000 000
 hit_pts = 6000000000
@@ -474,7 +474,7 @@ ids_info = 60236
 type = MISSION_SATELLITE
 DA_archetype = solar\\misc\\hacker\\{invalid_file_name}.cmp
 material_library = solar\\Solar_mat_hacker.mat
-LODranges = 0, 100000
+LODranges = 0, 3000
 mass = 10000.000000
 solar_radius = 5
 shape_name = NNM_SM_COMMUNICATIONS
@@ -506,6 +506,7 @@ COLOR_19 = 19
 COLOR_20 = 20
 
 RGB = [
+    (92, 0, 0),
     (126, 0, 0),
     (166, 0, 0),
     (210, 0, 0),
@@ -518,15 +519,15 @@ RGB = [
     (127, 255, 0),
     (0, 255, 0),
     (0, 152, 7),
-    (1, 60, 1),
-
+    (0, 38, 0),
+    (0, 0, 0),
 ]
 
 COLORS = [
     COLOR_1, COLOR_2, COLOR_3, COLOR_4, COLOR_5,
     COLOR_6, COLOR_7, COLOR_8, COLOR_9, COLOR_10,
-    COLOR_11, COLOR_12, COLOR_13, # COLOR_14, COLOR_15,
-    #COLOR_16, COLOR_17, COLOR_18, # COLOR_19, COLOR_20,
+    COLOR_11, COLOR_12, COLOR_13, COLOR_14, COLOR_15,
+    # COLOR_16, COLOR_17, COLOR_18, # COLOR_19, COLOR_20,
 ]
 
 NEAR_COLORS_LEVELS_COUNT = len(COLORS)  # too much as possible
@@ -580,14 +581,14 @@ class ColorHelper(object):
     def get_next_color(color):
         next_color = color+1
         if next_color not in COLORS:
-            return None
+            return COLORS[0]
         return next_color
 
     @staticmethod
     def get_prev_color(color):
-        prev_color =color-1
+        prev_color = color-1
         if prev_color not in COLORS:
-            return None
+            return COLORS[-1]
         return prev_color
 
 
@@ -810,8 +811,7 @@ class HackerPanel(object):
         self.factory = factory
         self.buttons = []
         self.panel_index = panel_index
-        self.valid_color = random.choice(COLORS[NOT_RANDOMIZED_COLORS:-NOT_RANDOMIZED_COLORS])
-        print(self.valid_color)
+        self.valid_color = random.choice(COLORS)
         self.near_colors_levels = {}
         self.define_near_colors()
 
@@ -832,10 +832,10 @@ class HackerPanel(object):
         for level in range(1, NEAR_COLORS_LEVELS_COUNT+1):
             possible_next_color = ColorHelper.get_next_color(next_color)
             possible_prev_color = ColorHelper.get_prev_color(prev_color)
-            if possible_next_color:
+            if self.near_colors_levels.get(possible_next_color) is None:
                 self.near_colors_levels[possible_next_color] = level
                 next_color = possible_next_color
-            if possible_prev_color:
+            if self.near_colors_levels.get(possible_prev_color) is None:
                 self.near_colors_levels[possible_prev_color] = level
                 prev_color = possible_prev_color
 
@@ -1109,6 +1109,7 @@ class MaterialsFactory(object):
 
 
 factory = HackerPanelFactory()
+
 xmls = factory.get_xmls_content()
 sur = factory.get_sur()
 # get_collision_groups = factory.get_collision_groups()

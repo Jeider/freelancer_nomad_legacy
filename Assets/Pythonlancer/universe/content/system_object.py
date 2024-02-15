@@ -15,6 +15,8 @@ POS_KEY = 'pos'
 ROT_KEY = 'rotate'
 SIZE_KEY = 'size'
 
+FULL_ALIAS_TEMPLATE = '{alias}{index}'
+
 
 def get_reversed_direction(direction):
     if direction == TOP:
@@ -38,24 +40,14 @@ class SystemObject(object):
     POS = None
     REL = None
 
+    ALIAS = None
+    INDEX = 1
+
     IDS_NAME = 1  # TEMPORARY
+    IDS_INFO = 1  # TEMPORARY
 
     REL_APPEND = 3000  # distance between object and tradelane
     REL_DRIFT = 0  # move initial pos for tradelane start point
-
-
-    @classmethod
-    def get_position(cls):
-        if not cls.POS:
-            raise Exception('POS is not defined')
-
-        try:
-            if not isinstance(cls.POS[0], int) or not isinstance(cls.POS[1], int) or not isinstance(cls.POS[2], int):
-                raise Exception('POS must containt only integers')
-        except IndexError:
-            raise Exception('Not enough items in POS')
-
-        return cls.POS
 
     @classmethod
     def get_rel(cls):
@@ -77,25 +69,34 @@ class SystemObject(object):
             raise Exception('Too small REL_APPEND')
         return cls.REL_APPEND
 
-    @classmethod
-    def get_tradelane_props(cls, tradelane_side):
+    def get_tradelane_props(self, tradelane_side, extra_drift=0):
         tradelane_side = get_reversed_direction(tradelane_side)
 
-        pos_x, _, pos_z = cls.get_position()
+        pos_x, _, pos_z = self.get_position()
 
-        rel_append = cls.get_rel_append()
-        rel_drift = cls.get_rel_drift()
-        rel = cls.get_rel()
+        rel_append = self.get_rel_append()
+        rel_drift = self.get_rel_drift()
+        rel = self.get_rel()
 
         if rel_drift > 0:
             if rel == LEFT:
-                pos_x += rel_drift
+                pos_x += rel_drift + extra_drift
             if rel == RIGHT:
-                pos_x -= rel_drift
+                pos_x -= rel_drift + extra_drift
             if rel == TOP:
-                pos_z += rel_drift
+                pos_z += rel_drift + extra_drift
             if rel == BOTTOM:
-                pos_z -= rel_drift
+                pos_z -= rel_drift + extra_drift
+
+        if extra_drift > 0:
+            if rel == LEFT:
+                pos_x += extra_drift
+            if rel == RIGHT:
+                pos_x += extra_drift
+            if rel == TOP:
+                pos_z += extra_drift
+            if rel == BOTTOM:
+                pos_z += extra_drift
 
         if tradelane_side == LEFT:
             pos_x -= rel_append
@@ -106,10 +107,26 @@ class SystemObject(object):
         if tradelane_side == BOTTOM:
             pos_z += rel_append
 
-        return pos_x, POS_Y_FORCE_VALUE, pos_z, cls.IDS_NAME
+        return pos_x, POS_Y_FORCE_VALUE, pos_z, self.IDS_NAME
 
     def __init__(self, system):
         self.system = system
 
     def get_system_content(self):
         raise NotImplementedError()
+
+    @classmethod
+    def get_alias(cls):
+        if cls.ALIAS is None:
+            raise Exception('unknown alias')
+        return cls.ALIAS
+
+    @classmethod
+    def get_full_alias(cls):
+        return FULL_ALIAS_TEMPLATE.format(
+            alias=cls.get_alias(),
+            index=cls.INDEX,
+        )
+
+    def get_position(self):
+        return self.system.template.get_item_pos(self.get_full_alias())

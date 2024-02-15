@@ -1,11 +1,18 @@
-from universe.systems import br_wrw as br_wrw_objects
 from universe.content.system_object import SystemObject
 from universe.content.main_objects import TradeConnection, JumpableObject, DockableObject, StaticObject
 from universe.content.mineable import Mineable, RewardField, Field, RewardsGroup
 
+from universe.systems import br_wrw as br_wrw_objects
+from universe.systems import rh_ber as rh_ber_content
+
+
+
+
+
 from text.dividers import DIVIDER
 
 from tools.tracks import Tracks
+from tools.system_template import SystemTemplateLoader
 
 
 TLR_DISTANCE = 3000
@@ -14,6 +21,7 @@ TLR_DISTANCE = 3000
 class System(object):
     NAME = ''
     CONTENT = None
+    TEMPLATE_NAME = None
 
     TRACKS_SYSTEM_TEMPLATE = '''[Settings]
 system = {system_name}
@@ -27,6 +35,8 @@ distance = {tlr_distance}
         cls.subclasses.append(cls)
 
     def __init__(self):
+        self.template = None
+
         self.last_police_patrol_id = 0
         self.last_bounty_hunter_patrol_id = 0
         self.last_pirate_patrol_id = 0
@@ -43,7 +53,8 @@ distance = {tlr_distance}
 
         # self.jumps = []
         self.dockables = []
-        self.statics = []
+        self.statics_list = []
+        self.statics_db = {}
         self.mineable = []
         # self.pirate_assaults = []
         # self.hunter_patrols = []
@@ -53,6 +64,8 @@ distance = {tlr_distance}
             self.init_content()
 
     def init_content(self):
+        self.process_template()
+
         for item in self.CONTENT.__dict__.values():
             if not isinstance(item, type):
                 continue
@@ -75,25 +88,22 @@ distance = {tlr_distance}
             if item in (TradeConnection, DockableObject, TradeConnection):
                 continue
 
-
-            if issubclass(item, TradeConnection):
-                self.trade_connections.append(item(self))
-            # elif issubclass(item, JumpableObject):
-            #     self.jumps.append(item(self))
-            # elif issubclass(item, DockableObject):
-            #     self.dockables.append(item(self))
-            elif issubclass(item, StaticObject):
-                self.statics.append(item(self))
-            # elif issubclass(item, TradelaneAssault):
-            #     self.pirate_assaults.append(item(self))
-            # elif issubclass(item, HuntersDefence):
-            #     self.hunter_patrols.append(item(self))
+            if issubclass(item, StaticObject):
+                self.add_static_object(item)
             elif issubclass(item, Mineable):
-                self.mineable.append(item(self))
+                self.add_mineable(item)
+            elif issubclass(item, TradeConnection):
+                self.add_trade_connection(item)
 
         self.process_reward_groups()
 
         system_content = []
+
+        for app_obj in self.get_appearable_objects():
+            system_content.append(app_obj.get_system_content())
+
+        for mineable_obj in self.get_mineable_objects():
+            system_content.append(mineable_obj.get_system_content())
 
         if len(self.trade_connections) > 0:
             self.generate_tradelanes()
@@ -107,13 +117,30 @@ distance = {tlr_distance}
         for patrol in self.get_patrols_list():
             system_content.append(patrol.get_system_content())
 
-        for app_obj in self.get_appearable_objects():
-            system_content.append(app_obj.get_system_content())
-
-        for mineable_obj in self.get_mineable_objects():
-            system_content.append(mineable_obj.get_system_content())
-
         self.system_content_str = DIVIDER.join(system_content)
+
+    def add_trade_connection(self, item):
+        self.trade_connections.append(item(self))
+
+    def add_static_object(self, item):
+        static = item(self)
+        self.statics_list.append(static)
+        self.statics_db[static.get_full_alias()] = static
+
+    def add_mineable(self):
+        self.mineable.append(item(self))
+
+    def process_template(self):
+        if self.TEMPLATE_NAME is None:
+            raise Exception('unknown template')
+
+        self.template = SystemTemplateLoader.get_template(self.TEMPLATE_NAME)
+
+    def get_object_position(self, system_object_class):
+        return self.template.get_item_pos(system_object_class.get_full_alias())
+
+    def get_system_object_instance(self, system_object_class):
+        return self.statics_db[system_object_class.get_full_alias()]
 
     def process_reward_groups(self):
         for rewards_group in self.rewards_groups_list:
@@ -141,7 +168,7 @@ distance = {tlr_distance}
         return self.patrols_db.values()
 
     def get_appearable_objects(self):
-        return [item for item in self.statics if item.has_appearance()]
+        return [item for item in self.statics_list if item.has_appearance()]
 
     def get_mineable_objects(self):
         return self.mineable
@@ -185,6 +212,9 @@ distance = {tlr_distance}
             item.define_attacker_patrols()
 
     def generate_patrols(self):
+        if len(self.patrols_db) == 0:
+            return
+
         patrols_response = self.get_path_creation_response()
 
         for response_item in patrols_response:
@@ -209,6 +239,18 @@ class BretoniaSystem(object):
 
 
 
+class RheinlandSystem(object):
+
+    FACTION_CODE = None
+
+    def get_faction(self):
+        if self.FACTION_CODE is None:
+            raise Exception('unknown faction for system %s' % self.NAME)
+        return self.FACTION_CODE
+
+
+
+
 class rh_mnh(System):
     NAME = 'Rh_Mnh'
 
@@ -221,9 +263,11 @@ class rh_stut(System):
     NAME = 'Rh_stut'
 
 
-class rh_ber(System):
+class rh_ber(RheinlandSystem, System):
     NAME = 'Rh_ber'
-
+    TEMPLATE_NAME = 'rh_ber'
+    FACTION_CODE = 'br_grp'
+    CONTENT = rh_ber_content
 
 class sig8(System):
     NAME = 'sig8'
@@ -268,7 +312,7 @@ class tau31(System):
 class br_wrw(BretoniaSystem, System):
     NAME = 'br_wrw'
     FACTION_CODE = 'br_grp'
-    CONTENT = br_wrw_objects
+    # CONTENT = br_wrw_objects
 
 
 class tau29(System):
