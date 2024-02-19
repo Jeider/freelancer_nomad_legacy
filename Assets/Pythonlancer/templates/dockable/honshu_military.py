@@ -8,15 +8,7 @@ nickname = ku_hns_02
 pos = 0, 0, 0
 rotate = 0, 180, 0
 archetype = space_police01_honshu
-base = ku_hns_02_base
-dock_with = ku_hns_02_base
-behavior = NOTHING
-reputation = ku_grp
-visit = 16
-voice = atc_leg_m01
-space_costume = ku_captain_head, ku_male_elite_body, prop_hat_male_ku_elite
-ids_name = 203766
-ids_info = 065681
+{dock_props}
 
 [Object]
 nickname = ku_hns_02_panelA01

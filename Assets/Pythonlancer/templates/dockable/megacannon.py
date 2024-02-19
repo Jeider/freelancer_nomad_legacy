@@ -5,30 +5,17 @@ class MegaCannon(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'br_wrw_03'
     TEMPLATE = '''[Object]
 nickname = br_wrw_03
-ids_name = 203704
 pos = -1280, 500, -320
 rotate = 0, 0, 0
 archetype = gun_core
-ids_info = 065621
-reputation = br_grp
-behavior = NOTHING
-difficulty_level = 12
-base = br_wrw_03_base
+{root_props}
 
 [Object]
 nickname = br_wrw_03_dock
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = space_shipping01
-reputation = br_grp
-behavior = NOTHING
-difficulty_level = 12
-dock_with = br_wrw_03_base
-base = br_wrw_03_base
-voice = atc_leg_f01
-space_costume = br_newscaster_head_gen_hat, br_female_elite_body, prop_hat_female_br_elite
-ids_name = 196722
-ids_info = 065739
+{dock_props}
 
 [Object]
 nickname = br_wrw_03_BARREL_POLYGON01

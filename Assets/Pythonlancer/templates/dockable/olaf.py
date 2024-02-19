@@ -8,30 +8,14 @@ nickname = tau29_03
 pos = 0, -600, 0
 rotate = 0, 0, 0
 archetype = arendal_core
-;dock_with = tau29_03_base
-base = tau29_03_base
-ids_name = 203720
-ids_info = 065635
-behavior = NOTHING
-reputation = t29_fp_grp
-voice = atc_leg_m01
-space_costume = ge_male7_head, pl_male3_peasant_body, prop_neuralnet_a
-visit = 16
+{root_props}
 
 [Object]
 nickname = tau29_03_miner
 pos = 0, 0, 0
 rotate = 90, 180, 0
 archetype = gas_miner_dockA
-dock_with = tau29_03_base
-base = tau29_03_base
-ids_name = 196722
-ids_info = 065739
-behavior = NOTHING
-reputation = t29_fp_grp
-voice = atc_leg_m01
-space_costume = ge_male7_head, pl_male3_peasant_body, prop_neuralnet_a
-visit = 16
+{dock_props}
 
 [Object]
 nickname = tau29_03_center

@@ -8,15 +8,7 @@ nickname = om7_03
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = space_police01
-base = om7_03_base
-dock_with = om7_03_base
-loadout = ku_space_police01
-behavior = NOTHING
-reputation = ku_grp
-ids_name = 203762
-ids_info = 065677
-voice = atc_leg_m01
-space_costume = ku_captain_head, ku_male_guard_body, prop_hat_male_pirate_a
+{dock_props}
 
 [Object]
 nickname = om7_03_asteroid

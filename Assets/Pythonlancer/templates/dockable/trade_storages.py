@@ -8,14 +8,7 @@ nickname = ku_hkd_05
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = space_police01
-ids_name = 203760
-ids_info = 067023
-reputation = ku_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = pl_male8_head, ku_commtrader_body, prop_neuralnet_e_right
-difficulty_level = 11
-pilot = pilot_solar_hard
+{dock_props}
 
 [Object]
 nickname = ku_hkd_05_xpanel01
@@ -211,13 +204,10 @@ class HonshuStorage(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'ku_hns_05'
     TEMPLATE = '''[Object]
 nickname = ku_hns_05
-ids_name = 203783
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = space_police01
-ids_info = 067023
-reputation = kc_grp
-behavior = NOTHING
+{dock_props}
 
 [Object]
 nickname = ku_hns_05_shipyard
@@ -327,21 +317,13 @@ parent = ku_hns_05
 
 
 class TekagiStorage(SpaceObjectTemplate):
-    SPACE_OBJECT_NAME = 'ku_hkd_05'
+    SPACE_OBJECT_NAME = 'ku_tgk_02'
     TEMPLATE = '''[Object]
 nickname = ku_tgk_02
-ids_name = 203773
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = space_police01
-ids_info = 065686
-visit = 16
-base = ku_tgk_02_base
-dock_with = ku_tgk_02_base
-reputation = ku_grp
-behavior = NOTHING
-voice = atc_leg_f01
-space_costume = ku_newscaster_head_gen, pl_female1_peasant_body, prop_hat_female_miner_visor
+{dock_props}
 
 [Object]
 nickname = ku_tgk_02_ind01
@@ -531,17 +513,10 @@ class LibertyLongStorage(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'tau31_03'
     TEMPLATE = '''[Object]
 nickname = tau31_03
-ids_name = 203685
 pos = 0, 0, 0
 rotate = 0, -90, 0
 archetype = space_police01_front_dock
-ids_info = 065602
-base = tau31_03_base
-dock_with = tau31_03_base
-reputation = li_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = pl_male6_head, li_commtrader_body, prop_neuralnet_a
+{dock_props}
 
 [Object]
 nickname = tau31_03_station_root
@@ -755,14 +730,7 @@ nickname = om15_04
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = space_police01
-reputation = rh_grp
-behavior = NOTHING
-voice = atc_leg_f01
-space_costume = rh_newscaster_head_gen, pl_female1_peasant_body, prop_hat_female_miner
-ids_name = 203648
-ids_info = 067023
-base = om15_04_base
-dock_with = om15_04_base
+{dock_props}
 
 [Object]
 nickname = om15_04_industrial01
@@ -815,16 +783,7 @@ nickname = li_mnh_07
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = space_police01
-base = li_mnh_07_base
-dock_with = li_mnh_07_base
-reputation = li_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = rh_alaric_head_hat, li_male_elite_body, prop_hat_male_li_elite_visor
-difficulty_level = 10
-pilot = pilot_solar_hardest
-ids_name = 203897
-ids_info = 1
+{dock_props}
 
 [Object]
 nickname = li_mnh_07_shipyard01

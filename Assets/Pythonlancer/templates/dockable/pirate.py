@@ -5,20 +5,10 @@ class PirateBaseBizmark(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'rh_biz_06'
     TEMPLATE = '''[Object]
 nickname = rh_biz_06
-ids_name = 203885
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = space_police01
-ids_info = 1
-base = rh_biz_06_base
-dock_with = rh_biz_06_base
-reputation = rx_grp
-behavior = NOTHING
-voice = atc_leg_f01
-space_costume = rh_gruenwald_head_gen, pl_female2_journeyman_body
-difficulty_level = 5
-loadout = rh_space_police01
-pilot = pilot_solar_hardest
+{dock_props}
 
 [Object]
 nickname = rh_biz_06_industrial01
@@ -152,18 +142,10 @@ class PirateBaseHokkaido(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'ku_hkd_06'
     TEMPLATE = '''[Object]
 nickname = ku_hkd_06
-ids_name = 208624
 pos = 0, 0, 0
 rotate = 0, -90, 0
 archetype = space_police02
-ids_info = 067024
-base = ku_hkd_06_base
-dock_with = ku_hkd_06_base
-visit = 16
-reputation = kx_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = ge_male2_head, pi_pirate2_body, prop_neuralnet_d
+{dock_props}
 
 [Object]
 nickname = ku_hkd_06_ind01
@@ -283,19 +265,10 @@ class LibertyRombicPirateBase(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'sig17_04'
     TEMPLATE = '''[Object]
 nickname = sig17_04
-ids_name = 203895
 pos = 0, 0, 0
 rotate = 0, -90, 0
 archetype = space_port_dmg
-ids_info = 1
-base = sig17_04_base
-dock_with = sig17_04_base
-reputation = pi_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = pi_pirate1_head, pi_pirate6_body, prop_neuralnet_f_right
-difficulty_level = 10
-pilot = pilot_solar_hardest
+{dock_props}
 
 [Object]
 nickname = sig17_04_industrial01
@@ -397,14 +370,7 @@ nickname = rh_stut_06
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = space_police01
-ids_name = 203881
-ids_info = 1
-base = rh_stut_06_base
-dock_with = rh_stut_06_base
-reputation = rx_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = rh_sales_head, pi_pirate1_body
+{dock_props}
 
 [Object]
 nickname = rh_stut_06_industrial01
@@ -548,15 +514,7 @@ nickname = br_cam_05
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = space_police01
-base = br_cam_05_base
-dock_with = br_cam_05_base
-behavior = NOTHING
-reputation = bx_grp 
-visit = 16
-voice = atc_leg_m01
-space_costume = pl_male1_head, pl_male3_journeyman_body, prop_hat_male_pirate_b
-ids_name = 208619
-ids_info = 065643
+{dock_props}
 
 [Object]
 nickname = br_cam_05_ind01
@@ -644,14 +602,7 @@ nickname = li_mnh_06
 pos = 0, 0, 0
 rotate = 0, 180, 0
 archetype = space_police02
-base = li_mnh_06_base
-dock_with = li_mnh_06_base
-voice = atc_leg_m01
-space_costume = pi_pirate3_head, pi_pirate2_body, prop_neuralnet_a
-ids_name = 203681
-ids_info = 065591
-reputation = lx_grp
-behavior = NOTHING
+{dock_props}
 
 [Object]
 nickname = li_mnh_06_indA01
@@ -830,17 +781,7 @@ nickname = li_for_04
 pos = 0, 0, 0
 rotate = 90, 0, 0
 archetype = space_police02
-base = li_for_04_base
-dock_with = li_for_04_base
-reputation = lx_grp
-behavior = NOTHING
-difficulty_level = 10
-;loadout = prison_li
-pilot = pilot_solar_hardest
-ids_name = 203669
-ids_info = 065588
-voice = atc_leg_m01
-space_costume = pi_pirate2_head, pi_pirate6_body, prop_neuralnet_f_right, prop_neuralnet_f_up
+{dock_props}
 
 [Object]
 nickname = li_for_04_cntrl_twr01
@@ -1124,15 +1065,7 @@ nickname = li_col_07
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = space_port_dmg
-reputation = lx_grp ;junk_grp
-behavior = NOTHING
-base = li_col_07_base
-dock_with = li_col_07_base
-ids_name = 203694
-ids_info = 065611
-voice = atc_leg_m01
-space_costume = pi_pirate1_head, pi_pirate4_body, prop_neuralnet_c_right
-
+{dock_props}
 
 [Object]
 nickname = li_col_07_ind01
@@ -1234,14 +1167,7 @@ nickname = li_cal_08
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = space_police01
-base = li_cal_08_base
-dock_with = li_cal_08_base
-voice = atc_leg_m01
-space_costume = pi_pirate3_head, pi_pirate2_body, prop_neuralnet_a
-ids_name = 203890
-ids_info = 1
-reputation = pi_grp
-behavior = NOTHING
+{dock_props}
 
 [Object]
 nickname = li_cal_08_industrial01

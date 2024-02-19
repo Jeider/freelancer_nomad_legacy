@@ -8,26 +8,14 @@ nickname = br_avl_06
 pos = 0, -750, 0
 rotate = 0, 90, 0
 archetype = bristol_core
-base = br_avl_06_base
-ids_name = 203735
-ids_info = 065649
-reputation = br_grp
+{root_props}
 
 [Object]
 nickname = br_avl_06_dock
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = space_police01
-base = br_avl_06_base
-dock_with = br_avl_06_base
-ids_name = 196722
-ids_info = 065739
-reputation = br_grp
-behavior = NOTHING
-pilot = pilot_solar_hardest
-voice = atc_leg_m01
-space_costume = br_brighton_head, br_brighton_body, prop_neuralnet_a_combo
-difficulty_level = 5 ;12
+{dock_props}
 
 [Object]
 nickname = br_avl_06_TOP_habitat01

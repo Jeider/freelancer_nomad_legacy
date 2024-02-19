@@ -1,6 +1,7 @@
 from templates.space_object_template import SpaceObjectTemplate
 
 
+# NEED A DOCK?
 class AsfHQ(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'no_ord_01'
     TEMPLATE = '''[Object]
@@ -9,6 +10,7 @@ pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = hidden_connect
 loadout = orderbase_core_fx
+{root_props}
 
 [Object]
 nickname = no_ord_01_FRONT_dock01

@@ -5,21 +5,10 @@ class ColumbiaProduction(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'li_col_03'
     TEMPLATE = '''[Object]
 nickname = li_col_03
-ids_name = 203691
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = space_police02
-ids_info = 067019
-base = li_col_03_base
-dock_with = li_col_03_base
-visit = 16
-reputation = li_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = ge_male3_head, pl_male3_peasant_body, prop_hat_male_miner
-difficulty_level = 12
-;loadout = mplatform_li
-pilot = pilot_solar_hardest
+{dock_props}
 
 [Object]
 nickname = li_col_03_airlock01

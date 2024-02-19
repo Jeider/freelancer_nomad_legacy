@@ -8,14 +8,7 @@ nickname = omicron1_01
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = space_police01
-reputation = sl_grp
-behavior = NOTHING
-base = om1_01_base
-dock_with = om1_01_base
-ids_name = 203871
-ids_info = 065784
-voice = atc_leg_m01
-space_costume = li_captain_head, sh_male2_body, prop_hat_male_li_grd_visor, prop_neuralnet_d
+{dock_props}
 
 [Object]
 nickname = omicron1_01_ind01
@@ -321,7 +314,7 @@ nickname = omicron1_02
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = space_shipping01
-parent = omicron1_02
+{dock_props}
 
 [Object]
 nickname = omicron1_02_ind01
@@ -562,8 +555,7 @@ nickname = omicron1_02
 pos = 0, 0, 0
 rotate = -2, 0, 0
 archetype = space_control_tower_root
-ids_name = 203870
-ids_info = 065783
+{dock_props}
 
 [Object]
 nickname = omicron1_02_ind01

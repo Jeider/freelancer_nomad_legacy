@@ -26,7 +26,7 @@ class SpaceObjectTemplate(object):
         self.instance = self.template
         self.last_nickname = ''
 
-    def get_instance(self, new_space_object_name=None, move_to=None):
+    def get_instance(self, dock_props='', root_props='', new_space_object_name=None, move_to=None):
         replaces = []
 
         if new_space_object_name:
@@ -34,6 +34,8 @@ class SpaceObjectTemplate(object):
 
         if len(replaces):
             self.apply_replaces(replaces)
+
+        self.apply_props(dock_props, root_props)
 
         if move_to:
             self.move_position(move_to)
@@ -43,6 +45,9 @@ class SpaceObjectTemplate(object):
     def apply_replaces(self, replaces):
         for replace_from, replace_to in replaces:
             self.instance = self.instance.replace(replace_from, replace_to)
+
+    def apply_props(self, dock_props, root_props):
+        self.instance = self.instance.format(dock_props=dock_props, root_props=root_props)
 
     def move_position(self, move_to):
         def prepare_pos(pos_val):

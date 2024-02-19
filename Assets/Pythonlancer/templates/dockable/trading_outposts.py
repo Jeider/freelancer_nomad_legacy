@@ -5,20 +5,10 @@ class LibertyTradingOutpost(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'sig17_01'
     TEMPLATE = '''[Object]
 nickname = sig17_01
-ids_name = 203671
 pos = 0, 0, 0
 rotate = 0, -90, 0
 archetype = outpost_front_dock
-ids_info = 065590
-dock_with = sig17_01_base
-base = sig17_01_base
-reputation = li_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = li_sales_head, li_commtrader_body, prop_neuralnet_e
-difficulty_level = 12
-loadout = li_big_outpost
-pilot = pilot_solar_hardest
+{dock_props}
 
 [Object]
 nickname = sig17_01_door01
@@ -230,20 +220,10 @@ class RheinlandTradingOutpost(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'rh_biz_02'
     TEMPLATE = '''[Object]
 nickname = rh_biz_02
-ids_name = 203612
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = outpost
-ids_info = 065548
-dock_with = rh_biz_02_base
-base = rh_biz_02_base
-reputation = rh_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = rh_sales_head, rh_commtrader_body, prop_neuralnet_e_right
-difficulty_level = 5 ;2
-loadout = rh_big_outpost
-pilot = pilot_solar_hardest
+{dock_props}
 
 [Object]
 nickname = rh_biz_02_ADD_industrial01

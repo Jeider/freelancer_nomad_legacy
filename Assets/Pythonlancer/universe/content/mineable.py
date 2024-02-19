@@ -46,7 +46,7 @@ class FieldBox(object):
 
     def get_position(self, x_adjust=0, y_adjust=0, z_adjust=0):
         center_x = self.left_x + self.center_append + random.randint(-abs(self.drift_x), self.drift_x)
-        center_y = 0 + self.center_append + random.randint(-abs(self.drift_y), self.drift_y)
+        center_y = 0 + random.randint(-abs(self.drift_y), self.drift_y)
         center_z = self.top_z + self.center_append + random.randint(-abs(self.drift_z), self.drift_z)
 
         return (center_x + x_adjust, center_y + y_adjust, center_z + z_adjust)
@@ -137,28 +137,28 @@ class RewardProps(object):
 class AsteroidRewardPropsLow(RewardProps):
     REWARD_TYPE = MINING_REWARD_LOW
     MIN = 1
-    MAX = 3
+    MAX = 2
     LOADOUTS_COUNT = 5
 
 
 class AsteroidRewardPropsMedium(RewardProps):
     REWARD_TYPE = MINING_REWARD_MEDIUM
-    MIN = 5
-    MAX = 10
+    MIN = 2
+    MAX = 4
     LOADOUTS_COUNT = 5
 
 
 class AsteroidRewardPropsHigh(RewardProps):
     REWARD_TYPE = MINING_REWARD_HIGH
-    MIN = 10
-    MAX = 20
+    MIN = 4
+    MAX = 8
     LOADOUTS_COUNT = 5
 
 
 class AsteroidRewardPropsUltra(RewardProps):
     REWARD_TYPE = MINING_REWARD_ULTRA
-    MIN = 10
-    MAX = 25
+    MIN = 8
+    MAX = 10
     LOADOUTS_COUNT = 1
 
 
@@ -426,6 +426,67 @@ class DefaultSupriseRewardsGroup(InternalRewardsGroup):
     ULTRA_REWARD_PROP = GasCrystalRewardPropsUltra
 
 
+class AsteroidRewardsGroupLow(HardpointRewardsGroup):
+    REWARD_PROPS = [
+        AsteroidRewardPropsLow,
+    ]
+
+
+class AsteroidRewardsGroupMedium(HardpointRewardsGroup):
+    REWARD_PROPS = [
+        AsteroidRewardPropsLow,
+        AsteroidRewardPropsMedium,
+    ]
+
+
+class AsteroidRewardsGroupHigh(HardpointRewardsGroup):
+    REWARD_PROPS = [
+        AsteroidRewardPropsLow,
+        AsteroidRewardPropsMedium,
+        AsteroidRewardPropsHigh,
+    ]
+
+
+class AsteroidRewardsGroupUltra(HardpointRewardsGroup):
+    REWARD_PROPS = [
+        AsteroidRewardPropsLow,
+        AsteroidRewardPropsMedium,
+        AsteroidRewardPropsHigh,
+    ]
+    ULTRA_REWARD_PROP = AsteroidRewardPropsUltra
+
+
+class DefaultDebrisBoxRewardsGroupLow(InternalRewardsGroup):
+    REWARD_PROPS = [
+        DebrisBoxRewardPropsLow,
+    ]
+
+
+class DefaultDebrisBoxRewardsGroupMedium(InternalRewardsGroup):
+    REWARD_PROPS = [
+        DebrisBoxRewardPropsLow,
+        DebrisBoxRewardPropsMedium,
+    ]
+
+
+class DefaultDebrisBoxRewardsGroupHigh(InternalRewardsGroup):
+    REWARD_PROPS = [
+        DebrisBoxRewardPropsLow,
+        DebrisBoxRewardPropsMedium,
+        DebrisBoxRewardPropsHigh,
+    ]
+
+
+class DefaultDebrisBoxRewardsGroupUltra(InternalRewardsGroup):
+    REWARD_PROPS = [
+        DebrisBoxRewardPropsLow,
+        DebrisBoxRewardPropsMedium,
+        DebrisBoxRewardPropsHigh,
+        DebrisBoxRewardPropsUltraAdditional,
+    ]
+    ULTRA_REWARD_PROP = DebrisBoxRewardPropsUltra
+
+
 class RewardField(Mineable):
     FIELD_CLASS = None
     REWARDS_GROUP_CLASS = None
@@ -504,16 +565,23 @@ class RewardField(Mineable):
     def create_nickname(self, index):
         return self.NICKNAME_TEMPLATE.format(dummy_name=self.DUMMY_NAME, solar_alias=self.rewards_group.solar.ALIAS, index=index)
 
+    def get_reward_field_name(self):
+        if self.FIELD_NAME:
+            return self.FIELD_NAME
+        else:
+            return '{system_name}_field_{alias}_test'.format(system_name=self.system.NAME, alias=self.get_full_alias())
+
     def get_system_content(self):
         real_object = SpaceObjectTemplate(
             template=self.dummy_system_object_string,
             space_object_name=self.DUMMY_NAME,
         )
 
-        return real_object.get_instance(new_space_object_name=self.FIELD_NAME, move_to=self.POS)
+        return real_object.get_instance(new_space_object_name=self.get_reward_field_name(), move_to=self.get_position())
 
 
 class AsteroidRewardField(RewardField):
+    ALIAS = 'ast'
 
     SYSTEM_OBJECT_TEMPLATE = '''[Object]
 nickname = {nickname}
@@ -545,6 +613,7 @@ loadout = {loadout}'''
 
 
 class DebrisBoxRewardField(RewardField):
+    ALIAS = 'deb'
 
     SYSTEM_OBJECT_TEMPLATE = '''[Object]
 nickname = {nickname}_box01
@@ -666,6 +735,8 @@ loadout = {loadout_8}'''
 
 
 class GasCrystalRewardField(RewardField):
+    ALIAS = 'crystal'
+
     def get_asteroid_archetype_by_reward_type(self, reward_type):
         if reward_type == MINING_REWARD_LOW: 
             return self.rewards_group.solar.get_default_archetype()
@@ -700,6 +771,7 @@ class GasCrystalRewardField(RewardField):
 
 
 class SupriseRewardField(RewardField):
+    ALIAS = 'suprise'
 
     SYSTEM_OBJECT_TEMPLATE = '''[Object]
 nickname = {nickname}

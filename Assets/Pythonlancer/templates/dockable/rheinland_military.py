@@ -1,53 +1,29 @@
 from templates.space_object_template import SpaceObjectTemplate
 
 
+# NEED TO REMOVE SECOND DOCK?
 class RheinlandMilitary(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'rh_biz_05'
     TEMPLATE = '''[Object]
 nickname = rh_biz_05
-ids_name = 203614
 pos = 0, 0, 0
 rotate = 0, 180, 0
 archetype = keln_core
-ids_info = 065550
-base = rh_biz_05_base
-reputation = rh_grp
-behavior = NOTHING
+{root_props}
 
 [Object]
 nickname = rh_biz_05_dock01
 pos = 0, 0, -620
 rotate = 0, 180, 0
 archetype = space_police01_front_dock
-base = rh_biz_05_base
-dock_with = rh_biz_05_base
-reputation = rh_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = rh_reichman_head, rh_reichman_body, prop_neuralnet_a
-difficulty_level = 5
-loadout = rh_space_police01
-pilot = pilot_solar_hardest
-ids_name = 196722
-ids_info = 065739
+{dock_props}
 
 [Object]
 nickname = rh_biz_05_dock02
 pos = 0, 0, 620
 rotate = 0, 0, 0
 archetype = space_police01_front_dock
-base = rh_biz_05_base
-dock_with = rh_biz_05_base
-reputation = rh_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = rh_reichman_head, rh_reichman_body, prop_neuralnet_a
-difficulty_level = 5
-loadout = rh_space_police01
-pilot = pilot_solar_hardest
-ids_name = 196722
-ids_info = 065739
-
+{dock_props}
 
 [Object]
 nickname = rh_biz_05_indA01

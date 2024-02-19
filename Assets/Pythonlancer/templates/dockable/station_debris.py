@@ -14,10 +14,7 @@ nickname = ku_tgk_06
 pos = 0, 0, 0
 rotate = 90, 0, 0
 archetype = space_industrial01_station_root
-ids_name = 203774
-ids_info = 065687
-behavior = NOTHING
-faction = fc_uk_grp
+{root_props}
 
 [Object]
 nickname = ku_tgk_06_SHIELDGEN_gird01
@@ -374,10 +371,7 @@ nickname = rh_mnh_05
 pos = 0, 0, 0
 rotate = -90, 45, 5
 archetype = space_industrial_dmg_root
-ids_name = 203888
-ids_info = 065694
-behavior = NOTHING
-;reputation = fc_uk_grp
+{root_props}
 
 [Object]
 nickname = rh_mnh_05_dockA
@@ -623,13 +617,10 @@ class MunchenCivilianStationDebris(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'rh_mnh_06'
     TEMPLATE = '''[Object]
 nickname = rh_mnh_06
-ids_name = 203781
 pos = 0, 0, 0
 rotate = 90, 0, 0
 archetype = space_industrial01a_station_root
-ids_info = 1
-;reputation = fc_uk_grp
-behavior = NOTHING
+{root_props}
 
 [Object]
 nickname = rh_mnh_06_industrial01
@@ -889,12 +880,10 @@ class OmegaDanzigDebris(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'om15_02'
     TEMPLATE = '''[Object]
 nickname = om15_02
-ids_name = 203644
 pos = 0, 0, 0
 rotate = 7, 3, -5
 archetype = space_control_tower_root
-ids_info = 065566
-behavior = NOTHING
+{root_props}
 
 [Object]
 nickname = om15_02_bottom
@@ -1108,10 +1097,7 @@ nickname = rh_stut_07
 pos = 0, 0, 0
 rotate = 30, 0, 0
 archetype = space_police_dmg_visible
-ids_name = 203882
-ids_info = 1
-behavior = NOTHING
-ring = Zone_rh_stut_RING_FX_2, solar/asteroids_mod/debris/debris_dust.ini
+{root_props}
 
 [Object]
 nickname = rh_stut_07_industrial01
@@ -1164,9 +1150,7 @@ nickname = li_for_07
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = space_police_dmg_visible
-ids_name = 203894
-ids_info = 1
-behavior = NOTHING
+{root_props}
 
 [Object]
 nickname = li_for_07_beam01
@@ -1226,12 +1210,7 @@ nickname = li_col_05
 pos = 0, 0, 0
 rotate = 0, -90, 0
 archetype = space_police_dmg_clickable
-ids_name = 208614
-ids_info = 067006
-base = li_col_05_base
-dock_with = li_col_05_base
-reputation = fc_uk_grp
-behavior = NOTHING
+{root_props}
 
 [Object]
 nickname = li_col_05_industrial_A01
@@ -1522,9 +1501,7 @@ nickname = li_cal_10
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = space_industriala_base_root
-ids_name = 203892
-ids_info = 1
-behavior = NOTHING
+{root_props}
 
 [Object]
 nickname = li_cal_10_ctrl_twr01

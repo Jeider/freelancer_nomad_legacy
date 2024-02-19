@@ -84,18 +84,24 @@ class AsteroidOmega15(AsteroidSolar, MineableSolar):
         return self.DEFAULT_ARCHETYPE
 
     def get_medium_reward_archetype(self):
+        return self.DEFAULT_ARCHETYPE # TEMP
         return self.ARCHETYPE_REWARD_MEDIUM
 
     def get_high_reward_archetype(self):
+        return self.DEFAULT_ARCHETYPE # TEMP
         return self.ARCHETYPE_REWARD_HIGH
 
     def get_ultra_reward_archetype(self):
+        return self.DEFAULT_ARCHETYPE # TEMP
         return self.ARCHETYPE_REWARD_ULTRA
 
 
 
+class AsteroidCuracao(AsteroidOmega15):
+    pass
 
-# AsteroidTagaki
+
+# AsteroidTekagi
 # AsteroidTau37
 # AsteroidCalifornia
 # AsteroidCuracao

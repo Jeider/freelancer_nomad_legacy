@@ -1,6 +1,7 @@
 from templates.space_object_template import SpaceObjectTemplate
 
 
+# NEED TO ADD DOCK
 class GmgHQAlive(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'ku_hkd_04'
     TEMPLATE = '''[Object]
@@ -8,6 +9,7 @@ nickname = ku_hkd_04
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = space_industrial02a
+{dock_props}
 
 [Object]
 nickname = ku_hkd_04_ind01
@@ -253,13 +255,10 @@ class GmgHQDestroyed(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'ku_hkd_04'
     TEMPLATE = '''[Object]
 nickname = ku_hkd_04
-ids_name = 203759
 pos = 0, 0, 0
 rotate = -10, 0, 5
 archetype = space_industrial02a_station_root
-ids_info = 065674
-reputation = fc_uk_grp
-behavior = NOTHING
+{root_props}
 
 [Object]
 nickname = ku_hkd_04_ind01

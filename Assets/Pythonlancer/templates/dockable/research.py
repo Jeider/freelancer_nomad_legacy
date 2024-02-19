@@ -5,20 +5,10 @@ class KyushuResearch(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'ku_ksu_04'
     TEMPLATE = '''[Object]
 nickname = ku_ksu_04
-ids_name = 203744
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = space_police02
-ids_info = 065659
-base = ku_ksu_04_base
-dock_with = ku_ksu_04_base
-visit = 16
-reputation = ku_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = sc_scientist2_head, sc_scientist3_body, prop_neuralnet_d
-difficulty_level = 10
-pilot = pilot_solar_hardest
+{dock_props}
 
 [Object]
 nickname = ku_ksu_04_lightpanel01
@@ -241,14 +231,7 @@ nickname = sig42_02
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = space_police01
-ids_name = 203698
-ids_info = 065615
-behavior = NOTHING
-base = sig42_02_base
-dock_with = sig42_02_base
-reputation = kc_grp
-voice = atc_leg_f01
-space_costume = pl_female3_head, sc_female1_body, prop_neuralnet_d
+{dock_props}
 
 [Object]
 nickname = sig42_02_girderA01
@@ -1010,20 +993,10 @@ class RheinlandResearch(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'rh_biz_04'
     TEMPLATE = '''[Object]
 nickname = rh_biz_04
-ids_name = 203613
 pos = 0, 0, 0
 rotate = 290, 20, -3
 archetype = space_police01_front_dock
-ids_info = 065549
-base = rh_biz_04_base
-dock_with = rh_biz_04_base
-reputation = rh_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = sc_scientist2_head, sc_scientist3_body, prop_neuralnet_d_combo
-difficulty_level = 5
-loadout = rh_space_police01
-pilot = pilot_solar_hardest
+{dock_props}
 
 [Object]
 nickname = rh_biz_04_station_root01
@@ -1084,17 +1057,7 @@ nickname = li_for_05
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = space_police01
-base = li_for_05_base
-dock_with = li_for_05_base
-reputation = li_grp
-behavior = NOTHING
-difficulty_level = 10
-loadout = li_space_police01
-pilot = pilot_solar_hardest
-ids_name = 203668
-ids_info = 065587
-voice = atc_leg_m01
-space_costume = rh_deidrich_head, sc_scientist2_body, prop_neuralnet_a_right
+{dock_props}
 
 [Object]
 nickname = li_for_05_solar_plant

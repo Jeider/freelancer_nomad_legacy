@@ -5,32 +5,17 @@ class Constanta(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'sig22_02'
     TEMPLATE = '''[Object]
 nickname = sig22_02_dock
-ids_name = 196722
-ids_info = 065739
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = space_police01
-dock_with = sig22_02_Base
-base = sig22_02_Base
-reputation = edv_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = pl_male4_head, sh_male2_body, prop_neuralnet_b_right
-difficulty_level = 16
-;loadout = space_freeport01_li
-pilot = pilot_solar_hardest
+{dock_props}
 
 [Object]
 nickname = sig22_02
-ids_name = 203662
 pos = 0, 0, 950
 rotate = 0, -90, 0
 archetype = constanta_core
-ids_info = 065580
-dock_with = sig22_02_Base
-base = sig22_02_Base
-reputation = edv_grp
-behavior = NOTHING
+{root_props}
 
 ;ROOT
 

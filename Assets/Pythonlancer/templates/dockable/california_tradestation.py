@@ -5,19 +5,10 @@ class CaliforniaTradestation(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'li_cal_07'
     TEMPLATE = '''[Object]
 nickname = li_cal_07
-ids_name = 203889
 pos = 0, 0, 0
 rotate = 0, 180, 0
 archetype = space_police02_losangeles
-ids_info = 1
-base = li_cal_07_base
-dock_with = li_cal_07_base
-reputation = li_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = li_manhattan_bartender_head, li_manhattan_bartender_body, prop_neuralnet_e
-difficulty_level = 12
-pilot = pilot_solar_hardest
+{dock_props}
 
 [Object]
 nickname = li_cal_07_shipyard01

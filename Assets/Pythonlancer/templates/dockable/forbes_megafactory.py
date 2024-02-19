@@ -5,20 +5,10 @@ class ForbesMegafactory(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'li_for_02'
     TEMPLATE = '''[Object]
 nickname = li_for_02
-ids_name = 203665
 pos = 0, 0, 0
 rotate = 0, 180, 0
 archetype = prison_detroit
-ids_info = 065584
-base = li_for_02_base
-dock_with = li_for_02_base
-reputation = lc_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = rh_alaric_head, li_shipdealer_body, prop_neuralnet_e
-difficulty_level = 10
-loadout = prison_li_no_guns
-pilot = pilot_solar_hardest
+{dock_props}
 
 [Object]
 nickname = li_for_02_tube01

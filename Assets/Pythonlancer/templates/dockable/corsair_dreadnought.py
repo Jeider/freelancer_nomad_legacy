@@ -8,10 +8,7 @@ nickname = om2_02
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = sw_center_200_root
-ids_name = 203857
-ids_info = 065768
-reputation = co_grp
-behavior = NOTHING
+{root_props}
 
 [Object]
 nickname = om2_02_locked_dock_old_root
@@ -788,29 +785,14 @@ nickname = co_och_02
 pos = 550, 15, 280
 rotate = 0, 90, 0
 archetype = dread_core
-base = co_och_02_base
-reputation = co_grp
-behavior = NOTHING
-ids_name = 203823
-ids_info = 065732
+{root_props}
 
 [Object]
 nickname = co_och_02_dock
 pos = 0, 0, 0
 rotate = 0, 180, 0
 archetype = space_police01_front_dock
-dock_with = co_och_02_base
-base = co_och_02_base
-reputation = co_grp
-behavior = NOTHING
-visit = 0
-voice = atc_leg_m01
-space_costume = syd_head, pi_pirate5_body, prop_neuralnet_a_right
-difficulty_level = 13
-;loadout = co_base_rock_large01_pi_01
-pilot = pilot_solar_hardest
-ids_name = 196722
-ids_info = 065739
+{dock_props}
 
 [Object]
 nickname = co_och_02_FRONT_root01

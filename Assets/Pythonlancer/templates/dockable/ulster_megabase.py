@@ -8,26 +8,14 @@ nickname = br_uls_02
 pos = 0, -1415, 0
 rotate = 0, 0, 0
 archetype = ulster_largestation_core
-ids_name = 208620
-ids_info = 067015
-reputation = bx_grp
-behavior = NOTHING
-base = br_uls_02_base
+{root_props}
 
 [Object]
 nickname = br_uls_02_dock
 pos = 0, 0, 0
 rotate = 90, 0, 0
 archetype = space_police02_dock
-reputation = bx_grp
-behavior = NOTHING
-base = br_uls_02_base
-dock_with = br_uls_02_base
-visit = 16
-voice = atc_leg_f01
-space_costume = pl_female1_head, br_karina_body, prop_neuralnet_e_right
-ids_name = 196722
-ids_info = 065739
+{dock_props}
 
 [Object]
 nickname = br_uls_02_core

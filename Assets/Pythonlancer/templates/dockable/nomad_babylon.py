@@ -8,6 +8,7 @@ nickname = no_station_01
 pos = 0, 0, 0
 rotate = -90, 0, 0
 archetype = space_police02
+{dock_props}
 
 [Object]
 nickname = no_station_01_CORE_tube01

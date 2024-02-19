@@ -5,21 +5,10 @@ class AvalonPrison(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'br_avl_03'
     TEMPLATE = '''[Object]
 nickname = br_avl_03
-ids_name = 203733
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = prison
-ids_info = 065648
-dock_with = br_avl_03_Base
-base = br_avl_03_Base
-reputation = br_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = br_sales_head_hat, br_male_guard_body, prop_hat_male_br_elite
-difficulty_level = 5 ;12
-loadout = prison_br
-pilot = pilot_solar_hardest
-visit = 16
+{dock_props}
 
 [Object]
 nickname = br_avl_03_girder01
@@ -217,21 +206,10 @@ class HonshuPrison(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'ku_hns_03'
     TEMPLATE = '''[Object]
 nickname = ku_hns_03
-ids_name = 203767
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = space_police01_prison
-ids_info = 065682
-dock_with = ku_hns_03_base
-base = ku_hns_03_base
-reputation = ku_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = pl_male8_head_hat, ku_male_guard_body, prop_hat_male_ku_grd_visor
-difficulty_level = 10
-loadout = ku_space_police01
-pilot = pilot_solar_hardest
-visit = 16
+{dock_props}
 
 [Object]
 nickname = ku_hns_03_prison_root01
@@ -344,20 +322,10 @@ class BerlinPrison(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'rh_ber_02'
     TEMPLATE = '''[Object]
 nickname = rh_ber_02
-ids_name = 203630
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = space_police01_prison
-ids_info = 066627
-base = Rh_Ber_02_Base
-dock_with = Rh_Ber_02_Base
-visit = 16
-reputation = rh_grp
-behavior = NOTHING
-voice = atc_leg_F01
-space_costume = br_newscaster_head_gen_hat, rh_female_elite_body, prop_hat_female_rh_elite
-difficulty_level = 12
-pilot = pilot_solar_hardest
+{dock_props}
 
 [Object]
 nickname = rh_ber_02_prison
@@ -459,17 +427,7 @@ nickname = li_mnh_05
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = prison
-loadout = prison_li
-ids_name = 208615
-ids_info = 067009
-visit = 0
-base = li_mnh_05_base
-dock_with = li_mnh_05_base
-reputation = li_grp
-behavior = NOTHING
-difficulty_level = 6
-voice = atc_leg_m01
-space_costume = ge_male7_head, li_tilton_body, prop_hat_male_li_grd, prop_neuralnet_d
+{dock_props}
 
 [Object]
 nickname = li_mnh_05_indA01
@@ -726,21 +684,10 @@ class ColumbiaPrison(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'li_col_02'
     TEMPLATE = '''[Object]
 nickname = li_col_02
-ids_name = 203695
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = space_police01_prison
-ids_info = 065608
-dock_with = li_col_02_Base
-base = li_col_02_Base
-reputation = li_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = li_rockford_head, li_male_guard_body, prop_hat_male_li_elite_visor
-difficulty_level = 12
-loadout = li_space_police01
-pilot = pilot_solar_hardest
-visit = 16
+{dock_props}
 
 [Object]
 nickname = li_col_02_control_tower01

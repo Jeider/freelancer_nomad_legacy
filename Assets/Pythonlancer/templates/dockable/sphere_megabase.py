@@ -1,6 +1,7 @@
 from templates.space_object_template import SpaceObjectTemplate
 
 
+# NEED A DOCK
 class SphereMegabase(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'sph_base01'
     TEMPLATE = '''[Object]
@@ -8,6 +9,7 @@ nickname = sph_base01
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = space_industriala
+{root_props}
 
 [Object]
 nickname = sph_base01_control_twr01
@@ -1320,10 +1322,7 @@ nickname = sph_base01
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = hamburg_core
-reputation = rh_grp
-behavior = NOTHING
-ids_name = 216411
-ids_info = 067026
+{root_props}
 
 [Object]
 nickname = sph_base01_control_twr01

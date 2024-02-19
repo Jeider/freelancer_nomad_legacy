@@ -8,25 +8,14 @@ nickname = rh_stut_04
 pos = 0, -1650, 0
 rotate = 0, 0, 0
 archetype = manhaim_core
-base = rh_stut_04_base
-reputation = rc_grp
-behavior = NOTHING
-ids_name = 203620
-ids_info = 065558
+{root_props}
 
 [Object]
 nickname = rh_stut_04_dock
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = space_port_dmg_dock
-base = rh_stut_04_base
-dock_with = rh_stut_04_base
-reputation = rc_grp
-behavior = NOTHING
-ids_name = 196722
-ids_info = 065739
-voice = atc_leg_m01
-space_costume = rh_bartender_head, rh_shipdealer_body, prop_neuralnet_e
+{dock_props}
 
 ;RIGHT FACTORIES
 

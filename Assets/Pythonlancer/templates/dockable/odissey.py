@@ -8,31 +8,14 @@ nickname = tau4_04
 pos = 0, 0, -1560
 rotate = 0, 0, 0
 archetype = odissey_core
-parent = tau4_04
-;loadout = space_police01_ku
-ids_name = 203753
-ids_info = 065668
-base = tau4_04_base
-reputation = ku_grp
-behavior = NOTHING
+{root_props}
 
 [Object]
 nickname = tau4_04_dock
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = space_police01_front_dock
-;loadout = space_police01_ku
-ids_name = 196722
-ids_info = 065739
-dock_with = tau4_04_base
-base = tau4_04_base
-reputation = ku_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = pl_male4_head, pl_trent_body, prop_neuralnet_e_right
-difficulty_level = 12
-pilot = pilot_solar_hardest
-visit = 16
+{dock_props}
 
 [Object]
 nickname = tau4_04_D1_Sphere

@@ -1,13 +1,12 @@
 from universe.content.system_object import SystemObject
-from universe.content.main_objects import TradeConnection, JumpableObject, DockableObject, StaticObject
+from universe.content.main_objects import RawText, TradeConnection, JumpableObject, DockableObject, StaticObject
+from universe.content.zones import Zone, BaseAsteroidZone, NebulaZone
+from universe.content.asteroid_definition import AsteroidDefinition
 from universe.content.mineable import Mineable, RewardField, Field, RewardsGroup
+from universe.content import interior
 
 from universe.systems import br_wrw as br_wrw_objects
 from universe.systems import rh_ber as rh_ber_content
-
-
-
-
 
 from text.dividers import DIVIDER
 
@@ -15,13 +14,16 @@ from tools.tracks import Tracks
 from tools.system_template import SystemTemplateLoader
 
 
-TLR_DISTANCE = 3000
+TLR_DISTANCE = 7000
 
 
 class System(object):
     NAME = ''
     CONTENT = None
     TEMPLATE_NAME = None
+    ALLOW_SYNC = False
+
+    INTERIOR_DEFAULT_SUBFOLDER = None
 
     TRACKS_SYSTEM_TEMPLATE = '''[Settings]
 system = {system_name}
@@ -49,16 +51,20 @@ distance = {tlr_distance}
         self.rewards_groups_db = {}
         self.loadouts = []
 
+        self.asteroid_definitions = []
+        self.asteroid_definitions_db = {}
+
+        self.static_zones = []
+        self.asteroid_zones = []
+        self.nebula_zones = []
+        self.dynamic_zones = []
+
         self.trade_connections = []
 
-        # self.jumps = []
-        self.dockables = []
+        self.raw_texts = []
         self.statics_list = []
         self.statics_db = {}
         self.mineable = []
-        # self.pirate_assaults = []
-        # self.hunter_patrols = []
-        # self.zones = []
 
         if self.CONTENT is not None:
             self.init_content()
@@ -68,6 +74,10 @@ distance = {tlr_distance}
 
         for item in self.CONTENT.__dict__.values():
             if not isinstance(item, type):
+                continue
+
+            if issubclass(item, AsteroidDefinition) and not item.ABSTRACT:
+                self.add_asteroid_definition(item)
                 continue
 
             if not issubclass(item, RewardsGroup) and not issubclass(item, SystemObject):
@@ -88,22 +98,41 @@ distance = {tlr_distance}
             if item in (TradeConnection, DockableObject, TradeConnection):
                 continue
 
-            if issubclass(item, StaticObject):
+            if issubclass(item, RawText):
+                self.add_raw_text(item)
+            elif issubclass(item, StaticObject):
                 self.add_static_object(item)
             elif issubclass(item, Mineable):
                 self.add_mineable(item)
             elif issubclass(item, TradeConnection):
                 self.add_trade_connection(item)
+            elif issubclass(item, Zone):
+                self.add_static_zone(item)
 
         self.process_reward_groups()
 
         system_content = []
+
+        for raw_text in self.raw_texts:
+            system_content.append(raw_text.get_system_content())
+
+        for asteroid_zone in self.asteroid_zones:
+            system_content.append(asteroid_zone.get_asteroid_definition_header())
+
+        for nebula_zone in self.nebula_zones:
+            system_content.append(nebula_zone.get_nebula_definition_header())
 
         for app_obj in self.get_appearable_objects():
             system_content.append(app_obj.get_system_content())
 
         for mineable_obj in self.get_mineable_objects():
             system_content.append(mineable_obj.get_system_content())
+
+        for static_zone in self.static_zones:
+            system_content.append(static_zone.get_system_content())
+
+        for dynamic_zone in self.dynamic_zones:
+            system_content.append(dynamic_zone.get_system_content())
 
         if len(self.trade_connections) > 0:
             self.generate_tradelanes()
@@ -114,21 +143,69 @@ distance = {tlr_distance}
 
         self.generate_patrols()
 
-        for patrol in self.get_patrols_list():
-            system_content.append(patrol.get_system_content())
+        # for patrol in self.get_patrols_list():
+        #     system_content.append(patrol.get_system_content())
 
         self.system_content_str = DIVIDER.join(system_content)
 
     def add_trade_connection(self, item):
         self.trade_connections.append(item(self))
 
+    def add_raw_text(self, item):
+        self.raw_texts.append(item(self))
+
     def add_static_object(self, item):
         static = item(self)
         self.statics_list.append(static)
         self.statics_db[static.get_full_alias()] = static
+        exclusion_zone_name = static.get_ast_exclusion_zone_name()
+        for ast_zone in static.ASTEROID_ZONES:
+            self.asteroid_definitions_db[ast_zone.ASTEROID_DEFINITION_CLASS.NAME].add_exclusion(exclusion_zone_name)
+        self.dynamic_zones.extend(static.get_dynamic_zones())
 
-    def add_mineable(self):
+    def get_static_by_class(self, item_class):
+        return self.statics_db[item_class.get_full_alias()]
+
+    def add_mineable(self, item):
         self.mineable.append(item(self))
+
+    def add_static_zone(self, item):
+        zone = item(self)
+        if issubclass(item, BaseAsteroidZone):
+            self.asteroid_zones.append(zone)
+        elif issubclass(item, NebulaZone):
+            self.nebula_zones.append(zone)
+        self.static_zones.append(zone)
+
+    def add_asteroid_definition(self, item):
+        definition = item(self)
+        self.asteroid_definitions.append(definition)
+        self.asteroid_definitions_db[definition.NAME] = definition
+
+    def get_dockable_objects(self):
+        return [static for static in self.statics_list if issubclass(static.__class__, DockableObject)]
+
+    def get_interior_definitions(self):
+        definitions = []
+
+        for static in self.get_dockable_objects():
+            if static.INTERIOR_CLASS.CUSTOM_INTERIOR_FILE is True:
+                continue
+
+            definitions.append(static.get_interior_definition())
+
+        return definitions
+
+    def get_interior_files(self):
+        interiors = {}
+
+        for static in self.get_dockable_objects():
+            if static.INTERIOR_CLASS.CUSTOM_INTERIOR_FILE is True:
+                continue
+
+            interiors[static.get_interior_file_name()] = static.get_interior_content()
+
+        return interiors
 
     def process_template(self):
         if self.TEMPLATE_NAME is None:
@@ -223,11 +300,6 @@ distance = {tlr_distance}
 
 
 
-    # def get_path_creation_request(self):
-    #     pass
-
-
-
 class BretoniaSystem(object):
 
     FACTION_CODE = None
@@ -242,13 +314,12 @@ class BretoniaSystem(object):
 class RheinlandSystem(object):
 
     FACTION_CODE = None
+    INTERIOR_DEFAULT_SUBFOLDER = interior.INTERIOR_FOLDER_RH
 
     def get_faction(self):
         if self.FACTION_CODE is None:
             raise Exception('unknown faction for system %s' % self.NAME)
         return self.FACTION_CODE
-
-
 
 
 class rh_mnh(System):
@@ -264,10 +335,13 @@ class rh_stut(System):
 
 
 class rh_ber(RheinlandSystem, System):
-    NAME = 'Rh_ber'
+    NAME = 'rh_ber'
     TEMPLATE_NAME = 'rh_ber'
     FACTION_CODE = 'br_grp'
     CONTENT = rh_ber_content
+
+    SYSTEM_FOLDER = 'RH_BERLIN'
+    ALLOW_SYNC = True
 
 class sig8(System):
     NAME = 'sig8'

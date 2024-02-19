@@ -5,18 +5,10 @@ class AlgBaseHokkaido(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'ku_hkd_07'
     TEMPLATE = '''[Object]
 nickname = ku_hkd_07
-ids_name = 208625
 pos = 0, 0, 0
 rotate = 90, 0, -90
 archetype = space_shipping01
-ids_info = 067025
-base = ku_hkd_07_base
-dock_with = ku_hkd_07_base
-visit = 16
-reputation = ku_grp
-behavior = NOTHING
-voice = atc_leg_f01
-space_costume = ku_tashi_head, pl_female1_peasant_body, prop_neuralnet_a
+{dock_props}
 
 [Object]
 nickname = ku_hkd_07_tube01
@@ -435,14 +427,7 @@ nickname = rh_ber_07
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = space_police01
-base = rh_ber_07_base
-dock_with = rh_ber_07_base
-ids_name = 203883
-ids_info = 1
-reputation = rh_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = rh_captain_head, rh_male_guard_body, prop_hat_male_rh_grd_visor, prop_neuralnet_b_right
+{dock_props}
 
 [Object]
 nickname = rh_ber_07_station_root

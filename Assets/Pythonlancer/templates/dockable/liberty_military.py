@@ -5,21 +5,10 @@ class LibertyMilitary(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'li_col_06'
     TEMPLATE = '''[Object]
 nickname = li_col_06
-ids_name = 203686
 pos = 0, 0, 0
 rotate = 0, 180, 0
 archetype = space_police01_columbia
-ids_info = 065603
-base = li_col_06_Base
-dock_with = li_col_06_Base
-visit = 16
-reputation = li_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = li_scrote_head, li_scrote_body, prop_neuralnet_b
-difficulty_level = 12
-loadout = li_space_police01
-pilot = pilot_solar_hardest
+{dock_props}
 
 [Object]
 nickname = li_col_06_CORE_Sphere

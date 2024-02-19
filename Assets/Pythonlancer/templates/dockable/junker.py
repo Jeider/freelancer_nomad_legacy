@@ -5,21 +5,10 @@ class HonshuJunker(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'ku_hns_04'
     TEMPLATE = '''[Object]
 nickname = ku_hns_04
-ids_name = 203769
 pos = 0, 0, 0
 rotate = 0, 180, 0
 archetype = space_police01
-ids_info = 065684
-base = ku_hns_04_base
-dock_with = ku_hns_04_base
-visit = 16
-reputation = kx_grp
-behavior = NOTHING
-voice = atc_leg_f01
-space_costume = ku_kym_head_gen, pl_female2_journeyman_body, prop_neuralnet_f
-difficulty_level = 10
-loadout = depot_ku
-pilot = pilot_solar_hardest
+{dock_props}
 
 [Object]
 nickname = ku_hns_04_industrial01
@@ -132,19 +121,10 @@ class SigmaEightJunker(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'sig8_02'
     TEMPLATE = '''[Object]
 nickname = sig8_02
-ids_name = 203636
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = space_port_dmg_production
-ids_info = 066632
-base = sig8_02_Base
-dock_with = sig8_02_Base
-reputation = junk_grp
-behavior = NOTHING
-difficulty_level = 12
-loadout = space_port_junkers_sig8
-voice = atc_leg_m01
-space_costume = sh_male3_head, pi_pirate6_body, prop_neuralnet_b_combo
+{dock_props}
 
 [Object]
 nickname = sig8_02_space_girder01
@@ -257,20 +237,10 @@ class StuttgartJunker(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'rh_stut_05'
     TEMPLATE = '''[Object]
 nickname = rh_stut_05
-ids_name = 203618
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = space_port_dmg_front_dock
-ids_info = 065557
-base = rh_stut_05_base
-dock_with = rh_stut_05_base
-reputation = junk_grp
-behavior = NOTHING
-difficulty_level = 12
-loadout = space_port_junkers_sig8
-voice = atc_leg_m01
-space_costume = sh_male4_head, pi_pirate1_body, prop_neuralnet_a_combo
-ring = Zone_rh_stut_RING_FX_1, solar/asteroids_mod/debris/debris_dust.ini
+{dock_props}
 
 [Object]
 nickname = rh_stut_05_ind01
@@ -414,14 +384,7 @@ nickname = rh_ber_08
 pos = 0, 0, 0
 rotate = 0, 180, 0
 archetype = space_port_dmg_front_dock
-base = Rh_Ber_08_Base
-dock_with = Rh_Ber_08_Base
-ids_name = 203884
-ids_info = 1
-reputation = junk_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = ge_male1_head, pi_pirate4_body
+{dock_props}
 
 [Object]
 nickname = rh_ber_08_girder01
@@ -611,19 +574,10 @@ class OmegaSmelter(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'om15_03'
     TEMPLATE = '''[Object]
 nickname = om15_03
-ids_name = 203643
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = space_port_dmg
-ids_info = 065565
-reputation = rx_grp ;junk_grp
-behavior = NOTHING
-difficulty_level = 12
-loadout = space_port_junkers_sig8
-base = om15_03_base
-dock_with = om15_03_base
-voice = atc_leg_f01
-space_costume = pl_female5_head, pl_female1_journeyman_body, prop_neuralnet_f_right
+{dock_props}
 
 [Object]
 nickname = om15_03_mplatform
@@ -662,17 +616,7 @@ nickname = li_for_06
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = space_port_dmg
-base = li_for_06_base
-dock_with = li_for_06_base
-reputation = pi_grp
-behavior = NOTHING
-difficulty_level = 10
-;loadout = prison_li
-pilot = pilot_solar_hardest
-ids_name = 203893 
-ids_info = 1
-voice = atc_leg_m01
-space_costume = pi_pirate1_head, pi_pirate6_body, prop_neuralnet_f_right
+{dock_props}
 
 [Object]
 nickname = li_for_06_industrial01

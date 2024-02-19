@@ -49,6 +49,12 @@ class SystemObject(object):
     REL_APPEND = 3000  # distance between object and tradelane
     REL_DRIFT = 0  # move initial pos for tradelane start point
 
+    FACTION = None
+
+    @classmethod
+    def is_abstract(cls):
+        return cls.ABSTRACT
+
     @classmethod
     def get_rel(cls):
         if not cls.REL:
@@ -109,8 +115,10 @@ class SystemObject(object):
 
         return pos_x, POS_Y_FORCE_VALUE, pos_z, self.IDS_NAME
 
-    def __init__(self, system):
+    def __init__(self, system, *args, **kwargs):
         self.system = system
+        self.init_args = args
+        self.init_kwargs = kwargs
 
     def get_system_content(self):
         raise NotImplementedError()
@@ -127,6 +135,64 @@ class SystemObject(object):
             alias=cls.get_alias(),
             index=cls.INDEX,
         )
-
     def get_position(self):
         return self.system.template.get_item_pos(self.get_full_alias())
+
+    def get_rotate(self):
+        return self.system.template.get_item_rotate(self.get_full_alias())
+
+    def get_shape(self):
+        shape = self.system.template.get_item_shape(self.get_full_alias())
+        if shape.upper() == 'SPHERE':
+            raise Exception('SPHERE shapes not supported at this moment')
+        return shape
+
+    def get_size(self):
+        return self.system.template.get_item_size(self.get_full_alias())
+
+    def get_faction(self):
+        return self.FACTION
+
+
+class DynamicSystemObject(SystemObject):
+    ABSTRACT = True
+
+    def __init__(self, system, space_nickname, alias, index, *args, **kwargs):
+        self.space_nickname = space_nickname
+        self.alias = alias
+        self.index = index
+        super().__init__(system, *args, **kwargs)
+
+    @classmethod
+    def get_alias(cls):
+        raise Exception('can not access static alias of dynamic object')
+
+    @classmethod
+    def get_full_alias(cls):
+        raise Exception('can not access static alias of dynamic object')
+
+    def get_dynamic_alias(self):
+        if self.alias is None:
+            raise Exception('unknown alias')
+        return self.alias
+
+    def get_full_dynamic_alias(self):
+        return FULL_ALIAS_TEMPLATE.format(
+            alias=self.get_dynamic_alias(),
+            index=self.index,
+        )
+
+    def get_position(self):
+        return self.system.template.get_item_pos(self.get_full_dynamic_alias())
+
+    def get_rotate(self):
+        return self.system.template.get_item_rotate(self.get_full_dynamic_alias())
+
+    def get_shape(self):
+        shape = self.system.template.get_item_shape(self.get_full_dynamic_alias())
+        if shape.upper() == 'SPHERE':
+            raise Exception('SPHERE shapes not supported at this moment')
+        return shape
+
+    def get_size(self):
+        return self.system.template.get_item_size(self.get_full_dynamic_alias())

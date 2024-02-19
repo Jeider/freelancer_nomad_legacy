@@ -1,6 +1,7 @@
 from templates.space_object_template import SpaceObjectTemplate
 
 
+# NEED TO REVISIT THIS BASE
 class ValensiaOutside(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'co_mad_02'
     TEMPLATE = '''[Object]

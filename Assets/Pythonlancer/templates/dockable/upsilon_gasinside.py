@@ -1,6 +1,7 @@
 from templates.space_object_template import SpaceObjectTemplate
 
 
+# CHANGE TO SINGLE DOCK?
 class UpsilonMegabase(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'up2_01'
     TEMPLATE = '''[Object]
@@ -8,48 +9,21 @@ nickname = up2_01
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = space_industriala_base_root
-ids_name = 203834
-ids_info = 065743
-base = up2_01_base
-visit = 0
-reputation = co_grp
-behavior = NOTHING
+{root_props}
 
 [Object]
 nickname = up2_01_dockA
 pos = 0, 1450, 0
 rotate = 0, 0, 0
 archetype = space_freeport01
-ids_name = 203843
-ids_info = 065739
-base = up2_01_base
-dock_with = up2_01_base
-visit = 0
-reputation = co_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = syd_head, sh_male1_body, prop_neuralnet_A
-difficulty_level = 5
-loadout = space_port_dmg_corsair
-pilot = pilot_solar_hardest
+{dock_props}
 
 [Object]
 nickname = up2_01_dockB
 pos = 0, -1585, 0
 rotate = 0, 0, 0
 archetype = space_freeport01
-ids_name = 203843
-ids_info = 065739
-base = up2_01_base
-dock_with = up2_01_base
-visit = 0
-reputation = co_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = syd_head, sh_male1_body, prop_neuralnet_A
-difficulty_level = 5
-loadout = space_port_dmg_corsair
-pilot = pilot_solar_hardest
+{dock_props}
 
 [Object]
 nickname = up2_01_CORE_sphere01
@@ -3215,12 +3189,7 @@ nickname = up2_04
 pos = 0, 0, 0
 rotate = -10, 10, -100
 archetype = space_prison_dummy
-ids_name = 203836
-ids_info = 065745
-base = up2_04_base
-dock_with = up2_04_base
-behavior = NOTHING
-reputation = fc_uk_grp
+{root_props}
 
 [Object]
 nickname = up2_04_prison01

@@ -5,21 +5,10 @@ class KyushuAsteroidBase(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'ku_ksu_05'
     TEMPLATE = '''[Object]
 nickname = ku_ksu_05
-ids_name = 203746
 pos = 0, 0, 0
 rotate = 180, 90, 0
 archetype = miningbase_small_ice
-ids_info = 065661
-dock_with = ku_ksu_05_base
-base = ku_ksu_05_base
-reputation = kx_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = pl_male8_head, pi_pirate7_body, prop_neuralnet_c_right, prop_neuralnet_f_up
-difficulty_level = 10
-;loadout = solar_plant_ku
-pilot = pilot_solar_hardest
-visit = 16
+{dock_props}
 
 [Object]
 nickname = ku_ksu_05_ind01
@@ -105,19 +94,10 @@ class NomadAsteroidBase(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'sig17_03'
     TEMPLATE = '''[Object]
 nickname = sig17_03
-ids_name = 203673
 pos = 0, 0, 0
 rotate = 0, -135, 0
 archetype = space_police02
-ids_info = 065592
-base = sig17_03_base
-dock_with = sig17_03_base
-reputation = lx_grp
-behavior = NOTHING
-voice = atc_leg_f01
-space_costume = pl_female3_head, pl_female2_journeyman_body, prop_neuralnet_a
-difficulty_level = 12
-pilot = pilot_solar_hardest
+{dock_props}
 
 [Object]
 nickname = sig17_03_Ast
@@ -398,20 +378,10 @@ class MunchenAsteroidBase(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'rh_mnh_03'
     TEMPLATE = '''[Object]
 nickname = rh_mnh_03
-ids_name = 203778
-ids_info = 065691
 pos = 0, 0, 0
 rotate = 0, 40, 0
 archetype = miningbase_badlands
-base = rh_mnh_03_Base
-dock_with = rh_mnh_03_Base
-reputation = edv_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = pi_pirate2_head, pi_pirate8_body, prop_neuralnet_f
-difficulty_level = 30
-loadout = miningbase_badlands_rh
-pilot = pilot_solar_hardest
+{dock_props}
 
 [Object]
 nickname = rh_mnh_03_ind01
@@ -594,20 +564,10 @@ class BizmarkAsteroidBase(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'rh_biz_07'
     TEMPLATE = '''[Object]
 nickname = rh_biz_07
-ids_name = 203887
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = miningbase_mineableB
-ids_info = 1
-base = rh_biz_07_base
-dock_with = rh_biz_07_base
-reputation = pi_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = rh_hassler_head, pi_pirate3_body, prop_neuralnet_c
-difficulty_level = 5
-loadout = miningbase_mineableB_co_grp
-pilot = pilot_solar_hardest
+{dock_props}
 
 [Object]
 nickname = rh_biz_07_ctrl_twr01
@@ -657,20 +617,10 @@ class BerlinAsteroidBase(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'rh_ber_05'
     TEMPLATE = '''[Object]
 nickname = rh_ber_05
-ids_name = 203629
 pos = 0, 0, 0
 rotate = 0, 0, 0
-archetype = space_police01
-ids_info = 066629
-base = rh_ber_05_base
-dock_with = rh_ber_05_base
-visit = 16
-reputation = rx_grp
-behavior = NOTHING
-voice = atc_leg_f01
-space_costume = rh_newscaster_head_gen, pl_female2_journeyman_body, prop_neuralnet_a
-difficulty_level = 12
-pilot = pilot_solar_hardest
+archetype = space_police01_front_dock
+{dock_props}
 
 [Object]
 nickname = rh_ber_05_asteroid01
@@ -808,14 +758,7 @@ nickname = li_mnh_09
 pos = 0, 0, 0
 rotate = 0, -60, 0
 archetype = space_port_dmg_front_dock
-base = li_mnh_09_base
-dock_with = li_mnh_09_base
-voice = atc_leg_m01
-space_costume = pi_pirate3_head, pi_pirate2_body, prop_neuralnet_a
-ids_name = 203896
-ids_info = 1
-reputation = pi_grp
-behavior = NOTHING
+{dock_props}
 
 [Object]
 nickname = li_mnh_09_ast01
@@ -924,14 +867,7 @@ nickname = li_cal_09
 pos = 0, 0, 0
 rotate = 0, -90, 0
 archetype = miningbase_FragA
-base = li_cal_09_base
-dock_with = li_cal_09_base
-voice = atc_leg_m01
-space_costume = pi_pirate2_head, pi_pirate2_body, prop_neuralnet_b
-ids_name = 203891
-ids_info = 1
-reputation = lx_grp
-behavior = NOTHING
+{dock_props}
 
 [Object]
 nickname = li_cal_09_hand01

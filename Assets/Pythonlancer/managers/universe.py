@@ -1,9 +1,13 @@
+import pathlib
+
 from universe.universe import Universe
 from universe.system import System
 from universe.base import Base, EQUIP_CLASSES_PER_LEVEL
 from universe.markets import EquipDealer, ShipDealer
 
 from world.equipment import Equipment
+
+from tools.data_folder import DataFolder
 
 from text.dividers import SINGLE_DIVIDER, DIVIDER
 
@@ -22,8 +26,14 @@ class UniverseManager(object):
         self.ship_dealers_list = []
         self.loadouts = []
 
+        self.asteroid_definitions = []
+        self.interior_files = {}
+        self.interior_definitions = []
+
         self.load_systems()
         self.load_bases()
+
+        self.sync_data()
 
     def load_systems(self):
         for system in System.subclasses:
@@ -32,7 +42,9 @@ class UniverseManager(object):
                 self.systems.append(system)
                 self.system_content_test.append(system.system_content_str)
                 self.loadouts += system.loadouts
-
+                self.asteroid_definitions += system.asteroid_definitions
+                self.interior_definitions += system.get_interior_definitions()
+                self.interior_files.update(system.get_interior_files())
 
     def load_bases(self):
         for base_class in Base.subclasses:
@@ -93,4 +105,27 @@ class UniverseManager(object):
     def get_system_loadouts(self):
         return DIVIDER.join([loadout.build_loadout() for loadout in self.loadouts])
 
+    def get_system_asteroid_definitions(self):
+        return [asteroid_definition.get_file_content() for asteroid_definition in self.asteroid_definitions]
 
+    def get_interior_definitions(self):
+        return DIVIDER.join(self.interior_definitions)
+
+    def sync_data(self):
+        for system in self.systems:
+            if not system.ALLOW_SYNC:
+                continue
+
+            print(f'sync sys {system.NAME}')
+            DataFolder.sync_system_mod(system.NAME, system.SYSTEM_FOLDER, system.system_content_str)
+
+        print('sync solar gen loadouts')
+        DataFolder.sync_solar_gen_loadouts(self.get_system_loadouts())
+
+        for definition in self.asteroid_definitions:
+            print(f'sync ast definition {definition.NAME}')
+            DataFolder.sync_asteroid_definition(definition.NAME, definition.SUBFOLDER, definition.get_file_content())
+
+        for file_name, content in self.interior_files.items():
+            print(f'sync interior {file_name}')
+            DataFolder.sync_interior(file_name, content)

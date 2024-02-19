@@ -1,6 +1,12 @@
 from random import randint
 
+from fx.space import Dust
+
 from universe.content.system_object import SystemObject, TOP, BOTTOM, LEFT, RIGHT, DIRECTIONS, POS_KEY, ROT_KEY, SIZE_KEY
+from universe.content.zones import DynamicZone, DynamicSphereZone
+from universe.content import interior
+from universe.content.characters import SpaceVoice
+
 from text.dividers import SINGLE_DIVIDER, DIVIDER
 
 
@@ -12,21 +18,6 @@ TLR_HUGE_SIZE_RINGS_COUNT = 5
 TLR_SMALL_SIZE_RINGS_COUNT = 4
 
 
-PLANET_CIRCLE_1500 = 'planet_1500_circle'
-PLANET_CIRCLE_2000 = 'planet_2000_circle'
-PLANET_CIRCLE_2500 = 'planet_2500_circle'
-PLANET_CIRCLE_3000 = 'planet_3000_circle'
-PLANET_CIRCLE_4000 = 'planet_4000_circle'
-PLANET_CIRCLE_5000 = 'planet_5000_circle'
-
-BASIC_Y_ROTATE_PER_REL = {
-    LEFT: -90,
-    RIGHT: 90,
-    TOP: 180,
-    BOTTOM: 0,
-}
-
-
 class AppearableObject(SystemObject):
     SPACE_OBJECT_TEMPLATE = None
     SPACE_OBJECT_NAME = None
@@ -34,6 +25,8 @@ class AppearableObject(SystemObject):
 
     ARCHETYPE_TEMPLATE = '''[Object]
 nickname = {nickname}
+ids_name = {ids_name}
+ids_info = {ids_info}
 pos = {pos}
 rotate = {rotate}
 archetype = {archetype}'''
@@ -53,12 +46,20 @@ archetype = {archetype}'''
         else:
             return self.get_inspace_nickname()
 
+    def get_root_props(self):
+        return ''
+
+    def get_dock_props(self):
+        return ''
+
     def get_templated_content(self):
         position = self.get_position()
         if not position:
             raise Exception('POS is required for getting object instance when it has appaerance')
 
         return self.SPACE_OBJECT_TEMPLATE().get_instance(
+            root_props=self.get_root_props(),
+            dock_props=self.get_dock_props(),
             new_space_object_name=self.get_space_object_name(),
             move_to=position,
         )
@@ -74,10 +75,18 @@ archetype = {archetype}'''
                 rotate='{}, {}, {}'.format(*self.get_rotate()),
             )
         ]
+
         for key, value in self.get_inspace_parameters().items():
             content.append('{} = {}'.format(key, value))
 
-        return SINGLE_DIVIDER.join(content)
+        item = SINGLE_DIVIDER.join(content)
+
+        sattelites = self.get_sattelites()
+
+        return DIVIDER.join([item] + sattelites)
+
+    def get_sattelites(self):
+        return []
 
     def get_rotate(self):
         return (0, 0, 0)
@@ -93,19 +102,139 @@ archetype = {archetype}'''
         return {}
 
 
-class StaticObject(AppearableObject):
-    ABSTRACT = True
+class StaticObject(AppearableObject):        
+    ASTEROID_ZONES = []
+    AST_EXCLUSION_ZONE_SIZE = 3000
+    AST_ZONE_NAME_TEMPLATE = 'Zone_{space_name}_ast_exclusion'
+    RING_ZONE_NAME_TEMPLATE = 'Zone_{space_name}_ring_x123'
+    RING_FILE_TEMPLATE = 'solar\\rings\\{ring_file_name}.ini'
 
-    @classmethod
-    def is_abstract(cls):
-        return cls.ABSTRACT
+    RING = False
+    RING_ZONE_ALIAS = None
+    RING_ZONE_INDEX = None
+    RING_FILE_NAME = None
+    
+    def get_ast_exclusion_zone_name(self):
+        return self.AST_ZONE_NAME_TEMPLATE.format(
+            space_name=self.get_inspace_nickname(),
+        )
+    
+    def get_ring_zone_name(self):
+        return self.RING_ZONE_NAME_TEMPLATE.format(
+            space_name=self.get_inspace_nickname(),
+        )
+
+    def get_dynamic_zones(self):
+        zones = []
+        if len(self.ASTEROID_ZONES) != 0:
+            zones.append(
+                DynamicSphereZone(
+                    system=self.system,
+                    space_nickname=self.get_ast_exclusion_zone_name(),
+                    alias=self.ALIAS,
+                    index=self.INDEX,
+                    size=self.AST_EXCLUSION_ZONE_SIZE,
+                )
+            )
+        if self.RING:
+            if not self.RING_ZONE_ALIAS and not self.RING_ZONE_INDEX:
+                raise Exception('ring for object %s have not enough data' % self.__class__.__name__)
+            zones.append(
+                DynamicZone(
+                    system=self.system,
+                    space_nickname=self.get_ring_zone_name(),
+                    alias=self.RING_ZONE_ALIAS,
+                    index=self.RING_ZONE_INDEX,
+                )
+            )
+        return zones
+
+    def get_inspace_parameters(self):
+        params = super().get_inspace_parameters()
+        if self.RING:
+            if not self.RING_FILE_NAME:
+                raise Exception('unknown file for ring %s' % self.__class__.__name__)
+
+            params['ring'] = '{zone}, {ring_file}'.format(
+                zone=self.get_ring_zone_name(),
+                ring_file=self.RING_FILE_TEMPLATE.format(ring_file_name=self.RING_FILE_NAME),
+            )
+        return params
+
+
+class RawText(SystemObject):
+    SPACE_CONTENT = ''
+
+    def get_system_content(self):
+        return self.SPACE_CONTENT
 
 
 class JumpableObject(StaticObject):
     pass
 
 
-class Sun(StaticObject):
+class GenericSphere(StaticObject):
+    SPHERE_RADIUS = None
+
+    DRAG_ZONE_NAME_TEMPLATE = 'Zone_{parent}_drag'
+    DEATH_ZONE_NAME_TEMPLATE = 'Zone_{parent}_death'
+
+    ATMOSPHERE_SPACEDUST = None
+    ATMOSPHERE_SPACEDUST_MAXPARTICLES = None
+
+    DRAG_ZONE_INTERFERENCE = 0.001
+    DAMAGE_ZONE_DAMAGE = 200000000
+    DAMAGE_ZONE_SORT = 99.5
+
+    def get_sphere_radius(self):
+        if not self.SPHERE_RADIUS:
+            raise Exception('sphere radius isnt defined %s' % self.__class__.__name__)
+        return self.SPHERE_RADIUS
+
+    def get_atmosphere_range(self):
+        raise NotImplementedError
+
+    def get_drag_zone_size(self):
+        raise NotImplementedError
+
+    def get_death_zone_size(self):
+        raise NotImplementedError
+
+    def get_zones_force_position(self):
+        return None
+    
+    def get_sphere_damage_zones(self):
+        parent_name = self.get_inspace_nickname()
+        drag_zone = DynamicSphereZone(
+            system=self.system,
+            space_nickname=self.DRAG_ZONE_NAME_TEMPLATE.format(parent=parent_name),
+            position=self.get_zones_force_position(),
+            alias=self.ALIAS,
+            index=self.INDEX,
+            size=self.get_drag_zone_size(),
+            interference=self.DRAG_ZONE_INTERFERENCE,
+            drag_modifier=self.DRAG_MODIFIER,
+            spacedust=self.ATMOSPHERE_SPACEDUST,
+            spacedust_maxparticles=self.ATMOSPHERE_SPACEDUST_MAXPARTICLES,
+            sort=self.DAMAGE_ZONE_SORT,
+        )
+        damage_zone = DynamicSphereZone(
+            system=self.system,
+            space_nickname=self.DEATH_ZONE_NAME_TEMPLATE.format(parent=parent_name),
+            position=self.get_zones_force_position(),
+            alias=self.ALIAS,
+            index=self.INDEX,
+            size=self.get_death_zone_size(),
+            damage=self.DAMAGE_ZONE_DAMAGE,
+        )
+        return [drag_zone, damage_zone]
+    
+    def get_dynamic_zones(self):
+        dynamic_zones = super().get_dynamic_zones()
+        return dynamic_zones + self.get_sphere_damage_zones()
+
+
+class Sun(GenericSphere):
     ALIAS = 'sun'
 
     ARCHETYPE = 'sun_2000'
@@ -113,38 +242,144 @@ class Sun(StaticObject):
     IDS_NAME = 253954
     IDS_INFO = 65541
 
-    SUN_FX = None
+    LOADOUT = None
     STAR = None
     ATMOSHPERE_RANGE = 11000
-    DEATH_ZONE = 7000
-    DEATH_DAMAGE = 200000000
-    DRAG_ZONE = 10500
+    DEATH_ZONE_SIZE = 7000
+    DEATH_ZONE_DAMAGE = 200000000
+    DRAG_ZONE_SIZE = 10500
     DRAG_MODIFIER = 5
 
-    def get_inspace_parameters(self):
-        return {
-            'loadout': self.SUN_FX,
-            'star': self.STAR,
-            'atmosphere_range': self.ATMOSHPERE_RANGE,
-        }
+    def get_atmosphere_range(self):
+        return self.ATMOSHPERE_RANGE
 
-    def get_outer_zones(self):
-        pass
+    def get_drag_zone_size(self):
+        return self.DRAG_ZONE_SIZE
+
+    def get_death_zone_size(self):
+        return self.DEATH_ZONE_SIZE
+
+    def get_inspace_parameters(self):
+        params = super().get_inspace_parameters()
+        params.update({
+            'loadout': self.LOADOUT,
+            'star': self.STAR,
+            'atmosphere_range': self.get_atmosphere_range(),
+        })
+        return params
 
     def get_inspace_nickname(self):
         return '{system_name}_sun_{index}'.format(system_name=self.system.NAME, index=self.INDEX)
 
 
-
-class Planet(StaticObject):
+class Planet(GenericSphere):
     ALIAS = 'planet'
 
-    PLANET_CIRCLE = None
-    ATMOSPHERE_RANGE_APPEND = 200
+    PLANET_RADIUSES = (1500, 2000, 2500, 3000, 4000, 5000)
+    PLANET_CIRCLE_ARCHETYPE_TEMPLATE = 'planet_{radius}_circle'
+    PLANET_CIRCLE_TEMPLATE = '''[Object]
+nickname = {parent_planet}_planet_circle
+pos = {position}
+rotate = 0, 30, 0
+archetype = {circle_archetype}
+{planet_spin}
+parent = {parent_planet}'''
+
+    PLANET_CIRCLE = True
+    ATMOSPHERE_RANGE_APPEND = 350
+    ATMOSPHERE_SPACEDUST = Dust.ATMOSPHERE
+    ATMOSPHERE_SPACEDUST_MAXPARTICLES = 500
+    DOCK_RING_OFFSET = 300
     DEATH_ZONE_APPEND = 150
-    DRAG_ZONE_DAMAGE = 0.1
-    DRAG_ZONE_INTERFERENCE = 0.001
+    DRAG_ZONE_APPEND = 300
     PLANET_CIRCLE_Y_DRIFT = 10
+    SPIN = 0.02
+    DRAG_MODIFIER = 3
+
+    RELATED_DOCK_RING = None
+
+    IDS_NAME = 1
+    IDS_INFO = 1
+
+    def get_spin(self):
+        if self.SPIN > 0:
+            return f'0, {self.SPIN}, 0'
+        return None
+
+    def get_planet_circle(self):
+        if not self.PLANET_CIRCLE:
+            return
+
+        if self.get_sphere_radius() not in self.PLANET_RADIUSES:
+            raise Exception('planet %s have invalid radius' % self.__class.__name__)
+
+        pos_x, pos_y, pos_z = self.get_position()
+        spin = ''
+        spin_data = self.get_spin()
+        if spin_data:
+            spin = f'spin = {spin_data}'
+
+        return self.PLANET_CIRCLE_TEMPLATE.format(
+            parent_planet=self.get_inspace_nickname(),
+            position='{} {} {}'.format(pos_x, pos_y+self.PLANET_CIRCLE_Y_DRIFT, pos_z),
+            circle_archetype=self.PLANET_CIRCLE_ARCHETYPE_TEMPLATE.format(radius=self.get_sphere_radius()),
+            planet_spin=spin,
+        )
+
+    def get_sattelites(self):
+        sattelites = []
+        circle = self.get_planet_circle()
+        if circle:
+            sattelites.append(circle)
+        return sattelites
+
+    def get_inspace_nickname(self):
+        return '{system_name}_planet_{index}'.format(system_name=self.system.NAME, index=self.INDEX)
+
+    def get_inspace_parameters(self):
+        params = super().get_inspace_parameters()
+        params['atmosphere_range'] = self.get_atmosphere_range()
+        spin_data = self.get_spin()
+        if spin_data:
+            params['spin'] = spin_data
+
+        if self.RELATED_DOCK_RING is not None:
+            params['base'] = self.system.get_static_by_class(self.RELATED_DOCK_RING).get_base_nickname()
+
+        return params
+
+    def get_atmosphere_range(self):
+        return self.get_sphere_radius() + self.ATMOSPHERE_RANGE_APPEND
+
+    def get_drag_zone_size(self):
+        return self.get_sphere_radius() + self.DRAG_ZONE_APPEND
+
+    def get_death_zone_size(self):
+        return self.get_sphere_radius() + self.DEATH_ZONE_APPEND
+
+    def get_position_for_dock_ring(self):
+        pos_x, pos_y, pos_z = self.system.template.get_item_pos(self.RELATED_DOCK_RING.get_full_alias())
+        planet_drift = self.SPHERE_RADIUS + self.DOCK_RING_OFFSET
+        if self.RELATED_DOCK_RING.REL == LEFT:
+            pos_x -= planet_drift 
+        elif self.RELATED_DOCK_RING.REL == RIGHT:
+            pos_x += planet_drift 
+        elif self.RELATED_DOCK_RING.REL == TOP:
+            pos_z += planet_drift 
+        elif self.RELATED_DOCK_RING.REL == BOTTOM:
+            pos_z -= planet_drift 
+
+        return (pos_x, pos_y, pos_z)
+
+    def get_zones_force_position(self):
+        if self.RELATED_DOCK_RING is not None:
+            return self.get_position_for_dock_ring()
+
+    def get_position(self):
+        if self.RELATED_DOCK_RING is not None:
+            return self.get_position_for_dock_ring()
+        else:
+            return super().get_position()
 
 
 class Jumpgate(JumpableObject):
@@ -161,16 +396,25 @@ class Jumpgate(JumpableObject):
     GOTO = 'sig8, sig8_to_ber, gate_tunnel_edge'
     LOADOUT = 'jumpgate_rh'
 
+    Y_ROTATE_PER_REL = {
+        LEFT: -90,
+        RIGHT: 90,
+        TOP: 180,
+        BOTTOM: 0,
+    }
+
     def get_inspace_parameters(self):
-        return {
+        params = super().get_inspace_parameters()
+        params.update({
             'jump_effect': self.JUMP_EFFECT,
             'reputation': self.REPUTATION,
             'goto': self.GOTO,
             'loadout': self.LOADOUT,
-        }
+        })
+        return params
 
     def get_rotate(self):
-        return (0, BASIC_Y_ROTATE_PER_REL[self.REL], 0)
+        return (0, self.Y_ROTATE_PER_REL[self.REL], 0)
 
     def get_inspace_nickname(self):
         return '{system_name}_jg{index}_test'.format(system_name=self.system.NAME, index=self.INDEX)
@@ -181,12 +425,94 @@ class Sattelite(StaticObject):
 
 
 class DockableObject(StaticObject):
-    # debug
-
     ARCHETYPE = 'depot'
+    INTERIOR_CLASS = interior.CustomFileInterior  # custom interior
+
+    INTERIOR_BG1 = None
+    INTERIOR_BG2 = None
+    BG1_KEY = 'terrain_tiny'
+    BG2_KEY = 'terrain_sml'
+
+    INTERIOR_DEFINITION_TEMPLATE = '''[Base]
+nickname = {base_name}
+system = {system_name}
+strid_name = {ids_name}
+file = Universe\\{interiors_folder}\\{interior_file_name}.ini
+BGCS_base_run_by = W02bF44'''
+
+    INTERIORS_FOLDER = 'GENERATED_INTERIORS'
+    INTERIOR_SUBFOLDER = None
+
+    AUDIO_PREFIX = None
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.interior = None
+
+        if self.INTERIOR_CLASS:
+            self.interior = self.INTERIOR_CLASS(self, self.INTERIOR_SUBFOLDER)
 
     def get_inspace_nickname(self):
         return '{system_name}_{base_index:02d}'.format(system_name=self.system.NAME, base_index=self.BASE_INDEX)
+
+    def get_base_nickname(self):
+        return '{system_name}_{base_index:02d}_base'.format(system_name=self.system.NAME, base_index=self.BASE_INDEX)
+
+    def get_interior_content(self):
+        if not self.interior:
+            raise Exception('Impossible to load interior for dockable base %s' % self.__class__.__name__)
+
+        return self.interior.get_base_info()
+
+    def get_interior_file_name(self):
+        return 'gen_{base_nickname}'.format(base_nickname=self.get_base_nickname())
+
+    def get_interior_definition(self):
+        definition = [
+            self.INTERIOR_DEFINITION_TEMPLATE.format(
+                base_name=self.get_base_nickname(),
+                system_name=self.system.NAME,
+                ids_name=self.IDS_NAME,
+                interiors_folder=self.INTERIORS_FOLDER,
+                interior_file_name=self.get_interior_file_name(),
+            )
+        ]
+        if self.INTERIOR_BG1:
+            definition.append('{} = {}'.format(self.BG1_KEY, self.INTERIOR_BG1))
+        if self.INTERIOR_BG2:
+            definition.append('{} = {}'.format(self.BG2_KEY, self.INTERIOR_BG2))
+        return SINGLE_DIVIDER.join(definition)
+
+    def get_audio_prefix(self):
+        if not self.AUDIO_PREFIX:
+            raise Excpetion('unknown audio prefix for %s' % self.__class__.__name__)
+        return self.AUDIO_PREFIX
+
+    def get_root_props(self):
+        base_name = self.get_base_nickname()
+        props = {
+            'ids_name': self.IDS_NAME,
+            'ids_info': self.IDS_INFO,
+            'base': base_name,
+            'reputation': self.get_faction(),
+            'behavior': 'NOTHING',
+        }
+        return SINGLE_DIVIDER.join(['{} = {}'.format(key, value) for key, value in props.items()])
+
+    def get_dock_props(self):
+        base_name = self.get_base_nickname()
+        props = {
+            'ids_name': self.IDS_NAME,
+            'ids_info': self.IDS_INFO,
+            'base': base_name,
+            'dock_with': base_name,
+            'reputation': self.get_faction(),
+            'behavior': 'NOTHING',
+            'voice': SpaceVoice.VOICE_FEMALE,
+            'space_costume': 'ku_tashi_head, pl_female1_peasant_body, prop_neuralnet_a',
+        }
+        return SINGLE_DIVIDER.join(['{} = {}'.format(key, value) for key, value in props.items()])
 
 
 class Dockring(DockableObject):
@@ -195,40 +521,68 @@ class Dockring(DockableObject):
     REL_DRIFT = 1000
     REL_APPEND = 3000
 
+    INTERIOR_CLASS = interior.CustomFullRoomInterior  # default for planets
+
+    AUDIO_PREFIX = None  # should be overrided
+
+    Y_ROTATE_PER_REL = {
+        LEFT: 90,
+        RIGHT: -90,
+        TOP: 0,
+        BOTTOM: 180,
+    }
+
     def get_rotate(self):
-        return (0, BASIC_Y_ROTATE_PER_REL[self.REL], 0)
+        return (0, self.Y_ROTATE_PER_REL[self.REL], 0)
+
+    def get_interior_content(self):
+        raise Exception('Interior for dock ring planets should be only manual created')
+
+    def get_interior_file_name(self):
+        raise Exception('Interior for dock ring planets should be only manual created')
+
+    def get_interior_definition(self):
+        raise Exception('Interior for dock ring planets should be only manual created')
 
 
 class Station(DockableObject):
     ALIAS = 'station'
+    AUDIO_PREFIX = SpaceVoice.STATION
 
 
 class Outpost(DockableObject):
     ALIAS = 'outpost'
+    AUDIO_PREFIX = SpaceVoice.OUTPOST
 
 
 class Prison(DockableObject):
     ALIAS = 'prison'
+    AUDIO_PREFIX = SpaceVoice.PRISON
 
 
 class Shipyard(DockableObject):
     ALIAS = 'shipyard'
+    AUDIO_PREFIX = SpaceVoice.SHIPYARD
 
 
 class TradingBase(DockableObject):
     ALIAS = 'trading'
+    AUDIO_PREFIX = SpaceVoice.FREEPORT
 
 
 class JunkerBase(DockableObject):
     ALIAS = 'junker'
+    AUDIO_PREFIX = SpaceVoice.OUTPOST
 
 
 class PirateBase(DockableObject):
     ALIAS = 'pirate'
+    AUDIO_PREFIX = SpaceVoice.OUTPOST
 
 
 class Refinery(DockableObject):
     ALIAS = 'alg'
+    AUDIO_PREFIX = SpaceVoice.FACTORY
 
 
 class PatrolObjective(SystemObject):
@@ -392,7 +746,7 @@ last = {last_tlr_props}
 
 zone = {tlr_zone_size}, {tlr_zone_index}
 '''
-    ZONE_TEMPLATE = ''
+    ZONE_TEMPLATE = ''  # TEMPORARY DISABLED
 
     ZONE_TEMPLATEX = '''[zone]
 nickname = Zone_{system_name}_tlr_{tlr_letter}
@@ -609,10 +963,3 @@ faction = bh_grp, 1.00000
                 (attacker_base_pos[0], 0, attacker_base_pos[2]),
             ]
         )
-
-
-
-
-
-
-

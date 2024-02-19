@@ -5,20 +5,10 @@ class BretoniaRoidMining(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'tau37_01'
     TEMPLATE = '''[Object]
 nickname = tau37_01
-ids_name = 203707
 pos = 0, 0, 0
 rotate = 0, 180, 0
 archetype = space_shipping01
-ids_info = 065624
-dock_with = tau37_01_base
-base = tau37_01_Base
-reputation = br_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = pl_male7_head, pl_male2_peasant_body, prop_neuralnet_b
-difficulty_level = 13
-loadout = space_shipping_tau37
-pilot = pilot_solar_hardest
+{dock_props}
 
 [Object]
 nickname = tau37_01_research01
@@ -448,20 +438,10 @@ class RheinlandRoidMining(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'om15_01'
     TEMPLATE = '''[Object]
 nickname = om15_01
-ids_name = 203639
 pos = 0, 0, 0
 rotate = 0,180, 0
 archetype = space_shipping01
-ids_info = 065563
-dock_with = om15_01_base
-base = om15_01_Base
-reputation = rh_grp
-behavior = NOTHING
-voice = atc_leg_f01
-space_costume = rh_newscaster_head_gen_hat, pl_female2_peasant_body, prop_hat_female_miner, prop_neuralnet_b_right
-difficulty_level = 13
-loadout = space_shipping_rh
-pilot = pilot_solar_hardest
+{dock_props}
 
 [Object]
 nickname = om15_01_research01
@@ -735,20 +715,10 @@ class LibertyRoidMining(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'li_cal_05'
     TEMPLATE = '''[Object]
 nickname = li_cal_05
-ids_name = 203656
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = space_mining01
-ids_info = 065575
-dock_with = li_cal_05_base
-base = li_cal_05_base
-reputation = li_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = li_manhattan_bartender_head, li_manhattan_bartender_body, prop_neuralnet_e
-difficulty_level = 12
-loadout = space_mining01_li
-pilot = pilot_solar_hardest
+{dock_props}
 
 [Object]
 nickname = li_cal_05_research01
@@ -948,18 +918,7 @@ nickname = up1_01
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = space_mining01
-ids_name = 203802
-ids_info = 065709
-base = up1_01_base
-dock_with = up1_01_base
-visit = 0
-reputation = co_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = rh_hassler_head, pl_male3_journeyman_body
-difficulty_level = 5
-loadout = miningbase_FragC_pi_03
-pilot = pilot_solar_hardest
+{dock_props}
 
 [Object]
 nickname = up1_01_ind01

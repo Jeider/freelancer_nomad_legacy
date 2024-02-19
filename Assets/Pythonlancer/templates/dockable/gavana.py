@@ -8,25 +8,14 @@ nickname = co_cad_02
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = gavana_core
-base = co_cad_02_base
-behavior = NOTHING
-reputation = co_grp
-ids_name = 203864
-ids_info = 065776
+{root_props}
 
 [Object]
 nickname = co_cad_02_dock
 pos = 0, 270, 523
 rotate = 0, 0, 0
 archetype = space_police01_front_dock
-dock_with = co_cad_02_base
-base = co_cad_02_base
-behavior = NOTHING
-reputation = co_grp
-ids_name = 196722
-ids_info = 065739
-voice = atc_leg_f01
-space_costume = br_karina_head_gen, pl_female2_journeyman_body, prop_neuralnet_a
+{dock_props}
 
 [Object]
 nickname = co_cad_02_space_arch01

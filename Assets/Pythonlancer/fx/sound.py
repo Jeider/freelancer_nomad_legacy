@@ -54,3 +54,21 @@ class SoundTachyon(WeaponSound):
         TIER_FIVE: 5,
     }
 
+
+class Ambience(object):
+    AST_ICE = 'zone_field_asteroid_ice'
+    AST_LAVA = 'zone_field_asteroid_lava'
+    AST_MINE = 'zone_field_asteroid_mine'
+    AST_ROCK = 'zone_field_asteroid_rock'
+    DEBRIS = 'zone_field_debris'
+    ICE = 'zone_field_ice'
+    MINE = 'zone_field_mine'
+    MINE_AST = 'zone_field_mine_asteroid'
+    NEBULA_BARRIER = 'zone_nebula_barrier'
+    NEBULA_CROW = 'zone_nebula_crow'
+    NEBULA_DMATTER = 'zone_nebula_dmatter'
+    NEBULLA_EDGE = 'zone_nebula_edge'
+    NEBULA_WALKER = 'zone_nebula_walker'
+    BADLANDS = 'zone_badlands'
+    ASTEROID_NOMAD = 'zone_field_asteroid_nomad'
+    NOMAD = 'zone_nebula_nomad'

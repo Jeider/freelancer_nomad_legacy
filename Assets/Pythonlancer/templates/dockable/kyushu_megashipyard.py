@@ -5,31 +5,17 @@ class KyushuMegashipyard(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'ku_ksu_02'
     TEMPLATE = '''[Object]
 nickname = ku_ksu_02
-ids_name = 203745
 pos = 0, 0, 0
 rotate = 0, 45, 0
 archetype = kyushu_core
-ids_info = 065660
-base = ku_ksu_02_base
-reputation = ku_grp
-behavior = NOTHING
+{root_props}
 
 [Object]
 nickname = ku_ksu_02_dock
 pos = 0, 850, 0
 rotate = 0, 135, 0
 archetype = space_freeport01
-dock_with = ku_ksu_02_base
-base = ku_ksu_02_base
-reputation = ku_grp
-behavior = NOTHING
-voice = atc_leg_f01
-space_costume = ku_kym_head_gen, ku_female_guard_body, prop_hat_female_ku_grd_visor
-difficulty_level = 10
-pilot = pilot_solar_hardest
-visit = 16
-ids_name = 196722
-ids_info = 065739
+{dock_props}
 
 ;ROOT
 

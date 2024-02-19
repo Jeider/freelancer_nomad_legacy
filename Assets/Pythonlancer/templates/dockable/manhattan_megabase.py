@@ -5,30 +5,17 @@ class ManhattanMegabase(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'li_mnh_04'
     TEMPLATE = '''[Object]
 nickname = li_mnh_04
-ids_name = 203679
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = manhattan_core
-ids_info = 065598
-base = li_mnh_04_base
-visit = 0
-reputation = li_grp
-behavior = NOTHING
+{root_props}
 
 [Object]
 nickname = li_mnh_04_dock
-ids_name = 196722
 pos = 0, 500, -1340
 rotate = 0, -90, 0
 archetype = space_shipping01
-ids_info = 065739
-base = li_mnh_04_base
-dock_with = li_mnh_04_base
-visit = 0
-reputation = li_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = rh_sales_head, li_shipdealer_body, prop_neuralnet_b
+{dock_props}
 
 [Object]
 nickname = li_mnh_04_MAIN_space_ind01

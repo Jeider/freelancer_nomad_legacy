@@ -9,14 +9,7 @@ pos = 0, 0, 0
 rotate = 0, -90, 0
 ids_name = 203770
 ids_info = 065685
-visit = 0
-archetype = smallstation1
-;loadout = smallstation
-dock_with = ku_tgk_01_Base
-base = ku_tgk_01_Base
-reputation = ku_grp
-voice = atc_leg_m01
-space_costume = ku_tenji_head_hat, ku_commtrader_body, prop_neuralnet_e
+{dock_props}
 
 
 [Object]

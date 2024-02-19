@@ -5,20 +5,10 @@ class CambridgeShipyard(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'br_cam_02'
     TEMPLATE = '''[Object]
 nickname = br_cam_02
-ids_name = 203725
 pos = 0, 0, 0
 rotate = 0, 180, 0
 archetype = space_police01
-ids_info = 065640
-dock_with = br_cam_02_base
-base = br_cam_02_base
-reputation = br_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = br_quigly_head, br_quigly_body, prop_neuralnet_b_right
-difficulty_level = 11
-loadout = br_space_police01
-pilot = pilot_solar_hard
+{dock_props}
 
 [Object]
 nickname = br_cam_02_industrial01
@@ -221,20 +211,10 @@ class HokkaidoShipyard(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'Ku_hkd_03'
     TEMPLATE = '''[Object]
 nickname = Ku_hkd_03
-ids_name = 203758
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = space_factory02
-ids_info = 065673
-base = Ku_hkd_03_base
-dock_with = Ku_hkd_03_base
-reputation = ku_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = ku_bartender_head_hat, ku_male_elite_body, prop_hat_male_ku_elite
-difficulty_level = 11
-loadout = space_factory02_ku
-pilot = pilot_solar_hard
+{dock_props}
 
 [Object]
 nickname = ku_hkd_03_girder01
@@ -469,20 +449,10 @@ class StuttgartShipyard(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = '203622'
     TEMPLATE = '''[Object]
 nickname = Rh_stut_02
-ids_name = 203622
 pos = 0, 0, 0
 rotate = 0, -90, 0
 archetype = space_factory02
-ids_info = 065559
-dock_with = Rh_stut_02_base
-base = Rh_stut_02_base
-reputation = rh_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = rh_wilham_head, rh_male_guard_body, prop_hat_male_rh_grd_visor, prop_neuralnet_c
-difficulty_level = 11
-loadout = space_factory02_rh
-pilot = pilot_solar_hard
+{dock_props}
 
 [Object]
 nickname = rh_stut_02_industrial01
@@ -749,20 +719,10 @@ class ForbesShipyard(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'li_for_03'
     TEMPLATE = '''[Object]
 nickname = li_for_03
-ids_name = 203666
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = space_mining01
-ids_info = 065586
-dock_with = li_for_03_Base
-base = li_for_03_Base
-reputation = li_grp
-behavior = NOTHING
-voice = atc_leg_f01
-space_costume = br_newscaster_head_gen_hat, li_hatcher_body, prop_hat_female_li_elite
-difficulty_level = 12
-loadout = space_mining01_li
-pilot = pilot_solar_hardest
+{dock_props}
 
 [Object]
 nickname = li_for_03_industrial01
@@ -1025,10 +985,7 @@ nickname = br_uls_03
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = space_industrial_dmg_root
-behavior = NOTHING
-reputation = fc_uk_grp
-ids_name = 208622
-ids_info = 067017
+{root_props}
 
 [Object]
 nickname = br_uls_03_tube01
@@ -1266,6 +1223,7 @@ nickname = br_uls_03
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = space_police01
+{dock_props}
 
 [Object]
 nickname = br_uls_03_ind20
@@ -1504,6 +1462,7 @@ nickname = br_hbr_02
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = space_police01
+{dock_props}
 
 [Object]
 nickname = br_hbr_02_prison1

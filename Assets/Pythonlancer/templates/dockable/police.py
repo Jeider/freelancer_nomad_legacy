@@ -8,15 +8,7 @@ nickname = tau37_04
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = space_police01
-reputation = br_grp
-behavior = NOTHING
-base = tau37_04_base
-dock_with = tau37_04_base
-ids_name = 203713
-ids_info = 065628
-visit = 16
-voice = atc_leg_f01
-space_costume = rh_newscaster_head_gen_hat, br_female_guard_body, prop_hat_female_br_elite
+{dock_props}
 
 [Object]
 nickname = tau37_04_ind01
@@ -246,19 +238,10 @@ class SigmaEightPoliceOutpost(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'sig8_04'
     TEMPLATE = '''[Object]
 nickname = sig8_04
-ids_name = 203634
 pos = 0, 0, 0
 rotate = 0, 180, 0
 archetype = space_police01_front_dock
-ids_info = 066633
-base = sig8_04_base
-dock_with = sig8_04_base
-reputation = rh_grp
-behavior = NOTHING
-difficulty_level = 12
-;loadout = space_port_junkers_sig8
-voice = atc_leg_m01
-space_costume = rh_bartender_head, rh_male_guard_body, prop_hat_male_rh_grd, prop_neuralnet_c
+{dock_props}
 
 [Object]
 nickname = sig8_04_space_control_block
@@ -297,19 +280,10 @@ class StuttgartPoliceOutpost(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'rh_stut_03'
     TEMPLATE = '''[Object]
 nickname = rh_stut_03
-ids_name = 203617
 pos = 0, 0, 0
 rotate = 0, -45, 0
 archetype = space_police01
-ids_info = 065555
-reputation = rh_grp
-behavior = NOTHING
-difficulty_level = 12
-;loadout = space_port_junkers_sig8
-base = rh_stut_03_base
-dock_with = rh_stut_03_base
-voice = atc_leg_f01
-space_costume = rh_gruenwald_head_gen, rh_female_guard_body, prop_neuralnet_f
+{dock_props}
 
 [Object]
 nickname = rh_stut_03_industrial01
@@ -551,14 +525,7 @@ nickname = rh_ber_06
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = space_police01
-base = rh_ber_06_base
-dock_with = rh_ber_06_base
-ids_name = 203633
-ids_info = 066635
-reputation = rh_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = rh_captain_head, rh_male_guard_body, prop_hat_male_rh_grd_visor, prop_neuralnet_b_right
+{dock_props}
 
 [Object]
 nickname = rh_ber_06_ctrl_twr01
@@ -759,14 +726,7 @@ nickname = om2_03
 pos = 0, 0, 0
 rotate = 0, 180, 0
 archetype = space_police01_front_dock
-ids_name = 203858
-ids_info = 065769
-dock_with = om2_03_base
-base = om2_03_base
-behavior = NOTHING
-reputation = co_grp
-voice = atc_leg_m01
-space_costume = br_sales_head, pi_pirate2_body, prop_neuralnet_f
+{dock_props}
 
 [Object]
 nickname = om2_03_control_tower01
@@ -823,19 +783,10 @@ class PoliceOutpostLiberty(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'li_cal_06'
     TEMPLATE = '''[Object]
 nickname = li_cal_06
-ids_name = 203657
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = space_police01
-ids_info = 065576
-base = li_cal_06_base
-dock_with = li_cal_06_base
-reputation = li_grp
-behavior = NOTHING
-voice = atc_leg_f01
-space_costume = pl_female1_head, li_female_elite_body, prop_neuralnet_a
-difficulty_level = 12
-pilot = pilot_solar_hardest
+{dock_props}
 
 [Object]
 nickname = li_cal_06_shipyard01

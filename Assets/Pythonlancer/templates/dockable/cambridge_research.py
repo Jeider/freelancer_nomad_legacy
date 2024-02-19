@@ -5,29 +5,17 @@ class CambridgeResearch(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'br_cam_04'
     TEMPLATE = '''[Object]
 nickname = br_cam_04
-ids_name = 203614
 pos = 0, 0, -1180
 rotate = 0, 90, 0
 archetype = cambridge_core
-ids_info = 065550
-base = br_cam_04_base
-reputation = br_grp
-behavior = NOTHING
+{root_props}
 
 [Object]
 nickname = br_cam_04_dock
-ids_name = 208608
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = space_shipping01
-ids_info = 065642
-base = br_cam_04_base
-dock_with = br_cam_04_base
-reputation = br_grp
-behavior = NOTHING
-voice = atc_leg_f01
-space_costume = br_karina_head_gen, sc_female1_body
-loadout = br_space_police01
+{dock_props}
 
 [Object]
 nickname = br_cam_04_PAD_ctrl_twr01

@@ -55,8 +55,9 @@ def main():
         ('demo_marketdata.ini', DIVIDER.join(markets_demo_data)),
         ('market_equip.ini', core.universe.get_market_equip()),
         ('market_ships.ini', core.universe.get_market_ships()),
-        ('system_content_test.ini', core.universe.get_system_content_test()),
-        ('system_loadouts.ini', core.universe.get_system_loadouts()),
+        # ('system_content_test.ini', core.universe.get_system_content_test()),  # moved to sync
+        # ('system_loadouts.ini', core.universe.get_system_loadouts()),  # moved to sync
+        ('universe_bases.ini', core.universe.get_interior_definitions()),
 
         ('ship_packages.ini', core.shiparch.get_ship_goods()),
 

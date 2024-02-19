@@ -8,15 +8,7 @@ nickname = tau23_04
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = space_police01_gas_miner
-base = tau23_04_base
-dock_with = tau23_04_base
-behavior = NOTHING
-reputation = pi_grp
-ids_name = 208623
-ids_info = 067021
-visit = 16
-voice = atc_leg_m01
-space_costume = pi_pirate4_head, pi_pirate6_body, prop_neuralnet_b
+{dock_props}
 
 [Object]
 nickname = tau23_04_miner01
@@ -95,21 +87,9 @@ class BretoniaCivilianGasMiner(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'tau23_01'
     TEMPLATE = '''[Object]
 nickname = tau23_01
-ids_name = 203737
 pos = 0, 0, 0
 rotate = 0, 90, 0
-;spin = 0, 0, 0
-archetype = space_police01_gas_station
-ids_info = 065652
-dock_with = tau23_01_Base
-base = tau23_01_Base
-reputation = br_grp
-behavior = NOTHING
-voice = atc_leg_f01
-space_costume = br_kaitlyn_head, pl_female1_peasant_body, prop_neuralnet_a_right
-difficulty_level = 12
-loadout = br_space_police01
-pilot = pilot_solar_hardest
+{dock_props}
 
 [Object]
 nickname = tau23_01_space_dome01
@@ -311,20 +291,10 @@ class RheinlandCivilianGasMiner(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'sig13_01'
     TEMPLATE = '''[Object]
 nickname = sig13_01
-ids_name = 203646
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = space_police01_gas_station
-ids_info = 065567
-base = sig13_01_Base
-dock_with = sig13_01_Base
-reputation = rh_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = ge_male7_head, rh_wilham_body, prop_neuralnet_c
-difficulty_level = 12
-loadout = rh_space_police01
-pilot = pilot_solar_hardest
+{dock_props}
 
 [Object]
 nickname = sig13_01_gas_miner01
@@ -627,14 +597,7 @@ nickname = sig13_03
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = gas_miner_dock
-ids_name = 203649
-ids_info = 065569
-reputation = pi_grp
-behavior = NOTHING
-voice = atc_leg_f01
-space_costume = pl_female1_head, sh_female1_body, prop_neuralnet_a_right
-base = sig13_03_base
-dock_with = sig13_03_base
+{dock_props}
 
 [Object]
 nickname = sig13_03_dock_dummy
@@ -712,17 +675,10 @@ class CadizGasMiner(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'co_cad_04'
     TEMPLATE = '''[Object]
 nickname = co_cad_04
-ids_name = 203866
 pos = 0, 0, 0
 rotate = 0, 180, 0
 archetype = gas_miner_dock
-ids_info = 065778
-base = co_cad_04_Base
-dock_with = co_cad_04_Base
-behavior = NOTHING
-reputation = co_grp
-voice = atc_leg_m01
-space_costume = br_brighton_head, pi_pirate5_body, prop_hat_male_miner
+{dock_props}
 
 [Object]
 nickname = co_cad_04_gasminer01

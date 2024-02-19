@@ -1,9 +1,17 @@
 from templates.space_object_template import SpaceObjectTemplate
 
 
+# CHANGE TO SINGLE DOCK ?
 class Terraforming(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'co_cur_02'
     TEMPLATE = '''[Object]
+nickname = co_cur_02_ROOT
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = terraforming_core
+{root_props}
+
+[Object]
 nickname = co_cur_02_SPHERE
 pos = 0, 0, 0
 rotate = 0, 0, 0
@@ -11,63 +19,25 @@ archetype = sw_center_250
 parent = co_cur_02_ROOT
 
 [Object]
-nickname = co_cur_02_ROOT
-pos = 0, 0, 0
-rotate = 0, 0, 0
-archetype = terraforming_core
-ids_name = 203830
-ids_info = 067022
-base = co_cur_02_base
-;dock_with = co_cur_02_base
-burn_color = 255, 222, 160
-behavior = NOTHING
-reputation = co_grp
-
-[Object]
 nickname = co_cur_02_HAND_dock01
 pos = 0, 1150, 1400
 rotate = -90, 0, 90
 archetype = space_arch_dockable
-base = co_cur_02_base
-dock_with = co_cur_02_base
-ids_name = 203831
-ids_info = 065739
-behavior = NOTHING
-reputation = co_grp
-voice = atc_leg_f01
-space_costume = br_karina_head_gen, pl_female1_journeyman_body, prop_neuralnet_a_right
-loadout = station_null
+{dock_props}
 
 [Object]
 nickname = co_cur_02_HAND_dock02
 pos = 1205, 1150, -695
 rotate = 30, 0, 90
 archetype = space_arch_dockable
-base = co_cur_02_base
-dock_with = co_cur_02_base
-ids_name = 203831
-ids_info = 065739
-behavior = NOTHING
-reputation = co_grp
-voice = atc_leg_f01
-space_costume = br_karina_head_gen, pl_female1_journeyman_body, prop_neuralnet_a_right
-loadout = station_null
+{dock_props}
 
 [Object]
 nickname = co_cur_02_HAND_dock03
 pos = -1205, 1150, -695
 rotate = 150, 0, 90
 archetype = space_arch_dockable
-base = co_cur_02_base
-dock_with = co_cur_02_base
-ids_name = 203831
-ids_info = 065739
-behavior = NOTHING
-reputation = co_grp
-voice = atc_leg_f01
-space_costume = br_karina_head_gen, pl_female1_journeyman_body, prop_neuralnet_a_right
-loadout = station_null
-
+{dock_props}
 
 [Object]
 nickname = co_cur_02_tube01

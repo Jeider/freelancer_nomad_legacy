@@ -8,14 +8,7 @@ nickname = om13_01
 pos = 0, 0, 0
 rotate = 0, 180, 0
 archetype = space_police01_front_dock
-ids_name = 203851
-ids_info = 065761
-behavior = NOTHING
-reputation = co_grp
-base = om13_01_base
-dock_with = om13_01_base
-voice = atc_leg_f01
-space_costume = br_karina_head_gen, sc_female1_body, prop_neuralnet_d
+{dock_props}
 
 [Object]
 nickname = om13_01_panel01
@@ -159,14 +152,7 @@ nickname = om13_02
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = space_port_dmg
-ids_name = 203852
-ids_info = 065762
-behavior = NOTHING
-reputation = co_grp
-base = om13_02_base
-dock_with = om13_02_base
-voice = atc_leg_m01
-space_costume = sh_male4_head, sh_male1_body, prop_neuralnet_b_right, prop_hat_male_cap_a
+{dock_props}
 
 [Object]
 nickname = om13_02_ind01
@@ -394,10 +380,7 @@ nickname = om13_03
 pos = 0, 0, 0
 rotate = 0, 180, 0
 archetype = space_industrial_station_root
-ids_name = 203850
-ids_info = 065760
-reputation = fc_uk_grp
-behavior = NOTHING
+{root_props}
 
 [Object]
 nickname = om13_03_ind01
@@ -483,20 +466,10 @@ class ShinobiAbandonedResearch(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'om11_04'
     TEMPLATE = '''[Object]
 nickname = om11_04
-ids_name = 203819
 pos = 0, 0, 0
 rotate = 0, 0, 5
 archetype = space_police01
-ids_info = 065726
-base = om11_04_base
-dock_with = om11_04_base
-reputation = kx_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = ku_bartender_head, pi_orillion_body, prop_neuralnet_d
-difficulty_level = 12
-loadout = ku_space_police01
-pilot = pilot_solar_hardest
+{dock_props}
 
 [Object]
 nickname = om11_04_dock01
@@ -661,14 +634,7 @@ nickname = co_och_04
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = space_police01
-base = co_och_04_base
-dock_with = co_och_04_base
-ids_name = 203825
-ids_info = 065734
-reputation = co_grp ;orres_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = sh_male2_head, sh_male3_body, prop_neuralnet_d_right
+{dock_props}
 
 [Object]
 nickname = co_och_04_dome01
@@ -763,15 +729,7 @@ nickname = co_mad_03
 pos = 0, 0, 0
 rotate = 0, 170, -10
 archetype = space_police02_production
-ids_name = 203813
-ids_info = 065720
-behavior = NOTHING
-reputation = co_grp
-burn_color = 255, 222, 160
-dock_with = co_mad_03_base
-base = co_mad_03_base
-voice = atc_leg_m01
-space_costume = pi_pirate3_head, sh_male3_body, prop_neuralnet_c_combo
+{dock_props}
 
 [Object]
 nickname = co_mad_03_dock_connect
@@ -857,14 +815,7 @@ nickname = co_cad_03
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = space_police01
-ids_name = 203865
-ids_info = 065777
-dock_with = co_cad_03_base
-base = co_cad_03_base
-behavior = NOTHING
-reputation = co_grp
-voice = atc_leg_m01
-space_costume = br_sales_head, pi_pirate6_body, prop_neuralnet_d
+{dock_props}
 
 [Object]
 nickname = co_cad_03_DOCK_habitat01
@@ -1350,20 +1301,10 @@ class NeutronResearch(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'tau26_02'
     TEMPLATE = '''[Object]
 nickname = tau26_02
-ids_name = 203794
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = space_police01
-ids_info = 065704
-base = Tau26_02_base
-dock_with = Tau26_02_base
-visit = 0
-reputation = co_grp
-behavior = NOTHING
-voice = atc_leg_m01
-space_costume = ge_male4_head, sc_scientist1_body, prop_neuralnet_f
-difficulty_level = 5
-pilot = pilot_solar_hardest
+{dock_props}
 
 [Object]
 nickname = tau26_02_industrial01

@@ -5,33 +5,17 @@ class Potsdam(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'rh_ber_04'
     TEMPLATE = '''[Object]
 nickname = rh_ber_04
-ids_name = 203628
 pos = 1980, -545, 935
 rotate = 0, 0, 0
 archetype = potsdam_core
-ids_info = 066628
-reputation = rh_grp
-behavior = NOTHING
-difficulty_level = 12
-base = rh_ber_04_base
-pilot = pilot_solar_hardest
+{root_props}
 
 [Object]; dock
 nickname = rh_ber_04_dock
 pos = 0, 0, 0
 rotate = 0, -90, 0
 archetype = space_shipping01
-reputation = rh_grp
-behavior = NOTHING
-difficulty_level = 12
-base = rh_ber_04_base
-dock_with = rh_ber_04_base
-pilot = pilot_solar_hardest
-visit = 16
-voice = atc_leg_m01
-space_costume = sh_male1_head, rh_wilham_body, prop_neuralnet_f, prop_neuralnet_f_up_right
-ids_name = 196722
-ids_info = 065739
+{dock_props}
 
 ;main construction
 [Object]

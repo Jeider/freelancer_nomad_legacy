@@ -8,15 +8,7 @@ nickname = OM2_01
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = prison
-dock_with = om2_01_base
-base = om2_01_base
-loadout = prison_co
-ids_name = 203856
-ids_info = 065767
-behavior = NOTHING
-reputation = pi_grp
-voice = atc_leg_m01
-space_costume = li_rockford_head, sh_male2_body, prop_hat_male_pirate_a, prop_neuralnet_d
+{dock_props}
 
 [Object]
 nickname = OM2_01_CORE
