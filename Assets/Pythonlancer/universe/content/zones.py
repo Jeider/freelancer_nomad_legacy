@@ -22,10 +22,14 @@ class Zone(SystemObject):
             'size': '{}, {}, {}'.format(*self.get_size()),
         }
 
+    def get_zone_merged_params(self):
+        return ''
+
     def get_system_content(self):
         params = self.get_zone_main_params()
         params.update(self.get_zone_extra_parameters())
         content = ['{} = {}'.format(key, value) for key, value in params.items()]
+        content.append(self.get_zone_merged_params())
         return self.ZONE_TEMPLATE.format(params=SINGLE_DIVIDER.join(content))
 
     def get_zone_extra_parameters(self):
@@ -53,6 +57,7 @@ class DynamicZone(DynamicSystemObject, Zone):
         self.spacedust = kwargs.get('spacedust')
         self.spacedust_maxparticles = kwargs.get('spacedust_maxparticles')
         self.position = kwargs.get('position')
+        self.merged_params = kwargs.get('merged_params')
         super().__init__(*args, **kwargs)
 
     def get_zone_nickame(self):
@@ -77,6 +82,11 @@ class DynamicZone(DynamicSystemObject, Zone):
         if self.spacedust_maxparticles:
             params['spacedust_maxparticles'] = self.spacedust_maxparticles
         return params
+
+    def get_zone_merged_params(self):
+        if self.merged_params:
+            return self.merged_params
+        return ''
 
 
 class SphereZone(Zone):

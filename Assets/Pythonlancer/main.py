@@ -58,6 +58,7 @@ def main():
         # ('system_content_test.ini', core.universe.get_system_content_test()),  # moved to sync
         # ('system_loadouts.ini', core.universe.get_system_loadouts()),  # moved to sync
         ('universe_bases.ini', core.universe.get_interior_definitions()),
+        ('mbases_content.ini', core.universe.get_mbases_content()),
 
         ('ship_packages.ini', core.shiparch.get_ship_goods()),
 

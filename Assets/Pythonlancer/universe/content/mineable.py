@@ -588,7 +588,8 @@ nickname = {nickname}
 pos = {pos}
 rotate = {rotate}
 archetype = {archetype}
-loadout = {loadout}'''
+loadout = {loadout}
+visit = 128'''
 
     def get_archetype_by_reward_type(self, reward_type):
         if reward_type == MINING_REWARD_LOW: 
@@ -621,6 +622,7 @@ pos = {pos_1}
 rotate = 0, 0, 0
 archetype = {archetype}
 loadout = {loadout_1}
+visit = 128
 
 [Object]
 nickname = {nickname}_box02
@@ -628,6 +630,7 @@ pos = {pos_2}
 rotate = 0, 90, 0
 archetype = {archetype}
 loadout = {loadout_2}
+visit = 128
 
 [Object]
 nickname = {nickname}_box03
@@ -635,6 +638,7 @@ pos = {pos_3}
 rotate = 0, 180, 0
 archetype = {archetype}
 loadout = {loadout_3}
+visit = 128
 
 [Object]
 nickname = {nickname}_box04
@@ -642,6 +646,7 @@ pos = {pos_4}
 rotate = 0, -90, 0
 archetype = {archetype}
 loadout = {loadout_4}
+visit = 128
 
 [Object]
 nickname = {nickname}_box05
@@ -649,6 +654,7 @@ pos = {pos_5}
 rotate = 180, -90, 0
 archetype = {archetype}
 loadout = {loadout_5}
+visit = 128
 
 [Object]
 nickname = {nickname}_box06
@@ -656,6 +662,7 @@ pos = {pos_6}
 rotate = 180, 0, 0
 archetype = {archetype}
 loadout = {loadout_6}
+visit = 128
 
 [Object]
 nickname = {nickname}_box07
@@ -663,13 +670,15 @@ pos = {pos_7}
 rotate = 180, 90, 0
 archetype = {archetype}
 loadout = {loadout_7}
+visit = 128
 
 [Object]
 nickname = {nickname}_box08
 pos = {pos_8}
 rotate = 180, 180, 0
 archetype = {archetype}
-loadout = {loadout_8}'''
+loadout = {loadout_8}
+visit = 128'''
 
     POSITIONS = [
         (0, 0, 0),
@@ -681,6 +690,29 @@ loadout = {loadout_8}'''
         (-5, -0.5, -5),
         (-5, -0.5, 0),
     ]
+
+    # POSITIONS = [
+    #     (0, 1, 1),
+    #     (0, 1, -6),
+    #     (-5, 1, -6),
+    #     (-5, 1, 1),
+    #     (0, -1.5, 1),
+    #     (0, -1.5, -6),
+    #     (-5, -1.5, -6),
+    #     (-5, -1.5, 1),
+    # ]
+
+
+    # POSITIONS = [
+    #     (10, 110, 10),
+    #     (10, 110, -15),
+    #     (-15, 110, -15),
+    #     (-15, 110, 10),
+    #     (10, -12.5, 10),
+    #     (10, -12.5, -15),
+    #     (-15, -12.5, -15),
+    #     (-15, -12.5, 10),
+    # ]
 
     # POSITIONS = [
     #     (0, 0, 0),

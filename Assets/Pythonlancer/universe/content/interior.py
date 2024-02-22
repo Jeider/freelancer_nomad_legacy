@@ -1,10 +1,10 @@
 from text.dividers import DIVIDER
 
-INTERIOR_FOLDER_RH = 'RH'
-INTERIOR_FOLDER_LI = 'LI'
-INTERIOR_FOLDER_BR = 'BR'
-INTERIOR_FOLDER_KU = 'KU'
-INTERIOR_FOLDER_CO = 'CO'
+ROOM_FOLDER_RH = 'RH'
+ROOM_FOLDER_LI = 'LI'
+ROOM_FOLDER_BR = 'BR'
+ROOM_FOLDER_KU = 'KU'
+ROOM_FOLDER_CO = 'CO'
 
 BAR = 'Bar'
 DECK = 'Deck'
@@ -54,32 +54,149 @@ local_faction = {faction}
 diff = 1
 msg_id_prefix = {audio_prefix}'''
 
+MBASE_MVENDOR = '''[MVendor]
+num_offers = 8, 12'''
+
+MBASE_MAIN_FACTION_TEMPLATE = '''[BaseFaction]
+faction = {faction}
+weight = 90
+offers_missions = true
+mission_type = DestroyMission, 0.000000, 0.112387, 100'''
+
+MBASE_MAIN_FACTION_TEMPLATE_NO_MISSION = '''[BaseFaction]
+faction = {faction}
+weight = 90
+offers_missions = false'''
+
+MBASE_SECOND_FACTION_TEMPLATE = '''[BaseFaction]
+faction = {faction}
+weight = 1
+offers_missions = false'''
+
+ALL_ON_DECK_DEALERS_TEMPLATE = '''[MRoom]
+nickname = Deck
+character_density = 3
+fixture = {trader}, Zs/NPC/Trader/01/A/Stand, scripts\\vendors\\li_commtrader_fidget.thn, trader
+fixture = {equip}, Zs/NPC/Equipment/01/A/Stand, scripts\\vendors\\li_equipdealer_fidget.thn, Equipment
+fixture = {shipdealer}, Zs/NPC/Shipdealer/01/A/Stand, scripts\\vendors\\li_shipdealer_fidget.thn, ShipDealer'''
+
+DECK_DEALERS_TEMPLATE = '''[MRoom]
+nickname = Deck
+character_density = 2
+fixture = {trader}, Zs/NPC/Trader/01/A/Stand, scripts\\vendors\\li_commtrader_fidget.thn, trader
+fixture = {equip}, Zs/NPC/Equipment/01/A/Stand, scripts\\vendors\\li_equipdealer_fidget.thn, Equipment
+
+[MRoom]
+nickname = ShipDealer
+character_density = 1
+fixture = {shipdealer}, Zs/NPC/Shipdealer/01/A/Stand, scripts\\vendors\\li_shipdealer_fidget.thn, ShipDealer'''
+
+DECK_DEALERS_ONLY_TEMPLATE = '''[MRoom]
+nickname = Deck
+character_density = 2
+fixture = {trader}, Zs/NPC/Trader/01/A/Stand, scripts\\vendors\\li_commtrader_fidget.thn, trader
+fixture = {equip}, Zs/NPC/Equipment/01/A/Stand, scripts\\vendors\\li_equipdealer_fidget.thn, Equipment'''
+
+SINGLE_CHAR_DEALERS_TEMPLATE = '''[MRoom]
+nickname = Equipment
+character_density = 1
+fixture = {equip}, Zs/NPC/Equipment/01/A/Stand, scripts\\vendors\\li_equipdealer_fidget.thn, Equipment
+
+[MRoom]
+nickname = trader
+character_density = 1
+fixture = {trader}, Zs/NPC/Trader/01/A/Stand, scripts\\vendors\\li_commtrader_fidget.thn, trader
+
+[MRoom]
+nickname = ShipDealer
+character_density = 1
+fixture = {shipdealer}, Zs/NPC/Shipdealer/01/A/Stand, scripts\\vendors\\li_shipdealer_fidget.thn, ShipDealer'''
+
+EQUIPDEALER_NAME_TEMPLATE = '{base_name}_fix_equipdealer'
+COMMTRADER_NAME_TEMPLATE = '{base_name}_fix_commtrader'
+SHIPDEALER_NAME_TEMPLATE = '{base_name}_fix_shipdealer'
+
+
 
 class Interior(object):
     START_ROOM = None
     ROOMS = {}
     PIRATE_BAR = False
     CUSTOM_INTERIOR_FILE = False
+    DEALER_PLACEMENTS_TEMPLATE = None
+    OFFER_MISSIONS = True
 
-    def __init__(self, base_instance, interior_subfolder):
+    def __init__(self, base_instance, room_subfolder):
         self.base_instance = base_instance
         self.base_nickname = self.base_instance.get_base_nickname()
-        self.interior_subfolder = interior_subfolder
+        self.room_subfolder = room_subfolder
 
-        if not self.CUSTOM_INTERIOR_FILE and not self.interior_subfolder:
-            raise Exception('interior subfolder not defined for %s' % self.__class__.__name__)
+        if not self.CUSTOM_INTERIOR_FILE and not self.room_subfolder:
+            raise Exception('room subfolder not defined for %s' % self.__class__.__name__)
 
     def get_mbase(self):
         entries = []
-        enties.append(
+
+        base_name = self.base_instance.get_base_nickname()
+
+        entries.append(
             MBASE_ROOT_TEMPLATE.format(
-                base_name=base_instance.get_base_nickname(),
-                faction=base_instance.get_faction(),
-                audio_prefix=base_instance.get_audio_prefix(),
+                base_name=base_name,
+                faction=self.base_instance.get_faction(),
+                audio_prefix=self.base_instance.get_audio_prefix(),
             )
         )
+
+        if self.OFFER_MISSIONS:
+            entries.append(MBASE_MVENDOR)
+            entries.append(
+                MBASE_MAIN_FACTION_TEMPLATE.format(
+                    faction=self.base_instance.FACTION,
+                )
+            )
+        else:
+            entries.append(
+                MBASE_MAIN_FACTION_TEMPLATE_NO_MISSION.format(
+                    faction=self.base_instance.FACTION,
+                )
+            )
+
+        second_factions = self.get_second_factions()
+
+        for faction in second_factions:
+            entries.append(
+                MBASE_SECOND_FACTION_TEMPLATE.format(faction=faction)
+            )
+
+        if self.base_instance.DEALERS:
+
+            if not self.DEALER_PLACEMENTS_TEMPLATE:
+                raise Exception('unknown dealers template of interior for base %s' % self.base_instance.__class__.__name__)
+
+            equipdealer_name = EQUIPDEALER_NAME_TEMPLATE.format(base_name=base_name)
+            commtrader_name = COMMTRADER_NAME_TEMPLATE.format(base_name=base_name)
+            shipdealer_name = SHIPDEALER_NAME_TEMPLATE.format(base_name=base_name)
+
+            entries.append(self.base_instance.DEALERS.get_equip(equipdealer_name))
+            entries.append(self.base_instance.DEALERS.get_trader(commtrader_name))
+            entries.append(self.base_instance.DEALERS.get_shipdealer(shipdealer_name))
+
+            entries.append(
+                self.DEALER_PLACEMENTS_TEMPLATE.format(
+                    equip=equipdealer_name,
+                    trader=commtrader_name,
+                    shipdealer=shipdealer_name,
+                )
+            )
+
         return DIVIDER.join(entries)
 
+    def get_second_factions(self):
+        is_lawful = self.base_instance.is_lawful()
+        init_factions_list = self.base_instance.system.LAWFUL_FACTIONS if is_lawful else self.base_instance.system.UNLAWFUL_FACTIONS
+        factions_list = init_factions_list.copy()
+        factions_list.remove(self.base_instance.FACTION)
+        return factions_list
 
 
 class CustomFileInterior(Interior):
@@ -102,20 +219,22 @@ class CustomFileInterior(Interior):
         return self.HAVE_SHIPDEALER
 
 
-class CustomMainRoomInterior(CustomFileInterior):
-    CUSTOM_INTERIOR_FILE = True
-    HAVE_BAR = True
-    HAVE_EQUIP = True
-    HAVE_TRADER = True
-    HAVE_SHIPDEALER = False
-
-
-class CustomFullRoomInterior(CustomFileInterior):
+class CustomFullSingleRoomInterior(CustomFileInterior):
     CUSTOM_INTERIOR_FILE = True
     HAVE_BAR = True
     HAVE_EQUIP = True
     HAVE_TRADER = True
     HAVE_SHIPDEALER = True
+    DEALER_PLACEMENTS_TEMPLATE = ALL_ON_DECK_DEALERS_TEMPLATE
+
+
+class CustomFullSplitRoomInterior(CustomFileInterior):
+    CUSTOM_INTERIOR_FILE = True
+    HAVE_BAR = True
+    HAVE_EQUIP = True
+    HAVE_TRADER = True
+    HAVE_SHIPDEALER = True
+    DEALER_PLACEMENTS_TEMPLATE = SINGLE_CHAR_DEALERS_TEMPLATE
 
 
 class GenericInterior(Interior):
@@ -130,9 +249,9 @@ class GenericInterior(Interior):
             )
         ]
         for room_name, room_file in self.ROOMS.items():
-            room_subfolder = self.interior_subfolder
+            room_subfolder = self.room_subfolder
             if room_name == BAR and self.PIRATE_BAR:
-                room_subfolder = INTERIOR_FOLDER_CO
+                room_subfolder = ROOM_FOLDER_CO
 
             items.append(
                 ROOM_TEMPLATE.format(
@@ -167,6 +286,7 @@ class BattleshipInterior(GenericInterior):
         DECK: ROOM_BATTLESHIP_DECK,
         BAR: ROOM_BATTLESHIP_BAR_MSN,
     }
+    DEALER_PLACEMENTS_TEMPLATE = ALL_ON_DECK_DEALERS_TEMPLATE
 
 
 class BattleshipNoshipInterior(GenericInterior):
@@ -175,6 +295,7 @@ class BattleshipNoshipInterior(GenericInterior):
         DECK: ROOM_BATTLESHIP_NOSHIP_DECK,
         BAR: ROOM_BATTLESHIP_BAR_ALONE_MSN,
     }
+    DEALER_PLACEMENTS_TEMPLATE = DECK_DEALERS_ONLY_TEMPLATE
 
 
 class OutpostInterior(GenericInterior):
@@ -183,6 +304,7 @@ class OutpostInterior(GenericInterior):
         DECK: ROOM_OUTPOST_DECK,
         BAR: ROOM_OUTPOST_BAR_MSN,
     }
+    DEALER_PLACEMENTS_TEMPLATE = DECK_DEALERS_TEMPLATE
 
 
 class OutpostShipdealerInterior(GenericInterior):
@@ -192,6 +314,7 @@ class OutpostShipdealerInterior(GenericInterior):
         BAR: ROOM_OUTPOST_SHIP_BAR_MSN,
         SHIPDEALER: ROOM_OUTPOST_SHIPDEALER,
     }
+    DEALER_PLACEMENTS_TEMPLATE = DECK_DEALERS_TEMPLATE
 
 
 class StationInterior(GenericInterior):
@@ -200,6 +323,7 @@ class StationInterior(GenericInterior):
         DECK: ROOM_STATION_DECK,
         BAR: ROOM_STATION_BAR_MSN,
     }
+    DEALER_PLACEMENTS_TEMPLATE = DECK_DEALERS_TEMPLATE
 
 
 class StationShipdealerInterior(GenericInterior):
@@ -209,6 +333,7 @@ class StationShipdealerInterior(GenericInterior):
         BAR: ROOM_STATION_SHIP_BAR_MSN,
         SHIPDEALER: ROOM_STATION_SHIPDEALER,
     }
+    DEALER_PLACEMENTS_TEMPLATE = DECK_DEALERS_TEMPLATE
 
 
 class StationBshbarInterior(GenericInterior):
@@ -217,6 +342,7 @@ class StationBshbarInterior(GenericInterior):
         DECK: ROOM_STATION_DECK,
         BAR: ROOM_BATTLESHIP_BAR_ALONE_MSN,
     }
+    DEALER_PLACEMENTS_TEMPLATE = DECK_DEALERS_TEMPLATE
 
 
 class StationShipdealerBshbarInterior(GenericInterior):
@@ -226,6 +352,7 @@ class StationShipdealerBshbarInterior(GenericInterior):
         BAR: ROOM_BATTLESHIP_BAR_MSN,
         SHIPDEALER: ROOM_STATION_SHIPDEALER,
     }
+    DEALER_PLACEMENTS_TEMPLATE = DECK_DEALERS_TEMPLATE
 
 
 class PirateBar(object):

@@ -4,9 +4,12 @@ from universe.content.zones import Zone, BaseAsteroidZone, NebulaZone
 from universe.content.asteroid_definition import AsteroidDefinition
 from universe.content.mineable import Mineable, RewardField, Field, RewardsGroup
 from universe.content import interior
+from universe.content import faction
+from universe.content import population
 
 from universe.systems import br_wrw as br_wrw_objects
 from universe.systems import rh_ber as rh_ber_content
+from universe.systems import sig13 as sig13_content
 
 from text.dividers import DIVIDER
 
@@ -15,6 +18,17 @@ from tools.system_template import SystemTemplateLoader
 
 
 TLR_DISTANCE = 7000
+
+VIGNETTE_ZONE_TEMPLATE = '''[Zone]
+nickname = Zone_{system_name}_destroy_vignette_{index:02d}
+pos = {position}
+shape = SPHERE
+size = 10000
+mission_type = unlawful, lawful
+sort = 99.500000
+vignette_type = open'''
+
+MULTI_VIGNETTE_ZONE_DRIFT = 6000
 
 
 class System(object):
@@ -29,6 +43,17 @@ class System(object):
 system = {system_name}
 distance = {tlr_distance}
 '''
+
+    FACTION_CODE = None
+    ROOM_SUBFOLDER = None
+
+    LAWFUL_FACTIONS = []
+    UNLAWFUL_FACTIONS = []
+
+    LAWFUL_POPULATION_CLASS = None
+    UNLAWFUL_POPULATION_CLASS = None
+
+    ENABLE_POPULATION = True
 
     subclasses = []
 
@@ -143,8 +168,11 @@ distance = {tlr_distance}
 
         self.generate_patrols()
 
-        # for patrol in self.get_patrols_list():
-        #     system_content.append(patrol.get_system_content())
+        if self.ENABLE_POPULATION:
+            for patrol in self.get_patrols_list():
+                system_content.append(patrol.get_system_content())
+
+        system_content.extend(self.get_mission_vignettes())
 
         self.system_content_str = DIVIDER.join(system_content)
 
@@ -185,27 +213,19 @@ distance = {tlr_distance}
     def get_dockable_objects(self):
         return [static for static in self.statics_list if issubclass(static.__class__, DockableObject)]
 
-    def get_interior_definitions(self):
-        definitions = []
+    def get_interiors_data(self):
+        interior_definitions = []
+        interior_files = {}
+        mbases_content = []
 
         for static in self.get_dockable_objects():
-            if static.INTERIOR_CLASS.CUSTOM_INTERIOR_FILE is True:
-                continue
+            mbases_content.append(static.get_mbases_content())
 
-            definitions.append(static.get_interior_definition())
+            if not static.INTERIOR_CLASS.CUSTOM_INTERIOR_FILE:
+                interior_definitions.append(static.get_interior_definition())
+                interior_files[static.get_interior_file_name()] = static.get_interior_content()
 
-        return definitions
-
-    def get_interior_files(self):
-        interiors = {}
-
-        for static in self.get_dockable_objects():
-            if static.INTERIOR_CLASS.CUSTOM_INTERIOR_FILE is True:
-                continue
-
-            interiors[static.get_interior_file_name()] = static.get_interior_content()
-
-        return interiors
+        return interior_definitions, interior_files, mbases_content
 
     def process_template(self):
         if self.TEMPLATE_NAME is None:
@@ -297,7 +317,50 @@ distance = {tlr_distance}
         for response_item in patrols_response:
             self.patrols_db[response_item.get_path_label()].add_raw_path(response_item)
 
+    def get_police_faction(self):
+        raise NotImplementedError
 
+    def get_bounty_hunter_encounter(self):
+        raise NotImplementedError
+    
+    def get_pirate_faction(self):
+        raise NotImplementedError
+
+    def get_mission_vignettes(self):
+        entries = []
+        index = 1
+
+        for position in self.template.get_single_mission_vignettes_positions():
+            entries.append(
+                VIGNETTE_ZONE_TEMPLATE.format(
+                    system_name=self.NAME,
+                    index=index,
+                    position='{}, {}, {}'.format(*position),
+                )
+            )
+            index += 1
+
+        drift = abs(MULTI_VIGNETTE_ZONE_DRIFT)
+
+        multi_drift_map = [
+            (-drift, 0),
+            (drift, 0),
+            (0, -drift),
+            (0, drift),
+        ]
+
+        for pos_x, pos_y, pos_z in self.template.get_multiple_mission_vignettes_positions():
+            for drift_x, drift_z in multi_drift_map:
+                entries.append(
+                    VIGNETTE_ZONE_TEMPLATE.format(
+                        system_name=self.NAME,
+                        index=index,
+                        position='{}, {}, {}'.format(pos_x + drift_x, pos_y, pos_z + drift_z),
+                    )
+                )
+                index += 1
+
+        return entries
 
 
 class BretoniaSystem(object):
@@ -314,12 +377,36 @@ class BretoniaSystem(object):
 class RheinlandSystem(object):
 
     FACTION_CODE = None
-    INTERIOR_DEFAULT_SUBFOLDER = interior.INTERIOR_FOLDER_RH
+    ROOM_SUBFOLDER = interior.ROOM_FOLDER_RH
+
+    LAWFUL_FACTIONS = [
+        faction.RH_GRP,
+        faction.BH_GRP,
+        faction.RC_GRP,
+        faction.TR_GRP,
+    ]
+    UNLAWFUL_FACTIONS = [
+        faction.RX_GRP,
+        faction.PI_GRP,
+        faction.JUNK_GRP,
+    ]
+
+    LAWFUL_POPULATION_CLASS = population.RheinlandLegalPopulation
+    UNLAWFUL_POPULATION_CLASS = None
 
     def get_faction(self):
         if self.FACTION_CODE is None:
             raise Exception('unknown faction for system %s' % self.NAME)
         return self.FACTION_CODE
+
+    def get_police_faction(self):
+        return faction.RH_GRP
+
+    def get_bounty_hunter_encounter(self):
+        return 'bh_grp_rh_patrol'
+    
+    def get_pirate_faction(self):
+        return faction.RX_GRP
 
 
 class rh_mnh(System):
@@ -337,7 +424,7 @@ class rh_stut(System):
 class rh_ber(RheinlandSystem, System):
     NAME = 'rh_ber'
     TEMPLATE_NAME = 'rh_ber'
-    FACTION_CODE = 'br_grp'
+    FACTION_CODE = 'rh_grp'
     CONTENT = rh_ber_content
 
     SYSTEM_FOLDER = 'RH_BERLIN'
@@ -351,8 +438,31 @@ class om15(System):
     NAME = 'om15'
 
 
-class sig13(System):
+# rheinland -  temporary
+class sig13(RheinlandSystem, System): 
     NAME = 'sig13'
+    TEMPLATE_NAME = 'sig13'
+    FACTION_CODE = 'rh_grp'
+    CONTENT = sig13_content
+
+    SYSTEM_FOLDER = 'SIGMA13'
+    ALLOW_SYNC = True
+    ENABLE_POPULATION = False
+
+    LAWFUL_FACTIONS = [
+        faction.RH_GRP,
+        faction.LI_GRP,
+        faction.BH_GRP,
+        faction.RC_GRP,
+        faction.LC_GRP,
+        faction.TR_GRP,
+    ]
+    UNLAWFUL_FACTIONS = [
+        faction.RX_GRP,
+        faction.LX_GRP,
+        faction.PI_GRP,
+        faction.JUNK_GRP,
+    ]
 
 
 class li_cal(System):

@@ -17,6 +17,9 @@ SIZE_KEY = 'size'
 
 FULL_ALIAS_TEMPLATE = '{alias}{index}'
 
+RAND_ROTATE_MIN = -360
+RAND_ROTATE_MAX = 360
+
 
 def get_reversed_direction(direction):
     if direction == TOP:
@@ -49,7 +52,12 @@ class SystemObject(object):
     REL_APPEND = 3000  # distance between object and tradelane
     REL_DRIFT = 0  # move initial pos for tradelane start point
 
+    ROTATE_RANDOM = False
+
     FACTION = None
+
+    LAWFUL_POPULATION_CLASS = None
+    UNLAWFUL_POPULATION_CLASS = None
 
     @classmethod
     def is_abstract(cls):
@@ -139,6 +147,8 @@ class SystemObject(object):
         return self.system.template.get_item_pos(self.get_full_alias())
 
     def get_rotate(self):
+        if self.ROTATE_RANDOM:
+            return (0, randint(RAND_ROTATE_MIN, RAND_ROTATE_MAX), 0)
         return self.system.template.get_item_rotate(self.get_full_alias())
 
     def get_shape(self):
@@ -152,6 +162,20 @@ class SystemObject(object):
 
     def get_faction(self):
         return self.FACTION
+
+    def get_lawful_population_class(self):
+        if self.LAWFUL_POPULATION_CLASS:
+            return self.LAWFUL_POPULATION_CLASS
+        elif self.system.LAWFUL_POPULATION_CLASS:
+            return self.system.LAWFUL_POPULATION_CLASS
+        raise Exception('lawful population class isnt defined for %s' % self.__class__.__name__)
+
+    def get_unlawful_population_class(self):
+        if self.UNLAWFUL_POPULATION_CLASS:
+            return self.UNLAWFUL_POPULATION_CLASS
+        elif self.system.UNLAWFUL_POPULATION_CLASS:
+            return self.system.UNLAWFUL_POPULATION_CLASS
+        raise Exception('unlawful population class isnt defined for %s' % self.__class__.__name__)
 
 
 class DynamicSystemObject(SystemObject):

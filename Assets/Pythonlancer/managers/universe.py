@@ -29,6 +29,7 @@ class UniverseManager(object):
         self.asteroid_definitions = []
         self.interior_files = {}
         self.interior_definitions = []
+        self.mbases_content = []
 
         self.load_systems()
         self.load_bases()
@@ -43,8 +44,11 @@ class UniverseManager(object):
                 self.system_content_test.append(system.system_content_str)
                 self.loadouts += system.loadouts
                 self.asteroid_definitions += system.asteroid_definitions
-                self.interior_definitions += system.get_interior_definitions()
-                self.interior_files.update(system.get_interior_files())
+
+                interior_definitions, interior_files, mbases_content = system.get_interiors_data()
+                self.interior_definitions += interior_definitions
+                self.interior_files.update(interior_files)
+                self.mbases_content += mbases_content
 
     def load_bases(self):
         for base_class in Base.subclasses:
@@ -110,6 +114,9 @@ class UniverseManager(object):
 
     def get_interior_definitions(self):
         return DIVIDER.join(self.interior_definitions)
+
+    def get_mbases_content(self):
+        return DIVIDER.join(self.mbases_content)
 
     def sync_data(self):
         for system in self.systems:

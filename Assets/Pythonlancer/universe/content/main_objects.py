@@ -5,7 +5,8 @@ from fx.space import Dust
 from universe.content.system_object import SystemObject, TOP, BOTTOM, LEFT, RIGHT, DIRECTIONS, POS_KEY, ROT_KEY, SIZE_KEY
 from universe.content.zones import DynamicZone, DynamicSphereZone
 from universe.content import interior
-from universe.content.characters import SpaceVoice
+from universe.content import faction
+from universe.content.space_voice import SpaceVoice
 
 from text.dividers import SINGLE_DIVIDER, DIVIDER
 
@@ -17,11 +18,16 @@ TLR_DISTANCE = 7000
 TLR_HUGE_SIZE_RINGS_COUNT = 5
 TLR_SMALL_SIZE_RINGS_COUNT = 4
 
+DEFENCE_SIMPLE = 'simple'
+DEFENCE_MEDIUM = 'medium'
+DEFENCE_HIGH = 'high'
+
 
 class AppearableObject(SystemObject):
     SPACE_OBJECT_TEMPLATE = None
     SPACE_OBJECT_NAME = None
     ARCHETYPE = None
+    LOADOUT = None
 
     ARCHETYPE_TEMPLATE = '''[Object]
 nickname = {nickname}
@@ -76,6 +82,11 @@ archetype = {archetype}'''
             )
         ]
 
+        if self.LOADOUT:
+            content.append('loadout = {}'.format(self.LOADOUT))
+
+        content.append(self.get_dock_props())
+
         for key, value in self.get_inspace_parameters().items():
             content.append('{} = {}'.format(key, value))
 
@@ -87,9 +98,6 @@ archetype = {archetype}'''
 
     def get_sattelites(self):
         return []
-
-    def get_rotate(self):
-        return (0, 0, 0)
 
     def get_inspace_nickname(self):
         print(self.__class__.__name__)
@@ -106,13 +114,18 @@ class StaticObject(AppearableObject):
     ASTEROID_ZONES = []
     AST_EXCLUSION_ZONE_SIZE = 3000
     AST_ZONE_NAME_TEMPLATE = 'Zone_{space_name}_ast_exclusion'
-    RING_ZONE_NAME_TEMPLATE = 'Zone_{space_name}_ring_x123'
+    RING_ZONE_NAME_TEMPLATE = 'Zone_{space_name}_ring'
     RING_FILE_TEMPLATE = 'solar\\rings\\{ring_file_name}.ini'
+    DEFENCE_ZONE_NAME_TEMPLATE = 'Zone_{space_name}_pop_defence'
 
     RING = False
     RING_ZONE_ALIAS = None
     RING_ZONE_INDEX = None
     RING_FILE_NAME = None
+
+    DEFENCE_ZONE_SIZE = 5000
+    DEFENCE_LEVEL = None
+    DEFENCE_ZONE_BACKDRIFT = 0
     
     def get_ast_exclusion_zone_name(self):
         return self.AST_ZONE_NAME_TEMPLATE.format(
@@ -122,6 +135,52 @@ class StaticObject(AppearableObject):
     def get_ring_zone_name(self):
         return self.RING_ZONE_NAME_TEMPLATE.format(
             space_name=self.get_inspace_nickname(),
+        )
+    
+    def get_defence_zone_name(self):
+        return self.DEFENCE_ZONE_NAME_TEMPLATE.format(
+            space_name=self.get_inspace_nickname(),
+        )
+
+    def get_defence_zone_position(self):
+        pos_x, pos_y, pos_z = self.get_position()
+        if self.REL == LEFT:
+            pos_x += self.DEFENCE_ZONE_BACKDRIFT
+        if self.REL == RIGHT:
+            pos_x -= self.DEFENCE_ZONE_BACKDRIFT
+        if self.REL == TOP:
+            pos_z += self.DEFENCE_ZONE_BACKDRIFT
+        if self.REL == BOTTOM:
+            pos_z -= self.DEFENCE_ZONE_BACKDRIFT
+        return (pos_x, pos_y, pos_z)
+
+    def get_lawful_defence_zone_params(self):
+        population_class = self.get_lawful_population_class()
+        if self.DEFENCE_LEVEL == DEFENCE_SIMPLE:
+            return population_class.get_simple_defence_params()
+        elif self.DEFENCE_LEVEL == DEFENCE_MEDIUM:
+            return population_class.get_medium_defence_params()
+        elif self.DEFENCE_LEVEL == DEFENCE_HIGH:
+            return population_class.get_high_defence_params()
+
+        raise Exception('Unknown defence class for object %s' % self.__class__.__name__)
+
+    def get_unlawful_defence_zone_params(self):
+        raise Exception('unlawful not supported at this moment %s' % self.__class__.__name__)
+
+    def get_defence_zone(self):
+        return DynamicSphereZone(
+            system=self.system,
+            space_nickname=self.get_defence_zone_name(),
+            alias=self.ALIAS,
+            index=self.INDEX,
+            position=self.get_defence_zone_position(),
+            size=self.DEFENCE_ZONE_SIZE,
+            merged_params=(
+                self.get_lawful_defence_zone_params()
+                if self.is_lawful() else
+                self.get_unlawful_defence_zone_params()
+            )
         )
 
     def get_dynamic_zones(self):
@@ -147,6 +206,11 @@ class StaticObject(AppearableObject):
                     index=self.RING_ZONE_INDEX,
                 )
             )
+
+        if self.DEFENCE_LEVEL and self.system.ENABLE_POPULATION:
+            zones.append(
+                self.get_defence_zone(),
+            )
         return zones
 
     def get_inspace_parameters(self):
@@ -160,6 +224,12 @@ class StaticObject(AppearableObject):
                 ring_file=self.RING_FILE_TEMPLATE.format(ring_file_name=self.RING_FILE_NAME),
             )
         return params
+
+    def is_lawful(self):
+        is_lawful = self.FACTION in self.system.LAWFUL_FACTIONS
+        if not is_lawful and self.FACTION not in self.system.UNLAWFUL_FACTIONS:
+            raise Exception('Faction isnt defined in a system for object %s' % self.__class__.__name__)
+        return is_lawful
 
 
 class RawText(SystemObject):
@@ -262,14 +332,25 @@ class Sun(GenericSphere):
     def get_inspace_parameters(self):
         params = super().get_inspace_parameters()
         params.update({
-            'loadout': self.LOADOUT,
             'star': self.STAR,
             'atmosphere_range': self.get_atmosphere_range(),
         })
+        if self.LOADOUT:
+            params['loadout'] = self.LOADOUT
         return params
 
     def get_inspace_nickname(self):
         return '{system_name}_sun_{index}'.format(system_name=self.system.NAME, index=self.INDEX)
+
+
+class SunSmall(Sun):
+    ARCHETYPE = 'sun_1000'
+
+    ATMOSHPERE_RANGE = 5000
+    DEATH_ZONE_SIZE = 4000
+    DEATH_ZONE_DAMAGE = 200000000
+    DRAG_ZONE_SIZE = 6000
+    DRAG_MODIFIER = 4
 
 
 class Planet(GenericSphere):
@@ -344,7 +425,7 @@ parent = {parent_planet}'''
             params['spin'] = spin_data
 
         if self.RELATED_DOCK_RING is not None:
-            params['base'] = self.system.get_static_by_class(self.RELATED_DOCK_RING).get_base_nickname()
+            params.update(self.system.get_static_by_class(self.RELATED_DOCK_RING).get_raw_root_props())
 
         return params
 
@@ -403,6 +484,9 @@ class Jumpgate(JumpableObject):
         BOTTOM: 0,
     }
 
+    DEFENCE_ZONE_SIZE = 4000
+    DEFENCE_LEVEL = DEFENCE_SIMPLE
+
     def get_inspace_parameters(self):
         params = super().get_inspace_parameters()
         params.update({
@@ -427,6 +511,8 @@ class Sattelite(StaticObject):
 class DockableObject(StaticObject):
     ARCHETYPE = 'depot'
     INTERIOR_CLASS = interior.CustomFileInterior  # custom interior
+    INTERIORS_FOLDER = 'GENERATED_INTERIORS'
+    DEALERS = None
 
     INTERIOR_BG1 = None
     INTERIOR_BG2 = None
@@ -440,18 +526,16 @@ strid_name = {ids_name}
 file = Universe\\{interiors_folder}\\{interior_file_name}.ini
 BGCS_base_run_by = W02bF44'''
 
-    INTERIORS_FOLDER = 'GENERATED_INTERIORS'
-    INTERIOR_SUBFOLDER = None
-
     AUDIO_PREFIX = None
+
+    DEFENCE_LEVEL = DEFENCE_MEDIUM
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
         self.interior = None
-
         if self.INTERIOR_CLASS:
-            self.interior = self.INTERIOR_CLASS(self, self.INTERIOR_SUBFOLDER)
+            self.interior = self.INTERIOR_CLASS(self, self.system.ROOM_SUBFOLDER)
 
     def get_inspace_nickname(self):
         return '{system_name}_{base_index:02d}'.format(system_name=self.system.NAME, base_index=self.BASE_INDEX)
@@ -484,21 +568,26 @@ BGCS_base_run_by = W02bF44'''
             definition.append('{} = {}'.format(self.BG2_KEY, self.INTERIOR_BG2))
         return SINGLE_DIVIDER.join(definition)
 
+    def get_mbases_content(self):
+        return self.interior.get_mbase()
+
     def get_audio_prefix(self):
         if not self.AUDIO_PREFIX:
-            raise Excpetion('unknown audio prefix for %s' % self.__class__.__name__)
+            raise Exception('unknown audio prefix for %s' % self.__class__.__name__)
         return self.AUDIO_PREFIX
 
-    def get_root_props(self):
+    def get_raw_root_props(self):
         base_name = self.get_base_nickname()
-        props = {
+        return {
             'ids_name': self.IDS_NAME,
             'ids_info': self.IDS_INFO,
             'base': base_name,
             'reputation': self.get_faction(),
             'behavior': 'NOTHING',
         }
-        return SINGLE_DIVIDER.join(['{} = {}'.format(key, value) for key, value in props.items()])
+
+    def get_root_props(self):
+        return SINGLE_DIVIDER.join(['{} = {}'.format(key, value) for key, value in self.get_raw_root_props().items()])
 
     def get_dock_props(self):
         base_name = self.get_base_nickname()
@@ -509,9 +598,10 @@ BGCS_base_run_by = W02bF44'''
             'dock_with': base_name,
             'reputation': self.get_faction(),
             'behavior': 'NOTHING',
-            'voice': SpaceVoice.VOICE_FEMALE,
-            'space_costume': 'ku_tashi_head, pl_female1_peasant_body, prop_neuralnet_a',
+            'voice': SpaceVoice.VOICE_MALE,
+            'space_costume': 'rh_captain_head, rh_male_guard_body, prop_hat_male_rh_grd_visor, prop_neuralnet_b_right',
         }
+
         return SINGLE_DIVIDER.join(['{} = {}'.format(key, value) for key, value in props.items()])
 
 
@@ -521,7 +611,7 @@ class Dockring(DockableObject):
     REL_DRIFT = 1000
     REL_APPEND = 3000
 
-    INTERIOR_CLASS = interior.CustomFullRoomInterior  # default for planets
+    INTERIOR_CLASS = None  # should be overrided
 
     AUDIO_PREFIX = None  # should be overrided
 
@@ -531,6 +621,10 @@ class Dockring(DockableObject):
         TOP: 0,
         BOTTOM: 180,
     }
+
+    DEFENCE_ZONE_SIZE = 5000
+    DEFENCE_LEVEL = DEFENCE_HIGH
+    DEFENCE_ZONE_BACKDRIFT = 2000
 
     def get_rotate(self):
         return (0, self.Y_ROTATE_PER_REL[self.REL], 0)
@@ -567,6 +661,21 @@ class Shipyard(DockableObject):
 
 class TradingBase(DockableObject):
     ALIAS = 'trading'
+    AUDIO_PREFIX = SpaceVoice.OUTPOST
+
+
+class Battleship(DockableObject):
+    ALIAS = 'bship'
+    AUDIO_PREFIX = SpaceVoice.BATTLESHIP
+
+
+class RheinlandBattleship(Battleship):
+    ARCHETYPE = 'r_battleship'
+    LOADOUT = 'rh_battleship_station'
+
+
+class Freeport(DockableObject):
+    ALIAS = 'freeport'
     AUDIO_PREFIX = SpaceVoice.FREEPORT
 
 
@@ -586,33 +695,14 @@ class Refinery(DockableObject):
 
 
 class PatrolObjective(SystemObject):
-    PATROL_NAME = None
+    PATROL_ALIAS = None
 
     TRACKS_PATROL_HEADING = '[Path]'
     TRACKS_PATROL_NAME = 'name = {name}, {index}'
     TRACKS_PATROL_ITEM = 'pos = {pos}'
-
-    SPACE_PARAMS = '''
-toughness = 1
-density = 1
-repop_time = 90
-max_battle_size = 3
-pop_type = lane_patrol
-relief_time = 30
-attack_ids = 10
-tradelane_attack = 50
-mission_eligible = true
-faction_weight = rx_grp, 10
-density_restriction = 1, patroller
-density_restriction = 1, police_patroller
-density_restriction = 1, pirate_patroller
-density_restriction = 4, lawfuls
-density_restriction = 4, unlawfuls
-encounter = patrol_tlr, 1, 0.330000
-faction = rx_grp, 1.000000
-'''
     
-    def __init__(self, index, positions):
+    def __init__(self, system, index, positions):
+        self.system = system
         self.index = index
         self.positions = positions
         self.raw_paths = []
@@ -620,7 +710,7 @@ faction = rx_grp, 1.000000
     def get_tracks_request_content(self):
         items = [
             self.TRACKS_PATROL_HEADING,
-            self.TRACKS_PATROL_NAME.format(name=self.PATROL_NAME, index=self.index),
+            self.TRACKS_PATROL_NAME.format(name=self.PATROL_ALIAS, index=self.index),
         ]
 
         for pos_item in self.positions:
@@ -634,28 +724,102 @@ faction = rx_grp, 1.000000
         self.raw_paths.append(tracks_raw_zone)
 
     def get_path_label(self):
-        return '{0}{1}'.format(self.PATROL_NAME, self.index)
+        return '{0}{1}'.format(self.PATROL_ALIAS, self.index)
+
+    def get_zone_params(self):
+        raise NotImplementedError
 
     def get_system_content(self):
         system_content = []
         for path in self.raw_paths:
             lines = ['[Zone]'] + path.raw_lines
-            zone_item = SINGLE_DIVIDER.join(lines) + self.SPACE_PARAMS
+            lines.append(self.get_zone_params())
+            zone_item = SINGLE_DIVIDER.join(lines)
             system_content.append(zone_item)
 
         return DIVIDER.join(system_content)
 
 
 class PolicePatrol(PatrolObjective):
-    PATROL_NAME = 'police'
+    PATROL_ALIAS = 'police'
+
+    PATROL_ENCOUNTER = 'patrol_police'
+    ZONE_PARAMS = '''toughness = 1
+density = 1
+repop_time = 90
+max_battle_size = 3
+pop_type = lane_patrol
+relief_time = 30
+usage = patrol
+mission_eligible = true
+density_restriction = 1, patroller
+density_restriction = 1, police_patroller
+density_restriction = 1, pirate_patroller
+density_restriction = 4, lawfuls
+density_restriction = 4, unlawfuls
+encounter = {encounter}, 1, 0.330000
+faction = {police_faction}, 1.000000'''
+
+    def get_zone_params(self):
+        return self.ZONE_PARAMS.format(
+            encounter=self.PATROL_ENCOUNTER,
+            police_faction=self.system.get_police_faction(),
+        )
 
 
 class HuntersPatrol(PatrolObjective):
-    PATROL_NAME = 'bounty_hunter'
+    PATROL_ALIAS = 'bounty_hunter'
+
+    HUNTERS_FACTION = faction.BH_GRP
+    ZONE_PARAMS = '''toughness = 4
+density = 3
+repop_time = 90
+max_battle_size = 4
+pop_type = field_patrol
+relief_time = 30
+usage = patrol
+mission_eligible = true
+density_restriction = 1, patroller
+density_restriction = 1, police_patroller
+density_restriction = 1, pirate_patroller
+density_restriction = 4, lawfuls
+density_restriction = 4, unlawfuls
+encounter = {bh_encounter}, 1, 0.330000
+faction = {bh_faction}, 1.000000'''
+
+    def get_zone_params(self):
+        return self.ZONE_PARAMS.format(
+            bh_encounter=self.system.get_bounty_hunter_encounter(),
+            bh_faction=self.HUNTERS_FACTION,
+        )
 
 
 class PiratePatrol(PatrolObjective):
-    PATROL_NAME = 'pirate'
+    PATROL_ALIAS = 'pirate'
+
+    PATROL_TLR_ENCOUNTER = 'patrol_tlr'
+    ZONE_PARAMS = '''toughness = 1
+density = 1
+repop_time = 90
+max_battle_size = 3
+pop_type = lane_patrol
+relief_time = 30
+attack_ids = 10
+tradelane_attack = 50
+mission_eligible = true
+density_restriction = 1, patroller
+density_restriction = 1, police_patroller
+density_restriction = 1, pirate_patroller
+density_restriction = 4, lawfuls
+density_restriction = 4, unlawfuls
+encounter = {patrol_tlr_encounter}, 1, 0.330000
+faction = {pirate_faction}, 1.000000'''
+
+    def get_zone_params(self):
+        return self.ZONE_PARAMS.format(
+            patrol_tlr_encounter=self.PATROL_TLR_ENCOUNTER,
+            pirate_faction=self.system.get_pirate_faction(),
+        )
 
 
 class Tradelane(object):
@@ -666,7 +830,7 @@ ids_name = 260920
 ids_info = 66170
 pos = {pos}
 rotate = {rotate}
-Archetype = Trade_Lane_Ring_F
+Archetype = Trade_Lane_Ring
 behavior = NOTHING
 reputation = {faction}
 loadout = trade_lane_ring_li_01
@@ -746,29 +910,12 @@ last = {last_tlr_props}
 
 zone = {tlr_zone_size}, {tlr_zone_index}
 '''
-    ZONE_TEMPLATE = ''  # TEMPORARY DISABLED
-
-    ZONE_TEMPLATEX = '''[zone]
+    ZONE_TEMPLATE = '''[zone]
 nickname = Zone_{system_name}_tlr_{tlr_letter}
 pos = {pos}
 rotate = {rotate}
 shape = BOX
-size = {size}
-sort = 6
-toughness = 1
-density = 6
-repop_time = 15
-max_battle_size = 4
-pop_type = major_tradelane
-relief_time = 15
-encounter = tr_grp_rh_transport_tlr, 5, 0.5
-faction = tr_grp, 1.00000
-encounter = rh_grp_main_trade_tlr, 5, 0.7
-faction = rh_grp, 0.50000
-faction = rc_grp, 0.50000
-encounter = bh_grp_rh_trade_tlr, 5, 0.5
-faction = bh_grp, 1.00000
-'''
+size = {size}'''
 
     def __init__(self, system):
         self.system = system
@@ -779,7 +926,7 @@ faction = bh_grp, 1.00000
         self.tracks_raw_outer_zone = None
         self.police_patrol = self.get_police_patrol()
         self.system.add_patrol(self.police_patrol)
-        self.bounty_hunter_patrol = self.get_bountry_hunter_patrol()
+        self.bounty_hunter_patrol = self.get_bounty_hunter_patrol()
         if self.bounty_hunter_patrol:
             self.system.add_patrol(self.bounty_hunter_patrol)
         self.attacker_patrols = []
@@ -855,13 +1002,19 @@ faction = bh_grp, 1.00000
         return None
 
     def get_tradelane_zone(self):
-        return self.ZONE_TEMPLATE.format(
-            system_name=self.system.NAME.upper(),
-            tlr_letter=self.TRADELANE_LETTER,
-            pos='{0}, {1}, {2}'.format(*self.tracks_raw_outer_zone.lines[POS_KEY]),
-            rotate='{0}, {1}, {2}'.format(*self.tracks_raw_outer_zone.lines[ROT_KEY]),
-            size='{0}, {1}, {2}'.format(*self.tracks_raw_outer_zone.lines[SIZE_KEY]),
-        )
+        if not self.system.ENABLE_POPULATION:
+            return ''
+
+        return SINGLE_DIVIDER.join([
+            self.ZONE_TEMPLATE.format(
+                system_name=self.system.NAME.upper(),
+                tlr_letter=self.TRADELANE_LETTER,
+                pos='{0}, {1}, {2}'.format(*self.tracks_raw_outer_zone.lines[POS_KEY]),
+                rotate='{0}, {1}, {2}'.format(*self.tracks_raw_outer_zone.lines[ROT_KEY]),
+                size='{0}, {1}, {2}'.format(*self.tracks_raw_outer_zone.lines[SIZE_KEY]),
+            ),
+            self.get_lawful_population_class().get_tradelane_arriaval_traders_params(),
+        ])
 
     def get_system_content(self):
         system_content = []
@@ -878,6 +1031,7 @@ faction = bh_grp, 1.00000
         obj_from_pos = self.system.get_object_position(obj_from)
         obj_to_pos = self.system.get_object_position(obj_to)
         return PolicePatrol(
+            system=self.system,
             index=self.system.get_next_police_patrol_id(),
             positions=[
                 (obj_from_pos[0], 0, obj_from_pos[2]),
@@ -885,7 +1039,7 @@ faction = bh_grp, 1.00000
             ]
         ) 
 
-    def get_bountry_hunter_patrol(self):
+    def get_bounty_hunter_patrol(self):
         patrol_rel = self.HUNTER_DEFENCE_REL
         if patrol_rel is None:
             return
@@ -924,6 +1078,7 @@ faction = bh_grp, 1.00000
             obj_to_pos2_z += self.HUNTER_PATROL_OFFSET
 
         return HuntersPatrol(
+            system=self.system,
             index=self.system.get_next_bounty_hunter_patrol_id(),
             positions=[
                 (obj_from_pos[0], 0, obj_from_pos[2]),
@@ -955,6 +1110,7 @@ faction = bh_grp, 1.00000
         attacker_base_pos = self.system.get_object_position(attacker_base)
 
         return PiratePatrol(
+            system=self.system,
             index=self.system.get_next_police_patrol_id(),
             positions=[
                 (attacker_base_pos[0], 0, attacker_base_pos[2]),

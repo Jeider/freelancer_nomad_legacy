@@ -1,7 +1,22 @@
 from text.dividers import SINGLE_DIVIDER
 
 SHAPES_ROCK = 'file = solar\\asteroids\\rock_shapes.ini'
+SHAPES_DEBRIS = 'file = solar\\asteroids\\debris_shapes.ini'
 SHAPES_OM15 = 'file = solar\\asteroids_mod\\om15\\shapes.ini'
+
+LOOT_BERYL = 'lootcrate_ast_loot_beryl'
+LOOT_ORGANISMS = 'lootcrate_ast_loot_organisms'
+LOOT_DIAMONDS = 'lootcrate_ast_loot_diamonds'
+LOOT_COPPER = 'lootcrate_ast_loot_copper'
+LOOT_COBALT = 'lootcrate_ast_loot_cobalt'
+LOOT_ARTIFACTS = 'lootcrate_ast_loot_artifacts'
+LOOT_SILVER = 'lootcrate_ast_loot_silver'
+LOOT_COAL = 'lootcrate_ast_loot_coal'
+LOOT_GOLD = 'lootcrate_ast_loot_gold'
+LOOT_METAL = 'lootcrate_ast_loot_metal'
+LOOT_NIOBIUM = 'lootcrate_ast_loot_niobium'
+LOOT_OXYGEN = 'lootcrate_ast_loot_oxygen'
+LOOT_WATER = 'lootcrate_ast_loot_water'
 
 AST_TEMPLATE = '''
 [TexturePanels]
@@ -54,6 +69,44 @@ max_angular_velocity = 0.300000
 color_shift = 1.000000, 1.000000, 1.000000
 '''
 
+DYNAST_DEBRIS = '''
+[DynamicAsteroids]
+asteroid = din_debris_xlarge_A
+count = 20
+placement_radius = 2000.000000
+placement_offset = 600.000000
+max_velocity = 10.000000
+max_angular_velocity = 0.100000
+color_shift = 1.000000, 1.000000, 1.000000
+
+[DynamicAsteroids]
+asteroid = din_debris_xlarge_B
+count = 20
+placement_radius = 2000.000000
+placement_offset = 600.000000
+max_velocity = 10.000000
+max_angular_velocity = 0.100000
+color_shift = 1.000000, 1.000000, 1.000000
+
+[DynamicAsteroids]
+asteroid = din_debris_xlarge_C
+count = 20
+placement_radius = 2000.000000
+placement_offset = 600.000000
+max_velocity = 10.000000
+max_angular_velocity = 0.100000
+color_shift = 1.000000, 1.000000, 1.000000
+
+[DynamicAsteroids]
+asteroid = din_debris_xlarge_D
+count = 8
+placement_radius = 2000.000000
+placement_offset = 600.000000
+max_velocity = 10.000000
+max_angular_velocity = 0.100000
+color_shift = 1.000000, 1.000000, 1.000000
+'''
+
 BELT_OM15 = '''
 [Band]
 render_parts = 6
@@ -67,6 +120,19 @@ vert_increase = 2
 color_shift = 1, 0.85, 0.8
 '''
 
+BELT_DEBRIS = '''
+[Band]
+render_parts = 10
+shape = debris_belt_04
+height = 5000
+offset_dist = 2500
+fade = 1.100000, 1.450000, 10, 11
+texture_aspect = 1.000000
+color_shift = 0.800000, 0.800000, 0.800000
+ambient_intensity = 1.000000
+vert_increase = 1
+'''
+
 BILLBOARD_OM15 = '''
 [AsteroidBillboards]
 count = 300
@@ -77,6 +143,18 @@ color_shift = 0.800000, 0.750000, 0.750000
 ambient_intensity = 1
 size = 40, 150
 '''
+
+BILLBOARD_DEBRIS = '''
+[AsteroidBillboards]
+count = 500
+start_dist = 1500
+fade_dist_percent = 0.800000
+shape = debris_tri
+color_shift = 1, 1, 1
+ambient_intensity = 1.000000
+size = 100, 250
+'''
+
 
 LOOT_PROPS = '''
 [LootableZone]
@@ -106,7 +184,7 @@ class AsteroidDefinition(object):
     LOOT_MIN = 1
     LOOT_MAX = 2
     LOOT_DIFFICULTY = 2
-    LOOT_CONTAINER = 'lootcrate_ast_loot_niobium'
+    LOOT_CONTAINER = LOOT_WATER
     LOOT_COMMODITY = None
 
     NAME = None
@@ -157,9 +235,27 @@ class Omega15AsteroidDefinition(AsteroidDefinition):
     ]
 
 
+class DebrisDefinition(AsteroidDefinition):
+    BELT_TEMPLATE = BELT_DEBRIS
+    DYNAST_TEMPLATE = DYNAST_DEBRIS
+    BILLBOARD_TEMPLATE = BILLBOARD_DEBRIS
+    SHAPES = [
+        SHAPES_DEBRIS,
+    ]
+    BELT = True
+    BILLBOARDS = True
+    DYNAST = True
+    LOOT = True
+    LOOT_MIN = 1
+    LOOT_MAX = 2
+    LOOT_DIFFICULTY = 2
+    LOOT_CONTAINER = LOOT_METAL
+    LOOT_COMMODITY = 'comm_scrap_metal'
+
+
 class Omega15NiobiumAsteroidDefinition(Omega15AsteroidDefinition):
     BELT = False
-    BILLBOARD = False
+    BILLBOARDS = False
     DYNAST = True
     LOOT = True
     LOOT_CONTAINER = 'lootcrate_ast_loot_niobium'

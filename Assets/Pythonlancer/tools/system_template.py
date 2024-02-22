@@ -22,6 +22,10 @@ SHAPE = 'shape'
 MULTI_INT_KEYS = (POS, ROTATE, SIZE)
 SCANNED_KEYS = (NICKNAME, POS, ROTATE, SIZE, SHAPE)
 
+MSN_SINGLE = 'msn_single'
+MSN_MULTIPLE = 'msn_multi'
+MULTI_ITEMS_TITLES = (MSN_SINGLE, MSN_MULTIPLE)
+
 
 class SystemTemplate(object):
 
@@ -29,11 +33,16 @@ class SystemTemplate(object):
         self.name = template_name
         self.items = template_items
         self.items_db = {}
+        for title in MULTI_ITEMS_TITLES:
+            self.items_db[title] = []
         self.process_template_items()
 
     def process_template_items(self):
         for item in self.items:
-            self.items_db[item.title] = item
+            if item.title in MULTI_ITEMS_TITLES:
+                self.items_db[item.title].append(item)
+            else:
+                self.items_db[item.title] = item
 
     def get_items_db(self):
         return self.items_db
@@ -42,13 +51,22 @@ class SystemTemplate(object):
         return self.items_db[item_key].lines[POS]
 
     def get_item_rotate(self, item_key):
-        return self.items_db[item_key].lines[ROTATE]
+        rotate = self.items_db[item_key].lines.get(ROTATE)
+        if not rotate:
+            return (0, 0, 0)
+        return rotate
 
     def get_item_size(self, item_key):
         return self.items_db[item_key].lines[SIZE]
 
     def get_item_shape(self, item_key):
         return self.items_db[item_key].lines[SHAPE]
+
+    def get_single_mission_vignettes_positions(self):
+        return [item.lines[POS] for item in self.items_db[MSN_SINGLE]]
+
+    def get_multiple_mission_vignettes_positions(self):
+        return [item.lines[POS] for item in self.items_db[MSN_MULTIPLE]]
 
 
 class SystemTemplateItem(object):
@@ -68,7 +86,7 @@ class SystemTemplateItem(object):
             try:
                 line_value = tuple(float(val) for val in line_value.split(','))
             except ValueError:
-                raise Exception('Convertion error when parse from system template')
+                raise Exception('Convertion error when parse from system template on line %s' % line_key)
 
         self.lines[line_key] = line_value
 
