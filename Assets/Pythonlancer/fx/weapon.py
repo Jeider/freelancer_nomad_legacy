@@ -83,3 +83,6 @@ class WeaponFX(object):
 
     def get_one_shot_sound(self):
         return self.sound_class.get_sound_for_tier(self.get_tier())
+
+    def get_appearance(self):
+        return self.fx_appearance

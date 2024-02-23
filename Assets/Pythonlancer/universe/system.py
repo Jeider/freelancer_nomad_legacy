@@ -1,6 +1,6 @@
 from universe.content.system_object import SystemObject
 from universe.content.main_objects import RawText, TradeConnection, JumpableObject, DockableObject, StaticObject
-from universe.content.zones import Zone, BaseAsteroidZone, NebulaZone
+from universe.content.zones import Zone, BaseAsteroidZone, NebulaZone, TemplatedNebulaZone
 from universe.content.asteroid_definition import AsteroidDefinition
 from universe.content.mineable import Mineable, RewardField, Field, RewardsGroup
 from universe.content import interior
@@ -78,6 +78,8 @@ distance = {tlr_distance}
 
         self.asteroid_definitions = []
         self.asteroid_definitions_db = {}
+        self.templated_nebulas = []
+        self.templated_nebulas_db = {}
 
         self.static_zones = []
         self.asteroid_zones = []
@@ -186,9 +188,17 @@ distance = {tlr_distance}
         static = item(self)
         self.statics_list.append(static)
         self.statics_db[static.get_full_alias()] = static
-        exclusion_zone_name = static.get_ast_exclusion_zone_name()
-        for ast_zone in static.ASTEROID_ZONES:
-            self.asteroid_definitions_db[ast_zone.ASTEROID_DEFINITION_CLASS.NAME].add_exclusion(exclusion_zone_name)
+
+        if len(static.ASTEROID_ZONES) > 0:
+            ast_exclusion_zone_name = static.get_ast_exclusion_zone_name()
+            for ast_zone in static.ASTEROID_ZONES:
+                self.asteroid_definitions_db[ast_zone.ASTEROID_DEFINITION_CLASS.NAME].add_exclusion(ast_exclusion_zone_name)
+
+        if len(static.NEBULA_ZONES) > 0:
+            nebula_exclusion_zone_name = static.get_nebula_exclusion_zone_name()
+            for neb_zone in static.NEBULA_ZONES:
+                self.templated_nebulas_db[neb_zone.FILE_NAME].add_exclusion(nebula_exclusion_zone_name, static.EXCLUSION_PARAMS)
+
         self.dynamic_zones.extend(static.get_dynamic_zones())
 
     def get_static_by_class(self, item_class):
@@ -203,6 +213,10 @@ distance = {tlr_distance}
             self.asteroid_zones.append(zone)
         elif issubclass(item, NebulaZone):
             self.nebula_zones.append(zone)
+            if issubclass(item, TemplatedNebulaZone):
+                self.templated_nebulas.append(zone)
+                self.templated_nebulas_db[zone.FILE_NAME] = zone
+
         self.static_zones.append(zone)
 
     def add_asteroid_definition(self, item):
@@ -447,7 +461,7 @@ class sig13(RheinlandSystem, System):
 
     SYSTEM_FOLDER = 'SIGMA13'
     ALLOW_SYNC = True
-    ENABLE_POPULATION = False
+    ENABLE_POPULATION = True
 
     LAWFUL_FACTIONS = [
         faction.RH_GRP,

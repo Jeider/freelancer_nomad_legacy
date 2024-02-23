@@ -11,6 +11,10 @@ class DataFolder(object):
         return current_path.parent.parent / 'DATA'
 
     @classmethod
+    def get_equip(cls):
+        return cls.get_root() / 'EQUIPMENT'
+
+    @classmethod
     def get_solar(cls):
         return cls.get_root() / 'SOLAR'
 
@@ -34,6 +38,21 @@ class DataFolder(object):
         asteroid_file.write_text(content, encoding='utf-8')
 
     @classmethod
+    def sync_templated_nebula(cls, nebula_file_name, subfolder, content):
+        nebula_file = cls.get_solar() / 'NEBULA_MOD' / subfolder / f'{nebula_file_name}.ini'
+        nebula_file.write_text(content, encoding='utf-8')
+
+    @classmethod
     def sync_interior(cls, interior_file_name, content):
         asteroid_file = cls.get_universe() / 'GENERATED_INTERIORS' / f'{interior_file_name}.ini'
         asteroid_file.write_text(content, encoding='utf-8')
+
+    @classmethod
+    def sync_equip(cls, equip_file_name, subfolder, content):
+        equip_file = cls.get_equip()  / subfolder / f'{equip_file_name}.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    @classmethod
+    def sync_equip_hardcoded(cls, equip_file_name, content):
+        equip_file = cls.get_equip()  / f'{equip_file_name}.ini'
+        equip_file.write_text(content, encoding='utf-8')

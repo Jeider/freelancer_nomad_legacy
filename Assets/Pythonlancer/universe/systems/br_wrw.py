@@ -221,7 +221,7 @@ class ComplexGasCrystalSuperField(WarwickSysObject, GasCrystalRewardField):
     ULTRA_REWARD = True
 
 
-class ComplexGasCrystalSuperField(WarwickSysObject, SupriseRewardField):
+class RheinlandCheckField(WarwickSysObject, SupriseRewardField):
     POS = (10000, 0, 10000)
     FIELD_NAME = 'om15_field5'
     FIELD_CLASS = WarwickField4

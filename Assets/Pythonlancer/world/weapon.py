@@ -1,6 +1,20 @@
 from world.equipment import Equipment, Icon, DefaultGood
 from text.dividers import SINGLE_DIVIDER
 
+from fx.weapon import WeaponFX
+
+
+WEAPON_TYPE_PER_WEAPON_FX = {
+    WeaponFX.FX_LASER: 'W_laser',
+    WeaponFX.FX_PHOTON: 'W_photon',
+    # WeaponFX.FX_PHOTON2: 'W_photon2',
+    WeaponFX.FX_TACHYON: 'W_tachyon',
+    WeaponFX.FX_PARTICLE: 'W_particle',
+    WeaponFX.FX_NEUTRON: 'W_neutron',
+    WeaponFX.FX_PLASMA: 'W_plasma',
+    WeaponFX.FX_PULSE: 'W_pulse',
+}
+
 
 class Motor(object):
 
@@ -460,6 +474,7 @@ LODranges = {lod_ranges}'''
 
     SHIELDGUN = False
     EXTRA_SHIELD_DAMAGE_FACTOR = 0
+    SHIELDGUN_HULL_DAMAGE_FACTOR = 0.1
 
     def __init__(self, faction, ids_name, ids_info, equipment_class, weapon_fx):
         self.faction = faction
@@ -589,11 +604,13 @@ LODranges = {lod_ranges}'''
         return self.DAMAGE_PER_REFIRE_RATE_FACTOR[self.REFIRE_RATE]
 
     def get_hull_damage(self):
-        if self.SHIELDGUN:
-            return 0
-
-        return self.MAX_HULL_DAMAGE * self.rate * self.get_refire_rate_multipler() * \
+        hull_damage = self.MAX_HULL_DAMAGE * self.rate * self.get_refire_rate_multipler() * \
             self.get_damage_multipler()
+
+        if self.SHIELDGUN:
+            return hull_damage * self.SHIELDGUN_HULL_DAMAGE_FACTOR
+
+        return hull_damage
 
     def get_extra_shield_damage_factor(self):
         factor = 0
@@ -614,7 +631,6 @@ LODranges = {lod_ranges}'''
             else:
                 return 0
 
-
         return self.MAX_SHIELD_GUN_DAMAGE * self.rate * self.get_refire_rate_multipler() * \
             self.get_damage_multipler()
 
@@ -627,10 +643,11 @@ LODranges = {lod_ranges}'''
         return lifetime
 
     def get_weapon_type(self):
-        if self.SHIELDGUN:
-            return self.WEAPON_TYPE_SHIELDGUN
+        # if self.SHIELDGUN:
+        #     return self.WEAPON_TYPE_SHIELDGUN
 
-        return self.WEAPON_TYPE_DEFAULT
+        # return self.WEAPON_TYPE_DEFAULT
+        return WEAPON_TYPE_PER_WEAPON_FX[self.weapon_fx.get_appearance()]
 
     def get_munition_params(self):
         return {

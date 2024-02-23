@@ -110,14 +110,19 @@ archetype = {archetype}'''
         return {}
 
 
-class StaticObject(AppearableObject):        
+class StaticObject(AppearableObject):
     ASTEROID_ZONES = []
     AST_EXCLUSION_ZONE_SIZE = 3000
     AST_ZONE_NAME_TEMPLATE = 'Zone_{space_name}_ast_exclusion'
+
+    NEBULA_ZONES = []
+    NEBULA_EXCLUSION_ZONE_SIZE = 3000
+    NEBULA_ZONE_NAME_TEMPLATE = 'Zone_{space_name}_nebula_exclusion'
+    EXCLUSION_PARAMS = {}
+    NEBULA_EXCLUSION_EDGE_FRACTION = 0.2
+
     RING_ZONE_NAME_TEMPLATE = 'Zone_{space_name}_ring'
     RING_FILE_TEMPLATE = 'solar\\rings\\{ring_file_name}.ini'
-    DEFENCE_ZONE_NAME_TEMPLATE = 'Zone_{space_name}_pop_defence'
-
     RING = False
     RING_ZONE_ALIAS = None
     RING_ZONE_INDEX = None
@@ -126,9 +131,15 @@ class StaticObject(AppearableObject):
     DEFENCE_ZONE_SIZE = 5000
     DEFENCE_LEVEL = None
     DEFENCE_ZONE_BACKDRIFT = 0
+    DEFENCE_ZONE_NAME_TEMPLATE = 'Zone_{space_name}_pop_defence'
     
     def get_ast_exclusion_zone_name(self):
         return self.AST_ZONE_NAME_TEMPLATE.format(
+            space_name=self.get_inspace_nickname(),
+        )
+    
+    def get_nebula_exclusion_zone_name(self):
+        return self.NEBULA_ZONE_NAME_TEMPLATE.format(
             space_name=self.get_inspace_nickname(),
         )
     
@@ -193,6 +204,17 @@ class StaticObject(AppearableObject):
                     alias=self.ALIAS,
                     index=self.INDEX,
                     size=self.AST_EXCLUSION_ZONE_SIZE,
+                )
+            )
+        if len(self.NEBULA_ZONES) != 0:
+            zones.append(
+                DynamicSphereZone(
+                    system=self.system,
+                    space_nickname=self.get_nebula_exclusion_zone_name(),
+                    alias=self.ALIAS,
+                    index=self.INDEX,
+                    size=self.NEBULA_EXCLUSION_ZONE_SIZE,
+                    edge_fraction=self.NEBULA_EXCLUSION_EDGE_FRACTION,
                 )
             )
         if self.RING:
@@ -402,7 +424,7 @@ parent = {parent_planet}'''
 
         return self.PLANET_CIRCLE_TEMPLATE.format(
             parent_planet=self.get_inspace_nickname(),
-            position='{} {} {}'.format(pos_x, pos_y+self.PLANET_CIRCLE_Y_DRIFT, pos_z),
+            position='{}, {}, {}'.format(pos_x, pos_y+self.PLANET_CIRCLE_Y_DRIFT, pos_z),
             circle_archetype=self.PLANET_CIRCLE_ARCHETYPE_TEMPLATE.format(radius=self.get_sphere_radius()),
             planet_spin=spin,
         )
@@ -642,6 +664,57 @@ class Dockring(DockableObject):
 class Station(DockableObject):
     ALIAS = 'station'
     AUDIO_PREFIX = SpaceVoice.STATION
+
+
+class GasMinerOld(Station):
+
+    CARGO_PODS_POSITION_Y_DRIFT = -60
+
+    CARGO_PODS_TEMPLATE = '''[Object]
+nickname = {parent_gasminer}_cargo
+pos = {position}
+rotate = {rotate}
+archetype = gas_mining_cargo
+reputation = {faction}
+behavior = NOTHING'''
+
+    def get_cargo_pods(self):
+        pos_x, pos_y, pos_z = self.get_position()
+        
+        return self.CARGO_PODS_TEMPLATE.format(
+            parent_gasminer=self.get_inspace_nickname(),
+            position='{}, {}, {}'.format(pos_x, pos_y+self.CARGO_PODS_POSITION_Y_DRIFT, pos_z),
+            rotate='{}, {}, {}'.format(*self.get_rotate()),
+            faction=self.get_faction(),
+        )
+
+
+    def get_sattelites(self):
+        return [self.get_cargo_pods()]
+
+
+    def get_planet_circle(self):
+        if not self.PLANET_CIRCLE:
+            return
+
+        if self.get_sphere_radius() not in self.PLANET_RADIUSES:
+            raise Exception('planet %s have invalid radius' % self.__class.__name__)
+
+        pos_x, pos_y, pos_z = self.get_position()
+        spin = ''
+        spin_data = self.get_spin()
+        if spin_data:
+            spin = f'spin = {spin_data}'
+
+        return self.PLANET_CIRCLE_TEMPLATE.format(
+            parent_planet=self.get_inspace_nickname(),
+            position='{} {} {}'.format(pos_x, pos_y+self.PLANET_CIRCLE_Y_DRIFT, pos_z),
+            circle_archetype=self.PLANET_CIRCLE_ARCHETYPE_TEMPLATE.format(radius=self.get_sphere_radius()),
+            planet_spin=spin,
+        )
+
+
+
 
 
 class Outpost(DockableObject):
@@ -895,7 +968,9 @@ class TradeConnection(SystemObject):
     ATTACKED_BY = []
 
     OBJ_FROM_EXTRA_DRIFT = 0
+    OBJ_FROM_EXTRA_DRIFT_ALT_AXIS = 0
     OBJ_TO_EXTRA_DRIFT = 0
+    OBJ_TO_EXTRA_DRIFT_ALT_AXIS = 0
 
     HUNTER_PATROL_OFFSET = 10000
     HUNTER_PATROL_DRIFT = 3000
@@ -959,8 +1034,8 @@ size = {size}'''
         obj_from, obj_to = self.get_destination_objects()
         side_from, side_to = self.get_sides()
 
-        start_tradelane_props = obj_from.get_tradelane_props(side_from, self.OBJ_FROM_EXTRA_DRIFT)
-        end_tradelane_props = obj_to.get_tradelane_props(side_to, self.OBJ_TO_EXTRA_DRIFT)
+        start_tradelane_props = obj_from.get_tradelane_props(side_from, self.OBJ_FROM_EXTRA_DRIFT, self.OBJ_FROM_EXTRA_DRIFT_ALT_AXIS)
+        end_tradelane_props = obj_to.get_tradelane_props(side_to, self.OBJ_TO_EXTRA_DRIFT, self.OBJ_TO_EXTRA_DRIFT_ALT_AXIS)
 
         return start_tradelane_props, end_tradelane_props
 

@@ -27,6 +27,7 @@ class UniverseManager(object):
         self.loadouts = []
 
         self.asteroid_definitions = []
+        self.templated_nebulas = []
         self.interior_files = {}
         self.interior_definitions = []
         self.mbases_content = []
@@ -44,6 +45,7 @@ class UniverseManager(object):
                 self.system_content_test.append(system.system_content_str)
                 self.loadouts += system.loadouts
                 self.asteroid_definitions += system.asteroid_definitions
+                self.templated_nebulas += system.templated_nebulas
 
                 interior_definitions, interior_files, mbases_content = system.get_interiors_data()
                 self.interior_definitions += interior_definitions
@@ -132,6 +134,10 @@ class UniverseManager(object):
         for definition in self.asteroid_definitions:
             print(f'sync ast definition {definition.NAME}')
             DataFolder.sync_asteroid_definition(definition.NAME, definition.SUBFOLDER, definition.get_file_content())
+
+        for tpl_nebula in self.templated_nebulas:
+            print(f'sync templated nebula {tpl_nebula.FILE_NAME}')
+            DataFolder.sync_templated_nebula(tpl_nebula.FILE_NAME, tpl_nebula.GENERATED_NEBULA_SUBFOLDER, tpl_nebula.get_file_content())
 
         for file_name, content in self.interior_files.items():
             print(f'sync interior {file_name}')

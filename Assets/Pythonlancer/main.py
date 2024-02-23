@@ -2,9 +2,13 @@ from files.writer import FileWriter
 
 from core import LancerCore
 
+from tools.data_folder import DataFolder
+
 DIVIDER = '\n\n'
 
 ENABLE_STORY = False
+
+GENERATED = 'GENERATED'
 
 
 def main():
@@ -45,8 +49,8 @@ def main():
         ('npcships.ini', core.population.get_npcships()),
         ('loadouts.ini', core.population.get_loadouts()),
 
-        ('weapon_equip.ini', core.weapons.get_weapon_equip()),
-        ('weapon_good.ini', core.weapons.get_weapon_good()),
+        # ('weapon_equip.ini', core.weapons.get_weapon_equip()),
+        # ('weapon_good.ini', core.weapons.get_weapon_good()),
 
         ('nicknames_ru.ini', ''.join(nicknames_data)),
         ('infocards_ru.ini', ''.join(infocards_data)),
@@ -86,5 +90,8 @@ def main():
     for file, content in files_map:
         FileWriter.write(file, content)
 
+
+    DataFolder.sync_equip('weapon_equip', GENERATED, core.weapons.get_weapon_equip())
+    DataFolder.sync_equip('weapon_good', GENERATED, core.weapons.get_weapon_good())
 
 main()

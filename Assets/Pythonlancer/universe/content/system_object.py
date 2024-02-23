@@ -83,7 +83,7 @@ class SystemObject(object):
             raise Exception('Too small REL_APPEND')
         return cls.REL_APPEND
 
-    def get_tradelane_props(self, tradelane_side, extra_drift=0):
+    def get_tradelane_props(self, tradelane_side, extra_drift=0, extra_drift_alt_axis=0):
         tradelane_side = get_reversed_direction(tradelane_side)
 
         pos_x, _, pos_z = self.get_position()
@@ -102,7 +102,7 @@ class SystemObject(object):
             if rel == BOTTOM:
                 pos_z -= rel_drift + extra_drift
 
-        if extra_drift > 0:
+        if extra_drift != 0:
             if rel == LEFT:
                 pos_x += extra_drift
             if rel == RIGHT:
@@ -111,6 +111,16 @@ class SystemObject(object):
                 pos_z += extra_drift
             if rel == BOTTOM:
                 pos_z += extra_drift
+
+        if extra_drift_alt_axis != 0:
+            if rel == LEFT:
+                pos_z += extra_drift_alt_axis
+            if rel == RIGHT:
+                pos_z += extra_drift_alt_axis
+            if rel == TOP:
+                pos_x += extra_drift_alt_axis
+            if rel == BOTTOM:
+                pos_x += extra_drift_alt_axis
 
         if tradelane_side == LEFT:
             pos_x -= rel_append
@@ -127,6 +137,7 @@ class SystemObject(object):
         self.system = system
         self.init_args = args
         self.init_kwargs = kwargs
+        self.force_rotate_value = randint(RAND_ROTATE_MIN, RAND_ROTATE_MAX) if self.ROTATE_RANDOM else None
 
     def get_system_content(self):
         raise NotImplementedError()
@@ -147,15 +158,12 @@ class SystemObject(object):
         return self.system.template.get_item_pos(self.get_full_alias())
 
     def get_rotate(self):
-        if self.ROTATE_RANDOM:
-            return (0, randint(RAND_ROTATE_MIN, RAND_ROTATE_MAX), 0)
+        if self.force_rotate_value:
+            return (0, self.force_rotate_value, 0)
         return self.system.template.get_item_rotate(self.get_full_alias())
 
     def get_shape(self):
-        shape = self.system.template.get_item_shape(self.get_full_alias())
-        if shape.upper() == 'SPHERE':
-            raise Exception('SPHERE shapes not supported at this moment')
-        return shape
+        return self.system.template.get_item_shape(self.get_full_alias())
 
     def get_size(self):
         return self.system.template.get_item_size(self.get_full_alias())

@@ -5,6 +5,8 @@ from universe.content.system_object import SystemObject, DynamicSystemObject
 
 from text.dividers import SINGLE_DIVIDER, DIVIDER
 
+SHAPE_SPHERE = 'SPHERE'
+
 
 class Zone(SystemObject):
     ABSTRACT = True
@@ -14,12 +16,18 @@ class Zone(SystemObject):
 {params}'''
 
     def get_zone_main_params(self):
+        shape = self.get_shape().upper()
+        if shape == SHAPE_SPHERE:
+            size = '{}'.format(self.get_size()[0])
+        else:
+            size = '{}, {}, {}'.format(*self.get_size())
+
         return {
             'nickname': self.get_zone_nickame(),
             'pos': '{}, {}, {}'.format(*self.get_zone_position()),
             'rotate': '{}, {}, {}'.format(*self.get_rotate()),
-            'shape': self.get_shape(),
-            'size': '{}, {}, {}'.format(*self.get_size()),
+            'shape': shape,
+            'size': size,
         }
 
     def get_zone_merged_params(self):
@@ -57,6 +65,7 @@ class DynamicZone(DynamicSystemObject, Zone):
         self.spacedust = kwargs.get('spacedust')
         self.spacedust_maxparticles = kwargs.get('spacedust_maxparticles')
         self.position = kwargs.get('position')
+        self.edge_fraction = kwargs.get('edge_fraction')
         self.merged_params = kwargs.get('merged_params')
         super().__init__(*args, **kwargs)
 
@@ -81,6 +90,8 @@ class DynamicZone(DynamicSystemObject, Zone):
             params['spacedust'] = self.spacedust
         if self.spacedust_maxparticles:
             params['spacedust_maxparticles'] = self.spacedust_maxparticles
+        if self.edge_fraction:
+            params['edge_fraction'] = self.edge_fraction
         return params
 
     def get_zone_merged_params(self):
@@ -116,6 +127,7 @@ class BaseFileAppearanceZone(Zone):
     FILE_NAME = None
     MUSIC = None
     PROPERTY_FLAGS = None
+    PROPERTY_FOG_COLOR = None
 
     SPACEDUST = None
     SPACEDUST_MAXPARTICLES = None
@@ -133,6 +145,8 @@ class BaseFileAppearanceZone(Zone):
             params['music'] = self.MUSIC
         if self.PROPERTY_FLAGS:
             params['property_flags'] = self.PROPERTY_FLAGS
+        if self.PROPERTY_FLAGS:
+            params['property_fog_color'] = self.PROPERTY_FLAGS
         if self.SPACEDUST:
             params['spacedust'] = self.SPACEDUST
         if self.SPACEDUST_MAXPARTICLES:
@@ -228,3 +242,48 @@ zone = {zone}'''
             file_name=file_name,
             zone=self.get_zone_nickame(),
         )
+
+
+class TemplatedNebulaZone(NebulaZone):
+    CONTENT_TEMPLATE = None
+    GENERATED_NEBULA_SUBFOLDER = 'GENERATED'
+
+    NEBULA_DEFINITION_TEMPLATE = '''[Nebula]
+file = solar\\{root_folder}\\{subfolder}\\{file_name}.ini
+zone = {zone}'''
+
+    def __init__(self, *args, **kwargs):
+        self.exlusions = {}
+        if self.CONTENT_TEMPLATE is None:
+            raise Exception('Content template is mandatory for zone %s' % self.__class__.__name__)
+        super().__init__(*args, **kwargs)
+
+    def get_nebula_definition_header(self):
+        file_name = self.get_file_name()
+        if not self.ROOT_FOLDER or not file_name:
+            raise Exception('not enough parameters for nebula zone %s' % self.__class__.__name__)
+        return self.NEBULA_DEFINITION_TEMPLATE.format(
+            root_folder=self.ROOT_FOLDER,
+            file_name=file_name,
+            subfolder=self.GENERATED_NEBULA_SUBFOLDER,
+            zone=self.get_zone_nickame(),
+        )
+
+    def get_file_name(self):
+        return self.FILE_NAME
+
+    def add_exclusion(self, name, params):
+        self.exlusions[name] = params
+
+    def get_exclusions_content(self):
+        entries = []
+        for name, params in self.exlusions.items():
+            excl_params = {'exclusion': name}
+            excl_params.update(params)
+            entry = SINGLE_DIVIDER.join(['{} = {}'.format(key, value) for key, value in excl_params.items()])
+            entries.append(entry)
+
+        return DIVIDER.join(entries)
+
+    def get_file_content(self):
+        return self.CONTENT_TEMPLATE().format(params={'exclusions': self.get_exclusions_content()})

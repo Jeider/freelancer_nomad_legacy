@@ -767,7 +767,7 @@ visit = 128'''
 
 
 class GasCrystalRewardField(RewardField):
-    ALIAS = 'crystal'
+    ALIAS = 'cryst'
 
     def get_asteroid_archetype_by_reward_type(self, reward_type):
         if reward_type == MINING_REWARD_LOW: 
@@ -800,6 +800,10 @@ class GasCrystalRewardField(RewardField):
             )
 
         return DIVIDER.join([asteroid] + gas_items)
+
+
+class ComplexGasCrystalRewardField(GasCrystalRewardField):
+    ALIAS = 'bigcryst'
 
 
 class SupriseRewardField(RewardField):
