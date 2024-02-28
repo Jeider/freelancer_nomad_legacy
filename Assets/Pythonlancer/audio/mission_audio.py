@@ -231,7 +231,7 @@ class MissionAudio(object):
         return DIVIDER.join(items)
 
     def get_hash_for_voiceline(self, voiceline_nickname):
-        return CreateId.get_id(voiceline_nickname)
+        return CreateId.get_hex_id(voiceline_nickname)
 
     def get_hash_for_voiceline_upper(self, voiceline_nickname):
         the_id = self.get_hash_for_voiceline(voiceline_nickname)

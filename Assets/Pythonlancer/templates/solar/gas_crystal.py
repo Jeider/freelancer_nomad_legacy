@@ -10,7 +10,8 @@ class BaseIceCrystal(MineableSolar):
 nickname = {nickname}_ast01
 pos = {asteroid_pos}
 rotate = {asteroid_rotate}
-archetype = {asteroid_archetype}'''
+archetype = {asteroid_archetype}
+visit = 128'''
 
     ASTEROID_POS = (0, 0, 0)
     ASTEROID_ROTATE = (0, 0, 0)
@@ -20,7 +21,8 @@ nickname = {nickname}_inner_{gas_index}
 pos = {gas_pos}
 rotate = 0, 0, 0
 archetype = sig13_mineable_gas_static
-loadout = {gas_loadout}'''
+loadout = {gas_loadout}
+visit = 128'''
 
     GAS_POSITIONS = []
 

@@ -83,7 +83,10 @@ class SystemObject(object):
             raise Exception('Too small REL_APPEND')
         return cls.REL_APPEND
 
-    def get_tradelane_props(self, tradelane_side, extra_drift=0, extra_drift_alt_axis=0):
+    def get_tradelane_props(self, tradelane_side, extra_drift=0, extra_drift_alt_axis=0, force_offset=None):
+        if force_offset is not None:
+            return force_offset[0], POS_Y_FORCE_VALUE, force_offset[2], self.IDS_NAME
+
         tradelane_side = get_reversed_direction(tradelane_side)
 
         pos_x, _, pos_z = self.get_position()

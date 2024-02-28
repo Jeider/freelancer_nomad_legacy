@@ -63,6 +63,9 @@ def main():
         # ('system_loadouts.ini', core.universe.get_system_loadouts()),  # moved to sync
         ('universe_bases.ini', core.universe.get_interior_definitions()),
         ('mbases_content.ini', core.universe.get_mbases_content()),
+        ('key_for_story.ini', core.universe.get_key_story()),
+        ('key_for_initial_world.ini', core.universe.get_key_initial_world()),
+        ('key_for_dock_key.ini', core.universe.get_dock_key()),
 
         ('ship_packages.ini', core.shiparch.get_ship_goods()),
 
@@ -93,5 +96,8 @@ def main():
 
     DataFolder.sync_equip('weapon_equip', GENERATED, core.weapons.get_weapon_equip())
     DataFolder.sync_equip('weapon_good', GENERATED, core.weapons.get_weapon_good())
+    DataFolder.sync_equip('key_equip', GENERATED, core.universe.get_key_equip())
+    DataFolder.sync_equip('key_good', GENERATED, core.universe.get_key_good())
+
 
 main()

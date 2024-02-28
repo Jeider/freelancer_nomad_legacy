@@ -32,6 +32,8 @@ class UniverseManager(object):
         self.interior_definitions = []
         self.mbases_content = []
 
+        self.keys = []
+
         self.load_systems()
         self.load_bases()
 
@@ -46,6 +48,7 @@ class UniverseManager(object):
                 self.loadouts += system.loadouts
                 self.asteroid_definitions += system.asteroid_definitions
                 self.templated_nebulas += system.templated_nebulas
+                self.keys += system.keys
 
                 interior_definitions, interior_files, mbases_content = system.get_interiors_data()
                 self.interior_definitions += interior_definitions
@@ -116,6 +119,24 @@ class UniverseManager(object):
 
     def get_interior_definitions(self):
         return DIVIDER.join(self.interior_definitions)
+
+    def get_mbases_content(self):
+        return DIVIDER.join(self.mbases_content)
+
+    def get_key_initial_world(self):
+        return DIVIDER.join([key.get_initial_world() for key in self.keys])
+
+    def get_key_equip(self):
+        return DIVIDER.join([key.get_equip() for key in self.keys])
+
+    def get_key_good(self):
+        return DIVIDER.join([key.get_good() for key in self.keys])
+
+    def get_key_story(self):
+        return DIVIDER.join([key.get_story() for key in self.keys])
+
+    def get_dock_key(self):
+        return DIVIDER.join([key.get_dock_key() for key in self.keys])
 
     def get_mbases_content(self):
         return DIVIDER.join(self.mbases_content)

@@ -10,6 +10,7 @@ from universe.content import population
 from universe.systems import br_wrw as br_wrw_objects
 from universe.systems import rh_ber as rh_ber_content
 from universe.systems import sig13 as sig13_content
+from universe.systems import rh_biz as rh_biz_content
 
 from text.dividers import DIVIDER
 
@@ -93,6 +94,8 @@ distance = {tlr_distance}
         self.statics_db = {}
         self.mineable = []
 
+        self.keys = []
+
         if self.CONTENT is not None:
             self.init_content()
 
@@ -114,7 +117,7 @@ distance = {tlr_distance}
                 continue
 
             if issubclass(item, RewardsGroup):
-                reward_group_instance = item()
+                reward_group_instance = item(self)
                 self.rewards_groups_list.append(reward_group_instance)
                 self.rewards_groups_db[item.__name__] = reward_group_instance
                 continue
@@ -201,6 +204,9 @@ distance = {tlr_distance}
 
         self.dynamic_zones.extend(static.get_dynamic_zones())
 
+        if issubclass(static.__class__, DockableObject) and static.LOCKED_DOCK:
+            self.keys.append(static.key)
+
     def get_static_by_class(self, item_class):
         return self.statics_db[item_class.get_full_alias()]
 
@@ -234,9 +240,8 @@ distance = {tlr_distance}
 
         for static in self.get_dockable_objects():
             mbases_content.append(static.get_mbases_content())
-
+            interior_definitions.append(static.get_interior_definition())
             if not static.INTERIOR_CLASS.CUSTOM_INTERIOR_FILE:
-                interior_definitions.append(static.get_interior_definition())
                 interior_files[static.get_interior_file_name()] = static.get_interior_content()
 
         return interior_definitions, interior_files, mbases_content
@@ -427,8 +432,14 @@ class rh_mnh(System):
     NAME = 'Rh_Mnh'
 
 
-class rh_biz(System):
-    NAME = 'Rh_biz'
+class rh_biz(RheinlandSystem, System):
+    NAME = 'rh_biz'
+    TEMPLATE_NAME = 'rh_biz'
+    FACTION_CODE = faction.RH_GRP
+    CONTENT = rh_biz_content
+
+    SYSTEM_FOLDER = 'RH_BIZMARK'
+    ALLOW_SYNC = True
 
 
 class rh_stut(System):
@@ -438,7 +449,7 @@ class rh_stut(System):
 class rh_ber(RheinlandSystem, System):
     NAME = 'rh_ber'
     TEMPLATE_NAME = 'rh_ber'
-    FACTION_CODE = 'rh_grp'
+    FACTION_CODE = faction.RH_GRP
     CONTENT = rh_ber_content
 
     SYSTEM_FOLDER = 'RH_BERLIN'

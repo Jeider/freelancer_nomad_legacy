@@ -22,10 +22,14 @@ class CreateId(object):
 
         cmd_output = subprocess.run(exec_params, cwd=root_path, capture_output=True)
         cmd_string = cmd_output.stdout.decode()
-        items = cmd_string.split(',')
+        return cmd_string.split(',')
 
         return items[1]
 
     @staticmethod
-    def get_id(nickname):
-        return CreateId.run_command(nickname)
+    def get_hex_id(nickname):
+        return CreateId.run_command(nickname)[1]
+
+    @staticmethod
+    def get_int_id(nickname):
+        return CreateId.run_command(nickname)[0]

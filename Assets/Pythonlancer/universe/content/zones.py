@@ -132,6 +132,8 @@ class BaseFileAppearanceZone(Zone):
     SPACEDUST = None
     SPACEDUST_MAXPARTICLES = None
 
+    INTERFERENCE = None
+
     def get_zone_base_alias(self):
         return '{system_name}_{alias}_{zone_field_type}'.format(
             system_name=self.system.NAME,
@@ -146,11 +148,13 @@ class BaseFileAppearanceZone(Zone):
         if self.PROPERTY_FLAGS:
             params['property_flags'] = self.PROPERTY_FLAGS
         if self.PROPERTY_FLAGS:
-            params['property_fog_color'] = self.PROPERTY_FLAGS
+            params['property_fog_color'] = self.PROPERTY_FOG_COLOR
         if self.SPACEDUST:
             params['spacedust'] = self.SPACEDUST
         if self.SPACEDUST_MAXPARTICLES:
             params['spacedust_maxparticles'] = self.SPACEDUST_MAXPARTICLES
+        if self.INTERFERENCE:
+            params['interference'] = self.INTERFERENCE
         return params
 
     def get_file_name(self):

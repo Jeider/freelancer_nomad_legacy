@@ -41,8 +41,8 @@ sun_burnthrough_scaler = 2
 
 
 [Clouds]
-max_distance = 300
-puff_count = 20
+max_distance = 500
+puff_count = 25
 puff_radius = 100
 puff_colora = 50, 150, 255
 puff_colorb = 255, 255, 255
@@ -63,5 +63,7 @@ lightning_duration = 0.500000
 duration = 0.750000
 gap = 3.000000
 color = 50, 50, 50
+
+
 
 '''

@@ -116,6 +116,9 @@ EQUIPDEALER_NAME_TEMPLATE = '{base_name}_fix_equipdealer'
 COMMTRADER_NAME_TEMPLATE = '{base_name}_fix_commtrader'
 SHIPDEALER_NAME_TEMPLATE = '{base_name}_fix_shipdealer'
 
+INTERIOR_BG_CROW = 'crow_exclusion'
+INTERIOR_BG_BARRIER_CLOUD = 'exclusion_barrier_m7'
+INTERIOR_BH_BIZMARK = 'rh_biz_nebula'
 
 
 class Interior(object):
@@ -379,4 +382,11 @@ class PirateStationShipdealerInterior(PirateBar, StationShipdealerInterior):
         DECK: ROOM_STATION_SHIP_DECK,
         BAR: ROOM_OUTPOST_SHIP_BAR_MSN,
         SHIPDEALER: ROOM_STATION_SHIPDEALER,
+    }
+
+
+class EquipDeckInterior(GenericInterior):
+    START_ROOM = DECK
+    ROOMS = {
+        DECK: EQUIP_DEPOT_DECK,
     }

@@ -23,6 +23,7 @@ AST_TEMPLATE = '''
 {shapes}
 
 [Field]
+{field}
 
 [properties]
 
@@ -30,6 +31,7 @@ AST_TEMPLATE = '''
 {exclusions}
 
 [Cube]
+{cube}
 
 {dynasteroids}
 
@@ -155,7 +157,6 @@ ambient_intensity = 1.000000
 size = 100, 250
 '''
 
-
 LOOT_PROPS = '''
 [LootableZone]
 dynamic_loot_container = {loot_container}
@@ -174,6 +175,10 @@ class AsteroidDefinition(object):
     ABSTRACT = True
 
     SHAPES = []
+    FIELD_TEMPLATE = None
+    FIELD = False
+    CUBE_TEMPLATE = None
+    CUBE = False
     BELT_TEMPLATE = None
     BELT = False
     DYNAST_TEMPLATE = None
@@ -207,7 +212,13 @@ class AsteroidDefinition(object):
             'dynasteroids': '',
             'billboards': '',
             'loot_props': '',
+            'field': '',
+            'cube': '',
         }
+        if self.FIELD:
+            params['field'] = self.FIELD_TEMPLATE
+        if self.CUBE:
+            params['cube'] = self.CUBE_TEMPLATE
         if self.BELT:
             params['belt'] = self.BELT_TEMPLATE
         if self.DYNAST:

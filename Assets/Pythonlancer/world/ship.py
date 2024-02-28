@@ -1697,8 +1697,8 @@ class Dron(KusariShip, ShipFreighter, Ship):
 
     TEMPLATE_CODE = 'kfr'
     ICON = 'ku_freighter.3db'
-    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon03, HpTurret01, HpTurret02']
-    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon03']
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04, HpTurret02, HpTurret03']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
 
     COLLISION_HIT_PTS_PERCENT = {
         'wing_hit_pts': HP_PCT_WING,

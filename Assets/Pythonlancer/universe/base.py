@@ -1159,3 +1159,113 @@ class br_uls_01_base(Base):
 class br_uls_02_base(Base):
     NAME = 'br_uls_02_base'
     SYSTEM = system.br_uls
+
+
+
+
+
+# TEMPORARY
+
+class sig13_51_Base(Base):
+    NAME = 'sig13_51_Base'
+    SYSTEM = system.sig13
+
+    LEVEL = LEVEL_2
+
+    THRUSTER = misc.RH_MAIN
+
+class sig13_52_Base(Base):
+    NAME = 'sig13_52_Base'
+    SYSTEM = system.sig13
+
+    LEVEL = LEVEL_2
+
+    THRUSTER = misc.RH_MAIN
+
+class sig13_53_Base(Base):
+    NAME = 'sig13_53_Base'
+    SYSTEM = system.sig13
+
+    LEVEL = LEVEL_2
+
+    THRUSTER = misc.LI_MAIN
+
+class sig13_54_Base(Base):
+    NAME = 'sig13_54_Base'
+    SYSTEM = system.sig13
+
+    LEVEL = LEVEL_2
+
+    THRUSTER = misc.RH_MAIN
+
+class sig13_55_Base(Base):
+    NAME = 'sig13_55_Base'
+    SYSTEM = system.sig13
+
+    LEVEL = LEVEL_2
+
+    THRUSTER = misc.RH_MAIN
+
+class sig13_56_Base(Base):
+    NAME = 'sig13_56_Base'
+    SYSTEM = system.sig13
+
+    LEVEL = LEVEL_2
+
+    THRUSTER = misc.RH_MAIN
+
+class sig13_57_Base(Base):
+    NAME = 'sig13_57_Base'
+    SYSTEM = system.sig13
+
+    LEVEL = LEVEL_2
+
+    THRUSTER = misc.LI_MAIN
+
+class sig13_58_Base(Base):
+    NAME = 'sig13_58_Base'
+    SYSTEM = system.sig13
+
+    LEVEL = LEVEL_2
+
+    THRUSTER = misc.LI_MAIN
+
+class sig13_59_Base(Base):
+    NAME = 'sig13_59_Base'
+    SYSTEM = system.sig13
+
+    LEVEL = LEVEL_2
+
+    THRUSTER = misc.LI_MAIN
+
+class sig13_59_Base(Base):
+    NAME = 'sig13_59_Base'
+    SYSTEM = system.sig13
+
+    LEVEL = LEVEL_2
+
+    THRUSTER = misc.RH_MAIN
+
+class sig13_60_Base(Base):
+    NAME = 'sig13_60_Base'
+    SYSTEM = system.sig13
+
+    LEVEL = LEVEL_1
+
+    ENGINE = misc.RH_MAIN
+
+class sig13_61_Base(Base):
+    NAME = 'sig13_61_Base'
+    SYSTEM = system.sig13
+
+    LEVEL = LEVEL_2
+
+    ENGINE = misc.RH_MAIN
+
+class sig13_62_Base(Base):
+    NAME = 'sig13_62_Base'
+    SYSTEM = system.sig13
+
+    LEVEL = LEVEL_3
+
+    ENGINE = misc.LI_MAIN

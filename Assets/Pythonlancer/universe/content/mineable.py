@@ -250,16 +250,20 @@ class RewardsGroup(object):
     REWARD_ITEM = None
     ULTRA_REWARD_ITEM = None
 
+    ULTRA_REWARD_BASES = []
+
     NAME = 'any'
     LOADOUT_NICKNAME_TEMPLATE = '{name}_{reward_type}_loadout_{index}'
 
-    def __init__(self):
+    def __init__(self, system):
+        self.system = system
+
         self.solar = self.SOLAR()
 
         self.loadouts_list = []
         self.loadouts_db = {}
 
-        self.loadout_ultra_reward = None
+        self.ultra_loadouts_db = {}
 
         self.fill_loadouts()
 
@@ -281,12 +285,12 @@ class RewardsGroup(object):
     def get_loadout_name_by_reward_type(self, reward_type):
         return self.get_loadout_by_reward_type(reward_type).get_loadout_nickname()
 
-    def get_multiple_loadouts_by_reward_type(self, reward_type, count):
+    def get_multiple_loadouts_by_reward_type(self, reward_type, count, ultra_base_instance):
         try:
             if reward_type == MINING_REWARD_ULTRA:
                 additional_items_count = count - 1
-                ultra_items = random.choices(self.loadouts_db[MINING_REWARD_ULTRA_ADDITIONAL], k=count)
-                ultra_items.append(self.loadout_ultra_reward)
+                ultra_items = random.choices(self.loadouts_db[MINING_REWARD_ULTRA_ADDITIONAL], k=additional_items_count)
+                ultra_items.append(self.ultra_loadouts_db[ultra_base_instance.get_base_nickname()])
                 random.shuffle(ultra_items)
                 return ultra_items
             else:
@@ -294,8 +298,8 @@ class RewardsGroup(object):
         except KeyError as e:
             raise Exception('reward_type %s isnt defined for reward group %s' % reward_type, self.__name__)
 
-    def get_loadout_names_by_reward_type(self, reward_type, count):
-        return [loadout.get_loadout_nickname() for loadout in self.get_multiple_loadouts_by_reward_type(reward_type, count)]
+    def get_loadout_names_by_reward_type(self, reward_type, count, ultra_base_instance=None):
+        return [loadout.get_loadout_nickname() for loadout in self.get_multiple_loadouts_by_reward_type(reward_type, count, ultra_base_instance)]
 
 
 class HardpointRewardsGroup(RewardsGroup):
@@ -323,31 +327,35 @@ class HardpointRewardsGroup(RewardsGroup):
                 self.loadouts_db[reward_prop.REWARD_TYPE].append(loadout)
 
         if self.ULTRA_REWARD_PROP:
-            if self.ULTRA_REWARD_ITEM is None:
-                raise Exception('Ultra reward item is mandatory for ultra reward prop')
 
-            ultra_hardpoint = random.choice(hardpoints)
-            no_ultra_hardpoints = [item for item in hardpoints if item != ultra_hardpoint]
+            for base in self.ULTRA_REWARD_BASES:
+                base_instance = self.system.get_static_by_class(base)
+                if not base_instance.LOCKED_DOCK:
+                    raise Exception('this base is not locked')
 
-            nickname = self.LOADOUT_NICKNAME_TEMPLATE.format(
-                name=self.NAME,
-                reward_type=MINING_REWARD_ULTRA,
-                index=1
-            )
-            self.loadout_ultra_reward = DynamicAttachedCargoLoadout(
-                loadout_nickname=nickname,
-                cargo_item=self.REWARD_ITEM,
-                hardpoints=no_ultra_hardpoints,
-                min=self.ULTRA_REWARD_PROP.MIN,
-                max=self.ULTRA_REWARD_PROP.MAX,
-                init_items=init_items,
-            ).get_loadout()
-            self.loadout_ultra_reward.add_cargo(
-                self.ULTRA_REWARD_ITEM,
-                1,
-                ultra_hardpoint
-            )
-            self.loadouts_list.append(self.loadout_ultra_reward)
+                ultra_hardpoint = random.choice(hardpoints)
+                no_ultra_hardpoints = [item for item in hardpoints if item != ultra_hardpoint]
+
+                nickname = self.LOADOUT_NICKNAME_TEMPLATE.format(
+                    name=self.NAME,
+                    reward_type=base_nickname,
+                    index=1
+                )
+                self.loadout_ultra_reward = DynamicAttachedCargoLoadout(
+                    loadout_nickname=nickname,
+                    cargo_item=self.REWARD_ITEM,
+                    hardpoints=no_ultra_hardpoints,
+                    min=self.ULTRA_REWARD_PROP.MIN,
+                    max=self.ULTRA_REWARD_PROP.MAX,
+                    init_items=init_items,
+                ).get_loadout()
+                self.loadout_ultra_reward.add_cargo(
+                    self.ULTRA_REWARD_ITEM,
+                    1,
+                    ultra_hardpoint
+                )
+                self.loadouts_list.append(self.loadout_ultra_reward)
+                self.ultra_loadouts_db[base_nickname] = loadout_ultra_reward
 
 
 class InternalRewardsGroup(RewardsGroup):
@@ -374,20 +382,26 @@ class InternalRewardsGroup(RewardsGroup):
                 self.loadouts_db[reward_prop.REWARD_TYPE].append(loadout)
 
         if self.ULTRA_REWARD_PROP:
-            if self.ULTRA_REWARD_ITEM is None:
-                raise Exception('Ultra reward item is mandatory for ultra reward prop')
+            for base in self.ULTRA_REWARD_BASES:
+                base_instance = self.system.get_static_by_class(base)
+                if not base_instance.LOCKED_DOCK:
+                    raise Exception('this base is not locked')
 
-            nickname = self.LOADOUT_NICKNAME_TEMPLATE.format(
-                name=self.NAME,
-                reward_type=MINING_REWARD_ULTRA,
-                index=1
-            )
-            self.loadout_ultra_reward = SingleInternalCargoLoadout(
-                loadout_nickname=nickname,
-                cargo_item=self.ULTRA_REWARD_ITEM,
-                init_items=init_items,
-            ).get_loadout()
-            self.loadouts_list.append(self.loadout_ultra_reward)
+                base_nickname = base_instance.get_base_nickname()
+                base_key = base_instance.get_key_name()
+
+                nickname = self.LOADOUT_NICKNAME_TEMPLATE.format(
+                    name=self.NAME,
+                    reward_type=base_nickname,
+                    index=1
+                )
+                loadout_ultra_reward = SingleInternalCargoLoadout(
+                    loadout_nickname=nickname,
+                    cargo_item=base_key,
+                    init_items=init_items,
+                ).get_loadout()
+                self.loadouts_list.append(loadout_ultra_reward)
+                self.ultra_loadouts_db[base_nickname] = loadout_ultra_reward
 
 
 class DefaultAsteroidRewardsGroup(HardpointRewardsGroup):
@@ -495,6 +509,7 @@ class RewardField(Mineable):
     MEDIUM_REWARD_CHANCE = 0
     HIGH_REWARD_CHANCE = 0
     ULTRA_REWARD = False
+    ULTRA_BASE = None
 
     DUMMY_NAME = 'reward_item_dummy'
 
@@ -502,6 +517,13 @@ class RewardField(Mineable):
 
     def __init__(self, system):
         self.system = system
+
+        self.ultra_base_instance = None
+        if self.ULTRA_REWARD is True:
+            if not self.ULTRA_BASE:
+                raise Exception('RewardField have not attached base to unlock %s' % self.__class__.__name__)
+            self.ultra_base_instance = self.system.get_static_by_class(self.ULTRA_BASE)
+
         self.field = self.FIELD_CLASS()
 
         self.mark_rewards()
@@ -745,7 +767,7 @@ visit = 128'''
 
     def generate_box_content_item(self, box, reward_type, index):
         archetype = self.get_archetype_by_reward_type(reward_type)
-        loadouts = self.rewards_group.get_loadout_names_by_reward_type(reward_type, self.ITEMS_COUNT)
+        loadouts = self.rewards_group.get_loadout_names_by_reward_type(reward_type, self.ITEMS_COUNT, self.ultra_base_instance)
 
         template_params = {
             'nickname': self.create_nickname(index),
@@ -785,11 +807,11 @@ class GasCrystalRewardField(RewardField):
         self.rewards_group.solar.change_template()
         asteroid_archetype = self.get_asteroid_archetype_by_reward_type(reward_type)
         gas_positions = self.rewards_group.solar.get_gas_positions()
-        loadouts = self.rewards_group.get_loadout_names_by_reward_type(reward_type, len(gas_positions))
+
+        loadouts = self.rewards_group.get_loadout_names_by_reward_type(reward_type, len(gas_positions), self.ultra_base_instance)
 
         nickname = self.create_nickname(index)
         box_pos = box.get_position()
-
 
         asteroid = self.rewards_group.solar.get_asteroid(nickname, box_pos, asteroid_archetype)
 

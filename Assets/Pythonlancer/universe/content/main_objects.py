@@ -5,6 +5,7 @@ from fx.space import Dust
 from universe.content.system_object import SystemObject, TOP, BOTTOM, LEFT, RIGHT, DIRECTIONS, POS_KEY, ROT_KEY, SIZE_KEY
 from universe.content.zones import DynamicZone, DynamicSphereZone
 from universe.content import interior
+from universe.content.locked_dock_key import LockedDockKey
 from universe.content import faction
 from universe.content.space_voice import SpaceVoice
 
@@ -114,12 +115,14 @@ class StaticObject(AppearableObject):
     ASTEROID_ZONES = []
     AST_EXCLUSION_ZONE_SIZE = 3000
     AST_ZONE_NAME_TEMPLATE = 'Zone_{space_name}_ast_exclusion'
+    AST_EXCLUSION_ZONE_PARAMS = {}
 
     NEBULA_ZONES = []
     NEBULA_EXCLUSION_ZONE_SIZE = 3000
     NEBULA_ZONE_NAME_TEMPLATE = 'Zone_{space_name}_nebula_exclusion'
     EXCLUSION_PARAMS = {}
     NEBULA_EXCLUSION_EDGE_FRACTION = 0.2
+    NEBULA_EXCLUSION_ZONE_PARAMS = {}
 
     RING_ZONE_NAME_TEMPLATE = 'Zone_{space_name}_ring'
     RING_FILE_TEMPLATE = 'solar\\rings\\{ring_file_name}.ini'
@@ -204,6 +207,7 @@ class StaticObject(AppearableObject):
                     alias=self.ALIAS,
                     index=self.INDEX,
                     size=self.AST_EXCLUSION_ZONE_SIZE,
+                    **self.AST_EXCLUSION_ZONE_PARAMS,
                 )
             )
         if len(self.NEBULA_ZONES) != 0:
@@ -215,6 +219,7 @@ class StaticObject(AppearableObject):
                     index=self.INDEX,
                     size=self.NEBULA_EXCLUSION_ZONE_SIZE,
                     edge_fraction=self.NEBULA_EXCLUSION_EDGE_FRACTION,
+                    **self.NEBULA_EXCLUSION_ZONE_PARAMS,
                 )
             )
         if self.RING:
@@ -541,23 +546,41 @@ class DockableObject(StaticObject):
     BG1_KEY = 'terrain_tiny'
     BG2_KEY = 'terrain_sml'
 
+    ROOM_SUBFOLDER = None
+
     INTERIOR_DEFINITION_TEMPLATE = '''[Base]
 nickname = {base_name}
 system = {system_name}
 strid_name = {ids_name}
-file = Universe\\{interiors_folder}\\{interior_file_name}.ini
+file = {file_location}.ini
 BGCS_base_run_by = W02bF44'''
+
+    INTERIOR_LOCATION_GENERATED_TEMPLATE = 'Universe\\{interiors_folder}\\{interior_file_name}'
+    INTERIOR_LOCATION_CUSTOM_TEMPLATE = 'Universe\\Systems_MOD\\{system_folder}\\{interior_file_name}'
 
     AUDIO_PREFIX = None
 
     DEFENCE_LEVEL = DEFENCE_MEDIUM
+
+    LOCKED_DOCK = False
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
         self.interior = None
         if self.INTERIOR_CLASS:
-            self.interior = self.INTERIOR_CLASS(self, self.system.ROOM_SUBFOLDER)
+            subfolder = self.ROOM_SUBFOLDER if self.ROOM_SUBFOLDER else self.system.ROOM_SUBFOLDER
+            self.interior = self.INTERIOR_CLASS(self, subfolder)
+
+        self.key = None
+        if self.LOCKED_DOCK:
+            self.key = LockedDockKey(self)
+
+    def get_key_name(self):
+        if not self.key:
+            raise Exception('this base could not be locked')
+
+        return self.key.get_equip_name()
 
     def get_inspace_nickname(self):
         return '{system_name}_{base_index:02d}'.format(system_name=self.system.NAME, base_index=self.BASE_INDEX)
@@ -565,23 +588,34 @@ BGCS_base_run_by = W02bF44'''
     def get_base_nickname(self):
         return '{system_name}_{base_index:02d}_base'.format(system_name=self.system.NAME, base_index=self.BASE_INDEX)
 
+    def get_interior_file_name(self):
+        return 'gen_{base_nickname}'.format(base_nickname=self.get_base_nickname())
+
     def get_interior_content(self):
         if not self.interior:
             raise Exception('Impossible to load interior for dockable base %s' % self.__class__.__name__)
 
         return self.interior.get_base_info()
 
-    def get_interior_file_name(self):
-        return 'gen_{base_nickname}'.format(base_nickname=self.get_base_nickname())
-
     def get_interior_definition(self):
+        file_location = (
+            self.INTERIOR_LOCATION_CUSTOM_TEMPLATE.format(
+                system_folder=self.system.SYSTEM_FOLDER,
+                interior_file_name=self.get_base_nickname(),
+            )
+            if self.interior.CUSTOM_INTERIOR_FILE else
+            self.INTERIOR_LOCATION_GENERATED_TEMPLATE.format(
+                interiors_folder=self.INTERIORS_FOLDER,
+                interior_file_name=self.get_interior_file_name(),
+            )
+        )
+
         definition = [
             self.INTERIOR_DEFINITION_TEMPLATE.format(
                 base_name=self.get_base_nickname(),
                 system_name=self.system.NAME,
                 ids_name=self.IDS_NAME,
-                interiors_folder=self.INTERIORS_FOLDER,
-                interior_file_name=self.get_interior_file_name(),
+                file_location=file_location,
             )
         ]
         if self.INTERIOR_BG1:
@@ -654,12 +688,6 @@ class Dockring(DockableObject):
     def get_interior_content(self):
         raise Exception('Interior for dock ring planets should be only manual created')
 
-    def get_interior_file_name(self):
-        raise Exception('Interior for dock ring planets should be only manual created')
-
-    def get_interior_definition(self):
-        raise Exception('Interior for dock ring planets should be only manual created')
-
 
 class Station(DockableObject):
     ALIAS = 'station'
@@ -688,33 +716,12 @@ behavior = NOTHING'''
             faction=self.get_faction(),
         )
 
-
     def get_sattelites(self):
         return [self.get_cargo_pods()]
 
 
-    def get_planet_circle(self):
-        if not self.PLANET_CIRCLE:
-            return
-
-        if self.get_sphere_radius() not in self.PLANET_RADIUSES:
-            raise Exception('planet %s have invalid radius' % self.__class.__name__)
-
-        pos_x, pos_y, pos_z = self.get_position()
-        spin = ''
-        spin_data = self.get_spin()
-        if spin_data:
-            spin = f'spin = {spin_data}'
-
-        return self.PLANET_CIRCLE_TEMPLATE.format(
-            parent_planet=self.get_inspace_nickname(),
-            position='{} {} {}'.format(pos_x, pos_y+self.PLANET_CIRCLE_Y_DRIFT, pos_z),
-            circle_archetype=self.PLANET_CIRCLE_ARCHETYPE_TEMPLATE.format(radius=self.get_sphere_radius()),
-            planet_spin=spin,
-        )
-
-
-
+class DebrisManufactoring(Station):
+    pass
 
 
 class Outpost(DockableObject):
@@ -969,8 +976,10 @@ class TradeConnection(SystemObject):
 
     OBJ_FROM_EXTRA_DRIFT = 0
     OBJ_FROM_EXTRA_DRIFT_ALT_AXIS = 0
+    OBJ_FROM_TLR_FORCE_OFFSET = None
     OBJ_TO_EXTRA_DRIFT = 0
     OBJ_TO_EXTRA_DRIFT_ALT_AXIS = 0
+    OBJ_TO_TLR_FORCE_OFFSET = None
 
     HUNTER_PATROL_OFFSET = 10000
     HUNTER_PATROL_DRIFT = 3000
@@ -1034,8 +1043,8 @@ size = {size}'''
         obj_from, obj_to = self.get_destination_objects()
         side_from, side_to = self.get_sides()
 
-        start_tradelane_props = obj_from.get_tradelane_props(side_from, self.OBJ_FROM_EXTRA_DRIFT, self.OBJ_FROM_EXTRA_DRIFT_ALT_AXIS)
-        end_tradelane_props = obj_to.get_tradelane_props(side_to, self.OBJ_TO_EXTRA_DRIFT, self.OBJ_TO_EXTRA_DRIFT_ALT_AXIS)
+        start_tradelane_props = obj_from.get_tradelane_props(side_from, self.OBJ_FROM_EXTRA_DRIFT, self.OBJ_FROM_EXTRA_DRIFT_ALT_AXIS, force_offset=self.OBJ_FROM_TLR_FORCE_OFFSET)
+        end_tradelane_props = obj_to.get_tradelane_props(side_to, self.OBJ_TO_EXTRA_DRIFT, self.OBJ_TO_EXTRA_DRIFT_ALT_AXIS, force_offset=self.OBJ_TO_TLR_FORCE_OFFSET)
 
         return start_tradelane_props, end_tradelane_props
 
