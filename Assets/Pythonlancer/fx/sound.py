@@ -67,7 +67,7 @@ class Ambience(object):
     NEBULA_BARRIER = 'zone_nebula_barrier'
     NEBULA_CROW = 'zone_nebula_crow'
     NEBULA_DMATTER = 'zone_nebula_dmatter'
-    NEBULLA_EDGE = 'zone_nebula_edge'
+    NEBULA_EDGE = 'zone_nebula_edge'
     NEBULA_WALKER = 'zone_nebula_walker'
     BADLANDS = 'zone_badlands'
     ASTEROID_NOMAD = 'zone_field_asteroid_nomad'

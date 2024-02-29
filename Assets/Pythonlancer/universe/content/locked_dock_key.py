@@ -38,7 +38,7 @@ constant_power_draw = 0
 rebuild_power_draw = 0
 separation_explosion = sever_debris
 LODranges = 0, 1
-lootable = false'''
+lootable = true'''
 
     INTIIAL_WORLD_TEMPLATE = ''';{base_nickname}
 locked_gate = {int_hash}

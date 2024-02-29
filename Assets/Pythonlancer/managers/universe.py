@@ -138,28 +138,25 @@ class UniverseManager(object):
     def get_dock_key(self):
         return DIVIDER.join([key.get_dock_key() for key in self.keys])
 
-    def get_mbases_content(self):
-        return DIVIDER.join(self.mbases_content)
-
     def sync_data(self):
         for system in self.systems:
             if not system.ALLOW_SYNC:
                 continue
 
-            print(f'sync sys {system.NAME}')
+            # print(f'sync sys {system.NAME}')
             DataFolder.sync_system_mod(system.NAME, system.SYSTEM_FOLDER, system.system_content_str)
 
-        print('sync solar gen loadouts')
+        # print('sync solar gen loadouts')
         DataFolder.sync_solar_gen_loadouts(self.get_system_loadouts())
 
         for definition in self.asteroid_definitions:
-            print(f'sync ast definition {definition.NAME}')
+            # print(f'sync ast definition {definition.NAME}')
             DataFolder.sync_asteroid_definition(definition.NAME, definition.SUBFOLDER, definition.get_file_content())
 
         for tpl_nebula in self.templated_nebulas:
-            print(f'sync templated nebula {tpl_nebula.FILE_NAME}')
+            # print(f'sync templated nebula {tpl_nebula.FILE_NAME}')
             DataFolder.sync_templated_nebula(tpl_nebula.FILE_NAME, tpl_nebula.GENERATED_NEBULA_SUBFOLDER, tpl_nebula.get_file_content())
 
         for file_name, content in self.interior_files.items():
-            print(f'sync interior {file_name}')
+            # print(f'sync interior {file_name}')
             DataFolder.sync_interior(file_name, content)

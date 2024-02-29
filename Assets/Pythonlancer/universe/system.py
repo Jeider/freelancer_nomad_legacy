@@ -11,6 +11,7 @@ from universe.systems import br_wrw as br_wrw_objects
 from universe.systems import rh_ber as rh_ber_content
 from universe.systems import sig13 as sig13_content
 from universe.systems import rh_biz as rh_biz_content
+from universe.systems import sig8 as sig8_content
 
 from text.dividers import DIVIDER
 
@@ -455,8 +456,14 @@ class rh_ber(RheinlandSystem, System):
     SYSTEM_FOLDER = 'RH_BERLIN'
     ALLOW_SYNC = True
 
-class sig8(System):
+class sig8(RheinlandSystem, System):
     NAME = 'sig8'
+    TEMPLATE_NAME = 'sig8'
+    FACTION_CODE = faction.RH_GRP
+    CONTENT = sig8_content
+
+    SYSTEM_FOLDER = 'SIGMA8'
+    ALLOW_SYNC = True
 
 
 class om15(System):

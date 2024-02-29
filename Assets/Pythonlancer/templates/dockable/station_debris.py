@@ -1685,3 +1685,71 @@ rotate = 0, 0, 0
 archetype = space_control_panel
 parent = li_cal_10
 '''
+
+
+class SigmaEightFreeport(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'sig8_03'
+    TEMPLATE = '''[Object]
+nickname = sig8_03
+pos = -250, -25, 60
+rotate = 0, 0, 0
+archetype = space_industrial_dmg_root
+reputation = fc_uk_grp
+behavior = NOTHING
+
+[Object]
+nickname = sig8_03_space_dome_dmg01
+pos = -600, -29, 60
+rotate = 0, 0, 0
+archetype = space_dome_dmg2
+parent = sig8_03
+
+[Object]
+nickname = sig8_03_space_solar_panel_dmg01
+pos = -250, -45, 60
+rotate = 0, 90, 0
+archetype = space_panel_damaged_01
+parent = sig8_03
+
+[Object]
+nickname = sig8_03_space_tanks01
+pos = -250, -185, 60
+rotate = 0, 0, 0
+archetype = space_tanklx4_dmg
+parent = sig8_03
+
+[Object]
+nickname = sig8_03_space_beam_dmg01
+pos = -55, -25, 60
+rotate = 0, 90, 0
+archetype = space_beaml_dmg
+parent = sig8_03
+
+[Object]
+nickname = sig8_03_space_habitat_dmg01
+pos = -80, -35, 160
+rotate = -200, 90, 30
+archetype = space_habitat_dmg
+parent = sig8_03
+
+[Object]
+nickname = sig8_03_police_dmg01
+pos = 100, -20, -50
+rotate = -25, 50, 0
+archetype = space_police_dmg
+parent = sig8_03
+
+[Object]
+nickname = sig8_03_tunnel01
+pos = -250, -35, 360
+rotate = 0, -90, 0
+archetype = space_tunnel
+parent = sig8_03
+
+[Object]
+nickname = sig8_03_tunnel02
+pos = -251, -18, -236
+rotate = 0, 90, 0
+archetype = space_tunnel
+parent = sig8_03
+'''

@@ -12,6 +12,17 @@ from universe.content import faction
 from universe.content import mineable
 
 
+from templates.dockable import pirate
+from templates.dockable import asteroid as asteroid_base
+from templates.dockable import trade_storages
+from templates.dockable import columbia_production
+from templates.dockable import constanta
+from templates.dockable import station_debris
+from templates.dockable import junker
+from templates.dockable import police
+from templates.dockable import trade_storages
+
+
 
 
 
@@ -87,6 +98,107 @@ range = 100000
 type = DIRECTIONAL
 atten_curve = DYNAMIC_DIRECTION
 
+
+[EncounterParameters]
+nickname = rh_grp_main_defend
+filename = missions\\npc\\rh\\rh_grp_main_defend.ini
+
+[EncounterParameters]
+nickname = rh_grp_main_scout
+filename = missions\\npc\\rh\\rh_grp_main_scout.ini
+
+[EncounterParameters]
+nickname = rh_grp_main_gunboat
+filename = missions\\npc\\rh\\rh_grp_main_gunboat.ini
+
+[EncounterParameters]
+nickname = rh_grp_main_elite2
+filename = missions\\npc\\rh\\rh_grp_main_elite2.ini
+
+[EncounterParameters]
+nickname = rh_grp_main_trade
+filename = missions\\npc\\rh\\rh_grp_main_trade.ini
+
+[EncounterParameters]
+nickname = bh_grp_rh_trade
+filename = missions\\npc\\rh\\bh_grp_rh_trade.ini
+
+[EncounterParameters]
+nickname = bh_grp_rh_scout
+filename = missions\\npc\\rh\\bh_grp_rh_scout.ini
+
+[EncounterParameters]
+nickname = tr_grp_rh_transport
+filename = missions\\npc\\rh\\tr_grp_rh_transport.ini
+
+[EncounterParameters]
+nickname = co_grp_main_defend
+filename = missions\\npc\\co\\co_grp_main_defend.ini
+
+[EncounterParameters]
+nickname = co_grp_main_assault
+filename = missions\\npc\\co\\co_grp_main_assault.ini
+
+[EncounterParameters]
+nickname = rx_grp_main_defend
+filename = missions\\npc\\pi\\rx_grp_main_defend.ini
+
+[EncounterParameters]
+nickname = pi_grp_rh_assault
+filename = missions\\npc\\pi\\pi_grp_rh_assault.ini
+
+[EncounterParameters]
+nickname = area_xscout
+filename = missions\\NPC\\area_rebels.ini
+
+[EncounterParameters]
+nickname = rh_grp_main_trade_tlr
+filename = missions\\npc\\rh\\rh_grp_main_trade_tlr.ini
+
+[EncounterParameters]
+nickname = tr_grp_rh_transport_tlr
+filename = missions\\npc\\rh\\tr_grp_rh_transport_tlr.ini
+
+[EncounterParameters]
+nickname = bh_grp_rh_trade_tlr
+filename = missions\\npc\\rh\\bh_grp_rh_trade_tlr.ini
+
+[EncounterParameters]
+nickname = rh_pirates_patrol
+filename = missions\\npc\\pi\\pi_grp_rh_patrol.ini
+
+[EncounterParameters]
+nickname = rh_grp_main_patrol
+filename = missions\\npc\\rh\\rh_grp_main_patrol.ini
+
+[EncounterParameters]
+nickname = rx_grp_main_patrol
+filename = missions\\npc\\pi\\rx_grp_main_patrol.ini
+
+[EncounterParameters]
+nickname = patrol_tlr
+filename = missions\\NPC\\patrol_tlr.ini
+
+[EncounterParameters]
+nickname = patrol_police
+filename = missions\\NPC\\patrol_police.ini
+
+[EncounterParameters]
+nickname = bh_grp_rh_patrol
+filename = missions\\npc\\rh\\bh_grp_rh_patrol.ini
+
+[EncounterParameters]
+nickname = rx_grp_patrol_trade
+filename = missions\\NPC\\PI\\rx_grp_patrol_trade.ini
+
+[EncounterParameters]
+nickname = rh_junkers
+filename = missions\\npc\\rh\\rh_junkers.ini
+
+[EncounterParameters]
+nickname = co_grp_main_patrol
+filename = missions\\npc\\co\\co_grp_main_patrol.ini
+
 '''
 
 
@@ -103,3 +215,192 @@ class Sig8BerlinJumpgate(Sigma8Member, main_objects.Jumpgate):
 class Sig8BizmarkJumpgate(Sigma8Member, main_objects.Jumpgate):
     INDEX = 2
     REL = BOTTOM
+
+
+class Sig8Station(Sigma8Member, main_objects.Station):
+    INDEX = 1
+    BASE_INDEX = 1
+    REL = LEFT
+
+    ARCHETYPE = 'largestation1_old'
+    LOADOUT = 'largestation_rh'
+
+    AUDIO_PREFIX = SpaceVoice.STATION
+    INTERIOR_CLASS = interior.StationShipdealerInterior
+    DEALERS = dealers.RheinlandCivilianDealers
+
+
+class Sig8Freeport(Sigma8Member, main_objects.Freeport):
+    INDEX = 1
+    BASE_INDEX = 2
+    REL = LEFT
+
+    SPACE_OBJECT_TEMPLATE = trade_storages.HonshuStorage
+
+    AUDIO_PREFIX = SpaceVoice.FREEPORT
+    INTERIOR_CLASS = interior.OutpostInterior
+    DEALERS = dealers.RheinlandCivilianDealers
+
+
+class Sig8BorderStation(Sigma8Member, main_objects.Outpost):
+    INDEX = 1
+    BASE_INDEX = 3
+    REL = RIGHT
+
+    SPACE_OBJECT_TEMPLATE = police.SigmaEightPoliceOutpost
+
+    AUDIO_PREFIX = SpaceVoice.BORDER_STATION
+    INTERIOR_CLASS = interior.OutpostInterior
+    DEALERS = dealers.RheinlandMilitaryDealers
+
+
+class Sig8Junkers(Sigma8Member, main_objects.JunkerBase):
+    INDEX = 1
+    BASE_INDEX = 4
+    REL = RIGHT
+
+    SPACE_OBJECT_TEMPLATE = junker.SigmaEightJunker
+
+    FACTION = faction.JUNK_GRP
+    DEFENCE_LEVEL = None
+
+    AUDIO_PREFIX = SpaceVoice.STATION
+    INTERIOR_CLASS = interior.PirateStationInterior
+    DEALERS = dealers.RheinlandCivilianDealers
+
+
+class Sig8Pirate(Sigma8Member, main_objects.PirateBase):
+    INDEX = 1
+    BASE_INDEX = 5
+    REL = RIGHT
+
+    SPACE_OBJECT_TEMPLATE = pirate.ManhattanPirateBase
+
+    FACTION = faction.RX_GRP
+    DEFENCE_LEVEL = None
+
+    AUDIO_PREFIX = SpaceVoice.STATION
+    INTERIOR_CLASS = interior.PirateOutpostInterior
+    DEALERS = dealers.RheinlandCivilianDealers
+
+
+class Sigma8Planet1(Sigma8Member, main_objects.Planet):
+    INDEX = 1
+    ARCHETYPE = 'planet_gaspurcld_5000'
+    SPHERE_RADIUS = 5000
+    RING = True
+    RING_ZONE_ALIAS = 'ring'
+    RING_ZONE_INDEX = 1
+    RING_FILE_NAME = 'sig8'
+
+
+class Sigma8Planet2(Sigma8Member, main_objects.Planet):
+    INDEX = 2
+    ARCHETYPE = 'planet_icemntcld_2500'
+    SPHERE_RADIUS = 2500
+
+
+class Sigma8Planet3(Sigma8Member, main_objects.Planet):
+    INDEX = 3
+    ARCHETYPE = 'planet_crater_1500'
+    SPHERE_RADIUS = 1500
+
+
+class Sig8OldFreeportRuins(Sigma8Member, main_objects.Outpost):
+    ALIAS = 'ruins'
+    INDEX = 1
+    BASE_INDEX = 51
+    REL = RIGHT
+
+    SPACE_OBJECT_TEMPLATE = station_debris.SigmaEightFreeport
+
+
+class Sig8StarkeConn1(Sigma8Member, main_objects.TradeConnection):
+    OBJ_FROM = Sig8Station
+    OBJ_TO = Sig8BerlinJumpgate
+    SIDE_FROM = LEFT
+    SIDE_TO = RIGHT
+    TRADELANE_LETTER = 'A'
+    HUNTER_DEFENCE_REL = BOTTOM
+    ATTACKED_BY = [
+        Sig8Pirate,
+    ]
+
+
+class Sig8StarkeConn2(Sigma8Member, main_objects.TradeConnection):
+    OBJ_FROM = Sig8Station
+    OBJ_TO = Sig8Freeport
+    SIDE_FROM = TOP
+    SIDE_TO = BOTTOM
+    TRADELANE_LETTER = 'B'
+    HUNTER_DEFENCE_REL = RIGHT
+    ATTACKED_BY = [
+        Sig8Pirate,
+    ]
+
+
+class Sig8PoliceConn1(Sigma8Member, main_objects.TradeConnection):
+    OBJ_FROM = Sig8BorderStation
+    OBJ_TO = Sig8Freeport
+    SIDE_FROM = RIGHT
+    SIDE_TO = LEFT
+    TRADELANE_LETTER = 'C'
+    HUNTER_DEFENCE_REL = TOP
+    ATTACKED_BY = [
+        Sig8Junkers,
+    ]
+
+
+class Sig8PoliceConn2(Sigma8Member, main_objects.TradeConnection):
+    OBJ_FROM = Sig8BorderStation
+    OBJ_TO = Sig8BizmarkJumpgate
+    SIDE_FROM = TOP
+    SIDE_TO = BOTTOM
+    TRADELANE_LETTER = 'D'
+    HUNTER_DEFENCE_REL = RIGHT
+    ATTACKED_BY = [
+        Sig8Junkers,
+    ]
+
+
+class Sig8BrokenConn1(Sigma8Member, main_objects.TradeConnection):
+    OBJ_FROM = Sig8OldFreeportRuins
+    OBJ_TO = Sig8BorderStation
+    SIDE_FROM = TOP
+    SIDE_TO = BOTTOM
+    TRADELANE_LETTER = 'X'
+    ATTACKED_BY = [
+        Sig8Junkers,
+    ]
+
+
+class Sig8GreenNebula1(Sigma8Member, zones.NebulaZone):
+    INDEX = 1
+    FILE_NAME = 'sig8_green_nebula'
+    SPACEDUST = Dust.ATTRACT_GREEN
+    SPACEDUST_MAXPARTICLES = 40
+    MUSIC = Ambience.BADLANDS
+
+
+class Sig8GreenNebula2(Sigma8Member, zones.NebulaZone):
+    INDEX = 2
+    FILE_NAME = 'sig8_green_nebula'
+    SPACEDUST = Dust.ATTRACT_GREEN
+    SPACEDUST_MAXPARTICLES = 40
+    MUSIC = Ambience.BADLANDS
+
+
+class Sig8BrownNebula1(Sigma8Member, zones.NebulaZone):
+    INDEX = 3
+    FILE_NAME = 'sig8_brown_nebula'
+    SPACEDUST = Dust.ATTRACT
+    SPACEDUST_MAXPARTICLES = 40
+    MUSIC = Ambience.NEBULA_DMATTER
+
+
+class Sig8BrownNebula2(Sigma8Member, zones.NebulaZone):
+    INDEX = 4
+    FILE_NAME = 'sig8_brown_nebula'
+    SPACEDUST = Dust.ATTRACT
+    SPACEDUST_MAXPARTICLES = 40
+    MUSIC = Ambience.NEBULA_DMATTER

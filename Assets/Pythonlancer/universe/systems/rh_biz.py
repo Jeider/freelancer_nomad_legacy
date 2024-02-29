@@ -73,6 +73,7 @@ property_flags = 512 ;lava - MILITARY
 complex_stars = solar\\stars_mod\\new_generic.cmp
 nebulae = solar\\stars_mod\\rh_biz_nebula.cmp
 basic_stars = solar\\stars_mod\\new_generic.cmp
+
 [EncounterParameters]
 nickname = rh_grp_main_defend
 filename = missions\\npc\\rh\\rh_grp_main_defend.ini
@@ -198,6 +199,11 @@ class BizmarkDebrisZoneDefinition3(asteroid_definition.DebrisDefinition):
     NAME = 'rh_biz_debris_field3'
 
 
+class BizmarkDebrisZoneDefinition4(asteroid_definition.DebrisDefinition):
+    ABSTRACT = False
+    NAME = 'rh_biz_debris_field4'
+
+
 class BizmarkAsteroidZone1(BizmarkMember, zones.AsteroidZone):
     INDEX = 1
     ASTEROID_DEFINITION_CLASS = BizmarkPirateAsteroidDefinition1
@@ -221,6 +227,11 @@ class BizmarkDebrisZone2(BizmarkMember, zones.DebrisZone):
 class BizmarkDebrisZone3(BizmarkMember, zones.DebrisZone):
     INDEX = 3
     ASTEROID_DEFINITION_CLASS = BizmarkDebrisZoneDefinition3
+
+
+class BizmarkDebrisZone4(BizmarkMember, zones.DebrisZone):
+    INDEX = 4
+    ASTEROID_DEFINITION_CLASS = BizmarkDebrisZoneDefinition4
 
 
 class BizmarkTopLeftNebula(BizmarkMember, zones.NebulaZone):
@@ -331,6 +342,10 @@ class BizmarkRefinery(BizmarkMember, main_objects.Refinery):
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.RheinlandCivilianDealers
 
+    ASTEROID_ZONES = [
+        BizmarkDebrisZone4,
+    ]
+
 
 class BizmarkTopPirate(BizmarkMember, main_objects.PirateBase):
     BASE_INDEX = 8
@@ -390,6 +405,7 @@ class BizmarkAbandonedAstBase1(BizmarkMember, main_objects.Station):
     DEFENCE_LEVEL = None
     LOCKED_DOCK = True
 
+    INTERIOR_BG1 = interior.INTERIOR_BH_BIZMARK
     AST_EXCLUSION_ZONE_SIZE = 3500
     ASTEROID_ZONES = [
         BizmarkAsteroidZone2,
@@ -427,7 +443,7 @@ class BizmarkDebrisFactory3(BizmarkMember, BizmarkBaseDebrisManufactoring):
     AST_EXCLUSION_ZONE_SIZE = 3500
 
 
-class BizmarkPirateAsteroidReward(BizmarkMember, mineable.AsteroidRewardsGroupMedium):
+class BizmarkPirateAsteroidReward(BizmarkMember, mineable.AsteroidRewardsGroupUltra):
     NAME = 'rh_biz_rock'
     SOLAR = asteroid_solar.AsteroidOmega15
     REWARD_ITEM = 'comm_roid_niobium'
@@ -447,60 +463,45 @@ class BizmarkDebrisBoxReward(BizmarkMember, mineable.DefaultDebrisBoxRewardsGrou
     ]
 
 
-class BizmarkAstField(mineable.DefaultField):
-    BOX_SIZE = 2500
-    DENSITY_MULTIPLER = 2
-    DRIFT_X = 0.3
-    DRIFT_Y = 0
-    DRIFT_Z = 0.3
-
-
-class BizmarkDebrisField(mineable.DefaultField):
-    BOX_SIZE = 1200
-    DENSITY_MULTIPLER = 2
-    DRIFT_X = 0.2
-    DRIFT_Y = 0
-    DRIFT_Z = 0.2
-
-
 class BizmarkPirateAsteroids(BizmarkMember, mineable.AsteroidRewardField):
     INDEX = 1
-    FIELD_CLASS = BizmarkAstField
+    FIELD_CLASS = mineable.BackgroundAsteroidsField
     REWARDS_GROUP_CLASS = BizmarkPirateAsteroidReward
     MEDIUM_REWARD_CHANCE = 0.25
 
 
 class BizmarkAbandonedAsteroids1(BizmarkMember, mineable.AsteroidRewardField):
     INDEX = 2
-    FIELD_CLASS = BizmarkAstField
+    FIELD_CLASS = mineable.MineableAsteroidField
     REWARDS_GROUP_CLASS = BizmarkPirateAsteroidReward
     MEDIUM_REWARD_CHANCE = 0.25
+    ULTRA_REWARD = True
     ULTRA_BASE = BizmarkAbandonedAstBase1
 
 
-class BizmarkBaseDebrisField(mineable.DebrisBoxRewardField):
+class BizmarkBaseDebrisBoxRewardField(mineable.DebrisBoxRewardField):
     FIELD_NAME = None
-    FIELD_CLASS = BizmarkDebrisField
+    FIELD_CLASS = mineable.MineableDebrixBoxField
     REWARDS_GROUP_CLASS = BizmarkDebrisBoxReward
     MEDIUM_REWARD_CHANCE = 0.5
     HIGH_REWARD_CHANCE = 0.25
     ULTRA_REWARD = True
 
 
-class BizmarkDebrisBoxField1(BizmarkMember, BizmarkBaseDebrisField):
-    FIELD_NAME = 'bizmark_debris1'
+class BizmarkDebrisBoxField1(BizmarkMember, BizmarkBaseDebrisBoxRewardField):
+    FIELD_NAME = 'rh_biz_debris1'
     INDEX = 1
     ULTRA_BASE = BizmarkDebrisFactory1
 
 
-class BizmarkDebrisBoxField2(BizmarkMember, BizmarkBaseDebrisField):
-    FIELD_NAME = 'bizmark_debris2'
+class BizmarkDebrisBoxField2(BizmarkMember, BizmarkBaseDebrisBoxRewardField):
+    FIELD_NAME = 'rh_biz_debris2'
     INDEX = 2
     ULTRA_BASE = BizmarkDebrisFactory2
 
 
-class BizmarkDebrisBoxField3(BizmarkMember, BizmarkBaseDebrisField):
-    FIELD_NAME = 'bizmark_debris3'
+class BizmarkDebrisBoxField3(BizmarkMember, BizmarkBaseDebrisBoxRewardField):
+    FIELD_NAME = 'rh_biz_debris3'
     INDEX = 3
     ULTRA_BASE = BizmarkDebrisFactory3
 

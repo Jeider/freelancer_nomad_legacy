@@ -388,12 +388,13 @@ class Planet(GenericSphere):
     PLANET_CIRCLE_TEMPLATE = '''[Object]
 nickname = {parent_planet}_planet_circle
 pos = {position}
-rotate = 0, 30, 0
+rotate = {rotate}
 archetype = {circle_archetype}
 {planet_spin}
 parent = {parent_planet}'''
 
     PLANET_CIRCLE = True
+    PLANET_CIRCLE_DEFAULT_ROTATE = (0, 30, 0)
     ATMOSPHERE_RANGE_APPEND = 350
     ATMOSPHERE_SPACEDUST = Dust.ATMOSPHERE
     ATMOSPHERE_SPACEDUST_MAXPARTICLES = 500
@@ -427,9 +428,14 @@ parent = {parent_planet}'''
         if spin_data:
             spin = f'spin = {spin_data}'
 
+        rotate = self.get_rotate()
+        if sum(rotate) == 0:
+            rotate = self.PLANET_CIRCLE_DEFAULT_ROTATE
+
         return self.PLANET_CIRCLE_TEMPLATE.format(
             parent_planet=self.get_inspace_nickname(),
             position='{}, {}, {}'.format(pos_x, pos_y+self.PLANET_CIRCLE_Y_DRIFT, pos_z),
+            rotate='{}, {}, {}'.format(*rotate),
             circle_archetype=self.PLANET_CIRCLE_ARCHETYPE_TEMPLATE.format(radius=self.get_sphere_radius()),
             planet_spin=spin,
         )
@@ -1187,7 +1193,6 @@ size = {size}'''
             first_tradelane_index = 1
         else:
             first_tradelane_index = randint(1, tlrs_len-2)
-
 
         lane1_pos = self.tradelanes[first_tradelane_index].get_tradelane_pos()
         lane2_pos = self.tradelanes[first_tradelane_index+1].get_tradelane_pos()
