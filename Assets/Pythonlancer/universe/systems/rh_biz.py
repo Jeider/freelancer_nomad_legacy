@@ -165,7 +165,7 @@ filename = missions\\npc\\repair.ini
 '''
 
 
-class BizmarkBasePirateAsteroidDefinition(asteroid_definition.Omega15NiobiumAsteroidDefinition):
+class BizmarkBaseAsteroidDefinition(asteroid_definition.Omega15NiobiumAsteroidDefinition):
     ABSTRACT = True
     NAME = None
     DYNAST = True
@@ -174,12 +174,12 @@ class BizmarkBasePirateAsteroidDefinition(asteroid_definition.Omega15NiobiumAste
     LOOT = False  # TEMP
 
 
-class BizmarkPirateAsteroidDefinition1(BizmarkBasePirateAsteroidDefinition):
+class BizmarkAsteroidDefinition1(BizmarkBaseAsteroidDefinition):
     ABSTRACT = False
     NAME = 'rh_biz_pirate_astfield1'
 
 
-class BizmarkPirateAsteroidDefinition2(BizmarkBasePirateAsteroidDefinition):
+class BizmarkAsteroidDefinition2(BizmarkBaseAsteroidDefinition):
     ABSTRACT = False
     NAME = 'rh_biz_pirate_astfield2'
 
@@ -206,12 +206,12 @@ class BizmarkDebrisZoneDefinition4(asteroid_definition.DebrisDefinition):
 
 class BizmarkAsteroidZone1(BizmarkMember, zones.AsteroidZone):
     INDEX = 1
-    ASTEROID_DEFINITION_CLASS = BizmarkPirateAsteroidDefinition1
+    ASTEROID_DEFINITION_CLASS = BizmarkAsteroidDefinition1
 
 
 class BizmarkAsteroidZone2(BizmarkMember, zones.AsteroidZone):
     INDEX = 2
-    ASTEROID_DEFINITION_CLASS = BizmarkPirateAsteroidDefinition2
+    ASTEROID_DEFINITION_CLASS = BizmarkAsteroidDefinition2
 
 
 class BizmarkDebrisZone1(BizmarkMember, zones.DebrisZone):

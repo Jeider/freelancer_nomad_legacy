@@ -202,6 +202,47 @@ filename = missions\\npc\\co\\co_grp_main_patrol.ini
 '''
 
 
+
+
+class Sig8BaseAsteroidDefinition(asteroid_definition.Omega15NiobiumAsteroidDefinition):
+    ABSTRACT = True
+    NAME = None
+    DYNAST = True
+    BELT = True
+    BILLBOARDS = True
+    LOOT = False  # TEMP
+
+
+class Sig8AsteroidDefinition1(Sig8BaseAsteroidDefinition):
+    ABSTRACT = False
+    NAME = 'sig8_astfield1'
+
+
+class Sig8AsteroidDefinition2(Sig8BaseAsteroidDefinition):
+    ABSTRACT = False
+    NAME = 'sig8_astfield2'
+
+
+class Sig8AsteroidDefinition3(Sig8BaseAsteroidDefinition):
+    ABSTRACT = False
+    NAME = 'sig8_astfield3'
+
+
+class Sig8AsteroidZone1(Sigma8Member, zones.AsteroidZone):
+    INDEX = 1
+    ASTEROID_DEFINITION_CLASS = Sig8AsteroidDefinition1
+
+
+class Sig8AsteroidZone2(Sigma8Member, zones.AsteroidZone):
+    INDEX = 2
+    ASTEROID_DEFINITION_CLASS = Sig8AsteroidDefinition2
+
+
+class Sig8AsteroidZone3(Sigma8Member, zones.AsteroidZone):
+    INDEX = 3
+    ASTEROID_DEFINITION_CLASS = Sig8AsteroidDefinition3
+
+
 class Sig8Sun(Sigma8Member, main_objects.Sun):
     STAR = 'med_blue_sun'
     LOADOUT = 'med_blue_sun_fx'
@@ -314,6 +355,10 @@ class Sig8OldFreeportRuins(Sigma8Member, main_objects.Outpost):
 
     SPACE_OBJECT_TEMPLATE = station_debris.SigmaEightFreeport
 
+    ASTEROID_ZONES = [
+        Sig8AsteroidZone1,
+    ]
+
 
 class Sig8StarkeConn1(Sigma8Member, main_objects.TradeConnection):
     OBJ_FROM = Sig8Station
@@ -366,8 +411,8 @@ class Sig8PoliceConn2(Sigma8Member, main_objects.TradeConnection):
 class Sig8BrokenConn1(Sigma8Member, main_objects.TradeConnection):
     OBJ_FROM = Sig8OldFreeportRuins
     OBJ_TO = Sig8BorderStation
-    SIDE_FROM = TOP
-    SIDE_TO = BOTTOM
+    SIDE_FROM = RIGHT
+    SIDE_TO = LEFT
     TRADELANE_LETTER = 'X'
     ATTACKED_BY = [
         Sig8Junkers,
