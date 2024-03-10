@@ -527,10 +527,7 @@ COLORS = [
     COLOR_1, COLOR_2, COLOR_3, COLOR_4, COLOR_5,
     COLOR_6, COLOR_7, COLOR_8, COLOR_9, COLOR_10,
     COLOR_11, COLOR_12, COLOR_13, COLOR_14, COLOR_15,
-    # COLOR_16, COLOR_17, COLOR_18, # COLOR_19, COLOR_20,
 ]
-
-NEAR_COLORS_LEVELS_COUNT = len(COLORS)  # too much as possible
 
 CRC_PER_COLOR = {
     COLOR_1: 'EFF37772',
@@ -575,7 +572,10 @@ HIT_POINTS = 6000000000
 HIT_POINT_EXTRA_DAMAGE = 500000
 
 
-class ColorHelper(object):
+class ColorMap(object):
+
+    def __init__(self, colors):
+        self.colors
 
     @staticmethod
     def get_next_color(color):
@@ -925,12 +925,6 @@ class HackerPanel(object):
     def get_buttons_objs(self, buttons_list):
         return DIVIDER.join([button.get_part_obj() for button in buttons_list])
 
-    def get_valid_root(self):
-        return ROOT_VALID_TEMPLATE.format(index=self.panel_index)
-
-    def get_danger_root(self):
-        return ROOT_DANGER_TEMPLATE.format(index=self.panel_index)
-
     def get_cmpnd(self, valid, buttons_list):
         return CMPND_TEMPLATE.format(
             fix_content=self.get_button_fixes(buttons_list, valid),
@@ -1065,15 +1059,6 @@ class HackerPanelFactory(object):
             fuses += hacker_panel.valid_layer.get_valid_fuses()
         return DIVIDER.join(fuses)
 
-    def get_fuses(self):
-        fuses = []
-        for hacker_panel in self.hacker_panels:
-            for layer in hacker_panel.layers:
-                fuses += layer.get_invalid_fuses()
-
-            fuses += hacker_panel.valid_layer.get_valid_fuses()
-        return DIVIDER.join(fuses)
-
     def get_solararch(self):
         solararch = []
         for hacker_panel in self.hacker_panels:
@@ -1107,31 +1092,23 @@ class MaterialsFactory(object):
             materials=DIVIDER.join(self.materials)
         )
 
+class HackerPanelManager(object):
 
-factory = HackerPanelFactory()
+    def __init__(self):
+        self.factory = HackerPanelFactory()
 
-xmls = factory.get_xmls_content()
-sur = factory.get_sur()
-# get_collision_groups = factory.get_collision_groups()
-# print(get_collision_groups)
-# solararch = factory.get_solararch()
+    def get_surs(self):
+        return self.factory.get_sur()
 
-# xmls = []
+    def write_content(self):
+        xmls = self.factory.get_xmls_content()
 
-materials = MaterialsFactory().get_xml()
-xmls.append(materials)
-# XML_UTF.process_xmls([materials])
+        materials = MaterialsFactory().get_xml()
+        xmls.append(materials)
 
-# import pdb;pdb.set_trace()
-XML_UTF.process_xmls(xmls)
+        XML_UTF.process_xmls(xmls)
 
-FileWriter.write_to_subfolder(OUT_SUBFOLDER, 'fuses.ini', factory.get_fuses())
-FileWriter.write_to_subfolder(OUT_SUBFOLDER, 'solararch.ini', factory.get_solararch())
+        FileWriter.write_to_subfolder(OUT_SUBFOLDER, 'fuses.ini', self.factory.get_fuses())
+        FileWriter.write_to_subfolder(OUT_SUBFOLDER, 'solararch.ini', self.factory.get_solararch())
 
 
-
-# print(DIVIDER.join(xmls))
-# print('')
-# print(solararch)
-
-# import pdb;pdb.set_trace()

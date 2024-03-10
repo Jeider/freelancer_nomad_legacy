@@ -13,7 +13,6 @@ from universe.content import mineable
 from templates.solar import asteroid as asteroid_solar
 from templates.solar import debris_box
 
-
 from templates.dockable import pirate
 from templates.dockable import asteroid as asteroid_base
 from templates.dockable import trade_storages
@@ -25,7 +24,7 @@ from templates.dockable import research
 from templates.dockable import rheinland_military
 
 
-class WarwickMember(object):
+class Omega7Member(object):
     INDEX = 1
     ABSTRACT = False
-    FACTION = faction.BR_GRP
+    FACTION = faction.KU_GRP

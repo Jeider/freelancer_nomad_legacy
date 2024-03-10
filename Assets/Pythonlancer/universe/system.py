@@ -114,7 +114,7 @@ distance = {tlr_distance}
             if not issubclass(item, RewardsGroup) and not issubclass(item, SystemObject):
                 continue
 
-            if (item.ABSTRACT and item != br_wrw_objects.WarwickSysObject) or item == br_wrw_objects.WarwickSysObject:
+            if item.ABSTRACT:
                 continue
 
             if issubclass(item, RewardsGroup):

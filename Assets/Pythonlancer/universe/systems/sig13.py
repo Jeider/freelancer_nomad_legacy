@@ -10,12 +10,8 @@ from universe.content import dealers
 from universe.content.space_voice import SpaceVoice
 from universe.content import faction
 
-
-
-
 from templates.dockable.gas_miner import BretoniaPirateGasMiner, RheinlandCivilianGasMiner, RheinlandPirateGasMiner, CadizGasMiner
 from templates.dockable.trade_storages import HonshuStorage
-
 
 from universe.content.mineable import DefaultGasCrystalRewardsGroup, DefaultField, GasCrystalRewardField, ComplexGasCrystalRewardField
 from templates.nebula.exclusion import CROW_EXCLUSION, BARRIER_EXCLUSION, BARRIER_EXCLUSION_SMALL

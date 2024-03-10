@@ -19,3 +19,7 @@ BX_GRP = 'bx_grp'
 KU_GRP = 'ku_grp'
 KC_GRP = 'kc_grp'
 KX_GRP = 'kx_grp'
+
+CO_GRP = 'co_grp'
+CX_GRP = 'cx_grp'
+OR_GRP = 'or_grp'

@@ -25,7 +25,7 @@ from templates.dockable import research
 from templates.dockable import rheinland_military
 
 
-class WarwickMember(object):
+class HonshuMember(object):
     INDEX = 1
     ABSTRACT = False
-    FACTION = faction.BR_GRP
+    FACTION = faction.KU_GRP

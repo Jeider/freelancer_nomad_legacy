@@ -27,8 +27,8 @@ from templates.dockable import rheinland_military
 
 class BizmarkMember(object):
     INDEX = 1
-    FACTION = faction.RH_GRP
     ABSTRACT = False
+    FACTION = faction.RH_GRP
 
 
 class BizmarkStaticText(BizmarkMember, main_objects.RawText):
