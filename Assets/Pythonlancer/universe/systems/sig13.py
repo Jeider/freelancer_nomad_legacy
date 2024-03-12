@@ -2,7 +2,7 @@ from fx.space import Dust
 from fx.sound import Ambience
 
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
-from universe.content.main_objects import RawText, SunSmall, Jumpgate, Station, Freeport, RheinlandBattleship, PirateBase, TradeConnection, GasMinerOld
+from universe.content import main_objects
 from universe.content.zones import TemplatedNebulaZone, AsteroidZone
 from universe.content.asteroid_definition import AsteroidDefinition
 from universe.content import interior
@@ -36,7 +36,7 @@ class Sig13Liberty(object):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_LI
 
 
-class Sigma13StaticText(Sigma13Member, RawText):
+class Sigma13StaticText(Sigma13Member, main_objects.RawText):
     SPACE_CONTENT = '''[SystemInfo]
 name = sig13
 space_color = 0, 0, 0
@@ -226,26 +226,26 @@ class Sig13Nebula(Sigma13Member, TemplatedNebulaZone):
     PROPERTY_FOG_COLOR = '0.000000, 100.000000, 160.000000'
 
 
-class Sig13Sun(Sigma13Member, SunSmall):
+class Sig13Sun(Sigma13Member, main_objects.SunSmall):
     STAR = 'med_blue_sun'
 
 
-class Sig13ForbesJumpgate(Sigma13Member, Jumpgate):
+class Sig13ForbesJumpgate(Sigma13Member, main_objects.Jumpgate):
     INDEX = 1
     REL = TOP
 
 
-class Sig13CaliforniaJumpgate(Sigma13Member, Jumpgate):
+class Sig13CaliforniaJumpgate(Sigma13Member, main_objects.Jumpgate):
     INDEX = 2
     REL = LEFT
 
 
-class Sig13BerlinJumpgate(Sigma13Member, Jumpgate):
+class Sig13BerlinJumpgate(Sigma13Member, main_objects.Jumpgate):
     INDEX = 3
     REL = BOTTOM
 
 
-class Sig13LibertyStation(Sigma13Member, Sig13Liberty, Station):
+class Sig13LibertyStation(Sigma13Member, Sig13Liberty, main_objects.Station):
     INDEX = 1
     BASE_INDEX = 2
     REL = RIGHT
@@ -264,7 +264,7 @@ class Sig13LibertyStation(Sigma13Member, Sig13Liberty, Station):
     FACTION = faction.LI_GRP
 
 
-class Sig13RheinlandStation(Sigma13Member, Sig13Rheinland, Station):
+class Sig13RheinlandStation(Sigma13Member, Sig13Rheinland, main_objects.Station):
     INDEX = 2
     BASE_INDEX = 1
     REL = RIGHT
@@ -280,8 +280,7 @@ class Sig13RheinlandStation(Sigma13Member, Sig13Rheinland, Station):
     INTERIOR_BG1 = interior.INTERIOR_BG_CROW
 
 
-
-class Sig13Battleship(Sigma13Member, Sig13Rheinland, RheinlandBattleship):
+class Sig13Battleship(Sigma13Member, Sig13Rheinland, main_objects.RheinlandBattleship):
     BASE_INDEX = 4
     REL = RIGHT
     REL_APPEND = 1000
@@ -296,8 +295,7 @@ class Sig13Battleship(Sigma13Member, Sig13Rheinland, RheinlandBattleship):
     INTERIOR_BG1 = interior.INTERIOR_BG_CROW
 
 
-
-class Sig13Freeport(Sigma13Member, Sig13Liberty, Freeport):
+class Sig13Freeport(Sigma13Member, Sig13Liberty, main_objects.Freeport):
     BASE_INDEX = 5
     REL = LEFT
     REL_APPEND = 1000
@@ -313,8 +311,7 @@ class Sig13Freeport(Sigma13Member, Sig13Liberty, Freeport):
     INTERIOR_BG1 = interior.INTERIOR_BG_CROW
 
 
-
-class Sig13PirateTopRight(Sigma13Member, Sig13Liberty, PirateBase):
+class Sig13PirateTopRight(Sigma13Member, Sig13Liberty, main_objects.PirateBase):
     BASE_INDEX = 6
     INDEX = 1
     REL = RIGHT
@@ -330,7 +327,7 @@ class Sig13PirateTopRight(Sigma13Member, Sig13Liberty, PirateBase):
     INTERIOR_BG1 = interior.INTERIOR_BG_CROW
 
 
-class Sig13PirateTopLeft(Sigma13Member, Sig13Liberty, PirateBase):
+class Sig13PirateTopLeft(Sigma13Member, Sig13Liberty, main_objects.PirateBase):
     BASE_INDEX = 7
     INDEX = 2
     REL = TOP
@@ -346,7 +343,7 @@ class Sig13PirateTopLeft(Sigma13Member, Sig13Liberty, PirateBase):
     INTERIOR_BG1 = interior.INTERIOR_BG_CROW
 
 
-class Sig13PirateBottom(Sigma13Member, Sig13Rheinland, PirateBase):
+class Sig13PirateBottom(Sigma13Member, Sig13Rheinland, main_objects.PirateBase):
     BASE_INDEX = 8
     INDEX = 3
     REL = BOTTOM
@@ -362,7 +359,7 @@ class Sig13PirateBottom(Sigma13Member, Sig13Rheinland, PirateBase):
     INTERIOR_BG1 = interior.INTERIOR_BG_CROW
 
 
-class Sig13ConnRheinlandGas1(Sigma13Member, TradeConnection):
+class Sig13ConnRheinlandGas1(Sigma13Member, main_objects.TradeConnection):
     OBJ_FROM = Sig13RheinlandStation
     OBJ_TO = Sig13CaliforniaJumpgate
     SIDE_FROM = BOTTOM
@@ -381,7 +378,7 @@ class Sig13ConnRheinlandGas1(Sigma13Member, TradeConnection):
     # OBJ_TO_EXTRA_DRIFT_ALT_AXIS = -2000
 
 
-class Sig13ConnRheinlandGas2(Sigma13Member, TradeConnection):
+class Sig13ConnRheinlandGas2(Sigma13Member, main_objects.TradeConnection):
     OBJ_FROM = Sig13RheinlandStation
     OBJ_TO = Sig13BerlinJumpgate
     SIDE_FROM = LEFT
@@ -393,7 +390,7 @@ class Sig13ConnRheinlandGas2(Sigma13Member, TradeConnection):
     ]
 
 
-class Sig13ConnLibertyGas1(Sigma13Member, TradeConnection):
+class Sig13ConnLibertyGas1(Sigma13Member, main_objects.TradeConnection):
     OBJ_FROM = Sig13LibertyStation
     OBJ_TO = Sig13CaliforniaJumpgate
     SIDE_FROM = TOP
@@ -410,7 +407,7 @@ class Sig13ConnLibertyGas1(Sigma13Member, TradeConnection):
     OBJ_TO_EXTRA_DRIFT_ALT_AXIS = -2000
 
 
-class Sig13ConnLibertyGas2(Sigma13Member, TradeConnection):
+class Sig13ConnLibertyGas2(Sigma13Member, main_objects.TradeConnection):
     OBJ_FROM = Sig13LibertyStation
     OBJ_TO = Sig13ForbesJumpgate
     SIDE_FROM = LEFT
@@ -422,7 +419,7 @@ class Sig13ConnLibertyGas2(Sigma13Member, TradeConnection):
     ]
 
 
-class Sig13ConnBattleship1(Sigma13Member, TradeConnection):
+class Sig13ConnBattleship1(Sigma13Member, main_objects.TradeConnection):
     OBJ_FROM = Sig13Battleship
     OBJ_TO = Sig13BerlinJumpgate
     SIDE_FROM = TOP
@@ -434,7 +431,7 @@ class Sig13ConnBattleship1(Sigma13Member, TradeConnection):
     ]
 
 
-class Sig13ConnBattleship2(Sigma13Member, TradeConnection):
+class Sig13ConnBattleship2(Sigma13Member, main_objects.TradeConnection):
     OBJ_FROM = Sig13Battleship
     OBJ_TO = Sig13Freeport
     SIDE_FROM = BOTTOM
@@ -446,7 +443,7 @@ class Sig13ConnBattleship2(Sigma13Member, TradeConnection):
     ]
 
 
-class Sig13ConnFreeport1(Sigma13Member, TradeConnection):
+class Sig13ConnFreeport1(Sigma13Member, main_objects.TradeConnection):
     OBJ_FROM = Sig13Freeport
     OBJ_TO = Sig13ForbesJumpgate
     SIDE_FROM = BOTTOM
@@ -458,7 +455,7 @@ class Sig13ConnFreeport1(Sigma13Member, TradeConnection):
     ]
 
 
-class Sig13BaseLibertyGasMiner(Sig13Liberty, GasMinerOld):
+class Sig13BaseLibertyGasMiner(Sig13Liberty, main_objects.GasMinerOld):
     ALIAS = 'cryst'
     ROTATE_RANDOM = True
     ARCHETYPE = 'gas_miner_old'
@@ -477,7 +474,7 @@ class Sig13BaseLibertyGasMiner(Sig13Liberty, GasMinerOld):
     }
 
 
-class Sig13BaseRheinlandGasMiner(Sig13Rheinland, GasMinerOld):
+class Sig13BaseRheinlandGasMiner(Sig13Rheinland, main_objects.GasMinerOld):
     ALIAS = 'cryst'
     ROTATE_RANDOM = True
     ARCHETYPE = 'gas_miner_old'
@@ -496,7 +493,7 @@ class Sig13BaseRheinlandGasMiner(Sig13Rheinland, GasMinerOld):
     }
 
 
-class Sig13BaseAbandonedMiner(Station):
+class Sig13BaseAbandonedMiner(main_objects.AbandonedAsteroid):
     ALIAS = 'bigcryst'
     ROTATE_RANDOM = True
     ARCHETYPE = 'miningbase_ice_block'

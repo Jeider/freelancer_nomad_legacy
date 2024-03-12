@@ -76,3 +76,7 @@ def crc32(data, accum=0):
         accum = crc_table[(accum ^ b) & 0xFF] ^ ((accum >> 8) & 0x00FFFFFF)
     accum = ~accum
     return accum & 0xFFFFFFFF
+
+
+def crc32_hex_from_str(data):
+    return hex(crc32(bytes(data, 'utf-8')))

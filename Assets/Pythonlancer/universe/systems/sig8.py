@@ -1,6 +1,7 @@
 from fx.space import Dust
 from fx.sound import Ambience
 
+
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
 from universe.content import zones
@@ -11,7 +12,8 @@ from universe.content.space_voice import SpaceVoice
 from universe.content import faction
 from universe.content import mineable
 
-
+from templates.solar import hackable
+from templates.solar import asteroid as asteroid_solar
 from templates.dockable import pirate
 from templates.dockable import asteroid as asteroid_base
 from templates.dockable import trade_storages
@@ -23,13 +25,12 @@ from templates.dockable import police
 from templates.dockable import trade_storages
 
 
-
-
-
 class Sigma8Member(object):
     INDEX = 1
     FACTION = faction.RH_GRP
     ABSTRACT = False
+
+    INTERIOR_BG1 = interior.INTERIOR_SIG8
 
 
 class Sigma8StaticText(Sigma8Member, main_objects.RawText):
@@ -228,19 +229,35 @@ class Sig8AsteroidDefinition3(Sig8BaseAsteroidDefinition):
     NAME = 'sig8_astfield3'
 
 
-class Sig8AsteroidZone1(Sigma8Member, zones.AsteroidZone):
+class Sig8AsteroidDefinition4(Sig8BaseAsteroidDefinition):
+    ABSTRACT = False
+    NAME = 'sig8_astfield4'
+
+
+class Sig8BaseVanillaAstZone(zones.AsteroidZone):
+    SPACEDUST = Dust.ASTEROID
+    SPACEDUST_MAXPARTICLES = 100
+    MUSIC = Ambience.AST_ROCK
+
+
+class Sig8AsteroidZone1(Sigma8Member, Sig8BaseVanillaAstZone):
     INDEX = 1
     ASTEROID_DEFINITION_CLASS = Sig8AsteroidDefinition1
 
 
-class Sig8AsteroidZone2(Sigma8Member, zones.AsteroidZone):
+class Sig8AsteroidZone2(Sigma8Member, Sig8BaseVanillaAstZone):
     INDEX = 2
     ASTEROID_DEFINITION_CLASS = Sig8AsteroidDefinition2
 
 
-class Sig8AsteroidZone3(Sigma8Member, zones.AsteroidZone):
+class Sig8AsteroidZone3(Sigma8Member, Sig8BaseVanillaAstZone):
     INDEX = 3
     ASTEROID_DEFINITION_CLASS = Sig8AsteroidDefinition3
+
+
+class Sig8AsteroidZone4(Sigma8Member, Sig8BaseVanillaAstZone):
+    INDEX = 4
+    ASTEROID_DEFINITION_CLASS = Sig8AsteroidDefinition4
 
 
 class Sig8Sun(Sigma8Member, main_objects.Sun):
@@ -347,16 +364,60 @@ class Sigma8Planet3(Sigma8Member, main_objects.Planet):
     SPHERE_RADIUS = 1500
 
 
-class Sig8OldFreeportRuins(Sigma8Member, main_objects.Outpost):
+class Sig8OldFreeportRuins(Sigma8Member, main_objects.NotDockableObject):
     ALIAS = 'ruins'
     INDEX = 1
-    BASE_INDEX = 51
     REL = RIGHT
 
     SPACE_OBJECT_TEMPLATE = station_debris.SigmaEightFreeport
 
     ASTEROID_ZONES = [
         Sig8AsteroidZone1,
+    ]
+
+
+class Sig8OldFreeportRuinsSuprisePoint(Sigma8Member, main_objects.HackableStation):
+    ALIAS = 'ruins_dock'
+    INDEX = 1
+    BASE_INDEX = 51
+    RELATED_OBJECT = Sig8OldFreeportRuins
+    HACKABLE_SOLAR_CLASS = hackable.HackableOutpost
+    INTERIOR_CLASS = interior.EquipDeckInterior
+
+
+class Sig8BattleshipRuins1(Sigma8Member, main_objects.HackableBattleship):
+    ALIAS = 'ast'
+    INDEX = 2
+    BASE_INDEX = 61
+    HACKABLE_SOLAR_CLASS = hackable.HackableRheinlandBattleship
+    INTERIOR_CLASS = interior.EquipDeckInterior
+
+    ASTEROID_ZONES = [
+        Sig8AsteroidZone2,
+    ]
+
+
+class Sig8BattleshipRuins2(Sigma8Member, main_objects.HackableBattleship):
+    ALIAS = 'ast'
+    INDEX = 3
+    BASE_INDEX = 62
+    HACKABLE_SOLAR_CLASS = hackable.HackableRheinlandBattleship
+    INTERIOR_CLASS = interior.EquipDeckInterior
+
+    ASTEROID_ZONES = [
+        Sig8AsteroidZone3,
+    ]
+
+
+class Sig8BattleshipRuins3(Sigma8Member, main_objects.HackableBattleship):
+    ALIAS = 'ast'
+    INDEX = 4
+    BASE_INDEX = 63
+    HACKABLE_SOLAR_CLASS = hackable.HackableRheinlandBattleship
+    INTERIOR_CLASS = interior.EquipDeckInterior
+
+    ASTEROID_ZONES = [
+        Sig8AsteroidZone4,
     ]
 
 
@@ -408,7 +469,7 @@ class Sig8PoliceConn2(Sigma8Member, main_objects.TradeConnection):
     ]
 
 
-class Sig8BrokenConn1(Sigma8Member, main_objects.TradeConnection):
+class Sig8BrokenConn1(Sigma8Member, main_objects.BrokenTradeConnection):
     OBJ_FROM = Sig8OldFreeportRuins
     OBJ_TO = Sig8BorderStation
     SIDE_FROM = RIGHT
@@ -449,3 +510,37 @@ class Sig8BrownNebula2(Sigma8Member, zones.NebulaZone):
     SPACEDUST = Dust.ATTRACT
     SPACEDUST_MAXPARTICLES = 40
     MUSIC = Ambience.NEBULA_DMATTER
+
+
+class Sigma8EastAsteroidReward(Sigma8Member, mineable.AsteroidRewardsGroupMedium):
+    NAME = 'sig8_east_ast'
+    SOLAR = asteroid_solar.AsteroidOmega15
+    REWARD_ITEM = 'comm_roid_niobium'
+
+
+class Sigma8LargeAsteroids1(Sigma8Member, mineable.AsteroidRewardField):
+    INDEX = 1
+    FIELD_CLASS = mineable.BackgroundAsteroidsField
+    REWARDS_GROUP_CLASS = Sigma8EastAsteroidReward
+    MEDIUM_REWARD_CHANCE = 0.25
+
+
+class Sigma8LargeAsteroids2(Sigma8Member, mineable.AsteroidRewardField):
+    INDEX = 2
+    FIELD_CLASS = mineable.BackgroundAsteroidsField
+    REWARDS_GROUP_CLASS = Sigma8EastAsteroidReward
+    MEDIUM_REWARD_CHANCE = 0.25
+
+
+class Sigma8LargeAsteroids3(Sigma8Member, mineable.AsteroidRewardField):
+    INDEX = 3
+    FIELD_CLASS = mineable.BackgroundAsteroidsField
+    REWARDS_GROUP_CLASS = Sigma8EastAsteroidReward
+    MEDIUM_REWARD_CHANCE = 0.25
+
+
+class Sigma8LargeAsteroids4(Sigma8Member, mineable.AsteroidRewardField):
+    INDEX = 4
+    FIELD_CLASS = mineable.BackgroundAsteroidsField
+    REWARDS_GROUP_CLASS = Sigma8EastAsteroidReward
+    MEDIUM_REWARD_CHANCE = 0.25

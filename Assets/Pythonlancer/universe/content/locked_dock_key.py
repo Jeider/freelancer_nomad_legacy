@@ -66,7 +66,10 @@ npc_locked_gate = {int_hash}'''
         return self.GOOD_TEMPLATE.format(key_equip=self.equip_name)
 
     def get_initial_world(self):
-        return self.INTIIAL_WORLD_TEMPLATE.format(base_nickname=self.base_nickname, int_hash=CreateId.get_int_id(self.locked_base.get_inspace_nickname()))
+        return self.INTIIAL_WORLD_TEMPLATE.format(
+            base_nickname=self.base_nickname,
+            int_hash=CreateId.get_int_id(self.locked_base.get_inspace_nickname())
+        )
 
     def get_story(self):
         return self.STORY_TEMPLATE.format(base_nickname=self.base_nickname)

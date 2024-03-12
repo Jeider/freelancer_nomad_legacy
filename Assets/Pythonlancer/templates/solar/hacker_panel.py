@@ -1,8 +1,13 @@
 import random
 
+import shutil
+from pathlib import Path
+
 from text.dividers import DIVIDER
 from tools.utf_xml import XML_UTF
+from tools.crc import crc32_hex_from_str
 from files.writer import FileWriter
+
 
 OUT_SUBFOLDER = 'hacker'
 
@@ -20,12 +25,14 @@ XML_SOLAR_MAT_TEMPLATE = '''<?xml version="1.0" encoding="ISO-8859-1"?>
 </UTFXML>
 '''
 
+MATERIAL_NAME_TEMPLATE = 'hacker_color_{letter}{index:02d}'
+
 MATERIAL_TEMPLATE = '''
- <hacker{index:02d}>
+ <{material_name}>
     <Dc type="RGB">0, 0, 0</Dc>
     <Type type="text">DcDtEc</Type>
     <Ec type="RGB">{R}, {G}, {B}</Ec>
- </hacker{index:02d}>
+ </{material_name}>
 '''
 
 XML_MAIN_TEMPLATE = '''<?xml version="1.0" encoding="ISO-8859-1"?>
@@ -158,7 +165,7 @@ VMESH_LIB_COLOR_BOX_TEMPLATE = '''
    <VMeshData type="VMeshData" format="1" surface="4">
       <mesh count="1">
          <!-- Mesh Triangle  First   Last Count   Pad  Material -->
-         <!--   0      0 -->     0,    19,   36, 0xcc, 0x{material_crc}
+         <!--   0      0 -->     0,    19,   36, 0xcc, {material_crc}
       </mesh>
       <index count="36">
          <!-- Triangle  Vtx1, Vtx2, Vtx3 -->
@@ -505,7 +512,7 @@ COLOR_18 = 18
 COLOR_19 = 19
 COLOR_20 = 20
 
-RGB = [
+RGB1 = [
     (92, 0, 0),
     (126, 0, 0),
     (166, 0, 0),
@@ -523,34 +530,16 @@ RGB = [
     (0, 0, 0),
 ]
 
+COLOR_RGB_PER_LETTER = {
+    'A': RGB1,
+}
+
 COLORS = [
     COLOR_1, COLOR_2, COLOR_3, COLOR_4, COLOR_5,
     COLOR_6, COLOR_7, COLOR_8, COLOR_9, COLOR_10,
     COLOR_11, COLOR_12, COLOR_13, COLOR_14, COLOR_15,
 ]
-
-CRC_PER_COLOR = {
-    COLOR_1: 'EFF37772',
-    COLOR_2: 'F4FA26C8',
-    COLOR_3: 'FDFD165E',
-    COLOR_4: '199983FD',
-    COLOR_5: '109EB36B',
-    COLOR_6: 'B97E2D1',
-    COLOR_7: '290D247',
-    COLOR_8: '182FCFD6',
-    COLOR_9: '1128FF40',
-    COLOR_10: '1B9176A5',
-    COLOR_11: '12964633',
-    COLOR_12: '99F1789',
-    COLOR_13: '98271F',
-    COLOR_14: 'E4FCB2BC',
-    COLOR_15: 'EDFB822A',
-    COLOR_16: 'F6F2D390',
-    COLOR_17: 'FFF5E306',
-    COLOR_18: 'E54AFE97',
-    COLOR_19: 'EC4DCE01',
-    COLOR_20: '1C3E2566',
-}
+NEAR_COLORS_LEVELS_COUNT = int(len(COLORS) / 2)
 
 COLOR_FILE_NAME_TEMPLATE = 'hacker_button_{panel_index:02d}_{button_index:02d}.3db'
 
@@ -566,16 +555,84 @@ BUTTONS_PER_LINE = 8
 
 NOT_RANDOMIZED_COLORS = 2
 
-HACKER_PANELS_TOTAL = 1
+HACKER_PANELS_PER_COLOR_MAP = 5
 
 HIT_POINTS = 6000000000
 HIT_POINT_EXTRA_DAMAGE = 500000
 
+SYS_ROOT_TEMPLATE = '''[Object]
+nickname = {root_system_obj_name}
+pos = {position}
+rotate = {rotate}
+archetype = hacker_plate
+loadout = hacker_panel_danger
+reputation = {reputation}
+behavior = NOTHING
+visit = 128
+pilot = pilot_solar_hardest_hacker_danger'''
+
+SYS_LAYER_TEMPLATE = '''[Object]
+nickname = {layer_system_obj_name}
+pos = {position}
+rotate = {rotate}
+archetype = {layer_archetype}
+reputation = {reputation}
+behavior = NOTHING
+pilot = pilot_solar_hardest_hacker_danger
+visit = 128
+parent = {parent_object}'''
+
+SYS_VALID_LAYER_TEMPLATE = '''[Object]
+nickname = {layer_system_obj_name}
+pos = {position}
+rotate = {rotate}
+archetype = {layer_archetype}
+visit = 128
+loadout = {hacker_success_loadout}'''
+
+REL_TOP = 'TOP'
+REL_FRONT = 'FRONT'
+
+ROTATE_PER_REL = {
+    REL_TOP: (0, 0, 0),
+    REL_FRONT: (-90, 0, 0)
+}
+
+COMPILED_SUR_PATH = Path().resolve() / 'templates' / 'solar' / 'static' / 'hacker_layer_any.sur'
+
+
+def adjust_neg_y_pos(position, drift):
+    pos_x, pos_y, pos_z = position
+    pos_y -= drift
+    return (pos_x, pos_y, pos_z)
+
+
+def adjust_z_pos(position, drift):
+    pos_x, pos_y, pos_z = position
+    pos_z += drift
+    return (pos_x, pos_y, pos_z)
+
+
+ADJUST_FUNC_PER_REL = {
+    REL_TOP: adjust_neg_y_pos,
+    REL_FRONT: adjust_z_pos,
+}
+
 
 class ColorMap(object):
 
-    def __init__(self, colors):
-        self.colors
+    def __init__(self, letter: str, rgbs: list):
+        self.letter = letter
+        self.rgbs = rgbs
+
+    def get_rgbs(self):
+        return self.rgbs
+
+    def get_material_name(self, color):
+        return MATERIAL_NAME_TEMPLATE.format(letter=self.letter, index=color).lower()
+
+    def get_material_crc(self, color):
+        return crc32_hex_from_str(self.get_material_name(color))
 
     @staticmethod
     def get_next_color(color):
@@ -594,8 +651,8 @@ class ColorMap(object):
 
 class HackerButton(object):
 
-    def __init__(self, position, button_index):
-        global global_button_index
+    def __init__(self, hacker_panel, position, button_index):
+        self.hacker_panel = hacker_panel
         self.color = None
         self.valid = False
         self.pos_x, self.pos_y = position
@@ -644,7 +701,7 @@ class HackerButton(object):
 
     def get_vmesh_lib(self):
         vmesh_lib_name = self.get_vmesh_lib_name()
-        crc = CRC_PER_COLOR.get(self.color)
+        crc = self.hacker_panel.color_map.get_material_crc(self.color)
         return VMESH_LIB_COLOR_BOX_TEMPLATE.format(
             button_color_vmesh_library=vmesh_lib_name,
             material_crc=crc,
@@ -807,8 +864,9 @@ class HackerLayer(object):
 
 class HackerPanel(object):
 
-    def __init__(self, factory, panel_index):
+    def __init__(self, factory, color_map, panel_index):
         self.factory = factory
+        self.color_map = color_map
         self.buttons = []
         self.panel_index = panel_index
         self.valid_color = random.choice(COLORS)
@@ -830,8 +888,8 @@ class HackerPanel(object):
         next_color = self.valid_color
         prev_color = self.valid_color
         for level in range(1, NEAR_COLORS_LEVELS_COUNT+1):
-            possible_next_color = ColorHelper.get_next_color(next_color)
-            possible_prev_color = ColorHelper.get_prev_color(prev_color)
+            possible_next_color = self.color_map.get_next_color(next_color)
+            possible_prev_color = self.color_map.get_prev_color(prev_color)
             if self.near_colors_levels.get(possible_next_color) is None:
                 self.near_colors_levels[possible_next_color] = level
                 next_color = possible_next_color
@@ -845,7 +903,7 @@ class HackerPanel(object):
     def create_buttons(self):
         for index, position in enumerate(self.positions, start=1):
             self.buttons.append(
-                HackerButton(position, index)
+                HackerButton(self, position, index)
             )
 
     def define_colors(self):
@@ -868,7 +926,6 @@ class HackerPanel(object):
             button.set_color(color)
             if color == self.valid_color:
                 button.set_valid(True)
-
 
     def define_invalid_layers(self):
         layer_button_index = 0
@@ -959,6 +1016,46 @@ class HackerPanel(object):
     def get_layer_vmesh_objects(self, layer):
         return layer.get_vmesh_objects()
 
+    def get_space_content(self, space_name, reputation, position, relation, success_loadout):
+        adjust_func = ADJUST_FUNC_PER_REL[relation]
+        rotate_str = '{}, {}, {}'.format(*ROTATE_PER_REL[relation])
+        space_objects = [
+            SYS_ROOT_TEMPLATE.format(
+                root_system_obj_name=space_name,
+                reputation=reputation,
+                position='{}, {}, {}'.format(*position),
+                rotate=rotate_str,
+            )
+        ]
+
+        position = adjust_func(position, VISIBLE_DRIFT)
+
+        for layer in self.layers:
+            space_objects.append(
+                SYS_LAYER_TEMPLATE.format(
+                    layer_system_obj_name=f'{space_name}_layer_{layer.layer_index}',
+                    layer_archetype=layer.get_invalid_file_name(),
+                    reputation=reputation,
+                    position='{}, {}, {}'.format(*position),
+                    rotate=rotate_str,
+                    parent_object=space_name,
+                )
+            )
+            position = adjust_func(position, LAYER_DRIFT)
+
+        space_objects.append(
+            SYS_VALID_LAYER_TEMPLATE.format(
+                layer_system_obj_name=f'{space_name}_layer_valid',
+                layer_archetype=self.valid_layer.get_valid_file_name(),
+                position='{}, {}, {}'.format(*position),
+                rotate=rotate_str,
+                hacker_success_loadout=success_loadout,
+                parent_object=space_name,
+            )
+        )
+
+        return DIVIDER.join(space_objects)
+
 
 class XMLFile(object):
 
@@ -969,10 +1066,12 @@ class XMLFile(object):
 
 class HackerPanelFactory(object):
 
-    def __init__(self):
+    def __init__(self, color_maps):
+        self.color_maps = color_maps
         self.positions = []
         self.generate_positions()
-        self.hacker_panels = self.generate_hacker_panels()
+        self.hacker_panels = []
+        self.generate_hacker_panels()
         self.extra_hardpoints = self.generate_extra_hardpoints()
         self.xmls = []
         self.init_xmls()
@@ -998,7 +1097,9 @@ class HackerPanelFactory(object):
                 break
 
     def generate_hacker_panels(self):
-        return [HackerPanel(self, panel_index=i) for i in range(1, HACKER_PANELS_TOTAL+1)]
+        for color_map in self.color_maps:
+            for i in range(1, HACKER_PANELS_PER_COLOR_MAP + 1):
+                self.hacker_panels.append(HackerPanel(self, color_map=color_map, panel_index=i))
 
     def generate_extra_hardpoints(self):
         return DIVIDER.join(
@@ -1019,7 +1120,6 @@ class HackerPanelFactory(object):
             extra_hardpoints=self.extra_hardpoints,
         )
         return XMLFile(out_file, content)
-
 
     def init_xmls(self):
         for hacker_panel in self.hacker_panels:
@@ -1068,47 +1168,71 @@ class HackerPanelFactory(object):
             solararch += hacker_panel.valid_layer.get_valid_solararch()
         return DIVIDER.join(solararch)
 
+    def get_filenames_list(self):
+        names = []
+        for hacker_panel in self.hacker_panels:
+            for layer in hacker_panel.layers:
+                names.append(layer.get_invalid_file_name())
+
+            names.append(hacker_panel.valid_layer.get_valid_file_name())
+        return names
+
 
 class MaterialsFactory(object):
 
-    def __init__(self):
+    def __init__(self, color_maps):
+        self.color_maps = color_maps
         self.materials = []
         self.generate_materials()
 
     def generate_materials(self):
-        for index, rgb_item in enumerate(RGB, start=1):
-            red, green, blue = rgb_item
-            self.materials.append(
-                MATERIAL_TEMPLATE.format(
-                    index=index,
-                    R=red,
-                    G=green,
-                    B=blue,
+        for color_map in self.color_maps:
+            for index, rgb_item in enumerate(color_map.get_rgbs(), start=1):
+                red, green, blue = rgb_item
+                name = color_map.get_material_name(index)
+                self.materials.append(
+                    MATERIAL_TEMPLATE.format(
+                        material_name=name,
+                        R=red,
+                        G=green,
+                        B=blue,
+                    )
                 )
-            )
 
     def get_xml(self):
         return XML_SOLAR_MAT_TEMPLATE.format(
             materials=DIVIDER.join(self.materials)
         )
 
+
 class HackerPanelManager(object):
 
     def __init__(self):
-        self.factory = HackerPanelFactory()
+        self.colors_maps = [ColorMap(letter=letter, rgbs=rgbs) for letter, rgbs in COLOR_RGB_PER_LETTER.items()]
+        self.panels_factory = HackerPanelFactory(color_maps=self.colors_maps)
+        self.materials_factory = MaterialsFactory(color_maps=self.colors_maps)
+
+    def get_random_hacker_panel(self):
+        return random.choice(self.panels_factory.hacker_panels)
 
     def get_surs(self):
-        return self.factory.get_sur()
+        return self.panels_factory.get_sur()
+
+    def copy_paste_surs(self):
+        filenames = self.panels_factory.get_filenames_list()
+        out_path = XML_UTF.get_out_path()
+
+        for name in filenames:
+            shutil.copy(COMPILED_SUR_PATH, out_path / f'{name}.sur')
 
     def write_content(self):
-        xmls = self.factory.get_xmls_content()
+        xmls = self.panels_factory.get_xmls_content()
+        self.copy_paste_surs()
 
-        materials = MaterialsFactory().get_xml()
+        materials = self.materials_factory.get_xml()
         xmls.append(materials)
 
         XML_UTF.process_xmls(xmls)
 
-        FileWriter.write_to_subfolder(OUT_SUBFOLDER, 'fuses.ini', self.factory.get_fuses())
-        FileWriter.write_to_subfolder(OUT_SUBFOLDER, 'solararch.ini', self.factory.get_solararch())
-
-
+        FileWriter.write_to_subfolder(OUT_SUBFOLDER, 'fuses.ini', self.panels_factory.get_fuses())
+        FileWriter.write_to_subfolder(OUT_SUBFOLDER, 'solararch.ini', self.panels_factory.get_solararch())

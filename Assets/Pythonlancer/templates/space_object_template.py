@@ -7,6 +7,7 @@ NICKNAME = 'nickname'
 class SpaceObjectTemplate(object):
     TEMPLATE = None
     SPACE_OBJECT_NAME = None
+    LOCKED_OBJECT_OFFSET = None
 
     subclasses = []
 

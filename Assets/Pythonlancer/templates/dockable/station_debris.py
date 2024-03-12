@@ -1689,6 +1689,7 @@ parent = li_cal_10
 
 class SigmaEightFreeport(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'sig8_03'
+    LOCKED_OBJECT_OFFSET = (100, 13, 60)
     TEMPLATE = '''[Object]
 nickname = sig8_03
 pos = -250, -25, 60
@@ -1730,13 +1731,6 @@ nickname = sig8_03_space_habitat_dmg01
 pos = -80, -35, 160
 rotate = -200, 90, 30
 archetype = space_habitat_dmg
-parent = sig8_03
-
-[Object]
-nickname = sig8_03_police_dmg01
-pos = 100, -20, -50
-rotate = -25, 50, 0
-archetype = space_police_dmg
 parent = sig8_03
 
 [Object]

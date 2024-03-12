@@ -65,7 +65,7 @@ ICON_TEMPLATE = '''<?xml version="1.0" encoding="ISO-8859-1"?>
 </UTFXML>
 '''
 
-ICONS_COUNT = 50
+ICONS_COUNT = 1
 
 xmls = []
 for i in range(1, ICONS_COUNT+1):

@@ -11,8 +11,8 @@ class Loadout(object):
     INTERNAL_CARGO_TEMPLATE = 'cargo = {item}, {count}'
     ATTACHED_CARGO_TEMPLATE = 'cargo = {item}, {count}, {hp}'
 
-    def __init__(self, nickname, init_items=None):
-        self.nickname = nickname
+    def __init__(self, loadout_nickname, init_items=None):
+        self.loadout_nickname = loadout_nickname
         self.items = []
         if init_items is not None and len(init_items) > 0:
             self.items += init_items
@@ -34,13 +34,13 @@ class Loadout(object):
     def build_loadout(self):
         final_items = [
             self.TITLE,
-            self.NICKNAME_TEMPLATE.format(nickname=self.nickname)
+            self.NICKNAME_TEMPLATE.format(nickname=self.loadout_nickname)
         ] + self.items
 
         return SINGLE_DIVIDER.join(final_items)
 
     def get_loadout_nickname(self):
-        return self.nickname
+        return self.loadout_nickname
 
     def get_loadout(self):
         return self.loadout

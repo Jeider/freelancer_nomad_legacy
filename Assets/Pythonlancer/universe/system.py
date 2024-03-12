@@ -63,7 +63,8 @@ distance = {tlr_distance}
         super().__init_subclass__(**kwargs)
         cls.subclasses.append(cls)
 
-    def __init__(self):
+    def __init__(self, universe_manager):
+        self.universe_manager = universe_manager
         self.template = None
 
         self.last_police_patrol_id = 0
@@ -182,6 +183,9 @@ distance = {tlr_distance}
 
         self.system_content_str = DIVIDER.join(system_content)
 
+    def get_random_hacker_panel(self):
+        return self.universe_manager.get_random_hacker_panel()
+
     def add_trade_connection(self, item):
         self.trade_connections.append(item(self))
 
@@ -192,6 +196,7 @@ distance = {tlr_distance}
         static = item(self)
         self.statics_list.append(static)
         self.statics_db[static.get_full_alias()] = static
+        self.loadouts += static.get_loadouts()
 
         if len(static.ASTEROID_ZONES) > 0:
             ast_exclusion_zone_name = static.get_ast_exclusion_zone_name()

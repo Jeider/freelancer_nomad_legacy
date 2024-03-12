@@ -387,7 +387,7 @@ class BizmarkBaseDebrisManufactoring(main_objects.DebrisManufactoring):
     DEFENCE_LEVEL = None
     LOCKED_DOCK = True
 
-    INTERIOR_BG1 = interior.INTERIOR_BH_BIZMARK
+    INTERIOR_BG1 = interior.INTERIOR_RH_BIZMARK
     AST_EXCLUSION_ZONE_SIZE = 2000
     AST_EXCLUSION_ZONE_PARAMS = {
         'spacedust': Dust.RADIOACTIVE_RED,
@@ -395,7 +395,7 @@ class BizmarkBaseDebrisManufactoring(main_objects.DebrisManufactoring):
     }
 
 
-class BizmarkAbandonedAstBase1(BizmarkMember, main_objects.Station):
+class BizmarkAbandonedAstBase1(BizmarkMember, main_objects.AbandonedAsteroid):
     ALIAS = 'ast'
     INDEX = 2
     BASE_INDEX = 61
@@ -405,7 +405,7 @@ class BizmarkAbandonedAstBase1(BizmarkMember, main_objects.Station):
     DEFENCE_LEVEL = None
     LOCKED_DOCK = True
 
-    INTERIOR_BG1 = interior.INTERIOR_BH_BIZMARK
+    INTERIOR_BG1 = interior.INTERIOR_RH_BIZMARK
     AST_EXCLUSION_ZONE_SIZE = 3500
     ASTEROID_ZONES = [
         BizmarkAsteroidZone2,

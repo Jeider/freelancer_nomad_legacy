@@ -188,6 +188,9 @@ class SystemObject(object):
             return self.system.UNLAWFUL_POPULATION_CLASS
         raise Exception('unlawful population class isnt defined for %s' % self.__class__.__name__)
 
+    def get_loadouts(self):
+        return []
+
 
 class DynamicSystemObject(SystemObject):
     ABSTRACT = True

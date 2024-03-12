@@ -118,7 +118,8 @@ SHIPDEALER_NAME_TEMPLATE = '{base_name}_fix_shipdealer'
 
 INTERIOR_BG_CROW = 'crow_exclusion'
 INTERIOR_BG_BARRIER_CLOUD = 'exclusion_barrier_m7'
-INTERIOR_BH_BIZMARK = 'rh_biz_nebula'
+INTERIOR_RH_BIZMARK = 'rh_biz_nebula'
+INTERIOR_SIG8 = 'sig8_nebula'
 
 
 class Interior(object):

@@ -17,6 +17,10 @@ class XML_UTF(object):
         return current_path.parent / UTF_XML_DIR
 
     @staticmethod
+    def get_out_path():
+        return XML_UTF.get_utf_xml_path() / OUT_DIR
+
+    @staticmethod
     def run_command(request_file_name):
         utf_xml_path = XML_UTF.get_utf_xml_path()
         exec_path = utf_xml_path / XML_UTF.EXECUTABLE

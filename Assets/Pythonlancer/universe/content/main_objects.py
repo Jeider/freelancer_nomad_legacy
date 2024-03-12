@@ -7,7 +7,8 @@ from universe.content.zones import DynamicZone, DynamicSphereZone
 from universe.content import interior
 from universe.content.locked_dock_key import LockedDockKey
 from universe.content import faction
-from universe.content.space_voice import SpaceVoice
+from universe.content.space_voice import SpaceVoice, SpaceCostume
+from universe.content.loadout import Loadout
 
 from text.dividers import SINGLE_DIVIDER, DIVIDER
 
@@ -27,6 +28,7 @@ DEFENCE_HIGH = 'high'
 class AppearableObject(SystemObject):
     SPACE_OBJECT_TEMPLATE = None
     SPACE_OBJECT_NAME = None
+    RELATED_OBJECT = None
     ARCHETYPE = None
     LOADOUT = None
 
@@ -71,11 +73,14 @@ archetype = {archetype}'''
             move_to=position,
         )
 
+    def get_archetype(self):
+        return self.ARCHETYPE
+
     def get_single_object_content(self):
         content = [
             self.ARCHETYPE_TEMPLATE.format(
                 nickname=self.get_inspace_nickname(),
-                archetype=self.ARCHETYPE,
+                archetype=self.get_archetype(),
                 ids_name=self.IDS_NAME,
                 ids_info=self.IDS_INFO,
                 pos='{}, {}, {}'.format(*self.get_position()),
@@ -541,6 +546,17 @@ class Sattelite(StaticObject):
     pass
 
 
+class NotDockableObject(StaticObject):
+    DEFENCE_LEVEL = None
+
+    def get_inspace_nickname(self):
+        return '{system_name}_{alias}_{index}'.format(
+            system_name=self.system.NAME,
+            alias=self.ALIAS,
+            index=self.INDEX
+        )
+
+
 class DockableObject(StaticObject):
     ARCHETYPE = 'depot'
     INTERIOR_CLASS = interior.CustomFileInterior  # custom interior
@@ -565,6 +581,10 @@ BGCS_base_run_by = W02bF44'''
     INTERIOR_LOCATION_CUSTOM_TEMPLATE = 'Universe\\Systems_MOD\\{system_folder}\\{interior_file_name}'
 
     AUDIO_PREFIX = None
+    SPACE_VOICE = None
+    SPACE_COSTUME = None
+    RANDOM_ROBOT = False
+    ALLOW_SPACE_COSTUME = True
 
     DEFENCE_LEVEL = DEFENCE_MEDIUM
 
@@ -660,9 +680,15 @@ BGCS_base_run_by = W02bF44'''
             'dock_with': base_name,
             'reputation': self.get_faction(),
             'behavior': 'NOTHING',
-            'voice': SpaceVoice.VOICE_MALE,
-            'space_costume': 'rh_captain_head, rh_male_guard_body, prop_hat_male_rh_grd_visor, prop_neuralnet_b_right',
         }
+
+        if self.ALLOW_SPACE_COSTUME:
+            if self.RANDOM_ROBOT and not self.SPACE_VOICE and not self.SPACE_COSTUME:
+                props['voice'] = SpaceVoice.VOICE_ROBOT
+                props['space_costume'] = SpaceCostume.random_robot()
+            else:
+                props['voice'] = self.SPACE_VOICE if self.SPACE_VOICE else SpaceVoice.DEFAULT
+                props['space_costume'] = self.SPACE_COSTUME if self.SPACE_COSTUME else SpaceCostume.DEFAULT
 
         return SINGLE_DIVIDER.join(['{} = {}'.format(key, value) for key, value in props.items()])
 
@@ -700,7 +726,13 @@ class Station(DockableObject):
     AUDIO_PREFIX = SpaceVoice.STATION
 
 
+class AbandonedAsteroid(DockableObject):
+    AUDIO_PREFIX = SpaceVoice.STATION
+    RANDOM_ROBOT = True
+
+
 class GasMinerOld(Station):
+    RANDOM_ROBOT = True
 
     CARGO_PODS_POSITION_Y_DRIFT = -60
 
@@ -727,7 +759,8 @@ behavior = NOTHING'''
 
 
 class DebrisManufactoring(Station):
-    pass
+    AUDIO_PREFIX = SpaceVoice.FACTORY
+    RANDOM_ROBOT = True
 
 
 class Outpost(DockableObject):
@@ -778,6 +811,71 @@ class PirateBase(DockableObject):
 class Refinery(DockableObject):
     ALIAS = 'alg'
     AUDIO_PREFIX = SpaceVoice.FACTORY
+
+
+class Hackable(DockableObject):
+    HACKABLE_SOLAR_CLASS = None
+    LOCKED_DOCK = True
+    DEFENCE_LEVEL = None
+    RANDOM_ROBOT = True
+
+    def get_position(self):
+        if self.RELATED_OBJECT:
+            if not self.RELATED_OBJECT.SPACE_OBJECT_TEMPLATE:
+                raise Exception('Related object must have template')
+            if not self.RELATED_OBJECT.SPACE_OBJECT_TEMPLATE.LOCKED_OBJECT_OFFSET:
+                raise Exception('Related object must have locked object offset')
+            offset = self.RELATED_OBJECT.SPACE_OBJECT_TEMPLATE.LOCKED_OBJECT_OFFSET
+            position = self.system.get_object_position(self.RELATED_OBJECT)
+            return offset[0]+position[0], offset[1]+position[1], offset[2]+position[2]
+        else:
+            return super().get_position()
+
+    def get_archetype(self):
+        return self.HACKABLE_SOLAR_CLASS.ARCHETYPE
+
+    def get_hacker_panel_position(self):
+        pos_x, pos_y, pos_z = self.get_position()
+        offset_x, offset_y, offset_z = self.HACKABLE_SOLAR_CLASS.OFFSET
+        return (pos_x+offset_x, pos_y+offset_y, pos_z+offset_z)
+
+    def get_rotate(self):
+        return self.HACKABLE_SOLAR_CLASS.ROTATE
+
+    def get_hacker_name(self):
+        return f'{self.get_base_nickname()}_hacker_panel'
+
+    def get_hacker_panel(self):
+        panel = self.system.get_random_hacker_panel()
+        hacker_name = self.get_hacker_name()
+
+        return panel.get_space_content(
+            space_name=self.get_hacker_name(),
+            reputation=self.FACTION,
+            position=self.get_hacker_panel_position(),
+            relation=self.HACKABLE_SOLAR_CLASS.PANEL_RELATION,
+            success_loadout=hacker_name,
+        )
+
+    def get_sattelites(self):
+        return [self.get_hacker_panel()]
+
+    def get_hacker_loadout(self):
+        loadout = Loadout(loadout_nickname=self.get_hacker_name())
+        base_key = self.get_key_name()
+        loadout.add_cargo(base_key)
+        return loadout
+
+    def get_loadouts(self):
+        return [self.get_hacker_loadout()]
+
+
+class HackableStation(Hackable):
+    AUDIO_PREFIX = SpaceVoice.STATION
+
+
+class HackableBattleship(Hackable):
+    AUDIO_PREFIX = SpaceVoice.BATTLESHIP
 
 
 class PatrolObjective(SystemObject):
@@ -916,7 +1014,7 @@ ids_name = 260920
 ids_info = 66170
 pos = {pos}
 rotate = {rotate}
-Archetype = Trade_Lane_Ring
+archetype = Trade_Lane_Ring
 behavior = NOTHING
 reputation = {faction}
 loadout = trade_lane_ring_li_01
@@ -980,6 +1078,10 @@ class TradeConnection(SystemObject):
     HUNTER_DEFENCE_REL = None
     ATTACKED_BY = []
 
+    TRADELANE_CLASS = Tradelane
+    POLICE_PATROL = True
+    TLR_OUTER_ZONE = True
+
     OBJ_FROM_EXTRA_DRIFT = 0
     OBJ_FROM_EXTRA_DRIFT_ALT_AXIS = 0
     OBJ_FROM_TLR_FORCE_OFFSET = None
@@ -1015,7 +1117,8 @@ size = {size}'''
         self.tradelanes = []
         self.tracks_raw_outer_zone = None
         self.police_patrol = self.get_police_patrol()
-        self.system.add_patrol(self.police_patrol)
+        if self.police_patrol:
+            self.system.add_patrol(self.police_patrol)
         self.bounty_hunter_patrol = self.get_bounty_hunter_patrol()
         if self.bounty_hunter_patrol:
             self.system.add_patrol(self.bounty_hunter_patrol)
@@ -1065,7 +1168,7 @@ size = {size}'''
         )
 
     def add_tradelane(self, tracks_raw_tradelane):
-        self.tradelanes.append(Tradelane(self, tracks_raw_tradelane, self.last_tradelane_index))
+        self.tradelanes.append(self.TRADELANE_CLASS(self, tracks_raw_tradelane, self.last_tradelane_index))
         self.last_tradelane_index += 1
 
     def set_tradelane_zone(self, tracks_raw_tlr_zone):
@@ -1092,7 +1195,7 @@ size = {size}'''
         return None
 
     def get_tradelane_zone(self):
-        if not self.system.ENABLE_POPULATION:
+        if not self.system.ENABLE_POPULATION or not self.TLR_OUTER_ZONE:
             return ''
 
         return SINGLE_DIVIDER.join([
@@ -1117,6 +1220,8 @@ size = {size}'''
         return DIVIDER.join(system_content)
 
     def get_police_patrol(self):
+        if not self.POLICE_PATROL:
+            return
         obj_from, obj_to = self.get_destination_objects()
         obj_from_pos = self.system.get_object_position(obj_from)
         obj_to_pos = self.system.get_object_position(obj_to)
@@ -1185,8 +1290,6 @@ size = {size}'''
             self.system.add_patrol(attacker_patrol)
 
     def get_pirate_attacker_patrol(self, attacker_base):
-        obj_from, obj_to = self.get_destination_objects()
-
         tlrs_len = len(self.tradelanes)
 
         if tlrs_len <= TLR_SMALL_SIZE_RINGS_COUNT:
@@ -1208,3 +1311,40 @@ size = {size}'''
                 (attacker_base_pos[0], 0, attacker_base_pos[2]),
             ]
         )
+
+
+
+class DestroyedTradelane(Tradelane):
+
+    RING_TEMPLATE = '''[Object]
+nickname = {ring_nickname}
+ids_name = 260920
+ids_info = 66170
+pos = {pos}
+rotate = {rotate}
+archetype = Trade_Lane_Ring_Damage_A
+'''
+
+    def get_ring_nickname(self):
+        return '{system_name}_F_Trade_Lane_Ring_{letter}0{index}'.format(
+            system_name=self.trade_connection.system.NAME.upper(),
+            letter=self.trade_connection.TRADELANE_LETTER,
+            index=self.tradelane_index,
+        )
+
+    def get_tradelane_pos(self):
+        return self.tracks_raw_tradelane.lines[POS_KEY]
+
+    def get_system_object(self):
+        template_params = {
+            'ring_nickname': self.get_ring_nickname(),
+            'pos': '{0}, {1}, {2}'.format(*self.tracks_raw_tradelane.lines[POS_KEY]),
+            'rotate': '{0}, {1}, {2}'.format(*self.tracks_raw_tradelane.lines[ROT_KEY]),
+        }
+        return self.RING_TEMPLATE.format(**template_params)
+
+
+class BrokenTradeConnection(TradeConnection):
+    TRADELANE_CLASS = DestroyedTradelane
+    POLICE_PATROL = False
+    TLR_OUTER_ZONE = False

@@ -1,4 +1,5 @@
 import pathlib
+from templates.solar.hacker_panel import HackerPanelManager
 
 from universe.universe import Universe
 from universe.system import System
@@ -15,6 +16,8 @@ from text.dividers import SINGLE_DIVIDER, DIVIDER
 class UniverseManager(object):
 
     def __init__(self, misc_equip, weapons, shiparch):
+        self.hacker_panels_manager = HackerPanelManager()
+
         self.misc_equip = misc_equip
         self.weapons = weapons
         self.shiparch = shiparch
@@ -39,10 +42,13 @@ class UniverseManager(object):
 
         self.sync_data()
 
+    def get_random_hacker_panel(self):
+        return self.hacker_panels_manager.get_random_hacker_panel()
+
     def load_systems(self):
         for system in System.subclasses:
             if system.CONTENT:
-                system = system()
+                system = system(self)
                 self.systems.append(system)
                 self.system_content_test.append(system.system_content_str)
                 self.loadouts += system.loadouts

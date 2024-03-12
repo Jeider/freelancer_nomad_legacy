@@ -1,7 +1,11 @@
+import random
+
 
 class SpaceVoice(object):
     VOICE_MALE = 'atc_leg_m01'
     VOICE_FEMALE = 'atc_leg_f01'
+    VOICE_ROBOT = 'atc_leg_f01a'
+    DEFAULT = VOICE_MALE
 
     FREEPORT = 'mod_refer_base_freeport'
     PRISON = 'mod_refer_base_prison'
@@ -30,3 +34,19 @@ class SpaceVoice(object):
     CO_GASMINER = 'mod_refer_base_corsairs_gasmining'
     PI_GASMINER = 'mod_refer_base_pirates_gasmining'
 
+
+class SpaceCostume(object):
+    DEFAULT = 'rh_captain_head, rh_male_guard_body, prop_hat_male_rh_grd_visor, prop_neuralnet_b_right'
+    ROBOT_A = ', robot_body_A'
+    ROBOT_B = ', robot_body_B'
+    ROBOT_C = ', robot_body_C'
+    ROBOT_D = ', robot_body_D'
+    ROBOT_E = ', robot_body_E'
+
+    ROBOTS = [
+        ROBOT_A, ROBOT_B, ROBOT_C, ROBOT_D, ROBOT_E
+    ]
+
+    @staticmethod
+    def random_robot():
+        return random.choice(SpaceCostume.ROBOTS)
