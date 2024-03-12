@@ -215,7 +215,7 @@ BARRIER_EXCLUSION_PARAMS = {
 
 class Sig13Nebula(Sigma13Member, TemplatedNebulaZone):
     INDEX = 1
-    FILE_NAME = 'gen_seg13_blue_nebula'
+    FILE_NAME = 'gen_sig13_blue_nebula'
     SPACEDUST = Dust.ATTRACT
     SPACEDUST_MAXPARTICLES = 50
     MUSIC = Ambience.NEBULA_CROW

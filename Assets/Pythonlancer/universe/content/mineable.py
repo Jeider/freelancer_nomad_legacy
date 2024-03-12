@@ -2,9 +2,9 @@ import random
 
 from templates.space_object_template import SpaceObjectTemplate
 from universe.content.system_object import SystemObject
-from universe.content.loadout import DynamicAttachedCargoLoadout, DynamicInternalCargoLoadout, SingleInternalCargoLoadout
+from universe.content.loadout import DynamicAttachedCargoLoadout, DynamicInternalCargoLoadout, SingleInternalCargoLoadout, SingleAttachedItemLoadout
 
-from text.dividers import DIVIDER
+from text.dividers import SINGLE_DIVIDER, DIVIDER
 
 
 MINING_REWARD_LOW = 'low'
@@ -304,10 +304,14 @@ class RewardsGroup(object):
             else:
                 return random.choice(self.loadouts_db[reward_type])
         except KeyError as e:
-            raise Exception('reward_type %s isnt defined for reward group %s' % (reward_type, self.__class__.__name__))
+            pass
+            # raise Exception('reward_type %s isnt defined for reward group %s' % (reward_type, self.__class__.__name__))
 
     def get_loadout_name_by_reward_type(self, reward_type, ultra_base_instance):
-        return self.get_loadout_by_reward_type(reward_type, ultra_base_instance).get_loadout_nickname()
+        loadout = self.get_loadout_by_reward_type(reward_type, ultra_base_instance)
+        if loadout:
+            return loadout.get_loadout_nickname()
+        return None
 
     def get_multiple_loadouts_by_reward_type(self, reward_type, count, ultra_base_instance):
         try:
@@ -326,7 +330,7 @@ class RewardsGroup(object):
         return [loadout.get_loadout_nickname() for loadout in self.get_multiple_loadouts_by_reward_type(reward_type, count, ultra_base_instance)]
 
 
-class HardpointRewardsGroup(RewardsGroup):
+class MultipointRewardsGroup(RewardsGroup):
     def fill_loadouts(self):
         hardpoints = self.solar.get_hardpoints()
         init_items = self.solar.get_init_loadout_items()
@@ -385,7 +389,8 @@ class HardpointRewardsGroup(RewardsGroup):
                 self.ultra_loadouts_db[base_nickname] = loadout_ultra_reward
 
 
-class InternalRewardsGroup(RewardsGroup):
+class SinglepointRewardsGroup(RewardsGroup):
+    HARDPOINT = None
 
     def fill_loadouts(self):
         init_items = self.solar.get_init_loadout_items()
@@ -422,16 +427,24 @@ class InternalRewardsGroup(RewardsGroup):
                     reward_type=base_nickname,
                     index=1
                 )
-                loadout_ultra_reward = SingleInternalCargoLoadout(
-                    loadout_nickname=nickname,
-                    cargo_item=base_key,
-                    init_items=init_items,
-                ).get_loadout()
+                if self.HARDPOINT:
+                    loadout_ultra_reward = SingleAttachedItemLoadout(
+                        loadout_nickname=nickname,
+                        equip_item=base_key,
+                        hardpoint=self.HARDPOINT,
+                        init_items=init_items,
+                    ).get_loadout()
+                else:
+                    loadout_ultra_reward = SingleInternalCargoLoadout(
+                        loadout_nickname=nickname,
+                        cargo_item=base_key,
+                        init_items=init_items,
+                    ).get_loadout()
                 self.loadouts_list.append(loadout_ultra_reward)
                 self.ultra_loadouts_db[base_nickname] = loadout_ultra_reward
 
 
-class DefaultAsteroidRewardsGroup(HardpointRewardsGroup):
+class DefaultAsteroidRewardsGroup(MultipointRewardsGroup):
     REWARD_PROPS = [
         AsteroidRewardPropsLow,
         AsteroidRewardPropsMedium,
@@ -440,7 +453,7 @@ class DefaultAsteroidRewardsGroup(HardpointRewardsGroup):
     ULTRA_REWARD_PROP = AsteroidRewardPropsUltra
 
 
-class DefaultDebrisBoxRewardsGroup(InternalRewardsGroup):
+class DefaultDebrisBoxRewardsGroup(SinglepointRewardsGroup):
     REWARD_PROPS = [
         DebrisBoxRewardPropsLow,
         DebrisBoxRewardPropsMedium,
@@ -450,7 +463,7 @@ class DefaultDebrisBoxRewardsGroup(InternalRewardsGroup):
     ULTRA_REWARD_PROP = DebrisBoxRewardPropsUltra
 
 
-class DefaultGasCrystalRewardsGroup(InternalRewardsGroup):
+class DefaultGasCrystalRewardsGroup(SinglepointRewardsGroup):
     REWARD_PROPS = [
         GasCrystalRewardPropsLow,
         GasCrystalRewardPropsMedium,
@@ -460,27 +473,26 @@ class DefaultGasCrystalRewardsGroup(InternalRewardsGroup):
     ULTRA_REWARD_PROP = GasCrystalRewardPropsUltra
 
 
-class DefaultSupriseRewardsGroup(InternalRewardsGroup):
-    REWARD_PROPS = [
-        GasCrystalRewardPropsLow,
-    ]
-    ULTRA_REWARD_PROP = GasCrystalRewardPropsUltra
+class DefaultSupriseRewardsGroup(SinglepointRewardsGroup):
+    REWARD_PROPS = []
+    ULTRA_REWARD_PROP = SupriseRewardPropsUltra
+    HARDPOINT = 'HpCM01'
 
 
-class AsteroidRewardsGroupLow(HardpointRewardsGroup):
+class AsteroidRewardsGroupLow(MultipointRewardsGroup):
     REWARD_PROPS = [
         AsteroidRewardPropsLow,
     ]
 
 
-class AsteroidRewardsGroupMedium(HardpointRewardsGroup):
+class AsteroidRewardsGroupMedium(MultipointRewardsGroup):
     REWARD_PROPS = [
         AsteroidRewardPropsLow,
         AsteroidRewardPropsMedium,
     ]
 
 
-class AsteroidRewardsGroupHigh(HardpointRewardsGroup):
+class AsteroidRewardsGroupHigh(MultipointRewardsGroup):
     REWARD_PROPS = [
         AsteroidRewardPropsLow,
         AsteroidRewardPropsMedium,
@@ -488,7 +500,7 @@ class AsteroidRewardsGroupHigh(HardpointRewardsGroup):
     ]
 
 
-class AsteroidRewardsGroupUltra(HardpointRewardsGroup):
+class AsteroidRewardsGroupUltra(MultipointRewardsGroup):
     REWARD_PROPS = [
         AsteroidRewardPropsLow,
         AsteroidRewardPropsMedium,
@@ -497,20 +509,20 @@ class AsteroidRewardsGroupUltra(HardpointRewardsGroup):
     ULTRA_REWARD_PROP = AsteroidRewardPropsUltra
 
 
-class DefaultDebrisBoxRewardsGroupLow(InternalRewardsGroup):
+class DefaultDebrisBoxRewardsGroupLow(SinglepointRewardsGroup):
     REWARD_PROPS = [
         DebrisBoxRewardPropsLow,
     ]
 
 
-class DefaultDebrisBoxRewardsGroupMedium(InternalRewardsGroup):
+class DefaultDebrisBoxRewardsGroupMedium(SinglepointRewardsGroup):
     REWARD_PROPS = [
         DebrisBoxRewardPropsLow,
         DebrisBoxRewardPropsMedium,
     ]
 
 
-class DefaultDebrisBoxRewardsGroupHigh(InternalRewardsGroup):
+class DefaultDebrisBoxRewardsGroupHigh(SinglepointRewardsGroup):
     REWARD_PROPS = [
         DebrisBoxRewardPropsLow,
         DebrisBoxRewardPropsMedium,
@@ -518,7 +530,7 @@ class DefaultDebrisBoxRewardsGroupHigh(InternalRewardsGroup):
     ]
 
 
-class DefaultDebrisBoxRewardsGroupUltra(InternalRewardsGroup):
+class DefaultDebrisBoxRewardsGroupUltra(SinglepointRewardsGroup):
     REWARD_PROPS = [
         DebrisBoxRewardPropsLow,
         DebrisBoxRewardPropsMedium,
@@ -862,17 +874,19 @@ class SupriseRewardField(RewardField):
 nickname = {nickname}
 pos = {pos}
 rotate = {rotate}
-archetype = {archetype}
-loadout = {loadout}'''
+archetype = {archetype}'''
 
     def get_archetype(self):
         return self.rewards_group.solar.get_default_archetype()
 
     def generate_box_content_item(self, box, reward_type, index):
-        return self.SYSTEM_OBJECT_TEMPLATE.format(
+        sys_object = self.SYSTEM_OBJECT_TEMPLATE.format(
             nickname=self.create_nickname(index),
             pos='{}, {}, {}'.format(*box.get_position()),
             rotate='{}, {}, {}'.format(*box.get_rotate()),
             archetype=self.get_archetype(),
-            loadout=self.rewards_group.get_loadout_name_by_reward_type(reward_type)
         )
+        loadout = self.rewards_group.get_loadout_name_by_reward_type(reward_type, self.ultra_base_instance)
+        if loadout:
+            sys_object += SINGLE_DIVIDER + f'loadout = {loadout}'
+        return sys_object

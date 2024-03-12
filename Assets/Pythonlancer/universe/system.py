@@ -12,6 +12,7 @@ from universe.systems import rh_ber as rh_ber_content
 from universe.systems import sig13 as sig13_content
 from universe.systems import rh_biz as rh_biz_content
 from universe.systems import sig8 as sig8_content
+from universe.systems import rh_stut as rh_stut_content
 
 from text.dividers import DIVIDER
 
@@ -448,8 +449,14 @@ class rh_biz(RheinlandSystem, System):
     ALLOW_SYNC = True
 
 
-class rh_stut(System):
-    NAME = 'Rh_stut'
+class rh_stut(RheinlandSystem, System):
+    NAME = 'rh_stut'
+    TEMPLATE_NAME = 'rh_stut'
+    FACTION_CODE = faction.RH_GRP
+    CONTENT = rh_stut_content
+
+    SYSTEM_FOLDER = 'RH_STUTTGART'
+    ALLOW_SYNC = True
 
 
 class rh_ber(RheinlandSystem, System):

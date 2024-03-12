@@ -140,3 +140,25 @@ class SingleInternalCargoLoadout(Loadout):
             self.cargo_item,
             1,
         )
+
+
+class SingleAttachedItemLoadout(Loadout):
+    def __init__(self, loadout_nickname, equip_item, hardpoint, init_items=None):
+        try:
+            self.loadout_nickname = loadout_nickname
+            self.equip_item = equip_item
+            self.hardpoint = hardpoint
+            self.init_items = list(init_items) if init_items and len(init_items) > 0 else None
+
+        except TypeError:
+            raise Exception('Wrong types passed to DynamicInternalCargoLoadout')
+
+        self.loadout = Loadout(self.loadout_nickname, init_items=init_items)
+
+        self.fill_loadout()
+
+    def fill_loadout(self):
+        self.loadout.add_equip(
+            self.equip_item,
+            self.hardpoint,
+        )

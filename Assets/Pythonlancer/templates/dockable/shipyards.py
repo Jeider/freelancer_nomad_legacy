@@ -446,7 +446,7 @@ parent = ku_hkd_03
 
 
 class StuttgartShipyard(SpaceObjectTemplate):
-    SPACE_OBJECT_NAME = '203622'
+    SPACE_OBJECT_NAME = 'Rh_stut_02'
     TEMPLATE = '''[Object]
 nickname = Rh_stut_02
 pos = 0, 0, 0

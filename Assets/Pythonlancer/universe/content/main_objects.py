@@ -367,8 +367,6 @@ class Sun(GenericSphere):
             'star': self.STAR,
             'atmosphere_range': self.get_atmosphere_range(),
         })
-        if self.LOADOUT:
-            params['loadout'] = self.LOADOUT
         return params
 
     def get_inspace_nickname(self):
@@ -484,9 +482,9 @@ parent = {parent_planet}'''
         elif self.RELATED_DOCK_RING.REL == RIGHT:
             pos_x += planet_drift 
         elif self.RELATED_DOCK_RING.REL == TOP:
-            pos_z += planet_drift 
+            pos_z -= planet_drift
         elif self.RELATED_DOCK_RING.REL == BOTTOM:
-            pos_z -= planet_drift 
+            pos_z += planet_drift
 
         return (pos_x, pos_y, pos_z)
 
@@ -651,6 +649,8 @@ BGCS_base_run_by = W02bF44'''
         return SINGLE_DIVIDER.join(definition)
 
     def get_mbases_content(self):
+        if not self.interior:
+            raise Exception('%s have not interior' % self.__class__.__name__)
         return self.interior.get_mbase()
 
     def get_audio_prefix(self):
@@ -756,6 +756,11 @@ behavior = NOTHING'''
 
     def get_sattelites(self):
         return [self.get_cargo_pods()]
+
+
+class SolarPlant(Station):
+    ALIAS = 'solar'
+    RANDOM_ROBOT = True
 
 
 class DebrisManufactoring(Station):

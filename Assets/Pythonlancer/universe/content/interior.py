@@ -74,14 +74,14 @@ weight = 1
 offers_missions = false'''
 
 ALL_ON_DECK_DEALERS_TEMPLATE = '''[MRoom]
-nickname = Deck
+nickname = {main_room}
 character_density = 3
 fixture = {trader}, Zs/NPC/Trader/01/A/Stand, scripts\\vendors\\li_commtrader_fidget.thn, trader
 fixture = {equip}, Zs/NPC/Equipment/01/A/Stand, scripts\\vendors\\li_equipdealer_fidget.thn, Equipment
 fixture = {shipdealer}, Zs/NPC/Shipdealer/01/A/Stand, scripts\\vendors\\li_shipdealer_fidget.thn, ShipDealer'''
 
 DECK_DEALERS_TEMPLATE = '''[MRoom]
-nickname = Deck
+nickname = {main_room}
 character_density = 2
 fixture = {trader}, Zs/NPC/Trader/01/A/Stand, scripts\\vendors\\li_commtrader_fidget.thn, trader
 fixture = {equip}, Zs/NPC/Equipment/01/A/Stand, scripts\\vendors\\li_equipdealer_fidget.thn, Equipment
@@ -92,7 +92,7 @@ character_density = 1
 fixture = {shipdealer}, Zs/NPC/Shipdealer/01/A/Stand, scripts\\vendors\\li_shipdealer_fidget.thn, ShipDealer'''
 
 DECK_DEALERS_ONLY_TEMPLATE = '''[MRoom]
-nickname = Deck
+nickname = {main_room}
 character_density = 2
 fixture = {trader}, Zs/NPC/Trader/01/A/Stand, scripts\\vendors\\li_commtrader_fidget.thn, trader
 fixture = {equip}, Zs/NPC/Equipment/01/A/Stand, scripts\\vendors\\li_equipdealer_fidget.thn, Equipment'''
@@ -118,8 +118,10 @@ SHIPDEALER_NAME_TEMPLATE = '{base_name}_fix_shipdealer'
 
 INTERIOR_BG_CROW = 'crow_exclusion'
 INTERIOR_BG_BARRIER_CLOUD = 'exclusion_barrier_m7'
+INTERIOR_BG_WALKER = 'walker_exclusion'
 INTERIOR_RH_BIZMARK = 'rh_biz_nebula'
 INTERIOR_SIG8 = 'sig8_nebula'
+INTERIOR_RH_STUTTGART = 'rh_stut_nebula'
 
 
 class Interior(object):
@@ -129,6 +131,7 @@ class Interior(object):
     CUSTOM_INTERIOR_FILE = False
     DEALER_PLACEMENTS_TEMPLATE = None
     OFFER_MISSIONS = True
+    MAIN_ROOM = 'Deck'
 
     def __init__(self, base_instance, room_subfolder):
         self.base_instance = base_instance
@@ -187,6 +190,7 @@ class Interior(object):
 
             entries.append(
                 self.DEALER_PLACEMENTS_TEMPLATE.format(
+                    main_room=self.MAIN_ROOM,
                     equip=equipdealer_name,
                     trader=commtrader_name,
                     shipdealer=shipdealer_name,
@@ -230,6 +234,7 @@ class CustomFullSingleRoomInterior(CustomFileInterior):
     HAVE_TRADER = True
     HAVE_SHIPDEALER = True
     DEALER_PLACEMENTS_TEMPLATE = ALL_ON_DECK_DEALERS_TEMPLATE
+    MAIN_ROOM = 'Planetscape'
 
 
 class CustomFullSplitRoomInterior(CustomFileInterior):
@@ -239,6 +244,7 @@ class CustomFullSplitRoomInterior(CustomFileInterior):
     HAVE_TRADER = True
     HAVE_SHIPDEALER = True
     DEALER_PLACEMENTS_TEMPLATE = SINGLE_CHAR_DEALERS_TEMPLATE
+    MAIN_ROOM = 'Cityscape'
 
 
 class GenericInterior(Interior):

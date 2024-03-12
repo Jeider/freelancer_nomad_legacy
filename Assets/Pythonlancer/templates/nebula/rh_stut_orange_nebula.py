@@ -1,5 +1,10 @@
+from templates.simple_template import SimpleTemplate
+
+
+class RhStutOrangeNebulaTemplate(SimpleTemplate):
+    TEMPLATE = '''
 [TexturePanels]
-file = solar\nebula\walker_shapes.ini
+file = solar\\nebula\\walker_shapes.ini
 
 [Fog]
 fog_enabled = 1
@@ -10,6 +15,8 @@ color = 150, 100, 20 ;120, 60, 0
 [properties]
 flag = nebula
 
+[Exclusion Zones]
+{exclusions}
 
 [Exterior]
 shape = walker_exterior1
@@ -53,3 +60,4 @@ duration = 0.550000
 gap = 4.000000
 color = 0, 0, 0
 
+'''
