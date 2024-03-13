@@ -40,6 +40,7 @@ FUSE_MAIN = 'xast_dmg_ast'
 CHUNKS = 10
 
 INIT_ITEMS_TEMPLATE = 'equip = attached_xast_exploder, {hp}'
+INIT_ITEMS_ULTRA_TEMPLATE = 'equip = attached_xast_exploder_ultra, {hp}'
 
 
 class AsteroidSolar(MineableSolar):
@@ -59,6 +60,7 @@ class AsteroidSolar(MineableSolar):
             self.fuses.append(FUSE_TEMPLATE.format(fuse_main_name=FUSE_MAIN, index=i))
             self.hardpoints.append(HARDPOINT_NAME_TEMPLATE.format(index=i))
         self.init_loadout_items = [INIT_ITEMS_TEMPLATE.format(hp=hp) for hp in self.hardpoints]
+        self.init_loadout_items_ultra = [INIT_ITEMS_ULTRA_TEMPLATE.format(hp=hp) for hp in self.hardpoints]
 
     def get_collisions_string(self):
         return DIVIDER.join(self.collis)
@@ -71,6 +73,9 @@ class AsteroidSolar(MineableSolar):
 
     def get_init_loadout_items(self):
         return self.init_loadout_items
+
+    def get_init_loadout_items_ultra(self):
+        return self.init_loadout_items_ultra
 
 
 

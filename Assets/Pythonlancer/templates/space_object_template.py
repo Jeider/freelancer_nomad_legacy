@@ -7,7 +7,7 @@ NICKNAME = 'nickname'
 class SpaceObjectTemplate(object):
     TEMPLATE = None
     SPACE_OBJECT_NAME = None
-    LOCKED_OBJECT_OFFSET = None
+    LOCKED_OBJECT_OFFSETS = None
 
     subclasses = []
 
@@ -89,3 +89,9 @@ class SpaceObjectTemplate(object):
                 lines.append(line)
 
         self.instance = SINGLE_DIVIDER.join(lines)
+
+    @classmethod
+    def get_locked_object_offset(cls, index=0):
+        if not cls.LOCKED_OBJECT_OFFSETS:
+            raise Exception('Locked object offset isnt defined for %s' % cls.__class__.__name__)
+        return cls.LOCKED_OBJECT_OFFSETS[index]

@@ -8,6 +8,22 @@ from text.dividers import SINGLE_DIVIDER, DIVIDER
 SHAPE_SPHERE = 'SPHERE'
 
 
+class RawZone(SystemObject):
+    ABSTRACT = True
+
+    ZONE_NICKNAME_TEMPLATE = 'Zone_{base_alias}'
+    ZONE_TEMPLATE = '''[Zone]
+{params}'''
+
+    def __init__(self, *args, **kwargs):
+        self.zone_params = kwargs.get('zone_params')
+        super().__init__(*args, **kwargs)
+
+    def get_system_content(self):
+        content = ['{} = {}'.format(key, value) for key, value in self.zone_params.items()]
+        return self.ZONE_TEMPLATE.format(params=SINGLE_DIVIDER.join(content))
+
+
 class Zone(SystemObject):
     ABSTRACT = True
 
@@ -67,6 +83,7 @@ class DynamicZone(DynamicSystemObject, Zone):
         self.position = kwargs.get('position')
         self.edge_fraction = kwargs.get('edge_fraction')
         self.merged_params = kwargs.get('merged_params')
+        self.drag_modifier = kwargs.get('drag_modifier')
         super().__init__(*args, **kwargs)
 
     def get_zone_nickame(self):
@@ -92,6 +109,8 @@ class DynamicZone(DynamicSystemObject, Zone):
             params['spacedust_maxparticles'] = self.spacedust_maxparticles
         if self.edge_fraction:
             params['edge_fraction'] = self.edge_fraction
+        if self.drag_modifier:
+            params['drag_modifier'] = self.drag_modifier
         return params
 
     def get_zone_merged_params(self):
@@ -108,6 +127,9 @@ class SphereZone(Zone):
             'shape': 'SPHERE',
             'size': self.get_single_size(),
         }
+
+    def get_single_size(self):
+        raise NotImplementedError
 
 
 class DynamicSphereZone(SphereZone, DynamicZone):
@@ -133,6 +155,7 @@ class BaseFileAppearanceZone(Zone):
     SPACEDUST_MAXPARTICLES = None
 
     INTERFERENCE = None
+    DRAG_MODIFIER = None
 
     def get_zone_base_alias(self):
         return '{system_name}_{alias}_{zone_field_type}'.format(
@@ -155,6 +178,8 @@ class BaseFileAppearanceZone(Zone):
             params['spacedust_maxparticles'] = self.SPACEDUST_MAXPARTICLES
         if self.INTERFERENCE:
             params['interference'] = self.INTERFERENCE
+        if self.DRAG_MODIFIER:
+            params['drag_modifier'] = self.DRAG_MODIFIER
         return params
 
     def get_file_name(self):

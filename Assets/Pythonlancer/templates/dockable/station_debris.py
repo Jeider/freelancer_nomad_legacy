@@ -878,6 +878,10 @@ parent = rh_mnh_06
 
 class OmegaDanzigDebris(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'om15_02'
+    LOCKED_OBJECT_OFFSETS = [
+        (-600, -130, 0),
+        (460, 375, 118),
+    ]
     TEMPLATE = '''[Object]
 nickname = om15_02
 pos = 0, 0, 0
@@ -1050,13 +1054,6 @@ parent = om15_02
 nickname = om15_02_dmg_dock01
 pos = 200, -71, -400
 rotate = 10, 45, -20
-archetype = space_police_dmg
-parent = om15_02
-
-[Object]
-nickname = om15_02_dmg_dock02
-pos = -500, -130, 0
-rotate = 0, 15, 30
 archetype = space_police_dmg
 parent = om15_02
 
@@ -1689,7 +1686,9 @@ parent = li_cal_10
 
 class SigmaEightFreeport(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'sig8_03'
-    LOCKED_OBJECT_OFFSET = (100, 13, 60)
+    LOCKED_OBJECT_OFFSETS = [
+        (100, 13, 60)
+    ]
     TEMPLATE = '''[Object]
 nickname = sig8_03
 pos = -250, -25, 60

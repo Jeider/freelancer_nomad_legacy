@@ -3,7 +3,7 @@ from random import randint
 from fx.space import Dust
 
 from universe.content.system_object import SystemObject, TOP, BOTTOM, LEFT, RIGHT, DIRECTIONS, POS_KEY, ROT_KEY, SIZE_KEY
-from universe.content.zones import DynamicZone, DynamicSphereZone
+from universe.content.zones import DynamicZone, DynamicSphereZone, RawZone
 from universe.content import interior
 from universe.content.locked_dock_key import LockedDockKey
 from universe.content import faction
@@ -29,6 +29,7 @@ class AppearableObject(SystemObject):
     SPACE_OBJECT_TEMPLATE = None
     SPACE_OBJECT_NAME = None
     RELATED_OBJECT = None
+    RELATED_OBJECT_INDEX = 0
     ARCHETYPE = None
     LOADOUT = None
 
@@ -140,7 +141,13 @@ class StaticObject(AppearableObject):
     DEFENCE_LEVEL = None
     DEFENCE_ZONE_BACKDRIFT = 0
     DEFENCE_ZONE_NAME_TEMPLATE = 'Zone_{space_name}_pop_defence'
-    
+
+    LLIGHT_CLOUD_ZONE_NAME_TEMPLATE = 'Zone_{space_name}_llight_cloud'
+    LLIGHT_CLOUD = False
+    LLIGHT_CLOUD_NAME = None
+    LLIGHT_CLOUD_FILE_TEMPLATE = 'solar\\nebula_mod\\{llight_cloud_name}.ini'
+    LLIGHT_CLOUD_RANGE = 600000
+
     def get_ast_exclusion_zone_name(self):
         return self.AST_ZONE_NAME_TEMPLATE.format(
             space_name=self.get_inspace_nickname(),
@@ -158,6 +165,11 @@ class StaticObject(AppearableObject):
     
     def get_defence_zone_name(self):
         return self.DEFENCE_ZONE_NAME_TEMPLATE.format(
+            space_name=self.get_inspace_nickname(),
+        )
+
+    def get_llight_cloud_zone_name(self):
+        return self.LLIGHT_CLOUD_ZONE_NAME_TEMPLATE.format(
             space_name=self.get_inspace_nickname(),
         )
 
@@ -238,6 +250,18 @@ class StaticObject(AppearableObject):
                     index=self.RING_ZONE_INDEX,
                 )
             )
+        if self.LLIGHT_CLOUD:
+            zones.append(
+                RawZone(
+                    system=self.system,
+                    zone_params={
+                        'nickname': self.get_llight_cloud_zone_name(),
+                        'size': '{}, {}, {}'.format(self.LLIGHT_CLOUD_RANGE, 0, self.LLIGHT_CLOUD_RANGE),
+                        'position': '{}, {}, {}'.format(0, 0, 0),
+                        'shape': 'RING',
+                    }
+                )
+            )
 
         if self.DEFENCE_LEVEL and self.system.ENABLE_POPULATION:
             zones.append(
@@ -255,6 +279,16 @@ class StaticObject(AppearableObject):
                 zone=self.get_ring_zone_name(),
                 ring_file=self.RING_FILE_TEMPLATE.format(ring_file_name=self.RING_FILE_NAME),
             )
+        elif self.LLIGHT_CLOUD:
+            if not self.LLIGHT_CLOUD_NAME:
+                raise Exception('unknown file for llight cloud ring %s' % self.__class__.__name__)
+
+            params['ring'] = '{zone}, {llight_cloud}'.format(
+                zone=self.get_llight_cloud_zone_name(),
+                llight_cloud=self.LLIGHT_CLOUD_FILE_TEMPLATE.format(llight_cloud_name=self.LLIGHT_CLOUD_NAME),
+            )
+
+
         return params
 
     def is_lawful(self):
@@ -262,6 +296,13 @@ class StaticObject(AppearableObject):
         if not is_lawful and self.FACTION not in self.system.UNLAWFUL_FACTIONS:
             raise Exception('Faction isnt defined in a system for object %s' % self.__class__.__name__)
         return is_lawful
+
+
+class VirtualDepot(StaticObject):
+    ALIAS = 'virtual'
+
+    def get_system_content(self):
+        return ''
 
 
 class RawText(SystemObject):
@@ -287,6 +328,8 @@ class GenericSphere(StaticObject):
     DRAG_ZONE_INTERFERENCE = 0.001
     DAMAGE_ZONE_DAMAGE = 200000000
     DAMAGE_ZONE_SORT = 99.5
+
+    DRAG_MODIFIER = 1
 
     def get_sphere_radius(self):
         if not self.SPHERE_RADIUS:
@@ -763,6 +806,64 @@ class SolarPlant(Station):
     RANDOM_ROBOT = True
 
 
+class RoidMiner(Station):
+    RANDOM_ROBOT = True
+    ROTATE_RANDOM = False
+
+    ASTEROID_OFFSET = (0, 5, -235)
+    ASTEROID_ROTATE = (145, -30, 34)
+    ASTEROID_ARCHETYPE = 'om15_mining_asteroid'
+
+    ASTEROID_TEMPLATE = '''[Object]
+nickname = {parent_roidminer}_ast
+pos = {position}
+rotate = {rotate}
+archetype = {archetype}
+visit = 128'''
+
+    CARGO_PODS_POSITION_Y_DRIFT = 5
+    CARGO_PODS_LOADOUT = ''
+
+    CARGO_PODS_TEMPLATE = '''[Object]
+nickname = {parent_roidminer}_cargo
+pos = {position}
+rotate = {rotate}
+archetype = mining_cargo
+reputation = {faction}
+loadout = {loadout}
+behavior = NOTHING
+ids_name = 261161
+ids_info = 66150'''
+
+    def get_asteroid(self):
+        pos_x, pos_y, pos_z = self.get_position()
+        offset_x, offset_y, offset_z = self.ASTEROID_OFFSET
+
+        return self.ASTEROID_TEMPLATE.format(
+            parent_roidminer=self.get_inspace_nickname(),
+            position='{}, {}, {}'.format(pos_x+offset_x, pos_y+offset_y, pos_z+offset_z),
+            rotate='{}, {}, {}'.format(*self.ASTEROID_ROTATE),
+            archetype=self.ASTEROID_ARCHETYPE,
+        )
+
+    def get_cargo_pods(self):
+        pos_x, pos_y, pos_z = self.get_position()
+
+        return self.CARGO_PODS_TEMPLATE.format(
+            parent_roidminer=self.get_inspace_nickname(),
+            position='{}, {}, {}'.format(pos_x, pos_y+self.CARGO_PODS_POSITION_Y_DRIFT, pos_z),
+            rotate='{}, {}, {}'.format(*self.get_rotate()),
+            faction=self.get_faction(),
+            loadout=self.CARGO_PODS_LOADOUT,
+        )
+
+    def get_sattelites(self):
+        return [self.get_cargo_pods(), self.get_asteroid()]
+
+    def get_rotate(self):
+        return 0, 0, 0
+
+
 class DebrisManufactoring(Station):
     AUDIO_PREFIX = SpaceVoice.FACTORY
     RANDOM_ROBOT = True
@@ -828,9 +929,7 @@ class Hackable(DockableObject):
         if self.RELATED_OBJECT:
             if not self.RELATED_OBJECT.SPACE_OBJECT_TEMPLATE:
                 raise Exception('Related object must have template')
-            if not self.RELATED_OBJECT.SPACE_OBJECT_TEMPLATE.LOCKED_OBJECT_OFFSET:
-                raise Exception('Related object must have locked object offset')
-            offset = self.RELATED_OBJECT.SPACE_OBJECT_TEMPLATE.LOCKED_OBJECT_OFFSET
+            offset = self.RELATED_OBJECT.SPACE_OBJECT_TEMPLATE.get_locked_object_offset(self.RELATED_OBJECT_INDEX)
             position = self.system.get_object_position(self.RELATED_OBJECT)
             return offset[0]+position[0], offset[1]+position[1], offset[2]+position[2]
         else:

@@ -13,6 +13,7 @@ from universe.systems import sig13 as sig13_content
 from universe.systems import rh_biz as rh_biz_content
 from universe.systems import sig8 as sig8_content
 from universe.systems import rh_stut as rh_stut_content
+from universe.systems import om15 as om15_content
 
 from text.dividers import DIVIDER
 
@@ -478,8 +479,14 @@ class sig8(RheinlandSystem, System):
     ALLOW_SYNC = True
 
 
-class om15(System):
+class om15(RheinlandSystem, System):
     NAME = 'om15'
+    TEMPLATE_NAME = 'om15'
+    FACTION_CODE = faction.RH_GRP
+    CONTENT = om15_content
+
+    SYSTEM_FOLDER = 'OMEGA15'
+    ALLOW_SYNC = True
 
 
 # rheinland -  temporary

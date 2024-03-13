@@ -334,6 +334,7 @@ class MultipointRewardsGroup(RewardsGroup):
     def fill_loadouts(self):
         hardpoints = self.solar.get_hardpoints()
         init_items = self.solar.get_init_loadout_items()
+        init_items_ultra = self.solar.get_init_loadout_items_ultra()
 
         for reward_prop in self.REWARD_PROPS:
             self.loadouts_db[reward_prop.REWARD_TYPE] = []
@@ -378,7 +379,7 @@ class MultipointRewardsGroup(RewardsGroup):
                     hardpoints=no_ultra_hardpoints,
                     min=self.ULTRA_REWARD_PROP.MIN,
                     max=self.ULTRA_REWARD_PROP.MAX,
-                    init_items=init_items,
+                    init_items=init_items_ultra,
                 ).get_loadout()
                 loadout_ultra_reward.add_cargo(
                     base_key,
@@ -583,6 +584,7 @@ class RewardField(Mineable):
             ultra_index = random.choice(indexes)
             indexes.remove(ultra_index)
 
+
         if self.HIGH_REWARD_CHANCE > 0:
             high_count = box_count * self.HIGH_REWARD_CHANCE
             high_indexes = set(random.choices(indexes, k=int(high_count)))
@@ -597,7 +599,7 @@ class RewardField(Mineable):
                 indexes.remove(index)
 
         for index, box in enumerate(available_boxes):
-            if ultra_index and index == ultra_index:
+            if ultra_index is not None and index == ultra_index:
                 box.set_reward_type(MINING_REWARD_ULTRA)
             elif index in high_indexes:
                 box.set_reward_type(MINING_REWARD_HIGH)

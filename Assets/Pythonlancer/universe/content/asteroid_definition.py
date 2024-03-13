@@ -1,6 +1,7 @@
 from text.dividers import SINGLE_DIVIDER
 
 SHAPES_ROCK = 'file = solar\\asteroids\\rock_shapes.ini'
+SHAPES_MINES = 'file = solar\\asteroids\\mine_shapes.ini'
 SHAPES_DEBRIS = 'file = solar\\asteroids\\debris_shapes.ini'
 SHAPES_OM15 = 'file = solar\\asteroids_mod\\om15\\shapes.ini'
 

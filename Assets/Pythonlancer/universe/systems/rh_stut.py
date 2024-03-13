@@ -63,7 +63,6 @@ nebulae = solar\\stars_mod\\rh_stut_nebula.cmp
 complex_stars = solar\\stars_mod\\new_generic.cmp
 basic_stars = solar\\stars_mod\\new_generic.cmp
 
-
 [EncounterParameters]
 nickname = rh_grp_main_defend
 filename = missions\\npc\\rh\\rh_grp_main_defend.ini
@@ -326,12 +325,26 @@ asteroid = mine_spike_minedout, -0.200000, 0.600000, 0.600000, 105, 160, 25, min
 asteroid = mine_spike_minedout, -0.500000, -0.200000, 0.600000, 75, 30, 70, mine
 '''
 
+BILLBOARD_TEMPLATE = '''
+[AsteroidBillboards]
+count = 600
+start_dist = 2500
+fade_dist_percent = 0.900000
+shape = spike_mine_tri_minedout
+size = 300, 300
+'''
+
 
 class StutSolarMines(asteroid_definition.AsteroidDefinition):
     FIELD = True
     CUBE = True
+    BILLBOARDS = True
     FIELD_TEMPLATE = FIELD_TEMPLATE
     CUBE_TEMPLATE = CUBE_TEMPLATE
+    BILLBOARD_TEMPLATE = BILLBOARD_TEMPLATE
+    SHAPES = [
+        asteroid_definition.SHAPES_MINES,
+    ]
 
 
 class StutSolarMines1(StutSolarMines):
@@ -359,44 +372,43 @@ class StutSolarMines5(StutSolarMines):
     NAME = 'rh_stut_solar_mines5'
 
 
-class StutSolarMinesZone1(StutMember, zones.AsteroidZone):
+class StutBaseMinesZone(zones.AsteroidZone):
+    SPACEDUST = Dust.DEBRIS
+    SPACEDUST_MAXPARTICLES = 100
+    MUSIC = Ambience.MINE_AST
+    INTERFERENCE = 0.1
+    DRAG_MODIFIER = 1.5
+    PROPERTY_FLAGS = 4128
+
+
+class StutSolarMinesZone1(StutMember, StutBaseMinesZone):
     ALIAS = 'solar'
     INDEX = 1
     ASTEROID_DEFINITION_CLASS = StutSolarMines1
-    SPACEDUST = Dust.DEBRIS
-    SPACEDUST_MAXPARTICLES = 100
 
 
-class StutSolarMinesZone2(StutMember, zones.AsteroidZone):
+class StutSolarMinesZone2(StutMember, StutBaseMinesZone):
     ALIAS = 'solar'
     INDEX = 2
     ASTEROID_DEFINITION_CLASS = StutSolarMines2
-    SPACEDUST = Dust.DEBRIS
-    SPACEDUST_MAXPARTICLES = 100
 
 
-class StutSolarMinesZone3(StutMember, zones.AsteroidZone):
+class StutSolarMinesZone3(StutMember, StutBaseMinesZone):
     ALIAS = 'solar'
     INDEX = 3
     ASTEROID_DEFINITION_CLASS = StutSolarMines3
-    SPACEDUST = Dust.DEBRIS
-    SPACEDUST_MAXPARTICLES = 100
 
 
-class StutSolarMinesZone4(StutMember, zones.AsteroidZone):
+class StutSolarMinesZone4(StutMember, StutBaseMinesZone):
     ALIAS = 'solar'
     INDEX = 4
     ASTEROID_DEFINITION_CLASS = StutSolarMines4
-    SPACEDUST = Dust.DEBRIS
-    SPACEDUST_MAXPARTICLES = 100
 
 
-class StutSolarMinesZone5(StutMember, zones.AsteroidZone):
+class StutSolarMinesZone5(StutMember, StutBaseMinesZone):
     ALIAS = 'solar'
     INDEX = 5
     ASTEROID_DEFINITION_CLASS = StutSolarMines5
-    SPACEDUST = Dust.DEBRIS
-    SPACEDUST_MAXPARTICLES = 100
 
 
 class StutSolarPlant1(StutMember, StutBaseSolarPlant):
@@ -453,7 +465,7 @@ class StutSolarSupriseRewards(StutMember, mineable.DefaultSupriseRewardsGroup):
 
 
 class StutSolarSupriseField(mineable.DefaultField):
-    BOX_SIZE = 200
+    BOX_SIZE = 400
     DENSITY_MULTIPLER = 4
     DRIFT_X = 0.5
     DRIFT_Y = 0.5
@@ -609,11 +621,13 @@ class StutPlanet1(StutMember, main_objects.Planet):
     SPHERE_RADIUS = 3000
     RELATED_DOCK_RING = StutDockring
 
+
 class StutPlanet2(StutMember, main_objects.Planet):
     INDEX = 2
     ARCHETYPE = 'planet_watblucld_2000'
     SPHERE_RADIUS = 2000
     RELATED_DOCK_RING = StutLuxuryDockring
+
 
 class StutPlanet3(StutMember, main_objects.Planet):
     INDEX = 3
