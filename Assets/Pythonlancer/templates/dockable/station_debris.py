@@ -615,6 +615,10 @@ parent = rh_mnh_05
 
 class MunchenCivilianStationDebris(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'rh_mnh_06'
+    LOCKED_OBJECT_OFFSETS = [
+        (0, -600, 0),
+        (0, 600, 0),
+    ]
     TEMPLATE = '''[Object]
 nickname = rh_mnh_06
 pos = 0, 0, 0
@@ -865,13 +869,6 @@ nickname = rh_mnh_06_shipyard04
 pos = -460, -150, 0
 rotate = 0, 180, 180
 archetype = shipyard_dmgA
-parent = rh_mnh_06
-
-[Object]
-nickname = rh_mnh_06_tunnel01
-pos = 0, -500, 0
-rotate = 0, 0, 0
-archetype = space_tunnel
 parent = rh_mnh_06
 '''
 

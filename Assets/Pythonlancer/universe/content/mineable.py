@@ -391,8 +391,6 @@ class MultipointRewardsGroup(RewardsGroup):
 
 
 class SinglepointRewardsGroup(RewardsGroup):
-    HARDPOINT = None
-
     def fill_loadouts(self):
         init_items = self.solar.get_init_loadout_items()
 
@@ -428,11 +426,13 @@ class SinglepointRewardsGroup(RewardsGroup):
                     reward_type=base_nickname,
                     index=1
                 )
-                if self.HARDPOINT:
+
+                drop_hardpoint = self.solar.get_drop_hardpoint()
+                if drop_hardpoint:
                     loadout_ultra_reward = SingleAttachedItemLoadout(
                         loadout_nickname=nickname,
                         equip_item=base_key,
-                        hardpoint=self.HARDPOINT,
+                        hardpoint=drop_hardpoint,
                         init_items=init_items,
                     ).get_loadout()
                 else:
@@ -477,7 +477,6 @@ class DefaultGasCrystalRewardsGroup(SinglepointRewardsGroup):
 class DefaultSupriseRewardsGroup(SinglepointRewardsGroup):
     REWARD_PROPS = []
     ULTRA_REWARD_PROP = SupriseRewardPropsUltra
-    HARDPOINT = 'HpCM01'
 
 
 class AsteroidRewardsGroupLow(MultipointRewardsGroup):

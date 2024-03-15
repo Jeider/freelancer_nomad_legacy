@@ -14,6 +14,7 @@ from universe.systems import rh_biz as rh_biz_content
 from universe.systems import sig8 as sig8_content
 from universe.systems import rh_stut as rh_stut_content
 from universe.systems import om15 as om15_content
+from universe.systems import rh_mnh as rh_mnh_content
 
 from text.dividers import DIVIDER
 
@@ -436,8 +437,14 @@ class RheinlandSystem(object):
         return faction.RX_GRP
 
 
-class rh_mnh(System):
-    NAME = 'Rh_Mnh'
+class rh_mnh(RheinlandSystem, System):
+    NAME = 'rh_mnh'
+    TEMPLATE_NAME = 'rh_mnh'
+    FACTION_CODE = faction.RH_GRP
+    CONTENT = rh_mnh_content
+
+    SYSTEM_FOLDER = 'RH_MUNCHEN'
+    ALLOW_SYNC = True
 
 
 class rh_biz(RheinlandSystem, System):

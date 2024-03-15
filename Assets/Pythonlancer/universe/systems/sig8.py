@@ -30,7 +30,7 @@ class Sigma8Member(object):
     FACTION = faction.RH_GRP
     ABSTRACT = False
 
-    INTERIOR_BG1 = interior.INTERIOR_SIG8
+    INTERIOR_BG1 = interior.INTERIOR_SIGMA8
 
 
 class Sigma8StaticText(Sigma8Member, main_objects.RawText):

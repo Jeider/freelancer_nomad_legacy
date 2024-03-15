@@ -14,7 +14,7 @@ from templates.dockable.gas_miner import BretoniaPirateGasMiner, RheinlandCivili
 from templates.dockable.trade_storages import HonshuStorage
 
 from universe.content.mineable import DefaultGasCrystalRewardsGroup, DefaultField, GasCrystalRewardField, ComplexGasCrystalRewardField
-from templates.nebula.exclusion import CROW_EXCLUSION, BARRIER_EXCLUSION, BARRIER_EXCLUSION_SMALL
+from templates.nebula.exclusion import CROW_EXCLUSION, BARRIER_EXCLUSION
 from templates.nebula.sig13_blue_nebula import Sig13BlueNebulaTemplate
 from templates.solar.gas_crystal import SimpleCrystalAsteroid, ComplexCrystalAsteroid
 

@@ -21,5 +21,6 @@ KC_GRP = 'kc_grp'
 KX_GRP = 'kx_grp'
 
 CO_GRP = 'co_grp'
+OU_GRP = 'edv_grp'
 CX_GRP = 'cx_grp'
 OR_GRP = 'or_grp'

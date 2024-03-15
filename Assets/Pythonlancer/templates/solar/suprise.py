@@ -12,10 +12,19 @@ BW_ELITE = 'suprise_bw_elite'
 BW_ELITE2 = 'suprise_bw_elite2'
 BW_FREIGHTER = 'suprise_bw_freighter'
 
+KU_FIGHTER = 'suprise_ku_fighter'
+KU_ELITE = 'suprise_ku_elite'
+KU_FREIGHTER = 'suprise_ku_freighter'
+
+CO_FIGHTER = 'suprise_co_fighter'
+CO_ELITE = 'suprise_co_elite'
+CO_ELITE2 = 'suprise_co_elite2'
+
 
 class Suprise(MineableSolar):
     ALIAS = 'suprise'
     DEFAULT_ARCHETYPES = []
+    DROP_HARDPOINT = None
 
     def get_default_archetype(self):
         return random.choice(self.DEFAULT_ARCHETYPES)
@@ -29,14 +38,26 @@ class Suprise(MineableSolar):
     def get_ultra_reward_archetype(self):
         raise Exception('Not supported')
 
+    def get_drop_hardpoint(self):
+        if not self.DROP_HARDPOINT:
+            raise Exception('Unknown drop hardpoint for %s' % self.__class__.__name__)
+        return self.DROP_HARDPOINT
+
 
 class RheinlandMainFighter(Suprise):
+    DROP_HARDPOINT = 'HpShield01'
     DEFAULT_ARCHETYPES = [RH_FIGHTER, RH_ELITE]
 
 
 class RheinlandMiscFighter(Suprise):
+    DROP_HARDPOINT = 'HpCM01'
     DEFAULT_ARCHETYPES = [BW_FIGHTER, BW_ELITE, BW_ELITE2]
 
 
 class RheinlandAllShip(Suprise):
     DEFAULT_ARCHETYPES = [RH_FIGHTER, RH_ELITE, RH_FREIGHTER, BW_FIGHTER, BW_ELITE, BW_ELITE2, BW_FREIGHTER]
+
+
+class KusariMainFighter(Suprise):
+    DROP_HARDPOINT = 'HpShield01'
+    DEFAULT_ARCHETYPES = [KU_FIGHTER, KU_ELITE]

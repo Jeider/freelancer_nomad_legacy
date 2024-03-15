@@ -170,7 +170,7 @@ class BaseFileAppearanceZone(Zone):
             params['music'] = self.MUSIC
         if self.PROPERTY_FLAGS:
             params['property_flags'] = self.PROPERTY_FLAGS
-        if self.PROPERTY_FLAGS:
+        if self.PROPERTY_FOG_COLOR:
             params['property_fog_color'] = self.PROPERTY_FOG_COLOR
         if self.SPACEDUST:
             params['spacedust'] = self.SPACEDUST

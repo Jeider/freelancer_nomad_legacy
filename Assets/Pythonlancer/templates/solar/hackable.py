@@ -20,3 +20,10 @@ class HackableRheinlandBattleship(HackableSolar):
     ARCHETYPE = 'suprise_rh_battleship'
     ROTATE = (0, -90, 0)
     PANEL_RELATION = REL_FRONT
+
+
+class HackableKusariBattleship(HackableSolar):
+    OFFSET = (0, 52, 110)
+    ARCHETYPE = 'suprise_ku_battleship'
+    ROTATE = (0, 0, 0)
+    PANEL_RELATION = REL_TOP

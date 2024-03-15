@@ -171,6 +171,55 @@ exclusion = {zone_name}
 exclude_dynamic_asteroids = 1
 '''
 
+MINES_FIELD_TEMPLATE = '''
+cube_size = 500
+fill_dist = 1500
+diffuse_color = 200, 200, 200
+ambient_color = 110, 110, 110
+ambient_increase = 80, 80, 80
+empty_cube_frequency = 0.0
+'''
+
+MINES_CUBE_TEMPLATE = '''
+asteroid = mine_spike_minedout, 0.200000, 0.800000, 0.300000, 45, 20, 0, mine
+asteroid = mine_spike_minedout, 0.600000, 0.200000, -0.200000, 35, 10, 20, mine
+asteroid = mine_spike_minedout, 0.400000, -0.700000, -0.200000, 15, 90, 120, mine
+asteroid = mine_spike_minedout, -0.200000, -0.100000, -0.600000, 105, 160, 25, mine
+asteroid = mine_spike_minedout, 0.500000, -0.200000, -0.600000, 75, 30, 70, mine
+asteroid = mine_spike_minedout, -0.700000, 0.400000, -0.400000, 75, 30, 70, mine
+asteroid = mine_spike_minedout, -0.200000, 0.600000, 0.600000, 105, 160, 25, mine
+asteroid = mine_spike_minedout, -0.500000, -0.200000, 0.600000, 75, 30, 70, mine
+'''
+
+MINES_BILLBOARD_TEMPLATE = '''
+[AsteroidBillboards]
+count = 600
+start_dist = 2500
+fade_dist_percent = 0.900000
+shape = spike_mine_tri_minedout
+size = 300, 300
+'''
+
+DYNAST_BADLANDS = '''
+[DynamicAsteroids]
+asteroid = mod_dbadlands_large
+count = 40
+placement_radius = 1200.000000
+placement_offset = 500.000000
+max_velocity = 3.000000
+max_angular_velocity = 0.05000000
+color_shift = 1.000000, 1.000000, 1.000000
+
+[DynamicAsteroids]
+asteroid = mod_dbadlands_large
+count = 40
+placement_radius = 1500.000000
+placement_offset = 800.000000
+max_velocity = 5.000000
+max_angular_velocity = 0.05000000
+color_shift = 1.000000, 1.000000, 1.000000
+'''
+
 
 class AsteroidDefinition(object):
     ABSTRACT = True
@@ -272,3 +321,20 @@ class Omega15NiobiumAsteroidDefinition(Omega15AsteroidDefinition):
     LOOT = True
     LOOT_CONTAINER = 'lootcrate_ast_loot_niobium'
     LOOT_COMMODITY = 'comm_roid_niobium'
+
+
+class SpaceMines(AsteroidDefinition):
+    FIELD = True
+    CUBE = True
+    BILLBOARDS = True
+    FIELD_TEMPLATE = MINES_FIELD_TEMPLATE
+    CUBE_TEMPLATE = MINES_CUBE_TEMPLATE
+    BILLBOARD_TEMPLATE = MINES_BILLBOARD_TEMPLATE
+    SHAPES = [
+        SHAPES_MINES,
+    ]
+
+
+class BadlansDynasteroids(AsteroidDefinition):
+    DYNAST = True
+    DYNAST_TEMPLATE = DYNAST_BADLANDS

@@ -33,6 +33,8 @@ class AppearableObject(SystemObject):
     ARCHETYPE = None
     LOADOUT = None
 
+    LOCKED_DOCK = False
+
     ARCHETYPE_TEMPLATE = '''[Object]
 nickname = {nickname}
 ids_name = {ids_name}
@@ -466,7 +468,7 @@ parent = {parent_planet}'''
             return
 
         if self.get_sphere_radius() not in self.PLANET_RADIUSES:
-            raise Exception('planet %s have invalid radius' % self.__class.__name__)
+            raise Exception('planet %s have invalid radius' % self.__class__.__name__)
 
         pos_x, pos_y, pos_z = self.get_position()
         spin = ''
@@ -628,8 +630,6 @@ BGCS_base_run_by = W02bF44'''
     ALLOW_SPACE_COSTUME = True
 
     DEFENCE_LEVEL = DEFENCE_MEDIUM
-
-    LOCKED_DOCK = False
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -980,6 +980,14 @@ class HackableStation(Hackable):
 
 class HackableBattleship(Hackable):
     AUDIO_PREFIX = SpaceVoice.BATTLESHIP
+
+
+class LockedBattleship(Station):
+    AUDIO_PREFIX = SpaceVoice.BATTLESHIP
+    LOCKED_DOCK = True
+    ROTATE_RANDOM = True
+    RANDOM_ROBOT = True
+    DEFENCE_LEVEL = None
 
 
 class PatrolObjective(SystemObject):

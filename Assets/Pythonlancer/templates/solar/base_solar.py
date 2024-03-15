@@ -17,3 +17,6 @@ class MineableSolar(object):
 
     def get_init_loadout_items(self):
         return None
+
+    def get_drop_hardpoint(self):
+        return None
