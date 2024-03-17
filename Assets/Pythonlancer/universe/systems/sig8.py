@@ -11,9 +11,12 @@ from universe.content import dealers
 from universe.content.space_voice import SpaceVoice
 from universe.content import faction
 from universe.content import mineable
+from templates.nebula import sig8_nebula
+from templates.nebula import exclusion
 
 from templates.solar import hackable
 from templates.solar import asteroid as asteroid_solar
+from templates.nebula import sig8_nebula
 from templates.dockable import pirate
 from templates.dockable import asteroid as asteroid_base
 from templates.dockable import trade_storages
@@ -203,6 +206,71 @@ filename = missions\\npc\\co\\co_grp_main_patrol.ini
 '''
 
 
+BROWN_EXCLUSION_PARAMS = {
+    'zone_shell': exclusion.EDGE_EXCLUSION,
+    'shell_scalar': 1.1,
+    'max_alpha': 0.5,
+    'exclusion_tint': '100, 80, 10',
+    'fog_far': 5000,
+}
+
+
+EDGE_EXCLUSION_PARAMS = {
+    'zone_shell': exclusion.EDGE_EXCLUSION,
+    'shell_scalar': 1.1,
+    'max_alpha': 0.5,
+    'exclusion_tint': '200, 255, 200',
+    'fog_far': 5000,
+}
+
+
+class Sig8GreenNebula1(Sigma8Member, zones.TemplatedNebulaZone):
+    INDEX = 1
+    FILE_NAME = 'gen_sig8_green_nebula1'
+    SPACEDUST = Dust.ATTRACT_GREEN
+    SPACEDUST_MAXPARTICLES = 40
+    MUSIC = Ambience.BADLANDS
+    CONTENT_TEMPLATE = sig8_nebula.Sig8LargeEdgeNebulaTemplate
+
+    PROPERTY_FLAGS = 32768
+    PROPERTY_FOG_COLOR = '0, 255, 0'
+
+
+class Sig8GreenNebula2(Sigma8Member, zones.TemplatedNebulaZone):
+    INDEX = 2
+    FILE_NAME = 'gen_sig8_green_nebula2'
+    SPACEDUST = Dust.ATTRACT_GREEN
+    SPACEDUST_MAXPARTICLES = 40
+    MUSIC = Ambience.BADLANDS
+    CONTENT_TEMPLATE = sig8_nebula.Sig8LargeEdgeNebulaTemplate
+
+    PROPERTY_FLAGS = 32768
+    PROPERTY_FOG_COLOR = '0, 255, 0'
+
+
+class Sig8BrownNebula1(Sigma8Member, zones.TemplatedNebulaZone):
+    INDEX = 3
+    FILE_NAME = 'gen_sig8_brown_nebula1'
+    SPACEDUST = Dust.ATTRACT
+    SPACEDUST_MAXPARTICLES = 40
+    MUSIC = Ambience.NEBULA_DMATTER
+    CONTENT_TEMPLATE = sig8_nebula.Sig8BrownNebulaTemplate
+
+    PROPERTY_FLAGS = 32768
+    PROPERTY_FOG_COLOR = '100, 80, 10'
+
+
+class Sig8BrownNebula2(Sigma8Member, zones.TemplatedNebulaZone):
+    INDEX = 4
+    FILE_NAME = 'gen_sig8_brown_nebula2'
+    SPACEDUST = Dust.ATTRACT
+    SPACEDUST_MAXPARTICLES = 40
+    MUSIC = Ambience.NEBULA_DMATTER
+    CONTENT_TEMPLATE = sig8_nebula.Sig8BrownNebulaTemplate
+
+    PROPERTY_FLAGS = 32768
+    PROPERTY_FOG_COLOR = '100, 80, 10'
+
 
 
 class Sig8BaseAsteroidDefinition(asteroid_definition.Omega15NiobiumAsteroidDefinition):
@@ -326,6 +394,10 @@ class Sig8Junkers(Sigma8Member, main_objects.JunkerBase):
     INTERIOR_CLASS = interior.PirateStationInterior
     DEALERS = dealers.RheinlandCivilianDealers
 
+    NEBULA_EXCLUSION_ZONE_SIZE = 2500
+    EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS
+    NEBULA_ZONES = [Sig8GreenNebula2]
+
 
 class Sig8Pirate(Sigma8Member, main_objects.PirateBase):
     INDEX = 1
@@ -340,6 +412,46 @@ class Sig8Pirate(Sigma8Member, main_objects.PirateBase):
     AUDIO_PREFIX = SpaceVoice.STATION
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.RheinlandCivilianDealers
+
+    NEBULA_EXCLUSION_ZONE_SIZE = 3500
+    EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS
+    NEBULA_ZONES = [Sig8GreenNebula1]
+
+
+class Sig8TemporaryBizmarkJumppoint(Sigma8Member, main_objects.VirtualDepot):
+    REL = TOP
+
+    NEBULA_EXCLUSION_ZONE_SIZE = 2500
+    EXCLUSION_PARAMS = BROWN_EXCLUSION_PARAMS
+    NEBULA_ZONES = [Sig8BrownNebula1]
+
+
+class Sig8TemporaryKoenigsbergJumppoint(Sigma8Member, main_objects.VirtualDepot):
+    INDEX = 2
+    REL = TOP
+
+    NEBULA_EXCLUSION_ZONE_SIZE = 2500
+    EXCLUSION_PARAMS = BROWN_EXCLUSION_PARAMS
+    NEBULA_ZONES = [Sig8BrownNebula2]
+
+
+class Sig8TemporaryOmicronJumppoint(Sigma8Member, main_objects.VirtualDepot):
+    INDEX = 3
+    REL = TOP
+
+    NEBULA_EXCLUSION_ZONE_SIZE = 2500
+    EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS
+    NEBULA_ZONES = [Sig8GreenNebula2]
+
+
+class Sig8TemporaryForbesJumppoint(Sigma8Member, main_objects.VirtualDepot):
+    INDEX = 4
+    REL = TOP
+
+    NEBULA_EXCLUSION_ZONE_SIZE = 2500
+    EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS
+    NEBULA_ZONES = [Sig8GreenNebula2]
+
 
 
 class Sigma8Planet1(Sigma8Member, main_objects.Planet):
@@ -478,38 +590,6 @@ class Sig8BrokenConn1(Sigma8Member, main_objects.BrokenTradeConnection):
     ATTACKED_BY = [
         Sig8Junkers,
     ]
-
-
-class Sig8GreenNebula1(Sigma8Member, zones.NebulaZone):
-    INDEX = 1
-    FILE_NAME = 'sig8_green_nebula'
-    SPACEDUST = Dust.ATTRACT_GREEN
-    SPACEDUST_MAXPARTICLES = 40
-    MUSIC = Ambience.BADLANDS
-
-
-class Sig8GreenNebula2(Sigma8Member, zones.NebulaZone):
-    INDEX = 2
-    FILE_NAME = 'sig8_green_nebula'
-    SPACEDUST = Dust.ATTRACT_GREEN
-    SPACEDUST_MAXPARTICLES = 40
-    MUSIC = Ambience.BADLANDS
-
-
-class Sig8BrownNebula1(Sigma8Member, zones.NebulaZone):
-    INDEX = 3
-    FILE_NAME = 'sig8_brown_nebula'
-    SPACEDUST = Dust.ATTRACT
-    SPACEDUST_MAXPARTICLES = 40
-    MUSIC = Ambience.NEBULA_DMATTER
-
-
-class Sig8BrownNebula2(Sigma8Member, zones.NebulaZone):
-    INDEX = 4
-    FILE_NAME = 'sig8_brown_nebula'
-    SPACEDUST = Dust.ATTRACT
-    SPACEDUST_MAXPARTICLES = 40
-    MUSIC = Ambience.NEBULA_DMATTER
 
 
 class Sigma8EastAsteroidReward(Sigma8Member, mineable.AsteroidRewardsGroupMedium):

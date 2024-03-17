@@ -306,6 +306,9 @@ class VirtualDepot(StaticObject):
     def get_system_content(self):
         return ''
 
+    def get_inspace_nickname(self):
+        return '{system_name}_virtual_{index}'.format(system_name=self.system.NAME, index=self.INDEX)
+
 
 class RawText(SystemObject):
     SPACE_CONTENT = ''

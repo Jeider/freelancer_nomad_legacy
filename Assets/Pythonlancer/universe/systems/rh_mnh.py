@@ -15,15 +15,10 @@ from templates.solar import hackable
 from templates.nebula import rh_mnh_blue_nebula
 from templates.nebula import exclusion
 
-
-from templates.dockable import pirate
 from templates.dockable import asteroid as asteroid_base
 from templates.dockable import trading_outposts
 from templates.dockable import station_debris
-from templates.dockable import constanta
 from templates.dockable import junker
-from templates.dockable import research
-from templates.dockable import rheinland_military
 
 
 class MunchMember(object):
@@ -177,10 +172,19 @@ class MunchBlueNebula(zones.TemplatedNebulaZone):
 
 
 BLUE_EXCLUSION_PARAMS = {
-    'zone_shell': exclusion.BARRIER_EXCLUSION,
+    'zone_shell': exclusion.LINES_EXCLUSION,
     'shell_scalar': 1,
     'max_alpha': 0.3,
-    'exclusion_tint': '75, 50, 250',
+    'exclusion_tint': '255, 255, 255',
+    'fog_far': 5000,
+}
+
+
+BLUE_ALT_EXCLUSION_PARAMS = {
+    'zone_shell': exclusion.VORTEX_EXCLUSION,
+    'shell_scalar': 1,
+    'max_alpha': 0.3,
+    'exclusion_tint': '255, 255, 255',
     'fog_far': 5000,
 }
 
@@ -511,10 +515,6 @@ class MunchBattleStationRuins(MunchMember, main_objects.NotDockableObject):
 
     SPACE_OBJECT_TEMPLATE = station_debris.MunchenBattleStationDebris
 
-    # ASTEROID_ZONES = [
-    #     Om15GasPocketsZone1,
-    # ]
-
 
 class MunchOutcastBase(MunchMember, main_objects.PirateBase):
     BASE_INDEX = 3
@@ -553,7 +553,7 @@ class MunchJunkersBase(MunchMember, main_objects.PirateBase):
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.RheinlandPirateDealers
 
-    EXCLUSION_PARAMS = BLUE_EXCLUSION_PARAMS
+    EXCLUSION_PARAMS = BLUE_ALT_EXCLUSION_PARAMS
     NEBULA_ZONES = [
         MunchSmallNebula
     ]

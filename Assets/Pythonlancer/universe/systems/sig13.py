@@ -7,14 +7,13 @@ from universe.content.zones import TemplatedNebulaZone, AsteroidZone
 from universe.content.asteroid_definition import AsteroidDefinition
 from universe.content import interior
 from universe.content import dealers
-from universe.content.space_voice import SpaceVoice
 from universe.content import faction
 
 from templates.dockable.gas_miner import BretoniaPirateGasMiner, RheinlandCivilianGasMiner, RheinlandPirateGasMiner, CadizGasMiner
 from templates.dockable.trade_storages import HonshuStorage
 
 from universe.content.mineable import DefaultGasCrystalRewardsGroup, DefaultField, GasCrystalRewardField, ComplexGasCrystalRewardField
-from templates.nebula.exclusion import CROW_EXCLUSION, BARRIER_EXCLUSION
+from templates.nebula import exclusion
 from templates.nebula.sig13_blue_nebula import Sig13BlueNebulaTemplate
 from templates.solar.gas_crystal import SimpleCrystalAsteroid, ComplexCrystalAsteroid
 
@@ -194,7 +193,7 @@ filename = missions\\npc\\rh\\bh_grp_rh_trade_tlr.ini
 '''
 
 CROW_EXCLUSION_PARAMS = {
-    'zone_shell': CROW_EXCLUSION,
+    'zone_shell': exclusion.CROW_EXCLUSION,
     'shell_scalar': 1.1,
     'max_alpha': 0.5,
     'exclusion_tint': '255, 255, 200',
@@ -203,10 +202,10 @@ CROW_EXCLUSION_PARAMS = {
 
 
 BARRIER_EXCLUSION_PARAMS = {
-    'zone_shell': BARRIER_EXCLUSION,
+    'zone_shell': exclusion.GENERIC_EXCLUSION,
     'shell_scalar': 1,
     'max_alpha': 0.3,
-    'exclusion_tint': '0, 125, 255',
+    'exclusion_tint': '50, 200, 255',
     'fog_far': 5000,
 }
 
