@@ -129,7 +129,7 @@ class StaticObject(AppearableObject):
     NEBULA_EXCLUSION_ZONE_SIZE = 3000
     NEBULA_ZONE_NAME_TEMPLATE = 'Zone_{space_name}_nebula_exclusion'
     EXCLUSION_PARAMS = {}
-    NEBULA_EXCLUSION_EDGE_FRACTION = 0.2
+    NEBULA_EXCLUSION_EDGE_FRACTION = 0.5
     NEBULA_EXCLUSION_ZONE_PARAMS = {}
 
     RING_ZONE_NAME_TEMPLATE = 'Zone_{space_name}_ring'

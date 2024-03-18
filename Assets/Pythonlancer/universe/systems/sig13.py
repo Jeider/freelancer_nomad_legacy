@@ -9,15 +9,13 @@ from universe.content import interior
 from universe.content import dealers
 from universe.content import faction
 
-from templates.dockable.gas_miner import BretoniaPirateGasMiner, RheinlandCivilianGasMiner, RheinlandPirateGasMiner, CadizGasMiner
-from templates.dockable.trade_storages import HonshuStorage
+from templates.dockable import gas_miner
+from templates.dockable import trade_storages
 
-from universe.content.mineable import DefaultGasCrystalRewardsGroup, DefaultField, GasCrystalRewardField, ComplexGasCrystalRewardField
+from universe.content import mineable
 from templates.nebula import exclusion
-from templates.nebula.sig13_blue_nebula import Sig13BlueNebulaTemplate
-from templates.solar.gas_crystal import SimpleCrystalAsteroid, ComplexCrystalAsteroid
-
-
+from templates.nebula import sig13_blue_nebula
+from templates.solar import gas_crystal
 
 
 
@@ -201,11 +199,20 @@ CROW_EXCLUSION_PARAMS = {
 }
 
 
-BARRIER_EXCLUSION_PARAMS = {
+GENERIC_EXCLUSION_PARAMS = {
     'zone_shell': exclusion.GENERIC_EXCLUSION,
     'shell_scalar': 1,
-    'max_alpha': 0.3,
-    'exclusion_tint': '50, 200, 255',
+    'max_alpha': 0.8,
+    'exclusion_tint': '20, 150, 255',
+    'fog_far': 5000,
+}
+
+
+ICE_EXCLUSION_PARAMS = {
+    'zone_shell': exclusion.ICE_EXCLUSION,
+    'shell_scalar': 1,
+    'max_alpha': 0.8,
+    'exclusion_tint': '20, 150, 255',
     'fog_far': 5000,
 }
 
@@ -218,7 +225,7 @@ class Sig13Nebula(Sigma13Member, TemplatedNebulaZone):
     SPACEDUST = Dust.ATTRACT
     SPACEDUST_MAXPARTICLES = 50
     MUSIC = Ambience.NEBULA_CROW
-    CONTENT_TEMPLATE = Sig13BlueNebulaTemplate
+    CONTENT_TEMPLATE = sig13_blue_nebula.Sig13BlueNebulaTemplate
     INTERFERENCE = 0.5
 
     PROPERTY_FLAGS = 32768
@@ -256,7 +263,7 @@ class Sig13LibertyStation(Sigma13Member, Sig13Liberty, main_objects.Station):
     DEALERS = dealers.LibertyCivilianDealers
 
     NEBULA_EXCLUSION_ZONE_SIZE = 5000
-    EXCLUSION_PARAMS = BARRIER_EXCLUSION_PARAMS
+    EXCLUSION_PARAMS = GENERIC_EXCLUSION_PARAMS
     NEBULA_ZONES = [Sig13Nebula]
     INTERIOR_BG1 = interior.INTERIOR_BG_CROW
 
@@ -268,13 +275,13 @@ class Sig13RheinlandStation(Sigma13Member, Sig13Rheinland, main_objects.Station)
     BASE_INDEX = 1
     REL = RIGHT
     REL_APPEND = 1500
-    SPACE_OBJECT_TEMPLATE = RheinlandCivilianGasMiner
+    SPACE_OBJECT_TEMPLATE = gas_miner.RheinlandCivilianGasMiner
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.RheinlandCivilianDealers
     FACTION = faction.RH_GRP
 
     NEBULA_EXCLUSION_ZONE_SIZE = 3000
-    EXCLUSION_PARAMS = BARRIER_EXCLUSION_PARAMS
+    EXCLUSION_PARAMS = GENERIC_EXCLUSION_PARAMS
     NEBULA_ZONES = [Sig13Nebula]
     INTERIOR_BG1 = interior.INTERIOR_BG_CROW
 
@@ -298,14 +305,14 @@ class Sig13Freeport(Sigma13Member, Sig13Liberty, main_objects.Freeport):
     BASE_INDEX = 5
     REL = LEFT
     REL_APPEND = 1000
-    SPACE_OBJECT_TEMPLATE = HonshuStorage
+    SPACE_OBJECT_TEMPLATE = trade_storages.HonshuStorage
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.RheinlandMilitaryDealers
     FACTION = faction.LI_GRP
     ROTATE_RANDOM = True
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
-    EXCLUSION_PARAMS = BARRIER_EXCLUSION_PARAMS
+    EXCLUSION_PARAMS = GENERIC_EXCLUSION_PARAMS
     NEBULA_ZONES = [Sig13Nebula]
     INTERIOR_BG1 = interior.INTERIOR_BG_CROW
 
@@ -314,7 +321,7 @@ class Sig13PirateTopRight(Sigma13Member, Sig13Liberty, main_objects.PirateBase):
     BASE_INDEX = 6
     INDEX = 1
     REL = RIGHT
-    SPACE_OBJECT_TEMPLATE = CadizGasMiner
+    SPACE_OBJECT_TEMPLATE = gas_miner.CadizGasMiner
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.LibertyPirateDealers
     FACTION = faction.LX_GRP
@@ -330,7 +337,7 @@ class Sig13PirateTopLeft(Sigma13Member, Sig13Liberty, main_objects.PirateBase):
     BASE_INDEX = 7
     INDEX = 2
     REL = TOP
-    SPACE_OBJECT_TEMPLATE = RheinlandPirateGasMiner
+    SPACE_OBJECT_TEMPLATE = gas_miner.RheinlandPirateGasMiner
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.LibertyPirateDealers
     FACTION = faction.LX_GRP
@@ -346,7 +353,7 @@ class Sig13PirateBottom(Sigma13Member, Sig13Rheinland, main_objects.PirateBase):
     BASE_INDEX = 8
     INDEX = 3
     REL = BOTTOM
-    SPACE_OBJECT_TEMPLATE = BretoniaPirateGasMiner
+    SPACE_OBJECT_TEMPLATE = gas_miner.BretoniaPirateGasMiner
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.RheinlandPirateDealers
     FACTION = faction.RX_GRP
@@ -503,7 +510,7 @@ class Sig13BaseAbandonedMiner(main_objects.AbandonedAsteroid):
 
     NEBULA_EXCLUSION_ZONE_SIZE = 8500
     AST_EXCLUSION_ZONE_SIZE = 2000
-    EXCLUSION_PARAMS = CROW_EXCLUSION_PARAMS
+    EXCLUSION_PARAMS = ICE_EXCLUSION_PARAMS
     NEBULA_ZONES = [Sig13Nebula]
     INTERIOR_BG1 = interior.INTERIOR_BG_CROW
     AST_EXCLUSION_ZONE_PARAMS = {
@@ -621,9 +628,9 @@ class Sig13GasMiner9(Sigma13Member, Sig13BaseLibertyGasMiner):
     BASE_INDEX = 59
 
 
-class Sig13SimpleCrystalRewards(Sigma13Member, DefaultGasCrystalRewardsGroup):
+class Sig13SimpleCrystalRewards(Sigma13Member, mineable.DefaultGasCrystalRewardsGroup):
     NAME = 'sig13_gascryst_simple1'
-    SOLAR = SimpleCrystalAsteroid
+    SOLAR = gas_crystal.SimpleCrystalAsteroid
     REWARD_ITEM = 'comm_gas_balloons'
     ULTRA_REWARD_BASES = [
         Sig13GasMiner1,
@@ -637,7 +644,7 @@ class Sig13SimpleCrystalRewards(Sigma13Member, DefaultGasCrystalRewardsGroup):
         Sig13GasMiner9,
     ]
 
-class Sig13SimpleCrystalField(DefaultField):
+class Sig13SimpleCrystalField(mineable.DefaultField):
     BOX_SIZE = 1000
     DENSITY_MULTIPLER = 2
     DRIFT_X = 0.4
@@ -646,7 +653,7 @@ class Sig13SimpleCrystalField(DefaultField):
     EMPTY_CHANCE = 0.3
 
 
-class Sig13BaseSimpleGasCrystalField(GasCrystalRewardField):
+class Sig13BaseSimpleGasCrystalField(mineable.GasCrystalRewardField):
     FIELD_NAME = None
     FIELD_CLASS = Sig13SimpleCrystalField
     REWARDS_GROUP_CLASS = Sig13SimpleCrystalRewards
@@ -733,9 +740,9 @@ class Sig13AbandonedMiner3(Sigma13Member, Sig13Liberty, Sig13BaseAbandonedMiner)
     ]
 
 
-class Sig13ComplexCrystalRewards(Sigma13Member, DefaultGasCrystalRewardsGroup):
+class Sig13ComplexCrystalRewards(Sigma13Member, mineable.DefaultGasCrystalRewardsGroup):
     NAME = 'sig13_gascryst_complex1'
-    SOLAR = ComplexCrystalAsteroid
+    SOLAR = gas_crystal.ComplexCrystalAsteroid
     REWARD_ITEM = 'comm_gas_balloons'
     ULTRA_REWARD_BASES = [
         Sig13AbandonedMiner1,
@@ -744,7 +751,7 @@ class Sig13ComplexCrystalRewards(Sigma13Member, DefaultGasCrystalRewardsGroup):
     ]
 
 
-class Sig13ComplexCrystalField(DefaultField):
+class Sig13ComplexCrystalField(mineable.DefaultField):
     BOX_SIZE = 1400
     DENSITY_MULTIPLER = 1
     DRIFT_X = 0.3
@@ -752,7 +759,7 @@ class Sig13ComplexCrystalField(DefaultField):
     DRIFT_Z = 0.3
 
 
-class Sig13BaseComplexGasCrystalField(ComplexGasCrystalRewardField):
+class Sig13BaseComplexGasCrystalField(mineable.ComplexGasCrystalRewardField):
     FIELD_NAME = None
     FIELD_CLASS = Sig13ComplexCrystalField
     REWARDS_GROUP_CLASS = Sig13ComplexCrystalRewards
