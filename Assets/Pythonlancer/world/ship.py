@@ -1200,7 +1200,7 @@ class Barracuda(LibertyShip, ShipFighter, Ship1, Ship):
 class Hammerhead(LibertyShip, ShipFighter, Ship2, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_LIBERTY_ELITE, CLASS_LIBERTY_FIGHTER_ONLY]
     SHIP_INDEX = SHIP_INDEX_7
-    SHIELD_LINK = 'bh_elite2_shield01'
+    SHIELD_LINK = 'bh_elite_shield01'
     ENGINE_TYPE = ENGINE_DOUBLE_SAME
     LIGHTS = 6
 

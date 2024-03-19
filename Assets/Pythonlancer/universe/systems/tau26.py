@@ -14,7 +14,7 @@ from templates.solar import asteroid as asteroid_solar
 from templates.solar import debris_box
 
 from templates.dockable import pirate
-from templates.dockable import asteroid as asteroid_base
+from templates.dockable import astbase
 from templates.dockable import trade_storages
 from templates.dockable import columbia_production
 from templates.dockable import constanta

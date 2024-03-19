@@ -16,12 +16,7 @@ from templates.nebula import exclusion
 
 from templates.solar import hackable
 from templates.solar import asteroid as asteroid_solar
-from templates.nebula import sig8_nebula
 from templates.dockable import pirate
-from templates.dockable import asteroid as asteroid_base
-from templates.dockable import trade_storages
-from templates.dockable import columbia_production
-from templates.dockable import constanta
 from templates.dockable import station_debris
 from templates.dockable import junker
 from templates.dockable import police
@@ -101,108 +96,6 @@ color = 24, 34, 25
 range = 100000
 type = DIRECTIONAL
 atten_curve = DYNAMIC_DIRECTION
-
-
-[EncounterParameters]
-nickname = rh_grp_main_defend
-filename = missions\\npc\\rh\\rh_grp_main_defend.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_scout
-filename = missions\\npc\\rh\\rh_grp_main_scout.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_gunboat
-filename = missions\\npc\\rh\\rh_grp_main_gunboat.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_elite2
-filename = missions\\npc\\rh\\rh_grp_main_elite2.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_trade
-filename = missions\\npc\\rh\\rh_grp_main_trade.ini
-
-[EncounterParameters]
-nickname = bh_grp_rh_trade
-filename = missions\\npc\\rh\\bh_grp_rh_trade.ini
-
-[EncounterParameters]
-nickname = bh_grp_rh_scout
-filename = missions\\npc\\rh\\bh_grp_rh_scout.ini
-
-[EncounterParameters]
-nickname = tr_grp_rh_transport
-filename = missions\\npc\\rh\\tr_grp_rh_transport.ini
-
-[EncounterParameters]
-nickname = co_grp_main_defend
-filename = missions\\npc\\co\\co_grp_main_defend.ini
-
-[EncounterParameters]
-nickname = co_grp_main_assault
-filename = missions\\npc\\co\\co_grp_main_assault.ini
-
-[EncounterParameters]
-nickname = rx_grp_main_defend
-filename = missions\\npc\\pi\\rx_grp_main_defend.ini
-
-[EncounterParameters]
-nickname = pi_grp_rh_assault
-filename = missions\\npc\\pi\\pi_grp_rh_assault.ini
-
-[EncounterParameters]
-nickname = area_xscout
-filename = missions\\NPC\\area_rebels.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_trade_tlr
-filename = missions\\npc\\rh\\rh_grp_main_trade_tlr.ini
-
-[EncounterParameters]
-nickname = tr_grp_rh_transport_tlr
-filename = missions\\npc\\rh\\tr_grp_rh_transport_tlr.ini
-
-[EncounterParameters]
-nickname = bh_grp_rh_trade_tlr
-filename = missions\\npc\\rh\\bh_grp_rh_trade_tlr.ini
-
-[EncounterParameters]
-nickname = rh_pirates_patrol
-filename = missions\\npc\\pi\\pi_grp_rh_patrol.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_patrol
-filename = missions\\npc\\rh\\rh_grp_main_patrol.ini
-
-[EncounterParameters]
-nickname = rx_grp_main_patrol
-filename = missions\\npc\\pi\\rx_grp_main_patrol.ini
-
-[EncounterParameters]
-nickname = patrol_tlr
-filename = missions\\NPC\\patrol_tlr.ini
-
-[EncounterParameters]
-nickname = patrol_police
-filename = missions\\NPC\\patrol_police.ini
-
-[EncounterParameters]
-nickname = bh_grp_rh_patrol
-filename = missions\\npc\\rh\\bh_grp_rh_patrol.ini
-
-[EncounterParameters]
-nickname = rx_grp_patrol_trade
-filename = missions\\NPC\\PI\\rx_grp_patrol_trade.ini
-
-[EncounterParameters]
-nickname = rh_junkers
-filename = missions\\npc\\rh\\rh_junkers.ini
-
-[EncounterParameters]
-nickname = co_grp_main_patrol
-filename = missions\\npc\\co\\co_grp_main_patrol.ini
-
 '''
 
 
@@ -224,7 +117,7 @@ EDGE_EXCLUSION_PARAMS = {
 }
 
 
-class Sig8GreenNebula1(Sigma8Member, zones.TemplatedNebulaZone):
+class Sig8GreenNebula1(Sigma8Member, zones.NebulaZone):
     INDEX = 1
     FILE_NAME = 'gen_sig8_green_nebula1'
     SPACEDUST = Dust.ATTRACT_GREEN
@@ -236,7 +129,7 @@ class Sig8GreenNebula1(Sigma8Member, zones.TemplatedNebulaZone):
     PROPERTY_FOG_COLOR = '0, 255, 0'
 
 
-class Sig8GreenNebula2(Sigma8Member, zones.TemplatedNebulaZone):
+class Sig8GreenNebula2(Sigma8Member, zones.NebulaZone):
     INDEX = 2
     FILE_NAME = 'gen_sig8_green_nebula2'
     SPACEDUST = Dust.ATTRACT_GREEN
@@ -248,7 +141,7 @@ class Sig8GreenNebula2(Sigma8Member, zones.TemplatedNebulaZone):
     PROPERTY_FOG_COLOR = '0, 255, 0'
 
 
-class Sig8BrownNebula1(Sigma8Member, zones.TemplatedNebulaZone):
+class Sig8BrownNebula1(Sigma8Member, zones.NebulaZone):
     INDEX = 3
     FILE_NAME = 'gen_sig8_brown_nebula1'
     SPACEDUST = Dust.ATTRACT
@@ -260,7 +153,7 @@ class Sig8BrownNebula1(Sigma8Member, zones.TemplatedNebulaZone):
     PROPERTY_FOG_COLOR = '100, 80, 10'
 
 
-class Sig8BrownNebula2(Sigma8Member, zones.TemplatedNebulaZone):
+class Sig8BrownNebula2(Sigma8Member, zones.NebulaZone):
     INDEX = 4
     FILE_NAME = 'gen_sig8_brown_nebula2'
     SPACEDUST = Dust.ATTRACT

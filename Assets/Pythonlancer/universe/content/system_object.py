@@ -1,4 +1,6 @@
-from text.dividers import SINGLE_DIVIDER, DIVIDER
+from universe.content import population
+
+
 from random import randint
 
 TOP = 'top'
@@ -56,8 +58,7 @@ class SystemObject(object):
 
     FACTION = None
 
-    LAWFUL_POPULATION_CLASS = None
-    UNLAWFUL_POPULATION_CLASS = None
+    POPULATION_KIND = population.POP_FIRST
 
     @classmethod
     def is_abstract(cls):
@@ -174,19 +175,30 @@ class SystemObject(object):
     def get_faction(self):
         return self.FACTION
 
+    def get_population_kind(self):
+        return self.POPULATION_KIND
+
     def get_lawful_population_class(self):
-        if self.LAWFUL_POPULATION_CLASS:
-            return self.LAWFUL_POPULATION_CLASS
-        elif self.system.LAWFUL_POPULATION_CLASS:
-            return self.system.LAWFUL_POPULATION_CLASS
-        raise Exception('lawful population class isnt defined for %s' % self.__class__.__name__)
+        population_kind = self.get_population_kind()
+        if population_kind == population.POP_FIRST:
+            return self.system.FIRST_LAWFUL_POPULATION_CLASS
+        if population_kind == population.POP_SECOND:
+            return self.system.SECOND_LAWFUL_POPULATION_CLASS
+        if population_kind == population.POP_MIXED:
+            raise Exception('mixed pop nop supported for %s' % self.__class__.__name__)
+
+        raise Exception('unknown lawful population kind for %s' % self.__class__.__name__)
 
     def get_unlawful_population_class(self):
-        if self.UNLAWFUL_POPULATION_CLASS:
-            return self.UNLAWFUL_POPULATION_CLASS
-        elif self.system.UNLAWFUL_POPULATION_CLASS:
-            return self.system.UNLAWFUL_POPULATION_CLASS
-        raise Exception('unlawful population class isnt defined for %s' % self.__class__.__name__)
+        population_kind = self.get_population_kind()
+        if population_kind == population.POP_FIRST:
+            return self.system.FIRST_UNLAWFUL_POPULATION_CLASS
+        if population_kind == population.POP_SECOND:
+            return self.system.SECOND_UNLAWFUL_POPULATION_CLASS
+        if population_kind == population.POP_MIXED:
+            raise Exception('mixed pop nop supported for %s' % self.__class__.__name__)
+
+        raise Exception('unknown unlawful population kind for %s' % self.__class__.__name__)
 
     def get_loadouts(self):
         return []

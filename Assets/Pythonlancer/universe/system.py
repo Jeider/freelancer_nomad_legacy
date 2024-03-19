@@ -1,20 +1,11 @@
 from universe.content.system_object import SystemObject
 from universe.content.main_objects import RawText, TradeConnection, JumpableObject, DockableObject, StaticObject
-from universe.content.zones import Zone, BaseAsteroidZone, NebulaZone, TemplatedNebulaZone
+from universe.content import zones
 from universe.content.asteroid_definition import AsteroidDefinition
 from universe.content.mineable import Mineable, RewardField, Field, RewardsGroup
 from universe.content import interior
 from universe.content import faction
 from universe.content import population
-
-from universe.systems import br_wrw as br_wrw_objects
-from universe.systems import rh_ber as rh_ber_content
-from universe.systems import sig13 as sig13_content
-from universe.systems import rh_biz as rh_biz_content
-from universe.systems import sig8 as sig8_content
-from universe.systems import rh_stut as rh_stut_content
-from universe.systems import om15 as om15_content
-from universe.systems import rh_mnh as rh_mnh_content
 
 from text.dividers import DIVIDER
 
@@ -55,8 +46,11 @@ distance = {tlr_distance}
     LAWFUL_FACTIONS = []
     UNLAWFUL_FACTIONS = []
 
-    LAWFUL_POPULATION_CLASS = None
-    UNLAWFUL_POPULATION_CLASS = None
+    FIRST_LAWFUL_POPULATION_CLASS = None
+    FIRST_UNLAWFUL_POPULATION_CLASS = None
+
+    SECOND_LAWFUL_POPULATION_CLASS = None
+    SECOND_UNLAWFUL_POPULATION_CLASS = None
 
     ENABLE_POPULATION = True
 
@@ -111,10 +105,6 @@ distance = {tlr_distance}
             if not isinstance(item, type):
                 continue
 
-            if issubclass(item, AsteroidDefinition) and not item.ABSTRACT:
-                self.add_asteroid_definition(item)
-                continue
-
             if not issubclass(item, RewardsGroup) and not issubclass(item, SystemObject):
                 continue
 
@@ -141,7 +131,7 @@ distance = {tlr_distance}
                 self.add_mineable(item)
             elif issubclass(item, TradeConnection):
                 self.add_trade_connection(item)
-            elif issubclass(item, Zone):
+            elif issubclass(item, zones.Zone):
                 self.add_static_zone(item)
 
         self.process_reward_groups()
@@ -150,6 +140,8 @@ distance = {tlr_distance}
 
         for raw_text in self.raw_texts:
             system_content.append(raw_text.get_system_content())
+
+        system_content.append(self.get_encounters_definitions())
 
         for asteroid_zone in self.asteroid_zones:
             system_content.append(asteroid_zone.get_asteroid_definition_header())
@@ -204,12 +196,12 @@ distance = {tlr_distance}
         if len(static.ASTEROID_ZONES) > 0:
             ast_exclusion_zone_name = static.get_ast_exclusion_zone_name()
             for ast_zone in static.ASTEROID_ZONES:
-                self.asteroid_definitions_db[ast_zone.ASTEROID_DEFINITION_CLASS.NAME].add_exclusion(ast_exclusion_zone_name)
+                self.asteroid_definitions_db[ast_zone.get_full_alias()].add_exclusion(ast_exclusion_zone_name)
 
         if len(static.NEBULA_ZONES) > 0:
             nebula_exclusion_zone_name = static.get_nebula_exclusion_zone_name()
             for neb_zone in static.NEBULA_ZONES:
-                self.templated_nebulas_db[neb_zone.FILE_NAME].add_exclusion(nebula_exclusion_zone_name, static.EXCLUSION_PARAMS)
+                self.templated_nebulas_db[neb_zone.get_full_alias()].add_exclusion(nebula_exclusion_zone_name, static.EXCLUSION_PARAMS)
 
         self.dynamic_zones.extend(static.get_dynamic_zones())
 
@@ -224,20 +216,19 @@ distance = {tlr_distance}
 
     def add_static_zone(self, item):
         zone = item(self)
-        if issubclass(item, BaseAsteroidZone):
+        if issubclass(item, zones.BaseAsteroidZone):
             self.asteroid_zones.append(zone)
-        elif issubclass(item, NebulaZone):
+            if item.ASTEROID_DEFINITION_CLASS is not None:
+                definition = item.ASTEROID_DEFINITION_CLASS(self, zone)
+                self.asteroid_definitions.append(definition)
+                self.asteroid_definitions_db[zone.get_full_alias()] = definition
+
+        elif issubclass(item, zones.NebulaZone):
             self.nebula_zones.append(zone)
-            if issubclass(item, TemplatedNebulaZone):
-                self.templated_nebulas.append(zone)
-                self.templated_nebulas_db[zone.FILE_NAME] = zone
+            self.templated_nebulas.append(zone)
+            self.templated_nebulas_db[zone.get_full_alias()] = zone
 
         self.static_zones.append(zone)
-
-    def add_asteroid_definition(self, item):
-        definition = item(self)
-        self.asteroid_definitions.append(definition)
-        self.asteroid_definitions_db[definition.NAME] = definition
 
     def get_dockable_objects(self):
         return [static for static in self.statics_list if issubclass(static.__class__, DockableObject)]
@@ -390,268 +381,93 @@ distance = {tlr_distance}
 
         return entries
 
-
-class BretoniaSystem(object):
-
-    FACTION_CODE = None
-
     def get_faction(self):
         if self.FACTION_CODE is None:
-            raise Exception('unknown faction for system %s' % self.NAME)
+            raise Exception('unknown faction for system %s' % self.__class__.__name__)
         return self.FACTION_CODE
 
+    def get_lawful_factions(self):
+        factions = self.FIRST_LAWFUL_POPULATION_CLASS.get_lawful_factions()
+        if self.SECOND_LAWFUL_POPULATION_CLASS:
+            factions += self.SECOND_LAWFUL_POPULATION_CLASS.get_lawful_factions()
+        return factions
+
+    def get_unlawful_factions(self):
+        factions = self.FIRST_UNLAWFUL_POPULATION_CLASS.get_unlawful_factions()
+        if self.SECOND_LAWFUL_POPULATION_CLASS:
+            factions += self.SECOND_UNLAWFUL_POPULATION_CLASS.get_unlawful_factions()
+        return factions
+
+    def get_encounters_definitions(self):
+        pop_classes = [
+            self.FIRST_LAWFUL_POPULATION_CLASS,
+            self.FIRST_UNLAWFUL_POPULATION_CLASS,
+            self.SECOND_LAWFUL_POPULATION_CLASS,
+            self.SECOND_UNLAWFUL_POPULATION_CLASS,
+        ]
+
+        encounters = []
+        encounter_names = set()
+
+        for pop in pop_classes:
+            if not pop:
+                continue
+            for pop_enc in pop.get_encounter_definitions():
+                enc_name = pop_enc.get_nickname()
+                if enc_name not in encounter_names:
+                    encounters.append(pop_enc)
+                    encounter_names.add(enc_name)
+
+        return DIVIDER.join([enc.get_definition() for enc in encounters])
 
 
-class RheinlandSystem(object):
-
-    FACTION_CODE = None
+class RheinlandFirst(object):
+    FACTION_CODE = faction.RH_GRP
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_RH
 
-    LAWFUL_FACTIONS = [
-        faction.RH_GRP,
-        faction.BH_GRP,
-        faction.RC_GRP,
-        faction.TR_GRP,
-    ]
-    UNLAWFUL_FACTIONS = [
-        faction.RX_GRP,
-        faction.PI_GRP,
-        faction.JUNK_GRP,
-    ]
-
-    LAWFUL_POPULATION_CLASS = population.RheinlandLegalPopulation
-    UNLAWFUL_POPULATION_CLASS = None
-
-    def get_faction(self):
-        if self.FACTION_CODE is None:
-            raise Exception('unknown faction for system %s' % self.NAME)
-        return self.FACTION_CODE
-
-    def get_police_faction(self):
-        return faction.RH_GRP
-
-    def get_bounty_hunter_encounter(self):
-        return 'bh_grp_rh_patrol'
-    
-    def get_pirate_faction(self):
-        return faction.RX_GRP
+    FIRST_LAWFUL_POPULATION_CLASS = population.RheinlandLegalPopulation
+    FIRST_UNLAWFUL_POPULATION_CLASS = population.RheinlandPiratePopulation
 
 
-class rh_mnh(RheinlandSystem, System):
-    NAME = 'rh_mnh'
-    TEMPLATE_NAME = 'rh_mnh'
-    FACTION_CODE = faction.RH_GRP
-    CONTENT = rh_mnh_content
+class RheinlandSecond(object):
+    SECOND_LAWFUL_POPULATION_CLASS = population.RheinlandLegalPopulation
+    SECOND_UNLAWFUL_POPULATION_CLASS = population.RheinlandPiratePopulation
 
-    SYSTEM_FOLDER = 'RH_MUNCHEN'
-    ALLOW_SYNC = True
 
+class LibertyFirst(object):
+    ROOM_SUBFOLDER = interior.ROOM_FOLDER_LI
 
-class rh_biz(RheinlandSystem, System):
-    NAME = 'rh_biz'
-    TEMPLATE_NAME = 'rh_biz'
-    FACTION_CODE = faction.RH_GRP
-    CONTENT = rh_biz_content
+    FIRST_LAWFUL_POPULATION_CLASS = population.LibertyLegalPopulation
+    FIRST_UNLAWFUL_POPULATION_CLASS = population.LibertyPiratePopulation
 
-    SYSTEM_FOLDER = 'RH_BIZMARK'
-    ALLOW_SYNC = True
 
+class LibertySecond(object):
+    SECOND_LAWFUL_POPULATION_CLASS = population.LibertyLegalPopulation
+    SECOND_UNLAWFUL_POPULATION_CLASS = population.LibertyPiratePopulation
 
-class rh_stut(RheinlandSystem, System):
-    NAME = 'rh_stut'
-    TEMPLATE_NAME = 'rh_stut'
-    FACTION_CODE = faction.RH_GRP
-    CONTENT = rh_stut_content
 
-    SYSTEM_FOLDER = 'RH_STUTTGART'
-    ALLOW_SYNC = True
+class BretoniaFirst(object):
+    ROOM_SUBFOLDER = interior.ROOM_FOLDER_BR
 
+    FIRST_LAWFUL_POPULATION_CLASS = population.BretoniaLegalPopulation
+    FIRST_UNLAWFUL_POPULATION_CLASS = population.BretoniaPiratePopulation
 
-class rh_ber(RheinlandSystem, System):
-    NAME = 'rh_ber'
-    TEMPLATE_NAME = 'rh_ber'
-    FACTION_CODE = faction.RH_GRP
-    CONTENT = rh_ber_content
 
-    SYSTEM_FOLDER = 'RH_BERLIN'
-    ALLOW_SYNC = True
+class BretoniaSecond(object):
+    SECOND_LAWFUL_POPULATION_CLASS = population.BretoniaLegalPopulation
+    SECOND_UNLAWFUL_POPULATION_CLASS = population.BretoniaPiratePopulation
 
-class sig8(RheinlandSystem, System):
-    NAME = 'sig8'
-    TEMPLATE_NAME = 'sig8'
-    FACTION_CODE = faction.RH_GRP
-    CONTENT = sig8_content
 
-    SYSTEM_FOLDER = 'SIGMA8'
-    ALLOW_SYNC = True
+class KusariFirst(object):
+    ROOM_SUBFOLDER = interior.ROOM_FOLDER_KU
 
+    FIRST_LAWFUL_POPULATION_CLASS = population.KusariLegalPopulation
+    FIRST_UNLAWFUL_POPULATION_CLASS = population.KusariPiratePopulation
 
-class om15(RheinlandSystem, System):
-    NAME = 'om15'
-    TEMPLATE_NAME = 'om15'
-    FACTION_CODE = faction.RH_GRP
-    CONTENT = om15_content
 
-    SYSTEM_FOLDER = 'OMEGA15'
-    ALLOW_SYNC = True
+class KusariSecond(object):
+    SECOND_LAWFUL_POPULATION_CLASS = population.KusariLegalPopulation
+    SECOND_UNLAWFUL_POPULATION_CLASS = population.KusariPiratePopulation
 
 
-# rheinland -  temporary
-class sig13(RheinlandSystem, System): 
-    NAME = 'sig13'
-    TEMPLATE_NAME = 'sig13'
-    FACTION_CODE = 'rh_grp'
-    CONTENT = sig13_content
 
-    SYSTEM_FOLDER = 'SIGMA13'
-    ALLOW_SYNC = True
-    ENABLE_POPULATION = True
-
-    LAWFUL_FACTIONS = [
-        faction.RH_GRP,
-        faction.LI_GRP,
-        faction.BH_GRP,
-        faction.RC_GRP,
-        faction.LC_GRP,
-        faction.TR_GRP,
-    ]
-    UNLAWFUL_FACTIONS = [
-        faction.RX_GRP,
-        faction.LX_GRP,
-        faction.PI_GRP,
-        faction.JUNK_GRP,
-    ]
-
-
-class li_cal(System):
-    NAME = 'li_cal'
-
-
-class sig22(System):
-    NAME = 'sig22'
-
-
-class li_mnh(System):
-    NAME = 'li_mnh'
-
-
-class li_for(System):
-    NAME = 'li_for'
-
-
-class sig17(System):
-    NAME = 'sig17'
-
-
-class li_col(System):
-    NAME = 'li_col'
-
-
-class tau31(System):
-    NAME = 'tau31'
-
-
-class br_wrw(BretoniaSystem, System):
-    NAME = 'br_wrw'
-    FACTION_CODE = 'br_grp'
-    # CONTENT = br_wrw_objects
-
-
-class tau29(System):
-    NAME = 'tau29'
-
-
-class br_cam(System):
-    NAME = 'br_cam'
-
-
-class tau37(System):
-    NAME = 'tau37'
-
-
-class br_avl(System):
-    NAME = 'br_avl'
-
-
-class sig42(System):
-    NAME = 'sig42'
-
-
-class tau23(System):
-    NAME = 'tau23'
-
-
-class ku_ksu(System):
-    NAME = 'ku_ksu'
-
-
-class tau4(System):
-    NAME = 'tau4'
-
-
-class ku_hns(System):
-    NAME = 'ku_hns'
-
-
-class ku_tgk(System):
-    NAME = 'ku_tgk'
-
-
-class ku_hkd(System):
-    NAME = 'ku_hkd'
-
-
-class om7(System):
-    NAME = 'om7'
-
-
-class co_cur(System):
-    NAME = 'co_cur'
-
-
-class co_mad(System):
-    NAME = 'co_mad'
-
-
-class co_val(System):
-    NAME = 'co_val'
-
-
-class co_och(System):
-    NAME = 'co_och'
-
-
-class co_cad(System):
-    NAME = 'co_cad'
-
-
-class om13(System):
-    NAME = 'om13'
-
-
-class tau26(System):
-    NAME = 'tau26'
-
-
-class om11(System):
-    NAME = 'om11'
-
-
-class br_uls(System):
-    NAME = 'br_uls'
-
-
-class upsilon1(System):
-    NAME = 'upsilon1'
-
-
-class upsilon2(System):
-    NAME = 'upsilon2'
-
-
-class omicron1(System):
-    NAME = 'omicron1'
-
-
-class omicron2(System):
-    NAME = 'omicron2'

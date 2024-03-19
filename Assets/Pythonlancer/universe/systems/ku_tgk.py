@@ -15,7 +15,7 @@ from templates.solar import debris_box
 
 
 from templates.dockable import pirate
-from templates.dockable import asteroid as asteroid_base
+from templates.dockable import astbase
 from templates.dockable import trade_storages
 from templates.dockable import columbia_production
 from templates.dockable import constanta
@@ -29,3 +29,22 @@ class TekagiMember(object):
     INDEX = 1
     ABSTRACT = False
     FACTION = faction.BR_GRP
+
+#
+# class BizmarkBaseAsteroidDefinition(asteroid_definition.Omega15NiobiumAsteroidDefinition):
+#     ABSTRACT = True
+#     NAME = None
+#     DYNAST = True
+#     BELT = True
+#     BILLBOARDS = True
+#     LOOT = False  # TEMP
+#
+#
+# class BizmarkAsteroidDefinition1(BizmarkBaseAsteroidDefinition):
+#     ABSTRACT = False
+#     NAME = 'rh_biz_pirate_astfield1'
+#
+#
+# class BizmarkAsteroidZone1(BizmarkMember, zones.AsteroidZone):
+#     INDEX = 1
+#     ASTEROID_DEFINITION_CLASS = BizmarkAsteroidDefinition1

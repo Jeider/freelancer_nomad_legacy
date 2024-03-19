@@ -32,7 +32,7 @@ class SystemTemplate(object):
     def __init__(self, template_name, template_items):
         self.name = template_name
         self.items = template_items
-        self.items_db = {}
+        self.items_db: dict = {}
         for title in MULTI_ITEMS_TITLES:
             self.items_db[title] = []
         self.process_template_items()
@@ -96,8 +96,9 @@ class SystemTemplateLoader(object):
     @staticmethod
     def get_system_templates_path():
         current_path = pathlib.Path().resolve()
-        return current_path.parent.parent / 'DATA' / 'UNIVERSE' / TEMPLATES_FOLDER
+        return current_path.parent.parent / 'DATA' / 'UNIVERSE' / 'GENERATION_DATA' / TEMPLATES_FOLDER
 
+    @staticmethod
     def get_template_text_content(template_name):
         templates_path = SystemTemplateLoader.get_system_templates_path()
         template_file = open(templates_path / TEMPLATE_FILE_FORMAT.format(template_name))

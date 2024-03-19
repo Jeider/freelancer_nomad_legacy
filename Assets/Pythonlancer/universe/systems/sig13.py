@@ -3,11 +3,12 @@ from fx.sound import Ambience
 
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
-from universe.content.zones import TemplatedNebulaZone, AsteroidZone
-from universe.content.asteroid_definition import AsteroidDefinition
+from universe.content import zones
+from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
 from universe.content import faction
+from universe.content import population
 
 from templates.dockable import gas_miner
 from templates.dockable import trade_storages
@@ -31,6 +32,7 @@ class Sig13Rheinland(object):
 
 class Sig13Liberty(object):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_LI
+    POPULATION_KIND = population.POP_SECOND
 
 
 class Sigma13StaticText(Sigma13Member, main_objects.RawText):
@@ -72,122 +74,6 @@ range = 60000
 type = DIRECTIONAL
 atten_curve = DYNAMIC_DIRECTION
 
-[EncounterParameters]
-nickname = rh_grp_main_defend
-filename = missions\\npc\\rh\\rh_grp_main_defend.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_scout
-filename = missions\\npc\\rh\\rh_grp_main_scout.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_gunboat
-filename = missions\\npc\\rh\\rh_grp_main_gunboat.ini
-
-[EncounterParameters]
-nickname = bh_grp_rh_scout
-filename = missions\\npc\\rh\\bh_grp_rh_scout.ini
-
-[EncounterParameters]
-nickname = li_grp_main_defend
-filename = missions\\npc\\li\\li_grp_main_defend.ini
-
-[EncounterParameters]
-nickname = li_grp_main_scout
-filename = missions\\npc\\li\\li_grp_main_scout.ini
-
-[EncounterParameters]
-nickname = bh_grp_li_scout
-filename = missions\\npc\\li\\bh_grp_li_scout.ini
-
-[EncounterParameters]
-nickname = pi_grp_rh_assault
-filename = missions\\npc\\pi\\pi_grp_rh_assault.ini
-
-[EncounterParameters]
-nickname = pi_grp_li_assault
-filename = missions\\npc\\pi\\pi_grp_li_assault.ini
-
-[EncounterParameters]
-nickname = li_grp_main_trade
-filename = missions\\npc\\li\\li_grp_main_trade.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_trade
-filename = missions\\npc\\rh\\rh_grp_main_trade.ini
-
-[EncounterParameters]
-nickname = tr_grp_rh_transport
-filename = missions\\npc\\rh\\tr_grp_rh_transport.ini
-
-[EncounterParameters]
-nickname = tr_grp_li_large_train
-filename = missions\\npc\\li\\tr_grp_li_large_train.ini
-
-[EncounterParameters]
-nickname = li_grp_main_trade_tlr
-filename = missions\\npc\\li\\li_grp_main_trade_tlr.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_trade_tlr
-filename = missions\\npc\\rh\\rh_grp_main_trade_tlr.ini
-
-[EncounterParameters]
-nickname = tr_grp_rh_transport_tlr
-filename = missions\\npc\\rh\\tr_grp_rh_transport_tlr.ini
-
-[EncounterParameters]
-nickname = tr_grp_li_large_train_tlr
-filename = missions\\npc\\li\\tr_grp_li_large_train_tlr.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_patrol
-filename = missions\\npc\\rh\\rh_grp_main_patrol.ini
-
-[EncounterParameters]
-nickname = li_grp_main_patrol
-filename = missions\\npc\\li\\li_grp_main_patrol.ini
-
-[EncounterParameters]
-nickname = rh_junkers
-filename = missions\\npc\\rh\\rh_junkers.ini
-
-[EncounterParameters]
-nickname = rh_pirates_patrol
-filename = missions\\npc\\pi\\pi_grp_rh_patrol.ini
-
-[EncounterParameters]
-nickname = li_pirates_patrol
-filename = missions\\npc\\pi\\pi_grp_li_patrol.ini
-
-[EncounterParameters]
-nickname = bh_grp_rh_patrol
-filename = missions\\npc\\rh\\bh_grp_rh_patrol.ini
-
-[EncounterParameters]
-nickname = bh_grp_li_patrol
-filename = missions\\npc\\li\\bh_grp_li_patrol.ini
-
-[EncounterParameters]
-nickname = co_grp_main_patrol
-filename = missions\\npc\\co\\co_grp_main_patrol.ini
-
-[EncounterParameters]
-nickname = patrol_tlr
-filename = missions\\NPC\\patrol_tlr.ini
-
-[EncounterParameters]
-nickname = patrol_police
-filename = missions\\NPC\\patrol_police.ini
-
-[EncounterParameters]
-nickname = bh_grp_rh_trade
-filename = missions\\npc\\rh\\bh_grp_rh_trade.ini
-
-[EncounterParameters]
-nickname = bh_grp_rh_trade_tlr
-filename = missions\\npc\\rh\\bh_grp_rh_trade_tlr.ini
-
 '''
 
 CROW_EXCLUSION_PARAMS = {
@@ -202,7 +88,7 @@ CROW_EXCLUSION_PARAMS = {
 GENERIC_EXCLUSION_PARAMS = {
     'zone_shell': exclusion.GENERIC_EXCLUSION,
     'shell_scalar': 1,
-    'max_alpha': 0.8,
+    'max_alpha': 0.6,
     'exclusion_tint': '20, 150, 255',
     'fog_far': 5000,
 }
@@ -212,14 +98,14 @@ ICE_EXCLUSION_PARAMS = {
     'zone_shell': exclusion.ICE_EXCLUSION,
     'shell_scalar': 1,
     'max_alpha': 0.8,
-    'exclusion_tint': '20, 150, 255',
+    'exclusion_tint': '20, 180, 255',
     'fog_far': 5000,
 }
 
 
 
 
-class Sig13Nebula(Sigma13Member, TemplatedNebulaZone):
+class Sig13Nebula(Sigma13Member, zones.NebulaZone):
     INDEX = 1
     FILE_NAME = 'gen_sig13_blue_nebula'
     SPACEDUST = Dust.ATTRACT
@@ -396,7 +282,7 @@ class Sig13ConnRheinlandGas2(Sigma13Member, main_objects.TradeConnection):
     ]
 
 
-class Sig13ConnLibertyGas1(Sigma13Member, main_objects.TradeConnection):
+class Sig13ConnLibertyGas1(Sigma13Member, Sig13Liberty, main_objects.TradeConnection):
     OBJ_FROM = Sig13LibertyStation
     OBJ_TO = Sig13CaliforniaJumpgate
     SIDE_FROM = TOP
@@ -413,7 +299,7 @@ class Sig13ConnLibertyGas1(Sigma13Member, main_objects.TradeConnection):
     OBJ_TO_EXTRA_DRIFT_ALT_AXIS = -2000
 
 
-class Sig13ConnLibertyGas2(Sigma13Member, main_objects.TradeConnection):
+class Sig13ConnLibertyGas2(Sigma13Member, Sig13Liberty, main_objects.TradeConnection):
     OBJ_FROM = Sig13LibertyStation
     OBJ_TO = Sig13ForbesJumpgate
     SIDE_FROM = LEFT
@@ -449,7 +335,7 @@ class Sig13ConnBattleship2(Sigma13Member, main_objects.TradeConnection):
     ]
 
 
-class Sig13ConnFreeport1(Sigma13Member, main_objects.TradeConnection):
+class Sig13ConnFreeport1(Sigma13Member, Sig13Liberty, main_objects.TradeConnection):
     OBJ_FROM = Sig13Freeport
     OBJ_TO = Sig13ForbesJumpgate
     SIDE_FROM = BOTTOM
@@ -510,7 +396,7 @@ class Sig13BaseAbandonedMiner(main_objects.AbandonedAsteroid):
 
     NEBULA_EXCLUSION_ZONE_SIZE = 8500
     AST_EXCLUSION_ZONE_SIZE = 2000
-    EXCLUSION_PARAMS = ICE_EXCLUSION_PARAMS
+    EXCLUSION_PARAMS = CROW_EXCLUSION_PARAMS
     NEBULA_ZONES = [Sig13Nebula]
     INTERIOR_BG1 = interior.INTERIOR_BG_CROW
     AST_EXCLUSION_ZONE_PARAMS = {
@@ -537,7 +423,7 @@ asteroid = mine_oxygen, -0.300000, -0.300000, 0.800000, 85, 0, 185, mine
 asteroid = mine_oxygen, -0.700000, 0.400000, -0.400000, 75, 30, 70, mine
 '''
 
-class Sigma13GasPockets(AsteroidDefinition):
+class Sigma13GasPockets(asteroid_definition.AsteroidDefinition):
     FIELD = True
     CUBE = True
     FIELD_TEMPLATE = FIELD_TEMPLATE
@@ -559,7 +445,7 @@ class Sigma13GasPockets3(Sigma13GasPockets):
     NAME = 'sig13_gas_pocket3'
 
 
-class Sigma13GasPocketsZone1(Sigma13Member, AsteroidZone):
+class Sigma13GasPocketsZone1(Sigma13Member, zones.AsteroidZone):
     ALIAS = 'bigcryst'
     INDEX = 1
     ASTEROID_DEFINITION_CLASS = Sigma13GasPockets1
@@ -567,7 +453,7 @@ class Sigma13GasPocketsZone1(Sigma13Member, AsteroidZone):
     SPACEDUST_MAXPARTICLES = 200
 
 
-class Sigma13GasPocketsZone2(Sigma13Member, AsteroidZone):
+class Sigma13GasPocketsZone2(Sigma13Member, zones.AsteroidZone):
     ALIAS = 'bigcryst'
     INDEX = 2
     ASTEROID_DEFINITION_CLASS = Sigma13GasPockets2
@@ -575,7 +461,7 @@ class Sigma13GasPocketsZone2(Sigma13Member, AsteroidZone):
     SPACEDUST_MAXPARTICLES = 200
 
 
-class Sigma13GasPocketsZone3(Sigma13Member, AsteroidZone):
+class Sigma13GasPocketsZone3(Sigma13Member, zones.AsteroidZone):
     ALIAS = 'bigcryst'
     INDEX = 3
     ASTEROID_DEFINITION_CLASS = Sigma13GasPockets3

@@ -4,6 +4,10 @@ SHAPES_ROCK = 'file = solar\\asteroids\\rock_shapes.ini'
 SHAPES_MINES = 'file = solar\\asteroids\\mine_shapes.ini'
 SHAPES_DEBRIS = 'file = solar\\asteroids\\debris_shapes.ini'
 SHAPES_OM15 = 'file = solar\\asteroids_mod\\om15\\shapes.ini'
+SHAPES_LI_CAL = 'file = solar\\asteroids_mod\\li_cal\\shapes.ini'
+SHAPES_KU_TGK = 'file = solar\\asteroids_mod\\ku_tgk\\shapes.ini'
+SHAPES_TAU37 = 'file = solar\\asteroids_mod\\tau37\\shapes.ini'
+SHAPES_CO_CUR = 'file = solar\\asteroids_mod\\co_cur\\shapes.ini'
 
 LOOT_BERYL = 'lootcrate_ast_loot_beryl'
 LOOT_ORGANISMS = 'lootcrate_ast_loot_organisms'
@@ -72,6 +76,122 @@ max_angular_velocity = 0.300000
 color_shift = 1.000000, 1.000000, 1.000000
 '''
 
+DYNAST_LI_CAL = '''
+[DynamicAsteroids]
+asteroid = ast_li_cal_normal_a
+count = 30
+placement_radius = 1000.000000
+placement_offset = 200.000000
+max_velocity = 20.000000
+max_angular_velocity = 0.300000
+color_shift = 1.000000, 1.000000, 1.000000
+
+[DynamicAsteroids]
+asteroid = ast_li_cal_normal_b
+count = 30
+placement_radius = 1000.000000
+placement_offset = 200.000000
+max_velocity = 20.000000
+max_angular_velocity = 0.300000
+color_shift = 1.000000, 1.000000, 1.000000
+
+[DynamicAsteroids]
+asteroid = ast_li_cal_normal_c
+count = 30
+placement_radius = 1000.000000
+placement_offset = 200.000000
+max_velocity = 20.000000
+max_angular_velocity = 0.300000
+color_shift = 1.000000, 1.000000, 1.000000
+'''
+
+DYNAST_TAU37 = '''
+[DynamicAsteroids]
+asteroid = ast_tau37_normal_a
+count = 30
+placement_radius = 1000.000000
+placement_offset = 200.000000
+max_velocity = 20.000000
+max_angular_velocity = 0.300000
+color_shift = 1.000000, 1.000000, 1.000000
+
+[DynamicAsteroids]
+asteroid = ast_tau37_normal_b
+count = 30
+placement_radius = 1000.000000
+placement_offset = 200.000000
+max_velocity = 20.000000
+max_angular_velocity = 0.300000
+color_shift = 1.000000, 1.000000, 1.000000
+
+[DynamicAsteroids]
+asteroid = ast_tau37_normal_c
+count = 30
+placement_radius = 1000.000000
+placement_offset = 200.000000
+max_velocity = 20.000000
+max_angular_velocity = 0.300000
+color_shift = 1.000000, 1.000000, 1.000000
+'''
+
+DYNAST_KU_TGK = '''
+[DynamicAsteroids]
+asteroid = ast_ku_tgk_normal_a
+count = 30
+placement_radius = 1000.000000
+placement_offset = 200.000000
+max_velocity = 20.000000
+max_angular_velocity = 0.300000
+color_shift = 1.000000, 1.000000, 1.000000
+
+[DynamicAsteroids]
+asteroid = ast_ku_tgk_normal_b
+count = 30
+placement_radius = 1000.000000
+placement_offset = 200.000000
+max_velocity = 20.000000
+max_angular_velocity = 0.300000
+color_shift = 1.000000, 1.000000, 1.000000
+
+[DynamicAsteroids]
+asteroid = ast_ku_tgk_normal_c
+count = 30
+placement_radius = 1000.000000
+placement_offset = 200.000000
+max_velocity = 20.000000
+max_angular_velocity = 0.300000
+color_shift = 1.000000, 1.000000, 1.000000
+'''
+
+DYNAST_CO_CUR = '''
+[DynamicAsteroids]
+asteroid = ast_co_cur_normal_a
+count = 30
+placement_radius = 1000.000000
+placement_offset = 200.000000
+max_velocity = 20.000000
+max_angular_velocity = 0.300000
+color_shift = 1.000000, 1.000000, 1.000000
+
+[DynamicAsteroids]
+asteroid = ast_co_cur_normal_b
+count = 30
+placement_radius = 1000.000000
+placement_offset = 200.000000
+max_velocity = 20.000000
+max_angular_velocity = 0.300000
+color_shift = 1.000000, 1.000000, 1.000000
+
+[DynamicAsteroids]
+asteroid = ast_co_cur_normal_c
+count = 30
+placement_radius = 1000.000000
+placement_offset = 200.000000
+max_velocity = 20.000000
+max_angular_velocity = 0.300000
+color_shift = 1.000000, 1.000000, 1.000000
+'''
+
 DYNAST_DEBRIS = '''
 [DynamicAsteroids]
 asteroid = din_debris_xlarge_A
@@ -123,6 +243,58 @@ vert_increase = 2
 color_shift = 1, 0.85, 0.8
 '''
 
+BELT_LI_CAL = '''
+[Band]
+render_parts = 6
+shape = asteroid_belt_06
+height = 4000
+offset_dist = 2000
+fade = 0.800000, 1.250000, 15, 17
+texture_aspect = 1.000000
+ambient_intensity = 0.400000
+vert_increase = 2
+color_shift = 1, 0.85, 0.8
+'''
+
+BELT_KU_TGK = '''
+[Band]
+render_parts = 6
+shape = asteroid_belt_06
+height = 4000
+offset_dist = 2000
+fade = 0.800000, 1.250000, 15, 17
+texture_aspect = 1.000000
+ambient_intensity = 0.400000
+vert_increase = 2
+color_shift = 1, 0.85, 0.8
+'''
+
+BELT_TAU37 = '''
+[Band]
+render_parts = 6
+shape = asteroid_belt_06
+height = 4000
+offset_dist = 2000
+fade = 0.800000, 1.250000, 15, 17
+texture_aspect = 1.000000
+ambient_intensity = 0.400000
+vert_increase = 2
+color_shift = 1, 0.85, 0.8
+'''
+
+BELT_CO_CUR = '''
+[Band]
+render_parts = 6
+shape = asteroid_belt_06
+height = 4000
+offset_dist = 2000
+fade = 0.800000, 1.250000, 15, 17
+texture_aspect = 1.000000
+ambient_intensity = 0.400000
+vert_increase = 2
+color_shift = 1, 0.85, 0.8
+'''
+
 BELT_DEBRIS = '''
 [Band]
 render_parts = 10
@@ -142,6 +314,50 @@ count = 300
 start_dist = 1100
 fade_dist_percent = 0.500000
 shape = background_om15
+color_shift = 0.800000, 0.750000, 0.750000
+ambient_intensity = 1
+size = 40, 150
+'''
+
+BILLBOARD_LI_CAL = '''
+[AsteroidBillboards]
+count = 300
+start_dist = 1100
+fade_dist_percent = 0.500000
+shape = background_li_cal
+color_shift = 0.800000, 0.750000, 0.750000
+ambient_intensity = 1
+size = 40, 150
+'''
+
+BILLBOARD_TAU37 = '''
+[AsteroidBillboards]
+count = 300
+start_dist = 1100
+fade_dist_percent = 0.500000
+shape = background_tau37
+color_shift = 0.800000, 0.750000, 0.750000
+ambient_intensity = 1
+size = 40, 150
+'''
+
+BILLBOARD_KU_TGK = '''
+[AsteroidBillboards]
+count = 300
+start_dist = 1100
+fade_dist_percent = 0.500000
+shape = background_ku_tgk
+color_shift = 0.800000, 0.750000, 0.750000
+ambient_intensity = 1
+size = 40, 150
+'''
+
+BILLBOARD_CO_CUR = '''
+[AsteroidBillboards]
+count = 300
+start_dist = 1100
+fade_dist_percent = 0.500000
+shape = background_co_cur
 color_shift = 0.800000, 0.750000, 0.750000
 ambient_intensity = 1
 size = 40, 150
@@ -242,14 +458,13 @@ class AsteroidDefinition(object):
     LOOT_CONTAINER = LOOT_WATER
     LOOT_COMMODITY = None
 
-    NAME = None
-    SUBFOLDER = 'GENERATED'
-
-    def __init__(self, system):
+    def __init__(self, system, zone):
         self.system = system
+        self.zone = zone
         self.exclusions = []
-        if not self.NAME:
-            raise Exception('NAME is mandatory for asteroid definition %s' % self.__class__.__name__)
+
+    def get_file_name(self):
+        return self.zone.get_file_name()
 
     def add_exclusion(self, zone_name):
         self.exclusions.append(zone_name)
@@ -293,6 +508,46 @@ class Omega15AsteroidDefinition(AsteroidDefinition):
     SHAPES = [
         SHAPES_ROCK,
         SHAPES_OM15,
+    ]
+
+
+class CaliforniaAsteroidDefinition(AsteroidDefinition):
+    BELT_TEMPLATE = BELT_LI_CAL
+    DYNAST_TEMPLATE = DYNAST_LI_CAL
+    BILLBOARD_TEMPLATE = BILLBOARD_LI_CAL
+    SHAPES = [
+        SHAPES_ROCK,
+        SHAPES_LI_CAL,
+    ]
+
+
+class Tau37AsteroidDefinition(AsteroidDefinition):
+    BELT_TEMPLATE = BELT_TAU37
+    DYNAST_TEMPLATE = DYNAST_TAU37
+    BILLBOARD_TEMPLATE = BILLBOARD_TAU37
+    SHAPES = [
+        SHAPES_ROCK,
+        SHAPES_TAU37,
+    ]
+
+
+class TekagiAsteroidDefinition(AsteroidDefinition):
+    BELT_TEMPLATE = BELT_KU_TGK
+    DYNAST_TEMPLATE = DYNAST_KU_TGK
+    BILLBOARD_TEMPLATE = BILLBOARD_KU_TGK
+    SHAPES = [
+        SHAPES_ROCK,
+        SHAPES_KU_TGK,
+    ]
+
+
+class CuracaoAsteroidDefinition(AsteroidDefinition):
+    BELT_TEMPLATE = BELT_CO_CUR
+    DYNAST_TEMPLATE = DYNAST_CO_CUR
+    BILLBOARD_TEMPLATE = BILLBOARD_CO_CUR
+    SHAPES = [
+        SHAPES_ROCK,
+        SHAPES_CO_CUR,
     ]
 
 

@@ -146,7 +146,6 @@ class BaseFileAppearanceZone(Zone):
     ZONE_FIELD_TYPE = None
 
     ROOT_FOLDER = 'ASTEROIDS_MOD'
-    FILE_NAME = None
     MUSIC = None
     PROPERTY_FLAGS = None
     PROPERTY_FOG_COLOR = None
@@ -183,7 +182,7 @@ class BaseFileAppearanceZone(Zone):
         return params
 
     def get_file_name(self):
-        return self.FILE_NAME
+        return f'gen_{self.get_zone_base_alias()}'
 
 
 class BaseAsteroidZone(BaseFileAppearanceZone):
@@ -191,35 +190,27 @@ class BaseAsteroidZone(BaseFileAppearanceZone):
 
     ASTEROID_DEFINITION_CLASS = None
     ROOT_FOLDER = 'ASTEROIDS_MOD'
-    SUBFOLDER = None
+    SUBFOLDER = 'GENERATED'
 
     ASTEROID_DEFINITION_TEMPLATE = '''[Asteroids]
 file = solar\\{root_folder}\\{subfolder}\\{file_name}.ini
 zone = {zone}'''
 
+    def __init__(self, *args, **kwargs):
+        if self.ASTEROID_DEFINITION_CLASS is None:
+            raise Exception('Asteroid definition class is mandatory for zone %s' % self.__class__.__name__)
+        super().__init__(*args, **kwargs)
+
     def get_asteroid_definition_header(self):
-        subfolder = self.get_subfolder()
-        file_name = self.get_file_name()
-        if not self.ROOT_FOLDER or not subfolder or not file_name:
-            raise Exception('not enough parameters for asteroid zone %s' % self.__class__.__name__)
         return self.ASTEROID_DEFINITION_TEMPLATE.format(
             root_folder=self.ROOT_FOLDER,
-            subfolder=subfolder,
-            file_name=file_name,
+            subfolder=self.SUBFOLDER,
+            file_name=self.get_file_name(),
             zone=self.get_zone_nickame(),
         )
 
-    def get_subfolder(self):
-        if self.ASTEROID_DEFINITION_CLASS:
-            return self.ASTEROID_DEFINITION_CLASS.SUBFOLDER
-        else:
-            return self.SUBFOLDER
-
     def get_file_name(self):
-        if self.ASTEROID_DEFINITION_CLASS:
-            return self.ASTEROID_DEFINITION_CLASS.NAME
-        else:
-            return self.FILE_NAME
+        return self.get_zone_base_alias()
 
 
 class AsteroidZone(BaseAsteroidZone):
@@ -227,13 +218,6 @@ class AsteroidZone(BaseAsteroidZone):
     ZONE_FIELD_TYPE = 'asteroids'
 
     ROOT_FOLDER = 'ASTEROIDS_MOD'
-    SUBFOLDER = None
-    FILE_NAME = None
-    MUSIC = None
-    PROPERTY_FLAGS = None
-
-    SPACEDUST = None
-    SPACEDUST_MAXPARTICLES = None
 
     ASTEROID_DEFINITION_CLASS = None
 
@@ -242,11 +226,7 @@ class DebrisZone(BaseAsteroidZone):
     ALIAS = 'deb'
     ZONE_FIELD_TYPE = 'debris'
 
-    ROOT_FOLDER = 'ASTEROIDS_MOD'
-    SUBFOLDER = 'DEBRIS'
-    FILE_NAME = 'generic_debris'
     MUSIC = Ambience.DEBRIS
-    PROPERTY_FLAGS = None
 
     SPACEDUST = Dust.DEBRIS
     SPACEDUST_MAXPARTICLES = 50
@@ -255,25 +235,7 @@ class DebrisZone(BaseAsteroidZone):
 class NebulaZone(BaseFileAppearanceZone):
     ZONE_FIELD_TYPE = 'nebula'
     ALIAS = 'neb'
-
     ROOT_FOLDER = 'NEBULA_MOD'
-
-    NEBULA_DEFINITION_TEMPLATE = '''[Nebula]
-file = solar\\{root_folder}\\{file_name}.ini
-zone = {zone}'''
-
-    def get_nebula_definition_header(self):
-        file_name = self.get_file_name()
-        if not self.ROOT_FOLDER or not file_name:
-            raise Exception('not enough parameters for nebula zone %s' % self.__class__.__name__)
-        return self.NEBULA_DEFINITION_TEMPLATE.format(
-            root_folder=self.ROOT_FOLDER,
-            file_name=file_name,
-            zone=self.get_zone_nickame(),
-        )
-
-
-class TemplatedNebulaZone(NebulaZone):
     CONTENT_TEMPLATE = None
     GENERATED_NEBULA_SUBFOLDER = 'GENERATED'
 
@@ -282,31 +244,28 @@ file = solar\\{root_folder}\\{subfolder}\\{file_name}.ini
 zone = {zone}'''
 
     def __init__(self, *args, **kwargs):
-        self.exlusions = {}
+        self.exclusions = {}
         if self.CONTENT_TEMPLATE is None:
             raise Exception('Content template is mandatory for zone %s' % self.__class__.__name__)
         super().__init__(*args, **kwargs)
 
     def get_nebula_definition_header(self):
-        file_name = self.get_file_name()
-        if not self.ROOT_FOLDER or not file_name:
-            raise Exception('not enough parameters for nebula zone %s' % self.__class__.__name__)
         return self.NEBULA_DEFINITION_TEMPLATE.format(
             root_folder=self.ROOT_FOLDER,
-            file_name=file_name,
+            file_name=self.get_file_name(),
             subfolder=self.GENERATED_NEBULA_SUBFOLDER,
             zone=self.get_zone_nickame(),
         )
 
     def get_file_name(self):
-        return self.FILE_NAME
+        return f'gen_{self.get_zone_base_alias()}'
 
     def add_exclusion(self, name, params):
-        self.exlusions[name] = params
+        self.exclusions[name] = params
 
     def get_exclusions_content(self):
         entries = []
-        for name, params in self.exlusions.items():
+        for name, params in self.exclusions.items():
             excl_params = {'exclusion': name}
             excl_params.update(params)
             entry = SINGLE_DIVIDER.join(['{} = {}'.format(key, value) for key, value in excl_params.items()])

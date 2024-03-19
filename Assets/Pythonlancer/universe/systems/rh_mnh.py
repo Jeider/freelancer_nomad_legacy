@@ -15,7 +15,7 @@ from templates.solar import hackable
 from templates.nebula import rh_mnh_blue_nebula
 from templates.nebula import exclusion
 
-from templates.dockable import asteroid as asteroid_base
+from templates.dockable import astbase
 from templates.dockable import trading_outposts
 from templates.dockable import station_debris
 from templates.dockable import junker
@@ -55,94 +55,6 @@ nebulae = solar\\stars_mod\\rh_mnh_nebula.cmp
 complex_stars = solar\\stars_mod\\new_generic.cmp
 basic_stars = solar\\stars_mod\\new_generic.cmp
 
-[EncounterParameters]
-nickname = rh_grp_main_defend
-filename = missions\\npc\\rh\\rh_grp_main_defend.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_scout
-filename = missions\\npc\\rh\\rh_grp_main_scout.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_cruiser
-filename = missions\\npc\\rh\\rh_grp_main_cruiser.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_gunboat
-filename = missions\\npc\\rh\\rh_grp_main_gunboat.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_elite2
-filename = missions\\npc\\rh\\rh_grp_main_elite2.ini
-
-[EncounterParameters]
-nickname = bh_grp_rh_scout
-filename = missions\\npc\\rh\\bh_grp_rh_scout.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_trade
-filename = missions\\npc\\rh\\rh_grp_main_trade.ini
-
-[EncounterParameters]
-nickname = tr_grp_rh_transport
-filename = missions\\npc\\rh\\tr_grp_rh_transport.ini
-
-[EncounterParameters]
-nickname = bh_grp_rh_trade
-filename = missions\\npc\\rh\\bh_grp_rh_trade.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_trade_tlr
-filename = missions\\npc\\rh\\rh_grp_main_trade_tlr.ini
-
-[EncounterParameters]
-nickname = tr_grp_rh_transport_tlr
-filename = missions\\npc\\rh\\tr_grp_rh_transport_tlr.ini
-
-[EncounterParameters]
-nickname = bh_grp_rh_trade_tlr
-filename = missions\\npc\\rh\\bh_grp_rh_trade_tlr.ini
-
-[EncounterParameters]
-nickname = rh_pirates_patrol
-filename = missions\\npc\\pi\\pi_grp_rh_patrol.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_patrol
-filename = missions\\npc\\rh\\rh_grp_main_patrol.ini
-
-[EncounterParameters]
-nickname = rh_junkers
-filename = missions\\npc\\rh\\rh_junkers.ini
-
-[EncounterParameters]
-nickname = bh_grp_rh_patrol
-filename = missions\\npc\\rh\\bh_grp_rh_patrol.ini
-
-[EncounterParameters]
-nickname = patrol_police
-filename = missions\\NPC\\patrol_police.ini
-
-[EncounterParameters]
-nickname = patrol_tlr
-filename = missions\\NPC\\patrol_tlr.ini
-
-[EncounterParameters]
-nickname = patrol_alg
-filename = missions\\NPC\\RH\\rh_alg.ini
-
-[EncounterParameters]
-nickname = area_xscout
-filename = missions\\NPC\\area_rebels.ini
-
-[EncounterParameters]
-nickname = corp_lifter
-filename = missions\\npc\\lifter.ini
-
-[EncounterParameters]
-nickname = corp_repair
-filename = missions\\npc\\repair.ini
-
 [zone]
 nickname = zone_rh_mnh_system_status
 pos = 0, 0, 0
@@ -161,7 +73,7 @@ type = DIRECTIONAL
 atten_curve = DYNAMIC_DIRECTION'''
 
 
-class MunchBlueNebula(zones.TemplatedNebulaZone):
+class MunchBlueNebula(zones.NebulaZone):
     SPACEDUST = Dust.RADIOACTIVE_BLUE
     SPACEDUST_MAXPARTICLES = 50
     MUSIC = Ambience.BADLANDS
@@ -519,7 +431,7 @@ class MunchBattleStationRuins(MunchMember, main_objects.NotDockableObject):
 class MunchOutcastBase(MunchMember, main_objects.PirateBase):
     BASE_INDEX = 3
     REL = BOTTOM
-    SPACE_OBJECT_TEMPLATE = asteroid_base.MunchenAsteroidBase
+    SPACE_OBJECT_TEMPLATE = astbase.MunchenAsteroidBase
     FACTION = faction.PI_GRP  # TEMP
 
     DEFENCE_LEVEL = None

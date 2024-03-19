@@ -15,16 +15,11 @@ from templates.solar import hackable
 from templates.nebula import om15_orange_nebula
 from templates.nebula import exclusion
 
-
 from templates.dockable import junker
-from templates.dockable import asteroid as asteroid_base
 from templates.dockable import trade_storages
-from templates.dockable import columbia_production
 from templates.dockable import police
 from templates.dockable import roid_mining
 from templates.dockable import station_debris
-from templates.dockable import research
-from templates.dockable import rheinland_military
 
 
 class Omega15Member(object):
@@ -55,7 +50,6 @@ battle = music_omega_battle
 
 [Ambient]
 color = 60, 30, 10
-; color = 120, 120, 120
 
 [Background]
 nebulae = solar\\stars_mod\\om15_nebula.cmp
@@ -78,111 +72,10 @@ color = 255, 120, 50
 range = 80000
 type = DIRECTIONAL
 atten_curve = DYNAMIC_DIRECTION
-
-
-[EncounterParameters]
-nickname = rh_grp_main_defend
-filename = missions\\npc\\rh\\rh_grp_main_defend.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_scout
-filename = missions\\npc\\rh\\rh_grp_main_scout.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_gunboat
-filename = missions\\npc\\rh\\rh_grp_main_gunboat.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_elite2
-filename = missions\\npc\\rh\\rh_grp_main_elite2.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_trade
-filename = missions\\npc\\rh\\rh_grp_main_trade.ini
-
-[EncounterParameters]
-nickname = bh_grp_rh_trade
-filename = missions\\npc\\rh\\bh_grp_rh_trade.ini
-
-[EncounterParameters]
-nickname = bh_grp_rh_scout
-filename = missions\\npc\\rh\\bh_grp_rh_scout.ini
-
-[EncounterParameters]
-nickname = tr_grp_rh_transport
-filename = missions\\npc\\rh\\tr_grp_rh_transport.ini
-
-[EncounterParameters]
-nickname = co_grp_main_defend
-filename = missions\\npc\\co\\co_grp_main_defend.ini
-
-[EncounterParameters]
-nickname = co_grp_main_assault
-filename = missions\\npc\\co\\co_grp_main_assault.ini
-
-[EncounterParameters]
-nickname = rx_grp_main_defend
-filename = missions\\npc\\pi\\rx_grp_main_defend.ini
-
-[EncounterParameters]
-nickname = pi_grp_rh_assault
-filename = missions\\npc\\pi\\pi_grp_rh_assault.ini
-
-[EncounterParameters]
-nickname = area_xscout
-filename = missions\\NPC\\area_rebels.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_trade_tlr
-filename = missions\\npc\\rh\\rh_grp_main_trade_tlr.ini
-
-[EncounterParameters]
-nickname = tr_grp_rh_transport_tlr
-filename = missions\\npc\\rh\\tr_grp_rh_transport_tlr.ini
-
-[EncounterParameters]
-nickname = bh_grp_rh_trade_tlr
-filename = missions\\npc\\rh\\bh_grp_rh_trade_tlr.ini
-
-[EncounterParameters]
-nickname = rh_pirates_patrol
-filename = missions\\npc\\pi\\pi_grp_rh_patrol.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_patrol
-filename = missions\\npc\\rh\\rh_grp_main_patrol.ini
-
-[EncounterParameters]
-nickname = rx_grp_main_patrol
-filename = missions\\npc\\pi\\rx_grp_main_patrol.ini
-
-[EncounterParameters]
-nickname = patrol_tlr
-filename = missions\\NPC\\patrol_tlr.ini
-
-[EncounterParameters]
-nickname = patrol_police
-filename = missions\\NPC\\patrol_police.ini
-
-[EncounterParameters]
-nickname = bh_grp_rh_patrol
-filename = missions\\npc\\rh\\bh_grp_rh_patrol.ini
-
-[EncounterParameters]
-nickname = rx_grp_patrol_trade
-filename = missions\\NPC\\PI\\rx_grp_patrol_trade.ini
-
-[EncounterParameters]
-nickname = rh_junkers
-filename = missions\\npc\\rh\\rh_junkers.ini
-
-[EncounterParameters]
-nickname = co_grp_main_patrol
-filename = missions\\npc\\co\\co_grp_main_patrol.ini
 '''
 
 
-class Om15WalkerNebula(zones.TemplatedNebulaZone):
+class Om15WalkerNebula(zones.NebulaZone):
     SPACEDUST = Dust.ATTRACT_ORANGE
     SPACEDUST_MAXPARTICLES = 40
     MUSIC = Ambience.NEBULA_WALKER

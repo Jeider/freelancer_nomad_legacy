@@ -231,7 +231,11 @@ class Interior(object):
 
     def get_second_factions(self):
         is_lawful = self.base_instance.is_lawful()
-        init_factions_list = self.base_instance.system.LAWFUL_FACTIONS if is_lawful else self.base_instance.system.UNLAWFUL_FACTIONS
+        init_factions_list = (
+            self.base_instance.system.get_lawful_factions()
+            if is_lawful
+            else self.base_instance.system.get_unlawful_factions()
+        )
         factions_list = init_factions_list.copy()
         factions_list.remove(self.base_instance.FACTION)
         return factions_list

@@ -12,12 +12,10 @@ from universe.content import faction
 from universe.content import mineable
 from templates.solar import asteroid as asteroid_solar
 from templates.solar import debris_box
-
+from templates.nebula import rh_biz_nebula
 
 from templates.dockable import pirate
-from templates.dockable import asteroid as asteroid_base
-from templates.dockable import trade_storages
-from templates.dockable import columbia_production
+from templates.dockable import astbase
 from templates.dockable import constanta
 from templates.dockable import shipyards
 from templates.dockable import alg
@@ -74,98 +72,10 @@ complex_stars = solar\\stars_mod\\new_generic.cmp
 nebulae = solar\\stars_mod\\rh_biz_nebula.cmp
 basic_stars = solar\\stars_mod\\new_generic.cmp
 
-[EncounterParameters]
-nickname = rh_grp_main_defend
-filename = missions\\npc\\rh\\rh_grp_main_defend.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_scout
-filename = missions\\npc\\rh\\rh_grp_main_scout.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_cruiser
-filename = missions\\npc\\rh\\rh_grp_main_cruiser.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_gunboat
-filename = missions\\npc\\rh\\rh_grp_main_gunboat.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_elite2
-filename = missions\\npc\\rh\\rh_grp_main_elite2.ini
-
-[EncounterParameters]
-nickname = bh_grp_rh_scout
-filename = missions\\npc\\rh\\bh_grp_rh_scout.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_trade
-filename = missions\\npc\\rh\\rh_grp_main_trade.ini
-
-[EncounterParameters]
-nickname = tr_grp_rh_transport
-filename = missions\\npc\\rh\\tr_grp_rh_transport.ini
-
-[EncounterParameters]
-nickname = bh_grp_rh_trade
-filename = missions\\npc\\rh\\bh_grp_rh_trade.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_trade_tlr
-filename = missions\\npc\\rh\\rh_grp_main_trade_tlr.ini
-
-[EncounterParameters]
-nickname = tr_grp_rh_transport_tlr
-filename = missions\\npc\\rh\\tr_grp_rh_transport_tlr.ini
-
-[EncounterParameters]
-nickname = bh_grp_rh_trade_tlr
-filename = missions\\npc\\rh\\bh_grp_rh_trade_tlr.ini
-
-[EncounterParameters]
-nickname = rh_pirates_patrol
-filename = missions\\npc\\pi\\pi_grp_rh_patrol.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_patrol
-filename = missions\\npc\\rh\\rh_grp_main_patrol.ini
-
-[EncounterParameters]
-nickname = rh_junkers
-filename = missions\\npc\\rh\\rh_junkers.ini
-
-[EncounterParameters]
-nickname = bh_grp_rh_patrol
-filename = missions\\npc\\rh\\bh_grp_rh_patrol.ini
-
-[EncounterParameters]
-nickname = patrol_police
-filename = missions\\NPC\\patrol_police.ini
-
-[EncounterParameters]
-nickname = patrol_tlr
-filename = missions\\NPC\\patrol_tlr.ini
-
-[EncounterParameters]
-nickname = patrol_alg
-filename = missions\\NPC\\RH\\rh_alg.ini
-
-[EncounterParameters]
-nickname = area_xscout
-filename = missions\\NPC\\area_rebels.ini
-
-[EncounterParameters]
-nickname = corp_lifter
-filename = missions\\npc\\lifter.ini
-
-[EncounterParameters]
-nickname = corp_repair
-filename = missions\\npc\\repair.ini
-
 '''
 
 
-class BizmarkBaseAsteroidDefinition(asteroid_definition.Omega15NiobiumAsteroidDefinition):
+class BizmarkAsteroidDefinition(asteroid_definition.Omega15NiobiumAsteroidDefinition):
     ABSTRACT = True
     NAME = None
     DYNAST = True
@@ -174,69 +84,39 @@ class BizmarkBaseAsteroidDefinition(asteroid_definition.Omega15NiobiumAsteroidDe
     LOOT = False  # TEMP
 
 
-class BizmarkAsteroidDefinition1(BizmarkBaseAsteroidDefinition):
-    ABSTRACT = False
-    NAME = 'rh_biz_pirate_astfield1'
-
-
-class BizmarkAsteroidDefinition2(BizmarkBaseAsteroidDefinition):
-    ABSTRACT = False
-    NAME = 'rh_biz_pirate_astfield2'
-
-
-class BizmarkDebrisZoneDefinition1(asteroid_definition.DebrisDefinition):
-    ABSTRACT = False
-    NAME = 'rh_biz_debris_field1'
-
-
-class BizmarkDebrisZoneDefinition2(asteroid_definition.DebrisDefinition):
-    ABSTRACT = False
-    NAME = 'rh_biz_debris_field2'
-
-
-class BizmarkDebrisZoneDefinition3(asteroid_definition.DebrisDefinition):
-    ABSTRACT = False
-    NAME = 'rh_biz_debris_field3'
-
-
-class BizmarkDebrisZoneDefinition4(asteroid_definition.DebrisDefinition):
-    ABSTRACT = False
-    NAME = 'rh_biz_debris_field4'
-
-
 class BizmarkAsteroidZone1(BizmarkMember, zones.AsteroidZone):
     INDEX = 1
-    ASTEROID_DEFINITION_CLASS = BizmarkAsteroidDefinition1
+    ASTEROID_DEFINITION_CLASS = BizmarkAsteroidDefinition
 
 
 class BizmarkAsteroidZone2(BizmarkMember, zones.AsteroidZone):
     INDEX = 2
-    ASTEROID_DEFINITION_CLASS = BizmarkAsteroidDefinition2
+    ASTEROID_DEFINITION_CLASS = BizmarkAsteroidDefinition
 
 
 class BizmarkDebrisZone1(BizmarkMember, zones.DebrisZone):
     INDEX = 1
-    ASTEROID_DEFINITION_CLASS = BizmarkDebrisZoneDefinition1
+    ASTEROID_DEFINITION_CLASS = asteroid_definition.DebrisDefinition
 
 
 class BizmarkDebrisZone2(BizmarkMember, zones.DebrisZone):
     INDEX = 2
-    ASTEROID_DEFINITION_CLASS = BizmarkDebrisZoneDefinition2
+    ASTEROID_DEFINITION_CLASS = asteroid_definition.DebrisDefinition
 
 
 class BizmarkDebrisZone3(BizmarkMember, zones.DebrisZone):
     INDEX = 3
-    ASTEROID_DEFINITION_CLASS = BizmarkDebrisZoneDefinition3
+    ASTEROID_DEFINITION_CLASS = asteroid_definition.DebrisDefinition
 
 
 class BizmarkDebrisZone4(BizmarkMember, zones.DebrisZone):
     INDEX = 4
-    ASTEROID_DEFINITION_CLASS = BizmarkDebrisZoneDefinition4
+    ASTEROID_DEFINITION_CLASS = asteroid_definition.DebrisDefinition
 
 
 class BizmarkTopLeftNebula(BizmarkMember, zones.NebulaZone):
     INDEX = 1
-    FILE_NAME = 'rh_biz_brown_nebula'
+    CONTENT_TEMPLATE = rh_biz_nebula.BizmarkBrownNebulaTemplate
     SPACEDUST = Dust.ATTRACT
     SPACEDUST_MAXPARTICLES = 40
     MUSIC = Ambience.NEBULA_DMATTER
@@ -244,7 +124,7 @@ class BizmarkTopLeftNebula(BizmarkMember, zones.NebulaZone):
 
 class BizmarkTopRightNebula(BizmarkMember, zones.NebulaZone):
     INDEX = 2
-    FILE_NAME = 'rh_biz_brown_nebula'
+    CONTENT_TEMPLATE = rh_biz_nebula.BizmarkBrownNebulaTemplate
     SPACEDUST = Dust.ATTRACT
     SPACEDUST_MAXPARTICLES = 40
     MUSIC = Ambience.NEBULA_DMATTER
@@ -365,7 +245,7 @@ class BizmarkRightPirate(BizmarkMember, main_objects.PirateBase):
     BASE_INDEX = 9
     INDEX = 2
     REL = RIGHT
-    SPACE_OBJECT_TEMPLATE = asteroid_base.BizmarkAsteroidBase
+    SPACE_OBJECT_TEMPLATE = astbase.BizmarkAsteroidBase
     FACTION = faction.RX_GRP
 
     DEFENCE_LEVEL = None

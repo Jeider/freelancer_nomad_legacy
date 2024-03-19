@@ -2,57 +2,28 @@ from fx.space import Dust
 from fx.sound import Ambience
 
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
-from universe.content.main_objects import RawText, Sun, Planet, Jumpgate, Dockring, Shipyard, Station, Outpost, Prison, Refinery, TradingBase, JunkerBase, PirateBase, Sattelite, TradeConnection
-from universe.content.zones import AsteroidZone, DebrisZone, NebulaZone
+from universe.content import main_objects
+from universe.content import zones
 from universe.content import interior
 from universe.content import dealers
-from universe.content.asteroid_definition import Omega15AsteroidDefinition, DebrisDefinition
+from universe.content import asteroid_definition
 from universe.content.space_voice import SpaceVoice
 from universe.content import faction
 
-from templates.dockable.pirate import PirateBaseBizmark
-from templates.dockable.potsdam import Potsdam
-from templates.dockable.prisons import BerlinPrison
-from templates.dockable.shipyards import CambridgeShipyard
-from templates.dockable.alg import AlgBaseHokkaido
-from templates.dockable.asteroid import BerlinAsteroidBase
-from templates.dockable.junker import BerlinJunker
-from templates.dockable.police import BerlinPoliceOutpost
-from templates.dockable.trade_storages import TekagiStorage
+from templates.dockable import pirate
+from templates.dockable import potsdam
+from templates.dockable import prisons
+from templates.dockable import shipyards
+from templates.dockable import alg
+from templates.dockable import astbase
+from templates.dockable import junker
+from templates.dockable import police
+from templates.dockable import trade_storages
 
-from universe.content.mineable import DefaultAsteroidRewardsGroup, DefaultDebrisBoxRewardsGroup, DefaultField, AsteroidRewardField, DebrisBoxRewardField, AsteroidRewardsGroupMedium, DefaultDebrisBoxRewardsGroupUltra
+from universe.content import mineable
 
 from templates.solar.asteroid import AsteroidOmega15
 from templates.solar.debris_box import DebrisBox
-
-# DEFAULT
-
-# from templates.dockable.station_debris import TekagiDebris, MunchenBattleStationDebris, MunchenCivilianStationDebris, OmegaDanzigDebris, StuttgartDestroyedOutpost, ForbesDebris, ColumbiaDebris, CaliforniaDebris
-# from templates.dockable.edge_world import BlackHoleResearch, BlackHoleOutpost, BlackHoleDestroyedStation, ShinobiAbandonedResearch, OchoRiosResearch, MadridProduction, CadizFreeport, NeutronResearch
-
-# from templates.dockable.bounty_hunter import PortRoyal, ChurchAlive, ChurchDestroyed
-# from templates.dockable.gmg_hq import GmgHQAlive, GmgHQDestroyed
-# from templates.dockable.alg import AlgBaseHokkaido, AlgBaseBerlin
-
-
-
-# from templates.dockable.prisons import AvalonPrison, HonshuPrison, BerlinPrison, AlaskaPrison, ColumbiaPrison
-# from templates.dockable.shipyards import CambridgeShipyard, HokkaidoShipyard, StuttgartShipyard, ForbesShipyard, UlsterShipyardDestroyed, UlsterShipyardAlive, HeavyBarrelShipyard
-
-# from templates.dockable.roid_mining import BretoniaRoidMining, RheinlandRoidMining, LibertyRoidMining, UpsilonRoidMining
-# from templates.dockable.gas_miner import BretoniaPirateGasMiner, BretoniaCivilianGasMiner, RheinlandCivilianGasMiner, RheinlandPirateGasMiner, CadizGasMiner
-# from templates.dockable.research import KyushuResearch, SiriusResearch, RheinlandResearch, ForbesResearch
-
-
-
-
-# from templates.dockable.pirate import PirateBaseBizmark, PirateBaseHokkaido, LibertyRombicPirateBase, PirateBaseStuttgart, PirateBaseCambridge, ManhattanPirateBase, PirateBaseForbes, PirateBaseColumbia, PirateBaseCalifornia
-# from templates.dockable.asteroid import KyushuAsteroidBase, NomadAsteroidBase, MunchenAsteroidBase, BizmarkAsteroidBase, BerlinAsteroidBase, ManhattanAsteroidBase, CaliforniaAsteroidBase
-# from templates.dockable.junker import HonshuJunker, SigmaEightJunker, StuttgartJunker, BerlinJunker, OmegaSmelter, ForbesJunker
-
-# from templates.dockable.trading_outposts import LibertyTradingOutpost, RheinlandTradingOutpost
-# from templates.dockable.police import PoliceOutpostBretonia, SigmaEightPoliceOutpost, StuttgartPoliceOutpost, BerlinPoliceOutpost, OmicronPoliceOutpost, PoliceOutpostLiberty
-# from templates.dockable.trade_storages import HokkaidoStorage, HonshuStorage, TekagiStorage, LibertyLongStorage, RheinlandOmegaStorage, ManhattanStorage
 
 
 class BerlinMember(object):
@@ -61,7 +32,7 @@ class BerlinMember(object):
     ABSTRACT = False
 
 
-class BerlinStaticText(BerlinMember, RawText):
+class BerlinStaticText(BerlinMember, main_objects.RawText):
     SPACE_CONTENT = '''[SystemInfo]
 name = rh_ber
 space_color = 3, 7, 12
@@ -104,114 +75,23 @@ range = 150000
 type = DIRECTIONAL
 atten_curve = DYNAMIC_DIRECTION
 
-
-
-[EncounterParameters]
-nickname = rh_grp_main_defend
-filename = missions\\npc\\rh\\rh_grp_main_defend.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_scout
-filename = missions\\npc\\rh\\rh_grp_main_scout.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_cruiser
-filename = missions\\npc\\rh\\rh_grp_main_cruiser.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_gunboat
-filename = missions\\npc\\rh\\rh_grp_main_gunboat.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_elite2
-filename = missions\\npc\\rh\\rh_grp_main_elite2.ini
-
-[EncounterParameters]
-nickname = bh_grp_rh_scout
-filename = missions\\npc\\rh\\bh_grp_rh_scout.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_trade
-filename = missions\\npc\\rh\\rh_grp_main_trade.ini
-
-[EncounterParameters]
-nickname = tr_grp_rh_transport
-filename = missions\\npc\\rh\\tr_grp_rh_transport.ini
-
-[EncounterParameters]
-nickname = bh_grp_rh_trade
-filename = missions\\npc\\rh\\bh_grp_rh_trade.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_trade_tlr
-filename = missions\\npc\\rh\\rh_grp_main_trade_tlr.ini
-
-[EncounterParameters]
-nickname = tr_grp_rh_transport_tlr
-filename = missions\\npc\\rh\\tr_grp_rh_transport_tlr.ini
-
-[EncounterParameters]
-nickname = bh_grp_rh_trade_tlr
-filename = missions\\npc\\rh\\bh_grp_rh_trade_tlr.ini
-
-[EncounterParameters]
-nickname = rh_pirates_patrol
-filename = missions\\npc\\pi\\pi_grp_rh_patrol.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_patrol
-filename = missions\\npc\\rh\\rh_grp_main_patrol.ini
-
-[EncounterParameters]
-nickname = rh_junkers
-filename = missions\\npc\\rh\\rh_junkers.ini
-
-[EncounterParameters]
-nickname = bh_grp_rh_patrol
-filename = missions\\npc\\rh\\bh_grp_rh_patrol.ini
-
-[EncounterParameters]
-nickname = patrol_police
-filename = missions\\NPC\\patrol_police.ini
-
-[EncounterParameters]
-nickname = patrol_tlr
-filename = missions\\NPC\\patrol_tlr.ini
-
-[EncounterParameters]
-nickname = patrol_alg
-filename = missions\\NPC\\RH\\rh_alg.ini
-
-[EncounterParameters]
-nickname = area_xscout
-filename = missions\\NPC\\area_rebels.ini
-
-[EncounterParameters]
-nickname = corp_lifter
-filename = missions\\npc\\lifter.ini
-
-[EncounterParameters]
-nickname = corp_repair
-filename = missions\\npc\\repair.ini
-
 '''
 
 
-
-class BerlinPirateAsteroidReward(BerlinMember, AsteroidRewardsGroupMedium):
+class BerlinPirateAsteroidReward(BerlinMember, mineable.AsteroidRewardsGroupMedium):
     NAME = 'rh_ber_rock'
     SOLAR = AsteroidOmega15
     REWARD_ITEM = 'comm_roid_niobium'
 
 
-class BerlinDebrisBoxReward(BerlinMember, DefaultDebrisBoxRewardsGroup):
+class BerlinDebrisBoxReward(BerlinMember, mineable.DefaultDebrisBoxRewardsGroup):
     NAME = 'rh_ber_debrisbox'
     SOLAR = DebrisBox
     REWARD_ITEM = 'comm_scrap_metal'
     ULTRA_REWARD_ITEM = 'rh_shieldgun09'
 
 
-class BerlinAstField(DefaultField):
+class BerlinAstField(mineable.DefaultField):
     BOX_SIZE = 3000
     DENSITY_MULTIPLER = 2
     DRIFT_X = 0.3
@@ -219,7 +99,7 @@ class BerlinAstField(DefaultField):
     DRIFT_Z = 0.3
 
 
-class BerlinDebrisField(DefaultField):
+class BerlinDebrisField(mineable.DefaultField):
     BOX_SIZE = 1200
     DENSITY_MULTIPLER = 2
     DRIFT_X = 0.2
@@ -227,31 +107,14 @@ class BerlinDebrisField(DefaultField):
     DRIFT_Z = 0.2
 
 
-class BerlinPirateAsteroids(BerlinMember, AsteroidRewardField):
+class BerlinPirateAsteroids(BerlinMember, mineable.AsteroidRewardField):
     INDEX = 1
     FIELD_CLASS = BerlinAstField
     REWARDS_GROUP_CLASS = BerlinPirateAsteroidReward
     MEDIUM_REWARD_CHANCE = 0.25
 
 
-# class BerlinDebrisBoxMediumField(BerlinMember, DebrisBoxRewardField):
-#     INDEX = 1
-#     FIELD_CLASS = WarwickField2
-#     REWARDS_GROUP_CLASS = BerlinDebrisBoxReward
-#     MEDIUM_REWARD_CHANCE = 0.5
-#     HIGH_REWARD_CHANCE = 0.25
-#     ULTRA_REWARD = False
-
-
-# class BerlinDebrisBoxHighField1(BerlinMember, DebrisBoxRewardField):
-#     INDEX = 1
-#     FIELD_CLASS = BerlinDebrisField
-#     REWARDS_GROUP_CLASS = BerlinDebrisBoxReward
-#     MEDIUM_REWARD_CHANCE = 0.5
-#     HIGH_REWARD_CHANCE = 0.25
-#     ULTRA_REWARD = False
-
-class BerlinDebrisBoxHighField2(BerlinMember, DebrisBoxRewardField):
+class BerlinDebrisBoxHighField2(BerlinMember, mineable.DebrisBoxRewardField):
     INDEX = 2
     FIELD_CLASS = BerlinDebrisField
     REWARDS_GROUP_CLASS = BerlinDebrisBoxReward
@@ -260,7 +123,7 @@ class BerlinDebrisBoxHighField2(BerlinMember, DebrisBoxRewardField):
     ULTRA_REWARD = False
 
 
-class BerlinDebrisBoxHighField3(BerlinMember, DebrisBoxRewardField):
+class BerlinDebrisBoxHighField3(BerlinMember, mineable.DebrisBoxRewardField):
     INDEX = 3
     FIELD_CLASS = BerlinDebrisField
     REWARDS_GROUP_CLASS = BerlinDebrisBoxReward
@@ -269,7 +132,7 @@ class BerlinDebrisBoxHighField3(BerlinMember, DebrisBoxRewardField):
     ULTRA_REWARD = False
 
 
-class BerlinDebrisBoxHighField4(BerlinMember, DebrisBoxRewardField):
+class BerlinDebrisBoxHighField4(BerlinMember, mineable.DebrisBoxRewardField):
     INDEX = 4
     FIELD_CLASS = BerlinDebrisField
     REWARDS_GROUP_CLASS = BerlinDebrisBoxReward
@@ -278,7 +141,7 @@ class BerlinDebrisBoxHighField4(BerlinMember, DebrisBoxRewardField):
     ULTRA_REWARD = False
 
 
-class BerlinPirateAsteroidDefinition(Omega15AsteroidDefinition):
+class BerlinPirateAsteroidDefinition(asteroid_definition.Omega15AsteroidDefinition):
     ABSTRACT = False
     NAME = 'rh_ber_pirate_astfield'
     DYNAST = True
@@ -287,62 +150,62 @@ class BerlinPirateAsteroidDefinition(Omega15AsteroidDefinition):
     LOOT = False  # TEMP
 
 
-class BerlinDebrisZone1Definition(DebrisDefinition):
+class BerlinDebrisZone1Definition(asteroid_definition.DebrisDefinition):
     ABSTRACT = False
     NAME = 'rh_ber_debris_field1'
 
 
-class BerlinDebrisZone2Definition(DebrisDefinition):
+class BerlinDebrisZone2Definition(asteroid_definition.DebrisDefinition):
     ABSTRACT = False
     NAME = 'rh_ber_debris_field2'
 
 
-class BerlinDebrisZone3Definition(DebrisDefinition):
+class BerlinDebrisZone3Definition(asteroid_definition.DebrisDefinition):
     ABSTRACT = False
     NAME = 'rh_ber_debris_field3'
 
 
-class BerlinDebrisZone4Definition(DebrisDefinition):
+class BerlinDebrisZone4Definition(asteroid_definition.DebrisDefinition):
     ABSTRACT = False
     NAME = 'rh_ber_debris_field4'
 
 
-class BerlinDebrisZone5Definition(DebrisDefinition):
+class BerlinDebrisZone5Definition(asteroid_definition.DebrisDefinition):
     ABSTRACT = False
     NAME = 'rh_ber_debris_field5'
 
 
-class BerlinAsteroidZone1(BerlinMember, AsteroidZone):
+class BerlinAsteroidZone1(BerlinMember, zones.AsteroidZone):
     INDEX = 1
     ASTEROID_DEFINITION_CLASS = BerlinPirateAsteroidDefinition
 
 
-class BerlinDebrisZone1(BerlinMember, DebrisZone):
+class BerlinDebrisZone1(BerlinMember, zones.DebrisZone):
     INDEX = 1
     ASTEROID_DEFINITION_CLASS = BerlinDebrisZone1Definition
 
 
-class BerlinDebrisZone2(BerlinMember, DebrisZone):
+class BerlinDebrisZone2(BerlinMember, zones.DebrisZone):
     INDEX = 2
     ASTEROID_DEFINITION_CLASS = BerlinDebrisZone2Definition
 
 
-class BerlinDebrisZone3(BerlinMember, DebrisZone):
+class BerlinDebrisZone3(BerlinMember, zones.DebrisZone):
     INDEX = 3
     ASTEROID_DEFINITION_CLASS = BerlinDebrisZone3Definition
 
 
-class BerlinDebrisZone4(BerlinMember, DebrisZone):
+class BerlinDebrisZone4(BerlinMember, zones.DebrisZone):
     INDEX = 4
     ASTEROID_DEFINITION_CLASS = BerlinDebrisZone4Definition
 
 
-class BerlinDebrisZone5(BerlinMember, DebrisZone):
+class BerlinDebrisZone5(BerlinMember, zones.DebrisZone):
     INDEX = 5
     ASTEROID_DEFINITION_CLASS = BerlinDebrisZone5Definition
 
 
-class BerlinTopNebula(BerlinMember, NebulaZone):
+class BerlinTopNebula(BerlinMember, zones.NebulaZone):
     INDEX = 1
     FILE_NAME = 'rh_ber_blue_nebula'
     SPACEDUST = Dust.ATTRACT
@@ -350,32 +213,22 @@ class BerlinTopNebula(BerlinMember, NebulaZone):
     MUSIC = Ambience.AST_ROCK
 
 
-# class BerlinDebrisBoxUltraField(BerlinMember, DebrisBoxRewardField):
-#     INDEX = 1
-#     FIELD_CLASS = WarwickField2
-#     REWARDS_GROUP_CLASS = DebrisBoxCheck
-#     MEDIUM_REWARD_CHANCE = 0.5
-#     HIGH_REWARD_CHANCE = 0.25
-#     ULTRA_REWARD = True
-
-
-
-class BerlinSun(BerlinMember, Sun):
+class BerlinSun(BerlinMember, main_objects.Sun):
     STAR = 'Rh04_Sun'
     LOADOUT = 'med_blue_sun_fx'
 
 
-class BerlinJumpgateTop(BerlinMember, Jumpgate):
+class BerlinJumpgateTop(BerlinMember, main_objects.Jumpgate):
     INDEX = 1
     REL = TOP
 
 
-class BerlinJumpgateBottom(BerlinMember, Jumpgate):
+class BerlinJumpgateBottom(BerlinMember, main_objects.Jumpgate):
     INDEX = 2
     REL = BOTTOM
 
 
-class BerlinDockring(BerlinMember, Dockring):
+class BerlinDockring(BerlinMember, main_objects.Dockring):
     BASE_INDEX = 1
     REL = RIGHT
     AUDIO_PREFIX = SpaceVoice.RH_PLANET
@@ -383,61 +236,61 @@ class BerlinDockring(BerlinMember, Dockring):
     DEALERS = dealers.RheinlandPlanetDealers
 
 
-class BerlinPrison(BerlinMember, Prison):
+class BerlinPrison(BerlinMember, main_objects.Prison):
     BASE_INDEX = 2
     REL = RIGHT
-    SPACE_OBJECT_TEMPLATE = BerlinPrison
+    SPACE_OBJECT_TEMPLATE = prisons.BerlinPrison
     INTERIOR_CLASS = interior.StationBshbarInterior
     DEALERS = dealers.RheinlandMilitaryDealers
 
 
-class BerlinMegaStation(BerlinMember, Station):
+class BerlinMegaStation(BerlinMember, main_objects.Station):
     BASE_INDEX = 4
     REL = RIGHT
-    SPACE_OBJECT_TEMPLATE = Potsdam
+    SPACE_OBJECT_TEMPLATE = potsdam.Potsdam
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.RheinlandCivilianDealers
 
 
-class BerlinOutpost(BerlinMember, Outpost):
+class BerlinOutpost(BerlinMember, main_objects.Outpost):
     BASE_INDEX = 6
     REL = RIGHT
-    SPACE_OBJECT_TEMPLATE = BerlinPoliceOutpost
+    SPACE_OBJECT_TEMPLATE = police.BerlinPoliceOutpost
     INTERIOR_CLASS = interior.OutpostShipdealerInterior
     AUDIO_PREFIX = SpaceVoice.BORDER_STATION
     DEALERS = dealers.RheinlandMilitaryDealers
 
 
-class BerlinShipyard(BerlinMember, Shipyard):
+class BerlinShipyard(BerlinMember, main_objects.Shipyard):
     BASE_INDEX = 3
     REL = RIGHT
-    SPACE_OBJECT_TEMPLATE = CambridgeShipyard
+    SPACE_OBJECT_TEMPLATE = shipyards.CambridgeShipyard
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.RheinlandMilitaryDealers
 
 
-class BerlinTrading(BerlinMember, TradingBase):
+class BerlinTrading(BerlinMember, main_objects.TradingBase):
     BASE_INDEX = 9
     REL = RIGHT
-    SPACE_OBJECT_TEMPLATE = TekagiStorage
+    SPACE_OBJECT_TEMPLATE = trade_storages.TekagiStorage
     INTERIOR_CLASS = interior.BattleshipNoshipInterior
     DEALERS = dealers.RheinlandCivilianDealers
     FACTION = faction.TR_GRP
 
 
-class BerlinRefinery(BerlinMember, Refinery):
+class BerlinRefinery(BerlinMember, main_objects.Refinery):
     BASE_INDEX = 7
     REL = RIGHT
-    SPACE_OBJECT_TEMPLATE = AlgBaseHokkaido
+    SPACE_OBJECT_TEMPLATE = alg.AlgBaseHokkaido
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.RheinlandCivilianDealers
     FACTION = faction.RC_GRP
 
 
-class BerlinJunkers(BerlinMember, JunkerBase):
+class BerlinJunkers(BerlinMember, main_objects.JunkerBase):
     BASE_INDEX = 8
     REL = RIGHT
-    SPACE_OBJECT_TEMPLATE = BerlinJunker
+    SPACE_OBJECT_TEMPLATE = junker.BerlinJunker
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.RheinlandPirateDealers
     FACTION = faction.JUNK_GRP
@@ -447,11 +300,11 @@ class BerlinJunkers(BerlinMember, JunkerBase):
     DEFENCE_LEVEL = None
 
 
-class BerlinPiratesTop(BerlinMember, PirateBase):
+class BerlinPiratesTop(BerlinMember, main_objects.PirateBase):
     BASE_INDEX = 5
     INDEX = 1
     REL = RIGHT
-    SPACE_OBJECT_TEMPLATE = BerlinAsteroidBase
+    SPACE_OBJECT_TEMPLATE = astbase.BerlinAsteroidBase
     INTERIOR_CLASS = interior.PirateOutpostShipdealerInterior
     DEALERS = dealers.RheinlandPirateDealers
     FACTION = faction.RX_GRP
@@ -462,11 +315,11 @@ class BerlinPiratesTop(BerlinMember, PirateBase):
     DEFENCE_LEVEL = None
 
 
-class BerlinPiratesBottom(BerlinMember, PirateBase):
+class BerlinPiratesBottom(BerlinMember, main_objects.PirateBase):
     BASE_INDEX = 10
     INDEX = 2
     REL = RIGHT
-    SPACE_OBJECT_TEMPLATE = PirateBaseBizmark
+    SPACE_OBJECT_TEMPLATE = pirate.PirateBaseBizmark
     INTERIOR_CLASS = interior.PirateStationShipdealerInterior
     DEALERS = dealers.RheinlandPirateDealers
     FACTION = faction.RX_GRP
@@ -476,13 +329,13 @@ class BerlinPiratesBottom(BerlinMember, PirateBase):
     DEFENCE_LEVEL = None
 
 
-class BerlinPlanet1(BerlinMember, Planet):
+class BerlinPlanet1(BerlinMember, main_objects.Planet):
     ARCHETYPE = 'planet_desormed_4000'
     SPHERE_RADIUS = 4000
     RELATED_DOCK_RING = BerlinDockring
 
 
-class BerlinPlanet2(BerlinMember, Planet):
+class BerlinPlanet2(BerlinMember, main_objects.Planet):
     INDEX = 2
     ARCHETYPE = 'planet_icewatind_3000'
     PLANET_CIRCLE = False
@@ -493,19 +346,19 @@ class BerlinPlanet2(BerlinMember, Planet):
     RING_FILE_NAME = 'berlin'
 
 
-class BerlinPlanet3(BerlinMember, Planet):
+class BerlinPlanet3(BerlinMember, main_objects.Planet):
     INDEX = 3
     ARCHETYPE = 'planet_ice_purple_1500'
     SPHERE_RADIUS = 1500
 
 
-class BerlinPlanet4(BerlinMember, Planet):
+class BerlinPlanet4(BerlinMember, main_objects.Planet):
     INDEX = 4
     ARCHETYPE = 'planet_gasgrncld_2500'
     SPHERE_RADIUS = 2500
 
 
-class BerConnOutpost1(BerlinMember, TradeConnection):
+class BerConnOutpost1(BerlinMember, main_objects.TradeConnection):
     OBJ_FROM = BerlinOutpost
     OBJ_TO = BerlinJumpgateTop
     SIDE_FROM = BOTTOM
@@ -517,7 +370,7 @@ class BerConnOutpost1(BerlinMember, TradeConnection):
     ]
 
 
-class BerConnOutpost2(BerlinMember, TradeConnection):
+class BerConnOutpost2(BerlinMember, main_objects.TradeConnection):
     OBJ_FROM = BerlinOutpost
     OBJ_TO = BerlinShipyard
     SIDE_FROM = RIGHT
@@ -529,7 +382,7 @@ class BerConnOutpost2(BerlinMember, TradeConnection):
     ]
 
 
-class BerConnOutpost3(BerlinMember, TradeConnection):
+class BerConnOutpost3(BerlinMember, main_objects.TradeConnection):
     OBJ_FROM = BerlinOutpost
     OBJ_TO = BerlinDockring
     SIDE_FROM = LEFT
@@ -538,7 +391,7 @@ class BerConnOutpost3(BerlinMember, TradeConnection):
     HUNTER_DEFENCE_REL = BOTTOM
 
 
-class BerConnShipPris(BerlinMember, TradeConnection):
+class BerConnShipPris(BerlinMember, main_objects.TradeConnection):
     OBJ_FROM = BerlinShipyard
     OBJ_TO = BerlinPrison
     SIDE_FROM = TOP
@@ -550,7 +403,7 @@ class BerConnShipPris(BerlinMember, TradeConnection):
     ]
 
 
-class BerConnTrading1(BerlinMember, TradeConnection):
+class BerConnTrading1(BerlinMember, main_objects.TradeConnection):
     OBJ_FROM = BerlinTrading
     OBJ_TO = BerlinPrison
     SIDE_FROM = RIGHT
@@ -562,7 +415,7 @@ class BerConnTrading1(BerlinMember, TradeConnection):
     ]
 
 
-class BerConnTrading2(BerlinMember, TradeConnection):
+class BerConnTrading2(BerlinMember, main_objects.TradeConnection):
     OBJ_FROM = BerlinTrading
     OBJ_TO = BerlinJumpgateBottom
     SIDE_FROM = TOP
@@ -574,7 +427,7 @@ class BerConnTrading2(BerlinMember, TradeConnection):
     ]
 
 
-class BerConnTrading3(BerlinMember, TradeConnection):
+class BerConnTrading3(BerlinMember, main_objects.TradeConnection):
     OBJ_FROM = BerlinTrading
     OBJ_TO = BerlinMegaStation
     SIDE_FROM = LEFT
@@ -583,7 +436,7 @@ class BerConnTrading3(BerlinMember, TradeConnection):
     HUNTER_DEFENCE_REL = BOTTOM
 
 
-class BerConnStation1(BerlinMember, TradeConnection):
+class BerConnStation1(BerlinMember, main_objects.TradeConnection):
     OBJ_FROM = BerlinMegaStation
     OBJ_TO = BerlinDockring
     SIDE_FROM = BOTTOM
@@ -594,7 +447,7 @@ class BerConnStation1(BerlinMember, TradeConnection):
     ]
 
 
-class BerConnStation2(BerlinMember, TradeConnection):
+class BerConnStation2(BerlinMember, main_objects.TradeConnection):
     OBJ_FROM = BerlinMegaStation
     OBJ_TO = BerlinRefinery
     SIDE_FROM = LEFT

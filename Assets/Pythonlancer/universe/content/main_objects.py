@@ -129,7 +129,7 @@ class StaticObject(AppearableObject):
     NEBULA_EXCLUSION_ZONE_SIZE = 3000
     NEBULA_ZONE_NAME_TEMPLATE = 'Zone_{space_name}_nebula_exclusion'
     EXCLUSION_PARAMS = {}
-    NEBULA_EXCLUSION_EDGE_FRACTION = 0.5
+    NEBULA_EXCLUSION_EDGE_FRACTION = 0.2
     NEBULA_EXCLUSION_ZONE_PARAMS = {}
 
     RING_ZONE_NAME_TEMPLATE = 'Zone_{space_name}_ring'
@@ -294,8 +294,8 @@ class StaticObject(AppearableObject):
         return params
 
     def is_lawful(self):
-        is_lawful = self.FACTION in self.system.LAWFUL_FACTIONS
-        if not is_lawful and self.FACTION not in self.system.UNLAWFUL_FACTIONS:
+        is_lawful = self.FACTION in self.system.get_lawful_factions()
+        if not is_lawful and self.FACTION not in self.system.get_unlawful_factions():
             raise Exception('Faction isnt defined in a system for object %s' % self.__class__.__name__)
         return is_lawful
 
@@ -1000,11 +1000,15 @@ class PatrolObjective(SystemObject):
     TRACKS_PATROL_NAME = 'name = {name}, {index}'
     TRACKS_PATROL_ITEM = 'pos = {pos}'
     
-    def __init__(self, system, index, positions):
+    def __init__(self, system, population_kind, index, positions):
         self.system = system
+        self.population_kind = population_kind
         self.index = index
         self.positions = positions
         self.raw_paths = []
+
+    def get_population_kind(self):
+        return self.population_kind
 
     def get_tracks_request_content(self):
         items = [
@@ -1042,7 +1046,6 @@ class PatrolObjective(SystemObject):
 class PolicePatrol(PatrolObjective):
     PATROL_ALIAS = 'police'
 
-    PATROL_ENCOUNTER = 'patrol_police'
     ZONE_PARAMS = '''toughness = 1
 density = 1
 repop_time = 90
@@ -1056,20 +1059,20 @@ density_restriction = 1, police_patroller
 density_restriction = 1, pirate_patroller
 density_restriction = 4, lawfuls
 density_restriction = 4, unlawfuls
-encounter = {encounter}, 1, 0.330000
+encounter = {police_encounter}, 1, 0.330000
 faction = {police_faction}, 1.000000'''
 
     def get_zone_params(self):
+        lawful_population = self.get_lawful_population_class()
         return self.ZONE_PARAMS.format(
-            encounter=self.PATROL_ENCOUNTER,
-            police_faction=self.system.get_police_faction(),
+            police_encounter=lawful_population.get_police_encounter(),
+            police_faction=lawful_population.get_police_faction(),
         )
 
 
 class HuntersPatrol(PatrolObjective):
     PATROL_ALIAS = 'bounty_hunter'
 
-    HUNTERS_FACTION = faction.BH_GRP
     ZONE_PARAMS = '''toughness = 4
 density = 3
 repop_time = 90
@@ -1087,16 +1090,16 @@ encounter = {bh_encounter}, 1, 0.330000
 faction = {bh_faction}, 1.000000'''
 
     def get_zone_params(self):
+        lawful_population = self.get_lawful_population_class()
         return self.ZONE_PARAMS.format(
-            bh_encounter=self.system.get_bounty_hunter_encounter(),
-            bh_faction=self.HUNTERS_FACTION,
+            bh_encounter=lawful_population.get_bounty_hunter_encounter(),
+            bh_faction=lawful_population.get_bounty_hunter_faction(),
         )
 
 
 class PiratePatrol(PatrolObjective):
     PATROL_ALIAS = 'pirate'
 
-    PATROL_TLR_ENCOUNTER = 'patrol_tlr'
     ZONE_PARAMS = '''toughness = 1
 density = 1
 repop_time = 90
@@ -1111,13 +1114,14 @@ density_restriction = 1, police_patroller
 density_restriction = 1, pirate_patroller
 density_restriction = 4, lawfuls
 density_restriction = 4, unlawfuls
-encounter = {patrol_tlr_encounter}, 1, 0.330000
+encounter = {attack_tlr_encounter}, 1, 0.330000
 faction = {pirate_faction}, 1.000000'''
 
     def get_zone_params(self):
+        unlawful_population = self.get_unlawful_population_class()
         return self.ZONE_PARAMS.format(
-            patrol_tlr_encounter=self.PATROL_TLR_ENCOUNTER,
-            pirate_faction=self.system.get_pirate_faction(),
+            attack_tlr_encounter=unlawful_population.get_tlr_attackers_encounter(),
+            pirate_faction=unlawful_population.get_tlr_attackers_faction(),
         )
 
 
@@ -1342,6 +1346,7 @@ size = {size}'''
         obj_to_pos = self.system.get_object_position(obj_to)
         return PolicePatrol(
             system=self.system,
+            population_kind=self.get_population_kind(),
             index=self.system.get_next_police_patrol_id(),
             positions=[
                 (obj_from_pos[0], 0, obj_from_pos[2]),
@@ -1389,6 +1394,7 @@ size = {size}'''
 
         return HuntersPatrol(
             system=self.system,
+            population_kind=self.get_population_kind(),
             index=self.system.get_next_bounty_hunter_patrol_id(),
             positions=[
                 (obj_from_pos[0], 0, obj_from_pos[2]),
@@ -1418,6 +1424,7 @@ size = {size}'''
 
         return PiratePatrol(
             system=self.system,
+            population_kind=self.get_population_kind(),
             index=self.system.get_next_police_patrol_id(),
             positions=[
                 (attacker_base_pos[0], 0, attacker_base_pos[2]),

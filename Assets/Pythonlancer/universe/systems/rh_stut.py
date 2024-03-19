@@ -17,13 +17,7 @@ from templates.nebula import exclusion
 
 from templates.dockable import pirate
 from templates.dockable import junker
-from templates.dockable import trade_storages
-from templates.dockable import columbia_production
-from templates.dockable import constanta
 from templates.dockable import shipyards
-from templates.dockable import alg
-from templates.dockable import research
-from templates.dockable import rheinland_military
 from templates.dockable import police
 from templates.dockable import stuttgart_megabase
 from templates.dockable import bounty_hunter
@@ -63,94 +57,6 @@ nebulae = solar\\stars_mod\\rh_stut_nebula.cmp
 complex_stars = solar\\stars_mod\\new_generic.cmp
 basic_stars = solar\\stars_mod\\new_generic.cmp
 
-[EncounterParameters]
-nickname = rh_grp_main_defend
-filename = missions\\npc\\rh\\rh_grp_main_defend.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_scout
-filename = missions\\npc\\rh\\rh_grp_main_scout.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_cruiser
-filename = missions\\npc\\rh\\rh_grp_main_cruiser.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_gunboat
-filename = missions\\npc\\rh\\rh_grp_main_gunboat.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_elite2
-filename = missions\\npc\\rh\\rh_grp_main_elite2.ini
-
-[EncounterParameters]
-nickname = bh_grp_rh_scout
-filename = missions\\npc\\rh\\bh_grp_rh_scout.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_trade
-filename = missions\\npc\\rh\\rh_grp_main_trade.ini
-
-[EncounterParameters]
-nickname = tr_grp_rh_transport
-filename = missions\\npc\\rh\\tr_grp_rh_transport.ini
-
-[EncounterParameters]
-nickname = bh_grp_rh_trade
-filename = missions\\npc\\rh\\bh_grp_rh_trade.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_trade_tlr
-filename = missions\\npc\\rh\\rh_grp_main_trade_tlr.ini
-
-[EncounterParameters]
-nickname = tr_grp_rh_transport_tlr
-filename = missions\\npc\\rh\\tr_grp_rh_transport_tlr.ini
-
-[EncounterParameters]
-nickname = bh_grp_rh_trade_tlr
-filename = missions\\npc\\rh\\bh_grp_rh_trade_tlr.ini
-
-[EncounterParameters]
-nickname = rh_pirates_patrol
-filename = missions\\npc\\pi\\pi_grp_rh_patrol.ini
-
-[EncounterParameters]
-nickname = rh_grp_main_patrol
-filename = missions\\npc\\rh\\rh_grp_main_patrol.ini
-
-[EncounterParameters]
-nickname = rh_junkers
-filename = missions\\npc\\rh\\rh_junkers.ini
-
-[EncounterParameters]
-nickname = bh_grp_rh_patrol
-filename = missions\\npc\\rh\\bh_grp_rh_patrol.ini
-
-[EncounterParameters]
-nickname = patrol_police
-filename = missions\\NPC\\patrol_police.ini
-
-[EncounterParameters]
-nickname = patrol_tlr
-filename = missions\\NPC\\patrol_tlr.ini
-
-[EncounterParameters]
-nickname = patrol_alg
-filename = missions\\NPC\\RH\\rh_alg.ini
-
-[EncounterParameters]
-nickname = area_xscout
-filename = missions\\NPC\\area_rebels.ini
-
-[EncounterParameters]
-nickname = corp_lifter
-filename = missions\\npc\\lifter.ini
-
-[EncounterParameters]
-nickname = corp_repair
-filename = missions\\npc\\repair.ini
-
 [zone]
 nickname = zone_rh_stut_system_status
 pos = 0, 0, 0
@@ -170,7 +76,7 @@ type = DIRECTIONAL
 atten_curve = DYNAMIC_DIRECTION'''
 
 
-class StutOrangeNebula1(StutMember, zones.TemplatedNebulaZone):
+class StutOrangeNebula1(StutMember, zones.NebulaZone):
     INDEX = 1
     FILE_NAME = 'gen_rh_stut_orange_nebula'
     SPACEDUST = Dust.ATTRACT_ORANGE

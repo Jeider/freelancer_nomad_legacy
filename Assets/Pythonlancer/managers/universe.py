@@ -1,7 +1,7 @@
 import pathlib
 from templates.solar.hacker_panel import HackerPanelManager
 
-from universe.universe import Universe
+from universe.universe import *
 from universe.system import System
 from universe.base import Base, EQUIP_CLASSES_PER_LEVEL
 from universe.markets import EquipDealer, ShipDealer
@@ -157,11 +157,11 @@ class UniverseManager(object):
 
         for definition in self.asteroid_definitions:
             # print(f'sync ast definition {definition.NAME}')
-            DataFolder.sync_asteroid_definition(definition.NAME, definition.SUBFOLDER, definition.get_file_content())
+            DataFolder.sync_asteroid_definition(definition.get_file_name(), definition.zone.SUBFOLDER, definition.get_file_content())
 
         for tpl_nebula in self.templated_nebulas:
             # print(f'sync templated nebula {tpl_nebula.FILE_NAME}')
-            DataFolder.sync_templated_nebula(tpl_nebula.FILE_NAME, tpl_nebula.GENERATED_NEBULA_SUBFOLDER, tpl_nebula.get_file_content())
+            DataFolder.sync_templated_nebula(tpl_nebula.get_file_name(), tpl_nebula.GENERATED_NEBULA_SUBFOLDER, tpl_nebula.get_file_content())
 
         for file_name, content in self.interior_files.items():
             # print(f'sync interior {file_name}')
