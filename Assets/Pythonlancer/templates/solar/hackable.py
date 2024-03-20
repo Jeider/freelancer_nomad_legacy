@@ -9,9 +9,16 @@ class HackableSolar(object):
 
 
 class HackableOutpost(HackableSolar):
-    OFFSET = (40, 47.5, 0)
+    OFFSET = (40, 47.5,  0)
     ARCHETYPE = 'space_police01'
     ROTATE = (0, 0, 18.5)
+    PANEL_RELATION = REL_TOP
+
+
+class HackableOutpostRot90(HackableSolar):
+    OFFSET = (0, 47.5,  40)
+    ARCHETYPE = 'space_police01'
+    ROTATE = (90, 108.5, 90)
     PANEL_RELATION = REL_TOP
 
 

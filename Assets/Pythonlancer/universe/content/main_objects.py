@@ -13,9 +13,6 @@ from universe.content.loadout import Loadout
 from text.dividers import SINGLE_DIVIDER, DIVIDER
 
 
-TRADELANE_ZONE_SIZE = 2500
-
-TLR_DISTANCE = 7000
 
 TLR_HUGE_SIZE_RINGS_COUNT = 5
 TLR_SMALL_SIZE_RINGS_COUNT = 4
@@ -902,6 +899,11 @@ class RheinlandBattleship(Battleship):
     LOADOUT = 'rh_battleship_station'
 
 
+class BretoniaBattleship(Battleship):
+    ARCHETYPE = 'b_battleship'
+    LOADOUT = 'br_battleship_station'
+
+
 class Freeport(DockableObject):
     ALIAS = 'freeport'
     AUDIO_PREFIX = SpaceVoice.FREEPORT
@@ -1126,7 +1128,6 @@ faction = {pirate_faction}, 1.000000'''
 
 
 class Tradelane(object):
-
     RING_TEMPLATE = '''[Object]
 nickname = {ring_nickname}
 ids_name = 260920
@@ -1211,6 +1212,9 @@ class TradeConnection(SystemObject):
     HUNTER_PATROL_OFFSET = 10000
     HUNTER_PATROL_DRIFT = 3000
 
+    TRADELANE_ZONE_SIZE = 2500
+    TLR_DISTANCE = 7000
+
     TRACKS_TLR_TEMPLATE = '''[TradeLane]
 number = 1
 count = 1
@@ -1281,9 +1285,9 @@ size = {size}'''
         return self.TRACKS_TLR_TEMPLATE.format(
             first_tlr_props='{0}, {1}, {2}, {3}'.format(*start_tradelane_props),
             last_tlr_props='{0}, {1}, {2}, {3}'.format(*end_tradelane_props),
-            tlr_zone_size=TRADELANE_ZONE_SIZE,
+            tlr_zone_size=self.TRADELANE_ZONE_SIZE,
             tlr_zone_index=zone_index,
-            tlr_distance=TLR_DISTANCE,
+            tlr_distance=self.TLR_DISTANCE,
         )
 
     def add_tradelane(self, tracks_raw_tradelane):
@@ -1435,7 +1439,6 @@ size = {size}'''
         )
 
 
-
 class DestroyedTradelane(Tradelane):
 
     RING_TEMPLATE = '''[Object]
@@ -1448,7 +1451,7 @@ archetype = Trade_Lane_Ring_Damage_A
 '''
 
     def get_ring_nickname(self):
-        return '{system_name}_F_Trade_Lane_Ring_{letter}0{index}'.format(
+        return '{system_name}_broken_Trade_Lane_Ring_{letter}0{index}'.format(
             system_name=self.trade_connection.system.NAME.upper(),
             letter=self.trade_connection.TRADELANE_LETTER,
             index=self.tradelane_index,
@@ -1470,3 +1473,40 @@ class BrokenTradeConnection(TradeConnection):
     TRADELANE_CLASS = DestroyedTradelane
     POLICE_PATROL = False
     TLR_OUTER_ZONE = False
+
+
+class NavBuoyTradelane(Tradelane):
+
+    RING_TEMPLATE = '''[Object]
+nickname = {ring_nickname}
+pos = {pos}
+rotate = {rotate}
+archetype = nav_buoy_non_targetable
+visit = 128
+'''
+
+    def get_ring_nickname(self):
+        return '{system_name}_buoy_{letter}0{index}'.format(
+            system_name=self.trade_connection.system.NAME.upper(),
+            letter=self.trade_connection.TRADELANE_LETTER,
+            index=self.tradelane_index,
+        )
+
+    def get_tradelane_pos(self):
+        return self.tracks_raw_tradelane.lines[POS_KEY]
+
+    def get_system_object(self):
+        template_params = {
+            'ring_nickname': self.get_ring_nickname(),
+            'pos': '{0}, {1}, {2}'.format(*self.tracks_raw_tradelane.lines[POS_KEY]),
+            'rotate': '{0}, {1}, {2}'.format(*self.tracks_raw_tradelane.lines[ROT_KEY]),
+        }
+        return self.RING_TEMPLATE.format(**template_params)
+
+
+class BuoyTradeConnection(TradeConnection):
+    TRADELANE_CLASS = NavBuoyTradelane
+    POLICE_PATROL = True
+    TLR_OUTER_ZONE = False
+
+    TLR_DISTANCE = 2000

@@ -10,6 +10,7 @@ from universe.content import asteroid_definition
 from universe.content.space_voice import SpaceVoice
 from universe.content import faction
 
+from templates.nebula import rh_ber_nebula
 from templates.dockable import pirate
 from templates.dockable import potsdam
 from templates.dockable import prisons
@@ -22,8 +23,8 @@ from templates.dockable import trade_storages
 
 from universe.content import mineable
 
-from templates.solar.asteroid import AsteroidOmega15
-from templates.solar.debris_box import DebrisBox
+from templates.solar import asteroid
+from templates.solar import debris_box
 
 
 class BerlinMember(object):
@@ -80,15 +81,8 @@ atten_curve = DYNAMIC_DIRECTION
 
 class BerlinPirateAsteroidReward(BerlinMember, mineable.AsteroidRewardsGroupMedium):
     NAME = 'rh_ber_rock'
-    SOLAR = AsteroidOmega15
+    SOLAR = asteroid.AsteroidOmega15
     REWARD_ITEM = 'comm_roid_niobium'
-
-
-class BerlinDebrisBoxReward(BerlinMember, mineable.DefaultDebrisBoxRewardsGroup):
-    NAME = 'rh_ber_debrisbox'
-    SOLAR = DebrisBox
-    REWARD_ITEM = 'comm_scrap_metal'
-    ULTRA_REWARD_ITEM = 'rh_shieldgun09'
 
 
 class BerlinAstField(mineable.DefaultField):
@@ -114,33 +108,6 @@ class BerlinPirateAsteroids(BerlinMember, mineable.AsteroidRewardField):
     MEDIUM_REWARD_CHANCE = 0.25
 
 
-class BerlinDebrisBoxHighField2(BerlinMember, mineable.DebrisBoxRewardField):
-    INDEX = 2
-    FIELD_CLASS = BerlinDebrisField
-    REWARDS_GROUP_CLASS = BerlinDebrisBoxReward
-    MEDIUM_REWARD_CHANCE = 0.5
-    HIGH_REWARD_CHANCE = 0.25
-    ULTRA_REWARD = False
-
-
-class BerlinDebrisBoxHighField3(BerlinMember, mineable.DebrisBoxRewardField):
-    INDEX = 3
-    FIELD_CLASS = BerlinDebrisField
-    REWARDS_GROUP_CLASS = BerlinDebrisBoxReward
-    MEDIUM_REWARD_CHANCE = 0.5
-    HIGH_REWARD_CHANCE = 0.25
-    ULTRA_REWARD = False
-
-
-class BerlinDebrisBoxHighField4(BerlinMember, mineable.DebrisBoxRewardField):
-    INDEX = 4
-    FIELD_CLASS = BerlinDebrisField
-    REWARDS_GROUP_CLASS = BerlinDebrisBoxReward
-    MEDIUM_REWARD_CHANCE = 0.5
-    HIGH_REWARD_CHANCE = 0.25
-    ULTRA_REWARD = False
-
-
 class BerlinPirateAsteroidDefinition(asteroid_definition.Omega15AsteroidDefinition):
     ABSTRACT = False
     NAME = 'rh_ber_pirate_astfield'
@@ -150,31 +117,6 @@ class BerlinPirateAsteroidDefinition(asteroid_definition.Omega15AsteroidDefiniti
     LOOT = False  # TEMP
 
 
-class BerlinDebrisZone1Definition(asteroid_definition.DebrisDefinition):
-    ABSTRACT = False
-    NAME = 'rh_ber_debris_field1'
-
-
-class BerlinDebrisZone2Definition(asteroid_definition.DebrisDefinition):
-    ABSTRACT = False
-    NAME = 'rh_ber_debris_field2'
-
-
-class BerlinDebrisZone3Definition(asteroid_definition.DebrisDefinition):
-    ABSTRACT = False
-    NAME = 'rh_ber_debris_field3'
-
-
-class BerlinDebrisZone4Definition(asteroid_definition.DebrisDefinition):
-    ABSTRACT = False
-    NAME = 'rh_ber_debris_field4'
-
-
-class BerlinDebrisZone5Definition(asteroid_definition.DebrisDefinition):
-    ABSTRACT = False
-    NAME = 'rh_ber_debris_field5'
-
-
 class BerlinAsteroidZone1(BerlinMember, zones.AsteroidZone):
     INDEX = 1
     ASTEROID_DEFINITION_CLASS = BerlinPirateAsteroidDefinition
@@ -182,32 +124,109 @@ class BerlinAsteroidZone1(BerlinMember, zones.AsteroidZone):
 
 class BerlinDebrisZone1(BerlinMember, zones.DebrisZone):
     INDEX = 1
-    ASTEROID_DEFINITION_CLASS = BerlinDebrisZone1Definition
+    ASTEROID_DEFINITION_CLASS = asteroid_definition.DebrisDefinition
 
 
 class BerlinDebrisZone2(BerlinMember, zones.DebrisZone):
     INDEX = 2
-    ASTEROID_DEFINITION_CLASS = BerlinDebrisZone2Definition
+    ASTEROID_DEFINITION_CLASS = asteroid_definition.DebrisDefinition
 
 
 class BerlinDebrisZone3(BerlinMember, zones.DebrisZone):
     INDEX = 3
-    ASTEROID_DEFINITION_CLASS = BerlinDebrisZone3Definition
+    ASTEROID_DEFINITION_CLASS = asteroid_definition.DebrisDefinition
 
 
 class BerlinDebrisZone4(BerlinMember, zones.DebrisZone):
     INDEX = 4
-    ASTEROID_DEFINITION_CLASS = BerlinDebrisZone4Definition
+    ASTEROID_DEFINITION_CLASS = asteroid_definition.DebrisDefinition
 
 
 class BerlinDebrisZone5(BerlinMember, zones.DebrisZone):
     INDEX = 5
-    ASTEROID_DEFINITION_CLASS = BerlinDebrisZone5Definition
+    ASTEROID_DEFINITION_CLASS = asteroid_definition.DebrisDefinition
+
+
+class BerlinBaseDebrisManufactoring(main_objects.DebrisManufactoring):
+    ALIAS = 'deb'
+    ROTATE_RANDOM = True
+    ARCHETYPE = 'mplatform'
+    LOADOUT = 'mplatform_rh_debris'
+    INTERIOR_CLASS = interior.EquipDeckInterior
+    DEFENCE_LEVEL = None
+    LOCKED_DOCK = True
+
+    AST_EXCLUSION_ZONE_SIZE = 2000
+    AST_EXCLUSION_ZONE_PARAMS = {
+        'spacedust': Dust.RADIOACTIVE_RED,
+        'spacedust_maxparticles': 200,
+    }
+
+
+class BerlinDebrisFactory1(BerlinMember, BerlinBaseDebrisManufactoring):
+    INDEX = 2
+    BASE_INDEX = 51
+    ASTEROID_ZONES = [
+        BerlinDebrisZone2,
+    ]
+    AST_EXCLUSION_ZONE_SIZE = 3500
+
+
+class BerlinDebrisFactory2(BerlinMember, BerlinBaseDebrisManufactoring):
+    INDEX = 3
+    BASE_INDEX = 52
+    ASTEROID_ZONES = [
+        BerlinDebrisZone3,
+    ]
+    AST_EXCLUSION_ZONE_SIZE = 3500
+
+
+class BerlinDebrisFactory3(BerlinMember, BerlinBaseDebrisManufactoring):
+    INDEX = 4
+    BASE_INDEX = 53
+    ASTEROID_ZONES = [
+        BerlinDebrisZone4,
+    ]
+    AST_EXCLUSION_ZONE_SIZE = 3500
+
+
+class BerlinDebrisBoxReward(BerlinMember, mineable.DefaultDebrisBoxRewardsGroup):
+    NAME = 'rh_ber_debrisbox'
+    SOLAR = debris_box.DebrisBox
+    REWARD_ITEM = 'comm_scrap_metal'
+    ULTRA_REWARD_BASES = [
+        BerlinDebrisFactory1,
+        BerlinDebrisFactory2,
+        BerlinDebrisFactory3,
+    ]
+
+
+class BerlinBaseDebrisBoxRewardField(mineable.DebrisBoxRewardField):
+    FIELD_CLASS = mineable.MineableDebrixBoxField
+    REWARDS_GROUP_CLASS = BerlinDebrisBoxReward
+    MEDIUM_REWARD_CHANCE = 0.5
+    HIGH_REWARD_CHANCE = 0.25
+    ULTRA_REWARD = True
+
+
+class BerlinDebrisBoxField1(BerlinMember, BerlinBaseDebrisBoxRewardField):
+    INDEX = 2
+    ULTRA_BASE = BerlinDebrisZone2
+
+
+class BerlinDebrisBoxField2(BerlinMember, BerlinBaseDebrisBoxRewardField):
+    INDEX = 3
+    ULTRA_BASE = BerlinDebrisZone2
+
+
+class BerlinDebrisBoxField3(BerlinMember, BerlinBaseDebrisBoxRewardField):
+    INDEX = 3
+    ULTRA_BASE = BerlinDebrisZone3
 
 
 class BerlinTopNebula(BerlinMember, zones.NebulaZone):
     INDEX = 1
-    FILE_NAME = 'rh_ber_blue_nebula'
+    CONTENT_TEMPLATE = rh_ber_nebula.BerlinBlueNebulaTemplate
     SPACEDUST = Dust.ATTRACT
     SPACEDUST_MAXPARTICLES = 50
     MUSIC = Ambience.AST_ROCK

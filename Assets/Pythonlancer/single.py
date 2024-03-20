@@ -1,6 +1,7 @@
 import sys
 
 from templates.solar.hacker_panel import HackerPanelManager, REL_TOP
+from templates.dockable import station_debris
 
 
 def generate_hacker_panels():
@@ -16,9 +17,19 @@ def test_hacker_colors():
     pass
 
 
+def test_placement():
+    pass
+
+    # base = station_debris.TekagiRuinsTest().get_instance(new_space_object_name=None, move_to=(0, -400, -500))
+
+    # print(base)
+
+
+
 ACTIONS = {
     'generate_hacker_panels': generate_hacker_panels,
     'test_hacker_colors': test_hacker_colors,
+    'test_placement': test_placement,
 }
 
 

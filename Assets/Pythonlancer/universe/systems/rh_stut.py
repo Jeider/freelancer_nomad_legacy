@@ -98,35 +98,19 @@ WALKER_EXCLUSION_PARAMS = {
 }
 
 
-class StutDebrisZoneDefinition1(asteroid_definition.DebrisDefinition):
-    ABSTRACT = False
-    NAME = 'rh_stut_debris_field1'
-
-
-class StutDebrisZoneDefinition2(asteroid_definition.DebrisDefinition):
-    ABSTRACT = False
-    NAME = 'rh_stut_debris_field2'
-
-
-class StutDebrisZoneDefinition3(asteroid_definition.DebrisDefinition):
-    ABSTRACT = False
-    NAME = 'rh_stut_debris_field3'
-
-
 class StutDebrisZone1(StutMember, zones.DebrisZone):
     INDEX = 1
-    ASTEROID_DEFINITION_CLASS = StutDebrisZoneDefinition1
+    ASTEROID_DEFINITION_CLASS = asteroid_definition.DebrisDefinition
 
 
 class StutDebrisZone2(StutMember, zones.DebrisZone):
     INDEX = 2
-    ASTEROID_DEFINITION_CLASS = StutDebrisZoneDefinition2
+    ASTEROID_DEFINITION_CLASS = asteroid_definition.DebrisDefinition
 
 
 class StutDebrisZone3(StutMember, zones.DebrisZone):
     INDEX = 3
-    ASTEROID_DEFINITION_CLASS = StutDebrisZoneDefinition3
-
+    ASTEROID_DEFINITION_CLASS = asteroid_definition.DebrisDefinition
 
 
 class StutBaseDebrisManufactoring(main_objects.DebrisManufactoring):
@@ -164,7 +148,7 @@ class StutDebrisFactory2(StutMember, StutBaseDebrisManufactoring):
 
 
 class StutDebrisBoxReward(StutMember, mineable.DefaultDebrisBoxRewardsGroup):
-    NAME = 'rh_biz_debrisbox'
+    NAME = 'rh_stut_debrisbox'
     SOLAR = debris_box.DebrisBox
     REWARD_ITEM = 'comm_scrap_metal'
     ULTRA_REWARD_BASES = [
@@ -172,8 +156,8 @@ class StutDebrisBoxReward(StutMember, mineable.DefaultDebrisBoxRewardsGroup):
         StutDebrisFactory2,
     ]
 
+
 class StutBaseDebrisBoxRewardField(mineable.DebrisBoxRewardField):
-    FIELD_NAME = None
     FIELD_CLASS = mineable.MineableDebrixBoxField
     REWARDS_GROUP_CLASS = StutDebrisBoxReward
     MEDIUM_REWARD_CHANCE = 0.5
@@ -182,17 +166,13 @@ class StutBaseDebrisBoxRewardField(mineable.DebrisBoxRewardField):
 
 
 class StutDebrisBoxField1(StutMember, StutBaseDebrisBoxRewardField):
-    FIELD_NAME = 'rh_stut_debris1'
     INDEX = 2
     ULTRA_BASE = StutDebrisFactory1
 
 
 class StutDebrisBoxField2(StutMember, StutBaseDebrisBoxRewardField):
-    FIELD_NAME = 'rh_stut_debris2'
     INDEX = 3
     ULTRA_BASE = StutDebrisFactory2
-
-
 
 
 class StutBaseSolarPlant(main_objects.SolarPlant):
@@ -241,44 +221,8 @@ size = 300, 300
 '''
 
 
-class StutSolarMines(asteroid_definition.AsteroidDefinition):
-    FIELD = True
-    CUBE = True
-    BILLBOARDS = True
-    FIELD_TEMPLATE = FIELD_TEMPLATE
-    CUBE_TEMPLATE = CUBE_TEMPLATE
-    BILLBOARD_TEMPLATE = BILLBOARD_TEMPLATE
-    SHAPES = [
-        asteroid_definition.SHAPES_MINES,
-    ]
-
-
-class StutSolarMines1(StutSolarMines):
-    ABSTRACT = False
-    NAME = 'rh_stut_solar_mines1'
-
-
-class StutSolarMines2(StutSolarMines):
-    ABSTRACT = False
-    NAME = 'rh_stut_solar_mines2'
-
-
-class StutSolarMines3(StutSolarMines):
-    ABSTRACT = False
-    NAME = 'rh_stut_solar_mines3'
-
-
-class StutSolarMines4(StutSolarMines):
-    ABSTRACT = False
-    NAME = 'rh_stut_solar_mines4'
-
-
-class StutSolarMines5(StutSolarMines):
-    ABSTRACT = False
-    NAME = 'rh_stut_solar_mines5'
-
-
 class StutBaseMinesZone(zones.AsteroidZone):
+    ASTEROID_DEFINITION_CLASS = asteroid_definition.SpaceMines
     SPACEDUST = Dust.DEBRIS
     SPACEDUST_MAXPARTICLES = 100
     MUSIC = Ambience.MINE_AST
@@ -290,31 +234,26 @@ class StutBaseMinesZone(zones.AsteroidZone):
 class StutSolarMinesZone1(StutMember, StutBaseMinesZone):
     ALIAS = 'solar'
     INDEX = 1
-    ASTEROID_DEFINITION_CLASS = StutSolarMines1
 
 
 class StutSolarMinesZone2(StutMember, StutBaseMinesZone):
     ALIAS = 'solar'
     INDEX = 2
-    ASTEROID_DEFINITION_CLASS = StutSolarMines2
 
 
 class StutSolarMinesZone3(StutMember, StutBaseMinesZone):
     ALIAS = 'solar'
     INDEX = 3
-    ASTEROID_DEFINITION_CLASS = StutSolarMines3
 
 
 class StutSolarMinesZone4(StutMember, StutBaseMinesZone):
     ALIAS = 'solar'
     INDEX = 4
-    ASTEROID_DEFINITION_CLASS = StutSolarMines4
 
 
 class StutSolarMinesZone5(StutMember, StutBaseMinesZone):
     ALIAS = 'solar'
     INDEX = 5
-    ASTEROID_DEFINITION_CLASS = StutSolarMines5
 
 
 class StutSolarPlant1(StutMember, StutBaseSolarPlant):
@@ -381,38 +320,32 @@ class StutSolarSupriseField(mineable.DefaultField):
 
 class StutBaseSolarSupriseRewardField(mineable.SupriseRewardField):
     ALIAS = 'solar'
-    FIELD_NAME = None
     FIELD_CLASS = StutSolarSupriseField
     REWARDS_GROUP_CLASS = StutSolarSupriseRewards
     ULTRA_REWARD = True
 
 
 class StutSolarSupriseRewardField1(StutMember, StutBaseSolarSupriseRewardField):
-    FIELD_NAME = 'rh_stut_suprise_field1'
     INDEX = 1
     ULTRA_BASE = StutSolarPlant1
 
 
 class StutSolarSupriseRewardField2(StutMember, StutBaseSolarSupriseRewardField):
-    FIELD_NAME = 'rh_stut_suprise_field2'
     INDEX = 2
     ULTRA_BASE = StutSolarPlant2
 
 
 class StutSolarSupriseRewardField3(StutMember, StutBaseSolarSupriseRewardField):
-    FIELD_NAME = 'rh_stut_suprise_field3'
     INDEX = 3
     ULTRA_BASE = StutSolarPlant3
 
 
 class StutSolarSupriseRewardField4(StutMember, StutBaseSolarSupriseRewardField):
-    FIELD_NAME = 'rh_stut_suprise_field4'
     INDEX = 4
     ULTRA_BASE = StutSolarPlant4
 
 
 class StutSolarSupriseRewardField5(StutMember, StutBaseSolarSupriseRewardField):
-    FIELD_NAME = 'rh_stut_suprise_field5'
     INDEX = 5
     ULTRA_BASE = StutSolarPlant5
 

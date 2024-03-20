@@ -430,25 +430,10 @@ class Sigma13GasPockets(asteroid_definition.AsteroidDefinition):
     CUBE_TEMPLATE = CUBE_TEMPLATE
 
 
-class Sigma13GasPockets1(Sigma13GasPockets):
-    ABSTRACT = False
-    NAME = 'sig13_gas_pocket1'
-
-
-class Sigma13GasPockets2(Sigma13GasPockets):
-    ABSTRACT = False
-    NAME = 'sig13_gas_pocket2'
-
-
-class Sigma13GasPockets3(Sigma13GasPockets):
-    ABSTRACT = False
-    NAME = 'sig13_gas_pocket3'
-
-
 class Sigma13GasPocketsZone1(Sigma13Member, zones.AsteroidZone):
     ALIAS = 'bigcryst'
     INDEX = 1
-    ASTEROID_DEFINITION_CLASS = Sigma13GasPockets1
+    ASTEROID_DEFINITION_CLASS = Sigma13GasPockets
     SPACEDUST = Dust.OXYGEN
     SPACEDUST_MAXPARTICLES = 200
 
@@ -456,7 +441,7 @@ class Sigma13GasPocketsZone1(Sigma13Member, zones.AsteroidZone):
 class Sigma13GasPocketsZone2(Sigma13Member, zones.AsteroidZone):
     ALIAS = 'bigcryst'
     INDEX = 2
-    ASTEROID_DEFINITION_CLASS = Sigma13GasPockets2
+    ASTEROID_DEFINITION_CLASS = Sigma13GasPockets
     SPACEDUST = Dust.OXYGEN
     SPACEDUST_MAXPARTICLES = 200
 
@@ -464,7 +449,7 @@ class Sigma13GasPocketsZone2(Sigma13Member, zones.AsteroidZone):
 class Sigma13GasPocketsZone3(Sigma13Member, zones.AsteroidZone):
     ALIAS = 'bigcryst'
     INDEX = 3
-    ASTEROID_DEFINITION_CLASS = Sigma13GasPockets3
+    ASTEROID_DEFINITION_CLASS = Sigma13GasPockets
     SPACEDUST = Dust.OXYGEN
     SPACEDUST_MAXPARTICLES = 200
 
@@ -540,7 +525,6 @@ class Sig13SimpleCrystalField(mineable.DefaultField):
 
 
 class Sig13BaseSimpleGasCrystalField(mineable.GasCrystalRewardField):
-    FIELD_NAME = None
     FIELD_CLASS = Sig13SimpleCrystalField
     REWARDS_GROUP_CLASS = Sig13SimpleCrystalRewards
     MEDIUM_REWARD_CHANCE = 0.5
@@ -549,55 +533,46 @@ class Sig13BaseSimpleGasCrystalField(mineable.GasCrystalRewardField):
 
 
 class Sig13SimpleGasCrystalField1(Sigma13Member, Sig13BaseSimpleGasCrystalField):
-    FIELD_NAME = 'sig13_simple_field1'
     INDEX = 1
     ULTRA_BASE = Sig13GasMiner1
 
 
 class Sig13SimpleGasCrystalField2(Sigma13Member, Sig13BaseSimpleGasCrystalField):
-    FIELD_NAME = 'sig13_simple_field2'
     INDEX = 2
     ULTRA_BASE = Sig13GasMiner2
 
 
 class Sig13SimpleGasCrystalField3(Sigma13Member, Sig13BaseSimpleGasCrystalField):
-    FIELD_NAME = 'sig13_simple_field3'
     INDEX = 3
     ULTRA_BASE = Sig13GasMiner3
 
 
 class Sig13SimpleGasCrystalField4(Sigma13Member, Sig13BaseSimpleGasCrystalField):
-    FIELD_NAME = 'sig13_simple_field4'
     INDEX = 4
     ULTRA_BASE = Sig13GasMiner4
 
 
 class Sig13SimpleGasCrystalField5(Sigma13Member, Sig13BaseSimpleGasCrystalField):
-    FIELD_NAME = 'sig13_simple_field5'
     INDEX = 5
     ULTRA_BASE = Sig13GasMiner5
 
 
 class Sig13SimpleGasCrystalField6(Sigma13Member, Sig13BaseSimpleGasCrystalField):
-    FIELD_NAME = 'sig13_simple_field6'
     INDEX = 6
     ULTRA_BASE = Sig13GasMiner6
 
 
 class Sig13SimpleGasCrystalField7(Sigma13Member, Sig13BaseSimpleGasCrystalField):
-    FIELD_NAME = 'sig13_simple_field7'
     INDEX = 7
     ULTRA_BASE = Sig13GasMiner7
 
 
 class Sig13SimpleGasCrystalField8(Sigma13Member, Sig13BaseSimpleGasCrystalField):
-    FIELD_NAME = 'sig13_simple_field8'
     INDEX = 8
     ULTRA_BASE = Sig13GasMiner8
 
 
 class Sig13SimpleGasCrystalField9(Sigma13Member, Sig13BaseSimpleGasCrystalField):
-    FIELD_NAME = 'sig13_simple_field9'
     INDEX = 9
     ULTRA_BASE = Sig13GasMiner9
 
@@ -646,7 +621,6 @@ class Sig13ComplexCrystalField(mineable.DefaultField):
 
 
 class Sig13BaseComplexGasCrystalField(mineable.ComplexGasCrystalRewardField):
-    FIELD_NAME = None
     FIELD_CLASS = Sig13ComplexCrystalField
     REWARDS_GROUP_CLASS = Sig13ComplexCrystalRewards
     MEDIUM_REWARD_CHANCE = 0.5
@@ -655,18 +629,15 @@ class Sig13BaseComplexGasCrystalField(mineable.ComplexGasCrystalRewardField):
 
 
 class ComplexGasCrystalField1(Sigma13Member, Sig13BaseComplexGasCrystalField):
-    FIELD_NAME = 'sig13_complex_field1'
     INDEX = 1
     ULTRA_BASE = Sig13AbandonedMiner1
 
 
 class ComplexGasCrystalField2(Sigma13Member, Sig13BaseComplexGasCrystalField):
-    FIELD_NAME = 'sig13_complex_field2'
     INDEX = 2
     ULTRA_BASE = Sig13AbandonedMiner2
 
 
 class ComplexGasCrystalField3(Sigma13Member, Sig13BaseComplexGasCrystalField):
-    FIELD_NAME = 'sig13_complex_field3'
     INDEX = 3
     ULTRA_BASE = Sig13AbandonedMiner3

@@ -9,19 +9,24 @@ pos = 0, 0, 0
 rotate = 0, -90, 0
 ids_name = 203770
 ids_info = 065685
+archetype = smallstation1
+loadout = smallstation1_nosound
 {dock_props}
-
 
 [Object]
 nickname = ku_tgk_01_station_center
-ids_name = 203609
 pos = 0, -520, 0
 archetype = sw_center_500
-ids_info = 065545
 rotate = 0, 45, 0
 atmosphere_range = 100
-burn_color = 255, 222, 160
 parent = ku_tgk_01
+
+[Object]
+nickname = ku_tgk_01_lod
+pos = 0, -521, 0
+archetype = space_trade_station_full_lod
+parent = ku_tgk_01
+rotate = 0, 90, 0
 
 ;center connections
 

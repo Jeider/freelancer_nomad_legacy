@@ -119,32 +119,8 @@ class MunchSun(MunchMember, main_objects.Sun):
     ATMOSHPERE_RANGE = 12000
 
 
-class MunchBattleMines1(asteroid_definition.SpaceMines):
-    ABSTRACT = False
-    NAME = 'rh_mnh_battle_mines1'
-
-
-class MunchBattleMines2(asteroid_definition.SpaceMines):
-    ABSTRACT = False
-    NAME = 'rh_mnh_battle_mines2'
-
-
-class MunchBattleMines3(asteroid_definition.SpaceMines):
-    ABSTRACT = False
-    NAME = 'rh_mnh_battle_mines3'
-
-
-class MunchBattleMines4(asteroid_definition.SpaceMines):
-    ABSTRACT = False
-    NAME = 'rh_mnh_battle_mines4'
-
-
-class MunchBattleMines5(asteroid_definition.SpaceMines):
-    ABSTRACT = False
-    NAME = 'rh_mnh_battle_mines5'
-
-
 class MunchBaseMinesZone(zones.AsteroidZone):
+    ASTEROID_DEFINITION_CLASS = asteroid_definition.SpaceMines
     SPACEDUST = Dust.DEBRIS
     SPACEDUST_MAXPARTICLES = 100
     MUSIC = Ambience.MINE_AST
@@ -156,42 +132,32 @@ class MunchBaseMinesZone(zones.AsteroidZone):
 class MunchBattleMinesZone1(MunchMember, MunchBaseMinesZone):
     ALIAS = 'mines'
     INDEX = 1
-    ASTEROID_DEFINITION_CLASS = MunchBattleMines1
 
 
 class MunchBattleMinesZone2(MunchMember, MunchBaseMinesZone):
     ALIAS = 'mines'
     INDEX = 2
-    ASTEROID_DEFINITION_CLASS = MunchBattleMines2
 
 
 class MunchBattleMinesZone3(MunchMember, MunchBaseMinesZone):
     ALIAS = 'mines'
     INDEX = 3
-    ASTEROID_DEFINITION_CLASS = MunchBattleMines3
 
 
 class MunchBattleMinesZone4(MunchMember, MunchBaseMinesZone):
     ALIAS = 'mines'
     INDEX = 4
-    ASTEROID_DEFINITION_CLASS = MunchBattleMines4
 
 
 class MunchBattleMinesZone5(MunchMember, MunchBaseMinesZone):
     ALIAS = 'mines'
     INDEX = 5
-    ASTEROID_DEFINITION_CLASS = MunchBattleMines5
-
-
-class MunchBadlands(asteroid_definition.BadlansDynasteroids):
-    ABSTRACT = False
-    NAME = 'rh_mnh_badlands1'
 
 
 class MunchAsteroids1(MunchMember, zones.AsteroidZone):
     ALIAS = 'ast'
     INDEX = 1
-    ASTEROID_DEFINITION_CLASS = MunchBadlands
+    ASTEROID_DEFINITION_CLASS = asteroid_definition.BadlansDynasteroids
 
 
 class MunchBaseRheinlandHackableBattleship(main_objects.HackableBattleship):
@@ -311,7 +277,6 @@ class MunchSolarSupriseField(mineable.DefaultField):
 
 class MunchBaseKusariSupriseField(mineable.SupriseRewardField):
     ALIAS = 'mines'
-    FIELD_NAME = None
     FIELD_CLASS = MunchSolarSupriseField
     REWARDS_GROUP_CLASS = MunchKusariSupriseRewards
     ULTRA_REWARD = True
@@ -319,38 +284,32 @@ class MunchBaseKusariSupriseField(mineable.SupriseRewardField):
 
 class MunchBaseRheinlandSupriseField(mineable.SupriseRewardField):
     ALIAS = 'mines'
-    FIELD_NAME = None
     FIELD_CLASS = MunchSolarSupriseField
     REWARDS_GROUP_CLASS = MunchRheinlandSupriseRewards
     ULTRA_REWARD = True
 
 
 class MunchSupriseRewardField1(MunchMember, MunchBaseRheinlandSupriseField):
-    FIELD_NAME = 'rh_mnh_suprise_field1'
     INDEX = 1
     ULTRA_BASE = MunchBattleRuins1
 
 
 class MunchSupriseRewardField2(MunchMember, MunchBaseKusariSupriseField):
-    FIELD_NAME = 'rh_mnh_suprise_field2'
     INDEX = 2
     ULTRA_BASE = MunchBattleRuins2
 
 
 class MunchSupriseRewardField3(MunchMember, MunchBaseRheinlandSupriseField):
-    FIELD_NAME = 'rh_mnh_suprise_field3'
     INDEX = 3
     ULTRA_BASE = MunchBattleRuins3
 
 
 class MunchSupriseRewardField4(MunchMember, MunchBaseKusariSupriseField):
-    FIELD_NAME = 'rh_mnh_suprise_field4'
     INDEX = 4
     ULTRA_BASE = MunchBattleRuins4
 
 
 class MunchSupriseRewardField5(MunchMember, MunchBaseRheinlandSupriseField):
-    FIELD_NAME = 'rh_mnh_suprise_field5'
     INDEX = 5
     ULTRA_BASE = MunchBattleRuins5
 

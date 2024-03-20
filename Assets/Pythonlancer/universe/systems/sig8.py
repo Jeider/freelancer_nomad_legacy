@@ -166,7 +166,7 @@ class Sig8BrownNebula2(Sigma8Member, zones.NebulaZone):
 
 
 
-class Sig8BaseAsteroidDefinition(asteroid_definition.Omega15NiobiumAsteroidDefinition):
+class Sig8AsteroidDefinition(asteroid_definition.Omega15NiobiumAsteroidDefinition):
     ABSTRACT = True
     NAME = None
     DYNAST = True
@@ -175,50 +175,27 @@ class Sig8BaseAsteroidDefinition(asteroid_definition.Omega15NiobiumAsteroidDefin
     LOOT = False  # TEMP
 
 
-class Sig8AsteroidDefinition1(Sig8BaseAsteroidDefinition):
-    ABSTRACT = False
-    NAME = 'sig8_astfield1'
-
-
-class Sig8AsteroidDefinition2(Sig8BaseAsteroidDefinition):
-    ABSTRACT = False
-    NAME = 'sig8_astfield2'
-
-
-class Sig8AsteroidDefinition3(Sig8BaseAsteroidDefinition):
-    ABSTRACT = False
-    NAME = 'sig8_astfield3'
-
-
-class Sig8AsteroidDefinition4(Sig8BaseAsteroidDefinition):
-    ABSTRACT = False
-    NAME = 'sig8_astfield4'
-
-
 class Sig8BaseVanillaAstZone(zones.AsteroidZone):
     SPACEDUST = Dust.ASTEROID
     SPACEDUST_MAXPARTICLES = 100
     MUSIC = Ambience.AST_ROCK
+    ASTEROID_DEFINITION_CLASS = Sig8AsteroidDefinition
 
 
 class Sig8AsteroidZone1(Sigma8Member, Sig8BaseVanillaAstZone):
     INDEX = 1
-    ASTEROID_DEFINITION_CLASS = Sig8AsteroidDefinition1
 
 
 class Sig8AsteroidZone2(Sigma8Member, Sig8BaseVanillaAstZone):
     INDEX = 2
-    ASTEROID_DEFINITION_CLASS = Sig8AsteroidDefinition2
 
 
 class Sig8AsteroidZone3(Sigma8Member, Sig8BaseVanillaAstZone):
     INDEX = 3
-    ASTEROID_DEFINITION_CLASS = Sig8AsteroidDefinition3
 
 
 class Sig8AsteroidZone4(Sigma8Member, Sig8BaseVanillaAstZone):
     INDEX = 4
-    ASTEROID_DEFINITION_CLASS = Sig8AsteroidDefinition4
 
 
 class Sig8Sun(Sigma8Member, main_objects.Sun):

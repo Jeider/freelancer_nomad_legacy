@@ -543,7 +543,6 @@ class DefaultDebrisBoxRewardsGroupUltra(SinglepointRewardsGroup):
 class RewardField(Mineable):
     FIELD_CLASS = None
     REWARDS_GROUP_CLASS = None
-    FIELD_NAME = None
 
     MEDIUM_REWARD_CHANCE = 0
     HIGH_REWARD_CHANCE = 0
@@ -628,10 +627,9 @@ class RewardField(Mineable):
         return self.NICKNAME_TEMPLATE.format(dummy_name=self.DUMMY_NAME, solar_alias=self.rewards_group.solar.ALIAS, index=index)
 
     def get_reward_field_name(self):
-        if self.FIELD_NAME:
-            return self.FIELD_NAME
-        else:
-            return '{system_name}_field_{alias}_test'.format(system_name=self.system.NAME, alias=self.get_full_alias())
+        if hasattr(self, 'FIELD_NAME'):
+            raise Exception('FIELD_NAME is obsolete for %s' % self.__class__.__name__)
+        return '{system_name}_field_{alias}_reward_field'.format(system_name=self.system.NAME, alias=self.get_full_alias())
 
     def get_system_content(self):
         real_object = SpaceObjectTemplate(

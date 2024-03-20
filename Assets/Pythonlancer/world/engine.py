@@ -77,7 +77,7 @@ class Engine(MainEquipPrice, AdoxaEquipClassGood, BasePower):
 
     MAX_POWER_REGEN = 1200
     BASE_POWER_DRAIN_FACTOR = 0.4
-    CRUISE_POWER_DRAIN_FACTOR = 0.5
+    CRUISE_POWER_DRAIN_FACTOR = 0  # 0.5
 
     BASE_CRUISE_CHARGE_TIME = 5
 

@@ -23,6 +23,8 @@ LOOT_NIOBIUM = 'lootcrate_ast_loot_niobium'
 LOOT_OXYGEN = 'lootcrate_ast_loot_oxygen'
 LOOT_WATER = 'lootcrate_ast_loot_water'
 
+BELT_HEIGHT_DEFAULT = 4000
+
 AST_TEMPLATE = '''
 [TexturePanels]
 {shapes}
@@ -247,52 +249,52 @@ BELT_LI_CAL = '''
 [Band]
 render_parts = 6
 shape = asteroid_belt_06
-height = 4000
+height = {belt_height}
 offset_dist = 2000
 fade = 0.800000, 1.250000, 15, 17
 texture_aspect = 1.000000
 ambient_intensity = 0.400000
 vert_increase = 2
-color_shift = 1, 0.85, 0.8
+color_shift = 0.8, 0.8, 0.8
 '''
 
 BELT_KU_TGK = '''
 [Band]
 render_parts = 6
 shape = asteroid_belt_06
-height = 4000
+height = {belt_height}
 offset_dist = 2000
 fade = 0.800000, 1.250000, 15, 17
 texture_aspect = 1.000000
 ambient_intensity = 0.400000
 vert_increase = 2
-color_shift = 1, 0.85, 0.8
+color_shift = 1, 1, 1
 '''
 
 BELT_TAU37 = '''
 [Band]
 render_parts = 6
 shape = asteroid_belt_06
-height = 4000
+height = {belt_height}
 offset_dist = 2000
 fade = 0.800000, 1.250000, 15, 17
 texture_aspect = 1.000000
 ambient_intensity = 0.400000
 vert_increase = 2
-color_shift = 1, 0.85, 0.8
+color_shift = 0.9, 0.95, 1
 '''
 
 BELT_CO_CUR = '''
 [Band]
 render_parts = 6
 shape = asteroid_belt_06
-height = 4000
+height = {belt_height}
 offset_dist = 2000
 fade = 0.800000, 1.250000, 15, 17
 texture_aspect = 1.000000
 ambient_intensity = 0.400000
 vert_increase = 2
-color_shift = 1, 0.85, 0.8
+color_shift = 1, 1, 0.9
 '''
 
 BELT_DEBRIS = '''
@@ -325,7 +327,7 @@ count = 300
 start_dist = 1100
 fade_dist_percent = 0.500000
 shape = background_li_cal
-color_shift = 0.800000, 0.750000, 0.750000
+color_shift = 0.8, 0.8, 0.8
 ambient_intensity = 1
 size = 40, 150
 '''
@@ -336,7 +338,7 @@ count = 300
 start_dist = 1100
 fade_dist_percent = 0.500000
 shape = background_tau37
-color_shift = 0.800000, 0.750000, 0.750000
+color_shift = 1, 1, 1
 ambient_intensity = 1
 size = 40, 150
 '''
@@ -347,7 +349,7 @@ count = 300
 start_dist = 1100
 fade_dist_percent = 0.500000
 shape = background_ku_tgk
-color_shift = 0.800000, 0.750000, 0.750000
+color_shift = 1, 1, 1
 ambient_intensity = 1
 size = 40, 150
 '''
@@ -358,7 +360,7 @@ count = 300
 start_dist = 1100
 fade_dist_percent = 0.500000
 shape = background_co_cur
-color_shift = 0.800000, 0.750000, 0.750000
+color_shift = 1, 1, 1
 ambient_intensity = 1
 size = 40, 150
 '''
@@ -385,6 +387,7 @@ dynamic_loot_difficulty = {loot_difficulty}
 EXCLUSION_ITEM = '''
 exclusion = {zone_name}
 exclude_dynamic_asteroids = 1
+exclude_billboards = 1
 '''
 
 MINES_FIELD_TEMPLATE = '''
@@ -438,8 +441,6 @@ color_shift = 1.000000, 1.000000, 1.000000
 
 
 class AsteroidDefinition(object):
-    ABSTRACT = True
-
     SHAPES = []
     FIELD_TEMPLATE = None
     FIELD = False
@@ -457,6 +458,7 @@ class AsteroidDefinition(object):
     LOOT_DIFFICULTY = 2
     LOOT_CONTAINER = LOOT_WATER
     LOOT_COMMODITY = None
+    BELT_HEIGHT = BELT_HEIGHT_DEFAULT
 
     def __init__(self, system, zone):
         self.system = system
@@ -485,7 +487,7 @@ class AsteroidDefinition(object):
         if self.CUBE:
             params['cube'] = self.CUBE_TEMPLATE
         if self.BELT:
-            params['belt'] = self.BELT_TEMPLATE
+            params['belt'] = self.BELT_TEMPLATE.format(belt_height=self.BELT_HEIGHT)
         if self.DYNAST:
             params['dynasteroids'] = self.DYNAST_TEMPLATE
         if self.BILLBOARDS:

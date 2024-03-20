@@ -451,7 +451,7 @@ class OrderMain(LawfulFaction, OrderFleet, BaseBorderWorld, BorderWorldOrderEqui
     WEAPON = gun.OrderLightgun
 
 
-class Corsairs(LawfulFaction, OrderFleet, BaseBorderWorld, BorderWorldCorsairEquip, Faction):
+class Corsairs(LawfulFaction, CorsairFleet, BaseBorderWorld, BorderWorldCorsairEquip, Faction):
     CODE = 'co_grp'
     WEAPON = gun.BorderWorldCorsairgun
 

@@ -71,7 +71,6 @@ property_flags = 512 ;lava - MILITARY
 complex_stars = solar\\stars_mod\\new_generic.cmp
 nebulae = solar\\stars_mod\\rh_biz_nebula.cmp
 basic_stars = solar\\stars_mod\\new_generic.cmp
-
 '''
 
 
@@ -360,7 +359,6 @@ class BizmarkAbandonedAsteroids1(BizmarkMember, mineable.AsteroidRewardField):
 
 
 class BizmarkBaseDebrisBoxRewardField(mineable.DebrisBoxRewardField):
-    FIELD_NAME = None
     FIELD_CLASS = mineable.MineableDebrixBoxField
     REWARDS_GROUP_CLASS = BizmarkDebrisBoxReward
     MEDIUM_REWARD_CHANCE = 0.5
@@ -369,19 +367,16 @@ class BizmarkBaseDebrisBoxRewardField(mineable.DebrisBoxRewardField):
 
 
 class BizmarkDebrisBoxField1(BizmarkMember, BizmarkBaseDebrisBoxRewardField):
-    FIELD_NAME = 'rh_biz_debris1'
     INDEX = 1
     ULTRA_BASE = BizmarkDebrisFactory1
 
 
 class BizmarkDebrisBoxField2(BizmarkMember, BizmarkBaseDebrisBoxRewardField):
-    FIELD_NAME = 'rh_biz_debris2'
     INDEX = 2
     ULTRA_BASE = BizmarkDebrisFactory2
 
 
 class BizmarkDebrisBoxField3(BizmarkMember, BizmarkBaseDebrisBoxRewardField):
-    FIELD_NAME = 'rh_biz_debris3'
     INDEX = 3
     ULTRA_BASE = BizmarkDebrisFactory3
 

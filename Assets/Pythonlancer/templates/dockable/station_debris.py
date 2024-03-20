@@ -3,11 +3,62 @@ from templates.space_object_template import SpaceObjectTemplate
 
 class TekagiDebris(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'ku_tgk_06'
+    LOCKED_OBJECT_OFFSETS = [
+        (0, 300, -1052),
+        (0, 300, 1052),
+    ]
     TEMPLATE = '''[Object]
 nickname = ku_tgk_06_space_arch_chunk1a_2
 pos = 0, -400, -500
 rotate = 0, -70, 0
 archetype = space_arch_chunk1a
+
+[Object]
+nickname = ku_tgk_06_extra_space_arch_chunk1b_1
+pos = 6093, 800, -5302
+rotate = 0, -60, 0
+archetype = space_arch_chunk1b
+
+[Object]
+nickname = ku_tgk_06_extra_space_arch_chunk2a_1
+pos = 8482, 600, -9242
+rotate = 20, -20, 0
+archetype = space_arch_chunk2a
+
+[Object]
+nickname = ku_tgk_06_extra_space_arch_chunk2b_1
+pos = 3578, -700, 3696
+rotate = -110, -49, 102
+archetype = space_arch_chunk2b
+
+[Object]
+nickname = ku_tgk_06_extra_space_arch_chunk3a_1
+pos = -2620, 600, -6913
+rotate = 30, 60, 0
+archetype = space_arch_chunk3a
+
+[Object]
+nickname = ku_tgk_06_extra_space_arch_chunk3b_1
+pos = 1561, 600, -9827
+rotate = 0, -20, 0
+archetype = space_arch_chunk3b
+
+[Object]
+nickname = ku_tgk_06_extra_space_arch_chunk3c_1
+pos = 793, 600, -2731
+archetype = space_arch_chunk3c
+
+[Object]
+nickname = ku_tgk_06_extra_space_arch_chunk3d_1
+pos = 263, 600, -4768
+rotate = 0, -20, 0
+archetype = space_arch_chunk3d
+
+[Object]
+nickname = ku_tgk_06_extra_space_arch_chunk3e_1
+pos = 6244, 600, 243
+rotate = 115, -20, 0
+archetype = space_arch_chunk3e
 
 [Object]
 nickname = ku_tgk_06
@@ -174,6 +225,13 @@ archetype = space_short_tube
 parent = ku_tgk_06
 
 [Object]
+nickname = ku_tgk_06_PRODUCTION_tube02
+pos = 0, 175, 300
+rotate = 11, 0, 0
+archetype = space_short_tube
+parent = ku_tgk_06
+
+[Object]
 nickname = ku_tgk_06_PRODUCTION_ind01
 pos = 0, 175, -180
 rotate = 0, 0, 0
@@ -195,52 +253,52 @@ archetype = space_industrialc
 parent = ku_tgk_06
 
 [Object]
-nickname = ku_tgk_06_PRODUCTION_tanks01
-pos = 360, -170, -1052
-rotate = 185, 90, 0
-archetype = space_tankl4
+nickname = ku_tgk_06_PRODUCTION_ind04
+pos = 0, 175, 180
+rotate = 0, 0, 0
+archetype = space_industrial02a
 parent = ku_tgk_06
 
 [Object]
-nickname = ku_tgk_06_PRODUCTION_tanks02
-pos = 490, -215, -920
-rotate = 195, 90, 0
-archetype = space_tankl4
+nickname = ku_tgk_06_PRODUCTION_ind05
+pos = 0, -100, 1052
+rotate = 90, 0, 0
+archetype = space_industrial01a
 parent = ku_tgk_06
 
 [Object]
-nickname = ku_tgk_06_PRODUCTION_factory01
-pos = -90, -250, -768
-rotate = 0, -90, 0
-archetype = space_production
+nickname = ku_tgk_06_PRODUCTION_twr01
+pos = 0, 50, -1052
+rotate = 0, 0, 0
+archetype = space_medium_control_tower
 parent = ku_tgk_06
 
 [Object]
-nickname = ku_tgk_06_PRODUCTION_factory02
-pos = -380, -280, -760
-rotate = 0, 90, 0
-archetype = space_production
+nickname = ku_tgk_06_PRODUCTION_twr02
+pos = 0, 50, 1052
+rotate = 0, 0, 0
+archetype = space_medium_control_tower
 parent = ku_tgk_06
 
 [Object]
-nickname = ku_tgk_06_PRODUCTION_girder01
-pos = 150, -130, -1052
-rotate = 20, 90, 0
-archetype = space_girderc
+nickname = ku_tgk_06_PRODUCTION_twr03
+pos = 0, -250, 1052
+rotate = 0, 0, 0
+archetype = space_medium_control_tower
 parent = ku_tgk_06
 
 [Object]
-nickname = ku_tgk_06_PRODUCTION_girder02
-pos = 300, -170, -985
-rotate = 5, 45, 0
-archetype = space_girderc
+nickname = ku_tgk_06_PRODUCTION_hab01
+pos = 0, 180, -1052
+rotate = 0, 0, 0
+archetype = space_habitat_dmg
 parent = ku_tgk_06
 
 [Object]
-nickname = ku_tgk_06_PRODUCTION_girder03
-pos = -65, -100, -1056
-rotate = 15, -30, 0
-archetype = space_girdera
+nickname = ku_tgk_06_PRODUCTION_hab02
+pos = 0, 180, 1052
+rotate = 0, 0, 0
+archetype = space_habitat_dmg
 parent = ku_tgk_06
 
 [Object]

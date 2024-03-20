@@ -164,7 +164,7 @@ faction = {main_faction}, 1.00000'''
 
     MEDIUM_DEFENCE_ENCOUNTERS = '''
 encounter = {medium_defence_capship_encounter}, 5, 0.20000
-faction = = {main_faction}, 1.00000'''
+faction = {main_faction}, 1.00000'''
 
     SIMPLE_ARRIVAL_TRADERS_ENCOUNTERS = '''
 encounter = {global_traders_encounter}, 5, 0.5
@@ -363,6 +363,10 @@ class BretoniaPiratePopulation(UnlawfulPopulation):
 
 class KusariPiratePopulation(UnlawfulPopulation):
     MAIN_PIRATES = faction.KX_GRP
+
+
+class CorsairAttackersPopulation(UnlawfulPopulation):
+    MAIN_PIRATES = faction.CO_GRP
 
 
 
