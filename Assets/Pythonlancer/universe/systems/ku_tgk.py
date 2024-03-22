@@ -463,10 +463,9 @@ class TekagiLargeStationVirtualConn1(TekagiMember, main_objects.TradeConnection)
     HUNTER_DEFENCE_REL = BOTTOM
 
 
-class TekagiMiningStationConn3(TekagiMember, main_objects.BrokenTradeConnection):
+class TekagiMiningStationBrokenConn1(TekagiMember, main_objects.BrokenTradeConnection):
     OBJ_FROM = TekagiMiningStation
     OBJ_TO = TekagiRuins
     SIDE_FROM = TOP
     SIDE_TO = BOTTOM
     TRADELANE_LETTER = 'F'
-    HUNTER_DEFENCE_REL = TOP

@@ -35,6 +35,10 @@ def get_frames():
         print(item)
 
 
+def get_frames_ints():
+    results = merge_image.get_frames_ints()
+    for item in results:
+        print(item)
 
 
 ACTIONS = {
@@ -43,6 +47,7 @@ ACTIONS = {
     'test_placement': test_placement,
     'build_image': build_image,
     'get_frames': get_frames,
+    'get_frames_ints': get_frames_ints,
 }
 
 
