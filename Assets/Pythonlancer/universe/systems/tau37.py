@@ -7,25 +7,17 @@ from universe.content import zones
 from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
-from universe.content.space_voice import SpaceVoice
 from universe.content import faction
 from universe.content import mineable
 from templates.solar import hackable
 from templates.solar import asteroid as asteroid_solar
-from templates.solar import debris_box
 from templates.nebula import tau37_nebula
 from templates.nebula import exclusion
 
-
-from templates.dockable import pirate
 from templates.dockable import astbase
 from templates.dockable import trade_storages
-from templates.dockable import tekagi_megabase
 from templates.dockable import roid_mining
 from templates.dockable import station_debris
-from templates.dockable import alg
-from templates.dockable import research
-from templates.dockable import rheinland_military
 
 
 class Tau37Member(object):
@@ -172,6 +164,7 @@ class Tau37BaseRoidMiner(main_objects.RoidMiner):
     DEFENCE_LEVEL = None
     LOCKED_DOCK = True
 
+    ASTEROID_ARCHETYPE = 'tau37_mining_asteroid'
     CARGO_PODS_LOADOUT = 'roid_miner_tau37_cargo'
 
     AST_EXCLUSION_ZONE_SIZE = 3000
@@ -229,7 +222,7 @@ class Tau37RoidMiner7(Tau37Member, Tau37BaseRoidMiner):
 
 class Tau37UraniumAsteroidReward(Tau37Member, mineable.AsteroidRewardsGroupUltra):
     NAME = 'tau37_gold'
-    SOLAR = asteroid_solar.AsteroidOmega15
+    SOLAR = asteroid_solar.AsteroidTau37
     REWARD_ITEM = 'comm_roid_uranium'
     ULTRA_REWARD_BASES = [
         Tau37RoidMiner1,
@@ -340,7 +333,7 @@ class Tau37CorsairBase(Tau37Member, main_objects.PirateBase):
     BASE_INDEX = 4
     REL = LEFT
     SPACE_OBJECT_TEMPLATE = astbase.CaliforniaAsteroidBase
-    INTERIOR_CLASS = interior.BattleshipInterior
+    INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.BretoniaMilitaryDealers
 
     FACTION = faction.CO_GRP

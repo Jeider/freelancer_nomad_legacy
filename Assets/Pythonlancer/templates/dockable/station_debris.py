@@ -1548,6 +1548,10 @@ parent = li_col_05
 
 class CaliforniaDebris(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'li_cal_10'
+    LOCKED_OBJECT_OFFSETS = [
+        (-20, 600, 0),
+        (-200, -300, 700),
+    ]
     TEMPLATE = '''[Object]
 nickname = li_cal_10
 pos = 0, 0, 0
@@ -1710,31 +1714,10 @@ archetype = mining_debris_satellite_non_targetable
 parent = li_cal_10
 
 [Object]
-nickname = li_cal_10_control_panel01
-pos = 0, 55, 485
-rotate = 0, 0, 90
-archetype = space_control_panel
-parent = li_cal_10
-
-[Object]
-nickname = li_cal_10_control_panel02
-pos = -55, 0, 500
-rotate = 0, 180, 0
-archetype = space_control_panel
-parent = li_cal_10
-
-[Object]
-nickname = li_cal_10_control_panel03
-pos = 0, 55, -490
-rotate = 0, 0, 90
-archetype = space_control_panel
-parent = li_cal_10
-
-[Object]
-nickname = li_cal_10_control_panel04
-pos = 55, 0, -505
-rotate = 0, 0, 0
-archetype = space_control_panel
+nickname = li_cal_10_broken_dock01
+pos = -300, -100, -500
+rotate = 20, -60, -50
+archetype = space_police_dmg
 parent = li_cal_10
 '''
 

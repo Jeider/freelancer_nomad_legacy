@@ -97,6 +97,7 @@ class TekagiAsteroidZone(zones.AsteroidZone):
     ASTEROID_DEFINITION_CLASS = TekagiAsteroidDefinition1
     SPACEDUST = Dust.ASTEROID
     SPACEDUST_MAXPARTICLES = 100
+    MUSIC = Ambience.AST_ROCK
 
 
 class TekagiAsteroidZone1(TekagiMember, TekagiAsteroidZone):
@@ -160,6 +161,7 @@ class TekagiBaseRoidMiner(main_objects.RoidMiner):
     DEFENCE_LEVEL = None
     LOCKED_DOCK = True
 
+    ASTEROID_ARCHETYPE = 'ku_tgk_mining_asteroid'
     CARGO_PODS_LOADOUT = 'roid_miner_ku_tgk_cargo'
 
     AST_EXCLUSION_ZONE_SIZE = 3000
@@ -227,7 +229,7 @@ class TekagiRoidMiner10(TekagiMember, TekagiBaseRoidMiner):
 
 class TekagiGoldAsteroidReward(TekagiMember, mineable.AsteroidRewardsGroupUltra):
     NAME = 'ku_tgk_gold'
-    SOLAR = asteroid_solar.AsteroidOmega15
+    SOLAR = asteroid_solar.AsteroidTekagi
     REWARD_ITEM = 'comm_roid_gold'
     ULTRA_REWARD_BASES = [
         TekagiRoidMiner1,

@@ -39,8 +39,8 @@ FUSE_MAIN = 'xast_dmg_ast'
 
 CHUNKS = 10
 
-INIT_ITEMS_TEMPLATE = 'equip = attached_xast_exploder, {hp}'
-INIT_ITEMS_ULTRA_TEMPLATE = 'equip = attached_xast_exploder_ultra, {hp}'
+INIT_ITEMS_TEMPLATE = 'equip = {exploder_normal}, {hp}'
+INIT_ITEMS_ULTRA_TEMPLATE = 'equip = {exploder_ultra}, {hp}'
 
 
 class AsteroidSolar(MineableSolar):
@@ -51,6 +51,9 @@ class AsteroidSolar(MineableSolar):
     ARCHETYPE_REWARD_HIGH = None
     ARCHETYPE_REWARD_ULTRA = None
 
+    EXPLODER_NORMAL = None
+    EXPLODER_ULTRA = None
+
     def __init__(self):
         self.collis = []
         self.fuses = []
@@ -59,8 +62,14 @@ class AsteroidSolar(MineableSolar):
             self.collis.append(COLLISION_TEMPLATE.format(fuse_name=FUSE_MAIN, index=i))
             self.fuses.append(FUSE_TEMPLATE.format(fuse_main_name=FUSE_MAIN, index=i))
             self.hardpoints.append(HARDPOINT_NAME_TEMPLATE.format(index=i))
-        self.init_loadout_items = [INIT_ITEMS_TEMPLATE.format(hp=hp) for hp in self.hardpoints]
-        self.init_loadout_items_ultra = [INIT_ITEMS_ULTRA_TEMPLATE.format(hp=hp) for hp in self.hardpoints]
+        self.init_loadout_items = [
+            INIT_ITEMS_TEMPLATE.format(exploder_normal=self.EXPLODER_NORMAL,
+                                       hp=hp) for hp in self.hardpoints
+        ]
+        self.init_loadout_items_ultra = [
+            INIT_ITEMS_ULTRA_TEMPLATE.format(exploder_ultra=self.EXPLODER_ULTRA,
+                                             hp=hp) for hp in self.hardpoints
+        ]
 
     def get_collisions_string(self):
         return DIVIDER.join(self.collis)
@@ -85,6 +94,9 @@ class AsteroidOmega15(AsteroidSolar, MineableSolar):
     ARCHETYPE_REWARD_HIGH = 'om15_mineast_super_high'
     ARCHETYPE_REWARD_ULTRA = 'om15_mineast_super_ultra'
 
+    EXPLODER_NORMAL = 'attached_om15_xast_exploder'
+    EXPLODER_ULTRA = 'attached_om15_xast_exploder_ultra'
+
     def get_default_archetype(self):
         return self.DEFAULT_ARCHETYPE
 
@@ -101,13 +113,36 @@ class AsteroidOmega15(AsteroidSolar, MineableSolar):
         return self.ARCHETYPE_REWARD_ULTRA
 
 
+class AsteroidTekagi(AsteroidOmega15):
+    DEFAULT_ARCHETYPE = 'ku_tgk_mineast_super'
+
+    EXPLODER_NORMAL = 'attached_ku_tgk_xast_exploder'
+    EXPLODER_ULTRA = 'attached_ku_tgk_xast_exploder_ultra'
+
+
+class AsteroidTau37(AsteroidOmega15):
+    DEFAULT_ARCHETYPE = 'tau37_mineast_super'
+
+    EXPLODER_NORMAL = 'attached_tau37_xast_exploder'
+    EXPLODER_ULTRA = 'attached_tau37_xast_exploder_ultra'
+
+
+class AsteroidCalifornia(AsteroidOmega15):
+    DEFAULT_ARCHETYPE = 'li_cal_mineast_super'
+
+    EXPLODER_NORMAL = 'attached_li_cal_xast_exploder'
+    EXPLODER_ULTRA = 'attached_li_cal_xast_exploder_ultra'
+
 
 class AsteroidCuracao(AsteroidOmega15):
-    pass
+    DEFAULT_ARCHETYPE = 'co_cur_mineast_super'
+
+    EXPLODER_NORMAL = 'attached_co_cur_xast_exploder'
+    EXPLODER_ULTRA = 'attached_co_cur_xast_exploder_ultra'
 
 
-# AsteroidTekagi
-# AsteroidTau37
-# AsteroidCalifornia
-# AsteroidCuracao
-# AsteroidLava
+class AsteroidLava(AsteroidOmega15):
+    DEFAULT_ARCHETYPE = 'lava_mineast_super'
+
+    EXPLODER_NORMAL = 'attached_lava_xast_exploder'
+    EXPLODER_ULTRA = 'attached_lava_xast_exploder_ultra'

@@ -268,7 +268,7 @@ fade = 0.800000, 1.250000, 15, 17
 texture_aspect = 1.000000
 ambient_intensity = 0.400000
 vert_increase = 2
-color_shift = 1, 1, 1
+color_shift = 0.8, 0.9, 1
 '''
 
 BELT_TAU37 = '''

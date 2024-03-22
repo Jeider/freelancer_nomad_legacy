@@ -899,9 +899,19 @@ class RheinlandBattleship(Battleship):
     LOADOUT = 'rh_battleship_station'
 
 
+class LibertyBattleship(Battleship):
+    ARCHETYPE = 'l_dreadnought'
+    LOADOUT = 'li_dreadnought_station'
+
+
 class BretoniaBattleship(Battleship):
     ARCHETYPE = 'b_battleship'
     LOADOUT = 'br_battleship_station'
+
+
+class KusariBattleship(Battleship):
+    ARCHETYPE = 'k_battleship'
+    LOADOUT = 'ku_battleship_station'
 
 
 class Freeport(DockableObject):

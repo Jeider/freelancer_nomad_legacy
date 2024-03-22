@@ -98,6 +98,7 @@ class li_cal(system.LibertyFirst, system.System):
     CONTENT = li_cal_content
 
     SYSTEM_FOLDER = 'LI_CALIFORNIA'
+    ALLOW_SYNC = True
 
 
 class sig22(system.LibertyFirst, system.BretoniaSecond, system.System):

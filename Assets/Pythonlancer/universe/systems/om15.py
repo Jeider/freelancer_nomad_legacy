@@ -298,15 +298,10 @@ class Om15GasPockets(asteroid_definition.AsteroidDefinition):
     CUBE_TEMPLATE = CUBE_TEMPLATE
 
 
-class Om15GasPockets1(Om15GasPockets):
-    ABSTRACT = False
-    NAME = 'om15_gas_pocket1'
-
-
 class Om15GasPocketsZone1(Omega15Member, zones.AsteroidZone):
     ALIAS = 'pocket'
     INDEX = 1
-    ASTEROID_DEFINITION_CLASS = Om15GasPockets1
+    ASTEROID_DEFINITION_CLASS = Om15GasPockets
     SPACEDUST = Dust.RADIOACTIVE_RED
     SPACEDUST_MAXPARTICLES = 200
 
