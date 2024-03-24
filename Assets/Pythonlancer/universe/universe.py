@@ -26,6 +26,7 @@ from universe.systems import sig42 as sig42_content
 from universe.systems import tau4 as tau4_content
 from universe.systems import tau23 as tau23_content
 from universe.systems import tau29 as tau29_content
+from universe.systems import tau31 as tau31_content
 from universe.systems import tau37 as tau37_content
 
 
@@ -143,6 +144,11 @@ class li_col(system.LibertyFirst, system.System):
 
 class tau31(system.LibertyFirst, system.System):
     NAME = 'tau31'
+    TEMPLATE_NAME = 'tau31'
+    CONTENT = tau31_content
+
+    SYSTEM_FOLDER = 'TAU31'
+    ALLOW_SYNC = True
 
 
 class br_wrw(system.BretoniaFirst, system.System):
@@ -159,6 +165,7 @@ class tau29(system.BretoniaFirst, system.System):
     CONTENT = tau29_content
 
     SYSTEM_FOLDER = 'TAU29'
+    ALLOW_SYNC = True
 
 
 class br_cam(system.BretoniaFirst, system.System):
@@ -202,7 +209,7 @@ class tau23(system.BretoniaFirst, system.KusariSecond, system.System):
     CONTENT = tau23_content
 
     SYSTEM_FOLDER = 'TAU23'
-
+    ALLOW_SYNC = True
 
 
 class ku_ksu(system.KusariFirst, system.System):
@@ -252,6 +259,7 @@ class om7(system.KusariFirst, system.RheinlandSecond, system.System):
     CONTENT = om7_content
 
     SYSTEM_FOLDER = 'OMEGA7'
+    ALLOW_SYNC = True
 
 
 class co_cur(system.System):

@@ -6,9 +6,9 @@ THE_PATH = 'E:/FL/IMG_OUT/VID_EXP/*.png'
 OUT_IMAGE = 'E:/FL/IMG_OUT/VID_RESULT/merged_image_{index}.png'
 
 FRAME_SIZE = 512
-FRAMES_PER_LINE = 4
+FRAMES_PER_LINE = 8
 TOTAL_SIDE = FRAME_SIZE * FRAMES_PER_LINE
-FRAMES_PER_FILE = 16
+FRAMES_PER_FILE = 32
 MAX_FRAMES = 192
 
 
@@ -51,7 +51,7 @@ def build_image():
 
 
 def get_frames():
-    step = 0.25
+    step = 0.125
 
     startU = 0.0
     startV = 1.0

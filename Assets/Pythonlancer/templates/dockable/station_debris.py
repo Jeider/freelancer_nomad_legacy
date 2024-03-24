@@ -1144,6 +1144,9 @@ parent = om15_02
 
 class StuttgartDestroyedOutpost(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'rh_stut_07'
+    LOCKED_OBJECT_OFFSETS = [
+        (182, -50, -560),
+    ]
     TEMPLATE = '''[Object]
 nickname = rh_stut_07
 pos = 0, 0, 0
@@ -1173,6 +1176,20 @@ archetype = space_industrial02a
 parent = rh_stut_07
 
 [Object]
+nickname = rh_stut_07_industrial04
+pos = -300, -400, 340
+rotate = 80, 40, 0
+archetype = space_industrial02a
+parent = rh_stut_07
+
+[Object]
+nickname = rh_stut_07_industrial05
+pos = 200, -400, -540
+rotate = 80, 50, 0
+archetype = space_industrial02a
+parent = rh_stut_07
+
+[Object]
 nickname = rh_stut_07_girder01
 pos = 250, -270, -10
 rotate = -45, -90, 0
@@ -1192,17 +1209,47 @@ pos = 0, -200, -40
 rotate = 100, 0, 0
 archetype = space_girder
 parent = rh_stut_07
+
+[Object]
+nickname = rh_stut_07_habitat01
+pos = -312, -170, 320
+rotate = 0, 40, 0
+archetype = space_habitat_dmg
+parent = rh_stut_07
+
+[Object]
+nickname = rh_stut_07_habitat02
+pos = 182, -170, -560
+rotate = 0, 40, 0
+archetype = space_habitat_dmg
+parent = rh_stut_07
+
+[Object]
+nickname = rh_stut_07_dock01
+pos = -312, -20, 280
+rotate = -30, 40, -30
+archetype = space_police_dmg
+parent = rh_stut_07
 '''
 
 
 class ForbesDebris(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'li_for_07'
+    LOCKED_OBJECT_OFFSETS = [
+        (-450, -200, 0),
+    ]
     TEMPLATE = '''[Object]
 nickname = li_for_07
 pos = 0, 0, 0
 rotate = 0, 90, 0
 archetype = space_police_dmg_visible
 {root_props}
+
+[Object]
+nickname = li_for_07_dock_dmg2
+pos = 450, -200, 0
+rotate = 0, -60, 40
+archetype = space_police_dmg
 
 [Object]
 nickname = li_for_07_beam01

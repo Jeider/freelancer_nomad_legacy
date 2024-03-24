@@ -1,0 +1,64 @@
+from templates.simple_template import SimpleTemplate
+
+
+class Tau29MainNebulaTemplate(SimpleTemplate):
+	TEMPLATE = '''[TexturePanels]
+file = solar\\nebula\\white_shapes.ini
+
+[Fog]
+fog_enabled = 1
+near = 0
+distance = 1800
+color = 60, 80, 130
+
+[Exclusion Zones]
+{exclusions}
+
+[properties]
+flag = nebula
+
+[Exterior]
+shape = white_exterior1
+shape = white_exterior2
+shape = white_exterior3
+shape = white_exterior4
+shape_weights = 1, 1, 1, 1
+fill_shape = white_circle
+plane_slices = 3
+bit_radius = 7000
+bit_radius_random_variation = 0.200000
+min_bits = 7
+max_bits = 15
+move_bit_percent = 0.750000
+equator_bias = 0.500000
+color = 110, 110, 140
+
+[NebulaLight]
+ambient = 60, 60, 70
+sun_burnthrough_intensity = 0.700000
+sun_burnthrough_scaler = 1.750000
+
+[Clouds]
+max_distance = 1500
+puff_count = 100
+puff_radius = 100
+puff_colora = 100, 200, 255
+puff_colorb = 50, 100, 200
+puff_max_alpha = 0.5
+puff_shape = generic_cloud1
+puff_shape = generic_cloud2
+puff_shape = generic_cloud3
+puff_shape = generic_cloud4
+puff_weights = 1, 1, 1, 1
+puff_drift = 1.000000
+near_fade_distance = 125, 200
+
+[BackgroundLightning]
+duration = 0.750000
+gap = 10.000000
+color = 55, 50, 60
+
+
+
+
+'''

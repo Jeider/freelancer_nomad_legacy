@@ -8,6 +8,8 @@ SHAPES_LI_CAL = 'file = solar\\asteroids_mod\\li_cal\\shapes.ini'
 SHAPES_KU_TGK = 'file = solar\\asteroids_mod\\ku_tgk\\shapes.ini'
 SHAPES_TAU37 = 'file = solar\\asteroids_mod\\tau37\\shapes.ini'
 SHAPES_CO_CUR = 'file = solar\\asteroids_mod\\co_cur\\shapes.ini'
+SHAPES_TAU29 = 'file = solar\\asteroids_mod\\tau29\\shapes.ini'
+SHAPES_LAVA = 'file = solar\\asteroids_mod\\lava\\shapes.ini'
 
 LOOT_BERYL = 'lootcrate_ast_loot_beryl'
 LOOT_ORGANISMS = 'lootcrate_ast_loot_organisms'
@@ -384,11 +386,9 @@ dynamic_loot_count = {loot_min}, {loot_max}
 dynamic_loot_difficulty = {loot_difficulty}
 '''
 
-EXCLUSION_ITEM = '''
-exclusion = {zone_name}
-exclude_dynamic_asteroids = 1
-exclude_billboards = 1
-'''
+EXCLUSION_NAME_TEMPLATE = 'exclusion = {zone_name}'
+EXCLUDE_DYNAST = 'exclude_dynamic_asteroids = 1'
+EXCLUDE_BILLBOARDS = 'exclude_billboards = 1'
 
 MINES_FIELD_TEMPLATE = '''
 cube_size = 500
@@ -459,6 +459,7 @@ class AsteroidDefinition(object):
     LOOT_CONTAINER = LOOT_WATER
     LOOT_COMMODITY = None
     BELT_HEIGHT = BELT_HEIGHT_DEFAULT
+    EXCLUDE_BILLBOARDS = True
 
     def __init__(self, system, zone):
         self.system = system
@@ -472,9 +473,17 @@ class AsteroidDefinition(object):
         self.exclusions.append(zone_name)
 
     def get_file_content(self):
+        exclusion_params = [
+            EXCLUSION_NAME_TEMPLATE,
+            EXCLUDE_DYNAST,
+        ]
+        if self.EXCLUDE_BILLBOARDS:
+            exclusion_params.append(EXCLUDE_BILLBOARDS)
+        exclusion_template = SINGLE_DIVIDER.join(exclusion_params)
+
         params = {
             'shapes': SINGLE_DIVIDER.join(self.SHAPES),
-            'exclusions': SINGLE_DIVIDER.join([EXCLUSION_ITEM.format(zone_name=exclusion) for exclusion in self.exclusions]),
+            'exclusions': SINGLE_DIVIDER.join([exclusion_template.format(zone_name=exclusion) for exclusion in self.exclusions]),
             'belt': '',
             'dynasteroids': '',
             'billboards': '',

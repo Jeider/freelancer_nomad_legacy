@@ -1,9 +1,12 @@
 import sys
 
 from tools import merge_image
+from tools import data_folder
 
 from templates.solar.hacker_panel import HackerPanelManager, REL_TOP
+from templates.dockable import olaf
 from templates.dockable import station_debris
+from templates.dockable import pirate
 
 
 def generate_hacker_panels():
@@ -20,9 +23,9 @@ def test_hacker_colors():
 
 
 def test_placement():
-    base = station_debris.CaliforniaDebris().get_instance(new_space_object_name='test_it', move_to=(0, 0, 0))
-
-    print(base)
+    base_class = station_debris.StuttgartDestroyedOutpost
+    content = base_class().get_instance(new_space_object_name=None, move_to=None)
+    data_folder.DataFolder.sync_to_test_workspace(content)
 
 
 def build_image():

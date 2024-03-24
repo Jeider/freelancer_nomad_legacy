@@ -96,6 +96,7 @@ class Tau37Sun2(Tau37Member, main_objects.Sun):
     INDEX = 2
     STAR = 'med_yellow_sun'
     LOADOUT = 'small_yellow_sun_fx'
+    RING = True
     RING_ZONE_ALIAS = 'ring'
     RING_ZONE_INDEX = 2
     RING_FILE_NAME = 'tau37_rock'
@@ -334,7 +335,7 @@ class Tau37CorsairBase(Tau37Member, main_objects.PirateBase):
     REL = LEFT
     SPACE_OBJECT_TEMPLATE = astbase.CaliforniaAsteroidBase
     INTERIOR_CLASS = interior.OutpostInterior
-    DEALERS = dealers.BretoniaMilitaryDealers
+    DEALERS = dealers.BretoniaPirateDealers
 
     FACTION = faction.CO_GRP
     DEFENCE_LEVEL = None
@@ -371,7 +372,7 @@ class Tau37DeepNebulaRuinsSuprisePoint(Tau37Member, main_objects.HackableStation
     INTERIOR_CLASS = interior.EquipDeckInterior
 
 
-class Tua37MiningStationConn1(Tau37Member, main_objects.TradeConnection):
+class Tau37MiningStationConn1(Tau37Member, main_objects.TradeConnection):
     OBJ_FROM = Tau37MiningStation
     OBJ_TO = Tau37Tau31Jumpgate
     SIDE_FROM = LEFT
@@ -380,7 +381,7 @@ class Tua37MiningStationConn1(Tau37Member, main_objects.TradeConnection):
     HUNTER_DEFENCE_REL = TOP
 
 
-class Tua37MiningStationConn2(Tau37Member, main_objects.TradeConnection):
+class Tau37MiningStationConn2(Tau37Member, main_objects.TradeConnection):
     OBJ_FROM = Tau37MiningStation
     OBJ_TO = Tau37VirtualPoint1
     SIDE_FROM = BOTTOM
@@ -392,7 +393,7 @@ class Tua37MiningStationConn2(Tau37Member, main_objects.TradeConnection):
     ]
 
 
-class Tua37MiningStationConn3(Tau37Member, main_objects.TradeConnection):
+class Tau37MiningStationConn3(Tau37Member, main_objects.TradeConnection):
     OBJ_FROM = Tau37MiningStation
     OBJ_TO = Tau37Freeport
     SIDE_FROM = TOP
@@ -401,7 +402,7 @@ class Tua37MiningStationConn3(Tau37Member, main_objects.TradeConnection):
     HUNTER_DEFENCE_REL = LEFT
 
 
-class Tua37FreeportConn1(Tau37Member, main_objects.TradeConnection):
+class Tau37FreeportConn1(Tau37Member, main_objects.TradeConnection):
     OBJ_FROM = Tau37Freeport
     OBJ_TO = Tau37CambridgeJumpgate
     SIDE_FROM = TOP
@@ -413,7 +414,7 @@ class Tua37FreeportConn1(Tau37Member, main_objects.TradeConnection):
     ]
 
 
-class Tua37FreeportConn2(Tau37Member, main_objects.TradeConnection):
+class Tau37FreeportConn2(Tau37Member, main_objects.TradeConnection):
     OBJ_FROM = Tau37Freeport
     OBJ_TO = Tau37VirtualPoint2
     SIDE_FROM = LEFT
@@ -421,7 +422,7 @@ class Tua37FreeportConn2(Tau37Member, main_objects.TradeConnection):
     TRADELANE_LETTER = 'E'
 
 
-class Tua37BattleshipConn1(Tau37Member, main_objects.BuoyTradeConnection):
+class Tau37BattleshipConn1(Tau37Member, main_objects.BuoyTradeConnection):
     OBJ_FROM = Tau37Battleship
     OBJ_TO = Tau37Freeport
     SIDE_FROM = LEFT
@@ -429,7 +430,7 @@ class Tua37BattleshipConn1(Tau37Member, main_objects.BuoyTradeConnection):
     TRADELANE_LETTER = 'F'
 
 
-class Tua37BattleshipConn2(Tau37Member, main_objects.BuoyTradeConnection):
+class Tau37BattleshipConn2(Tau37Member, main_objects.BuoyTradeConnection):
     OBJ_FROM = Tau37Battleship
     OBJ_TO = Tau37CambridgeJumpgate
     SIDE_FROM = TOP

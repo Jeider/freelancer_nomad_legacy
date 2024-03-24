@@ -121,6 +121,7 @@ INTERIOR_BG_BARRIER_CLOUD = 'exclusion_barrier_m7'
 INTERIOR_BG_WALKER = 'walker_exclusion'
 INTERIOR_BG_GENERIC = 'generic_exclusion'
 INTERIOR_BG_WHITE = 'white_nebula'
+INTERIOR_BG_EDGE = 'edge_exclusion_new'
 
 INTERIOR_BR_AVALON = 'br_avl_nebula'
 INTERIOR_BR_CAMBRIDGE = 'br_cam_nebula'

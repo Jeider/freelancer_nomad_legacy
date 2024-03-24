@@ -781,3 +781,234 @@ rotate = 10, 0, 0
 archetype = space_medium_control_tower
 parent = omicron1_02
 '''
+
+
+class TauFreeport(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'tau31_04'
+    TEMPLATE = '''[Object]
+nickname = tau31_04
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = space_police01
+{dock_props}
+
+[Object]
+nickname = tau31_04_indA01
+pos = 0, -530, 200
+rotate = 0, -90, 0
+archetype = space_industriala
+loadout = space_ind_girder_one_side1
+parent = tau31_04
+
+[Object]
+nickname = tau31_04_indA02
+pos = -250, -530, 200
+rotate = 0, -90, 0
+archetype = space_industriala
+loadout = space_ind_girder_one_side1
+parent = tau31_04
+
+[Object]
+nickname = tau31_04_indA03
+pos = 250, -530, 200
+rotate = 0, -90, 0
+archetype = space_industriala
+loadout = space_ind_girder_one_side1
+parent = tau31_04
+
+[Object]
+nickname = tau31_04_indA04
+pos = 0, -530, -200
+rotate = 0, 90, 0
+archetype = space_industriala
+loadout = space_ind_girder_one_side1
+parent = tau31_04
+
+[Object]
+nickname = tau31_04_indA05
+pos = -250, -530, -200
+rotate = 0, 90, 0
+archetype = space_industriala
+loadout = space_ind_girder_one_side1
+parent = tau31_04
+
+[Object]
+nickname = tau31_04_indA06
+pos = 250, -530, -200
+rotate = 0, 90, 0
+archetype = space_industriala
+loadout = space_ind_girder_one_side1
+parent = tau31_04
+
+[Object]
+nickname = tau31_04_indB01
+pos = 0, -530, 0
+rotate = 0, 0, 0
+archetype = space_industrial02a
+parent = tau31_04
+
+[Object]
+nickname = tau31_04_dome01
+pos = -650, -498, 200
+rotate = 0, 90, 0
+archetype = space_dome
+loadout = space_ind_girder_one_side1
+parent = tau31_04
+
+[Object]
+nickname = tau31_04_dome02
+pos = -650, -498, -200
+rotate = 0, 90, 0
+archetype = space_dome
+loadout = space_ind_girder_one_side1
+parent = tau31_04
+
+[Object]
+nickname = tau31_04_dome03
+pos = 650, -498, 200
+rotate = 0, -90, 0
+archetype = space_dome
+loadout = space_ind_girder_one_side1
+parent = tau31_04
+
+[Object]
+nickname = tau31_04_dome04
+pos = 650, -498, -200
+rotate = 0, -90, 0
+archetype = space_dome
+loadout = space_ind_girder_one_side1
+parent = tau31_04
+
+[Object]
+nickname = tau31_04_control_tower01
+pos = 0, -482, 0
+rotate = 0, 0, 0
+archetype = space_small_control_tower
+parent = tau31_04
+
+[Object]
+nickname = tau31_04_control_tower02
+pos = 0, -578, 0
+rotate = 0, 0, 0
+archetype = space_small_control_tower
+parent = tau31_04
+
+[Object]
+nickname = tau31_04_control_tower03
+pos = 0, -820, 0
+rotate = 0, 0, 0
+archetype = space_small_control_tower
+parent = tau31_04
+
+[Object]
+nickname = tau31_04_control_tower04
+pos = 0, -240, 0
+rotate = 0, 0, 0
+archetype = space_small_control_tower
+parent = tau31_04
+
+[Object]
+nickname = tau31_04_gider01
+pos = -60, -530, -7
+rotate = 0, -52, 0
+archetype = space_girdera
+parent = tau31_04
+
+[Object]
+nickname = tau31_04_gider02
+pos = 60, -530, -7
+rotate = 0, 52, 0
+archetype = space_girdera
+parent = tau31_04
+
+[Object]
+nickname = tau31_04_gider03
+pos = -60, -530, 7
+rotate = 0, -128, 0
+archetype = space_girdera
+parent = tau31_04
+
+[Object]
+nickname = tau31_04_gider04
+pos = 60, -530, 7
+rotate = 0, 128, 0
+archetype = space_girdera
+parent = tau31_04
+
+[Object]
+nickname = tau31_04_gider05
+pos = 0, -120, 0
+rotate = -90, 0, 0
+archetype = space_girderc
+parent = tau31_04
+
+[Object]
+nickname = tau31_04_habitat01
+pos = 0, -428, 0
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = tau31_04
+
+[Object]
+nickname = tau31_04_habitat02
+pos = 0, -290, 0
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = tau31_04
+
+[Object]
+nickname = tau31_04_habitat03
+pos = 0, -395, 40
+rotate = 180, 0, 0
+archetype = space_habitat_tall
+parent = tau31_04
+
+[Object]
+nickname = tau31_04_habitat04
+pos = 0, -395, -40
+rotate = 180, 0, 0
+archetype = space_habitat_tall
+parent = tau31_04
+
+[Object]
+nickname = tau31_04_habitat05
+pos = 0, -632, 0
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = tau31_04
+
+[Object]
+nickname = tau31_04_habitat06
+pos = 0, -770, 0
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = tau31_04
+
+[Object]
+nickname = tau31_04_habitat07
+pos = 0, -665, 40
+rotate = 0, 0, 0
+archetype = space_habitat_tall
+parent = tau31_04
+
+[Object]
+nickname = tau31_04_habitat08
+pos = 0, -665, -40
+rotate = 0, 0, 0
+archetype = space_habitat_tall
+parent = tau31_04
+
+[Object]
+nickname = tau31_04_tank01
+pos = 0, -982, 0
+rotate = 90, 90, 0
+archetype = space_tankl4x4
+parent = tau31_04
+
+[Object]
+nickname = tau31_04_tank02
+pos = -1, -1170, 1
+rotate = 0, 0, 0
+archetype = space_tanklx4
+parent = tau31_04
+'''

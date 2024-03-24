@@ -11,10 +11,10 @@ archetype = arendal_core
 {root_props}
 
 [Object]
-nickname = tau29_03_miner
-pos = 0, 0, 0
-rotate = 90, 180, 0
-archetype = gas_miner_dockA
+nickname = tau29_03_dock
+pos = 0, 305, 0
+rotate = 90, 0, 0
+archetype = space_police02
 {dock_props}
 
 [Object]
@@ -22,6 +22,55 @@ nickname = tau29_03_center
 pos = 0, -600, 0
 rotate = 0, 45, 0
 archetype = sw_center_250
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_tunnel01
+pos = 0, 290, 0
+rotate = 90, 0, 0
+archetype = space_airlock_dummy
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_xtower01
+pos = 0, 190, 0
+rotate = 0, 0, 0
+archetype = space_medium_control_tower
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_xtower02
+pos = 0, 70, 0
+rotate = 0, 0, 0
+archetype = space_small_control_tower
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_xtower03
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = space_small_control_tower
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_xtower04
+pos = 0, -140, 0
+rotate = 0, 0, 0
+archetype = space_small_control_tower
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_xtower05
+pos = 0, -70, 0
+rotate = 0, 0, 0
+archetype = space_small_control_tower
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_xtube01
+pos = 0, 190, 0
+rotate = 90, 0, 0
+archetype = space_short_tube
 parent = tau29_03
 
 [Object]
@@ -339,7 +388,6 @@ rotate = 0, 45, 0
 archetype = space_industriala
 parent = tau29_03
 
-
 [Object]
 nickname = tau29_03_industrial21
 pos = 285, -955, 0
@@ -508,9 +556,6 @@ rotate = 0, 45, 0
 archetype = space_industriala
 parent = tau29_03
 
-;---top
-
-
 [Object]
 nickname = tau29_03_industrial51
 pos = 114, -390, 0
@@ -566,9 +611,6 @@ pos = -80.40000000000146, -390, 80.4
 rotate = 0, 45, 0
 archetype = space_industrial01b
 parent = tau29_03
-
-
-
 
 [Object]
 nickname = tau29_03_industrial59
@@ -626,8 +668,6 @@ rotate = 0, 45, 0
 archetype = space_industriala
 parent = tau29_03
 
-
-
 [Object]
 nickname = tau29_03_industrial67
 pos = 114, 280, 0
@@ -683,10 +723,6 @@ pos = -80.40000000000146, 280, 80.4
 rotate = 0, 45, 0
 archetype = space_industrial01b
 parent = tau29_03
-
-
-
-
 
 [Object]
 nickname = tau29_03_panel_connect01
@@ -745,18 +781,10 @@ loadout = hidden_head_panels01
 parent = tau29_03
 
 [Object]
-nickname = tau29_03_panel_connect08
-pos = 0.09999999999854481, -450.015, 0
-rotate = 0, 337.5, 0
-archetype = hidden_connect
-loadout = hidden_head_panels01
-parent = tau29_03
-
-[Object]
 nickname = tau29_03_connect01
-pos = 0, -325, 0
+pos = 0, -260, 0
 rotate = 90, 0, 0
-archetype = space_industrial01b
+archetype = space_airlock_dummy
 parent = tau29_03
 
 [Object]

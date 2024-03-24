@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<UTFXML filename="fx_test01.ale" path="FX\SPACE">
+   <UTF_ROOT>
+      <ALEffectLib>
+         <ALEffectLib type="ALEffectLib" version="1.1" count="1">
+            <effect name="fx_test01">
+               <unused>0, 0, 0; 0</unused>
+               <fx>
+                   1, 32768, 1, 0xEE223B51
+                   2,     1, 0, fx_spawner.emt
+                   3,     1, 0, fx_spawner.app
+               </fx>
+               <pairs>
+                   2, 3
+               </pairs>
+            </effect>
+            <effect name="fx_test01_sub">
+               <unused>0, 0, 0; 0</unused>
+               <fx>
+                   1, 32768, 1, 0xEE223B51
+                   2,     1, 0, fx1.emt
+                   3,     1, 0, fx1.app
+               </fx>
+               <pairs>
+                   2, 3
+               </pairs>
+            </effect>
+         </ALEffectLib>
+      </ALEffectLib>
+      <AlchemyNodeLibrary>
+         <AlchemyNodeLibrary type="AlchemyNodeLibrary" version="1.1">
+            <node name="FxSphereEmitter">
+               <effect type="name"  name="Node_Name">fx_spawner.emt</effect>
+               <effect type="float" name="Node_LifeSpan">Infinite</effect>
+               <effect type="xform" name="Node_Transform">0x435</effect>
+               <effect type="fanim" name="Emitter_LODCurve">
+                  <float_header type="4">
+                     0:
+                        <float type="1" count="2">
+                             0.0: 1
+                        </float>
+                  </float_header>
+               </effect>
+               <effect type="int"   name="Emitter_InitialParticles">0</effect>
+               <effect type="vanim" name="Emitter_Frequency">
+                  <single type="4">
+                     0: 5
+                  </single>
+               </effect>
+               <effect type="vanim" name="Emitter_MaxParticles">
+                  <single type="4">
+                     0: 1000
+                  </single>
+               </effect>
+               <effect type="vanim" name="Emitter_EmitCount">
+                  <single type="4">
+                     0: 0
+                  </single>
+               </effect>
+               <effect type="vanim" name="Emitter_InitLifeSpan">
+                  <single type="4">
+                     0: 1
+                  </single>
+               </effect>
+               <effect type="vanim" name="Emitter_Pressure">
+                  <single type="4">
+                     0: 0.1
+                  </single>
+               </effect>
+               <effect type="vanim" name="Emitter_VelocityApproach">
+                  <single type="4">
+                     0: 0
+                  </single>
+               </effect>
+               <effect type="vanim" name="SphereEmitter_MinRadius">
+                  <single type="4">
+                     0: 0
+                  </single>
+               </effect>
+               <effect type="vanim" name="SphereEmitter_MaxRadius">
+                  <single type="4">
+                     0: 100
+                  </single>
+               </effect>
+            </node>
+            <node name="FxParticleAppearance">
+               <effect type="name"  name="Node_Name">fx_spawner.app</effect>
+               <effect type="float" name="Node_LifeSpan">Infinite</effect>
+               <effect type="xform" name="Node_Transform">0x435</effect>
+               <effect type="name"  name="ParticleApp_LifeName">fx_test01_sub</effect>
+               <effect type="name"  name="ParticleApp_DeathName"></effect>
+               <effect type="bool"  name="ParticleApp_UseDynamicRotation">false</effect>
+            </node>
+            <node name="FxCubeEmitter">
+               <effect type="name"  name="Node_Name">fx1.emt</effect>
+               <effect type="float" name="Node_LifeSpan">Infinite</effect>
+               <effect type="xform" name="Node_Transform">0x435</effect>
+               <effect type="fanim" name="Emitter_LODCurve">
+                  <float_header type="4">
+                     0:
+                        <float type="1">
+                             0.0: 1
+                        </float>
+                  </float_header>
+               </effect>
+               <effect type="int"   name="Emitter_InitialParticles">1</effect>
+               <effect type="vanim" name="Emitter_Frequency">
+                  <single type="4">
+                     0: 0
+                  </single>
+               </effect>
+               <effect type="vanim" name="Emitter_MaxParticles">
+                  <single type="4">
+                     0: 10000
+                  </single>
+               </effect>
+               <effect type="vanim" name="Emitter_EmitCount">
+                  <single type="4">
+                     0: 0
+                  </single>
+               </effect>
+               <effect type="vanim" name="Emitter_InitLifeSpan">
+                  <single type="4">
+                     0: 2
+                  </single>
+               </effect>
+               <effect type="vanim" name="Emitter_Pressure">
+                  <single type="4">
+                     0: 0.0001
+                  </single>
+               </effect>
+               <effect type="vanim" name="Emitter_VelocityApproach">
+                  <single type="4">
+                     0: 0
+                  </single>
+               </effect>
+               <effect type="vanim" name="CubeEmitter_Width">
+                  <single type="4">
+                     0: 0
+                  </single>
+               </effect>
+               <effect type="vanim" name="CubeEmitter_Height">
+                  <single type="4">
+                     0: 0
+                  </single>
+               </effect>
+               <effect type="vanim" name="CubeEmitter_Depth">
+                  <single type="4">
+                     0: 0
+                  </single>
+               </effect>
+               <effect type="vanim" name="CubeEmitter_MinSpread">
+                  <single type="4">
+                     0: 0
+                  </single>
+               </effect>
+               <effect type="vanim" name="CubeEmitter_MaxSpread">
+                  <single type="4">
+                     0: 0
+                  </single>
+               </effect>
+            </node>
+            <node name="FxBasicAppearance">
+               <effect type="name"  name="Node_Name">fx1.app</effect>
+               <effect type="float" name="Node_LifeSpan">Infinite</effect>
+               <effect type="xform" name="Node_Transform">0x435</effect>
+               <effect type="fanim" name="Appearance_LODCurve">
+                  <float_header type="4" count="1">
+                     0:
+                        <float type="4" count="1">
+                           0: 1
+                        </float>
+                  </float_header>
+               </effect>
+               <effect type="bool"  name="BasicApp_TriTexture">false</effect>
+               <effect type="bool"  name="BasicApp_QuadTexture">true</effect>
+               <effect type="bool"  name="BasicApp_MotionBlur">false</effect>
+               <effect type="canim" name="BasicApp_Color">
+                  <rgb_header type="4" count="1">
+                     0:
+                        <rgb type="4" count="1">
+                           0: 1, 1, 1
+                        </rgb>
+                  </rgb_header>
+               </effect>
+               <effect type="fanim" name="BasicApp_Alpha">
+                  <float_header type="4" count="1">
+                     0:
+                        <float type="4" count="4">
+                             0.0000000000: 1
+                        </float>
+                  </float_header>
+               </effect>
+               <effect type="fanim" name="BasicApp_Size">
+                  <float_header type="4" count="1">
+                     0:
+                        <float type="4" count="1">
+                           0: 20
+                        </float>
+                  </float_header>
+               </effect>
+               <effect type="fanim" name="BasicApp_HToVAspect">
+                  <float_header type="4" count="1">
+                     0:
+                        <float type="4" count="1">
+                           0: 1
+                        </float>
+                  </float_header>
+               </effect>
+               <effect type="fanim" name="BasicApp_Rotate">
+                  <float_header type="4" count="1">
+                     0:
+                        <float type="1" count="1">
+                           0: 0
+                        </float>
+                  </float_header>
+               </effect>
+               <effect type="name"  name="BasicApp_TexName">XP_HERM</effect>
+               <effect type="ipair" name="BasicApp_BlendInfo">5, 2</effect>
+               <effect type="bool"  name="BasicApp_UseCommonTexFrame">true</effect>
+               <effect type="fanim" name="BasicApp_TexFrame">
+                  <float_header type="4" count="1">
+                     0:
+                        <float type="1" count="1">
+                           0: 0
+                        </float>
+                  </float_header>
+               </effect>
+               <effect type="vanim" name="BasicApp_CommonTexFrame">
+                  <single type="4" count="1">
+                     0: 0
+                     <loop type="1">
+                          0.0: 0, 0, 0.0625
+                          2.0: 1, 0.0625, 0
+                     </loop>
+                  </single>
+               </effect>
+               <effect type="bool"  name="BasicApp_FlipTexU">false</effect>
+               <effect type="bool"  name="BasicApp_FlipTexV">true</effect>
+            </node>
+         </AlchemyNodeLibrary>
+      </AlchemyNodeLibrary>
+   </UTF_ROOT>
+</UTFXML>

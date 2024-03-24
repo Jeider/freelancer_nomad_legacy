@@ -142,7 +142,7 @@ class DynamicSphereZone(SphereZone, DynamicZone):
         return self.size
 
 
-class BaseFileAppearanceZone(Zone):
+class PropertyZone(Zone):
     ZONE_FIELD_TYPE = None
 
     ROOT_FOLDER = 'ASTEROIDS_MOD'
@@ -180,6 +180,10 @@ class BaseFileAppearanceZone(Zone):
         if self.DRAG_MODIFIER:
             params['drag_modifier'] = self.DRAG_MODIFIER
         return params
+
+
+class BaseFileAppearanceZone(PropertyZone):
+    ROOT_FOLDER = 'ASTEROIDS_MOD'
 
     def get_file_name(self):
         return f'gen_{self.get_zone_base_alias()}'

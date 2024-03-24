@@ -122,7 +122,7 @@ class Sig8GreenNebula1(Sigma8Member, zones.NebulaZone):
     FILE_NAME = 'gen_sig8_green_nebula1'
     SPACEDUST = Dust.ATTRACT_GREEN
     SPACEDUST_MAXPARTICLES = 40
-    MUSIC = Ambience.BADLANDS
+    MUSIC = Ambience.NEBULA_EDGE
     CONTENT_TEMPLATE = sig8_nebula.Sig8LargeEdgeNebulaTemplate
 
     PROPERTY_FLAGS = 32768
@@ -134,7 +134,7 @@ class Sig8GreenNebula2(Sigma8Member, zones.NebulaZone):
     FILE_NAME = 'gen_sig8_green_nebula2'
     SPACEDUST = Dust.ATTRACT_GREEN
     SPACEDUST_MAXPARTICLES = 40
-    MUSIC = Ambience.BADLANDS
+    MUSIC = Ambience.NEBULA_EDGE
     CONTENT_TEMPLATE = sig8_nebula.Sig8LargeEdgeNebulaTemplate
 
     PROPERTY_FLAGS = 32768

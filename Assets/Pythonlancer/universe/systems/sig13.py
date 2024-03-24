@@ -9,18 +9,18 @@ from universe.content import interior
 from universe.content import dealers
 from universe.content import faction
 from universe.content import population
+from universe.content import mineable
 
 from templates.dockable import gas_miner
 from templates.dockable import trade_storages
 
-from universe.content import mineable
 from templates.nebula import exclusion
 from templates.nebula import sig13_blue_nebula
 from templates.solar import gas_crystal
 
 
 
-class Sigma13Member(object):
+class Sig13Member(object):
     INDEX = 1
     FACTION = faction.RH_GRP
     ABSTRACT = False
@@ -28,14 +28,16 @@ class Sigma13Member(object):
 
 class Sig13Rheinland(object):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_RH
+    FACTION = faction.RH_GRP
 
 
 class Sig13Liberty(object):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_LI
     POPULATION_KIND = population.POP_SECOND
+    FACTION = faction.LI_GRP
 
 
-class Sigma13StaticText(Sigma13Member, main_objects.RawText):
+class Sig13StaticText(Sig13Member, main_objects.RawText):
     SPACE_CONTENT = '''[SystemInfo]
 name = sig13
 space_color = 0, 0, 0
@@ -103,11 +105,8 @@ ICE_EXCLUSION_PARAMS = {
 }
 
 
-
-
-class Sig13Nebula(Sigma13Member, zones.NebulaZone):
+class Sig13Nebula(Sig13Member, zones.NebulaZone):
     INDEX = 1
-    FILE_NAME = 'gen_sig13_blue_nebula'
     SPACEDUST = Dust.ATTRACT
     SPACEDUST_MAXPARTICLES = 50
     MUSIC = Ambience.NEBULA_CROW
@@ -118,26 +117,26 @@ class Sig13Nebula(Sigma13Member, zones.NebulaZone):
     PROPERTY_FOG_COLOR = '0.000000, 100.000000, 160.000000'
 
 
-class Sig13Sun(Sigma13Member, main_objects.SunSmall):
+class Sig13Sun(Sig13Member, main_objects.SunSmall):
     STAR = 'med_blue_sun'
 
 
-class Sig13ForbesJumpgate(Sigma13Member, main_objects.Jumpgate):
+class Sig13ForbesJumpgate(Sig13Member, main_objects.Jumpgate):
     INDEX = 1
     REL = TOP
 
 
-class Sig13CaliforniaJumpgate(Sigma13Member, main_objects.Jumpgate):
+class Sig13CaliforniaJumpgate(Sig13Member, main_objects.Jumpgate):
     INDEX = 2
     REL = LEFT
 
 
-class Sig13BerlinJumpgate(Sigma13Member, main_objects.Jumpgate):
+class Sig13BerlinJumpgate(Sig13Member, main_objects.Jumpgate):
     INDEX = 3
     REL = BOTTOM
 
 
-class Sig13LibertyStation(Sigma13Member, Sig13Liberty, main_objects.Station):
+class Sig13LibertyStation(Sig13Member, Sig13Liberty, main_objects.Station):
     INDEX = 1
     BASE_INDEX = 2
     REL = RIGHT
@@ -156,7 +155,7 @@ class Sig13LibertyStation(Sigma13Member, Sig13Liberty, main_objects.Station):
     FACTION = faction.LI_GRP
 
 
-class Sig13RheinlandStation(Sigma13Member, Sig13Rheinland, main_objects.Station):
+class Sig13RheinlandStation(Sig13Member, Sig13Rheinland, main_objects.Station):
     INDEX = 2
     BASE_INDEX = 1
     REL = RIGHT
@@ -172,7 +171,7 @@ class Sig13RheinlandStation(Sigma13Member, Sig13Rheinland, main_objects.Station)
     INTERIOR_BG1 = interior.INTERIOR_BG_CROW
 
 
-class Sig13Battleship(Sigma13Member, Sig13Rheinland, main_objects.RheinlandBattleship):
+class Sig13Battleship(Sig13Member, Sig13Rheinland, main_objects.RheinlandBattleship):
     BASE_INDEX = 4
     REL = RIGHT
     REL_APPEND = 1000
@@ -187,13 +186,13 @@ class Sig13Battleship(Sigma13Member, Sig13Rheinland, main_objects.RheinlandBattl
     INTERIOR_BG1 = interior.INTERIOR_BG_CROW
 
 
-class Sig13Freeport(Sigma13Member, Sig13Liberty, main_objects.Freeport):
+class Sig13Freeport(Sig13Member, Sig13Liberty, main_objects.Freeport):
     BASE_INDEX = 5
     REL = LEFT
     REL_APPEND = 1000
     SPACE_OBJECT_TEMPLATE = trade_storages.HonshuStorage
-    INTERIOR_CLASS = interior.BattleshipInterior
-    DEALERS = dealers.RheinlandMilitaryDealers
+    INTERIOR_CLASS = interior.OutpostInterior
+    DEALERS = dealers.RheinlandCivilianDealers
     FACTION = faction.LI_GRP
     ROTATE_RANDOM = True
 
@@ -203,7 +202,7 @@ class Sig13Freeport(Sigma13Member, Sig13Liberty, main_objects.Freeport):
     INTERIOR_BG1 = interior.INTERIOR_BG_CROW
 
 
-class Sig13PirateTopRight(Sigma13Member, Sig13Liberty, main_objects.PirateBase):
+class Sig13PirateTopRight(Sig13Member, Sig13Liberty, main_objects.PirateBase):
     BASE_INDEX = 6
     INDEX = 1
     REL = RIGHT
@@ -219,7 +218,7 @@ class Sig13PirateTopRight(Sigma13Member, Sig13Liberty, main_objects.PirateBase):
     INTERIOR_BG1 = interior.INTERIOR_BG_CROW
 
 
-class Sig13PirateTopLeft(Sigma13Member, Sig13Liberty, main_objects.PirateBase):
+class Sig13PirateTopLeft(Sig13Member, Sig13Liberty, main_objects.PirateBase):
     BASE_INDEX = 7
     INDEX = 2
     REL = TOP
@@ -235,7 +234,7 @@ class Sig13PirateTopLeft(Sigma13Member, Sig13Liberty, main_objects.PirateBase):
     INTERIOR_BG1 = interior.INTERIOR_BG_CROW
 
 
-class Sig13PirateBottom(Sigma13Member, Sig13Rheinland, main_objects.PirateBase):
+class Sig13PirateBottom(Sig13Member, Sig13Rheinland, main_objects.PirateBase):
     BASE_INDEX = 8
     INDEX = 3
     REL = BOTTOM
@@ -251,7 +250,7 @@ class Sig13PirateBottom(Sigma13Member, Sig13Rheinland, main_objects.PirateBase):
     INTERIOR_BG1 = interior.INTERIOR_BG_CROW
 
 
-class Sig13ConnRheinlandGas1(Sigma13Member, main_objects.TradeConnection):
+class Sig13ConnRheinlandGas1(Sig13Member, main_objects.TradeConnection):
     OBJ_FROM = Sig13RheinlandStation
     OBJ_TO = Sig13CaliforniaJumpgate
     SIDE_FROM = BOTTOM
@@ -270,7 +269,7 @@ class Sig13ConnRheinlandGas1(Sigma13Member, main_objects.TradeConnection):
     # OBJ_TO_EXTRA_DRIFT_ALT_AXIS = -2000
 
 
-class Sig13ConnRheinlandGas2(Sigma13Member, main_objects.TradeConnection):
+class Sig13ConnRheinlandGas2(Sig13Member, main_objects.TradeConnection):
     OBJ_FROM = Sig13RheinlandStation
     OBJ_TO = Sig13BerlinJumpgate
     SIDE_FROM = LEFT
@@ -282,7 +281,7 @@ class Sig13ConnRheinlandGas2(Sigma13Member, main_objects.TradeConnection):
     ]
 
 
-class Sig13ConnLibertyGas1(Sigma13Member, Sig13Liberty, main_objects.TradeConnection):
+class Sig13ConnLibertyGas1(Sig13Member, Sig13Liberty, main_objects.TradeConnection):
     OBJ_FROM = Sig13LibertyStation
     OBJ_TO = Sig13CaliforniaJumpgate
     SIDE_FROM = TOP
@@ -299,7 +298,7 @@ class Sig13ConnLibertyGas1(Sigma13Member, Sig13Liberty, main_objects.TradeConnec
     OBJ_TO_EXTRA_DRIFT_ALT_AXIS = -2000
 
 
-class Sig13ConnLibertyGas2(Sigma13Member, Sig13Liberty, main_objects.TradeConnection):
+class Sig13ConnLibertyGas2(Sig13Member, Sig13Liberty, main_objects.TradeConnection):
     OBJ_FROM = Sig13LibertyStation
     OBJ_TO = Sig13ForbesJumpgate
     SIDE_FROM = LEFT
@@ -311,7 +310,7 @@ class Sig13ConnLibertyGas2(Sigma13Member, Sig13Liberty, main_objects.TradeConnec
     ]
 
 
-class Sig13ConnBattleship1(Sigma13Member, main_objects.TradeConnection):
+class Sig13ConnBattleship1(Sig13Member, main_objects.TradeConnection):
     OBJ_FROM = Sig13Battleship
     OBJ_TO = Sig13BerlinJumpgate
     SIDE_FROM = TOP
@@ -323,7 +322,7 @@ class Sig13ConnBattleship1(Sigma13Member, main_objects.TradeConnection):
     ]
 
 
-class Sig13ConnBattleship2(Sigma13Member, main_objects.TradeConnection):
+class Sig13ConnBattleship2(Sig13Member, main_objects.TradeConnection):
     OBJ_FROM = Sig13Battleship
     OBJ_TO = Sig13Freeport
     SIDE_FROM = BOTTOM
@@ -335,7 +334,7 @@ class Sig13ConnBattleship2(Sigma13Member, main_objects.TradeConnection):
     ]
 
 
-class Sig13ConnFreeport1(Sigma13Member, Sig13Liberty, main_objects.TradeConnection):
+class Sig13ConnFreeport1(Sig13Member, Sig13Liberty, main_objects.TradeConnection):
     OBJ_FROM = Sig13Freeport
     OBJ_TO = Sig13ForbesJumpgate
     SIDE_FROM = BOTTOM
@@ -423,83 +422,84 @@ asteroid = mine_oxygen, -0.300000, -0.300000, 0.800000, 85, 0, 185, mine
 asteroid = mine_oxygen, -0.700000, 0.400000, -0.400000, 75, 30, 70, mine
 '''
 
-class Sigma13GasPockets(asteroid_definition.AsteroidDefinition):
+
+class Sig13GasPockets(asteroid_definition.AsteroidDefinition):
     FIELD = True
     CUBE = True
     FIELD_TEMPLATE = FIELD_TEMPLATE
     CUBE_TEMPLATE = CUBE_TEMPLATE
 
 
-class Sigma13GasPocketsZone1(Sigma13Member, zones.AsteroidZone):
+class Sig13GasPocketsZone1(Sig13Member, zones.AsteroidZone):
     ALIAS = 'bigcryst'
     INDEX = 1
-    ASTEROID_DEFINITION_CLASS = Sigma13GasPockets
+    ASTEROID_DEFINITION_CLASS = Sig13GasPockets
     SPACEDUST = Dust.OXYGEN
     SPACEDUST_MAXPARTICLES = 200
 
 
-class Sigma13GasPocketsZone2(Sigma13Member, zones.AsteroidZone):
+class Sig13GasPocketsZone2(Sig13Member, zones.AsteroidZone):
     ALIAS = 'bigcryst'
     INDEX = 2
-    ASTEROID_DEFINITION_CLASS = Sigma13GasPockets
+    ASTEROID_DEFINITION_CLASS = Sig13GasPockets
     SPACEDUST = Dust.OXYGEN
     SPACEDUST_MAXPARTICLES = 200
 
 
-class Sigma13GasPocketsZone3(Sigma13Member, zones.AsteroidZone):
+class Sig13GasPocketsZone3(Sig13Member, zones.AsteroidZone):
     ALIAS = 'bigcryst'
     INDEX = 3
-    ASTEROID_DEFINITION_CLASS = Sigma13GasPockets
+    ASTEROID_DEFINITION_CLASS = Sig13GasPockets
     SPACEDUST = Dust.OXYGEN
     SPACEDUST_MAXPARTICLES = 200
 
 
-class Sig13GasMiner1(Sigma13Member, Sig13BaseRheinlandGasMiner):
+class Sig13GasMiner1(Sig13Member, Sig13BaseRheinlandGasMiner):
     INDEX = 1
     BASE_INDEX = 51
 
 
-class Sig13GasMiner2(Sigma13Member, Sig13BaseRheinlandGasMiner):
+class Sig13GasMiner2(Sig13Member, Sig13BaseRheinlandGasMiner):
     INDEX = 2
     BASE_INDEX = 52
 
 
-class Sig13GasMiner3(Sigma13Member, Sig13BaseLibertyGasMiner):
+class Sig13GasMiner3(Sig13Member, Sig13BaseLibertyGasMiner):
     INDEX = 3
     BASE_INDEX = 53
 
 
-class Sig13GasMiner4(Sigma13Member, Sig13BaseRheinlandGasMiner):
+class Sig13GasMiner4(Sig13Member, Sig13BaseRheinlandGasMiner):
     INDEX = 4
     BASE_INDEX = 54
 
 
-class Sig13GasMiner5(Sigma13Member, Sig13BaseRheinlandGasMiner):
+class Sig13GasMiner5(Sig13Member, Sig13BaseRheinlandGasMiner):
     INDEX = 5
     BASE_INDEX = 55
 
 
-class Sig13GasMiner6(Sigma13Member, Sig13BaseRheinlandGasMiner):
+class Sig13GasMiner6(Sig13Member, Sig13BaseRheinlandGasMiner):
     INDEX = 6
     BASE_INDEX = 56
 
 
-class Sig13GasMiner7(Sigma13Member, Sig13BaseLibertyGasMiner):
+class Sig13GasMiner7(Sig13Member, Sig13BaseLibertyGasMiner):
     INDEX = 7
     BASE_INDEX = 57
 
 
-class Sig13GasMiner8(Sigma13Member, Sig13BaseLibertyGasMiner):
+class Sig13GasMiner8(Sig13Member, Sig13BaseLibertyGasMiner):
     INDEX = 8
     BASE_INDEX = 58
 
 
-class Sig13GasMiner9(Sigma13Member, Sig13BaseLibertyGasMiner):
+class Sig13GasMiner9(Sig13Member, Sig13BaseLibertyGasMiner):
     INDEX = 9
     BASE_INDEX = 59
 
 
-class Sig13SimpleCrystalRewards(Sigma13Member, mineable.DefaultGasCrystalRewardsGroup):
+class Sig13SimpleCrystalRewards(Sig13Member, mineable.DefaultGasCrystalRewardsGroup):
     NAME = 'sig13_gascryst_simple1'
     SOLAR = gas_crystal.SimpleCrystalAsteroid
     REWARD_ITEM = 'comm_gas_balloons'
@@ -514,6 +514,7 @@ class Sig13SimpleCrystalRewards(Sigma13Member, mineable.DefaultGasCrystalRewards
         Sig13GasMiner8,
         Sig13GasMiner9,
     ]
+
 
 class Sig13SimpleCrystalField(mineable.DefaultField):
     BOX_SIZE = 1000
@@ -532,76 +533,76 @@ class Sig13BaseSimpleGasCrystalField(mineable.GasCrystalRewardField):
     ULTRA_REWARD = True
 
 
-class Sig13SimpleGasCrystalField1(Sigma13Member, Sig13BaseSimpleGasCrystalField):
+class Sig13SimpleGasCrystalField1(Sig13Member, Sig13BaseSimpleGasCrystalField):
     INDEX = 1
     ULTRA_BASE = Sig13GasMiner1
 
 
-class Sig13SimpleGasCrystalField2(Sigma13Member, Sig13BaseSimpleGasCrystalField):
+class Sig13SimpleGasCrystalField2(Sig13Member, Sig13BaseSimpleGasCrystalField):
     INDEX = 2
     ULTRA_BASE = Sig13GasMiner2
 
 
-class Sig13SimpleGasCrystalField3(Sigma13Member, Sig13BaseSimpleGasCrystalField):
+class Sig13SimpleGasCrystalField3(Sig13Member, Sig13BaseSimpleGasCrystalField):
     INDEX = 3
     ULTRA_BASE = Sig13GasMiner3
 
 
-class Sig13SimpleGasCrystalField4(Sigma13Member, Sig13BaseSimpleGasCrystalField):
+class Sig13SimpleGasCrystalField4(Sig13Member, Sig13BaseSimpleGasCrystalField):
     INDEX = 4
     ULTRA_BASE = Sig13GasMiner4
 
 
-class Sig13SimpleGasCrystalField5(Sigma13Member, Sig13BaseSimpleGasCrystalField):
+class Sig13SimpleGasCrystalField5(Sig13Member, Sig13BaseSimpleGasCrystalField):
     INDEX = 5
     ULTRA_BASE = Sig13GasMiner5
 
 
-class Sig13SimpleGasCrystalField6(Sigma13Member, Sig13BaseSimpleGasCrystalField):
+class Sig13SimpleGasCrystalField6(Sig13Member, Sig13BaseSimpleGasCrystalField):
     INDEX = 6
     ULTRA_BASE = Sig13GasMiner6
 
 
-class Sig13SimpleGasCrystalField7(Sigma13Member, Sig13BaseSimpleGasCrystalField):
+class Sig13SimpleGasCrystalField7(Sig13Member, Sig13BaseSimpleGasCrystalField):
     INDEX = 7
     ULTRA_BASE = Sig13GasMiner7
 
 
-class Sig13SimpleGasCrystalField8(Sigma13Member, Sig13BaseSimpleGasCrystalField):
+class Sig13SimpleGasCrystalField8(Sig13Member, Sig13BaseSimpleGasCrystalField):
     INDEX = 8
     ULTRA_BASE = Sig13GasMiner8
 
 
-class Sig13SimpleGasCrystalField9(Sigma13Member, Sig13BaseSimpleGasCrystalField):
+class Sig13SimpleGasCrystalField9(Sig13Member, Sig13BaseSimpleGasCrystalField):
     INDEX = 9
     ULTRA_BASE = Sig13GasMiner9
 
 
-class Sig13AbandonedMiner1(Sigma13Member, Sig13Rheinland, Sig13BaseAbandonedMiner):
+class Sig13AbandonedMiner1(Sig13Member, Sig13Rheinland, Sig13BaseAbandonedMiner):
     INDEX = 1
     BASE_INDEX = 60
     ASTEROID_ZONES = [
-        Sigma13GasPocketsZone1
+        Sig13GasPocketsZone1
     ]
 
 
-class Sig13AbandonedMiner2(Sigma13Member, Sig13Rheinland, Sig13BaseAbandonedMiner):
+class Sig13AbandonedMiner2(Sig13Member, Sig13Rheinland, Sig13BaseAbandonedMiner):
     INDEX = 2
     BASE_INDEX = 61
     ASTEROID_ZONES = [
-        Sigma13GasPocketsZone2
+        Sig13GasPocketsZone2
     ]
 
 
-class Sig13AbandonedMiner3(Sigma13Member, Sig13Liberty, Sig13BaseAbandonedMiner):
+class Sig13AbandonedMiner3(Sig13Member, Sig13Liberty, Sig13BaseAbandonedMiner):
     INDEX = 3
     BASE_INDEX = 62
     ASTEROID_ZONES = [
-        Sigma13GasPocketsZone3
+        Sig13GasPocketsZone3
     ]
 
 
-class Sig13ComplexCrystalRewards(Sigma13Member, mineable.DefaultGasCrystalRewardsGroup):
+class Sig13ComplexCrystalRewards(Sig13Member, mineable.DefaultGasCrystalRewardsGroup):
     NAME = 'sig13_gascryst_complex1'
     SOLAR = gas_crystal.ComplexCrystalAsteroid
     REWARD_ITEM = 'comm_gas_balloons'
@@ -628,16 +629,16 @@ class Sig13BaseComplexGasCrystalField(mineable.ComplexGasCrystalRewardField):
     ULTRA_REWARD = True
 
 
-class ComplexGasCrystalField1(Sigma13Member, Sig13BaseComplexGasCrystalField):
+class ComplexGasCrystalField1(Sig13Member, Sig13BaseComplexGasCrystalField):
     INDEX = 1
     ULTRA_BASE = Sig13AbandonedMiner1
 
 
-class ComplexGasCrystalField2(Sigma13Member, Sig13BaseComplexGasCrystalField):
+class ComplexGasCrystalField2(Sig13Member, Sig13BaseComplexGasCrystalField):
     INDEX = 2
     ULTRA_BASE = Sig13AbandonedMiner2
 
 
-class ComplexGasCrystalField3(Sigma13Member, Sig13BaseComplexGasCrystalField):
+class ComplexGasCrystalField3(Sig13Member, Sig13BaseComplexGasCrystalField):
     INDEX = 3
     ULTRA_BASE = Sig13AbandonedMiner3

@@ -1439,7 +1439,7 @@ size = {size}'''
         return PiratePatrol(
             system=self.system,
             population_kind=self.get_population_kind(),
-            index=self.system.get_next_police_patrol_id(),
+            index=self.system.get_next_pirate_patrol_id(),
             positions=[
                 (attacker_base_pos[0], 0, attacker_base_pos[2]),
                 (lane1_pos[0], 0, lane1_pos[2]),
@@ -1520,3 +1520,8 @@ class BuoyTradeConnection(TradeConnection):
     TLR_OUTER_ZONE = False
 
     TLR_DISTANCE = 2000
+
+
+class AbandonedBuoyTradeConnection(BuoyTradeConnection):
+    POLICE_PATROL = False
+

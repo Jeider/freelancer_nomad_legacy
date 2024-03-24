@@ -422,7 +422,6 @@ distance = {tlr_distance}
 
 
 class RheinlandFirst(object):
-    FACTION_CODE = faction.RH_GRP
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_RH
 
     FIRST_LAWFUL_POPULATION_CLASS = population.RheinlandLegalPopulation

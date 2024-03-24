@@ -1232,3 +1232,4 @@ rotate = 90, 0, 0
 archetype = space_tankl4x4
 parent = li_cal_08
 '''
+
