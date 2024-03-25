@@ -76,22 +76,8 @@ visit = 128'''
 
 
 class SimpleCrystalAsteroid(BaseIceCrystal):
-    DEFAULT_ARCHETYPES = [
-        'ice_asteroid_mineable_xlargeA',
-        'ice_asteroid_mineable_xlargeC',
-    ]
-    MEDIUM_REWARD_ARCHETYPES = [
-        'ice_asteroid_mineable_xlargeA',
-        'ice_asteroid_mineable_xlargeC',
-    ]
-    HIGH_REWARD_ARCHETYPES = [
-        'ice_asteroid_mineable_xlargeA',
-        'ice_asteroid_mineable_xlargeC',
-    ]
-    ULTRA_REWARD_ARCHETYPES = [
-        'ice_asteroid_mineable_xlargeA',
-        'ice_asteroid_mineable_xlargeC',
-    ]
+    DEFAULT_ARCHETYPE = 'icecrystal_mineast_super'
+    ULTRA_REWARD_ARCHETYPE = 'icecrystal_mineast_super_ultra'
 
     subclasses = []
 
@@ -100,16 +86,16 @@ class SimpleCrystalAsteroid(BaseIceCrystal):
         cls.subclasses.append(cls)
 
     def get_default_archetype(self):
-        return random.choice(self.DEFAULT_ARCHETYPES)
+        return self.DEFAULT_ARCHETYPE
 
     def get_medium_reward_archetype(self):
-        return random.choice(self.MEDIUM_REWARD_ARCHETYPES)
+        return self.DEFAULT_ARCHETYPE
 
     def get_high_reward_archetype(self):
-        return random.choice(self.HIGH_REWARD_ARCHETYPES)
+        return self.DEFAULT_ARCHETYPE
 
     def get_ultra_reward_archetype(self):
-        return random.choice(self.ULTRA_REWARD_ARCHETYPES)
+        return self.ULTRA_REWARD_ARCHETYPE
 
     def get_asteroid_pos(self):
         return self.template.ASTEROID_POS
@@ -126,123 +112,45 @@ class SimpleCrystalAsteroid(BaseIceCrystal):
 
 class CrystalTemplate1(SimpleCrystalAsteroid):
     ASTEROID_POS = (0, 0, 0)
-    ASTEROID_ROTATE = (90, 0, 0)
+    ASTEROID_ROTATE = (0, 0, 0)
 
     GAS_POSITIONS = [
-        (0, 0, 80),
-        (0, 0, -50),
+        (0, 0, 120),
+        (0, 0, 0),
+        (0, 0, -120),
     ]
 
 
 class CrystalTemplate2(SimpleCrystalAsteroid):
-    ASTEROID_POS = (0, 0, 20)
-    ASTEROID_ROTATE = (90, 180, 0)
+    ASTEROID_POS = (0, 0, 0)
+    ASTEROID_ROTATE = (-34.7, 20.2, 41.3)
 
     GAS_POSITIONS = [
-        (0, 0, 80),
-        (0, 0, -50),
+        (-19.5, 73.7, 92.7),
+        (0, 0, 0),
+        (19.5, -73.7, -92.7),
     ]
 
 
 class CrystalTemplate3(SimpleCrystalAsteroid):
     ASTEROID_POS = (0, 0, 0)
-    ASTEROID_ROTATE = (90, 90, 0)
+    ASTEROID_ROTATE = (-130.3, 45.5, -85.2)
 
     GAS_POSITIONS = [
-        (80, 0, 0),
-        (-50, 0, 0),
+        (86.6, 62.9, -54.3),
+        (0, 0, 0),
+        (-86.6, -62.9, 54.3),
     ]
 
 
 class CrystalTemplate4(SimpleCrystalAsteroid):
-    ASTEROID_POS = (20, 0, 0)
-    ASTEROID_ROTATE = (90, -90, 0)
-
-    GAS_POSITIONS = [
-        (80, 0, 0),
-        (-50, 0, 0),
-    ]
-
-
-class CrystalTemplate5(SimpleCrystalAsteroid):
     ASTEROID_POS = (0, 0, 0)
-    ASTEROID_ROTATE = (45, 0, 0)
+    ASTEROID_ROTATE = (46.2, 46.5, 167.5)
 
     GAS_POSITIONS = [
-        (0, -30, -30),
-        (0, 60, 50),
-    ]
-
-
-class CrystalTemplate6(SimpleCrystalAsteroid):
-    ASTEROID_POS = (0, 0, 0)
-    ASTEROID_ROTATE = (45, 180, 0)
-
-    GAS_POSITIONS = [
-        (0, -30, 30),
-        (0, 60, -50),
-    ]
-
-
-class CrystalTemplate7(SimpleCrystalAsteroid):
-    ASTEROID_POS = (0, 0, 0)
-    ASTEROID_ROTATE = (60, 0, 0)
-
-    GAS_POSITIONS = [
-        (0, -20, -30),
-        (0, 50, 40),
-    ]
-
-
-
-class CrystalTemplate8(SimpleCrystalAsteroid):
-    ASTEROID_POS = (0, 0, 0)
-    ASTEROID_ROTATE = (60, 180, 0)
-
-    GAS_POSITIONS = [
-        (0, -20, 30),
-        (0, 50, -40),
-    ]
-
-
-
-class CrystalTemplate9(SimpleCrystalAsteroid):
-    ASTEROID_POS = (0, 0, 0)
-    ASTEROID_ROTATE = (45, 90, 0)
-
-    GAS_POSITIONS = [
-        (10, -20, 0),
-        (40, 50, 0),
-    ]
-
-
-class CrystalTemplate10(SimpleCrystalAsteroid):
-    ASTEROID_POS = (0, 0, 0)
-    ASTEROID_ROTATE = (45, -90, 0)
-
-    GAS_POSITIONS = [
-        (-10, -20, 0),
-        (-40, 50, 0),
-    ]
-
-
-class CrystalTemplate11(SimpleCrystalAsteroid):
-    ASTEROID_POS = (0, 0, 0)
-    ASTEROID_ROTATE = (60, 90, 0)
-
-    GAS_POSITIONS = [
-        (10, -20, 0),
-        (40, 50, 0),
-    ]
-
-
-class CrystalTemplate12(SimpleCrystalAsteroid):
-    ASTEROID_POS = (0, 0, 0)
-    ASTEROID_ROTATE = (60, -90, 0)
-
-    GAS_POSITIONS = [
-        (-10, -20, 0),
-        (-40, 50, 0),
+        (-40, 97.5, 57.4),
+        (0, 0, 0),
+        (40, -97.5, -57.4),
     ]
 
 
@@ -252,7 +160,7 @@ class ComplexCrystalAsteroid(BaseIceCrystal):
     DEFAULT_ARCHETYPE = 'ice_asteroid_insane'
     ARCHETYPE_REWARD_MEDIUM = 'ice_asteroid_insane'
     ARCHETYPE_REWARD_HIGH = 'ice_asteroid_insane'
-    ARCHETYPE_REWARD_ULTRA = 'ice_asteroid_insane'
+    ARCHETYPE_REWARD_ULTRA = 'ice_asteroid_insane_ultra'
 
     GAS_POSITIONS =[
         (0, 0, -10),
