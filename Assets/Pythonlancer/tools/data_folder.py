@@ -23,6 +23,14 @@ class DataFolder(object):
         return cls.get_root() / 'UNIVERSE'
 
     @classmethod
+    def get_missions(cls):
+        return cls.get_root() / 'MISSIONS'
+
+    @classmethod
+    def get_ships(cls):
+        return cls.get_root() / 'SHIPS'
+
+    @classmethod
     def sync_solar_gen_loadouts(cls, content):
         loadouts_file = cls.get_solar() / LOADOUTS_GEN
         loadouts_file.write_text(content, encoding='utf-8')
@@ -60,4 +68,39 @@ class DataFolder(object):
     @classmethod
     def sync_equip_hardcoded(cls, equip_file_name, content):
         equip_file = cls.get_equip()  / f'{equip_file_name}.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    @classmethod
+    def sync_universe(cls, content):
+        equip_file = cls.get_universe() / 'universe.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    @classmethod
+    def sync_mbases(cls, content):
+        equip_file = cls.get_missions() / 'mbases.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    @classmethod
+    def sync_npcships(cls, content):
+        equip_file = cls.get_missions() / 'npcships.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    @classmethod
+    def sync_lootprops(cls, content):
+        equip_file = cls.get_missions() / 'lootprops.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    @classmethod
+    def sync_shiparch(cls, content):
+        equip_file = cls.get_ships() / 'shiparch.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    @classmethod
+    def sync_ships_loadouts(cls, content):
+        equip_file = cls.get_ships() / 'loadout_gen.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    @classmethod
+    def sync_dock_key(cls, content):
+        equip_file = cls.get_root() / 'dock_key.ini'
         equip_file.write_text(content, encoding='utf-8')

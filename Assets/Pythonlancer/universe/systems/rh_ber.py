@@ -210,18 +210,18 @@ class BerlinBaseDebrisBoxRewardField(mineable.DebrisBoxRewardField):
 
 
 class BerlinDebrisBoxField1(BerlinMember, BerlinBaseDebrisBoxRewardField):
-    INDEX = 2
-    ULTRA_BASE = BerlinDebrisZone2
+    INDEX = 1
+    ULTRA_BASE = BerlinDebrisFactory1
 
 
 class BerlinDebrisBoxField2(BerlinMember, BerlinBaseDebrisBoxRewardField):
-    INDEX = 3
-    ULTRA_BASE = BerlinDebrisZone2
+    INDEX = 2
+    ULTRA_BASE = BerlinDebrisFactory2
 
 
 class BerlinDebrisBoxField3(BerlinMember, BerlinBaseDebrisBoxRewardField):
     INDEX = 3
-    ULTRA_BASE = BerlinDebrisZone3
+    ULTRA_BASE = BerlinDebrisFactory3
 
 
 class BerlinTopNebula(BerlinMember, zones.NebulaZone):
@@ -237,12 +237,12 @@ class BerlinSun(BerlinMember, main_objects.Sun):
     LOADOUT = 'med_blue_sun_fx'
 
 
-class BerlinJumpgateTop(BerlinMember, main_objects.Jumpgate):
+class BerlinSigma13Jumpgate(BerlinMember, main_objects.Jumpgate):
     INDEX = 1
     REL = TOP
 
 
-class BerlinJumpgateBottom(BerlinMember, main_objects.Jumpgate):
+class BerlinSigma8Jumpgate(BerlinMember, main_objects.Jumpgate):
     INDEX = 2
     REL = BOTTOM
 
@@ -379,7 +379,7 @@ class BerlinPlanet4(BerlinMember, main_objects.Planet):
 
 class BerConnOutpost1(BerlinMember, main_objects.TradeConnection):
     OBJ_FROM = BerlinOutpost
-    OBJ_TO = BerlinJumpgateTop
+    OBJ_TO = BerlinSigma13Jumpgate
     SIDE_FROM = BOTTOM
     SIDE_TO = TOP
     TRADELANE_LETTER = 'A'
@@ -436,7 +436,7 @@ class BerConnTrading1(BerlinMember, main_objects.TradeConnection):
 
 class BerConnTrading2(BerlinMember, main_objects.TradeConnection):
     OBJ_FROM = BerlinTrading
-    OBJ_TO = BerlinJumpgateBottom
+    OBJ_TO = BerlinSigma13Jumpgate
     SIDE_FROM = TOP
     SIDE_TO = BOTTOM
     TRADELANE_LETTER = 'F'

@@ -157,6 +157,7 @@ class br_wrw(system.BretoniaFirst, system.System):
     CONTENT = br_wrw_content
 
     SYSTEM_FOLDER = 'BR_WARWICK'
+    ALLOW_SYNC = True
 
 
 class tau29(system.BretoniaFirst, system.System):

@@ -1,5 +1,8 @@
 from universe.faction import Faction
 from world.npc import NPC
+from templates.hardcoded_inis.missions import NPCShipsTemplate
+
+from tools.data_folder import DataFolder
 
 from text.dividers import SINGLE_DIVIDER, DIVIDER
 
@@ -18,6 +21,8 @@ class PopulationManager(object):
         self.loadouts_list = []
 
         self.load_game_data()
+
+        self.sync_data()
 
     def get_equipment_package(self, faction, npc):
         return {
@@ -61,12 +66,10 @@ class PopulationManager(object):
                     self.loadouts_list.append(loadout)
 
     def get_npcships(self):
-        data = ''
+        return DIVIDER.join([npc.get_npc_shiparch() for npc in self.npc_list])
 
-        for npc in self.npc_list:
-            data += npc.get_npc_shiparch() + DIVIDER
-
-        return data
+    def get_npcships_file_content(self):
+        return NPCShipsTemplate().format({'generated': self.get_npcships()})
 
     def get_npc_names(self):
         faction_data = []
@@ -84,3 +87,7 @@ class PopulationManager(object):
 
     def get_loadouts(self):
         return DIVIDER.join([loadout for loadout in self.loadouts_list])
+
+    def sync_data(self):
+        DataFolder.sync_ships_loadouts(self.get_loadouts())
+        DataFolder.sync_npcships(self.get_npcships_file_content())

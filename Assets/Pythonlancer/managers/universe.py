@@ -1,5 +1,8 @@
 import pathlib
 from templates.solar.hacker_panel import HackerPanelManager
+from templates.hardcoded_inis.universe import UniverseTemplate
+from templates.hardcoded_inis.missions import MBasesTemplate
+from templates.hardcoded_inis.root import DockKeyTemplate
 
 from universe.universe import *
 from universe.system import System
@@ -126,8 +129,14 @@ class UniverseManager(object):
     def get_interior_definitions(self):
         return DIVIDER.join(self.interior_definitions)
 
+    def get_universe_file_content(self):
+        return UniverseTemplate().format({'generated': self.interior_definitions})
+
     def get_mbases_content(self):
         return DIVIDER.join(self.mbases_content)
+
+    def get_mbases_file_content(self):
+        return MBasesTemplate().format({'generated': self.get_mbases_content})
 
     def get_key_initial_world(self):
         return DIVIDER.join([key.get_initial_world() for key in self.keys])
@@ -144,7 +153,14 @@ class UniverseManager(object):
     def get_dock_key(self):
         return DIVIDER.join([key.get_dock_key() for key in self.keys])
 
+    def get_dock_key_file_content(self):
+        return DockKeyTemplate().format({'generated': self.get_dock_key()})
+
     def sync_data(self):
+        DataFolder.sync_universe(self.get_universe_file_content())
+        DataFolder.sync_mbases(self.get_mbases_file_content())
+        DataFolder.sync_dock_key(self.get_dock_key_file_content())
+
         for system in self.systems:
             if not system.ALLOW_SYNC:
                 continue
@@ -166,3 +182,5 @@ class UniverseManager(object):
         for file_name, content in self.interior_files.items():
             # print(f'sync interior {file_name}')
             DataFolder.sync_interior(file_name, content)
+
+

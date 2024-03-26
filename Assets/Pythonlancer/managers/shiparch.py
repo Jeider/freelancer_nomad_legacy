@@ -1,10 +1,12 @@
 from managers.tools.mixins import StringsMixin
 
 from world.ship import Ship
-from templates.shiparch import ShiparchTemplate
-from text.dividers import SINGLE_DIVIDER, DIVIDER
+from templates.hardcoded_inis.ships import ShiparchTemplate
+from text.dividers import DIVIDER
 from text.infocards import InfocardBuilder, INFO_SHIP_ABOUT, INFO_SHIP_TABLE, INFO_SHIP_KEYS, INFO_SHIP_VALUES
 from text.strings import StringCompiler
+
+from tools.data_folder import DataFolder
 
 
 class ShiparchManager(StringsMixin):
@@ -30,6 +32,8 @@ class ShiparchManager(StringsMixin):
             self.params.update(instance.get_shiparch_params())
             self.ships.append(instance)
             self.ships_db[instance.ARCHETYPE] = instance
+
+        self.sync_data()
 
     def get_next_string_id(self):
         self.last_string_id += 1
@@ -81,3 +85,6 @@ class ShiparchManager(StringsMixin):
             infocards[ship.ids_info3] = InfocardBuilder.build_infocard(INFO_SHIP_VALUES, ship_stats)
 
         return StringCompiler.compile_infocards(infocards)
+
+    def sync_data(self):
+        DataFolder.sync_shiparch(self.get_shiparch_content())

@@ -2,6 +2,8 @@ from files.writer import FileWriter
 
 from core import LancerCore
 
+from templates.hardcoded_inis.missions import LootpropsTemplate
+
 from tools.data_folder import DataFolder
 
 DIVIDER = '\n\n'
@@ -37,39 +39,14 @@ def main():
     ]
 
     files_map = [
-        ('engine_equip.ini', core.misc_equip.get_engine_equip()),
-        ('engine_good.ini', core.misc_equip.get_engine_good()),
-        ('power_equip.ini', core.misc_equip.get_powerplant_equip()),
-        ('power_good.ini', core.misc_equip.get_powerplant_good()),
-        ('st_equip.ini', core.misc_equip.get_st_equip()),
-        ('st_good.ini', core.misc_equip.get_st_good()),
-        ('select_equip.ini', core.misc_equip.get_select_equip()),
-
         ('faction_prop_helper.ini', core.population.get_npc_names()),
-        ('npcships.ini', core.population.get_npcships()),
-        ('loadouts.ini', core.population.get_loadouts()),
-
-        # ('weapon_equip.ini', core.weapons.get_weapon_equip()),
-        # ('weapon_good.ini', core.weapons.get_weapon_good()),
 
         ('nicknames_ru.ini', ''.join(nicknames_data)),
         ('infocards_ru.ini', ''.join(infocards_data)),
-        ('lootprops.ini', DIVIDER.join(lootprops_data)),
 
         ('demo_marketdata.ini', DIVIDER.join(markets_demo_data)),
-        ('market_equip.ini', core.universe.get_market_equip()),
-        ('market_ships.ini', core.universe.get_market_ships()),
-        # ('system_content_test.ini', core.universe.get_system_content_test()),  # moved to sync
-        # ('system_loadouts.ini', core.universe.get_system_loadouts()),  # moved to sync
-        ('universe_bases.ini', core.universe.get_interior_definitions()),
-        ('mbases_content.ini', core.universe.get_mbases_content()),
         ('key_for_story.ini', core.universe.get_key_story()),
         ('key_for_initial_world.ini', core.universe.get_key_initial_world()),
-        ('key_for_dock_key.ini', core.universe.get_dock_key()),
-
-        ('ship_packages.ini', core.shiparch.get_ship_goods()),
-
-        ('shiparch.ini', str(core.shiparch.get_shiparch_content())),
     ]
 
     if core.has_story:
@@ -93,11 +70,31 @@ def main():
     for file, content in files_map:
         FileWriter.write(file, content)
 
-
     DataFolder.sync_equip('weapon_equip', GENERATED, core.weapons.get_weapon_equip())
     DataFolder.sync_equip('weapon_good', GENERATED, core.weapons.get_weapon_good())
+
     DataFolder.sync_equip('key_equip', GENERATED, core.universe.get_key_equip())
     DataFolder.sync_equip('key_good', GENERATED, core.universe.get_key_good())
+
+    DataFolder.sync_equip('engine_equip', GENERATED, core.misc_equip.get_engine_equip())
+    DataFolder.sync_equip('engine_good', GENERATED, core.misc_equip.get_engine_good())
+
+    DataFolder.sync_equip('power_equip', GENERATED, core.misc_equip.get_powerplant_equip())
+    DataFolder.sync_equip('power_good', GENERATED, core.misc_equip.get_powerplant_good())
+
+    DataFolder.sync_equip('st_equip', GENERATED, core.misc_equip.get_st_equip())
+    DataFolder.sync_equip('st_good', GENERATED, core.misc_equip.get_st_good())
+
+    DataFolder.sync_equip('select_equip', GENERATED, core.misc_equip.get_select_equip())
+
+    DataFolder.sync_equip('ship_packages', GENERATED, core.shiparch.get_ship_goods())
+
+    DataFolder.sync_equip('market_misc', GENERATED, core.universe.get_market_equip())
+    DataFolder.sync_equip('market_ships', GENERATED, core.universe.get_market_ships())
+
+    DataFolder.sync_lootprops(
+        LootpropsTemplate().format({'generated': DIVIDER.join(lootprops_data)})
+    )
 
 
 main()

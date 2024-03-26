@@ -82,13 +82,13 @@ parent = tau23_04
 '''
 
 
-
 class BretoniaCivilianGasMiner(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'tau23_01'
     TEMPLATE = '''[Object]
 nickname = tau23_01
 pos = 0, 0, 0
 rotate = 0, 90, 0
+archetype = space_police01_gas_station
 {dock_props}
 
 [Object]

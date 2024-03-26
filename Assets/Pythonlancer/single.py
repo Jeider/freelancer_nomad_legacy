@@ -6,7 +6,8 @@ from tools import data_folder
 from templates.solar.hacker_panel import HackerPanelManager, REL_TOP
 from templates.dockable import olaf
 from templates.dockable import station_debris
-from templates.dockable import pirate
+from templates.dockable import gas_miner
+from templates.dockable import ulster_megabase
 
 
 def generate_hacker_panels():
@@ -23,8 +24,8 @@ def test_hacker_colors():
 
 
 def test_placement():
-    base_class = station_debris.StuttgartDestroyedOutpost
-    content = base_class().get_instance(new_space_object_name=None, move_to=None)
+    base_class = ulster_megabase.UlsterMegabase
+    content = base_class().get_instance(new_space_object_name=None, move_to=(0, 1415, 0))
     data_folder.DataFolder.sync_to_test_workspace(content)
 
 
