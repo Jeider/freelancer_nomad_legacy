@@ -253,6 +253,10 @@ parent = ku_hkd_04
 
 class GmgHQDestroyed(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'ku_hkd_04'
+    LOCKED_OBJECT_OFFSETS = [
+        (0, 0, -700),
+        (0, -180, 700),
+    ]
     TEMPLATE = '''[Object]
 nickname = ku_hkd_04
 pos = 0, 0, 0

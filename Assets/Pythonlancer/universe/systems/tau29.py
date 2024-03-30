@@ -459,7 +459,7 @@ class Tau29MineableField(mineable.MineableAsteroidField):
     DRIFT_Z = 0.3
 
 
-class Tau37BaseAsteroidRewardField(mineable.AsteroidRewardField):
+class Tau29BaseAsteroidRewardField(mineable.AsteroidRewardField):
     ALIAS = 'ast'
     FIELD_CLASS = Tau29MineableField
     REWARDS_GROUP_CLASS = Tau29AsteroidReward
@@ -467,7 +467,7 @@ class Tau37BaseAsteroidRewardField(mineable.AsteroidRewardField):
     ULTRA_REWARD = True
 
 
-class Tau37BaseAsteroidNoRewardField(mineable.AsteroidRewardField):
+class Tau29BaseAsteroidNoRewardField(mineable.AsteroidRewardField):
     ALIAS = 'ast'
     FIELD_CLASS = Tau29MineableField
     REWARDS_GROUP_CLASS = Tau29AsteroidReward
@@ -475,25 +475,25 @@ class Tau37BaseAsteroidNoRewardField(mineable.AsteroidRewardField):
     ULTRA_REWARD = False
 
 
-class Tau29RewardAsteroids1(Tau29Member, Tau37BaseAsteroidRewardField):
+class Tau29RewardAsteroids1(Tau29Member, Tau29BaseAsteroidRewardField):
     INDEX = 1
     ULTRA_BASE = Tau29AbandonedAstBase2
 
 #
-# class Tau29RewardAsteroids2(Tau29Member, Tau37BaseAsteroidRewardField):
+# class Tau29RewardAsteroids2(Tau29Member, Tau29BaseAsteroidRewardField):
 #     INDEX = 2
 
 
-class Tau29RewardAsteroids3(Tau29Member, Tau37BaseAsteroidNoRewardField):
+class Tau29RewardAsteroids3(Tau29Member, Tau29BaseAsteroidNoRewardField):
     INDEX = 3
 
 
-class Tau29RewardAsteroids4(Tau29Member, Tau37BaseAsteroidRewardField):
+class Tau29RewardAsteroids4(Tau29Member, Tau29BaseAsteroidRewardField):
     INDEX = 4
     ULTRA_BASE = Tau29AbandonedAstBase1
 
 
-class Tau29RewardAsteroids5(Tau29Member, Tau37BaseAsteroidNoRewardField):
+class Tau29RewardAsteroids5(Tau29Member, Tau29BaseAsteroidNoRewardField):
     INDEX = 5
 
 

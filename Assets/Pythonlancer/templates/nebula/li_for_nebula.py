@@ -1,0 +1,68 @@
+from templates.simple_template import SimpleTemplate
+
+
+class ForbesGreenNebula(SimpleTemplate):
+    TEMPLATE = '''
+[TexturePanels]
+file = solar\\nebula\\edge_shapes.ini
+file = solar\\nebula\\crow_shapes.ini
+
+[Fog]
+fog_enabled = 1
+near = 0
+distance = 2000
+color =  10, 70, 58
+
+[Exclusion Zones]
+{exclusions}
+
+[properties]
+flag = nebula
+
+[Exterior]
+shape = crow_exterior1
+shape = crow_exterior2
+shape = crow_exterior3
+shape = crow_exterior4
+shape_weights = 1, 1, 1, 1
+fill_shape = nebula_circle2
+plane_slices = 3
+bit_radius = 7000
+bit_radius_random_variation = 0.400000
+min_bits = 5
+max_bits = 10
+move_bit_percent = 0.800000
+equator_bias = 0.200000
+color = 30, 130, 78
+
+[NebulaLight]
+ambient = 0, 40, 20
+sun_burnthrough_intensity = 1
+sun_burnthrough_scaler = 1
+
+[Clouds]
+max_distance = 1500
+puff_count = 100
+puff_radius = 200
+puff_colora = 0, 30, 30
+puff_colorb = 30, 80, 60
+puff_max_alpha = 0.500000
+puff_shape = crow_cloud1
+puff_shape = crow_cloud2
+puff_shape = crow_cloud3
+puff_shape = crow_cloud4
+puff_weights = 1, 1, 1, 1
+puff_drift = 1.000000
+puff_cloud_size = 1
+near_fade_distance = 125, 200
+lightning_intensity = 1.000000
+lightning_color = 65, 25, 85
+lightning_gap = 20.000000
+lightning_duration = 0.500000
+
+[BackgroundLightning]
+duration = 0.550000
+gap = 4.000000
+color = 50, 60, 80
+
+'''

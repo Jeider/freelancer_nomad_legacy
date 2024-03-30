@@ -83,8 +83,8 @@ class BhPatrolLi(Encounter):
 
 
 class BhTradeBr(Encounter):
-    NICKNAME = 'bh_grp_li_trade'
-    FILENAME = 'missions\\npc\\li\\bh_grp_li_trade.ini'
+    NICKNAME = 'bh_grp_br_trade'
+    FILENAME = 'missions\\npc\\br\\bh_grp_br_trade.ini'
 
 
 class BhTradeBrTLR(Encounter):

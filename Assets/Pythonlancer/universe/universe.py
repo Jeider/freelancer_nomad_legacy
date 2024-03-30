@@ -124,6 +124,7 @@ class li_for(system.LibertyFirst, system.System):
     CONTENT = li_for_content
 
     SYSTEM_FOLDER = 'LI_FORBES'
+    ALLOW_SYNC = True
 
 
 class sig17(system.LibertyFirst, system.System):
@@ -252,6 +253,7 @@ class ku_hkd(system.KusariFirst, system.System):
     CONTENT = ku_hkd_content
 
     SYSTEM_FOLDER = 'KU_HOKKAIDO'
+    ALLOW_SYNC = True
 
 
 class om7(system.KusariFirst, system.RheinlandSecond, system.System):

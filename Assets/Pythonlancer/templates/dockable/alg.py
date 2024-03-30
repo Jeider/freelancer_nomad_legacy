@@ -351,7 +351,7 @@ parent = ku_hkd_07
 [Object]
 nickname = ku_hkd_07_ctrl_twr03
 pos = 0, -865, 0
-rotate = 0, 0, 0
+rotate = 0, 0, 0 
 archetype = space_small_control_tower
 parent = ku_hkd_07
 
@@ -421,7 +421,7 @@ parent = ku_hkd_07
 
 
 class AlgBaseBerlin(SpaceObjectTemplate):
-    SPACE_OBJECT_NAME = 'ku_hkd_07'
+    SPACE_OBJECT_NAME = 'rh_ber_07'
     TEMPLATE = '''[Object]
 nickname = rh_ber_07
 pos = 0, 0, 0

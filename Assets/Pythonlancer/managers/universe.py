@@ -130,13 +130,13 @@ class UniverseManager(object):
         return DIVIDER.join(self.interior_definitions)
 
     def get_universe_file_content(self):
-        return UniverseTemplate().format({'generated': self.interior_definitions})
+        return UniverseTemplate().format({'generated': self.get_interior_definitions()})
 
     def get_mbases_content(self):
         return DIVIDER.join(self.mbases_content)
 
     def get_mbases_file_content(self):
-        return MBasesTemplate().format({'generated': self.get_mbases_content})
+        return MBasesTemplate().format({'generated': self.get_mbases_content()})
 
     def get_key_initial_world(self):
         return DIVIDER.join([key.get_initial_world() for key in self.keys])

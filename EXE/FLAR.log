@@ -1,0 +1,76 @@
+Graphics Card Vendor: NVIDIA Corporation
+OpenGL Renderer: NVIDIA GeForce RTX 3060/PCIe/SSE2
+OpenGL Version: 4.6.0 NVIDIA 551.61
+GLSL Version: 4.60 NVIDIA
+Fragment shader "..\FLARData\shader\fixedFunction.fp":
+Compilation info from driver:
+0(345) : warning C7533: global variable gl_FragColor is deprecated after version 120
+
+Shader linking log:
+Fragment info
+-------------
+0(345) : warning C7533: global variable gl_FragColor is deprecated after version 120
+
+Fragment shader "..\FLARData\shader\postProcess.fp":
+Compilation info from driver:
+0(113) : warning C7533: global variable gl_FragColor is deprecated after version 120
+
+Shader linking log:
+Fragment info
+-------------
+0(113) : warning C7533: global variable gl_FragColor is deprecated after version 120
+
+Fragment shader "..\FLARData\shader\noMaterial.fp":
+Compilation info from driver:
+0(12) : warning C7533: global variable gl_FragColor is deprecated after version 120
+
+Shader linking log:
+Fragment info
+-------------
+0(12) : warning C7533: global variable gl_FragColor is deprecated after version 120
+
+Fragment shader "..\FLARData\shader\depthOnly.fp":
+Compilation info from driver:
+0(19) : warning C7533: global variable gl_FragColor is deprecated after version 120
+
+Shader linking log:
+Fragment info
+-------------
+0(19) : warning C7533: global variable gl_FragColor is deprecated after version 120
+
+Fragment shader "..\FLARData\shader\postProcessLightScatter.fp":
+Compilation info from driver:
+0(45) : warning C7533: global variable gl_FragColor is deprecated after version 120
+
+Shader linking log:
+Fragment info
+-------------
+0(45) : warning C7533: global variable gl_FragColor is deprecated after version 120
+
+Fragment shader "..\FLARData\shader\brdf.fp":
+Compilation info from driver:
+0(127) : warning C7533: global variable gl_FragColor is deprecated after version 120
+
+Shader linking log:
+Fragment info
+-------------
+0(127) : warning C7533: global variable gl_FragColor is deprecated after version 120
+
+Fragment shader "..\FLARData\shader\prefilter.fp":
+Compilation info from driver:
+0(114) : warning C7533: global variable gl_FragColor is deprecated after version 120
+
+Shader linking log:
+Fragment info
+-------------
+0(114) : warning C7533: global variable gl_FragColor is deprecated after version 120
+
+Fragment shader "..\FLARData\shader\Irradiance.fp":
+Compilation info from driver:
+0(45) : warning C7533: global variable gl_FragColor is deprecated after version 120
+
+Shader linking log:
+Fragment info
+-------------
+0(45) : warning C7533: global variable gl_FragColor is deprecated after version 120
+

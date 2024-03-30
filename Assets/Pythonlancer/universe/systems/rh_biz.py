@@ -10,7 +10,7 @@ from universe.content import dealers
 from universe.content.space_voice import SpaceVoice
 from universe.content import faction
 from universe.content import mineable
-from templates.solar import asteroid as asteroid_solar
+from templates.solar import asteroid
 from templates.solar import debris_box
 from templates.nebula import rh_biz_nebula
 
@@ -324,7 +324,7 @@ class BizmarkDebrisFactory3(BizmarkMember, BizmarkBaseDebrisManufactoring):
 
 class BizmarkPirateAsteroidReward(BizmarkMember, mineable.AsteroidRewardsGroupUltra):
     NAME = 'rh_biz_rock'
-    SOLAR = asteroid_solar.AsteroidOmega15
+    SOLAR = asteroid.AsteroidOmega15
     REWARD_ITEM = 'comm_roid_niobium'
     ULTRA_REWARD_BASES = [
         BizmarkAbandonedAstBase1,
