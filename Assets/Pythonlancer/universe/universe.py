@@ -141,6 +141,7 @@ class li_col(system.LibertyFirst, system.System):
     CONTENT = li_col_content
 
     SYSTEM_FOLDER = 'LI_COLUMBIA'
+    ALLOW_SYNC = True
 
 
 class tau31(system.LibertyFirst, system.System):
@@ -220,6 +221,7 @@ class ku_ksu(system.KusariFirst, system.System):
     CONTENT = ku_ksu_content
 
     SYSTEM_FOLDER = 'KU_KYUSHU'
+    ALLOW_SYNC = True
 
 
 class tau4(system.KusariFirst, system.System):

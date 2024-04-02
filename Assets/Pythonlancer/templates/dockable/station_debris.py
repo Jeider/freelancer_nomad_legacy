@@ -1304,6 +1304,10 @@ parent = li_for_07
 
 class ColumbiaDebris(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'li_col_05'
+    LOCKED_OBJECT_OFFSETS = [
+        (0, 400, -610),
+        (0, -400, -410),
+    ]
     TEMPLATE = '''[Object]
 nickname = li_col_05
 pos = 0, 0, 0

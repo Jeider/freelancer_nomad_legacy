@@ -4,7 +4,7 @@ from tools import merge_image
 from tools import data_folder
 
 from templates.solar.hacker_panel import HackerPanelManager, REL_TOP
-from templates.dockable import olaf
+from templates.dockable import columbia_new_hope
 from templates.dockable import station_debris
 from templates.dockable import gmg_hq
 from templates.dockable import ulster_megabase
@@ -24,7 +24,7 @@ def test_hacker_colors():
 
 
 def test_placement():
-    base_class = gmg_hq.GmgHQDestroyed
+    base_class = columbia_new_hope.ColumbiaNewHope
     content = base_class().get_instance(new_space_object_name=None, move_to=None)
     data_folder.DataFolder.sync_to_test_workspace(content)
 

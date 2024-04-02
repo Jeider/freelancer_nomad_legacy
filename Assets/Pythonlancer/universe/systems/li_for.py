@@ -360,7 +360,7 @@ class ForbesOldOutpostRuins(ForbesMember, main_objects.NotDockableObject):
     INDEX = 1
     REL = LEFT
 
-    SPACE_OBJECT_TEMPLATE = station_debris.ForbesDebris
+    SPACE_OBJECT_TEMPLATE = station_debris.ColumbiaDebris
     ASTEROID_ZONES = [
         ForbesDebrisZone5,
     ]

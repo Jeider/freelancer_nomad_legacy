@@ -914,6 +914,11 @@ class KusariBattleship(Battleship):
     LOADOUT = 'ku_battleship_station'
 
 
+class LuxuryLiner(Battleship):
+    ARCHETYPE = 'luxury_liner'
+    LOADOUT = 'ge_liner_co_01'
+
+
 class Freeport(DockableObject):
     ALIAS = 'freeport'
     AUDIO_PREFIX = SpaceVoice.FREEPORT

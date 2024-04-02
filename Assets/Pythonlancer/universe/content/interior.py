@@ -187,29 +187,30 @@ class Interior(object):
             )
         )
 
-        if self.OFFER_MISSIONS:
-            entries.append(MBASE_MVENDOR)
-            entries.append(
-                MBASE_MAIN_FACTION_TEMPLATE.format(
-                    faction=self.base_instance.FACTION,
-                )
-            )
-        else:
-            entries.append(
-                MBASE_MAIN_FACTION_TEMPLATE_NO_MISSION.format(
-                    faction=self.base_instance.FACTION,
-                )
-            )
+        if not self.base_instance.LOCKED_DOCK:
 
-        second_factions = self.get_second_factions()
+            if self.OFFER_MISSIONS:
+                entries.append(MBASE_MVENDOR)
+                entries.append(
+                    MBASE_MAIN_FACTION_TEMPLATE.format(
+                        faction=self.base_instance.FACTION,
+                    )
+                )
+            else:
+                entries.append(
+                    MBASE_MAIN_FACTION_TEMPLATE_NO_MISSION.format(
+                        faction=self.base_instance.FACTION,
+                    )
+                )
 
-        for faction in second_factions:
-            entries.append(
-                MBASE_SECOND_FACTION_TEMPLATE.format(faction=faction)
-            )
+            second_factions = self.get_second_factions()
+
+            for faction in second_factions:
+                entries.append(
+                    MBASE_SECOND_FACTION_TEMPLATE.format(faction=faction)
+                )
 
         if self.base_instance.DEALERS:
-
             if not self.DEALER_PLACEMENTS_TEMPLATE:
                 raise Exception('unknown dealers template of interior for base %s' % self.base_instance.__class__.__name__)
 
@@ -239,7 +240,7 @@ class Interior(object):
             if is_lawful
             else self.base_instance.system.get_unlawful_factions()
         )
-        factions_list = init_factions_list.copy()
+        factions_list = list(set(init_factions_list.copy()))
         factions_list.remove(self.base_instance.FACTION)
         return factions_list
 

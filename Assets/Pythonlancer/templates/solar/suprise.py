@@ -20,6 +20,14 @@ CO_FIGHTER = 'suprise_co_fighter'
 CO_ELITE = 'suprise_co_elite'
 CO_ELITE2 = 'suprise_co_elite2'
 
+BH_FIGHTER = 'suprise_bh_fighter'
+BH_ELITE = 'suprise_bh_elite'
+BH_ELITE2 = 'suprise_bh_elite2'
+
+LI_FIGHTER = 'suprise_li_fighter'
+LI_ELITE = 'suprise_li_elite'
+LI_FREIGHTER = 'suprise_li_freighter'
+
 
 class Suprise(MineableSolar):
     ALIAS = 'suprise'
@@ -61,3 +69,8 @@ class RheinlandAllShip(Suprise):
 class KusariMainFighter(Suprise):
     DROP_HARDPOINT = 'HpShield01'
     DEFAULT_ARCHETYPES = [KU_FIGHTER, KU_ELITE]
+
+
+class LibertyMiscFighter(Suprise):
+    DROP_HARDPOINT = 'HpShield01'
+    DEFAULT_ARCHETYPES = [BH_FIGHTER, BH_ELITE, BH_ELITE2]

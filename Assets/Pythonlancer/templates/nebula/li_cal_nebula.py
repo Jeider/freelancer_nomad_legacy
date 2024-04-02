@@ -41,7 +41,7 @@ sun_burnthrough_scaler = 2
 
 [Clouds]
 max_distance = 1500
-puff_count = 200
+puff_count = 100
 puff_radius = 100
 puff_colora = 80, 200, 255
 puff_colorb = 255, 255, 255
@@ -106,7 +106,7 @@ sun_burnthrough_scaler = 2
 
 [Clouds]
 max_distance = 1500
-puff_count = 200
+puff_count = 100
 puff_radius = 100
 puff_colora = 80, 200, 255
 puff_colorb = 255, 255, 255
@@ -171,7 +171,7 @@ sun_burnthrough_scaler = 2
 
 [Clouds]
 max_distance = 1500
-puff_count = 200
+puff_count = 100
 puff_radius = 100
 puff_colora = 80, 200, 255
 puff_colorb = 255, 255, 255

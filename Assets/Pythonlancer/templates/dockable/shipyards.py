@@ -446,9 +446,9 @@ parent = ku_hkd_03
 
 
 class StuttgartShipyard(SpaceObjectTemplate):
-    SPACE_OBJECT_NAME = 'Rh_stut_02'
+    SPACE_OBJECT_NAME = 'rh_stut_02'
     TEMPLATE = '''[Object]
-nickname = Rh_stut_02
+nickname = rh_stut_02
 pos = 0, 0, 0
 rotate = 0, -90, 0
 archetype = space_factory02
@@ -459,259 +459,259 @@ nickname = rh_stut_02_industrial01
 pos = 250, 245, 810
 rotate = 0, 0, 0
 archetype = space_industrial02a
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_industrial02
 pos = 0, 245, 810
 rotate = 0, 0, 0
 archetype = space_industrial02a
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_industrial03
 pos = -250, 245, 810
 rotate = 0, 0, 0
 archetype = space_industrial02a
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_industrial04
 pos = 250, -245, 810
 rotate = 0, 0, 0
 archetype = space_industrial02a
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_industrial05
 pos = 0, -245, 810
 rotate = 0, 0, 0
 archetype = space_industrial02a
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_industrial06
 pos = -250, -245, 810
 rotate = 0, 0, 0
 archetype = space_industrial02a
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_girder01
 pos = 250, -148, 580
 rotate = 45, 0, 0
 archetype = space_girder
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_girder02
 pos = 0, -148, 580
 rotate = 45, 0, 0
 archetype = space_girder
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_girder03
 pos = -250, -148, 580
 rotate = 45, 0, 0
 archetype = space_girder
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_girder04
 pos = 250, 147, 580
 rotate = -45, 0, 0
 archetype = space_girder
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_girder05
 pos = 0, 147, 580
 rotate = -45, 0, 0
 archetype = space_girder
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_girder06
 pos = -250, 147, 580
 rotate = -45, 0, 0
 archetype = space_girder
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_girder07
 pos = 250, -80, 670
 rotate = 35, 0, 0
 archetype = space_girder
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_girder08
 pos = 0, -80, 670
 rotate = 35, 0, 0
 archetype = space_girder
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_girder09
 pos = -250, -80, 670
 rotate = 35, 0, 0
 archetype = space_girder
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_girder10
 pos = 250, 80, 670
 rotate = -35, 0, 0
 archetype = space_girder
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_girder11
 pos = 0, 80, 670
 rotate = -35, 0, 0
 archetype = space_girder
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_girder12
 pos = -250, 80, 670
 rotate = -35, 0, 0
 archetype = space_girder
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_shipyard01
 pos = 250, 465, 990
 rotate = 0, 0, 180
 archetype = shipyard
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_shipyard02
 pos = 0, 465, 990
 rotate = 0, 0, 180
 archetype = shipyard
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_shipyard03
 pos = -250, 465, 990
 rotate = 0, 0, 180
 archetype = shipyard
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_shipyard04
 pos = 250, -465, 990
 rotate = 0, 0, 0
 archetype = shipyard
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_shipyard05
 pos = 0, -465, 990
 rotate = 0, 0, 0
 archetype = shipyard
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_shipyard06
 pos = -250, -465, 990
 rotate = 0, 0, 0
 archetype = shipyard
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_industrial07
 pos = 600, 0, 495
 rotate = 0, -90, 0
 archetype = space_industrial
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_industrial08
 pos = -600, 0, 495
 rotate = 0, 90, 0
 archetype = space_industrial
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_habitat01
 pos = -600, 290, 495
 rotate = 0, 0, 0
 archetype = space_habitat_tall
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_habitat02
 pos = 600, 205, 495
 rotate = 0, 0, 0
 archetype = space_habitat_tall
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_habitat03
 pos = -600, 140, 495
 rotate = 0, 0, 0
 archetype = space_habitat_wide
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_tankl01
 pos = 250, 245, 1050
 rotate = -90, 0, 0
 archetype = space_tanklx4
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_tankl02
 pos = 0, 245, 1050
 rotate = -90, 0, 0
 archetype = space_tanklx4
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_tankl03
 pos = -250, 245, 1050
 rotate = -90, 0, 0
 archetype = space_tanklx4
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_tankl04
 pos = 250, -245, 1050
 rotate = -90, 0, 0
 archetype = space_tanklx4
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_tankl05
 pos = 0, -245, 1050
 rotate = -90, 0, 0
 archetype = space_tanklx4
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_tankl06
 pos = -250, -245, 1050
 rotate = -90, 0, 0
 archetype = space_tanklx4
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
 nickname = rh_stut_02_tankl07
 pos = 250, 0, 360
 rotate = 0, 0, 90
 archetype = space_tankl2x2
-parent = Rh_stut_02
+parent = rh_stut_02
 
 [Object]
-nickname = Rh_stut_02_tankl08
+nickname = rh_stut_02_tankl08
 pos = -250, 0, 360
 rotate = 0, 0, 90
 archetype = space_tankl2x2
-parent = Rh_stut_02
+parent = rh_stut_02
 '''
 
 
