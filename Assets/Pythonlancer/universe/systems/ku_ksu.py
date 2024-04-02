@@ -22,7 +22,7 @@ from templates.dockable import astbase
 from templates.dockable import shipyards
 from templates.dockable import alg
 from templates.dockable import research
-from templates.dockable import rheinland_military
+from templates.dockable import odissey
 
 
 class KyushuMember(object):
@@ -60,7 +60,7 @@ complex_stars = solar\\stars_mod\\new_generic.cmp
 basic_stars = solar\\stars_mod\\new_generic.cmp
 
 [zone]
-nickname = zone_ku_hkd_system_status
+nickname = zone_ku_ksu_system_status
 pos = 0, 0, 0
 shape = SPHERE
 size = 100000
@@ -323,11 +323,11 @@ class KyushuMiningDockring(KyushuMember, main_objects.Dockring):
     DEALERS = dealers.KusariPlanetDealers
 
 
-class KyushuProduction(KyushuMember, main_objects.Station):
+class KyushuMegastation(KyushuMember, main_objects.Station):
     BASE_INDEX = 3
     REL = RIGHT
     REL_DRIFT = 1000
-    SPACE_OBJECT_TEMPLATE = columbia_production.ColumbiaProduction
+    SPACE_OBJECT_TEMPLATE = odissey.Odissey
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
 
@@ -444,7 +444,7 @@ class KyushuPoliceConn1(KyushuMember, main_objects.TradeConnection):
 
 
 class KyushuPoliceConn2(KyushuMember, main_objects.TradeConnection):
-    OBJ_FROM = KyushuMiningDockring
+    OBJ_FROM = KyushuMegastation
     OBJ_TO = KyushuPolice
     SIDE_FROM = LEFT
     SIDE_TO = RIGHT
@@ -457,7 +457,7 @@ class KyushuPoliceConn2(KyushuMember, main_objects.TradeConnection):
 
 class KyushuPoliceConn3(KyushuMember, main_objects.TradeConnection):
     OBJ_FROM = KyushuPolice
-    OBJ_TO = KyushuProduction
+    OBJ_TO = KyushuMiningDockring
     SIDE_FROM = LEFT
     SIDE_TO = RIGHT
     TRADELANE_LETTER = 'C'
@@ -467,8 +467,8 @@ class KyushuPoliceConn3(KyushuMember, main_objects.TradeConnection):
     ]
 
 
-class KyushuMiningConn1(KyushuMember, main_objects.TradeConnection):
-    OBJ_FROM = KyushuMiningDockring
+class KyushuOdisseyConn1(KyushuMember, main_objects.TradeConnection):
+    OBJ_FROM = KyushuMegastation
     OBJ_TO = KyushuResearch
     SIDE_FROM = TOP
     SIDE_TO = BOTTOM
@@ -529,7 +529,7 @@ class KyushuMainPlanetConn1(KyushuMember, main_objects.TradeConnection):
 
 class KyushuMainPlanetConn2(KyushuMember, main_objects.TradeConnection):
     OBJ_FROM = KyushuDockring
-    OBJ_TO = KyushuProduction
+    OBJ_TO = KyushuMiningDockring
     SIDE_FROM = BOTTOM
     SIDE_TO = TOP
     TRADELANE_LETTER = 'H'

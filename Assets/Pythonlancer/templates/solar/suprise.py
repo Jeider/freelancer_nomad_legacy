@@ -16,6 +16,10 @@ KU_FIGHTER = 'suprise_ku_fighter'
 KU_ELITE = 'suprise_ku_elite'
 KU_FREIGHTER = 'suprise_ku_freighter'
 
+GE_FIGHTER4 = 'suprise_ge_fighter4'
+GE_FIGHTER5 = 'suprise_ge_fighter5'
+GE_FIGHTER6 = 'suprise_ge_fighter6'
+
 CO_FIGHTER = 'suprise_co_fighter'
 CO_ELITE = 'suprise_co_elite'
 CO_ELITE2 = 'suprise_co_elite2'
@@ -69,6 +73,11 @@ class RheinlandAllShip(Suprise):
 class KusariMainFighter(Suprise):
     DROP_HARDPOINT = 'HpShield01'
     DEFAULT_ARCHETYPES = [KU_FIGHTER, KU_ELITE]
+
+
+class KusariMiscFighter(Suprise):
+    DROP_HARDPOINT = 'HpShield01'
+    DEFAULT_ARCHETYPES = [GE_FIGHTER4, GE_FIGHTER5, GE_FIGHTER6]
 
 
 class LibertyMiscFighter(Suprise):

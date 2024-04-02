@@ -238,6 +238,7 @@ class ku_hns(system.KusariFirst, system.System):
     CONTENT = ku_hns_content
 
     SYSTEM_FOLDER = 'KU_HONSHU'
+    ALLOW_SYNC = True
 
 
 class ku_tgk(system.KusariFirst, system.System):

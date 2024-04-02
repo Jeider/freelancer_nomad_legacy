@@ -1,7 +1,7 @@
 from templates.simple_template import SimpleTemplate
 
 
-class MunchenLargeBlueNebulaTemplate(SimpleTemplate):
+class HonshuLargeBlueNebulaTemplate(SimpleTemplate):
     TEMPLATE = '''
 [TexturePanels]
 file = solar\\nebula\\generic_shapes.ini
@@ -13,7 +13,7 @@ flag = nebula
 fog_enabled = 1
 near = 0
 distance = 1000
-color = 10, 7, 30
+color = 15, 15, 30
 
 [Exclusion Zones]
 {exclusions}
@@ -26,13 +26,13 @@ shape = generic_exterior4
 shape_weights = 1, 1, 1, 1
 fill_shape = nebula_circle2
 plane_slices = 5
-bit_radius = 6000
+bit_radius = 8000
 bit_radius_random_variation = 0.200000
-min_bits = 5
-max_bits = 8
-move_bit_percent = 0.500000
-equator_bias = 0.500000
-color = 40, 30, 90
+min_bits = 8
+max_bits = 12
+move_bit_percent = 0.0
+equator_bias = 0.3
+color = 60, 60, 90
 
 [NebulaLight]
 ambient = 15, 10, 45
@@ -43,8 +43,8 @@ sun_burnthrough_scaler = 1.750000
 max_distance = 1500
 puff_count = 100
 puff_radius = 100
-puff_colora = 45, 40, 160
-puff_colorb = 55, 10, 20
+puff_colora = 60, 60, 90
+puff_colorb = 90, 60, 120
 puff_max_alpha = 0.500000
 puff_shape = generic_cloud1
 puff_shape = generic_cloud2

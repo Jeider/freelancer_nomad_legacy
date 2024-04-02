@@ -2,7 +2,7 @@ from templates.space_object_template import SpaceObjectTemplate
 
 
 class Odissey(SpaceObjectTemplate):
-    SPACE_OBJECT_NAME = 'tau23_04'
+    SPACE_OBJECT_NAME = 'tau4_04'
     TEMPLATE = '''[Object]
 nickname = tau4_04
 pos = 0, 0, -1560
