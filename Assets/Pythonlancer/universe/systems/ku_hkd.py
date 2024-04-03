@@ -250,7 +250,6 @@ class HokkDebrisBoxField4(HokkMember, HokkBaseDebrisBoxRewardField):
     ULTRA_BASE = HokkDebrisFactory4
 
 
-
 class HokkAsteroidDefinition1(asteroid_definition.TekagiAsteroidDefinition):
     BELT = False
     BILLBOARDS = False

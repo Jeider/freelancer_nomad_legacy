@@ -230,6 +230,9 @@ class tau4(system.KusariFirst, system.System):
     CONTENT = tau4_content
 
     SYSTEM_FOLDER = 'TAU4'
+    ALLOW_SYNC = True
+
+    FIRST_UNLAWFUL_POPULATION_CLASS = population.CorsairAttackersPopulation
 
 
 class ku_hns(system.KusariFirst, system.System):

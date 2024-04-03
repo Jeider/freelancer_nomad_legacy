@@ -106,7 +106,7 @@ BLUE_EXCLUSION_PARAMS = {
     'zone_shell': exclusion.GENERIC_EXCLUSION,
     'shell_scalar': 1.1,
     'max_alpha': 0.5,
-    'exclusion_tint': '60, 30, 150',
+    'exclusion_tint': '60, 60, 90',
     'fog_far': 5000,
 }
 

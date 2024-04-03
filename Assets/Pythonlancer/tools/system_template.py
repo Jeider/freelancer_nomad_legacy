@@ -48,7 +48,7 @@ class SystemTemplate(object):
         return self.items_db
 
     def get_item_pos(self, item_key):
-        return self.items_db[item_key].lines[POS]
+        return self.items_db[item_key].lines.get(POS)
 
     def get_item_rotate(self, item_key):
         rotate = self.items_db[item_key].lines.get(ROTATE)

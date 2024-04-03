@@ -80,6 +80,11 @@ class KusariMiscFighter(Suprise):
     DEFAULT_ARCHETYPES = [GE_FIGHTER4, GE_FIGHTER5, GE_FIGHTER6]
 
 
+class KusariAllFighter(Suprise):
+    DROP_HARDPOINT = 'HpShield01'
+    DEFAULT_ARCHETYPES = [GE_FIGHTER4, GE_FIGHTER5, GE_FIGHTER6, KU_FIGHTER, KU_ELITE]
+
+
 class LibertyMiscFighter(Suprise):
     DROP_HARDPOINT = 'HpShield01'
     DEFAULT_ARCHETYPES = [BH_FIGHTER, BH_ELITE, BH_ELITE2]

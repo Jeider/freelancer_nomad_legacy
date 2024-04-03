@@ -1,4 +1,4 @@
-from templates.solar.hacker_panel import REL_FRONT, REL_TOP
+from templates.solar.hacker_panel import REL_FRONT, REL_TOP, REL_BOTTOM
 
 
 class HackableSolar(object):
@@ -34,3 +34,38 @@ class HackableKusariBattleship(HackableSolar):
     ARCHETYPE = 'suprise_ku_battleship'
     ROTATE = (0, 0, 0)
     PANEL_RELATION = REL_TOP
+
+
+class HackableBretoniaBattleship(HackableSolar):
+    OFFSET = (-22, -23, -46.5)
+    ARCHETYPE = 'suprise_br_battleship'
+    ROTATE = (0, 94.5, 0)
+    PANEL_RELATION = REL_TOP
+
+
+class HackableLibertyDreadnought(HackableSolar):
+    OFFSET = (0, 14, -120)
+    ARCHETYPE = 'suprise_li_dreadnought'
+    ROTATE = (0, 0, 0)
+    PANEL_RELATION = REL_TOP
+
+
+class HackableOsiris(HackableSolar):
+    OFFSET = (-135, -10, -55)
+    ARCHETYPE = 'suprise_or_osiris'
+    ROTATE = (0, 75.5, 0)
+    PANEL_RELATION = REL_TOP
+
+
+class HackableLuxuryLiner(HackableSolar):
+    OFFSET = (0, -35.7,  -130)
+    ARCHETYPE = 'suprise_luxury_liner'
+    ROTATE = (0, 0, 0)
+    PANEL_RELATION = REL_BOTTOM
+
+
+class HackablePrisonLiner(HackableSolar):
+    OFFSET = (0, -24,  -122)
+    ARCHETYPE = 'suprise_prison_liner'
+    ROTATE = (0, 0, 0)
+    PANEL_RELATION = REL_BOTTOM

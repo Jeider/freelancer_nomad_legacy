@@ -67,7 +67,7 @@ class SystemObject(object):
     @classmethod
     def get_rel(cls):
         if not cls.REL:
-            raise Exception('REL is required')
+            raise Exception('REL is required for %s' % cls.__name__)
 
         if cls.REL not in DIRECTIONS:
             raise Exception('REL %s is not correct direction' % cls.REL)

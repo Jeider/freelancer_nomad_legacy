@@ -592,30 +592,39 @@ loadout = {hacker_success_loadout}'''
 
 REL_TOP = 'TOP'
 REL_FRONT = 'FRONT'
+REL_BOTTOM = 'BOTTOM'
 
 ROTATE_PER_REL = {
     REL_TOP: (0, 0, 0),
-    REL_FRONT: (-90, 0, 0)
+    REL_FRONT: (-90, 0, 0),
+    REL_BOTTOM: (180, 0, 0),
 }
 
 COMPILED_SUR_PATH = Path().resolve() / 'templates' / 'solar' / 'static' / 'hacker_layer_any.sur'
 
 
+def adjust_y_pos(position, drift):
+    pos_x, pos_y, pos_z = position
+    pos_y += drift
+    return pos_x, pos_y, pos_z
+
+
 def adjust_neg_y_pos(position, drift):
     pos_x, pos_y, pos_z = position
     pos_y -= drift
-    return (pos_x, pos_y, pos_z)
+    return pos_x, pos_y, pos_z
 
 
 def adjust_z_pos(position, drift):
     pos_x, pos_y, pos_z = position
     pos_z += drift
-    return (pos_x, pos_y, pos_z)
+    return pos_x, pos_y, pos_z
 
 
 ADJUST_FUNC_PER_REL = {
     REL_TOP: adjust_neg_y_pos,
     REL_FRONT: adjust_z_pos,
+    REL_BOTTOM: adjust_y_pos,
 }
 
 
@@ -1019,6 +1028,8 @@ class HackerPanel(object):
     def get_space_content(self, space_name, reputation, position, relation, success_loadout):
         adjust_func = ADJUST_FUNC_PER_REL[relation]
         rotate_str = '{}, {}, {}'.format(*ROTATE_PER_REL[relation])
+        print(space_name)
+        print(relation)
         space_objects = [
             SYS_ROOT_TEMPLATE.format(
                 root_system_obj_name=space_name,

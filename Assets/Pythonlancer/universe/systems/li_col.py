@@ -55,7 +55,7 @@ danger = music_li_danger
 battle = music_li_battle
 
 [Ambient]
-color = 5, 15, 15
+color = 20, 3, 16
 
 [Background]
 nebulae = solar\\stars_mod\\li_col_nebula.cmp
