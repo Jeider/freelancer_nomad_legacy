@@ -2289,3 +2289,2264 @@ rotate = 0, 0, 0
 archetype = space_habitat_wide
 parent = rh_stut_04
 '''
+
+
+class MannhaimShort(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'rh_stut_04'
+    TEMPLATE = '''[Object]
+nickname = rh_stut_04
+pos = 0, 0, 1230
+rotate = 0, 90, 0
+archetype = space_shipping01
+{dock_props}
+
+[Object]
+nickname = rh_stut_04_RIGHT_MINER_ind01
+pos = 820, 0, 0
+rotate = 90, 0, 90
+archetype = space_industrial02d
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_RIGHT_MINER_ind02
+pos = 690, 90, 0
+rotate = 90, 0, 90
+archetype = space_industrial01b
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_RIGHT_MINER_ind03
+pos = 690, -90, 0
+rotate = 90, 0, 90
+archetype = space_industrial01b
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_RIGHT_MINER_ind04
+pos = 570, 72, 0
+rotate = -12, 90, 90
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_RIGHT_MINER_ind05
+pos = 570, -72, 0
+rotate = -12, -90, 90
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_RIGHT_MINER_miner01
+pos = 820, 140, 0
+rotate = 0, 90, 0
+archetype = gas_miner_core
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_RIGHT_MINER_miner02
+pos = 820, -140, 0
+rotate = 0, 90, 180
+archetype = gas_miner_core
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_ind01
+pos = 0, 0, 440
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_ind02
+pos = 0, 0, -440
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_ind03
+pos = 0, 0, -600
+rotate = 90, 0, 90
+archetype = space_industrial02d
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_ind03
+pos = 0, 0, -955
+rotate = 0, 90, 0
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_shipyard01
+pos = 0, -30, -760
+rotate = 0, 90, 0
+archetype = shipyard
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_shipyard01
+pos = 0, -30, -1150
+rotate = 0, 90, 0
+archetype = shipyard
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_CORE_tube04
+pos = 400, 0, 0
+rotate = 0, -90, 0
+archetype = space_short_tube
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_CORE_tube04
+pos = 400, 400, 0
+rotate = 0, -90, 0
+archetype = space_short_tube
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_CORE_tube04
+pos = 400, -400, 0
+rotate = 0, -90, 0
+archetype = space_short_tube
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_ind01
+pos = 400, 0, 0
+rotate = 90, 45, 90
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_ind02
+pos = 400, 400, 0
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_ind03
+pos = 400, -400, 0
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_ind04
+pos = 400, 200, 350
+rotate = 90, 49, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_ind05
+pos = 400, -200, 350
+rotate = 90, 41, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_ind06
+pos = 400, 0, 270
+rotate = 90, 45, 90
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_ind07
+pos = 400, 200, -350
+rotate = 90, 41, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_ind08
+pos = 400, -200, -350
+rotate = 90, 49, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_ind09
+pos = 400, 0, -270
+rotate = 90, 45, 90
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_conn01
+pos = 480, 115, 270
+rotate = 0, 180, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_conn02
+pos = 320, 115, 270
+rotate = 0, 180, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_conn03
+pos = 480, -115, 270
+rotate = 180, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_conn04
+pos = 320, -115, 270
+rotate = 180, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_conn05
+pos = 480, 115, -270
+rotate = 0, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_conn06
+pos = 320, 115, -270
+rotate = 0, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_conn07
+pos = 480, -115, -270
+rotate = 0, 0, 180
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_conn08
+pos = 320, -115, -270
+rotate = 0, 0, 180
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_prod01
+pos = 400, 40, 130
+rotate = 0, 180, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_prod02
+pos = 400, -40, 130
+rotate = 180, 0, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_prod03
+pos = 400, 40, -130
+rotate = 0, 0, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_prod04
+pos = 400, -40, -130
+rotate = 0, 0, 180
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_gird01
+pos = 400, 200, 350
+rotate = 90, 0, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_gird02
+pos = 400, 200, 350
+rotate = -41, 180, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_gird03
+pos = 400, -200, 350
+rotate = 41, 180, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_gird04
+pos = 400, 200, -350
+rotate = 90, 0, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_gird05
+pos = 400, 200, -350
+rotate = -41, 0, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_gird06
+pos = 400, -200, -350
+rotate = 41, 0, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_tube01
+pos = 400, 400, 0
+rotate = 90, 0, 0
+archetype = space_short_tube
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_ind01
+pos = 0, 0, 0
+rotate = 90, 45, 90
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_ind02
+pos = 0, 400, 0
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_ind03
+pos = 0, -400, 0
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_ind04
+pos = 0, 200, 350
+rotate = 90, 49, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_ind05
+pos = 0, -200, 350
+rotate = 90, 41, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_ind06
+pos = 0, 0, 270
+rotate = 90, 45, 90
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_ind07
+pos = 0, 200, -350
+rotate = 90, 41, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_ind08
+pos = 0, -200, -350
+rotate = 90, 49, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_ind09
+pos = 0, 0, -270
+rotate = 90, 45, 90
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_conn01
+pos = 80, 115, 270
+rotate = 0, 180, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_conn02
+pos = -80, 115, 270
+rotate = 0, 180, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_conn03
+pos = 80, -115, 270
+rotate = 180, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_conn04
+pos = -80, -115, 270
+rotate = 180, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_conn05
+pos = 80, 115, -270
+rotate = 0, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_conn06
+pos = -80, 115, -270
+rotate = 0, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_conn07
+pos = 80, -115, -270
+rotate = 0, 0, 180
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_conn08
+pos = -80, -115, -270
+rotate = 0, 0, 180
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_prod01
+pos = 0, 40, 130
+rotate = 0, 180, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_prod02
+pos = 0, -40, 130
+rotate = 180, 0, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_prod03
+pos = 0, 40, -130
+rotate = 0, 0, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_prod04
+pos = 0, -40, -130
+rotate = 0, 0, 180
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_gird02
+pos = 0, 200, 350
+rotate = -41, 180, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_gird03
+pos = 0, -200, 350
+rotate = 41, 180, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_gird05
+pos = 0, 200, -350
+rotate = -41, 0, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_gird06
+pos = 0, -200, -350
+rotate = 41, 0, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_tube01
+pos = 0, 400, 0
+rotate = 90, 0, 0
+archetype = space_short_tube
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_ind01
+pos = -400, 0, 0
+rotate = 90, 45, 90
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_ind02
+pos = -400, 400, 0
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_ind03
+pos = -400, -400, 0
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_ind04
+pos = -400, 200, 350
+rotate = 90, 49, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_ind05
+pos = -400, -200, 350
+rotate = 90, 41, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_ind06
+pos = -400, 0, 270
+rotate = 90, 45, 90
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_ind07
+pos = -400, 200, -350
+rotate = 90, 41, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_ind08
+pos = -400, -200, -350
+rotate = 90, 49, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_ind09
+pos = -400, 0, -270
+rotate = 90, 45, 90
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_conn01
+pos = -320, 115, 270
+rotate = 0, 180, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_conn02
+pos = -480, 115, 270
+rotate = 0, 180, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_conn03
+pos = -320, -115, 270
+rotate = 180, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_conn04
+pos = -480, -115, 270
+rotate = 180, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_conn05
+pos = -320, 115, -270
+rotate = 0, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_conn06
+pos = -480, 115, -270
+rotate = 0, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_conn07
+pos = -320, -115, -270
+rotate = 0, 0, 180
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_conn08
+pos = -480, -115, -270
+rotate = 0, 0, 180
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_prod01
+pos = -400, 40, 130
+rotate = 0, 180, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_prod02
+pos = -400, -40, 130
+rotate = 180, 0, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_prod03
+pos = -400, 40, -130
+rotate = 0, 0, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_prod04
+pos = -400, -40, -130
+rotate = 0, 0, 180
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_gird01
+pos = -400, 200, 350
+rotate = 90, 0, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_gird02
+pos = -400, 200, 350
+rotate = -41, 180, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_gird03
+pos = -400, -200, 350
+rotate = 41, 180, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_gird04
+pos = -400, 200, -350
+rotate = 90, 0, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_gird05
+pos = -400, 200, -350
+rotate = -41, 0, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_gird06
+pos = -400, -200, -350
+rotate = 41, 0, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_tube01
+pos = -400, 400, 0
+rotate = 90, 0, 0
+archetype = space_short_tube
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_MINER_ind01
+pos = -820, 0, 0
+rotate = 90, 0, 90
+archetype = space_industrial02d
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_MINER_ind02
+pos = -690, 90, 0
+rotate = 90, 0, 90
+archetype = space_industrial01b
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_MINER_ind03
+pos = -690, -90, 0
+rotate = 90, 0, 90
+archetype = space_industrial01b
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_MINER_ind04
+pos = -570, 72, 0
+rotate = -12, -90, -90
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_MINER_ind05
+pos = -570, -72, 0
+rotate = -12, 90, -90
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_MINER_miner01
+pos = -820, 140, 0
+rotate = 0, 90, 0
+archetype = gas_miner_core
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_MINER_miner02
+pos = -820, -140, 0
+rotate = 0, 90, 180
+archetype = gas_miner_core
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_gird01
+pos = -400, 200, 350
+rotate = 90, 45, 90
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_gird02
+pos = 0, 200, 350
+rotate = 90, 45, 90
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_gird03
+pos = -400, 200, -350
+rotate = 90, 45, 90
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_gird04
+pos = 0, 200, -350
+rotate = 90, 45, 90
+archetype = space_girdera
+parent = rh_stut_04
+'''
+
+
+class MannhaimShort(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'rh_stut_04'
+    TEMPLATE = '''[Object]
+nickname = rh_stut_04
+pos = 0, 0, 1230
+rotate = 0, 90, 0
+archetype = space_shipping01
+{dock_props}
+
+[Object]
+nickname = rh_stut_04_RIGHT_MINER_ind01
+pos = 820, 0, 0
+rotate = 90, 0, 90
+archetype = space_industrial02d
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_RIGHT_MINER_ind02
+pos = 690, 90, 0
+rotate = 90, 0, 90
+archetype = space_industrial01b
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_RIGHT_MINER_ind03
+pos = 690, -90, 0
+rotate = 90, 0, 90
+archetype = space_industrial01b
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_RIGHT_MINER_ind04
+pos = 570, 72, 0
+rotate = -12, 90, 90
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_RIGHT_MINER_ind05
+pos = 570, -72, 0
+rotate = -12, -90, 90
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_RIGHT_MINER_miner01
+pos = 820, 140, 0
+rotate = 0, 90, 0
+archetype = gas_miner_core
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_RIGHT_MINER_miner02
+pos = 820, -140, 0
+rotate = 0, 90, 180
+archetype = gas_miner_core
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_ind01
+pos = 0, 0, 440
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_ind02
+pos = 0, 0, -440
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_ind03
+pos = 0, 0, -600
+rotate = 90, 0, 90
+archetype = space_industrial02d
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_ind03
+pos = 0, 0, -955
+rotate = 0, 90, 0
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_shipyard01
+pos = 0, -30, -760
+rotate = 0, 90, 0
+archetype = shipyard
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_shipyard01
+pos = 0, -30, -1150
+rotate = 0, 90, 0
+archetype = shipyard
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_CORE_tube04
+pos = 400, 0, 0
+rotate = 0, -90, 0
+archetype = space_short_tube
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_CORE_tube04
+pos = 400, 400, 0
+rotate = 0, -90, 0
+archetype = space_short_tube
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_CORE_tube04
+pos = 400, -400, 0
+rotate = 0, -90, 0
+archetype = space_short_tube
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_ind01
+pos = 400, 0, 0
+rotate = 90, 45, 90
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_ind02
+pos = 400, 400, 0
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_ind03
+pos = 400, -400, 0
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_ind04
+pos = 400, 200, 350
+rotate = 90, 49, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_ind05
+pos = 400, -200, 350
+rotate = 90, 41, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_ind06
+pos = 400, 0, 270
+rotate = 90, 45, 90
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_ind07
+pos = 400, 200, -350
+rotate = 90, 41, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_ind08
+pos = 400, -200, -350
+rotate = 90, 49, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_ind09
+pos = 400, 0, -270
+rotate = 90, 45, 90
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_conn01
+pos = 480, 115, 270
+rotate = 0, 180, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_conn02
+pos = 320, 115, 270
+rotate = 0, 180, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_conn03
+pos = 480, -115, 270
+rotate = 180, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_conn04
+pos = 320, -115, 270
+rotate = 180, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_conn05
+pos = 480, 115, -270
+rotate = 0, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_conn06
+pos = 320, 115, -270
+rotate = 0, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_conn07
+pos = 480, -115, -270
+rotate = 0, 0, 180
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_conn08
+pos = 320, -115, -270
+rotate = 0, 0, 180
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_prod01
+pos = 400, 40, 130
+rotate = 0, 180, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_prod02
+pos = 400, -40, 130
+rotate = 180, 0, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_prod03
+pos = 400, 40, -130
+rotate = 0, 0, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_prod04
+pos = 400, -40, -130
+rotate = 0, 0, 180
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_gird01
+pos = 400, 200, 350
+rotate = 90, 0, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_gird02
+pos = 400, 200, 350
+rotate = -41, 180, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_gird03
+pos = 400, -200, 350
+rotate = 41, 180, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_gird04
+pos = 400, 200, -350
+rotate = 90, 0, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_gird05
+pos = 400, 200, -350
+rotate = -41, 0, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_gird06
+pos = 400, -200, -350
+rotate = 41, 0, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_tube01
+pos = 400, 400, 0
+rotate = 90, 0, 0
+archetype = space_short_tube
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_ind01
+pos = 0, 0, 0
+rotate = 90, 45, 90
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_ind02
+pos = 0, 400, 0
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_ind03
+pos = 0, -400, 0
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_ind04
+pos = 0, 200, 350
+rotate = 90, 49, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_ind05
+pos = 0, -200, 350
+rotate = 90, 41, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_ind06
+pos = 0, 0, 270
+rotate = 90, 45, 90
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_ind07
+pos = 0, 200, -350
+rotate = 90, 41, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_ind08
+pos = 0, -200, -350
+rotate = 90, 49, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_ind09
+pos = 0, 0, -270
+rotate = 90, 45, 90
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_conn01
+pos = 80, 115, 270
+rotate = 0, 180, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_conn02
+pos = -80, 115, 270
+rotate = 0, 180, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_conn03
+pos = 80, -115, 270
+rotate = 180, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_conn04
+pos = -80, -115, 270
+rotate = 180, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_conn05
+pos = 80, 115, -270
+rotate = 0, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_conn06
+pos = -80, 115, -270
+rotate = 0, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_conn07
+pos = 80, -115, -270
+rotate = 0, 0, 180
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_conn08
+pos = -80, -115, -270
+rotate = 0, 0, 180
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_prod01
+pos = 0, 40, 130
+rotate = 0, 180, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_prod02
+pos = 0, -40, 130
+rotate = 180, 0, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_prod03
+pos = 0, 40, -130
+rotate = 0, 0, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_prod04
+pos = 0, -40, -130
+rotate = 0, 0, 180
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_gird02
+pos = 0, 200, 350
+rotate = -41, 180, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_gird03
+pos = 0, -200, 350
+rotate = 41, 180, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_gird05
+pos = 0, 200, -350
+rotate = -41, 0, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_gird06
+pos = 0, -200, -350
+rotate = 41, 0, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_tube01
+pos = 0, 400, 0
+rotate = 90, 0, 0
+archetype = space_short_tube
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_ind01
+pos = -400, 0, 0
+rotate = 90, 45, 90
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_ind02
+pos = -400, 400, 0
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_ind03
+pos = -400, -400, 0
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_ind04
+pos = -400, 200, 350
+rotate = 90, 49, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_ind05
+pos = -400, -200, 350
+rotate = 90, 41, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_ind06
+pos = -400, 0, 270
+rotate = 90, 45, 90
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_ind07
+pos = -400, 200, -350
+rotate = 90, 41, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_ind08
+pos = -400, -200, -350
+rotate = 90, 49, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_ind09
+pos = -400, 0, -270
+rotate = 90, 45, 90
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_conn01
+pos = -320, 115, 270
+rotate = 0, 180, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_conn02
+pos = -480, 115, 270
+rotate = 0, 180, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_conn03
+pos = -320, -115, 270
+rotate = 180, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_conn04
+pos = -480, -115, 270
+rotate = 180, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_conn05
+pos = -320, 115, -270
+rotate = 0, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_conn06
+pos = -480, 115, -270
+rotate = 0, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_conn07
+pos = -320, -115, -270
+rotate = 0, 0, 180
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_conn08
+pos = -480, -115, -270
+rotate = 0, 0, 180
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_prod01
+pos = -400, 40, 130
+rotate = 0, 180, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_prod02
+pos = -400, -40, 130
+rotate = 180, 0, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_prod03
+pos = -400, 40, -130
+rotate = 0, 0, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_prod04
+pos = -400, -40, -130
+rotate = 0, 0, 180
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_gird01
+pos = -400, 200, 350
+rotate = 90, 0, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_gird02
+pos = -400, 200, 350
+rotate = -41, 180, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_gird03
+pos = -400, -200, 350
+rotate = 41, 180, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_gird04
+pos = -400, 200, -350
+rotate = 90, 0, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_gird05
+pos = -400, 200, -350
+rotate = -41, 0, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_gird06
+pos = -400, -200, -350
+rotate = 41, 0, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_tube01
+pos = -400, 400, 0
+rotate = 90, 0, 0
+archetype = space_short_tube
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_MINER_ind01
+pos = -820, 0, 0
+rotate = 90, 0, 90
+archetype = space_industrial02d
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_MINER_ind02
+pos = -690, 90, 0
+rotate = 90, 0, 90
+archetype = space_industrial01b
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_MINER_ind03
+pos = -690, -90, 0
+rotate = 90, 0, 90
+archetype = space_industrial01b
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_MINER_ind04
+pos = -570, 72, 0
+rotate = -12, -90, -90
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_MINER_ind05
+pos = -570, -72, 0
+rotate = -12, 90, -90
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_MINER_miner01
+pos = -820, 140, 0
+rotate = 0, 90, 0
+archetype = gas_miner_core
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_MINER_miner02
+pos = -820, -140, 0
+rotate = 0, 90, 180
+archetype = gas_miner_core
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_gird01
+pos = -400, 200, 350
+rotate = 90, 45, 90
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_gird02
+pos = 0, 200, 350
+rotate = 90, 45, 90
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_gird03
+pos = -400, 200, -350
+rotate = 90, 45, 90
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_gird04
+pos = 0, 200, -350
+rotate = 90, 45, 90
+archetype = space_girdera
+parent = rh_stut_04
+'''
+
+
+class MannhaimShortGasless(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'rh_stut_04'
+    TEMPLATE = '''[Object]
+nickname = rh_stut_04
+pos = 0, 0, 1230
+rotate = 0, 90, 0
+archetype = space_shipping01
+{dock_props}
+
+[Object]
+nickname = rh_stut_04_ind01
+pos = 0, 0, 440
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_ind02
+pos = 0, 0, -440
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_ind03
+pos = 0, 0, -600
+rotate = 90, 0, 90
+archetype = space_industrial02d
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_ind03
+pos = 0, 0, -955
+rotate = 0, 90, 0
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_shipyard01
+pos = 0, -30, -760
+rotate = 0, 90, 0
+archetype = shipyard
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_shipyard01
+pos = 0, -30, -1150
+rotate = 0, 90, 0
+archetype = shipyard
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_CORE_tube04
+pos = 400, 0, 0
+rotate = 0, -90, 0
+archetype = space_short_tube
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_CORE_tube04
+pos = 400, 400, 0
+rotate = 0, -90, 0
+archetype = space_short_tube
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_CORE_tube04
+pos = 400, -400, 0
+rotate = 0, -90, 0
+archetype = space_short_tube
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_ind01
+pos = 400, 0, 0
+rotate = 90, 45, 90
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_ind02
+pos = 400, 400, 0
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_ind03
+pos = 400, -400, 0
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_ind04
+pos = 400, 200, 350
+rotate = 90, 49, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_ind05
+pos = 400, -200, 350
+rotate = 90, 41, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_ind06
+pos = 400, 0, 270
+rotate = 90, 45, 90
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_ind07
+pos = 400, 200, -350
+rotate = 90, 41, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_ind08
+pos = 400, -200, -350
+rotate = 90, 49, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_ind09
+pos = 400, 0, -270
+rotate = 90, 45, 90
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_conn01
+pos = 480, 115, 270
+rotate = 0, 180, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_conn02
+pos = 320, 115, 270
+rotate = 0, 180, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_conn03
+pos = 480, -115, 270
+rotate = 180, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_conn04
+pos = 320, -115, 270
+rotate = 180, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_conn05
+pos = 480, 115, -270
+rotate = 0, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_conn06
+pos = 320, 115, -270
+rotate = 0, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_conn07
+pos = 480, -115, -270
+rotate = 0, 0, 180
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_conn08
+pos = 320, -115, -270
+rotate = 0, 0, 180
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_prod01
+pos = 400, 40, 130
+rotate = 0, 180, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_prod02
+pos = 400, -40, 130
+rotate = 180, 0, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_prod03
+pos = 400, 40, -130
+rotate = 0, 0, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_prod04
+pos = 400, -40, -130
+rotate = 0, 0, 180
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_gird01
+pos = 400, 200, 350
+rotate = 90, 0, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_gird02
+pos = 400, 200, 350
+rotate = -41, 180, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_gird03
+pos = 400, -200, 350
+rotate = 41, 180, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_gird04
+pos = 400, 200, -350
+rotate = 90, 0, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_gird05
+pos = 400, 200, -350
+rotate = -41, 0, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_gird06
+pos = 400, -200, -350
+rotate = 41, 0, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_tube01
+pos = 400, 400, 0
+rotate = 90, 0, 0
+archetype = space_short_tube
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_ind01
+pos = 0, 0, 0
+rotate = 90, 45, 90
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_ind02
+pos = 0, 400, 0
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_ind03
+pos = 0, -400, 0
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_ind04
+pos = 0, 200, 350
+rotate = 90, 49, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_ind05
+pos = 0, -200, 350
+rotate = 90, 41, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_ind06
+pos = 0, 0, 270
+rotate = 90, 45, 90
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_ind07
+pos = 0, 200, -350
+rotate = 90, 41, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_ind08
+pos = 0, -200, -350
+rotate = 90, 49, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_ind09
+pos = 0, 0, -270
+rotate = 90, 45, 90
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_conn01
+pos = 80, 115, 270
+rotate = 0, 180, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_conn02
+pos = -80, 115, 270
+rotate = 0, 180, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_conn03
+pos = 80, -115, 270
+rotate = 180, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_conn04
+pos = -80, -115, 270
+rotate = 180, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_conn05
+pos = 80, 115, -270
+rotate = 0, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_conn06
+pos = -80, 115, -270
+rotate = 0, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_conn07
+pos = 80, -115, -270
+rotate = 0, 0, 180
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_conn08
+pos = -80, -115, -270
+rotate = 0, 0, 180
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_prod01
+pos = 0, 40, 130
+rotate = 0, 180, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_prod02
+pos = 0, -40, 130
+rotate = 180, 0, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_prod03
+pos = 0, 40, -130
+rotate = 0, 0, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_prod04
+pos = 0, -40, -130
+rotate = 0, 0, 180
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_gird02
+pos = 0, 200, 350
+rotate = -41, 180, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_gird03
+pos = 0, -200, 350
+rotate = 41, 180, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_gird05
+pos = 0, 200, -350
+rotate = -41, 0, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_gird06
+pos = 0, -200, -350
+rotate = 41, 0, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_tube01
+pos = 0, 400, 0
+rotate = 90, 0, 0
+archetype = space_short_tube
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_ind01
+pos = -400, 0, 0
+rotate = 90, 45, 90
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_ind02
+pos = -400, 400, 0
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_ind03
+pos = -400, -400, 0
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_ind04
+pos = -400, 200, 350
+rotate = 90, 49, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_ind05
+pos = -400, -200, 350
+rotate = 90, 41, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_ind06
+pos = -400, 0, 270
+rotate = 90, 45, 90
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_ind07
+pos = -400, 200, -350
+rotate = 90, 41, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_ind08
+pos = -400, -200, -350
+rotate = 90, 49, 90
+archetype = space_industrial02a
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_ind09
+pos = -400, 0, -270
+rotate = 90, 45, 90
+archetype = space_industriala
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_conn01
+pos = -320, 115, 270
+rotate = 0, 180, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_conn02
+pos = -480, 115, 270
+rotate = 0, 180, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_conn03
+pos = -320, -115, 270
+rotate = 180, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_conn04
+pos = -480, -115, 270
+rotate = 180, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_conn05
+pos = -320, 115, -270
+rotate = 0, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_conn06
+pos = -480, 115, -270
+rotate = 0, 0, 0
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_conn07
+pos = -320, -115, -270
+rotate = 0, 0, 180
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_conn08
+pos = -480, -115, -270
+rotate = 0, 0, 180
+archetype = space_industrial03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_prod01
+pos = -400, 40, 130
+rotate = 0, 180, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_prod02
+pos = -400, -40, 130
+rotate = 180, 0, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_prod03
+pos = -400, 40, -130
+rotate = 0, 0, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_prod04
+pos = -400, -40, -130
+rotate = 0, 0, 180
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_gird01
+pos = -400, 200, 350
+rotate = 90, 0, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_gird02
+pos = -400, 200, 350
+rotate = -41, 180, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_gird03
+pos = -400, -200, 350
+rotate = 41, 180, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_gird04
+pos = -400, 200, -350
+rotate = 90, 0, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_gird05
+pos = -400, 200, -350
+rotate = -41, 0, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_gird06
+pos = -400, -200, -350
+rotate = 41, 0, 0
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_tube01
+pos = -400, 400, 0
+rotate = 90, 0, 0
+archetype = space_short_tube
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_gird01
+pos = -400, 200, 350
+rotate = 90, 45, 90
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_gird02
+pos = 0, 200, 350
+rotate = 90, 45, 90
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_gird03
+pos = -400, 200, -350
+rotate = 90, 45, 90
+archetype = space_girdera
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_gird04
+pos = 0, 200, -350
+rotate = 90, 45, 90
+archetype = space_girdera
+parent = rh_stut_04
+'''
+

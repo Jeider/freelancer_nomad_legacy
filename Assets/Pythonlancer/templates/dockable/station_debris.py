@@ -1835,3 +1835,102 @@ rotate = 0, 90, 0
 archetype = space_tunnel
 parent = sig8_03
 '''
+
+
+class Freeport7Debris(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'sig17_01'
+    LOCKED_OBJECT_OFFSETS = [
+        (-250, -200, -300),
+        (-600, 200, 300),  # ROTATE 180!!!
+    ]
+    TEMPLATE = '''[Object]
+nickname = sig17_01
+pos = -50, 0, 0
+rotate = 0, -35, -10
+archetype = munchen_dmg02
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_hab01
+pos = -620, 30, 0
+rotate = 5, 0, -2
+archetype = space_habitat_dmg
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_hab02
+pos = 320, 30, -200
+rotate = 0, 70, 3
+archetype = space_habitat_dmg
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_hab03
+pos = -520, 30, -250
+rotate = 185, 0, -2
+archetype = space_habitat_dmg
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_beam01
+pos = 320, -30, -100
+rotate = 0, 0, 3
+archetype = space_beaml_dmg
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_beam02
+pos = -720, 0, -250
+rotate = 34, 34, 33
+archetype = space_beamx_dmg
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_dome01
+pos = -920, 0, 0
+rotate = 35, -20, -2
+archetype = space_dome_dmg2
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_dome02
+pos = 820, 0, 0
+rotate = 5, 180, -25
+archetype = space_dome_dmg2
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_dome03
+pos = 0, 0, 800
+rotate = 35, 50, -2
+archetype = space_dome_dmg2
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_tank01
+pos = -820, -100, 0
+rotate = 5, 0, -2
+archetype = space_tanks_3dmg
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_tank02
+pos = 520, -120, 0
+rotate = 5, 0, -25
+archetype = space_tanks_1dmg
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_tank03
+pos = 0, -100, 800
+rotate = 5, 95, -2
+archetype = space_tanks_2dmg
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_tank04
+pos = -520, -150, -250
+rotate = 5, -95, -2
+archetype = space_tanks_1dmg
+parent = sig17_01
+'''

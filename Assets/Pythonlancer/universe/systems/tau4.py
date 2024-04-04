@@ -23,6 +23,7 @@ from templates.dockable import trade_storages
 from templates.dockable import prisons
 from templates.dockable import police
 from templates.dockable import columbia_production
+from templates.dockable import stuttgart_megabase
 from templates.dockable import pirate
 from templates.dockable import junker
 from templates.dockable import station_debris

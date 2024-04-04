@@ -972,9 +972,6 @@ class Hackable(DockableObject):
     def get_hacker_panel(self):
         panel = self.system.get_random_hacker_panel()
         hacker_name = self.get_hacker_name()
-        print(' ')
-        print(self.HACKABLE_SOLAR_CLASS.__name__)
-        print(self.HACKABLE_SOLAR_CLASS.PANEL_RELATION)
 
         return panel.get_space_content(
             space_name=self.get_hacker_name(),

@@ -69,3 +69,17 @@ class HackablePrisonLiner(HackableSolar):
     ARCHETYPE = 'suprise_prison_liner'
     ROTATE = (0, 0, 0)
     PANEL_RELATION = REL_BOTTOM
+
+
+class HackableFreeport7Dock(HackableSolar):
+    OFFSET = (-20, 38, -20)
+    ARCHETYPE = 'freeport7_dock'
+    ROTATE = (0, 0, -10)
+    PANEL_RELATION = REL_BOTTOM
+
+
+class HackableFreeport7DockRot180(HackableSolar):
+    OFFSET = (20, 38, 20)
+    ARCHETYPE = 'freeport7_dock'
+    ROTATE = (0, 180, 10)
+    PANEL_RELATION = REL_BOTTOM

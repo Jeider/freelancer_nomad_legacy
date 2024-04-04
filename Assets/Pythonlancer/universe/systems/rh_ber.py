@@ -15,7 +15,7 @@ from templates.dockable import pirate
 from templates.dockable import potsdam
 from templates.dockable import prisons
 from templates.dockable import shipyards
-from templates.dockable import alg
+from templates.dockable import stuttgart_megabase
 from templates.dockable import astbase
 from templates.dockable import junker
 from templates.dockable import police
@@ -300,7 +300,7 @@ class BerlinTrading(BerlinMember, main_objects.TradingBase):
 class BerlinRefinery(BerlinMember, main_objects.Refinery):
     BASE_INDEX = 7
     REL = RIGHT
-    SPACE_OBJECT_TEMPLATE = alg.AlgBaseHokkaido
+    SPACE_OBJECT_TEMPLATE = stuttgart_megabase.MannhaimShortGasless
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.RheinlandCivilianDealers
     FACTION = faction.RC_GRP
