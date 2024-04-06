@@ -207,11 +207,11 @@ class Tau4BaseMinesZone(zones.AsteroidZone):
     PROPERTY_FLAGS = 4128
 
 
-class Tau4SolarMinesZone1(Tau4Member, Tau4BaseMinesZone):
+class Tau4PrisonLinerMinesZone1(Tau4Member, Tau4BaseMinesZone):
     INDEX = 1
 
 
-class Tau4SolarMinesZone2(Tau4Member, Tau4BaseMinesZone):
+class Tau4PrisonLinerMinesZone2(Tau4Member, Tau4BaseMinesZone):
     INDEX = 2
 
 
@@ -219,7 +219,7 @@ class Tau4PrisonLiner1(Tau4Member, Tau4BasePrisonLiner):
     INDEX = 1
     BASE_INDEX = 52
     ASTEROID_ZONES = [
-        Tau4SolarMinesZone1,
+        Tau4PrisonLinerMinesZone1,
     ]
 
 
@@ -227,7 +227,7 @@ class Tau4PrisonLiner2(Tau4Member, Tau4BasePrisonLiner):
     INDEX = 2
     BASE_INDEX = 53
     ASTEROID_ZONES = [
-        Tau4SolarMinesZone2,
+        Tau4PrisonLinerMinesZone2,
     ]
 
 
@@ -241,7 +241,7 @@ class Tau4LinerSupriseRewards(Tau4Member, mineable.DefaultSupriseRewardsGroup):
     ]
 
 
-class Tau4SolarSupriseField(mineable.DefaultField):
+class Tau4PrisonLinerSupriseField(mineable.DefaultField):
     BOX_SIZE = 400
     DENSITY_MULTIPLER = 4
     DRIFT_X = 0.5
@@ -250,19 +250,19 @@ class Tau4SolarSupriseField(mineable.DefaultField):
     EMPTY_CHANCE = 0.2
 
 
-class Tau4BaseSolarSupriseRewardField(mineable.SupriseRewardField):
+class Tau4BaseLinerSupriseRewardField(mineable.SupriseRewardField):
     ALIAS = 'prison_liner'
-    FIELD_CLASS = Tau4SolarSupriseField
+    FIELD_CLASS = Tau4PrisonLinerSupriseField
     REWARDS_GROUP_CLASS = Tau4LinerSupriseRewards
     ULTRA_REWARD = True
 
 
-class Tau4SolarSupriseRewardField1(Tau4Member, Tau4BaseSolarSupriseRewardField):
+class Tau4LinerSupriseRewardField1(Tau4Member, Tau4BaseLinerSupriseRewardField):
     INDEX = 1
     ULTRA_BASE = Tau4PrisonLiner1
 
 
-class Tau4SolarSupriseRewardField2(Tau4Member, Tau4BaseSolarSupriseRewardField):
+class Tau4LinerSupriseRewardField2(Tau4Member, Tau4BaseLinerSupriseRewardField):
     INDEX = 2
     ULTRA_BASE = Tau4PrisonLiner2
 

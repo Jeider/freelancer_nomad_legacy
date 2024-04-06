@@ -88,3 +88,8 @@ class KusariAllFighter(Suprise):
 class LibertyMiscFighter(Suprise):
     DROP_HARDPOINT = 'HpShield01'
     DEFAULT_ARCHETYPES = [BH_FIGHTER, BH_ELITE, BH_ELITE2]
+
+
+class LibertyMainFighter(Suprise):
+    DROP_HARDPOINT = 'HpShield01'
+    DEFAULT_ARCHETYPES = [LI_ELITE, LI_FIGHTER]

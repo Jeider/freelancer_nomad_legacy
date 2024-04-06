@@ -75,11 +75,18 @@ class HackableFreeport7Dock(HackableSolar):
     OFFSET = (-20, 38, -20)
     ARCHETYPE = 'freeport7_dock'
     ROTATE = (0, 0, -10)
-    PANEL_RELATION = REL_BOTTOM
+    PANEL_RELATION = REL_TOP
 
 
 class HackableFreeport7DockRot180(HackableSolar):
     OFFSET = (20, 38, 20)
     ARCHETYPE = 'freeport7_dock'
     ROTATE = (0, 180, 10)
-    PANEL_RELATION = REL_BOTTOM
+    PANEL_RELATION = REL_TOP
+
+
+class HackableSolarPlant(HackableSolar):
+    OFFSET = (0, -13, -53)
+    ARCHETYPE = 'solar_plant_old'
+    ROTATE = (15.5, 180, 0)
+    PANEL_RELATION = REL_FRONT

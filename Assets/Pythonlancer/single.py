@@ -6,7 +6,7 @@ from tools import data_folder
 from templates.solar.hacker_panel import HackerPanelManager, REL_TOP
 from templates.dockable import columbia_new_hope
 from templates.dockable import station_debris
-from templates.dockable import stuttgart_megabase
+from templates.dockable import cambridge_research
 from templates.dockable import columbia_production
 
 
@@ -24,8 +24,8 @@ def test_hacker_colors():
 
 
 def test_placement():
-    base_class = station_debris.MunchenBattleStationDebris
-    content = base_class().get_instance(new_space_object_name=None, move_to=None)
+    base_class = cambridge_research.CambridgeResearchAlternative
+    content = base_class().get_instance(new_space_object_name=None, move_to=(0, -700, 1180))
     data_folder.DataFolder.sync_to_test_workspace(content)
 
 

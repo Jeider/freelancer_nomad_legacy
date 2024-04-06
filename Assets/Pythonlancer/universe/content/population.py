@@ -367,6 +367,7 @@ class KusariPiratePopulation(UnlawfulPopulation):
 
 class CorsairAttackersPopulation(UnlawfulPopulation):
     MAIN_PIRATES = faction.CO_GRP
+    ATTACK_TLR_PATROL = encounter.PatrolTLREliteOnly
 
 
 

@@ -293,7 +293,7 @@ class StaticObject(AppearableObject):
     def is_lawful(self):
         is_lawful = self.FACTION in self.system.get_lawful_factions()
         if not is_lawful and self.FACTION not in self.system.get_unlawful_factions():
-            raise Exception('Faction isnt defined in a system for object %s' % self.__class__.__name__)
+            raise Exception('Faction %s isnt defined in system for object %s' % (self.FACTION, self.__class__.__name__))
         return is_lawful
 
 

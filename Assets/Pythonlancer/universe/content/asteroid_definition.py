@@ -439,6 +439,26 @@ max_angular_velocity = 0.05000000
 color_shift = 1.000000, 1.000000, 1.000000
 '''
 
+DYNAST_NOMAD = '''
+[DynamicAsteroids]
+asteroid = mod_nomad_large
+count = 40
+placement_radius = 1200.000000
+placement_offset = 500.000000
+max_velocity = 3.000000
+max_angular_velocity = 0.05000000
+color_shift = 1.000000, 1.000000, 1.000000
+
+[DynamicAsteroids]
+asteroid = mod_nomad_large
+count = 40
+placement_radius = 1500.000000
+placement_offset = 800.000000
+max_velocity = 5.000000
+max_angular_velocity = 0.05000000
+color_shift = 1.000000, 1.000000, 1.000000
+'''
+
 
 class AsteroidDefinition(object):
     SHAPES = []
@@ -604,3 +624,8 @@ class SpaceMines(AsteroidDefinition):
 class BadlansDynasteroids(AsteroidDefinition):
     DYNAST = True
     DYNAST_TEMPLATE = DYNAST_BADLANDS
+
+
+class NomadDynasteroids(AsteroidDefinition):
+    DYNAST = True
+    DYNAST_TEMPLATE = DYNAST_NOMAD

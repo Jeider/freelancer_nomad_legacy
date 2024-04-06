@@ -133,6 +133,9 @@ class sig17(system.LibertyFirst, system.System):
     CONTENT = sig17_content
 
     SYSTEM_FOLDER = 'SIGMA17'
+    ALLOW_SYNC = True
+
+    FIRST_UNLAWFUL_POPULATION_CLASS = population.CorsairAttackersPopulation
 
 
 class li_col(system.LibertyFirst, system.System):
@@ -204,6 +207,7 @@ class sig42(system.BretoniaFirst, system.KusariSecond, system.System):
     CONTENT = sig42_content
 
     SYSTEM_FOLDER = 'SIGMA42'
+    ALLOW_SYNC = True
 
 
 class tau23(system.BretoniaFirst, system.KusariSecond, system.System):

@@ -16,7 +16,7 @@ from templates.nebula import rh_biz_nebula
 
 from templates.dockable import pirate
 from templates.dockable import astbase
-from templates.dockable import constanta
+from templates.dockable import ulster_megabase
 from templates.dockable import shipyards
 from templates.dockable import alg
 from templates.dockable import research
@@ -205,7 +205,7 @@ class BizmarkShipyard(BizmarkMember, main_objects.Shipyard):
     BASE_INDEX = 6
     REL = TOP
     REL_DRIFT = 1000
-    SPACE_OBJECT_TEMPLATE = constanta.Constanta
+    SPACE_OBJECT_TEMPLATE = ulster_megabase.UlsterShortBase
 
     AUDIO_PREFIX = SpaceVoice.SHIPYARD
     INTERIOR_CLASS = interior.StationShipdealerInterior

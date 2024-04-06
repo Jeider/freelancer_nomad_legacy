@@ -223,7 +223,7 @@ class Tau23BottomLeftPirates(Tau23Member, Tau23Kusari, main_objects.PirateBase):
     NEBULA_ZONES = [Tau23Nebula]
 
 
-class Tau23BretoniaStationConn1(Tau23Member, main_objects.TradeConnection):
+class Tau23BretoniaStationConn1(Tau23Member, Tau23Bretonia, main_objects.TradeConnection):
     OBJ_FROM = Tau23BretoniaStation
     OBJ_TO = Tau23AvalonJumpgate
     SIDE_FROM = BOTTOM
@@ -235,7 +235,7 @@ class Tau23BretoniaStationConn1(Tau23Member, main_objects.TradeConnection):
     ]
 
 
-class Tau23BretoniaStationConn2(Tau23Member, main_objects.TradeConnection):
+class Tau23BretoniaStationConn2(Tau23Member, Tau23Bretonia, main_objects.TradeConnection):
     OBJ_FROM = Tau23BretoniaStation
     OBJ_TO = Tau23Freeport
     SIDE_FROM = TOP
@@ -247,7 +247,7 @@ class Tau23BretoniaStationConn2(Tau23Member, main_objects.TradeConnection):
     ]
 
 
-class Tau23BretoniaBattleshipConn1(Tau23Member, main_objects.TradeConnection):
+class Tau23BretoniaBattleshipConn1(Tau23Member, Tau23Bretonia, main_objects.TradeConnection):
     OBJ_FROM = Tau23BretoniaBattleship
     OBJ_TO = Tau23Freeport
     SIDE_FROM = RIGHT

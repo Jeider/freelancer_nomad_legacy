@@ -42,21 +42,21 @@ parent = sig22_02
 
 [Object]
 nickname = sig22_02_ROOT_industrial01
-pos = 0, 0, 950
+pos = 0, 1, 951
 rotate = 90, 0, 0
 archetype = space_industriala
 parent = sig22_02
 
 [Object]
 nickname = sig22_02_ROOT_industrial02
-pos = 0, 0, 950
+pos = 0, 1, 950
 rotate = 90, 30, 0
 archetype = space_industriala
 parent = sig22_02
 
 [Object]
 nickname = sig22_02_ROOT_industrial03
-pos = 0, 0, 950
+pos = 0, -1, 949
 rotate = 90, 60, 0
 archetype = space_industriala
 parent = sig22_02
@@ -739,6 +739,640 @@ parent = sig22_02
 nickname = sig22_02_STORE_shipyard02
 pos = 446, 0, 1546
 rotate = 90, 180, 0
+archetype = shipyard
+parent = sig22_02
+'''
+
+
+class ConstantaAlternative(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'sig22_02'
+    TEMPLATE = '''[Object]
+nickname = sig22_02_dock
+pos = 0, 0, -150
+rotate = 0, 90, 0
+archetype = space_shipping01
+{dock_props}
+
+[Object]
+nickname = sig22_02
+pos = 0, 0, 950
+rotate = 0, -90, 0
+archetype = constanta_core
+{root_props}
+
+[Object]
+nickname = sig22_02_ROOT_cntrl_twr01
+pos = 0, 150, 950
+rotate = 180, 0, 0
+archetype = space_control_tower
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_ROOT_cntrl_twr02
+pos = 0, -150, 950
+rotate = 0, 0, 0
+archetype = space_control_tower
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_ROOT_industrial01
+pos = 0, 100, 950
+rotate = 90, 0, 0
+archetype = space_airlock_dummy
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_ROOT_industrial01
+pos = 0, -100, 950
+rotate = -90, 0, 0
+archetype = space_airlock_dummy
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_ROOT_girder01
+pos = 213, 0, 1069
+rotate = 0, 240, 0
+archetype = space_girder
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_ROOT_girder02
+pos = 0, 0, 693
+rotate = 0, 0, 0
+archetype = space_girder
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_ROOT_girder03
+pos = -223, 0, 1079
+rotate = 0, 120, 0
+archetype = space_girder
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_TOP_cntrl_twr01
+pos = 0, 195, 950
+rotate = 180, 0, 0
+archetype = space_control_tower
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_TOP_cntrl_twr02
+pos = 0, 380, 950
+rotate = 180, 0, 0
+archetype = space_control_tower
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_TOP_habitat01
+pos = 150, 288, 863
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_TOP_habitat02
+pos = -150, 288, 864
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_TOP_habitat03
+pos = 0, 288, 1120
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_TOP_habitat04
+pos = -150, 288, 1037
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_TOP_habitat05
+pos = 150, 288, 1036
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_TOP_habitat06
+pos = 0, 288, 780
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_TOP_habitat07
+pos = 0, 265, 1013
+rotate = 180, 0, 0
+archetype = space_habitat_tall
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_TOP_habitat08
+pos = 0, 265, 887
+rotate = 180, 0, 0
+archetype = space_habitat_tall
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_TOP_habitat09
+pos = 63, 265, 950
+rotate = 180, 0, 0
+archetype = space_habitat_tall
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_TOP_habitat10
+pos = -63, 265, 950
+rotate = 180, 0, 0
+archetype = space_habitat_tall
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_TOP_habitat11
+pos = 0, 288, 950
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_TOP_habitat12
+pos = 0, 476, 950
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_TOP_habitat13
+pos = 0, 450, 1015
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_TOP_habitat14
+pos = 65, 450, 950
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_TOP_habitat15
+pos = -65, 450, 950
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_TOP_habitat16
+pos = 0, 508, 890
+rotate = 0, 0, 0
+archetype = space_habitat_tall
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_TOP_habitat17
+pos = 0, 600, 1015
+rotate = 0, 0, 0
+archetype = space_habitat_tall
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_TOP_habitat18
+pos = 65, 540, 950
+rotate = 0, 0, 0
+archetype = space_habitat_tall
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_TOP_habitat19
+pos = 0, 650, 950
+rotate = 0, 0, 0
+archetype = space_habitat_tall
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_BOTTOM_cntrl_twr01
+pos = 0, -195, 950
+rotate = 0, 0, 0
+archetype = space_control_tower
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_BOTTOM_cntrl_twr02
+pos = 0, -380, 950
+rotate = 0, 0, 0
+archetype = space_control_tower
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_BOTTOM_habitat01
+pos = 150, -288, 863
+rotate = 180, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_BOTTOM_habitat02
+pos = -150, -288, 864
+rotate = 180, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_BOTTOM_habitat03
+pos = 0, -288, 1120
+rotate = 180, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_BOTTOM_habitat04
+pos = -150, -288, 1037
+rotate = 180, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_BOTTOM_habitat05
+pos = 150, -288, 1036
+rotate = 180, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_BOTTOM_habitat06
+pos = 0, -288, 780
+rotate = 180, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_BOTTOM_habitat07
+pos = 0, -265, 1013
+rotate = 0, 0, 0
+archetype = space_habitat_tall
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_BOTTOM_habitat08
+pos = 0, -265, 887
+rotate = 0, 0, 0
+archetype = space_habitat_tall
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_BOTTOM_habitat09
+pos = 63, -265, 950
+rotate = 0, 0, 0
+archetype = space_habitat_tall
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_BOTTOM_habitat10
+pos = -63, -265, 950
+rotate = 0, 0, 0
+archetype = space_habitat_tall
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_BOTTOM_habitat11
+pos = 0, -288, 950
+rotate = 180, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_BOTTOM_habitat12
+pos = 0, -476, 950
+rotate = 180, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_BOTTOM_habitat13
+pos = 0, -450, 1015
+rotate = 180, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_BOTTOM_habitat14
+pos = 65, -450, 950
+rotate = 180, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_BOTTOM_habitat15
+pos = -65, -450, 950
+rotate = 180, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_BOTTOM_habitat16
+pos = 0, -508, 890
+rotate = 180, 0, 0
+archetype = space_habitat_tall
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_BOTTOM_habitat17
+pos = 0, -600, 1015
+rotate = 180, 0, 0
+archetype = space_habitat_tall
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_BOTTOM_habitat18
+pos = 65, -540, 950
+rotate = 180, 0, 0
+archetype = space_habitat_tall
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_BOTTOM_habitat19
+pos = 0, -650, 950
+rotate = 180, 0, 0
+archetype = space_habitat_tall
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_DOME_cntrl_twr01
+pos = -446, 150, 1207
+rotate = 180, 45, 0
+archetype = space_control_tower
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_DOME_cntrl_twr02
+pos = -446, -150, 1207
+rotate = 0, 0, 0
+archetype = space_control_tower
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_DOME_cntrl_twr03
+pos = -446, 0, 1207
+rotate = 0, 0, 0
+archetype = space_control_tower
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_DOME_industrial01
+pos = -446, 0, 1207
+rotate = 90, 0, 0
+archetype = space_industriala
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_DOME_habitat01
+pos = -296, 75, 1120
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_DOME_habitat02
+pos = -596, 75, 1121
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_DOME_habitat03
+pos = -446, 75, 1377
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_DOME_habitat04
+pos = -596, 75, 1297
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_DOME_habitat05
+pos = -296, 75, 1293
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_DOME_habitat06
+pos = -446, 75, 1037
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_DOME_habitat07
+pos = -296, -75, 1120
+rotate = 180, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_DOME_habitat08
+pos = -596, -75, 1121
+rotate = 180, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_DOME_habitat09
+pos = -446, -75, 1377
+rotate = 180, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_DOME_habitat10
+pos = -596, -75, 1297
+rotate = 180, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_DOME_habitat11
+pos = -296, -75, 1293
+rotate = 180, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_DOME_habitat12
+pos = -446, -75, 1037
+rotate = 180, 0, 0
+archetype = space_habitat_wide
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_DOME_dome01
+pos = -127, -180, 1392
+rotate = 0, 240, 0
+archetype = space_dome
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_DOME_dome02
+pos = -446, -30, 837
+rotate = 0, 0, 0
+archetype = space_dome
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_DOME_dome03
+pos = -765, 30, 1392
+rotate = 0, 120, 0
+archetype = space_dome
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_DOME_dome04
+pos = -767, -120, 1023
+rotate = 0, 60, 0
+archetype = space_dome
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_DOME_dome05
+pos = -446, -120, 1576
+rotate = 0, 180, 0
+archetype = space_dome
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_STORE_cntrl_twr01
+pos = 446, 150, 1207
+rotate = 180, 45, 0
+archetype = space_control_tower
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_STORE_cntrl_twr02
+pos = 446, 0, 1207
+rotate = 0, 0, 0
+archetype = space_control_tower
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_STORE_cntrl_twr03
+pos = 446, -150, 1207
+rotate = 0, 0, 0
+archetype = space_control_tower
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_STORE_industrial01
+pos = 446, 0, 1207
+rotate = 90, 60, 0
+archetype = space_industriala
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_STORE_tanks01
+pos = 596, 75, 1120
+rotate = 90, 30, 0
+archetype = space_tanks4x4
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_STORE_tanks02
+pos = 296, 75, 1121
+rotate = 90, -30, 0
+archetype = space_tanks4x4
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_STORE_tanks03
+pos = 446, 75, 1377
+rotate = 90, 90, 0
+archetype = space_tanks4x4
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_STORE_tanks04
+pos = 296, 75, 1297
+rotate = 90, 30, 0
+archetype = space_tanks4x4
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_STORE_tanks05
+pos = 596, 75, 1293
+rotate = 90, -30, 0
+archetype = space_tanks4x4
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_STORE_tanks06
+pos = 446, 75, 1037
+rotate = 90, 90, 0
+archetype = space_tanks4x4
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_STORE_tanks07
+pos = 596, -75, 1120
+rotate = 90, 30, 0
+archetype = space_tanks4x4
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_STORE_tanks08
+pos = 296, -75, 1121
+rotate = 90, -30, 0
+archetype = space_tanks4x4
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_STORE_tanks09
+pos = 446, -75, 1377
+rotate = 90, 90, 0
+archetype = space_tanks4x4
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_STORE_tanks10
+pos = 296, -75, 1297
+rotate = 90, 30, 0
+archetype = space_tanks4x4
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_STORE_tanks11
+pos = 596, -75, 1293
+rotate = 90, -30, 0
+archetype = space_tanks4x4
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_STORE_tanks12
+pos = 446, -75, 1037
+rotate = 90, 90, 0
+archetype = space_tanks4x4
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_STORE_shipyard01
+pos = 446, -250, 1207
+rotate = 0, 30, 180
+archetype = shipyard
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_STORE_shipyard02
+pos = 446, 250, 1207
+rotate = 0, -30, 0
 archetype = shipyard
 parent = sig22_02
 '''

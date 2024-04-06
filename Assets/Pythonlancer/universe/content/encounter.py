@@ -48,6 +48,11 @@ class PatrolTLR(Encounter):
     FILENAME = 'missions\\NPC\\patrol_tlr.ini'
 
 
+class PatrolTLREliteOnly(Encounter):
+    NICKNAME = 'patrol_tlr_elite'
+    FILENAME = 'missions\\NPC\\patrol_tlr_elite.ini'
+
+
 class AresXScout(Encounter):
     NICKNAME = 'area_xscout'
     FILENAME = 'missions\\NPC\\area_rebels.ini'

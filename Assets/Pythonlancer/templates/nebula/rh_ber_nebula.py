@@ -35,9 +35,6 @@ equator_bias = 0.1
 ;color = 40, 160, 180 ;LI ORIGINAL
 color = 70, 120, 160
 
-
-
-
 [NebulaLight]
 ambient = 20, 40, 50
 sun_burnthrough_intensity = 0.500000
@@ -81,8 +78,8 @@ puff_cloud_size = 1
 near_fade_distance = 200, 300
 
 [Clouds]
-max_distance = 500
-puff_count = 20
+max_distance = 1500
+puff_count = 150
 puff_radius = 100
 puff_colora = 50, 150, 255
 puff_colorb = 255, 255, 255
