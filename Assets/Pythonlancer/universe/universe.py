@@ -108,6 +108,7 @@ class sig22(system.LibertyFirst, system.BretoniaSecond, system.System):
     CONTENT = sig22_content
 
     SYSTEM_FOLDER = 'SIGMA22'
+    ALLOW_SYNC = True
 
 
 class li_mnh(system.LibertyFirst, system.System):

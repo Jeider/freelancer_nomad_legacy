@@ -1783,8 +1783,7 @@ nickname = sig8_03
 pos = -250, -25, 60
 rotate = 0, 0, 0
 archetype = space_industrial_dmg_root
-reputation = fc_uk_grp
-behavior = NOTHING
+{root_props}
 
 [Object]
 nickname = sig8_03_space_dome_dmg01
@@ -1848,7 +1847,7 @@ nickname = sig17_01
 pos = -50, 0, 0
 rotate = 0, -35, -10
 archetype = munchen_dmg02
-parent = sig17_01
+{root_props}
 
 [Object]
 nickname = sig17_01_hab01
@@ -1934,3 +1933,81 @@ rotate = 5, -95, -2
 archetype = space_tanks_1dmg
 parent = sig17_01
 '''
+
+
+class Freeport7DebrisAlternative(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'sig17_01'
+    LOCKED_OBJECT_OFFSETS = [
+        (-350, 0, -200),
+    ]
+    TEMPLATE = '''[Object]
+nickname = sig17_01
+pos = 0, 0, 0
+rotate = 0, -30, -10
+archetype = munchen_dmg01
+{root_props}
+
+[Object]
+nickname = sig17_01_hab01
+pos = -220, 430, 0
+rotate = 5, 0, -2
+archetype = space_habitat_dmg
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_hab02
+pos = 320, 30, -200
+rotate = 0, 70, 3
+archetype = space_habitat_dmg
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_hab03
+pos = -320, 30, 250
+rotate = 185, 0, -2
+archetype = space_habitat_dmg
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_beam01
+pos = 120, -320, -100
+rotate = 0, 0, 3
+archetype = space_beaml_dmg
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_beam02
+pos = -120, -200, -250
+rotate = 34, 34, 33
+archetype = space_beamx_dmg
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_tank01
+pos = -220, -100, 0
+rotate = 5, 0, -2
+archetype = space_tanks_3dmg
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_tank02
+pos = 520, -120, 0
+rotate = 5, 0, -25
+archetype = space_tanks_1dmg
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_tank03
+pos = 0, -100, 300
+rotate = 5, 95, -2
+archetype = space_tanks_2dmg
+parent = sig17_01
+
+[Object]
+nickname = sig17_01_tank04
+pos = -220, -550, -150
+rotate = 5, -95, -2
+archetype = space_tanks_1dmg
+parent = sig17_01
+'''
+

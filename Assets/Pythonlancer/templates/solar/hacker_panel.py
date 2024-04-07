@@ -593,11 +593,13 @@ loadout = {hacker_success_loadout}'''
 REL_TOP = 'TOP'
 REL_FRONT = 'FRONT'
 REL_BOTTOM = 'BOTTOM'
+REL_SIDE = 'SIDE'
 
 ROTATE_PER_REL = {
     REL_TOP: (0, 0, 0),
     REL_FRONT: (-90, 0, 0),
     REL_BOTTOM: (180, 0, 0),
+    REL_SIDE: (0, 0, -90),
 }
 
 COMPILED_SUR_PATH = Path().resolve() / 'templates' / 'solar' / 'static' / 'hacker_layer_any.sur'
@@ -615,6 +617,12 @@ def adjust_neg_y_pos(position, drift):
     return pos_x, pos_y, pos_z
 
 
+def adjust_neg_x_pos(position, drift):
+    pos_x, pos_y, pos_z = position
+    pos_x -= drift
+    return pos_x, pos_y, pos_z
+
+
 def adjust_z_pos(position, drift):
     pos_x, pos_y, pos_z = position
     pos_z += drift
@@ -625,6 +633,7 @@ ADJUST_FUNC_PER_REL = {
     REL_TOP: adjust_neg_y_pos,
     REL_FRONT: adjust_z_pos,
     REL_BOTTOM: adjust_y_pos,
+    REL_SIDE: adjust_neg_x_pos,
 }
 
 

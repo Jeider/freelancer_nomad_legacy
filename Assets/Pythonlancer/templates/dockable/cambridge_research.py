@@ -937,280 +937,287 @@ class CambridgeResearchAlternative(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'br_cam_04'
     TEMPLATE = '''[Object]
 nickname = br_cam_04
-pos = 0, 500, 0
-rotate = 0, 0, 90
-archetype = space_shipping01_rotated
+pos = 0, 0, 0
+rotate = 0, 90, 0
+archetype = space_police01
 {dock_props}
 
 [Object]
 nickname = br_cam_04_PAD_ctrl_twr01
-pos = 0, -700, 0
+pos = 0, -570, 0
 rotate = 180, 0, 0
 archetype = space_control_tower
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_PAD_ctrl_twr02
-pos = 0, -550, 0
+pos = 0, -420, 0
 rotate = 0, 0, 0
 archetype = space_small_control_tower
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_PAD_ctrl_twr03
-pos = 0, -460, 0
+pos = 0, -240, 0
+rotate = 0, 0, 0
+archetype = space_small_control_tower
+parent = br_cam_04
+
+[Object]
+nickname = br_cam_04_PAD_hab01
+pos = 50, -330, 0
 rotate = 0, 0, 0
 archetype = space_habitat_wide
 parent = br_cam_04
 
 [Object]
-nickname = br_cam_04_PAD_girder01
-pos = 0, -360, 0
+nickname = br_cam_04_PAD_hab02
+pos = -50, -330, 0
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = br_cam_04
+
+[Object]
+nickname = br_cam_04_PAD_hab02
+pos = 0, -230, 0
 rotate = 90, 0, 0
 archetype = space_girder
 parent = br_cam_04
 
 [Object]
-nickname = br_cam_04_PAD_ctrl_block01
-pos = 75, 1142.5, 0
-rotate = 90, 90, 0
-archetype = space_small_control_block
-parent = br_cam_04
-
-[Object]
 nickname = br_cam_04_PAD_airlock01
-pos = 0, -600, 0
+pos = 0, -470, 0
 rotate = 90, 0, 0
 archetype = space_airlock_dummy
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_PAD_airlock02
-pos = 0, -800, 0
+pos = 0, -670, 0
 rotate = -90, 0, 0
 archetype = space_airlock_dummy
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_PAD_industrial01
-pos = 0, -700, 250
+pos = 0, -570, 250
 rotate = 0, 0, 0
 archetype = space_industriala
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_PAD_industrial02
-pos = 0, -700, -250
+pos = 0, -570, -250
 rotate = 0, 0, 0
 archetype = space_industriala
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_PAD_industrial03
-pos = -110, -700, 220
+pos = -110, -570, 220
 rotate = 0, -30, 0
 archetype = space_industriala
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_PAD_industrial04
-pos = 110, -700, 220
+pos = 110, -570, 220
 rotate = 0, 30, 0
 archetype = space_industriala
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_PAD_industrial05
-pos = -110, -700, -220
+pos = -110, -570, -220
 rotate = 0, 30, 0
 archetype = space_industriala
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_PAD_industrial06
-pos = 110, -700, -220
+pos = 110, -570, -220
 rotate = 0, -30, 0
 archetype = space_industriala
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_PAD_industrial07
-pos = 0, -700, -485
+pos = 0, -570, -485
 rotate = 0, 0, 0
 archetype = space_industriala
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_PAD_industrial08
-pos = 0, -700, -720
+pos = 0, -570, -720
 rotate = 0, 0, 0
 archetype = space_industriala
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_PAD_industrial09
-pos = 0, -700, -955
+pos = 0, -570, -955
 rotate = 0, 0, 0
 archetype = space_industriala
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_PAD_industrial07b
-pos = 0, -700, 485
+pos = 0, -570, 485
 rotate = 0, 0, 0
 archetype = space_industriala
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_PAD_industrial08b
-pos = 0, -700, 720
+pos = 0, -570, 720
 rotate = 0, 0, 0
 archetype = space_industriala
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_PAD_industrial09b
-pos = 0, -700, 955
+pos = 0, -570, 955
 rotate = 0, 0, 0
 archetype = space_industriala
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_PAD_dome01
-pos = -320, -670, -580
+pos = -320, -540, -580
 rotate = 0, 30, 0
 archetype = space_dome
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_PAD_dome02
-pos = 320, -670, -580
+pos = 320, -540, -580
 rotate = 0, -30, 0
 archetype = space_dome
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_PAD_dome03
-pos = -200, -670, -970
+pos = -200, -540, -970
 rotate = 0, 30, 0
 archetype = space_dome
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_PAD_dome04
-pos = 200, -670, -970
+pos = 200, -540, -970
 rotate = 0, -30, 0
 archetype = space_dome
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_PAD_dome05
-pos = 0, -670, -1370
+pos = 0, -540, -1370
 rotate = 0, 0, 0
 archetype = space_dome
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_PAD_dome01b
-pos = -320, -670, 580
+pos = -320, -540, 580
 rotate = 0, 150, 0
 archetype = space_dome
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_PAD_dome02b
-pos = 320, -670, 580
+pos = 320, -540, 580
 rotate = 0, -150, 0
 archetype = space_dome
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_PAD_dome03b
-pos = -200, -670, 970
+pos = -200, -540, 970
 rotate = 0, 150, 0
 archetype = space_dome
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_PAD_dome04b
-pos = 200, -670, 970
+pos = 200, -540, 970
 rotate = 0, -150, 0
 archetype = space_dome
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_PAD_dome05b
-pos = 0, -670, 1370
+pos = 0, -540, 1370
 rotate = 0, 180, 0
 archetype = space_dome
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_BTM_industrial01
-pos = 0, -950, 0
+pos = 0, -820, 0
 rotate = 90, 0, 0
 archetype = space_industriala
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_BTM_industrial02
-pos = 0, -850, 170
+pos = 0, -720, 170
 rotate = 0, 0, 90
 archetype = space_industrial02d
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_BTM_industrial03
-pos = 0, -850, -170
+pos = 0, -720, -170
 rotate = 0, 0, 90
 archetype = space_industrial02d
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_BTM_industrial04
-pos = 0, -850, 325
+pos = 0, -720, 325
 rotate = 0, 180, 0
 archetype = space_industrial02b
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_BTM_industrial05
-pos = 0, -850, -325
+pos = 0, -720, -325
 rotate = 0, 180, 0
 archetype = space_industrial02b
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_BTM_tank_01
-pos = 0, -850, 500
+pos = 0, -720, 500
 rotate = 0, 0, 0
 archetype = space_tankl4
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_BTM_tank_02
-pos = 0, -950, 200
+pos = 0, -820, 200
 rotate = 0, 0, 0
 archetype = space_tankl4
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_BTM_tank_03
-pos = 0, -850, -500
+pos = 0, -720, -500
 rotate = 0, 0, 0
 archetype = space_tankl4
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_BTM_tank_04
-pos = 0, -950, -200
+pos = 0, -820, -200
 rotate = 0, 0, 0
 archetype = space_tankl4
 parent = br_cam_04
 
 [Object]
 nickname = br_cam_04_BTM_tank_05
-pos = 0, -1155, 0
+pos = 0, -1025, 0
 rotate = 0, 0, 0
 archetype = space_tankl2
 parent = br_cam_04

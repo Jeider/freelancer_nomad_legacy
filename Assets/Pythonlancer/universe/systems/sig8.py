@@ -15,7 +15,7 @@ from templates.nebula import sig8_nebula
 from templates.nebula import exclusion
 
 from templates.solar import hackable
-from templates.solar import asteroid as asteroid_solar
+from templates.solar import asteroid
 from templates.dockable import pirate
 from templates.dockable import station_debris
 from templates.dockable import junker
@@ -165,10 +165,7 @@ class Sig8BrownNebula2(Sigma8Member, zones.NebulaZone):
     PROPERTY_FOG_COLOR = '100, 80, 10'
 
 
-
 class Sig8AsteroidDefinition(asteroid_definition.Omega15NiobiumAsteroidDefinition):
-    ABSTRACT = True
-    NAME = None
     DYNAST = True
     BELT = True
     BILLBOARDS = True
@@ -464,7 +461,7 @@ class Sig8BrokenConn1(Sigma8Member, main_objects.BrokenTradeConnection):
 
 class Sigma8EastAsteroidReward(Sigma8Member, mineable.AsteroidRewardsGroupMedium):
     NAME = 'sig8_east_ast'
-    SOLAR = asteroid_solar.AsteroidOmega15
+    SOLAR = asteroid.AsteroidOmega15
     REWARD_ITEM = 'comm_roid_niobium'
 
 

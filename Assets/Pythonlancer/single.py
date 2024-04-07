@@ -24,8 +24,8 @@ def test_hacker_colors():
 
 
 def test_placement():
-    base_class = cambridge_research.CambridgeResearchAlternative
-    content = base_class().get_instance(new_space_object_name=None, move_to=(0, -700, 1180))
+    base_class = station_debris.Freeport7Debris
+    content = base_class().get_instance(new_space_object_name=None, move_to=None)
     data_folder.DataFolder.sync_to_test_workspace(content)
 
 

@@ -86,7 +86,6 @@ class HonsSun(HonsMember, main_objects.Sun):
     LOADOUT = 'large_blue_sun_fx'
 
 
-
 class HonsBaseBlueNebula(zones.NebulaZone):
     SPACEDUST = Dust.ATTRACT
     SPACEDUST_MAXPARTICLES = 40
