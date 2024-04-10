@@ -181,6 +181,7 @@ class br_cam(system.BretoniaFirst, system.System):
     CONTENT = br_cam_content
 
     SYSTEM_FOLDER = 'BR_CAMBRIDGE'
+    ALLOW_SYNC = True
 
 
 class tau37(system.BretoniaFirst, system.System):
@@ -189,9 +190,9 @@ class tau37(system.BretoniaFirst, system.System):
     CONTENT = tau37_content
 
     SYSTEM_FOLDER = 'TAU37'
+    ALLOW_SYNC = True
 
     FIRST_UNLAWFUL_POPULATION_CLASS = population.CorsairAttackersPopulation
-    ALLOW_SYNC = True
 
 
 class br_avl(system.BretoniaFirst, system.System):

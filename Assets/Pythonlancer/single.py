@@ -4,10 +4,10 @@ from tools import merge_image
 from tools import data_folder
 
 from templates.solar.hacker_panel import HackerPanelManager, REL_TOP
-from templates.dockable import columbia_new_hope
+from templates.dockable import upsilon_gasinside
 from templates.dockable import station_debris
 from templates.dockable import cambridge_research
-from templates.dockable import columbia_production
+from templates.dockable import odissey
 
 
 def generate_hacker_panels():
@@ -24,9 +24,9 @@ def test_hacker_colors():
 
 
 def test_placement():
-    base_class = station_debris.Freeport7Debris
-    content = base_class().get_instance(new_space_object_name=None, move_to=None)
-    data_folder.DataFolder.sync_to_test_workspace(content)
+    base_class = odissey.OdisseySimple
+    content = base_class().get_instance(new_space_object_name=None, move_to=(0, 0, 1000))
+    data_folder.DataFolder.sync_to_test_workspace(content, workspace_index='')
 
 
 def build_image():

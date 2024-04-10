@@ -23,7 +23,7 @@ from templates.dockable import trade_storages
 from templates.dockable import prisons
 from templates.dockable import police
 from templates.dockable import columbia_production
-from templates.dockable import stuttgart_megabase
+from templates.dockable import ulster_megabase
 from templates.dockable import pirate
 from templates.dockable import junker
 from templates.dockable import station_debris
@@ -280,7 +280,7 @@ class Tau4HokkaidoJumpgate(Tau4Member, main_objects.Jumpgate):
 class Tau4Station(Tau4Member, main_objects.Station):
     BASE_INDEX = 1
     REL = TOP
-    SPACE_OBJECT_TEMPLATE = columbia_production.ColumbiaSmallProduction
+    SPACE_OBJECT_TEMPLATE = ulster_megabase.UlsterShortBase
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
 

@@ -36,8 +36,8 @@ class DataFolder(object):
         loadouts_file.write_text(content, encoding='utf-8')
 
     @classmethod
-    def sync_to_test_workspace(cls, content):
-        system_file = cls.get_universe() / 'GENERATION_DATA' / 'WORKSPACE' / 'test.ini'
+    def sync_to_test_workspace(cls, content, workspace_index=''):
+        system_file = cls.get_universe() / 'GENERATION_DATA' / 'WORKSPACE' / f'test{workspace_index}.ini'
         system_file.write_text(content, encoding='utf-8')
 
     @classmethod

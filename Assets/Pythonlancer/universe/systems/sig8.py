@@ -119,7 +119,6 @@ EDGE_EXCLUSION_PARAMS = {
 
 class Sig8GreenNebula1(Sigma8Member, zones.NebulaZone):
     INDEX = 1
-    FILE_NAME = 'gen_sig8_green_nebula1'
     SPACEDUST = Dust.ATTRACT_GREEN
     SPACEDUST_MAXPARTICLES = 40
     MUSIC = Ambience.NEBULA_EDGE
@@ -131,7 +130,6 @@ class Sig8GreenNebula1(Sigma8Member, zones.NebulaZone):
 
 class Sig8GreenNebula2(Sigma8Member, zones.NebulaZone):
     INDEX = 2
-    FILE_NAME = 'gen_sig8_green_nebula2'
     SPACEDUST = Dust.ATTRACT_GREEN
     SPACEDUST_MAXPARTICLES = 40
     MUSIC = Ambience.NEBULA_EDGE
@@ -143,7 +141,6 @@ class Sig8GreenNebula2(Sigma8Member, zones.NebulaZone):
 
 class Sig8BrownNebula1(Sigma8Member, zones.NebulaZone):
     INDEX = 3
-    FILE_NAME = 'gen_sig8_brown_nebula1'
     SPACEDUST = Dust.ATTRACT
     SPACEDUST_MAXPARTICLES = 40
     MUSIC = Ambience.NEBULA_DMATTER
@@ -155,7 +152,6 @@ class Sig8BrownNebula1(Sigma8Member, zones.NebulaZone):
 
 class Sig8BrownNebula2(Sigma8Member, zones.NebulaZone):
     INDEX = 4
-    FILE_NAME = 'gen_sig8_brown_nebula2'
     SPACEDUST = Dust.ATTRACT
     SPACEDUST_MAXPARTICLES = 40
     MUSIC = Ambience.NEBULA_DMATTER
@@ -193,6 +189,40 @@ class Sig8AsteroidZone3(Sigma8Member, Sig8BaseVanillaAstZone):
 
 class Sig8AsteroidZone4(Sigma8Member, Sig8BaseVanillaAstZone):
     INDEX = 4
+
+
+class Sigma8EastAsteroidReward(Sigma8Member, mineable.AsteroidRewardsGroupMedium):
+    NAME = 'sig8_east_ast'
+    SOLAR = asteroid.AsteroidOmega15
+    REWARD_ITEM = 'comm_roid_niobium'
+
+
+class Sigma8LargeAsteroids1(Sigma8Member, mineable.AsteroidRewardField):
+    INDEX = 1
+    FIELD_CLASS = mineable.BackgroundAsteroidsField
+    REWARDS_GROUP_CLASS = Sigma8EastAsteroidReward
+    MEDIUM_REWARD_CHANCE = 0.25
+
+
+class Sigma8LargeAsteroids2(Sigma8Member, mineable.AsteroidRewardField):
+    INDEX = 2
+    FIELD_CLASS = mineable.BackgroundAsteroidsField
+    REWARDS_GROUP_CLASS = Sigma8EastAsteroidReward
+    MEDIUM_REWARD_CHANCE = 0.25
+
+
+class Sigma8LargeAsteroids3(Sigma8Member, mineable.AsteroidRewardField):
+    INDEX = 3
+    FIELD_CLASS = mineable.BackgroundAsteroidsField
+    REWARDS_GROUP_CLASS = Sigma8EastAsteroidReward
+    MEDIUM_REWARD_CHANCE = 0.25
+
+
+class Sigma8LargeAsteroids4(Sigma8Member, mineable.AsteroidRewardField):
+    INDEX = 4
+    FIELD_CLASS = mineable.BackgroundAsteroidsField
+    REWARDS_GROUP_CLASS = Sigma8EastAsteroidReward
+    MEDIUM_REWARD_CHANCE = 0.25
 
 
 class Sig8Sun(Sigma8Member, main_objects.Sun):
@@ -457,37 +487,3 @@ class Sig8BrokenConn1(Sigma8Member, main_objects.BrokenTradeConnection):
     ATTACKED_BY = [
         Sig8Junkers,
     ]
-
-
-class Sigma8EastAsteroidReward(Sigma8Member, mineable.AsteroidRewardsGroupMedium):
-    NAME = 'sig8_east_ast'
-    SOLAR = asteroid.AsteroidOmega15
-    REWARD_ITEM = 'comm_roid_niobium'
-
-
-class Sigma8LargeAsteroids1(Sigma8Member, mineable.AsteroidRewardField):
-    INDEX = 1
-    FIELD_CLASS = mineable.BackgroundAsteroidsField
-    REWARDS_GROUP_CLASS = Sigma8EastAsteroidReward
-    MEDIUM_REWARD_CHANCE = 0.25
-
-
-class Sigma8LargeAsteroids2(Sigma8Member, mineable.AsteroidRewardField):
-    INDEX = 2
-    FIELD_CLASS = mineable.BackgroundAsteroidsField
-    REWARDS_GROUP_CLASS = Sigma8EastAsteroidReward
-    MEDIUM_REWARD_CHANCE = 0.25
-
-
-class Sigma8LargeAsteroids3(Sigma8Member, mineable.AsteroidRewardField):
-    INDEX = 3
-    FIELD_CLASS = mineable.BackgroundAsteroidsField
-    REWARDS_GROUP_CLASS = Sigma8EastAsteroidReward
-    MEDIUM_REWARD_CHANCE = 0.25
-
-
-class Sigma8LargeAsteroids4(Sigma8Member, mineable.AsteroidRewardField):
-    INDEX = 4
-    FIELD_CLASS = mineable.BackgroundAsteroidsField
-    REWARDS_GROUP_CLASS = Sigma8EastAsteroidReward
-    MEDIUM_REWARD_CHANCE = 0.25

@@ -1,4 +1,4 @@
-from templates.solar.hacker_panel import REL_FRONT, REL_TOP, REL_BOTTOM, REL_SIDE
+from templates.solar.hacker_panel import REL_FRONT, REL_TOP, REL_BOTTOM, REL_SIDE, REL_SIDE_ALT
 
 
 class HackableSolar(object):
@@ -96,4 +96,18 @@ class HackableSolarPlantRot90(HackableSolar):
     OFFSET = (53, -13, 0)
     ARCHETYPE = 'solar_plant_old'
     ROTATE = (15.5, 90, 0)
+    PANEL_RELATION = REL_SIDE
+
+
+class HackablePrison(HackableSolar):
+    OFFSET = (-208, 80, 0)
+    ARCHETYPE = 'prison'
+    ROTATE = (0, 0, 0)
+    PANEL_RELATION = REL_SIDE_ALT
+
+
+class HackablePrisonRot180(HackableSolar):
+    OFFSET = (208, 80, 0)
+    ARCHETYPE = 'prison'
+    ROTATE = (0, 180, 0)
     PANEL_RELATION = REL_SIDE

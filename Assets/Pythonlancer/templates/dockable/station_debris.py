@@ -1142,6 +1142,189 @@ parent = om15_02
 '''
 
 
+class OmegaDanzigDebrisAlternative(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'om15_02'
+    LOCKED_OBJECT_OFFSETS = [
+        (-600, -130, 0),
+        (460, 375, 118),
+    ]
+    TEMPLATE = '''[Object]
+nickname = om15_02
+pos = 0, 0, 0
+rotate = 7, 3, -5
+archetype = space_control_tower_root
+{root_props}
+
+[Object]
+nickname = om15_02_bottom
+pos = 0, 90, 0
+rotate = -5, 0, -10
+archetype = space_control_tower
+parent = om15_02
+
+[Object]
+nickname = om15_02_middle
+pos = 0, -80, -780
+rotate = 0, 0, 0
+archetype = space_tube_fix
+parent = om15_02
+
+[Object]
+nickname = om15_02_bottom_beamx01
+pos = 0, -230, 0
+rotate = 0, 0, 0
+archetype = space_beamx_dmg
+parent = om15_02
+
+[Object]
+nickname = om15_02_beaml01
+pos = 0, 70, 0
+rotate = 90, 180, 5
+archetype = space_beaml_dmg
+parent = om15_02
+
+[Object]
+nickname = om15_02_beaml02
+pos = 200, -80, 888
+rotate = 0, 90, 0
+archetype = space_beaml_dmg
+parent = om15_02
+
+[Object]
+nickname = om15_02_beaml03
+pos = -195, -80, 890
+rotate = 180, -90, 12
+archetype = space_beaml_dmg
+parent = om15_02
+
+[Object]
+nickname = om15_02_shipyard01
+pos = 0, -210, -900
+rotate = 12, 102, 200
+archetype = shipyard_dmga
+parent = om15_02
+
+[Object]
+nickname = om15_02_shipyard02
+pos = 0, -260, 900
+rotate = 180, 80, 170
+archetype = shipyard_dmga
+parent = om15_02
+
+[Object]
+nickname = om15_02_industrial_dmg01
+pos = 0, -80, 0
+rotate = 0, 90, 0
+archetype = space_industrial_dmg
+parent = om15_02
+
+[Object]
+nickname = om15_02_industrial_dmg02
+pos = 0, -80, -150
+rotate = 15, -90, 0
+archetype = space_industrial_dmg
+parent = om15_02
+
+[Object]
+nickname = om15_02_industrial_dmg03
+pos = 0, 220, 0
+rotate = 0, 10, 0
+archetype = space_industrial_dmg
+parent = om15_02
+
+[Object]
+nickname = om15_02_dmg_tanks01
+pos = -190, -35, -900
+rotate = 0, -90, -20
+archetype = space_tankl4_dmg
+parent = om15_02
+
+[Object]
+nickname = om15_02_dmg_tanks02
+pos = 0, -280, 0
+rotate = -20, 0, 0
+archetype = space_tankl4_dmg
+parent = om15_02
+
+[Object]
+nickname = om15_02_dmg_tanks03
+pos = 200, -30, -900
+rotate = 90, 0, 98
+archetype = space_tankl4x4_dmg
+parent = om15_02
+
+[Object]
+nickname = om15_02_dmg_tanks04
+pos = 500, -80, 0
+rotate = 50, 30, 0
+archetype = space_tankl4x4_dmg
+parent = om15_02
+
+[Object]
+nickname = om15_02_dmg_tanks05
+pos = 0, -230, -230
+rotate = 40, 0, -10
+archetype = space_tanklx4_dmg
+parent = om15_02
+
+[Object]
+nickname = om15_02_dmg_habitat01
+pos = 0, 69, 150
+rotate = 180, 180, 0
+archetype = space_habitat_dmg
+parent = om15_02
+
+[Object]
+nickname = om15_02_dmg_habitat02
+pos = -140, 140, 0
+rotate = 0, 0, 0
+archetype = space_habitat_dmg
+parent = om15_02
+
+[Object]
+nickname = om15_02_dmg_habitat03
+pos = 150, 140, -50
+rotate = 180, 30, -15
+archetype = space_habitat_dmg
+parent = om15_02
+
+[Object]
+nickname = om15_02_dmg_dock01
+pos = 200, -71, -400
+rotate = 10, 45, -20
+archetype = space_police_dmg
+parent = om15_02
+
+[Object]
+nickname = om15_02_dmg_dock03
+pos = -295, 103, 6
+rotate = -10, 180, -5
+archetype = space_police_dmg
+parent = om15_02
+
+[Object]
+nickname = om15_02_dmg_dock04
+pos = -300, -71, 0
+rotate = 0, 180, 0
+archetype = space_police_dmg
+parent = om15_02
+
+[Object]
+nickname = om15_02_tunnel01
+pos = 0, -80, -900
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = om15_02
+
+[Object]
+nickname = om15_02_tunnel02
+pos = 0, -80, 890
+rotate = 0, 180, 0
+archetype = space_industriala
+parent = om15_02
+'''
+
+
 class StuttgartDestroyedOutpost(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'rh_stut_07'
     LOCKED_OBJECT_OFFSETS = [

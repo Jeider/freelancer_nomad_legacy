@@ -3184,12 +3184,17 @@ parent = up2_01
 
 class UpsilonLostResearch(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'up2_04'
+    LOCKED_OBJECT_OFFSETS = [
+        # space_prison_dummy objects
+        (1300, -100, -50),  # ROTATE 180!
+        (-1300, -230, 0),
+    ]
     TEMPLATE = '''[Object]
 nickname = up2_04
 pos = 0, 0, 0
 rotate = -10, 10, -100
 archetype = space_prison_dummy
-{root_props}
+{dock_props}
 
 [Object]
 nickname = up2_04_prison01
@@ -3217,6 +3222,69 @@ nickname = up2_04_prison04
 pos = 0, -100, -320
 rotate = 10, 90, -10
 archetype = space_prison_dummy
+parent = up2_04
+
+[Object]
+nickname = up2_04_conn_res01
+pos = -520, -140, 0
+rotate = 10, -90, 0
+archetype = space_short_tube
+parent = up2_04
+
+[Object]
+nickname = up2_04_conn_res02
+pos = 520, -200, -50
+rotate = -10, 90, 0
+archetype = space_short_tube
+parent = up2_04
+
+[Object]
+nickname = up2_04_conn_res03
+pos = 0, -100, -450
+rotate = 0, 180, 0
+archetype = space_short_tube
+parent = up2_04
+
+[Object]
+nickname = up2_04_conn_dock01
+pos = 100, -120, 700
+rotate = 20, 70, 0
+archetype = space_police_dmg
+parent = up2_04
+
+[Object]
+nickname = up2_04_conn_dock02
+pos = 70, -120, 950
+rotate = 15, -35, 10
+archetype = space_police_dmg
+parent = up2_04
+
+[Object]
+nickname = up2_04_conn_dock03
+pos = -50, -120, 1250
+rotate = 15, -150, 10
+archetype = space_police_dmg
+parent = up2_04
+
+[Object]
+nickname = up2_04_dmg01
+pos = -100, 150, -1300
+rotate = -30, 90, 0
+archetype = shipyard_dmgA
+parent = up2_04
+
+[Object]
+nickname = up2_04_dmg02
+pos = 0, -530, -1300
+rotate = -30, 120, 0
+archetype = shipyard_dmgB
+parent = up2_04
+
+[Object]
+nickname = up2_04_dmg03
+pos = 0, -130, -1200
+rotate = 0, 90, 30
+archetype = space_industrial_dmg
 parent = up2_04
 
 [Object]
@@ -3313,6 +3381,20 @@ pos = 0, -1580, 0
 rotate = 90, 0, 0
 archetype = space_industrial01a
 loadout = space_ind01_reactor
+parent = up2_04
+
+[Object]
+nickname = up2_04_indC01
+pos = 30, 190, 40
+rotate = 95, 0, -10
+archetype = space_industrial01b
+parent = up2_04
+
+[Object]
+nickname = up2_04_hab01
+pos = 60, 280, 40
+rotate = 0, 0, -20
+archetype = space_habitat_dmg
 parent = up2_04
 
 [Object]

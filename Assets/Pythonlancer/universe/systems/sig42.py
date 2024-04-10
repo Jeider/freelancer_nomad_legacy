@@ -23,7 +23,7 @@ from templates.dockable import trade_storages
 from templates.dockable import research
 from templates.dockable import police
 from templates.dockable import cambridge_research
-from templates.dockable import stuttgart_megabase
+from templates.dockable import odissey
 from templates.dockable import pirate
 from templates.dockable import junker
 from templates.dockable import station_debris
@@ -230,7 +230,7 @@ class Sig42BretoniaStation(Sig42Member, Sig42Bretonia, main_objects.Station):
     INDEX = 1
     BASE_INDEX = 2
     REL = RIGHT
-    SPACE_OBJECT_TEMPLATE = cambridge_research.CambridgeResearchAlternative
+    SPACE_OBJECT_TEMPLATE = odissey.OdisseySimple
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.BretoniaCivilianDealers
 

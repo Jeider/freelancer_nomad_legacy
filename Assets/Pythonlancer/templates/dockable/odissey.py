@@ -985,3 +985,372 @@ archetype = space_industrial01a
 loadout = space_ind01_reactor
 parent = tau4_04
 '''
+
+
+class OdisseySimple(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'tau4_04'
+    TEMPLATE = '''[Object]
+nickname = tau4_04
+pos = 0, 0, 779
+rotate = 0, 90, 0
+archetype = space_shipping01
+{dock_props}
+
+[Object]
+nickname = tau4_04_CON01_cntrl_twr02
+pos = 0, 0, -170
+rotate = 90, 0, 0
+archetype = space_medium_control_tower_lowdetail
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_CON01_airlock02
+pos = 0, 0, -160
+rotate = 0, 180, 45
+archetype = space_airlock_dummy
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_A_ind01
+pos = 0, 0, -10
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_A_ind01
+pos = 960, 0, -560
+rotate = 0, 90, 0
+archetype = space_industriala
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_A_ind01
+pos = 710, 0, -560
+rotate = 0, 90, 0
+archetype = space_industriala
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_A_ind01
+pos = -710, 0, -560
+rotate = 0, 90, 0
+archetype = space_industriala
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_A_ind01
+pos = -960, 0, -560
+rotate = 0, 90, 0
+archetype = space_industriala
+parent = tau4_04
+
+[Object]
+nickname = br_cam_04_PAD_dome01
+pos = 858, 31, -881.5
+rotate = 0, -30, 0
+archetype = space_dome
+parent = br_cam_04
+
+[Object]
+nickname = br_cam_04_PAD_dome02
+pos = 1170, 31, -834
+rotate = 0, -45, 0
+archetype = space_dome
+parent = br_cam_04
+
+[Object]
+nickname = br_cam_04_PAD_dome03
+pos = 858, 31, -239
+rotate = 0, 210, 0
+archetype = space_dome
+parent = br_cam_04
+
+[Object]
+nickname = br_cam_04_PAD_dome04
+pos = 1170, 31, -287
+rotate = 0, 225, 0
+archetype = space_dome
+parent = br_cam_04
+
+[Object]
+nickname = br_cam_04_PAD_dome05
+pos = 1380, 31, -560
+rotate = 0, -90, 0
+archetype = space_dome
+parent = br_cam_04
+
+[Object]
+nickname = br_cam_04_PAD_dome01b
+pos = -858, 31, -881.5
+rotate = 0, 30, 0
+archetype = space_dome
+parent = br_cam_04
+
+[Object]
+nickname = br_cam_04_PAD_dome02b
+pos = -1170, 31, -834
+rotate = 0, 45, 0
+archetype = space_dome
+parent = br_cam_04
+
+[Object]
+nickname = br_cam_04_PAD_dome03b
+pos = -858, 31, -239
+rotate = 0, -210, 0
+archetype = space_dome
+parent = br_cam_04
+
+[Object]
+nickname = br_cam_04_PAD_dome04b
+pos = -1170, 31, -287
+rotate = 0, -225, 0
+archetype = space_dome
+parent = br_cam_04
+
+[Object]
+nickname = br_cam_04_PAD_dome05b
+pos = -1380, 31, -560
+rotate = 0, 90, 0
+archetype = space_dome
+parent = br_cam_04
+
+[Object]
+nickname = tau4_04_sphere01
+pos = 0, 0, -340
+rotate = 0, 0, 0
+archetype = sw_center_200
+loadout = odissey_sphere_control_towers
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_sphere02
+pos = 380, 0, -560
+rotate = 0, 0, 0
+archetype = sw_center_200
+loadout = odissey_sphere_control_towers
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_sphere02_wins01
+pos = 380, -10, -560
+rotate = 0, -45, 0
+archetype = hidden_connect_lowdetail
+loadout = odissey_front_wins_connect
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_sphere02_wins02
+pos = 380, -10, -560
+rotate = 0, -135, 0
+archetype = hidden_connect_lowdetail
+loadout = odissey_front_wins_connect
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_sphere03
+pos = -380, 0, -560
+rotate = 0, 0, 0
+archetype = sw_center_200
+loadout = odissey_sphere_control_towers
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_sphere03_wins01
+pos = -380, -10, -560
+rotate = 0, 45, 0
+archetype = hidden_connect_lowdetail
+loadout = odissey_front_wins_connect
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_sphere03_wins02
+pos = -380, -10, -560
+rotate = 0, 135, 0
+archetype = hidden_connect_lowdetail
+loadout = odissey_front_wins_connect
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_sphere04
+pos = 0, 0, -790
+rotate = 0, 0, 0
+archetype = sw_center_200
+loadout = odissey_sphere_control_towers
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_prison01
+pos = 230, 0, -380
+rotate = 0, 30, 0
+archetype = space_prison_dummy
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_prison02
+pos = -230, 0, -380
+rotate = 0, -30, 0
+archetype = space_prison_dummy
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_prison03
+pos = 230, 0, -735
+rotate = 0, -30, 0
+archetype = space_prison_dummy
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_prison04
+pos = -230, 0, -735
+rotate = 0, 30, 0
+archetype = space_prison_dummy
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_indA01
+pos = 230, 140, -380
+rotate = 0, -60, 0
+archetype = space_industrial02a
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_indA02
+pos = -230, 140, -380
+rotate = 0, 60, 0
+archetype = space_industrial02a
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_indA03
+pos = 230, 140, -735
+rotate = 0, 60, 0
+archetype = space_industrial02a
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_indA04
+pos = -230, 140, -735
+rotate = 0, -60, 0
+archetype = space_industrial02a
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_indA05
+pos = 230, -140, -380
+rotate = 0, -60, 0
+archetype = space_industrial02a
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_indA06
+pos = -230, -140, -380
+rotate = 0, 60, 0
+archetype = space_industrial02a
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_indA07
+pos = 230, -140, -735
+rotate = 0, 60, 0
+archetype = space_industrial02a
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_indA08
+pos = -230, -140, -735
+rotate = 0, -60, 0
+archetype = space_industrial02a
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_ctrl_twrA01
+pos = 0, 183, -430
+rotate = 180, 0, 0
+archetype = space_control_tower
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_ctrl_twrA02
+pos = 0, 183, -700
+rotate = 180, 0, 0
+archetype = space_control_tower
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_ctrl_twrA03
+pos = 280, 182, -560
+rotate = 180, 0, 0
+archetype = space_control_tower
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_ctrl_twrA04
+pos = -280, 182, -560
+rotate = 180, 0, 0
+archetype = space_control_tower
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_ctrl_twrA05
+pos = 0, -183, -430
+rotate = 0, 0, 0
+archetype = space_control_tower
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_ctrl_twrA06
+pos = 0, -183, -700
+rotate = 0, 0, 0
+archetype = space_control_tower
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_ctrl_twrA07
+pos = 280, -182, -560
+rotate = 0, 0, 0
+archetype = space_control_tower
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_ctrl_twrA08
+pos = -280, -182, -560
+rotate = 0, 0, 0
+archetype = space_control_tower
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_CON02_cntrl_twr01
+pos = -550, 0, -560
+rotate = 90, 90, 0
+archetype = space_medium_control_tower_lowdetail
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_CON02_airlock01
+pos = -560, 0, -560
+rotate = 90, 45, 90
+archetype = space_airlock_dummy
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_CON03_cntrl_twr01
+pos = 550, 0, -560
+rotate = -90, 90, 0
+archetype = space_medium_control_tower_lowdetail
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_CON03_airlock01
+pos = 560, 0, -560
+rotate = -90, 45, 90
+archetype = space_airlock_dummy
+parent = tau4_04
+
+[Object]
+nickname = tau4_04_BOTTOM_ctrl_block04
+pos = 0, 190, -820
+rotate = 0, 180, 0
+archetype = space_control_block
+parent = tau4_04
+'''

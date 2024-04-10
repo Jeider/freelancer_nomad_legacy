@@ -25,7 +25,7 @@ from templates.dockable import police
 from templates.dockable import honshu_military
 from templates.dockable import pirate
 from templates.dockable import junker
-from templates.dockable import station_debris
+from templates.dockable import cambridge_research
 
 
 class HonsMember(object):
@@ -414,7 +414,7 @@ class HonsTrading(HonsMember, main_objects.TradingBase):
     BASE_INDEX = 6
     REL = BOTTOM
     REL_APPEND = 2500
-    SPACE_OBJECT_TEMPLATE = trade_storages.HokkaidoStorage
+    SPACE_OBJECT_TEMPLATE = cambridge_research.CambridgeResearchAlternative
     INTERIOR_CLASS = interior.StationShipdealerInterior
     DEALERS = dealers.KusariCivilianDealers
 

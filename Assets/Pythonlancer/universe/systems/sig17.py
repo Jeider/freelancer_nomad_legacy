@@ -17,7 +17,7 @@ from templates.nebula import sig17_nebula
 from templates.nebula import exclusion
 
 from templates.dockable import astbase
-from templates.dockable import trade_storages
+from templates.dockable import cambridge_research
 from templates.dockable import police
 from templates.dockable import pirate
 from templates.dockable import station_debris
@@ -336,7 +336,7 @@ class Sig17ForbesJumpgate(Sig17Member, main_objects.Jumpgate):
 class Sig17Freeport(Sig17Member, main_objects.Freeport):
     BASE_INDEX = 1
     REL = LEFT
-    SPACE_OBJECT_TEMPLATE = trade_storages.RheinlandOmegaStorage
+    SPACE_OBJECT_TEMPLATE = cambridge_research.CambridgeResearchAlternative
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyCivilianDealers
 
