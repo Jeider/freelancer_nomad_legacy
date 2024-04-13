@@ -6,8 +6,8 @@ from tools import data_folder
 from templates.solar.hacker_panel import HackerPanelManager, REL_TOP
 from templates.dockable import upsilon_gasinside
 from templates.dockable import station_debris
-from templates.dockable import cambridge_research
-from templates.dockable import odissey
+from templates.dockable import forbes_megafactory
+from templates.dockable import sphere_megabase
 
 
 def generate_hacker_panels():
@@ -24,8 +24,8 @@ def test_hacker_colors():
 
 
 def test_placement():
-    base_class = odissey.OdisseySimple
-    content = base_class().get_instance(new_space_object_name=None, move_to=(0, 0, 1000))
+    base_class = forbes_megafactory.ForbesMegafactory
+    content = base_class().get_instance(new_space_object_name=None, move_to=None)
     data_folder.DataFolder.sync_to_test_workspace(content, workspace_index='')
 
 

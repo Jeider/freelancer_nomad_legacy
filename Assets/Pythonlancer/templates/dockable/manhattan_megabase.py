@@ -866,3 +866,210 @@ rotate = 0, 0, 0
 archetype = space_control_tower
 parent = li_mnh_04
 '''
+
+
+class ManhattanMegabaseOutpost(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'li_mnh_04'
+    TEMPLATE = '''[Object]
+nickname = li_mnh_04
+pos = 0, 0, 0
+rotate = 0, -90, 0
+archetype = space_police01
+{dock_props}
+
+[Object]
+nickname = li_mnh_04_MAIN_space_ind01
+pos = 0, -580, 0
+rotate = 90, 0, 0
+archetype = space_industrial02a
+parent = li_mnh_04
+
+[Object]
+nickname = li_mnh_04_MAIN_girder01
+pos = 0, -230, 0
+rotate = 90, 0, 0
+archetype = space_girder
+parent = li_mnh_04
+
+[Object]
+nickname = li_mnh_04_MAIN_habitat01
+pos = 0, -340, 0
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = li_mnh_04
+
+[Object]
+nickname = li_mnh_04_MAIN_habitat02
+pos = 60, -810, 0
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = li_mnh_04
+
+[Object]
+nickname = li_mnh_04_MAIN_habitat02
+pos = 0, -810, -60
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = li_mnh_04
+
+[Object]
+nickname = li_mnh_04_MAIN_habitat02
+pos = 0, -810, 60
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = li_mnh_04
+
+[Object]
+nickname = li_mnh_04_MAIN_habitat02
+pos = -60, -810, 0
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = li_mnh_04
+
+[Object]
+nickname = li_mnh_04_MAIN_ctrl_twr02
+pos = 0, -440, -5
+rotate = 0, 180, 0
+archetype = space_control_tower
+parent = li_mnh_04
+
+[Object]
+nickname = li_mnh_04_MAIN_ctrl_twr02
+pos = 0, -725, -5
+rotate = 0, 180, 0
+archetype = space_control_tower
+parent = li_mnh_04
+
+[Object]
+nickname = li_mnh_04_MAIN_ctrl_twr03
+pos = 0, -910, -5
+rotate = 0, 180, 0
+archetype = space_medium_control_tower
+parent = li_mnh_04
+
+[Object]
+nickname = li_mnh_04_MAIN_ctrl_twr02
+pos = 0, -980, 0
+rotate = 0, 0, 0
+archetype = space_tanklx4
+parent = li_mnh_04
+
+[Object]
+nickname = li_mnh_04_MAIN_ctrl_twr02
+pos = 0, -1030, 0
+rotate = 0, 0, 0
+archetype = space_tanklx4
+parent = li_mnh_04
+
+[Object]
+nickname = li_mnh_04_MAIN_panel01
+pos = -250, -510, 0
+rotate = 0, 0, 0
+archetype = space_panel45
+parent = li_mnh_04
+
+[Object]
+nickname = li_mnh_04_MAIN_panel02
+pos = -180, -510, 175
+rotate = 0, 45, 0
+archetype = space_panel45
+parent = li_mnh_04
+
+[Object]
+nickname = li_mnh_04_MAIN_panel03
+pos = 0, -510, 250
+rotate = 0, 90, 0
+archetype = space_panel45
+parent = li_mnh_04
+
+[Object]
+nickname = li_mnh_04_MAIN_panel04
+pos = 180, -510, 175
+rotate = 0, 130, 0
+archetype = space_panel45
+parent = li_mnh_04
+
+[Object]
+nickname = li_mnh_04_MAIN_panel05
+pos = 250, -510, 0
+rotate = 0, 180, 0
+archetype = space_panel45
+parent = li_mnh_04
+
+[Object]
+nickname = li_mnh_04_MAIN_panel06
+pos = 180, -510, -175
+rotate = 0, -135, 0
+archetype = space_panel45
+parent = li_mnh_04
+
+[Object]
+nickname = li_mnh_04_MAIN_panel07
+pos = 0, -510, -250
+rotate = 0, -90, 0
+archetype = space_panel45
+parent = li_mnh_04
+
+[Object]
+nickname = li_mnh_04_MAIN_panel08
+pos = -180, -510, -175
+rotate = 0, -45, 0
+archetype = space_panel45
+parent = li_mnh_04
+
+[Object]
+nickname = li_mnh_04_MAIN_panel09
+pos = -250, -650, 0
+rotate = 180, 0, 0
+archetype = space_panel45
+parent = li_mnh_04
+
+[Object]
+nickname = li_mnh_04_MAIN_panel10
+pos = -180, -650, 175
+rotate = 180, 45, 0
+archetype = space_panel45
+parent = li_mnh_04
+
+[Object]
+nickname = li_mnh_04_MAIN_panel11
+pos = 0, -650, 250
+rotate = 180, 90, 0
+archetype = space_panel45
+parent = li_mnh_04
+
+[Object]
+nickname = li_mnh_04_MAIN_panel12
+pos = 180, -650, 175
+rotate = 180, 130, 0
+archetype = space_panel45
+parent = li_mnh_04
+
+[Object]
+nickname = li_mnh_04_MAIN_panel13
+pos = 250, -650, 0
+rotate = 180, 180, 0
+archetype = space_panel45
+parent = li_mnh_04
+
+[Object]
+nickname = li_mnh_04_MAIN_panel14
+pos = 180, -650, -175
+rotate = 180, -135, 0
+archetype = space_panel45
+parent = li_mnh_04
+
+[Object]
+nickname = li_mnh_04_MAIN_panel15
+pos = 0, -650, -250
+rotate = 180, -90, 0
+archetype = space_panel45
+parent = li_mnh_04
+
+[Object]
+nickname = li_mnh_04_MAIN_panel16
+pos = -180, -650, -175
+rotate = 180, -45, 0
+archetype = space_panel45
+parent = li_mnh_04
+'''

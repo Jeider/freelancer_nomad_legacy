@@ -3548,14 +3548,14 @@ parent = up2_04
 nickname = up2_04_research01a
 pos = -760, -4400, 100
 rotate = 90, 0, 5
-archetype = space_tube
+archetype = space_tube_fix
 parent = up2_04
 
 [Object]
 nickname = up2_04_research02a
 pos = 680, -4400, 0
 rotate = 90, 0, 0
-archetype = space_tube
+archetype = space_tube_fix
 parent = up2_04
 
 [Object]
@@ -3569,13 +3569,13 @@ parent = up2_04
 nickname = up2_04_research04a
 pos = 0, -4400, -680
 rotate = 90, 0, 0
-archetype = space_tube
+archetype = space_tube_fix
 parent = up2_04
 
 [Object]
 nickname = up2_04_research05a
 pos = 0, -4100, 0
 rotate = 85, 0, 5
-archetype = space_tube
+archetype = space_tube_fix
 parent = up2_04
 '''

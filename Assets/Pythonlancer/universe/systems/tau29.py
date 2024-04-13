@@ -19,6 +19,7 @@ from templates.dockable import police
 from templates.dockable import astbase
 from templates.dockable import trade_storages
 from templates.dockable import olaf
+from templates.dockable import avalon_megabase
 from templates.dockable import station_debris
 
 
@@ -350,7 +351,7 @@ class Tau29LargeStation(Tau29Member, main_objects.Station):
 class Tau29Trading(Tau29Member, main_objects.TradingBase):
     BASE_INDEX = 2
     REL = BOTTOM
-    SPACE_OBJECT_TEMPLATE = trade_storages.TekagiStorage
+    SPACE_OBJECT_TEMPLATE = avalon_megabase.AvalonMegabaseShort
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.BretoniaCivilianDealers
 

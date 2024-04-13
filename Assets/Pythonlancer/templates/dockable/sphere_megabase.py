@@ -1975,3 +1975,539 @@ rotate = 0, 90, 0
 archetype = space_girderc
 parent = sph_base01
 '''
+
+
+class SphereRefinery(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'sph_base01'
+    TEMPLATE = '''[Object]
+nickname = sph_base01
+pos = 0, 130, 0
+rotate = 0, 90, 0
+archetype = space_freeport01
+{dock_props}
+
+[Object]
+nickname = sph_base01_control_twr01
+pos = 0, -375, 0
+rotate = 180, 0, 0
+archetype = space_control_tower
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_control_twr04
+pos = 0, -625, 0
+rotate = 0, 0, 0
+archetype = space_control_tower
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_control_twr05
+pos = 0, -175, 0
+rotate = -180, 45, 0
+archetype = space_control_tower
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_control_twr06
+pos = 0, 25, 0
+rotate = 0, 0, 0
+archetype = space_small_control_tower
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_control_twr07
+pos = 0, -825, 0
+rotate = -180, 45, 0
+archetype = space_control_tower
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_control_twr09
+pos = 0, -1140, 0
+rotate = -180, 45, 0
+archetype = space_medium_control_tower
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_control_twr08
+pos = 0, -995, 0
+rotate = -180, 45, 0
+archetype = space_medium_control_tower
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_airlock01
+pos = 0, -70, 0
+rotate = 90, 0, 0
+archetype = space_medium_airlock_tunnel
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_prod01
+pos = 210, -550, 590
+rotate = 0, 180, 0
+archetype = space_large_production
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_prod02
+pos = -210, -550, 590
+rotate = 0, 180, 0
+archetype = space_large_production
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_prod01A
+pos = 90, -530, 590
+rotate = 0,180, 0
+archetype = space_large_production
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_prod02A
+pos = -90, -530, 590
+rotate = 0,180, 0
+archetype = space_large_production
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_prod03
+pos = 210, -550, -590
+rotate = 0, 0, 0
+archetype = space_large_production
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_prod04
+pos = -210, -550, -590
+rotate = 0, 0, 0
+archetype = space_large_production
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_prod03A
+pos = 90, -530, -590
+rotate = 0,0, 0
+archetype = space_large_production
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_prod04A
+pos = -90, -530, -590
+rotate = 0,0, 0
+archetype = space_large_production
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_new01
+pos = 215, -500, 335
+rotate = 90, 0, 0
+archetype = space_industrial02a
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_new02
+pos = 215, -500, -335
+rotate = 90, 0, 0
+archetype = space_industrial02a
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_new03
+pos = -215, -500, 335
+rotate = 90, 0, 0
+archetype = space_industrial02a
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_new04
+pos = -215, -500, -335
+rotate = 90, 0, 0
+archetype = space_industrial02a
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_Anew01
+pos = 70, -440, 275
+rotate = 0, 10, 0
+archetype = space_industrial02a
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_Anew02
+pos = 70, -440, -275
+rotate = 0, -10, 0
+archetype = space_industrial02a
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_Anew03
+pos = -70, -440, 275
+rotate = 0, -10, 0
+archetype = space_industrial02a
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_Anew04
+pos = -70, -440, -275
+rotate = 0, 10, 0
+archetype = space_industrial02a
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_Bnew01
+pos = 185, -440, 175
+rotate = 0, 15, 0
+archetype = space_industrial02a
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_Bnew02
+pos = -185, -440, 175
+rotate = 0, -15, 0
+archetype = space_industrial02a
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_Bnew03
+pos = 185, -440, -175
+rotate = 0, -15, 0
+archetype = space_industrial02a
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_Bnew04
+pos = -185, -440, -175
+rotate = 0, 15, 0
+archetype = space_industrial02a
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_Anew01x
+pos = 70, -560, 275
+rotate = 0, 10, 0
+archetype = space_industrial02a
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_Anew02x
+pos = 70, -560, -275
+rotate = 0, -10, 0
+archetype = space_industrial02a
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_Anew03x
+pos = -70, -560, 275
+rotate = 0, -10, 0
+archetype = space_industrial02a
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_Anew04x
+pos = -70, -560, -275
+rotate = 0, 10, 0
+archetype = space_industrial02a
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_Bnew01x
+pos = 185, -560, 175
+rotate = 0, 15, 0
+archetype = space_industrial02a
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_Bnew02x
+pos = -185, -560, 175
+rotate = 0, -15, 0
+archetype = space_industrial02a
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_Bnew03x
+pos = 185, -560, -175
+rotate = 0, -15, 0
+archetype = space_industrial02a
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_Bnew04x
+pos = -185, -560, -175
+rotate = 0, 15, 0
+archetype = space_industrial02a
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_industrial_core02
+pos = 180, -500, 0
+rotate = 90, 90, 0
+archetype = space_industrial02d
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_industrial_core03
+pos = -180, -500, 0
+rotate = 90, 90, 0
+archetype = space_industrial02d
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_connect01
+pos = 100, -250, 110
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_connect02
+pos = 100, -250, -110
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_connect03
+pos = -100, -250, 110
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_connect04
+pos = -100, -250, -110
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_connect05
+pos = 100, -400, 110
+rotate = -90, 45, 0
+archetype = space_industrialc
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_connect06
+pos = 100, -400, -110
+rotate = -90, 45, 0
+archetype = space_industrialc
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_connect07
+pos = -100, -400, 110
+rotate = -90, 45, 0
+archetype = space_industrialc
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_connect08
+pos = -100, -400, -110
+rotate = -90, 45, 0
+archetype = space_industrialc
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_connect13
+pos = 100, -600, 110
+rotate = 90, 45, 0
+archetype = space_industrialc
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_connect14
+pos = 100, -600, -110
+rotate = 90, 45, 0
+archetype = space_industrialc
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_connect15
+pos = -100, -600, 110
+rotate = 90, 45, 0
+archetype = space_industrialc
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_connect16
+pos = -100, -600, -110
+rotate = 90, 45, 0
+archetype = space_industrialc
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_connect01b
+pos = 100, -750, 110
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_connect02b
+pos = 100, -750, -110
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_connect03b
+pos = -100, -750, 110
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_ind_connect04b
+pos = -100, -750, -110
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_girder15
+pos = 0, -250, 110
+rotate = 0, 90, 0
+archetype = space_girderc
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_girder16
+pos = 0, -250, 110
+rotate = 0, 90, 0
+archetype = space_girderc
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_girder16
+pos = 0, -1240, 0
+rotate = 0, 90, 0
+archetype = space_tanklx4
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_habitat01
+pos = 100, -910, 0
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_habitat02
+pos = -100, -910, 0
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_habitat03
+pos = 0, -910, 100
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_habitat04
+pos = 0, -910, -100
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_habitat05
+pos = 0, -910, 0
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_habitat06
+pos = 100, -1050, 0
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_habitat07
+pos = -100, -1050, 0
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_habitat08
+pos = 0, -1050, 100
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_habitat09
+pos = 0, -1050, -100
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_habitat10
+pos = 0, -1050, 0
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_tube01
+pos = 100, -750, 230
+rotate = -32, 0, 0
+archetype = space_girdera
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_tube02
+pos = -100, -750, 230
+rotate = -32, 0, 0
+archetype = space_girdera
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_tube03
+pos = 100, -750, -230
+rotate = -32, 180, 0
+archetype = space_girdera
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_tube04
+pos = -100, -750, -230
+rotate = -32, 180, 0
+archetype = space_girdera
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_vents01
+pos = 100, -325, 240
+rotate = 0, 0, 0
+archetype = space_industrial03
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_vents02
+pos = 100, -325, -240
+rotate = 0, 180, 0
+archetype = space_industrial03
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_vents03
+pos = -100, -325, 240
+rotate = 0, 0, 0
+archetype = space_industrial03
+parent = sph_base01
+
+[Object]
+nickname = sph_base01_vents04
+pos = -100, -325, -240
+rotate = 0, 180, 0
+archetype = space_industrial03
+parent = sph_base01
+'''

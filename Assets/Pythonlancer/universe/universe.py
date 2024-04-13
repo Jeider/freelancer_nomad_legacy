@@ -117,6 +117,7 @@ class li_mnh(system.LibertyFirst, system.System):
     CONTENT = li_mnh_content
 
     SYSTEM_FOLDER = 'LI_MANHATTAN'
+    ALLOW_SYNC = True
 
 
 class li_for(system.LibertyFirst, system.System):
@@ -201,6 +202,7 @@ class br_avl(system.BretoniaFirst, system.System):
     CONTENT = br_avl_content
 
     SYSTEM_FOLDER = 'BR_AVALON'
+    ALLOW_SYNC = True
 
 
 class sig42(system.BretoniaFirst, system.KusariSecond, system.System):

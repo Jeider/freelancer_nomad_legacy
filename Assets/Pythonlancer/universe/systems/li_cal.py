@@ -19,7 +19,7 @@ from templates.dockable import pirate
 from templates.dockable import astbase
 from templates.dockable import trade_storages
 from templates.dockable import station_debris
-from templates.dockable import police
+from templates.dockable import manhattan_megabase
 from templates.dockable import california_tradestation
 from templates.dockable import roid_mining
 from templates.dockable import research
@@ -347,7 +347,7 @@ class CalPolice(CalMember, main_objects.Outpost):
     ALIAS = 'police'
     BASE_INDEX = 3
     REL = BOTTOM
-    SPACE_OBJECT_TEMPLATE = police.PoliceOutpostLiberty
+    SPACE_OBJECT_TEMPLATE = manhattan_megabase.ManhattanMegabaseOutpost
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.LibertyMilitaryDealers
 

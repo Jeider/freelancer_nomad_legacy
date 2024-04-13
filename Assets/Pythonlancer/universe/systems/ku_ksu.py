@@ -176,7 +176,6 @@ class KyushuDebrisBoxField3(KyushuMember, KyushuBaseDebrisBoxRewardField):
     ULTRA_BASE = KyushuDebrisFactory3
 
 
-
 class KyushuAsteroidDefinition1(asteroid_definition.Tau37AsteroidDefinition):
     BELT = True
     BILLBOARDS = True
@@ -238,6 +237,7 @@ class KyushuUnlockAsteroidReward(KyushuMember, mineable.AsteroidRewardsGroupUltr
     REWARD_ITEM = 'comm_roid_uranium'
     ULTRA_REWARD_BASES = [
         KyushuAbandonedAstBase1,
+        KyushuAbandonedAstBase2,
     ]
 
 

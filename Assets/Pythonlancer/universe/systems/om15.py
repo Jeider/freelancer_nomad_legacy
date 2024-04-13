@@ -17,7 +17,7 @@ from templates.nebula import exclusion
 
 from templates.dockable import junker
 from templates.dockable import trade_storages
-from templates.dockable import police
+from templates.dockable import rheinland_military
 from templates.dockable import roid_mining
 from templates.dockable import station_debris
 
@@ -337,7 +337,7 @@ class Om15MiningStation(Omega15Member, main_objects.Station):
 class Om15Outpost(Omega15Member, main_objects.Outpost):
     BASE_INDEX = 2
     REL = RIGHT
-    SPACE_OBJECT_TEMPLATE = police.BerlinPoliceOutpost
+    SPACE_OBJECT_TEMPLATE = rheinland_military.KelnShort
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.RheinlandMilitaryDealers
 

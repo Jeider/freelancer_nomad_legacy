@@ -32,6 +32,14 @@ LI_FIGHTER = 'suprise_li_fighter'
 LI_ELITE = 'suprise_li_elite'
 LI_FREIGHTER = 'suprise_li_freighter'
 
+BR_FIGHTER = 'suprise_br_fighter'
+BR_ELITE = 'suprise_br_elite'
+BR_FREIGHTER = 'suprise_br_freighter'
+
+PI_FIGHTER = 'suprise_pi_fighter'
+PI_ELITE = 'suprise_pi_elite'
+PI_FREIGHTER = 'suprise_pi_freighter'
+
 
 class Suprise(MineableSolar):
     ALIAS = 'suprise'
@@ -93,3 +101,13 @@ class LibertyMiscFighter(Suprise):
 class LibertyMainFighter(Suprise):
     DROP_HARDPOINT = 'HpShield01'
     DEFAULT_ARCHETYPES = [LI_ELITE, LI_FIGHTER]
+
+
+class BreoniaMainFighter(Suprise):
+    DROP_HARDPOINT = 'HpShield01'
+    DEFAULT_ARCHETYPES = [RH_FIGHTER, RH_ELITE]
+
+
+class BretoniaMiscFighter(Suprise):
+    DROP_HARDPOINT = 'HpShield01'
+    DEFAULT_ARCHETYPES = [CO_FIGHTER, CO_ELITE, CO_ELITE2]

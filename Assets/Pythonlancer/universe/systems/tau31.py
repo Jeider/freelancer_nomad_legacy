@@ -12,9 +12,11 @@ from universe.content import mineable
 from templates.nebula import tau31_nebula
 from templates.nebula import exclusion
 from templates.solar import gas_crystal
+from templates.solar import hackable
 
 from templates.dockable import gas_miner
 from templates.dockable import bounty_hunter
+from templates.dockable import upsilon_gasinside
 
 
 class Tau31Member(object):
@@ -79,6 +81,14 @@ EDGE_EXCLUSION_PARAMS = {
     'max_alpha': 0.5,
     'exclusion_tint': '110, 130, 110',
     'fog_far': 5000,
+}
+
+EDGE_EXCLUSION_PARAMS_NEAR = {
+    'zone_shell': exclusion.EDGE_EXCLUSION,
+    'shell_scalar': 1.1,
+    'max_alpha': 0.5,
+    'exclusion_tint': '110, 130, 110',
+    'fog_far': 2500,
 }
 
 
@@ -312,6 +322,14 @@ class Tau31GasPocketsZone2(Tau31Member, zones.AsteroidZone):
     SPACEDUST_MAXPARTICLES = 200
 
 
+class Tau31GasPocketsSpecialZone1(Tau31Member, zones.AsteroidZone):
+    ALIAS = 'pocket'
+    INDEX = 1
+    ASTEROID_DEFINITION_CLASS = Tau31GasPockets
+    SPACEDUST = Dust.ORGANISM
+    SPACEDUST_MAXPARTICLES = 200
+
+
 class Tau31GasMiner1(Tau31Member, Tau31BaseLibertyGasMiner):
     INDEX = 1
     BASE_INDEX = 51
@@ -392,7 +410,6 @@ class Tau31SimpleGasCrystalField5(Tau31Member, Tau31BaseSimpleGasCrystalField):
     ULTRA_BASE = Tau31GasMiner5
 
 
-
 class Tau31AbandonedMiner1(Tau31Member, Tau31BaseAbandonedMiner):
     INDEX = 1
     BASE_INDEX = 60
@@ -443,3 +460,40 @@ class ComplexGasCrystalField1(Tau31Member, Tau31BaseComplexGasCrystalField):
 class ComplexGasCrystalField2(Tau31Member, Tau31BaseComplexGasCrystalField):
     INDEX = 2
     ULTRA_BASE = Tau31AbandonedMiner2
+
+
+class Tau31OldResearchRuins(Tau31Member, main_objects.NotDockableObject):
+    ALIAS = 'ruins'
+    INDEX = 1
+    REL = RIGHT
+
+    SPACE_OBJECT_TEMPLATE = upsilon_gasinside.UpsilonLostResearch
+
+    ASTEROID_ZONES = [
+        Tau31GasPocketsSpecialZone1,
+    ]
+    AST_EXCLUSION_ZONE_SIZE = 3500
+
+    NEBULA_EXCLUSION_ZONE_SIZE = 2500
+    EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS_NEAR
+    NEBULA_ZONES = [Tau31Nebula]
+
+
+class Tau31OldResearchRuinsSuprisePoint1(Tau31Member, main_objects.HackableStation):
+    ALIAS = 'ruins_dock'
+    INDEX = 1
+    BASE_INDEX = 71
+    RELATED_OBJECT = Tau31OldResearchRuins
+    RELATED_OBJECT_INDEX = 0
+    HACKABLE_SOLAR_CLASS = hackable.HackablePrisonRot180
+    INTERIOR_CLASS = interior.EquipDeckInterior
+
+
+class Tau31OldResearchRuinsSuprisePoint2(Tau31Member, main_objects.HackableStation):
+    ALIAS = 'ruins_dock'
+    INDEX = 2
+    BASE_INDEX = 72
+    RELATED_OBJECT = Tau31OldResearchRuins
+    RELATED_OBJECT_INDEX = 1
+    HACKABLE_SOLAR_CLASS = hackable.HackablePrison
+    INTERIOR_CLASS = interior.EquipDeckInterior

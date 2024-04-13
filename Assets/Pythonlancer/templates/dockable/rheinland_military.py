@@ -9,20 +9,12 @@ nickname = rh_biz_05
 pos = 0, 0, 0
 rotate = 0, 180, 0
 archetype = keln_core
-{root_props}
 
 [Object]
 nickname = rh_biz_05_dock01
-pos = 0, 0, -620
-rotate = 0, 180, 0
-archetype = space_police01_front_dock
-{dock_props}
-
-[Object]
-nickname = rh_biz_05_dock02
-pos = 0, 0, 620
-rotate = 0, 0, 0
-archetype = space_police01_front_dock
+pos = -500, 0, 0
+rotate = 0, 90, 0
+archetype = space_shipping01_front_dock
 {dock_props}
 
 [Object]
@@ -414,49 +406,49 @@ parent = rh_biz_05
 
 [Object]
 nickname = rh_biz_05_habitatA02
-pos = 150, 680, 0
+pos = 150, -680, 0
 rotate = 0, 0, 0
 archetype = space_habitat_wide
 parent = rh_biz_05
 
 [Object]
 nickname = rh_biz_05_habitatA03
-pos = 0, 680, -150
+pos = 0, -680, -150
 rotate = 0, 0, 0
 archetype = space_habitat_wide
 parent = rh_biz_05
 
 [Object]
 nickname = rh_biz_05_habitatA04
-pos = 0, 680, 150
+pos = 0, -680, 150
 rotate = 0, 0, 0
 archetype = space_habitat_wide
 parent = rh_biz_05
 
 [Object]
 nickname = rh_biz_05_habitatA05
-pos = -100, 680, -100
+pos = -100, -680, -100
 rotate = 0, 0, 0
 archetype = space_habitat_wide
 parent = rh_biz_05
 
 [Object]
 nickname = rh_biz_05_habitatA06
-pos = -100, 680, 100
+pos = -100, -680, 100
 rotate = 0, 0, 0
 archetype = space_habitat_wide
 parent = rh_biz_05
 
 [Object]
 nickname = rh_biz_05_habitatA07
-pos = 100, 680, -100
+pos = 100, -680, -100
 rotate = 0, 0, 0
 archetype = space_habitat_wide
 parent = rh_biz_05
 
 [Object]
 nickname = rh_biz_05_habitatA08
-pos = 100, 680, 100
+pos = 100, -680, 100
 rotate = 0, 0, 0
 archetype = space_habitat_wide
 parent = rh_biz_05
@@ -490,13 +482,6 @@ archetype = space_girdera
 parent = rh_biz_05
 
 [Object]
-nickname = rh_biz_05_bs01
-pos = 320, 0, 0
-rotate = 0, 0, 0
-archetype = r_battleship
-parent = rh_biz_05
-
-[Object]
 nickname = rh_biz_05_ctrl_block02
 pos = 0, -99, 620
 rotate = 180, 0, 0
@@ -508,5 +493,129 @@ nickname = rh_biz_05_ctrl_block03
 pos = 0, -99, -620
 rotate = 180, 0, 0
 archetype = space_small_control_block
+parent = rh_biz_05
+'''
+
+
+
+class KelnShort(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'rh_biz_05'
+    TEMPLATE = '''[Object]
+nickname = rh_biz_05
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = space_police01
+{dock_props}
+
+[Object]
+nickname = rh_biz_05_girder01
+pos = 0, -230, 0
+rotate = 90, 0, 0
+archetype = space_girder
+parent = rh_biz_05
+
+[Object]
+nickname = rh_biz_05_panel01
+pos = 0, -570, 0
+rotate = 180, 0, 0
+archetype = space_station_panelb
+parent = rh_biz_05
+
+[Object]
+nickname = rh_biz_05_shipyard02
+pos = 0, -600, 90
+rotate = 90, 0, 90
+archetype = shipyard
+parent = rh_biz_05
+
+[Object]
+nickname = rh_biz_05_shipyard01
+pos = 0, -600, -90
+rotate = 90, 180, -90
+archetype = shipyard
+parent = rh_biz_05
+
+[Object]
+nickname = rh_biz_05_tanks01
+pos = 0, -800, 0
+rotate = 0, 0, 0
+archetype = space_tanklx4
+parent = rh_biz_05
+
+[Object]
+nickname = rh_biz_05_ctrl_twr01
+pos = 0, -435, 0
+rotate = 0, 0, 0
+archetype = space_control_tower
+parent = rh_biz_05
+
+[Object]
+nickname = rh_biz_05_ctrl_twr02
+pos = 0, -350, 0
+rotate = 0, 0, 0
+archetype = space_control_tower
+parent = rh_biz_05
+
+[Object]
+nickname = rh_biz_05_ctrl_twr03
+pos = 0, -267, 0
+rotate = 180, 0, 0
+archetype = space_control_tower
+parent = rh_biz_05
+
+[Object]
+nickname = rh_biz_05_habitat01
+pos = -150, -350, 0
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = rh_biz_05
+
+[Object]
+nickname = rh_biz_05_habitat02
+pos = 150, -350, 0
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = rh_biz_05
+
+[Object]
+nickname = rh_biz_05_habitat03
+pos = 0, -350, -150
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = rh_biz_05
+
+[Object]
+nickname = rh_biz_05_habitat04
+pos = 0, -350, 150
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = rh_biz_05
+
+[Object]
+nickname = rh_biz_05_habitat05
+pos = -100, -350, -100
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = rh_biz_05
+
+[Object]
+nickname = rh_biz_05_habitat06
+pos = -100, -350, 100
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = rh_biz_05
+
+[Object]
+nickname = rh_biz_05_habitat07
+pos = 100, -350, -100
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = rh_biz_05
+
+[Object]
+nickname = rh_biz_05_habitat08
+pos = 100, -350, 100
+rotate = 0, 0, 0
+archetype = space_habitat_wide
 parent = rh_biz_05
 '''

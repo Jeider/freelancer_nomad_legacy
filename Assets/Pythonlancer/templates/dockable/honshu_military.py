@@ -677,3 +677,321 @@ rotate = 90, 90, 0
 archetype = space_tanks4x4
 parent = ku_hns_02
 '''
+
+class HonshuRefineryEdition(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'ku_hns_02'
+    TEMPLATE = '''[Object]
+nickname = ku_hns_02
+pos = 0, 550, 0
+rotate = 0, 0, 0
+archetype = space_police01
+{dock_props}
+
+[Object]
+nickname = ku_hns_02_panelA03
+pos = -150, 35, -120
+rotate = 15, 0, 0
+archetype = space_station_panelb
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_panelA06
+pos = -150, 35, 120
+rotate = -15, 0, 0
+archetype = space_station_panelb
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_indA08
+pos = -250, -85, -105
+rotate = 0, 90, 0
+archetype = space_industrial02d
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_indA09
+pos = -250, -85, 0
+rotate = 0, 90, 0
+archetype = space_industrial02d
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_indA10
+pos = -250, -85, 105
+rotate = 0, 90, 0
+archetype = space_industrial02d
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_panelB03
+pos = 150, 35, -120
+rotate = 15, 0, 0
+archetype = space_station_panelb
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_panelB06
+pos = 150, 35, 120
+rotate = -15, 0, 0
+archetype = space_station_panelb
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_indB04
+pos = -150, 135, 0
+rotate = 0, 0, 0
+archetype = space_industrial02d
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_indB04c
+pos = 150, 135, 0
+rotate = 0, 0, 0
+archetype = space_industrial02d
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_indB08
+pos = 250, -85, -105
+rotate = 0, 90, 0
+archetype = space_industrial02d
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_indB09
+pos = 250, -85, 0
+rotate = 0, 90, 0
+archetype = space_industrial02d
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_indB10
+pos = 250, -85, 105
+rotate = 0, 90, 0
+archetype = space_industrial02d
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_indB09X
+pos = 250, -273, 0
+rotate = 0, 90, 0
+archetype = space_industrial02d
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_indB09X2
+pos = -250, -273, 0
+rotate = 0, 90, 0
+archetype = space_industrial02d
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_towerA01
+pos = 0, -85, 0
+rotate = 0, 0, 0
+archetype = space_control_tower
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_towerA02
+pos = 0, 135, 0
+rotate = 0, 0, 0
+archetype = space_medium_control_tower
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_towerA03
+pos = 0, 285, 0
+rotate = 0, 0, 0
+archetype = space_medium_control_tower
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_gird01
+pos = 0, 350, 0
+rotate = 90, 0, 0
+archetype = space_girder
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_girdA01
+pos = -80, 105, -125
+rotate = -75, 0, -5
+archetype = space_girder
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_girdA02
+pos = -80, 105, 125
+rotate = 75, 0, -5
+archetype = space_girder
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_girdA03
+pos = 80, 105, -125
+rotate = -75, 0, 5
+archetype = space_girder
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_girdA04
+pos = 80, 105, 125
+rotate = 75, 0, 5
+archetype = space_girder
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_towerB02
+pos = 0, -120, 0
+rotate = 0, 0, 0
+archetype = space_medium_control_tower
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_towerB04
+pos = 0, -273, 0
+rotate = 0, 90, 0
+archetype = space_small_control_tower
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_towerB04
+pos = 1, -273, 0
+rotate = 0, 90, 0
+archetype = space_girder
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_airlockA02
+pos = 0, -220, 0
+rotate = -90, 0, 0
+archetype = space_airlock_dummy
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_habitatB02
+pos = 0, -475, 0
+rotate = 180, 0, 0
+archetype = space_small_control_block
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_habitatB03
+pos = 0, -365, 0
+rotate = 0, 0, 0
+archetype = space_habitat_wide
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_tankX01
+pos = 150, -180, 0
+rotate = -90, 0, 0
+archetype = space_tanks4x4
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_tankX02
+pos = 250, -180, 0
+rotate = -90, 0, 0
+archetype = space_tanks4x4
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_tankX03
+pos = 360, -180, 0
+rotate = -90, 0, 0
+archetype = space_tanks4x4
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_tankX01
+pos = -150, -180, 0
+rotate = -90, 0, 0
+archetype = space_tanks4x4
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_tankX02
+pos = -250, -180, 0
+rotate = -90, 0, 0
+archetype = space_tanks4x4
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_tankX03
+pos = -360, -180, 0
+rotate = -90, 0, 0
+archetype = space_tanks4x4
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_INNER_smlgird01
+pos = -275, -60, 0
+rotate = 0, 0, 0
+archetype = space_girderb
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_INNER_smlgird03
+pos = -130, 110, 10
+rotate = 0, 0, 0
+archetype = space_girderb
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_INNER_smlgird04
+pos = 325, -60, 0
+rotate = 0, 0, 0
+archetype = space_girderb
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_prod01
+pos = -420, -20, -90
+rotate = 0, 90, 0
+archetype = space_large_production
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_prod02
+pos = -420, -20, 90
+rotate = 0, 90, 0
+archetype = space_large_production
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_prod01B
+pos = 420, -20, -90
+rotate = 0, -90, 0
+archetype = space_large_production
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_prod02B
+pos = 420, -20, 90
+rotate = 0, -90, 0
+archetype = space_large_production
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_INNER_tanks01
+pos = 0, 189, 0
+rotate = 90, -30, 0
+archetype = space_tanks4x4
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_INNER_tanks02
+pos = 0, 190, 0
+rotate = 90, 30, 0
+archetype = space_tanks4x4
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_INNER_tanks03
+pos = 0, 191, 0
+rotate = 90, 90, 0
+archetype = space_tanks4x4
+parent = ku_hns_02
+'''

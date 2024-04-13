@@ -725,3 +725,343 @@ rotate = 0, 0, 0
 archetype = shipyard
 parent = li_for_02
 '''
+
+class ForbesManufactoring(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'li_for_02'
+    TEMPLATE = '''[Object]
+nickname = li_for_02
+pos = -205, -120, 0
+rotate = 0, -90, 0
+archetype = prison
+{dock_props}
+
+[Object]
+nickname = li_for_02_tube01
+pos = -335, 10, 1635
+rotate = 0, 180, 0
+archetype = space_short_tube
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_tube02
+pos = -75, 10, 1635
+rotate = 0, 180, 0
+archetype = space_short_tube
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_tube03
+pos = -335, 50, 1635
+rotate = 0, 180, 0
+archetype = space_short_tube
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_tube04
+pos = -75, -250, 1635
+rotate = 0, 180, 0
+archetype = space_short_tube
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_prison01
+pos = -205, -120, 440
+rotate = 0, -90, 0
+archetype = space_prison_dummy
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_prod01
+pos = 110, -170, 600
+rotate = 0, -90, 0
+archetype = space_large_production
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_prod02
+pos = 110, -170, 400
+rotate = 0, -90, 0
+archetype = space_large_production
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_prod03
+pos = 110, -170, 200
+rotate = 0, -90, 0
+archetype = space_large_production
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_prod04
+pos = 110, -170, 0
+rotate = 0, -90, 0
+archetype = space_large_production
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_prod01b
+pos = -510, -170, 600
+rotate = 0, 90, 0
+archetype = space_large_production
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_prod02b
+pos = -510, -170, 400
+rotate = 0, 90, 0
+archetype = space_large_production
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_prod03b
+pos = -510, -170, 200
+rotate = 0, 90, 0
+archetype = space_large_production
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_prod04b
+pos = -510, -170, 0
+rotate = 0, 90, 0
+archetype = space_large_production
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S1_ind01
+pos = -205, -120, 1635
+rotate = 0, 0, 45
+archetype = space_industriala
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S1_ind02
+pos = -335, 10, 1635
+rotate = 45, 90, 0
+archetype = space_industrial02a
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S1_ind03
+pos = -75, 10, 1635
+rotate = 0, 90, 45
+archetype = space_industrial02a
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S1_ind04
+pos = -335, -250, 1635
+rotate = 0, 90, 45
+archetype = space_industrial02a
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S1_ind05
+pos = -75, -250, 1635
+rotate = 0, 90, -45
+archetype = space_industrial02a
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S1_ind06
+pos = -505, -120, 1635
+rotate = 0, 90, 0
+archetype = space_industrial01a
+loadout = space_ind01_reactor
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S1_ind07
+pos = 95, -120, 1635
+rotate = 0, 90, 0
+archetype = space_industrial01a
+loadout = space_ind01_reactor
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S1_girder01
+pos = -205, -120, 1635
+rotate = 0, 90, 0
+archetype = space_girder
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S2_ind01
+pos = -205, -120, 1385
+rotate = 0, 0, 45
+archetype = space_industriala
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S2_ind02
+pos = -335, 10, 1385
+rotate = 45, 90, 0
+archetype = space_industrial02a
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S2_ind03
+pos = -75, 10, 1385
+rotate = 0, 90, 45
+archetype = space_industrial02a
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S2_ind04
+pos = -335, -250, 1385
+rotate = 0, 90, 45
+archetype = space_industrial02a
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S2_ind05
+pos = -75, -250, 1385
+rotate = 0, 90, -45
+archetype = space_industrial02a
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S2_ind06
+pos = -505, -120, 1385
+rotate = 0, 90, 0
+archetype = space_industrial01a
+loadout = space_ind01_reactor
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S2_ind07
+pos = 95, -120, 1385
+rotate = 0, 90, 0
+archetype = space_industrial01a
+loadout = space_ind01_reactor
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S2_girder01
+pos = -205, -120, 1385
+rotate = 0, 90, 0
+archetype = space_girder
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S3_ind01
+pos = -205, -120, 1135
+rotate = 0, 0, 45
+archetype = space_industriala
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S3_ind02
+pos = -335, 10, 1135
+rotate = 45, 90, 0
+archetype = space_industrial02a
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S3_ind03
+pos = -75, 10, 1135
+rotate = 0, 90, 45
+archetype = space_industrial02a
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S3_ind04
+pos = -335, -250, 1135
+rotate = 0, 90, 45
+archetype = space_industrial02a
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S3_ind05
+pos = -75, -250, 1135
+rotate = 0, 90, -45
+archetype = space_industrial02a
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S3_ind06
+pos = -505, -120, 1135
+rotate = 0, 90, 0
+archetype = space_industrial01a
+loadout = space_ind01_reactor
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S3_ind07
+pos = 95, -120, 1135
+rotate = 0, 90, 0
+archetype = space_industrial01a
+loadout = space_ind01_reactor
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S3_girder01
+pos = -205, -120, 1135
+rotate = 0, 90, 0
+archetype = space_girder
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S4_ind01
+pos = -205, -120, 885
+rotate = 0, 0, 45
+archetype = space_industriala
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S4_ind01b
+pos = -205, -120, 631
+rotate = 0, 0, 45
+archetype = space_industrialc
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S4_ind02
+pos = -335, 10, 885
+rotate = 45, 90, 0
+archetype = space_industrial02a
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S4_ind03
+pos = -75, 10, 885
+rotate = 0, 90, 45
+archetype = space_industrial02a
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S4_ind04
+pos = -335, -250, 885
+rotate = 0, 90, 45
+archetype = space_industrial02a
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S4_ind05
+pos = -75, -250, 885
+rotate = 0, 90, -45
+archetype = space_industrial02a
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S4_ind06
+pos = -505, -120, 885
+rotate = 0, 90, 0
+archetype = space_industrial01a
+loadout = space_ind01_reactor
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S4_ind07
+pos = 95, -120, 885
+rotate = 0, 90, 0
+archetype = space_industrial01a
+loadout = space_ind01_reactor
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S4_girder01
+pos = -205, -120, 885
+rotate = 0, 90, 0
+archetype = space_girder
+parent = li_for_02
+'''
