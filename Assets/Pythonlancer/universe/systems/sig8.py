@@ -233,11 +233,13 @@ class Sig8Sun(Sigma8Member, main_objects.Sun):
 class Sig8BerlinJumpgate(Sigma8Member, main_objects.Jumpgate):
     INDEX = 1
     REL = TOP
+    TARGET_SYSTEM_NAME = 'rh_ber'
 
 
 class Sig8BizmarkJumpgate(Sigma8Member, main_objects.Jumpgate):
     INDEX = 2
     REL = BOTTOM
+    TARGET_SYSTEM_NAME = 'rh_biz'
 
 
 class Sig8Station(Sigma8Member, main_objects.Station):

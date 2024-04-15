@@ -270,11 +270,13 @@ class Tau4LinerSupriseRewardField2(Tau4Member, Tau4BaseLinerSupriseRewardField):
 class Tau4KyushuJumpgate(Tau4Member, main_objects.Jumpgate):
     INDEX = 1
     REL = LEFT
+    TARGET_SYSTEM_NAME = 'ku_ksu'
 
 
 class Tau4HokkaidoJumpgate(Tau4Member, main_objects.Jumpgate):
     INDEX = 2
     REL = RIGHT
+    TARGET_SYSTEM_NAME = 'ku_hkd'
 
 
 class Tau4Station(Tau4Member, main_objects.Station):

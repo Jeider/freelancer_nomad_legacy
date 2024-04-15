@@ -137,16 +137,19 @@ class Bizmark8Sun(BizmarkMember, main_objects.Sun):
 class BizmarkSigma8Jumpgate(BizmarkMember, main_objects.Jumpgate):
     INDEX = 1
     REL = TOP
+    TARGET_SYSTEM_NAME = 'sig8'
 
 
 class BizmarkMunchenJumpgate(BizmarkMember, main_objects.Jumpgate):
     INDEX = 2
     REL = LEFT
+    TARGET_SYSTEM_NAME = 'rh_mnh'
 
 
 class BizmarkOmega15Jumpgate(BizmarkMember, main_objects.Jumpgate):
     INDEX = 3
     REL = BOTTOM
+    TARGET_SYSTEM_NAME = 'om15'
 
 
 class BizmarkDockRing(BizmarkMember, main_objects.Dockring):

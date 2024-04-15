@@ -326,11 +326,13 @@ class Sig17SolarSupriseRewardField2(Sig17Member, Sig17BaseSolarSupriseRewardFiel
 class Sig17NewYorkJumpgate(Sig17Member, main_objects.Jumpgate):
     INDEX = 1
     REL = TOP
+    TARGET_SYSTEM_NAME = 'li_mnh'
 
 
 class Sig17ForbesJumpgate(Sig17Member, main_objects.Jumpgate):
     INDEX = 2
     REL = BOTTOM
+    TARGET_SYSTEM_NAME = 'li_for'
 
 
 class Sig17Freeport(Sig17Member, main_objects.Freeport):

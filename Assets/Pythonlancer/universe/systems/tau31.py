@@ -99,16 +99,19 @@ class Tau31Sun(Tau31Member, main_objects.SunSmall):
 class Tau31ManhattanJumpgate(Tau31Member, main_objects.Jumpgate):
     INDEX = 1
     REL = RIGHT
+    TARGET_SYSTEM_NAME = 'li_mnh'
 
 
 class Tau31Tau37Jumpgate(Tau31Member, main_objects.Jumpgate):
     INDEX = 2
     REL = LEFT
+    TARGET_SYSTEM_NAME = 'tau37'
 
 
 class Tau31ColumbiaJumpgate(Tau31Member, main_objects.Jumpgate):
     INDEX = 3
     REL = BOTTOM
+    TARGET_SYSTEM_NAME = 'li_col'
 
 
 class Tau31Station(Tau31Member, main_objects.Station):

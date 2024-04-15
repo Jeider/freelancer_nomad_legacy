@@ -172,11 +172,13 @@ class CamSun(CamMember, main_objects.Sun):
 class CamTau37Jumpgate(CamMember, main_objects.Jumpgate):
     INDEX = 1
     REL = TOP
+    TARGET_SYSTEM_NAME = 'tau37'
 
 
 class CamTau29Jumpgate(CamMember, main_objects.Jumpgate):
     INDEX = 2
     REL = BOTTOM
+    TARGET_SYSTEM_NAME = 'tau29'
 
 
 class CamDebrisField(mineable.DefaultField):

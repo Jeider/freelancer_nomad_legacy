@@ -290,11 +290,13 @@ class Tau37RoidMinerAsteroids7(Tau37Member, Tau37BaseAsteroidRewardField):
 class Tau37Tau31Jumpgate(Tau37Member, main_objects.Jumpgate):
     INDEX = 1
     REL = RIGHT
+    TARGET_SYSTEM_NAME = 'tau31'
 
 
 class Tau37CambridgeJumpgate(Tau37Member, main_objects.Jumpgate):
     INDEX = 2
     REL = BOTTOM
+    TARGET_SYSTEM_NAME = 'br_cam'
 
 
 class Tau37VirtualPoint1(Tau37Member, main_objects.VirtualDepot):

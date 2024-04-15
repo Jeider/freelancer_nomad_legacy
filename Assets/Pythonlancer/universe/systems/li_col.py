@@ -457,11 +457,13 @@ class ColSolarSupriseRewardField5(ColMember, ColBaseSolarSupriseRewardField):
 class ColSig22Jumpgate(ColMember, main_objects.Jumpgate):
     INDEX = 1
     REL = BOTTOM
+    TARGET_SYSTEM_NAME = 'sig22'
 
 
 class ColTau31Jumpgate(ColMember, main_objects.Jumpgate):
     INDEX = 2
     REL = TOP
+    TARGET_SYSTEM_NAME = 'tau31'
 
 
 class ColDockring(ColMember, main_objects.Dockring):

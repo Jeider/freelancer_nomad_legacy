@@ -1,5 +1,6 @@
 from universe import system
 from universe.content import population
+from universe.content import jump_effect
 
 from universe.systems import rh_ber as rh_ber_content
 from universe.systems import sig13 as sig13_content
@@ -38,6 +39,8 @@ class rh_mnh(system.RheinlandFirst, system.System):
     SYSTEM_FOLDER = 'RH_MUNCHEN'
     ALLOW_SYNC = True
 
+    JUMP_EFFECT = jump_effect.Dark
+
 
 class rh_biz(system.RheinlandFirst, system.System):
     NAME = 'rh_biz'
@@ -46,6 +49,8 @@ class rh_biz(system.RheinlandFirst, system.System):
 
     SYSTEM_FOLDER = 'RH_BIZMARK'
     ALLOW_SYNC = True
+
+    JUMP_EFFECT = jump_effect.Rheinland
 
 
 class rh_stut(system.RheinlandFirst, system.System):
@@ -56,6 +61,8 @@ class rh_stut(system.RheinlandFirst, system.System):
     SYSTEM_FOLDER = 'RH_STUTTGART'
     ALLOW_SYNC = True
 
+    JUMP_EFFECT = jump_effect.Walker
+
 
 class rh_ber(system.RheinlandFirst, system.System):
     NAME = 'rh_ber'
@@ -64,6 +71,8 @@ class rh_ber(system.RheinlandFirst, system.System):
 
     SYSTEM_FOLDER = 'RH_BERLIN'
     ALLOW_SYNC = True
+
+    JUMP_EFFECT = jump_effect.Rheinland
 
 
 class sig8(system.RheinlandFirst, system.System):
@@ -74,6 +83,8 @@ class sig8(system.RheinlandFirst, system.System):
     SYSTEM_FOLDER = 'SIGMA8'
     ALLOW_SYNC = True
 
+    JUMP_EFFECT = jump_effect.Rheinland
+
 
 class om15(system.RheinlandFirst, system.System):
     NAME = 'om15'
@@ -82,6 +93,8 @@ class om15(system.RheinlandFirst, system.System):
 
     SYSTEM_FOLDER = 'OMEGA15'
     ALLOW_SYNC = True
+
+    JUMP_EFFECT = jump_effect.Walker
 
 
 class sig13(system.RheinlandFirst, system.LibertySecond, system.System):
@@ -92,6 +105,8 @@ class sig13(system.RheinlandFirst, system.LibertySecond, system.System):
     SYSTEM_FOLDER = 'SIGMA13'
     ALLOW_SYNC = True
 
+    JUMP_EFFECT = jump_effect.Crow
+
 
 class li_cal(system.LibertyFirst, system.System):
     NAME = 'li_cal'
@@ -100,6 +115,8 @@ class li_cal(system.LibertyFirst, system.System):
 
     SYSTEM_FOLDER = 'LI_CALIFORNIA'
     ALLOW_SYNC = True
+
+    JUMP_EFFECT = jump_effect.Crow
 
 
 class sig22(system.LibertyFirst, system.BretoniaSecond, system.System):
@@ -110,6 +127,8 @@ class sig22(system.LibertyFirst, system.BretoniaSecond, system.System):
     SYSTEM_FOLDER = 'SIGMA22'
     ALLOW_SYNC = True
 
+    JUMP_EFFECT = jump_effect.Dark
+
 
 class li_mnh(system.LibertyFirst, system.System):
     NAME = 'li_mnh'
@@ -119,6 +138,8 @@ class li_mnh(system.LibertyFirst, system.System):
     SYSTEM_FOLDER = 'LI_MANHATTAN'
     ALLOW_SYNC = True
 
+    JUMP_EFFECT = jump_effect.Liberty
+
 
 class li_for(system.LibertyFirst, system.System):
     NAME = 'li_for'
@@ -127,6 +148,8 @@ class li_for(system.LibertyFirst, system.System):
 
     SYSTEM_FOLDER = 'LI_FORBES'
     ALLOW_SYNC = True
+
+    JUMP_EFFECT = jump_effect.Liberty
 
 
 class sig17(system.LibertyFirst, system.System):
@@ -139,6 +162,8 @@ class sig17(system.LibertyFirst, system.System):
 
     FIRST_UNLAWFUL_POPULATION_CLASS = population.CorsairAttackersPopulation
 
+    JUMP_EFFECT = jump_effect.Liberty
+
 
 class li_col(system.LibertyFirst, system.System):
     NAME = 'li_col'
@@ -147,6 +172,8 @@ class li_col(system.LibertyFirst, system.System):
 
     SYSTEM_FOLDER = 'LI_COLUMBIA'
     ALLOW_SYNC = True
+
+    JUMP_EFFECT = jump_effect.Liberty
 
 
 class tau31(system.LibertyFirst, system.System):
@@ -157,6 +184,8 @@ class tau31(system.LibertyFirst, system.System):
     SYSTEM_FOLDER = 'TAU31'
     ALLOW_SYNC = True
 
+    JUMP_EFFECT = jump_effect.Edge
+
 
 class br_wrw(system.BretoniaFirst, system.System):
     NAME = 'br_wrw'
@@ -165,6 +194,8 @@ class br_wrw(system.BretoniaFirst, system.System):
 
     SYSTEM_FOLDER = 'BR_WARWICK'
     ALLOW_SYNC = True
+
+    JUMP_EFFECT = jump_effect.Bretonia
 
 
 class tau29(system.BretoniaFirst, system.System):
@@ -175,6 +206,8 @@ class tau29(system.BretoniaFirst, system.System):
     SYSTEM_FOLDER = 'TAU29'
     ALLOW_SYNC = True
 
+    JUMP_EFFECT = jump_effect.Bretonia
+
 
 class br_cam(system.BretoniaFirst, system.System):
     NAME = 'br_cam'
@@ -183,6 +216,8 @@ class br_cam(system.BretoniaFirst, system.System):
 
     SYSTEM_FOLDER = 'BR_CAMBRIDGE'
     ALLOW_SYNC = True
+
+    JUMP_EFFECT = jump_effect.Bretonia
 
 
 class tau37(system.BretoniaFirst, system.System):
@@ -195,6 +230,8 @@ class tau37(system.BretoniaFirst, system.System):
 
     FIRST_UNLAWFUL_POPULATION_CLASS = population.CorsairAttackersPopulation
 
+    JUMP_EFFECT = jump_effect.Barrier
+
 
 class br_avl(system.BretoniaFirst, system.System):
     NAME = 'br_avl'
@@ -203,6 +240,8 @@ class br_avl(system.BretoniaFirst, system.System):
 
     SYSTEM_FOLDER = 'BR_AVALON'
     ALLOW_SYNC = True
+
+    JUMP_EFFECT = jump_effect.Bretonia
 
 
 class sig42(system.BretoniaFirst, system.KusariSecond, system.System):
@@ -213,6 +252,8 @@ class sig42(system.BretoniaFirst, system.KusariSecond, system.System):
     SYSTEM_FOLDER = 'SIGMA42'
     ALLOW_SYNC = True
 
+    JUMP_EFFECT = jump_effect.Dark
+
 
 class tau23(system.BretoniaFirst, system.KusariSecond, system.System):
     NAME = 'tau23'
@@ -222,6 +263,8 @@ class tau23(system.BretoniaFirst, system.KusariSecond, system.System):
     SYSTEM_FOLDER = 'TAU23'
     ALLOW_SYNC = True
 
+    JUMP_EFFECT = jump_effect.Barrier
+
 
 class ku_ksu(system.KusariFirst, system.System):
     NAME = 'ku_ksu'
@@ -230,6 +273,8 @@ class ku_ksu(system.KusariFirst, system.System):
 
     SYSTEM_FOLDER = 'KU_KYUSHU'
     ALLOW_SYNC = True
+
+    JUMP_EFFECT = jump_effect.Kusari
 
 
 class tau4(system.KusariFirst, system.System):
@@ -242,6 +287,8 @@ class tau4(system.KusariFirst, system.System):
 
     FIRST_UNLAWFUL_POPULATION_CLASS = population.CorsairAttackersPopulation
 
+    JUMP_EFFECT = jump_effect.Kusari
+
 
 class ku_hns(system.KusariFirst, system.System):
     NAME = 'ku_hns'
@@ -250,6 +297,8 @@ class ku_hns(system.KusariFirst, system.System):
 
     SYSTEM_FOLDER = 'KU_HONSHU'
     ALLOW_SYNC = True
+
+    JUMP_EFFECT = jump_effect.Kusari
 
 
 class ku_tgk(system.KusariFirst, system.System):
@@ -260,6 +309,8 @@ class ku_tgk(system.KusariFirst, system.System):
     SYSTEM_FOLDER = 'KU_TAGAKI'
     ALLOW_SYNC = True
 
+    JUMP_EFFECT = jump_effect.Kusari
+
 
 class ku_hkd(system.KusariFirst, system.System):
     NAME = 'ku_hkd'
@@ -269,6 +320,8 @@ class ku_hkd(system.KusariFirst, system.System):
     SYSTEM_FOLDER = 'KU_HOKKAIDO'
     ALLOW_SYNC = True
 
+    JUMP_EFFECT = jump_effect.Kusari
+
 
 class om7(system.KusariFirst, system.RheinlandSecond, system.System):
     NAME = 'om7'
@@ -277,6 +330,8 @@ class om7(system.KusariFirst, system.RheinlandSecond, system.System):
 
     SYSTEM_FOLDER = 'OMEGA7'
     ALLOW_SYNC = True
+
+    JUMP_EFFECT = jump_effect.Walker
 
 
 class co_cur(system.System):

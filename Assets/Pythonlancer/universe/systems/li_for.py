@@ -273,11 +273,13 @@ class ForbesSun(ForbesMember, main_objects.Sun):
 class ForbesSigma13Jumpgate(ForbesMember, main_objects.Jumpgate):
     INDEX = 1
     REL = BOTTOM
+    TARGET_SYSTEM_NAME = 'sig13'
 
 
 class ForbesSigma17Jumpgate(ForbesMember, main_objects.Jumpgate):
     INDEX = 2
     REL = TOP
+    TARGET_SYSTEM_NAME = 'sig17'
 
 
 class ForbesDockring(ForbesMember, main_objects.Dockring):

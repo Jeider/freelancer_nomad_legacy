@@ -333,16 +333,19 @@ class Sig22RewardAsteroids7(Sig22Member, Sig22UnlockAsteroidRewardField):
 class Sig22WarwickJumpgate(Sig22Member, main_objects.Jumpgate):
     INDEX = 1
     REL = LEFT
+    TARGET_SYSTEM_NAME = 'br_wrw'
 
 
 class Sig22CaliforniaJumpgate(Sig22Member, main_objects.Jumpgate):
     INDEX = 2
     REL = RIGHT
+    TARGET_SYSTEM_NAME = 'li_cal'
 
 
 class Sig22ColumbiaJumpgate(Sig22Member, main_objects.Jumpgate):
     INDEX = 3
     REL = TOP
+    TARGET_SYSTEM_NAME = 'li_col'
 
 
 class Sig22Dockring(Sig22Member, Sig22Bretonia, main_objects.Dockring):

@@ -1,11 +1,10 @@
 from universe.content.system_object import SystemObject
 from universe.content.main_objects import RawText, TradeConnection, JumpableObject, DockableObject, StaticObject
 from universe.content import zones
-from universe.content.asteroid_definition import AsteroidDefinition
-from universe.content.mineable import Mineable, RewardField, Field, RewardsGroup
+from universe.content.mineable import Mineable, RewardsGroup
 from universe.content import interior
-from universe.content import faction
 from universe.content import population
+from universe import connection
 
 from text.dividers import DIVIDER
 
@@ -52,6 +51,8 @@ distance = {tlr_distance}
     SECOND_LAWFUL_POPULATION_CLASS = None
     SECOND_UNLAWFUL_POPULATION_CLASS = None
 
+    JUMP_EFFECT = None
+
     ENABLE_POPULATION = True
 
     subclasses = []
@@ -92,6 +93,9 @@ distance = {tlr_distance}
         self.statics_list = []
         self.statics_db = {}
         self.mineable = []
+
+        self.jumpable = []
+        self.lawful_connections = []
 
         self.keys = []
 
@@ -136,6 +140,13 @@ distance = {tlr_distance}
 
         self.process_reward_groups()
 
+    def init_jumpgates(self):
+        for jumpable_item in self.jumpable:
+            jumpable_item.init_connection()
+            if jumpable_item.CONNECTION_KIND == connection.CONNECTION_LAWFUL:
+                self.lawful_connections.append(jumpable_item.target_system)
+
+    def get_content(self):
         system_content = []
 
         for raw_text in self.raw_texts:
@@ -176,10 +187,13 @@ distance = {tlr_distance}
 
         system_content.extend(self.get_mission_vignettes())
 
-        self.system_content_str = DIVIDER.join(system_content)
+        return DIVIDER.join(system_content)
 
     def get_random_hacker_panel(self):
         return self.universe_manager.get_random_hacker_panel()
+
+    def get_universe_root(self):
+        return self.universe_manager.get_universe_root()
 
     def add_trade_connection(self, item):
         self.trade_connections.append(item(self))
@@ -207,6 +221,9 @@ distance = {tlr_distance}
 
         if issubclass(static.__class__, DockableObject) and static.LOCKED_DOCK:
             self.keys.append(static.key)
+
+        if issubclass(static.__class__, JumpableObject):
+            self.jumpable.append(static)
 
     def get_static_by_class(self, item_class):
         return self.statics_db[item_class.get_full_alias()]

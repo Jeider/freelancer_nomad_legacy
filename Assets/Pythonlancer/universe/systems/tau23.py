@@ -106,11 +106,13 @@ class Tau23Sun(Tau23Member, main_objects.SunSmall):
 class Tau23AvalonJumpgate(Tau23Member, main_objects.Jumpgate):
     INDEX = 1
     REL = TOP
+    TARGET_SYSTEM_NAME = 'br_avl'
 
 
 class Tau23KyushuJumpgate(Tau23Member, main_objects.Jumpgate):
     INDEX = 2
     REL = BOTTOM
+    TARGET_SYSTEM_NAME = 'ku_ksu'
 
 
 class Tau23BretoniaStation(Tau23Member, Tau23Bretonia, main_objects.Station):

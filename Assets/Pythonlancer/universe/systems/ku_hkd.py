@@ -324,16 +324,19 @@ class HokkSun(HokkMember, main_objects.Sun):
 class HokkTau4Jumpgate(HokkMember, main_objects.Jumpgate):
     INDEX = 1
     REL = LEFT
+    TARGET_SYSTEM_NAME = 'tau4'
 
 
 class HokkOmega3Jumpgate(HokkMember, main_objects.Jumpgate):
     INDEX = 2
     REL = RIGHT
+    TARGET_SYSTEM_NAME = 'ku_tgk'
 
 
 class HokkOmega7Jumpgate(HokkMember, main_objects.Jumpgate):
     INDEX = 3
     REL = BOTTOM
+    TARGET_SYSTEM_NAME = 'om7'
 
 
 class HokkDockring(HokkMember, main_objects.Dockring):

@@ -419,11 +419,13 @@ class AvalRewardAsteroids3(AvalMember, AvalBackgroundAsteroidRewardField):
 class AvalTau29Jumpgate(AvalMember, main_objects.Jumpgate):
     INDEX = 1
     REL = RIGHT
+    TARGET_SYSTEM_NAME = 'tau29'
 
 
 class AvalTau23Jumpgate(AvalMember, main_objects.Jumpgate):
     INDEX = 2
     REL = BOTTOM
+    TARGET_SYSTEM_NAME = 'tau23'
 
 
 class AvalDockring(AvalMember, main_objects.Dockring):

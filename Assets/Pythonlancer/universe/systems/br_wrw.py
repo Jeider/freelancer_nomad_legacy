@@ -250,16 +250,19 @@ class WarwickSun(WarwickMember, main_objects.Sun):
 class WarwickTau29Jumpgate(WarwickMember, main_objects.Jumpgate):
     INDEX = 1
     REL = LEFT
+    TARGET_SYSTEM_NAME = 'tau29'
 
 
 class WarwickSig22Jumpgate(WarwickMember, main_objects.Jumpgate):
     INDEX = 2
     REL = RIGHT
+    TARGET_SYSTEM_NAME = 'sig22'
 
 
 class WarwickSiriusJumpgate(WarwickMember, main_objects.Jumpgate):
     INDEX = 3
     REL = BOTTOM
+    TARGET_SYSTEM_NAME = 'sig42'
 
 
 class WarwickDockring(WarwickMember, main_objects.Dockring):

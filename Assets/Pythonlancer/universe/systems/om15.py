@@ -319,11 +319,13 @@ class Om15Sun(Omega15Member, main_objects.SunSmall):
 class Om15BizmarkJumpgate(Omega15Member, main_objects.Jumpgate):
     INDEX = 1
     REL = RIGHT
+    TARGET_SYSTEM_NAME = 'rh_biz'
 
 
 class Om15StutJumpgate(Omega15Member, main_objects.Jumpgate):
     INDEX = 2
     REL = LEFT
+    TARGET_SYSTEM_NAME = 'rh_stut'
 
 
 class Om15MiningStation(Omega15Member, main_objects.Station):

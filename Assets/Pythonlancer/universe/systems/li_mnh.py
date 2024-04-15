@@ -17,7 +17,7 @@ from templates.solar import suprise
 from templates.nebula import li_mnh_nebula
 from templates.nebula import exclusion
 
-from templates.dockable import astbase
+from templates.dockable import sphere_megabase
 from templates.dockable import alg
 from templates.dockable import trade_storages
 from templates.dockable import prisons
@@ -237,11 +237,13 @@ class ManhDebrisBoxField4(ManhMember, ManhBaseDebrisBoxRewardField):
 class ManhSig17Jumpgate(ManhMember, main_objects.Jumpgate):
     INDEX = 1
     REL = BOTTOM
+    TARGET_SYSTEM_NAME = 'sig17'
 
 
 class ManhTau31Jumpgate(ManhMember, main_objects.Jumpgate):
     INDEX = 2
     REL = LEFT
+    TARGET_SYSTEM_NAME = 'tau31'
 
 
 class ManhDockring(ManhMember, main_objects.Dockring):
@@ -306,7 +308,7 @@ class ManhPolice(ManhMember, main_objects.Outpost):
 class ManhRefinery(ManhMember, main_objects.Refinery):
     BASE_INDEX = 8
     REL = TOP
-    SPACE_OBJECT_TEMPLATE = alg.AlgBaseHokkaido
+    SPACE_OBJECT_TEMPLATE = sphere_megabase.SphereRefinery
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyCivilianDealers
 

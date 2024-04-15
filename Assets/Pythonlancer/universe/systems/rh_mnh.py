@@ -317,17 +317,27 @@ class MunchSupriseRewardField5(MunchMember, MunchBaseRheinlandSupriseField):
 class MunchBizmarkJumpgate(MunchMember, main_objects.Jumpgate):
     INDEX = 1
     REL = RIGHT
+    TARGET_SYSTEM_NAME = 'rh_biz'
 
 
 class MunchHonshuJumpgate(MunchMember, main_objects.Jumpgate):
     INDEX = 2
     REL = LEFT
+    TARGET_SYSTEM_NAME = 'ku_hns'
+
+#
+# class MunchKoengisbergJumpgate(MunchMember, main_objects.Jumpgate):
+#     INDEX = 3
+#     REL = TOP
+#     LOCKED_DOCK = True
+#     TARGET_SYSTEM_NAME = 'sig13'
 
 
-class MunchKoengisbergJumpgate(MunchMember, main_objects.Jumpgate):
+# TEMPORARY VIRTUAL
+class MunchKoengisbergJumpgate(MunchMember, main_objects.VirtualDepot):
+    ALIAS = 'jg'
     INDEX = 3
     REL = TOP
-    LOCKED_DOCK = True
 
 
 class MunchDockring(MunchMember, main_objects.Dockring):

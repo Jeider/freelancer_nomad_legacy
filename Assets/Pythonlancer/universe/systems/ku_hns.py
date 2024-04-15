@@ -355,16 +355,19 @@ class HonsSolarSupriseRewardField5(HonsMember, HonsBaseSolarSupriseRewardField):
 class HonsTekagiJumpgate(HonsMember, main_objects.Jumpgate):
     INDEX = 1
     REL = BOTTOM
+    TARGET_SYSTEM_NAME = 'ku_tgk'
 
 
 class HonsSiriusJumpgate(HonsMember, main_objects.Jumpgate):
     INDEX = 2
     REL = TOP
+    TARGET_SYSTEM_NAME = 'sig42'
 
 
 class HonsMunchenJumpgate(HonsMember, main_objects.Jumpgate):
     INDEX = 3
     REL = RIGHT
+    TARGET_SYSTEM_NAME = 'rh_mnh'
 
 
 class HonsDockring(HonsMember, main_objects.Dockring):

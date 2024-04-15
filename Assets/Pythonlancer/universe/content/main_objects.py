@@ -6,9 +6,9 @@ from universe.content.system_object import SystemObject, TOP, BOTTOM, LEFT, RIGH
 from universe.content.zones import DynamicZone, DynamicSphereZone, RawZone
 from universe.content import interior
 from universe.content.locked_dock_key import LockedDockKey
-from universe.content import faction
 from universe.content.space_voice import SpaceVoice, SpaceCostume
 from universe.content.loadout import Loadout
+from universe import connection
 
 from text.dividers import SINGLE_DIVIDER, DIVIDER
 
@@ -315,7 +315,82 @@ class RawText(SystemObject):
 
 
 class JumpableObject(StaticObject):
-    pass
+    TARGET_SYSTEM_NAME = None
+    CONNECTION_KIND = connection.CONNECTION_LAWFUL
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.target_system = None
+
+        if self.TARGET_SYSTEM_NAME is None:
+            raise Exception('Jumpgate %s have no target system' % self.__class__.__name__)
+
+    def init_connection(self):
+        self.target_system = self.system.get_universe_root().get_system_by_name(self.TARGET_SYSTEM_NAME)
+
+    def get_target_system(self):
+        if not self.target_system:
+            raise Exception('Jumpgate %s have no initiated connection with system' % self.__class__.__name__)
+
+        return self.target_system
+
+    def get_jump_effect(self):
+        return self.system.JUMP_EFFECT.JUMP_EFFECT
+
+    def get_inspace_nickname(self):
+        return '{system_name}_jg_to_{target_system_name}'.format(
+            system_name=self.system.NAME,
+            target_system_name=self.TARGET_SYSTEM_NAME,
+        )
+
+    def get_target_jumpgate_nickname(self):
+        return '{target_system_name}_jg_to_{system_name}'.format(
+            system_name=self.system.NAME,
+            target_system_name=self.TARGET_SYSTEM_NAME,  # Should not be initialized
+        )
+
+    def get_goto(self):
+        return '{target_system_nickname}, {target_jumpgate_name}, {gate_tunnel}'.format(
+            target_system_nickname=self.get_target_system().NAME,  # Should be initialized
+            target_jumpgate_name=self.get_target_jumpgate_nickname(),
+            gate_tunnel=self.system.JUMP_EFFECT.GATE_TUNNEL
+        )
+
+    def get_inspace_parameters(self):
+        params = super().get_inspace_parameters()
+        params.update({
+            'jump_effect': self.get_jump_effect(),
+            'reputation': self.FACTION,
+            'goto': self.get_goto(),
+        })
+        return params
+
+
+class Jumpgate(JumpableObject):
+    ALIAS = 'jg'
+    REL_DRIFT = 500
+    REL_APPEND = 2000
+
+    IDS_NAME = 196658
+    IDS_INFO = 65551
+    ARCHETYPE = 'jumpgate'
+
+    LOADOUT = 'jumpgate_rh'
+
+    Y_ROTATE_PER_REL = {
+        LEFT: -90,
+        RIGHT: 90,
+        TOP: 180,
+        BOTTOM: 0,
+    }
+
+    DEFENCE_ZONE_SIZE = 4000
+    DEFENCE_LEVEL = DEFENCE_SIMPLE
+
+    CONNECTION_KIND = connection.CONNECTION_LAWFUL
+
+    def get_rotate(self):
+        return (0, self.Y_ROTATE_PER_REL[self.REL], 0)
 
 
 class GenericSphere(StaticObject):
@@ -542,47 +617,6 @@ parent = {parent_planet}'''
             return self.get_position_for_dock_ring()
         else:
             return super().get_position()
-
-
-class Jumpgate(JumpableObject):
-    ALIAS = 'jg'
-    REL_DRIFT = 500
-    REL_APPEND = 2000
-
-    IDS_NAME = 196658
-    IDS_INFO = 65551
-    ARCHETYPE = 'jumpgate'
-
-    JUMP_EFFECT = 'jump_effect_edge'
-    REPUTATION = 'rh_grp'
-    GOTO = 'sig8, sig8_to_ber, gate_tunnel_edge'
-    LOADOUT = 'jumpgate_rh'
-
-    Y_ROTATE_PER_REL = {
-        LEFT: -90,
-        RIGHT: 90,
-        TOP: 180,
-        BOTTOM: 0,
-    }
-
-    DEFENCE_ZONE_SIZE = 4000
-    DEFENCE_LEVEL = DEFENCE_SIMPLE
-
-    def get_inspace_parameters(self):
-        params = super().get_inspace_parameters()
-        params.update({
-            'jump_effect': self.JUMP_EFFECT,
-            'reputation': self.REPUTATION,
-            'goto': self.GOTO,
-            'loadout': self.LOADOUT,
-        })
-        return params
-
-    def get_rotate(self):
-        return (0, self.Y_ROTATE_PER_REL[self.REL], 0)
-
-    def get_inspace_nickname(self):
-        return '{system_name}_jg{index}_test'.format(system_name=self.system.NAME, index=self.INDEX)
 
 
 class Sattelite(StaticObject):

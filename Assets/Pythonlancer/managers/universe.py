@@ -4,7 +4,8 @@ from templates.hardcoded_inis.universe import UniverseTemplate
 from templates.hardcoded_inis.missions import MBasesTemplate
 from templates.hardcoded_inis.root import DockKeyTemplate
 
-from universe.universe import *
+from universe.root import UniverseRoot
+from universe.sirius import *
 from universe.system import System
 from universe.base import Base, EQUIP_CLASSES_PER_LEVEL
 from universe.markets import EquipDealer, ShipDealer
@@ -20,13 +21,13 @@ class UniverseManager(object):
 
     def __init__(self, misc_equip, weapons, shiparch):
         self.hacker_panels_manager = HackerPanelManager()
+        self.universe_root = UniverseRoot()
 
         self.misc_equip = misc_equip
         self.weapons = weapons
         self.shiparch = shiparch
 
         self.systems = []
-        self.system_content_test = []
         self.bases = []
         self.equip_dealers_list = []
         self.ship_dealers_list = []
@@ -48,12 +49,14 @@ class UniverseManager(object):
     def get_random_hacker_panel(self):
         return self.hacker_panels_manager.get_random_hacker_panel()
 
+    def get_universe_root(self):
+        return self.universe_root
+
     def load_systems(self):
         for system in System.subclasses:
             if system.CONTENT:
                 system = system(self)
-                self.systems.append(system)
-                self.system_content_test.append(system.system_content_str)
+                self.universe_root.add_system(system)
                 self.loadouts += system.loadouts
                 self.asteroid_definitions += system.asteroid_definitions
                 self.templated_nebulas += system.templated_nebulas
@@ -77,7 +80,6 @@ class UniverseManager(object):
             if len(base.SHIPS) > 0:
                 dealer = ShipDealer(base.NAME, [self.shiparch.get_ship_by_archetype(ship.ARCHETYPE) for ship in base.SHIPS])
                 self.ship_dealers_list.append(dealer)
-
 
     def load_base_equip_items(self, base):
         items = []
@@ -116,9 +118,6 @@ class UniverseManager(object):
 
     def get_market_ships(self):
         return DIVIDER.join([dealer.get_market_content() for dealer in self.ship_dealers_list])
-
-    def get_system_content_test(self):
-        return DIVIDER.join(self.system_content_test)
 
     def get_system_loadouts(self):
         return DIVIDER.join([loadout.build_loadout() for loadout in self.loadouts])
@@ -161,12 +160,12 @@ class UniverseManager(object):
         DataFolder.sync_mbases(self.get_mbases_file_content())
         DataFolder.sync_dock_key(self.get_dock_key_file_content())
 
-        for system in self.systems:
+        for system in self.universe_root.get_systems():
             if not system.ALLOW_SYNC:
                 continue
 
             # print(f'sync sys {system.NAME}')
-            DataFolder.sync_system_mod(system.NAME, system.SYSTEM_FOLDER, system.system_content_str)
+            DataFolder.sync_system_mod(system.NAME, system.SYSTEM_FOLDER, system.get_content())
 
         # print('sync solar gen loadouts')
         DataFolder.sync_solar_gen_loadouts(self.get_system_loadouts())
@@ -182,5 +181,3 @@ class UniverseManager(object):
         for file_name, content in self.interior_files.items():
             # print(f'sync interior {file_name}')
             DataFolder.sync_interior(file_name, content)
-
-

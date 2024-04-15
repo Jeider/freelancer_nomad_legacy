@@ -315,11 +315,13 @@ class CalRoidMinerAsteroids9(CalMember, CalBaseAsteroidRewardField):
 class CalSig13Jumpgate(CalMember, main_objects.Jumpgate):
     INDEX = 1
     REL = RIGHT
+    TARGET_SYSTEM_NAME = 'sig13'
 
 
 class CalSig22Jumpgate(CalMember, main_objects.Jumpgate):
     INDEX = 2
     REL = LEFT
+    TARGET_SYSTEM_NAME = 'sig22'
 
 
 class CalVirtualPoint1(CalMember, main_objects.VirtualDepot):

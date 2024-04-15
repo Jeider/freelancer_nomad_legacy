@@ -313,11 +313,13 @@ class TekagiRoidMinerAsteroids10(TekagiMember, TekagiBaseAsteroidRewardField):
 class TekagiHonshuJumpgate(TekagiMember, main_objects.Jumpgate):
     INDEX = 1
     REL = RIGHT
+    TARGET_SYSTEM_NAME = 'ku_hns'
 
 
 class TekagiHokkaidoJumpgate(TekagiMember, main_objects.Jumpgate):
     INDEX = 2
     REL = LEFT
+    TARGET_SYSTEM_NAME = 'ku_hkd'
 
 
 class TekagiLargeStation(TekagiMember, main_objects.Station):

@@ -1,0 +1,2 @@
+CONNECTION_LAWFUL = 'lawful'
+CONNECTION_UNLAWFUL = 'unlawful'

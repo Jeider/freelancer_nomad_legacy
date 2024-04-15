@@ -124,16 +124,19 @@ class Sig13Sun(Sig13Member, main_objects.SunSmall):
 class Sig13ForbesJumpgate(Sig13Member, main_objects.Jumpgate):
     INDEX = 1
     REL = TOP
+    TARGET_SYSTEM_NAME = 'li_for'
 
 
 class Sig13CaliforniaJumpgate(Sig13Member, main_objects.Jumpgate):
     INDEX = 2
     REL = LEFT
+    TARGET_SYSTEM_NAME = 'li_cal'
 
 
 class Sig13BerlinJumpgate(Sig13Member, main_objects.Jumpgate):
     INDEX = 3
     REL = BOTTOM
+    TARGET_SYSTEM_NAME = 'rh_ber'
 
 
 class Sig13LibertyStation(Sig13Member, Sig13Liberty, main_objects.Station):

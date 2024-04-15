@@ -318,16 +318,19 @@ class Tau29RingRuinsSuprisePoint(Tau29Member, main_objects.HackableStation):
 class Tau29CambridgeJumpgate(Tau29Member, main_objects.Jumpgate):
     INDEX = 1
     REL = TOP
+    TARGET_SYSTEM_NAME = 'br_cam'
 
 
 class Tau29AvalonJumpgate(Tau29Member, main_objects.Jumpgate):
     INDEX = 2
     REL = LEFT
+    TARGET_SYSTEM_NAME = 'br_avl'
 
 
 class Tau29WarwickJumpgate(Tau29Member, main_objects.Jumpgate):
     INDEX = 3
     REL = RIGHT
+    TARGET_SYSTEM_NAME = 'br_wrw'
 
 
 class Tau29VirtualPoint1(Tau29Member, main_objects.VirtualDepot):

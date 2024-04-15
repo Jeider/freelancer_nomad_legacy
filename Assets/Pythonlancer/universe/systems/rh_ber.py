@@ -240,11 +240,13 @@ class BerlinSun(BerlinMember, main_objects.Sun):
 class BerlinSigma13Jumpgate(BerlinMember, main_objects.Jumpgate):
     INDEX = 1
     REL = TOP
+    TARGET_SYSTEM_NAME = 'sig13'
 
 
 class BerlinSigma8Jumpgate(BerlinMember, main_objects.Jumpgate):
     INDEX = 2
     REL = BOTTOM
+    TARGET_SYSTEM_NAME = 'sig8'
 
 
 class BerlinDockring(BerlinMember, main_objects.Dockring):

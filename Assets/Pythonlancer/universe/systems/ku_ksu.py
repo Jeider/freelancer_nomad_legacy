@@ -299,11 +299,13 @@ class KyushuSun2(KyushuMember, main_objects.Sun):
 class KyushuTau4Jumpgate(KyushuMember, main_objects.Jumpgate):
     INDEX = 1
     REL = LEFT
+    TARGET_SYSTEM_NAME = 'tau4'
 
 
 class KyushuTau23Jumpgate(KyushuMember, main_objects.Jumpgate):
     INDEX = 2
     REL = RIGHT
+    TARGET_SYSTEM_NAME = 'tau23'
 
 
 class KyushuDockring(KyushuMember, main_objects.Dockring):

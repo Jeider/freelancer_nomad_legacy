@@ -120,11 +120,13 @@ class Sig42Sun2(Sig42Member, main_objects.Sun):
 class Sig42WarwickJumpgate(Sig42Member, main_objects.Jumpgate):
     INDEX = 1
     REL = TOP
+    TARGET_SYSTEM_NAME = 'br_wrw'
 
 
 class Sig42HonshuJumpgate(Sig42Member, main_objects.Jumpgate):
     INDEX = 2
     REL = BOTTOM
+    TARGET_SYSTEM_NAME = 'ku_hns'
 
 
 class Sig42AsteroidDefinition1(asteroid_definition.CuracaoAsteroidDefinition):

@@ -329,11 +329,13 @@ class StutSun(StutMember, main_objects.Sun):
 class StutOmega15Jumpgate(StutMember, main_objects.Jumpgate):
     INDEX = 1
     REL = RIGHT
+    TARGET_SYSTEM_NAME = 'om15'
 
 
 class StutOmega7Jumpgate(StutMember, main_objects.Jumpgate):
     INDEX = 2
     REL = LEFT
+    TARGET_SYSTEM_NAME = 'om7'
 
 
 class StutDockring(StutMember, main_objects.Dockring):
