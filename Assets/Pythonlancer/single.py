@@ -1,5 +1,9 @@
 import sys
 
+from files.writer import FileWriter
+
+from story.missions import mission9
+
 from tools import merge_image
 from tools import data_folder
 
@@ -45,6 +49,13 @@ def get_frames_ints():
         print(item)
 
 
+def test_story():
+    msn = mission9.Mission9()
+    content = msn.get_story_script()
+    FileWriter.write('mission9.html', content)
+    print(content)
+
+
 ACTIONS = {
     'generate_hacker_panels': generate_hacker_panels,
     'test_hacker_colors': test_hacker_colors,
@@ -52,6 +63,7 @@ ACTIONS = {
     'build_image': build_image,
     'get_frames': get_frames,
     'get_frames_ints': get_frames_ints,
+    'test_story': test_story,
 }
 
 

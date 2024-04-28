@@ -616,7 +616,7 @@ LODranges = {lod_ranges}'''
         factor = 0
 
         if self.EXTRA_SHIELD_DAMAGE_FACTOR > 0:
-            factor += self.self.EXTRA_SHIELD_DAMAGE_FACTOR
+            factor += self.EXTRA_SHIELD_DAMAGE_FACTOR
 
         if self.faction == Equipment.FACTION_KU:
             factor += 0.1
@@ -714,6 +714,190 @@ dry_fire_sound = fire_dry'''
 
 
 
+
+x = '''
+
+
+[Motor]
+nickname = missile01_mark01_motor
+lifetime = 2.750000
+accel = 22.038601
+delay = 0
+
+[Explosion]
+nickname = missile01_mark01_explosion
+effect = li_missile02_impact
+lifetime = 0.000000, 0.000000
+process = disappear
+strength = 100
+radius = 16
+hull_damage = 489
+energy_damage = 0
+impulse = 0
+
+[Munition]
+nickname = missile01_mark01_ammo
+explosion_arch = missile01_mark01_explosion
+loot_appearance = ammo_crate
+units_per_container = 10
+hp_type = hp_gun
+requires_ammo = true
+hit_pts = 2
+one_shot_sound = fire_missile_regular
+detonation_dist = 4
+lifetime = 13.750000
+Motor = missile01_mark01_motor
+force_gun_ori = false
+const_effect = li_missile02_drive
+HP_trail_parent = HPExhaust
+seeker = LOCK
+time_to_lock = 0
+seeker_range = 1000
+seeker_fov_deg = 35
+max_angular_velocity = 2.903330
+DA_archetype = equipment\models\weapons\li_rad_missile.3db
+material_library = equipment\models\li_equip.mat
+ids_name = 265147
+ids_info = 266147
+mass = 1
+volume = 0.000000
+
+[Gun]
+nickname = missile01_mark01
+ids_name = 263147
+ids_info = 264147
+DA_archetype = equipment\models\weapons\li_rad_launcher.cmp
+material_library = equipment\models\li_equip.mat
+HP_child = HPConnect
+hit_pts = 400
+explosion_resistance = 1.000000
+debris_type = debris_normal
+parent_impulse = 20
+child_impulse = 80
+volume = 0.000000
+mass = 1
+hp_gun_type = hp_gun_special_1
+damage_per_fire = 0
+power_usage = 0
+refire_delay = 2
+muzzle_velocity = 30.299999
+toughness = 2.400000
+projectile_archetype = missile01_mark01_ammo
+dry_fire_sound = fire_dry
+separation_explosion = sever_debris
+auto_turret = false
+turn_rate = 90
+lootable = true
+LODranges = 0, 20, 60, 100
+'''
+
+# Lancer
+# Stalker
+# Torpedo
+
+
+class StalkerMissileLauncher(Weapon):
+    MOTOR_LIFETIME = 2.75
+    MOTOR_ACCEL = 22.038601
+    MOTOR_DELAY = 0
+
+    EXPLOSION_FX = None
+    EXPLOSION_RADIUS = 16
+    EXPLOSION_HULL_DAMAGE = 500
+    EXPLOSION_ENERGY_DAMAGE = 0
+
+    CONST_EFFECT = 'li_missile02_drive'
+
+    LOOT_APPEARANCE = 'ammo_crate'
+    UNITS_PER_CONTAINER = 10
+    AMMO_LIMIT = 50
+    ONE_SHOT_SOUND = 'fire_missile_regular'
+    DETONATION_DIST = 4
+    MUNITION_LIFETIME = 13.75
+
+    SEEKER_RANGE = 1000
+
+    MOTOR_ROOT  = '[Motor]'
+    MOTOR_DEFAULT_PARAMS = ['delay = 0']
+
+    def get_motor(self):
+        params = [
+            self.MOTOR_ROOT,
+            
+        ] + self.MOTOR_DEFAULT_PARAMS
+        params = [
+            ('')
+        ]
+
+        params.append(
+
+        )
+
+#
+# [Motor]
+# nickname = missile01_mark01_motor
+# lifetime = 2.750000
+# accel = 22.038601
+# delay = 0
+
+
+
+x = '''
+[Munition]
+nickname = missile01_mark01_ammo
+explosion_arch = missile01_mark01_explosion
+loot_appearance = ammo_crate
+units_per_container = 10
+hp_type = hp_gun
+requires_ammo = true
+hit_pts = 2
+one_shot_sound = fire_missile_regular
+detonation_dist = 4
+lifetime = 13.750000
+Motor = missile01_mark01_motor
+force_gun_ori = false
+const_effect = li_missile02_drive
+HP_trail_parent = HPExhaust
+seeker = LOCK
+time_to_lock = 0
+seeker_range = 1000
+seeker_fov_deg = 35
+max_angular_velocity = 2.903330
+DA_archetype = equipment\models\weapons\li_rad_missile.3db
+material_library = equipment\models\li_equip.mat
+ids_name = 265147
+ids_info = 266147
+mass = 1
+volume = 0.000000
+
+[Gun]
+nickname = missile01_mark01
+ids_name = 263147
+ids_info = 264147
+DA_archetype = equipment\models\weapons\li_rad_launcher.cmp
+material_library = equipment\models\li_equip.mat
+HP_child = HPConnect
+hit_pts = 400
+explosion_resistance = 1.000000
+debris_type = debris_normal
+parent_impulse = 20
+child_impulse = 80
+volume = 0.000000
+mass = 1
+hp_gun_type = hp_gun_special_1
+damage_per_fire = 0
+power_usage = 0
+refire_delay = 2
+muzzle_velocity = 30.299999
+toughness = 2.400000
+projectile_archetype = missile01_mark01_ammo
+dry_fire_sound = fire_dry
+separation_explosion = sever_debris
+auto_turret = false
+turn_rate = 90
+lootable = true
+LODranges = 0, 20, 60, 100
+'''
 
 class MissileLauncher(Weapon):
     EXTRA = ['dry_fire_sound = fire_dry']
