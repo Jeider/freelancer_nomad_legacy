@@ -1,6 +1,7 @@
 from fx.space import Dust
 from fx.sound import Ambience
 
+from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
 from universe.content import zones
@@ -29,9 +30,7 @@ from templates.dockable import cambridge_research
 from templates.dockable import station_debris
 
 
-class CamMember(object):
-    INDEX = 1
-    ABSTRACT = False
+class CamMember(Member):
     FACTION = faction.BR_GRP
 
 

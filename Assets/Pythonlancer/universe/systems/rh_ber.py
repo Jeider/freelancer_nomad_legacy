@@ -1,6 +1,7 @@
 from fx.space import Dust
 from fx.sound import Ambience
 
+from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
 from universe.content import zones
@@ -27,10 +28,8 @@ from templates.solar import asteroid
 from templates.solar import debris_box
 
 
-class BerlinMember(object):
-    INDEX = 1
+class BerlinMember(Member):
     FACTION = faction.RH_GRP
-    ABSTRACT = False
 
 
 class BerlinStaticText(BerlinMember, main_objects.RawText):
@@ -210,17 +209,17 @@ class BerlinBaseDebrisBoxRewardField(mineable.DebrisBoxRewardField):
 
 
 class BerlinDebrisBoxField1(BerlinMember, BerlinBaseDebrisBoxRewardField):
-    INDEX = 1
+    INDEX = 2
     ULTRA_BASE = BerlinDebrisFactory1
 
 
 class BerlinDebrisBoxField2(BerlinMember, BerlinBaseDebrisBoxRewardField):
-    INDEX = 2
+    INDEX = 3
     ULTRA_BASE = BerlinDebrisFactory2
 
 
 class BerlinDebrisBoxField3(BerlinMember, BerlinBaseDebrisBoxRewardField):
-    INDEX = 3
+    INDEX = 4
     ULTRA_BASE = BerlinDebrisFactory3
 
 
@@ -351,7 +350,7 @@ class BerlinPiratesBottom(BerlinMember, main_objects.PirateBase):
 
 
 class BerlinPlanet1(BerlinMember, main_objects.Planet):
-    ARCHETYPE = 'planet_desormed_4000'
+    ARCHETYPE = 'planet_earthind_4000'
     SPHERE_RADIUS = 4000
     RELATED_DOCK_RING = BerlinDockring
 
@@ -438,7 +437,7 @@ class BerConnTrading1(BerlinMember, main_objects.TradeConnection):
 
 class BerConnTrading2(BerlinMember, main_objects.TradeConnection):
     OBJ_FROM = BerlinTrading
-    OBJ_TO = BerlinSigma13Jumpgate
+    OBJ_TO = BerlinSigma8Jumpgate
     SIDE_FROM = TOP
     SIDE_TO = BOTTOM
     TRADELANE_LETTER = 'F'

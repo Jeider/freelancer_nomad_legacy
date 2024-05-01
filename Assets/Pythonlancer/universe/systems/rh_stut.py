@@ -1,6 +1,7 @@
 from fx.space import Dust
 from fx.sound import Ambience
 
+from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
 from universe.content import zones
@@ -23,11 +24,8 @@ from templates.dockable import stuttgart_megabase
 from templates.dockable import bounty_hunter
 
 
-class StutMember(object):
-    INDEX = 1
-    ABSTRACT = False
+class StutMember(Member):
     FACTION = faction.RH_GRP
-
     INTERIOR_BG1 = interior.INTERIOR_RH_STUTTGART
 
 
@@ -428,7 +426,7 @@ class StutJunkers(StutMember, main_objects.PirateBase):
 
 
 class StutPlanet1(StutMember, main_objects.Planet):
-    ARCHETYPE = 'planet_earthcity_3000'
+    ARCHETYPE = 'planet_earthgrnice_3000'
     SPHERE_RADIUS = 3000
     RELATED_DOCK_RING = StutDockring
 

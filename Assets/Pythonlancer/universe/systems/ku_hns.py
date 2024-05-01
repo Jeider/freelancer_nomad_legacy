@@ -1,6 +1,7 @@
 from fx.space import Dust
 from fx.sound import Ambience
 
+from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
 from universe.content import zones
@@ -28,11 +29,8 @@ from templates.dockable import junker
 from templates.dockable import cambridge_research
 
 
-class HonsMember(object):
-    INDEX = 1
-    ABSTRACT = False
+class HonsMember(Member):
     FACTION = faction.KU_GRP
-
     INTERIOR_BG1 = interior.INTERIOR_KU_HONSHU
 
 

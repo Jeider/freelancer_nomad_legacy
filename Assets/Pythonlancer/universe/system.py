@@ -88,6 +88,7 @@ distance = {tlr_distance}
         self.dynamic_zones = []
 
         self.trade_connections = []
+        self.trade_connections_db = {}
 
         self.raw_texts = []
         self.statics_list = []
@@ -114,6 +115,8 @@ distance = {tlr_distance}
 
             if item.ABSTRACT:
                 continue
+
+            item.SYSTEM_NAME = self.NAME
 
             if issubclass(item, RewardsGroup):
                 reward_group_instance = item(self)
@@ -196,7 +199,9 @@ distance = {tlr_distance}
         return self.universe_manager.get_universe_root()
 
     def add_trade_connection(self, item):
-        self.trade_connections.append(item(self))
+        trade_conn = item(self)
+        self.trade_connections.append(trade_conn)
+        self.trade_connections_db[item.__name__]  = trade_conn
 
     def add_raw_text(self, item):
         self.raw_texts.append(item(self))
@@ -227,6 +232,9 @@ distance = {tlr_distance}
 
     def get_static_by_class(self, item_class):
         return self.statics_db[item_class.get_full_alias()]
+
+    def get_trade_connection_by_class(self, item_class):
+        return self.trade_connections_db[item_class.__name__]
 
     def add_mineable(self, item):
         self.mineable.append(item(self))
@@ -436,6 +444,12 @@ distance = {tlr_distance}
                     encounter_names.add(enc_name)
 
         return DIVIDER.join([enc.get_definition() for enc in encounters])
+
+    def get_point_pos(self, name):
+        return self.template.get_item_pos(name)
+
+    def get_point_rotate(self, name):
+        return self.template.get_item_rotate(name)
 
 
 class RheinlandFirst(object):

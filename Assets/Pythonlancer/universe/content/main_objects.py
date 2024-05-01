@@ -1211,11 +1211,14 @@ pilot = pilot_solar_hard
     def get_tradelane_pos(self):
         return self.tracks_raw_tradelane.lines[POS_KEY]
 
+    def get_tradelane_rotate(self):
+        return self.tracks_raw_tradelane.lines[ROT_KEY]
+
     def get_system_object(self):
         template_params = {
             'ring_nickname': self.get_ring_nickname(),
-            'pos': '{0}, {1}, {2}'.format(*self.tracks_raw_tradelane.lines[POS_KEY]),
-            'rotate': '{0}, {1}, {2}'.format(*self.tracks_raw_tradelane.lines[ROT_KEY]),
+            'pos': '{0}, {1}, {2}'.format(*self.get_tradelane_pos()),
+            'rotate': '{0}, {1}, {2}'.format(*self.get_tradelane_rotate()),
             'faction': self.trade_connection.FACTION,
         }
 

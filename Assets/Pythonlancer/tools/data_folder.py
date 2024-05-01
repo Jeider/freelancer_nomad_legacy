@@ -104,3 +104,13 @@ class DataFolder(object):
     def sync_dock_key(cls, content):
         equip_file = cls.get_root() / 'dock_key.ini'
         equip_file.write_text(content, encoding='utf-8')
+
+    @classmethod
+    def sync_story_mission(cls, folder, file, content):
+        equip_file = cls.get_missions() / folder / f'{file}.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    @classmethod
+    def sync_story_ingame_thorn(cls, file, content):
+        equip_file = cls.get_missions() / 'GENERATED_THORN' / f'{file}.thn'
+        equip_file.write_text(content, encoding='utf-8')

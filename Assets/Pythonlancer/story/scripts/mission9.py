@@ -1,9 +1,9 @@
-from story import mission
+from story import script
 from story.voiceline import VoiceLine
 from story.actors import Trent, Hatcher, Darcy, Hassler, Yamamoto, Kim
 
 
-class Msn9OfferCutscene(mission.CutsceneProps):
+class Msn9OfferCutscene(script.CutsceneProps):
     ALIAS = 'offer'
     TITLE = 'Бар планеты Хонсю'
     DESCRIPTION = 'Трент и Дерси находят Хетчер в баре на планете Хонсю. Сцена происходит стоя у барной стойки'
@@ -182,7 +182,7 @@ class Msn9YokohamaCutscene(mission.CutsceneProps):
     ]
 
 
-class Msn9OrderCutscene(mission.CutsceneProps):
+class Msn9OrderCutscene(script.CutsceneProps):
     ALIAS = 'order'
     TITLE = 'Нижний бар станции Йокогама'
     DESCRIPTION = 'Лифт открывается. Энергичная музыка, треш, угар и прочие штуки. Стриптизерши танцуют. Герои входят'
@@ -364,7 +364,7 @@ class Msn9OrderCutscene(mission.CutsceneProps):
     ]
 
 
-class Msn9RewardCutscene(mission.CutsceneProps):
+class Msn9RewardCutscene(script.CutsceneProps):
     ALIAS = 'reward'
     TITLE = 'Верхний бар станции Йокогама'
     DESCRIPTION = 'Трент и Дерси подходит к Хасслеру'
@@ -392,7 +392,7 @@ class Msn9RewardCutscene(mission.CutsceneProps):
     ]
 
 
-class Msn9Space(mission.SpaceVoiceProps):
+class Msn9Space(script.SpaceVoiceProps):
     VOICE_LINES = [
         VoiceLine(
             0,
@@ -402,7 +402,7 @@ class Msn9Space(mission.SpaceVoiceProps):
     ]
 
 
-class Mission9(mission.StoryMission):
+class Mission9(script.StoryMission):
     MISSION_INDEX = 9
     CUTSCENES = [
         Msn9OfferCutscene,

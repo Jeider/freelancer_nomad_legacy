@@ -1,6 +1,7 @@
 from fx.space import Dust
 from fx.sound import Ambience
 
+from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
 from universe.content import zones
@@ -19,11 +20,8 @@ from templates.nebula import sig13_blue_nebula
 from templates.solar import gas_crystal
 
 
-
-class Sig13Member(object):
-    INDEX = 1
+class Sig13Member(Member):
     FACTION = faction.RH_GRP
-    ABSTRACT = False
 
 
 class Sig13Rheinland(object):

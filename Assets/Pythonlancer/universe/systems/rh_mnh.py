@@ -1,6 +1,7 @@
 from fx.space import Dust
 from fx.sound import Ambience
 
+from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
 from universe.content import zones
@@ -21,11 +22,8 @@ from templates.dockable import station_debris
 from templates.dockable import junker
 
 
-class MunchMember(object):
-    INDEX = 1
-    ABSTRACT = False
+class MunchMember(Member):
     FACTION = faction.RH_GRP
-
     INTERIOR_BG1 = interior.INTERIOR_RH_MUNCHEN
 
 

@@ -1,4 +1,4 @@
-from audio.actors import ACTOR_MALE, ACTOR_TRENT, ACTOR_FEMALE, Trent
+from story.actors import ACTOR_MALE, ACTOR_TRENT, ACTOR_FEMALE, Trent
 
 from text.dividers import DIVIDER, SINGLE_DIVIDER
 from text.infocards import InfocardBuilder, INFO_BASIC, KEY_CONTENT

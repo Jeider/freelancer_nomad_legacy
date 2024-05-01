@@ -1,6 +1,7 @@
 from fx.space import Dust
 from fx.sound import Ambience
 
+from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
 from universe.content import zones
@@ -23,11 +24,8 @@ from templates.dockable import avalon_megabase
 from templates.dockable import station_debris
 
 
-class Tau29Member(object):
-    INDEX = 1
-    ABSTRACT = False
+class Tau29Member(Member):
     FACTION = faction.BR_GRP
-
     INTERIOR_BG1 = interior.INTERIOR_TAU29
 
 

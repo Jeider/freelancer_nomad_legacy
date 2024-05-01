@@ -1,7 +1,7 @@
 from audio.mission_audio import MissionAudio
 from audio.mission7 import Mission7Audio
 from audio.mission8 import Mission8Audio
-from audio.actors import Actor
+from story.actors import Actor
 
 from text.strings import StringCompiler
 from text.dividers import DIVIDER, SINGLE_DIVIDER

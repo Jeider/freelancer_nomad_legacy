@@ -4,6 +4,7 @@ from managers.weapon import WeaponManager
 from managers.population import PopulationManager
 from managers.shiparch import ShiparchManager
 from managers.universe import UniverseManager
+from managers.story import StoryManager
 
 
 INITIAL_EQUIP_STRING_ID = 280000
@@ -22,6 +23,7 @@ class LancerCore(object):
         self.shiparch = ShiparchManager(self.misc_equip, INITIAL_SHIP_STRING_ID, INITIAL_SHIP_INFOCARD_ID)
         self.population = PopulationManager(self.misc_equip, self.weapons, self.shiparch)
         self.universe = UniverseManager(self.misc_equip, self.weapons, self.shiparch)
+        self.story = StoryManager(self.universe)
 
         self.enable_story = enable_story
 

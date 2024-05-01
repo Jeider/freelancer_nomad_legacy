@@ -27,5 +27,10 @@ class UniverseRoot(object):
         try:
             return self.systems_db[system_name]
         except IndexError:
-            raise Exception('System %s isnt presented in universe')
+            raise Exception('System %s isnt presented in universe' % system_name)
 
+    def get_system_by_class(self, system_class):
+        try:
+            return self.systems_db[system_class.NAME]
+        except IndexError:
+            raise Exception('System %s isnt presented in universe' % system_class.NAME)

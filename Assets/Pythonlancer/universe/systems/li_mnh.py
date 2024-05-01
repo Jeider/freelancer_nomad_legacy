@@ -1,6 +1,7 @@
 from fx.space import Dust
 from fx.sound import Ambience
 
+from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
 from universe.content import zones
@@ -29,9 +30,7 @@ from templates.dockable import junker
 from templates.dockable import pirate
 
 
-class ManhMember(object):
-    INDEX = 1
-    ABSTRACT = False
+class ManhMember(Member):
     FACTION = faction.LI_GRP
 
 

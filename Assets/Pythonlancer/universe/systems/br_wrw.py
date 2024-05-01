@@ -1,6 +1,7 @@
 from fx.space import Dust
 from fx.sound import Ambience
 
+from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
 from universe.content import zones
@@ -13,7 +14,6 @@ from universe.content import mineable
 from templates.solar import asteroid
 from templates.solar import debris_box
 
-
 from templates.dockable import pirate
 from templates.dockable import astbase
 from templates.dockable import junker
@@ -25,9 +25,7 @@ from templates.dockable import research
 from templates.dockable import rheinland_military
 
 
-class WarwickMember(object):
-    INDEX = 1
-    ABSTRACT = False
+class WarwickMember(Member):
     FACTION = faction.BR_GRP
 
 
@@ -337,7 +335,7 @@ class WarwickJunkers(WarwickMember, main_objects.JunkerBase):
 
 
 class WarwickPlanet1(WarwickMember, main_objects.Planet):
-    ARCHETYPE = 'planet_earthind_4000'
+    ARCHETYPE = 'planet_earthcity_4000'
     SPHERE_RADIUS = 4000
     RELATED_DOCK_RING = WarwickDockring
 

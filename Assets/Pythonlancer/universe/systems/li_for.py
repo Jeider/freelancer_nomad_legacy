@@ -1,6 +1,7 @@
 from fx.space import Dust
 from fx.sound import Ambience
 
+from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
 from universe.content import zones
@@ -26,11 +27,8 @@ from templates.dockable import junker
 from templates.dockable import station_debris
 
 
-class ForbesMember(object):
-    INDEX = 1
-    ABSTRACT = False
+class ForbesMember(Member):
     FACTION = faction.LI_GRP
-
     INTERIOR_BG1 = interior.INTERIOR_LI_FORBES
 
 
@@ -346,7 +344,7 @@ class ForbesResearch(ForbesMember, main_objects.Station):
 
 
 class ForbesPlanet1(ForbesMember, main_objects.Planet):
-    ARCHETYPE = 'planet_earthsnwcld_2500'
+    ARCHETYPE = 'planet_watgrncld_2500'
     SPHERE_RADIUS = 2500
     RELATED_DOCK_RING = ForbesDockring
 

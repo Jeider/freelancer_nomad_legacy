@@ -2,7 +2,8 @@ import sys
 
 from files.writer import FileWriter
 
-from story.missions import mission9
+from story.scripts import mission9
+from jinja_templates.jinja_manager import JinjaTemplateManager
 
 from tools import merge_image
 from tools import data_folder
@@ -50,6 +51,15 @@ def get_frames_ints():
 
 
 def test_story():
+    jinja = JinjaTemplateManager()
+    tpl = 'missions/m01/m01a.ini'
+
+    x = jinja.get_result(tpl, {})
+    FileWriter.write('missions/m01a.ini', x)
+    print('done')
+
+
+def test_script():
     msn = mission9.Mission9()
     content = msn.get_story_script()
     FileWriter.write('mission9.html', content)
@@ -64,6 +74,7 @@ ACTIONS = {
     'get_frames': get_frames,
     'get_frames_ints': get_frames_ints,
     'test_story': test_story,
+    'test_script': test_script,
 }
 
 

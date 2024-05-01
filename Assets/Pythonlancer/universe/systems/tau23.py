@@ -1,6 +1,7 @@
 from fx.space import Dust
 from fx.sound import Ambience
 
+from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
 from universe.content import zones
@@ -20,11 +21,8 @@ from templates.dockable import gas_miner
 from templates.dockable import trade_storages
 
 
-class Tau23Member(object):
-    INDEX = 1
-    ABSTRACT = False
+class Tau23Member(Member):
     FACTION = faction.BR_GRP
-
     INTERIOR_BG1 = interior.INTERIOR_BG_BARRIER_CLOUD
 
 

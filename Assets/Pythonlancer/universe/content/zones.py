@@ -1,7 +1,7 @@
 from fx.space import Dust
 from fx.sound import Ambience
 
-from universe.content.system_object import SystemObject, DynamicSystemObject
+from universe.content.system_object import SystemObject, NamedDynamicSystemObject
 
 from text.dividers import SINGLE_DIVIDER, DIVIDER
 
@@ -72,7 +72,7 @@ class Zone(SystemObject):
         return self.get_position()
 
 
-class DynamicZone(DynamicSystemObject, Zone):
+class DynamicZone(NamedDynamicSystemObject, Zone):
 
     def __init__(self, *args, **kwargs):
         self.interference = kwargs.get('interference')

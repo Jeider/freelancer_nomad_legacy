@@ -1,6 +1,7 @@
 from fx.space import Dust
 from fx.sound import Ambience
 
+from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
 from universe.content import zones
@@ -28,11 +29,8 @@ from templates.dockable import junker
 from templates.dockable import station_debris
 
 
-class ColMember(object):
-    INDEX = 1
-    ABSTRACT = False
+class ColMember(Member):
     FACTION = faction.LI_GRP
-
     INTERIOR_BG1 = interior.INTERIOR_LI_COLUMBIA
 
 
@@ -532,7 +530,7 @@ class ColTrading(ColMember, main_objects.TradingBase):
 
 
 class ColPlanet1(ColMember, main_objects.Planet):
-    ARCHETYPE = 'planet_desormed_4000'
+    ARCHETYPE = 'planet_earthind_4000'
     SPHERE_RADIUS = 4000
     RELATED_DOCK_RING = ColDockring
 

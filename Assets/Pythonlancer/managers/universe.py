@@ -44,6 +44,8 @@ class UniverseManager(object):
         self.load_systems()
         self.load_bases()
 
+        self.get_universe_root().do_post_init_actions()
+
         self.sync_data()
 
     def get_random_hacker_panel(self):

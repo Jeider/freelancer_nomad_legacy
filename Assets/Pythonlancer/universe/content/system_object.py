@@ -207,8 +207,7 @@ class SystemObject(object):
 class DynamicSystemObject(SystemObject):
     ABSTRACT = True
 
-    def __init__(self, system, space_nickname, alias, index, *args, **kwargs):
-        self.space_nickname = space_nickname
+    def __init__(self, system, alias, index, *args, **kwargs):
         self.alias = alias
         self.index = index
         super().__init__(system, *args, **kwargs)
@@ -246,3 +245,20 @@ class DynamicSystemObject(SystemObject):
 
     def get_size(self):
         return self.system.template.get_item_size(self.get_full_dynamic_alias())
+
+
+class NamedDynamicSystemObject(DynamicSystemObject):
+    ABSTRACT = True
+
+    def __init__(self, system, space_nickname, *args, **kwargs):
+        self.space_nickname = space_nickname
+        super().__init__(system, *args, **kwargs)
+
+
+class Marker(DynamicSystemObject):
+
+    def __init__(self, system, *args, **kwargs):
+        super().__init__(system, index=1,*args, **kwargs)
+
+    def get_full_dynamic_alias(self):
+        return self.alias
