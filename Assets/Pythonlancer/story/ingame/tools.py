@@ -17,6 +17,9 @@ FAIL_LEAVE_BASE = 90006  # Вы покинули базу
 
 LOCK_MANEUVERS = 'Act_LockManeuvers = true'
 UNLOCK_MANEUVERS = 'Act_LockManeuvers = false'
+CLEAR_OBJECTIVES = 'Act_SetNNObj = null, OBJECTIVE_HISTORY'
+
+PLAYER = 'Player'
 
 
 class Nag(object):
@@ -70,7 +73,7 @@ class Nag(object):
         """for template"""
         return self.get_towards_nag(nag_name, target)
 
-    def get_leaving_nag(self, nag_name, target, fail_id, range, nag_always=True):
+    def get_leaving_nag(self, nag_name, target, fail_id, nag_range, nag_always=True):
         items = []
         if self.last_nag_name:
             items.append(self.nag_off())
@@ -80,7 +83,7 @@ class Nag(object):
             nag_name=nag_name,
             obj_name=target.get_name(),
             fail_id=fail_id,
-            range=range,
+            range=nag_range,
         )
         if nag_always:
             leaving += f', {self.NAG_ALWAYS}'
@@ -94,7 +97,7 @@ class Nag(object):
         """for template"""
         return self.get_leaving_nag(nag_name, target, FAIL_TLR, self.TLR_RANGE)
 
-    def obj(self, nag_name, target):
+    def dock_base(self, nag_name, target):
         """for template"""
         return self.get_leaving_nag(nag_name, target, FAIL_DOCK_BASE, self.DOCK_RANGE)
 
@@ -122,17 +125,20 @@ class Target(object):
     def get_rotate(self):
         raise NotImplementedError
 
+    @property
     def pos(self):
         """for template"""
         return '{0:.2f}, {1:.2f}, {2:.2f}'.format(*self.get_position())
 
+    @property
     def orient(self):
         """for template"""
         return '{0:.2f}, {1:.2f}, {2:.2f}, {3:.2f}'.format(*euler_to_quat(*self.get_rotate()))
 
+    @property
     def pos_orient(self):
         """for template"""
-        return f'{self.pos()}, {self.orient()}'
+        return f'{self.pos}, {self.orient}'
 
     def get_name(self):
         raise NotImplementedError
@@ -192,7 +198,7 @@ class Obj(Target):
         elif issubclass(self.instance_class, JumpableObject):
             return self.mission.nag.jump(nag_name, self)
 
-        return self.mission.nag.dock(nag_name, self)
+        return self.mission.nag.dock_base(nag_name, self)
 
 
 class Conn(Target):
@@ -206,7 +212,6 @@ class Conn(Target):
 
         self.forward = False
         if self.start_point_class == connection_class.OBJ_FROM:
-            print('fwd')
             self.forward = True
         elif self.start_point_class != connection_class.OBJ_TO:
             raise Exception('Conn %s have instance not from connection' % connection_class.__name__)
@@ -266,23 +271,38 @@ class Conn(Target):
     def turn_nag(self, nag_name):
         return self.mission.nag.tlr(nag_name, self)
 
-    @property
-    def enter(self):
+    def enter_target(self, target=None):
+        target_name = 'Player'
+        if target:
+            target_name = target.get_name()
+
         actions = [
-            f'Cnd_TLEntered = Player, {self.first_rings()}',
+            f'Cnd_TLEntered = {target_name}, {self.first_rings()}',
             LOCK_MANEUVERS,
             self.mission.nag.nag_off(),
+            CLEAR_OBJECTIVES,
+        ]
+        return SINGLE_DIVIDER.join(actions)
+
+    @property
+    def enter(self):
+        return self.enter_target()
+
+    def exit_target(self, target=None):
+        target_name = 'Player'
+        if target:
+            target_name = target.get_name()
+
+        actions = [
+            f'Cnd_TLExited = {target_name}, {self.last_ring()}',
+            UNLOCK_MANEUVERS,
+            'Act_PlayerCanTradelane = false',
         ]
         return SINGLE_DIVIDER.join(actions)
 
     @property
     def exit(self):
-        actions = [
-            f'Cnd_TLExited = Player, {self.last_ring()}',
-            UNLOCK_MANEUVERS,
-            'Act_PlayerCanTradelane = false',
-        ]
-        return SINGLE_DIVIDER.join(actions)
+        return self.exit_target()
 
 
 class Ship(Target):

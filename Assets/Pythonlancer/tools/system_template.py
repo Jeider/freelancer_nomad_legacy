@@ -48,19 +48,19 @@ class SystemTemplate(object):
         return self.items_db
 
     def get_item_pos(self, item_key):
-        return self.items_db[item_key].lines.get(POS)
+        return self.items_db[item_key.lower()].lines.get(POS)
 
     def get_item_rotate(self, item_key):
-        rotate = self.items_db[item_key].lines.get(ROTATE)
+        rotate = self.items_db[item_key.lower()].lines.get(ROTATE)
         if not rotate:
             return (0, 0, 0)
         return rotate
 
     def get_item_size(self, item_key):
-        return self.items_db[item_key].lines[SIZE]
+        return self.items_db[item_key.lower()].lines[SIZE]
 
     def get_item_shape(self, item_key):
-        return self.items_db[item_key].lines[SHAPE]
+        return self.items_db[item_key.lower()].lines[SHAPE]
 
     def get_single_mission_vignettes_positions(self):
         return [item.lines[POS] for item in self.items_db[MSN_SINGLE]]

@@ -81,7 +81,7 @@ entities={
 		template_id=0,
 		spatialprops={
 			pos={
-				15000, -200, -20000
+				12000, 0, -30000
 			},
 			orient={
 				{

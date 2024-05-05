@@ -388,6 +388,7 @@ class BerConnOutpost1(BerlinMember, main_objects.TradeConnection):
     ATTACKED_BY = [
         BerlinPiratesTop
     ]
+    OBJ_FROM_TLR_FORCE_OFFSET = (11400, 0, -31300)
 
 
 class BerConnOutpost2(BerlinMember, main_objects.TradeConnection):
