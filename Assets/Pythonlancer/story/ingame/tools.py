@@ -6,6 +6,7 @@ from text.dividers import SINGLE_DIVIDER
 
 
 OBJ_TYPE_TEMPLATE = 'type = rep_inst, {system}, {string_id}, {string_id}, {pos_x}, {pos_y}, {pos_z}, {target_nickname}'
+NAVMARKER_TYPE_TEMPLATE = 'type = navmarker, {system}, {string_id}, {string_id}, {pos_x}, {pos_y}, {pos_z}'
 
 FAIL_TLR = 90000  # вы не активировали торговый путь
 FAIL_TARGET = 90001  # точка назначения
@@ -60,7 +61,7 @@ class Nag(object):
         self.last_nag_name = nag_name
         towards = self.NAG_OBJ_TOWARDS.format(
             nag_name=nag_name,
-            obj_name=target,
+            obj_name=target.get_name(),
             fail_id=FAIL_TARGET,
             range=self.TOWARDS_RANGE,
         )
@@ -166,6 +167,16 @@ class Point(Target):
     def get_name(self):
         raise Exception('still not implemented. should create nagvec')
 
+    def get_nn_type(self, string_id):
+        position = self.get_position()
+        return NAVMARKER_TYPE_TEMPLATE.format(
+            system=self.system.NAME,
+            string_id=string_id,
+            pos_x=position[0],
+            pos_y=position[1],
+            pos_z=position[2],
+        )
+
 
 class Obj(Target):
 
@@ -186,6 +197,12 @@ class Obj(Target):
             target_nickname=self.get_name(),
         )
 
+    def get_position(self):
+        return self.instance.get_position()
+
+    def get_rotate(self):
+        return self.instance.get_rotate()
+
     def get_name(self):
         return self.instance.get_inspace_nickname()
 
@@ -199,6 +216,11 @@ class Obj(Target):
             return self.mission.nag.jump(nag_name, self)
 
         return self.mission.nag.dock_base(nag_name, self)
+
+    @property
+    def name(self):
+        """for template"""
+        return self.get_name()
 
 
 class Conn(Target):
@@ -239,14 +261,17 @@ class Conn(Target):
     def get_rotate(self):
         return self.get_first_ring().get_tradelane_rotate()
 
+    @property
     def start_ring(self):
         """for template"""
         return self.get_first_ring_name()
 
+    @property
     def last_ring(self):
         """for template"""
         return self.get_last_ring_name()
 
+    @property
     def first_rings(self):
         """for template"""
         return self.get_first_two_rings_names()
@@ -266,7 +291,7 @@ class Conn(Target):
         return self.get_first_ring_name()
 
     def open_access(self):
-        return f'Act_PlayerCanTradelane = false, {self.first_rings()}'
+        return f'Act_PlayerCanTradelane = false, {self.first_rings}'
 
     def turn_nag(self, nag_name):
         return self.mission.nag.tlr(nag_name, self)
@@ -277,7 +302,7 @@ class Conn(Target):
             target_name = target.get_name()
 
         actions = [
-            f'Cnd_TLEntered = {target_name}, {self.first_rings()}',
+            f'Cnd_TLEntered = {target_name}, {self.first_rings}',
             LOCK_MANEUVERS,
             self.mission.nag.nag_off(),
             CLEAR_OBJECTIVES,
@@ -294,10 +319,13 @@ class Conn(Target):
             target_name = target.get_name()
 
         actions = [
-            f'Cnd_TLExited = {target_name}, {self.last_ring()}',
-            UNLOCK_MANEUVERS,
-            'Act_PlayerCanTradelane = false',
+            f'Cnd_TLExited = {target_name}, {self.last_ring}',
         ]
+        if target is None:
+            actions.extend([
+                UNLOCK_MANEUVERS,
+                'Act_PlayerCanTradelane = false',
+            ])
         return SINGLE_DIVIDER.join(actions)
 
     @property

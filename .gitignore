@@ -161,3 +161,4 @@ drvmgt.dll
 __pycache__/
 *.py[cod]
 *$py.class
+Assets/Pythonlancer/settings.py

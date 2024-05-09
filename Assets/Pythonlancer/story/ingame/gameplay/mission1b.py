@@ -6,7 +6,7 @@ from story.ingame.tools import Point, Obj, Conn, NNObj, Ship
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
 
-class Misson01A(ingame_mission.IngameMission):
+class Misson01B(ingame_mission.IngameMission):
     JINJA_TEMPLATE = 'missions/m01/m01b.ini'
 
     def get_ingame_thorns(self):
@@ -21,6 +21,7 @@ class Misson01A(ingame_mission.IngameMission):
 
             'sig8_tlr_1': Conn(self, sig8.Sig8PoliceConn2, sig8.Sig8BorderStation),
             'sig8_to_biz': Obj(self, sig8.Sig8BizmarkJumpgate),
+            'sig8_outpost': Obj(self, sig8.Sig8BorderStation),
 
             'biz_tlr_1': Conn(self, rh_biz.BizmarkConnPlanet1, rh_biz.BizmarkSigma8Jumpgate),
             'biz_dockring': Obj(self, rh_biz.BizmarkDockRing),
@@ -28,6 +29,8 @@ class Misson01A(ingame_mission.IngameMission):
 
     def get_static_points(self):
         return [
+            Point(self, sirius.rh_ber, 'ber_armored'),
+
             Point(self, sirius.sig8, 'point_first_regroup'),
             Point(self, sirius.sig8, 'point_to_starke'),
             Point(self, sirius.sig8, 'point_a'),

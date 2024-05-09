@@ -1,9 +1,14 @@
 import sys
+import os
+
+from pathlib import Path
 
 from files.writer import FileWriter
 
-from story.scripts import mission9
+# from story.scripts import mission9
 from jinja_templates.jinja_manager import JinjaTemplateManager
+
+from universe.content import space_voice
 
 from tools import merge_image
 from tools import data_folder
@@ -66,6 +71,29 @@ def test_script():
     print(content)
 
 
+# def parse_voices():
+#     lines = []
+#     for item in CONTENT.splitlines():
+#         if item.startswith('msg'):
+#             parts = item.split(' = ')
+#             lines.append(parts[1])
+#             print(f"'{parts[1]}',")
+
+
+
+def test_voices():
+    map = space_voice.ShipVoice.get_id_map()
+    for valid, code in map:
+        orig = os.path.join('PILOT', f'{code}.wav')
+        new = os.path.join('PILOT', f'{valid}.wav')
+        try:
+            os.rename(orig, new)
+        except Exception:
+            print(valid)
+    # print(lines)
+
+
+
 ACTIONS = {
     'generate_hacker_panels': generate_hacker_panels,
     'test_hacker_colors': test_hacker_colors,
@@ -75,6 +103,7 @@ ACTIONS = {
     'get_frames_ints': get_frames_ints,
     'test_story': test_story,
     'test_script': test_script,
+    'test_voices': test_voices,
 }
 
 
