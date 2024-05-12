@@ -5,6 +5,14 @@ from text.dividers import DIVIDER
 
 class IngameMission(object):
     JINJA_TEMPLATE = None
+    FOLDER = None
+    FILE = None
+
+    subclasses = []
+
+    def __init_subclass__(cls, **kwargs):
+        super().__init_subclass__(**kwargs)
+        cls.subclasses.append(cls)
 
     def __init__(self, universe_root):
         self.universe_root = universe_root
@@ -12,6 +20,10 @@ class IngameMission(object):
         self.nn_objectives = self.get_nn_objectives()
         self.nag = Nag()
         self.ingame_thorns = self.get_ingame_thorns()
+        if not self.FOLDER:
+            raise Exception('Folder should be defined for %s' % self.__class__.__name__)
+        if not self.FILE:
+            raise Exception('File name should be defined for %s' % self.__class__.__name__)
 
     def get_template(self):
         if not self.JINJA_TEMPLATE:
@@ -97,22 +109,3 @@ position = 0,-50000,0
 
     def get_definition(self):
         return self.DEFINITION
-
-
-class Ship(object):
-    DEFINIION = '''
-[NPC]
-nickname = alaric_m1
-affiliation = fc_uk_grp
-npc_ship_arch = MSN01_alaric
-space_costume = rh_alaric_head_hat, pi_pirate6_body, comm_rh_alaric
-individual_name = 091204
-voice = pilot_f_mil_m01
-
-[MsnShip]
-nickname = MSN01_Alaric
-NPC = alaric_m1
-jumper = true
-label = m1_friend
-label = friend    
-'''

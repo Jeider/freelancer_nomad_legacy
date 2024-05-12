@@ -58,6 +58,7 @@ class L(object):
         self.code = code
         self.ru_text = ru_text
         self.kind = kind
+        self.hash = CreateId.get_hex_id(code).lower()
 
 
 NAME_AT_END = 1
@@ -717,7 +718,7 @@ class ShipVoice(object):
             map.append(
                 (
                     line.code.lower(),
-                    CreateId.get_hex_id(line).lower()
+                    line.hash
                 )
             )
         return map

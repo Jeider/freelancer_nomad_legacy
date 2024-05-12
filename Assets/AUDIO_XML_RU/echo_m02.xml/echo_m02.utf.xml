@@ -51,5 +51,10 @@
 		<test_voice name="0xbe8ce8ce" type="file" filename="echo_m02_utf\DX_M02_1120_punisher.wav"/>
 		<test_voice name="0xb61c3f42" type="file" filename="echo_m02_utf\DX_M02_1130_wilham.wav"/>
 		<test_voice name="0xb6d03848" type="file" filename="echo_m02_utf\DX_M02_1140_wilham.wav"/>
+		
+		<test_voice name="0x89f08c08" type="file" filename="echo_m02_utf\DX_M02_7000_help.wav"/>
+		<test_voice name="0x8cb08e88" type="file" filename="echo_m02_utf\DX_M02_7010_help.wav"/>
+		<test_voice name="0x83708908" type="file" filename="echo_m02_utf\DX_M02_7020_help.wav"/>
+		<test_voice name="0x86308b88" type="file" filename="echo_m02_utf\DX_M02_7030_help.wav"/>
    </UTF_ROOT>
 </UTFXML>

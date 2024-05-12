@@ -12,6 +12,8 @@ from universe.content import space_voice
 
 from tools import merge_image
 from tools import data_folder
+from tools import steos
+from tools import elevenlabs
 
 from templates.solar.hacker_panel import HackerPanelManager, REL_TOP
 from templates.dockable import upsilon_gasinside
@@ -65,10 +67,11 @@ def test_story():
 
 
 def test_script():
-    msn = mission9.Mission9()
-    content = msn.get_story_script()
-    FileWriter.write('mission9.html', content)
-    print(content)
+    pass
+    # msn = mission9.Mission9()
+    # content = msn.get_story_script()
+    # FileWriter.write('mission9.html', content)
+    # print(content)
 
 
 # def parse_voices():
@@ -94,6 +97,18 @@ def test_voices():
 
 
 
+def test_steos():
+    result = steos.SteosVoice.get_voices_list()
+    import pdb;pdb.set_trace()
+
+
+
+def test_elevenlabs():
+    result = elevenlabs.ElevenLabs.get_line('Это Рэйнланд, омега один слеш один. Я направляюсь к станции Потсдам. Скоро буду.')
+    import pdb;pdb.set_trace()
+
+
+
 ACTIONS = {
     'generate_hacker_panels': generate_hacker_panels,
     'test_hacker_colors': test_hacker_colors,
@@ -104,6 +119,8 @@ ACTIONS = {
     'test_story': test_story,
     'test_script': test_script,
     'test_voices': test_voices,
+    'test_steos': test_steos,
+    'test_elevenlabs': test_elevenlabs,
 }
 
 

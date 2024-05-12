@@ -2,7 +2,7 @@ duration=30
 
 entities={
 	{
-		entity_name="scene_intro3",
+		entity_name="scene_generic_cam_m01_s13_launch",
 		type=SCENE,
 		template_name="",
 		template_id=0,

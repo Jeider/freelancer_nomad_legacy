@@ -8,6 +8,8 @@ from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
 class Misson01A(ingame_mission.IngameMission):
     JINJA_TEMPLATE = 'missions/m01/m01a.ini'
+    FOLDER = 'M01A'
+    FILE = 'm01a'
 
     def get_ingame_thorns(self):
         return [

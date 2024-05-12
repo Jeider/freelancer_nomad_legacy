@@ -1,3 +1,5 @@
+from random import randint
+
 from story.math import euler_to_quat
 from universe.content.system_object import Marker
 from universe.content.main_objects import Battleship, JumpableObject
@@ -34,17 +36,16 @@ class Nag(object):
     COMBAT_RANGE = 6000
     DOCK_RANGE = 4000
 
-    'Act_NagDistLeaving = FirstTradelaneNag, nag_voice, SIG13_F_Trade_Lane_Ring_L1_04, 090000, 100, NAG_ALWAYS'
-    'Act_NagDistLeaving = NagJumpBer, nag_voice, sig13_to_ber, 090003, 1, 1000, NAG_ALWAYS'
-    'Act_NagDistLeaving = BlockpostBattleNag, nag_voice, MSN01_alaric, 090002, 6000, NAG_ALWAYS'
-    'Act_NagDistLeaving = DockBerlinNag, nag_voice, Rh_Ber_01_Docking_Ring, 090004, 4000, NAG_ALWAYS'
-
     def __init__(self):
         self.last_nag_name = None
 
     @property
     def nag_voice(self):
-        return 'Act_SpawnShip = nag_voice'
+        actions = [
+            'Act_Destroy = nag_voice, SILENT',
+            'Act_SpawnShip = nag_voice'
+        ]
+        return SINGLE_DIVIDER.join(actions)
 
     def nag_off(self):
         if self.last_nag_name is not None:
@@ -126,6 +127,14 @@ class Target(object):
     def get_rotate(self):
         raise NotImplementedError
 
+    @staticmethod
+    def get_rotate_random():
+        return (
+            randint(0, 360),
+            randint(0, 360),
+            randint(0, 360)
+        )
+
     @property
     def pos(self):
         """for template"""
@@ -135,6 +144,11 @@ class Target(object):
     def orient(self):
         """for template"""
         return '{0:.2f}, {1:.2f}, {2:.2f}, {3:.2f}'.format(*euler_to_quat(*self.get_rotate()))
+
+    @property
+    def orient_random(self):
+        """for template"""
+        return '{0:.2f}, {1:.2f}, {2:.2f}, {3:.2f}'.format(*euler_to_quat(*self.get_rotate_random()))
 
     @property
     def pos_orient(self):
@@ -147,7 +161,7 @@ class Target(object):
     def open_access(self):
         return False
 
-    def turn_nag(self, nag_name):
+    def turn_nag(self, nag_name, towards=False):
         return False
 
 
@@ -209,7 +223,10 @@ class Obj(Target):
     def open_access(self):
         return f'Act_PlayerCanDock = false, {self.get_name()}'
 
-    def turn_nag(self, nag_name):
+    def turn_nag(self, nag_name, towards=False):
+        if towards:
+            return self.mission.nag.towards(nag_name, self)
+
         if issubclass(self.instance_class, Battleship):
             return self.mission.nag.tlr(nag_name, self)
         elif issubclass(self.instance_class, JumpableObject):
@@ -221,6 +238,11 @@ class Obj(Target):
     def name(self):
         """for template"""
         return self.get_name()
+
+    @property
+    def base(self):
+        """for template"""
+        return self.instance.get_base_nickname()
 
 
 class Conn(Target):
@@ -293,7 +315,7 @@ class Conn(Target):
     def open_access(self):
         return f'Act_PlayerCanTradelane = false, {self.first_rings}'
 
-    def turn_nag(self, nag_name):
+    def turn_nag(self, nag_name, towards=False):
         return self.mission.nag.tlr(nag_name, self)
 
     def enter_target(self, target=None):
@@ -347,12 +369,13 @@ class NNObj(object):
     NICKNAME_TEMPLATE = 'nickname = {nickname}'
     STATE = 'state = HIDDEN'
 
-    def __init__(self, mission, string_id=None, name=None, target=None):
+    def __init__(self, mission, string_id=None, name=None, target=None, towards=False):
         self.mission = mission
         self.string_id = string_id if string_id else self.get_string_id()
         self.target = target
         self.target_point = self.get_target_point()
         self.name = f'nn_{name}' if name else self.generate_name()
+        self.towards = towards
 
     def get_string_id(self):
         raise NotImplementedError
@@ -393,13 +416,23 @@ class NNObj(object):
         ]
         if self.target:
             open_access = self.target_point.open_access()
-            if open_access is not False:
+            if open_access is not False and not self.towards:
                 actions.append(open_access)
 
-            turn_nag = self.target_point.turn_nag(self.get_name())
+            turn_nag = self.target_point.turn_nag(self.get_name(), towards=self.towards)
             if turn_nag is not False:
                 actions.append(turn_nag)
 
         return SINGLE_DIVIDER.join(actions)
 
-
+    def set_as_path(self):
+        if not self.target or self.target_point.__class__ != Obj:
+            raise Exception('Cant use path for nn without Obj target for %s' % self.name)
+        path_params = [
+            str(self.string_id),
+            str(self.string_id),
+            self.target_point.name,
+            self.target_point.system.NAME,
+        ]
+        params_line = ", ".join(path_params)
+        return f'Act_NNPath = {params_line}'

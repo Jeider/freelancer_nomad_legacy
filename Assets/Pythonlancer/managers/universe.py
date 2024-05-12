@@ -149,7 +149,7 @@ class UniverseManager(object):
         return DIVIDER.join([key.get_good() for key in self.keys])
 
     def get_key_story(self):
-        return DIVIDER.join([key.get_story() for key in self.keys])
+        return SINGLE_DIVIDER.join([key.get_story() for key in self.keys])
 
     def get_dock_key(self):
         return DIVIDER.join([key.get_dock_key() for key in self.keys])

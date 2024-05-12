@@ -1,8 +1,8 @@
-duration=30
+duration={{ duration }}
 
 entities={
 	{
-		entity_name="scene_intro3",
+		entity_name="scene_generic_cam_{{ name }}",
 		type=SCENE,
 		template_name="",
 		template_id=0,
