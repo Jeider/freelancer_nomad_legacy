@@ -21,13 +21,13 @@ class XML_UTF(object):
         return XML_UTF.get_utf_xml_path() / OUT_DIR
 
     @staticmethod
-    def run_command(request_file_name):
+    def run_command(request_file_name, input_path=INPUT_DIR):
         utf_xml_path = XML_UTF.get_utf_xml_path()
         exec_path = utf_xml_path / XML_UTF.EXECUTABLE
         exec_params = [exec_path]
         exec_params.append('-O')
         exec_params.append(utf_xml_path / OUT_DIR)
-        exec_params.append(utf_xml_path / INPUT_DIR / request_file_name)
+        exec_params.append(utf_xml_path / input_path / request_file_name)
 
         result = subprocess.run(exec_params)
         if result.returncode != 0:
@@ -48,3 +48,5 @@ class XML_UTF(object):
         for xml in xmls:
             XML_UTF.create_input_file(xml, TMP_REQUEST_FILE_NAME)
             XML_UTF.send_xml_utf_request(TMP_REQUEST_FILE_NAME)
+
+

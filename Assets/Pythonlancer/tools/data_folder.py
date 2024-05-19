@@ -1,4 +1,5 @@
 import pathlib
+import shutil
 
 LOADOUTS_GEN = 'loadout_gen.ini'
 
@@ -9,6 +10,10 @@ class DataFolder(object):
     def get_root():
         current_path = pathlib.Path().resolve()
         return current_path.parent.parent / 'DATA'
+
+    @classmethod
+    def get_audio(cls):
+        return cls.get_root() / 'AUDIO'
 
     @classmethod
     def get_equip(cls):
@@ -101,6 +106,11 @@ class DataFolder(object):
         equip_file.write_text(content, encoding='utf-8')
 
     @classmethod
+    def sync_story_ships_loadouts(cls, content):
+        equip_file = cls.get_ships() / 'loadout_gen_story.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    @classmethod
     def sync_dock_key(cls, content):
         equip_file = cls.get_root() / 'dock_key.ini'
         equip_file.write_text(content, encoding='utf-8')
@@ -111,6 +121,20 @@ class DataFolder(object):
         equip_file.write_text(content, encoding='utf-8')
 
     @classmethod
+    def sync_story_npcships(cls, folder, content):
+        equip_file = cls.get_missions() / folder / f'npcships.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    @classmethod
     def sync_story_ingame_thorn(cls, file, content):
         equip_file = cls.get_missions() / 'GENERATED_THORN' / f'{file}.thn'
         equip_file.write_text(content, encoding='utf-8')
+
+    @classmethod
+    def move_story_audio(cls, original_file_destination, out_file_name):
+        shutil.move(
+            original_file_destination,
+            cls.get_audio() / out_file_name
+        )
+
+

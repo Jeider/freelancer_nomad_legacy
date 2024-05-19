@@ -7,6 +7,7 @@ class IngameMission(object):
     JINJA_TEMPLATE = None
     FOLDER = None
     FILE = None
+    NPC_FILE = 'npcships'
 
     subclasses = []
 
@@ -60,7 +61,16 @@ class IngameMission(object):
         return points
 
     def get_ships(self):
-        return {}
+        return []
+
+    def get_ships_with_npc(self):
+        return [ship for ship in self.get_ships() if ship.npc is not None]
+
+    def get_ships_for_context(self):
+        return {ship.name: ship for ship in self.get_ships()}
+
+    def get_npcs(self):
+        return [ship.npc for ship in self.get_ships() if ship.npc]
 
     def get_nn_objectives(self):
         return []
@@ -76,16 +86,25 @@ class IngameMission(object):
             'nag': self.nag,
         }
 
+    def get_objects_definitions(self):
+        """for template"""
+        content = []
+        ships = self.get_ships_with_npc()
+        for ship in ships:
+            content.append(ship.get_mission_npc())
+            content.append(ship.get_mission_ships())
+        return DIVIDER.join(content)
+
     def get_context(self):
         context = self.get_initial_context()
         context.update(self.points)
-        context.update(self.get_ships())
+        context.update(self.get_ships_for_context())
         context.update(self.get_nn_objectives_context())
         context.update(self.get_ingame_thorns_context())
         context['nn_objectives_list'] = self.get_all_nn_objectives_content()
+        context['objects_definitions'] = self.get_objects_definitions()
         # print(context.keys())
         return context
-
 
 
 class NagVoice(object):

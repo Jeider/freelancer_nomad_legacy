@@ -46,10 +46,10 @@ class Misson01B(ingame_mission.IngameMission):
 
 
     def get_ships(self):
-        return {
-            'armored': Ship('MSN01_armored'),
-            'escort': Ship('MSN01_escort'),
-        }
+        return [
+            Ship(self, 'armored'),
+            Ship(self, 'escort'),
+        ]
 
     def get_nn_objectives(self):
         return [

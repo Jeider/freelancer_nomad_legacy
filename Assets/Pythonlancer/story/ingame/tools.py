@@ -4,7 +4,7 @@ from story.math import euler_to_quat
 from universe.content.system_object import Marker
 from universe.content.main_objects import Battleship, JumpableObject
 
-from text.dividers import SINGLE_DIVIDER
+from text.dividers import SINGLE_DIVIDER, DIVIDER
 
 
 OBJ_TYPE_TEMPLATE = 'type = rep_inst, {system}, {string_id}, {string_id}, {pos_x}, {pos_y}, {pos_z}, {target_nickname}'
@@ -355,13 +355,98 @@ class Conn(Target):
         return self.exit_target()
 
 
-class Ship(Target):
+class RelPos(object):
+    def __init__(self, deg, target_name, radius):
+        self.deg = deg
+        self.target_name = target_name
+        self.radius = radius
 
-    def __init__(self, name):
+    def get_ini(self):
+        return f'{self.deg}, {self.target_name}, {self.radius}'
+
+
+
+class Ship(Target):
+    DEFAULT_AFFILIATION = 'fc_uk_grp'
+
+    def __init__(self, mission, name, count=1, npc=None, actor=None,
+                 affiliation=None, jumper=False, labels=None,
+                 rel_pos=None, radius=None):
+        self.mission = mission
         self.name = name
+        self.count = count
+        self.npc = npc
+        self.jumper = jumper
+        self.affiliation = affiliation or self.DEFAULT_AFFILIATION
+        self.rel_pos = rel_pos
+        self.radius = radius
+        self.actor = actor
+        self.labels = labels if labels is not None else []
+        if self.npc:
+            self.npc.set_name(self.get_npc_shiparch_name())
 
     def get_name(self):
         return self.name
+
+    def member(self, index=1):
+        """for template"""
+        if self.count > 1:
+            return self.get_multiple_member_name(index)
+        return self.get_single_member_name()
+
+    def get_single_member_name(self):
+        return f'{self.name}'
+
+    def get_multiple_member_name(self, index):
+        return f'{self.name}_{index:02d}'
+
+    def get_mission_npc_name(self):
+        return f'npc_{self.name}'
+
+    def get_npc_shiparch_name(self):
+        return f'{self.mission.FILE}_{self.name}'
+
+    def get_mission_npc(self):
+        items = [
+            '[NPC]',
+            f'nickname = {self.get_mission_npc_name()}',
+            f'npc_ship_arch = {self.get_npc_shiparch_name()}',
+            f'affiliation = {self.affiliation}',
+        ]
+        if self.actor:
+            if self.actor.NAME_ID:
+                items.append(f'individual_name = {self.actor.NAME_ID}')
+            if self.actor.COMM_APPEARANCE:
+                items.append(f'space_costume = {self.actor.COMM_APPEARANCE}')
+            if self.actor.SPACE_VOICE:
+                items.append(f'voice = {self.actor.SPACE_VOICE}')
+        return SINGLE_DIVIDER.join(items)
+
+    def get_mission_ship(self, index=1):
+        items = [
+            '[MsnShip]',
+            f'nickname = {self.member(index)}',
+            f'NPC = {self.get_mission_npc_name()}',
+            f'npc_ship_arch = {self.get_npc_shiparch_name()}',
+            f'affiliation = {self.affiliation}',
+        ]
+        if self.jumper:
+            items.append('jumper = true')
+        if not self.actor or not self.actor.NAME_ID:
+            items.append('random_name = true')
+        if self.rel_pos:
+            items.append(f'rel_pos = {self.rel_pos.get_ini()}')
+        if self.radius:
+            items.append(f'radius = {self.radius}')
+        return SINGLE_DIVIDER.join(items)
+
+    def get_mission_ships(self):
+        msn_ships = []
+        for member_index in range(1, self.count+1):
+            msn_ships.append(
+                self.get_mission_ship(member_index)
+            )
+        return DIVIDER.join(msn_ships)
 
 
 class NNObj(object):

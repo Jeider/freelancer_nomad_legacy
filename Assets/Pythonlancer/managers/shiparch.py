@@ -1,5 +1,3 @@
-from managers.tools.mixins import StringsMixin
-
 from world.ship import Ship
 from templates.hardcoded_inis.ships import ShiparchTemplate
 from text.dividers import DIVIDER
@@ -9,17 +7,15 @@ from text.strings import StringCompiler
 from tools.data_folder import DataFolder
 
 
-class ShiparchManager(StringsMixin):
+class ShiparchManager(object):
 
-    def __init__(self, misc_equip, last_string_id, last_infocard_id):
-        self.misc_equip = misc_equip
+    def __init__(self, lancer_core):
+        self.core = lancer_core
+        self.misc_equip = self.core.misc_equip
 
         self.params = {}
         self.ships = []
         self.ships_db = {}
-
-        self.last_string_id = last_string_id
-        self.last_infocard_id = last_infocard_id
 
         for ship in Ship.subclasses:
             instance = ship(
@@ -36,12 +32,13 @@ class ShiparchManager(StringsMixin):
         self.sync_data()
 
     def get_next_string_id(self):
-        self.last_string_id += 1
-        return self.last_string_id
+        return self.core.get_next_ship_string_id()
 
     def get_next_infocard_id(self):
-        self.last_infocard_id += 1
-        return self.last_infocard_id
+        return self.core.get_next_ship_infocard_id()
+
+    def get_ship_by_class(self, ship_class):
+        return self.ships_db[ship_class.ARCHETYPE]
 
     def get_ship_by_archetype(self, archetype):
         return self.ships_db[archetype]

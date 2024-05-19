@@ -1,8 +1,6 @@
-from managers.tools.mixins import StringsMixin
 from managers.tools.helpers import ManagerHelper
 
 from text.strings import StringCompiler
-from text.dividers import SINGLE_DIVIDER, DIVIDER
 
 from world.equipment import Equipment
 from world.gun import Gun
@@ -10,16 +8,21 @@ from world.gun import Gun
 from fx.weapon import WeaponFX
 
 
-class WeaponManager(StringsMixin):
+class WeaponManager(object):
 
-    def __init__(self, last_string_id, last_infocard_id):
+    def __init__(self, lancer_core):
+        self.core = lancer_core
+
         self.guns_db = {}
         self.guns_list = []
 
-        self.last_string_id = last_string_id
-        self.last_infocard_id = last_infocard_id
-
         self.load_game_data()
+
+    def get_next_string_id(self):
+        return self.core.get_next_equip_string_id()
+
+    def get_next_infocard_id(self):
+        return self.core.get_next_equip_infocard_id()
 
     def load_game_data(self):
         for gun in Gun.subclasses:

@@ -200,6 +200,8 @@ cargo = {nickname}, {amount}'''
     }
     COLLISION_HIT_PTS_PERCENT = {}
     COLLISION_EXPLOSION_RESISTANCE = {}
+    LIGHTS = 0
+    RU_NAME = ''
 
     HIT_PTS_MULTIPLER_PER_INDEX = {
         SHIP_INDEX_1: 0.11,
@@ -307,6 +309,11 @@ cargo = {nickname}, {amount}'''
     LOADOUT_THRUSTER_TEMPLATE = 'equip = {{afterburn{thruster_index}}}, {hp_thruster}'
     LOADOUT_WEAPON_TEMPLATE = 'equip = {{weapon{weapon_index}}}, {hp_weapon}'
 
+    HP_HEADLIGHT = 'HpHeadlight'
+    PACKAGE_LAUNCH_ANIMATION = 'addon = launch_extend, internal, 1'
+    PACKAGE_LIGHT_TEMPLATE = 'equip = {{small_light}}, HpRunningLight{light_id}, 1'
+    PACKAGE_CONTRAIL_TEMPLATE = 'equip = player_contrail, HpContrail{contrail_id}, 1'
+
     def get_loadout_components(self):
         components = []
         components.extend(self.LOADOUT_TEMPLATE_BASE_COMPONENTS)
@@ -351,13 +358,6 @@ cargo = {nickname}, {amount}'''
 
     def get_hull_nickname(self):
         return '{archetype}_hull'.format(archetype=self.ARCHETYPE)
-
-    HP_HEADLIGHT = 'HpHeadlight'
-
-    HAS_ANIMATION = True
-    PACKAGE_LAUNCH_ANIMATION = 'addon = launch_extend, internal, 1'
-    PACKAGE_LIGHT_TEMPLATE = 'equip = {{small_light}}, HpRunningLight{light_id}, 1'
-    PACKAGE_CONTRAIL_TEMPLATE = 'equip = player_contrail, HpContrail{contrail_id}, 1'
 
     PACKAGE_BASE_TEMPLATE = '''[Good]
 nickname = {package_nickname}
@@ -695,24 +695,21 @@ hit_pts = {hit_pts}
     def get_extra_content(torpedo, cm, mine, torpedo_ammo, cm_ammo, mine_ammo):
         extra = []
         if torpedo:
-            extra.append(Ship.EQUIP_TEMPLATE, format(torpedo, Ship.HP_TORPEDO))
+            extra.append(Ship.EQUIP_TEMPLATE.format(torpedo, Ship.HP_TORPEDO))
             if torpedo_ammo:
-                extra.append(Ship.CARGO_TEMPLATE, format(torpedo, torpedo_ammo))
+                extra.append(Ship.CARGO_TEMPLATE.format(torpedo, torpedo_ammo))
 
         if cm:
-            extra.append(Ship.EQUIP_TEMPLATE, format(cm, Ship.HP_CM))
+            extra.append(Ship.EQUIP_TEMPLATE.format(cm, Ship.HP_CM))
             if cm_ammo:
-                extra.append(Ship.CARGO_TEMPLATE, format(torpedo, cm_ammo))
+                extra.append(Ship.CARGO_TEMPLATE.format(torpedo, cm_ammo))
 
         if mine:
-            extra.append(Ship.EQUIP_TEMPLATE, format(mine, Ship.HP_MINE))
+            extra.append(Ship.EQUIP_TEMPLATE.format(mine, Ship.HP_MINE))
             if mine_ammo:
-                extra.append(Ship.CARGO_TEMPLATE, format(torpedo, mine_ammo))
+                extra.append(Ship.CARGO_TEMPLATE.format(torpedo, mine_ammo))
 
         return SINGLE_DIVIDER.join(extra)
-
-
-
 
 
 class BaseInterceptorShip(object):

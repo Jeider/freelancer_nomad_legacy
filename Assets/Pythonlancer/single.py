@@ -14,6 +14,7 @@ from tools import merge_image
 from tools import data_folder
 from tools import steos
 from tools import elevenlabs
+from tools import audio
 
 from templates.solar.hacker_panel import HackerPanelManager, REL_TOP
 from templates.dockable import upsilon_gasinside
@@ -24,6 +25,11 @@ from templates.dockable import sphere_megabase
 
 def generate_hacker_panels():
     HackerPanelManager().write_content()
+
+
+def compile_story_audio():
+    audio.AudioCompiler.compile_story()
+    print('done')
 
 
 def test_hacker_colors():
@@ -111,6 +117,7 @@ def test_elevenlabs():
 
 ACTIONS = {
     'generate_hacker_panels': generate_hacker_panels,
+    'compile_story_audio': compile_story_audio,
     'test_hacker_colors': test_hacker_colors,
     'test_placement': test_placement,
     'build_image': build_image,

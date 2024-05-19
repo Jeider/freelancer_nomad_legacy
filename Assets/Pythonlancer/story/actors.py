@@ -7,8 +7,10 @@ class Actor(object):
     TYPE = None
     NAME = None
     RU_NAME = None
-    COMM_APPEARANCE = ''
+    NAME_ID = None
+    COMM_APPEARANCE = None
     CUTSCENE_APPEARANCE = ''
+    SPACE_VOICE = None
 
     subclasses = []
 
@@ -119,6 +121,26 @@ class Hassler(Actor):
     NAME = 'hassler'
     # COMM_APPEARANCE = ''
     CUTSCENE_APPEARANCE = 'hassler'
+
+
+class Jacobo(Actor):
+    RU_NAME = 'Джакобо'
+    NAME_ID = 92211
+    TYPE = ACTOR_MALE
+    NAME = 'jacobo'
+    COMM_APPEARANCE = 'pl_male1_head, pi_pirate2_body, comm_br_guard'
+    CUTSCENE_APPEARANCE = 'jacobo'
+    SPACE_VOICE = 'pilot_f_mil_m01'
+
+
+class Wilham(Actor):
+    RU_NAME = 'Вильгельм'
+    NAME_ID = 92210
+    TYPE = ACTOR_MALE
+    NAME = 'wilham'
+    COMM_APPEARANCE = 'rh_wilham_head, rh_wilham_body, comm_rh_wilham'
+    CUTSCENE_APPEARANCE = 'wilham'
+    SPACE_VOICE = 'razor_1'
 
 
 class Kim(Actor):

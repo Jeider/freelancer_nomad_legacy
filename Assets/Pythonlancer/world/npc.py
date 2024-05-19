@@ -1,4 +1,43 @@
-from world.equipment import Equipment as eq
+class EqMap(object):
+
+    def __init__(
+        self,
+        engine=None,
+        power=None,
+        shield=None,
+        weapon1=None,
+        weapon2=None,
+        weapon3=None,
+        weapon4=None,
+        weapon5=None,
+        weapon6=None,
+        afterburn1=None,
+        afterburn2=None,
+        torpedo=None,
+        cm=None,
+        mine=None,
+        torpedo_ammo=None,
+        cm_ammo=None,
+        mine_ammo=None,
+        base_level=None,
+    ):
+        self.engine = engine or base_level
+        self.power = power or base_level
+        self.shield = shield or base_level
+        self.weapon1 = weapon1 or base_level
+        self.weapon2 = weapon2 or base_level
+        self.weapon3 = weapon3 or base_level
+        self.weapon4 = weapon4 or base_level
+        self.weapon5 = weapon5 or base_level
+        self.weapon6 = weapon6 or base_level
+        self.afterburn1 = afterburn1 or base_level
+        self.afterburn2 = afterburn2 or base_level
+        self.torpedo = torpedo
+        self.cm = cm
+        self.mine = mine
+        self.torpedo_ammo = torpedo_ammo
+        self.cm_ammo = cm_ammo
+        self.mine_ammo = mine_ammo
 
 
 class NPC(object):
@@ -72,6 +111,7 @@ class NPC(object):
     TORPEDO_AMMO = 'torpedo_ammo'
     CM_AMMO = 'cm_ammo'
     MINE_AMMO = 'mine_ammo'
+
     SHIELD_NPC = 'shield_npc'
     SMALL_LIGHT = 'small_light'
     LOADOUT_NICKNAME = 'loadout_nickname'
@@ -99,28 +139,6 @@ class NPC(object):
         MINE_AMMO,
     ]
 
-    EQUIPMENT_MAP = {
-        D1: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
-        D2: [2, 2, 2, 2, 2, 1, 1, 1, 1, 2, 1, 0, 0, 0, 0, 0, 0],
-        D3: [2, 2, 2, 3, 2, 2, 2, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1],
-        D4: [3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 2],
-        D5: [3, 3, 3, 3, 3, 3, 3, 2, 2, 3, 2, 1, 1, 3, 1, 1, 2],
-        D6: [3, 3, 3, 4, 3, 3, 3, 3, 2, 3, 3, 1, 1, 3, 2, 1, 2],
-        D7: [4, 4, 4, 4, 4, 4, 4, 3, 3, 4, 3, 1, 1, 3, 2, 1, 3],
-        D8: [4, 4, 4, 4, 4, 4, 4, 3, 3, 4, 4, 1, 1, 3, 3, 2, 5],
-        D9: [4, 4, 4, 5, 5, 4, 4, 4, 4, 5, 4, 1, 1, 3, 3, 2, 5],
-        D10: [5, 5, 5, 5, 5, 5, 4, 4, 4, 5, 5, 1, 1, 3, 4, 2, 6],
-        D11: [5, 5, 5, 6, 6, 5, 5, 4, 4, 6, 5, 1, 1, 5, 4, 2, 6],
-        D12: [6, 6, 6, 6, 6, 6, 5, 5, 5, 6, 6, 1, 1, 5, 5, 3, 6],
-        D13: [6, 6, 6, 7, 6, 6, 5, 5, 5, 7, 6, 1, 1, 5, 5, 3, 8],
-        D14: [7, 7, 7, 7, 7, 6, 6, 5, 5, 7, 7, 1, 1, 5, 6, 3, 8],
-        D15: [7, 7, 7, 7, 7, 7, 6, 6, 6, 7, 7, 1, 1, 7, 6, 3, 10],
-        D16: [7, 7, 7, 8, 8, 7, 7, 7, 7, 8, 7, 1, 1, 7, 8, 5, 10],
-        D17: [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 1, 1, 7, 10, 5, 10],
-        D18: [8, 8, 8, 9, 9, 8, 8, 8, 8, 9, 8, 1, 1, 7, 10, 20, 20],
-        D19: [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 1, 2, 9, 15, 25, 25],
-    }
-
     PILOT = 'mod_fighter_level_basic'
     CLASS_FIGHTER = 'class_fighter'
 
@@ -133,16 +151,23 @@ pilot = {pilot}
 state_graph = FIGHTER
 npc_class = {classes_list}'''
 
-    def __init__(self, faction, ship, level):
+    def __init__(self, faction, ship, equip_map=None, level=None, name=None):
         self.faction = faction
         self.ship = ship
+        self.equip_map = equip_map
         self.level = level
-        self.equipment = self.get_required_equipment()
+        self.name = name
+        self.package = None
+
+    def set_name(self, name):
+        self.name = name
 
     def get_npc_level_code(self):
         return 'd{}'.format(self.level)
 
     def get_npc_shiparch_nickname(self):
+        if self.name:
+            return self.name
         return 'gen_{faction_code}_{shipclass_name}_{ship_archetype}_{level_code}'.format(
             faction_code=self.faction.CODE,
             shipclass_name=self.ship.SHIPCLASS_NAME,
@@ -152,9 +177,6 @@ npc_class = {classes_list}'''
 
     def get_loadout_nickname(self):
         return self.get_npc_shiparch_nickname()
-
-    def get_required_equipment(self):
-        return dict(zip(self.EQUIP_COLUMNS, self.EQUIPMENT_MAP[self.level]))
 
     def get_classes_list(self):
         classes = [
@@ -179,55 +201,55 @@ npc_class = {classes_list}'''
         return self.NPC_SHIPARCH_TEMPLATE.format(**self.get_npc_shiparch_template_params())
 
     def get_engine_class(self):
-        return self.equipment[self.ENGINE]
+        return self.equip_map.engine
 
     def get_powerplant_class(self):
-        return self.equipment[self.POWER]
+        return self.equip_map.power
 
     def get_shield_class(self):
-        return self.equipment[self.SHIELD]
+        return self.equip_map.shield
 
     def get_weapon1_class(self):
-        return self.equipment[self.WEAPON_1]
+        return self.equip_map.weapon1
 
     def get_weapon2_class(self):
-        return self.equipment[self.WEAPON_2]
+        return self.equip_map.weapon2
 
     def get_weapon3_class(self):
-        return self.equipment[self.WEAPON_3]
+        return self.equip_map.weapon3
 
     def get_weapon4_class(self):
-        return self.equipment[self.WEAPON_4]
+        return self.equip_map.weapon4
 
     def get_weapon5_class(self):
-        return self.equipment[self.WEAPON_5]
+        return self.equip_map.weapon5
 
     def get_weapon6_class(self):
-        return self.equipment[self.WEAPON_6]
+        return self.equip_map.weapon6
 
     def get_afterburn1_class(self):
-        return self.equipment[self.AFTERBURN_1]
+        return self.equip_map.afterburn1
 
     def get_afterburn2_class(self):
-        return self.equipment[self.AFTERBURN_2]
+        return self.equip_map.afterburn2
 
     def get_torpedo_class(self):
-        return self.equipment[self.TORPEDO]
+        return self.equip_map.torpedo
 
     def get_cm_class(self):
-        return self.equipment[self.CM]
+        return self.equip_map.cm
 
     def get_mine_class(self):
-        return self.equipment[self.MINE]
+        return self.equip_map.mine
 
     def get_torpedo_ammo(self):
-        return self.equipment[self.TORPEDO_AMMO]
+        return self.equip_map.torpedo_ammo
 
     def get_cm_ammo(self):
-        return self.equipment[self.CM_AMMO]
+        return self.equip_map.cm_ammo
 
     def get_mine_ammo(self):
-        return self.equipment[self.MINE_AMMO]
+        return self.equip_map.mine_ammo
 
     def get_armor_index(self):
         start_index = self.ship.START_ARMOR_INDEX_PER_SHIP_INDEX[self.ship.SHIP_INDEX]
@@ -245,7 +267,7 @@ npc_class = {classes_list}'''
             self.POWER: self.package[self.POWER].get_nickname(),
             self.SHIELD: self.package[self.SHIELD].get_nickname(),
             self.SHIELD_NPC: self.package[self.SHIELD_NPC].get_nickname(),
-            self.ARMOR:  self.package[self.ARMOR].get_nickname(),
+            self.ARMOR: self.package[self.ARMOR].get_nickname(),
             self.WEAPON_1: self.package[self.WEAPON_1].get_nickname(),
             self.WEAPON_2: self.package[self.WEAPON_2].get_nickname(),
             self.WEAPON_3: self.package[self.WEAPON_3].get_nickname(),
@@ -261,11 +283,15 @@ npc_class = {classes_list}'''
                 self.package[self.MINE],
                 self.package[self.TORPEDO_AMMO],
                 self.package[self.CM_AMMO],
-                self.package[self.MINE_AMMO],),
+                self.package[self.MINE_AMMO],
+            ),
             self.CONTRAIL: self.faction.CONTRAIL,
         }
         params.update(self.ship.DEFAULTS)
         return params
 
-    def get_loadout(self):
-        return self.ship.get_loadout_template().format(**self.get_loadout_template_params())
+    def get_loadout(self, shiparch):
+        if not self.package:
+            raise Exception('Package is not initialized')
+        ship_instance = shiparch.get_ship_by_class(self.ship)
+        return ship_instance.get_loadout_template().format(**self.get_loadout_template_params())

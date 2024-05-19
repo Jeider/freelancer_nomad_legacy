@@ -1,11 +1,10 @@
-import pathlib
 from templates.solar.hacker_panel import HackerPanelManager
 from templates.hardcoded_inis.universe import UniverseTemplate
 from templates.hardcoded_inis.missions import MBasesTemplate
 from templates.hardcoded_inis.root import DockKeyTemplate
 
 from universe.root import UniverseRoot
-from universe.sirius import *
+from universe.sirius import *  # initialize system objects
 from universe.system import System
 from universe.base import Base, EQUIP_CLASSES_PER_LEVEL
 from universe.markets import EquipDealer, ShipDealer
@@ -19,13 +18,15 @@ from text.dividers import SINGLE_DIVIDER, DIVIDER
 
 class UniverseManager(object):
 
-    def __init__(self, misc_equip, weapons, shiparch):
+    def __init__(self, lancer_core):
+        self.core = lancer_core
+
         self.hacker_panels_manager = HackerPanelManager()
         self.universe_root = UniverseRoot()
 
-        self.misc_equip = misc_equip
-        self.weapons = weapons
-        self.shiparch = shiparch
+        self.misc_equip = self.core.misc_equip
+        self.weapons = self.core.weapons
+        self.shiparch = self.core.shiparch
 
         self.systems = []
         self.bases = []

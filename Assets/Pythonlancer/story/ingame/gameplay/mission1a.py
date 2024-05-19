@@ -52,9 +52,9 @@ class Misson01A(ingame_mission.IngameMission):
 
 
     def get_ships(self):
-        return {
-            'alaric': Ship('MSN01_Alaric'),
-        }
+        return [
+            Ship(self, 'alaric'),
+        ]
 
     def get_nn_objectives(self):
         return [

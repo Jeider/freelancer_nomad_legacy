@@ -1105,25 +1105,25 @@ entities={
 	{
 		entity_name="the_stars",
 		type=COMPOUND,
-		template_name="generic_stars",
+		template_name="new_generic",
 		lt_grp=110, srt_grp=-100, usr_flg=1,
 		flags=LIT_DYNAMIC,
-		spatialprops={pos={0,0,0}, orient={{1,0,0},{0,1,0},{0,0,1}}},
+		spatialprops={pos={0,0,0}, orient={{10,0,0},{0,10,0},{0,0,10}}},
 		userprops={
 			category="Prop"
 		}
 	},
-	-- {
-		-- entity_name="the_background",
-		-- type=COMPOUND,
-		-- template_name="starsphere_Ew01",
-		-- lt_grp=110, srt_grp=-100, usr_flg=1,
-		-- flags=LIT_DYNAMIC,
-		-- spatialprops={pos={0,0,0}, orient={{1,0,0},{0,1,0},{0,0,1}}},
-		-- userprops={
-			-- category="Prop"
-		-- }
-	-- },
+	{
+		entity_name="the_background",
+		type=COMPOUND,
+		template_name="om13_nebula",
+		lt_grp=110, srt_grp=-100, usr_flg=1,
+		flags=LIT_DYNAMIC,
+		spatialprops={pos={0,0,0}, orient={{-1,0,0},{0,1,0},{0,0,-1}}},
+		userprops={
+			category="Prop"
+		}
+	},
 	{
 		entity_name="fx_rockford_engine01",
 		type=PSYS,
@@ -2942,7 +2942,7 @@ events={
 		}
 	},
 	{
-		3.5,
+		4, --3.5,
 		START_SOUND,
 		{
 			"DX_m07_omega13_0020_rockford"
@@ -3093,7 +3093,7 @@ events={
 	
 	
 	{
-		11.5,
+		12, --11.5,
 		START_SOUND,
 		{
 			"DX_m07_omega13_0040_rockford"
