@@ -106,30 +106,30 @@ entities={
 	},
 	
 
-	{
-		entity_name="the_stars",
-		type=COMPOUND,
-		template_name="edge_exclusion",
-		lt_grp=5,
-		srt_grp=0,
-		usr_flg=0,
-		flags=LIT_DYNAMIC,
-		spatialprops={
-			pos={
-				0,
-				0,
-				0
-			},
-			orient={
-				{1,0,0},
-				{0,1,0},
-				{0,0,1}
-			}
-		},
-		userprops={
-			category="Prop"
-		}
-	},
+	-- {
+		-- entity_name="the_stars",
+		-- type=COMPOUND,
+		-- template_name="edge_exclusion",
+		-- lt_grp=5,
+		-- srt_grp=0,
+		-- usr_flg=0,
+		-- flags=LIT_DYNAMIC,
+		-- spatialprops={
+			-- pos={
+				-- 0,
+				-- 0,
+				-- 0
+			-- },
+			-- orient={
+				-- {1,0,0},
+				-- {0,1,0},
+				-- {0,0,1}
+			-- }
+		-- },
+		-- userprops={
+			-- category="Prop"
+		-- }
+	-- },
 	{
 		entity_name="ship_l_elite_Juni",
 		type=COMPOUND,
@@ -180,42 +180,7 @@ entities={
 		-- }
 	-- },
 	
-	{
-		entity_name="ambi_terrain_tiny_01",
-		type=COMPOUND,
-		template_name="ast_rock_largea_solar_test_test",
-		lt_grp=0,
-		srt_grp=-50,
-		usr_flg=0,
-		flags=LIT_DYNAMIC,
-		spatialprops={
-			pos={
-				0,
-				0,
-				0
-			},
-			orient={
-				{
-					-0.127714,
-					0.192723,
-					-0.9729060000000001
-				},
-				{
-					-0.251415,
-					-0.95519,
-					-0.15621
-				},
-				{
-					-0.9594160000000001,
-					0.224653,
-					0.170445
-				}
-			}
-		},
-		userprops={
-			category="Solar"
-		}
-	},
+
 	
 	
 	{
@@ -229,7 +194,7 @@ entities={
 		spatialprops={
 			pos={
 				-- 0.3, 1.65, -2
-				0, 1.4, -470
+				-1.7, 1.25, -4
 			},
 			orient={
 				{0,0,1},
@@ -239,8 +204,8 @@ entities={
 			}
 		},
 		cameraprops={
-			fovh=30,
-			hvaspect=1.85,
+			fovh=15,
+			hvaspect=1,
 			nearplane=0.2,
 			farplane=5000
 		}
@@ -253,7 +218,25 @@ entities={
 		template_id=0,
 		spatialprops={
 			pos={
-				-0.5, 21.1, 0
+				0, 1.05, 0
+				-- 0, 1.6, 0
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+	},
+
+	{
+		entity_name="ik",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				0, 1, -4
 				-- 0, 1.6, 0
 			},
 			orient={
@@ -267,7 +250,7 @@ entities={
 	{
 		entity_name="Char_trent",
 		type=DEFORMABLE,
-		template_name="trent",
+		template_name="alaric",
 		lt_grp=0,
 		srt_grp=0,
 		usr_flg=0,
@@ -280,13 +263,36 @@ entities={
 			}
 		},
 		compoundprops={
-			floor_height=-1000 --0.42
+			floor_height=0 --0.42
 		},
 		userprops={
 			actor="Player123",
 			category="Character"
 		}
 	},
+	-- {
+		-- entity_name="Char_hatcher",
+		-- type=DEFORMABLE,
+		-- template_name="hatcher",
+		-- lt_grp=0,
+		-- srt_grp=0,
+		-- usr_flg=0,
+		-- flags=LIT_DYNAMIC + LIT_AMBIENT,
+		-- spatialprops={
+			-- pos={
+				-- 0, 0, 0
+			-- },
+			-- orient={
+			-- }
+		-- },
+		-- compoundprops={
+			-- floor_height=0 --0.42
+		-- },
+		-- userprops={
+			-- actor="Player1234",
+			-- category="Character"
+		-- }
+	-- },
 
 }
 
@@ -319,6 +325,39 @@ events = {
 		}
 	},
 
+	-- {
+		-- 0,
+		-- START_IK,
+		-- {
+			-- "Char_trent",
+			-- "ik"
+		-- },
+		-- {
+			-- duration=2555,
+			-- end_effector="Body_Head",
+			-- target_part="",
+			-- target_type=ROOT,
+			-- count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, transition_duration=1, event_flags=128
+		-- }
+	-- },
+	
+	{
+		0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Char_trent"
+		},
+		{
+			duration=0,
+			target_type=ROOT,
+			spatialprops={
+				axisrot={
+					10,
+					Y_AXIS
+				}
+			}
+		}
+	},
 	
 	-- {
 		-- 0,
@@ -338,6 +377,35 @@ events = {
 		-- }
 	-- },
 
+
+	{
+		0,
+		START_MOTION,
+		{"Char_trent"},
+		{animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+		 duration=15, time_scale=1, weight=1, heading=-1}
+	},
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_MLHAND_HNEUT_GESTL_FIST_000LV_00",
+		 -- duration=2, time_scale=1, weight=1, heading=-1}
+	-- },
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_MLHAND_HNEUT_GESTR_FIST_000LV_00",
+		 -- duration=2, time_scale=1, weight=1, heading=-1}
+	-- },
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_hatcher"},
+		-- {animation="Sc_FMBODY_STND_RHIP_000LV_A_09",
+		 -- duration=15, time_scale=0.8, weight=1, heading=-1}
+	-- },
 	
 }
 

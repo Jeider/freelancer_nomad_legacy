@@ -22,6 +22,53 @@ LOW_REAL_AST_ARCHETYPE = 'om15_mineast_super_lowdamage'
 VALID_AST_LOADOUT = 'm2_low_real_om15_xast_ultra'
 INVALID_AST_LOADOUT = 'm2_low_real_om15_xast_empty'
 
+NPCSHIPS = '''
+[NPCShipArch]
+nickname = ms2_junker_fighter
+loadout = ms2_junker_fighter
+level = d5
+ship_archetype = bw_fighter
+pilot = mod_fighter_version_a
+state_graph = FIGHTER
+npc_class = unlawful, FIGHTER
+
+[NPCShipArch]
+nickname = ms2_junker_elite
+loadout = ms2_junker_elite
+level = d5
+ship_archetype = bw_elite
+pilot = mod_fighter_version_a_lowgun
+state_graph = FIGHTER
+npc_class = unlawful, FIGHTER
+
+[NPCShipArch]
+nickname = ms2_csv_cinema
+loadout = ms2_csv_01_cinema
+level = d5
+ship_archetype = ge_csv
+pilot = mod_fighter_version_a
+state_graph = FIGHTER
+npc_class = unlawful, FIGHTER
+
+[NPCShipArch]
+nickname = ms2_suprise_ship
+loadout = ms2_top_secret
+level = d1
+ship_archetype = suprise_rh_elite_ms2
+pilot = pilot_null
+state_graph = FIGHTER
+npc_class = lawful, FIGHTER
+
+[NPCShipArch]
+nickname = ms2_suprise_ship_freighter
+level = d1
+ship_archetype = rh_freighter
+pilot = pilot_null
+state_graph = FIGHTER
+npc_class = lawful, FIGHTER
+
+'''
+
 
 class Om15DemoAstField(object):
     POSITIONS = [
@@ -113,6 +160,7 @@ class Misson02(ingame_mission.IngameMission):
     JINJA_TEMPLATE = 'missions/m02/m02.ini'
     FOLDER = 'M02'
     FILE = 'm02'
+    STATIC_NPCSHIPS = NPCSHIPS
 
     def get_ingame_thorns(self):
         return [
@@ -165,7 +213,7 @@ class Misson02(ingame_mission.IngameMission):
             'om15_virtual_depot': Obj(self, om15.Om15VirtualDepot),
             'om15_jacobo_miner': Obj(self, om15.Om15RoidMiner6),
 
-            'om15_to_biz': Obj(self, rh_biz.BizmarkOmega15Jumpgate),
+            'om15_to_biz': Obj(self, om15.Om15BizmarkJumpgate),
             'battleship': Obj(self, rh_biz.BizmarkBattleship),
         }
 
@@ -212,13 +260,13 @@ class Misson02(ingame_mission.IngameMission):
             Point(self, S.om15, 'platform2'),
 
             Point(self, S.om15, 'shipbfr1'),
-            Point(self, S.om15, 'shipb1'),
-            Point(self, S.om15, 'shipb1'),
-            Point(self, S.om15, 'shipb2'),
-            Point(self, S.om15, 'shipb3'),
-            Point(self, S.om15, 'shipb4'),
-            Point(self, S.om15, 'shipb5'),
-            Point(self, S.om15, 'shipb6'),
+            # Point(self, S.om15, 'shipb1'),
+            # Point(self, S.om15, 'shipb1'),
+            # Point(self, S.om15, 'shipb2'),
+            # Point(self, S.om15, 'shipb3'),
+            # Point(self, S.om15, 'shipb4'),
+            # Point(self, S.om15, 'shipb5'),
+            # Point(self, S.om15, 'shipb6'),
 
             Point(self, S.om15, 'player_base_save'),
             Point(self, S.om15, 'wilham_base'),
@@ -231,6 +279,11 @@ class Misson02(ingame_mission.IngameMission):
             Ship(
                 self,
                 'jacobo',
+                labels=[
+                    'outcast',
+                    'friend',
+                ],
+                actor=actors.Jacobo,
                 npc=NPC(
                     faction=faction.Outcasts,
                     ship=ship.Stiletto,
@@ -243,6 +296,10 @@ class Misson02(ingame_mission.IngameMission):
                 'wilham',
                 jumper=True,
                 actor=actors.Wilham,
+                labels=[
+                    'rheinland',
+                    'friend',
+                ],
                 npc=NPC(
                     faction=faction.RheinlandMain,
                     ship=ship.Valkyrie,
@@ -253,6 +310,20 @@ class Misson02(ingame_mission.IngameMission):
             Ship(
                 self,
                 'punisher',
+                count=5,
+                labels=[
+                    'punisher',
+                    'punishers',
+                    'rheinland',
+                ],
+                unique_npc_entry=True,
+                name_ids=[
+                    92202,
+                    92203,
+                    92204,
+                    92205,
+                    92206,
+                ],
                 npc=NPC(
                     faction=faction.RheinlandMain,
                     ship=ship.Valkyrie,
@@ -263,20 +334,26 @@ class Misson02(ingame_mission.IngameMission):
             Ship(
                 self,
                 'junker_fighter',
-                count=5,
+                count=7,
                 affiliation=faction.Junkers.CODE,
+                labels=['junker'],
+                relative_pos=True,
+                relative_range=1000,
                 npc=NPC(
                     faction=faction.Junkers,
                     ship=ship.Dagger,
                     level=NPC.D2,
-                    equip_map=EqMap(base_level=2),
+                    equip_map=EqMap(base_level=1),
                 )
             ),
             Ship(
                 self,
                 'junker_elite',
-                count=5,
+                count=3,
                 affiliation=faction.Junkers.CODE,
+                labels=['junker'],
+                relative_pos=True,
+                relative_range=1500,
                 npc=NPC(
                     faction=faction.Junkers,
                     ship=ship.Dagger,
@@ -288,21 +365,47 @@ class Misson02(ingame_mission.IngameMission):
                 self,
                 'junker_csv',
                 affiliation=faction.Junkers.CODE,
+                labels=['junker'],
+                relative_pos=True,
+                relative_range=1600,
                 npc=NPC(
                     faction=faction.Junkers,
                     ship=ship.CSV,
                     level=NPC.D1,
-                    equip_map=EqMap(base_level=1),
+                    equip_map=EqMap(base_level=2),
                 )
             ),
             Ship(
                 self,
                 'depot_fighter',
-                count=10,
+                count=6,
                 affiliation=faction.Corsairs.CODE,
+                system_class=S.om15,
+                labels=[
+                    'depot_fighters',
+                    'corsairs',
+                    'ships',
+                ],
                 npc=NPC(
                     faction=faction.Corsairs,
                     ship=ship.Bloodhound,
+                    level=NPC.D1,
+                    equip_map=EqMap(base_level=2),
+                )
+            ),
+            Ship(
+                self,
+                'depot_freighter',
+                count=2,
+                affiliation=faction.Corsairs.CODE,
+                labels=[
+                    'depot_freighters',
+                    'corsairs',
+                    'ships',
+                ],
+                npc=NPC(
+                    faction=faction.Corsairs,
+                    ship=ship.Mule,
                     level=NPC.D1,
                     equip_map=EqMap(base_level=1),
                 )
@@ -310,20 +413,52 @@ class Misson02(ingame_mission.IngameMission):
             Ship(
                 self,
                 'base_fighter',
-                count=10,
+                count=6,
                 affiliation=faction.Corsairs.CODE,
+                system_class=S.om15,
+                labels=[
+                    'base_fighters',
+                    'corsairs',
+                    'ships',
+                ],
                 npc=NPC(
                     faction=faction.Corsairs,
                     ship=ship.Bloodhound,
                     level=NPC.D1,
-                    equip_map=EqMap(base_level=1),
+                    equip_map=EqMap(base_level=2),
                 )
             ),
             Ship(
                 self,
-                'base_fighter_improved',
-                count=5,
+                'base_reinforcement',
+                count=3,
+                relative_pos=True,
+                relative_range=2000,
                 affiliation=faction.Corsairs.CODE,
+                labels=[
+                    'base_fighters',
+                    'corsairs',
+                    'ships',
+                ],
+                npc=NPC(
+                    faction=faction.Corsairs,
+                    ship=ship.Bloodhound,
+                    level=NPC.D2,
+                    equip_map=EqMap(base_level=2),
+                )
+            ),
+            Ship(
+                self,
+                'base_reinforcement_second',
+                count=3,
+                relative_pos=True,
+                relative_range=2000,
+                affiliation=faction.Corsairs.CODE,
+                labels=[
+                    'base_fighters',
+                    'corsairs',
+                    'ships',
+                ],
                 npc=NPC(
                     faction=faction.Corsairs,
                     ship=ship.Bloodhound,
@@ -333,32 +468,6 @@ class Misson02(ingame_mission.IngameMission):
             ),
         ]
 
-    '''
-
-
-[NPC]
-nickname = npc_co_fighter
-affiliation = co_grp
-npc_ship_arch = co_fighter_m2
-
-[NPC]
-nickname = npc_co_freighter
-affiliation = co_grp
-npc_ship_arch = co_freighter_m2
-
-[NPC]
-nickname = npc_co_fighter_improved
-affiliation = co_grp
-npc_ship_arch = co_fighter_m2_improved
-
-
-[MsnShip]
-nickname = depot_freighter1
-NPC = npc_co_freighter
-label = corsairs
-label = depot_freighters
-random_name = true
-    '''
     def get_initial_context(self) -> dict:
         context = super().get_initial_context()
         context['demo_astfield'] = Om15DemoAstField()
@@ -399,132 +508,3 @@ random_name = true
 
 
 
-'''
-[NPCShipArch]
-nickname = ms2_wilham
-loadout = ms2_wilham_01
-level = d10
-ship_archetype = rh_elite
-pilot = mod_fighter_version_a
-state_graph = FIGHTER
-npc_class = lawful, FIGHTER
-
-[NPCShipArch]
-nickname = ms2_junker_fighter
-loadout = ms2_junker_fighter
-level = d5
-ship_archetype = bw_fighter
-pilot = mod_fighter_version_a
-state_graph = FIGHTER
-npc_class = unlawful, FIGHTER
-
-[NPCShipArch]
-nickname = ms2_junker_elite
-loadout = ms2_junker_elite
-level = d5
-ship_archetype = bw_elite
-pilot = mod_fighter_version_a_lowgun
-state_graph = FIGHTER
-npc_class = unlawful, FIGHTER
-
-[NPCShipArch]
-nickname = ms2_csv
-loadout = ms2_csv_01
-level = d5
-ship_archetype = ge_csv
-pilot = mod_fighter_version_a
-state_graph = FIGHTER
-npc_class = unlawful, FIGHTER
-
-[NPCShipArch]
-nickname = ms2_csv_cinema
-loadout = ms2_csv_01_cinema
-level = d5
-ship_archetype = ge_csv
-pilot = mod_fighter_version_a
-state_graph = FIGHTER
-npc_class = unlawful, FIGHTER
-
-
-
-;PUNISHERS
-[NPCShipArch]
-nickname = ms2_punisher_a
-loadout = ms2_punisher_01
-level = d10
-ship_archetype = rh_elite
-pilot = mod_fighter_version_a_lowgun
-state_graph = FIGHTER
-npc_class = lawful, FIGHTER
-
-[NPCShipArch]
-nickname = ms2_punisher_b
-loadout = ms2_punisher_02
-level = d10
-ship_archetype = rh_elite
-pilot = mod_fighter_version_a_lowgun
-state_graph = FIGHTER
-npc_class = lawful, FIGHTER
-
-
-;v2 arch
-
-
-[NPCShipArch]
-nickname = ms2_jacobo
-loadout = ms2_jacobo_01
-level = d3
-ship_archetype = bw_elite
-pilot = mod_fighter_version_a
-state_graph = FIGHTER
-npc_class = lawful, FIGHTER
-
-[NPCShipArch]
-nickname = ms2_suprise_ship
-loadout = ms2_top_secret
-level = d1
-ship_archetype = suprise_rh_elite_ms2
-pilot = pilot_null
-state_graph = FIGHTER
-npc_class = lawful, FIGHTER
-
-[NPCShipArch]
-nickname = ms2_suprise_ship_freighter
-level = d1
-ship_archetype = rh_freighter
-pilot = pilot_null
-state_graph = FIGHTER
-npc_class = lawful, FIGHTER
-
-
-
-
-
-;CORSAIRS
-[NPCShipArch]
-nickname = co_fighter_m2
-loadout = lod_m2_co_fighter
-level = d3
-ship_archetype = pi_fighter
-pilot = mod_fighter_version_a
-state_graph = FIGHTER
-npc_class = unlawful, FIGHTER, m2_reinforce
-
-[NPCShipArch]
-nickname = co_fighter_m2_improved
-loadout = lod_m2_co_fighter_improved
-level = d4
-ship_archetype = pi_fighter
-pilot = mod_fighter_version_a
-state_graph = FIGHTER
-npc_class = unlawful, FIGHTER, m2_reinforce
-
-[NPCShipArch]
-nickname = co_freighter_m2
-loadout = lod_ms2_co_freighter
-level = d4
-ship_archetype = pi_freighter
-pilot = mod_fighter_version_a
-state_graph = FIGHTER
-npc_class = unlawful, FREIGHTER
-'''

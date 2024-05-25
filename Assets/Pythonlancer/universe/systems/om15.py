@@ -106,6 +106,7 @@ class Om15StoryNebula(Omega15Member, Om15WalkerNebula):
     INDEX = 1
     FILE_NAME = 'gen_om15_orange_nebula4'
     CONTENT_TEMPLATE = om15_orange_nebula.Omega15NorthStoryNebulaTemplate
+    MUSIC = Ambience.NEBULA_WALKER
 
 
 WALKER_EXCLUSION_PARAMS = {
@@ -497,3 +498,24 @@ class Om15VirtualConn2(Omega15Member, main_objects.BrokenTradeConnection):
     TRADELANE_LETTER = 'F'
     HUNTER_DEFENCE_REL = TOP
 
+
+class Om15StoryCorsairBase(Omega15Member, main_objects.VirtualDepot):
+    ALIAS = 'story_excl'
+    INDEX = 1
+
+    EXCLUSION_PARAMS = WALKER_EXCLUSION_PARAMS
+    NEBULA_EXCLUSION_ZONE_SIZE = 6000
+    NEBULA_ZONES = [
+        Om15StoryNebula
+    ]
+
+
+class Om15StoryCorsairDepot(Omega15Member, main_objects.VirtualDepot):
+    ALIAS = 'story_excl'
+    INDEX = 2
+
+    EXCLUSION_PARAMS = WALKER_EXCLUSION_PARAMS
+    NEBULA_EXCLUSION_ZONE_SIZE = 3000
+    NEBULA_ZONES = [
+        Om15StoryNebula
+    ]

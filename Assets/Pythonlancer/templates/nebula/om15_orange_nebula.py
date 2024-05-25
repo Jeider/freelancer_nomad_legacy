@@ -221,12 +221,7 @@ opacity = 0.5
 flag = nebula
 
 [Exclusion Zones]
-exclusion = Zone_OM15_MS2_EXCLUSION
-fog_far = 12500.000000
-zone_shell = solar\\nebula\\walker_exclusion.3db
-shell_scalar = 1.000000
-max_alpha = 0.30000
-exclusion_tint = 200, 200, 200
+{exclusions}
 
 
 [Exterior]

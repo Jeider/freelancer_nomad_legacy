@@ -8,6 +8,7 @@ class IngameMission(object):
     FOLDER = None
     FILE = None
     NPC_FILE = 'npcships'
+    STATIC_NPCSHIPS = None
 
     subclasses = []
 
@@ -91,7 +92,7 @@ class IngameMission(object):
         content = []
         ships = self.get_ships_with_npc()
         for ship in ships:
-            content.append(ship.get_mission_npc())
+            content.append(ship.get_mission_npcs())
             content.append(ship.get_mission_ships())
         return DIVIDER.join(content)
 

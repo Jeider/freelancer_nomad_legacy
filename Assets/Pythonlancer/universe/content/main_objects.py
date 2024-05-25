@@ -637,6 +637,7 @@ class NotDockableObject(StaticObject):
 class DockableObject(StaticObject):
     ARCHETYPE = 'depot'
     INTERIOR_CLASS = interior.CustomFileInterior  # custom interior
+    INTERIOR_EXTRA_ROOMS = []
     INTERIORS_FOLDER = 'GENERATED_INTERIORS'
     DEALERS = None
 

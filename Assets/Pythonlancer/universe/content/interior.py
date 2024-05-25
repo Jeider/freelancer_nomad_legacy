@@ -312,6 +312,7 @@ class GenericInterior(Interior):
                     )
                 )
             )
+        items.extend(self.base_instance.INTERIOR_EXTRA_ROOMS)
 
         return DIVIDER.join(items)
 

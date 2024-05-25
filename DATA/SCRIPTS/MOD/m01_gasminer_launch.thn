@@ -81,34 +81,6 @@ entities={
 		}
 	},
 	{
-		entity_name="Marker_CAM2",
-		type=MARKER,
-		template_name="",
-		template_id=0,
-		spatialprops={
-			pos={
-				-17920, 680, 29685
-			},
-			orient={
-				{
-					1,
-					0,
-					0
-				},
-				{
-					0,
-					1,
-					0
-				},
-				{
-					0,
-					0,
-					1
-				}
-			}
-		}
-	},
-	{
 		entity_name="Marker_1",
 		type=MARKER,
 		template_name="",
@@ -168,22 +140,7 @@ events={
 			flags=LOOK_AT
 		}
 	},
-	{
-		0,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"Shot06_Camera_0",
-			"Marker_CAM2"
-		},
-		{
-			duration=5,
-			target_part="",
-			target_type=ROOT,
-			spatialprops={pos={0,0,0}},
-			param_curve={CLSID="FreeFormPCurve",points={{0,0,0,0},{1,1,0,0}}},
-			pcurve_period=-1000
-		}
-	},
+
 }
 
 

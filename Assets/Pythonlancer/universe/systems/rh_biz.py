@@ -175,6 +175,12 @@ class BizmarkBattleship(BizmarkMember, main_objects.RheinlandBattleship):
 
     AUDIO_PREFIX = SpaceVoice.BATTLESHIP
     INTERIOR_CLASS = interior.BattleshipInterior
+    INTERIOR_EXTRA_ROOMS = ['''
+;mission 02 special room
+[Room]
+nickname = Deck2
+file = Universe\\SYSTEMS_MOD\\RH_BIZMARK\\Room\\rh_biz_03_deck2.ini
+    ''']
     DEALERS = dealers.RheinlandMilitaryDealers
 
 

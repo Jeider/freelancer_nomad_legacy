@@ -33,6 +33,9 @@ class StoryManager(object):
 
             npc_shiparchs = []
 
+            if mission.STATIC_NPCSHIPS:
+                npc_shiparchs.append(mission.STATIC_NPCSHIPS)
+
             for npc in mission.get_npcs():
                 npc.set_equipment_package(self.population.get_equipment_package(npc))
                 loadout = npc.get_loadout(self.shiparch)

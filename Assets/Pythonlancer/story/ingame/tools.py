@@ -371,17 +371,29 @@ class Ship(Target):
 
     def __init__(self, mission, name, count=1, npc=None, actor=None,
                  affiliation=None, jumper=False, labels=None,
-                 rel_pos=None, radius=None):
+                 rel_pos=None, relative_pos=False, relative_target='Player', relative_range=1000,
+                 radius=None, system_class=None, name_ids=None, unique_npc_entry=False):
         self.mission = mission
+        self.system = (
+            self.mission.get_system(system_class.NAME)
+            if system_class
+            else None
+        )
         self.name = name
         self.count = count
         self.npc = npc
         self.jumper = jumper
         self.affiliation = affiliation or self.DEFAULT_AFFILIATION
         self.rel_pos = rel_pos
+        self.relative_pos = relative_pos
+        self.relative_target = relative_target
+        self.relative_range = relative_range
+        self.rel_deg = self.get_init_rel_deg()
         self.radius = radius
         self.actor = actor
         self.labels = labels if labels is not None else []
+        self.name_ids = name_ids if name_ids is not None else []
+        self.unique_npc_entry = unique_npc_entry
         if self.npc:
             self.npc.set_name(self.get_npc_shiparch_name())
 
@@ -398,18 +410,21 @@ class Ship(Target):
         return f'{self.name}'
 
     def get_multiple_member_name(self, index):
-        return f'{self.name}_{index:02d}'
+        return f'{self.name}{index}'
 
-    def get_mission_npc_name(self):
-        return f'npc_{self.name}'
+    def get_mission_npc_name(self, index=1):
+        if not self.unique_npc_entry:
+            return f'npc_{self.name}'
+
+        return f'npc_{self.name}_{index}'
 
     def get_npc_shiparch_name(self):
         return f'{self.mission.FILE}_{self.name}'
 
-    def get_mission_npc(self):
+    def get_mission_npc(self, index=1):
         items = [
             '[NPC]',
-            f'nickname = {self.get_mission_npc_name()}',
+            f'nickname = {self.get_mission_npc_name(index)}',
             f'npc_ship_arch = {self.get_npc_shiparch_name()}',
             f'affiliation = {self.affiliation}',
         ]
@@ -420,25 +435,55 @@ class Ship(Target):
                 items.append(f'space_costume = {self.actor.COMM_APPEARANCE}')
             if self.actor.SPACE_VOICE:
                 items.append(f'voice = {self.actor.SPACE_VOICE}')
+        else:
+            if self.name_ids:
+                items.append(f'individual_name = {self.name_ids[index-1]}')
+
         return SINGLE_DIVIDER.join(items)
+
+    def get_mission_npcs(self):
+        if not self.unique_npc_entry:
+            return self.get_mission_npc()
+
+        entries = []
+        for index in range(1, self.count+1):
+            entries.append(self.get_mission_npc(index))
+
+        return DIVIDER.join(entries)
 
     def get_mission_ship(self, index=1):
         items = [
             '[MsnShip]',
             f'nickname = {self.member(index)}',
-            f'NPC = {self.get_mission_npc_name()}',
-            f'npc_ship_arch = {self.get_npc_shiparch_name()}',
-            f'affiliation = {self.affiliation}',
+            f'NPC = {self.get_mission_npc_name(index)}',
         ]
         if self.jumper:
             items.append('jumper = true')
         if not self.actor or not self.actor.NAME_ID:
-            items.append('random_name = true')
+            if not self.name_ids:
+                items.append('random_name = true')
         if self.rel_pos:
             items.append(f'rel_pos = {self.rel_pos.get_ini()}')
+        if self.relative_pos:
+            items.append(f'rel_pos = {self.get_next_deg(index)}, {self.relative_target}, {self.relative_range}')
         if self.radius:
             items.append(f'radius = {self.radius}')
+        for label in self.labels:
+            items.append(f'label = {label}')
         return SINGLE_DIVIDER.join(items)
+
+    def get_init_rel_deg(self):
+        return randint(0, 360)
+
+    def get_rel_deg_step(self):
+        return 360 / self.count
+
+    def get_next_deg(self, index):
+        if index != 1:
+            self.rel_deg += self.get_rel_deg_step()
+            if self.rel_deg > 360:
+                self.rel_deg -= 360
+        return int(self.rel_deg)
 
     def get_mission_ships(self):
         msn_ships = []
@@ -447,6 +492,75 @@ class Ship(Target):
                 self.get_mission_ship(member_index)
             )
         return DIVIDER.join(msn_ships)
+
+    def spawn_all(self):
+        actions = []
+        for index in range(1, self.count+1):
+            actions.append(f'Act_SpawnShip = {self.get_multiple_member_name(index)}')
+        return SINGLE_DIVIDER.join(actions)
+
+    def spawn_all_with_pos_orient(self, objlist='no_ol'):
+        if self.system is None:
+            raise Exception('System is not defined for ship %s' % self.name)
+        actions = []
+        for index in range(1, self.count+1):
+            name = self.get_multiple_member_name(index)
+            marker = Marker(self.system, name)
+            pos_orient = '{0:.2f}, {1:.2f}, {2:.2f}, {3:.2f}, {4:.2f}, {5:.2f}, {6:.2f}'.format(
+                *marker.get_position(),
+                *euler_to_quat(*marker.get_rotate())
+            )
+            actions.append(f'Act_SpawnShip = {name}, {objlist}, {pos_orient}')
+
+        return SINGLE_DIVIDER.join(actions)
+
+    def mark_all(self, exclude=None):
+        actions = []
+        exclude = exclude or []
+        for index in range(1, self.count+1):
+            if index in exclude:
+                continue
+            actions.append(f'Act_MarkObj = {self.get_multiple_member_name(index)}, 1')
+        return SINGLE_DIVIDER.join(actions)
+
+    def unmark_all(self, exclude=None):
+        actions = []
+        exclude = exclude or []
+        for index in range(1, self.count+1):
+            if index in exclude:
+                continue
+            actions.append(f'Act_MarkObj = {self.get_multiple_member_name(index)}, 0')
+        return SINGLE_DIVIDER.join(actions)
+
+    def member_list(self, separator=', ', exclude=None):
+        members = []
+        exclude = exclude or []
+        for index in range(1, self.count+1):
+            if index in exclude:
+                continue
+            members.append(self.get_multiple_member_name(index))
+
+        return separator.join(members)
+
+    def formation_members(self, exclude=None):
+        members = []
+        exclude = exclude or []
+        for index in range(1, self.count+1):
+            if index in exclude:
+                continue
+            members.append(f'ship = {self.get_multiple_member_name(index)}')
+
+        return SINGLE_DIVIDER.join(members)
+
+    def give_objlist_all(self, objlist, exclude=None):
+        members = []
+        exclude = exclude or []
+        for index in range(1, self.count+1):
+            if index in exclude:
+                continue
+            members.append(f'Act_GiveObjList = {self.get_multiple_member_name(index)}, {objlist}')
+
+        return SINGLE_DIVIDER.join(members)
 
 
 class NNObj(object):
