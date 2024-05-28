@@ -78,6 +78,8 @@ class PopulationManager(object):
 
     def load_game_data(self):
         for faction in self.factions:
+            if faction.STORY_ONLY:
+                continue
             self.npc_db[faction.CODE] = []
             self.loadouts_db[faction.CODE] = []
 

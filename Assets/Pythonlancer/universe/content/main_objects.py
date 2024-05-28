@@ -338,13 +338,15 @@ class JumpableObject(StaticObject):
         return self.system.JUMP_EFFECT.JUMP_EFFECT
 
     def get_inspace_nickname(self):
-        return '{system_name}_jg_to_{target_system_name}'.format(
+        return '{system_name}_{alias}_to_{target_system_name}'.format(
+            alias=self.ALIAS,
             system_name=self.system.NAME,
             target_system_name=self.TARGET_SYSTEM_NAME,
         )
 
-    def get_target_jumpgate_nickname(self):
-        return '{target_system_name}_jg_to_{system_name}'.format(
+    def get_target_jump_object_nickname(self):
+        return '{target_system_name}_{alias}_to_{system_name}'.format(
+            alias=self.ALIAS,
             system_name=self.system.NAME,
             target_system_name=self.TARGET_SYSTEM_NAME,  # Should not be initialized
         )
@@ -352,7 +354,7 @@ class JumpableObject(StaticObject):
     def get_goto(self):
         return '{target_system_nickname}, {target_jumpgate_name}, {gate_tunnel}'.format(
             target_system_nickname=self.get_target_system().NAME,  # Should be initialized
-            target_jumpgate_name=self.get_target_jumpgate_nickname(),
+            target_jumpgate_name=self.get_target_jump_object_nickname(),
             gate_tunnel=self.system.JUMP_EFFECT.GATE_TUNNEL
         )
 
@@ -391,6 +393,21 @@ class Jumpgate(JumpableObject):
 
     def get_rotate(self):
         return (0, self.Y_ROTATE_PER_REL[self.REL], 0)
+
+
+class Jumphole(JumpableObject):
+    ALIAS = 'jh'
+    REL_DRIFT = 500
+    REL_APPEND = 2000
+
+    IDS_NAME = 196718
+    IDS_INFO = 65551
+    ARCHETYPE = 'jumphole'
+    LOADOUT = 'hole_effect_edge'
+
+    DEFENCE_LEVEL = None
+
+    CONNECTION_KIND = connection.CONNECTION_UNLAWFUL
 
 
 class GenericSphere(StaticObject):

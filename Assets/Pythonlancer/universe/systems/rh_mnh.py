@@ -35,7 +35,7 @@ local_faction = li_p_grp
 space_farclip = 100000
 
 [TexturePanels]
-file = universe\heavens\shapes.ini
+file = universe\\heavens\\shapes.ini
 
 [Music]
 space = music_omega_space
@@ -323,19 +323,12 @@ class MunchHonshuJumpgate(MunchMember, main_objects.Jumpgate):
     REL = LEFT
     TARGET_SYSTEM_NAME = 'ku_hns'
 
-#
-# class MunchKoengisbergJumpgate(MunchMember, main_objects.Jumpgate):
-#     INDEX = 3
-#     REL = TOP
-#     LOCKED_DOCK = True
-#     TARGET_SYSTEM_NAME = 'sig13'
 
-
-# TEMPORARY VIRTUAL
-class MunchKoengisbergJumpgate(MunchMember, main_objects.VirtualDepot):
-    ALIAS = 'jg'
+class MunchKoengisbergJumpgate(MunchMember, main_objects.Jumpgate):
     INDEX = 3
     REL = TOP
+    LOCKED_DOCK = True
+    TARGET_SYSTEM_NAME = 'rh_kgb'
 
 
 class MunchDockring(MunchMember, main_objects.Dockring):

@@ -19,8 +19,8 @@ class LancerCore(object):
     def __init__(self, enable_story=True):
         self.last_equip_string_id = INITIAL_EQUIP_STRING_ID
         self.last_equip_infocard_id = INITIAL_EQUIP_INFOCARD_ID
-        self.last_ship_string_id = INITIAL_SHIP_INFOCARD_ID
-        self.last_ship_infocard_id = INITIAL_SHIP_STRING_ID
+        self.last_ship_string_id = INITIAL_SHIP_STRING_ID
+        self.last_ship_infocard_id = INITIAL_SHIP_INFOCARD_ID
 
         self.misc_equip = MiscEquipManager(self)
         self.weapons = WeaponManager(self)

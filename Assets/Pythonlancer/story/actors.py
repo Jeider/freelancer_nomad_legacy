@@ -117,10 +117,19 @@ class Yamamoto(Actor):
 
 class Hassler(Actor):
     RU_NAME = 'Хасслер'
+    NAME_ID = 93202
     TYPE = ACTOR_MALE
     NAME = 'hassler'
-    # COMM_APPEARANCE = ''
+    COMM_APPEARANCE = 'rh_hassler_head, rh_male_elite_body, comm_rh_reichman'
     CUTSCENE_APPEARANCE = 'hassler'
+
+
+class HasslerOrder(Actor):
+    RU_NAME = 'Хасслер'
+    TYPE = ACTOR_MALE
+    NAME = 'hassler'
+    COMM_APPEARANCE = 'rh_hassler_head, rh_male_elite_body, comm_rh_reichman'
+    CUTSCENE_APPEARANCE = 'hassler_order'
 
 
 class Jacobo(Actor):

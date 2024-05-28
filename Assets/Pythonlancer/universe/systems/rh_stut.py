@@ -37,7 +37,7 @@ local_faction = rh_grp
 space_farclip = 75000
 
 [TexturePanels]
-file = universe\heavens\shapes.ini
+file = universe\\heavens\\shapes.ini
 
 [Music]
 space = music_rh_space

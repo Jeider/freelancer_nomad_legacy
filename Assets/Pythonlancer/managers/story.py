@@ -26,6 +26,7 @@ class StoryManager(object):
         self.ship_loadouts = []
 
         for mission_class in IngameMission.subclasses:
+            print(mission_class)
             mission = mission_class(universe_root)
             self.missions.append(mission)
             content = tpl_manager.get_result(mission.get_template(), mission.get_context())

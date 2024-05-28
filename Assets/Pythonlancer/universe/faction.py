@@ -14,6 +14,8 @@ class Faction(object):
     ELITE2 = None
     ELITE3 = None
 
+    STORY_ONLY = False
+
     subclasses = []
 
     def __init_subclass__(cls, **kwargs):
@@ -464,3 +466,9 @@ class Outcasts(LawfulFaction, BorderWorldFleet, BaseBorderWorld, BorderWorldOutc
 class BorderWorldPirate(UnlawfulFaction, BorderWorldFleet, BaseBorderWorld, BorderWorldCorsairEquip, Faction):
     CODE = 'pi_grp_bw'
     WEAPON = gun.BorderWorldPirategun
+
+
+class DeidrichPeople(UnlawfulFaction, RheinlandFleet, BaseRheinland, RheinlandMainEquip, Faction):
+    CODE = 'fc_b_grp'
+    WEAPON = gun.RheinlandLightgun
+    STORY_ONLY = True

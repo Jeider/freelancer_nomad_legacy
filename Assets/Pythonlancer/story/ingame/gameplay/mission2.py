@@ -334,7 +334,7 @@ class Misson02(ingame_mission.IngameMission):
             Ship(
                 self,
                 'junker_fighter',
-                count=7,
+                count=5,
                 affiliation=faction.Junkers.CODE,
                 labels=['junker'],
                 relative_pos=True,
@@ -366,13 +366,14 @@ class Misson02(ingame_mission.IngameMission):
                 'junker_csv',
                 affiliation=faction.Junkers.CODE,
                 labels=['junker'],
+                count=2,
                 relative_pos=True,
                 relative_range=1600,
                 npc=NPC(
                     faction=faction.Junkers,
                     ship=ship.CSV,
                     level=NPC.D1,
-                    equip_map=EqMap(base_level=2),
+                    equip_map=EqMap(base_level=1),
                 )
             ),
             Ship(

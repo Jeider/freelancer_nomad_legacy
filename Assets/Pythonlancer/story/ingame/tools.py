@@ -24,6 +24,16 @@ CLEAR_OBJECTIVES = 'Act_SetNNObj = null, OBJECTIVE_HISTORY'
 
 PLAYER = 'Player'
 
+EXPLODE = 'EXPLODE'
+SILENT = 'SILENT'
+DESTROY_MODES = (EXPLODE, SILENT)
+
+GOTO = 'goto'
+GOTO_CRUISE = 'goto_cruise'
+GOTO_NO_CRUISE = 'goto_no_cruise'
+
+GOTO_MODES = (GOTO, GOTO_CRUISE, GOTO_NO_CRUISE)
+
 
 class Nag(object):
     NAG_OFF = 'Act_NagOff = {nag_name}'
@@ -164,6 +174,18 @@ class Target(object):
     def turn_nag(self, nag_name, towards=False):
         return False
 
+    def goto_vec(self, mode=GOTO, near=100):
+        if mode not in GOTO_MODES:
+            raise Exception('Unknown goto mode %s in point' % mode)
+        pos = self.get_position()
+        return f'GotoVec = {mode}, {pos[0]}, {pos[1]}, {pos[2]}, {near}, true'
+
+    def goto_obj(self, mode=GOTO, near=100):
+        if mode not in GOTO_MODES:
+            raise Exception('Unknown goto mode %s in point' % mode)
+
+        return f'GotoShip = {mode}, {self.get_name()}, {near}, true'
+
 
 class Point(Target):
     def __init__(self, mission, system_class, alias):
@@ -189,6 +211,35 @@ class Point(Target):
             pos_x=position[0],
             pos_y=position[1],
             pos_z=position[2],
+        )
+
+
+class Solar(Target):
+
+    def __init__(self, mission, system_class, alias):
+        self.mission = mission
+        self.system = self.mission.get_system(system_class.NAME)
+        self.alias = alias
+        self.marker = Marker(self.system, alias=self.alias)
+
+    def get_position(self):
+        return self.marker.get_position()
+
+    def get_rotate(self):
+        return self.marker.get_rotate()
+
+    def get_name(self):
+        return self.alias
+
+    def get_nn_type(self, string_id):
+        position = self.marker.get_position()
+        return OBJ_TYPE_TEMPLATE.format(
+            system=self.system.NAME,
+            string_id=string_id,
+            pos_x=position[0],
+            pos_y=position[1],
+            pos_z=position[2],
+            target_nickname=self.get_name(),
         )
 
 
@@ -372,7 +423,8 @@ class Ship(Target):
     def __init__(self, mission, name, count=1, npc=None, actor=None,
                  affiliation=None, jumper=False, labels=None,
                  rel_pos=None, relative_pos=False, relative_target='Player', relative_range=1000,
-                 radius=None, system_class=None, name_ids=None, unique_npc_entry=False):
+                 radius=None, system_class=None, name_ids=None, unique_npc_entry=False,
+                 slide_x=0, slide_y=0, slide_z=0):
         self.mission = mission
         self.system = (
             self.mission.get_system(system_class.NAME)
@@ -396,6 +448,9 @@ class Ship(Target):
         self.unique_npc_entry = unique_npc_entry
         if self.npc:
             self.npc.set_name(self.get_npc_shiparch_name())
+        self.slide_x = slide_x
+        self.slide_y = slide_y
+        self.slide_z = slide_z
 
     def get_name(self):
         return self.name
@@ -493,13 +548,24 @@ class Ship(Target):
             )
         return DIVIDER.join(msn_ships)
 
+    def spawn(self, objlist='no_ol'):
+        if self.relative_pos:
+            raise Exception('Ship %s is configured as relative-pos' % self.name)
+        if self.count > 1:
+            raise Exception('Ship %s is not single' % self.name)
+        return f'Act_SpawnShip = {self.get_single_member_name()}, {objlist}'
+
     def spawn_all(self):
+        """Just spawn all ships, defined in relative pos mode"""
+        if not self.relative_pos:
+            raise Exception('Ship %s is not configured as relative-pos' % self.name)
         actions = []
         for index in range(1, self.count+1):
             actions.append(f'Act_SpawnShip = {self.get_multiple_member_name(index)}')
         return SINGLE_DIVIDER.join(actions)
 
     def spawn_all_with_pos_orient(self, objlist='no_ol'):
+        """Spawn all ships by points in system. Points must be defined in system like NAME1, etc"""
         if self.system is None:
             raise Exception('System is not defined for ship %s' % self.name)
         actions = []
@@ -511,6 +577,31 @@ class Ship(Target):
                 *euler_to_quat(*marker.get_rotate())
             )
             actions.append(f'Act_SpawnShip = {name}, {objlist}, {pos_orient}')
+
+        return SINGLE_DIVIDER.join(actions)
+
+    def spawn_all_slide(self, objlist='no_ol'):
+        """Spawn all ships with slide. Like formation. Point with SHIP NAME is MANDATORY in System"""
+        if self.system is None:
+            raise Exception('System is not defined for ship %s' % self.name)
+        if self.slide_x == 0 and self.slide_y == 0 and self.slide_z == 0:
+            raise Exception('At least one slide param must be defined for ship %s' % self.name)
+        marker = Marker(self.system, self.name)
+        pos = list(marker.get_position())
+        orient = euler_to_quat(*marker.get_rotate())
+        actions = []
+        for index in range(1, self.count+1):
+            params = [
+                self.get_multiple_member_name(index),
+                objlist,
+                *pos,
+                *orient
+            ]
+            actions.append(f'Act_SpawnShip = {", ".join(map(str, params))}')
+
+            pos[0] += self.slide_x
+            pos[1] += self.slide_y
+            pos[2] += self.slide_z
 
         return SINGLE_DIVIDER.join(actions)
 
@@ -531,6 +622,23 @@ class Ship(Target):
                 continue
             actions.append(f'Act_MarkObj = {self.get_multiple_member_name(index)}, 0')
         return SINGLE_DIVIDER.join(actions)
+
+    def destroy_all(self, destroy_mode, exclude=None):
+        if destroy_mode not in DESTROY_MODES:
+            raise Exception('Unknown destroy kind %s' % destroy_mode)
+        actions = []
+        exclude = exclude or []
+        for index in range(1, self.count+1):
+            if index in exclude:
+                continue
+            actions.append(f'Act_Destroy = {self.get_multiple_member_name(index)}, {destroy_mode}')
+        return SINGLE_DIVIDER.join(actions)
+
+    def hide_all(self, exclude=None):
+        return self.destroy_all(SILENT, exclude)
+
+    def explode_all(self, exclude=None):
+        return self.destroy_all(EXPLODE, exclude)
 
     def member_list(self, separator=', ', exclude=None):
         members = []
@@ -568,13 +676,14 @@ class NNObj(object):
     NICKNAME_TEMPLATE = 'nickname = {nickname}'
     STATE = 'state = HIDDEN'
 
-    def __init__(self, mission, string_id=None, name=None, target=None, towards=False):
+    def __init__(self, mission, string_id=None, name=None, target=None, towards=False, nag=True):
         self.mission = mission
         self.string_id = string_id if string_id else self.get_string_id()
         self.target = target
         self.target_point = self.get_target_point()
         self.name = f'nn_{name}' if name else self.generate_name()
         self.towards = towards
+        self.nag = nag
 
     def get_string_id(self):
         raise NotImplementedError
@@ -618,9 +727,10 @@ class NNObj(object):
             if open_access is not False and not self.towards:
                 actions.append(open_access)
 
-            turn_nag = self.target_point.turn_nag(self.get_name(), towards=self.towards)
-            if turn_nag is not False:
-                actions.append(turn_nag)
+            if self.nag:
+                turn_nag = self.target_point.turn_nag(self.get_name(), towards=self.towards)
+                if turn_nag is not False:
+                    actions.append(turn_nag)
 
         return SINGLE_DIVIDER.join(actions)
 

@@ -41,7 +41,7 @@ local_faction = li_grp
 space_farclip = 50000
 
 [TexturePanels]
-file = universe\heavens\shapes.ini
+file = universe\\heavens\\shapes.ini
 
 [Dust]
 spacedust = Dust

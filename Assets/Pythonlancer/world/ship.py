@@ -218,6 +218,7 @@ cargo = {nickname}, {amount}'''
 
     SHIELD_LINK = 'l_elite_shield01'
     ENGINE_TYPE = ENGINE_SINGLE
+    ENG_FORCE_FEATURE = True
 
     SHIP_INDEX = SHIP_INDEX_1
     MAX_HIT_PTS = 10000
@@ -337,7 +338,8 @@ cargo = {nickname}, {amount}'''
         for i in range(1, self.LIGHTS + 1):
             components.append(self.LOADOUT_LIGHT_TEMPLATE.format(light_id=f'0{i}'))
 
-        components.append(ENGINE_FORCE_PER_TYPE[self.ENGINE_TYPE])
+        if self.ENG_FORCE_FEATURE:
+            components.append(ENGINE_FORCE_PER_TYPE[self.ENGINE_TYPE])
 
         return components
 
@@ -1870,6 +1872,7 @@ class CSV(GenericShip, ShipFreighter, Ship):
     ICON = 'co_freighter.3db'
     SHIELD_LINK = 'csv_shield01'
     ENGINE_TYPE = ENGINE_SINGLE
+    ENG_FORCE_FEATURE = False
     LIGHTS = 8
 
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04, HpTurret01']

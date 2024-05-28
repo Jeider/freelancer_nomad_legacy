@@ -29,6 +29,7 @@ from universe.systems import tau23 as tau23_content
 from universe.systems import tau29 as tau29_content
 from universe.systems import tau31 as tau31_content
 from universe.systems import tau37 as tau37_content
+from universe.systems import rh_kgb as rh_kgb_content
 
 
 class rh_mnh(system.RheinlandFirst, system.System):
@@ -332,6 +333,18 @@ class om7(system.KusariFirst, system.RheinlandSecond, system.System):
     ALLOW_SYNC = True
 
     JUMP_EFFECT = jump_effect.Walker
+
+
+class rh_kgb(system.RheinlandFirst, system.System):
+    NAME = 'rh_kgb'
+    TEMPLATE_NAME = 'rh_kgb'
+    CONTENT = rh_kgb_content
+
+    SYSTEM_FOLDER = 'RH_KOENIGSBERG'
+    ALLOW_SYNC = True
+    ENABLE_POPULATION = False
+
+    JUMP_EFFECT = jump_effect.Dark
 
 
 class co_cur(system.System):

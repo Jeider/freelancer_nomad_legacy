@@ -1,4 +1,4 @@
-from fx.space import Dust
+from fx.space import Dust, JumpholeEffect
 from fx.sound import Ambience
 
 from universe.content.member import Member
@@ -323,9 +323,13 @@ class Sig8TemporaryBizmarkJumppoint(Sigma8Member, main_objects.VirtualDepot):
     NEBULA_ZONES = [Sig8BrownNebula1]
 
 
-class Sig8TemporaryKoenigsbergJumppoint(Sigma8Member, main_objects.VirtualDepot):
-    INDEX = 2
+class Sig8KoenigsbergJumphole(Sigma8Member, main_objects.Jumphole):
+    INDEX = 1
     REL = TOP
+
+    TARGET_SYSTEM_NAME = 'rh_kgb'
+
+    LOADOUT = JumpholeEffect.GREEN
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2500
     EXCLUSION_PARAMS = BROWN_EXCLUSION_PARAMS

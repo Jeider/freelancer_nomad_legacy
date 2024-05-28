@@ -22,3 +22,11 @@ class Dust(object):
     TOURIST_PINK = 'touristdust_pink'
     TORIST_SIENNA = 'touristdust_sienna'
     WATERDROP = 'waterdropdust'
+
+
+class JumpholeEffect(object):
+    DEFAULT = 'jumphole'
+    GREEN = 'jumphole_green'
+    ORANGE = 'jumphole_orange'
+    RED = 'jumphole_red'
+    LIGHT = 'jumphole_light'
