@@ -107,6 +107,13 @@ class Misson03(ingame_mission.IngameMission):
             'deidrich8',
             'tradepoint',
 
+            'catcher_player',
+            'catcher_hassler',
+            'catcher_punisher1',
+            'catcher_punisher2',
+            'catcher_punisher3',
+            'catcher_punisher4',
+
             'bsh_arrive',
             'cr1_arrive',
             'cr2_arrive',
@@ -123,6 +130,24 @@ class Misson03(ingame_mission.IngameMission):
             'gb2_goto',
             'gb3_goto',
             'gb4_goto',
+
+            'escaper1_start',
+            'escaper2_start',
+            'escaper3_start',
+            'escaper4_start',
+
+            'escaper1_goto',
+            'escaper2_goto',
+            'escaper3_goto',
+            'escaper4_goto',
+
+            'bsh_attack',
+            'cr1_attack',
+            'cr2_attack',
+            'gb1_attack',
+            'gb2_attack',
+            'gb3_attack',
+            'gb4_attack',
         ]
 
         defined_points = []
@@ -139,6 +164,10 @@ class Misson03(ingame_mission.IngameMission):
             Solar(self,  S.rh_kgb, 'kgb'),
             Solar(self, S.rh_kgb, 'gen1'),
             Solar(self, S.rh_kgb, 'gen2'),
+            Solar(self, S.rh_kgb, 'gen1_laser'),
+            Solar(self, S.rh_kgb, 'gen2_laser'),
+            Solar(self, S.rh_kgb, 'dock1'),
+            Solar(self, S.rh_kgb, 'dock2'),
         ]
 
         defined_points.extend(solar_points)
@@ -300,6 +329,223 @@ class Misson03(ingame_mission.IngameMission):
                     equip_map=EqMap(base_level=3),
                 )
             ),
+            Ship(
+                self,
+                'gen2_main_defence',
+                count=5,
+                affiliation=faction.Corsairs.CODE,
+                system_class=S.rh_kgb,
+                slide_z=50,
+                labels=[
+                    'generator2',
+                    'corsairs',
+                    'enemy',
+                ],
+                npc=NPC(
+                    faction=faction.Corsairs,
+                    ship=ship.Bloodhound,
+                    level=NPC.D3,
+                    equip_map=EqMap(shield=2, base_level=3),
+                )
+            ),
+            Ship(
+                self,
+                'gen2_second_defence',
+                count=5,
+                affiliation=faction.DeidrichPeople.CODE,
+                system_class=S.rh_kgb,
+                slide_z=50,
+                labels=[
+                    'generator2',
+                    'corsairs',
+                    'enemy',
+                ],
+                npc=NPC(
+                    faction=faction.DeidrichPeople,
+                    ship=ship.Banshee,
+                    level=NPC.D3,
+                    equip_map=EqMap(shield=2, base_level=3),
+                )
+            ),
+            Ship(
+                self,
+                'gen2_co_reinforcement',
+                count=4,
+                affiliation=faction.Corsairs.CODE,
+                relative_pos=True,
+                relative_range=1300,
+                labels=[
+                    'generator2',
+                    'corsairs',
+                    'enemy',
+                ],
+                npc=NPC(
+                    faction=faction.Corsairs,
+                    ship=ship.Bloodhound,
+                    level=NPC.D3,
+                    equip_map=EqMap(base_level=3),
+                )
+            ),
+            Ship(
+                self,
+                'gen2_rh_reinforcement',
+                count=4,
+                affiliation=faction.DeidrichPeople.CODE,
+                relative_pos=True,
+                relative_range=1300,
+                labels=[
+                    'generator2',
+                    'corsairs',
+                    'enemy',
+                ],
+                npc=NPC(
+                    faction=faction.DeidrichPeople,
+                    ship=ship.Banshee,
+                    level=NPC.D3,
+                    equip_map=EqMap(base_level=3),
+                )
+            ),
+            Ship(
+                self,
+                'last_defence',
+                count=10,
+                affiliation=faction.Corsairs.CODE,
+                system_class=S.rh_kgb,
+                slide_z=-60,
+                labels=[
+                    'defend',
+                    'corsairs',
+                ],
+                npc=NPC(
+                    faction=faction.Corsairs,
+                    ship=ship.Bloodhound,
+                    level=NPC.D2,
+                    equip_map=EqMap(base_level=2),
+                )
+            ),
+            Ship(
+                self,
+                'escaper1',
+                count=3,
+                affiliation=faction.Corsairs.CODE,
+                system_class=S.rh_kgb,
+                slide_z=-50,
+                labels=[
+                    'escaper',
+                    'corsairs',
+                ],
+                npc=NPC(
+                    faction=faction.Corsairs,
+                    ship=ship.Bloodhound,
+                    level=NPC.D2,
+                    equip_map=EqMap(engine=1, base_level=3),
+                )
+            ),
+            Ship(
+                self,
+                'escaper2',
+                count=3,
+                affiliation=faction.Corsairs.CODE,
+                system_class=S.rh_kgb,
+                slide_z=-50,
+                labels=[
+                    'escaper',
+                    'corsairs',
+                ],
+                npc=NPC(
+                    faction=faction.Corsairs,
+                    ship=ship.Bloodhound,
+                    level=NPC.D2,
+                    equip_map=EqMap(engine=1, base_level=3),
+                )
+            ),
+            Ship(
+                self,
+                'escaper3',
+                count=3,
+                affiliation=faction.Corsairs.CODE,
+                system_class=S.rh_kgb,
+                slide_z=-50,
+                labels=[
+                    'escaper',
+                    'corsairs',
+                ],
+                npc=NPC(
+                    faction=faction.Corsairs,
+                    ship=ship.Bloodhound,
+                    level=NPC.D2,
+                    equip_map=EqMap(engine=1, base_level=3),
+                )
+            ),
+            Ship(
+                self,
+                'escaper4',
+                count=3,
+                affiliation=faction.Corsairs.CODE,
+                system_class=S.rh_kgb,
+                slide_z=-50,
+                labels=[
+                    'escaper',
+                    'corsairs',
+                ],
+                npc=NPC(
+                    faction=faction.Corsairs,
+                    ship=ship.Bloodhound,
+                    level=NPC.D2,
+                    equip_map=EqMap(engine=1, base_level=3),
+                )
+            ),
+            Ship(
+                self,
+                'deidrich',
+                count=1,
+                affiliation=faction.DeidrichPeople.CODE,
+                labels=[
+                    'deidrich_team',
+                    'deidrich_the',
+                    'enemy',
+                ],
+                npc=NPC(
+                    faction=faction.DeidrichPeople,
+                    ship=ship.ValkyrieMk2,
+                    level=NPC.D5,
+                    equip_map=EqMap(base_level=5),
+                )
+            ),
+            Ship(
+                self,
+                'evil_freighter',
+                count=1,
+                affiliation=faction.DeidrichPeople.CODE,
+                labels=[
+                    'deidrich_team',
+                    'enemy',
+                ],
+                npc=NPC(
+                    faction=faction.DeidrichPeople,
+                    ship=ship.Humpback,
+                    level=NPC.D3,
+                    equip_map=EqMap(power=9, shield=9, base_level=3),
+                )
+            ),
+            Ship(
+                self,
+                'evil_fighter',
+                count=3,
+                affiliation=faction.DeidrichPeople.CODE,
+                labels=[
+                    'deidrich_team',
+                    'deidrich_defend',
+                    'enemy',
+                ],
+                npc=NPC(
+                    faction=faction.DeidrichPeople,
+                    ship=ship.Valkyrie,
+                    level=NPC.D3,
+                    equip_map=EqMap(base_level=3),
+                )
+            ),
+
         ]
 
     def get_nn_objectives(self):
@@ -308,6 +554,8 @@ class Misson03(ingame_mission.IngameMission):
 
             NNObj(self, 93019, name='launch'),
             NNObj(self, 93020, name='destroy_corsairs'),
+
+            NNObj(self, 93003, name='goto_fleet', target='m3_init_point'),
 
             NNObj(self, 93004, name='sig8_to_kgb_fly', target='sig8_to_kgb', towards=True),
             NNObj(self, 93005, name='wait_for_activation'),

@@ -132,6 +132,7 @@ class Target(object):
         raise NotImplementedError
 
     def get_position(self):
+        print(self)
         raise NotImplementedError
 
     def get_rotate(self):
@@ -241,6 +242,11 @@ class Solar(Target):
             pos_z=position[2],
             target_nickname=self.get_name(),
         )
+
+    @property
+    def name(self):
+        """for template"""
+        return self.get_name()
 
 
 class Obj(Target):
@@ -669,6 +675,29 @@ class Ship(Target):
             members.append(f'Act_GiveObjList = {self.get_multiple_member_name(index)}, {objlist}')
 
         return SINGLE_DIVIDER.join(members)
+
+    def invulnerable(self, godmode, damage_from_player=None, alive_percent=None, exclude=None):
+        members = []
+        exclude = exclude or []
+        params = [
+            'true' if godmode else 'false',
+        ]
+        if damage_from_player is not None:
+            params.append('true' if damage_from_player else 'false',)
+
+            if alive_percent is not None:
+                params.append(alive_percent)
+
+        params_string = ", ".join(map(str, params))
+
+        for index in range(1, self.count+1):
+            if index in exclude:
+                continue
+            members.append(f'Act_Invulnerable = {self.get_multiple_member_name(index)}, {params_string}')
+
+        return SINGLE_DIVIDER.join(members)
+
+
 
 
 class NNObj(object):

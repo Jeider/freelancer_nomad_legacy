@@ -158,3 +158,5 @@ class Kim(Actor):
     NAME = 'kim'
     # COMM_APPEARANCE = ''
     CUTSCENE_APPEARANCE = 'kim'
+
+
