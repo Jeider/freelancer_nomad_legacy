@@ -694,7 +694,7 @@ hit_pts = {hit_pts}
         return params
 
     @staticmethod
-    def get_extra_content(torpedo, cm, mine, torpedo_ammo, cm_ammo, mine_ammo):
+    def get_extra_items(torpedo, cm, mine, torpedo_ammo, cm_ammo, mine_ammo):
         extra = []
         if torpedo:
             extra.append(Ship.EQUIP_TEMPLATE.format(torpedo, Ship.HP_TORPEDO))
@@ -711,7 +711,7 @@ hit_pts = {hit_pts}
             if mine_ammo:
                 extra.append(Ship.CARGO_TEMPLATE.format(torpedo, mine_ammo))
 
-        return SINGLE_DIVIDER.join(extra)
+        return extra
 
 
 class BaseInterceptorShip(object):

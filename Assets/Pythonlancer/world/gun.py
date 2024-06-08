@@ -216,6 +216,22 @@ class RheinlandShieldgun(Gun, RheinlandGun):
     FX_APPEARANCE = WeaponFX.FX_PULSE
 
 
+class RheinlandHeavyTurret(Gun, RheinlandGun):
+    DAMAGE_MULTIPLER = 2
+    RU_NAME = 'Рука Смерти'
+    RU_NAME_DESC = 'Тяжелая рейнландская турель'
+    BASE_NICKNAME = 'rh_heavyturret'
+    MODEL = Weapon.RH_PLASMA_GAT_CANNON
+    EQUIP_TYPE = Weapon.EQUIP_MAIN
+    REFIRE_RATE = Weapon.REFIRE_RATE_8
+    MUZZLE_VELOCITY = 700
+    LIFETIME = 1
+    FX_FACTION = WeaponFX.FX_RH
+    FX_APPEARANCE = WeaponFX.FX_PULSE
+    IS_TURRET = True
+    EXTRA_SHIELD_DAMAGE_FACTOR = 0.5
+
+
 class LibertyLightgun(Gun, LibertyGun):
     RU_NAME = 'Возмездие'
     RU_NAME_DESC = 'Легкая пушка военных Либерти'

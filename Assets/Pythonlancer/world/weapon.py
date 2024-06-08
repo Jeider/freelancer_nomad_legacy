@@ -284,7 +284,9 @@ const_effect = {const_effect}'''
 class Weapon(Equipment):
     ARCHETYPE = 'Gun'
     EXTRA = ['turn_rate = 90']
-    
+    DAMAGE_MULTIPLIER = 1
+    IS_TURRET = False
+
     GUN_TEMPLATE = '''[{archetype}]
 nickname = {nickname}
 ids_name = {ids_name}
@@ -306,7 +308,7 @@ flash_radius = 12
 light_anim = multi_gun_flash
 turn_rate = 90
 projectile_archetype = {projectile_archetype}
-auto_turret = false
+auto_turret = {auto_turret}
 lootable = true
 LODranges = {lod_ranges}'''
 
@@ -601,7 +603,7 @@ LODranges = {lod_ranges}'''
         return self.weapon_fx.get_const_effect()
 
     def get_damage_multipler(self):
-        return self.DAMAGE_PER_REFIRE_RATE_FACTOR[self.REFIRE_RATE]
+        return self.DAMAGE_MULTIPLIER * self.DAMAGE_PER_REFIRE_RATE_FACTOR[self.REFIRE_RATE]
 
     def get_hull_damage(self):
         hull_damage = self.MAX_HULL_DAMAGE * self.rate * self.get_refire_rate_multipler() * \
@@ -667,6 +669,9 @@ LODranges = {lod_ranges}'''
     def get_munition(self):
         return self.munition.get_munition()
 
+    def get_auto_turret(self):
+        return str(self.IS_TURRET).lower()
+
     def get_gun_template_params(self):
         return {
             'archetype': self.ARCHETYPE,
@@ -685,6 +690,7 @@ LODranges = {lod_ranges}'''
             'flash_particle_name': self.get_flash_particle_name(),
             'projectile_archetype': self.get_projectile_archetype_name(),
             'lod_ranges': self.get_lod_ranges(),
+            'auto_turret': self.get_auto_turret(),
             'extra': self.EXTRA,
         }
 

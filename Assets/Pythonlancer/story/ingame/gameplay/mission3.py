@@ -52,6 +52,21 @@ class Misson03(ingame_mission.IngameMission):
     FILE = 'm03'
     STATIC_NPCSHIPS = NPCSHIPS
 
+    def get_ingame_thorns(self):
+        return [
+            IngameThorn(
+                self,
+                system_class=S.sig8,
+                template=GENERIC_TWO_POINT,
+                name='m03_jumphole_activation',
+                points={
+                    'camera': 'jh1_m2_cam',
+                    'marker': 'jh1',
+                },
+            ),
+
+        ]
+
     def get_real_objects(self):
         return {
             'starke': Obj(self, sig8.Sig8Station),
@@ -212,6 +227,7 @@ class Misson03(ingame_mission.IngameMission):
             Ship(
                 self,
                 'punisher',
+                jumper=True,
                 count=4,
                 labels=[
                     'rheinland',
@@ -229,12 +245,13 @@ class Misson03(ingame_mission.IngameMission):
                     faction=faction.RheinlandMain,
                     ship=ship.Valkyrie,
                     level=NPC.D3,
-                    equip_map=EqMap(base_level=3),
+                    equip_map=EqMap(shield=4, base_level=3),
                 )
             ),
             Ship(
                 self,
                 'assist',
+                jumper=True,
                 count=4,
                 labels=[
                     'rheinland',
@@ -253,7 +270,7 @@ class Misson03(ingame_mission.IngameMission):
                     faction=faction.RheinlandMain,
                     ship=ship.Valkyrie,
                     level=NPC.D3,
-                    equip_map=EqMap(base_level=3),
+                    equip_map=EqMap(shield=4, base_level=3),
                 )
             ),
             Ship(
@@ -265,6 +282,7 @@ class Misson03(ingame_mission.IngameMission):
                     'friend',
                     'fleet_defender',
                 ],
+                # TODO: random name!!!
                 npc=NPC(
                     faction=faction.RheinlandMain,
                     ship=ship.Valkyrie,
@@ -299,7 +317,7 @@ class Misson03(ingame_mission.IngameMission):
                 system_class=S.rh_kgb,
                 slide_z=-50,
                 labels=[
-                    'gen1',
+                    'gen1_defender',
                     'corsairs',
                     'enemy',
                 ],
@@ -318,7 +336,7 @@ class Misson03(ingame_mission.IngameMission):
                 relative_pos=True,
                 relative_range=1300,
                 labels=[
-                    'gen1',
+                    'gen1_defender',
                     'corsairs',
                     'enemy',
                 ],
@@ -337,7 +355,7 @@ class Misson03(ingame_mission.IngameMission):
                 system_class=S.rh_kgb,
                 slide_z=50,
                 labels=[
-                    'generator2',
+                    'gen2_defender',
                     'corsairs',
                     'enemy',
                 ],
@@ -356,7 +374,7 @@ class Misson03(ingame_mission.IngameMission):
                 system_class=S.rh_kgb,
                 slide_z=50,
                 labels=[
-                    'generator2',
+                    'gen2_defender',
                     'corsairs',
                     'enemy',
                 ],
@@ -375,7 +393,7 @@ class Misson03(ingame_mission.IngameMission):
                 relative_pos=True,
                 relative_range=1300,
                 labels=[
-                    'generator2',
+                    'gen2_defender',
                     'corsairs',
                     'enemy',
                 ],
@@ -394,7 +412,7 @@ class Misson03(ingame_mission.IngameMission):
                 relative_pos=True,
                 relative_range=1300,
                 labels=[
-                    'generator2',
+                    'gen2_defender',
                     'corsairs',
                     'enemy',
                 ],
@@ -499,17 +517,24 @@ class Misson03(ingame_mission.IngameMission):
                 self,
                 'deidrich',
                 count=1,
-                affiliation=faction.DeidrichPeople.CODE,
                 labels=[
                     'deidrich_team',
                     'deidrich_the',
                     'enemy',
                 ],
+                actor=actors.Dietrich,
                 npc=NPC(
                     faction=faction.DeidrichPeople,
-                    ship=ship.ValkyrieMk2,
+                    ship=ship.Valkyrie,
                     level=NPC.D5,
-                    equip_map=EqMap(base_level=5),
+                    equip_map=EqMap(base_level=4),
+                    extra_equip=[
+                        'equip = attached_fx_connect01, HpRoot01',
+                        'equip = attached_fx_connect02, HpRoot02',
+                        'equip = attached_fx_connect03, HpRoot03',
+                        'equip = rh_heavyturret06, HpTurret02',
+                        'equip = rh_heavyturret06, HpTurret03',
+                    ]
                 )
             ),
             Ship(
@@ -591,5 +616,4 @@ class Misson03(ingame_mission.IngameMission):
 
             NNObj(self, 93017, name='final_base_fly', target='final_base', towards=True),
             NNObj(self, 93017, target='final_base'),
-
         ]

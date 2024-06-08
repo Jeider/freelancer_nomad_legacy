@@ -142,6 +142,16 @@ class Jacobo(Actor):
     SPACE_VOICE = 'pilot_f_mil_m01'
 
 
+class Dietrich(Actor):
+    RU_NAME = 'Дитрих'
+    NAME_ID = 93203
+    TYPE = ACTOR_MALE
+    NAME = 'deidrich'
+    COMM_APPEARANCE = 'rh_deidrich_head, rh_deidrich_body, comm_rh_reichman'
+    CUTSCENE_APPEARANCE = 'jacobo'
+    SPACE_VOICE = 'pilot_f_mil_m01'
+
+
 class Wilham(Actor):
     RU_NAME = 'Вильгельм'
     NAME_ID = 92210

@@ -1,3 +1,6 @@
+from text.dividers import SINGLE_DIVIDER
+
+
 class EqMap(object):
 
     def __init__(
@@ -151,13 +154,14 @@ pilot = {pilot}
 state_graph = FIGHTER
 npc_class = {classes_list}'''
 
-    def __init__(self, faction, ship, equip_map=None, level=None, name=None):
+    def __init__(self, faction, ship, equip_map=None, level=None, name=None, extra_equip=None):
         self.faction = faction
         self.ship = ship
         self.equip_map = equip_map
         self.level = level
         self.name = name
         self.package = None
+        self.extra_equip = extra_equip or []
 
     def set_name(self, name):
         self.name = name
@@ -260,6 +264,14 @@ npc_class = {classes_list}'''
         self.package = package
 
     def get_loadout_template_params(self):
+        extra = self.ship.get_extra_items(
+            self.package[self.TORPEDO],
+            self.package[self.CM],
+            self.package[self.MINE],
+            self.package[self.TORPEDO_AMMO],
+            self.package[self.CM_AMMO],
+            self.package[self.MINE_AMMO],
+        )
         params = {
             self.LOADOUT_NICKNAME: self.get_loadout_nickname(),
             self.SHIP_ARCHETYPE: self.ship.ARCHETYPE,
@@ -277,14 +289,7 @@ npc_class = {classes_list}'''
             self.AFTERBURN_1: self.package[self.AFTERBURN_1].get_nickname(),
             self.AFTERBURN_2: self.package[self.AFTERBURN_2].get_nickname(),
             self.SMALL_LIGHT: self.faction.LIGHT,
-            self.EXTRA: self.ship.get_extra_content(
-                self.package[self.TORPEDO],
-                self.package[self.CM],
-                self.package[self.MINE],
-                self.package[self.TORPEDO_AMMO],
-                self.package[self.CM_AMMO],
-                self.package[self.MINE_AMMO],
-            ),
+            self.EXTRA: SINGLE_DIVIDER.join(extra),
             self.CONTRAIL: self.faction.CONTRAIL,
         }
         params.update(self.ship.DEFAULTS)
@@ -294,4 +299,7 @@ npc_class = {classes_list}'''
         if not self.package:
             raise Exception('Package is not initialized')
         ship_instance = shiparch.get_ship_by_class(self.ship)
-        return ship_instance.get_loadout_template().format(**self.get_loadout_template_params())
+        loadout = ship_instance.get_loadout_template().format(**self.get_loadout_template_params())
+        if len(self.extra_equip) > 1:
+            loadout += SINGLE_DIVIDER + SINGLE_DIVIDER.join(self.extra_equip)
+        return loadout

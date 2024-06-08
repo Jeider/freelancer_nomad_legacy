@@ -2,14 +2,14 @@ import sys
 import glob
 from PIL import Image
 
-THE_PATH = 'E:/FL/IMG_OUT/VID_EXP/*.png'
-OUT_IMAGE = 'E:/FL/IMG_OUT/VID_RESULT/merged_image_{index}.png'
+THE_PATH = 'E:/FL/IMG_OUT/BOLT/*.png'
+OUT_IMAGE = 'E:/FL/IMG_OUT/VID_RESULT/merged_image_bolt_{index}.png'
 
-FRAME_SIZE = 512
+FRAME_SIZE = 1024
 FRAMES_PER_LINE = 8
 TOTAL_SIDE = FRAME_SIZE * FRAMES_PER_LINE
-FRAMES_PER_FILE = 32
-MAX_FRAMES = 192
+FRAMES_PER_FILE = 128
+MAX_FRAMES = 64
 
 
 def get_images():

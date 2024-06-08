@@ -301,6 +301,10 @@ class Obj(Target):
         """for template"""
         return self.instance.get_base_nickname()
 
+    @property
+    def make_neutral(self):
+        return f'Act_SetRep = Player, {self.instance.FACTION}, 0'
+
 
 class Conn(Target):
     def __init__(self, mission, connection_class, start_point_class):
@@ -467,11 +471,23 @@ class Ship(Target):
             return self.get_multiple_member_name(index)
         return self.get_single_member_name()
 
+    def is_single(self):
+        return self.count == 1
+
+    def is_multiple(self):
+        return self.count > 1
+
     def get_single_member_name(self):
         return f'{self.name}'
 
     def get_multiple_member_name(self, index):
         return f'{self.name}{index}'
+
+    def get_member_name(self, index=1):
+        if self.is_single():
+            return self.get_single_member_name()
+        else:
+            return self.get_multiple_member_name(index)
 
     def get_mission_npc_name(self, index=1):
         if not self.unique_npc_entry:
@@ -617,7 +633,7 @@ class Ship(Target):
         for index in range(1, self.count+1):
             if index in exclude:
                 continue
-            actions.append(f'Act_MarkObj = {self.get_multiple_member_name(index)}, 1')
+            actions.append(f'Act_MarkObj = {self.get_member_name(index)}, 1')
         return SINGLE_DIVIDER.join(actions)
 
     def unmark_all(self, exclude=None):
@@ -626,7 +642,7 @@ class Ship(Target):
         for index in range(1, self.count+1):
             if index in exclude:
                 continue
-            actions.append(f'Act_MarkObj = {self.get_multiple_member_name(index)}, 0')
+            actions.append(f'Act_MarkObj = {self.get_member_name(index)}, 0')
         return SINGLE_DIVIDER.join(actions)
 
     def destroy_all(self, destroy_mode, exclude=None):
@@ -637,7 +653,7 @@ class Ship(Target):
         for index in range(1, self.count+1):
             if index in exclude:
                 continue
-            actions.append(f'Act_Destroy = {self.get_multiple_member_name(index)}, {destroy_mode}')
+            actions.append(f'Act_Destroy = {self.get_member_name(index)}, {destroy_mode}')
         return SINGLE_DIVIDER.join(actions)
 
     def hide_all(self, exclude=None):
@@ -652,7 +668,7 @@ class Ship(Target):
         for index in range(1, self.count+1):
             if index in exclude:
                 continue
-            members.append(self.get_multiple_member_name(index))
+            members.append(self.get_member_name(index))
 
         return separator.join(members)
 
@@ -662,7 +678,7 @@ class Ship(Target):
         for index in range(1, self.count+1):
             if index in exclude:
                 continue
-            members.append(f'ship = {self.get_multiple_member_name(index)}')
+            members.append(f'ship = {self.get_member_name(index)}')
 
         return SINGLE_DIVIDER.join(members)
 
@@ -672,7 +688,7 @@ class Ship(Target):
         for index in range(1, self.count+1):
             if index in exclude:
                 continue
-            members.append(f'Act_GiveObjList = {self.get_multiple_member_name(index)}, {objlist}')
+            members.append(f'Act_GiveObjList = {self.get_member_name(index)}, {objlist}')
 
         return SINGLE_DIVIDER.join(members)
 
@@ -693,11 +709,9 @@ class Ship(Target):
         for index in range(1, self.count+1):
             if index in exclude:
                 continue
-            members.append(f'Act_Invulnerable = {self.get_multiple_member_name(index)}, {params_string}')
+            members.append(f'Act_Invulnerable = {self.get_member_name(index)}, {params_string}')
 
         return SINGLE_DIVIDER.join(members)
-
-
 
 
 class NNObj(object):

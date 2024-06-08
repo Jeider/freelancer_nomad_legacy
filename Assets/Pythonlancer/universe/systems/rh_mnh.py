@@ -91,7 +91,7 @@ BLUE_EXCLUSION_PARAMS = {
 
 
 BLUE_ALT_EXCLUSION_PARAMS = {
-    'zone_shell': exclusion.VORTEX_EXCLUSION,
+    'zone_shell': exclusion.LINES_EXCLUSION,
     'shell_scalar': 1,
     'max_alpha': 0.3,
     'exclusion_tint': '255, 255, 255',
@@ -324,7 +324,7 @@ class MunchHonshuJumpgate(MunchMember, main_objects.Jumpgate):
     TARGET_SYSTEM_NAME = 'ku_hns'
 
 
-class MunchKoengisbergJumpgate(MunchMember, main_objects.Jumpgate):
+class MunchKoengisbergJumpgate(MunchMember, main_objects.JumpgateAlt):
     INDEX = 3
     REL = TOP
     LOCKED_DOCK = True
@@ -398,6 +398,12 @@ class MunchOutcastBase(MunchMember, main_objects.PirateBase):
 
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
+    INTERIOR_EXTRA_ROOMS = ['''
+;mission 02 special room
+[Room]
+nickname = Deck2
+file = Universe\\SYSTEMS_MOD\\RH_MUNCHEN\\ROOM\\rh_mnh_03_deck2.ini
+    ''']
     DEALERS = dealers.RheinlandPirateDealers
 
     ASTEROID_ZONES = [

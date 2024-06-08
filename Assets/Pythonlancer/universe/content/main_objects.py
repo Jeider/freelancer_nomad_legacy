@@ -335,7 +335,7 @@ class JumpableObject(StaticObject):
         return self.target_system
 
     def get_jump_effect(self):
-        return self.system.JUMP_EFFECT.JUMP_EFFECT
+        raise Exception('unknown jump effect')
 
     def get_inspace_nickname(self):
         return '{system_name}_{alias}_to_{target_system_name}'.format(
@@ -394,6 +394,9 @@ class Jumpgate(JumpableObject):
     def get_rotate(self):
         return (0, self.Y_ROTATE_PER_REL[self.REL], 0)
 
+    def get_jump_effect(self):
+        return self.system.JUMP_EFFECT.JUMP_EFFECT
+
 
 class Jumphole(JumpableObject):
     ALIAS = 'jh'
@@ -408,6 +411,16 @@ class Jumphole(JumpableObject):
     DEFENCE_LEVEL = None
 
     CONNECTION_KIND = connection.CONNECTION_UNLAWFUL
+
+    def get_jump_effect(self):
+        return self.system.JUMP_EFFECT.HOLE_EFFECT
+
+
+class JumpgateAlt(Jumpgate):
+    LOADOUT = 'jumpgate_special'
+
+    def get_jump_effect(self):
+        return self.system.JUMP_EFFECT.JUMP_EFFECT_ALT
 
 
 class GenericSphere(StaticObject):

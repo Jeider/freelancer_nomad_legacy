@@ -34,7 +34,7 @@ class KgbRawText(KgbMember, main_objects.RawText):
     SPACE_CONTENT = '''[SystemInfo]
 name = rh_kgb
 space_color = 0, 0, 0
-space_farclip = 45000
+space_farclip = 55000
 
 [TexturePanels]
 file = universe\\heavens\\shapes.ini
@@ -166,15 +166,13 @@ class KgbSig8Jumphole(KgbMember, main_objects.Jumphole):
     NEBULA_ZONES = [KgbBrownNebula]
 
 
-class KgbMunchenJumpgate(KgbMember, main_objects.Jumpgate):
+class KgbMunchenJumpgate(KgbMember, main_objects.JumpgateAlt):
     INDEX = 1
     REL = LEFT
 
     FACTION = faction.RH_GRP
 
     TARGET_SYSTEM_NAME = 'rh_mnh'
-
-    LOADOUT = JumpholeEffect.GREEN
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2500
     EXCLUSION_PARAMS = BLUE_EXCLUSION_PARAMS
