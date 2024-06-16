@@ -8,11 +8,16 @@ in vec3 WorldPos;
 
 uniform samplerCube environmentMap;
 uniform float roughness;
+uniform bool convertToLinear;
 
 const float PI = 3.14159265359;
 
 vec3 ToGammaCorrected(vec3 inColor){
 	return pow(inColor.rgb,1./vec3(2.2));
+}
+
+vec3 ToLinear(vec3 inColor){	
+	return pow(inColor,vec3(2.2));
 }
 
 // ----------------------------------------------------------------------------
@@ -102,9 +107,11 @@ void main()
             float saTexel  = 4.0 * PI / (6.0 * resolution * resolution);
             float saSample = 1.0 / (float(SAMPLE_COUNT) * pdf + 0.0001);
 
-            float mipLevel = roughness == 0.0 ? 0.0 : 0.5 * log2(saSample / saTexel); 
-            
-            prefilteredColor += textureLod(environmentMap, L, mipLevel).rgb * NdotL;
+            float mipLevel = roughness == 0.0 ? 0.0 : 0.5 * log2(saSample / saTexel);
+			vec3 texColor=textureLod(environmentMap, L, mipLevel).rgb;	
+            if(convertToLinear)
+				texColor=ToLinear(texColor);
+            prefilteredColor += texColor * NdotL;
             totalWeight      += NdotL;
         }
     }

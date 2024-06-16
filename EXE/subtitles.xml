@@ -604,9 +604,10 @@
 <Static AudioFile="echo_m08_player.utf|0xBB585B8E" TextArea="Cinematic">But there is none.</Static>
 <Static AudioFile="echo_m08_female.utf|0xA69539C6" TextArea="Cinematic">Then make it yourself.</Static>
 <Static AudioFile="echo_m08_player.utf|0xBB58138C" TextArea="Cinematic">I'm starting to fear you, woman.</Static>
+
 <Static AudioFile="echo_m08_female.utf|0xA69571C4" TextArea="Cinematic">The core? God damn it...</Static>
 <Static AudioFile="echo_m08_player.utf|0xBB59EB82" TextArea="Cinematic">We're lucky we got here.</Static>
-<Static AudioFile="echo_m08.utf|0x8AAB4781" TextArea="Cinematic">Trent??? How did you get there? Especially accompanied by a Betonian officer.</Static>
+<Static AudioFile="echo_m08.utf|0x8AAB4781" TextArea="Cinematic">Trent??? How did you get there? Especially accompanied by a Bretonian officer.</Static>
 <Static AudioFile="echo_m08_player.utf|0xBB94CC80" TextArea="Cinematic">What are you doing here yourself? And where "here" even is?</Static>
 <Static AudioFile="echo_m08.utf|0xA78C3981" TextArea="Cinematic">I will tell you, Trent. Until then, don't do anything stupid, or else my guys will incinerate you in a moment together with your Bretonian chick.</Static>
 <Static AudioFile="echo_m08_female.utf|0x8659E2CB" TextArea="Cinematic">"Your bretonian chick"?! Who dou you think...</Static>
@@ -624,7 +625,7 @@
 <Static AudioFile="echo_m08_player.utf|0xBB805D8E" TextArea="Cinematic">Tilton, are you even sure, that after the activation, everything will be just as you said? That nothing will blow up, stuff like that? That the fighters won't attack us?</Static>
 <Static AudioFile="echo_m08.utf|0xB31D3781" TextArea="Cinematic">Captain Warfish, open fire!</Static>
 <Static AudioFile="echo_m08.utf|0xB7566542" TextArea="Cinematic">Uhhhm. Commander Tilton, are you sure?</Static>
-<Static AudioFile="echo_m08.utf|0xB3553581" TextArea="Cinematic">Yes! Hell yes, I am! And if you don't open fire, Warfish, I swear, I'll come to your bridge and smear your head against a nearest bulkhead.</Static>
+<Static AudioFile="echo_m08.utf|0xB3553581" TextArea="Cinematic">Yes! Hell yes, I am! And if you don't open fire, Warfish, I swear, I'll come to your bridge and smear your head against a nearest bulkhead!</Static>
 
 <Static AudioFile="echo_m08_female.utf|0xA7E9A2C8" TextArea="Cinematic">Trent, Brighton was the only... The only human worth something among these...</Static>
 <Static AudioFile="echo_m08_player.utf|0xBA248882" TextArea="Cinematic">I understand, Darcy, but we need to...</Static>

@@ -17,6 +17,7 @@ struct Light{
 	float constantAttenuation; 
 	float linearAttenuation;  
 	float quadraticAttenuation;
+	float range;
 };
 
 struct glFogParameters
@@ -31,6 +32,7 @@ struct glFogParameters
 uniform Light glLightSource[8];
 uniform glFogParameters glFog;
 uniform sampler2D textures[TEXTURESTAGE_COUNT];
+uniform samplerCube cubemap; 
 uniform int colorOp[TEXTURESTAGE_COUNT];
 uniform int alphaOp[TEXTURESTAGE_COUNT];
 uniform int colorArg1[TEXTURESTAGE_COUNT];
@@ -49,7 +51,9 @@ uniform int lightCount;
 uniform int texture1Index;
 uniform int fogMode;
 
-uniform bool useVertexColor;
+uniform bool enableVertexColor;
+uniform bool vertexColorAvailable;
+uniform bool specularVertexColorAvailable;
 uniform bool enableLighting;
 uniform bool enableAlphaTest;
 uniform bool enableCubemap;
@@ -96,7 +100,7 @@ vec3 ToGammaCorrected(vec3 inColor){
 	return pow(inColor.rgb,1./vec3(2.2));
 }
 	
-vec4 GetColorForStage(const int stage, int colorArg, int alphaArg, vec4 previousColor, vec4 gouradDiffuseColor, vec2 texCoords)
+vec4 GetColorForStage(const int stage, int colorArg, int alphaArg, vec4 previousColor, vec4 gouradDiffuseColor, vec4 specularColor, vec2 texCoords, vec3 cubeMapTexCoords)
 {
 	vec4 color;
 	vec4 textureColor;
@@ -107,18 +111,12 @@ vec4 GetColorForStage(const int stage, int colorArg, int alphaArg, vec4 previous
 			if (stage==0)
 				textureColor=texture2D(textures[0],texCoords);
 			else
-				textureColor=texture2D(textures[1],texCoords);
+				if (!enableCubemap)
+					textureColor=texture2D(textures[1],texCoords);
+				else
+					textureColor=texture(cubemap,cubeMapTexCoords);
 		else
 			textureColor=vec4(1);
-
-	vec4 gouradSpecularColor;
-	if(colorArg== D3DTA_SPECULAR || alphaArg == D3DTA_SPECULAR) 
-	{
-		gouradSpecularColor=(vertexColorSecondary);
-		if (!useVertexColor)
-			gouradSpecularColor*=(matSpecularColor);
-	}
-	
 	
 	if(colorArg == D3DTA_DIFFUSE)
 		color.rgb=gouradDiffuseColor.rgb;
@@ -127,7 +125,7 @@ vec4 GetColorForStage(const int stage, int colorArg, int alphaArg, vec4 previous
 	else if(colorArg == D3DTA_TEXTURE)			
 		color.rgb=textureColor.rgb;
 	else if(colorArg == D3DTA_SPECULAR)
-		color.rgb =gouradSpecularColor.rgb;
+		color.rgb =specularColor.rgb;
 	else
 		color=vec4(1,0,0,1);
 		
@@ -138,16 +136,16 @@ vec4 GetColorForStage(const int stage, int colorArg, int alphaArg, vec4 previous
 	else if(alphaArg == D3DTA_TEXTURE)
 		color.a=textureColor.a;
 	else if(alphaArg == D3DTA_SPECULAR)
-		color.a =gouradSpecularColor.a;	
+		color.a =specularColor.a;	
 	else
 		color=vec4(1,0,0,1);
 	return color;
 }
 
-vec4 ApplyFunctionForStage(const int stage, vec4 previousColor, vec4 gouradDiffuseColor, vec2 texCoords)
+vec4 ApplyFunctionForStage(const int stage, vec4 previousColor, vec4 gouradDiffuseColor, vec4 specularColor, vec2 texCoords, vec3 cubeMapTexCoords)
 {
-	vec4 color1=GetColorForStage(stage,colorArg1[stage],alphaArg1[stage], previousColor, gouradDiffuseColor, texCoords);
-	vec4 color2=GetColorForStage(stage,colorArg2[stage],alphaArg2[stage], previousColor, gouradDiffuseColor, texCoords);
+	vec4 color1=GetColorForStage(stage,colorArg1[stage],alphaArg1[stage], previousColor, gouradDiffuseColor, specularColor, texCoords, cubeMapTexCoords);
+	vec4 color2=GetColorForStage(stage,colorArg2[stage],alphaArg2[stage], previousColor, gouradDiffuseColor, specularColor, texCoords, cubeMapTexCoords);
 	
 	if (colorOp[stage]==D3DTOP_SELECTARG2)
 	{
@@ -155,7 +153,7 @@ vec4 ApplyFunctionForStage(const int stage, vec4 previousColor, vec4 gouradDiffu
 	}
 	else if (colorOp[stage]==D3DTOP_MODULATE)
 	{
-		color1.rgb*=color2.rgb;
+		color1.rgb*=color2.rgb;		
 	}
 	else if (colorOp[stage]==D3DTOP_MODULATE2X)
 	{		
@@ -166,8 +164,8 @@ vec4 ApplyFunctionForStage(const int stage, vec4 previousColor, vec4 gouradDiffu
 		color1.rgb=color1.rgb*color2.rgb*21.11; //4^2.2 since rendering is gamma correct
 	}
 	else if (colorOp[stage]==D3DTOP_ADD)
-	{		
-		color1.rgb=color1.rgb+color2.rgb;
+	{	
+		color1.rgb=color1.rgb+color2.rgb;		
 	}
 	else if (colorOp[stage]==D3DTOP_ADDSIGNED)
 	{
@@ -213,28 +211,53 @@ vec4 ApplyFunctionForStage(const int stage, vec4 previousColor, vec4 gouradDiffu
 void main()
 {	
 	vec4 gouradDiffuseColor;
-	if (useVertexColor)
-	{
-		if (!enableLighting)
-			gouradDiffuseColor=clamp(vec4(ToLinear(vertexColor.rgb),vertexColor.a),0,1);			
-		else
-			gouradDiffuseColor=vec4(1,1,1,1);
-	}
-	else		
-	{		
-		if (!enableLighting)
-			gouradDiffuseColor=vec4(1,1,1,1);			
-		else
-			gouradDiffuseColor=vec4((ambientColor*(matAmbientColor)),matDiffuseColor.a);
-			
-		gouradDiffuseColor.rgb+=matEmissiveColor;
-	}
-	
-
+	vec4 specularColor;
+	vec3 vertexAmbientColor;
 	
 	if (enableLighting)
 	{
-		vec3 normal=normalize(N);
+		if(enableVertexColor)
+		{
+			
+			float alpha = vertexColorAvailable ? vertexColor.a : matDiffuseColor.a;
+			if (specularVertexColorAvailable)
+			{
+				vertexAmbientColor=ToLinear(vertexColorSecondary.rgb);
+				gouradDiffuseColor=vec4(ambientColor*vertexAmbientColor,alpha);
+			}
+			else
+			{
+				vertexAmbientColor=matAmbientColor.rgb;
+				gouradDiffuseColor=vec4(ambientColor*vertexAmbientColor,alpha);
+			}
+		}
+		else
+		{
+			vertexAmbientColor=matAmbientColor.rgb;
+			gouradDiffuseColor=vec4(ambientColor*vertexAmbientColor,matDiffuseColor.a);
+		}
+		//FL never has specular lighting enabled
+		specularColor=vec4(0,0,0,0);
+	}
+	else
+	{
+		if(vertexColorAvailable)
+			gouradDiffuseColor=vec4(ToLinear(vertexColor.rgb),vertexColor.a);
+		else
+			gouradDiffuseColor=vec4(1,1,1,1);
+		
+		if(specularVertexColorAvailable)
+			specularColor=vec4(ToLinear(vertexColorSecondary.rgb),vertexColor.a);
+		else
+			specularColor=vec4(0,0,0,0);
+	}	
+	
+	vec3 normal=normalize(N);
+	if (enableLighting)
+	{
+		gouradDiffuseColor.rgb+=matEmissiveColor;
+		vec3 vertexDiffuseColor=vertexColorAvailable&&enableVertexColor ? ToLinear(vertexColor.rgb): matDiffuseColor.rgb;
+		
 		for (int index = 0; index < lightCount; index++)
 		{			
 			
@@ -270,32 +293,45 @@ void main()
 			{
 				// positional light source
 				float dist	= distance(glLightSource[index].position.xyz, v);
-				attenFactor	= min(1.0/(	glLightSource[index].constantAttenuation + 1 +
-							glLightSource[index].linearAttenuation * dist +
-							glLightSource[index].quadraticAttenuation * dist * dist ),2);		
-				lightDir	= normalize(glLightSource[index].position.xyz - v);	
+				if (dist <= glLightSource[index].range )					
+				{
+					attenFactor	= min(1.0/(	glLightSource[index].constantAttenuation +
+								glLightSource[index].linearAttenuation * dist +
+								glLightSource[index].quadraticAttenuation * dist * dist ),1);		
+					lightDir	= normalize(glLightSource[index].position.xyz - v);	
+				}
+				else
+					attenFactor = 0;
 			}				
 			else
 			{			
 				attenFactor = 1;
 				lightDir	= normalize(glLightSource[index].position.xyz);
 			}
-
-			float intensity      = max(dot(normal,lightDir),0.0);	
-			
-			vec3 lightColorAmbient = glLightSource[index].ambient.rgb*matAmbientColor;
-			
-			vec3 lightColorDiffuse = glLightSource[index].diffuse.rgb*matDiffuseColor.rgb*intensity;
-			gouradDiffuseColor.rgb  += (lightColorAmbient + lightColorDiffuse)*attenFactor;
+			if(attenFactor > 0)
+			{
+				float intensity      = max(dot(normal,lightDir),0.0);	
+				
+				vec3 lightColorAmbient = glLightSource[index].ambient.rgb*vertexAmbientColor;	
+				vec3 lightColorDiffuse = glLightSource[index].diffuse.rgb*vertexDiffuseColor*intensity;
+				gouradDiffuseColor.rgb  += (lightColorAmbient + lightColorDiffuse)*attenFactor;				
+			}
 		}		
 	}
 	
 	vec4 finalColor=gouradDiffuseColor;
 	if (colorOp[0]!=D3DTOP_DISABLE)
 	{
-		finalColor=ApplyFunctionForStage(0,finalColor,gouradDiffuseColor,texCoords[0]);
-		if (!enableCubemap && colorOp[1]!=D3DTOP_DISABLE)
-			finalColor=ApplyFunctionForStage(1,finalColor,gouradDiffuseColor,texCoords[1]);
+		vec3 cubeMapTexCoords;
+		finalColor=ApplyFunctionForStage(0,finalColor,gouradDiffuseColor,specularColor,texCoords[0], cubeMapTexCoords);
+		
+		if (colorOp[1]!=D3DTOP_DISABLE)
+		{
+			
+			if(enableCubemap)
+				cubeMapTexCoords=reflect(v,normal);
+			finalColor=ApplyFunctionForStage(1,finalColor,gouradDiffuseColor,specularColor,texCoords[1], cubeMapTexCoords);
+		}
 	}
 	else
 		finalColor=gouradDiffuseColor;

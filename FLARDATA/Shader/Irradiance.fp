@@ -7,11 +7,16 @@
 in vec3 WorldPos;
 
 uniform samplerCube environmentMap;
+uniform bool convertToLinear;
 
 const float PI = 3.14159265359;
 
 vec3 ToGammaCorrected(vec3 inColor){
 	return pow(inColor.rgb,1./vec3(2.2));
+}
+
+vec3 ToLinear(vec3 inColor){	
+	return pow(inColor,vec3(2.2));
 }
 
 void main()
@@ -36,7 +41,10 @@ void main()
             // tangent space to world
             vec3 sampleVec = tangentSample.x * right + tangentSample.y * up + tangentSample.z * N; 
 
-            irradiance += texture(environmentMap, sampleVec).rgb * cos(theta) * sin(theta);
+			vec3 texColor=texture(environmentMap, sampleVec).rgb;	
+            if(convertToLinear)
+				texColor=ToLinear(texColor);
+            irradiance += texColor * cos(theta) * sin(theta);
             nrSamples++;
         }
     }

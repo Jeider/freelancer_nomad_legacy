@@ -15,12 +15,19 @@ from tools import data_folder
 from tools import steos
 from tools import elevenlabs
 from tools import audio
+from tools import repository
 
 from templates.solar.hacker_panel import HackerPanelManager, REL_TOP
 from templates.dockable import upsilon_gasinside
 from templates.dockable import station_debris
 from templates.dockable import forbes_megafactory
 from templates.dockable import sphere_megabase
+
+
+def test_placement():
+    base_class = forbes_megafactory.ForbesMegafactory
+    content = base_class().get_instance(new_space_object_name=None, move_to=None)
+    data_folder.DataFolder.sync_to_test_workspace(content, workspace_index='')
 
 
 def generate_hacker_panels():
@@ -41,10 +48,9 @@ def test_hacker_colors():
     pass
 
 
-def test_placement():
-    base_class = forbes_megafactory.ForbesMegafactory
-    content = base_class().get_instance(new_space_object_name=None, move_to=None)
-    data_folder.DataFolder.sync_to_test_workspace(content, workspace_index='')
+def test_repo():
+    repo = repository.Repository()
+
 
 
 def build_image():
@@ -128,6 +134,7 @@ ACTIONS = {
     'test_voices': test_voices,
     'test_steos': test_steos,
     'test_elevenlabs': test_elevenlabs,
+    'test_repo': test_repo,
 }
 
 

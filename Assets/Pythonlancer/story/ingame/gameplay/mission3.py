@@ -13,8 +13,6 @@ from world.npc import NPC, EqMap
 from world import ship
 from universe import faction
 
-from text.dividers import SINGLE_DIVIDER
-
 
 NPCSHIPS = '''
 [NPCShipArch]

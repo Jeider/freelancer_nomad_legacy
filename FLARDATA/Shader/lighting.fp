@@ -479,14 +479,24 @@ void main(void)
 		else
 			n=normalize(worldNormal);
 		vec3 v = normalize( camPos - vWorld);
-		vec3 reflectDir = reflect(-v, n);	
-		vec3 irradiance = texture(irradianceMap, n).rgb*PBR_FACTOR_ENV;
+		vec3 reflectDir = reflect(-v, n);
 		const float MAX_REFLECTION_LOD = 7;
-		float lod = roughness * (2.0 - roughness) * MAX_REFLECTION_LOD;		
-		vec3 radiance = textureLod(envMap, reflectDir, lod).rgb*PBR_FACTOR_ENV;
+		float lod = roughness * (2.0 - roughness) * MAX_REFLECTION_LOD;	
+		vec3 irradiance;
+		vec3 radiance;
+		if (enableFog)
+		{	
+			vec3 ambientTint=PBR_FACTOR_ENV*glFog.color.rgb;
+			irradiance = vec3(texture(irradianceMap, n).r)*ambientTint;
+			radiance = vec3(textureLod(envMap, reflectDir, lod).r)*ambientTint;
+		}
+		else
+		{
+			irradiance = texture(irradianceMap, n).rgb*PBR_FACTOR_ENV;
+			radiance = textureLod(envMap, reflectDir, lod).rgb*PBR_FACTOR_ENV;
+		}	
 		
-		float NdotV = max(dot(n,v),0.0);
-		
+		float NdotV = max(dot(n,v),0.0);		
 		vec2 brdf  = texture(brdfLUT, vec2(NdotV, roughness)).rg;
 		
 #ifdef IBL_MULTIPLE_SCATTERING
@@ -520,7 +530,6 @@ void main(void)
 	}	
 	else
 	{			
-
 		if (enableNormalMaps)
 		{
 			vec3 dir = vec3(0,0,1);

@@ -1,0 +1,39 @@
+﻿.fl-button {
+    border: 2px solid var(--color-text-primary);
+    background: transparent;
+    text-transform: capitalize;
+    font-size: 30px;
+    padding: 5px;
+    user-select: none;
+    cursor: pointer;
+    box-shadow: var(--color-frame-edge-glow) 0px 0px 2px;
+}
+
+    .fl-button:hover {
+        animation: hover-border var(--animation-config);
+    }
+
+    @keyframes hover-border {
+        0% {
+            border-color: var(--color-text-primary);
+            box-shadow: var(--color-frame-edge-glow) 0px 0px 2px;
+        }
+        50% {
+            border-color: var(--color-text-hover);
+            box-shadow: var(--color-text-hover) 0px 0px 2px;
+        }
+        100% {
+            border-color: var(--color-text-primary);
+            box-shadow: var(--color-frame-edge-glow) 0px 0px 2px;
+        }
+    }
+
+.fl-text {
+    color: var(--color-text-primary);
+    font-family: 'Agency FB';
+    filter: drop-shadow(1px 2px 0px #000000);
+}
+
+.fl-progress-bar.full {
+    background: linear-gradient( 90deg, var(--color-progress-bar-full) 0%, rgba(0,0,0,0) 5%, rgba(0,0,0,0) 6%, var(--color-progress-bar-full) 6%);
+}

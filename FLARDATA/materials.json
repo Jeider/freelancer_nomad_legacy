@@ -12,14 +12,6 @@
             "Roughness" : 1.0,
             "Metalness" : 0.0
         },
-	    {
-            "TextureNames": [
-                "l_bar#2_08.tga021204165939", "iB_D_13.tga021211170613"
-            ],
-            "Roughness" : 1,
-            "Metalness" : 1,
-            "RoughnessTextureBias" : -0.1
-        },
         {
             "TextureNames": [
                 "tree_64.tga","Sprauge_Grass.tga"
@@ -103,14 +95,6 @@
 			"order base_snow rock.tga021126124128","order base_cliff.tga021126124128","order base Transiton End Corner.tga021126124128","order base Transiton Fade.tga021126124128","order base Transiton Corner.tga021126124128","uranium_tile.tga","uranium_tile1.tga","mineable_beryl.tga"
             ],
             "Metalness" : 0.0,
-			"Roughness" : 0.9,
-            "RoughnessTextureBias" : 0.45
-        },
-        {
-            "TextureNames": [
-            "lair_skin01.tga", "lair_skin02.tga", "lair_skin03.tga", "lair_energy2.tga", "toroid3.tga"
-            ],
-            "Metalness" : 0.5,
 			"Roughness" : 0.9,
             "RoughnessTextureBias" : 0.45
         }

@@ -4,12 +4,15 @@ OpenGL Version: 4.6.0 NVIDIA 551.61
 GLSL Version: 4.60 NVIDIA
 Fragment shader "..\FLARData\shader\fixedFunction.fp":
 Compilation info from driver:
-0(345) : warning C7533: global variable gl_FragColor is deprecated after version 120
+0(381) : warning C7533: global variable gl_FragColor is deprecated after version 120
 
 Shader linking log:
 Fragment info
 -------------
-0(345) : warning C7533: global variable gl_FragColor is deprecated after version 120
+0(381) : warning C7533: global variable gl_FragColor is deprecated after version 120
+0(215) : warning C7050: "vertexAmbientColor" might be used before being initialized
+0(264) : warning C7050: "lightDir" might be used before being initialized
+0(325) : warning C7050: "cubeMapTexCoords" might be used before being initialized
 
 Fragment shader "..\FLARData\shader\postProcess.fp":
 Compilation info from driver:
@@ -58,19 +61,19 @@ Fragment info
 
 Fragment shader "..\FLARData\shader\prefilter.fp":
 Compilation info from driver:
-0(114) : warning C7533: global variable gl_FragColor is deprecated after version 120
+0(121) : warning C7533: global variable gl_FragColor is deprecated after version 120
 
 Shader linking log:
 Fragment info
 -------------
-0(114) : warning C7533: global variable gl_FragColor is deprecated after version 120
+0(121) : warning C7533: global variable gl_FragColor is deprecated after version 120
 
 Fragment shader "..\FLARData\shader\Irradiance.fp":
 Compilation info from driver:
-0(45) : warning C7533: global variable gl_FragColor is deprecated after version 120
+0(53) : warning C7533: global variable gl_FragColor is deprecated after version 120
 
 Shader linking log:
 Fragment info
 -------------
-0(45) : warning C7533: global variable gl_FragColor is deprecated after version 120
+0(53) : warning C7533: global variable gl_FragColor is deprecated after version 120
 

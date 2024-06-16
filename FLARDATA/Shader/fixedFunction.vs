@@ -31,6 +31,8 @@ uniform mat4 textureMatrix[2];
 uniform bool isInstanced;
 uniform bool isInstancedTransparent;
 uniform bool isInstancedFog;
+uniform bool enableTextureTransform0;
+uniform bool enableTextureTransform1;
 uniform int texture1Index;
 
 layout (location = 0) in vec4 inPosition;
@@ -79,13 +81,29 @@ void main()
 		gl_Position = vec4((inPosition.x+63.0f / 128.0f)*projCorrection[0]-1,-(inPosition.y+63.0f / 128.0f)*projCorrection[1]+1,inPosition.z*2-1,1);
 		RHWdepth = inPosition.z/inPosition.w;
 	}
-	vec4 texCoords0=vec4(inTexCoord0.xy,0,1);
-	vec4 texCoords1=vec4(inTexCoord0.zw,0,1);
 	
-	texCoords[0]  = (textureMatrix[0]*texCoords0).xy;
-	
+	if(enableTextureTransform0)
+	{	
+		vec4 texCoords0=vec4(inTexCoord0.xy,0,1);
+		texCoords[0]  = (textureMatrix[0]*texCoords0).xy;
+	}
+	else
+		texCoords[0]  = inTexCoord0.xy;
+		
 	if (texture1Index == 0)
-		texCoords[1]  = (textureMatrix[1]*texCoords0).xy;
+		if(enableTextureTransform1)
+		{
+			vec4 texCoords0=vec4(inTexCoord0.xy,0,1);
+			texCoords[1]  = (textureMatrix[1]*texCoords0).xy;
+		}
+		else
+			texCoords[1]  = inTexCoord0.xy;
 	else if (texture1Index == 1)
-		texCoords[1]  = (textureMatrix[1]*texCoords1).zw;
+		if(enableTextureTransform1)
+		{
+			vec4 texCoords1=vec4(inTexCoord0.zw,0,1);
+			texCoords[1]  = (textureMatrix[1]*texCoords1).xy;
+		}
+		else
+			texCoords[1]  = inTexCoord0.zw;
 }
