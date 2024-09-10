@@ -84,4 +84,6 @@ class ShiparchManager(object):
         return StringCompiler.compile_infocards(infocards)
 
     def sync_data(self):
+        if not self.core.write:
+            return
         DataFolder.sync_shiparch(self.get_shiparch_content())

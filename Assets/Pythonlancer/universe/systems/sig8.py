@@ -315,8 +315,13 @@ class Sig8Pirate(Sigma8Member, main_objects.PirateBase):
     NEBULA_ZONES = [Sig8GreenNebula1]
 
 
-class Sig8TemporaryBizmarkJumppoint(Sigma8Member, main_objects.VirtualDepot):
-    REL = TOP
+class Sig8BizmarkJumphole(Sigma8Member, main_objects.Jumphole):
+    REL = LEFT
+    INDEX = 2
+
+    TARGET_SYSTEM_NAME = 'rh_biz'
+
+    LOADOUT = JumpholeEffect.LIGHT
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2500
     EXCLUSION_PARAMS = BROWN_EXCLUSION_PARAMS
@@ -345,14 +350,17 @@ class Sig8TemporaryOmicronJumppoint(Sigma8Member, main_objects.VirtualDepot):
     NEBULA_ZONES = [Sig8GreenNebula2]
 
 
-class Sig8TemporaryForbesJumppoint(Sigma8Member, main_objects.VirtualDepot):
+class Sig8ForbesJumphole(Sigma8Member, main_objects.Jumphole):
     INDEX = 4
-    REL = TOP
+    REL = RIGHT
+
+    TARGET_SYSTEM_NAME = 'li_for'
+
+    LOADOUT = JumpholeEffect.GREEN
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2500
     EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS
     NEBULA_ZONES = [Sig8GreenNebula2]
-
 
 
 class Sigma8Planet1(Sigma8Member, main_objects.Planet):

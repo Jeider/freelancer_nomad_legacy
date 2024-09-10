@@ -159,6 +159,9 @@ class UniverseManager(object):
         return DockKeyTemplate().format({'generated': self.get_dock_key()})
 
     def sync_data(self):
+        if not self.core.write:
+            return
+
         DataFolder.sync_universe(self.get_universe_file_content())
         DataFolder.sync_mbases(self.get_mbases_file_content())
         DataFolder.sync_dock_key(self.get_dock_key_file_content())

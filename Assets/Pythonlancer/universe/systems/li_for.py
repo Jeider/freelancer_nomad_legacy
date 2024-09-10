@@ -1,4 +1,4 @@
-from fx.space import Dust
+from fx.space import Dust, JumpholeEffect
 from fx.sound import Ambience
 
 from universe.content.member import Member
@@ -90,7 +90,7 @@ class ForbesBaseGreenNebula(zones.NebulaZone):
     PROPERTY_FOG_COLOR = '150, 100, 20'
 
 
-class ForbesSouthWestNebula(ForbesMember, ForbesBaseGreenNebula):
+class ForbesSouthEastNebula(ForbesMember, ForbesBaseGreenNebula):
     INDEX = 1
 
 
@@ -278,6 +278,19 @@ class ForbesSigma17Jumpgate(ForbesMember, main_objects.Jumpgate):
     INDEX = 2
     REL = TOP
     TARGET_SYSTEM_NAME = 'sig17'
+
+
+class ForbesSig8Jumphole(ForbesMember, main_objects.Jumphole):
+    INDEX = 1
+    REL = TOP
+
+    TARGET_SYSTEM_NAME = 'sig8'
+
+    LOADOUT = JumpholeEffect.GREEN
+
+    NEBULA_EXCLUSION_ZONE_SIZE = 2500
+    EXCLUSION_PARAMS = FORBES_EXCLUSION_PARAMS
+    NEBULA_ZONES = [ForbesSouthEastNebula]
 
 
 class ForbesDockring(ForbesMember, main_objects.Dockring):

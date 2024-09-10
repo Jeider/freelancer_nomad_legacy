@@ -43,15 +43,18 @@ class StoryManager(object):
                 self.ship_loadouts.append(loadout)
                 npc_shiparchs.append(npc.get_npc_shiparch())
 
-            DataFolder.sync_story_mission(mission.FOLDER, mission.FILE, content)
+            if self.core.write:
+                DataFolder.sync_story_mission(mission.FOLDER, mission.FILE, content)
 
             if len(npc_shiparchs):
                 npcships = DIVIDER.join(npc_shiparchs)
                 DataFolder.sync_story_npcships(mission.FOLDER, npcships)
 
         loadouts = DIVIDER.join(self.ship_loadouts)
-        DataFolder.sync_story_ships_loadouts(loadouts)
+        if self.core.write:
+            DataFolder.sync_story_ships_loadouts(loadouts)
 
         for thorn in self.thorns:
             content = tpl_manager.get_result(thorn.get_template(), thorn.get_context())
-            DataFolder.sync_story_ingame_thorn(thorn.get_name(), content)
+            if self.core.write:
+                DataFolder.sync_story_ingame_thorn(thorn.get_name(), content)

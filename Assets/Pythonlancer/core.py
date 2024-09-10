@@ -16,7 +16,9 @@ INITIAL_SHIP_INFOCARD_ID = 110000
 
 class LancerCore(object):
 
-    def __init__(self, enable_story=True):
+    def __init__(self, enable_story=True, write=True):
+        self.write = write
+
         self.last_equip_string_id = INITIAL_EQUIP_STRING_ID
         self.last_equip_infocard_id = INITIAL_EQUIP_INFOCARD_ID
         self.last_ship_string_id = INITIAL_SHIP_STRING_ID

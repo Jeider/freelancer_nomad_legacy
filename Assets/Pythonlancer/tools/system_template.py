@@ -48,7 +48,10 @@ class SystemTemplate(object):
         return self.items_db
 
     def get_item_pos(self, item_key):
-        return self.items_db[item_key.lower()].lines.get(POS)
+        try:
+            return self.items_db[item_key.lower()].lines.get(POS)
+        except KeyError:
+            raise Exception('Could not find key %s in system template %s' % (item_key.lower(), self.name))
 
     def get_item_rotate(self, item_key):
         rotate = self.items_db[item_key.lower()].lines.get(ROTATE)
@@ -67,6 +70,9 @@ class SystemTemplate(object):
 
     def get_multiple_mission_vignettes_positions(self):
         return [item.lines[POS] for item in self.items_db[MSN_MULTIPLE]]
+
+    def dump_points(self):
+        return list(self.items_db.keys())
 
 
 class SystemTemplateItem(object):

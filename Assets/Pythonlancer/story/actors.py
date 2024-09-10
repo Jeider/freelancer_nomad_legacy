@@ -132,6 +132,16 @@ class HasslerOrder(Actor):
     CUTSCENE_APPEARANCE = 'hassler_order'
 
 
+class Alaric(Actor):
+    RU_NAME = 'Аларик'
+    NAME_ID = 94203
+    TYPE = ACTOR_MALE
+    NAME = 'alaric'
+    COMM_APPEARANCE = 'rh_alaric_head_hat, pi_pirate6_body, comm_rh_alaric'
+    CUTSCENE_APPEARANCE = 'alaric'
+    SPACE_VOICE = 'pilot_f_mil_m01'
+
+
 class Jacobo(Actor):
     RU_NAME = 'Джакобо'
     NAME_ID = 92211

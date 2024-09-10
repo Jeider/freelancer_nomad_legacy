@@ -1,4 +1,4 @@
-from fx.space import Dust
+from fx.space import Dust, JumpholeEffect
 from fx.sound import Ambience
 
 from universe.content.member import Member
@@ -14,6 +14,7 @@ from universe.content import mineable
 from templates.solar import asteroid
 from templates.solar import debris_box
 from templates.nebula import rh_biz_nebula
+from templates.nebula import exclusion
 
 from templates.dockable import pirate
 from templates.dockable import astbase
@@ -149,6 +150,27 @@ class BizmarkOmega15Jumpgate(BizmarkMember, main_objects.Jumpgate):
     INDEX = 3
     REL = BOTTOM
     TARGET_SYSTEM_NAME = 'om15'
+
+
+BROWN_EXCLUSION_PARAMS = {
+    'zone_shell': exclusion.EDGE_EXCLUSION,
+    'shell_scalar': 1.1,
+    'max_alpha': 0.5,
+    'exclusion_tint': '150, 80, 40',
+    'fog_far': 5000,
+}
+
+
+class BizmarkSigma8Jumphole(BizmarkMember, main_objects.Jumphole):
+    REL = TOP
+
+    TARGET_SYSTEM_NAME = 'sig8'
+
+    LOADOUT = JumpholeEffect.LIGHT
+
+    NEBULA_EXCLUSION_ZONE_SIZE = 2500
+    EXCLUSION_PARAMS = BROWN_EXCLUSION_PARAMS
+    NEBULA_ZONES = [BizmarkTopLeftNebula]
 
 
 class BizmarkDockRing(BizmarkMember, main_objects.Dockring):

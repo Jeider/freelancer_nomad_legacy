@@ -472,3 +472,10 @@ class DeidrichPeople(UnlawfulFaction, RheinlandFleet, BaseRheinland, RheinlandMa
     CODE = 'fc_b_grp'
     WEAPON = gun.RheinlandLightgun
     STORY_ONLY = True
+
+
+class AlaricLike(LawfulFaction, LibertyFleet, BaseLiberty, LibertyMainEquip, Faction):
+    CODE = 'li_al'
+    WEAPON = gun.LibertyHuntergun
+    AFTERBURN = misc.LI_MAIN
+    STORY_ONLY = True

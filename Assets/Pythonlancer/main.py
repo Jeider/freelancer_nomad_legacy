@@ -14,7 +14,7 @@ GENERATED = 'GENERATED'
 
 
 def main():
-    core = LancerCore(enable_story=ENABLE_STORY)
+    core = LancerCore(enable_story=ENABLE_STORY, write=True)
 
     nicknames_data = [
         core.misc_equip.get_ru_names(),

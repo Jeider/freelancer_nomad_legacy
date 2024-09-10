@@ -471,6 +471,16 @@ class Ship(Target):
             return self.get_multiple_member_name(index)
         return self.get_single_member_name()
 
+    @property
+    def leader(self):
+        """for template"""
+        return self.member(1)
+
+    @property
+    def the(self):
+        """for template"""
+        return self.member(1)
+
     def is_single(self):
         return self.count == 1
 
@@ -514,7 +524,10 @@ class Ship(Target):
                 items.append(f'voice = {self.actor.SPACE_VOICE}')
         else:
             if self.name_ids:
-                items.append(f'individual_name = {self.name_ids[index-1]}')
+                try:
+                    items.append(f'individual_name = {self.name_ids[index-1]}')
+                except IndexError:
+                    pass
 
         return SINGLE_DIVIDER.join(items)
 

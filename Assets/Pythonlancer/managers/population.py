@@ -120,5 +120,7 @@ class PopulationManager(object):
         return DIVIDER.join(self.loadouts_list)
 
     def sync_data(self):
+        if not self.core.write:
+            return
         DataFolder.sync_ships_loadouts(self.get_loadouts())
         DataFolder.sync_npcships(self.get_npcships_file_content())

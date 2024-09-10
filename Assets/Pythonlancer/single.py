@@ -1,5 +1,6 @@
 import sys
 import os
+from pprint import pprint
 
 from pathlib import Path
 
@@ -15,7 +16,8 @@ from tools import data_folder
 from tools import steos
 from tools import elevenlabs
 from tools import audio
-from tools import repository
+
+from tools.system_template import SystemTemplateLoader
 
 from templates.solar.hacker_panel import HackerPanelManager, REL_TOP
 from templates.dockable import upsilon_gasinside
@@ -48,9 +50,11 @@ def test_hacker_colors():
     pass
 
 
-def test_repo():
-    repo = repository.Repository()
-
+def dump_system():
+    system_template = SystemTemplateLoader.get_template('rh_biz')
+    points = system_template.dump_points()
+    for point in points:
+        print(point)
 
 
 def build_image():
@@ -134,7 +138,7 @@ ACTIONS = {
     'test_voices': test_voices,
     'test_steos': test_steos,
     'test_elevenlabs': test_elevenlabs,
-    'test_repo': test_repo,
+    'dump_system': dump_system,
 }
 
 

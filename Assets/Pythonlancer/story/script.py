@@ -45,4 +45,54 @@ class SpaceVoiceProps(MissionSegment):
 
 class StoryMission(object):
     SPACE_VOICE_LINES = []
+    SPACE_CLASS = None
+    CUTSCENES = []
+    MISSION_TITLE = None
+
+    STYLES = '''
+.line_name {
+    margin-bottom: 0;
+}
+.line_value {
+    margin-top: 5px;
+}
+.comment {
+    background-color: white;
+}
+.line_content {
+    background-color: yellow;
+}
+'''
+    SCRIPT_TEMPLATE = '''
+<html>
+<head>
+<meta charset="utf-8">
+<title>{mission_title}</title>
+<style>
+{styles}
+</style>
+</head>
+<body>
+<h2>{mission_title}</h2>
+{content}
+</body>
+</html>
+    '''
+
+    def __init__(self):
+        self.cutscenes = [cutscene(self) for cutscene in self.CUTSCENES]
+        self.space = self.SPACE_CLASS(self)
+
+    def get_story_script(self):
+        return self.SCRIPT_TEMPLATE.format(
+            mission_title=self.MISSION_TITLE,
+            styles=self.STYLES,
+            content='<hr>'.join(self.get_story_script_content())
+        )
+
+    def get_story_script_content(self):
+        content = []
+        for cutscene in self.cutscenes:
+            content.append(''.join(cutscene.get_lines_for_script()))
+        return content
 
