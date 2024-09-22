@@ -1,12 +1,14 @@
 import sys
 import os
+from luaparser import ast
 from pprint import pprint
 
 from pathlib import Path
 
 from files.writer import FileWriter
 
-# from story.scripts import mission9
+from story.scripts import mission9
+from story.scripts import mission10
 from jinja_templates.jinja_manager import JinjaTemplateManager
 
 from universe.content import space_voice
@@ -16,8 +18,11 @@ from tools import data_folder
 from tools import steos
 from tools import elevenlabs
 from tools import audio
+from tools import maxlancer
 
 from tools.system_template import SystemTemplateLoader
+
+from story.cutscenes.mission9.yokohama import Msn9YokohamaCutsceneThorn
 
 from templates.solar.hacker_panel import HackerPanelManager, REL_TOP
 from templates.dockable import upsilon_gasinside
@@ -83,10 +88,8 @@ def test_story():
 
 
 def test_script():
-    pass
-    # msn = mission9.Mission9()
-    # content = msn.get_story_script()
-    # FileWriter.write('mission9.html', content)
+    FileWriter.write('mission9.html', mission9.Mission9().get_story_script())
+    FileWriter.write('mission10.html', mission10.Mission10().get_story_script())
     # print(content)
 
 
@@ -124,6 +127,19 @@ def test_elevenlabs():
     import pdb;pdb.set_trace()
 
 
+def test_lua():
+    manager = maxlancer.SceneEntityLoader.get_entity_manager('m9_yokohama')
+
+    scene = Msn9YokohamaCutsceneThorn()
+
+    content = scene.get_content()
+
+    FileWriter.write('m9_yokohama.lua', content)
+
+
+    import pdb;pdb.set_trace()
+
+
 
 ACTIONS = {
     'generate_hacker_panels': generate_hacker_panels,
@@ -138,6 +154,7 @@ ACTIONS = {
     'test_voices': test_voices,
     'test_steos': test_steos,
     'test_elevenlabs': test_elevenlabs,
+    'test_lua': test_lua,
     'dump_system': dump_system,
 }
 

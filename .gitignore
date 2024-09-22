@@ -145,11 +145,7 @@ DLLS/BIN/Content_m13.dll
 DLLS/BIN/Content_or.dll
 DLLS/BIN/test/
 EXE/dacom.dll
-EXE/alchemy.dll
-EXE/thorn.dll
 EXE/dalib.dll
-EXE/debuglib.dll
-EXE/deformable2.dll
 EBUEula.dll
 EXE_ENG/
 IniLog.txt

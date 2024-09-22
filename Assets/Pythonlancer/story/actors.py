@@ -1,6 +1,7 @@
 ACTOR_MALE = 'male'
 ACTOR_TRENT = 'trent'
 ACTOR_FEMALE = 'female'
+ACTOR_JUNI = 'juni'
 
 
 class Actor(object):
@@ -30,12 +31,29 @@ class Actor(object):
     def is_player(cls):
         return cls.TYPE == ACTOR_TRENT
 
+    @classmethod
+    def is_juni(cls):  # надеюсь не пригодится
+        return cls.TYPE == ACTOR_JUNI
+
 
 class Trent(Actor):
     RU_NAME = 'Трент'
     TYPE = ACTOR_TRENT
     NAME = 'trent'
     COMM_APPEARANCE = 'pi_pirate5_head, player_body, player_commhelmet'
+
+
+class EdisonTrent(Actor):
+    RU_NAME = 'Эдисон Трент'
+    TYPE = ACTOR_TRENT
+    NAME = 'edison'
+    COMM_APPEARANCE = 'pi_pirate5_head, player_body, player_commhelmet'
+
+
+class Juni(Actor):
+    RU_NAME = 'Джуни'
+    TYPE = ACTOR_JUNI  # Анимация имеет ту же природу, что и у Трента. Надеюсь не пригодится
+    NAME = 'juni'
 
 
 class Hatcher(Actor):

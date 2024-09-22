@@ -3,7 +3,11 @@ from story.voiceline import VoiceLine
 from story.actors import Trent, Hatcher, Darcy, Hassler, Yamamoto, Kim
 
 
-class Msn9OfferCutscene(script.CutsceneProps):
+class Msn9(object):
+    MISSION_INDEX = 9
+
+
+class Msn9OfferCutscene(Msn9, script.CutsceneProps):
     ALIAS = 'offer'
     TITLE = 'Бар планеты Хонсю'
     DESCRIPTION = 'Трент и Дерси находят Хетчер в баре на планете Хонсю. Сцена происходит стоя у барной стойки'
@@ -59,7 +63,7 @@ class Msn9OfferCutscene(script.CutsceneProps):
     ]
 
 
-class Msn9YokohamaCutscene(script.CutsceneProps):
+class Msn9YokohamaCutscene(Msn9, script.CutsceneProps):
     ALIAS = 'yokohama'
     TITLE = 'Верхний бар станции Йокогама'
     DESCRIPTION = 'Трент и Дерси проходят по бару. Посетители косятся на них и буквально прожигают взглядом. '
@@ -182,7 +186,7 @@ class Msn9YokohamaCutscene(script.CutsceneProps):
     ]
 
 
-class Msn9OrderCutscene(script.CutsceneProps):
+class Msn9OrderCutscene(Msn9, script.CutsceneProps):
     ALIAS = 'order'
     TITLE = 'Нижний бар станции Йокогама'
     DESCRIPTION = 'Лифт открывается. Энергичная музыка, треш, угар и прочие штуки. Стриптизерши танцуют. Герои входят'
@@ -364,35 +368,35 @@ class Msn9OrderCutscene(script.CutsceneProps):
     ]
 
 
-class Msn9RewardCutscene(script.CutsceneProps):
+class Msn9RewardCutscene(Msn9, script.CutsceneProps):
     ALIAS = 'reward'
     TITLE = 'Верхний бар станции Йокогама'
     DESCRIPTION = 'Трент и Дерси подходит к Хасслеру'
     VOICE_LINES = [
         VoiceLine(
             10,
-            Hatcher,
+            Hassler,
             ru='Герр Трент, фрау Дерси, спасибо за помощь. Судя по вашему виду, вам просто необходимо отдохнуть.'
         ),
         VoiceLine(
             20,
-            Hatcher,
+            Trent,
             ru='(реально вымотанный) Неужели все так плохо?'
         ),
         VoiceLine(
             30,
-            Hatcher,
+            Hassler,
             ru='Было бы не так плохо, если бы вы, герр Трент, не произнесли эту фразу с закрытыми глазами. '
         ),
         VoiceLine(
             40,
-            Hatcher,
+            Hassler,
             ru='Пока можете отдохнуть и заняться своими делами. Я свяжусь с вами позже.'
         ),
     ]
 
 
-class Msn9Space(script.SpaceVoiceProps):
+class Msn9Space(Msn9, script.SpaceVoiceProps):
     VOICE_LINES = [
         VoiceLine(
             0,
@@ -402,7 +406,7 @@ class Msn9Space(script.SpaceVoiceProps):
     ]
 
 
-class Mission9(script.StoryMission):
+class Mission9(Msn9, script.StoryMission):
     MISSION_INDEX = 9
     CUTSCENES = [
         Msn9OfferCutscene,

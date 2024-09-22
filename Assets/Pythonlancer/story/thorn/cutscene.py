@@ -1,0 +1,2 @@
+class CutsceneThorn(object):
+    pass
