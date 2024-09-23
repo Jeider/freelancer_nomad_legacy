@@ -70,6 +70,12 @@ class Darcy(Actor):
     COMM_APPEARANCE = 'ge_female1_head, br_darcy_body, comm_br_darcy_female'
 
 
+class King(Actor):
+    RU_NAME = 'Кинг'
+    TYPE = ACTOR_MALE
+    NAME = 'king'
+
+
 class Tilton(Actor):
     RU_NAME = 'Тилтон'
     TYPE = ACTOR_MALE
@@ -95,6 +101,27 @@ class MaleCaptain(Actor):
     RU_NAME = 'Капитан'
     TYPE = ACTOR_MALE
     NAME = 'captain'
+    COMM_APPEARANCE = 'li_captain_head, li_male_elite_body'
+
+
+class Missouri(Actor):
+    RU_NAME = 'Капитан'
+    TYPE = ACTOR_MALE
+    NAME = 'missouri'
+    COMM_APPEARANCE = 'li_captain_head, li_male_elite_body'
+
+
+class Kruger(Actor):
+    RU_NAME = 'Крюгер'
+    TYPE = ACTOR_MALE
+    NAME = 'kruger'
+    COMM_APPEARANCE = 'li_captain_head, li_male_elite_body'
+
+
+class FortBush(Actor):
+    RU_NAME = 'Форт Буш'
+    TYPE = ACTOR_MALE
+    NAME = 'bush'
     COMM_APPEARANCE = 'li_captain_head, li_male_elite_body'
 
 
@@ -190,11 +217,62 @@ class Wilham(Actor):
     SPACE_VOICE = 'razor_1'
 
 
+class Mandrake(Actor):
+    RU_NAME = 'Мандрейк'
+    TYPE = ACTOR_MALE
+    NAME = 'mandrake'
+    # COMM_APPEARANCE = ''
+    CUTSCENE_APPEARANCE = 'mandrake'
+
+
 class Kim(Actor):
     RU_NAME = 'Ким'
     TYPE = ACTOR_FEMALE
     NAME = 'kim'
     # COMM_APPEARANCE = ''
     CUTSCENE_APPEARANCE = 'kim'
+
+
+class SakuraOne(Actor):
+    RU_NAME = 'Сакура 1'
+    TYPE = ACTOR_MALE
+    NAME = 'kim'
+    # COMM_APPEARANCE = '
+
+
+class SakuraTwo(Actor):
+    RU_NAME = 'Сакура 2'
+    TYPE = ACTOR_MALE
+    NAME = 'sakura2'
+    # COMM_APPEARANCE = ''
+
+
+class SakuraThree(Actor):
+    RU_NAME = 'Сакура 3'
+    TYPE = ACTOR_MALE
+    NAME = 'sakura3'
+    # COMM_APPEARANCE = ''
+
+
+class Chrysanthemum(Actor):
+    RU_NAME = 'Хризантема'
+    TYPE = ACTOR_MALE
+    NAME = 'chrys'
+    # COMM_APPEARANCE = ''
+
+
+class Tor(Actor):
+    RU_NAME = 'Тор'
+    TYPE = ACTOR_FEMALE
+    NAME = 'tor'
+    # COMM_APPEARANCE = ''
+
+
+class Reichman(Actor):
+    RU_NAME = 'Райхман'
+    TYPE = ACTOR_MALE
+    NAME = 'reichman'
+    CUTSCENE_APPEARANCE = 'reichman'
+    SPACE_VOICE = 'pilot_f_mil_m01'
 
 

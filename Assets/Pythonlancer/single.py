@@ -7,8 +7,8 @@ from pathlib import Path
 
 from files.writer import FileWriter
 
-from story.scripts import mission9
-from story.scripts import mission10
+from story.scripts import mission9, mission10, mission11, mission12, mission13
+
 from jinja_templates.jinja_manager import JinjaTemplateManager
 
 from universe.content import space_voice
@@ -90,6 +90,9 @@ def test_story():
 def test_script():
     FileWriter.write('mission9.html', mission9.Mission9().get_story_script())
     FileWriter.write('mission10.html', mission10.Mission10().get_story_script())
+    FileWriter.write('mission11.html', mission11.Mission11().get_story_script())
+    FileWriter.write('mission12.html', mission12.Mission12().get_story_script())
+    FileWriter.write('mission13.html', mission13.Mission13().get_story_script())
     # print(content)
 
 

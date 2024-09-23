@@ -1,6 +1,6 @@
 from story import script
 from story.voiceline import VoiceLine
-from story.actors import Trent, Darcy, Hassler, EdisonTrent, Alaric, Juni
+from story.actors import Trent, Darcy, Hassler, EdisonTrent, Alaric, Juni, Tor
 
 
 class Msn10(object):
@@ -346,13 +346,6 @@ class Msn10FinalCutscene(Msn10, script.CutsceneProps):
 class Msn10Space(Msn10, script.SpaceVoiceProps):
     VOICE_LINES = [
         VoiceLine(
-            0,
-            Hassler,
-            # ????????
-            ru='Герр Трент, время продолжить сотрудничество. Жду вас в баре на линкоре Мусаси на орбите станции Йокогама'
-        ),
-
-        VoiceLine(
             10,
             Darcy,
             comment='Взлёт после принятия миссии',
@@ -383,6 +376,37 @@ class Msn10Space(Msn10, script.SpaceVoiceProps):
             Hassler,
             ru='Придется. Ксеносы очень не любят чужаков. А чужаков, которые приближаются к их тюрьме с намерением выкрасть парочку заключенных, они не любят особенно сильно.'
         ),
+
+        VoiceLine(70, Hassler, ru='Трент, ты ведешь звено Локи. Уничтожьте защитные системы и дайте нам сигнал '
+                                  'в случае успеха. Карта местности загружена в компьютер Дерси.'),
+        VoiceLine(80, Darcy, ru='Да, я буду помогать. Трент, погнали!'),
+
+        VoiceLine(90, Darcy, comment='Перед зоной миссии', ru='Давай пролетим через эти плотные облака.'),
+        VoiceLine(100, Darcy, ru='Стой! Патруль!'),
+        VoiceLine(110, Trent, ru='Панели работают, даже устройство невидимости не нужно.'),
+        VoiceLine(120, Darcy,
+                  ru='Трент, давай лети первым, а мы тебя нагоним. Нужно добраться до минного загорождения.'),
+        VoiceLine(130, Trent, ru='А вот и мины.'),
+        VoiceLine(140, Darcy, ru='Там отмечены буйки. Лети спокойно, только не взорвись.'),
+
+        VoiceLine(150, Darcy, comment='Пролетев мины', ru='Трент, давно практиковал хакерские навыки?'),
+        VoiceLine(160, Trent, ru='Что на этот раз?'),
+        VoiceLine(170, Darcy,  ru='Нам нужно вырубить местную систему безопасности. '
+                                  'Это два пункта управления. Незаметно проберись к ним и отключи систему.'),
+        VoiceLine(180, Trent, ru='Ладно, будем вспоминать, как это делается.'),
+
+        VoiceLine(190, Darcy, comment='Взлом прошел неудачно', ru='Ошибка. Давай попробуем еще раз.'),
+
+        VoiceLine(200, Trent, comment='Перед зоной миссии', ru='Звучит тревога, это нормально?'),
+        VoiceLine(210, Darcy, ru='Всё хорошо, получилось. Хасслер, задача выполнена, высылай подкрепление!'),
+        VoiceLine(220, Hassler, ru='Продержитесь, пока мы летим. Валькирии уже в пути.'),
+
+        VoiceLine(230, Hassler, ru='Валькирии и Тор на месте. Трент, обеспечьте прикрытие транспорту.'),
+        VoiceLine(240, Trent, ru='Вас понял.'),
+
+        VoiceLine(250, Tor, ru='Тор на связи, груз упакован.'),
+        VoiceLine(260, Darcy, ru='Миссия выполнена, все уходим через центральный вход!'),
+
     ]
 
 
