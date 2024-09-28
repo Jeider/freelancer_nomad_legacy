@@ -8,6 +8,7 @@ from pathlib import Path
 from files.writer import FileWriter
 
 from story.scripts import mission9, mission10, mission11, mission12, mission13
+from managers.script import ScriptManager
 
 from jinja_templates.jinja_manager import JinjaTemplateManager
 
@@ -87,12 +88,13 @@ def test_story():
     print('done')
 
 
-def test_script():
-    FileWriter.write('mission9.html', mission9.Mission9().get_story_script())
-    FileWriter.write('mission10.html', mission10.Mission10().get_story_script())
-    FileWriter.write('mission11.html', mission11.Mission11().get_story_script())
-    FileWriter.write('mission12.html', mission12.Mission12().get_story_script())
-    FileWriter.write('mission13.html', mission13.Mission13().get_story_script())
+def generate_script():
+    ScriptManager()
+    # FileWriter.write('mission9.html', mission9.Mission9().get_story_script())
+    # FileWriter.write('mission10.html', mission10.Mission10().get_story_script())
+    # FileWriter.write('mission11.html', mission11.Mission11().get_story_script())
+    # FileWriter.write('mission12.html', mission12.Mission12().get_story_script())
+    # FileWriter.write('mission13.html', mission13.Mission13().get_story_script())
     # print(content)
 
 
@@ -153,7 +155,7 @@ ACTIONS = {
     'get_frames': get_frames,
     'get_frames_ints': get_frames_ints,
     'test_story': test_story,
-    'test_script': test_script,
+    'generate_script': generate_script,
     'test_voices': test_voices,
     'test_steos': test_steos,
     'test_elevenlabs': test_elevenlabs,

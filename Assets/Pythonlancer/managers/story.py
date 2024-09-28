@@ -3,7 +3,6 @@ from jinja_templates.jinja_manager import JinjaTemplateManager
 from story.ingame.gameplay import *  # initialize mission files
 from story.ingame.ingame_mission import IngameMission
 
-
 from tools.data_folder import DataFolder
 
 from text.dividers import DIVIDER, SINGLE_DIVIDER

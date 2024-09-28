@@ -1,9 +1,13 @@
+from text.dividers import SINGLE_DIVIDER
+
+
 class MissionSegment(object):
     ALIAS = ''
     VOICE_LINES = []
 
     COMMENT_TEMPLATE = '<p class="comment_before_line">{comment}</p>'
-    LINE_TEMPLATE = '<p class="line_name">{name}</p><p class="line_value"><span class="line_content">{value}</span></p>'
+    LINE_TEMPLATE = ('<p class="line_name actor_{actor_name}">{name}</p>'
+                     '<p class="line_value actor_{actor_name}""><span class="line_content">{value}</span></p>')
 
     def __init__(self, mission):
         self.mission = mission
@@ -23,12 +27,17 @@ class MissionSegment(object):
                 )
             content.append(
                 cls.LINE_TEMPLATE.format(
+                    actor_name=line.actor.NAME,
                     name=cls.get_name_for_line(line),
-                    value=line.get_ru_story_text()
+                    value=line.get_ru_story_text(),
                 )
             )
             lines.append(''.join(content))
         return lines
+
+    @classmethod
+    def get_actors(cls):
+        return set([line.actor for line in cls.VOICE_LINES])
 
     @classmethod
     def get_lines_names(cls):
@@ -52,7 +61,6 @@ class CutsceneProps(MissionSegment):
         )
 
 
-
 class SpaceVoiceProps(MissionSegment):
     VOICE_LINES = []
 
@@ -67,12 +75,12 @@ class SpaceVoiceProps(MissionSegment):
         )
 
 
-
 class StoryMission(object):
     SPACE_VOICE_LINES = []
     SPACE_CLASS = None
     CUTSCENES = []
     MISSION_TITLE = None
+    MISSION_INDEX = None
 
     STYLES = '''
 .line_name {
@@ -85,7 +93,7 @@ class StoryMission(object):
     background-color: white;
 }
 .line_content {
-    background-color: yellow;
+    background-color: #FFFF8F;
 }
 .comment_before_line {
     font-weight: bold;
@@ -101,8 +109,13 @@ class StoryMission(object):
 </style>
 </head>
 <body>
-<h2>{mission_title}</h2>
-{content}
+<h1>{mission_title}</h1>
+<p><a href="{root_link}"><- Вернуться в корень сценария</a></p>
+<hr>
+<h2>Актёры</h2>
+{actors}
+<h2>Текст</h2>
+{script_content}
 </body>
 </html>
     '''
@@ -118,19 +131,47 @@ class StoryMission(object):
         {lines}    
     '''
 
+    subclasses = []
+
+    def __init_subclass__(cls, **kwargs):
+        super().__init_subclass__(**kwargs)
+        cls.subclasses.append(cls)
+
     def __init__(self):
         self.cutscenes = [cutscene(self) for cutscene in self.CUTSCENES]
         self.space = self.SPACE_CLASS(self)
+        self.actors = self.get_story_actors()
 
-    def get_story_script(self):
+    def get_story_script(self, actor=None):
+        styles = self.STYLES
+        if actor:
+            styles += f'''
+            .actor_{actor.NAME} .line_content {{
+                background-color: #50C878;
+            }}
+             
+            '''
         return self.SCRIPT_TEMPLATE.format(
             mission_title=self.MISSION_TITLE,
-            styles=self.STYLES,
-            content='<hr>'.join(self.get_story_script_content())
+            styles=styles,
+            root_link=MissionIndex.get_index_filename(),
+            actors=self.get_actors_content(),
+            script_content=f'{SINGLE_DIVIDER}<hr>'.join(self.get_story_script_content())
         )
 
-    def get_space_lines(self):
-        return
+    def get_story_actors(self):
+        actors = set()
+        for cutscene in self.cutscenes:
+            actors |= cutscene.get_actors()
+        actors |= self.SPACE_CLASS.get_actors()
+
+        return sorted(list(actors), key=lambda x: x.RU_NAME)
+
+    def get_actors_content(self):
+        content = []
+        for actor in self.actors:
+            content.append(f'<p><a href="{self.get_actor_file_link(actor)}">{actor.RU_NAME}</a></p>')
+        return SINGLE_DIVIDER.join(content)
 
     def get_story_script_content(self):
         content = []
@@ -146,3 +187,44 @@ class StoryMission(object):
         )
         content.append(space_content)
         return content
+
+    def get_root_file_link(self):
+        return f'mission{self.MISSION_INDEX}.html'
+
+    def get_actor_file_link(self, actor):
+        return f'mission{self.MISSION_INDEX}_{actor.NAME}.html'
+
+    def get_short_name(self):
+        return f'Миссия {self.MISSION_INDEX}'
+
+    def get_alias(self):
+        return f'mission{self.MISSION_INDEX}'
+
+
+class MissionIndex(object):
+    STORY_TEMPLATE = '''
+<html>
+<head>
+<meta charset="utf-8">
+<title>Сценарий Наследия Номадов</title>
+</head>
+<body>
+<h2>Сценарий Наследия Номадов</h2>
+{content}
+</body>
+</html>
+    '''
+
+    INDEX_FILENAME = 'index.html'
+
+    @classmethod
+    def get_index_filename(cls):
+        return cls.INDEX_FILENAME
+
+    @classmethod
+    def get_index_content(cls, missions):
+        links = []
+        for mission in missions:
+            links.append(f'<p><a href="{mission.get_root_file_link()}">{mission.get_short_name()}</a></p>')
+        content = SINGLE_DIVIDER.join(links)
+        return cls.STORY_TEMPLATE.format(content=content)
