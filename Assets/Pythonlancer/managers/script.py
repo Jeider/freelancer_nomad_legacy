@@ -11,15 +11,28 @@ SCRIPT_SUBFOLDER = 'script'
 class ScriptManager(object):
 
     def __init__(self):
-        self.script_missions = [mission() for mission in StoryMission.subclasses]
+        self.script_missions_db = {}
+        self.script_missions_list = []
 
-        self.generate_script()
+        for mission in StoryMission.subclasses:
+            msn = mission()
+            self.script_missions_db[msn.MISSION_INDEX] = msn
+            self.script_missions_list.append(msn)
+
+    def get_mission_by_index(self, index):
+        if index not in self.script_missions_db:
+            raise Exception('unknown mission index %d' % index)
+
+        return self.script_missions_db[index]
+
+    def get_missions(self):
+        return self.script_missions_list
 
     def generate_script(self):
         index_filename = MissionIndex.get_index_filename()
-        index_content = MissionIndex.get_index_content(self.script_missions)
+        index_content = MissionIndex.get_index_content(self.script_missions_list)
         FileWriter.write_to_subfolder(SCRIPT_SUBFOLDER, index_filename, index_content)
-        for mission in self.script_missions:
+        for mission in self.script_missions_list:
             FileWriter.write_to_subfolder(
                 SCRIPT_SUBFOLDER, mission.get_root_file_link(), mission.get_story_script()
             )

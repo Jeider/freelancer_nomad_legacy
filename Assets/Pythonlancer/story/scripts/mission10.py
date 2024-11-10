@@ -143,12 +143,12 @@ class Msn10OfferCutscene(Msn10, script.CutsceneProps):
         ),
         VoiceLine(
             260,
-            Trent,
+            Darcy,
             ru='Посмотрим, как окажется на самом деле.'
         ),
         VoiceLine(
             270,
-            Trent,
+            Hassler,
             ru='Тогда можете готовиться к вылету. Я буду координировать операцию с мостика линкора.'
         ),
     ]
@@ -237,7 +237,7 @@ class Msn10RescuedCutscene(Msn10, script.CutsceneProps):
         ),
         VoiceLine(
             140,
-            Trent,
+            Hassler,
             ru='К сожалению... Чертово воспитание дает о себе знать.'
         ),
     ]

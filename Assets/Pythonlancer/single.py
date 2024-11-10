@@ -89,7 +89,7 @@ def test_story():
 
 
 def generate_script():
-    ScriptManager()
+    ScriptManager().generate_script()
     # FileWriter.write('mission9.html', mission9.Mission9().get_story_script())
     # FileWriter.write('mission10.html', mission10.Mission10().get_story_script())
     # FileWriter.write('mission11.html', mission11.Mission11().get_story_script())
@@ -122,8 +122,27 @@ def test_voices():
 
 
 def test_steos():
-    result = steos.SteosVoice.get_voices_list()
-    import pdb;pdb.set_trace()
+    manager = ScriptManager()
+    # msn13 = manager.get_mission_by_index(13)
+
+    for msn in manager.get_missions():
+        # validate lines
+        for line in msn.get_space_lines():
+            if line.actor.STEOS_ID is None:
+                raise Exception('actor %s have no steos' % line.actor.NAME)
+
+        if msn.MISSION_INDEX == 13:
+            continue
+
+        for line in msn.get_space_lines():
+            steos.SteosVoice.generate_ru_voice(voice_line=line, segment=msn.SPACE_CLASS)
+
+
+    return
+    # line = msn13.get_space_lines()[112]
+    line = space.get_line_by_index(1130)
+    result = steos.SteosVoice.generate_ru_voice(voice_line=line, segment=space)
+    x = 1
 
 
 

@@ -12,6 +12,9 @@ class Actor(object):
     COMM_APPEARANCE = None
     CUTSCENE_APPEARANCE = ''
     SPACE_VOICE = None
+    STEOS_ID = None
+    STEOS_PITCH = 0
+    STEOS_SPEED = 1
 
     subclasses = []
 
@@ -41,6 +44,9 @@ class Trent(Actor):
     TYPE = ACTOR_TRENT
     NAME = 'trent'
     COMM_APPEARANCE = 'pi_pirate5_head, player_body, player_commhelmet'
+    STEOS_ID = 2
+    STEOS_PITCH = -0.5
+    STEOS_SPEED = 1.13
 
 
 class EdisonTrent(Actor):
@@ -48,6 +54,9 @@ class EdisonTrent(Actor):
     TYPE = ACTOR_TRENT
     NAME = 'edison'
     COMM_APPEARANCE = 'pi_pirate5_head, player_body, player_commhelmet'
+    STEOS_ID = 2
+    STEOS_PITCH = 0.5
+    STEOS_SPEED = 1.05
 
 
 class Juni(Actor):
@@ -61,6 +70,9 @@ class Hatcher(Actor):
     TYPE = ACTOR_FEMALE
     NAME = 'hatcher'
     COMM_APPEARANCE = 'pl_female2_head, li_hatcher_body, comm_li_hatcher_female'
+    STEOS_ID = 217
+    STEOS_PITCH = -1
+    STEOS_SPEED = 1.2
 
 
 class Darcy(Actor):
@@ -68,12 +80,18 @@ class Darcy(Actor):
     TYPE = ACTOR_FEMALE
     NAME = 'darcy'
     COMM_APPEARANCE = 'ge_female1_head, br_darcy_body, comm_br_darcy_female'
+    STEOS_ID = 219
+    STEOS_PITCH = 0
+    STEOS_SPEED = 1.2
 
 
 class King(Actor):
     RU_NAME = 'Кинг'
     TYPE = ACTOR_MALE
     NAME = 'king'
+    STEOS_ID = 215
+    STEOS_PITCH = 0
+    STEOS_SPEED = 1.1
 
 
 class Tilton(Actor):
@@ -88,6 +106,9 @@ class Rockford(Actor):
     TYPE = ACTOR_MALE
     NAME = 'rockford'
     COMM_APPEARANCE = 'li_rockford_head, li_male_elite_body, comm_ge_generic2'
+    STEOS_ID = 13
+    STEOS_PITCH = 0
+    STEOS_SPEED = 1.2
 
 
 class Brighton(Actor):
@@ -102,6 +123,7 @@ class MaleCaptain(Actor):
     TYPE = ACTOR_MALE
     NAME = 'captain'
     COMM_APPEARANCE = 'li_captain_head, li_male_elite_body'
+    STEOS_ID = 10090
 
 
 class Missouri(Actor):
@@ -109,6 +131,9 @@ class Missouri(Actor):
     TYPE = ACTOR_MALE
     NAME = 'missouri'
     COMM_APPEARANCE = 'li_captain_head, li_male_elite_body'
+    STEOS_ID = 215
+    STEOS_PITCH = -0.5
+    STEOS_SPEED = 1.1
 
 
 class Kruger(Actor):
@@ -116,6 +141,7 @@ class Kruger(Actor):
     TYPE = ACTOR_MALE
     NAME = 'kruger'
     COMM_APPEARANCE = 'li_captain_head, li_male_elite_body'
+    STEOS_ID = 10090
 
 
 class FortBush(Actor):
@@ -123,6 +149,7 @@ class FortBush(Actor):
     TYPE = ACTOR_MALE
     NAME = 'bush'
     COMM_APPEARANCE = 'li_captain_head, li_male_elite_body'
+    STEOS_ID = 10029
 
 
 class RedLeader(Actor):
@@ -158,6 +185,7 @@ class Yamamoto(Actor):
     NAME = 'yamamoto'
     COMM_APPEARANCE = 'ku_tenji_head, pi_pirate4_body'
     CUTSCENE_APPEARANCE = 'tenji'
+    STEOS_ID = 10029
 
 
 class Hassler(Actor):
@@ -167,6 +195,7 @@ class Hassler(Actor):
     NAME = 'hassler'
     COMM_APPEARANCE = 'rh_hassler_head, rh_male_elite_body, comm_rh_reichman'
     CUTSCENE_APPEARANCE = 'hassler'
+    STEOS_ID = 10029
 
 
 class HasslerOrder(Actor):
@@ -185,6 +214,9 @@ class Alaric(Actor):
     COMM_APPEARANCE = 'rh_alaric_head_hat, pi_pirate6_body, comm_rh_alaric'
     CUTSCENE_APPEARANCE = 'alaric'
     SPACE_VOICE = 'pilot_f_mil_m01'
+    STEOS_ID = 204
+    STEOS_PITCH = -0.5
+    STEOS_SPEED = 0.7
 
 
 class Jacobo(Actor):
@@ -223,14 +255,18 @@ class Mandrake(Actor):
     NAME = 'mandrake'
     # COMM_APPEARANCE = ''
     CUTSCENE_APPEARANCE = 'mandrake'
+    STEOS_ID = 214
+    STEOS_PITCH = -0.5
+    STEOS_SPEED = 1.1
 
 
 class Kim(Actor):
     RU_NAME = 'Ким'
-    TYPE = ACTOR_FEMALE
+    TYPE = ACTOR_MALE
     NAME = 'kim'
     # COMM_APPEARANCE = ''
     CUTSCENE_APPEARANCE = 'kim'
+    STEOS_ID = 287
 
 
 class SakuraOne(Actor):
@@ -238,6 +274,7 @@ class SakuraOne(Actor):
     TYPE = ACTOR_MALE
     NAME = 'kim'
     # COMM_APPEARANCE = '
+    STEOS_ID = 119
 
 
 class SakuraTwo(Actor):
@@ -245,6 +282,7 @@ class SakuraTwo(Actor):
     TYPE = ACTOR_MALE
     NAME = 'sakura2'
     # COMM_APPEARANCE = ''
+    STEOS_ID = 10090
 
 
 class SakuraThree(Actor):
@@ -252,6 +290,7 @@ class SakuraThree(Actor):
     TYPE = ACTOR_MALE
     NAME = 'sakura3'
     # COMM_APPEARANCE = ''
+    STEOS_ID = 10080
 
 
 class Chrysanthemum(Actor):
@@ -259,6 +298,7 @@ class Chrysanthemum(Actor):
     TYPE = ACTOR_MALE
     NAME = 'chrys'
     # COMM_APPEARANCE = ''
+    STEOS_ID = 10071
 
 
 class Tor(Actor):
@@ -266,6 +306,7 @@ class Tor(Actor):
     TYPE = ACTOR_FEMALE
     NAME = 'tor'
     # COMM_APPEARANCE = ''
+    STEOS_ID = 10071
 
 
 class Reichman(Actor):
@@ -274,5 +315,6 @@ class Reichman(Actor):
     NAME = 'reichman'
     CUTSCENE_APPEARANCE = 'reichman'
     SPACE_VOICE = 'pilot_f_mil_m01'
+    STEOS_ID = 10029
 
 

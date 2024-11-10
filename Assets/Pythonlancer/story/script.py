@@ -4,6 +4,7 @@ from text.dividers import SINGLE_DIVIDER
 class MissionSegment(object):
     ALIAS = ''
     VOICE_LINES = []
+    MISSION_INDEX = None
 
     COMMENT_TEMPLATE = '<p class="comment_before_line">{comment}</p>'
     LINE_TEMPLATE = ('<p class="line_name actor_{actor_name}">{name}</p>'
@@ -15,6 +16,18 @@ class MissionSegment(object):
     @classmethod
     def get_name_for_line(cls, line):
         raise NotImplementedError
+
+    @classmethod
+    def get_lines(cls):
+        return cls.VOICE_LINES
+
+    @classmethod
+    def get_line_by_index(cls, index):
+        """not efficient, for debug"""
+        for item in cls.VOICE_LINES:
+            if index == item.index:
+                return item
+        raise Exception('index %d not found' % index)
 
     @classmethod
     def get_lines_for_script(cls):
@@ -47,7 +60,6 @@ class MissionSegment(object):
 class CutsceneProps(MissionSegment):
     ALIAS = 'scene'
     VOICE_LINES = []
-    MISSION_INDEX = None
 
     LINE_NAME_TEMPLATE = 'm{mission_index:02d}_{scene_alias}_{voiceline_index:04d}_{actor_name}'
 
@@ -173,6 +185,12 @@ class StoryMission(object):
             content.append(f'<p><a href="{self.get_actor_file_link(actor)}">{actor.RU_NAME}</a></p>')
         return SINGLE_DIVIDER.join(content)
 
+    def get_space_lines(self):
+        return self.SPACE_CLASS.get_lines()
+
+    def get_space_line_by_id(self, id):
+        return self.SPACE_CLASS.get_line_by_id(id)
+
     def get_story_script_content(self):
         content = []
         for cutscene in self.cutscenes:
@@ -183,7 +201,7 @@ class StoryMission(object):
             )
             content.append(scene_content)
         space_content = self.SPACE_CONTAINER_TEMPLATE.format(
-            lines=''.join(self.SPACE_CLASS.get_lines_for_script()),
+            lines=''.join(self.get_space_lines()),
         )
         content.append(space_content)
         return content

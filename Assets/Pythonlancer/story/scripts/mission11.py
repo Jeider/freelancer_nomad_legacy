@@ -160,7 +160,7 @@ class Msn11AmbushCutscene(Msn11, script.CutsceneProps):
         VoiceLine(
             290,
             Trent,
-            ru='Чёрт...'
+            ru='Вот чёрт...'
         ),
 
     ]
