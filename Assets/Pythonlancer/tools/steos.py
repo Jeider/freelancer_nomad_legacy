@@ -1,7 +1,7 @@
 import httpx
 import base64
 
-from story.voiceline import VoiceLine
+from story.voice.sound import VoiceLine
 from story.script import MissionSegment
 
 from settings import STEOS_API_KEY

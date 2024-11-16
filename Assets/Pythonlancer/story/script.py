@@ -1,5 +1,7 @@
 from text.dividers import SINGLE_DIVIDER
 
+from story.voice.sound import SpaceSound, CutsceneSound
+
 
 class MissionSegment(object):
     ALIAS = ''
@@ -12,6 +14,18 @@ class MissionSegment(object):
 
     def __init__(self, mission):
         self.mission = mission
+        self.named_voice_lines = self.get_sounds()
+
+    def get_sounds(self):
+        named_lines = []
+        for line in self.get_lines():
+            named_lines.append(
+                self.get_sound_item(line)
+            )
+
+    def get_sound_item(self, line):
+        raise NotImplementedError
+
 
     @classmethod
     def get_name_for_line(cls, line):
@@ -72,6 +86,16 @@ class CutsceneProps(MissionSegment):
             actor_name=line.actor.NAME,
         )
 
+    def get_destination(self):
+        return f'audio\\mod\\m{self.MISSION_INDEX:02d}'
+
+    def get_sound_item(self, line):
+        return CutsceneSound(
+            name=self.get_name_for_line(line),
+            line=line,
+            destination=self.get_destination()
+        )
+
 
 class SpaceVoiceProps(MissionSegment):
     VOICE_LINES = []
@@ -84,6 +108,12 @@ class SpaceVoiceProps(MissionSegment):
             mission_index=cls.MISSION_INDEX,
             voiceline_index=line.index,
             actor_name=line.actor.NAME,
+        )
+
+    def get_sound_item(self, line):
+        return SpaceSound(
+            name=self.get_name_for_line(line),
+            line=line,
         )
 
 

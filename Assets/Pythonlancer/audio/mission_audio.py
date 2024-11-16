@@ -81,6 +81,8 @@ class MissionAudio(object):
         'is_2d = true',
     ]
 
+    INGAME_VOICES_MAP = []
+
     subclasses = []
 
     def __init_subclass__(cls, **kwargs):
