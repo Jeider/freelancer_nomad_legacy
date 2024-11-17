@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<UTFXML filename="echo_m10_player.utf">
+<UTF_ROOT>
+<test_voice name="0x9B943EC7" type="file" filename="echo_m10_player\dx_m10_0050_trent.wav"/>
+<test_voice name="0x9B80AFC9" type="file" filename="echo_m10_player\dx_m10_0110_trent.wav"/>
+<test_voice name="0x9B80E7CB" type="file" filename="echo_m10_player\dx_m10_0130_trent.wav"/>
+<test_voice name="0xBB8073CE" type="file" filename="echo_m10_player\dx_m10_0160_trent.wav"/>
+<test_voice name="0xBB818BC0" type="file" filename="echo_m10_player\dx_m10_0180_trent.wav"/>
+<test_voice name="0xBBDCA8C2" type="file" filename="echo_m10_player\dx_m10_0200_trent.wav"/>
+<test_voice name="0xBBDC38C6" type="file" filename="echo_m10_player\dx_m10_0240_trent.wav"/>
+</UTF_ROOT>
+</UTFXML>

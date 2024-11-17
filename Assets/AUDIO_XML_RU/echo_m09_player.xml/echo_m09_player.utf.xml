@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<UTFXML filename="echo_m09_player.utf">
+<UTF_ROOT>
+<test_voice name="0xBB0414C2" type="file" filename="echo_m09_player\dx_m09_0020_trent.wav"/>
+<test_voice name="0xBB0414C2" type="file" filename="echo_m09_player\dx_m09_0020_trent.wav"/>
+<test_voice name="0x9B1059CB" type="file" filename="echo_m09_player\dx_m09_0110_trent.wav"/>
+<test_voice name="0xBA2454C0" type="file" filename="echo_m09_player\dx_m09_0800_trent.wav"/>
+<test_voice name="0xBA241CC2" type="file" filename="echo_m09_player\dx_m09_0820_trent.wav"/>
+<test_voice name="0xBA24C4C4" type="file" filename="echo_m09_player\dx_m09_0840_trent.wav"/>
+<test_voice name="0xBB1015C8" type="file" filename="echo_m09_player\dx_m09_0120_trent.wav"/>
+<test_voice name="0xBB1085CC" type="file" filename="echo_m09_player\dx_m09_0160_trent.wav"/>
+<test_voice name="0x9B945CC1" type="file" filename="echo_m09_player\dx_m09_0410_trent.wav"/>
+<test_voice name="0x9B94CCC5" type="file" filename="echo_m09_player\dx_m09_0450_trent.wav"/>
+</UTF_ROOT>
+</UTFXML>

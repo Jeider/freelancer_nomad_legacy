@@ -1,6 +1,7 @@
 from text.dividers import SINGLE_DIVIDER
 
-from story.voice.sound import SpaceSound, CutsceneSound
+from audio.sound import SpaceSound, CutsceneSound
+from audio.voice import Voice
 
 
 class MissionSegment(object):
@@ -14,7 +15,6 @@ class MissionSegment(object):
 
     def __init__(self, mission):
         self.mission = mission
-        self.named_voice_lines = self.get_sounds()
 
     def get_sounds(self):
         named_lines = []
@@ -22,10 +22,10 @@ class MissionSegment(object):
             named_lines.append(
                 self.get_sound_item(line)
             )
+        return named_lines
 
     def get_sound_item(self, line):
         raise NotImplementedError
-
 
     @classmethod
     def get_name_for_line(cls, line):
@@ -196,7 +196,7 @@ class StoryMission(object):
         return self.SCRIPT_TEMPLATE.format(
             mission_title=self.MISSION_TITLE,
             styles=styles,
-            root_link=MissionIndex.get_index_filename(),
+            root_link=ScriptIndex.get_index_filename(),
             actors=self.get_actors_content(),
             script_content=f'{SINGLE_DIVIDER}<hr>'.join(self.get_story_script_content())
         )
@@ -248,8 +248,39 @@ class StoryMission(object):
     def get_alias(self):
         return f'mission{self.MISSION_INDEX}'
 
+    def get_male_space_voice(self):
+        return Voice(
+            voice_name=f'echo_m{self.MISSION_INDEX:02d}',
+            sounds=[sound for sound in self.space.get_sounds() if sound.line.actor.is_male()],
+        )
 
-class MissionIndex(object):
+    def get_female_space_voice(self):
+        return Voice(
+            voice_name=f'echo_m{self.MISSION_INDEX:02d}_female',
+            sounds=[sound for sound in self.space.get_sounds() if sound.line.actor.is_female()],
+        )
+
+    def get_trent_space_voice(self):
+        return Voice(
+            voice_name=f'echo_m{self.MISSION_INDEX:02d}_player',
+            sounds=[sound for sound in self.space.get_sounds() if sound.line.actor.is_player()],
+        )
+
+    def get_voices(self):
+        return [
+            self.get_male_space_voice(),
+            self.get_female_space_voice(),
+            self.get_trent_space_voice(),
+        ]
+
+    def get_cutscene_sounds(self):
+        sounds = []
+        for segment in self.cutscenes:
+            sounds.extend(segment.get_sounds())
+        return sounds
+
+
+class ScriptIndex(object):
     STORY_TEMPLATE = '''
 <html>
 <head>
@@ -276,3 +307,4 @@ class MissionIndex(object):
             links.append(f'<p><a href="{mission.get_root_file_link()}">{mission.get_short_name()}</a></p>')
         content = SINGLE_DIVIDER.join(links)
         return cls.STORY_TEMPLATE.format(content=content)
+

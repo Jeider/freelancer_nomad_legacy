@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<UTFXML filename="echo_m13.utf">
+<UTF_ROOT>
+<test_voice name="0xB08F4209" type="file" filename="echo_m13\dx_m13_0020_mandrake.wav"/>
+<test_voice name="0xB64B6587" type="file" filename="echo_m13\dx_m13_0030_alaric.wav"/>
+<test_voice name="0xB7EF4200" type="file" filename="echo_m13\dx_m13_0050_mandrake.wav"/>
+<test_voice name="0xB5EF4208" type="file" filename="echo_m13\dx_m13_0070_mandrake.wav"/>
+<test_voice name="0xBA0F424B" type="file" filename="echo_m13\dx_m13_0080_mandrake.wav"/>
+<test_voice name="0xBB0F424F" type="file" filename="echo_m13\dx_m13_0090_mandrake.wav"/>
+<test_voice name="0xB28FD641" type="file" filename="echo_m13\dx_m13_0100_mandrake.wav"/>
+<test_voice name="0xB38FD645" type="file" filename="echo_m13\dx_m13_0110_mandrake.wav"/>
+<test_voice name="0xB18FD64D" type="file" filename="echo_m13\dx_m13_0130_mandrake.wav"/>
+<test_voice name="0xB5EFD648" type="file" filename="echo_m13\dx_m13_0170_mandrake.wav"/>
+<test_voice name="0xBA0FD60B" type="file" filename="echo_m13\dx_m13_0180_mandrake.wav"/>
+<test_voice name="0x8453B80D" type="file" filename="echo_m13\dx_m13_0200_rockford.wav"/>
+<test_voice name="0x8653B805" type="file" filename="echo_m13\dx_m13_0220_rockford.wav"/>
+<test_voice name="0x9E497187" type="file" filename="echo_m13\dx_m13_0230_alaric.wav"/>
+<test_voice name="0x9ECD748D" type="file" filename="echo_m13\dx_m13_0260_alaric.wav"/>
+<test_voice name="0xBA0E6ACB" type="file" filename="echo_m13\dx_m13_0280_mandrake.wav"/>
+<test_voice name="0xB38EFEC5" type="file" filename="echo_m13\dx_m13_0310_mandrake.wav"/>
+<test_voice name="0xB18EFECD" type="file" filename="echo_m13\dx_m13_0330_mandrake.wav"/>
+<test_voice name="0xB74DC108" type="file" filename="echo_m13\dx_m13_0340_missouri.wav"/>
+<test_voice name="0xB54DC100" type="file" filename="echo_m13\dx_m13_0360_missouri.wav"/>
+<test_voice name="0xBBADC147" type="file" filename="echo_m13\dx_m13_0380_missouri.wav"/>
+<test_voice name="0xA6130E8D" type="file" filename="echo_m13\dx_m13_0400_alaric.wav"/>
+<test_voice name="0xB38D5304" type="file" filename="echo_m13\dx_m13_0410_mandrake.wav"/>
+<test_voice name="0xB08D5308" type="file" filename="echo_m13\dx_m13_0420_mandrake.wav"/>
+<test_voice name="0x87CE5440" type="file" filename="echo_m13\dx_m13_0460_king.wav"/>
+<test_voice name="0xB5ED5309" type="file" filename="echo_m13\dx_m13_0470_mandrake.wav"/>
+<test_voice name="0xB70E4DC0" type="file" filename="echo_m13\dx_m13_0490_king.wav"/>
+<test_voice name="0xB28DC740" type="file" filename="echo_m13\dx_m13_0500_mandrake.wav"/>
+<test_voice name="0xBD0E5DC1" type="file" filename="echo_m13\dx_m13_0510_king.wav"/>
+<test_voice name="0xB12EF884" type="file" filename="echo_m13\dx_m13_0520_missouri.wav"/>
+<test_voice name="0xB2DE0387" type="file" filename="echo_m13\dx_m13_0570_alaric.wav"/>
+<test_voice name="0xBA0DC70A" type="file" filename="echo_m13\dx_m13_0580_mandrake.wav"/>
+<test_voice name="0x8E111A8D" type="file" filename="echo_m13\dx_m13_0600_alaric.wav"/>
+<test_voice name="0xB08C7B88" type="file" filename="echo_m13\dx_m13_0620_mandrake.wav"/>
+<test_voice name="0x8D4E1942" type="file" filename="echo_m13\dx_m13_0640_king.wav"/>
+<test_voice name="0xB31B0245" type="file" filename="echo_m13\dx_m13_1010_mandrake.wav"/>
+<test_voice name="0xB11B024D" type="file" filename="echo_m13\dx_m13_1030_mandrake.wav"/>
+<test_voice name="0xB77B0240" type="file" filename="echo_m13\dx_m13_1050_mandrake.wav"/>
+<test_voice name="0xB47B024C" type="file" filename="echo_m13\dx_m13_1060_mandrake.wav"/>
+<test_voice name="0x829AC7CE" type="file" filename="echo_m13\dx_m13_1070_king.wav"/>
+<test_voice name="0xB6376E89" type="file" filename="echo_m13\dx_m13_1080_alaric.wav"/>
+<test_voice name="0xA3026D83" type="file" filename="echo_m13\dx_m13_1110_alaric.wav"/>
+<test_voice name="0xA7DAC14F" type="file" filename="echo_m13\dx_m13_1160_king.wav"/>
+<test_voice name="0xB2198700" type="file" filename="echo_m13\dx_m13_1500_mandrake.wav"/>
+<test_voice name="0xB3198704" type="file" filename="echo_m13\dx_m13_1510_mandrake.wav"/>
+<test_voice name="0xB0198708" type="file" filename="echo_m13\dx_m13_1520_mandrake.wav"/>
+<test_voice name="0xB119870C" type="file" filename="echo_m13\dx_m13_1530_mandrake.wav"/>
+</UTF_ROOT>
+</UTFXML>

@@ -1,0 +1,88 @@
+from text.dividers import SINGLE_DIVIDER, DIVIDER
+
+RU_VOICE_FOLDER = 'AUDIO_XML_RU'
+
+XML_ITEM_TEMPLATE = '<test_voice name="{voiceline_hash}" type="file" filename="{folder}\\{voiceline_nickname}.wav"/>'
+
+VOICE_ARCH = '[Voice]'
+
+
+class Voice:
+    COMM_ANIMATIONS = []
+
+    def __init__(self, voice_name, sounds):
+        self.voice_name = voice_name
+        self.sounds = sounds
+
+    def validate_ai_compatibility(self):
+        for sound in self.sounds:
+            if sound.line.actor.STEOS_ID is None:
+                raise Exception('actor %s have no steos for line name %s' % (sound.line.actor.NAME, sound.name))
+
+    def get_xml(self):
+        items = [
+            '<?xml version="1.0" encoding="ISO-8859-1"?>',
+            f'<UTFXML filename="{self.voice_name}.utf">',
+            '<UTF_ROOT>',
+        ]
+
+        for sound in self.sounds:
+            items.append(XML_ITEM_TEMPLATE.format(
+                voiceline_nickname=sound.get_nickname(),
+                voiceline_hash=sound.get_nickname_hash(),
+                folder=self.voice_name,
+            ))
+
+        items.extend([
+            '</UTF_ROOT>',
+            '</UTFXML>',
+        ])
+        return SINGLE_DIVIDER.join(items)
+
+    def get_ini(self):
+        items = [self.get_root_ini()]
+
+        for sound in self.sounds:
+            items.append(sound.get_ini())
+
+        return DIVIDER.join(items)
+
+    def get_root_ini(self):
+        items = [
+            VOICE_ARCH,
+            f'nickname = {self.voice_name}',
+        ]
+        for animation in self.COMM_ANIMATIONS:
+            items.append(f'script = {animation}')
+        return SINGLE_DIVIDER.join(items)
+
+
+class MaleVoice(Voice):
+    COMM_ANIMATIONS = [
+        'SC_MLHEAD_MOTION_WALLA_CASL_000LV_XA_%',
+        'SC_MLBODY_CHRB_IDLE_SMALL_000LV_XA_07',
+    ]
+
+
+class FemaleVoice(Voice):
+    COMM_ANIMATIONS = [
+        'SC_FMHEAD_MOTION_WALLA_CASL_000LV_XA_%',
+        'SC_FMBODY_CHRB_IDLE_SMALL_000LV_XA_05',
+    ]
+
+
+class TrentVoice(Voice):
+    COMM_ANIMATIONS = [
+        'Sc_dx_GCS_W04aP01_Trent',
+        'SC_MLBODY_CHRB_IDLE_SMALL_000LV_XA_07',
+    ]
+
+
+class CutsceneVoice:
+
+    def __init__(self, voice_name, sounds):
+        self.voice_name = voice_name
+        self.sounds = sounds
+
+    def get_ini(self):
+        raise NotImplementedError

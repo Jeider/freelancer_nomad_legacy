@@ -7,7 +7,12 @@ from text.strings import StringCompiler
 from text.dividers import DIVIDER, SINGLE_DIVIDER
 
 
-class AudioManager(object):
+class AudioManager:
+    def __init__(self, script):
+        self.script = script
+
+
+class AudioManagerOld(object):
 
     def __init__(self):
         self.ingame_sounds_ini = []

@@ -8,7 +8,7 @@ from tools.data_folder import DataFolder
 from text.dividers import DIVIDER, SINGLE_DIVIDER
 
 
-class StoryManager(object):
+class StoryManager:
 
     def __init__(self, lancer_core):
         self.core = lancer_core

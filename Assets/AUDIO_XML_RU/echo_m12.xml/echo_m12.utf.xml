@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<UTFXML filename="echo_m12.utf">
+<UTF_ROOT>
+<test_voice name="0xA2822CCD" type="file" filename="echo_m12\dx_m12_0100_alaric.wav"/>
+<test_voice name="0xA2CA2ECD" type="file" filename="echo_m12\dx_m12_0120_alaric.wav"/>
+<test_voice name="0xA21228CD" type="file" filename="echo_m12\dx_m12_0140_alaric.wav"/>
+<test_voice name="0xA25A2ACD" type="file" filename="echo_m12\dx_m12_0160_alaric.wav"/>
+<test_voice name="0xBF333187" type="file" filename="echo_m12\dx_m12_0180_kim.wav"/>
+<test_voice name="0xB0B93607" type="file" filename="echo_m12\dx_m12_0200_kim.wav"/>
+<test_voice name="0xB0BC7605" type="file" filename="echo_m12\dx_m12_0210_kim.wav"/>
+<test_voice name="0xB0B6F600" type="file" filename="echo_m12\dx_m12_0230_kim.wav"/>
+<test_voice name="0xB0A9760F" type="file" filename="echo_m12\dx_m12_0250_kim.wav"/>
+<test_voice name="0x9BFF3A06" type="file" filename="echo_m12\dx_m12_0270_kruger.wav"/>
+<test_voice name="0x8F32370C" type="file" filename="echo_m12\dx_m12_0300_kruger.wav"/>
+<test_voice name="0x8F7A350C" type="file" filename="echo_m12\dx_m12_0320_kruger.wav"/>
+<test_voice name="0x8F6E3406" type="file" filename="echo_m12\dx_m12_0330_kruger.wav"/>
+<test_voice name="0x8A103CCD" type="file" filename="echo_m12\dx_m12_0340_alaric.wav"/>
+<test_voice name="0xB5731D82" type="file" filename="echo_m12\dx_m12_0360_bush.wav"/>
+<test_voice name="0x9C0E59C4" type="file" filename="echo_m12\dx_m12_0410_king.wav"/>
+<test_voice name="0x968E5CC4" type="file" filename="echo_m12\dx_m12_0430_king.wav"/>
+<test_voice name="0x890E53C4" type="file" filename="echo_m12\dx_m12_0450_king.wav"/>
+<test_voice name="0xA65F48CD" type="file" filename="echo_m12\dx_m12_0460_alaric.wav"/>
+<test_voice name="0x9C0E11C6" type="file" filename="echo_m12\dx_m12_0610_king.wav"/>
+</UTF_ROOT>
+</UTFXML>

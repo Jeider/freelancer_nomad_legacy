@@ -16,7 +16,7 @@ from tools.data_folder import DataFolder
 from text.dividers import SINGLE_DIVIDER, DIVIDER
 
 
-class UniverseManager(object):
+class UniverseManager:
 
     def __init__(self, lancer_core):
         self.core = lancer_core

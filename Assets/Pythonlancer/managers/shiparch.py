@@ -7,8 +7,7 @@ from text.strings import StringCompiler
 from tools.data_folder import DataFolder
 
 
-class ShiparchManager(object):
-
+class ShiparchManager:
     def __init__(self, lancer_core):
         self.core = lancer_core
         self.misc_equip = self.core.misc_equip

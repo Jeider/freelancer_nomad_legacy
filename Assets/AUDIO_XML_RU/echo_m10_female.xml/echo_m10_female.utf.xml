@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<UTFXML filename="echo_m10_female.utf">
+<UTF_ROOT>
+<test_voice name="0xA659C88A" type="file" filename="echo_m10_female\dx_m10_0010_darcy.wav"/>
+<test_voice name="0x8658EC83" type="file" filename="echo_m10_female\dx_m10_0080_darcy.wav"/>
+<test_voice name="0xA658E882" type="file" filename="echo_m10_female\dx_m10_0090_darcy.wav"/>
+<test_voice name="0x864DCD81" type="file" filename="echo_m10_female\dx_m10_0100_darcy.wav"/>
+<test_voice name="0x864D8583" type="file" filename="echo_m10_female\dx_m10_0120_darcy.wav"/>
+<test_voice name="0x864D5D85" type="file" filename="echo_m10_female\dx_m10_0140_darcy.wav"/>
+<test_voice name="0xA64D5984" type="file" filename="echo_m10_female\dx_m10_0150_darcy.wav"/>
+<test_voice name="0xA64D1186" type="file" filename="echo_m10_female\dx_m10_0170_darcy.wav"/>
+<test_voice name="0xA64CE988" type="file" filename="echo_m10_female\dx_m10_0190_darcy.wav"/>
+<test_voice name="0xA611CA8A" type="file" filename="echo_m10_female\dx_m10_0210_darcy.wav"/>
+<test_voice name="0x8450E84E" type="file" filename="echo_m10_female\dx_m10_0250_tor.wav"/>
+<test_voice name="0x8611168D" type="file" filename="echo_m10_female\dx_m10_0260_darcy.wav"/>
+</UTF_ROOT>
+</UTFXML>

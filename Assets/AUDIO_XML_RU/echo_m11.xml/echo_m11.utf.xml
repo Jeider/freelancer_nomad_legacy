@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<UTFXML filename="echo_m11.utf">
+<UTF_ROOT>
+<test_voice name="0x863F6D05" type="file" filename="echo_m11\dx_m11_0010_kim.wav"/>
+<test_voice name="0x8635ED00" type="file" filename="echo_m11\dx_m11_0030_kim.wav"/>
+<test_voice name="0x862A6D0F" type="file" filename="echo_m11\dx_m11_0050_kim.wav"/>
+<test_voice name="0x8625AD08" type="file" filename="echo_m11\dx_m11_0060_kim.wav"/>
+<test_voice name="0xA7031B45" type="file" filename="echo_m11\dx_m11_0060_yamamoto.wav"/>
+<test_voice name="0x8620ED0A" type="file" filename="echo_m11\dx_m11_0070_kim.wav"/>
+<test_voice name="0xA9E31B02" type="file" filename="echo_m11\dx_m11_0080_yamamoto.wav"/>
+<test_voice name="0x86756D05" type="file" filename="echo_m11\dx_m11_0090_kim.wav"/>
+<test_voice name="0x837F6F85" type="file" filename="echo_m11\dx_m11_0110_kim.wav"/>
+<test_voice name="0x8370AF82" type="file" filename="echo_m11\dx_m11_0120_kim.wav"/>
+<test_voice name="0xB550B142" type="file" filename="echo_m11\dx_m11_0120_captain.wav"/>
+<test_voice name="0x8375EF80" type="file" filename="echo_m11\dx_m11_0130_kim.wav"/>
+<test_voice name="0x836F2F8D" type="file" filename="echo_m11\dx_m11_0140_kim.wav"/>
+<test_voice name="0xA4038F09" type="file" filename="echo_m11\dx_m11_0150_yamamoto.wav"/>
+<test_voice name="0xA7038F05" type="file" filename="echo_m11\dx_m11_0160_yamamoto.wav"/>
+<test_voice name="0xA6038F01" type="file" filename="echo_m11\dx_m11_0170_yamamoto.wav"/>
+<test_voice name="0x83302F87" type="file" filename="echo_m11\dx_m11_0180_kim.wav"/>
+<test_voice name="0x8CBA2807" type="file" filename="echo_m11\dx_m11_0200_kim.wav"/>
+<test_voice name="0xA06233CC" type="file" filename="echo_m11\dx_m11_0210_yamamoto.wav"/>
+<test_voice name="0xA26233C4" type="file" filename="echo_m11\dx_m11_0230_yamamoto.wav"/>
+<test_voice name="0xAAAA5642" type="file" filename="echo_m11\dx_m11_0240_reichman.wav"/>
+<test_voice name="0xA40233C9" type="file" filename="echo_m11\dx_m11_0250_yamamoto.wav"/>
+<test_voice name="0xA8AA564A" type="file" filename="echo_m11\dx_m11_0260_reichman.wav"/>
+<test_voice name="0xA60233C1" type="file" filename="echo_m11\dx_m11_0270_yamamoto.wav"/>
+<test_voice name="0xA64A560D" type="file" filename="echo_m11\dx_m11_0280_reichman.wav"/>
+<test_voice name="0x8CF56805" type="file" filename="echo_m11\dx_m11_0290_kim.wav"/>
+<test_voice name="0xA60233C1" type="file" filename="echo_m11\dx_m11_0270_yamamoto.wav"/>
+<test_voice name="0xA9E23382" type="file" filename="echo_m11\dx_m11_0280_yamamoto.wav"/>
+<test_voice name="0x89FF6A85" type="file" filename="echo_m11\dx_m11_0310_kim.wav"/>
+<test_voice name="0x89EF2A8D" type="file" filename="echo_m11\dx_m11_0340_kim.wav"/>
+<test_voice name="0x89EA6A8F" type="file" filename="echo_m11\dx_m11_0350_kim.wav"/>
+</UTF_ROOT>
+</UTFXML>

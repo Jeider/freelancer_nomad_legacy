@@ -12,8 +12,7 @@ from world.armor import ArmorNPC
 from world.ship import Ship
 
 
-
-class MiscEquipManager(object):
+class MiscEquipManager:
 
     def __init__(self, lancer_core):
         self.core = lancer_core

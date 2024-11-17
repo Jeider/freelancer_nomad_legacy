@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<UTFXML filename="echo_m12_player.utf">
+<UTF_ROOT>
+<test_voice name="0x9B958643" type="file" filename="echo_m12_player\dx_m12_0010_trent.wav"/>
+<test_voice name="0x9B95CE41" type="file" filename="echo_m12_player\dx_m12_0030_trent.wav"/>
+<test_voice name="0x9B951647" type="file" filename="echo_m12_player\dx_m12_0050_trent.wav"/>
+<test_voice name="0xBB955A44" type="file" filename="echo_m12_player\dx_m12_0060_trent.wav"/>
+<test_voice name="0x9B955E45" type="file" filename="echo_m12_player\dx_m12_0070_trent.wav"/>
+<test_voice name="0xBB94A24A" type="file" filename="echo_m12_player\dx_m12_0080_trent.wav"/>
+<test_voice name="0x9B94A64B" type="file" filename="echo_m12_player\dx_m12_0090_trent.wav"/>
+<test_voice name="0x9B818749" type="file" filename="echo_m12_player\dx_m12_0110_trent.wav"/>
+<test_voice name="0x9B81CF4B" type="file" filename="echo_m12_player\dx_m12_0130_trent.wav"/>
+<test_voice name="0x9B81174D" type="file" filename="echo_m12_player\dx_m12_0150_trent.wav"/>
+<test_voice name="0x9B815F4F" type="file" filename="echo_m12_player\dx_m12_0170_trent.wav"/>
+<test_voice name="0x9B80A741" type="file" filename="echo_m12_player\dx_m12_0190_trent.wav"/>
+<test_voice name="0xBBDDC840" type="file" filename="echo_m12_player\dx_m12_0220_trent.wav"/>
+<test_voice name="0xBBDD1046" type="file" filename="echo_m12_player\dx_m12_0240_trent.wav"/>
+<test_voice name="0xBB04A64A" type="file" filename="echo_m12_player\dx_m12_0480_trent.wav"/>
+<test_voice name="0x9B04A24B" type="file" filename="echo_m12_player\dx_m12_0490_trent.wav"/>
+<test_voice name="0x9B118349" type="file" filename="echo_m12_player\dx_m12_0510_trent.wav"/>
+<test_voice name="0xBB11CF4A" type="file" filename="echo_m12_player\dx_m12_0520_trent.wav"/>
+<test_voice name="0xBB10A740" type="file" filename="echo_m12_player\dx_m12_0580_trent.wav"/>
+</UTF_ROOT>
+</UTFXML>

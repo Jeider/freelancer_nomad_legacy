@@ -1,7 +1,7 @@
 from files.writer import FileWriter
 
 from story.scripts import mission9, mission10, mission11, mission12, mission13
-from story.script import StoryMission, MissionIndex
+from story.script import StoryMission, ScriptIndex
 
 from text.dividers import DIVIDER, SINGLE_DIVIDER
 
@@ -29,8 +29,8 @@ class ScriptManager(object):
         return self.script_missions_list
 
     def generate_script(self):
-        index_filename = MissionIndex.get_index_filename()
-        index_content = MissionIndex.get_index_content(self.script_missions_list)
+        index_filename = ScriptIndex.get_index_filename()
+        index_content = ScriptIndex.get_index_content(self.script_missions_list)
         FileWriter.write_to_subfolder(SCRIPT_SUBFOLDER, index_filename, index_content)
         for mission in self.script_missions_list:
             FileWriter.write_to_subfolder(

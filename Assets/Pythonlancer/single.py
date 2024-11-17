@@ -18,7 +18,7 @@ from tools import merge_image
 from tools import data_folder
 from tools import steos
 from tools import elevenlabs
-from tools import audio
+from tools import audio_folder
 from tools import maxlancer
 
 from tools.system_template import SystemTemplateLoader
@@ -43,7 +43,7 @@ def generate_hacker_panels():
 
 
 def compile_story_audio():
-    audio.AudioCompiler.compile_story()
+    audio_folder.AudioFolder.compile_xml_to_utf()
     print('done')
 
 
@@ -120,30 +120,14 @@ def test_voices():
     # print(lines)
 
 
-
 def test_steos():
-    manager = ScriptManager()
-    # msn13 = manager.get_mission_by_index(13)
+    script_manager = ScriptManager()
 
-    for msn in manager.get_missions():
-        # validate lines
-        for line in msn.get_space_lines():
-            if line.actor.STEOS_ID is None:
-                raise Exception('actor %s have no steos' % line.actor.NAME)
+    # msn13 = script_manager.get_mission_by_index(13)
 
-        if msn.MISSION_INDEX == 13:
-            continue
-
-        for line in msn.get_space_lines():
-            steos.SteosVoice.generate_ru_voice(voice_line=line, segment=msn.SPACE_CLASS)
-
-
-    return
-    # line = msn13.get_space_lines()[112]
-    line = space.get_line_by_index(1130)
-    result = steos.SteosVoice.generate_ru_voice(voice_line=line, segment=space)
-    x = 1
-
+    for msn in script_manager.get_missions():
+        for voice in msn.get_voices():
+            audio_folder.AudioFolder.compile_voice_to_xml(voice)
 
 
 def test_elevenlabs():

@@ -32,9 +32,9 @@ class LancerCore(object):
         self.story = StoryManager(self)
 
         self.enable_story = enable_story
-
-        if self.has_story:
-            self.audio = AudioManager()
+        #
+        # if self.has_story:
+        #     self.audio = AudioManager()
 
     def get_next_equip_string_id(self):
         self.last_equip_string_id += 1

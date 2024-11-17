@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<UTFXML filename="echo_m12_female.utf">
+<UTF_ROOT>
+<test_voice name="0xA8BB3581" type="file" filename="echo_m12_female\dx_m12_0020_hatcher.wav"/>
+<test_voice name="0x90BD4981" type="file" filename="echo_m12_female\dx_m12_0040_hatcher.wav"/>
+<test_voice name="0xBABF5D89" type="file" filename="echo_m12_female\dx_m12_0260_hatcher.wav"/>
+<test_voice name="0xA2B1B189" type="file" filename="echo_m12_female\dx_m12_0280_hatcher.wav"/>
+<test_voice name="0xB6B0BB89" type="file" filename="echo_m12_female\dx_m12_0290_hatcher.wav"/>
+<test_voice name="0x97B82B8D" type="file" filename="echo_m12_female\dx_m12_0310_hatcher.wav"/>
+<test_voice name="0x87BC438D" type="file" filename="echo_m12_female\dx_m12_0350_hatcher.wav"/>
+<test_voice name="0xA6043B06" type="file" filename="echo_m12_female\dx_m12_0370_darcy.wav"/>
+<test_voice name="0xA3B1B18D" type="file" filename="echo_m12_female\dx_m12_0380_hatcher.wav"/>
+<test_voice name="0xB7B0BB8D" type="file" filename="echo_m12_female\dx_m12_0390_hatcher.wav"/>
+<test_voice name="0x84D92184" type="file" filename="echo_m12_female\dx_m12_0400_hatcher.wav"/>
+<test_voice name="0xACDB3584" type="file" filename="echo_m12_female\dx_m12_0420_hatcher.wav"/>
+<test_voice name="0x94DD4984" type="file" filename="echo_m12_female\dx_m12_0440_hatcher.wav"/>
+<test_voice name="0xA6C83C0C" type="file" filename="echo_m12_female\dx_m12_0470_darcy.wav"/>
+<test_voice name="0x86DCE101" type="file" filename="echo_m12_female\dx_m12_0500_darcy.wav"/>
+<test_voice name="0xA6DCAD02" type="file" filename="echo_m12_female\dx_m12_0530_darcy.wav"/>
+<test_voice name="0x95DD4980" type="file" filename="echo_m12_female\dx_m12_0540_hatcher.wav"/>
+<test_voice name="0x81DC4380" type="file" filename="echo_m12_female\dx_m12_0550_hatcher.wav"/>
+<test_voice name="0x86DC3907" type="file" filename="echo_m12_female\dx_m12_0560_darcy.wav"/>
+<test_voice name="0xA9DE5780" type="file" filename="echo_m12_female\dx_m12_0570_hatcher.wav"/>
+<test_voice name="0xB1D0BB80" type="file" filename="echo_m12_female\dx_m12_0590_hatcher.wav"/>
+<test_voice name="0x86D9218C" type="file" filename="echo_m12_female\dx_m12_0600_hatcher.wav"/>
+</UTF_ROOT>
+</UTFXML>

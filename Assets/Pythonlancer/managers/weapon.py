@@ -8,7 +8,7 @@ from world.gun import Gun
 from fx.weapon import WeaponFX
 
 
-class WeaponManager(object):
+class WeaponManager:
 
     def __init__(self, lancer_core):
         self.core = lancer_core

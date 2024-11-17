@@ -1,5 +1,5 @@
 from story import script
-from story.voice.sound import VoiceLine
+from audio.sound import VoiceLine
 from story.actors import Trent, Hatcher, Darcy, Hassler, Yamamoto, Kim, SakuraOne, SakuraTwo, SakuraThree, Chrysanthemum
 
 

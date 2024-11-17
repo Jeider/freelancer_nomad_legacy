@@ -1,10 +1,11 @@
 import httpx
 import base64
 
-from story.voice.sound import VoiceLine
-from story.script import MissionSegment
+from audio.sound import Sound
+from pathlib import Path
 
 from settings import STEOS_API_KEY
+
 
 class SteosVoice(object):
 
@@ -31,8 +32,7 @@ class SteosVoice(object):
         return base64.b64decode(response.json()["fileContents"])
 
     @classmethod
-    def generate_ru_voice(cls, voice_line: VoiceLine, segment: MissionSegment):
-        voice_bytes = cls.generate_voice_bytes(actor=voice_line.actor, text=voice_line.ru)
-        line_name = segment.get_name_for_line(voice_line)
-        with open(f"results/steos/{line_name}.mp3", "wb") as fout:
+    def generate_ru_voice(cls, sound: Sound, voice_root: Path):
+        voice_bytes = cls.generate_voice_bytes(actor=sound.line.actor, text=sound.line.get_ru_clean_text())
+        with open(voice_root / f"{sound.name}.mp3", "wb") as fout:
             fout.write(voice_bytes)

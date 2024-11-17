@@ -6,8 +6,8 @@ from tools.data_folder import DataFolder
 
 from text.dividers import SINGLE_DIVIDER, DIVIDER
 
-class PopulationManager(object):
 
+class PopulationManager:
     def __init__(self, lancer_core):
         self.core = lancer_core
         self.factions = Faction.subclasses

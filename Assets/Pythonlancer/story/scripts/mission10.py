@@ -1,5 +1,5 @@
 from story import script
-from story.voice.sound import VoiceLine
+from audio.sound import VoiceLine
 from story.actors import Trent, Darcy, Hassler, EdisonTrent, Alaric, Juni, Tor
 
 

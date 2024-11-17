@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<UTFXML filename="echo_m11_player.utf">
+<UTF_ROOT>
+<test_voice name="0xBB947680" type="file" filename="echo_m11_player\dx_m11_0020_trent.wav"/>
+<test_voice name="0xBB94AE86" type="file" filename="echo_m11_player\dx_m11_0040_trent.wav"/>
+<test_voice name="0xBB803F88" type="file" filename="echo_m11_player\dx_m11_0100_trent.wav"/>
+<test_voice name="0x9B811B81" type="file" filename="echo_m11_player\dx_m11_0190_trent.wav"/>
+<test_voice name="0xBBDC7480" type="file" filename="echo_m11_player\dx_m11_0220_trent.wav"/>
+<test_voice name="0xBBC83D88" type="file" filename="echo_m11_player\dx_m11_0300_trent.wav"/>
+<test_voice name="0xBBC8758A" type="file" filename="echo_m11_player\dx_m11_0320_trent.wav"/>
+<test_voice name="0x9BC8718B" type="file" filename="echo_m11_player\dx_m11_0330_trent.wav"/>
+</UTF_ROOT>
+</UTFXML>
