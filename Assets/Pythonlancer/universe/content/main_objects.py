@@ -6,7 +6,7 @@ from universe.content.system_object import SystemObject, TOP, BOTTOM, LEFT, RIGH
 from universe.content.zones import DynamicZone, DynamicSphereZone, RawZone
 from universe.content import interior
 from universe.content.locked_dock_key import LockedDockKey
-from universe.content.space_voice import SpaceVoice, SpaceCostume
+from universe.audio.space_voice import SpaceVoice, SpaceCostume
 from universe.content.loadout import Loadout
 from universe import connection
 

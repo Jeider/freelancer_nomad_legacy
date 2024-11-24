@@ -1,18 +1,13 @@
 import sys
 import os
-from luaparser import ast
-from pprint import pprint
-
-from pathlib import Path
 
 from files.writer import FileWriter
 
-from story.scripts import mission9, mission10, mission11, mission12, mission13
 from managers.script import ScriptManager
 
 from jinja_templates.jinja_manager import JinjaTemplateManager
 
-from universe.content import space_voice
+from universe.audio import space_voice
 
 from tools import merge_image
 from tools import data_folder
@@ -21,15 +16,14 @@ from tools import elevenlabs
 from tools import audio_folder
 from tools import maxlancer
 
+from story import actors
+
 from tools.system_template import SystemTemplateLoader
 
 from story.cutscenes.mission9.yokohama import Msn9YokohamaCutsceneThorn
 
 from templates.solar.hacker_panel import HackerPanelManager, REL_TOP
-from templates.dockable import upsilon_gasinside
-from templates.dockable import station_debris
 from templates.dockable import forbes_megafactory
-from templates.dockable import sphere_megabase
 
 
 def test_placement():
@@ -121,10 +115,12 @@ def test_voices():
 
 
 def test_steos():
+    text = 'Фрилансер альфа один деш один. Это станция Магдеб+ург. Расскажите цель своей миссии'
+    steos.SteosVoice.generate_test_sound(actors.King, text, 'demo')
+
+
+def generate_story_voices():
     script_manager = ScriptManager()
-
-    # msn13 = script_manager.get_mission_by_index(13)
-
     for msn in script_manager.get_missions():
         for voice in msn.get_voices():
             audio_folder.AudioFolder.compile_voice_to_xml(voice)

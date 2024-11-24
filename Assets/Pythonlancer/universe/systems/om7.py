@@ -8,7 +8,6 @@ from universe.content import zones
 from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
-from universe.content.space_voice import SpaceVoice
 from universe.content import faction
 from universe.content import mineable
 from universe.content import population
@@ -19,15 +18,10 @@ from templates.nebula import om7_nebula
 from templates.solar import gas_crystal
 from templates.solar import hackable
 
-from templates.dockable import pirate
 from templates.dockable import gas_miner
 from templates.dockable import trade_storages
 from templates.dockable import kusari_palace
 from templates.dockable import station_debris
-from templates.dockable import shipyards
-from templates.dockable import alg
-from templates.dockable import research
-from templates.dockable import rheinland_military
 
 
 class Om7Member(Member):

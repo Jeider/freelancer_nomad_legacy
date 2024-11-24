@@ -2,28 +2,13 @@ from fx.space import Dust, JumpholeEffect
 from fx.sound import Ambience
 
 from universe.content.member import Member
-from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
+from universe.content.system_object import LEFT, RIGHT
 from universe.content import main_objects
 from universe.content import zones
-from universe.content import asteroid_definition
-from universe.content import interior
-from universe.content import dealers
-from universe.content.space_voice import SpaceVoice
 from universe.content import faction
-from universe.content import mineable
-from templates.solar import suprise
-from templates.solar import debris_box
-from templates.nebula import sig8_nebula
 from templates.nebula import rh_biz_nebula
 from templates.nebula import rh_mnh_blue_nebula
 from templates.nebula import exclusion
-
-from templates.dockable import pirate
-from templates.dockable import junker
-from templates.dockable import shipyards
-from templates.dockable import police
-from templates.dockable import stuttgart_megabase
-from templates.dockable import bounty_hunter
 
 
 class KgbMember(Member):

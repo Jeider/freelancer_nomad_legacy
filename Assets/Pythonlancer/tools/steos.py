@@ -36,3 +36,9 @@ class SteosVoice(object):
         voice_bytes = cls.generate_voice_bytes(actor=sound.line.actor, text=sound.line.get_ru_clean_text())
         with open(voice_root / f"{sound.name}.mp3", "wb") as fout:
             fout.write(voice_bytes)
+
+    @classmethod
+    def generate_test_sound(cls, actor, text, name):
+        voice_bytes = cls.generate_voice_bytes(actor=actor, text=text)
+        with open(f'results/steos/{name}.mp3', "wb") as fout:
+            fout.write(voice_bytes)

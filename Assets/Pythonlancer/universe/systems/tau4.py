@@ -8,26 +8,18 @@ from universe.content import zones
 from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
-from universe.content.space_voice import SpaceVoice
+from universe.audio.space_voice import SpaceVoice
 from universe.content import faction
 from universe.content import mineable
 from templates.solar import asteroid
 from templates.solar import hackable
-from templates.solar import debris_box
 from templates.solar import suprise
 from templates.nebula import tau4_nebula
 from templates.nebula import exclusion
 
-from templates.dockable import astbase
-from templates.dockable import shipyards
 from templates.dockable import trade_storages
-from templates.dockable import prisons
-from templates.dockable import police
-from templates.dockable import columbia_production
 from templates.dockable import ulster_megabase
 from templates.dockable import pirate
-from templates.dockable import junker
-from templates.dockable import station_debris
 
 
 class Tau4Member(Member):

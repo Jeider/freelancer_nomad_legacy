@@ -8,7 +8,6 @@ from universe.content import zones
 from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
-from universe.content.space_voice import SpaceVoice
 from universe.content import faction
 from universe.content import mineable
 from universe.content import population

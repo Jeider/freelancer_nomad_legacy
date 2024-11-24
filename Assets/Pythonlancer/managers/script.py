@@ -1,6 +1,6 @@
 from files.writer import FileWriter
 
-from story.scripts import mission9, mission10, mission11, mission12, mission13
+from story.scripts import mission9, mission10, mission11, mission12, mission13  # Define to load
 from story.script import StoryMission, ScriptIndex
 
 from text.dividers import DIVIDER, SINGLE_DIVIDER
@@ -40,4 +40,3 @@ class ScriptManager(object):
                 FileWriter.write_to_subfolder(
                     SCRIPT_SUBFOLDER, mission.get_actor_file_link(actor), mission.get_story_script(actor)
                 )
-

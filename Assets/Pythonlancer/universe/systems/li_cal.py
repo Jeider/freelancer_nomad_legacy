@@ -8,7 +8,7 @@ from universe.content import zones
 from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
-from universe.content.space_voice import SpaceVoice
+from universe.audio.space_voice import SpaceVoice
 from universe.content import faction
 from universe.content import mineable
 from templates.solar import asteroid as asteroid_solar
@@ -18,13 +18,10 @@ from templates.nebula import exclusion
 
 from templates.dockable import pirate
 from templates.dockable import astbase
-from templates.dockable import trade_storages
 from templates.dockable import station_debris
 from templates.dockable import manhattan_megabase
 from templates.dockable import california_tradestation
 from templates.dockable import roid_mining
-from templates.dockable import research
-from templates.dockable import rheinland_military
 
 
 class CalMember(Member):

@@ -8,7 +8,7 @@ from universe.content import zones
 from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
-from universe.content.space_voice import SpaceVoice
+from universe.audio.space_voice import SpaceVoice
 from universe.content import faction
 from universe.content import mineable
 from templates.solar import asteroid
@@ -20,7 +20,6 @@ from templates.nebula import exclusion
 
 from templates.dockable import astbase
 from templates.dockable import shipyards
-from templates.dockable import trade_storages
 from templates.dockable import prisons
 from templates.dockable import police
 from templates.dockable import columbia_production
