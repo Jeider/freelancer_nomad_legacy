@@ -51,11 +51,3 @@ class SpaceCostume(object):
     @staticmethod
     def random_robot():
         return random.choice(SpaceCostume.ROBOTS)
-
-
-class DynamicLine(object):
-    def __init__(self, code, ru_text, parse_rule=None):
-        self.code = code
-        self.ru_text = ru_text
-        self.parse_rule = parse_rule
-        self.hash = CreateId.get_hex_id(code).lower()

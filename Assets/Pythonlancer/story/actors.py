@@ -4,7 +4,38 @@ ACTOR_FEMALE = 'female'
 ACTOR_JUNI = 'juni'
 
 
-class Actor(object):
+class SteosInterface:
+
+    @classmethod
+    def get_steos_id(cls):
+        raise NotImplementedError
+
+    @classmethod
+    def get_steos_pitch(cls):
+        raise NotImplementedError
+
+    @classmethod
+    def get_steos_speed(cls):
+        raise NotImplementedError
+
+
+class DynamicActor:
+    def __init__(self, steos_id, steos_pitch, steos_speed):
+        self.steos_id = steos_id
+        self.steos_pitch = steos_pitch
+        self.steos_speed = steos_speed
+
+    def get_steos_id(self):
+        return self.steos_id
+
+    def get_steos_pitch(self):
+        return self.steos_pitch
+
+    def get_steos_speed(self):
+        return self.steos_speed
+
+
+class Actor(SteosInterface):
     TYPE = None
     NAME = None
     RU_NAME = None
@@ -21,6 +52,15 @@ class Actor(object):
     def __init_subclass__(cls, **kwargs):
         super().__init_subclass__(**kwargs)
         cls.subclasses.append(cls)
+
+    def get_steos_id(self):
+        return self.STEOS_ID
+
+    def get_steos_pitch(self):
+        return self.STEOS_PITCH
+
+    def get_steos_speed(self):
+        return self.STEOS_SPEED
 
     @classmethod
     def is_male(cls):

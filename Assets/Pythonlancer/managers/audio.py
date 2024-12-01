@@ -4,7 +4,7 @@ from audio.mission8 import Mission8Audio
 from story.actors import Actor
 
 from text.strings import StringCompiler
-from text.dividers import DIVIDER, SINGLE_DIVIDER
+from text.dividers import DIVIDER
 
 
 class AudioManager:

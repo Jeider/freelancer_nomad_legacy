@@ -1,4 +1,48 @@
-from universe.audio.space_voice import DynamicLine as L
+from story.actors import DynamicActor
+
+from pydub import AudioSegment
+from pydub.silence import split_on_silence, detect_silence
+
+from audio.sound import SpaceSound
+from audio.voice import Voice
+
+MIN_SILENCE_LEN = 18
+SILENCE_THRESH = -18
+
+
+class L(object):
+    def __init__(self, code, ru_text, parse_rule=None):
+        self.code = code
+        self.ru_text = ru_text
+        self.parse_rule = parse_rule if parse_rule else RuleDefault
+
+    def get_text(self):
+        return self.ru_text
+
+    def get_temp_text(self):
+        return self.parse_rule.get_temp_text(self.ru_text)
+
+    def get_actor(self, steos_id):
+        return DynamicActor(
+            steos_id=steos_id,
+            steos_pitch=self.parse_rule.STEOS_PITCH,
+            steos_speed=self.parse_rule.STEOS_SPEED,
+        )
+
+    def get_code(self):
+        return self.code
+
+    def get_subfolder(self):
+        return self.parse_rule.get_subfolder()
+
+    def process_temp(self):
+        return self.parse_rule.process_temp(self.code)
+
+    def is_static(self):
+        return self.parse_rule.is_static()
+
+    def get_static_file(self):
+        return self.parse_rule.get_static_file(self.ru_text)
 
 
 NAME_AT_END = 1
@@ -12,126 +56,274 @@ SCREAM_6 = '6'
 SCREAM_7 = '7'
 SCREAM_8 = '8'
 
-SCREAM_TEMPLATE = 'gcs_combat_scream_0{num}-'
-FORMATION_TEMPLATE = 'gcs_refer_formationdesig_{num:02d}'
-NUMBER_START_TEMPLATE = 'gcs_misc_number_{num}'
-NUMBER_END_TEMPLATE = 'gcs_misc_number_{num}-'
+SCREAMS = [
+    SCREAM_1,
+    SCREAM_2,
+    SCREAM_3,
+    SCREAM_4,
+    SCREAM_5,
+    SCREAM_6,
+    SCREAM_7,
+    SCREAM_8,
+]
+
+SCREAM_TEMPLATE = 'gcs_combat_scream_0{digit}-'
+FORMATION_TEMPLATE = 'gcs_refer_formationdesig_{digit:02d}'
+NUMBER_START_TEMPLATE = 'gcs_misc_number_{digit}'
+NUMBER_END_TEMPLATE = 'gcs_misc_number_{digit}-'
+TEMP_FORMATION_TEMPLATE = 'formation_{digit}'
+TEMP_NUMBER_TEMPLATE = 'number_{digit}'
+
+SUBFOLDER_DEFAULT = 'default'
+SUBFOLDER_START = 'start'
+SUBFOLDER_END = 'end'
+SUBFOLDER_MIDDLE = 'middle'
+SUBFOLDER_FORMATION = 'formation'
+SUBFOLDER_NUMBER = 'number'
+SUBFOLDER_BASE = 'base'
+SUBFOLDER_SYSTEM = 'system'
+SUBFOLDER_COMMODITY = 'commodity'
+SUBFOLDER_FACTION = 'faction'
+
+SUBFOLDERS = [
+    SUBFOLDER_DEFAULT,
+    SUBFOLDER_START,
+    SUBFOLDER_END,
+    SUBFOLDER_MIDDLE,
+    SUBFOLDER_FORMATION,
+    SUBFOLDER_NUMBER,
+    SUBFOLDER_BASE,
+    SUBFOLDER_SYSTEM,
+    SUBFOLDER_COMMODITY,
+    SUBFOLDER_FACTION,
+]
 
 
 class ParseRule:
+    STEOS_PITCH = 0.3
+    STEOS_SPEED = 1.1
+
+    SUBFOLDER = SUBFOLDER_DEFAULT
+    IS_STATIC = False
+
+    @classmethod
+    def get_temp_text(cls, text):
+        return text
+
+    @classmethod
+    def process_temp(cls, code):
+        pass  # skip, not processable
+
+    @classmethod
+    def get_subfolder(cls):
+        return cls.SUBFOLDER
+
+    @classmethod
+    def is_static(cls):
+        return cls.IS_STATIC
+
+    @classmethod
+    def get_static_file(cls, text):
+        if not cls.is_static():
+            raise Exception('not static')
+        raise NotImplementedError
+
+
+class RuleDefault(ParseRule):
     pass
+
+
+class RuleProcessing(RuleDefault):
+    TEXT_TEMPLATE = '{text}'
+
+    @classmethod
+    def get_temp_text(cls, text):
+        return cls.TEXT_TEMPLATE.format(text=text)
 
 
 class RuleScream(ParseRule):
-    pass
+    IS_STATIC = True
+
+    @classmethod
+    def get_static_file(cls, text):
+        if not cls.is_static():
+            raise Exception('not static')
+        if text not in SCREAMS:
+            raise Exception('unknown scream %s' % text)
+        return f'gcs_combat_scream_0{text}-.wav'
 
 
-class RuleStart(ParseRule):
-    pass
+class RuleStart(RuleProcessing):
+    SUBFOLDER = SUBFOLDER_START
 
 
 # <десять> вейпоинтов
 class RuleStartNumber(RuleStart):
-    pass
+    TEXT_TEMPLATE = 'Десять {text}'
+
+
+# <десять> вейпоинтов
+class RuleStartNumberSingle(RuleStart):
+    TEXT_TEMPLATE = 'Одна {text}'
 
 
 # <что-то делаю> спасибо за помощь
 class RuleContinueRequest(RuleStart):
-    pass
+    TEXT_TEMPLATE = 'Приехали, {text}'
 
 
 # <что-то делаю> к стыковке
 class RuleDockContinueRequest(RuleStart):
-    pass
+    TEXT_TEMPLATE = 'Разрешите {text}'
 
 
-class RuleEnd(ParseRule):
-    END_APPEND = None
+class RuleEnd(RuleProcessing):
+    SUBFOLDER = SUBFOLDER_END
 
 
 # движусь к <станция>
 class RuleEndTo(RuleEnd):
-    END_APPEND = 'станции'
+    TEXT_TEMPLATE = '{text} фрилансера'
 
 
 # мне нужно <что-то сделать>
 class RuleEndThing(RuleEnd):
-    END_APPEND = 'убивать'
+    TEXT_TEMPLATE = '{text} стыковку'
+
+
+# Я везу <что-то>
+class RuleEndCargo(RuleEnd):
+    TEXT_TEMPLATE = '{text} золото'
+
+
+# Я везу <что-то>
+class RuleEndObject(RuleEnd):
+    TEXT_TEMPLATE = '{text} станция'
 
 
 # мне осталось <десять>
 class RuleEndNumber(RuleEnd):
-    END_APPEND = 'десять'
-
-
-class RuleSplit(ParseRule):
-    pass
+    TEXT_TEMPLATE = '{text} десять'
 
 
 class RuleHighAction(ParseRule):
-    pass
+    STEOS_PITCH = 0.7
+    STEOS_SPEED = 1.4
 
 
 class RuleNormalAction(ParseRule):
-    pass
+    STEOS_PITCH = 0.3
+    STEOS_SPEED = 1.2
 
 
-class RuleNormalActionWithEnd(ParseRule):
-    pass
+class RuleNormalActionWithEnd(RuleEnd):
+    STEOS_PITCH = 0.5
+    STEOS_SPEED = 1.2
+    TEXT_TEMPLATE = '{text} точке станция'
 
 
 class RuleAngry(ParseRule):
-    pass
+    STEOS_PITCH = -0.2
+    STEOS_SPEED = 1.25
 
 
-class RuleDash(ParseRule):
-    pass
+class RuleMiddle(RuleProcessing):
+    FORCE_TEXT = None
+    TARGET_WORD_NUMBER = 2
+    SUBFOLDER = SUBFOLDER_MIDDLE
 
 
-class RuleFrom(ParseRule):
-    pass
+class RuleDash(RuleMiddle):
+    TEXT_TEMPLATE = 'Один {text} один'
 
 
-class RuleTo(ParseRule):
-    pass
+class RuleFrom(RuleMiddle):
+    TEXT_TEMPLATE = 'Спокойно летит {text} красивых мест'
 
 
-class RuleThisIs(ParseRule):
-    pass
+class RuleTo(RuleMiddle):
+    TEXT_TEMPLATE = 'Спокойно направляюсь к {text} мальте'
+
+
+class RuleThisIs(RuleEnd):
+    TEXT_TEMPLATE = '{text} Р+эйнланд Омега семь'
+
+
+class RuleFormation(RuleMiddle):
+    SUBFOLDER = SUBFOLDER_FORMATION
+    TEXT_TEMPLATE = '{text} три'
+    TARGET_WORD_NUMBER = 2
+
+
+class RuleNumberFirst(RuleProcessing):
+    SUBFOLDER = SUBFOLDER_NUMBER
+    TEXT_TEMPLATE = 'альфа {text} деш {text}'
+
+    @classmethod
+    def process_temp(cls, code):
+        pass
+        # song = AudioSegment.from_mp3(f'results/steos/temp/{code}.mp3')
+        # chunks = split_on_silence(song, min_silence_len=MIN_SILENCE_LEN, silence_thresh=SILENCE_THRESH, keep_silence=1000)
+        # silence_list = detect_silence(song, min_silence_len=MIN_SILENCE_LEN, silence_thresh=SILENCE_THRESH)
+        #
+        # i = 0
+        # for chunk in chunks:
+        #     chunk.export(f'results/steos/temp2/{code}_{i}.mp3')
+        #     i += 1
+
+
+class RuleNumberSecond(RuleNumberFirst):
+    SUBFOLDER = SUBFOLDER_NUMBER
+    TEXT_TEMPLATE = 'альфа {text} деш {text}'
+
+
+class RuleBase(RuleDefault):
+    SUBFOLDER = SUBFOLDER_BASE
+
+
+class RuleSystem(RuleDefault):
+    SUBFOLDER = SUBFOLDER_SYSTEM
+
+
+class RuleCommodity(RuleDefault):
+    SUBFOLDER = SUBFOLDER_COMMODITY
+
+
+class RuleFaction(RuleDefault):
+    SUBFOLDER = SUBFOLDER_FACTION
 
 
 FORMATIONS = [
-    (1, 'альфа'),
-    (2, 'бета'),
-    (3, 'гамма'),
-    (4, 'дельта'),
-    (5, 'эпсилон'),
-    (6, 'зета'),
-    (7, 'тета'),
-    (8, 'йота'),
-    (9, 'каппа'),
-    (10, 'лямбда'),
-    (11, 'омикрон'),
-    (12, 'сигма'),
-    (13, 'омега'),
-    (14, 'красный'),
-    (15, 'синий'),
-    (16, 'золотой'),
-    (17, 'зеленый'),
-    (18, 'серебрянный'),
-    (19, 'черный'),
-    (20, 'белый'),
-    (21, 'желтый'),
-    (22, 'матсу'),
-    (23, 'сакура'),
-    (24, 'фудзи'),
-    (25, 'ботан'),
-    (26, 'хаги'),
-    (27, 'сузуки'),
-    (28, 'кику'),
-    (29, 'янаги'),
+    (1, '+альфа'),
+    (2, 'б+эта'),
+    (3, 'г+амма'),
+    (4, 'д+ельта'),
+    (5, '+эпсилон'),
+    (6, 'з+ета'),
+    (7, 'т+ета'),
+    (8, 'й+ота'),
+    (9, 'к+аппа'),
+    (10, 'л+ямбда'),
+    (11, 'омикр+он'),
+    (12, 'с+игма'),
+    (13, 'ом+ега'),
+    (14, 'кр+асный'),
+    (15, 'с+иний'),
+    (16, 'золот+ой'),
+    (17, 'зел+ёный'),
+    (18, 'сер+ебрянный'),
+    (19, 'ч+ерный'),
+    (20, 'б+елый'),
+    (21, 'ж+елтый'),
+    (22, 'м+атсу'),
+    (23, 'с+акура'),
+    (24, 'ф+удзи'),
+    (25, 'бот+ан'),
+    (26, 'х+аги'),
+    (27, 'суз+уки'),
+    (28, 'к+ику'),
+    (29, 'ян+аги'),
 ]
-
 
 NUMBERS = [
     (0, 'ноль'),
@@ -145,20 +337,23 @@ NUMBERS = [
     (8, 'восемь'),
     (9, 'девять'),
     (10, 'десять'),
-    (11, 'одинадцать'),
-    (12, 'двенадцать'),
-    (13, 'тринадцать'),
-    (14, 'четырнадцать'),
-    (15, 'пятнадцать'),
-    (16, 'шестнадцать'),
-    (17, 'семнадцать'),
-    (18, 'восемнадцать'),
-    (19, 'девятнадцать'),
-    (20, 'двадцать'),
+    (11, 'од+иннадцать'),
+    (12, 'двен+адцать'),
+    (13, 'трин+адцать'),
+    (14, 'чет+ырнадцать'),
+    (15, 'пятн+адцать'),
+    (16, 'шестн+адцать'),
+    (17, 'семн+адцать'),
+    (18, 'восемн+адцать'),
+    (19, 'девятн+адцать'),
+    (20, 'дв+адцать'),
 ]
 
 
 class ShipVoice(object):
+    STEOS_ID = None
+    FOLDER = None
+    STATIC_KIND = None
     LINES = [
         L('gcs_combat_announce_allclear_01-', 'Противников не обнаружено.'),
         L('gcs_combat_announce_allclear_02-', 'На сканерах больше нет неприятелей.'),
@@ -166,47 +361,47 @@ class ShipVoice(object):
         L('gcs_combat_announce_allclear_04-', 'Врагов не видно.'),
         L('gcs_combat_announce_allclear_05-', 'Зона в зеленом статусе. Врагов не обнаружено.'),
         L('gcs_combat_announce_allclear_06-', 'Зона чиста. Враждебные контакты отсутствуют.'),
-        # L('gcs_combat_announce_combatdrift_01-', ),
-        # L('gcs_combat_announce_combatdrift_02-', ),
-        # L('gcs_combat_announce_combatdrift_03-', ),
-        L('gcs_combat_announce_enemysighted_01-', 'Вижу нового неприятеля.'),
-        L('gcs_combat_announce_enemysighted_02-', 'На радаре новый противник.'),
-        L('gcs_combat_announce_enemysighted_03-', 'Замечена новая угроза. Неприятель.'),
-        L('gcs_combat_announce_enemysighted_04-', 'На сканере замечены неприятели!'),
-        L('gcs_combat_announce_ff_01-', 'Смотри куда стреляешь!'),
-        L('gcs_combat_announce_ff_02-', 'Прекрати стрелять, фрилансер!'),
-        L('gcs_combat_announce_ff_03-', 'Хватит стрелять по мне!'),
-        L('gcs_combat_announce_flee_01-', 'Уходим!'),
-        L('gcs_combat_announce_flee_02-', 'Я улетаю!'),
-        L('gcs_combat_announce_flee_03-', 'К чёрту всё, я улетаю отсюда.'),
-        L('gcs_combat_announce_flee_04-', 'Я отступаю.'),
-        L('gcs_combat_announce_flee_05-', 'Мне нужна прегрупировка.'),
-        L('gcs_combat_announce_flee_06-', 'Я сваливаю отсюда.'),
-        L('gcs_combat_askengage_01-', 'Разрешите атаковать.'),
-        L('gcs_combat_askengage_02-', 'Запрашиваю открыть огонь.'),
-        L('gcs_combat_askengage_03-', 'Ожидаю приказа на перехват.'),
-        L('gcs_combat_askengage_04-', 'Запрашиваю разрешение открыть огонь!'),
-        L('gcs_combat_askforhelp_01-', 'Мне нужна поддержка!'),
-        L('gcs_combat_askforhelp_02-', 'Запращиваю поддержку!'),
-        L('gcs_combat_askforhelp_03-', 'Прикройте меня!'),
-        L('gcs_combat_askforhelp_04-', 'Нужна поддержка!'),
-        L('gcs_combat_askforhelp_05-', 'Запрашиваю дополнительную поддержку!'),
-        L('gcs_combat_brag_01-', 'Неприятель уничтожен.'),
-        L('gcs_combat_brag_02-', 'Враг уничтожен.'),
-        L('gcs_combat_brag_03-', 'Вражеская цель ликвидирована.'),
-        L('gcs_combat_brag_04-', 'Неприятель ликвидирован.'),
-        L('gcs_combat_brag_05-', 'Враг нейтрализован.'),
-        L('gcs_combat_brag_06-', 'Неприятель был нейтрализован.'),
-        L('gcs_combat_comingin_p_01-', 'Мы на пути к тебе.'),
-        L('gcs_combat_comingin_p_02-', 'Подожди, скоро будем тут.'),
-        L('gcs_combat_comingin_p_03-', 'Жди, летим к тебе.'),
-        L('gcs_combat_comingin_s_01-', 'Я скоро буду здесь.'),
-        L('gcs_combat_comingin_s_02-', 'Я в пути.'),
-        L('gcs_combat_comingin_s_03-', 'Жди, я лечу к тебе.'),
-        L('gcs_combat_deathsympathy_01-', 'Нашего сбили!'),
-        L('gcs_combat_deathsympathy_02-', 'Я потерял ведомого!'),
-        L('gcs_combat_deathsympathy_03-', 'Член крыла убит!'),
-        L('gcs_combat_deathsympathy_04-', 'Моего сбили!'),
+        L('gcs_combat_announce_combatdrift_01-', 'Этот контакт отвлечет нас задания. Давайте не отвлекаться на него', RuleNormalAction),
+        L('gcs_combat_announce_combatdrift_02-', 'Держать строй, мы постараемся избежать сражения', RuleNormalAction),
+        L('gcs_combat_announce_combatdrift_03-', 'Концентрируемся на нашей задаче, у нас нет времени отвлекаться на каждого неприятеля', RuleNormalAction),
+        L('gcs_combat_announce_enemysighted_01-', 'Вижу нового неприятеля.', RuleNormalAction),
+        L('gcs_combat_announce_enemysighted_02-', 'На радаре новый противник.', RuleNormalAction),
+        L('gcs_combat_announce_enemysighted_03-', 'Замечена новая угроза. Неприятель.', RuleNormalAction),
+        L('gcs_combat_announce_enemysighted_04-', 'На сканере замечены неприятели!', RuleNormalAction),
+        L('gcs_combat_announce_ff_01-', 'Смотри куда стреляешь!', RuleAngry),
+        L('gcs_combat_announce_ff_02-', 'Прекрати стрелять, фрилансер!', RuleAngry),
+        L('gcs_combat_announce_ff_03-', 'Хватит стрелять по мне!', RuleAngry),
+        L('gcs_combat_announce_flee_01-', 'Уходим!', RuleHighAction),
+        L('gcs_combat_announce_flee_02-', 'Я улетаю!', RuleHighAction),
+        L('gcs_combat_announce_flee_03-', 'К чёрту всё, я улетаю отсюда.', RuleHighAction),
+        L('gcs_combat_announce_flee_04-', 'Я отступаю.', RuleHighAction),
+        L('gcs_combat_announce_flee_05-', 'Мне нужна прегрупировка.', RuleHighAction),
+        L('gcs_combat_announce_flee_06-', 'Я сваливаю отсюда.', RuleHighAction),
+        L('gcs_combat_askengage_01-', 'Разрешите атаковать.', RuleNormalAction),
+        L('gcs_combat_askengage_02-', 'Запрашиваю открыть огонь.', RuleNormalAction),
+        L('gcs_combat_askengage_03-', 'Ожидаю приказа на перехват.', RuleNormalAction),
+        L('gcs_combat_askengage_04-', 'Запрашиваю разрешение открыть огонь!', RuleNormalAction),
+        L('gcs_combat_askforhelp_01-', 'Мне нужна поддержка!', RuleHighAction),
+        L('gcs_combat_askforhelp_02-', 'Запрашиваю поддержку!', RuleHighAction),
+        L('gcs_combat_askforhelp_03-', 'Прикройте меня!', RuleHighAction),
+        L('gcs_combat_askforhelp_04-', 'Нужна поддержка!', RuleHighAction),
+        L('gcs_combat_askforhelp_05-', 'Запрашиваю дополнительную поддержку!', RuleHighAction),
+        L('gcs_combat_brag_01-', 'Неприятель уничтожен.', RuleNormalAction),
+        L('gcs_combat_brag_02-', 'Враг уничтожен.', RuleNormalAction),
+        L('gcs_combat_brag_03-', 'Вражеская цель ликвидирована.', RuleNormalAction),
+        L('gcs_combat_brag_04-', 'Неприятель ликвидирован.', RuleNormalAction),
+        L('gcs_combat_brag_05-', 'Враг нейтрализован.', RuleNormalAction),
+        L('gcs_combat_brag_06-', 'Неприятель был нейтрализован.', RuleNormalAction),
+        L('gcs_combat_comingin_p_01-', 'Мы на пути к тебе.', RuleNormalAction),
+        L('gcs_combat_comingin_p_02-', 'Подожди, скоро будем тут.', RuleNormalAction),
+        L('gcs_combat_comingin_p_03-', 'Жди, летим к тебе.', RuleNormalAction),
+        L('gcs_combat_comingin_s_01-', 'Я скоро буду здесь.', RuleNormalAction),
+        L('gcs_combat_comingin_s_02-', 'Я в пути.', RuleNormalAction),
+        L('gcs_combat_comingin_s_03-', 'Жди, я лечу к тебе.', RuleNormalAction),
+        L('gcs_combat_deathsympathy_01-', 'Нашего сбили!', RuleHighAction),
+        L('gcs_combat_deathsympathy_02-', 'Я потерял ведомого!', RuleHighAction),
+        L('gcs_combat_deathsympathy_03-', 'Член крыла убит!', RuleHighAction),
+        L('gcs_combat_deathsympathy_04-', 'Моего сбили!', RuleHighAction),
         L('gcs_combat_engaging_01+', 'Готовлюсь к перехвату', RuleEndTo),
         L('gcs_combat_engaging_02+', 'Я перехватываю', RuleEndTo),
         L('gcs_combat_engaging_03+', 'Перехватываю', RuleEndTo),
@@ -217,8 +412,8 @@ class ShipVoice(object):
         L('gcs_combat_fleereason_noweapons_01-', 'Я потерял пушки', RuleHighAction),
         L('gcs_combat_fleereason_noweapons_02-', 'У меня больше нет пушек', RuleHighAction),
         L('gcs_combat_fleereason_noweapons_03-', 'Я потерял своё вооружение', RuleHighAction),
-        L('gcs_combat_fleereason_other_01-', 'Дела плохи, в+алим', RuleHighAction),
-        L('gcs_combat_fleereason_other_02-', 'Пора сваливать, тут делать нечего', RuleHighAction),
+        L('gcs_combat_fleereason_other_01-', 'Дел+а плохи, в+алим', RuleHighAction),
+        L('gcs_combat_fleereason_other_02-', 'Пор+а сваливать, тут делать нечего', RuleHighAction),
         L('gcs_combat_fleereason_other_03-', 'Наше положение ужасное', RuleHighAction),
         L('gcs_combat_fleereason_tough_01-', 'Ситуация ужасная', RuleHighAction),
         L('gcs_combat_fleereason_tough_02-', 'Всё очень плохо, сражаться бессмысленно', RuleHighAction),
@@ -227,26 +422,26 @@ class ShipVoice(object):
         L('gcs_combat_hasinsights_02-', 'Наблюдаю противника', RuleNormalAction),
         L('gcs_combat_hasinsights_03-', 'Визуальный контакт. Готовлюсь к атаке', RuleNormalAction),
         L('gcs_combat_hasinsights_04-', 'Рядом враг', RuleNormalAction),
-        L('gcs_combat_hasinsights_05-', 'Противник недалеко от меня', RuleNormalAction),
-        L('gcs_combat_hasinsights_06-', 'Направлюсь к вражеской цели', RuleNormalAction),
-        L('gcs_combat_inflicting_damage_01-', 'Враг на мушке', RuleHighAction),
-        L('gcs_combat_inflicting_damage_02-', 'Противник повреждён!', RuleHighAction),
-        L('gcs_combat_inflicting_damage_03-', 'Противник терпит повреждения!', RuleHighAction),
-        L('gcs_combat_inflicting_damage_04-', 'Наношу повреждения противнику!', RuleHighAction),
-        L('gcs_combat_inflicting_damage_05-', 'Попал по нему!', RuleHighAction),
-        L('gcs_combat_inflicting_damage_06-', 'Враг под моим огнём!', RuleHighAction),
-        L('gcs_combat_inflicting_damage_worst_01-', 'Враг почти уничтожен', RuleHighAction),
-        L('gcs_combat_inflicting_damage_worst_02-', 'Цель горит!', RuleHighAction),
-        L('gcs_combat_inflicting_damage_worst_03-', 'Враг больше не выдержит', RuleHighAction),
-        L('gcs_combat_inflicting_damage_worst_04-', 'Почти убил его', RuleHighAction),
-        L('gcs_combat_inflicting_damage_worst_05-', 'Противник почти убит', RuleHighAction),
-        L('gcs_combat_inflicting_damage_worst_06-', 'Цель почти уничтожена', RuleHighAction),
-        L('gcs_combat_insights_01-', 'Преследую врага', RuleHighAction),
-        L('gcs_combat_insights_02-', 'Враг на прицеле', RuleHighAction),
-        L('gcs_combat_insights_03-', 'Вражеская цель захвачена', RuleHighAction),
-        L('gcs_combat_insights_04-', 'Иду за врагом', RuleHighAction),
-        L('gcs_combat_insights_05-', 'Взял цель', RuleHighAction),
-        L('gcs_combat_insights_06-', 'Преследую его', RuleHighAction),
+        L('gcs_combat_hasinsights_05-', 'Противник вблиз+и от меня', RuleNormalAction),
+        L('gcs_combat_hasinsights_06-', 'Направляюсь к вражеской цели', RuleNormalAction),
+        L('gcs_combat_inflicting_damage_01-', 'Враг на мушке', RuleNormalAction),
+        L('gcs_combat_inflicting_damage_02-', 'Противник повреждён!', RuleNormalAction),
+        L('gcs_combat_inflicting_damage_03-', 'Противник терпит повреждения!', RuleNormalAction),
+        L('gcs_combat_inflicting_damage_04-', 'Наношу повреждения противнику!', RuleNormalAction),
+        L('gcs_combat_inflicting_damage_05-', 'Попал по нему!', RuleNormalAction),
+        L('gcs_combat_inflicting_damage_06-', 'Враг под моим огнём!', RuleNormalAction),
+        L('gcs_combat_inflicting_damage_worst_01-', 'Враг почти уничтожен', RuleNormalAction),
+        L('gcs_combat_inflicting_damage_worst_02-', 'Цель горит!', RuleNormalAction),
+        L('gcs_combat_inflicting_damage_worst_03-', 'Враг больше не выдержит', RuleNormalAction),
+        L('gcs_combat_inflicting_damage_worst_04-', 'Почти убил его', RuleNormalAction),
+        L('gcs_combat_inflicting_damage_worst_05-', 'Противник почти убит', RuleNormalAction),
+        L('gcs_combat_inflicting_damage_worst_06-', 'Цель почти уничтожена', RuleNormalAction),
+        L('gcs_combat_insights_01-', 'Преследую врага', RuleNormalAction),
+        L('gcs_combat_insights_02-', 'Враг на прицеле', RuleNormalAction),
+        L('gcs_combat_insights_03-', 'Вражеская цель захвачена', RuleNormalAction),
+        L('gcs_combat_insights_04-', 'Иду за врагом', RuleNormalAction),
+        L('gcs_combat_insights_05-', 'Взял цель', RuleNormalAction),
+        L('gcs_combat_insights_06-', 'Преследую его', RuleNormalAction),
         L('gcs_combat_noengagereason_toofar_01-', 'Он улетел слишком далеко', RuleNormalAction),
         L('gcs_combat_noengagereason_toofar_02-', 'Не вижу смысла догонять его', RuleNormalAction),
         L('gcs_combat_noengagereason_toofar_03-', 'Кажется враг что-то задумал, давайте не поддаваться на это', RuleNormalAction),
@@ -315,39 +510,39 @@ class ShipVoice(object):
         L('gcs_combat_taking_damage_worst_06-', 'Повреждения критичны...', RuleHighAction),
         L('gcs_combat_taking_damage_worst_07-', 'Я почти уничтожен!', RuleHighAction),
         L('gcs_combat_taking_damage_worst_08-', 'Я теряю контроль!', RuleHighAction),
-        L('gcs_combat_takinglead_01-', 'Я беру контроль на себя'),
-        L('gcs_combat_takinglead_02-', 'Теперь я ведомый'),
-        L('gcs_combat_takinglead_03-', 'Беру командование на себя'),
-        L('gcs_combat_takinglead_04-', 'Я ведомый звена'),
+        L('gcs_combat_takinglead_01-', 'Я беру контроль на себя', RuleNormalAction),
+        L('gcs_combat_takinglead_02-', 'Теперь я вед+у звен+о', RuleNormalAction),
+        L('gcs_combat_takinglead_03-', 'Беру командование на себя', RuleNormalAction),
+        L('gcs_combat_takinglead_04-', 'Я вед+у звен+о', RuleNormalAction),
         L('gcs_dhail_angry_response_01-', 'А ну отвали, тебе тут нечего смотреть!', RuleAngry),
         L('gcs_dockhail_hailee_datasubmit_01-', 'Высылаю данные'),
         L('gcs_dockhail_hailee_datasubmit_02-', 'Начинаю отсылать данные'),
-        L('gcs_dockrequest_goingto_01+', 'Мы движемся к', RuleEndTo),
-        L('gcs_dockrequest_jumpgatedelayed_01-', 'Мы не единственные, кто движется к', RuleEndTo),
-        L('gcs_dockrequest_jumpgateopen_01-', 'Ребята, доступ открыт, движемся к', RuleEndTo),
+        L('gcs_dockrequest_goingto_01+', 'Мы движемся к', RuleEndObject),
+        L('gcs_dockrequest_jumpgatedelayed_01-', 'Мы не единственные, кто движется к', RuleEndObject),
+        L('gcs_dockrequest_jumpgateopen_01-', 'Ребята, доступ открыт, движемся к', RuleEndObject),
         L('gcs_dockrequest_jumpgateopenafterdelay_01-','Доступ получен, теперь наш черёд'),
         L('gcs_dockrequest_request_01+', 'Мне нужно', RuleEndThing),
         L('gcs_dockrequest_request_02+', 'Я запрашиваю', RuleEndThing),
         L('gcs_dockrequest_thankshelp_01-', 'спасибо за помощь', RuleContinueRequest),
-        L('gcs_dockrequest_thisourstop_01-', 'Так, тут наша остановка'),
+        L('gcs_dockrequest_thisourstop_01-', 'Так, здесь наша остановка'),
         L('gcs_dockrequest_todock-', 'стыковку', RuleDockContinueRequest),
         L('gcs_dockrequest_toland-', 'посадку', RuleDockContinueRequest),
         L('gcs_dockrequest_tomoor-', 'швартовку', RuleDockContinueRequest),
         L('gcs_dockrequest_tradelanestart_01-', 'Запускаю торговую линию'),
-        # L('gcs_fidget_patrol_wpremainquery_01-', 'Как много точек пути нам нужно пролететь?'),
-        # L('gcs_fidget_patrolrumor_01-', 'А ты слышал про артефакты в Омикрон Тете?'),
-        # L('gcs_fidget_patrolsimple_01-', ''),
+        L('gcs_fidget_patrol_wpremainquery_01-', 'Как много точек пути нам нужно пролететь?'),
+        L('gcs_fidget_patrolrumor_01-', 'Когда-то и меняла вела дорога приключений. А потом мне прострелили колено'),
+        L('gcs_fidget_patrolsimple_01-', 'Давайте спокойно, у нас обычная патрульная миссия'),
         L('gcs_fidget_saystatus_damagelarge_01-', 'Повреждения корабля значительны, не знаю как я долечу до базы'),
         L('gcs_fidget_saystatus_damagemedium_01-', 'Корабль заметно повреждён, но функционирует'),
         L('gcs_fidget_saystatus_damagenone_01-', 'Статус корабля: все системы работают штатно'),
         L('gcs_fidget_saystatus_damagesmall_01-', 'Меня потрепало, но в целом всё в порядке'),
-        # L('gcs_fidget_talkcargo_01-', ),
-        # L('gcs_fidget_trade_ihear_01+', ),
-        # L('gcs_fidget_trade_simple_01-', ),
-        # L('gcs_fidget_trade_simple_02-', ),
-        # L('gcs_fidget_trade_simple_03-', ),
-        # L('gcs_fidget_traderumor_01-', ),
-        # L('gcs_fidget_whatstatus_01-', ''),
+        L('gcs_fidget_talkcargo_01-', 'обещает хорошую выручку'),
+        L('gcs_fidget_trade_ihear_01+', 'Я слышал о месте, полном...'),
+        L('gcs_fidget_trade_simple_01-', 'С этим грузом я заработаю себе билет в новую жизнь!'),
+        L('gcs_fidget_trade_simple_02-', 'Надеюсь в этот раз на нас никто не нападёт'),
+        L('gcs_fidget_trade_simple_03-', 'Доделаю эту торговую миссию и займусь чем-то более спокойным...'),
+        L('gcs_fidget_traderumor_01-', 'Я слышал можно заработать на перепродаже особых сплавов'),
+        L('gcs_fidget_whatstatus_01-', 'Команда, должите ситуацию. Какой наш статус?'),
 
 
         L('gcs_misc_ack_01-', 'Подтверждаю'),
@@ -365,85 +560,105 @@ class ShipVoice(object):
         L('gcs_patrol_ihave+', 'Мне осталось', RuleEndNumber),
         L('gcs_patrol_ihaveonly+', 'Мне осталась только', RuleEndNumber),
         L('gcs_patrol_morewpstogo-', 'точек пути', RuleStartNumber),
-        L('gcs_patrol_morewptogo-', 'точка пути', RuleStartNumber),
+        L('gcs_patrol_morewptogo-', 'точка пути', RuleStartNumberSingle),
         L('gcs_patrol_wehave+', 'Нам осталось', RuleEndNumber),
         L('gcs_patrol_wehaveonly+', 'Нам осталась', RuleEndNumber),
-        L('gcs_phail_blowoff_01-', 'Нужно что-то еще?'),
-        L('gcs_phail_blowoff_02-', 'Я уже тебе всё рассказал'),
-        L('gcs_phail_combatblowoff_01-', 'Хватит меня отвлекать, я в бою!', RuleHighAction),
+        L('gcs_phail_blowoff_01-', 'Тебе нужно что-то еще?', RuleAngry),
+        L('gcs_phail_blowoff_02-', 'Я уже тебе всё рассказал!', RuleAngry),
+        L('gcs_phail_combatblowoff_01-', 'Хватит меня отвлекать, я в бо+ю!', RuleHighAction),
 
 
         L('gcs_misc_dash', 'дэш', RuleDash),
         L('gcs_misc_from', 'из', RuleFrom),
-        L('gcs_misc_to', 'в', RuleTo),
-        L('gcs_misc_thisis+', 'это', RuleThisIs),
+        L('gcs_misc_to', 'к', RuleTo),
+        L('gcs_misc_thisis+', 'говорит', RuleThisIs),
 
-        # L('gcs_scan_angry_01-', ),
-        # L('gcs_scan_angry_02-', ),
-        # L('gcs_scan_angry_03-', ),
-        # L('gcs_scan_announce_01-', ),
-        # L('gcs_scan_announce_02-', ),
-        # L('gcs_scan_announce_03-', ),
-        # L('gcs_scan_comply_01-', ),
-        # L('gcs_scan_comply_02-', ),
-        # L('gcs_scan_comply_03-', ),
-        # L('gcs_scan_happy_01-', ),
-        # L('gcs_scan_happy_02-', ),
-        # L('gcs_scan_happy_03-', ),
-        # L('gcs_scan_lootdestroyed_01-', ),
-        # L('gcs_scan_lootdestroyed_02-', ),
-        # L('gcs_scan_lootdestroyed_03-', ),
-        # L('gcs_scan_nothingfound_01-', ),
-        # L('gcs_scan_nothingfound_02-', ),
-        # L('gcs_scan_nothingfound_03-', ),
-        # L('gcs_scan_orderdrop_01-', ),
-        # L('gcs_scan_orderdrop_02-', ),
-        # L('gcs_scan_orderdrop_03-', ),
-        # L('gcs_scan_refuse_01-', ),
-        # L('gcs_scan_refuse_02-', ),
-        # L('gcs_scan_refuse_03-', ),
-        # L('gcs_trade_carrying_p_01+', ),
-        # L('gcs_trade_carrying_s_01+', ),
-        # L('gcs_trade_idhome_p_01+', ),
-        # L('gcs_trade_idhome_p_02+', ),
-        # L('gcs_trade_idhome_s_01+', ),
-        # L('gcs_trade_idhome_s_02+', ),
-        # L('gcs_trade_wanttoget_p_01+', ),
-        # L('gcs_trade_wanttoget_s_01+', ),
-        # L('rms_bigshiptaunt_01-', ),
-        # L('rms_bigshiptaunt_02-', ),
-        # L('rms_bigshiptaunt_03-', ),
-        # L('rms_defendleader_01-', ),
-        # L('rms_defendleader_02-', ),
-        # L('rms_defendleader_03-', ),
-        # L('rms_defendsolar_01-', ),
-        # L('rms_defendsolar_02-', ),
-        # L('rms_defendsolar_03-', ),
-        # L('rms_friendlyarrival_01-', ),
-        # L('rms_friendlyarrival_02-', ),
-        # L('rms_friendlyarrival_03-', ),
-        # L('rms_friendlyarrival_04-', ),
-        # L('rms_friendlywelcome_01-', ),
-        # L('rms_friendlywelcome_02-', ),
-        # L('rms_friendlywelcome_03-', ),
-        # L('rms_friendlywelcome_04-', ),
-        # L('rms_shiprunning_01-', ),
-        # L('rms_shiprunning_02-', ),
-        # L('rms_shiprunning_03-', ),
-        # L('rms_smallshiptaunt_01-', ),
-        # L('rms_smallshiptaunt_02-', ),
-        # L('rms_smallshiptaunt_03-', ),
-        # L('rms_smallshiptaunt_04-', ),
-        # L('rms_targetrunning_01-', ),
-        # L('rms_targetrunning_02-', ),
-        # L('rms_targetrunning_03-', ),
-        # L('rms_targetrunning_04-', ),
+        L('gcs_trade_carrying_p_01+', 'Вы везем', RuleEndCargo),
+        L('gcs_trade_carrying_s_01+', 'Я везу', RuleEndCargo),
+        L('gcs_trade_idhome_p_01+', 'Наш торговый конвой направляется из точки', RuleEndObject),
+        L('gcs_trade_idhome_p_02+', 'Мы на торговой миссии из точки', RuleEndObject),
+        L('gcs_trade_idhome_s_01+', 'Я торговец с пункта', RuleEndObject),
+        L('gcs_trade_idhome_s_02+', 'Я выполняю торговую миссию из пункта', RuleEndObject),
+        L('gcs_trade_wanttoget_p_01+', 'Мы планируем загрузить', RuleEndCargo),
+        L('gcs_trade_wanttoget_s_01+', 'Я хочу загрузить', RuleEndCargo),
+
+        L('gcs_scan_angry_01-', 'Ты совершил очень больш+ую ошибку...', RuleAngry),
+        L('gcs_scan_angry_02-', 'Штож, ты не оставил мне выбора.', RuleAngry),
+        L('gcs_scan_angry_03-', 'Ты теперь попал по полной...', RuleAngry),
+        L('gcs_scan_announce_01-', 'Сейчас я просканирую твой трюм на наличие контрабанды.'),
+        L('gcs_scan_announce_02-', 'Стой на месте, я сканирую трюм твоего корабля.'),
+        L('gcs_scan_announce_03-', 'Я исполняю приказ на сканирование твоего трюма.'),
+        L('gcs_scan_comply_01-', 'Ладно, ч+ёрт с тобой, лети. Но я тебя не забуду и точно найду'),
+        L('gcs_scan_comply_02-', 'Ты можешь улететь с этим грузом, но тебе от нас не уйти. Мы тебя найдём везде'),
+        L('gcs_scan_comply_03-', 'Ну штож, таким образом ты нарушаешь закон. Ты это понимаешь?'),
+        L('gcs_scan_happy_01-', 'Ты сделал правильный выбор'),
+        L('gcs_scan_happy_02-', 'Это ты правильно поступил.'),
+        L('gcs_scan_happy_03-', 'Отлично. Спасибо за сотрудничество'),
+        L('gcs_scan_lootdestroyed_01-', 'Да блин, мы потеряли груз', RuleAngry),
+        L('gcs_scan_lootdestroyed_02-', 'Чёрт, груз уничтожен.', RuleAngry),
+        L('gcs_scan_lootdestroyed_03-', 'Мы потеряли груз...', RuleAngry),
+        L('gcs_scan_nothingfound_01-', 'Трюм чист, ты свободен.'),
+        L('gcs_scan_nothingfound_02-', 'Всё в порядке, можешь продолжать движение.'),
+        L('gcs_scan_nothingfound_03-', 'Всё хорошо. Ничего запрещенного не обнаружено.'),
+        L('gcs_scan_orderdrop_01-', 'Так, так, так... Что тут у нас. А ну давай выбрасывай запрещенный груз. Быстро!', RuleAngry),
+        L('gcs_scan_orderdrop_02-', 'Внимание всем, у нас тут неопознанный груз! Фрилансер, выкидывай груз. Это приказ!', RuleAngry),
+        L('gcs_scan_orderdrop_03-', 'Я нашел то что искал. Давай выбрасывай груз из трюма. Иначе тебе не поздоровится', RuleAngry),
+        L('gcs_scan_refuse_01-', 'Отказ, ты от меня ничего не получишь'),
+        L('gcs_scan_refuse_02-', 'Ни за что, ты не имеешь такого права, так что я тебе ничего не выдам'),
+        L('gcs_scan_refuse_03-', 'Отказано, я не пойду на сотрудничество'),
+
+        L('rms_bigshiptaunt_01-', 'Ты совсем берега попутал?', RuleAngry),
+        L('rms_bigshiptaunt_02-', 'Тебе не понравится то, что сейчас будет', RuleAngry),
+        L('rms_bigshiptaunt_03-', 'Не слишком ли ты много на себя взял?', RuleAngry),
+        L('rms_defendleader_01-', 'Тебе не достать нашего командира!', RuleAngry),
+        L('rms_defendleader_02-', 'Чтобы добраться до моего командира, тебе надо сначала сразиться со мной, ут+ырок', RuleAngry),
+        L('rms_defendleader_03-', 'Пока я здесь, ты не достигнешь своей цели, урод', RuleAngry),
+        L('rms_defendsolar_01-', 'Наша база тебе не по зубам!', RuleAngry),
+        L('rms_defendsolar_02-', 'Тебе не совладать с нашей базой!', RuleAngry),
+        L('rms_defendsolar_03-', 'Я с удовольствием отобью твои нат+ужные поп+ытки атаковать нашу базу!', RuleAngry),
+        L('rms_friendlyarrival_01-', 'Нужна помощь?'),
+        L('rms_friendlyarrival_02-', 'Подкрепление прибыло'),
+        L('rms_friendlyarrival_03-', 'Мы тебе поможем'),
+        L('rms_friendlyarrival_04-', 'Я думаю, поддержка лишней не будет'),
+        L('rms_friendlywelcome_01-', 'Отлично, мы вас заждались!'),
+        L('rms_friendlywelcome_02-', 'Вы как раз вовремя!'),
+        L('rms_friendlywelcome_03-', 'Мы бы без вас не справились!'),
+        L('rms_friendlywelcome_04-', 'Рад вас видеть!'),
+        L('rms_shiprunning_01-', 'Даже не пытайся догнать меня', RuleAngry),
+        L('rms_shiprunning_02-', 'Я бы советовал тебе не следовать за мной', RuleAngry),
+        L('rms_shiprunning_03-', 'Лучше не пытайся преследовать меня', RuleAngry),
+        L('rms_smallshiptaunt_01-', 'Друган, ты попал', RuleAngry),
+        L('rms_smallshiptaunt_02-', 'Сейчас ты получишь удар правосудием по полной', RuleAngry),
+        L('rms_smallshiptaunt_03-', 'Я не собираюсь церемониться с тобой', RuleAngry),
+        L('rms_smallshiptaunt_04-', 'Будет больно, не беспокойся', RuleAngry),
+        L('rms_targetrunning_01-', 'А ну отвали, ублюдок!', RuleAngry),
+        L('rms_targetrunning_02-', 'Иди к ч+ёрту!', RuleAngry),
+        L('rms_targetrunning_03-', 'А ну прекрати стрелять, пока можешь!', RuleAngry),
+        L('rms_targetrunning_04-', 'Ты сильнее, чем я думал...', RuleAngry),
 
         # GENERICS
         # L('gcs_refer_base_Br01_01_base-', ),
         # L('gcs_refer_system_Br01-', ),
         # L('gcs_gen_commodity_alienartifacts', ),
         # L('gcs_refer_faction_br_m_short', ),
+
+        L('gcs_refer_base_testbase-', 'Станция Т+эрра', RuleBase),
+        L('gcs_refer_system_testsystem-', 'Сист+ема Ом+ега-13', RuleSystem),
+        L('gcs_gen_commodity_gold', 'з+олото', RuleCommodity),
+        L('gcs_refer_faction_test_short', 'Р+эйнланд', RuleFaction),
+        L('gcs_refer_faction_player_short', 'Фрил+ансер', RuleFaction),
+
+        L('mod_refer_base_freeport-', 'точка фрипорт', RuleBase),
+        L('mod_refer_base_prison-', 'точка тюрьма', RuleBase),
+        L('mod_refer_base_outpost-', 'точка аванпост', RuleBase),
+        L('mod_refer_base_battleship-', 'точка линкор', RuleBase),
+        L('mod_refer_base_military-', 'точка военная база', RuleBase),
+        L('mod_refer_base_research-', 'точка исследовательская станция', RuleBase),
+        L('mod_refer_base_shipyard-', 'точка верфь', RuleBase),
+        L('mod_refer_base_factory-', 'точка фабрика', RuleBase),
+        L('mod_refer_base_station-', 'точка станция', RuleBase),
+        L('mod_refer_base_border-', 'точка пограничный аванпост', RuleBase),
+
     ]
 
     @classmethod
@@ -458,3 +673,61 @@ class ShipVoice(object):
             )
         return map
 
+    def get_number_lines(self):
+        lines = []
+        for digit, text in NUMBERS:
+            lines.append(
+                L(
+                    code=NUMBER_START_TEMPLATE.format(digit=digit),
+                    ru_text=text,
+                    parse_rule=RuleNumberFirst
+                )
+            )
+            lines.append(
+                L(
+                    code=NUMBER_END_TEMPLATE.format(digit=digit),
+                    ru_text=text,
+                    parse_rule=RuleNumberSecond
+                )
+            )
+        return lines
+
+    def get_formation_lines(self):
+        lines = []
+        for digit, text in FORMATIONS:
+            lines.append(
+                L(
+                    code=FORMATION_TEMPLATE.format(digit=digit),
+                    ru_text=text,
+                    parse_rule=RuleFormation
+                )
+            )
+        return lines
+
+    def get_lines(self):
+        lines = self.LINES + self.get_number_lines() + self.get_formation_lines()
+        return lines
+
+    def get_sounds(self):
+        lines = self.get_lines()
+        sounds = []
+        for line in lines:
+            sounds.append(
+                SpaceSound(
+                    name=line.get_code(),
+                    line=line.get_text(),
+                )
+            )
+        return sounds
+
+    def get_voice(self):
+        return Voice(
+            voice_name=self.FOLDER,
+            sounds=self.get_sounds(),
+        )
+
+
+class FirstPilot(ShipVoice):
+    STEOS_ID = 215
+    FOLDER = 'pilot01'
+    STATIC_KIND = 'TYPE1'

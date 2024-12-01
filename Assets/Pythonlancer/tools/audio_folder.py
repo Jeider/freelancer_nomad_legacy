@@ -4,13 +4,13 @@ from tools import steos
 import pathlib
 
 
-STORY_FILES = [
+XML_FOLDERS = [
     # 'echo_m01',
     # 'echo_m01_player',
     # 'echo_m02',
     # 'echo_m02_player',
-    'echo_m03',
-    'echo_m03_player',
+    # 'echo_m03',
+    # 'echo_m03_player',
     # 'echo_m04',
     # 'echo_m04_female',
     # 'echo_m04_player',
@@ -26,11 +26,13 @@ STORY_FILES = [
     # 'echo_m08',
     # 'echo_m08_female',
     # 'echo_m08_player',
+    "pilot01",
 ]
 STORY_XML_TEMPLATE = '{file}.utf.xml'
 STORY_UTF_TEMPLATE = '{file}.utf'
 
 INITIAL_AUDIO_XML_FOLDER = 'AUDIO_XML_RU'
+APPLY_AUDIO_XML_FOLDER = 'AUDIO_XML_RU_APPLY'
 
 STORY_FOLDER_TEMPLATE = '../AUDIO_XML_RU_APPLY/{file}.xml'
 
@@ -42,9 +44,14 @@ class AudioFolder:
         current_path = pathlib.Path().resolve()
         return current_path.parent / INITIAL_AUDIO_XML_FOLDER
 
+    @staticmethod
+    def get_apply_audio_path():
+        current_path = pathlib.Path().resolve()
+        return current_path.parent / APPLY_AUDIO_XML_FOLDER
+
     @classmethod
     def compile_xml_to_utf(cls):
-        for file in STORY_FILES:
+        for file in XML_FOLDERS:
             XML_UTF.run_command(
                 STORY_XML_TEMPLATE.format(file=file),
                 STORY_FOLDER_TEMPLATE.format(file=file),
@@ -58,7 +65,7 @@ class AudioFolder:
             )
 
     @classmethod
-    def compile_voice_to_xml(cls, voice, skip=True):
+    def compile_story_voice_to_xml(cls, voice, skip=True):
         voice.validate_ai_compatibility()
 
         root_path = cls.get_initial_audio_path()

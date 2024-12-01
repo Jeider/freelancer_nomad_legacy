@@ -1,5 +1,6 @@
 import sys
 import os
+from time import sleep
 
 from files.writer import FileWriter
 
@@ -8,13 +9,15 @@ from managers.script import ScriptManager
 from jinja_templates.jinja_manager import JinjaTemplateManager
 
 from universe.audio import space_voice
+from universe.audio.pilot import FirstPilot
 
 from tools import merge_image
 from tools import data_folder
-from tools import steos
+from tools.steos import SteosVoice
 from tools import elevenlabs
 from tools import audio_folder
 from tools import maxlancer
+from tools.audio_pilot import TempPilot
 
 from story import actors
 
@@ -103,6 +106,7 @@ def generate_script():
 
 
 def test_voices():
+    raise Exception('outdated and obsolete')
     map = space_voice.ShipVoice.get_id_map()
     for valid, code in map:
         orig = os.path.join('PILOT', f'{code}.wav')
@@ -115,15 +119,52 @@ def test_voices():
 
 
 def test_steos():
-    text = 'Фрилансер альфа один деш один. Это станция Магдеб+ург. Расскажите цель своей миссии'
-    steos.SteosVoice.generate_test_sound(actors.King, text, 'demo')
+    # SteosVoice.prepare_temp_path()
+    pilot = FirstPilot()
+    lines = pilot.get_lines()
+
+    # TempPilot.prepare_temp_folders(pilot)
+    # TempPilot.fill_audio(pilot, skip=True)
+
+    # TempPilot.fill_files_for_xml(pilot)
+    TempPilot.build_voice_xml(pilot)
+
+
+
+
+
+
+
+    return
+
+    lines = pilot.get_number_lines()
+
+    # for line in lines:
+    #     SteosVoice.generate_temp_sound(
+    #         actor=line.get_actor(steos_id=pilot.STEOS_ID),
+    #         text=line.get_temp_text(),
+    #         name=line.get_code(),
+    #     )
+    #     sleep(0.2)
+    #
+    # return
+
+    for line in lines:
+        line.process_temp()
+    
+
+
+
+    return
+    # text = 'Фрилансер альфа один деш один. Это станция Магдеб+ург. Расскажите цель своей миссии'
+    # SteosVoice.generate_test_sound(actors.King, text, 'demo')
 
 
 def generate_story_voices():
     script_manager = ScriptManager()
     for msn in script_manager.get_missions():
         for voice in msn.get_voices():
-            audio_folder.AudioFolder.compile_voice_to_xml(voice)
+            audio_folder.AudioFolder.compile_story_voice_to_xml(voice)
 
 
 def test_elevenlabs():
