@@ -1,0 +1,37 @@
+from story.actors import DynamicActor
+
+from universe.audio.parse_rule import RuleDefault
+
+class PilotLine(object):
+    def __init__(self, code, ru_text, parse_rule=None):
+        self.code = code
+        self.ru_text = ru_text
+        self.parse_rule = parse_rule if parse_rule else RuleDefault
+
+    def get_text(self):
+        return self.ru_text
+
+    def get_temp_text(self):
+        return self.parse_rule.get_temp_text(self.ru_text)
+
+    def get_actor(self, steos_id):
+        return DynamicActor(
+            steos_id=steos_id,
+            steos_pitch=self.parse_rule.STEOS_PITCH,
+            steos_speed=self.parse_rule.STEOS_SPEED,
+        )
+
+    def get_code(self):
+        return self.code
+
+    def get_subfolder(self):
+        return self.parse_rule.get_subfolder()
+
+    def process_temp(self):
+        return self.parse_rule.process_temp(self.code)
+
+    def is_static(self):
+        return self.parse_rule.is_static()
+
+    def get_static_file(self):
+        return self.parse_rule.get_static_file(self.ru_text)

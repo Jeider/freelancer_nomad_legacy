@@ -1,5 +1,4 @@
 import random
-from tools.create_id import CreateId
 
 
 class SpaceVoice(object):

@@ -31,5 +31,10 @@ class CreateId(object):
         return CreateId.run_command(nickname)[1]
 
     @staticmethod
+    def get_audio_id(nickname):
+        the_id = CreateId.get_hex_id(nickname)
+        return f'0x{str(the_id)[2:].upper()}'
+
+    @staticmethod
     def get_int_id(nickname):
         return CreateId.run_command(nickname)[0]

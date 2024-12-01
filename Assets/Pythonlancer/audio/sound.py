@@ -47,8 +47,7 @@ class Sound:
         raise NotImplementedError
 
     def get_nickname_hash(self):
-        the_id = CreateId.get_hex_id(self.name)
-        return f'0x{str(the_id)[2:].upper()}'
+        return CreateId.get_audio_id(self.name)
 
 
 class SpaceSound(Sound):

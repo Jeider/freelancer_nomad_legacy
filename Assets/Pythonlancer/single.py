@@ -13,11 +13,10 @@ from universe.audio.pilot import FirstPilot
 
 from tools import merge_image
 from tools import data_folder
-from tools.steos import SteosVoice
 from tools import elevenlabs
 from tools import audio_folder
 from tools import maxlancer
-from tools.audio_pilot import TempPilot
+from tools.audio_pilot import TempPilot, VanillaPilot
 
 from story import actors
 
@@ -106,16 +105,8 @@ def generate_script():
 
 
 def test_voices():
-    raise Exception('outdated and obsolete')
-    map = space_voice.ShipVoice.get_id_map()
-    for valid, code in map:
-        orig = os.path.join('PILOT', f'{code}.wav')
-        new = os.path.join('PILOT', f'{valid}.wav')
-        try:
-            os.rename(orig, new)
-        except Exception:
-            print(valid)
-    # print(lines)
+    props = VanillaPilot.parse_vanilla_voice_props()
+    return
 
 
 def test_steos():
@@ -126,8 +117,8 @@ def test_steos():
     # TempPilot.prepare_temp_folders(pilot)
     # TempPilot.fill_audio(pilot, skip=True)
 
-    # TempPilot.fill_files_for_xml(pilot)
-    TempPilot.build_voice_xml(pilot)
+    TempPilot.fill_files_for_xml(pilot)
+    # TempPilot.build_voice_xml(pilot)
 
 
 

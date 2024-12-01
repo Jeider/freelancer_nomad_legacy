@@ -2,14 +2,18 @@ from tools.utf_xml import XML_UTF
 from tools.data_folder import DataFolder
 from tools.steos import SteosVoice
 from tools.audio_folder import AudioFolder
+from tools.create_id import CreateId
 import pathlib
 import shutil
+import os
 from time import sleep
 
-from universe.audio.pilot import SUBFOLDERS, ShipVoice
+from universe.audio.parse_rule import SUBFOLDERS
+from universe.audio.pilot import ShipVoice
 
 PILOTS_FOLDER = 'PILOTS'
 RAW_FOLDER = 'RAW'
+
 
 class TempPilot:
 
@@ -82,3 +86,102 @@ class TempPilot:
             return
 
         xml_path.write_text(voice.get_xml(), encoding='utf-8')
+
+
+
+class VanillaProps:
+
+    def __init__(self):
+        self.props = {}
+
+    def add_prop(self, prop_name):
+        self.props[prop_name] = VanillaVoiceProp(name=prop_name)
+
+    def add_line_to_prop(self, prop_name, line):
+        self.props[prop_name].add_line(line)
+
+    def dump_names(self):
+        for prop in self.props.values():
+            print(prop.name)
+
+    def dump_prop(self, prop_name):
+        self.props[prop_name].dump_all()
+
+    def convert_prop(self, prop_name):
+        map = self.props[prop_name].get_id_map()
+        pilot_path = TempPilot.get_root_pilot_path()
+        for valid, code in map:
+            file = pilot_path / prop_name / f'{code}.wav'
+            if not file.exists():
+                print(f'Code of {valid} is not exist')
+                continue
+
+            file.rename(pilot_path / prop_name / f'{valid}.wav')
+
+class VanillaVoiceProp:
+    def __init__(self, name):
+        self.name = name
+        self.lines = []
+
+    def add_line(self, line):
+        self.lines.append(line)
+
+    def dump_all(self):
+        for line in self.lines:
+            print(f"'{line}',")
+
+    def get_id_map(self):
+        map = []
+        for line in self.lines:
+            map.append(
+                (
+                    line.lower(),
+                    CreateId.get_audio_id(line)
+                )
+            )
+        return map
+
+
+VOICE_NAME_KEY = 'nickname'
+SOUND_NAME_KEY = 'msg'
+
+
+class VanillaPilot:
+    FILES = [
+        'voices_space_male.ini',
+        'voices_space_female.ini',
+    ]
+
+    @classmethod
+    def get_vanilla_props_dir(cls):
+        return pathlib.Path().resolve() / 'tools' / 'static'
+
+    @classmethod
+    def get_vanilla_props_lines(cls, file_name):
+        response_file = open(cls.get_vanilla_props_dir() / file_name, "r")
+        file_content = response_file.readlines()
+        response_file.close()
+        return file_content
+
+    @classmethod
+    def parse_vanilla_voice_props(cls):
+        voice_props = VanillaProps()
+        last_prop = None
+
+        for file in cls.FILES:
+            file_content = cls.get_vanilla_props_lines(file)
+            for file_line in file_content:
+                line_parsed = file_line.split('=')
+                if len(line_parsed) < 2:
+                    continue
+
+                key = line_parsed[0].strip()
+                value = line_parsed[1].strip()
+
+                if key == VOICE_NAME_KEY:
+                    voice_props.add_prop(value)
+                    last_prop = value
+                elif key == SOUND_NAME_KEY:
+                    voice_props.add_line_to_prop(last_prop, value)
+
+        return voice_props
