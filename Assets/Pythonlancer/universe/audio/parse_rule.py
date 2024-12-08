@@ -118,7 +118,7 @@ class RuleContinueRequest(RuleStart):
 
 # <что-то делаю> к стыковке
 class RuleDockContinueRequest(RuleStart):
-    TEXT_TEMPLATE = 'Разрешите {text}'
+    TEXT_TEMPLATE = 'прошу разрешение на {text}'
 
 
 class RuleEnd(RuleProcessing):
@@ -195,7 +195,7 @@ class RuleThisIs(RuleEnd):
 
 class RuleFormation(RuleMiddle):
     SUBFOLDER = SUBFOLDER_FORMATION
-    TEXT_TEMPLATE = '{text} три'
+    TEXT_TEMPLATE = 'фрилансер {text} три'
     TARGET_WORD_NUMBER = 2
 
 
@@ -233,5 +233,11 @@ class RuleCommodity(RuleDefault):
     SUBFOLDER = SUBFOLDER_COMMODITY
 
 
-class RuleFaction(RuleDefault):
+class RulePlayer(RuleProcessing):
     SUBFOLDER = SUBFOLDER_FACTION
+    TEXT_TEMPLATE = '{text} альфа'
+
+
+class RuleFaction(RuleProcessing):
+    SUBFOLDER = SUBFOLDER_FACTION
+    TEXT_TEMPLATE = 'говорит {text} бета'

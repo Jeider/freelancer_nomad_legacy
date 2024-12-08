@@ -26,7 +26,9 @@ XML_FOLDERS = [
     # 'echo_m08',
     # 'echo_m08_female',
     # 'echo_m08_player',
-    "pilot01",
+    # "pilot01",
+    "pilot05",
+    # "mc_leg_m01",
 ]
 STORY_XML_TEMPLATE = '{file}.utf.xml'
 STORY_UTF_TEMPLATE = '{file}.utf'

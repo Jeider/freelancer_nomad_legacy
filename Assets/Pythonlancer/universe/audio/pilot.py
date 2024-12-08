@@ -70,11 +70,91 @@ NUMBERS = [
 ]
 
 
-
-class ShipVoice(object):
+class PilotVoice:
     STEOS_ID = None
     FOLDER = None
     STATIC_KIND = None
+    LINES = []
+
+    def get_lines(self):
+        return self.LINES
+
+    def get_sounds(self):
+        lines = self.get_lines()
+        sounds = []
+        for line in lines:
+            sounds.append(
+                SpaceSound(
+                    name=line.get_code(),
+                    line=line.get_text(),
+                )
+            )
+        return sounds
+
+    def get_voice(self):
+        return Voice(
+            voice_name=self.FOLDER,
+            sounds=self.get_sounds(),
+        )
+
+
+
+class SignedVoice(PilotVoice):
+    def get_number_lines(self):
+        lines = []
+        for digit, text in NUMBERS:
+            lines.append(
+                L(
+                    code=NUMBER_START_TEMPLATE.format(digit=digit),
+                    ru_text=text,
+                    parse_rule=R.RuleNumberFirst
+                )
+            )
+            lines.append(
+                L(
+                    code=NUMBER_END_TEMPLATE.format(digit=digit),
+                    ru_text=text,
+                    parse_rule=R.RuleNumberSecond
+                )
+            )
+        return lines
+
+    def get_formation_lines(self):
+        lines = []
+        for digit, text in FORMATIONS:
+            lines.append(
+                L(
+                    code=FORMATION_TEMPLATE.format(digit=digit),
+                    ru_text=text,
+                    parse_rule=R.RuleFormation
+                )
+            )
+        return lines
+
+    def get_lines(self):
+        lines = self.LINES + self.get_number_lines() + self.get_formation_lines()
+        return lines
+
+    def get_sounds(self):
+        lines = self.get_lines()
+        sounds = []
+        for line in lines:
+            sounds.append(
+                SpaceSound(
+                    name=line.get_code(),
+                    line=line.get_text(),
+                )
+            )
+        return sounds
+
+    def get_voice(self):
+        return Voice(
+            voice_name=self.FOLDER,
+            sounds=self.get_sounds(),
+        )
+
+
+class ShipVoice(SignedVoice):
     LINES = [
         L('gcs_combat_announce_allclear_01-', 'Противников не обнаружено.'),
         L('gcs_combat_announce_allclear_02-', 'На сканерах больше нет неприятелей.'),
@@ -366,8 +446,10 @@ class ShipVoice(object):
         L('gcs_refer_base_testbase-', 'Станция Т+эрра', R.RuleBase),
         L('gcs_refer_system_testsystem-', 'Сист+ема Ом+ега-13', R.RuleSystem),
         L('gcs_gen_commodity_gold', 'з+олото', R.RuleCommodity),
-        L('gcs_refer_faction_test_short', 'Р+эйнланд', R.RuleFaction),
-        L('gcs_refer_faction_player_short', 'Фрил+ансер', R.RuleFaction),
+        L('gcs_refer_faction_rh_short', 'Р+эйнланд', R.RuleFaction),
+        L('gcs_refer_faction_rx_short', 'Г+ессенцы', R.RuleFaction),
+        L('gcs_refer_faction_test_short', 'Фракция', R.RuleFaction),
+        L('gcs_refer_faction_player_short', 'Фрил+ансер', R.RulePlayer),
 
         L('mod_refer_base_freeport-', 'точка фрипорт', R.RuleBase),
         L('mod_refer_base_prison-', 'точка тюрьма', R.RuleBase),
@@ -382,61 +464,14 @@ class ShipVoice(object):
 
     ]
 
-    def get_number_lines(self):
-        lines = []
-        for digit, text in NUMBERS:
-            lines.append(
-                L(
-                    code=NUMBER_START_TEMPLATE.format(digit=digit),
-                    ru_text=text,
-                    parse_rule=R.RuleNumberFirst
-                )
-            )
-            lines.append(
-                L(
-                    code=NUMBER_END_TEMPLATE.format(digit=digit),
-                    ru_text=text,
-                    parse_rule=R.RuleNumberSecond
-                )
-            )
-        return lines
-
-    def get_formation_lines(self):
-        lines = []
-        for digit, text in FORMATIONS:
-            lines.append(
-                L(
-                    code=FORMATION_TEMPLATE.format(digit=digit),
-                    ru_text=text,
-                    parse_rule=R.RuleFormation
-                )
-            )
-        return lines
-
-    def get_lines(self):
-        lines = self.LINES + self.get_number_lines() + self.get_formation_lines()
-        return lines
-
-    def get_sounds(self):
-        lines = self.get_lines()
-        sounds = []
-        for line in lines:
-            sounds.append(
-                SpaceSound(
-                    name=line.get_code(),
-                    line=line.get_text(),
-                )
-            )
-        return sounds
-
-    def get_voice(self):
-        return Voice(
-            voice_name=self.FOLDER,
-            sounds=self.get_sounds(),
-        )
-
 
 class FirstPilot(ShipVoice):
     STEOS_ID = 215
     FOLDER = 'pilot01'
+    STATIC_KIND = 'TYPE1'
+
+
+class PirateOne(ShipVoice):
+    STEOS_ID = 10067
+    FOLDER = 'pilot05'
     STATIC_KIND = 'TYPE1'

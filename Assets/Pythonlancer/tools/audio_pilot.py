@@ -9,7 +9,7 @@ import os
 from time import sleep
 
 from universe.audio.parse_rule import SUBFOLDERS
-from universe.audio.pilot import ShipVoice
+from universe.audio.pilot import PilotVoice
 
 PILOTS_FOLDER = 'PILOTS'
 RAW_FOLDER = 'RAW'
@@ -23,7 +23,7 @@ class TempPilot:
         return current_path.parent / PILOTS_FOLDER
 
     @classmethod
-    def prepare_temp_folders(cls, pilot: ShipVoice):
+    def prepare_temp_folders(cls, pilot: PilotVoice):
         pilot_folder = cls.get_root_pilot_path() / pilot.FOLDER
 
         pilot_folder.mkdir(exist_ok=True)
@@ -33,7 +33,7 @@ class TempPilot:
             subfolder_path.mkdir(exist_ok=True)
 
     @classmethod
-    def fill_audio(cls, pilot: ShipVoice, skip=True):
+    def fill_audio(cls, pilot: PilotVoice, skip=True):
         pilot_folder = cls.get_root_pilot_path() / pilot.FOLDER
 
         lines = pilot.get_lines()
@@ -55,9 +55,12 @@ class TempPilot:
             sleep(0.2)
 
     @classmethod
-    def fill_files_for_xml(cls, pilot: ShipVoice):
+    def fill_files_for_xml(cls, pilot: PilotVoice):
         pilots_folder = cls.get_root_pilot_path() / pilot.FOLDER
-        audios_folder = AudioFolder.get_apply_audio_path() / f'{pilot.FOLDER}.xml' / pilot.FOLDER
+        audios_root = AudioFolder.get_apply_audio_path() / f'{pilot.FOLDER}.xml'
+        audios_folder = audios_root / pilot.FOLDER
+        audios_root.mkdir(exist_ok=True)
+        audios_folder.mkdir(exist_ok=True)
 
         lines = pilot.get_lines()
         for line in lines:
@@ -74,7 +77,7 @@ class TempPilot:
                 shutil.copy(str(file_destination), str(target_destination))
 
     @classmethod
-    def build_voice_xml(cls, pilot: ShipVoice, skip=False):
+    def build_voice_xml(cls, pilot: PilotVoice, skip=False):
         voice_path = AudioFolder.get_apply_audio_path() / f'{pilot.FOLDER}.xml'
 
         voice = pilot.get_voice()
@@ -86,7 +89,6 @@ class TempPilot:
             return
 
         xml_path.write_text(voice.get_xml(), encoding='utf-8')
-
 
 
 class VanillaProps:
@@ -118,6 +120,7 @@ class VanillaProps:
 
             file.rename(pilot_path / prop_name / f'{valid}.wav')
 
+
 class VanillaVoiceProp:
     def __init__(self, name):
         self.name = name
@@ -128,7 +131,7 @@ class VanillaVoiceProp:
 
     def dump_all(self):
         for line in self.lines:
-            print(f"'{line}',")
+            print(f"L('{line}', ''),")
 
     def get_id_map(self):
         map = []

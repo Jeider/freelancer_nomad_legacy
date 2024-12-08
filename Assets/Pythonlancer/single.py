@@ -9,7 +9,8 @@ from managers.script import ScriptManager
 from jinja_templates.jinja_manager import JinjaTemplateManager
 
 from universe.audio import space_voice
-from universe.audio.pilot import FirstPilot
+from universe.audio.pilot import FirstPilot, PirateOne
+from universe.audio.mission_comission import MCVoice
 
 from tools import merge_image
 from tools import data_folder
@@ -38,7 +39,7 @@ def generate_hacker_panels():
     HackerPanelManager().write_content()
 
 
-def compile_story_audio():
+def compile_audio():
     audio_folder.AudioFolder.compile_xml_to_utf()
     print('done')
 
@@ -111,14 +112,13 @@ def test_voices():
 
 def test_steos():
     # SteosVoice.prepare_temp_path()
-    pilot = FirstPilot()
-    lines = pilot.get_lines()
+    pilot = PirateOne()
 
-    # TempPilot.prepare_temp_folders(pilot)
+    TempPilot.prepare_temp_folders(pilot)
     # TempPilot.fill_audio(pilot, skip=True)
 
-    TempPilot.fill_files_for_xml(pilot)
-    # TempPilot.build_voice_xml(pilot)
+    # TempPilot.fill_files_for_xml(pilot)
+    TempPilot.build_voice_xml(pilot)
 
 
 
@@ -179,7 +179,7 @@ def test_lua():
 
 ACTIONS = {
     'generate_hacker_panels': generate_hacker_panels,
-    'compile_story_audio': compile_story_audio,
+    'compile_audio': compile_audio,
     'test_hacker_colors': test_hacker_colors,
     'test_placement': test_placement,
     'build_image': build_image,
