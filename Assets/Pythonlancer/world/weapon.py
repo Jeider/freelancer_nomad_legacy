@@ -3,6 +3,7 @@ from text.dividers import SINGLE_DIVIDER
 
 from fx.weapon import WeaponFX
 
+USE_ANIMATION = 'use_animation = Sc_fire'
 
 WEAPON_TYPE_PER_WEAPON_FX = {
     WeaponFX.FX_LASER: 'W_laser',
@@ -421,6 +422,14 @@ LODranges = {lod_ranges}'''
 
     MODELS = RH_MODELS + LI_MODELS + BR_MODELS + KU_MODELS + GE_MODELS
 
+    NOT_ANIMATED_MODELS = [
+        RH_THRUSTGUN,
+        LI_THRUSTGUN,
+        BR_THRUSTGUN,
+        KU_THRUSTGUN,
+        CO_THRUSTGUN,
+    ]
+
     REFIRE_RATE_1 = 1
     REFIRE_RATE_2 = 2
     REFIRE_RATE_3 = 3
@@ -695,12 +704,20 @@ LODranges = {lod_ranges}'''
         }
 
     def get_extra_template_content(self):
-        return SINGLE_DIVIDER.join(self.EXTRA)
+        items = []
+        if len(self.EXTRA):
+            items.extend(self.EXTRA)
+
+        if self.MODEL not in self.NOT_ANIMATED_MODELS:
+            items.append(USE_ANIMATION)
+
+        return items
 
     def get_gun(self):
         template = self.GUN_TEMPLATE.format(**self.get_gun_template_params())
-        if len(self.EXTRA) > 0:
-            template += SINGLE_DIVIDER + self.get_extra_template_content()
+        extra = self.get_extra_template_content()
+        if len(extra):
+            template += SINGLE_DIVIDER + SINGLE_DIVIDER.join(extra)
         return template
 
     def get_equip_template_params(self):

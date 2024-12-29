@@ -68,10 +68,14 @@ class TempPilot:
 
             if not line.is_static():
                 file_destination = pilots_folder / line.get_subfolder() / f'{code}.mp3'
+                target_destination = audios_folder / f'{code}.mp3'
             else:
-                file_destination = cls.get_root_pilot_path() / 'STATIC' / pilot.STATIC_KIND / f'{code}.wav'
+                if line.is_static_from_root():
+                    file_destination = cls.get_root_pilot_path() / line.get_static_file()
+                else:
+                    file_destination = cls.get_root_pilot_path() / pilot.STATIC_KIND / line.get_static_file()
 
-            target_destination = audios_folder / f'{code}.mp3'
+                target_destination = audios_folder / f'{code}.wav'
 
             if not target_destination.exists():
                 shutil.copy(str(file_destination), str(target_destination))
@@ -153,6 +157,7 @@ class VanillaPilot:
     FILES = [
         'voices_space_male.ini',
         'voices_space_female.ini',
+        'voices_recognizable.ini',
     ]
 
     @classmethod

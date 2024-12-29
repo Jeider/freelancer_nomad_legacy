@@ -2,6 +2,7 @@ from story.actors import DynamicActor
 
 from universe.audio.pilot_line import PilotLine as L
 from universe.audio import parse_rule as R
+from universe.audio.static import space_pilot as space_pilot_static
 
 from audio.sound import SpaceSound
 from audio.voice import Voice
@@ -12,6 +13,13 @@ NUMBER_START_TEMPLATE = 'gcs_misc_number_{digit}'
 NUMBER_END_TEMPLATE = 'gcs_misc_number_{digit}-'
 TEMP_FORMATION_TEMPLATE = 'formation_{digit}'
 TEMP_NUMBER_TEMPLATE = 'number_{digit}'
+
+STATIC_MIL01 = 'pilot_f_mil_m01'
+STATIC_MIL02 = 'pilot_f_mil_m02'
+STATIC_LEG_MALE = 'pilot_f_leg_m01'
+STATIC_LEG_FEMALE = 'pilot_f_leg_f01'
+STATIC_ILL01 = 'pilot_f_ill_m01'
+STATIC_ILL02 = 'pilot_f_ill_m02'
 
 FORMATIONS = [
     (1, '+альфа'),
@@ -69,12 +77,39 @@ NUMBERS = [
     (20, 'дв+адцать'),
 ]
 
+VOICE_ROOT = '''
+[Voice]
+nickname = {nickname}
+{animations}
+
+{lines}
+'''
+
+MALE_ANIMATIONS = '''
+script = SC_MLHEAD_MOTION_WALLA_CASL_000LV_XA_%
+script = SC_MLBODY_CHRB_IDLE_SMALL_000LV_XA_07
+'''
+
+FEMALE_ANIMATIONS = '''
+script = SC_MLHEAD_MOTION_WALLA_CASL_000LV_XA_%
+script = SC_MLBODY_CHRB_IDLE_SMALL_000LV_XA_07
+'''
+
+class ThePilot:
+    pass
+
 
 class PilotVoice:
     STEOS_ID = None
     FOLDER = None
     STATIC_KIND = None
     LINES = []
+    IS_MALE = True
+    VOICE_DATA = None
+    MVOICE_AUDIO_PROP = None
+    MVOICE_MISSION_PROP = None
+    ATTENUATION = -6
+    ENABLED = True
 
     def get_lines(self):
         return self.LINES
@@ -97,6 +132,36 @@ class PilotVoice:
             sounds=self.get_sounds(),
         )
 
+    def get_gender(self):
+        return 'male' if self.IS_MALE else 'female'
+
+    def get_nickname(self):
+        return self.FOLDER
+
+    def get_voice_ini(self):
+        animations = (
+            MALE_ANIMATIONS
+            if self.IS_MALE
+            else FEMALE_ANIMATIONS
+        )
+        return VOICE_ROOT.format(
+            nickname=self.get_nickname(),
+            animations=animations,
+            lines=self.VOICE_DATA.format(
+                attenuation=f'attenuation = {self.ATTENUATION}',
+            )
+        )
+
+    def get_voice_props_ini(self):
+        return self.MVOICE_AUDIO_PROP.format(
+            nickname=self.get_nickname(),
+            gender=self.get_gender(),
+        )
+
+    def get_mission_props_ini(self):
+        return self.MVOICE_MISSION_PROP.format(
+            nickname=self.get_nickname(),
+        )
 
 
 class SignedVoice(PilotVoice):
@@ -155,6 +220,9 @@ class SignedVoice(PilotVoice):
 
 
 class ShipVoice(SignedVoice):
+    VOICE_DATA = space_pilot_static.VOICE_DATA
+    MVOICE_AUDIO_PROP = space_pilot_static.MVOICE_AUDIO_PROP
+    MVOICE_MISSION_PROP = space_pilot_static.MVOICE_MISSION_PROP
     LINES = [
         L('gcs_combat_announce_allclear_01-', 'Противников не обнаружено.'),
         L('gcs_combat_announce_allclear_02-', 'На сканерах больше нет неприятелей.'),
@@ -176,7 +244,7 @@ class ShipVoice(SignedVoice):
         L('gcs_combat_announce_flee_02-', 'Я улетаю!', R.RuleHighAction),
         L('gcs_combat_announce_flee_03-', 'К чёрту всё, я улетаю отсюда.', R.RuleHighAction),
         L('gcs_combat_announce_flee_04-', 'Я отступаю.', R.RuleHighAction),
-        L('gcs_combat_announce_flee_05-', 'Мне нужна прегрупировка.', R.RuleHighAction),
+        L('gcs_combat_announce_flee_05-', 'Мне нужна перегрупировка.', R.RuleHighAction),
         L('gcs_combat_announce_flee_06-', 'Я сваливаю отсюда.', R.RuleHighAction),
         L('gcs_combat_askengage_01-', 'Разрешите атаковать.', R.RuleNormalAction),
         L('gcs_combat_askengage_02-', 'Запрашиваю открыть огонь.', R.RuleNormalAction),
@@ -464,14 +532,46 @@ class ShipVoice(SignedVoice):
 
     ]
 
+    subclasses = []
 
-class FirstPilot(ShipVoice):
-    STEOS_ID = 215
+    def __init_subclass__(cls, **kwargs):
+        super().__init_subclass__(**kwargs)
+        cls.subclasses.append(cls)
+
+
+class MilitaryOne(ThePilot, ShipVoice):
+    STEOS_ID = 215  # Regis Witcher
     FOLDER = 'pilot01'
-    STATIC_KIND = 'TYPE1'
+    STATIC_KIND = STATIC_MIL01
+    ATTENUATION = -3
 
 
-class PirateOne(ShipVoice):
+class MilitaryTwo(ThePilot, ShipVoice):
+    STEOS_ID = 210  # Hjalmar an Craite Witcher
+    FOLDER = 'pilot02'
+    STATIC_KIND = STATIC_MIL02
+    ENABLED = False
+
+
+class MilitaryThree(ThePilot, ShipVoice):
+    STEOS_ID = 211  # Lambert Witcher
+    FOLDER = 'pilot03'
+    STATIC_KIND = STATIC_MIL02
+    ENABLED = False
+
+
+class MilitaryFour(ThePilot, ShipVoice):
+    STEOS_ID = 687  # Commander (male) Skyrim
+    FOLDER = 'pilot04'
+    STATIC_KIND = STATIC_MIL02
+    ENABLED = False
+
+#
+# "id": 10067,
+# "name": "Monolit 1",
+
+class PirateOne(ThePilot, ShipVoice):
     STEOS_ID = 10067
     FOLDER = 'pilot05'
-    STATIC_KIND = 'TYPE1'
+    STATIC_KIND = STATIC_ILL01
+    ATTENUATION = -8

@@ -49,6 +49,7 @@ class ParseRule:
 
     SUBFOLDER = SUBFOLDER_DEFAULT
     IS_STATIC = False
+    STATIC_FROM_ROOT = False
 
     @classmethod
     def get_temp_text(cls, text):
@@ -67,6 +68,10 @@ class ParseRule:
         return cls.IS_STATIC
 
     @classmethod
+    def is_static_from_root(cls):
+        return cls.STATIC_FROM_ROOT
+
+    @classmethod
     def get_static_file(cls, text):
         if not cls.is_static():
             raise Exception('not static')
@@ -75,6 +80,11 @@ class ParseRule:
 
 class RuleDefault(ParseRule):
     pass
+
+
+class RuleNNVoice(ParseRule):
+    STEOS_PITCH = 0.2
+    STEOS_SPEED = 0.75
 
 
 class RuleProcessing(RuleDefault):
@@ -97,8 +107,36 @@ class RuleScream(ParseRule):
         return f'gcs_combat_scream_0{text}-.wav'
 
 
+class RuleShipTypeHail(ParseRule):
+    IS_STATIC = True
+    STATIC_FROM_ROOT = True
+
+    @classmethod
+    def get_static_file(cls, text):
+        return 'null.wav'
+
+
+class RuleAngry(ParseRule):
+    STEOS_PITCH = -0.2
+    STEOS_SPEED = 1.25
+
+
+class RuleAngryAlt(ParseRule):
+    STEOS_PITCH = 0.4
+    STEOS_SPEED = 1.25
+
+
 class RuleStart(RuleProcessing):
     SUBFOLDER = SUBFOLDER_START
+
+
+# <десять> вейпоинтов
+class RuleStartAsk(RuleStart):
+    TEXT_TEMPLATE = 'Фрилансер, {text}'
+
+
+class RuleStartAskAngry(    RuleAngryAlt):
+    pass
 
 
 # <десять> вейпоинтов
@@ -166,19 +204,56 @@ class RuleNormalActionWithEnd(RuleEnd):
     TEXT_TEMPLATE = '{text} точке станция'
 
 
-class RuleAngry(ParseRule):
-    STEOS_PITCH = -0.2
-    STEOS_SPEED = 1.25
-
-
 class RuleMiddle(RuleProcessing):
-    FORCE_TEXT = None
-    TARGET_WORD_NUMBER = 2
     SUBFOLDER = SUBFOLDER_MIDDLE
+
+
+class RuleMiddleAsk(RuleMiddle):
+    TEXT_TEMPLATE = 'Фрилансер, {text}, скажите нам'
+
+
+class RuleGoodLuck(RuleMiddle):
+    TEXT_TEMPLATE = 'Фрилансер, {text}, удачи'
+
+
+class RuleDockRequestResult(RuleMiddle):
+    TEXT_TEMPLATE = 'Ваш запрос {text}, пожалуйста'
+
+
+class RuleClearTo(RuleStart):
+    TEXT_TEMPLATE = 'Фрилансер, {text}'
+
+
+class RuleProceedToDock(RuleMiddle):
+    TEXT_TEMPLATE = 'Фрилансер, {text} к стыковке в док 1'
+
+
+class RuleGrantedDock(RuleStart):
+    TEXT_TEMPLATE = 'Пожалуйста, приступайте {text}'
+
+
+class RuleGrantedDockNumber(RuleMiddle):
+    TEXT_TEMPLATE = 'Пожалуйста, приступайте {text} 1'
+
+
+class RuleYourRequest(RuleMiddle):
+    TEXT_TEMPLATE = 'Фрилансер, {text} к стыковке разрешен'
 
 
 class RuleDash(RuleMiddle):
     TEXT_TEMPLATE = 'Один {text} один'
+
+
+class RuleShipAsk(RuleMiddle):
+    TEXT_TEMPLATE = 'обращаюсь к {text}, куда летите'
+
+
+class RuleShipAskFighter(RuleMiddle):
+    TEXT_TEMPLATE = 'обращаюсь к истребителю типа {text}, куда летите'
+
+
+class RuleShipAskFreighter(RuleMiddle):
+    TEXT_TEMPLATE = 'обращаюсь к грузовику типа {text}, куда летите'
 
 
 class RuleFrom(RuleMiddle):
@@ -191,6 +266,14 @@ class RuleTo(RuleMiddle):
 
 class RuleThisIs(RuleEnd):
     TEXT_TEMPLATE = '{text} Р+эйнланд Омега семь'
+
+
+class RuleAcknowledge(RuleEnd):
+    TEXT_TEMPLATE = '{text}, ваш запрос принят'
+
+
+class RuleIncomingFighter(RuleEnd):
+    TEXT_TEMPLATE = '{text} корабль типа'
 
 
 class RuleFormation(RuleMiddle):
@@ -241,3 +324,5 @@ class RulePlayer(RuleProcessing):
 class RuleFaction(RuleProcessing):
     SUBFOLDER = SUBFOLDER_FACTION
     TEXT_TEMPLATE = 'говорит {text} бета'
+
+

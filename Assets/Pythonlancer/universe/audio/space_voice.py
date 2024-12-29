@@ -2,9 +2,9 @@ import random
 
 
 class SpaceVoice(object):
-    VOICE_MALE = 'atc_leg_m01'
-    VOICE_FEMALE = 'atc_leg_f01'
-    VOICE_ROBOT = 'atc_leg_f01a'
+    VOICE_MALE = 'dispatcher01'
+    VOICE_FEMALE = 'dispatcher02'
+    VOICE_ROBOT = 'dispatcher03'
     DEFAULT = VOICE_MALE
 
     FREEPORT = 'mod_refer_base_freeport'

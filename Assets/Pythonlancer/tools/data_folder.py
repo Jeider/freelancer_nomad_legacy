@@ -131,6 +131,16 @@ class DataFolder(object):
         equip_file.write_text(content, encoding='utf-8')
 
     @classmethod
+    def sync_audio_ini(cls, file, content):
+        equip_file = cls.get_audio() / f'{file}.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    @classmethod
+    def sync_mission_voice_props(cls, content):
+        equip_file = cls.get_missions() / 'voice_properties.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    @classmethod
     def move_story_audio(cls, original_file_destination, out_file_name):
         shutil.move(
             original_file_destination,

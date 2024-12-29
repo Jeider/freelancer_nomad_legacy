@@ -15,3 +15,7 @@ class NPCShipsTemplate(FileTemplate):
 
 class LootpropsTemplate(FileTemplate):
     FILE = 'lootprops.ini'
+
+
+class VoicePropertiesTemplate(FileTemplate):
+    FILE = 'voice_properties.ini'

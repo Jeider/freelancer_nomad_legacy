@@ -27,8 +27,12 @@ XML_FOLDERS = [
     # 'echo_m08_female',
     # 'echo_m08_player',
     # "pilot01",
-    "pilot05",
+    # "pilot05",
     # "mc_leg_m01",
+    # "dispatcher01",
+    # "dispatcher02",
+    # "dispatcher03",
+    "nnvoice",
 ]
 STORY_XML_TEMPLATE = '{file}.utf.xml'
 STORY_UTF_TEMPLATE = '{file}.utf'
@@ -54,17 +58,21 @@ class AudioFolder:
     @classmethod
     def compile_xml_to_utf(cls):
         for file in XML_FOLDERS:
-            XML_UTF.run_command(
-                STORY_XML_TEMPLATE.format(file=file),
-                STORY_FOLDER_TEMPLATE.format(file=file),
-            )
-            out_file_name = STORY_UTF_TEMPLATE.format(file=file)
-            new_xml = XML_UTF.get_out_path() / out_file_name
+            cls.compile_file(file)
 
-            DataFolder.move_story_audio(
-                new_xml,
-                out_file_name,
-            )
+    @classmethod
+    def compile_file(cls, file):
+        XML_UTF.run_command(
+            STORY_XML_TEMPLATE.format(file=file),
+            STORY_FOLDER_TEMPLATE.format(file=file),
+        )
+        out_file_name = STORY_UTF_TEMPLATE.format(file=file)
+        new_xml = XML_UTF.get_out_path() / out_file_name
+
+        DataFolder.move_story_audio(
+            new_xml,
+            out_file_name,
+        )
 
     @classmethod
     def compile_story_voice_to_xml(cls, voice, skip=True):
