@@ -1,4 +1,4 @@
-from universe.audio.pilot import PilotVoice
+from universe.audio.base_pilot import PilotVoice
 from universe.audio.pilot_line import PilotLine as L
 
 

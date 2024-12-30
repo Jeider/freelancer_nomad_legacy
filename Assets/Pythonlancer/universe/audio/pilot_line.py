@@ -37,4 +37,4 @@ class PilotLine(object):
         return self.parse_rule.is_static_from_root()
 
     def get_static_file(self):
-        return self.parse_rule.get_static_file(self.code)
+        return self.parse_rule.get_static_file(self.ru_text)

@@ -9,7 +9,7 @@ import os
 from time import sleep
 
 from universe.audio.parse_rule import SUBFOLDERS
-from universe.audio.pilot import PilotVoice
+from universe.audio.base_pilot import PilotVoice
 
 PILOTS_FOLDER = 'PILOTS'
 RAW_FOLDER = 'RAW'

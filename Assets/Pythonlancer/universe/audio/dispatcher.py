@@ -1,6 +1,6 @@
 from universe.audio.pilot_line import PilotLine as L
 from universe.audio import parse_rule as R
-from universe.audio.pilot import SignedVoice
+from universe.audio.base_pilot import SignedVoice
 from universe.audio.static import dispatcher as dispatcher_static
 
 

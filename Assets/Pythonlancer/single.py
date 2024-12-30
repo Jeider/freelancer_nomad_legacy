@@ -10,11 +10,11 @@ from managers.script import ScriptManager
 
 from jinja_templates.jinja_manager import JinjaTemplateManager
 
-from universe.audio import space_voice
-from universe.audio.pilot import MilitaryOne, MilitaryTwo, MilitaryThree, MilitaryFour, PirateOne, ShipVoice, PilotVoice
-from universe.audio.mission_comission import MCVoice
-from universe.audio.nnvoice import NNVoice
-from universe.audio.dispatcher import StationDispatcher, MaleDispatcher, FemaleDispatcher
+from universe.audio.manager import PilotManager
+from universe.audio import pilot
+from universe.audio import dispatcher
+from universe.audio import nnvoice
+from universe.audio import mission_comission
 
 from templates.hardcoded_inis.audio import VoicesSpaceMaleTemplate, VoicesSpaceFemaleTemplate
 from templates.hardcoded_inis.missions import VoicePropertiesTemplate
@@ -51,50 +51,12 @@ def compile_audio():
     print('done')
 
 
-def compile_pilots():
-    pilots: list[PilotVoice] = StationDispatcher.subclasses + ShipVoice.subclasses
-    male_voices = []
-    male_props = []
-    female_voices = []
-    female_props = []
-    mission_props = []
+def compile_pilots_ini():
+    PilotManager.compile_pilots_ini()
 
-    for the_pilot in pilots:
-        pilot = the_pilot()
-        if not pilot.ENABLED:
-            continue
 
-        if pilot.IS_MALE:
-            male_voices.append(pilot.get_voice_ini())
-            male_props.append(pilot.get_voice_props_ini())
-        else:
-            female_voices.append(pilot.get_voice_ini())
-            female_props.append(pilot.get_voice_props_ini())
-
-        mission_props.append(pilot.get_mission_props_ini())
-
-    data_folder.DataFolder.sync_audio_ini(
-        'voices_space_male',
-        VoicesSpaceMaleTemplate().format({
-            'voices': DIVIDER.join(male_voices),
-            'props': DIVIDER.join(male_props),
-        })
-    )
-
-    data_folder.DataFolder.sync_audio_ini(
-        'voices_space_female',
-        VoicesSpaceFemaleTemplate().format({
-            'voices': DIVIDER.join(female_voices),
-            'props': DIVIDER.join(female_props),
-        })
-    )
-
-    data_folder.DataFolder.sync_mission_voice_props(
-        VoicePropertiesTemplate().format({
-            'props': DIVIDER.join(mission_props),
-        })
-    )
-
+def compile_pilots_audio():
+    PilotManager.compile_pilots_audio()
 
 
 def test_hacker_colors():
@@ -166,22 +128,27 @@ def test_voices():
 def test_steos():
     # SteosVoice.prepare_temp_path()
 
+    PilotManager.prepare_pilots_audio()
 
-    # pilot = FemaleDispatcher()
+    return
+
+    the_pilot = pilot.MilitaryFive()
+
+    TempPilot.prepare_temp_folders(the_pilot)
+    TempPilot.fill_audio(the_pilot, skip=True)
+
+    TempPilot.fill_files_for_xml(the_pilot)
+    TempPilot.build_voice_xml(the_pilot)
+
+
+
+    # the_pilot = nnvoice.NNVoice()
     #
-    # TempPilot.prepare_temp_folders(pilot)
-    # TempPilot.fill_audio(pilot, skip=True)
+    # TempPilot.prepare_temp_folders(the_pilot)
+    # TempPilot.fill_audio(the_pilot, skip=True)
     #
-    # TempPilot.fill_files_for_xml(pilot)
-    # TempPilot.build_voice_xml(pilot)
-
-    pilot = NNVoice()
-
-    TempPilot.prepare_temp_folders(pilot)
-    TempPilot.fill_audio(pilot, skip=True)
-
-    TempPilot.fill_files_for_xml(pilot)
-    TempPilot.build_voice_xml(pilot)
+    # TempPilot.fill_files_for_xml(the_pilot)
+    # TempPilot.build_voice_xml(the_pilot)
 
 
 
@@ -255,7 +222,8 @@ ACTIONS = {
     'test_elevenlabs': test_elevenlabs,
     'test_lua': test_lua,
     'dump_system': dump_system,
-    'compile_pilots': compile_pilots,
+    'compile_pilots_ini': compile_pilots_ini,
+    'compile_pilots_audio': compile_pilots_audio,
 }
 
 

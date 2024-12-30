@@ -84,7 +84,7 @@ class RuleDefault(ParseRule):
 
 class RuleNNVoice(ParseRule):
     STEOS_PITCH = 0.2
-    STEOS_SPEED = 0.75
+    STEOS_SPEED = 1
 
 
 class RuleProcessing(RuleDefault):
