@@ -2,6 +2,13 @@ from story.actors import DynamicActor
 
 from universe.audio.parse_rule import RuleDefault
 
+SOUND_TEMPLATE = '''[Sound]
+msg = {code}
+duration = 2
+{attenuation}
+Priority = -6'''
+
+
 class PilotLine(object):
     def __init__(self, code, ru_text, parse_rule=None):
         self.code = code
@@ -35,6 +42,12 @@ class PilotLine(object):
 
     def is_static_from_root(self):
         return self.parse_rule.is_static_from_root()
+
+    def get_sound(self, attenuation):
+        return SOUND_TEMPLATE.format(
+            code=self.code,
+            attenuation=attenuation,
+        )
 
     def get_static_file(self):
         return self.parse_rule.get_static_file(self.ru_text)

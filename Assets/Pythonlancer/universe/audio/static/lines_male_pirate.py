@@ -172,7 +172,7 @@ LINES = [
     L('gcs_dockrequest_jumpgatedelayed_01-', 'Мы не единственные, кто движется к', R.RuleEndObject),
     L('gcs_dockrequest_jumpgateopen_01-', 'Ребята, доступ открыт, движемся к', R.RuleEndObject),
     L('gcs_dockrequest_jumpgateopenafterdelay_01-', 'Доступ получен, теперь наш черёд'),
-    L('gcs_dockrequest_request_01+', 'Мне нужно', R.RuleEndThing),
+    L('gcs_dockrequest_request_01+', 'Мне нужно провести', R.RuleEndThing),
     L('gcs_dockrequest_request_02+', 'Я запрашиваю', R.RuleEndThing),
     L('gcs_dockrequest_thankshelp_01-', 'спасибо за помощь', R.RuleContinueRequest),
     L('gcs_dockrequest_thisourstop_01-', 'Так, здесь наша остановка'),
@@ -296,7 +296,6 @@ LINES = [
     # L('gcs_refer_faction_br_m_short', ),
 
     L('gcs_refer_base_testbase-', 'Станция Т+эрра', R.RuleBase),
-    L('gcs_refer_system_testsystem-', 'Сист+ема Ом+ега-13', R.RuleSystem),
     L('gcs_gen_commodity_gold', 'з+олото', R.RuleCommodity),
     L('gcs_refer_faction_rh_short', 'Р+эйнланд', R.RuleFaction),
     L('gcs_refer_faction_rx_short', 'Г+ессенцы', R.RuleFaction),

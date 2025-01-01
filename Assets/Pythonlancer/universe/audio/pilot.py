@@ -1,4 +1,4 @@
-from universe.audio.base_pilot import SignedVoice
+from universe.audio.base_pilot import SystemIdentifiedVoice
 
 from universe.audio.static import space_pilot as space_pilot_static
 from universe.audio.static.lines_male_military import LINES as male_mil_lines
@@ -15,7 +15,7 @@ STATIC_ILL01 = 'pilot_f_ill_m01'
 STATIC_ILL02 = 'pilot_f_ill_m02'
 
 
-class ShipVoice(SignedVoice):
+class ShipVoice(SystemIdentifiedVoice):
     VOICE_DATA = space_pilot_static.VOICE_DATA
     MVOICE_AUDIO_PROP = space_pilot_static.MVOICE_AUDIO_PROP
     MVOICE_MISSION_PROP = space_pilot_static.MVOICE_MISSION_PROP
@@ -60,7 +60,7 @@ class MilitaryFour(ShipVoice):
 
 
 class MilitaryFive(ShipVoice):
-    STEOS_ID = 206  #"Cerys an Craite Witcher
+    STEOS_ID = 206  # Cerys an Craite Witcher
     FOLDER = 'pilot05'
     STATIC_KIND = STATIC_LEG_FEMALE
     IS_MALE = False
@@ -68,7 +68,7 @@ class MilitaryFive(ShipVoice):
 
 
 class PirateOne(ShipVoice):
-    STEOS_ID = 10067
+    STEOS_ID = 10067  # monolith stalker
     FOLDER = 'pilot06'
     STATIC_KIND = STATIC_ILL01
     ATTENUATION = -12
@@ -76,7 +76,7 @@ class PirateOne(ShipVoice):
 
 
 class PirateTwo(ShipVoice):
-    STEOS_ID = 296
+    STEOS_ID = 296  # Bandit 1 stalker
     FOLDER = 'pilot07'
     STATIC_KIND = STATIC_ILL01
     ATTENUATION = -12

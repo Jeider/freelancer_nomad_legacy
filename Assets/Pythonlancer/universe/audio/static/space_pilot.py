@@ -6,12 +6,6 @@ duration = 3
 Priority = -6
 
 [Sound]
-msg = gcs_refer_system_testsystem-
-duration = 3
-{attenuation}
-Priority = -6
-
-[Sound]
 msg = mod_refer_base_freeport-
 duration = 3
 {attenuation}

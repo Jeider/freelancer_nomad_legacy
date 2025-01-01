@@ -3,17 +3,28 @@ class UniverseRoot(object):
     def __init__(self):
         self.systems_list = []
         self.systems_db = {}
+        self.temp_systems_list = []
+        self.temp_systems_db = {}
         self.post_init_completed = False
 
     def add_system(self, system):
-        self.systems_list.append(system)
-        self.systems_db[system.NAME] = system
+        self.temp_systems_list.append(system)
+        self.temp_systems_db[system.NAME] = system
+        if system.CONTENT:
+            self.systems_list.append(system)
+            self.systems_db[system.NAME] = system
 
     def get_systems(self):
         if not self.post_init_completed:
             raise Exception('Systems is not post initialized')
 
         return self.systems_list
+
+    def get_all_systems(self):
+        if not self.post_init_completed:
+            raise Exception('Systems is not post initialized')
+
+        return self.temp_systems_list
 
     def init_jumpgates(self):
         for system in self.systems_list:

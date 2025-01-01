@@ -50,6 +50,7 @@ def main():
     ]
 
     if core.has_story:
+        # Should be obsolete
         story_files = [
             ('audio_ingame.ini', core.audio.get_ingame_sounds_ini()),
             ('audio_ingame.xml', core.audio.get_ingame_sounds_xml()),

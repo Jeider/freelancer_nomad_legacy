@@ -16,7 +16,7 @@ INITIAL_SHIP_INFOCARD_ID = 110000
 
 class LancerCore(object):
 
-    def __init__(self, enable_story=True, write=True):
+    def __init__(self, enable_story=True, write=True, story=True):
         self.write = write
 
         self.last_equip_string_id = INITIAL_EQUIP_STRING_ID
@@ -29,7 +29,7 @@ class LancerCore(object):
         self.shiparch = ShiparchManager(self)
         self.population = PopulationManager(self)
         self.universe = UniverseManager(self)
-        self.story = StoryManager(self)
+        self.story = StoryManager(self) if story else None
 
         self.enable_story = enable_story
         #
@@ -55,3 +55,7 @@ class LancerCore(object):
     @property
     def has_story(self):
         return self.enable_story
+
+
+def get_core():
+    return LancerCore(write=False, story=False)

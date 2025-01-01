@@ -308,8 +308,9 @@ class RuleBase(RuleDefault):
     SUBFOLDER = SUBFOLDER_BASE
 
 
-class RuleSystem(RuleDefault):
+class RuleSystem(RuleProcessing):
     SUBFOLDER = SUBFOLDER_SYSTEM
+    TEXT_TEMPLATE = 'к пункту система {text}'
 
 
 class RuleCommodity(RuleDefault):

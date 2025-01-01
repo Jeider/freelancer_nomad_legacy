@@ -23,6 +23,17 @@ mission_type = unlawful, lawful
 sort = 99.500000
 vignette_type = open'''
 
+SYSTEM_TEMPLATE = '''[system]
+nickname = {nickname}
+file = systems_mod\{folder}\{nickname}.ini
+pos = {navmap_pos}
+msg_id_prefix = {msg_prefix}
+visit = 0
+strid_name = {ids_name}
+ids_info = {ids_info}
+NavMapScale = {navmap_scale}
+'''
+
 MULTI_VIGNETTE_ZONE_DRIFT = 6000
 
 
@@ -31,6 +42,9 @@ class System(object):
     CONTENT = None
     TEMPLATE_NAME = None
     ALLOW_SYNC = False
+    NAVMAP_POS = '0, 0'
+    NAVMAP_SCALE = 1.0
+    SYSTEM_FOLDER = None
 
     INTERIOR_DEFAULT_SUBFOLDER = None
 
@@ -99,6 +113,9 @@ distance = {tlr_distance}
         self.lawful_connections = []
 
         self.keys = []
+
+        self.ids_name = 196618
+        self.ids_info = 196618
 
         if self.CONTENT is not None:
             self.init_content()
@@ -191,6 +208,17 @@ distance = {tlr_distance}
         system_content.extend(self.get_mission_vignettes())
 
         return DIVIDER.join(system_content)
+
+    def get_universe_definition(self):
+        return SYSTEM_TEMPLATE.format(
+            nickname=self.NAME,
+            folder=self.SYSTEM_FOLDER,
+            msg_prefix=self.get_system_msg(),
+            navmap_pos=self.NAVMAP_POS,
+            navmap_scale=self.NAVMAP_SCALE,
+            ids_name=self.ids_name,
+            ids_info=self.ids_info,
+        )
 
     def get_random_hacker_panel(self):
         return self.universe_manager.get_random_hacker_panel()
@@ -450,6 +478,14 @@ distance = {tlr_distance}
 
     def get_point_rotate(self, name):
         return self.template.get_item_rotate(name)
+
+    @classmethod
+    def get_system_msg(cls):
+        return f'gcs_refer_system_{cls.NAME}'
+
+    @classmethod
+    def get_system_msg_relative(cls):
+        return f'gcs_refer_system_{cls.NAME}-'
 
 
 class RheinlandFirst(object):

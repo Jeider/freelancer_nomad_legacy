@@ -57,9 +57,9 @@ class UniverseManager:
 
     def load_systems(self):
         for system in System.subclasses:
+            system = system(self)
+            self.universe_root.add_system(system)
             if system.CONTENT:
-                system = system(self)
-                self.universe_root.add_system(system)
                 self.loadouts += system.loadouts
                 self.asteroid_definitions += system.asteroid_definitions
                 self.templated_nebulas += system.templated_nebulas
@@ -131,8 +131,14 @@ class UniverseManager:
     def get_interior_definitions(self):
         return DIVIDER.join(self.interior_definitions)
 
+    def get_system_definitions(self):
+        return DIVIDER.join(system.get_universe_definition() for system in self.universe_root.get_all_systems())
+
     def get_universe_file_content(self):
-        return UniverseTemplate().format({'generated': self.get_interior_definitions()})
+        return UniverseTemplate().format({
+            'generated_bases': self.get_interior_definitions(),
+            'generated_systems': self.get_system_definitions(),
+        })
 
     def get_mbases_content(self):
         return DIVIDER.join(self.mbases_content)

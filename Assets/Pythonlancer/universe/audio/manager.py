@@ -1,3 +1,5 @@
+from core import get_core
+
 from universe.audio.pilot import ShipVoice
 from universe.audio.base_pilot import PilotVoice
 from universe.audio.dispatcher import StationDispatcher
@@ -16,6 +18,7 @@ class PilotManager:
 
     @classmethod
     def compile_pilots_ini(cls):
+        core = get_core()
         pilots: list[PilotVoice] = StationDispatcher.subclasses + ShipVoice.subclasses
         male_voices = []
         male_props = []
@@ -24,7 +27,7 @@ class PilotManager:
         mission_props = []
 
         for the_pilot in pilots:
-            pilot = the_pilot()
+            pilot = the_pilot(core)
             if not pilot.ENABLED:
                 continue
 
@@ -61,13 +64,16 @@ class PilotManager:
 
     @classmethod
     def prepare_pilots_audio(cls):
+        core = get_core()
         for a_pilot in ShipVoice.subclasses:
-            the_pilot = a_pilot()
+            the_pilot = a_pilot(core)
             TempPilot.prepare_temp_folders(the_pilot)
             TempPilot.fill_audio(the_pilot, skip=True)
 
             TempPilot.fill_files_for_xml(the_pilot)
             TempPilot.build_voice_xml(the_pilot, skip=True)
+
+            # return
 
     @classmethod
     def compile_pilots_audio(cls):
