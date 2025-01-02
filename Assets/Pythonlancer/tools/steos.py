@@ -47,9 +47,9 @@ class SteosVoice(object):
         return base64.b64decode(response.json()["fileContents"])
 
     @classmethod
-    def generate_ru_voice(cls, sound: Sound, voice_root: Path):
+    def generate_ru_voice(cls, sound: Sound, file_destination: Path):
         voice_bytes = cls.generate_voice_bytes(actor=sound.line.actor, text=sound.line.get_ru_clean_text())
-        with open(voice_root / f"{sound.name}.mp3", "wb") as fout:
+        with open(file_destination, "wb") as fout:
             fout.write(voice_bytes)
 
     @classmethod

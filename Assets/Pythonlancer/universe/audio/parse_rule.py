@@ -87,6 +87,11 @@ class RuleNNVoice(ParseRule):
     STEOS_SPEED = 1
 
 
+class RuleNNVoiceHigh(ParseRule):
+    STEOS_PITCH = 0.3
+    STEOS_SPEED = 1.1
+
+
 class RuleProcessing(RuleDefault):
     TEXT_TEMPLATE = '{text}'
 

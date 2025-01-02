@@ -26,6 +26,9 @@ XML_FOLDERS = [
     # 'echo_m08',
     # 'echo_m08_female',
     # 'echo_m08_player',
+    'echo_m13',
+    'echo_m13_female',
+    'echo_m13_player',
     # "pilot01",
     # "pilot05",
     # "pilot06",
@@ -39,7 +42,7 @@ XML_FOLDERS = [
     # "dispatcher01",
     # "dispatcher02",
     # "dispatcher03",
-    "nnvoice",
+    # "nnvoice",
 ]
 STORY_XML_TEMPLATE = '{file}.utf.xml'
 STORY_UTF_TEMPLATE = '{file}.utf'
@@ -100,5 +103,10 @@ class AudioFolder:
 
         xml_path.write_text(voice.get_xml(), encoding='utf-8')
 
+        # TODO: Steos broken after merging with generic space audio
         for sound in voice.sounds:
-            steos.SteosVoice.generate_ru_voice(voice_root=sounds_path, sound=sound)
+            file_destination = sounds_path / f"{sound.name}.mp3"
+            if file_destination.exists():
+                continue
+
+            steos.SteosVoice.generate_ru_voice(file_destination=file_destination, sound=sound)

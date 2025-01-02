@@ -1,7 +1,7 @@
 from text.dividers import SINGLE_DIVIDER
 
 from audio.sound import SpaceSound, CutsceneSound
-from audio.voice import Voice
+from audio.voice import MaleVoice, FemaleVoice, TrentVoice
 
 
 class MissionSegment(object):
@@ -123,6 +123,7 @@ class StoryMission(object):
     CUTSCENES = []
     MISSION_TITLE = None
     MISSION_INDEX = None
+    SYNC_SPACE = False
 
     STYLES = '''
 .line_name {
@@ -248,21 +249,39 @@ class StoryMission(object):
     def get_alias(self):
         return f'mission{self.MISSION_INDEX}'
 
+    def get_male_voice_root(self):
+        return f'echo_m{self.MISSION_INDEX:02d}'
+
+    def get_female_voice_root(self):
+        return f'echo_m{self.MISSION_INDEX:02d}_female'
+
+    def get_player_voice_root(self):
+        return f'echo_m{self.MISSION_INDEX:02d}_player'
+
+    def get_voice_root_for_sound(self, sound):
+        if sound.line.actor.is_male():
+            return self.get_male_voice_root()
+        if sound.line.actor.is_female():
+            return self.get_female_voice_root()
+        if sound.line.actor.is_player():
+            return self.get_player_voice_root()
+        raise Exception('unknown voice root exception')
+
     def get_male_space_voice(self):
-        return Voice(
-            voice_name=f'echo_m{self.MISSION_INDEX:02d}',
+        return MaleVoice(
+            voice_name=self.get_male_voice_root(),
             sounds=[sound for sound in self.space.get_sounds() if sound.line.actor.is_male()],
         )
 
     def get_female_space_voice(self):
-        return Voice(
-            voice_name=f'echo_m{self.MISSION_INDEX:02d}_female',
+        return FemaleVoice(
+            voice_name=self.get_female_voice_root(),
             sounds=[sound for sound in self.space.get_sounds() if sound.line.actor.is_female()],
         )
 
     def get_trent_space_voice(self):
-        return Voice(
-            voice_name=f'echo_m{self.MISSION_INDEX:02d}_player',
+        return TrentVoice(
+            voice_name=self.get_player_voice_root(),
             sounds=[sound for sound in self.space.get_sounds() if sound.line.actor.is_player()],
         )
 

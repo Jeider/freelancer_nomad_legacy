@@ -1,5 +1,7 @@
 from jinja_templates.jinja_manager import JinjaTemplateManager
 
+from managers.script import ScriptManager
+
 from story.ingame.gameplay import *  # initialize mission files
 from story.ingame.ingame_mission import IngameMission
 
@@ -19,16 +21,17 @@ class StoryManager:
 
         self.missions = []
 
-        tpl_manager = JinjaTemplateManager()
+        self.tpl_manager = JinjaTemplateManager()
+        self.script = ScriptManager()
 
         self.thorns = []
         self.ship_loadouts = []
 
         for mission_class in IngameMission.subclasses:
             print(mission_class)
-            mission = mission_class(universe_root)
+            mission = mission_class(full_script=self.script, universe_root=universe_root)
             self.missions.append(mission)
-            content = tpl_manager.get_result(mission.get_template(), mission.get_context())
+            content = self.tpl_manager.get_result(mission.get_template(), mission.get_context())
             self.thorns.extend(mission.ingame_thorns)
 
             npc_shiparchs = []
@@ -54,6 +57,9 @@ class StoryManager:
             DataFolder.sync_story_ships_loadouts(loadouts)
 
         for thorn in self.thorns:
-            content = tpl_manager.get_result(thorn.get_template(), thorn.get_context())
+            content = self.tpl_manager.get_result(thorn.get_template(), thorn.get_context())
             if self.core.write:
                 DataFolder.sync_story_ingame_thorn(thorn.get_name(), content)
+
+        if self.core.write:
+            self.script.write_script_sounds()

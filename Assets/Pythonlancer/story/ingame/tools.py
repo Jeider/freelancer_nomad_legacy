@@ -9,6 +9,7 @@ from text.dividers import SINGLE_DIVIDER, DIVIDER
 
 OBJ_TYPE_TEMPLATE = 'type = rep_inst, {system}, {string_id}, {string_id}, {pos_x}, {pos_y}, {pos_z}, {target_nickname}'
 NAVMARKER_TYPE_TEMPLATE = 'type = navmarker, {system}, {string_id}, {string_id}, {pos_x}, {pos_y}, {pos_z}'
+ETHER_COMM_TEMPLATE = 'Act_EtherComm = {voice_root}, {string_id}, Player, {line}, -1, {comm_appearance}'
 
 FAIL_TLR = 90000  # вы не активировали торговый путь
 FAIL_TARGET = 90001  # точка назначения
@@ -35,7 +36,7 @@ GOTO_NO_CRUISE = 'goto_no_cruise'
 GOTO_MODES = (GOTO, GOTO_CRUISE, GOTO_NO_CRUISE)
 
 
-class Nag(object):
+class Nag:
     NAG_OFF = 'Act_NagOff = {nag_name}'
     NAG_OBJ_TOWARDS = 'Act_NagDistTowards = OBJ, {nag_name}, nag_voice, {obj_name}, {fail_id}, {range}, NAG_ALWAYS'
     NAG_OBJ_LEAVING = 'Act_NagDistLeaving = {nag_name}, nag_voice, {obj_name}, {fail_id}, {range}'
@@ -127,7 +128,7 @@ class Nag(object):
         return self.get_leaving_nag(nag_name, target, FAIL_LEAVE_COMBAT, self.COMBAT_RANGE, nag_always=False)
 
 
-class Target(object):
+class Target:
     def get_nn_type(self, string_id):
         raise NotImplementedError
 
@@ -424,7 +425,6 @@ class RelPos(object):
 
     def get_ini(self):
         return f'{self.deg}, {self.target_name}, {self.radius}'
-
 
 
 class Ship(Target):
@@ -801,3 +801,24 @@ class NNObj(object):
         ]
         params_line = ", ".join(path_params)
         return f'Act_NNPath = {params_line}'
+
+
+class Script:
+    def __init__(self, msn_script):
+        self.msn_script = msn_script
+
+    def get_ether_comm(self, sound):
+        return ETHER_COMM_TEMPLATE.format(
+            voice_root=self.msn_script.get_voice_root_for_sound(sound),
+            string_id=1,
+            line=sound.get_nickname(),
+            comm_appearance=sound.line.actor.get_comm_appearance(),
+        )
+
+        # ETHER_COMM_TEMPLATE = 'Act_EtherComm = {voice_root}, {string_id}, Player, {line}, -1, {comm_appearance}'
+    def space_dialog(self, start=0, end=99999):
+        comms = []
+        for sound in self.msn_script.space.get_sounds():
+            if sound.line.index >= start and sound.line.index <= end:
+                comms.append(self.get_ether_comm(sound))
+        return SINGLE_DIVIDER.join(comms)

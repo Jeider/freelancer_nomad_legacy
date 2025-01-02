@@ -358,12 +358,16 @@ class JumpableObject(StaticObject):
             gate_tunnel=self.system.JUMP_EFFECT.GATE_TUNNEL
         )
 
+    def get_msg_id_prefix(self):
+        return self.get_target_system().get_system_msg()
+
     def get_inspace_parameters(self):
         params = super().get_inspace_parameters()
         params.update({
             'jump_effect': self.get_jump_effect(),
             'reputation': self.FACTION,
             'goto': self.get_goto(),
+            'msg_id_prefix': self.get_msg_id_prefix(),
         })
         return params
 

@@ -1,4 +1,4 @@
-from story.ingame.tools import NNObj, Ship, Nag
+from story.ingame.tools import NNObj, Ship, Nag, Script
 
 from text.dividers import DIVIDER
 
@@ -9,6 +9,7 @@ class IngameMission(object):
     FILE = None
     NPC_FILE = 'npcships'
     STATIC_NPCSHIPS = None
+    SCRIPT_INDEX = None
 
     subclasses = []
 
@@ -16,11 +17,19 @@ class IngameMission(object):
         super().__init_subclass__(**kwargs)
         cls.subclasses.append(cls)
 
-    def __init__(self, universe_root):
+    def __init__(self, full_script, universe_root):
+        self.full_script = full_script
         self.universe_root = universe_root
         self.points: dict = self.get_all_points()
         self.nn_objectives = self.get_nn_objectives()
         self.nag = Nag()
+
+        self.script = None
+        if self.full_script and self.SCRIPT_INDEX:
+            self.script = Script(
+                msn_script=self.full_script.get_mission_by_index(self.SCRIPT_INDEX)
+            )
+
         self.ingame_thorns = self.get_ingame_thorns()
         if not self.FOLDER:
             raise Exception('Folder should be defined for %s' % self.__class__.__name__)
@@ -83,9 +92,12 @@ class IngameMission(object):
         return DIVIDER.join([nn.get_definition() for nn in self.nn_objectives])
 
     def get_initial_context(self) -> dict:
-        return {
+        context = {
             'nag': self.nag,
         }
+        if self.script:
+            context['script'] = self.script
+        return context
 
     def get_objects_definitions(self):
         """for template"""

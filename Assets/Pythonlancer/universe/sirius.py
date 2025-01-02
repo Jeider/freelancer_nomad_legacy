@@ -480,7 +480,7 @@ class om13(system.System):
     NAME = 'om13'
     RU_NAME = 'Ом+ега-13'
 
-    SYSTEM_FOLDER = ''
+    SYSTEM_FOLDER = 'OMEGA13'
     NAVMAP_POS = '15, 13'
     NAVMAP_SCALE = 1
 

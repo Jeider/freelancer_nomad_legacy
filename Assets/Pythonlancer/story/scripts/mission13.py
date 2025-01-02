@@ -239,6 +239,7 @@ class Mission13(Msn13, script.StoryMission):
         Msn13SuccessCutscene,
     ]
     SPACE_CLASS = Msn13Space
+    SYNC_SPACE = True
 
     MISSION_TITLE = 'Миссия 13. Финал'
 

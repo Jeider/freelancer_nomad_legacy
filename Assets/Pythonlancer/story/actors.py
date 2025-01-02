@@ -40,7 +40,7 @@ class Actor(SteosInterface):
     NAME = None
     RU_NAME = None
     NAME_ID = None
-    COMM_APPEARANCE = None
+    COMM_APPEARANCE = ''
     CUTSCENE_APPEARANCE = ''
     SPACE_VOICE = None
     STEOS_ID = None
@@ -77,6 +77,10 @@ class Actor(SteosInterface):
     @classmethod
     def is_juni(cls):  # надеюсь не пригодится
         return cls.TYPE == ACTOR_JUNI
+
+    @classmethod
+    def get_comm_appearance(cls):
+        return cls.COMM_APPEARANCE
 
 
 class Trent(Actor):
@@ -293,7 +297,7 @@ class Mandrake(Actor):
     RU_NAME = 'Мандрейк'
     TYPE = ACTOR_MALE
     NAME = 'mandrake'
-    # COMM_APPEARANCE = ''
+    COMM_APPEARANCE = 'ge_male7_head, sc_scientist1_body'
     CUTSCENE_APPEARANCE = 'mandrake'
     STEOS_ID = 214
     STEOS_PITCH = -0.5

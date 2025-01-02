@@ -128,11 +128,13 @@ def test_voices():
 def test_steos():
     # SteosVoice.prepare_temp_path()
 
-    PilotManager.prepare_pilots_audio()
 
-    return
+    #
+    # PilotManager.prepare_pilots_audio()
+    #
+    # return
 
-    the_pilot = pilot.MilitaryFive()
+    the_pilot = nnvoice.NNVoice()
 
     TempPilot.prepare_temp_folders(the_pilot)
     TempPilot.fill_audio(the_pilot, skip=True)
@@ -177,12 +179,11 @@ def test_steos():
 
 
     return
-    # text = 'Фрилансер альфа один деш один. Это станция Магдеб+ург. Расскажите цель своей миссии'
-    # SteosVoice.generate_test_sound(actors.King, text, 'demo')
 
 
 def generate_story_voices():
     script_manager = ScriptManager()
+    # import pdb;pdb.set_trace()
     for msn in script_manager.get_missions():
         for voice in msn.get_voices():
             audio_folder.AudioFolder.compile_story_voice_to_xml(voice)
@@ -224,6 +225,7 @@ ACTIONS = {
     'dump_system': dump_system,
     'compile_pilots_ini': compile_pilots_ini,
     'compile_pilots_audio': compile_pilots_audio,
+    'generate_story_voices': generate_story_voices,
 }
 
 

@@ -1,6 +1,6 @@
 from universe.audio.base_pilot import PilotVoice
 from universe.audio.pilot_line import PilotLine as L
-from universe.audio.parse_rule import RuleNNVoice
+from universe.audio.parse_rule import RuleNNVoice, RuleNNVoiceHigh
 
 
 class NNVoice(PilotVoice):
@@ -38,7 +38,7 @@ class NNVoice(PilotVoice):
         # L('cmsn_accepted', '', RuleNNVoice),
         L('component_destroyed', 'Компонент корабля уничтожен', RuleNNVoice),
         L('countermeasure_dropper_destroyed', 'Постановщик помех уничтожен', RuleNNVoice),
-        L('danger', 'Опасность!', RuleNNVoice),
+        L('danger', 'Внимание, опасность!', RuleNNVoiceHigh),
         L('mines_detected', 'Обнаружены мины!', RuleNNVoice),
         L('deactivated', 'Деактивирован', RuleNNVoice),
         L('destination_reached', 'Достигнута точка назначения', RuleNNVoice),
@@ -159,7 +159,25 @@ class NNVoice(PilotVoice):
         L('info_incoming_hostiles', 'Обнаружены приближающиеся противники', RuleNNVoice),
         # L('gen_msn_complete', '', RuleNNVoice),
         # L('gen_msn_failed', '', RuleNNVoice),
+
+        L('mod_got_key_roid_miner', 'Получен ключ от рудокопа', RuleNNVoice),
+        L('mod_got_key_station', 'Получен ключ от станции', RuleNNVoice),
+        L('mod_got_key_factory', 'Получен ключ от фабрики', RuleNNVoice),
+        L('mod_got_key_gas_miner', 'Получен ключ от газодобытчика', RuleNNVoice),
+        L('mod_got_key_battleship', 'Получен ключ от линкора', RuleNNVoice),
+
+        L('mod_kgb_shield_10min', 'Ост+алось 10 минут до активации щита К+ёнигсберга', RuleNNVoice),
+        L('mod_kgb_shield_9min', 'Ост+алось 9 минут до активации щита К+ёнигсберга', RuleNNVoice),
+        L('mod_kgb_shield_8min', 'Ост+алось 8 минут до активации щита К+ёнигсберга', RuleNNVoice),
+        L('mod_kgb_shield_7min', 'Ост+алось 7 минут до активации щита К+ёнигсберга', RuleNNVoice),
+        L('mod_kgb_shield_6min', 'Ост+алось 6 минут до активации щита К+ёнигсберга', RuleNNVoice),
+        L('mod_kgb_shield_5min', 'Ост+алось 5 минут до активации щита К+ёнигсберга', RuleNNVoice),
+        L('mod_kgb_shield_4min', 'Ост+алось 4 минуты до активации щита К+ёнигсберга', RuleNNVoice),
+        L('mod_kgb_shield_3min', 'Ост+алось три минуты до активации щита К+ёнигсберга', RuleNNVoice),
+        L('mod_kgb_shield_2min', 'Ост+алось две минуты до активации щита К+ёнигсберга', RuleNNVoice),
+        L('mod_kgb_shield_1min', 'Ост+алось одна минута до активации щита К+ёнигсберга', RuleNNVoice),
+        L('mod_kgb_shield_30sec', 'Ост+алось 30 секунд до активации щита К+ёнигсберга', RuleNNVoice),
     ]
-    # STEOS_ID = 549  # Filatova
-    STEOS_ID = 219  # Yennifer
+    # STEOS_ID = 549  # Atomic Heart, Filatova
+    STEOS_ID = 219  # Witcher, Yennifer
     FOLDER = 'nnvoice'
