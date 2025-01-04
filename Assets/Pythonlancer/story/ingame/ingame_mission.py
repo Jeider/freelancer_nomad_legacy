@@ -1,4 +1,4 @@
-from story.ingame.tools import NNObj, Ship, Nag, Script
+from story.ingame.tools import Nag, Script, Trigger, Cond
 
 from text.dividers import DIVIDER
 
@@ -48,7 +48,7 @@ class IngameMission(object):
         return {f'thorn_{thn.get_name()}': thn for thn in self.ingame_thorns}
 
     def get_system(self, system_name):
-        return self.universe_root.get_system_by_name(system_name)
+        return self.universe_root.get_all_system_by_name(system_name)
 
     def get_point(self, point_name):
         return self.points[point_name]
@@ -116,6 +116,8 @@ class IngameMission(object):
         context.update(self.get_ingame_thorns_context())
         context['nn_objectives_list'] = self.get_all_nn_objectives_content()
         context['objects_definitions'] = self.get_objects_definitions()
+        context['trigger'] = Trigger()
+        context['cond'] = Cond()
         # print(context.keys())
         return context
 

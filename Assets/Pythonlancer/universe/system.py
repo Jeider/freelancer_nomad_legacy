@@ -1,3 +1,5 @@
+import pathlib
+
 from universe.content.system_object import SystemObject
 from universe.content.main_objects import RawText, TradeConnection, JumpableObject, DockableObject, StaticObject
 from universe.content import zones
@@ -6,7 +8,7 @@ from universe.content import interior
 from universe.content import population
 from universe import connection
 
-from text.dividers import DIVIDER
+from text.dividers import SINGLE_DIVIDER, DIVIDER
 
 from tools.tracks import Tracks
 from tools.system_template import SystemTemplateLoader
@@ -25,7 +27,7 @@ vignette_type = open'''
 
 SYSTEM_TEMPLATE = '''[system]
 nickname = {nickname}
-file = systems_mod\{folder}\{nickname}.ini
+file = {systems_root}\{folder}\{nickname}.ini
 pos = {navmap_pos}
 msg_id_prefix = {msg_prefix}
 visit = 0
@@ -35,9 +37,22 @@ NavMapScale = {navmap_scale}
 '''
 
 MULTI_VIGNETTE_ZONE_DRIFT = 6000
+VISIT_DEFAULT = 0
+VISIT_STORY = 128
+
+STORY_CONTENT_DIVIDER = 'nickname = divider'
 
 
-class System(object):
+class SiriusSystem:
+    subclasses = []
+
+    def __init_subclass__(cls, **kwargs):
+        super().__init_subclass__(**kwargs)
+        cls.subclasses.append(cls)
+
+
+
+class System:
     NAME = ''
     CONTENT = None
     TEMPLATE_NAME = None
@@ -45,6 +60,9 @@ class System(object):
     NAVMAP_POS = '0, 0'
     NAVMAP_SCALE = 1.0
     SYSTEM_FOLDER = None
+    SYSTEMS_ROOT = 'SYSTEMS_MOD'
+    IS_STORY = False
+    VISIT = 0
 
     INTERIOR_DEFAULT_SUBFOLDER = None
 
@@ -68,12 +86,6 @@ distance = {tlr_distance}
     JUMP_EFFECT = None
 
     ENABLE_POPULATION = True
-
-    subclasses = []
-
-    def __init_subclass__(cls, **kwargs):
-        super().__init_subclass__(**kwargs)
-        cls.subclasses.append(cls)
 
     def __init__(self, universe_manager):
         self.universe_manager = universe_manager
@@ -117,11 +129,17 @@ distance = {tlr_distance}
         self.ids_name = 196618
         self.ids_info = 196618
 
-        if self.CONTENT is not None:
-            self.init_content()
+        self.process_content()
 
-    def init_content(self):
-        self.process_template()
+    def process_content(self):
+        if self.have_dynamic_content():
+            self.process_template()
+            self.init_dynamic_content()
+
+    def have_dynamic_content(self):
+        return self.CONTENT is not None
+
+    def init_dynamic_content(self):
 
         for item in self.CONTENT.__dict__.values():
             if not isinstance(item, type):
@@ -166,7 +184,7 @@ distance = {tlr_distance}
             if jumpable_item.CONNECTION_KIND == connection.CONNECTION_LAWFUL:
                 self.lawful_connections.append(jumpable_item.target_system)
 
-    def get_content(self):
+    def get_dynamic_content(self):
         system_content = []
 
         for raw_text in self.raw_texts:
@@ -209,9 +227,13 @@ distance = {tlr_distance}
 
         return DIVIDER.join(system_content)
 
+    def get_content(self):
+        return self.get_dynamic_content()
+
     def get_universe_definition(self):
         return SYSTEM_TEMPLATE.format(
             nickname=self.NAME,
+            systems_root=self.SYSTEMS_ROOT,
             folder=self.SYSTEM_FOLDER,
             msg_prefix=self.get_system_msg(),
             navmap_pos=self.NAVMAP_POS,
@@ -488,52 +510,95 @@ distance = {tlr_distance}
         return f'gcs_refer_system_{cls.NAME}-'
 
 
-class RheinlandFirst(object):
+class RheinlandFirst:
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_RH
 
     FIRST_LAWFUL_POPULATION_CLASS = population.RheinlandLegalPopulation
     FIRST_UNLAWFUL_POPULATION_CLASS = population.RheinlandPiratePopulation
 
 
-class RheinlandSecond(object):
+class RheinlandSecond:
     SECOND_LAWFUL_POPULATION_CLASS = population.RheinlandLegalPopulation
     SECOND_UNLAWFUL_POPULATION_CLASS = population.RheinlandPiratePopulation
 
 
-class LibertyFirst(object):
+class LibertyFirst:
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_LI
 
     FIRST_LAWFUL_POPULATION_CLASS = population.LibertyLegalPopulation
     FIRST_UNLAWFUL_POPULATION_CLASS = population.LibertyPiratePopulation
 
 
-class LibertySecond(object):
+class LibertySecond:
     SECOND_LAWFUL_POPULATION_CLASS = population.LibertyLegalPopulation
     SECOND_UNLAWFUL_POPULATION_CLASS = population.LibertyPiratePopulation
 
 
-class BretoniaFirst(object):
+class BretoniaFirst:
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_BR
 
     FIRST_LAWFUL_POPULATION_CLASS = population.BretoniaLegalPopulation
     FIRST_UNLAWFUL_POPULATION_CLASS = population.BretoniaPiratePopulation
 
 
-class BretoniaSecond(object):
+class BretoniaSecond:
     SECOND_LAWFUL_POPULATION_CLASS = population.BretoniaLegalPopulation
     SECOND_UNLAWFUL_POPULATION_CLASS = population.BretoniaPiratePopulation
 
 
-class KusariFirst(object):
+class KusariFirst:
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_KU
 
     FIRST_LAWFUL_POPULATION_CLASS = population.KusariLegalPopulation
     FIRST_UNLAWFUL_POPULATION_CLASS = population.KusariPiratePopulation
 
 
-class KusariSecond(object):
+class KusariSecond:
     SECOND_LAWFUL_POPULATION_CLASS = population.KusariLegalPopulation
     SECOND_UNLAWFUL_POPULATION_CLASS = population.KusariPiratePopulation
 
 
+class StorySystem(System):
+    DIRECT_TEMPLATE_NAME = None
+    SYSTEMS_ROOT = 'SPECIAL'
 
+    ENABLE_POPULATION = False
+
+    VISIT = VISIT_STORY
+    IS_STORY = True
+
+    def get_direct_template_source(self):
+        current_path = pathlib.Path().resolve()
+        return current_path.parent.parent / 'DATA' / 'UNIVERSE' / self.SYSTEMS_ROOT / self.SYSTEM_FOLDER
+
+    def process_template(self):
+        if self.DIRECT_TEMPLATE_NAME is None:
+            raise Exception('unknown direct template')
+
+        self.template = SystemTemplateLoader.get_template(
+            self.DIRECT_TEMPLATE_NAME,
+            source_path=self.get_direct_template_source(),
+        )
+
+    def get_static_content(self):
+        content = SystemTemplateLoader.get_template_text_content(
+            self.DIRECT_TEMPLATE_NAME,
+            source_path=self.get_direct_template_source(),
+        )
+
+        new_lines = []
+
+        for line in content:
+            if line.strip() == STORY_CONTENT_DIVIDER:
+                break
+            new_lines.append(line)
+
+        del new_lines[-1]
+
+        return ''.join(new_lines)
+
+    def get_content(self):
+        return self.get_static_content()
+
+    def process_content(self):
+        self.process_template()

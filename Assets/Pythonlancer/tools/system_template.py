@@ -105,8 +105,12 @@ class SystemTemplateLoader(object):
         return current_path.parent.parent / 'DATA' / 'UNIVERSE' / 'GENERATION_DATA' / TEMPLATES_FOLDER
 
     @staticmethod
-    def get_template_text_content(template_name):
-        templates_path = SystemTemplateLoader.get_system_templates_path()
+    def get_template_text_content(template_name, source_path=None):
+        templates_path = (
+            source_path
+            if source_path
+            else SystemTemplateLoader.get_system_templates_path()
+        )
         template_file = open(templates_path / TEMPLATE_FILE_FORMAT.format(template_name))
         file_content = template_file.readlines()
         template_file.close()
@@ -146,8 +150,8 @@ class SystemTemplateLoader(object):
         return parsed_objects
 
     @staticmethod
-    def get_template(template_name):
-        template_text_content = SystemTemplateLoader.get_template_text_content(template_name)
+    def get_template(template_name, source_path=None):
+        template_text_content = SystemTemplateLoader.get_template_text_content(template_name, source_path)
         parsed_content = SystemTemplateLoader.parse_template(template_text_content)
         template = SystemTemplate(template_name, parsed_content)
         return template

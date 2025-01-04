@@ -5,7 +5,7 @@ from templates.hardcoded_inis.root import DockKeyTemplate
 
 from universe.root import UniverseRoot
 from universe.sirius import *  # initialize system objects
-from universe.system import System
+from universe.system import SiriusSystem
 from universe.base import Base, EQUIP_CLASSES_PER_LEVEL
 from universe.markets import EquipDealer, ShipDealer
 
@@ -56,10 +56,10 @@ class UniverseManager:
         return self.universe_root
 
     def load_systems(self):
-        for system in System.subclasses:
+        for system in SiriusSystem.subclasses:
             system = system(self)
             self.universe_root.add_system(system)
-            if system.CONTENT:
+            if system.have_dynamic_content():
                 self.loadouts += system.loadouts
                 self.asteroid_definitions += system.asteroid_definitions
                 self.templated_nebulas += system.templated_nebulas
@@ -172,24 +172,19 @@ class UniverseManager:
         DataFolder.sync_mbases(self.get_mbases_file_content())
         DataFolder.sync_dock_key(self.get_dock_key_file_content())
 
-        for system in self.universe_root.get_systems():
+        for system in self.universe_root.get_all_systems():
             if not system.ALLOW_SYNC:
                 continue
 
-            # print(f'sync sys {system.NAME}')
-            DataFolder.sync_system_mod(system.NAME, system.SYSTEM_FOLDER, system.get_content())
+            DataFolder.sync_system(system.NAME, system.SYSTEMS_ROOT, system.SYSTEM_FOLDER, system.get_content())
 
-        # print('sync solar gen loadouts')
         DataFolder.sync_solar_gen_loadouts(self.get_system_loadouts())
 
         for definition in self.asteroid_definitions:
-            # print(f'sync ast definition {definition.NAME}')
             DataFolder.sync_asteroid_definition(definition.get_file_name(), definition.zone.SUBFOLDER, definition.get_file_content())
 
         for tpl_nebula in self.templated_nebulas:
-            # print(f'sync templated nebula {tpl_nebula.FILE_NAME}')
             DataFolder.sync_templated_nebula(tpl_nebula.get_file_name(), tpl_nebula.GENERATED_NEBULA_SUBFOLDER, tpl_nebula.get_file_content())
 
         for file_name, content in self.interior_files.items():
-            # print(f'sync interior {file_name}')
             DataFolder.sync_interior(file_name, content)

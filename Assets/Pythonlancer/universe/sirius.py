@@ -32,7 +32,7 @@ from universe.systems import tau37 as tau37_content
 from universe.systems import rh_kgb as rh_kgb_content
 
 
-class rh_mnh(system.RheinlandFirst, system.System):
+class rh_mnh(system.RheinlandFirst, system.System, system.SiriusSystem):
     NAME = 'rh_mnh'
     TEMPLATE_NAME = 'rh_mnh'
     RU_NAME = 'Мюнхен'
@@ -46,7 +46,7 @@ class rh_mnh(system.RheinlandFirst, system.System):
     NAVMAP_SCALE = 1.8
 
 
-class rh_biz(system.RheinlandFirst, system.System):
+class rh_biz(system.RheinlandFirst, system.System, system.SiriusSystem):
     NAME = 'rh_biz'
     TEMPLATE_NAME = 'rh_biz'
     RU_NAME = 'Б+исмарк'
@@ -60,7 +60,7 @@ class rh_biz(system.RheinlandFirst, system.System):
     NAVMAP_SCALE = 1.5
 
 
-class rh_stut(system.RheinlandFirst, system.System):
+class rh_stut(system.RheinlandFirst, system.System, system.SiriusSystem):
     NAME = 'rh_stut'
     TEMPLATE_NAME = 'rh_stut'
     RU_NAME = 'Шт+утгарт'
@@ -74,7 +74,7 @@ class rh_stut(system.RheinlandFirst, system.System):
     NAVMAP_SCALE = 1.5
 
 
-class rh_ber(system.RheinlandFirst, system.System):
+class rh_ber(system.RheinlandFirst, system.System, system.SiriusSystem):
     NAME = 'rh_ber'
     TEMPLATE_NAME = 'rh_ber'
     RU_NAME = 'Берл+ин'
@@ -88,7 +88,7 @@ class rh_ber(system.RheinlandFirst, system.System):
     NAVMAP_SCALE = 1.5
 
 
-class sig8(system.RheinlandFirst, system.System):
+class sig8(system.RheinlandFirst, system.System, system.SiriusSystem):
     NAME = 'sig8'
     TEMPLATE_NAME = 'sig8'
     RU_NAME = 'С+игма-8'
@@ -102,7 +102,7 @@ class sig8(system.RheinlandFirst, system.System):
     NAVMAP_SCALE = 1.5
 
 
-class om15(system.RheinlandFirst, system.System):
+class om15(system.RheinlandFirst, system.System, system.SiriusSystem):
     NAME = 'om15'
     TEMPLATE_NAME = 'om15'
     RU_NAME = 'Ом+ега-15'
@@ -116,7 +116,7 @@ class om15(system.RheinlandFirst, system.System):
     NAVMAP_SCALE = 1.25
 
 
-class sig13(system.RheinlandFirst, system.LibertySecond, system.System):
+class sig13(system.RheinlandFirst, system.LibertySecond, system.System, system.SiriusSystem):
     NAME = 'sig13'
     TEMPLATE_NAME = 'sig13'
     RU_NAME = 'С+игма-13'
@@ -130,7 +130,7 @@ class sig13(system.RheinlandFirst, system.LibertySecond, system.System):
     NAVMAP_SCALE = 2
 
 
-class li_cal(system.LibertyFirst, system.System):
+class li_cal(system.LibertyFirst, system.System, system.SiriusSystem):
     NAME = 'li_cal'
     TEMPLATE_NAME = 'li_cal'
     RU_NAME = 'Калиф+орния'
@@ -144,7 +144,7 @@ class li_cal(system.LibertyFirst, system.System):
     NAVMAP_SCALE = 1.5
 
 
-class sig22(system.LibertyFirst, system.BretoniaSecond, system.System):
+class sig22(system.LibertyFirst, system.BretoniaSecond, system.System, system.SiriusSystem):
     NAME = 'sig22'
     TEMPLATE_NAME = 'sig22'
     RU_NAME = 'С+игма-22'
@@ -158,7 +158,7 @@ class sig22(system.LibertyFirst, system.BretoniaSecond, system.System):
     NAVMAP_SCALE = 2
 
 
-class li_mnh(system.LibertyFirst, system.System):
+class li_mnh(system.LibertyFirst, system.System, system.SiriusSystem):
     NAME = 'li_mnh'
     TEMPLATE_NAME = 'li_mnh'
     RU_NAME = 'Нь+ю-Й+орк'
@@ -172,7 +172,7 @@ class li_mnh(system.LibertyFirst, system.System):
     NAVMAP_SCALE = 1.5
 
 
-class li_for(system.LibertyFirst, system.System):
+class li_for(system.LibertyFirst, system.System, system.SiriusSystem):
     NAME = 'li_for'
     TEMPLATE_NAME = 'li_for'
     RU_NAME = 'Ф+орбс'
@@ -186,7 +186,7 @@ class li_for(system.LibertyFirst, system.System):
     NAVMAP_SCALE = 1.5
 
 
-class sig17(system.LibertyFirst, system.System):
+class sig17(system.LibertyFirst, system.System, system.SiriusSystem):
     NAME = 'sig17'
     TEMPLATE_NAME = 'sig17'
     RU_NAME = 'С+игма-17'
@@ -202,7 +202,7 @@ class sig17(system.LibertyFirst, system.System):
     NAVMAP_SCALE = 1.5
 
 
-class li_col(system.LibertyFirst, system.System):
+class li_col(system.LibertyFirst, system.System, system.SiriusSystem):
     NAME = 'li_col'
     TEMPLATE_NAME = 'li_col'
     RU_NAME = 'Кол+умбия'
@@ -216,7 +216,7 @@ class li_col(system.LibertyFirst, system.System):
     NAVMAP_SCALE = 1.5
 
 
-class tau31(system.LibertyFirst, system.System):
+class tau31(system.LibertyFirst, system.System, system.SiriusSystem):
     NAME = 'tau31'
     TEMPLATE_NAME = 'tau31'
     RU_NAME = 'Т+ау-31'
@@ -230,7 +230,7 @@ class tau31(system.LibertyFirst, system.System):
     NAVMAP_SCALE = 2
 
 
-class br_wrw(system.BretoniaFirst, system.System):
+class br_wrw(system.BretoniaFirst, system.System, system.SiriusSystem):
     NAME = 'br_wrw'
     TEMPLATE_NAME = 'br_wrw'
     RU_NAME = 'У+орик'
@@ -244,7 +244,7 @@ class br_wrw(system.BretoniaFirst, system.System):
     NAVMAP_SCALE = 1.5
 
 
-class tau29(system.BretoniaFirst, system.System):
+class tau29(system.BretoniaFirst, system.System, system.SiriusSystem):
     NAME = 'tau29'
     TEMPLATE_NAME = 'tau29'
     RU_NAME = 'Тау-29'
@@ -258,7 +258,7 @@ class tau29(system.BretoniaFirst, system.System):
     NAVMAP_SCALE = 1.7
 
 
-class br_cam(system.BretoniaFirst, system.System):
+class br_cam(system.BretoniaFirst, system.System, system.SiriusSystem):
     NAME = 'br_cam'
     TEMPLATE_NAME = 'br_cam'
     RU_NAME = 'К+ембридж'
@@ -272,7 +272,7 @@ class br_cam(system.BretoniaFirst, system.System):
     NAVMAP_SCALE = 2
 
 
-class tau37(system.BretoniaFirst, system.System):
+class tau37(system.BretoniaFirst, system.System, system.SiriusSystem):
     NAME = 'tau37'
     TEMPLATE_NAME = 'tau37'
     RU_NAME = 'Тау-37'
@@ -288,7 +288,7 @@ class tau37(system.BretoniaFirst, system.System):
     NAVMAP_SCALE = 2
 
 
-class br_avl(system.BretoniaFirst, system.System):
+class br_avl(system.BretoniaFirst, system.System, system.SiriusSystem):
     NAME = 'br_avl'
     TEMPLATE_NAME = 'br_avl'
     RU_NAME = 'Авал+он'
@@ -302,7 +302,7 @@ class br_avl(system.BretoniaFirst, system.System):
     NAVMAP_SCALE = 2
 
 
-class sig42(system.BretoniaFirst, system.KusariSecond, system.System):
+class sig42(system.BretoniaFirst, system.KusariSecond, system.System, system.SiriusSystem):
     NAME = 'sig42'
     TEMPLATE_NAME = 'sig42'
     RU_NAME = 'С+ириус'
@@ -316,7 +316,7 @@ class sig42(system.BretoniaFirst, system.KusariSecond, system.System):
     NAVMAP_SCALE = 2
 
 
-class tau23(system.BretoniaFirst, system.KusariSecond, system.System):
+class tau23(system.BretoniaFirst, system.KusariSecond, system.System, system.SiriusSystem):
     NAME = 'tau23'
     TEMPLATE_NAME = 'tau23'
     RU_NAME = 'Тау-23'
@@ -330,7 +330,7 @@ class tau23(system.BretoniaFirst, system.KusariSecond, system.System):
     NAVMAP_SCALE = 2
 
 
-class ku_ksu(system.KusariFirst, system.System):
+class ku_ksu(system.KusariFirst, system.System, system.SiriusSystem):
     NAME = 'ku_ksu'
     TEMPLATE_NAME = 'ku_ksu'
     RU_NAME = 'Кус+ю'
@@ -344,7 +344,7 @@ class ku_ksu(system.KusariFirst, system.System):
     NAVMAP_SCALE = 1.5
 
 
-class tau4(system.KusariFirst, system.System):
+class tau4(system.KusariFirst, system.System, system.SiriusSystem):
     NAME = 'tau4'
     TEMPLATE_NAME = 'tau4'
     RU_NAME = 'Тау-4'
@@ -360,7 +360,7 @@ class tau4(system.KusariFirst, system.System):
     NAVMAP_SCALE = 1.75
 
 
-class ku_hns(system.KusariFirst, system.System):
+class ku_hns(system.KusariFirst, system.System, system.SiriusSystem):
     NAME = 'ku_hns'
     TEMPLATE_NAME = 'ku_hns'
     RU_NAME = 'Хонс+ю'
@@ -374,7 +374,7 @@ class ku_hns(system.KusariFirst, system.System):
     NAVMAP_SCALE = 1.5
 
 
-class ku_tgk(system.KusariFirst, system.System):
+class ku_tgk(system.KusariFirst, system.System, system.SiriusSystem):
     NAME = 'ku_tgk'
     TEMPLATE_NAME = 'ku_tgk'
     RU_NAME = 'Ом+ега-3'
@@ -388,7 +388,7 @@ class ku_tgk(system.KusariFirst, system.System):
     NAVMAP_SCALE = 1.5
 
 
-class ku_hkd(system.KusariFirst, system.System):
+class ku_hkd(system.KusariFirst, system.System, system.SiriusSystem):
     NAME = 'ku_hkd'
     TEMPLATE_NAME = 'ku_hkd'
     RU_NAME = 'Хокк+айдо'
@@ -402,7 +402,7 @@ class ku_hkd(system.KusariFirst, system.System):
     NAVMAP_SCALE = 1.5
 
 
-class om7(system.KusariFirst, system.RheinlandSecond, system.System):
+class om7(system.KusariFirst, system.RheinlandSecond, system.System, system.SiriusSystem):
     NAME = 'om7'
     TEMPLATE_NAME = 'om7'
     RU_NAME = 'Ом+ега-7'
@@ -416,7 +416,7 @@ class om7(system.KusariFirst, system.RheinlandSecond, system.System):
     NAVMAP_SCALE = 2
 
 
-class rh_kgb(system.RheinlandFirst, system.System):
+class rh_kgb(system.RheinlandFirst, system.System, system.SiriusSystem):
     NAME = 'rh_kgb'
     TEMPLATE_NAME = 'rh_kgb'
     RU_NAME = 'К+ёнигсберг'
@@ -429,9 +429,13 @@ class rh_kgb(system.RheinlandFirst, system.System):
     JUMP_EFFECT = jump_effect.Dark
     NAVMAP_POS = '10, 7'
     NAVMAP_SCALE = 1
+    VISIT = system.VISIT_STORY
 
 
-class co_cur(system.System):
+# EDGE SYSTEMS
+
+
+class co_cur(system.System, system.SiriusSystem):
     NAME = 'co_cur'
     RU_NAME = 'Кюрос+ао'
 
@@ -440,7 +444,7 @@ class co_cur(system.System):
     NAVMAP_SCALE = 1.5
 
 
-class co_mad(system.System):
+class co_mad(system.System, system.SiriusSystem):
     NAME = 'co_mad'
     RU_NAME = 'Мадр+ид'
 
@@ -449,7 +453,7 @@ class co_mad(system.System):
     NAVMAP_SCALE = 1.5
 
 
-class co_val(system.System):
+class co_val(system.System, system.SiriusSystem):
     NAME = 'co_val'
     RU_NAME = 'Вал+енсия'
 
@@ -458,7 +462,7 @@ class co_val(system.System):
     NAVMAP_SCALE = 10
 
 
-class co_och(system.System):
+class co_och(system.System, system.SiriusSystem):
     NAME = 'co_och'
     RU_NAME = 'Очо-Р+иос'
 
@@ -467,7 +471,7 @@ class co_och(system.System):
     NAVMAP_SCALE = 1.25
 
 
-class co_cad(system.System):
+class co_cad(system.System, system.SiriusSystem):
     NAME = 'co_cad'
     RU_NAME = 'Кад+из'
 
@@ -476,7 +480,7 @@ class co_cad(system.System):
     NAVMAP_SCALE = 1.5
 
 
-class om13(system.System):
+class om13(system.System, system.SiriusSystem):
     NAME = 'om13'
     RU_NAME = 'Ом+ега-13'
 
@@ -485,7 +489,7 @@ class om13(system.System):
     NAVMAP_SCALE = 1
 
 
-class tau26(system.System):
+class tau26(system.System, system.SiriusSystem):
     NAME = 'tau26'
     RU_NAME = 'Т+ау-26'
 
@@ -494,7 +498,7 @@ class tau26(system.System):
     NAVMAP_SCALE = 1.75
 
 
-class om11(system.System):
+class om11(system.System, system.SiriusSystem):
     NAME = 'om11'
     RU_NAME = 'Ом+ега-11'
 
@@ -503,7 +507,7 @@ class om11(system.System):
     NAVMAP_SCALE = 2
 
 
-class br_uls(system.System):
+class br_uls(system.System, system.SiriusSystem):
     NAME = 'br_uls'
     RU_NAME = '+Ольстер'
 
@@ -512,7 +516,7 @@ class br_uls(system.System):
     NAVMAP_SCALE = 1.5
 
 
-class upsilon1(system.System):
+class upsilon1(system.System, system.SiriusSystem):
     NAME = 'upsilon1'
     RU_NAME = 'Больш+ой +Ипсилон'
 
@@ -521,7 +525,7 @@ class upsilon1(system.System):
     NAVMAP_SCALE = 2
 
 
-class upsilon2(system.System):
+class upsilon2(system.System, system.SiriusSystem):
     NAME = 'upsilon2'
     RU_NAME = 'М+алый +Ипсилон'
 
@@ -530,7 +534,7 @@ class upsilon2(system.System):
     NAVMAP_SCALE = 1.25
 
 
-class omicron1(system.System):
+class omicron1(system.System, system.SiriusSystem):
     NAME = 'omicron1'
     RU_NAME = 'Больш+ой Омикр+он'
 
@@ -539,10 +543,33 @@ class omicron1(system.System):
     NAVMAP_SCALE = 2
 
 
-class omicron2(system.System):
+class omicron2(system.System, system.SiriusSystem):
     NAME = 'omicron2'
     RU_NAME = 'М+алый Омикр+он'
 
     SYSTEM_FOLDER = 'OMICRON_MINOR'
     NAVMAP_POS = '16, 10'
     NAVMAP_SCALE = 2
+
+
+# STORY ONLY
+
+class sphere2(system.StorySystem, system.SiriusSystem):
+    NAME = 'sphere2'
+    DIRECT_TEMPLATE_NAME = 'sph2_dev'
+    RU_NAME = 'Сфера'
+
+    ALLOW_SYNC = True
+
+    SYSTEM_FOLDER = 'SPHERE2'
+    NAVMAP_POS = '14.5, -1'
+
+class sphere2_inside(system.StorySystem, system.SiriusSystem):
+    NAME = 'sphere2_inside'
+    DIRECT_TEMPLATE_NAME = 'sph2_inside_dev'
+    RU_NAME = 'Сфера'
+
+    ALLOW_SYNC = True
+
+    SYSTEM_FOLDER = 'SPHERE2_INSIDE'
+    NAVMAP_POS = '14.5, -1.1'

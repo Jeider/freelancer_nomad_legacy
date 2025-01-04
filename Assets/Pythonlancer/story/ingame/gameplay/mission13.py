@@ -1,7 +1,6 @@
 import random
 
 from universe import sirius as S
-from universe.systems import sig8, rh_kgb, rh_mnh
 from story.ingame import ingame_mission
 from story.math import euler_to_quat
 from story import actors
@@ -19,3 +18,46 @@ class Misson13(ingame_mission.IngameMission):
     FOLDER = 'M13'
     FILE = 'm13'
     SCRIPT_INDEX = 13
+
+    def get_static_points(self):
+        sphere_points = [
+            # 'base1',
+            # 'gen1',
+            # 'gen2',
+        ]
+
+        sphere_solars = [
+            'gen1',
+            'gen2',
+            'gen3',
+            'lazer1',
+            'core1',
+            'core2',
+            'core3',
+            'core4',
+            'core5',
+            'core6',
+            'arm1',
+            'arm2',
+            'arm3',
+            'arm4',
+            'arm5',
+            'arm6',
+            'arm7',
+            'arm8',
+            'core_fx',
+            'krieg1',
+        ]
+
+        defined_points = []
+        for p in sphere_points:
+            defined_points.append(
+                Point(self, S.sphere2, p)
+            )
+
+        for sol in sphere_solars:
+            defined_points.append(
+                Solar(self, S.sphere2, sol),
+            )
+
+        return defined_points

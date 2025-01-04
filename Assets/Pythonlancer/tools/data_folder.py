@@ -46,8 +46,8 @@ class DataFolder(object):
         system_file.write_text(content, encoding='utf-8')
 
     @classmethod
-    def sync_system_mod(cls, system_name, system_folder, content):
-        system_file = cls.get_universe() / 'SYSTEMS_MOD' / system_folder / f'{system_name}.ini'
+    def sync_system(cls, system_name, system_root, system_folder, content):
+        system_file = cls.get_universe() / system_root / system_folder / f'{system_name}.ini'
         system_file.write_text(content, encoding='utf-8')
 
     @classmethod

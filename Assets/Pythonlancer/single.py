@@ -34,12 +34,17 @@ from story.cutscenes.mission9.yokohama import Msn9YokohamaCutsceneThorn
 
 from templates.solar.hacker_panel import HackerPanelManager, REL_TOP
 from templates.dockable import forbes_megafactory
+from templates.dockable import m13
 
 
 def test_placement():
-    base_class = forbes_megafactory.ForbesMegafactory
-    content = base_class().get_instance(new_space_object_name=None, move_to=None)
-    data_folder.DataFolder.sync_to_test_workspace(content, workspace_index='')
+    base_class = m13.RockfordGenerator
+    new_name = None
+    new_name = 'sph02_lazergen'
+    move_to = None
+    move_to = (-3500, 500, -3500)
+    content = base_class().get_instance(new_space_object_name=new_name, move_to=move_to)
+    data_folder.DataFolder.sync_to_test_workspace(content, workspace_index='0')
 
 
 def generate_hacker_panels():

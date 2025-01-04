@@ -1,5 +1,7 @@
 from random import randint
 
+from audio.sound import Sound
+
 from story.math import euler_to_quat
 from universe.content.system_object import Marker
 from universe.content.main_objects import Battleship, JumpableObject
@@ -248,6 +250,30 @@ class Solar(Target):
     def name(self):
         """for template"""
         return self.get_name()
+
+    def spawn(self):
+        return f'Act_SpawnSolar = {self.get_name()}'
+
+    def define(self, archetype, loadout=None, faction=None):
+        solar = [
+            '[MsnSolar]',
+            f'nickname = {self.name}',
+            f'position = {self.pos}',
+            f'orientation = {self.orient}',
+            f'archetype = {archetype}',
+            f'faction = {faction}' if faction else 'faction = fc_uk_grp',
+            'radius = 0',
+        ]
+        if loadout:
+            solar.append(f'loadout = {loadout}')
+
+        return SINGLE_DIVIDER.join(solar)
+
+    def destroy(self, mode='EXPLODE'):
+        return f'Act_Destroy = {self.name}, {mode}'
+
+    def fuse(self, fuse_name):
+        return f'Act_LightFuse = {self.name}, {fuse_name}'
 
 
 class Obj(Target):
@@ -806,8 +832,12 @@ class NNObj(object):
 class Script:
     def __init__(self, msn_script):
         self.msn_script = msn_script
+        self.used_lines = []
 
     def get_ether_comm(self, sound):
+        self.used_lines.append(
+            sound.line.index
+        )
         return ETHER_COMM_TEMPLATE.format(
             voice_root=self.msn_script.get_voice_root_for_sound(sound),
             string_id=1,
@@ -815,10 +845,71 @@ class Script:
             comm_appearance=sound.line.actor.get_comm_appearance(),
         )
 
-        # ETHER_COMM_TEMPLATE = 'Act_EtherComm = {voice_root}, {string_id}, Player, {line}, -1, {comm_appearance}'
-    def space_dialog(self, start=0, end=99999):
+    def lookup_single_sound(self, index) -> Sound:
+        for sound in self.msn_script.space.get_sounds():
+            if sound.line.index == index:
+                return sound
+
+        raise Exception(f'MSN {self.msn_script.MISSION_INDEX}. Comm with index {index} not found')
+
+    def line(self, index: int):
+        sound = self.lookup_single_sound(index)
+        return self.get_ether_comm(sound)
+
+    def dialog(self, start: int, end: int):
         comms = []
         for sound in self.msn_script.space.get_sounds():
             if sound.line.index >= start and sound.line.index <= end:
                 comms.append(self.get_ether_comm(sound))
+
+        if len(comms) == 0:
+            raise Exception(f'MSN {self.msn_script.MISSION_INDEX}. Dialog from {start} to {end} is not found in script')
+
         return SINGLE_DIVIDER.join(comms)
+
+    def ends(self, index, check=True):
+        if check and index not in self.used_lines:
+            raise Exception(f'MSN {self.msn_script.MISSION_INDEX}. Line {index} isnt used and cant be CommCompleted')
+        sound = self.lookup_single_sound(index)
+        return f'Cnd_CommComplete = {sound.get_nickname()}'
+
+
+class Trigger:
+
+    def new(self, name):
+        return SINGLE_DIVIDER.join([
+            '[Trigger]',
+            f'nickname = {name}',
+        ])
+
+    def next(self, next_name):
+        return SINGLE_DIVIDER.join([
+            f'Act_ActTrig = {next_name}',
+            '',
+            '[Trigger]',
+            f'nickname = {next_name}',
+        ])
+
+    def turn(self, trigger):
+        return f'Act_ActTrig = {trigger}'
+
+    def delay(self, next_name, delay: float):
+        return SINGLE_DIVIDER.join([
+            f'Act_ActTrig = delay_{next_name}',
+            '',
+            '[Trigger]',
+            f'nickname = delay_{next_name}',
+            f'Cnd_Timer = {delay}',
+            self.turn(next_name),
+        ])
+
+
+class Cond:
+
+    def destroyed(self, name, count=None, kind=None):
+        params = [name]
+        if count:
+            params.append(str(count))
+        if kind:
+            params.append(kind)
+        return f'Cnd_Destroyed = {", ".join(params)}'
