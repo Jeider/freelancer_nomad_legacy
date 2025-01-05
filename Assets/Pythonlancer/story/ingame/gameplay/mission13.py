@@ -47,6 +47,17 @@ class Misson13(ingame_mission.IngameMission):
             'arm8',
             'core_fx',
             'krieg1',
+            'sph02_door02',
+            'sph02_door02_open',
+            'sph02_to_inside',
+            'inside_to_sph02',
+            'sph02_door03',
+            'sph02_door03_open',
+            'sph02_door03_close',
+        ]
+
+        inside_solars = [
+            'sph02_ins_airlock_exit',
         ]
 
         defined_points = []
@@ -58,6 +69,11 @@ class Misson13(ingame_mission.IngameMission):
         for sol in sphere_solars:
             defined_points.append(
                 Solar(self, S.sphere2, sol),
+            )
+
+        for sol in inside_solars:
+            defined_points.append(
+                Solar(self, S.sphere2_inside, sol),
             )
 
         return defined_points
