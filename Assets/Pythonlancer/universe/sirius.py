@@ -564,6 +564,7 @@ class sphere2(system.StorySystem, system.SiriusSystem):
     SYSTEM_FOLDER = 'SPHERE2'
     NAVMAP_POS = '14.5, -1'
 
+
 class sphere2_inside(system.StorySystem, system.SiriusSystem):
     NAME = 'sphere2_inside'
     DIRECT_TEMPLATE_NAME = 'sph2_inside_dev'
@@ -572,4 +573,15 @@ class sphere2_inside(system.StorySystem, system.SiriusSystem):
     ALLOW_SYNC = True
 
     SYSTEM_FOLDER = 'SPHERE2_INSIDE'
+    NAVMAP_POS = '14.5, -1.1'
+
+
+class asf_hq(system.StorySystem, system.SiriusSystem):
+    NAME = 'asf_hq'
+    DIRECT_TEMPLATE_NAME = 'asf_hq_dev'
+    RU_NAME = 'Энтерпрайз'
+
+    ALLOW_SYNC = True
+
+    SYSTEM_FOLDER = 'ASF_HQ'
     NAVMAP_POS = '14.5, -1.1'

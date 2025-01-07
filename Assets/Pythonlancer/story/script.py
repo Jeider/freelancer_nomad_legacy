@@ -232,7 +232,7 @@ class StoryMission(object):
             )
             content.append(scene_content)
         space_content = self.SPACE_CONTAINER_TEMPLATE.format(
-            lines=''.join(self.get_space_lines()),
+            lines=''.join(self.SPACE_CLASS.get_lines_for_script()),
         )
         content.append(space_content)
         return content

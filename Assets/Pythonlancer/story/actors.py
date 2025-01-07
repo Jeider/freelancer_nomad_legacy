@@ -129,6 +129,18 @@ class Darcy(Actor):
     STEOS_SPEED = 1.2
 
 
+class Kaitlyn(Actor):
+    RU_NAME = 'Кейтлин'
+    TYPE = ACTOR_FEMALE
+    NAME = 'kaytlin'
+    COMM_APPEARANCE = 'br_kaytlin_head, br_kaytlin_body'
+    STEOS_ID = 219
+    STEOS_PITCH = 0
+    STEOS_SPEED = 1.2
+
+
+
+
 class King(Actor):
     RU_NAME = 'Кинг'
     TYPE = ACTOR_MALE
@@ -184,6 +196,14 @@ class Kruger(Actor):
     RU_NAME = 'Крюгер'
     TYPE = ACTOR_MALE
     NAME = 'kruger'
+    COMM_APPEARANCE = 'li_captain_head, li_male_elite_body'
+    STEOS_ID = 10090
+
+
+class Omaha(Actor):
+    RU_NAME = 'Омаха'
+    TYPE = ACTOR_MALE
+    NAME = 'omaha'
     COMM_APPEARANCE = 'li_captain_head, li_male_elite_body'
     STEOS_ID = 10090
 

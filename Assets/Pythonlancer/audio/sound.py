@@ -21,7 +21,7 @@ class VoiceLine(object):
         self.comment = comment
 
     def get_ru_replaced_text(self):
-        return self.ru.replace('(', self.COMMENT_START).replace(')', self.COMMENT_END)
+        return self.ru.replace('(', self.COMMENT_START).replace(')', self.COMMENT_END).replace('+', '')
 
     def get_ru_story_text(self):
         content = self.get_ru_replaced_text()
