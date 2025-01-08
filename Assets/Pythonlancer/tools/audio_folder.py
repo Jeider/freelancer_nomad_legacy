@@ -26,9 +26,12 @@ XML_FOLDERS = [
     # 'echo_m08',
     # 'echo_m08_female',
     # 'echo_m08_player',
-    'echo_m13',
-    'echo_m13_female',
-    'echo_m13_player',
+    'echo_m12',
+    'echo_m12_female',
+    'echo_m12_player',
+    # 'echo_m13',
+    # 'echo_m13_female',
+    # 'echo_m13_player',
     # "pilot01",
     # "pilot05",
     # "pilot06",
@@ -99,11 +102,9 @@ class AudioFolder:
         if xml_path.exists():
             if not skip:
                 raise Exception(f'Voice {voice.voice_name} is already exist. Remove it if you want to create it again')
-            return
 
         xml_path.write_text(voice.get_xml(), encoding='utf-8')
 
-        # TODO: Steos broken after merging with generic space audio
         for sound in voice.sounds:
             file_destination = sounds_path / f"{sound.name}.mp3"
             if file_destination.exists():

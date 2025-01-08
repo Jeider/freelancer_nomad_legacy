@@ -53,14 +53,17 @@ class Actor(SteosInterface):
         super().__init_subclass__(**kwargs)
         cls.subclasses.append(cls)
 
-    def get_steos_id(self):
-        return self.STEOS_ID
+    @classmethod
+    def get_steos_id(cls):
+        return cls.STEOS_ID
 
-    def get_steos_pitch(self):
-        return self.STEOS_PITCH
+    @classmethod
+    def get_steos_pitch(cls):
+        return cls.STEOS_PITCH
 
-    def get_steos_speed(self):
-        return self.STEOS_SPEED
+    @classmethod
+    def get_steos_speed(cls):
+        return cls.STEOS_SPEED
 
     @classmethod
     def is_male(cls):
@@ -88,7 +91,7 @@ class Trent(Actor):
     TYPE = ACTOR_TRENT
     NAME = 'trent'
     COMM_APPEARANCE = 'pi_pirate5_head, player_body, player_commhelmet'
-    STEOS_ID = 2
+    STEOS_ID = 210
     STEOS_PITCH = -0.5
     STEOS_SPEED = 1.13
 
@@ -117,6 +120,7 @@ class Hatcher(Actor):
     STEOS_ID = 217
     STEOS_PITCH = -1
     STEOS_SPEED = 1.2
+    SPACE_VOICE = 'pilot04'
 
 
 class Darcy(Actor):
@@ -145,6 +149,7 @@ class King(Actor):
     RU_NAME = 'Кинг'
     TYPE = ACTOR_MALE
     NAME = 'king'
+    COMM_APPEARANCE = 'li_scrote_head, li_scrote_body'
     STEOS_ID = 215
     STEOS_PITCH = 0
     STEOS_SPEED = 1.1
@@ -280,7 +285,7 @@ class Alaric(Actor):
     SPACE_VOICE = 'pilot_f_mil_m01'
     STEOS_ID = 204
     STEOS_PITCH = -0.5
-    STEOS_SPEED = 0.7
+    STEOS_SPEED = 1
 
 
 class Jacobo(Actor):

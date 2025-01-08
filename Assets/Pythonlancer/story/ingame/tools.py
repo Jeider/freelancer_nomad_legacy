@@ -9,6 +9,8 @@ from universe.content.main_objects import Battleship, JumpableObject
 from text.dividers import SINGLE_DIVIDER, DIVIDER
 
 
+DEFAULT_AFFILIATION = 'fc_uk_grp'
+
 OBJ_TYPE_TEMPLATE = 'type = rep_inst, {system}, {string_id}, {string_id}, {pos_x}, {pos_y}, {pos_z}, {target_nickname}'
 NAVMARKER_TYPE_TEMPLATE = 'type = navmarker, {system}, {string_id}, {string_id}, {pos_x}, {pos_y}, {pos_z}'
 ETHER_COMM_TEMPLATE = 'Act_EtherComm = {voice_root}, {string_id}, Player, {line}, -1, {comm_appearance}'
@@ -36,6 +38,9 @@ GOTO_CRUISE = 'goto_cruise'
 GOTO_NO_CRUISE = 'goto_no_cruise'
 
 GOTO_MODES = (GOTO, GOTO_CRUISE, GOTO_NO_CRUISE)
+
+def ini_boolean(boolval):
+    return 'true' if boolval else 'false'
 
 
 class Nag:
@@ -135,7 +140,6 @@ class Target:
         raise NotImplementedError
 
     def get_position(self):
-        print(self)
         raise NotImplementedError
 
     def get_rotate(self):
@@ -190,6 +194,18 @@ class Target:
 
         return f'GotoShip = {mode}, {self.get_name()}, {near}, true'
 
+    def inside_pos(self, range, obj='Player'):
+        return f'Cnd_DistVec = inside, {obj}, {self.pos}, {range}'
+
+    def outside_pos(self, range, obj='Player'):
+        return f'Cnd_DistVec = outside, {obj}, {self.pos}, {range}'
+
+    def inside_obj(self, range, obj='Player'):
+        raise NotImplementedError
+
+    def outside_obj(self, range, obj='Player'):
+        raise NotImplementedError
+
 
 class Point(Target):
     def __init__(self, mission, system_class, alias):
@@ -218,19 +234,48 @@ class Point(Target):
         )
 
 
-class Solar(Target):
+class DefinedStaticMixin:
 
-    def __init__(self, mission, system_class, alias):
-        self.mission = mission
-        self.system = self.mission.get_system(system_class.NAME)
-        self.alias = alias
-        self.marker = Marker(self.system, alias=self.alias)
+    def get_name(self):
+        raise NotImplementedError
 
-    def get_position(self):
-        return self.marker.get_position()
+    @property
+    def name(self):
+        """for template"""
+        return self.get_name()
 
-    def get_rotate(self):
-        return self.marker.get_rotate()
+    def destroy(self, mode='EXPLODE'):
+        return f'Act_Destroy = {self.name}, {mode}'
+
+    def fuse(self, fuse_name):
+        return f'Act_LightFuse = {self.name}, {fuse_name}'
+
+    def inside_obj(self, range, obj='Player'):
+        return f'Cnd_DistShip = inside, {obj}, {self.name}, {range}'
+
+    def outside_obj(self, range, obj='Player'):
+        return f'Cnd_DistShip = outside, {obj}, {self.name}, {range}'
+
+    def mark(self):
+        return f'Act_MarkObj = {self.name}, 1'
+
+    def unmark(self):
+        return f'Act_MarkObj = {self.name}, 0'
+
+    def invulnerable(self, godmode=True, damage_from_player=None, alive_percent=None):
+        params = [ini_boolean(godmode)]
+        if damage_from_player is not None:
+            params.append(ini_boolean(damage_from_player))
+
+            if alive_percent is not None:
+                params.append(alive_percent)
+
+        params_string = ", ".join(map(str, params))
+
+        return f"Act_Invulnerable = {self.get_name()}, {params_string}"
+
+
+class Solar(DefinedStaticMixin, Point):
 
     def get_name(self):
         return self.alias
@@ -246,34 +291,25 @@ class Solar(Target):
             target_nickname=self.get_name(),
         )
 
-    @property
-    def name(self):
-        """for template"""
-        return self.get_name()
-
     def spawn(self):
         return f'Act_SpawnSolar = {self.get_name()}'
 
-    def define(self, archetype, loadout=None, faction=None):
+    def define(self, archetype, loadout=None, faction=None, label=None):
         solar = [
             '[MsnSolar]',
             f'nickname = {self.name}',
             f'position = {self.pos}',
             f'orientation = {self.orient}',
             f'archetype = {archetype}',
-            f'faction = {faction}' if faction else 'faction = fc_uk_grp',
+            f'faction = {faction}' if faction else f'faction = {DEFAULT_AFFILIATION}',
             'radius = 0',
         ]
         if loadout:
             solar.append(f'loadout = {loadout}')
+        if label:
+            solar.append(f'label = {label}')
 
         return SINGLE_DIVIDER.join(solar)
-
-    def destroy(self, mode='EXPLODE'):
-        return f'Act_Destroy = {self.name}, {mode}'
-
-    def fuse(self, fuse_name):
-        return f'Act_LightFuse = {self.name}, {fuse_name}'
 
 
 class Obj(Target):
@@ -454,8 +490,6 @@ class RelPos(object):
 
 
 class Ship(Target):
-    DEFAULT_AFFILIATION = 'fc_uk_grp'
-
     def __init__(self, mission, name, count=1, npc=None, actor=None,
                  affiliation=None, jumper=False, labels=None,
                  rel_pos=None, relative_pos=False, relative_target='Player', relative_range=1000,
@@ -471,7 +505,7 @@ class Ship(Target):
         self.count = count
         self.npc = npc
         self.jumper = jumper
-        self.affiliation = affiliation or self.DEFAULT_AFFILIATION
+        self.affiliation = affiliation or DEFAULT_AFFILIATION
         self.rel_pos = rel_pos
         self.relative_pos = relative_pos
         self.relative_target = relative_target
@@ -731,14 +765,12 @@ class Ship(Target):
 
         return SINGLE_DIVIDER.join(members)
 
-    def invulnerable(self, godmode, damage_from_player=None, alive_percent=None, exclude=None):
+    def invulnerable(self, godmode=True, damage_from_player=None, alive_percent=None, exclude=None):
         members = []
         exclude = exclude or []
-        params = [
-            'true' if godmode else 'false',
-        ]
+        params = [ini_boolean(godmode)]
         if damage_from_player is not None:
-            params.append('true' if damage_from_player else 'false',)
+            params.append(ini_boolean(damage_from_player))
 
             if alive_percent is not None:
                 params.append(alive_percent)
@@ -875,6 +907,13 @@ class Script:
 
 
 class Trigger:
+    ALLOWED_VIBES = [
+        'REP_HOSTILE_MAXIMUM',
+        'REP_HOSTILE_THRESHOLD',
+        'REP_NEUTRAL',
+        'REP_FRIEND_THRESHOLD',
+        'REP_FRIEND_MAXIMUM',
+    ]
 
     def new(self, name):
         return SINGLE_DIVIDER.join([
@@ -903,6 +942,47 @@ class Trigger:
             self.turn(next_name),
         ])
 
+    def delay_direct(self, next_name, delay: float):
+        return SINGLE_DIVIDER.join([
+            f'Act_ActTrig = delay_{next_name}',
+            '',
+            '[Trigger]',
+            f'nickname = delay_{next_name}',
+            f'Cnd_Timer = {delay}',
+        ])
+
+    def vibe_label_ship(self, vibe, label, ship='Player'):
+        if vibe not in self.ALLOWED_VIBES:
+            raise Exception('unknown vibe %s' % vibe)
+
+        return SINGLE_DIVIDER.join([
+            f'Act_SetVibeLblToShip = {label}, {ship}, {vibe}',
+            f'Act_SetVibeShipToLbl = {ship}, {label}, {vibe}'
+        ])
+
+    def vibe_label(self, vibe, label1, label2):
+        if vibe not in self.ALLOWED_VIBES:
+            raise Exception('unknown vibe %s' % vibe)
+
+        return SINGLE_DIVIDER.join([
+            f'Act_SetVibeLbl = {label1}, {label2}, {vibe}',
+            f'Act_SetVibeLbl = {label2}, {label1}, {vibe}'
+        ])
+
+    def vibe_ship(self, vibe, ship1, ship2='Player', single=False):
+        if vibe not in self.ALLOWED_VIBES:
+            raise Exception('unknown vibe %s' % vibe)
+        actions = [
+            f'Act_SetVibe = {ship1}, {ship2}, {vibe}',
+        ]
+        if not single:
+            actions.append(
+                f'Act_SetVibe = {ship2}, {ship1}, {vibe}'
+            )
+
+        return SINGLE_DIVIDER.join(actions)
+
+
 
 class Cond:
 
@@ -913,3 +993,83 @@ class Cond:
         if kind:
             params.append(kind)
         return f'Cnd_Destroyed = {", ".join(params)}'
+
+
+class Direct:
+    def __init__(self, mission, systems):
+        self.mission = mission
+        self.systems = systems
+        self.sys_map = {sys.NAME: sys for sys in systems}
+        self.trigger = Trigger()
+
+    def get_point(self, system_name, alias):
+        return Point(self.mission, self.sys_map[system_name], alias)
+
+    def pos(self, system_name, alias):
+        return self.get_point(system_name, alias).pos
+
+    def orient(self, system_name, alias):
+        return self.get_point(system_name, alias).orient
+
+    def pos_orient(self, system_name, alias):
+        return self.get_point(system_name, alias).pos_orient
+
+    def inside_pos(self, system_name, alias, range, obj='Player'):
+        return self.get_point(system_name, alias).inside_pos(range, obj)
+
+    def outside_pos(self, system_name, alias, range, obj='Player'):
+        return self.get_point(system_name, alias).outside_pos(range, obj)
+
+    def next_cond_inside_pos(self, system_name, alias, range, obj='Player'):
+        return SINGLE_DIVIDER.join([
+            self.trigger.next(f'near_{alias}'),
+            self.get_point(system_name, alias).inside_pos(range, obj)
+        ])
+
+    def ol_goto(self, system_name, alias, ol_name, goto, near: int | None = None, avoidance: bool | None=None):
+        point = self.get_point(system_name, alias)
+        objlist = [
+            '[ObjList]',
+            f'nickname = {ol_name}',
+        ]
+        if avoidance:
+            objlist.append(f'avoidance = {ini_boolean(avoidance)}')
+        objlist.append(point.goto_vec(goto, near))
+        return SINGLE_DIVIDER.join(objlist)
+
+    def spawn_capital(self, system_name, alias, capital, ol=None):
+        point = self.get_point(system_name, alias)
+        return f'Act_SpawnShip = {capital.name}, {ol or "no_ol"}, {point.pos_orient}'
+
+    def spawn_ship(self, system_name, alias, ship, ol=None):
+        point = self.get_point(system_name, alias)
+        return f'{ship.spawn(ol)}, {point.pos_orient}'
+
+
+class Capital(DefinedStaticMixin):
+
+    def __init__(self, alias, ids_name, npc_ship_arch, faction=None, labels=None):
+        self.alias = alias
+        self.ids_name = ids_name
+        self.npc_ship_arch = npc_ship_arch
+        self.faction = faction or DEFAULT_AFFILIATION
+        self.labels = labels or []
+
+    def get_name(self):
+        return self.alias
+
+    def get_definition(self):
+        ship = [
+            '[NPC]',
+            f'nickname = npc_{self.name}',
+            f'affiliation = {self.faction}',
+            f'npc_ship_arch = {self.npc_ship_arch}',
+            f'individual_name = {self.ids_name}',
+            '',
+            '[MsnShip]',
+            f'nickname = {self.name}',
+            f'NPC = npc_{self.name}',
+        ]
+        for label in self.labels:
+            ship.append(f'label = {label}')
+        return SINGLE_DIVIDER.join(ship)

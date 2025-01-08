@@ -1,4 +1,4 @@
-from story.ingame.tools import Nag, Script, Trigger, Cond
+from story.ingame.tools import Nag, Script, Trigger, Cond, Direct
 
 from text.dividers import DIVIDER
 
@@ -10,6 +10,7 @@ class IngameMission(object):
     NPC_FILE = 'npcships'
     STATIC_NPCSHIPS = None
     SCRIPT_INDEX = None
+    DIRECT_SYSTEMS = []
 
     subclasses = []
 
@@ -56,6 +57,12 @@ class IngameMission(object):
     def get_system_obj_pos(self, system_class, point):
         return '{0}, {1}, {2}'.format(*self.get_system(system_class.NAME).get_point_pos(point))
 
+    def get_capital_ships(self):
+        return []
+
+    def get_capital_ships_content(self):
+        return {cap.name: cap for cap in self.get_capital_ships()}
+
     def get_real_objects(self):
         return {}
 
@@ -68,6 +75,7 @@ class IngameMission(object):
     def get_all_points(self):
         points = self.get_static_points_content()
         points.update(self.get_real_objects())
+        points.update(self.get_capital_ships_content())
         return points
 
     def get_ships(self):
@@ -106,6 +114,9 @@ class IngameMission(object):
         for ship in ships:
             content.append(ship.get_mission_npcs())
             content.append(ship.get_mission_ships())
+        capitals = self.get_capital_ships()
+        for capital in capitals:
+            content.append(capital.get_definition())
         return DIVIDER.join(content)
 
     def get_context(self):
@@ -118,6 +129,7 @@ class IngameMission(object):
         context['objects_definitions'] = self.get_objects_definitions()
         context['trigger'] = Trigger()
         context['cond'] = Cond()
+        context['direct'] = Direct(self, systems=self.DIRECT_SYSTEMS)
         # print(context.keys())
         return context
 

@@ -149,14 +149,13 @@ class BaseBretonia(object):
 class BaseKusari(object):
     SHIELD_WEAPON = gun.KusariShieldgun
     CONTRAIL = Contrail.CONTRAIL_KU
-    LIGHT = Light.SMALL_BLUE
+    LIGHT = Light.SMALL_ORANGE
 
 
 class BaseBorderWorld(object):
     SHIELD_WEAPON = gun.BorderWorldCorsairgun
     CONTRAIL = Contrail.CONTRAIL_CO
     LIGHT = Light.SMALL_PURPLE
-
 
 
 class RheinlandMainEquip(object):
@@ -348,6 +347,11 @@ class Junkers(UnlawfulFaction, RheinlandFleet, BaseRheinland, RheinlandPirateEqu
 
 class LibertyMain(LawfulFaction, LibertyFleet, BaseLiberty, LibertyMainEquip, Faction):
     CODE = 'li_grp'
+    WEAPON = gun.LibertyLightgun
+
+
+class ASF(LibertyMain):
+    CODE = 'asf_grp'
     WEAPON = gun.LibertyLightgun
 
 

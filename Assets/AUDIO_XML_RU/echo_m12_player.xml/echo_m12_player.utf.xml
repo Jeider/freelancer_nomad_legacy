@@ -16,10 +16,11 @@
 <test_voice name="0x9B80A741" type="file" filename="echo_m12_player\dx_m12_0190_trent.wav"/>
 <test_voice name="0xBBDDC840" type="file" filename="echo_m12_player\dx_m12_0220_trent.wav"/>
 <test_voice name="0xBBDD1046" type="file" filename="echo_m12_player\dx_m12_0240_trent.wav"/>
-<test_voice name="0xBB04A64A" type="file" filename="echo_m12_player\dx_m12_0480_trent.wav"/>
-<test_voice name="0x9B04A24B" type="file" filename="echo_m12_player\dx_m12_0490_trent.wav"/>
-<test_voice name="0x9B118349" type="file" filename="echo_m12_player\dx_m12_0510_trent.wav"/>
-<test_voice name="0xBB11CF4A" type="file" filename="echo_m12_player\dx_m12_0520_trent.wav"/>
-<test_voice name="0xBB10A740" type="file" filename="echo_m12_player\dx_m12_0580_trent.wav"/>
+<test_voice name="0xBBC9594E" type="file" filename="echo_m12_player\dx_m12_0360_trent.wav"/>
+<test_voice name="0xBBC8A140" type="file" filename="echo_m12_player\dx_m12_0380_trent.wav"/>
+<test_voice name="0x9B598149" type="file" filename="echo_m12_player\dx_m12_0710_trent.wav"/>
+<test_voice name="0xBAA18B48" type="file" filename="echo_m12_player\dx_m12_0900_trent.wav"/>
+<test_voice name="0xAF94C040" type="file" filename="echo_m12_player\dx_m12_1020_trent.wav"/>
+<test_voice name="0xAF95A84A" type="file" filename="echo_m12_player\dx_m12_1080_trent.wav"/>
 </UTF_ROOT>
 </UTFXML>
