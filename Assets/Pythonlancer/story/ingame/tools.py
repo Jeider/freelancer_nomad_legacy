@@ -1048,7 +1048,7 @@ class Direct:
 
 class Capital(DefinedStaticMixin):
 
-    def __init__(self, alias, ids_name, npc_ship_arch, faction=None, labels=None):
+    def __init__(self, alias, npc_ship_arch, ids_name=None, faction=None, labels=None):
         self.alias = alias
         self.ids_name = ids_name
         self.npc_ship_arch = npc_ship_arch
@@ -1064,12 +1064,16 @@ class Capital(DefinedStaticMixin):
             f'nickname = npc_{self.name}',
             f'affiliation = {self.faction}',
             f'npc_ship_arch = {self.npc_ship_arch}',
-            f'individual_name = {self.ids_name}',
+        ]
+        if self.ids_name:
+            ship.append(f'individual_name = {self.ids_name}')
+
+        ship.extend([
             '',
             '[MsnShip]',
             f'nickname = {self.name}',
             f'NPC = npc_{self.name}',
-        ]
+        ])
         for label in self.labels:
             ship.append(f'label = {label}')
         return SINGLE_DIVIDER.join(ship)

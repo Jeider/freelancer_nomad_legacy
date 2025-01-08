@@ -128,32 +128,48 @@ class Misson12(ingame_mission.IngameMission):
         omaha = {
             'npc_ship_arch': 'ms12_li_cruiser',
             'faction': 'asf_grp',
-            'labels': ['friend', 'omaha'],
+            'labels': ['friend', 'omaha', 'asf', 'li_cruiser'],
+        }
+        li_cruiser = {
+            'npc_ship_arch': 'ms12_li_cruiser',
+            'faction': 'asf_grp',
+            'labels': ['friend', 'asf', 'li_cruiser'],
         }
         ku_bship_assault = {
             'npc_ship_arch': 'ms12_ku_battleship_assault',
             'faction': 'or_grp',
-            'labels': ['enemy', 'ku_bship_assault'],
+            'labels': ['ku_bship_assault'],
         }
 
         return [
-            Capital('road_ku_bship', 1, **ku_bship),
-            Capital('road_li_dread', 1, **li_dread),
-            Capital('road_ku_destroyer1', 1, **ku_destroyer),
-            Capital('road_ku_destroyer2', 1, **ku_destroyer),
-            Capital('omaha1', 1, **omaha),
-            Capital('omaha2', 1, **omaha),
-            Capital('omaha3', 1, **omaha),
+            Capital('road_ku_bship', ids_name=1, **ku_bship),
+            Capital('road_li_dread', ids_name=1, **li_dread),
+            Capital('road_ku_destroyer1', ids_name=1, **ku_destroyer),
+            Capital('road_ku_destroyer2', ids_name=1, **ku_destroyer),
+            Capital('omaha1', ids_name=1, **omaha),
+            Capital('omaha2', ids_name=1, **omaha),
+            Capital('omaha3', ids_name=1, **omaha),
 
-            Capital('nagato', 1, **ku_bship),
+            Capital('nagato', ids_name=1, **ku_bship),
 
-            Capital('to_bush_ku_bship', 1, **ku_bship),
-            Capital('to_bush_li_dread', 1, **li_dread),
+            Capital('to_bush_ku_bship', ids_name=1, **ku_bship),
+            Capital('to_bush_li_dread', ids_name=1, **li_dread),
 
-            Capital('ku_assault1', 1, **ku_bship_assault),
-            Capital('ku_assault2', 1, **ku_bship_assault),
-            Capital('ku_assault3', 1, **ku_bship_assault),
+            Capital('ku_assault1', ids_name=1, **ku_bship_assault),
+            Capital('ku_assault2', ids_name=1, **ku_bship_assault),
+            Capital('ku_assault3', ids_name=1, **ku_bship_assault),
+
+            Capital('ku_cr_assault1', ids_name=1, **ku_destroyer),
+            Capital('ku_cr_assault2', ids_name=1, **ku_destroyer),
+            Capital('ku_cr_assault3', ids_name=1, **ku_destroyer),
+            Capital('ku_cr_assault4', ids_name=1, **ku_destroyer),
+
+            Capital('li_cr_defend1', ids_name=1, **li_cruiser),
+            Capital('li_cr_defend2', ids_name=1, **li_cruiser),
+
+
         ]
+
 
 
     def get_nn_objectives(self):
@@ -260,6 +276,83 @@ class Misson12(ingame_mission.IngameMission):
                     ship=ship.Hammerhead,
                     level=NPC.D6,
                     equip_map=EqMap(base_level=6),
+                )
+            ),
+
+            Ship(
+                self,
+                'ku_f_assault1',
+                count=5,
+                affiliation=faction.KusariMain.CODE,
+                system_class=S.asf_hq,
+                slide_x=-50,
+                labels=[
+                    'assault',
+                    'enemy_fighter',
+                    'enemy',
+                ],
+                npc=NPC(
+                    faction=faction.KusariMain,
+                    ship=ship.Dragon,
+                    level=NPC.D5,
+                    equip_map=EqMap(base_level=5),
+                )
+            ),
+            Ship(
+                self,
+                'ku_f_assault2',
+                count=5,
+                affiliation=faction.KusariMain.CODE,
+                system_class=S.asf_hq,
+                slide_x=-50,
+                labels=[
+                    'assault',
+                    'enemy_fighter',
+                    'enemy',
+                ],
+                npc=NPC(
+                    faction=faction.KusariMain,
+                    ship=ship.Drake,
+                    level=NPC.D5,
+                    equip_map=EqMap(base_level=5),
+                )
+            ),
+            Ship(
+                self,
+                'li_f_defend1',
+                count=5,
+                affiliation=faction.ASF.CODE,
+                system_class=S.asf_hq,
+                slide_x=-50,
+                labels=[
+                    'li_fighter',
+                    'asf',
+                    'friend',
+                ],
+                npc=NPC(
+                    faction=faction.LibertyMain,
+                    ship=ship.Defender,
+                    level=NPC.D5,
+                    equip_map=EqMap(base_level=5),
+                )
+            ),
+            Ship(
+                self,
+                'li_f_defend2',
+                count=5,
+                affiliation=faction.ASF.CODE,
+                system_class=S.asf_hq,
+                slide_x=-50,
+                labels=[
+                    'li_fighter',
+                    'asf',
+                    'friend',
+                ],
+                npc=NPC(
+                    faction=faction.LibertyMain,
+                    ship=ship.Defender,
+                    level=NPC.D5,
+                    equip_map=EqMap(base_level=5),
                 )
             ),
         ]
