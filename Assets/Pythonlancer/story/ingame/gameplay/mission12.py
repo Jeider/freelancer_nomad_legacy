@@ -19,7 +19,7 @@ level = d10
 ship_archetype = ku_gunboat
 pilot = cruiser_default
 state_graph = CRUISER
-npc_class = lawful, CRUISER, d22
+npc_class = lawful, CRUISER, d5
 
 [NPCShipArch]
 nickname = ms12_ku_destroyer
@@ -28,7 +28,7 @@ level = d10
 ship_archetype = ku_destroyer
 pilot = cruiser_default
 state_graph = CRUISER
-npc_class = lawful, CRUISER, d22
+npc_class = lawful, CRUISER, d5
 
 [NPCShipArch]
 nickname = ms12_ku_battleship
@@ -37,7 +37,7 @@ level = d10
 ship_archetype = ku_battleship
 pilot = cruiser_default
 state_graph = CRUISER
-npc_class = lawful, CRUISER, d22
+npc_class = lawful, CRUISER, d5
 
 [NPCShipArch]
 nickname = ms12_ku_battleship_assault
@@ -46,7 +46,7 @@ level = d10
 ship_archetype = ku_battleship_m13_assault
 pilot = cruiser_default
 state_graph = CRUISER
-npc_class = lawful, CRUISER, d22
+npc_class = lawful, CRUISER, d5
 
 
 
@@ -57,7 +57,7 @@ level = d10
 ship_archetype = li_dreadnought
 pilot = cruiser_default
 state_graph = CRUISER
-npc_class = lawful, CRUISER, d22
+npc_class = lawful, CRUISER, d5
 
 [NPCShipArch]
 nickname = ms12_li_cruiser
@@ -66,7 +66,19 @@ level = d10
 ship_archetype = li_cruiser
 pilot = cruiser_default
 state_graph = CRUISER
-npc_class = lawful, CRUISER, d22
+npc_class = lawful, CRUISER, d5
+
+[NPCShipArch]
+nickname = ms12_osiris
+loadout = li_battleship_02
+level = d10
+ship_archetype = or_osiris
+pilot = cruiser_default
+state_graph = CRUISER
+npc_class = lawful, CRUISER, d5
+
+
+
 '''
 
 
@@ -101,6 +113,14 @@ class Misson12(ingame_mission.IngameMission):
             'ku_miner02',
             'ku_miner03',
             'fort_bush',
+            'fort1',
+            'fort2',
+            'fort3',
+            'fort4',
+            'fort5',
+
+            'counter_relative_obj',
+            'counter_assault',
         ]
         for sol in asf_solars:
             defined_points.append(
@@ -123,7 +143,7 @@ class Misson12(ingame_mission.IngameMission):
         li_dread = {
             'npc_ship_arch': 'ms12_li_dread',
             'faction': 'asf_grp',
-            'labels': ['friend'],
+            'labels': ['friend', 'asf'],
         }
         omaha = {
             'npc_ship_arch': 'ms12_li_cruiser',
@@ -139,6 +159,11 @@ class Misson12(ingame_mission.IngameMission):
             'npc_ship_arch': 'ms12_ku_battleship_assault',
             'faction': 'or_grp',
             'labels': ['ku_bship_assault'],
+        }
+        osiris = {
+            'npc_ship_arch': 'ms12_osiris',
+            'faction': 'asf_grp',
+            'labels': ['friend', 'asf'],
         }
 
         return [
@@ -167,6 +192,8 @@ class Misson12(ingame_mission.IngameMission):
             Capital('li_cr_defend1', ids_name=1, **li_cruiser),
             Capital('li_cr_defend2', ids_name=1, **li_cruiser),
 
+            Capital('osiris_on_assault', ids_name=1, **osiris),
+
 
         ]
 
@@ -185,6 +212,8 @@ class Misson12(ingame_mission.IngameMission):
             NNObj(self, 93003, name='to_bush04', target='to_bush04'),
             NNObj(self, 93003, name='to_bush05', target='to_bush05'),
             NNObj(self, 93003, name='to_bush06', target='to_bush06'),
+
+            NNObj(self, 93020, name='stop_assault_battleships'),
         ]
 
     def get_ships(self):

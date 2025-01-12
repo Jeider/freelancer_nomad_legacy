@@ -85,6 +85,9 @@ volume = 0
 mass = 10
 hp_particles = hpthrust
 lootable = true
+debris_type = debris_normal
+parent_impulse = 20
+child_impulse = 80
 separation_explosion = sever_debris
 LODranges = 0, 600'''
 

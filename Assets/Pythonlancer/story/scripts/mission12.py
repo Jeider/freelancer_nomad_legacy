@@ -164,7 +164,7 @@ class Msn12Space(Msn12, script.SpaceVoiceProps):
         VoiceLine(930, Kaitlyn, ru='Королевский флот к вашим услугам, генерал Кинг'),
         VoiceLine(940, Alaric, ru='Вот теперь Ямам+ото точно не поздоровится!'),
 
-        VoiceLine(900, Trent, ru='Мусаси на прицеле.'),
+        VoiceLine(990, Trent, ru='Мусаси на прицеле.'),
         VoiceLine(1000, Darcy, ru='Атакуем двигатели. Мусаси уже разогревает гипердвигатель, но у нас еще есть время.'),
         VoiceLine(1010, Hatcher, comment='Неудача', ru='Чёрт! Мусаси смылся! Мы не успели...'),
 

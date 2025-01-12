@@ -983,6 +983,38 @@ class Trigger:
         return SINGLE_DIVIDER.join(actions)
 
 
+class Capital(DefinedStaticMixin):
+
+    def __init__(self, alias, npc_ship_arch, ids_name=None, faction=None, labels=None):
+        self.alias = alias
+        self.ids_name = ids_name
+        self.npc_ship_arch = npc_ship_arch
+        self.faction = faction or DEFAULT_AFFILIATION
+        self.labels = labels or []
+
+    def get_name(self):
+        return self.alias
+
+    def get_definition(self):
+        ship = [
+            '[NPC]',
+            f'nickname = npc_{self.name}',
+            f'affiliation = {self.faction}',
+            f'npc_ship_arch = {self.npc_ship_arch}',
+        ]
+        if self.ids_name:
+            ship.append(f'individual_name = {self.ids_name}')
+
+        ship.extend([
+            '',
+            '[MsnShip]',
+            f'nickname = {self.name}',
+            f'NPC = npc_{self.name}',
+        ])
+        for label in self.labels:
+            ship.append(f'label = {label}')
+        return SINGLE_DIVIDER.join(ship)
+
 
 class Cond:
 
@@ -1037,43 +1069,14 @@ class Direct:
         objlist.append(point.goto_vec(goto, near))
         return SINGLE_DIVIDER.join(objlist)
 
-    def spawn_capital(self, system_name, alias, capital, ol=None):
+    def spawn_capital(self, system_name, alias, capital: Capital, ol=None):
         point = self.get_point(system_name, alias)
-        return f'Act_SpawnShip = {capital.name}, {ol or "no_ol"}, {point.pos_orient}'
+        actions = [
+            f'Act_SpawnShip = {capital.name}, {ol or "no_ol"}, {point.pos_orient}',
+            capital.invulnerable(damage_from_player=True)
+        ]
+        return SINGLE_DIVIDER.join(actions)
 
-    def spawn_ship(self, system_name, alias, ship, ol=None):
+    def spawn_ship(self, system_name, alias, ship: Ship, ol=None):
         point = self.get_point(system_name, alias)
         return f'{ship.spawn(ol)}, {point.pos_orient}'
-
-
-class Capital(DefinedStaticMixin):
-
-    def __init__(self, alias, npc_ship_arch, ids_name=None, faction=None, labels=None):
-        self.alias = alias
-        self.ids_name = ids_name
-        self.npc_ship_arch = npc_ship_arch
-        self.faction = faction or DEFAULT_AFFILIATION
-        self.labels = labels or []
-
-    def get_name(self):
-        return self.alias
-
-    def get_definition(self):
-        ship = [
-            '[NPC]',
-            f'nickname = npc_{self.name}',
-            f'affiliation = {self.faction}',
-            f'npc_ship_arch = {self.npc_ship_arch}',
-        ]
-        if self.ids_name:
-            ship.append(f'individual_name = {self.ids_name}')
-
-        ship.extend([
-            '',
-            '[MsnShip]',
-            f'nickname = {self.name}',
-            f'NPC = npc_{self.name}',
-        ])
-        for label in self.labels:
-            ship.append(f'label = {label}')
-        return SINGLE_DIVIDER.join(ship)
