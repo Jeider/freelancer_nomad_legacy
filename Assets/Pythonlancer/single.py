@@ -4,6 +4,8 @@ from time import sleep
 
 from text.dividers import DIVIDER
 
+from core import get_core
+
 from files.writer import FileWriter
 
 from managers.script import ScriptManager
@@ -15,6 +17,8 @@ from universe.audio import pilot
 from universe.audio import dispatcher
 from universe.audio import nnvoice
 from universe.audio import mission_comission
+
+from universe.content import mineable
 
 from templates.hardcoded_inis.audio import VoicesSpaceMaleTemplate, VoicesSpaceFemaleTemplate
 from templates.hardcoded_inis.missions import VoicePropertiesTemplate
@@ -33,18 +37,26 @@ from tools.system_template import SystemTemplateLoader
 from story.cutscenes.mission9.yokohama import Msn9YokohamaCutsceneThorn
 
 from templates.solar.hacker_panel import HackerPanelManager, REL_TOP
-from templates.dockable import forbes_megafactory
+from templates.dockable import prometheus
 from templates.dockable import m13
 
 
 def test_placement():
-    base_class = m13.RockfordGenerator
-    new_name = None
-    new_name = 'sph02_lazergen'
+    # base_class = m13.RockfordGenerator
+    # new_name = None
+    # new_name = 'sph02_lazergen'
+    # move_to = None
+    # move_to = (-3500, 500, -3500)
+
+    base_class = prometheus.SinglePrometheus
+    # new_name = None
+    new_name = 'asf_prom_01'
     move_to = None
-    move_to = (-3500, 500, -3500)
+    # move_to = (-2458, -825, -825)
+    workspace = None
+
     content = base_class().get_instance(new_space_object_name=new_name, move_to=move_to)
-    data_folder.DataFolder.sync_to_test_workspace(content, workspace_index='0')
+    data_folder.DataFolder.sync_to_test_workspace(content, workspace_index=workspace)
 
 
 def generate_hacker_panels():
@@ -212,6 +224,44 @@ def test_lua():
     import pdb;pdb.set_trace()
 
 
+class MySupriseField(mineable.DefaultField):
+    BOX_SIZE = 800
+    DENSITY_MULTIPLER = 6
+    DRIFT_X = 0.8
+    DRIFT_Y = 0.25
+    DRIFT_Z = 0.8
+    EMPTY_CHANCE = 0
+    ROTATE_X_MIN = -10
+    ROTATE_X_MAX = 10
+    ROTATE_Y_MIN = -180
+    ROTATE_Y_MAX = 180
+    ROTATE_Z_MIN = -10
+    ROTATE_Z_MAX = 10
+
+
+class MyField(mineable.StaticObjectField):
+    ALIAS = 'rs_battle'
+    STATIC_ARCHETYPES = [
+        'k_battleship',
+        'l_dreadnought',
+        'b_battleship',
+        'o_osiris',
+    ]
+    FIELD_CLASS = MySupriseField
+    REWARDS_GROUP_CLASS = mineable.DefaultSupriseRewardsGroup
+    ULTRA_REWARD = False
+
+
+def generate_field():
+    core = get_core()
+    asf = core.universe.universe_root.get_all_system_by_name('asf_hq')
+
+    field = MyField(system=asf)
+    content = field.get_system_content()
+    print(content)
+
+
+
 
 ACTIONS = {
     'generate_hacker_panels': generate_hacker_panels,
@@ -231,6 +281,7 @@ ACTIONS = {
     'compile_pilots_ini': compile_pilots_ini,
     'compile_pilots_audio': compile_pilots_audio,
     'generate_story_voices': generate_story_voices,
+    'generate_field': generate_field,
 }
 
 

@@ -585,3 +585,14 @@ class asf_hq(system.StorySystem, system.SiriusSystem):
 
     SYSTEM_FOLDER = 'ASF_HQ'
     NAVMAP_POS = '14.5, -1.1'
+
+
+class asf_prom(system.StorySystem, system.SiriusSystem):
+    NAME = 'asf_prom'
+    DIRECT_TEMPLATE_NAME = 'asf_prom_dev'
+    RU_NAME = 'Прометей'
+
+    ALLOW_SYNC = True
+
+    SYSTEM_FOLDER = 'ASF_PROMETHEUS'
+    NAVMAP_POS = '14.5, -1.1'

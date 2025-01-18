@@ -53,9 +53,9 @@ class FieldBox(object):
 
     def get_rotate(self):
         return (
-            random.randint(self.field.ROTATE_MIN, self.field.ROTATE_MAX),
-            random.randint(self.field.ROTATE_MIN, self.field.ROTATE_MAX),
-            random.randint(self.field.ROTATE_MIN, self.field.ROTATE_MAX),
+            0 if self.field.ROT_X_ZERO else random.randint(self.field.ROTATE_X_MIN, self.field.ROTATE_X_MAX),
+            0 if self.field.ROT_Y_ZERO else random.randint(self.field.ROTATE_Y_MIN, self.field.ROTATE_Y_MAX),
+            0 if self.field.ROT_Z_ZERO else random.randint(self.field.ROTATE_Z_MIN, self.field.ROTATE_Z_MAX),
         )
 
 
@@ -68,9 +68,16 @@ class Field(object):
     DRIFT_X = 0.1
     DRIFT_Y = 0.1
     DRIFT_Z = 0.1
-    ROTATE_MIN = -180
-    ROTATE_MAX = 180
+    ROTATE_X_MIN = -180
+    ROTATE_X_MAX = 180
+    ROTATE_Y_MIN = -180
+    ROTATE_Y_MAX = 180
+    ROTATE_Z_MIN = -180
+    ROTATE_Z_MAX = 180
     EMPTY_CHANCE = 0
+    ROT_X_ZERO = False
+    ROT_Y_ZERO = False
+    ROT_Z_ZERO = False
 
     def __init__(self):
         self.boxes = []
@@ -120,8 +127,6 @@ class DefaultField(Field):
     DRIFT_X = 0.7
     DRIFT_Y = 0.8
     DRIFT_Z = 0.7
-    ROTATE_MIN = -180
-    ROTATE_MAX = 180
     EMPTY_CHANCE = 0
 
 
@@ -549,6 +554,8 @@ class RewardField(Mineable):
     ULTRA_REWARD = False
     ULTRA_BASE = None
 
+    HAS_REWARDS = True
+
     DUMMY_NAME = 'reward_item_dummy'
 
     NICKNAME_TEMPLATE = '{dummy_name}_{solar_alias}_{index}'
@@ -564,9 +571,10 @@ class RewardField(Mineable):
 
         self.field = self.FIELD_CLASS()
 
-        self.mark_rewards()
+        if self.HAS_REWARDS:
+            self.mark_rewards()
+            self.rewards_group = self.system.get_rewards_group_by_class(self.REWARDS_GROUP_CLASS)
 
-        self.rewards_group = self.system.get_rewards_group_by_class(self.REWARDS_GROUP_CLASS)
         self.dummy_system_object_string = self.generate_box_content()
 
     def mark_rewards(self):
@@ -581,7 +589,6 @@ class RewardField(Mineable):
         if self.ULTRA_REWARD:
             ultra_index = random.choice(indexes)
             indexes.remove(ultra_index)
-
 
         if self.HIGH_REWARD_CHANCE > 0:
             high_count = box_count * self.HIGH_REWARD_CHANCE
@@ -623,8 +630,11 @@ class RewardField(Mineable):
     def generate_box_content_item(self, box, reward_type, index):
         raise NotImplementedError
 
+    def get_solar_alias(self):
+        return self.rewards_group.solar.ALIAS
+
     def create_nickname(self, index):
-        return self.NICKNAME_TEMPLATE.format(dummy_name=self.DUMMY_NAME, solar_alias=self.rewards_group.solar.ALIAS, index=index)
+        return self.NICKNAME_TEMPLATE.format(dummy_name=self.DUMMY_NAME, solar_alias=self.get_solar_alias(), index=index)
 
     def get_reward_field_name(self):
         if hasattr(self, 'FIELD_NAME'):
@@ -888,4 +898,24 @@ archetype = {archetype}'''
         loadout = self.rewards_group.get_loadout_name_by_reward_type(reward_type, self.ultra_base_instance)
         if loadout:
             sys_object += SINGLE_DIVIDER + f'loadout = {loadout}'
+        return sys_object
+
+
+class StaticObjectField(SupriseRewardField):
+    STATIC_ARCHETYPES = []
+    HAS_REWARDS = False
+
+    def get_solar_alias(self):
+        return 'static'
+
+    def get_archetype(self):
+        return random.choice(self.STATIC_ARCHETYPES)
+
+    def generate_box_content_item(self, box, reward_type, index):
+        sys_object = self.SYSTEM_OBJECT_TEMPLATE.format(
+            nickname=self.create_nickname(index),
+            pos='{}, {}, {}'.format(*box.get_position()),
+            rotate='{}, {}, {}'.format(*box.get_rotate()),
+            archetype=self.get_archetype(),
+        )
         return sys_object
