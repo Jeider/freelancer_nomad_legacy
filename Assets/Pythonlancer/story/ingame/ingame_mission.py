@@ -19,6 +19,7 @@ class IngameMission(object):
         cls.subclasses.append(cls)
 
     def __init__(self, full_script, universe_root):
+        self.capital_groups = {}
         self.full_script = full_script
         self.universe_root = universe_root
         self.points: dict = self.get_all_points()
@@ -132,6 +133,14 @@ class IngameMission(object):
         context['direct'] = Direct(self, systems=self.DIRECT_SYSTEMS)
         # print(context.keys())
         return context
+
+    def add_capital_group(self, group_name, members):
+        self.capital_groups[group_name] = members
+
+    def get_capital_group(self, group_name):
+        if group_name not in self.capital_groups:
+            raise Exception(f'Capital group {group_name} not defined in {self.__class__.__name__}')
+        return self.capital_groups[group_name]
 
 
 class NagVoice(object):

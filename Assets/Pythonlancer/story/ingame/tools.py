@@ -244,6 +244,9 @@ class DefinedStaticMixin:
         """for template"""
         return self.get_name()
 
+    def cond_destroyed(self):
+        return f'Cnd_Destroyed = {self.name}'
+
     def destroy(self, mode='EXPLODE'):
         return f'Act_Destroy = {self.name}, {mode}'
 
@@ -1069,12 +1072,46 @@ class Direct:
         objlist.append(point.goto_vec(goto, near))
         return SINGLE_DIVIDER.join(objlist)
 
-    def spawn_capital(self, system_name, alias, capital: Capital, ol=None):
+    def spawn_capital(self, system_name, alias, capital: Capital, ol=None,
+                      invulnerable=True, damage_from_player=True):
         point = self.get_point(system_name, alias)
         actions = [
-            f'Act_SpawnShip = {capital.name}, {ol or "no_ol"}, {point.pos_orient}',
-            capital.invulnerable(damage_from_player=True)
+            f'Act_SpawnShip = {capital.name}, {ol or "no_ol"}, {point.pos_orient}'
         ]
+        if invulnerable:
+            actions.append(capital.invulnerable(damage_from_player=damage_from_player))
+        return SINGLE_DIVIDER.join(actions)
+
+    def spawn_capital_start(self, system_name, capital: Capital, ol=None,
+                            invulnerable=True, damage_from_player=True):
+        point = self.get_point(system_name, capital.name)
+        actions = [
+            f'Act_SpawnShip = {capital.name}, {ol or "no_ol"}, {point.pos_orient}',
+        ]
+        if invulnerable:
+            actions.append(capital.invulnerable(damage_from_player=damage_from_player))
+        return SINGLE_DIVIDER.join(actions)
+
+    def spawn_capital_group(self, system_name, group_name, ol=None,
+                            invulnerable=True, damage_from_player=True):
+        group = self.mission.get_capital_group(group_name)
+        actions = []
+        for cap in group:
+            actions.append(self.spawn_capital_start(system_name, cap, ol, invulnerable, damage_from_player))
+        return SINGLE_DIVIDER.join(actions)
+
+    def fuse_capital_group(self, group_name, fuse):
+        group = self.mission.get_capital_group(group_name)
+        actions = []
+        for cap in group:
+            actions.append(cap.fuse(fuse))
+        return SINGLE_DIVIDER.join(actions)
+
+    def invulnerable_capital_group(self, group_name, godmode, damage_from_player):
+        group = self.mission.get_capital_group(group_name)
+        actions = []
+        for cap in group:
+            actions.append(cap.invulnerable(godmode=godmode, damage_from_player=damage_from_player))
         return SINGLE_DIVIDER.join(actions)
 
     def spawn_ship(self, system_name, alias, ship: Ship, ol=None):
