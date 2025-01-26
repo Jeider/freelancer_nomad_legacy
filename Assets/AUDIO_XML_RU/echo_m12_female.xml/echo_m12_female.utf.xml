@@ -21,16 +21,19 @@
 <test_voice name="0x883921CB" type="file" filename="echo_m12_female\dx_m12_0800_hatcher.wav"/>
 <test_voice name="0xA03B35CB" type="file" filename="echo_m12_female\dx_m12_0820_hatcher.wav"/>
 <test_voice name="0x8C3C43CB" type="file" filename="echo_m12_female\dx_m12_0850_hatcher.wav"/>
-<test_voice name="0xA13B35CF" type="file" filename="echo_m12_female\dx_m12_0920_hatcher.wav"/>
-<test_voice name="0x8311EE48" type="file" filename="echo_m12_female\dx_m12_0930_kaytlin.wav"/>
-<test_voice name="0x9259EE0B" type="file" filename="echo_m12_female\dx_m12_1000_darcy.wav"/>
-<test_voice name="0x94B8BFC1" type="file" filename="echo_m12_female\dx_m12_1010_hatcher.wav"/>
-<test_voice name="0xB259A208" type="file" filename="echo_m12_female\dx_m12_1030_darcy.wav"/>
-<test_voice name="0x90BDDDC1" type="file" filename="echo_m12_female\dx_m12_1040_hatcher.wav"/>
+<test_voice name="0xA8BBA1C1" type="file" filename="echo_m12_female\dx_m12_1020_hatcher.wav"/>
 <test_voice name="0x84BCD7C1" type="file" filename="echo_m12_female\dx_m12_1050_hatcher.wav"/>
-<test_voice name="0x9259360D" type="file" filename="echo_m12_female\dx_m12_1060_darcy.wav"/>
 <test_voice name="0xACBEC3C1" type="file" filename="echo_m12_female\dx_m12_1070_hatcher.wav"/>
-<test_voice name="0xB4B02FC1" type="file" filename="echo_m12_female\dx_m12_1090_hatcher.wav"/>
+<test_voice name="0xA0B125C1" type="file" filename="echo_m12_female\dx_m12_1080_hatcher.wav"/>
+<test_voice name="0xB258CA02" type="file" filename="echo_m12_female\dx_m12_1090_darcy.wav"/>
 <test_voice name="0x81B9B5C5" type="file" filename="echo_m12_female\dx_m12_1100_hatcher.wav"/>
+<test_voice name="0xA9BBA1C5" type="file" filename="echo_m12_female\dx_m12_1120_hatcher.wav"/>
+<test_voice name="0xBDBAABC5" type="file" filename="echo_m12_female\dx_m12_1130_hatcher.wav"/>
+<test_voice name="0xADBEC3C5" type="file" filename="echo_m12_female\dx_m12_1170_hatcher.wav"/>
+<test_voice name="0xB5B02FC5" type="file" filename="echo_m12_female\dx_m12_1190_hatcher.wav"/>
+<test_voice name="0x82B9B5C9" type="file" filename="echo_m12_female\dx_m12_1200_hatcher.wav"/>
+<test_voice name="0x96B8BFC9" type="file" filename="echo_m12_female\dx_m12_1210_hatcher.wav"/>
+<test_voice name="0x92BDDDC9" type="file" filename="echo_m12_female\dx_m12_1240_hatcher.wav"/>
+<test_voice name="0xAEBEC3C9" type="file" filename="echo_m12_female\dx_m12_1270_hatcher.wav"/>
 </UTF_ROOT>
 </UTFXML>

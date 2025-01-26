@@ -150,7 +150,7 @@ class King(Actor):
     TYPE = ACTOR_MALE
     NAME = 'king'
     COMM_APPEARANCE = 'li_scrote_head, li_scrote_body'
-    STEOS_ID = 215
+    STEOS_ID = 211
     STEOS_PITCH = 0
     STEOS_SPEED = 1.1
 
@@ -211,6 +211,28 @@ class Omaha(Actor):
     NAME = 'omaha'
     COMM_APPEARANCE = 'li_captain_head, li_male_elite_body'
     STEOS_ID = 10090
+    STEOS_PITCH = 0.2
+    STEOS_SPEED = 1.1
+
+
+class PromDread1(Actor):
+    RU_NAME = 'Цинцинатти'
+    TYPE = ACTOR_MALE
+    NAME = 'promdread1'
+    COMM_APPEARANCE = 'li_captain_head, li_male_elite_body'
+    STEOS_ID = 210
+    STEOS_PITCH = 0.2
+    STEOS_SPEED = 1.1
+
+
+class PromDread2(Actor):
+    RU_NAME = 'Рио-Гранде'
+    TYPE = ACTOR_MALE
+    NAME = 'promdread2'
+    COMM_APPEARANCE = 'li_captain_head, li_male_elite_body'
+    STEOS_ID = 220
+    STEOS_PITCH = 0.2
+    STEOS_SPEED = 1.1
 
 
 class FortBush(Actor):
@@ -218,7 +240,9 @@ class FortBush(Actor):
     TYPE = ACTOR_MALE
     NAME = 'bush'
     COMM_APPEARANCE = 'li_captain_head, li_male_elite_body'
-    STEOS_ID = 10029
+    STEOS_ID = 220
+    STEOS_PITCH = 0.2
+    STEOS_SPEED = 1.1
 
 
 class RedLeader(Actor):
@@ -284,8 +308,8 @@ class Alaric(Actor):
     CUTSCENE_APPEARANCE = 'alaric'
     SPACE_VOICE = 'pilot_f_mil_m01'
     STEOS_ID = 204
-    STEOS_PITCH = -0.5
-    STEOS_SPEED = 1
+    STEOS_PITCH = 0.1
+    STEOS_SPEED = 1.1
 
 
 class Jacobo(Actor):

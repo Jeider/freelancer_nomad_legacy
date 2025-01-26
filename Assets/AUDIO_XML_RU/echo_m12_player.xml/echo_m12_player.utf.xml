@@ -19,8 +19,5 @@
 <test_voice name="0xBBC9594E" type="file" filename="echo_m12_player\dx_m12_0360_trent.wav"/>
 <test_voice name="0xBBC8A140" type="file" filename="echo_m12_player\dx_m12_0380_trent.wav"/>
 <test_voice name="0x9B598149" type="file" filename="echo_m12_player\dx_m12_0710_trent.wav"/>
-<test_voice name="0xBAA18B48" type="file" filename="echo_m12_player\dx_m12_0900_trent.wav"/>
-<test_voice name="0xAF94C040" type="file" filename="echo_m12_player\dx_m12_1020_trent.wav"/>
-<test_voice name="0xAF95A84A" type="file" filename="echo_m12_player\dx_m12_1080_trent.wav"/>
 </UTF_ROOT>
 </UTFXML>

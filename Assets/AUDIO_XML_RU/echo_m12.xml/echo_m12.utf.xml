@@ -20,10 +20,20 @@
 <test_voice name="0xAAF38286" type="file" filename="echo_m12\dx_m12_0700_bush.wav"/>
 <test_voice name="0x9C0FE9C8" type="file" filename="echo_m12\dx_m12_0810_king.wav"/>
 <test_voice name="0x968FECC8" type="file" filename="echo_m12\dx_m12_0830_king.wav"/>
-<test_voice name="0x92172309" type="file" filename="echo_m12\dx_m12_0860_omaha.wav"/>
-<test_voice name="0xB94FEF49" type="file" filename="echo_m12\dx_m12_0900_king.wav"/>
-<test_voice name="0xBC0FEDC9" type="file" filename="echo_m12\dx_m12_0910_king.wav"/>
-<test_voice name="0x821AB8CD" type="file" filename="echo_m12\dx_m12_0940_alaric.wav"/>
-<test_voice name="0xBC1ACCCB" type="file" filename="echo_m12\dx_m12_1110_king.wav"/>
+<test_voice name="0x995ACA4A" type="file" filename="echo_m12\dx_m12_1000_king.wav"/>
+<test_voice name="0x9C1AC8CA" type="file" filename="echo_m12\dx_m12_1010_king.wav"/>
+<test_voice name="0x969ACDCA" type="file" filename="echo_m12\dx_m12_1030_king.wav"/>
+<test_voice name="0x8C5AC04A" type="file" filename="echo_m12\dx_m12_1040_king.wav"/>
+<test_voice name="0xB75B20C9" type="file" filename="echo_m12\dx_m12_1060_alaric.wav"/>
+<test_voice name="0xA3962DC3" type="file" filename="echo_m12\dx_m12_1110_alaric.wav"/>
+<test_voice name="0xAC5AC44B" type="file" filename="echo_m12\dx_m12_1140_king.wav"/>
+<test_voice name="0x84910307" type="file" filename="echo_m12\dx_m12_1150_promdread1.wav"/>
+<test_voice name="0xA52DBFC7" type="file" filename="echo_m12\dx_m12_1160_promdread2.wav"/>
+<test_voice name="0x935ADA4B" type="file" filename="echo_m12\dx_m12_1180_king.wav"/>
+<test_voice name="0x9FC930C9" type="file" filename="echo_m12\dx_m12_1220_alaric.wav"/>
+<test_voice name="0xBB68BAC7" type="file" filename="echo_m12\dx_m12_1230_promdread1.wav"/>
+<test_voice name="0x891A8AC8" type="file" filename="echo_m12\dx_m12_1250_king.wav"/>
+<test_voice name="0x9F5934C9" type="file" filename="echo_m12\dx_m12_1260_alaric.wav"/>
+<test_voice name="0xB35A9648" type="file" filename="echo_m12\dx_m12_1280_king.wav"/>
 </UTF_ROOT>
 </UTFXML>

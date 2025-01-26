@@ -3,7 +3,7 @@ from text.dividers import SINGLE_DIVIDER
 from tools.create_id import CreateId
 
 
-SPACE_ATTENUATION = 0
+SPACE_ATTENUATION = -8
 CUTSCENE_ATTENUATION = 0
 
 SOUND_ARCH = '[Sound]'

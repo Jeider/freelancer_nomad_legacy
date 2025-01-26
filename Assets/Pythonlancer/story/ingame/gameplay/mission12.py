@@ -130,6 +130,7 @@ class Misson12(ingame_mission.IngameMission):
             'to_bush04',
             'to_bush05',
             'to_bush06',
+            'm13_asf_hq_01',
         ]
         for p in hq_points:
             defined_points.append(
@@ -149,6 +150,7 @@ class Misson12(ingame_mission.IngameMission):
 
             'counter_relative_obj',
             'counter_assault',
+
         ]
         for sol in hq_solars:
             defined_points.append(
@@ -156,6 +158,18 @@ class Misson12(ingame_mission.IngameMission):
             )
 
         # PROM
+
+        prom_points = [
+            'prom_goinsde1',
+            'prom_goinsde2',
+            'prom_goinsde3',
+
+            'prom_logos',
+        ]
+        for p in prom_points:
+            defined_points.append(
+                Point(self, S.asf_prom, p)
+            )
 
         prom_solars = [
             'prom_osiris',
@@ -174,7 +188,6 @@ class Misson12(ingame_mission.IngameMission):
             defined_points.append(
                 Solar(self, S.asf_prom, sol),
             )
-
 
         return defined_points
 
@@ -214,8 +227,6 @@ class Misson12(ingame_mission.IngameMission):
             'faction': 'asf_grp',
             'labels': ['friend', 'asf'],
         }
-
-
 
         order_osiris_a = {
             'npc_ship_arch': 'ms12_osiris',
@@ -329,19 +340,27 @@ class Misson12(ingame_mission.IngameMission):
 
     def get_nn_objectives(self):
         return [
-            NNObj(self, 93003, name='asf_miner01', target='asf_miner01'),
-            NNObj(self, 93003, name='asf_miner02', target='asf_miner02'),
+            NNObj(self, 96008, name='asf_miner01', target='asf_miner01'),
+            NNObj(self, 96008, name='asf_miner02', target='asf_miner02'),
 
-            NNObj(self, 93020, name='destroy_miners'),
+            NNObj(self, 96008, name='destroy_miners'),
 
-            NNObj(self, 93003, name='to_bush01', target='to_bush01'),
-            NNObj(self, 93003, name='to_bush02', target='to_bush02'),
-            NNObj(self, 93003, name='to_bush03', target='to_bush03'),
-            NNObj(self, 93003, name='to_bush04', target='to_bush04'),
-            NNObj(self, 93003, name='to_bush05', target='to_bush05'),
-            NNObj(self, 93003, name='to_bush06', target='to_bush06'),
+            NNObj(self, 96008, name='to_bush01', target='to_bush01'),
+            NNObj(self, 96008, name='to_bush02', target='to_bush02'),
+            NNObj(self, 96008, name='to_bush03', target='to_bush03'),
+            NNObj(self, 96008, name='to_bush04', target='to_bush04'),
+            NNObj(self, 96008, name='to_bush05', target='to_bush05'),
+            NNObj(self, 96008, name='to_bush06', target='to_bush06'),
 
-            NNObj(self, 93020, name='stop_assault_battleships'),
+            NNObj(self, 96008, name='stop_assault_battleships'),
+
+            NNObj(self, 96008, name='jump_to_prom', target='m13_asf_hq_01'),
+
+            NNObj(self, 96008, name='prom_goinsde1', target='prom_goinsde1'),
+            NNObj(self, 96008, name='prom_goinsde2', target='prom_goinsde2'),
+            NNObj(self, 96008, name='prom_goinsde3', target='prom_goinsde3'),
+
+            NNObj(self, 96008, name='goto_logos', target='prom_logos', towards=True),
         ]
 
     def get_ships(self):
