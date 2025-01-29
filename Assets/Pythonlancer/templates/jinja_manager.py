@@ -1,6 +1,6 @@
 from jinja2 import Environment, FileSystemLoader, StrictUndefined
 
-TEMPLATES_DIRECTORY = 'jinja_templates/templates/'
+TEMPLATES_DIRECTORY = 'templates'
 
 MISSIONS_FOLDER = 'missions'
 

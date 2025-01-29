@@ -10,7 +10,7 @@ from files.writer import FileWriter
 
 from managers.script import ScriptManager
 
-from jinja_templates.jinja_manager import JinjaTemplateManager
+from templates.jinja_manager import JinjaTemplateManager
 
 from universe.audio.manager import PilotManager
 from universe.audio import pilot

@@ -1,4 +1,4 @@
-from jinja_templates.jinja_manager import JinjaTemplateManager
+from templates.jinja_manager import JinjaTemplateManager
 
 from managers.script import ScriptManager
 
