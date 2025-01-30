@@ -203,6 +203,7 @@ cargo = {nickname}, {amount}'''
     LIGHTS = 0
     RU_NAME = ''
 
+    FORCE_HIT_PTS = None
     HIT_PTS_MULTIPLER_PER_INDEX = {
         SHIP_INDEX_1: 0.11,
         SHIP_INDEX_2: 0.13,
@@ -616,6 +617,8 @@ item_icon = Equipment\\models\\commodities\\nn_icons\\{icon}'''
         return math.ceil(self.STRAFE_POWER_USAGE * self.STRAFE_POWER_USAGE_MULTIPLER)
 
     def get_hit_pts(self):
+        if self.FORCE_HIT_PTS:
+            return self.FORCE_HIT_PTS
         return math.ceil(self.MAX_HIT_PTS * self.HIT_PTS_MULTIPLER_PER_INDEX[self.SHIP_INDEX] * self.HULL_HIT_PTS_MULTIPLER)
 
     def get_bots_count(self):
@@ -1906,6 +1909,7 @@ class Armored(GenericShip, ShipFreighter, Ship):
     TEMPLATE_CODE = 'armored'
     ICON = 'ku_freighter.3db'
     LIGHTS = 7
+    FORCE_HIT_PTS = 220000
 
 
 class Starflier(GenericShip, ShipInterceptor, Ship1, Ship):
