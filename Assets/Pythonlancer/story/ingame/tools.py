@@ -1072,21 +1072,11 @@ class Direct:
         objlist.append(point.goto_vec(goto, near))
         return SINGLE_DIVIDER.join(objlist)
 
-    def spawn_capital(self, system_name, alias, capital: Capital, ol=None,
+    def spawn_capital(self, system_name, capital: Capital, point=None, ol=None,
                       invulnerable=True, damage_from_player=True):
-        point = self.get_point(system_name, alias)
+        point = self.get_point(system_name, point if point else capital.name)
         actions = [
             f'Act_SpawnShip = {capital.name}, {ol or "no_ol"}, {point.pos_orient}'
-        ]
-        if invulnerable:
-            actions.append(capital.invulnerable(damage_from_player=damage_from_player))
-        return SINGLE_DIVIDER.join(actions)
-
-    def spawn_capital_start(self, system_name, capital: Capital, ol=None,
-                            invulnerable=True, damage_from_player=True):
-        point = self.get_point(system_name, capital.name)
-        actions = [
-            f'Act_SpawnShip = {capital.name}, {ol or "no_ol"}, {point.pos_orient}',
         ]
         if invulnerable:
             actions.append(capital.invulnerable(damage_from_player=damage_from_player))
@@ -1097,7 +1087,9 @@ class Direct:
         group = self.mission.get_capital_group(group_name)
         actions = []
         for cap in group:
-            actions.append(self.spawn_capital_start(system_name, cap, ol, invulnerable, damage_from_player))
+            actions.append(self.spawn_capital(system_name, cap, point=None, ol=ol,
+                                              invulnerable=invulnerable,
+                                              damage_from_player=damage_from_player))
         return SINGLE_DIVIDER.join(actions)
 
     def fuse_capital_group(self, group_name, fuse):

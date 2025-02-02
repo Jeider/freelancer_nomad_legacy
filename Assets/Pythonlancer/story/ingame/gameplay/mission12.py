@@ -336,8 +336,6 @@ class Misson12(ingame_mission.IngameMission):
 
         return caps
 
-
-
     def get_nn_objectives(self):
         return [
             NNObj(self, 96008, name='asf_miner01', target='asf_miner01'),
