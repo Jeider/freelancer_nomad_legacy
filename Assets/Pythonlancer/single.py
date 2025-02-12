@@ -37,23 +37,24 @@ from tools.system_template import SystemTemplateLoader
 from story.cutscenes.mission9.yokohama import Msn9YokohamaCutsceneThorn
 
 from templates.solar.hacker_panel import HackerPanelManager, REL_TOP
-from templates.dockable import prometheus
+from templates.dockable import terraforming
+from templates.dockable import valensia
+from templates.dockable import upsilon_gasinside
+from templates.dockable import tunnel
+
 from templates.dockable import m13
 
 
-def test_placement():
-    # base_class = m13.RockfordGenerator
-    # new_name = None
-    # new_name = 'sph02_lazergen'
-    # move_to = None
-    # move_to = (-3500, 500, -3500)
-
-    base_class = prometheus.SinglePrometheus
-    # new_name = None
-    new_name = 'asf_prom_01'
+def draw_base():
+    new_name = None
     move_to = None
-    # move_to = (-2458, -825, -825)
-    workspace = None
+    workspace = '4'
+
+    # base_class = m13.RockfordGenerator
+    new_name = 'or_hq_om7entry'
+    move_to = (-30000, 0, 31000)
+
+    base_class = tunnel.AlaskaTunnel
 
     content = base_class().get_instance(new_space_object_name=new_name, move_to=move_to)
     data_folder.DataFolder.sync_to_test_workspace(content, workspace_index=workspace)
@@ -267,7 +268,7 @@ ACTIONS = {
     'generate_hacker_panels': generate_hacker_panels,
     'compile_audio': compile_audio,
     'test_hacker_colors': test_hacker_colors,
-    'test_placement': test_placement,
+    'draw_base': draw_base,
     'build_image': build_image,
     'get_frames': get_frames,
     'get_frames_ints': get_frames_ints,

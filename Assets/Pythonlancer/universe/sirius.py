@@ -30,6 +30,8 @@ from universe.systems import tau29 as tau29_content
 from universe.systems import tau31 as tau31_content
 from universe.systems import tau37 as tau37_content
 from universe.systems import rh_kgb as rh_kgb_content
+from universe.systems import or_hq as or_hq_content
+from universe.systems import rh_vien as rh_vien_content
 
 
 class rh_mnh(system.RheinlandFirst, system.System, system.SiriusSystem):
@@ -431,6 +433,40 @@ class rh_kgb(system.RheinlandFirst, system.System, system.SiriusSystem):
     NAVMAP_SCALE = 1
     VISIT = system.VISIT_STORY
 
+#
+# # GENERATED EDITION
+# class or_hq_gen(system.System, system.SiriusSystem):
+#     NAME = 'or_hq_gen'
+#     TEMPLATE_NAME = 'or_hq'
+#     RU_NAME = 'Вавил+он'
+#     CONTENT = or_hq_content
+#
+#     SYSTEM_FOLDER = 'ORDER_HQ'
+#     ALLOW_SYNC = True
+#     ENABLE_POPULATION = False
+#
+#     JUMP_EFFECT = jump_effect.Dark
+#     NAVMAP_POS = '10, 7'
+#     NAVMAP_SCALE = 1
+#     VISIT = system.VISIT_STORY
+
+
+# # GENERATED EDITION
+# class rh_vien_gen(system.System, system.SiriusSystem):
+#     NAME = 'rh_vien_gen'
+#     TEMPLATE_NAME = 'rh_vien'
+#     RU_NAME = 'Вена'
+#     CONTENT = rh_vien_content
+#
+#     SYSTEM_FOLDER = 'RH_VIENNA'
+#     ALLOW_SYNC = True
+#     ENABLE_POPULATION = False
+#
+#     JUMP_EFFECT = jump_effect.Dark
+#     NAVMAP_POS = '10, 7'
+#     NAVMAP_SCALE = 1
+#     VISIT = system.VISIT_STORY
+
 
 # EDGE SYSTEMS
 
@@ -579,7 +615,7 @@ class sphere2_inside(system.StorySystem, system.SiriusSystem):
 class asf_hq(system.StorySystem, system.SiriusSystem):
     NAME = 'asf_hq'
     DIRECT_TEMPLATE_NAME = 'asf_hq_dev'
-    RU_NAME = 'Энтерпрайз'
+    RU_NAME = 'Энтерпр+айз'
 
     ALLOW_SYNC = True
 
@@ -590,9 +626,31 @@ class asf_hq(system.StorySystem, system.SiriusSystem):
 class asf_prom(system.StorySystem, system.SiriusSystem):
     NAME = 'asf_prom'
     DIRECT_TEMPLATE_NAME = 'asf_prom_dev'
-    RU_NAME = 'Прометей'
+    RU_NAME = 'Промет+ей'
 
     ALLOW_SYNC = True
 
     SYSTEM_FOLDER = 'ASF_PROMETHEUS'
+    NAVMAP_POS = '14.5, -1.1'
+
+
+class or_hq(system.StorySystem, system.SiriusSystem):
+    NAME = 'or_hq'
+    DIRECT_TEMPLATE_NAME = 'or_hq_dev'
+    RU_NAME = 'Вавил+он'
+
+    ALLOW_SYNC = True
+
+    SYSTEM_FOLDER = 'ORDER_HQ'
+    NAVMAP_POS = '14.5, -1.1'
+
+
+class rh_vien(system.StorySystem, system.SiriusSystem):
+    NAME = 'rh_vien'
+    DIRECT_TEMPLATE_NAME = 'rh_vien_dev'
+    RU_NAME = 'Вена'
+
+    ALLOW_SYNC = True
+
+    SYSTEM_FOLDER = 'RH_VIENNA'
     NAVMAP_POS = '14.5, -1.1'
