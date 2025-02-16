@@ -5224,20 +5224,6 @@ archetype = space_research
 parent = up2_01
 
 [Object]
-nickname = up2_01_CORE_XDETAIL_tube01
-pos = 125, 0, -800
-rotate = 0, 0, 90
-archetype = space_tube_fix
-parent = up2_01
-
-[Object]
-nickname = up2_01_CORE_XDETAIL_tube02
-pos = -125, 0, -800
-rotate = 0, 0, 90
-archetype = space_tube_fix
-parent = up2_01
-
-[Object]
 nickname = up2_01_CORE_DETAIL_tube01
 pos = 0, -900, 0
 rotate = -90, 0, 0
@@ -5246,7 +5232,7 @@ parent = up2_01
 
 [Object]
 nickname = up2_01_CORE_DETAIL_tube02
-pos = -150, -775, 780
+pos = -151, -775, 780
 rotate = -90, 0, 0
 archetype = space_tube_fix
 parent = up2_01
@@ -5274,7 +5260,7 @@ parent = up2_01
 
 [Object]
 nickname = up2_01_CORE_DETAIL_tube06
-pos = -150, -775, -780
+pos = -151, -775, -780
 rotate = -90, 0, 0
 archetype = space_tube_fix
 parent = up2_01
@@ -5288,7 +5274,7 @@ parent = up2_01
 
 [Object]
 nickname = up2_01_CORE_DETAIL_tube08
-pos = 150, -775, 780
+pos = 151, -775, 780
 rotate = -90, 0, 0
 archetype = space_tube_fix
 parent = up2_01
@@ -5316,7 +5302,7 @@ parent = up2_01
 
 [Object]
 nickname = up2_01_CORE_DETAIL_tube12
-pos = 150, -775, -780
+pos = 151, -775, -780
 rotate = -90, 0, 0
 archetype = space_tube_fix
 parent = up2_01
@@ -5326,118 +5312,6 @@ nickname = up2_01_CORE_DETAIL_tube13
 pos = 150, -1080, -80
 rotate = -25, 180, 0
 archetype = space_short_tube
-parent = up2_01
-
-[Object]
-nickname = up2_01_CORE_DETAIL_girder01
-pos = -150, -850, 0
-rotate = 0, 90, -30
-archetype = space_girder
-parent = up2_01
-
-[Object]
-nickname = up2_01_CORE_DETAIL_girder02
-pos = 150, -850, 0
-rotate = 0, 90, 30
-archetype = space_girder
-parent = up2_01
-
-[Object]
-nickname = up2_01_CORE_DETAIL_girder03
-pos = 0, -790, 0
-rotate = 60, 0, 0
-archetype = space_girdera
-parent = up2_01
-
-[Object]
-nickname = up2_01_CORE_DETAIL_girder04
-pos = 0, -790, 0
-rotate = 60, 180, 0
-archetype = space_girdera
-parent = up2_01
-
-[Object]
-nickname = up2_01_CORE_DETAIL_girder05
-pos = 0, -100, 0
-rotate = 10, 90, 0
-archetype = space_girdera
-parent = up2_01
-
-[Object]
-nickname = up2_01_CORE_DETAIL_girder06
-pos = 0, -100, 0
-rotate = 10, -90, 0
-archetype = space_girdera
-parent = up2_01
-
-[Object]
-nickname = up2_01_CORE_DETAIL_girder07
-pos = 0, 100, 0
-rotate = -10, 90, 0
-archetype = space_girdera
-parent = up2_01
-
-[Object]
-nickname = up2_01_CORE_DETAIL_girder08
-pos = 0, 100, 0
-rotate = -10, -90, 0
-archetype = space_girdera
-parent = up2_01
-
-[Object]
-nickname = up2_01_CORE_DETAIL_girder09
-pos = -150, 850, 0
-rotate = 0, 90, 30
-archetype = space_girder
-parent = up2_01
-
-[Object]
-nickname = up2_01_CORE_DETAIL_girder10
-pos = 150, 850, 0
-rotate = 0, 90, -30
-archetype = space_girder
-parent = up2_01
-
-[Object]
-nickname = up2_01_CORE_DETAIL_girder11
-pos = 0, 790, 0
-rotate = -60, 0, 0
-archetype = space_girdera
-parent = up2_01
-
-[Object]
-nickname = up2_01_CORE_DETAIL_girder12
-pos = 0, 790, 0
-rotate = -60, 180, 0
-archetype = space_girdera
-parent = up2_01
-
-[Object]
-nickname = up2_01_CORE_DETAIL_girder13
-pos = 350, -450, 0
-rotate = 90, 0, 10
-archetype = space_girder
-parent = up2_01
-
-[Object]
-nickname = up2_01_CORE_DETAIL_girder14
-pos = -350, -450, 0
-rotate = 90, 0, -10
-archetype = space_girder
-parent = up2_01
-
-[Object]
-nickname = up2_01_CORE_DETAIL_girder15
-pos = 350, 450, 0
-rotate = 90, 0, -10
-archetype = space_girder
-parent = up2_01
-
-[Object]
-nickname = up2_01_CORE_DETAIL_girder16
-pos = -350, 450, 0
-rotate = 90, 0, 10
-archetype = space_girder
 parent = up2_01
 
 [Object]
@@ -5595,13 +5469,6 @@ archetype = space_girdera
 parent = up2_01
 
 [Object]
-nickname = up2_01_LEFT_girder07
-pos = -1400, 0, 0
-rotate = 0, -90, 0
-archetype = space_girdera
-parent = up2_01
-
-[Object]
 nickname = up2_01_LEFT_girder08
 pos = -1400, 0, 85
 rotate = 0, -90, 0
@@ -5612,13 +5479,6 @@ parent = up2_01
 nickname = up2_01_LEFT_girder09
 pos = -1400, 0, -85
 rotate = 0, -90, 0
-archetype = space_girdera
-parent = up2_01
-
-[Object]
-nickname = up2_01_LEFT_girder10
-pos = -2418, 0, 0
-rotate = 0, 90, 0
 archetype = space_girdera
 parent = up2_01
 
@@ -6694,13 +6554,6 @@ archetype = space_girdera
 parent = up2_01
 
 [Object]
-nickname = up2_01_RIGHT_girder07
-pos = 1400, 0, 0
-rotate = 0, 90, 0
-archetype = space_girdera
-parent = up2_01
-
-[Object]
 nickname = up2_01_RIGHT_girder08
 pos = 1400, 0, 85
 rotate = 0, 90, 0
@@ -6711,13 +6564,6 @@ parent = up2_01
 nickname = up2_01_RIGHT_girder09
 pos = 1400, 0, -85
 rotate = 0, 90, 0
-archetype = space_girdera
-parent = up2_01
-
-[Object]
-nickname = up2_01_RIGHT_girder10
-pos = 2418, 0, 0
-rotate = 0, -90, 0
 archetype = space_girdera
 parent = up2_01
 
@@ -7660,6 +7506,34 @@ archetype = space_industrial02a
 parent = up2_01
 
 [Object]
+nickname = up2_01_SIDES_xtube01
+pos = 250, 0, 780
+rotate = 0, 155, 0
+archetype = space_short_tube
+parent = up2_01
+
+[Object]
+nickname = up2_01_SIDES_xtube02
+pos = -250, 0, 780
+rotate = 0, 205, 0
+archetype = space_short_tube
+parent = up2_01
+
+[Object]
+nickname = up2_01_SIDES_xtube03
+pos = 250, 0, -780
+rotate = 0, 25, 0
+archetype = space_short_tube
+parent = up2_01
+
+[Object]
+nickname = up2_01_SIDES_xtube04
+pos = -250, 0, -780
+rotate = 0, -25, 0
+archetype = space_short_tube
+parent = up2_01
+
+[Object]
 nickname = up2_01_SIDES_ind02
 pos = -125, 0, 780
 rotate = 0, 90, 0
@@ -7723,13 +7597,6 @@ archetype = space_short_tube
 parent = up2_01
 
 [Object]
-nickname = up2_01_SIDES_gird01
-pos = 0, 0, 1560
-rotate = 0, 0, 0
-archetype = space_girdera
-parent = up2_01
-
-[Object]
 nickname = up2_01_SIDES_gird02
 pos = -80, 0, 1550
 rotate = 0, 0, 0
@@ -7740,13 +7607,6 @@ parent = up2_01
 nickname = up2_01_SIDES_gird03
 pos = 80, 0, 1550
 rotate = 0, 0, 0
-archetype = space_girdera
-parent = up2_01
-
-[Object]
-nickname = up2_01_SIDES_gird05
-pos = 0, 0, -1550
-rotate = 0, 180, 0
 archetype = space_girdera
 parent = up2_01
 
@@ -7856,13 +7716,6 @@ archetype = space_girdera
 parent = up2_01
 
 [Object]
-nickname = up2_01_FRONT_girder07
-pos = 520, 0, 2060
-rotate = 0, -90, 0
-archetype = space_girdera
-parent = up2_01
-
-[Object]
 nickname = up2_01_FRONT_girder08
 pos = 520, 0, 2145
 rotate = 0, -90, 0
@@ -7873,13 +7726,6 @@ parent = up2_01
 nickname = up2_01_FRONT_girder09
 pos = 520, 0, 1975
 rotate = 0, -90, 0
-archetype = space_girdera
-parent = up2_01
-
-[Object]
-nickname = up2_01_FRONT_girder10
-pos = -498, 0, 2060
-rotate = 0, 90, 0
 archetype = space_girdera
 parent = up2_01
 
@@ -8892,13 +8738,6 @@ archetype = space_girdera
 parent = up2_01
 
 [Object]
-nickname = up2_01_BACK_girder07
-pos = 520, 0, -2060
-rotate = 0, -90, 0
-archetype = space_girdera
-parent = up2_01
-
-[Object]
 nickname = up2_01_BACK_girder08
 pos = 520, 0, -1975
 rotate = 0, -90, 0
@@ -8909,13 +8748,6 @@ parent = up2_01
 nickname = up2_01_BACK_girder09
 pos = 520, 0, -2145
 rotate = 0, -90, 0
-archetype = space_girdera
-parent = up2_01
-
-[Object]
-nickname = up2_01_BACK_girder10
-pos = -498, 0, -2060
-rotate = 0, 90, 0
 archetype = space_girdera
 parent = up2_01
 

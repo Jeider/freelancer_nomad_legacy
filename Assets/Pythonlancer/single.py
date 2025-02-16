@@ -48,16 +48,37 @@ from templates.dockable import m13
 def draw_base():
     new_name = None
     move_to = None
-    workspace = '4'
+    workspace = '0'
 
     # base_class = m13.RockfordGenerator
-    new_name = 'or_hq_om7entry'
-    move_to = (-30000, 0, 31000)
+    # new_name = 'or_hq_vienna_entry'
+    # move_to = (13900, 0, 32400)
 
-    base_class = tunnel.AlaskaTunnel
+    base_class = upsilon_gasinside.Vienna
+    the_base = base_class()
 
-    content = base_class().get_instance(new_space_object_name=new_name, move_to=move_to)
+    content = the_base.get_instance(new_space_object_name=new_name, move_to=move_to)
     data_folder.DataFolder.sync_to_test_workspace(content, workspace_index=workspace)
+
+
+def draw_base_for_hardpoints():
+    new_name = None
+    move_to = None
+    workspace = '0'
+
+    # base_class = m13.RockfordGenerator
+    # new_name = 'or_hq_vienna_entry'
+    # move_to = (13900, 0, 32400)
+
+    base_class = upsilon_gasinside.Vienna
+    the_base = base_class()
+
+    the_base.get_instance(new_space_object_name=new_name, move_to=move_to)
+    the_base.parse_segments()
+    # print(the_base.get_segments_as_hardpoints_xml())
+    # print(the_base.get_segments_as_loadout())
+    print(the_base.get_instance_from_segments())
+
 
 
 def generate_hacker_panels():
@@ -269,6 +290,7 @@ ACTIONS = {
     'compile_audio': compile_audio,
     'test_hacker_colors': test_hacker_colors,
     'draw_base': draw_base,
+    'draw_base_for_hardpoints': draw_base_for_hardpoints,
     'build_image': build_image,
     'get_frames': get_frames,
     'get_frames_ints': get_frames_ints,

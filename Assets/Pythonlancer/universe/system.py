@@ -589,9 +589,12 @@ class StorySystem(System):
         new_lines = []
 
         for line in content:
-            if line.strip() == STORY_CONTENT_DIVIDER:
+            clean_line = line.strip()
+            if clean_line == STORY_CONTENT_DIVIDER:
                 break
             new_lines.append(line)
+            if clean_line == '[SystemInfo]':
+                new_lines.append('space_farclip = 100000\n')
 
         del new_lines[-1]
 
