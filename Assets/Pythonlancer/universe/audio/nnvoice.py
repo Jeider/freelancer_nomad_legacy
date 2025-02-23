@@ -177,6 +177,10 @@ class NNVoice(PilotVoice):
         L('mod_kgb_shield_2min', 'Ост+алось две минуты до активации щита К+ёнигсберга', RuleNNVoice),
         L('mod_kgb_shield_1min', 'Ост+алось одна минута до активации щита К+ёнигсберга', RuleNNVoice),
         L('mod_kgb_shield_30sec', 'Ост+алось 30 секунд до активации щита К+ёнигсберга', RuleNNVoice),
+
+        L('mod_xenos_enter_gas', 'Вход в плотное газовое облако', RuleNNVoice),
+        L('mod_xenos_enter_gas', 'Снижение плотности газового облако', RuleNNVoice),
+        L('mod_xenos_enter_gas', 'Плотное газовое облако покинуто', RuleNNVoice),
     ]
     # STEOS_ID = 549  # Atomic Heart, Filatova
     STEOS_ID = 219  # Witcher, Yennifer

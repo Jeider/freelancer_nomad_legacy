@@ -32,6 +32,24 @@ pilot = cruiser_default
 state_graph = CRUISER
 npc_class = lawful, CRUISER
 
+[NPCShipArch]
+nickname = ms11_rh_battleship
+loadout = rh_battleship_01
+level = d5
+ship_archetype = rh_battleship
+pilot = cruiser_default
+state_graph = CRUISER
+npc_class = lawful, CRUISER
+
+[NPCShipArch]
+nickname = ms11_ku_battleship
+loadout = ku_grp_battleship
+level = d10
+ship_archetype = ku_battleship
+pilot = cruiser_default
+state_graph = CRUISER
+npc_class = lawful, CRUISER, d5
+
 '''
 
 class Misson11(ingame_mission.IngameMission):
@@ -55,15 +73,13 @@ class Misson11(ingame_mission.IngameMission):
         #         Point(self, S.sig42, p)
         #     )
         #
-        # sig42_solars = [
-        #     'com_sat',
-        #     'com_sat_shield',
-        #     'check1',
-        # ]
-        # for sol in sig42_solars:
-        #     defined_points.append(
-        #         Solar(self, S.sig42, sol),
-        #     )
+
+        boxes = 16
+        vienn_solars = [f'BOX{i:02d}' for i in range(1, boxes+1)]
+        for sol in vienn_solars:
+            defined_points.append(
+                Solar(self, S.rh_vien, sol),
+            )
 
         return defined_points
 
@@ -85,13 +101,37 @@ class Misson11(ingame_mission.IngameMission):
             'labels': ['enemy', 'rh_cruiser', 'rheinland', 'vienna_defend'],
         }
 
+        vien_rbs = {
+            'npc_ship_arch': 'ms11_rh_battleship',
+            'faction': 'rh_grp',
+            'labels': ['enemy', 'rh_battleship', 'rheinland', 'vienna_defend'],
+        }
+        vien_kd = {
+            'npc_ship_arch': 'ms11_ku_destroyer',
+            'faction': 'or_grp',
+            'labels': ['friend', 'ku_destroyer', 'ku', 'order', 'vienna_assault'],
+        }
+        vien_kbs = {
+            'npc_ship_arch': 'ms11_ku_battleship',
+            'faction': 'rh_grp',
+            'labels': ['enemy', 'ku_battleship', 'ku', 'order', 'vienna_assault'],
+        }
+
+
+
         caps = []
         hq_rcrs = []
         hq_kds = []
         vien_rcrs = []
+        vien_rbss = []
+        vien_kds = []
+        vien_kbss = []
 
         hq_caps = 4
-        vien_caps = 4
+        vien_rcrs_count = 3
+        vien_rbs_count = 1
+        vien_ku_caps = 2
+        vien_kbs_count = 1
 
         for index in range(1, hq_caps+1):
             cap = f'hq_rcr{index}'
@@ -109,13 +149,37 @@ class Misson11(ingame_mission.IngameMission):
 
         self.add_capital_group('HQ_KD', hq_kds)
 
-        for index in range(1, vien_caps+1):
+        for index in range(1, vien_rcrs_count+1):
             cap = f'vien_rcr{index}'
-            the_cap = Capital(cap, ids_name=1, **hq_rcr)
+            the_cap = Capital(cap, ids_name=1, **vien_rcr)
             caps.append(the_cap)
             vien_rcrs.append(the_cap)
 
         self.add_capital_group('VIEN_RCR', vien_rcrs)
+
+        for index in range(1, vien_rbs_count+1):
+            cap = f'vien_bs{index}'
+            the_cap = Capital(cap, ids_name=1, **vien_rbs)
+            caps.append(the_cap)
+            vien_rbss.append(the_cap)
+
+        self.add_capital_group('VIEN_RBS', vien_rbss)
+
+        for index in range(1, vien_ku_caps+1):
+            cap = f'vien_kd{index}'
+            the_cap = Capital(cap, ids_name=1, **vien_kd)
+            caps.append(the_cap)
+            vien_kds.append(the_cap)
+
+        self.add_capital_group('VIEN_KD', vien_kds)
+
+        for index in range(1, vien_kbs_count+1):
+            cap = f'vien_kbs{index}'
+            the_cap = Capital(cap, ids_name=1, **vien_kbs)
+            caps.append(the_cap)
+            vien_kbss.append(the_cap)
+
+        self.add_capital_group('VIEN_KBS', vien_kbss)
 
         return caps
 
@@ -124,6 +188,7 @@ class Misson11(ingame_mission.IngameMission):
 
     def get_ships(self):
         return [
+            # HQ
             Ship(
                 self,
                 'hq_ku1',
@@ -192,6 +257,85 @@ class Misson11(ingame_mission.IngameMission):
                 slide_z=50,
                 labels=[
                     'hq_attack',
+                    'rheinland',
+                    'enemy',
+                ],
+                npc=NPC(
+                    faction=faction.RheinlandMain,
+                    ship=ship.Valkyrie,
+                    level=NPC.D5,
+                    equip_map=EqMap(base_level=5),
+                )
+            ),
+            # VIEN
+            Ship(
+                self,
+                'vien_kf1',
+                count=3,
+                affiliation=faction.OrderMain.CODE,
+                system_class=S.rh_vien,
+                slide_x=50,
+                slide_z=50,
+                labels=[
+                    'vien_assault',
+                    'order',
+                    'friend',
+                ],
+                npc=NPC(
+                    faction=faction.KusariMain,
+                    ship=ship.Dragon,
+                    level=NPC.D5,
+                    equip_map=EqMap(base_level=5),
+                )
+            ),
+            Ship(
+                self,
+                'vien_kf2',
+                count=3,
+                affiliation=faction.OrderMain.CODE,
+                system_class=S.rh_vien,
+                slide_x=50,
+                slide_z=50,
+                labels=[
+                    'vien_assault',
+                    'order',
+                    'friend',
+                ],
+                npc=NPC(
+                    faction=faction.KusariMain,
+                    ship=ship.Dragon,
+                    level=NPC.D5,
+                    equip_map=EqMap(base_level=5),
+                )
+            ),
+            Ship(
+                self,
+                'vien_rf1',
+                count=4,
+                affiliation=faction.RheinlandMain.CODE,
+                system_class=S.rh_vien,
+                slide_z=50,
+                labels=[
+                    'vien_defence',
+                    'rheinland',
+                    'enemy',
+                ],
+                npc=NPC(
+                    faction=faction.RheinlandMain,
+                    ship=ship.Valkyrie,
+                    level=NPC.D5,
+                    equip_map=EqMap(base_level=5),
+                )
+            ),
+            Ship(
+                self,
+                'vien_rf2',
+                count=4,
+                affiliation=faction.RheinlandMain.CODE,
+                system_class=S.rh_vien,
+                slide_z=50,
+                labels=[
+                    'vien_defence',
                     'rheinland',
                     'enemy',
                 ],
