@@ -1222,39 +1222,3 @@ class Patrol:
         hide_ship = patroller.hide()
 
         return SINGLE_DIVIDER.join([deactivators, hide_ship])
-
-
-
-
-
-
-
-"""
-{{ direct.ol_goto('xen', 'the_patroller', 'ol_the_patroller_to_the_end', 'goto_no_cruise') }}
-
-[Trigger]
-nickname = the_patrol
-Cnd_True = no_params
-Act_SpawnShip = the_patroller, ol_the_patroller_to_the_end, the_start_point
-Act_ActTrig = the_patrol_goto
-
-[Trigger]
-nickname = the_patrol_goto
-{{ direct.inside_pos('asf_hq', 'road_ku_d1', 500, 'the_point') }}
-Act_GiveObjList = the_patroller, force_stop
-Act_ActTrig = the_patrol_done_delay
-
-[Trigger]
-nickname = the_patrol_done_delay
-Cnd_Timer = 1
-Act_RelocateShip = Player, {{ direct.pos_orient('or_hq', 'puff_far_player') }}
-Act_ActTrig = the_patrol_restart
-
-[Trigger]
-nickname = the_patrol_restart
-Cnd_Timer = 1
-Act_GiveObjList = the_patroller, ol_the_patroller_to_the_end
-
-"""
-
-
