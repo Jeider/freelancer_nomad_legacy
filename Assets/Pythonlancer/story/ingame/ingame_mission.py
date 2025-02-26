@@ -32,6 +32,10 @@ class IngameMission(object):
                 msn_script=self.full_script.get_mission_by_index(self.SCRIPT_INDEX)
             )
 
+        self.trigger = Trigger()
+        self.cond = Cond()
+        self.direct = Direct(self, systems=self.DIRECT_SYSTEMS)
+
         self.ingame_thorns = self.get_ingame_thorns()
         if not self.FOLDER:
             raise Exception('Folder should be defined for %s' % self.__class__.__name__)
@@ -128,12 +132,9 @@ class IngameMission(object):
         context.update(self.get_ingame_thorns_context())
         context['nn_objectives_list'] = self.get_all_nn_objectives_content()
         context['objects_definitions'] = self.get_objects_definitions()
-        trigger = Trigger()
-        context['trigger'] = trigger
-        context['cond'] = Cond()
-        direct = Direct(self, systems=self.DIRECT_SYSTEMS)
-        context['direct'] = direct
-        context['patrol'] = Patrol(direct=direct, trigger=trigger)
+        context['trigger'] = self.trigger
+        context['cond'] = self.cond
+        context['direct'] = self.direct
         # print(context.keys())
         return context
 

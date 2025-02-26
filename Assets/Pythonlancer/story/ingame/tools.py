@@ -32,6 +32,7 @@ PLAYER = 'Player'
 EXPLODE = 'EXPLODE'
 SILENT = 'SILENT'
 DESTROY_MODES = (EXPLODE, SILENT)
+TRIGGER = '[Trigger]'
 
 GOTO = 'goto'
 GOTO_CRUISE = 'goto_cruise'
@@ -41,6 +42,7 @@ GOTO_MODES = (GOTO, GOTO_CRUISE, GOTO_NO_CRUISE)
 
 DRY_RUN = 'Cnd_True = no_params'
 NO_OL = 'no_ol'
+SHAPE_SPHERE = 'SPHERE'
 
 
 def ini_boolean(boolval):
@@ -149,6 +151,9 @@ class Target:
     def get_rotate(self):
         raise NotImplementedError
 
+    def get_size(self):
+        raise NotImplementedError
+
     @staticmethod
     def get_rotate_random():
         return (
@@ -177,6 +182,10 @@ class Target:
         """for template"""
         return f'{self.pos}, {self.orient}'
 
+    @property
+    def size(self):
+        return self.get_size()
+
     def get_name(self):
         raise NotImplementedError
 
@@ -204,6 +213,12 @@ class Target:
     def outside_pos(self, range, obj='Player'):
         return f'Cnd_DistVec = outside, {obj}, {self.pos}, {range}'
 
+    def inside_sphere(self, obj='Player'):
+        return f'Cnd_DistVec = inside, {obj}, {self.pos}, {self.size[0]}'
+
+    def outside_sphere(self, obj='Player'):
+        return f'Cnd_DistVec = outside, {obj}, {self.pos}, {self.size[0]}'
+
     def inside_obj(self, range, obj='Player'):
         raise NotImplementedError
 
@@ -223,6 +238,9 @@ class Point(Target):
 
     def get_rotate(self):
         return self.marker.get_rotate()
+
+    def get_size(self):
+        return self.marker.get_size()
 
     def get_name(self):
         raise Exception('still not implemented. should create nagvec')
@@ -951,28 +969,34 @@ class Trigger:
         'REP_FRIEND_MAXIMUM',
     ]
 
-    def new(self, name):
-        return SINGLE_DIVIDER.join([
-            '[Trigger]',
+    def new(self, name, dry=False):
+        content = [
+            TRIGGER,
             f'nickname = {name}',
-        ])
+        ]
+        if dry:
+            content.append(DRY_RUN)
+        return SINGLE_DIVIDER.join(content)
 
     def next(self, next_name):
         return SINGLE_DIVIDER.join([
             f'Act_ActTrig = {next_name}',
             '',
-            '[Trigger]',
+            TRIGGER,
             f'nickname = {next_name}',
         ])
 
     def turn(self, trigger):
         return f'Act_ActTrig = {trigger}'
 
+    def off(self, trigger):
+        return f'Act_DeActTrig = {trigger}'
+
     def delay(self, next_name, delay: float):
         return SINGLE_DIVIDER.join([
             f'Act_ActTrig = delay_{next_name}',
             '',
-            '[Trigger]',
+            TRIGGER,
             f'nickname = delay_{next_name}',
             f'Cnd_Timer = {delay}',
             self.turn(next_name),
@@ -982,7 +1006,7 @@ class Trigger:
         return SINGLE_DIVIDER.join([
             f'Act_ActTrig = delay_{next_name}',
             '',
-            '[Trigger]',
+            TRIGGER,
             f'nickname = delay_{next_name}',
             f'Cnd_Timer = {delay}',
         ])
@@ -1088,6 +1112,12 @@ class Direct:
     def outside_pos(self, system_name, alias, range, obj='Player'):
         return self.get_point(system_name, alias).outside_pos(range, obj)
 
+    def inside_sphere(self, system_name, alias, obj='Player'):
+        return self.get_point(system_name, alias).inside_sphere(obj)
+
+    def outside_sphere(self, system_name, alias, obj='Player'):
+        return self.get_point(system_name, alias).outside_sphere(obj)
+
     def next_cond_inside_pos(self, system_name, alias, range, obj='Player'):
         return SINGLE_DIVIDER.join([
             self.trigger.next(f'near_{alias}'),
@@ -1153,7 +1183,7 @@ class Patrol:
     def __init__(self, direct, trigger):
         self.direct: Direct = direct
         self.trigger: Trigger = trigger
-        self.line_patrols = []
+        self.line_patrols = {}
 
     def get_line_patrol_trigger_name(self, patroller):
         return f'line_patrol_of_{patroller}'
@@ -1170,7 +1200,7 @@ class Patrol:
         main_patrol_name = self.get_line_patrol_trigger_name(patroller_name)
         objlist_name = f'ol_{patroller_name}_to_the_end'
 
-        if patroller_name in self.line_patrols:
+        if patroller_name in self.line_patrols.keys():
             raise Exception(f'Patrol {patroller_name} is already defined')
 
         content = [
@@ -1194,14 +1224,14 @@ class Patrol:
             f'Act_GiveObjList = {patroller_name}, {objlist_name}',
         ]
 
-        self.line_patrols.append(main_patrol_name)
+        self.line_patrols[main_patrol_name] = patroller
 
         return SINGLE_DIVIDER.join(content)
 
     def start_line_patrol(self, patroller: ShipMember):
         main_patrol_name = self.get_line_patrol_trigger_name(patroller.name)
 
-        if main_patrol_name not in main_patrol_name:
+        if main_patrol_name not in self.line_patrols.keys():
             raise Exception(f'Patrol {main_patrol_name} is not defined')
 
         return f'Act_ActTrig = {main_patrol_name}'
@@ -1209,7 +1239,7 @@ class Patrol:
     def stop_line_patrol(self, patroller: ShipMember):
         main_patrol_name = self.get_line_patrol_trigger_name(patroller.name)
 
-        if main_patrol_name not in main_patrol_name:
+        if main_patrol_name not in self.line_patrols.keys():
             raise Exception(f'Patrol {main_patrol_name} is not defined')
 
         triggers = [
@@ -1222,3 +1252,11 @@ class Patrol:
         hide_ship = patroller.hide()
 
         return SINGLE_DIVIDER.join([deactivators, hide_ship])
+
+    def stop_all_line_patrols(self):
+        actions = []
+        for patroller in self.line_patrols.values():
+            actions.append(
+                self.stop_line_patrol(patroller=patroller)
+            )
+        return SINGLE_DIVIDER.join(actions)

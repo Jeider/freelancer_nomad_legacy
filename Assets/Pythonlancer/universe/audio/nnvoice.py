@@ -178,9 +178,11 @@ class NNVoice(PilotVoice):
         L('mod_kgb_shield_1min', 'Ост+алось одна минута до активации щита К+ёнигсберга', RuleNNVoice),
         L('mod_kgb_shield_30sec', 'Ост+алось 30 секунд до активации щита К+ёнигсберга', RuleNNVoice),
 
-        L('mod_xenos_enter_gas', 'Вход в плотное газовое облако', RuleNNVoice),
-        L('mod_xenos_enter_gas', 'Снижение плотности газового облако', RuleNNVoice),
-        L('mod_xenos_enter_gas', 'Плотное газовое облако покинуто', RuleNNVoice),
+        L('mod_xenos_fail_timeout', 'Вы были обнар+ужены д+альним ск+анером', RuleNNVoice),
+        L('mod_xenos_fail_patrol', 'Вы были обнар+ужены патрулём', RuleNNVoice),
+
+        L('mod_xenos_enter_gas', 'Вход в облако', RuleNNVoice),
+        L('mod_xenos_exit_gas', 'Облако покинуто', RuleNNVoice),
     ]
     # STEOS_ID = 549  # Atomic Heart, Filatova
     STEOS_ID = 219  # Witcher, Yennifer

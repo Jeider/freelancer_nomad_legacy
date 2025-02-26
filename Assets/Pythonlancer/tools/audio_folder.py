@@ -26,9 +26,9 @@ XML_FOLDERS = [
     # 'echo_m08',
     # 'echo_m08_female',
     # 'echo_m08_player',
-    'echo_m12',
-    'echo_m12_female',
-    'echo_m12_player',
+    # 'echo_m12',
+    # 'echo_m12_female',
+    # 'echo_m12_player',
     # 'echo_m13',
     # 'echo_m13_female',
     # 'echo_m13_player',
@@ -45,7 +45,7 @@ XML_FOLDERS = [
     # "dispatcher01",
     # "dispatcher02",
     # "dispatcher03",
-    # "nnvoice",
+    "nnvoice",
 ]
 STORY_XML_TEMPLATE = '{file}.utf.xml'
 STORY_UTF_TEMPLATE = '{file}.utf'
