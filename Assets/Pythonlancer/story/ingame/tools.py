@@ -39,6 +39,10 @@ GOTO_NO_CRUISE = 'goto_no_cruise'
 
 GOTO_MODES = (GOTO, GOTO_CRUISE, GOTO_NO_CRUISE)
 
+DRY_RUN = 'Cnd_True = no_params'
+NO_OL = 'no_ol'
+
+
 def ini_boolean(boolval):
     return 'true' if boolval else 'false'
 
@@ -482,7 +486,7 @@ class Conn(Target):
         return self.exit_target()
 
 
-class RelPos(object):
+class RelPos:
     def __init__(self, deg, target_name, radius):
         self.deg = deg
         self.target_name = target_name
@@ -533,6 +537,10 @@ class Ship(Target):
         if self.count > 1:
             return self.get_multiple_member_name(index)
         return self.get_single_member_name()
+
+    def member_obj(self, index=1):
+        """for template"""
+        return ShipMember(self, index)
 
     @property
     def leader(self):
@@ -646,12 +654,15 @@ class Ship(Target):
             )
         return DIVIDER.join(msn_ships)
 
-    def spawn(self, objlist='no_ol'):
+    def spawn(self, objlist=NO_OL):
         if self.relative_pos:
             raise Exception('Ship %s is configured as relative-pos' % self.name)
         if self.count > 1:
             raise Exception('Ship %s is not single' % self.name)
         return f'Act_SpawnShip = {self.get_single_member_name()}, {objlist}'
+
+    def spawn_member(self, member_index=1, objlist=NO_OL):
+        return f'Act_SpawnShip = {self.get_multiple_member_name(member_index)}, {objlist}'
 
     def spawn_all(self):
         """Just spawn all ships, defined in relative pos mode"""
@@ -662,7 +673,7 @@ class Ship(Target):
             actions.append(f'Act_SpawnShip = {self.get_multiple_member_name(index)}')
         return SINGLE_DIVIDER.join(actions)
 
-    def spawn_all_with_pos_orient(self, objlist='no_ol'):
+    def spawn_all_with_pos_orient(self, objlist=NO_OL):
         """Spawn all ships by points in system. Points must be defined in system like NAME1, etc"""
         if self.system is None:
             raise Exception('System is not defined for ship %s' % self.name)
@@ -678,7 +689,7 @@ class Ship(Target):
 
         return SINGLE_DIVIDER.join(actions)
 
-    def spawn_all_slide(self, objlist='no_ol'):
+    def spawn_all_slide(self, objlist=NO_OL):
         """Spawn all ships with slide. Like formation. Point with SHIP NAME is MANDATORY in System"""
         if self.system is None:
             raise Exception('System is not defined for ship %s' % self.name)
@@ -731,6 +742,11 @@ class Ship(Target):
                 continue
             actions.append(f'Act_Destroy = {self.get_member_name(index)}, {destroy_mode}')
         return SINGLE_DIVIDER.join(actions)
+
+    def destroy_member(self, member_index, destroy_mode):
+        if destroy_mode not in DESTROY_MODES:
+            raise Exception('Unknown destroy kind %s' % destroy_mode)
+        return f'Act_Destroy = {self.get_member_name(member_index)}, {destroy_mode}'
 
     def hide_all(self, exclude=None):
         return self.destroy_all(SILENT, exclude)
@@ -788,7 +804,24 @@ class Ship(Target):
         return SINGLE_DIVIDER.join(members)
 
 
-class NNObj(object):
+class ShipMember:
+    def __init__(self, ship, member_index):
+        self.ship: Ship = ship
+        self.member_index: int = member_index
+
+    @property
+    def name(self):
+        """for template"""
+        return self.ship.member(index=self.member_index)
+
+    def hide(self):
+        return self.ship.destroy_member(member_index=self.member_index, destroy_mode=SILENT)
+
+    def spawn(self, ol=NO_OL):
+        return self.ship.spawn_member(member_index=self.member_index, objlist=ol)
+
+
+class NNObj:
     TITLE = '[NNObjective]'
     NICKNAME_TEMPLATE = 'nickname = {nickname}'
     STATE = 'state = HIDDEN'
@@ -1109,3 +1142,119 @@ class Direct:
     def spawn_ship(self, system_name, alias, ship: Ship, ol=None):
         point = self.get_point(system_name, alias)
         return f'{ship.spawn(ol)}, {point.pos_orient}'
+
+    def spawn_ship_member(self, system_name, alias, ship_member: ShipMember, ol=NO_OL):
+        point = self.get_point(system_name, alias)
+        return f'{ship_member.spawn(ol)}, {point.pos_orient}'
+
+
+class Patrol:
+
+    def __init__(self, direct, trigger):
+        self.direct: Direct = direct
+        self.trigger: Trigger = trigger
+        self.line_patrols = []
+
+    def get_line_patrol_trigger_name(self, patroller):
+        return f'line_patrol_of_{patroller}'
+
+    def define_line_patrol(self, system_name,
+                           patroller: ShipMember,
+                           init_point: str,
+                           target_point: str,
+                           restart_point: str,
+                           target_range:int = 500,
+                           near_range: int = 100,
+                           mode: str = GOTO_CRUISE):
+        patroller_name = patroller.name
+        main_patrol_name = self.get_line_patrol_trigger_name(patroller_name)
+        objlist_name = f'ol_{patroller_name}_to_the_end'
+
+        if patroller_name in self.line_patrols:
+            raise Exception(f'Patrol {patroller_name} is already defined')
+
+        content = [
+            self.direct.ol_goto(system_name, target_point, objlist_name, mode, near=near_range),
+            '',
+            self.trigger.new(main_patrol_name),
+            DRY_RUN,
+            self.direct.spawn_ship_member(
+                system_name,
+                alias=init_point,
+                ship_member=patroller,
+                ol=objlist_name,
+            ),
+            self.trigger.next(f'{main_patrol_name}_goto'),
+            self.direct.inside_pos(system_name, target_point, range=target_range, obj=patroller_name),
+            f'Act_GiveObjList = {patroller_name}, force_stop',
+            self.trigger.delay_direct(f'{main_patrol_name}_done', 1),
+
+            f'Act_RelocateShip = {patroller_name}, {self.direct.pos_orient(system_name, restart_point)}',
+            self.trigger.delay_direct(f'{main_patrol_name}_restart', 1),
+            f'Act_GiveObjList = {patroller_name}, {objlist_name}',
+        ]
+
+        self.line_patrols.append(main_patrol_name)
+
+        return SINGLE_DIVIDER.join(content)
+
+    def start_line_patrol(self, patroller: ShipMember):
+        main_patrol_name = self.get_line_patrol_trigger_name(patroller.name)
+
+        if main_patrol_name not in main_patrol_name:
+            raise Exception(f'Patrol {main_patrol_name} is not defined')
+
+        return f'Act_ActTrig = {main_patrol_name}'
+
+    def stop_line_patrol(self, patroller: ShipMember):
+        main_patrol_name = self.get_line_patrol_trigger_name(patroller.name)
+
+        if main_patrol_name not in main_patrol_name:
+            raise Exception(f'Patrol {main_patrol_name} is not defined')
+
+        triggers = [
+            main_patrol_name,
+            f'{main_patrol_name}_goto',
+            f'{main_patrol_name}_done',
+            f'{main_patrol_name}_restart',
+        ]
+        deactivators = SINGLE_DIVIDER.join([f'Act_DeActTrig = {t}' for t in triggers])
+        hide_ship = patroller.hide()
+
+        return SINGLE_DIVIDER.join([deactivators, hide_ship])
+
+
+
+
+
+
+
+"""
+{{ direct.ol_goto('xen', 'the_patroller', 'ol_the_patroller_to_the_end', 'goto_no_cruise') }}
+
+[Trigger]
+nickname = the_patrol
+Cnd_True = no_params
+Act_SpawnShip = the_patroller, ol_the_patroller_to_the_end, the_start_point
+Act_ActTrig = the_patrol_goto
+
+[Trigger]
+nickname = the_patrol_goto
+{{ direct.inside_pos('asf_hq', 'road_ku_d1', 500, 'the_point') }}
+Act_GiveObjList = the_patroller, force_stop
+Act_ActTrig = the_patrol_done_delay
+
+[Trigger]
+nickname = the_patrol_done_delay
+Cnd_Timer = 1
+Act_RelocateShip = Player, {{ direct.pos_orient('or_hq', 'puff_far_player') }}
+Act_ActTrig = the_patrol_restart
+
+[Trigger]
+nickname = the_patrol_restart
+Cnd_Timer = 1
+Act_GiveObjList = the_patroller, ol_the_patroller_to_the_end
+
+"""
+
+

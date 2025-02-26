@@ -56,7 +56,7 @@ class Misson11(ingame_mission.IngameMission):
     JINJA_TEMPLATE = 'missions/m11/m11.ini'
     FOLDER = 'M11'
     FILE = 'm11'
-    SCRIPT_INDEX = 9
+    SCRIPT_INDEX = 11
     DIRECT_SYSTEMS = [S.or_hq, S.rh_vien]
     STATIC_NPCSHIPS = NPCSHIPS
 
@@ -116,8 +116,6 @@ class Misson11(ingame_mission.IngameMission):
             'faction': 'rh_grp',
             'labels': ['enemy', 'ku_battleship', 'ku', 'order', 'vienna_assault'],
         }
-
-
 
         caps = []
         hq_rcrs = []

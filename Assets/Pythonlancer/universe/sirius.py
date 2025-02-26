@@ -654,3 +654,14 @@ class rh_vien(system.StorySystem, system.SiriusSystem):
 
     SYSTEM_FOLDER = 'RH_VIENNA'
     NAVMAP_POS = '14.5, -1.1'
+
+
+class xen(system.StorySystem, system.SiriusSystem):
+    NAME = 'xen'
+    DIRECT_TEMPLATE_NAME = 'xen_dev'
+    RU_NAME = 'Ксеносы'
+
+    ALLOW_SYNC = True
+
+    SYSTEM_FOLDER = 'XENOS'
+    NAVMAP_POS = '14.5, -1.1'

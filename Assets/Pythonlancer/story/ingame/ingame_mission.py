@@ -1,4 +1,4 @@
-from story.ingame.tools import Nag, Script, Trigger, Cond, Direct
+from story.ingame.tools import Nag, Script, Trigger, Cond, Direct, Patrol
 
 from text.dividers import DIVIDER
 
@@ -128,9 +128,12 @@ class IngameMission(object):
         context.update(self.get_ingame_thorns_context())
         context['nn_objectives_list'] = self.get_all_nn_objectives_content()
         context['objects_definitions'] = self.get_objects_definitions()
-        context['trigger'] = Trigger()
+        trigger = Trigger()
+        context['trigger'] = trigger
         context['cond'] = Cond()
-        context['direct'] = Direct(self, systems=self.DIRECT_SYSTEMS)
+        direct = Direct(self, systems=self.DIRECT_SYSTEMS)
+        context['direct'] = direct
+        context['patrol'] = Patrol(direct=direct, trigger=trigger)
         # print(context.keys())
         return context
 
