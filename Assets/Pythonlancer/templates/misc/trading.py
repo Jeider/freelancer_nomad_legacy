@@ -203,3 +203,103 @@ pos = -148, 2, -85
 rotate = 90, 60, 0
 archetype = space_industrial02d
     '''
+
+
+class XenosOutpostPanels(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'rmbase01'
+    TEMPLATE = '''[Object]
+nickname = rmbase01_door
+pos = 0, 0, -115
+rotate = 0, 0, 0
+archetype = space_door_lock2_destroyable
+
+[Object]
+nickname = rmbase01
+pos = 0, 0, 110
+rotate = 90, 0, 0
+archetype = space_medium_control_tower
+
+[Object]
+nickname = rmbase01_ring
+pos = 0, 0, -115
+rotate = 0, 0, 0
+archetype = small_ring
+parent = rmbase01
+
+[Object]
+nickname = rmbase01_control_tower03
+pos = 0, -180, 0
+rotate = 0, 0, 0
+archetype = space_small_control_tower
+parent = rmbase01
+
+[Object]
+nickname = rmbase01_ind01
+pos = 0, 110, 0
+rotate = 0, 0, 0
+archetype = space_industrial02d
+parent = rmbase01
+
+[Object]
+nickname = rmbase01_ind02
+pos = 60, -100, 0
+rotate = 0, 0, 30
+archetype = space_industrial02d
+parent = rmbase01
+
+[Object]
+nickname = rmbase01_ind03
+pos = -60, -100, 0
+rotate = 0, 0, -30
+archetype = space_industrial02d
+parent = rmbase01
+
+[Object]
+nickname = rmbase01_ind04
+pos = 130, -50, 0
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rmbase01
+
+[Object]
+nickname = rmbase01_ind05
+pos = -130, -50, 0
+rotate = 0, 0, 0
+archetype = space_industriala
+parent = rmbase01
+
+[Object]
+nickname = rmbase01_ind06
+pos = 0, -120, 0
+rotate = 0, 0, 90
+archetype = space_industrial02d
+parent = rmbase01
+
+[Object]
+nickname = rmbase01_habitat01
+pos = 0, 180, 0
+rotate = 0, 0, 0
+archetype = space_pirate_control_block
+parent = rmbase01
+
+[Object]
+nickname = rmbase01_habitat02
+pos = 0, -240, 0
+rotate = 180, 0, 0
+archetype = space_pirate_control_block
+parent = rmbase01
+
+[Object]
+nickname = rmbase01_panel01
+pos = -100, 50, 0
+rotate = 0, 0, 0
+archetype = space_debris_panel
+parent = rmbase01
+
+[Object]
+nickname = rmbase01_panel02
+pos = 100, 50, 0
+rotate = 0, 180, 0
+archetype = space_debris_panel
+parent = rmbase01
+'''

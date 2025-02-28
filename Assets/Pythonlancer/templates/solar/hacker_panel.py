@@ -9,6 +9,9 @@ from tools.crc import crc32_hex_from_str
 from files.writer import FileWriter
 
 
+# PREFIX = ''
+PREFIX = 'm10_'
+
 OUT_SUBFOLDER = 'hacker'
 
 XML_SOLAR_MAT_TEMPLATE = '''<?xml version="1.0" encoding="ISO-8859-1"?>
@@ -158,7 +161,7 @@ VMESH_LIB_HACKER_ROOT = '''
 </valid_hack_root.lod0-112.vms>
 '''
 
-COLOR_BOX_VMESH_NAME_TEMPLATE = 'hacker_{panel_index:02d}_color_box_{button_index:02d}.lod0-112.vms'
+COLOR_BOX_VMESH_NAME_TEMPLATE = PREFIX + 'hacker_{panel_index:02d}_color_box_{button_index:02d}.lod0-112.vms'
 
 VMESH_LIB_COLOR_BOX_TEMPLATE = '''
 <{button_color_vmesh_library}>
@@ -368,9 +371,9 @@ VALID_PART_HIT_PTS = 1250
 VALID_PART_TURN_FUSE_HIT_PTS = VALID_PART_HIT_PTS - 10
 INVALID_PART_HIT_PTS = 1250
 INVALID_PART_TURN_FUSE_HIT_PTS = INVALID_PART_HIT_PTS - 10
-VALID_PART_DEATH_FUSE_NAME_TEMPLATE = 'fuse_hacker_{panel_index:02d}_box_{button_index:02d}_valid_death'
-VALID_PART_HIT_FUSE_NAME_TEMPLATE = 'fuse_hacker_{panel_index:02d}_box_{button_index:02d}_hit'
-INVALID_PART_HIT_FUSE_TEMPLATE = 'fuse_hacker_{panel_index:02d}_box_{button_index:02d}_hit'
+VALID_PART_DEATH_FUSE_NAME_TEMPLATE = PREFIX + 'fuse_hacker_{panel_index:02d}_box_{button_index:02d}_valid_death'
+VALID_PART_HIT_FUSE_NAME_TEMPLATE = PREFIX + 'fuse_hacker_{panel_index:02d}_box_{button_index:02d}_hit'
+INVALID_PART_HIT_FUSE_TEMPLATE = PREFIX + 'fuse_hacker_{panel_index:02d}_box_{button_index:02d}_hit'
 
 FX_SOUND_VALID = 'gf_hacker_sound_valid'
 FX_IMPACT_VALID = 'gf_hacker_impact_valid'
@@ -488,8 +491,8 @@ shape_name = NNM_SM_COMMUNICATIONS
 hit_pts = 60000000000000
 destructible = false'''
 
-OUT_FILE_LAYER_TEMPLATE = 'hacker_{panel_index:02d}_layer_{layer_index:02d}'
-OUT_FILE_VALID_TEMPLATE = 'hacker_{panel_index:02d}_valid'
+OUT_FILE_LAYER_TEMPLATE = PREFIX + 'hacker_{panel_index:02d}_layer_{layer_index:02d}'
+OUT_FILE_VALID_TEMPLATE = PREFIX + 'hacker_{panel_index:02d}_valid'
 
 COLOR_1 = 1
 COLOR_2 = 2
@@ -531,7 +534,7 @@ RGB1 = [
 ]
 
 COLOR_RGB_PER_LETTER = {
-    'A': RGB1,
+    'X': RGB1,
 }
 
 COLORS = [
@@ -541,7 +544,7 @@ COLORS = [
 ]
 NEAR_COLORS_LEVELS_COUNT = int(len(COLORS) / 2)
 
-COLOR_FILE_NAME_TEMPLATE = 'hacker_button_{panel_index:02d}_{button_index:02d}.3db'
+COLOR_FILE_NAME_TEMPLATE = PREFIX + 'hacker_button_{panel_index:02d}_{button_index:02d}.3db'
 
 VISIBLE_DRIFT = 5
 LAYER_DRIFT = 2
@@ -555,7 +558,7 @@ BUTTONS_PER_LINE = 8
 
 NOT_RANDOMIZED_COLORS = 2
 
-HACKER_PANELS_PER_COLOR_MAP = 5
+HACKER_PANELS_PER_COLOR_MAP = 1
 
 HIT_POINTS = 6000000000
 HIT_POINT_EXTRA_DAMAGE = 500000

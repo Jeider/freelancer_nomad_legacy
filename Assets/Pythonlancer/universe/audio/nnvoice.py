@@ -1,6 +1,6 @@
 from universe.audio.base_pilot import PilotVoice
 from universe.audio.pilot_line import PilotLine as L
-from universe.audio.parse_rule import RuleNNVoice, RuleNNVoiceHigh
+from universe.audio.parse_rule import RuleNNVoice, RuleNNVoiceHigh, RuleNNVoiceFast, RuleNNVoiceXFast, RuleNNVoiceSlow
 
 
 class NNVoice(PilotVoice):
@@ -183,7 +183,24 @@ class NNVoice(PilotVoice):
 
         L('mod_xenos_enter_gas', 'Вход в облако', RuleNNVoice),
         L('mod_xenos_exit_gas', 'Облако покинуто', RuleNNVoice),
+
+        L('mod_hacker_color00', 'Максим+альное', RuleNNVoiceXFast),
+        L('mod_hacker_color01', 'Выс+окое', RuleNNVoiceXFast),
+        L('mod_hacker_color02', 'Пов+ышеное', RuleNNVoiceFast),
+        L('mod_hacker_color03', 'Среднее', RuleNNVoice),
+        L('mod_hacker_color04', 'Пон+иженое', RuleNNVoice),
+        L('mod_hacker_color05', 'Н+изкое', RuleNNVoice),
+        L('mod_hacker_color06', 'Миним+альное', RuleNNVoice),
     ]
     # STEOS_ID = 549  # Atomic Heart, Filatova
     STEOS_ID = 219  # Witcher, Yennifer
     FOLDER = 'nnvoice'
+
+
+
+
+
+
+
+
+

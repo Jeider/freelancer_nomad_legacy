@@ -158,3 +158,6 @@ __pycache__/
 *$py.class
 Assets/Pythonlancer/settings.py
 Assets/AUDIO_XML_RU_APPLY
+Assets/UTF_XML/OUT
+Assets/UTF_XML/INPUT
+Assets/TRACKS/FILES

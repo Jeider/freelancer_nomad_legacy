@@ -36,11 +36,13 @@ from tools.system_template import SystemTemplateLoader
 
 from story.cutscenes.mission9.yokohama import Msn9YokohamaCutsceneThorn
 
-from templates.solar.hacker_panel import HackerPanelManager, REL_TOP
+from templates.solar import hacker_panel
 from templates.dockable import terraforming
 from templates.dockable import valensia
 from templates.dockable import upsilon_gasinside
 from templates.dockable import tunnel
+from templates.misc import rmbase
+from templates.misc import trading
 
 from templates.dockable import m13
 
@@ -48,13 +50,15 @@ from templates.dockable import m13
 def draw_base():
     new_name = None
     move_to = None
-    workspace = '0'
+    workspace = '2'
 
     # base_class = m13.RockfordGenerator
     # new_name = 'or_hq_vienna_entry'
     # move_to = (13900, 0, 32400)
 
-    base_class = upsilon_gasinside.Vienna
+    base_class = trading.XenosOutpostPanels
+    new_name = 'xenos_control01'
+    move_to = (-2000, 0, -10000)
     the_base = base_class()
 
     content = the_base.get_instance(new_space_object_name=new_name, move_to=move_to)
@@ -82,7 +86,7 @@ def draw_base_for_hardpoints():
 
 
 def generate_hacker_panels():
-    HackerPanelManager().write_content()
+    hacker_panel.HackerPanelManager().write_content()
 
 
 def compile_audio():
@@ -99,10 +103,10 @@ def compile_pilots_audio():
 
 
 def test_hacker_colors():
-    x = HackerPanelManager()
+    x = hacker_panel.HackerPanelManager()
 
     x1 = x.get_random_hacker_panel()
-    x2 = x1.get_space_content('om15_hacker01', 'rh_grp', (25.5, 3122.5, 234234.12), REL_TOP, 'om15_success')
+    x2 = x1.get_space_content('xenos_control_hack', 'or_grp', (-2000, 0, -9920), hacker_panel.REL_FRONT, 'xenos_success')
     print(x2)
     pass
 

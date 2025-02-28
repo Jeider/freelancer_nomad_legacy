@@ -87,6 +87,21 @@ class RuleNNVoice(ParseRule):
     STEOS_SPEED = 1
 
 
+class RuleNNVoiceSlow(ParseRule):
+    STEOS_PITCH = 0.2
+    STEOS_SPEED = 0.8
+
+
+class RuleNNVoiceFast(ParseRule):
+    STEOS_PITCH = 0.3
+    STEOS_SPEED = 1.1
+
+
+class RuleNNVoiceXFast(ParseRule):
+    STEOS_PITCH = 0.4
+    STEOS_SPEED = 1.2
+
+
 class RuleNNVoiceHigh(ParseRule):
     STEOS_PITCH = 0.3
     STEOS_SPEED = 1.1
