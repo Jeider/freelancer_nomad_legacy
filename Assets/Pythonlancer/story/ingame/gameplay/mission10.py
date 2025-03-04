@@ -5,6 +5,7 @@ from story.ingame import ingame_mission
 from story.math import euler_to_quat
 from story import actors
 
+from story.ingame import objectives as O
 from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Solar, Capital, Patrol, Direct, DRY_RUN, Trigger
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
@@ -233,13 +234,12 @@ class Misson10(ingame_mission.IngameMission):
                 Point(self, S.xen, p)
             )
 
-
         return defined_points
 
     def get_nn_objectives(self):
         return [
-            NNObj(self, 96008, name='first_puff', target='first_puff'),
-            NNObj(self, 96008, name='last_puff', target='last_puff'),
+            NNObj(self, O.GOTO, name='first_puff', target='first_puff'),
+            NNObj(self, 'Доберитесь большого облака, минуя патрули', name='last_puff', target='last_puff'),
         ]
 
     def get_ships(self):

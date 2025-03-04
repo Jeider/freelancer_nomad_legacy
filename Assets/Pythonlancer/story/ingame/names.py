@@ -1,0 +1,7 @@
+LI_CRUISER = 'Крейсер Либерти'
+RH_CRUISER = 'Крейсер Рейнланда'
+KU_DESTROYER = 'Эсминец Кусари'
+BR_DESTROYER = 'Эсминец Бретонии'
+RH_GUNBOAT = 'Канонерка Рейнланда'
+KU_GUNBOAT = 'Канонерка Кусари'
+BR_GUNBOAT = 'Канонерка Бретонии'

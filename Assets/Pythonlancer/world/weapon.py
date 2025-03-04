@@ -1,5 +1,6 @@
 from world.equipment import Equipment, Icon, DefaultGood
 from text.dividers import SINGLE_DIVIDER
+from text.infocards import InfocardBuilder
 
 from fx.weapon import WeaponFX
 
@@ -487,10 +488,9 @@ LODranges = {lod_ranges}'''
     EXTRA_SHIELD_DAMAGE_FACTOR = 0
     SHIELDGUN_HULL_DAMAGE_FACTOR = 0.1
 
-    def __init__(self, faction, ids_name, ids_info, equipment_class, weapon_fx):
+    def __init__(self, ids, faction, equipment_class, weapon_fx):
+        self.ids = ids
         self.faction = faction
-        self.ids_name = ids_name
-        self.ids_info = ids_info
 
         self.validate_model()
 
@@ -500,6 +500,14 @@ LODranges = {lod_ranges}'''
         self.set_rate()
 
         self.munition = self.create_munition()
+
+        self.ids_name = ids.new_name(self.get_ru_name())
+        self.ids_info = ids.new_info(
+            InfocardBuilder.build_equip_infocard(
+                self.get_ru_fullname(),
+                self.get_ru_description_content()
+            )
+        )
 
     def validate_model(self):
         if self.MODEL not in self.MODELS:

@@ -1,5 +1,7 @@
 from world.lootable import LootableEquip
 from universe.markets import MarketEquip
+from text.infocards import InfocardBuilder
+
 
 class Equipment(LootableEquip, MarketEquip):
     CLASS_1 = 1
@@ -255,6 +257,11 @@ combinable = {combinable}'''
     def get_ru_name(self):
         raise NotImplementedError('ru name builder not defined')
 
+    def get_ru_fullname(self):
+        raise NotImplementedError('ru name builder not defined')
+
+    def get_ru_description_content(self):
+        raise NotImplementedError('ru name builder not defined')
 
 
 class MainMiscEquip(Equipment):
@@ -300,14 +307,26 @@ class MainMiscEquip(Equipment):
     MAX_PRICE_ELITE = 260000
     MAX_PRICE_FREIGHTER = 320000
 
-    def __init__(self, equip_type, equipment_class, ids_name, ids_info):
+    def __init__(self, ids, equip_type, equipment_class):
+        self.ids = ids
         self.equip_type = equip_type
         self.equipment_class = equipment_class
 
         self.set_rate()
 
-        self.ids_name = ids_name
-        self.ids_info = ids_info
+        self.ids_name = ids.new_name(self.get_ru_name())
+        self.ids_info = ids.new_info(
+            InfocardBuilder.build_equip_infocard(
+                self.get_ru_fullname(),
+                self.get_ru_description_content()
+            )
+        )
+
+    def get_ids_name(self):
+        return self.ids_name.id
+
+    def get_ids_info(self):
+        return self.ids_info.id
 
     def get_base_nickname(self):
         if self.equip_type == self.RH_MAIN:
@@ -404,15 +423,9 @@ combinable = {combinable}
 shop_archetype = {model}
 attachment_archetype = {model}'''
 
-    def __init__(self, equip_type, ship_class, equipment_class, ids_name, ids_info):
-        self.equip_type = equip_type
+    def __init__(self, ship_class, *args, **kwargs):
         self.ship_class = ship_class
-        self.equipment_class = equipment_class
-
-        self.set_rate()
-
-        self.ids_name = ids_name
-        self.ids_info = ids_info
+        super().__init__(*args, **kwargs)
 
     def get_equip_model(self):
         raise NotImplementedError

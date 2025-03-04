@@ -16,18 +16,6 @@ GENERATED = 'GENERATED'
 def main():
     core = LancerCore(enable_story=ENABLE_STORY, write=True)
 
-    nicknames_data = [
-        core.misc_equip.get_ru_names(),
-        core.weapons.get_ru_names(),
-        core.shiparch.get_ship_ru_names(),
-    ]
-
-    infocards_data = [
-        core.misc_equip.get_ru_infocards(),
-        core.weapons.get_ru_infocards(),
-        core.shiparch.get_ship_ru_infocards(),
-    ]
-
     lootprops_data = [
         core.misc_equip.get_lootprops(),
         core.weapons.get_lootprops() 
@@ -41,8 +29,7 @@ def main():
     files_map = [
         ('faction_prop_helper.ini', core.population.get_npc_names()),
 
-        ('nicknames_ru.ini', ''.join(nicknames_data)),
-        ('infocards_ru.ini', ''.join(infocards_data)),
+        ('strings.ini', ''.join(core.ids.compile())),
 
         ('demo_marketdata.ini', DIVIDER.join(markets_demo_data)),
         ('key_for_story.ini', core.universe.get_key_story()),

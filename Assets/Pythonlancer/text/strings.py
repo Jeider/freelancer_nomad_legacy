@@ -1,16 +1,61 @@
+NAME = 'NAME'
+INFOCARD = 'INFOCARD'
+
+
+class TheID:
+    def __init__(self, id_value, text, kind):
+        self.id = id_value
+        self.text = text
+        self.kind = kind
+
+    def __str__(self):
+        return str(self.id)
+
+    def set_text(self, text):
+        self.text = text
+
+    def compile(self):
+        return (
+            StringCompiler.compile_name(self.id, self.text)
+            if self.kind == NAME
+            else StringCompiler.compile_infocard(self.id, self.text)
+        )
+
+
+class IDsDatabase:
+    def __init__(self, start_id):
+        self.last_id = start_id
+        self.ids = []
+
+    def get_next_id(self):
+        self.last_id += 1
+        return self.last_id
+
+    def new_name(self, text):
+        the_id = TheID(self.get_next_id(), text, kind=NAME)
+        self.ids.append(the_id)
+        return the_id
+
+    def new_info(self, text):
+        the_id = TheID(self.get_next_id(), text, kind=INFOCARD)
+        self.ids.append(the_id)
+        return the_id
+
+    def compile(self):
+        return ''.join([i.compile() for i in self.ids])
+
+
 class StringCompiler(object):
     STRING_ITEM_TEMPLATE = '''{name_id}
 {type}
 {value}
 '''
-    NAME = 'NAME'
-    INFOCARD = 'INFOCARD'
 
     @staticmethod
     def compile_name(name_id, value):
         return StringCompiler.STRING_ITEM_TEMPLATE.format(
             name_id=name_id,
-            type=StringCompiler.NAME,
+            type=NAME,
             value=value
         )
 
@@ -19,12 +64,11 @@ class StringCompiler(object):
         items = [StringCompiler.compile_name(name_id, value) for name_id, value in data.items()]
         return ''.join(items)
 
-
     @staticmethod
     def compile_infocard(name_id, value):
         return StringCompiler.STRING_ITEM_TEMPLATE.format(
             name_id=name_id,
-            type=StringCompiler.INFOCARD,
+            type=INFOCARD,
             value=value
         )
 

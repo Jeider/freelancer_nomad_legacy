@@ -5,6 +5,7 @@ from story.ingame import ingame_mission
 from story.math import euler_to_quat
 from story import actors
 
+from story.ingame import names as N
 from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Solar, Capital
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
@@ -78,7 +79,7 @@ class Misson11(ingame_mission.IngameMission):
         vienn_solars = [f'BOX{i:02d}' for i in range(1, boxes+1)]
         for sol in vienn_solars:
             defined_points.append(
-                Solar(self, S.rh_vien, sol),
+                Solar(self, S.rh_vien, sol, ru_name='Исследовательский контейнер'),
             )
 
         return defined_points
@@ -88,17 +89,20 @@ class Misson11(ingame_mission.IngameMission):
             'npc_ship_arch': 'ms11_rh_cruiser',
             'faction': 'rh_grp',
             'labels': ['enemy', 'rh_cruiser', 'rheinland', 'hq_attack'],
+            'ru_name': N.RH_CRUISER,
         }
         hq_kd = {
             'npc_ship_arch': 'ms11_ku_destroyer',
             'faction': 'or_grp',
             'labels': ['friend', 'ku_destroyer', 'ku', 'order'],
+            'ru_name': N.KU_DESTROYER,
         }
 
         vien_rcr = {
             'npc_ship_arch': 'ms11_rh_cruiser',
             'faction': 'rh_grp',
             'labels': ['enemy', 'rh_cruiser', 'rheinland', 'vienna_defend'],
+            'ru_name': N.RH_CRUISER,
         }
 
         vien_rbs = {
@@ -110,6 +114,7 @@ class Misson11(ingame_mission.IngameMission):
             'npc_ship_arch': 'ms11_ku_destroyer',
             'faction': 'or_grp',
             'labels': ['friend', 'ku_destroyer', 'ku', 'order', 'vienna_assault'],
+            'ru_name': N.KU_DESTROYER,
         }
         vien_kbs = {
             'npc_ship_arch': 'ms11_ku_battleship',
@@ -133,7 +138,7 @@ class Misson11(ingame_mission.IngameMission):
 
         for index in range(1, hq_caps+1):
             cap = f'hq_rcr{index}'
-            the_cap = Capital(cap, ids_name=1, **hq_rcr)
+            the_cap = Capital(self, cap, **hq_rcr)
             caps.append(the_cap)
             hq_rcrs.append(the_cap)
 
@@ -141,7 +146,7 @@ class Misson11(ingame_mission.IngameMission):
 
         for index in range(1, hq_caps+1):
             cap = f'hq_kd{index}'
-            the_cap = Capital(cap, ids_name=1, **hq_kd)
+            the_cap = Capital(self, cap, **hq_kd)
             caps.append(the_cap)
             hq_kds.append(the_cap)
 
@@ -149,7 +154,7 @@ class Misson11(ingame_mission.IngameMission):
 
         for index in range(1, vien_rcrs_count+1):
             cap = f'vien_rcr{index}'
-            the_cap = Capital(cap, ids_name=1, **vien_rcr)
+            the_cap = Capital(self, cap, **vien_rcr)
             caps.append(the_cap)
             vien_rcrs.append(the_cap)
 
@@ -157,7 +162,7 @@ class Misson11(ingame_mission.IngameMission):
 
         for index in range(1, vien_rbs_count+1):
             cap = f'vien_bs{index}'
-            the_cap = Capital(cap, ids_name=1, **vien_rbs)
+            the_cap = Capital(self, cap, ru_name='Линкор Тирпиц', **vien_rbs)
             caps.append(the_cap)
             vien_rbss.append(the_cap)
 
@@ -165,7 +170,7 @@ class Misson11(ingame_mission.IngameMission):
 
         for index in range(1, vien_ku_caps+1):
             cap = f'vien_kd{index}'
-            the_cap = Capital(cap, ids_name=1, **vien_kd)
+            the_cap = Capital(self, cap, **vien_kd)
             caps.append(the_cap)
             vien_kds.append(the_cap)
 
@@ -173,7 +178,7 @@ class Misson11(ingame_mission.IngameMission):
 
         for index in range(1, vien_kbs_count+1):
             cap = f'vien_kbs{index}'
-            the_cap = Capital(cap, ids_name=1, **vien_kbs)
+            the_cap = Capital(self, cap, ru_name='Линкор Мусаси', **vien_kbs)
             caps.append(the_cap)
             vien_kbss.append(the_cap)
 

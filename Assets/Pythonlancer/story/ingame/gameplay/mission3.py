@@ -6,6 +6,7 @@ from story.ingame import ingame_mission
 from story.math import euler_to_quat
 from story import actors
 
+from story.ingame import objectives as O
 from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Solar
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
@@ -174,13 +175,13 @@ class Misson03(ingame_mission.IngameMission):
             )
 
         solar_points = [
-            Solar(self,  S.rh_kgb, 'kgb'),
-            Solar(self, S.rh_kgb, 'gen1'),
-            Solar(self, S.rh_kgb, 'gen2'),
-            Solar(self, S.rh_kgb, 'gen1_laser'),
-            Solar(self, S.rh_kgb, 'gen2_laser'),
-            Solar(self, S.rh_kgb, 'dock1'),
-            Solar(self, S.rh_kgb, 'dock2'),
+            Solar(self, S.rh_kgb, 'kgb', ru_name='Кёнигсберг'),
+            Solar(self, S.rh_kgb, 'gen1', ru_name='Генератор'),
+            Solar(self, S.rh_kgb, 'gen2', ru_name='Генератор'),
+            Solar(self, S.rh_kgb, 'gen1_laser', ru_name='Заряжающая установка'),
+            Solar(self, S.rh_kgb, 'gen2_laser', ru_name='Заряжающая установка'),
+            Solar(self, S.rh_kgb, 'dock1', ru_name='Стыковочный узел 1'),
+            Solar(self, S.rh_kgb, 'dock2', ru_name='Стыковочный узел 2'),
         ]
 
         defined_points.extend(solar_points)
@@ -233,12 +234,7 @@ class Misson03(ingame_mission.IngameMission):
                     'trent_wing',
                 ],
                 unique_npc_entry=True,
-                name_ids=[
-                    93205,
-                    93206,
-                    93207,
-                    93208,
-                ],
+                base_name='Каратель',
                 npc=NPC(
                     faction=faction.RheinlandMain,
                     ship=ship.Valkyrie,
@@ -257,13 +253,7 @@ class Misson03(ingame_mission.IngameMission):
                     'assistance',
                 ],
                 unique_npc_entry=True,
-                name_ids=[
-                    93209,
-                    93210,
-                    93211,
-                    93212,
-                    93213,
-                ],
+                base_name='Марадёр',
                 npc=NPC(
                     faction=faction.RheinlandMain,
                     ship=ship.Valkyrie,
@@ -280,7 +270,7 @@ class Misson03(ingame_mission.IngameMission):
                     'friend',
                     'fleet_defender',
                 ],
-                # TODO: random name!!!
+                base_name='Беркут',
                 npc=NPC(
                     faction=faction.RheinlandMain,
                     ship=ship.Valkyrie,
@@ -573,45 +563,45 @@ class Misson03(ingame_mission.IngameMission):
 
     def get_nn_objectives(self):
         return [
-            NNObj(self, 93001, name='meet_vendor', target='starke'),
+            NNObj(self, 'Встретьтесь с Вильгельиом в баре станции Штарке', name='meet_vendor', target='starke'),
 
-            NNObj(self, 93019, name='launch'),
-            NNObj(self, 93020, name='destroy_corsairs'),
+            NNObj(self, O.LAUNCH, name='launch'),
+            NNObj(self, O.DESTROY_CORSAIRS, name='destroy_corsairs'),
 
-            NNObj(self, 93003, name='goto_fleet', target='m3_init_point'),
+            NNObj(self, O.GOTO, name='goto_fleet', target='m3_init_point'),
 
-            NNObj(self, 93004, name='sig8_to_kgb_fly', target='sig8_to_kgb', towards=True),
-            NNObj(self, 93005, name='wait_for_activation'),
-            NNObj(self, 93006, target='sig8_to_kgb'),
+            NNObj(self, O.GOTO_JUMPHOLE, name='sig8_to_kgb_fly', target='sig8_to_kgb', towards=True),
+            NNObj(self, 'Ждите активации гипердыры', name='wait_for_activation'),
+            NNObj(self, O.JUMPHOLE, target='sig8_to_kgb'),
 
-            NNObj(self, 93007, name='goto_nebula_exit', target='nebula_exit'),
-            NNObj(self, 93007, name='goto_kgb_core', target='kgb', towards=True),
+            NNObj(self, O.GOTO, name='goto_nebula_exit', target='nebula_exit'),
+            NNObj(self, O.GOTO, name='goto_kgb_core', target='kgb', towards=True),
 
-            NNObj(self, 93008, name='goto_gen1', target='gen1', towards=True),
-            NNObj(self, 93009, name='destroy_gen1', target='gen1', nag=False),
+            NNObj(self, 'Направлйтесь к генератору', name='goto_gen1', target='gen1', towards=True),
+            NNObj(self, 'Уничтожьте генератор', name='destroy_gen1', target='gen1', nag=False),
 
-            NNObj(self, 93010, name='goto_gen2_wp1', target='wp_to_gen1', towards=True),
-            NNObj(self, 93010, name='goto_gen2_wp2', target='wp_to_gen2', towards=True),
+            NNObj(self, O.GOTO, name='goto_gen2_wp1', target='wp_to_gen1', towards=True),
+            NNObj(self, O.GOTO, name='goto_gen2_wp2', target='wp_to_gen2', towards=True),
 
-            NNObj(self, 93010, name='goto_gen2', target='gen2', towards=True),
-            NNObj(self, 93011, name='destroy_gen2', target='gen2', nag=False),
+            NNObj(self, 'Направляйтесь к генератору', name='goto_gen2', target='gen2', towards=True),
+            NNObj(self, 'Уничтожьте генератор', name='destroy_gen2', target='gen2', nag=False),
 
-            NNObj(self, 93012, name='goto_deidrich'),
+            NNObj(self, O.CATCH_DEIDRICH, name='goto_deidrich'),
 
-            NNObj(self, 93012, name='goto_deidrich_pos2', target='deidrich2', towards=True),
-            NNObj(self, 93012, name='goto_deidrich_pos3', target='deidrich3', towards=True),
-            NNObj(self, 93012, name='goto_deidrich_pos4', target='deidrich4', towards=True),
-            NNObj(self, 93012, name='goto_deidrich_pos5', target='deidrich5', towards=True),
-            NNObj(self, 93012, name='goto_deidrich_pos6', target='deidrich6', towards=True),
-            NNObj(self, 93012, name='goto_deidrich_pos7', target='deidrich7', towards=True),
-            NNObj(self, 93012, name='goto_deidrich_pos8', target='deidrich8', towards=True),
+            NNObj(self, O.CATCH_DEIDRICH, name='goto_deidrich_pos2', target='deidrich2', towards=True),
+            NNObj(self, O.CATCH_DEIDRICH, name='goto_deidrich_pos3', target='deidrich3', towards=True),
+            NNObj(self, O.CATCH_DEIDRICH, name='goto_deidrich_pos4', target='deidrich4', towards=True),
+            NNObj(self, O.CATCH_DEIDRICH, name='goto_deidrich_pos5', target='deidrich5', towards=True),
+            NNObj(self, O.CATCH_DEIDRICH, name='goto_deidrich_pos6', target='deidrich6', towards=True),
+            NNObj(self, O.CATCH_DEIDRICH, name='goto_deidrich_pos7', target='deidrich7', towards=True),
+            NNObj(self, O.CATCH_DEIDRICH, name='goto_deidrich_pos8', target='deidrich8', towards=True),
 
-            NNObj(self, 93013, name='destroy_deidrich'),
+            NNObj(self, 'Уничтожьте Дитриха', name='destroy_deidrich'),
 
-            NNObj(self, 93014, name='goto_freighter', target='tradepoint', towards=True),
-            NNObj(self, 93015, name='kgb_to_rh_mnh_fly', target='kgb_to_rh_mnh', towards=True),
-            NNObj(self, 93016, target='kgb_to_rh_mnh'),
+            NNObj(self, 'Следуйте за грузовиком', name='goto_freighter', target='tradepoint', towards=True),
+            NNObj(self, O.GOTO_JUMPGATE, name='kgb_to_rh_mnh_fly', target='kgb_to_rh_mnh', towards=True),
+            NNObj(self, O.JUMPGATE, target='kgb_to_rh_mnh'),
 
-            NNObj(self, 93017, name='final_base_fly', target='final_base', towards=True),
-            NNObj(self, 93017, target='final_base'),
+            NNObj(self, O.GOTO, name='final_base_fly', target='final_base', towards=True),
+            NNObj(self, 'Совершите стыковку с базой Виго', target='final_base'),
         ]

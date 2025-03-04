@@ -302,6 +302,11 @@ class DefinedStaticMixin:
 
 class Solar(DefinedStaticMixin, Point):
 
+    def __init__(self, *args, ru_name, **kwargs):
+        self.ru_name = ru_name
+        super().__init__(*args, **kwargs)
+        self.ids_name = self.mission.ids.new_name(self.ru_name)
+
     def get_name(self):
         return self.alias
 
@@ -327,6 +332,7 @@ class Solar(DefinedStaticMixin, Point):
             f'orientation = {self.orient}',
             f'archetype = {archetype}',
             f'faction = {faction}' if faction else f'faction = {DEFAULT_AFFILIATION}',
+            f'string_id = {self.ids_name.id}',
             'radius = 0',
         ]
         if loadout:
@@ -518,9 +524,10 @@ class Ship(Target):
     def __init__(self, mission, name, count=1, npc=None, actor=None,
                  affiliation=None, jumper=False, labels=None,
                  rel_pos=None, relative_pos=False, relative_target='Player', relative_range=1000,
-                 radius=None, system_class=None, name_ids=None, unique_npc_entry=False,
+                 radius=None, system_class=None, base_name=None, unique_npc_entry=False,
                  slide_x=0, slide_y=0, slide_z=0):
         self.mission = mission
+        self.ids = self.mission.ids
         self.system = (
             self.mission.get_system(system_class.NAME)
             if system_class
@@ -539,7 +546,7 @@ class Ship(Target):
         self.radius = radius
         self.actor = actor
         self.labels = labels if labels is not None else []
-        self.name_ids = name_ids if name_ids is not None else []
+        self.base_name = base_name
         self.unique_npc_entry = unique_npc_entry
         if self.npc:
             self.npc.set_name(self.get_npc_shiparch_name())
@@ -605,16 +612,18 @@ class Ship(Target):
             f'affiliation = {self.affiliation}',
         ]
         if self.actor:
-            if self.actor.NAME_ID:
-                items.append(f'individual_name = {self.actor.NAME_ID}')
+            if self.actor.RU_NAME:
+                ids_name = self.ids.new_name(self.actor.RU_NAME)
+                items.append(f'individual_name = {ids_name.id}')
             if self.actor.COMM_APPEARANCE:
                 items.append(f'space_costume = {self.actor.COMM_APPEARANCE}')
             if self.actor.SPACE_VOICE:
                 items.append(f'voice = {self.actor.SPACE_VOICE}')
         else:
-            if self.name_ids:
+            if self.base_name:
                 try:
-                    items.append(f'individual_name = {self.name_ids[index-1]}')
+                    ids_name = self.ids.new_name(f'{self.base_name} {index}')
+                    items.append(f'individual_name = {ids_name.id}')
                 except IndexError:
                     pass
 
@@ -638,8 +647,8 @@ class Ship(Target):
         ]
         if self.jumper:
             items.append('jumper = true')
-        if not self.actor or not self.actor.NAME_ID:
-            if not self.name_ids:
+        if not self.actor or not self.actor.RU_NAME:
+            if not self.base_name:
                 items.append('random_name = true')
         if self.rel_pos:
             items.append(f'rel_pos = {self.rel_pos.get_ini()}')
@@ -844,9 +853,9 @@ class NNObj:
     NICKNAME_TEMPLATE = 'nickname = {nickname}'
     STATE = 'state = HIDDEN'
 
-    def __init__(self, mission, string_id=None, name=None, target=None, towards=False, nag=True):
+    def __init__(self, mission, ru_action, name=None, target=None, towards=False, nag=True):
         self.mission = mission
-        self.string_id = string_id if string_id else self.get_string_id()
+        self.ids_name = self.mission.ids.new_name(ru_action)
         self.target = target
         self.target_point = self.get_target_point()
         self.name = f'nn_{name}' if name else self.generate_name()
@@ -854,10 +863,10 @@ class NNObj:
         self.nag = nag
 
     def get_string_id(self):
-        raise NotImplementedError
+        return self.ids_name.id
 
     def get_simple_type(self):
-        return f'type = ids, {self.string_id}'
+        return f'type = ids, {self.get_string_id()}'
 
     def generate_name(self):
         if not self.target_point:
@@ -873,7 +882,7 @@ class NNObj:
 
     def get_type_definition(self):
         if self.target_point:
-            return self.target_point.get_nn_type(self.string_id)
+            return self.target_point.get_nn_type(self.get_string_id())
         return self.get_simple_type()
 
     def get_definition(self):
@@ -906,8 +915,8 @@ class NNObj:
         if not self.target or self.target_point.__class__ != Obj:
             raise Exception('Cant use path for nn without Obj target for %s' % self.name)
         path_params = [
-            str(self.string_id),
-            str(self.string_id),
+            str(self.get_string_id()),
+            str(self.get_string_id()),
             self.target_point.name,
             self.target_point.system.NAME,
         ]
@@ -1045,10 +1054,12 @@ class Trigger:
 
 class Capital(DefinedStaticMixin):
 
-    def __init__(self, alias, npc_ship_arch, ids_name=None, faction=None, labels=None):
+    def __init__(self, mission, alias, npc_ship_arch, ru_name, faction=None, labels=None):
+        self.mission = mission
         self.alias = alias
-        self.ids_name = ids_name
         self.npc_ship_arch = npc_ship_arch
+        self.ru_name = ru_name
+        self.ids_name = self.mission.ids.new_name(self.ru_name)
         self.faction = faction or DEFAULT_AFFILIATION
         self.labels = labels or []
 
@@ -1061,9 +1072,8 @@ class Capital(DefinedStaticMixin):
             f'nickname = npc_{self.name}',
             f'affiliation = {self.faction}',
             f'npc_ship_arch = {self.npc_ship_arch}',
+            f'individual_name = {self.ids_name.id}'
         ]
-        if self.ids_name:
-            ship.append(f'individual_name = {self.ids_name}')
 
         ship.extend([
             '',

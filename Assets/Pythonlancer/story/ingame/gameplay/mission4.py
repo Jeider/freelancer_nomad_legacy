@@ -6,6 +6,7 @@ from story.ingame import ingame_mission
 from story.math import euler_to_quat
 from story import actors
 
+from story.ingame import objectives as O
 from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Solar
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
@@ -70,92 +71,37 @@ class Misson04(ingame_mission.IngameMission):
 
     def get_nn_objectives(self):
         return [
-            NNObj(self, 94001, name='meet_vendor', target='vendor_planet'),
+            NNObj(self, 'Встретьтесь с Джакобо в баре планеты Норторф', name='meet_vendor', target='vendor_planet'),
 
-            NNObj(self, 94003, name='launch'),
+            NNObj(self, O.LAUNCH, name='launch'),
 
-            NNObj(self, 94005, target='mnh_tlr_1'),
-            NNObj(self, 94005, target='mnh_tlr_2'),
-            NNObj(self, 94006, target='mnh_to_biz'),
+            NNObj(self, O.TLR, target='mnh_tlr_1'),
+            NNObj(self, O.TLR, target='mnh_tlr_2'),
+            NNObj(self, O.JUMPGATE, target='mnh_to_biz'),
 
-            NNObj(self, 94008, name='follow_officer'),
-            NNObj(self, 94009, name='destroy_keln_enemy'),
+            NNObj(self, 'Следуйте за офицером', name='follow_officer'),
+            NNObj(self, 'Сражайтесь!', name='destroy_keln_enemy'),
 
-            NNObj(self, 94010, name='destroy_reactor', target='bs_reactor', nag=False),
+            NNObj(self, 'Уничтожьте боковую панель реактора', name='destroy_reactor', target='bs_reactor', nag=False),
 
-            NNObj(self, 94011, name='biz_to_sig8_fly', target='biz_to_sig8', towards=True),
-            NNObj(self, 94012, target='biz_to_sig8'),
+            NNObj(self, O.GOTO_JUMPHOLE, name='biz_to_sig8_fly', target='biz_to_sig8', towards=True),
+            NNObj(self, O.JUMPHOLE, target='biz_to_sig8'),
 
-            NNObj(self, 94013, name='defend_jacobo'),
-            NNObj(self, 94014, name='destroy_fighters'),
+            NNObj(self, 'Уничтожьте крейсер', name='defend_jacobo'),
+            NNObj(self, O.DESTROY_FIGHTERS, name='destroy_fighters'),
 
-            NNObj(self, 94015, name='goto_escape_point1', target='point_escape1', towards=True),
-            NNObj(self, 94015, name='goto_escape_point2', target='point_escape2', towards=True),
+            NNObj(self, O.GOTO, name='goto_escape_point1', target='point_escape1', towards=True),
+            NNObj(self, O.GOTO, name='goto_escape_point2', target='point_escape2', towards=True),
 
-            NNObj(self, 94016, name='destroy_corsairs'),
+            NNObj(self, O.DESTROY_CORSAIRS, name='destroy_corsairs'),
+            NNObj(self, O.GOTO_JUMPHOLE, name='sig8_to_for_fly', target='sig8_to_for', towards=True),
+            NNObj(self, O.JUMPHOLE, target='sig8_to_for'),
 
-
-            #
-            # NNObj(self, 92007, target='om15_tlr_1'),
-            # NNObj(self, 92008, target='om15_jacobo_miner'),
-            # NNObj(self, 92010, name='scan_wp1', target='waypoint1'),
-            # NNObj(self, 92010, name='scan_wp2', target='waypoint2'),
-            #
-            #
-            #
-            #
-            # NNObj(self, 93020, name='destroy_corsairs'),
-
+            NNObj(self, 'Доберитесь до ближайшей базы', target='shipyard'),
+            NNObj(self, O.TLR, target='for_tlr_1'),
+            NNObj(self, O.DOCKRING, target='final_planet'),
         ]
 
-    '''
-
-    [NNObjective]
-    nickname = ms4_13_destroy_corsairs
-    state = HIDDEN
-    type = ids, 094016
-
-    [NNObjective]
-    nickname = ms4_14_go_to_forbes_jumphole
-    state = HIDDEN
-    type = rep_inst, sig8, 094017, 094017, 40000, 0, 40000, sig8_to_for
-
-    [NNObjective]
-    nickname = ms4_15_wait_for_activation
-    state = HIDDEN
-    type = ids, 094018
-
-    [NNObjective]
-    nickname = ms4_16_be_near_jumphole
-    state = HIDDEN
-    type = rep_inst, sig8, 094019, 094019, 40000, 0, 40000, sig8_to_for
-
-    [NNObjective]
-    nickname = ms4_16_use_jumphole
-    state = HIDDEN
-    type = rep_inst, sig8, 094019, 094019, 40000, 0, 40000, sig8_to_for
-
-    [NNObjective]
-    nickname = ms4_17_go_to_shipyard
-    state = HIDDEN
-    type = rep_inst, li_for, 094020, 094020, 25000, -18000, 44000, li_for_03
-
-    [NNObjective]
-    nickname = ms4_18_use_tradelane
-    state = HIDDEN
-    type = rep_inst, li_for, 094021, 094021, 25187, -18208, 40695, LI_FOR_F_Trade_Lane_Ring_L2_06
-
-    [NNObjective]
-    nickname = ms4_19_dock_on_planet_forbes
-    state = HIDDEN
-    type = rep_inst, li_for, 094022, 094022, 31888, 0, -24814, li_for_dock_ring
-
-    [NNObjective]
-    nickname = ms4_20_meet_hatcher_in_bar
-    state = HIDDEN
-    type = ids, 094023
-
-    '''
     def get_static_points(self):
         biz_points = [
             'officer_init',

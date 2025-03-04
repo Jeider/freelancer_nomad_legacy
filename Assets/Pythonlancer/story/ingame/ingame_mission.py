@@ -1,4 +1,4 @@
-from story.ingame.tools import Nag, Script, Trigger, Cond, Direct, Patrol
+from story.ingame.tools import Nag, Script, Trigger, Cond, Direct
 
 from text.dividers import DIVIDER
 
@@ -18,7 +18,8 @@ class IngameMission(object):
         super().__init_subclass__(**kwargs)
         cls.subclasses.append(cls)
 
-    def __init__(self, full_script, universe_root):
+    def __init__(self, ids, full_script, universe_root):
+        self.ids = ids
         self.capital_groups = {}
         self.full_script = full_script
         self.universe_root = universe_root

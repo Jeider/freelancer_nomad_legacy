@@ -28,27 +28,6 @@ class ManagerHelper(object):
         return DIVIDER.join(results)
 
     @staticmethod
-    def extract_ru_names(*equipment):
-        results = {}
-        for equip_group in equipment:
-            for item in equip_group:
-                results[item.ids_name] = item.get_ru_name()
-        return results
-
-    @staticmethod
-    def extract_ru_infocards(*equipment):
-        infocards = {}
-
-        for equip_group in equipment:
-            for item in equip_group:
-                infocards[item.ids_info] = InfocardBuilder.build_equip_infocard(
-                    item.get_ru_fullname(),
-                    item.get_ru_description_content()
-                )
-
-        return infocards
-
-    @staticmethod
     def extract_marketdata(*equipment):
         results = []
         for equip_group in equipment:

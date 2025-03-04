@@ -12,10 +12,24 @@ from world.armor import ArmorNPC
 from world.ship import Ship
 
 
+class EquipDatabase:
+    def __init__(self):
+        self.equip_db = {}
+        self.equip_list = []
+
+    def add_item(self):
+        raise NotImplementedError
+
+
+
+
+
 class MiscEquipManager:
 
     def __init__(self, lancer_core):
         self.core = lancer_core
+
+        self.ids = self.core.ids.equip
 
         self.engines_db = {}
         self.engines_list = []
@@ -31,12 +45,6 @@ class MiscEquipManager:
         self.npc_armors_list = []
 
         self.load_game_data()
-
-    def get_next_string_id(self):
-        return self.core.get_next_equip_string_id()
-
-    def get_next_infocard_id(self):
-        return self.core.get_next_equip_infocard_id()
 
     def load_game_data(self):
         # shipclass-based equipment
@@ -54,22 +62,22 @@ class MiscEquipManager:
                 self.npc_shields_db[shipclass][equip_type] = {}
 
                 for equipment_class in Equipment.BASE_CLASSES:
-                    engine = Engine(equip_type, shipclass, equipment_class, self.get_next_string_id(), self.get_next_infocard_id())
+                    equip_props = {
+                        'ids': self.ids, 'equip_type': equip_type, 'ship_class': shipclass, 'equipment_class': equipment_class
+                    }
+                    engine = Engine(**equip_props)
                     self.engines_db[shipclass][equip_type][equipment_class] = engine
                     self.engines_list.append(engine)
 
-                    powerplant = Power(equip_type, shipclass, equipment_class, self.get_next_string_id(), self.get_next_infocard_id())
+                    powerplant = Power(**equip_props)
                     self.powerplants_db[shipclass][equip_type][equipment_class] = powerplant
                     self.powerplants_list.append(powerplant)
 
-                    shield_name_id = self.get_next_string_id()
-                    shield_infocard_id = self.get_next_string_id()
-
-                    shield = Shield(equip_type, shipclass, equipment_class, shield_name_id, shield_infocard_id)
+                    shield = Shield(**equip_props)
                     self.shields_db[shipclass][equip_type][equipment_class] = shield
                     self.shields_list.append(shield)
 
-                    shield_npc = ShieldNPC(equip_type, shipclass, equipment_class, shield_name_id, shield_infocard_id)
+                    shield_npc = ShieldNPC(**equip_props)
                     self.npc_shields_db[shipclass][equip_type][equipment_class] = shield_npc
                     self.npc_shields_list.append(shield_npc)
 
@@ -78,7 +86,7 @@ class MiscEquipManager:
             self.thrusters_db[equip_type] = {}
 
             for equipment_class in Equipment.BASE_CLASSES:
-                thruster = Thruster(equip_type, equipment_class, self.get_next_string_id(), self.get_next_infocard_id())
+                thruster = Thruster(self.ids, equip_type, equipment_class)
                 self.thrusters_db[equip_type][equipment_class] = thruster
                 self.thrusters_list.append(thruster)
 
@@ -135,24 +143,6 @@ class MiscEquipManager:
             self.shields_list,
             self.thrusters_list
         )
-
-    def get_ru_names(self):
-        items = ManagerHelper.extract_ru_names(
-            self.engines_list,
-            self.powerplants_list,
-            self.shields_list,
-            self.thrusters_list
-        )
-        return StringCompiler.compile_names(items)
-
-    def get_ru_infocards(self):
-        infocards = ManagerHelper.extract_ru_infocards(
-            self.engines_list,
-            self.powerplants_list,
-            self.shields_list,
-            self.thrusters_list
-        )
-        return StringCompiler.compile_infocards(infocards)
 
     def get_demo_marketdata(self):
         return ManagerHelper.extract_marketdata(

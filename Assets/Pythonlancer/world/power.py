@@ -157,8 +157,8 @@ class Power(MainEquipPrice, AdoxaEquipClassGood, BasePower):
     def get_power_template_params(self):
         return {
             'nickname': self.get_nickname(),
-            'ids_name': self.ids_name,
-            'ids_info': self.ids_info,
+            'ids_name': self.get_ids_name(),
+            'ids_info': self.get_ids_info(),
             'hp_type': self.get_power_hp_type(),
             'hit_pts': self.get_power_hit_pts(),
             'capacity': self.get_power_capacity(),

@@ -6,6 +6,7 @@ from story.ingame import ingame_mission
 from story.math import euler_to_quat
 from story import actors
 
+from story.ingame import objectives as O
 from story.ingame.tools import Point, Obj, Conn, NNObj, Ship
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
@@ -317,13 +318,7 @@ class Misson02(ingame_mission.IngameMission):
                     'rheinland',
                 ],
                 unique_npc_entry=True,
-                name_ids=[
-                    92202,
-                    92203,
-                    92204,
-                    92205,
-                    92206,
-                ],
+                base_name='Каратель',
                 npc=NPC(
                     faction=faction.RheinlandMain,
                     ship=ship.Valkyrie,
@@ -476,35 +471,35 @@ class Misson02(ingame_mission.IngameMission):
 
     def get_nn_objectives(self):
         return [
-            NNObj(self, 92003, name='meet_vendor', target='battleship'),
+            NNObj(self, 'Найдитель Вильгельма в баре линкора Шарнхорст', name='meet_vendor', target='battleship'),
 
-            NNObj(self, 92023, name='launch'),
+            NNObj(self, O.LAUNCH, name='launch'),
 
-            NNObj(self, 92005, target='biz_tlr_1'),
-            NNObj(self, 92006, target='biz_to_om15'),
-            NNObj(self, 92007, target='om15_tlr_1'),
-            NNObj(self, 92008, target='om15_jacobo_miner'),
-            NNObj(self, 92010, name='scan_wp1', target='waypoint1'),
-            NNObj(self, 92010, name='scan_wp2', target='waypoint2'),
+            NNObj(self, O.TLR, target='biz_tlr_1'),
+            NNObj(self, O.JUMPGATE, target='biz_to_om15'),
+            NNObj(self, O.TLR, target='om15_tlr_1'),
+            NNObj(self, 'Получите доступ и сядьте на добывающее судно Матильда', target='om15_jacobo_miner'),
+            NNObj(self, O.GOTO, name='scan_wp1', target='waypoint1'),
+            NNObj(self, O.GOTO, name='scan_wp2', target='waypoint2'),
 
-            NNObj(self, 92011, name='scan_objects'),
-            NNObj(self, 92012, name='destroy_junkers'),
-            NNObj(self, 92009, name='drop_objects'),
-            NNObj(self, 92013, name='get_objects'),
+            NNObj(self, 'Просканируйте объекты', name='scan_objects'),
+            NNObj(self, 'Уничтожьте мусорщиков', name='destroy_junkers'),
+            NNObj(self, 'Выбейте чёрный ящик', name='drop_objects'),
+            NNObj(self, 'Подберите черный ящик', name='get_objects'),
 
-            NNObj(self, 92013, target='om15_tlr_2'),
+            NNObj(self, O.TLR, target='om15_tlr_2'),
 
-            NNObj(self, 92024, name='wait_for_transfer_data'),
-            NNObj(self, 92015, name='find_corsair_depot', target='depot_waypoint1'),
-            NNObj(self, 92016, name='find_corsair_base', target='base1'),
+            NNObj(self, 'Ожидайте обработки информации из чёрного ящика', name='wait_for_transfer_data'),
+            NNObj(self, O.GOTO, name='find_corsair_depot', target='depot_waypoint1'),
+            NNObj(self, O.GOTO, name='find_corsair_base', target='base1'),
 
-            NNObj(self, 92017, name='destroy_platforms'),
-            NNObj(self, 92018, name='destroy_corsairs'),
+            NNObj(self, O.DESTROY_WP, name='destroy_platforms'),
+            NNObj(self, O.DESTROY_CORSAIRS, name='destroy_corsairs'),
 
-            NNObj(self, 92019, name='om15_to_biz_fly', target='om15_to_biz', towards=True),
-            NNObj(self, 92019, target='om15_to_biz'),
-            NNObj(self, 92005, target='biz_tlr_2'),
-            NNObj(self, 92022, target='battleship'),
+            NNObj(self, O.GOTO_JUMPGATE, name='om15_to_biz_fly', target='om15_to_biz', towards=True),
+            NNObj(self, O.JUMPGATE, target='om15_to_biz'),
+            NNObj(self, O.TLR, target='biz_tlr_2'),
+            NNObj(self, O.DOCK_BATTLESHIP, target='battleship'),
         ]
 
 

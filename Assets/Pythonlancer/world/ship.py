@@ -3,6 +3,7 @@ from world.npc import NPC
 import math
 from universe.markets import MarketShip
 from text.dividers import SINGLE_DIVIDER
+from text.infocards import InfocardBuilder, INFO_SHIP_ABOUT, INFO_SHIP_TABLE, INFO_SHIP_KEYS, INFO_SHIP_VALUES
 from fx.light import Light
 
 CLASS_INTERCEPTOR = 'class_interceptor'
@@ -275,12 +276,14 @@ cargo = {nickname}, {amount}'''
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
     MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
 
-    def __init__(self, ids_name, ids_info, ids_info1, ids_info2, ids_info3):
-        self.ids_name = ids_name
-        self.ids_info = ids_info
-        self.ids_info1 = ids_info1
-        self.ids_info2 = ids_info2
-        self.ids_info3 = ids_info3
+    def __init__(self, ids):
+        self.ids = ids
+        ship_stats = self.get_infocard_values()
+        self.ids_name = self.ids.new_name(self.get_ru_name())
+        self.ids_info = self.ids.new_info(InfocardBuilder.build_infocard(INFO_SHIP_TABLE, ship_stats))
+        self.ids_info1 = self.ids.new_info(InfocardBuilder.build_infocard(INFO_SHIP_ABOUT, {}))
+        self.ids_info2 = self.ids.new_info(InfocardBuilder.build_infocard(INFO_SHIP_KEYS, {}))
+        self.ids_info3 = self.ids.new_info(InfocardBuilder.build_infocard(INFO_SHIP_VALUES, ship_stats))
 
     def get_ru_name(self):
         return self.RU_NAME
@@ -641,14 +644,29 @@ hit_pts = {hit_pts}
 {fuses}
 {equipment}'''
 
+    def get_ids_name(self):
+        return self.ids_name.id
+
+    def get_ids_info(self):
+        return self.ids_info.id
+
+    def get_ids_info1(self):
+        return self.ids_info1.id
+
+    def get_ids_info2(self):
+        return self.ids_info2.id
+
+    def get_ids_info3(self):
+        return self.ids_info3.id
+
     def get_base_template_params(self):
         return {
             'shiparch_name': self.ARCHETYPE,
-            'ids_name': self.ids_name,
-            'ids_info': self.ids_info,
-            'ids_info1': self.ids_info1,
-            'ids_info2': self.ids_info2,
-            'ids_info3': self.ids_info3,
+            'ids_name': self.get_ids_name(),
+            'ids_info': self.get_ids_info(),
+            'ids_info1': self.get_ids_info1(),
+            'ids_info2': self.get_ids_info2(),
+            'ids_info3': self.get_ids_info3(),
             'shield_link_object': self.SHIELD_LINK,
             'shield_link_hp': self.HP_SHIELD,
             'mass': self.get_ship_mass(),

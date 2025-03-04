@@ -2,6 +2,7 @@ from universe import sirius
 from universe.systems import sig13, rh_ber
 from story.ingame import ingame_mission
 
+from story.ingame import objectives as O
 from story.ingame.tools import Point, Obj, Conn, NNObj, Ship
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
@@ -58,13 +59,13 @@ class Misson01A(ingame_mission.IngameMission):
 
     def get_nn_objectives(self):
         return [
-            NNObj(self, 91002, name='find_job'),
-            NNObj(self, 91003, name='launch'),
-            NNObj(self, 91004, target='s13_tlr'),
-            NNObj(self, 91005, target='s13_to_ber'),
-            NNObj(self, 91006, target='tlr_to_outpost'),
-            NNObj(self, 91006, target='ber_outpost'),
-            NNObj(self, 91007, name='defend_cruiser'),
-            NNObj(self, 91008, target='tlr_to_planet'),
-            NNObj(self, 91008, target='ber_dockring'),
+            NNObj(self, 'Поговорите с Алариком в баре', name='find_job'),
+            NNObj(self, O.LAUNCH, name='launch'),
+            NNObj(self, O.TLR, target='s13_tlr'),
+            NNObj(self, O.JUMPGATE, target='s13_to_ber'),
+            NNObj(self, O.TLR, target='tlr_to_outpost'),
+            NNObj(self, 'Ожидайте прохождение проверки', target='ber_outpost'),
+            NNObj(self, 'Уничтожьте корсаров', name='defend_cruiser'),
+            NNObj(self, O.TLR, target='tlr_to_planet'),
+            NNObj(self, O.DOCKRING, target='ber_dockring'),
         ]

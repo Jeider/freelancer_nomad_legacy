@@ -207,8 +207,8 @@ shield_hit_effects = {hit_three}, gf_pi_shield03'''
     def get_shield_template_params(self):
         return {
             'nickname': self.get_nickname(),
-            'ids_name': self.ids_name,
-            'ids_info': self.ids_info,
+            'ids_name': self.get_ids_name(),
+            'ids_info': self.get_ids_info(),
             'hp_type': self.get_shield_hp_type(),
             'hit_pts': self.get_shield_hit_pts(),
             'shield_type': self.get_shield_type(),

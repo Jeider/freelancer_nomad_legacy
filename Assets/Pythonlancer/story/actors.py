@@ -39,7 +39,6 @@ class Actor(SteosInterface):
     TYPE = None
     NAME = None
     RU_NAME = None
-    NAME_ID = None
     COMM_APPEARANCE = ''
     CUTSCENE_APPEARANCE = ''
     SPACE_VOICE = None
@@ -283,7 +282,6 @@ class Yamamoto(Actor):
 
 class Hassler(Actor):
     RU_NAME = 'Хасслер'
-    NAME_ID = 93202
     TYPE = ACTOR_MALE
     NAME = 'hassler'
     COMM_APPEARANCE = 'rh_hassler_head, rh_male_elite_body, comm_rh_reichman'
@@ -301,7 +299,6 @@ class HasslerOrder(Actor):
 
 class Alaric(Actor):
     RU_NAME = 'Аларик'
-    NAME_ID = 94203
     TYPE = ACTOR_MALE
     NAME = 'alaric'
     COMM_APPEARANCE = 'rh_alaric_head_hat, pi_pirate6_body, comm_rh_alaric'
@@ -314,7 +311,6 @@ class Alaric(Actor):
 
 class Jacobo(Actor):
     RU_NAME = 'Джакобо'
-    NAME_ID = 92211
     TYPE = ACTOR_MALE
     NAME = 'jacobo'
     COMM_APPEARANCE = 'pl_male1_head, pi_pirate2_body, comm_br_guard'
@@ -324,7 +320,6 @@ class Jacobo(Actor):
 
 class Dietrich(Actor):
     RU_NAME = 'Дитрих'
-    NAME_ID = 93203
     TYPE = ACTOR_MALE
     NAME = 'deidrich'
     COMM_APPEARANCE = 'rh_deidrich_head, rh_deidrich_body, comm_rh_reichman'
@@ -334,7 +329,6 @@ class Dietrich(Actor):
 
 class Wilham(Actor):
     RU_NAME = 'Вильгельм'
-    NAME_ID = 92210
     TYPE = ACTOR_MALE
     NAME = 'wilham'
     COMM_APPEARANCE = 'rh_wilham_head, rh_wilham_body, comm_rh_wilham'

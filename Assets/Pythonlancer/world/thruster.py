@@ -190,8 +190,8 @@ material_library = equipment\\models\\ge_equip.mat'''
     def get_thruster_template_params(self):
         return {
             'nickname': self.get_nickname(),
-            'ids_name': self.ids_name,
-            'ids_info': self.ids_info,
+            'ids_name': self.get_ids_name(),
+            'ids_info': self.get_ids_info(),
             'hit_pts': self.get_thruster_hit_pts(),
             'thruster_fx': self.get_thruster_fx(),
             'explosion_resistance': self.get_explosion_resistance(),

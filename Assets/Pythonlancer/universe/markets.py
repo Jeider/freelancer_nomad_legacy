@@ -1,9 +1,7 @@
 from text.dividers import SINGLE_DIVIDER
 
-
-MARKET_EQUIP = 'equip_dealer'
-MARKET_COMMODITY = 'commodity_dealer'
-MARKET_SHIPS = 'ship_dealer'
+class NotEnoughLookupKwargsException(Exception):
+    pass
 
 
 class MarketItem(object):
@@ -22,7 +20,7 @@ class MarketEquip(MarketItem):
 
     MARKET_DEFAULT_REPUTATION = -1
     MARKET_DEFAULT_LEVEL = 0
-    MARKET_DEFAULT_PRICE_MULTIPER = 1
+    MARKET_DEFAULT_PRICE_MULTIPLER = 1
 
     def get_market_level(self):
         return self.MARKET_DEFAULT_LEVEL
@@ -34,7 +32,7 @@ class MarketEquip(MarketItem):
         return self.MARKET_STOCK_AVAILABLE
 
     def get_market_price_multipler(self):
-        return self.MARKET_DEFAULT_PRICE_MULTIPER
+        return self.MARKET_DEFAULT_PRICE_MULTIPLER
 
     def get_market_item_params(self):
         return {
@@ -99,16 +97,34 @@ base = {base_nickname}
         )
 
 
+class LookupQuery:
+
+    SHORCUTS = [
+        'equipme
+    ]
+    def __init__(self, equip, **lookup_kwargs):
+        self.equip = equip
+        self.lookup_kwargs = lookup_kwargs
+
+
 class EquipDealer(MarketBase):
-    MARKET_KIND = MARKET_EQUIP
     DEFAULT_ITEMS = [
         'MarketGood = ge_s_repair_01, 0, -1, 15, 15, 0, 1',
+    ]
+    GUNS = []
+    THRUSTERS = []
+    MISC_EQUIP = []
+
+
+class BizEquip(EquipDealer):
+    GUNS = [
+        LookupQuery(gun.Rh),
     ]
 
 
 class CommodityDealer(MarketBase):
-    MARKET_KIND = MARKET_COMMODITY
+    pass
 
 
 class ShipDealer(MarketBase):
-    MARKET_KIND = MARKET_SHIPS
+    pass

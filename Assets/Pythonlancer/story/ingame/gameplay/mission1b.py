@@ -2,6 +2,7 @@ from universe import sirius
 from universe.systems import rh_ber, sig8, rh_biz
 from story.ingame import ingame_mission
 
+from story.ingame import objectives as O
 from story.ingame.tools import Point, Obj, Conn, NNObj, Ship
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
@@ -53,10 +54,10 @@ class Misson01B(ingame_mission.IngameMission):
 
     def get_nn_objectives(self):
         return [
-            NNObj(self, 91024, name='launch'),
-            NNObj(self, 91025, name='goto_adelmar', target='point_b'),
-            NNObj(self, 91026, name='destroy_enemy'),
-            NNObj(self, 91025, name='join_formation'),
-            NNObj(self, 91027, name='follow_adelmar'),
-            NNObj(self, 91022, target='biz_dockring'),
+            NNObj(self, O.LAUNCH, name='launch'),
+            NNObj(self, 'Направляйтесь к Аделмару', name='goto_adelmar', target='point_b'),
+            NNObj(self, O.DESTROY_ENEMY, name='destroy_enemy'),
+            NNObj(self, 'Войдите в формацию с Аделмаром', name='join_formation'),
+            NNObj(self, 'Следуйте за Аделмаром', name='follow_adelmar'),
+            NNObj(self, O.DOCKRING, target='biz_dockring'),
         ]

@@ -593,8 +593,8 @@ engine_kill_sound = engine_pi_freighter_kill'''
     def get_engine_template_params(self):
         return {
             'nickname': self.get_nickname(),
-            'ids_name': self.ids_name,
-            'ids_info': self.ids_info,
+            'ids_name': self.get_ids_name(),
+            'ids_info': self.get_ids_info(),
             'max_force': self.get_max_force(),
             'cruise_speed': self.get_cruise_speed(),
             'linear_drag': self.get_linear_drag(),
