@@ -12,18 +12,6 @@ from world.armor import ArmorNPC
 from world.ship import Ship
 
 
-class EquipDatabase:
-    def __init__(self):
-        self.equip_db = {}
-        self.equip_list = []
-
-    def add_item(self):
-        raise NotImplementedError
-
-
-
-
-
 class MiscEquipManager:
 
     def __init__(self, lancer_core):
@@ -63,7 +51,8 @@ class MiscEquipManager:
 
                 for equipment_class in Equipment.BASE_CLASSES:
                     equip_props = {
-                        'ids': self.ids, 'equip_type': equip_type, 'ship_class': shipclass, 'equipment_class': equipment_class
+                        'ids': self.ids, 'equip_type': equip_type,
+                        'ship_class': shipclass, 'equipment_class': equipment_class
                     }
                     engine = Engine(**equip_props)
                     self.engines_db[shipclass][equip_type][equipment_class] = engine

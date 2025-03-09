@@ -35,25 +35,70 @@ RU_EFFICIENT_TEXT_PER_EQUIP_TYPE = {
     Weapon.EQUIP_MAIN: 'Класс эффективности: военный',
 }
 
+LIGHTGUN = 'light'
+HEAVYGUN = 'heavy'
+CIVGUN = 'civilian'
+PIRATEGUN = 'pirate'
+HUNTERGUN = 'hunter'
+SHIELDGUN = 'shield'
 
-class RheinlandGun(object):
+
+class FactionGun:
+    WEAPON_FACTION = None
+
+    subclasses = []
+
+    def __init_subclass__(cls, **kwargs):
+        super().__init_subclass__(**kwargs)
+        cls.subclasses.append(cls)
+
+
+class RheinlandGun(FactionGun):
     WEAPON_FACTION = Weapon.FACTION_RH
 
 
-class LibertyGun(object):
+class LibertyGun(FactionGun):
     WEAPON_FACTION = Weapon.FACTION_LI
 
 
-class BretoniaGun(object):
+class BretoniaGun(FactionGun):
     WEAPON_FACTION = Weapon.FACTION_BR
 
 
-class KusariGun(object):
+class KusariGun(FactionGun):
     WEAPON_FACTION = Weapon.FACTION_KU
 
 
-class BorderWorldGun(object):
+class BorderWorldGun(FactionGun):
     WEAPON_FACTION = Weapon.FACTION_CO
+
+
+class GenericGun:
+    GENERIC_KIND = None
+
+
+class Lightgun(GenericGun):
+    GENERIC_KIND = LIGHTGUN
+
+
+class Heavygun(GenericGun):
+    GENERIC_KIND = HEAVYGUN
+
+
+class Civgun(GenericGun):
+    GENERIC_KIND = CIVGUN
+
+
+class Pirategun(GenericGun):
+    GENERIC_KIND = PIRATEGUN
+
+
+class Huntergun(GenericGun):
+    GENERIC_KIND = HUNTERGUN
+
+
+class Shieldgun(GenericGun):
+    GENERIC_KIND = SHIELDGUN
 
 
 class Gun(MainEquipPrice, Weapon, DefaultGood):
@@ -110,8 +155,13 @@ class Gun(MainEquipPrice, Weapon, DefaultGood):
 
         return content
 
+    def is_generic(self):
+        if hasattr(self, 'WEAPON_FACTION') and self.WEAPON_FACTION is not None:
+            if hasattr(self, 'GENERIC_KIND') and self.GENERIC_KIND is not None:
+                return True
 
-class RheinlandLightgun(Gun, RheinlandGun):
+
+class RheinlandLightgun(Gun, RheinlandGun, Lightgun):
     RU_NAME = 'Гремучий змей'
     RU_NAME_DESC = 'Легкая пушка рейнландских военных'
     BASE_NICKNAME = 'rh_lightgun'
@@ -124,7 +174,7 @@ class RheinlandLightgun(Gun, RheinlandGun):
     FX_APPEARANCE = WeaponFX.FX_TACHYON
 
 
-class RheinlandHeavygun(Gun, RheinlandGun):
+class RheinlandHeavygun(Gun, RheinlandGun, Heavygun):
     RU_NAME = 'Огненный поцелуй'
     RU_NAME_DESC = 'Тяжелая пушка рейнландских военных'
     BASE_NICKNAME = 'rh_heavygun'
@@ -137,7 +187,7 @@ class RheinlandHeavygun(Gun, RheinlandGun):
     FX_APPEARANCE = WeaponFX.FX_PLASMA
 
 
-class RheinlandCivgun(Gun, RheinlandGun):
+class RheinlandCivgun(Gun, RheinlandGun, Civgun):
     RU_NAME = 'Звездный луч'
     RU_NAME_DESC = 'Базовая рейнландская пушка'
     BASE_NICKNAME = 'rh_civgun'
@@ -150,7 +200,7 @@ class RheinlandCivgun(Gun, RheinlandGun):
     FX_APPEARANCE = WeaponFX.FX_LASER
 
 
-class RheinlandHuntergun(Gun, RheinlandGun):
+class RheinlandHuntergun(Gun, RheinlandGun, Huntergun):
     RU_NAME = 'Незримый клинок'
     RU_NAME_DESC = 'Пушка рейнландских наемников'
     BASE_NICKNAME = 'rh_huntergun'
@@ -163,7 +213,7 @@ class RheinlandHuntergun(Gun, RheinlandGun):
     FX_APPEARANCE = WeaponFX.FX_PARTICLE
 
 
-class RheinlandPirategun(Gun, RheinlandGun):
+class RheinlandPirategun(Gun, RheinlandGun, Pirategun):
     RU_NAME = 'Наттер'
     RU_NAME_DESC = 'Пушка рейнландских пиратов'
     BASE_NICKNAME = 'rh_pirategun'
@@ -202,7 +252,7 @@ class RheinlandJunkergun(Gun, RheinlandGun):
     FX_APPEARANCE = WeaponFX.FX_PHOTON
 
 
-class RheinlandShieldgun(Gun, RheinlandGun):
+class RheinlandShieldgun(Gun, RheinlandGun, Shieldgun):
     RU_NAME = 'Пламенное проклятие'
     RU_NAME_DESC = 'Рейнландская противощитовая пушка'
     BASE_NICKNAME = 'rh_shieldgun'
@@ -232,7 +282,7 @@ class RheinlandHeavyTurret(Gun, RheinlandGun):
     EXTRA_SHIELD_DAMAGE_FACTOR = 0.5
 
 
-class LibertyLightgun(Gun, LibertyGun):
+class LibertyLightgun(Gun, LibertyGun, Lightgun):
     RU_NAME = 'Возмездие'
     RU_NAME_DESC = 'Легкая пушка военных Либерти'
     BASE_NICKNAME = 'li_lightgun'
@@ -245,7 +295,7 @@ class LibertyLightgun(Gun, LibertyGun):
     FX_APPEARANCE = WeaponFX.FX_LASER
 
 
-class LibertyHeavygun(Gun, LibertyGun):
+class LibertyHeavygun(Gun, LibertyGun, Heavygun):
     RU_NAME = 'Молот магмы'
     RU_NAME_DESC = 'Тяжелая пушка военных Либерти'
     BASE_NICKNAME = 'li_heavygun'
@@ -258,7 +308,7 @@ class LibertyHeavygun(Gun, LibertyGun):
     FX_APPEARANCE = WeaponFX.FX_PLASMA
 
 
-class LibertyCivgun(Gun, LibertyGun):
+class LibertyCivgun(Gun, LibertyGun, Civgun):
     RU_NAME = 'Справедливость'
     RU_NAME_DESC = 'Базовая пушка Либерти'
     BASE_NICKNAME = 'li_civgun'
@@ -271,7 +321,7 @@ class LibertyCivgun(Gun, LibertyGun):
     FX_APPEARANCE = WeaponFX.FX_LASER
 
 
-class LibertyHuntergun(Gun, LibertyGun):
+class LibertyHuntergun(Gun, LibertyGun, Huntergun):
     RU_NAME = 'Винтчестер'
     RU_NAME_DESC = 'Пушка наемников Либерти'
     BASE_NICKNAME = 'li_huntergun'
@@ -284,7 +334,7 @@ class LibertyHuntergun(Gun, LibertyGun):
     FX_APPEARANCE = WeaponFX.FX_TACHYON
 
 
-class LibertyPirategun(Gun, LibertyGun):
+class LibertyPirategun(Gun, LibertyGun, Pirategun):
     RU_NAME = 'Азраель'
     RU_NAME_DESC = 'Пушка пиратов Либерти'
     BASE_NICKNAME = 'li_pirategun'
@@ -323,7 +373,7 @@ class LibertyStarlinegun(Gun, LibertyGun):
     FX_APPEARANCE = WeaponFX.FX_PARTICLE
 
 
-class LibertyShieldgun(Gun, LibertyGun):
+class LibertyShieldgun(Gun, LibertyGun, Shieldgun):
     RU_NAME = 'Клинок лавы'
     RU_NAME_DESC = 'Либертийская противощитовая пушка'
     BASE_NICKNAME = 'li_shieldgun'
@@ -337,7 +387,7 @@ class LibertyShieldgun(Gun, LibertyGun):
     FX_APPEARANCE = WeaponFX.FX_PULSE
 
 
-class BretoniaLightgun(Gun, BretoniaGun):
+class BretoniaLightgun(Gun, BretoniaGun, Lightgun):
     RU_NAME = 'Растворитель'
     RU_NAME_DESC = 'Легкая пушка бретонских военных'
     BASE_NICKNAME = 'br_lightgun'
@@ -350,7 +400,7 @@ class BretoniaLightgun(Gun, BretoniaGun):
     FX_APPEARANCE = WeaponFX.FX_TACHYON
 
 
-class BretoniaHeavygun(Gun, BretoniaGun):
+class BretoniaHeavygun(Gun, BretoniaGun, Heavygun):
     RU_NAME = 'Небесный путь'
     RU_NAME_DESC = 'Тяжелая пушка бретонских военных'
     BASE_NICKNAME = 'br_heavygun'
@@ -363,7 +413,7 @@ class BretoniaHeavygun(Gun, BretoniaGun):
     FX_APPEARANCE = WeaponFX.FX_PARTICLE
 
 
-class BretoniaCivgun(Gun, BretoniaGun):
+class BretoniaCivgun(Gun, BretoniaGun, Civgun):
     RU_NAME = 'Флешпоинт'
     RU_NAME_DESC = 'Базовая бретонская пушка'
     BASE_NICKNAME = 'br_civgun'
@@ -376,7 +426,7 @@ class BretoniaCivgun(Gun, BretoniaGun):
     FX_APPEARANCE = WeaponFX.FX_PHOTON
 
 
-class BretoniaHuntergun(Gun, BretoniaGun):
+class BretoniaHuntergun(Gun, BretoniaGun, Huntergun):
     RU_NAME = 'Потрошитель'
     RU_NAME_DESC = 'Пушка бретонских наемников'
     BASE_NICKNAME = 'br_huntergun'
@@ -389,7 +439,7 @@ class BretoniaHuntergun(Gun, BretoniaGun):
     FX_APPEARANCE = WeaponFX.FX_NEUTRON
 
 
-class BretoniaPirategun(Gun, BretoniaGun):
+class BretoniaPirategun(Gun, BretoniaGun, Pirategun):
     RU_NAME = 'Скорпион'
     RU_NAME_DESC = 'Пушка бретонских пиратов'
     BASE_NICKNAME = 'br_pirategun'
@@ -428,7 +478,7 @@ class BretoniaIragun(Gun, BretoniaGun):
     FX_APPEARANCE = WeaponFX.FX_NEUTRON
 
 
-class BretoniaShieldgun(Gun, BretoniaGun):
+class BretoniaShieldgun(Gun, BretoniaGun, Shieldgun):
     RU_NAME = 'Солнечный путь'
     RU_NAME_DESC = 'Бретонская противощитовая пушка'
     BASE_NICKNAME = 'br_shieldgun'
@@ -442,9 +492,7 @@ class BretoniaShieldgun(Gun, BretoniaGun):
     FX_APPEARANCE = WeaponFX.FX_PULSE
 
 
-
-
-class KusariLightgun(Gun, KusariGun):
+class KusariLightgun(Gun, KusariGun, Lightgun):
     RU_NAME = 'Гром'
     RU_NAME_DESC = 'Легкая пушка кусарийских военных'
     BASE_NICKNAME = 'ku_lightgun'
@@ -457,7 +505,7 @@ class KusariLightgun(Gun, KusariGun):
     FX_APPEARANCE = WeaponFX.FX_PHOTON
 
 
-class KusariHeavygun(Gun, KusariGun):
+class KusariHeavygun(Gun, KusariGun, Heavygun):
     RU_NAME = 'Дезинфектор'
     RU_NAME_DESC = 'Тяжелая пушка кусарийских военных'
     BASE_NICKNAME = 'ku_heavygun'
@@ -470,7 +518,7 @@ class KusariHeavygun(Gun, KusariGun):
     FX_APPEARANCE = WeaponFX.FX_NEUTRON
 
 
-class KusariCivgun(Gun, KusariGun):
+class KusariCivgun(Gun, KusariGun, Civgun):
     RU_NAME = 'Гелиос'
     RU_NAME_DESC = 'Базовая кусарийская пушка'
     BASE_NICKNAME = 'ku_civgun'
@@ -483,7 +531,7 @@ class KusariCivgun(Gun, KusariGun):
     FX_APPEARANCE = WeaponFX.FX_PHOTON
 
 
-class KusariHuntergun(Gun, KusariGun):
+class KusariHuntergun(Gun, KusariGun, Huntergun):
     RU_NAME = 'Ярость'
     RU_NAME_DESC = 'Пушка кусарийская наемников'
     BASE_NICKNAME = 'ku_huntergun'
@@ -496,7 +544,7 @@ class KusariHuntergun(Gun, KusariGun):
     FX_APPEARANCE = WeaponFX.FX_LASER
 
 
-class KusariPirategun(Gun, KusariGun):
+class KusariPirategun(Gun, KusariGun, Pirategun):
     RU_NAME = 'Танто'
     RU_NAME_DESC = 'Пушка кусарийская пиратов'
     BASE_NICKNAME = 'ku_pirategun'
@@ -535,7 +583,7 @@ class KusariDragongun(Gun, KusariGun):
     FX_APPEARANCE = WeaponFX.FX_LASER
 
 
-class KusariShieldgun(Gun, KusariGun):
+class KusariShieldgun(Gun, KusariGun, Shieldgun):
     RU_NAME = 'Успокоитель'
     RU_NAME_DESC = 'Кусарийская противощитовая пушка'
     BASE_NICKNAME = 'ku_shieldgun'
@@ -549,7 +597,7 @@ class KusariShieldgun(Gun, KusariGun):
     FX_APPEARANCE = WeaponFX.FX_PULSE
 
 
-class OrderLightgun(Gun, BorderWorldGun):
+class OrderLightgun(Gun, BorderWorldGun, Lightgun):
     RU_NAME = 'Цербер'
     RU_NAME_DESC = 'Легкая пушка Ордена'
     BASE_NICKNAME = 'or_lightgun'
@@ -562,7 +610,7 @@ class OrderLightgun(Gun, BorderWorldGun):
     FX_APPEARANCE = WeaponFX.FX_TACHYON
 
 
-class OrderHeavygun(Gun, BorderWorldGun):
+class OrderHeavygun(Gun, BorderWorldGun, Heavygun):
     RU_NAME = 'Оникс'
     RU_NAME_DESC = 'Тяжелая пушка Ордена'
     BASE_NICKNAME = 'or_heavygun'
@@ -588,7 +636,7 @@ class BorderWorldCorsairgun(Gun, BorderWorldGun):
     FX_APPEARANCE = WeaponFX.FX_NEUTRON
 
 
-class BorderWorldShieldgun(Gun, BorderWorldGun):
+class BorderWorldShieldgun(Gun, BorderWorldGun, Shieldgun):
     RU_NAME = 'Рапира'
     RU_NAME_DESC = 'Противощитовая пушка пограничья'
     BASE_NICKNAME = 'bw_shieldgun'
@@ -615,7 +663,7 @@ class BorderWorldOutcastgun(Gun, BorderWorldGun):
     FX_APPEARANCE = WeaponFX.FX_PARTICLE
 
 
-class BorderWorldCivgun(Gun, BorderWorldGun):
+class BorderWorldCivgun(Gun, BorderWorldGun, Civgun):
     RU_NAME = 'Ангелито'
     RU_NAME_DESC = 'Гражданская пушка пограничья'
     BASE_NICKNAME = 'bw_civgun'
@@ -628,7 +676,7 @@ class BorderWorldCivgun(Gun, BorderWorldGun):
     FX_APPEARANCE = WeaponFX.FX_PHOTON
 
 
-class BorderWorldPirategun(Gun, BorderWorldGun):
+class BorderWorldPirategun(Gun, BorderWorldGun, Pirategun):
     RU_NAME = 'Драгун'
     RU_NAME_DESC = 'Пушка пиратов пограничья'
     BASE_NICKNAME = 'bw_pirategun'

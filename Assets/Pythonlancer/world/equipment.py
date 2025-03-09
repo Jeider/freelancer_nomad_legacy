@@ -27,18 +27,6 @@ class Equipment(LootableEquip, MarketEquip):
         CLASS_9,
     ]
 
-    EXTENDED_CLASSES = [
-        CLASS_1,
-        CLASS_2,
-        CLASS_3,
-        CLASS_4,
-        CLASS_5,
-        CLASS_6,
-        CLASS_7,
-        CLASS_8,
-        CLASS_9,
-    ]
-
     RATE_1 = 0.06
     RATE_2 = 0.07
     RATE_3 = 0.07

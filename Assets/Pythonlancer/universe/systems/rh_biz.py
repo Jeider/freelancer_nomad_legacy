@@ -1,6 +1,7 @@
 from fx.space import Dust, JumpholeEffect
 from fx.sound import Ambience
 
+from universe import markets
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -179,6 +180,23 @@ class BizmarkDockRing(BizmarkMember, main_objects.Dockring):
     AUDIO_PREFIX = SpaceVoice.RH_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.RheinlandPlanetDealers
+    EQUIP_MAP = equip.Map(
+        misc_class='rh_main',
+        weapon_faction=equip.FACTION_RH,
+        guns=packs.Guns1,
+        generic_guns=packs.GenericGuns1,
+        misc_equip=packs.Misc1,
+    )
+    # COMMODITY_MARKET = comm_market.CommMarket(
+    #     produces=[
+    #         comm_market.Product(comm.Oxygen, power=10),
+    #         comm_market.Product(comm.ConsumerGoods, power=5),
+    #     ],
+    #     requires=[
+    #         comm_market.Requires(comm.LuxuryGoods, power=20)
+    #     ]
+    # )
+    #
 
 
 class BizmarkTrading(BizmarkMember, main_objects.TradingBase):

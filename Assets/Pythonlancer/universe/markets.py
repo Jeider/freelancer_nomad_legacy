@@ -1,7 +1,7 @@
-from text.dividers import SINGLE_DIVIDER
+from managers.weapon import GunQuery
+from world import gun
 
-class NotEnoughLookupKwargsException(Exception):
-    pass
+from text.dividers import SINGLE_DIVIDER
 
 
 class MarketItem(object):
@@ -20,7 +20,7 @@ class MarketEquip(MarketItem):
 
     MARKET_DEFAULT_REPUTATION = -1
     MARKET_DEFAULT_LEVEL = 0
-    MARKET_DEFAULT_PRICE_MULTIPLER = 1
+    MARKET_DEFAULT_PRICE_MULTIPLIER = 1
 
     def get_market_level(self):
         return self.MARKET_DEFAULT_LEVEL
@@ -31,8 +31,8 @@ class MarketEquip(MarketItem):
     def get_market_stock(self):
         return self.MARKET_STOCK_AVAILABLE
 
-    def get_market_price_multipler(self):
-        return self.MARKET_DEFAULT_PRICE_MULTIPLER
+    def get_market_price_multiplier(self):
+        return self.MARKET_DEFAULT_PRICE_MULTIPLIER
 
     def get_market_item_params(self):
         return {
@@ -40,7 +40,7 @@ class MarketEquip(MarketItem):
             'level': self.get_market_level(),
             'reputation': self.get_market_reputation(),
             'stock': self.get_market_stock(),
-            'price_mult': self.get_market_price_multipler(),
+            'price_mult': self.get_market_price_multiplier(),
         }
 
     def get_marketdata(self):
@@ -64,61 +64,46 @@ class MarketShip(MarketItem):
         return self.MARKET_ITEM_TEMPLATE.format(**self.get_market_item_params())
 
 
-class MarketBase(object):
-    MARKET_KIND = None
+class MarketBase:
     MARKET_TEMPLATE = '''[BaseGood]
 base = {base_nickname}
 {items}'''
 
-    DEFAULT_ITEMS = []
-
-    def __init__(self, base_nickname, items):
+    def __init__(self, core, base_nickname):
+        self.core = core
         self.base_nickname = base_nickname
-        self.items = items
 
     def get_base_nickname(self):
         return self.base_nickname
 
     def get_items(self):
-        return self.items
+        raise NotImplementedError
 
-    def get_item_markets(self):
-        items = [item.get_marketdata() for item in self.get_items()]
-        items.extend(self.DEFAULT_ITEMS)
-        return items
-
-    def get_items_string(self):
-        return SINGLE_DIVIDER.join(self.get_item_markets())
+    def get_items_marketdata(self):
+        return SINGLE_DIVIDER.join([item.get_marketdata() for item in self.get_items()])
 
     def get_market_content(self):
         return self.MARKET_TEMPLATE.format(
             base_nickname=self.get_base_nickname(),
-            items=self.get_items_string(),
+            items=self.get_items_marketdata(),
         )
 
 
-class LookupQuery:
-
-    SHORCUTS = [
-        'equipme
-    ]
-    def __init__(self, equip, **lookup_kwargs):
-        self.equip = equip
-        self.lookup_kwargs = lookup_kwargs
-
-
-class EquipDealer(MarketBase):
-    DEFAULT_ITEMS = [
-        'MarketGood = ge_s_repair_01, 0, -1, 15, 15, 0, 1',
-    ]
+class EquipMarket(MarketBase):
     GUNS = []
-    THRUSTERS = []
-    MISC_EQUIP = []
+
+    def get_items(self):
+        items = []
+        for gun_query in self.GUNS:
+            items.extend(
+                self.core.weapon.get_guns_by_query(gun_query)
+            )
+        return items
 
 
 class BizEquip(EquipDealer):
     GUNS = [
-        LookupQuery(gun.Rh),
+        GunQuery(gun.RheinlandLightgun, eq_classes=[1, 2, 3, 4]),
     ]
 
 

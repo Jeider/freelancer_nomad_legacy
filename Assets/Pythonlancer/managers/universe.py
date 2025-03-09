@@ -172,11 +172,11 @@ class UniverseManager:
         DataFolder.sync_mbases(self.get_mbases_file_content())
         DataFolder.sync_dock_key(self.get_dock_key_file_content())
 
-        for system in self.universe_root.get_all_systems():
-            if not system.ALLOW_SYNC:
+        for the_system in self.universe_root.get_all_systems():
+            if not the_system.ALLOW_SYNC:
                 continue
 
-            DataFolder.sync_system(system.NAME, system.SYSTEMS_ROOT, system.SYSTEM_FOLDER, system.get_content())
+            DataFolder.sync_system(the_system.NAME, the_system.SYSTEMS_ROOT, the_system.SYSTEM_FOLDER, the_system.get_content())
 
         DataFolder.sync_solar_gen_loadouts(self.get_system_loadouts())
 
