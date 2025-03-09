@@ -6,8 +6,7 @@ from templates.hardcoded_inis.root import DockKeyTemplate
 from universe.root import UniverseRoot
 from universe.sirius import *  # initialize system objects
 from universe.system import SiriusSystem
-from universe.base import Base, EQUIP_CLASSES_PER_LEVEL
-from universe.markets import EquipDealer, ShipDealer
+from universe.markets import Market
 
 from world.equipment import Equipment
 
@@ -30,8 +29,9 @@ class UniverseManager:
 
         self.systems = []
         self.bases = []
-        self.equip_dealers_list = []
-        self.ship_dealers_list = []
+        self.equip_dealers = []
+        self.commodity_dealers = []
+        self.ship_dealers = []
         self.loadouts = []
 
         self.asteroid_definitions = []
@@ -43,7 +43,6 @@ class UniverseManager:
         self.keys = []
 
         self.load_systems()
-        self.load_bases()
 
         self.get_universe_root().do_post_init_actions()
 
@@ -70,57 +69,71 @@ class UniverseManager:
                 self.interior_files.update(interior_files)
                 self.mbases_content += mbases_content
 
-    def load_bases(self):
-        for base_class in Base.subclasses:
-            base = base_class()
-            self.bases.append(base)
+                for dockable in system.get_dockable_objects():
+                    if dockable.IS_BASE and dockable.have_equip_dealer():
+                        self.equip_dealers.append(
+                            Market(
+                                base_nickname=dockable.get_base_nickname(),
+                                items=dockable.EQUIP_SET.get_equip_items(
+                                    core=self.core,
+                                    root_weapon_faction=dockable.WEAPON_FACTION,
+                                    root_misc_equip_type=dockable.MISC_EQUIP_TYPE,
+                                ),
+                            )
+                        )
 
-            if base.LEVEL:
-                equip_items = self.load_base_equip_items(base)
-                dealer = EquipDealer(base.NAME, equip_items)
-                self.equip_dealers_list.append(dealer)
 
-            if len(base.SHIPS) > 0:
-                dealer = ShipDealer(base.NAME, [self.shiparch.get_ship_by_archetype(ship.ARCHETYPE) for ship in base.SHIPS])
-                self.ship_dealers_list.append(dealer)
-
-    def load_base_equip_items(self, base):
-        items = []
-        if base.GUN:
-            equip_classes = base.get_gun_classes()
-            for equip_class in equip_classes:
-                items.append(self.weapons.get_gun(base.GUN, equip_class))
-
-        if base.ENGINE:
-            equip_classes = base.get_engine_classes()
-            for equip_class in equip_classes:
-                for shipclass in Equipment.SHIPCLASSES:
-                    items.append(self.misc_equip.get_engine(shipclass, base.ENGINE, equip_class))
-
-        if base.POWER:
-            equip_classes = base.get_power_classes()
-            for equip_class in equip_classes:
-                for shipclass in Equipment.SHIPCLASSES:
-                    items.append(self.misc_equip.get_powerplant(shipclass, base.POWER, equip_class))
-
-        if base.SHIELD:
-            equip_classes = base.get_shield_classes()
-            for equip_class in equip_classes:
-                for shipclass in Equipment.SHIPCLASSES:
-                    items.append(self.misc_equip.get_shield(shipclass, base.SHIELD, equip_class))
-
-        if base.THRUSTER:
-            equip_classes = base.get_thruster_classes()
-            for equip_class in equip_classes:
-                items.append(self.misc_equip.get_thruster(base.THRUSTER, equip_class))
-
-        return items
+    # def load_bases(self):
+    #     for base_class in Base.subclasses:
+    #         base = base_class()
+    #         self.bases.append(base)
+    #
+    #         if base.LEVEL:
+    #             equip_items = self.load_base_equip_items(base)
+    #             dealer = EquipDealer(base.NAME, equip_items)
+    #             self.equip_dealers_list.append(dealer)
+    #
+    #         if len(base.SHIPS) > 0:
+    #             dealer = ShipDealer(base.NAME, [self.shiparch.get_ship_by_archetype(ship.ARCHETYPE) for ship in base.SHIPS])
+    #             self.ship_dealers_list.append(dealer)
+    #
+    # def load_base_equip_items(self, base):
+    #     items = []
+    #     if base.GUN:
+    #         equip_classes = base.get_gun_classes()
+    #         for equip_class in equip_classes:
+    #             items.append(self.weapons.get_gun(base.GUN, equip_class))
+    #
+    #     if base.ENGINE:
+    #         equip_classes = base.get_engine_classes()
+    #         for equip_class in equip_classes:
+    #             for shipclass in Equipment.SHIPCLASSES:
+    #                 items.append(self.misc_equip.get_engine(shipclass, base.ENGINE, equip_class))
+    #
+    #     if base.POWER:
+    #         equip_classes = base.get_power_classes()
+    #         for equip_class in equip_classes:
+    #             for shipclass in Equipment.SHIPCLASSES:
+    #                 items.append(self.misc_equip.get_powerplant(shipclass, base.POWER, equip_class))
+    #
+    #     if base.SHIELD:
+    #         equip_classes = base.get_shield_classes()
+    #         for equip_class in equip_classes:
+    #             for shipclass in Equipment.SHIPCLASSES:
+    #                 items.append(self.misc_equip.get_shield(shipclass, base.SHIELD, equip_class))
+    #
+    #     if base.THRUSTER:
+    #         equip_classes = base.get_thruster_classes()
+    #         for equip_class in equip_classes:
+    #             items.append(self.misc_equip.get_thruster(base.THRUSTER, equip_class))
+    #
+    #     return items
 
     def get_market_equip(self):
-        return DIVIDER.join([dealer.get_market_content() for dealer in self.equip_dealers_list])
+        return DIVIDER.join([dealer.get_market_content() for dealer in self.equip_dealers])
 
     def get_market_ships(self):
-        return DIVIDER.join([dealer.get_market_content() for dealer in self.ship_dealers_list])
+        return DIVIDER.join([dealer.get_market_content() for dealer in self.ship_dealers])
 
     def get_system_loadouts(self):
         return DIVIDER.join([loadout.build_loadout() for loadout in self.loadouts])

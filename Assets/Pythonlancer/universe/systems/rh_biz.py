@@ -1,6 +1,9 @@
 from fx.space import Dust, JumpholeEffect
 from fx.sound import Ambience
 
+from managers.tools import query as Q
+from world.shortcuts import *
+
 from universe import markets
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
@@ -180,23 +183,10 @@ class BizmarkDockRing(BizmarkMember, main_objects.Dockring):
     AUDIO_PREFIX = SpaceVoice.RH_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.RheinlandPlanetDealers
-    EQUIP_MAP = equip.Map(
-        misc_class='rh_main',
-        weapon_faction=equip.FACTION_RH,
-        guns=packs.Guns1,
-        generic_guns=packs.GenericGuns1,
-        misc_equip=packs.Misc1,
-    )
-    # COMMODITY_MARKET = comm_market.CommMarket(
-    #     produces=[
-    #         comm_market.Product(comm.Oxygen, power=10),
-    #         comm_market.Product(comm.ConsumerGoods, power=5),
-    #     ],
-    #     requires=[
-    #         comm_market.Requires(comm.LuxuryGoods, power=20)
-    #     ]
-    # )
-    #
+    IS_BASE = True
+    EQUIP_SET = markets.BizSet
+    WEAPON_FACTION = WEAPON_KU
+    MISC_EQUIP_TYPE = BR_PIRATE
 
 
 class BizmarkTrading(BizmarkMember, main_objects.TradingBase):
@@ -207,6 +197,20 @@ class BizmarkTrading(BizmarkMember, main_objects.TradingBase):
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.OutpostShipdealerInterior
     DEALERS = dealers.RheinlandCivilianDealers
+
+    IS_BASE = True
+    WEAPON_FACTION = WEAPON_RH
+    MISC_EQUIP_TYPE = RH_MAIN
+    EQUIP_SET = markets.EquipSet(
+        queries=[
+            Q.GenericGun(HUNTERGUN, eq_classes=[1, 3, 5, 7]),
+            Q.GenericGun(SHIELDGUN, eq_classes=[1, 3, 5, 7]),
+            Q.Engine(None, eq_classes=[1, 3, 5]),
+            Q.Power(None, eq_classes=[1, 3, 5]),
+            Q.Shield(None, eq_classes=[2, 3, 6]),
+            Q.Thruster(None, eq_classes=[1, 4]),
+        ],
+    )
 
 
 class BizmarkBattleship(BizmarkMember, main_objects.RheinlandBattleship):

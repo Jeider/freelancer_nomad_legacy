@@ -8,6 +8,7 @@ ROOM_FOLDER_CO = 'CO'
 
 BAR = 'Bar'
 DECK = 'Deck'
+TRADER = 'Trader'
 SHIPDEALER = 'ShipDealer'
 
 ROOM_BATTLESHIP_DECK = 'battleship_deck'
@@ -175,6 +176,9 @@ class Interior(object):
 
         if not self.CUSTOM_INTERIOR_FILE and not self.room_subfolder:
             raise Exception('room subfolder not defined for %s' % self.__class__.__name__)
+
+    def get_base_info(self):
+        raise NotImplementedError
 
     def get_mbase(self):
         entries = []

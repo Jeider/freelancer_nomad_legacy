@@ -1,6 +1,8 @@
 from world.equipment import DefaultGood, MainEquipPrice, Icon
 from world.weapon import Weapon
 
+from world.shortcuts import *
+
 from fx.weapon import WeaponFX
 
 
@@ -35,13 +37,6 @@ RU_EFFICIENT_TEXT_PER_EQUIP_TYPE = {
     Weapon.EQUIP_MAIN: 'Класс эффективности: военный',
 }
 
-LIGHTGUN = 'light'
-HEAVYGUN = 'heavy'
-CIVGUN = 'civilian'
-PIRATEGUN = 'pirate'
-HUNTERGUN = 'hunter'
-SHIELDGUN = 'shield'
-
 
 class FactionGun:
     WEAPON_FACTION = None
@@ -54,23 +49,23 @@ class FactionGun:
 
 
 class RheinlandGun(FactionGun):
-    WEAPON_FACTION = Weapon.FACTION_RH
+    WEAPON_FACTION = WEAPON_RH
 
 
 class LibertyGun(FactionGun):
-    WEAPON_FACTION = Weapon.FACTION_LI
+    WEAPON_FACTION = WEAPON_LI
 
 
 class BretoniaGun(FactionGun):
-    WEAPON_FACTION = Weapon.FACTION_BR
+    WEAPON_FACTION = WEAPON_BR
 
 
 class KusariGun(FactionGun):
-    WEAPON_FACTION = Weapon.FACTION_KU
+    WEAPON_FACTION = WEAPON_KU
 
 
 class BorderWorldGun(FactionGun):
-    WEAPON_FACTION = Weapon.FACTION_CO
+    WEAPON_FACTION = WEAPON_BW
 
 
 class GenericGun:
@@ -155,9 +150,10 @@ class Gun(MainEquipPrice, Weapon, DefaultGood):
 
         return content
 
-    def is_generic(self):
-        if hasattr(self, 'WEAPON_FACTION') and self.WEAPON_FACTION is not None:
-            if hasattr(self, 'GENERIC_KIND') and self.GENERIC_KIND is not None:
+    @classmethod
+    def is_generic(cls):
+        if hasattr(cls, 'WEAPON_FACTION') and cls.WEAPON_FACTION is not None:
+            if hasattr(cls, 'GENERIC_KIND') and cls.GENERIC_KIND is not None:
                 return True
 
 

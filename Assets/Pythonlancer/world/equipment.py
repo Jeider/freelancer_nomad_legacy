@@ -1,6 +1,7 @@
 from world.lootable import LootableEquip
 from universe.markets import MarketEquip
 from text.infocards import InfocardBuilder
+from world.shortcuts import *
 
 
 class Equipment(LootableEquip, MarketEquip):
@@ -98,11 +99,11 @@ class Equipment(LootableEquip, MarketEquip):
 
     SHIPCLASSES = [SHIPCLASS_FIGHTER, SHIPCLASS_ELITE, SHIPCLASS_FREIGHTER]
 
-    FACTION_RH = 1
-    FACTION_LI = 2
-    FACTION_BR = 3
-    FACTION_KU = 4
-    FACTION_CO = 5
+    FACTION_RH = FACTION_RH
+    FACTION_LI = FACTION_LI
+    FACTION_BR = FACTION_BR
+    FACTION_KU = FACTION_KU
+    FACTION_CO = FACTION_CO
 
     RH_LETTER = 'rh'
     LI_LETTER = 'li'
@@ -253,31 +254,25 @@ combinable = {combinable}'''
 
 
 class MainMiscEquip(Equipment):
-    FACTION_RH = 1
-    FACTION_LI = 2
-    FACTION_BR = 3
-    FACTION_KU = 4
-    FACTION_CO = 5
+    RH_MAIN = RH_MAIN
+    RH_CIV = RH_CIV
+    RH_PIRATE = RH_PIRATE
 
-    RH_MAIN = 1
-    RH_CIV = 2
-    RH_PIRATE = 3
+    LI_MAIN = LI_MAIN
+    LI_CIV = LI_CIV
+    LI_PIRATE = LI_PIRATE
 
-    LI_MAIN = 4
-    LI_CIV = 5
-    LI_PIRATE = 6
+    BR_MAIN = BR_MAIN
+    BR_CIV = BR_CIV
+    BR_PIRATE = BR_PIRATE
 
-    BR_MAIN = 7
-    BR_CIV = 8
-    BR_PIRATE = 9
+    KU_MAIN = KU_MAIN
+    KU_CIV = KU_CIV
+    KU_PIRATE = KU_PIRATE
 
-    KU_MAIN = 10
-    KU_CIV = 11
-    KU_PIRATE = 12
-
-    CO_ORDER = 13
-    CO_CORSAIR = 14
-    CO_OUTCAST = 15
+    CO_ORDER = CO_ORDER
+    CO_CORSAIR = CO_CORSAIR
+    CO_OUTCAST = CO_OUTCAST
 
     RH_EQUIP = [RH_MAIN, RH_CIV, RH_PIRATE]
     LI_EQUIP = [LI_MAIN, LI_CIV, LI_PIRATE]

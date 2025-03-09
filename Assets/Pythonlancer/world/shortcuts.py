@@ -1,0 +1,38 @@
+LIGHTGUN = 'light'
+HEAVYGUN = 'heavy'
+CIVGUN = 'civilian'
+PIRATEGUN = 'pirate'
+HUNTERGUN = 'hunter'
+SHIELDGUN = 'shield'
+
+WEAPON_RH = 'rh'
+WEAPON_LI = 'li'
+WEAPON_BR = 'br'
+WEAPON_KU = 'ku'
+WEAPON_BW = 'bw'
+
+FACTION_RH = 1
+FACTION_LI = 2
+FACTION_BR = 3
+FACTION_KU = 4
+FACTION_CO = 5
+
+RH_MAIN = 1
+RH_CIV = 2
+RH_PIRATE = 3
+
+LI_MAIN = 4
+LI_CIV = 5
+LI_PIRATE = 6
+
+BR_MAIN = 7
+BR_CIV = 8
+BR_PIRATE = 9
+
+KU_MAIN = 10
+KU_CIV = 11
+KU_PIRATE = 12
+
+CO_ORDER = 13
+CO_CORSAIR = 14
+CO_OUTCAST = 15

@@ -1,4 +1,5 @@
 from managers.tools.helpers import ManagerHelper
+from managers.tools import query as Q
 
 from text.strings import StringCompiler
 from text.dividers import SINGLE_DIVIDER, DIVIDER
@@ -85,6 +86,44 @@ class MiscEquipManager:
             npc_armor = ArmorNPC(armor_index, armor_scale)
             self.npc_armors_db[armor_index] = npc_armor
             self.npc_armors_list.append(npc_armor)
+
+    def get_shipclass_item_by_query(self, query: Q.MiscEquip, func: str):
+        items = []
+        action = getattr(self, func)
+        for the_class in query.eq_classes:
+            for shipclass in Equipment.SHIPCLASSES:
+                items.append(
+                    action(
+                        shipclass=shipclass,
+                        equip_type=query.eq_type,
+                        equipment_class=the_class,
+                    )
+                )
+        return items
+
+    def get_single_item_by_query(self, query: Q.MiscEquip, func: str):
+        items = []
+        action = getattr(self, func)
+        for the_class in query.eq_classes:
+            items.append(
+                action(
+                    equip_type=query.eq_type,
+                    equipment_class=the_class,
+                )
+            )
+        return items
+
+    def get_engine_by_query(self, query: Q.Engine):
+        return self.get_shipclass_item_by_query(query, 'get_engine')
+
+    def get_power_by_query(self, query: Q.Power):
+        return self.get_shipclass_item_by_query(query, 'get_powerplant')
+
+    def get_shield_by_query(self, query: Q.Shield):
+        return self.get_shipclass_item_by_query(query, 'get_shield')
+
+    def get_thruster_by_query(self, query: Q.Thruster):
+        return self.get_single_item_by_query(query, 'get_thruster')
 
     def get_engine(self, shipclass, equip_type, equipment_class):
         return self.engines_db[shipclass][equip_type][equipment_class]

@@ -674,6 +674,11 @@ class DockableObject(StaticObject):
     INTERIOR_EXTRA_ROOMS = []
     INTERIORS_FOLDER = 'GENERATED_INTERIORS'
     DEALERS = None
+    IS_BASE = False  # switch to true
+    EQUIP_SET = None
+    BASE_INDEX = None
+    WEAPON_FACTION = None
+    MISC_EQUIP_TYPE = None
 
     INTERIOR_BG1 = None
     INTERIOR_BG2 = None
@@ -702,6 +707,9 @@ BGCS_base_run_by = W02bF44'''
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+
+        if not self.BASE_INDEX:
+            raise Exception('Dockable base have no base index %s' % self.__class__.__name__)
 
         self.interior = None
         if self.INTERIOR_CLASS:
@@ -803,6 +811,15 @@ BGCS_base_run_by = W02bF44'''
                 props['space_costume'] = self.SPACE_COSTUME if self.SPACE_COSTUME else SpaceCostume.DEFAULT
 
         return SINGLE_DIVIDER.join(['{} = {}'.format(key, value) for key, value in props.items()])
+
+    def have_equip_dealer(self):
+        if not self.interior.have_equip():
+            return False
+
+        if not self.EQUIP_SET:
+            raise Exception('Base %s have not equip set for equip dealer' % self.__class__.__name__)
+
+        return True
 
 
 class Dockring(DockableObject):

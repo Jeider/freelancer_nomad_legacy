@@ -1,28 +1,10 @@
 from managers.tools.helpers import ManagerHelper
-
-from text.strings import StringCompiler
+from managers.tools import query as Q
 
 from world.equipment import Equipment
 from world.gun import *
 
 from fx.weapon import WeaponFX
-
-
-def validate_eq(value):
-    if type(value) is not list:
-        raise Exception('Eq classes should be list')
-
-
-class GunQuery:
-    def __init__(self, gun, eq_classes):
-        self.gun = gun
-        self.eq_classes = validate_eq(eq_classes)
-
-
-class GenericGunQuery:
-    def __init__(self, generic_kind, eq_classes):
-        self.generic_kind = generic_kind
-        self.eq_classes = validate_eq(eq_classes)
 
 
 class WeaponManager:
@@ -31,9 +13,11 @@ class WeaponManager:
         self.core = lancer_core
         self.ids = self.core.ids.equip
 
+        self.weapon_factions = [i.WEAPON_FACTION for i in FactionGun.subclasses]
+
         self.guns_list = []
         self.single_guns_db = {}
-        self.generic_guns_db = {i.WEAPON_FACTION: {} for i in FactionGun.subclasses}
+        self.generic_guns_db = {i: {} for i in self.weapon_factions}
 
         self.load_game_data()
 
@@ -57,21 +41,27 @@ class WeaponManager:
             if gun.is_generic():
                 self.generic_guns_db[gun.WEAPON_FACTION][gun.GENERIC_KIND] = self.single_guns_db[gun.BASE_NICKNAME]
 
-    def get_guns_by_query(self, gun_query: GunQuery):
+    def get_guns_by_query(self, gun_query: Q.Gun):
         guns = []
         for the_class in gun_query.eq_classes:
             guns.append(
-                self.get_gun(gun_query.gun, the_class)
+                self.get_gun_raw(gun_query.gun, the_class)
             )
         return guns
 
-    def get_generic_guns_by_query(self, weapon_faction, gun_query: GenericGunQuery):
+    def get_generic_guns_by_query(self, weapon_faction, gun_query: Q.GenericGun):
         guns = []
+        if weapon_faction not in self.weapon_factions:
+            raise Exception('weapon factions is not exist when try to get generic gun')
+
         for the_class in gun_query.eq_classes:
             guns.append(
                 self.get_generic_gun(weapon_faction, gun_query.generic_kind, the_class)
             )
         return guns
+
+    def get_gun_raw(self, gun_nickname, equipment_class):
+        return self.single_guns_db[gun_nickname][equipment_class]
 
     def get_gun(self, gun, equipment_class):
         return self.single_guns_db[gun.BASE_NICKNAME][equipment_class]
