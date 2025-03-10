@@ -2,7 +2,7 @@ from fx.space import Dust, JumpholeEffect
 from fx.sound import Ambience
 
 from managers.tools import query as Q
-from world.shortcuts import *
+from world.names import *
 
 from universe import markets
 from universe.content.member import Member
@@ -202,14 +202,13 @@ class BizmarkTrading(BizmarkMember, main_objects.TradingBase):
     WEAPON_FACTION = WEAPON_RH
     MISC_EQUIP_TYPE = RH_MAIN
     EQUIP_SET = markets.EquipSet(
-        queries=[
-            Q.GenericGun(HUNTERGUN, eq_classes=[1, 3, 5, 7]),
-            Q.GenericGun(SHIELDGUN, eq_classes=[1, 3, 5, 7]),
-            Q.Engine(None, eq_classes=[1, 3, 5]),
-            Q.Power(None, eq_classes=[1, 3, 5]),
-            Q.Shield(None, eq_classes=[2, 3, 6]),
-            Q.Thruster(None, eq_classes=[1, 4]),
-        ],
+        Q.GenericGun(HUNTERGUN, eq_classes=[1, 3, 5, 7]),
+        Q.GenericGun(SHIELDGUN, eq_classes=[1, 3, 5, 7]),
+        Q.Engine(None, eq_classes=[1, 3, 5]),
+        Q.Power(None, eq_classes=[1, 3, 5]),
+        Q.Shield(None, eq_classes=[2, 3, 6]),
+        Q.Thruster(None, eq_classes=[1, 4]),
+        Q.Engine(RH_CIV, eq_classes=[1, 3, 5]),
     )
 
 

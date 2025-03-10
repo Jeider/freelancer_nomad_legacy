@@ -36,3 +36,9 @@ class Shield(MiscEquip):
 
 class Thruster(MiscEquip):
     pass
+
+
+class Ship:
+    def __init__(self, ship):
+        self.eq_type = eq_type
+        self.eq_classes = validate_eq(eq_classes)

@@ -1,5 +1,5 @@
 from managers.tools import query as Q
-from world.shortcuts import *
+from world.names import *
 
 from text.dividers import SINGLE_DIVIDER
 
@@ -54,6 +54,9 @@ class MarketShip(MarketItem):
     def get_market_level(self):
         return self.MARKET_DEFAULT_LEVEL
 
+    def get_package_nickname(self):
+        raise NotImplementedError
+
     def get_market_item_params(self):
         return {
             'item_nickname': self.get_package_nickname(),
@@ -94,8 +97,8 @@ base = {base_nickname}
 
 class EquipSet:
 
-    def __init__(self, queries, weapon_faction=None):
-        self.queries = queries if queries else []
+    def __init__(self, *queries, weapon_faction=None):
+        self.queries = queries
         self.weapon_faction = weapon_faction
 
     def get_equip_items(self, core, root_weapon_faction=None, root_misc_equip_type=None):
@@ -161,19 +164,18 @@ class EquipSet:
                     core.misc_equip.get_thruster_by_query(query)
                 )
 
+            else:
+                raise Exception('Unknown query type')
+
         return items
 
 
 BizSet = EquipSet(
+    Q.Gun('rh_lightgun', eq_classes=[1, 2, 3, 4]),
+    Q.GenericGun(HUNTERGUN, eq_classes=[3, 5, 7, 9]),
+    Q.Engine(CO_OUTCAST, eq_classes=[3, 5, 7, 9]),
+    Q.Power(None, eq_classes=[5, 6, 7]),
+    Q.Shield(KU_PIRATE, eq_classes=[2, 3]),
+    Q.Thruster(RH_CIV, eq_classes=[1, 8]),
     weapon_faction=WEAPON_BR,
-    queries=[
-        Q.Gun('rh_lightgun', eq_classes=[1, 2, 3, 4]),
-        Q.GenericGun(HUNTERGUN, eq_classes=[3, 5, 7, 9]),
-        Q.Engine(CO_OUTCAST, eq_classes=[3, 5, 7, 9]),
-        Q.Power(None, eq_classes=[5, 6, 7]),
-        Q.Shield(KU_PIRATE, eq_classes=[2, 3]),
-        Q.Thruster(RH_CIV, eq_classes=[1, 8]),
-    ],
 )
-
-

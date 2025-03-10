@@ -1,7 +1,7 @@
 from world.equipment import DefaultGood, MainEquipPrice, Icon
 from world.weapon import Weapon
 
-from world.shortcuts import *
+from world.names import *
 
 from fx.weapon import WeaponFX
 

@@ -1,7 +1,7 @@
 from world.lootable import LootableEquip
 from universe.markets import MarketEquip
 from text.infocards import InfocardBuilder
-from world.shortcuts import *
+from world.names import *
 
 
 class Equipment(LootableEquip, MarketEquip):
