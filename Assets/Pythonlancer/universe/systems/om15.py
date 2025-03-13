@@ -1,6 +1,10 @@
 from fx.space import Dust
 from fx.sound import Ambience
 
+from managers.tools import query as Q
+from world.names import *
+from universe import base
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -333,6 +337,10 @@ class Om15MiningStation(Omega15Member, main_objects.Station):
     SPACE_OBJECT_TEMPLATE = roid_mining.RheinlandRoidMining
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.RheinlandCivilianDealers
+
+    BASE_PROPS = base.MediumStation(
+        base.MineRoid(NIOBIUM, level=base.STOCK_MAXIMAL),
+    )
 
 
 class Om15Outpost(Omega15Member, main_objects.Outpost):

@@ -67,6 +67,10 @@ class MarketShip(MarketItem):
         return self.MARKET_ITEM_TEMPLATE.format(**self.get_market_item_params())
 
 
+class MarketCommodity(MarketEquip):
+    pass
+
+
 class Market:
     MARKET_TEMPLATE = '''[BaseGood]
 base = {base_nickname}

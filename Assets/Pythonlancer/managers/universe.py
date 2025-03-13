@@ -8,8 +8,6 @@ from universe.sirius import *  # initialize system objects
 from universe.system import SiriusSystem
 from universe.markets import Market
 
-from world.equipment import Equipment
-
 from tools.data_folder import DataFolder
 
 from text.dividers import SINGLE_DIVIDER, DIVIDER
@@ -20,6 +18,8 @@ class UniverseManager:
     def __init__(self, lancer_core):
         self.core = lancer_core
 
+        self.ids = self.core.ids.universe
+
         self.hacker_panels_manager = HackerPanelManager()
         self.universe_root = UniverseRoot()
 
@@ -27,8 +27,9 @@ class UniverseManager:
         self.weapons = self.core.weapons
         self.shiparch = self.core.shiparch
 
-        self.systems = []
-        self.bases = []
+        self.bases_db = {}
+        self.bases_list = []
+
         self.equip_dealers = []
         self.commodity_dealers = []
         self.ship_dealers = []
@@ -46,6 +47,10 @@ class UniverseManager:
 
         self.get_universe_root().do_post_init_actions()
 
+        for base in self.bases_list:
+            base.load_graph()
+            print('1')
+
         self.sync_data()
 
     def get_random_hacker_panel(self):
@@ -55,8 +60,8 @@ class UniverseManager:
         return self.universe_root
 
     def load_systems(self):
-        for system in SiriusSystem.subclasses:
-            system = system(self)
+        for system_class in SiriusSystem.subclasses:
+            system = system_class(self.core, self, ids=self.ids)
             self.universe_root.add_system(system)
             if system.have_dynamic_content():
                 self.loadouts += system.loadouts
@@ -82,52 +87,9 @@ class UniverseManager:
                             )
                         )
 
+                    if dockable.have_trader():
+                        system.add_base(dockable)
 
-    # def load_bases(self):
-    #     for base_class in Base.subclasses:
-    #         base = base_class()
-    #         self.bases.append(base)
-    #
-    #         if base.LEVEL:
-    #             equip_items = self.load_base_equip_items(base)
-    #             dealer = EquipDealer(base.NAME, equip_items)
-    #             self.equip_dealers_list.append(dealer)
-    #
-    #         if len(base.SHIPS) > 0:
-    #             dealer = ShipDealer(base.NAME, [self.shiparch.get_ship_by_archetype(ship.ARCHETYPE) for ship in base.SHIPS])
-    #             self.ship_dealers_list.append(dealer)
-    #
-    # def load_base_equip_items(self, base):
-    #     items = []
-    #     if base.GUN:
-    #         equip_classes = base.get_gun_classes()
-    #         for equip_class in equip_classes:
-    #             items.append(self.weapons.get_gun(base.GUN, equip_class))
-    #
-    #     if base.ENGINE:
-    #         equip_classes = base.get_engine_classes()
-    #         for equip_class in equip_classes:
-    #             for shipclass in Equipment.SHIPCLASSES:
-    #                 items.append(self.misc_equip.get_engine(shipclass, base.ENGINE, equip_class))
-    #
-    #     if base.POWER:
-    #         equip_classes = base.get_power_classes()
-    #         for equip_class in equip_classes:
-    #             for shipclass in Equipment.SHIPCLASSES:
-    #                 items.append(self.misc_equip.get_powerplant(shipclass, base.POWER, equip_class))
-    #
-    #     if base.SHIELD:
-    #         equip_classes = base.get_shield_classes()
-    #         for equip_class in equip_classes:
-    #             for shipclass in Equipment.SHIPCLASSES:
-    #                 items.append(self.misc_equip.get_shield(shipclass, base.SHIELD, equip_class))
-    #
-    #     if base.THRUSTER:
-    #         equip_classes = base.get_thruster_classes()
-    #         for equip_class in equip_classes:
-    #             items.append(self.misc_equip.get_thruster(base.THRUSTER, equip_class))
-    #
-    #     return items
 
     def get_market_equip(self):
         return DIVIDER.join([dealer.get_market_content() for dealer in self.equip_dealers])

@@ -40,6 +40,13 @@ pos = {pos}
 rotate = {rotate}
 archetype = {archetype}'''
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.connections = []
+
+    def add_connection(self, the_conn):
+        self.connections.append(the_conn)
+
     def has_appearance(self):
         return self.ARCHETYPE or self.SPACE_OBJECT_TEMPLATE
 
@@ -357,6 +364,10 @@ class JumpableObject(StaticObject):
             target_jumpgate_name=self.get_target_jump_object_nickname(),
             gate_tunnel=self.system.JUMP_EFFECT.GATE_TUNNEL
         )
+
+    def get_target_jumpgate(self):
+        # Should be initialized
+        return self.get_target_system().get_jumpgate_instance(self.system.NAME)
 
     def get_msg_id_prefix(self):
         return self.get_target_system().get_system_msg()
@@ -679,6 +690,7 @@ class DockableObject(StaticObject):
     BASE_INDEX = None
     WEAPON_FACTION = None
     MISC_EQUIP_TYPE = None
+    BASE_PROPS = None
 
     INTERIOR_BG1 = None
     INTERIOR_BG2 = None
@@ -818,6 +830,15 @@ BGCS_base_run_by = W02bF44'''
 
         if not self.EQUIP_SET:
             raise Exception('Base %s have not equip set for equip dealer' % self.__class__.__name__)
+
+        return True
+
+    def have_trader(self):
+        if not self.interior.have_trader():
+            return False
+        #
+        # if not self.BASE_PROPS:
+        #     raise Exception('Base %s have no defined economics base props' % self.__class__.__name__)
 
         return True
 

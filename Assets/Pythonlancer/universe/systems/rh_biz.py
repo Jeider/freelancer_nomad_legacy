@@ -4,6 +4,7 @@ from fx.sound import Ambience
 from managers.tools import query as Q
 from world.names import *
 
+from universe import base
 from universe import markets
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
@@ -198,7 +199,7 @@ class BizmarkTrading(BizmarkMember, main_objects.TradingBase):
     INTERIOR_CLASS = interior.OutpostShipdealerInterior
     DEALERS = dealers.RheinlandCivilianDealers
 
-    IS_BASE = True
+    # IS_BASE = True
     WEAPON_FACTION = WEAPON_RH
     MISC_EQUIP_TYPE = RH_MAIN
     EQUIP_SET = markets.EquipSet(

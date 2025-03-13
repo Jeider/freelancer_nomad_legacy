@@ -1,6 +1,10 @@
 from fx.space import Dust
 from fx.sound import Ambience
 
+from managers.tools import query as Q
+from world.names import *
+from universe import base
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -254,6 +258,10 @@ class BerlinDockring(BerlinMember, main_objects.Dockring):
     AUDIO_PREFIX = SpaceVoice.RH_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.RheinlandPlanetDealers
+
+    BASE_PROPS = base.Megabase(
+        base.ConsumeRoid(NIOBIUM, level=base.CONSUME_MEDIUM),
+    )
 
 
 class BerlinPrison(BerlinMember, main_objects.Prison):

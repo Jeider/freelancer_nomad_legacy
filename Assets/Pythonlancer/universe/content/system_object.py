@@ -39,7 +39,7 @@ def get_reversed_direction(direction):
     raise Exception('unknown direction %s' % direction)
 
 
-class SystemObject(object):
+class SystemObject:
     ABSTRACT = True
 
     POS = None

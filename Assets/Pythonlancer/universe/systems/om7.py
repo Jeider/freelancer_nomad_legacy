@@ -106,7 +106,7 @@ class Om7Sun(Om7Member, main_objects.SunSmall):
 class Om7HokkaidoJumpgate(Om7Member, main_objects.Jumpgate):
     INDEX = 1
     REL = LEFT
-    TARGET_SYSTEM_NAME = 'om7'
+    TARGET_SYSTEM_NAME = 'ku_hkd'
 
 
 class Om7StuttgartJumpgate(Om7Member, main_objects.Jumpgate):

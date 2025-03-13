@@ -7,6 +7,7 @@ from universe.content.mineable import Mineable, RewardsGroup
 from universe.content import interior
 from universe.content import population
 from universe import connection
+from universe.base import Base
 
 from text.dividers import SINGLE_DIVIDER, DIVIDER
 
@@ -51,9 +52,9 @@ class SiriusSystem:
         cls.subclasses.append(cls)
 
 
-
 class System:
     NAME = ''
+    RU_NAME = ''
     CONTENT = None
     TEMPLATE_NAME = None
     ALLOW_SYNC = False
@@ -87,8 +88,10 @@ distance = {tlr_distance}
 
     ENABLE_POPULATION = True
 
-    def __init__(self, universe_manager):
-        self.universe_manager = universe_manager
+    def __init__(self, core, universe, ids):
+        self.core = core
+        self.universe_manager = universe
+        self.ids = ids
         self.template = None
 
         self.last_police_patrol_id = 0
@@ -122,12 +125,16 @@ distance = {tlr_distance}
         self.mineable = []
 
         self.jumpable = []
+        self.jumpgates_db = {}
         self.lawful_connections = []
 
         self.keys = []
 
-        self.ids_name = 196618
-        self.ids_info = 196618
+        self.ids_name = ids.new_name(self.RU_NAME)
+        self.ids_info = ids.new_name(self.RU_NAME)  # TODO: change
+
+        self.bases_db = {}
+        self.bases_list = []
 
         self.process_content()
 
@@ -135,6 +142,7 @@ distance = {tlr_distance}
         if self.have_dynamic_content():
             self.process_template()
             self.init_dynamic_content()
+            self.post_process_dynamic_content()
 
     def have_dynamic_content(self):
         return self.CONTENT is not None
@@ -178,11 +186,21 @@ distance = {tlr_distance}
 
         self.process_reward_groups()
 
+    def post_process_dynamic_content(self):
+        for the_connect in self.trade_connections:
+            destinations = the_connect.get_destination_objects()
+            destinations[0].add_connection(the_connect)
+            destinations[1].add_connection(the_connect)
+
     def init_jumpgates(self):
         for jumpable_item in self.jumpable:
             jumpable_item.init_connection()
             if jumpable_item.CONNECTION_KIND == connection.CONNECTION_LAWFUL:
                 self.lawful_connections.append(jumpable_item.target_system)
+                self.jumpgates_db[jumpable_item.TARGET_SYSTEM_NAME] = jumpable_item
+
+    def get_jumpgate_instance(self, system_name):
+        return self.jumpgates_db[system_name]
 
     def get_dynamic_content(self):
         system_content = []
@@ -230,6 +248,12 @@ distance = {tlr_distance}
     def get_content(self):
         return self.get_dynamic_content()
 
+    def get_ids_name(self):
+        return self.ids_name.id
+
+    def get_ids_info(self):
+        return self.ids_info.id
+
     def get_universe_definition(self):
         return SYSTEM_TEMPLATE.format(
             nickname=self.NAME,
@@ -238,8 +262,8 @@ distance = {tlr_distance}
             msg_prefix=self.get_system_msg(),
             navmap_pos=self.NAVMAP_POS,
             navmap_scale=self.NAVMAP_SCALE,
-            ids_name=self.ids_name,
-            ids_info=self.ids_info,
+            ids_name=self.get_ids_name(),
+            ids_info=self.get_ids_info(),
         )
 
     def get_random_hacker_panel(self):
@@ -508,6 +532,21 @@ distance = {tlr_distance}
     @classmethod
     def get_system_msg_relative(cls):
         return f'gcs_refer_system_{cls.NAME}-'
+
+    def add_base(self, system_object):
+        the_base = Base(
+            self.core,
+            self,
+            system_object=system_object,
+        )
+
+        base_name = system_object.get_base_nickname()
+
+        self.bases_db[base_name] = the_base
+        self.bases_list.append(the_base)
+
+        self.universe_manager.bases_db[base_name] = the_base
+        self.universe_manager.bases_list.append(the_base)
 
 
 class RheinlandFirst:

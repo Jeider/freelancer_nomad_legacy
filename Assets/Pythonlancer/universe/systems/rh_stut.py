@@ -1,6 +1,10 @@
 from fx.space import Dust
 from fx.sound import Ambience
 
+from managers.tools import query as Q
+from world.names import *
+from universe import base
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -373,6 +377,10 @@ class StutMegabase(StutMember, main_objects.Station):
     NEBULA_EXCLUSION_ZONE_SIZE = 3500
     EXCLUSION_PARAMS = WALKER_EXCLUSION_PARAMS
     NEBULA_ZONES = [StutOrangeNebula1]
+
+    BASE_PROPS = base.Megabase(
+        base.ConsumeRoid(NIOBIUM, level=base.CONSUME_LARGE),
+    )
 
 
 class StutTraders(StutMember, main_objects.TradingBase):

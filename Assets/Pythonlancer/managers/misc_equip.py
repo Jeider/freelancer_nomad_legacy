@@ -1,9 +1,6 @@
 from managers.tools.helpers import ManagerHelper
 from managers.tools import query as Q
 
-from text.strings import StringCompiler
-from text.dividers import SINGLE_DIVIDER, DIVIDER
-
 from world.equipment import Equipment, MainMiscEquip
 from world.power import Power
 from world.engine import Engine

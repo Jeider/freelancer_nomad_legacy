@@ -8,13 +8,11 @@ from tools.data_folder import DataFolder
 
 DIVIDER = '\n\n'
 
-ENABLE_STORY = False
-
 GENERATED = 'GENERATED'
 
 
 def main():
-    core = LancerCore(enable_story=ENABLE_STORY, write=True)
+    core = LancerCore(write=True)
 
     lootprops_data = [
         core.misc_equip.get_lootprops(),
@@ -35,25 +33,6 @@ def main():
         ('key_for_story.ini', core.universe.get_key_story()),
         ('key_for_initial_world.ini', core.universe.get_key_initial_world()),
     ]
-
-    if core.has_story:
-        # Should be obsolete
-        story_files = [
-            ('audio_ingame.ini', core.audio.get_ingame_sounds_ini()),
-            ('audio_ingame.xml', core.audio.get_ingame_sounds_xml()),
-
-            ('audio_space_subtitle.xml', core.audio.get_space_subtitles_xml()),
-
-            ('audio_cutscenes.ini', core.audio.get_cutscene_sounds_ini()),
-            ('audio_cutscenes.lua', core.audio.get_cutscene_sounds_thn()),
-
-            ('audio_ether_comm_strings.ini', core.audio.get_ether_comm_ru_strings()),
-            ('audio_ether_comm_text.ini', core.audio.get_ether_comm_mission_texts()),
-
-            ('misc_ru_strings.ini', core.audio.get_misc_ru_strings()),
-            ('misc_ru_infocards.ini', core.audio.get_misc_ru_infocards()),
-        ]
-        files_map.extend(story_files)
 
     for file, content in files_map:
         FileWriter.write(file, content)
