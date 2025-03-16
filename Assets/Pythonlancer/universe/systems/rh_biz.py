@@ -6,6 +6,7 @@ from world.names import *
 
 from universe import base
 from universe import markets
+from universe.content import meta
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -178,7 +179,7 @@ class BizmarkSigma8Jumphole(BizmarkMember, main_objects.Jumphole):
     NEBULA_ZONES = [BizmarkTopLeftNebula]
 
 
-class BizmarkDockRing(BizmarkMember, main_objects.Dockring):
+class BizmarkDockRing(BizmarkMember, main_objects.LargePlanetDockring):
     BASE_INDEX = 1
     REL = RIGHT
     AUDIO_PREFIX = SpaceVoice.RH_PLANET
@@ -188,6 +189,13 @@ class BizmarkDockRing(BizmarkMember, main_objects.Dockring):
     EQUIP_SET = markets.BizSet
     WEAPON_FACTION = WEAPON_KU
     MISC_EQUIP_TYPE = BR_PIRATE
+    BASE_PROPS = meta.LargePlanet(
+        objectives=[
+            meta.ProduceLuxury(LUXURY_DIAMONDS),
+            meta.ConsumeRoid(DIAMONDS),
+            meta.ConsumeLuxury(),
+        ]
+    )
 
 
 class BizmarkTrading(BizmarkMember, main_objects.TradingBase):
@@ -239,6 +247,8 @@ class BizmarkResearch(BizmarkMember, main_objects.Station):
     INTERIOR_CLASS = interior.StationBshbarInterior
     DEALERS = dealers.RheinlandCivilianDealers
 
+    BASE_PROPS = meta.Research()
+
 
 class BizmarkMilitary(BizmarkMember, main_objects.Station):
     ALIAS = 'military'
@@ -251,6 +261,13 @@ class BizmarkMilitary(BizmarkMember, main_objects.Station):
     AUDIO_PREFIX = SpaceVoice.STATION
     INTERIOR_CLASS = interior.StationShipdealerInterior
     DEALERS = dealers.RheinlandMilitaryDealers
+
+    BASE_PROPS = meta.MediumStation(
+        objectives=[
+            meta.SupportBattleships(),
+            meta.ConsumeHeavyMunitions(),
+        ]
+    )
 
 
 class BizmarkShipyard(BizmarkMember, main_objects.Shipyard):
@@ -278,7 +295,7 @@ class BizmarkRefinery(BizmarkMember, main_objects.Refinery):
     ]
 
 
-class BizmarkTopPirate(BizmarkMember, main_objects.PirateBase):
+class BizmarkTopPirate(BizmarkMember, main_objects.PirateStation):
     BASE_INDEX = 8
     INDEX = 1
     REL = TOP
@@ -292,7 +309,7 @@ class BizmarkTopPirate(BizmarkMember, main_objects.PirateBase):
     DEALERS = dealers.RheinlandPirateDealers
 
 
-class BizmarkRightPirate(BizmarkMember, main_objects.PirateBase):
+class BizmarkRightPirate(BizmarkMember, main_objects.PirateAsteroid):
     BASE_INDEX = 9
     INDEX = 2
     REL = RIGHT

@@ -259,7 +259,7 @@ class WarwickSiriusJumpgate(WarwickMember, main_objects.Jumpgate):
     TARGET_SYSTEM_NAME = 'sig42'
 
 
-class WarwickDockring(WarwickMember, main_objects.Dockring):
+class WarwickDockring(WarwickMember, main_objects.LargePlanetDockring):
     BASE_INDEX = 1
     REL = TOP
     AUDIO_PREFIX = SpaceVoice.BR_PLANET
@@ -302,7 +302,7 @@ class WarwickShipyard(WarwickMember, main_objects.Shipyard):
     DEALERS = dealers.BretoniaCivilianDealers
 
 
-class WarwickPiratesTop(WarwickMember, main_objects.PirateBase):
+class WarwickPiratesTop(WarwickMember, main_objects.PirateAsteroid):
     BASE_INDEX = 6
     INDEX = 1
     REL = TOP

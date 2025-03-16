@@ -422,7 +422,7 @@ class AvalTau23Jumpgate(AvalMember, main_objects.Jumpgate):
     TARGET_SYSTEM_NAME = 'tau23'
 
 
-class AvalDockring(AvalMember, main_objects.Dockring):
+class AvalDockring(AvalMember, main_objects.LargePlanetDockring):
     BASE_INDEX = 1
     REL = LEFT
     AUDIO_PREFIX = SpaceVoice.BR_PLANET
@@ -488,7 +488,7 @@ class AvalPrison(AvalMember, main_objects.Prison):
     DEALERS = dealers.BretoniaMilitaryDealers
 
 
-class AvalJunkers(AvalMember, main_objects.PirateBase):
+class AvalJunkers(AvalMember, main_objects.JunkerBase):
     INDEX = 1
     BASE_INDEX = 7
     REL = LEFT
@@ -503,7 +503,7 @@ class AvalJunkers(AvalMember, main_objects.PirateBase):
     DEFENCE_LEVEL = None
 
 
-class AvalPirates(AvalMember, main_objects.PirateBase):
+class AvalPirates(AvalMember, main_objects.PirateStation):
     INDEX = 2
     BASE_INDEX = 8
     REL = RIGHT

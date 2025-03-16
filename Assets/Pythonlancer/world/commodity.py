@@ -35,6 +35,8 @@ ICON_CONSUMER = 17
 ICON_DRUGS = 18
 ICON_LIGHTARMS = 19
 ICON_TOXIC = 20
+ICON_FERTILIZER = 21
+ICON_MACHINES = 22
 
 
 class Commodity(MarketCommodity):
@@ -84,6 +86,30 @@ class Alloy:
 
 class Product:
     PRIORITY = 30
+
+
+class TerraformMinerals(BasicCommodity, Commodity):
+    ALIAS = TERRAFORM_MINERALS
+    RU_NAME = 'Минеральные удобрения'
+    NICKNAME = 'comm_terraform_minerals'
+    POD = POD_FOODS
+    ICON = ICON_FERTILIZER
+
+
+class TerraformGases(BasicCommodity, Commodity):
+    ALIAS = TERRAFORM_GASES
+    RU_NAME = 'Терраформирующие газы'
+    NICKNAME = 'comm_terraform_gases'
+    POD = POD_FOODS
+    ICON = ICON_CHEMICAL
+
+
+class LaserBeamParts(BasicCommodity, Commodity):
+    ALIAS = LASER_BEAM_PARS
+    RU_NAME = 'Компоненты излучателя'
+    NICKNAME = 'comm_laserbeam_components'
+    POD = POD_MACHINES
+    ICON = ICON_MACHINES
 
 
 class BasicWater(BasicCommodity, Commodity):
@@ -182,20 +208,20 @@ class GasBalloons(DefaultCommodity, Commodity):
     ICON = ICON_HFUEL
 
 
-class WaterExtra(DefaultCommodity, Commodity):
-    ALIAS = WATER_EXTRA
-    RU_NAME = 'Чистая вода'
-    NICKNAME = 'comm_water_extra'
-    POD = POD_RAWMATS
-    ICON = ICON_WATERROID
-
-
 class GasFuel(DefaultCommodity, Commodity):
     ALIAS = GAS_FUEL
     RU_NAME = 'Газовое топливо'
     NICKNAME = 'comm_gas_fuel'
     POD = POD_TRANSPARTS
     ICON = ICON_HFUEL
+
+
+class ShipHullPanels(Product, Commodity):
+    ALIAS = SHIP_HULL_PANELS
+    RU_NAME = 'Панели обшивки корабля'
+    NICKNAME = 'comm_shiphull_panels'
+    POD = POD_REFINEDMATS
+    ICON = ICON_HULLPANELS
 
 
 class Diamonds(Roid, Commodity):
@@ -260,6 +286,14 @@ class SmelterParts(Product, Commodity):
     NICKNAME = 'comm_smelter_parts'
     POD = POD_MACHINES
     ICON = ICON_INDUSTRIAL
+
+
+class WaterExtra(DefaultCommodity, Commodity):
+    ALIAS = WATER_EXTRA
+    RU_NAME = 'Чистая вода'
+    NICKNAME = 'comm_water_extra'
+    POD = POD_RAWMATS
+    ICON = ICON_WATERROID
 
 
 class Berilium(Roid, Commodity):
@@ -344,7 +378,7 @@ class Plumbum(Roid, Commodity):
 
 class Reactors(Product, Commodity):
     ALIAS = REACTORS
-    RU_NAME = 'Реакторы'
+    RU_NAME = 'Компоненты реактора'
     NICKNAME = 'comm_reactors'
     POD = POD_HIGHTECH
     ICON = ICON_BATTERY
@@ -388,6 +422,14 @@ class GreenhouseParts(Product, Commodity):
     NICKNAME = 'comm_greenhouse_parts'
     POD = POD_MACHINES
     ICON = ICON_REFINEDMATS
+
+
+class DefenceSystems(Product, Commodity):
+    ALIAS = DEFENCE_SYSTEMS
+    RU_NAME = 'Защитные системы'
+    NICKNAME = 'comm_greenhouse_parts'
+    POD = POD_MUNITIONS
+    ICON = ICON_MUNITIONS
 
 
 class Gold(Roid, Commodity):
@@ -451,4 +493,12 @@ class SolarPlantParts(Product, Commodity):
     RU_NAME = 'Компоненты солн. генератора'
     NICKNAME = 'comm_solarplant_parts'
     POD = POD_MACHINES
+    ICON = ICON_INDUSTRIAL
+
+
+class ResearchEquip(Product, Commodity):
+    ALIAS = RESEARCH_EQUIP
+    RU_NAME = 'Точное оборудование'
+    NICKNAME = 'comm_research_equip'
+    POD = POD_HIGHTECH
     ICON = ICON_INDUSTRIAL

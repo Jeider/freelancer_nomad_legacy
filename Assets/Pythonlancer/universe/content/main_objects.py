@@ -2,6 +2,7 @@ from random import randint
 
 from fx.space import Dust
 
+from universe.content import meta
 from universe.content.system_object import SystemObject, TOP, BOTTOM, LEFT, RIGHT, DIRECTIONS, POS_KEY, ROT_KEY, SIZE_KEY
 from universe.content.zones import DynamicZone, DynamicSphereZone, RawZone
 from universe.content import interior
@@ -11,8 +12,6 @@ from universe.content.loadout import Loadout
 from universe import connection
 
 from text.dividers import SINGLE_DIVIDER, DIVIDER
-
-
 
 TLR_HUGE_SIZE_RINGS_COUNT = 5
 TLR_SMALL_SIZE_RINGS_COUNT = 4
@@ -871,14 +870,32 @@ class Dockring(DockableObject):
         raise Exception('Interior for dock ring planets should be only manual created')
 
 
+class LargePlanetDockring(Dockring):
+    BASE_PROPS = meta.LargePlanet()
+
+
+class MiningPlanetDockring(Dockring):
+    BASE_PROPS = meta.MiningPlanet()
+
+
+class ResortPlanetDockring(Dockring):
+    BASE_PROPS = meta.ResortPlanet()
+
+
+class WaterPlanetDockring(Dockring):
+    BASE_PROPS = meta.WaterPlanet()
+
+
 class Station(DockableObject):
     ALIAS = 'station'
     AUDIO_PREFIX = SpaceVoice.STATION
+    BASE_PROPS = meta.SpaceStation()
 
 
 class AbandonedAsteroid(DockableObject):
     AUDIO_PREFIX = SpaceVoice.STATION
     RANDOM_ROBOT = True
+    BASE_PROPS = meta.LockedAsteroid()
 
 
 class GasMinerOld(Station):
@@ -911,11 +928,13 @@ behavior = NOTHING'''
 class SolarPlant(Station):
     ALIAS = 'solar'
     RANDOM_ROBOT = True
+    BASE_PROPS = meta.LockedSolarPlant()
 
 
 class RoidMiner(Station):
     RANDOM_ROBOT = True
     ROTATE_RANDOM = False
+    BASE_PROPS = meta.LockedRoidMiner()
 
     ASTEROID_OFFSET = (0, 5, -235)
     ASTEROID_ROTATE = (145, -30, 34)
@@ -974,31 +993,37 @@ ids_info = 66150'''
 class DebrisManufactoring(Station):
     AUDIO_PREFIX = SpaceVoice.FACTORY
     RANDOM_ROBOT = True
+    BASE_PROPS = meta.LockedSmelter()
 
 
 class Outpost(DockableObject):
     ALIAS = 'outpost'
     AUDIO_PREFIX = SpaceVoice.OUTPOST
+    BASE_PROPS = meta.Outpost()
 
 
 class Prison(DockableObject):
     ALIAS = 'prison'
     AUDIO_PREFIX = SpaceVoice.PRISON
+    BASE_PROPS = meta.Prison()
 
 
 class Shipyard(DockableObject):
     ALIAS = 'shipyard'
     AUDIO_PREFIX = SpaceVoice.SHIPYARD
+    BASE_PROPS = meta.Shipyard()
 
 
 class TradingBase(DockableObject):
     ALIAS = 'trading'
     AUDIO_PREFIX = SpaceVoice.OUTPOST
+    BASE_PROPS = meta.TradingBase()
 
 
 class Battleship(DockableObject):
     ALIAS = 'bship'
     AUDIO_PREFIX = SpaceVoice.BATTLESHIP
+    BASE_PROPS = meta.Battleship()
 
 
 class RheinlandBattleship(Battleship):
@@ -1024,16 +1049,19 @@ class KusariBattleship(Battleship):
 class LuxuryLiner(Battleship):
     ARCHETYPE = 'luxury_liner'
     LOADOUT = 'ge_liner_co_01'
+    BASE_PROPS = meta.LuxuryLiner()
 
 
 class Freeport(DockableObject):
     ALIAS = 'freeport'
     AUDIO_PREFIX = SpaceVoice.FREEPORT
+    BASE_PROPS = meta.Freeport()
 
 
 class JunkerBase(DockableObject):
-    ALIAS = 'junker'
+    ALIAS = 'pirate'
     AUDIO_PREFIX = SpaceVoice.OUTPOST
+    BASE_PROPS = meta.JunkerBase()
 
 
 class PirateBase(DockableObject):
@@ -1041,9 +1069,22 @@ class PirateBase(DockableObject):
     AUDIO_PREFIX = SpaceVoice.OUTPOST
 
 
+class PirateStation(PirateBase):
+    BASE_PROPS = meta.PirateStation()
+
+
+class PirateGasMiner(PirateBase):
+    BASE_PROPS = meta.PirateGasMiner()
+
+
+class PirateAsteroid(PirateBase):
+    BASE_PROPS = meta.PirateAsteroid()
+
+
 class Refinery(DockableObject):
     ALIAS = 'alg'
     AUDIO_PREFIX = SpaceVoice.FACTORY
+    BASE_PROPS = meta.Refinery()
 
 
 class Hackable(DockableObject):
@@ -1051,6 +1092,7 @@ class Hackable(DockableObject):
     LOCKED_DOCK = True
     DEFENCE_LEVEL = None
     RANDOM_ROBOT = True
+    BASE_PROPS = meta.LockedHackableOutpost()
 
     def get_position(self):
         if self.RELATED_OBJECT:
@@ -1115,6 +1157,7 @@ class LockedBattleship(Station):
     ROTATE_RANDOM = True
     RANDOM_ROBOT = True
     DEFENCE_LEVEL = None
+    BASE_PROPS = meta.LockedBattleship()
 
 
 class PatrolObjective(SystemObject):

@@ -394,7 +394,7 @@ class Sig17FreeportSevenRuin2(Sig17Member, main_objects.HackableStation):
     INTERIOR_CLASS = interior.EquipDeckInterior
 
 
-class Sig17EdgeNebulaPirates(Sig17Member, main_objects.PirateBase):
+class Sig17EdgeNebulaPirates(Sig17Member, main_objects.PirateAsteroid):
     INDEX = 1
     BASE_INDEX = 5
     REL = RIGHT
@@ -419,7 +419,7 @@ class Sig17EdgeNebulaPirates(Sig17Member, main_objects.PirateBase):
     AST_EXCLUSION_ZONE_SIZE = 2500
 
 
-class Sig17CrowNebulaPirates(Sig17Member, main_objects.PirateBase):
+class Sig17CrowNebulaPirates(Sig17Member, main_objects.PirateStation):
     INDEX = 2
     BASE_INDEX = 6
     REL = LEFT

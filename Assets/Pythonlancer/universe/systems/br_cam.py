@@ -340,7 +340,7 @@ class CamOldOutpostRuinsSuprisePoint(CamMember, main_objects.HackableStation):
     INTERIOR_CLASS = interior.EquipDeckInterior
 
 
-class CamDockring(CamMember, main_objects.Dockring):
+class CamDockring(CamMember, main_objects.LargePlanetDockring):
     BASE_INDEX = 1
     REL = BOTTOM
     AUDIO_PREFIX = SpaceVoice.BR_PLANET
@@ -419,7 +419,7 @@ class CamResearch(CamMember, main_objects.Outpost):
     DEALERS = dealers.BretoniaCivilianDealers
 
 
-class CamJunkers(CamMember, main_objects.PirateBase):
+class CamJunkers(CamMember, main_objects.JunkerBase):
     INDEX = 1
     BASE_INDEX = 8
     REL = LEFT
@@ -434,7 +434,7 @@ class CamJunkers(CamMember, main_objects.PirateBase):
     DEFENCE_LEVEL = None
 
 
-class CamPirates(CamMember, main_objects.PirateBase):
+class CamPirates(CamMember, main_objects.PirateStation):
     INDEX = 2
     BASE_INDEX = 9
     REL = RIGHT

@@ -324,7 +324,7 @@ class CalVirtualPoint1(CalMember, main_objects.VirtualDepot):
     REL_APPEND = 1000
 
 
-class CalDockring(CalMember, main_objects.Dockring):
+class CalDockring(CalMember, main_objects.LargePlanetDockring):
     BASE_INDEX = 1
     REL = TOP
     AUDIO_PREFIX = SpaceVoice.LI_PLANET
@@ -369,7 +369,7 @@ class CalTrading(CalMember, main_objects.TradingBase):
     DEALERS = dealers.LibertyCivilianDealers
 
 
-class CalPirate1(CalMember, main_objects.PirateBase):
+class CalPirate1(CalMember, main_objects.PirateAsteroid):
     BASE_INDEX = 6
     REL = LEFT
     SPACE_OBJECT_TEMPLATE = astbase.CaliforniaAsteroidBase
@@ -386,7 +386,7 @@ class CalPirate1(CalMember, main_objects.PirateBase):
     NEBULA_ZONES = [CalNebula3]
 
 
-class CalPirate2(CalMember, main_objects.PirateBase):
+class CalPirate2(CalMember, main_objects.PirateStation):
     INDEX = 2
     BASE_INDEX = 7
     REL = RIGHT

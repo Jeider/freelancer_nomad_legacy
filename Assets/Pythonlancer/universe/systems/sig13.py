@@ -203,7 +203,7 @@ class Sig13Freeport(Sig13Member, Sig13Liberty, main_objects.Freeport):
     INTERIOR_BG1 = interior.INTERIOR_BG_CROW
 
 
-class Sig13PirateTopRight(Sig13Member, Sig13Liberty, main_objects.PirateBase):
+class Sig13PirateTopRight(Sig13Member, Sig13Liberty, main_objects.PirateGasMiner):
     BASE_INDEX = 6
     INDEX = 1
     REL = RIGHT
@@ -219,7 +219,7 @@ class Sig13PirateTopRight(Sig13Member, Sig13Liberty, main_objects.PirateBase):
     INTERIOR_BG1 = interior.INTERIOR_BG_CROW
 
 
-class Sig13PirateTopLeft(Sig13Member, Sig13Liberty, main_objects.PirateBase):
+class Sig13PirateTopLeft(Sig13Member, Sig13Liberty, main_objects.PirateGasMiner):
     BASE_INDEX = 7
     INDEX = 2
     REL = TOP
@@ -235,7 +235,7 @@ class Sig13PirateTopLeft(Sig13Member, Sig13Liberty, main_objects.PirateBase):
     INTERIOR_BG1 = interior.INTERIOR_BG_CROW
 
 
-class Sig13PirateBottom(Sig13Member, Sig13Rheinland, main_objects.PirateBase):
+class Sig13PirateBottom(Sig13Member, Sig13Rheinland, main_objects.PirateGasMiner):
     BASE_INDEX = 8
     INDEX = 3
     REL = BOTTOM

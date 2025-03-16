@@ -155,7 +155,7 @@ class Tau31Trading(Tau31Member, main_objects.TradingBase):
     NEBULA_ZONES = [Tau31Nebula]
 
 
-class Tau31BottomPirates(Tau31Member, main_objects.PirateBase):
+class Tau31BottomPirates(Tau31Member, main_objects.PirateGasMiner):
     BASE_INDEX = 4
     REL = RIGHT
     SPACE_OBJECT_TEMPLATE = gas_miner.BretoniaPirateGasMiner
@@ -169,7 +169,7 @@ class Tau31BottomPirates(Tau31Member, main_objects.PirateBase):
     NEBULA_ZONES = [Tau31Nebula]
 
 
-class Tau31TopPirates(Tau31Member, main_objects.PirateBase):
+class Tau31TopPirates(Tau31Member, main_objects.PirateGasMiner):
     INDEX = 2
     BASE_INDEX = 5
     REL = TOP

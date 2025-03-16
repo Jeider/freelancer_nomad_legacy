@@ -363,7 +363,7 @@ class HonsMunchenJumpgate(HonsMember, main_objects.Jumpgate):
     TARGET_SYSTEM_NAME = 'rh_mnh'
 
 
-class HonsDockring(HonsMember, main_objects.Dockring):
+class HonsDockring(HonsMember, main_objects.LargePlanetDockring):
     BASE_INDEX = 1
     REL = LEFT
     AUDIO_PREFIX = SpaceVoice.KU_PLANET
@@ -439,7 +439,7 @@ class HonsPlanet4(HonsMember, main_objects.Planet):
     SPHERE_RADIUS = 3000
 
 
-class HonsNebulaPirates(HonsMember, main_objects.PirateBase):
+class HonsNebulaPirates(HonsMember, main_objects.PirateStation):
     INDEX = 1
     BASE_INDEX = 7
     REL = BOTTOM
@@ -459,7 +459,7 @@ class HonsNebulaPirates(HonsMember, main_objects.PirateBase):
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
 
 
-class HonsJunkers(HonsMember, main_objects.PirateBase):
+class HonsJunkers(HonsMember, main_objects.JunkerBase):
     INDEX = 2
     BASE_INDEX = 8
     REL = TOP

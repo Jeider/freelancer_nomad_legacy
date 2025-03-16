@@ -3,7 +3,7 @@ from fx.sound import Ambience
 
 from managers.tools import query as Q
 from world.names import *
-from universe import base
+from universe.content import meta
 
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
@@ -340,7 +340,7 @@ class StutOmega7Jumpgate(StutMember, main_objects.Jumpgate):
     TARGET_SYSTEM_NAME = 'om7'
 
 
-class StutDockring(StutMember, main_objects.Dockring):
+class StutDockring(StutMember, main_objects.LargePlanetDockring):
     BASE_INDEX = 1
     REL = TOP
     AUDIO_PREFIX = SpaceVoice.RH_PLANET
@@ -377,10 +377,10 @@ class StutMegabase(StutMember, main_objects.Station):
     NEBULA_EXCLUSION_ZONE_SIZE = 3500
     EXCLUSION_PARAMS = WALKER_EXCLUSION_PARAMS
     NEBULA_ZONES = [StutOrangeNebula1]
-
-    BASE_PROPS = base.Megabase(
-        base.ConsumeRoid(NIOBIUM, level=base.CONSUME_LARGE),
-    )
+    #
+    # BASE_PROPS = base.Megabase(
+    #     base.ConsumeRoid(NIOBIUM, level=base.CONSUME_LARGE),
+    # )
 
 
 class StutTraders(StutMember, main_objects.TradingBase):
@@ -391,7 +391,7 @@ class StutTraders(StutMember, main_objects.TradingBase):
     DEALERS = dealers.RheinlandCivilianDealers
 
 
-class StutLuxuryDockring(StutMember, main_objects.Dockring):
+class StutLuxuryDockring(StutMember, main_objects.ResortPlanetDockring):
     INDEX = 2
     BASE_INDEX = 6
     REL = TOP
@@ -400,7 +400,7 @@ class StutLuxuryDockring(StutMember, main_objects.Dockring):
     DEALERS = dealers.RheinlandPlanetDealers
 
 
-class StutNebulaPirates(StutMember, main_objects.PirateBase):
+class StutNebulaPirates(StutMember, main_objects.PirateStation):
     BASE_INDEX = 7
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseStuttgart
@@ -415,7 +415,7 @@ class StutNebulaPirates(StutMember, main_objects.PirateBase):
     DEALERS = dealers.RheinlandPirateDealers
 
 
-class StutJunkers(StutMember, main_objects.PirateBase):
+class StutJunkers(StutMember, main_objects.JunkerBase):
     INDEX = 2
     BASE_INDEX = 8
     REL = TOP

@@ -192,7 +192,7 @@ class Tau23Freeport(Tau23Member, Tau23Bretonia, main_objects.Freeport):
     FACTION = faction.BR_GRP
 
 
-class Tau23TopRightPirates(Tau23Member, Tau23Bretonia, main_objects.PirateBase):
+class Tau23TopRightPirates(Tau23Member, Tau23Bretonia, main_objects.PirateGasMiner):
     INDEX = 1
     BASE_INDEX = 6
     REL = RIGHT
@@ -207,7 +207,7 @@ class Tau23TopRightPirates(Tau23Member, Tau23Bretonia, main_objects.PirateBase):
     NEBULA_ZONES = [Tau23Nebula]
 
 
-class Tau23BottomLeftPirates(Tau23Member, Tau23Kusari, main_objects.PirateBase):
+class Tau23BottomLeftPirates(Tau23Member, Tau23Kusari, main_objects.PirateGasMiner):
     INDEX = 2
     BASE_INDEX = 7
     REL = LEFT

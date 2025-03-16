@@ -303,7 +303,7 @@ class KyushuTau23Jumpgate(KyushuMember, main_objects.Jumpgate):
     TARGET_SYSTEM_NAME = 'tau23'
 
 
-class KyushuDockring(KyushuMember, main_objects.Dockring):
+class KyushuDockring(KyushuMember, main_objects.LargePlanetDockring):
     BASE_INDEX = 1
     REL = RIGHT
     AUDIO_PREFIX = SpaceVoice.KU_PLANET
@@ -311,7 +311,7 @@ class KyushuDockring(KyushuMember, main_objects.Dockring):
     DEALERS = dealers.KusariPlanetDealers
 
 
-class KyushuMiningDockring(KyushuMember, main_objects.Dockring):
+class KyushuMiningDockring(KyushuMember, main_objects.MiningPlanetDockring):
     INDEX = 2
     BASE_INDEX = 2
     REL = TOP
@@ -391,7 +391,7 @@ class KyushuPlanet3(KyushuMember, main_objects.Planet):
     SPHERE_RADIUS = 3000
 
 
-class KyushuNorthAsteroidPirates(KyushuMember, main_objects.PirateBase):
+class KyushuNorthAsteroidPirates(KyushuMember, main_objects.PirateAsteroid):
     BASE_INDEX = 9
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = astbase.KyushuAsteroidBase
@@ -410,7 +410,7 @@ class KyushuNorthAsteroidPirates(KyushuMember, main_objects.PirateBase):
     ]
 
 
-class KyushuJunkers(KyushuMember, main_objects.PirateBase):
+class KyushuJunkers(KyushuMember, main_objects.JunkerBase):
     INDEX = 2
     BASE_INDEX = 10
     REL = TOP

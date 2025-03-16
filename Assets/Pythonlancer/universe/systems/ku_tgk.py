@@ -341,7 +341,7 @@ class TekagiFreeport(TekagiMember, main_objects.Freeport):
     DEALERS = dealers.KusariCivilianDealers
 
 
-class TekagiWestPirates(TekagiMember, main_objects.PirateBase):
+class TekagiWestPirates(TekagiMember, main_objects.PirateAsteroid):
     INDEX = 1
     BASE_INDEX = 4
     REL = LEFT
@@ -353,7 +353,7 @@ class TekagiWestPirates(TekagiMember, main_objects.PirateBase):
     DEFENCE_LEVEL = None
 
 
-class TekagiEastPirates(TekagiMember, main_objects.PirateBase):
+class TekagiEastPirates(TekagiMember, main_objects.PirateAsteroid):
     INDEX = 2
     BASE_INDEX = 5
     REL = LEFT

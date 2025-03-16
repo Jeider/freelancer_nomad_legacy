@@ -241,7 +241,7 @@ class ManhTau31Jumpgate(ManhMember, main_objects.Jumpgate):
     TARGET_SYSTEM_NAME = 'tau31'
 
 
-class ManhDockring(ManhMember, main_objects.Dockring):
+class ManhDockring(ManhMember, main_objects.LargePlanetDockring):
     BASE_INDEX = 1
     REL = TOP
     AUDIO_PREFIX = SpaceVoice.LI_PLANET
@@ -249,7 +249,7 @@ class ManhDockring(ManhMember, main_objects.Dockring):
     DEALERS = dealers.LibertyPlanetDealers
 
 
-class ManhMiningDockring(ManhMember, main_objects.Dockring):
+class ManhMiningDockring(ManhMember, main_objects.MiningPlanetDockring):
     INDEX = 2
     BASE_INDEX = 2
     REL = RIGHT
@@ -350,7 +350,7 @@ class ManhPlanet4(ManhMember, main_objects.Planet):
     SPHERE_RADIUS = 2000
 
 
-class ManhJunkers(ManhMember, main_objects.PirateBase):
+class ManhJunkers(ManhMember, main_objects.JunkerBase):
     INDEX = 2
     BASE_INDEX = 10
     REL = RIGHT
@@ -369,7 +369,7 @@ class ManhJunkers(ManhMember, main_objects.PirateBase):
     AST_EXCLUSION_ZONE_SIZE = 3000
 
 
-class ManhNebulaPirates(ManhMember, main_objects.PirateBase):
+class ManhNebulaPirates(ManhMember, main_objects.PirateStation):
     INDEX = 1
     BASE_INDEX = 11
     REL = TOP

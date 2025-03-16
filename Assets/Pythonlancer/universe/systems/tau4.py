@@ -312,7 +312,7 @@ class Tau4Planet3(Tau4Member, main_objects.Planet):
 
 
 
-class Tau4SouthPirates(Tau4Member, main_objects.PirateBase):
+class Tau4SouthPirates(Tau4Member, main_objects.PirateStation):
     INDEX = 1
     BASE_INDEX = 4
     REL = BOTTOM
@@ -332,7 +332,7 @@ class Tau4SouthPirates(Tau4Member, main_objects.PirateBase):
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
 
 
-class Tau4Xenos(Tau4Member, main_objects.PirateBase):
+class Tau4Xenos(Tau4Member, main_objects.PirateStation):
     INDEX = 2
     BASE_INDEX = 5
     REL = TOP

@@ -3,7 +3,7 @@ from fx.sound import Ambience
 
 from managers.tools import query as Q
 from world.names import *
-from universe import base
+from universe.content import meta
 
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
@@ -338,8 +338,11 @@ class Om15MiningStation(Omega15Member, main_objects.Station):
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.RheinlandCivilianDealers
 
-    BASE_PROPS = base.MediumStation(
-        base.MineRoid(NIOBIUM, level=base.STOCK_MAXIMAL),
+    BASE_PROPS = meta.SpaceStation(
+        objectives=[
+            meta.SupportRoidMiners(),
+            meta.MineRoid(NIOBIUM),
+        ]
     )
 
 
@@ -366,7 +369,7 @@ class Om15Freeport(Omega15Member, main_objects.Freeport):
     DEALERS = dealers.RheinlandMilitaryDealers
 
 
-class Om15Junkers(Omega15Member, main_objects.PirateBase):
+class Om15Junkers(Omega15Member, main_objects.JunkerBase):
     ALIAS = 'junker'
     BASE_INDEX = 4
     REL = TOP

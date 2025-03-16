@@ -331,7 +331,7 @@ class MunchKoengisbergJumpgate(MunchMember, main_objects.JumpgateAlt):
     TARGET_SYSTEM_NAME = 'rh_kgb'
 
 
-class MunchDockring(MunchMember, main_objects.Dockring):
+class MunchDockring(MunchMember, main_objects.WaterPlanetDockring):
     BASE_INDEX = 1
     REL = BOTTOM
     AUDIO_PREFIX = SpaceVoice.RH_PLANET
@@ -388,7 +388,7 @@ class MunchBattleStationRuins(MunchMember, main_objects.NotDockableObject):
     SPACE_OBJECT_TEMPLATE = station_debris.MunchenBattleStationDebris
 
 
-class MunchOutcastBase(MunchMember, main_objects.PirateBase):
+class MunchOutcastBase(MunchMember, main_objects.PirateStation):
     BASE_INDEX = 3
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = astbase.MunchenAsteroidBase
@@ -418,7 +418,7 @@ file = Universe\\SYSTEMS_MOD\\RH_MUNCHEN\\ROOM\\rh_mnh_03_deck2.ini
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
 
 
-class MunchJunkersBase(MunchMember, main_objects.PirateBase):
+class MunchJunkersBase(MunchMember, main_objects.JunkerBase):
     INDEX = 2
     BASE_INDEX = 4
     REL = BOTTOM

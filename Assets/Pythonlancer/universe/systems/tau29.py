@@ -366,7 +366,7 @@ class Tau29Police(Tau29Member, main_objects.Outpost):
     DEALERS = dealers.BretoniaMilitaryDealers
 
 
-class Tau29BottomPirates(Tau29Member, main_objects.PirateBase):
+class Tau29BottomPirates(Tau29Member, main_objects.PirateAsteroid):
     BASE_INDEX = 4
     REL = LEFT
     SPACE_OBJECT_TEMPLATE = astbase.BizmarkAsteroidBase
@@ -381,7 +381,7 @@ class Tau29BottomPirates(Tau29Member, main_objects.PirateBase):
     ]
 
 
-class Tau29TopPirates(Tau29Member, main_objects.PirateBase):
+class Tau29TopPirates(Tau29Member, main_objects.PirateAsteroid):
     INDEX = 2
     BASE_INDEX = 5
     REL = LEFT

@@ -180,7 +180,7 @@ class Om7Freeport(Om7Member, Om7Kusari, main_objects.Freeport):
     FACTION = faction.KU_GRP
 
 
-class Om7PirateLargeAsteroid(Om7Member, Om7Kusari, main_objects.PirateBase):
+class Om7PirateLargeAsteroid(Om7Member, Om7Kusari, main_objects.PirateStation):
     BASE_INDEX = 5
     INDEX = 1
     REL = BOTTOM
@@ -196,7 +196,7 @@ class Om7PirateLargeAsteroid(Om7Member, Om7Kusari, main_objects.PirateBase):
     NEBULA_ZONES = [Om7Nebula]
 
 
-class Om7RightPirates(Om7Member, Om7Rheinland, main_objects.PirateBase):
+class Om7RightPirates(Om7Member, Om7Rheinland, main_objects.PirateGasMiner):
     BASE_INDEX = 6
     INDEX = 2
     REL = RIGHT

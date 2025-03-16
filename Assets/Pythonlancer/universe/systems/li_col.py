@@ -463,7 +463,7 @@ class ColTau31Jumpgate(ColMember, main_objects.Jumpgate):
     TARGET_SYSTEM_NAME = 'tau31'
 
 
-class ColDockring(ColMember, main_objects.Dockring):
+class ColDockring(ColMember, main_objects.LargePlanetDockring):
     BASE_INDEX = 1
     REL = BOTTOM
     AUDIO_PREFIX = SpaceVoice.LI_PLANET
@@ -471,7 +471,7 @@ class ColDockring(ColMember, main_objects.Dockring):
     DEALERS = dealers.LibertyPlanetDealers
 
 
-class ColMiningDockring(ColMember, main_objects.Dockring):
+class ColMiningDockring(ColMember, main_objects.MiningPlanetDockring):
     INDEX = 2
     BASE_INDEX = 2
     REL = LEFT
@@ -588,7 +588,7 @@ class ColOldTradingBaseRuinsSuprisePoint2(ColMember, main_objects.HackableStatio
     INTERIOR_CLASS = interior.EquipDeckInterior
 
 
-class ColAsteroidPirates(ColMember, main_objects.PirateBase):
+class ColAsteroidPirates(ColMember, main_objects.PirateAsteroid):
     INDEX = 2
     BASE_INDEX = 8
     REL = BOTTOM
@@ -607,7 +607,7 @@ class ColAsteroidPirates(ColMember, main_objects.PirateBase):
     AST_EXCLUSION_ZONE_SIZE = 3000
 
 
-class ColNebulaPirates(ColMember, main_objects.PirateBase):
+class ColNebulaPirates(ColMember, main_objects.PirateStation):
     INDEX = 1
     BASE_INDEX = 9
     REL = TOP

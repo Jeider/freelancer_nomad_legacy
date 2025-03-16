@@ -340,7 +340,7 @@ class Sig22ColumbiaJumpgate(Sig22Member, main_objects.Jumpgate):
     TARGET_SYSTEM_NAME = 'li_col'
 
 
-class Sig22Dockring(Sig22Member, Sig22Bretonia, main_objects.Dockring):
+class Sig22Dockring(Sig22Member, Sig22Bretonia, main_objects.WaterPlanetDockring):
     BASE_INDEX = 1
     REL = BOTTOM
     AUDIO_PREFIX = SpaceVoice.BR_PLANET
@@ -376,7 +376,7 @@ class Sig22Planet2(Sig22Member, main_objects.Planet):
     SPHERE_RADIUS = 3000
 
 
-class Sig22SouthPirates(Sig22Member, Sig22Liberty, main_objects.PirateBase):
+class Sig22SouthPirates(Sig22Member, Sig22Liberty, main_objects.PirateStation):
     INDEX = 1
     BASE_INDEX = 4
     REL = BOTTOM
@@ -396,7 +396,7 @@ class Sig22SouthPirates(Sig22Member, Sig22Liberty, main_objects.PirateBase):
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
 
 
-class Sig22NorthPirates(Sig22Member, Sig22Bretonia, main_objects.PirateBase):
+class Sig22NorthPirates(Sig22Member, Sig22Bretonia, main_objects.PirateStation):
     INDEX = 2
     BASE_INDEX = 5
     REL = RIGHT

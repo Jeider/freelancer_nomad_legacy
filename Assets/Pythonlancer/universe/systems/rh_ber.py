@@ -3,7 +3,7 @@ from fx.sound import Ambience
 
 from managers.tools import query as Q
 from world.names import *
-from universe import base
+from universe.content import meta
 
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
@@ -252,16 +252,16 @@ class BerlinSigma8Jumpgate(BerlinMember, main_objects.Jumpgate):
     TARGET_SYSTEM_NAME = 'sig8'
 
 
-class BerlinDockring(BerlinMember, main_objects.Dockring):
+class BerlinDockring(BerlinMember, main_objects.LargePlanetDockring):
     BASE_INDEX = 1
     REL = RIGHT
     AUDIO_PREFIX = SpaceVoice.RH_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.RheinlandPlanetDealers
-
-    BASE_PROPS = base.Megabase(
-        base.ConsumeRoid(NIOBIUM, level=base.CONSUME_MEDIUM),
-    )
+    #
+    # BASE_PROPS = base.Megabase(
+    #     base.ConsumeRoid(NIOBIUM, level=base.CONSUME_MEDIUM),
+    # )
 
 
 class BerlinPrison(BerlinMember, main_objects.Prison):
@@ -328,7 +328,7 @@ class BerlinJunkers(BerlinMember, main_objects.JunkerBase):
     DEFENCE_LEVEL = None
 
 
-class BerlinPiratesTop(BerlinMember, main_objects.PirateBase):
+class BerlinPiratesTop(BerlinMember, main_objects.PirateAsteroid):
     BASE_INDEX = 5
     INDEX = 1
     REL = RIGHT
@@ -343,7 +343,7 @@ class BerlinPiratesTop(BerlinMember, main_objects.PirateBase):
     DEFENCE_LEVEL = None
 
 
-class BerlinPiratesBottom(BerlinMember, main_objects.PirateBase):
+class BerlinPiratesBottom(BerlinMember, main_objects.PirateStation):
     BASE_INDEX = 10
     INDEX = 2
     REL = RIGHT

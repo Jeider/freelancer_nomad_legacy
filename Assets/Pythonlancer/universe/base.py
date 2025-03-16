@@ -1,4 +1,4 @@
-from universe.content.main_objects import Jumpgate
+from universe.content.main_objects import Jumpgate, DockableObject
 
 
 class BaseEdge:
@@ -46,9 +46,11 @@ class BaseGraph:
         self.depths_db = {}
         self.load_relations()
 
-    def add_used_object(self, edge, depth):
-        self.used_objects.append(edge)
-        self.depths_db[edge.root_object.get_base_nickname()] = depth
+    def add_used_object(self, dockable_object, depth):
+        self.used_objects.append(dockable_object)
+
+        if issubclass(dockable_object.__class__, DockableObject):
+            self.depths_db[dockable_object.get_base_nickname()] = depth
 
     def get_depth_by_base_name(self, base_name):
         return self.depths_db[base_name]
@@ -79,6 +81,10 @@ class Base:
         self.system_object = system_object
         # self.props = self.system_object.BASE_PROPS if self.system_object.BASE_PROPS else DefaultBaseProps()
         self.props = self.system_object.BASE_PROPS
+
+        if not self.props:
+            raise Exception('Base props is not defined for base %s' % self.system_object.get_base_nickname())
+
         self.graph = None
 
         self.base_commodities_db = {}
@@ -104,56 +110,11 @@ class Base:
             u_comm.add_base_commodity(base_commodity)
 
     def parse_objectives(self):
-        print(self.props.__class__.__name__)
         for objective in self.props.get_objectives():
 
             for store_change in objective.get_store_changes():
                 base_commodity = self.base_commodities_db[store_change.get_comm_name()]
                 base_commodity.add_to_stock(store_change.get_comm_change())
-
-
-POP_XLARGE_PLANET = 10
-POP_LARGE_PLANET = 9
-POP_MINING_PLANET = 8
-POP_ULTRA_MEGABASE = 7
-POP_MEGABASE = 6
-POP_MEDIUM_BASE = 5
-POP_SMALL_BASE = 4
-POP_XSMALL_BASE = 3
-
-
-class BaseProps:
-    DEFAULT_POPULATION = None
-
-    def __init__(self, *args):
-        self.objectives = args
-
-    def get_objectives(self):
-        return self.objectives
-
-
-class DefaultBaseProps(BaseProps):
-    DEFAULT_POPULATION = POP_XSMALL_BASE
-
-
-class LargePlanet(BaseProps):
-    DEFAULT_POPULATION = POP_LARGE_PLANET
-
-
-class LargeTradingBase(BaseProps):
-    pass
-
-
-class SmallTradingBase(LargeTradingBase):
-    pass
-
-
-class Megabase(BaseProps):
-    DEFAULT_POPULATION = POP_MEGABASE
-
-
-class MediumStation(BaseProps):
-    DEFAULT_POPULATION = POP_MEDIUM_BASE
 
 
 class BaseCommodity:
@@ -170,64 +131,3 @@ class BaseCommodity:
         self.stock += value
 
 
-STOCK_MAXIMAL = 700
-STOCK_XLARGE = 600
-STOCK_LARGE = 500
-STOCK_MEDIUM = 400
-STOCK_SMALL = 300
-STOCK_XSMALL = 200
-STOCK_MINIMAL = 100
-
-CONSUME_MAXIMAL = 700
-CONSUME_XLARGE = 600
-CONSUME_LARGE = 500
-CONSUME_MEDIUM = 400
-CONSUME_SMALL = 300
-CONSUME_XSMALL = 200
-CONSUME_MINIMAL = 100
-
-
-class CommodityAction:
-
-    def __init__(self, comm_name, value, consume=False):
-        self.comm_name = comm_name
-        self.value = value
-        self.consume = consume
-
-    def get_comm_name(self):
-        return self.comm_name
-
-    def get_comm_change(self):
-        return -self.value if self.consume else self.value
-
-
-class BaseObjective:
-
-    def __init__(self, comm_name, level: int):
-        self.comm_name = comm_name
-        self.level = level
-
-    def get_store_changes(self):
-        return self.get_main_actions() + self.get_side_effects()
-
-    def get_main_actions(self):
-        return []
-
-    def get_side_effects(self):
-        return []
-
-
-class MineRoid(BaseObjective):
-
-    def get_main_actions(self):
-        return [
-            CommodityAction(self.comm_name, self.level),
-        ]
-
-
-class ConsumeRoid(BaseObjective):
-
-    def get_store_changes(self):
-        return [
-            CommodityAction(self.comm_name, -self.level),
-        ]

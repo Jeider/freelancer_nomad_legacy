@@ -1,6 +1,8 @@
 from world.commodity import Commodity, DefaultCommodity, BasicCommodity, Roid, Alloy, Product
 from world.names import *
 
+from universe.content.economics import Producer, Consumer, SupplyCalculator
+
 
 class UniverseCommodity:
     def __init__(self, commodity):
@@ -14,6 +16,24 @@ class UniverseCommodity:
 
     def get_comm_name(self):
         return self.commodity.ALIAS
+
+    def calculate_supply(self):
+        producers = []
+        consumers = []
+
+        for base_commodity in self.base_commodity_list:
+
+            if base_commodity.stock != 0:
+                if base_commodity.stock > 0:
+                    producers.append(
+                        Producer(base_commodity.base, base_commodity.stock)
+                    )
+                else:
+                    consumers.append(
+                        Consumer(base_commodity.base, abs(base_commodity.stock))
+                    )
+
+        return SupplyCalculator.calculate(producers, consumers)
 
 
 class StoreManager:
@@ -67,3 +87,9 @@ class StoreManager:
 
     def get_universe_commodities(self):
         return self.universe_comms_list
+
+    def compile_commodities(self):
+        return
+        # self.universe_comms_db[NIOBIUM].calculate_supply()
+
+        # print('1')

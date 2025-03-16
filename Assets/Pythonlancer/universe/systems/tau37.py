@@ -329,7 +329,7 @@ class Tau37Battleship(Tau37Member, main_objects.BretoniaBattleship):
     DEALERS = dealers.BretoniaMilitaryDealers
 
 
-class Tau37CorsairBase(Tau37Member, main_objects.PirateBase):
+class Tau37CorsairBase(Tau37Member, main_objects.PirateAsteroid):
     ALIAS = 'corsair'
     BASE_INDEX = 4
     REL = LEFT

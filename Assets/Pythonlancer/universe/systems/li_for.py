@@ -293,7 +293,7 @@ class ForbesSig8Jumphole(ForbesMember, main_objects.Jumphole):
     NEBULA_ZONES = [ForbesSouthEastNebula]
 
 
-class ForbesDockring(ForbesMember, main_objects.Dockring):
+class ForbesDockring(ForbesMember, main_objects.LargePlanetDockring):
     BASE_INDEX = 1
     REL = RIGHT
     AUDIO_PREFIX = SpaceVoice.LI_PLANET
@@ -389,7 +389,7 @@ class ForbesOldOutpostRuinsSuprisePoint1(ForbesMember, main_objects.HackableStat
     INTERIOR_CLASS = interior.EquipDeckInterior
 
 
-class ForbesAsteroidPirates(ForbesMember, main_objects.PirateBase):
+class ForbesAsteroidPirates(ForbesMember, main_objects.PirateAsteroid):
     BASE_INDEX = 7
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = astbase.BerlinAsteroidBase
@@ -407,7 +407,7 @@ class ForbesAsteroidPirates(ForbesMember, main_objects.PirateBase):
     AST_EXCLUSION_ZONE_SIZE = 3000
 
 
-class ForbesJunkers(ForbesMember, main_objects.PirateBase):
+class ForbesJunkers(ForbesMember, main_objects.JunkerBase):
     ALIAS = 'junker'
     BASE_INDEX = 8
     REL = TOP

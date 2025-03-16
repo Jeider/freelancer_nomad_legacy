@@ -337,7 +337,7 @@ class HokkOmega7Jumpgate(HokkMember, main_objects.Jumpgate):
     TARGET_SYSTEM_NAME = 'om7'
 
 
-class HokkDockring(HokkMember, main_objects.Dockring):
+class HokkDockring(HokkMember, main_objects.LargePlanetDockring):
     BASE_INDEX = 1
     REL = TOP
     AUDIO_PREFIX = SpaceVoice.KU_PLANET
@@ -444,7 +444,7 @@ class HokkOldReserachRuinsSuprisePoint2(HokkMember, main_objects.HackableStation
     INTERIOR_CLASS = interior.EquipDeckInterior
 
 
-class HokkNebulaPirates(HokkMember, main_objects.PirateBase):
+class HokkNebulaPirates(HokkMember, main_objects.PirateStation):
     BASE_INDEX = 7
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseCalifornia
@@ -459,7 +459,7 @@ class HokkNebulaPirates(HokkMember, main_objects.PirateBase):
     DEALERS = dealers.KusariPirateDealers
 
 
-class HokkJunkers(HokkMember, main_objects.PirateBase):
+class HokkJunkers(HokkMember, main_objects.JunkerBase):
     ALIAS = 'junker'
     BASE_INDEX = 8
     REL = TOP

@@ -49,7 +49,8 @@ class UniverseManager:
 
         for base in self.bases_list:
             base.load_graph()
-            print('1')
+
+        self.core.store.compile_commodities()
 
         self.sync_data()
 

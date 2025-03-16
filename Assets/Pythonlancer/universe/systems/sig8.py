@@ -296,7 +296,7 @@ class Sig8Junkers(Sigma8Member, main_objects.JunkerBase):
     NEBULA_ZONES = [Sig8GreenNebula2]
 
 
-class Sig8Pirate(Sigma8Member, main_objects.PirateBase):
+class Sig8Pirate(Sigma8Member, main_objects.PirateStation):
     INDEX = 1
     BASE_INDEX = 5
     REL = RIGHT
