@@ -3,10 +3,10 @@ from fx.sound import Ambience
 
 from managers.tools import query as Q
 from world.names import *
-
-from universe import base
-from universe import markets
 from universe.content import meta
+
+from universe import markets
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -191,9 +191,12 @@ class BizmarkDockRing(BizmarkMember, main_objects.LargePlanetDockring):
     MISC_EQUIP_TYPE = BR_PIRATE
     BASE_PROPS = meta.LargePlanet(
         objectives=[
-            meta.ProduceLuxury(LUXURY_DIAMONDS),
-            meta.ConsumeRoid(DIAMONDS),
-            meta.ConsumeLuxury(),
+            meta.ProduceBest(LUXURY_DIAMONDS),
+            meta.ProduceBest(SMELTER_PARTS),
+            meta.ProduceCheap(OPTICAL_CHIPS),
+            meta.ProduceCheap(RESEARCH_EQUIP),
+            meta.ProduceNormal(SOLAR_PLANT_PARTS),
+            meta.ProduceBad(DEFENCE_SYSTEMS),
         ]
     )
 
@@ -236,7 +239,7 @@ file = Universe\\SYSTEMS_MOD\\RH_BIZMARK\\Room\\rh_biz_03_deck2.ini
     DEALERS = dealers.RheinlandMilitaryDealers
 
 
-class BizmarkResearch(BizmarkMember, main_objects.Station):
+class BizmarkResearch(BizmarkMember, main_objects.ResearchStation):
     ALIAS = 'research'
     INDEX = 1
     BASE_INDEX = 4

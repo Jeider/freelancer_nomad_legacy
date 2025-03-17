@@ -1,5 +1,9 @@
 from fx.space import Dust
 
+from managers.tools import query as Q
+from world.names import *
+from universe.content import meta
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -266,6 +270,19 @@ class WarwickDockring(WarwickMember, main_objects.LargePlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.BretoniaPlanetDealers
 
+    BASE_PROPS = meta.LargePlanet(
+        objectives=[
+            meta.ProduceBest(REACTORS),
+            meta.ProduceBest(PLUMBUM),
+            meta.ProduceCheap(MOX_FUEL),
+            meta.ProduceCheap(AMMUNITION),
+            meta.ProduceNormal(MINING_EQUIPMENT),
+            meta.ProduceNormal(GAS_MINER_PARTS),
+            meta.ProduceBad(SMELTER_PARTS),
+            meta.ProduceBad(ROID_MINER_PARTS),
+        ]
+    )
+
 
 class WarwickLargeStation(WarwickMember, main_objects.Station):
     BASE_INDEX = 2
@@ -274,6 +291,15 @@ class WarwickLargeStation(WarwickMember, main_objects.Station):
     SPACE_OBJECT_TEMPLATE = ulster_megabase.UlsterMegabase
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.BretoniaCivilianDealers
+
+    BASE_PROPS = meta.Megabase(
+        objectives=[
+            meta.ProduceBest(GREENHOUSE_PARTS),
+            meta.ProduceBest(TERRAFORM_MINERALS),
+            meta.ProduceCheap(SHIP_HULL_PANELS),
+            meta.ProduceCheap(ENGINE_PARTS),
+        ]
+    )
 
 
 class WarwickRefinery(WarwickMember, main_objects.Refinery):

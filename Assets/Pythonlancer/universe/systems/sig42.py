@@ -1,3 +1,7 @@
+from managers.tools import query as Q
+from world.names import *
+from universe.content import meta
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -211,10 +215,17 @@ class Sig42Dockring(Sig42Member, Sig42Kusari, main_objects.MiningPlanetDockring)
     REL = BOTTOM
     AUDIO_PREFIX = SpaceVoice.KU_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
-    DEALERS = dealers.KusariPlanetDealers
+    DEALERS = dealers.BretoniaCivilianDealers
+
+    BASE_PROPS = meta.MiningPlanet(
+        objectives=[
+            meta.ProduceBad(URANIUM),
+            meta.ProduceBad(NICOLLUM),
+        ]
+    )
 
 
-class Sig42BretoniaStation(Sig42Member, Sig42Bretonia, main_objects.Station):
+class Sig42BretoniaStation(Sig42Member, Sig42Bretonia, main_objects.TradelaneSupportStation):
     INDEX = 1
     BASE_INDEX = 2
     REL = RIGHT
@@ -223,7 +234,7 @@ class Sig42BretoniaStation(Sig42Member, Sig42Bretonia, main_objects.Station):
     DEALERS = dealers.BretoniaCivilianDealers
 
 
-class Sig42KusariStation(Sig42Member, Sig42Kusari, main_objects.Station):
+class Sig42KusariStation(Sig42Member, Sig42Kusari, main_objects.ResearchStation):
     INDEX = 2
     BASE_INDEX = 3
     REL = RIGHT

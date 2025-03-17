@@ -1,6 +1,10 @@
 from fx.space import Dust
 from fx.sound import Ambience
 
+from managers.tools import query as Q
+from world.names import *
+from universe.content import meta
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects

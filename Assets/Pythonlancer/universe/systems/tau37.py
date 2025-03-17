@@ -1,6 +1,10 @@
 from fx.space import Dust
 from fx.sound import Ambience
 
+from managers.tools import query as Q
+from world.names import *
+from universe.content import meta
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -306,7 +310,7 @@ class Tau37VirtualPoint2(Tau37Member, main_objects.VirtualDepot):
     REL = BOTTOM
 
 
-class Tau37MiningStation(Tau37Member, main_objects.Station):
+class Tau37MiningStation(Tau37Member, main_objects.RoidMinerStation):
     BASE_INDEX = 1
     REL = RIGHT
     SPACE_OBJECT_TEMPLATE = roid_mining.BretoniaRoidMining

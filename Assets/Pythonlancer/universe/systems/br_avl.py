@@ -1,6 +1,10 @@
 from fx.space import Dust
 from fx.sound import Ambience
 
+from managers.tools import query as Q
+from world.names import *
+from universe.content import meta
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -428,6 +432,18 @@ class AvalDockring(AvalMember, main_objects.LargePlanetDockring):
     AUDIO_PREFIX = SpaceVoice.BR_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.BretoniaPlanetDealers
+
+    BASE_PROPS = meta.LargePlanet(
+        objectives=[
+            meta.ProduceBest(AMMUNITION),
+            meta.ProduceBest(DEFENCE_SYSTEMS),
+            meta.ProduceCheap(MOX_FUEL),
+            meta.ProduceNormal(ELECTRONICS),
+            meta.ProduceNormal(RESEARCH_EQUIP),
+            meta.ProduceBad(LUXURY_DIAMONDS),
+            meta.ProduceBad(LUXURY_GOODS),
+        ]
+    )
 
 
 class AvalShipyard(AvalMember, main_objects.Shipyard):

@@ -360,6 +360,14 @@ class MiningEquipment(Product, Commodity):
     ICON = ICON_INDUSTRIAL
 
 
+class Polymers(Product, Commodity):
+    ALIAS = POLYMERS
+    RU_NAME = 'Полимеры'
+    NICKNAME = 'comm_polymers'
+    POD = POD_HIGHTECH
+    ICON = ICON_CHEMICAL
+
+
 class Uranium(Roid, Commodity):
     ALIAS = URANIUM
     RU_NAME = 'Уран'

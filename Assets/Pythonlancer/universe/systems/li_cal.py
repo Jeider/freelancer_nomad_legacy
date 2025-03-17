@@ -1,6 +1,10 @@
 from fx.space import Dust
 from fx.sound import Ambience
 
+from managers.tools import query as Q
+from world.names import *
+from universe.content import meta
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -331,13 +335,28 @@ class CalDockring(CalMember, main_objects.LargePlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.LibertyPirateDealers
 
+    BASE_PROPS = meta.LargePlanet(
+        objectives=[
+            meta.ProduceBest(POLYMERS),
+            meta.ProduceCheap(GREENHOUSE_PARTS),
+            meta.ProduceNormal(LUXURY_FOOD),
+            meta.ProduceNormal(WATER_EXTRA),
+        ]
+    )
 
-class CalMiningStation(CalMember, main_objects.Station):
+
+class CalMiningStation(CalMember, main_objects.RoidMinerStation):
     BASE_INDEX = 2
     REL = LEFT
     SPACE_OBJECT_TEMPLATE = roid_mining.LibertyRoidMining
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyCivilianDealers
+
+    BASE_PROPS = meta.RoidMiningStation(
+        objectives=[
+            meta.ProduceBest(BERILIUM),
+        ]
+    )
 
 
 class CalPolice(CalMember, main_objects.Outpost):

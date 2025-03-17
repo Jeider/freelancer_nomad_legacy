@@ -1,6 +1,10 @@
 from fx.space import Dust, JumpholeEffect
 from fx.sound import Ambience
 
+from managers.tools import query as Q
+from world.names import *
+from universe.content import meta
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -240,7 +244,7 @@ class Sig8BizmarkJumpgate(Sigma8Member, main_objects.Jumpgate):
     TARGET_SYSTEM_NAME = 'rh_biz'
 
 
-class Sig8Station(Sigma8Member, main_objects.Station):
+class Sig8Station(Sigma8Member, main_objects.TradelaneSupportStation):
     INDEX = 1
     BASE_INDEX = 1
     REL = LEFT

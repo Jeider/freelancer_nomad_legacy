@@ -331,18 +331,17 @@ class Om15StutJumpgate(Omega15Member, main_objects.Jumpgate):
     TARGET_SYSTEM_NAME = 'rh_stut'
 
 
-class Om15MiningStation(Omega15Member, main_objects.Station):
+class Om15MiningStation(Omega15Member, main_objects.RoidMinerStation):
     BASE_INDEX = 1
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = roid_mining.RheinlandRoidMining
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.RheinlandCivilianDealers
 
-    BASE_PROPS = meta.SpaceStation(
+    BASE_PROPS = meta.RoidMiningStation(
         objectives=[
-            meta.SupportRoidMiners(),
-            meta.MineRoid(NIOBIUM),
-        ]
+            meta.ProduceBest(NIOBIUM),
+        ],
     )
 
 

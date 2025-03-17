@@ -1,6 +1,10 @@
 from fx.space import Dust
 from fx.sound import Ambience
 
+from managers.tools import query as Q
+from world.names import *
+from universe.content import meta
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -16,7 +20,6 @@ from templates.solar import debris_box
 from templates.solar import hackable
 from templates.nebula import br_cam_nebula
 from templates.nebula import exclusion
-
 
 from templates.dockable import pirate
 from templates.dockable import junker
@@ -347,8 +350,20 @@ class CamDockring(CamMember, main_objects.LargePlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.BretoniaPlanetDealers
 
+    BASE_PROPS = meta.LargePlanet(
+        objectives=[
+            meta.ProduceBest(LUXURY_FOOD),
+            meta.ProduceBest(MOX_FUEL),
+            meta.ProduceCheap(POLYMERS),
+            meta.ProduceNormal(SOLAR_PLANT_PARTS),
+            meta.ProduceNormal(OPTICAL_CHIPS),
+            meta.ProduceBad(PROD_MACHINES),
+            meta.ProduceBad(WATER_EXTRA),
+        ]
+    )
 
-class CamStation(CamMember, main_objects.Station):
+
+class CamStation(CamMember, main_objects.TradelaneSupportStation):
     INDEX = 1
     BASE_INDEX = 2
     REL = LEFT
@@ -405,6 +420,13 @@ class CamRefinery(CamMember, main_objects.Refinery):
 
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.BretoniaCivilianDealers
+
+    BASE_PROPS = meta.Refinery(
+        objectives=[
+            meta.ProduceBest(ALLOY_RADIATION),
+            meta.ProduceBad(ALLOY_TEMPERATURE),
+        ]
+    )
 
 
 class CamResearch(CamMember, main_objects.Outpost):

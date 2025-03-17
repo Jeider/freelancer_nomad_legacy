@@ -1,6 +1,10 @@
 from fx.space import Dust
 from fx.sound import Ambience
 
+from managers.tools import query as Q
+from world.names import *
+from universe.content import meta
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -137,7 +141,7 @@ class Sig13BerlinJumpgate(Sig13Member, main_objects.Jumpgate):
     TARGET_SYSTEM_NAME = 'rh_ber'
 
 
-class Sig13LibertyStation(Sig13Member, Sig13Liberty, main_objects.Station):
+class Sig13LibertyStation(Sig13Member, Sig13Liberty, main_objects.GasMiningStation):
     INDEX = 1
     BASE_INDEX = 2
     REL = RIGHT
@@ -156,7 +160,7 @@ class Sig13LibertyStation(Sig13Member, Sig13Liberty, main_objects.Station):
     FACTION = faction.LI_GRP
 
 
-class Sig13RheinlandStation(Sig13Member, Sig13Rheinland, main_objects.Station):
+class Sig13RheinlandStation(Sig13Member, Sig13Rheinland, main_objects.GasMiningStation):
     INDEX = 2
     BASE_INDEX = 1
     REL = RIGHT

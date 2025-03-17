@@ -1,6 +1,10 @@
 from fx.space import Dust
 from fx.sound import Ambience
 
+from managers.tools import query as Q
+from world.names import *
+from universe.content import meta
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -112,7 +116,7 @@ class Tau23KyushuJumpgate(Tau23Member, main_objects.Jumpgate):
     TARGET_SYSTEM_NAME = 'ku_ksu'
 
 
-class Tau23BretoniaStation(Tau23Member, Tau23Bretonia, main_objects.Station):
+class Tau23BretoniaStation(Tau23Member, Tau23Bretonia, main_objects.GasMiningStation):
     INDEX = 1
     BASE_INDEX = 1
     REL = LEFT
@@ -128,7 +132,7 @@ class Tau23BretoniaStation(Tau23Member, Tau23Bretonia, main_objects.Station):
     FACTION = faction.BR_GRP
 
 
-class Tau23KusariStation(Tau23Member, Tau23Kusari, main_objects.Station):
+class Tau23KusariStation(Tau23Member, Tau23Kusari, main_objects.GasMiningStation):
     INDEX = 2
     BASE_INDEX = 2
     REL = LEFT

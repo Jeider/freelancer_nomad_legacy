@@ -1,6 +1,10 @@
 from fx.space import Dust
 from fx.sound import Ambience
 
+from managers.tools import query as Q
+from world.names import *
+from universe.content import meta
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -115,7 +119,7 @@ class Om7StuttgartJumpgate(Om7Member, main_objects.Jumpgate):
     TARGET_SYSTEM_NAME = 'rh_stut'
 
 
-class Om7KusariStation(Om7Member, Om7Kusari, main_objects.Station):
+class Om7KusariStation(Om7Member, Om7Kusari, main_objects.GasMiningStation):
     INDEX = 1
     BASE_INDEX = 1
     REL = TOP
@@ -133,7 +137,7 @@ class Om7KusariStation(Om7Member, Om7Kusari, main_objects.Station):
     FACTION = faction.KU_GRP
 
 
-class Om7RheinlandStation(Om7Member, Om7Rheinland, main_objects.Station):
+class Om7RheinlandStation(Om7Member, Om7Rheinland, main_objects.GasMiningStation):
     INDEX = 2
     BASE_INDEX = 2
     REL = TOP

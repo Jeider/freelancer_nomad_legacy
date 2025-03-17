@@ -1,6 +1,10 @@
 from fx.space import Dust
 from fx.sound import Ambience
 
+from managers.tools import query as Q
+from world.names import *
+from universe.content import meta
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -348,7 +352,7 @@ class Sig22Dockring(Sig22Member, Sig22Bretonia, main_objects.WaterPlanetDockring
     DEALERS = dealers.BretoniaCivilianDealers
 
 
-class Sig22Station(Sig22Member, Sig22Liberty, main_objects.Station):
+class Sig22Station(Sig22Member, Sig22Liberty, main_objects.TradelaneSupportStation):
     BASE_INDEX = 2
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = constanta.ConstantaAlternative

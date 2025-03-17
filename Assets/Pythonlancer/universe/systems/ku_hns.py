@@ -1,6 +1,10 @@
 from fx.space import Dust
 from fx.sound import Ambience
 
+from managers.tools import query as Q
+from world.names import *
+from universe.content import meta
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -369,6 +373,16 @@ class HonsDockring(HonsMember, main_objects.LargePlanetDockring):
     AUDIO_PREFIX = SpaceVoice.KU_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.KusariPlanetDealers
+
+    BASE_PROPS = meta.LargePlanet(
+        objectives=[
+            meta.ProduceBest(SOLAR_PLANT_PARTS),
+            meta.ProduceBest(RESEARCH_EQUIP),
+            meta.ProduceNormal(ROID_MINER_PARTS),
+            meta.ProduceNormal(ENGINE_PARTS),
+            meta.ProduceBad(MINING_EQUIPMENT),
+        ]
+    )
 
 
 class HonsMilitary(HonsMember, main_objects.Station):

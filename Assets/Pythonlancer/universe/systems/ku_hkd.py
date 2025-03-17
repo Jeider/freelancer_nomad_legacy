@@ -1,6 +1,10 @@
 from fx.space import Dust
 from fx.sound import Ambience
 
+from managers.tools import query as Q
+from world.names import *
+from universe.content import meta
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -344,6 +348,17 @@ class HokkDockring(HokkMember, main_objects.LargePlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.KusariPlanetDealers
 
+    BASE_PROPS = meta.LargePlanet(
+        objectives=[
+            meta.ProduceBest(LUXURY_GOLD),
+            meta.ProduceBest(OPTICAL_CHIPS),
+            meta.ProduceCheap(JUMPGATE_PARTS),
+            meta.ProduceCheap(GREENHOUSE_PARTS),
+            meta.ProduceNormal(SMELTER_PARTS),
+            meta.ProduceBad(AMMUNITION),
+        ]
+    )
+
 
 class HokkMegaShipyard(HokkMember, main_objects.Shipyard):
     BASE_INDEX = 2
@@ -362,6 +377,13 @@ class HokkRefinery(HokkMember, main_objects.Refinery):
     DEALERS = dealers.KusariCivilianDealers
     FACTION = faction.KC_GRP
 
+    BASE_PROPS = meta.Refinery(
+        objectives=[
+            meta.ProduceBest(ALLOY_CONDUCTOR),
+            meta.ProduceBad(ALLOY_RADIATION),
+        ]
+    )
+
 
 class HokkPolice(HokkMember, main_objects.Outpost):
     ALIAS = 'police'
@@ -373,7 +395,7 @@ class HokkPolice(HokkMember, main_objects.Outpost):
     DEALERS = dealers.KusariMilitaryDealers
 
 
-class HokkStation(HokkMember, main_objects.Station):
+class HokkStation(HokkMember, main_objects.TradelaneSupportStation):
     BASE_INDEX = 5
     REL = BOTTOM
 

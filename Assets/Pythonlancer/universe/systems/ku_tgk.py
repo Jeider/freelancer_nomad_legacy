@@ -1,6 +1,10 @@
 from fx.space import Dust
 from fx.sound import Ambience
 
+from managers.tools import query as Q
+from world.names import *
+from universe.content import meta
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -322,14 +326,30 @@ class TekagiLargeStation(TekagiMember, main_objects.Station):
 
     REL_APPEND = 4000
 
+    BASE_PROPS = meta.Megabase(
+        objectives=[
+            meta.ProduceBest(ELECTRONICS),
+            meta.ProduceBad(TLR_PARTS),
+            meta.ProduceBad(JUMPGATE_PARTS),
 
-class TekagiMiningStation(TekagiMember, main_objects.Station):
+            meta.LargeTradingBaseObjective(),
+        ]
+    )
+
+
+class TekagiMiningStation(TekagiMember, main_objects.RoidMinerStation):
     INDEX = 2
     BASE_INDEX = 2
     REL = RIGHT
     SPACE_OBJECT_TEMPLATE = roid_mining.UpsilonRoidMining
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
+
+    BASE_PROPS = meta.RoidMiningStation(
+        objectives=[
+            meta.ProduceBest(GOLD),
+        ]
+    )
 
 
 class TekagiFreeport(TekagiMember, main_objects.Freeport):

@@ -347,6 +347,15 @@ class StutDockring(StutMember, main_objects.LargePlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.RheinlandPlanetDealers
 
+    BASE_PROPS = meta.LargePlanet(
+        objectives=[
+            meta.ProduceBest(ROID_MINER_PARTS),
+            meta.ProduceCheap(PROD_MACHINES),
+            meta.ProduceNormal(JUMPGATE_PARTS),
+            meta.ProduceNormal(POLYMERS),
+        ]
+    )
+
 
 class StutPoliceOutpost(StutMember, main_objects.Outpost):
     BASE_INDEX = 2
@@ -377,10 +386,15 @@ class StutMegabase(StutMember, main_objects.Station):
     NEBULA_EXCLUSION_ZONE_SIZE = 3500
     EXCLUSION_PARAMS = WALKER_EXCLUSION_PARAMS
     NEBULA_ZONES = [StutOrangeNebula1]
-    #
-    # BASE_PROPS = base.Megabase(
-    #     base.ConsumeRoid(NIOBIUM, level=base.CONSUME_LARGE),
-    # )
+
+    BASE_PROPS = meta.LargePlanet(
+        objectives=[
+            meta.ProduceBest(STATION_PANELS),
+            meta.ProduceBest(ALLOY_HEAVY),
+            meta.ProduceBad(ALLOY_CONDUCTOR),
+            meta.ProduceBad(ENGINE_PARTS),
+        ]
+    )
 
 
 class StutTraders(StutMember, main_objects.TradingBase):

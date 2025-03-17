@@ -1,6 +1,10 @@
 from fx.space import Dust
 from fx.sound import Ambience
 
+from managers.tools import query as Q
+from world.names import *
+from universe.content import meta
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -470,6 +474,16 @@ class ColDockring(ColMember, main_objects.LargePlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.LibertyPlanetDealers
 
+    BASE_PROPS = meta.LargePlanet(
+        objectives=[
+            meta.ProduceBest(JUMPGATE_PARTS),
+            meta.ProduceBest(MINING_EQUIPMENT),
+            meta.ProduceCheap(MOX_FUEL),
+            meta.ProduceNormal(PROD_MACHINES),
+            meta.ProduceNormal(SMELTER_PARTS),
+        ]
+    )
+
 
 class ColMiningDockring(ColMember, main_objects.MiningPlanetDockring):
     INDEX = 2
@@ -478,6 +492,13 @@ class ColMiningDockring(ColMember, main_objects.MiningPlanetDockring):
     AUDIO_PREFIX = SpaceVoice.LI_PLANET
     INTERIOR_CLASS = interior.CustomFullSingleRoomInterior
     DEALERS = dealers.LibertyPlanetDealers
+    BASE_PROPS = meta.MiningPlanet(
+        objectives=[
+            meta.ProduceNormal(DIAMONDS),
+            meta.ProduceBad(NIOBIUM),
+            meta.ProduceBad(GOLD),
+        ]
+    )
 
 
 class ColShipyard(ColMember, main_objects.Shipyard):
@@ -506,7 +527,7 @@ class ColPolice(ColMember, main_objects.Outpost):
     DEALERS = dealers.LibertyMilitaryDealers
 
 
-class ColProduction(ColMember, main_objects.Station):
+class ColProduction(ColMember, main_objects.Refinery):
     BASE_INDEX = 6
     REL = BOTTOM
     REL_APPEND = 2500
@@ -517,6 +538,15 @@ class ColProduction(ColMember, main_objects.Station):
     EXCLUSION_PARAMS = CROW_EXCLUSION_PARAMS
     NEBULA_ZONES = [ColLargeWestNebula]
     NEBULA_EXCLUSION_ZONE_SIZE = 4000
+
+    BASE_PROPS = meta.Refinery(
+        objectives=[
+            meta.ProduceBest(ALLOY_TEMPERATURE),
+            meta.ProduceBad(ALLOY_HEAVY),
+            meta.ProduceBad(ALLOY_CONDUCTOR),
+            meta.ProduceBad(ALLOY_RADIATION),
+        ]
+    )
 
 
 class ColTrading(ColMember, main_objects.TradingBase):

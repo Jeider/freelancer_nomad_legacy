@@ -68,6 +68,50 @@ class BaseObjective:
         return []
 
 
+class SingleObjective(BaseObjective):
+    def __init__(self, comm_name):
+        self.comm_name = comm_name
+
+    def get_actions(self):
+        return []
+
+
+class ProduceBad(SingleObjective):
+
+    def get_actions(self):
+        return [CommProduce(self.comm_name, PRODUCE_BAD)]
+
+
+class ProduceNormal(SingleObjective):
+
+    def get_actions(self):
+        return [CommProduce(self.comm_name, PRODUCE_NORMAL)]
+
+
+class ProduceCheap(SingleObjective):
+
+    def get_actions(self):
+        return [CommProduce(self.comm_name, PRODUCE_CHEAP)]
+
+
+class ProduceBest(SingleObjective):
+
+    def get_actions(self):
+        return [CommProduce(self.comm_name, PRODUCE_BEST)]
+
+
+class Consume(SingleObjective):
+
+    def get_actions(self):
+        return [CommProduce(self.comm_name, CONSUME)]
+
+
+class Resell(SingleObjective):
+
+    def get_actions(self):
+        return [CommProduce(self.comm_name, RESELL)]
+
+
 class StaticObjective(BaseObjective):
     pass
 
@@ -158,9 +202,11 @@ class AlloyProducerJob(StaticObjective):
         return [
             CommConsume(METAL),
             CommConsume(NIOBIUM),
+            CommConsume(URANIUM),
             CommConsume(BERILIUM),
             CommConsume(PLUMBUM),
             CommConsume(GOLD),
+            CommConsume(SMELTER_PARTS),
 
             CommProduce(SHIP_HULL_PANELS, PRODUCE_CHEAP),
             CommProduce(POWER_SOLAR_EMPTY, PRODUCE_CHEAP),
@@ -295,6 +341,9 @@ class BaseProps:
     def get_objectives(self):
         return self.objectives
 
+    def get_raw_actions(self):
+        return self.raw_actions
+
 
 class GenericLockedBase(BaseProps):
     POPULATION = POP_XSMALL_BASE
@@ -331,6 +380,9 @@ class LargePlanet(BaseProps):
         CommProduce(BASIC_OXYGEN, PRODUCE_CHEAP),
         CommProduce(BASIC_CONSUMER, PRODUCE_NORMAL),
         CommProduce(BASIC_MEDS, PRODUCE_NORMAL),
+    ]
+    DEFAULT_OBJECTIVES = [
+        ConsumeLuxury(),
     ]
 
 
@@ -369,17 +421,14 @@ class ResortPlanet(BaseProps):
 class WaterPlanet(BaseProps):
     POPULATION = POP_SMALL_BASE
     ROOT_ACTIONS = [
-        CommResell(BASIC_WATER),
-        CommResell(BASIC_OXYGEN),
+        CommProduce(BASIC_WATER, PRODUCE_BEST),
+        CommProduce(BASIC_OXYGEN, PRODUCE_BEST),
         CommConsume(BASIC_CONSUMER),
         CommConsume(BASIC_MEDS),
         CommConsume(METAL),
         CommConsume(ALLOY_BASIC),
         CommConsume(POWER_SOLAR),
         CommResell(POWER_SOLAR_EMPTY),
-
-        CommConsume(TERRAFORM_GASES),
-        CommProduce(WATER_EXTRA, PRODUCE_BEST),
     ]
 
 
@@ -393,6 +442,24 @@ class SpaceStation(BaseProps):
         CommConsume(ALLOY_BASIC),
         CommConsume(GAS_FUEL),
         CommConsume(STATION_PANELS),
+    ]
+
+
+class TradelaneSupportStation(SpaceStation):
+    DEFAULT_OBJECTIVES = [
+        SupportTradelanes(),
+    ]
+
+
+class GasMiningStation(SpaceStation):
+    DEFAULT_OBJECTIVES = [
+        CollectGas(),
+    ]
+
+
+class RoidMiningStation(SpaceStation):
+    DEFAULT_OBJECTIVES = [
+        SupportRoidMiners(),
     ]
 
 

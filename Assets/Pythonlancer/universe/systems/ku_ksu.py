@@ -1,5 +1,9 @@
 from fx.space import Dust
 
+from managers.tools import query as Q
+from world.names import *
+from universe.content import meta
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -310,6 +314,15 @@ class KyushuDockring(KyushuMember, main_objects.LargePlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.KusariPlanetDealers
 
+    BASE_PROPS = meta.LargePlanet(
+        objectives=[
+            meta.ProduceBest(GAS_MINER_PARTS),
+            meta.ProduceCheap(ELECTRONICS),
+            meta.ProduceCheap(DEFENCE_SYSTEMS),
+            meta.ProduceBad(MOX_FUEL),
+        ]
+    )
+
 
 class KyushuMiningDockring(KyushuMember, main_objects.MiningPlanetDockring):
     INDEX = 2
@@ -319,6 +332,13 @@ class KyushuMiningDockring(KyushuMember, main_objects.MiningPlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.KusariPlanetDealers
 
+    BASE_PROPS = meta.MiningPlanet(
+        objectives=[
+            meta.ProduceBest(SILVER),
+            meta.ProduceBad(GOLD),
+        ]
+    )
+
 
 class KyushuMegastation(KyushuMember, main_objects.Station):
     BASE_INDEX = 3
@@ -327,6 +347,13 @@ class KyushuMegastation(KyushuMember, main_objects.Station):
     SPACE_OBJECT_TEMPLATE = odissey.Odissey
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
+
+    BASE_PROPS = meta.Megabase(
+        objectives=[
+            meta.ProduceCheap(STATION_PANELS),
+            meta.ProduceNormal(POLYMERS),
+        ]
+    )
 
 
 class KyushuShipyard(KyushuMember, main_objects.Shipyard):
@@ -345,7 +372,7 @@ class KyushuTrading(KyushuMember, main_objects.TradingBase):
     DEALERS = dealers.KusariCivilianDealers
 
 
-class KyushuResearch(KyushuMember, main_objects.Station):
+class KyushuResearch(KyushuMember, main_objects.ResearchStation):
     ALIAS = 'research'
     BASE_INDEX = 6
     REL = LEFT

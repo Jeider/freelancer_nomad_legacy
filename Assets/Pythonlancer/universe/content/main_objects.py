@@ -892,6 +892,22 @@ class Station(DockableObject):
     BASE_PROPS = meta.SpaceStation()
 
 
+class TradelaneSupportStation(Station):
+    BASE_PROPS = meta.TradelaneSupportStation()
+
+
+class ResearchStation(Station):
+    BASE_PROPS = meta.Research()
+
+
+class GasMiningStation(Station):
+    BASE_PROPS = meta.GasMiningStation()
+
+
+class RoidMinerStation(Station):
+    BASE_PROPS = meta.RoidMiningStation()
+
+
 class AbandonedAsteroid(DockableObject):
     AUDIO_PREFIX = SpaceVoice.STATION
     RANDOM_ROBOT = True

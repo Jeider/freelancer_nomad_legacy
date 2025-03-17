@@ -92,7 +92,7 @@ class Base:
         self.load_empty_stores()
 
         if self.props:
-            self.parse_objectives()
+            self.parse_prop_actions()
 
     def get_name(self):
         return self.system_object.get_base_nickname()
@@ -109,25 +109,29 @@ class Base:
             self.base_commodities_db[u_comm.get_comm_name()] = base_commodity
             u_comm.add_base_commodity(base_commodity)
 
-    def parse_objectives(self):
+    def parse_prop_actions(self):
         for objective in self.props.get_objectives():
 
-            for store_change in objective.get_store_changes():
-                base_commodity = self.base_commodities_db[store_change.get_comm_name()]
-                base_commodity.add_to_stock(store_change.get_comm_change())
+            for action in objective.get_actions():
+                base_commodity = self.base_commodities_db[action.get_comm_name()]
+                base_commodity.change_state(action.get_comm_change())
+
+        for action in self.props.get_raw_actions():
+            base_commodity = self.base_commodities_db[action.get_comm_name()]
+            base_commodity.change_state(action.get_comm_change())
 
 
 class BaseCommodity:
 
-    def __init__(self, base, commodity, stock=0):
+    def __init__(self, base, commodity, state=0):
         self.base = base
         self.commodity = commodity
-        self.stock = stock
+        self.state = state
 
     def get_name(self):
         return self.base.get_name()
 
-    def add_to_stock(self, value):
-        self.stock += value
+    def change_state(self, state):
+        self.state += state
 
 

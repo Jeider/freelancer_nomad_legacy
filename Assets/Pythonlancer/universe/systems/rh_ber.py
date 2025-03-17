@@ -258,10 +258,18 @@ class BerlinDockring(BerlinMember, main_objects.LargePlanetDockring):
     AUDIO_PREFIX = SpaceVoice.RH_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.RheinlandPlanetDealers
-    #
-    # BASE_PROPS = base.Megabase(
-    #     base.ConsumeRoid(NIOBIUM, level=base.CONSUME_MEDIUM),
-    # )
+
+    BASE_PROPS = meta.LargePlanet(
+        objectives=[
+            meta.ProduceBest(DIAMONDS),
+            meta.ProduceCheap(MOX_FUEL),
+            meta.ProduceCheap(ROID_MINER_PARTS),
+            meta.ProduceNormal(SMELTER_PARTS),
+            meta.ProduceNormal(ENGINE_PARTS),
+            meta.ProduceBad(GAS_MINER_PARTS),
+            meta.ProduceBad(ELECTRONICS),
+        ]
+    )
 
 
 class BerlinPrison(BerlinMember, main_objects.Prison):
@@ -278,6 +286,14 @@ class BerlinMegaStation(BerlinMember, main_objects.Station):
     SPACE_OBJECT_TEMPLATE = potsdam.Potsdam
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.RheinlandCivilianDealers
+
+    BASE_PROPS = meta.Megabase(
+        objectives=[
+            meta.ProduceBest(PROD_MACHINES),
+            meta.ProduceNormal(TLR_PARTS),
+            meta.ProduceBad(AMMUNITION),
+        ]
+    )
 
 
 class BerlinOutpost(BerlinMember, main_objects.Outpost):
@@ -313,6 +329,13 @@ class BerlinRefinery(BerlinMember, main_objects.Refinery):
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.RheinlandCivilianDealers
     FACTION = faction.RC_GRP
+
+    BASE_PROPS = meta.Refinery(
+        objectives=[
+            meta.ProduceBad(ALLOY_HEAVY),
+            meta.ProduceBad(ALLOY_TEMPERATURE),
+        ]
+    )
 
 
 class BerlinJunkers(BerlinMember, main_objects.JunkerBase):

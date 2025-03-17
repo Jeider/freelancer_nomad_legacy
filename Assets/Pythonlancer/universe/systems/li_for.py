@@ -1,6 +1,10 @@
 from fx.space import Dust, JumpholeEffect
 from fx.sound import Ambience
 
+from managers.tools import query as Q
+from world.names import *
+from universe.content import meta
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -300,6 +304,16 @@ class ForbesDockring(ForbesMember, main_objects.LargePlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.LibertyPlanetDealers
 
+    BASE_PROPS = meta.LargePlanet(
+        objectives=[
+            meta.ProduceBest(ENGINE_PARTS),
+            meta.ProduceCheap(JUMPGATE_PARTS),
+            meta.ProduceNormal(PROD_MACHINES),
+            meta.ProduceNormal(GAS_MINER_PARTS),
+            meta.ProduceBad(RESEARCH_EQUIP),
+        ]
+    )
+
 
 class ForbesShipyard(ForbesMember, main_objects.Shipyard):
     BASE_INDEX = 2
@@ -344,8 +358,16 @@ class ForbesLargeStation(ForbesMember, main_objects.Station):
     INTERIOR_CLASS = interior.StationShipdealerInterior
     DEALERS = dealers.LibertyCivilianDealers
 
+    BASE_PROPS = meta.MediumStation(
+        objectives=[
+            meta.ProduceBest(TLR_PARTS),
+            meta.ProduceNormal(DEFENCE_SYSTEMS),
+            meta.ProduceBad(SOLAR_PLANT_PARTS),
+        ]
+    )
 
-class ForbesResearch(ForbesMember, main_objects.Station):
+
+class ForbesResearch(ForbesMember, main_objects.ResearchStation):
     ALIAS = 'research'
     BASE_INDEX = 6
     REL = LEFT
