@@ -359,6 +359,12 @@ class Sig22Station(Sig22Member, Sig22Liberty, main_objects.TradelaneSupportStati
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyCivilianDealers
 
+    BASE_PROPS = meta.TradelaneSupportStation(
+        objectives=[
+            meta.HaveGreenhouse(),
+        ]
+    )
+
 
 class Sig22Battleship(Sig22Member, main_objects.LibertyBattleship):
     BASE_INDEX = 3

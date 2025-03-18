@@ -1,39 +1,34 @@
 from world.commodity import Commodity, DefaultCommodity, BasicCommodity, Roid, Alloy, Product
 from world.names import *
 
-from universe.content.economics import Producer, Consumer, SupplyCalculator
-
 
 class UniverseCommodity:
     def __init__(self, commodity):
         self.commodity = commodity
         self.base_commodity_db = {}
         self.base_commodity_list = []
+        self.comm_producers = []
+        self.scanned = False
 
     def add_base_commodity(self, base_commodity):
-        self.base_commodity_db[base_commodity.get_name()] = base_commodity
+        self.base_commodity_db[base_commodity.get_base_name()] = base_commodity
         self.base_commodity_list.append(base_commodity)
 
     def get_comm_name(self):
         return self.commodity.ALIAS
 
-    def calculate_supply(self):
-        producers = []
-        consumers = []
-
+    def scan_bases(self):
         for base_commodity in self.base_commodity_list:
+            if base_commodity.is_produce():
+                self.comm_producers.append(base_commodity)
 
-            if base_commodity.stock != 0:
-                if base_commodity.stock > 0:
-                    producers.append(
-                        Producer(base_commodity.base, base_commodity.stock)
-                    )
-                else:
-                    consumers.append(
-                        Consumer(base_commodity.base, abs(base_commodity.stock))
-                    )
+        self.scanned = True
 
-        return SupplyCalculator.calculate(producers, consumers)
+    def get_producers(self):
+        if not self.scanned:
+            raise Exception(f'commodity {self.get_comm_name()} is not scanned')
+
+        return self.comm_producers
 
 
 class StoreManager:
@@ -46,16 +41,13 @@ class StoreManager:
         self.universe_comms_db = {}
         self.universe_comms_list = []
 
-        self.universe_basics = []
-        self.universe_defaults = []
-        self.universe_roids = []
-        self.universe_alloys = []
-        self.universe_products = []
-
         self.init_commoditites()
 
     def init_commoditites(self):
         for commodity in Commodity.subclasses:
+            if not commodity.BASE_COMMODITY:
+                continue
+
             comm = commodity(ids=self.ids)
             universe_comm = UniverseCommodity(comm)
 
@@ -65,23 +57,6 @@ class StoreManager:
             self.universe_comms_db[comm.ALIAS] = universe_comm
             self.universe_comms_list.append(universe_comm)
 
-            the_class = commodity.__class__
-
-            if issubclass(the_class, DefaultCommodity):
-                self.universe_defaults.append(comm)
-
-            elif issubclass(the_class, BasicCommodity):
-                self.universe_basics.append(comm)
-
-            elif issubclass(the_class, Roid):
-                self.universe_roids.append(comm)
-
-            elif issubclass(the_class, Alloy):
-                self.universe_alloys.append(comm)
-
-            elif issubclass(the_class, Product):
-                self.universe_products.append(comm)
-
     def get_by_name(self, name):
         return self.comms_db[name]
 
@@ -89,7 +64,5 @@ class StoreManager:
         return self.universe_comms_list
 
     def compile_commodities(self):
-        return
-        # self.universe_comms_db[NIOBIUM].calculate_supply()
-
-        # print('1')
+        for u_comm in self.universe_comms_list:
+            u_comm.scan_bases()

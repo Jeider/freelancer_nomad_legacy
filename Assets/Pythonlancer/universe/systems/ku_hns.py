@@ -393,6 +393,13 @@ class HonsMilitary(HonsMember, main_objects.Station):
     INTERIOR_CLASS = interior.StationShipdealerInterior
     DEALERS = dealers.KusariMilitaryDealers
 
+    BASE_PROPS = meta.MediumStation(
+        objectives=[
+            meta.SupportBattleships(),
+            meta.ConsumeHeavyMunitions(),
+        ]
+    )
+
 
 class HonsShipyard(HonsMember, main_objects.Shipyard):
     BASE_INDEX = 3
@@ -427,6 +434,12 @@ class HonsTrading(HonsMember, main_objects.TradingBase):
     SPACE_OBJECT_TEMPLATE = cambridge_research.CambridgeResearchAlternative
     INTERIOR_CLASS = interior.StationShipdealerInterior
     DEALERS = dealers.KusariCivilianDealers
+
+    BASE_PROPS = meta.TradingBase(
+        objectives=[
+            meta.HaveGreenhouse(),
+        ]
+    )
 
 
 class HonsPlanet1(HonsMember, main_objects.Planet):
@@ -476,6 +489,7 @@ class HonsNebulaPirates(HonsMember, main_objects.PirateStation):
 class HonsJunkers(HonsMember, main_objects.JunkerBase):
     INDEX = 2
     BASE_INDEX = 8
+    ALIAS = 'pirate'
     REL = TOP
     SPACE_OBJECT_TEMPLATE = junker.StuttgartJunker
     FACTION = faction.KX_GRP

@@ -290,6 +290,9 @@ class ManhShipyard(ManhMember, main_objects.Shipyard):
         objectives=[
             meta.ProduceCheap(STATION_PANELS),
             meta.ProduceCheap(AMMUNITION),
+            meta.HaveReactor(),
+            meta.HaveGreenhouse(),
+            meta.SupportBattleships(),
         ]
     )
 
@@ -326,6 +329,7 @@ class ManhPolice(ManhMember, main_objects.Outpost):
     SPACE_OBJECT_TEMPLATE = police.PoliceOutpostLiberty
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyMilitaryDealers
+    CALC_STORE = False
 
 
 class ManhRefinery(ManhMember, main_objects.Refinery):
@@ -334,6 +338,14 @@ class ManhRefinery(ManhMember, main_objects.Refinery):
     SPACE_OBJECT_TEMPLATE = sphere_megabase.SphereRefinery
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyCivilianDealers
+
+    BASE_PROPS = meta.Refinery(
+        objectives=[
+            meta.ProduceBad(ALLOY_RADIATION),
+            meta.ProduceBad(ALLOY_CONDUCTOR),
+            meta.ProduceBad(ALLOY_TEMPERATURE),
+        ]
+    )
 
 
 class ManhPrison(ManhMember, main_objects.Prison):
@@ -381,6 +393,7 @@ class ManhPlanet4(ManhMember, main_objects.Planet):
 class ManhJunkers(ManhMember, main_objects.JunkerBase):
     INDEX = 2
     BASE_INDEX = 10
+    ALIAS = 'pirate'
     REL = RIGHT
     SPACE_OBJECT_TEMPLATE = junker.BerlinJunker
     FACTION = faction.LX_GRP

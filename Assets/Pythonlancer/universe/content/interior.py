@@ -442,3 +442,6 @@ class EquipDeckInterior(GenericInterior):
     ROOMS = {
         DECK: EQUIP_DEPOT_DECK,
     }
+
+    def have_trader(self):
+        return False

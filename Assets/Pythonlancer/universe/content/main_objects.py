@@ -696,6 +696,8 @@ class DockableObject(StaticObject):
     BG1_KEY = 'terrain_tiny'
     BG2_KEY = 'terrain_sml'
 
+    CALC_STORE = True
+
     ROOM_SUBFOLDER = None
 
     INTERIOR_DEFINITION_TEMPLATE = '''[Base]
@@ -1075,14 +1077,16 @@ class Freeport(DockableObject):
 
 
 class JunkerBase(DockableObject):
-    ALIAS = 'pirate'
+    ALIAS = 'junker'
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     BASE_PROPS = meta.JunkerBase()
+    CALC_STORE = False
 
 
 class PirateBase(DockableObject):
     ALIAS = 'pirate'
     AUDIO_PREFIX = SpaceVoice.OUTPOST
+    CALC_STORE = False
 
 
 class PirateStation(PirateBase):

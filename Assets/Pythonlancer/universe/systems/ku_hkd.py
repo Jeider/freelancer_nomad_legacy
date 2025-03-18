@@ -368,6 +368,13 @@ class HokkMegaShipyard(HokkMember, main_objects.Shipyard):
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
 
+    BASE_PROPS = meta.Shipyard(
+        objectives=[
+            meta.SupportBattleships(),
+            meta.ConsumeHeavyMunitions(),
+        ]
+    )
+
 
 class HokkRefinery(HokkMember, main_objects.Refinery):
     BASE_INDEX = 3

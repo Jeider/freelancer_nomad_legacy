@@ -131,6 +131,13 @@ class Tau23BretoniaStation(Tau23Member, Tau23Bretonia, main_objects.GasMiningSta
 
     FACTION = faction.BR_GRP
 
+    BASE_PROPS = meta.GasMiningStation(
+        objectives=[
+            meta.HaveGreenhouse(),
+            meta.HaveReactor(),
+        ]
+    )
+
 
 class Tau23KusariStation(Tau23Member, Tau23Kusari, main_objects.GasMiningStation):
     INDEX = 2

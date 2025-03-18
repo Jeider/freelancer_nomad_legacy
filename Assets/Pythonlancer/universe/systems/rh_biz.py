@@ -223,6 +223,12 @@ class BizmarkTrading(BizmarkMember, main_objects.TradingBase):
         Q.Engine(RH_CIV, eq_classes=[1, 3, 5]),
     )
 
+    BASE_PROPS = meta.TradingBase(
+        objectives=[
+            meta.HaveGreenhouse(),
+        ]
+    )
+
 
 class BizmarkBattleship(BizmarkMember, main_objects.RheinlandBattleship):
     BASE_INDEX = 3
@@ -271,6 +277,7 @@ class BizmarkMilitary(BizmarkMember, main_objects.Station):
             meta.ConsumeHeavyMunitions(),
         ]
     )
+    CALC_STORE = False
 
 
 class BizmarkShipyard(BizmarkMember, main_objects.Shipyard):

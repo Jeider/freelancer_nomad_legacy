@@ -393,6 +393,7 @@ class StutMegabase(StutMember, main_objects.Station):
             meta.ProduceBest(ALLOY_HEAVY),
             meta.ProduceBad(ALLOY_CONDUCTOR),
             meta.ProduceBad(ENGINE_PARTS),
+            meta.SupportBattleships(),
         ]
     )
 
@@ -432,6 +433,7 @@ class StutNebulaPirates(StutMember, main_objects.PirateStation):
 class StutJunkers(StutMember, main_objects.JunkerBase):
     INDEX = 2
     BASE_INDEX = 8
+    ALIAS = 'pirate'
     REL = TOP
     SPACE_OBJECT_TEMPLATE = junker.StuttgartJunker
     FACTION = faction.JUNK_GRP

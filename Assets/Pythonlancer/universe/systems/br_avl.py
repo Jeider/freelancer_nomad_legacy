@@ -492,6 +492,12 @@ class AvalMilitary(AvalMember, main_objects.Station):
     INTERIOR_CLASS = interior.StationShipdealerInterior
     DEALERS = dealers.BretoniaMilitaryDealers
 
+    BASE_PROPS = meta.MediumStation(
+        objectives=[
+            meta.SupportBattleships(),
+        ]
+    )
+
 
 class AvalPrison(AvalMember, main_objects.Prison):
     INDEX = 1
@@ -507,6 +513,7 @@ class AvalPrison(AvalMember, main_objects.Prison):
 class AvalJunkers(AvalMember, main_objects.JunkerBase):
     INDEX = 1
     BASE_INDEX = 7
+    ALIAS = 'pirate'
     REL = LEFT
     SPACE_OBJECT_TEMPLATE = junker.ForbesJunker
     INTERIOR_CLASS = interior.PirateOutpostShipdealerInterior

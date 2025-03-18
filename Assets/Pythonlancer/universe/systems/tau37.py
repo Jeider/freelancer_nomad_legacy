@@ -317,6 +317,13 @@ class Tau37MiningStation(Tau37Member, main_objects.RoidMinerStation):
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.BretoniaCivilianDealers
 
+    BASE_PROPS = meta.RoidMiningStation(
+        objectives=[
+            meta.ProduceBest(URANIUM),
+            meta.HaveSolarPanels(),
+        ]
+    )
+
 
 class Tau37Freeport(Tau37Member, main_objects.Freeport):
     BASE_INDEX = 2

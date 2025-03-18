@@ -26,10 +26,35 @@ PRODUCE_BEST = PRODUCE * 4  # 1000
 PRODUCE_MIN = 50
 
 CONSUME = -50
-CONSUME_MIN = 0
-
 RESELL = -1000
-RESELL_MIN = -400
+
+PRODUCT_RELATIONS = {
+    LUXURY_DIAMONDS: [DIAMONDS, PROD_MACHINES],
+    PROD_MACHINES: [DIAMONDS],
+    STATION_PANELS: [ALLOY_HEAVY],
+    ROID_MINER_PARTS: [ALLOY_HEAVY, PROD_MACHINES],
+    SMELTER_PARTS: [ALLOY_HEAVY, ALLOY_TEMPERATURE, PROD_MACHINES],
+
+    LUXURY_GOODS: [POLYMERS],
+    TLR_PARTS: [ALLOY_TEMPERATURE, PROD_MACHINES],
+    ENGINE_PARTS: [ALLOY_TEMPERATURE, ALLOY_RADIATION, PROD_MACHINES],
+    JUMPGATE_PARTS: [ALLOY_TEMPERATURE, PROD_MACHINES],
+    MINING_EQUIPMENT: [ALLOY_HEAVY, PROD_MACHINES],
+
+    REACTORS: [ALLOY_RADIATION, PROD_MACHINES],
+    AMMUNITION: [ALLOY_TEMPERATURE, ALLOY_RADIATION, PROD_MACHINES],
+    LUXURY_FOOD: [TERRAFORM_MINERALS],
+    GREENHOUSE_PARTS: [POLYMERS, TERRAFORM_MINERALS],
+    DEFENCE_SYSTEMS: [ELECTRONICS, OPTICAL_CHIPS, POLYMERS],
+
+    ELECTRONICS: [GOLD, SILVER, ALLOY_CONDUCTOR, PROD_MACHINES, POLYMERS],
+    LUXURY_GOLD: [GOLD, SILVER],
+    OPTICAL_CHIPS: [PROD_MACHINES, ALLOY_CONDUCTOR, PROD_MACHINES],
+    GAS_MINER_PARTS: [ALLOY_HEAVY, PROD_MACHINES],
+    SOLAR_PLANT_PARTS: [ALLOY_CONDUCTOR, PROD_MACHINES],
+    RESEARCH_EQUIP: [OPTICAL_CHIPS, ELECTRONICS, PROD_MACHINES],
+}
+
 
 
 class CommAction:
@@ -192,15 +217,11 @@ class HaveReactor(StaticObjective):
         ]
 
 
-class HaveSmelter(StaticObjective):
-    pass
-
-
 class AlloyProducerJob(StaticObjective):
 
     def get_actions(self):
         return [
-            CommConsume(METAL),
+            # CommConsume(METAL),
             CommConsume(NIOBIUM),
             CommConsume(URANIUM),
             CommConsume(BERILIUM),
@@ -227,7 +248,7 @@ class JunkerJob(StaticObjective):
 
     def get_actions(self):
         return [
-            CommConsume(METAL),
+            # CommConsume(METAL),
 
             CommProduce(SHIP_HULL_PANELS, PRODUCE_BAD),
             CommProduce(ALLOY_BASIC, PRODUCE_BAD),
@@ -319,7 +340,7 @@ class FreeportObjective(SelectedResellObjective):
             CommResell(BASIC_OXYGEN),
             CommResell(BASIC_CONSUMER),
             CommResell(BASIC_MEDS),
-            CommResell(METAL),
+            # CommResell(METAL),
             CommResell(ALLOY_BASIC),
         ]
 
@@ -393,12 +414,12 @@ class MiningPlanet(BaseProps):
         CommConsume(BASIC_OXYGEN),
         CommConsume(BASIC_CONSUMER),
         CommConsume(BASIC_MEDS),
-        CommConsume(METAL),
+        # CommConsume(METAL),
         CommConsume(ALLOY_BASIC),
         CommConsume(POWER_SOLAR),
         CommConsume(STATION_PANELS),
 
-        CommConsume(TERRAFORM_GASES),
+        # CommConsume(TERRAFORM_GASES),
     ]
 
 
@@ -409,7 +430,7 @@ class ResortPlanet(BaseProps):
         CommProduce(BASIC_OXYGEN, PRODUCE_BEST),
         CommResell(BASIC_CONSUMER),
         CommProduce(BASIC_MEDS, PRODUCE_NORMAL),
-        CommConsume(METAL),
+        # CommConsume(METAL),
         CommConsume(ALLOY_BASIC),
         CommConsume(POWER_SOLAR),
         CommResell(POWER_SOLAR_EMPTY),
@@ -425,7 +446,7 @@ class WaterPlanet(BaseProps):
         CommProduce(BASIC_OXYGEN, PRODUCE_BEST),
         CommConsume(BASIC_CONSUMER),
         CommConsume(BASIC_MEDS),
-        CommConsume(METAL),
+        # CommConsume(METAL),
         CommConsume(ALLOY_BASIC),
         CommConsume(POWER_SOLAR),
         CommResell(POWER_SOLAR_EMPTY),
@@ -438,7 +459,7 @@ class SpaceStation(BaseProps):
         CommConsume(BASIC_OXYGEN),
         CommConsume(BASIC_CONSUMER),
         CommConsume(BASIC_MEDS),
-        CommConsume(METAL),
+        # CommConsume(METAL),
         CommConsume(ALLOY_BASIC),
         CommConsume(GAS_FUEL),
         CommConsume(STATION_PANELS),

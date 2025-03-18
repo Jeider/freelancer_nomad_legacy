@@ -352,6 +352,8 @@ class KyushuMegastation(KyushuMember, main_objects.Station):
         objectives=[
             meta.ProduceCheap(STATION_PANELS),
             meta.ProduceNormal(POLYMERS),
+            meta.HaveGreenhouse(),
+            meta.HaveReactor(),
         ]
     )
 
@@ -379,6 +381,12 @@ class KyushuResearch(KyushuMember, main_objects.ResearchStation):
     SPACE_OBJECT_TEMPLATE = research.KyushuResearch
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
+
+    BASE_PROPS = meta.Research(
+        objectives=[
+            meta.HaveSolarPanels(),
+        ]
+    )
 
 
 class KyushuPolice(KyushuMember, main_objects.Outpost):
@@ -440,6 +448,7 @@ class KyushuNorthAsteroidPirates(KyushuMember, main_objects.PirateAsteroid):
 class KyushuJunkers(KyushuMember, main_objects.JunkerBase):
     INDEX = 2
     BASE_INDEX = 10
+    ALIAS = 'pirate'
     REL = TOP
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseForbes
     FACTION = faction.JUNK_GRP

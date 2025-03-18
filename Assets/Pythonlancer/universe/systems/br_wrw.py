@@ -298,6 +298,10 @@ class WarwickLargeStation(WarwickMember, main_objects.Station):
             meta.ProduceBest(TERRAFORM_MINERALS),
             meta.ProduceCheap(SHIP_HULL_PANELS),
             meta.ProduceCheap(ENGINE_PARTS),
+
+            meta.HaveGreenhouse(),
+            meta.HaveSolarPanels(),
+            meta.HaveReactor(),
         ]
     )
 
@@ -309,6 +313,14 @@ class WarwickRefinery(WarwickMember, main_objects.Refinery):
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.BretoniaCivilianDealers
     FACTION = faction.BC_GRP
+
+    BASE_PROPS = meta.Refinery(
+        objectives=[
+            meta.ProduceNormal(ALLOY_RADIATION),
+            meta.ProduceBad(ALLOY_HEAVY),
+            meta.ProduceBad(ALLOY_TEMPERATURE),
+        ]
+    )
 
 
 class WarwickOutpost(WarwickMember, main_objects.Outpost):

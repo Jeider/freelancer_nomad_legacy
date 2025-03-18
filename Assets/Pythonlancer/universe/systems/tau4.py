@@ -280,6 +280,12 @@ class Tau4Station(Tau4Member, main_objects.TradelaneSupportStation):
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
 
+    BASE_PROPS = meta.TradelaneSupportStation(
+        objectives=[
+            meta.HaveGreenhouse(),
+        ]
+    )
+
 
 class Tau4Freeport(Tau4Member, main_objects.Freeport):
     BASE_INDEX = 2

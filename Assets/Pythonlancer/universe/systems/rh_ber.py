@@ -292,6 +292,10 @@ class BerlinMegaStation(BerlinMember, main_objects.Station):
             meta.ProduceBest(PROD_MACHINES),
             meta.ProduceNormal(TLR_PARTS),
             meta.ProduceBad(AMMUNITION),
+
+            meta.HaveGreenhouse(),
+            meta.HaveSolarPanels(),
+            meta.SupportBattleships(),
         ]
     )
 

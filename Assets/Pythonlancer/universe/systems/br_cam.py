@@ -429,7 +429,7 @@ class CamRefinery(CamMember, main_objects.Refinery):
     )
 
 
-class CamResearch(CamMember, main_objects.Outpost):
+class CamResearch(CamMember, main_objects.ResearchStation):
     ALIAS = 'research'
     INDEX = 1
     BASE_INDEX = 7
@@ -440,10 +440,18 @@ class CamResearch(CamMember, main_objects.Outpost):
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.BretoniaCivilianDealers
 
+    BASE_PROPS = meta.Research(
+        objectives=[
+            meta.HaveSolarPanels(),
+            meta.HaveGreenhouse(),
+        ]
+    )
+
 
 class CamJunkers(CamMember, main_objects.JunkerBase):
     INDEX = 1
     BASE_INDEX = 8
+    ALIAS = 'pirate'
     REL = LEFT
     SPACE_OBJECT_TEMPLATE = junker.HonshuJunker
     INTERIOR_CLASS = interior.PirateOutpostShipdealerInterior

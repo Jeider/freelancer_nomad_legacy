@@ -47,10 +47,10 @@ class UniverseManager:
 
         self.get_universe_root().do_post_init_actions()
 
-        for base in self.bases_list:
-            base.load_graph()
-
         self.core.store.compile_commodities()
+
+        for base in self.bases_list:
+            base.compile_base()
 
         self.sync_data()
 
@@ -88,7 +88,7 @@ class UniverseManager:
                             )
                         )
 
-                    if dockable.have_trader():
+                    if dockable.have_trader() and dockable.CALC_STORE:
                         system.add_base(dockable)
 
 
@@ -139,6 +139,9 @@ class UniverseManager:
 
     def get_dock_key_file_content(self):
         return DockKeyTemplate().format({'generated': self.get_dock_key()})
+
+    def get_bases_store_debug_info(self):
+        return DIVIDER.join([base.get_debug_table() for base in self.bases_list])
 
     def sync_data(self):
         if not self.core.write:

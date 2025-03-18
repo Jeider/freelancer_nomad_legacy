@@ -233,6 +233,12 @@ class Sig42BretoniaStation(Sig42Member, Sig42Bretonia, main_objects.TradelaneSup
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.BretoniaCivilianDealers
 
+    BASE_PROPS = meta.TradelaneSupportStation(
+        objectives=[
+            meta.HaveGreenhouse(),
+        ]
+    )
+
 
 class Sig42KusariStation(Sig42Member, Sig42Kusari, main_objects.ResearchStation):
     INDEX = 2
@@ -241,6 +247,13 @@ class Sig42KusariStation(Sig42Member, Sig42Kusari, main_objects.ResearchStation)
     SPACE_OBJECT_TEMPLATE = research.SiriusResearch
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
+
+    BASE_PROPS = meta.Research(
+        objectives=[
+            meta.HaveGreenhouse(),
+            meta.HaveSolarPanels(),
+        ]
+    )
 
 
 class Sig42Liner(Sig42Member, Sig42Bretonia, main_objects.LuxuryLiner):

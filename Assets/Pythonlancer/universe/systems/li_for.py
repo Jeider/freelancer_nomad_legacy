@@ -338,6 +338,12 @@ class ForbesRefinery(ForbesMember, main_objects.Refinery):
     DEALERS = dealers.LibertyCivilianDealers
     FACTION = faction.LC_GRP
 
+    BASE_PROPS = meta.Refinery(
+        objectives=[
+            meta.ProduceNormal(ALLOY_TEMPERATURE),
+        ]
+    )
+
 
 class ForbesPolice(ForbesMember, main_objects.Outpost):
     ALIAS = 'police'
@@ -363,6 +369,7 @@ class ForbesLargeStation(ForbesMember, main_objects.Station):
             meta.ProduceBest(TLR_PARTS),
             meta.ProduceNormal(DEFENCE_SYSTEMS),
             meta.ProduceBad(SOLAR_PLANT_PARTS),
+            meta.HaveReactor(),
         ]
     )
 

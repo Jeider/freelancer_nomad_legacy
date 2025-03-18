@@ -528,6 +528,7 @@ class ColPolice(ColMember, main_objects.Outpost):
 
 
 class ColProduction(ColMember, main_objects.Refinery):
+    ALIAS = 'station'
     BASE_INDEX = 6
     REL = BOTTOM
     REL_APPEND = 2500

@@ -45,7 +45,16 @@ class Commodity(MarketCommodity):
     NICKNAME = None
     POD = None
     ICON = None
-    PRIORITY = 1
+
+    DEFAULT_PRICE = 100
+    PRICE_BEST_RATE = 0.25
+    PRICE_CHEAP_RATE = 0.5
+    PRICE_NORMAL_RATE = 0.75
+    PRICE_BAD_RATE = 1
+
+    PRICE_STEP = 20
+
+    BASE_COMMODITY = True
 
     subclasses = []
 
@@ -67,25 +76,52 @@ class Commodity(MarketCommodity):
     def get_ru_name(self):
         return self.RU_NAME
 
+    def get_best_price(self):
+        return self.DEFAULT_PRICE * self.PRICE_BEST_RATE
+
+    def get_cheap_price(self):
+        return self.DEFAULT_PRICE * self.PRICE_CHEAP_RATE
+
+    def get_normal_price(self):
+        return self.DEFAULT_PRICE * self.PRICE_NORMAL_RATE
+
+    def get_bad_price(self):
+        return self.DEFAULT_PRICE * self.PRICE_BAD_RATE
+
+    def get_price_step(self, depth):
+        # TODO: increase by depth
+        return self.PRICE_STEP
+
+    def get_consume_price(self, produce_price, depth):
+        price = produce_price
+        for i in range(1, depth+1):
+            price += self.get_price_step(i)
+
+        return price
+
 
 class BasicCommodity:
-    PRIORITY = 50
+    DEFAULT_PRICE = 50
 
 
 class DefaultCommodity:
-    PRIORITY = 70
+    DEFAULT_PRICE = 50
 
 
 class Roid:
-    PRIORITY = 10
+    DEFAULT_PRICE = 100
 
 
 class Alloy:
-    PRIORITY = 20
+    DEFAULT_PRICE = 200
 
 
 class Product:
-    PRIORITY = 30
+    DEFAULT_PRICE = 400
+
+
+class Luxury:
+    DEFAULT_PRICE = 500
 
 
 class TerraformMinerals(BasicCommodity, Commodity):
@@ -102,6 +138,7 @@ class TerraformGases(BasicCommodity, Commodity):
     NICKNAME = 'comm_terraform_gases'
     POD = POD_FOODS
     ICON = ICON_CHEMICAL
+    BASE_COMMODITY = False
 
 
 class LaserBeamParts(BasicCommodity, Commodity):
@@ -110,6 +147,7 @@ class LaserBeamParts(BasicCommodity, Commodity):
     NICKNAME = 'comm_laserbeam_components'
     POD = POD_MACHINES
     ICON = ICON_MACHINES
+    BASE_COMMODITY = False
 
 
 class BasicWater(BasicCommodity, Commodity):
@@ -174,6 +212,7 @@ class Metal(DefaultCommodity, Commodity):
     NICKNAME = 'comm_scrap_metal'
     POD = POD_REFINEDMATS
     ICON = ICON_REFINEDMATS
+    BASE_COMMODITY = False
 
 
 class PowerSolarEmpty(DefaultCommodity, Commodity):
@@ -232,7 +271,7 @@ class Diamonds(Roid, Commodity):
     ICON = ICON_DIAMONDS
 
 
-class LuxuryDiamonds(Product, Commodity):
+class LuxuryDiamonds(Luxury, Commodity):
     ALIAS = LUXURY_DIAMONDS
     RU_NAME = 'Алмазные украшения'
     NICKNAME = 'comm_luxury_diamonds'
@@ -288,7 +327,7 @@ class SmelterParts(Product, Commodity):
     ICON = ICON_INDUSTRIAL
 
 
-class WaterExtra(DefaultCommodity, Commodity):
+class WaterExtra(Luxury, Commodity):
     ALIAS = WATER_EXTRA
     RU_NAME = 'Чистая вода'
     NICKNAME = 'comm_water_extra'
@@ -312,7 +351,7 @@ class Nicollum(Roid, Commodity):
     ICON = ICON_ROID
 
 
-class LuxuryGoods(Product, Commodity):
+class LuxuryGoods(Luxury, Commodity):
     ALIAS = LUXURY_GOODS
     RU_NAME = 'Роскошные товары'
     NICKNAME = 'comm_luxury_consumer'
@@ -408,7 +447,7 @@ class Ammunition(Product, Commodity):
     ICON = ICON_MUNITIONS
 
 
-class LuxuryFood(Product, Commodity):
+class LuxuryFood(Luxury, Commodity):
     ALIAS = LUXURY_FOOD
     RU_NAME = 'Роскошная пища'
     NICKNAME = 'comm_luxury_food'
@@ -464,7 +503,7 @@ class Electronics(Product, Commodity):
     ICON = ICON_ELECTRONICS
 
 
-class LuxuryGold(Product, Commodity):
+class LuxuryGold(Luxury, Commodity):
     ALIAS = LUXURY_GOLD
     RU_NAME = 'Украшения'
     NICKNAME = 'comm_luxury_gold'

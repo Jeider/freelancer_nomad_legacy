@@ -425,6 +425,7 @@ file = Universe\\SYSTEMS_MOD\\RH_MUNCHEN\\ROOM\\rh_mnh_03_deck2.ini
 class MunchJunkersBase(MunchMember, main_objects.JunkerBase):
     INDEX = 2
     BASE_INDEX = 4
+    ALIAS = 'pirate'
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = junker.OmegaSmelter
     FACTION = faction.JUNK_GRP
