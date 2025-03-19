@@ -26,8 +26,10 @@ class BaseEdge:
         return self.edges
 
     def find_trade_edges(self, root_object, depth):
+        if not root_object.connections:
+            raise Exception(f'{root_object} have no connections')
         for the_conn in root_object.connections:
-            for destination in the_conn.get_destination_objects():
+            for destination in the_conn.get_edge_objects():
                 if destination != self.root_object and destination not in self.graph.used_objects:
                     new_edge = BaseEdge(self.graph, destination, depth=depth)
                     self.add_edge(new_edge)
@@ -35,7 +37,7 @@ class BaseEdge:
 
     def find_target_jumpgate(self, depth):
         target_jumpgate = self.root_object.get_target_jumpgate()
-        if target_jumpgate.system not in self.graph.loaded_systems:
+        if target_jumpgate.system not in self.graph.loaded_systems and target_jumpgate.system.SCAN_JUMP:
             new_edge = BaseEdge(self.graph, target_jumpgate, jumper=False, depth=depth)
             self.add_edge(new_edge)
             self.graph.add_used_object(target_jumpgate, depth)
@@ -46,19 +48,26 @@ class BaseEdge:
 
 
 class BaseGraph:
-    def __init__(self, root_object):
+    def __init__(self, root_object, resell_range=0):
+        self.resell_range = resell_range
+        self.resellers = []
         self.root_object = root_object
         self.root_edge = BaseEdge(self, self.root_object, depth=0)
         self.used_objects = []
         self.loaded_systems = [root_object.system]
         self.depths_db = {}
+        self.depth = 0
         self.load_relations()
+        if self.depth == 0:
+            raise Exception(f'{self.root_object} have no connections')
 
     def add_used_object(self, dockable_object, depth):
         self.used_objects.append(dockable_object)
 
         if issubclass(dockable_object.__class__, DockableObject):
             self.depths_db[dockable_object.get_base_nickname()] = depth
+            if depth < self.resell_range and dockable_object.have_trader():
+                self.resellers.append(dockable_object)
 
     def add_loaded_system(self, system):
         self.loaded_systems.append(system)
@@ -68,17 +77,17 @@ class BaseGraph:
 
     def load_relations(self, max_depth=2000):
         edges = [self.root_edge]
-        depth = 0
+        self.depth = 0
         while True:
             new_edges = []
             for edge in edges:
-                new_edges.extend(edge.find_edges(depth=depth))
+                new_edges.extend(edge.find_edges(depth=self.depth))
 
             if len(new_edges) == 0:
                 break
 
-            depth += 1
-            if depth > max_depth:
+            self.depth += 1
+            if self.depth > max_depth:
                 break
 
             edges = new_edges
@@ -112,7 +121,7 @@ class Base:
         self.graph = self.get_base_graph()
 
     def get_base_graph(self):
-        return BaseGraph(root_object=self.system_object)
+        return BaseGraph(root_object=self.system_object, resell_range=self.props.RESELL_GOODS_DEPTH_RANGE)
 
     def load_empty_stores(self):
         for u_comm in self.core.store.get_universe_commodities():
@@ -125,9 +134,9 @@ class Base:
         base_commodity = self.base_commodities_db[comm_name]
         base_commodity.change_state(action.get_comm_change())
 
-        if comm_name in meta.PRODUCT_RELATIONS:
-            for consume in meta.PRODUCT_RELATIONS[comm_name]:
-                consume_commodity = self.base_commodities_db[comm_name]
+        if comm_name in meta.CONSUMES_PER_PRODUCE and base_commodity.is_produce():
+            for consume in meta.CONSUMES_PER_PRODUCE[comm_name]:
+                consume_commodity = self.base_commodities_db[consume]
                 consume_commodity.change_state(meta.CONSUME)
 
     def parse_prop_actions(self):
@@ -139,14 +148,19 @@ class Base:
         for action in self.props.get_raw_actions():
             self.add_action(action)
 
+    def load_resell_commodities(self, resell_commodities):
+        for r_comm in resell_commodities:
+            base_commodity = self.base_commodities_db[r_comm]
+            base_commodity.change_state(meta.RESELL)
+
     def compile_base(self):
         # print('SCAN BASE')
         # print(f'BASE: {self.get_name()}')
         self.load_graph()
+        self.load_resell_data()
         self.load_commodities()
 
     def get_debug_table(self):
-        print(self.get_name())
         return (f'[{self.get_name()}]\n'
                 f'{self.get_debug_commodities()}')
 
@@ -157,6 +171,27 @@ class Base:
                 items.append(base_comm.get_debug_info())
 
         return SINGLE_DIVIDER.join(items)
+
+    def get_products(self):
+        products = []
+        for base_comm in self.base_commodities_db.values():
+            if base_comm.is_produce():
+                products.append(base_comm)
+        return products
+
+    def load_resell_data(self):
+        resell_commodities = set()
+        if len(self.graph.resellers):
+
+            print(f'BASE RESSELLER: {self.get_name()}')
+        for reseller in self.graph.resellers:
+            reseller_base = self.system.universe_manager.get_base_by_name(reseller.get_base_nickname())
+            print(reseller_base.system_object)
+            for product in reseller_base.get_products():
+                if not self.props.RESELL_PRODUCTS_ONLY or product.is_complex_product():
+                    resell_commodities.add(product.get_comm_name())
+
+        self.load_resell_commodities(resell_commodities)
 
     def load_commodities(self):
         if not self.graph:
@@ -209,13 +244,6 @@ class Base:
 
             base_comm.set_purchase_price(purchase_price)
 
-            # print('1')
-
-
-
-
-
-# sorted_by_second = sorted(data, key=lambda tup: tup[1])
 
 class BaseCommodity:
 
@@ -226,6 +254,9 @@ class BaseCommodity:
         self.resell = False
         self.produce = 0
         self.purchase_price = 0
+
+    def is_complex_product(self):
+        return self.universe_commodity.commodity.IS_COMPLEX
 
     def get_base_name(self):
         return self.base.get_name()

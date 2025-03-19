@@ -64,6 +64,7 @@ class System:
     SYSTEMS_ROOT = 'SYSTEMS_MOD'
     IS_STORY = False
     VISIT = 0
+    SCAN_JUMP = True
 
     INTERIOR_DEFAULT_SUBFOLDER = None
 
@@ -191,6 +192,9 @@ distance = {tlr_distance}
             destinations = the_connect.get_destination_objects()
             destinations[0].add_connection(the_connect)
             destinations[1].add_connection(the_connect)
+            for attacker in the_connect.get_attacker_objects():
+                attacker.add_connection(the_connect)
+
 
     def init_jumpgates(self):
         for jumpable_item in self.jumpable:
@@ -605,6 +609,7 @@ class StorySystem(System):
 
     VISIT = VISIT_STORY
     IS_STORY = True
+    SCAN_JUMP = False
 
     def get_direct_template_source(self):
         current_path = pathlib.Path().resolve()

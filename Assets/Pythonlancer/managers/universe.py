@@ -60,6 +60,12 @@ class UniverseManager:
     def get_universe_root(self):
         return self.universe_root
 
+    def get_base_by_name(self, base_name):
+        try:
+            return self.bases_db[base_name]
+        except IndexError:
+            raise Exception('Base %s isnt presented in universe' % base_name)
+
     def load_systems(self):
         for system_class in SiriusSystem.subclasses:
             system = system_class(self.core, self, ids=self.ids)

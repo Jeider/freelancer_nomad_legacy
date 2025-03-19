@@ -252,7 +252,7 @@ class ManhDockring(ManhMember, main_objects.LargePlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.LibertyPlanetDealers
 
-    BASE_PROPS = meta.LargePlanet(
+    BASE_PROPS = meta.ManhattanSuperPlanet(
         objectives=[
             meta.ProduceBest(LUXURY_GOODS),
             meta.ProduceCheap(ENGINE_PARTS),
@@ -329,7 +329,6 @@ class ManhPolice(ManhMember, main_objects.Outpost):
     SPACE_OBJECT_TEMPLATE = police.PoliceOutpostLiberty
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyMilitaryDealers
-    CALC_STORE = False
 
 
 class ManhRefinery(ManhMember, main_objects.Refinery):
@@ -429,12 +428,24 @@ class ManhNebulaPirates(ManhMember, main_objects.PirateStation):
     EXCLUSION_PARAMS = CROW_EXCLUSION_PARAMS
 
 
-class ManhDockringConn1(ManhMember, main_objects.TradeConnection):
+class ManhPoliceConn1(ManhMember, main_objects.TradeConnection):
     OBJ_FROM = ManhTau31Jumpgate
-    OBJ_TO = ManhDockring
+    OBJ_TO = ManhPolice
     SIDE_FROM = LEFT
     SIDE_TO = RIGHT
     TRADELANE_LETTER = 'A'
+    HUNTER_DEFENCE_REL = BOTTOM
+    ATTACKED_BY = [
+        ManhNebulaPirates,
+    ]
+
+
+class ManhPoliceConn2(ManhMember, main_objects.TradeConnection):
+    OBJ_FROM = ManhPolice
+    OBJ_TO = ManhDockring
+    SIDE_FROM = LEFT
+    SIDE_TO = RIGHT
+    TRADELANE_LETTER = 'Z'
     HUNTER_DEFENCE_REL = BOTTOM
     ATTACKED_BY = [
         ManhNebulaPirates,

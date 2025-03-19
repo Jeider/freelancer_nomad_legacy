@@ -837,9 +837,9 @@ BGCS_base_run_by = W02bF44'''
     def have_trader(self):
         if not self.interior.have_trader():
             return False
-        #
-        # if not self.BASE_PROPS:
-        #     raise Exception('Base %s have no defined economics base props' % self.__class__.__name__)
+
+        if not self.BASE_PROPS:
+            raise Exception('Base %s have no defined economics base props' % self.__class__.__name__)
 
         return True
 
@@ -1080,13 +1080,11 @@ class JunkerBase(DockableObject):
     ALIAS = 'junker'
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     BASE_PROPS = meta.JunkerBase()
-    CALC_STORE = False
 
 
 class PirateBase(DockableObject):
     ALIAS = 'pirate'
     AUDIO_PREFIX = SpaceVoice.OUTPOST
-    CALC_STORE = False
 
 
 class PirateStation(PirateBase):
@@ -1113,6 +1111,7 @@ class Hackable(DockableObject):
     DEFENCE_LEVEL = None
     RANDOM_ROBOT = True
     BASE_PROPS = meta.LockedHackableOutpost()
+    CALC_STORE = False
 
     def get_position(self):
         if self.RELATED_OBJECT:
@@ -1446,6 +1445,12 @@ size = {size}'''
             raise Exception('OBJ_TO %s is not SystemObject' % self.OBJ_TO)
 
         return (self.system.get_system_object_instance(self.OBJ_FROM), self.system.get_system_object_instance(self.OBJ_TO))
+
+    def get_attacker_objects(self):
+        return [self.system.get_system_object_instance(att) for att in self.ATTACKED_BY]
+
+    def get_edge_objects(self):
+        return list(self.get_destination_objects()) + self.get_attacker_objects()
 
     def get_sides(self):
         if not self.SIDE_FROM or not self.SIDE_TO:

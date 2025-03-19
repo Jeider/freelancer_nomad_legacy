@@ -392,7 +392,7 @@ class MunchBattleStationRuins(MunchMember, main_objects.NotDockableObject):
     SPACE_OBJECT_TEMPLATE = station_debris.MunchenBattleStationDebris
 
 
-class MunchOutcastBase(MunchMember, main_objects.PirateStation):
+class MunchOutcastBase(MunchMember, main_objects.PirateAsteroid):
     BASE_INDEX = 3
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = astbase.MunchenAsteroidBase

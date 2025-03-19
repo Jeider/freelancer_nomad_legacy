@@ -326,13 +326,11 @@ class TekagiLargeStation(TekagiMember, main_objects.Station):
 
     REL_APPEND = 4000
 
-    BASE_PROPS = meta.Megabase(
+    BASE_PROPS = meta.MegaTradingbase(
         objectives=[
             meta.ProduceBest(ELECTRONICS),
             meta.ProduceBad(TLR_PARTS),
             meta.ProduceBad(JUMPGATE_PARTS),
-
-            meta.LargeTradingBaseObjective(),
         ]
     )
 

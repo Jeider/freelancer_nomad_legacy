@@ -387,6 +387,8 @@ class CalTrading(CalMember, main_objects.TradingBase):
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyCivilianDealers
 
+    BASE_PROPS = meta.LargeTradingBase()
+
 
 class CalPirate1(CalMember, main_objects.PirateAsteroid):
     BASE_INDEX = 6

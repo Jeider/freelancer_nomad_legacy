@@ -28,7 +28,7 @@ PRODUCE_MIN = 50
 CONSUME = -50
 RESELL = -1000
 
-PRODUCT_RELATIONS = {
+CONSUMES_PER_PRODUCE = {
     LUXURY_DIAMONDS: [DIAMONDS, PROD_MACHINES],
     PROD_MACHINES: [DIAMONDS],
     STATION_PANELS: [ALLOY_HEAVY],
@@ -49,12 +49,11 @@ PRODUCT_RELATIONS = {
 
     ELECTRONICS: [GOLD, SILVER, ALLOY_CONDUCTOR, PROD_MACHINES, POLYMERS],
     LUXURY_GOLD: [GOLD, SILVER],
-    OPTICAL_CHIPS: [PROD_MACHINES, ALLOY_CONDUCTOR, PROD_MACHINES],
+    OPTICAL_CHIPS: [PROD_MACHINES, ALLOY_CONDUCTOR],
     GAS_MINER_PARTS: [ALLOY_HEAVY, PROD_MACHINES],
     SOLAR_PLANT_PARTS: [ALLOY_CONDUCTOR, PROD_MACHINES],
     RESEARCH_EQUIP: [OPTICAL_CHIPS, ELECTRONICS, PROD_MACHINES],
 }
-
 
 
 class CommAction:
@@ -309,23 +308,8 @@ class MakeResearch(StaticObjective):
 class SupportAsteroidBase(StaticObjective):
     def get_actions(self):
         return [
-            CommConsume(ELECTRONICS),
-            CommConsume(RESEARCH_EQUIP),
-            CommConsume(OPTICAL_CHIPS),
+            CommConsume(MINING_EQUIPMENT),
         ]
-
-
-class LookupResellObjective(BaseObjective):
-    PRICE_MULTIPLIER = 1
-    SEARCH_PRODUCE_DEPTH = 1
-
-
-class LargeTradingBaseObjective(LookupResellObjective):
-    pass
-
-
-class SmallTradingBaseObjective(LookupResellObjective):
-    pass
 
 
 class SelectedResellObjective(BaseObjective):
@@ -351,6 +335,8 @@ class BaseProps:
     ROOT_ACTIONS = []
     DEFAULT_OBJECTIVES = []
     DEFENCE_EFFECT = 0
+    RESELL_GOODS_DEPTH_RANGE = 0
+    RESELL_PRODUCTS_ONLY = False
     # DEFENCE_HIGH
     # DEFENCE_MEDIUM: +light arms cost, +repair cost
     # DEFENCE_SMALL: ++light arms cost, ++repair cost
@@ -368,6 +354,7 @@ class BaseProps:
 
 class GenericLockedBase(BaseProps):
     POPULATION = POP_XSMALL_BASE
+    HAVE_STORE = False
 
 
 class LockedBattleship(GenericLockedBase):
@@ -405,6 +392,11 @@ class LargePlanet(BaseProps):
     DEFAULT_OBJECTIVES = [
         ConsumeLuxury(),
     ]
+
+
+class ManhattanSuperPlanet(LargePlanet):
+    RESELL_GOODS_DEPTH_RANGE = 8
+    RESELL_PRODUCTS_ONLY = True
 
 
 class MiningPlanet(BaseProps):
@@ -488,12 +480,22 @@ class Megabase(SpaceStation):
     POPULATION = POP_MEGABASE
 
 
+class MegaTradingbase(Megabase):
+    RESELL_GOODS_DEPTH_RANGE = 10
+
+
 class MediumStation(SpaceStation):
     POPULATION = POP_MEDIUM_BASE
 
 
+class LargeTradingBase(MediumStation):
+    POPULATION = POP_MEDIUM_BASE
+    RESELL_GOODS_DEPTH_RANGE = 8
+
+
 class TradingBase(MediumStation):
     POPULATION = POP_MEDIUM_BASE
+    RESELL_GOODS_DEPTH_RANGE = 6
 
 
 class Shipyard(SpaceStation):
@@ -512,6 +514,7 @@ class Refinery(SpaceStation):
 
 class Freeport(SpaceStation):
     POPULATION = POP_SMALL_BASE
+    # RESELL_GOODS_DEPTH_RANGE = 3
 
 
 class Outpost(SpaceStation):
@@ -550,12 +553,12 @@ class LuxuryLiner(SpaceStation):
     ]
 
 
-class PirateStation(BaseProps):
+class PirateStation(SpaceStation):
     POPULATION = POP_SMALL_BASE
     DEFENCE_EFFECT = DEFENCE_PIRATES
 
 
-class PirateAsteroid(BaseProps):
+class PirateAsteroid(PirateStation):
     POPULATION = POP_SMALL_BASE
     DEFENCE_EFFECT = DEFENCE_PIRATES
     DEFAULT_OBJECTIVES = [
@@ -563,7 +566,7 @@ class PirateAsteroid(BaseProps):
     ]
 
 
-class PirateGasMiner(BaseProps):
+class PirateGasMiner(PirateStation):
     POPULATION = POP_SMALL_BASE
     DEFENCE_EFFECT = DEFENCE_PIRATES
     DEFAULT_OBJECTIVES = [
@@ -571,7 +574,7 @@ class PirateGasMiner(BaseProps):
     ]
 
 
-class JunkerBase(BaseProps):
+class JunkerBase(PirateStation):
     POPULATION = POP_SMALL_BASE
     DEFENCE_EFFECT = DEFENCE_PIRATES
     DEFAULT_OBJECTIVES = [

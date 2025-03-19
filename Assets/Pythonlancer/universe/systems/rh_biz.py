@@ -223,7 +223,7 @@ class BizmarkTrading(BizmarkMember, main_objects.TradingBase):
         Q.Engine(RH_CIV, eq_classes=[1, 3, 5]),
     )
 
-    BASE_PROPS = meta.TradingBase(
+    BASE_PROPS = meta.LargeTradingBase(
         objectives=[
             meta.HaveGreenhouse(),
         ]
@@ -317,6 +317,8 @@ class BizmarkTopPirate(BizmarkMember, main_objects.PirateStation):
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.RheinlandPirateDealers
+
+    CALC_STORE = True
 
 
 class BizmarkRightPirate(BizmarkMember, main_objects.PirateAsteroid):

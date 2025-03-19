@@ -352,8 +352,9 @@ class Tau29LargeStation(Tau29Member, main_objects.GasMiningStation):
     NEBULA_ZONES = [Tau29Nebula]
     AST_EXCLUSION_ZONE_SIZE = 6000
 
-    BASE_PROPS = meta.GasMiningStation(
+    BASE_PROPS = meta.LargeTradingBase(
         objectives=[
+            meta.CollectGas(),
             meta.HaveSolarPanels(),
         ]
     )

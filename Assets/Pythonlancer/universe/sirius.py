@@ -428,6 +428,7 @@ class rh_kgb(system.RheinlandFirst, system.System, system.SiriusSystem):
     ALLOW_SYNC = True
     ENABLE_POPULATION = False
 
+    SCAN_JUMP = False
     JUMP_EFFECT = jump_effect.Dark
     NAVMAP_POS = '10, 7'
     NAVMAP_SCALE = 1

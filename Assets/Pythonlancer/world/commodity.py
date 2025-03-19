@@ -46,6 +46,8 @@ class Commodity(MarketCommodity):
     POD = None
     ICON = None
 
+    IS_COMPLEX = False
+
     DEFAULT_PRICE = 100
     PRICE_BEST_RATE = 0.25
     PRICE_CHEAP_RATE = 0.5
@@ -118,10 +120,12 @@ class Alloy:
 
 class Product:
     DEFAULT_PRICE = 400
+    IS_COMPLEX = True
 
 
 class Luxury:
     DEFAULT_PRICE = 500
+    IS_COMPLEX = True
 
 
 class TerraformMinerals(BasicCommodity, Commodity):
