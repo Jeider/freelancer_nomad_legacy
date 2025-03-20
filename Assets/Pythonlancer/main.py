@@ -54,12 +54,16 @@ def main():
     DataFolder.sync_equip('st_equip', GENERATED, core.misc_equip.get_st_equip())
     DataFolder.sync_equip('st_good', GENERATED, core.misc_equip.get_st_good())
 
+    DataFolder.sync_equip('comm_equip', GENERATED, core.store.get_comm_equip())
+    DataFolder.sync_equip('comm_good', GENERATED, core.store.get_comm_good())
+
     DataFolder.sync_equip('select_equip', GENERATED, core.misc_equip.get_select_equip())
 
     DataFolder.sync_equip('ship_packages', GENERATED, core.shiparch.get_ship_goods())
 
     DataFolder.sync_equip('market_misc', GENERATED, core.universe.get_market_equip())
     DataFolder.sync_equip('market_ships', GENERATED, core.universe.get_market_ships())
+    DataFolder.sync_equip('market_commodities', GENERATED, core.universe.get_market_commodities())
 
     DataFolder.sync_lootprops(
         LootpropsTemplate().format({'generated': DIVIDER.join(lootprops_data)})

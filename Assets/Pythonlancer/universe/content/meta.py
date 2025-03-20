@@ -220,7 +220,7 @@ class AlloyProducerJob(StaticObjective):
 
     def get_actions(self):
         return [
-            # CommConsume(METAL),
+            CommConsume(METAL),
             CommConsume(NIOBIUM),
             CommConsume(URANIUM),
             CommConsume(BERILIUM),
@@ -247,7 +247,7 @@ class JunkerJob(StaticObjective):
 
     def get_actions(self):
         return [
-            # CommConsume(METAL),
+            CommConsume(METAL),
 
             CommProduce(SHIP_HULL_PANELS, PRODUCE_BAD),
             CommProduce(ALLOY_BASIC, PRODUCE_BAD),
@@ -324,7 +324,7 @@ class FreeportObjective(SelectedResellObjective):
             CommResell(BASIC_OXYGEN),
             CommResell(BASIC_CONSUMER),
             CommResell(BASIC_MEDS),
-            # CommResell(METAL),
+            CommResell(METAL),
             CommResell(ALLOY_BASIC),
         ]
 
@@ -336,7 +336,7 @@ class BaseProps:
     DEFAULT_OBJECTIVES = []
     DEFENCE_EFFECT = 0
     RESELL_GOODS_DEPTH_RANGE = 0
-    RESELL_PRODUCTS_ONLY = False
+    RESELL_TYPES = []
     # DEFENCE_HIGH
     # DEFENCE_MEDIUM: +light arms cost, +repair cost
     # DEFENCE_SMALL: ++light arms cost, ++repair cost
@@ -397,6 +397,9 @@ class LargePlanet(BaseProps):
 class ManhattanSuperPlanet(LargePlanet):
     RESELL_GOODS_DEPTH_RANGE = 8
     RESELL_PRODUCTS_ONLY = True
+    RESELL_TYPES = [
+        BASIC, DEFAULT, PRODUCT, LUXURY
+    ]
 
 
 class MiningPlanet(BaseProps):
@@ -406,7 +409,7 @@ class MiningPlanet(BaseProps):
         CommConsume(BASIC_OXYGEN),
         CommConsume(BASIC_CONSUMER),
         CommConsume(BASIC_MEDS),
-        # CommConsume(METAL),
+        CommConsume(METAL),
         CommConsume(ALLOY_BASIC),
         CommConsume(POWER_SOLAR),
         CommConsume(STATION_PANELS),
@@ -422,7 +425,7 @@ class ResortPlanet(BaseProps):
         CommProduce(BASIC_OXYGEN, PRODUCE_BEST),
         CommResell(BASIC_CONSUMER),
         CommProduce(BASIC_MEDS, PRODUCE_NORMAL),
-        # CommConsume(METAL),
+        CommConsume(METAL),
         CommConsume(ALLOY_BASIC),
         CommConsume(POWER_SOLAR),
         CommResell(POWER_SOLAR_EMPTY),
@@ -438,7 +441,7 @@ class WaterPlanet(BaseProps):
         CommProduce(BASIC_OXYGEN, PRODUCE_BEST),
         CommConsume(BASIC_CONSUMER),
         CommConsume(BASIC_MEDS),
-        # CommConsume(METAL),
+        CommConsume(METAL),
         CommConsume(ALLOY_BASIC),
         CommConsume(POWER_SOLAR),
         CommResell(POWER_SOLAR_EMPTY),
@@ -451,7 +454,7 @@ class SpaceStation(BaseProps):
         CommConsume(BASIC_OXYGEN),
         CommConsume(BASIC_CONSUMER),
         CommConsume(BASIC_MEDS),
-        # CommConsume(METAL),
+        CommProduce(METAL, PRODUCE_BAD),
         CommConsume(ALLOY_BASIC),
         CommConsume(GAS_FUEL),
         CommConsume(STATION_PANELS),
@@ -482,6 +485,9 @@ class Megabase(SpaceStation):
 
 class MegaTradingbase(Megabase):
     RESELL_GOODS_DEPTH_RANGE = 10
+    RESELL_TYPES = [
+        BASIC, DEFAULT, PRODUCT, LUXURY, ALLOY
+    ]
 
 
 class MediumStation(SpaceStation):
@@ -491,11 +497,17 @@ class MediumStation(SpaceStation):
 class LargeTradingBase(MediumStation):
     POPULATION = POP_MEDIUM_BASE
     RESELL_GOODS_DEPTH_RANGE = 8
+    RESELL_TYPES = [
+        PRODUCT, LUXURY, ALLOY
+    ]
 
 
 class TradingBase(MediumStation):
     POPULATION = POP_MEDIUM_BASE
     RESELL_GOODS_DEPTH_RANGE = 6
+    RESELL_TYPES = [
+        PRODUCT, ALLOY
+    ]
 
 
 class Shipyard(SpaceStation):
@@ -514,7 +526,10 @@ class Refinery(SpaceStation):
 
 class Freeport(SpaceStation):
     POPULATION = POP_SMALL_BASE
-    # RESELL_GOODS_DEPTH_RANGE = 3
+    RESELL_GOODS_DEPTH_RANGE = 5
+    RESELL_TYPES = [
+        BASIC, DEFAULT, CONTRABAND
+    ]
 
 
 class Outpost(SpaceStation):

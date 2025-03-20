@@ -68,7 +68,23 @@ class MarketShip(MarketItem):
 
 
 class MarketCommodity(MarketEquip):
-    pass
+    MARKET_STOCK_AVAILABLE = '150, 500, 0'
+
+    def in_stock(self):
+        raise NotImplementedError
+
+    def get_price_percent(self):
+        raise NotImplementedError
+
+    def get_market_stock(self):
+        return (
+            self.MARKET_STOCK_AVAILABLE
+            if self.in_stock() else
+            self.MARKET_STOCK_UNAVAILABLE
+        )
+
+    def get_market_price_multiplier(self):
+        return self.get_price_percent()
 
 
 class Market:

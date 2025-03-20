@@ -1,5 +1,9 @@
 import operator
 
+from world.names import DEFAULT, BASIC, ROID, ALLOY, PRODUCT, LUXURY, CONTRABAND
+
+from universe.markets import Market, MarketCommodity
+
 from universe.content import meta
 from universe.content.main_objects import Jumpgate, DockableObject
 
@@ -160,6 +164,12 @@ class Base:
         self.load_resell_data()
         self.load_commodities()
 
+    def get_commodity_market(self):
+        return Market(
+            base_nickname=self.get_name(),
+            items=self.base_commodities_db.values(),
+        )
+
     def get_debug_table(self):
         return (f'[{self.get_name()}]\n'
                 f'{self.get_debug_commodities()}')
@@ -181,15 +191,34 @@ class Base:
 
     def load_resell_data(self):
         resell_commodities = set()
-        if len(self.graph.resellers):
-
-            print(f'BASE RESSELLER: {self.get_name()}')
+        # if len(self.graph.resellers):
+        #     print(f'BASE RESSELLER: {self.get_name()}')
         for reseller in self.graph.resellers:
             reseller_base = self.system.universe_manager.get_base_by_name(reseller.get_base_nickname())
-            print(reseller_base.system_object)
+            # print(reseller_base.system_object)
             for product in reseller_base.get_products():
-                if not self.props.RESELL_PRODUCTS_ONLY or product.is_complex_product():
-                    resell_commodities.add(product.get_comm_name())
+                for kind in self.props.RESELL_TYPES:
+                    if kind == DEFAULT and product.commodity.IS_DEFAULT:
+                        resell_commodities.add(product.get_comm_name())
+                        continue
+                    if kind == BASIC and product.commodity.IS_BASIC:
+                        resell_commodities.add(product.get_comm_name())
+                        continue
+                    if kind == ROID and product.commodity.IS_ROID:
+                        resell_commodities.add(product.get_comm_name())
+                        continue
+                    if kind == ALLOY and product.commodity.IS_ALLOY:
+                        resell_commodities.add(product.get_comm_name())
+                        continue
+                    if kind == PRODUCT and product.commodity.IS_DEFAULT:
+                        resell_commodities.add(product.get_comm_name())
+                        continue
+                    if kind == LUXURY and product.commodity.IS_LUXURY:
+                        resell_commodities.add(product.get_comm_name())
+                        continue
+                    if kind == CONTRABAND and product.commodity.IS_CONTRABAND:
+                        resell_commodities.add(product.get_comm_name())
+                        continue
 
         self.load_resell_commodities(resell_commodities)
 
@@ -215,15 +244,14 @@ class Base:
                     depth = self.graph.get_depth_by_base_name(producer.get_base_name())
                     depth_map.append((depth, producer))
                 except KeyError:
-                    failed = 1
-                    print(f'BASE: {self.get_name()}')
-                    print(f'COMM: {base_comm.get_comm_name()}')
-                    print(f'Graph not contain base {producer.get_base_name()}')
-                    # debug_graph = self.get_base_graph()
-                    # raise Exception(f'Graph not contain base {producer.get_base_name()}')
-
-            if failed == 1:
-                continue
+                    # failed = 1
+                    # print(f'BASE: {self.get_name()}')
+                    # print(f'COMM: {base_comm.get_comm_name()}')
+                    # print(f'Graph not contain base {producer.get_base_name()}')
+                    raise Exception(f'Graph not contain base {producer.get_base_name()}')
+            #
+            # if failed == 1:
+            #     continue
 
             cheapest_producers_price = []
             min_depth = (min(depth_map, key=operator.itemgetter(0)))[0]
@@ -245,7 +273,7 @@ class Base:
             base_comm.set_purchase_price(purchase_price)
 
 
-class BaseCommodity:
+class BaseCommodity(MarketCommodity):
 
     def __init__(self, base, universe_commodity):
         self.base = base
@@ -255,8 +283,27 @@ class BaseCommodity:
         self.produce = 0
         self.purchase_price = 0
 
-    def is_complex_product(self):
-        return self.universe_commodity.commodity.IS_COMPLEX
+    @property
+    def commodity(self):
+        return self.universe_commodity.commodity
+
+    def get_nickname(self):
+        return self.commodity.get_nickname()
+
+    def get_price(self):
+        if self.is_consume():
+            purchase_price = self.get_purchase_price()
+            if purchase_price == 0:
+                raise Exception(f'No purchase price for commodity {self.get_comm_name()} on {self.get_base_name()}')
+            return purchase_price
+        elif self.is_produce():
+            return self.get_produce_price()
+
+        return self.commodity.get_default_price()
+
+    def get_price_percent(self):
+        price_pct = ((self.get_price() * 100) / self.commodity.get_default_price()) / 100
+        return f'{price_pct}'  # ;;; {self.get_price()} -- ({self.get_debug_mark()})'
 
     def get_base_name(self):
         return self.base.get_name()
@@ -316,14 +363,17 @@ class BaseCommodity:
         else:
             raise Exception('Unknown state %d' % state)
 
-    def get_debug_info(self):
+    def get_debug_mark(self):
         if self.is_produce():
-            return f'{self.get_comm_name()} = {self.get_produce_price()} (produce)'
+            return 'produce'
 
-        info = (
-            'resell'
-            if self.resell
-            else 'consume'
-        )
+        if self.resell:
+            return 'resell'
 
-        return f'{self.get_comm_name()} = {self.get_purchase_price()} ({info})'
+        if self.consume:
+            return 'consume'
+
+        return 'default'
+
+    def get_debug_info(self):
+        return f'{self.get_comm_name()} = {self.get_purchase_price()} ({self.get_debug_mark()})'

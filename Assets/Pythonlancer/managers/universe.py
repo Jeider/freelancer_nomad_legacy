@@ -97,12 +97,17 @@ class UniverseManager:
                     if dockable.have_trader() and dockable.CALC_STORE:
                         system.add_base(dockable)
 
-
     def get_market_equip(self):
         return DIVIDER.join([dealer.get_market_content() for dealer in self.equip_dealers])
 
     def get_market_ships(self):
         return DIVIDER.join([dealer.get_market_content() for dealer in self.ship_dealers])
+
+    def get_market_commodities(self):
+        return DIVIDER.join([base.get_commodity_market().get_market_content() for base in self.bases_list])
+
+    def get_bases_store_debug_info(self):
+        return DIVIDER.join([base.get_debug_table() for base in self.bases_list])
 
     def get_system_loadouts(self):
         return DIVIDER.join([loadout.build_loadout() for loadout in self.loadouts])
@@ -145,9 +150,6 @@ class UniverseManager:
 
     def get_dock_key_file_content(self):
         return DockKeyTemplate().format({'generated': self.get_dock_key()})
-
-    def get_bases_store_debug_info(self):
-        return DIVIDER.join([base.get_debug_table() for base in self.bases_list])
 
     def sync_data(self):
         if not self.core.write:

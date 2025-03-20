@@ -43,6 +43,14 @@ CO_OUTCAST = 15
 
 # COMMODITY
 
+DEFAULT = 'default'
+BASIC = 'basic'
+ROID = 'roid'
+ALLOY = 'alloy'
+PRODUCT = 'product'
+LUXURY = 'luxury'
+CONTRABAND = 'contraband'
+
 TERRAFORM_MINERALS = 'terraform_minerals'
 TERRAFORM_GASES = 'terraform_gases'
 LASER_BEAM_PARS = 'laserbeam_parts'

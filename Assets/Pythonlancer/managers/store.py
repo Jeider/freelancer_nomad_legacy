@@ -1,5 +1,6 @@
-from world.commodity import Commodity, DefaultCommodity, BasicCommodity, Roid, Alloy, Product
-from world.names import *
+from managers.tools.helpers import ManagerHelper
+
+from world.commodity import Commodity
 
 
 class UniverseCommodity:
@@ -66,3 +67,9 @@ class StoreManager:
     def compile_commodities(self):
         for u_comm in self.universe_comms_list:
             u_comm.scan_bases()
+
+    def get_comm_equip(self):
+        return ManagerHelper.extract_equips(self.comms_list)
+
+    def get_comm_good(self):
+        return ManagerHelper.extract_goods(self.comms_list)
