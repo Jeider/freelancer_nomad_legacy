@@ -11,11 +11,10 @@ from text.dividers import SINGLE_DIVIDER
 
 
 class BaseEdge:
-    def __init__(self, graph, root_object, jumper=True, depth=0):
+    def __init__(self, graph, root_object, depth=0):
         self.graph = graph
         self.root_object = root_object
         self.edges = []
-        self.jumper = jumper
         self.depth = depth
 
     def add_edge(self, edge):
@@ -42,7 +41,7 @@ class BaseEdge:
     def find_target_jumpgate(self, depth):
         target_jumpgate = self.root_object.get_target_jumpgate()
         if target_jumpgate.system not in self.graph.loaded_systems and target_jumpgate.system.SCAN_JUMP:
-            new_edge = BaseEdge(self.graph, target_jumpgate, jumper=False, depth=depth)
+            new_edge = BaseEdge(self.graph, target_jumpgate, depth=depth)
             self.add_edge(new_edge)
             self.graph.add_used_object(target_jumpgate, depth)
             self.graph.add_loaded_system(target_jumpgate.system)
@@ -198,25 +197,15 @@ class Base:
             # print(reseller_base.system_object)
             for product in reseller_base.get_products():
                 for kind in self.props.RESELL_TYPES:
-                    if kind == DEFAULT and product.commodity.IS_DEFAULT:
-                        resell_commodities.add(product.get_comm_name())
-                        continue
-                    if kind == BASIC and product.commodity.IS_BASIC:
-                        resell_commodities.add(product.get_comm_name())
-                        continue
-                    if kind == ROID and product.commodity.IS_ROID:
-                        resell_commodities.add(product.get_comm_name())
-                        continue
-                    if kind == ALLOY and product.commodity.IS_ALLOY:
-                        resell_commodities.add(product.get_comm_name())
-                        continue
-                    if kind == PRODUCT and product.commodity.IS_DEFAULT:
-                        resell_commodities.add(product.get_comm_name())
-                        continue
-                    if kind == LUXURY and product.commodity.IS_LUXURY:
-                        resell_commodities.add(product.get_comm_name())
-                        continue
-                    if kind == CONTRABAND and product.commodity.IS_CONTRABAND:
+                    if any((
+                            kind == DEFAULT and product.commodity.IS_DEFAULT,
+                            kind == BASIC and product.commodity.IS_BASIC,
+                            kind == ROID and product.commodity.IS_ROID,
+                            kind == ALLOY and product.commodity.IS_ALLOY,
+                            kind == PRODUCT and product.commodity.IS_DEFAULT,
+                            kind == LUXURY and product.commodity.IS_LUXURY,
+                            kind == CONTRABAND and product.commodity.IS_CONTRABAND,
+                            )):
                         resell_commodities.add(product.get_comm_name())
                         continue
 

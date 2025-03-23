@@ -45,6 +45,16 @@ class IDsDatabase:
         return ''.join([i.compile() for i in self.ids])
 
 
+class IndexDatabase:
+    def __init__(self, start_id):
+        self.last_id = start_id
+        self.ids = []
+
+    def get_next_id(self):
+        self.last_id += 1
+        return self.last_id
+
+
 class StringCompiler(object):
     STRING_ITEM_TEMPLATE = '''{name_id}
 {type}

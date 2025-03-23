@@ -1,5 +1,6 @@
 from world.names import *
 from text import ru_info_commodity as ru_info
+from text.infocards import InfocardBuilder
 
 
 POD_RAWMATS = 'rawmats'
@@ -75,7 +76,7 @@ jump_dist = 4
 class Commodity:
     ALIAS = None
     RU_NAME = None
-    RU_INFO = None
+    RU_INFO = ''
     NICKNAME = None
     POD = None
     ICON = None
@@ -111,7 +112,12 @@ class Commodity:
         self.ids = ids
 
         self.ids_name = ids.new_name(self.get_ru_name())
-        self.ids_info = ids.new_info('')  # TODO: info
+        self.ids_info = ids.new_info(
+            InfocardBuilder.build_equip_infocard(
+                self.get_ru_name(),
+                self.get_ru_info()
+            )
+        )
 
         self.good_price_multiplier = 5
         self.bad_price_multiplier = 2
@@ -133,6 +139,9 @@ class Commodity:
 
     def get_ru_name(self):
         return self.RU_NAME
+
+    def get_ru_info(self):
+        return [self.RU_INFO]
 
     def get_default_price(self):
         return self.DEFAULT_PRICE
