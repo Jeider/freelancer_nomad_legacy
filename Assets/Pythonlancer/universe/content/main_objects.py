@@ -690,6 +690,7 @@ class DockableObject(StaticObject):
     WEAPON_FACTION = None
     MISC_EQUIP_TYPE = None
     BASE_PROPS = None
+    RU_NAME = 'База'
 
     INTERIOR_BG1 = None
     INTERIOR_BG2 = None
@@ -732,6 +733,9 @@ BGCS_base_run_by = W02bF44'''
         self.key = None
         if self.LOCKED_DOCK:
             self.key = LockedDockKey(self)
+
+    def get_ru_name(self):
+        return self.RU_NAME
 
     def get_key_name(self):
         if not self.key:

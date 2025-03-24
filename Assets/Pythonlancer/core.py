@@ -1,4 +1,5 @@
 from managers.ids import IDsManager
+from managers.chars import CharacterManager
 from managers.misc_equip import MiscEquipManager
 from managers.weapon import WeaponManager
 from managers.population import PopulationManager
@@ -14,6 +15,7 @@ class LancerCore(object):
         self.write = write
 
         self.ids = IDsManager(self)
+        self.chars = CharacterManager(self)
         self.misc_equip = MiscEquipManager(self)
         self.weapons = WeaponManager(self)
         self.shiparch = ShiparchManager(self)

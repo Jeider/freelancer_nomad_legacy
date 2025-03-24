@@ -76,6 +76,9 @@ jump_dist = 4
 class Commodity:
     ALIAS = None
     RU_NAME = None
+    RU_NAME_REL1 = None
+    RU_NAME_REL2 = None
+    RU_NAME_REL3 = None
     RU_INFO = ''
     NICKNAME = None
     POD = None
@@ -139,6 +142,18 @@ class Commodity:
 
     def get_ru_name(self):
         return self.RU_NAME
+
+    def get_ru_name_std(self):
+        return self.RU_NAME.lower()
+
+    def get_ru_name_rel1(self):
+        return self.RU_NAME_REL1.lower()
+
+    def get_ru_name_rel2(self):
+        return self.RU_NAME_REL2.lower()
+
+    def get_ru_name_rel3(self):
+        return self.RU_NAME_REL3.lower()
 
     def get_ru_info(self):
         return [self.RU_INFO]
@@ -267,6 +282,9 @@ class Contraband:
 class TerraformMinerals(Product, Commodity):
     ALIAS = TERRAFORM_MINERALS
     RU_NAME = 'Минеральные удобрения'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'минеральных удобрений'
+    RU_NAME_REL3 = 'минеральных удобрениях'
     NICKNAME = 'comm_terraform_minerals'
     POD = POD_FOODS
     ICON = ICON_FERTILIZER
@@ -276,6 +294,9 @@ class TerraformMinerals(Product, Commodity):
 class TerraformGases(Product, Commodity):
     ALIAS = TERRAFORM_GASES
     RU_NAME = 'Терраформирующие газы'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'терраформирующих газов'
+    RU_NAME_REL3 = 'терраформирующих газах'
     NICKNAME = 'comm_terraform_gases'
     POD = POD_FOODS
     ICON = ICON_CHEMICAL
@@ -286,6 +307,9 @@ class TerraformGases(Product, Commodity):
 class LaserBeamParts(Product, Commodity):
     ALIAS = LASER_BEAM_PARS
     RU_NAME = 'Компоненты излучателя'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'компонентов излучателя'
+    RU_NAME_REL3 = 'компонентах излучателя'
     NICKNAME = 'comm_laserbeam_components'
     POD = POD_MACHINES
     ICON = ICON_MACHINES
@@ -296,6 +320,9 @@ class LaserBeamParts(Product, Commodity):
 class BasicWater(BasicCommodity, Commodity):
     ALIAS = BASIC_WATER
     RU_NAME = 'Вода'
+    RU_NAME_REL1 = 'Воду'
+    RU_NAME_REL2 = 'воды'
+    RU_NAME_REL3 = 'воде'
     NICKNAME = 'comm_basic_water'
     POD = POD_RAWMATS
     ICON = ICON_WATERROID
@@ -305,6 +332,9 @@ class BasicWater(BasicCommodity, Commodity):
 class BasicOxygen(BasicCommodity, Commodity):
     ALIAS = BASIC_OXYGEN
     RU_NAME = 'Кислород'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'кислорода'
+    RU_NAME_REL3 = 'кислороде'
     NICKNAME = 'comm_basic_oxygen'
     POD = POD_HIGHTECH
     ICON = ICON_CHEMICAL
@@ -314,6 +344,9 @@ class BasicOxygen(BasicCommodity, Commodity):
 class BasicFood(BasicCommodity, Commodity):
     ALIAS = BASIC_FOOD
     RU_NAME = 'Синтетическая пища'
+    RU_NAME_REL1 = 'Синтетическую пищу'
+    RU_NAME_REL2 = 'синтетической пищи'
+    RU_NAME_REL3 = 'синтетической пище'
     NICKNAME = 'comm_basic_food'
     POD = POD_FOODS
     ICON = ICON_FOOD
@@ -323,6 +356,9 @@ class BasicFood(BasicCommodity, Commodity):
 class BasicConsumer(BasicCommodity, Commodity):
     ALIAS = BASIC_CONSUMER
     RU_NAME = 'Ширпотреб'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'ширпотреба'
+    RU_NAME_REL3 = 'ширпотребе'
     NICKNAME = 'comm_basic_consumer'
     POD = POD_CONSUMER
     ICON = ICON_CONSUMER
@@ -332,6 +368,9 @@ class BasicConsumer(BasicCommodity, Commodity):
 class BasicMeds(BasicCommodity, Commodity):
     ALIAS = BASIC_MEDS
     RU_NAME = 'Медпрепараты'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'медпрепаратов'
+    RU_NAME_REL3 = 'медпрепаратах'
     NICKNAME = 'comm_basic_meds'
     POD = POD_MEDICAL
     ICON = ICON_DRUGS
@@ -341,6 +380,9 @@ class BasicMeds(BasicCommodity, Commodity):
 class BasicWeapons(BasicCommodity, Commodity):
     ALIAS = BASIC_WEAPONS
     RU_NAME = 'Стрелковое оружие'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'стрелкового оружия'
+    RU_NAME_REL3 = 'стрелковом оружии'
     NICKNAME = 'comm_basic_weapons'
     POD = POD_MUNITIONS
     ICON = ICON_LIGHTARMS
@@ -350,6 +392,9 @@ class BasicWeapons(BasicCommodity, Commodity):
 class BasicToxic(BasicCommodity, Commodity):
     ALIAS = BASIC_TOXIC
     RU_NAME = 'Токсичные отходы'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'токсичных отходов'
+    RU_NAME_REL3 = 'токсичных отходах'
     NICKNAME = 'comm_basic_toxic'
     POD = POD_CONTRABAND
     ICON = ICON_TOXIC
@@ -359,6 +404,9 @@ class BasicToxic(BasicCommodity, Commodity):
 class Metal(DefaultCommodity, Commodity):
     ALIAS = METAL
     RU_NAME = 'Металлолом'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'металлолома'
+    RU_NAME_REL3 = 'металлоломе'
     NICKNAME = 'comm_scrap_metal'
     POD = POD_REFINEDMATS
     ICON = ICON_REFINEDMATS
@@ -367,6 +415,9 @@ class Metal(DefaultCommodity, Commodity):
 class PowerSolarEmpty(DefaultCommodity, Commodity):
     ALIAS = POWER_SOLAR_EMPTY
     RU_NAME = 'Разряженные генераторы'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'разряженных генераторов'
+    RU_NAME_REL3 = 'разряженных генераторах'
     NICKNAME = 'comm_power_solar_empty'
     POD = POD_HIGHTECH
     ICON = ICON_BATTERY
@@ -375,6 +426,9 @@ class PowerSolarEmpty(DefaultCommodity, Commodity):
 class PowerSolar(DefaultCommodity, Commodity):
     ALIAS = POWER_SOLAR
     RU_NAME = 'Заряженные генераторы'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'заряженных генераторов'
+    RU_NAME_REL3 = 'заряженных генераторах'
     NICKNAME = 'comm_power_solar'
     POD = POD_HIGHTECH
     ICON = ICON_BATTERY
@@ -384,6 +438,9 @@ class PowerSolar(DefaultCommodity, Commodity):
 class AlloyBasic(DefaultCommodity, Commodity):
     ALIAS = ALLOY_BASIC
     RU_NAME = 'Простой сплав'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'простого сплава'
+    RU_NAME_REL3 = 'простом сплаве'
     NICKNAME = 'comm_alloy_basic'
     POD = POD_INDUSTRIAL
     ICON = ICON_METAL
@@ -393,6 +450,9 @@ class AlloyBasic(DefaultCommodity, Commodity):
 class GasBalloons(DefaultCommodity, Commodity):
     ALIAS = GAS_BALLOONS
     RU_NAME = 'Газовые баллоны'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'газовых баллонов'
+    RU_NAME_REL3 = 'газовых баллонах'
     NICKNAME = 'comm_gas_balloons'
     POD = POD_TRANSPARTS
     ICON = ICON_HFUEL
@@ -401,6 +461,9 @@ class GasBalloons(DefaultCommodity, Commodity):
 class GasFuel(DefaultCommodity, Commodity):
     ALIAS = GAS_FUEL
     RU_NAME = 'Газовое топливо'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'газового топлива'
+    RU_NAME_REL3 = 'газовом топливе'
     NICKNAME = 'comm_gas_fuel'
     POD = POD_TRANSPARTS
     ICON = ICON_HFUEL
@@ -410,6 +473,9 @@ class GasFuel(DefaultCommodity, Commodity):
 class ShipHullPanels(Product, Commodity):
     ALIAS = SHIP_HULL_PANELS
     RU_NAME = 'Панели обшивки корабля'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'панелей обшивки корабля'
+    RU_NAME_REL3 = 'панелях обшивки корабля'
     NICKNAME = 'comm_shiphull_panels'
     POD = POD_REFINEDMATS
     ICON = ICON_HULLPANELS
@@ -418,6 +484,9 @@ class ShipHullPanels(Product, Commodity):
 class Diamonds(Roid, Commodity):
     ALIAS = DIAMONDS
     RU_NAME = 'Алмазы'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'алмазов'
+    RU_NAME_REL3 = 'алмазах'
     NICKNAME = 'comm_roid_diamonds'
     POD = POD_RAWMATS
     ICON = ICON_DIAMONDS
@@ -427,6 +496,9 @@ class Diamonds(Roid, Commodity):
 class LuxuryDiamonds(Luxury, Commodity):
     ALIAS = LUXURY_DIAMONDS
     RU_NAME = 'Алмазные украшения'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'алмазных украшений'
+    RU_NAME_REL3 = 'алмазных украшениях'
     NICKNAME = 'comm_luxury_diamonds'
     POD = POD_CONSUMER
     ICON = ICON_DIAMONDS
@@ -436,6 +508,9 @@ class LuxuryDiamonds(Luxury, Commodity):
 class Niobium(Roid, Commodity):
     ALIAS = NIOBIUM
     RU_NAME = 'Ниобий'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'ниобия'
+    RU_NAME_REL3 = 'ниобии'
     NICKNAME = 'comm_roid_niobium'
     POD = POD_RAWMATS
     ICON = ICON_ROID
@@ -445,6 +520,9 @@ class Niobium(Roid, Commodity):
 class ProdMachines(Product, Commodity):
     ALIAS = PROD_MACHINES
     RU_NAME = 'Промышленные станки'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'промышленных станков'
+    RU_NAME_REL3 = 'промышленных станках'
     NICKNAME = 'comm_prod_machines'
     POD = POD_MACHINES
     ICON = ICON_INDUSTRIAL
@@ -454,6 +532,9 @@ class ProdMachines(Product, Commodity):
 class StationPanels(Product, Commodity):
     ALIAS = STATION_PANELS
     RU_NAME = 'Панели обшивки станций'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'панелей обшивки станций'
+    RU_NAME_REL3 = 'панелях обшивки станций'
     NICKNAME = 'comm_station_panels'
     POD = POD_REFINEDMATS
     ICON = ICON_HULLPANELS
@@ -463,6 +544,9 @@ class StationPanels(Product, Commodity):
 class AlloyHeavy(Alloy, Commodity):
     ALIAS = ALLOY_HEAVY
     RU_NAME = 'Суперсплав'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'суперсплава'
+    RU_NAME_REL3 = 'суперсплаве'
     NICKNAME = 'comm_alloy_heavy'
     POD = POD_INDUSTRIAL
     ICON = ICON_METAL
@@ -472,6 +556,9 @@ class AlloyHeavy(Alloy, Commodity):
 class RoidMinerParts(Product, Commodity):
     ALIAS = ROID_MINER_PARTS
     RU_NAME = 'Детали рудокопа'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'деталей рудокопа'
+    RU_NAME_REL3 = 'деталях рудокопа'
     NICKNAME = 'comm_roidminer_parts'
     POD = POD_MACHINES
     ICON = ICON_INDUSTRIAL
@@ -481,6 +568,9 @@ class RoidMinerParts(Product, Commodity):
 class SmelterParts(Product, Commodity):
     ALIAS = SMELTER_PARTS
     RU_NAME = 'Детали плавильной установки'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'деталей плавильной установки'
+    RU_NAME_REL3 = 'деталях плавильной установки'
     NICKNAME = 'comm_smelter_parts'
     POD = POD_MACHINES
     ICON = ICON_INDUSTRIAL
@@ -488,7 +578,10 @@ class SmelterParts(Product, Commodity):
 
 class WaterExtra(Luxury, Commodity):
     ALIAS = WATER_EXTRA
-    RU_NAME = 'Чистая вода'
+    RU_NAME = 'Минеральная вода'
+    RU_NAME_REL1 = 'Минеральную воду'
+    RU_NAME_REL2 = 'минеральной воды'
+    RU_NAME_REL3 = 'минеральной воде'
     NICKNAME = 'comm_water_extra'
     POD = POD_RAWMATS
     ICON = ICON_WATERROID
@@ -498,6 +591,9 @@ class WaterExtra(Luxury, Commodity):
 class Berilium(Roid, Commodity):
     ALIAS = BERILIUM
     RU_NAME = 'Берилий'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'берилия'
+    RU_NAME_REL3 = 'берилии'
     NICKNAME = 'comm_roid_berilium'
     POD = POD_RAWMATS
     ICON = ICON_ROID
@@ -507,6 +603,9 @@ class Berilium(Roid, Commodity):
 class Nicollum(Roid, Commodity):
     ALIAS = NICOLLUM
     RU_NAME = 'Никель'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'никеля'
+    RU_NAME_REL3 = 'никеле'
     NICKNAME = 'comm_roid_nicollum'
     POD = POD_RAWMATS
     ICON = ICON_ROID
@@ -516,6 +615,9 @@ class Nicollum(Roid, Commodity):
 class LuxuryGoods(Luxury, Commodity):
     ALIAS = LUXURY_GOODS
     RU_NAME = 'Роскошные товары'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'роскошных товаров'
+    RU_NAME_REL3 = 'роскошных товарах'
     NICKNAME = 'comm_luxury_consumer'
     POD = POD_CONSUMER
     ICON = ICON_CONSUMER
@@ -524,7 +626,10 @@ class LuxuryGoods(Luxury, Commodity):
 
 class TLRParts(Product, Commodity):
     ALIAS = TLR_PARTS
-    RU_NAME = 'Детали торгового пути'
+    RU_NAME = 'Детали торговых путей'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'деталей торговых путей'
+    RU_NAME_REL3 = 'деталях торговых путей'
     NICKNAME = 'comm_tlr_parts'
     POD = POD_REFINEDMATS
     ICON = ICON_TLRPARTS
@@ -533,7 +638,10 @@ class TLRParts(Product, Commodity):
 
 class EngineParts(Product, Commodity):
     ALIAS = ENGINE_PARTS
-    RU_NAME = 'Детали двигателей'
+    RU_NAME = 'Компоненты двигателей'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'компонентов двигателей'
+    RU_NAME_REL3 = 'компонентах двигателей'
     NICKNAME = 'comm_engine_components'
     POD = POD_TRANSPARTS
     ICON = ICON_ENGINECOMP
@@ -543,6 +651,9 @@ class EngineParts(Product, Commodity):
 class JumpGateParts(Product, Commodity):
     ALIAS = JUMPGATE_PARTS
     RU_NAME = 'Детали гиперворот'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'деталей гиперворот'
+    RU_NAME_REL3 = 'деталях гиперворот'
     NICKNAME = 'comm_jumpgate_parts'
     POD = POD_REFINEDMATS
     ICON = ICON_TLRPARTS
@@ -552,6 +663,9 @@ class JumpGateParts(Product, Commodity):
 class AlloyTemperature(Alloy, Commodity):
     ALIAS = ALLOY_TEMPERATURE
     RU_NAME = 'Высокотемпературный сплав'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'высокотемпературного сплава'
+    RU_NAME_REL3 = 'высокотемпературном сплаве'
     NICKNAME = 'comm_alloy_temperature'
     POD = POD_INDUSTRIAL
     ICON = ICON_METAL
@@ -561,6 +675,9 @@ class AlloyTemperature(Alloy, Commodity):
 class MiningEquipment(Product, Commodity):
     ALIAS = MINING_EQUIPMENT
     RU_NAME = 'Горное оборудование'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'горного оборудования'
+    RU_NAME_REL3 = 'горном оборудовании'
     NICKNAME = 'comm_mining_equip'
     POD = POD_MACHINES
     ICON = ICON_INDUSTRIAL
@@ -570,6 +687,9 @@ class MiningEquipment(Product, Commodity):
 class Polymers(Product, Commodity):
     ALIAS = POLYMERS
     RU_NAME = 'Полимеры'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'полимеров'
+    RU_NAME_REL3 = 'полимерах'
     NICKNAME = 'comm_polymers'
     POD = POD_HIGHTECH
     ICON = ICON_CHEMICAL
@@ -578,6 +698,9 @@ class Polymers(Product, Commodity):
 class Uranium(Roid, Commodity):
     ALIAS = URANIUM
     RU_NAME = 'Уран'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'урана'
+    RU_NAME_REL3 = 'уране'
     NICKNAME = 'comm_roid_uranium'
     POD = POD_RAWMATS
     ICON = ICON_ROID
@@ -587,6 +710,9 @@ class Uranium(Roid, Commodity):
 class Plumbum(Roid, Commodity):
     ALIAS = PLUMBUM
     RU_NAME = 'Свинец'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'свинца'
+    RU_NAME_REL3 = 'свинце'
     NICKNAME = 'comm_roid_plumbum'
     POD = POD_RAWMATS
     ICON = ICON_ROID
@@ -596,6 +722,9 @@ class Plumbum(Roid, Commodity):
 class Reactors(Product, Commodity):
     ALIAS = REACTORS
     RU_NAME = 'Компоненты реактора'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'компонентов реактора'
+    RU_NAME_REL3 = 'компонентах реактора'
     NICKNAME = 'comm_reactors'
     POD = POD_HIGHTECH
     ICON = ICON_BATTERY
@@ -605,6 +734,9 @@ class Reactors(Product, Commodity):
 class MOXFuel(Product, Commodity):
     ALIAS = MOX_FUEL
     RU_NAME = 'Реактивное топливо'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'реактивного топлива'
+    RU_NAME_REL3 = 'реактивном топливе'
     NICKNAME = 'comm_mox_fuel'
     POD = POD_HIGHTECH
     ICON = ICON_CHEMICAL
@@ -614,6 +746,9 @@ class MOXFuel(Product, Commodity):
 class Ammunition(Product, Commodity):
     ALIAS = AMMUNITION
     RU_NAME = 'Тяжелые снаряды'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'тяжелых снарядов'
+    RU_NAME_REL3 = 'тяжелых снарядах'
     NICKNAME = 'comm_munitions'
     POD = POD_MUNITIONS
     ICON = ICON_MUNITIONS
@@ -623,6 +758,9 @@ class Ammunition(Product, Commodity):
 class LuxuryFood(Luxury, Commodity):
     ALIAS = LUXURY_FOOD
     RU_NAME = 'Роскошная пища'
+    RU_NAME_REL1 = 'Роскошную пищу'
+    RU_NAME_REL2 = 'роскошной пищи'
+    RU_NAME_REL3 = 'роскошной пище'
     NICKNAME = 'comm_luxury_food'
     POD = POD_FOODS
     ICON = ICON_GREATFOOD
@@ -632,6 +770,9 @@ class LuxuryFood(Luxury, Commodity):
 class AlloyRadiation(Commodity):
     ALIAS = ALLOY_RADIATION
     RU_NAME = 'Противорадиационный сплав'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'противорадиационного сплава'
+    RU_NAME_REL3 = 'противорадиационном сплаве'
     NICKNAME = 'comm_alloy_radiation'
     POD = POD_INDUSTRIAL
     ICON = ICON_METAL
@@ -641,6 +782,9 @@ class AlloyRadiation(Commodity):
 class GreenhouseParts(Product, Commodity):
     ALIAS = GREENHOUSE_PARTS
     RU_NAME = 'Оборудование оранжереи'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'оборудования оранжереи'
+    RU_NAME_REL3 = 'оборудовании оранжереи'
     NICKNAME = 'comm_greenhouse_parts'
     POD = POD_MACHINES
     ICON = ICON_REFINEDMATS
@@ -650,6 +794,9 @@ class GreenhouseParts(Product, Commodity):
 class DefenceSystems(Product, Commodity):
     ALIAS = DEFENCE_SYSTEMS
     RU_NAME = 'Защитные системы'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'защитных систем'
+    RU_NAME_REL3 = 'защитных системах'
     NICKNAME = 'comm_defence_systems'
     POD = POD_MUNITIONS
     ICON = ICON_MUNITIONS
@@ -658,6 +805,9 @@ class DefenceSystems(Product, Commodity):
 class Gold(Roid, Commodity):
     ALIAS = GOLD
     RU_NAME = 'Золото'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'золота'
+    RU_NAME_REL3 = 'золоте'
     NICKNAME = 'comm_roid_gold'
     POD = POD_RAWMATS
     ICON = ICON_ROID
@@ -667,6 +817,9 @@ class Gold(Roid, Commodity):
 class Silver(Roid, Commodity):
     ALIAS = SILVER
     RU_NAME = 'Серебро'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'серебра'
+    RU_NAME_REL3 = 'серебре'
     NICKNAME = 'comm_roid_silver'
     POD = POD_RAWMATS
     ICON = ICON_ROID
@@ -676,6 +829,9 @@ class Silver(Roid, Commodity):
 class Electronics(Product, Commodity):
     ALIAS = ELECTRONICS
     RU_NAME = 'Электроника'
+    RU_NAME_REL1 = 'Электронику'
+    RU_NAME_REL2 = 'электроники'
+    RU_NAME_REL3 = 'электронике'
     NICKNAME = 'comm_electronics'
     POD = POD_ELECTRONICS
     ICON = ICON_ELECTRONICS
@@ -685,6 +841,9 @@ class Electronics(Product, Commodity):
 class LuxuryGold(Luxury, Commodity):
     ALIAS = LUXURY_GOLD
     RU_NAME = 'Украшения'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'украшений'
+    RU_NAME_REL3 = 'украшенях'
     NICKNAME = 'comm_luxury_gold'
     POD = POD_CONSUMER
     ICON = ICON_METAL
@@ -694,6 +853,9 @@ class LuxuryGold(Luxury, Commodity):
 class OpticalChips(Product, Commodity):
     ALIAS = OPTICAL_CHIPS
     RU_NAME = 'Оптические чипы'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'оптических чипов'
+    RU_NAME_REL3 = 'оптических чипах'
     NICKNAME = 'comm_optical_chips'
     POD = POD_ELECTRONICS
     ICON = ICON_CHIP
@@ -702,6 +864,9 @@ class OpticalChips(Product, Commodity):
 class AlloyConductor(Alloy, Commodity):
     ALIAS = ALLOY_CONDUCTOR
     RU_NAME = 'Сверхпроводящий сплав'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'сверхпроводящего сплава'
+    RU_NAME_REL3 = 'сверхпроводящем сплаве'
     NICKNAME = 'comm_alloy_conductor'
     POD = POD_INDUSTRIAL
     ICON = ICON_METAL
@@ -711,6 +876,9 @@ class AlloyConductor(Alloy, Commodity):
 class GasMinerParts(Product, Commodity):
     ALIAS = GAS_MINER_PARTS
     RU_NAME = 'Детали для газодобытчика'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'деталей для газодобытчика'
+    RU_NAME_REL3 = 'деталях для газодобытчика'
     NICKNAME = 'comm_gasminer_parts'
     POD = POD_MACHINES
     ICON = ICON_INDUSTRIAL
@@ -720,6 +888,9 @@ class GasMinerParts(Product, Commodity):
 class SolarPlantParts(Product, Commodity):
     ALIAS = SOLAR_PLANT_PARTS
     RU_NAME = 'Компоненты солн. генератора'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'компонентов солнечного генератора'
+    RU_NAME_REL3 = 'компонентах солнечного генератора'
     NICKNAME = 'comm_solarplant_parts'
     POD = POD_MACHINES
     ICON = ICON_INDUSTRIAL
@@ -728,6 +899,9 @@ class SolarPlantParts(Product, Commodity):
 class ResearchEquip(Product, Commodity):
     ALIAS = RESEARCH_EQUIP
     RU_NAME = 'Точное оборудование'
+    RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'точного оборудования'
+    RU_NAME_REL3 = 'точном оборудовании'
     NICKNAME = 'comm_research_equip'
     POD = POD_HIGHTECH
     ICON = ICON_INDUSTRIAL

@@ -22,6 +22,14 @@ class TheID:
         )
 
 
+class TheIndex:
+    def __init__(self, id_value):
+        self.id = id_value
+
+    def __str__(self):
+        return str(self.id)
+
+
 class IDsDatabase:
     def __init__(self, start_id):
         self.last_id = start_id
@@ -53,6 +61,11 @@ class IndexDatabase:
     def get_next_id(self):
         self.last_id += 1
         return self.last_id
+
+    def new_id(self):
+        the_id = TheIndex(self.get_next_id())
+        self.ids.append(the_id)
+        return the_id
 
 
 class StringCompiler(object):

@@ -1,4 +1,4 @@
-from text.strings import IDsDatabase, IndexDatabase
+from text.strings import IDsDatabase
 
 INITIAL_EQUIP_ID = 280000
 INITIAL_SHIP_ID = 263000
@@ -18,7 +18,6 @@ class IDsManager:
         self.story = IDsDatabase(INITIAL_STORY_ID)
         self.universe = IDsDatabase(INITIAL_UNIVERSE_ID)
         self.rumors = IDsDatabase(INITIAL_RUMOR_ID)
-        self.knowledge = IndexDatabase(INITIAL_KNOWLEDGE_ID)
 
         self.databases = [
             self.equip,

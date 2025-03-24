@@ -3,6 +3,7 @@ import operator
 from world.names import DEFAULT, BASIC, ROID, ALLOY, PRODUCT, LUXURY, CONTRABAND
 
 from universe.markets import Market, MarketCommodity
+from universe.content.messages import MessageBuilder
 
 from universe.content import meta
 from universe.content.main_objects import Jumpgate, DockableObject
@@ -100,10 +101,12 @@ class Base:
 
     def __init__(self, core, system, system_object):
         self.core = core
+        self.msg: MessageBuilder = self.core.chars.msg
         self.system = system
         self.system_object = system_object
         # self.props = self.system_object.BASE_PROPS if self.system_object.BASE_PROPS else DefaultBaseProps()
         self.props = self.system_object.BASE_PROPS
+        self.trade_messages = []
 
         if not self.props:
             raise Exception('Base props is not defined for base %s' % self.system_object.get_base_nickname())
@@ -117,8 +120,18 @@ class Base:
         if self.props:
             self.parse_prop_actions()
 
+    def add_trade_message(self, message):
+        self.trade_messages.append(message)
+
+    def dump_trade_messages(self):
+        for msg in self.trade_messages:
+            print(msg.dump())
+
     def get_name(self):
         return self.system_object.get_base_nickname()
+
+    def get_system_object(self):
+        return self.system_object
 
     def load_graph(self):
         self.graph = self.get_base_graph()
@@ -142,6 +155,14 @@ class Base:
                 consume_commodity = self.base_commodities_db[consume]
                 consume_commodity.change_state(meta.CONSUME)
 
+                if not consume_commodity.is_produce():
+                    self.add_trade_message(
+                        self.msg.rumor_produce_require(
+                            product=base_commodity.commodity,
+                            component=consume_commodity.commodity,
+                        )
+                    )
+
     def parse_prop_actions(self):
         for objective in self.props.get_objectives():
 
@@ -162,6 +183,9 @@ class Base:
         self.load_graph()
         self.load_resell_data()
         self.load_commodities()
+
+    def post_store_load(self):
+        self.post_check_commodities()
 
     def get_commodity_market(self):
         return Market(
@@ -216,11 +240,24 @@ class Base:
             raise Exception('graph is required')
 
         for base_comm in self.base_commodities_db.values():
+            if base_comm.is_produce():
+                if base_comm.is_best_price():
+                    self.add_trade_message(
+                        self.msg.rumor_produce_best(
+                            product=base_comm.commodity
+                        )
+                    )
+                else:
+                    self.add_trade_message(
+                        self.msg.rumor_produce_any(
+                            product=base_comm.commodity
+                        )
+                    )
+
             if not base_comm.is_consume():
                 continue
 
-            failed = 0
-
+            # failed = 0
             # print(f'COMM: {base_comm.get_comm_name()}')
 
             producers = base_comm.universe_commodity.get_producers()
@@ -260,6 +297,20 @@ class Base:
             )
 
             base_comm.set_purchase_price(purchase_price)
+
+    def post_check_commodities(self):
+        if not self.graph:
+            raise Exception('graph is required')
+
+        for base_comm in self.base_commodities_db.values():
+            if base_comm.is_produce():
+                self.add_trade_message(
+                    self.msg.knowledge_show_consumer_best(
+                        product=base_comm.commodity,
+                        consumer_comm=base_comm.universe_commodity.get_best_consumer(),
+                    )
+                )
+
 
 
 class BaseCommodity(MarketCommodity):

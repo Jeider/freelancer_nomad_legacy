@@ -47,10 +47,15 @@ class UniverseManager:
 
         self.get_universe_root().do_post_init_actions()
 
-        self.core.store.compile_commodities()
+        self.core.store.compile_producers()
 
         for base in self.bases_list:
             base.compile_base()
+
+        self.core.store.compile_consumers()
+
+        for base in self.bases_list:
+            base.post_store_load()
 
         self.sync_data()
 
