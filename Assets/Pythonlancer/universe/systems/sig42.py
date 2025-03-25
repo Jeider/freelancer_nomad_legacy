@@ -166,14 +166,14 @@ class Sig42RewardAsteroids2(Sig42Member, Sig42BaseAsteroidRewardField):
     INDEX = 2
 
 
-class Sig42BaseBretoniaSolarPlant(Sig42Bretonia, main_objects.HackableStation):
+class Sig42BaseBretoniaSolarPlant(Sig42Bretonia, main_objects.HackableSolarPlant):
     ALIAS = 'solar'
     LOADOUT = 'solar_plant_br'
     HACKABLE_SOLAR_CLASS = hackable.HackableSolarPlantRot90
     INTERIOR_CLASS = interior.EquipDeckInterior
 
 
-class Sig42BaseKusariSolarPlant(Sig42Kusari, main_objects.HackableStation):
+class Sig42BaseKusariSolarPlant(Sig42Kusari, main_objects.HackableSolarPlant):
     ALIAS = 'solar'
     LOADOUT = 'solar_plant_ku'
     HACKABLE_SOLAR_CLASS = hackable.HackableSolarPlantRot90

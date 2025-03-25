@@ -24,6 +24,8 @@ class LancerCore(object):
         self.universe = UniverseManager(self)
         self.story = StoryManager(self) if story else None
 
+        self.chars.post_load()
+
 
 def get_core():
     return LancerCore(write=False, story=False)

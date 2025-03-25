@@ -389,7 +389,7 @@ class Sigma8Planet3(Sigma8Member, main_objects.Planet):
     SPHERE_RADIUS = 1500
 
 
-class Sig8OldFreeportRuins(Sigma8Member, main_objects.NotDockableObject):
+class Sig8OldFreeportRuins(Sigma8Member, main_objects.StationRuins):
     ALIAS = 'ruins'
     INDEX = 1
     REL = RIGHT

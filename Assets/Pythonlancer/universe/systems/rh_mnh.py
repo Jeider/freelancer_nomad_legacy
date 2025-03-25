@@ -351,7 +351,7 @@ class MunchTrading(MunchMember, main_objects.TradingBase):
     DEALERS = dealers.RheinlandCivilianDealers
 
 
-class MunchCivilianStationRuins(MunchMember, main_objects.NotDockableObject):
+class MunchCivilianStationRuins(MunchMember, main_objects.StationRuins):
     ALIAS = 'ruins'
     INDEX = 1
     REL = TOP
@@ -384,7 +384,7 @@ class MunchCivilianStationDropPoint2(MunchMember, main_objects.HackableStation):
     INTERIOR_CLASS = interior.EquipDeckInterior
 
 
-class MunchBattleStationRuins(MunchMember, main_objects.NotDockableObject):
+class MunchBattleStationRuins(MunchMember, main_objects.StationRuins):
     ALIAS = 'ruins'
     INDEX = 2
     REL = TOP

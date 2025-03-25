@@ -330,3 +330,27 @@ COMM_RH_GUARD_FEMALE = 'comm_rh_guard_female'
 COMM_LI_GUARD_FEMALE = 'comm_li_guard_female'
 COMM_KU_GUARD_FEMALE = 'comm_ku_guard_female'
 NEW_FEM_GLASSES = 'new_fem_glasses'
+
+HEADS_BARTENDER = [
+    RH_BARTENDER_HEAD, BR_BARTENDER_HEAD, KU_BARTENDER_HEAD
+]
+HEADS_SALES = [
+    RH_SALES_HEAD, LI_SALES_HEAD, BR_SALES_HEAD, KU_SALES_HEAD
+]
+HEADS_MALE_RH = [
+    RH_BARTENDER_HEAD,
+    RH_ALARIC_HEAD,
+    RH_WILHAM_HEAD,
+]
+
+BUST_BODIES = [
+    KU_KYM_BODY_BUST,
+    PL_FEMALE1_PEASANT_BODY_BUST,
+    PL_FEMALE2_PEASANT_BODY_BUST,
+]
+
+
+class Costume:
+    def __init__(self, body, head, is_male=True, accessory=False):
+        self.body = body
+        self.head = head

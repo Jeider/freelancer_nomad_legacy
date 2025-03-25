@@ -358,7 +358,7 @@ class Tau37CorsairBase(Tau37Member, main_objects.PirateAsteroid):
     NEBULA_ZONES = [Tau37WestNebula]
 
 
-class Tau37DeepNebulaRuins(Tau37Member, main_objects.NotDockableObject):
+class Tau37DeepNebulaRuins(Tau37Member, main_objects.StationRuins):
     ALIAS = 'ruins'
     INDEX = 1
     REL = RIGHT

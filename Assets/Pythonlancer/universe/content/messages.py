@@ -22,10 +22,6 @@ PRODUCER_REQUIREMENTS_BEST = ('Эта база является поставщи
 PRODUCER_REQUIREMENTS_NEAR = ('Эта база является поставщиком {comm}. Но мы нуждаемся в {component}, чтобы продолжать '
                               'его поставки. Могу показать, где ближе всего купить {component} за {credits}')
 
-
-
-
-
 PRODUCER_BEST = ('Эта база лучший поставщик {product}. Это лучшая цена в секторе Сириуса')
 PRODUCER_ANY = ('Эта база поставляет {product}. Это не лучшая цена, но определённо хорошее предложение')
 PRODUCER_REQUIRE = ('Эта база является поставщиком {product}. Но мы нуждаемся в {component}, чтобы продолжать '
@@ -35,21 +31,40 @@ PRODUCER_SHOW_CONSUMER_BEST = ('На этой базе можно купить {
 PRODUCER_SHOW_CONSUMER_NEAR = ('Тут продают товар {comm}. Могу показать, где его можно выгодно продать. '
                                'Расскажу за ___')
 
+ROID_MINER = ('В этой системе есть добывающие судна. На них можно найти особое оборудование, если конечно ты сможешь '
+              'добыть особую руду рядом с добывающим судном. Показать тебе, где оно находится? ')
+GAS_MINER = ('В этой системе есть газодобытчики, они могут произвести тебе особые устройства, но только если ты '
+             'сможешь добыть особый газ в ледяных астероидах, которые находятся рядом с базой. '
+             'Могу показать такой ')
+ABANDONED_ICE_BASE = ('В этой системе есть старая ледяная добывающая база. На ней остались производственные мощности. '
+                      'Если сможешь добыть в ледяных астероидах особый газ, то на этой базе тебе смогут собрать '
+                      'интересное оборудование. Могу показать тебе ')
 
+ABANDONED_ASTEROID_BASE = ('Ты можешь найти в этой системе старую добывающую станцию. Она частично функционирует, ты '
+                           'даже можешь получить на ней особое оборудование, но для начала надо найти в ближайщих '
+                           'астероидах особую руду. Хочешь попробовать? Могу показать это место ')
+SMELTER = ('В нашей системе много мусора, самый радиактивный и токсичный перерабатывают на мусороперабатывающих '
+           'фабриках. Это станции так же могут производить особые энергетические установки. Только для этого '
+           'нужно в ближайших блоках мусора отыскать особые радиактивные компоненты. Попробуешь? Покажу базу ')
+SOLAR_PLANT = ('В центре этой системы ты можешь найти солнечный генератор энергии. Если сможешь заполучить к нему '
+               'доступ, то сможешь найти интересное оборудование. Я думаю ты сможешь найти способ его взломать на '
+               'одном из разломанных кораблей, недалеко от генератора энергии. Давай покажу тебе генератор ')
+HACKABLE_SOLAR_PLANT = ('В центре этой системы ты можешь найти солнечный генератор энергии. Если сможешь заполучить к нему '
+                        'доступ, то сможешь найти интересное оборудование. Двери плотно закрыты, но точно должен '
+                        'быть какой-то способ сломать систему защиты. Могу показать тебе генератор ')
 
-
-
-ROID_MINER = (' ')
-GAS_MINER = (' ')
-ABANDONED_ICE_BASE = (' ')
-
-ABANDONED_ASTEROID_BASE = (' ')
-SMELTER = (' ')
-SOLAR_PLANT = (' ')
-
-RUINS = (' ')
-BATTLESHIP_HACKABLE = (' ')
-BATTLESHIP_SUPRISE = (' ')
+RUINS = ('Я знаю где находятся руины интересной станции. Внутри точно осталась интересное оборудование, нужно только '
+         'найти способ туда пробраться. Показать? Я знаю где она ')
+LOCKED_BATTLESHIP = ('Я могу показать где находятся руины линкора, на нем остался военный арсенал. Вот только бы найти '
+                     'способ в него проникнуть. Я думаю можно что-то найти в разломанных кораблях, находящихся '
+                     'поблизости от этого линкора. Могу показать где находится этот линкор ')
+HACKABLE_BATTLESHIP = ('Я могу показать где находятся руины линкора, на нем остался военный арсенал. Вот только бы найти '
+                       'способ в него проникнуть. Его двери плотно закрыты, но должны быть способ обойти систему '
+                       'безопасности.  Могу показать где находится этот линкор ')
+HACKABLE_LUXURY = ('Могу показать тебе где находятся руины круизного лайнера. Это была трагедия, '
+                   'но большую часть посетителей эвакуировали. Но что-то на нем точно осталось, '
+                   'надо только найти способ в него проникнуть. Двери плотно закрыты, но должен быть способ их взломать. '
+                   'Давай я покажу его тебе ')
 
 
 class Message:
@@ -122,13 +137,20 @@ class Knowledge(Message):
         self.system_object = system_object
         self.price = price
         self.rumor_id = core.ids.rumors.new_name(self.text)
-        self.knowledge = core.chars.knowledge.new_id()
+        self.know_index = core.chars.know_indexes.new_id()
+        core.chars.add_knowledge(self)
 
     def get_rumor_id(self):
         return self.rumor_id.id
 
     def get_knowledge_id(self):
-        return self.knowledge.id
+        return self.know_index.id
+
+    def get_system_object(self):
+        return self.system_object.get_inspace_nickname()
+
+    def get_system_name(self):
+        return self.system_object.system.NAME
 
     def get_definition(self):
         return SINGLE_DIVIDER.join([
@@ -177,12 +199,35 @@ class MessageBuilder:
         )
         return Knowledge(self.core, text, system_object=consumer_comm.base.get_system_object(), price=500)
 
+    def journey_roid_miner(self, system_object):
+        return Knowledge(self.core, ROID_MINER, system_object=system_object, price=500)
 
+    def journey_gas_miner(self, system_object):
+        return Knowledge(self.core, GAS_MINER, system_object=system_object, price=500)
 
+    def journey_ice(self, system_object):
+        return Knowledge(self.core, ABANDONED_ICE_BASE, system_object=system_object, price=500)
 
+    def journey_ast(self, system_object):
+        return Knowledge(self.core, ABANDONED_ASTEROID_BASE, system_object=system_object, price=500)
 
-    #
-    # def knowledge_produce_require_best(self, product, component):
-    #     text = PRODUCER_REQUIREMENTS_BEST.format(product=product, component=component)
-    #     return Rumor(self.core, text)
-    #
+    def journey_smelter(self, system_object):
+        return Knowledge(self.core, SMELTER, system_object=system_object, price=500)
+
+    def journey_solar_plant(self, system_object):
+        return Knowledge(self.core, SOLAR_PLANT, system_object=system_object, price=500)
+
+    def journey_solar_plant_hackable(self, system_object):
+        return Knowledge(self.core, HACKABLE_SOLAR_PLANT, system_object=system_object, price=500)
+
+    def journey_ruins(self, system_object):
+        return Knowledge(self.core, RUINS, system_object=system_object, price=500)
+
+    def journey_battleship_locked(self, system_object):
+        return Knowledge(self.core, LOCKED_BATTLESHIP, system_object=system_object, price=500)
+
+    def journey_battleship_hackable(self, system_object):
+        return Knowledge(self.core, HACKABLE_BATTLESHIP, system_object=system_object, price=500)
+
+    def journey_luxury(self, system_object):
+        return Knowledge(self.core, HACKABLE_LUXURY, system_object=system_object, price=500)

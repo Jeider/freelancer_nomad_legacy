@@ -584,7 +584,7 @@ class ColPlanet4(ColMember, main_objects.Planet):
     SPHERE_RADIUS = 3000
 
 
-class ColOldTradingBaseRuins(ColMember, main_objects.NotDockableObject):
+class ColOldTradingBaseRuins(ColMember, main_objects.StationRuins):
     ALIAS = 'ruins'
     INDEX = 1
     REL = LEFT

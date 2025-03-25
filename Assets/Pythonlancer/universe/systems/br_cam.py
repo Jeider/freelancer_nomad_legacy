@@ -322,7 +322,7 @@ class CamBattleshipRuins3(CamMember, main_objects.HackableBattleship):
     ]
 
 
-class CamOldOutpostRuins(CamMember, main_objects.NotDockableObject):
+class CamOldOutpostRuins(CamMember, main_objects.StationRuins):
     ALIAS = 'ruins'
     INDEX = 1
     REL = RIGHT
@@ -661,7 +661,7 @@ class CamGasPocketsZone1(CamMember, zones.AsteroidZone):
     SPACEDUST_MAXPARTICLES = 200
 
 
-class CamAbandonedStation(CamMember, main_objects.NotDockableObject):
+class CamAbandonedStation(CamMember, main_objects.StationRuins):
     ALIAS = 'ruins'
     INDEX = 2
     REL = RIGHT

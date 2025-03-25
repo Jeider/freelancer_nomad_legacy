@@ -266,7 +266,7 @@ class Tau31BaseLibertyGasMiner(main_objects.GasMinerOld):
     }
 
 
-class Tau31BaseAbandonedMiner(main_objects.AbandonedAsteroid):
+class Tau31BaseAbandonedMiner(main_objects.AbandonedAsteroidIce):
     ALIAS = 'bigcryst'
     ROTATE_RANDOM = True
     ARCHETYPE = 'miningbase_ice_block'
@@ -467,7 +467,7 @@ class ComplexGasCrystalField2(Tau31Member, Tau31BaseComplexGasCrystalField):
     ULTRA_BASE = Tau31AbandonedMiner2
 
 
-class Tau31OldResearchRuins(Tau31Member, main_objects.NotDockableObject):
+class Tau31OldResearchRuins(Tau31Member, main_objects.StationRuins):
     ALIAS = 'ruins'
     INDEX = 1
     REL = RIGHT

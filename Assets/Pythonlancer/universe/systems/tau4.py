@@ -370,7 +370,7 @@ class Tau4BattleshipRuins1(Tau4Member, main_objects.HackableBattleship):
     INTERIOR_CLASS = interior.EquipDeckInterior
 
 
-class Tau4LuxuryRuins1(Tau4Member, main_objects.HackableBattleship):
+class Tau4LuxuryRuins1(Tau4Member, main_objects.HackableLuxury):
     ALIAS = 'luxury'
     INDEX = 1
     BASE_INDEX = 62

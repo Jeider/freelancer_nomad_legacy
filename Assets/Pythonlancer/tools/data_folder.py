@@ -36,6 +36,10 @@ class DataFolder(object):
         return cls.get_root() / 'SHIPS'
 
     @classmethod
+    def get_interface(cls):
+        return cls.get_root() / 'INTERFACE'
+
+    @classmethod
     def sync_solar_gen_loadouts(cls, content):
         loadouts_file = cls.get_solar() / LOADOUTS_GEN
         loadouts_file.write_text(content, encoding='utf-8')
@@ -73,6 +77,16 @@ class DataFolder(object):
     @classmethod
     def sync_equip_hardcoded(cls, equip_file_name, content):
         equip_file = cls.get_equip()  / f'{equip_file_name}.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    @classmethod
+    def sync_knowledge_map(cls, content):
+        equip_file = cls.get_interface() / 'knowledgemap.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    @classmethod
+    def sync_infocard_map(cls, content):
+        equip_file = cls.get_interface() / 'infocardmap.ini'
         equip_file.write_text(content, encoding='utf-8')
 
     @classmethod

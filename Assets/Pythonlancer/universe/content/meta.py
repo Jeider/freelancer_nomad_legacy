@@ -332,6 +332,7 @@ class FreeportObjective(SelectedResellObjective):
 
 class BaseProps:
     POPULATION = POP_MEDIUM_BASE
+    TELL_ABOUT_JOURNEY = False
 
     ROOT_ACTIONS = []
     DEFAULT_OBJECTIVES = []
@@ -341,6 +342,7 @@ class BaseProps:
     # DEFENCE_HIGH
     # DEFENCE_MEDIUM: +light arms cost, +repair cost
     # DEFENCE_SMALL: ++light arms cost, ++repair cost
+
 
     def __init__(self, objectives=None, raw_actions=None):
         self.objectives = (objectives if objectives else []) + self.DEFAULT_OBJECTIVES
@@ -404,6 +406,7 @@ class ManhattanSuperPlanet(LargePlanet):
 
 
 class MiningPlanet(BaseProps):
+    TELL_ABOUT_JOURNEY = True
     POPULATION = POP_SMALL_BASE
     ROOT_ACTIONS = [
         CommConsume(BASIC_WATER),
@@ -436,6 +439,7 @@ class ResortPlanet(BaseProps):
 
 
 class WaterPlanet(BaseProps):
+    TELL_ABOUT_JOURNEY = True
     POPULATION = POP_SMALL_BASE
     ROOT_ACTIONS = [
         CommProduce(BASIC_WATER, PRODUCE_BEST),
@@ -450,6 +454,7 @@ class WaterPlanet(BaseProps):
 
 
 class SpaceStation(BaseProps):
+    TELL_ABOUT_JOURNEY = True
     ROOT_ACTIONS = [
         CommConsume(BASIC_WATER),
         CommConsume(BASIC_OXYGEN),

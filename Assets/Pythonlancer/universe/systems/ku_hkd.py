@@ -442,7 +442,7 @@ class HokkPlanet3(HokkMember, main_objects.Planet):
     SPHERE_RADIUS = 2500
 
 
-class HokkOldReserachRuins(HokkMember, main_objects.NotDockableObject):
+class HokkOldReserachRuins(HokkMember, main_objects.StationRuins):
     ALIAS = 'ruins'
     INDEX = 1
     REL = LEFT

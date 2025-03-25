@@ -215,7 +215,7 @@ class Om7RightPirates(Om7Member, Om7Rheinland, main_objects.PirateGasMiner):
     NEBULA_ZONES = [Om7Nebula]
 
 
-class Om7LostRheinlandRuins(Om7Member, Om7Rheinland, main_objects.NotDockableObject):
+class Om7LostRheinlandRuins(Om7Member, Om7Rheinland, main_objects.StationRuins):
     ALIAS = 'ruins'
     INDEX = 1
     REL = RIGHT
@@ -371,7 +371,7 @@ class Om7BaseRheinlandGasMiner(Om7Rheinland, main_objects.GasMinerOld):
     }
 
 
-class Om7BaseAbandonedMiner(main_objects.AbandonedAsteroid):
+class Om7BaseAbandonedMiner(main_objects.AbandonedAsteroidIce):
     ALIAS = 'bigcryst'
     ROTATE_RANDOM = True
     ARCHETYPE = 'miningbase_ice_block'

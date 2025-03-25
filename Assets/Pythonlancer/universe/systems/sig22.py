@@ -159,7 +159,7 @@ class Sig22AsteroidZone7(Sig22Member, Sig22BaseAsteroidZone):
     INDEX = 7
 
 
-class Sig22OldOutpostRuins(Sig22Member, Sig22Liberty, main_objects.NotDockableObject):
+class Sig22OldOutpostRuins(Sig22Member, Sig22Liberty, main_objects.StationRuins):
     ALIAS = 'ruins'
     INDEX = 1
     REL = RIGHT

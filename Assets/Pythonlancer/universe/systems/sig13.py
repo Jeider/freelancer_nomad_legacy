@@ -389,7 +389,7 @@ class Sig13BaseRheinlandGasMiner(Sig13Rheinland, main_objects.GasMinerOld):
     }
 
 
-class Sig13BaseAbandonedMiner(main_objects.AbandonedAsteroid):
+class Sig13BaseAbandonedMiner(main_objects.AbandonedAsteroidIce):
     ALIAS = 'bigcryst'
     ROTATE_RANDOM = True
     ARCHETYPE = 'miningbase_ice_block'

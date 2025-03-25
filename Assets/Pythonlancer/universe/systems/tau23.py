@@ -341,7 +341,7 @@ class Tau23BaseKusariGasMiner(Tau23Kusari, main_objects.GasMinerOld):
     }
 
 
-class Tau23BaseAbandonedMiner(main_objects.AbandonedAsteroid):
+class Tau23BaseAbandonedMiner(main_objects.AbandonedAsteroidIce):
     ALIAS = 'bigcryst'
     ROTATE_RANDOM = True
     ARCHETYPE = 'miningbase_ice_block'

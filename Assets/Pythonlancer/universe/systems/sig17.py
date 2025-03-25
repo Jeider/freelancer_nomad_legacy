@@ -370,7 +370,7 @@ class Sig17Liner(Sig17Member, main_objects.LuxuryLiner):
     DEALERS = dealers.LibertyCivilianDealers
 
 
-class Sig17FreeportSevenRuins(Sig17Member, main_objects.NotDockableObject):
+class Sig17FreeportSevenRuins(Sig17Member, main_objects.StationRuins):
     ALIAS = 'ruins'
     INDEX = 1
     REL = RIGHT
@@ -443,7 +443,7 @@ class Sig17CrowNebulaPirates(Sig17Member, main_objects.PirateStation):
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
 
 
-class Sig17LuxuryRuins1(Sig17Member, main_objects.HackableBattleship):
+class Sig17LuxuryRuins1(Sig17Member, main_objects.HackableLuxury):
     ALIAS = 'liner_ruins'
     INDEX = 1
     BASE_INDEX = 63

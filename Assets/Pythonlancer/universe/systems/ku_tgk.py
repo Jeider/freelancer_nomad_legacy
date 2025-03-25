@@ -383,7 +383,7 @@ class TekagiEastPirates(TekagiMember, main_objects.PirateAsteroid):
     DEFENCE_LEVEL = None
 
 
-class TekagiRuins(TekagiMember, main_objects.NotDockableObject):
+class TekagiRuins(TekagiMember, main_objects.StationRuins):
     ALIAS = 'ruins'
     INDEX = 1
     REL = BOTTOM

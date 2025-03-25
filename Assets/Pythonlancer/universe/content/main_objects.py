@@ -678,6 +678,10 @@ class NotDockableObject(StaticObject):
         )
 
 
+class StationRuins(NotDockableObject):
+    pass
+
+
 class DockableObject(StaticObject):
     ARCHETYPE = 'depot'
     INTERIOR_CLASS = interior.CustomFileInterior  # custom interior
@@ -829,6 +833,9 @@ BGCS_base_run_by = W02bF44'''
 
         return SINGLE_DIVIDER.join(['{} = {}'.format(key, value) for key, value in props.items()])
 
+    def have_bar(self):
+        return self.interior.have_bar()
+
     def have_equip_dealer(self):
         if not self.interior.have_equip():
             return False
@@ -915,6 +922,12 @@ class RoidMinerStation(Station):
 
 
 class AbandonedAsteroid(DockableObject):
+    AUDIO_PREFIX = SpaceVoice.STATION
+    RANDOM_ROBOT = True
+    BASE_PROPS = meta.LockedAsteroid()
+
+
+class AbandonedAsteroidIce(DockableObject):
     AUDIO_PREFIX = SpaceVoice.STATION
     RANDOM_ROBOT = True
     BASE_PROPS = meta.LockedAsteroid()
@@ -1170,7 +1183,15 @@ class HackableStation(Hackable):
     AUDIO_PREFIX = SpaceVoice.STATION
 
 
+class HackableSolarPlant(Hackable):
+    AUDIO_PREFIX = SpaceVoice.STATION
+
+
 class HackableBattleship(Hackable):
+    AUDIO_PREFIX = SpaceVoice.BATTLESHIP
+
+
+class HackableLuxury(Hackable):
     AUDIO_PREFIX = SpaceVoice.BATTLESHIP
 
 

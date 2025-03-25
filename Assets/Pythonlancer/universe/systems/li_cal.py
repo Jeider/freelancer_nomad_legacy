@@ -460,7 +460,7 @@ class CalGasPocketsZone1(CalMember, zones.AsteroidZone):
     SPACEDUST_MAXPARTICLES = 200
 
 
-class CalAbandonedStation(CalMember, main_objects.NotDockableObject):
+class CalAbandonedStation(CalMember, main_objects.StationRuins):
     ALIAS = 'ruins'
     INDEX = 1
     REL = RIGHT

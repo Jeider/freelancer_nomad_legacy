@@ -388,7 +388,7 @@ class Om15Junkers(Omega15Member, main_objects.JunkerBase):
     ]
 
 
-class Om15AbandonedStation(Omega15Member, main_objects.NotDockableObject):
+class Om15AbandonedStation(Omega15Member, main_objects.StationRuins):
     ALIAS = 'ruins'
     INDEX = 1
     REL = RIGHT

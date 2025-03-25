@@ -6,7 +6,10 @@ from universe.markets import Market, MarketCommodity
 from universe.content.messages import MessageBuilder
 
 from universe.content import meta
-from universe.content.main_objects import Jumpgate, DockableObject
+from universe.content.main_objects import (
+    Jumpgate, DockableObject, RoidMiner, GasMinerOld, DebrisManufactoring, SolarPlant, HackableSolarPlant,
+    AbandonedAsteroid, AbandonedAsteroidIce, StationRuins, HackableBattleship, LockedBattleship, HackableLuxury
+)
 
 from text.dividers import SINGLE_DIVIDER
 
@@ -107,6 +110,7 @@ class Base:
         # self.props = self.system_object.BASE_PROPS if self.system_object.BASE_PROPS else DefaultBaseProps()
         self.props = self.system_object.BASE_PROPS
         self.trade_messages = []
+        self.journey_messages = []
 
         if not self.props:
             raise Exception('Base props is not defined for base %s' % self.system_object.get_base_nickname())
@@ -125,6 +129,13 @@ class Base:
 
     def dump_trade_messages(self):
         for msg in self.trade_messages:
+            print(msg.dump())
+
+    def add_journey_message(self, message):
+        self.journey_messages.append(message)
+
+    def dump_journey_messages(self):
+        for msg in self.journey_messages:
             print(msg.dump())
 
     def get_name(self):
@@ -183,6 +194,7 @@ class Base:
         self.load_graph()
         self.load_resell_data()
         self.load_commodities()
+        self.load_system_journey_activities()
 
     def post_store_load(self):
         self.post_check_commodities()
@@ -311,6 +323,40 @@ class Base:
                     )
                 )
 
+    def load_system_journey_activities(self):
+        if not self.system_object.have_bar():
+            return
+
+        if not self.props.TELL_ABOUT_JOURNEY:
+            return
+
+        for dockable in self.system.get_dockable_objects():
+            if msg := self.get_msg_for_dockable(dockable):
+                self.add_journey_message(msg)
+
+    def get_msg_for_dockable(self, dockable):
+        if issubclass(dockable.__class__, RoidMiner):
+            return self.msg.journey_roid_miner(dockable)
+        if issubclass(dockable.__class__, GasMinerOld):
+            return self.msg.journey_gas_miner(dockable)
+        if issubclass(dockable.__class__, AbandonedAsteroidIce):
+            return self.msg.journey_ice(dockable)
+        if issubclass(dockable.__class__, AbandonedAsteroid):
+            return self.msg.journey_ast(dockable)
+        if issubclass(dockable.__class__, DebrisManufactoring):
+            return self.msg.journey_smelter(dockable)
+        if issubclass(dockable.__class__, StationRuins):
+            return self.msg.journey_ruins(dockable)
+        if issubclass(dockable.__class__, SolarPlant):
+            return self.msg.journey_solar_plant(dockable)
+        if issubclass(dockable.__class__, HackableSolarPlant):
+            return self.msg.journey_solar_plant_hackable(dockable)
+        if issubclass(dockable.__class__, LockedBattleship):
+            return self.msg.journey_battleship_locked(dockable)
+        if issubclass(dockable.__class__, HackableBattleship):
+            return self.msg.journey_battleship_hackable(dockable)
+        if issubclass(dockable.__class__, HackableLuxury):
+            return self.msg.journey_luxury(dockable)
 
 
 class BaseCommodity(MarketCommodity):

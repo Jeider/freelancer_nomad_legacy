@@ -295,7 +295,7 @@ class Tau29SimpleGasCrystalField3(Tau29Member, Tau29BaseSimpleGasCrystalField):
     ULTRA_BASE = Tau29GasMiner3
 
 
-class Tau29RingRuins(Tau29Member, main_objects.NotDockableObject):
+class Tau29RingRuins(Tau29Member, main_objects.StationRuins):
     ALIAS = 'ruins'
     INDEX = 1
     REL = RIGHT

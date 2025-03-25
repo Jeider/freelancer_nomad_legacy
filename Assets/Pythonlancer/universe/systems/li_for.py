@@ -397,7 +397,7 @@ class ForbesPlanet2(ForbesMember, main_objects.Planet):
     SPHERE_RADIUS = 2000
 
 
-class ForbesOldOutpostRuins(ForbesMember, main_objects.NotDockableObject):
+class ForbesOldOutpostRuins(ForbesMember, main_objects.StationRuins):
     ALIAS = 'ruins'
     INDEX = 1
     REL = LEFT
