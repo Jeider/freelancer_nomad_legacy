@@ -1,5 +1,7 @@
 from universe.content.messages import MessageBuilder, Knowledge
 
+from world.bodyparts import CharacterFactory
+
 from tools.data_folder import DataFolder
 
 from text.strings import IndexDatabase
@@ -29,6 +31,8 @@ class CharacterManager:
         return SINGLE_DIVIDER.join(knowledge_map)
 
     def post_load(self):
+        factory = CharacterFactory()
+
         self.sync_data()
 
     def sync_data(self):

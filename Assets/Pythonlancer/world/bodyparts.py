@@ -1,196 +1,30 @@
-BENCHMARK_MALE_BODY = 'benchmark_male_body'
-LI_BARTENDER_BODY = 'li_bartender_body'
-LI_COMMTRADER_BODY = 'li_commtrader_body'
-LI_MALE_GUARD_BODY = 'li_male_guard_body'
-LI_MALE_ELITE_BODY = 'li_male_elite_body'
-LI_MANHATTAN_BARTENDER_BODY = 'li_manhattan_bartender_body'
-LI_ROCKFORD_BODY = 'li_rockford_body'
-LI_SCROTE_BODY = 'li_scrote_body'
-LI_SHIPDEALER_BODY = 'li_shipdealer_body'
-LI_TILTON_BODY = 'li_tilton_body'
-LI_TILTON_BODY_ALT = 'li_tilton_body_alt'
-BR_BARTENDER_BODY = 'br_bartender_body'
-BR_BRIGHTON_BODY = 'br_brighton_body'
-BR_COMMTRADER_BODY = 'br_commtrader_body'
-BR_MALE_ELITE_BODY = 'br_male_elite_body'
-BR_MALE_GUARD_BODY = 'br_male_guard_body'
-BR_QUIGLY_BODY = 'br_quigly_body'
-BR_SHIPDEALER_BODY = 'br_shipdealer_body'
-BR_TOBIAS_BODY = 'br_tobias_body'
-RH_BARTENDER_BODY = 'rh_bartender_body'
-RH_COMMTRADER_BODY = 'rh_commtrader_body'
-RH_DEIDRICH_BODY = 'rh_deidrich_body'
-RH_MALE_ELITE_BODY = 'rh_male_elite_body'
-RH_MALE_GUARD_BODY = 'rh_male_guard_body'
-RH_REICHMAN_BODY = 'rh_reichman_body'
-RH_SHIPDEALER_BODY = 'rh_shipdealer_body'
-RH_WILHAM_BODY = 'rh_wilham_body'
-KU_BARTENDER_BODY = 'ku_bartender_body'
-KU_COMMTRADER_BODY = 'ku_commtrader_body'
-KU_EDO_BODY = 'ku_edo_body'
-KU_MALE_ELITE_BODY = 'ku_male_elite_body'
-KU_MALE_GUARD_BODY = 'ku_male_guard_body'
-KU_SHIPDEALER_BODY = 'ku_shipdealer_body'
-PI_ORILLION_BODY = 'pi_orillion_body'
-PI_PIRATE1_BODY = 'pi_pirate1_body'
-PI_PIRATE2_BODY = 'pi_pirate2_body'
-PI_PIRATE3_BODY = 'pi_pirate3_body'
-PI_PIRATE4_BODY = 'pi_pirate4_body'
-PI_PIRATE5_BODY = 'pi_pirate5_body'
-PI_PIRATE6_BODY = 'pi_pirate6_body'
-PI_PIRATE7_BODY = 'pi_pirate7_body'
-PI_PIRATE8_BODY = 'pi_pirate8_body'
-PL_TRENT_BODY = 'pl_trent_body'
-PL_MALE1_JOURNEYMAN_BODY = 'pl_male1_journeyman_body'
-PL_MALE1_PEASANT_BODY = 'pl_male1_peasant_body'
-PL_MALE2_JOURNEYMAN_BODY = 'pl_male2_journeyman_body'
-PL_MALE2_PEASANT_BODY = 'pl_male2_peasant_body'
-PL_MALE3_JOURNEYMAN_BODY = 'pl_male3_journeyman_body'
-PL_MALE3_PEASANT_BODY = 'pl_male3_peasant_body'
-PL_MALE3_PEASANT_BODY_HURT = 'pl_male3_peasant_body_hurt'
-SC_SCIENTIST1_BODY = 'sc_scientist1_body'
-SC_SCIENTIST2_BODY = 'sc_scientist2_body'
-SC_SCIENTIST3_BODY = 'sc_scientist3_body'
-SC_SCIENTIST4_BODY = 'sc_scientist4_body'
-SH_MALE1_BODY = 'sh_male1_body'
-SH_MALE2_BODY = 'sh_male2_body'
-SH_MALE3_BODY = 'sh_male3_body'
-ROBOT_BODY_A = 'robot_body_a'
-ROBOT_BODY_B = 'robot_body_b'
-ROBOT_BODY_C = 'robot_body_c'
-ROBOT_BODY_D = 'robot_body_d'
-ROBOT_BODY_E = 'robot_body_e'
+from random import choice, shuffle
 
-BENCHMARK_FEMALE_BODY = 'benchmark_female_body'
-LI_FEMALE_ELITE_BODY = 'li_female_elite_body'
-LI_FEMALE_GUARD_BODY = 'li_female_guard_body'
-LI_HATCHER_BODY = 'li_hatcher_body'
-BR_DARCY_BODY = 'br_darcy_body'
-BR_FEMALE_ELITE_BODY = 'br_female_elite_body'
-BR_FEMALE_GUARD_BODY = 'br_female_guard_body'
-BR_KAITLYN_BODY = 'br_kaitlyn_body'
-BR_KARINA_BODY = 'br_karina_body'
-RH_FEMALE_ELITE_BODY = 'rh_female_elite_body'
-RH_FEMALE_GUARD_BODY = 'rh_female_guard_body'
-RH_GREUNWALD_BODY = 'rh_greunwald_body'
-KU_KYM_BODY = 'ku_kym_body'
-KU_KYM_BODY_GEN = 'ku_kym_body_gen'
-KU_FEMALE_ELITE_BODY = 'ku_female_elite_body'
-KU_FEMALE_GUARD_BODY = 'ku_female_guard_body'
-PL_FEMALE1_JOURNEYMAN_BODY = 'pl_female1_journeyman_body'
-PL_FEMALE1_PEASANT_BODY = 'pl_female1_peasant_body'
-PL_FEMALE2_JOURNEYMAN_BODY = 'pl_female2_journeyman_body'
-PL_FEMALE2_PEASANT_BODY = 'pl_female2_peasant_body'
-SC_FEMALE1_BODY = 'sc_female1_body'
-SH_FEMALE1_BODY = 'sh_female1_body'
-KU_KYM_BODY_BUST = 'ku_kym_body_bust'
-PL_FEMALE1_PEASANT_BODY_BUST = 'pl_female1_peasant_body_bust'
-PL_FEMALE2_PEASANT_BODY_BUST = 'pl_female2_peasant_body_bust'
-BENCHMARK_MALE_HEAD = 'benchmark_male_head'
-SYD_HEAD = 'syd_head'
-LI_ROCKFORD_HEAD = 'li_rockford_head'
-LI_SCROTE_HEAD = 'li_scrote_head'
-LI_CAPTAIN_HEAD = 'li_captain_head'
-LI_SALES_HEAD = 'li_sales_head'
-LI_MANHATTAN_BARTENDER_HEAD = 'li_manhattan_bartender_head'
-BR_BRIGHTON_HEAD = 'br_brighton_head'
-BR_QUIGLY_HEAD = 'br_quigly_head'
-BR_CAPTAIN_HEAD = 'br_captain_head'
-BR_SALES_HEAD = 'br_sales_head'
-BR_BARTENDER_HEAD = 'br_bartender_head'
-BR_TOBIAS_HEAD = 'br_tobias_head'
-RH_ALARIC_HEAD = 'rh_alaric_head'
-RH_DEIDRICH_HEAD = 'rh_deidrich_head'
-RH_DEIDRICH_HEAD_WORM = 'rh_deidrich_head_worm'
-RH_REICHMAN_HEAD = 'rh_reichman_head'
-RH_WILHAM_HEAD = 'rh_wilham_head'
-RH_HASSLER_HEAD = 'rh_hassler_head'
-RH_CAPTAIN_HEAD = 'rh_captain_head'
-RH_SALES_HEAD = 'rh_sales_head'
-RH_BARTENDER_HEAD = 'rh_bartender_head'
-KU_EDO_HEAD = 'ku_edo_head'
-KU_TENJI_HEAD = 'ku_tenji_head'
-KU_CAPTAIN_HEAD = 'ku_captain_head'
-KU_SALES_HEAD = 'ku_sales_head'
-KU_BARTENDER_HEAD = 'ku_bartender_head'
-PI_PIRATE1_HEAD = 'pi_pirate1_head'
-PI_PIRATE2_HEAD = 'pi_pirate2_head'
-PI_PIRATE3_HEAD = 'pi_pirate3_head'
-PI_PIRATE3_HEAD_HURT = 'pi_pirate3_head_hurt'
-PI_PIRATE4_HEAD = 'pi_pirate4_head'
-PI_PIRATE5_HEAD = 'pi_pirate5_head'
-PI_PIRATE5_HEAD_BETA = 'pi_pirate5_head_beta'
-SH_MALE1_HEAD = 'sh_male1_head'
-SH_MALE2_HEAD = 'sh_male2_head'
-SH_MALE3_HEAD = 'sh_male3_head'
-SH_MALE4_HEAD = 'sh_male4_head'
-SH_MALE5_HEAD = 'sh_male5_head'
-SH_MALE5T_HEAD = 'sh_male5t_head'
-SH_MALE6_HEAD = 'sh_male6_head'
-GE_MALE1_HEAD = 'ge_male1_head'
-GE_MALE2_HEAD = 'ge_male2_head'
-GE_MALE3_HEAD = 'ge_male3_head'
-GE_MALE4_HEAD = 'ge_male4_head'
-GE_MALE6_HEAD = 'ge_male6_head'
-GE_MALE7_HEAD = 'ge_male7_head'
-SC_SCIENTIST1_HEAD = 'sc_scientist1_head'
-SC_SCIENTIST2_HEAD = 'sc_scientist2_head'
-PL_MALE1_HEAD = 'pl_male1_head'
-PL_MALE2_HEAD = 'pl_male2_head'
-PL_MALE3_HEAD = 'pl_male3_head'
-PL_MALE4_HEAD = 'pl_male4_head'
-PL_MALE5_HEAD = 'pl_male5_head'
-PL_MALE6_HEAD = 'pl_male6_head'
-PL_MALE7_HEAD = 'pl_male7_head'
-PL_MALE8_HEAD = 'pl_male8_head'
-LI_SALES_HEAD_HAT = 'li_sales_head_hat'
-BR_SALES_HEAD_HAT = 'br_sales_head_hat'
-KU_BARTENDER_HEAD_HAT = 'ku_bartender_head_hat'
-KU_TENJI_HEAD_HAT = 'ku_tenji_head_hat'
-PL_MALE3_HEAD_HAT = 'pl_male3_head_hat'
-PL_MALE8_HEAD_HAT = 'pl_male8_head_hat'
-RH_ALARIC_HEAD_HAT = 'rh_alaric_head_hat'
-SC_SCIENTIST1_HEAD_HAT = 'sc_scientist1_head_hat'
-SC_SCIENTIST2_HEAD_HAT = 'sc_scientist2_head_hat'
-BENCHMARK_FEMALE_HEAD = 'benchmark_female_head'
-LI_HATCHER_HEAD = 'li_hatcher_head'
-BR_DARCY_HEAD = 'br_darcy_head'
-BR_KAITLYN_HEAD = 'br_kaitlyn_head'
-BR_KARINA_HEAD_GEN = 'br_karina_head_gen'
-RH_GRUENWALD_HEAD_GEN = 'rh_gruenwald_head_gen'
-KU_KYM_HEAD_GEN = 'ku_kym_head_gen'
-KU_TASHI_HEAD = 'ku_tashi_head'
-SH_FEMALE1_HEAD_GEN = 'sh_female1_head_gen'
-SH_FEMALE2_HEAD_GEN = 'sh_female2_head_gen'
-GE_FEMALE1_HEAD = 'ge_female1_head'
-PL_FEMALE1_HEAD = 'pl_female1_head'
-PL_FEMALE2_HEAD = 'pl_female2_head'
-PL_FEMALE3_HEAD = 'pl_female3_head'
-PL_FEMALE4_HEAD = 'pl_female4_head'
-PL_FEMALE5_HEAD = 'pl_female5_head'
-PL_FEMALE6_HEAD = 'pl_female6_head'
-BR_NEWSCASTER_HEAD_GEN = 'br_newscaster_head_gen'
-KU_NEWSCASTER_HEAD_GEN = 'ku_newscaster_head_gen'
-LI_NEWSCASTER_HEAD_GEN = 'li_newscaster_head_gen'
-RH_NEWSCASTER_HEAD_GEN = 'rh_newscaster_head_gen'
-BR_NEWSCASTER_HEAD = 'br_newscaster_head'
-KU_NEWSCASTER_HEAD = 'ku_newscaster_head'
-LI_NEWSCASTER_HEAD = 'li_newscaster_head'
-RH_NEWSCASTER_HEAD = 'rh_newscaster_head'
-SH_FEMALE2_HEAD = 'sh_female2_head'
-SH_FEMALE1_HEAD = 'sh_female1_head'
-SH_FEMALE5_HEAD = 'sh_female5_head'
-SH_FEMALE6_HEAD = 'sh_female6_head'
-BR_KARINA_HEAD = 'br_karina_head'
-RH_GRUENWALD_HEAD = 'rh_gruenwald_head'
-KU_KYM_HEAD = 'ku_kym_head'
-BR_NEWSCASTER_HEAD_HAT = 'br_newscaster_head_hat'
-BR_NEWSCASTER_HEAD_GEN_HAT = 'br_newscaster_head_gen_hat'
-LI_NEWSCASTER_HEAD_HAT = 'li_newscaster_head_hat'
-LI_NEWSCASTER_HEAD_GEN_HAT = 'li_newscaster_head_gen_hat'
-RH_NEWSCASTER_HEAD_HAT = 'rh_newscaster_head_hat'
-RH_NEWSCASTER_HEAD_GEN_HAT = 'rh_newscaster_head_gen_hat'
-PL_FEMALE4_HEAD_HELMET = 'pl_female4_head_helmet'
+GUARD = 1
+ELITE = 2
+TRADER = 3
+PEASANT = 4
+JOURNEYMAN = 5
+BARTENDER = 6
+FAT = 7
+GENERAL = 8
+SCIENT = 9
+PIRATE = 10
+ORDER = 11
+PLAYER = 12
+ROBOT = 13
+HERO = 14
+SALES = 15
+MILITARY = 16
+CAPTAIN = 17
+GENERIC = 18
+MONKEY = 19
+
+RHEINLAND = 1
+LIBERTY = 2
+BRETONIA = 3
+KUSARI = 4
+
 
 BENCHMARK_MALE_HAND_RIGHT = 'benchmark_male_hand_right'
 BENCHMARK_MALE_HAND_LEFT = 'benchmark_male_hand_left'
@@ -206,10 +40,13 @@ BENCHMARK_FEMALE_HAND_LEFT = 'benchmark_female_hand_left'
 FEMALE_HAND_RIGHT_BLACK = 'female_hand_right_black'
 FEMALE_HAND_LEFT_BLACK = 'female_hand_left_black'
 
-PROP_CIGARETTE = 'prop_cigarette'
-PROP_RIFLE = 'prop_rifle'
-PROP_GUN = 'prop_gun'
-PROP_GUN_LEFT = 'prop_gun_left'
+MALE_WHITE_HANDS = [BENCHMARK_MALE_HAND_LEFT, BENCHMARK_MALE_HAND_RIGHT]
+MALE_BLACK_HANDS = [MALE_HAND_LEFT_BLACK, MALE_HAND_RIGHT_BLACK]
+FEMALE_WHITE_HANDS = [BENCHMARK_FEMALE_HAND_LEFT, BENCHMARK_FEMALE_HAND_RIGHT]
+FEMALE_BLACK_HANDS = [FEMALE_HAND_LEFT_BLACK, FEMALE_HAND_RIGHT_BLACK]
+ROBO_HANDS = [ROBOT_HAND_LEFT, ROBOT_HAND_RIGHT]
+ROBO_HANDS_B = [ROBOT_HAND_LEFTB, ROBOT_HAND_RIGHTB]
+
 PROP_NEURALNET_A = 'prop_neuralnet_a'
 PROP_NEURALNET_A_COMBO = 'prop_neuralnet_a_combo'
 PROP_NEURALNET_A_RIGHT = 'prop_neuralnet_a_right'
@@ -331,26 +168,492 @@ COMM_LI_GUARD_FEMALE = 'comm_li_guard_female'
 COMM_KU_GUARD_FEMALE = 'comm_ku_guard_female'
 NEW_FEM_GLASSES = 'new_fem_glasses'
 
-HEADS_BARTENDER = [
-    RH_BARTENDER_HEAD, BR_BARTENDER_HEAD, KU_BARTENDER_HEAD
-]
-HEADS_SALES = [
-    RH_SALES_HEAD, LI_SALES_HEAD, BR_SALES_HEAD, KU_SALES_HEAD
-]
-HEADS_MALE_RH = [
-    RH_BARTENDER_HEAD,
-    RH_ALARIC_HEAD,
-    RH_WILHAM_HEAD,
-]
 
-BUST_BODIES = [
-    KU_KYM_BODY_BUST,
-    PL_FEMALE1_PEASANT_BODY_BUST,
-    PL_FEMALE2_PEASANT_BODY_BUST,
-]
+
+class Body:
+
+    def get_name(self):
+        raise NotImplementedError
+
+    def get_usage(self):
+        raise NotImplementedError
+
+
+class MaleBody:
+
+    def __init__(self, name, usage):
+        self.name = name
+        self.usage = usage
+
+    def get_name(self):
+        return self.name
+
+    def get_usage(self):
+        return self.usage
+
+
+class FemaleBody:
+
+    def __init__(self, name, usage, bust=False, white_important=False):
+        self.name = name
+        self.usage = usage
+        self.bust = bust
+        self.white_important = white_important
+
+    def get_name(self):
+        return self.name
+
+    def get_usage(self):
+        return self.usage
+
+
+class PartsStore:
+    MALE_MIL_HATS = []
+    FEMALE_MIL_HATS = []
+    MALE = []
+    FEMALE = []
+
+    def __init__(self):
+        self.male_bodies_per_type = self.load_bodies(self.MALE)
+        self.female_bodies_per_type = self.load_bodies(self.FEMALE)
+
+    @staticmethod
+    def load_bodies(bodies):
+        result = {}
+        for body in bodies:
+            usage = body.get_usage()
+            if usage not in result:
+                result[usage] = [body]
+            else:
+                result[usage].append(body)
+        return result
+
+    def get_male(self, usage):
+        return choice(self.male_bodies_per_type[usage])
+
+    def get_female(self, usage):
+        return choice(self.female_bodies_per_type[usage])
+
+
+class LibertyBodyStore(PartsStore):
+    MALE = [
+        MaleBody('li_bartender_body', BARTENDER),
+        MaleBody('li_commtrader_body', TRADER),
+        MaleBody('li_male_guard_body', GUARD),
+        MaleBody('li_male_elite_body', ELITE),
+        MaleBody('li_manhattan_bartender_body', FAT),
+        MaleBody('li_rockford_body', TRADER),
+        MaleBody('li_scrote_body', GENERAL),
+        MaleBody('li_shipdealer_body', TRADER),
+        MaleBody('li_tilton_body_alt', GENERAL),
+    ]
+    FEMALE = [
+        FemaleBody('li_female_elite_body', ELITE),
+        FemaleBody('li_female_guard_body', GUARD),
+        FemaleBody('li_hatcher_body', GENERAL),
+    ]
+
+
+class BretoniaBodyStore(PartsStore):
+    MALE = [
+        MaleBody('br_bartender_body', BARTENDER),
+        MaleBody('br_brighton_body', GENERAL),
+        MaleBody('br_commtrader_body', TRADER),
+        MaleBody('br_male_elite_body', ELITE),
+        MaleBody('br_male_guard_body', GUARD),
+        MaleBody('br_quigly_body', TRADER),
+        MaleBody('br_shipdealer_body', TRADER),
+        MaleBody('br_tobias_body', FAT),
+    ]
+    FEMALE = [
+        FemaleBody('br_darcy_body', GENERAL),
+        FemaleBody('br_female_elite_body', ELITE),
+        FemaleBody('br_female_guard_body', GUARD),
+        FemaleBody('br_kaitlyn_body', TRADER),
+        FemaleBody('br_karina_body', TRADER),
+    ]
+
+class KusariBodyStore(PartsStore):
+    MALE = [
+        MaleBody('ku_bartender_body', BARTENDER),
+        MaleBody('ku_commtrader_body', TRADER),
+        MaleBody('ku_edo_body', FAT),
+        MaleBody('ku_male_elite_body', ELITE),
+        MaleBody('ku_male_guard_body', GUARD),
+        MaleBody('ku_shipdealer_body', TRADER),
+    ]
+    FEMALE = [
+        FemaleBody('ku_kym_body', TRADER, bust=True, white_important=True),
+        FemaleBody('ku_kym_body_gen', TRADER, white_important=True),
+        FemaleBody('ku_kym_body_bust', GENERAL, bust=True),
+        FemaleBody('ku_female_elite_body', ELITE),
+        FemaleBody('ku_female_guard_body', GUARD),
+    ]
+
+class RheinlandBodyStore(PartsStore):
+    MALE = [
+        MaleBody('rh_bartender_body', BARTENDER),
+        MaleBody('rh_commtrader_body', TRADER),
+        MaleBody('rh_deidrich_body', GENERAL),
+        MaleBody('rh_male_elite_body', ELITE),
+        MaleBody('rh_male_guard_body', GUARD),
+        MaleBody('rh_reichman_body', GENERAL),
+        MaleBody('rh_shipdealer_body', TRADER),
+        MaleBody('rh_wilham_body', GENERAL),
+    ]
+    FEMALE = [
+        FemaleBody('rh_female_elite_body', ELITE),
+        FemaleBody('rh_female_guard_body', GUARD),
+        FemaleBody('rh_greunwald_body', GENERAL, bust=True),
+    ]
+
+class GenericBodyStore(PartsStore):
+    MALE = [
+        MaleBody('pl_male1_journeyman_body', JOURNEYMAN),
+        MaleBody('pl_male1_peasant_body', PEASANT),
+        MaleBody('pl_male2_journeyman_body', PLAYER),
+        MaleBody('pl_male2_peasant_body', PEASANT),
+        MaleBody('pl_male3_journeyman_body', JOURNEYMAN),
+        MaleBody('pl_male3_peasant_body', PEASANT),
+        # MaleBody('pl_male3_peasant_body_hurt', JOURNEYMAN),
+        MaleBody('pi_orillion_body', ORDER),
+        MaleBody('pi_pirate1_body', PIRATE),
+        MaleBody('pi_pirate2_body', PIRATE),
+        MaleBody('pi_pirate3_body', PIRATE),
+        MaleBody('pi_pirate4_body', PIRATE),
+        MaleBody('pi_pirate5_body', PIRATE),
+        MaleBody('pi_pirate6_body', PIRATE),
+        MaleBody('pi_pirate7_body', PIRATE),
+        MaleBody('pi_pirate8_body', PIRATE),
+        MaleBody('pl_trent_body', PLAYER),
+        MaleBody('sc_scientist1_body', SCIENT),
+        MaleBody('sc_scientist2_body', SCIENT),
+        MaleBody('sc_scientist3_body', SCIENT),
+        MaleBody('sc_scientist4_body', SCIENT),
+        MaleBody('sh_male1_body', JOURNEYMAN),
+        MaleBody('sh_male2_body', JOURNEYMAN),
+        MaleBody('sh_male3_body', JOURNEYMAN),
+        MaleBody('robot_body_a', ROBOT),
+        MaleBody('robot_body_b', ROBOT),
+        MaleBody('robot_body_c', ROBOT),
+        MaleBody('robot_body_d', ROBOT),
+        MaleBody('robot_body_e', ROBOT),
+    ]
+    FEMALE = [
+        FemaleBody('pl_female1_journeyman_body', JOURNEYMAN),
+        FemaleBody('pl_female1_peasant_body', PEASANT),
+        FemaleBody('pl_female2_journeyman_body', JOURNEYMAN),
+        FemaleBody('pl_female2_peasant_body', PEASANT),
+        FemaleBody('sc_female1_body', PIRATE),
+        FemaleBody('sh_female1_body', PIRATE),
+        FemaleBody('pl_female1_peasant_body_bust', PEASANT, bust=True),
+        FemaleBody('pl_female2_peasant_body_bust', PEASANT, bust=True),
+    ]
+
+
+class Head:
+
+    def get_name(self):
+        raise NotImplementedError
+
+    def get_usage(self):
+        raise NotImplementedError
+
+    def is_japan(self):
+        raise NotImplementedError
+
+    def is_black(self):
+        raise NotImplementedError
+
+    def get_hands(self):
+        raise NotImplementedError
+
+
+class MaleHead(Head):
+
+    def __init__(self, name, usage, hat=True, black=False, japan=False, crop=False):
+        self.name = name
+        self.usage = usage
+        self.hat = hat
+        self.black = black
+        self.japan = japan
+        self.crop = crop
+
+        if self.black and self.japan:
+            raise Exception(f'head {self.name} could not be black and japan at same time')
+
+    def get_name(self):
+        return self.name
+
+    def get_usage(self):
+        return self.usage
+
+    def is_japan(self):
+        return self.japan
+
+    def is_black(self):
+        return self.black
+
+    def get_hands(self):
+        if self.is_black():
+            return MALE_BLACK_HANDS
+        return MALE_WHITE_HANDS
+
+
+class FemaleHead(Head):
+
+    def __init__(self, name, usage, hat=True, bust=False, black=False, japan=False):
+        self.name = name
+        self.usage = usage
+        self.hat = hat
+        self.bust = bust
+        self.black = black
+        self.japan = japan
+
+        if self.black and self.japan:
+            raise Exception(f'head {self.name} could not be black and japan at same time')
+
+    def get_name(self):
+        return self.name
+
+    def get_usage(self):
+        return self.usage
+
+    def is_japan(self):
+        return self.japan
+
+    def is_black(self):
+        return self.black
+
+    def is_bust(self):
+        return self.japan
+
+
+class HeadStore:
+    MALE = [
+        MaleHead('syd_head', PIRATE, hat=False),
+        MaleHead('li_rockford_head', GENERIC),
+        MaleHead('li_scrote_head', HERO),
+        MaleHead('li_captain_head', GENERIC),
+        MaleHead('li_sales_head', GENERIC),
+        MaleHead('li_manhattan_bartender_head', HERO),
+        MaleHead('br_brighton_head', GENERIC),
+        MaleHead('br_quigly_head', TRADER),
+        MaleHead('br_captain_head', GENERIC),
+        MaleHead('br_sales_head', GENERIC),
+        MaleHead('br_bartender_head', GENERIC),
+        MaleHead('br_tobias_head', HERO),
+        MaleHead('rh_alaric_head', MILITARY, hat=False),
+        MaleHead('rh_deidrich_head', HERO),
+        MaleHead('rh_reichman_head', HERO),
+        MaleHead('rh_wilham_head', MILITARY),
+        MaleHead('rh_hassler_head', MILITARY),
+        MaleHead('rh_captain_head', CAPTAIN),
+        MaleHead('rh_sales_head', GENERIC),
+        MaleHead('rh_bartender_head', GENERIC),
+        MaleHead('ku_edo_head', HERO, japan=True),
+        MaleHead('ku_tenji_head', HERO, japan=True),
+        MaleHead('ku_captain_head', CAPTAIN, japan=True),
+        MaleHead('ku_sales_head', GENERIC, japan=True),
+        MaleHead('ku_bartender_head', GENERIC, japan=True),
+        MaleHead('pi_pirate1_head', PIRATE),
+        MaleHead('pi_pirate2_head', PIRATE),
+        MaleHead('pi_pirate3_head', PIRATE),
+        MaleHead('pi_pirate3_head_hurt', PIRATE),
+        MaleHead('pi_pirate4_head', PIRATE),
+        MaleHead('pi_pirate5_head', PIRATE),
+        MaleHead('sh_male1_head', GENERIC),
+        MaleHead('sh_male2_head', GENERIC),
+        MaleHead('sh_male3_head', GENERIC),
+        MaleHead('sh_male4_head', GENERIC),
+        MaleHead('sh_male5_head', MONKEY),
+        MaleHead('sh_male5t_head', MONKEY),
+        MaleHead('sh_male6_head', MONKEY),
+        MaleHead('ge_male1_head', GENERIC),
+        MaleHead('ge_male2_head', GENERIC, japan=True),
+        MaleHead('ge_male3_head', GENERIC),
+        MaleHead('ge_male4_head', GENERIC),
+        MaleHead('ge_male6_head', GENERIC, black=True),
+        MaleHead('ge_male7_head', SCIENT),
+        MaleHead('sc_scientist1_head', SCIENT, hat=False),
+        MaleHead('sc_scientist2_head', SCIENT, hat=False),
+        MaleHead('pl_male1_head', GENERIC),
+        MaleHead('pl_male2_head', GENERIC),
+        MaleHead('pl_male3_head', GENERIC, hat=False),
+        MaleHead('pl_male4_head', GENERIC, black=True),
+        MaleHead('pl_male5_head', GENERIC, japan=True),
+        MaleHead('pl_male6_head', GENERIC, black=True),
+        MaleHead('pl_male7_head', GENERIC),
+        MaleHead('pl_male8_head', GENERIC, hat=False, japan=True),
+        MaleHead('li_sales_head_hat', GENERIC, crop=True),
+        MaleHead('br_sales_head_hat', GENERIC, crop=True),
+        MaleHead('ku_bartender_head_hat', GENERIC, japan=True, crop=True),
+        MaleHead('ku_tenji_head_hat', HERO),
+        MaleHead('pl_male3_head_hat', GENERIC, crop=True),
+        MaleHead('pl_male8_head_hat', GENERIC, japan=True, crop=True),
+        MaleHead('rh_alaric_head_hat', HERO, crop=True),
+        MaleHead('sc_scientist1_head_hat', SCIENT, crop=True),
+        MaleHead('sc_scientist2_head_hat', SCIENT, crop=True),
+    ]
+
+    FEMALE = [
+        FemaleHead('li_hatcher_head', HERO, hat=False),
+        FemaleHead('br_darcy_head', HERO, hat=False),
+        FemaleHead('br_kaitlyn_head', GENERIC, hat=False),
+        FemaleHead('br_karina_head_gen', GENERIC),
+        FemaleHead('rh_gruenwald_head_gen', GENERIC, hat=False),
+        FemaleHead('ku_kym_head_gen', GENERIC, japan=True),
+        FemaleHead('ku_tashi_head', GENERIC, hat=False, japan=True),
+        FemaleHead('sh_female1_head_gen', PIRATE, hat=False),
+        FemaleHead('sh_female2_head_gen', PIRATE, hat=False),
+        FemaleHead('ge_female1_head', GENERIC),
+        FemaleHead('pl_female1_head', GENERIC, hat=False),
+        FemaleHead('pl_female2_head', GENERIC),
+        FemaleHead('pl_female3_head', GENERIC, black=True),
+        FemaleHead('pl_female4_head', HERO),
+        FemaleHead('pl_female5_head', GENERIC),
+        FemaleHead('pl_female6_head', GENERIC),
+        FemaleHead('br_newscaster_head_gen', GENERIC),
+        FemaleHead('ku_newscaster_head_gen', GENERIC, japan=True),
+        FemaleHead('li_newscaster_head_gen', GENERIC, black=True),
+        FemaleHead('rh_newscaster_head_gen', GENERIC),
+        FemaleHead('br_newscaster_head', GENERIC, bust=True),
+        FemaleHead('ku_newscaster_head', GENERIC, bust=True, japan=True),
+        FemaleHead('li_newscaster_head', GENERIC, hat=False, bust=True, black=True),
+        FemaleHead('rh_newscaster_head', GENERIC, hat=False, bust=True),
+        FemaleHead('sh_female2_head', PIRATE, bust=True),
+        FemaleHead('sh_female1_head', PIRATE, bust=True),
+        FemaleHead('sh_female5_head', MONKEY),
+        FemaleHead('sh_female6_head', MONKEY),
+        FemaleHead('br_karina_head', GENERIC, bust=True),
+        FemaleHead('rh_gruenwald_head', GENERIC, bust=True),
+        FemaleHead('ku_kym_head', GENERIC, bust=True, japan=True),
+        FemaleHead('br_newscaster_head_hat', GENERIC, bust=True),
+        FemaleHead('br_newscaster_head_gen_hat', GENERIC),
+        FemaleHead('li_newscaster_head_hat', GENERIC, bust=True, black=True),
+        FemaleHead('li_newscaster_head_gen_hat', GENERIC, black=True),
+        FemaleHead('rh_newscaster_head_hat', GENERIC, bust=True),
+        FemaleHead('rh_newscaster_head_gen_hat', GENERIC, ),
+        FemaleHead('pl_female4_head_helmet', HERO),
+    ]
+
+    def __init__(self):
+        self.male_per_type = {}
+        self.male_japan_per_type = {}
+        self.extracted = []
+
+        self.load_male_heads()
+
+    def load_male_heads(self):
+        for head in self.MALE:
+            usage = head.get_usage()
+            if usage not in self.male_per_type:
+                self.male_per_type[usage] = [head]
+            else:
+                self.male_per_type[usage].append(head)
+
+    def get_male(self, types: list[int] = None, allow_black=True, allow_japan=True, japan_first=False):
+        if not types:
+            raise Exception('type is not set')
+
+        if japan_first:
+            for usage in types:
+                shuffle(self.male_per_type[usage])
+                for item in self.male_per_type[usage]:
+                    if not item.is_japan():
+                        continue
+                    if item.get_name() in self.extracted:
+                        continue
+
+                    return self.get_result(item)
+
+        for usage in types:
+            shuffle(self.male_per_type[usage])
+            for item in self.male_per_type[usage]:
+                if item.is_black() and not allow_black:
+                    continue
+                if item.is_japan() and not allow_japan:
+                    continue
+                if item.get_name() in self.extracted:
+                    continue
+
+                return self.get_result(item)
+
+        raise Exception('male head not found')
+
+    def get_result(self, head):
+        self.extracted.append(head.get_name())
+        return head
 
 
 class Costume:
-    def __init__(self, body, head, is_male=True, accessory=False):
+    def __init__(self, body, head, is_male=True, accessory=None):
         self.body = body
         self.head = head
+        self.left_hand, self.right_hand = head.get_hands()
+        self.is_male = is_male
+        self.accessory = accessory
+
+    def dump(self):
+        print(f'body: {self.body.get_name()}')
+        print(f'head: {self.head.get_name()}')
+        print(f'left_hand: {self.left_hand}')
+        print(f'right_hand: {self.left_hand}')
+
+
+class CharacterFactory:
+
+    def __init__(self):
+        self.rh_body = RheinlandBodyStore()
+        self.li_body = LibertyBodyStore()
+        self.br_body = BretoniaBodyStore()
+        self.ku_body = KusariBodyStore()
+        self.ge_body = GenericBodyStore()
+        self.heads = HeadStore()
+
+    def get_store_by_faction(self, faction):
+        if faction == RHEINLAND:
+            return self.rh_body
+        if faction == LIBERTY:
+            return self.li_body
+        if faction == BRETONIA:
+            return self.br_body
+        if faction == KUSARI:
+            return self.ku_body
+        raise Exception('unknown faction for body')
+
+    def get_kwargs_by_faction(self, faction):
+        if faction == RHEINLAND:
+            return {'allow_black': False, 'allow_japan': False}
+        if faction == LIBERTY:
+            return {'allow_black': True, 'allow_japan': False}
+        if faction == BRETONIA:
+            return {'allow_black': False, 'allow_japan': False}
+        if faction == KUSARI:
+            return {'allow_black': False, 'allow_japan': True, 'japan_first': True}
+        raise Exception('unknown faction for body')
+
+    def get_male_elite(self, faction):
+        body_store = self.get_store_by_faction(faction)
+        head = self.heads.get_male(types=[GENERIC], **self.get_kwargs_by_faction(faction))
+        body = body_store.get_male(ELITE)
+        return Costume(head=head, body=body, is_male=True)
+
+    def get_male_guard(self, faction):
+        body_store = self.get_store_by_faction(faction)
+        head = self.heads.get_male(types=[GENERIC], **self.get_kwargs_by_faction(faction))
+        body = body_store.get_male(GUARD)
+        return Costume(head=head, body=body, is_male=True)
+
+    def get_male_journeyman(self, faction):
+        head = self.heads.get_male(types=[GENERIC], **self.get_kwargs_by_faction(faction))
+        body = self.ge_body.get_male(JOURNEYMAN)
+        return Costume(head=head, body=body, is_male=True)
+
+
+
+
+
+
+
+
