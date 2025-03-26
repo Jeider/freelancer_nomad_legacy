@@ -169,6 +169,16 @@ COMM_KU_GUARD_FEMALE = 'comm_ku_guard_female'
 NEW_FEM_GLASSES = 'new_fem_glasses'
 
 
+def load_items_by_usage(items):
+    result = {}
+    for item in items:
+        usage = item.get_usage()
+        if usage not in result:
+            result[usage] = [item]
+        else:
+            result[usage].append(item)
+    return result
+
 
 class Body:
 
@@ -214,25 +224,14 @@ class PartsStore:
     FEMALE = []
 
     def __init__(self):
-        self.male_bodies_per_type = self.load_bodies(self.MALE)
-        self.female_bodies_per_type = self.load_bodies(self.FEMALE)
-
-    @staticmethod
-    def load_bodies(bodies):
-        result = {}
-        for body in bodies:
-            usage = body.get_usage()
-            if usage not in result:
-                result[usage] = [body]
-            else:
-                result[usage].append(body)
-        return result
+        self.male_per_type = load_items_by_usage(self.MALE)
+        self.female_per_type = load_items_by_usage(self.FEMALE)
 
     def get_male(self, usage):
-        return choice(self.male_bodies_per_type[usage])
+        return choice(self.male_per_type[usage])
 
     def get_female(self, usage):
-        return choice(self.female_bodies_per_type[usage])
+        return choice(self.female_per_type[usage])
 
 
 class LibertyBodyStore(PartsStore):
@@ -290,6 +289,7 @@ class KusariBodyStore(PartsStore):
         FemaleBody('ku_female_guard_body', GUARD),
     ]
 
+
 class RheinlandBodyStore(PartsStore):
     MALE = [
         MaleBody('rh_bartender_body', BARTENDER),
@@ -306,6 +306,7 @@ class RheinlandBodyStore(PartsStore):
         FemaleBody('rh_female_guard_body', GUARD),
         FemaleBody('rh_greunwald_body', GENERAL, bust=True),
     ]
+
 
 class GenericBodyStore(PartsStore):
     MALE = [
@@ -356,6 +357,9 @@ class Head:
     def get_name(self):
         raise NotImplementedError
 
+    def get_id(self):
+        return NotImplementedError
+
     def get_usage(self):
         raise NotImplementedError
 
@@ -371,19 +375,22 @@ class Head:
 
 class MaleHead(Head):
 
-    def __init__(self, name, usage, hat=True, black=False, japan=False, crop=False):
+    def __init__(self, name, usage, hat=True, black=False, japan=False, alt=None):
         self.name = name
         self.usage = usage
         self.hat = hat
         self.black = black
         self.japan = japan
-        self.crop = crop
+        self.alt = alt
 
         if self.black and self.japan:
             raise Exception(f'head {self.name} could not be black and japan at same time')
 
     def get_name(self):
         return self.name
+
+    def get_id(self):
+        return self.alt if self.alt else self.get_name()
 
     def get_usage(self):
         return self.usage
@@ -393,6 +400,9 @@ class MaleHead(Head):
 
     def is_black(self):
         return self.black
+
+    def can_mount_hat(self):
+        return self.hat is True
 
     def get_hands(self):
         if self.is_black():
@@ -402,19 +412,23 @@ class MaleHead(Head):
 
 class FemaleHead(Head):
 
-    def __init__(self, name, usage, hat=True, bust=False, black=False, japan=False):
+    def __init__(self, name, usage, hat=True, bust=False, black=False, japan=False, alt=None):
         self.name = name
         self.usage = usage
         self.hat = hat
         self.bust = bust
         self.black = black
         self.japan = japan
+        self.alt = alt
 
         if self.black and self.japan:
             raise Exception(f'head {self.name} could not be black and japan at same time')
 
     def get_name(self):
         return self.name
+
+    def get_id(self):
+        return self.alt if self.alt else self.get_name()
 
     def get_usage(self):
         return self.usage
@@ -425,8 +439,11 @@ class FemaleHead(Head):
     def is_black(self):
         return self.black
 
-    def is_bust(self):
-        return self.japan
+    def can_mount_hat(self):
+        return self.hat is True
+
+    def have_bust(self):
+        return self.bust
 
 
 class HeadStore:
@@ -485,27 +502,27 @@ class HeadStore:
         MaleHead('pl_male6_head', GENERIC, black=True),
         MaleHead('pl_male7_head', GENERIC),
         MaleHead('pl_male8_head', GENERIC, hat=False, japan=True),
-        MaleHead('li_sales_head_hat', GENERIC, crop=True),
-        MaleHead('br_sales_head_hat', GENERIC, crop=True),
-        MaleHead('ku_bartender_head_hat', GENERIC, japan=True, crop=True),
-        MaleHead('ku_tenji_head_hat', HERO),
-        MaleHead('pl_male3_head_hat', GENERIC, crop=True),
-        MaleHead('pl_male8_head_hat', GENERIC, japan=True, crop=True),
-        MaleHead('rh_alaric_head_hat', HERO, crop=True),
-        MaleHead('sc_scientist1_head_hat', SCIENT, crop=True),
-        MaleHead('sc_scientist2_head_hat', SCIENT, crop=True),
+        MaleHead('li_sales_head_hat', GENERIC, alt='li_sales_head'),
+        MaleHead('br_sales_head_hat', GENERIC, alt='br_sales_head'),
+        MaleHead('ku_bartender_head_hat', GENERIC, japan=True, alt='ku_bartender_head'),
+        MaleHead('ku_tenji_head_hat', HERO, alt='ku_bartender_head'),
+        MaleHead('pl_male3_head_hat', GENERIC, alt='pl_male3_head'),
+        MaleHead('pl_male8_head_hat', GENERIC, japan=True, alt='pl_male8_head'),
+        MaleHead('rh_alaric_head_hat', HERO, alt='rh_alaric_head'),
+        MaleHead('sc_scientist1_head_hat', SCIENT, alt='sc_scientist1_head'),
+        MaleHead('sc_scientist2_head_hat', SCIENT, alt='sc_scientist2_head'),
     ]
 
     FEMALE = [
         FemaleHead('li_hatcher_head', HERO, hat=False),
         FemaleHead('br_darcy_head', HERO, hat=False),
         FemaleHead('br_kaitlyn_head', GENERIC, hat=False),
-        FemaleHead('br_karina_head_gen', GENERIC),
-        FemaleHead('rh_gruenwald_head_gen', GENERIC, hat=False),
-        FemaleHead('ku_kym_head_gen', GENERIC, japan=True),
+        FemaleHead('br_karina_head_gen', GENERIC, alt='br_karina_head'),
+        FemaleHead('rh_gruenwald_head_gen', GENERIC, hat=False, alt='rh_gruenwald_head'),
+        FemaleHead('ku_kym_head_gen', GENERIC, japan=True, alt='ku_kym_head'),
         FemaleHead('ku_tashi_head', GENERIC, hat=False, japan=True),
-        FemaleHead('sh_female1_head_gen', PIRATE, hat=False),
-        FemaleHead('sh_female2_head_gen', PIRATE, hat=False),
+        FemaleHead('sh_female1_head_gen', PIRATE, hat=False, alt='sh_female1_head'),
+        FemaleHead('sh_female2_head_gen', PIRATE, hat=False, alt='sh_female2_head'),
         FemaleHead('ge_female1_head', GENERIC),
         FemaleHead('pl_female1_head', GENERIC, hat=False),
         FemaleHead('pl_female2_head', GENERIC),
@@ -513,10 +530,10 @@ class HeadStore:
         FemaleHead('pl_female4_head', HERO),
         FemaleHead('pl_female5_head', GENERIC),
         FemaleHead('pl_female6_head', GENERIC),
-        FemaleHead('br_newscaster_head_gen', GENERIC),
-        FemaleHead('ku_newscaster_head_gen', GENERIC, japan=True),
-        FemaleHead('li_newscaster_head_gen', GENERIC, black=True),
-        FemaleHead('rh_newscaster_head_gen', GENERIC),
+        FemaleHead('br_newscaster_head_gen', GENERIC, alt='br_newscaster_head'),
+        FemaleHead('ku_newscaster_head_gen', GENERIC, japan=True, alt='ku_newscaster_head'),
+        FemaleHead('li_newscaster_head_gen', GENERIC, black=True, alt='li_newscaster_head'),
+        FemaleHead('rh_newscaster_head_gen', GENERIC, alt='rh_newscaster_head'),
         FemaleHead('br_newscaster_head', GENERIC, bust=True),
         FemaleHead('ku_newscaster_head', GENERIC, bust=True, japan=True),
         FemaleHead('li_newscaster_head', GENERIC, hat=False, bust=True, black=True),
@@ -528,31 +545,26 @@ class HeadStore:
         FemaleHead('br_karina_head', GENERIC, bust=True),
         FemaleHead('rh_gruenwald_head', GENERIC, bust=True),
         FemaleHead('ku_kym_head', GENERIC, bust=True, japan=True),
-        FemaleHead('br_newscaster_head_hat', GENERIC, bust=True),
-        FemaleHead('br_newscaster_head_gen_hat', GENERIC),
-        FemaleHead('li_newscaster_head_hat', GENERIC, bust=True, black=True),
-        FemaleHead('li_newscaster_head_gen_hat', GENERIC, black=True),
-        FemaleHead('rh_newscaster_head_hat', GENERIC, bust=True),
-        FemaleHead('rh_newscaster_head_gen_hat', GENERIC, ),
-        FemaleHead('pl_female4_head_helmet', HERO),
+        FemaleHead('br_newscaster_head_hat', GENERIC, bust=True, alt='br_newscaster_head'),
+        FemaleHead('br_newscaster_head_gen_hat', GENERIC, alt='br_newscaster_head'),
+        FemaleHead('li_newscaster_head_hat', GENERIC, bust=True, black=True, alt='li_newscaster_head'),
+        FemaleHead('li_newscaster_head_gen_hat', GENERIC, black=True, alt='li_newscaster_head'),
+        FemaleHead('rh_newscaster_head_hat', GENERIC, bust=True, alt='rh_newscaster_head'),
+        FemaleHead('rh_newscaster_head_gen_hat', GENERIC, alt='rh_newscaster_head'),
+        FemaleHead('pl_female4_head_helmet', HERO, alt='pl_female4_head'),
     ]
 
     def __init__(self):
-        self.male_per_type = {}
-        self.male_japan_per_type = {}
+        self.male_per_type = load_items_by_usage(self.MALE)
+        self.female_per_type = load_items_by_usage(self.FEMALE)
         self.extracted = []
 
-        self.load_male_heads()
+    def get_result(self, head):
+        self.extracted.append(head.get_id())
+        return head
 
-    def load_male_heads(self):
-        for head in self.MALE:
-            usage = head.get_usage()
-            if usage not in self.male_per_type:
-                self.male_per_type[usage] = [head]
-            else:
-                self.male_per_type[usage].append(head)
-
-    def get_male(self, types: list[int] = None, allow_black=True, allow_japan=True, japan_first=False):
+    def get_male(self, types: list[int] = None, allow_hat: bool | None = None,
+                 allow_black=True, allow_japan=True, japan_first=False):
         if not types:
             raise Exception('type is not set')
 
@@ -561,6 +573,8 @@ class HeadStore:
                 shuffle(self.male_per_type[usage])
                 for item in self.male_per_type[usage]:
                     if not item.is_japan():
+                        continue
+                    if not item.can_mount_hat and allow_hat is False:
                         continue
                     if item.get_name() in self.extracted:
                         continue
@@ -574,6 +588,8 @@ class HeadStore:
                     continue
                 if item.is_japan() and not allow_japan:
                     continue
+                if not item.can_mount_hat and allow_hat is False:
+                    continue
                 if item.get_name() in self.extracted:
                     continue
 
@@ -581,9 +597,48 @@ class HeadStore:
 
         raise Exception('male head not found')
 
-    def get_result(self, head):
-        self.extracted.append(head.get_name())
-        return head
+    def get_female(self, types: list[int], bust: bool,
+                   allow_hat: bool | None = None, allow_black=True, allow_japan=True, japan_first=False):
+        if japan_first:
+            for usage in types:
+                shuffle(self.female_per_type[usage])
+                for item in self.female_per_type[usage]:
+                    if not item.is_japan():
+                        continue
+                    if not item.can_mount_hat and allow_hat is False:
+                        continue
+                    if bust:
+                        if not item.have_bust():
+                            continue
+                    else:
+                        if item.have_bust():
+                            continue
+                    if item.get_name() in self.extracted:
+                        continue
+
+                    return self.get_result(item)
+
+        for usage in types:
+            shuffle(self.female_per_type[usage])
+            for item in self.female_per_type[usage]:
+                if item.is_black() and not allow_black:
+                    continue
+                if item.is_japan() and not allow_japan:
+                    continue
+                if not item.can_mount_hat and allow_hat is False:
+                    continue
+                if bust:
+                    if not item.have_bust():
+                        continue
+                else:
+                    if item.have_bust():
+                        continue
+                if item.get_name() in self.extracted:
+                    continue
+
+                return self.get_result(item)
+
+        raise Exception('male head not found')
 
 
 class Costume:
@@ -649,11 +704,3 @@ class CharacterFactory:
         head = self.heads.get_male(types=[GENERIC], **self.get_kwargs_by_faction(faction))
         body = self.ge_body.get_male(JOURNEYMAN)
         return Costume(head=head, body=body, is_male=True)
-
-
-
-
-
-
-
-
