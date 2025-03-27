@@ -12,7 +12,7 @@ from universe.content import zones
 from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
-from universe.content import faction
+from universe import faction
 from universe.content import mineable
 from templates.solar import hackable
 from templates.solar import asteroid as asteroid_solar
@@ -25,7 +25,7 @@ from templates.dockable import station_debris
 
 
 class TekagiMember(Member):
-    FACTION = faction.KU_GRP
+    FACTION = faction.KusariMain
     INTERIOR_BG1 = interior.INTERIOR_KU_TAKAGI
 
 
@@ -367,7 +367,7 @@ class TekagiWestPirates(TekagiMember, main_objects.PirateAsteroid):
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.KusariPirateDealers
 
-    FACTION = faction.KX_GRP
+    FACTION = faction.KusariPirate
     DEFENCE_LEVEL = None
 
 
@@ -379,7 +379,7 @@ class TekagiEastPirates(TekagiMember, main_objects.PirateAsteroid):
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.KusariPirateDealers
 
-    FACTION = faction.KX_GRP
+    FACTION = faction.KusariPirate
     DEFENCE_LEVEL = None
 
 

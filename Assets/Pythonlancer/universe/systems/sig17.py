@@ -13,7 +13,7 @@ from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
 from universe.audio.space_voice import SpaceVoice
-from universe.content import faction
+from universe import faction
 from universe.content import mineable
 from templates.solar import asteroid
 from templates.solar import hackable
@@ -29,7 +29,7 @@ from templates.dockable import station_debris
 
 
 class Sig17Member(Member):
-    FACTION = faction.LI_GRP
+    FACTION = faction.LibertyMain
 
     INTERIOR_BG1 = interior.INTERIOR_SIGMA17
 
@@ -403,7 +403,7 @@ class Sig17EdgeNebulaPirates(Sig17Member, main_objects.PirateAsteroid):
     BASE_INDEX = 5
     REL = RIGHT
     SPACE_OBJECT_TEMPLATE = astbase.NomadAsteroidBase
-    FACTION = faction.CO_GRP
+    FACTION = faction.Corsairs
 
     DEFENCE_LEVEL = None
 
@@ -428,7 +428,7 @@ class Sig17CrowNebulaPirates(Sig17Member, main_objects.PirateStation):
     BASE_INDEX = 6
     REL = LEFT
     SPACE_OBJECT_TEMPLATE = pirate.LibertyRombicPirateBase
-    FACTION = faction.CO_GRP
+    FACTION = faction.Corsairs
 
     DEFENCE_LEVEL = None
 

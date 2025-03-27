@@ -13,7 +13,7 @@ from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
 from universe.audio.space_voice import SpaceVoice
-from universe.content import faction
+from universe import faction
 from universe.content import mineable
 from templates.solar import asteroid as asteroid_solar
 from templates.solar import hackable
@@ -29,7 +29,7 @@ from templates.dockable import roid_mining
 
 
 class CalMember(Member):
-    FACTION = faction.LI_GRP
+    FACTION = faction.LibertyMain
     INTERIOR_BG1 = interior.INTERIOR_BG_CROW
 
 
@@ -397,7 +397,7 @@ class CalPirate1(CalMember, main_objects.PirateAsteroid):
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.LibertyPirateDealers
 
-    FACTION = faction.LX_GRP
+    FACTION = faction.LibertyPirate
     DEFENCE_LEVEL = None
 
     ASTEROID_ZONES = [
@@ -415,7 +415,7 @@ class CalPirate2(CalMember, main_objects.PirateStation):
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.LibertyPirateDealers
 
-    FACTION = faction.PI_GRP
+    FACTION = faction.LibertyPirate
     DEFENCE_LEVEL = None
 
     EXCLUSION_PARAMS = CROW_EXCLUSION_PARAMS

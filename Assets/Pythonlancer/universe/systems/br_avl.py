@@ -13,7 +13,7 @@ from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
 from universe.audio.space_voice import SpaceVoice
-from universe.content import faction
+from universe import faction
 from universe.content import mineable
 from templates.solar import asteroid
 from templates.solar import debris_box
@@ -30,7 +30,7 @@ from templates.dockable import prisons
 
 
 class AvalMember(Member):
-    FACTION = faction.BR_GRP
+    FACTION = faction.BretoniaMain
 
 
 class AvalStaticText(AvalMember, main_objects.RawText):
@@ -518,7 +518,7 @@ class AvalJunkers(AvalMember, main_objects.JunkerBase):
     SPACE_OBJECT_TEMPLATE = junker.ForbesJunker
     INTERIOR_CLASS = interior.PirateOutpostShipdealerInterior
     DEALERS = dealers.BretoniaPirateDealers
-    FACTION = faction.BX_GRP
+    FACTION = faction.BretoniaPirate
     AST_EXCLUSION_ZONE_SIZE = 2500
     ASTEROID_ZONES = [
         AvalDebrisZone3
@@ -533,7 +533,7 @@ class AvalPirates(AvalMember, main_objects.PirateStation):
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseCalifornia
     INTERIOR_CLASS = interior.PirateOutpostShipdealerInterior
     DEALERS = dealers.BretoniaPirateDealers
-    FACTION = faction.BX_GRP
+    FACTION = faction.BretoniaPirate
     AST_EXCLUSION_ZONE_SIZE = 2500
     ASTEROID_ZONES = [
         AvalAsteroidZone3

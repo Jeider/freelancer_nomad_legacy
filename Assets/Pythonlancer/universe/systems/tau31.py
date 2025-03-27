@@ -12,7 +12,7 @@ from universe.content import zones
 from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
-from universe.content import faction
+from universe import faction
 from universe.content import mineable
 from templates.nebula import tau31_nebula
 from templates.nebula import exclusion
@@ -25,7 +25,7 @@ from templates.dockable import upsilon_gasinside
 
 
 class Tau31Member(Member):
-    FACTION = faction.LI_GRP
+    FACTION = faction.LibertyMain
     INTERIOR_BG1 = interior.INTERIOR_BG_EDGE
 
 
@@ -166,7 +166,7 @@ class Tau31BottomPirates(Tau31Member, main_objects.PirateGasMiner):
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.LibertyPirateDealers
     DEFENCE_LEVEL = None
-    FACTION = faction.LX_GRP
+    FACTION = faction.LibertyPirate
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
     EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS
@@ -181,7 +181,7 @@ class Tau31TopPirates(Tau31Member, main_objects.PirateGasMiner):
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.LibertyPirateDealers
     DEFENCE_LEVEL = None
-    FACTION = faction.LX_GRP
+    FACTION = faction.LibertyPirate
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
     EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS

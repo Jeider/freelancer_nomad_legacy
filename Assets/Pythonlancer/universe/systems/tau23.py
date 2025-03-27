@@ -12,7 +12,7 @@ from universe.content import zones
 from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
-from universe.content import faction
+from universe import faction
 from universe.content import mineable
 from universe.content import population
 
@@ -25,19 +25,19 @@ from templates.dockable import trade_storages
 
 
 class Tau23Member(Member):
-    FACTION = faction.BR_GRP
+    FACTION = faction.BretoniaMain
     INTERIOR_BG1 = interior.INTERIOR_BG_BARRIER_CLOUD
 
 
 class Tau23Bretonia(object):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_BR
-    FACTION = faction.BR_GRP
+    FACTION = faction.BretoniaMain
 
 
 class Tau23Kusari(object):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_KU
     POPULATION_KIND = population.POP_SECOND
-    FACTION = faction.KU_GRP
+    FACTION = faction.KusariMain
 
 
 class Tau23StaticText(Tau23Member, main_objects.RawText):
@@ -129,8 +129,6 @@ class Tau23BretoniaStation(Tau23Member, Tau23Bretonia, main_objects.GasMiningSta
     EXCLUSION_PARAMS = BARRIER_EXCLUSION_PARAMS
     NEBULA_ZONES = [Tau23Nebula]
 
-    FACTION = faction.BR_GRP
-
     BASE_PROPS = meta.GasMiningStation(
         objectives=[
             meta.HaveGreenhouse(),
@@ -154,8 +152,6 @@ class Tau23KusariStation(Tau23Member, Tau23Kusari, main_objects.GasMiningStation
     EXCLUSION_PARAMS = BARRIER_EXCLUSION_PARAMS
     NEBULA_ZONES = [Tau23Nebula]
 
-    FACTION = faction.KU_GRP
-
 
 class Tau23BretoniaBattleship(Tau23Member, Tau23Bretonia, main_objects.BretoniaBattleship):
     INDEX = 1
@@ -165,7 +161,6 @@ class Tau23BretoniaBattleship(Tau23Member, Tau23Bretonia, main_objects.BretoniaB
     REL_DRIFT = 500
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.BretoniaMilitaryDealers
-    FACTION = faction.BR_GRP
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
     EXCLUSION_PARAMS = BARRIER_EXCLUSION_PARAMS
@@ -180,7 +175,6 @@ class Tau23KusariBattleship(Tau23Member, Tau23Kusari, main_objects.KusariBattles
     REL_DRIFT = 500
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.KusariMilitaryDealers
-    FACTION = faction.KU_GRP
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
     EXCLUSION_PARAMS = BARRIER_EXCLUSION_PARAMS
@@ -200,8 +194,6 @@ class Tau23Freeport(Tau23Member, Tau23Bretonia, main_objects.Freeport):
     EXCLUSION_PARAMS = BARRIER_EXCLUSION_PARAMS
     NEBULA_ZONES = [Tau23Nebula]
 
-    FACTION = faction.BR_GRP
-
 
 class Tau23TopRightPirates(Tau23Member, Tau23Bretonia, main_objects.PirateGasMiner):
     INDEX = 1
@@ -210,7 +202,7 @@ class Tau23TopRightPirates(Tau23Member, Tau23Bretonia, main_objects.PirateGasMin
     SPACE_OBJECT_TEMPLATE = gas_miner.RheinlandPirateGasMiner
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.BretoniaPirateDealers
-    FACTION = faction.BX_GRP
+    FACTION = faction.BretoniaPirate
     DEFENCE_LEVEL = None
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
@@ -225,7 +217,7 @@ class Tau23BottomLeftPirates(Tau23Member, Tau23Kusari, main_objects.PirateGasMin
     SPACE_OBJECT_TEMPLATE = gas_miner.BretoniaPirateGasMiner
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.KusariPirateDealers
-    FACTION = faction.KX_GRP
+    FACTION = faction.KusariPirate
     DEFENCE_LEVEL = None
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000

@@ -31,7 +31,6 @@ class CharacterManager:
         return SINGLE_DIVIDER.join(knowledge_map)
 
     def post_load(self):
-        factory = CharacterFactory()
 
         self.sync_data()
 

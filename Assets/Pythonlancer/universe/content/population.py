@@ -1,7 +1,7 @@
 from universe.content import encounter
-from universe.content import faction
+from universe import faction
 
-from text.dividers import DIVIDER, SINGLE_DIVIDER
+from text.dividers import SINGLE_DIVIDER
 
 POP_FIRST = 'first'
 POP_SECOND = 'second'
@@ -10,10 +10,10 @@ POP_MIXED = 'mixed'
 
 class Population(object):
 
-    GENERIC_PIRATES = faction.PI_GRP
-    BOUNTY_HUNTERS = faction.BH_GRP
-    GLOBAL_TRADERS = faction.TR_GRP
-    JUNKERS = faction.JUNK_GRP
+    GENERIC_PIRATES = None
+    BOUNTY_HUNTERS = faction.WorkaroundHunter
+    GLOBAL_TRADERS = None
+    JUNKERS = None
 
     SIMPLE_DEFENCE_PARAMS = '''sort = 9
 toughness = 10
@@ -64,7 +64,6 @@ relief_time = 15'''
     @classmethod
     def get_simple_defence_params(cls):
         if not cls.SIMPLE_DEFENCE_ENCOUNTERS:
-            import pdb;pdb.set_trace()
             raise Exception('simple defence encounters is not defined %s' % cls.__class__.__name__)
         if not cls.SIMPLE_ARRIVAL_TRADERS_ENCOUNTERS:
             raise Exception('simple arrived traders encounters is not defined %s' % cls.__class__.__name__)
@@ -207,10 +206,10 @@ faction = {bounty_hunters}, 1.00000'''
     @classmethod
     def get_trade_template_params(cls):
         return {
-            'main_faction': cls.MAIN_FACTION,
-            'main_traders': cls.MAIN_TRADERS,
-            'global_traders': cls.GLOBAL_TRADERS,
-            'bounty_hunters': cls.BOUNTY_HUNTERS,
+            'main_faction': cls.MAIN_FACTION.get_code(),
+            'main_traders': cls.MAIN_TRADERS.get_code(),
+            'global_traders': cls.GLOBAL_TRADERS.get_code(),
+            'bounty_hunters': cls.BOUNTY_HUNTERS.get_code(),
             'global_traders_encounter': cls.GLOBAL_TRADERS_ENC.get_nickname(),
             'global_traders_encounter_tlr': cls.GLOBAL_TRADERS_TLR_ENC.get_nickname(),
             'bounter_hunter_trade_encounter': cls.BH_TRADE_ENC.get_nickname(),
@@ -220,21 +219,21 @@ faction = {bounty_hunters}, 1.00000'''
     @classmethod
     def get_main_defence_template_params(cls):
         return {
-            'main_faction': cls.MAIN_FACTION,
+            'main_faction': cls.MAIN_FACTION.get_code(),
         }
 
     @classmethod
     def get_high_defence_template_params(cls):
         return {
             'high_defence_capship_encounter': cls.HIGH_CAPSHIP_ENC.get_nickname(),
-            'main_faction': cls.MAIN_FACTION,
+            'main_faction': cls.MAIN_FACTION.get_code(),
         }
 
     @classmethod
     def get_medium_defence_template_params(cls):
         return {
             'medium_defence_capship_encounter': cls.MEDIUM_CAPSHIP_ENC.get_nickname(),
-            'main_faction': cls.MAIN_FACTION,
+            'main_faction': cls.MAIN_FACTION.get_code(),
         }
 
     @classmethod
@@ -290,8 +289,12 @@ class UnlawfulPopulation(Population):
 
 
 class RheinlandLegalPopulation(LawfulPopulation):
-    MAIN_FACTION = faction.RH_GRP
-    MAIN_TRADERS = faction.RC_GRP
+    MAIN_FACTION = faction.RheinlandMain
+    MAIN_TRADERS = faction.RheinlandCivilians
+    GENERIC_PIRATES = faction.RheinlandPirate
+    # BOUNTY_HUNTERS = faction.RheinlandHunters
+    GLOBAL_TRADERS = faction.RheinlandCivilians
+    JUNKERS = faction.Junkers
 
     HIGH_CAPSHIP_ENC = encounter.RhCruiser
     MEDIUM_CAPSHIP_ENC = encounter.RhGunboat
@@ -305,8 +308,12 @@ class RheinlandLegalPopulation(LawfulPopulation):
 
 
 class LibertyLegalPopulation(LawfulPopulation):
-    MAIN_FACTION = faction.LI_GRP
-    MAIN_TRADERS = faction.LC_GRP
+    MAIN_FACTION = faction.LibertyMain
+    MAIN_TRADERS = faction.LibertyCivilians
+    GENERIC_PIRATES = faction.LibertyPirate
+    # BOUNTY_HUNTERS = faction.LibertyHunters
+    GLOBAL_TRADERS = faction.LibertyCivilians
+    JUNKERS = faction.Junkers
 
     HIGH_CAPSHIP_ENC = encounter.LiCruiser
     MEDIUM_CAPSHIP_ENC = encounter.LiCruiser
@@ -320,8 +327,12 @@ class LibertyLegalPopulation(LawfulPopulation):
 
 
 class BretoniaLegalPopulation(LawfulPopulation):
-    MAIN_FACTION = faction.BR_GRP
-    MAIN_TRADERS = faction.BC_GRP
+    MAIN_FACTION = faction.BretoniaMain
+    MAIN_TRADERS = faction.BretoniaCivilians
+    GENERIC_PIRATES = faction.BretoniaPirate
+    # BOUNTY_HUNTERS = faction.BretoniaHunters
+    GLOBAL_TRADERS = faction.BretoniaCivilians
+    JUNKERS = faction.Junkers
 
     HIGH_CAPSHIP_ENC = encounter.BrDestroyer
     MEDIUM_CAPSHIP_ENC = encounter.BrGunboat
@@ -335,8 +346,12 @@ class BretoniaLegalPopulation(LawfulPopulation):
 
 
 class KusariLegalPopulation(LawfulPopulation):
-    MAIN_FACTION = faction.KU_GRP
-    MAIN_TRADERS = faction.KC_GRP
+    MAIN_FACTION = faction.KusariMain
+    MAIN_TRADERS = faction.KusariCivilians
+    GENERIC_PIRATES = faction.KusariPirate
+    # BOUNTY_HUNTERS = faction.KusariHunters
+    GLOBAL_TRADERS = faction.KusariCivilians
+    JUNKERS = faction.Junkers
 
     HIGH_CAPSHIP_ENC = encounter.KuDestroyer
     MEDIUM_CAPSHIP_ENC = encounter.KuGunboat
@@ -350,32 +365,21 @@ class KusariLegalPopulation(LawfulPopulation):
 
 
 class RheinlandPiratePopulation(UnlawfulPopulation):
-    MAIN_PIRATES = faction.RX_GRP
+    MAIN_PIRATES = faction.RheinlandPirate
 
 
 class LibertyPiratePopulation(UnlawfulPopulation):
-    MAIN_PIRATES = faction.LX_GRP
+    MAIN_PIRATES = faction.LibertyPirate
 
 
 class BretoniaPiratePopulation(UnlawfulPopulation):
-    MAIN_PIRATES = faction.BX_GRP
+    MAIN_PIRATES = faction.BretoniaPirate
 
 
 class KusariPiratePopulation(UnlawfulPopulation):
-    MAIN_PIRATES = faction.KX_GRP
+    MAIN_PIRATES = faction.KusariPirate
 
 
 class CorsairAttackersPopulation(UnlawfulPopulation):
-    MAIN_PIRATES = faction.CO_GRP
+    MAIN_PIRATES = faction.Corsairs
     ATTACK_TLR_PATROL = encounter.PatrolTLREliteOnly
-
-
-
-
-
-
-
-
-
-
-

@@ -13,7 +13,7 @@ from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
 from universe.audio.space_voice import SpaceVoice
-from universe.content import faction
+from universe import faction
 from universe.content import mineable
 from templates.solar import debris_box
 from templates.solar import suprise
@@ -29,7 +29,7 @@ from templates.dockable import cambridge_research
 
 
 class HonsMember(Member):
-    FACTION = faction.KU_GRP
+    FACTION = faction.KusariMain
     INTERIOR_BG1 = interior.INTERIOR_KU_HONSHU
 
 
@@ -471,7 +471,7 @@ class HonsNebulaPirates(HonsMember, main_objects.PirateStation):
     BASE_INDEX = 7
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = junker.HonshuJunker
-    FACTION = faction.KX_GRP
+    FACTION = faction.KusariPirate
 
     DEFENCE_LEVEL = None
 
@@ -492,7 +492,7 @@ class HonsJunkers(HonsMember, main_objects.JunkerBase):
     ALIAS = 'pirate'
     REL = TOP
     SPACE_OBJECT_TEMPLATE = junker.StuttgartJunker
-    FACTION = faction.KX_GRP
+    FACTION = faction.KusariPirate
 
     DEFENCE_LEVEL = None
 

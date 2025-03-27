@@ -60,19 +60,27 @@ num_offers = 8, 12'''
 
 MBASE_MAIN_FACTION_TEMPLATE = '''[BaseFaction]
 faction = {faction}
-weight = 90
+weight = {weight}
 offers_missions = true
-mission_type = DestroyMission, 0.000000, 0.112387, 100'''
+mission_type = DestroyMission, 0.000000, 0.112387, 100
+{characters}'''
 
 MBASE_MAIN_FACTION_TEMPLATE_NO_MISSION = '''[BaseFaction]
 faction = {faction}
-weight = 90
-offers_missions = false'''
+weight = {weight}
+offers_missions = false
+{characters}'''
 
-MBASE_SECOND_FACTION_TEMPLATE = '''[BaseFaction]
+MBASE_OTHER_FACTION_TEMPLATE = '''[BaseFaction]
 faction = {faction}
-weight = 1
-offers_missions = false'''
+weight = {weight}
+offers_missions = false
+{characters}'''
+
+BAR_TEMPLATE = '''[MRoom]
+nickname = bar
+character_density = 7
+fixture = {bartender}, Zs/NPC/Bartender/01/A/Stand, scripts\\vendors\\li_bartender_fidget.thn, bartender'''
 
 ALL_ON_DECK_DEALERS_TEMPLATE = '''[MRoom]
 nickname = {main_room}
@@ -159,6 +167,8 @@ INTERIOR_TAU29 = 'tau29_nebula'
 INTERIOR_TAU31 = 'tau31_nebula'
 INTERIOR_UPSILON1 = 'upslion1_nebula'
 
+OTHER_WEIGHT = 5
+
 
 class Interior(object):
     START_ROOM = None
@@ -188,33 +198,57 @@ class Interior(object):
         entries.append(
             MBASE_ROOT_TEMPLATE.format(
                 base_name=base_name,
-                faction=self.base_instance.get_faction(),
+                faction=self.base_instance.get_faction().CODE,
                 audio_prefix=self.base_instance.get_audio_prefix(),
             )
         )
 
         if not self.base_instance.LOCKED_DOCK:
+            base = self.base_instance.get_base()
+            main_faction = base.get_main_faction()
+            other_factions = base.get_other_factions()
+            other_weight_total = len(other_factions) * OTHER_WEIGHT
+            main_faction_weight = 100 - other_weight_total
 
             if self.OFFER_MISSIONS:
                 entries.append(MBASE_MVENDOR)
                 entries.append(
                     MBASE_MAIN_FACTION_TEMPLATE.format(
-                        faction=self.base_instance.FACTION,
+                        faction=main_faction.get_code(),
+                        weight=main_faction_weight,
+                        characters=main_faction.get_characters_list_definition(),
                     )
                 )
             else:
                 entries.append(
                     MBASE_MAIN_FACTION_TEMPLATE_NO_MISSION.format(
-                        faction=self.base_instance.FACTION,
+                        faction=main_faction.get_code(),
+                        weight=main_faction_weight,
+                        characters=main_faction.get_characters_list_definition(),
                     )
                 )
 
-            second_factions = self.get_second_factions()
-
-            for faction in second_factions:
+            for other_faction in other_factions:
                 entries.append(
-                    MBASE_SECOND_FACTION_TEMPLATE.format(faction=faction)
+                    MBASE_OTHER_FACTION_TEMPLATE.format(
+                        faction=other_faction.get_code(),
+                        weight=OTHER_WEIGHT,
+                        characters=other_faction.get_characters_list_definition(),
+                    )
                 )
+
+            entries.append(base.bartender.get_mbase())
+
+            for char in main_faction.get_characters():
+                entries.append(char.get_mbase())
+
+            for other_faction in other_factions:
+                for char in other_faction.get_characters():
+                    entries.append(char.get_mbase())
+
+            entries.append(BAR_TEMPLATE.format(
+                bartender=base.bartender.get_name(),
+            ))
 
         if self.base_instance.DEALERS:
             if not self.DEALER_PLACEMENTS_TEMPLATE:

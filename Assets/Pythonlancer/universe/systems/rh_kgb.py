@@ -5,14 +5,14 @@ from universe.content.member import Member
 from universe.content.system_object import LEFT, RIGHT
 from universe.content import main_objects
 from universe.content import zones
-from universe.content import faction
+from universe import faction
 from templates.nebula import rh_biz_nebula
 from templates.nebula import rh_mnh_blue_nebula
 from templates.nebula import exclusion
 
 
 class KgbMember(Member):
-    FACTION = faction.RX_GRP
+    FACTION = faction.RheinlandPirate
 
 
 class KgbRawText(KgbMember, main_objects.RawText):
@@ -155,7 +155,7 @@ class KgbMunchenJumpgate(KgbMember, main_objects.JumpgateAlt):
     INDEX = 1
     REL = LEFT
 
-    FACTION = faction.RH_GRP
+    FACTION = faction.RheinlandMain
 
     TARGET_SYSTEM_NAME = 'rh_mnh'
 

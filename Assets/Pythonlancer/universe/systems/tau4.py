@@ -13,7 +13,7 @@ from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
 from universe.audio.space_voice import SpaceVoice
-from universe.content import faction
+from universe import faction
 from universe.content import mineable
 from templates.solar import asteroid
 from templates.solar import hackable
@@ -27,7 +27,7 @@ from templates.dockable import pirate
 
 
 class Tau4Member(Member):
-    FACTION = faction.KU_GRP
+    FACTION = faction.KusariMain
     INTERIOR_BG1 = interior.INTERIOR_TAU4
 
 
@@ -327,7 +327,7 @@ class Tau4SouthPirates(Tau4Member, main_objects.PirateStation):
     BASE_INDEX = 4
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseBizmark
-    FACTION = faction.CO_GRP
+    FACTION = faction.Corsairs
 
     DEFENCE_LEVEL = None
 
@@ -347,7 +347,7 @@ class Tau4Xenos(Tau4Member, main_objects.PirateStation):
     BASE_INDEX = 5
     REL = TOP
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseCalifornia
-    FACTION = faction.CO_GRP
+    FACTION = faction.Corsairs
 
     DEFENCE_LEVEL = None
 

@@ -153,6 +153,9 @@ class StaticObject(AppearableObject):
     LLIGHT_CLOUD_FILE_TEMPLATE = 'solar\\nebula_mod\\{llight_cloud_name}.ini'
     LLIGHT_CLOUD_RANGE = 600000
 
+    def get_base(self):
+        return None
+
     def get_ast_exclusion_zone_name(self):
         return self.AST_ZONE_NAME_TEMPLATE.format(
             space_name=self.get_inspace_nickname(),
@@ -729,6 +732,8 @@ BGCS_base_run_by = W02bF44'''
         if not self.BASE_INDEX:
             raise Exception('Dockable base have no base index %s' % self.__class__.__name__)
 
+        self.base = None
+
         self.interior = None
         if self.INTERIOR_CLASS:
             subfolder = self.ROOM_SUBFOLDER if self.ROOM_SUBFOLDER else self.system.ROOM_SUBFOLDER
@@ -737,6 +742,12 @@ BGCS_base_run_by = W02bF44'''
         self.key = None
         if self.LOCKED_DOCK:
             self.key = LockedDockKey(self)
+
+    def set_base(self, base):
+        self.base = base
+
+    def get_base(self):
+        return self.base
 
     def get_ru_name(self):
         return self.RU_NAME
@@ -1277,7 +1288,7 @@ faction = {police_faction}, 1.000000'''
         lawful_population = self.get_lawful_population_class()
         return self.ZONE_PARAMS.format(
             police_encounter=lawful_population.get_police_encounter(),
-            police_faction=lawful_population.get_police_faction(),
+            police_faction=lawful_population.get_police_faction().get_code(),
         )
 
 
@@ -1304,7 +1315,7 @@ faction = {bh_faction}, 1.000000'''
         lawful_population = self.get_lawful_population_class()
         return self.ZONE_PARAMS.format(
             bh_encounter=lawful_population.get_bounty_hunter_encounter(),
-            bh_faction=lawful_population.get_bounty_hunter_faction(),
+            bh_faction=lawful_population.get_bounty_hunter_faction().get_code(),
         )
 
 
@@ -1332,7 +1343,7 @@ faction = {pirate_faction}, 1.000000'''
         unlawful_population = self.get_unlawful_population_class()
         return self.ZONE_PARAMS.format(
             attack_tlr_encounter=unlawful_population.get_tlr_attackers_encounter(),
-            pirate_faction=unlawful_population.get_tlr_attackers_faction(),
+            pirate_faction=unlawful_population.get_tlr_attackers_faction().get_code(),
         )
 
 
@@ -1451,13 +1462,21 @@ size = {size}'''
         self.last_tradelane_index = 1
         self.tradelanes = []
         self.tracks_raw_outer_zone = None
+        self.police_patrol = None
+        self.bounty_hunter_patrol = None
+        self.attacker_patrols = []
+
+    def init_patrols(self):
         self.police_patrol = self.get_police_patrol()
         if self.police_patrol:
             self.system.add_patrol(self.police_patrol)
         self.bounty_hunter_patrol = self.get_bounty_hunter_patrol()
         if self.bounty_hunter_patrol:
             self.system.add_patrol(self.bounty_hunter_patrol)
-        self.attacker_patrols = []
+        for attacker_base in self.ATTACKED_BY:
+            attacker_patrol = self.get_pirate_attacker_patrol(attacker_base)
+            self.attacker_patrols.append(attacker_patrol)
+            self.system.add_patrol(attacker_patrol)
 
     def get_destination_objects(self):
         if not self.OBJ_FROM and not self.OBJ_TO:
@@ -1566,6 +1585,13 @@ size = {size}'''
         obj_from, obj_to = self.get_destination_objects()
         obj_from_pos = self.system.get_object_position(obj_from)
         obj_to_pos = self.system.get_object_position(obj_to)
+
+        patrol_faction = self.get_lawful_population_class().get_police_faction()
+        if base_from := obj_from.get_base():
+            base_from.add_faction(patrol_faction)
+        if base_to := obj_to.get_base():
+            base_to.add_faction(patrol_faction)
+
         return PolicePatrol(
             system=self.system,
             population_kind=self.get_population_kind(),
@@ -1584,6 +1610,12 @@ size = {size}'''
         obj_from, obj_to = self.get_destination_objects()
         obj_from_pos = self.system.get_object_position(obj_from)
         obj_to_pos = self.system.get_object_position(obj_to)
+
+        patrol_faction = self.get_lawful_population_class().get_bounty_hunter_faction()
+        if base_from := obj_from.get_base():
+            base_from.add_faction(patrol_faction)
+        if base_to := obj_to.get_base():
+            base_to.add_faction(patrol_faction)
 
         obj_from_pos2_x = obj_from_pos[0]
         obj_from_pos2_z = obj_from_pos[2]
@@ -1624,13 +1656,7 @@ size = {size}'''
                 (obj_to_pos2_x, 0, obj_to_pos2_z),
                 (obj_to_pos[0], 0, obj_to_pos[2]),
             ]
-        ) 
-
-    def define_attacker_patrols(self):
-        for attacker_base in self.ATTACKED_BY:
-            attacker_patrol = self.get_pirate_attacker_patrol(attacker_base)
-            self.attacker_patrols.append(attacker_patrol)
-            self.system.add_patrol(attacker_patrol)
+        )
 
     def get_pirate_attacker_patrol(self, attacker_base):
         tlrs_len = len(self.tradelanes)

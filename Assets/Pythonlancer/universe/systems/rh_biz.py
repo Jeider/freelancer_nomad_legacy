@@ -15,7 +15,7 @@ from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
 from universe.audio.space_voice import SpaceVoice
-from universe.content import faction
+from universe import faction
 from universe.content import mineable
 from templates.solar import asteroid
 from templates.solar import debris_box
@@ -32,7 +32,7 @@ from templates.dockable import rheinland_military
 
 
 class BizmarkMember(Member):
-    FACTION = faction.RH_GRP
+    FACTION = faction.RheinlandMain
 
 
 class BizmarkStaticText(BizmarkMember, main_objects.RawText):
@@ -310,7 +310,7 @@ class BizmarkTopPirate(BizmarkMember, main_objects.PirateStation):
     INDEX = 1
     REL = TOP
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseCalifornia
-    FACTION = faction.PI_GRP
+    FACTION = faction.RheinlandPirate
 
     DEFENCE_LEVEL = None
 
@@ -326,7 +326,7 @@ class BizmarkRightPirate(BizmarkMember, main_objects.PirateAsteroid):
     INDEX = 2
     REL = RIGHT
     SPACE_OBJECT_TEMPLATE = astbase.BizmarkAsteroidBase
-    FACTION = faction.RX_GRP
+    FACTION = faction.RheinlandPirate
 
     DEFENCE_LEVEL = None
 

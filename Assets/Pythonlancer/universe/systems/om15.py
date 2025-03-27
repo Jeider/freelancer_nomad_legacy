@@ -13,7 +13,7 @@ from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
 from universe.audio.space_voice import SpaceVoice
-from universe.content import faction
+from universe import faction
 from universe.content import mineable
 from templates.solar import asteroid as asteroid_solar
 from templates.solar import hackable
@@ -28,7 +28,7 @@ from templates.dockable import station_debris
 
 
 class Omega15Member(Member):
-    FACTION = faction.RH_GRP
+    FACTION = faction.RheinlandMain
     INTERIOR_BG1 = interior.INTERIOR_BG_WALKER
 
 
@@ -373,7 +373,7 @@ class Om15Junkers(Omega15Member, main_objects.JunkerBase):
     BASE_INDEX = 4
     REL = TOP
     SPACE_OBJECT_TEMPLATE = junker.OmegaSmelter
-    FACTION = faction.JUNK_GRP
+    FACTION = faction.Junkers
 
     DEFENCE_LEVEL = None
 

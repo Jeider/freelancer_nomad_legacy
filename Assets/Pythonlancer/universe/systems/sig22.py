@@ -13,7 +13,7 @@ from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
 from universe.audio.space_voice import SpaceVoice
-from universe.content import faction
+from universe import faction
 from universe.content import mineable
 from universe.content import population
 from templates.nebula import sig22_nebula
@@ -27,18 +27,18 @@ from templates.dockable import constanta
 
 
 class Sig22Member(Member):
-    FACTION = faction.LI_GRP
+    FACTION = faction.LibertyMain
 
 
 class Sig22Liberty(object):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_LI
-    FACTION = faction.LI_GRP
+    FACTION = faction.LibertyMain
 
 
 class Sig22Bretonia(object):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_BR
     POPULATION_KIND = population.POP_SECOND
-    FACTION = faction.BR_GRP
+    FACTION = faction.BretoniaMain
 
 
 class Sig22StaticText(Sig22Member, main_objects.RawText):
@@ -391,7 +391,7 @@ class Sig22SouthPirates(Sig22Member, Sig22Liberty, main_objects.PirateStation):
     BASE_INDEX = 4
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseBizmark
-    FACTION = faction.LX_GRP
+    FACTION = faction.LibertyPirate
 
     DEFENCE_LEVEL = None
 
@@ -411,7 +411,7 @@ class Sig22NorthPirates(Sig22Member, Sig22Bretonia, main_objects.PirateStation):
     BASE_INDEX = 5
     REL = RIGHT
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseStuttgart
-    FACTION = faction.BX_GRP
+    FACTION = faction.BretoniaPirate
 
     DEFENCE_LEVEL = None
 

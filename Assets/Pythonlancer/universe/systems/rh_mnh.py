@@ -13,7 +13,7 @@ from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
 from universe.audio.space_voice import SpaceVoice
-from universe.content import faction
+from universe import faction
 from universe.content import mineable
 from templates.solar import suprise
 from templates.solar import hackable
@@ -27,7 +27,7 @@ from templates.dockable import junker
 
 
 class MunchMember(Member):
-    FACTION = faction.RH_GRP
+    FACTION = faction.RheinlandMain
     INTERIOR_BG1 = interior.INTERIOR_RH_MUNCHEN
 
 
@@ -396,7 +396,7 @@ class MunchOutcastBase(MunchMember, main_objects.PirateAsteroid):
     BASE_INDEX = 3
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = astbase.MunchenAsteroidBase
-    FACTION = faction.PI_GRP  # TEMP
+    FACTION = faction.RheinlandPirate  # Temporary
 
     DEFENCE_LEVEL = None
 
@@ -428,7 +428,7 @@ class MunchJunkersBase(MunchMember, main_objects.JunkerBase):
     ALIAS = 'pirate'
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = junker.OmegaSmelter
-    FACTION = faction.JUNK_GRP
+    FACTION = faction.Junkers
 
     DEFENCE_LEVEL = None
 

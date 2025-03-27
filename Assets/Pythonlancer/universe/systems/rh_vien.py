@@ -5,7 +5,7 @@ from universe.content.member import Member
 from universe.content.system_object import LEFT, RIGHT
 from universe.content import main_objects
 from universe.content import zones
-from universe.content import faction
+from universe import faction
 from templates.nebula import rh_biz_nebula
 from templates.nebula import rh_mnh_blue_nebula
 from templates.nebula import exclusion
@@ -14,7 +14,7 @@ from templates.dockable import valensia
 
 
 class ViennaMember(Member):
-    FACTION = faction.RX_GRP
+    FACTION = faction.RheinlandMain
 
 
 class ViennaRawText(ViennaMember, main_objects.RawText):

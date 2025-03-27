@@ -12,7 +12,7 @@ from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
 from universe.audio.space_voice import SpaceVoice
-from universe.content import faction
+from universe import faction
 from universe.content import mineable
 from templates.solar import asteroid
 from templates.solar import debris_box
@@ -28,7 +28,7 @@ from templates.dockable import odissey
 
 
 class KyushuMember(Member):
-    FACTION = faction.KU_GRP
+    FACTION = faction.KusariMain
     INTERIOR_BG1 = interior.INTERIOR_KU_KYUSHU
 
 
@@ -430,7 +430,7 @@ class KyushuNorthAsteroidPirates(KyushuMember, main_objects.PirateAsteroid):
     BASE_INDEX = 9
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = astbase.KyushuAsteroidBase
-    FACTION = faction.KX_GRP
+    FACTION = faction.KusariPirate
 
     DEFENCE_LEVEL = None
 
@@ -451,7 +451,7 @@ class KyushuJunkers(KyushuMember, main_objects.JunkerBase):
     ALIAS = 'pirate'
     REL = TOP
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseForbes
-    FACTION = faction.JUNK_GRP
+    FACTION = faction.Junkers
 
     DEFENCE_LEVEL = None
 

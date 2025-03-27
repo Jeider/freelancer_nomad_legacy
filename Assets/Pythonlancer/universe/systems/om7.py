@@ -12,7 +12,7 @@ from universe.content import zones
 from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
-from universe.content import faction
+from universe import faction
 from universe.content import mineable
 from universe.content import population
 from templates.solar import suprise
@@ -29,19 +29,19 @@ from templates.dockable import station_debris
 
 
 class Om7Member(Member):
-    FACTION = faction.KU_GRP
+    FACTION = faction.KusariMain
     INTERIOR_BG1 = interior.INTERIOR_BG_WALKER
 
 
 class Om7Kusari(object):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_KU
-    FACTION = faction.KU_GRP
+    FACTION = faction.KusariMain
 
 
 class Om7Rheinland(object):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_RH
     POPULATION_KIND = population.POP_SECOND
-    FACTION = faction.RH_GRP
+    FACTION = faction.RheinlandMain
 
 
 class Om7StaticText(Om7Member, main_objects.RawText):
@@ -134,8 +134,6 @@ class Om7KusariStation(Om7Member, Om7Kusari, main_objects.GasMiningStation):
     EXCLUSION_PARAMS = WALKER_EXCLUSION_PARAMS
     NEBULA_ZONES = [Om7Nebula]
 
-    FACTION = faction.KU_GRP
-
 
 class Om7RheinlandStation(Om7Member, Om7Rheinland, main_objects.GasMiningStation):
     INDEX = 2
@@ -152,8 +150,6 @@ class Om7RheinlandStation(Om7Member, Om7Rheinland, main_objects.GasMiningStation
     EXCLUSION_PARAMS = WALKER_EXCLUSION_PARAMS
     NEBULA_ZONES = [Om7Nebula]
 
-    FACTION = faction.RH_GRP
-
 
 class Om7Battleship(Om7Member, Om7Rheinland, main_objects.RheinlandBattleship):
     BASE_INDEX = 3
@@ -162,7 +158,6 @@ class Om7Battleship(Om7Member, Om7Rheinland, main_objects.RheinlandBattleship):
     REL_DRIFT = 500
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.RheinlandMilitaryDealers
-    FACTION = faction.RH_GRP
 
     NEBULA_EXCLUSION_ZONE_SIZE = 3000
     EXCLUSION_PARAMS = WALKER_EXCLUSION_PARAMS
@@ -181,8 +176,6 @@ class Om7Freeport(Om7Member, Om7Kusari, main_objects.Freeport):
     EXCLUSION_PARAMS = WALKER_EXCLUSION_PARAMS
     NEBULA_ZONES = [Om7Nebula]
 
-    FACTION = faction.KU_GRP
-
 
 class Om7PirateLargeAsteroid(Om7Member, Om7Kusari, main_objects.PirateStation):
     BASE_INDEX = 5
@@ -192,7 +185,7 @@ class Om7PirateLargeAsteroid(Om7Member, Om7Kusari, main_objects.PirateStation):
     SPACE_OBJECT_TEMPLATE = kusari_palace.KusariPalace
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.KusariPirateDealers
-    FACTION = faction.KX_GRP
+    FACTION = faction.KusariPirate
     DEFENCE_LEVEL = None
 
     NEBULA_EXCLUSION_ZONE_SIZE = 5000
@@ -207,7 +200,7 @@ class Om7RightPirates(Om7Member, Om7Rheinland, main_objects.PirateGasMiner):
     SPACE_OBJECT_TEMPLATE = gas_miner.RheinlandPirateGasMiner
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.RheinlandPirateDealers
-    FACTION = faction.RX_GRP
+    FACTION = faction.RheinlandPirate
     DEFENCE_LEVEL = None
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000

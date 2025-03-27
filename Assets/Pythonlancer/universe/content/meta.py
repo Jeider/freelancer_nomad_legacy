@@ -339,6 +339,12 @@ class BaseProps:
     DEFENCE_EFFECT = 0
     RESELL_GOODS_DEPTH_RANGE = 0
     RESELL_TYPES = []
+    OFFICIAL_BARTENDER = False
+    CHARS_TRADER = 0
+    CHARS_MILITARY = 0
+    CHARS_JOURNEYMAN = 0
+    CHARS_PEASANT = 0
+    CHARS_PIRATE = 0
     # DEFENCE_HIGH
     # DEFENCE_MEDIUM: +light arms cost, +repair cost
     # DEFENCE_SMALL: ++light arms cost, ++repair cost
@@ -395,6 +401,11 @@ class LargePlanet(BaseProps):
     DEFAULT_OBJECTIVES = [
         ConsumeLuxury(),
     ]
+    OFFICIAL_BARTENDER = True
+    CHARS_TRADER = 6
+    CHARS_MILITARY = 1
+    CHARS_JOURNEYMAN = 1
+    CHARS_PEASANT = 1
 
 
 class ManhattanSuperPlanet(LargePlanet):
@@ -420,6 +431,11 @@ class MiningPlanet(BaseProps):
 
         # CommConsume(TERRAFORM_GASES),
     ]
+    OFFICIAL_BARTENDER = False
+    CHARS_TRADER = 0
+    CHARS_MILITARY = 0
+    CHARS_JOURNEYMAN = 2
+    CHARS_PEASANT = 5
 
 
 class ResortPlanet(BaseProps):
@@ -436,6 +452,11 @@ class ResortPlanet(BaseProps):
 
         CommProduce(WATER_EXTRA, PRODUCE_BEST),
     ]
+    OFFICIAL_BARTENDER = True
+    CHARS_TRADER = 4
+    CHARS_MILITARY = 0
+    CHARS_JOURNEYMAN = 0
+    CHARS_PEASANT = 4
 
 
 class WaterPlanet(BaseProps):
@@ -451,6 +472,11 @@ class WaterPlanet(BaseProps):
         CommConsume(POWER_SOLAR),
         CommResell(POWER_SOLAR_EMPTY),
     ]
+    OFFICIAL_BARTENDER = False
+    CHARS_TRADER = 0
+    CHARS_MILITARY = 0
+    CHARS_JOURNEYMAN = 2
+    CHARS_PEASANT = 5
 
 
 class SpaceStation(BaseProps):
@@ -465,6 +491,11 @@ class SpaceStation(BaseProps):
         CommConsume(GAS_FUEL),
         CommConsume(STATION_PANELS),
     ]
+    OFFICIAL_BARTENDER = False
+    CHARS_TRADER = 0
+    CHARS_MILITARY = 1
+    CHARS_JOURNEYMAN = 4
+    CHARS_PEASANT = 4
 
 
 class TradelaneSupportStation(SpaceStation):
@@ -506,6 +537,11 @@ class LargeTradingBase(MediumStation):
     RESELL_TYPES = [
         PRODUCT, LUXURY, ALLOY
     ]
+    OFFICIAL_BARTENDER = False
+    CHARS_TRADER = 4
+    CHARS_MILITARY = 0
+    CHARS_JOURNEYMAN = 2
+    CHARS_PEASANT = 2
 
 
 class TradingBase(MediumStation):
@@ -514,6 +550,11 @@ class TradingBase(MediumStation):
     RESELL_TYPES = [
         PRODUCT, ALLOY
     ]
+    OFFICIAL_BARTENDER = False
+    CHARS_TRADER = 2
+    CHARS_MILITARY = 0
+    CHARS_JOURNEYMAN = 2
+    CHARS_PEASANT = 2
 
 
 class Shipyard(SpaceStation):
@@ -565,6 +606,11 @@ class Battleship(SpaceStation):
         HaveReactor(),
         ConsumeHeavyMunitions(),
     ]
+    OFFICIAL_BARTENDER = True
+    CHARS_TRADER = 0
+    CHARS_MILITARY = 5
+    CHARS_JOURNEYMAN = 0
+    CHARS_PEASANT = 0
 
 
 class LuxuryLiner(SpaceStation):
@@ -572,11 +618,22 @@ class LuxuryLiner(SpaceStation):
     DEFAULT_OBJECTIVES = [
         HaveReactor(),
     ]
+    OFFICIAL_BARTENDER = True
+    CHARS_TRADER = 3
+    CHARS_MILITARY = 0
+    CHARS_JOURNEYMAN = 0
+    CHARS_PEASANT = 3
 
 
 class PirateStation(SpaceStation):
     POPULATION = POP_SMALL_BASE
     DEFENCE_EFFECT = DEFENCE_PIRATES
+    OFFICIAL_BARTENDER = False
+    CHARS_TRADER = 0
+    CHARS_MILITARY = 0
+    CHARS_JOURNEYMAN = 0
+    CHARS_PEASANT = 2
+    CHARS_PIRATE = 5
 
 
 class PirateAsteroid(PirateStation):

@@ -13,7 +13,7 @@ from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
 from universe.audio.space_voice import SpaceVoice
-from universe.content import faction
+from universe import faction
 from universe.content import mineable
 from templates.solar import asteroid
 from templates.solar import hackable
@@ -31,7 +31,7 @@ from templates.dockable import gmg_hq
 
 
 class HokkMember(Member):
-    FACTION = faction.KU_GRP
+    FACTION = faction.KusariMain
     INTERIOR_BG1 = interior.INTERIOR_KU_HOKKAIDO
 
 
@@ -382,7 +382,7 @@ class HokkRefinery(HokkMember, main_objects.Refinery):
     SPACE_OBJECT_TEMPLATE = alg.AlgBaseHokkaido
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
-    FACTION = faction.KC_GRP
+    FACTION = faction.KusariCivilians
 
     BASE_PROPS = meta.Refinery(
         objectives=[
@@ -477,7 +477,7 @@ class HokkNebulaPirates(HokkMember, main_objects.PirateStation):
     BASE_INDEX = 7
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseCalifornia
-    FACTION = faction.KX_GRP
+    FACTION = faction.KusariPirate
 
     DEFENCE_LEVEL = None
 
@@ -493,7 +493,7 @@ class HokkJunkers(HokkMember, main_objects.JunkerBase):
     BASE_INDEX = 8
     REL = TOP
     SPACE_OBJECT_TEMPLATE = junker.BerlinJunker
-    FACTION = faction.JUNK_GRP
+    FACTION = faction.Junkers
 
     DEFENCE_LEVEL = None
 

@@ -1,6 +1,6 @@
 from universe.content.member import Member
-from universe.content import faction
+from universe import faction
 
 
 class Tau26Member(Member):
-    FACTION = faction.CO_GRP
+    FACTION = faction.Corsairs

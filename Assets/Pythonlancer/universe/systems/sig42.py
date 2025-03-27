@@ -10,7 +10,7 @@ from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
 from universe.audio.space_voice import SpaceVoice
-from universe.content import faction
+from universe import faction
 from universe.content import mineable
 from universe.content import population
 from templates.solar import asteroid
@@ -22,20 +22,20 @@ from templates.dockable import pirate
 
 
 class Sig42Member(Member):
-    FACTION = faction.BR_GRP
+    FACTION = faction.BretoniaMain
 
     INTERIOR_BG1 = interior.INTERIOR_SIRIUS
 
 
 class Sig42Bretonia(object):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_BR
-    FACTION = faction.BR_GRP
+    FACTION = faction.BretoniaMain
 
 
 class Sig42Kusari(object):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_KU
     POPULATION_KIND = population.POP_SECOND
-    FACTION = faction.KU_GRP
+    FACTION = faction.KusariMain
 
 
 class Sig42StaticText(Sig42Member, main_objects.RawText):
@@ -273,7 +273,7 @@ class Sig42TopPirates(Sig42Member, Sig42Bretonia, main_objects.PirateStation):
     BASE_INDEX = 5
     REL = TOP
     SPACE_OBJECT_TEMPLATE = pirate.LibertyRombicPirateBase
-    FACTION = faction.BX_GRP
+    FACTION = faction.BretoniaPirate
 
     DEFENCE_LEVEL = None
 
@@ -292,7 +292,7 @@ class Sig42BottomPirates(Sig42Member, Sig42Kusari, main_objects.PirateStation):
     BASE_INDEX = 6
     REL = TOP
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseHokkaido
-    FACTION = faction.KX_GRP
+    FACTION = faction.KusariPirate
 
     DEFENCE_LEVEL = None
 

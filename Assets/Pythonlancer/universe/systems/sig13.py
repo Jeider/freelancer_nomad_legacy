@@ -12,7 +12,7 @@ from universe.content import zones
 from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
-from universe.content import faction
+from universe import faction
 from universe.content import population
 from universe.content import mineable
 
@@ -25,18 +25,18 @@ from templates.solar import gas_crystal
 
 
 class Sig13Member(Member):
-    FACTION = faction.RH_GRP
+    FACTION = faction.RheinlandMain
 
 
 class Sig13Rheinland(object):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_RH
-    FACTION = faction.RH_GRP
+    FACTION = faction.RheinlandMain
 
 
 class Sig13Liberty(object):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_LI
     POPULATION_KIND = population.POP_SECOND
-    FACTION = faction.LI_GRP
+    FACTION = faction.LibertyMain
 
 
 class Sig13StaticText(Sig13Member, main_objects.RawText):
@@ -157,8 +157,6 @@ class Sig13LibertyStation(Sig13Member, Sig13Liberty, main_objects.GasMiningStati
     NEBULA_ZONES = [Sig13Nebula]
     INTERIOR_BG1 = interior.INTERIOR_BG_CROW
 
-    FACTION = faction.LI_GRP
-
 
 class Sig13RheinlandStation(Sig13Member, Sig13Rheinland, main_objects.GasMiningStation):
     INDEX = 2
@@ -168,7 +166,6 @@ class Sig13RheinlandStation(Sig13Member, Sig13Rheinland, main_objects.GasMiningS
     SPACE_OBJECT_TEMPLATE = gas_miner.RheinlandCivilianGasMiner
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.RheinlandCivilianDealers
-    FACTION = faction.RH_GRP
 
     NEBULA_EXCLUSION_ZONE_SIZE = 3000
     EXCLUSION_PARAMS = GENERIC_EXCLUSION_PARAMS
@@ -183,7 +180,6 @@ class Sig13Battleship(Sig13Member, Sig13Rheinland, main_objects.RheinlandBattles
     REL_DRIFT = 1500
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.RheinlandMilitaryDealers
-    FACTION = faction.RH_GRP
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
     EXCLUSION_PARAMS = CROW_EXCLUSION_PARAMS
@@ -198,7 +194,6 @@ class Sig13Freeport(Sig13Member, Sig13Liberty, main_objects.Freeport):
     SPACE_OBJECT_TEMPLATE = trade_storages.HonshuStorage
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.RheinlandCivilianDealers
-    FACTION = faction.LI_GRP
     ROTATE_RANDOM = True
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
@@ -214,7 +209,7 @@ class Sig13PirateTopRight(Sig13Member, Sig13Liberty, main_objects.PirateGasMiner
     SPACE_OBJECT_TEMPLATE = gas_miner.CadizGasMiner
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.LibertyPirateDealers
-    FACTION = faction.LX_GRP
+    FACTION = faction.LibertyPirate
     DEFENCE_LEVEL = None
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
@@ -230,7 +225,7 @@ class Sig13PirateTopLeft(Sig13Member, Sig13Liberty, main_objects.PirateGasMiner)
     SPACE_OBJECT_TEMPLATE = gas_miner.RheinlandPirateGasMiner
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.LibertyPirateDealers
-    FACTION = faction.LX_GRP
+    FACTION = faction.LibertyPirate
     DEFENCE_LEVEL = None
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
@@ -246,7 +241,7 @@ class Sig13PirateBottom(Sig13Member, Sig13Rheinland, main_objects.PirateGasMiner
     SPACE_OBJECT_TEMPLATE = gas_miner.BretoniaPirateGasMiner
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.RheinlandPirateDealers
-    FACTION = faction.RX_GRP
+    FACTION = faction.RheinlandPirate
     DEFENCE_LEVEL = None
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000

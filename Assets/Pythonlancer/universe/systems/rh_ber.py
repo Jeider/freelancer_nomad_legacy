@@ -13,7 +13,7 @@ from universe.content import interior
 from universe.content import dealers
 from universe.content import asteroid_definition
 from universe.audio.space_voice import SpaceVoice
-from universe.content import faction
+from universe import faction
 
 from templates.nebula import rh_ber_nebula
 from templates.dockable import pirate
@@ -33,7 +33,7 @@ from templates.solar import debris_box
 
 
 class BerlinMember(Member):
-    FACTION = faction.RH_GRP
+    FACTION = faction.RheinlandMain
 
 
 class BerlinStaticText(BerlinMember, main_objects.RawText):
@@ -323,7 +323,7 @@ class BerlinTrading(BerlinMember, main_objects.TradingBase):
     SPACE_OBJECT_TEMPLATE = trade_storages.TekagiStorage
     INTERIOR_CLASS = interior.BattleshipNoshipInterior
     DEALERS = dealers.RheinlandCivilianDealers
-    FACTION = faction.TR_GRP
+    FACTION = faction.RheinlandCivilians
 
 
 class BerlinRefinery(BerlinMember, main_objects.Refinery):
@@ -332,7 +332,7 @@ class BerlinRefinery(BerlinMember, main_objects.Refinery):
     SPACE_OBJECT_TEMPLATE = stuttgart_megabase.MannhaimShortGasless
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.RheinlandCivilianDealers
-    FACTION = faction.RC_GRP
+    FACTION = faction.RheinlandCivilians
 
     BASE_PROPS = meta.Refinery(
         objectives=[
@@ -348,7 +348,7 @@ class BerlinJunkers(BerlinMember, main_objects.JunkerBase):
     SPACE_OBJECT_TEMPLATE = junker.BerlinJunker
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.RheinlandPirateDealers
-    FACTION = faction.JUNK_GRP
+    FACTION = faction.Junkers
     ASTEROID_ZONES = [
         BerlinDebrisZone1
     ]
@@ -362,7 +362,7 @@ class BerlinPiratesTop(BerlinMember, main_objects.PirateAsteroid):
     SPACE_OBJECT_TEMPLATE = astbase.BerlinAsteroidBase
     INTERIOR_CLASS = interior.PirateOutpostShipdealerInterior
     DEALERS = dealers.RheinlandPirateDealers
-    FACTION = faction.RX_GRP
+    FACTION = faction.RheinlandPirate
     AST_EXCLUSION_ZONE_SIZE = 2500
     ASTEROID_ZONES = [
         BerlinAsteroidZone1
@@ -377,7 +377,7 @@ class BerlinPiratesBottom(BerlinMember, main_objects.PirateStation):
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseBizmark
     INTERIOR_CLASS = interior.PirateStationShipdealerInterior
     DEALERS = dealers.RheinlandPirateDealers
-    FACTION = faction.RX_GRP
+    FACTION = faction.RheinlandPirate
     ASTEROID_ZONES = [
         BerlinDebrisZone5
     ]

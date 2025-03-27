@@ -1,9 +1,12 @@
 import operator
+from random import shuffle
 
 from world.names import DEFAULT, BASIC, ROID, ALLOY, PRODUCT, LUXURY, CONTRABAND
+from world import bodyparts
 
 from universe.markets import Market, MarketCommodity
 from universe.content.messages import MessageBuilder
+from universe.content.character import Char
 
 from universe.content import meta
 from universe.content.main_objects import (
@@ -12,6 +15,26 @@ from universe.content.main_objects import (
 )
 
 from text.dividers import SINGLE_DIVIDER
+
+TRADE_MESSAGES_BARTENDER = 3
+TRADE_MESSAGES_MILITARY = 2
+TRADE_MESSAGES_TRADER = 8
+TRADE_MESSAGES_PEASANT = 6
+TRADE_MESSAGES_JOURNEYMAN = 0
+TRADE_MESSAGES_PIRATE = 6
+
+JOURNEY_MESSAGES_BARTENDER = 0
+JOURNEY_MESSAGES_MILITARY = 4
+JOURNEY_MESSAGES_TRADER = 0
+JOURNEY_MESSAGES_PEASANT = 2
+JOURNEY_MESSAGES_JOURNEYMAN = 6
+JOURNEY_MESSAGES_PIRATE = 4
+
+PREFIX_MIL = 'mil'
+PREFIX_TRADER = 'trader'
+PREFIX_PEASANT = 'peasant'
+PREFIX_JOURNEY = 'journey'
+PREFIX_PIRATE = 'pirate'
 
 
 class BaseEdge:
@@ -100,6 +123,33 @@ class BaseGraph:
             edges = new_edges
 
 
+class BaseFaction:
+    def __init__(self, faction):
+        self.faction = faction
+        self.characters = []
+
+    def get_costume(self):
+        costume = self.faction.get_costume()
+        if costume is None:
+            raise Exception(f'faction {self.get_code()} have no costume')
+        return self.faction.get_costume()
+
+    def get_code(self):
+        return self.faction.get_code()
+
+    def add_character(self, char):
+        self.characters.append(char)
+
+    def get_characters_list_definition(self):
+        return SINGLE_DIVIDER.join([f'npc = {char.get_name()}' for char in self.characters])
+
+    def get_characters(self):
+        return self.characters
+
+    def get_guest(self):
+        return self.faction.get_guest()
+
+
 class Base:
 
     def __init__(self, core, system, system_object):
@@ -107,10 +157,14 @@ class Base:
         self.msg: MessageBuilder = self.core.chars.msg
         self.system = system
         self.system_object = system_object
-        # self.props = self.system_object.BASE_PROPS if self.system_object.BASE_PROPS else DefaultBaseProps()
-        self.props = self.system_object.BASE_PROPS
+        self.props: meta.BaseProps = self.system_object.BASE_PROPS
         self.trade_messages = []
         self.journey_messages = []
+        self.factions = {}
+        self.add_faction(self.system_object.get_faction())
+        self.char_factory = bodyparts.CharacterFactory()
+        self.bartender = None
+        self.char_index = 0
 
         if not self.props:
             raise Exception('Base props is not defined for base %s' % self.system_object.get_base_nickname())
@@ -118,11 +172,29 @@ class Base:
         self.graph: BaseGraph | None = None
 
         self.base_commodities_db = {}
-
         self.load_empty_stores()
 
         if self.props:
             self.parse_prop_actions()
+
+    def get_next_char_index(self):
+        self.char_index += 1
+        return self.char_index
+
+    def add_faction(self, faction):
+        code = faction.get_code()
+        if code not in self.factions:
+            self.factions[code] = BaseFaction(faction)
+
+    def get_main_faction(self):
+        return self.factions[self.system_object.get_faction().get_code()]
+
+    def get_other_factions(self):
+        others = []
+        for code, faction in self.factions.items():
+            if code != self.system_object.get_faction().get_code():
+                others.append(faction)
+        return others
 
     def add_trade_message(self, message):
         self.trade_messages.append(message)
@@ -198,6 +270,7 @@ class Base:
 
     def post_store_load(self):
         self.post_check_commodities()
+        self.init_characters()
 
     def get_commodity_market(self):
         return Market(
@@ -357,6 +430,122 @@ class Base:
             return self.msg.journey_battleship_hackable(dockable)
         if issubclass(dockable.__class__, HackableLuxury):
             return self.msg.journey_luxury(dockable)
+
+    def init_characters(self):
+        print(self.get_name())
+        self.add_main_characters()
+        self.add_other_characters()
+
+    def add_main_characters(self):
+        main_faction = self.get_main_faction()
+        bartender_costume = (
+            self.char_factory.get_bartender(main_faction.get_costume())
+            if self.props.OFFICIAL_BARTENDER else
+            self.char_factory.get_male_peasant(main_faction.get_costume())
+        )
+        self.bartender = self.add_bartender(bartender_costume)
+        self.add_chars_to_faction(
+            main_faction,
+            military_count=self.props.CHARS_MILITARY,
+            trader_count=self.props.CHARS_TRADER,
+            peasant_count=self.props.CHARS_PEASANT,
+            journeyman_count=self.props.CHARS_JOURNEYMAN,
+            pirate_count=self.props.CHARS_PIRATE,
+        )
+
+    def add_other_characters(self):
+        for faction in self.get_other_factions():
+            kwargs = {}
+            guest = faction.get_guest()
+            if guest == bodyparts.MILITARY:
+                kwargs['military_count'] = 1
+            if guest == bodyparts.TRADER:
+                kwargs['trader_count'] = 1
+            if guest == bodyparts.PEASANT:
+                kwargs['peasant_count'] = 1
+            if guest == bodyparts.JOURNEYMAN:
+                kwargs['journeyman_count'] = 1
+            if guest == bodyparts.PIRATE:
+                kwargs['pirate_count'] = 1
+            self.add_chars_to_faction(faction, **kwargs)
+
+    def add_chars_to_faction(self, faction, military_count=0, trader_count=0,
+                             peasant_count=0, journeyman_count=0, pirate_count=0):
+
+        for i in range(1, military_count+1):
+            self.add_character(
+                faction=faction,
+                costume=self.char_factory.get_military(faction.get_costume()),
+                prefix=PREFIX_MIL,
+                trade_msg_count=TRADE_MESSAGES_MILITARY,
+                journey_msg_count=JOURNEY_MESSAGES_MILITARY,
+            )
+
+        for i in range(1, trader_count+1):
+            self.add_character(
+                faction=faction,
+                costume=self.char_factory.get_trader(faction.get_costume()),
+                prefix=PREFIX_TRADER,
+                trade_msg_count=TRADE_MESSAGES_TRADER,
+                journey_msg_count=JOURNEY_MESSAGES_TRADER,
+            )
+
+        for i in range(1, peasant_count+1):
+            self.add_character(
+                faction=faction,
+                costume=self.char_factory.get_peasant(faction.get_costume()),
+                prefix=PREFIX_PEASANT,
+                trade_msg_count=TRADE_MESSAGES_PEASANT,
+                journey_msg_count=JOURNEY_MESSAGES_PEASANT,
+            )
+
+        for i in range(1, journeyman_count+1):
+            self.add_character(
+                faction=faction,
+                costume=self.char_factory.get_journeyman(faction.get_costume()),
+                prefix=PREFIX_JOURNEY,
+                trade_msg_count=TRADE_MESSAGES_JOURNEYMAN,
+                journey_msg_count=JOURNEY_MESSAGES_JOURNEYMAN,
+            )
+
+        for i in range(1, pirate_count+1):
+            self.add_character(
+                faction=faction,
+                costume=self.char_factory.get_pirate(faction.get_costume()),
+                prefix=PREFIX_PIRATE,
+                trade_msg_count=TRADE_MESSAGES_PIRATE,
+                journey_msg_count=JOURNEY_MESSAGES_PIRATE,
+            )
+
+    def add_bartender(self, costume):
+        main_faction = self.get_main_faction()
+        char = Char(
+            nickname=f'{self.get_name()}_fix_bartender',
+            faction=main_faction,
+            costume=costume,
+        )
+        self.add_messages_to_char(char, TRADE_MESSAGES_BARTENDER, JOURNEY_MESSAGES_BARTENDER)
+        return char
+
+    def add_character(self, faction, costume, prefix, trade_msg_count, journey_msg_count):
+        char = Char(
+            nickname=f'{self.get_name()}_{faction.get_code()}_{prefix}_{self.get_next_char_index():02d}',
+            faction=faction,
+            costume=costume,
+        )
+        self.add_messages_to_char(char, trade_msg_count, journey_msg_count)
+        faction.add_character(char)
+        return char
+
+    def add_messages_to_char(self, char, trade_messages_count, journey_messages_count):
+        shuffle(self.trade_messages)
+        shuffle(self.journey_messages)
+
+        for msg in self.trade_messages[:trade_messages_count]:
+            char.add_message(msg)
+
+        for msg in self.journey_messages[:journey_messages_count]:
+            char.add_message(msg)
 
 
 class BaseCommodity(MarketCommodity):

@@ -86,7 +86,7 @@ class Rumor(Message):
         return self.rumor_id.id
 
     def get_definition(self):
-        return f'rumor = base_0_rank, mission_end, 1, {self.rumor_id()}'
+        return f'rumor = base_0_rank, mission_end, 1, {self.get_rumor_id()}'
 
     def dump(self):
         return self.text
@@ -155,7 +155,7 @@ class Knowledge(Message):
     def get_definition(self):
         return SINGLE_DIVIDER.join([
             f'know = {self.get_rumor_id()}, {self.get_knowledge_id()}, {self.price}, 1',
-            f'knowdb = {self.system_object.get_space_nickname()}',
+            f'knowdb = {self.system_object.get_inspace_nickname()}',
         ])
 
     def dump(self):

@@ -13,7 +13,7 @@ from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
 from universe.audio.space_voice import SpaceVoice
-from universe.content import faction
+from universe import faction
 from universe.content import mineable
 from templates.solar import debris_box
 from templates.nebula import li_mnh_nebula
@@ -31,7 +31,7 @@ from templates.dockable import pirate
 
 
 class ManhMember(Member):
-    FACTION = faction.LI_GRP
+    FACTION = faction.LibertyMain
 
 
 class ManhStaticText(ManhMember, main_objects.RawText):
@@ -395,7 +395,7 @@ class ManhJunkers(ManhMember, main_objects.JunkerBase):
     ALIAS = 'pirate'
     REL = RIGHT
     SPACE_OBJECT_TEMPLATE = junker.BerlinJunker
-    FACTION = faction.LX_GRP
+    FACTION = faction.LibertyPirate
 
     DEFENCE_LEVEL = None
 
@@ -414,7 +414,7 @@ class ManhNebulaPirates(ManhMember, main_objects.PirateStation):
     BASE_INDEX = 11
     REL = TOP
     SPACE_OBJECT_TEMPLATE = pirate.ManhattanPirateBase
-    FACTION = faction.LX_GRP
+    FACTION = faction.LibertyPirate
 
     DEFENCE_LEVEL = None
 

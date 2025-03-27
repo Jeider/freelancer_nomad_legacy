@@ -13,7 +13,7 @@ from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
 from universe.audio.space_voice import SpaceVoice
-from universe.content import faction
+from universe import faction
 from universe.content import mineable
 from templates.solar import asteroid
 from templates.solar import hackable
@@ -33,7 +33,7 @@ from templates.dockable import station_debris
 
 
 class ColMember(Member):
-    FACTION = faction.LI_GRP
+    FACTION = faction.LibertyMain
     INTERIOR_BG1 = interior.INTERIOR_LI_COLUMBIA
 
 
@@ -624,7 +624,7 @@ class ColAsteroidPirates(ColMember, main_objects.PirateAsteroid):
     BASE_INDEX = 8
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = astbase.BerlinAsteroidBase
-    FACTION = faction.LX_GRP
+    FACTION = faction.LibertyPirate
 
     DEFENCE_LEVEL = None
 
@@ -643,7 +643,7 @@ class ColNebulaPirates(ColMember, main_objects.PirateStation):
     BASE_INDEX = 9
     REL = TOP
     SPACE_OBJECT_TEMPLATE = junker.BerlinJunker
-    FACTION = faction.LX_GRP
+    FACTION = faction.LibertyPirate
 
     DEFENCE_LEVEL = None
 

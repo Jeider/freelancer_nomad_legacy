@@ -13,7 +13,7 @@ from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
 from universe.audio.space_voice import SpaceVoice
-from universe.content import faction
+from universe import faction
 from universe.content import mineable
 from templates.solar import asteroid
 from templates.solar import debris_box
@@ -32,7 +32,7 @@ from templates.dockable import station_debris
 
 
 class CamMember(Member):
-    FACTION = faction.BR_GRP
+    FACTION = faction.BretoniaMain
 
 
 class CamStaticText(CamMember, main_objects.RawText):
@@ -456,7 +456,7 @@ class CamJunkers(CamMember, main_objects.JunkerBase):
     SPACE_OBJECT_TEMPLATE = junker.HonshuJunker
     INTERIOR_CLASS = interior.PirateOutpostShipdealerInterior
     DEALERS = dealers.BretoniaPirateDealers
-    FACTION = faction.BX_GRP
+    FACTION = faction.BretoniaPirate
     AST_EXCLUSION_ZONE_SIZE = 2500
     ASTEROID_ZONES = [
         CamDebrisZone4
@@ -471,7 +471,7 @@ class CamPirates(CamMember, main_objects.PirateStation):
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseStuttgart
     INTERIOR_CLASS = interior.PirateOutpostShipdealerInterior
     DEALERS = dealers.BretoniaPirateDealers
-    FACTION = faction.BX_GRP
+    FACTION = faction.BretoniaPirate
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
     NEBULA_ZONES = [
         CamBottomNebula

@@ -13,7 +13,7 @@ from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
 from universe.audio.space_voice import SpaceVoice
-from universe.content import faction
+from universe import faction
 from universe.content import mineable
 from templates.solar import suprise
 from templates.solar import debris_box
@@ -29,7 +29,7 @@ from templates.dockable import bounty_hunter
 
 
 class StutMember(Member):
-    FACTION = faction.RH_GRP
+    FACTION = faction.RheinlandMain
     INTERIOR_BG1 = interior.INTERIOR_RH_STUTTGART
 
 
@@ -419,7 +419,7 @@ class StutNebulaPirates(StutMember, main_objects.PirateStation):
     BASE_INDEX = 7
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseStuttgart
-    FACTION = faction.RX_GRP
+    FACTION = faction.RheinlandPirate
 
     DEFENCE_LEVEL = None
 
@@ -436,7 +436,7 @@ class StutJunkers(StutMember, main_objects.JunkerBase):
     ALIAS = 'pirate'
     REL = TOP
     SPACE_OBJECT_TEMPLATE = junker.StuttgartJunker
-    FACTION = faction.JUNK_GRP
+    FACTION = faction.Junkers
 
     DEFENCE_LEVEL = None
 

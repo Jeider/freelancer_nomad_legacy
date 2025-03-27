@@ -1,4 +1,4 @@
-from random import choice, shuffle
+from random import choice, shuffle, randint
 
 GUARD = 1
 ELITE = 2
@@ -24,6 +24,7 @@ RHEINLAND = 1
 LIBERTY = 2
 BRETONIA = 3
 KUSARI = 4
+BORDER_WORLD = 5
 
 
 BENCHMARK_MALE_HAND_RIGHT = 'benchmark_male_hand_right'
@@ -66,6 +67,42 @@ PROP_NEURALNET_E_RIGHT = 'prop_neuralnet_e_right'
 PROP_NEURALNET_E = 'prop_neuralnet_e'
 PROP_NEURALNET_F_RIGHT = 'prop_neuralnet_f_right'
 PROP_NEURALNET_F = 'prop_neuralnet_f'
+
+NN_A = [
+    PROP_NEURALNET_A,
+    PROP_NEURALNET_A_COMBO,
+    PROP_NEURALNET_A_RIGHT,
+]
+NN_B = [
+    PROP_NEURALNET_B,
+    PROP_NEURALNET_B_COMBO,
+    PROP_NEURALNET_B_RIGHT,
+]
+NN_C = [
+    PROP_NEURALNET_C,
+    PROP_NEURALNET_C_COMBO,
+    PROP_NEURALNET_C_RIGHT,
+]
+NN_D = [
+    PROP_NEURALNET_D,
+    PROP_NEURALNET_D_COMBO,
+    PROP_NEURALNET_D_RIGHT,
+]
+NN_E = [
+    PROP_NEURALNET_E,
+    PROP_NEURALNET_E_COMBO,
+    PROP_NEURALNET_E_RIGHT,
+]
+NN_F = [
+    PROP_NEURALNET_F,
+    PROP_NEURALNET_F_RIGHT,
+    PROP_NEURALNET_F_UP,
+    PROP_NEURALNET_F_UP_RIGHT,
+]
+
+TRADER_NN = NN_A + NN_E
+PEASANT_NN = NN_B + NN_C + NN_D + NN_F
+
 PROP_SHADES_01 = 'prop_shades_01'
 PROP_SHADES_02 = 'prop_shades_02'
 PROP_SHADES_03 = 'prop_shades_03'
@@ -76,6 +113,10 @@ PROP_SHADES_02_FEM = 'prop_shades_02_fem'
 PROP_SHADES_03_FEM = 'prop_shades_03_fem'
 PROP_SHADES_04_FEM = 'prop_shades_04_fem'
 PROP_SHADES_05_FEM = 'prop_shades_05_fem'
+
+MALE_SHADES = [PROP_SHADES_01, PROP_SHADES_02, PROP_SHADES_03, PROP_SHADES_04, PROP_SHADES_05]
+FEMALE_SHADES = [PROP_SHADES_01_FEM, PROP_SHADES_02_FEM, PROP_SHADES_03_FEM, PROP_SHADES_04_FEM, PROP_SHADES_05_FEM]
+
 PROP_MASK_OUTCAST = 'prop_mask_outcast'
 PROP_MASK_OUTCAST_FEM = 'prop_mask_outcast_fem'
 PROP_HAT_FEMALE_BR_ELITE = 'prop_hat_female_br_elite'
@@ -180,6 +221,26 @@ def load_items_by_usage(items):
     return result
 
 
+def get_male_shades():
+    if randint(0, 3) == 1:
+        return choice(MALE_SHADES)
+
+
+def get_female_shades():
+    if randint(0, 3) == 1:
+        return choice(FEMALE_SHADES)
+
+
+def get_trader_nn():
+    if randint(0, 1) == 1:
+        return choice(TRADER_NN)
+
+
+def get_peasant_nn():
+    if randint(0, 2) == 1:
+        return choice(PEASANT_NN)
+
+
 class Body:
 
     def get_name(self):
@@ -216,10 +277,16 @@ class FemaleBody:
     def get_usage(self):
         return self.usage
 
+    def have_bust(self):
+        return self.bust
+
+    def white_is_important(self):
+        return self.white_important
+
 
 class PartsStore:
-    MALE_MIL_HATS = []
-    FEMALE_MIL_HATS = []
+    MALE_HATS = {}
+    FEMALE_HATS = {}
     MALE = []
     FEMALE = []
 
@@ -227,33 +294,91 @@ class PartsStore:
         self.male_per_type = load_items_by_usage(self.MALE)
         self.female_per_type = load_items_by_usage(self.FEMALE)
 
-    def get_male(self, usage):
-        return choice(self.male_per_type[usage])
+    def get_male(self, *usages):
+        bodies = []
+        for usage in usages:
+            bodies.extend(self.male_per_type[usage])
+        return choice(bodies)
 
-    def get_female(self, usage):
-        return choice(self.female_per_type[usage])
+    def get_female(self, *usages, bust=False, white_important=False):
+        choosed_bodies = []
+        for usage in usages:
+            for body in self.female_per_type[usage]:
+                if white_important and body.is_black():
+                    continue
+
+                if bust:
+                    if body.have_bust():
+                        choosed_bodies.append(body)
+                else:
+                    if not body.have_bust():
+                        choosed_bodies.append(body)
+
+        if len(choosed_bodies) == 0:
+            raise Exception('no body for query')
+
+        return choice(choosed_bodies)
+
+    def get_male_hat(self, usage, hat_mandatory=False):
+        use_hat = randint(0, 1) == 1
+        if hat_mandatory or use_hat:
+            return choice(self.MALE_HATS[usage])
+
+    def get_female_hat(self, usage, hat_mandatory=False):
+        use_hat = randint(0, 1) == 1
+        if hat_mandatory or use_hat:
+            return choice(self.FEMALE_HATS[usage])
 
 
 class LibertyBodyStore(PartsStore):
+    MALE_HATS = {
+        MILITARY: [
+            PROP_HAT_MALE_LI_ELITE,
+            PROP_HAT_MALE_LI_ELITE_VISOR,
+        ]
+    }
+    FEMALE_HATS = {
+        MILITARY: [
+            PROP_HAT_FEMALE_LI_ELITE,
+            PROP_HAT_FEMALE_LI_ELITE_VISOR,
+        ]
+    }
     MALE = [
         MaleBody('li_bartender_body', BARTENDER),
         MaleBody('li_commtrader_body', TRADER),
         MaleBody('li_male_guard_body', GUARD),
         MaleBody('li_male_elite_body', ELITE),
         MaleBody('li_manhattan_bartender_body', FAT),
-        MaleBody('li_rockford_body', TRADER),
         MaleBody('li_scrote_body', GENERAL),
         MaleBody('li_shipdealer_body', TRADER),
         MaleBody('li_tilton_body_alt', GENERAL),
+        MaleBody('li_rockford_body', TRADER),
     ]
     FEMALE = [
         FemaleBody('li_female_elite_body', ELITE),
         FemaleBody('li_female_guard_body', GUARD),
         FemaleBody('li_hatcher_body', GENERAL),
+        FemaleBody('br_karina_body', TRADER),
     ]
 
 
 class BretoniaBodyStore(PartsStore):
+    MALE_HATS = {
+        MILITARY: [
+            PROP_HAT_MALE_BR_ELITE,
+            PROP_HAT_MALE_BR_ELITE_VISOR,
+            PROP_HAT_MALE_BR_GRD,
+            PROP_HAT_MALE_BR_GRD_VISOR,
+        ]
+    }
+    FEMALE_HATS = {
+        MILITARY: [
+            PROP_HAT_FEMALE_BR_ELITE,
+            PROP_HAT_FEMALE_BR_ELITE_VISOR,
+            PROP_HAT_FEMALE_BR_GRD,
+            PROP_HAT_FEMALE_BR_GRD_VISOR,
+        ]
+    }
     MALE = [
         MaleBody('br_bartender_body', BARTENDER),
         MaleBody('br_brighton_body', GENERAL),
@@ -263,6 +388,7 @@ class BretoniaBodyStore(PartsStore):
         MaleBody('br_quigly_body', TRADER),
         MaleBody('br_shipdealer_body', TRADER),
         MaleBody('br_tobias_body', FAT),
+        MaleBody('li_rockford_body', TRADER),
     ]
     FEMALE = [
         FemaleBody('br_darcy_body', GENERAL),
@@ -272,7 +398,24 @@ class BretoniaBodyStore(PartsStore):
         FemaleBody('br_karina_body', TRADER),
     ]
 
+
 class KusariBodyStore(PartsStore):
+    MALE_HATS = {
+        MILITARY: [
+            PROP_HAT_MALE_KU_ELITE,
+            PROP_HAT_MALE_KU_ELITE_VISOR,
+            PROP_HAT_MALE_KU_GRD,
+            PROP_HAT_MALE_KU_GRD_VISOR,
+        ]
+    }
+    FEMALE_HATS = {
+        MILITARY: [
+            PROP_HAT_FEMALE_KU_ELITE,
+            PROP_HAT_FEMALE_KU_ELITE_VISOR,
+            PROP_HAT_FEMALE_KU_GRD,
+            PROP_HAT_FEMALE_KU_GRD_VISOR,
+        ]
+    }
     MALE = [
         MaleBody('ku_bartender_body', BARTENDER),
         MaleBody('ku_commtrader_body', TRADER),
@@ -280,17 +423,30 @@ class KusariBodyStore(PartsStore):
         MaleBody('ku_male_elite_body', ELITE),
         MaleBody('ku_male_guard_body', GUARD),
         MaleBody('ku_shipdealer_body', TRADER),
+        MaleBody('li_rockford_body', TRADER),
     ]
     FEMALE = [
         FemaleBody('ku_kym_body', TRADER, bust=True, white_important=True),
         FemaleBody('ku_kym_body_gen', TRADER, white_important=True),
-        FemaleBody('ku_kym_body_bust', GENERAL, bust=True),
+        FemaleBody('ku_kym_body_bust', TRADER, bust=True),
         FemaleBody('ku_female_elite_body', ELITE),
         FemaleBody('ku_female_guard_body', GUARD),
     ]
 
 
 class RheinlandBodyStore(PartsStore):
+    MALE_HATS = {
+        MILITARY: [
+            PROP_HAT_MALE_RH_ELITE,
+            PROP_HAT_MALE_RH_ELITE_VISOR,
+        ]
+    }
+    FEMALE_HATS = {
+        MILITARY: [
+            PROP_HAT_FEMALE_RH_ELITE,
+            PROP_HAT_FEMALE_RH_ELITE_VISOR,
+        ]
+    }
     MALE = [
         MaleBody('rh_bartender_body', BARTENDER),
         MaleBody('rh_commtrader_body', TRADER),
@@ -300,11 +456,13 @@ class RheinlandBodyStore(PartsStore):
         MaleBody('rh_reichman_body', GENERAL),
         MaleBody('rh_shipdealer_body', TRADER),
         MaleBody('rh_wilham_body', GENERAL),
+        MaleBody('li_rockford_body', TRADER),
     ]
     FEMALE = [
         FemaleBody('rh_female_elite_body', ELITE),
         FemaleBody('rh_female_guard_body', GUARD),
         FemaleBody('rh_greunwald_body', GENERAL, bust=True),
+        FemaleBody('br_karina_body', TRADER),
     ]
 
 
@@ -345,7 +503,7 @@ class GenericBodyStore(PartsStore):
         FemaleBody('pl_female1_peasant_body', PEASANT),
         FemaleBody('pl_female2_journeyman_body', JOURNEYMAN),
         FemaleBody('pl_female2_peasant_body', PEASANT),
-        FemaleBody('sc_female1_body', PIRATE),
+        FemaleBody('sc_female1_body', SCIENT),
         FemaleBody('sh_female1_body', PIRATE),
         FemaleBody('pl_female1_peasant_body_bust', PEASANT, bust=True),
         FemaleBody('pl_female2_peasant_body_bust', PEASANT, bust=True),
@@ -372,16 +530,20 @@ class Head:
     def get_hands(self):
         raise NotImplementedError
 
+    def hat_mandatory(self):
+        raise NotImplementedError
+
 
 class MaleHead(Head):
 
-    def __init__(self, name, usage, hat=True, black=False, japan=False, alt=None):
+    def __init__(self, name, usage, hat=True, black=False, japan=False, alt=None, crop=False):
         self.name = name
         self.usage = usage
         self.hat = hat
         self.black = black
         self.japan = japan
         self.alt = alt
+        self.crop = crop
 
         if self.black and self.japan:
             raise Exception(f'head {self.name} could not be black and japan at same time')
@@ -409,10 +571,13 @@ class MaleHead(Head):
             return MALE_BLACK_HANDS
         return MALE_WHITE_HANDS
 
+    def hat_mandatory(self):
+        return self.crop
+
 
 class FemaleHead(Head):
 
-    def __init__(self, name, usage, hat=True, bust=False, black=False, japan=False, alt=None):
+    def __init__(self, name, usage, hat=True, bust=False, black=False, japan=False, alt=None, crop=False):
         self.name = name
         self.usage = usage
         self.hat = hat
@@ -420,6 +585,7 @@ class FemaleHead(Head):
         self.black = black
         self.japan = japan
         self.alt = alt
+        self.crop = crop
 
         if self.black and self.japan:
             raise Exception(f'head {self.name} could not be black and japan at same time')
@@ -442,8 +608,16 @@ class FemaleHead(Head):
     def can_mount_hat(self):
         return self.hat is True
 
+    def get_hands(self):
+        if self.is_black():
+            return FEMALE_BLACK_HANDS
+        return FEMALE_WHITE_HANDS
+
     def have_bust(self):
         return self.bust
+
+    def hat_mandatory(self):
+        return self.crop
 
 
 class HeadStore:
@@ -502,15 +676,15 @@ class HeadStore:
         MaleHead('pl_male6_head', GENERIC, black=True),
         MaleHead('pl_male7_head', GENERIC),
         MaleHead('pl_male8_head', GENERIC, hat=False, japan=True),
-        MaleHead('li_sales_head_hat', GENERIC, alt='li_sales_head'),
-        MaleHead('br_sales_head_hat', GENERIC, alt='br_sales_head'),
-        MaleHead('ku_bartender_head_hat', GENERIC, japan=True, alt='ku_bartender_head'),
-        MaleHead('ku_tenji_head_hat', HERO, alt='ku_bartender_head'),
-        MaleHead('pl_male3_head_hat', GENERIC, alt='pl_male3_head'),
-        MaleHead('pl_male8_head_hat', GENERIC, japan=True, alt='pl_male8_head'),
-        MaleHead('rh_alaric_head_hat', HERO, alt='rh_alaric_head'),
-        MaleHead('sc_scientist1_head_hat', SCIENT, alt='sc_scientist1_head'),
-        MaleHead('sc_scientist2_head_hat', SCIENT, alt='sc_scientist2_head'),
+        MaleHead('li_sales_head_hat', GENERIC, crop=True, alt='li_sales_head'),
+        MaleHead('br_sales_head_hat', GENERIC, crop=True, alt='br_sales_head'),
+        MaleHead('ku_bartender_head_hat', GENERIC, crop=True, japan=True, alt='ku_bartender_head'),
+        MaleHead('ku_tenji_head_hat', HERO, crop=True, alt='ku_bartender_head'),
+        MaleHead('pl_male3_head_hat', GENERIC, crop=True, alt='pl_male3_head'),
+        MaleHead('pl_male8_head_hat', GENERIC, crop=True, japan=True, alt='pl_male8_head'),
+        MaleHead('rh_alaric_head_hat', HERO, crop=True, alt='rh_alaric_head'),
+        MaleHead('sc_scientist1_head_hat', SCIENT, crop=True, alt='sc_scientist1_head'),
+        MaleHead('sc_scientist2_head_hat', SCIENT, crop=True, alt='sc_scientist2_head'),
     ]
 
     FEMALE = [
@@ -545,13 +719,13 @@ class HeadStore:
         FemaleHead('br_karina_head', GENERIC, bust=True),
         FemaleHead('rh_gruenwald_head', GENERIC, bust=True),
         FemaleHead('ku_kym_head', GENERIC, bust=True, japan=True),
-        FemaleHead('br_newscaster_head_hat', GENERIC, bust=True, alt='br_newscaster_head'),
-        FemaleHead('br_newscaster_head_gen_hat', GENERIC, alt='br_newscaster_head'),
-        FemaleHead('li_newscaster_head_hat', GENERIC, bust=True, black=True, alt='li_newscaster_head'),
-        FemaleHead('li_newscaster_head_gen_hat', GENERIC, black=True, alt='li_newscaster_head'),
-        FemaleHead('rh_newscaster_head_hat', GENERIC, bust=True, alt='rh_newscaster_head'),
-        FemaleHead('rh_newscaster_head_gen_hat', GENERIC, alt='rh_newscaster_head'),
-        FemaleHead('pl_female4_head_helmet', HERO, alt='pl_female4_head'),
+        FemaleHead('br_newscaster_head_hat', GENERIC, crop=True, bust=True, alt='br_newscaster_head'),
+        FemaleHead('br_newscaster_head_gen_hat', GENERIC, crop=True, alt='br_newscaster_head'),
+        FemaleHead('li_newscaster_head_hat', GENERIC, crop=True, bust=True, black=True, alt='li_newscaster_head'),
+        FemaleHead('li_newscaster_head_gen_hat', GENERIC, crop=True, black=True, alt='li_newscaster_head'),
+        FemaleHead('rh_newscaster_head_hat', GENERIC, crop=True, bust=True, alt='rh_newscaster_head'),
+        FemaleHead('rh_newscaster_head_gen_hat', GENERIC, crop=True, alt='rh_newscaster_head'),
+        FemaleHead('pl_female4_head_helmet', HERO, crop=True, alt='pl_female4_head'),
     ]
 
     def __init__(self):
@@ -564,7 +738,8 @@ class HeadStore:
         return head
 
     def get_male(self, types: list[int] = None, allow_hat: bool | None = None,
-                 allow_black=True, allow_japan=True, japan_first=False):
+                 allow_black=True, allow_japan=True, japan_first=False, allow_crop=True,
+                 safe=False):
         if not types:
             raise Exception('type is not set')
 
@@ -574,7 +749,9 @@ class HeadStore:
                 for item in self.male_per_type[usage]:
                     if not item.is_japan():
                         continue
-                    if not item.can_mount_hat and allow_hat is False:
+                    if item.hat_mandatory() and allow_crop is False:
+                        continue
+                    if not item.can_mount_hat() and allow_hat is False:
                         continue
                     if item.get_name() in self.extracted:
                         continue
@@ -588,32 +765,34 @@ class HeadStore:
                     continue
                 if item.is_japan() and not allow_japan:
                     continue
-                if not item.can_mount_hat and allow_hat is False:
+                if item.hat_mandatory() and allow_crop is False:
+                    continue
+                if not item.can_mount_hat() and allow_hat is False:
                     continue
                 if item.get_name() in self.extracted:
                     continue
 
                 return self.get_result(item)
 
-        raise Exception('male head not found')
+        if not safe:
+            raise Exception('no left male heads')
 
-    def get_female(self, types: list[int], bust: bool,
-                   allow_hat: bool | None = None, allow_black=True, allow_japan=True, japan_first=False):
+    def get_female(self, types: list[int], allow_bust=True, allow_hat: bool | None = None,
+                   allow_black=True, allow_japan=True, japan_first=False, allow_crop=True,
+                   safe=False):
         if japan_first:
             for usage in types:
                 shuffle(self.female_per_type[usage])
                 for item in self.female_per_type[usage]:
                     if not item.is_japan():
                         continue
-                    if not item.can_mount_hat and allow_hat is False:
+                    if item.hat_mandatory() and allow_crop is False:
                         continue
-                    if bust:
-                        if not item.have_bust():
-                            continue
-                    else:
-                        if item.have_bust():
-                            continue
-                    if item.get_name() in self.extracted:
+                    if not item.can_mount_hat() and allow_hat is False:
+                        continue
+                    if not allow_bust and item.have_bust():
+                        continue
+                    if item.get_id() in self.extracted:
                         continue
 
                     return self.get_result(item)
@@ -625,20 +804,19 @@ class HeadStore:
                     continue
                 if item.is_japan() and not allow_japan:
                     continue
-                if not item.can_mount_hat and allow_hat is False:
+                if item.hat_mandatory() and allow_crop is False:
                     continue
-                if bust:
-                    if not item.have_bust():
-                        continue
-                else:
-                    if item.have_bust():
-                        continue
-                if item.get_name() in self.extracted:
+                if not item.can_mount_hat() and allow_hat is False:
+                    continue
+                if not allow_bust and item.have_bust():
+                    continue
+                if item.get_id() in self.extracted:
                     continue
 
                 return self.get_result(item)
 
-        raise Exception('male head not found')
+        if not safe:
+            raise Exception('no left female heads')
 
 
 class Costume:
@@ -649,11 +827,27 @@ class Costume:
         self.is_male = is_male
         self.accessory = accessory
 
+    def get_body(self):
+        return self.body.get_name()
+
+    def get_head(self):
+        return self.head.get_name()
+
+    def get_left_hand(self):
+        return self.left_hand
+
+    def get_right_hand(self):
+        return self.right_hand
+
+    def get_accessory(self):
+        return self.accessory
+
     def dump(self):
         print(f'body: {self.body.get_name()}')
         print(f'head: {self.head.get_name()}')
         print(f'left_hand: {self.left_hand}')
         print(f'right_hand: {self.left_hand}')
+        print(f'accessory: {self.accessory}')
 
 
 class CharacterFactory:
@@ -686,21 +880,102 @@ class CharacterFactory:
             return {'allow_black': False, 'allow_japan': False}
         if faction == KUSARI:
             return {'allow_black': False, 'allow_japan': True, 'japan_first': True}
+        if faction == BORDER_WORLD:
+            return {'allow_black': True, 'allow_japan': True}
         raise Exception('unknown faction for body')
 
-    def get_male_elite(self, faction):
+    def get_bartender(self, faction):
         body_store = self.get_store_by_faction(faction)
-        head = self.heads.get_male(types=[GENERIC], **self.get_kwargs_by_faction(faction))
-        body = body_store.get_male(ELITE)
+        head = self.heads.get_male(types=[GENERIC], allow_crop=False, **self.get_kwargs_by_faction(faction))
+        body = body_store.get_male(BARTENDER)
         return Costume(head=head, body=body, is_male=True)
 
-    def get_male_guard(self, faction):
+    def get_male_military(self, faction):
         body_store = self.get_store_by_faction(faction)
         head = self.heads.get_male(types=[GENERIC], **self.get_kwargs_by_faction(faction))
-        body = body_store.get_male(GUARD)
-        return Costume(head=head, body=body, is_male=True)
+        body = body_store.get_male(ELITE, GUARD)
+        hat = body_store.get_male_hat(MILITARY, hat_mandatory=head.hat_mandatory())
+        return Costume(head=head, body=body, is_male=True, accessory=hat)
 
     def get_male_journeyman(self, faction):
-        head = self.heads.get_male(types=[GENERIC], **self.get_kwargs_by_faction(faction))
+        head = self.heads.get_male(types=[GENERIC], allow_crop=False, **self.get_kwargs_by_faction(faction))
         body = self.ge_body.get_male(JOURNEYMAN)
-        return Costume(head=head, body=body, is_male=True)
+        shades = get_male_shades()
+        return Costume(head=head, body=body, is_male=True, accessory=shades)
+
+    def get_male_peasant(self, faction):
+        head = self.heads.get_male(types=[GENERIC], allow_crop=False, **self.get_kwargs_by_faction(faction))
+        body = self.ge_body.get_male(PEASANT)
+        nn = get_peasant_nn()
+        return Costume(head=head, body=body, is_male=True, accessory=nn)
+
+    def get_male_trader(self, faction):
+        body_store = self.get_store_by_faction(faction)
+        head = self.heads.get_male(types=[GENERIC], allow_crop=False, **self.get_kwargs_by_faction(faction))
+        body = body_store.get_male(TRADER)
+        nn = get_trader_nn()
+        return Costume(head=head, body=body, is_male=True, accessory=nn)
+
+    def get_male_pirate(self, faction):
+        head = self.heads.get_male(types=[PIRATE, GENERIC], allow_crop=False, **self.get_kwargs_by_faction(faction))
+        body = self.ge_body.get_male(PIRATE)
+        return Costume(head=head, body=body, is_male=True, accessory=None)
+
+    def get_female_military(self, faction):
+        body_store = self.get_store_by_faction(faction)
+        head = self.heads.get_female(types=[GENERIC], allow_bust=False, **self.get_kwargs_by_faction(faction))
+        body = body_store.get_female(ELITE, GUARD, bust=False)
+        hat = body_store.get_female_hat(MILITARY, hat_mandatory=head.hat_mandatory())
+        return Costume(head=head, body=body, is_male=False, accessory=hat)
+
+    def get_female_journeyman(self, faction):
+        head = self.heads.get_female(types=[GENERIC], allow_bust=False, allow_crop=False,
+                                     **self.get_kwargs_by_faction(faction))
+        body = self.ge_body.get_female(JOURNEYMAN, bust=head.have_bust())
+        shades = get_female_shades()
+        return Costume(head=head, body=body, is_male=False, accessory=shades)
+
+    def get_female_peasant(self, faction):
+        head = self.heads.get_female(types=[GENERIC], allow_bust=True, allow_crop=False,
+                                     **self.get_kwargs_by_faction(faction))
+        body = self.ge_body.get_female(PEASANT, bust=head.have_bust())
+        nn = get_peasant_nn()
+        return Costume(head=head, body=body, is_male=False, accessory=nn)
+
+    def get_female_trader(self, faction):
+        body_store = self.get_store_by_faction(faction)
+        head = self.heads.get_female(types=[GENERIC], allow_crop=False, **self.get_kwargs_by_faction(faction))
+        body = body_store.get_female(TRADER)
+        nn = get_trader_nn()
+        return Costume(head=head, body=body, is_male=False, accessory=nn)
+
+    def get_female_pirate(self, faction):
+        head = self.heads.get_female(types=[PIRATE, GENERIC], allow_bust=False,
+                                     allow_crop=False, **self.get_kwargs_by_faction(faction))
+        body = self.ge_body.get_female(PIRATE, JOURNEYMAN, bust=head.have_bust())
+        return Costume(head=head, body=body, is_male=False, accessory=None)
+
+    def get_military(self, faction):
+        if randint(0, 2) == 1:
+            return self.get_female_military(faction)
+        return self.get_male_military(faction)
+
+    def get_journeyman(self, faction):
+        if randint(0, 2) == 1:
+            return self.get_female_journeyman(faction)
+        return self.get_male_journeyman(faction)
+
+    def get_peasant(self, faction):
+        if randint(0, 2) == 1:
+            return self.get_female_peasant(faction)
+        return self.get_male_peasant(faction)
+
+    def get_trader(self, faction):
+        if randint(0, 3) == 1:
+            return self.get_female_trader(faction)
+        return self.get_male_trader(faction)
+
+    def get_pirate(self, faction):
+        if randint(0, 3) == 1:
+            return self.get_female_pirate(faction)
+        return self.get_male_pirate(faction)

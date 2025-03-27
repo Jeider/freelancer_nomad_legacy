@@ -12,7 +12,7 @@ from universe.content import zones
 from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
-from universe.content import faction
+from universe import faction
 from universe.content import mineable
 from templates.solar import hackable
 from templates.solar import asteroid as asteroid_solar
@@ -29,7 +29,7 @@ from templates.dockable import station_debris
 
 
 class Tau29Member(Member):
-    FACTION = faction.BR_GRP
+    FACTION = faction.BretoniaMain
     INTERIOR_BG1 = interior.INTERIOR_TAU29
 
 
@@ -384,7 +384,7 @@ class Tau29BottomPirates(Tau29Member, main_objects.PirateAsteroid):
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.BretoniaPirateDealers
 
-    FACTION = faction.BX_GRP
+    FACTION = faction.BretoniaPirate
     DEFENCE_LEVEL = None
 
     ASTEROID_ZONES = [
@@ -400,7 +400,7 @@ class Tau29TopPirates(Tau29Member, main_objects.PirateAsteroid):
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.BretoniaPirateDealers
 
-    FACTION = faction.BX_GRP
+    FACTION = faction.BretoniaPirate
     DEFENCE_LEVEL = None
     #
     # ASTEROID_ZONES = [

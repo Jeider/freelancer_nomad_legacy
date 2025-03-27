@@ -52,10 +52,14 @@ class UniverseManager:
         for base in self.bases_list:
             base.compile_base()
 
+        self.load_system_trade_connections()
+
         self.core.store.compile_consumers()
 
         for base in self.bases_list:
             base.post_store_load()
+
+        self.load_interiors()
 
         self.sync_data()
 
@@ -81,11 +85,6 @@ class UniverseManager:
                 self.templated_nebulas += system.templated_nebulas
                 self.keys += system.keys
 
-                interior_definitions, interior_files, mbases_content = system.get_interiors_data()
-                self.interior_definitions += interior_definitions
-                self.interior_files.update(interior_files)
-                self.mbases_content += mbases_content
-
                 for dockable in system.get_dockable_objects():
                     if dockable.IS_BASE and dockable.have_equip_dealer():
                         self.equip_dealers.append(
@@ -101,6 +100,18 @@ class UniverseManager:
 
                     if dockable.have_trader() and dockable.CALC_STORE:
                         system.add_base(dockable)
+
+    def load_system_trade_connections(self):
+        for the_system in self.universe_root.get_systems():
+            the_system.load_trade_connections()
+
+    def load_interiors(self):
+        for the_system in self.universe_root.get_systems():
+            if the_system.have_dynamic_content():
+                interior_definitions, interior_files, mbases_content = the_system.get_interiors_data()
+                self.interior_definitions += interior_definitions
+                self.interior_files.update(interior_files)
+                self.mbases_content += mbases_content
 
     def get_market_equip(self):
         return DIVIDER.join([dealer.get_market_content() for dealer in self.equip_dealers])

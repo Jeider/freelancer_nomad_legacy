@@ -206,6 +206,13 @@ distance = {tlr_distance}
     def get_jumpgate_instance(self, system_name):
         return self.jumpgates_db[system_name]
 
+    def load_trade_connections(self):
+        if len(self.trade_connections) > 0:
+            self.generate_tradelanes()
+
+            for item in self.trade_connections:
+                item.init_patrols()
+
     def get_dynamic_content(self):
         system_content = []
 
@@ -233,9 +240,6 @@ distance = {tlr_distance}
             system_content.append(dynamic_zone.get_system_content())
 
         if len(self.trade_connections) > 0:
-            self.generate_tradelanes()
-            self.define_attacker_patrols()
-
             for item in self.trade_connections:
                 system_content.append(item.get_system_content())
 
@@ -426,10 +430,6 @@ distance = {tlr_distance}
                 self.trade_connections[trade_connection_index].set_tradelane_zone(response_item)
                 trade_connection_index += 1
 
-    def define_attacker_patrols(self):
-        for item in self.trade_connections:
-            item.define_attacker_patrols()
-
     def generate_patrols(self):
         if len(self.patrols_db) == 0:
             return
@@ -551,6 +551,8 @@ distance = {tlr_distance}
 
         self.universe_manager.bases_db[base_name] = the_base
         self.universe_manager.bases_list.append(the_base)
+
+        system_object.set_base(the_base)
 
 
 class RheinlandFirst:

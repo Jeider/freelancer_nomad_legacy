@@ -12,7 +12,7 @@ from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
 from universe.audio.space_voice import SpaceVoice
-from universe.content import faction
+from universe import faction
 from universe.content import mineable
 from templates.solar import asteroid
 from templates.solar import debris_box
@@ -26,7 +26,7 @@ from templates.dockable import alg
 
 
 class WarwickMember(Member):
-    FACTION = faction.BR_GRP
+    FACTION = faction.BretoniaMain
 
 
 class WarwickStaticText(WarwickMember, main_objects.RawText):
@@ -312,7 +312,7 @@ class WarwickRefinery(WarwickMember, main_objects.Refinery):
     SPACE_OBJECT_TEMPLATE = alg.AlgBaseBerlin
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.BretoniaCivilianDealers
-    FACTION = faction.BC_GRP
+    FACTION = faction.BretoniaCivilians
 
     BASE_PROPS = meta.Refinery(
         objectives=[
@@ -347,7 +347,7 @@ class WarwickPiratesTop(WarwickMember, main_objects.PirateAsteroid):
     SPACE_OBJECT_TEMPLATE = astbase.BerlinAsteroidBase
     INTERIOR_CLASS = interior.PirateOutpostShipdealerInterior
     DEALERS = dealers.BretoniaPirateDealers
-    FACTION = faction.BX_GRP
+    FACTION = faction.BretoniaPirate
     AST_EXCLUSION_ZONE_SIZE = 2500
     ASTEROID_ZONES = [
         WarwickAsteroidZone1
@@ -361,7 +361,7 @@ class WarwickJunkers(WarwickMember, main_objects.JunkerBase):
     SPACE_OBJECT_TEMPLATE = junker.StuttgartJunker
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.BretoniaPirateDealers
-    FACTION = faction.BX_GRP
+    FACTION = faction.BretoniaPirate
     ASTEROID_ZONES = [
         WarwickDebrisZone5
     ]
