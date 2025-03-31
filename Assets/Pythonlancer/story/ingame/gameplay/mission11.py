@@ -6,9 +6,11 @@ from story.ingame import ingame_mission
 from story.math import euler_to_quat
 from story import actors
 
+from universe.content import main_objects
+
 from story.ingame import names as N
 from story.ingame import objectives as O
-from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Solar, Capital
+from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Solar, VirtualJumpgate, Capital, SaveState
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
 from world.npc import NPC, EqMap
@@ -69,6 +71,11 @@ class Misson11(ingame_mission.IngameMission):
     ACCEPT_OFFER = 'Предложение миссии'
     RTC = ['rescued', 'alaric', 'ambush', 'drink', 'harajuku_launch_rtc']
 
+    def get_save_states(self):
+        return [
+            SaveState(self, 'hq_battle', 'Штаб Ордена. Битва у Вавилона'),
+        ]
+
     def get_static_points(self):
         defined_points = []
 
@@ -98,6 +105,23 @@ class Misson11(ingame_mission.IngameMission):
                   ru_name='Линкор Мусаси', base='om7_99_base'),
         )
 
+        # Order Headquarters
+
+        hq_points = [
+            'terra1',
+            'terra2',
+            'terra3',
+            'to_vien1',
+            'to_vien2',
+        ]
+        for p in hq_points:
+            defined_points.append(
+                Point(self, S.or_hq, p)
+            )
+
+        defined_points.append(
+            VirtualJumpgate(self, S.or_hq, 'jg_or_hq_to_rh_vienna', ru_name='Гиперврата в Вену'),
+        )
 
         # Vienna
 
@@ -108,7 +132,15 @@ class Misson11(ingame_mission.IngameMission):
                 Solar(self, S.rh_vien, sol, ru_name='Исследовательский контейнер'),
             )
 
+        vien_points = [
+            'vienna_battle_zone',
+        ]
+        for p in vien_points:
+            defined_points.append(
+                Point(self, S.rh_vien, p)
+            )
         return defined_points
+
 
     def get_capital_ships(self):
         hq_rcr = {
@@ -234,6 +266,22 @@ class Misson11(ingame_mission.IngameMission):
 
             NNObj(self, O.GOTO_JUMPGATE, name='order_hq_jump_fly', target='order_hq_jump', towards=True),
             NNObj(self, O.JUMPGATE, target='order_hq_jump'),
+
+            NNObj(self, O.GOTO, name='terra1', target='terra1'),
+            NNObj(self, O.GOTO, name='terra2', target='terra2'),
+            NNObj(self, O.GOTO, name='terra3', target='terra3'),
+
+            NNObj(self, 'Уничтожьте рейнландские корабли', name='hq_fight'),
+
+            NNObj(self, O.GOTO, name='to_vien1', target='to_vien1'),
+            NNObj(self, O.GOTO, name='to_vien2', target='to_vien2'),
+
+            NNObj(self, O.JUMPGATE, name='jump_vienna', target='jg_or_hq_to_rh_vienna'),
+
+            NNObj(self, O.GOTO, name='to_the_vienna', target='vienna_battle_zone'),
+
+            NNObj(self, 'Уничтожьте исследовательские контейнеры', name='vienna_destroy_scient'),
+
         ]
 
     def get_ships(self):

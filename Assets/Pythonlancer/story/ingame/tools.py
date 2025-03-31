@@ -354,6 +354,12 @@ class Solar(DefinedStaticMixin, Point):
         return SINGLE_DIVIDER.join(solar)
 
 
+class VirtualJumpgate(Solar):
+
+    def open_access(self):
+        return f'Act_PlayerCanDock = false, {self.get_name()}'
+
+
 class Obj(Target):
 
     def __init__(self, mission, instance_class):
@@ -864,7 +870,7 @@ class NNObj:
     NICKNAME_TEMPLATE = 'nickname = {nickname}'
     STATE = 'state = HIDDEN'
 
-    def __init__(self, mission, ru_action, name=None, target=None, towards=False, nag=True):
+    def __init__(self, mission, ru_action, name=None, target=None, towards=False, nag=True, force_jumpgate=False):
         self.mission = mission
         self.ids_name = self.mission.ids.new_name(ru_action)
         self.target = target
@@ -872,6 +878,7 @@ class NNObj:
         self.name = f'nn_{name}' if name else self.generate_name()
         self.towards = towards
         self.nag = nag
+        self.force_jumpgate = force_jumpgate
 
     def get_string_id(self):
         return self.ids_name.id
@@ -1115,6 +1122,27 @@ class Direct:
         self.sys_map = {sys.NAME: sys for sys in systems}
         self.trigger = Trigger()
         self.trigger_groups = {}
+        self.save_states: dict = {state.get_code(): state for state in self.mission.get_save_states()}
+
+    def save(self, code):
+        state = self.save_states.get(code)
+        if not state:
+            raise Exception(f'unknown save state {code}')
+        trigger = f'save_state_{code}'
+        content = [
+            f'Act_Save = {trigger}, {state.get_id()}',
+            '',
+            '[Trigger]',
+            f'nickname = {trigger}',
+            'Cnd_SpaceEnter = no_params',
+            'Act_RevertCam = no_params',
+            f'Act_ActTrig = init_the_{trigger}',
+            '',
+            '[Trigger]',
+            f'nickname = init_the_{trigger}',
+            'Cnd_Timer = 0.3',
+        ]
+        return SINGLE_DIVIDER.join(content)
 
     def add_trigger_to_group(self, group, trigger_name):
         if group not in self.trigger_groups:
@@ -1198,6 +1226,13 @@ class Direct:
         actions = []
         for cap in group:
             actions.append(cap.invulnerable(godmode=godmode, damage_from_player=damage_from_player))
+        return SINGLE_DIVIDER.join(actions)
+
+    def mark_capital_group(self, group_name):
+        group = self.mission.get_capital_group(group_name)
+        actions = []
+        for cap in group:
+            actions.append(cap.mark())
         return SINGLE_DIVIDER.join(actions)
 
     def spawn_ship(self, system_name, alias, ship: Ship, ol=None):
@@ -1340,3 +1375,18 @@ class Offer:
             f'Act_SetTitle = {self.mission.get_accept_title()}',
             f'Act_SetOffer = {self.mission.get_accept_offer()}',
         ])
+
+
+class SaveState:
+
+    def __init__(self, mission, code, ru_name):
+        self.mission = mission
+        self.code = code
+        self.ru_name = ru_name
+        self.ids_name = self.mission.ids.new_name(self.ru_name)
+
+    def get_code(self):
+        return self.code
+
+    def get_id(self):
+        return self.ids_name.id

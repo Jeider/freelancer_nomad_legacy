@@ -13,4 +13,3 @@ DESTROY_CORSAIRS = 'Уничтожьте корсаров'
 DOCK_BATTLESHIP = 'Совершите стыковку с линкором'
 CATCH_DEIDRICH = 'Преследуйте Дитриха'
 CHASE_ROCKFORD = 'Преследуйте Рокфорда'
-
