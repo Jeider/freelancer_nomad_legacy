@@ -28,6 +28,7 @@ class AppearableObject(SystemObject):
     RELATED_OBJECT_INDEX = 0
     ARCHETYPE = None
     LOADOUT = None
+    STORY = False
 
     LOCKED_DOCK = False
 
@@ -47,9 +48,15 @@ archetype = {archetype}'''
         self.connections.append(the_conn)
 
     def has_appearance(self):
-        return self.ARCHETYPE or self.SPACE_OBJECT_TEMPLATE
+        return (self.ARCHETYPE or self.SPACE_OBJECT_TEMPLATE) and not self.is_story()
+
+    def is_story(self):
+        return self.STORY
 
     def get_system_content(self):
+        if self.is_story():
+            return ''  # hide story content
+
         if self.SPACE_OBJECT_TEMPLATE is not None:
             return self.get_templated_content()
         else:
@@ -153,8 +160,13 @@ class StaticObject(AppearableObject):
     LLIGHT_CLOUD_FILE_TEMPLATE = 'solar\\nebula_mod\\{llight_cloud_name}.ini'
     LLIGHT_CLOUD_RANGE = 600000
 
+    FORCE_CONNECTIONS = []
+
     def get_base(self):
         return None
+
+    def get_force_connections(self):
+        return self.FORCE_CONNECTIONS
 
     def get_ast_exclusion_zone_name(self):
         return self.AST_ZONE_NAME_TEMPLATE.format(
@@ -326,6 +338,8 @@ class RawText(SystemObject):
 class JumpableObject(StaticObject):
     TARGET_SYSTEM_NAME = None
     CONNECTION_KIND = connection.CONNECTION_LAWFUL
+    FORCE_INSPACE_NAME = None
+    FORCE_TARGET_NAME = None
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -347,6 +361,9 @@ class JumpableObject(StaticObject):
         raise Exception('unknown jump effect')
 
     def get_inspace_nickname(self):
+        if self.FORCE_INSPACE_NAME:
+            return self.FORCE_INSPACE_NAME
+
         return '{system_name}_{alias}_to_{target_system_name}'.format(
             alias=self.ALIAS,
             system_name=self.system.NAME,
@@ -354,6 +371,9 @@ class JumpableObject(StaticObject):
         )
 
     def get_target_jump_object_nickname(self):
+        if self.FORCE_TARGET_NAME:
+            return self.FORCE_TARGET_NAME
+
         return '{target_system_name}_{alias}_to_{system_name}'.format(
             alias=self.ALIAS,
             system_name=self.system.NAME,

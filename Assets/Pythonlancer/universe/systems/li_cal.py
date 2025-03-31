@@ -333,7 +333,7 @@ class CalDockring(CalMember, main_objects.LargePlanetDockring):
     REL = TOP
     AUDIO_PREFIX = SpaceVoice.LI_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
-    DEALERS = dealers.LibertyPirateDealers
+    DEALERS = dealers.LibertyPlanetDealers
 
     BASE_PROPS = meta.LargePlanet(
         objectives=[

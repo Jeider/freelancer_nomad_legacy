@@ -7,7 +7,6 @@ class Msn11(object):
     MISSION_INDEX = 11
 
 
-
 class Msn11AmbushCutscene(Msn11, script.CutsceneProps):
     ALIAS = 'ambush'
     TITLE = 'Бар станции Харадзюку'
@@ -165,10 +164,9 @@ class Msn11AmbushCutscene(Msn11, script.CutsceneProps):
     ]
 
 
-
-class Msn11FinalCutscene(Msn11, script.CutsceneProps):
-    ALIAS = 'final'
-    TITLE = 'Бар планеты Хонсю'
+class Msn11DrinkCutscene(Msn11, script.CutsceneProps):
+    ALIAS = 'morning'
+    TITLE = 'Бар линкора Мусаси'
     DESCRIPTION = 'Трент хотел было набухаться от своих неуспехов, как тут к нему приходит "Старый" Трент...'
     VOICE_LINES = [
 
@@ -475,12 +473,10 @@ class Msn11Space(Msn11, script.SpaceVoiceProps):
     ]
 
 
-
-
 class Mission11(Msn11, script.StoryMission):
     CUTSCENES = [
         Msn11AmbushCutscene,
-        Msn11FinalCutscene,
+        Msn11DrinkCutscene,
     ]
     SPACE_CLASS = Msn11Space
 

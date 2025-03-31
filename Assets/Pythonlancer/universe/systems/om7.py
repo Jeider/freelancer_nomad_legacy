@@ -135,7 +135,7 @@ class Om7KusariStation(Om7Member, Om7Kusari, main_objects.GasMiningStation):
     NEBULA_ZONES = [Om7Nebula]
 
 
-class Om7RheinlandStation(Om7Member, Om7Rheinland, main_objects.GasMiningStation):
+class Om7RheinlandStation(Om7Rheinland, Om7Member, main_objects.GasMiningStation):
     INDEX = 2
     BASE_INDEX = 2
     REL = TOP
@@ -151,7 +151,7 @@ class Om7RheinlandStation(Om7Member, Om7Rheinland, main_objects.GasMiningStation
     NEBULA_ZONES = [Om7Nebula]
 
 
-class Om7Battleship(Om7Member, Om7Rheinland, main_objects.RheinlandBattleship):
+class Om7Battleship(Om7Rheinland, Om7Member, main_objects.RheinlandBattleship):
     BASE_INDEX = 3
     REL = LEFT
     REL_APPEND = 1000
@@ -193,7 +193,7 @@ class Om7PirateLargeAsteroid(Om7Member, Om7Kusari, main_objects.PirateStation):
     NEBULA_ZONES = [Om7Nebula]
 
 
-class Om7RightPirates(Om7Member, Om7Rheinland, main_objects.PirateGasMiner):
+class Om7RightPirates(Om7Rheinland, Om7Member, main_objects.PirateGasMiner):
     BASE_INDEX = 6
     INDEX = 2
     REL = RIGHT
@@ -208,7 +208,7 @@ class Om7RightPirates(Om7Member, Om7Rheinland, main_objects.PirateGasMiner):
     NEBULA_ZONES = [Om7Nebula]
 
 
-class Om7LostRheinlandRuins(Om7Member, Om7Rheinland, main_objects.StationRuins):
+class Om7LostRheinlandRuins(Om7Rheinland, Om7Member, main_objects.StationRuins):
     ALIAS = 'ruins'
     INDEX = 1
     REL = RIGHT
@@ -222,7 +222,7 @@ class Om7LostRheinlandRuins(Om7Member, Om7Rheinland, main_objects.StationRuins):
     NEBULA_ZONES = [Om7Nebula]
 
 
-class Om7LostRheinlandRuinsSuprisePoint(Om7Member, Om7Rheinland, main_objects.HackableStation):
+class Om7LostRheinlandRuinsSuprisePoint(Om7Rheinland, Om7Member, main_objects.HackableStation):
     ALIAS = 'ruins_dock'
     INDEX = 1
     BASE_INDEX = 71
@@ -255,7 +255,7 @@ class Om7KusariStationConn2(Om7Member, main_objects.TradeConnection):
     ]
 
 
-class Om7RheinlandStationConn1(Om7Member, Om7Rheinland, main_objects.TradeConnection):
+class Om7RheinlandStationConn1(Om7Rheinland, Om7Member, main_objects.TradeConnection):
     OBJ_FROM = Om7RheinlandStation
     OBJ_TO = Om7Freeport
     SIDE_FROM = RIGHT
@@ -267,7 +267,7 @@ class Om7RheinlandStationConn1(Om7Member, Om7Rheinland, main_objects.TradeConnec
     ]
 
 
-class Om7RheinlandStationConn2(Om7Member, Om7Rheinland, main_objects.TradeConnection):
+class Om7RheinlandStationConn2(Om7Rheinland, Om7Member, main_objects.TradeConnection):
     OBJ_FROM = Om7RheinlandStation
     OBJ_TO = Om7StuttgartJumpgate
     SIDE_FROM = LEFT
@@ -279,7 +279,7 @@ class Om7RheinlandStationConn2(Om7Member, Om7Rheinland, main_objects.TradeConnec
     ]
 
 
-class Om7RheinlandStationConn3(Om7Member, Om7Rheinland, main_objects.TradeConnection):
+class Om7RheinlandStationConn3(Om7Rheinland, Om7Member, main_objects.TradeConnection):
     OBJ_FROM = Om7RheinlandStation
     OBJ_TO = Om7Battleship
     SIDE_FROM = TOP
@@ -561,7 +561,7 @@ class Om7SimpleGasCrystalField9(Om7Member, Om7BaseSimpleGasCrystalField):
     ULTRA_BASE = Om7GasMiner9
 
 
-class Om7AbandonedMiner1(Om7Member, Om7Rheinland, Om7BaseAbandonedMiner):
+class Om7AbandonedMiner1(Om7Rheinland, Om7Member, Om7BaseAbandonedMiner):
     INDEX = 1
     BASE_INDEX = 61
     ASTEROID_ZONES = [
@@ -762,3 +762,33 @@ class Om7SupriseRewardField3(Om7Member, Om7BaseKusariSupriseField):
 class Om7SupriseRewardField4(Om7Member, Om7BaseRheinlandSupriseField):
     INDEX = 4
     ULTRA_BASE = Om7BattleRuins4
+
+
+class Om7StoryBattleship(Om7Kusari, Om7Member, main_objects.KusariBattleship):
+    ALIAS = 'om7_musashi'
+    INDEX = 1
+    BASE_INDEX = 99
+    REL = LEFT
+    INTERIOR_CLASS = interior.BattleshipInterior
+    DEALERS = dealers.KusariMilitaryDealers
+    STORY = True
+    CALC_STORE = False
+    FORCE_CONNECTIONS = [
+        Om7HokkaidoJumpgate,  # TODO: haven't real economics connection
+    ]
+
+
+class Om7OrderJumpgate(Om7Member, main_objects.JumpgateAlt):
+    INDEX = 9
+    REL = TOP
+
+    FACTION = faction.KusariMain
+
+    TARGET_SYSTEM_NAME = 'or_hq'
+    FORCE_INSPACE_NAME = 'jg_om7_to_or_hq'
+    FORCE_TARGET_NAME = 'jg_or_hq_to_om7'
+    LOCKED_DOCK = True
+
+    NEBULA_EXCLUSION_ZONE_SIZE = 2500
+    EXCLUSION_PARAMS = WALKER_EXCLUSION_PARAMS
+    NEBULA_ZONES = [Om7Nebula]

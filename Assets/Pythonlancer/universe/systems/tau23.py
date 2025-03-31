@@ -137,7 +137,7 @@ class Tau23BretoniaStation(Tau23Member, Tau23Bretonia, main_objects.GasMiningSta
     )
 
 
-class Tau23KusariStation(Tau23Member, Tau23Kusari, main_objects.GasMiningStation):
+class Tau23KusariStation(Tau23Kusari, Tau23Member, main_objects.GasMiningStation):
     INDEX = 2
     BASE_INDEX = 2
     REL = LEFT
@@ -167,7 +167,7 @@ class Tau23BretoniaBattleship(Tau23Member, Tau23Bretonia, main_objects.BretoniaB
     NEBULA_ZONES = [Tau23Nebula]
 
 
-class Tau23KusariBattleship(Tau23Member, Tau23Kusari, main_objects.KusariBattleship):
+class Tau23KusariBattleship(Tau23Kusari, Tau23Member, main_objects.KusariBattleship):
     INDEX = 2
     BASE_INDEX = 4
     REL = LEFT
@@ -202,7 +202,7 @@ class Tau23TopRightPirates(Tau23Member, Tau23Bretonia, main_objects.PirateGasMin
     SPACE_OBJECT_TEMPLATE = gas_miner.RheinlandPirateGasMiner
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.BretoniaPirateDealers
-    FACTION = faction.BretoniaPirate
+    FACTION = faction.WorkaroundPirate
     DEFENCE_LEVEL = None
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
@@ -210,7 +210,7 @@ class Tau23TopRightPirates(Tau23Member, Tau23Bretonia, main_objects.PirateGasMin
     NEBULA_ZONES = [Tau23Nebula]
 
 
-class Tau23BottomLeftPirates(Tau23Member, Tau23Kusari, main_objects.PirateGasMiner):
+class Tau23BottomLeftPirates(Tau23Kusari, Tau23Member, main_objects.PirateGasMiner):
     INDEX = 2
     BASE_INDEX = 7
     REL = LEFT
@@ -261,7 +261,7 @@ class Tau23BretoniaBattleshipConn1(Tau23Member, Tau23Bretonia, main_objects.Trad
     ]
 
 
-class Tau23KusariStationConn1(Tau23Member, Tau23Kusari, main_objects.TradeConnection):
+class Tau23KusariStationConn1(Tau23Kusari, Tau23Member, main_objects.TradeConnection):
     OBJ_FROM = Tau23KusariStation
     OBJ_TO = Tau23Freeport
     SIDE_FROM = BOTTOM
@@ -273,7 +273,7 @@ class Tau23KusariStationConn1(Tau23Member, Tau23Kusari, main_objects.TradeConnec
     ]
 
 
-class Tau23KusariStationConn2(Tau23Member, Tau23Kusari, main_objects.TradeConnection):
+class Tau23KusariStationConn2(Tau23Kusari, Tau23Member, main_objects.TradeConnection):
     OBJ_FROM = Tau23KusariStation
     OBJ_TO = Tau23KyushuJumpgate
     SIDE_FROM = TOP
@@ -285,7 +285,7 @@ class Tau23KusariStationConn2(Tau23Member, Tau23Kusari, main_objects.TradeConnec
     ]
 
 
-class Tau23KusariStationConn3(Tau23Member, Tau23Kusari, main_objects.TradeConnection):
+class Tau23KusariStationConn3(Tau23Kusari, Tau23Member, main_objects.TradeConnection):
     OBJ_FROM = Tau23KusariStation
     OBJ_TO = Tau23KusariBattleship
     SIDE_FROM = RIGHT
@@ -553,7 +553,7 @@ class Tau23AbandonedMiner2(Tau23Member, Tau23Bretonia, Tau23BaseAbandonedMiner):
     ]
 
 
-class Tau23AbandonedMiner3(Tau23Member, Tau23Kusari, Tau23BaseAbandonedMiner):
+class Tau23AbandonedMiner3(Tau23Kusari, Tau23Member, Tau23BaseAbandonedMiner):
     INDEX = 3
     BASE_INDEX = 63
     ASTEROID_ZONES = [

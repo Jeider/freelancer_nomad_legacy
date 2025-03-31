@@ -194,7 +194,10 @@ distance = {tlr_distance}
             destinations[1].add_connection(the_connect)
             for attacker in the_connect.get_attacker_objects():
                 attacker.add_connection(the_connect)
-
+        #
+        # for static in self.get_dockable_objects():
+        #     for connect in static.get_force_connections():
+        #         static.add_connection(connect)
 
     def init_jumpgates(self):
         for jumpable_item in self.jumpable:

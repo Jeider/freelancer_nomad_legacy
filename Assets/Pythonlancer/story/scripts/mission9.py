@@ -309,7 +309,7 @@ class Msn9OrderCutscene(Msn9, script.CutsceneProps):
 
 class Msn9RewardCutscene(Msn9, script.CutsceneProps):
     ALIAS = 'reward'
-    TITLE = 'Верхний бар станции Йокогама'
+    TITLE = 'Ангар линкора Мусаси'
     DESCRIPTION = 'Трент и Дерси подходит к Хасслеру'
     VOICE_LINES = [
         VoiceLine(
@@ -457,10 +457,7 @@ class Msn9Space(Msn9, script.SpaceVoiceProps):
         VoiceLine(460, Kim, ru='Всё, уходим! К гипердыре в Хонсю!'),
         VoiceLine(470, Kim, ru='Направляемся к линкору Мусаси. '
             'Трент-сама, Дерси-сан, для меня было великой честью сражаться с вами в одном отряде!'),
-]
-
-
-
+    ]
 
 
 class Mission9(Msn9, script.StoryMission):

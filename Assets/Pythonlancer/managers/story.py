@@ -27,6 +27,7 @@ class StoryManager:
 
         self.thorns = []
         self.ship_loadouts = []
+        self.rtc_files = []
 
         for mission_class in IngameMission.subclasses:
             print(mission_class)
@@ -48,6 +49,13 @@ class StoryManager:
 
             if self.core.write:
                 DataFolder.sync_story_mission(mission.FOLDER, mission.FILE, content)
+
+            for rtc_name, rtc_template in mission.get_rtc_files():
+                rtc_context = mission.get_rtc_context()
+                rtc_content = self.tpl_manager.get_result(rtc_template, rtc_context)
+
+                if self.core.write:
+                    DataFolder.sync_story_mission(mission.FOLDER, rtc_name, rtc_content)
 
             if len(npc_shiparchs):
                 npcships = DIVIDER.join(npc_shiparchs)

@@ -7,8 +7,8 @@ class Msn12(object):
     MISSION_INDEX = 12
 
 
-class Msn12PigarCutscene(Msn12, script.CutsceneProps):
-    ALIAS = 'pigar'
+class Msn12SpragueCutscene(Msn12, script.CutsceneProps):
+    ALIAS = 'sprague'
     TITLE = 'Исследовательская зона планеты Пигар'
     DESCRIPTION = 'Все в сборе, Трент сразу начинает за правду матку'
     VOICE_LINES = [
@@ -206,7 +206,7 @@ class Msn12Space(Msn12, script.SpaceVoiceProps):
 
 class Mission12(Msn12, script.StoryMission):
     CUTSCENES = [
-        Msn12PigarCutscene,
+        Msn12SpragueCutscene,
         Msn12CapturedCutscene,
     ]
     SPACE_CLASS = Msn12Space

@@ -172,14 +172,22 @@ class Base:
         self.graph: BaseGraph | None = None
 
         self.base_commodities_db = {}
-        self.load_empty_stores()
 
-        if self.props:
-            self.parse_prop_actions()
+        if self.calc_store():
+            self.load_empty_stores()
+
+            if self.props:
+                self.parse_prop_actions()
+
+    def calc_store(self):
+        return self.system_object.CALC_STORE
 
     def get_next_char_index(self):
         self.char_index += 1
         return self.char_index
+
+    def is_story(self):
+        return self.system_object.STORY
 
     def add_faction(self, faction):
         code = faction.get_code()
@@ -263,13 +271,15 @@ class Base:
     def compile_base(self):
         # print('SCAN BASE')
         # print(f'BASE: {self.get_name()}')
-        self.load_graph()
-        self.load_resell_data()
-        self.load_commodities()
-        self.load_system_journey_activities()
+        if self.calc_store():
+            self.load_graph()
+            self.load_resell_data()
+            self.load_commodities()
+            self.load_system_journey_activities()
 
     def post_store_load(self):
-        self.post_check_commodities()
+        if self.calc_store():
+            self.post_check_commodities()
         self.init_characters()
 
     def get_commodity_market(self):
@@ -432,7 +442,6 @@ class Base:
             return self.msg.journey_luxury(dockable)
 
     def init_characters(self):
-        print(self.get_name())
         self.add_main_characters()
         self.add_other_characters()
 
@@ -596,7 +605,7 @@ class BaseCommodity(MarketCommodity):
         return self.purchase_price
 
     def is_produce(self):
-        return self.produce > 0
+        return self.produce > 0 and not self.base.is_story()
 
     def is_consume(self):
         return self.consume or self.resell

@@ -98,7 +98,7 @@ class UniverseManager:
                             )
                         )
 
-                    if dockable.have_trader() and dockable.CALC_STORE:
+                    if dockable.have_trader():
                         system.add_base(dockable)
 
     def load_system_trade_connections(self):

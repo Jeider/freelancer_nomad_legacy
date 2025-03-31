@@ -318,8 +318,6 @@ class BizmarkTopPirate(BizmarkMember, main_objects.PirateStation):
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.RheinlandPirateDealers
 
-    CALC_STORE = True
-
 
 class BizmarkRightPirate(BizmarkMember, main_objects.PirateAsteroid):
     BASE_INDEX = 9

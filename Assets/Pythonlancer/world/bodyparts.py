@@ -431,6 +431,7 @@ class KusariBodyStore(PartsStore):
         FemaleBody('ku_kym_body_bust', TRADER, bust=True),
         FemaleBody('ku_female_elite_body', ELITE),
         FemaleBody('ku_female_guard_body', GUARD),
+        FemaleBody('br_karina_body', TRADER),
     ]
 
 
@@ -652,7 +653,7 @@ class HeadStore:
         MaleHead('pi_pirate3_head', PIRATE),
         MaleHead('pi_pirate3_head_hurt', PIRATE),
         MaleHead('pi_pirate4_head', PIRATE),
-        MaleHead('pi_pirate5_head', PIRATE),
+        MaleHead('pi_pirate5_head', PLAYER),
         MaleHead('sh_male1_head', GENERIC),
         MaleHead('sh_male2_head', GENERIC),
         MaleHead('sh_male3_head', GENERIC),

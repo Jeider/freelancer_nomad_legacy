@@ -1,4 +1,4 @@
-from story.ingame.tools import Nag, Script, Trigger, Cond, Direct
+from story.ingame.tools import Nag, Script, Trigger, Cond, Direct, Rtc, Offer
 
 from text.dividers import DIVIDER
 
@@ -11,6 +11,11 @@ class IngameMission(object):
     STATIC_NPCSHIPS = None
     SCRIPT_INDEX = None
     DIRECT_SYSTEMS = []
+    INIT_TITLE = ''
+    INIT_OFFER = ''
+    ACCEPT_TITLE = ''
+    ACCEPT_OFFER = ''
+    RTC = []
 
     subclasses = []
 
@@ -26,6 +31,13 @@ class IngameMission(object):
         self.points: dict = self.get_all_points()
         self.nn_objectives = self.get_nn_objectives()
         self.nag = Nag()
+        self.rtc = Rtc(self)
+        self.offer = Offer(self)
+
+        self.init_title = ids.new_name(self.INIT_TITLE)
+        self.init_offer = ids.new_name(self.INIT_OFFER)
+        self.accept_title = ids.new_name(self.ACCEPT_TITLE)
+        self.accept_offer = ids.new_name(self.ACCEPT_OFFER)
 
         self.script = None
         if self.full_script and self.SCRIPT_INDEX:
@@ -43,10 +55,30 @@ class IngameMission(object):
         if not self.FILE:
             raise Exception('File name should be defined for %s' % self.__class__.__name__)
 
+    def get_init_title(self):
+        return self.init_title.id
+
+    def get_init_offer(self):
+        return self.init_offer.id
+
+    def get_accept_title(self):
+        return self.accept_title.id
+
+    def get_accept_offer(self):
+        return self.accept_offer.id
+
     def get_template(self):
         if not self.JINJA_TEMPLATE:
             raise Exception('template not found for mission %s' % self.__class__.__name__)
         return self.JINJA_TEMPLATE
+
+    def get_rtc_files(self):
+        items = []
+        for rtc in self.RTC:
+            items.append(
+                (rtc, f'missions/{self.FOLDER}/{rtc}.ini')
+            )
+        return items
 
     def get_ingame_thorns(self):
         return []
@@ -105,9 +137,23 @@ class IngameMission(object):
     def get_all_nn_objectives_content(self):
         return DIVIDER.join([nn.get_definition() for nn in self.nn_objectives])
 
+    def get_rtc_context(self) -> dict:
+        return {
+            'init_title': self.init_title,
+            'init_offer': self.init_offer,
+            'accept_title': self.accept_title,
+            'accept_offer': self.accept_offer,
+        }
+
     def get_initial_context(self) -> dict:
         context = {
             'nag': self.nag,
+            'init_title': self.init_title,
+            'init_offer': self.init_offer,
+            'accept_title': self.accept_title,
+            'accept_offer': self.accept_offer,
+            'rtc': self.rtc,
+            'offer': self.offer,
         }
         if self.script:
             context['script'] = self.script

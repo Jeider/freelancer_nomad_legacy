@@ -192,7 +192,7 @@ class Sig22BattleshipRuins1(Sig22Member, Sig22Liberty, main_objects.HackableBatt
     ]
 
 
-class Sig22BattleshipRuins2(Sig22Member, Sig22Bretonia, main_objects.HackableBattleship):
+class Sig22BattleshipRuins2(Sig22Bretonia, Sig22Member, main_objects.HackableBattleship):
     ALIAS = 'ast'
     INDEX = 3
     BASE_INDEX = 63
@@ -204,7 +204,7 @@ class Sig22BattleshipRuins2(Sig22Member, Sig22Bretonia, main_objects.HackableBat
     ]
 
 
-class Sig22BattleshipRuins3(Sig22Member, Sig22Bretonia, main_objects.HackableBattleship):
+class Sig22BattleshipRuins3(Sig22Bretonia, Sig22Member, main_objects.HackableBattleship):
     ALIAS = 'ast'
     INDEX = 4
     BASE_INDEX = 64
@@ -344,7 +344,7 @@ class Sig22ColumbiaJumpgate(Sig22Member, main_objects.Jumpgate):
     TARGET_SYSTEM_NAME = 'li_col'
 
 
-class Sig22Dockring(Sig22Member, Sig22Bretonia, main_objects.WaterPlanetDockring):
+class Sig22Dockring(Sig22Bretonia, Sig22Member, main_objects.WaterPlanetDockring):
     BASE_INDEX = 1
     REL = BOTTOM
     AUDIO_PREFIX = SpaceVoice.BR_PLANET
@@ -406,7 +406,7 @@ class Sig22SouthPirates(Sig22Member, Sig22Liberty, main_objects.PirateStation):
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
 
 
-class Sig22NorthPirates(Sig22Member, Sig22Bretonia, main_objects.PirateStation):
+class Sig22NorthPirates(Sig22Bretonia, Sig22Member, main_objects.PirateStation):
     INDEX = 2
     BASE_INDEX = 5
     REL = RIGHT
@@ -450,7 +450,7 @@ class Sig22BattleshipConn2(Sig22Member, Sig22Liberty, main_objects.TradeConnecti
     ]
 
 
-class Sig22PlanetConn1(Sig22Member, Sig22Bretonia, main_objects.TradeConnection):
+class Sig22PlanetConn1(Sig22Bretonia, Sig22Member, main_objects.TradeConnection):
     OBJ_FROM = Sig22WarwickJumpgate
     OBJ_TO = Sig22Dockring
     SIDE_FROM = LEFT

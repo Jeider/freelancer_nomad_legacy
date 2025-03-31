@@ -269,8 +269,11 @@ class DefinedStaticMixin:
     def cond_destroyed(self):
         return f'Cnd_Destroyed = {self.name}'
 
-    def destroy(self, mode='EXPLODE'):
+    def destroy(self, mode=EXPLODE):
         return f'Act_Destroy = {self.name}, {mode}'
+
+    def hide(self):
+        return self.destroy(mode=SILENT)
 
     def fuse(self, fuse_name):
         return f'Act_LightFuse = {self.name}, {fuse_name}'
@@ -302,13 +305,18 @@ class DefinedStaticMixin:
 
 class Solar(DefinedStaticMixin, Point):
 
-    def __init__(self, *args, ru_name, **kwargs):
+    def __init__(self, *args, ru_name, base=None, **kwargs):
         self.ru_name = ru_name
+        self.base = base
         super().__init__(*args, **kwargs)
         self.ids_name = self.mission.ids.new_name(self.ru_name)
 
     def get_name(self):
         return self.alias
+
+    @property
+    def string_id(self):
+        return self.ids_name.id
 
     def get_nn_type(self, string_id):
         position = self.marker.get_position()
@@ -335,6 +343,9 @@ class Solar(DefinedStaticMixin, Point):
             f'string_id = {self.ids_name.id}',
             'radius = 0',
         ]
+        if self.base:
+            solar.append(f'base = {self.base}')
+            solar.append(f'system = {self.system.NAME}')
         if loadout:
             solar.append(f'loadout = {loadout}')
         if label:
@@ -1103,6 +1114,13 @@ class Direct:
         self.systems = systems
         self.sys_map = {sys.NAME: sys for sys in systems}
         self.trigger = Trigger()
+        self.trigger_groups = {}
+
+    def add_trigger_to_group(self, group, trigger_name):
+        if group not in self.trigger_groups:
+            self.trigger_groups[group] = []
+
+        self.trigger_groups[group].append(trigger_name)
 
     def get_point(self, system_name, alias):
         return Point(self.mission, self.sys_map[system_name], alias)
@@ -1128,9 +1146,12 @@ class Direct:
     def outside_sphere(self, system_name, alias, obj='Player'):
         return self.get_point(system_name, alias).outside_sphere(obj)
 
-    def next_cond_inside_pos(self, system_name, alias, range, obj='Player'):
+    def next_cond_inside_pos(self, system_name, alias, range, obj='Player', group=None):
+        trigger_name = f'near_{alias}'
+        if group is not None:
+            self.add_trigger_to_group(group, trigger_name)
         return SINGLE_DIVIDER.join([
-            self.trigger.next(f'near_{alias}'),
+            self.trigger.next(trigger_name),
             self.get_point(system_name, alias).inside_pos(range, obj)
         ])
 
@@ -1186,6 +1207,14 @@ class Direct:
     def spawn_ship_member(self, system_name, alias, ship_member: ShipMember, ol=NO_OL):
         point = self.get_point(system_name, alias)
         return f'{ship_member.spawn(ol)}, {point.pos_orient}'
+
+    def deactivate_trigger_group(self, group):
+        if group not in self.trigger_groups:
+            raise Exception(f'no trigger group {group}')
+
+        return SINGLE_DIVIDER.join(
+            [ f'Act_DeActTrig = {trig}' for trig in self.trigger_groups[group]]
+        )
 
 
 class Patrol:
@@ -1270,3 +1299,44 @@ class Patrol:
                 self.stop_line_patrol(patroller=patroller)
             )
         return SINGLE_DIVIDER.join(actions)
+
+
+class Rtc:
+    def __init__(self, mission):
+        self.mission = mission
+        self.rtc = self.mission.RTC
+
+    def add(self, rtc):
+        if rtc not in self.rtc:
+            raise Exception(f'Mission {self.mission.FILE} have no rtc {rtc}')
+
+        return f'Act_AddRTC = missions\\{self.mission.FOLDER}\\{rtc}.ini'
+
+    def remove(self, rtc):
+        if rtc not in self.rtc:
+            raise Exception(f'Mission {self.mission.FILE} have no rtc {rtc}')
+
+        return f'Act_RemoveRTC = missions\\{self.mission.FOLDER}\\{rtc}.ini'
+
+    def done(self, rtc):
+        if rtc not in self.rtc:
+            raise Exception(f'Mission {self.mission.FILE} have no rtc {rtc}')
+
+        return f'Cnd_RTCDone = missions\\{self.mission.FOLDER}\\{rtc}.ini'
+
+
+class Offer:
+    def __init__(self, mission):
+        self.mission = mission
+
+    def init(self):
+        return SINGLE_DIVIDER.join([
+            f'Act_SetTitle = {self.mission.get_init_title()}',
+            f'Act_SetOffer = {self.mission.get_init_offer()}',
+        ])
+
+    def accept(self):
+        return SINGLE_DIVIDER.join([
+            f'Act_SetTitle = {self.mission.get_accept_title()}',
+            f'Act_SetOffer = {self.mission.get_accept_offer()}',
+        ])

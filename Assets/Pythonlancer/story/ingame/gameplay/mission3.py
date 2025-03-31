@@ -563,7 +563,7 @@ class Misson03(ingame_mission.IngameMission):
 
     def get_nn_objectives(self):
         return [
-            NNObj(self, 'Встретьтесь с Вильгельиом в баре станции Штарке', name='meet_vendor', target='starke'),
+            NNObj(self, 'Встретьтесь с Вильгельмом в баре станции Штарке', name='meet_vendor', target='starke'),
 
             NNObj(self, O.LAUNCH, name='launch'),
             NNObj(self, O.DESTROY_CORSAIRS, name='destroy_corsairs'),

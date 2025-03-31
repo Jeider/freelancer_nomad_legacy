@@ -368,6 +368,13 @@ class RheinlandPirate(UnlawfulFaction, RheinlandFleet, BaseRheinland, RheinlandP
     GUEST_APPEARANCE = bodyparts.PIRATE
 
 
+class WorkaroundPirate(RheinlandHunters):
+    CODE = 'pi_grp'
+    WEAPON = gun.RheinlandHuntergun
+    AFTERBURN = misc.RH_MAIN
+    GUEST_APPEARANCE = bodyparts.JOURNEYMAN
+
+
 class Hessians(UnlawfulFaction, RheinlandFleet, BaseRheinland, RheinlandPirateEquip, Faction):
     CODE = 'rx_grp'
     WEAPON = gun.RheinlandHessiangun

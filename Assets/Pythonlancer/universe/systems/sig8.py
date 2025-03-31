@@ -307,12 +307,12 @@ class Sig8Pirate(Sigma8Member, main_objects.PirateStation):
 
     SPACE_OBJECT_TEMPLATE = pirate.ManhattanPirateBase
 
-    FACTION = faction.RheinlandPirate
+    FACTION = faction.WorkaroundPirate
     DEFENCE_LEVEL = None
 
     AUDIO_PREFIX = SpaceVoice.STATION
     INTERIOR_CLASS = interior.PirateOutpostInterior
-    DEALERS = dealers.RheinlandCivilianDealers
+    DEALERS = dealers.RheinlandPirateDealers
 
     NEBULA_EXCLUSION_ZONE_SIZE = 3500
     EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS

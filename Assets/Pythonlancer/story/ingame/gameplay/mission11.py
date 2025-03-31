@@ -1,11 +1,13 @@
 import random
 
 from universe import sirius as S
+from universe.systems import om7, or_hq, rh_vien, sig42
 from story.ingame import ingame_mission
 from story.math import euler_to_quat
 from story import actors
 
 from story.ingame import names as N
+from story.ingame import objectives as O
 from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Solar, Capital
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
@@ -53,27 +55,51 @@ npc_class = lawful, CRUISER, d5
 
 '''
 
+
 class Misson11(ingame_mission.IngameMission):
     JINJA_TEMPLATE = 'missions/m11/m11.ini'
     FOLDER = 'M11'
     FILE = 'm11'
     SCRIPT_INDEX = 11
-    DIRECT_SYSTEMS = [S.or_hq, S.rh_vien]
+    DIRECT_SYSTEMS = [S.om7, S.or_hq, S.rh_vien, S.sig42]
     STATIC_NPCSHIPS = NPCSHIPS
+    INIT_TITLE = ''
+    INIT_OFFER = ''
+    ACCEPT_TITLE = 'Миссия 11. Засада на Рокфорда'
+    ACCEPT_OFFER = 'Предложение миссии'
+    RTC = ['rescued', 'alaric', 'ambush', 'drink', 'harajuku_launch_rtc']
 
     def get_static_points(self):
         defined_points = []
 
-        # SIRIUS
-        #
-        # sig42_points = [
-        #
+        # Omega 7
+
+        om7_points = [
+            'rockford_chase1',
+            'rockford_chase2',
+            'rockford_chase3',
+            'rockford_chase4',
+        ]
+        for p in om7_points:
+            defined_points.append(
+                Point(self, S.om7, p)
+            )
+
+        # om7_solars = [
+        #     ('om7_start_bship', 'Линкор Мусаси'),
         # ]
-        # for p in sig42_points:
+        # for sol, name in om7_solars:
         #     defined_points.append(
-        #         Point(self, S.sig42, p)
+        #         Solar(self, S.asf_hq, sol, ru_name=name),
         #     )
-        #
+
+        defined_points.append(
+            Solar(self, S.om7, 'om7_musashi1',
+                  ru_name='Линкор Мусаси', base='om7_99_base'),
+        )
+
+
+        # Vienna
 
         boxes = 16
         vienn_solars = [f'BOX{i:02d}' for i in range(1, boxes+1)]
@@ -186,8 +212,29 @@ class Misson11(ingame_mission.IngameMission):
 
         return caps
 
+    def get_real_objects(self):
+        return {
+            'om7_tlr_1': Conn(self, om7.Om7KusariStationConn1, om7.Om7HokkaidoJumpgate),
+            'harajuku': Obj(self, om7.Om7KusariStation),
+
+            'order_hq_jump': Obj(self, om7.Om7OrderJumpgate),
+        }
+
     def get_nn_objectives(self):
-        return []
+        return [
+            NNObj(self, O.LAUNCH, name='launch'),
+
+            NNObj(self, O.TLR, target='om7_tlr_1'),
+            NNObj(self, 'Сядьте на Харадзюку', target='harajuku'),
+
+            NNObj(self, O.CHASE_ROCKFORD, name='rockford_chase1', target='rockford_chase1'),
+            NNObj(self, O.CHASE_ROCKFORD, name='rockford_chase2', target='rockford_chase2'),
+            NNObj(self, O.CHASE_ROCKFORD, name='rockford_chase3', target='rockford_chase3'),
+            NNObj(self, O.CHASE_ROCKFORD, name='rockford_chase4', target='rockford_chase4'),
+
+            NNObj(self, O.GOTO_JUMPGATE, name='order_hq_jump_fly', target='order_hq_jump', towards=True),
+            NNObj(self, O.JUMPGATE, target='order_hq_jump'),
+        ]
 
     def get_ships(self):
         return [
