@@ -1,4 +1,6 @@
 GENERIC_TWO_POINT = 'cam_generic_two_point'
+GENERIC_TWO_POINT_MOVE = 'cam_generic_two_point_move'
+GENERIC_MOUNTED_ROTATABLE = 'cam_mounted_rotatable'
 DEFAULT_TARGET = 'Player'
 TEMPLATES_SUBFOLDER = 'ingame_thorn'
 DEFAULT_DURATION = 30
@@ -6,12 +8,14 @@ DEFAULT_DURATION = 30
 
 class IngameThorn(object):
 
-    def __init__(self, mission, system_class, template, name, points, target=DEFAULT_TARGET, duration=None):
+    def __init__(self, mission, system_class, template, name, points=None,
+                 params=None, target=DEFAULT_TARGET, duration=None):
         self.mission = mission
         self.system_class = system_class
         self.template = template
         self.name = name
-        self.points = points
+        self.points = points if points else {}
+        self.params = params if params else {}
         self.target = target
         self.duration = duration
 
@@ -33,6 +37,9 @@ class IngameThorn(object):
         }
         for key, point in self.points.items():
             context[key] = self.mission.get_system_obj_pos(self.system_class, point)
+
+        for key, param in self.params.items():
+            context[key] = param
 
         return context
 

@@ -30,7 +30,7 @@ from universe.systems import tau29 as tau29_content
 from universe.systems import tau31 as tau31_content
 from universe.systems import tau37 as tau37_content
 from universe.systems import rh_kgb as rh_kgb_content
-from universe.systems import or_hq as or_hq_content
+from universe.systems import or_hq_static as or_hq_content
 from universe.systems import rh_vien as rh_vien_content
 
 

@@ -305,9 +305,10 @@ class DefinedStaticMixin:
 
 class Solar(DefinedStaticMixin, Point):
 
-    def __init__(self, *args, ru_name, base=None, **kwargs):
+    def __init__(self, *args, ru_name, labels=None, base=None, **kwargs):
         self.ru_name = ru_name
         self.base = base
+        self.labels = labels if labels else []
         super().__init__(*args, **kwargs)
         self.ids_name = self.mission.ids.new_name(self.ru_name)
 
@@ -350,11 +351,13 @@ class Solar(DefinedStaticMixin, Point):
             solar.append(f'loadout = {loadout}')
         if label:
             solar.append(f'label = {label}')
+        for root_label in self.labels:
+            solar.append(f'label = {root_label}')
 
         return SINGLE_DIVIDER.join(solar)
 
 
-class VirtualJumpgate(Solar):
+class StaticJumpgate(Solar):
 
     def open_access(self):
         return f'Act_PlayerCanDock = false, {self.get_name()}'
@@ -1183,7 +1186,7 @@ class Direct:
             self.get_point(system_name, alias).inside_pos(range, obj)
         ])
 
-    def ol_goto(self, system_name, alias, ol_name, goto, near: int | None = None, avoidance: bool | None=None):
+    def ol_goto(self, system_name, alias, ol_name, goto, near: int = 100, avoidance: bool | None=None):
         point = self.get_point(system_name, alias)
         objlist = [
             '[ObjList]',

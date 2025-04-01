@@ -1,0 +1,194 @@
+duration=12
+
+entities={
+	{
+		entity_name="scene_generic_cam_m11_cell_tractor",
+		type=SCENE,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				0,
+				0,
+				0
+			},
+			orient={
+				{
+					1,
+					0,
+					0
+				},
+				{
+					0,
+					1,
+					0
+				},
+				{
+					0,
+					0,
+					1
+				}
+			}
+		},
+		up=Y_AXIS,
+		front=Z_AXIS,
+		ambient={
+			128,
+			128,
+			128
+		}
+	},
+	{
+		entity_name="Shot06_Monitor_1",
+		type=MONITOR,
+		template_name="",
+		template_id=0
+	},
+
+	{
+		entity_name="Shot06_Camera_0",
+		type=CAMERA,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				1650.0, -1010.0, 1520.0
+			},
+			orient={
+				{
+					1,
+					0,
+					0
+				},
+				{
+					0,
+					1,
+					0
+				},
+				{
+					0,
+					0,
+					1
+				}
+			}
+		},
+		cameraprops={
+			fovh=35,
+			hvaspect=1.333333,
+			nearplane=0.1,
+			farplane=100000
+		}
+	},
+	{
+		entity_name="Marker_1",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				1620.0, -1000.0, 1500.0
+			},
+			orient={
+				{
+					1,
+					0,
+					0
+				},
+				{
+					0,
+					1,
+					0
+				},
+				{
+					0,
+					0,
+					1
+				}
+			}
+		}
+	},
+	{
+		entity_name="Marker_2",
+		type=MARKER,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={
+				1622.0, -1000.0, 1495.0
+			},
+			orient={
+				{
+					1,
+					0,
+					0
+				},
+				{
+					0,
+					1,
+					0
+				},
+				{
+					0,
+					0,
+					1
+				}
+			}
+		}
+	},
+}
+
+events={
+	{
+		0,
+		SET_CAMERA,
+		{
+			"Shot06_Monitor_1",
+			"Shot06_Camera_0"
+		}
+	},
+	{
+		0,
+		ATTACH_ENTITY,
+		{
+			"Shot06_Camera_0",
+			"Marker_1"
+		},
+		{
+			duration=30,
+			offset={
+				0,
+				0,
+				0
+			},
+			up=Y_AXIS,
+			front=NEG_Z_AXIS,
+			target_part="",
+			target_type=ROOT,
+			flags=LOOK_AT
+		}
+	},
+
+	{
+		0,
+		START_SPATIAL_PROP_ANIM,
+		{
+			"Marker_1",
+			"Marker_2"
+		},
+		{
+			duration=40,
+			target_part="",
+			target_type=ROOT,
+			spatialprops={pos={0,0,0}}
+
+			
+			,
+			param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0}, {1,1,0,0} } },
+			pcurve_period=-1000
+
+			
+		}
+	},
+
+}
+
