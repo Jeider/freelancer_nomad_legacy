@@ -129,8 +129,7 @@ class Nag:
 
     def dock_battleship(self, nag_name, target):
         """for template"""
-        return self.get_leaving_nag(nag_name, target, FAIL_DOCK_BATTLESHIP
-                                    , self.DOCK_RANGE)
+        return self.get_leaving_nag(nag_name, target, FAIL_DOCK_BATTLESHIP, self.DOCK_RANGE)
 
     def jump(self, nag_name, target):
         """for template"""
@@ -362,6 +361,27 @@ class StaticJumpgate(Solar):
     def open_access(self):
         return f'Act_PlayerCanDock = false, {self.get_name()}'
 
+    def turn_nag(self, nag_name, towards=False):
+        return self.mission.nag.jump(nag_name, self)
+
+
+class DockableSolar(Solar):
+
+    def open_access(self):
+        return f'Act_PlayerCanDock = false, {self.get_name()}'
+
+    def turn_nag(self, nag_name, towards=False):
+        return self.mission.nag.dock_base(nag_name, self)
+
+
+class DockableBattleshipSolar(Solar):
+
+    def open_access(self):
+        return f'Act_PlayerCanDock = false, {self.get_name()}'
+
+    def turn_nag(self, nag_name, towards=False):
+        return self.mission.nag.dock_battleship(nag_name, self)
+
 
 class Obj(Target):
 
@@ -399,7 +419,7 @@ class Obj(Target):
             return self.mission.nag.towards(nag_name, self)
 
         if issubclass(self.instance_class, Battleship):
-            return self.mission.nag.tlr(nag_name, self)
+            return self.mission.nag.dock_battleship(nag_name, self)
         elif issubclass(self.instance_class, JumpableObject):
             return self.mission.nag.jump(nag_name, self)
 
@@ -573,6 +593,7 @@ class Ship(Target):
         self.slide_x = slide_x
         self.slide_y = slide_y
         self.slide_z = slide_z
+        self.respawn_defined = False
 
     def get_name(self):
         return self.name
@@ -849,6 +870,62 @@ class Ship(Target):
             members.append(f'Act_Invulnerable = {self.get_member_name(index)}, {params_string}')
 
         return SINGLE_DIVIDER.join(members)
+
+    def define_respawn(self, trigger_setrep, objlist=NO_OL):
+        self.respawn_defined = True
+
+        if self.system is None:
+            raise Exception('System is not defined for ship %s' % self.name)
+        if self.slide_x == 0 and self.slide_y == 0 and self.slide_z == 0:
+            raise Exception('At least one slide param must be defined for ship %s' % self.name)
+
+        marker = Marker(self.system, self.name)
+        pos = list(marker.get_position())
+        orient = euler_to_quat(*marker.get_rotate())
+
+        actions = []
+        for index in range(1, self.count+1):
+            member = self.get_member_name(index)
+            spawn_params = [
+                self.get_multiple_member_name(index),
+                objlist,
+                *pos,
+                *orient
+            ]
+            actions.extend([
+                '[Trigger]',
+                f'nickname = member_respawn_{member}',
+                f'Cnd_Destroyed = {member}',
+                f'Act_SpawnShip = {", ".join(map(str, spawn_params))}',
+                f'Act_ActTrig = {trigger_setrep}',
+                'repeatable = true',
+            ])
+
+            pos[0] += self.slide_x
+            pos[1] += self.slide_y
+            pos[2] += self.slide_z
+
+        return SINGLE_DIVIDER.join(actions)
+
+    def turn_respawn_on(self):
+        if not self.respawn_defined:
+            raise Exception('respawn triggers not defined in mission')
+
+        actions = []
+        for index in range(1, self.count+1):
+            actions.append(f'Act_ActTrig = member_respawn_{self.get_member_name(index)}')
+
+        return SINGLE_DIVIDER.join(actions)
+
+    def turn_respawn_off(self):
+        if not self.respawn_defined:
+            raise Exception('respawn triggers not defined in mission')
+
+        actions = []
+        for index in range(1, self.count+1):
+            actions.append(f'Act_DeActTrig = member_respawn_{self.get_member_name(index)}')
+
+        return SINGLE_DIVIDER.join(actions)
 
 
 class ShipMember:
@@ -1224,6 +1301,13 @@ class Direct:
             actions.append(cap.fuse(fuse))
         return SINGLE_DIVIDER.join(actions)
 
+    def hide_capital_group(self, group_name):
+        group = self.mission.get_capital_group(group_name)
+        actions = []
+        for cap in group:
+            actions.append(cap.hide())
+        return SINGLE_DIVIDER.join(actions)
+
     def invulnerable_capital_group(self, group_name, godmode, damage_from_player):
         group = self.mission.get_capital_group(group_name)
         actions = []
@@ -1253,6 +1337,9 @@ class Direct:
         return SINGLE_DIVIDER.join(
             [ f'Act_DeActTrig = {trig}' for trig in self.trigger_groups[group]]
         )
+
+    def new_string_id(self, ru_name):
+        return self.mission.ids.new_name(ru_name).id
 
 
 class Patrol:

@@ -2,6 +2,9 @@ from managers.tools import query as Q
 from world.names import *
 from universe.content import meta
 
+from fx.space import Dust
+from fx.sound import Ambience
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -13,6 +16,8 @@ from universe.audio.space_voice import SpaceVoice
 from universe import faction
 from universe.content import mineable
 from universe.content import population
+
+from templates.nebula import invisible_nebula
 from templates.solar import asteroid
 from templates.solar import hackable
 
@@ -410,3 +415,25 @@ class Sig42SolarBuoyConn3(Sig42Member, main_objects.AbandonedBuoyTradeConnection
     SIDE_FROM = LEFT
     SIDE_TO = RIGHT
     TRADELANE_LETTER = 'J'
+
+
+class Sig42InvisibleOrderNebula(Sig42Member, zones.NebulaZone):
+    ALIAS = 'invisible'
+    INDEX = 1
+    CONTENT_TEMPLATE = invisible_nebula.SiriusInvisibleNebula
+    SPACEDUST = Dust.RADIOACTIVE_BLUE
+    SPACEDUST_MAXPARTICLES = 120
+    MUSIC = Ambience.NEBULA_DMATTER
+
+
+class Sig42OrderJumpgate(Sig42Member, main_objects.JumpgateAlt):
+    INDEX = 9
+    REL = RIGHT
+
+    FACTION = faction.BretoniaMain
+    DEFENCE_LEVEL = None
+
+    TARGET_SYSTEM_NAME = 'or_hq'
+    FORCE_INSPACE_NAME = 'jg_sirius_to_or_hq'
+    FORCE_TARGET_NAME = 'jg_or_hq_to_sirius'
+    LOCKED_DOCK = True

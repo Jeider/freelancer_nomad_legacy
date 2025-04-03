@@ -783,6 +783,7 @@ class Om7OrderJumpgate(Om7Member, main_objects.JumpgateAlt):
     REL = TOP
 
     FACTION = faction.KusariMain
+    DEFENCE_LEVEL = None
 
     TARGET_SYSTEM_NAME = 'or_hq'
     FORCE_INSPACE_NAME = 'jg_om7_to_or_hq'

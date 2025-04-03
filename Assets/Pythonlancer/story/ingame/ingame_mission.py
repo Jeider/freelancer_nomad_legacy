@@ -150,6 +150,7 @@ class IngameMission(object):
 
     def get_initial_context(self) -> dict:
         context = {
+            'mission': self,
             'nag': self.nag,
             'init_title': self.init_title,
             'init_offer': self.init_offer,

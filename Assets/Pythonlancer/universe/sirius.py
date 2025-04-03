@@ -31,6 +31,7 @@ from universe.systems import tau31 as tau31_content
 from universe.systems import tau37 as tau37_content
 from universe.systems import rh_kgb as rh_kgb_content
 from universe.systems import or_hq_static as or_hq_content
+from universe.systems import or_hq as or_hq_content
 from universe.systems import rh_vien as rh_vien_content
 
 
@@ -639,6 +640,7 @@ class or_hq(system.StorySystem, system.SiriusSystem):
     NAME = 'or_hq'
     DIRECT_TEMPLATE_NAME = 'or_hq_dev'
     RU_NAME = 'Вавил+он'
+    CONTENT = or_hq_content
 
     ALLOW_SYNC = True
 
@@ -650,6 +652,7 @@ class rh_vien(system.StorySystem, system.SiriusSystem):
     NAME = 'rh_vien'
     DIRECT_TEMPLATE_NAME = 'rh_vien_dev'
     RU_NAME = 'Вена'
+    CONTENT = rh_vien_content
 
     ALLOW_SYNC = True
 

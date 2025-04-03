@@ -1,7 +1,7 @@
 import random
 
 from universe import sirius as S
-from universe.systems import om7, or_hq_static, rh_vien, sig42
+from universe.systems import om7, or_hq, rh_vien, sig42
 from story.ingame import ingame_mission
 from story.math import euler_to_quat
 from story import actors
@@ -10,7 +10,9 @@ from universe.content import main_objects
 
 from story.ingame import names as N
 from story.ingame import objectives as O
-from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Solar, StaticJumpgate, Capital, SaveState
+from story.ingame.tools import (
+    Point, Obj, Conn, NNObj, Ship, Solar, DockableBattleshipSolar, StaticJumpgate, Capital, SaveState
+)
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT, GENERIC_MOUNTED_ROTATABLE, GENERIC_TWO_POINT_MOVE
 
 from world.npc import NPC, EqMap
@@ -120,9 +122,10 @@ class Misson11(ingame_mission.IngameMission):
                   labels=['enemy', 'rh_battleship', 'rheinland', 'vienna_defend']),
         )
         defined_points.append(
-            Solar(self, S.rh_vien, 'vien_musashi',
-                  ru_name='Линкор Мусаси', base='or_hq_99_base',
-                  labels=['enemy', 'ku_battleship', 'ku', 'order', 'vienna_assault']),
+            DockableBattleshipSolar(
+                self, S.rh_vien, 'vien_musashi1',
+                ru_name='Линкор Мусаси', base='rh_vien_99_base',
+                labels=['enemy', 'ku_battleship', 'ku', 'order', 'vienna_assault']),
         )
 
         # Order Headquarters
@@ -133,6 +136,8 @@ class Misson11(ingame_mission.IngameMission):
             'terra3',
             'to_vien1',
             'to_vien2',
+            'to_sirius1',
+            'to_sirius2',
         ]
         for p in hq_points:
             defined_points.append(
@@ -141,6 +146,14 @@ class Misson11(ingame_mission.IngameMission):
 
         defined_points.append(
             StaticJumpgate(self, S.or_hq, 'jg_or_hq_to_rh_vienna', ru_name='Гиперврата в Вену'),
+        )
+        defined_points.append(
+            StaticJumpgate(self, S.or_hq, 'jg_or_hq_to_sirius', ru_name='Гиперврата в Сириус'),
+        )
+
+        defined_points.append(
+            Solar(self, S.or_hq, 'or_hq_musashi1',
+                  ru_name='Линкор Мусаси', base='or_hq_99_base'),
         )
 
         # Vienna
@@ -321,6 +334,22 @@ class Misson11(ingame_mission.IngameMission):
                 },
                 duration=12,
             ),
+            IngameThorn(
+                self,
+                system_class=S.or_hq,
+                template=GENERIC_MOUNTED_ROTATABLE,
+                name='m11_hq_road_cam1',
+                params={
+                    'cam_pos_x': 50,
+                    'cam_pos_y': -10,
+                    'cam_pos_z': 10,
+                    'rotate_duration': 60,
+                    'rotate_angle': -720,
+                    'remove_smooth': True,
+                },
+                duration=60,
+                target='edison_trent',
+            ),
 
 
         ]
@@ -331,6 +360,9 @@ class Misson11(ingame_mission.IngameMission):
             'harajuku': Obj(self, om7.Om7KusariStation),
 
             'order_hq_jump': Obj(self, om7.Om7OrderJumpgate),
+
+            'sig42_tlr_1': Conn(self, sig42.Sig42KusariStationConn3, sig42.Sig42KusariStation),
+            'sprague': Obj(self, sig42.Sig42Dockring),
         }
 
     def get_nn_objectives(self):
@@ -362,6 +394,19 @@ class Misson11(ingame_mission.IngameMission):
             NNObj(self, O.GOTO, name='to_the_vienna', target='vienna_battle_zone'),
 
             NNObj(self, 'Уничтожьте исследовательские контейнеры', name='vienna_destroy_scient'),
+            NNObj(self, 'Уничтожьте рейнландский флагман', name='vienna_destroy_flagship'),
+
+            NNObj(self, 'Сядьте на линкор Мусаси', name='dock_vien_musashi', target='vien_musashi1'),
+
+            NNObj(self, 'Подберите артефакт', name='get_the_loot'),
+
+            NNObj(self, O.GOTO, name='to_sirius1', target='to_sirius1'),
+            NNObj(self, O.GOTO, name='to_sirius2', target='to_sirius2'),
+
+            NNObj(self, O.JUMPGATE, name='jump_into_sirius', target='jg_or_hq_to_sirius'),
+
+            NNObj(self, O.TLR, target='sig42_tlr_1'),
+            NNObj(self, 'Сядьте на планету Спрага', target='sprague'),
 
         ]
 
@@ -453,8 +498,8 @@ class Misson11(ingame_mission.IngameMission):
                 count=3,
                 affiliation=faction.OrderMain.CODE,
                 system_class=S.rh_vien,
-                slide_x=50,
-                slide_z=50,
+                slide_x=100,
+                slide_z=100,
                 labels=[
                     'vien_assault',
                     'order',
@@ -473,8 +518,8 @@ class Misson11(ingame_mission.IngameMission):
                 count=3,
                 affiliation=faction.OrderMain.CODE,
                 system_class=S.rh_vien,
-                slide_x=50,
-                slide_z=50,
+                slide_x=100,
+                slide_z=100,
                 labels=[
                     'vien_assault',
                     'order',
@@ -493,7 +538,7 @@ class Misson11(ingame_mission.IngameMission):
                 count=4,
                 affiliation=faction.RheinlandMain.CODE,
                 system_class=S.rh_vien,
-                slide_z=50,
+                slide_z=200,
                 labels=[
                     'vien_defence',
                     'rheinland',
@@ -512,7 +557,7 @@ class Misson11(ingame_mission.IngameMission):
                 count=4,
                 affiliation=faction.RheinlandMain.CODE,
                 system_class=S.rh_vien,
-                slide_z=50,
+                slide_z=200,
                 labels=[
                     'vien_defence',
                     'rheinland',
@@ -525,4 +570,39 @@ class Misson11(ingame_mission.IngameMission):
                     equip_map=EqMap(base_level=5),
                 )
             ),
+            Ship(
+                self,
+                'vien_rf3',
+                count=4,
+                affiliation=faction.RheinlandMain.CODE,
+                system_class=S.rh_vien,
+                slide_z=200,
+                labels=[
+                    'vien_defence',
+                    'rheinland',
+                    'enemy',
+                ],
+                npc=NPC(
+                    faction=faction.RheinlandMain,
+                    ship=ship.Valkyrie,
+                    level=NPC.D5,
+                    equip_map=EqMap(base_level=5),
+                )
+            ),
+            Ship(
+                self,
+                'edison_trent',
+                actor=actors.EdisonTrent,
+                labels=[
+                    'friend',
+                ],
+                npc=NPC(
+                    faction=faction.Corsairs,
+                    ship=ship.Titan,
+                    level=NPC.D19,
+                    equip_map=EqMap(base_level=6),
+                )
+            ),
+
+
         ]

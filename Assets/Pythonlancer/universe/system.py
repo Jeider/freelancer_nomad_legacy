@@ -149,7 +149,6 @@ distance = {tlr_distance}
         return self.CONTENT is not None
 
     def init_dynamic_content(self):
-
         for item in self.CONTENT.__dict__.values():
             if not isinstance(item, type):
                 continue
@@ -653,4 +652,6 @@ class StorySystem(System):
         return self.get_static_content()
 
     def process_content(self):
+        if self.have_dynamic_content():
+            self.init_dynamic_content()
         self.process_template()
