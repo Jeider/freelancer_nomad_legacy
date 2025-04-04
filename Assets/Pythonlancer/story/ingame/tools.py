@@ -561,7 +561,7 @@ class RelPos:
 
 
 class Ship(Target):
-    def __init__(self, mission, name, count=1, npc=None, actor=None,
+    def __init__(self, mission, name, count=1, hero=False, npc=None, actor=None,
                  affiliation=None, jumper=False, labels=None,
                  rel_pos=None, relative_pos=False, relative_target='Player', relative_range=1000,
                  radius=None, system_class=None, base_name=None, unique_npc_entry=False,
@@ -575,6 +575,7 @@ class Ship(Target):
         )
         self.name = name
         self.count = count
+        self.hero = hero
         self.npc = npc
         self.jumper = jumper
         self.affiliation = affiliation or DEFAULT_AFFILIATION
@@ -722,12 +723,22 @@ class Ship(Target):
             )
         return DIVIDER.join(msn_ships)
 
-    def spawn(self, objlist=NO_OL):
+    def spawn(self, objlist=NO_OL, pos=None):
         if self.relative_pos:
             raise Exception('Ship %s is configured as relative-pos' % self.name)
         if self.count > 1:
             raise Exception('Ship %s is not single' % self.name)
-        return f'Act_SpawnShip = {self.get_single_member_name()}, {objlist}'
+
+        spawn = f'Act_SpawnShip = {self.get_single_member_name()}, {objlist}'
+        if pos:
+            spawn = ', '.join([spawn, pos])
+
+        items = [spawn]
+        if self.hero:
+            items.append(self.invulnerable())
+            items.append(self.mark_all())
+
+        return SINGLE_DIVIDER.join(items)
 
     def spawn_member(self, member_index=1, objlist=NO_OL):
         return f'Act_SpawnShip = {self.get_multiple_member_name(member_index)}, {objlist}'
@@ -1322,9 +1333,9 @@ class Direct:
             actions.append(cap.mark())
         return SINGLE_DIVIDER.join(actions)
 
-    def spawn_ship(self, system_name, alias, ship: Ship, ol=None):
+    def spawn_ship(self, system_name, alias, ship: Ship, ol=NO_OL):
         point = self.get_point(system_name, alias)
-        return f'{ship.spawn(ol)}, {point.pos_orient}'
+        return ship.spawn(ol, pos=point.pos_orient)
 
     def spawn_ship_member(self, system_name, alias, ship_member: ShipMember, ol=NO_OL):
         point = self.get_point(system_name, alias)

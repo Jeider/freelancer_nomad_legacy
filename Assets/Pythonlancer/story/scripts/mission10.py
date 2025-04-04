@@ -307,6 +307,11 @@ class Msn10RescuedCutscene(Msn10, script.CutsceneProps):
             Hassler,
             ru='К сожалению... Чертово воспитание дает о себе знать.'
         ),
+        VoiceLine(
+            150,
+            Trent,
+            ru='Хорошо, я в деле'
+        ),
     ]
 
 

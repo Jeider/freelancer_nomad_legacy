@@ -118,7 +118,7 @@ class Misson11(ingame_mission.IngameMission):
         )
         defined_points.append(
             Solar(self, S.rh_vien, 'vien_flagship_solar',
-                  ru_name='Линкор Гёбен',
+                  ru_name='Линкор Гнейзенау',
                   labels=['enemy', 'rh_battleship', 'rheinland', 'vienna_defend']),
         )
         defined_points.append(
@@ -274,7 +274,7 @@ class Misson11(ingame_mission.IngameMission):
         )
 
         caps.append(
-            Capital(self, 'vien_flagship', ru_name='Линкор Гёбен', **vien_rbs)
+            Capital(self, 'vien_flagship', ru_name='Линкор Гнейзенау', **vien_rbs)
         )
 
         return caps
@@ -412,6 +412,42 @@ class Misson11(ingame_mission.IngameMission):
 
     def get_ships(self):
         return [
+            Ship(
+                self,
+                'kim',
+                jumper=False,
+                hero=True,
+                actor=actors.Kim,
+                labels=[
+                    'friend',
+                    'order',
+                ],
+                npc=NPC(
+                    faction=faction.OrderMain,
+                    ship=ship.Dragon,
+                    level=NPC.D10,
+                    equip_map=EqMap(base_level=6),
+                )
+            ),
+            Ship(
+                self,
+                'killer',
+                count=3,
+                system_class=S.om7,
+                labels=[
+                    'friend',
+                    'order',
+                ],
+                slide_x=100,
+                unique_npc_entry=True,
+                base_name='Лямбда',
+                npc=NPC(
+                    faction=faction.KusariMain,
+                    ship=ship.Dragon,
+                    level=NPC.D6,
+                    equip_map=EqMap(base_level=6),
+                )
+            ),
             # HQ
             Ship(
                 self,

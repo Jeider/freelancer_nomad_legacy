@@ -99,10 +99,10 @@ class EdisonTrent(Actor):
     RU_NAME = 'Эдисон Трент'
     TYPE = ACTOR_TRENT
     NAME = 'edison'
-    COMM_APPEARANCE = 'pi_pirate5_head, player_body, player_commhelmet'
-    STEOS_ID = 2
-    STEOS_PITCH = 0.5
-    STEOS_SPEED = 1.05
+    COMM_APPEARANCE = 'pi_pirate5_head, pl_trent_body, comm_ge_generic1'
+    STEOS_ID = 211
+    STEOS_PITCH = -0.5
+    STEOS_SPEED = 1.0
 
 
 class Juni(Actor):
@@ -183,6 +183,14 @@ class MaleCaptain(Actor):
     TYPE = ACTOR_MALE
     NAME = 'captain'
     COMM_APPEARANCE = 'li_captain_head, li_male_elite_body'
+    STEOS_ID = 10090
+
+
+class KusariCaptain(Actor):
+    RU_NAME = 'Капитан'
+    TYPE = ACTOR_MALE
+    NAME = 'captain'
+    COMM_APPEARANCE = 'ku_bartender_head, ku_male_guard_body'
     STEOS_ID = 10090
 
 
@@ -351,7 +359,7 @@ class Kim(Actor):
     RU_NAME = 'Ким'
     TYPE = ACTOR_MALE
     NAME = 'kim'
-    # COMM_APPEARANCE = ''
+    COMM_APPEARANCE = 'ku_captain_head, ku_male_elite_body, comm_ku_elite'
     CUTSCENE_APPEARANCE = 'kim'
     STEOS_ID = 287
 
@@ -401,7 +409,9 @@ class Reichman(Actor):
     TYPE = ACTOR_MALE
     NAME = 'reichman'
     CUTSCENE_APPEARANCE = 'reichman'
+    COMM_APPEARANCE = 'rh_reichman_head, rh_reichman_body, prop_neuralnet_A_right'
     SPACE_VOICE = 'pilot_f_mil_m01'
-    STEOS_ID = 10029
+    STEOS_ID = 10080
+    STEOS_PITCH = -0.5
 
 
