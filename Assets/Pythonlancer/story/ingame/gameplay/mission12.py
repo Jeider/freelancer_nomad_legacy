@@ -1,12 +1,13 @@
 import random
 
 from universe import sirius as S
+from universe.systems import sig42
 from story.ingame import ingame_mission
 from story.math import euler_to_quat
 from story import actors
 
 from story.ingame import objectives as O
-from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Solar, Capital
+from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Solar, Capital, DockableBattleshipSolar, SaveState
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
 from world.npc import NPC, EqMap
@@ -87,9 +88,17 @@ pilot = cruiser_default
 state_graph = CRUISER
 npc_class = lawful, CRUISER, d5
 
+[NPCShipArch]
+nickname = ms12_armored
+loadout = m12_armored
+level = d10
+ship_archetype = ge_armored
+pilot = cruiser_default
+state_graph = CRUISER
+npc_class = lawful, CRUISER, d5
+
+
 '''
-
-
 
 
 class Misson12(ingame_mission.IngameMission):
@@ -97,8 +106,15 @@ class Misson12(ingame_mission.IngameMission):
     FOLDER = 'M12'
     FILE = 'm12'
     SCRIPT_INDEX = 12
-    DIRECT_SYSTEMS = [S.asf_hq, S.asf_prom]
+    DIRECT_SYSTEMS = [S.sig42, S.asf_hq, S.asf_prom]
     STATIC_NPCSHIPS = NPCSHIPS
+    RTC = ['sprague']
+
+    def get_save_states(self):
+        return [
+            SaveState(self, 'bush_battle', 'Штаб СБА. Битва в секторе форта Буш'),
+            SaveState(self, 'logos_battle', 'Прометей. Нейтрализация линкора Логос'),
+        ]
 
     def get_static_points(self):
         defined_points = []
@@ -156,7 +172,6 @@ class Misson12(ingame_mission.IngameMission):
             )
 
         prom_solars = [
-            ('prom_osiris', 'Осирис'),
             ('prom_osiris_emi', 'ЭМИ Осириса'),
 
             ('logos_checker', 'счетчик'),
@@ -171,6 +186,32 @@ class Misson12(ingame_mission.IngameMission):
         for sol, name in prom_solars:
             defined_points.append(
                 Solar(self, S.asf_prom, sol, ru_name=name),
+            )
+
+        defined_points.append(
+            DockableBattleshipSolar(
+                self, S.asf_prom, 'logos',
+                ru_name='Линкор Логос', base='rh_vien_99_base',
+                labels=['enemy', 'or_b', 'logos']),
+        )
+        defined_points.append(
+            DockableBattleshipSolar(
+                self, S.asf_prom, 'prom_osiris',
+                ru_name='Линкор Осирис', base='rh_vien_99_base',
+                labels=['friend', 'asf', 'osiris']),
+        )
+
+
+        logos_segments = [
+            ('logos_shieldgen', 'Генератор щита Логоса'),
+            ('logos_shieldgen_dmg', 'Генератор щита Логоса'),
+            ('logos_control_tower', 'Рубка Логоса'),
+            ('logos_control_tower_dmg', 'Рубка Логоса'),
+            ('logos_reactor', 'Реактор Логоса'),
+        ]
+        for p, name in logos_segments:
+            defined_points.append(
+                Solar(self, S.asf_prom, p, ru_name=name, labels=['enemy', 'or_b', 'logos'])
             )
 
         return defined_points
@@ -215,7 +256,7 @@ class Misson12(ingame_mission.IngameMission):
         order_osiris_a = {
             'npc_ship_arch': 'ms12_osiris',
             'faction': 'or_grp',
-            'labels': ['enemy', 'or_a', 'or_osiris'],
+            'labels': ['or_a', 'or_osiris'],
         }
         order_logos = {
             'npc_ship_arch': 'ms12_logos',
@@ -236,6 +277,17 @@ class Misson12(ingame_mission.IngameMission):
             'npc_ship_arch': 'ms12_li_dread',
             'faction': 'asf_grp',
             'labels': ['friend', 'asf_b', 'asf'],
+        }
+        armored_ship = {
+            'npc_ship_arch': 'ms12_armored',
+            'faction': 'asf_grp',
+            'labels': [],
+        }
+        armored_ship_out = {
+            'npc_ship_arch': 'ms12_armored',
+            'faction': 'asf_grp',
+            'labels': [],
+            'arrival_obj': 'logos',
         }
 
         caps = [
@@ -296,10 +348,6 @@ class Misson12(ingame_mission.IngameMission):
             caps.append(the_cap)
             prom_or_ships.append(the_cap)
 
-        logos = Capital(self, 'logos', ru_name='Линкор Логос', **order_logos)
-        caps.append(logos)
-        prom_or_ships.append(logos)
-
         for cap, name in OR_PROM_B:
             the_cap = Capital(self, cap, ru_name=f'Линкор {name}', **order_osiris_b)
             caps.append(the_cap)
@@ -318,10 +366,27 @@ class Misson12(ingame_mission.IngameMission):
         self.add_capital_group('PROM_ORDER', prom_or_ships)
         self.add_capital_group('PROM_ASF', prom_asf_ships)
 
+        caps.append(
+            Capital(self, 'armored', ru_name='Бронированный транспорт', **armored_ship)
+        )
+        caps.append(
+            Capital(self, 'armored_out', ru_name='Бронированный транспорт', **armored_ship_out)
+        )
+
         return caps
+
+    def get_real_objects(self):
+        return {
+            'asf_hq_jump': Obj(self, sig42.Sig42AsfJumpgate),
+        }
 
     def get_nn_objectives(self):
         return [
+            NNObj(self, O.LAUNCH, name='launch'),
+
+            NNObj(self, O.GOTO_JUMPGATE, name='goto_jump_asf_hq', target='asf_hq_jump', towards=True),
+            NNObj(self, O.JUMPGATE, name='jump_asf_hq', target='asf_hq_jump'),
+
             NNObj(self, O.GOTO, name='asf_miner01', target='asf_miner01'),
             NNObj(self, O.GOTO, name='asf_miner02', target='asf_miner02'),
 
@@ -342,7 +407,19 @@ class Misson12(ingame_mission.IngameMission):
             NNObj(self,  O.GOTO, name='prom_goinsde2', target='prom_goinsde2'),
             NNObj(self,  O.GOTO, name='prom_goinsde3', target='prom_goinsde3'),
 
-            NNObj(self, 'Доберитесь до Логоса', name='goto_logos', target='prom_logos', towards=True),
+            NNObj(self, 'Доберитесь до Логоса', name='goto_logos', target='logos', towards=True),
+
+            NNObj(self, 'Ожидайте прибытия линкора Осирис', name='wait_osiris'),
+
+            NNObj(self, 'Уничтожьте генератор щита Логоса', name='logos_shieldgen', target='logos_shieldgen'),
+            NNObj(self, 'Уничтожьте командный мостик Логоса', name='logos_control_tower', target='logos_control_tower'),
+            NNObj(self, 'Уничтожьте реактор Логоса', name='logos_reactor', target='logos_reactor'),
+
+            NNObj(self, 'Обеспечьте безопасность десантного судна', name='defend_armored'),
+            NNObj(self, 'Ожидайте пленения Ямамото', name='wait_for_armored'),
+            NNObj(self, 'Ожидайте доставки Ямамото на Осирис', name='wait_for_armored_osiris'),
+
+            NNObj(self, 'Сядьте на линкор Осирис', name='dock_osiris', target='prom_osiris'),
         ]
 
     def get_ships(self):
@@ -350,10 +427,29 @@ class Misson12(ingame_mission.IngameMission):
             Ship(
                 self,
                 'ku_miner_defence',
-                count=5,
+                count=3,
                 affiliation=faction.OrderMain.CODE,
                 system_class=S.asf_hq,
-                slide_z=-50,
+                slide_z=-100,
+                labels=[
+                    'miner_defence',
+                    'new_order',
+                    'enemy',
+                ],
+                npc=NPC(
+                    faction=faction.KusariMain,
+                    ship=ship.Dragon,
+                    level=NPC.D5,
+                    equip_map=EqMap(base_level=5),
+                )
+            ),
+            Ship(
+                self,
+                'ku_miner_defence_resp',
+                count=3,
+                affiliation=faction.OrderMain.CODE,
+                system_class=S.asf_hq,
+                slide_x=100,
                 labels=[
                     'miner_defence',
                     'new_order',
@@ -389,6 +485,7 @@ class Misson12(ingame_mission.IngameMission):
                 self,
                 'hatcher',
                 jumper=True,
+                hero=True,
                 actor=actors.Hatcher,
                 labels=[
                     'asf',
@@ -398,7 +495,7 @@ class Misson12(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.LibertyMain,
                     ship=ship.DefenderJuni,
-                    level=NPC.D6,
+                    level=NPC.D12,
                     equip_map=EqMap(base_level=6),
                 )
             ),
@@ -406,7 +503,8 @@ class Misson12(ingame_mission.IngameMission):
                 self,
                 'darcy',
                 jumper=True,
-                actor=actors.Hatcher,
+                hero=True,
+                actor=actors.Darcy,
                 labels=[
                     'asf',
                     'friend',
@@ -415,7 +513,7 @@ class Misson12(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.BretoniaMain,
                     ship=ship.Cavalier,
-                    level=NPC.D6,
+                    level=NPC.D19,
                     equip_map=EqMap(base_level=6),
                 )
             ),
@@ -423,7 +521,8 @@ class Misson12(ingame_mission.IngameMission):
                 self,
                 'alaric',
                 jumper=True,
-                actor=actors.Hatcher,
+                hero=True,
+                actor=actors.Alaric,
                 labels=[
                     'asf',
                     'friend',
@@ -432,7 +531,7 @@ class Misson12(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.LibertyPirate,
                     ship=ship.Hammerhead,
-                    level=NPC.D6,
+                    level=NPC.D19,
                     equip_map=EqMap(base_level=6),
                 )
             ),
@@ -440,7 +539,7 @@ class Misson12(ingame_mission.IngameMission):
             Ship(
                 self,
                 'ku_f_assault1',
-                count=5,
+                count=3,
                 affiliation=faction.OrderMain.CODE,
                 system_class=S.asf_hq,
                 slide_x=-50,
@@ -459,7 +558,7 @@ class Misson12(ingame_mission.IngameMission):
             Ship(
                 self,
                 'ku_f_assault2',
-                count=5,
+                count=3,
                 affiliation=faction.OrderMain.CODE,
                 system_class=S.asf_hq,
                 slide_x=-50,
@@ -475,12 +574,53 @@ class Misson12(ingame_mission.IngameMission):
                     equip_map=EqMap(base_level=5),
                 )
             ),
+
+            Ship(
+                self,
+                'ku_f_resp_assault1',
+                count=3,
+                affiliation=faction.OrderMain.CODE,
+                system_class=S.asf_hq,
+                slide_x=-50,
+                labels=[
+                    'assault',
+                    'enemy_fighter',
+                    'enemy',
+                ],
+                npc=NPC(
+                    faction=faction.KusariMain,
+                    ship=ship.Dragon,
+                    level=NPC.D5,
+                    equip_map=EqMap(base_level=5),
+                )
+            ),
+            Ship(
+                self,
+                'ku_f_resp_assault2',
+                count=3,
+                affiliation=faction.OrderMain.CODE,
+                system_class=S.asf_hq,
+                slide_x=-50,
+                labels=[
+                    'assault',
+                    'enemy_fighter',
+                    'enemy',
+                ],
+                npc=NPC(
+                    faction=faction.KusariMain,
+                    ship=ship.Drake,
+                    level=NPC.D5,
+                    equip_map=EqMap(base_level=5),
+                )
+            ),
+
             Ship(
                 self,
                 'li_f_defend1',
                 count=5,
                 affiliation=faction.ASF.CODE,
                 system_class=S.asf_hq,
+                slide_z=-100,
                 slide_x=-50,
                 labels=[
                     'li_fighter',
@@ -500,7 +640,8 @@ class Misson12(ingame_mission.IngameMission):
                 count=5,
                 affiliation=faction.ASF.CODE,
                 system_class=S.asf_hq,
-                slide_x=-50,
+                slide_z=-100,
+                slide_x=50,
                 labels=[
                     'li_fighter',
                     'asf',
@@ -562,7 +703,7 @@ class Misson12(ingame_mission.IngameMission):
             Ship(
                 self,
                 'or_prom_B1',
-                count=8,
+                count=4,
                 affiliation=faction.OrderMain.CODE,
                 system_class=S.asf_prom,
                 slide_x=50,
@@ -575,7 +716,27 @@ class Misson12(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.OrderMain,
                     ship=ship.Anubis,
-                    level=NPC.D6,
+                    level=NPC.D19,
+                    equip_map=EqMap(base_level=6),
+                )
+            ),
+            Ship(
+                self,
+                'or_prom_B2',
+                count=6,
+                affiliation=faction.OrderMain.CODE,
+                system_class=S.asf_prom,
+                slide_x=50,
+                slide_z=50,
+                labels=[
+                    'or_b',
+                    'enemy_fighter',
+                    'enemy',
+                ],
+                npc=NPC(
+                    faction=faction.OrderMain,
+                    ship=ship.Anubis,
+                    level=NPC.D19,
                     equip_map=EqMap(base_level=6),
                 )
             ),
@@ -597,7 +758,7 @@ class Misson12(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.LibertyMain,
                     ship=ship.Defender,
-                    level=NPC.D6,
+                    level=NPC.D10,
                     equip_map=EqMap(base_level=6),
                 )
             ),

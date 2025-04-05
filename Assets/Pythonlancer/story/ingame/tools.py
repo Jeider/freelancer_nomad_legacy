@@ -882,7 +882,7 @@ class Ship(Target):
 
         return SINGLE_DIVIDER.join(members)
 
-    def define_respawn(self, trigger_setrep, objlist=NO_OL):
+    def define_respawn(self, trigger_setrep, ol=NO_OL):
         self.respawn_defined = True
 
         if self.system is None:
@@ -899,7 +899,7 @@ class Ship(Target):
             member = self.get_member_name(index)
             spawn_params = [
                 self.get_multiple_member_name(index),
-                objlist,
+                ol,
                 *pos,
                 *orient
             ]
@@ -1163,7 +1163,7 @@ class Trigger:
 
 class Capital(DefinedStaticMixin):
 
-    def __init__(self, mission, alias, npc_ship_arch, ru_name, faction=None, labels=None):
+    def __init__(self, mission, alias, npc_ship_arch, ru_name, faction=None, labels=None, arrival_obj=None):
         self.mission = mission
         self.alias = alias
         self.npc_ship_arch = npc_ship_arch
@@ -1171,6 +1171,7 @@ class Capital(DefinedStaticMixin):
         self.ids_name = self.mission.ids.new_name(self.ru_name)
         self.faction = faction or DEFAULT_AFFILIATION
         self.labels = labels or []
+        self.arrival_obj = arrival_obj
 
     def get_name(self):
         return self.alias
@@ -1192,6 +1193,9 @@ class Capital(DefinedStaticMixin):
         ])
         for label in self.labels:
             ship.append(f'label = {label}')
+        if self.arrival_obj:
+            ship.append(f'arrival_obj = {self.arrival_obj}')
+
         return SINGLE_DIVIDER.join(ship)
 
 

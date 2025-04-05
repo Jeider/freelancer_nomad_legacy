@@ -5,6 +5,7 @@
 
 #version 330
 #define TEXTURESTAGE_COUNT 2
+#include "ColorConversion.inc"
 
 struct Light{
 	vec3 ambient; 
@@ -58,6 +59,7 @@ uniform bool enableLighting;
 uniform bool enableAlphaTest;
 uniform bool enableCubemap;
 uniform bool enableRHWCoordinates;
+uniform bool enableAccurateSRGB;
 
 in vec3 N;
 in vec3 v;
@@ -89,17 +91,24 @@ in float fogScale;
     // Add
 #define    D3DTOP_ADD                 7   // add arguments together
 #define    D3DTOP_ADDSIGNED           8  // add with -0.5 bias
-#define     D3DTOP_ADDSIGNED2X        9  // as above but left << 1 bit
+#define    D3DTOP_ADDSIGNED2X         9  // as above but left << 1 bit
 
-
-vec3 ToLinear(vec3 inColor){	
-	return pow(inColor,vec3(2.2));
+vec3 ToLinear(vec3 inColor)
+{	
+	if (enableAccurateSRGB)
+		return ToLinearAccurate(inColor);
+	else
+		return ToLinearFast(inColor);
 }
 
-vec3 ToGammaCorrected(vec3 inColor){
-	return pow(inColor.rgb,1./vec3(2.2));
+vec3 ToGammaCorrected(vec3 inColor)
+{
+	if (enableAccurateSRGB)
+		return ToGammaCorrectedAccurate(inColor);
+	else
+		return ToGammaCorrectedFast(inColor);
 }
-	
+
 vec4 GetColorForStage(const int stage, int colorArg, int alphaArg, vec4 previousColor, vec4 gouradDiffuseColor, vec4 specularColor, vec2 texCoords, vec3 cubeMapTexCoords)
 {
 	vec4 color;
@@ -117,6 +126,8 @@ vec4 GetColorForStage(const int stage, int colorArg, int alphaArg, vec4 previous
 					textureColor=texture(cubemap,cubeMapTexCoords);
 		else
 			textureColor=vec4(1);
+	
+	//textureColor.rgb=ToLinear(textureColor.rgb);
 	
 	if(colorArg == D3DTA_DIFFUSE)
 		color.rgb=gouradDiffuseColor.rgb;
@@ -161,7 +172,7 @@ vec4 ApplyFunctionForStage(const int stage, vec4 previousColor, vec4 gouradDiffu
 	}
 	else if (colorOp[stage]==D3DTOP_MODULATE4X)
 	{
-		color1.rgb=color1.rgb*color2.rgb*21.11; //4^2.2 since rendering is gamma correct
+		color1.rgb=color1.rgb*color2.rgb*21.11; //4^2.2 since rendering is gamma correct		
 	}
 	else if (colorOp[stage]==D3DTOP_ADD)
 	{	
@@ -173,7 +184,7 @@ vec4 ApplyFunctionForStage(const int stage, vec4 previousColor, vec4 gouradDiffu
 	}
 	else if (colorOp[stage]==D3DTOP_ADDSIGNED2X)
 	{
-		color1.rgb=(color1.rgb+color2.rgb-0.5)*4.6; //2^2.2 since rendering is gamma correct
+		color1.rgb=(color1.rgb+color2.rgb-0.5)*4.6; //2^2.2 since rendering is gamma correct		
 	}
 	
 	if (alphaOp[stage]==D3DTOP_SELECTARG2)
@@ -186,11 +197,11 @@ vec4 ApplyFunctionForStage(const int stage, vec4 previousColor, vec4 gouradDiffu
 	}
 	else if (alphaOp[stage]==D3DTOP_MODULATE2X)
 	{
-		color1.a=(color1.a*color2.a)*4.6; //2^2.2 since rendering is gamma correct
+		color1.a=(color1.a*color2.a)*4.6; //2^2.2 since rendering is gamma correct		
 	}
 	else if (alphaOp[stage]==D3DTOP_MODULATE4X)
 	{
-		color1.a=(color1.a*color2.a)*21.11; //4^2.2 since rendering is gamma correct
+		color1.a=(color1.a*color2.a)*21.11; //4^2.2 since rendering is gamma correct		
 	}
 	else if (alphaOp[stage]==D3DTOP_ADD)
 	{
@@ -202,8 +213,9 @@ vec4 ApplyFunctionForStage(const int stage, vec4 previousColor, vec4 gouradDiffu
 	}
 	else if (alphaOp[stage]==D3DTOP_ADDSIGNED2X)
 	{
-		color1.a=(color1.a+color2.a-0.5)*4.6; //2^2.2 since rendering is gamma correct
-	}
+		color1.a=(color1.a+color2.a-0.5)*4.6; //2^2.2 since rendering is gamma correct		
+	}	
+	color1.a=pow(color1.a,1.2);
 	
 	return color1;
 }
@@ -242,7 +254,12 @@ void main()
 	else
 	{
 		if(vertexColorAvailable)
-			gouradDiffuseColor=vec4(ToLinear(vertexColor.rgb),vertexColor.a);
+		{
+			//gouradDiffuseColor=vec4(ToLinear(vertexColor.rgb),vertexColor.a);			
+			//TODO: Weird bug with MSAA and float16 render target
+			vec4 vertexColorAboveZero=max(vertexColor,0);
+			gouradDiffuseColor=vec4(ToLinear(vertexColorAboveZero.rgb),vertexColorAboveZero.a);
+		}
 		else
 			gouradDiffuseColor=vec4(1,1,1,1);
 		
@@ -356,7 +373,8 @@ void main()
 		if(enableRHWCoordinates)
 			z = RHWdepth;
 		else
-			z = gl_FragCoord.z / gl_FragCoord.w;
+			//Radial fog
+			z = length(v);
 
 		const float LOG2E = 1.442695;
 		float fogFactor;
@@ -379,4 +397,5 @@ void main()
 		finalColor.rgb = mix(glFog.color.rgb,finalColor.rgb, fogFactor);
 	}
 	gl_FragColor = vec4(ToGammaCorrected(finalColor.rgb), finalColor.a);
+	//gl_FragColor = finalColor;
 }

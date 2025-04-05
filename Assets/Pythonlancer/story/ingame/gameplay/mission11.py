@@ -93,7 +93,7 @@ class Misson11(ingame_mission.IngameMission):
 
     def get_save_states(self):
         return [
-            SaveState(self, 'hq_battle', 'Штаб Ордена. Битва у Вавилона'),
+            SaveState(self, 'hq_battle', 'Штаб Ордена. Битва у станции Вавилон'),
         ]
 
     def get_static_points(self):

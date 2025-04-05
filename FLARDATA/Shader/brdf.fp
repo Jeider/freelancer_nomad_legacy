@@ -57,7 +57,7 @@ float GeometrySchlickGGX(float NdotV, float roughness)
     float k = (a * a) / 2.0;
 
     float nom   = NdotV;
-    float denom = NdotV * (1.0 - k) + k;
+    float denom = NdotV * (1.0 - k) + k + 0.00001; // 0.00001 to prevent divide by zero.
 
     return nom / denom;
 }
@@ -69,11 +69,11 @@ float GeometrySmith(float NdotV, float NdotL, float roughness)
 
     return ggx1 * ggx2;
 }
-
-float GeometrySmithG2Hammond(float NdotV, float NdotL, float roughnessSquared)
+//"PBR Diffuse Lighting for GGX+Smith Microsurfaces", Earl Hammon, Jr.
+float GeometrySmithG2Hammon(float NdotV, float NdotL, float roughnessSquared)
 {
 	float nom = 2*NdotL*NdotV;
-	float denom = mix(2*NdotL*NdotV,NdotL+NdotV,roughnessSquared);
+	float denom = mix(2*NdotL*NdotV,NdotL+NdotV,roughnessSquared) + 0.00001; // 0.00001 to prevent divide by zero.
 	return nom/denom;
 }
 
@@ -101,14 +101,14 @@ vec2 IntegrateBRDF(float NdotV, float roughness)
         vec3 H = ImportanceSampleGGX(Xi, N, roughnessSquared);
         vec3 L = normalize(2.0 * dot(V, H) * H - V);
 
-        float NdotL = max(L.z, 0.0);
-        float NdotH = max(H.z, 0.0);
-        float VdotH = max(dot(V, H), 0.0);
+        float NdotL = max(L.z, 0.0);       
 
         if(NdotL > 0.0)
         {
+			float NdotH = max(H.z, 0.0);
+			float VdotH = max(dot(V, H), 0.0);
             //float G = GeometrySmith(NdotV, NdotL, roughness);
-			float G = GeometrySmithG2Hammond(NdotV, NdotL, roughnessSquared);
+			float G = GeometrySmithG2Hammon(NdotV, NdotL, roughnessSquared);
             float G_Vis = (G * VdotH) / (NdotH * NdotV);
             float Fc = pow(1.0 - VdotH, 5.0);
 
@@ -124,5 +124,5 @@ vec2 IntegrateBRDF(float NdotV, float roughness)
 void main() 
 {
     vec2 integratedBRDF = IntegrateBRDF(TexCoords.x, TexCoords.y);
-    gl_FragColor.rg = integratedBRDF;	
+    gl_FragColor.rg = integratedBRDF;
 }

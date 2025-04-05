@@ -7,15 +7,25 @@
 //or "Parallel-Split Shadow Maps on Programmable GPUs" GPU Gems 3 (2005)
 
 #version 330
-
+#include "ColorConversion.inc"
 #define MAX_SHADOWS $MAX_SHADOWS
 #define NUM_SPLITS $NUM_SPLITS
 #define USE_PCF $USE_PCF
 #define USE_HQ_DIFFUSE $USE_HQ_DIFFUSE
 #define USE_PARALLAX_MAPS $USE_PARALLAX_MAPS
+#define USE_CLUSTERED_SHADING $USE_CLUSTERED_SHADING
+
 
 //#define SIMPLE_KD
 #define IBL_MULTIPLE_SCATTERING
+
+#if USE_CLUSTERED_SHADING == 1
+#define NUM_POSSIBLE_LIGHTS $NUM_POSSIBLE_LIGHTS
+#define LIGHT_GRID_TILE_DIM_X $LIGHT_GRID_TILE_DIM_X
+#define LIGHT_GRID_TILE_DIM_Y $LIGHT_GRID_TILE_DIM_Y
+#define LIGHT_GRID_MAX_DIM_X $LIGHT_GRID_MAX_DIM_X
+#define LIGHT_GRID_MAX_DIM_Y $LIGHT_GRID_MAX_DIM_Y
+#endif
 
 const float PBR_FACTOR = 2;
 const float PBR_FACTOR_ENV = 1.5;
@@ -53,6 +63,21 @@ struct glFogParameters
 	float end;
 };
 
+#if USE_CLUSTERED_SHADING == 1
+//Has to be 16 byte aligned (otherwise it will be padded)
+struct ClusteredLight{ 
+	vec4 position;
+	vec4 diffuse;		
+};
+
+layout (std140) uniform LightSourceClustered
+{    
+	ClusteredLight clusteredLights[NUM_POSSIBLE_LIGHTS];
+};
+
+uniform isamplerBuffer clusterLightIndexListsTex;
+uniform usamplerBuffer clusterGridTex;
+#endif
 
 uniform glFogParameters glFog;
 uniform Light glLightSource[8];
@@ -98,6 +123,13 @@ uniform bool enableTex2Modulate2X;
 uniform bool enableRoughnessMap;
 uniform bool enableMetalnessMap;
 uniform bool enableAlphaTest;
+#if USE_CLUSTERED_SHADING == 1
+uniform bool enableClusteredShading;
+uniform float recNear; /**< 1.0f / g_near */
+uniform	float recLogSD1; /**< 1.0f / logf(sD + 1.0f), used to compute cluster index. */
+#endif
+
+
 
 float HEIGHT_SCALE = 0.01;
 
@@ -184,7 +216,8 @@ float DistributionGGX(float NdotH, float roughnessSquared)
 	return nom / denom;
 }
 
-float GeometrySmithG2HammondDenom(float NdotL, float NdotV, float roughnessSquared)
+//"PBR Diffuse Lighting for GGX+Smith Microsurfaces", Earl Hammon, Jr.
+float GeometrySmithG2HammonDenom(float NdotL, float NdotV, float roughnessSquared)
 {
 	float denom = mix(2*NdotL*NdotV,NdotL+NdotV,roughnessSquared);
 	return denom;
@@ -200,14 +233,6 @@ vec3 fresnelSchlickRoughness(float cosTheta, vec3 F0, float roughness)
 {
 	return F0 + (max(vec3(1.0 - roughness), F0) - F0) * pow(max(1.0 - cosTheta, 0.0), 5.0);
 }   
-
-vec3 ToLinear(vec3 inColor){	
-	return pow(inColor,vec3(2.2));
-}
-
-vec3 ToGammaCorrected(vec3 inColor){
-	return pow(inColor.rgb,1./vec3(2.2));
-}
 
 struct LightValues
 {
@@ -287,14 +312,42 @@ LightValues CalculateLightValues(const int index)
 	return result;
 }
 
-vec3 ApplyLight(const int index, const LightValues lightValues, const vec3 mapNormal, const vec3 eyeV, const vec3 F0, const float roughness, const vec3 IDiffuse, const vec3 firstTexture, vec3 lightSum, const float metalness)
+#if USE_CLUSTERED_SHADING == 1
+LightValues CalculateLightValuesClustered(const int index)
+{
+	LightValues result;
+	
+	result.lightVec = clusteredLights[index].position.xyz - v;
+	result.lightDirViewSpace=normalize(result.lightVec);	
+	result.lightDist	= length(result.lightVec);		
+				
+	if (enableNormalMaps)
+		result.lightVec	= tbnMatrix*result.lightVec;
+	result.lightDir	= normalize(result.lightVec);		
+		
+	// positional light source
+	float inner = 0.0;
+	float att = max(1.0 - max(0.0, (result.lightDist - inner) / (clusteredLights[index].position.w - inner)), 0.0);
+	result.attenFactor	= att;
+	return result;
+}
+#endif
+
+vec3 ApplyAmbientLight(const int index,const vec3 firstTexture, const float intensity, vec3 lightSum)
+{
+	vec3 IAmbient        = (matAmbientColor)*(PBR_FACTOR*glLightSource[index].ambient)*firstTexture;
+	lightSum.rgb += IAmbient*intensity;
+	return lightSum;
+}
+
+vec3 ApplyPBRLight(vec3 lightDiffuseColor, const LightValues lightValues, const vec3 mapNormal, const vec3 eyeV, const vec3 F0, const float roughness, const vec3 IDiffuse, const vec3 firstTexture, vec3 lightSum, const float metalness)
 {	
 	
 	float visible = 1.0;	
 	float intensity = lightValues.attenFactor;	
 	
-	vec3 IAmbient        = (matAmbientColor.rgb)*(PBR_FACTOR*glLightSource[index].ambient.rgb)*firstTexture.rgb;
-	lightSum.rgb += IAmbient*intensity; 
+	//vec3 IAmbient        = (matAmbientColor.rgb)*(PBR_FACTOR*glLightSource[index].ambient)*firstTexture;
+	//lightSum.rgb += IAmbient*intensity; 
 
 	vec3 L = lightValues.lightDir;
 	vec3 V = normalize(eyeV);
@@ -315,14 +368,11 @@ vec3 ApplyLight(const int index, const LightValues lightValues, const vec3 mapNo
 	float NDF = DistributionGGX(NdotH, roughnessSquared);	
    
 	vec3 nominator    = NDF * F;
-	float denominator = 2.0 * GeometrySmithG2HammondDenom(NdotV, NdotL, roughnessSquared) + 0.00001; // 0.00001 to prevent divide by zero.
+	float denominator = 2.0 * GeometrySmithG2HammonDenom(NdotV, NdotL, roughnessSquared) + 0.00001; // 0.00001 to prevent divide by zero.
 	vec3 specular = nominator/denominator;
 	
 	#ifndef SIMPLE_KD
-	vec3 kS = F;
-	vec3 kD = vec3(1.0) - kS;
-  
-	kD *= 1.0 - metalness;	
+		vec3 kD=mix(vec3(1.0)-F,vec3(0.0),metalness);
 	#else
 		float kD = 1.0 - metalness;
 	#endif	
@@ -341,12 +391,78 @@ vec3 ApplyLight(const int index, const LightValues lightValues, const vec3 mapNo
 		vec3 diffuse = kD*IDiffuse.rgb/PI;
 	#endif	
 	
-	lightSum.rgb+= PBR_FACTOR*glLightSource[index].diffuse.rgb*(diffuse + specular)*intensity*NdotL;
+	lightSum+= PBR_FACTOR*lightDiffuseColor*(diffuse + specular)*intensity*NdotL;
 	
 
 		
 return lightSum;		
 }
+
+vec3 ApplyLight(const int index, const LightValues lightValues, const vec3 mapNormal, const vec3 eyeV, const vec3 F0, const float roughness, const vec3 IDiffuse, const vec3 firstTexture, vec3 lightSum, const float metalness)
+{
+	lightSum=ApplyAmbientLight(index, firstTexture, lightValues.attenFactor, lightSum);
+	lightSum=ApplyPBRLight(glLightSource[index].diffuse.rgb, lightValues, mapNormal, eyeV, F0, roughness, IDiffuse, firstTexture, lightSum, metalness);
+	return lightSum;
+}
+
+#if USE_CLUSTERED_SHADING == 1
+//Clustered shading code partially from 
+//"Demo code implementing Clustered Forward Shading, accompanying the talk 
+//'Tiled and Clustered Forward Shading' presented at Siggraph 2012."
+
+/**
+ * Computes the {i,j,k} integer index into the cluster grid. For details see our paper:
+ * 'Clustered Deferred and Forward Shading'
+ * http://www.cse.chalmers.se/~olaolss/main_frame.php?contents=publication&id=clustered_shading
+ */
+ivec3 calcClusterLoc(vec2 fragPos, float viewSpaceZ)
+{
+	// i and j coordinates are just the same as tiled shading, and based on screen space position.
+  ivec2 l = ivec2(int(fragPos.x) / LIGHT_GRID_TILE_DIM_X, int(fragPos.y) / LIGHT_GRID_TILE_DIM_Y);
+
+	// k is based on the log of the view space Z coordinate.
+	float gridLocZ = log(viewSpaceZ * recNear) * recLogSD1;
+
+	return ivec3(l, int(gridLocZ));
+}
+
+/**
+ * Linearlizes the 3D cluster location into an offset, which can be used as an
+ * address into a linear buffer.
+ */
+int calcClusterOffset(ivec3 clusterLoc)
+{
+	return (clusterLoc.z * LIGHT_GRID_MAX_DIM_Y + clusterLoc.y) * LIGHT_GRID_MAX_DIM_X + clusterLoc.x;
+}
+
+/**
+ * Convenience shorthand function, see above...
+ */
+int calcClusterOffset(vec2 fragPos, float viewSpaceZ)
+{
+	return calcClusterOffset(calcClusterLoc(fragPos, viewSpaceZ));
+}
+
+vec3 ApplyClusteredLights(const vec3 mapNormal, const vec3 eyeV, const vec3 F0, const float roughness, const vec3 IDiffuse, const vec3 firstTexture, vec3 lightSum, const float metalness)
+{
+  // fetch cluster data (i.e. offset to light indices, and numer of lights) from grid buffer.
+  uvec2 offsetCount = texelFetch(clusterGridTex, calcClusterOffset(gl_FragCoord.xy, v.z)).xy; 
+
+  int lightOffset = int(offsetCount.x);
+  int lightCount = int(offsetCount.y);
+	
+  for (int i = 0; i < lightCount; ++i)
+  {
+		// fetch light index from list of lights for the cluster.
+		int lightIndex = texelFetch(clusterLightIndexListsTex, lightOffset + i).x; 
+		LightValues lightValues = CalculateLightValuesClustered(lightIndex);
+		// compute and accumulate shading.		
+		lightSum = ApplyPBRLight(clusteredLights[lightIndex].diffuse.rgb*2, lightValues, mapNormal, eyeV, F0, roughness, IDiffuse, firstTexture, lightSum, metalness);
+  }
+
+  return lightSum;
+}
+#endif
 
 void main(void)
 { 	
@@ -354,7 +470,7 @@ void main(void)
 	if (enableFog && fogMode > 0)
 	{		
 		//Radial fog
-		float z = length(eyeVec);		
+		float z = length(v);
 		if (fogMode == 3)
 		{
 			fogFactor = (fogEnd - z) * fogScale;			
@@ -368,12 +484,7 @@ void main(void)
 			fogFactor = 1.0 /exp( (z * glFog.density)* (z * glFog.density));
 		} 
 		
-		fogFactor = clamp(fogFactor, 0.0, 1.0);		
-		if(fogFactor < 0.01)
-		{			
-			diffuseColorOut=vec4(ToGammaCorrected(glFog.color.rgb),1.0);
-			return;
-		}
+		fogFactor = clamp(fogFactor, 0.0, 1.0);
 	}
 	
 	vec3 eyeV=normalize(eyeVec);
@@ -387,10 +498,7 @@ void main(void)
 	else
 #endif
 		texCoordsProcessed = texCoords.st;	
-	
-	
-	
-
+		
 	vec4 firstTexture;	
 	vec4 lightSum = vec4(0);
 	if (enableFirstTexture)
@@ -413,7 +521,7 @@ void main(void)
 		
 	}
 	else{
-		firstTexture = vec4(0,0,0,1);
+		firstTexture = vec4(1,1,1,1);
 	}
 	
 	float alpha = alphaValue*firstTexture.a;		
@@ -460,7 +568,7 @@ void main(void)
 	float roughness;
 	if (enableRoughnessMap)
 	{		
-		roughness=clamp(roughnessTextureBias+texture2D(roughnessMap, texCoordsProcessed.st).r,0,1);
+		roughness=clamp(roughnessTextureBias+texture2D(roughnessMap, texCoordsProcessed.st).r,0.0,1.0);
 	}		
 	else
 	{
@@ -468,9 +576,7 @@ void main(void)
 	}   
 	
 	#define DIELECTRIC_SPECULAR 0.04
-	vec3 F0 = vec3(DIELECTRIC_SPECULAR); 
-	F0 = mix(F0, IDiffuse, metalness);
-
+	vec3 F0 = mix(vec3(DIELECTRIC_SPECULAR), IDiffuse, metalness);
 	if (enableEnvMap)
 	{	
 		vec3 n;
@@ -499,34 +605,36 @@ void main(void)
 		float NdotV = max(dot(n,v),0.0);		
 		vec2 brdf  = texture(brdfLUT, vec2(NdotV, roughness)).rg;
 		
-#ifdef IBL_MULTIPLE_SCATTERING
-		vec3 diffuseColor = IDiffuse.rgb * (1.0 - DIELECTRIC_SPECULAR) * (1.0 - metalness);
-		// Roughness dependent fresnel, from Fdez-Aguera
-		//vec3 Fr = max(vec3(1.0 - roughness*roughness), F0) - F0;
-		vec3 k_S = F0;// + Fr * pow(1.0 - NdotV, 5.0);
+	#ifdef IBL_MULTIPLE_SCATTERING
+		vec3 diffuseColor = mix(IDiffuse.rgb, vec3(0), metalness);
+		// Multiple scattering, from:
+		//"A Multiple-Scattering Microfacet Model for Real-Time Image-based Lighting", Carmelo J. Fdez-Agüera
+		vec3 kS = F0;
 
-		vec3 FssEss = k_S * brdf.x + brdf.y;
-
-		// Multiple scattering, from Fdez-Aguera
-		float Ems = (1.0 - (brdf.x + brdf.y));
-		vec3 F_avg = F0 + (1.0 - F0) / 21.0;
-		vec3 FmsEms = Ems * FssEss * F_avg / (1.0 - F_avg * Ems);
-		vec3 k_D = diffuseColor * (1.0 - FssEss - FmsEms);
-		lightSum.rgb += FssEss * radiance + (FmsEms + k_D) * irradiance;
-#else
+		vec3 FssEss = kS * brdf.x + brdf.y;
+		
+		float Ess = brdf.x + brdf.y;
+		float Ems = 1.0-Ess;
+		vec3 Favg = F0 + (1.0-F0)/21.0;
+		vec3 Fms = FssEss*Favg/(1.0-Ems*Favg);
+		vec3 FmsEms = Fms * Ems;
+		// Dielectrics
+		vec3 Edss = 1.0 - (FssEss + FmsEms);
+		vec3 kD = diffuseColor * Edss;
+		// Composition
+		lightSum.rgb += FssEss * radiance + (FmsEms+kD) * irradiance;
+	#else
 		vec3 diffuse    = irradiance * IDiffuse;
-	#ifndef SIMPLE_KD
 		vec3 F = fresnelSchlickRoughness(NdotV, F0, roughness);
-		vec3 kS = F;
-		vec3 kD = 1.0 - kS;
-		kD *= 1.0 - metalness;
+	#ifndef SIMPLE_KD		
+		vec3 kD=mix(vec3(1.0)-F,vec3(0.0),metalness);
 	#else
 		float kD = 1.0 - metalness;
 	#endif			
 
-		vec3 specular = radiance * (F * brdf.x + brdf.y);
+		vec3 specular = radiance * (F0 * brdf.x + brdf.y);
 		lightSum.rgb += kD*diffuse + specular;
-#endif
+	#endif
 	}	
 	else
 	{			
@@ -597,6 +705,10 @@ void main(void)
 		LightValues lightValues = CalculateLightValues(lightIndex);
 		lightSum.rgb = ApplyLight(lightIndex, lightValues, mapNormal, eyeV, F0, roughness, IDiffuse.rgb, firstTexture.rgb, lightSum.rgb, metalness);	
 	}
+	#if USE_CLUSTERED_SHADING == 1
+	if(enableClusteredShading)
+		lightSum.rgb = ApplyClusteredLights(mapNormal, eyeV, F0, roughness, IDiffuse.rgb, firstTexture.rgb, lightSum.rgb, metalness);	
+	#endif
 		
 	vec4 finalColor = lightSum;
 
@@ -606,5 +718,5 @@ void main(void)
 		finalColor = mix(vec4(glFog.color,1.0),finalColor, fogFactor);
 	}
 
-	diffuseColorOut=vec4(ToGammaCorrected(finalColor.rgb),finalColor.a);	
+	diffuseColorOut=vec4(ToGammaCorrected(finalColor.rgb),finalColor.a);
 }

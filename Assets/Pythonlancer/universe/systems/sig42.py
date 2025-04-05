@@ -396,7 +396,7 @@ class Sig42SolarBuoyConn1(Sig42Member, main_objects.AbandonedBuoyTradeConnection
     SIDE_TO = RIGHT
     TRADELANE_LETTER = 'H'
 
-    OBJ_TO_TLR_FORCE_OFFSET = (-28000.0, 0.0, -10000.0)
+    OBJ_TO_TLR_FORCE_OFFSET = (-42000, 0, -11000)
 
 
 class Sig42SolarBuoyConn2(Sig42Member, main_objects.AbandonedBuoyTradeConnection):
@@ -406,7 +406,7 @@ class Sig42SolarBuoyConn2(Sig42Member, main_objects.AbandonedBuoyTradeConnection
     SIDE_TO = RIGHT
     TRADELANE_LETTER = 'I'
 
-    OBJ_FROM_TLR_FORCE_OFFSET = (-31000.0, 0.0, 19000.0)
+    OBJ_FROM_TLR_FORCE_OFFSET = (-43000.0, 0.0, 20000.0)
 
 
 class Sig42SolarBuoyConn3(Sig42Member, main_objects.AbandonedBuoyTradeConnection):
@@ -426,6 +426,15 @@ class Sig42InvisibleOrderNebula(Sig42Member, zones.NebulaZone):
     MUSIC = Ambience.NEBULA_DMATTER
 
 
+class Sig42InvisibleAsfNebula(Sig42Member, zones.NebulaZone):
+    ALIAS = 'invisible'
+    INDEX = 2
+    CONTENT_TEMPLATE = invisible_nebula.SiriusInvisibleNebula
+    SPACEDUST = Dust.RADIOACTIVE_BLUE
+    SPACEDUST_MAXPARTICLES = 120
+    MUSIC = Ambience.NEBULA_DMATTER
+
+
 class Sig42OrderJumpgate(Sig42Member, main_objects.JumpgateAlt):
     INDEX = 9
     REL = RIGHT
@@ -436,4 +445,17 @@ class Sig42OrderJumpgate(Sig42Member, main_objects.JumpgateAlt):
     TARGET_SYSTEM_NAME = 'or_hq'
     FORCE_INSPACE_NAME = 'jg_sirius_to_or_hq'
     FORCE_TARGET_NAME = 'jg_or_hq_to_sirius'
+    LOCKED_DOCK = True
+
+
+class Sig42AsfJumpgate(Sig42Member, main_objects.JumpgateAlt):
+    INDEX = 8
+    REL = LEFT
+
+    FACTION = faction.BretoniaMain
+    DEFENCE_LEVEL = None
+
+    TARGET_SYSTEM_NAME = 'asf_hq'
+    FORCE_INSPACE_NAME = 'jg_sirius_to_asf_hq'
+    FORCE_TARGET_NAME = 'jg_asf_hq_to_sirius'
     LOCKED_DOCK = True

@@ -4,20 +4,13 @@
 //Code based on https://learnopengl.com/PBR/IBL/Specular-IBL
 
 #version 330
+#include "ColorConversion.inc"
 in vec3 WorldPos;
 
 uniform samplerCube environmentMap;
 uniform bool convertToLinear;
 
 const float PI = 3.14159265359;
-
-vec3 ToGammaCorrected(vec3 inColor){
-	return pow(inColor.rgb,1./vec3(2.2));
-}
-
-vec3 ToLinear(vec3 inColor){	
-	return pow(inColor,vec3(2.2));
-}
 
 void main()
 {		
@@ -50,5 +43,5 @@ void main()
     }
     irradiance = PI * irradiance * (1.0 / float(nrSamples));
     
-    gl_FragColor = vec4(ToGammaCorrected(irradiance), 1.0);
+    gl_FragColor = vec4(ToGammaCorrected(irradiance), 1.0);	
 }

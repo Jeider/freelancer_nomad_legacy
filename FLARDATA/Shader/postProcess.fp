@@ -5,13 +5,18 @@
 //Sources are mentioned in the comments
 
 #version 330
-
+#include "ColorConversion.inc"
 #define USE_ACES_CURVE $USE_ACES_CURVE
+#define USE_PBR_BLOOM $USE_PBR_BLOOM
 
 in  vec2  TexCoords;
   
 uniform sampler2D scene;
+#if USE_PBR_BLOOM == 1
+uniform sampler2D bloomtex;
+#endif
 uniform float exposure;
+uniform float exposureLowerLimit;
 
 //https://github.com/TheRealMJP/BakingLab/blob/master/BakingLab/ACES.hlsl
 //ACES fit by Steven Hill
@@ -86,22 +91,32 @@ vec3 uchimura(vec3 x) {
   return uchimura(x, P, a, m, l, c, b);
 }
 
-
-vec3 ToGammaCorrected(vec3 inColor){
-	return pow(inColor.rgb,1./vec3(2.2));
+#if USE_PBR_BLOOM == 1
+const float bloomStrength = 0.2f;
+vec4 bloom_new()
+{
+    vec4 hdrColor = texture(scene, TexCoords);	
+	//hdrColor.rgb=vec3(0);
+    vec3 bloomColor = texture(bloomtex, TexCoords).rgb;
+	//Blend in linear space
+	/*hdrColor.rgb=ToLinear(hdrColor.rgb);
+	bloomColor=ToLinear(bloomColor);*/
+	vec4 blended=vec4(mix(hdrColor.rgb, bloomColor, bloomStrength),hdrColor.a); // linear interpolation
+	//Blend in gamma corrected space
+	blended.rgb=ToLinear(blended.rgb);
+    return blended;
 }
-
-vec3 ToLinear(vec3 inColor){	
-	return pow(inColor,vec3(2.2));
-}
+#endif
 
 void main()
 {  
+#if USE_PBR_BLOOM == 0
   vec4 color = texture2D(scene, TexCoords);
-  
   //Not a nice solution to convert two times (ideally there would be none), but not easily solvable currently
   color.rgb = ToLinear(color.rgb);
-
+#else
+  vec4 color = bloom_new();
+#endif
   //Exposure is chosen so that both curves have about the same brightness and the look is fine with very bright starspheres like in Tau-37
 #if USE_ACES_CURVE == 1  
   color.rgb=ACESFitted((exposure)*color.rgb);
@@ -110,5 +125,6 @@ void main()
 #endif
   
   color.rgb=ToGammaCorrected(color.rgb);  
-  gl_FragColor =  color;    
+  gl_FragColor =  color;  
+ 
 }
