@@ -304,10 +304,12 @@ class DefinedStaticMixin:
 
 class Solar(DefinedStaticMixin, Point):
 
-    def __init__(self, *args, ru_name, labels=None, base=None, **kwargs):
+    def __init__(self, *args, ru_name, labels=None, base=None, archetype=None, loadout=None, **kwargs):
         self.ru_name = ru_name
         self.base = base
         self.labels = labels if labels else []
+        self.archetype = archetype
+        self.loadout = loadout
         super().__init__(*args, **kwargs)
         self.ids_name = self.mission.ids.new_name(self.ru_name)
 
@@ -332,13 +334,13 @@ class Solar(DefinedStaticMixin, Point):
     def spawn(self):
         return f'Act_SpawnSolar = {self.get_name()}'
 
-    def define(self, archetype, loadout=None, faction=None, label=None):
+    def define(self, archetype=None, loadout=None, faction=None, label=None):
         solar = [
             '[MsnSolar]',
             f'nickname = {self.name}',
             f'position = {self.pos}',
             f'orientation = {self.orient}',
-            f'archetype = {archetype}',
+            f'archetype = {archetype if archetype else self.archetype}',
             f'faction = {faction}' if faction else f'faction = {DEFAULT_AFFILIATION}',
             f'string_id = {self.ids_name.id}',
             'radius = 0',
@@ -348,6 +350,8 @@ class Solar(DefinedStaticMixin, Point):
             solar.append(f'system = {self.system.NAME}')
         if loadout:
             solar.append(f'loadout = {loadout}')
+        elif self.loadout:
+            solar.append(f'loadout = {self.loadout}')
         if label:
             solar.append(f'label = {label}')
         for root_label in self.labels:
@@ -562,7 +566,7 @@ class RelPos:
 
 class Ship(Target):
     def __init__(self, mission, name, count=1, hero=False, npc=None, actor=None,
-                 affiliation=None, jumper=False, labels=None,
+                 affiliation=None, jumper=False, labels=None, arrival_obj=None,
                  rel_pos=None, relative_pos=False, relative_target='Player', relative_range=1000,
                  radius=None, system_class=None, base_name=None, unique_npc_entry=False,
                  slide_x=0, slide_y=0, slide_z=0):
@@ -587,6 +591,7 @@ class Ship(Target):
         self.radius = radius
         self.actor = actor
         self.labels = labels if labels is not None else []
+        self.arrival_obj = arrival_obj
         self.base_name = base_name
         self.unique_npc_entry = unique_npc_entry
         if self.npc:
@@ -700,6 +705,8 @@ class Ship(Target):
             items.append(f'radius = {self.radius}')
         for label in self.labels:
             items.append(f'label = {label}')
+        if self.arrival_obj:
+            items.append(f'arrival_obj = {self.arrival_obj}')
         return SINGLE_DIVIDER.join(items)
 
     def get_init_rel_deg(self):
@@ -743,13 +750,13 @@ class Ship(Target):
     def spawn_member(self, member_index=1, objlist=NO_OL):
         return f'Act_SpawnShip = {self.get_multiple_member_name(member_index)}, {objlist}'
 
-    def spawn_all(self):
+    def spawn_all(self, objlist=NO_OL):
         """Just spawn all ships, defined in relative pos mode"""
-        if not self.relative_pos:
+        if not self.relative_pos and not self.arrival_obj:
             raise Exception('Ship %s is not configured as relative-pos' % self.name)
         actions = []
         for index in range(1, self.count+1):
-            actions.append(f'Act_SpawnShip = {self.get_multiple_member_name(index)}')
+            actions.append(f'Act_SpawnShip = {self.get_multiple_member_name(index)}, {objlist}')
         return SINGLE_DIVIDER.join(actions)
 
     def spawn_all_with_pos_orient(self, objlist=NO_OL):
@@ -887,6 +894,7 @@ class Ship(Target):
 
         if self.system is None:
             raise Exception('System is not defined for ship %s' % self.name)
+
         if self.slide_x == 0 and self.slide_y == 0 and self.slide_z == 0:
             raise Exception('At least one slide param must be defined for ship %s' % self.name)
 
@@ -898,7 +906,7 @@ class Ship(Target):
         for index in range(1, self.count+1):
             member = self.get_member_name(index)
             spawn_params = [
-                self.get_multiple_member_name(index),
+                member,
                 ol,
                 *pos,
                 *orient
@@ -915,6 +923,26 @@ class Ship(Target):
             pos[0] += self.slide_x
             pos[1] += self.slide_y
             pos[2] += self.slide_z
+
+        return SINGLE_DIVIDER.join(actions)
+
+    def define_respawn_from_base(self, trigger_setrep, ol=NO_OL):
+        self.respawn_defined = True
+
+        if not self.arrival_obj:
+            raise Exception('NPC have no base to launch')
+
+        actions = []
+        for index in range(1, self.count+1):
+            member = self.get_member_name(index)
+            actions.extend([
+                '[Trigger]',
+                f'nickname = member_respawn_{member}',
+                f'Cnd_Destroyed = {member}',
+                f'Act_SpawnShip = {member}, {ol}',
+                f'Act_ActTrig = {trigger_setrep}',
+                'repeatable = true',
+            ])
 
         return SINGLE_DIVIDER.join(actions)
 

@@ -17,6 +17,15 @@ from text.dividers import SINGLE_DIVIDER, DIVIDER
 
 NPCSHIPS = '''
 
+[NPCShipArch]
+nickname = ms10_armored
+loadout = m12_armored
+level = d10
+ship_archetype = ge_armored
+pilot = cruiser_default
+state_graph = CRUISER
+npc_class = lawful, CRUISER, d5
+
 '''
 
 
@@ -222,8 +231,6 @@ class Misson10(ingame_mission.IngameMission):
     def get_static_points(self):
         defined_points = []
 
-        # SIRIUS
-
         xen_points = [
             'first_puff',
             'last_puff',
@@ -232,6 +239,14 @@ class Misson10(ingame_mission.IngameMission):
         for p in xen_points:
             defined_points.append(
                 Point(self, S.xen, p)
+            )
+
+        wplatforms_count = 6
+        wplatforms = [f'xen_platform_{i:02d}' for i in range(1, wplatforms_count+1)]
+        for sol in wplatforms:
+            defined_points.append(
+                Solar(self, S.xen, sol, ru_name='Орудийная платформа', labels=['enemy', 'wplatforms'],
+                      archetype='wplatform_ms2', loadout='ms2_the_platform'),
             )
 
         return defined_points
@@ -243,24 +258,200 @@ class Misson10(ingame_mission.IngameMission):
         ]
 
     def get_ships(self):
+        xen_npc_params = {
+            'faction': faction.Ireland,
+            'ship': ship.Centurion,
+            'level': NPC.D10,
+            'equip_map': EqMap(base_level=5),
+        }
+        wingman_npc_params = {
+            'faction': faction.KusariMain,
+            'ship': ship.Dragon,
+            'level': NPC.D10,
+            'equip_map': EqMap(base_level=6),
+        }
+        escort_npc_params = {
+            'faction': faction.KusariMain,
+            'ship': ship.Dragon,
+            'level': NPC.D10,
+            'equip_map': EqMap(base_level=6),
+        }
+
         return [
-            # HQ
+            # TODO: make Xenos
             Ship(
                 self,
                 'patroller',
                 count=12,
-                affiliation=faction.OrderMain.CODE,
-                system_class=S.or_hq,  # TODO: make Xenos
+                affiliation=faction.Ireland.CODE,
+                system_class=S.xen,
                 labels=[
                     'patroller',
                     'xenos',
                     'enemy',
                 ],
                 npc=NPC(
-                    faction=faction.BretoniaPirate,
-                    ship=ship.Stiletto,
+                    faction=faction.Ireland,
+                    ship=ship.Centurion,
                     level=NPC.D5,
                     equip_map=EqMap(base_level=5),
                 )
             ),
+            Ship(
+                self,
+                'base_launch',
+                count=3,
+                affiliation=faction.Ireland.CODE,
+                system_class=S.xen,
+                arrival_obj='xen_01',
+                labels=[
+                    'xenos',
+                    'enemy',
+                ],
+                npc=NPC(**xen_npc_params),
+            ),
+            Ship(
+                self,
+                'base_launch2',
+                count=3,
+                affiliation=faction.Ireland.CODE,
+                system_class=S.xen,
+                arrival_obj='xen_01',
+                labels=[
+                    'xenos',
+                    'enemy',
+                ],
+                npc=NPC(**xen_npc_params),
+            ),
+            Ship(
+                self,
+                'xen_f1',
+                count=3,
+                affiliation=faction.Ireland.CODE,
+                system_class=S.xen,
+                slide_x=100,
+                slide_z=-100,
+                labels=[
+                    'xenos',
+                    'enemy',
+                ],
+                npc=NPC(**xen_npc_params),
+            ),
+            Ship(
+                self,
+                'xen_f2',
+                count=3,
+                affiliation=faction.Ireland.CODE,
+                system_class=S.xen,
+                slide_x=100,
+                slide_z=100,
+                labels=[
+                    'xenos',
+                    'enemy',
+                ],
+                npc=NPC(**xen_npc_params),
+            ),
+            Ship(
+                self,
+                'xen_f3',
+                count=3,
+                affiliation=faction.Ireland.CODE,
+                system_class=S.xen,
+                slide_x=-100,
+                slide_z=-100,
+                labels=[
+                    'xenos',
+                    'enemy',
+                ],
+                npc=NPC(**xen_npc_params),
+            ),
+            Ship(
+                self,
+                'xen_f4',
+                count=3,
+                affiliation=faction.Ireland.CODE,
+                system_class=S.xen,
+                slide_x=-100,
+                slide_z=100,
+                labels=[
+                    'xenos',
+                    'enemy',
+                ],
+                npc=NPC(**xen_npc_params),
+            ),
+            Ship(
+                self,
+                'darcy',
+                hero=True,
+                actor=actors.Darcy,
+                labels=[
+                    'asf',
+                    'friend',
+                    'trent_wing',
+                ],
+                npc=NPC(
+                    faction=faction.BretoniaMain,
+                    ship=ship.Crusader,
+                    level=NPC.D19,
+                    equip_map=EqMap(base_level=6),
+                )
+            ),
+            Ship(
+                self,
+                'wingman',
+                count=4,
+                system_class=S.om7,
+                labels=[
+                    'friend',
+                    'order',
+                    'trent_wing'
+                ],
+                unique_npc_entry=True,
+                base_name='Локи',
+                npc=NPC(
+                    faction=faction.KusariMain,
+                    ship=ship.Falcon,
+                    level=NPC.D6,
+                    equip_map=EqMap(base_level=6),
+                )
+            ),
+            Ship(
+                self,
+                'armor_helper',
+                count=6,
+                system_class=S.om7,
+                labels=[
+                    'friend',
+                    'order',
+                    'armor_wing'
+                ],
+                unique_npc_entry=True,
+                base_name='Сакура',
+                npc=NPC(
+                    faction=faction.KusariMain,
+                    ship=ship.Dragon,
+                    level=NPC.D6,
+                    equip_map=EqMap(base_level=6),
+                )
+            ),
         ]
+
+    def get_capital_ships(self):
+        armored_ship = {
+            'npc_ship_arch': 'ms10_armored',
+            'faction': 'fc_uk_grp',
+            'labels': ['friend'],
+        }
+        armored_ship_out = {
+            'npc_ship_arch': 'ms10_armored',
+            'faction': 'fc_uk_grp',
+            'labels': ['friend'],
+            'arrival_obj': 'xen_01',
+        }
+
+        caps = [
+            Capital(self, 'armored', ru_name='Бронированный транспорт', **armored_ship),
+            Capital(self, 'armored_out', ru_name='Бронированный транспорт', **armored_ship_out),
+        ]
+
+        return caps
