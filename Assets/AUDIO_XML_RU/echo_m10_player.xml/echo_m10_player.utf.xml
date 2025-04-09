@@ -4,10 +4,10 @@
 <UTF_ROOT>
 <test_voice name="0x9B943EC7" type="file" filename="echo_m10_player\dx_m10_0050_trent.wav"/>
 <test_voice name="0x9B80AFC9" type="file" filename="echo_m10_player\dx_m10_0110_trent.wav"/>
-<test_voice name="0x9B80E7CB" type="file" filename="echo_m10_player\dx_m10_0130_trent.wav"/>
-<test_voice name="0xBB8073CE" type="file" filename="echo_m10_player\dx_m10_0160_trent.wav"/>
-<test_voice name="0xBB818BC0" type="file" filename="echo_m10_player\dx_m10_0180_trent.wav"/>
 <test_voice name="0xBBDCA8C2" type="file" filename="echo_m10_player\dx_m10_0200_trent.wav"/>
-<test_voice name="0xBBDC38C6" type="file" filename="echo_m10_player\dx_m10_0240_trent.wav"/>
+<test_voice name="0xBBC8A9C8" type="file" filename="echo_m10_player\dx_m10_0300_trent.wav"/>
+<test_voice name="0x9BC98DC1" type="file" filename="echo_m10_player\dx_m10_0390_trent.wav"/>
+<test_voice name="0xBB04AEC2" type="file" filename="echo_m10_player\dx_m10_0400_trent.wav"/>
+<test_voice name="0xBB04E6C0" type="file" filename="echo_m10_player\dx_m10_0420_trent.wav"/>
 </UTF_ROOT>
 </UTFXML>

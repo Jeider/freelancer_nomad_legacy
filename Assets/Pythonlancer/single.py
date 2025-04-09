@@ -233,7 +233,7 @@ def generate_story_voices():
     script_manager = ScriptManager()
     # import pdb;pdb.set_trace()
     for msn in script_manager.get_missions():
-        if msn.MISSION_INDEX != 12:
+        if msn.MISSION_INDEX != 10:
             continue
         for voice in msn.get_voices():
             audio_folder.AudioFolder.compile_story_voice_to_xml(voice)

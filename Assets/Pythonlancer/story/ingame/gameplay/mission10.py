@@ -6,7 +6,9 @@ from story.math import euler_to_quat
 from story import actors
 
 from story.ingame import objectives as O
-from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Solar, Capital, Patrol, Direct, DRY_RUN, Trigger
+from story.ingame.tools import (
+    Point, Obj, Conn, NNObj, Ship, Solar, DockableBattleshipSolar, Capital, Patrol, Direct, DRY_RUN, Trigger, SaveState
+)
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
 from world.npc import NPC, EqMap
@@ -69,6 +71,14 @@ class Stealth:
 
     def turn(self):
         return f'Act_ActTrig = {self.MAIN}'
+
+    def deactivate(self):
+        return SINGLE_DIVIDER.join([
+            self.deactivate_safe_exit_zones(),
+            self.deactivate_danger_exit_zones(),
+            self.deactivate_patroller_checks(),
+            self.disable_static_actions(),
+        ])
 
     def activate_safe_exit_zones(self):
         content = [self.trigger.turn(self.SAFE_EXIT_ZONE.format(t)) for t in self.SAFE_ZONES]
@@ -208,6 +218,21 @@ class Stealth:
         ]
         return SINGLE_DIVIDER.join(content)
 
+    def disable_static_actions(self):
+        return SINGLE_DIVIDER.join([
+            self.trigger.off(self.MAIN),
+            self.trigger.off(self.SAFE_EXIT_ZONE.format(self.INIT_SAFE_ZONE),),
+            self.trigger.off(self.FAIL_BY_PATROL),
+            self.trigger.off(self.FAIL_BY_TIMEOUT),
+            self.trigger.new(self.TIMEOUT_ACTION),
+            self.trigger.off(self.SAFE_ENABLE),
+            self.trigger.off(self.SAFE_STOP),
+            self.trigger.off(self.DANGER_ENABLE),
+            self.trigger.off(self.DANGER_STOP),
+            self.trigger.off(self.SAFE_EXIT),
+            self.trigger.off(self.DANGER_EXIT),
+        ])
+
 
 class Misson10(ingame_mission.IngameMission):
     JINJA_TEMPLATE = 'missions/m10/m10.ini'
@@ -216,6 +241,13 @@ class Misson10(ingame_mission.IngameMission):
     SCRIPT_INDEX = 10
     DIRECT_SYSTEMS = [S.xen]
     STATIC_NPCSHIPS = NPCSHIPS
+    RTC = ['briefieng']
+
+    def get_save_states(self):
+        return [
+            SaveState(self, 'inside_nebula', 'Ксеносы. Внутри главной туманности'),
+            SaveState(self, 'near_base', 'Ксеносы. Рядом с базой'),
+        ]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -228,18 +260,51 @@ class Misson10(ingame_mission.IngameMission):
         context['stealth'] = self.stealth
         return context
 
+    def get_ingame_thorns(self):
+        return [
+            IngameThorn(
+                self,
+                system_class=S.xen,
+                template=GENERIC_TWO_POINT,
+                name='m10_hacking',
+                points={
+                    'camera': 'cam_isnide',
+                    'marker': 'xenos_control01',
+                },
+                duration=120,
+            ),
+        ]
+
     def get_static_points(self):
         defined_points = []
 
         xen_points = [
             'first_puff',
             'last_puff',
-
+            'point_control',
+            'prepare_point',
+            'assault_target',
+            'escape_point1',
+            'escape_point2',
+            'xenos_leave_musashi',
         ]
         for p in xen_points:
             defined_points.append(
                 Point(self, S.xen, p)
             )
+
+        defined_points.extend([
+            Solar(self, S.xen, 'xenos_control01_door', ru_name='Дверь', archetype='space_door_lock2_destroyable'),
+            Solar(self, S.xen, 'xenos_control_hack_layer_valid', ru_name='Взлом', archetype='m10_hacker_01_valid'),
+            Solar(self, S.xen, 'xenos_control_hack_layer_3', ru_name='Взлом', archetype='m10_hacker_01_layer_03'),
+            Solar(self, S.xen, 'xenos_control_hack_layer_2', ru_name='Взлом', archetype='m10_hacker_01_layer_02'),
+            Solar(self, S.xen, 'xenos_control_hack_layer_1', ru_name='Взлом', archetype='m10_hacker_01_layer_01'),
+
+            Solar(self, S.xen, 'xenos_launch_musashi', ru_name='Линкор Мусаси', base='xen_99_base',
+                  archetype='k_battleship'),
+            DockableBattleshipSolar(self, S.xen, 'xenos_leave_musashi', ru_name='Линкор Мусаси', base='om7_99_base',
+                  archetype='k_battleship'),
+        ])
 
         wplatforms_count = 6
         wplatforms = [f'xen_platform_{i:02d}' for i in range(1, wplatforms_count+1)]
@@ -253,8 +318,35 @@ class Misson10(ingame_mission.IngameMission):
 
     def get_nn_objectives(self):
         return [
-            NNObj(self, O.GOTO, name='first_puff', target='first_puff'),
-            NNObj(self, 'Доберитесь большого облака, минуя патрули', name='last_puff', target='last_puff'),
+            NNObj(self, O.LAUNCH, name='launch'),
+
+            NNObj(self, O.GOTO, name='first_puff', target='first_puff', nag=False),
+            NNObj(self, 'Доберитесь большого облака, минуя патрули',
+                  name='last_puff', target='last_puff', nag=False),
+            NNObj(self, O.GOTO, name='point_control', target='point_control'),
+
+            NNObj(self, 'Уничтожьте дверь', name='destroy_door', target='xenos_control01_door'),
+            NNObj(self, 'Взломайте панель управления', name='hack_the_system'),
+
+            NNObj(self, 'Доберитесь до места встречи с Дерси и звеном Локи',
+                  name='prepare_point', target='prepare_point'),
+            NNObj(self, 'Направляйтесь к базе Ксеносов',
+                  name='assault_target', target='assault_target'),
+
+            NNObj(self, 'Уничтожьте орудийные платформы', name='destroy_wplatforms'),
+
+            NNObj(self, 'Обеспечьте стыковку транспорта', name='defend_armored'),
+            NNObj(self, 'Ожидайте транспорт', name='wait_for_armored'),
+            NNObj(self, 'Обеспечьте защиту транспорта, пока он покидает зону битвы',
+                  name='wait_for_armored_left_out'),
+
+            NNObj(self, O.GOTO, name='escape_point1', target='escape_point1'),
+            NNObj(self, O.GOTO, name='escape_point2', target='escape_point2'),
+            NNObj(self, 'Сядьте на линкор Мусаси', name='dock_musashi', target='xenos_leave_musashi'),
+
+
+
+
         ]
 
     def get_ships(self):
@@ -426,12 +518,12 @@ class Misson10(ingame_mission.IngameMission):
                     'armor_wing'
                 ],
                 unique_npc_entry=True,
-                base_name='Сакура',
+                base_name='Один',
                 npc=NPC(
-                    faction=faction.KusariMain,
-                    ship=ship.Dragon,
-                    level=NPC.D6,
-                    equip_map=EqMap(base_level=6),
+                    faction=faction.OrderMain,
+                    ship=ship.Eagle,
+                    level=NPC.D10,
+                    equip_map=EqMap(base_level=5),
                 )
             ),
         ]

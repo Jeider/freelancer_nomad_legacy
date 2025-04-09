@@ -33,6 +33,7 @@ from universe.systems import rh_kgb as rh_kgb_content
 from universe.systems import or_hq_static as or_hq_content
 from universe.systems import or_hq as or_hq_content
 from universe.systems import rh_vien as rh_vien_content
+from universe.systems import xen as xen_content
 
 
 class rh_mnh(system.RheinlandFirst, system.System, system.SiriusSystem):
@@ -664,6 +665,7 @@ class xen(system.StorySystem, system.SiriusSystem):
     NAME = 'xen'
     DIRECT_TEMPLATE_NAME = 'xen_dev'
     RU_NAME = 'Ксеносы'
+    CONTENT = xen_content
 
     ALLOW_SYNC = True
 

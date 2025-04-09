@@ -294,15 +294,16 @@ class Hassler(Actor):
     NAME = 'hassler'
     COMM_APPEARANCE = 'rh_hassler_head, rh_male_elite_body, comm_rh_reichman'
     CUTSCENE_APPEARANCE = 'hassler'
-    STEOS_ID = 10029
+    STEOS_ID = 211
 
 
 class HasslerOrder(Actor):
     RU_NAME = 'Хасслер'
     TYPE = ACTOR_MALE
     NAME = 'hassler'
-    COMM_APPEARANCE = 'rh_hassler_head, rh_male_elite_body, comm_rh_reichman'
-    CUTSCENE_APPEARANCE = 'hassler_order'
+    COMM_APPEARANCE = 'rh_hassler_head, pi_orillion_body'
+    CUTSCENE_APPEARANCE = 'hassler'
+    STEOS_ID = 10071
 
 
 class Alaric(Actor):
@@ -398,10 +399,10 @@ class Chrysanthemum(Actor):
 
 class Tor(Actor):
     RU_NAME = 'Тор'
-    TYPE = ACTOR_FEMALE
+    TYPE = ACTOR_MALE
     NAME = 'tor'
-    # COMM_APPEARANCE = ''
-    STEOS_ID = 10071
+    COMM_APPEARANCE = 'ku_bartender_head_hat, ku_male_guard_body, comm_ku_kym'
+    STEOS_ID = 220
 
 
 class Reichman(Actor):

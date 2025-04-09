@@ -730,7 +730,7 @@ class Ship(Target):
             )
         return DIVIDER.join(msn_ships)
 
-    def spawn(self, objlist=NO_OL, pos=None):
+    def spawn(self, objlist=NO_OL, pos=None, no_mark=False):
         if self.relative_pos:
             raise Exception('Ship %s is configured as relative-pos' % self.name)
         if self.count > 1:
@@ -743,7 +743,8 @@ class Ship(Target):
         items = [spawn]
         if self.hero:
             items.append(self.invulnerable())
-            items.append(self.mark_all())
+            if no_mark is not True:
+                items.append(self.mark_all())
 
         return SINGLE_DIVIDER.join(items)
 
@@ -1365,9 +1366,9 @@ class Direct:
             actions.append(cap.mark())
         return SINGLE_DIVIDER.join(actions)
 
-    def spawn_ship(self, system_name, alias, ship: Ship, ol=NO_OL):
+    def spawn_ship(self, system_name, alias, ship: Ship, ol=NO_OL, no_mark=False):
         point = self.get_point(system_name, alias)
-        return ship.spawn(ol, pos=point.pos_orient)
+        return ship.spawn(ol, pos=point.pos_orient, no_mark=no_mark)
 
     def spawn_ship_member(self, system_name, alias, ship_member: ShipMember, ol=NO_OL):
         point = self.get_point(system_name, alias)

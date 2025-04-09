@@ -7,7 +7,9 @@
 <test_voice name="0x905D77C1" type="file" filename="echo_m10\dx_m10_0040_hassler.wav"/>
 <test_voice name="0xB85F63C1" type="file" filename="echo_m10\dx_m10_0060_hassler.wav"/>
 <test_voice name="0xAC5E69C1" type="file" filename="echo_m10\dx_m10_0070_hassler.wav"/>
-<test_voice name="0xAA5B0BC9" type="file" filename="echo_m10\dx_m10_0220_hassler.wav"/>
-<test_voice name="0xBE5A01C9" type="file" filename="echo_m10\dx_m10_0230_hassler.wav"/>
+<test_voice name="0x9E90E5CE" type="file" filename="echo_m10\dx_m10_0550_tor.wav"/>
+<test_voice name="0xA93E69C0" type="file" filename="echo_m10\dx_m10_0570_hassler.wav"/>
+<test_voice name="0x9140A246" type="file" filename="echo_m10\dx_m10_0600_tor.wav"/>
+<test_voice name="0x823C7DCC" type="file" filename="echo_m10\dx_m10_0650_hassler.wav"/>
 </UTF_ROOT>
 </UTFXML>
