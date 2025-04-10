@@ -1,4 +1,4 @@
-from fx.space import Dust
+from fx.space import Dust, JumpholeEffect
 from fx.sound import Ambience
 
 from managers.tools import query as Q
@@ -480,3 +480,12 @@ class TekagiMiningStationBrokenConn1(TekagiMember, main_objects.BrokenTradeConne
     SIDE_FROM = TOP
     SIDE_TO = BOTTOM
     TRADELANE_LETTER = 'F'
+
+
+class TekagiSiriusJumphole(TekagiMember, main_objects.Jumphole):
+    REL = TOP
+
+    TARGET_SYSTEM_NAME = 'sig42'
+    LOCKED_DOCK = True
+
+    LOADOUT = JumpholeEffect.LIGHT

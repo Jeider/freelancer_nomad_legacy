@@ -2,7 +2,7 @@ from managers.tools import query as Q
 from world.names import *
 from universe.content import meta
 
-from fx.space import Dust
+from fx.space import Dust, JumpholeEffect
 from fx.sound import Ambience
 
 from universe.content.member import Member
@@ -138,6 +138,11 @@ class Sig42AsteroidZone1(Sig42Member, zones.AsteroidZone):
 
 class Sig42AsteroidZone2(Sig42Member, zones.AsteroidZone):
     INDEX = 2
+    ASTEROID_DEFINITION_CLASS = Sig42AsteroidDefinition1
+
+
+class Sig42AsteroidZone3(Sig42Member, zones.AsteroidZone):
+    INDEX = 3
     ASTEROID_DEFINITION_CLASS = Sig42AsteroidDefinition1
 
 
@@ -459,3 +464,12 @@ class Sig42AsfJumpgate(Sig42Member, main_objects.JumpgateAlt):
     FORCE_INSPACE_NAME = 'jg_sirius_to_asf_hq'
     FORCE_TARGET_NAME = 'jg_asf_hq_to_sirius'
     LOCKED_DOCK = True
+
+
+class Sig42TekagiJumphole(Sig42Member, main_objects.Jumphole):
+    REL = TOP
+
+    TARGET_SYSTEM_NAME = 'ku_tgk'
+    LOCKED_DOCK = True
+
+    LOADOUT = JumpholeEffect.LIGHT
