@@ -29,6 +29,14 @@ BORDER_WORLD = 5
 
 BENCHMARK_MALE_HAND_RIGHT = 'benchmark_male_hand_right'
 BENCHMARK_MALE_HAND_LEFT = 'benchmark_male_hand_left'
+BR_MALE_GLOVE_RIGHT = 'br_male_glove_right'
+BR_MALE_GLOVE_LEFT = 'br_male_glove_left'
+RH_MALE_GLOVE_RIGHT = 'rh_male_glove_right'
+RH_MALE_GLOVE_LEFT = 'rh_male_glove_left'
+LI_MALE_GLOVE_RIGHT = 'li_male_glove_right'
+LI_MALE_GLOVE_LEFT = 'li_male_glove_left'
+YEL_MALE_GLOVE_RIGHT = 'yel_male_glove_right'
+YEL_MALE_GLOVE_LEFT = 'yel_male_glove_left'
 MALE_HAND_RIGHT_BLACK = 'male_hand_right_black'
 MALE_HAND_LEFT_BLACK = 'male_hand_left_black'
 ROBOT_HAND_RIGHT = 'robot_hand_right'
@@ -38,6 +46,14 @@ ROBOT_HAND_LEFTB = 'robot_hand_leftb'
 
 BENCHMARK_FEMALE_HAND_RIGHT = 'benchmark_female_hand_right'
 BENCHMARK_FEMALE_HAND_LEFT = 'benchmark_female_hand_left'
+BR_FEMALE_GLOVE_RIGHT = 'br_female_glove_right'
+BR_FEMALE_GLOVE_LEFT = 'br_female_glove_left'
+RH_FEMALE_GLOVE_RIGHT = 'rh_female_glove_right'
+RH_FEMALE_GLOVE_LEFT = 'rh_female_glove_left'
+LI_FEMALE_GLOVE_RIGHT = 'li_female_glove_right'
+LI_FEMALE_GLOVE_LEFT = 'li_female_glove_left'
+YEL_FEMALE_GLOVE_RIGHT = 'yel_female_glove_right'
+YEL_FEMALE_GLOVE_LEFT = 'yel_female_glove_left'
 FEMALE_HAND_RIGHT_BLACK = 'female_hand_right_black'
 FEMALE_HAND_LEFT_BLACK = 'female_hand_left_black'
 
@@ -249,12 +265,26 @@ class Body:
     def get_usage(self):
         raise NotImplementedError
 
+    def have_hands(self):
+        raise NotImplementedError
+
+    def get_hands(self):
+        raise NotImplementedError
+
+    def get_left_hand(self):
+        raise NotImplementedError
+
+    def get_right_hand(self):
+        raise NotImplementedError
+
 
 class MaleBody:
 
-    def __init__(self, name, usage):
+    def __init__(self, name, usage, left_hand=None, right_hand=None):
         self.name = name
         self.usage = usage
+        self.left_hand = left_hand
+        self.right_hand = right_hand
 
     def get_name(self):
         return self.name
@@ -262,14 +292,28 @@ class MaleBody:
     def get_usage(self):
         return self.usage
 
+    def have_hands(self):
+        return self.left_hand and self.right_hand
+
+    def get_hands(self):
+        return self.get_left_hand(), self.get_right_hand()
+
+    def get_left_hand(self):
+        return self.left_hand
+
+    def get_right_hand(self):
+        return self.right_hand
+
 
 class FemaleBody:
 
-    def __init__(self, name, usage, bust=False, white_important=False):
+    def __init__(self, name, usage, bust=False, white_important=False, left_hand=None, right_hand=None):
         self.name = name
         self.usage = usage
         self.bust = bust
         self.white_important = white_important
+        self.left_hand = left_hand
+        self.right_hand = right_hand
 
     def get_name(self):
         return self.name
@@ -282,6 +326,18 @@ class FemaleBody:
 
     def white_is_important(self):
         return self.white_important
+
+    def have_hands(self):
+        return self.left_hand and self.right_hand
+
+    def get_hands(self):
+        return self.get_left_hand(), self.get_right_hand()
+
+    def get_left_hand(self):
+        return self.left_hand
+
+    def get_right_hand(self):
+        return self.right_hand
 
 
 class PartsStore:
@@ -346,18 +402,18 @@ class LibertyBodyStore(PartsStore):
     MALE = [
         MaleBody('li_bartender_body', BARTENDER),
         MaleBody('li_commtrader_body', TRADER),
-        MaleBody('li_male_guard_body', GUARD),
-        MaleBody('li_male_elite_body', ELITE),
+        MaleBody('li_male_guard_body', GUARD, left_hand=YEL_MALE_GLOVE_LEFT, right_hand=YEL_MALE_GLOVE_RIGHT),
+        MaleBody('li_male_elite_body', ELITE, left_hand=LI_MALE_GLOVE_LEFT, right_hand=LI_MALE_GLOVE_RIGHT),
         MaleBody('li_manhattan_bartender_body', FAT),
-        MaleBody('li_scrote_body', GENERAL),
+        MaleBody('li_scrote_body', GENERAL, left_hand=LI_MALE_GLOVE_LEFT, right_hand=LI_MALE_GLOVE_RIGHT),
         MaleBody('li_shipdealer_body', TRADER),
-        MaleBody('li_tilton_body_alt', GENERAL),
+        MaleBody('li_tilton_body_alt', GENERAL, left_hand=YEL_MALE_GLOVE_LEFT, right_hand=YEL_MALE_GLOVE_RIGHT),
         MaleBody('li_rockford_body', TRADER),
     ]
     FEMALE = [
-        FemaleBody('li_female_elite_body', ELITE),
-        FemaleBody('li_female_guard_body', GUARD),
-        FemaleBody('li_hatcher_body', GENERAL),
+        FemaleBody('li_female_elite_body', ELITE, left_hand=LI_FEMALE_GLOVE_LEFT, right_hand=LI_FEMALE_GLOVE_RIGHT),
+        FemaleBody('li_female_guard_body', GUARD, left_hand=YEL_FEMALE_GLOVE_LEFT, right_hand=YEL_FEMALE_GLOVE_RIGHT),
+        FemaleBody('li_hatcher_body', GENERAL, left_hand=LI_FEMALE_GLOVE_LEFT, right_hand=LI_FEMALE_GLOVE_RIGHT),
         FemaleBody('br_karina_body', TRADER),
     ]
 
@@ -383,17 +439,17 @@ class BretoniaBodyStore(PartsStore):
         MaleBody('br_bartender_body', BARTENDER),
         MaleBody('br_brighton_body', GENERAL),
         MaleBody('br_commtrader_body', TRADER),
-        MaleBody('br_male_elite_body', ELITE),
-        MaleBody('br_male_guard_body', GUARD),
+        MaleBody('br_male_elite_body', ELITE, left_hand=BR_MALE_GLOVE_LEFT, right_hand=BR_MALE_GLOVE_RIGHT),
+        MaleBody('br_male_guard_body', GUARD, left_hand=BR_MALE_GLOVE_LEFT, right_hand=BR_MALE_GLOVE_RIGHT),
         MaleBody('br_quigly_body', TRADER),
         MaleBody('br_shipdealer_body', TRADER),
         MaleBody('br_tobias_body', FAT),
         MaleBody('li_rockford_body', TRADER),
     ]
     FEMALE = [
-        FemaleBody('br_darcy_body', GENERAL),
-        FemaleBody('br_female_elite_body', ELITE),
-        FemaleBody('br_female_guard_body', GUARD),
+        FemaleBody('br_darcy_body', GENERAL, left_hand=BR_FEMALE_GLOVE_LEFT, right_hand=BR_FEMALE_GLOVE_RIGHT),
+        FemaleBody('br_female_elite_body', ELITE, left_hand=BR_FEMALE_GLOVE_LEFT, right_hand=BR_FEMALE_GLOVE_RIGHT),
+        FemaleBody('br_female_guard_body', GUARD, left_hand=BR_FEMALE_GLOVE_LEFT, right_hand=BR_FEMALE_GLOVE_RIGHT),
         FemaleBody('br_kaitlyn_body', TRADER),
         FemaleBody('br_karina_body', TRADER),
     ]
@@ -452,7 +508,7 @@ class RheinlandBodyStore(PartsStore):
         MaleBody('rh_bartender_body', BARTENDER),
         MaleBody('rh_commtrader_body', TRADER),
         MaleBody('rh_deidrich_body', GENERAL),
-        MaleBody('rh_male_elite_body', ELITE),
+        MaleBody('rh_male_elite_body', ELITE, left_hand=RH_MALE_GLOVE_LEFT, right_hand=RH_MALE_GLOVE_RIGHT),
         MaleBody('rh_male_guard_body', GUARD),
         MaleBody('rh_reichman_body', GENERAL),
         MaleBody('rh_shipdealer_body', TRADER),
@@ -460,7 +516,7 @@ class RheinlandBodyStore(PartsStore):
         MaleBody('li_rockford_body', TRADER),
     ]
     FEMALE = [
-        FemaleBody('rh_female_elite_body', ELITE),
+        FemaleBody('rh_female_elite_body', ELITE, left_hand=RH_FEMALE_GLOVE_LEFT, right_hand=RH_FEMALE_GLOVE_RIGHT),
         FemaleBody('rh_female_guard_body', GUARD),
         FemaleBody('rh_greunwald_body', GENERAL, bust=True),
         FemaleBody('br_karina_body', TRADER),
@@ -824,7 +880,7 @@ class Costume:
     def __init__(self, body, head, is_male=True, accessory=None):
         self.body = body
         self.head = head
-        self.left_hand, self.right_hand = head.get_hands()
+        self.left_hand, self.right_hand = body.get_hands() if body.have_hands() else head.get_hands()
         self.is_male = is_male
         self.accessory = accessory
 
