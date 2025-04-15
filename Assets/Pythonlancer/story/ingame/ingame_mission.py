@@ -123,7 +123,7 @@ class IngameMission(object):
         return []
 
     def get_ships_with_npc(self):
-        return [ship for ship in self.get_ships() if ship.npc is not None]
+        return [ship for ship in self.get_ships() if ship.have_npc()]
 
     def get_ships_for_context(self):
         return {ship.name: ship for ship in self.get_ships()}

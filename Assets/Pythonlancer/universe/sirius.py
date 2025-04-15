@@ -671,3 +671,14 @@ class xen(system.StorySystem, system.SiriusSystem):
 
     SYSTEM_FOLDER = 'XENOS'
     NAVMAP_POS = '14.5, -1.1'
+
+
+class beast01(system.StorySystem, system.SiriusSystem):
+    NAME = 'beast01'
+    DIRECT_TEMPLATE_NAME = 'beast01_dev'
+    RU_NAME = 'Биг Босс 1'
+
+    ALLOW_SYNC = True
+
+    SYSTEM_FOLDER = 'BEAST01'
+    NAVMAP_POS = '14.5, -1.1'

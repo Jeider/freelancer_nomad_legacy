@@ -565,7 +565,7 @@ class RelPos:
 
 
 class Ship(Target):
-    def __init__(self, mission, name, count=1, hero=False, npc=None, actor=None,
+    def __init__(self, mission, name, count=1, hero=False, npc=None, static_npc_shiparch=None, actor=None,
                  affiliation=None, jumper=False, labels=None, arrival_obj=None,
                  rel_pos=None, relative_pos=False, relative_target='Player', relative_range=1000,
                  radius=None, system_class=None, base_name=None, unique_npc_entry=False,
@@ -581,6 +581,7 @@ class Ship(Target):
         self.count = count
         self.hero = hero
         self.npc = npc
+        self.static_npc_shiparch = static_npc_shiparch
         self.jumper = jumper
         self.affiliation = affiliation or DEFAULT_AFFILIATION
         self.rel_pos = rel_pos
@@ -600,6 +601,9 @@ class Ship(Target):
         self.slide_y = slide_y
         self.slide_z = slide_z
         self.respawn_defined = False
+
+    def have_npc(self):
+        return self.npc or self.static_npc_shiparch
 
     def get_name(self):
         return self.name
@@ -652,10 +656,14 @@ class Ship(Target):
         return f'{self.mission.FILE}_{self.name}'
 
     def get_mission_npc(self, index=1):
+        npc_name = self.get_mission_npc_name(index)
+        npc_shiparch = self.get_npc_shiparch_name() if self.npc else self.static_npc_shiparch
+        if not npc_shiparch:
+            raise Exception(f'npc {npc_name} have no npc shiparch')
         items = [
             '[NPC]',
-            f'nickname = {self.get_mission_npc_name(index)}',
-            f'npc_ship_arch = {self.get_npc_shiparch_name()}',
+            f'nickname = {npc_name}',
+            f'npc_ship_arch = {npc_shiparch}',
             f'affiliation = {self.affiliation}',
         ]
         if self.actor:
@@ -701,7 +709,7 @@ class Ship(Target):
             items.append(f'rel_pos = {self.rel_pos.get_ini()}')
         if self.relative_pos:
             items.append(f'rel_pos = {self.get_next_deg(index)}, {self.relative_target}, {self.relative_range}')
-        if self.radius:
+        if self.radius is not None:
             items.append(f'radius = {self.radius}')
         for label in self.labels:
             items.append(f'label = {label}')

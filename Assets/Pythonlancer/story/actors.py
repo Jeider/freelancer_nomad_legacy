@@ -365,6 +365,15 @@ class Kim(Actor):
     STEOS_ID = 287
 
 
+class Matome(Actor):
+    RU_NAME = 'Ким'
+    TYPE = ACTOR_MALE
+    NAME = 'kim'
+    COMM_APPEARANCE = 'ku_sales_head, ku_male_guard_body, comm_ku_guard'
+    CUTSCENE_APPEARANCE = 'kim'
+    STEOS_ID = 287
+
+
 class SakuraOne(Actor):
     RU_NAME = 'Сакура 1'
     TYPE = ACTOR_MALE

@@ -106,30 +106,30 @@ entities={
 	},
 	
 
-	-- {
-		-- entity_name="the_stars",
-		-- type=COMPOUND,
-		-- template_name="edge_exclusion",
-		-- lt_grp=5,
-		-- srt_grp=0,
-		-- usr_flg=0,
-		-- flags=LIT_DYNAMIC,
-		-- spatialprops={
-			-- pos={
-				-- 0,
-				-- 0,
-				-- 0
-			-- },
-			-- orient={
-				-- {1,0,0},
-				-- {0,1,0},
-				-- {0,0,1}
-			-- }
-		-- },
-		-- userprops={
-			-- category="Prop"
-		-- }
-	-- },
+	{
+		entity_name="the_stars",
+		type=COMPOUND,
+		template_name="edge_exclusion",
+		lt_grp=5,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC,
+		spatialprops={
+			pos={
+				0,
+				0,
+				0
+			},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		userprops={
+			category="Prop"
+		}
+	},
 	{
 		entity_name="ship_l_elite_Juni",
 		type=COMPOUND,
@@ -194,8 +194,9 @@ entities={
 		spatialprops={
 			pos={
 				-- 0.3, 1.65, -2
-				0.3, 0.7, -2
+				-- 0.3, 0.7, -2
 				-- -1.7, 1.25, -4
+				1, 1, 1
 			},
 			orient={
 				{0,0,1},
@@ -205,7 +206,7 @@ entities={
 			}
 		},
 		cameraprops={
-			fovh=18,
+			fovh=25,
 			hvaspect=1,
 			nearplane=0.2,
 			farplane=5000
@@ -220,7 +221,8 @@ entities={
 		spatialprops={
 			pos={
 				-- 0, 1.05, 0
-				0, 1.4, 0
+				-- 0, 1.4, 0
+				0, 0, 0
 			},
 			orient={
 				{1,0,0},
@@ -251,7 +253,7 @@ entities={
 	{
 		entity_name="Char_trent",
 		type=DEFORMABLE,
-		template_name="deidrich",
+		template_name="worm",
 		lt_grp=0,
 		srt_grp=0,
 		usr_flg=0,
@@ -342,23 +344,23 @@ events = {
 		-- }
 	-- },
 	
-	{
-		0,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"Char_trent"
-		},
-		{
-			duration=0,
-			target_type=ROOT,
-			spatialprops={
-				axisrot={
-					20,
-					Y_AXIS
-				}
-			}
-		}
-	},
+	-- {
+		-- 0,
+		-- START_SPATIAL_PROP_ANIM,
+		-- {
+			-- "Char_trent"
+		-- },
+		-- {
+			-- duration=0,
+			-- target_type=ROOT,
+			-- spatialprops={
+				-- axisrot={
+					-- 20,
+					-- Y_AXIS
+				-- }
+			-- }
+		-- }
+	-- },
 	
 	-- {
 		-- 0,
@@ -379,13 +381,13 @@ events = {
 	-- },
 
 
-	{
-		0,
-		START_MOTION,
-		{"Char_trent"},
-		{animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
-		 duration=15, time_scale=1, weight=1, heading=-1}
-	},
+	-- {
+		-- 0,
+		-- START_MOTION,
+		-- {"Char_trent"},
+		-- {animation="Sc_Sc_s069x_worm_A",
+		 -- duration=15, time_scale=1, weight=1, heading=-1}
+	-- },
 	-- {
 		-- 0,
 		-- START_MOTION,
