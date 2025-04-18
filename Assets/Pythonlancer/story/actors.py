@@ -375,7 +375,7 @@ class Matome(Actor):
 
 
 class SakuraOne(Actor):
-    RU_NAME = 'Сакура 1'
+    RU_NAME = 'Сакура'
     TYPE = ACTOR_MALE
     NAME = 'kim'
     # COMM_APPEARANCE = '
@@ -383,7 +383,7 @@ class SakuraOne(Actor):
 
 
 class SakuraTwo(Actor):
-    RU_NAME = 'Сакура 2'
+    RU_NAME = 'Янаги'
     TYPE = ACTOR_MALE
     NAME = 'sakura2'
     # COMM_APPEARANCE = ''
@@ -391,7 +391,7 @@ class SakuraTwo(Actor):
 
 
 class SakuraThree(Actor):
-    RU_NAME = 'Сакура 3'
+    RU_NAME = 'Сузуки'
     TYPE = ACTOR_MALE
     NAME = 'sakura3'
     # COMM_APPEARANCE = ''
@@ -400,6 +400,30 @@ class SakuraThree(Actor):
 
 class Chrysanthemum(Actor):
     RU_NAME = 'Хризантема'
+    TYPE = ACTOR_MALE
+    NAME = 'chrys'
+    # COMM_APPEARANCE = ''
+    STEOS_ID = 10071
+
+
+class ChrysanthemumTrain(Actor):
+    RU_NAME = 'Хризантема'
+    TYPE = ACTOR_MALE
+    NAME = 'chrys'
+    # COMM_APPEARANCE = ''
+    STEOS_ID = 10071
+
+
+class ChrysanthemumLifter(Actor):
+    RU_NAME = 'Погрузчик Хризантемы'
+    TYPE = ACTOR_MALE
+    NAME = 'chrys'
+    # COMM_APPEARANCE = ''
+    STEOS_ID = 10071
+
+
+class ChrysanthemumRepair(Actor):
+    RU_NAME = 'Монтировщик Хризантемы'
     TYPE = ACTOR_MALE
     NAME = 'chrys'
     # COMM_APPEARANCE = ''

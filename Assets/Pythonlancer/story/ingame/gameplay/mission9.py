@@ -26,6 +26,52 @@ pilot = cruiser_antisolar
 state_graph = CRUISER
 npc_class = lawful, CRUISER, d5
 
+[NPCShipArch]
+nickname = ms9_br_destroyer_basic
+loadout = br_grp_destroyer
+level = d19
+ship_archetype = br_destroyer
+pilot = cruiser_default
+state_graph = CRUISER
+npc_class = lawful, class_cruiser
+
+[NPCShipArch]
+nickname = ms9_br_gunboat
+loadout = br_grp_gunboat
+level = d19
+ship_archetype = br_gunboat
+pilot = gunboat_default
+state_graph = GUNBOAT
+npc_class = lawful, class_gunboat
+
+[NPCShipArch]
+nickname = m09_train
+loadout = m09_train
+level = d10
+ship_archetype = ge_super_large_train
+pilot = MSN01a_Large_Transport
+state_graph = TRANSPORT
+npc_class = lawful, transport_large
+
+[NPCShipArch]
+nickname = m09_repair
+level = d10
+ship_archetype = ge_repair
+loadout = co_ge_repair_loadout01
+pilot = MSN01a_Large_Transport
+state_graph = TRANSPORT
+npc_class = lawful, TRANSPORT 
+
+[NPCShipArch]
+nickname = m09_lifter
+level = d10
+ship_archetype = ge_lifter
+loadout = co_ge_lifter_loadout01
+ship_archetype = ge_lifter
+pilot = MSN01a_Large_Transport
+state_graph = TRANSPORT
+npc_class = lawful, TRANSPORT
+
 '''
 
 BDR_NAMES = [
@@ -48,8 +94,9 @@ class Misson09(ingame_mission.IngameMission):
     FOLDER = 'M09'
     FILE = 'm09'
     SCRIPT_INDEX = 9
-    DIRECT_SYSTEMS = [S.sig42]
+    DIRECT_SYSTEMS = [S.ku_tgk, S.sig42]
     STATIC_NPCSHIPS = NPCSHIPS
+    RTC = ['yokohama', 'order', 'final']
 
     def get_static_points(self):
         defined_points = []
@@ -57,6 +104,9 @@ class Misson09(ingame_mission.IngameMission):
         # SIRIUS
 
         sig42_points = [
+            'to_train',
+            'ship_patrol',
+            'gunboat_patrol',
 
         ]
         for p in sig42_points:
@@ -65,13 +115,12 @@ class Misson09(ingame_mission.IngameMission):
             )
 
         sig42_solars = [
-            'com_sat',
-            'com_sat_shield',
-            'check1',
+            ('com_sat', 'Хризантема'),
+            ('check1', 'Датчик'),
         ]
-        for sol in sig42_solars:
+        for sol, ru_name in sig42_solars:
             defined_points.append(
-                Solar(self, S.sig42, sol, ru_name='Объект'),
+                Solar(self, S.sig42, sol, ru_name=ru_name, labels=['friend']),
             )
 
         return defined_points
@@ -82,40 +131,76 @@ class Misson09(ingame_mission.IngameMission):
             'faction': 'asf_grp',
             'labels': ['enemy', 'br_destroyer', 'torpedo_attack'],
         }
+        bdr_basic = {
+            'npc_ship_arch': 'ms9_br_destroyer_basic',
+            'faction': 'asf_grp',
+            'labels': ['enemy', 'br_destroyer', 'asf'],
+        }
+        br_gunboat = {
+            'npc_ship_arch': 'ms9_br_gunboat',
+            'faction': 'asf_grp',
+            'labels': ['enemy', 'br_gunboat', 'asf', 'bgb'],
+        }
 
         caps = []
+        torp_per_letter = 3
+        torp_letters = ['a', 'b', 'c', 'd', 'e', 'f']
         torp_caps = []
+        bgb_caps = []
 
-        torp_caps_len = 12
+        gunboats_len = 3
 
-        for index in range(1, torp_caps_len+1):
-            cap = f'bdr{index:02d}'
-            the_cap = Capital(cap, ru_name=N.BR_DESTROYER, **bdr_torpedo)
-            caps.append(the_cap)
-            torp_caps.append(the_cap)
+        for letter in torp_letters:
+            for index in range(1, torp_per_letter+1):
+                cap = f'bdr_{letter}{index}'
+                the_cap = Capital(self, cap, ru_name=N.BR_DESTROYER, **bdr_torpedo)
+                caps.append(the_cap)
+                torp_caps.append(the_cap)
 
         self.add_capital_group('BDR_TORP', torp_caps)
+
+        for index in range(1, gunboats_len+1):
+            cap = f'bgb{index}'
+            the_cap = Capital(self, cap, ru_name=N.BR_GUNBOAT, **br_gunboat)
+            caps.append(the_cap)
+            bgb_caps.append(the_cap)
+
+        self.add_capital_group('BGB', bgb_caps)
 
         return caps
 
     def get_real_objects(self):
         return {
-            'ku_tgk_tlr_1': Conn(self, ku_tgk.TekagiFreeportConn2, ku_tgk.TekagiLargeStation),
-            'ku_tgk_tlr_2': Conn(self, ku_tgk.TekagiFreeportConn1, ku_tgk.TekagiFreeport),
-            'to_sig42': Obj(self, ku_tgk.TekagiSiriusJumphole),
+            'tgk_tlr_1': Conn(self, ku_tgk.TekagiFreeportConn2, ku_tgk.TekagiLargeStation),
+            'tgk_tlr_2': Conn(self, ku_tgk.TekagiFreeportConn1, ku_tgk.TekagiFreeport),
+            'to_sirius': Obj(self, ku_tgk.TekagiSiriusJumphole),
         }
 
     def get_nn_objectives(self):
         return [
             NNObj(self, O.LAUNCH, name='launch'),
 
-            NNObj(self, O.TLR, target='om7_tlr_1'),
-            NNObj(self, 'Сядьте на Харадзюку', target='harajuku'),
+            NNObj(self, O.TLR, target='tgk_tlr_1'),
+            NNObj(self, O.TLR, target='tgk_tlr_2'),
 
-            NNObj(self, O.CHASE_ROCKFORD, name='rockford_chase1', target='rockford_chase1'),
-            NNObj(self, O.CHASE_ROCKFORD, name='rockford_chase2', target='rockford_chase2'),
-            NNObj(self, O.CHASE_ROCKFORD, name='rockford_chase3', target='rockford_chase3'),
-            NNObj(self, O.CHASE_ROCKFORD, name='rockford_chase4', target='rockford_chase4'),
+            NNObj(self, O.GOTO_JUMPHOLE, name='goto_sirius', target='to_sirius', towards=True),
+            NNObj(self, O.JUMPHOLE, name='jump_sirius', target='to_sirius', towards=True),
+
+            NNObj(self, O.GOTO, target='to_train'),
+
+            NNObj(self, 'Войдите формацию с поездом', name='train_formation'),
+            NNObj(self, 'Следуйте за поездом', name='train_follow'),
+
+            NNObj(self, 'Доберитесь до датчика', name='to_check', target='check1', towards=True),
+
+            NNObj(self, 'Ожидайте указаний', name='stay_for_check'),
+            NNObj(self, 'Находитесь как можно ближе к датчику', name='stay_near_check_close'),
+
+            NNObj(self, 'Перехватите вражеский патруль', target='ship_patrol'),
+            NNObj(self, 'Уничтожьте вражеский патруль', name='destroy_ship_patrol'),
+
+            NNObj(self, 'Перехватите канонерки СБА', target='gunboat_patrol'),
+            NNObj(self, 'Уничтожьте корабли СБА', name='destroy_gunboat_patrol'),
         ]
 
     def get_ships(self):
@@ -123,8 +208,8 @@ class Misson09(ingame_mission.IngameMission):
             Ship(
                 self,
                 'kim',
-                jumper=True,
                 hero=True,
+                jumper=True,
                 actor=actors.Kim,
                 labels=[
                     'friend',
@@ -134,24 +219,234 @@ class Misson09(ingame_mission.IngameMission):
                     faction=faction.OrderMain,
                     ship=ship.Dragon,
                     level=NPC.D10,
+                    equip_map=EqMap(base_level=5),
+                )
+            ),
+            Ship(
+                self,
+                'matome',
+                hero=True,
+                jumper=True,
+                actor=actors.Matome,
+                labels=[
+                    'friend',
+                    'order',
+                ],
+                npc=NPC(
+                    faction=faction.OrderMain,
+                    ship=ship.Dron,
+                    level=NPC.D10,
+                    equip_map=EqMap(base_level=5),
+                )
+            ),
+            Ship(
+                self,
+                'darcy',
+                hero=True,
+                jumper=True,
+                actor=actors.Darcy,
+                labels=[
+                    'friend',
+                    'order',
+                ],
+                npc=NPC(
+                    faction=faction.BretoniaMain,
+                    ship=ship.Crusader,
+                    level=NPC.D10,
+                    equip_map=EqMap(base_level=5),
+                )
+            ),
+            Ship(
+                self,
+                'train',
+                hero=True,
+                jumper=False,
+                affiliation=faction.OrderMain.CODE,
+                actor=actors.ChrysanthemumTrain,
+                radius=0,
+                labels=[
+                    'friend',
+                    'order',
+                ],
+                static_npc_shiparch='m09_train'
+            ),
+            Ship(
+                self,
+                'lifter',
+                hero=True,
+                jumper=False,
+                affiliation=faction.OrderMain.CODE,
+                actor=actors.ChrysanthemumLifter,
+                radius=0,
+                labels=[
+                    'friend',
+                    'order',
+                ],
+                static_npc_shiparch='m09_lifter'
+            ),
+            Ship(
+                self,
+                'repair',
+                hero=True,
+                jumper=False,
+                affiliation=faction.OrderMain.CODE,
+                actor=actors.ChrysanthemumRepair,
+                radius=0,
+                labels=[
+                    'friend',
+                    'order',
+                ],
+                static_npc_shiparch='m09_repair'
+            ),
+            Ship(
+                self,
+                'sakura',
+                count=5,
+                system_class=S.sig42,
+                labels=[
+                    'friend',
+                    'order',
+                ],
+                slide_x=100,
+                unique_npc_entry=True,
+                base_name='Сакура',
+                npc=NPC(
+                    faction=faction.KusariMain,
+                    ship=ship.Drake,
+                    level=NPC.D6,
                     equip_map=EqMap(base_level=6),
                 )
             ),
             Ship(
                 self,
-                'kim',
-                jumper=True,
-                hero=True,
-                actor=actors.Kim,
+                'yanagi',
+                count=5,
+                system_class=S.sig42,
                 labels=[
                     'friend',
                     'order',
                 ],
+                slide_x=100,
+                unique_npc_entry=True,
+                base_name='Сакура',
                 npc=NPC(
-                    faction=faction.OrderMain,
+                    faction=faction.KusariMain,
                     ship=ship.Dragon,
-                    level=NPC.D10,
+                    level=NPC.D6,
                     equip_map=EqMap(base_level=6),
+                )
+            ),
+            Ship(
+                self,
+                'suzuki',
+                count=5,
+                system_class=S.sig42,
+                labels=[
+                    'friend',
+                    'order',
+                ],
+                radius=0,
+                slide_x=100,
+                unique_npc_entry=True,
+                base_name='Сакура',
+                npc=NPC(
+                    faction=faction.KusariMain,
+                    ship=ship.Dragon,
+                    level=NPC.D6,
+                    equip_map=EqMap(base_level=6),
+                )
+            ),
+            Ship(
+                self,
+                'patroller_a',
+                count=4,
+                system_class=S.sig42,
+                labels=[
+                    'enemy',
+                    'asf',
+                    'ship_patroller',
+                ],
+                slide_z=100,
+                npc=NPC(
+                    faction=faction.BretoniaMain,
+                    ship=ship.Cavalier,
+                    level=NPC.D5,
+                    equip_map=EqMap(base_level=5),
+                )
+            ),
+            Ship(
+                self,
+                'patroller_b',
+                count=4,
+                system_class=S.sig42,
+                labels=[
+                    'enemy',
+                    'asf',
+                    'ship_patroller',
+                ],
+                slide_z=100,
+                npc=NPC(
+                    faction=faction.LibertyMain,
+                    ship=ship.Patriot,
+                    level=NPC.D5,
+                    equip_map=EqMap(base_level=5),
+                )
+            ),
+            Ship(
+                self,
+                'bgb_support_a',
+                count=5,
+                system_class=S.sig42,
+                labels=[
+                    'enemy',
+                    'asf',
+                    'bgb_support',
+                    'bgb',
+                ],
+                slide_z=100,
+                npc=NPC(
+                    faction=faction.BretoniaMain,
+                    ship=ship.Crusader,
+                    level=NPC.D5,
+                    equip_map=EqMap(base_level=5),
+                )
+            ),
+            Ship(
+                self,
+                'bgb_support_b',
+                count=5,
+                system_class=S.sig42,
+                labels=[
+                    'enemy',
+                    'asf',
+                    'bgb_support',
+                    'bgb',
+                ],
+                slide_x=100,
+                npc=NPC(
+                    faction=faction.BretoniaMain,
+                    ship=ship.Cavalier,
+                    level=NPC.D5,
+                    equip_map=EqMap(base_level=5),
+                )
+            ),
+            Ship(
+                self,
+                'bdr_support_a',
+                count=5,
+                system_class=S.sig42,
+                labels=[
+                    'enemy',
+                    'asf',
+                    'bdr_support',
+                    'bdr',
+                ],
+                slide_z=100,
+                npc=NPC(
+                    faction=faction.BretoniaMain,
+                    ship=ship.Crusader,
+                    level=NPC.D5,
+                    equip_map=EqMap(base_level=5),
                 )
             ),
         ]

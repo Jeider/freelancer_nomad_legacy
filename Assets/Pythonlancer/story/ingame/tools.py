@@ -194,11 +194,11 @@ class Target:
     def turn_nag(self, nag_name, towards=False):
         return False
 
-    def goto_vec(self, mode=GOTO, near=100):
+    def goto_vec(self, mode=GOTO, near=100, power=None):
         if mode not in GOTO_MODES:
             raise Exception('Unknown goto mode %s in point' % mode)
         pos = self.get_position()
-        return f'GotoVec = {mode}, {pos[0]}, {pos[1]}, {pos[2]}, {near}, true'
+        return f'GotoVec = {mode}, {pos[0]}, {pos[1]}, {pos[2]}, {near}, true {f", {power}" if power else ""}'
 
     def goto_obj(self, mode=GOTO, near=100):
         if mode not in GOTO_MODES:
@@ -1058,6 +1058,7 @@ class NNObj:
         return SINGLE_DIVIDER.join(actions)
 
     def set_as_path(self):
+        """for template"""
         if not self.target or self.target_point.__class__ != Obj:
             raise Exception('Cant use path for nn without Obj target for %s' % self.name)
         path_params = [
@@ -1068,6 +1069,13 @@ class NNObj:
         ]
         params_line = ", ".join(path_params)
         return f'Act_NNPath = {params_line}'
+
+    def hide(self):
+        """for template"""
+        actions = [
+            f'Act_SetNNHidden = {self.get_name()}, true'
+        ]
+        return SINGLE_DIVIDER.join(actions)
 
 
 class Script:
@@ -1315,7 +1323,8 @@ class Direct:
             self.get_point(system_name, alias).inside_pos(range, obj)
         ])
 
-    def ol_goto(self, system_name, alias, ol_name, goto, near: int = 100, avoidance: bool | None=None):
+    def ol_goto(self, system_name, alias, ol_name, goto, near: int = 100, power: int | None = None,
+                avoidance: bool | None = None):
         point = self.get_point(system_name, alias)
         objlist = [
             '[ObjList]',
@@ -1323,7 +1332,7 @@ class Direct:
         ]
         if avoidance:
             objlist.append(f'avoidance = {ini_boolean(avoidance)}')
-        objlist.append(point.goto_vec(goto, near))
+        objlist.append(point.goto_vec(goto, near, power))
         return SINGLE_DIVIDER.join(objlist)
 
     def spawn_capital(self, system_name, capital: Capital, point=None, ol=None,
