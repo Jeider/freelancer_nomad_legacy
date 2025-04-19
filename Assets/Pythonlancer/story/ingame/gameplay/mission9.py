@@ -8,7 +8,7 @@ from story import actors
 
 from story.ingame import names as N
 from story.ingame import objectives as O
-from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Solar, Capital
+from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Solar, Capital, DockableBattleshipSolar
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
 from world.npc import NPC, EqMap
@@ -43,6 +43,24 @@ ship_archetype = br_gunboat
 pilot = gunboat_default
 state_graph = GUNBOAT
 npc_class = lawful, class_gunboat
+
+[NPCShipArch]
+nickname = ms9_li_dread
+loadout = li_dreadnought_01
+level = d10
+ship_archetype = li_dreadnought
+pilot = cruiser_default
+state_graph = CRUISER
+npc_class = lawful, CRUISER, d5
+
+[NPCShipArch]
+nickname = ms9_br_battleship
+loadout = br_grp_battleship
+level = d10
+ship_archetype = br_battleship
+pilot = cruiser_default
+state_graph = CRUISER
+npc_class = lawful, CRUISER, d5
 
 [NPCShipArch]
 nickname = m09_train
@@ -107,7 +125,8 @@ class Misson09(ingame_mission.IngameMission):
             'to_train',
             'ship_patrol',
             'gunboat_patrol',
-
+            'destroyer_patrol',
+            'randevoue',
         ]
         for p in sig42_points:
             defined_points.append(
@@ -122,6 +141,11 @@ class Misson09(ingame_mission.IngameMission):
             defined_points.append(
                 Solar(self, S.sig42, sol, ru_name=ru_name, labels=['friend']),
             )
+
+        defined_points.extend([
+            DockableBattleshipSolar(self, S.sig42, 'torp_musashi', ru_name='Линкор Мусаси', base='xen_99_base',
+                archetype='k_battleship', labels=['friend']),
+        ])
 
         return defined_points
 
@@ -141,12 +165,31 @@ class Misson09(ingame_mission.IngameMission):
             'faction': 'asf_grp',
             'labels': ['enemy', 'br_gunboat', 'asf', 'bgb'],
         }
+        li_dread = {
+            'npc_ship_arch': 'ms9_li_dread',
+            'faction': 'asf_grp',
+            'labels': ['enemy', 'asf'],
+        }
+        br_bship = {
+            'npc_ship_arch': 'ms9_br_battleship',
+            'faction': 'asf_grp',
+            'labels': ['enemy', 'asf'],
+        }
 
         caps = []
         torp_per_letter = 3
         torp_letters = ['a', 'b', 'c', 'd', 'e', 'f']
         torp_caps = []
         bgb_caps = []
+        asf_cap_names = [
+            ['ldr1', li_dread],
+            ['ldr2', li_dread],
+            ['bbs1', br_bship],
+            ['bbs2', br_bship],
+            ['bbs3', br_bship],
+            ['bbs4', br_bship],
+        ]
+        asf_caps = []
 
         gunboats_len = 3
 
@@ -166,6 +209,13 @@ class Misson09(ingame_mission.IngameMission):
             bgb_caps.append(the_cap)
 
         self.add_capital_group('BGB', bgb_caps)
+
+        for cap, arch in asf_cap_names:
+            the_cap = Capital(self, cap, ru_name=N.BR_GUNBOAT, **arch)
+            caps.append(the_cap)
+            asf_caps.append(the_cap)
+
+        self.add_capital_group('ASF_CAP', asf_caps)
 
         return caps
 
@@ -201,6 +251,28 @@ class Misson09(ingame_mission.IngameMission):
 
             NNObj(self, 'Перехватите канонерки СБА', target='gunboat_patrol'),
             NNObj(self, 'Уничтожьте корабли СБА', name='destroy_gunboat_patrol'),
+
+            NNObj(self, 'Перехватите эсминцы СБА', target='destroyer_patrol'),
+            NNObj(self, 'Повредите вражеские эсминцы', name='hit_bdr'),
+            NNObj(self, 'Перехватите вражеские торпеды', name='catch_torpedoes'),
+
+            NNObj(self, O.GOTO, target='randevoue'),
+            NNObj(self, 'Сядьте на линкор Мусаси', name='dock_musashi', target='torp_musashi'),
+        ]
+
+    def get_ingame_thorns(self):
+        return [
+            IngameThorn(
+                self,
+                system_class=S.sig42,
+                template=GENERIC_TWO_POINT,
+                name='m9_kamikadze',
+                points={
+                    'camera': 'trap_cam',
+                    'marker': 'trap_marker',
+                },
+                duration=120,
+            ),
         ]
 
     def get_ships(self):
@@ -303,6 +375,7 @@ class Misson09(ingame_mission.IngameMission):
                 'sakura',
                 count=5,
                 system_class=S.sig42,
+                affiliation=faction.OrderMain.CODE,
                 labels=[
                     'friend',
                     'order',
@@ -319,16 +392,18 @@ class Misson09(ingame_mission.IngameMission):
             ),
             Ship(
                 self,
-                'yanagi',
+                'suzuki',
                 count=5,
                 system_class=S.sig42,
+                affiliation=faction.OrderMain.CODE,
                 labels=[
                     'friend',
                     'order',
                 ],
+                radius=0,
                 slide_x=100,
                 unique_npc_entry=True,
-                base_name='Сакура',
+                base_name='Сузуки',
                 npc=NPC(
                     faction=faction.KusariMain,
                     ship=ship.Dragon,
@@ -338,9 +413,10 @@ class Misson09(ingame_mission.IngameMission):
             ),
             Ship(
                 self,
-                'suzuki',
+                'suzuki_bdr',
                 count=5,
                 system_class=S.sig42,
+                affiliation=faction.OrderMain.CODE,
                 labels=[
                     'friend',
                     'order',
@@ -348,7 +424,46 @@ class Misson09(ingame_mission.IngameMission):
                 radius=0,
                 slide_x=100,
                 unique_npc_entry=True,
-                base_name='Сакура',
+                base_name='Сузуки',
+                npc=NPC(
+                    faction=faction.KusariMain,
+                    ship=ship.Dragon,
+                    level=NPC.D6,
+                    equip_map=EqMap(base_level=6),
+                )
+            ),
+            Ship(
+                self,
+                'yanagi_bdr',
+                count=5,
+                system_class=S.sig42,
+                affiliation=faction.OrderMain.CODE,
+                labels=[
+                    'friend',
+                    'order',
+                ],
+                slide_z=100,
+                unique_npc_entry=True,
+                base_name='Янаги',
+                npc=NPC(
+                    faction=faction.KusariMain,
+                    ship=ship.Dragon,
+                    level=NPC.D6,
+                    equip_map=EqMap(base_level=6),
+                )
+            ),
+            Ship(
+                self,
+                'kamikadze',
+                count=5,
+                system_class=S.sig42,
+                affiliation=faction.OrderMain.CODE,
+                labels=[
+                    'friend',
+                    'order',
+                ],
+                unique_npc_entry=True,
+                base_name='Янаги',
                 npc=NPC(
                     faction=faction.KusariMain,
                     ship=ship.Dragon,
@@ -361,6 +476,7 @@ class Misson09(ingame_mission.IngameMission):
                 'patroller_a',
                 count=4,
                 system_class=S.sig42,
+                affiliation=faction.ASF.CODE,
                 labels=[
                     'enemy',
                     'asf',
@@ -379,6 +495,7 @@ class Misson09(ingame_mission.IngameMission):
                 'patroller_b',
                 count=4,
                 system_class=S.sig42,
+                affiliation=faction.ASF.CODE,
                 labels=[
                     'enemy',
                     'asf',
@@ -397,6 +514,7 @@ class Misson09(ingame_mission.IngameMission):
                 'bgb_support_a',
                 count=5,
                 system_class=S.sig42,
+                affiliation=faction.ASF.CODE,
                 labels=[
                     'enemy',
                     'asf',
@@ -416,6 +534,7 @@ class Misson09(ingame_mission.IngameMission):
                 'bgb_support_b',
                 count=5,
                 system_class=S.sig42,
+                affiliation=faction.ASF.CODE,
                 labels=[
                     'enemy',
                     'asf',
@@ -435,12 +554,118 @@ class Misson09(ingame_mission.IngameMission):
                 'bdr_support_a',
                 count=5,
                 system_class=S.sig42,
+                affiliation=faction.ASF.CODE,
                 labels=[
                     'enemy',
                     'asf',
                     'bdr_support',
                     'bdr',
                 ],
+                slide_x=-100,
+                npc=NPC(
+                    faction=faction.BretoniaMain,
+                    ship=ship.Crusader,
+                    level=NPC.D5,
+                    equip_map=EqMap(base_level=5),
+                )
+            ),
+            Ship(
+                self,
+                'bdr_support_b',
+                count=3,
+                system_class=S.sig42,
+                affiliation=faction.ASF.CODE,
+                labels=[
+                    'enemy',
+                    'asf',
+                    'bdr_support',
+                    'bdr',
+                ],
+                slide_x=100,
+                slide_z=100,
+                npc=NPC(
+                    faction=faction.BretoniaMain,
+                    ship=ship.Crusader,
+                    level=NPC.D5,
+                    equip_map=EqMap(base_level=5),
+                )
+            ),
+            Ship(
+                self,
+                'bdr_support_c',
+                count=3,
+                system_class=S.sig42,
+                affiliation=faction.ASF.CODE,
+                labels=[
+                    'enemy',
+                    'asf',
+                    'bdr_support',
+                    'bdr',
+                ],
+                slide_x=100,
+                slide_z=100,
+                npc=NPC(
+                    faction=faction.BretoniaMain,
+                    ship=ship.Crusader,
+                    level=NPC.D5,
+                    equip_map=EqMap(base_level=5),
+                )
+            ),
+            Ship(
+                self,
+                'bdr_support_d',
+                count=3,
+                system_class=S.sig42,
+                affiliation=faction.ASF.CODE,
+                labels=[
+                    'enemy',
+                    'asf',
+                    'bdr_support',
+                    'bdr',
+                ],
+                slide_x=100,
+                slide_z=100,
+                npc=NPC(
+                    faction=faction.BretoniaMain,
+                    ship=ship.Crusader,
+                    level=NPC.D5,
+                    equip_map=EqMap(base_level=5),
+                )
+            ),
+            Ship(
+                self,
+                'bdr_support_e',
+                count=3,
+                system_class=S.sig42,
+                affiliation=faction.ASF.CODE,
+                labels=[
+                    'enemy',
+                    'asf',
+                    'bdr_support',
+                    'bdr',
+                ],
+                slide_x=100,
+                slide_z=100,
+                npc=NPC(
+                    faction=faction.BretoniaMain,
+                    ship=ship.Crusader,
+                    level=NPC.D5,
+                    equip_map=EqMap(base_level=5),
+                )
+            ),
+            Ship(
+                self,
+                'bdr_support_f',
+                count=3,
+                system_class=S.sig42,
+                affiliation=faction.ASF.CODE,
+                labels=[
+                    'enemy',
+                    'asf',
+                    'bdr_support',
+                    'bdr',
+                ],
+                slide_x=100,
                 slide_z=100,
                 npc=NPC(
                     faction=faction.BretoniaMain,

@@ -350,8 +350,6 @@ class Misson11(ingame_mission.IngameMission):
                 duration=60,
                 target='edison_trent',
             ),
-
-
         ]
 
     def get_real_objects(self):
