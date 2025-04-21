@@ -483,7 +483,7 @@ class KusariBodyStore(PartsStore):
     ]
     FEMALE = [
         FemaleBody('ku_kym_body', TRADER, bust=True, white_important=True),
-        FemaleBody('ku_kym_body_gen', TRADER, white_important=True),
+        FemaleBody('ku_kym_body_gen', TRADER, bust=False, white_important=True),
         FemaleBody('ku_kym_body_bust', TRADER, bust=True),
         FemaleBody('ku_female_elite_body', ELITE),
         FemaleBody('ku_female_guard_body', GUARD),
@@ -750,6 +750,7 @@ class HeadStore:
         FemaleHead('br_kaitlyn_head', GENERIC, hat=False),
         FemaleHead('br_karina_head_gen', GENERIC, alt='br_karina_head'),
         FemaleHead('rh_gruenwald_head_gen', GENERIC, hat=False, alt='rh_gruenwald_head'),
+        FemaleHead('ku_kym_head', GENERIC, japan=True, alt='ku_kym_head', bust=True, hat=False),
         FemaleHead('ku_kym_head_gen', GENERIC, japan=True, alt='ku_kym_head'),
         FemaleHead('ku_tashi_head', GENERIC, hat=False, japan=True),
         FemaleHead('sh_female1_head_gen', PIRATE, hat=False, alt='sh_female1_head'),

@@ -366,44 +366,27 @@ class Kim(Actor):
 
 
 class Matome(Actor):
-    RU_NAME = 'Ким'
+    RU_NAME = 'Матомэ'
     TYPE = ACTOR_MALE
-    NAME = 'kim'
-    COMM_APPEARANCE = 'ku_sales_head, ku_male_guard_body, comm_ku_guard'
-    CUTSCENE_APPEARANCE = 'kim'
-    STEOS_ID = 287
+    NAME = 'matome'
+    COMM_APPEARANCE = 'ge_male2_head, ku_male_guard_body, prop_neuralnet_e'
+    STEOS_ID = 119  # 10090
 
 
 class SakuraOne(Actor):
     RU_NAME = 'Сакура'
     TYPE = ACTOR_MALE
-    NAME = 'kim'
-    # COMM_APPEARANCE = '
-    STEOS_ID = 119
-
-
-class SakuraTwo(Actor):
-    RU_NAME = 'Янаги'
-    TYPE = ACTOR_MALE
-    NAME = 'sakura2'
-    # COMM_APPEARANCE = ''
-    STEOS_ID = 10090
-
-
-class SakuraThree(Actor):
-    RU_NAME = 'Сузуки'
-    TYPE = ACTOR_MALE
-    NAME = 'sakura3'
-    # COMM_APPEARANCE = ''
-    STEOS_ID = 10080
+    NAME = 'sakura'
+    COMM_APPEARANCE = 'ku_sales_head, ku_male_guard_body, comm_ku_guard'
+    STEOS_ID = 10071  # 10090
 
 
 class Chrysanthemum(Actor):
     RU_NAME = 'Хризантема'
-    TYPE = ACTOR_MALE
+    TYPE = ACTOR_FEMALE
     NAME = 'chrys'
-    # COMM_APPEARANCE = ''
-    STEOS_ID = 10071
+    COMM_APPEARANCE = 'ku_kym_head, ku_kym_body, prop_neuralnet_d'
+    STEOS_ID = 206
 
 
 class ChrysanthemumTrain(Actor):

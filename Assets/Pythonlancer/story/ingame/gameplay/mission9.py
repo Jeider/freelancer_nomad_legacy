@@ -8,7 +8,7 @@ from story import actors
 
 from story.ingame import names as N
 from story.ingame import objectives as O
-from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Solar, Capital, DockableBattleshipSolar
+from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Solar, Capital, DockableBattleshipSolar, SaveState
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
 from world.npc import NPC, EqMap
@@ -25,15 +25,6 @@ ship_archetype = br_destroyer
 pilot = cruiser_antisolar
 state_graph = CRUISER
 npc_class = lawful, CRUISER, d5
-
-[NPCShipArch]
-nickname = ms9_br_destroyer_basic
-loadout = br_grp_destroyer
-level = d19
-ship_archetype = br_destroyer
-pilot = cruiser_default
-state_graph = CRUISER
-npc_class = lawful, class_cruiser
 
 [NPCShipArch]
 nickname = ms9_br_gunboat
@@ -93,18 +84,39 @@ npc_class = lawful, TRANSPORT
 '''
 
 BDR_NAMES = [
-    'Коссак',
     'Сарацин',
     'Мохок',
+    'Киплинг',
+
     'Маори',
-    'Нубиен',
+    'Нубиец',
+    'Кимберли',
+
     'Викинг',
+    'Юпитер',
+    'Нептун',
+
+    'Уран',
+    'Марс',
+    'Венера',
+
+    'Плутон',
+    'Меркурий',
+    'Сатурн',
+
     'Монтроз',
     'Маккей',
     'Хэвок',
+
+    'Нестор',
     'Онслоу',
     'Джервис',
+
+    'Келли',
+    'Джуно',
+    'Норман',
 ]
+
 
 
 class Misson09(ingame_mission.IngameMission):
@@ -114,7 +126,14 @@ class Misson09(ingame_mission.IngameMission):
     SCRIPT_INDEX = 9
     DIRECT_SYSTEMS = [S.ku_tgk, S.sig42]
     STATIC_NPCSHIPS = NPCSHIPS
-    RTC = ['yokohama', 'order', 'final']
+    RTC = ['yokohama', 'order', 'final', 'leave_yoko']
+
+    def get_save_states(self):
+        return [
+            SaveState(self, 'fighter_patrol', 'Сириус. Патруль истребителей'),
+            SaveState(self, 'gunboat_patrol', 'Сириус. Патруль канонерок'),
+            SaveState(self, 'destroyer_attack', 'Сириус. Эсминцы'),
+        ]
 
     def get_static_points(self):
         defined_points = []
@@ -155,11 +174,6 @@ class Misson09(ingame_mission.IngameMission):
             'faction': 'asf_grp',
             'labels': ['enemy', 'br_destroyer', 'torpedo_attack'],
         }
-        bdr_basic = {
-            'npc_ship_arch': 'ms9_br_destroyer_basic',
-            'faction': 'asf_grp',
-            'labels': ['enemy', 'br_destroyer', 'asf'],
-        }
         br_gunboat = {
             'npc_ship_arch': 'ms9_br_gunboat',
             'faction': 'asf_grp',
@@ -192,13 +206,15 @@ class Misson09(ingame_mission.IngameMission):
         asf_caps = []
 
         gunboats_len = 3
+        bdr_name_index = 0
 
         for letter in torp_letters:
             for index in range(1, torp_per_letter+1):
                 cap = f'bdr_{letter}{index}'
-                the_cap = Capital(self, cap, ru_name=N.BR_DESTROYER, **bdr_torpedo)
+                the_cap = Capital(self, cap, ru_name=BDR_NAMES[bdr_name_index], **bdr_torpedo)
                 caps.append(the_cap)
                 torp_caps.append(the_cap)
+                bdr_name_index += 1
 
         self.add_capital_group('BDR_TORP', torp_caps)
 
@@ -234,7 +250,7 @@ class Misson09(ingame_mission.IngameMission):
             NNObj(self, O.TLR, target='tgk_tlr_2'),
 
             NNObj(self, O.GOTO_JUMPHOLE, name='goto_sirius', target='to_sirius', towards=True),
-            NNObj(self, O.JUMPHOLE, name='jump_sirius', target='to_sirius', towards=True),
+            NNObj(self, O.JUMPHOLE, name='jump_sirius', target='to_sirius'),
 
             NNObj(self, O.GOTO, target='to_train'),
 
@@ -243,7 +259,6 @@ class Misson09(ingame_mission.IngameMission):
 
             NNObj(self, 'Доберитесь до датчика', name='to_check', target='check1', towards=True),
 
-            NNObj(self, 'Ожидайте указаний', name='stay_for_check'),
             NNObj(self, 'Находитесь как можно ближе к датчику', name='stay_near_check_close'),
 
             NNObj(self, 'Перехватите вражеский патруль', target='ship_patrol'),
@@ -254,7 +269,8 @@ class Misson09(ingame_mission.IngameMission):
 
             NNObj(self, 'Перехватите эсминцы СБА', target='destroyer_patrol'),
             NNObj(self, 'Повредите вражеские эсминцы', name='hit_bdr'),
-            NNObj(self, 'Перехватите вражеские торпеды', name='catch_torpedoes'),
+            NNObj(self, 'Перехватите торпеды', name='catch_torpedoes'),
+            NNObj(self, 'Захватите капсулу с Хризантемы', name='collect_chrysatemum'),
 
             NNObj(self, O.GOTO, target='randevoue'),
             NNObj(self, 'Сядьте на линкор Мусаси', name='dock_musashi', target='torp_musashi'),

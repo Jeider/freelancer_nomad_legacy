@@ -322,6 +322,12 @@ class TekagiLargeStation(TekagiMember, main_objects.Station):
     REL = TOP
     SPACE_OBJECT_TEMPLATE = tekagi_megabase.TekagiMegabase
     INTERIOR_CLASS = interior.StationInterior
+    INTERIOR_EXTRA_ROOMS = ['''
+;mission 9 special room
+[Room]
+nickname = Palace
+file = Universe\\SYSTEMS_MOD\\KU_TAGAKI\\Room\\ku_tgk_01_palace.ini
+    ''']
     DEALERS = dealers.KusariCivilianDealers
 
     REL_APPEND = 4000

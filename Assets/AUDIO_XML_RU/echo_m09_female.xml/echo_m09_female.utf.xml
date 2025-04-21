@@ -11,11 +11,20 @@
 <test_voice name="0x865DF184" type="file" filename="echo_m09_female\dx_m09_0060_hatcher.wav"/>
 <test_voice name="0xA6C9E68E" type="file" filename="echo_m09_female\dx_m09_0070_darcy.wav"/>
 <test_voice name="0x9E531D84" type="file" filename="echo_m09_female\dx_m09_0080_hatcher.wav"/>
-<test_voice name="0xA7E93688" type="file" filename="echo_m09_female\dx_m09_0810_darcy.wav"/>
-<test_voice name="0xA7E97E8A" type="file" filename="echo_m09_female\dx_m09_0830_darcy.wav"/>
-<test_voice name="0xA6DDE784" type="file" filename="echo_m09_female\dx_m09_0170_darcy.wav"/>
-<test_voice name="0x8681A88D" type="file" filename="echo_m09_female\dx_m09_0240_darcy.wav"/>
-<test_voice name="0x86957181" type="file" filename="echo_m09_female\dx_m09_0320_darcy.wav"/>
-<test_voice name="0x86593E89" type="file" filename="echo_m09_female\dx_m09_0400_darcy.wav"/>
+<test_voice name="0xA695AD86" type="file" filename="echo_m09_female\dx_m09_0350_darcy.wav"/>
+<test_voice name="0xB6D5A506" type="file" filename="echo_m09_female\dx_m09_0355_darcy.wav"/>
+<test_voice name="0xA64DAB86" type="file" filename="echo_m09_female\dx_m09_0550_darcy.wav"/>
+<test_voice name="0x86057581" type="file" filename="echo_m09_female\dx_m09_0720_darcy.wav"/>
+<test_voice name="0x9CA8E9C7" type="file" filename="echo_m09_female\dx_m09_0850_chrys.wav"/>
+<test_voice name="0x9CBC78C9" type="file" filename="echo_m09_female\dx_m09_0910_chrys.wav"/>
+<test_voice name="0xA9897FC2" type="file" filename="echo_m09_female\dx_m09_1000_chrys.wav"/>
+<test_voice name="0x89897BC3" type="file" filename="echo_m09_female\dx_m09_1010_chrys.wav"/>
+<test_voice name="0xA98937C0" type="file" filename="echo_m09_female\dx_m09_1020_chrys.wav"/>
+<test_voice name="0x898933C1" type="file" filename="echo_m09_female\dx_m09_1030_chrys.wav"/>
+<test_voice name="0x99C93B41" type="file" filename="echo_m09_female\dx_m09_1035_chrys.wav"/>
+<test_voice name="0x8989EBC7" type="file" filename="echo_m09_female\dx_m09_1050_chrys.wav"/>
+<test_voice name="0xA989A7C4" type="file" filename="echo_m09_female\dx_m09_1060_chrys.wav"/>
+<test_voice name="0x8989A3C5" type="file" filename="echo_m09_female\dx_m09_1070_chrys.wav"/>
+<test_voice name="0x92583489" type="file" filename="echo_m09_female\dx_m09_1400_darcy.wav"/>
 </UTF_ROOT>
 </UTFXML>

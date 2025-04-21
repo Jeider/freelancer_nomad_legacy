@@ -343,10 +343,6 @@ class Misson10(ingame_mission.IngameMission):
             NNObj(self, O.GOTO, name='escape_point1', target='escape_point1'),
             NNObj(self, O.GOTO, name='escape_point2', target='escape_point2'),
             NNObj(self, 'Сядьте на линкор Мусаси', name='dock_musashi', target='xenos_leave_musashi'),
-
-
-
-
         ]
 
     def get_ships(self):

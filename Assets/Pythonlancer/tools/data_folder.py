@@ -71,7 +71,7 @@ class DataFolder(object):
 
     @classmethod
     def sync_equip(cls, equip_file_name, subfolder, content):
-        equip_file = cls.get_equip()  / subfolder / f'{equip_file_name}.ini'
+        equip_file = cls.get_equip() / subfolder / f'{equip_file_name}.ini'
         equip_file.write_text(content, encoding='utf-8')
 
     @classmethod
