@@ -259,7 +259,14 @@ class RedLeader(Actor):
     COMM_APPEARANCE = 'li_captain_head, li_male_elite_body, comm_li_elite'
 
 
-class Bandit(Actor):
+class CruiserCaptain(Actor):
+    RU_NAME = 'Уорфиш'
+    TYPE = ACTOR_MALE
+    NAME = 'captain'
+    COMM_APPEARANCE = 'li_captain_head, li_male_elite_body, comm_li_elite'
+
+
+class JabbaBandit(Actor):
     RU_NAME = 'Бандит'
     TYPE = ACTOR_MALE
     NAME = 'bandit'
@@ -272,7 +279,7 @@ class Tortuga(Actor):
     COMM_APPEARANCE = 'br_quigly_head, sh_male2_body, prop_hat_male_pirate_a, prop_neuralnet_d'
 
 
-class Barman(Actor):
+class CorsairBarman(Actor):
     RU_NAME = 'Бармен'
     TYPE = ACTOR_MALE
     NAME = 'barman'
@@ -432,3 +439,9 @@ class Reichman(Actor):
     STEOS_PITCH = -0.5
 
 
+class ActorManager:
+    def __init__(self):
+        self.actors_per_name = {actor.NAME: actor for actor in Actor.subclasses}
+
+    def get_by_name(self, name):
+        return self.actors_per_name[name]

@@ -1,6 +1,6 @@
 from files.writer import FileWriter
 
-from story.scripts import mission9, mission10, mission11, mission12, mission13  # Define to load
+from story.scripts import *
 from story.script import StoryMission, ScriptIndex
 
 from tools.data_folder import DataFolder
