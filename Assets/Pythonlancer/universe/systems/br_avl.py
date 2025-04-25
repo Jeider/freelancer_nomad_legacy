@@ -658,3 +658,17 @@ class AvalTradingConn3(AvalMember, main_objects.TradeConnection):
     SIDE_FROM = TOP
     SIDE_TO = BOTTOM
     TRADELANE_LETTER = 'H'
+
+
+class AvalStoryBattleship(AvalMember, main_objects.KusariBattleship):
+    ALIAS = 'm7_bship'
+    INDEX = 1
+    BASE_INDEX = 99
+    REL = LEFT
+    INTERIOR_CLASS = interior.BattleshipInterior
+    DEALERS = dealers.BretoniaMilitaryDealers
+    STORY = True
+    CALC_STORE = False
+    FORCE_CONNECTIONS = [
+        AvalPolice,  # TODO: haven't real economics connection
+    ]

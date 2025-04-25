@@ -20,15 +20,15 @@ XML_FOLDERS = [
     # 'echo_m06',
     # 'echo_m06_female',
     # 'echo_m06_player',
-    # 'echo_m07',
-    # 'echo_m07_female',
-    # 'echo_m07_player',
+    'echo_m07',
+    'echo_m07_female',
+    'echo_m07_player',
     # 'echo_m08',
     # 'echo_m08_female',
     # 'echo_m08_player',
-    'echo_m09',
-    'echo_m09_female',
-    'echo_m09_player',
+    # 'echo_m09',
+    # 'echo_m09_female',
+    # 'echo_m09_player',
     # 'echo_m10',
     # 'echo_m10_female',
     # 'echo_m10_player',
@@ -98,7 +98,7 @@ class AudioFolder:
 
     @classmethod
     def compile_story_voice_to_xml(cls, voice, skip=True):
-        voice.validate_ai_compatibility()
+        # voice.validate_ai_compatibility()
 
         root_path = cls.get_initial_audio_path()
         voice_path = root_path / f'{voice.voice_name}.xml'
@@ -116,7 +116,11 @@ class AudioFolder:
 
         for sound in voice.sounds:
             file_destination = sounds_path / f"{sound.name}.mp3"
-            if file_destination.exists():
+            alt_file_destination = sounds_path / f"{sound.name}.wav"
+            if file_destination.exists() or alt_file_destination.exists():
                 continue
+
+            if sound.line.actor.STEOS_ID is None:
+                raise Exception('actor %s have no steos for line name %s' % (sound.line.actor.NAME, sound.name))
 
             steos.SteosVoice.generate_ru_voice(file_destination=file_destination, sound=sound)

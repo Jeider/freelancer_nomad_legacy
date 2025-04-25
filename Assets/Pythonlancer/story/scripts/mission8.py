@@ -186,6 +186,6 @@ class Mission8(Msn8, script.StoryMission):
     MISSION_INDEX = 8
     CUTSCENES = []
     SPACE_CLASS = Msn8Space
-    SYNC_SPACE = True
+    SYNC_SPACE = False
 
     MISSION_TITLE = 'Миссия 8. Эксперт по Кочевникам'

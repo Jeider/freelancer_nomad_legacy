@@ -1264,6 +1264,9 @@ class Direct:
         self.trigger_groups = {}
         self.save_states: dict = {state.get_code(): state for state in self.mission.get_save_states()}
 
+    def nn_clear(self):
+        return CLEAR_OBJECTIVES
+
     def save(self, code):
         state = self.save_states.get(code)
         if not state:

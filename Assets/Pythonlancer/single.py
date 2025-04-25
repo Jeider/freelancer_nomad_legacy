@@ -60,10 +60,14 @@ def draw_base():
     # base_class = trading.XenosOutpostPanels
     # new_name = 'xenos_control01'
     # move_to = (-2000, 0, -10000)
+    #
+    # base_class = order_shipyard.OrderShipyard
+    # new_name = 'or_hq_shipyard_01'
+    # move_to = (-20000, 0, 0)
 
-    base_class = order_shipyard.OrderShipyard
-    new_name = 'or_hq_shipyard_01'
-    move_to = (-20000, 0, 0)
+    base_class = trading.TradingDoors
+    new_name = 'communicator'
+    move_to = (11030, -2200, 9455)
 
     the_base = base_class()
 
@@ -233,7 +237,7 @@ def generate_story_voices():
     script_manager = ScriptManager()
     # import pdb;pdb.set_trace()
     for msn in script_manager.get_missions():
-        if msn.MISSION_INDEX != 9:
+        if msn.MISSION_INDEX != 7:
             continue
         for voice in msn.get_voices():
             audio_folder.AudioFolder.compile_story_voice_to_xml(voice)

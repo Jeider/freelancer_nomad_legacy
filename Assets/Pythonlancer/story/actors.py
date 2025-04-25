@@ -122,6 +122,13 @@ class Hatcher(Actor):
     SPACE_VOICE = 'pilot04'
 
 
+class HatcherStation(Actor):
+    RU_NAME = 'Хетчер'
+    TYPE = ACTOR_FEMALE
+    NAME = 'hatcher'
+    COMM_APPEARANCE = 'li_hatcher_head, li_hatcher_body, new_fem_glasses'
+
+
 class Darcy(Actor):
     RU_NAME = 'Дерси'
     TYPE = ACTOR_FEMALE
@@ -140,8 +147,6 @@ class Kaitlyn(Actor):
     STEOS_ID = 219
     STEOS_PITCH = 0
     STEOS_SPEED = 1.2
-
-
 
 
 class King(Actor):
@@ -165,10 +170,20 @@ class Rockford(Actor):
     RU_NAME = 'Рокфорд'
     TYPE = ACTOR_MALE
     NAME = 'rockford'
-    COMM_APPEARANCE = 'li_rockford_head, li_male_elite_body, comm_ge_generic2'
+    COMM_APPEARANCE = 'li_rockford_head, sh_male1_body, comm_ge_generic1'
     STEOS_ID = 13
-    STEOS_PITCH = 0
-    STEOS_SPEED = 1.2
+    STEOS_PITCH = 0.2
+    STEOS_SPEED = 1.05
+
+
+class RockfordStation(Actor):
+    RU_NAME = 'Рокфорд'
+    TYPE = ACTOR_MALE
+    NAME = 'rockford'
+    COMM_APPEARANCE = 'li_rockford_head, sh_male1_body'
+    STEOS_ID = 13
+    STEOS_PITCH = 0.2
+    STEOS_SPEED = 1.05
 
 
 class Brighton(Actor):
@@ -176,6 +191,146 @@ class Brighton(Actor):
     TYPE = ACTOR_MALE
     NAME = 'brighton'
     COMM_APPEARANCE = 'br_brighton_head, br_brighton_body'
+
+
+class DetroitDispatcher(Actor):
+    RU_NAME = 'Детроит'
+    TYPE = ACTOR_MALE
+    NAME = 'dispatcher'
+    COMM_APPEARANCE = 'br_kaitlyn_head, br_kaitlyn_body, prop_neuralnet_e'
+
+
+class ClarkResearch(Actor):
+    RU_NAME = 'Станция Кларк'
+    TYPE = ACTOR_MALE
+    NAME = 'clark'
+    COMM_APPEARANCE = 'sh_male2_head, sh_male2_body, prop_hat_male_li_elite_visor'
+
+
+class Sigma17Trader(Actor):
+    RU_NAME = 'Торговец'
+    TYPE = ACTOR_MALE
+    NAME = 'trader'
+    COMM_APPEARANCE = 'pl_female3_head, pl_female1_journeyman_body, prop_neuralnet_A'
+
+
+class Sigma17Police(Actor):
+    RU_NAME = 'Полициейский'
+    TYPE = ACTOR_MALE
+    NAME = 'police'
+    COMM_APPEARANCE = 'li_captain_head, li_male_elite_body, comm_li_elite'
+
+
+class Sigma17Assassin(Actor):
+    RU_NAME = 'Киллер'
+    TYPE = ACTOR_MALE
+    NAME = 'assassin'
+    COMM_APPEARANCE = 'rh_captain_head, rh_male_elite_body, comm_rh_elite'
+
+
+class Kreitmaier(Actor):
+    RU_NAME = 'Крейтмайер'
+    TYPE = ACTOR_MALE
+    NAME = 'officer'
+    COMM_APPEARANCE = 'rh_captain_head, rh_male_elite_body, comm_rh_elite'
+
+
+class Marauder(Actor):
+    RU_NAME = 'Марадёр'
+    TYPE = ACTOR_MALE
+    NAME = 'marauder'
+    COMM_APPEARANCE = 'li_captain_head, rh_male_guard_body, comm_rh_guard'
+
+
+class Punisher(Actor):
+    RU_NAME = 'Каратель'
+    TYPE = ACTOR_MALE
+    NAME = 'punisher'
+    COMM_APPEARANCE = 'rh_sales_head, rh_male_elite_body, comm_rh_elite'
+
+
+class PunisherCatcher(Actor):
+    RU_NAME = 'Каратель'
+    TYPE = ACTOR_MALE
+    NAME = 'catcher'
+    COMM_APPEARANCE = 'rh_sales_head, rh_male_elite_body, comm_rh_elite'
+
+
+class Informer(Actor):
+    RU_NAME = 'Информатор'
+    TYPE = ACTOR_MALE
+    NAME = 'informer'
+    COMM_APPEARANCE = 'null, robot_body_E'
+
+
+class Adelmar(Actor):
+    RU_NAME = 'Аделмар'
+    TYPE = ACTOR_MALE
+    NAME = 'adelmar'
+    COMM_APPEARANCE = 'pi_pirate3_head, rh_commtrader_body, prop_neuralnet_e_right'
+
+
+class Luc(Actor):
+    RU_NAME = 'Луц'
+    TYPE = ACTOR_MALE
+    NAME = 'luc'
+    COMM_APPEARANCE = 'rh_sales_head, pl_male3_peasant_body, comm_ge_generic1'
+
+
+class Sigma8Cruiser(Actor):
+    RU_NAME = 'Крейсер'
+    TYPE = ACTOR_MALE
+    NAME = 'cruiser'
+    COMM_APPEARANCE = 'rh_sales_head, rh_male_guard_body, prop_neuralnet_d'
+
+
+class BrandenburgCruiser(Actor):
+    RU_NAME = 'Крейсер'
+    TYPE = ACTOR_MALE
+    NAME = 'cruiser'
+    COMM_APPEARANCE = 'rh_sales_head, rh_male_guard_body, prop_neuralnet_d'
+
+
+class ForbesSmugglerOne(Actor):
+    RU_NAME = 'Контрабандист'
+    TYPE = ACTOR_MALE
+    NAME = 'smuggler1'
+    COMM_APPEARANCE = 'pl_male1_head, pi_pirate3_body, comm_pi_pirate'
+
+
+class ForbesSmugglerTwo(Actor):
+    RU_NAME = 'Контрабандист'
+    TYPE = ACTOR_MALE
+    NAME = 'smuggler2'
+    COMM_APPEARANCE = 'pl_male1_head, pi_pirate3_body, comm_pi_pirate'
+
+
+class OmegaJunkerOne(Actor):
+    RU_NAME = 'Мусорщик'
+    TYPE = ACTOR_MALE
+    NAME = 'junker1'
+    COMM_APPEARANCE = 'pl_male1_head, pi_pirate3_body, comm_pi_pirate'
+
+
+class OmegaJunkerTwo(Actor):
+    RU_NAME = 'Мусорщик'
+    TYPE = ACTOR_MALE
+    NAME = 'junker2'
+    COMM_APPEARANCE = 'pl_male1_head, pi_pirate3_body, comm_pi_pirate'
+
+
+class OmegaJunkerThree(Actor):
+    RU_NAME = 'Мусорщик'
+    TYPE = ACTOR_MALE
+    NAME = 'junker3'
+    COMM_APPEARANCE = 'pl_male1_head, pi_pirate3_body, comm_pi_pirate'
+
+
+class ForbesSmugglerThree(Actor):
+    RU_NAME = 'Контрабандист'
+    TYPE = ACTOR_MALE
+    NAME = 'smuggler3'
+    COMM_APPEARANCE = 'pl_male1_head, pi_pirate3_body, comm_pi_pirate'
 
 
 class MaleCaptain(Actor):
@@ -198,10 +353,90 @@ class Missouri(Actor):
     RU_NAME = 'Капитан'
     TYPE = ACTOR_MALE
     NAME = 'missouri'
-    COMM_APPEARANCE = 'li_captain_head, li_male_elite_body'
+    COMM_APPEARANCE = 'br_captain_head, li_male_elite_body'
     STEOS_ID = 215
     STEOS_PITCH = -0.5
     STEOS_SPEED = 1.1
+
+
+class SphereMissouri(Actor):
+    RU_NAME = 'Капитан'
+    TYPE = ACTOR_MALE
+    NAME = 'captain'
+    COMM_APPEARANCE = 'br_captain_head, li_male_elite_body'
+    STEOS_ID = 215
+    STEOS_PITCH = -0.5
+    STEOS_SPEED = 1.1
+
+
+class Sigma8Outpost(Actor):
+    RU_NAME = 'Аванпост'
+    TYPE = ACTOR_MALE
+    NAME = 'outpost'
+    COMM_APPEARANCE = 'rh_captain_head, rh_male_elite_body, prop_hat_male_rh_elite_visor'
+
+
+class SphereOutpost(Actor):
+    RU_NAME = 'Аванпост'
+    TYPE = ACTOR_MALE
+    NAME = 'outpost'
+    COMM_APPEARANCE = 'rh_captain_head, rh_male_elite_body, prop_hat_male_rh_elite_visor'
+
+
+class BrandenburgOutpost(Actor):
+    RU_NAME = 'Бранденбург'
+    TYPE = ACTOR_MALE
+    NAME = 'outpost'
+    COMM_APPEARANCE = 'rh_captain_head, rh_male_elite_body, prop_hat_male_rh_elite_visor'
+
+
+class SphereAssistant(Actor):
+    RU_NAME = 'Ассистент'
+    TYPE = ACTOR_MALE
+    NAME = 'scient'
+    COMM_APPEARANCE = 'ge_male4_head, sc_scientist3_body, prop_neuralnet_E'
+
+
+class DeltaOne(Actor):
+    RU_NAME = 'Дельта-1'
+    TYPE = ACTOR_MALE
+    NAME = 'delta1'
+    COMM_APPEARANCE = 'br_bartender_head, pi_pirate2_body'
+
+
+class DeltaThree(Actor):
+    RU_NAME = 'Дельта-3'
+    TYPE = ACTOR_MALE
+    NAME = 'delta3'
+    COMM_APPEARANCE = 'br_quigly_head, pi_pirate3_body'
+
+
+class Reitherman(Actor):
+    RU_NAME = 'Рейтерман'
+    TYPE = ACTOR_MALE
+    NAME = 'professor'
+    COMM_APPEARANCE = 'ge_male1_head, sc_scientist4_body, prop_neuralnet_D'
+
+
+class FinnRunner(Actor):
+    RU_NAME = 'Финн'
+    TYPE = ACTOR_MALE
+    NAME = 'runner'
+    COMM_APPEARANCE = 'sh_male1_head, sc_scientist1_body, prop_hat_male_rh_grd_visor'
+
+
+class Ceed(Actor):
+    RU_NAME = 'Сид'
+    TYPE = ACTOR_MALE
+    NAME = 'syd'
+    COMM_APPEARANCE = 'pl_male7_head, pi_orillion_body'
+
+
+class OrderPilot(Actor):
+    RU_NAME = 'Пилот Ордена'
+    TYPE = ACTOR_MALE
+    NAME = 'orderpilot'
+    COMM_APPEARANCE = 'pi_pirate2_head, pi_orillion_body, comm_br_guard'
 
 
 class Kruger(Actor):
@@ -277,6 +512,8 @@ class Tortuga(Actor):
     TYPE = ACTOR_MALE
     NAME = 'tortuga'
     COMM_APPEARANCE = 'br_quigly_head, sh_male2_body, prop_hat_male_pirate_a, prop_neuralnet_d'
+    STEOS_ID = 10029
+    STEOS_PITCH = 0.25
 
 
 class CorsairBarman(Actor):
@@ -325,6 +562,18 @@ class Alaric(Actor):
     STEOS_SPEED = 1.1
 
 
+class AlaricStation(Actor):
+    RU_NAME = 'Аларик'
+    TYPE = ACTOR_MALE
+    NAME = 'alaric'
+    COMM_APPEARANCE = 'rh_alaric_head, pi_pirate6_body'
+    CUTSCENE_APPEARANCE = 'alaric'
+    SPACE_VOICE = 'pilot_f_mil_m01'
+    STEOS_ID = 204
+    STEOS_PITCH = 0.1
+    STEOS_SPEED = 1.1
+
+
 class Jacobo(Actor):
     RU_NAME = 'Джакобо'
     TYPE = ACTOR_MALE
@@ -334,13 +583,20 @@ class Jacobo(Actor):
     SPACE_VOICE = 'pilot_f_mil_m01'
 
 
+class JacoboTrader(Actor):
+    RU_NAME = 'Джакобо'
+    TYPE = ACTOR_MALE
+    NAME = 'jacobo'
+    COMM_APPEARANCE = 'pl_male1_head, pi_pirate2_body, prop_neuralnet_b'
+    CUTSCENE_APPEARANCE = 'jacobo'
+    SPACE_VOICE = 'pilot_f_mil_m01'
+
+
 class Dietrich(Actor):
     RU_NAME = 'Дитрих'
     TYPE = ACTOR_MALE
     NAME = 'deidrich'
-    COMM_APPEARANCE = 'rh_deidrich_head, rh_deidrich_body, comm_rh_reichman'
-    CUTSCENE_APPEARANCE = 'jacobo'
-    SPACE_VOICE = 'pilot_f_mil_m01'
+    COMM_APPEARANCE = 'rh_deidrich_head, rh_deidrich_body'
 
 
 class Wilham(Actor):
@@ -348,6 +604,15 @@ class Wilham(Actor):
     TYPE = ACTOR_MALE
     NAME = 'wilham'
     COMM_APPEARANCE = 'rh_wilham_head, rh_wilham_body, comm_rh_wilham'
+    CUTSCENE_APPEARANCE = 'wilham'
+    SPACE_VOICE = 'razor_1'
+
+
+class WilhamStation(Actor):
+    RU_NAME = 'Вильгельм'
+    TYPE = ACTOR_MALE
+    NAME = 'wilhelm'
+    COMM_APPEARANCE = 'rh_wilham_head, rh_wilham_body'
     CUTSCENE_APPEARANCE = 'wilham'
     SPACE_VOICE = 'razor_1'
 

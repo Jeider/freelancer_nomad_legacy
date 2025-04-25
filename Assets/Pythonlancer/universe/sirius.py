@@ -34,6 +34,7 @@ from universe.systems import or_hq_static as or_hq_content
 from universe.systems import or_hq as or_hq_content
 from universe.systems import rh_vien as rh_vien_content
 from universe.systems import xen as xen_content
+from universe.systems import co_cad as co_cad_content
 
 
 class rh_mnh(system.RheinlandFirst, system.System, system.SiriusSystem):
@@ -505,16 +506,20 @@ class co_och(system.System, system.SiriusSystem):
     NAME = 'co_och'
     RU_NAME = 'Очо-Р+иос'
 
-    SYSTEM_FOLDER = ''
+    SYSTEM_FOLDER = 'CO_OCHORIOS'
     NAVMAP_POS = '12, 15'
     NAVMAP_SCALE = 1.25
 
 
-class co_cad(system.System, system.SiriusSystem):
+class co_cad(system.StorySystem, system.SiriusSystem):
     NAME = 'co_cad'
     RU_NAME = 'Кад+из'
+    DIRECT_TEMPLATE_NAME = 'co_cad_dev'
+    CONTENT = co_cad_content
+    ALLOW_SYNC = True
 
-    SYSTEM_FOLDER = 'CO_OCHORIOS'
+    SYSTEMS_ROOT = 'SYSTEMS_MOD'
+    SYSTEM_FOLDER = 'CO_CADIZ'
     NAVMAP_POS = '15, 6.5'
     NAVMAP_SCALE = 1.5
 
@@ -582,10 +587,13 @@ class omicron1(system.System, system.SiriusSystem):
     NAVMAP_SCALE = 2
 
 
-class omicron2(system.System, system.SiriusSystem):
+class omicron2(system.StorySystem, system.SiriusSystem):
     NAME = 'omicron2'
     RU_NAME = 'М+алый Омикр+он'
+    DIRECT_TEMPLATE_NAME = 'omicron2_dev'
+    ALLOW_SYNC = True
 
+    SYSTEMS_ROOT = 'SYSTEMS_MOD'
     SYSTEM_FOLDER = 'OMICRON_MINOR'
     NAVMAP_POS = '16, 10'
     NAVMAP_SCALE = 2

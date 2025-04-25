@@ -122,28 +122,16 @@ rotate = 0, 0, 0
 archetype = space_industrial01e
 
 [Object]
-nickname = rmbase02_ring01
-pos = 0, 0, 0
-rotate = 90, 0, 0
-archetype = smallest_ring
+nickname = rmbase02_root01
+pos = 0, 82, 0
+rotate = -90, 0, 0
+archetype = space_industrial01c
 
 [Object]
-nickname = rmbase02_ring02
-pos = 0, 30, 0
+nickname = rmbase02_root02
+pos = 0, -82, 0
 rotate = 90, 0, 0
-archetype = smallest_ring
-
-[Object]
-nickname = rmbase02_ring03
-pos = 0, -30, 0
-rotate = 90, 0, 0
-archetype = smallest_ring
-
-[Object]
-nickname = rmbase02_gider01
-pos = 0, 0, 0
-rotate = 90, 0, 0
-archetype = space_girderc
+archetype = space_industrial01c
 
 [Object]
 nickname = rmbase02_door01

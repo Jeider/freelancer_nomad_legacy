@@ -12,6 +12,18 @@ rotate = 0, 0, 0
 archetype = space_industrial01e
 
 [Object]
+nickname = rmbase02_root01
+pos = 0, 82, 0
+rotate = -90, 0, 0
+archetype = space_industrial01c
+
+[Object]
+nickname = rmbase02_root02
+pos = 0, -82, 0
+rotate = 90, 0, 0
+archetype = space_industrial01c
+
+[Object]
 nickname = rmbase02_ring01
 pos = 0, 0, 0
 rotate = 90, 0, 0
@@ -36,21 +48,9 @@ rotate = 90, 0, 0
 archetype = space_girderc
 
 [Object]
-nickname = rmbase02_door01
-pos = 2, 0.5, 320
-rotate = 90, 0, 0
-archetype = space_door_half
-
-[Object]
 nickname = rmbase02_door02
 pos = -2, -0.5, -320
 rotate = -90, 0, 0
-archetype = space_door_half
-
-[Object]
-nickname = rmbase02_door03
-pos = 2, -0.5, 320
-rotate = -90, 180, 0
 archetype = space_door_half
 
 [Object]
@@ -58,30 +58,6 @@ nickname = rmbase02_door04
 pos = -2, 0.5, -320
 rotate = 90, 180, 0
 archetype = space_door_half
-
-[Object]
-nickname = rmbase02_panel01
-pos = 0, 90, 225
-rotate = 105, 0, 0
-archetype = space_station_panelb
-
-[Object]
-nickname = rmbase02_panel02
-pos = 0, -90, 225
-rotate = 75, 0, 0
-archetype = space_station_panelb
-
-[Object]
-nickname = rmbase02_panel03
-pos = 90, 0, 225
-rotate = 75, 0, 90
-archetype = space_station_panelb
-
-[Object]
-nickname = rmbase02_panel04
-pos = -90, 0, 225
-rotate = 105, 0, 90
-archetype = space_station_panelb
 
 [Object]
 nickname = rmbase02_panel05
@@ -202,7 +178,25 @@ nickname = rmbase02_industrial06
 pos = -148, 2, -85
 rotate = 90, 60, 0
 archetype = space_industrial02d
-    '''
+
+[Object]
+nickname = rmbase02_extra_ind01
+pos = 0, 0, 175
+rotate = 0, 90, 90
+archetype = space_industriala
+
+[Object]
+nickname = rmbase02_extra_ind02
+pos = 85, 2, 148
+rotate = 90, 30, 0
+archetype = space_industrial02d
+
+[Object]
+nickname = rmbase02_extra_ind03
+pos = -85, 2, 148
+rotate = 90, -30, 0
+archetype = space_industrial02d
+'''
 
 
 class XenosOutpostPanels(SpaceObjectTemplate):
