@@ -8,7 +8,7 @@ from story import actors
 
 from story.ingame import names as N
 from story.ingame import objectives as O
-from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Solar, StaticJumpgate, Capital, SaveState
+from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Solar, StaticJumpgate, Capital, SaveState, DockableBattleshipSolar
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
 from world.npc import NPC, EqMap
@@ -43,6 +43,32 @@ class Misson07(ingame_mission.IngameMission):
             SaveState(self, 'ironside', 'Кадиз. Билл Айронсайд найден'),
             SaveState(self, 'diversion', 'Малый Омикрон. Перед диверсией'),
             SaveState(self, 'armored', 'Малый Омикрон. Перехват транспорта'),
+        ]
+
+    def get_ingame_thorns(self):
+        return [
+            IngameThorn(
+                self,
+                system_class=S.br_avl,
+                template=GENERIC_TWO_POINT,
+                name='m7_bandit_cam',
+                points={
+                    'camera': 'bandit_cam',
+                    'marker': 'bandit_mrk',
+                },
+                duration=120,
+            ),
+            IngameThorn(
+                self,
+                system_class=S.br_avl,
+                template=GENERIC_TWO_POINT,
+                name='m7_supercop_cam',
+                points={
+                    'camera': 'bandit_darcy_cam',
+                    'marker': 'bandit_darcy_mrk',
+                },
+                duration=120,
+            ),
         ]
 
     def get_static_points(self):
@@ -107,6 +133,11 @@ class Misson07(ingame_mission.IngameMission):
             StaticJumpgate(self, S.omicron2, 'omicron2_to_om13', ru_name='_'),
         )
 
+        defined_points.append(
+            DockableBattleshipSolar(
+                self, S.br_avl, 'm7_bship1', ru_name='Линкор Принц Уэльсский', base='br_avl_99_base',
+                archetype='b_battleship', loadout='br_battleship_station'),
+        )
         return defined_points
 
     def get_real_objects(self):
@@ -148,41 +179,14 @@ class Misson07(ingame_mission.IngameMission):
             NNObj(self, 'Подберите артефакты', name='pick_up_artifacts'),
             NNObj(self, O.GOTO_JUMPHOLE, name='goto_jump_om13', target='omicron2_to_om13', towards=True),
             NNObj(self, O.JUMPHOLE, name='jump_om13', target='omicron2_to_om13'),
+            NNObj(self, O.GOTO, name='goto_bship', target='m7_bship1', towards=True),
+            NNObj(self, O.DOCK_BATTLESHIP, name='dock_bship', target='m7_bship1'),
+            NNObj(self, 'Улучшите свой корабль и вылетайте в космос',
+                  name='buy_things_and_launch_to_space'),
+            NNObj(self, O.TLR, target='aval_tlr'),
+            NNObj(self, O.DOCKRING, target='dock_ring'),
+            NNObj(self, 'Уничтожьте бандитов', name='destroy_bandits'),
         ]
-
-
-    '''
-[NNObjective]
-nickname = NN_go_to_battleship
-state = HIDDEN
-type = rep_inst, tau23, 097026, 097026, 16000, 0, 0, tau23_03
-
-[NNObjective]
-nickname = NN_buy_things_and_launch_to_space
-state = HIDDEN
-type = ids, 097027
-
-[NNObjective]
-nickname = NN_use_tlr_to_gasminer
-state = HIDDEN
-type = rep_inst, tau23, 097028, 097028, 15793, -6, -1064, TAU23_F_Trade_Lane_Ring_L2_04
-
-[NNObjective]
-nickname = NN_dock_with_avalon
-state = HIDDEN
-type = rep_inst, tau23, 097029, 097029, 10000, -380, -30000, tau23_01
-
-[NNObjective]
-nickname = NN_destroy_bandits
-state = HIDDEN
-type = ids, 097030
-
-[NNObjective]
-nickname = NN_dock_with_avalon_again
-state = HIDDEN
-type = rep_inst, tau23, 097031, 097031, 10000, -380, -30000, tau23_01
-    
-    '''
 
     def get_capital_ships(self):
         armored_ship = {
@@ -303,5 +307,38 @@ type = rep_inst, tau23, 097031, 097031, 10000, -380, -30000, tau23_01
                     level=NPC.D8,
                     equip_map=EqMap(base_level=5),
                 )
+            ),
+            Ship(
+                self,
+                'darcy',
+                hero=True,
+                actor=actors.Darcy,
+                labels=[
+                    'friend',
+                ],
+                npc=NPC(
+                    faction=faction.BretoniaMain,
+                    ship=ship.Cavalier,
+                    level=NPC.D19,
+                    equip_map=EqMap(base_level=6),
+                )
+            ),
+            Ship(
+                self,
+                'bandit',
+                count=5,
+                system_class=S.br_avl,
+                slide_z=-60,
+                labels=[
+                    'bandit',
+                    'enemy',
+                ],
+                base_name='Бандит',
+                npc=NPC(
+                    faction=faction.BretoniaPirate,
+                    ship=ship.Crusader,
+                    level=NPC.D10,
+                    equip_map=EqMap(base_level=5),
+                ),
             ),
         ]

@@ -520,7 +520,7 @@ class CorsairBarman(Actor):
     RU_NAME = 'Бармен'
     TYPE = ACTOR_MALE
     NAME = 'barman'
-    COMM_APPEARANCE = 'sh_male2_head, pi_pirate4_body'
+    COMM_APPEARANCE = 'sh_male1_head, sh_male2_body'
 
 
 class Yamamoto(Actor):
