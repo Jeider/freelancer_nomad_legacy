@@ -601,6 +601,18 @@ class omicron2(system.StorySystem, system.SiriusSystem):
 
 # STORY ONLY
 
+
+class sphere(system.StorySystem, system.SiriusSystem):
+    NAME = 'sphere'
+    DIRECT_TEMPLATE_NAME = 'sphere_dev'
+    RU_NAME = 'Сфера'
+
+    ALLOW_SYNC = True
+
+    SYSTEM_FOLDER = 'SPHERE'
+    NAVMAP_POS = '14, -1'
+
+
 class sphere2(system.StorySystem, system.SiriusSystem):
     NAME = 'sphere2'
     DIRECT_TEMPLATE_NAME = 'sph2_dev'

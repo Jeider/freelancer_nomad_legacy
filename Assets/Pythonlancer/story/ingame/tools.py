@@ -304,12 +304,15 @@ class DefinedStaticMixin:
 
 class Solar(DefinedStaticMixin, Point):
 
-    def __init__(self, *args, ru_name, labels=None, base=None, archetype=None, loadout=None, **kwargs):
+    def __init__(self, *args, ru_name, labels=None, base=None, archetype=None, loadout=None, faction=None,
+                 pilot=None, **kwargs):
         self.ru_name = ru_name
         self.base = base
         self.labels = labels if labels else []
         self.archetype = archetype
         self.loadout = loadout
+        self.faction = faction
+        self.pilot = pilot
         super().__init__(*args, **kwargs)
         self.ids_name = self.mission.ids.new_name(self.ru_name)
 
@@ -341,10 +344,13 @@ class Solar(DefinedStaticMixin, Point):
             f'position = {self.pos}',
             f'orientation = {self.orient}',
             f'archetype = {archetype if archetype else self.archetype}',
-            f'faction = {faction}' if faction else f'faction = {DEFAULT_AFFILIATION}',
             f'string_id = {self.ids_name.id}',
             'radius = 0',
         ]
+        if self.pilot:
+            solar.append(f'pilot = {self.pilot}')
+        if the_faction := faction if faction else self.faction:
+            solar.append(f'faction = {the_faction}')
         if self.base:
             solar.append(f'base = {self.base}')
             solar.append(f'system = {self.system.NAME}')
