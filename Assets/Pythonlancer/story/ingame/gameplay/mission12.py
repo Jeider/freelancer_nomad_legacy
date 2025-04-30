@@ -54,7 +54,7 @@ npc_class = lawful, CRUISER, d5
 
 [NPCShipArch]
 nickname = ms12_li_dread
-loadout = li_dreadnought_03_surv1_evil
+loadout = li_dreadnought_03
 level = d10
 ship_archetype = li_dreadnought
 pilot = cruiser_default

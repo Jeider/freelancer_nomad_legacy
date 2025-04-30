@@ -5,7 +5,7 @@ from story.ingame import ingame_mission
 from story.math import euler_to_quat
 from story import actors
 
-from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Solar
+from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Solar, Capital, SaveState
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
 from world.npc import NPC, EqMap
@@ -22,6 +22,26 @@ ship_archetype = no_fighter
 pilot = mod_fighter_version_a
 state_graph = FIGHTER
 npc_class = lawful, FIGHTER
+
+[NPCShipArch]
+nickname = ms13_li_dread
+loadout = li_dreadnought_03
+level = d10
+ship_archetype = li_dreadnought
+pilot = cruiser_default
+state_graph = CRUISER
+npc_class = lawful, CRUISER, d5
+
+[NPCShipArch]
+nickname = beast_fire_shiparch
+loadout = beast_fire_ship
+level = d10
+ship_archetype = beast_ultra_fire_ship
+pilot = cruiser_default
+state_graph = CRUISER
+npc_class = lawful, CRUISER, d5
+
+
 
 '''
 
@@ -107,7 +127,7 @@ class Misson13(ingame_mission.IngameMission):
 
         for kr_gen in krieg_gens:
             defined_points.append(
-                Solar(self, S.sphere2, kr_gen, ru_name='Генератор', faction='fc_n_grp',
+                Solar(self, S.sphere2, kr_gen, ru_name='Генератор',
                       archetype='beast_generator'),
             )
 
@@ -120,14 +140,32 @@ class Misson13(ingame_mission.IngameMission):
             Solar(self, S.sphere2, 'krieg_sleep', ru_name='Крыг', loadout='beast_sleep', archetype='beast_1500'),
             Solar(self, S.sphere2, 'krieg_opens', ru_name='Крыг', loadout='beast_arrive', archetype='beast_1500'),
             Solar(self, S.sphere2, 'krieg_opens_force', ru_name='Крыг',
-                  loadout='beast_force_open', archetype='beast_1500', faction='fc_n_grp',
-                  pilot='pilot_solar_hardest'),
-            Solar(self, S.sphere2, 'hit_fx', ru_name='Удар!', loadout='beast_hit', archetype='hidden_connect'),
+                  loadout='beast_force_open', archetype='beast_1500',
+                  pilot='pilot_solar_hardest', labels=['the_krieg']),
+            Solar(self, S.sphere2, 'hit_fx', ru_name='Удар!', loadout='beast_hit', archetype='hidden_connect',
+                  labels=['the_krieg']),
         ])
 
 
 
         return defined_points
+
+    def get_capital_ships(self):
+        li_dread = {
+            'npc_ship_arch': 'ms13_li_dread',
+            'faction': 'asf_grp',
+            'labels': ['friend', 'asf_a', 'asf'],
+        }
+        beast_fire = {
+            'npc_ship_arch': 'beast_fire_shiparch',
+        }
+
+        caps = [
+            Capital(self, 'li_dread', ru_name='Линкор Миссури', **li_dread),
+            Capital(self, 'krieg_fire', ru_name='Выстрел', radius=0, **beast_fire),
+        ]
+
+        return caps
 
     def get_ships(self):
         return [

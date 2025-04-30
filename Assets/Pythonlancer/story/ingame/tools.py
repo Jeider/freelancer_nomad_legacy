@@ -345,7 +345,7 @@ class Solar(DefinedStaticMixin, Point):
             f'orientation = {self.orient}',
             f'archetype = {archetype if archetype else self.archetype}',
             f'string_id = {self.ids_name.id}',
-            'radius = 0',
+            'radius = 0'
         ]
         if self.pilot:
             solar.append(f'pilot = {self.pilot}')
@@ -1214,7 +1214,8 @@ class Trigger:
 
 class Capital(DefinedStaticMixin):
 
-    def __init__(self, mission, alias, npc_ship_arch, ru_name, faction=None, labels=None, arrival_obj=None):
+    def __init__(self, mission, alias, npc_ship_arch, ru_name, faction=None,
+                 labels=None, arrival_obj=None, radius=None):
         self.mission = mission
         self.alias = alias
         self.npc_ship_arch = npc_ship_arch
@@ -1223,6 +1224,7 @@ class Capital(DefinedStaticMixin):
         self.faction = faction or DEFAULT_AFFILIATION
         self.labels = labels or []
         self.arrival_obj = arrival_obj
+        self.radius = radius
 
     def get_name(self):
         return self.alias
@@ -1246,6 +1248,8 @@ class Capital(DefinedStaticMixin):
             ship.append(f'label = {label}')
         if self.arrival_obj:
             ship.append(f'arrival_obj = {self.arrival_obj}')
+        if self.radius is not None:
+            ship.append(f'radius = {self.radius}')
 
         return SINGLE_DIVIDER.join(ship)
 
