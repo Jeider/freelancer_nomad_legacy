@@ -338,6 +338,8 @@ class Solar(DefinedStaticMixin, Point):
         return f'Act_SpawnSolar = {self.get_name()}'
 
     def define(self, archetype=None, loadout=None, faction=None, label=None):
+        if not archetype and not self.archetype:
+            raise Exception(f'unknown archetype of {self.name}')
         solar = [
             '[MsnSolar]',
             f'nickname = {self.name}',

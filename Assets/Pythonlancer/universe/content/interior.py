@@ -378,6 +378,15 @@ class BattleshipInterior(GenericInterior):
     DEALER_PLACEMENTS_TEMPLATE = ALL_ON_DECK_DEALERS_TEMPLATE
 
 
+class OsirisInterior(GenericInterior):
+    START_ROOM = DECK
+    ROOMS = {
+        DECK: ROOM_BATTLESHIP_DECK,
+        BAR: ROOM_STATION_BAR,
+    }
+    DEALER_PLACEMENTS_TEMPLATE = ALL_ON_DECK_DEALERS_TEMPLATE
+
+
 class BattleshipNoshipInterior(GenericInterior):
     START_ROOM = DECK
     ROOMS = {

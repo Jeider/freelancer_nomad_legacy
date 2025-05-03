@@ -35,6 +35,7 @@ from universe.systems import or_hq as or_hq_content
 from universe.systems import rh_vien as rh_vien_content
 from universe.systems import xen as xen_content
 from universe.systems import co_cad as co_cad_content
+from universe.systems import sphere2 as sphere2_content
 
 
 class rh_mnh(system.RheinlandFirst, system.System, system.SiriusSystem):
@@ -617,6 +618,7 @@ class sphere2(system.StorySystem, system.SiriusSystem):
     NAME = 'sphere2'
     DIRECT_TEMPLATE_NAME = 'sph2_dev'
     RU_NAME = 'Сфера'
+    CONTENT = sphere2_content
 
     ALLOW_SYNC = True
 

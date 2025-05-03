@@ -100,9 +100,9 @@ class EdisonTrent(Actor):
     TYPE = ACTOR_TRENT
     NAME = 'edison'
     COMM_APPEARANCE = 'pi_pirate5_head, pl_trent_body, comm_ge_generic1'
-    STEOS_ID = 211
-    STEOS_PITCH = -0.5
-    STEOS_SPEED = 1.0
+    STEOS_ID = 208
+    STEOS_PITCH = -1
+    STEOS_SPEED = 1.45
 
 
 class Juni(Actor):
@@ -118,7 +118,7 @@ class Hatcher(Actor):
     COMM_APPEARANCE = 'pl_female2_head, li_hatcher_body, comm_li_hatcher_female'
     STEOS_ID = 217
     STEOS_PITCH = -1
-    STEOS_SPEED = 1.2
+    STEOS_SPEED = 1.1
     SPACE_VOICE = 'pilot04'
 
 
@@ -154,9 +154,9 @@ class King(Actor):
     TYPE = ACTOR_MALE
     NAME = 'king'
     COMM_APPEARANCE = 'li_scrote_head, li_scrote_body'
-    STEOS_ID = 211
-    STEOS_PITCH = 0
-    STEOS_SPEED = 1.1
+    STEOS_ID = 218
+    STEOS_PITCH = 1
+    STEOS_SPEED = 1.2
 
 
 class Tilton(Actor):
@@ -215,7 +215,7 @@ class Sigma17Trader(Actor):
 
 
 class Sigma17Police(Actor):
-    RU_NAME = 'Полициейский'
+    RU_NAME = 'Полицейский'
     TYPE = ACTOR_MALE
     NAME = 'police'
     COMM_APPEARANCE = 'li_captain_head, li_male_elite_body, comm_li_elite'
@@ -558,7 +558,7 @@ class Alaric(Actor):
     CUTSCENE_APPEARANCE = 'alaric'
     SPACE_VOICE = 'pilot_f_mil_m01'
     STEOS_ID = 204
-    STEOS_PITCH = 0.1
+    STEOS_PITCH = -1
     STEOS_SPEED = 1.1
 
 

@@ -9,6 +9,11 @@ from settings import STEOS_API_KEY
 
 from story.actors import DynamicActor
 
+r'''
+Как получить голоса:
+https://public.api.voice.steos.io/api/v1/steos-voice-controller/available-voices/<токен>
+'''
+
 
 
 class SteosVoice(object):

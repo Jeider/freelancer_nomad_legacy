@@ -191,16 +191,15 @@ class Misson12(ingame_mission.IngameMission):
         defined_points.append(
             DockableBattleshipSolar(
                 self, S.asf_prom, 'logos',
-                ru_name='Линкор Логос', base='rh_vien_99_base',
+                ru_name='Линкор Логос', base='sphere_99_base',
                 labels=['enemy', 'or_b', 'logos']),
         )
         defined_points.append(
             DockableBattleshipSolar(
                 self, S.asf_prom, 'prom_osiris',
-                ru_name='Линкор Осирис', base='rh_vien_99_base',
+                ru_name='Линкор Осирис', base='sphere_99_base',
                 labels=['friend', 'asf', 'osiris']),
         )
-
 
         logos_segments = [
             ('logos_shieldgen', 'Генератор щита Логоса'),
@@ -512,7 +511,7 @@ class Misson12(ingame_mission.IngameMission):
                 ],
                 npc=NPC(
                     faction=faction.BretoniaMain,
-                    ship=ship.Cavalier,
+                    ship=ship.Crusader,
                     level=NPC.D19,
                     equip_map=EqMap(base_level=6),
                 )
