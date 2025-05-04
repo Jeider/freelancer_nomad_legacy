@@ -194,6 +194,8 @@ class Misson13(ingame_mission.IngameMission):
         sphere_points = [
             'goto_core',
             'goto_lazer',
+            'goto_catacomb',
+            'goto_catacomb2',
         ]
 
         sphere_solars = [
@@ -260,7 +262,7 @@ class Misson13(ingame_mission.IngameMission):
         for kr_gen in krieg_gens:
             defined_points.append(
                 Solar(self, S.sphere2, kr_gen, ru_name='Генератор',
-                      archetype='beast_generator'),
+                      archetype='beast_generator', labels=['the_krieg', 'krieg_the_gen']),
             )
 
         for sol, ru_name in inside_solars:
@@ -270,14 +272,14 @@ class Misson13(ingame_mission.IngameMission):
 
         defined_points.extend([
             Solar(self, S.sphere2, 'krieg_sleep', ru_name='Крыг', loadout='beast_sleep', archetype='beast_1500'),
-            Solar(self, S.sphere2, 'krieg_opens', ru_name='Крыг', loadout='beast_arrive', archetype='beast_1500'),
+            Solar(self, S.sphere2, 'krieg_opens', ru_name='Крыг', loadout='beast_arrive', archetype='beast_1500',
+                  labels=['the_krieg']),
             Solar(self, S.sphere2, 'krieg_collector', ru_name='Крыг',
                   loadout='beast_collector', archetype='beast_1500'),
             Solar(self, S.sphere2, 'krieg_opens_force', ru_name='Крыг',
                   loadout='beast_force_open', archetype='beast_1500',
-                  pilot='pilot_solar_hardest', labels=['the_krieg']),
-            Solar(self, S.sphere2, 'hit_fx', ru_name='Удар!', loadout='beast_hit', archetype='hidden_connect',
-                  labels=['the_krieg']),
+                  pilot='pilot_solar_hardest_beast', labels=['the_krieg']),
+            Solar(self, S.sphere2, 'hit_fx', ru_name='Удар!', loadout='beast_hit', archetype='hidden_connect'),
         ])
 
         gens_count = 3
@@ -310,6 +312,17 @@ class Misson13(ingame_mission.IngameMission):
                 archetype='o_osiris', loadout='li_battleship_02',
                 ru_name='Линкор Осирис', base='om13_chase_99_base',
                 labels=['friend', 'asf', 'osiris']),
+        )
+
+        defined_points.append(
+            Solar(self, S.sphere2_inside, 'inside_column1', ru_name='Поток энергии Сферы',
+                  labels=['enemy', 'energy_beam'],
+                  archetype='sphere_energy_column', loadout='sphere_column_power'),
+        )
+        defined_points.append(
+            Solar(self, S.sphere2_inside, 'inside_column2', ru_name='Поток энергии Сферы',
+                  labels=['enemy', 'energy_beam'],
+                  archetype='sphere_energy_column', loadout='sphere_column_power'),
         )
 
         return defined_points
@@ -346,6 +359,8 @@ class Misson13(ingame_mission.IngameMission):
 
             NNObj(self, 'Уничтожьте генераторы лазерной установки', name='destroy_lazergens'),
 
+            NNObj(self, O.GOTO, name='goto_catacomb', target='goto_catacomb'),
+            NNObj(self, O.GOTO, name='goto_catacomb2', target='goto_catacomb2'),
         ]
 
     def get_ships(self):

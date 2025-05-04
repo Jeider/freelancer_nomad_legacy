@@ -122,6 +122,9 @@ class Msn13Space(Msn13, script.SpaceVoiceProps):
         VoiceLine(310, Darcy, "Оно жив+ое!"),
         VoiceLine(320, Hatcher, "Всем приготовиться! Мы не знаем на что способна эта тварь!"),
 
+        VoiceLine(323, Hatcher, "Миссури под прицелом, выполнить манёвр уклонения!"),
+        VoiceLine(326, Alaric, "Поздно!"),
+
         VoiceLine(330, Hatcher, "Мы потеряли Миссури нахер!"),
         VoiceLine(340, King, "Вышлите спасательные судна с Осириса, срочно!"),
 
