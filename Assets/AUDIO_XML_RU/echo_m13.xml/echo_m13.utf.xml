@@ -21,6 +21,7 @@
 <test_voice name="0x9ED97587" type="file" filename="echo_m13\dx_m13_0270_alaric.wav"/>
 <test_voice name="0xB70E95C6" type="file" filename="echo_m13\dx_m13_0290_king.wav"/>
 <test_voice name="0x8A14788D" type="file" filename="echo_m13\dx_m13_0300_alaric.wav"/>
+<test_voice name="0x8A5CA28B" type="file" filename="echo_m13\dx_m13_0326_alaric.wav"/>
 <test_voice name="0xAD4E8D47" type="file" filename="echo_m13\dx_m13_0340_king.wav"/>
 <test_voice name="0xB7EEFEC0" type="file" filename="echo_m13\dx_m13_0350_mandrake.wav"/>
 <test_voice name="0xA28E8AC7" type="file" filename="echo_m13\dx_m13_0370_king.wav"/>

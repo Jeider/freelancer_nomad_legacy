@@ -551,3 +551,8 @@ class AlaricLike(LawfulFaction, LibertyFleet, BaseLiberty, LibertyMainEquip, Fac
     WEAPON = gun.LibertyHuntergun
     AFTERBURN = misc.LI_MAIN
     STORY_ONLY = True
+
+
+class Nomad(Faction):
+    CODE = 'fc_n_grp'
+    STORY_ONLY = True

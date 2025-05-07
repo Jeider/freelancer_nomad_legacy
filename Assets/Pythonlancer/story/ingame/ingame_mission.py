@@ -26,6 +26,7 @@ class IngameMission(object):
     def __init__(self, ids, full_script, universe_root):
         self.ids = ids
         self.capital_groups = {}
+        self.solar_groups = {}
         self.full_script = full_script
         self.universe_root = universe_root
         self.points: dict = self.get_all_points()
@@ -196,6 +197,14 @@ class IngameMission(object):
         if group_name not in self.capital_groups:
             raise Exception(f'Capital group {group_name} not defined in {self.__class__.__name__}')
         return self.capital_groups[group_name]
+
+    def add_solar_group(self, group_name, members):
+        self.solar_groups[group_name] = members
+
+    def get_solar_group(self, group_name):
+        if group_name not in self.solar_groups:
+            raise Exception(f'Solar group {group_name} not defined in {self.__class__.__name__}')
+        return self.solar_groups[group_name]
 
 
 class NagVoice(object):

@@ -22,6 +22,7 @@ FAIL_JUMPGATE = 90003  # Вы не активировали гиперврата
 FAIL_DOCK_BASE = 90004  # Вы не провели стыковку с базой
 FAIL_DOCK_BATTLESHIP = 90005  # Вы не провели стыковку с линкором
 FAIL_LEAVE_BASE = 90006  # Вы покинули базу
+DEFAULT_REACH_RANGE = 200
 
 LOCK_MANEUVERS = 'Act_LockManeuvers = true'
 UNLOCK_MANEUVERS = 'Act_LockManeuvers = false'
@@ -51,8 +52,10 @@ def ini_boolean(boolval):
 
 class Nag:
     NAG_OFF = 'Act_NagOff = {nag_name}'
-    NAG_OBJ_TOWARDS = 'Act_NagDistTowards = OBJ, {nag_name}, nag_voice, {obj_name}, {fail_id}, {range}, NAG_ALWAYS'
-    NAG_OBJ_LEAVING = 'Act_NagDistLeaving = {nag_name}, nag_voice, {obj_name}, {fail_id}, {range}'
+    NAG_OBJ = 'OBJ'
+    NAG_POS = 'POS'
+    NAG_TOWARDS = 'Act_NagDistTowards = {kind}, {nag_name}, nag_voice, {target}, {fail_id}, {range}, NAG_ALWAYS'
+    NAG_LEAVING = 'Act_NagDistLeaving = {nag_name}, nag_voice, {obj_name}, {fail_id}, {range}'
     NAG_ALWAYS = 'NAG_ALWAYS'
     TOWARDS_RANGE = 4000
     TLR_RANGE = 100
@@ -78,15 +81,18 @@ class Nag:
             return nag_off
         return ''
 
-    def get_towards_nag(self, nag_name, target):
+    def get_towards_nag(self, nag_name, target, is_object):
         items = []
         if self.last_nag_name:
             items.append(self.nag_off())
 
+        kind = self.NAG_OBJ if is_object else self.NAG_POS
+
         self.last_nag_name = nag_name
-        towards = self.NAG_OBJ_TOWARDS.format(
+        towards = self.NAG_TOWARDS.format(
+            kind=kind,
             nag_name=nag_name,
-            obj_name=target.get_name(),
+            target=target.get_name() if is_object else '{0}, {1}, {2}'.format(*target.get_position()),
             fail_id=FAIL_TARGET,
             range=self.TOWARDS_RANGE,
         )
@@ -95,9 +101,9 @@ class Nag:
         )
         return SINGLE_DIVIDER.join(items)
 
-    def towards(self, nag_name, target):
+    def towards(self, nag_name, target, is_object=True):
         """for template"""
-        return self.get_towards_nag(nag_name, target)
+        return self.get_towards_nag(nag_name, target, is_object)
 
     def get_leaving_nag(self, nag_name, target, fail_id, nag_range, nag_always=True):
         items = []
@@ -105,7 +111,7 @@ class Nag:
             items.append(self.nag_off())
 
         self.last_nag_name = nag_name
-        leaving = self.NAG_OBJ_LEAVING.format(
+        leaving = self.NAG_LEAVING.format(
             nag_name=nag_name,
             obj_name=target.get_name(),
             fail_id=fail_id,
@@ -253,6 +259,9 @@ class Point(Target):
             pos_y=position[1],
             pos_z=position[2],
         )
+
+    def turn_nag(self, nag_name, towards=False):
+        return self.mission.nag.towards(nag_name, self, is_object=False)
 
 
 class DefinedStaticMixin:
@@ -428,7 +437,7 @@ class Obj(Target):
 
     def turn_nag(self, nag_name, towards=False):
         if towards:
-            return self.mission.nag.towards(nag_name, self)
+            return self.mission.nag.towards(nag_name, self, is_object=True)
 
         if issubclass(self.instance_class, Battleship):
             return self.mission.nag.dock_battleship(nag_name, self)
@@ -1006,7 +1015,9 @@ class NNObj:
     NICKNAME_TEMPLATE = 'nickname = {nickname}'
     STATE = 'state = HIDDEN'
 
-    def __init__(self, mission, ru_action, name=None, target=None, towards=False, nag=True, force_jumpgate=False):
+    def __init__(self, mission, ru_action, name=None, target=None,
+                 towards=False, nag=True, force_jumpgate=False,
+                 reach_range=DEFAULT_REACH_RANGE):
         self.mission = mission
         self.ids_name = self.mission.ids.new_name(ru_action)
         self.target = target
@@ -1015,6 +1026,7 @@ class NNObj:
         self.towards = towards
         self.nag = nag
         self.force_jumpgate = force_jumpgate
+        self.reach_range = reach_range
 
     def get_string_id(self):
         return self.ids_name.id
@@ -1062,6 +1074,8 @@ class NNObj:
                 turn_nag = self.target_point.turn_nag(self.get_name(), towards=self.towards)
                 if turn_nag is not False:
                     actions.append(turn_nag)
+        else:
+            self.mission.nag.nag_off()
 
         return SINGLE_DIVIDER.join(actions)
 
@@ -1082,6 +1096,35 @@ class NNObj:
         """for template"""
         actions = [
             f'Act_SetNNHidden = {self.get_name()}, true'
+        ]
+        return SINGLE_DIVIDER.join(actions)
+
+    def reach(self):
+        """for template"""
+        if not self.target:
+            raise Exception(f'objective {self.get_name()} can not be reached')
+
+        actions = [
+            self.set(),
+            self.mission.trigger.next(f'REACH_{self.get_name()}'),
+            self.mission.direct.inside_pos(
+                system_name=self.target_point.system.NAME,
+                alias=self.target,
+                range=self.reach_range
+            ),
+        ]
+        return SINGLE_DIVIDER.join(actions)
+
+    def destroy(self):
+        """for template"""
+        if not self.target or self.target_point.__class__ != Solar:
+            print(self.target_point.__class__)
+            raise Exception('Object %s cannot be destroyed' % self.name)
+
+        actions = [
+            self.set(),
+            self.mission.trigger.next(f'DESTROYED_{self.get_name()}'),
+            f'Cnd_Destroyed = {self.target}',
         ]
         return SINGLE_DIVIDER.join(actions)
 
@@ -1416,6 +1459,27 @@ class Direct:
 
     def new_string_id(self, ru_name):
         return self.mission.ids.new_name(ru_name).id
+
+    def define_solar_group(self, group_name):
+        group = self.mission.get_solar_group(group_name)
+        actions = []
+        for solar in group:
+            actions.append(solar.define())
+        return SINGLE_DIVIDER.join(actions)
+
+    def spawn_solar_group(self, group_name):
+        group = self.mission.get_solar_group(group_name)
+        actions = []
+        for solar in group:
+            actions.append(solar.spawn())
+        return SINGLE_DIVIDER.join(actions)
+
+    def hide_solar_group(self, group_name):
+        group = self.mission.get_solar_group(group_name)
+        actions = []
+        for solar in group:
+            actions.append(solar.hide())
+        return SINGLE_DIVIDER.join(actions)
 
 
 class Patrol:

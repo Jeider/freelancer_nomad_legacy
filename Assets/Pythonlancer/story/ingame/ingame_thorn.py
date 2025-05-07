@@ -1,6 +1,6 @@
 GENERIC_TWO_POINT = 'cam_generic_two_point'
-GENERIC_TWO_POINT_MOVE = 'cam_generic_two_point_move'
-GENERIC_TWO_POINT_MOVE2 = 'cam_generic_two_point_move2'
+GENERIC_TWO_POINT_MOVE = 'cam_generic_two_point_move'  # move marker
+GENERIC_TWO_POINT_MOVE2 = 'cam_generic_two_point_move2'  # move camera
 GENERIC_MOUNTED_ROTATABLE = 'cam_mounted_rotatable'
 DEFAULT_TARGET = 'Player'
 TEMPLATES_SUBFOLDER = 'ingame_thorn'

@@ -79,7 +79,7 @@ class Msn13SuccessCutscene(Msn13, script.CutsceneProps):
 class Msn13Space(Msn13, script.SpaceVoiceProps):
     VOICE_LINES = [
         VoiceLine(5, Hatcher, ru='Направляемся в Сферу. Трент, веди нас'),
-        VoiceLine(10, Trent, ru='Профессор, что удал+ось узн+ать из д+анных пол+ученных от Р+окфорда?'),
+        VoiceLine(10, Trent, ru='Профессор, что-то удал+ось узн+ать из д+анных пол+ученных от Р+окфорда?'),
         VoiceLine(20, Mandrake, ru='Да, удал+ось. И всё достаточно серьёзно. В сфере заточён Кр+ыг.'),
         VoiceLine(30, Alaric, ru='Круг? В сф+ере?'),
         VoiceLine(40, Darcy, ru='Аларик, не вр+емя.'),
@@ -123,7 +123,7 @@ class Msn13Space(Msn13, script.SpaceVoiceProps):
         VoiceLine(320, Hatcher, "Всем приготовиться! Мы не знаем на что способна эта тварь!"),
 
         VoiceLine(323, Hatcher, "Миссури под прицелом, выполнить манёвр уклонения!"),
-        VoiceLine(326, Alaric, "Поздно!"),
+        VoiceLine(326, Alaric, "Слишком поздно!"),
 
         VoiceLine(330, Hatcher, "Мы потеряли Миссури нахер!"),
         VoiceLine(340, King, "Вышлите спасательные судна с Осириса, срочно!"),
@@ -176,7 +176,7 @@ class Msn13Space(Msn13, script.SpaceVoiceProps):
         VoiceLine(650, Hatcher, 'Срочно улетаем через этот проход! Живо!'),
 
         VoiceLine(660, Darcy, 'Это +Эдисон Трент? Собственной персоной?'),
-        VoiceLine(670, Hatcher, 'Легенда возвращается как никогда вовремя'),
+        VoiceLine(670, Hatcher, 'Легенда возвращается как никогда вовремя'),  # Alaric?
 
         VoiceLine(680, Trent, 'Что дальше, профессор?'),
         VoiceLine(690, Mandrake, 'Насколько я понимаю, уничтожить ЭТО сможет только гравитация черной дыры.'),

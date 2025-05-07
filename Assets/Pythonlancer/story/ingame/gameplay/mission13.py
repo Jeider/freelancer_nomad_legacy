@@ -25,6 +25,15 @@ state_graph = FIGHTER
 npc_class = lawful, FIGHTER
 
 [NPCShipArch]
+nickname = MSN13_Nomad_Battleship
+loadout = MSN13_Nomad_Battleship
+level = d18
+ship_archetype = no_battleship
+pilot = MSN13_Nomad_Battleship
+state_graph = CRUISER
+npc_class = lawful, CRUISER
+
+[NPCShipArch]
 nickname = ms13_li_dread
 loadout = li_dreadnought_03
 level = d10
@@ -51,8 +60,14 @@ pilot = pilot_mod_bomber
 state_graph = CRUISER
 npc_class = lawful, CRUISER, d5
 
-
-
+[NPCShipArch]
+nickname = beast_weapon_shiparch
+loadout = beast_large_weapon_ship
+level = d10
+ship_archetype = beast_weapon
+pilot = mod_fighter_version_a
+state_graph = CRUISER
+npc_class = lawful, CRUISER, d5
 '''
 
 
@@ -64,6 +79,11 @@ class Misson13(ingame_mission.IngameMission):
     DIRECT_SYSTEMS = [S.sphere2, S.sphere2_inside, S.beast01]
     STATIC_NPCSHIPS = NPCSHIPS
     RTC = ['captured']
+
+    def get_save_states(self):
+        return [
+            SaveState(self, 'beast_reactor', 'Сфера. Крыг ожил'),
+        ]
 
     def get_ingame_thorns(self):
         return [
@@ -106,6 +126,7 @@ class Misson13(ingame_mission.IngameMission):
                 },
                 params={
                     'move_duration': 30,
+                    'remove_smooth': True,
                 },
                 duration=60,
             ),
@@ -135,59 +156,48 @@ class Misson13(ingame_mission.IngameMission):
                 },
                 duration=25,
             ),
-            # IngameThorn(
-            #     self,
-            #     system_class=S.rh_vien,
-            #     template=GENERIC_TWO_POINT,
-            #     name='m11_wilham_death',
-            #     points={
-            #         'camera': 'death_cam',
-            #         'marker': 'death_marker',
-            #     },
-            #     duration=12,
-            # ),
-            # IngameThorn(
-            #     self,
-            #     system_class=S.rh_vien,
-            #     template=GENERIC_TWO_POINT_MOVE,
-            #     name='m11_cell_tractor',
-            #     points={
-            #         'camera': 'cell_cam',
-            #         'marker': 'lair_power_cell',
-            #         'marker_two': 'lair_power_cell_mrk2',
-            #     },
-            #     params={
-            #         'move_duration': 40,
-            #     },
-            #     duration=12,
-            # ),
-            # IngameThorn(
-            #     self,
-            #     system_class=S.rh_vien,
-            #     template=GENERIC_TWO_POINT,
-            #     name='m11_rockford_flee',
-            #     points={
-            #         'camera': 'rockford_cam',
-            #         'marker': 'rockford_cam_flee',
-            #     },
-            #     duration=12,
-            # ),
-            # IngameThorn(
-            #     self,
-            #     system_class=S.or_hq,
-            #     template=GENERIC_MOUNTED_ROTATABLE,
-            #     name='m11_hq_road_cam1',
-            #     params={
-            #         'cam_pos_x': 50,
-            #         'cam_pos_y': -10,
-            #         'cam_pos_z': 10,
-            #         'rotate_duration': 60,
-            #         'rotate_angle': -720,
-            #         'remove_smooth': True,
-            #     },
-            #     duration=60,
-            #     target='edison_trent',
-            # ),
+            IngameThorn(
+                self,
+                system_class=S.sphere2,
+                template=GENERIC_TWO_POINT_MOVE2,
+                name='m13_beast_collector',
+                points={
+                    'camera': 'cam_collector',
+                    'marker': 'cam_collector_marker',
+                    'marker_two': 'cam_collector2',
+                },
+                params={
+                    'move_duration': 15,
+                },
+                duration=25,
+            ),
+            IngameThorn(
+                self,
+                system_class=S.sphere2,
+                template=GENERIC_TWO_POINT_MOVE2,
+                name='m13_sphere_help',
+                points={
+                    'camera': 'cam_help',
+                    'marker': 'edison',
+                    'marker_two': 'cam_help2',
+                },
+                params={
+                    'move_duration': 8,
+                    # 'remove_smooth': True,
+                },
+                duration=60,
+            ),
+            IngameThorn(
+                self,
+                system_class=S.sphere2,
+                template=GENERIC_TWO_POINT,
+                name='m13_sphere_help2',
+                points={
+                    'camera': 'cam_edison',
+                    'marker': 'edison',
+                },
+                duration=25,
+            ),
         ]
 
     def get_static_points(self):
@@ -196,6 +206,10 @@ class Misson13(ingame_mission.IngameMission):
             'goto_lazer',
             'goto_catacomb',
             'goto_catacomb2',
+            'exit_catacomb1',
+            'exit_catacomb2',
+            'escape1',
+            'escape2',
         ]
 
         sphere_solars = [
@@ -242,10 +256,26 @@ class Misson13(ingame_mission.IngameMission):
             ('sph02_ins_airlock_exit', 'выход'),
         ]
 
+        inside_points = [
+            'inside01',
+            'inside02',
+            'inside02b',
+            'inside03',
+            'inside04',
+            'inside05',
+            'inside06',
+            'inside07',
+        ]
+
         defined_points = []
         for p in sphere_points:
             defined_points.append(
                 Point(self, S.sphere2, p)
+            )
+
+        for p in inside_points:
+            defined_points.append(
+                Point(self, S.sphere2_inside, p)
             )
 
         for sol in sphere_solars:
@@ -274,11 +304,12 @@ class Misson13(ingame_mission.IngameMission):
             Solar(self, S.sphere2, 'krieg_sleep', ru_name='Крыг', loadout='beast_sleep', archetype='beast_1500'),
             Solar(self, S.sphere2, 'krieg_opens', ru_name='Крыг', loadout='beast_arrive', archetype='beast_1500',
                   labels=['the_krieg']),
+            Solar(self, S.sphere2, 'krieg_opens_force', ru_name='Крыг',
+                  loadout='beast_force_open', archetype='beast_1500'),
             Solar(self, S.sphere2, 'krieg_collector', ru_name='Крыг',
                   loadout='beast_collector', archetype='beast_1500'),
-            Solar(self, S.sphere2, 'krieg_opens_force', ru_name='Крыг',
-                  loadout='beast_force_open', archetype='beast_1500',
-                  pilot='pilot_solar_hardest_beast', labels=['the_krieg']),
+            Solar(self, S.sphere2, 'krieg_silent', ru_name='Крыг',
+                  loadout='beast_silent', archetype='beast_1500'),
             Solar(self, S.sphere2, 'hit_fx', ru_name='Удар!', loadout='beast_hit', archetype='hidden_connect'),
         ])
 
@@ -297,6 +328,32 @@ class Misson13(ingame_mission.IngameMission):
                 Solar(self, S.sphere2, sol, ru_name='Орудийная платформа', labels=['enemy', 'lazergen'],
                       archetype='wplatform_ms2', loadout='ms2_the_platform'),
             )
+
+        krieg_turrets = []
+
+        large_turrets_count = 14
+        large_wplatforms = [f'big_turr{i:02d}' for i in range(1, large_turrets_count+1)]
+        for sol in large_wplatforms:
+            solar = Solar(self, S.sphere2, sol, ru_name='Орудийная платформа',
+                labels=['enemy', 'the_krieg'],
+                archetype='lair_platform', loadout='beast_platform01',
+                pilot='pilot_solar_hardest_beast',
+            )
+            defined_points.append(solar)
+            krieg_turrets.append(solar)
+
+        small_turrets_count = 12
+        small_wplatforms = [f'def_turr{i:02d}' for i in range(1, small_turrets_count+1)]
+        for sol in small_wplatforms:
+            solar = Solar(self, S.sphere2, sol, ru_name='Орудийная платформа',
+                labels=['enemy', 'the_krieg'],
+                archetype='lair_platform', loadout='beast_platform02',
+                pilot='pilot_solar_hardest_beast',
+            )
+            defined_points.append(solar)
+            krieg_turrets.append(solar)
+
+        self.add_solar_group('KRIEG_WP', krieg_turrets)
 
         defined_points.append(
             DockableBattleshipSolar(
@@ -325,6 +382,51 @@ class Misson13(ingame_mission.IngameMission):
                   archetype='sphere_energy_column', loadout='sphere_column_power'),
         )
 
+        sphere_no_caps = [
+            'sph_no_bs01',
+            'sph_no_bs02',
+            'sph_no_bs03',
+            'sph_no_bs04',
+            'sph_no_bs05',
+        ]
+        no_caps_sols = []
+        for no_cap in sphere_no_caps:
+            no_sol = Solar(
+                self, S.sphere2, no_cap,
+                ru_name='Линкор Кочевников',
+                faction='fc_n_grp',
+                labels=['enemy', 'no_cap', 'nomad'],
+                archetype='d_n_battleship',
+                loadout='MSN13_Nomad_Battleship'
+            )
+            defined_points.append(no_sol)
+            no_caps_sols.append(no_sol)
+
+        self.add_solar_group('SPHERE_NO_CAP', no_caps_sols)
+
+        defined_points.append(
+            Solar(self, S.sphere2, 'power_container', ru_name='Контейнер с энергоядром'),
+        )
+
+        sphere_walls = [
+            'wall1',
+            'wall2',
+            'wall3',
+            'wall4',
+        ]
+        wall_sols = []
+        for wall in sphere_walls:
+            wall_sol = Solar(
+                self, S.sphere2, wall,
+                ru_name='Стена Сферы',
+                archetype='beast_move_block',
+                loadout='sphere_extend_block01'
+            )
+            defined_points.append(wall_sol)
+            wall_sols.append(wall_sol)
+
+        self.add_solar_group('SPHERE_WALL', wall_sols)
+
         return defined_points
 
     def get_capital_ships(self):
@@ -335,6 +437,7 @@ class Misson13(ingame_mission.IngameMission):
         }
         beast_fire = {
             'npc_ship_arch': 'beast_fire_shiparch',
+            'labels': ['the_krieg_core'],
         }
         osiris = {
             'npc_ship_arch': 'ms13_osiris',
@@ -359,23 +462,81 @@ class Misson13(ingame_mission.IngameMission):
 
             NNObj(self, 'Уничтожьте генераторы лазерной установки', name='destroy_lazergens'),
 
-            NNObj(self, O.GOTO, name='goto_catacomb', target='goto_catacomb'),
-            NNObj(self, O.GOTO, name='goto_catacomb2', target='goto_catacomb2'),
+            NNObj(self, O.GOTO, target='goto_catacomb'),
+            NNObj(self, O.GOTO, target='goto_catacomb2'),
+
+            NNObj(self, O.GOTO, target='inside01'),
+            NNObj(self, O.GOTO, target='inside02'),
+            NNObj(self, O.GOTO, target='inside02b'),
+            NNObj(self, O.GOTO, target='inside03'),
+            NNObj(self, O.GOTO, target='inside04'),
+            NNObj(self, O.GOTO, target='inside05'),
+            NNObj(self, O.GOTO, target='inside06'),
+            NNObj(self, O.GOTO, target='inside07'),
+
+            NNObj(self, 'Уничтожьте энергопоток', target='inside_column1'),
+            NNObj(self, 'Уничтожьте энергопоток', target='inside_column2'),
+
+            NNObj(self, O.GOTO, target='exit_catacomb1'),
+            NNObj(self, O.GOTO, target='exit_catacomb2'),
+
+            NNObj(self, 'Уничтожьте контейнер энергоядра', name='destroy_powercell_container',
+                  target='power_container'),
+            NNObj(self, 'Подберите энергоядро', name='get_sphere_powercell'),
+
+            NNObj(self, O.GOTO, target='escape1', reach_range=2000),
+            NNObj(self, O.GOTO, target='escape2', reach_range=1500),
+
+            NNObj(self, 'Сядьте на Осирис', name='dock_osiris_escape', target='osiris_escape'),
+
+
         ]
 
     def get_ships(self):
         return [
+            # Ship(
+            #     self,
+            #     'no_chamber',
+            #     count=10,
+            #     affiliation=faction.Nomad.CODE,
+            #     system_class=S.sphere2,
+            #     slide_z=60,
+            #     slide_x=60,
+            #     radius=0,
+            #     labels=[
+            #         'enemy',
+            #         'nomad',
+            #     ],
+            #     static_npc_shiparch='ms13_no_fighter'
+            # ),
             Ship(
                 self,
-                'no_chamber',
-                count=10,
-                affiliation=faction.OrderMain.CODE,
-                system_class=S.beast01,
-                slide_z=50,
-                radius=0,
-                labels=[
-                    'enemy',
-                ],
+                'sph_no_f01',
+                count=5,
+                affiliation=faction.Nomad.CODE,
+                system_class=S.sphere2,
+                slide_z=60, slide_x=60, radius=0,
+                labels=['enemy', 'nomad'],
+                static_npc_shiparch='ms13_no_fighter'
+            ),
+            Ship(
+                self,
+                'sph_no_f02',
+                count=5,
+                affiliation=faction.Nomad.CODE,
+                system_class=S.sphere2,
+                slide_z=60, slide_x=60, radius=0,
+                labels=['enemy', 'nomad'],
+                static_npc_shiparch='ms13_no_fighter'
+            ),
+            Ship(
+                self,
+                'sph_no_f03',
+                count=5,
+                affiliation=faction.Nomad.CODE,
+                system_class=S.sphere2,
+                slide_z=60, slide_x=60, radius=0,
+                labels=['enemy', 'nomad'],
                 static_npc_shiparch='ms13_no_fighter'
             ),
             Ship(
@@ -448,6 +609,23 @@ class Misson13(ingame_mission.IngameMission):
                     faction=faction.LibertyMain,
                     ship=ship.Defender,
                     level=NPC.D6,
+                    equip_map=EqMap(base_level=6),
+                )
+            ),
+
+            Ship(
+                self,
+                'edison_trent',
+                actor=actors.EdisonTrent,
+                labels=[
+                    'friend',
+                ],
+                hero=True,
+                radius=0,
+                npc=NPC(
+                    faction=faction.Corsairs,
+                    ship=ship.Titan,
+                    level=NPC.D19,
                     equip_map=EqMap(base_level=6),
                 )
             ),
