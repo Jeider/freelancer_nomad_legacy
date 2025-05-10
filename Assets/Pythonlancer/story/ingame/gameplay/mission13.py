@@ -542,7 +542,6 @@ class Misson13(ingame_mission.IngameMission):
             Ship(
                 self,
                 'hatcher',
-                jumper=True,
                 hero=True,
                 actor=actors.Hatcher,
                 labels=[
@@ -560,7 +559,6 @@ class Misson13(ingame_mission.IngameMission):
             Ship(
                 self,
                 'darcy',
-                jumper=True,
                 hero=True,
                 actor=actors.Darcy,
                 labels=[
@@ -578,7 +576,6 @@ class Misson13(ingame_mission.IngameMission):
             Ship(
                 self,
                 'alaric',
-                jumper=True,
                 hero=True,
                 actor=actors.Alaric,
                 labels=[
