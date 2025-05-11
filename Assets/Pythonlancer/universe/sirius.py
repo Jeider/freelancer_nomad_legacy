@@ -637,6 +637,17 @@ class sphere2_inside(system.StorySystem, system.SiriusSystem):
     NAVMAP_POS = '14.5, -1.1'
 
 
+class omega13_alt(system.StorySystem, system.SiriusSystem):
+    NAME = 'om13_alt'
+    DIRECT_TEMPLATE_NAME = 'om13alt_dev'
+    RU_NAME = 'Омега-13'
+
+    ALLOW_SYNC = True
+
+    SYSTEM_FOLDER = 'OMEGA13_ALT'
+    NAVMAP_POS = '14.5, -1.1'
+
+
 class asf_hq(system.StorySystem, system.SiriusSystem):
     NAME = 'asf_hq'
     DIRECT_TEMPLATE_NAME = 'asf_hq_dev'

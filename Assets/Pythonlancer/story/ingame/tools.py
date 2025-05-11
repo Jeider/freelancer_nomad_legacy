@@ -1075,7 +1075,6 @@ class NNObj:
                 if turn_nag is not False:
                     actions.append(turn_nag)
         else:
-            print(f'off in {self.get_name()}')
             actions.append(self.mission.nag.nag_off())
 
         return SINGLE_DIVIDER.join(actions)

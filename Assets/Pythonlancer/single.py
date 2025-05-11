@@ -43,6 +43,7 @@ from templates.dockable import upsilon_gasinside
 from templates.dockable import tunnel
 from templates.misc import rmbase
 from templates.misc import trading
+from templates.misc import ast_om15_xxxlarge
 from templates.dockable import order_shipyard
 
 from templates.dockable import m13
@@ -51,7 +52,7 @@ from templates.dockable import m13
 def draw_base():
     new_name = None
     move_to = None
-    workspace = '3'
+    workspace = '0'
 
     # base_class = m13.RockfordGenerator
     # new_name = 'or_hq_vienna_entry'
@@ -65,9 +66,9 @@ def draw_base():
     # new_name = 'or_hq_shipyard_01'
     # move_to = (-20000, 0, 0)
 
-    base_class = trading.TradingDoors
-    new_name = 'communicator'
-    move_to = (11030, -2200, 9455)
+    base_class = ast_om15_xxxlarge.AsteroidOne
+    # new_name = 'communicator'
+    move_to = (-9500, 0, -10000)
 
     the_base = base_class()
 
@@ -84,14 +85,15 @@ def draw_base_for_hardpoints():
     # new_name = 'or_hq_vienna_entry'
     # move_to = (13900, 0, 32400)
 
-    base_class = upsilon_gasinside.Vienna
+    base_class = ast_om15_xxxlarge.AsteroidTwo
+    # new_name = 'or_hq_vienna_entry'
     the_base = base_class()
 
     the_base.get_instance(new_space_object_name=new_name, move_to=move_to)
     the_base.parse_segments()
     # print(the_base.get_segments_as_hardpoints_xml())
-    # print(the_base.get_segments_as_loadout())
-    print(the_base.get_instance_from_segments())
+    print(the_base.get_segments_as_loadout(warning=False))
+    # print(the_base.get_instance_from_segments())
 
 
 def generate_hacker_panels():

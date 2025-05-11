@@ -20,7 +20,13 @@ ARCHETYPE_MAP = {
     'space_small_control_tower': 'attached_small_control_tower',
     'space_medium_control_tower': 'attached_medium_control_tower',
     'space_control_tower': 'attached_large_control_tower',
+    'om15_xxxlarge_door': 'attached_om15_xxxlarge_door',
+    'om15_xxxlarge_tunnel01': 'attached_om15_xxxlarge_tunnel01',
+    'om15_xxxlarge_tunnel02': 'attached_om15_xxxlarge_tunnel02',
+    'om15_xxxlarge_tunnel03': 'attached_om15_xxxlarge_tunnel03',
+    'om15_xxxlarge_tunnel04': 'attached_om15_xxxlarge_tunnel04',
 }
+
 
 def prepare_pos(pos_val):
     if pos_val % 1 == 0:
@@ -188,12 +194,15 @@ class SpaceObjectTemplate(object):
 
         return SINGLE_DIVIDER.join(hps)
 
-    def get_segments_as_loadout(self):
+    def get_segments_as_loadout(self, warning=False):
         allowed_archetypes = ARCHETYPE_MAP.keys()
         records = []
         for segment in self.segments:
             if segment.archetype not in allowed_archetypes:
-                continue
+                if not warning:
+                    continue
+                else:
+                    raise Exception(f'archetype {segment.archetype} is not allowed')
 
             records.append(
                 f'equip = {ARCHETYPE_MAP[segment.archetype]}, Hp_{segment.nickname}'
@@ -213,7 +222,7 @@ nickname = {segment.nickname}
 pos = {segment.get_pos()}
 rotate = {segment.get_rotate()}
 archetype = {segment.archetype}
-parent = up2_01
+parent = {self.space_object_name}
 '''
             )
         return SINGLE_DIVIDER.join(records)

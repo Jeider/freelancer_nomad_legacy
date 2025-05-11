@@ -1,0 +1,24 @@
+from universe.content.member import Member
+from universe.content.system_object import LEFT, RIGHT, TOP
+from universe.content import main_objects
+from universe.content import zones
+from universe.content import interior
+from universe.content import dealers
+from universe import faction
+
+
+class Omega13AltMember(Member):
+    FACTION = faction.Corsairs
+
+
+class BlackholeOsiris(Omega13AltMember, main_objects.LibertyBattleship):
+    ALIAS = 'osiris_bh'
+    INDEX = 1
+    BASE_INDEX = 99
+    REL = TOP
+    INTERIOR_CLASS = interior.OsirisInterior
+    DEALERS = dealers.LibertyMilitaryDealers
+    STORY = True
+    CALC_STORE = False
+    FACTION = faction.LibertyMain
+    ROOM_SUBFOLDER = interior.ROOM_FOLDER_LI

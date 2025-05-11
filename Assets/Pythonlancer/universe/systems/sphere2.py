@@ -19,7 +19,7 @@ class Sphere2Member(Member):
     FACTION = faction.ASF
 
 
-class ViennaKusariBattleship(Sphere2Member, main_objects.LibertyBattleship):
+class SphereTwoOsiris(Sphere2Member, main_objects.LibertyBattleship):
     ALIAS = 'osiris_arrive'
     INDEX = 1
     BASE_INDEX = 99
