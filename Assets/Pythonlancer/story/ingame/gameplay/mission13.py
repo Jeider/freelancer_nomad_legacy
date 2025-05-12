@@ -6,21 +6,36 @@ from story.math import euler_to_quat
 from story import actors
 
 from story.ingame import objectives as O
-from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Solar, Capital, SaveState, DockableBattleshipSolar
+from story.ingame.tools import (
+    Point, Obj, Conn, NNObj, Ship, Solar, Capital, SaveState, DockableBattleshipSolar,
+    Direct, Trigger
+)
+
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT, GENERIC_MOUNTED_ROTATABLE, GENERIC_TWO_POINT_MOVE2
 
 from world.npc import NPC, EqMap
 from world import ship
 from universe import faction
 
+from text.dividers import SINGLE_DIVIDER, DIVIDER
+
 
 NPCSHIPS = '''
 [NPCShipArch]
 nickname = ms13_no_fighter
-loadout = ms6_no_fighter
+loadout = ms13_no_fighter
 level = d13
 ship_archetype = no_fighter
 pilot = mod_fighter_version_a
+state_graph = FIGHTER
+npc_class = lawful, FIGHTER
+
+[NPCShipArch]
+nickname = ms13_no_fighter_catcher
+loadout = ms13_no_fighter_cd
+level = d13
+ship_archetype = no_fighter
+pilot = pilot_mod_catcher
 state_graph = FIGHTER
 npc_class = lawful, FIGHTER
 
@@ -71,14 +86,142 @@ npc_class = lawful, CRUISER, d5
 '''
 
 
+class Kernel:
+    def __init__(self, kernel_index, ships_indexes=None):
+        self.kernel_index = kernel_index
+        self.ship_indexes = ships_indexes if ships_indexes else []
+
+    def add_ship_index(self, ship_index):
+        self.ship_indexes.append(ship_index)
+
+    def get_kernel_index(self):
+        return f'{self.kernel_index:02d}'
+
+
+class ActiveKernel:
+
+    MAIN = 'ACTIVE_KERNEL_init'
+    KERNEL_NAME = 'om13_alt_field_kernels1_{0}'
+    KERNEL_TRIGGER_NAME = 'ACTIVE_KERNEL_{0}_detect'
+    KERNELS_COUNT = 65
+    SHIPS_PER_KERNEL = 3
+    SHIPS_COUNT = KERNELS_COUNT * SHIPS_PER_KERNEL
+    SHIP_GROUP = 'active_kernel_ship'
+    SHIP_OFFSETS = [
+        (0, 150, 0),
+        (100, -40, 0),
+        (-100, -40, 0),
+    ]
+    DETECT_RANGE = 600
+    NOMAD_SHIP_CLASS = 'active_kernel_ship'
+    SYSTEM_NAME = S.om13_alt.NAME
+
+    def __init__(self, direct, trigger):
+        self.direct: Direct = direct
+        self.trigger: Trigger = trigger
+        self.kernels = []
+        self.init_kernels()
+
+    def init_kernels(self):
+        ship_index = 1
+        kernel_index = 1
+        for i in range(1, self.KERNELS_COUNT+1):
+            kernel = Kernel(kernel_index=kernel_index)
+            self.kernels.append(kernel)
+            for j in range(1, self.SHIPS_PER_KERNEL+1):
+                kernel.add_ship_index(ship_index)
+                ship_index += 1
+            kernel_index += 1
+
+    def turn(self):
+        return f'Act_ActTrig = {self.MAIN}'
+
+    def activate_kernels(self):
+        content = []
+        for kernel in self.kernels:
+            content.append(
+                self.trigger.turn(self.KERNEL_TRIGGER_NAME.format(kernel.get_kernel_index()))
+            )
+        return SINGLE_DIVIDER.join(content)
+
+    def deactivate_kernels(self):
+        content = []
+        for kernel in self.kernels:
+            content.append(
+                self.trigger.off(self.KERNEL_TRIGGER_NAME.format(kernel.get_kernel_index()))
+            )
+        return SINGLE_DIVIDER.join(content)
+
+    def get_kernel_triggers(self):
+        triggers = []
+        for kernel in self.kernels:
+            name = self.KERNEL_NAME.format(kernel.get_kernel_index())
+            pos = self.direct.get_point(self.SYSTEM_NAME, name).get_position()
+
+            kernel_actions = [
+                self.trigger.new(self.KERNEL_TRIGGER_NAME.format(kernel.get_kernel_index())),
+                self.direct.inside_pos(self.SYSTEM_NAME, name, self.DETECT_RANGE),
+            ]
+
+            ship_index = 0
+            for ship_member_index in kernel.ship_indexes:
+                ship_offset = self.SHIP_OFFSETS[ship_index]
+                ship_pos = [
+                    float(pos[0])+ship_offset[0],
+                    float(pos[1])+ship_offset[1],
+                    float(pos[2])+ship_offset[2]
+                ]
+                kernel_actions.append(
+                    f'Act_SpawnShip = {self.SHIP_GROUP}{ship_member_index}, no_ol, {ship_pos[0]}, {ship_pos[1]}, {ship_pos[2]}'
+                )
+                ship_index += 1
+
+            triggers.append(SINGLE_DIVIDER.join(kernel_actions))
+
+        return DIVIDER.join(triggers)
+
+    def hide_ships(self):
+        content = []
+        for i in range(self.SHIPS_COUNT+1):
+            content.append(
+                f'Act_Destroy = {self.SHIP_GROUP}{i}, SILENT'
+            )
+        return SINGLE_DIVIDER.join(content)
+
+    def define(self):
+        content = [
+            self.trigger.new(self.MAIN, dry=True),
+            self.activate_kernels(),
+            '',
+            self.get_kernel_triggers(),
+        ]
+        return SINGLE_DIVIDER.join(content)
+
+    def deactivate(self):
+        content = [
+            self.deactivate_kernels(),
+            self.hide_ships(),
+        ]
+        return SINGLE_DIVIDER.join(content)
+
+
 class Misson13(ingame_mission.IngameMission):
     JINJA_TEMPLATE = 'missions/m13/m13.ini'
     FOLDER = 'M13'
     FILE = 'm13'
     SCRIPT_INDEX = 13
-    DIRECT_SYSTEMS = [S.sphere2, S.sphere2_inside, S.beast01]
+    DIRECT_SYSTEMS = [S.sphere2, S.sphere2_inside, S.beast01, S.om13_alt]
     STATIC_NPCSHIPS = NPCSHIPS
     RTC = ['captured']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.active_kernel = ActiveKernel(direct=self.direct, trigger=self.trigger)
+
+    def get_initial_context(self) -> dict:
+        context = super().get_initial_context()
+        context['active_kernel'] = self.active_kernel
+        return context
 
     def get_save_states(self):
         return [
@@ -625,5 +768,15 @@ class Misson13(ingame_mission.IngameMission):
                     level=NPC.D19,
                     equip_map=EqMap(base_level=6),
                 )
+            ),
+            Ship(
+                self,
+                'active_kernel_ship',
+                count=ActiveKernel.SHIPS_COUNT,
+                affiliation=faction.Nomad.CODE,
+                system_class=S.om13_alt,
+                radius=0,
+                labels=['enemy', 'nomad'],
+                static_npc_shiparch='ms13_no_fighter_catcher'
             ),
         ]

@@ -637,7 +637,7 @@ class sphere2_inside(system.StorySystem, system.SiriusSystem):
     NAVMAP_POS = '14.5, -1.1'
 
 
-class omega13_alt(system.StorySystem, system.SiriusSystem):
+class om13_alt(system.StorySystem, system.SiriusSystem):
     NAME = 'om13_alt'
     DIRECT_TEMPLATE_NAME = 'om13alt_dev'
     RU_NAME = 'Омега-13'

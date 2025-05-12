@@ -264,27 +264,24 @@ def test_lua():
 
 
 class MySupriseField(mineable.DefaultField):
-    BOX_SIZE = 800
-    DENSITY_MULTIPLER = 6
+    BOX_SIZE = 2000
+    DENSITY_MULTIPLER = 10
     DRIFT_X = 0.8
-    DRIFT_Y = 0.25
+    DRIFT_Y = 0.5
     DRIFT_Z = 0.8
     EMPTY_CHANCE = 0
-    ROTATE_X_MIN = -10
-    ROTATE_X_MAX = 10
+    ROTATE_X_MIN = -180
+    ROTATE_X_MAX = 180
     ROTATE_Y_MIN = -180
     ROTATE_Y_MAX = 180
-    ROTATE_Z_MIN = -10
-    ROTATE_Z_MAX = 10
+    ROTATE_Z_MIN = -180
+    ROTATE_Z_MAX = 180
 
 
 class MyField(mineable.StaticObjectField):
-    ALIAS = 'rs_battle'
+    ALIAS = 'kernels'
     STATIC_ARCHETYPES = [
-        'k_battleship',
-        'l_dreadnought',
-        'b_battleship',
-        'o_osiris',
+        'space_kernel',
     ]
     FIELD_CLASS = MySupriseField
     REWARDS_GROUP_CLASS = mineable.DefaultSupriseRewardsGroup
@@ -293,7 +290,7 @@ class MyField(mineable.StaticObjectField):
 
 def generate_field():
     core = get_core()
-    asf = core.universe.universe_root.get_all_system_by_name('asf_hq')
+    asf = core.universe.universe_root.get_all_system_by_name('om13_alt')
 
     field = MyField(system=asf)
     content = field.get_system_content()
