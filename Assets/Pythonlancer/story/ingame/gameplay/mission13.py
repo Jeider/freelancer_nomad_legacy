@@ -112,6 +112,7 @@ class ActiveKernel:
         (100, -40, 0),
         (-100, -40, 0),
     ]
+    SHIP_OBJLIST = 'ol_no_avoid'
     DETECT_RANGE = 600
     NOMAD_SHIP_CLASS = 'active_kernel_ship'
     SYSTEM_NAME = S.om13_alt.NAME
@@ -121,6 +122,7 @@ class ActiveKernel:
         self.trigger: Trigger = trigger
         self.kernels = []
         self.init_kernels()
+        self.defined = False
 
     def init_kernels(self):
         ship_index = 1
@@ -134,7 +136,9 @@ class ActiveKernel:
             kernel_index += 1
 
     def turn(self):
-        return f'Act_ActTrig = {self.MAIN}'
+        if not self.defined:
+            raise Exception('Active kernel is not defined')
+        return self.trigger.turn(self.MAIN)
 
     def activate_kernels(self):
         content = []
@@ -172,7 +176,7 @@ class ActiveKernel:
                     float(pos[2])+ship_offset[2]
                 ]
                 kernel_actions.append(
-                    f'Act_SpawnShip = {self.SHIP_GROUP}{ship_member_index}, no_ol, {ship_pos[0]}, {ship_pos[1]}, {ship_pos[2]}'
+                    f'Act_SpawnShip = {self.SHIP_GROUP}{ship_member_index}, {self.SHIP_OBJLIST}, {ship_pos[0]}, {ship_pos[1]}, {ship_pos[2]}'
                 )
                 ship_index += 1
 
@@ -189,6 +193,7 @@ class ActiveKernel:
         return SINGLE_DIVIDER.join(content)
 
     def define(self):
+        self.defined = True
         content = [
             self.trigger.new(self.MAIN, dry=True),
             self.activate_kernels(),
@@ -570,6 +575,44 @@ class Misson13(ingame_mission.IngameMission):
 
         self.add_solar_group('SPHERE_WALL', wall_sols)
 
+        #### OMEGA 13
+        #
+        # om13_solars = [
+        #     'lazer1',
+        # ]
+        #
+        # for sol in om13_solars:
+        #     defined_points.append(
+        #         Solar(self, S.om13_alt, sol, ru_name='test'),
+        #     )
+
+
+
+        defined_points.extend([
+            Solar(self, S.om13_alt, 'inside_kernel01', ru_name='Номадское зерно',
+                  loadout='beast_kernel_light', archetype='inside_beast_kernel'),
+            Solar(self, S.om13_alt, 'inside_kernel02', ru_name='Номадское зерно',
+                  loadout='beast_kernel_light', archetype='inside_beast_kernel'),
+        ])
+
+        kernels1_sols = []
+
+        kernels1_count = ActiveKernel.KERNELS_COUNT
+        kernels1_names = [f'om13_alt_field_kernels1_{i:02d}' for i in range(1, kernels1_count+1)]
+        for sol in kernels1_names:
+            solar = Solar(self, S.om13_alt, sol, ru_name='Номадское зерно',
+                archetype='space_kernel', loadout='space_kernel_light',
+            )
+            defined_points.append(solar)
+            kernels1_sols.append(solar)
+
+        self.add_solar_group('KERNELS1', kernels1_sols)
+
+        defined_points.extend([
+            Solar(self, S.om13_alt, 'om13alt_beast_kernel1_01', ru_name='Номадское зерно',
+                  archetype='space_beast_kernel', loadout='space_beast_kernel_light'),
+        ])
+
         return defined_points
 
     def get_capital_ships(self):
@@ -665,7 +708,7 @@ class Misson13(ingame_mission.IngameMission):
             Ship(
                 self,
                 'sph_no_f02',
-                count=5,
+                count=4,
                 affiliation=faction.Nomad.CODE,
                 system_class=S.sphere2,
                 slide_z=60, slide_x=60, radius=0,
@@ -675,7 +718,7 @@ class Misson13(ingame_mission.IngameMission):
             Ship(
                 self,
                 'sph_no_f03',
-                count=5,
+                count=4,
                 affiliation=faction.Nomad.CODE,
                 system_class=S.sphere2,
                 slide_z=60, slide_x=60, radius=0,
@@ -778,5 +821,15 @@ class Misson13(ingame_mission.IngameMission):
                 radius=0,
                 labels=['enemy', 'nomad'],
                 static_npc_shiparch='ms13_no_fighter_catcher'
+            ),
+            Ship(
+                self,
+                'chamber1_no_fighter',
+                count=12,
+                affiliation=faction.Nomad.CODE,
+                system_class=S.om13_alt,
+                radius=0,
+                labels=['enemy', 'nomad'],
+                static_npc_shiparch='ms13_no_fighter'
             ),
         ]

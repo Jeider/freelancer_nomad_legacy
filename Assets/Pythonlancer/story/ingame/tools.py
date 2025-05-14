@@ -324,6 +324,7 @@ class Solar(DefinedStaticMixin, Point):
         self.pilot = pilot
         super().__init__(*args, **kwargs)
         self.ids_name = self.mission.ids.new_name(self.ru_name)
+        self.defined = False
 
     def get_name(self):
         return self.alias
@@ -344,6 +345,8 @@ class Solar(DefinedStaticMixin, Point):
         )
 
     def spawn(self):
+        if not self.defined:
+            raise Exception(f'Solar {self.get_name()} is not defined')
         return f'Act_SpawnSolar = {self.get_name()}'
 
     def define(self, archetype=None, loadout=None, faction=None, label=None):
@@ -373,6 +376,8 @@ class Solar(DefinedStaticMixin, Point):
             solar.append(f'label = {label}')
         for root_label in self.labels:
             solar.append(f'label = {root_label}')
+
+        self.defined = True
 
         return SINGLE_DIVIDER.join(solar)
 
