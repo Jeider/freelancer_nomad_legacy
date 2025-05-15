@@ -112,6 +112,7 @@ class ActiveKernel:
         (100, -40, 0),
         (-100, -40, 0),
     ]
+    NOMAD_SETREP = 'OUTER_KERNEL_setrep'
     SHIP_OBJLIST = 'ol_no_avoid'
     DETECT_RANGE = 600
     NOMAD_SHIP_CLASS = 'active_kernel_ship'
@@ -178,6 +179,7 @@ class ActiveKernel:
                 kernel_actions.append(
                     f'Act_SpawnShip = {self.SHIP_GROUP}{ship_member_index}, {self.SHIP_OBJLIST}, {ship_pos[0]}, {ship_pos[1]}, {ship_pos[2]}'
                 )
+                kernel_actions.append(self.trigger.turn(self.NOMAD_SETREP))
                 ship_index += 1
 
             triggers.append(SINGLE_DIVIDER.join(kernel_actions))
@@ -575,18 +577,21 @@ class Misson13(ingame_mission.IngameMission):
 
         self.add_solar_group('SPHERE_WALL', wall_sols)
 
-        #### OMEGA 13
-        #
-        # om13_solars = [
-        #     'lazer1',
-        # ]
-        #
-        # for sol in om13_solars:
-        #     defined_points.append(
-        #         Solar(self, S.om13_alt, sol, ru_name='test'),
-        #     )
+        ### OMEGA 13
 
+        om13_points = [
+            'kernels1',
+            'kernels1_exit',
+            'kernels1_inside',
+            'kernels1_inside2',
+            'kernels1_tunnel',
+            'kernels1_after',
+        ]
 
+        for p in om13_points:
+            defined_points.append(
+                Point(self, S.om13_alt, p),
+            )
 
         defined_points.extend([
             Solar(self, S.om13_alt, 'inside_kernel01', ru_name='Номадское зерно',
@@ -611,7 +616,13 @@ class Misson13(ingame_mission.IngameMission):
         defined_points.extend([
             Solar(self, S.om13_alt, 'om13alt_beast_kernel1_01', ru_name='Номадское зерно',
                   archetype='space_beast_kernel', loadout='space_beast_kernel_light'),
+            Solar(self, S.om13_alt, 'om13alt_ast_b_dmg1', ru_name='Перегородка туннеля',
+                  archetype='om15_static_xlarge_ast04_dmg'),
+            Solar(self, S.om13_alt, 'om13alt_ast_b_dmg2', ru_name='Перегородка туннеля',
+                  archetype='om15_static_xlarge_ast04_dmg'),
         ])
+
+
 
         return defined_points
 
@@ -674,6 +685,17 @@ class Misson13(ingame_mission.IngameMission):
             NNObj(self, O.GOTO, target='escape2', reach_range=1500),
 
             NNObj(self, 'Сядьте на Осирис', name='dock_osiris_escape', target='osiris_escape'),
+
+            NNObj(self, O.GOTO, target='kernels1'),
+            NNObj(self, O.GOTO, target='kernels1_exit'),
+            NNObj(self, O.GOTO, target='kernels1_inside', reach_range=500),
+            NNObj(self, O.GOTO, target='kernels1_inside2', reach_range=500),
+            NNObj(self, O.GOTO, target='kernels1_tunnel', reach_range=600),
+            NNObj(self, O.GOTO, target='kernels1_after'),
+
+            NNObj(self, 'Уничтожьте перегородку', name='kernels1_door1', target='om13alt_ast_b_dmg2'),
+            NNObj(self, 'Уничтожьте перегородку', name='kernels1_door2', target='om13alt_ast_b_dmg1'),
+            NNObj(self, 'Уничтожьте зерно', name='destroy_inside_kernel01', target='inside_kernel01'),
 
 
         ]

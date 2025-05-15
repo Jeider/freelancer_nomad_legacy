@@ -310,6 +310,9 @@ class DefinedStaticMixin:
 
         return f"Act_Invulnerable = {self.get_name()}, {params_string}"
 
+    def turn_nag(self, nag_name, towards=False):
+        return False
+
 
 class Solar(DefinedStaticMixin, Point):
 
@@ -1079,6 +1082,8 @@ class NNObj:
                 turn_nag = self.target_point.turn_nag(self.get_name(), towards=self.towards)
                 if turn_nag is not False:
                     actions.append(turn_nag)
+                else:
+                    actions.append(self.mission.nag.nag_off())
         else:
             actions.append(self.mission.nag.nag_off())
 

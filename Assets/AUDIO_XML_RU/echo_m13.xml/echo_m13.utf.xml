@@ -44,5 +44,10 @@
 <test_voice name="0xB7ECEFC1" type="file" filename="echo_m13\dx_m13_0750_mandrake.wav"/>
 <test_voice name="0xB5ECEFC9" type="file" filename="echo_m13\dx_m13_0770_mandrake.wav"/>
 <test_voice name="0x924E0343" type="file" filename="echo_m13\dx_m13_0780_king.wav"/>
+<test_voice name="0x985ACA4E" type="file" filename="echo_m13\dx_m13_1000_king.wav"/>
+<test_voice name="0x92DACF4E" type="file" filename="echo_m13\dx_m13_1020_king.wav"/>
+<test_voice name="0x92DA874C" type="file" filename="echo_m13\dx_m13_1220_king.wav"/>
+<test_voice name="0x979A85CC" type="file" filename="echo_m13\dx_m13_1230_king.wav"/>
+<test_voice name="0xB3191344" type="file" filename="echo_m13\dx_m13_1410_mandrake.wav"/>
 </UTF_ROOT>
 </UTFXML>
