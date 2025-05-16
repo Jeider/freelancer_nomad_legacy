@@ -88,5 +88,63 @@ rotate = 0, -140, 0
 archetype = om15_xxxlarge_door
 '''
 
+    EXTRA = '''
+[Object]
+nickname = om13alt_ast_a02_11
+pos = -120, -250, -280
+rotate = -20, 26, 0
+archetype = om15_xxxlarge_tunnel03
+
+[Object]
+nickname = om13alt_ast_a02_12
+pos = 240, -180, 70
+rotate = 0, -41, -2
+archetype = om15_xxxlarge_tunnel06
+'''
 
 
+class AsteroidThree(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'om13alt_ast_a03'
+    TEMPLATE = '''
+[Object]
+nickname = om13alt_ast_a03_01
+pos = -1750, 720, 400
+rotate = 0, 110, -20
+archetype = om15_xxxlarge_door
+
+[Object]
+nickname = om13alt_ast_a03_03
+pos = -1046, 356, 179
+rotate = -98, 29, -131
+archetype = om15_xxxlarge_tunnel01
+
+[Object]
+nickname = om13alt_ast_a03_07
+pos = -300, -450, -450
+rotate = 180, 45, 0
+archetype = om15_xxxlarge_tunnel02
+
+[Object]
+nickname = om13alt_ast_a03_06
+pos = -680, -200, -580
+rotate = 180, -20, -40
+archetype = om15_xxxlarge_wall
+
+[Object]
+nickname = om13alt_ast_a03_08
+pos = -50, -450, -150
+rotate = -23, 26, -43
+archetype = om15_xxxlarge_tunnel05
+
+[Object]
+nickname = om13alt_ast_a03_05
+pos = 550, -500, 350
+rotate = -5, 45, 0
+archetype = om15_xxxlarge_tunnel03
+
+[Object]
+nickname = om13alt_ast_a03_09
+pos = 950, -520, 820
+rotate = 0, -140, 0
+archetype = om15_xxxlarge_door
+'''

@@ -25,6 +25,8 @@ ARCHETYPE_MAP = {
     'om15_xxxlarge_tunnel02': 'attached_om15_xxxlarge_tunnel02',
     'om15_xxxlarge_tunnel03': 'attached_om15_xxxlarge_tunnel03',
     'om15_xxxlarge_tunnel04': 'attached_om15_xxxlarge_tunnel04',
+    'om15_xxxlarge_tunnel05': 'attached_om15_xxxlarge_tunnel05',
+    'om15_xxxlarge_wall': 'attached_om15_xxxlarge_wall',
 }
 
 

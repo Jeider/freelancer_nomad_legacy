@@ -52,7 +52,7 @@ from templates.dockable import m13
 def draw_base():
     new_name = None
     move_to = None
-    workspace = '0'
+    workspace = '1'
 
     # base_class = m13.RockfordGenerator
     # new_name = 'or_hq_vienna_entry'
@@ -68,7 +68,7 @@ def draw_base():
 
     base_class = ast_om15_xxxlarge.AsteroidOne
     # new_name = 'communicator'
-    move_to = (-9500, 0, -10000)
+    # move_to = (-9500, 0, -10000)
 
     the_base = base_class()
 
@@ -85,14 +85,14 @@ def draw_base_for_hardpoints():
     # new_name = 'or_hq_vienna_entry'
     # move_to = (13900, 0, 32400)
 
-    base_class = ast_om15_xxxlarge.AsteroidTwo
+    base_class = ast_om15_xxxlarge.AsteroidThree
     # new_name = 'or_hq_vienna_entry'
     the_base = base_class()
 
     the_base.get_instance(new_space_object_name=new_name, move_to=move_to)
     the_base.parse_segments()
     # print(the_base.get_segments_as_hardpoints_xml())
-    print(the_base.get_segments_as_loadout(warning=False))
+    # print(the_base.get_segments_as_loadout(warning=False))
     # print(the_base.get_instance_from_segments())
 
 
@@ -264,8 +264,8 @@ def test_lua():
 
 
 class MySupriseField(mineable.DefaultField):
-    BOX_SIZE = 2000
-    DENSITY_MULTIPLER = 10
+    BOX_SIZE = 600
+    DENSITY_MULTIPLER = 2
     DRIFT_X = 0.8
     DRIFT_Y = 0.5
     DRIFT_Z = 0.8
@@ -279,9 +279,12 @@ class MySupriseField(mineable.DefaultField):
 
 
 class MyField(mineable.StaticObjectField):
-    ALIAS = 'kernels'
+    ALIAS = 'ast_extra'
+    INDEX = 4
     STATIC_ARCHETYPES = [
-        'space_kernel',
+        'om15_static_large_ast01',
+        'om15_static_large_ast02',
+        'om15_static_large_ast04',
     ]
     FIELD_CLASS = MySupriseField
     REWARDS_GROUP_CLASS = mineable.DefaultSupriseRewardsGroup
@@ -290,9 +293,9 @@ class MyField(mineable.StaticObjectField):
 
 def generate_field():
     core = get_core()
-    asf = core.universe.universe_root.get_all_system_by_name('om13_alt')
+    the_sys = core.universe.universe_root.get_all_system_by_name('om13_alt')
 
-    field = MyField(system=asf)
+    field = MyField(system=the_sys)
     content = field.get_system_content()
     print(content)
 
