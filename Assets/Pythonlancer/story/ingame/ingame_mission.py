@@ -112,7 +112,15 @@ class IngameMission(object):
         return []
 
     def get_static_points_content(self):
-        return {p.alias: p for p in self.get_static_points()}
+        result = {}
+        for point in self.get_static_points():
+            try:
+                result[point.alias] = point
+            except Exception as e:
+                print(f'caused on point {point}')
+                raise e
+
+        return result
 
     def get_all_points(self):
         points = self.get_static_points_content()

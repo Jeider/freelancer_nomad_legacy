@@ -586,6 +586,27 @@ class Misson13(ingame_mission.IngameMission):
             'kernels1_inside2',
             'kernels1_tunnel',
             'kernels1_after',
+
+            'kernel2_ast1_in',
+            'kernel2_ast1_wall1',
+            'kernel2_ast1_mid1',
+            'kernel2_ast1_wall2',
+            'kernel2_ast1_end',
+            'kernel2_ast2_in',
+            'kernel2_ast2_mid1',
+            'kernel2_ast2_end',
+            'kernel2_ast3_in',
+            'kernel2_ast3_mid1',
+            'kernel2_ast3_exit',
+            'kernel2_ast4_in',
+            'kernel2_ast4_split',
+            'kernel2_ast4_mid1',
+            'kernel2_ast4_exit',
+            'kernel2_ast5_in',
+            'kernel2_ast5_wall1',
+            'kernel2_ast5_core',
+            'kernel2_ast5_wall2',
+            'kernel2_ast5_exit',
         ]
 
         for p in om13_points:
@@ -613,16 +634,36 @@ class Misson13(ingame_mission.IngameMission):
 
         self.add_solar_group('KERNELS1', kernels1_sols)
 
-        defined_points.extend([
-            Solar(self, S.om13_alt, 'om13alt_beast_kernel1_01', ru_name='Номадское зерно',
-                  archetype='space_beast_kernel', loadout='space_beast_kernel_light'),
-            Solar(self, S.om13_alt, 'om13alt_ast_b_dmg1', ru_name='Перегородка туннеля',
-                  archetype='om15_static_xlarge_ast04_dmg'),
-            Solar(self, S.om13_alt, 'om13alt_ast_b_dmg2', ru_name='Перегородка туннеля',
-                  archetype='om15_static_xlarge_ast04_dmg'),
-        ])
+        kernels = [
+            'om13alt_beast_kernel1_01',
+            'om13alt_ast_a_inside_kernel01',
+            'om13alt_ast_a_inside_kernel02',
+        ]
+        kernel_sols = [
+            Solar(self, S.om13_alt, kernel, ru_name='Номадское зерно',
+                  archetype='space_beast_kernel', loadout='space_beast_kernel_light')
+            for kernel in kernels
+        ]
+        defined_points.extend(kernel_sols)
+        self.add_solar_group('OM13_BEAST_KERNELS', kernel_sols)
 
-
+        walls = [
+            'om13alt_ast_b_dmg1',
+            'om13alt_ast_b_dmg2',
+            'om13alt_ast_a_dmg01',
+            'om13alt_ast_a_dmg02',
+            'om13alt_ast_a_dmg03',
+            'om13alt_ast_a_dmg04',
+            'om13alt_ast_a_dmg05',
+            'om13alt_ast_a_dmg06',
+        ]
+        wall_sols = [
+            Solar(self, S.om13_alt, wall, ru_name='Перегородка туннеля',
+                  archetype='om15_static_xlarge_ast04_dmg')
+            for wall in walls
+        ]
+        defined_points.extend(wall_sols)
+        self.add_solar_group('OM13_WALLS', wall_sols)
 
         return defined_points
 
@@ -693,10 +734,37 @@ class Misson13(ingame_mission.IngameMission):
             NNObj(self, O.GOTO, target='kernels1_tunnel', reach_range=600),
             NNObj(self, O.GOTO, target='kernels1_after'),
 
+            NNObj(self, O.GOTO, target='kernel2_ast1_in', reach_range=500),
+            NNObj(self, O.GOTO, target='kernel2_ast1_wall1', reach_range=500),
+            NNObj(self, O.GOTO, target='kernel2_ast1_mid1', reach_range=400),
+            NNObj(self, O.GOTO, target='kernel2_ast1_wall2', reach_range=300),
+            NNObj(self, O.GOTO, target='kernel2_ast1_end', reach_range=500),
+            NNObj(self, O.GOTO, target='kernel2_ast2_in', reach_range=500),
+            NNObj(self, O.GOTO, target='kernel2_ast2_mid1', reach_range=500),
+            NNObj(self, O.GOTO, target='kernel2_ast2_end', reach_range=500),
+            NNObj(self, O.GOTO, target='kernel2_ast3_in', reach_range=500),
+            NNObj(self, O.GOTO, target='kernel2_ast3_mid1', reach_range=300),
+            NNObj(self, O.GOTO, target='kernel2_ast3_exit', reach_range=500),
+            NNObj(self, O.GOTO, target='kernel2_ast4_in', reach_range=500),
+            NNObj(self, O.GOTO, target='kernel2_ast4_split', reach_range=500),
+            NNObj(self, O.GOTO, target='kernel2_ast4_mid1', reach_range=500),
+            NNObj(self, O.GOTO, target='kernel2_ast4_exit', reach_range=500),
+            NNObj(self, O.GOTO, target='kernel2_ast5_in', reach_range=500),
+            NNObj(self, O.GOTO, target='kernel2_ast5_wall1', reach_range=500),
+            NNObj(self, O.GOTO, target='kernel2_ast5_core', reach_range=500),
+            NNObj(self, O.GOTO, target='kernel2_ast5_wall2', reach_range=500),
+            NNObj(self, O.GOTO, target='kernel2_ast5_exit', reach_range=500),
+
             NNObj(self, 'Уничтожьте перегородку', name='kernels1_door1', target='om13alt_ast_b_dmg2'),
             NNObj(self, 'Уничтожьте перегородку', name='kernels1_door2', target='om13alt_ast_b_dmg1'),
             NNObj(self, 'Уничтожьте зерно', name='destroy_inside_kernel01', target='inside_kernel01'),
 
+            NNObj(self, 'Уничтожьте перегородку', name='om13alt_ast_a_dmg01', target='om13alt_ast_a_dmg01'),
+            NNObj(self, 'Уничтожьте перегородку', name='om13alt_ast_a_dmg02', target='om13alt_ast_a_dmg02'),
+            NNObj(self, 'Уничтожьте перегородку', name='om13alt_ast_a_dmg03', target='om13alt_ast_a_dmg03'),
+            NNObj(self, 'Уничтожьте перегородку', name='om13alt_ast_a_dmg04', target='om13alt_ast_a_dmg04'),
+            NNObj(self, 'Уничтожьте перегородку', name='om13alt_ast_a_dmg05', target='om13alt_ast_a_dmg05'),
+            NNObj(self, 'Уничтожьте перегородку', name='om13alt_ast_a_dmg06', target='om13alt_ast_a_dmg06'),
 
         ]
 

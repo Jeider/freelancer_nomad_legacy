@@ -313,6 +313,23 @@ class DefinedStaticMixin:
     def turn_nag(self, nag_name, towards=False):
         return False
 
+    def destroyed(self, count=None, kind=None):
+        trigger_name = f'TRIG_DESTROYED_{self.name}'
+        params = [self.name]
+        if count:
+            params.append(str(count))
+        if kind:
+            params.append(kind)
+        destroyed = f'Cnd_Destroyed = {", ".join(params)}'
+        actions = [
+            f'Act_ActTrig = {trigger_name}',
+            ''
+            '[Trigger]',
+            f'nickname = {trigger_name}',
+            destroyed,
+        ]
+        return SINGLE_DIVIDER.join(actions)
+
 
 class Solar(DefinedStaticMixin, Point):
 

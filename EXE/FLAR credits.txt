@@ -1,6 +1,0 @@
-Credits:
-°°°°°°°°°
-Sources used are referenced in each shader file
-
-Special thanks to:
-adoxa and FriendlyFire for some hooks which saved me a lot of time

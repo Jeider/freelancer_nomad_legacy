@@ -2,7 +2,7 @@ import sys
 import os
 from time import sleep
 
-from text.dividers import DIVIDER
+from text.dividers import DIVIDER, SINGLE_DIVIDER
 
 from core import get_core
 
@@ -301,6 +301,63 @@ def generate_field():
 
 
 
+def generate_points():
+    points = {
+        'kernel2_ast1_in': '-7870, -538, -7906',
+        'kernel2_ast1_wall1': '-7215, -167, -7573',
+        'kernel2_ast1_wall2': '-6523, 276, -7479',
+        'kernel2_ast1_end': '-6494, 115, -6336',
+        'kernel2_ast2_in': '-4879, -235, -3877',
+        'kernel2_ast2_mid1': '-3504, -246, -3033',
+        'kernel2_ast2_end': '-2189, 70, -3062',
+        'kernel2_ast3_in': '155, 62, -3307',
+        'kernel2_ast3_mid1': '1490, -235, -3543',
+        'kernel2_ast3_exit': '2968, -198, -2996',
+        'kernel2_ast4_in': '3895, 527, -1377',
+        'kernel2_ast4_split': '4903, 699, -683',
+        'kernel2_ast4_mid1': '5770, 942, -1275',
+        'kernel2_ast4_exit': '6710, 806, -1666',
+        'kernel2_ast5_in': '8758, 511, -2579',
+        'kernel2_ast5_wall1': '9376, 494, -2650',
+        'kernel2_ast5_core': '9838, 446, -3017',
+        'kernel2_ast5_wall2': '10265, 275, -3544',
+        'kernel2_ast5_exit': '10614, 125, -3856',
+    }
+
+    data = []
+
+    for name, pos in points.items():
+        data.append(
+            f'''[Object]
+nickname = {name}
+pos = {pos}
+rotate = 0, 0, 0
+archetype = nav_buoy
+'''
+        )
+
+    names_list = [f"'{name}'," for name in points.keys()]
+    names_combined = SINGLE_DIVIDER.join(names_list)
+
+    targets_list = [
+        f"NNObj(self, O.GOTO, target='{name}', reach_range=500),"
+        for name in points.keys()
+    ]
+    targets_combined = SINGLE_DIVIDER.join(targets_list)
+
+    nav_list = [
+        f"{{{{ nn_{name}.reach() }}}}"
+        for name in points.keys()
+    ]
+    nav_combined = SINGLE_DIVIDER.join(nav_list)
+
+
+    data_combined = SINGLE_DIVIDER.join(data)
+
+    print(nav_combined)
+
+
+
 
 ACTIONS = {
     'generate_hacker_panels': generate_hacker_panels,
@@ -322,6 +379,7 @@ ACTIONS = {
     'compile_pilots_audio': compile_pilots_audio,
     'generate_story_voices': generate_story_voices,
     'generate_field': generate_field,
+    'generate_points': generate_points,
 }
 
 
