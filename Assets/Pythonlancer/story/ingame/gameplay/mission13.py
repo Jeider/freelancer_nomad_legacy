@@ -31,6 +31,15 @@ state_graph = FIGHTER
 npc_class = lawful, FIGHTER
 
 [NPCShipArch]
+nickname = ms13_no_elite
+loadout = ms13_no_elite
+level = d13
+ship_archetype = no_elite
+pilot = mod_fighter_version_a
+state_graph = FIGHTER
+npc_class = lawful, FIGHTER
+
+[NPCShipArch]
 nickname = ms13_no_fighter_catcher
 loadout = ms13_no_fighter_cd
 level = d13
@@ -233,6 +242,9 @@ class Misson13(ingame_mission.IngameMission):
     def get_save_states(self):
         return [
             SaveState(self, 'beast_reactor', 'Сфера. Крыг ожил'),
+            SaveState(self, 'chamber01', 'Омега-13. Кокон'),
+            SaveState(self, 'chamber02', 'Омега-13. Второй кокон'),
+            SaveState(self, 'chamber02_after', 'Омега-13. После второго кокона'),
         ]
 
     def get_ingame_thorns(self):
@@ -345,6 +357,61 @@ class Misson13(ingame_mission.IngameMission):
                 points={
                     'camera': 'cam_edison',
                     'marker': 'edison',
+                },
+                duration=25,
+            ),
+            IngameThorn(
+                self,
+                system_class=S.om13_alt,
+                template=GENERIC_TWO_POINT,
+                name='m13_engine_cam1',
+                points={
+                    'camera': 'engine_cam1',
+                    'marker': 'after_chamber2_player',
+                },
+                duration=25,
+            ),
+            IngameThorn(
+                self,
+                system_class=S.om13_alt,
+                template=GENERIC_TWO_POINT,
+                name='m13_engine_cam2',
+                points={
+                    'camera': 'engine_cam2',
+                    'marker': 'engine_cam2_mrk',
+                },
+                duration=25,
+            ),
+            IngameThorn(
+                self,
+                system_class=S.om13_alt,
+                template=GENERIC_TWO_POINT,
+                name='m13_engine_cam3',
+                points={
+                    'camera': 'engine_cam3',
+                    'marker': 'engine_cam3_mrk',
+                },
+                duration=25,
+            ),
+            IngameThorn(
+                self,
+                system_class=S.om13_alt,
+                template=GENERIC_TWO_POINT,
+                name='m13_engine_cam4',
+                points={
+                    'camera': 'engine_cam4',
+                    'marker': 'after_chamber2_edison',
+                },
+                duration=25,
+            ),
+            IngameThorn(
+                self,
+                system_class=S.om13_alt,
+                template=GENERIC_TWO_POINT,
+                name='m13_engine_cam5',
+                points={
+                    'camera': 'engine_cam5',
+                    'marker': 'after_chamber2_player',
                 },
                 duration=25,
             ),
@@ -665,6 +732,11 @@ class Misson13(ingame_mission.IngameMission):
         defined_points.extend(wall_sols)
         self.add_solar_group('OM13_WALLS', wall_sols)
 
+        defined_points.append(
+            Solar(self, S.om13_alt, 'om13alt_ast_a_lrg01', ru_name='Астероид',
+                  archetype='om15_static_large_ast02'),
+        )
+
         return defined_points
 
     def get_capital_ships(self):
@@ -765,6 +837,11 @@ class Misson13(ingame_mission.IngameMission):
             NNObj(self, 'Уничтожьте перегородку', name='om13alt_ast_a_dmg04', target='om13alt_ast_a_dmg04'),
             NNObj(self, 'Уничтожьте перегородку', name='om13alt_ast_a_dmg05', target='om13alt_ast_a_dmg05'),
             NNObj(self, 'Уничтожьте перегородку', name='om13alt_ast_a_dmg06', target='om13alt_ast_a_dmg06'),
+
+            NNObj(self, 'Уничтожьте номадские истребитекли', name='destroy_chamber_elite'),
+            NNObj(self, 'Уничтожьте зерно', name='destroy_inside_kernel02', target='inside_kernel02'),
+
+            NNObj(self, 'Подберите энергоядро', name='get_om13_powercell'),
 
         ]
 
@@ -921,5 +998,15 @@ class Misson13(ingame_mission.IngameMission):
                 radius=0,
                 labels=['enemy', 'nomad'],
                 static_npc_shiparch='ms13_no_fighter'
+            ),
+            Ship(
+                self,
+                'chamber2_no_fighter',
+                count=12,
+                affiliation=faction.Nomad.CODE,
+                system_class=S.om13_alt,
+                radius=0,
+                labels=['enemy', 'nomad', 'chamber_elite'],
+                static_npc_shiparch='ms13_no_elite'
             ),
         ]

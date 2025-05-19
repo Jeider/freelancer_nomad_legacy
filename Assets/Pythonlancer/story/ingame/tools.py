@@ -643,6 +643,7 @@ class Ship(Target):
         self.slide_y = slide_y
         self.slide_z = slide_z
         self.respawn_defined = False
+        self.members_respawn_defined = []
 
     def have_npc(self):
         return self.npc or self.static_npc_shiparch
@@ -941,6 +942,9 @@ class Ship(Target):
         return SINGLE_DIVIDER.join(members)
 
     def define_respawn(self, trigger_setrep, ol=NO_OL):
+        if self.respawn_defined:
+            raise Exception(f'Respawn of {self.name} already defined')
+
         self.respawn_defined = True
 
         if self.system is None:
@@ -977,6 +981,41 @@ class Ship(Target):
 
         return SINGLE_DIVIDER.join(actions)
 
+    def define_member_respawn(self, member_index, trigger_setrep, marker_name, ol=NO_OL):
+        if member_index in self.members_respawn_defined:
+            raise Exception(f'Respawn of member {self.members_respawn_defined} of {self.name} already defined')
+
+        self.members_respawn_defined.append(member_index)
+
+        if self.system is None:
+            raise Exception('System is not defined for ship %s' % self.name)
+
+        marker = Marker(self.system, marker_name)
+        pos = list(marker.get_position())
+        orient = euler_to_quat(*marker.get_rotate())
+
+        member = self.get_member_name(member_index)
+        spawn_params = [
+            member,
+            ol,
+            *pos,
+            *orient
+        ]
+        actions =[
+            '[Trigger]',
+            f'nickname = member_respawn_{member}',
+            f'Cnd_Destroyed = {member}',
+            f'Act_SpawnShip = {", ".join(map(str, spawn_params))}',
+            f'Act_ActTrig = {trigger_setrep}',
+            'repeatable = true',
+        ]
+
+        pos[0] += self.slide_x
+        pos[1] += self.slide_y
+        pos[2] += self.slide_z
+
+        return SINGLE_DIVIDER.join(actions)
+
     def define_respawn_from_base(self, trigger_setrep, ol=NO_OL):
         self.respawn_defined = True
 
@@ -1004,6 +1043,22 @@ class Ship(Target):
         actions = []
         for index in range(1, self.count+1):
             actions.append(f'Act_ActTrig = member_respawn_{self.get_member_name(index)}')
+
+        return SINGLE_DIVIDER.join(actions)
+
+    def turn_member_respawn_on(self, member_index):
+        if member_index not in self.members_respawn_defined:
+            raise Exception(f'Respawn of member {member_index} not defined')
+
+        return f'Act_ActTrig = member_respawn_{self.get_member_name(member_index)}'
+
+    def turn_member_respawn_off(self):
+        if len(self.members_respawn_defined) == 0:
+            raise Exception('respawn member triggers not defined in mission')
+
+        actions = []
+        for index in self.members_respawn_defined:
+            actions.append(f'Act_DeActTrig = member_respawn_{self.get_member_name(index)}')
 
         return SINGLE_DIVIDER.join(actions)
 
