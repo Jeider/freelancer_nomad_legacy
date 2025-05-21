@@ -881,6 +881,28 @@ class Ship(Target):
             actions.append(f'Act_Destroy = {self.get_member_name(index)}, {destroy_mode}')
         return SINGLE_DIVIDER.join(actions)
 
+    def define_return_back_all(self, system_name, point, range_out, range_back, back_ol):
+        actions = []
+        for index in range(1, self.count+1):
+            actions.append(self.mission.direct.define_ship_return_back(
+                self.get_member_name(index),
+                system_name,
+                point,
+                range_out,
+                range_back,
+                back_ol,
+            ))
+
+        return DIVIDER.join(actions)
+
+    def stop_return_back_all(self):
+        actions = []
+        for index in range(1, self.count+1):
+            actions.append(self.mission.direct.stop_ship_return_back(
+                self.get_member_name(index),
+            ))
+        return SINGLE_DIVIDER.join(actions)
+
     def destroy_member(self, member_index, destroy_mode):
         if destroy_mode not in DESTROY_MODES:
             raise Exception('Unknown destroy kind %s' % destroy_mode)
@@ -981,7 +1003,7 @@ class Ship(Target):
 
         return SINGLE_DIVIDER.join(actions)
 
-    def define_member_respawn(self, member_index, trigger_setrep, marker_name, ol=NO_OL):
+    def define_member_respawn(self, member_index, trigger_setrep, marker_name, ol=NO_OL, return_back=False):
         if member_index in self.members_respawn_defined:
             raise Exception(f'Respawn of member {self.members_respawn_defined} of {self.name} already defined')
 
@@ -1010,9 +1032,8 @@ class Ship(Target):
             'repeatable = true',
         ]
 
-        pos[0] += self.slide_x
-        pos[1] += self.slide_y
-        pos[2] += self.slide_z
+        if return_back:
+            actions.append(self.mission.direct.activate_ship_return_back(member))
 
         return SINGLE_DIVIDER.join(actions)
 
@@ -1562,6 +1583,37 @@ class Direct:
         for solar in group:
             actions.append(solar.hide())
         return SINGLE_DIVIDER.join(actions)
+
+    def define_ship_return_back(self, ship_name, system_name, point, range_out, range_back, back_ol):
+        actions = [
+            '[Trigger]',
+            f'nickname = {ship_name}_return_back',
+            self.outside_pos(system_name, point, range_out, ship_name),
+            f'Act_GiveObjList = {ship_name}, {back_ol}',
+            f'Act_ActTrig = {ship_name}_inside_back',
+            '',
+            '[Trigger]',
+            f'nickname = {ship_name}_inside_back',
+            self.inside_pos(system_name, point, range_back, ship_name),
+            f'Act_ActTrig = {ship_name}_return_back',
+            '',
+            '[Trigger]',
+            f'nickname = {ship_name}_return_destroyed',
+            f'Cnd_Destroyed = {ship_name}',
+            f'Act_DeActTrig = {ship_name}_inside_back',
+            f'Act_DeActTrig = {ship_name}_return_back',
+        ]
+        return SINGLE_DIVIDER.join(actions)
+
+    def activate_ship_return_back(self, ship_name):
+        return f'Act_ActTrig = {ship_name}_return_back'
+
+    def stop_ship_return_back(self, ship_name):
+        return SINGLE_DIVIDER.join([
+            f'Act_DeActTrig = {ship_name}_return_back',
+            f'Act_DeActTrig = {ship_name}_inside_back',
+            f'Act_DeActTrig = {ship_name}_return_destroyed',
+        ])
 
 
 class Patrol:

@@ -40,6 +40,16 @@ state_graph = FIGHTER
 npc_class = lawful, FIGHTER
 
 [NPCShipArch]
+nickname = ms13_beast_ship_far
+loadout = beast_ship_far
+level = d13
+ship_archetype = beast_ship
+pilot = MSN13_Nomad_Battleship
+state_graph = CRUISER
+npc_class = lawful, CRUISER
+
+
+[NPCShipArch]
 nickname = ms13_no_fighter_catcher
 loadout = ms13_no_fighter_cd
 level = d13
@@ -737,6 +747,15 @@ class Misson13(ingame_mission.IngameMission):
                   archetype='om15_static_large_ast02'),
         )
 
+        defined_points.append(
+            Solar(self, S.om13_alt, 'om13alt_ast_a_lrg01', ru_name='Астероид',
+                  archetype='om15_static_large_ast02'),
+        )
+
+        defined_points.extend([
+            Solar(self, S.om13_alt, 'krieg_far', ru_name='Крыг', loadout='beast_sleep', archetype='beast_1500'),
+        ])
+
         return defined_points
 
     def get_capital_ships(self):
@@ -1008,5 +1027,15 @@ class Misson13(ingame_mission.IngameMission):
                 radius=0,
                 labels=['enemy', 'nomad', 'chamber_elite'],
                 static_npc_shiparch='ms13_no_elite'
+            ),
+            Ship(
+                self,
+                'beast_ship_far',
+                labels=[
+                    'beast',
+                    'enemy',
+                ],
+                radius=0,
+                static_npc_shiparch='ms13_beast_ship_far'
             ),
         ]
