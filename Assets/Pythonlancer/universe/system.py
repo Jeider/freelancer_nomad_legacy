@@ -65,6 +65,7 @@ class System:
     IS_STORY = False
     VISIT = 0
     SCAN_JUMP = True
+    SPACE_FARCLIP = 100000
 
     INTERIOR_DEFAULT_SUBFOLDER = None
 
@@ -642,7 +643,7 @@ class StorySystem(System):
                 break
             new_lines.append(line)
             if clean_line == '[SystemInfo]':
-                new_lines.append('space_farclip = 100000\n')
+                new_lines.append(f'space_farclip = {self.SPACE_FARCLIP}\n')
 
         del new_lines[-1]
 

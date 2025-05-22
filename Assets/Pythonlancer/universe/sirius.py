@@ -646,6 +646,7 @@ class om13_alt(system.StorySystem, system.SiriusSystem):
 
     SYSTEM_FOLDER = 'OMEGA13_ALT'
     NAVMAP_POS = '14.5, -1.1'
+    SPACE_FARCLIP = 150000
 
 
 class asf_hq(system.StorySystem, system.SiriusSystem):
