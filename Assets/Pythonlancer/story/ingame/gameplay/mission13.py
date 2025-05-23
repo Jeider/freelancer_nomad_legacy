@@ -756,6 +756,29 @@ class Misson13(ingame_mission.IngameMission):
             Solar(self, S.om13_alt, 'krieg_far', ru_name='Крыг', loadout='beast_sleep', archetype='beast_1500'),
         ])
 
+        om13_caps_in_group = 3
+        om13_no_caps = [
+            ('OM13_BS1', 'bs1'),
+            ('OM13_BS2', 'bs2'),
+            ('OM13_BS3', 'bs3'),
+        ]
+        for group_name, group in om13_no_caps:
+            group_sols = []
+            for index in range(1, om13_caps_in_group+1):
+                no_cap = f'{group}_{index}'
+                no_sol = Solar(
+                    self, S.om13_alt, no_cap,
+                    ru_name='Линкор Кочевников',
+                    faction='fc_n_grp',
+                    labels=['enemy', 'no_cap', 'nomad', group_name],
+                    archetype='d_n_battleship',
+                    loadout='MSN13_Nomad_Battleship'
+                )
+                defined_points.append(no_sol)
+                group_sols.append(no_sol)
+
+            self.add_solar_group(group_name, group_sols)
+
         return defined_points
 
     def get_capital_ships(self):
@@ -1037,5 +1060,38 @@ class Misson13(ingame_mission.IngameMission):
                 ],
                 radius=0,
                 static_npc_shiparch='ms13_beast_ship_far'
+            ),
+            Ship(
+                self,
+                'chaser1',
+                count=3,
+                affiliation=faction.Nomad.CODE,
+                system_class=S.om13_alt,
+                radius=0,
+                slide_z=150,
+                labels=['enemy', 'nomad'],
+                static_npc_shiparch='ms13_no_fighter_catcher'
+            ),
+            Ship(
+                self,
+                'chaser2',
+                count=3,
+                affiliation=faction.Nomad.CODE,
+                system_class=S.om13_alt,
+                radius=0,
+                slide_z=150,
+                labels=['enemy', 'nomad'],
+                static_npc_shiparch='ms13_no_fighter_catcher'
+            ),
+            Ship(
+                self,
+                'chaser3',
+                count=3,
+                affiliation=faction.Nomad.CODE,
+                system_class=S.om13_alt,
+                radius=0,
+                slide_z=150,
+                labels=['enemy', 'nomad'],
+                static_npc_shiparch='ms13_no_fighter_catcher'
             ),
         ]
