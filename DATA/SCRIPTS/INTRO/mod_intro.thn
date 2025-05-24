@@ -221,14 +221,14 @@ entities={
 			fovh=45,--45,
 			hvaspect=1,
 			nearplane=1,
-			farplane=1000000
+			farplane=1000000	
 		}
 	},
 	{
 		entity_name="mod_blackhole_core",
 		type=COMPOUND,
-		template_name="BlackHoleSun",
-		lt_grp=0,
+		template_name="BlackHoleCore",
+		lt_grp=3,
 		srt_grp=0,
 		usr_flg=0,
 		spatialprops={
@@ -456,13 +456,49 @@ entities={
 			},
 			orient={
 				{
-					-1,
+					1,
 					0,
 					0
 				},
 				{
 					0,
-					-1,
+					1,
+					0
+				},
+				{
+					0,
+					0,
+					1
+				}
+			}
+		},
+		psysprops={
+			sparam=0
+		}
+	},
+	{
+		entity_name="intro_blackhole_splash2",
+		type=PSYS,
+		template_name="bh_chunks",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=LIT_DYNAMIC + LIT_AMBIENT,
+		spatialprops={
+			pos={
+				0,
+				0,
+				0
+			},
+			orient={
+				{
+					1,
+					0,
+					0
+				},
+				{
+					0,
+					1,
 					0
 				},
 				{
@@ -622,6 +658,16 @@ events={
 			duration=36000
 		}
 	},
+	{
+		0,
+		START_PSYS,
+		{
+			"intro_blackhole_splash2"
+		},
+		{
+			duration=36000
+		}
+	},
 --Init BlackHole Rotation
 	{
 		0,
@@ -640,23 +686,7 @@ events={
 			}
 		}
 	},
-	{
-		0,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"intro_blackhole_lighting"
-		},
-		{
-			duration=360,
-			target_type=ROOT,
-			spatialprops={
-				axisrot={
-					-1200,
-					Y_AXIS
-				}
-			}
-		}
-	},
+
 	{
 		0,
 		SET_CAMERA,

@@ -779,6 +779,10 @@ class Misson13(ingame_mission.IngameMission):
 
             self.add_solar_group(group_name, group_sols)
 
+        defined_points.append(
+            Solar(self, S.om13_alt, 'om13alt_bh', ru_name='Чёрная дыра'),
+        )
+
         return defined_points
 
     def get_capital_ships(self):
@@ -884,6 +888,10 @@ class Misson13(ingame_mission.IngameMission):
             NNObj(self, 'Уничтожьте зерно', name='destroy_inside_kernel02', target='inside_kernel02'),
 
             NNObj(self, 'Подберите энергоядро', name='get_om13_powercell'),
+            NNObj(self, 'Направляйтесь в чёрную дыру', target='om13alt_bh', towards=True),
+
+
+
 
         ]
 
