@@ -684,6 +684,7 @@ class Misson13(ingame_mission.IngameMission):
             'kernel2_ast5_core',
             'kernel2_ast5_wall2',
             'kernel2_ast5_exit',
+            'kernel2_ast5_out',
         ]
 
         for p in om13_points:
@@ -872,6 +873,7 @@ class Misson13(ingame_mission.IngameMission):
             NNObj(self, O.GOTO, target='kernel2_ast5_core', reach_range=500),
             NNObj(self, O.GOTO, target='kernel2_ast5_wall2', reach_range=500),
             NNObj(self, O.GOTO, target='kernel2_ast5_exit', reach_range=500),
+            NNObj(self, O.GOTO, target='kernel2_ast5_out', reach_range=600),
 
             NNObj(self, 'Уничтожьте перегородку', name='kernels1_door1', target='om13alt_ast_b_dmg2'),
             NNObj(self, 'Уничтожьте перегородку', name='kernels1_door2', target='om13alt_ast_b_dmg1'),

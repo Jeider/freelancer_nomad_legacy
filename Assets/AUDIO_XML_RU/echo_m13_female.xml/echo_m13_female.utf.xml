@@ -27,5 +27,13 @@
 <test_voice name="0x8680AE4D" type="file" filename="echo_m13_female\dx_m13_0660_darcy.wav"/>
 <test_voice name="0xBE9E7F8C" type="file" filename="echo_m13_female\dx_m13_0670_hatcher.wav"/>
 <test_voice name="0x93990988" type="file" filename="echo_m13_female\dx_m13_0700_hatcher.wav"/>
+<test_voice name="0x9C799D8B" type="file" filename="echo_m13_female\dx_m13_1800_hatcher.wav"/>
+<test_voice name="0xB47B898B" type="file" filename="echo_m13_female\dx_m13_1820_hatcher.wav"/>
+<test_voice name="0x8C7DF58B" type="file" filename="echo_m13_female\dx_m13_1840_hatcher.wav"/>
+<test_voice name="0xA47FE18B" type="file" filename="echo_m13_female\dx_m13_1860_hatcher.wav"/>
+<test_voice name="0xBC710D8B" type="file" filename="echo_m13_female\dx_m13_1880_hatcher.wav"/>
+<test_voice name="0xA870078B" type="file" filename="echo_m13_female\dx_m13_1890_hatcher.wav"/>
+<test_voice name="0x8978978F" type="file" filename="echo_m13_female\dx_m13_1910_hatcher.wav"/>
+<test_voice name="0x8D7DF58F" type="file" filename="echo_m13_female\dx_m13_1940_hatcher.wav"/>
 </UTF_ROOT>
 </UTFXML>

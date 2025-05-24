@@ -70,5 +70,13 @@
 <test_voice name="0xAF4C8A06" type="file" filename="echo_m13_player\dx_m13_1640_trent.wav"/>
 <test_voice name="0xAB79FB83" type="file" filename="echo_m13_player\dx_m13_1650_edison.wav"/>
 <test_voice name="0xAF4CC204" type="file" filename="echo_m13_player\dx_m13_1660_trent.wav"/>
+<test_voice name="0x8EB41003" type="file" filename="echo_m13_player\dx_m13_1810_trent.wav"/>
+<test_voice name="0x8EB45801" type="file" filename="echo_m13_player\dx_m13_1830_trent.wav"/>
+<test_voice name="0x8EB48007" type="file" filename="echo_m13_player\dx_m13_1850_trent.wav"/>
+<test_voice name="0x8EB4C805" type="file" filename="echo_m13_player\dx_m13_1870_trent.wav"/>
+<test_voice name="0xAEA01508" type="file" filename="echo_m13_player\dx_m13_1900_trent.wav"/>
+<test_voice name="0xAEA05D0A" type="file" filename="echo_m13_player\dx_m13_1920_trent.wav"/>
+<test_voice name="0x8EA0590B" type="file" filename="echo_m13_player\dx_m13_1930_trent.wav"/>
+<test_voice name="0x8EA0810D" type="file" filename="echo_m13_player\dx_m13_1950_trent.wav"/>
 </UTF_ROOT>
 </UTFXML>
