@@ -48,6 +48,15 @@ pilot = MSN13_Nomad_Battleship
 state_graph = CRUISER
 npc_class = lawful, CRUISER
 
+[NPCShipArch]
+nickname = ms13_beast_ship_far_near
+loadout = beast_ship_far_near_bh
+level = d13
+ship_archetype = beast_ship
+pilot = MSN13_Nomad_Battleship
+state_graph = CRUISER
+npc_class = lawful, CRUISER
+
 
 [NPCShipArch]
 nickname = ms13_no_fighter_catcher
@@ -424,6 +433,124 @@ class Misson13(ingame_mission.IngameMission):
                     'marker': 'after_chamber2_player',
                 },
                 duration=25,
+            ),
+            IngameThorn(
+                self,
+                system_class=S.om13_alt,
+                template=GENERIC_MOUNTED_ROTATABLE,
+                name='m13_bh_cam1',
+                params={
+                    'cam_pos_x': -50,
+                    'cam_pos_y': 10,
+                    'cam_pos_z': 0,
+                    'rotate_duration': 10,
+                    'rotate_angle': -20,
+                    'remove_smooth': True,
+                },
+                duration=60,
+                target='Player',
+            ),
+            IngameThorn(
+                self,
+                system_class=S.om13_alt,
+                template=GENERIC_MOUNTED_ROTATABLE,
+                name='m13_bh_cam2',
+                params={
+                    'cam_pos_x': 50,
+                    'cam_pos_y': 10,
+                    'cam_pos_z': 0,
+                    'rotate_duration': 10,
+                    'rotate_angle': -5,
+                    'remove_smooth': False,
+                },
+                duration=60,
+                target='Player',
+            ),
+            IngameThorn(
+                self,
+                system_class=S.om13_alt,
+                template=GENERIC_TWO_POINT,
+                name='m13_bh_cam3',
+                points={
+                    'camera': 'bh_cam3',
+                    'marker': 'bh_player',
+                },
+                duration=90,
+            ),
+            IngameThorn(
+                self,
+                system_class=S.om13_alt,
+                template=GENERIC_TWO_POINT,
+                name='m13_bh_cam4',
+                points={
+                    'camera': 'bh_cam4',
+                    'marker': 'bh_player',
+                },
+                duration=90,
+            ),
+            IngameThorn(
+                self,
+                system_class=S.om13_alt,
+                template=GENERIC_TWO_POINT_MOVE2,
+                name='m13_bh_cam3_1',
+                points={
+                    'camera': 'bh_cam3d',
+                    'marker': 'bh_player',
+                    'marker_two': 'bh_cam3c',
+                },
+                params={
+                    'move_duration': 5,
+                    'remove_smooth': True,
+                },
+                duration=60,
+            ),
+            IngameThorn(
+                self,
+                system_class=S.om13_alt,
+                template=GENERIC_TWO_POINT_MOVE2,
+                name='m13_bh_cam3_2',
+                points={
+                    'camera': 'bh_cam3c',
+                    'marker': 'bh_player',
+                    'marker_two': 'bh_cam3b',
+                },
+                params={
+                    'move_duration': 5,
+                    'remove_smooth': True,
+                },
+                duration=60,
+            ),
+            IngameThorn(
+                self,
+                system_class=S.om13_alt,
+                template=GENERIC_TWO_POINT_MOVE2,
+                name='m13_bh_cam3_3',
+                points={
+                    'camera': 'bh_cam3b',
+                    'marker': 'bh_player',
+                    'marker_two': 'bh_cam3a',
+                },
+                params={
+                    'move_duration': 5,
+                    'remove_smooth': True,
+                },
+                duration=60,
+            ),
+            IngameThorn(
+                self,
+                system_class=S.om13_alt,
+                template=GENERIC_TWO_POINT_MOVE2,
+                name='m13_bh_cam3_4',
+                points={
+                    'camera': 'bh_cam3a',
+                    'marker': 'bh_player',
+                    'marker_two': 'bh_cam3',
+                },
+                params={
+                    'move_duration': 5,
+                    'remove_smooth': True,
+                },
+                duration=60,
             ),
         ]
 
@@ -1070,6 +1197,16 @@ class Misson13(ingame_mission.IngameMission):
                 ],
                 radius=0,
                 static_npc_shiparch='ms13_beast_ship_far'
+            ),
+            Ship(
+                self,
+                'beast_ship_far_near',
+                labels=[
+                    'beast',
+                    'enemy',
+                ],
+                radius=0,
+                static_npc_shiparch='ms13_beast_ship_far_near'
             ),
             Ship(
                 self,
