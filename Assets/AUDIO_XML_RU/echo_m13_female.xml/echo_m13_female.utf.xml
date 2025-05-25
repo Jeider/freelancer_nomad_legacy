@@ -35,5 +35,10 @@
 <test_voice name="0xA870078B" type="file" filename="echo_m13_female\dx_m13_1890_hatcher.wav"/>
 <test_voice name="0x8978978F" type="file" filename="echo_m13_female\dx_m13_1910_hatcher.wav"/>
 <test_voice name="0x8D7DF58F" type="file" filename="echo_m13_female\dx_m13_1940_hatcher.wav"/>
+<test_voice name="0xA27ADD83" type="file" filename="echo_m13_female\dx_m13_2010_nn.wav"/>
+<test_voice name="0xB27ADF03" type="file" filename="echo_m13_female\dx_m13_2030_nn.wav"/>
+<test_voice name="0x927ADA03" type="file" filename="echo_m13_female\dx_m13_2070_nn.wav"/>
+<test_voice name="0xA27A9783" type="file" filename="echo_m13_female\dx_m13_2090_nn.wav"/>
+<test_voice name="0xAA7F9CC1" type="file" filename="echo_m13_female\dx_m13_2100_nn.wav"/>
 </UTF_ROOT>
 </UTFXML>

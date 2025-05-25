@@ -1,6 +1,6 @@
 from story import script
 from audio.sound import VoiceLine
-from story.actors import Trent, Rockford, Darcy, EdisonTrent, King, Hatcher, Alaric, Mandrake, Missouri
+from story.actors import Trent, Rockford, Darcy, EdisonTrent, King, Hatcher, Alaric, Mandrake, Missouri, Neuralnet
 
 
 class Msn13(object):
@@ -265,6 +265,21 @@ class Msn13Space(Msn13, script.SpaceVoiceProps):
 
         VoiceLine(1950, Trent, "Странно, что мой корабль еще не развалился. Летим напролом!"),
 
+        VoiceLine(2000, Trent, "Эй, что за дел+а?"),
+        VoiceLine(2010, Neuralnet, "Двигатели корабля не работают в пространстве чёрной дыры"),
+        VoiceLine(2020, Trent, "И какого хрена мне об этом никто не сказал?"),
+
+        VoiceLine(2030, Neuralnet, "Предлагаю подключить номадское энергоядр+о к питанию корабля"),
+        VoiceLine(2040, Trent, "Давай попробуем..."),
+        VoiceLine(2050, Trent, "И поскор+ее!"),
+        VoiceLine(2060, Trent, "Сколько еще?"),
+        VoiceLine(2070, Neuralnet, "Подключение выполняется"),
+        VoiceLine(2080, Trent, "Давай быстрее!"),
+        VoiceLine(2090, Neuralnet, "Подключение выполняется"),
+        VoiceLine(2095, Trent, "Скорее, мать твою!"),
+        VoiceLine(2100, Neuralnet, "Подключено"),
+        VoiceLine(2110, Trent, "Есть, давим на всю гашетку!"),
+
     ]
 
     PROTO3 = [
@@ -292,7 +307,7 @@ class Msn13Space(Msn13, script.SpaceVoiceProps):
         
         "Эй, что за дела?"
         "Двигатели корабля не работают в пространстве чёрной дыры"
-        "И что теперь делать?"
+        "И какого хрена мне об этом никто не сказал?"
         
         "Предлагаю подключить номадское энергоядро к питанию корабля"
         "Давай попробуем..."
@@ -302,7 +317,7 @@ class Msn13Space(Msn13, script.SpaceVoiceProps):
         "Давай быстрее!"
         "Подключение выполняется"
         "Подключено"
-        "Есть, дави на всю гашетку!"
+        "Есть, давим на всю гашетку!"
     ]
 
     SECTOR2_NEW_PROTO = [

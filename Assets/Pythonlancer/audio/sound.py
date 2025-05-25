@@ -36,9 +36,10 @@ class VoiceLine(object):
 
 
 class Sound:
-    def __init__(self, line, name):
+    def __init__(self, line, name, attenuation=None):
         self.line = line
         self.name = name
+        self.attenuation = attenuation
 
     def get_nickname(self):
         raise NotImplementedError
@@ -49,16 +50,20 @@ class Sound:
     def get_nickname_hash(self):
         return CreateId.get_audio_id(self.name)
 
+    def get_attenuation(self):
+        return self.attenuation
+
 
 class SpaceSound(Sound):
     def get_nickname(self):
         return self.name
 
     def get_ini(self):
+        attenuation = self.get_attenuation()
         return SINGLE_DIVIDER.join([
             SOUND_ARCH,
             f'msg = {self.get_nickname()}',
-            f'attenuation = {SPACE_ATTENUATION}'
+            f'attenuation = {attenuation if attenuation is not None else SPACE_ATTENUATION}'
         ])
 
 

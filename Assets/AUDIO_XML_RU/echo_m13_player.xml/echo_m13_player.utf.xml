@@ -78,5 +78,13 @@
 <test_voice name="0xAEA05D0A" type="file" filename="echo_m13_player\dx_m13_1920_trent.wav"/>
 <test_voice name="0x8EA0590B" type="file" filename="echo_m13_player\dx_m13_1930_trent.wav"/>
 <test_voice name="0x8EA0810D" type="file" filename="echo_m13_player\dx_m13_1950_trent.wav"/>
+<test_voice name="0x93970202" type="file" filename="echo_m13_player\dx_m13_2000_trent.wav"/>
+<test_voice name="0x93974A00" type="file" filename="echo_m13_player\dx_m13_2020_trent.wav"/>
+<test_voice name="0x93979206" type="file" filename="echo_m13_player\dx_m13_2040_trent.wav"/>
+<test_voice name="0xB3979607" type="file" filename="echo_m13_player\dx_m13_2050_trent.wav"/>
+<test_voice name="0x9397DA04" type="file" filename="echo_m13_player\dx_m13_2060_trent.wav"/>
+<test_voice name="0x9396220A" type="file" filename="echo_m13_player\dx_m13_2080_trent.wav"/>
+<test_voice name="0xA3D62E8B" type="file" filename="echo_m13_player\dx_m13_2095_trent.wav"/>
+<test_voice name="0xB3830709" type="file" filename="echo_m13_player\dx_m13_2110_trent.wav"/>
 </UTF_ROOT>
 </UTFXML>

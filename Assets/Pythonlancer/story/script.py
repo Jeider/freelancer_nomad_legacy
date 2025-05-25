@@ -114,6 +114,7 @@ class SpaceVoiceProps(MissionSegment):
         return SpaceSound(
             name=self.get_name_for_line(line),
             line=line,
+            attenuation=line.actor.get_attenuation(),
         )
 
 

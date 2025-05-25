@@ -45,6 +45,7 @@ class Actor(SteosInterface):
     STEOS_ID = None
     STEOS_PITCH = 0
     STEOS_SPEED = 1
+    ATTENUATION = None
 
     subclasses = []
 
@@ -83,6 +84,10 @@ class Actor(SteosInterface):
     @classmethod
     def get_comm_appearance(cls):
         return cls.COMM_APPEARANCE
+
+    @classmethod
+    def get_attenuation(cls):
+        return cls.ATTENUATION
 
 
 class Trent(Actor):
@@ -261,6 +266,15 @@ class Informer(Actor):
     TYPE = ACTOR_MALE
     NAME = 'informer'
     COMM_APPEARANCE = 'null, robot_body_E'
+
+
+class Neuralnet(Actor):
+    RU_NAME = 'Нейросеть'
+    TYPE = ACTOR_FEMALE
+    NAME = 'nn'
+    COMM_APPEARANCE = 'null, robot_body_E'
+    STEOS_ID = 219
+    ATTENUATION = 0
 
 
 class Adelmar(Actor):

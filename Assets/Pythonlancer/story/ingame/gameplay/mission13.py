@@ -480,17 +480,6 @@ class Misson13(ingame_mission.IngameMission):
             IngameThorn(
                 self,
                 system_class=S.om13_alt,
-                template=GENERIC_TWO_POINT,
-                name='m13_bh_cam4',
-                points={
-                    'camera': 'bh_cam4',
-                    'marker': 'bh_player',
-                },
-                duration=90,
-            ),
-            IngameThorn(
-                self,
-                system_class=S.om13_alt,
                 template=GENERIC_TWO_POINT_MOVE2,
                 name='m13_bh_cam3_1',
                 points={
@@ -551,6 +540,39 @@ class Misson13(ingame_mission.IngameMission):
                     'remove_smooth': True,
                 },
                 duration=60,
+            ),
+            IngameThorn(
+                self,
+                system_class=S.om13_alt,
+                template=GENERIC_TWO_POINT,
+                name='m13_bh_cam4',
+                points={
+                    'camera': 'bh_cam4',
+                    'marker': 'bh_player',
+                },
+                duration=90,
+            ),
+            IngameThorn(
+                self,
+                system_class=S.om13_alt,
+                template=GENERIC_TWO_POINT,
+                name='m13_bh_cam4_1',
+                points={
+                    'camera': 'bh_cam4a',
+                    'marker': 'bh_player',
+                },
+                duration=90,
+            ),
+            IngameThorn(
+                self,
+                system_class=S.om13_alt,
+                template=GENERIC_TWO_POINT,
+                name='m13_bh_cam4_2',
+                points={
+                    'camera': 'bh_cam4b',
+                    'marker': 'bh_player',
+                },
+                duration=90,
             ),
         ]
 
