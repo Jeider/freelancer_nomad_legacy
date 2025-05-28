@@ -19,6 +19,7 @@ class VoiceLine(object):
         self.ru = ru
         self.en = en
         self.comment = comment
+        self.ids_sub = None
 
     def get_ru_replaced_text(self):
         return self.ru.replace('(', self.COMMENT_START).replace(')', self.COMMENT_END).replace('+', '')
@@ -31,8 +32,17 @@ class VoiceLine(object):
     def get_ru_clean_text(self):
         return re.sub(r'\(.*?\)', '', self.ru)
 
+    def get_ru_sub_text(self):
+        return self.get_ru_clean_text().replace('+', '')
+
     def get_ru_subtitle(self):
-        return f'{self.actor.RU_NAME}:\n{self.get_ru_clean_text()}'
+        return f'{self.actor.RU_NAME}:\\n{self.get_ru_sub_text()}'
+
+    def set_ids_sub(self, ids_sub):
+        self.ids_sub = ids_sub
+
+    def get_sub_id(self):
+        return self.ids_sub.id
 
 
 class Sound:

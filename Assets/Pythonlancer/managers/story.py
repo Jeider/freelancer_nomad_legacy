@@ -23,7 +23,7 @@ class StoryManager:
         self.missions = []
 
         self.tpl_manager = JinjaTemplateManager()
-        self.script = ScriptManager()
+        self.script = ScriptManager(ids=self.core.ids.script)
 
         self.thorns = []
         self.ship_loadouts = []

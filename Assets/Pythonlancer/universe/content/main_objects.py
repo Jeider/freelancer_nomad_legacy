@@ -29,6 +29,7 @@ class AppearableObject(SystemObject):
     ARCHETYPE = None
     LOADOUT = None
     STORY = False
+    SPACE_NAME = None
 
     LOCKED_DOCK = False
 
@@ -43,6 +44,13 @@ archetype = {archetype}'''
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.connections = []
+        # self.ids_name = ids.new_name(self.get_ru_name())
+        # self.ids_info = ids.new_info(
+        #     InfocardBuilder.build_equip_infocard(
+        #         self.get_ru_fullname(),
+        #         self.get_ru_description_content()
+        #     )
+        # )
 
     def add_connection(self, the_conn):
         self.connections.append(the_conn)
@@ -89,13 +97,19 @@ archetype = {archetype}'''
     def get_archetype(self):
         return self.ARCHETYPE
 
+    def get_ids_name(self):
+        return
+
+    def get_ids_info(self):
+        return
+
     def get_single_object_content(self):
         content = [
             self.ARCHETYPE_TEMPLATE.format(
                 nickname=self.get_inspace_nickname(),
                 archetype=self.get_archetype(),
-                ids_name=self.IDS_NAME,
-                ids_info=self.IDS_INFO,
+                ids_name=self.get_ids_name(),
+                ids_info=self.get_ids_info(),
                 pos='{}, {}, {}'.format(*self.get_position()),
                 rotate='{}, {}, {}'.format(*self.get_rotate()),
             )
@@ -1368,10 +1382,12 @@ faction = {pirate_faction}, 1.000000'''
 
 
 class Tradelane(object):
+    TLR_NAME_ID = 260920
+    TLR_INFO_ID = 66170
     RING_TEMPLATE = '''[Object]
 nickname = {ring_nickname}
-ids_name = 260920
-ids_info = 66170
+ids_name = {ids_name}
+ids_info = {ids_info}
 pos = {pos}
 rotate = {rotate}
 archetype = Trade_Lane_Ring
@@ -1407,6 +1423,8 @@ pilot = pilot_solar_hard
 
     def get_system_object(self):
         template_params = {
+            'ids_name': self.TLR_NAME_ID,
+            'ids_info': self.TLR_INFO_ID,
             'ring_nickname': self.get_ring_nickname(),
             'pos': '{0}, {1}, {2}'.format(*self.get_tradelane_pos()),
             'rotate': '{0}, {1}, {2}'.format(*self.get_tradelane_rotate()),

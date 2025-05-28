@@ -244,6 +244,7 @@ class Misson13(ingame_mission.IngameMission):
     JINJA_TEMPLATE = 'missions/m13/m13.ini'
     FOLDER = 'M13'
     FILE = 'm13'
+    START_SAVE_ID = 33300
     SCRIPT_INDEX = 13
     DIRECT_SYSTEMS = [S.sphere2, S.sphere2_inside, S.beast01, S.om13_alt]
     STATIC_NPCSHIPS = NPCSHIPS

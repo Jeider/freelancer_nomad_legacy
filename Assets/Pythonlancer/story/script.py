@@ -102,6 +102,10 @@ class SpaceVoiceProps(MissionSegment):
 
     LINE_NAME_TEMPLATE = 'dx_m{mission_index:02d}_{voiceline_index:04d}_{actor_name}'
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.insert_space_ids()
+
     @classmethod
     def get_name_for_line(cls, line):
         return cls.LINE_NAME_TEMPLATE.format(
@@ -116,6 +120,12 @@ class SpaceVoiceProps(MissionSegment):
             line=line,
             attenuation=line.actor.get_attenuation(),
         )
+
+    def insert_space_ids(self):
+        if self.mission.ids is None:
+            return
+        for line in self.VOICE_LINES:
+            line.set_ids_sub(self.mission.ids.new_name(line.get_ru_subtitle()))
 
 
 class StoryMission(object):
@@ -181,7 +191,8 @@ class StoryMission(object):
         super().__init_subclass__(**kwargs)
         cls.subclasses.append(cls)
 
-    def __init__(self):
+    def __init__(self, ids):
+        self.ids = ids
         self.cutscenes = [cutscene(self) for cutscene in self.CUTSCENES]
         self.space = self.SPACE_CLASS(self)
         self.actors = self.get_story_actors()

@@ -31,9 +31,13 @@ class TheIndex:
 
 
 class IDsDatabase:
-    def __init__(self, start_id):
+    def __init__(self, db_name, start_id):
+        self.db_name = db_name
         self.last_id = start_id
         self.ids = []
+
+    def get_file_name(self):
+        return f'strings_{self.db_name}.ini'
 
     def get_next_id(self):
         self.last_id += 1

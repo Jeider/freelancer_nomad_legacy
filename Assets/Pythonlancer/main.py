@@ -27,14 +27,17 @@ def main():
     files_map = [
         ('faction_prop_helper.ini', core.population.get_npc_names()),
 
-        ('strings.ini', ''.join(core.ids.compile())),
-
         ('debug_store.ini', ''.join(core.universe.get_bases_store_debug_info())),
 
         ('demo_marketdata.ini', DIVIDER.join(markets_demo_data)),
         ('key_for_story.ini', core.universe.get_key_story()),
         ('key_for_initial_world.ini', core.universe.get_key_initial_world()),
     ]
+
+    for db in core.ids.get_databases():
+        files_map.append(
+            (db.get_file_name(), db.compile())
+        )
 
     for file, content in files_map:
         FileWriter.write(file, content)

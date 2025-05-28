@@ -33,6 +33,7 @@ class Misson07(ingame_mission.IngameMission):
     JINJA_TEMPLATE = 'missions/m07/m07.ini'
     FOLDER = 'M07'
     FILE = 'm07'
+    START_SAVE_ID = 32700
     SCRIPT_INDEX = 7
     DIRECT_SYSTEMS = [S.omicron2, S.co_cad, S.om13, S.br_avl]
     STATIC_NPCSHIPS = NPCSHIPS

@@ -50,6 +50,7 @@ class Misson04(ingame_mission.IngameMission):
     JINJA_TEMPLATE = 'missions/m04/m04.ini'
     FOLDER = 'M04'
     FILE = 'm04'
+    START_SAVE_ID = 32400
     STATIC_NPCSHIPS = NPCSHIPS
 
     def get_real_objects(self):
@@ -146,8 +147,8 @@ class Misson04(ingame_mission.IngameMission):
             )
 
         solar_points = [
-            Solar(self, S.rh_biz, 'bs'),
-            Solar(self, S.rh_biz, 'bs_reactor'),
+            Solar(self, S.rh_biz, 'bs', ru_name='Линкор Вотан'),
+            Solar(self, S.rh_biz, 'bs_reactor', ru_name='Реактор линкора'),
         ]
 
         defined_points.extend(solar_points)
@@ -212,9 +213,9 @@ class Misson04(ingame_mission.IngameMission):
                     'rheinland',
                 ],
                 unique_npc_entry=True,
-                name_ids=[
-                    94205,
-                ],
+                # name_ids=[
+                #     94205,
+                # ],
                 npc=NPC(
                     faction=faction.RheinlandMain,
                     ship=ship.Valkyrie,

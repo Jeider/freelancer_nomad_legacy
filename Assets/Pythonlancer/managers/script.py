@@ -12,12 +12,12 @@ SCRIPT_SUBFOLDER = 'script'
 
 class ScriptManager(object):
 
-    def __init__(self):
+    def __init__(self, ids=None):
         self.script_missions_db = {}
         self.script_missions_list = []
 
         for mission in StoryMission.subclasses:
-            msn = mission()
+            msn = mission(ids=ids)
             self.script_missions_db[msn.MISSION_INDEX] = msn
             self.script_missions_list.append(msn)
 

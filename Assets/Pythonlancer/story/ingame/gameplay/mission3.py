@@ -49,6 +49,7 @@ class Misson03(ingame_mission.IngameMission):
     JINJA_TEMPLATE = 'missions/m03/m03.ini'
     FOLDER = 'M03'
     FILE = 'm03'
+    START_SAVE_ID = 32300
     STATIC_NPCSHIPS = NPCSHIPS
 
     def get_ingame_thorns(self):

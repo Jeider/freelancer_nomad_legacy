@@ -11,6 +11,8 @@ class Misson01B(ingame_mission.IngameMission):
     JINJA_TEMPLATE = 'missions/m01/m01b.ini'
     FOLDER = 'M01B'
     FILE = 'm01b'
+    SCRIPT_INDEX = 1
+    START_SAVE_ID = 32100
 
     def get_ingame_thorns(self):
         return []

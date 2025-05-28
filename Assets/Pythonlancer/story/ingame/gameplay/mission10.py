@@ -238,6 +238,7 @@ class Misson10(ingame_mission.IngameMission):
     JINJA_TEMPLATE = 'missions/m10/m10.ini'
     FOLDER = 'M10'
     FILE = 'm10'
+    START_SAVE_ID = 33000
     SCRIPT_INDEX = 10
     DIRECT_SYSTEMS = [S.xen]
     STATIC_NPCSHIPS = NPCSHIPS

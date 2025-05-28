@@ -82,6 +82,7 @@ class Misson11(ingame_mission.IngameMission):
     JINJA_TEMPLATE = 'missions/m11/m11.ini'
     FOLDER = 'M11'
     FILE = 'm11'
+    START_SAVE_ID = 33100
     SCRIPT_INDEX = 11
     DIRECT_SYSTEMS = [S.om7, S.or_hq, S.rh_vien, S.sig42]
     STATIC_NPCSHIPS = NPCSHIPS

@@ -1243,7 +1243,7 @@ class Script:
         )
         return ETHER_COMM_TEMPLATE.format(
             voice_root=self.msn_script.get_voice_root_for_sound(sound),
-            string_id=1,
+            string_id=sound.line.get_sub_id(),
             line=sound.get_nickname(),
             comm_appearance=sound.line.actor.get_comm_appearance(),
         )

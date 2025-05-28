@@ -123,6 +123,7 @@ class Misson09(ingame_mission.IngameMission):
     JINJA_TEMPLATE = 'missions/m09/m09.ini'
     FOLDER = 'M09'
     FILE = 'm09'
+    START_SAVE_ID = 32900
     SCRIPT_INDEX = 9
     DIRECT_SYSTEMS = [S.ku_tgk, S.sig42]
     STATIC_NPCSHIPS = NPCSHIPS
