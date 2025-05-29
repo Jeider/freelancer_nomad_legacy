@@ -36,6 +36,8 @@ from universe.systems import rh_vien as rh_vien_content
 from universe.systems import xen as xen_content
 from universe.systems import co_cad as co_cad_content
 from universe.systems import sphere2 as sphere2_content
+from universe.systems import om13alt as om13_alt_content
+
 
 
 class rh_mnh(system.RheinlandFirst, system.System, system.SiriusSystem):
@@ -641,6 +643,7 @@ class om13_alt(system.StorySystem, system.SiriusSystem):
     NAME = 'om13_alt'
     DIRECT_TEMPLATE_NAME = 'om13alt_dev'
     RU_NAME = 'Омега-13'
+    CONTENT = om13_alt_content
 
     ALLOW_SYNC = True
 

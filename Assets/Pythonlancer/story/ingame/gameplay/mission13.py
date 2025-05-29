@@ -248,7 +248,7 @@ class Misson13(ingame_mission.IngameMission):
     SCRIPT_INDEX = 13
     DIRECT_SYSTEMS = [S.sphere2, S.sphere2_inside, S.beast01, S.om13_alt]
     STATIC_NPCSHIPS = NPCSHIPS
-    RTC = ['captured']
+    RTC = ['captured', 'last_brief']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -744,7 +744,7 @@ class Misson13(ingame_mission.IngameMission):
             DockableBattleshipSolar(
                 self, S.sphere2, 'osiris_escape',
                 archetype='o_osiris', loadout='li_battleship_02',
-                ru_name='Линкор Осирис', base='om13_chase_99_base',
+                ru_name='Линкор Осирис', base='om13_alt_99_base',
                 labels=['friend', 'asf', 'osiris']),
         )
 
@@ -805,6 +805,14 @@ class Misson13(ingame_mission.IngameMission):
         self.add_solar_group('SPHERE_WALL', wall_sols)
 
         ### OMEGA 13
+
+        defined_points.append(
+            DockableBattleshipSolar(
+                self, S.om13_alt, 'osiris_bh1',
+                archetype='o_osiris', loadout='li_battleship_02',
+                ru_name='Линкор Осирис', base='om13_alt_99_base',
+                labels=['friend', 'asf', 'osiris']),
+        )
 
         om13_points = [
             'kernels1',

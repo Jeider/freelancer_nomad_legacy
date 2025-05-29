@@ -65,6 +65,7 @@ class Misson01B(ingame_mission.IngameMission):
             Point(self, S.sig8, 'point_a'),
             Point(self, S.sig8, 'point_b'),
             Point(self, S.sig8, 'point_near_outpost'),
+            Point(self, S.sig8, 'point_near_outpost2'),
             Point(self, S.sig8, 'point_escort_outpost'),
             Point(self, S.sig8, 'player_battle_autosave'),
 
