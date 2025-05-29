@@ -154,7 +154,8 @@ pilot = {pilot}
 state_graph = FIGHTER
 npc_class = {classes_list}'''
 
-    def __init__(self, faction, ship, equip_map=None, level=None, name=None, extra_equip=None):
+    def __init__(self, faction, ship, equip_map=None, level=None, name=None,
+                 extra_equip=None, have_afterburn1=True, have_afterburn2=True, gen_armor=True):
         self.faction = faction
         self.ship = ship
         self.equip_map = equip_map
@@ -162,6 +163,9 @@ npc_class = {classes_list}'''
         self.name = name
         self.package = None
         self.extra_equip = extra_equip or []
+        self.have_afterburn1 = have_afterburn1
+        self.have_afterburn2 = have_afterburn2
+        self.gen_armor = gen_armor
 
     def set_name(self, name):
         self.name = name
@@ -231,6 +235,12 @@ npc_class = {classes_list}'''
     def get_weapon6_class(self):
         return self.equip_map.weapon6
 
+    def have_afterburn(self):
+        return not self.no_afterburn
+
+    def have_gen_armor(self):
+        return self.gen_armor
+
     def get_afterburn1_class(self):
         return self.equip_map.afterburn1
 
@@ -286,8 +296,8 @@ npc_class = {classes_list}'''
             self.WEAPON_4: self.package[self.WEAPON_4].get_nickname(),
             self.WEAPON_5: self.package[self.WEAPON_5].get_nickname(),
             self.WEAPON_6: self.package[self.WEAPON_6].get_nickname(),
-            self.AFTERBURN_1: self.package[self.AFTERBURN_1].get_nickname(),
-            self.AFTERBURN_2: self.package[self.AFTERBURN_2].get_nickname(),
+            self.AFTERBURN_1: self.package[self.AFTERBURN_1].get_nickname() if self.package[self.AFTERBURN_1] else None,
+            self.AFTERBURN_2: self.package[self.AFTERBURN_2].get_nickname() if self.package[self.AFTERBURN_1] else None,
             self.SMALL_LIGHT: self.faction.LIGHT,
             self.EXTRA: SINGLE_DIVIDER.join(extra),
             self.CONTRAIL: self.faction.CONTRAIL,
@@ -299,7 +309,14 @@ npc_class = {classes_list}'''
         if not self.package:
             raise Exception('Package is not initialized')
         ship_instance = shiparch.get_ship_by_class(self.ship)
-        loadout = ship_instance.get_loadout_template().format(**self.get_loadout_template_params())
+
+        loadout_template = ship_instance.get_loadout_template(
+            have_afterburn1=self.have_afterburn1,
+            have_afterburn2=self.have_afterburn2,
+            have_gen_armor=self.have_gen_armor(),
+        )
+        loadout = loadout_template.format(**self.get_loadout_template_params())
+
         if len(self.extra_equip) > 1:
             loadout += SINGLE_DIVIDER + SINGLE_DIVIDER.join(self.extra_equip)
         return loadout

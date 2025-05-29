@@ -24,6 +24,10 @@ FAIL_DOCK_BATTLESHIP = 90005  # Вы не провели стыковку с л�
 FAIL_LEAVE_BASE = 90006  # Вы покинули базу
 DEFAULT_REACH_RANGE = 200
 
+DIALOG_CLOSE = 'CLOSE'
+DIALOG_YES_NO = 'YES_NO'
+DIALOG_LATER = 'YES_NO_LATER'
+
 LOCK_MANEUVERS = 'Act_LockManeuvers = true'
 UNLOCK_MANEUVERS = 'Act_LockManeuvers = false'
 CLEAR_OBJECTIVES = 'Act_SetNNObj = null, OBJECTIVE_HISTORY'
@@ -1363,7 +1367,7 @@ class Trigger:
 class Capital(DefinedStaticMixin):
 
     def __init__(self, mission, alias, npc_ship_arch, ru_name, faction=None,
-                 labels=None, arrival_obj=None, radius=None):
+                 labels=None, arrival_obj=None, radius=None, jumper=False):
         self.mission = mission
         self.alias = alias
         self.npc_ship_arch = npc_ship_arch
@@ -1373,6 +1377,7 @@ class Capital(DefinedStaticMixin):
         self.labels = labels or []
         self.arrival_obj = arrival_obj
         self.radius = radius
+        self.jumper = jumper
 
     def get_name(self):
         return self.alias
@@ -1398,6 +1403,8 @@ class Capital(DefinedStaticMixin):
             ship.append(f'arrival_obj = {self.arrival_obj}')
         if self.radius is not None:
             ship.append(f'radius = {self.radius}')
+        if self.jumper:
+            ship.append(f'jumper = true')
 
         return SINGLE_DIVIDER.join(ship)
 
@@ -1421,6 +1428,7 @@ class Direct:
         self.trigger = Trigger()
         self.trigger_groups = {}
         self.save_states: dict = {state.get_code(): state for state in self.mission.get_save_states()}
+        self.dialogs: dict = {dialog.get_code(): dialog for dialog in self.mission.get_dialogs()}
 
     def nn_clear(self):
         return CLEAR_OBJECTIVES
@@ -1444,6 +1452,12 @@ class Direct:
             'Cnd_Timer = 0.3',
         ]
         return SINGLE_DIVIDER.join(content)
+
+    def dialog(self, code):
+        dialog = self.dialogs.get(code)
+        if not dialog:
+            raise Exception(f'unknown dialog {code}')
+        return dialog.show()
 
     def add_trigger_to_group(self, group, trigger_name):
         if group not in self.trigger_groups:
@@ -1754,3 +1768,30 @@ class SaveState:
 
     def get_id(self):
         return self.ids_name.id
+
+
+class MultiText:
+
+    def __init__(self, lines):
+        self.lines = lines
+
+    def get_content(self):
+        return "\\n\\n".join(self.lines)
+
+
+class TextDialog:
+
+    def __init__(self, mission, code, ru_author, ru_content: MultiText, dialog_type=DIALOG_CLOSE):
+        self.mission = mission
+        self.code = code
+        self.dialog_type = dialog_type
+        self.ru_author = ru_author
+        self.ru_content = ru_content.get_content()
+        self.ids_author = self.mission.ids.new_name(self.ru_author)
+        self.ids_content = self.mission.ids.new_name(self.ru_content)
+
+    def get_code(self):
+        return self.code
+
+    def show(self):
+        return f'Act_Popupdialog = {self.ids_author}, {self.ids_content}, {self.dialog_type}'

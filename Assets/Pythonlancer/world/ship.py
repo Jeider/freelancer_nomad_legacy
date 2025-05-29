@@ -299,13 +299,14 @@ cargo = {nickname}, {amount}'''
         'cargo = {power}, 1',
         'equip = {scanner}',
         'equip = {tractor}',
-        'equip = {armor}',
         'equip = {shield_npc}, HpShield01',
         'cargo = {shield}, 1',
         'equip = LargeWhiteSpecial, HpHeadlight',
         'equip = DockingLightRedSmall, HpDockLight01',
         'equip = DockingLightRedSmall, HpDockLight02',
     ]
+
+    GEN_ARMOR_TEMPLATE = 'equip = {armor}'
 
     HAS_ANIMATION = True
     LOADOUT_LAUNCH_ANIMATION = 'equip = launch_extend'
@@ -319,9 +320,12 @@ cargo = {nickname}, {amount}'''
     PACKAGE_LIGHT_TEMPLATE = 'equip = {{small_light}}, HpRunningLight{light_id}, 1'
     PACKAGE_CONTRAIL_TEMPLATE = 'equip = player_contrail, HpContrail{contrail_id}, 1'
 
-    def get_loadout_components(self):
+    def get_loadout_components(self, have_afterburn1=True, have_afterburn2=True, have_gen_armor=True):
         components = []
         components.extend(self.LOADOUT_TEMPLATE_BASE_COMPONENTS)
+
+        if have_gen_armor:
+            components.append(self.GEN_ARMOR_TEMPLATE)
 
         if self.HAS_ANIMATION:
             components.append(self.LOADOUT_LAUNCH_ANIMATION)
@@ -333,6 +337,12 @@ cargo = {nickname}, {amount}'''
 
         i = 1
         for hp_thruster in self.THRUSTERS:
+            if i == 1 and not have_afterburn1:
+                continue
+
+            if i == 2 and not have_afterburn2:
+                continue
+
             components.append(self.LOADOUT_THRUSTER_TEMPLATE.format(thruster_index=i, hp_thruster=hp_thruster))
             i += 1
 
@@ -347,8 +357,12 @@ cargo = {nickname}, {amount}'''
 
         return components
 
-    def get_loadout_template(self):
-        return self.BASE_LOADOUT.format(loadout=SINGLE_DIVIDER.join(self.get_loadout_components()))
+    def get_loadout_template(self, have_afterburn1=True, have_afterburn2=True, have_gen_armor=True):
+        return self.BASE_LOADOUT.format(loadout=SINGLE_DIVIDER.join(self.get_loadout_components(
+            have_afterburn1=have_afterburn1,
+            have_afterburn2=have_afterburn2,
+            have_gen_armor=have_gen_armor,
+        )))
 
     subclasses = []
 

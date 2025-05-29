@@ -108,6 +108,9 @@ class IngameMission(object):
     def get_save_states(self):
         return []
 
+    def get_dialogs(self):
+        return []
+
     def get_static_points(self):
         return []
 

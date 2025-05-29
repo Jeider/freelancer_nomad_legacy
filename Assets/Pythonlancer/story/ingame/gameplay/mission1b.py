@@ -1,10 +1,28 @@
-from universe import sirius
+from universe import sirius as S
 from universe.systems import rh_ber, sig8, rh_biz
 from story.ingame import ingame_mission
+from story import actors
 
 from story.ingame import objectives as O
-from story.ingame.tools import Point, Obj, Conn, NNObj, Ship
+from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Capital, SaveState
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
+
+from world.npc import NPC, EqMap
+from world import ship
+from universe import faction
+
+NPCSHIPS = '''
+
+[NPCShipArch]
+nickname = armored_m1
+loadout = lod_MSN01_armored
+level = d10
+ship_archetype = ge_armored
+pilot = cruiser_default
+state_graph = TRANSPORT
+npc_class = lawful, CRUISER
+
+'''
 
 
 class Misson01B(ingame_mission.IngameMission):
@@ -13,6 +31,12 @@ class Misson01B(ingame_mission.IngameMission):
     FILE = 'm01b'
     SCRIPT_INDEX = 1
     START_SAVE_ID = 32100
+    STATIC_NPCSHIPS = NPCSHIPS
+
+    def get_save_states(self):
+        return [
+            SaveState(self, 's8_battle', 'Сигма-8, Астероидное поле'),
+        ]
 
     def get_ingame_thorns(self):
         return []
@@ -34,25 +58,169 @@ class Misson01B(ingame_mission.IngameMission):
 
     def get_static_points(self):
         return [
-            Point(self, sirius.rh_ber, 'ber_armored'),
+            Point(self, S.rh_ber, 'ber_armored'),
 
-            Point(self, sirius.sig8, 'point_first_regroup'),
-            Point(self, sirius.sig8, 'point_to_starke'),
-            Point(self, sirius.sig8, 'point_a'),
-            Point(self, sirius.sig8, 'point_b'),
-            Point(self, sirius.sig8, 'point_near_outpost'),
-            Point(self, sirius.sig8, 'point_escort_outpost'),
-            Point(self, sirius.sig8, 'player_battle_autosave'),
+            Point(self, S.sig8, 'point_first_regroup'),
+            Point(self, S.sig8, 'point_to_starke'),
+            Point(self, S.sig8, 'point_a'),
+            Point(self, S.sig8, 'point_b'),
+            Point(self, S.sig8, 'point_near_outpost'),
+            Point(self, S.sig8, 'point_escort_outpost'),
+            Point(self, S.sig8, 'player_battle_autosave'),
 
-            Point(self, sirius.rh_biz, 'biz_m1_first_regroup'),
+            Point(self, S.rh_biz, 'biz_m1_first_regroup'),
         ]
 
+    def get_capital_ships(self):
+        armored_ship = {
+            'npc_ship_arch': 'armored_m1',
+            'faction': 'fc_uk_grp',
+            'labels': ['m1_friend'],
+            'jumper': 'true',
+        }
+
+        caps = [
+            Capital(self, 'armored', ru_name='Аделмар', **armored_ship),
+        ]
+
+        return caps
 
     def get_ships(self):
         return [
             Ship(self, 'armored'),
-            Ship(self, 'escort'),
+            Ship(
+                self,
+                'escort',
+                jumper=True,
+                hero=True,
+                actor=actors.Luc,
+                labels=[
+                    'm1_friend',
+                    'friend',
+                ],
+                npc=NPC(
+                    faction=faction.RheinlandCivilians,
+                    ship=ship.Banshee,
+                    level=NPC.D1,
+                    equip_map=EqMap(base_level=1),
+                )
+            ),
+            Ship(
+                self,
+                'alaric',
+                jumper=True,
+                hero=True,
+                actor=actors.Alaric,
+                labels=[
+                    'm1_friend',
+                    'friend',
+                ],
+                npc=NPC(
+                    faction=faction.LibertyPirate,
+                    ship=ship.Piranha,
+                    level=NPC.D1,
+                    equip_map=EqMap(base_level=2),
+                )
+            ),
+            Ship(
+                self,
+                'pir_f_A',
+                count=3,
+                affiliation=faction.WorkaroundPirate.CODE,
+                system_class=S.sig8,
+                labels=[
+                    'pi_assault',
+                    'enemy'
+                ],
+                relative_pos=True,
+                relative_range=1600,
+                npc=NPC(
+                    faction=faction.RheinlandPirate,
+                    ship=ship.Dagger,
+                    level=NPC.D1,
+                    equip_map=EqMap(base_level=1),
+                    have_afterburn2=False,
+                    gen_armor=False,
+                    extra_equip=[
+                        'equip = npc_armor_1',
+                    ]
+                )
+            ),
+            Ship(
+                self,
+                'pir_e_A',
+                count=2,
+                affiliation=faction.WorkaroundPirate.CODE,
+                system_class=S.sig8,
+                labels=[
+                    'pi_assault',
+                    'enemy'
+                ],
+                relative_pos=True,
+                relative_range=1800,
+                npc=NPC(
+                    faction=faction.RheinlandPirate,
+                    ship=ship.Stiletto,
+                    level=NPC.D1,
+                    equip_map=EqMap(base_level=1),
+                    have_afterburn2=False,
+                    gen_armor=False,
+                    extra_equip=[
+                        'equip = npc_armor_1',
+                    ]
+                )
+            ),
+            Ship(
+                self,
+                'pir_f_B',
+                count=2,
+                affiliation=faction.WorkaroundPirate.CODE,
+                system_class=S.sig8,
+                labels=[
+                    'pi_assault',
+                    'enemy'
+                ],
+                relative_pos=True,
+                relative_range=1500,
+                npc=NPC(
+                    faction=faction.RheinlandPirate,
+                    ship=ship.Dagger,
+                    level=NPC.D1,
+                    equip_map=EqMap(base_level=1),
+                    have_afterburn2=False,
+                    gen_armor=False,
+                    extra_equip=[
+                        'equip = npc_armor_1',
+                    ]
+                )
+            ),
+            Ship(
+                self,
+                'pir_e_B',
+                count=2,
+                affiliation=faction.WorkaroundPirate.CODE,
+                system_class=S.sig8,
+                labels=[
+                    'pi_assault',
+                    'enemy'
+                ],
+                relative_pos=True,
+                relative_range=1500,
+                npc=NPC(
+                    faction=faction.RheinlandPirate,
+                    ship=ship.Stiletto,
+                    level=NPC.D1,
+                    equip_map=EqMap(base_level=1),
+                    have_afterburn2=False,
+                    gen_armor=False,
+                    extra_equip=[
+                        'equip = npc_armor_1',
+                    ]
+                )
+            ),
         ]
+
+    #
 
     def get_nn_objectives(self):
         return [

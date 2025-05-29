@@ -426,6 +426,6 @@ class Mission1(Msn1, script.StoryMission):
     MISSION_INDEX = 1
     CUTSCENES = []
     SPACE_CLASS = Msn1Space
-    SYNC_SPACE = False
+    SYNC_SPACE = True
 
     MISSION_TITLE = 'Миссия 1. Конвой в Бисмарк'
