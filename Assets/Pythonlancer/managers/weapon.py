@@ -11,7 +11,7 @@ class WeaponManager:
 
     def __init__(self, lancer_core):
         self.core = lancer_core
-        self.ids = self.core.ids.equip
+        self.ids = self.core.ids.weapon
 
         self.weapon_factions = [i.WEAPON_FACTION for i in FactionGun.subclasses]
 

@@ -53,7 +53,7 @@ class UniverseCommodity:
 class StoreManager:
     def __init__(self, lancer_core):
         self.core = lancer_core
-        self.ids = self.core.ids.equip
+        self.ids = self.core.ids.commodity
 
         self.comms_db = {}
         self.comms_list = []

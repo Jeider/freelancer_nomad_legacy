@@ -1,6 +1,8 @@
 from text.strings import IDsDatabase
 
-INITIAL_EQUIP_ID = 280001
+INITIAL_WEAPON_ID = 280001
+INITIAL_EQUIP_ID = 290001
+INITIAL_COMMODITY_ID = 300001
 INITIAL_SHIP_ID = 110001
 INITIAL_STORY_ID = 33500
 INITIAL_SCRIPT_ID = 150000
@@ -14,7 +16,9 @@ class IDsManager:
     def __init__(self, core):
         self.core = core
 
+        self.weapon = IDsDatabase('weapon', INITIAL_WEAPON_ID)
         self.equip = IDsDatabase('equip', INITIAL_EQUIP_ID)
+        self.commodity = IDsDatabase('commodity', INITIAL_COMMODITY_ID)
         self.ship = IDsDatabase('ship', INITIAL_SHIP_ID)
         self.story = IDsDatabase('story', INITIAL_STORY_ID)
         self.script = IDsDatabase('script', INITIAL_SCRIPT_ID)
@@ -22,7 +26,9 @@ class IDsManager:
         self.rumors = IDsDatabase('rumor', INITIAL_RUMOR_ID)
 
         self.databases = [
+            self.weapon,
             self.equip,
+            self.commodity,
             self.ship,
             self.story,
             self.script,
