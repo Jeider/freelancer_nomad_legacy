@@ -28,17 +28,23 @@ from templates.dockable import constanta
 
 class Sig22Member(Member):
     FACTION = faction.LibertyMain
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_FACTION = EQUIP_LI
 
 
 class Sig22Liberty(object):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_LI
     FACTION = faction.LibertyMain
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_FACTION = EQUIP_LI
 
 
 class Sig22Bretonia(object):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_BR
     POPULATION_KIND = population.POP_SECOND
     FACTION = faction.BretoniaMain
+    WEAPON_FACTION = WEAPON_BR
+    EQUIP_FACTION = EQUIP_BR
 
 
 class Sig22StaticText(Sig22Member, main_objects.RawText):

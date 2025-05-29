@@ -27,6 +27,8 @@ from templates.dockable import upsilon_gasinside
 class Tau31Member(Member):
     FACTION = faction.LibertyMain
     INTERIOR_BG1 = interior.INTERIOR_BG_EDGE
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_FACTION = EQUIP_LI
 
 
 class Tau31StaticText(Tau31Member, main_objects.RawText):

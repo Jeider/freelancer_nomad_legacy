@@ -1,6 +1,9 @@
 from fx.space import Dust, JumpholeEffect
 from fx.sound import Ambience
 
+from world.names import *
+from universe import markets
+
 from universe.content.member import Member
 from universe.content.system_object import LEFT, RIGHT, TOP
 from universe.content import main_objects
@@ -30,3 +33,6 @@ class SphereTwoOsiris(Sphere2Member, main_objects.LibertyBattleship):
     CALC_STORE = False
     FACTION = faction.LibertyMain
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_LI
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_FACTION = EQUIP_LI
+    # ASF set?

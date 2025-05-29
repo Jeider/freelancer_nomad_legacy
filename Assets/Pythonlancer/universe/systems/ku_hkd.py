@@ -33,6 +33,8 @@ from templates.dockable import gmg_hq
 class HokkMember(Member):
     FACTION = faction.KusariMain
     INTERIOR_BG1 = interior.INTERIOR_KU_HOKKAIDO
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_FACTION = EQUIP_KU
 
 
 class HokkStaticText(HokkMember, main_objects.RawText):

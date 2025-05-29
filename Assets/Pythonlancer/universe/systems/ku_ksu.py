@@ -30,6 +30,8 @@ from templates.dockable import odissey
 class KyushuMember(Member):
     FACTION = faction.KusariMain
     INTERIOR_BG1 = interior.INTERIOR_KU_KYUSHU
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_FACTION = EQUIP_KU
 
 
 class KyushuStaticText(KyushuMember, main_objects.RawText):
@@ -340,7 +342,7 @@ class KyushuMiningDockring(KyushuMember, main_objects.MiningPlanetDockring):
     )
 
 
-class KyushuMegastation(KyushuMember, main_objects.Station):
+class KyushuMegastation(KyushuMember, main_objects.LargeStation):
     BASE_INDEX = 3
     REL = RIGHT
     REL_DRIFT = 1000

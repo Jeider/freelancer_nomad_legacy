@@ -1,6 +1,9 @@
 from fx.space import Dust, JumpholeEffect
 from fx.sound import Ambience
 
+from world.names import *
+from universe import markets
+
 from universe.content.member import Member
 from universe.content.system_object import LEFT, RIGHT
 from universe.content import main_objects
@@ -18,6 +21,8 @@ from templates.dockable import valensia
 class OrdHQMember(Member):
     FACTION = faction.KusariMain
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_KU
+    WEAPON_FACTION = WEAPON_BW
+    EQUIP_FACTION = EQUIP_BW
 
 
 class OrdHQStoryBattleship(OrdHQMember, main_objects.KusariBattleship):
@@ -29,3 +34,4 @@ class OrdHQStoryBattleship(OrdHQMember, main_objects.KusariBattleship):
     DEALERS = dealers.KusariMilitaryDealers
     STORY = True
     CALC_STORE = False
+    EQUIP_SET = markets.OrderSet

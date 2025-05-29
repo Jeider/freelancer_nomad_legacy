@@ -29,6 +29,8 @@ from templates.dockable import pirate
 class Tau4Member(Member):
     FACTION = faction.KusariMain
     INTERIOR_BG1 = interior.INTERIOR_TAU4
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_FACTION = EQUIP_KU
 
 
 class Tau4StaticText(Tau4Member, main_objects.RawText):

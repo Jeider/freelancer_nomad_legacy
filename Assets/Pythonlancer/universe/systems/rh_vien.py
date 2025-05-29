@@ -1,6 +1,9 @@
 from fx.space import Dust, JumpholeEffect
 from fx.sound import Ambience
 
+from world.names import *
+from universe import markets
+
 from universe.content.member import Member
 from universe.content.system_object import LEFT, RIGHT
 from universe.content import main_objects
@@ -30,3 +33,6 @@ class ViennaKusariBattleship(ViennaMember, main_objects.KusariBattleship):
     CALC_STORE = False
     FACTION = faction.KusariMain
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_KU
+    WEAPON_FACTION = WEAPON_BW
+    EQUIP_FACTION = EQUIP_BW
+    EQUIP_SET = markets.OrderSet

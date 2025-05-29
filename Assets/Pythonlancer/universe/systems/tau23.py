@@ -27,17 +27,23 @@ from templates.dockable import trade_storages
 class Tau23Member(Member):
     FACTION = faction.BretoniaMain
     INTERIOR_BG1 = interior.INTERIOR_BG_BARRIER_CLOUD
+    WEAPON_FACTION = WEAPON_BR
+    EQUIP_FACTION = EQUIP_BR
 
 
 class Tau23Bretonia(object):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_BR
     FACTION = faction.BretoniaMain
+    WEAPON_FACTION = WEAPON_BR
+    EQUIP_FACTION = EQUIP_BR
 
 
 class Tau23Kusari(object):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_KU
     POPULATION_KIND = population.POP_SECOND
     FACTION = faction.KusariMain
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_FACTION = EQUIP_KU
 
 
 class Tau23StaticText(Tau23Member, main_objects.RawText):

@@ -13,13 +13,26 @@ PIRATEGUN = 'pirate'
 HUNTERGUN = 'hunter'
 SHIELDGUN = 'shield'
 
+DEBUG_CLASSES = [1, 2, 3, 4, 5, 6]
+DEBUG_CLASSES_SHIELDGUN = [1, 3, 4]
+
 WEAPON_RH = 'rh'
 WEAPON_LI = 'li'
 WEAPON_BR = 'br'
 WEAPON_KU = 'ku'
 WEAPON_BW = 'bw'
 
+EQUIP_RH = 'rh'
+EQUIP_LI = 'li'
+EQUIP_BR = 'br'
+EQUIP_KU = 'ku'
+EQUIP_BW = 'bw'
+
 # MISC EQUIP TYPES
+
+GEN_MAIN = 20
+GEN_CIV = 21
+GEN_PIRATE = 22
 
 RH_MAIN = 1
 RH_CIV = 2
@@ -40,6 +53,39 @@ KU_PIRATE = 12
 CO_ORDER = 13
 CO_CORSAIR = 14
 CO_OUTCAST = 15
+
+TYPE_PER_GEN_TYPE = {
+    EQUIP_RH: {
+        GEN_MAIN: RH_MAIN,
+        GEN_CIV: RH_CIV,
+        GEN_PIRATE: RH_PIRATE,
+    },
+
+    EQUIP_LI: {
+        GEN_MAIN: LI_MAIN,
+        GEN_CIV: LI_CIV,
+        GEN_PIRATE: LI_PIRATE,
+    },
+
+    EQUIP_BR: {
+        GEN_MAIN: BR_MAIN,
+        GEN_CIV: BR_CIV,
+        GEN_PIRATE: BR_PIRATE,
+    },
+
+    EQUIP_KU: {
+        GEN_MAIN: KU_MAIN,
+        GEN_CIV: KU_CIV,
+        GEN_PIRATE: KU_PIRATE,
+    },
+
+    EQUIP_BW: {
+        GEN_MAIN: CO_ORDER,
+        GEN_CIV: CO_OUTCAST,
+        GEN_PIRATE: CO_CORSAIR,
+    }
+
+}
 
 # COMMODITY
 

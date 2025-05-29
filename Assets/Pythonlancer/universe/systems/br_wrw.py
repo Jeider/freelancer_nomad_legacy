@@ -27,6 +27,8 @@ from templates.dockable import alg
 
 class WarwickMember(Member):
     FACTION = faction.BretoniaMain
+    WEAPON_FACTION = WEAPON_BR
+    EQUIP_FACTION = EQUIP_BR
 
 
 class WarwickStaticText(WarwickMember, main_objects.RawText):
@@ -284,7 +286,7 @@ class WarwickDockring(WarwickMember, main_objects.LargePlanetDockring):
     )
 
 
-class WarwickLargeStation(WarwickMember, main_objects.Station):
+class WarwickLargeStation(WarwickMember, main_objects.LargeStation):
     BASE_INDEX = 2
     REL = TOP
     REL_DRIFT = 800

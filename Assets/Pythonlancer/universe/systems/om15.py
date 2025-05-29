@@ -30,6 +30,8 @@ from templates.dockable import station_debris
 class Omega15Member(Member):
     FACTION = faction.RheinlandMain
     INTERIOR_BG1 = interior.INTERIOR_BG_WALKER
+    WEAPON_FACTION = WEAPON_RH
+    EQUIP_FACTION = EQUIP_RH
 
 
 class Om15RawText(Omega15Member, main_objects.RawText):

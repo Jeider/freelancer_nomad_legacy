@@ -31,6 +31,8 @@ from templates.dockable import prisons
 
 class AvalMember(Member):
     FACTION = faction.BretoniaMain
+    WEAPON_FACTION = WEAPON_BR
+    EQUIP_FACTION = EQUIP_BR
 
 
 class AvalStaticText(AvalMember, main_objects.RawText):

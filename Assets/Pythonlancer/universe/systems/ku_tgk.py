@@ -27,6 +27,8 @@ from templates.dockable import station_debris
 class TekagiMember(Member):
     FACTION = faction.KusariMain
     INTERIOR_BG1 = interior.INTERIOR_KU_TAKAGI
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_FACTION = EQUIP_KU
 
 
 class TekagiStaticText(TekagiMember, main_objects.RawText):
@@ -317,7 +319,7 @@ class TekagiHokkaidoJumpgate(TekagiMember, main_objects.Jumpgate):
     TARGET_SYSTEM_NAME = 'ku_hkd'
 
 
-class TekagiLargeStation(TekagiMember, main_objects.Station):
+class TekagiLargeStation(TekagiMember, main_objects.LargeStation):
     BASE_INDEX = 1
     REL = TOP
     SPACE_OBJECT_TEMPLATE = tekagi_megabase.TekagiMegabase

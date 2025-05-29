@@ -34,6 +34,8 @@ from templates.solar import debris_box
 
 class BerlinMember(Member):
     FACTION = faction.RheinlandMain
+    WEAPON_FACTION = WEAPON_RH
+    EQUIP_FACTION = EQUIP_RH
 
 
 class BerlinStaticText(BerlinMember, main_objects.RawText):

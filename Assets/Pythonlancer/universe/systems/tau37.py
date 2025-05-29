@@ -28,6 +28,8 @@ from templates.dockable import station_debris
 class Tau37Member(Member):
     FACTION = faction.BretoniaMain
     INTERIOR_BG1 = interior.INTERIOR_BG_WHITE
+    WEAPON_FACTION = WEAPON_BR
+    EQUIP_FACTION = EQUIP_BR
 
 
 class Tau37StaticText(Tau37Member, main_objects.RawText):

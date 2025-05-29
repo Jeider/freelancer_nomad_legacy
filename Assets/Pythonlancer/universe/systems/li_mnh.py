@@ -32,6 +32,8 @@ from templates.dockable import pirate
 
 class ManhMember(Member):
     FACTION = faction.LibertyMain
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_FACTION = EQUIP_LI
 
 
 class ManhStaticText(ManhMember, main_objects.RawText):

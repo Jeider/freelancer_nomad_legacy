@@ -30,8 +30,9 @@ from templates.dockable import station_debris
 
 class Sig17Member(Member):
     FACTION = faction.LibertyMain
-
     INTERIOR_BG1 = interior.INTERIOR_SIGMA17
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_FACTION = EQUIP_LI
 
 
 class Sig17StaticText(Sig17Member, main_objects.RawText):

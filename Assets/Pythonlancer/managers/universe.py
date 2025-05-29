@@ -93,7 +93,7 @@ class UniverseManager:
                                 items=dockable.EQUIP_SET.get_equip_items(
                                     core=self.core,
                                     root_weapon_faction=dockable.WEAPON_FACTION,
-                                    root_misc_equip_type=dockable.MISC_EQUIP_TYPE,
+                                    root_misc_equip_type=dockable.get_equip_type(),
                                 ),
                             )
                         )

@@ -31,6 +31,8 @@ from templates.dockable import cambridge_research
 class HonsMember(Member):
     FACTION = faction.KusariMain
     INTERIOR_BG1 = interior.INTERIOR_KU_HONSHU
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_FACTION = EQUIP_KU
 
 
 class HonsStaticText(HonsMember, main_objects.RawText):

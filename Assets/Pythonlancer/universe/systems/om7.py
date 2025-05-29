@@ -31,17 +31,23 @@ from templates.dockable import station_debris
 class Om7Member(Member):
     FACTION = faction.KusariMain
     INTERIOR_BG1 = interior.INTERIOR_BG_WALKER
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_FACTION = EQUIP_KU
 
 
 class Om7Kusari(object):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_KU
     FACTION = faction.KusariMain
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_FACTION = EQUIP_KU
 
 
 class Om7Rheinland(object):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_RH
     POPULATION_KIND = population.POP_SECOND
     FACTION = faction.RheinlandMain
+    WEAPON_FACTION = WEAPON_RH
+    EQUIP_FACTION = EQUIP_RH
 
 
 class Om7StaticText(Om7Member, main_objects.RawText):

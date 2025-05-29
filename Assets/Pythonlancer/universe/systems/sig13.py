@@ -26,17 +26,23 @@ from templates.solar import gas_crystal
 
 class Sig13Member(Member):
     FACTION = faction.RheinlandMain
+    WEAPON_FACTION = WEAPON_RH
+    EQUIP_FACTION = EQUIP_RH
 
 
 class Sig13Rheinland(object):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_RH
     FACTION = faction.RheinlandMain
+    WEAPON_FACTION = WEAPON_RH
+    EQUIP_FACTION = EQUIP_RH
 
 
 class Sig13Liberty(object):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_LI
     POPULATION_KIND = population.POP_SECOND
     FACTION = faction.LibertyMain
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_FACTION = EQUIP_LI
 
 
 class Sig13StaticText(Sig13Member, main_objects.RawText):

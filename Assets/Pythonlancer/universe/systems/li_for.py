@@ -34,6 +34,8 @@ from templates.dockable import station_debris
 class ForbesMember(Member):
     FACTION = faction.LibertyMain
     INTERIOR_BG1 = interior.INTERIOR_LI_FORBES
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_FACTION = EQUIP_LI
 
 
 class ForbesStaticText(ForbesMember, main_objects.RawText):

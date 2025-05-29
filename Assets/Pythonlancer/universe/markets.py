@@ -190,7 +190,7 @@ class EquipSet:
         return items
 
 
-BizSet = EquipSet(
+BizSetDebug = EquipSet(
     Q.Gun('rh_lightgun', eq_classes=[1, 2, 3, 4]),
     Q.GenericGun(HUNTERGUN, eq_classes=[3, 5, 7, 9]),
     Q.Engine(CO_OUTCAST, eq_classes=[3, 5, 7, 9]),
@@ -198,4 +198,110 @@ BizSet = EquipSet(
     Q.Shield(KU_PIRATE, eq_classes=[2, 3]),
     Q.Thruster(RH_CIV, eq_classes=[1, 8]),
     weapon_faction=WEAPON_BR,
+)
+
+BattleshipSet = EquipSet(
+    Q.GenericGun(HEAVYGUN, eq_classes=DEBUG_CLASSES),
+    Q.Engine(None, eq_classes=DEBUG_CLASSES),
+    Q.Power(None, eq_classes=DEBUG_CLASSES),
+    Q.Shield(None, eq_classes=DEBUG_CLASSES),
+    Q.Thruster(None, eq_classes=DEBUG_CLASSES),
+)
+
+PoliceOutpostSet = EquipSet(
+    Q.GenericGun(LIGHTGUN, eq_classes=DEBUG_CLASSES),
+    Q.Engine(None, eq_classes=DEBUG_CLASSES),
+    Q.Power(None, eq_classes=DEBUG_CLASSES),
+    Q.Shield(None, eq_classes=DEBUG_CLASSES),
+    Q.Thruster(None, eq_classes=DEBUG_CLASSES),
+)
+
+PrisonSet = EquipSet(
+    Q.GenericGun(LIGHTGUN, eq_classes=DEBUG_CLASSES),
+    Q.Engine(None, eq_classes=DEBUG_CLASSES),
+    Q.Power(None, eq_classes=DEBUG_CLASSES),
+    Q.Shield(None, eq_classes=DEBUG_CLASSES),
+    Q.Thruster(None, eq_classes=DEBUG_CLASSES),
+)
+
+ShipyardSet = EquipSet(
+    Q.GenericGun(LIGHTGUN, eq_classes=DEBUG_CLASSES),
+    Q.Engine(None, eq_classes=DEBUG_CLASSES),
+    Q.Power(None, eq_classes=DEBUG_CLASSES),
+    Q.Shield(None, eq_classes=DEBUG_CLASSES),
+    Q.Thruster(None, eq_classes=DEBUG_CLASSES),
+)
+
+MainPlanetSet = EquipSet(
+    Q.GenericGun(HUNTERGUN, eq_classes=DEBUG_CLASSES),
+    Q.Engine(None, eq_classes=DEBUG_CLASSES),
+    Q.Power(None, eq_classes=DEBUG_CLASSES),
+    Q.Shield(None, eq_classes=DEBUG_CLASSES),
+    Q.Thruster(None, eq_classes=DEBUG_CLASSES),
+)
+
+CivPlanetSet = EquipSet(
+    Q.GenericGun(CIVGUN, eq_classes=DEBUG_CLASSES),
+    Q.Engine(None, eq_classes=DEBUG_CLASSES),
+    Q.Power(None, eq_classes=DEBUG_CLASSES),
+    Q.Shield(None, eq_classes=DEBUG_CLASSES),
+    Q.Thruster(None, eq_classes=DEBUG_CLASSES),
+)
+
+StationSet = EquipSet(
+    Q.GenericGun(CIVGUN, eq_classes=DEBUG_CLASSES),
+    Q.Engine(None, eq_classes=DEBUG_CLASSES),
+    Q.Power(None, eq_classes=DEBUG_CLASSES),
+    Q.Shield(None, eq_classes=DEBUG_CLASSES),
+    Q.Thruster(None, eq_classes=DEBUG_CLASSES),
+)
+
+ResearchSet = EquipSet(
+    Q.GenericGun(SHIELDGUN, eq_classes=DEBUG_CLASSES),
+    Q.Engine(None, eq_classes=DEBUG_CLASSES),
+    Q.Power(None, eq_classes=DEBUG_CLASSES),
+    Q.Shield(None, eq_classes=DEBUG_CLASSES),
+    Q.Thruster(None, eq_classes=DEBUG_CLASSES),
+)
+
+LargeStationSet = EquipSet(
+    Q.GenericGun(LIGHTGUN, eq_classes=DEBUG_CLASSES),
+    Q.GenericGun(SHIELDGUN, eq_classes=DEBUG_CLASSES_SHIELDGUN),
+    Q.Engine(None, eq_classes=DEBUG_CLASSES),
+    Q.Power(None, eq_classes=DEBUG_CLASSES),
+    Q.Shield(None, eq_classes=DEBUG_CLASSES),
+    Q.Thruster(None, eq_classes=DEBUG_CLASSES),
+)
+
+PirateSet = EquipSet(
+    Q.GenericGun(PIRATEGUN, eq_classes=DEBUG_CLASSES),
+    Q.Engine(None, eq_classes=DEBUG_CLASSES),
+    Q.Power(None, eq_classes=DEBUG_CLASSES),
+    Q.Shield(None, eq_classes=DEBUG_CLASSES),
+    Q.Thruster(None, eq_classes=DEBUG_CLASSES),
+)
+
+OutcastSet = EquipSet(
+    Q.Gun('bw_outcastgun', eq_classes=DEBUG_CLASSES),
+    Q.Engine(None, eq_classes=DEBUG_CLASSES),
+    Q.Power(None, eq_classes=DEBUG_CLASSES),
+    Q.Shield(None, eq_classes=DEBUG_CLASSES),
+    Q.Thruster(None, eq_classes=DEBUG_CLASSES),
+)
+
+CorsairSet = EquipSet(
+    Q.Gun('bw_corsairgun', eq_classes=DEBUG_CLASSES),
+    Q.Engine(None, eq_classes=DEBUG_CLASSES),
+    Q.Power(None, eq_classes=DEBUG_CLASSES),
+    Q.Shield(None, eq_classes=DEBUG_CLASSES),
+    Q.Thruster(None, eq_classes=DEBUG_CLASSES),
+)
+
+OrderSet = EquipSet(
+    Q.Gun('or_lightgun', eq_classes=DEBUG_CLASSES),
+    Q.Gun('or_heavygun', eq_classes=DEBUG_CLASSES),
+    Q.Engine(None, eq_classes=DEBUG_CLASSES),
+    Q.Power(None, eq_classes=DEBUG_CLASSES),
+    Q.Shield(None, eq_classes=DEBUG_CLASSES),
+    Q.Thruster(None, eq_classes=DEBUG_CLASSES),
 )

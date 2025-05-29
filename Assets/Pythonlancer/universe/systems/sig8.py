@@ -29,8 +29,9 @@ from templates.dockable import trade_storages
 
 class Sigma8Member(Member):
     FACTION = faction.RheinlandMain
-
     INTERIOR_BG1 = interior.INTERIOR_SIGMA8
+    WEAPON_FACTION = WEAPON_RH
+    EQUIP_FACTION = EQUIP_RH
 
 
 class Sigma8StaticText(Sigma8Member, main_objects.RawText):

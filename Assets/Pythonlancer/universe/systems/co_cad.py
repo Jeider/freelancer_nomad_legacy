@@ -30,3 +30,4 @@ class CadizOrderBattleship(CadizMember, main_objects.Battleship):
     CALC_STORE = False
     FACTION = faction.LibertyMain
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_LI
+    IS_BASE = False

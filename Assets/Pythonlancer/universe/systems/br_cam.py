@@ -33,6 +33,8 @@ from templates.dockable import station_debris
 
 class CamMember(Member):
     FACTION = faction.BretoniaMain
+    WEAPON_FACTION = WEAPON_BR
+    EQUIP_FACTION = EQUIP_BR
 
 
 class CamStaticText(CamMember, main_objects.RawText):

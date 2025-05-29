@@ -33,6 +33,8 @@ from templates.dockable import rheinland_military
 
 class BizmarkMember(Member):
     FACTION = faction.RheinlandMain
+    WEAPON_FACTION = WEAPON_RH
+    EQUIP_FACTION = EQUIP_RH
 
 
 class BizmarkStaticText(BizmarkMember, main_objects.RawText):
@@ -185,10 +187,6 @@ class BizmarkDockRing(BizmarkMember, main_objects.LargePlanetDockring):
     AUDIO_PREFIX = SpaceVoice.RH_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.RheinlandPlanetDealers
-    IS_BASE = True
-    EQUIP_SET = markets.BizSet
-    WEAPON_FACTION = WEAPON_KU
-    MISC_EQUIP_TYPE = BR_PIRATE
     BASE_PROPS = meta.LargePlanet(
         objectives=[
             meta.ProduceBest(LUXURY_DIAMONDS),
@@ -209,19 +207,6 @@ class BizmarkTrading(BizmarkMember, main_objects.TradingBase):
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.OutpostShipdealerInterior
     DEALERS = dealers.RheinlandCivilianDealers
-
-    # IS_BASE = True
-    WEAPON_FACTION = WEAPON_RH
-    MISC_EQUIP_TYPE = RH_MAIN
-    EQUIP_SET = markets.EquipSet(
-        Q.GenericGun(HUNTERGUN, eq_classes=[1, 3, 5, 7]),
-        Q.GenericGun(SHIELDGUN, eq_classes=[1, 3, 5, 7]),
-        Q.Engine(None, eq_classes=[1, 3, 5]),
-        Q.Power(None, eq_classes=[1, 3, 5]),
-        Q.Shield(None, eq_classes=[2, 3, 6]),
-        Q.Thruster(None, eq_classes=[1, 4]),
-        Q.Engine(RH_CIV, eq_classes=[1, 3, 5]),
-    )
 
     BASE_PROPS = meta.LargeTradingBase(
         objectives=[

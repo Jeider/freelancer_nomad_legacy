@@ -35,12 +35,16 @@ class Sig42Member(Member):
 class Sig42Bretonia(object):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_BR
     FACTION = faction.BretoniaMain
+    WEAPON_FACTION = WEAPON_BR
+    EQUIP_FACTION = EQUIP_BR
 
 
 class Sig42Kusari(object):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_KU
     POPULATION_KIND = population.POP_SECOND
     FACTION = faction.KusariMain
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_FACTION = EQUIP_KU
 
 
 class Sig42StaticText(Sig42Member, main_objects.RawText):

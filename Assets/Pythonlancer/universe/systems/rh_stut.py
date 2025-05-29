@@ -31,6 +31,8 @@ from templates.dockable import bounty_hunter
 class StutMember(Member):
     FACTION = faction.RheinlandMain
     INTERIOR_BG1 = interior.INTERIOR_RH_STUTTGART
+    WEAPON_FACTION = WEAPON_RH
+    EQUIP_FACTION = EQUIP_RH
 
 
 class StutRawText(StutMember, main_objects.RawText):

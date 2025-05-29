@@ -2,6 +2,9 @@ from random import randint
 
 from fx.space import Dust
 
+from world.names import *
+from universe import markets
+
 from universe.content import meta
 from universe.content.system_object import SystemObject, TOP, BOTTOM, LEFT, RIGHT, DIRECTIONS, POS_KEY, ROT_KEY, SIZE_KEY
 from universe.content.zones import DynamicZone, DynamicSphereZone, RawZone
@@ -725,11 +728,13 @@ class DockableObject(StaticObject):
     INTERIOR_EXTRA_ROOMS = []
     INTERIORS_FOLDER = 'GENERATED_INTERIORS'
     DEALERS = None
-    IS_BASE = False  # switch to true
+    IS_BASE = True  # switch to true
     EQUIP_SET = None
     BASE_INDEX = None
     WEAPON_FACTION = None
     MISC_EQUIP_TYPE = None
+    EQUIP_FACTION = None
+    MISC_EQUIP_GEN_TYPE = None
     BASE_PROPS = None
     RU_NAME = 'База'
 
@@ -776,6 +781,20 @@ BGCS_base_run_by = W02bF44'''
         self.key = None
         if self.LOCKED_DOCK:
             self.key = LockedDockKey(self)
+
+    def get_weapon_faction(self):
+        return self.WEAPON_FACTION
+
+    def get_equip_type(self):
+        if self.MISC_EQUIP_TYPE:
+            return self.MISC_EQUIP_TYPE
+        elif self.MISC_EQUIP_GEN_TYPE:
+            if not self.EQUIP_FACTION:
+                raise Exception(f'base {self.get_base_nickname()} have no equip set')
+
+            return TYPE_PER_GEN_TYPE[self.EQUIP_FACTION][self.MISC_EQUIP_GEN_TYPE]
+
+        raise Exception(f'base {self.get_base_nickname()} have no any equip type')
 
     def set_base(self, base):
         self.base = base
@@ -930,24 +949,55 @@ class Dockring(DockableObject):
 
 class LargePlanetDockring(Dockring):
     BASE_PROPS = meta.LargePlanet()
+    MISC_EQUIP_GEN_TYPE = GEN_PIRATE
+    EQUIP_SET = markets.MainPlanetSet
+
+
+    #
+    # WEAPON_FACTION = WEAPON_RH
+    # EQUIP_FACTION = EQUIP_RH
+    # MISC_EQUIP_TYPE = RH_MAIN
+    # MISC_EQUIP_GEN_TYPE = GEN_MAIN
+    # EQUIP_SET = markets.EquipSet(
+    #     Q.GenericGun(HUNTERGUN, eq_classes=[1, 3, 5, 7]),
+    #     Q.GenericGun(SHIELDGUN, eq_classes=[1, 3, 5, 7]),
+    #     Q.Engine(None, eq_classes=[1, 3, 5]),
+    #     Q.Power(None, eq_classes=[1, 3, 5]),
+    #     Q.Shield(None, eq_classes=[2, 3, 6]),
+    #     Q.Thruster(None, eq_classes=[1, 4]),
+    #     Q.Engine(RH_CIV, eq_classes=[1, 3, 5]),
+    # )
 
 
 class MiningPlanetDockring(Dockring):
     BASE_PROPS = meta.MiningPlanet()
+    EQUIP_SET = markets.CivPlanetSet
+    MISC_EQUIP_GEN_TYPE = GEN_CIV
 
 
 class ResortPlanetDockring(Dockring):
     BASE_PROPS = meta.ResortPlanet()
+    EQUIP_SET = markets.CivPlanetSet
+    MISC_EQUIP_GEN_TYPE = GEN_CIV
 
 
 class WaterPlanetDockring(Dockring):
     BASE_PROPS = meta.WaterPlanet()
+    EQUIP_SET = markets.CivPlanetSet
+    MISC_EQUIP_GEN_TYPE = GEN_CIV
 
 
 class Station(DockableObject):
     ALIAS = 'station'
     AUDIO_PREFIX = SpaceVoice.STATION
     BASE_PROPS = meta.SpaceStation()
+    EQUIP_SET = markets.StationSet
+    MISC_EQUIP_GEN_TYPE = GEN_CIV
+
+
+class LargeStation(Station):
+    EQUIP_SET = markets.LargeStationSet
+    MISC_EQUIP_GEN_TYPE = GEN_MAIN
 
 
 class TradelaneSupportStation(Station):
@@ -956,6 +1006,8 @@ class TradelaneSupportStation(Station):
 
 class ResearchStation(Station):
     BASE_PROPS = meta.Research()
+    EQUIP_SET = markets.ResearchSet
+    MISC_EQUIP_GEN_TYPE = GEN_CIV
 
 
 class GasMiningStation(Station):
@@ -970,16 +1022,19 @@ class AbandonedAsteroid(DockableObject):
     AUDIO_PREFIX = SpaceVoice.STATION
     RANDOM_ROBOT = True
     BASE_PROPS = meta.LockedAsteroid()
+    IS_BASE = False  # Workaround, keep before new balance will integrated
 
 
 class AbandonedAsteroidIce(DockableObject):
     AUDIO_PREFIX = SpaceVoice.STATION
     RANDOM_ROBOT = True
     BASE_PROPS = meta.LockedAsteroid()
+    IS_BASE = False  # Workaround, keep before new balance will integrated
 
 
 class GasMinerOld(Station):
     RANDOM_ROBOT = True
+    IS_BASE = False  # Workaround, keep before new balance will integrated
 
     CARGO_PODS_POSITION_Y_DRIFT = -60
 
@@ -1009,12 +1064,14 @@ class SolarPlant(Station):
     ALIAS = 'solar'
     RANDOM_ROBOT = True
     BASE_PROPS = meta.LockedSolarPlant()
+    IS_BASE = False  # Workaround, keep before new balance will integrated
 
 
 class RoidMiner(Station):
     RANDOM_ROBOT = True
     ROTATE_RANDOM = False
     BASE_PROPS = meta.LockedRoidMiner()
+    IS_BASE = False  # Workaround, keep before new balance will integrated
 
     ASTEROID_OFFSET = (0, 5, -235)
     ASTEROID_ROTATE = (145, -30, 34)
@@ -1074,36 +1131,52 @@ class DebrisManufactoring(Station):
     AUDIO_PREFIX = SpaceVoice.FACTORY
     RANDOM_ROBOT = True
     BASE_PROPS = meta.LockedSmelter()
+    IS_BASE = False  # Workaround, keep before new balance will integrated
 
 
 class Outpost(DockableObject):
     ALIAS = 'outpost'
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     BASE_PROPS = meta.Outpost()
+    EQUIP_SET = markets.PoliceOutpostSet
+    MISC_EQUIP_GEN_TYPE = GEN_MAIN
 
 
 class Prison(DockableObject):
     ALIAS = 'prison'
     AUDIO_PREFIX = SpaceVoice.PRISON
     BASE_PROPS = meta.Prison()
+    EQUIP_SET = markets.PrisonSet
+    MISC_EQUIP_GEN_TYPE = GEN_PIRATE
 
 
 class Shipyard(DockableObject):
     ALIAS = 'shipyard'
     AUDIO_PREFIX = SpaceVoice.SHIPYARD
     BASE_PROPS = meta.Shipyard()
+    EQUIP_SET = markets.ShipyardSet
+    MISC_EQUIP_GEN_TYPE = GEN_PIRATE
+
+
+class LargeShipyard(Shipyard):
+    EQUIP_SET = markets.LargeStationSet
+    MISC_EQUIP_GEN_TYPE = GEN_MAIN
 
 
 class TradingBase(DockableObject):
     ALIAS = 'trading'
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     BASE_PROPS = meta.TradingBase()
+    EQUIP_SET = markets.StationSet
+    MISC_EQUIP_GEN_TYPE = GEN_CIV
 
 
 class Battleship(DockableObject):
     ALIAS = 'bship'
     AUDIO_PREFIX = SpaceVoice.BATTLESHIP
     BASE_PROPS = meta.Battleship()
+    EQUIP_SET = markets.BattleshipSet
+    MISC_EQUIP_GEN_TYPE = GEN_MAIN
 
 
 class RheinlandBattleship(Battleship):
@@ -1130,23 +1203,31 @@ class LuxuryLiner(Battleship):
     ARCHETYPE = 'luxury_liner'
     LOADOUT = 'ge_liner_co_01'
     BASE_PROPS = meta.LuxuryLiner()
+    EQUIP_SET = markets.StationSet
+    MISC_EQUIP_GEN_TYPE = GEN_CIV
 
 
 class Freeport(DockableObject):
     ALIAS = 'freeport'
     AUDIO_PREFIX = SpaceVoice.FREEPORT
     BASE_PROPS = meta.Freeport()
+    EQUIP_SET = markets.StationSet
+    MISC_EQUIP_GEN_TYPE = GEN_PIRATE
 
 
 class JunkerBase(DockableObject):
     ALIAS = 'junker'
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     BASE_PROPS = meta.JunkerBase()
+    EQUIP_SET = markets.PirateSet
+    MISC_EQUIP_GEN_TYPE = GEN_PIRATE
 
 
 class PirateBase(DockableObject):
     ALIAS = 'pirate'
     AUDIO_PREFIX = SpaceVoice.OUTPOST
+    EQUIP_SET = markets.PirateSet
+    MISC_EQUIP_GEN_TYPE = GEN_PIRATE
 
 
 class PirateStation(PirateBase):
@@ -1165,6 +1246,8 @@ class Refinery(DockableObject):
     ALIAS = 'alg'
     AUDIO_PREFIX = SpaceVoice.FACTORY
     BASE_PROPS = meta.Refinery()
+    EQUIP_SET = markets.StationSet
+    MISC_EQUIP_GEN_TYPE = GEN_CIV
 
 
 class Hackable(DockableObject):
@@ -1174,6 +1257,7 @@ class Hackable(DockableObject):
     RANDOM_ROBOT = True
     BASE_PROPS = meta.LockedHackableOutpost()
     CALC_STORE = False
+    IS_BASE = False  # Workaround, keep before new balance will integrated
 
     def get_position(self):
         if self.RELATED_OBJECT:

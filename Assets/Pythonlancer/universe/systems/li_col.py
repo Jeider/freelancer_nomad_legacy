@@ -35,6 +35,8 @@ from templates.dockable import station_debris
 class ColMember(Member):
     FACTION = faction.LibertyMain
     INTERIOR_BG1 = interior.INTERIOR_LI_COLUMBIA
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_FACTION = EQUIP_LI
 
 
 class ColStaticText(ColMember, main_objects.RawText):

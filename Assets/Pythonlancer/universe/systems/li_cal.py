@@ -31,6 +31,8 @@ from templates.dockable import roid_mining
 class CalMember(Member):
     FACTION = faction.LibertyMain
     INTERIOR_BG1 = interior.INTERIOR_BG_CROW
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_FACTION = EQUIP_LI
 
 
 class CalStaticText(CalMember, main_objects.RawText):
