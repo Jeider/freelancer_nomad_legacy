@@ -1,5 +1,6 @@
 from fx.space import Dust, JumpholeEffect
 from fx.sound import Ambience
+import fx.neuralnet as nn
 
 from managers.tools import query as Q
 from world.names import *
@@ -255,6 +256,7 @@ class BizmarkMilitary(BizmarkMember, main_objects.Station):
     SPACE_OBJECT_TEMPLATE = rheinland_military.RheinlandMilitary
 
     LOCKED_DOCK = True
+    KEY_COLLECT_FX = nn.FX_GOT_KEY_STATION
 
     AUDIO_PREFIX = SpaceVoice.STATION
     INTERIOR_CLASS = interior.StationInterior

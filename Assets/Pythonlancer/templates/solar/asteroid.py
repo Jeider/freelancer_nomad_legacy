@@ -109,12 +109,12 @@ class AsteroidOmega15(AsteroidSolar, MineableSolar):
         return self.ARCHETYPE_REWARD_HIGH
 
     def get_ultra_reward_archetype(self):
-        return self.DEFAULT_ARCHETYPE # TEMP
         return self.ARCHETYPE_REWARD_ULTRA
 
 
 class AsteroidTekagi(AsteroidOmega15):
     DEFAULT_ARCHETYPE = 'ku_tgk_mineast_super'
+    ARCHETYPE_REWARD_ULTRA = 'ku_tgk_mineast_super_ultra'
 
     EXPLODER_NORMAL = 'attached_ku_tgk_xast_exploder'
     EXPLODER_ULTRA = 'attached_ku_tgk_xast_exploder_ultra'
@@ -122,6 +122,7 @@ class AsteroidTekagi(AsteroidOmega15):
 
 class AsteroidTau37(AsteroidOmega15):
     DEFAULT_ARCHETYPE = 'tau37_mineast_super'
+    ARCHETYPE_REWARD_ULTRA = 'tau37_mineast_super_ultra'
 
     EXPLODER_NORMAL = 'attached_tau37_xast_exploder'
     EXPLODER_ULTRA = 'attached_tau37_xast_exploder_ultra'
@@ -129,6 +130,7 @@ class AsteroidTau37(AsteroidOmega15):
 
 class AsteroidCalifornia(AsteroidOmega15):
     DEFAULT_ARCHETYPE = 'li_cal_mineast_super'
+    ARCHETYPE_REWARD_ULTRA = 'li_cal_mineast_super_ultra'
 
     EXPLODER_NORMAL = 'attached_li_cal_xast_exploder'
     EXPLODER_ULTRA = 'attached_li_cal_xast_exploder_ultra'
@@ -136,6 +138,7 @@ class AsteroidCalifornia(AsteroidOmega15):
 
 class AsteroidCuracao(AsteroidOmega15):
     DEFAULT_ARCHETYPE = 'co_cur_mineast_super'
+    ARCHETYPE_REWARD_ULTRA = 'co_cur_mineast_super_ultra'
 
     EXPLODER_NORMAL = 'attached_co_cur_xast_exploder'
     EXPLODER_ULTRA = 'attached_co_cur_xast_exploder_ultra'
@@ -143,6 +146,7 @@ class AsteroidCuracao(AsteroidOmega15):
 
 class AsteroidLava(AsteroidOmega15):
     DEFAULT_ARCHETYPE = 'lava_mineast_super'
+    ARCHETYPE_REWARD_ULTRA = 'lava_mineast_super_ultra'
 
     EXPLODER_NORMAL = 'attached_lava_xast_exploder'
     EXPLODER_ULTRA = 'attached_lava_xast_exploder_ultra'

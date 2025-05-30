@@ -20,6 +20,7 @@ REAL_AST_REWARD_NAME_FORMAT = 'om15_field_miner6_reward_field_asteroid_{index}'
 ALT_AST_REWARD_NAME_FORMAT = 'om15_demo_alt_ast_reward_{index}'
 REAL_REWARD_ASTEROIDS_COUNT = 16
 LOW_REAL_AST_ARCHETYPE = 'om15_mineast_super_lowdamage'
+LOW_REAL_AST_ARCHETYPE_ULTRA = 'om15_mineast_super_lowdamage_ultra'
 VALID_AST_LOADOUT = 'm2_low_real_om15_xast_ultra'
 INVALID_AST_LOADOUT = 'm2_low_real_om15_xast_empty'
 
@@ -120,7 +121,7 @@ radius = 0
                     nickname=ALT_AST_REWARD_NAME_FORMAT.format(index=index),
                     pos='{0}, {1}, {2}'.format(*pos),
                     orient='{0:.2f}, {1:.2f}, {2:.2f}, {3:.2f}'.format(*euler_to_quat(*rotate)),
-                    archetype=LOW_REAL_AST_ARCHETYPE,
+                    archetype=LOW_REAL_AST_ARCHETYPE_ULTRA if index == valid_index else LOW_REAL_AST_ARCHETYPE,
                     loadout=VALID_AST_LOADOUT if index == valid_index else INVALID_AST_LOADOUT,
                 )
             )
@@ -163,6 +164,7 @@ class Misson02(ingame_mission.IngameMission):
     FILE = 'm02'
     START_SAVE_ID = 32200
     STATIC_NPCSHIPS = NPCSHIPS
+    SCRIPT_INDEX = 2
 
     def get_ingame_thorns(self):
         return [

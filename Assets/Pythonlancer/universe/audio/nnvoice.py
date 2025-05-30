@@ -163,8 +163,14 @@ class NNVoice(PilotVoice):
         L('mod_got_key_roid_miner', 'Получен ключ от рудокопа', RuleNNVoice),
         L('mod_got_key_station', 'Получен ключ от станции', RuleNNVoice),
         L('mod_got_key_factory', 'Получен ключ от фабрики', RuleNNVoice),
+        L('mod_got_key_asteroid', 'Получен ключ от базы', RuleNNVoice),
         L('mod_got_key_gas_miner', 'Получен ключ от газодобытчика', RuleNNVoice),
         L('mod_got_key_battleship', 'Получен ключ от линкора', RuleNNVoice),
+
+        L('mod_have_key_roid_miner', 'Этот астер+оид сод+ержит ключ от рудок+опа', RuleNNVoice),
+        L('mod_have_key_factory', 'Этот блок м+усора сод+ержит ключ от ф+абрики', RuleNNVoice),
+        L('mod_have_key_asteroid', 'Этот астер+оид сод+ержит ключ от б+азы', RuleNNVoice),
+        L('mod_have_key_gas_miner', 'Этот астер+оид сод+ержит ключ от газодоб+ытчика', RuleNNVoice),
 
         L('mod_kgb_shield_10min', 'Ост+алось 10 минут до активации щита К+ёнигсберга', RuleNNVoice),
         L('mod_kgb_shield_9min', 'Ост+алось 9 минут до активации щита К+ёнигсберга', RuleNNVoice),

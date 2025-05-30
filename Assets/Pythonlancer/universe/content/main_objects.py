@@ -1,6 +1,7 @@
 from random import randint
 
 from fx.space import Dust
+import fx.neuralnet as nn
 
 from world.names import *
 from universe import markets
@@ -35,6 +36,7 @@ class AppearableObject(SystemObject):
     SPACE_NAME = None
 
     LOCKED_DOCK = False
+    KEY_COLLECT_FX = None
 
     ARCHETYPE_TEMPLATE = '''[Object]
 nickname = {nickname}
@@ -781,7 +783,9 @@ BGCS_base_run_by = W02bF44'''
 
         self.key = None
         if self.LOCKED_DOCK:
-            self.key = LockedDockKey(self)
+            if not self.KEY_COLLECT_FX:
+                raise Exception('Dockable locked base have no fx for key %s' % self.__class__.__name__)
+            self.key = LockedDockKey(self, key_fx=self.KEY_COLLECT_FX)
 
     def get_weapon_faction(self):
         return self.WEAPON_FACTION
@@ -1034,6 +1038,7 @@ class AbandonedAsteroid(DockableObject):
     RANDOM_ROBOT = True
     BASE_PROPS = meta.LockedAsteroid()
     IS_BASE = False  # Workaround, keep before new balance will integrated
+    KEY_COLLECT_FX = nn.FX_GOT_KEY_ASTEROID
 
 
 class AbandonedAsteroidIce(DockableObject):
@@ -1041,11 +1046,13 @@ class AbandonedAsteroidIce(DockableObject):
     RANDOM_ROBOT = True
     BASE_PROPS = meta.LockedAsteroid()
     IS_BASE = False  # Workaround, keep before new balance will integrated
+    KEY_COLLECT_FX = nn.FX_GOT_KEY_ASTEROID
 
 
 class GasMinerOld(Station):
     RANDOM_ROBOT = True
     IS_BASE = False  # Workaround, keep before new balance will integrated
+    KEY_COLLECT_FX = nn.FX_GOT_KEY_GAS_MINER
 
     CARGO_PODS_POSITION_Y_DRIFT = -60
 
@@ -1076,6 +1083,7 @@ class SolarPlant(Station):
     RANDOM_ROBOT = True
     BASE_PROPS = meta.LockedSolarPlant()
     IS_BASE = False  # Workaround, keep before new balance will integrated
+    KEY_COLLECT_FX = nn.FX_GOT_KEY_STATION
 
 
 class RoidMiner(Station):
@@ -1083,6 +1091,7 @@ class RoidMiner(Station):
     ROTATE_RANDOM = False
     BASE_PROPS = meta.LockedRoidMiner()
     IS_BASE = False  # Workaround, keep before new balance will integrated
+    KEY_COLLECT_FX = nn.FX_GOT_KEY_ROID_MINER
 
     ASTEROID_OFFSET = (0, 5, -235)
     ASTEROID_ROTATE = (145, -30, 34)
@@ -1143,6 +1152,7 @@ class DebrisManufactoring(Station):
     RANDOM_ROBOT = True
     BASE_PROPS = meta.LockedSmelter()
     IS_BASE = False  # Workaround, keep before new balance will integrated
+    KEY_COLLECT_FX = nn.FX_GOT_KEY_FACTORY
 
 
 class Outpost(DockableObject):
@@ -1321,18 +1331,22 @@ class Hackable(DockableObject):
 
 class HackableStation(Hackable):
     AUDIO_PREFIX = SpaceVoice.STATION
+    KEY_COLLECT_FX = nn.FX_GOT_KEY_STATION
 
 
 class HackableSolarPlant(Hackable):
     AUDIO_PREFIX = SpaceVoice.STATION
+    KEY_COLLECT_FX = nn.FX_GOT_KEY_STATION
 
 
 class HackableBattleship(Hackable):
     AUDIO_PREFIX = SpaceVoice.BATTLESHIP
+    KEY_COLLECT_FX = nn.FX_GOT_KEY_BATTLESHIP
 
 
 class HackableLuxury(Hackable):
     AUDIO_PREFIX = SpaceVoice.BATTLESHIP
+    KEY_COLLECT_FX = nn.FX_GOT_KEY_BATTLESHIP
 
 
 class LockedBattleship(Station):
@@ -1342,6 +1356,7 @@ class LockedBattleship(Station):
     RANDOM_ROBOT = True
     DEFENCE_LEVEL = None
     BASE_PROPS = meta.LockedBattleship()
+    KEY_COLLECT_FX = nn.FX_GOT_KEY_BATTLESHIP
 
 
 class PatrolObjective(SystemObject):

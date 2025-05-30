@@ -1,7 +1,7 @@
 from story import script
 from audio.sound import VoiceLine
 from story.actors import (
-    Trent, Wilham, Jacobo, Punisher, PunisherCatcher, OmegaJunkerOne, OmegaJunkerTwo, OmegaJunkerThree
+    Trent, Wilham, Jacobo, Punisher, PunisherCatcher, OmegaJunkerOne, OmegaJunkerTwo, OmegaJunkerThree, Neuralnet
 )
 
 
@@ -371,6 +371,26 @@ class Msn2Space(Msn2, script.SpaceVoiceProps):
             ru="Герр Трент, вы первый.",
             en="Herr Trent, you go first.",
         ),
+        VoiceLine(
+            7000,
+            Neuralnet,
+            ru="Чтобы получ+ить д+оступ на рудок+оп, вы должн+ы доб+ыть кл+юч. Кл+юч м+ожно доб+ыть в астер+оидах. Атак+уйте вн+утренние п+олости ближ+айших астер+оидов сво+ими п+ушками.",
+        ),
+        VoiceLine(
+            7010,
+            Neuralnet,
+            ru="+Если п+олость астер+оида разр+ушилась с зел+ёным взр+ывом, зн+ачит с астер+оида м+ожно доб+ыть кл+юч.",
+        ),
+        VoiceLine(
+            7020,
+            Neuralnet,
+            ru="Уничтошьте все п+олости +этого астер+оида до тех пор, пока ключ не в+ыпадет. Д+оступ к ст+анции б+удет откр+ыт ср+азу же, как т+олько вы забер+ёте ключ в свой трюм.",
+        ),
+        VoiceLine(
+            7030,
+            Neuralnet,
+            ru="Если п+олость астер+оида была разрушена с б+елым взр+ывом, то на этом астер+оиде не б+удет ключ+а. Вы должн+ы будете направиться к сл+едующему астер+оиду и попр+обовать сн+ова.",
+        ),
     ]
 
 
@@ -378,6 +398,6 @@ class Mission2(Msn2, script.StoryMission):
     MISSION_INDEX = 2
     CUTSCENES = []
     SPACE_CLASS = Msn2Space
-    SYNC_SPACE = False
+    SYNC_SPACE = True
 
     MISSION_TITLE = 'Миссия 2. Мусорная работа'

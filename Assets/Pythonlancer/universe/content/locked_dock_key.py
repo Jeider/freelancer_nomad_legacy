@@ -39,17 +39,20 @@ constant_power_draw = 0
 rebuild_power_draw = 0
 separation_explosion = sever_debris
 LODranges = 0, 1
-lootable = true'''
+lootable = true
+tractored_explosion = {tractored_explosion}
+'''
 
     INTIIAL_WORLD_TEMPLATE = ''';{base_nickname}
 locked_gate = {int_hash}
 npc_locked_gate = {int_hash}'''
     STORY_TEMPLATE = 'Act_LockDock = Player, {base_nickname}, lock'
     
-    def __init__(self, locked_base):
+    def __init__(self, locked_base, key_fx):
         self.locked_base = locked_base
         self.base_nickname = self.locked_base.get_base_nickname()
         self.equip_name = self.create_equip_name()
+        self.key_fx = key_fx
 
     def create_equip_name(self):
         return self.EQUIP_NAME_TEMPLATE.format(base_name=self.base_nickname)
@@ -61,7 +64,7 @@ npc_locked_gate = {int_hash}'''
         return self.DOCK_KEY_TEMPLATE.format(key_equip=self.equip_name, base_name=self.locked_base.get_inspace_nickname())
 
     def get_equip(self):
-        return self.EQUIP_TEMPLATE.format(key_equip=self.equip_name)
+        return self.EQUIP_TEMPLATE.format(key_equip=self.equip_name, tractored_explosion=self.key_fx)
 
     def get_good(self):
         return self.GOOD_TEMPLATE.format(key_equip=self.equip_name)
