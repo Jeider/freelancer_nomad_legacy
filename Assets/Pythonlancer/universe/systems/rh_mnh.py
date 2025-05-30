@@ -401,7 +401,7 @@ class MunchOutcastBase(MunchMember, main_objects.PirateAsteroid):
     BASE_INDEX = 3
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = astbase.MunchenAsteroidBase
-    FACTION = faction.RheinlandPirate  # Temporary
+    FACTION = faction.WorkaroundPirate  # Temporary
 
     DEFENCE_LEVEL = None
 
