@@ -61,10 +61,9 @@ class Misson01A(ingame_mission.IngameMission):
                     'более внушительную скорость.',
 
                     'Удачных полётов!',
-                ])
+                ]),
             ),
         ]
-
 
     def get_ingame_thorns(self):
         return [

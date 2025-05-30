@@ -7,7 +7,7 @@ from story.math import euler_to_quat
 from story import actors
 
 from story.ingame import objectives as O
-from story.ingame.tools import Point, Obj, Conn, NNObj, Ship
+from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, TextDialog, MultiText, DIALOG_YES_NO, SaveState
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
 from world.npc import NPC, EqMap
@@ -165,6 +165,36 @@ class Misson02(ingame_mission.IngameMission):
     START_SAVE_ID = 32200
     STATIC_NPCSHIPS = NPCSHIPS
     SCRIPT_INDEX = 2
+
+    def get_dialogs(self):
+        return [
+            TextDialog(
+                self, 'vendor', 'Вильгельм',
+                ru_content=MultiText([
+                    'Доброго времени суток, герр Трент, меня зовут Вильгельм и я представляю вооруженные силы Рейнланда. '
+                    'Нас впечатлили ваши достижения на территории Рейнланда за столь короткий срок, и мы хотели бы '
+                    'предложить вам работу по вашему профилю. Хочу сразу предупредить, что работа сопряжена с некоторой '
+                    'степенью секретности. Если вас заинтересовало предложение - мы могли бы лично встретиться '
+                    'на линкоре Шарнхорст в системе Бисмарк',
+                ])
+            ),
+            TextDialog(
+                self, 'mining', 'Майнинг астероидов',
+                ru_content=MultiText([
+                    'Чтобы получить доступ к рудокопу, вы должны добыть ключ в одном из астероидов.',
+
+                    'Хотите запустить обучение?',
+                ]),
+                dialog_type=DIALOG_YES_NO,
+            ),
+        ]
+
+    def get_save_states(self):
+        return [
+            SaveState(self, 'junker_battle', 'Омега-15, Мусорщики'),
+            SaveState(self, 'meet_punishers', 'Омега-15, Встреча с Карателями'),
+            SaveState(self, 'base_assault', 'Омега-15, штурм базы Корсаров'),
+        ]
 
     def get_ingame_thorns(self):
         return [

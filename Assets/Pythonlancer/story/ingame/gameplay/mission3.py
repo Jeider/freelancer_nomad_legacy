@@ -7,7 +7,7 @@ from story.math import euler_to_quat
 from story import actors
 
 from story.ingame import objectives as O
-from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Solar
+from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Solar, SaveState
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
 from world.npc import NPC, EqMap
@@ -51,6 +51,13 @@ class Misson03(ingame_mission.IngameMission):
     FILE = 'm03'
     START_SAVE_ID = 32300
     STATIC_NPCSHIPS = NPCSHIPS
+    SCRIPT_INDEX = 3
+
+    def get_save_states(self):
+        return [
+            SaveState(self, 'founded', 'Подлёт к Кёнигсбергу'),
+            SaveState(self, 'shield_down', 'Щит Кёнигсберга уничтожен'),
+        ]
 
     def get_ingame_thorns(self):
         return [

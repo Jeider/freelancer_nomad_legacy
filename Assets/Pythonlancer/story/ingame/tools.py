@@ -1760,7 +1760,7 @@ class SaveState:
     def __init__(self, mission, code, ru_name):
         self.mission = mission
         self.code = code
-        self.ru_name = ru_name
+        self.ru_name = f'Миссия {mission.SCRIPT_INDEX}. {ru_name}'
         self.ids_name = self.mission.ids.new_name(self.ru_name)
 
     def get_code(self):
