@@ -24,7 +24,7 @@ class CadizOrderBattleship(CadizMember, main_objects.Battleship):
     INDEX = 1
     BASE_INDEX = 99
     REL = TOP
-    INTERIOR_CLASS = interior.BattleshipInterior
+    INTERIOR_CLASS = interior.BattleshipNoshipInterior
     DEALERS = dealers.LibertyMilitaryDealers
     STORY = True
     CALC_STORE = False

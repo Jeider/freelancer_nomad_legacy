@@ -5,6 +5,8 @@ from managers.tools import query as Q
 from world.names import *
 from universe.content import meta
 
+from universe import markets
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -340,6 +342,7 @@ class Tau37Battleship(Tau37Member, main_objects.BretoniaBattleship):
     REL = LEFT
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.BretoniaMilitaryDealers
+    SHIP_SET = markets.ShipSet('br_elite')
 
 
 class Tau37CorsairBase(Tau37Member, main_objects.PirateAsteroid):

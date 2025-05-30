@@ -5,6 +5,8 @@ from managers.tools import query as Q
 from world.names import *
 from universe.content import meta
 
+from universe import markets
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -337,8 +339,9 @@ class Om15MiningStation(Omega15Member, main_objects.RoidMinerStation):
     BASE_INDEX = 1
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = roid_mining.RheinlandRoidMining
-    INTERIOR_CLASS = interior.OutpostInterior
+    INTERIOR_CLASS = interior.OutpostShipdealerInterior
     DEALERS = dealers.RheinlandCivilianDealers
+    SHIP_SET = markets.ShipSet('ge_csv')
 
     BASE_PROPS = meta.RoidMiningStation(
         objectives=[

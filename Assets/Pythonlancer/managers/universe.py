@@ -97,6 +97,15 @@ class UniverseManager:
                                 ),
                             )
                         )
+                    if dockable.IS_BASE and dockable.have_shipdealer():
+                        self.ship_dealers.append(
+                            Market(
+                                base_nickname=dockable.get_base_nickname(),
+                                items=dockable.SHIP_SET.get_ships(
+                                    core=self.core,
+                                ),
+                            )
+                        )
 
                     if dockable.have_trader():
                         system.add_base(dockable)

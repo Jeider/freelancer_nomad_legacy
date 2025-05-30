@@ -35,3 +35,4 @@ class OrdHQStoryBattleship(OrdHQMember, main_objects.KusariBattleship):
     STORY = True
     CALC_STORE = False
     EQUIP_SET = markets.OrderSet
+    SHIP_SET = markets.ShipSet('ku_elite')

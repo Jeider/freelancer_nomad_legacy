@@ -5,6 +5,8 @@ from managers.tools import query as Q
 from world.names import *
 from universe.content import meta
 
+from universe import markets
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -167,6 +169,7 @@ class Tau23BretoniaBattleship(Tau23Member, Tau23Bretonia, main_objects.BretoniaB
     REL_DRIFT = 500
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.BretoniaMilitaryDealers
+    SHIP_SET = markets.ShipSet('br_elite')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
     EXCLUSION_PARAMS = BARRIER_EXCLUSION_PARAMS
@@ -181,6 +184,7 @@ class Tau23KusariBattleship(Tau23Kusari, Tau23Member, main_objects.KusariBattles
     REL_DRIFT = 500
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.KusariMilitaryDealers
+    SHIP_SET = markets.ShipSet('ku_fighter')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
     EXCLUSION_PARAMS = BARRIER_EXCLUSION_PARAMS

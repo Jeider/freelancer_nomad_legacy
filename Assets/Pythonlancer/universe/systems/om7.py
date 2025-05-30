@@ -5,6 +5,8 @@ from managers.tools import query as Q
 from world.names import *
 from universe.content import meta
 
+from universe import markets
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -164,6 +166,7 @@ class Om7Battleship(Om7Rheinland, Om7Member, main_objects.RheinlandBattleship):
     REL_DRIFT = 500
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.RheinlandMilitaryDealers
+    SHIP_SET = markets.ShipSet('rh_elite')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 3000
     EXCLUSION_PARAMS = WALKER_EXCLUSION_PARAMS
@@ -782,6 +785,7 @@ class Om7StoryBattleship(Om7Kusari, Om7Member, main_objects.KusariBattleship):
     FORCE_CONNECTIONS = [
         Om7HokkaidoJumpgate,  # TODO: haven't real economics connection
     ]
+    SHIP_SET = markets.ShipSet('ku_elite')
 
 
 class Om7OrderJumpgate(Om7Member, main_objects.JumpgateAlt):

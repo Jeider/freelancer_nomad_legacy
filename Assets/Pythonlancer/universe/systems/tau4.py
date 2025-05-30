@@ -5,6 +5,8 @@ from managers.tools import query as Q
 from world.names import *
 from universe.content import meta
 
+from universe import markets
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -304,6 +306,7 @@ class Tau4Battleship(Tau4Member, main_objects.KusariBattleship):
     REL_APPEND = 2500
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.KusariMilitaryDealers
+    SHIP_SET = markets.ShipSet('ku_elite')
 
 
 class Tau4Planet1(Tau4Member, main_objects.Planet):

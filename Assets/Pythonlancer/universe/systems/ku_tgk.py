@@ -5,6 +5,8 @@ from managers.tools import query as Q
 from world.names import *
 from universe.content import meta
 
+from universe import markets
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -323,7 +325,7 @@ class TekagiLargeStation(TekagiMember, main_objects.LargeStation):
     BASE_INDEX = 1
     REL = TOP
     SPACE_OBJECT_TEMPLATE = tekagi_megabase.TekagiMegabase
-    INTERIOR_CLASS = interior.StationInterior
+    INTERIOR_CLASS = interior.StationShipdealerInterior
     INTERIOR_EXTRA_ROOMS = ['''
 ;mission 9 special room
 [Room]
@@ -331,6 +333,7 @@ nickname = Palace
 file = Universe\\SYSTEMS_MOD\\KU_TAGAKI\\Room\\ku_tgk_01_palace.ini
     ''']
     DEALERS = dealers.KusariCivilianDealers
+    SHIP_SET = markets.ShipSet('ku_freighter')
 
     REL_APPEND = 4000
 

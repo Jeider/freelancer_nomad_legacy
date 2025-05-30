@@ -4,6 +4,8 @@ from managers.tools import query as Q
 from world.names import *
 from universe.content import meta
 
+from universe import markets
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -271,6 +273,7 @@ class WarwickDockring(WarwickMember, main_objects.LargePlanetDockring):
     AUDIO_PREFIX = SpaceVoice.BR_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.BretoniaPlanetDealers
+    SHIP_SET = markets.ShipSet('co_fighter', 'co_elite2', 'ge_csv')
 
     BASE_PROPS = meta.LargePlanet(
         objectives=[
@@ -291,8 +294,9 @@ class WarwickLargeStation(WarwickMember, main_objects.LargeStation):
     REL = TOP
     REL_DRIFT = 800
     SPACE_OBJECT_TEMPLATE = ulster_megabase.UlsterMegabase
-    INTERIOR_CLASS = interior.StationInterior
+    INTERIOR_CLASS = interior.StationShipdealerInterior
     DEALERS = dealers.BretoniaCivilianDealers
+    SHIP_SET = markets.ShipSet('br_freighter')
 
     BASE_PROPS = meta.Megabase(
         objectives=[
@@ -312,7 +316,7 @@ class WarwickRefinery(WarwickMember, main_objects.Refinery):
     BASE_INDEX = 3
     REL = LEFT
     SPACE_OBJECT_TEMPLATE = alg.AlgBaseBerlin
-    INTERIOR_CLASS = interior.BattleshipInterior
+    INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.BretoniaCivilianDealers
     FACTION = faction.BretoniaCivilians
 
@@ -329,7 +333,7 @@ class WarwickOutpost(WarwickMember, main_objects.Outpost):
     BASE_INDEX = 4
     REL = LEFT
     SPACE_OBJECT_TEMPLATE = police.PoliceOutpostBretonia
-    INTERIOR_CLASS = interior.OutpostShipdealerInterior
+    INTERIOR_CLASS = interior.OutpostInterior
     AUDIO_PREFIX = SpaceVoice.BORDER_STATION
     DEALERS = dealers.BretoniaMilitaryDealers
 
@@ -347,7 +351,7 @@ class WarwickPiratesTop(WarwickMember, main_objects.PirateAsteroid):
     INDEX = 1
     REL = TOP
     SPACE_OBJECT_TEMPLATE = astbase.BerlinAsteroidBase
-    INTERIOR_CLASS = interior.PirateOutpostShipdealerInterior
+    INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.BretoniaPirateDealers
     FACTION = faction.BretoniaPirate
     AST_EXCLUSION_ZONE_SIZE = 2500

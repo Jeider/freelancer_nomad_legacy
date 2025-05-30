@@ -5,6 +5,8 @@ from managers.tools import query as Q
 from world.names import *
 from universe.content import meta
 
+from universe import markets
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -343,6 +345,7 @@ class MunchDockring(MunchMember, main_objects.WaterPlanetDockring):
     AUDIO_PREFIX = SpaceVoice.RH_PLANET
     INTERIOR_CLASS = interior.CustomFullSingleRoomInterior
     DEALERS = dealers.RheinlandPlanetDealers
+    SHIP_SET = markets.ShipSet('bw_elite')
 
 
 class MunchTrading(MunchMember, main_objects.TradingBase):

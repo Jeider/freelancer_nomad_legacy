@@ -5,6 +5,8 @@ from managers.tools import query as Q
 from world.names import *
 from universe.content import meta
 
+from universe import markets
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -434,6 +436,7 @@ class AvalDockring(AvalMember, main_objects.LargePlanetDockring):
     AUDIO_PREFIX = SpaceVoice.BR_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.BretoniaPlanetDealers
+    SHIP_SET = markets.ShipSet('ge_fighter2', 'co_elite', 'br_freighter')
 
     BASE_PROPS = meta.LargePlanet(
         objectives=[
@@ -491,7 +494,7 @@ class AvalMilitary(AvalMember, main_objects.Station):
     SPACE_OBJECT_TEMPLATE = avalon_megabase.AvalonMegabase
 
     AUDIO_PREFIX = SpaceVoice.STATION
-    INTERIOR_CLASS = interior.StationShipdealerInterior
+    INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.BretoniaMilitaryDealers
 
     BASE_PROPS = meta.MediumStation(
@@ -508,7 +511,7 @@ class AvalPrison(AvalMember, main_objects.Prison):
 
     SPACE_OBJECT_TEMPLATE = prisons.AvalonPrison
 
-    INTERIOR_CLASS = interior.StationShipdealerInterior
+    INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.BretoniaMilitaryDealers
 
 
@@ -518,7 +521,7 @@ class AvalJunkers(AvalMember, main_objects.JunkerBase):
     ALIAS = 'pirate'
     REL = LEFT
     SPACE_OBJECT_TEMPLATE = junker.ForbesJunker
-    INTERIOR_CLASS = interior.PirateOutpostShipdealerInterior
+    INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.BretoniaPirateDealers
     FACTION = faction.BretoniaPirate
     AST_EXCLUSION_ZONE_SIZE = 2500
@@ -533,7 +536,7 @@ class AvalPirates(AvalMember, main_objects.PirateStation):
     BASE_INDEX = 8
     REL = RIGHT
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseCalifornia
-    INTERIOR_CLASS = interior.PirateOutpostShipdealerInterior
+    INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.BretoniaPirateDealers
     FACTION = faction.BretoniaPirate
     AST_EXCLUSION_ZONE_SIZE = 2500
@@ -674,3 +677,4 @@ class AvalStoryBattleship(AvalMember, main_objects.KusariBattleship):
     FORCE_CONNECTIONS = [
         AvalPolice,  # TODO: haven't real economics connection
     ]
+    SHIP_SET = markets.ShipSet('co_elite')

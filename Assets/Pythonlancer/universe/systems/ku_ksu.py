@@ -4,6 +4,8 @@ from managers.tools import query as Q
 from world.names import *
 from universe.content import meta
 
+from universe import markets
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -315,6 +317,7 @@ class KyushuDockring(KyushuMember, main_objects.LargePlanetDockring):
     AUDIO_PREFIX = SpaceVoice.KU_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.KusariPlanetDealers
+    SHIP_SET = markets.ShipSet('ge_fighter2', 'ge_fighter6', 'ge_csv')
 
     BASE_PROPS = meta.LargePlanet(
         objectives=[
@@ -333,6 +336,7 @@ class KyushuMiningDockring(KyushuMember, main_objects.MiningPlanetDockring):
     AUDIO_PREFIX = SpaceVoice.KU_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.KusariPlanetDealers
+    SHIP_SET = markets.ShipSet('ge_fighter3')
 
     BASE_PROPS = meta.MiningPlanet(
         objectives=[
@@ -396,7 +400,7 @@ class KyushuPolice(KyushuMember, main_objects.Outpost):
     BASE_INDEX = 7
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = police.BerlinPoliceOutpost
-    INTERIOR_CLASS = interior.OutpostShipdealerInterior
+    INTERIOR_CLASS = interior.OutpostInterior
     AUDIO_PREFIX = SpaceVoice.BORDER_STATION
     DEALERS = dealers.KusariMilitaryDealers
 

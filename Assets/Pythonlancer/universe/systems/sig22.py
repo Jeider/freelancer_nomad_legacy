@@ -5,6 +5,8 @@ from managers.tools import query as Q
 from world.names import *
 from universe.content import meta
 
+from universe import markets
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -356,6 +358,7 @@ class Sig22Dockring(Sig22Bretonia, Sig22Member, main_objects.WaterPlanetDockring
     AUDIO_PREFIX = SpaceVoice.BR_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.BretoniaCivilianDealers
+    SHIP_SET = markets.ShipSet('bh_elite')
 
 
 class Sig22Station(Sig22Member, Sig22Liberty, main_objects.TradelaneSupportStation):
@@ -378,6 +381,7 @@ class Sig22Battleship(Sig22Member, main_objects.LibertyBattleship):
     REL_APPEND = 2500
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.LibertyMilitaryDealers
+    SHIP_SET = markets.ShipSet('li_fighter')
 
 
 class Sig22Planet1(Sig22Member, main_objects.Planet):

@@ -5,6 +5,8 @@ from managers.tools import query as Q
 from world.names import *
 from universe.content import meta
 
+from universe import markets
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -348,6 +350,7 @@ class StutDockring(StutMember, main_objects.LargePlanetDockring):
     AUDIO_PREFIX = SpaceVoice.RH_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.RheinlandPlanetDealers
+    SHIP_SET = markets.ShipSet('ge_fighter2', 'bw_elite2', 'rh_freighter')
 
     BASE_PROPS = meta.LargePlanet(
         objectives=[
@@ -363,7 +366,7 @@ class StutPoliceOutpost(StutMember, main_objects.Outpost):
     BASE_INDEX = 2
     REL = TOP
     SPACE_OBJECT_TEMPLATE = police.StuttgartPoliceOutpost
-    INTERIOR_CLASS = interior.OutpostShipdealerInterior
+    INTERIOR_CLASS = interior.OutpostInterior
     AUDIO_PREFIX = SpaceVoice.BORDER_STATION
     DEALERS = dealers.RheinlandMilitaryDealers
 
@@ -415,6 +418,7 @@ class StutLuxuryDockring(StutMember, main_objects.ResortPlanetDockring):
     AUDIO_PREFIX = SpaceVoice.RH_PLANET
     INTERIOR_CLASS = interior.CustomFullSingleRoomInterior
     DEALERS = dealers.RheinlandPlanetDealers
+    SHIP_SET = markets.ShipSet('bw_fighter')
 
 
 class StutNebulaPirates(StutMember, main_objects.PirateStation):

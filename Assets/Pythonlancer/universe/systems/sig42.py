@@ -2,6 +2,8 @@ from managers.tools import query as Q
 from world.names import *
 from universe.content import meta
 
+from universe import markets
+
 from fx.space import Dust, JumpholeEffect
 from fx.sound import Ambience
 
@@ -230,6 +232,7 @@ class Sig42Dockring(Sig42Member, Sig42Kusari, main_objects.MiningPlanetDockring)
     AUDIO_PREFIX = SpaceVoice.KU_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.BretoniaCivilianDealers
+    SHIP_SET = markets.ShipSet('ge_fighter2')
 
     BASE_PROPS = meta.MiningPlanet(
         objectives=[

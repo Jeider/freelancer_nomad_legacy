@@ -5,6 +5,8 @@ from managers.tools import query as Q
 from world.names import *
 from universe.content import meta
 
+from universe import markets
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -305,6 +307,7 @@ class ForbesDockring(ForbesMember, main_objects.LargePlanetDockring):
     AUDIO_PREFIX = SpaceVoice.LI_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.LibertyPlanetDealers
+    SHIP_SET = markets.ShipSet('ge_fighter2', 'bh_elite', 'bw_freighter')
 
     BASE_PROPS = meta.LargePlanet(
         objectives=[
@@ -352,7 +355,7 @@ class ForbesPolice(ForbesMember, main_objects.Outpost):
     BASE_INDEX = 4
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = police.PoliceOutpostLiberty
-    INTERIOR_CLASS = interior.OutpostShipdealerInterior
+    INTERIOR_CLASS = interior.OutpostInterior
     AUDIO_PREFIX = SpaceVoice.BORDER_STATION
     DEALERS = dealers.LibertyMilitaryDealers
 
@@ -365,6 +368,7 @@ class ForbesLargeStation(ForbesMember, main_objects.Station):
     AUDIO_PREFIX = SpaceVoice.STATION
     INTERIOR_CLASS = interior.StationShipdealerInterior
     DEALERS = dealers.LibertyCivilianDealers
+    SHIP_SET = markets.ShipSet('li_freighter')
 
     BASE_PROPS = meta.MediumStation(
         objectives=[

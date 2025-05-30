@@ -5,6 +5,8 @@ from managers.tools import query as Q
 from world.names import *
 from universe.content import meta
 
+from universe import markets
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -352,6 +354,7 @@ class Sig17Battleship(Sig17Member, main_objects.LibertyBattleship):
     REL = LEFT
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.LibertyMilitaryDealers
+    SHIP_SET = markets.ShipSet('li_elite')
 
 
 class Sig17Police(Sig17Member, main_objects.Outpost):

@@ -326,6 +326,8 @@ class CustomFullSplitRoomInterior(CustomFileInterior):
 
 
 class GenericInterior(Interior):
+    HAVE_SHIPDEALER = False
+
     def get_base_info(self):
         if self.CUSTOM_INTERIOR_FILE:
             raise Exception('This base interior marker as custom %s' % self.base_instance.__class__.__name__)
@@ -366,7 +368,7 @@ class GenericInterior(Interior):
         return DECK in self.ROOMS
 
     def have_shipdealer(self):
-        return SHIPDEALER in self.ROOMS
+        return SHIPDEALER in self.ROOMS or self.HAVE_SHIPDEALER
 
 
 class BattleshipInterior(GenericInterior):
@@ -376,6 +378,7 @@ class BattleshipInterior(GenericInterior):
         BAR: ROOM_BATTLESHIP_BAR_MSN,
     }
     DEALER_PLACEMENTS_TEMPLATE = ALL_ON_DECK_DEALERS_TEMPLATE
+    HAVE_SHIPDEALER = True
 
 
 class OsirisInterior(GenericInterior):
@@ -385,6 +388,7 @@ class OsirisInterior(GenericInterior):
         BAR: ROOM_STATION_BAR,
     }
     DEALER_PLACEMENTS_TEMPLATE = ALL_ON_DECK_DEALERS_TEMPLATE
+    HAVE_SHIPDEALER = True
 
 
 class BattleshipNoshipInterior(GenericInterior):
@@ -394,6 +398,7 @@ class BattleshipNoshipInterior(GenericInterior):
         BAR: ROOM_BATTLESHIP_BAR_ALONE_MSN,
     }
     DEALER_PLACEMENTS_TEMPLATE = DECK_DEALERS_ONLY_TEMPLATE
+    HAVE_SHIPDEALER = False
 
 
 class OutpostInterior(GenericInterior):

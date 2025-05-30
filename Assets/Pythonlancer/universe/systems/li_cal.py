@@ -5,6 +5,8 @@ from managers.tools import query as Q
 from world.names import *
 from universe.content import meta
 
+from universe import markets
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -336,6 +338,7 @@ class CalDockring(CalMember, main_objects.LargePlanetDockring):
     AUDIO_PREFIX = SpaceVoice.LI_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.LibertyPlanetDealers
+    SHIP_SET = markets.ShipSet('bh_fighter', 'bh_elite', 'ge_csv')
 
     BASE_PROPS = meta.LargePlanet(
         objectives=[
@@ -380,6 +383,7 @@ class CalBattleship(CalMember, main_objects.LibertyBattleship):
     REL = RIGHT
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.LibertyMilitaryDealers
+    SHIP_SET = markets.ShipSet('li_elite')
 
 
 class CalTrading(CalMember, main_objects.TradingBase):

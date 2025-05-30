@@ -5,6 +5,8 @@ from managers.tools import query as Q
 from world.names import *
 from universe.content import meta
 
+from universe import markets
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -351,6 +353,7 @@ class CamDockring(CamMember, main_objects.LargePlanetDockring):
     AUDIO_PREFIX = SpaceVoice.BR_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.BretoniaPlanetDealers
+    SHIP_SET = markets.ShipSet('br_fighter', 'ge_fighter3', 'bw_freighter')
 
     BASE_PROPS = meta.LargePlanet(
         objectives=[
@@ -374,7 +377,7 @@ class CamStation(CamMember, main_objects.TradelaneSupportStation):
     LOADOUT = 'largestation_br'
 
     AUDIO_PREFIX = SpaceVoice.STATION
-    INTERIOR_CLASS = interior.StationShipdealerInterior
+    INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.BretoniaCivilianDealers
 
 
@@ -456,7 +459,7 @@ class CamJunkers(CamMember, main_objects.JunkerBase):
     ALIAS = 'pirate'
     REL = LEFT
     SPACE_OBJECT_TEMPLATE = junker.HonshuJunker
-    INTERIOR_CLASS = interior.PirateOutpostShipdealerInterior
+    INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.BretoniaPirateDealers
     FACTION = faction.BretoniaPirate
     AST_EXCLUSION_ZONE_SIZE = 2500
@@ -471,7 +474,7 @@ class CamPirates(CamMember, main_objects.PirateStation):
     BASE_INDEX = 9
     REL = RIGHT
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseStuttgart
-    INTERIOR_CLASS = interior.PirateOutpostShipdealerInterior
+    INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.BretoniaPirateDealers
     FACTION = faction.BretoniaPirate
     NEBULA_EXCLUSION_ZONE_SIZE = 2000

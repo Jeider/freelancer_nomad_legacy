@@ -5,6 +5,8 @@ from managers.tools import query as Q
 from world.names import *
 from universe.content import meta
 
+from universe import markets
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -141,6 +143,7 @@ class Tau31Battleship(Tau31Member, main_objects.LibertyBattleship):
     REL_DRIFT = 500
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.LibertyMilitaryDealers
+    SHIP_SET = markets.ShipSet('li_elite')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 3000
     EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS
@@ -153,7 +156,7 @@ class Tau31Trading(Tau31Member, main_objects.TradingBase):
     REL_APPEND = 1000
     REL_DRIFT = 1500
     SPACE_OBJECT_TEMPLATE = bounty_hunter.TauFreeport
-    INTERIOR_CLASS = interior.BattleshipInterior
+    INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.LibertyCivilianDealers
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2500

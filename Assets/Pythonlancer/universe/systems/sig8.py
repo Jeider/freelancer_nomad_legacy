@@ -254,7 +254,7 @@ class Sig8Station(Sigma8Member, main_objects.TradelaneSupportStation):
     LOADOUT = 'largestation_rh'
 
     AUDIO_PREFIX = SpaceVoice.STATION
-    INTERIOR_CLASS = interior.StationShipdealerInterior
+    INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.RheinlandCivilianDealers
 
 

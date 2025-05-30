@@ -187,6 +187,8 @@ class BizmarkDockRing(BizmarkMember, main_objects.LargePlanetDockring):
     AUDIO_PREFIX = SpaceVoice.RH_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.RheinlandPlanetDealers
+    SHIP_SET = markets.ShipSet('bw_fighter', 'ge_fighter3', 'bw_freighter')
+
     BASE_PROPS = meta.LargePlanet(
         objectives=[
             meta.ProduceBest(LUXURY_DIAMONDS),
@@ -207,6 +209,7 @@ class BizmarkTrading(BizmarkMember, main_objects.TradingBase):
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.OutpostShipdealerInterior
     DEALERS = dealers.RheinlandCivilianDealers
+    SHIP_SET = markets.ShipSet('rh_freighter')
 
     BASE_PROPS = meta.LargeTradingBase(
         objectives=[
@@ -228,6 +231,7 @@ nickname = Deck2
 file = Universe\\SYSTEMS_MOD\\RH_BIZMARK\\Room\\rh_biz_03_deck2.ini
     ''']
     DEALERS = dealers.RheinlandMilitaryDealers
+    SHIP_SET = markets.ShipSet('rh_fighter')
 
 
 class BizmarkResearch(BizmarkMember, main_objects.ResearchStation):
@@ -253,7 +257,7 @@ class BizmarkMilitary(BizmarkMember, main_objects.Station):
     LOCKED_DOCK = True
 
     AUDIO_PREFIX = SpaceVoice.STATION
-    INTERIOR_CLASS = interior.StationShipdealerInterior
+    INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.RheinlandMilitaryDealers
 
     BASE_PROPS = meta.MediumStation(
@@ -272,7 +276,7 @@ class BizmarkShipyard(BizmarkMember, main_objects.Shipyard):
     SPACE_OBJECT_TEMPLATE = constanta.Constanta
 
     AUDIO_PREFIX = SpaceVoice.SHIPYARD
-    INTERIOR_CLASS = interior.StationShipdealerInterior
+    INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.RheinlandCivilianDealers
 
 

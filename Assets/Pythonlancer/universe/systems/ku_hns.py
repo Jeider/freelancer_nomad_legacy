@@ -5,6 +5,8 @@ from managers.tools import query as Q
 from world.names import *
 from universe.content import meta
 
+from universe import markets
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -375,6 +377,7 @@ class HonsDockring(HonsMember, main_objects.LargePlanetDockring):
     AUDIO_PREFIX = SpaceVoice.KU_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.KusariPlanetDealers
+    SHIP_SET = markets.ShipSet('ku_fighter', 'ge_fighter5', 'ku_freighter')
 
     BASE_PROPS = meta.LargePlanet(
         objectives=[
@@ -392,7 +395,7 @@ class HonsMilitary(HonsMember, main_objects.Station):
     REL = BOTTOM
     REL_DRIFT = 500
     SPACE_OBJECT_TEMPLATE = honshu_military.HonshuMilitary
-    INTERIOR_CLASS = interior.StationShipdealerInterior
+    INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariMilitaryDealers
 
     BASE_PROPS = meta.MediumStation(
@@ -424,7 +427,7 @@ class HonsPolice(HonsMember, main_objects.Outpost):
     BASE_INDEX = 5
     REL = RIGHT
     SPACE_OBJECT_TEMPLATE = police.StuttgartPoliceOutpost
-    INTERIOR_CLASS = interior.OutpostShipdealerInterior
+    INTERIOR_CLASS = interior.OutpostInterior
     AUDIO_PREFIX = SpaceVoice.BORDER_STATION
     DEALERS = dealers.KusariMilitaryDealers
 
@@ -434,7 +437,7 @@ class HonsTrading(HonsMember, main_objects.TradingBase):
     REL = BOTTOM
     REL_APPEND = 2500
     SPACE_OBJECT_TEMPLATE = cambridge_research.CambridgeResearchAlternative
-    INTERIOR_CLASS = interior.StationShipdealerInterior
+    INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
 
     BASE_PROPS = meta.TradingBase(

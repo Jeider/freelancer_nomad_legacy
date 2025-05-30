@@ -730,6 +730,7 @@ class DockableObject(StaticObject):
     DEALERS = None
     IS_BASE = True  # switch to true
     EQUIP_SET = None
+    SHIP_SET = None
     BASE_INDEX = None
     WEAPON_FACTION = None
     MISC_EQUIP_TYPE = None
@@ -905,7 +906,7 @@ BGCS_base_run_by = W02bF44'''
             return False
 
         if not self.EQUIP_SET:
-            raise Exception('Base %s have not equip set for equip dealer' % self.__class__.__name__)
+            raise Exception('Base %s have no equip set for equip dealer' % self.__class__.__name__)
 
         return True
 
@@ -917,6 +918,16 @@ BGCS_base_run_by = W02bF44'''
             raise Exception('Base %s have no defined economics base props' % self.__class__.__name__)
 
         return True
+
+    def have_shipdealer(self):
+        if not self.interior.have_shipdealer():
+            return False
+
+        if not self.SHIP_SET:
+            raise Exception('Base %s have no ship set for ship dealer' % self.__class__.__name__)
+
+        return True
+
 
 
 class Dockring(DockableObject):

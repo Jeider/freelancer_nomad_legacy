@@ -29,7 +29,7 @@ class ViennaKusariBattleship(XenMember, main_objects.KusariBattleship):
     INDEX = 1
     BASE_INDEX = 99
     REL = TOP
-    INTERIOR_CLASS = interior.BattleshipInterior
+    INTERIOR_CLASS = interior.BattleshipNoshipInterior
     DEALERS = dealers.KusariMilitaryDealers
     STORY = True
     CALC_STORE = False

@@ -5,6 +5,8 @@ from managers.tools import query as Q
 from world.names import *
 from universe.content import meta
 
+from universe import markets
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -253,6 +255,7 @@ class ManhDockring(ManhMember, main_objects.LargePlanetDockring):
     AUDIO_PREFIX = SpaceVoice.LI_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.LibertyPlanetDealers
+    SHIP_SET = markets.ShipSet('li_fighter', 'ge_fighter3', 'li_freighter')
 
     BASE_PROPS = meta.ManhattanSuperPlanet(
         objectives=[
@@ -272,6 +275,7 @@ class ManhMiningDockring(ManhMember, main_objects.MiningPlanetDockring):
     AUDIO_PREFIX = SpaceVoice.LI_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.LibertyPlanetDealers
+    SHIP_SET = markets.ShipSet('ge_csv')
 
     BASE_PROPS = meta.MiningPlanet(
         objectives=[

@@ -5,6 +5,8 @@ from managers.tools import query as Q
 from world.names import *
 from universe.content import meta
 
+from universe import markets
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -260,6 +262,7 @@ class BerlinDockring(BerlinMember, main_objects.LargePlanetDockring):
     AUDIO_PREFIX = SpaceVoice.RH_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.RheinlandPlanetDealers
+    SHIP_SET = markets.ShipSet('rh_fighter', 'bw_elite', 'ge_csv')
 
     BASE_PROPS = meta.LargePlanet(
         objectives=[
@@ -306,7 +309,7 @@ class BerlinOutpost(BerlinMember, main_objects.Outpost):
     BASE_INDEX = 6
     REL = RIGHT
     SPACE_OBJECT_TEMPLATE = police.BerlinPoliceOutpost
-    INTERIOR_CLASS = interior.OutpostShipdealerInterior
+    INTERIOR_CLASS = interior.OutpostInterior
     AUDIO_PREFIX = SpaceVoice.BORDER_STATION
     DEALERS = dealers.RheinlandMilitaryDealers
 
@@ -332,7 +335,7 @@ class BerlinRefinery(BerlinMember, main_objects.Refinery):
     BASE_INDEX = 7
     REL = RIGHT
     SPACE_OBJECT_TEMPLATE = stuttgart_megabase.MannhaimShortGasless
-    INTERIOR_CLASS = interior.BattleshipInterior
+    INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.RheinlandCivilianDealers
     FACTION = faction.RheinlandCivilians
 
@@ -362,7 +365,7 @@ class BerlinPiratesTop(BerlinMember, main_objects.PirateAsteroid):
     INDEX = 1
     REL = RIGHT
     SPACE_OBJECT_TEMPLATE = astbase.BerlinAsteroidBase
-    INTERIOR_CLASS = interior.PirateOutpostShipdealerInterior
+    INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.RheinlandPirateDealers
     FACTION = faction.RheinlandPirate
     AST_EXCLUSION_ZONE_SIZE = 2500
@@ -377,7 +380,7 @@ class BerlinPiratesBottom(BerlinMember, main_objects.PirateStation):
     INDEX = 2
     REL = RIGHT
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseBizmark
-    INTERIOR_CLASS = interior.PirateStationShipdealerInterior
+    INTERIOR_CLASS = interior.PirateStationInterior
     DEALERS = dealers.RheinlandPirateDealers
     FACTION = faction.RheinlandPirate
     ASTEROID_ZONES = [

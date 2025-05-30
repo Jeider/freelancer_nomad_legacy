@@ -36,3 +36,4 @@ class ViennaKusariBattleship(ViennaMember, main_objects.KusariBattleship):
     WEAPON_FACTION = WEAPON_BW
     EQUIP_FACTION = EQUIP_BW
     EQUIP_SET = markets.OrderSet
+    SHIP_SET = markets.ShipSet('ku_elite')

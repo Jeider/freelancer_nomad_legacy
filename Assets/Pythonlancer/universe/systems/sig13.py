@@ -5,6 +5,8 @@ from managers.tools import query as Q
 from world.names import *
 from universe.content import meta
 
+from universe import markets
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -186,6 +188,7 @@ class Sig13Battleship(Sig13Member, Sig13Rheinland, main_objects.RheinlandBattles
     REL_DRIFT = 1500
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.RheinlandMilitaryDealers
+    SHIP_SET = markets.ShipSet('rh_elite')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
     EXCLUSION_PARAMS = CROW_EXCLUSION_PARAMS

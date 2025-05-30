@@ -190,6 +190,21 @@ class EquipSet:
         return items
 
 
+class ShipSet:
+
+    def __init__(self, *archetypes):
+        self.archetypes = archetypes
+
+    def get_ships(self, core):
+        items = []
+        for archetype in self.archetypes:
+            items.append(
+                core.shiparch.get_ship_by_archetype(archetype)
+            )
+
+        return items
+
+
 BizSetDebug = EquipSet(
     Q.Gun('rh_lightgun', eq_classes=[1, 2, 3, 4]),
     Q.GenericGun(HUNTERGUN, eq_classes=[3, 5, 7, 9]),
