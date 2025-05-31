@@ -172,18 +172,6 @@ class NNVoice(PilotVoice):
         L('mod_have_key_asteroid', 'Этот астер+оид сод+ержит ключ от б+азы', RuleNNVoice),
         L('mod_have_key_gas_miner', 'Этот астер+оид сод+ержит ключ от газодоб+ытчика', RuleNNVoice),
 
-        L('mod_kgb_shield_10min', 'Ост+алось 10 минут до активации щита К+ёнигсберга', RuleNNVoice),
-        L('mod_kgb_shield_9min', 'Ост+алось 9 минут до активации щита К+ёнигсберга', RuleNNVoice),
-        L('mod_kgb_shield_8min', 'Ост+алось 8 минут до активации щита К+ёнигсберга', RuleNNVoice),
-        L('mod_kgb_shield_7min', 'Ост+алось 7 минут до активации щита К+ёнигсберга', RuleNNVoice),
-        L('mod_kgb_shield_6min', 'Ост+алось 6 минут до активации щита К+ёнигсберга', RuleNNVoice),
-        L('mod_kgb_shield_5min', 'Ост+алось 5 минут до активации щита К+ёнигсберга', RuleNNVoice),
-        L('mod_kgb_shield_4min', 'Ост+алось 4 минуты до активации щита К+ёнигсберга', RuleNNVoice),
-        L('mod_kgb_shield_3min', 'Ост+алось три минуты до активации щита К+ёнигсберга', RuleNNVoice),
-        L('mod_kgb_shield_2min', 'Ост+алось две минуты до активации щита К+ёнигсберга', RuleNNVoice),
-        L('mod_kgb_shield_1min', 'Ост+алось одна минута до активации щита К+ёнигсберга', RuleNNVoice),
-        L('mod_kgb_shield_30sec', 'Ост+алось 30 секунд до активации щита К+ёнигсберга', RuleNNVoice),
-
         L('mod_xenos_fail_timeout', 'Вы были обнар+ужены д+альним ск+анером', RuleNNVoice),
         L('mod_xenos_fail_patrol', 'Вы были обнар+ужены патрулём', RuleNNVoice),
 

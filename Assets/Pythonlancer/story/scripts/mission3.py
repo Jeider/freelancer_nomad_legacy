@@ -1,7 +1,7 @@
 from story import script
 from audio.sound import VoiceLine
 from story.actors import (
-    Trent, Wilham, WilhamStation, Hassler, Reichman, Marauder, Punisher, Dietrich
+    Trent, Wilham, WilhamStation, Hassler, Reichman, Marauder, Punisher, Dietrich, Neuralnet
 )
 
 
@@ -318,6 +318,61 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
             en="We'll head to the rogue base, Vigo. Maybe they'll know something...",
         ),
 
+        VoiceLine(
+            9010,
+            Neuralnet,
+            ru="Ост+алось 10 минут до активации щита К+ёнигсберга",
+        ),
+        VoiceLine(
+            9020,
+            Neuralnet,
+            ru="Ост+алось 9 минут до активации щита К+ёнигсберга",
+        ),
+        VoiceLine(
+            9030,
+            Neuralnet,
+            ru="Ост+алось 8 минут до активации щита К+ёнигсберга",
+        ),
+        VoiceLine(
+            9040,
+            Neuralnet,
+            ru="Ост+алось 7 минут до активации щита К+ёнигсберга",
+        ),
+        VoiceLine(
+            9050,
+            Neuralnet,
+            ru="Ост+алось 6 минут до активации щита К+ёнигсберга",
+        ),
+        VoiceLine(
+            9060,
+            Neuralnet,
+            ru="Ост+алось 5 минут до активации щита К+ёнигсберга",
+        ),
+        VoiceLine(
+            9070,
+            Neuralnet,
+            ru="Ост+алось 4 минуты до активации щита К+ёнигсберга",
+        ),
+        VoiceLine(
+            9080,
+            Neuralnet,
+            ru="Ост+алось 3 минуты до активации щита К+ёнигсберга",
+        ),
+        VoiceLine(
+            9090,
+            Neuralnet,
+            ru="Ост+алось 2 минуты до активации щита К+ёнигсберга",
+        ),
+        VoiceLine(
+            9100,
+            Neuralnet,
+            ru="Ост+алось 1 минута до активации щита К+ёнигсберга",
+        ),
+        VoiceLine(
+            9110,
+            Neuralnet,
+            ru="Ост+алось 30 секунд до активации щита К+ёнигсберга",
+        ),
     ]
 
 
@@ -325,6 +380,6 @@ class Mission3(Msn3, script.StoryMission):
     MISSION_INDEX = 3
     CUTSCENES = []
     SPACE_CLASS = Msn3Space
-    SYNC_SPACE = False
+    SYNC_SPACE = True
 
     MISSION_TITLE = 'Миссия 3. Штурм Кёнигсберга'
