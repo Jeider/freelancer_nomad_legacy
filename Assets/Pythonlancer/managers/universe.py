@@ -165,7 +165,9 @@ class UniverseManager:
         return DIVIDER.join([key.get_equip() for key in self.keys])
 
     def get_key_good(self):
-        return DIVIDER.join([key.get_good() for key in self.keys])
+        return ';blank'
+        # Remove key good to keep keys silent
+        # return DIVIDER.join([key.get_good() for key in self.keys])
 
     def get_key_story(self):
         return SINGLE_DIVIDER.join([key.get_story() for key in self.keys])

@@ -78,11 +78,15 @@ class Nag:
         ]
         return SINGLE_DIVIDER.join(actions)
 
-    def nag_off(self):
+    def nag_off(self, nag_name=None):
+        if nag_name:
+            return self.NAG_OFF.format(nag_name=nag_name)
+
         if self.last_nag_name is not None:
             nag_off = self.NAG_OFF.format(nag_name=self.last_nag_name)
             self.last_nag_name = None
             return nag_off
+
         return ''
 
     def get_towards_nag(self, nag_name, target, is_object):
@@ -1205,6 +1209,9 @@ class NNObj:
             f'Act_SetNNHidden = {self.get_name()}, true'
         ]
         return SINGLE_DIVIDER.join(actions)
+
+    def nag_off(self):
+        return self.mission.nag.nag_off(self.get_name())
 
     def reach(self):
         """for template"""

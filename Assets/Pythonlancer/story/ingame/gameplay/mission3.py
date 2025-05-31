@@ -575,6 +575,7 @@ class Misson03(ingame_mission.IngameMission):
 
             NNObj(self, O.LAUNCH, name='launch'),
             NNObj(self, O.DESTROY_CORSAIRS, name='destroy_corsairs'),
+            NNObj(self, O.DESTROY_ENEMY, name='destroy_enemy'),
 
             NNObj(self, O.GOTO, name='goto_fleet', target='m3_init_point'),
 
@@ -585,7 +586,7 @@ class Misson03(ingame_mission.IngameMission):
             NNObj(self, O.GOTO, name='goto_nebula_exit', target='nebula_exit'),
             NNObj(self, O.GOTO, name='goto_kgb_core', target='kgb', towards=True),
 
-            NNObj(self, 'Направлйтесь к генератору', name='goto_gen1', target='gen1', towards=True),
+            NNObj(self, 'Направляйтесь к генератору', name='goto_gen1', target='gen1', towards=True),
             NNObj(self, 'Уничтожьте генератор', name='destroy_gen1', target='gen1', nag=False),
 
             NNObj(self, O.GOTO, name='goto_gen2_wp1', target='wp_to_gen1', towards=True),
