@@ -1429,6 +1429,7 @@ class Direct:
         self.trigger_groups = {}
         self.save_states: dict = {state.get_code(): state for state in self.mission.get_save_states()}
         self.dialogs: dict = {dialog.get_code(): dialog for dialog in self.mission.get_dialogs()}
+        self.used_saves = []
 
     def nn_clear(self):
         return CLEAR_OBJECTIVES
@@ -1437,6 +1438,12 @@ class Direct:
         state = self.save_states.get(code)
         if not state:
             raise Exception(f'unknown save state {code}')
+
+        if code in self.used_saves:
+            raise Exception(f'Save {code} is already used. Are you sure?')
+
+        self.used_saves.append(code)
+
         trigger = f'save_state_{code}'
         content = [
             f'Act_Save = {trigger}, {state.get_id()}',
