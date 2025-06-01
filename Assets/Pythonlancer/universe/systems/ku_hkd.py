@@ -585,8 +585,9 @@ class HokkRefineryConn3(HokkMember, main_objects.TradeConnection):
 class HokkPoliceConn1(HokkMember, main_objects.TradeConnection):
     OBJ_FROM = HokkMegaShipyard
     OBJ_TO = HokkPolice
-    SIDE_FROM = TOP
-    SIDE_TO = BOTTOM
+    SIDE_FROM = RIGHT
+    SIDE_TO = LEFT
+    OBJ_FROM_TLR_FORCE_OFFSET = (54379, 0, -3073)
     TRADELANE_LETTER = 'F'
     HUNTER_DEFENCE_REL = RIGHT
     ATTACKED_BY = [
@@ -597,8 +598,8 @@ class HokkPoliceConn1(HokkMember, main_objects.TradeConnection):
 class HokkPoliceConn2(HokkMember, main_objects.TradeConnection):
     OBJ_FROM = HokkPolice
     OBJ_TO = HokkOmega7Jumpgate
-    SIDE_FROM = LEFT
-    SIDE_TO = RIGHT
+    SIDE_FROM = TOP
+    SIDE_TO = BOTTOM
     TRADELANE_LETTER = 'G'
     HUNTER_DEFENCE_REL = BOTTOM
     ATTACKED_BY = [
