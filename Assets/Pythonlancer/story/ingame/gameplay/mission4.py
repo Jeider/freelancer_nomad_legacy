@@ -6,8 +6,9 @@ from story.ingame import ingame_mission
 from story.math import euler_to_quat
 from story import actors
 
+from story.ingame import names as N
 from story.ingame import objectives as O
-from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Solar
+from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Solar, Capital, SaveState, MultiText, TextDialog
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
 from world.npc import NPC, EqMap
@@ -52,6 +53,30 @@ class Misson04(ingame_mission.IngameMission):
     FILE = 'm04'
     START_SAVE_ID = 32400
     STATIC_NPCSHIPS = NPCSHIPS
+    SCRIPT_INDEX = 4
+    DIRECT_SYSTEMS = [S.sig8, S.rh_biz, S.li_for]
+
+    def get_save_states(self):
+        return [
+            SaveState(self, 'keln', 'Берлин, станция Кёльн'),
+            SaveState(self, 'forbes_jh', 'Сигма-8, гипердыра в Форбс'),
+        ]
+
+    def get_dialogs(self):
+        return [
+            TextDialog(
+                self, 'capital', 'Уязвимые точки',
+                ru_content=MultiText([
+                    'Вражеский крейсер очень тяжело уничтожить, акакуя в лоб. Но вы можете атаковать его уязвимые точки!',
+
+                    'Уязвимые точки выделены отдельным цветом. Уничтожив уязвимую точку вы нанесет крейсеру '
+                    'дополнительны повреждения.',
+
+                    'Выбирайте элементы корабля противника с помощью вашего интерфейса, чтобы навести прицел на '
+                    'указанную точку. Ваши ракеты тоже будут лететь в наведенную точку корабля противника.',
+                ]),
+            ),
+        ]
 
     def get_real_objects(self):
         return {
@@ -67,7 +92,7 @@ class Misson04(ingame_mission.IngameMission):
 
             'shipyard': Obj(self, li_for.ForbesShipyard),
             'for_tlr_1': Conn(self, li_for.ForbesPlanetConn2, li_for.ForbesShipyard),
-            'final_planet': Obj(self, li_for.ForbesPlanet1),
+            'final_planet': Obj(self, li_for.ForbesDockring),
         }
 
     def get_nn_objectives(self):
@@ -88,15 +113,17 @@ class Misson04(ingame_mission.IngameMission):
             NNObj(self, O.GOTO_JUMPHOLE, name='biz_to_sig8_fly', target='biz_to_sig8', towards=True),
             NNObj(self, O.JUMPHOLE, target='biz_to_sig8'),
 
-            NNObj(self, 'Уничтожьте крейсер', name='defend_jacobo'),
+            NNObj(self, 'Уничтожьте крейсер', name='attack_cruiser'),
             NNObj(self, O.DESTROY_FIGHTERS, name='destroy_fighters'),
 
-            NNObj(self, O.GOTO, name='goto_escape_point1', target='point_escape1', towards=True),
-            NNObj(self, O.GOTO, name='goto_escape_point2', target='point_escape2', towards=True),
+            NNObj(self, O.GOTO, name='goto_escape_point1', target='point_escape1', towards=True, reach_range=2000),
+            NNObj(self, O.GOTO, name='goto_escape_point2', target='point_escape2', towards=True, reach_range=2000),
+            NNObj(self, O.GOTO, name='goto_escape_point3', target='point_escape3', towards=True, reach_range=2000),
 
             NNObj(self, O.DESTROY_CORSAIRS, name='destroy_corsairs'),
             NNObj(self, O.GOTO_JUMPHOLE, name='sig8_to_for_fly', target='sig8_to_for', towards=True),
             NNObj(self, O.JUMPHOLE, target='sig8_to_for'),
+            NNObj(self, 'Ожидайте активации дыры', name='wait_for_activation'),
 
             NNObj(self, 'Доберитесь до ближайшей базы', target='shipyard'),
             NNObj(self, O.TLR, target='for_tlr_1'),
@@ -130,8 +157,7 @@ class Misson04(ingame_mission.IngameMission):
         sig8_points = [
             'point_escape1',
             'point_escape2',
-            'ms4_cr1',
-            'ms4_cr2',
+            'point_escape3',
         ]
 
         defined_points = [
@@ -146,14 +172,61 @@ class Misson04(ingame_mission.IngameMission):
                 Point(self, S.sig8, p)
             )
 
-        solar_points = [
-            Solar(self, S.rh_biz, 'bs', ru_name='Линкор Вотан'),
-            Solar(self, S.rh_biz, 'bs_reactor', ru_name='Реактор линкора'),
-        ]
-
-        defined_points.extend(solar_points)
+        defined_points.extend([
+            Solar(self, S.rh_biz, 'bs', ru_name='Линкор Вотан',
+                  faction='rh_grp', archetype='rh_battleship_ms4_solar', loadout='rh_battleship_01_no_guns',
+                  labels=['keln_capship']),
+            Solar(self, S.rh_biz, 'bs_reactor', ru_name='Реактор линкора',
+                  faction='rh_grp', archetype='msn4_rh_battleship_shield'),
+        ])
 
         return defined_points
+
+    def get_capital_ships(self):
+        keln_rcr = {
+            'npc_ship_arch': 'ms4_rh_cruiser_ship',
+            'faction': 'rh_grp',
+            'labels': ['keln_capship'],
+            'ru_name': N.RH_CRUISER,
+        }
+        keln_gb = {
+            'npc_ship_arch': 'ms4_rh_gunboat_ship',
+            'faction': 'rh_grp',
+            'labels': ['keln_capship'],
+            'ru_name': N.RH_GUNBOAT,
+        }
+        s8_rcr = {
+            'npc_ship_arch': 'ms4_rh_cruiser_ship',
+            'faction': 'rh_grp',
+            'labels': ['s8_cap', 'fleet'],
+            'ru_name': N.RH_CRUISER,
+        }
+
+        caps = []
+        keln_caps = []
+
+        keln_cr_count = 2
+        keln_gb_count = 2
+
+        for index in range(1, keln_cr_count+1):
+            cap = f'cr{index}'
+            the_cap = Capital(self, cap, **keln_rcr)
+            caps.append(the_cap)
+            keln_caps.append(the_cap)
+
+        for index in range(1, keln_gb_count+1):
+            cap = f'gb{index}'
+            the_cap = Capital(self, cap, **keln_gb)
+            caps.append(the_cap)
+            keln_caps.append(the_cap)
+
+        self.add_capital_group('KELN_CAP', keln_caps)
+
+        caps.append(
+            Capital(self, 's8_cruiser', **s8_rcr)
+        )
+
+        return caps
 
     def get_ships(self):
         return [
@@ -176,6 +249,7 @@ class Misson04(ingame_mission.IngameMission):
                 self,
                 'hassler',
                 jumper=True,
+                hero=True,
                 actor=actors.Hassler,
                 labels=[
                     'friend',
@@ -192,6 +266,7 @@ class Misson04(ingame_mission.IngameMission):
                 self,
                 'alaric',
                 jumper=True,
+                hero=True,
                 actor=actors.Alaric,
                 labels=[
                     'friend',
@@ -206,16 +281,29 @@ class Misson04(ingame_mission.IngameMission):
             ),
             Ship(
                 self,
-                'officer_wing',
-                count=5,
+                'officer_leader',
+                actor=actors.Kreitmaier,
                 labels=[
                     'officer',
                     'rheinland',
                 ],
-                unique_npc_entry=True,
-                # name_ids=[
-                #     94205,
-                # ],
+                affiliation=faction.RheinlandMain.CODE,
+                npc=NPC(
+                    faction=faction.RheinlandMain,
+                    ship=ship.Valkyrie,
+                    level=NPC.D4,
+                    equip_map=EqMap(base_level=4),
+                )
+            ),
+            Ship(
+                self,
+                'officer_wing',
+                count=4,
+                labels=[
+                    'officer',
+                    'rheinland',
+                ],
+                affiliation=faction.RheinlandMain.CODE,
                 npc=NPC(
                     faction=faction.RheinlandMain,
                     ship=ship.Valkyrie,
@@ -240,5 +328,79 @@ class Misson04(ingame_mission.IngameMission):
                     equip_map=EqMap(base_level=4),
                 )
             ),
+            Ship(
+                self,
+                'ms4_f1',
+                count=3,
+                labels=[
+                    'fleet',
+                    'fleet_fighter',
+                ],
+                slide_z=-50,
+                slide_x=-50,
+                system_class=S.sig8,
+                affiliation=faction.RheinlandMain.CODE,
+                npc=NPC(
+                    faction=faction.RheinlandMain,
+                    ship=ship.Banshee,
+                    level=NPC.D4,
+                    equip_map=EqMap(base_level=3),
+                )
+            ),
+            Ship(
+                self,
+                'ms4_f2',
+                count=3,
+                labels=[
+                    'fleet',
+                    'fleet_fighter',
+                ],
+                slide_z=-50,
+                slide_x=-50,
+                system_class=S.sig8,
+                affiliation=faction.RheinlandMain.CODE,
+                npc=NPC(
+                    faction=faction.RheinlandMain,
+                    ship=ship.Banshee,
+                    level=NPC.D4,
+                    equip_map=EqMap(base_level=3),
+                )
+            ),
+            Ship(
+                self,
+                's8_reinforcement',
+                count=3,
+                relative_pos=True,
+                relative_range=2000,
+                labels=[
+                    'fleet',
+                    'fleet_fighter',
+                ],
+                affiliation=faction.RheinlandMain.CODE,
+                npc=NPC(
+                    faction=faction.RheinlandMain,
+                    ship=ship.Valkyrie,
+                    level=NPC.D4,
+                    equip_map=EqMap(base_level=4),
+                )
+            ),
 
+            Ship(
+                self,
+                'corsair',
+                count=6,
+                relative_pos=True,
+                relative_range=2300,
+                affiliation=faction.Corsairs.CODE,
+                labels=[
+                    'corsairs',
+                    'enemy',
+                ],
+                npc=NPC(
+                    faction=faction.Corsairs,
+                    ship=ship.Bloodhound,
+                    level=NPC.D5,
+                    equip_map=EqMap(base_level=3),
+                )
+            ),
         ]

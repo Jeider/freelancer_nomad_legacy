@@ -385,9 +385,9 @@ class SphereMissouri(Actor):
 
 class Sigma8Outpost(Actor):
     RU_NAME = 'Аванпост'
-    TYPE = ACTOR_MALE
+    TYPE = ACTOR_FEMALE
     NAME = 'outpost'
-    COMM_APPEARANCE = 'rh_captain_head, rh_male_elite_body, prop_hat_male_rh_elite_visor'
+    COMM_APPEARANCE = 'rh_newscaster_head_gen_hat, rh_female_elite_body, prop_hat_female_rh_elite'
 
 
 class SphereOutpost(Actor):

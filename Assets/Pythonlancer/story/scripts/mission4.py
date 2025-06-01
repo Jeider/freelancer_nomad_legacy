@@ -120,9 +120,9 @@ class Msn4Space(Msn4, script.SpaceVoiceProps):
             en="JacoboTrader, calm down. ",
         ),
         VoiceLine(
-            220,
-            Hassler,
-            ru="Герр Крейтмайер, говорит адмирал Райхманн. Благодарю вас за успешно выполненное задание.",
+            180,
+            Reichman,
+            ru="Герр Крейтмайер, говорит адмирал Р+айхманн. Благодарю вас за успешно выполненное задание.",
             en="Herr Creitmire, this is Admiral Reichmann. Congratulations for completing your task.",
         ),
         VoiceLine(
@@ -140,8 +140,14 @@ class Msn4Space(Msn4, script.SpaceVoiceProps):
         VoiceLine(
             210,
             Reichman,
-            ru="Молча и быстро. И не пререкаясь со старшими по званию!",
+            ru="М+олча и быстро. И не пререкаясь со старшими по званию!",
             en="Quickly and silently. And do not argue with your superior officer!",
+        ),
+        VoiceLine(
+            220,
+            Hassler,
+            ru="Герр Крейтмайер, вас ввели в заблуждение! Заговор! Освободите конвоируемых!",
+            en="Herr Creitmeier, you're being misled! Manipulated! Let go of the escort!",
         ),
         VoiceLine(
             230,
@@ -254,7 +260,7 @@ class Msn4Space(Msn4, script.SpaceVoiceProps):
         VoiceLine(
             590,
             Trent,
-            ru="А если по делу, Джакобо попросил эскортировать его на территорию Либерти. Неплохой парень, мы с ним пересекались по делу когда я работал под юрисдикцией небезызвестного вам герра Вильгельма.",
+            ru="Джакобо попросил эскортировать его на территорию Либерти. Неплохой парень, мы с ним пересекались по делу когда я работал под юрисдикцией небезызвестного вам герра Вильгельма.",
             en="And to answer your question, JacoboTrader asked me to escort him to Liberty. He’s a nice guy, we crossed paths when I worked for Herr WIlhelm. ",
         ),
         VoiceLine(
@@ -280,6 +286,12 @@ class Msn4Space(Msn4, script.SpaceVoiceProps):
             Hassler,
             ru="Как они нас нашли?",
             en="How did they find us?",
+        ),
+        VoiceLine(
+            9150,
+            Alaric,
+            ru="Тут целый крейсер, а у меня кончились боеприпасы! Трент, атакуй уязвимые точки крейсера! Мы его и так разнесём!",
+            en="There is entire cruiser! My ammo is left, Trent, attack the vulnerable points of the cruiser!",
         ),
         VoiceLine(
             9200,
@@ -618,6 +630,6 @@ class Mission4(Msn4, script.StoryMission):
     MISSION_INDEX = 4
     CUTSCENES = []
     SPACE_CLASS = Msn4Space
-    SYNC_SPACE = False
+    SYNC_SPACE = True
 
     MISSION_TITLE = 'Миссия 4. Сопровождение Джакобо'

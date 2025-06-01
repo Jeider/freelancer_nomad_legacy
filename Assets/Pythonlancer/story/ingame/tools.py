@@ -1396,7 +1396,7 @@ class Capital(DefinedStaticMixin):
             f'affiliation = {self.faction}',
             f'npc_ship_arch = {self.npc_ship_arch}',
             f'individual_name = {self.ids_name.id}',
-            f'voice = pilot01',
+            # f'voice = pilot01',
         ]
 
         ship.extend([

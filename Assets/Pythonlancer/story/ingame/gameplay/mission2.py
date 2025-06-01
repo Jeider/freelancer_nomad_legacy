@@ -317,6 +317,7 @@ class Misson02(ingame_mission.IngameMission):
                     'outcast',
                     'friend',
                 ],
+                hero=True,
                 actor=actors.Jacobo,
                 npc=NPC(
                     faction=faction.Outcasts,
@@ -329,6 +330,7 @@ class Misson02(ingame_mission.IngameMission):
                 self,
                 'wilham',
                 jumper=True,
+                hero=True,
                 actor=actors.Wilham,
                 labels=[
                     'rheinland',

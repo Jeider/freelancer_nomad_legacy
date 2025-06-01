@@ -496,8 +496,8 @@ class Om15FreeportConn2(Omega15Member, main_objects.TradeConnection):
 class Om15VirtualConn1(Omega15Member, main_objects.BrokenTradeConnection):
     OBJ_FROM = Om15VirtualDepot
     OBJ_TO = Om15Freeport
-    SIDE_FROM = RIGHT
-    SIDE_TO = LEFT
+    SIDE_FROM = TOP
+    SIDE_TO = BOTTOM
     TRADELANE_LETTER = 'E'
     HUNTER_DEFENCE_REL = TOP
     ATTACKED_BY = [

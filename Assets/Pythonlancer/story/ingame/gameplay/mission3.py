@@ -202,6 +202,7 @@ class Misson03(ingame_mission.IngameMission):
                 self,
                 'wilham',
                 jumper=False,
+                hero=True,
                 actor=actors.Wilham,
                 labels=[
                     'rheinland',
@@ -218,6 +219,7 @@ class Misson03(ingame_mission.IngameMission):
                 self,
                 'hassler',
                 jumper=True,
+                hero=True,
                 actor=actors.Hassler,
                 labels=[
                     'rheinland',
@@ -235,6 +237,7 @@ class Misson03(ingame_mission.IngameMission):
                 self,
                 'punisher',
                 jumper=True,
+                hero=True,
                 count=4,
                 labels=[
                     'rheinland',

@@ -141,16 +141,16 @@ class Sig8GreenNebula2(Sigma8Member, zones.NebulaZone):
     PROPERTY_FLAGS = 32768
     PROPERTY_FOG_COLOR = '0, 255, 0'
 
-
-class Sig8BrownNebula1(Sigma8Member, zones.NebulaZone):
-    INDEX = 3
-    SPACEDUST = Dust.ATTRACT
-    SPACEDUST_MAXPARTICLES = 40
-    MUSIC = Ambience.NEBULA_DMATTER
-    CONTENT_TEMPLATE = sig8_nebula.Sig8BrownNebulaTemplate
-
-    PROPERTY_FLAGS = 32768
-    PROPERTY_FOG_COLOR = '100, 80, 10'
+#
+# class Sig8BrownNebula1(Sigma8Member, zones.NebulaZone):
+#     INDEX = 3
+#     SPACEDUST = Dust.ATTRACT
+#     SPACEDUST_MAXPARTICLES = 40
+#     MUSIC = Ambience.NEBULA_DMATTER
+#     CONTENT_TEMPLATE = sig8_nebula.Sig8BrownNebulaTemplate
+#
+#     PROPERTY_FLAGS = 32768
+#     PROPERTY_FOG_COLOR = '100, 80, 10'
 
 
 class Sig8BrownNebula2(Sigma8Member, zones.NebulaZone):
@@ -192,6 +192,10 @@ class Sig8AsteroidZone3(Sigma8Member, Sig8BaseVanillaAstZone):
 
 class Sig8AsteroidZone4(Sigma8Member, Sig8BaseVanillaAstZone):
     INDEX = 4
+
+
+class Sig8AsteroidZone5(Sigma8Member, Sig8BaseVanillaAstZone):
+    INDEX = 5
 
 
 class Sigma8EastAsteroidReward(Sigma8Member, mineable.AsteroidRewardsGroupMedium):
@@ -330,7 +334,8 @@ class Sig8BizmarkJumphole(Sigma8Member, main_objects.Jumphole):
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2500
     EXCLUSION_PARAMS = BROWN_EXCLUSION_PARAMS
-    NEBULA_ZONES = [Sig8BrownNebula1]
+    # NEBULA_ZONES = [Sig8BrownNebula1]
+    ASTEROID_ZONES = [Sig8AsteroidZone5]
 
 
 class Sig8KoenigsbergJumphole(Sigma8Member, main_objects.Jumphole):
