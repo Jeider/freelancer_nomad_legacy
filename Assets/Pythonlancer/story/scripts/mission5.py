@@ -2,7 +2,7 @@ from story import script
 from audio.sound import VoiceLine
 from story.actors import (
     Trent, Hatcher, HatcherStation, Tilton, DetroitDispatcher, AlaricStation, ForbesSmugglerOne, ForbesSmugglerTwo,
-    Sigma17Trader, Sigma17Police, ClarkResearch, Mandrake, Sigma17Assassin
+    ForbesSmugglerThree, Sigma17Trader, Sigma17Police, ClarkResearch, Mandrake, Sigma17Assassin
 )
 
 
@@ -15,13 +15,19 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
         VoiceLine(
             0,
             HatcherStation,
-            ru="Мистер Трент, если вы все еще заинтересованы в высокооплачиваемой работе, встретимся в баре космопорта планеты Форбс. Хетчер.",
+            ru="Мистер Трент, если вы всё ещё заинтересованы в высокооплачиваемой работе, встретимся в баре космопорта планеты Форбс",
             en="Mr. Trent, if you're still interested in a high-income job, meet me at the bar on planet Forbes. Hatcher out.",
+        ),
+        VoiceLine(
+            2,
+            Trent,
+            ru="Детр+оит значит. До него лететь всего ничего. Легкотня, а не миссия.",
+            en="So, Detroit. This is close station. Piece of cake.",
         ),
         VoiceLine(
             5,
             Trent,
-            ru="Станция Детроит, это фрилансер Альфа-один, запрашиваю стыковку.",
+            ru="Станция Детр+оит, это фрилансер Альфа-один, запрашиваю стыковку.",
             en="Destroit Station, this is freelancer alpha-one, requesting to dock.",
         ),
         VoiceLine(
@@ -97,10 +103,16 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             en="A little bird named Mr. Smith told me that I can get a Detroit security pass for a reasonable price here. ",
         ),
         VoiceLine(
-            150,
-            ForbesSmugglerTwo,
+            140,
+            ForbesSmugglerThree,
             ru="Твою же... Я сегодня же прикончу этого долбаного торчка. Все мозги себе скурил. ",
             en="That stupid… I'm gonna finish that stoner off right now! He smoked his last blunt.",
+        ),
+        VoiceLine(
+            150,
+            ForbesSmugglerTwo,
+            ru="Сначала займемся эти пионэром.",
+            en="Let's deal with this douchebag first.",
         ),
         VoiceLine(
             160,
@@ -160,13 +172,13 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             300,
             Trent,
             ru="Мисс Хетчер, приглашаю вас в романтическое путешествие до системы Сигма-17. ",
-            en="Мисс Хетчер, приглашаю вас в романтическое путешествие до системы Сигма-17. ",
+            en="Miss Hatcher, would you like to go with me on a romantic getaway to Sigma-17?",
         ),
         VoiceLine(
             310,
             Trent,
             ru="Там правда нужно будет еще станцию какую-то найти. Ис-сле-до-ва-тель-ску-ю. Но, думаю, мы справимся. ",
-            en="Miss Hatcher, would you like to go with me on a romantic getaway to Sigma-17? We'll have to find some station though. A r-e-s-e-a-r-c-h station. But I think we can handle it. ",
+            en="We'll have to find some station though. A r-e-s-e-a-r-c-h station. But I think we can handle it. ",
         ),
         VoiceLine(
             320,
@@ -237,8 +249,8 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
         VoiceLine(
             420,
             Sigma17Trader,
-            ru="SOS! Всем кто рядом! Это торговец омега - девять. Подвергаюсь нападению пиратов! Срочно нужна помощь! Кларк, помогите! ",
-            en="Mayday! To all ships in the vicinity! This is freighter convoy omega-nine. We are under attack by pirates! We require immediate assistance! Clark, please send someone!",
+            ru="SOS! Всем кто рядом! Это торговец омега-9. Подвергаюсь нападению пиратов! Срочно нужна помощь! Кларк, помогите! ",
+            en="Mayday! To all ships in the vicinity! This is freighter convoy omega-9. We are under attack by pirates! We require immediate assistance! Clark, please send someone!",
         ),
         VoiceLine(
             430,
@@ -566,6 +578,6 @@ class Mission5(Msn5, script.StoryMission):
     MISSION_INDEX = 5
     CUTSCENES = []
     SPACE_CLASS = Msn5Space
-    SYNC_SPACE = False
+    SYNC_SPACE = True
 
     MISSION_TITLE = 'Миссия 5. Поиск учёного'

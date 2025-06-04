@@ -1126,7 +1126,7 @@ class NNObj:
 
     def __init__(self, mission, ru_action, name=None, target=None,
                  towards=False, nag=True, force_jumpgate=False,
-                 reach_range=DEFAULT_REACH_RANGE):
+                 reach_range=DEFAULT_REACH_RANGE, open_access=True):
         self.mission = mission
         self.ids_name = self.mission.ids.new_name(ru_action)
         self.target = target
@@ -1136,6 +1136,7 @@ class NNObj:
         self.nag = nag
         self.force_jumpgate = force_jumpgate
         self.reach_range = reach_range
+        self.open_access = open_access
 
     def get_string_id(self):
         return self.ids_name.id

@@ -1,3 +1,5 @@
+import copy
+
 from managers.tools import query as Q
 from world.names import *
 
@@ -123,7 +125,8 @@ class EquipSet:
 
     def get_equip_items(self, core, root_weapon_faction=None, root_misc_equip_type=None):
         items = []
-        for query in self.queries:
+        for init_query in self.queries:
+            query = copy.copy(init_query)
             root_equip_type = root_misc_equip_type
 
             if query.__class__ == Q.Gun:

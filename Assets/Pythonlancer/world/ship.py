@@ -321,14 +321,15 @@ cargo = {nickname}, {amount}'''
     PACKAGE_LIGHT_TEMPLATE = 'equip = {{small_light}}, HpRunningLight{light_id}, 1'
     PACKAGE_CONTRAIL_TEMPLATE = 'equip = player_contrail, HpContrail{contrail_id}, 1'
 
-    def get_loadout_components(self, have_afterburn1=True, have_afterburn2=True, have_gen_armor=True):
+    def get_loadout_components(self, have_afterburn1=True, have_afterburn2=True, have_gen_armor=True,
+                               animated_wings=True):
         components = []
         components.extend(self.LOADOUT_TEMPLATE_BASE_COMPONENTS)
 
         if have_gen_armor:
             components.append(self.GEN_ARMOR_TEMPLATE)
 
-        if self.HAS_ANIMATION:
+        if self.HAS_ANIMATION and animated_wings:
             components.append(self.LOADOUT_LAUNCH_ANIMATION)
 
         i = 1
@@ -358,11 +359,13 @@ cargo = {nickname}, {amount}'''
 
         return components
 
-    def get_loadout_template(self, have_afterburn1=True, have_afterburn2=True, have_gen_armor=True):
+    def get_loadout_template(self, have_afterburn1=True, have_afterburn2=True, have_gen_armor=True,
+                             animated_wings=True):
         return self.BASE_LOADOUT.format(loadout=SINGLE_DIVIDER.join(self.get_loadout_components(
             have_afterburn1=have_afterburn1,
             have_afterburn2=have_afterburn2,
             have_gen_armor=have_gen_armor,
+            animated_wings=animated_wings,
         )))
 
     subclasses = []

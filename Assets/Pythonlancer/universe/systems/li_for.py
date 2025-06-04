@@ -29,7 +29,7 @@ from templates.dockable import research
 from templates.dockable import forbes_megafactory
 from templates.dockable import police
 from templates.dockable import alg
-from templates.dockable import junker
+from templates.dockable import pirate
 from templates.dockable import station_debris
 
 
@@ -366,7 +366,7 @@ class ForbesLargeStation(ForbesMember, main_objects.Station):
     REL_APPEND = 2500
     SPACE_OBJECT_TEMPLATE = forbes_megafactory.ForbesMegafactory
     AUDIO_PREFIX = SpaceVoice.STATION
-    INTERIOR_CLASS = interior.StationShipdealerInterior
+    INTERIOR_CLASS = interior.StationShipdealerBshbarInterior
     DEALERS = dealers.LibertyCivilianDealers
     SHIP_SET = markets.ShipSet('li_freighter')
 
@@ -446,13 +446,13 @@ class ForbesJunkers(ForbesMember, main_objects.JunkerBase):
     ALIAS = 'junker'
     BASE_INDEX = 8
     REL = TOP
-    SPACE_OBJECT_TEMPLATE = junker.BerlinJunker
+    SPACE_OBJECT_TEMPLATE = pirate.PirateBaseForbes
     FACTION = faction.Junkers
 
     DEFENCE_LEVEL = None
 
     AUDIO_PREFIX = SpaceVoice.OUTPOST
-    INTERIOR_CLASS = interior.PirateOutpostInterior
+    INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.LibertyPirateDealers
 
     ASTEROID_ZONES = [

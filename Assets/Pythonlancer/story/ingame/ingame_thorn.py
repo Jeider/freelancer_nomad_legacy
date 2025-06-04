@@ -47,5 +47,5 @@ class IngameThorn(object):
     def get_filename(self):
         return f'MISSIONS\GENERATED_THORN\\{self.get_name()}.thn'
 
-    def call(self):
-        return f'Act_CallThorn = {self.get_filename()}, {self.target}'
+    def call(self, target=None):
+        return f'Act_CallThorn = {self.get_filename()}, {target if target else self.target}'

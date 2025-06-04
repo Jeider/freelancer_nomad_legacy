@@ -127,7 +127,7 @@ class Hatcher(Actor):
     SPACE_VOICE = 'pilot04'
 
 
-class HatcherStation(Actor):
+class HatcherStation(Hatcher):
     RU_NAME = 'Хетчер'
     TYPE = ACTOR_FEMALE
     NAME = 'hatcher'
@@ -200,7 +200,7 @@ class Brighton(Actor):
 
 class DetroitDispatcher(Actor):
     RU_NAME = 'Детроит'
-    TYPE = ACTOR_MALE
+    TYPE = ACTOR_FEMALE
     NAME = 'dispatcher'
     COMM_APPEARANCE = 'br_kaitlyn_head, br_kaitlyn_body, prop_neuralnet_e'
 
@@ -214,7 +214,7 @@ class ClarkResearch(Actor):
 
 class Sigma17Trader(Actor):
     RU_NAME = 'Торговец'
-    TYPE = ACTOR_MALE
+    TYPE = ACTOR_FEMALE
     NAME = 'trader'
     COMM_APPEARANCE = 'pl_female3_head, pl_female1_journeyman_body, prop_neuralnet_A'
 
@@ -316,6 +316,13 @@ class ForbesSmugglerTwo(Actor):
     RU_NAME = 'Контрабандист'
     TYPE = ACTOR_MALE
     NAME = 'smuggler2'
+    COMM_APPEARANCE = 'pl_male1_head, pi_pirate3_body, comm_pi_pirate'
+
+
+class ForbesSmugglerThree(Actor):
+    RU_NAME = 'Контрабандист'
+    TYPE = ACTOR_MALE
+    NAME = 'smuggler3'
     COMM_APPEARANCE = 'pl_male1_head, pi_pirate3_body, comm_pi_pirate'
 
 

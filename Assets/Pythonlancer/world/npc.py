@@ -155,7 +155,8 @@ state_graph = FIGHTER
 npc_class = {classes_list}'''
 
     def __init__(self, faction, ship, equip_map=None, level=None, name=None,
-                 extra_equip=None, have_afterburn1=True, have_afterburn2=True, gen_armor=True):
+                 extra_equip=None, have_afterburn1=True, have_afterburn2=True, gen_armor=True,
+                 animated_wings=False):
         self.faction = faction
         self.ship = ship
         self.equip_map = equip_map
@@ -166,6 +167,7 @@ npc_class = {classes_list}'''
         self.have_afterburn1 = have_afterburn1
         self.have_afterburn2 = have_afterburn2
         self.gen_armor = gen_armor
+        self.animated_wings = animated_wings
 
     def set_name(self, name):
         self.name = name
@@ -234,9 +236,6 @@ npc_class = {classes_list}'''
 
     def get_weapon6_class(self):
         return self.equip_map.weapon6
-
-    def have_afterburn(self):
-        return not self.no_afterburn
 
     def have_gen_armor(self):
         return self.gen_armor
@@ -314,6 +313,7 @@ npc_class = {classes_list}'''
             have_afterburn1=self.have_afterburn1,
             have_afterburn2=self.have_afterburn2,
             have_gen_armor=self.have_gen_armor(),
+            animated_wings=self.animated_wings,
         )
         loadout = loadout_template.format(**self.get_loadout_template_params())
 
