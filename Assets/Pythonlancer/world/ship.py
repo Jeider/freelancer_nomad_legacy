@@ -318,8 +318,8 @@ cargo = {nickname}, {amount}'''
 
     HP_HEADLIGHT = 'HpHeadlight'
     PACKAGE_LAUNCH_ANIMATION = 'addon = launch_extend, internal, 1'
-    PACKAGE_LIGHT_TEMPLATE = 'equip = {{small_light}}, HpRunningLight{light_id}, 1'
-    PACKAGE_CONTRAIL_TEMPLATE = 'equip = player_contrail, HpContrail{contrail_id}, 1'
+    PACKAGE_LIGHT_TEMPLATE = 'addon = {{small_light}}, HpRunningLight{light_id}, 1'
+    PACKAGE_CONTRAIL_TEMPLATE = 'addon = player_contrail, HpContrail{contrail_id}, 1'
 
     def get_loadout_components(self, have_afterburn1=True, have_afterburn2=True, have_gen_armor=True,
                                animated_wings=True):
