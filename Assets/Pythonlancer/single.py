@@ -264,7 +264,7 @@ def test_lua():
 
 
 class MySupriseField(mineable.DefaultField):
-    BOX_SIZE = 600
+    BOX_SIZE = 200
     DENSITY_MULTIPLER = 2
     DRIFT_X = 0.8
     DRIFT_Y = 0.5
@@ -279,12 +279,14 @@ class MySupriseField(mineable.DefaultField):
 
 
 class MyField(mineable.StaticObjectField):
-    ALIAS = 'ast_extra'
-    INDEX = 4
+    ALIAS = 'research_chunks'
+    INDEX = 1
     STATIC_ARCHETYPES = [
-        'om15_static_large_ast01',
-        'om15_static_large_ast02',
-        'om15_static_large_ast04',
+        'depot_chunk01',
+        'depot_chunk02',
+        'depot_chunk03',
+        'depot_chunk04',
+        'depot_chunk06',
     ]
     FIELD_CLASS = MySupriseField
     REWARDS_GROUP_CLASS = mineable.DefaultSupriseRewardsGroup
@@ -293,7 +295,7 @@ class MyField(mineable.StaticObjectField):
 
 def generate_field():
     core = get_core()
-    the_sys = core.universe.universe_root.get_all_system_by_name('om13_alt')
+    the_sys = core.universe.universe_root.get_all_system_by_name('sig17')
 
     field = MyField(system=the_sys)
     content = field.get_system_content()

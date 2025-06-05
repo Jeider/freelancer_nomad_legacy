@@ -5,10 +5,13 @@ from universe.systems import li_for, sig17
 from story.ingame import ingame_mission
 from story.math import euler_to_quat
 from story import actors
+from text.dividers import SINGLE_DIVIDER, DIVIDER
 
 from story.ingame import names as N
 from story.ingame import objectives as O
-from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Solar, Capital, SaveState, MultiText, TextDialog
+from story.ingame.tools import (
+    Point, Obj, Conn, NNObj, Ship, Solar, Capital, SaveState, MultiText, TextDialog, Direct, Trigger, DRY_RUN
+)
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT, GENERIC_MOUNTED_ROTATABLE
 
 from world.npc import NPC, EqMap
@@ -30,6 +33,330 @@ npc_class = lawful, CRUISER
 '''
 
 
+class ResearchChunk:
+    MANDRAKE_CHUNK = 'Обломок с Мандрейком'
+    GENERIC_CHUNK = 'Обломок станции'
+
+    def __init__(self, pod_root, chunk_index, pod_name, is_mandrake=False):
+        self.pod_root: ScientPods = pod_root
+        self.chunk_index = chunk_index
+        self.is_mandrake = is_mandrake
+        self.solar = Solar(self.pod_root.mission, S.sig17, self.get_chunk_name(),
+                           ru_name=self.MANDRAKE_CHUNK if is_mandrake else self.GENERIC_CHUNK,
+                           auto_archetype=True)
+        self.pod_name = pod_name
+
+    def get_chunk_index(self):
+        return f'{self.chunk_index:02d}'
+
+    def get_chunk_name(self):
+        return ScientPods.CHUNK_NAME.format(self.chunk_index)
+
+    def get_pod_name(self):
+        return ScientPods.POD_NAME.format(self.chunk_index)
+
+    def define_solar(self):
+        return self.solar.define()
+
+    def spawn_solar(self):
+        return SINGLE_DIVIDER.join([
+            self.solar.spawn(),
+            self.solar.mark(),
+        ])
+
+    def mark(self):
+        return SINGLE_DIVIDER.join([
+            self.solar.mark(),
+        ])
+
+    def unmark(self):
+        return SINGLE_DIVIDER.join([
+            self.solar.unmark(),
+        ])
+
+    def destroy(self):
+        return SINGLE_DIVIDER.join([
+            self.solar.destroy(),
+        ])
+
+    def destroy_pod(self):
+        return SINGLE_DIVIDER.join([
+            f'Act_Destroy = {self.get_pod_name()}'
+        ])
+
+    def define_pod(self):
+        return f'''
+[MsnLoot]
+nickname = {self.get_pod_name()}
+archetype = escape_pod
+string_id = {self.pod_name.id}
+rel_pos_obj = {self.get_chunk_name()}
+rel_pos_offset = 0, 0, 0
+velocity = 0, 10, 0
+equip_amount = 1
+health = 1.000000
+Can_Jettison = false
+'''
+
+
+class ScientPods:
+
+    MAIN = 'SCIENT_PODS_init'
+    SYSTEM_CLASS = S.sig17
+    SYSTEM_NAME = SYSTEM_CLASS.NAME
+    CHUNK_NAME = 'research_chunk_{0}'
+    POD_NAME = 'scient_pod_{}'
+    CHUNKS_COUNT = 12
+    MANDRAKE_ARRIVE_PODS = 4
+    CHUNK_DESTROYED_TRIGGER = 'research_chunk_{0}_destroyed'
+    POD_ACQUIRED_TRIGGER = 'scient_pod_{0}_acquired'
+    END_TRIGGER = 'SCIENT_PODS_exit'
+    POD_SUCCESS = 'POD_success'
+
+    MANDRAKE_COUNTER = 'marker_mandrake_arrive_counter'
+    TOTAL_COUNTER = 'marker_progress_counter'
+    CHECK_MARKER = 'marker_relative_obj'
+    SUCCESS_MARKER = 'mandrake_acquired'
+
+    MISSION_TIMEOUT = 60
+
+    MANDRAKE_NAME = 'Капсула Мандрейка'
+    SCIENT_NAME = 'Капсула с учёным'
+
+    def __init__(self, mission, direct, trigger):
+        self.mission: ingame_mission.IngameMission = mission
+        self.direct: Direct = direct
+        self.trigger: Trigger = trigger
+        self.chunks: list[ResearchChunk] = []
+        self.objects_defined = False
+        self.triggers_defined = False
+        self.mandrake_chunk = 1
+        self.reward_solar = Solar(self.mission, S.sig17, 'research_reward',
+                                  ru_name='Награда', archetype='hidden_connect',
+                                  loadout='m05_scient_reward')
+        self.mandrake_ids_name = self.mission.ids.new_name(self.MANDRAKE_NAME)
+        self.scient_ids_name = self.mission.ids.new_name(self.SCIENT_NAME)
+        self.init_chunks()
+
+    def init_chunks(self):
+        have_mandrake = False
+        for i in range(1, self.CHUNKS_COUNT+1):
+            is_mandrake = i == self.mandrake_chunk
+            if is_mandrake:
+                have_mandrake = True
+            chunk = ResearchChunk(self, chunk_index=i, is_mandrake=is_mandrake,
+                                  pod_name=self.mandrake_ids_name if is_mandrake else self.scient_ids_name)
+            self.chunks.append(chunk)
+
+        if not have_mandrake:
+            raise Exception(f'have no mandrake, index is {self.mandrake_chunk}')
+
+    def turn(self):
+        if not self.objects_defined:
+            raise Exception('Scient pod objects is not defined')
+        if not self.triggers_defined:
+            raise Exception('Scient pod triggers is not defined')
+        return self.trigger.turn(self.MAIN)
+
+    def define_objects(self):
+        definitions = [f'''
+[MsnSolar]
+nickname = {self.MANDRAKE_COUNTER}
+system = sig17
+position = 100000, 0, 0
+archetype = msn5_pod_counter
+radius = 0
+string_id = 1
+
+[MsnSolar]
+nickname = {self.TOTAL_COUNTER}
+system = sig17
+position = 100000, 200, 0
+archetype = msn5_pod_counter
+radius = 0
+string_id = 1
+
+[MsnSolar]
+nickname = {self.CHECK_MARKER}
+system = sig17
+position = 100000, 100, 0
+archetype = msn5_pod_counter
+radius = 0
+string_id = 1
+
+[MsnSolar]
+nickname = {self.SUCCESS_MARKER}
+system = sig17
+position = 100000, -100, 0
+archetype = msn5_pod_counter
+radius = 0
+string_id = 1''',
+            self.reward_solar.define()
+        ]
+
+        for chunk in self.chunks:
+            definitions.extend([
+                chunk.define_solar(),
+                chunk.define_pod(),
+            ])
+
+        self.objects_defined = True
+        return DIVIDER.join(definitions)
+
+    def draw_main_chunks(self):
+        actions = []
+        for chunk in self.chunks:
+            if chunk.is_mandrake:
+                continue
+            actions.extend([
+                chunk.spawn_solar(),
+                self.trigger.turn(self.CHUNK_DESTROYED_TRIGGER.format(chunk.chunk_index)),
+            ])
+        return SINGLE_DIVIDER.join(actions)
+
+    def deactivate_chunks(self):
+        actions = []
+        for chunk in self.chunks:
+            actions.append(
+                self.trigger.off(self.CHUNK_DESTROYED_TRIGGER.format(chunk.chunk_index))
+            )
+        return SINGLE_DIVIDER.join(actions)
+
+    def mark_all_chunks(self):
+        actions = []
+        for chunk in self.chunks:
+            actions.append(chunk.mark())
+        return SINGLE_DIVIDER.join(actions)
+
+    def destroy_all_chunks(self):
+        actions = []
+        for chunk in self.chunks:
+            actions.append(chunk.destroy())
+            actions.append(chunk.destroy_pod())
+        return SINGLE_DIVIDER.join(actions)
+
+    def draw_mandrake_chunks(self):
+        actions = []
+        for chunk in self.chunks:
+            if not chunk.is_mandrake:
+                # actions.append(chunk.unmark())
+                continue
+            actions.extend([
+                chunk.spawn_solar(),
+                self.trigger.turn(self.CHUNK_DESTROYED_TRIGGER.format(chunk.chunk_index)),
+            ])
+        return SINGLE_DIVIDER.join(actions)
+
+    def get_chunk_triggers(self):
+        actions = []
+
+        for chunk in self.chunks:
+            pod_name = chunk.get_pod_name()
+            actions.extend([
+                self.trigger.new(self.CHUNK_DESTROYED_TRIGGER.format(chunk.chunk_index)),
+                f'Cnd_Destroyed = {chunk.get_chunk_name()}',
+                f'Act_SpawnLoot = {pod_name}',
+                f'Act_Invulnerable = {pod_name}, true',
+                f'Act_MarkObj = {pod_name}, 1',
+                self.trigger.turn(self.POD_ACQUIRED_TRIGGER.format(chunk.chunk_index)),
+                '',
+                self.trigger.new(self.POD_ACQUIRED_TRIGGER.format(chunk.chunk_index)),
+                f'Cnd_LootAcquired = {pod_name}, Player',
+                f'Act_RemoveCargo = {pod_name}',
+                self.hit_total_counter(),
+                self.hit_mandrake_counter(),
+            ])
+            if chunk.is_mandrake:
+                actions.extend([
+                    f'Act_SpawnSolar = {self.SUCCESS_MARKER}',
+                    self.trigger.turn('POD_MANDRAKE_ACQUIRE_have_remaining'),
+                    self.trigger.turn('POD_MANDRAKE_ACQUIRE_have_remaining__false'),
+                    '',
+                    ####
+                    self.trigger.new('POD_MANDRAKE_ACQUIRE_have_remaining'),
+                    self.direct.inside_pos(self.SYSTEM_NAME, self.TOTAL_COUNTER, 5000, obj=self.TOTAL_COUNTER),
+                    self.trigger.off('POD_MANDRAKE_ACQUIRE_have_remaining__false'),
+                    self.mark_all_chunks(),
+                    self.mission.script.line(605),
+                    self.trigger.turn('LOOT_MISSION_perfect_objective'),
+                    '',
+                    ####
+                    self.trigger.new('POD_MANDRAKE_ACQUIRE_have_remaining__false'),
+                    f'Cnd_Timer = 1',
+                    self.trigger.turn(self.POD_SUCCESS),
+                    self.trigger.off('POD_MANDRAKE_ACQUIRE_have_remaining'),
+                    '',
+                ])
+
+        return SINGLE_DIVIDER.join(actions)
+
+    def hit_mandrake_counter(self):
+        damage = ((100 / self.MANDRAKE_ARRIVE_PODS) / 100) * 1.025
+        return f'Act_AdjHealth = {self.MANDRAKE_COUNTER}, -{damage}'
+
+    def hit_total_counter(self):
+        damage = ((100 / self.CHUNKS_COUNT) / 100) * 1.025
+        return f'Act_AdjHealth = {self.TOTAL_COUNTER}, -{damage}'
+
+    def define_triggers(self):
+        self.triggers_defined = True
+        content = [
+            self.trigger.new(self.MAIN, dry=True),
+            self.draw_main_chunks(),
+            f'Act_SpawnSolar = {self.MANDRAKE_COUNTER}',
+            f'Act_SpawnSolar = {self.TOTAL_COUNTER}',
+            self.trigger.turn('POD_mandrake_arrive'),
+            self.trigger.turn('POD_all_acquired'),
+            self.trigger.turn('POD_timeout'),
+            '',
+            ####
+            self.trigger.new('POD_mandrake_arrive'),
+            f'Cnd_Destroyed = {self.MANDRAKE_COUNTER}',
+            self.draw_mandrake_chunks(),
+            '',
+            ####
+            self.trigger.new('POD_all_acquired'),
+            f'Cnd_Destroyed = {self.TOTAL_COUNTER}',
+            self.reward_solar.spawn(),
+            self.reward_solar.fuse('fuse_dump_cargo'),
+            self.trigger.turn(self.POD_SUCCESS),
+            '',
+            ####
+            self.trigger.new('POD_timeout'),
+            f'Cnd_Timer = {self.MISSION_TIMEOUT}',
+            self.trigger.turn('POD_mandrake_in'),
+            self.trigger.turn('POD_mandrake_in__false'),
+            '',
+            ####
+            self.trigger.new('POD_mandrake_in'),
+            self.direct.inside_pos(self.SYSTEM_NAME, self.TOTAL_COUNTER, 5000, obj=self.SUCCESS_MARKER),
+            self.deactivate_chunks(),
+            self.trigger.turn(self.POD_SUCCESS),
+            self.trigger.off('POD_mandrake_in__false'),
+            self.destroy_all_chunks(),
+            '',
+            ####
+            self.trigger.new('POD_mandrake_in__false'),
+            f'Cnd_Timer = 0.25',
+            'Act_ChangeState = FAIL, 1',
+            '',
+            ####
+            self.trigger.new(self.POD_SUCCESS),
+            DRY_RUN,
+            self.trigger.off('POD_timeout'),
+            self.trigger.off('POD_mandrake_in'),
+            self.trigger.off('POD_mandrake_in__false'),
+            self.trigger.off('POD_all_acquired'),
+            self.trigger.off('POD_MANDRAKE_ACQUIRE_have_remaining'),
+            self.trigger.off('POD_MANDRAKE_ACQUIRE_have_remaining__false'),
+            self.trigger.turn(self.END_TRIGGER),
+            ####
+            ####
+            self.get_chunk_triggers(),
+            '',
+        ]
+        return SINGLE_DIVIDER.join(content)
+
 
 class Misson05(ingame_mission.IngameMission):
     JINJA_TEMPLATE = 'missions/m05/m05.ini'
@@ -39,6 +366,15 @@ class Misson05(ingame_mission.IngameMission):
     STATIC_NPCSHIPS = NPCSHIPS
     SCRIPT_INDEX = 5
     DIRECT_SYSTEMS = [S.li_for, S.sig17]
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.scient_pods = ScientPods(self, direct=self.direct, trigger=self.trigger)
+
+    def get_initial_context(self) -> dict:
+        context = super().get_initial_context()
+        context['scient_pods'] = self.scient_pods
+        return context
 
     def get_save_states(self):
         return [
@@ -193,7 +529,10 @@ class Misson05(ingame_mission.IngameMission):
 
             NNObj(self, 'Уничтожьте рейнландские истребители', name='destroy_rheinland_fighters'),
 
+            NNObj(self, O.JUMPGATE, target='for_jump'),
+
             NNObj(self, O.DOCKRING, name='final_planet', target='vendor_planet'),
+
         ]
 
     def get_static_points(self):
@@ -205,9 +544,7 @@ class Misson05(ingame_mission.IngameMission):
                   labels=['smuggler']),
 
             Solar(self, S.sig17, 'research_base', ru_name='Исследовательская станция Кларк',
-                  archetype='d_depot', loadout='depot', labels=['deepspace']),
-
-
+                  archetype='d_depot_clean', loadout='depot', labels=['deepspace']),
         ])
 
         sig17_points = [
@@ -371,7 +708,7 @@ class Misson05(ingame_mission.IngameMission):
                 affiliation=faction.LibertyMain.CODE,
                 system_class=S.sig17,
                 labels=[
-                    'military',
+                    'li_military',
                     'friend',
                 ],
                 npc=NPC(
@@ -394,10 +731,11 @@ class Misson05(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.RheinlandMain,
                     ship=ship.Valkyrie,
-                    level=NPC.D8,
-                    equip_map=EqMap(base_level=5),
+                    level=NPC.D12,
+                    equip_map=EqMap(base_level=6, engine=5),
+                    animated_wings=False,
                     extra_equip=[
-                        'equip = cloak_fast, HpCloak01',
+                        'equip = cloak_fast, HpCloak01, 1',
                     ],
                 )
             ),

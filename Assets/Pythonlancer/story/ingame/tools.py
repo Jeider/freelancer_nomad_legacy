@@ -255,6 +255,9 @@ class Point(Target):
     def get_size(self):
         return self.marker.get_size()
 
+    def get_archetype(self):
+        return self.marker.get_archetype()
+
     def get_name(self):
         raise Exception('still not implemented. should create nagvec')
 
@@ -342,17 +345,20 @@ class DefinedStaticMixin:
 class Solar(DefinedStaticMixin, Point):
 
     def __init__(self, *args, ru_name, labels=None, base=None, archetype=None, loadout=None, faction=None,
-                 pilot=None, **kwargs):
+                 pilot=None, auto_archetype=False, **kwargs):
         self.ru_name = ru_name
         self.base = base
         self.labels = labels if labels else []
         self.archetype = archetype
+        self.auto_archetype = auto_archetype
         self.loadout = loadout
         self.faction = faction
         self.pilot = pilot
         super().__init__(*args, **kwargs)
         self.ids_name = self.mission.ids.new_name(self.ru_name)
         self.defined = False
+        if self.auto_archetype:
+            self.archetype = self.get_archetype()
 
     def get_name(self):
         return self.alias

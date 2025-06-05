@@ -246,6 +246,11 @@ class DynamicSystemObject(SystemObject):
     def get_size(self):
         return self.system.template.get_item_size(self.get_full_dynamic_alias())
 
+    def get_archetype(self):
+        return self.system.template.get_item_archetype(self.get_full_dynamic_alias())
+
+
+
 
 class NamedDynamicSystemObject(DynamicSystemObject):
     ABSTRACT = True

@@ -156,7 +156,7 @@ npc_class = {classes_list}'''
 
     def __init__(self, faction, ship, equip_map=None, level=None, name=None,
                  extra_equip=None, have_afterburn1=True, have_afterburn2=True, gen_armor=True,
-                 animated_wings=False):
+                 animated_wings=True):
         self.faction = faction
         self.ship = ship
         self.equip_map = equip_map
@@ -317,6 +317,6 @@ npc_class = {classes_list}'''
         )
         loadout = loadout_template.format(**self.get_loadout_template_params())
 
-        if len(self.extra_equip) > 1:
+        if len(self.extra_equip) > 0:
             loadout += SINGLE_DIVIDER + SINGLE_DIVIDER.join(self.extra_equip)
         return loadout

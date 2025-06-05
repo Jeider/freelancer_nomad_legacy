@@ -525,8 +525,8 @@ class Misson03(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.DeidrichPeople,
                     ship=ship.Valkyrie,
-                    level=NPC.D5,
-                    equip_map=EqMap(base_level=4),
+                    level=NPC.D12,
+                    equip_map=EqMap(base_level=5, engine=4),
                     extra_equip=[
                         'equip = attached_fx_connect01, HpRoot01',
                         'equip = attached_fx_connect02, HpRoot02',

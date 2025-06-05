@@ -24,6 +24,7 @@
 <test_voice name="0xACCD7804" type="file" filename="echo_m05_female\dx_m05_0540_trader.wav"/>
 <test_voice name="0xAC857A04" type="file" filename="echo_m05_female\dx_m05_0560_trader.wav"/>
 <test_voice name="0x8B3B6D88" type="file" filename="echo_m05_female\dx_m05_0600_hatcher.wav"/>
+<test_voice name="0x8BBF6882" type="file" filename="echo_m05_female\dx_m05_0605_hatcher.wav"/>
 <test_voice name="0x8A3B6D8C" type="file" filename="echo_m05_female\dx_m05_0700_hatcher.wav"/>
 <test_voice name="0x8E3E0F8C" type="file" filename="echo_m05_female\dx_m05_0750_hatcher.wav"/>
 <test_voice name="0xBE32F78C" type="file" filename="echo_m05_female\dx_m05_0790_hatcher.wav"/>

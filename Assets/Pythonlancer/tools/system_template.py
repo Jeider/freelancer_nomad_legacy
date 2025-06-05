@@ -18,9 +18,10 @@ POS = 'pos'
 ROTATE = 'rotate'
 SIZE = 'size'
 SHAPE = 'shape'
+ARCHETYPE = 'archetype'
 
 MULTI_INT_KEYS = (POS, ROTATE, SIZE)
-SCANNED_KEYS = (NICKNAME, POS, ROTATE, SIZE, SHAPE)
+SCANNED_KEYS = (NICKNAME, POS, ROTATE, SIZE, SHAPE, ARCHETYPE)
 
 MSN_SINGLE = 'msn_single'
 MSN_MULTIPLE = 'msn_multi'
@@ -64,6 +65,9 @@ class SystemTemplate(object):
 
     def get_item_shape(self, item_key):
         return self.items_db[item_key.lower()].lines[SHAPE]
+
+    def get_item_archetype(self, item_key):
+        return self.items_db[item_key.lower()].lines[ARCHETYPE]
 
     def get_single_mission_vignettes_positions(self):
         return [item.lines[POS] for item in self.items_db[MSN_SINGLE]]
