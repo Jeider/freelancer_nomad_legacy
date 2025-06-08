@@ -399,7 +399,7 @@ class Misson05(ingame_mission.IngameMission):
                 ]),
             ),
             TextDialog(
-                self, 'scient_pod', 'Уязвимые точки',
+                self, 'scient_pod', 'Спасение учёных',
                 ru_content=MultiText([
                     'Спасательные капусулы не успели активироваться!',
 

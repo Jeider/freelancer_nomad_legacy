@@ -1,6 +1,7 @@
 import sys
 import os
 from time import sleep
+import pathlib
 
 from text.dividers import DIVIDER, SINGLE_DIVIDER
 
@@ -117,16 +118,25 @@ def test_hacker_colors():
     x = hacker_panel.HackerPanelManager()
 
     x1 = x.get_random_hacker_panel()
-    x2 = x1.get_space_content('xenos_control_hack', 'or_grp', (-2000, 0, -9920), hacker_panel.REL_FRONT, 'xenos_success')
+    x2 = x1.get_space_content('sphere_depot_02_hacker', 'rh_grp', (-960, 17, 7000), hacker_panel.REL_TOP, 'sphere_success')
     print(x2)
     pass
 
 
 def dump_system():
-    system_template = SystemTemplateLoader.get_template('rh_biz')
+    system_template = SystemTemplateLoader.get_template('sphere')
     points = system_template.dump_points()
     for point in points:
         print(point)
+
+
+def dump_story_system():
+    current_path = pathlib.Path().resolve()
+    path = current_path.parent.parent / 'DATA' / 'UNIVERSE' / 'SPECIAL' / 'SPHERE'
+    system_template = SystemTemplateLoader.get_template('sphere_dev', source_path=path)
+    points = system_template.dump_points()
+    for point in points:
+        print(f"'{point}',")
 
 
 def build_image():
@@ -302,7 +312,6 @@ def generate_field():
     print(content)
 
 
-
 def generate_points():
     points = {
         'kernel2_ast1_in': '-7870, -538, -7906',
@@ -359,8 +368,6 @@ archetype = nav_buoy
     print(nav_combined)
 
 
-
-
 ACTIONS = {
     'generate_hacker_panels': generate_hacker_panels,
     'compile_audio': compile_audio,
@@ -377,6 +384,7 @@ ACTIONS = {
     'test_elevenlabs': test_elevenlabs,
     'test_lua': test_lua,
     'dump_system': dump_system,
+    'dump_story_system': dump_story_system,
     'compile_pilots_ini': compile_pilots_ini,
     'compile_pilots_audio': compile_pilots_audio,
     'generate_story_voices': generate_story_voices,

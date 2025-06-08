@@ -1,7 +1,8 @@
 from story import script
 from audio.sound import VoiceLine
 from story.actors import (
-    Trent, Hatcher, FinnRunner, Reitherman, DeltaOne, DeltaThree, SphereAssistant, SphereOutpost, SphereMissouri,
+    Trent, Hatcher, HatcherStation, FinnRunner, Reitherman, DeltaOne, DeltaThree,
+    SphereAssistant, SphereOutpost, SphereMissouri,
     Alaric, OrderPilot, Ceed
 )
 
@@ -14,9 +15,9 @@ class Msn6Space(Msn6, script.SpaceVoiceProps):
     VOICE_LINES = [
         VoiceLine(
             0,
-            Hatcher,
-            ru="Мистер Трент, я жду вас и вашего компаньона баре космопорта планеты Норидж, система Манхеттен. Хетчер.",
-            en="Mr. Trent, I'm waiting for you and your companion on Planet Norwich in the Manhattan System. Hatcher out.",
+            HatcherStation,
+            ru="Мистер Трент, я жду вас и вашего компаньона баре космопорта планеты Питтсбург, система Нью-Йорк.",
+            en="Mr. Trent, I'm waiting for you and your companion on Planet Pittsburg in the New-York System..",
         ),
         VoiceLine(
             10,
@@ -49,8 +50,14 @@ class Msn6Space(Msn6, script.SpaceVoiceProps):
             en="No, that device is still being tested. I'll drop a few containers for you, tractor them in and dock with Missouri.",
         ),
         VoiceLine(
+            55,
+            HatcherStation,
+            ru="Наши военные аналитики разработали стратегии выполнения задания. Эти стратегии уже загружены в ваши корабли. "
+               "Можете воспользоваться при необходимости.",
+        ),
+        VoiceLine(
             60,
-            Hatcher,
+            HatcherStation,
             ru="Удачи, джентльмены. Напоминаю, на территории Рейнланда никаких радиопереговоров со мной.",
             en="Best of luck, gentlemen. And remember – maintain radio silence with me once you've reached Rheinland.",
         ),
@@ -356,6 +363,6 @@ class Mission6(Msn6, script.StoryMission):
     MISSION_INDEX = 6
     CUTSCENES = []
     SPACE_CLASS = Msn6Space
-    SYNC_SPACE = False
+    SYNC_SPACE = True
 
     MISSION_TITLE = 'Миссия 6. Вход в Сферу'

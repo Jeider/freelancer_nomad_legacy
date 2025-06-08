@@ -217,6 +217,9 @@ class IngameMission(object):
             raise Exception(f'Solar group {group_name} not defined in {self.__class__.__name__}')
         return self.solar_groups[group_name]
 
+    def get_solar_group_names(self):
+        return self.solar_groups.keys()
+
 
 class NagVoice(object):
     DEFINITION = '''

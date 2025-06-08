@@ -866,6 +866,9 @@ class Ship(Target):
 
         return SINGLE_DIVIDER.join(actions)
 
+    def mark_member(self, index):
+        return f'Act_MarkObj = {self.get_member_name(index)}, 1'
+
     def mark_all(self, exclude=None):
         actions = []
         exclude = exclude or []
@@ -1605,6 +1608,14 @@ class Direct:
         for solar in group:
             actions.append(solar.define())
         return SINGLE_DIVIDER.join(actions)
+
+    def define_solar_groups(self):
+        actions = []
+        for group_name in self.mission.get_solar_group_names():
+            actions.append(
+                self.define_solar_group(group_name)
+            )
+        return DIVIDER.join(actions)
 
     def spawn_solar_group(self, group_name):
         group = self.mission.get_solar_group(group_name)

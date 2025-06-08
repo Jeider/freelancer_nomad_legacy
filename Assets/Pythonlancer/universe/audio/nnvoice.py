@@ -179,12 +179,16 @@ class NNVoice(PilotVoice):
         L('mod_xenos_exit_gas', 'Облако покинуто', RuleNNVoice),
 
         L('mod_hacker_color00', 'Максим+альное', RuleNNVoiceXFast),
-        L('mod_hacker_color01', 'Выс+окое', RuleNNVoiceXFast),
-        L('mod_hacker_color02', 'Пов+ышеное', RuleNNVoiceFast),
+        L('mod_hacker_color01', '+Очень выс+окое', RuleNNVoiceXFast),
+        L('mod_hacker_color02', 'Выс+окое', RuleNNVoiceFast),
         L('mod_hacker_color03', 'Среднее', RuleNNVoice),
-        L('mod_hacker_color04', 'Пон+иженое', RuleNNVoice),
-        L('mod_hacker_color05', 'Н+изкое', RuleNNVoice),
+        L('mod_hacker_color04', 'Н+изкое', RuleNNVoice),
+        L('mod_hacker_color05', '+Очень н+изкое', RuleNNVoice),
         L('mod_hacker_color06', 'Миним+альное', RuleNNVoice),
+
+        L('mod_cloak_patrol', 'Рядом патруль', RuleNNVoice),
+        L('mod_hacked_complete', 'Панель взломана', RuleNNVoice),
+        L('mod_door_hacked', 'Шлюз станции взломан и заблокирован', RuleNNVoice),
     ]
     # STEOS_ID = 549  # Atomic Heart, Filatova
     STEOS_ID = 219  # Witcher, Yennifer

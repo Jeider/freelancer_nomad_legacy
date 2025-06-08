@@ -321,6 +321,21 @@ cargo = {nickname}, {amount}'''
     PACKAGE_LIGHT_TEMPLATE = 'addon = {{small_light}}, HpRunningLight{light_id}, 1'
     PACKAGE_CONTRAIL_TEMPLATE = 'addon = player_contrail, HpContrail{contrail_id}, 1'
 
+    PACKAGE_BASE_TEMPLATE = '''[Good]
+nickname = {package_nickname}
+category = ship
+hull = {hull_nickname}
+addon = LargeWhiteSpecialPlayer, {hp_headlight}, 1
+addon = DockingLightRedSmall, HpDockLight01, 1
+addon = DockingLightRedSmall, HpDockLight02, 1
+addon = scanner01, internal, 1
+addon = tractor01, internal, 1
+addon = {shield}, {hp_shield}, 1
+addon = {engine}, HpDrive01, 1
+addon = {power}, HpPower01, 1'''
+
+    ADDITIONAL_EQUIP = ''
+
     def get_loadout_components(self, have_afterburn1=True, have_afterburn2=True, have_gen_armor=True,
                                animated_wings=True):
         components = []
@@ -382,19 +397,6 @@ cargo = {nickname}, {amount}'''
 
     def get_hull_nickname(self):
         return '{archetype}_hull'.format(archetype=self.ARCHETYPE)
-
-    PACKAGE_BASE_TEMPLATE = '''[Good]
-nickname = {package_nickname}
-category = ship
-hull = {hull_nickname}
-addon = LargeWhiteSpecialPlayer, {hp_headlight}, 1
-addon = DockingLightRedSmall, HpDockLight01, 1
-addon = DockingLightRedSmall, HpDockLight02, 1
-addon = scanner01, internal, 1
-addon = tractor01, internal, 1
-addon = {shield}, {hp_shield}, 1
-addon = {engine}, HpDrive01, 1
-addon = {power}, HpPower01, 1'''
 
     def get_package_extra_template(self):
         components = []
@@ -696,8 +698,6 @@ hit_pts = {hit_pts}
             'fuses': self.get_fuses(),
             'equipment': self.get_equipment_table(),
         }
-
-    ADDITIONAL_EQUIP = ''
 
     def get_infocard_values(self):
         return {

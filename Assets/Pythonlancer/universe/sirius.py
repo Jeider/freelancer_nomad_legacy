@@ -35,6 +35,7 @@ from universe.systems import or_hq as or_hq_content
 from universe.systems import rh_vien as rh_vien_content
 from universe.systems import xen as xen_content
 from universe.systems import co_cad as co_cad_content
+from universe.systems import sphere as sphere_content
 from universe.systems import sphere2 as sphere2_content
 from universe.systems import om13alt as om13_alt_content
 
@@ -609,6 +610,7 @@ class sphere(system.StorySystem, system.SiriusSystem):
     NAME = 'sphere'
     DIRECT_TEMPLATE_NAME = 'sphere_dev'
     RU_NAME = 'Сфера'
+    CONTENT = sphere_content
 
     ALLOW_SYNC = True
 
