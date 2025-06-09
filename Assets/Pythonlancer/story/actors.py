@@ -385,9 +385,9 @@ class SphereMissouri(Actor):
     TYPE = ACTOR_MALE
     NAME = 'captain'
     COMM_APPEARANCE = 'br_captain_head, li_male_elite_body'
-    STEOS_ID = 215
-    STEOS_PITCH = -0.5
-    STEOS_SPEED = 1.1
+    STEOS_ID = 218
+    STEOS_PITCH = 1
+    STEOS_SPEED = 1.2
 
 
 class Sigma8Outpost(Actor):
@@ -402,6 +402,7 @@ class SphereOutpost(Actor):
     TYPE = ACTOR_MALE
     NAME = 'outpost'
     COMM_APPEARANCE = 'rh_captain_head, rh_male_elite_body, prop_hat_male_rh_elite_visor'
+    STEOS_ID = 287
 
 
 class BrandenburgOutpost(Actor):
@@ -423,6 +424,9 @@ class DeltaOne(Actor):
     TYPE = ACTOR_MALE
     NAME = 'delta1'
     COMM_APPEARANCE = 'br_bartender_head, pi_pirate2_body'
+    STEOS_ID = 208
+    STEOS_PITCH = -1
+    STEOS_SPEED = 1.45
 
 
 class DeltaThree(Actor):
@@ -430,6 +434,9 @@ class DeltaThree(Actor):
     TYPE = ACTOR_MALE
     NAME = 'delta3'
     COMM_APPEARANCE = 'br_quigly_head, pi_pirate3_body'
+    STEOS_ID = 10090
+    STEOS_PITCH = 0.2
+    STEOS_SPEED = 1.1
 
 
 class Reitherman(Actor):
@@ -437,6 +444,9 @@ class Reitherman(Actor):
     TYPE = ACTOR_MALE
     NAME = 'professor'
     COMM_APPEARANCE = 'ge_male1_head, sc_scientist4_body, prop_neuralnet_D'
+    STEOS_ID = 214
+    STEOS_PITCH = -0.5
+    STEOS_SPEED = 1.1
 
 
 class FinnRunner(Actor):
@@ -444,6 +454,9 @@ class FinnRunner(Actor):
     TYPE = ACTOR_MALE
     NAME = 'runner'
     COMM_APPEARANCE = 'sh_male1_head, sc_scientist1_body, prop_hat_male_rh_grd_visor'
+    STEOS_ID = 218
+    STEOS_PITCH = 1
+    STEOS_SPEED = 1.2
 
 
 class Ceed(Actor):

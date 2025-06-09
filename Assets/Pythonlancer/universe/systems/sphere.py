@@ -95,7 +95,7 @@ class SphereOneDepotOne(SphereMember, main_objects.Station):
     INTERIOR_CLASS = interior.StoryDummyInterior
     STORY = True
     CALC_STORE = False
-    FACTION = faction.LibertyMain
+    FACTION = faction.RheinlandMain
     IS_BASE = False
 
 
@@ -107,5 +107,5 @@ class SphereOneDepotTwo(SphereMember, main_objects.Station):
     INTERIOR_CLASS = interior.StoryDummyInterior
     STORY = True
     CALC_STORE = False
-    FACTION = faction.LibertyMain
+    FACTION = faction.RheinlandMain
     IS_BASE = False

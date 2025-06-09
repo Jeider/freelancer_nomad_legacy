@@ -184,7 +184,7 @@ class Msn6Space(Msn6, script.SpaceVoiceProps):
         VoiceLine(
             310,
             SphereMissouri,
-            ru="Внимание, залп!",
+            ru="Внимание, канонерки сделали залп!",
             en="Ready, set... fire!",
         ),
         VoiceLine(
@@ -334,7 +334,7 @@ class Msn6Space(Msn6, script.SpaceVoiceProps):
         VoiceLine(
             1100,
             SphereOutpost,
-            ru="Патруль Омега-4, это станция Гамбург. Обнаружены неполадки на одном из телескопов. Осмотрите его, возможно разрядился генератор.",
+            ru="Патруль Омега-4, это станция Гамбург. Обнаружены неполадки на одном из телескопов. Осмотр+ите его, возможно разрядился генератор.",
             en="Omega-4 patrol, this is Hamburg station. We found issues on one of the telescopes. Take a look, maybe its battery is low. ",
         ),
         VoiceLine(
