@@ -187,7 +187,7 @@ class NNVoice(PilotVoice):
         L('mod_hacker_color06', 'Миним+альное', RuleNNVoice),
 
         L('mod_cloak_patrol', 'Рядом патруль', RuleNNVoice),
-        L('mod_hacked_complete', 'Панель взломана', RuleNNVoice),
+        L('mod_hacked_complete', 'Панэль взломана', RuleNNVoice),
         L('mod_door_hacked', 'Шлюз станции взломан и заблокирован', RuleNNVoice),
     ]
     # STEOS_ID = 549  # Atomic Heart, Filatova

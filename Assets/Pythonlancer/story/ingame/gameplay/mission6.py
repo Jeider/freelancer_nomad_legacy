@@ -21,16 +21,7 @@ from universe import faction
 
 NPCSHIPS = '''
 
-[NPCShipArch];TEST
-nickname = shiparch_reitherman
-loadout = ms6_csv_scient
-level = d20
-ship_archetype = ge_csv
-pilot = transport_easy
-state_graph = TRANSPORT
-npc_class = lawful
-
-[NPCShipArch];TEST
+[NPCShipArch]
 nickname = cloak_checker_shiparch
 loadout = cloak_checker_loadout
 level = d20
@@ -38,15 +29,6 @@ ship_archetype = cloak_checker
 pilot = transport_easy
 state_graph = TRANSPORT
 npc_class = lawful
-
-[NPCShipArch]
-nickname = ms6_runner_npc
-loadout = ms6_runner_loadout
-level = d20
-ship_archetype = rh_freighter
-pilot = mod_fighter_version_a
-state_graph = FIGHTER
-npc_class = lawful, FIGHTER
 
 [NPCShipArch]
 nickname = ms6_rh_gunship
@@ -111,6 +93,7 @@ class Misson06(ingame_mission.IngameMission):
             SaveState(self, 'first_tunnel', 'Сфера. После первого шлюза'),
             SaveState(self, 'nomad_zone', 'Сфера. Зона с Номадами'),
             SaveState(self, 'the_core', 'Ядро Сферы'),
+            SaveState(self, 'lab', 'Лаборатория'),
         ]
 
     def get_dialogs(self):
@@ -183,7 +166,7 @@ class Misson06(ingame_mission.IngameMission):
                 ru_content=MultiText([
                     'Чтобы взломать панель, вы должны уничтожить все блоки нужного цвета.',
                     'Стреляйте по разным блокам в поисках искомого цвета. Разные блоки выдают разные звуки, '
-                    'в зависимости от дальности до искомого цвета:',
+                    'в зависимости от дальности до искомого цвета: '
                     'Максимальное, Очень высокое, Высокое, Средне, Низкое, Очень низкое, Минимальное.',
                     'Найдите цвет, который будет обозначен как "максимальное" и уничтожьте все блоки с этим цветом.',
                 ]),
@@ -191,7 +174,10 @@ class Misson06(ingame_mission.IngameMission):
             TextDialog(
                 self, 'torpedo', 'Торпеды',
                 ru_content=MultiText([
-                    'Торпеды'  # fill
+                    'Вражеские корабли атакуют Миссури тяжелыми торпедами',
+                    'Вы должны уничтожить эти торпеды своими пушками. Можно так же использовать любые ракеты. '
+                    'В том числе и ракеты, сбивающие круиз. Торпеды могут об них сдетонировать.',
+                    'Не пытайтесь сбить торпеды своим щитом. Вы будете мгновенно уничтожены!'
                 ]),
             ),
         ]
@@ -398,8 +384,13 @@ class Misson06(ingame_mission.IngameMission):
 
         lab_solars = [
             Solar(
+                self, S.sphere, 'sphere_laboratory01', faction='rh_grp',
+                archetype='space_port_dmg', loadout='lab01_loadout_wo_shield',
+                ru_name='Лаборатория', base='sphere_99_base'
+            ),
+            Solar(
                 self, S.sphere, 'lab_shield01', faction='rh_grp',
-                archetype='space_shieldgen_destroyable', loadout='lab01_shielgen_turrets',
+                    archetype='space_shieldgen_destroyable', loadout='lab01_shielgen_turrets',
                 ru_name='Генератор щита', labels=['lab_shield'],
             ),
             Solar(
@@ -413,6 +404,11 @@ class Misson06(ingame_mission.IngameMission):
         self.add_solar_group('LAB', lab_solars)
 
         core_solars = [
+            Solar(self, S.sphere, 'sphere_depot_01', faction='rh_grp',
+                  ru_name='Блокпост', archetype='space_police01_front_dock', base='sphere_91_base'),
+            Solar(self, S.sphere, 'sphere_depot_02', faction='rh_grp',
+                  ru_name='Склад', archetype='space_police01', base='sphere_92_base'),
+
             Solar(self, S.sphere, 'sphere_depot_01_hacker_layer_1', ru_name='Взлом', archetype='m06_hacker_02_layer_01'),
             Solar(self, S.sphere, 'sphere_depot_01_hacker_layer_2', ru_name='Взлом', archetype='m06_hacker_02_layer_02'),
             Solar(self, S.sphere, 'sphere_depot_01_hacker_layer_3', ru_name='Взлом', archetype='m06_hacker_02_layer_03'),
@@ -513,6 +509,25 @@ class Misson06(ingame_mission.IngameMission):
             out_caps.append(the_cap)
 
         self.add_capital_group('ENTER_CAP', out_caps)
+
+        torp_gb = {
+            'npc_ship_arch': 'ms6_rh_gunship',
+            'faction': 'rh_grp',
+            'labels': ['torpedo'],
+            'ru_name': N.RH_GUNBOAT,
+        }
+
+        torp_caps = []
+
+        torp_gb_count = 3
+
+        for index in range(1, torp_gb_count+1):
+            cap = f'torpedo_gunboat_{index}'
+            the_cap = Capital(self, cap, **torp_gb)
+            caps.append(the_cap)
+            torp_caps.append(the_cap)
+
+        self.add_capital_group('TORP_GB', torp_caps)
 
         return caps
 
@@ -639,4 +654,192 @@ class Misson06(ingame_mission.IngameMission):
                     # TODO: Disable CMs
                 )
             ),
+            Ship(
+                self,
+                'lab_defend',
+                count=2,
+                labels=[
+                    'lab_ship',
+                ],
+                system_class=S.sphere,
+                slide_x=200,
+                affiliation=faction.RheinlandMain.CODE,
+                npc=NPC(
+                    faction=faction.RheinlandMain,
+                    ship=ship.Banshee,
+                    level=NPC.D8,
+                    equip_map=EqMap(base_level=4),
+                )
+            ),
+            Ship(
+                self,
+                'lab_reinforcement',
+                count=3,
+                labels=[
+                    'lab_ship',
+                ],
+                system_class=S.sphere,
+                slide_x=200,
+                affiliation=faction.RheinlandMain.CODE,
+                npc=NPC(
+                    faction=faction.RheinlandMain,
+                    ship=ship.Banshee,
+                    level=NPC.D8,
+                    equip_map=EqMap(base_level=4),
+                )
+            ),
+            Ship(
+                self,
+                'lab_patrol',
+                count=2,
+                labels=[
+                    'lab_patrol',
+                ],
+                affiliation=faction.RheinlandMain.CODE,
+                npc=NPC(
+                    faction=faction.RheinlandMain,
+                    ship=ship.Banshee,
+                    level=NPC.D8,
+                    equip_map=EqMap(base_level=4),
+                )
+            ),
+            Ship(
+                self,
+                'exit_sphere_li_fighter',
+                count=5,
+                labels=[
+                    'li_bg_fighter',
+                    'liberty',
+                    'background',
+                ],
+                system_class=S.sphere,
+                slide_x=300,
+                affiliation=faction.LibertyMain.CODE,
+                npc=NPC(
+                    faction=faction.LibertyMain,
+                    ship=ship.Defender,
+                    level=NPC.D8,
+                    equip_map=EqMap(base_level=4),
+                )
+            ),
+            Ship(
+                self,
+                'exit_sphere_rh_fighter',
+                count=5,
+                labels=[
+                    'rh_bg_fighter',
+                    'rheinland',
+                    'background',
+                ],
+                system_class=S.sphere,
+                slide_x=300,
+                affiliation=faction.RheinlandMain.CODE,
+                npc=NPC(
+                    faction=faction.RheinlandMain,
+                    ship=ship.Valkyrie,
+                    level=NPC.D8,
+                    equip_map=EqMap(base_level=4),
+                )
+            ),
+
+            Ship(
+                self,
+                'li_elite',
+                count=15,
+                labels=[
+                    'liberty',
+                ],
+                affiliation=faction.LibertyMain.CODE,
+                npc=NPC(
+                    faction=faction.LibertyMain,
+                    ship=ship.Defender,
+                    level=NPC.D8,
+                    equip_map=EqMap(base_level=4),
+                )
+            ),
+            Ship(
+                self,
+                'li_fighter',
+                count=5,
+                labels=[
+                    'liberty',
+                ],
+                affiliation=faction.LibertyMain.CODE,
+                npc=NPC(
+                    faction=faction.LibertyMain,
+                    ship=ship.Patriot,
+                    level=NPC.D8,
+                    equip_map=EqMap(base_level=4),
+                )
+            ),
+            Ship(
+                self,
+                'rh_elite',
+                count=15,
+                labels=[
+                    'rheinland',
+                    'defend_fight_enemy',
+                ],
+                affiliation=faction.RheinlandMain.CODE,
+                npc=NPC(
+                    faction=faction.RheinlandMain,
+                    ship=ship.Valkyrie,
+                    level=NPC.D8,
+                    equip_map=EqMap(base_level=4),
+                )
+            ),
+            Ship(
+                self,
+                'rh_fighter',
+                count=5,
+                labels=[
+                    'rheinland',
+                    'defend_fight_enemy',
+                ],
+                affiliation=faction.RheinlandMain.CODE,
+                npc=NPC(
+                    faction=faction.RheinlandMain,
+                    ship=ship.Banshee,
+                    level=NPC.D8,
+                    equip_map=EqMap(base_level=4),
+                )
+            ),
+            Ship(
+                self,
+                'rh_elite_reinforcement',
+                count=5,
+                labels=[
+                    'rheinland',
+                ],
+                relative_pos=True,
+                relative_range=1500,
+                affiliation=faction.RheinlandMain.CODE,
+                npc=NPC(
+                    faction=faction.RheinlandMain,
+                    ship=ship.Valkyrie,
+                    level=NPC.D8,
+                    equip_map=EqMap(base_level=4),
+                )
+            ),
+
+            Ship(
+                self,
+                'li_delta',
+                count=4,
+                labels=[
+                    'liberty',
+                ],
+                relative_pos=True,
+                relative_range=2000,
+                jumper=False,
+                base_name='Дельта',
+                affiliation=faction.LibertyMain.CODE,
+                npc=NPC(
+                    faction=faction.LibertyMain,
+                    ship=ship.Defender,
+                    level=NPC.D10,
+                    equip_map=EqMap(base_level=5),
+                )
+            ),
+
         ]

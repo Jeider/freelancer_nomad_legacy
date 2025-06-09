@@ -171,7 +171,7 @@ class Msn6Space(Msn6, script.SpaceVoiceProps):
         ),
         VoiceLine(
             240,
-            Hatcher,
+            HatcherStation,
             ru="Джентльмены, для успешного завершения миссии осталось совсем немного. Линкор Миссури уже рядом со Сферой. Стыкуйтесь быстрее!",
             en="Gentlemen, we're almost done with this mission. Battleship Missouri is approaching the Sphere. Proceed to dock, quickly!",
         ),
@@ -189,13 +189,13 @@ class Msn6Space(Msn6, script.SpaceVoiceProps):
         ),
         VoiceLine(
             320,
-            Hatcher,
+            HatcherStation,
             ru="Трент, Миссури не может совершить прыжок. Повреждены двигатели, требуется ремонт.",
             en="Trent, Missouri won't be able to jump. Its engines are damaged and need repairs.",
         ),
         VoiceLine(
             330,
-            Hatcher,
+            HatcherStation,
             ru="Здесь становится жарко. Вы с должны будете доставить артефакты на нашу базу в Сигма-17 сами. Я выделю вам для прикрытия звено Дельта.",
             en="It's getting hot here. You’ll have to deliver these artifacts to our base in Sigma-17 on your own. The Delta wing will escort you.",
         ),
@@ -207,7 +207,7 @@ class Msn6Space(Msn6, script.SpaceVoiceProps):
         ),
         VoiceLine(
             350,
-            Hatcher,
+            HatcherStation,
             ru="Спасибо, Трент. Поверьте, вам она понадобится не меньше.",
             en="Thanks Trent. Trust me, you'll need it more than I do.",
         ),

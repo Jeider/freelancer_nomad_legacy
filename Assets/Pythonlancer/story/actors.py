@@ -433,7 +433,7 @@ class DeltaThree(Actor):
 
 
 class Reitherman(Actor):
-    RU_NAME = 'Рейтерман'
+    RU_NAME = 'Роттерман'
     TYPE = ACTOR_MALE
     NAME = 'professor'
     COMM_APPEARANCE = 'ge_male1_head, sc_scientist4_body, prop_neuralnet_D'

@@ -75,18 +75,37 @@ file = Universe\SPECIAL\SPHERE\ROOM\dread_mnh_deck.ini
     SHIP_SET = markets.ShipSet('bh_elite')
 
 
-class SphereOneLab(SphereMember, main_objects.LibertyBattleship):
-    ALIAS = 'lab'
+class SphereOneLab(SphereMember, main_objects.Station):
+    ALIAS = 'sphere_laboratory0'
     INDEX = 1
     BASE_INDEX = 99
     REL = TOP
-    INTERIOR_CLASS = interior.BattleshipInterior
-    DEALERS = dealers.LibertyMilitaryDealers
+    INTERIOR_CLASS = interior.StoryDummyInterior
     STORY = True
     CALC_STORE = False
     FACTION = faction.LibertyMain
-    ROOM_SUBFOLDER = interior.ROOM_FOLDER_LI
-    WEAPON_FACTION = WEAPON_LI
-    EQUIP_FACTION = EQUIP_LI
-    # ASF set?
-    SHIP_SET = markets.ShipSet('bh_elite')
+    IS_BASE = False
+
+
+class SphereOneDepotOne(SphereMember, main_objects.Station):
+    ALIAS = 'sphere_depot_0'
+    INDEX = 1
+    BASE_INDEX = 91
+    REL = TOP
+    INTERIOR_CLASS = interior.StoryDummyInterior
+    STORY = True
+    CALC_STORE = False
+    FACTION = faction.LibertyMain
+    IS_BASE = False
+
+
+class SphereOneDepotTwo(SphereMember, main_objects.Station):
+    ALIAS = 'sphere_depot_0'
+    INDEX = 2
+    BASE_INDEX = 92
+    REL = TOP
+    INTERIOR_CLASS = interior.StoryDummyInterior
+    STORY = True
+    CALC_STORE = False
+    FACTION = faction.LibertyMain
+    IS_BASE = False

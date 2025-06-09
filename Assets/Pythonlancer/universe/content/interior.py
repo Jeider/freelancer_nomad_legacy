@@ -305,6 +305,17 @@ class CustomFileInterior(Interior):
         return self.HAVE_SHIPDEALER
 
 
+class StoryDummyInterior(CustomFileInterior):
+    CUSTOM_INTERIOR_FILE = True
+    HAVE_BAR = False
+    HAVE_EQUIP = False
+    HAVE_TRADER = False
+    HAVE_SHIPDEALER = False
+
+    def get_mbase(self):
+        return ''
+
+
 class CustomFullSingleRoomInterior(CustomFileInterior):
     CUSTOM_INTERIOR_FILE = True
     HAVE_BAR = True
