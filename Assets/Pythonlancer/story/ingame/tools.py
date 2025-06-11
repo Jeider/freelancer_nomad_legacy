@@ -920,7 +920,7 @@ class Ship(Target):
             ))
         return SINGLE_DIVIDER.join(actions)
 
-    def destroy_member(self, member_index, destroy_mode):
+    def destroy_member(self, member_index, destroy_mode=EXPLODE):
         if destroy_mode not in DESTROY_MODES:
             raise Exception('Unknown destroy kind %s' % destroy_mode)
         return f'Act_Destroy = {self.get_member_name(member_index)}, {destroy_mode}'

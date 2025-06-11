@@ -36,6 +36,7 @@ from universe.systems import rh_vien as rh_vien_content
 from universe.systems import xen as xen_content
 from universe.systems import co_cad as co_cad_content
 from universe.systems import sphere as sphere_content
+from universe.systems import tau44 as tau44_content
 from universe.systems import sphere2 as sphere2_content
 from universe.systems import om13alt as om13_alt_content
 
@@ -615,6 +616,62 @@ class sphere(system.StorySystem, system.SiriusSystem):
     ALLOW_SYNC = True
 
     SYSTEM_FOLDER = 'SPHERE'
+    NAVMAP_POS = '14, -1'
+
+
+class m8_tau44(system.StorySystem, system.SiriusSystem):
+    NAME = 'm8_tau44'
+    DIRECT_TEMPLATE_NAME = 'm8_tau44_dev'
+    RU_NAME = 'Тау-44'
+    CONTENT = tau44_content
+
+    ALLOW_SYNC = True
+
+    SYSTEM_FOLDER = 'MSN8_TAU44'
+    NAVMAP_POS = '14, -1'
+
+
+class m8_lair_enter(system.StorySystem, system.SiriusSystem):
+    NAME = 'm8_lair_enter'
+    DIRECT_TEMPLATE_NAME = 'm8_lair_enter_dev'
+    RU_NAME = 'Тау-44 Вход в логово'
+
+    ALLOW_SYNC = True
+
+    SYSTEM_FOLDER = 'MSN8_LAIR_ENTER'
+    NAVMAP_POS = '14, -1'
+
+
+class m8_lair_core(system.StorySystem, system.SiriusSystem):
+    NAME = 'm8_lair_core'
+    DIRECT_TEMPLATE_NAME = 'm8_lair_core_dev'
+    RU_NAME = 'Тау-44 Ядро'
+
+    ALLOW_SYNC = True
+
+    SYSTEM_FOLDER = 'MSN8_LAIR_CORE'
+    NAVMAP_POS = '14, -1'
+
+
+class m8_lair_escape(system.StorySystem, system.SiriusSystem):
+    NAME = 'm8_lair_escape'
+    DIRECT_TEMPLATE_NAME = 'm8_lair_escape_dev'
+    RU_NAME = 'Тау-44 Побег'
+
+    ALLOW_SYNC = True
+
+    SYSTEM_FOLDER = 'MSN8_LAIR_ESCAPE'
+    NAVMAP_POS = '14, -1'
+
+
+class m8_asf_hq(system.StorySystem, system.SiriusSystem):
+    NAME = 'm8_asf_hq'
+    DIRECT_TEMPLATE_NAME = 'm8_asf_hq_dev'
+    RU_NAME = 'Энтерпрайз'
+
+    ALLOW_SYNC = True
+
+    SYSTEM_FOLDER = 'MSN8_ASF_HQ'
     NAVMAP_POS = '14, -1'
 
 

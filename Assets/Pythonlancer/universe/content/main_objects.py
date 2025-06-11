@@ -758,7 +758,7 @@ file = {file_location}.ini
 BGCS_base_run_by = W02bF44'''
 
     INTERIOR_LOCATION_GENERATED_TEMPLATE = 'Universe\\{interiors_folder}\\{interior_file_name}'
-    INTERIOR_LOCATION_CUSTOM_TEMPLATE = 'Universe\\Systems_MOD\\{system_folder}\\{interior_file_name}'
+    INTERIOR_LOCATION_CUSTOM_TEMPLATE = 'Universe\\{system_root}\\{system_folder}\\{interior_file_name}'
 
     AUDIO_PREFIX = None
     SPACE_VOICE = None
@@ -834,6 +834,7 @@ BGCS_base_run_by = W02bF44'''
     def get_interior_definition(self):
         file_location = (
             self.INTERIOR_LOCATION_CUSTOM_TEMPLATE.format(
+                system_root=self.system.SYSTEMS_ROOT,
                 system_folder=self.system.SYSTEM_FOLDER,
                 interior_file_name=self.get_base_nickname(),
             )

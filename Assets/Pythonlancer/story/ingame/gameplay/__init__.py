@@ -6,6 +6,7 @@ from .mission4 import Misson04
 from .mission5 import Misson05
 from .mission6 import Misson06
 from .mission7 import Misson07
+from .mission8 import Misson08
 from .mission9 import Misson09
 from .mission10 import Misson10
 from .mission11 import Misson11

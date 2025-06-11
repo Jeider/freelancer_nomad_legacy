@@ -12,6 +12,7 @@ class Msn8Space(Msn8, script.SpaceVoiceProps):
         VoiceLine(0, Darcy,
                   ru='Привет, Трент! По поводу твоей просьбы... Встретимся на планете Уорик, все подробности на месте. До встречи.'),
         VoiceLine(10, Darcy, ru='Трент, координаты линкора загружены в твою нейросеть. Давай быстрее.'),
+        VoiceLine(15, Darcy, ru='После стыковки сразу готовь свой корабль к операции. Вылетай по готовности'),
 
         VoiceLine(7010, Brighton,
                   ru='В ваше задание внесены небольшие коррективы. Пришли новые данные от нашей разведки.'),
@@ -178,7 +179,7 @@ class Msn8Space(Msn8, script.SpaceVoiceProps):
         VoiceLine(5000, Darcy, ru='Сейчас тут всё нахрен взорвётся! Трент, шевелись! Не отставай!'),
         VoiceLine(5010, Darcy, ru='Черт! Проход закрыт! Трент, гляди! Слева еще тоннель! Летим туда!'),
         VoiceLine(5020, Darcy, ru='Осторожно, Трент, тут эти вертящиеся мельницы.'),
-        VoiceLine(5030, Darcy, ru='Че за нафиг! Впереди двойная мельница!'),
+        VoiceLine(5030, Darcy, ru='Чё за нафиг! Впереди двойная мельница!'),
     ]
 
 
@@ -186,6 +187,6 @@ class Mission8(Msn8, script.StoryMission):
     MISSION_INDEX = 8
     CUTSCENES = []
     SPACE_CLASS = Msn8Space
-    SYNC_SPACE = False
+    SYNC_SPACE = True
 
     MISSION_TITLE = 'Миссия 8. Эксперт по Кочевникам'

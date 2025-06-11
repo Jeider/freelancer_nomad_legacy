@@ -189,13 +189,13 @@ class Misson06(ingame_mission.IngameMission):
 
     def get_nn_objectives(self):
         return [
-            NNObj(self, 'Встретьтесь с Хечтер в баре планеты Форбс', name='00_meet_vendor', target='vendor_planet'),
+            NNObj(self, 'Встретьтесь с Хечтер в баре планеты Питтсбург', name='00_meet_vendor', target='vendor_planet'),
             NNObj(self, O.LAUNCH, name='00_launch_to_space'),
             NNObj(self, 'Направляйтесь к Миссури', name='01_goto_dread', target='dread_mnh1'),
             NNObj(self, 'Подберите указанное устройство', name='02_pick_up_cloaking_device'),
             NNObj(self, 'Установите устройство невидимости и взлетите', name='03_mount_cloaking_device_and_launch'),
-            NNObj(self, O.GOTO, name='04_road_to_station', target='04_road_to_station'),
-            NNObj(self, O.GOTO, name='04_road_to_station02', target='04_road_to_station02'),
+            NNObj(self, O.GOTO, name='04_road_to_station', target='04_road_to_station', nag=False),
+            NNObj(self, O.GOTO, name='04_road_to_station02', target='04_road_to_station02', nag=False),
 
             NNObj(self, O.GOTO, name='T_goto_telescope01',
                   target='telescope01', nag=False),
@@ -215,11 +215,11 @@ class Misson06(ingame_mission.IngameMission):
 
             NNObj(self, 'Направляйтесь к следующему шлюзу', name='08_goto_second_tunnel', target='08_goto_second_tunnel'),
 
-            NNObj(self, O.GOTO, name='08_goto_second_tunnel_wp01', target='08_goto_second_tunnel_wp01'),
-            NNObj(self, O.GOTO, name='08_goto_second_tunnel_wp02', target='08_goto_second_tunnel_wp02'),
-            NNObj(self, O.GOTO, name='08_goto_second_tunnel_wp03', target='08_goto_second_tunnel_wp03'),
-            NNObj(self, O.GOTO, name='08_goto_second_tunnel_wp04', target='08_goto_second_tunnel_wp04'),
-            NNObj(self, O.GOTO, name='08_goto_second_tunnel_wp05', target='08_goto_second_tunnel_wp05'),
+            NNObj(self, O.GOTO, name='08_goto_second_tunnel_wp01', target='08_goto_second_tunnel_wp01', nag=False),
+            NNObj(self, O.GOTO, name='08_goto_second_tunnel_wp02', target='08_goto_second_tunnel_wp02', nag=False),
+            NNObj(self, O.GOTO, name='08_goto_second_tunnel_wp03', target='08_goto_second_tunnel_wp03', nag=False),
+            NNObj(self, O.GOTO, name='08_goto_second_tunnel_wp04', target='08_goto_second_tunnel_wp04', nag=False),
+            NNObj(self, O.GOTO, name='08_goto_second_tunnel_wp05', target='08_goto_second_tunnel_wp05', nag=False),
 
             NNObj(self, 'Пролетите через второй шлюз', name='09_enter_the_second_tunnel', target='09_enter_the_second_tunnel'),
             NNObj(self, 'Направляйтесь к шлюзу', name='09_enter_the_second_tunnel_wp01', target='09_enter_the_second_tunnel_wp01'),
