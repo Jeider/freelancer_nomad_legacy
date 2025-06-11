@@ -164,7 +164,6 @@ class Misson07(ingame_mission.IngameMission):
             NNObj(self, O.JUMPGATE, name='jump_omicron2', target='cad_to_omicron2'),
             NNObj(self, O.GOTO, name='goto_near_tortuga', target='to_tortuga_road'),
             NNObj(self, 'Подберите бомбы', name='pick_up_bombs'),
-            NNObj(self, O.GOTO, name='goto_near_tortuga', target='to_tortuga_road'),
             NNObj(self, 'Доберитесь до коммуникатора',
                   name='goto_communicator', target='communicator', towards=True),
             NNObj(self, 'Уничтожьте ядро коммуникатора, сбросив бомбы и сдетонировав их',

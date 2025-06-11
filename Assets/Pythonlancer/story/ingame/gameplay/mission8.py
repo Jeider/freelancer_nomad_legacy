@@ -50,6 +50,7 @@ class Misson08(ingame_mission.IngameMission):
     STATIC_NPCSHIPS = NPCSHIPS
     SCRIPT_INDEX = 8
     DIRECT_SYSTEMS = [S.br_avl, S.m8_tau44, S.m8_lair_enter, S.m8_lair_core, S.m8_lair_escape]
+    RTC = ['queen_rtc']
 
     def get_save_states(self):
         return [
@@ -87,20 +88,60 @@ class Misson08(ingame_mission.IngameMission):
             NNObj(self, O.GOTO, target='explore_area_waypoint3', reach_range=1000),
             NNObj(self, O.GOTO, target='explore_area_waypoint4', reach_range=600),
             NNObj(self, O.GOTO, target='explore_area_waypoint5', reach_range=1000),
-            NNObj(self, O.GOTO, target='explore_area_waypoint6', reach_range=1000),
+            NNObj(self, O.GOTO, target='explore_area_waypoint6', reach_range=1500),
 
             NNObj(self, 'Уничтожьте вражеские истребители', name='destroy_entry_liberty'),
 
             NNObj(self, O.GOTO, target='enter_the_lair_wp1'),
             NNObj(self, O.GOTO, target='enter_the_lair_wp2'),
 
-            NNObj(self, 'Уничтожьте перегородку шлюза', name='dock_wales', target='locked_door', nag=False),
+            NNObj(self, O.GOTO, target='enter_wp1', reach_range=200),
+            NNObj(self, O.GOTO, target='enter_wp2', reach_range=200),
+            NNObj(self, O.GOTO, target='enter_wp3', reach_range=200),
+            NNObj(self, O.GOTO, target='enter_wp4', reach_range=200),
+            NNObj(self, O.GOTO, target='enter_wp5', reach_range=200),
+            NNObj(self, O.GOTO, target='enter_wp6', reach_range=200),
+            NNObj(self, O.GOTO, target='enter_wp7', reach_range=200),
+            NNObj(self, O.GOTO, target='enter_wp8', reach_range=200),
+            NNObj(self, O.GOTO, target='enter_wp9', reach_range=200),
+
+            NNObj(self, 'Уничтожьте перегородку шлюза', name='destroy_door', target='locked_door', nag=False),
+
+            NNObj(self, O.GOTO, target='core_wp1', reach_range=200),
+            NNObj(self, O.GOTO, target='core_wp2', reach_range=200),
+            NNObj(self, O.GOTO, target='core_wp3', reach_range=200),
+            NNObj(self, O.GOTO, target='core_escape_wp1', reach_range=200),
+            NNObj(self, O.GOTO, target='core_escape_wp2', reach_range=200),
+
+            NNObj(self, O.GOTO, target='escape_start1', reach_range=300),
+            NNObj(self, O.GOTO, target='escape_start2', reach_range=300),
+            NNObj(self, O.GOTO, target='escape_start3', reach_range=300),
+            NNObj(self, O.GOTO, target='escape_start4', reach_range=300),
+            NNObj(self, O.GOTO, target='escape_start5', reach_range=300),
+            NNObj(self, O.GOTO, target='escape_start6', reach_range=300),
+            NNObj(self, O.GOTO, target='escape_start7', reach_range=300),
+            NNObj(self, O.GOTO, target='escape_start8', reach_range=300),
+
+            NNObj(self, O.GOTO, target='escape_left_door', reach_range=300),
+            NNObj(self, 'Пролетите туннель', name='escape_left_tunnel'),
+
+            NNObj(self, O.GOTO, target='escape_middle1', reach_range=300),
+            NNObj(self, O.GOTO, target='escape_middle2', reach_range=300),
+            NNObj(self, O.GOTO, target='escape_middle3', reach_range=300),
+            NNObj(self, O.GOTO, target='escape_middle4', reach_range=300),
+            NNObj(self, O.GOTO, target='escape_middle5', reach_range=300),
+            NNObj(self, O.GOTO, target='escape_end1', reach_range=300),
+            NNObj(self, O.GOTO, target='escape_end2', reach_range=300),
+            NNObj(self, O.GOTO, target='escape_end3', reach_range=300),
+            NNObj(self, O.GOTO, target='escape_end4', reach_range=300),
+            NNObj(self, O.GOTO, target='escape_end5', reach_range=300),
+            NNObj(self, O.GOTO, target='escape_end6', reach_range=300),
+            NNObj(self, O.GOTO, target='escape_end7', reach_range=300),
 
             NNObj(self, 'Вступите в битву', name='enter_battle'),
             NNObj(self, 'Уничтожьте энергетические стойки', name='destroy_columns'),
 
             NNObj(self, O.GOTO, target='leave_lair_zone'),
-
         ]
 
     def get_static_points(self):
@@ -110,17 +151,17 @@ class Misson08(ingame_mission.IngameMission):
             DockableBattleshipSolar(
                 self, S.br_avl, 'price_wales_avalon', faction='br_grp',
                 archetype='b_battleship', loadout='br_battleship_station',
-                ru_name='Линкор Принц Уэльский', base='tau44_99_base'
+                ru_name='Линкор Принц Уэльский', base='m8_tau44_99_base'
             ),
             DockableBattleshipSolar(
                 self, S.m8_tau44, 'price_wales_start', faction='br_grp',
                 archetype='b_battleship', loadout='br_battleship_station',
-                ru_name='Линкор Принц Уэльский', base='tau44_99_base'
+                ru_name='Линкор Принц Уэльский', base='m8_tau44_99_base'
             ),
             DockableBattleshipSolar(
                 self, S.m8_tau44, 'price_wales_battle', faction='br_grp',
                 archetype='b_battleship_fuseable', loadout='br_battleship_station',
-                ru_name='Линкор Принц Уэльский', base='tau44_99_base',
+                ru_name='Линкор Принц Уэльский', base='m8_tau44_99_base',
                 labels=['bretonia'],
             ),
             Solar(
@@ -144,15 +185,50 @@ class Misson08(ingame_mission.IngameMission):
         ]
 
         tau44_entry_points = [
-            # '04_road_to_station',
+            'enter_wp1',
+            'enter_wp2',
+            'enter_wp3',
+            'enter_wp4',
+            'enter_wp5',
+            'enter_wp6',
+            'enter_wp7',
+            'enter_wp8',
+            'enter_wp9',
         ]
 
         tau44_core_points = [
-            # '04_road_to_station',
+            'core_wp1',
+            'core_wp2',
+            'core_wp3',
+            'core_escape_wp1',
+            'core_escape_wp2',
         ]
 
         tau44_escape_points = [
-            # '04_road_to_station',
+            'escape_start1',
+            'escape_start2',
+            'escape_start3',
+            'escape_start4',
+            'escape_start5',
+            'escape_start6',
+            'escape_start7',
+            'escape_start8',
+
+            'escape_left_door',
+
+            'escape_middle1',
+            'escape_middle2',
+            'escape_middle3',
+            'escape_middle4',
+            'escape_middle5',
+
+            'escape_end1',
+            'escape_end2',
+            'escape_end3',
+            'escape_end4',
+            'escape_end5',
+            'escape_end6',
+            'escape_end7',
         ]
 
         for p in tau44_points:
@@ -183,12 +259,14 @@ class Misson08(ingame_mission.IngameMission):
             'faction': 'fc_uk_grp',
             'labels': ['li_core'],
             'ru_name': N.LI_CRUISER,
+            'radius': 0,
         }
         li_cruiser = {
             'npc_ship_arch': 'ms8_li_cruiser',
             'faction': 'fc_uk_grp',
             'labels': ['li_core'],
             'ru_name': N.LI_CRUISER,
+            'radius': 0,
         }
 
         caps = []
@@ -227,6 +305,7 @@ class Misson08(ingame_mission.IngameMission):
                 labels=[
                     'friend',
                 ],
+                radius=0,
                 npc=NPC(
                     faction=faction.BretoniaMain,
                     ship=ship.Cavalier,
@@ -253,16 +332,19 @@ class Misson08(ingame_mission.IngameMission):
             Ship(
                 self,
                 'enter_fighter',
-                count=5,
+                # count=5,
+                count=2,
                 labels=[
                     'li_enter',
                 ],
                 system_class=S.m8_tau44,
-                slide_x=100,
+                slide_x=-100,
+                radius=0,
+                affiliation=faction.LibertyMain.CODE,
                 npc=NPC(
                     faction=faction.LibertyMain,
                     ship=ship.Defender,
-                    level=NPC.D10,
+                    level=NPC.D8,
                     equip_map=EqMap(base_level=5),
                 )
             ),
@@ -273,6 +355,7 @@ class Misson08(ingame_mission.IngameMission):
                 labels=[
                     'li_core',
                 ],
+                radius=0,
                 npc=NPC(
                     faction=faction.LibertyMain,
                     ship=ship.Defender,

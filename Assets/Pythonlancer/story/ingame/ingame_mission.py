@@ -147,7 +147,16 @@ class IngameMission(object):
         return []
 
     def get_nn_objectives_context(self):
-        return {nn.get_name(): nn for nn in self.nn_objectives}
+        objectives = {}
+        keys = []
+        for nn in self.nn_objectives:
+            name = nn.get_name()
+            if name in keys:
+                raise Exception(f'{name} already defined as nnobjective')
+            keys.append(name)
+            objectives[nn.get_name()] = nn
+
+        return objectives
 
     def get_all_nn_objectives_content(self):
         return DIVIDER.join([nn.get_definition() for nn in self.nn_objectives])
