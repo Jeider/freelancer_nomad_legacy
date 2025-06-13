@@ -1,4 +1,4 @@
-duration=1 --37.6
+duration=37.6
 
 readfrom('thn_settings.txt')
 

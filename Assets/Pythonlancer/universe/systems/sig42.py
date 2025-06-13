@@ -480,3 +480,23 @@ class Sig42TekagiJumphole(Sig42Member, main_objects.Jumphole):
     LOCKED_DOCK = True
 
     LOADOUT = JumpholeEffect.LIGHT
+
+
+class AfterLairOsiris(Sig42Member, main_objects.LibertyBattleship):
+    ALIAS = 'lair_osiris'
+    INDEX = 1
+    BASE_INDEX = 99
+    REL = TOP
+    INTERIOR_CLASS = interior.OsirisInterior
+    DEALERS = dealers.LibertyMilitaryDealers
+    STORY = True
+    CALC_STORE = False
+    IS_BASE = False
+    AUTOSAVE_FORBIDDEN = True
+    FACTION = faction.LibertyMain
+    ROOM_SUBFOLDER = interior.ROOM_FOLDER_LI
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_FACTION = EQUIP_LI
+    # ASF set?
+    SHIP_SET = markets.ShipSet('li_elite')
+

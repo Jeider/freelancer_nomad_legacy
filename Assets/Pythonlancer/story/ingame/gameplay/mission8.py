@@ -1,7 +1,7 @@
 import random
 
 from universe import sirius as S
-from universe.systems import br_avl
+from universe.systems import br_avl, sig42
 from story.ingame import ingame_mission
 from story.math import euler_to_quat
 from story import actors
@@ -49,7 +49,7 @@ class Misson08(ingame_mission.IngameMission):
     START_SAVE_ID = 32800
     STATIC_NPCSHIPS = NPCSHIPS
     SCRIPT_INDEX = 8
-    DIRECT_SYSTEMS = [S.br_avl, S.m8_tau44, S.m8_lair_enter, S.m8_lair_core, S.m8_lair_escape]
+    DIRECT_SYSTEMS = [S.br_avl, S.m8_tau44, S.m8_lair_enter, S.m8_lair_core, S.m8_lair_escape, S.m8_asf_hq, S.sig42]
     RTC = ['queen_rtc']
 
     def get_save_states(self):
@@ -60,17 +60,30 @@ class Misson08(ingame_mission.IngameMission):
     def get_dialogs(self):
         return [
             TextDialog(
-                self, 'mount', 'Установка устройства невидимости',
+                self, 'launch', 'Линкор уже на месте',
                 ru_content=MultiText([
-                    'Хетчер выдала вам устройство невидимости. Вы должны установить его на место вашей контрмеры',
-
-                    'Если вы вылетите без установленного устройства невидимости, то миссия будет проиграна.',
+                    'Линкор уже прибыл на место задания. Вы можете подготовить свой корабль и вылетать по готовности.',
                 ]),
             ),
+            TextDialog(
+                self, 'columns', 'Энергетические колонны',
+                ru_content=MultiText([
+                    'Атакуйте энергетические колонны. Они расположены по экватору логова Кочевников.',
+                ]),
+            ),
+            TextDialog(
+                self, 'complete', 'Миссия завершена',
+                ru_content=MultiText([
+                    'Артефакт успешно передан на научную станцию. Миссия закончена. Ожидайте сообщений от Хетчер.',
+                ]),
+            ),
+
+
         ]
     def get_real_objects(self):
         return {
             'vendor_planet': Obj(self, br_avl.AvalDockring),
+            'final_planet': Obj(self, sig42.Sig42Dockring),
         }
 
     def get_nn_objectives(self):
@@ -142,6 +155,10 @@ class Misson08(ingame_mission.IngameMission):
             NNObj(self, 'Уничтожьте энергетические стойки', name='destroy_columns'),
 
             NNObj(self, O.GOTO, target='leave_lair_zone'),
+
+            NNObj(self, 'Следуйте за Хетчер', name='follow_hatcher'),
+            NNObj(self, O.GOTO, name='goto_final_planet', target='final_planet', towards=True),
+            NNObj(self, 'Сядьте на планету Спрага', name='dock_final_planet', target='final_planet'),
         ]
 
     def get_static_points(self):
@@ -158,10 +175,10 @@ class Misson08(ingame_mission.IngameMission):
                 archetype='b_battleship', loadout='br_battleship_station',
                 ru_name='Линкор Принц Уэльский', base='m8_tau44_99_base'
             ),
-            DockableBattleshipSolar(
+            Solar(
                 self, S.m8_tau44, 'price_wales_battle', faction='br_grp',
                 archetype='b_battleship_fuseable', loadout='br_battleship_station',
-                ru_name='Линкор Принц Уэльский', base='m8_tau44_99_base',
+                ru_name='Линкор Принц Уэльский',
                 labels=['bretonia'],
             ),
             Solar(
@@ -169,6 +186,15 @@ class Misson08(ingame_mission.IngameMission):
                 ru_name='Перегородка шлюза'
             ),
         ]
+        detonators = 12
+        for i in range(1, detonators+1):
+            main_group.append(
+                Solar(
+                    self, S.m8_tau44, f'kernel_launcher{i:02d}', archetype='kernel_launcher',
+                    ru_name='Детонатор', loadout='lair_kernel_launcher'
+                ),
+            )
+
         defined_points.extend(main_group)
         self.add_solar_group('SOLAR_MAIN', main_group)
 
@@ -251,6 +277,55 @@ class Misson08(ingame_mission.IngameMission):
                 Point(self, S.m8_lair_escape, p)
             )
 
+        columns = [
+            'outer_column01',
+            'outer_column02',
+            'outer_column03',
+            'outer_column04',
+            'outer_column05',
+            'outer_column06',
+            'outer_column07',
+            'outer_column08',
+        ]
+
+        cols = []
+        for column in columns:
+            cols.append(
+                Solar(self, S.m8_tau44, column, ru_name='Энергопоток',
+                      archetype='lair_energy_column', labels=['outer_energy_column'])
+            )
+
+        defined_points.extend(cols)
+        self.add_solar_group('COLUMNS', cols)
+
+        fort_arch = {'archetype': 'rmbase_shipyard', 'loadout': 'rmbase_shipyard_m13'}
+
+        hq_group = [
+            Solar(self, S.m8_asf_hq, 'fort_bush',  ru_name='Форт Буш', **fort_arch),
+            Solar(self, S.m8_asf_hq, 'fort1',  ru_name='Форт Джефферсон', **fort_arch),
+            Solar(self, S.m8_asf_hq, 'fort2',  ru_name='Форт Аламо', **fort_arch),
+            Solar(self, S.m8_asf_hq, 'fort3',  ru_name='Форт Стармер', **fort_arch),
+            Solar(self, S.m8_asf_hq, 'fort4',  ru_name='Форт Росс', **fort_arch),
+            Solar(self, S.m8_asf_hq, 'fort5',  ru_name='Форт Нокс', **fort_arch),
+            DockableBattleshipSolar(
+                self, S.m8_asf_hq, 'osiris1', faction='asf_grp',
+                archetype='o_osiris', loadout='li_battleship_02',
+                ru_name='Линкор Осирис', base='sig42_99_base',
+                labels=['friend', 'asf', 'osiris']),
+            Solar(
+                self, S.m8_asf_hq, 'dread1', faction='asf_grp',
+                archetype='l_dreadnought', loadout='li_dreadnought_03',
+                ru_name='Линкор Миссисипи',
+                labels=['friend', 'asf', 'osiris']),
+            DockableBattleshipSolar(
+                self, S.sig42, 'lair_osiris1', faction='asf_grp',
+                archetype='o_osiris', loadout='li_battleship_02',
+                ru_name='Линкор Осирис', base='sig42_99_base',
+                labels=['friend', 'asf', 'osiris']),
+        ]
+        defined_points.extend(hq_group)
+        self.add_solar_group('ASF_HQ', hq_group)
+
         return defined_points
 
     def get_capital_ships(self):
@@ -264,7 +339,7 @@ class Misson08(ingame_mission.IngameMission):
         li_cruiser = {
             'npc_ship_arch': 'ms8_li_cruiser',
             'faction': 'fc_uk_grp',
-            'labels': ['li_core'],
+            'labels': ['liberty'],
             'ru_name': N.LI_CRUISER,
             'radius': 0,
         }
@@ -283,10 +358,10 @@ class Misson08(ingame_mission.IngameMission):
         self.add_capital_group('CORE_CAP', core_caps)
 
         outer_caps = []
-        outer_caps_count = 3
+        outer_caps_count = 2
 
         for index in range(1, outer_caps_count+1):
-            cap = f'li_cruiser{index}'
+            cap = f'out_cruiser{index}'
             the_cap = Capital(self, cap, **li_cruiser)
             caps.append(the_cap)
             outer_caps.append(the_cap)
@@ -317,6 +392,7 @@ class Misson08(ingame_mission.IngameMission):
                 self,
                 'hatcher',
                 hero=True,
+                jumper=True,
                 actor=actors.Hatcher,
                 labels=[
                     'friend',
@@ -332,8 +408,8 @@ class Misson08(ingame_mission.IngameMission):
             Ship(
                 self,
                 'enter_fighter',
-                # count=5,
-                count=2,
+                count=5,
+                # count=2,
                 labels=[
                     'li_enter',
                 ],
@@ -365,6 +441,116 @@ class Misson08(ingame_mission.IngameMission):
             ),
             Ship(
                 self,
+                'br_fighterA',
+                count=5,
+                labels=[
+                    'bretonia',
+                    'friend',
+                ],
+                system_class=S.m8_tau44,
+                slide_x=100,
+                radius=0,
+                affiliation=faction.BretoniaMain.CODE,
+                npc=NPC(
+                    faction=faction.BretoniaMain,
+                    ship=ship.Cavalier,
+                    level=NPC.D10,
+                    equip_map=EqMap(base_level=5),
+                )
+            ),
+            Ship(
+                self,
+                'br_fighterB',
+                count=5,
+                labels=[
+                    'bretonia',
+                    'friend',
+                ],
+                system_class=S.m8_tau44,
+                slide_x=100,
+                radius=0,
+                affiliation=faction.BretoniaMain.CODE,
+                npc=NPC(
+                    faction=faction.BretoniaMain,
+                    ship=ship.Cavalier,
+                    level=NPC.D10,
+                    equip_map=EqMap(base_level=5),
+                )
+            ),
+            Ship(
+                self,
+                'li_fighterA',
+                count=4,
+                labels=[
+                    'liberty',
+                ],
+                system_class=S.m8_tau44,
+                slide_x=-100,
+                radius=0,
+                affiliation=faction.LibertyMain.CODE,
+                npc=NPC(
+                    faction=faction.LibertyMain,
+                    ship=ship.Defender,
+                    level=NPC.D8,
+                    equip_map=EqMap(base_level=5),
+                )
+            ),
+            Ship(
+                self,
+                'li_fighterB',
+                count=4,
+                labels=[
+                    'liberty',
+                ],
+                system_class=S.m8_tau44,
+                slide_x=-100,
+                radius=0,
+                affiliation=faction.LibertyMain.CODE,
+                npc=NPC(
+                    faction=faction.LibertyMain,
+                    ship=ship.Defender,
+                    level=NPC.D8,
+                    equip_map=EqMap(base_level=5),
+                )
+            ),
+            Ship(
+                self,
+                'li_fighterC',
+                count=4,
+                labels=[
+                    'liberty',
+                ],
+                system_class=S.m8_tau44,
+                slide_z=-100,
+                radius=0,
+                affiliation=faction.LibertyMain.CODE,
+                npc=NPC(
+                    faction=faction.LibertyMain,
+                    ship=ship.Patriot,
+                    level=NPC.D8,
+                    equip_map=EqMap(base_level=5),
+                )
+            ),
+            Ship(
+                self,
+                'li_fighterD',
+                count=4,
+                labels=[
+                    'liberty',
+                ],
+                system_class=S.m8_tau44,
+                slide_z=-100,
+                radius=0,
+                affiliation=faction.LibertyMain.CODE,
+                npc=NPC(
+                    faction=faction.LibertyMain,
+                    ship=ship.Patriot,
+                    level=NPC.D8,
+                    equip_map=EqMap(base_level=5),
+                )
+            ),
+            Ship(
+                self,
                 'asf',
                 count=12,
                 labels=[
@@ -376,6 +562,9 @@ class Misson08(ingame_mission.IngameMission):
                     ship=ship.Defender,
                     level=NPC.D12,
                     equip_map=EqMap(base_level=5),
+                    extra_equip=[
+                        'equip = cloak_fast, HpCloak01, 1',
+                    ],
                 )
             ),
 

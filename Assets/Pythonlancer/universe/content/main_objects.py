@@ -302,7 +302,7 @@ class StaticObject(AppearableObject):
                 )
             )
 
-        if self.DEFENCE_LEVEL and self.system.ENABLE_POPULATION:
+        if self.DEFENCE_LEVEL and self.system.ENABLE_POPULATION and not self.STORY:
             zones.append(
                 self.get_defence_zone(),
             )
@@ -740,6 +740,7 @@ class DockableObject(StaticObject):
     MISC_EQUIP_GEN_TYPE = None
     BASE_PROPS = None
     RU_NAME = 'База'
+    AUTOSAVE_FORBIDDEN = False
 
     INTERIOR_BG1 = None
     INTERIOR_BG2 = None
@@ -857,6 +858,9 @@ BGCS_base_run_by = W02bF44'''
             definition.append('{} = {}'.format(self.BG1_KEY, self.INTERIOR_BG1))
         if self.INTERIOR_BG2:
             definition.append('{} = {}'.format(self.BG2_KEY, self.INTERIOR_BG2))
+        if self.AUTOSAVE_FORBIDDEN is True:
+            definition.append('autosave_forbidden = true')
+
         return SINGLE_DIVIDER.join(definition)
 
     def get_mbases_content(self):
