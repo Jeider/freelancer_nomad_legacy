@@ -417,7 +417,7 @@ class JumpableObject(StaticObject):
         params = super().get_inspace_parameters()
         params.update({
             'jump_effect': self.get_jump_effect(),
-            'reputation': self.FACTION,
+            'reputation': self.FACTION.get_code(),
             'goto': self.get_goto(),
             'msg_id_prefix': self.get_msg_id_prefix(),
         })
@@ -879,7 +879,7 @@ BGCS_base_run_by = W02bF44'''
             'ids_name': self.IDS_NAME,
             'ids_info': self.IDS_INFO,
             'base': base_name,
-            'reputation': self.get_faction(),
+            'reputation': self.get_faction().get_code(),
             'behavior': 'NOTHING',
         }
 
@@ -893,7 +893,7 @@ BGCS_base_run_by = W02bF44'''
             'ids_info': self.IDS_INFO,
             'base': base_name,
             'dock_with': base_name,
-            'reputation': self.get_faction(),
+            'reputation': self.get_faction().get_code(),
             'behavior': 'NOTHING',
         }
 
@@ -1076,7 +1076,7 @@ behavior = NOTHING'''
             parent_gasminer=self.get_inspace_nickname(),
             position='{}, {}, {}'.format(pos_x, pos_y+self.CARGO_PODS_POSITION_Y_DRIFT, pos_z),
             rotate='{}, {}, {}'.format(*self.get_rotate()),
-            faction=self.get_faction(),
+            faction=self.get_faction().get_code(),
         )
 
     def get_sattelites(self):
@@ -1141,7 +1141,7 @@ ids_info = 66150'''
             parent_roidminer=self.get_inspace_nickname(),
             position='{}, {}, {}'.format(pos_x, pos_y+self.CARGO_PODS_POSITION_Y_DRIFT, pos_z),
             rotate='{}, {}, {}'.format(*self.get_rotate()),
-            faction=self.get_faction(),
+            faction=self.get_faction().get_code(),
             loadout=self.CARGO_PODS_LOADOUT,
         )
 
@@ -1315,7 +1315,7 @@ class Hackable(DockableObject):
 
         return panel.get_space_content(
             space_name=self.get_hacker_name(),
-            reputation=self.FACTION,
+            reputation=self.FACTION.get_code(),
             position=self.get_hacker_panel_position(),
             relation=self.HACKABLE_SOLAR_CLASS.PANEL_RELATION,
             success_loadout=hacker_name,
@@ -1543,7 +1543,7 @@ pilot = pilot_solar_hard
             'ring_nickname': self.get_ring_nickname(),
             'pos': '{0}, {1}, {2}'.format(*self.get_tradelane_pos()),
             'rotate': '{0}, {1}, {2}'.format(*self.get_tradelane_rotate()),
-            'faction': self.trade_connection.FACTION,
+            'faction': self.trade_connection.FACTION.get_code(),
         }
 
         prev_ring = self.trade_connection.get_prev_ring(self.tradelane_index)

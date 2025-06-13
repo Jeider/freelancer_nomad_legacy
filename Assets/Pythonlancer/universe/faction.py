@@ -15,6 +15,7 @@ class Faction:
     ELITE3 = None
 
     CODE = None
+    ALT_CODE = None
 
     COSTUME = None
     GUEST_APPEARANCE = None
@@ -32,7 +33,7 @@ class Faction:
 
     @classmethod
     def get_code(cls):
-        return cls.CODE
+        return cls.ALT_CODE if cls.ALT_CODE else cls.CODE
 
     @classmethod
     def get_costume(cls):
@@ -364,6 +365,7 @@ class WorkaroundHunter(RheinlandHunters):
 
 class RheinlandPirate(UnlawfulFaction, RheinlandFleet, BaseRheinland, RheinlandPirateEquip, Faction):
     CODE = 'pi_grp_rh'
+    ALT_CODE = 'pi_grp'
     WEAPON = gun.RheinlandPirategun
     GUEST_APPEARANCE = bodyparts.PIRATE
 
@@ -417,6 +419,7 @@ class LibertyHunters(LawfulFaction, LibertyFleet, BaseLiberty, LibertyCivEquip, 
 
 class LibertyPirate(UnlawfulFaction, LibertyFleet, BaseLiberty, LibertyPirateEquip, Faction):
     CODE = 'pi_grp_li'
+    ALT_CODE = 'pi_grp'
     WEAPON = gun.LibertyPirategun
     GUEST_APPEARANCE = bodyparts.PIRATE
 
@@ -457,6 +460,7 @@ class BretoniaHunters(LawfulFaction, BretoniaFleet, BaseBretonia, BretoniaCivEqu
 
 class BretoniaPirate(UnlawfulFaction, BretoniaFleet, BaseBretonia, BretoniaPirateEquip, Faction):
     CODE = 'pi_grp_br'
+    ALT_CODE = 'pi_grp'
     WEAPON = gun.BretoniaPirategun
     GUEST_APPEARANCE = bodyparts.PIRATE
 
@@ -497,6 +501,7 @@ class KusariHunters(LawfulFaction, KusariFleet, BaseKusari, KusariCivEquip, Fact
 
 class KusariPirate(UnlawfulFaction, KusariFleet, BaseKusari, KusariPirateEquip, Faction):
     CODE = 'pi_grp_ku'
+    ALT_CODE = 'pi_grp'
     WEAPON = gun.KusariPirategun
     GUEST_APPEARANCE = bodyparts.PIRATE
 
@@ -536,6 +541,7 @@ class Outcasts(LawfulFaction, BorderWorldFleet, BaseBorderWorld, BorderWorldOutc
 
 class BorderWorldPirate(UnlawfulFaction, BorderWorldFleet, BaseBorderWorld, BorderWorldCorsairEquip, Faction):
     CODE = 'pi_grp_bw'
+    ALT_CODE = 'pi_grp'
     WEAPON = gun.BorderWorldPirategun
     GUEST_APPEARANCE = bodyparts.PIRATE
 
