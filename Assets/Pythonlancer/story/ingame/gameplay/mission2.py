@@ -372,7 +372,7 @@ class Misson02(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.Junkers,
                     ship=ship.Dagger,
-                    level=NPC.D3,
+                    level=NPC.D2,
                     equip_map=EqMap(base_level=2),
                 )
             ),
@@ -387,7 +387,7 @@ class Misson02(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.Junkers,
                     ship=ship.Stiletto,
-                    level=NPC.D3,
+                    level=NPC.D2,
                     equip_map=EqMap(base_level=2),
                 )
             ),
@@ -402,7 +402,7 @@ class Misson02(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.Junkers,
                     ship=ship.CSV,
-                    level=NPC.D3,
+                    level=NPC.D2,
                     equip_map=EqMap(base_level=2),
                 )
             ),

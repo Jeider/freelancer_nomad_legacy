@@ -9,12 +9,23 @@ from managers.universe import UniverseManager
 from managers.story import StoryManager
 from managers.store import StoreManager
 
+from templates.jinja_manager import JinjaTemplateManager
+
+
+
+class TemplateManger:
+
+    def __init__(self, lancer_core):
+        self.core = lancer_core
+
+
 
 class LancerCore(object):
 
     def __init__(self, write=True, story=True):
         self.write = write
 
+        self.tpl_manager = JinjaTemplateManager()
         self.ids = IDsManager(self)
         self.chars = CharacterManager(self)
         self.misc_equip = MiscEquipManager(self)

@@ -1,8 +1,11 @@
 from world.ship import Ship
+from world.capital import Capital
 from templates.hardcoded_inis.ships import ShiparchTemplate
 from text.dividers import DIVIDER
 
 from tools.data_folder import DataFolder
+
+SHIPARCH_TEMPLATE = 'hardcoded_inis/static_content/shiparch.ini'
 
 
 class ShiparchManager:
@@ -14,12 +17,22 @@ class ShiparchManager:
         self.params = {}
         self.ships = []
         self.ships_db = {}
+        self.capitals = []
+        self.capitals_db = {}
+
+        self.shiparch_context = {}
 
         for ship in Ship.subclasses:
             instance = ship(self.ids)
-            self.params.update(instance.get_shiparch_params())
+            self.shiparch_context[ship.TEMPLATE_CODE] = instance
             self.ships.append(instance)
             self.ships_db[instance.ARCHETYPE] = instance
+
+        for capital in Capital.subclasses:
+            instance = capital(self.ids)
+            self.shiparch_context[capital.TEMPLATE_CODE] = instance
+            self.capitals.append(instance)
+            self.capitals_db[instance.ARCHETYPE] = instance
 
         self.sync_data()
 
@@ -30,10 +43,10 @@ class ShiparchManager:
         return self.ships_db[archetype]
 
     def get_shiparch_content(self):
-        return ShiparchTemplate().format(self.params)
+        return self.core.tpl_manager.get_result(SHIPARCH_TEMPLATE, self.shiparch_context)
 
     def get_ship_goods(self):
-        data = ''
+        data = []
 
         for ship in self.ships:
             shipclass = ship.EQUIPMENT_SHIPCLASS
@@ -44,10 +57,10 @@ class ShiparchManager:
             power = self.misc_equip.get_powerplant(shipclass, equip_type, equipment_class).get_nickname()
             shield = self.misc_equip.get_shield(shipclass, equip_type, equipment_class).get_nickname()
 
-            data += ship.get_hull() + DIVIDER
-            data += ship.get_package(shield, engine, power, ship.PACKAGE_LIGHT) + DIVIDER
+            data.append(ship.get_hull())
+            data.append(ship.get_package(shield, engine, power, ship.PACKAGE_LIGHT))
 
-        return data
+        return DIVIDER.join(data)
 
     def sync_data(self):
         if not self.core.write:

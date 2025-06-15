@@ -100,24 +100,7 @@ ENGINE_SINGLE = 1
 ENGINE_DOUBLE_SAME = 2
 ENGINE_DOUBLE_DIFF = 3
 ENGINE_TRIPLE_SAME = 4
-
-ENGINE_FORCE_PER_TYPE = {
-    ENGINE_SINGLE: '''equip = single_eng_force, HpEngine01
-equip = single_eng_weight, HpCockpit''',
-
-    ENGINE_DOUBLE_SAME: '''equip = double_same_eng_force, HpEngine01
-equip = double_same_eng_force, HpEngine02
-equip = double_eng_weight, HpCockpit''',
-
-    ENGINE_DOUBLE_DIFF: '''equip = double_diff_eng_force01, HpEngine01
-equip = double_diff_eng_force02, HpEngine02
-equip = double_eng_weight, HpCockpit''',
-
-    ENGINE_TRIPLE_SAME: '''equip = triple_same_eng_force, HpEngine01
-equip = triple_same_eng_force, HpEngine02
-equip = triple_same_eng_force, HpEngine03
-equip = triple_eng_weight, HpCockpit''',
-}
+ENGINE_TRIPLE_DIFF = 5
 
 
 class Ship(MarketShip):
@@ -304,9 +287,6 @@ addon = {power}, HpPower01, 1'''
         for i in range(1, self.LIGHTS + 1):
             components.append(self.LOADOUT_LIGHT_TEMPLATE.format(light_id=f'0{i}'))
 
-        if self.ENG_FORCE_FEATURE:
-            components.append(ENGINE_FORCE_PER_TYPE[self.ENGINE_TYPE])
-
         return components
 
     def get_loadout_template(self, have_afterburn1=True, have_afterburn2=True, have_gen_armor=True,
@@ -403,50 +383,6 @@ item_icon = Equipment\\models\\commodities\\nn_icons\\{icon}'''
             price=self.get_ship_price(),
             icon=self.ICON,
         )
-
-    ARMOR_INDICES = {
-        ARMOR_INDEX_1: 0.42,
-        ARMOR_INDEX_2: 0.47,
-        ARMOR_INDEX_3: 0.5,
-        ARMOR_INDEX_4: 0.55,
-        ARMOR_INDEX_5: 0.6,
-        ARMOR_INDEX_6: 0.68,
-        ARMOR_INDEX_7: 0.75,
-        ARMOR_INDEX_8: 0.83,
-        ARMOR_INDEX_9: 0.92,
-        ARMOR_INDEX_10: 1,
-        ARMOR_INDEX_11: 1.1,
-        ARMOR_INDEX_12: 1.2,
-        ARMOR_INDEX_13: 1.5,
-        ARMOR_INDEX_14: 1.8,
-        ARMOR_INDEX_15: 2,
-        ARMOR_INDEX_16: 2.4,
-        ARMOR_INDEX_17: 3,
-        ARMOR_INDEX_18: 3.5,
-        ARMOR_INDEX_19: 4,
-        ARMOR_INDEX_20: 4.5,
-        ARMOR_INDEX_21: 5,
-        ARMOR_INDEX_22: 6,
-        ARMOR_INDEX_23: 7.5,
-        ARMOR_INDEX_24: 9,
-        ARMOR_INDEX_25: 12,
-        ARMOR_INDEX_26: 15,
-        ARMOR_INDEX_27: 20,
-        ARMOR_INDEX_28: 30,
-    }
-    #
-    # START_ARMOR_INDEX_PER_SHIP_INDEX = {
-    #     SHIP_INDEX_1: ARMOR_INDEX_10,
-    #     SHIP_INDEX_2: ARMOR_INDEX_10,
-    #     SHIP_INDEX_3: ARMOR_INDEX_9,
-    #     SHIP_INDEX_4: ARMOR_INDEX_9,
-    #     SHIP_INDEX_5: ARMOR_INDEX_8,
-    #     SHIP_INDEX_6: ARMOR_INDEX_7,
-    #     SHIP_INDEX_7: ARMOR_INDEX_6,
-    #     SHIP_INDEX_8: ARMOR_INDEX_5,
-    #     SHIP_INDEX_9: ARMOR_INDEX_4,
-    #     SHIP_INDEX_10: ARMOR_INDEX_3,
-    # }
 
     def get_equipment_level(self):
         return self.SHIP_CLASS
@@ -588,23 +524,6 @@ item_icon = Equipment\\models\\commodities\\nn_icons\\{icon}'''
     def get_bots_count(self):
         return math.ceil(((self.get_hit_pts() * NUM_REPAIRS) / BOT_REPAIR) * self.NANOBOTS_COUNT_MULTIPLER)
 
-    PARAMS_TEMPLATE = '''nickname = {shiparch_name}
-ids_name = {ids_name}
-ids_info = {ids_info}
-ids_info1 = {ids_info1}
-ids_info2 = {ids_info2}
-ids_info3 = {ids_info3}
-shield_link = {shield_link_object}, HpMount, {shield_link_hp}
-mass = {mass}
-hold_size = {hold_size}
-strafe_force = {strafe_force}
-strafe_power_usage = {strafe_power_usage}
-nanobot_limit = {nanobot}
-shield_battery_limit = {nanobot}
-hit_pts = {hit_pts}
-{fuses}
-{equipment}'''
-
     def get_ids_name(self):
         return self.ids_name.id
 
@@ -652,27 +571,6 @@ hit_pts = {hit_pts}
             'value_additional_equipment': self.ADDITIONAL_EQUIP,
         }
 
-    def get_collision_group_template_params(self):
-        params = {}
-
-        for name, hit_pts_pct in self.COLLISION_HIT_PTS_PERCENT.items():
-            params[self.ship_param(name)] = self.get_hit_pts() * hit_pts_pct
-
-        for name, resistance in self.COLLISION_EXPLOSION_RESISTANCE.items():
-            params[self.ship_param(name)] = resistance
-
-        return params
-
-    def get_main_param_name(self):
-        return 'ship_{shiparch_name}'.format(shiparch_name=self.ARCHETYPE)
-
-    def get_shiparch_params(self):
-        params = {
-            self.get_main_param_name(): self.PARAMS_TEMPLATE.format(**self.get_base_template_params())
-        }
-        params.update(self.get_collision_group_template_params())
-        return params
-
     @staticmethod
     def get_extra_items(torpedo, cm, mine, torpedo_ammo, cm_ammo, mine_ammo):
         extra = []
@@ -692,6 +590,167 @@ hit_pts = {hit_pts}
                 extra.append(Ship.CARGO_TEMPLATE.format(torpedo, mine_ammo))
 
         return extra
+
+    @property
+    def root(self):
+        params = [
+            f'nickname = {self.ARCHETYPE}',
+            f'ids_name = {self.get_ids_name()}',
+            f'ids_info = {self.get_ids_info()}',
+            f'ids_info1 = {self.get_ids_info1()}',
+            f'ids_info2 = {self.get_ids_info2()}',
+            f'ids_info3 = {self.get_ids_info3()}',
+            f'shield_link = {self.SHIELD_LINK}, HpMount, {self.HP_SHIELD}',
+            f'mass = {self.get_ship_mass()}',
+            f'hold_size = {self.get_hold_size()}',
+            f'strafe_force = {self.get_strafe_force()}',
+            f'strafe_power_usage = {self.get_strafe_force_power_usage()}',
+            f'nanobot_limit = {self.get_bots_count()}',
+            f'shield_battery_limit = {self.get_bots_count()}',
+            f'hit_pts = {self.get_hit_pts()}',
+            self.get_fuses(),
+            self.get_equipment_table(),
+        ]
+        return SINGLE_DIVIDER.join(params)
+
+    def get_part(self, hit_pts_pct, proxy_health, explosion_resistance):
+        params = [
+            f'hit_pts = {self.get_hit_pts() * hit_pts_pct}',
+            f'root_health_proxy = {"true" if proxy_health else "false"}',
+            f'explosion_resistance = {explosion_resistance}',
+        ]
+        return SINGLE_DIVIDER.join(params)
+
+    FIN_PROXY_HEALTH = False
+    WING_LIKE_FIN = False
+    LARGE_FIRST_ENGINE = False
+
+    FIN_HAVE_ENGINE = False
+
+    @property
+    def fin1(self):
+        return self.get_part(
+            HP_PCT_FIN,
+            self.FIN_PROXY_HEALTH,
+            EXPL_RESIST_MISC,
+        )
+
+    @property
+    def fin2(self):
+        return self.get_part(
+            HP_PCT_FIN_WITH_ENGINE if self.FIN_HAVE_ENGINE else HP_PCT_FIN,
+            self.FIN_PROXY_HEALTH,
+            EXPL_RESIST_MISC,
+        )
+
+    @property
+    def fin3(self):
+        return self.get_part(
+            HP_PCT_FIN,
+            self.FIN_PROXY_HEALTH,
+            EXPL_RESIST_MISC,
+        )
+
+    @property
+    def fin4(self):
+        return self.get_part(
+            HP_PCT_FIN,
+            self.FIN_PROXY_HEALTH,
+            EXPL_RESIST_MISC,
+        )
+
+    @property
+    def eng1(self):
+        if self.ENGINE_TYPE == ENGINE_SINGLE:
+            return self.get_part(HP_PCT_ENGINE_SINGLE, True, EXPL_RESIST_ENGINE)
+
+        if self.ENGINE_TYPE == ENGINE_DOUBLE_SAME:
+            return self.get_part(HP_PCT_ENGINE_DOUBLE_SAME, True, EXPL_RESIST_ENGINE)
+
+        if self.ENGINE_TYPE == ENGINE_DOUBLE_DIFF:
+            return self.get_part(HP_PCT_ENGINE_DOUBLE_MAIN, True, EXPL_RESIST_ENGINE)
+
+        if self.ENGINE_TYPE == ENGINE_TRIPLE_SAME:
+            return self.get_part(HP_PCT_ENGINE_TRIPLE_SAME, True, EXPL_RESIST_ENGINE)
+
+        if self.ENGINE_TYPE == ENGINE_TRIPLE_DIFF:
+            return self.get_part(HP_PCT_ENGINE_TRIPLE_MAIN, True, EXPL_RESIST_ENGINE)
+
+        raise Exception(f'ship {self} have unknown engine type')
+
+    @property
+    def eng2(self):
+        if self.ENGINE_TYPE == ENGINE_SINGLE:
+            raise Exception(f'ship {self} cant use second engine')
+
+        if self.ENGINE_TYPE == ENGINE_DOUBLE_SAME:
+            return self.get_part(HP_PCT_ENGINE_DOUBLE_SAME, True, EXPL_RESIST_ENGINE)
+
+        if self.ENGINE_TYPE == ENGINE_DOUBLE_DIFF:
+            return self.get_part(HP_PCT_ENGINE_DOUBLE_SECOND, True, EXPL_RESIST_ENGINE)
+
+        if self.ENGINE_TYPE == ENGINE_TRIPLE_SAME:
+            return self.get_part(HP_PCT_ENGINE_TRIPLE_SAME, True, EXPL_RESIST_ENGINE)
+
+        if self.ENGINE_TYPE == ENGINE_TRIPLE_DIFF:
+            return self.get_part(HP_PCT_ENGINE_TRIPLE_SECONDARY, True, EXPL_RESIST_ENGINE)
+
+        raise Exception(f'ship {self} have unknown engine type')
+
+    @property
+    def eng3(self):
+        if self.ENGINE_TYPE in [ENGINE_SINGLE, ENGINE_DOUBLE_SAME, ENGINE_DOUBLE_DIFF]:
+            raise Exception(f'ship {self} cant use third engine')
+
+        if self.ENGINE_TYPE == ENGINE_TRIPLE_SAME:
+            return self.get_part(HP_PCT_ENGINE_TRIPLE_SAME, True, EXPL_RESIST_ENGINE)
+
+        if self.ENGINE_TYPE == ENGINE_TRIPLE_DIFF:
+            return self.get_part(HP_PCT_ENGINE_TRIPLE_SECONDARY, True, EXPL_RESIST_ENGINE)
+
+        raise Exception(f'ship {self} have unknown engine type')
+
+    def wing1(self):
+        if self.WING_LIKE_FIN:
+            return self.get_part(HP_PCT_MISC, False, EXPL_RESIST_MISC)
+
+        return self.get_part(HP_PCT_WING, True, EXPL_RESIST_WING)
+
+    def wing2(self):
+        if self.WING_LIKE_FIN:
+            return self.get_part(HP_PCT_MISC, False, EXPL_RESIST_MISC)
+
+        return self.get_part(HP_PCT_WING, True, EXPL_RESIST_WING)
+
+    def wing3(self):
+        if self.WING_LIKE_FIN:
+            return self.get_part(HP_PCT_MISC, False, EXPL_RESIST_MISC)
+
+        return self.get_part(HP_PCT_WING, True, EXPL_RESIST_WING)
+
+    def wing4(self):
+        if self.WING_LIKE_FIN:
+            return self.get_part(HP_PCT_MISC, False, EXPL_RESIST_MISC)
+
+        return self.get_part(HP_PCT_WING, True, EXPL_RESIST_WING)
+
+    def tail(self):
+        return self.get_part(HP_PCT_TAIL, True, EXPL_RESIST_ENGINE)
+
+    def spoiler(self):
+        return self.get_part(HP_PCT_TAIL, True, EXPL_RESIST_ENGINE)
+
+    def spike1(self):
+        return self.get_part(HP_PCT_WING, True, EXPL_RESIST_WING)
+
+    def spike2(self):
+        return self.get_part(HP_PCT_WING, True, EXPL_RESIST_WING)
+
+    def panel1(self):
+        return self.get_part(HP_PCT_WING, True, EXPL_RESIST_WING)
+
+    def panel2(self):
+        return self.get_part(HP_PCT_WING, True, EXPL_RESIST_WING)
 
 
 class BaseInterceptorShip(object):
@@ -942,16 +1001,6 @@ class Dagger(RheinlandShip, ShipInterceptor, Ship1, Ship):
     # MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04, HpTurret01']
     # MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02, HpTurret01']
 
-    COLLISION_HIT_PTS_PERCENT = {
-        'wing_hit_pts': HP_PCT_WING,
-        'engine_hit_pts': HP_PCT_ENGINE_SINGLE,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'wing_expl_resist': EXPL_RESIST_WING,
-        'engine_expl_resist': EXPL_RESIST_ENGINE,
-    }
-
 
 class Banshee(RheinlandShip, ShipInterceptor, Ship2, Ship):
     EXTRA_CLASSES = [CLASS_INTERCEPTOR, CLASS_RHEINLAND_INTERCEPTOR]
@@ -967,16 +1016,6 @@ class Banshee(RheinlandShip, ShipInterceptor, Ship2, Ship):
     HP_TORPEDO = 'HpTorpedo02'
     MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
     MAX_WEAPONS = ['HpTorpedo01', 'HpWeapon03', 'HpWeapon04']
-
-    COLLISION_HIT_PTS_PERCENT = {
-        'wing_hit_pts': HP_PCT_WING,
-        'engine_hit_pts': HP_PCT_ENGINE_SINGLE, 
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'wing_expl_resist': EXPL_RESIST_WING,
-        'engine_expl_resist': EXPL_RESIST_ENGINE,
-    }
 
 
 class Stiletto(RheinlandShip, ShipFighter, Ship1, Ship):
@@ -1000,20 +1039,6 @@ class Stiletto(RheinlandShip, ShipFighter, Ship1, Ship):
     # MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
     # MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
 
-    COLLISION_HIT_PTS_PERCENT = {
-        'wing1_hit_pts': HP_PCT_WING,
-        'wing2_hit_pts': HP_PCT_WING,
-        'engine1_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
-        'engine2_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'wing1_expl_resist': EXPL_RESIST_WING,
-        'wing2_expl_resist': EXPL_RESIST_WING,
-        'engine1_expl_resist': EXPL_RESIST_ENGINE,
-        'engine2_expl_resist': EXPL_RESIST_ENGINE,
-    }
-
 
 class Sabre(RheinlandShip, ShipFighter, Ship2, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_RHEINLAND_ELITE, CLASS_RHEINLAND_FIGHTER_ONLY]
@@ -1029,20 +1054,6 @@ class Sabre(RheinlandShip, ShipFighter, Ship2, Ship):
     HP_TORPEDO = 'HpTorpedo01'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
     MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
-
-    COLLISION_HIT_PTS_PERCENT = {
-        'wing1_hit_pts': HP_PCT_WING,
-        'wing2_hit_pts': HP_PCT_WING,
-        'engine1_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
-        'engine2_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'wing1_expl_resist': EXPL_RESIST_WING,
-        'wing2_expl_resist': EXPL_RESIST_WING,
-        'engine1_expl_resist': EXPL_RESIST_ENGINE,
-        'engine2_expl_resist': EXPL_RESIST_ENGINE,
-    }
 
 
 class Valkyrie(RheinlandShip, ShipElite, Ship3, Ship):
@@ -1060,18 +1071,6 @@ class Valkyrie(RheinlandShip, ShipElite, Ship3, Ship):
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
     MAX_WEAPONS = ['HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
 
-    COLLISION_HIT_PTS_PERCENT = {
-        'wing_hit_pts': HP_PCT_WING,
-        'tail_hit_pts': HP_PCT_TAIL,
-        'engine_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'wing_expl_resist': EXPL_RESIST_WING,
-        'tail_expl_resist': EXPL_RESIST_WING,
-        'engine_expl_resist': EXPL_RESIST_ENGINE,
-    }
-
 
 class Humpback(RheinlandShip, ShipFreighter, Ship):
     ARCHETYPE = 'rh_freighter'
@@ -1085,16 +1084,6 @@ class Humpback(RheinlandShip, ShipFreighter, Ship):
     ICON = 'rh_freighter.3db'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon05', 'HpWeapon06', 'HpWeapon10']
     MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon05', 'HpWeapon06']
-
-    COLLISION_HIT_PTS_PERCENT = {
-        'panel_hit_pts': HP_PCT_WING,
-        'engine_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'panel_expl_resist': EXPL_RESIST_WING,
-        'engine_expl_resist': EXPL_RESIST_ENGINE,
-    }
 
 
 # LIBERTY
@@ -1115,16 +1104,6 @@ class Piranha(LibertyShip, ShipInterceptor, Ship1, Ship):
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
     MAX_WEAPONS = ['HpWeapon03', 'HpWeapon04']
 
-    COLLISION_HIT_PTS_PERCENT = {
-        'fin_hit_pts': HP_PCT_FIN,
-        'engine_hit_pts': HP_PCT_ENGINE_SINGLE,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'fin_expl_resist': EXPL_RESIST_MISC,
-        'engine_expl_resist': EXPL_RESIST_ENGINE,
-    }
-
 
 class Patriot(LibertyShip, ShipInterceptor, Ship2, Ship):
     EXTRA_CLASSES = [CLASS_INTERCEPTOR, CLASS_LIBERTY_INTERCEPTOR]
@@ -1140,16 +1119,6 @@ class Patriot(LibertyShip, ShipInterceptor, Ship2, Ship):
     HP_TORPEDO = 'HpTorpedo02'
     MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
     MAX_WEAPONS = ['HpWeapon03', 'HpWeapon04']
-
-    COLLISION_HIT_PTS_PERCENT = {
-        'fin_hit_pts': HP_PCT_FIN,
-        'engine_hit_pts': HP_PCT_ENGINE_SINGLE,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'fin_expl_resist': EXPL_RESIST_MISC,  
-        'engine_expl_resist': EXPL_RESIST_ENGINE,
-    }
 
 
 class Barracuda(LibertyShip, ShipFighter, Ship1, Ship):
@@ -1167,26 +1136,12 @@ class Barracuda(LibertyShip, ShipFighter, Ship1, Ship):
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05']
     MAX_WEAPONS = ['HpWeapon03', 'HpWeapon04', 'HpWeapon05']
 
+    FIN_HAVE_ENGINE = True
+
     # mk 2
     # HP_TORPEDO = 'HpTorpedo02'
     # MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05']
     # MAX_WEAPONS = ['HpTorpedo01', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05']
-
-    COLLISION_HIT_PTS_PERCENT = {
-        'fin1_hit_pts': HP_PCT_FIN,
-        'fin2_hit_pts': HP_PCT_FIN_WITH_ENGINE,
-        'wing_hit_pts': HP_PCT_WING,
-        'engine1_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
-        'engine2_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'fin1_expl_resist': EXPL_RESIST_MISC,
-        'fin2_expl_resist': EXPL_RESIST_MISC,
-        'wing_expl_resist': EXPL_RESIST_WING,
-        'engine1_expl_resist': EXPL_RESIST_ENGINE,
-        'engine2_expl_resist': EXPL_RESIST_ENGINE,
-    }
 
 
 class Hammerhead(LibertyShip, ShipFighter, Ship2, Ship):
@@ -1204,22 +1159,6 @@ class Hammerhead(LibertyShip, ShipFighter, Ship2, Ship):
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon07']
     MAX_WEAPONS = ['HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon07']
 
-    COLLISION_HIT_PTS_PERCENT = {
-        'fin1_hit_pts': HP_PCT_FIN,
-        'fin2_hit_pts': HP_PCT_FIN_WITH_ENGINE,
-        'wing_hit_pts': HP_PCT_WING,
-        'engine1_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
-        'engine2_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'fin1_expl_resist': EXPL_RESIST_MISC,
-        'fin2_expl_resist': EXPL_RESIST_MISC,
-        'wing_expl_resist': EXPL_RESIST_WING,
-        'engine1_expl_resist': EXPL_RESIST_ENGINE,
-        'engine2_expl_resist': EXPL_RESIST_ENGINE,
-    }
-
 
 class Defender(LibertyShip, ShipElite, Ship3, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_LIBERTY_ELITE]
@@ -1235,20 +1174,6 @@ class Defender(LibertyShip, ShipElite, Ship3, Ship):
     HP_TORPEDO = 'HpTorpedo02'
     MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05']
     MAX_WEAPONS = ['HpTorpedo01', 'HpWeapon03', 'HpWeapon04']
-
-    COLLISION_HIT_PTS_PERCENT = {
-        'wing_hit_pts': HP_PCT_WING,
-        'spoiler_hit_pts': HP_PCT_TAIL,
-        'engine1_hit_pts': HP_PCT_ENGINE_DOUBLE_MAIN,
-        'engine2_hit_pts': HP_PCT_ENGINE_DOUBLE_SECOND,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'wing_expl_resist': EXPL_RESIST_WING,
-        'spoiler_expl_resist': EXPL_RESIST_WING,
-        'engine1_expl_resist': EXPL_RESIST_ENGINE,
-        'engine2_expl_resist': EXPL_RESIST_ENGINE,
-    }
 
 
 class DefenderJuni(LibertyShip, ShipElite, Ship3, Ship):
@@ -1266,20 +1191,6 @@ class DefenderJuni(LibertyShip, ShipElite, Ship3, Ship):
     MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05']
     MAX_WEAPONS = ['HpTorpedo01', 'HpWeapon03', 'HpWeapon04']
 
-    COLLISION_HIT_PTS_PERCENT = {
-        'wing_hit_pts': HP_PCT_WING,
-        'spoiler_hit_pts': HP_PCT_TAIL,
-        'engine1_hit_pts': HP_PCT_ENGINE_DOUBLE_MAIN,
-        'engine2_hit_pts': HP_PCT_ENGINE_DOUBLE_SECOND,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'wing_expl_resist': EXPL_RESIST_WING,
-        'spoiler_expl_resist': EXPL_RESIST_WING,
-        'engine1_expl_resist': EXPL_RESIST_ENGINE,
-        'engine2_expl_resist': EXPL_RESIST_ENGINE,
-    }
-
 
 class Rhino(LibertyShip, ShipFreighter, Ship):
     ARCHETYPE = 'li_freighter'
@@ -1293,16 +1204,6 @@ class Rhino(LibertyShip, ShipFreighter, Ship):
     ICON = 'li_freighter.3db'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03, HpTurret01, HpTurret02, HpTurret03']
     MAX_WEAPONS = ['HpWeapon02', 'HpWeapon03, HpTurret01, HpTurret02']
-
-    COLLISION_HIT_PTS_PERCENT = {
-        'panel_hit_pts': HP_PCT_WING,
-        'engine_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'panel_expl_resist': EXPL_RESIST_WING,
-        'engine_expl_resist': EXPL_RESIST_ENGINE,
-    }
 
 
 # BRETONIA
@@ -1323,16 +1224,6 @@ class Legionnaire(BretoniaShip, ShipInterceptor, Ship1, Ship):
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
     MAX_WEAPONS = ['HpWeapon03', 'HpWeapon04']
 
-    COLLISION_HIT_PTS_PERCENT = {
-        'wing_hit_pts': HP_PCT_WING,
-        'engine_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'wing_expl_resist': EXPL_RESIST_WING,
-        'engine_expl_resist': EXPL_RESIST_ENGINE,
-    }
-
 
 class Cavalier(BretoniaShip, ShipInterceptor, Ship2, Ship):
     EXTRA_CLASSES = [CLASS_INTERCEPTOR, CLASS_BRETONIA_INTERCEPTOR]
@@ -1348,16 +1239,6 @@ class Cavalier(BretoniaShip, ShipInterceptor, Ship2, Ship):
     HP_TORPEDO = 'HpTorpedo02'
     MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
     MAX_WEAPONS = ['HpTorpedo01', 'HpWeapon03', 'HpWeapon04']
-
-    COLLISION_HIT_PTS_PERCENT = {
-        'tail_hit_pts': HP_PCT_TAIL,
-        'engine_hit_pts': HP_PCT_ENGINE_SINGLE,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'tail_expl_resist': EXPL_RESIST_WING,
-        'engine_expl_resist': EXPL_RESIST_ENGINE,
-    }
 
 
 class Centurion(BretoniaShip, ShipFighter, Ship1, Ship):
@@ -1380,18 +1261,6 @@ class Centurion(BretoniaShip, ShipFighter, Ship1, Ship):
     # MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
     # MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
 
-    COLLISION_HIT_PTS_PERCENT = {
-        'wing_hit_pts': HP_PCT_WING,
-        'fin_hit_pts': HP_PCT_FIN,
-        'engine_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'wing_expl_resist': EXPL_RESIST_WING,
-        'fin_expl_resist': EXPL_RESIST_MISC,
-        'engine_expl_resist': EXPL_RESIST_ENGINE,
-    }
-
 
 class Titan(BretoniaShip, ShipFighter, Ship2, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_BRETONIA_ELITE, CLASS_BRETONIA_FIGHTER_ONLY]
@@ -1413,18 +1282,6 @@ class Titan(BretoniaShip, ShipFighter, Ship2, Ship):
     # MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
     # MAX_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
 
-    COLLISION_HIT_PTS_PERCENT = {
-        'wing_hit_pts': HP_PCT_WING,
-        'fin_hit_pts': HP_PCT_FIN,
-        'engine_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'wing_expl_resist': EXPL_RESIST_WING,
-        'fin_expl_resist': EXPL_RESIST_MISC,
-        'engine_expl_resist': EXPL_RESIST_ENGINE,
-    }
-
 
 class Crusader(BretoniaShip, ShipElite, Ship3, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_BRETONIA_ELITE]
@@ -1441,18 +1298,6 @@ class Crusader(BretoniaShip, ShipElite, Ship3, Ship):
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
     MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon05', 'HpWeapon06']
 
-    COLLISION_HIT_PTS_PERCENT = {
-        'wing_hit_pts': HP_PCT_WING,
-        'tail_hit_pts': HP_PCT_TAIL,
-        'engine_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'wing_expl_resist': EXPL_RESIST_WING,
-        'tail_expl_resist': EXPL_RESIST_WING,
-        'engine_expl_resist': EXPL_RESIST_ENGINE,
-    }
-
 
 class Clydesdale(BretoniaShip, ShipFreighter, Ship):
     ARCHETYPE = 'br_freighter'
@@ -1467,16 +1312,6 @@ class Clydesdale(BretoniaShip, ShipFreighter, Ship):
     ICON = 'br_freighter.3db'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03, HpTurret01, HpTurret02, HpTurret03']
     MAX_WEAPONS = ['HpWeapon02', 'HpWeapon03, HpTurret01, HpTurret02']
-
-    COLLISION_HIT_PTS_PERCENT = {
-        'wing_hit_pts': HP_PCT_WING,
-        'engine_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'wing_expl_resist': EXPL_RESIST_WING,
-        'engine_expl_resist': EXPL_RESIST_ENGINE,
-    }
 
 
 # KUSARI
@@ -1495,16 +1330,6 @@ class Hawk(KusariShip, ShipInterceptor, Ship1, Ship):
     ICON = 'cv_fighter.3db'
     HP_TORPEDO = 'HpTorpedo01'
 
-    COLLISION_HIT_PTS_PERCENT = {
-        'wing_hit_pts': HP_PCT_WING,
-        'engine_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'wing_expl_resist': EXPL_RESIST_WING,
-        'engine_expl_resist': EXPL_RESIST_ENGINE,
-    }
-
 
 class Drake(KusariShip, ShipInterceptor, Ship2, Ship):
     EXTRA_CLASSES = [CLASS_INTERCEPTOR, CLASS_KUSARI_INTERCEPTOR]
@@ -1521,16 +1346,6 @@ class Drake(KusariShip, ShipInterceptor, Ship2, Ship):
     MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
     MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02']
 
-    COLLISION_HIT_PTS_PERCENT = {
-        'wing_hit_pts': HP_PCT_WING,
-        'engine_hit_pts': HP_PCT_ENGINE_SINGLE,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'wing_expl_resist': EXPL_RESIST_WING,
-        'engine_expl_resist': EXPL_RESIST_ENGINE,
-    }
-
 
 class Falcon(KusariShip, ShipFighter, Ship1, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_KUSARI_ELITE, CLASS_KUSARI_FIGHTER_ONLY]
@@ -1544,18 +1359,6 @@ class Falcon(KusariShip, ShipFighter, Ship1, Ship):
     TEMPLATE_CODE = 'gf5'
     ICON = 'cv_elite.3db'
     HP_TORPEDO = 'HpTorpedo01'
-
-    COLLISION_HIT_PTS_PERCENT = {
-        'wing_hit_pts': HP_PCT_WING,
-        'fin_hit_pts': HP_PCT_FIN,
-        'engine_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'wing_expl_resist': EXPL_RESIST_WING,
-        'fin_expl_resist': EXPL_RESIST_MISC,
-        'engine_expl_resist': EXPL_RESIST_ENGINE,
-    }
 
 
 class Eagle(KusariShip, ShipFighter, Ship2, Ship):
@@ -1579,20 +1382,6 @@ class Eagle(KusariShip, ShipFighter, Ship2, Ship):
     # MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06', 'HpWeapon07']
     # MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon07']
 
-    COLLISION_HIT_PTS_PERCENT = {
-        'wing_hit_pts': HP_PCT_WING,
-        'fin_hit_pts': HP_PCT_FIN,
-        'btmwing_hit_pts': HP_PCT_WING,
-        'engine_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'wing_expl_resist': EXPL_RESIST_WING,
-        'fin_expl_resist': EXPL_RESIST_MISC,
-        'btmwing_expl_resist': EXPL_RESIST_WING,
-        'engine_expl_resist': EXPL_RESIST_ENGINE,
-    }
-
 
 class Dragon(KusariShip, ShipElite, Ship3, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_KUSARI_ELITE]
@@ -1609,20 +1398,6 @@ class Dragon(KusariShip, ShipElite, Ship3, Ship):
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
     MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon05', 'HpWeapon06']
 
-    COLLISION_HIT_PTS_PERCENT = {
-        'wing_hit_pts': HP_PCT_MISC,
-        'tail_hit_pts': HP_PCT_TAIL,
-        'spike_hit_pts': HP_PCT_WING,
-        'engine_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'wing_expl_resist': EXPL_RESIST_MISC,
-        'tail_expl_resist': EXPL_RESIST_WING,
-        'spike_expl_resist': EXPL_RESIST_WING,
-        'engine_expl_resist': EXPL_RESIST_ENGINE,
-    }
-
 
 class Dron(KusariShip, ShipFreighter, Ship):
     ARCHETYPE = 'ku_freighter'
@@ -1637,16 +1412,6 @@ class Dron(KusariShip, ShipFreighter, Ship):
     ICON = 'ku_freighter.3db'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04, HpTurret02, HpTurret03']
     MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
-
-    COLLISION_HIT_PTS_PERCENT = {
-        'wing_hit_pts': HP_PCT_WING,
-        'engine_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'wing_expl_resist': EXPL_RESIST_MISC,
-        'engine_expl_resist': EXPL_RESIST_ENGINE,
-    }
 
 
 # CORSAIR / ORDER
@@ -1672,16 +1437,6 @@ class Bloodhound(CorsairShip, ShipFighter, Ship1, Ship):
     # MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05, HpTurret01']
     # MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03, HpTurret01']
 
-    COLLISION_HIT_PTS_PERCENT = {
-        'fin_hit_pts': HP_PCT_FIN,
-        'engine_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'fin_expl_resist': EXPL_RESIST_MISC,
-        'engine_expl_resist': EXPL_RESIST_ENGINE,
-    }
-
 
 class Wolfhound(CorsairShip, ShipFighter, Ship2, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_CORSAIR_ELITE, CLASS_CORSAIR_FIGHTER_ONLY]
@@ -1703,16 +1458,6 @@ class Wolfhound(CorsairShip, ShipFighter, Ship2, Ship):
     # MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06, HpTorpedo01']
     # MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04, HpTorpedo01']
 
-    COLLISION_HIT_PTS_PERCENT = {
-        'fin_hit_pts': HP_PCT_FIN,
-        'engine_hit_pts': HP_PCT_ENGINE_TRIPLE_SAME,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'fin_expl_resist': EXPL_RESIST_MISC,
-        'engine_expl_resist': EXPL_RESIST_ENGINE,
-    }
-
 
 class Anubis(CorsairShip, ShipElite, Ship3, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_CORSAIR_ELITE]
@@ -1733,20 +1478,6 @@ class Anubis(CorsairShip, ShipElite, Ship3, Ship):
     # MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06', 'HpWeapon07']
     # MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon07']
 
-    COLLISION_HIT_PTS_PERCENT = {
-        'wing_hit_pts': HP_PCT_WING,
-        'engine1_hit_pts': HP_PCT_ENGINE_TRIPLE_MAIN,
-        'engine2_hit_pts': HP_PCT_ENGINE_TRIPLE_SECONDARY,
-        'engine3_hit_pts': HP_PCT_ENGINE_TRIPLE_SECONDARY,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'wing_expl_resist': EXPL_RESIST_WING,
-        'engine1_expl_resist': EXPL_RESIST_ENGINE,
-        'engine2_expl_resist': EXPL_RESIST_ENGINE,
-        'engine3_expl_resist': EXPL_RESIST_ENGINE,
-    }
-
 
 class Mule(CorsairShip, ShipFreighter, Ship):
     ARCHETYPE = 'pi_freighter'
@@ -1766,18 +1497,6 @@ class Mule(CorsairShip, ShipFreighter, Ship):
     # MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06, HpTurret01']
     # MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04, HpTurret01']
 
-    COLLISION_HIT_PTS_PERCENT = {
-        'wing_hit_pts': HP_PCT_WING,
-        'fin_hit_pts': HP_PCT_FIN,
-        'engine_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'wing_expl_resist': EXPL_RESIST_WING,
-        'fin_expl_resist': EXPL_RESIST_MISC,
-        'engine_expl_resist': EXPL_RESIST_ENGINE,
-    }
-
 
 # GENERIC
 
@@ -1792,22 +1511,15 @@ class Dromader(GenericShip, ShipFreighter, Ship):
     ENGINE_TYPE = ENGINE_TRIPLE_SAME
     LIGHTS = 8
 
-    COLLISION_HIT_PTS_PERCENT = {
-        'wing_hit_pts': HP_PCT_WING,
-        'engine_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'wing_expl_resist': EXPL_RESIST_WING,
-        'engine_expl_resist': EXPL_RESIST_ENGINE,
-    }
+    MAIN_WEAPONS = ['HpWeapon02', 'HpWeapon03', 'HpTurret02', 'HpTurret03', 'HpTurret04', 'HpTurret05']
+    MAX_WEAPONS = ['HpWeapon02', 'HpWeapon03', 'HpTurret02', 'HpTurret03']
 
 
 class CSV(GenericShip, ShipFreighter, Ship):
     SHIP_CLASS = 5
     ARCHETYPE = 'ge_csv'
     RU_NAME = 'CSV'
-    TEMPLATE_CODE = 'csv'
+    TEMPLATE_CODE = 'csv1'
     ICON = 'co_freighter.3db'
     SHIELD_LINK = 'csv_shield01'
     ENGINE_TYPE = ENGINE_SINGLE
@@ -1841,16 +1553,6 @@ class Starflier(GenericShip, ShipInterceptor, Ship1, Ship):
     # MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03, HpTorpedo01']
     # MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02']
 
-    COLLISION_HIT_PTS_PERCENT = {
-        'wing_hit_pts': HP_PCT_WING,
-        'engine_hit_pts': HP_PCT_ENGINE_SINGLE,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'wing_expl_resist': EXPL_RESIST_WING,
-        'engine_expl_resist': EXPL_RESIST_ENGINE,
-    }
-
 
 class Startracker(GenericShip, ShipInterceptor, Ship2, Ship):
     EXTRA_CLASSES = [CLASS_INTERCEPTOR, CLASS_GENERIC_INTERCEPTOR]
@@ -1872,16 +1574,6 @@ class Startracker(GenericShip, ShipInterceptor, Ship2, Ship):
     # MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05']
     # MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03']
 
-    COLLISION_HIT_PTS_PERCENT = {
-        'wing_hit_pts': HP_PCT_WING,
-        'engine_hit_pts': HP_PCT_ENGINE_SINGLE,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'wing_expl_resist': EXPL_RESIST_WING,
-        'engine_expl_resist': EXPL_RESIST_ENGINE,
-    }
-
 
 class Starblazer(GenericShip, ShipElite, Ship2, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_GENERIC_ELITE]
@@ -1902,13 +1594,3 @@ class Starblazer(GenericShip, ShipElite, Ship2, Ship):
     # HP_TORPEDO = 'HpTorpedo02'
     # MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
     # MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
-
-    COLLISION_HIT_PTS_PERCENT = {
-        'wing_hit_pts': HP_PCT_WING,
-        'engine_hit_pts': HP_PCT_ENGINE_DOUBLE_SAME,
-    }
-
-    COLLISION_EXPLOSION_RESISTANCE = {
-        'wing_expl_resist': EXPL_RESIST_WING,
-        'engine_expl_resist': EXPL_RESIST_ENGINE,
-    }

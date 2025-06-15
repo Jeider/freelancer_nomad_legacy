@@ -761,7 +761,7 @@ class ColPoliceConn2(ColMember, main_objects.TradeConnection):
     OBJ_TO = ColSig22Jumpgate
     SIDE_FROM = TOP
     SIDE_TO = BOTTOM
-    TRADELANE_LETTER = 'H'
+    TRADELANE_LETTER = 'K'
     HUNTER_DEFENCE_REL = RIGHT
     ATTACKED_BY = [
         ColAsteroidPirates

@@ -579,7 +579,7 @@ class CalBattleshipConn1(CalMember, main_objects.TradeConnection):
     OBJ_TO = CalVirtualPoint1
     SIDE_FROM = TOP
     SIDE_TO = BOTTOM
-    TRADELANE_LETTER = 'E'
+    TRADELANE_LETTER = 'G'
     HUNTER_DEFENCE_REL = LEFT
 
 
@@ -588,7 +588,7 @@ class CalBattleshipConn2(CalMember, main_objects.TradeConnection):
     OBJ_TO = CalSig13Jumpgate
     SIDE_FROM = LEFT
     SIDE_TO = RIGHT
-    TRADELANE_LETTER = 'F'
+    TRADELANE_LETTER = 'H'
     HUNTER_DEFENCE_REL = TOP
     ATTACKED_BY = [
         CalPirate2

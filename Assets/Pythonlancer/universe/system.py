@@ -118,6 +118,8 @@ distance = {tlr_distance}
         self.nebula_zones = []
         self.dynamic_zones = []
 
+        self.trade_letters = []
+
         self.trade_connections = []
         self.trade_connections_db = {}
 
@@ -285,6 +287,9 @@ distance = {tlr_distance}
 
     def add_trade_connection(self, item):
         trade_conn = item(self)
+        if trade_conn.TRADELANE_LETTER in self.trade_letters:
+            raise Exception(f'{self} already have letter {trade_conn.TRADELANE_LETTER}')
+        self.trade_letters.append(trade_conn.TRADELANE_LETTER)
         self.trade_connections.append(trade_conn)
         self.trade_connections_db[item.__name__]  = trade_conn
 

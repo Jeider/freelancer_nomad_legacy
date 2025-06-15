@@ -448,4 +448,4 @@ class Tau4BattleshipRuinsConn1(Tau4Member, main_objects.AbandonedBuoyTradeConnec
     OBJ_TO = Tau4Freeport
     SIDE_FROM = BOTTOM
     SIDE_TO = TOP
-    TRADELANE_LETTER = 'E'
+    TRADELANE_LETTER = 'F'

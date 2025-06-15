@@ -638,7 +638,7 @@ class AvalTradingConn1(AvalMember, main_objects.TradeConnection):
     OBJ_TO = AvalTrading
     SIDE_FROM = LEFT
     SIDE_TO = RIGHT
-    TRADELANE_LETTER = 'F'
+    TRADELANE_LETTER = 'I'
     HUNTER_DEFENCE_REL = TOP
     ATTACKED_BY = [
         AvalJunkers,

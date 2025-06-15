@@ -1,5 +1,3 @@
-from templates.jinja_manager import JinjaTemplateManager
-
 from managers.script import ScriptManager
 
 from story.ingame.gameplay import *  # initialize mission files
@@ -22,7 +20,6 @@ class StoryManager:
 
         self.missions = []
 
-        self.tpl_manager = JinjaTemplateManager()
         self.script = ScriptManager(ids=self.core.ids.script)
 
         self.thorns = []
@@ -33,7 +30,7 @@ class StoryManager:
             print(mission_class)
             mission = mission_class(ids=self.ids, full_script=self.script, universe_root=universe_root)
             self.missions.append(mission)
-            content = self.tpl_manager.get_result(mission.get_template(), mission.get_context())
+            content = self.core.tpl_manager.get_result(mission.get_template(), mission.get_context())
             self.thorns.extend(mission.ingame_thorns)
 
             npc_shiparchs = []
@@ -52,7 +49,7 @@ class StoryManager:
 
             for rtc_name, rtc_template in mission.get_rtc_files():
                 rtc_context = mission.get_rtc_context()
-                rtc_content = self.tpl_manager.get_result(rtc_template, rtc_context)
+                rtc_content = self.core.tpl_manager.get_result(rtc_template, rtc_context)
 
                 if self.core.write:
                     DataFolder.sync_story_mission(mission.FOLDER, rtc_name, rtc_content)
@@ -66,7 +63,7 @@ class StoryManager:
             DataFolder.sync_story_ships_loadouts(loadouts)
 
         for thorn in self.thorns:
-            content = self.tpl_manager.get_result(thorn.get_template(), thorn.get_context())
+            content = self.core.tpl_manager.get_result(thorn.get_template(), thorn.get_context())
             if self.core.write:
                 DataFolder.sync_story_ingame_thorn(thorn.get_name(), content)
 

@@ -511,7 +511,7 @@ class KyushuOdisseyConn1(KyushuMember, main_objects.TradeConnection):
     OBJ_TO = KyushuResearch
     SIDE_FROM = TOP
     SIDE_TO = BOTTOM
-    TRADELANE_LETTER = 'C'
+    TRADELANE_LETTER = 'K'
     HUNTER_DEFENCE_REL = RIGHT
     ATTACKED_BY = [
         KyushuNorthAsteroidPirates
