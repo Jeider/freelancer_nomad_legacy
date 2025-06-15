@@ -9,6 +9,8 @@ from world.thruster import Thruster
 from world.armor import ArmorNPC
 from world import ship
 
+NPC_ARMOR_SCALE_MULTIPLIER = 2
+
 
 class NPCArmorManager:
 
@@ -32,7 +34,7 @@ class NPCArmorManager:
             for base_item_class, base_item_armor in ship_type.HIT_PTS_PER_CLASS.items():
                 self.npc_armors_db[ship_type.SHIP_TYPE][base_item_class] = {}
                 for scaled_item_class, scaled_item_armor in ship_type.HIT_PTS_PER_CLASS.items():
-                    armor_scale = ((scaled_item_armor * 100) / base_item_armor) / 100
+                    armor_scale = ((scaled_item_armor * 100) / base_item_armor) / 100 * NPC_ARMOR_SCALE_MULTIPLIER
                     npc_armor = ArmorNPC(ship_type.SHIP_TYPE, base_item_class, scaled_item_class, armor_scale)
                     self.npc_armors_db[ship_type.SHIP_TYPE][base_item_class][scaled_item_class] = npc_armor
                     self.npc_armors_list.append(npc_armor)
