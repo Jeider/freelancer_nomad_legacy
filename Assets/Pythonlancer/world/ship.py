@@ -710,45 +710,55 @@ item_icon = Equipment\\models\\commodities\\nn_icons\\{icon}'''
 
         raise Exception(f'ship {self} have unknown engine type')
 
+    @property
     def wing1(self):
         if self.WING_LIKE_FIN:
             return self.get_part(HP_PCT_MISC, False, EXPL_RESIST_MISC)
 
         return self.get_part(HP_PCT_WING, True, EXPL_RESIST_WING)
 
+    @property
     def wing2(self):
         if self.WING_LIKE_FIN:
             return self.get_part(HP_PCT_MISC, False, EXPL_RESIST_MISC)
 
         return self.get_part(HP_PCT_WING, True, EXPL_RESIST_WING)
 
+    @property
     def wing3(self):
         if self.WING_LIKE_FIN:
             return self.get_part(HP_PCT_MISC, False, EXPL_RESIST_MISC)
 
         return self.get_part(HP_PCT_WING, True, EXPL_RESIST_WING)
 
+    @property
     def wing4(self):
         if self.WING_LIKE_FIN:
             return self.get_part(HP_PCT_MISC, False, EXPL_RESIST_MISC)
 
         return self.get_part(HP_PCT_WING, True, EXPL_RESIST_WING)
 
+    @property
     def tail(self):
         return self.get_part(HP_PCT_TAIL, True, EXPL_RESIST_ENGINE)
 
+    @property
     def spoiler(self):
         return self.get_part(HP_PCT_TAIL, True, EXPL_RESIST_ENGINE)
 
+    @property
     def spike1(self):
         return self.get_part(HP_PCT_WING, True, EXPL_RESIST_WING)
 
+    @property
     def spike2(self):
         return self.get_part(HP_PCT_WING, True, EXPL_RESIST_WING)
 
+    @property
     def panel1(self):
         return self.get_part(HP_PCT_WING, True, EXPL_RESIST_WING)
 
+    @property
     def panel2(self):
         return self.get_part(HP_PCT_WING, True, EXPL_RESIST_WING)
 

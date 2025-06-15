@@ -24,11 +24,18 @@ class Capital:
     def get_hit_pts(self):
         return self.HIT_PTS
 
+    def get_part_hit_pts(self):
+        return self.PARTS_HP
+
     def get_fuses(self):
         return ''
 
     def get_damage(self, obj, point):
-        return ''
+        params = [
+            f'hit_pts = {self.get_part_hit_pts()}',
+            'root_health_proxy = true'
+        ]
+        return SINGLE_DIVIDER.join(params)
 
     @property
     def root(self):
@@ -39,56 +46,56 @@ class Capital:
         ]
         return SINGLE_DIVIDER.join(params)
 
-    def control_tower(self, obj=''):
-        return ''
+    def control_tower(self, obj='', hardpoint=''):
+        return self.get_damage(obj, hardpoint)
 
-    def nose(self, obj=''):
-        return ''
+    def nose(self, obj='', hardpoint=''):
+        return self.get_damage(obj, hardpoint)
 
-    def front(self, obj=''):
-        return ''
+    def front(self, obj='', hardpoint=''):
+        return self.get_damage(obj, hardpoint)
 
-    def tail(self, obj=''):
-        return ''
+    def tail(self, obj='', hardpoint=''):
+        return self.get_damage(obj, hardpoint)
 
-    def platform(self, obj=''):
-        return ''
+    def platform(self, obj='', hardpoint=''):
+        return self.get_damage(obj, hardpoint)
 
-    def eng1(self, obj=''):
-        return ''
+    def eng1(self, obj='', hardpoint=''):
+        return self.get_damage(obj, hardpoint)
 
-    def eng2(self, obj=''):
-        return ''
+    def eng2(self, obj='', hardpoint=''):
+        return self.get_damage(obj, hardpoint)
 
-    def eng3(self, obj=''):
-        return ''
+    def eng3(self, obj='', hardpoint=''):
+        return self.get_damage(obj, hardpoint)
 
-    def eng4(self, obj=''):
-        return ''
+    def eng4(self, obj='', hardpoint=''):
+        return self.get_damage(obj, hardpoint)
 
-    def wing1(self, obj=''):
-        return ''
+    def wing1(self, obj='', hardpoint=''):
+        return self.get_damage(obj, hardpoint)
 
-    def wing2(self, obj=''):
-        return ''
+    def wing2(self, obj='', hardpoint=''):
+        return self.get_damage(obj, hardpoint)
 
-    def wing3(self, obj=''):
-        return ''
+    def wing3(self, obj='', hardpoint=''):
+        return self.get_damage(obj, hardpoint)
 
-    def wing4(self, obj=''):
-        return ''
+    def wing4(self, obj='', hardpoint=''):
+        return self.get_damage(obj, hardpoint)
 
-    def spike1(self, obj=''):
-        return ''
+    def spike1(self, obj='', hardpoint=''):
+        return self.get_damage(obj, hardpoint)
 
-    def spike2(self, obj=''):
-        return ''
+    def spike2(self, obj='', hardpoint=''):
+        return self.get_damage(obj, hardpoint)
 
-    def tower1(self, obj=''):
-        return ''
+    def tower1(self, obj='', hardpoint=''):
+        return self.get_damage(obj, hardpoint)
 
-    def tower2(self, obj=''):
-        return ''
+    def tower2(self, obj='', hardpoint=''):
+        return self.get_damage(obj, hardpoint)
 
 
 class LibertyCruiser(Capital):
