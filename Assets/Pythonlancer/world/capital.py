@@ -31,6 +31,8 @@ class Capital:
         return ''
 
     def get_damage(self, obj, point):
+        if obj == '':
+            raise Exception(f'have no obj for part of {self}')
         params = [
             f'hit_pts = {self.get_part_hit_pts()}',
             'root_health_proxy = true'
