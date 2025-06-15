@@ -13,6 +13,27 @@ from universe import faction
 
 NPCSHIPS = '''
 
+
+
+[NPCShipArch]
+nickname = intro_armored_default
+loadout = intro_armored_default
+level = d5
+ship_archetype = ge_armored
+pilot = transport_hard
+state_graph = TRANSPORT
+npc_class = lawful, class_armored, d20
+
+[NPCShipArch]
+nickname = intro_armored_fast_start
+loadout = intro_armored_fast_start
+level = d5
+ship_archetype = ge_armored
+pilot = transport_hard
+state_graph = TRANSPORT
+npc_class = lawful, class_armored, d20
+
+
 [NPCShipArch]
 nickname = rh_grp_cruiser_m1
 loadout = rh_grp_cruiser_sat
@@ -120,7 +141,7 @@ class Misson01A(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.LibertyPirate,
                     ship=ship.Piranha,
-                    level=NPC.D1,
+                    level=NPC.D3,
                     equip_map=EqMap(base_level=2),
                 )
             ),
@@ -137,7 +158,7 @@ class Misson01A(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.RheinlandMain,
                     ship=ship.Valkyrie,
-                    level=NPC.D1,
+                    level=NPC.D3,
                     equip_map=EqMap(base_level=2),
                     have_afterburn1=False,
                     have_afterburn2=False,
@@ -156,7 +177,7 @@ class Misson01A(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.RheinlandMain,
                     ship=ship.Valkyrie,
-                    level=NPC.D1,
+                    level=NPC.D3,
                     equip_map=EqMap(base_level=2),
                     have_afterburn1=False,
                     have_afterburn2=False,
@@ -179,10 +200,10 @@ class Misson01A(ingame_mission.IngameMission):
                     equip_map=EqMap(base_level=1),
                     have_afterburn1=False,
                     have_afterburn2=False,
-                    gen_armor=False,
-                    extra_equip=[
-                        'equip = npc_armor_2',
-                    ]
+                    # gen_armor=False,
+                    # extra_equip=[
+                    #     'equip = npc_armor_2',
+                    # ]
                 )
             ),
             Ship(
@@ -202,10 +223,10 @@ class Misson01A(ingame_mission.IngameMission):
                     equip_map=EqMap(base_level=1),
                     have_afterburn1=False,
                     have_afterburn2=False,
-                    gen_armor=False,
-                    extra_equip=[
-                        'equip = npc_armor_2',
-                    ]
+                    # gen_armor=False,
+                    # extra_equip=[
+                    #     'equip = npc_armor_2',
+                    # ]
                 )
             ),
             Ship(
@@ -227,10 +248,10 @@ class Misson01A(ingame_mission.IngameMission):
                     equip_map=EqMap(base_level=1),
                     have_afterburn1=False,
                     have_afterburn2=False,
-                    gen_armor=False,
-                    extra_equip=[
-                        'equip = npc_armor_2',
-                    ]
+                    # gen_armor=False,
+                    # extra_equip=[
+                    #     'equip = npc_armor_2',
+                    # ]
                 )
             ),
         ]

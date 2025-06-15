@@ -4,6 +4,7 @@ from managers.misc_equip import MiscEquipManager
 from managers.weapon import WeaponManager
 from managers.population import PopulationManager
 from managers.shiparch import ShiparchManager
+from managers.npc_armor import NPCArmorManager
 from managers.universe import UniverseManager
 from managers.story import StoryManager
 from managers.store import StoreManager
@@ -19,6 +20,7 @@ class LancerCore(object):
         self.misc_equip = MiscEquipManager(self)
         self.weapons = WeaponManager(self)
         self.shiparch = ShiparchManager(self)
+        self.npc_armor = NPCArmorManager(self)
         self.population = PopulationManager(self)
         self.store = StoreManager(self)
         self.universe = UniverseManager(self)

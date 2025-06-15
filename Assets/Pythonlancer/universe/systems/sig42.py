@@ -226,13 +226,13 @@ class Sig42SolarPlant5(Sig42Member, Sig42BaseKusariSolarPlant):
     REL = RIGHT
 
 
-class Sig42Dockring(Sig42Member, Sig42Kusari, main_objects.MiningPlanetDockring):
+class Sig42Dockring(Sig42Member, Sig42Bretonia, main_objects.MiningPlanetDockring):
     BASE_INDEX = 1
     REL = BOTTOM
-    AUDIO_PREFIX = SpaceVoice.KU_PLANET
-    INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
+    AUDIO_PREFIX = SpaceVoice.BR_PLANET
+    INTERIOR_CLASS = interior.CustomFullSplitRoomInteriorSecond
     DEALERS = dealers.BretoniaCivilianDealers
-    SHIP_SET = markets.ShipSet('ge_fighter2')
+    SHIP_SET = markets.ShipSet('br_fighter')
 
     BASE_PROPS = meta.MiningPlanet(
         objectives=[

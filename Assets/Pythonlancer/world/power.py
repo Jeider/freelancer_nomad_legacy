@@ -1,5 +1,5 @@
 from world.equipment import MainInternalEquip, MainMiscEquip, Equipment, AdoxaEquipClassGood, MainEquipPrice
-
+from world import level
 
 class BasePower(MainInternalEquip):
     DROP_CHANCE = 8
@@ -63,6 +63,9 @@ material_library = Equipment\\models\\hardware.mat'''
     BR_POWER_ICON = 'equipment\\models\\icons\\br\\br_power.3db'
     KU_POWER_ICON = 'equipment\\models\\icons\\ku\\ku_power.3db'
     CO_POWER_ICON = 'equipment\\models\\icons\\co\\co_power.3db'
+
+    def get_market_level(self):
+        return level.POWER_LEVEL_PER_CLASS[self.equipment_class]
 
     def get_power_core(self):
         if self.equip_type in self.RH_EQUIP:

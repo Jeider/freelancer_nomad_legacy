@@ -575,7 +575,7 @@ class HokkRefineryConn3(HokkMember, main_objects.TradeConnection):
     OBJ_TO = HokkRefinery
     SIDE_FROM = TOP
     SIDE_TO = BOTTOM
-    TRADELANE_LETTER = 'E'
+    TRADELANE_LETTER = 'Z'
     HUNTER_DEFENCE_REL = RIGHT
     ATTACKED_BY = [
         HokkJunkers

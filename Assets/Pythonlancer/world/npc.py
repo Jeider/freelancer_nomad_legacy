@@ -64,6 +64,28 @@ class NPC(object):
     D18 = 18
     D19 = 19
 
+    SHIP_CLASS_PER_LEVEL = {
+        D1: 1,
+        D2: 2,
+        D3: 3,
+        D4: 4,
+        D5: 4,
+        D6: 4,
+        D7: 4,
+        D8: 5,
+        D9: 5,
+        D10: 5,
+        D11: 5,
+        D12: 6,
+        D13: 6,
+        D14: 6,
+        D15: 6,
+        D16: 7,
+        D17: 7,
+        D18: 7,
+        D19: 8,
+    }
+
     LEVELS = [
         D1, D2, D3, D4,
         D5, D6, D7, D8,
@@ -265,9 +287,7 @@ npc_class = {classes_list}'''
         return self.equip_map.mine_ammo
 
     def get_armor_index(self):
-        start_index = self.ship.START_ARMOR_INDEX_PER_SHIP_INDEX[self.ship.SHIP_INDEX]
-        required_index = start_index + self.level - 1
-        return required_index
+        return self.SHIP_CLASS_PER_LEVEL[self.level]
 
     def set_equipment_package(self, package):
         self.package = package

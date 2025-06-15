@@ -1,0 +1,47 @@
+MAIN_LEVELS = {
+    1: 0,
+    2: 0,
+    3: 1,
+    4: 2,
+    5: 6,
+    6: 10,
+    7: 14,
+    8: 20,
+    9: 20,
+    10: 20,
+}
+
+MAIN_LEVELS_SLIDE_NEXT = {
+    1: 0,
+    2: 0,
+    3: 1,
+    4: 2,
+    5: 6,
+    6: 10,
+    7: 14,
+    8: 20,
+    9: 20,
+    10: 20,
+}
+
+
+THRUSTER_LEVEL_PER_CLASS = {
+    1: 0,
+    2: 0,
+    3: 1,
+    4: 2,
+    5: 4,
+    6: 8,
+    7: 11,
+    8: 15,
+    9: 18,
+    10: 20,
+}
+
+
+SHIP_LEVEL_PER_CLASS = MAIN_LEVELS
+GUN_LEVEL_PER_CLASS = MAIN_LEVELS
+MINE_LEVEL_PER_CLASS = MAIN_LEVELS_SLIDE_NEXT
+POWER_LEVEL_PER_CLASS = MAIN_LEVELS_SLIDE_NEXT
+ENGINE_LEVEL_PER_CLASS = MAIN_LEVELS_SLIDE_NEXT
+SHIELD_LEVEL_PER_CLASS = MAIN_LEVELS_SLIDE_NEXT

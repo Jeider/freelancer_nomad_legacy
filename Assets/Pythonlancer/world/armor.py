@@ -6,12 +6,14 @@ nickname = {nickname}
 hit_pts_scale = {armor_scale}
 '''
     
-    def __init__(self, armor_index, armor_scale):
+    def __init__(self, ship_type, ship_class, armor_index, armor_scale):
+        self.ship_type = ship_type
+        self.ship_class = ship_class
         self.armor_index = armor_index
         self.armor_scale = armor_scale
 
     def get_nickname(self):
-        return 'npc_armor_{index}'.format(index=self.armor_index)
+        return f'npc_armor_{self.ship_type}_{self.ship_class}_scale_{self.armor_index}'
 
     def get_armor_scale(self):
         return self.armor_scale

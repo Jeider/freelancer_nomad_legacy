@@ -1,4 +1,5 @@
 from world.equipment import MainMiscEquip, Equipment, DefaultGood, MainEquipPrice
+from world import level
 
 
 class Thruster(MainEquipPrice, DefaultGood, MainMiscEquip):
@@ -118,6 +119,9 @@ material_library = equipment\\models\\ge_equip.mat'''
     CO_THRUSTER_ICON = 'equipment\\models\\icons\\co\\co_afterburn.3db'
 
     MAX_PRICE = 60000
+
+    def get_market_level(self):
+        return level.THRUSTER_LEVEL_PER_CLASS[self.equipment_class]
 
     def get_thruster_core(self):
         if self.equip_type in self.RH_EQUIP:

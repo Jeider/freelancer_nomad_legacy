@@ -27,8 +27,6 @@ class MiscEquipManager:
         self.npc_shields_list = []
         self.thrusters_db = {}
         self.thrusters_list = []
-        self.npc_armors_db = {}
-        self.npc_armors_list = []
 
         self.load_game_data()
 
@@ -76,13 +74,6 @@ class MiscEquipManager:
                 thruster = Thruster(self.ids, equip_type, equipment_class)
                 self.thrusters_db[equip_type][equipment_class] = thruster
                 self.thrusters_list.append(thruster)
-
-        # NPC shiparch features
-
-        for armor_index, armor_scale in Ship.ARMOR_INDICES.items():
-            npc_armor = ArmorNPC(armor_index, armor_scale)
-            self.npc_armors_db[armor_index] = npc_armor
-            self.npc_armors_list.append(npc_armor)
 
     def get_shipclass_item_by_query(self, query: Q.MiscEquip, func: str):
         items = []
@@ -137,9 +128,6 @@ class MiscEquipManager:
     def get_thruster(self, equip_type, equipment_class):
         return self.thrusters_db[equip_type][equipment_class]
 
-    def get_npc_armor(self, armor_index):
-        return self.npc_armors_db[armor_index]
-
     def get_engine_equip(self):
         return ManagerHelper.extract_equips(self.engines_list)
 
@@ -157,9 +145,6 @@ class MiscEquipManager:
 
     def get_st_good(self):
         return ManagerHelper.extract_goods(self.shields_list, self.npc_shields_list, self.thrusters_list)
-
-    def get_select_equip(self):
-        return ManagerHelper.extract_equips(self.npc_armors_list)
 
     def get_lootprops(self):
         return ManagerHelper.extract_lootprops(

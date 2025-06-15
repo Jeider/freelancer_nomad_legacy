@@ -60,7 +60,7 @@ def main():
     DataFolder.sync_equip('comm_equip', GENERATED, core.store.get_comm_equip())
     DataFolder.sync_equip('comm_good', GENERATED, core.store.get_comm_good())
 
-    DataFolder.sync_equip('select_equip', GENERATED, core.misc_equip.get_select_equip())
+    DataFolder.sync_equip('select_equip', GENERATED, core.npc_armor.get_select_equip())
 
     DataFolder.sync_equip('ship_packages', GENERATED, core.shiparch.get_ship_goods())
 

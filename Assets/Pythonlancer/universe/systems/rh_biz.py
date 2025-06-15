@@ -188,7 +188,7 @@ class BizmarkDockRing(BizmarkMember, main_objects.LargePlanetDockring):
     AUDIO_PREFIX = SpaceVoice.RH_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.RheinlandPlanetDealers
-    SHIP_SET = markets.ShipSet('bw_fighter', 'ge_fighter3', 'bw_freighter')
+    SHIP_SET = markets.ShipSet('ge_fighter2', 'ge_fighter3', 'bw_freighter')
 
     BASE_PROPS = meta.LargePlanet(
         objectives=[
@@ -232,7 +232,7 @@ nickname = Deck2
 file = Universe\\SYSTEMS_MOD\\RH_BIZMARK\\Room\\rh_biz_03_deck2.ini
     ''']
     DEALERS = dealers.RheinlandMilitaryDealers
-    SHIP_SET = markets.ShipSet('rh_fighter')
+    SHIP_SET = markets.ShipSet('bw_fighter')
 
 
 class BizmarkResearch(BizmarkMember, main_objects.ResearchStation):

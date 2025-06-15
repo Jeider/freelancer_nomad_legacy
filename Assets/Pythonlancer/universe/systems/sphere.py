@@ -45,7 +45,7 @@ file = Universe\SPECIAL\SPHERE\ROOM\dread_mnh_deck.ini
     WEAPON_FACTION = WEAPON_LI
     EQUIP_FACTION = EQUIP_LI
     # ASF set?
-    SHIP_SET = markets.ShipSet('bh_elite')
+    SHIP_SET = markets.ShipSet('li_fighter')
     OFFER_MISSIONS = False
 
 
@@ -72,7 +72,7 @@ file = Universe\SPECIAL\SPHERE\ROOM\dread_mnh_deck.ini
     WEAPON_FACTION = WEAPON_LI
     EQUIP_FACTION = EQUIP_LI
     # ASF set?
-    SHIP_SET = markets.ShipSet('bh_elite')
+    SHIP_SET = markets.ShipSet('li_fighter')
 
 
 class SphereOneLab(SphereMember, main_objects.Station):

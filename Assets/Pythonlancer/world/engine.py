@@ -1,5 +1,6 @@
 from world.equipment import Equipment, MainMiscEquip, AdoxaEquipClassGood, MainEquipPrice
 from world.power import BasePower
+from world import level
 
 
 class Engine(MainEquipPrice, AdoxaEquipClassGood, BasePower):
@@ -460,6 +461,9 @@ engine_kill_sound = engine_pi_freighter_kill'''
         MainMiscEquip.CO_CORSAIR: CORSAIR_ENGINE_FREIGHTER,
         MainMiscEquip.CO_OUTCAST: OUTCAST_ENGINE_FREIGHTER,
     }
+
+    def get_market_level(self):
+        return level.ENGINE_LEVEL_PER_CLASS[self.equipment_class]
 
     def get_engine_core(self):
         if self.equip_type in self.RH_EQUIP:

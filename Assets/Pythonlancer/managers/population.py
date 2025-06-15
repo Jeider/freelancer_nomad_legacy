@@ -15,6 +15,7 @@ class PopulationManager:
         self.misc_equip = self.core.misc_equip
         self.weapons = self.core.weapons
         self.shiparch = self.core.shiparch
+        self.npc_armor = self.core.npc_armor
 
         self.npc_db = {}
         self.npc_list = []
@@ -59,7 +60,7 @@ class PopulationManager:
             NPC.POWER: self.misc_equip.get_powerplant(npc.ship.EQUIPMENT_SHIPCLASS, npc.faction.POWER, npc.get_powerplant_class()),
             NPC.SHIELD: self.misc_equip.get_shield(npc.ship.EQUIPMENT_SHIPCLASS, npc.faction.SHIELD, npc.get_shield_class()),
             NPC.SHIELD_NPC: self.misc_equip.get_npc_shield(npc.ship.EQUIPMENT_SHIPCLASS, npc.faction.SHIELD, npc.get_shield_class()),
-            NPC.ARMOR: self.misc_equip.get_npc_armor(npc.get_armor_index()),
+            NPC.ARMOR: self.npc_armor.get_npc_armor(npc.ship, npc.get_armor_index()),
             NPC.WEAPON_1: self.weapons.get_gun(npc.faction.WEAPON, npc.get_weapon1_class()),
             NPC.WEAPON_2: self.weapons.get_gun(npc.faction.WEAPON, npc.get_weapon2_class()),
             NPC.WEAPON_3: self.weapons.get_gun(npc.faction.WEAPON, npc.get_weapon3_class()),

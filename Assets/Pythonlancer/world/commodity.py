@@ -125,6 +125,9 @@ class Commodity:
         self.good_price_multiplier = 5
         self.bad_price_multiplier = 2
 
+    def get_market_level(self):
+        return self.MARKET_DEFAULT_LEVEL
+
     def get_nickname(self):
         return self.NICKNAME
 

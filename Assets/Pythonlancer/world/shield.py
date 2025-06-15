@@ -1,5 +1,6 @@
 from world.equipment import DefaultGood, MainEquipPrice, MainMiscEquip
 from world.power import BasePower
+from world import level
 
 
 class Shield(MainEquipPrice, DefaultGood, BasePower):
@@ -89,6 +90,9 @@ shield_hit_effects = {hit_three}, gf_pi_shield03'''
     BR_SHIELD_ICON = 'equipment\\models\\icons\\br\\br_shield.3db'
     KU_SHIELD_ICON = 'equipment\\models\\icons\\ku\\ku_shield.3db'
     CO_SHIELD_ICON = 'equipment\\models\\icons\\co\\co_shield.3db'
+
+    def get_market_level(self):
+        return level.SHIELD_LEVEL_PER_CLASS[self.equipment_class]
 
     def get_shield_core_template_params(self):
         return {

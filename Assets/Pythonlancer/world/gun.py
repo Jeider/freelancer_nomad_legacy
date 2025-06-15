@@ -1,5 +1,6 @@
 from world.equipment import DefaultGood, MainEquipPrice, Icon
 from world.weapon import Weapon
+from world import level
 
 from world.names import *
 
@@ -107,6 +108,9 @@ class Gun(MainEquipPrice, Weapon, DefaultGood):
     def __init_subclass__(cls, **kwargs):
         super().__init_subclass__(**kwargs)
         cls.subclasses.append(cls)
+
+    def get_market_level(self):
+        return level.GUN_LEVEL_PER_CLASS[self.equipment_class]
 
     def get_icon(self):
         icon = self.ICON_PER_WEAPON_MODEL[self.MODEL]

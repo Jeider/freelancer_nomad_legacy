@@ -88,7 +88,6 @@ class Misson01B(ingame_mission.IngameMission):
 
     def get_ships(self):
         return [
-            Ship(self, 'armored'),
             Ship(
                 self,
                 'escort',
@@ -102,7 +101,7 @@ class Misson01B(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.RheinlandCivilians,
                     ship=ship.Banshee,
-                    level=NPC.D1,
+                    level=NPC.D3,
                     equip_map=EqMap(base_level=1),
                 )
             ),
@@ -119,7 +118,7 @@ class Misson01B(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.LibertyPirate,
                     ship=ship.Piranha,
-                    level=NPC.D1,
+                    level=NPC.D3,
                     equip_map=EqMap(base_level=2),
                 )
             ),
@@ -138,13 +137,13 @@ class Misson01B(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.RheinlandPirate,
                     ship=ship.Dagger,
-                    level=NPC.D1,
+                    level=NPC.D5,
                     equip_map=EqMap(base_level=1),
                     have_afterburn2=False,
-                    gen_armor=False,
-                    extra_equip=[
-                        'equip = npc_armor_1',
-                    ]
+                    # gen_armor=False,
+                    # extra_equip=[
+                    #     'equip = npc_armor_1',
+                    # ]
                 )
             ),
             Ship(
@@ -162,13 +161,13 @@ class Misson01B(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.RheinlandPirate,
                     ship=ship.Stiletto,
-                    level=NPC.D1,
+                    level=NPC.D2,
                     equip_map=EqMap(base_level=1),
                     have_afterburn2=False,
-                    gen_armor=False,
-                    extra_equip=[
-                        'equip = npc_armor_1',
-                    ]
+                    # gen_armor=False,
+                    # extra_equip=[
+                    #     'equip = npc_armor_1',
+                    # ]
                 )
             ),
             Ship(
@@ -186,13 +185,13 @@ class Misson01B(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.RheinlandPirate,
                     ship=ship.Dagger,
-                    level=NPC.D1,
+                    level=NPC.D2,
                     equip_map=EqMap(base_level=1),
                     have_afterburn2=False,
-                    gen_armor=False,
-                    extra_equip=[
-                        'equip = npc_armor_1',
-                    ]
+                    # gen_armor=False,
+                    # extra_equip=[
+                    #     'equip = npc_armor_1',
+                    # ]
                 )
             ),
             Ship(
@@ -210,13 +209,13 @@ class Misson01B(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.RheinlandPirate,
                     ship=ship.Stiletto,
-                    level=NPC.D1,
+                    level=NPC.D2,
                     equip_map=EqMap(base_level=1),
                     have_afterburn2=False,
-                    gen_armor=False,
-                    extra_equip=[
-                        'equip = npc_armor_1',
-                    ]
+                    # gen_armor=False,
+                    # extra_equip=[
+                    #     'equip = npc_armor_1',
+                    # ]
                 )
             ),
         ]

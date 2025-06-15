@@ -436,7 +436,7 @@ class AvalDockring(AvalMember, main_objects.LargePlanetDockring):
     AUDIO_PREFIX = SpaceVoice.BR_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.BretoniaPlanetDealers
-    SHIP_SET = markets.ShipSet('ge_fighter2', 'co_elite', 'br_freighter')
+    SHIP_SET = markets.ShipSet('co_fighter', 'co_elite', 'br_freighter')
 
     BASE_PROPS = meta.LargePlanet(
         objectives=[

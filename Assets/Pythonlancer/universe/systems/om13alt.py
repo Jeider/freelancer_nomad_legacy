@@ -28,4 +28,4 @@ class BlackholeOsiris(Omega13AltMember, main_objects.LibertyBattleship):
     WEAPON_FACTION = WEAPON_LI
     EQUIP_FACTION = EQUIP_LI
     # ASF set?
-    SHIP_SET = markets.ShipSet('li_elite')
+    SHIP_SET = markets.ShipSet('bh_elite2')

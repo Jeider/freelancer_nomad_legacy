@@ -336,6 +336,16 @@ class CustomFullSplitRoomInterior(CustomFileInterior):
     MAIN_ROOM = 'Cityscape'
 
 
+class CustomFullSplitRoomInteriorSecond(CustomFileInterior):
+    CUSTOM_INTERIOR_FILE = True
+    HAVE_BAR = True
+    HAVE_EQUIP = True
+    HAVE_TRADER = True
+    HAVE_SHIPDEALER = True
+    DEALER_PLACEMENTS_TEMPLATE = SINGLE_CHAR_DEALERS_TEMPLATE
+    MAIN_ROOM = 'Planetscape'
+
+
 class GenericInterior(Interior):
     HAVE_SHIPDEALER = False
 

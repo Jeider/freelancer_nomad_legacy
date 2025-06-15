@@ -307,7 +307,7 @@ class ForbesDockring(ForbesMember, main_objects.LargePlanetDockring):
     AUDIO_PREFIX = SpaceVoice.LI_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.LibertyPlanetDealers
-    SHIP_SET = markets.ShipSet('ge_fighter2', 'bh_elite', 'bw_freighter')
+    SHIP_SET = markets.ShipSet('bh_fighter', 'bh_elite', 'ge_csv')
 
     BASE_PROPS = meta.LargePlanet(
         objectives=[
@@ -448,11 +448,12 @@ class ForbesJunkers(ForbesMember, main_objects.JunkerBase):
     REL = TOP
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseForbes
     FACTION = faction.Junkers
+    SHIP_SET = markets.ShipSet('pi_fighter')
 
     DEFENCE_LEVEL = None
 
     AUDIO_PREFIX = SpaceVoice.OUTPOST
-    INTERIOR_CLASS = interior.OutpostInterior
+    INTERIOR_CLASS = interior.OutpostShipdealerInterior
     DEALERS = dealers.LibertyPirateDealers
 
     ASTEROID_ZONES = [

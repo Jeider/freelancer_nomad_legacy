@@ -24,7 +24,7 @@ class XenMember(Member):
     EQUIP_FACTION = EQUIP_BW
 
 
-class ViennaKusariBattleship(XenMember, main_objects.KusariBattleship):
+class XenosKusariBattleship(XenMember, main_objects.KusariBattleship):
     ALIAS = 'start_musashi'
     INDEX = 1
     BASE_INDEX = 99
@@ -36,3 +36,4 @@ class ViennaKusariBattleship(XenMember, main_objects.KusariBattleship):
     FACTION = faction.KusariMain
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_KU
     EQUIP_SET = markets.OrderSet
+    SHIP_SET = markets.ShipSet('ku_elite')

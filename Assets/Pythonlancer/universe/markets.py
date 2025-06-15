@@ -25,7 +25,7 @@ class MarketEquip(MarketItem):
     MARKET_DEFAULT_PRICE_MULTIPLIER = 1
 
     def get_market_level(self):
-        return self.MARKET_DEFAULT_LEVEL
+        raise Exception(f'{self} have no level definition')
 
     def get_market_reputation(self):
         return self.MARKET_DEFAULT_REPUTATION
@@ -71,6 +71,9 @@ class MarketShip(MarketItem):
 
 class MarketCommodity(MarketEquip):
     MARKET_STOCK_AVAILABLE = '150, 500, 0'
+
+    def get_market_level(self):
+        return self.MARKET_DEFAULT_LEVEL
 
     def in_stock(self):
         raise NotImplementedError
@@ -219,7 +222,7 @@ BizSetDebug = EquipSet(
 )
 
 BattleshipSet = EquipSet(
-    Q.GenericGun(HEAVYGUN, eq_classes=DEBUG_CLASSES),
+    Q.GenericGun(LIGHTGUN, eq_classes=DEBUG_CLASSES),
     Q.Engine(None, eq_classes=DEBUG_CLASSES),
     Q.Power(None, eq_classes=DEBUG_CLASSES),
     Q.Shield(None, eq_classes=DEBUG_CLASSES),

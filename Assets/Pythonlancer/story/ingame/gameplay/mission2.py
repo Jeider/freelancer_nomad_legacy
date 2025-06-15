@@ -372,8 +372,8 @@ class Misson02(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.Junkers,
                     ship=ship.Dagger,
-                    level=NPC.D2,
-                    equip_map=EqMap(base_level=1),
+                    level=NPC.D3,
+                    equip_map=EqMap(base_level=2),
                 )
             ),
             Ship(
@@ -386,9 +386,9 @@ class Misson02(ingame_mission.IngameMission):
                 relative_range=1500,
                 npc=NPC(
                     faction=faction.Junkers,
-                    ship=ship.Dagger,
-                    level=NPC.D1,
-                    equip_map=EqMap(base_level=1),
+                    ship=ship.Stiletto,
+                    level=NPC.D3,
+                    equip_map=EqMap(base_level=2),
                 )
             ),
             Ship(
@@ -402,8 +402,8 @@ class Misson02(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.Junkers,
                     ship=ship.CSV,
-                    level=NPC.D1,
-                    equip_map=EqMap(base_level=1),
+                    level=NPC.D3,
+                    equip_map=EqMap(base_level=2),
                 )
             ),
             Ship(
@@ -420,7 +420,7 @@ class Misson02(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.Corsairs,
                     ship=ship.Bloodhound,
-                    level=NPC.D1,
+                    level=NPC.D3,
                     equip_map=EqMap(base_level=2),
                 )
             ),
@@ -437,7 +437,7 @@ class Misson02(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.Corsairs,
                     ship=ship.Mule,
-                    level=NPC.D1,
+                    level=NPC.D2,
                     equip_map=EqMap(base_level=1),
                 )
             ),
@@ -455,7 +455,7 @@ class Misson02(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.Corsairs,
                     ship=ship.Bloodhound,
-                    level=NPC.D1,
+                    level=NPC.D2,
                     equip_map=EqMap(base_level=2),
                 )
             ),
@@ -474,7 +474,7 @@ class Misson02(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.Corsairs,
                     ship=ship.Bloodhound,
-                    level=NPC.D2,
+                    level=NPC.D3,
                     equip_map=EqMap(base_level=2),
                 )
             ),
@@ -493,7 +493,7 @@ class Misson02(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.Corsairs,
                     ship=ship.Bloodhound,
-                    level=NPC.D2,
+                    level=NPC.D3,
                     equip_map=EqMap(base_level=2),
                 )
             ),

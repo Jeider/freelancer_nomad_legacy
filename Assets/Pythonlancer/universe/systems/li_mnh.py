@@ -255,7 +255,7 @@ class ManhDockring(ManhMember, main_objects.LargePlanetDockring):
     AUDIO_PREFIX = SpaceVoice.LI_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.LibertyPlanetDealers
-    SHIP_SET = markets.ShipSet('li_fighter', 'ge_fighter3', 'li_freighter')
+    SHIP_SET = markets.ShipSet('li_fighter', 'li_elite', 'li_freighter')
 
     BASE_PROPS = meta.ManhattanSuperPlanet(
         objectives=[
