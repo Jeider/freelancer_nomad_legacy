@@ -192,13 +192,13 @@ class Misson12(ingame_mission.IngameMission):
         defined_points.append(
             DockableBattleshipSolar(
                 self, S.asf_prom, 'logos',
-                ru_name='Линкор Логос', base='sphere2_99_base',
+                ru_name='Линкор Логос', base='asf_prom_99_base',
                 labels=['enemy', 'or_b', 'logos']),
         )
         defined_points.append(
             DockableBattleshipSolar(
                 self, S.asf_prom, 'prom_osiris', faction='asf_grp',
-                ru_name='Линкор Осирис', base='sphere2_99_base',
+                ru_name='Линкор Осирис', base='asf_prom_99_base',
                 labels=['friend', 'asf', 'osiris']),
         )
 

@@ -303,7 +303,7 @@ class Misson10(ingame_mission.IngameMission):
 
             Solar(self, S.xen, 'xenos_launch_musashi', ru_name='Линкор Мусаси', base='xen_99_base',
                   archetype='k_battleship'),
-            DockableBattleshipSolar(self, S.xen, 'xenos_leave_musashi', ru_name='Линкор Мусаси', base='om7_99_base',
+            DockableBattleshipSolar(self, S.xen, 'xenos_leave_musashi', ru_name='Линкор Мусаси', base='xen_98_base',
                   archetype='k_battleship'),
         ])
 

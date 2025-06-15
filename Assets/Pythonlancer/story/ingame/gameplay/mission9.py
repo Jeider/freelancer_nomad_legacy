@@ -163,7 +163,7 @@ class Misson09(ingame_mission.IngameMission):
             )
 
         defined_points.extend([
-            DockableBattleshipSolar(self, S.sig42, 'torp_musashi', ru_name='Линкор Мусаси', base='xen_99_base',
+            DockableBattleshipSolar(self, S.sig42, 'torp_musashi', ru_name='Линкор Мусаси', base='sig42_98_base',
                 archetype='k_battleship', labels=['friend']),
         ])
 
@@ -238,6 +238,7 @@ class Misson09(ingame_mission.IngameMission):
 
     def get_real_objects(self):
         return {
+            'vendor_station': Obj(self, ku_tgk.TekagiLargeStation),
             'tgk_tlr_1': Conn(self, ku_tgk.TekagiFreeportConn2, ku_tgk.TekagiLargeStation),
             'tgk_tlr_2': Conn(self, ku_tgk.TekagiFreeportConn1, ku_tgk.TekagiFreeport),
             'to_sirius': Obj(self, ku_tgk.TekagiSiriusJumphole),
@@ -245,6 +246,9 @@ class Misson09(ingame_mission.IngameMission):
 
     def get_nn_objectives(self):
         return [
+            NNObj(self, 'Встретьтесь с информатором на станции Йокогама в Омеге-3',
+                  name='meet_vendor', target='vendor_station'),
+
             NNObj(self, O.LAUNCH, name='launch'),
 
             NNObj(self, O.TLR, target='tgk_tlr_1'),

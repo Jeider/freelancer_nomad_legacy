@@ -744,7 +744,7 @@ class Misson13(ingame_mission.IngameMission):
             DockableBattleshipSolar(
                 self, S.sphere2, 'osiris_escape',
                 archetype='o_osiris', loadout='li_battleship_02',
-                ru_name='Линкор Осирис', base='om13_alt_99_base',
+                ru_name='Линкор Осирис', base='sphere2_99_base',
                 labels=['friend', 'asf', 'osiris']),
         )
 

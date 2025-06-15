@@ -678,3 +678,16 @@ class AvalStoryBattleship(AvalMember, main_objects.KusariBattleship):
         AvalPolice,  # TODO: haven't real economics connection
     ]
     SHIP_SET = markets.ShipSet('co_elite')
+
+
+class AvalStoryBattleshipTwo(AvalMember, main_objects.KusariBattleship):
+    ALIAS = 'm8_bship'
+    INDEX = 1
+    BASE_INDEX = 98
+    REL = LEFT
+    INTERIOR_CLASS = interior.BattleshipInterior
+    DEALERS = dealers.BretoniaMilitaryDealers
+    STORY = True
+    CALC_STORE = False
+    IS_BASE = False
+    AUTOSAVE_FORBIDDEN = True

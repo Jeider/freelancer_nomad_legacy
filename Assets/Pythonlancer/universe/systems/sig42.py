@@ -500,3 +500,18 @@ class AfterLairOsiris(Sig42Member, main_objects.LibertyBattleship):
     # ASF set?
     SHIP_SET = markets.ShipSet('li_elite')
 
+
+class LeaveKusariBattleship(Sig42Member, main_objects.KusariBattleship):
+    ALIAS = 'leave_musashi'
+    INDEX = 1
+    BASE_INDEX = 98
+    REL = TOP
+    INTERIOR_CLASS = interior.BattleshipNoshipInterior
+    DEALERS = dealers.KusariMilitaryDealers
+    STORY = True
+    CALC_STORE = False
+    FACTION = faction.KusariMain
+    ROOM_SUBFOLDER = interior.ROOM_FOLDER_KU
+    IS_BASE = False
+    AUTOSAVE_FORBIDDEN = True
+

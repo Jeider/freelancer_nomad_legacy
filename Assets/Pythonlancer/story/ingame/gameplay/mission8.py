@@ -77,9 +77,8 @@ class Misson08(ingame_mission.IngameMission):
                     'Артефакт успешно передан на научную станцию. Миссия закончена. Ожидайте сообщений от Хетчер.',
                 ]),
             ),
-
-
         ]
+
     def get_real_objects(self):
         return {
             'vendor_planet': Obj(self, br_avl.AvalDockring),
@@ -168,7 +167,7 @@ class Misson08(ingame_mission.IngameMission):
             DockableBattleshipSolar(
                 self, S.br_avl, 'price_wales_avalon', faction='br_grp',
                 archetype='b_battleship', loadout='br_battleship_station',
-                ru_name='Линкор Принц Уэльский', base='m8_tau44_99_base'
+                ru_name='Линкор Принц Уэльский', base='br_avl_98_base'
             ),
             DockableBattleshipSolar(
                 self, S.m8_tau44, 'price_wales_start', faction='br_grp',

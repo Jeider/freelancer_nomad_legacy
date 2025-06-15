@@ -39,6 +39,7 @@ from universe.systems import sphere as sphere_content
 from universe.systems import tau44 as tau44_content
 from universe.systems import sphere2 as sphere2_content
 from universe.systems import om13alt as om13_alt_content
+from universe.systems import asf_prom as asf_prom_content
 
 
 
@@ -726,6 +727,7 @@ class asf_prom(system.StorySystem, system.SiriusSystem):
     NAME = 'asf_prom'
     DIRECT_TEMPLATE_NAME = 'asf_prom_dev'
     RU_NAME = 'Промет+ей'
+    CONTENT = asf_prom_content
 
     ALLOW_SYNC = True
 

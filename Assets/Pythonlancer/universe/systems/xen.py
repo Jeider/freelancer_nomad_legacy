@@ -29,7 +29,7 @@ class XenosKusariBattleship(XenMember, main_objects.KusariBattleship):
     INDEX = 1
     BASE_INDEX = 99
     REL = TOP
-    INTERIOR_CLASS = interior.BattleshipNoshipInterior
+    INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.KusariMilitaryDealers
     STORY = True
     CALC_STORE = False
@@ -37,3 +37,18 @@ class XenosKusariBattleship(XenMember, main_objects.KusariBattleship):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_KU
     EQUIP_SET = markets.OrderSet
     SHIP_SET = markets.ShipSet('ku_elite')
+
+
+class XenosKusariBattleshipTwo(XenMember, main_objects.KusariBattleship):
+    ALIAS = 'leave_musashi'
+    INDEX = 1
+    BASE_INDEX = 98
+    REL = TOP
+    INTERIOR_CLASS = interior.BattleshipInterior
+    DEALERS = dealers.KusariMilitaryDealers
+    STORY = True
+    CALC_STORE = False
+    FACTION = faction.KusariMain
+    ROOM_SUBFOLDER = interior.ROOM_FOLDER_KU
+    IS_BASE = False
+    AUTOSAVE_FORBIDDEN = True
