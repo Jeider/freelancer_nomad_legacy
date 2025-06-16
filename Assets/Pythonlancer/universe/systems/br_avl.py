@@ -618,7 +618,7 @@ class AvalPrisonConn2(AvalMember, main_objects.TradeConnection):
     SIDE_TO = BOTTOM
     TRADELANE_LETTER = 'E'
 
-    OBJ_TO_TLR_FORCE_OFFSET = (-21500, 0, -59000)
+    OBJ_FROM_TLR_FORCE_OFFSET = (-21500, 0, -59000)
 
 
 class AvalDockringConn1(AvalMember, main_objects.TradeConnection):
