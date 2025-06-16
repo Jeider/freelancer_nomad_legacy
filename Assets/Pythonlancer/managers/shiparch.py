@@ -6,6 +6,7 @@ from text.dividers import DIVIDER
 from tools.data_folder import DataFolder
 
 SHIPARCH_TEMPLATE = 'hardcoded_inis/static_content/shiparch.ini'
+FUSE_GEN_CAPITAL = 'fuse_gen_capital'
 
 
 class ShiparchManager:
@@ -21,6 +22,7 @@ class ShiparchManager:
         self.capitals_db = {}
 
         self.shiparch_context = {}
+        shiparch_loaded = False
 
         for ship in Ship.subclasses:
             instance = ship(self.ids)
@@ -50,6 +52,7 @@ class ShiparchManager:
     def get_shiparch_content(self):
         shiparch = self.core.tpl_manager.get_result(SHIPARCH_TEMPLATE, self.shiparch_context)
         self.validate_shiparch()
+        self.shiparch_loaded = True
         return shiparch
 
     def get_ship_goods(self):
@@ -69,7 +72,14 @@ class ShiparchManager:
 
         return DIVIDER.join(data)
 
+    def get_fuses(self):
+        fuses = []
+        for capital in self.capitals:
+            fuses.append(capital.get_part_fuses_definitions())
+        return DIVIDER.join(fuses)
+
     def sync_data(self):
         if not self.core.write:
             return
         DataFolder.sync_shiparch(self.get_shiparch_content())
+        DataFolder.sync_fuse(FUSE_GEN_CAPITAL, self.get_fuses())

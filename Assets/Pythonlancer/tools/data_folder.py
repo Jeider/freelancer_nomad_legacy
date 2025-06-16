@@ -40,6 +40,15 @@ class DataFolder(object):
         return cls.get_root() / 'INTERFACE'
 
     @classmethod
+    def get_fx(cls):
+        return cls.get_root() / 'FX'
+
+    @classmethod
+    def sync_fuse(cls, fuse_name, content):
+        loadouts_file = cls.get_fx() / f'{fuse_name}.ini'
+        loadouts_file.write_text(content, encoding='utf-8')
+
+    @classmethod
     def sync_solar_gen_loadouts(cls, content):
         loadouts_file = cls.get_solar() / LOADOUTS_GEN
         loadouts_file.write_text(content, encoding='utf-8')
