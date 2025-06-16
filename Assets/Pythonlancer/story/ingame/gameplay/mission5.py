@@ -10,7 +10,8 @@ from text.dividers import SINGLE_DIVIDER, DIVIDER
 from story.ingame import names as N
 from story.ingame import objectives as O
 from story.ingame.tools import (
-    Point, Obj, Conn, NNObj, Ship, Solar, Capital, SaveState, MultiText, TextDialog, Direct, Trigger, DRY_RUN
+    Point, Obj, Conn, NNObj, Ship, Solar, Capital, SaveState, MultiText,
+    MultiLine, TextDialog, Direct, Trigger, DRY_RUN
 )
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT, GENERIC_MOUNTED_ROTATABLE
 
@@ -363,9 +364,20 @@ class Misson05(ingame_mission.IngameMission):
     FOLDER = 'M05'
     FILE = 'm05'
     START_SAVE_ID = 32500
+    START_SAVE_RU_NAME = 'Планета Форбс'
     STATIC_NPCSHIPS = NPCSHIPS
     SCRIPT_INDEX = 5
     DIRECT_SYSTEMS = [S.li_for, S.sig17]
+    INIT_OFFER = MultiLine(
+        'ЗАДАЧА:',
+        'Выяснить местоположения доктора Мандрейка и доставить его на планету Форбс.',
+        '',
+        'СЛОЖНОСТЬ:',
+        'Средняя.',
+        '',
+        'Награда:',
+        '12 500 кредитов.',
+    ).get_content()
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

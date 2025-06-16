@@ -5,6 +5,7 @@ INITIAL_EQUIP_ID = 290001
 INITIAL_COMMODITY_ID = 300001
 INITIAL_SHIP_ID = 110001
 INITIAL_STORY_ID = 33500
+INITIAL_STORY_SAVE_ID = 33330
 INITIAL_SCRIPT_ID = 150000
 INITIAL_UNIVERSE_ID = 68200
 INITIAL_RUMOR_ID = 138000
@@ -21,6 +22,7 @@ class IDsManager:
         self.commodity = IDsDatabase('commodity', INITIAL_COMMODITY_ID)
         self.ship = IDsDatabase('ship', INITIAL_SHIP_ID)
         self.story = IDsDatabase('story', INITIAL_STORY_ID)
+        self.story_save = IDsDatabase('story_save', INITIAL_STORY_SAVE_ID)
         self.script = IDsDatabase('script', INITIAL_SCRIPT_ID)
         self.universe = IDsDatabase('universe', INITIAL_UNIVERSE_ID)
         self.rumors = IDsDatabase('rumor', INITIAL_RUMOR_ID)
@@ -31,6 +33,7 @@ class IDsManager:
             self.commodity,
             self.ship,
             self.story,
+            self.story_save,
             self.script,
             self.universe,
             self.rumors,

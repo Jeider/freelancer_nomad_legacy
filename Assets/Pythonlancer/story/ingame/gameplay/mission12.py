@@ -7,7 +7,8 @@ from story.math import euler_to_quat
 from story import actors
 
 from story.ingame import objectives as O
-from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Solar, Capital, DockableBattleshipSolar, SaveState
+from story.ingame.tools import (Point, Obj, Conn, NNObj, Ship, Solar, Capital, DockableBattleshipSolar, SaveState,
+                                MultiLine)
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
 from world.npc import NPC, EqMap
@@ -106,10 +107,21 @@ class Misson12(ingame_mission.IngameMission):
     FOLDER = 'M12'
     FILE = 'm12'
     START_SAVE_ID = 33200
+    START_SAVE_RU_NAME = 'Сириус. Планета Спрага'
     SCRIPT_INDEX = 12
     DIRECT_SYSTEMS = [S.sig42, S.asf_hq, S.asf_prom]
     STATIC_NPCSHIPS = NPCSHIPS
     RTC = ['sprague']
+    INIT_OFFER = MultiLine(
+        'ЗАДАЧА:',
+        'Не допустить уничтожение станции Энтерпрайз и штаба СБА.',
+        '',
+        'СЛОЖНОСТЬ:',
+        'Спасти человечество.',
+        '',
+        'Награда:',
+        'Выживание',
+    ).get_content()
 
     def get_save_states(self):
         return [

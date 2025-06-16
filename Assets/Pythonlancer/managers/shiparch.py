@@ -42,8 +42,15 @@ class ShiparchManager:
     def get_ship_by_archetype(self, archetype):
         return self.ships_db[archetype]
 
+    def validate_shiparch(self):
+        for ship in self.ships:
+            if not ship.is_used():
+                raise Exception(f'ship {ship} is not used')
+
     def get_shiparch_content(self):
-        return self.core.tpl_manager.get_result(SHIPARCH_TEMPLATE, self.shiparch_context)
+        shiparch = self.core.tpl_manager.get_result(SHIPARCH_TEMPLATE, self.shiparch_context)
+        self.validate_shiparch()
+        return shiparch
 
     def get_ship_goods(self):
         data = []

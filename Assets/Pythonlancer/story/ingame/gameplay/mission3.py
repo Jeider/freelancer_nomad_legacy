@@ -7,7 +7,7 @@ from story.math import euler_to_quat
 from story import actors
 
 from story.ingame import objectives as O
-from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Solar, SaveState
+from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Solar, SaveState, MultiLine
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
 from world.npc import NPC, EqMap
@@ -50,8 +50,19 @@ class Misson03(ingame_mission.IngameMission):
     FOLDER = 'M03'
     FILE = 'm03'
     START_SAVE_ID = 32300
+    START_SAVE_RU_NAME = 'Сигма-8. Станция Штарке'
     STATIC_NPCSHIPS = NPCSHIPS
     SCRIPT_INDEX = 3
+    INIT_OFFER = MultiLine(
+        'ЗАДАЧА:',
+        'Участвовать в операции по ликвидации аванпоста генерала Дитриха.',
+        '',
+        'СЛОЖНОСТЬ:',
+        'Высокая.',
+        '',
+        'Награда:',
+        '25 000 кредитов.',
+    ).get_content()
 
     def get_save_states(self):
         return [

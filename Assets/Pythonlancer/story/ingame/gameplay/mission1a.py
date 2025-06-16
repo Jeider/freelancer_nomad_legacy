@@ -4,7 +4,7 @@ from story.ingame import ingame_mission
 from story import actors
 
 from story.ingame import objectives as O
-from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, SaveState, MultiText, TextDialog
+from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, SaveState, MultiText, MultiLine, TextDialog
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
 from world.npc import NPC, EqMap
@@ -12,8 +12,6 @@ from world import ship
 from universe import faction
 
 NPCSHIPS = '''
-
-
 
 [NPCShipArch]
 nickname = intro_armored_default
@@ -60,12 +58,26 @@ class Misson01A(ingame_mission.IngameMission):
     FILE = 'm01a'
     SCRIPT_INDEX = 1
     START_SAVE_ID = 32000
+    START_SAVE_RU_NAME = 'Сигма-13. Газодобытчик Магдебург'
     STATIC_NPCSHIPS = NPCSHIPS
+    INIT_OFFER = MultiLine(
+        'ЗАДАЧА:',
+        'Сопроводить рейнландский торговый конвой.'
+        ''
+        'СЛОЖНОСТЬ:'
+        'Низкая.'
+        ''
+        'Награда:'
+        '5 000 кредитов.'
+    ).get_content()
 
     def get_save_states(self):
         return [
             SaveState(self, 'brandenburg', 'Берлин, Аванпост Бранденбург'),
         ]
+
+    def get_offers(self):
+        return
 
     def get_dialogs(self):
         return [

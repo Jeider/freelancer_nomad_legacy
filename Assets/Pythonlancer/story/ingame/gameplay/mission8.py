@@ -11,7 +11,7 @@ from story.ingame import names as N
 from story.ingame import objectives as O
 from story.ingame.tools import (
     Point, Obj, Conn, NNObj, Ship, Solar, Capital, SaveState, DockableBattleshipSolar, StaticJumpgate,
-    MultiText, TextDialog, Direct, Trigger, DRY_RUN, DIALOG_YES_NO
+    MultiText, MultiLine, TextDialog, Direct, Trigger, DRY_RUN, DIALOG_YES_NO
 )
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT, GENERIC_MOUNTED_ROTATABLE
 
@@ -47,10 +47,21 @@ class Misson08(ingame_mission.IngameMission):
     FOLDER = 'M08'
     FILE = 'm08'
     START_SAVE_ID = 32800
+    START_SAVE_RU_NAME = 'Планета Авалон'
     STATIC_NPCSHIPS = NPCSHIPS
     SCRIPT_INDEX = 8
     DIRECT_SYSTEMS = [S.br_avl, S.m8_tau44, S.m8_lair_enter, S.m8_lair_core, S.m8_lair_escape, S.m8_asf_hq, S.sig42]
     RTC = ['queen_rtc']
+    INIT_OFFER = MultiLine(
+        'ЗАДАЧА:',
+        'Изучить обстановку в аванпосте ИРА, находящейся в зоне контроля СБА',
+        '',
+        'СЛОЖНОСТЬ:',
+        'Высокая.',
+        '',
+        'Награда:',
+        '50 000 кредитов',
+    ).get_content()
 
     def get_save_states(self):
         return [

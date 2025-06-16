@@ -1780,12 +1780,12 @@ class Offer:
             f'Act_SetTitle = {self.mission.get_init_title()}',
             f'Act_SetOffer = {self.mission.get_init_offer()}',
         ])
-
-    def accept(self):
-        return SINGLE_DIVIDER.join([
-            f'Act_SetTitle = {self.mission.get_accept_title()}',
-            f'Act_SetOffer = {self.mission.get_accept_offer()}',
-        ])
+    #
+    # def accept(self):
+    #     return SINGLE_DIVIDER.join([
+    #         f'Act_SetTitle = {self.mission.get_accept_title()}',
+    #         f'Act_SetOffer = {self.mission.get_accept_offer()}',
+    #     ])
 
 
 class SaveState:
@@ -1794,7 +1794,7 @@ class SaveState:
         self.mission = mission
         self.code = code
         self.ru_name = f'Миссия {mission.SCRIPT_INDEX}. {ru_name}'
-        self.ids_name = self.mission.ids.new_name(self.ru_name)
+        self.ids_name = self.mission.ids_save.new_name(self.ru_name)
 
     def get_code(self):
         return self.code
@@ -1810,6 +1810,15 @@ class MultiText:
 
     def get_content(self):
         return "\\n\\n".join(self.lines)
+
+
+class MultiLine:
+
+    def __init__(self, *lines):
+        self.lines = lines
+
+    def get_content(self):
+        return "\\n".join(self.lines)
 
 
 class TextDialog:

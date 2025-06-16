@@ -11,11 +11,10 @@ class IngameMission(object):
     STATIC_NPCSHIPS = None
     SCRIPT_INDEX = None
     DIRECT_SYSTEMS = []
-    INIT_TITLE = ''
-    INIT_OFFER = ''
-    ACCEPT_TITLE = ''
-    ACCEPT_OFFER = ''
+    INIT_OFFER = None
     RTC = []
+    START_SAVE_ID = None
+    START_SAVE_RU_NAME = None
 
     subclasses = []
 
@@ -23,8 +22,9 @@ class IngameMission(object):
         super().__init_subclass__(**kwargs)
         cls.subclasses.append(cls)
 
-    def __init__(self, ids, full_script, universe_root):
+    def __init__(self, ids, ids_save, full_script, universe_root):
         self.ids = ids
+        self.ids_save = ids_save
         self.capital_groups = {}
         self.solar_groups = {}
         self.full_script = full_script
@@ -35,10 +35,11 @@ class IngameMission(object):
         self.rtc = Rtc(self)
         self.offer = Offer(self)
 
-        self.init_title = ids.new_name(self.INIT_TITLE)
+        self.title = ids.new_name(self.get_mission_title())
+
+        if not self.INIT_OFFER:
+            raise Exception(f'Mission {self.__class__.__name__} have no initital offer')
         self.init_offer = ids.new_name(self.INIT_OFFER)
-        self.accept_title = ids.new_name(self.ACCEPT_TITLE)
-        self.accept_offer = ids.new_name(self.ACCEPT_OFFER)
 
         self.script = None
         if self.full_script and self.SCRIPT_INDEX:
@@ -56,17 +57,19 @@ class IngameMission(object):
         if not self.FILE:
             raise Exception('File name should be defined for %s' % self.__class__.__name__)
 
+        if not self.START_SAVE_ID or not self.START_SAVE_RU_NAME:
+            raise Exception(f'Mission {self.__class__.__name__} have no initial save id or initial save name')
+
+        self.ids_save.add_force(self.START_SAVE_ID, f'Миссия {self.SCRIPT_INDEX}. {self.START_SAVE_RU_NAME}')
+
+    def get_mission_title(self):
+        return f'Миссия {self.SCRIPT_INDEX}'
+
     def get_init_title(self):
-        return self.init_title.id
+        return self.title.id
 
     def get_init_offer(self):
         return self.init_offer.id
-
-    def get_accept_title(self):
-        return self.accept_title.id
-
-    def get_accept_offer(self):
-        return self.accept_offer.id
 
     def get_template(self):
         if not self.JINJA_TEMPLATE:
@@ -163,20 +166,14 @@ class IngameMission(object):
 
     def get_rtc_context(self) -> dict:
         return {
-            'init_title': self.init_title,
             'init_offer': self.init_offer,
-            'accept_title': self.accept_title,
-            'accept_offer': self.accept_offer,
         }
 
     def get_initial_context(self) -> dict:
         context = {
             'mission': self,
             'nag': self.nag,
-            'init_title': self.init_title,
             'init_offer': self.init_offer,
-            'accept_title': self.accept_title,
-            'accept_offer': self.accept_offer,
             'rtc': self.rtc,
             'offer': self.offer,
         }

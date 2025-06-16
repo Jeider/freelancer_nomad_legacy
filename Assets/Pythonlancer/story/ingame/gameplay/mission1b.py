@@ -4,7 +4,7 @@ from story.ingame import ingame_mission
 from story import actors
 
 from story.ingame import objectives as O
-from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Capital, SaveState
+from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Capital, SaveState, MultiLine
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
 from world.npc import NPC, EqMap
@@ -31,7 +31,18 @@ class Misson01B(ingame_mission.IngameMission):
     FILE = 'm01b'
     SCRIPT_INDEX = 1
     START_SAVE_ID = 32100
+    START_SAVE_RU_NAME = 'Планета Берлин'
     STATIC_NPCSHIPS = NPCSHIPS
+    INIT_OFFER = MultiLine(
+        'ЗАДАЧА:',
+        'Сопроводить рейнландский торговый конвой.'
+        ''
+        'СЛОЖНОСТЬ:'
+        'Низкая.'
+        ''
+        'Награда:'
+        '5 000 кредитов.'
+    ).get_content()
 
     def get_save_states(self):
         return [

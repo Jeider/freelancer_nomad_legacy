@@ -7,7 +7,8 @@ from story.math import euler_to_quat
 from story import actors
 
 from story.ingame import objectives as O
-from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, TextDialog, MultiText, DIALOG_YES_NO, SaveState
+from story.ingame.tools import (Point, Obj, Conn, NNObj, Ship, TextDialog, MultiText, MultiLine,
+                                DIALOG_YES_NO, SaveState)
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
 from world.npc import NPC, EqMap
@@ -163,8 +164,19 @@ class Misson02(ingame_mission.IngameMission):
     FOLDER = 'M02'
     FILE = 'm02'
     START_SAVE_ID = 32200
+    START_SAVE_RU_NAME = 'Бисмарк. Линкор Шарнхорст'
     STATIC_NPCSHIPS = NPCSHIPS
     SCRIPT_INDEX = 2
+    INIT_OFFER = MultiLine(
+        'ЗАДАЧА:',
+        'Найти разрушенный корабль, добыть полезную информацию из него и доставить Вильгельму.',
+        '',
+        'СЛОЖНОСТЬ:',
+        'Низкая.',
+        '',
+        'Награда:',
+        '5 000 кредитов.',
+    ).get_content()
 
     def get_dialogs(self):
         return [

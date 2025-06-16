@@ -8,7 +8,8 @@ from story import actors
 
 from story.ingame import names as N
 from story.ingame import objectives as O
-from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Solar, StaticJumpgate, Capital, SaveState, DockableBattleshipSolar
+from story.ingame.tools import (Point, Obj, Conn, NNObj, Ship, Solar, StaticJumpgate, Capital, SaveState,
+                                DockableBattleshipSolar, MultiLine)
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
 from world.npc import NPC, EqMap
@@ -34,10 +35,21 @@ class Misson07(ingame_mission.IngameMission):
     FOLDER = 'M07'
     FILE = 'm07'
     START_SAVE_ID = 32700
+    START_SAVE_RU_NAME = 'Кадиз, фрипорт Тринидад'
     SCRIPT_INDEX = 7
     DIRECT_SYSTEMS = [S.omicron2, S.co_cad, S.om13, S.br_avl]
     STATIC_NPCSHIPS = NPCSHIPS
     RTC = ['cadiz']
+    INIT_OFFER = MultiLine(
+        'ЗАДАЧА:',
+        'Найти способ восстановить связь с СБА и вызволить артефакты',
+        '',
+        'СЛОЖНОСТЬ:',
+        'Рискованная.',
+        '',
+        'Награда:',
+        'Обещанные 250 000 кредитов',
+    ).get_content()
 
     def get_save_states(self):
         return [

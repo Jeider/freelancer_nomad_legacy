@@ -7,7 +7,8 @@ from story import actors
 
 from story.ingame import objectives as O
 from story.ingame.tools import (
-    Point, Obj, Conn, NNObj, Ship, Solar, DockableBattleshipSolar, Capital, Patrol, Direct, DRY_RUN, Trigger, SaveState
+    Point, Obj, Conn, NNObj, Ship, Solar, DockableBattleshipSolar, Capital, Patrol, Direct, DRY_RUN, Trigger,
+    SaveState, MultiLine
 )
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
@@ -239,10 +240,21 @@ class Misson10(ingame_mission.IngameMission):
     FOLDER = 'M10'
     FILE = 'm10'
     START_SAVE_ID = 33000
+    START_SAVE_RU_NAME = 'Система ксеносов. Линкор Мусаси'
     SCRIPT_INDEX = 10
     DIRECT_SYSTEMS = [S.xen]
     STATIC_NPCSHIPS = NPCSHIPS
     RTC = ['briefieng']
+    INIT_OFFER = MultiLine(
+        'ЗАДАЧА:',
+        'Вызволить заключенных из тюрьмы на базе ксеносов',
+        '',
+        'СЛОЖНОСТЬ:',
+        'Высокая.',
+        '',
+        'Награда:',
+        'Освобождение Аларика, выполнение договора',
+    ).get_content()
 
     def get_save_states(self):
         return [

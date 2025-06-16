@@ -11,7 +11,7 @@ from story.ingame import names as N
 from story.ingame import objectives as O
 from story.ingame.tools import (
     Point, Obj, Conn, NNObj, Ship, Solar, Capital, SaveState, DockableBattleshipSolar, StaticJumpgate,
-    MultiText, TextDialog, Direct, Trigger, DRY_RUN, DIALOG_YES_NO
+    MultiText, MultiLine, TextDialog, Direct, Trigger, DRY_RUN, DIALOG_YES_NO
 )
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT, GENERIC_MOUNTED_ROTATABLE
 
@@ -83,9 +83,20 @@ class Misson06(ingame_mission.IngameMission):
     FOLDER = 'M06'
     FILE = 'm06'
     START_SAVE_ID = 32700
+    START_SAVE_RU_NAME = 'Нью-Йорк, Планета Питтсбург'
     STATIC_NPCSHIPS = NPCSHIPS
     SCRIPT_INDEX = 6
     DIRECT_SYSTEMS = [S.li_mnh, S.sphere, S.co_cad]
+    INIT_OFFER = MultiLine(
+        'ЗАДАЧА:',
+        'Приостановить рейландские исследования на режимном объекте.',
+        '',
+        'СЛОЖНОСТЬ:',
+        'Рискованная.',
+        '',
+        'Награда:',
+        '250 000 кредитов.',
+    ).get_content()
 
     def get_save_states(self):
         return [

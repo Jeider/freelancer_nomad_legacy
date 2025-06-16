@@ -8,7 +8,8 @@ from story import actors
 
 from story.ingame import names as N
 from story.ingame import objectives as O
-from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Solar, Capital, SaveState, MultiText, TextDialog
+from story.ingame.tools import (Point, Obj, Conn, NNObj, Ship, Solar, Capital, SaveState,
+                                MultiText, MultiLine, TextDialog)
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
 from world.npc import NPC, EqMap
@@ -52,9 +53,20 @@ class Misson04(ingame_mission.IngameMission):
     FOLDER = 'M04'
     FILE = 'm04'
     START_SAVE_ID = 32400
+    START_SAVE_RU_NAME = 'Мюнхен, Планета Норторф'
     STATIC_NPCSHIPS = NPCSHIPS
     SCRIPT_INDEX = 4
     DIRECT_SYSTEMS = [S.sig8, S.rh_biz, S.li_for]
+    INIT_OFFER = MultiLine(
+        'ЗАДАЧА:',
+        'Сопроводить Джакобо в систему Форбс',
+        '',
+        'СЛОЖНОСТЬ:',
+        'Неизвестно.',
+        '',
+        'Награда:',
+        'Неизвестно (предположительно высокая).',
+    ).get_content()
 
     def get_save_states(self):
         return [

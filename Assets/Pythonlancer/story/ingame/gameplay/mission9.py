@@ -8,7 +8,8 @@ from story import actors
 
 from story.ingame import names as N
 from story.ingame import objectives as O
-from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, Solar, Capital, DockableBattleshipSolar, SaveState
+from story.ingame.tools import (Point, Obj, Conn, NNObj, Ship, Solar, Capital, DockableBattleshipSolar, SaveState,
+                                MultiLine)
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
 from world.npc import NPC, EqMap
@@ -124,10 +125,21 @@ class Misson09(ingame_mission.IngameMission):
     FOLDER = 'M09'
     FILE = 'm09'
     START_SAVE_ID = 32900
+    START_SAVE_RU_NAME = 'Омега-3. Станция Йокогама'
     SCRIPT_INDEX = 9
     DIRECT_SYSTEMS = [S.ku_tgk, S.sig42]
     STATIC_NPCSHIPS = NPCSHIPS
     RTC = ['yokohama', 'order', 'final', 'leave_yoko']
+    INIT_OFFER = MultiLine(
+        'ЗАДАЧА:',
+        'Помочь Ордену получить важные данные об СБА',
+        '',
+        'СЛОЖНОСТЬ:',
+        'Высокая.',
+        '',
+        'Награда:',
+        'Выполнение договоренностей со стороны Ордена',
+    ).get_content()
 
     def get_save_states(self):
         return [

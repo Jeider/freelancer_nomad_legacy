@@ -43,6 +43,11 @@ class IDsDatabase:
         self.last_id += 1
         return self.last_id
 
+    def add_force(self, the_id, text):
+        the_id = TheID(the_id, text, kind=NAME)
+        self.ids.append(the_id)
+        return the_id
+
     def new_name(self, text):
         the_id = TheID(self.get_next_id(), text, kind=NAME)
         self.ids.append(the_id)

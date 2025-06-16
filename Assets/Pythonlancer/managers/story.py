@@ -17,6 +17,7 @@ class StoryManager:
         self.shiparch = self.core.shiparch
         universe_root = self.universe.get_universe_root()
         self.ids = self.core.ids.story
+        self.ids_save = self.core.ids.story_save
 
         self.missions = []
 
@@ -28,7 +29,8 @@ class StoryManager:
 
         for mission_class in IngameMission.subclasses:
             print(mission_class)
-            mission = mission_class(ids=self.ids, full_script=self.script, universe_root=universe_root)
+            mission = mission_class(ids=self.ids, ids_save=self.ids_save,
+                                    full_script=self.script, universe_root=universe_root)
             self.missions.append(mission)
             content = self.core.tpl_manager.get_result(mission.get_template(), mission.get_context())
             self.thorns.extend(mission.ingame_thorns)

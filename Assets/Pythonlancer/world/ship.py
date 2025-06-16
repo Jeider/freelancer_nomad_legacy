@@ -50,7 +50,7 @@ HP_PCT_ENGINE_DOUBLE_MAIN = 0.4
 HP_PCT_ENGINE_DOUBLE_SECOND = 0.25
 HP_PCT_ENGINE_TRIPLE_SAME = 0.3
 HP_PCT_ENGINE_TRIPLE_MAIN = 0.4
-HP_PCT_ENGINE_TRIPLE_SECONDARY = 0.25
+HP_PCT_ENGINE_TRIPLE_SECOND = 0.25
 
 HP_PCT_WING = 0.4
 HP_PCT_TAIL = 0.5
@@ -64,37 +64,6 @@ EXPL_RESIST_MISC = 1
 
 BOT_REPAIR = 600
 NUM_REPAIRS = 3
-
-ARMOR_INDEX_1 = 1
-ARMOR_INDEX_2 = 2
-ARMOR_INDEX_3 = 3
-ARMOR_INDEX_4 = 4
-ARMOR_INDEX_5 = 5
-ARMOR_INDEX_6 = 6
-ARMOR_INDEX_7 = 7
-ARMOR_INDEX_8 = 8
-ARMOR_INDEX_9 = 9
-ARMOR_INDEX_10 = 10
-ARMOR_INDEX_11 = 11
-ARMOR_INDEX_12 = 12
-ARMOR_INDEX_13 = 13
-ARMOR_INDEX_14 = 14
-ARMOR_INDEX_15 = 15
-ARMOR_INDEX_16 = 16
-ARMOR_INDEX_17 = 17
-ARMOR_INDEX_18 = 18
-ARMOR_INDEX_19 = 19
-ARMOR_INDEX_20 = 20
-ARMOR_INDEX_21 = 21
-ARMOR_INDEX_22 = 22
-ARMOR_INDEX_23 = 23
-ARMOR_INDEX_24 = 24
-ARMOR_INDEX_25 = 25
-ARMOR_INDEX_26 = 26
-ARMOR_INDEX_27 = 27
-ARMOR_INDEX_28 = 28
-ARMOR_INDEX_29 = 29
-ARMOR_INDEX_30 = 30
 
 ENGINE_SINGLE = 1
 ENGINE_DOUBLE_SAME = 2
@@ -199,6 +168,10 @@ cargo = {nickname}, {amount}'''
         self.ids_info1 = self.ids.new_info(InfocardBuilder.build_infocard(INFO_SHIP_ABOUT, {}))
         self.ids_info2 = self.ids.new_info(InfocardBuilder.build_infocard(INFO_SHIP_KEYS, {}))
         self.ids_info3 = self.ids.new_info(InfocardBuilder.build_infocard(INFO_SHIP_VALUES, ship_stats))
+        self.used = False
+
+    def is_used(self):
+        return self.used
 
     def get_market_level(self):
         return level.SHIP_LEVEL_PER_CLASS[self.SHIP_CLASS]
@@ -593,6 +566,9 @@ item_icon = Equipment\\models\\commodities\\nn_icons\\{icon}'''
 
     @property
     def root(self):
+        if self.is_used():
+            raise Exception(f'ship {self} already used')
+        self.used = True
         params = [
             f'nickname = {self.ARCHETYPE}',
             f'ids_name = {self.get_ids_name()}',
@@ -693,7 +669,7 @@ item_icon = Equipment\\models\\commodities\\nn_icons\\{icon}'''
             return self.get_part(HP_PCT_ENGINE_TRIPLE_SAME, True, EXPL_RESIST_ENGINE)
 
         if self.ENGINE_TYPE == ENGINE_TRIPLE_DIFF:
-            return self.get_part(HP_PCT_ENGINE_TRIPLE_SECONDARY, True, EXPL_RESIST_ENGINE)
+            return self.get_part(HP_PCT_ENGINE_TRIPLE_SECOND, True, EXPL_RESIST_ENGINE)
 
         raise Exception(f'ship {self} have unknown engine type')
 
@@ -706,7 +682,7 @@ item_icon = Equipment\\models\\commodities\\nn_icons\\{icon}'''
             return self.get_part(HP_PCT_ENGINE_TRIPLE_SAME, True, EXPL_RESIST_ENGINE)
 
         if self.ENGINE_TYPE == ENGINE_TRIPLE_DIFF:
-            return self.get_part(HP_PCT_ENGINE_TRIPLE_SECONDARY, True, EXPL_RESIST_ENGINE)
+            return self.get_part(HP_PCT_ENGINE_TRIPLE_SECOND, True, EXPL_RESIST_ENGINE)
 
         raise Exception(f'ship {self} have unknown engine type')
 
@@ -1348,6 +1324,8 @@ class Drake(KusariShip, ShipInterceptor, Ship2, Ship):
     ENGINE_TYPE = ENGINE_SINGLE
     LIGHTS = 4
 
+    WING_LIKE_FIN = True
+
     ARCHETYPE = 'ku_fighter'
     RU_NAME = 'Дрейк'
     TEMPLATE_CODE = 'kf'
@@ -1399,6 +1377,8 @@ class Dragon(KusariShip, ShipElite, Ship3, Ship):
     SHIELD_LINK = 'k_elite_shield01'
     ENGINE_TYPE = ENGINE_DOUBLE_SAME
     LIGHTS = 10
+
+    WING_LIKE_FIN = True
 
     ARCHETYPE = 'ku_elite'
     RU_NAME = 'Дракон'

@@ -8,7 +8,7 @@ from story import actors
 from story.ingame import objectives as O
 from story.ingame.tools import (
     Point, Obj, Conn, NNObj, Ship, Solar, Capital, SaveState, DockableBattleshipSolar,
-    Direct, Trigger
+    Direct, Trigger, MultiLine
 )
 
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT, GENERIC_MOUNTED_ROTATABLE, GENERIC_TWO_POINT_MOVE2
@@ -245,10 +245,21 @@ class Misson13(ingame_mission.IngameMission):
     FOLDER = 'M13'
     FILE = 'm13'
     START_SAVE_ID = 33300
+    START_SAVE_RU_NAME = 'Линкор Осирис. Рядом со Сферой'
     SCRIPT_INDEX = 13
     DIRECT_SYSTEMS = [S.sphere2, S.sphere2_inside, S.beast01, S.om13_alt]
     STATIC_NPCSHIPS = NPCSHIPS
     RTC = ['captured', 'last_brief']
+    INIT_OFFER = MultiLine(
+        'ЗАДАЧА:',
+        'Остановить планы Рокфорда в Сфере.',
+        '',
+        'СЛОЖНОСТЬ:',
+        'Спасти человечество.',
+        '',
+        'Награда:',
+        'Выживание',
+    ).get_content()
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

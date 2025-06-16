@@ -11,7 +11,7 @@ from universe.content import main_objects
 from story.ingame import names as N
 from story.ingame import objectives as O
 from story.ingame.tools import (
-    Point, Obj, Conn, NNObj, Ship, Solar, DockableBattleshipSolar, StaticJumpgate, Capital, SaveState
+    Point, Obj, Conn, NNObj, Ship, Solar, DockableBattleshipSolar, StaticJumpgate, Capital, SaveState, MultiLine
 )
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT, GENERIC_MOUNTED_ROTATABLE, GENERIC_TWO_POINT_MOVE
 
@@ -83,14 +83,21 @@ class Misson11(ingame_mission.IngameMission):
     FOLDER = 'M11'
     FILE = 'm11'
     START_SAVE_ID = 33100
+    START_SAVE_RU_NAME = 'Омега-7. Линкор Мусаси'
     SCRIPT_INDEX = 11
     DIRECT_SYSTEMS = [S.om7, S.or_hq, S.rh_vien, S.sig42]
     STATIC_NPCSHIPS = NPCSHIPS
-    INIT_TITLE = ''
-    INIT_OFFER = ''
-    ACCEPT_TITLE = 'Миссия 11. Засада на Рокфорда'
-    ACCEPT_OFFER = 'Предложение миссии'
     RTC = ['rescued', 'alaric', 'ambush', 'drink', 'harajuku_launch_rtc']
+    INIT_OFFER = MultiLine(
+        'ЗАДАЧА:',
+        'Помочь Ордену ликвидировать Рокфорда',
+        '',
+        'СЛОЖНОСТЬ:',
+        'Рискованная.',
+        '',
+        'Награда:',
+        'Полное очищение репутации',
+    ).get_content()
 
     def get_save_states(self):
         return [
