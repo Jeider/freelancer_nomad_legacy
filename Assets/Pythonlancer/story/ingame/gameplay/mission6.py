@@ -567,6 +567,9 @@ class Misson06(ingame_mission.IngameMission):
                 actor=actors.Alaric,
                 labels=[
                     'friend',
+                    'li_bg_fighter',
+                    'liberty',
+                    'background',
                 ],
                 npc=NPC(
                     faction=faction.LibertyHunters,
@@ -579,6 +582,7 @@ class Misson06(ingame_mission.IngameMission):
                 self,
                 'alaric_cloak',
                 hero=True,
+                jumper=True,
                 actor=actors.Alaric,
                 labels=[
                     'friend',
