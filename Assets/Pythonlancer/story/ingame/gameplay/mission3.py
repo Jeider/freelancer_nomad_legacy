@@ -275,7 +275,7 @@ class Misson03(ingame_mission.IngameMission):
                     'assistance',
                 ],
                 unique_npc_entry=True,
-                base_name='Марадёр',
+                base_name='Мародёр',
                 npc=NPC(
                     faction=faction.RheinlandMain,
                     ship=ship.Valkyrie,

@@ -175,6 +175,9 @@ class SystemObject:
     def get_faction(self):
         return self.FACTION
 
+    def get_faction_code(self):
+        return self.get_faction().get_code()
+
     def get_population_kind(self):
         return self.POPULATION_KIND
 

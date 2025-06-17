@@ -945,6 +945,18 @@ class Dockring(DockableObject):
     REL_DRIFT = 1000
     REL_APPEND = 3000
 
+    DOCKING_FIXTURE_TEMPLATE = '''[Object]
+nickname = {parent_object}_docking_fixture_1
+ids_name = 253953
+pos = {pos}
+rotate = {rotate}
+archetype = docking_fixture
+ids_info = 065540
+dock_with = {parent_base}
+reputation = {reputation}
+behavior = NOTHING
+'''
+
     INTERIOR_CLASS = None  # should be overrided
 
     AUDIO_PREFIX = None  # should be overrided
@@ -956,6 +968,9 @@ class Dockring(DockableObject):
         BOTTOM: 180,
     }
 
+    FIXTURE_POSITION_APPEND = (0, 350, 0)
+    HAVE_FIXTURE = True
+
     DEFENCE_ZONE_SIZE = 5000
     DEFENCE_LEVEL = DEFENCE_HIGH
     DEFENCE_ZONE_BACKDRIFT = 2000
@@ -965,6 +980,25 @@ class Dockring(DockableObject):
 
     def get_interior_content(self):
         raise Exception('Interior for dock ring planets should be only manual created')
+
+
+    def get_sattelites(self):
+        position = self.get_position()
+        fixture_position = (
+            self.FIXTURE_POSITION_APPEND[0] + position[0],
+            self.FIXTURE_POSITION_APPEND[1] + position[1],
+            self.FIXTURE_POSITION_APPEND[2] + position[2],
+        )
+
+        return [
+            self.DOCKING_FIXTURE_TEMPLATE.format(
+                parent_object=self.get_space_object_name(),
+                pos='{}, {}, {}'.format(*fixture_position),
+                rotate='{}, {}, {}'.format(*self.get_rotate()),
+                parent_base=self.get_base_nickname(),
+                reputation=self.get_faction_code(),
+            )
+        ]
 
 
 class LargePlanetDockring(Dockring):

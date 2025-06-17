@@ -333,6 +333,7 @@ class Misson04(ingame_mission.IngameMission):
                     'keln',
                     'rheinland',
                 ],
+                affiliation=faction.RheinlandMain.CODE,
                 npc=NPC(
                     faction=faction.RheinlandMain,
                     ship=ship.Valkyrie,

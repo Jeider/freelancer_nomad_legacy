@@ -101,6 +101,7 @@ cargo = {nickname}, {amount}'''
     ENG_FORCE_FEATURE = False
 
     SHIP_CLASS = 3
+    SHIP_KIND_CODE = None
     MAX_HIT_PTS = 10000
     HP_SHIELD = 'HpShield01'
     HP_ENGINE = 'HpDrive01'
@@ -571,6 +572,7 @@ item_icon = Equipment\\models\\commodities\\nn_icons\\{icon}'''
         self.used = True
         params = [
             f'nickname = {self.ARCHETYPE}',
+            f'ship_class = {self.SHIP_KIND_CODE}',
             f'ids_name = {self.get_ids_name()}',
             f'ids_info = {self.get_ids_info()}',
             f'ids_info1 = {self.get_ids_info1()}',
@@ -742,6 +744,7 @@ item_icon = Equipment\\models\\commodities\\nn_icons\\{icon}'''
 class BaseInterceptorShip(object):
     SHIP_TYPE = LIGHT_FIGHTER
     MAX_HIT_PTS = 12000
+    SHIP_KIND_CODE = 0
 
     MAX_PRICE = 500000
 
@@ -773,6 +776,7 @@ class BaseInterceptorShip(object):
 class BaseFighterShip(object):
     SHIP_TYPE = HEAVY_FIGHTER
     MAX_HIT_PTS = 10000
+    SHIP_KIND_CODE = 1
 
     MAX_PRICE = 650000
 
@@ -805,6 +809,7 @@ class BaseFighterShip(object):
 class BaseFreighterShip(object):
     SHIP_TYPE = FREIGHTER
     MAX_HIT_PTS = 14000
+    SHIP_KIND_CODE = 2
 
     ADDITIONAL_EQUIP = 'M, CM'
 

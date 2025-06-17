@@ -7,6 +7,7 @@ DISAPPEAR = 'disappear'
 class Capital:
     TEMPLATE_CODE = None
     ARCHETYPE = None
+    RU_NAME = None
 
     HIT_PTS = None
     PARTS_HP = None
@@ -40,10 +41,20 @@ class Capital:
         self.ids = ids
         self.fuses_definitions = []
         self.used_parts = []
-        # pass improve in future
+
+        if not self.RU_NAME:
+            raise Exception(f'Capital ship {self.ARCHETYPE} have no ru_name')
+
+        self.ids_name = self.ids.new_name(self.RU_NAME)
 
     def get_hit_pts(self):
         return self.HIT_PTS
+
+    def get_ids_name(self):
+        return self.ids_name.id
+
+    def get_ids_info(self):
+        return 1  # TODO: сделать описания капшипов
 
     def get_part_hit_pts(self, hit_pts_multipler=1):
         return self.PARTS_HP * hit_pts_multipler
@@ -151,6 +162,8 @@ hitpoints = {damage}
         params = [
             f'nickname = {self.ARCHETYPE}',
             f'hit_pts = {self.get_hit_pts()}',
+            f'ids_name = {self.get_ids_name()}',
+            f'ids_info = {self.get_ids_info()}',
         ]
 
         if self.DAMAGE_FUSE1:
@@ -165,7 +178,7 @@ hitpoints = {damage}
         return self.get_damage('control_tower', obj, hardpoint, part_fate=DISAPPEAR)
 
     def nose(self, obj, hardpoint=None, hit_pts_multipler=2):
-        return self.get_damage('nose', obj, hardpoint, hit_pts_multipler=2)
+        return self.get_damage('nose', obj, hardpoint, hit_pts_multipler=hit_pts_multipler)
 
     def front(self, obj, hardpoint=None):
         return self.get_damage('front', obj, hardpoint)
@@ -232,6 +245,7 @@ hitpoints = {damage}
 class LibertyCruiser(Capital):
     TEMPLATE_CODE = 'lcr'
     ARCHETYPE = 'li_cruiser'
+    RU_NAME = 'Крейсер Либерти'
 
     DAMAGE_FUSE1 = 'li_cruiser_burning_fuse01'
     DAMAGE_FUSE2 = 'li_cruiser_burning_fuse02'
@@ -246,6 +260,7 @@ class LibertyCruiser(Capital):
 class BretoniaGunboat(Capital):
     TEMPLATE_CODE = 'bgb'
     ARCHETYPE = 'br_gunboat'
+    RU_NAME = 'Канонерка Бретонии'
 
     DAMAGE_FUSE1 = 'br_gunship_burning_fuse01'
     DAMAGE_FUSE2 = 'br_gunship_burning_fuse02'
@@ -260,6 +275,7 @@ class BretoniaGunboat(Capital):
 class BretoniaDestroyer(Capital):
     TEMPLATE_CODE = 'bdr'
     ARCHETYPE = 'br_destroyer'
+    RU_NAME = 'Эсминец Бретонии'
 
     DAMAGE_FUSE1 = 'br_destroyer_burning_fuse01'
     DAMAGE_FUSE2 = 'br_destroyer_burning_fuse02'
@@ -274,6 +290,7 @@ class BretoniaDestroyer(Capital):
 class KusariGunboat(Capital):
     TEMPLATE_CODE = 'kgb'
     ARCHETYPE = 'ku_gunboat'
+    RU_NAME = 'Канонерка Кусари'
 
     DAMAGE_FUSE1 = 'ku_gunship_burning_fuse01'
     DAMAGE_FUSE2 = 'ku_gunship_burning_fuse01'
@@ -288,6 +305,7 @@ class KusariGunboat(Capital):
 class KusariDestroyer(Capital):
     TEMPLATE_CODE = 'kdr'
     ARCHETYPE = 'ku_destroyer'
+    RU_NAME = 'Эсминец Кусари'
 
     DAMAGE_FUSE1 = 'ku_destroyer_burning_fuse01'
     DAMAGE_FUSE2 = 'ku_destroyer_burning_fuse02'
@@ -302,6 +320,7 @@ class KusariDestroyer(Capital):
 class RheinlandGunboat(Capital):
     TEMPLATE_CODE = 'rgb'
     ARCHETYPE = 'rh_gunboat'
+    RU_NAME = 'Канонерка Рейнланда'
 
     DAMAGE_FUSE1 = 'rh_gunship_burning_fuse01'
     DAMAGE_FUSE2 = 'rh_gunship_burning_fuse02'
@@ -316,6 +335,7 @@ class RheinlandGunboat(Capital):
 class RheinlandCruiser(Capital):
     TEMPLATE_CODE = 'rcr'
     ARCHETYPE = 'rh_cruiser'
+    RU_NAME = 'Крейсер Рейнланда'
 
     DAMAGE_FUSE1 = 'rh_cruiser_burning_fuse01'
     DAMAGE_FUSE2 = 'rh_cruiser_burning_fuse02'
@@ -330,6 +350,7 @@ class RheinlandCruiser(Capital):
 class Armored(Capital):
     TEMPLATE_CODE = 'armored'
     ARCHETYPE = 'ge_armored'
+    RU_NAME = 'Бронированный транспорт'
 
     DAMAGE_FUSE1 = 'intermed_damage_smallship01'
     DAMAGE_FUSE2 = 'intermed_damage_smallship02'
@@ -345,6 +366,7 @@ class Armored(Capital):
 class Miner(Capital):
     TEMPLATE_CODE = 'miner'
     ARCHETYPE = 'ge_miner'
+    RU_NAME = 'Рудокоп'
 
     NO_DEATH_FUSE = True
 
