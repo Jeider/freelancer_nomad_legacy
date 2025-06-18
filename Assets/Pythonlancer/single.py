@@ -44,7 +44,7 @@ from templates.dockable import upsilon_gasinside
 from templates.dockable import tunnel
 from templates.misc import rmbase
 from templates.misc import trading
-from templates.misc import ast_om15_xxxlarge
+from templates.dockable import nomad_asf_hq
 from templates.dockable import order_shipyard
 
 from templates.dockable import m13
@@ -67,10 +67,11 @@ def draw_base():
     # new_name = 'or_hq_shipyard_01'
     # move_to = (-20000, 0, 0)
 
-    base_class = ast_om15_xxxlarge.AsteroidOne
+    # base_class = ast_om15_xxxlarge.AsteroidOne
     # new_name = 'communicator'
     # move_to = (-9500, 0, -10000)
 
+    base_class = nomad_asf_hq.AsfHQ
     the_base = base_class()
 
     content = the_base.get_instance(new_space_object_name=new_name, move_to=move_to)
@@ -86,14 +87,14 @@ def draw_base_for_hardpoints():
     # new_name = 'or_hq_vienna_entry'
     # move_to = (13900, 0, 32400)
 
-    base_class = ast_om15_xxxlarge.AsteroidThree
+    base_class = nomad_asf_hq.AsfHQOptimal
     # new_name = 'or_hq_vienna_entry'
     the_base = base_class()
 
     the_base.get_instance(new_space_object_name=new_name, move_to=move_to)
     the_base.parse_segments()
     # print(the_base.get_segments_as_hardpoints_xml())
-    # print(the_base.get_segments_as_loadout(warning=False))
+    print(the_base.get_segments_as_loadout(warning=True))
     # print(the_base.get_instance_from_segments())
 
 

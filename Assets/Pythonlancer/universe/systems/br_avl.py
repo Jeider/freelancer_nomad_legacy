@@ -437,6 +437,7 @@ class AvalDockring(AvalMember, main_objects.LargePlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.BretoniaPlanetDealers
     SHIP_SET = markets.ShipSet('co_fighter', 'co_elite', 'br_freighter')
+    RU_NAME = 'Планета Авалон'
 
     BASE_PROPS = meta.LargePlanet(
         objectives=[
@@ -455,6 +456,7 @@ class AvalShipyard(AvalMember, main_objects.Shipyard):
     INDEX = 1
     BASE_INDEX = 2
     REL = BOTTOM
+    RU_NAME = 'Верфь Саутгемптон'
 
     SPACE_OBJECT_TEMPLATE = shipyards.HeavyBarrelShipyard
 
@@ -467,6 +469,7 @@ class AvalPolice(AvalMember, main_objects.Outpost):
     INDEX = 1
     BASE_INDEX = 3
     REL = BOTTOM
+    RU_NAME = 'Аванпост Сэндфорд'
 
     SPACE_OBJECT_TEMPLATE = police.BerlinPoliceOutpost
 
@@ -478,6 +481,7 @@ class AvalTrading(AvalMember, main_objects.TradingBase):
     INDEX = 1
     BASE_INDEX = 4
     REL = RIGHT
+    RU_NAME = 'Торговая станция Бирмингем'
 
     SPACE_OBJECT_TEMPLATE = trade_storages.TekagiStorage
 
@@ -490,6 +494,7 @@ class AvalMilitary(AvalMember, main_objects.Station):
     INDEX = 1
     BASE_INDEX = 5
     REL = TOP
+    RU_NAME = 'Станция Манчестер'
 
     SPACE_OBJECT_TEMPLATE = avalon_megabase.AvalonMegabase
 
@@ -508,6 +513,7 @@ class AvalPrison(AvalMember, main_objects.Prison):
     INDEX = 1
     BASE_INDEX = 6
     REL = TOP
+    RU_NAME = 'Тюрьма Голспи'
 
     SPACE_OBJECT_TEMPLATE = prisons.AvalonPrison
 
@@ -529,6 +535,7 @@ class AvalJunkers(AvalMember, main_objects.JunkerBase):
         AvalDebrisZone3
     ]
     DEFENCE_LEVEL = None
+    RU_NAME = 'База Кардиган'
 
 
 class AvalPirates(AvalMember, main_objects.PirateStation):
@@ -544,6 +551,7 @@ class AvalPirates(AvalMember, main_objects.PirateStation):
         AvalAsteroidZone3
     ]
     DEFENCE_LEVEL = None
+    RU_NAME = 'База Лонстон'
 
 
 class AvalPlanet1(AvalMember, main_objects.Planet):
@@ -557,18 +565,21 @@ class AvalPlanet2(AvalMember, main_objects.Planet):
     INDEX = 2
     ARCHETYPE = 'planet_gasorgcld_5000'
     SPHERE_RADIUS = 5000
+    RU_NAME = 'Планета Эксмор'
 
 
 class AvalPlanet3(AvalMember, main_objects.Planet):
     INDEX = 3
     ARCHETYPE = 'planet_moonblu_2500'
     SPHERE_RADIUS = 2500
+    RU_NAME = 'Планета Уотфорд'
 
 
 class AvalPlanet4(AvalMember, main_objects.Planet):
     INDEX = 4
     ARCHETYPE = 'planet_desored_3000'
     SPHERE_RADIUS = 3000
+    RU_NAME = 'Планета Кроли'
 
 
 class AvalPoliceConn1(AvalMember, main_objects.TradeConnection):
@@ -678,6 +689,7 @@ class AvalStoryBattleship(AvalMember, main_objects.KusariBattleship):
         AvalPolice,  # TODO: haven't real economics connection
     ]
     SHIP_SET = markets.ShipSet('co_elite')
+    RU_NAME = 'Линкор Принц Уэльский'
 
 
 class AvalStoryBattleshipTwo(AvalMember, main_objects.KusariBattleship):
@@ -691,3 +703,4 @@ class AvalStoryBattleshipTwo(AvalMember, main_objects.KusariBattleship):
     CALC_STORE = False
     IS_BASE = False
     AUTOSAVE_FORBIDDEN = True
+    RU_NAME = 'Линкор Принц Уэльский'

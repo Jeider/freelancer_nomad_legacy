@@ -27,7 +27,21 @@ ARCHETYPE_MAP = {
     'om15_xxxlarge_tunnel04': 'attached_om15_xxxlarge_tunnel04',
     'om15_xxxlarge_tunnel05': 'attached_om15_xxxlarge_tunnel05',
     'om15_xxxlarge_wall': 'attached_om15_xxxlarge_wall',
+    'large_ring': 'attached_small_station_ring_alt',
+    'space_large_arch': 'attached_space_large_arch',
+    'space_large_arch_part': 'attached_space_large_arch_part',
+    'space_short_large_arch': 'attached_space_short_large_arch',
+    'space_long_large_arch': 'attached_space_long_large_arch',
+    'shipyard': 'attached_shipyard_a_root',
+    'space_small_control_block': 'rmbase_attached_small_control_block',
+    'space_tankl4': 'attached_tankl4_root',
 }
+
+
+
+FORCE_IGNORED_ARCHETYPES = [
+    'orderbase_jumphole',
+]
 
 
 def prepare_pos(pos_val):
@@ -200,6 +214,8 @@ class SpaceObjectTemplate(object):
         allowed_archetypes = ARCHETYPE_MAP.keys()
         records = []
         for segment in self.segments:
+            if segment.archetype in FORCE_IGNORED_ARCHETYPES:
+                continue
             if segment.archetype not in allowed_archetypes:
                 if not warning:
                     continue

@@ -35,6 +35,8 @@ class AppearableObject(SystemObject):
     STORY = False
     SPACE_NAME = None
 
+    RU_NAME = None
+
     LOCKED_DOCK = False
     KEY_COLLECT_FX = None
 
@@ -739,7 +741,7 @@ class DockableObject(StaticObject):
     EQUIP_FACTION = None
     MISC_EQUIP_GEN_TYPE = None
     BASE_PROPS = None
-    RU_NAME = 'База'
+
     AUTOSAVE_FORBIDDEN = False
 
     INTERIOR_BG1 = None
@@ -787,6 +789,9 @@ BGCS_base_run_by = W02bF44'''
             if not self.KEY_COLLECT_FX:
                 raise Exception('Dockable locked base have no fx for key %s' % self.__class__.__name__)
             self.key = LockedDockKey(self, key_fx=self.KEY_COLLECT_FX)
+
+        # if not self.RU_NAME:
+        #     raise Exception(f'Base {self.get_base_nickname()} have no name')
 
     def get_weapon_faction(self):
         return self.WEAPON_FACTION
