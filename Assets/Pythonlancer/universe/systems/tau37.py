@@ -183,6 +183,7 @@ class Tau37RoidMiner1(Tau37Member, Tau37BaseRoidMiner):
     BASE_INDEX = 61
     ASTEROID_ZONES = [Tau37AsteroidZone1]
     NEBULA_ZONES = [Tau37TopNebula]
+    RU_NAME = 'Рудокоп Нефин'
 
 
 class Tau37RoidMiner2(Tau37Member, Tau37BaseRoidMiner):
@@ -190,6 +191,7 @@ class Tau37RoidMiner2(Tau37Member, Tau37BaseRoidMiner):
     BASE_INDEX = 62
     ASTEROID_ZONES = [Tau37AsteroidZone1]
     NEBULA_ZONES = [Tau37TopNebula]
+    RU_NAME = 'Рудокоп Бангор'
 
 
 class Tau37RoidMiner3(Tau37Member, Tau37BaseRoidMiner):
@@ -197,6 +199,7 @@ class Tau37RoidMiner3(Tau37Member, Tau37BaseRoidMiner):
     BASE_INDEX = 63
     ASTEROID_ZONES = [Tau37AsteroidZone1]
     NEBULA_ZONES = [Tau37TopNebula]
+    RU_NAME = 'Рудокоп Грисби'
 
 
 class Tau37RoidMiner4(Tau37Member, Tau37BaseRoidMiner):
@@ -204,6 +207,7 @@ class Tau37RoidMiner4(Tau37Member, Tau37BaseRoidMiner):
     BASE_INDEX = 64
     ASTEROID_ZONES = [Tau37AsteroidZone1]
     NEBULA_ZONES = [Tau37TopNebula]
+    RU_NAME = 'Рудокоп Барбридж'
 
 
 class Tau37RoidMiner5(Tau37Member, Tau37BaseRoidMiner):
@@ -211,6 +215,7 @@ class Tau37RoidMiner5(Tau37Member, Tau37BaseRoidMiner):
     BASE_INDEX = 65
     ASTEROID_ZONES = [Tau37AsteroidZone3]
     NEBULA_ZONES = [Tau37EastNebula]
+    RU_NAME = 'Рудокоп Грантем'
 
 
 class Tau37RoidMiner6(Tau37Member, Tau37BaseRoidMiner):
@@ -218,6 +223,7 @@ class Tau37RoidMiner6(Tau37Member, Tau37BaseRoidMiner):
     BASE_INDEX = 66
     ASTEROID_ZONES = [Tau37AsteroidZone3]
     NEBULA_ZONES = [Tau37EastNebula]
+    RU_NAME = 'Рудокоп Кроуленд'
 
 
 class Tau37RoidMiner7(Tau37Member, Tau37BaseRoidMiner):
@@ -225,6 +231,7 @@ class Tau37RoidMiner7(Tau37Member, Tau37BaseRoidMiner):
     BASE_INDEX = 67
     ASTEROID_ZONES = [Tau37AsteroidZone3]
     NEBULA_ZONES = [Tau37EastNebula]
+    RU_NAME = 'Рудокоп Окен'
 
 
 class Tau37UraniumAsteroidReward(Tau37Member, mineable.AsteroidRewardsGroupUltra):
@@ -320,6 +327,7 @@ class Tau37MiningStation(Tau37Member, main_objects.RoidMinerStation):
     SPACE_OBJECT_TEMPLATE = roid_mining.BretoniaRoidMining
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.BretoniaCivilianDealers
+    RU_NAME = 'Станция Гибралтар'
 
     BASE_PROPS = meta.RoidMiningStation(
         objectives=[
@@ -335,6 +343,7 @@ class Tau37Freeport(Tau37Member, main_objects.Freeport):
     SPACE_OBJECT_TEMPLATE = trade_storages.RheinlandOmegaStorage
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.BretoniaCivilianDealers
+    RU_NAME = 'Фрипорт Плимут'
 
 
 class Tau37Battleship(Tau37Member, main_objects.BretoniaBattleship):
@@ -343,6 +352,7 @@ class Tau37Battleship(Tau37Member, main_objects.BretoniaBattleship):
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.BretoniaMilitaryDealers
     SHIP_SET = markets.ShipSet('br_elite')
+    RU_NAME = 'Линкор Нептун'
 
 
 class Tau37CorsairBase(Tau37Member, main_objects.PirateAsteroid):
@@ -352,6 +362,7 @@ class Tau37CorsairBase(Tau37Member, main_objects.PirateAsteroid):
     SPACE_OBJECT_TEMPLATE = astbase.CaliforniaAsteroidBase
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.BretoniaPirateDealers
+    RU_NAME = 'База Сеута'
 
     FACTION = faction.Corsairs
     DEFENCE_LEVEL = None
@@ -367,6 +378,7 @@ class Tau37DeepNebulaRuins(Tau37Member, main_objects.StationRuins):
     ALIAS = 'ruins'
     INDEX = 1
     REL = RIGHT
+    RU_NAME = 'Станция Фолкленд'
 
     SPACE_OBJECT_TEMPLATE = station_debris.SigmaEightFreeport
 
@@ -386,6 +398,7 @@ class Tau37DeepNebulaRuinsSuprisePoint(Tau37Member, main_objects.HackableStation
     RELATED_OBJECT = Tau37DeepNebulaRuins
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpost
     INTERIOR_CLASS = interior.EquipDeckInterior
+    RU_NAME = 'Стыковочный узел Фолкленда'
 
 
 class Tau37MiningStationConn1(Tau37Member, main_objects.TradeConnection):
@@ -458,3 +471,4 @@ class Tau37Planet1(Tau37Member, main_objects.Planet):
     INDEX = 1
     ARCHETYPE = 'planet_gasicecld_4000'
     SPHERE_RADIUS = 4000
+    RU_NAME = 'Планета Ангилья'

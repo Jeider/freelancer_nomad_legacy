@@ -154,6 +154,7 @@ class HonsDebrisFactory1(HonsMember, HonsBaseDebrisManufactoring):
         HonsDebrisZone1,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
+    RU_NAME = 'Плавильня Гобо'
 
 
 class HonsDebrisFactory2(HonsMember, HonsBaseDebrisManufactoring):
@@ -163,6 +164,7 @@ class HonsDebrisFactory2(HonsMember, HonsBaseDebrisManufactoring):
         HonsDebrisZone2,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
+    RU_NAME = 'Плавильня Сирахама'
 
 
 class HonsDebrisFactory3(HonsMember, HonsBaseDebrisManufactoring):
@@ -172,6 +174,7 @@ class HonsDebrisFactory3(HonsMember, HonsBaseDebrisManufactoring):
         HonsDebrisZone3,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
+    RU_NAME = 'Плавильня Сусами'
 
 
 class HonsDebrisBoxReward(HonsMember, mineable.DefaultDebrisBoxRewardsGroup):
@@ -265,6 +268,7 @@ class HonsSolarPlant1(HonsMember, HonsBaseSolarPlant):
     ASTEROID_ZONES = [
         HonsSolarMinesZone1,
     ]
+    RU_NAME = 'Солн.генератор Кавогоэ'
 
 
 class HonsSolarPlant2(HonsMember, HonsBaseSolarPlant):
@@ -273,6 +277,7 @@ class HonsSolarPlant2(HonsMember, HonsBaseSolarPlant):
     ASTEROID_ZONES = [
         HonsSolarMinesZone2,
     ]
+    RU_NAME = 'Солн.генератор Итабаси'
 
 
 class HonsSolarPlant3(HonsMember, HonsBaseSolarPlant):
@@ -281,6 +286,7 @@ class HonsSolarPlant3(HonsMember, HonsBaseSolarPlant):
     ASTEROID_ZONES = [
         HonsSolarMinesZone3,
     ]
+    RU_NAME = 'Солн.генератор Накано'
 
 
 class HonsSolarPlant4(HonsMember, HonsBaseSolarPlant):
@@ -289,6 +295,7 @@ class HonsSolarPlant4(HonsMember, HonsBaseSolarPlant):
     ASTEROID_ZONES = [
         HonsSolarMinesZone4,
     ]
+    RU_NAME = 'Солн.генератор Нэрима'
 
 
 class HonsSolarPlant5(HonsMember, HonsBaseSolarPlant):
@@ -297,6 +304,7 @@ class HonsSolarPlant5(HonsMember, HonsBaseSolarPlant):
     ASTEROID_ZONES = [
         HonsSolarMinesZone5,
     ]
+    RU_NAME = 'Солн.генератор Кавагути'
 
 
 class HonsSolarSupriseRewards(HonsMember, mineable.DefaultSupriseRewardsGroup):
@@ -412,6 +420,7 @@ class HonsShipyard(HonsMember, main_objects.Shipyard):
     SPACE_OBJECT_TEMPLATE = shipyards.HokkaidoShipyard
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
+    RU_NAME = 'Верфь Окаяма'
 
 
 class HonsPrison(HonsMember, main_objects.Prison):
@@ -420,6 +429,7 @@ class HonsPrison(HonsMember, main_objects.Prison):
     SPACE_OBJECT_TEMPLATE = prisons.HonshuPrison
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariMilitaryDealers
+    RU_NAME = 'Тюрьма Вакаяма'
 
 
 class HonsPolice(HonsMember, main_objects.Outpost):
@@ -430,6 +440,7 @@ class HonsPolice(HonsMember, main_objects.Outpost):
     INTERIOR_CLASS = interior.OutpostInterior
     AUDIO_PREFIX = SpaceVoice.BORDER_STATION
     DEALERS = dealers.KusariMilitaryDealers
+    RU_NAME = 'Аванпост Нара'
 
 
 class HonsTrading(HonsMember, main_objects.TradingBase):
@@ -439,6 +450,7 @@ class HonsTrading(HonsMember, main_objects.TradingBase):
     SPACE_OBJECT_TEMPLATE = cambridge_research.CambridgeResearchAlternative
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
+    RU_NAME = 'Торговая база Фунабаси'
 
     BASE_PROPS = meta.TradingBase(
         objectives=[
@@ -457,18 +469,21 @@ class HonsPlanet2(HonsMember, main_objects.Planet):
     INDEX = 2
     ARCHETYPE = 'planet_desorcld_3000'
     SPHERE_RADIUS = 3000
+    RU_NAME = 'Планета Ямагути'
 
 
 class HonsPlanet3(HonsMember, main_objects.Planet):
     INDEX = 3
     ARCHETYPE = 'planet_gasblucld_5000'
     SPHERE_RADIUS = 5000
+    RU_NAME = 'Планета Кагосима'
 
 
 class HonsPlanet4(HonsMember, main_objects.Planet):
     INDEX = 4
     ARCHETYPE = 'planet_gasgrncld_3000'
     SPHERE_RADIUS = 3000
+    RU_NAME = 'Планета Хёго'
 
 
 class HonsNebulaPirates(HonsMember, main_objects.PirateStation):
@@ -477,6 +492,7 @@ class HonsNebulaPirates(HonsMember, main_objects.PirateStation):
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = junker.HonshuJunker
     FACTION = faction.KusariPirate
+    RU_NAME = 'База Содзя'
 
     DEFENCE_LEVEL = None
 
@@ -498,6 +514,7 @@ class HonsJunkers(HonsMember, main_objects.JunkerBase):
     REL = TOP
     SPACE_OBJECT_TEMPLATE = junker.StuttgartJunker
     FACTION = faction.KusariPirate
+    RU_NAME = 'База Чиба'
 
     DEFENCE_LEVEL = None
 

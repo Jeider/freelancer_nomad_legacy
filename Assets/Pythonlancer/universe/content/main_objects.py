@@ -1204,7 +1204,7 @@ class Outpost(DockableObject):
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     BASE_PROPS = meta.Outpost()
     EQUIP_SET = markets.PoliceOutpostSet
-    MISC_EQUIP_GEN_TYPE = GEN_MAIN
+    MISC_EQUIP_GEN_TYPE = GEN_PIRATE
 
 
 class Prison(DockableObject):
@@ -1225,7 +1225,7 @@ class Shipyard(DockableObject):
 
 class LargeShipyard(Shipyard):
     EQUIP_SET = markets.LargeStationSet
-    MISC_EQUIP_GEN_TYPE = GEN_MAIN
+    MISC_EQUIP_GEN_TYPE = GEN_PIRATE
 
 
 class TradingBase(DockableObject):

@@ -101,7 +101,6 @@ class KyushuDebrisZone4(KyushuMember, zones.DebrisZone):
     ASTEROID_DEFINITION_CLASS = asteroid_definition.DebrisDefinition
 
 
-
 class KyushuBaseDebrisManufactoring(main_objects.DebrisManufactoring):
     ALIAS = 'deb'
     ROTATE_RANDOM = True
@@ -125,6 +124,7 @@ class KyushuDebrisFactory1(KyushuMember, KyushuBaseDebrisManufactoring):
         KyushuDebrisZone1,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
+    RU_NAME = 'Плавильня Амакуса'
 
 
 class KyushuDebrisFactory2(KyushuMember, KyushuBaseDebrisManufactoring):
@@ -134,6 +134,7 @@ class KyushuDebrisFactory2(KyushuMember, KyushuBaseDebrisManufactoring):
         KyushuDebrisZone2,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
+    RU_NAME = 'Плавильня Оита'
 
 
 class KyushuDebrisFactory3(KyushuMember, KyushuBaseDebrisManufactoring):
@@ -143,6 +144,7 @@ class KyushuDebrisFactory3(KyushuMember, KyushuBaseDebrisManufactoring):
         KyushuDebrisZone3,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
+    RU_NAME = 'Плавильня Вакаяма'
 
 
 class KyushuDebrisBoxReward(KyushuMember, mineable.DefaultDebrisBoxRewardsGroup):
@@ -223,6 +225,7 @@ class KyushuAbandonedAstBase1(KyushuMember, KyushuBaseAbandonedAst):
     ASTEROID_ZONES = [
         KyushuAsteroidZone1,
     ]
+    RU_NAME = 'База Тоттори'
 
 
 class KyushuAbandonedAstBase2(KyushuMember, KyushuBaseAbandonedAst):
@@ -232,6 +235,7 @@ class KyushuAbandonedAstBase2(KyushuMember, KyushuBaseAbandonedAst):
     ASTEROID_ZONES = [
         KyushuAsteroidZone2,
     ]
+    RU_NAME = 'База Химедзи'
 
 
 class KyushuUnlockAsteroidReward(KyushuMember, mineable.AsteroidRewardsGroupUltra):
@@ -327,6 +331,7 @@ class KyushuDockring(KyushuMember, main_objects.LargePlanetDockring):
             meta.ProduceBad(MOX_FUEL),
         ]
     )
+    RU_NAME = 'Планета Кусю'
 
 
 class KyushuMiningDockring(KyushuMember, main_objects.MiningPlanetDockring):
@@ -337,6 +342,7 @@ class KyushuMiningDockring(KyushuMember, main_objects.MiningPlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.KusariPlanetDealers
     SHIP_SET = markets.ShipSet('ge_fighter3')
+    RU_NAME = 'Планета Кумамото'
 
     BASE_PROPS = meta.MiningPlanet(
         objectives=[
@@ -353,6 +359,7 @@ class KyushuMegastation(KyushuMember, main_objects.LargeStation):
     SPACE_OBJECT_TEMPLATE = odissey.Odissey
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
+    RU_NAME = 'Станция Токио'
 
     BASE_PROPS = meta.Megabase(
         objectives=[
@@ -370,6 +377,7 @@ class KyushuShipyard(KyushuMember, main_objects.Shipyard):
     SPACE_OBJECT_TEMPLATE = shipyards.HeavyBarrelShipyard
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
+    RU_NAME = 'Верфь Нагоя'
 
 
 class KyushuTrading(KyushuMember, main_objects.TradingBase):
@@ -378,6 +386,7 @@ class KyushuTrading(KyushuMember, main_objects.TradingBase):
     SPACE_OBJECT_TEMPLATE = trade_storages.HokkaidoStorage
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
+    RU_NAME = 'Станция Гифу'
 
 
 class KyushuResearch(KyushuMember, main_objects.ResearchStation):
@@ -387,6 +396,7 @@ class KyushuResearch(KyushuMember, main_objects.ResearchStation):
     SPACE_OBJECT_TEMPLATE = research.KyushuResearch
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
+    RU_NAME = 'Исследовательская станция Нансей'
 
     BASE_PROPS = meta.Research(
         objectives=[
@@ -403,6 +413,7 @@ class KyushuPolice(KyushuMember, main_objects.Outpost):
     INTERIOR_CLASS = interior.OutpostInterior
     AUDIO_PREFIX = SpaceVoice.BORDER_STATION
     DEALERS = dealers.KusariMilitaryDealers
+    RU_NAME = 'Аванпост Тояма'
 
 
 class KyushuLiner(KyushuMember, main_objects.LuxuryLiner):
@@ -411,6 +422,7 @@ class KyushuLiner(KyushuMember, main_objects.LuxuryLiner):
     REL = LEFT
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.KusariCivilianDealers
+    RU_NAME = 'Круизный лайнер Бирма'
 
 
 class KyushuPlanet1(KyushuMember, main_objects.Planet):
@@ -430,6 +442,7 @@ class KyushuPlanet3(KyushuMember, main_objects.Planet):
     INDEX = 3
     ARCHETYPE = 'planet_ice_blue_3000'
     SPHERE_RADIUS = 3000
+    RU_NAME = 'Планета Сидзуока'
 
 
 class KyushuNorthAsteroidPirates(KyushuMember, main_objects.PirateAsteroid):
@@ -439,6 +452,7 @@ class KyushuNorthAsteroidPirates(KyushuMember, main_objects.PirateAsteroid):
     FACTION = faction.KusariPirate
 
     DEFENCE_LEVEL = None
+    RU_NAME = 'База Цусима'
 
     INTERIOR_BG1 = interior.INTERIOR_BG_WALKER
 
@@ -458,6 +472,7 @@ class KyushuJunkers(KyushuMember, main_objects.JunkerBase):
     REL = TOP
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseForbes
     FACTION = faction.Junkers
+    RU_NAME = 'База Нагасаки'
 
     DEFENCE_LEVEL = None
 

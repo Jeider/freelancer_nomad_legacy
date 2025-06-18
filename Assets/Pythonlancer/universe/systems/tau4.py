@@ -101,6 +101,7 @@ class Tau4AbandonedAstBase1(Tau4Member, main_objects.AbandonedAsteroid):
     INTERIOR_CLASS = interior.EquipDeckInterior
     DEFENCE_LEVEL = None
     LOCKED_DOCK = True
+    RU_NAME = 'База Мацуяма'
 
     AST_EXCLUSION_ZONE_SIZE = 3500
     ASTEROID_ZONES = [
@@ -219,6 +220,7 @@ class Tau4PrisonLiner1(Tau4Member, Tau4BasePrisonLiner):
     ASTEROID_ZONES = [
         Tau4PrisonLinerMinesZone1,
     ]
+    RU_NAME = 'Тюремный лайнер Такасэбунэ'
 
 
 class Tau4PrisonLiner2(Tau4Member, Tau4BasePrisonLiner):
@@ -227,6 +229,7 @@ class Tau4PrisonLiner2(Tau4Member, Tau4BasePrisonLiner):
     ASTEROID_ZONES = [
         Tau4PrisonLinerMinesZone2,
     ]
+    RU_NAME = 'Тюремный лайнер Сюинсэн'
 
 
 class Tau4LinerSupriseRewards(Tau4Member, mineable.DefaultSupriseRewardsGroup):
@@ -283,6 +286,7 @@ class Tau4Station(Tau4Member, main_objects.TradelaneSupportStation):
     SPACE_OBJECT_TEMPLATE = ulster_megabase.UlsterShortBase
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
+    RU_NAME = 'Станция Осака'
 
     BASE_PROPS = meta.TradelaneSupportStation(
         objectives=[
@@ -298,6 +302,7 @@ class Tau4Freeport(Tau4Member, main_objects.Freeport):
     SPACE_OBJECT_TEMPLATE = trade_storages.LibertyLongStorage
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
+    RU_NAME = 'Фрипорт Окинава'
 
 
 class Tau4Battleship(Tau4Member, main_objects.KusariBattleship):
@@ -307,24 +312,27 @@ class Tau4Battleship(Tau4Member, main_objects.KusariBattleship):
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.KusariMilitaryDealers
     SHIP_SET = markets.ShipSet('ku_elite')
+    RU_NAME = 'Линкор Ямасиро'
 
 
 class Tau4Planet1(Tau4Member, main_objects.Planet):
     ARCHETYPE = 'planet_desorcld_3000'
     SPHERE_RADIUS = 3000
+    RU_NAME = 'Планета Сайтама'
 
 
 class Tau4Planet2(Tau4Member, main_objects.Planet):
     INDEX = 2
     ARCHETYPE = 'planet_icemntcld_4000'
     SPHERE_RADIUS = 4000
+    RU_NAME = 'Планета Гумма'
 
 
 class Tau4Planet3(Tau4Member, main_objects.Planet):
     INDEX = 3
     ARCHETYPE = 'planet_icewatcld_3000'
     SPHERE_RADIUS = 3000
-
+    RU_NAME = 'Планета Хёгу'
 
 
 class Tau4SouthPirates(Tau4Member, main_objects.PirateStation):
@@ -335,6 +343,7 @@ class Tau4SouthPirates(Tau4Member, main_objects.PirateStation):
     FACTION = faction.Corsairs
 
     DEFENCE_LEVEL = None
+    RU_NAME = 'База Муцуэ'
 
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -353,6 +362,7 @@ class Tau4Xenos(Tau4Member, main_objects.PirateStation):
     REL = TOP
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseCalifornia
     FACTION = faction.Corsairs
+    RU_NAME = 'База Сингапур'
 
     DEFENCE_LEVEL = None
 
@@ -373,6 +383,7 @@ class Tau4BattleshipRuins1(Tau4Member, main_objects.HackableBattleship):
     REL = BOTTOM
     HACKABLE_SOLAR_CLASS = hackable.HackableKusariBattleship
     INTERIOR_CLASS = interior.EquipDeckInterior
+    RU_NAME = 'Линкор Ямато'
 
 
 class Tau4LuxuryRuins1(Tau4Member, main_objects.HackableLuxury):
@@ -382,6 +393,7 @@ class Tau4LuxuryRuins1(Tau4Member, main_objects.HackableLuxury):
     REL = TOP
     HACKABLE_SOLAR_CLASS = hackable.HackableLuxuryLiner
     INTERIOR_CLASS = interior.EquipDeckInterior
+    RU_NAME = 'Круизный лайнер Филиппины'
 
 
 class Tau4StationConn1(Tau4Member, main_objects.TradeConnection):

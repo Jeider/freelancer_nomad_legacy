@@ -236,6 +236,7 @@ class CamDebrisFactory1(CamMember, CamBaseDebrisManufactoring):
         CamDebrisZone1,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
+    RU_NAME = 'Плавильня Ботри'
 
 
 class CamDebrisFactory2(CamMember, CamBaseDebrisManufactoring):
@@ -245,6 +246,7 @@ class CamDebrisFactory2(CamMember, CamBaseDebrisManufactoring):
         CamDebrisZone2,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
+    RU_NAME = 'Плавильня Кеттон'
 
 
 class CamDebrisFactory3(CamMember, CamBaseDebrisManufactoring):
@@ -254,6 +256,7 @@ class CamDebrisFactory3(CamMember, CamBaseDebrisManufactoring):
         CamDebrisZone3,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
+    RU_NAME = 'Плавильня Анкастер'
 
 
 class CamDebrisBoxReward(CamMember, mineable.DefaultDebrisBoxRewardsGroup):
@@ -300,6 +303,7 @@ class CamBattleshipRuins1(CamMember, main_objects.HackableBattleship):
     ASTEROID_ZONES = [
         CamAsteroidZone2,
     ]
+    RU_NAME = 'Линкор Титаник'
 
 
 class CamBattleshipRuins2(CamMember, main_objects.HackableBattleship):
@@ -312,6 +316,7 @@ class CamBattleshipRuins2(CamMember, main_objects.HackableBattleship):
     ASTEROID_ZONES = [
         CamAsteroidZone2,
     ]
+    RU_NAME = 'Линкор Бриттаник'
 
 
 class CamBattleshipRuins3(CamMember, main_objects.HackableBattleship):
@@ -324,12 +329,15 @@ class CamBattleshipRuins3(CamMember, main_objects.HackableBattleship):
     ASTEROID_ZONES = [
         CamAsteroidZone2,
     ]
+    RU_NAME = 'Линкор Олимпик'
 
 
 class CamOldOutpostRuins(CamMember, main_objects.StationRuins):
     ALIAS = 'ruins'
     INDEX = 1
     REL = RIGHT
+
+    RU_NAME = 'Аванпост Мерсия'
 
     SPACE_OBJECT_TEMPLATE = station_debris.StuttgartDestroyedOutpost
 
@@ -346,6 +354,8 @@ class CamOldOutpostRuinsSuprisePoint(CamMember, main_objects.HackableStation):
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpost
     INTERIOR_CLASS = interior.EquipDeckInterior
 
+    RU_NAME = 'Стыковочный узел Мерсии'
+
 
 class CamDockring(CamMember, main_objects.LargePlanetDockring):
     BASE_INDEX = 1
@@ -354,6 +364,7 @@ class CamDockring(CamMember, main_objects.LargePlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.BretoniaPlanetDealers
     SHIP_SET = markets.ShipSet('br_fighter', 'ge_fighter3', 'bw_freighter')
+    RU_NAME = 'Планета Кембридж'
 
     BASE_PROPS = meta.LargePlanet(
         objectives=[
@@ -380,6 +391,8 @@ class CamStation(CamMember, main_objects.TradelaneSupportStation):
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.BretoniaCivilianDealers
 
+    RU_NAME = 'Станция Шеффилд'
+
 
 class CamTrading(CamMember, main_objects.TradingBase):
     INDEX = 1
@@ -392,6 +405,8 @@ class CamTrading(CamMember, main_objects.TradingBase):
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.BretoniaCivilianDealers
 
+    RU_NAME = 'Станция Челтнем'
+
 
 class CamShipyard(CamMember, main_objects.Shipyard):
     INDEX = 1
@@ -402,6 +417,8 @@ class CamShipyard(CamMember, main_objects.Shipyard):
 
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.BretoniaCivilianDealers
+
+    RU_NAME = 'Верфь Кардифф'
 
 
 class CamPolice(CamMember, main_objects.Outpost):
@@ -415,11 +432,15 @@ class CamPolice(CamMember, main_objects.Outpost):
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.BretoniaMilitaryDealers
 
+    RU_NAME = 'Аванпост Блекпул'
+
 
 class CamRefinery(CamMember, main_objects.Refinery):
     INDEX = 1
     BASE_INDEX = 6
     REL = LEFT
+
+    RU_NAME = 'Станция Дерби'
 
     SPACE_OBJECT_TEMPLATE = columbia_production.ColumbiaSmallProduction
 
@@ -439,6 +460,7 @@ class CamResearch(CamMember, main_objects.ResearchStation):
     INDEX = 1
     BASE_INDEX = 7
     REL = LEFT
+    RU_NAME = 'Станция Гринвич'
 
     SPACE_OBJECT_TEMPLATE = cambridge_research.CambridgeResearch
 
@@ -468,6 +490,8 @@ class CamJunkers(CamMember, main_objects.JunkerBase):
     ]
     DEFENCE_LEVEL = None
 
+    RU_NAME = 'База Спалдинг'
+
 
 class CamPirates(CamMember, main_objects.PirateStation):
     INDEX = 2
@@ -484,6 +508,8 @@ class CamPirates(CamMember, main_objects.PirateStation):
     EXCLUSION_PARAMS = CROW_EXCLUSION_PARAMS
     DEFENCE_LEVEL = None
 
+    RU_NAME = 'База Корк'
+
 
 class CamPlanet1(CamMember, main_objects.Planet):
     INDEX = 1
@@ -496,18 +522,21 @@ class CamPlanet2(CamMember, main_objects.Planet):
     INDEX = 2
     ARCHETYPE = 'planet_desorgrck_3000'
     SPHERE_RADIUS = 3000
+    RU_NAME = 'Планета Саффолк'
 
 
 class CamPlanet3(CamMember, main_objects.Planet):
     INDEX = 3
     ARCHETYPE = 'planet_ice_blue_3000'
     SPHERE_RADIUS = 3000
+    RU_NAME = 'Планета Тетфорд'
 
 
 class CamPlanet4(CamMember, main_objects.Planet):
     INDEX = 4
     ARCHETYPE = 'planet_gasgrncld_3000'
     SPHERE_RADIUS = 3000
+    RU_NAME = 'Планета Манея'
 
 
 class CamPlanetConn1(CamMember, main_objects.TradeConnection):
@@ -684,6 +713,8 @@ class CamAbandonedStation(CamMember, main_objects.StationRuins):
         CamTopNebula,
     ]
 
+    RU_NAME = 'Станция Оксфорд'
+
 
 class CamAbandonedStationSuprisePoint1(CamMember, main_objects.HackableStation):
     ALIAS = 'ruins_dock'
@@ -694,6 +725,8 @@ class CamAbandonedStationSuprisePoint1(CamMember, main_objects.HackableStation):
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpost
     INTERIOR_CLASS = interior.EquipDeckInterior
 
+    RU_NAME = 'Исследовательский блок 1 Оксфорда'
+
 
 class CamAbandonedStationSuprisePoint2(CamMember, main_objects.HackableStation):
     ALIAS = 'ruins_dock'
@@ -703,3 +736,5 @@ class CamAbandonedStationSuprisePoint2(CamMember, main_objects.HackableStation):
     RELATED_OBJECT_INDEX = 1
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpost
     INTERIOR_CLASS = interior.EquipDeckInterior
+
+    RU_NAME = 'Исследовательский блок 2 Оксфорда'

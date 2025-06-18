@@ -175,6 +175,7 @@ class WarwickDebrisFactory1(WarwickMember, WarwickBaseDebrisManufactoring):
         WarwickDebrisZone1,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
+    RU_NAME = 'Плавильня Ротбери'
 
 
 class WarwickDebrisFactory2(WarwickMember, WarwickBaseDebrisManufactoring):
@@ -184,6 +185,7 @@ class WarwickDebrisFactory2(WarwickMember, WarwickBaseDebrisManufactoring):
         WarwickDebrisZone2,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
+    RU_NAME = 'Плавильня Тиркс'
 
 
 class WarwickDebrisFactory3(WarwickMember, WarwickBaseDebrisManufactoring):
@@ -193,6 +195,7 @@ class WarwickDebrisFactory3(WarwickMember, WarwickBaseDebrisManufactoring):
         WarwickDebrisZone3,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
+    RU_NAME = 'Плавильня Галифакс'
 
 
 class WarwickDebrisFactory4(WarwickMember, WarwickBaseDebrisManufactoring):
@@ -202,6 +205,7 @@ class WarwickDebrisFactory4(WarwickMember, WarwickBaseDebrisManufactoring):
         WarwickDebrisZone4,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
+    RU_NAME = 'Плавильня Блекпул'
 
 
 class WarwickDebrisBoxReward(WarwickMember, mineable.DefaultDebrisBoxRewardsGroup):
@@ -274,6 +278,7 @@ class WarwickDockring(WarwickMember, main_objects.LargePlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.BretoniaPlanetDealers
     SHIP_SET = markets.ShipSet('co_fighter', 'co_elite2', 'ge_csv')
+    RU_NAME = 'Планета Уорик'
 
     BASE_PROPS = meta.LargePlanet(
         objectives=[
@@ -297,6 +302,7 @@ class WarwickLargeStation(WarwickMember, main_objects.LargeStation):
     INTERIOR_CLASS = interior.StationShipdealerInterior
     DEALERS = dealers.BretoniaCivilianDealers
     SHIP_SET = markets.ShipSet('br_freighter')
+    RU_NAME = 'Станция Лидс'
 
     BASE_PROPS = meta.Megabase(
         objectives=[
@@ -319,6 +325,7 @@ class WarwickRefinery(WarwickMember, main_objects.Refinery):
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.BretoniaCivilianDealers
     FACTION = faction.BretoniaCivilians
+    RU_NAME = 'Станция Глазго'
 
     BASE_PROPS = meta.Refinery(
         objectives=[
@@ -336,6 +343,7 @@ class WarwickOutpost(WarwickMember, main_objects.Outpost):
     INTERIOR_CLASS = interior.OutpostInterior
     AUDIO_PREFIX = SpaceVoice.BORDER_STATION
     DEALERS = dealers.BretoniaMilitaryDealers
+    RU_NAME = 'Аванпост Ливерпуль'
 
 
 class WarwickShipyard(WarwickMember, main_objects.Shipyard):
@@ -344,6 +352,7 @@ class WarwickShipyard(WarwickMember, main_objects.Shipyard):
     SPACE_OBJECT_TEMPLATE = shipyards.UlsterShipyardAlive
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.BretoniaCivilianDealers
+    RU_NAME = 'Верфь Бристоль'
 
 
 class WarwickPiratesTop(WarwickMember, main_objects.PirateAsteroid):
@@ -359,6 +368,7 @@ class WarwickPiratesTop(WarwickMember, main_objects.PirateAsteroid):
         WarwickAsteroidZone1
     ]
     DEFENCE_LEVEL = None
+    RU_NAME = 'База Голуэй'
 
 
 class WarwickJunkers(WarwickMember, main_objects.JunkerBase):
@@ -372,6 +382,7 @@ class WarwickJunkers(WarwickMember, main_objects.JunkerBase):
         WarwickDebrisZone5
     ]
     DEFENCE_LEVEL = None
+    RU_NAME = 'База Дуглас'
 
 
 class WarwickPlanet1(WarwickMember, main_objects.Planet):
@@ -384,12 +395,14 @@ class WarwickPlanet2(WarwickMember, main_objects.Planet):
     INDEX = 2
     ARCHETYPE = 'planet_desorgrck_3000'
     SPHERE_RADIUS = 3000
+    RU_NAME = 'Планета Готфелл'
 
 
 class WarwickPlanet3(WarwickMember, main_objects.Planet):
     INDEX = 3
     ARCHETYPE = 'planet_moonblu_2500'
     SPHERE_RADIUS = 2500
+    RU_NAME = 'Планета Слейт Айлендс'
 
 
 class WarwickPoliceConn1(WarwickMember, main_objects.TradeConnection):

@@ -137,6 +137,7 @@ class Om7KusariStation(Om7Member, Om7Kusari, main_objects.GasMiningStation):
     LOADOUT = 'smallstation_ku'
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
+    RU_NAME = 'Станция Харадзюку'
 
     NEBULA_EXCLUSION_ZONE_SIZE = 5000
     EXCLUSION_PARAMS = WALKER_EXCLUSION_PARAMS
@@ -153,6 +154,7 @@ class Om7RheinlandStation(Om7Rheinland, Om7Member, main_objects.GasMiningStation
     LOADOUT = 'smallstation_rh'
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.RheinlandCivilianDealers
+    RU_NAME = 'Станция Вольфсбург'
 
     NEBULA_EXCLUSION_ZONE_SIZE = 5000
     EXCLUSION_PARAMS = WALKER_EXCLUSION_PARAMS
@@ -167,6 +169,7 @@ class Om7Battleship(Om7Rheinland, Om7Member, main_objects.RheinlandBattleship):
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.RheinlandMilitaryDealers
     SHIP_SET = markets.ShipSet('rh_elite')
+    RU_NAME = 'Линкор Остфрисланд'
 
     NEBULA_EXCLUSION_ZONE_SIZE = 3000
     EXCLUSION_PARAMS = WALKER_EXCLUSION_PARAMS
@@ -180,6 +183,7 @@ class Om7Freeport(Om7Member, Om7Kusari, main_objects.Freeport):
     SPACE_OBJECT_TEMPLATE = trade_storages.HonshuStorage
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.KusariCivilianDealers
+    RU_NAME = 'Фрипорт Рёдзюн'
 
     NEBULA_EXCLUSION_ZONE_SIZE = 3500
     EXCLUSION_PARAMS = WALKER_EXCLUSION_PARAMS
@@ -196,6 +200,7 @@ class Om7PirateLargeAsteroid(Om7Member, Om7Kusari, main_objects.PirateStation):
     DEALERS = dealers.KusariPirateDealers
     FACTION = faction.KusariPirate
     DEFENCE_LEVEL = None
+    RU_NAME = 'База Киото'
 
     NEBULA_EXCLUSION_ZONE_SIZE = 5000
     EXCLUSION_PARAMS = WALKER_EXCLUSION_PARAMS
@@ -211,6 +216,7 @@ class Om7RightPirates(Om7Rheinland, Om7Member, main_objects.PirateGasMiner):
     DEALERS = dealers.RheinlandPirateDealers
     FACTION = faction.RheinlandPirate
     DEFENCE_LEVEL = None
+    RU_NAME = 'База Хельголанд'
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
     EXCLUSION_PARAMS = WALKER_EXCLUSION_PARAMS
@@ -221,6 +227,7 @@ class Om7LostRheinlandRuins(Om7Rheinland, Om7Member, main_objects.StationRuins):
     ALIAS = 'ruins'
     INDEX = 1
     REL = RIGHT
+    RU_NAME = 'Станция Финшхафен'
 
     REL_APPEND = 1500
 
@@ -238,6 +245,7 @@ class Om7LostRheinlandRuinsSuprisePoint(Om7Rheinland, Om7Member, main_objects.Ha
     RELATED_OBJECT = Om7LostRheinlandRuins
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpostRot90
     INTERIOR_CLASS = interior.EquipDeckInterior
+    RU_NAME = 'Стыковочный узел Финшхафена'
 
 
 class Om7KusariStationConn1(Om7Member, main_objects.TradeConnection):
@@ -449,46 +457,55 @@ class Om7GasPocketsZone3(Om7Member, zones.AsteroidZone):
 class Om7GasMiner1(Om7Member, Om7BaseKusariGasMiner):
     INDEX = 1
     BASE_INDEX = 51
+    RU_NAME = 'Газодобытчик Минамисома'
 
 
 class Om7GasMiner2(Om7Member, Om7BaseKusariGasMiner):
     INDEX = 2
     BASE_INDEX = 52
+    RU_NAME = 'Газодобытчик Иваки'
 
 
 class Om7GasMiner3(Om7Member, Om7BaseKusariGasMiner):
     INDEX = 3
     BASE_INDEX = 53
+    RU_NAME = 'Газодобытчик Нараха'
 
 
 class Om7GasMiner4(Om7Member, Om7BaseKusariGasMiner):
     INDEX = 4
     BASE_INDEX = 54
+    RU_NAME = 'Газодобытчик Хироно'
 
 
 class Om7GasMiner5(Om7Member, Om7BaseRheinlandGasMiner):
     INDEX = 5
     BASE_INDEX = 55
+    RU_NAME = 'Газодобытчик Хемниц'
 
 
 class Om7GasMiner6(Om7Member, Om7BaseRheinlandGasMiner):
     INDEX = 6
     BASE_INDEX = 56
+    RU_NAME = 'Газодобытчик Цвиккау'
 
 
 class Om7GasMiner7(Om7Member, Om7BaseRheinlandGasMiner):
     INDEX = 7
     BASE_INDEX = 57
+    RU_NAME = 'Газодобытчик Грайц'
 
 
 class Om7GasMiner8(Om7Member, Om7BaseRheinlandGasMiner):
     INDEX = 8
     BASE_INDEX = 58
+    RU_NAME = 'Газодобытчик Кульмбах'
 
 
 class Om7GasMiner9(Om7Member, Om7BaseRheinlandGasMiner):
     INDEX = 9
     BASE_INDEX = 59
+    RU_NAME = 'Газодобытчик Лихтенфельс'
 
 
 class Om7SimpleCrystalRewards(Om7Member, mineable.DefaultGasCrystalRewardsGroup):
@@ -576,6 +593,7 @@ class Om7AbandonedMiner1(Om7Rheinland, Om7Member, Om7BaseAbandonedMiner):
     ASTEROID_ZONES = [
         Om7GasPocketsZone1
     ]
+    RU_NAME = 'База Пфорцгейм'
 
 
 class Om7AbandonedMiner2(Om7Member, Om7Kusari, Om7BaseAbandonedMiner):
@@ -584,6 +602,7 @@ class Om7AbandonedMiner2(Om7Member, Om7Kusari, Om7BaseAbandonedMiner):
     ASTEROID_ZONES = [
         Om7GasPocketsZone2
     ]
+    RU_NAME = 'База Акита'
 
 
 class Om7AbandonedMiner3(Om7Member, Om7Kusari, Om7BaseAbandonedMiner):
@@ -592,6 +611,7 @@ class Om7AbandonedMiner3(Om7Member, Om7Kusari, Om7BaseAbandonedMiner):
     ASTEROID_ZONES = [
         Om7GasPocketsZone3
     ]
+    RU_NAME = 'База Аомори'
 
 
 class Om7ComplexCrystalRewards(Om7Member, mineable.DefaultGasCrystalRewardsGroup):
@@ -681,6 +701,7 @@ class Om7BattleRuins1(Om7Member, Om7BaseKusariLockedBattleship):
     ASTEROID_ZONES = [
         Om7BattlePocketsZone1,
     ]
+    RU_NAME = 'Линкор Окиносима'
 
 
 class Om7BattleRuins2(Om7Member, Om7BaseKusariLockedBattleship):
@@ -690,6 +711,7 @@ class Om7BattleRuins2(Om7Member, Om7BaseKusariLockedBattleship):
     ASTEROID_ZONES = [
         Om7BattlePocketsZone2,
     ]
+    RU_NAME = 'Линкор Хюга'
 
 
 class Om7BattleRuins3(Om7Member, Om7BaseKusariLockedBattleship):
@@ -699,6 +721,7 @@ class Om7BattleRuins3(Om7Member, Om7BaseKusariLockedBattleship):
     ASTEROID_ZONES = [
         Om7BattlePocketsZone3,
     ]
+    RU_NAME = 'Линкор Исэ'
 
 
 class Om7BattleRuins4(Om7Member, Om7BaseRheinlandLockedBattleship):
@@ -708,6 +731,7 @@ class Om7BattleRuins4(Om7Member, Om7BaseRheinlandLockedBattleship):
     ASTEROID_ZONES = [
         Om7BattlePocketsZone4,
     ]
+    RU_NAME = 'Линкор Мольтке'
 
 
 class Om7KusariSupriseRewards(Om7Member, mineable.DefaultSupriseRewardsGroup):

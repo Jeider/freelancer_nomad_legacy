@@ -170,60 +170,70 @@ class TekagiRoidMiner1(TekagiMember, TekagiBaseRoidMiner):
     INDEX = 1
     BASE_INDEX = 61
     ASTEROID_ZONES = [TekagiAsteroidZone2]
+    RU_NAME = 'Рудокоп Нагато'
 
 
 class TekagiRoidMiner2(TekagiMember, TekagiBaseRoidMiner):
     INDEX = 2
     BASE_INDEX = 62
     ASTEROID_ZONES = [TekagiAsteroidZone3]
+    RU_NAME = 'Рудокоп Хаги'
 
 
 class TekagiRoidMiner3(TekagiMember, TekagiBaseRoidMiner):
     INDEX = 3
     BASE_INDEX = 63
     ASTEROID_ZONES = [TekagiAsteroidZone1]
+    RU_NAME = 'Рудокоп Хофу'
 
 
 class TekagiRoidMiner4(TekagiMember, TekagiBaseRoidMiner):
     INDEX = 4
     BASE_INDEX = 64
     ASTEROID_ZONES = [TekagiAsteroidZone1]
+    RU_NAME = 'Рудокоп Масуда'
 
 
 class TekagiRoidMiner5(TekagiMember, TekagiBaseRoidMiner):
     INDEX = 5
     BASE_INDEX = 65
     ASTEROID_ZONES = [TekagiAsteroidZone4]
+    RU_NAME = 'Рудокоп Хамада'
 
 
 class TekagiRoidMiner6(TekagiMember, TekagiBaseRoidMiner):
     INDEX = 6
     BASE_INDEX = 66
     ASTEROID_ZONES = [TekagiAsteroidZone2]
+    RU_NAME = 'Рудокоп Ода'
 
 
 class TekagiRoidMiner7(TekagiMember, TekagiBaseRoidMiner):
     INDEX = 7
     BASE_INDEX = 67
     ASTEROID_ZONES = [TekagiAsteroidZone5]
+    RU_NAME = 'Рудокоп Идзумо'
 
 
 class TekagiRoidMiner8(TekagiMember, TekagiBaseRoidMiner):
     INDEX = 8
     BASE_INDEX = 68
     ASTEROID_ZONES = [TekagiAsteroidZone9]
+    RU_NAME = 'Рудокоп Сакаиманато'
 
 
 class TekagiRoidMiner9(TekagiMember, TekagiBaseRoidMiner):
     INDEX = 9
     BASE_INDEX = 69
     ASTEROID_ZONES = [TekagiAsteroidZone8]
+    RU_NAME = 'Рудокоп Йонаго'
 
 
 class TekagiRoidMiner10(TekagiMember, TekagiBaseRoidMiner):
     INDEX = 10
     BASE_INDEX = 70
     ASTEROID_ZONES = [TekagiAsteroidZone8]
+    RU_NAME = 'Рудокоп Нитинан'
 
 
 class TekagiGoldAsteroidReward(TekagiMember, mineable.AsteroidRewardsGroupUltra):
@@ -334,6 +344,7 @@ file = Universe\\SYSTEMS_MOD\\KU_TAGAKI\\Room\\ku_tgk_01_palace.ini
     ''']
     DEALERS = dealers.KusariCivilianDealers
     SHIP_SET = markets.ShipSet('ku_freighter')
+    RU_NAME = 'Станция Йокогама'
 
     REL_APPEND = 4000
 
@@ -353,6 +364,7 @@ class TekagiMiningStation(TekagiMember, main_objects.RoidMinerStation):
     SPACE_OBJECT_TEMPLATE = roid_mining.UpsilonRoidMining
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
+    RU_NAME = 'Станция Мацуэ'
 
     BASE_PROPS = meta.RoidMiningStation(
         objectives=[
@@ -368,6 +380,7 @@ class TekagiFreeport(TekagiMember, main_objects.Freeport):
     SPACE_OBJECT_TEMPLATE = trade_storages.TekagiStorage
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.KusariCivilianDealers
+    RU_NAME = 'Фрипорт Фукуяма'
 
 
 class TekagiWestPirates(TekagiMember, main_objects.PirateAsteroid):
@@ -377,6 +390,7 @@ class TekagiWestPirates(TekagiMember, main_objects.PirateAsteroid):
     SPACE_OBJECT_TEMPLATE = astbase.BerlinAsteroidBase
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.KusariPirateDealers
+    RU_NAME = 'База Такамацу'
 
     FACTION = faction.KusariPirate
     DEFENCE_LEVEL = None
@@ -389,6 +403,7 @@ class TekagiEastPirates(TekagiMember, main_objects.PirateAsteroid):
     SPACE_OBJECT_TEMPLATE = astbase.CaliforniaAsteroidBase
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.KusariPirateDealers
+    RU_NAME = 'База Коти'
 
     FACTION = faction.KusariPirate
     DEFENCE_LEVEL = None
@@ -402,6 +417,7 @@ class TekagiRuins(TekagiMember, main_objects.StationRuins):
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.KusariPirateDealers
     REL_APPEND = 6000
+    RU_NAME = 'Станция Формоза'
 
 
 class TekagiRuinsDropPoint1(TekagiMember, main_objects.HackableStation):
@@ -412,6 +428,7 @@ class TekagiRuinsDropPoint1(TekagiMember, main_objects.HackableStation):
     RELATED_OBJECT_INDEX = 0
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpostRot90
     INTERIOR_CLASS = interior.EquipDeckInterior
+    RU_NAME = 'Тюремный блок 1 Формозы'
 
 
 class TekagiRuinsDropPoint2(TekagiMember, main_objects.HackableStation):
@@ -422,6 +439,7 @@ class TekagiRuinsDropPoint2(TekagiMember, main_objects.HackableStation):
     RELATED_OBJECT_INDEX = 1
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpostRot90
     INTERIOR_CLASS = interior.EquipDeckInterior
+    RU_NAME = 'Тюремный блок 2 Формозы'
 
 
 class TekagiVirtualDepot(TekagiMember, main_objects.VirtualDepot):

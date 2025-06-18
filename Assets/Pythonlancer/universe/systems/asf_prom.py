@@ -35,3 +35,4 @@ class PromOsiris(AsfPromMember, main_objects.LibertyBattleship):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_LI
     IS_BASE = False
     AUTOSAVE_FORBIDDEN = True
+    RU_NAME = 'Линкор Осирис'

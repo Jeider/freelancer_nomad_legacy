@@ -187,6 +187,7 @@ class HokkDebrisFactory1(HokkMember, HokkBaseDebrisManufactoring):
         HokkDebrisZone1,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
+    RU_NAME = 'Плавильня Кусиро'
 
 
 class HokkDebrisFactory2(HokkMember, HokkBaseDebrisManufactoring):
@@ -196,6 +197,7 @@ class HokkDebrisFactory2(HokkMember, HokkBaseDebrisManufactoring):
         HokkDebrisZone2,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
+    RU_NAME = 'Плавильня Отару'
 
 
 class HokkDebrisFactory3(HokkMember, HokkBaseDebrisManufactoring):
@@ -205,6 +207,7 @@ class HokkDebrisFactory3(HokkMember, HokkBaseDebrisManufactoring):
         HokkDebrisZone3,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
+    RU_NAME = 'Плавильня Тоётоми'
 
 
 class HokkDebrisFactory4(HokkMember, HokkBaseDebrisManufactoring):
@@ -214,6 +217,7 @@ class HokkDebrisFactory4(HokkMember, HokkBaseDebrisManufactoring):
         HokkDebrisZone4,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
+    RU_NAME = 'Плавильня Немуро'
 
 
 class HokkDebrisBoxReward(HokkMember, mineable.DefaultDebrisBoxRewardsGroup):
@@ -290,6 +294,7 @@ class HokkAbandonedAstBase1(HokkMember, main_objects.AbandonedAsteroid):
         HokkBaseBarrierNebula
     ]
     EXCLUSION_PARAMS = BARRIER_EXCLUSION_PARAMS
+    RU_NAME = 'База Хакодате'
 
 
 class HokkAsteroidReward(HokkMember, mineable.AsteroidRewardsGroupUltra):
@@ -363,6 +368,7 @@ class HokkDockring(HokkMember, main_objects.LargePlanetDockring):
             meta.ProduceBad(AMMUNITION),
         ]
     )
+    RU_NAME = 'Планета Хоккайдо'
 
 
 class HokkMegaShipyard(HokkMember, main_objects.Shipyard):
@@ -379,6 +385,7 @@ class HokkMegaShipyard(HokkMember, main_objects.Shipyard):
             meta.ConsumeHeavyMunitions(),
         ]
     )
+    RU_NAME = 'Верфь Имабари'
 
 
 class HokkRefinery(HokkMember, main_objects.Refinery):
@@ -388,6 +395,7 @@ class HokkRefinery(HokkMember, main_objects.Refinery):
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
     FACTION = faction.KusariCivilians
+    RU_NAME = 'Станция Саппоро'
 
     BASE_PROPS = meta.Refinery(
         objectives=[
@@ -405,6 +413,7 @@ class HokkPolice(HokkMember, main_objects.Outpost):
     INTERIOR_CLASS = interior.OutpostInterior
     AUDIO_PREFIX = SpaceVoice.BORDER_STATION
     DEALERS = dealers.KusariMilitaryDealers
+    RU_NAME = 'Верфь Имабари'
 
 
 class HokkStation(HokkMember, main_objects.TradelaneSupportStation):
@@ -417,6 +426,7 @@ class HokkStation(HokkMember, main_objects.TradelaneSupportStation):
     AUDIO_PREFIX = SpaceVoice.STATION
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
+    RU_NAME = 'Станция Ниигата'
 
 
 class HokkTrading(HokkMember, main_objects.TradingBase):
@@ -427,6 +437,7 @@ class HokkTrading(HokkMember, main_objects.TradingBase):
 
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.KusariCivilianDealers
+    RU_NAME = 'Станция Сендай'
 
 
 class HokkPlanet1(HokkMember, main_objects.Planet):
@@ -439,18 +450,21 @@ class HokkPlanet2(HokkMember, main_objects.Planet):
     INDEX = 2
     ARCHETYPE = 'planet_gasyelcld_3000'
     SPHERE_RADIUS = 3000
+    RU_NAME = 'Планета Тотиги'
 
 
 class HokkPlanet3(HokkMember, main_objects.Planet):
     INDEX = 3
     ARCHETYPE = 'planet_icemoon_2500'
     SPHERE_RADIUS = 2500
+    RU_NAME = 'Планета Миядзаки'
 
 
 class HokkOldReserachRuins(HokkMember, main_objects.StationRuins):
     ALIAS = 'ruins'
     INDEX = 1
     REL = LEFT
+    RU_NAME = 'Станция Фукусима'
 
     SPACE_OBJECT_TEMPLATE = gmg_hq.GmgHQDestroyed
     ASTEROID_ZONES = [
@@ -466,6 +480,7 @@ class HokkOldReserachRuinsSuprisePoint1(HokkMember, main_objects.HackableStation
     RELATED_OBJECT_INDEX = 0
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpostRot90
     INTERIOR_CLASS = interior.EquipDeckInterior
+    RU_NAME = 'Исслед.блок 1 Фукусимы'
 
 
 class HokkOldReserachRuinsSuprisePoint2(HokkMember, main_objects.HackableStation):
@@ -476,6 +491,7 @@ class HokkOldReserachRuinsSuprisePoint2(HokkMember, main_objects.HackableStation
     RELATED_OBJECT_INDEX = 1
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpostRot90
     INTERIOR_CLASS = interior.EquipDeckInterior
+    RU_NAME = 'Исслед.блок 2 Фукусимы'
 
 
 class HokkNebulaPirates(HokkMember, main_objects.PirateStation):
@@ -483,6 +499,7 @@ class HokkNebulaPirates(HokkMember, main_objects.PirateStation):
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseCalifornia
     FACTION = faction.KusariPirate
+    RU_NAME = 'База Кунашир'
 
     DEFENCE_LEVEL = None
 
@@ -499,6 +516,7 @@ class HokkJunkers(HokkMember, main_objects.JunkerBase):
     REL = TOP
     SPACE_OBJECT_TEMPLATE = junker.BerlinJunker
     FACTION = faction.Junkers
+    RU_NAME = 'База Вако'
 
     DEFENCE_LEVEL = None
 

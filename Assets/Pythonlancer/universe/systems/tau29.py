@@ -157,6 +157,8 @@ class Tau29Planet1(Tau29Member, main_objects.Planet):
     ASTEROID_ZONES = [Tau29RingAsteroidsField]
     AST_EXCLUSION_ZONE_SIZE = 6000
 
+    RU_NAME = 'Планета Уоррингтон'
+
 
 class Tau29Planet2(Tau29Member, main_objects.Planet):
     INDEX = 2
@@ -167,6 +169,8 @@ class Tau29Planet2(Tau29Member, main_objects.Planet):
     RING_ZONE_ALIAS = 'ring'
     RING_ZONE_INDEX = 2
     RING_FILE_NAME = 'tau29_rock'
+
+    RU_NAME = 'Планета Марпл'
 
 
 class Tau29Nebula(Tau29Member, zones.NebulaZone):
@@ -243,16 +247,19 @@ class Tau29BaseGasMiner(main_objects.GasMinerOld):
 class Tau29GasMiner1(Tau29Member, Tau29BaseGasMiner):
     INDEX = 1
     BASE_INDEX = 51
+    RU_NAME = 'Газодобытчик Ашингтон'
 
 
 class Tau29GasMiner2(Tau29Member, Tau29BaseGasMiner):
     INDEX = 2
     BASE_INDEX = 52
+    RU_NAME = 'Газодобытчик Фраддон'
 
 
 class Tau29GasMiner3(Tau29Member, Tau29BaseGasMiner):
     INDEX = 3
     BASE_INDEX = 53
+    RU_NAME = 'Газодобытчик Мальборо'
 
 
 class Tau29SimpleCrystalRewards(Tau29Member, mineable.DefaultGasCrystalRewardsGroup):
@@ -360,6 +367,7 @@ class Tau29LargeStation(Tau29Member, main_objects.GasMiningStation):
             meta.HaveSolarPanels(),
         ]
     )
+    RU_NAME = 'Станция Арендал'
 
 
 class Tau29Trading(Tau29Member, main_objects.TradingBase):
@@ -368,6 +376,7 @@ class Tau29Trading(Tau29Member, main_objects.TradingBase):
     SPACE_OBJECT_TEMPLATE = avalon_megabase.AvalonMegabaseShort
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.BretoniaCivilianDealers
+    RU_NAME = 'Станция Кент'
 
 
 class Tau29Police(Tau29Member, main_objects.Outpost):
@@ -377,6 +386,7 @@ class Tau29Police(Tau29Member, main_objects.Outpost):
     SPACE_OBJECT_TEMPLATE = police.PoliceOutpostLiberty
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.BretoniaMilitaryDealers
+    RU_NAME = 'Аванпост Эссекс'
 
 
 class Tau29BottomPirates(Tau29Member, main_objects.PirateAsteroid):
@@ -392,6 +402,7 @@ class Tau29BottomPirates(Tau29Member, main_objects.PirateAsteroid):
     ASTEROID_ZONES = [
         Tau29AsteroidZone3,
     ]
+    RU_NAME = 'База Йорк'
 
 
 class Tau29TopPirates(Tau29Member, main_objects.PirateAsteroid):
@@ -408,6 +419,7 @@ class Tau29TopPirates(Tau29Member, main_objects.PirateAsteroid):
     # ASTEROID_ZONES = [
     #     Tau29AsteroidZone5,
     # ]
+    RU_NAME = 'База Данелаг'
 
 
 class Tau29AbandonedAstBase1(Tau29Member, main_objects.AbandonedAsteroid):
@@ -428,6 +440,7 @@ class Tau29AbandonedAstBase1(Tau29Member, main_objects.AbandonedAsteroid):
         'spacedust': Dust.ASTEROID,
         'spacedust_maxparticles': 200,
     }
+    RU_NAME = 'База Стерлинг'
 
 
 class Tau29AbandonedAstBase2(Tau29Member, main_objects.AbandonedAsteroid):
@@ -448,6 +461,7 @@ class Tau29AbandonedAstBase2(Tau29Member, main_objects.AbandonedAsteroid):
         'spacedust': Dust.ASTEROID,
         'spacedust_maxparticles': 200,
     }
+    RU_NAME = 'База Стерлинг'
 
 
 class Tau29AsteroidReward(Tau29Member, mineable.AsteroidRewardsGroupUltra):

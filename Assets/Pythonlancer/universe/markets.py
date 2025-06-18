@@ -5,6 +5,11 @@ from world.names import *
 
 from text.dividers import SINGLE_DIVIDER
 
+BATTERY = 'ge_s_battery_01'
+REPAIR = 'ge_s_repair_01'
+
+SIMPLE_EQUIP_TEMPLATE = 'MarketGood = {item_nickname}, 0, -1, 50, 50, 0, 1'
+
 
 class MarketItem(object):
     def get_nickname(self):
@@ -110,8 +115,16 @@ base = {base_nickname}
     def append_items(self, items):
         self.items.extend(items)
 
+    def get_default_items(self):
+        return [
+            SIMPLE_EQUIP_TEMPLATE.format(item_nickname=BATTERY),
+            SIMPLE_EQUIP_TEMPLATE.format(item_nickname=REPAIR),
+        ]
+
     def get_items_marketdata(self):
-        return SINGLE_DIVIDER.join([item.get_marketdata() for item in self.get_items()])
+        main_items = [item.get_marketdata() for item in self.get_items()]
+        main_items.extend(self.get_default_items())
+        return SINGLE_DIVIDER.join(main_items)
 
     def get_market_content(self):
         return self.MARKET_TEMPLATE.format(
@@ -221,20 +234,38 @@ BizSetDebug = EquipSet(
     weapon_faction=WEAPON_BR,
 )
 
+MAIN_SHIELDGUN_CLASSES = [2, 5]
+RESEARCH_SHIELDGUN_CLASSES = [1, 3, 4, 7]
+SECRET_SHIELDGUN_CLASSES = [2, 4, 5, 8]
+
+CIV_STATION_CLASSES = [1, 2, 4, 7]
+CIV_SHIPYARD_CLASSES = [2, 3, 5]
+CIV_MEGA_CLASSES = [1, 3, 6, 8]
+
+PROF_PLANET_CLASSES = [2, 3, 5]
+PROF_OUTPOST_CLASSES = [1, 3, 6]
+PROF_SECRET1_CLASSES = [1, 2, 4, 7]
+PROF_SECRET2_CLASSES = [1, 5, 7]
+
+MIL_BATTLESHIP_CLASSES = [1, 3, 7]
+MIL_SECRET1_CLASSES = [2, 4, 6]
+MIL_SECRET2_CLASSES = [1, 3, 5, 8]
+MIL_SECRET3_CLASSES = [2, 4, 7]
+
 BattleshipSet = EquipSet(
-    Q.GenericGun(LIGHTGUN, eq_classes=DEBUG_CLASSES),
-    Q.Engine(None, eq_classes=DEBUG_CLASSES),
-    Q.Power(None, eq_classes=DEBUG_CLASSES),
-    Q.Shield(None, eq_classes=DEBUG_CLASSES),
-    Q.Thruster(None, eq_classes=DEBUG_CLASSES),
+    Q.GenericGun(LIGHTGUN, eq_classes=MIL_BATTLESHIP_CLASSES),
+    Q.Engine(None, eq_classes=MIL_BATTLESHIP_CLASSES),
+    Q.Power(None, eq_classes=MIL_BATTLESHIP_CLASSES),
+    Q.Shield(None, eq_classes=MIL_BATTLESHIP_CLASSES),
+    Q.Thruster(None, eq_classes=MIL_BATTLESHIP_CLASSES),
 )
 
 PoliceOutpostSet = EquipSet(
-    Q.GenericGun(LIGHTGUN, eq_classes=DEBUG_CLASSES),
-    Q.Engine(None, eq_classes=DEBUG_CLASSES),
-    Q.Power(None, eq_classes=DEBUG_CLASSES),
-    Q.Shield(None, eq_classes=DEBUG_CLASSES),
-    Q.Thruster(None, eq_classes=DEBUG_CLASSES),
+    Q.GenericGun(LIGHTGUN, eq_classes=PROF_OUTPOST_CLASSES),
+    Q.Engine(None, eq_classes=PROF_OUTPOST_CLASSES),
+    Q.Power(None, eq_classes=PROF_OUTPOST_CLASSES),
+    Q.Shield(None, eq_classes=PROF_OUTPOST_CLASSES),
+    Q.Thruster(None, eq_classes=PROF_OUTPOST_CLASSES),
 )
 
 PrisonSet = EquipSet(
@@ -246,83 +277,84 @@ PrisonSet = EquipSet(
 )
 
 ShipyardSet = EquipSet(
-    Q.GenericGun(LIGHTGUN, eq_classes=DEBUG_CLASSES),
-    Q.Engine(None, eq_classes=DEBUG_CLASSES),
-    Q.Power(None, eq_classes=DEBUG_CLASSES),
-    Q.Shield(None, eq_classes=DEBUG_CLASSES),
-    Q.Thruster(None, eq_classes=DEBUG_CLASSES),
+    Q.GenericGun(LIGHTGUN, eq_classes=CIV_SHIPYARD_CLASSES),
+    Q.Engine(None, eq_classes=CIV_SHIPYARD_CLASSES),
+    Q.Power(None, eq_classes=CIV_SHIPYARD_CLASSES),
+    Q.Shield(None, eq_classes=CIV_SHIPYARD_CLASSES),
+    Q.Thruster(None, eq_classes=CIV_SHIPYARD_CLASSES),
 )
 
 MainPlanetSet = EquipSet(
-    Q.GenericGun(HUNTERGUN, eq_classes=DEBUG_CLASSES),
-    Q.Engine(None, eq_classes=DEBUG_CLASSES),
-    Q.Power(None, eq_classes=DEBUG_CLASSES),
-    Q.Shield(None, eq_classes=DEBUG_CLASSES),
-    Q.Thruster(None, eq_classes=DEBUG_CLASSES),
+    Q.GenericGun(HUNTERGUN, eq_classes=PROF_PLANET_CLASSES),
+    Q.GenericGun(SHIELDGUN, eq_classes=MAIN_SHIELDGUN_CLASSES),
+    Q.Engine(None, eq_classes=PROF_PLANET_CLASSES),
+    Q.Power(None, eq_classes=PROF_PLANET_CLASSES),
+    Q.Shield(None, eq_classes=PROF_PLANET_CLASSES),
+    Q.Thruster(None, eq_classes=PROF_PLANET_CLASSES),
 )
 
 CivPlanetSet = EquipSet(
-    Q.GenericGun(CIVGUN, eq_classes=DEBUG_CLASSES),
-    Q.Engine(None, eq_classes=DEBUG_CLASSES),
-    Q.Power(None, eq_classes=DEBUG_CLASSES),
-    Q.Shield(None, eq_classes=DEBUG_CLASSES),
-    Q.Thruster(None, eq_classes=DEBUG_CLASSES),
+    Q.GenericGun(CIVGUN, eq_classes=CIV_STATION_CLASSES),
+    Q.Engine(None, eq_classes=CIV_STATION_CLASSES),
+    Q.Power(None, eq_classes=CIV_STATION_CLASSES),
+    Q.Shield(None, eq_classes=CIV_STATION_CLASSES),
+    Q.Thruster(None, eq_classes=CIV_STATION_CLASSES),
 )
 
 StationSet = EquipSet(
-    Q.GenericGun(CIVGUN, eq_classes=DEBUG_CLASSES),
-    Q.Engine(None, eq_classes=DEBUG_CLASSES),
-    Q.Power(None, eq_classes=DEBUG_CLASSES),
-    Q.Shield(None, eq_classes=DEBUG_CLASSES),
-    Q.Thruster(None, eq_classes=DEBUG_CLASSES),
+    Q.GenericGun(CIVGUN, eq_classes=CIV_STATION_CLASSES),
+    Q.Engine(None, eq_classes=CIV_STATION_CLASSES),
+    Q.Power(None, eq_classes=CIV_STATION_CLASSES),
+    Q.Shield(None, eq_classes=CIV_STATION_CLASSES),
+    Q.Thruster(None, eq_classes=CIV_STATION_CLASSES),
 )
 
 ResearchSet = EquipSet(
-    Q.GenericGun(SHIELDGUN, eq_classes=DEBUG_CLASSES),
-    Q.Engine(None, eq_classes=DEBUG_CLASSES),
-    Q.Power(None, eq_classes=DEBUG_CLASSES),
-    Q.Shield(None, eq_classes=DEBUG_CLASSES),
-    Q.Thruster(None, eq_classes=DEBUG_CLASSES),
+    Q.GenericGun(SHIELDGUN, eq_classes=RESEARCH_SHIELDGUN_CLASSES),
+    Q.Engine(None, eq_classes=CIV_STATION_CLASSES),
+    Q.Power(None, eq_classes=CIV_STATION_CLASSES),
+    Q.Shield(None, eq_classes=CIV_STATION_CLASSES),
+    Q.Thruster(None, eq_classes=CIV_STATION_CLASSES),
 )
 
 LargeStationSet = EquipSet(
-    Q.GenericGun(LIGHTGUN, eq_classes=DEBUG_CLASSES),
-    Q.GenericGun(SHIELDGUN, eq_classes=DEBUG_CLASSES_SHIELDGUN),
-    Q.Engine(None, eq_classes=DEBUG_CLASSES),
-    Q.Power(None, eq_classes=DEBUG_CLASSES),
-    Q.Shield(None, eq_classes=DEBUG_CLASSES),
-    Q.Thruster(None, eq_classes=DEBUG_CLASSES),
+    Q.GenericGun(LIGHTGUN, eq_classes=CIV_MEGA_CLASSES),
+    Q.GenericGun(SHIELDGUN, eq_classes=MAIN_SHIELDGUN_CLASSES),
+    Q.Engine(None, eq_classes=CIV_MEGA_CLASSES),
+    Q.Power(None, eq_classes=CIV_MEGA_CLASSES),
+    Q.Shield(None, eq_classes=CIV_MEGA_CLASSES),
+    Q.Thruster(None, eq_classes=CIV_MEGA_CLASSES),
 )
 
 PirateSet = EquipSet(
-    Q.GenericGun(PIRATEGUN, eq_classes=DEBUG_CLASSES),
-    Q.Engine(None, eq_classes=DEBUG_CLASSES),
-    Q.Power(None, eq_classes=DEBUG_CLASSES),
-    Q.Shield(None, eq_classes=DEBUG_CLASSES),
-    Q.Thruster(None, eq_classes=DEBUG_CLASSES),
+    Q.GenericGun(PIRATEGUN, eq_classes=PROF_OUTPOST_CLASSES),
+    Q.Engine(None, eq_classes=PROF_OUTPOST_CLASSES),
+    Q.Power(None, eq_classes=PROF_OUTPOST_CLASSES),
+    Q.Shield(None, eq_classes=PROF_OUTPOST_CLASSES),
+    Q.Thruster(None, eq_classes=PROF_OUTPOST_CLASSES),
 )
 
 OutcastSet = EquipSet(
-    Q.Gun('bw_outcastgun', eq_classes=DEBUG_CLASSES),
-    Q.Engine(None, eq_classes=DEBUG_CLASSES),
-    Q.Power(None, eq_classes=DEBUG_CLASSES),
-    Q.Shield(None, eq_classes=DEBUG_CLASSES),
-    Q.Thruster(None, eq_classes=DEBUG_CLASSES),
+    Q.Gun('bw_outcastgun', eq_classes=CIV_STATION_CLASSES),
+    Q.Engine(None, eq_classes=CIV_STATION_CLASSES),
+    Q.Power(None, eq_classes=CIV_STATION_CLASSES),
+    Q.Shield(None, eq_classes=CIV_STATION_CLASSES),
+    Q.Thruster(None, eq_classes=CIV_STATION_CLASSES),
 )
 
 CorsairSet = EquipSet(
-    Q.Gun('bw_corsairgun', eq_classes=DEBUG_CLASSES),
-    Q.Engine(None, eq_classes=DEBUG_CLASSES),
-    Q.Power(None, eq_classes=DEBUG_CLASSES),
-    Q.Shield(None, eq_classes=DEBUG_CLASSES),
-    Q.Thruster(None, eq_classes=DEBUG_CLASSES),
+    Q.Gun('bw_corsairgun', eq_classes=PROF_OUTPOST_CLASSES),
+    Q.Engine(None, eq_classes=PROF_OUTPOST_CLASSES),
+    Q.Power(None, eq_classes=PROF_OUTPOST_CLASSES),
+    Q.Shield(None, eq_classes=PROF_OUTPOST_CLASSES),
+    Q.Thruster(None, eq_classes=PROF_OUTPOST_CLASSES),
 )
 
 OrderSet = EquipSet(
-    Q.Gun('or_lightgun', eq_classes=DEBUG_CLASSES),
-    Q.Gun('or_heavygun', eq_classes=DEBUG_CLASSES),
-    Q.Engine(None, eq_classes=DEBUG_CLASSES),
-    Q.Power(None, eq_classes=DEBUG_CLASSES),
-    Q.Shield(None, eq_classes=DEBUG_CLASSES),
-    Q.Thruster(None, eq_classes=DEBUG_CLASSES),
+    Q.Gun('or_lightgun', eq_classes=MIL_BATTLESHIP_CLASSES),
+    Q.Gun('or_heavygun', eq_classes=MIL_BATTLESHIP_CLASSES),
+    Q.Engine(None, eq_classes=MIL_BATTLESHIP_CLASSES),
+    Q.Power(None, eq_classes=MIL_BATTLESHIP_CLASSES),
+    Q.Shield(None, eq_classes=MIL_BATTLESHIP_CLASSES),
+    Q.Thruster(None, eq_classes=MIL_BATTLESHIP_CLASSES),
 )

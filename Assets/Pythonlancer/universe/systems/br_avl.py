@@ -221,6 +221,7 @@ class AvalSolarPlant1(AvalMember, AvalBaseSolarPlant):
     ASTEROID_ZONES = [
         AvalSolarMinesZone1,
     ]
+    RU_NAME = 'Солн.генератор Тидворт'
 
 
 class AvalSolarPlant2(AvalMember, AvalBaseSolarPlant):
@@ -229,6 +230,7 @@ class AvalSolarPlant2(AvalMember, AvalBaseSolarPlant):
     ASTEROID_ZONES = [
         AvalSolarMinesZone2,
     ]
+    RU_NAME = 'Солн.генератор Льюис'
 
 
 class AvalSolarPlant3(AvalMember, AvalBaseSolarPlant):
@@ -237,6 +239,7 @@ class AvalSolarPlant3(AvalMember, AvalBaseSolarPlant):
     ASTEROID_ZONES = [
         AvalSolarMinesZone3,
     ]
+    RU_NAME = 'Солн.генератор Харлоу'
 
 
 class AvalSolarPlant4(AvalMember, AvalBaseSolarPlant):
@@ -245,6 +248,7 @@ class AvalSolarPlant4(AvalMember, AvalBaseSolarPlant):
     ASTEROID_ZONES = [
         AvalSolarMinesZone4,
     ]
+    RU_NAME = 'Солн.генератор Челси'
 
 
 class AvalSolarPlant5(AvalMember, AvalBaseSolarPlant):
@@ -253,6 +257,7 @@ class AvalSolarPlant5(AvalMember, AvalBaseSolarPlant):
     ASTEROID_ZONES = [
         AvalSolarMinesZone5,
     ]
+    RU_NAME = 'Солн.генератор Вейбридж'
 
 
 class AvalSolarSupriseRewards(AvalMember, mineable.DefaultSupriseRewardsGroup):
@@ -353,6 +358,7 @@ class AvalAbandonedAstBase1(AvalMember, AvalBaseAbandonedAst):
     ASTEROID_ZONES = [
         AvalAsteroidZone1,
     ]
+    RU_NAME = 'База Илинг'
 
 
 class AvalAbandonedAstBase2(AvalMember, AvalBaseAbandonedAst):
@@ -362,6 +368,7 @@ class AvalAbandonedAstBase2(AvalMember, AvalBaseAbandonedAst):
     ASTEROID_ZONES = [
         AvalAsteroidZone2,
     ]
+    RU_NAME = 'База Вулидж'
 
 
 class AvalUnlockAsteroidReward(AvalMember, mineable.AsteroidRewardsGroupUltra):
