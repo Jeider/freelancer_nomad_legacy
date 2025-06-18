@@ -59,6 +59,9 @@ archetype = {archetype}'''
         #     )
         # )
 
+        # if not self.RU_NAME:
+        #     raise Exception(f'Base {self.get_base_nickname()} have no name')
+
     def add_connection(self, the_conn):
         self.connections.append(the_conn)
 
@@ -789,9 +792,6 @@ BGCS_base_run_by = W02bF44'''
             if not self.KEY_COLLECT_FX:
                 raise Exception('Dockable locked base have no fx for key %s' % self.__class__.__name__)
             self.key = LockedDockKey(self, key_fx=self.KEY_COLLECT_FX)
-
-        # if not self.RU_NAME:
-        #     raise Exception(f'Base {self.get_base_nickname()} have no name')
 
     def get_weapon_faction(self):
         return self.WEAPON_FACTION

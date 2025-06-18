@@ -422,6 +422,9 @@ class StaticJumpgate(Solar):
         return f'Act_PlayerCanDock = false, {self.get_name()}'
 
     def turn_nag(self, nag_name, towards=False):
+        if towards:
+            return self.mission.nag.towards(nag_name, self, is_object=True)
+
         return self.mission.nag.jump(nag_name, self)
 
 
@@ -431,6 +434,9 @@ class DockableSolar(Solar):
         return f'Act_PlayerCanDock = false, {self.get_name()}'
 
     def turn_nag(self, nag_name, towards=False):
+        if towards:
+            return self.mission.nag.towards(nag_name, self, is_object=True)
+
         return self.mission.nag.dock_base(nag_name, self)
 
 
@@ -440,6 +446,9 @@ class DockableBattleshipSolar(Solar):
         return f'Act_PlayerCanDock = false, {self.get_name()}'
 
     def turn_nag(self, nag_name, towards=False):
+        if towards:
+            return self.mission.nag.towards(nag_name, self, is_object=True)
+
         return self.mission.nag.dock_battleship(nag_name, self)
 
 
@@ -571,6 +580,9 @@ class Conn(Target):
         return f'Act_PlayerCanTradelane = false, {self.first_rings}'
 
     def turn_nag(self, nag_name, towards=False):
+        if towards:
+            return self.mission.nag.towards(nag_name, self, is_object=True)
+
         return self.mission.nag.tlr(nag_name, self)
 
     def enter_target(self, target=None):

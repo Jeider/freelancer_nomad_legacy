@@ -8,7 +8,7 @@ from story import actors
 from story.ingame import objectives as O
 from story.ingame.tools import (
     Point, Obj, Conn, NNObj, Ship, Solar, Capital, SaveState, DockableBattleshipSolar,
-    Direct, Trigger, MultiLine
+    Direct, Trigger, MultiLine, TextDialog, MultiText
 )
 
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT, GENERIC_MOUNTED_ROTATABLE, GENERIC_TWO_POINT_MOVE2
@@ -264,6 +264,17 @@ class Misson13(ingame_mission.IngameMission):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.active_kernel = ActiveKernel(direct=self.direct, trigger=self.trigger)
+
+    def get_dialogs(self):
+        return [
+            TextDialog(
+                self, 'work_in_progress', 'Миссия завершена',
+                ru_content=MultiText([
+                    'Вы успешно справились с миссией, но, к сожалению, она еще не закончена. В разработке',
+                    'Ожидайте будущих обновлений. А пока... пока всё',
+                ]),
+            ),
+        ]
 
     def get_initial_context(self) -> dict:
         context = super().get_initial_context()

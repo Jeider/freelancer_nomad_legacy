@@ -202,7 +202,7 @@ class Misson06(ingame_mission.IngameMission):
         return [
             NNObj(self, 'Встретьтесь с Хечтер в баре планеты Питтсбург', name='00_meet_vendor', target='vendor_planet'),
             NNObj(self, O.LAUNCH, name='00_launch_to_space'),
-            NNObj(self, 'Направляйтесь к Миссури', name='01_goto_dread', target='dread_mnh1'),
+            NNObj(self, 'Направляйтесь к Миссури', name='01_goto_dread', target='dread_mnh1', towards=True),
             NNObj(self, 'Подберите указанное устройство', name='02_pick_up_cloaking_device'),
             NNObj(self, 'Установите устройство невидимости и взлетите', name='03_mount_cloaking_device_and_launch'),
             NNObj(self, O.GOTO, name='04_road_to_station', target='04_road_to_station', nag=False),

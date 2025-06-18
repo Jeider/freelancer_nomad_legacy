@@ -469,7 +469,7 @@ class AvalPolice(AvalMember, main_objects.Outpost):
     INDEX = 1
     BASE_INDEX = 3
     REL = BOTTOM
-    RU_NAME = 'Аванпост Сэндфорд'
+    RU_NAME = 'Аванпост Манчестер'
 
     SPACE_OBJECT_TEMPLATE = police.BerlinPoliceOutpost
 
@@ -494,7 +494,7 @@ class AvalMilitary(AvalMember, main_objects.Station):
     INDEX = 1
     BASE_INDEX = 5
     REL = TOP
-    RU_NAME = 'Станция Манчестер'
+    RU_NAME = 'Станция Лондон'
 
     SPACE_OBJECT_TEMPLATE = avalon_megabase.AvalonMegabase
 
