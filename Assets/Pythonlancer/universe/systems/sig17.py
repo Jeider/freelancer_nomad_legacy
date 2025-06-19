@@ -283,6 +283,7 @@ class Sig17DreadRuins1(Sig17Member, Sig17BaseDreadRuins):
     ASTEROID_ZONES = [
         Sig17DreadMinesZone1,
     ]
+    RU_NAME = 'Линкор Невада'
 
 
 class Sig17DreadRuins2(Sig17Member, Sig17BaseDreadRuins):
@@ -291,6 +292,7 @@ class Sig17DreadRuins2(Sig17Member, Sig17BaseDreadRuins):
     ASTEROID_ZONES = [
         Sig17DreadMinesZone2,
     ]
+    RU_NAME = 'Линкор Калифорния'
 
 
 class Sig17DreadSupriseRewards(Sig17Member, mineable.DefaultSupriseRewardsGroup):
@@ -348,6 +350,8 @@ class Sig17Freeport(Sig17Member, main_objects.Freeport):
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyCivilianDealers
 
+    RU_NAME = 'Фрипорт 8'
+
 
 class Sig17Battleship(Sig17Member, main_objects.LibertyBattleship):
     BASE_INDEX = 2
@@ -355,6 +359,8 @@ class Sig17Battleship(Sig17Member, main_objects.LibertyBattleship):
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.LibertyMilitaryDealers
     SHIP_SET = markets.ShipSet('li_elite')
+
+    RU_NAME = 'Линкор Грифон'
 
 
 class Sig17Police(Sig17Member, main_objects.Outpost):
@@ -365,6 +371,8 @@ class Sig17Police(Sig17Member, main_objects.Outpost):
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyMilitaryDealers
 
+    RU_NAME = 'Аванпост Геттисберг'
+
 
 class Sig17Liner(Sig17Member, main_objects.LuxuryLiner):
     ALIAS = 'luxury'
@@ -373,6 +381,8 @@ class Sig17Liner(Sig17Member, main_objects.LuxuryLiner):
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.LibertyCivilianDealers
 
+    RU_NAME = 'Круизный лайнер Флостон'
+
 
 class Sig17FreeportSevenRuins(Sig17Member, main_objects.StationRuins):
     ALIAS = 'ruins'
@@ -380,6 +390,8 @@ class Sig17FreeportSevenRuins(Sig17Member, main_objects.StationRuins):
     REL = RIGHT
 
     SPACE_OBJECT_TEMPLATE = station_debris.Freeport7Debris
+
+    RU_NAME = 'Фрипорт 7'
 
 
 class Sig17FreeportSevenRuins1(Sig17Member, main_objects.HackableStation):
@@ -391,6 +403,8 @@ class Sig17FreeportSevenRuins1(Sig17Member, main_objects.HackableStation):
     HACKABLE_SOLAR_CLASS = hackable.HackableFreeport7Dock
     INTERIOR_CLASS = interior.EquipDeckInterior
 
+    RU_NAME = 'Стыковочный узел 1 Фрипорта 7'
+
 
 class Sig17FreeportSevenRuin2(Sig17Member, main_objects.HackableStation):
     ALIAS = 'ruins_dock'
@@ -400,6 +414,8 @@ class Sig17FreeportSevenRuin2(Sig17Member, main_objects.HackableStation):
     RELATED_OBJECT_INDEX = 1
     HACKABLE_SOLAR_CLASS = hackable.HackableFreeport7DockRot180
     INTERIOR_CLASS = interior.EquipDeckInterior
+
+    RU_NAME = 'Стыковочный узел 2 Фрипорта 7'
 
 
 class Sig17EdgeNebulaPirates(Sig17Member, main_objects.PirateAsteroid):
@@ -455,16 +471,20 @@ class Sig17LuxuryRuins1(Sig17Member, main_objects.HackableLuxury):
     HACKABLE_SOLAR_CLASS = hackable.HackableLuxuryLiner
     INTERIOR_CLASS = interior.EquipDeckInterior
 
+    RU_NAME = 'Круизный лайнер Атлантика'
+
 
 class Sig17Planet1(Sig17Member, main_objects.Planet):
     ARCHETYPE = 'planet_gasblucld_5000'
     SPHERE_RADIUS = 5000
+    RU_NAME = 'Планета Чикасо'
 
 
 class Sig17Planet2(Sig17Member, main_objects.Planet):
     INDEX = 2
     ARCHETYPE = 'planet_icemntcld_4000'
     SPHERE_RADIUS = 4000
+    RU_NAME = 'Планета Маскоджи'
 
 
 class Sig17FreeportConn1(Sig17Member, main_objects.TradeConnection):

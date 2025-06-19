@@ -159,6 +159,7 @@ class Sig13LibertyStation(Sig13Liberty, Sig13Member, main_objects.GasMiningStati
     LOADOUT = 'smallstation_li'
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyCivilianDealers
+    RU_NAME = 'Станция Сиетл'
 
     NEBULA_EXCLUSION_ZONE_SIZE = 5000
     EXCLUSION_PARAMS = GENERIC_EXCLUSION_PARAMS
@@ -174,6 +175,7 @@ class Sig13RheinlandStation(Sig13Member, Sig13Rheinland, main_objects.GasMiningS
     SPACE_OBJECT_TEMPLATE = gas_miner.RheinlandCivilianGasMiner
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.RheinlandCivilianDealers
+    RU_NAME = 'Станция Магдебург'
 
     NEBULA_EXCLUSION_ZONE_SIZE = 3000
     EXCLUSION_PARAMS = GENERIC_EXCLUSION_PARAMS
@@ -189,6 +191,7 @@ class Sig13Battleship(Sig13Member, Sig13Rheinland, main_objects.RheinlandBattles
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.RheinlandMilitaryDealers
     SHIP_SET = markets.ShipSet('rh_elite')
+    RU_NAME = 'Линкор Макграф'
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
     EXCLUSION_PARAMS = CROW_EXCLUSION_PARAMS
@@ -204,6 +207,7 @@ class Sig13Freeport(Sig13Liberty, Sig13Member, main_objects.Freeport):
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.RheinlandCivilianDealers
     ROTATE_RANDOM = True
+    RU_NAME = 'Фрипорт 3'
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
     EXCLUSION_PARAMS = GENERIC_EXCLUSION_PARAMS
@@ -220,6 +224,7 @@ class Sig13PirateTopRight(Sig13Liberty, Sig13Member, main_objects.PirateGasMiner
     DEALERS = dealers.LibertyPirateDealers
     FACTION = faction.LibertyPirate
     DEFENCE_LEVEL = None
+    RU_NAME = 'База Ванкувер'
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
     EXCLUSION_PARAMS = CROW_EXCLUSION_PARAMS
@@ -236,6 +241,7 @@ class Sig13PirateTopLeft(Sig13Liberty, Sig13Member, main_objects.PirateGasMiner)
     DEALERS = dealers.LibertyPirateDealers
     FACTION = faction.LibertyPirate
     DEFENCE_LEVEL = None
+    RU_NAME = 'База Дакота'
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
     EXCLUSION_PARAMS = CROW_EXCLUSION_PARAMS
@@ -252,6 +258,7 @@ class Sig13PirateBottom(Sig13Member, Sig13Rheinland, main_objects.PirateGasMiner
     DEALERS = dealers.RheinlandPirateDealers
     FACTION = faction.RheinlandPirate
     DEFENCE_LEVEL = None
+    RU_NAME = 'База Гринберг'
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
     EXCLUSION_PARAMS = CROW_EXCLUSION_PARAMS
@@ -466,46 +473,55 @@ class Sig13GasPocketsZone3(Sig13Member, zones.AsteroidZone):
 class Sig13GasMiner1(Sig13Member, Sig13BaseRheinlandGasMiner):
     INDEX = 1
     BASE_INDEX = 51
+    RU_NAME = 'Газодобытчик Оснабрюк'
 
 
 class Sig13GasMiner2(Sig13Member, Sig13BaseRheinlandGasMiner):
     INDEX = 2
     BASE_INDEX = 52
+    RU_NAME = 'Газодобытчик Эбербах'
 
 
 class Sig13GasMiner3(Sig13Member, Sig13BaseLibertyGasMiner):
     INDEX = 3
     BASE_INDEX = 53
+    RU_NAME = 'Газодобытчик Медфорд'
 
 
 class Sig13GasMiner4(Sig13Member, Sig13BaseRheinlandGasMiner):
     INDEX = 4
     BASE_INDEX = 54
+    RU_NAME = 'Газодобытчик Ландау'
 
 
 class Sig13GasMiner5(Sig13Member, Sig13BaseRheinlandGasMiner):
     INDEX = 5
     BASE_INDEX = 55
+    RU_NAME = 'Газодобытчик Логан'
 
 
 class Sig13GasMiner6(Sig13Member, Sig13BaseRheinlandGasMiner):
     INDEX = 6
     BASE_INDEX = 56
+    RU_NAME = 'Газодобытчик Вормс'
 
 
 class Sig13GasMiner7(Sig13Member, Sig13BaseLibertyGasMiner):
     INDEX = 7
     BASE_INDEX = 57
+    RU_NAME = 'Газодобытчик Дикинсон'
 
 
 class Sig13GasMiner8(Sig13Member, Sig13BaseLibertyGasMiner):
     INDEX = 8
     BASE_INDEX = 58
+    RU_NAME = 'Газодобытчик Каспер'
 
 
 class Sig13GasMiner9(Sig13Member, Sig13BaseLibertyGasMiner):
     INDEX = 9
     BASE_INDEX = 59
+    RU_NAME = 'Газодобытчик Уичито'
 
 
 class Sig13SimpleCrystalRewards(Sig13Member, mineable.DefaultGasCrystalRewardsGroup):
@@ -593,6 +609,7 @@ class Sig13AbandonedMiner1(Sig13Member, Sig13Rheinland, Sig13BaseAbandonedMiner)
     ASTEROID_ZONES = [
         Sig13GasPocketsZone1
     ]
+    RU_NAME = 'База Лайбах'
 
 
 class Sig13AbandonedMiner2(Sig13Member, Sig13Rheinland, Sig13BaseAbandonedMiner):
@@ -601,6 +618,7 @@ class Sig13AbandonedMiner2(Sig13Member, Sig13Rheinland, Sig13BaseAbandonedMiner)
     ASTEROID_ZONES = [
         Sig13GasPocketsZone2
     ]
+    RU_NAME = 'База Лемберг'
 
 
 class Sig13AbandonedMiner3(Sig13Liberty, Sig13Member, Sig13BaseAbandonedMiner):
@@ -609,6 +627,7 @@ class Sig13AbandonedMiner3(Sig13Liberty, Sig13Member, Sig13BaseAbandonedMiner):
     ASTEROID_ZONES = [
         Sig13GasPocketsZone3
     ]
+    RU_NAME = 'База Монтана'
 
 
 class Sig13ComplexCrystalRewards(Sig13Member, mineable.DefaultGasCrystalRewardsGroup):

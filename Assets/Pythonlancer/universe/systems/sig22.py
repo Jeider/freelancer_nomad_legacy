@@ -171,6 +171,7 @@ class Sig22OldOutpostRuins(Sig22Member, Sig22Liberty, main_objects.StationRuins)
     ALIAS = 'ruins'
     INDEX = 1
     REL = RIGHT
+    RU_NAME = 'Фрипорт 4'
 
     SPACE_OBJECT_TEMPLATE = station_debris.Freeport7DebrisAlternative
 
@@ -186,6 +187,7 @@ class Sig22OldOutpostRuinsSuprisePoint(Sig22Member, Sig22Liberty, main_objects.H
     RELATED_OBJECT = Sig22OldOutpostRuins
     HACKABLE_SOLAR_CLASS = hackable.HackableFreeport7Dock
     INTERIOR_CLASS = interior.EquipDeckInterior
+    RU_NAME = 'Стыковочный узел фрипорта 4'
 
 
 class Sig22BattleshipRuins1(Sig22Member, Sig22Liberty, main_objects.HackableBattleship):
@@ -194,6 +196,7 @@ class Sig22BattleshipRuins1(Sig22Member, Sig22Liberty, main_objects.HackableBatt
     BASE_INDEX = 62
     HACKABLE_SOLAR_CLASS = hackable.HackableLibertyDreadnought
     INTERIOR_CLASS = interior.EquipDeckInterior
+    RU_NAME = 'Линкор Пенсильвания'
 
     ASTEROID_ZONES = [
         Sig22AsteroidZone2,
@@ -206,6 +209,7 @@ class Sig22BattleshipRuins2(Sig22Bretonia, Sig22Member, main_objects.HackableBat
     BASE_INDEX = 63
     HACKABLE_SOLAR_CLASS = hackable.HackableBretoniaBattleship
     INTERIOR_CLASS = interior.EquipDeckInterior
+    RU_NAME = 'Линкор Левиафан'
 
     ASTEROID_ZONES = [
         Sig22AsteroidZone2,
@@ -218,6 +222,7 @@ class Sig22BattleshipRuins3(Sig22Bretonia, Sig22Member, main_objects.HackableBat
     BASE_INDEX = 64
     HACKABLE_SOLAR_CLASS = hackable.HackableBretoniaBattleship
     INTERIOR_CLASS = interior.EquipDeckInterior
+    RU_NAME = 'Линкор Худ'
 
     ASTEROID_ZONES = [
         Sig22AsteroidZone2,
@@ -242,6 +247,7 @@ class Sig22BaseAbandonedAst(main_objects.AbandonedAsteroid):
 class Sig22AbandonedAstBase1(Sig22Member, Sig22BaseAbandonedAst):
     INDEX = 5
     BASE_INDEX = 65
+    RU_NAME = 'База Хило'
 
     ASTEROID_ZONES = [
         Sig22AsteroidZone5,
@@ -251,6 +257,7 @@ class Sig22AbandonedAstBase1(Sig22Member, Sig22BaseAbandonedAst):
 class Sig22AbandonedAstBase2(Sig22Member, Sig22BaseAbandonedAst):
     INDEX = 6
     BASE_INDEX = 66
+    RU_NAME = 'База Алоха'
 
     ASTEROID_ZONES = [
         Sig22AsteroidZone6,
@@ -260,6 +267,7 @@ class Sig22AbandonedAstBase2(Sig22Member, Sig22BaseAbandonedAst):
 class Sig22AbandonedAstBase3(Sig22Member, Sig22BaseAbandonedAst):
     INDEX = 7
     BASE_INDEX = 67
+    RU_NAME = 'База Оаху'
 
     ASTEROID_ZONES = [
         Sig22AsteroidZone7,
@@ -359,6 +367,7 @@ class Sig22Dockring(Sig22Bretonia, Sig22Member, main_objects.WaterPlanetDockring
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.BretoniaCivilianDealers
     SHIP_SET = markets.ShipSet('bh_elite')
+    RU_NAME = 'Планета Гонолулу'
 
 
 class Sig22Station(Sig22Member, Sig22Liberty, main_objects.TradelaneSupportStation):
@@ -367,6 +376,7 @@ class Sig22Station(Sig22Member, Sig22Liberty, main_objects.TradelaneSupportStati
     SPACE_OBJECT_TEMPLATE = constanta.ConstantaAlternative
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyCivilianDealers
+    RU_NAME = 'Станция Костанца'
 
     BASE_PROPS = meta.TradelaneSupportStation(
         objectives=[
@@ -382,6 +392,7 @@ class Sig22Battleship(Sig22Member, main_objects.LibertyBattleship):
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.LibertyMilitaryDealers
     SHIP_SET = markets.ShipSet('li_fighter')
+    RU_NAME = 'Линкор Аризона'
 
 
 class Sig22Planet1(Sig22Member, main_objects.Planet):
@@ -404,6 +415,7 @@ class Sig22SouthPirates(Sig22Member, Sig22Liberty, main_objects.PirateStation):
     FACTION = faction.LibertyPirate
 
     DEFENCE_LEVEL = None
+    RU_NAME = 'База Алькатрас'
 
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -422,6 +434,7 @@ class Sig22NorthPirates(Sig22Bretonia, Sig22Member, main_objects.PirateStation):
     REL = RIGHT
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseStuttgart
     FACTION = faction.BretoniaPirate
+    RU_NAME = 'База Лимерик'
 
     DEFENCE_LEVEL = None
 

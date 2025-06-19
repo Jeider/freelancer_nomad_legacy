@@ -195,46 +195,55 @@ class CalNebula2RoidMiner(CalBaseRoidMiner):
 class CalRoidMiner1(CalMember, CalNebula1RoidMiner):
     INDEX = 1
     BASE_INDEX = 61
+    RU_NAME = 'Рудокоп Астория'
 
 
 class CalRoidMiner2(CalMember, CalNebula1RoidMiner):
     INDEX = 2
     BASE_INDEX = 62
+    RU_NAME = 'Рудокоп Якима'
 
 
 class CalRoidMiner3(CalMember, CalNebula1RoidMiner):
     INDEX = 3
     BASE_INDEX = 63
+    RU_NAME = 'Рудокоп Сейлем'
 
 
 class CalRoidMiner4(CalMember, CalNebula1RoidMiner):
     INDEX = 4
     BASE_INDEX = 64
+    RU_NAME = 'Рудокоп Бернс'
 
 
 class CalRoidMiner5(CalMember, CalNebula1RoidMiner):
     INDEX = 5
     BASE_INDEX = 65
+    RU_NAME = 'Рудокоп Бенд'
 
 
 class CalRoidMiner6(CalMember, CalNebula2RoidMiner):
     INDEX = 6
     BASE_INDEX = 66
+    RU_NAME = 'Рудокоп Медфорд'
 
 
 class CalRoidMiner7(CalMember, CalNebula2RoidMiner):
     INDEX = 7
     BASE_INDEX = 67
+    RU_NAME = 'Рудокоп Рино'
 
 
 class CalRoidMiner8(CalMember, CalNebula2RoidMiner):
     INDEX = 8
     BASE_INDEX = 68
+    RU_NAME = 'Рудокоп Юрика'
 
 
 class CalRoidMiner9(CalMember, CalNebula2RoidMiner):
     INDEX = 9
     BASE_INDEX = 69
+    RU_NAME = 'Рудокоп Санта-Роза'
 
 
 class CalBerliliumAsteroidReward(CalMember, mineable.AsteroidRewardsGroupUltra):
@@ -349,6 +358,8 @@ class CalDockring(CalMember, main_objects.LargePlanetDockring):
         ]
     )
 
+    RU_NAME = 'Планета Калифорния'
+
 
 class CalMiningStation(CalMember, main_objects.RoidMinerStation):
     BASE_INDEX = 2
@@ -362,6 +373,8 @@ class CalMiningStation(CalMember, main_objects.RoidMinerStation):
             meta.ProduceBest(BERILIUM),
         ]
     )
+
+    RU_NAME = 'Станция Сан-Франциско'
 
 
 class CalPolice(CalMember, main_objects.Outpost):
@@ -377,6 +390,8 @@ class CalPolice(CalMember, main_objects.Outpost):
     EXCLUSION_PARAMS = CROW_EXCLUSION_PARAMS
     REL_APPEND = 2000
 
+    RU_NAME = 'Аванпост Сан-Диего'
+
 
 class CalBattleship(CalMember, main_objects.LibertyBattleship):
     BASE_INDEX = 4
@@ -384,6 +399,7 @@ class CalBattleship(CalMember, main_objects.LibertyBattleship):
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.LibertyMilitaryDealers
     SHIP_SET = markets.ShipSet('li_elite')
+    RU_NAME = 'Линкор Нью-Мексико'
 
 
 class CalTrading(CalMember, main_objects.TradingBase):
@@ -392,6 +408,7 @@ class CalTrading(CalMember, main_objects.TradingBase):
     SPACE_OBJECT_TEMPLATE = california_tradestation.CaliforniaTradestation
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyCivilianDealers
+    RU_NAME = 'Торговая база Лос-Анджелес'
 
     BASE_PROPS = meta.LargeTradingBase()
 
@@ -405,6 +422,7 @@ class CalPirate1(CalMember, main_objects.PirateAsteroid):
 
     FACTION = faction.LibertyPirate
     DEFENCE_LEVEL = None
+    RU_NAME = 'База Чихуахуа'
 
     ASTEROID_ZONES = [
         CalAsteroidZone3,
@@ -423,6 +441,7 @@ class CalPirate2(CalMember, main_objects.PirateStation):
 
     FACTION = faction.LibertyPirate
     DEFENCE_LEVEL = None
+    RU_NAME = 'База Веракрус'
 
     EXCLUSION_PARAMS = CROW_EXCLUSION_PARAMS
     NEBULA_ZONES = [CalNebula4]
@@ -483,6 +502,7 @@ class CalAbandonedStation(CalMember, main_objects.StationRuins):
     NEBULA_ZONES = [
         CalNebula5,
     ]
+    RU_NAME = 'Станция Беркли'
 
 
 class CalAbandonedStationDropPoint1(CalMember, main_objects.HackableStation):
@@ -494,6 +514,8 @@ class CalAbandonedStationDropPoint1(CalMember, main_objects.HackableStation):
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpost
     INTERIOR_CLASS = interior.EquipDeckInterior
 
+    RU_NAME = 'Исследовательский блок 1 Беркли'
+
 
 class CalAbandonedStationDropPoint2(CalMember, main_objects.HackableStation):
     ALIAS = 'ruins_dock'
@@ -503,6 +525,8 @@ class CalAbandonedStationDropPoint2(CalMember, main_objects.HackableStation):
     RELATED_OBJECT_INDEX = 1
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpostRot90
     INTERIOR_CLASS = interior.EquipDeckInterior
+
+    RU_NAME = 'Исследовательский блок 2 Беркли'
 
 
 class CalMiningStationConn1(CalMember, main_objects.TradeConnection):
@@ -606,3 +630,4 @@ class CalPlanet2(CalMember, main_objects.Planet):
     ARCHETYPE = 'planet_ice_blue_1000'
     PLANET_CIRCLE = False
     SPHERE_RADIUS = 1000
+    RU_NAME = 'Планета Невада'

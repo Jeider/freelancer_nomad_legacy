@@ -261,6 +261,8 @@ class Sig8Station(Sigma8Member, main_objects.TradelaneSupportStation):
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.RheinlandCivilianDealers
 
+    RU_NAME = 'Станция Штарке'
+
 
 class Sig8Freeport(Sigma8Member, main_objects.Freeport):
     INDEX = 1
@@ -272,6 +274,8 @@ class Sig8Freeport(Sigma8Member, main_objects.Freeport):
     AUDIO_PREFIX = SpaceVoice.FREEPORT
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.RheinlandCivilianDealers
+
+    RU_NAME = 'Фрипорт Гослар'
 
 
 class Sig8BorderStation(Sigma8Member, main_objects.Outpost):
@@ -285,6 +289,8 @@ class Sig8BorderStation(Sigma8Member, main_objects.Outpost):
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.RheinlandMilitaryDealers
 
+    RU_NAME = 'Аванпост Аугсбург'
+
 
 class Sig8Junkers(Sigma8Member, main_objects.JunkerBase):
     INDEX = 1
@@ -295,6 +301,7 @@ class Sig8Junkers(Sigma8Member, main_objects.JunkerBase):
 
     FACTION = faction.Junkers
     DEFENCE_LEVEL = None
+    RU_NAME = 'Склад Зуль'
 
     AUDIO_PREFIX = SpaceVoice.STATION
     INTERIOR_CLASS = interior.PirateStationInterior
@@ -314,6 +321,7 @@ class Sig8Pirate(Sigma8Member, main_objects.PirateStation):
 
     FACTION = faction.WorkaroundPirate
     DEFENCE_LEVEL = None
+    RU_NAME = 'База Вернигороде'
 
     AUDIO_PREFIX = SpaceVoice.STATION
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -381,24 +389,29 @@ class Sigma8Planet1(Sigma8Member, main_objects.Planet):
     RING_ZONE_ALIAS = 'ring'
     RING_ZONE_INDEX = 1
     RING_FILE_NAME = 'sig8'
+    RU_NAME = 'Планета Трир'
 
 
 class Sigma8Planet2(Sigma8Member, main_objects.Planet):
     INDEX = 2
     ARCHETYPE = 'planet_icemntcld_2500'
     SPHERE_RADIUS = 2500
+    RU_NAME = 'Планета Прюм'
 
 
 class Sigma8Planet3(Sigma8Member, main_objects.Planet):
     INDEX = 3
     ARCHETYPE = 'planet_crater_1500'
     SPHERE_RADIUS = 1500
+    RU_NAME = 'Планета Крёф'
 
 
 class Sig8OldFreeportRuins(Sigma8Member, main_objects.StationRuins):
     ALIAS = 'ruins'
     INDEX = 1
     REL = RIGHT
+
+    RU_NAME = 'База Монако'
 
     SPACE_OBJECT_TEMPLATE = station_debris.SigmaEightFreeport
 
@@ -415,6 +428,8 @@ class Sig8OldFreeportRuinsSuprisePoint(Sigma8Member, main_objects.HackableStatio
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpost
     INTERIOR_CLASS = interior.EquipDeckInterior
 
+    RU_NAME = 'Стыковочный узел Монако'
+
 
 class Sig8BattleshipRuins1(Sigma8Member, main_objects.HackableBattleship):
     ALIAS = 'ast'
@@ -422,6 +437,7 @@ class Sig8BattleshipRuins1(Sigma8Member, main_objects.HackableBattleship):
     BASE_INDEX = 61
     HACKABLE_SOLAR_CLASS = hackable.HackableRheinlandBattleship
     INTERIOR_CLASS = interior.EquipDeckInterior
+    RU_NAME = 'Линкор Принц Ойген'
 
     ASTEROID_ZONES = [
         Sig8AsteroidZone2,
@@ -434,6 +450,7 @@ class Sig8BattleshipRuins2(Sigma8Member, main_objects.HackableBattleship):
     BASE_INDEX = 62
     HACKABLE_SOLAR_CLASS = hackable.HackableRheinlandBattleship
     INTERIOR_CLASS = interior.EquipDeckInterior
+    RU_NAME = 'Линкор Адмирал Хиппер'
 
     ASTEROID_ZONES = [
         Sig8AsteroidZone3,
@@ -446,6 +463,7 @@ class Sig8BattleshipRuins3(Sigma8Member, main_objects.HackableBattleship):
     BASE_INDEX = 63
     HACKABLE_SOLAR_CLASS = hackable.HackableRheinlandBattleship
     INTERIOR_CLASS = interior.EquipDeckInterior
+    RU_NAME = 'Линкор Лютцов'
 
     ASTEROID_ZONES = [
         Sig8AsteroidZone4,

@@ -189,6 +189,7 @@ class BizmarkDockRing(BizmarkMember, main_objects.LargePlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.RheinlandPlanetDealers
     SHIP_SET = markets.ShipSet('ge_fighter2', 'ge_fighter3', 'bw_freighter')
+    RU_NAME = 'Планета Бисмарк'
 
     BASE_PROPS = meta.LargePlanet(
         objectives=[
@@ -211,6 +212,7 @@ class BizmarkTrading(BizmarkMember, main_objects.TradingBase):
     INTERIOR_CLASS = interior.OutpostShipdealerInterior
     DEALERS = dealers.RheinlandCivilianDealers
     SHIP_SET = markets.ShipSet('rh_freighter')
+    RU_NAME = 'Станция Бремен'
 
     BASE_PROPS = meta.LargeTradingBase(
         objectives=[
@@ -233,6 +235,7 @@ file = Universe\\SYSTEMS_MOD\\RH_BIZMARK\\Room\\rh_biz_03_deck2.ini
     ''']
     DEALERS = dealers.RheinlandMilitaryDealers
     SHIP_SET = markets.ShipSet('bw_fighter')
+    RU_NAME = 'Линкор Шарнхорст'
 
 
 class BizmarkResearch(BizmarkMember, main_objects.ResearchStation):
@@ -241,6 +244,7 @@ class BizmarkResearch(BizmarkMember, main_objects.ResearchStation):
     BASE_INDEX = 4
     REL = RIGHT
     SPACE_OBJECT_TEMPLATE = research.RheinlandResearch
+    RU_NAME = 'Исследовательская станция Мюнстер'
 
     AUDIO_PREFIX = SpaceVoice.STATION
     INTERIOR_CLASS = interior.StationBshbarInterior
@@ -254,6 +258,8 @@ class BizmarkMilitary(BizmarkMember, main_objects.Station):
     BASE_INDEX = 5
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = rheinland_military.RheinlandMilitary
+
+    RU_NAME = 'Станция Кёльн'
 
     LOCKED_DOCK = True
     KEY_COLLECT_FX = nn.FX_GOT_KEY_STATION
@@ -276,6 +282,7 @@ class BizmarkShipyard(BizmarkMember, main_objects.Shipyard):
     REL = TOP
     REL_DRIFT = 1000
     SPACE_OBJECT_TEMPLATE = constanta.Constanta
+    RU_NAME = 'Верфь Киль'
 
     AUDIO_PREFIX = SpaceVoice.SHIPYARD
     INTERIOR_CLASS = interior.StationInterior
@@ -286,6 +293,7 @@ class BizmarkRefinery(BizmarkMember, main_objects.Refinery):
     BASE_INDEX = 7
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = alg.AlgBaseBerlin
+    RU_NAME = 'Станция Дортмунд'
 
     AUDIO_PREFIX = SpaceVoice.FACTORY
     INTERIOR_CLASS = interior.StationInterior
@@ -304,6 +312,7 @@ class BizmarkTopPirate(BizmarkMember, main_objects.PirateStation):
     FACTION = faction.RheinlandPirate
 
     DEFENCE_LEVEL = None
+    RU_NAME = 'База Майнц'
 
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -318,6 +327,7 @@ class BizmarkRightPirate(BizmarkMember, main_objects.PirateAsteroid):
     FACTION = faction.RheinlandPirate
 
     DEFENCE_LEVEL = None
+    RU_NAME = 'База Саарбрюкен'
 
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -354,6 +364,8 @@ class BizmarkAbandonedAstBase1(BizmarkMember, main_objects.AbandonedAsteroid):
     DEFENCE_LEVEL = None
     LOCKED_DOCK = True
 
+    RU_NAME = 'База Эссен'
+
     INTERIOR_BG1 = interior.INTERIOR_RH_BIZMARK
     AST_EXCLUSION_ZONE_SIZE = 3500
     ASTEROID_ZONES = [
@@ -372,6 +384,7 @@ class BizmarkDebrisFactory1(BizmarkMember, BizmarkBaseDebrisManufactoring):
         BizmarkDebrisZone1,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
+    RU_NAME = 'База Вадерн'
 
 
 class BizmarkDebrisFactory2(BizmarkMember, BizmarkBaseDebrisManufactoring):
@@ -381,6 +394,7 @@ class BizmarkDebrisFactory2(BizmarkMember, BizmarkBaseDebrisManufactoring):
         BizmarkDebrisZone2,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
+    RU_NAME = 'База Марпингер'
 
 
 class BizmarkDebrisFactory3(BizmarkMember, BizmarkBaseDebrisManufactoring):
@@ -390,6 +404,7 @@ class BizmarkDebrisFactory3(BizmarkMember, BizmarkBaseDebrisManufactoring):
         BizmarkDebrisZone3,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
+    RU_NAME = 'База Герсхайм'
 
 
 class BizmarkPirateAsteroidReward(BizmarkMember, mineable.AsteroidRewardsGroupUltra):
@@ -461,12 +476,14 @@ class BizmarkPlanet2(BizmarkMember, main_objects.Planet):
     INDEX = 2
     ARCHETYPE = 'planet_desored_2000'
     SPHERE_RADIUS = 2000
+    RU_NAME = 'Планета Саксония'
 
 
 class BizmarkPlanet3(BizmarkMember, main_objects.Planet):
     INDEX = 3
     ARCHETYPE = 'planet_ice_purple_5000'
     SPHERE_RADIUS = 5000
+    RU_NAME = 'Планета Померания'
 
 
 class BizmarkPlanet4(BizmarkMember, main_objects.Planet):

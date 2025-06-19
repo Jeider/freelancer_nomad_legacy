@@ -263,6 +263,7 @@ class BerlinDockring(BerlinMember, main_objects.LargePlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.RheinlandPlanetDealers
     SHIP_SET = markets.ShipSet('rh_fighter', 'bw_elite', 'ge_csv')
+    RU_NAME = 'Планета Берлин'
 
     BASE_PROPS = meta.LargePlanet(
         objectives=[
@@ -283,6 +284,7 @@ class BerlinPrison(BerlinMember, main_objects.Prison):
     SPACE_OBJECT_TEMPLATE = prisons.BerlinPrison
     INTERIOR_CLASS = interior.StationBshbarInterior
     DEALERS = dealers.RheinlandMilitaryDealers
+    RU_NAME = 'Тюрьма Шверин'
 
 
 class BerlinMegaStation(BerlinMember, main_objects.Station):
@@ -291,6 +293,7 @@ class BerlinMegaStation(BerlinMember, main_objects.Station):
     SPACE_OBJECT_TEMPLATE = potsdam.Potsdam
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.RheinlandCivilianDealers
+    RU_NAME = 'Станция Потсдам'
 
     BASE_PROPS = meta.Megabase(
         objectives=[
@@ -312,6 +315,7 @@ class BerlinOutpost(BerlinMember, main_objects.Outpost):
     INTERIOR_CLASS = interior.OutpostInterior
     AUDIO_PREFIX = SpaceVoice.BORDER_STATION
     DEALERS = dealers.RheinlandMilitaryDealers
+    RU_NAME = 'Аванпост Бранденбург'
 
 
 class BerlinShipyard(BerlinMember, main_objects.Shipyard):
@@ -320,6 +324,7 @@ class BerlinShipyard(BerlinMember, main_objects.Shipyard):
     SPACE_OBJECT_TEMPLATE = shipyards.CambridgeShipyard
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.RheinlandMilitaryDealers
+    RU_NAME = 'Верфь Гамбург'
 
 
 class BerlinTrading(BerlinMember, main_objects.TradingBase):
@@ -329,6 +334,7 @@ class BerlinTrading(BerlinMember, main_objects.TradingBase):
     INTERIOR_CLASS = interior.BattleshipNoshipInterior
     DEALERS = dealers.RheinlandCivilianDealers
     FACTION = faction.RheinlandCivilians
+    RU_NAME = 'Торговая база Бонн'
 
 
 class BerlinRefinery(BerlinMember, main_objects.Refinery):
@@ -338,6 +344,7 @@ class BerlinRefinery(BerlinMember, main_objects.Refinery):
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.RheinlandCivilianDealers
     FACTION = faction.RheinlandCivilians
+    RU_NAME = 'Станция Дрезден'
 
     BASE_PROPS = meta.Refinery(
         objectives=[
@@ -359,6 +366,8 @@ class BerlinJunkers(BerlinMember, main_objects.JunkerBase):
     ]
     DEFENCE_LEVEL = None
 
+    RU_NAME = 'База Линц'
+
 
 class BerlinPiratesTop(BerlinMember, main_objects.PirateAsteroid):
     BASE_INDEX = 5
@@ -373,6 +382,7 @@ class BerlinPiratesTop(BerlinMember, main_objects.PirateAsteroid):
         BerlinAsteroidZone1
     ]
     DEFENCE_LEVEL = None
+    RU_NAME = 'База Ульм'
 
 
 class BerlinPiratesBottom(BerlinMember, main_objects.PirateStation):
@@ -387,6 +397,7 @@ class BerlinPiratesBottom(BerlinMember, main_objects.PirateStation):
         BerlinDebrisZone5
     ]
     DEFENCE_LEVEL = None
+    RU_NAME = 'База Вюрцбург'
 
 
 class BerlinPlanet1(BerlinMember, main_objects.Planet):
@@ -404,18 +415,21 @@ class BerlinPlanet2(BerlinMember, main_objects.Planet):
     RING_ZONE_ALIAS = 'ring'
     RING_ZONE_INDEX = 1
     RING_FILE_NAME = 'berlin'
+    RU_NAME = 'Планета Линден'
 
 
 class BerlinPlanet3(BerlinMember, main_objects.Planet):
     INDEX = 3
     ARCHETYPE = 'planet_ice_purple_1500'
     SPHERE_RADIUS = 1500
+    RU_NAME = 'Планета Швабия'
 
 
 class BerlinPlanet4(BerlinMember, main_objects.Planet):
     INDEX = 4
     ARCHETYPE = 'planet_gasgrncld_2500'
     SPHERE_RADIUS = 2500
+    RU_NAME = 'Планета Фридрих'
 
 
 class BerConnOutpost1(BerlinMember, main_objects.TradeConnection):

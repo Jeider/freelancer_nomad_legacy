@@ -131,6 +131,8 @@ class Tau31Station(Tau31Member, main_objects.GasMiningStation):
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyCivilianDealers
 
+    RU_NAME = 'Станция Колорадо'
+
     NEBULA_EXCLUSION_ZONE_SIZE = 5000
     EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS
     NEBULA_ZONES = [Tau31Nebula]
@@ -144,6 +146,8 @@ class Tau31Battleship(Tau31Member, main_objects.LibertyBattleship):
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.LibertyMilitaryDealers
     SHIP_SET = markets.ShipSet('li_elite')
+
+    RU_NAME = 'Линкор Луизиана'
 
     NEBULA_EXCLUSION_ZONE_SIZE = 3000
     EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS
@@ -159,6 +163,8 @@ class Tau31Trading(Tau31Member, main_objects.TradingBase):
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.LibertyCivilianDealers
 
+    RU_NAME = 'Торговая база Флорида'
+
     NEBULA_EXCLUSION_ZONE_SIZE = 2500
     EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS
     NEBULA_ZONES = [Tau31Nebula]
@@ -172,6 +178,8 @@ class Tau31BottomPirates(Tau31Member, main_objects.PirateGasMiner):
     DEALERS = dealers.LibertyPirateDealers
     DEFENCE_LEVEL = None
     FACTION = faction.LibertyPirate
+
+    RU_NAME = 'База Тубак'
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
     EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS
@@ -187,6 +195,7 @@ class Tau31TopPirates(Tau31Member, main_objects.PirateGasMiner):
     DEALERS = dealers.LibertyPirateDealers
     DEFENCE_LEVEL = None
     FACTION = faction.LibertyPirate
+    RU_NAME = 'База Коринт'
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
     EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS
@@ -343,26 +352,31 @@ class Tau31GasPocketsSpecialZone1(Tau31Member, zones.AsteroidZone):
 class Tau31GasMiner1(Tau31Member, Tau31BaseLibertyGasMiner):
     INDEX = 1
     BASE_INDEX = 51
+    RU_NAME = 'Газодобытчик Флетчер'
 
 
 class Tau31GasMiner2(Tau31Member, Tau31BaseLibertyGasMiner):
     INDEX = 2
     BASE_INDEX = 52
+    RU_NAME = 'Газодобытчик Бревард'
 
 
 class Tau31GasMiner3(Tau31Member, Tau31BaseLibertyGasMiner):
     INDEX = 3
     BASE_INDEX = 53
+    RU_NAME = 'Газодобытчик Сапфир'
 
 
 class Tau31GasMiner4(Tau31Member, Tau31BaseLibertyGasMiner):
     INDEX = 4
     BASE_INDEX = 54
+    RU_NAME = 'Газодобытчик Оникс'
 
 
 class Tau31GasMiner5(Tau31Member, Tau31BaseLibertyGasMiner):
     INDEX = 5
     BASE_INDEX = 55
+    RU_NAME = 'Газодобытчик Исли'
 
 
 class Tau31SimpleCrystalRewards(Tau31Member, mineable.DefaultGasCrystalRewardsGroup):
@@ -426,6 +440,7 @@ class Tau31AbandonedMiner1(Tau31Member, Tau31BaseAbandonedMiner):
     ASTEROID_ZONES = [
         Tau31GasPocketsZone1
     ]
+    RU_NAME = 'База Атенс'
 
 
 class Tau31AbandonedMiner2(Tau31Member, Tau31BaseAbandonedMiner):
@@ -434,6 +449,7 @@ class Tau31AbandonedMiner2(Tau31Member, Tau31BaseAbandonedMiner):
     ASTEROID_ZONES = [
         Tau31GasPocketsZone2
     ]
+    RU_NAME = 'База  '
 
 
 class Tau31ComplexCrystalRewards(Tau31Member, mineable.DefaultGasCrystalRewardsGroup):
@@ -488,6 +504,8 @@ class Tau31OldResearchRuins(Tau31Member, main_objects.StationRuins):
     EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS_NEAR
     NEBULA_ZONES = [Tau31Nebula]
 
+    RU_NAME = 'Станция Массачусетс'
+
 
 class Tau31OldResearchRuinsSuprisePoint1(Tau31Member, main_objects.HackableStation):
     ALIAS = 'ruins_dock'
@@ -498,6 +516,8 @@ class Tau31OldResearchRuinsSuprisePoint1(Tau31Member, main_objects.HackableStati
     HACKABLE_SOLAR_CLASS = hackable.HackablePrisonRot180
     INTERIOR_CLASS = interior.EquipDeckInterior
 
+    RU_NAME = 'Исследовательский блок 1 Массачусетса'
+
 
 class Tau31OldResearchRuinsSuprisePoint2(Tau31Member, main_objects.HackableStation):
     ALIAS = 'ruins_dock'
@@ -507,3 +527,5 @@ class Tau31OldResearchRuinsSuprisePoint2(Tau31Member, main_objects.HackableStati
     RELATED_OBJECT_INDEX = 1
     HACKABLE_SOLAR_CLASS = hackable.HackablePrison
     INTERIOR_CLASS = interior.EquipDeckInterior
+
+    RU_NAME = 'Исследовательский блок 2 Массачусетса'

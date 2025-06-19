@@ -168,6 +168,7 @@ class ManhDebrisFactory1(ManhMember, ManhBaseDebrisManufactoring):
         ManhDebrisZone1,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
+    RU_NAME = 'Плавильня Атланта'
 
 
 class ManhDebrisFactory2(ManhMember, ManhBaseDebrisManufactoring):
@@ -177,6 +178,7 @@ class ManhDebrisFactory2(ManhMember, ManhBaseDebrisManufactoring):
         ManhDebrisZone2,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
+    RU_NAME = 'Плавильня Нашвилл'
 
 
 class ManhDebrisFactory3(ManhMember, ManhBaseDebrisManufactoring):
@@ -187,6 +189,7 @@ class ManhDebrisFactory3(ManhMember, ManhBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
 
+    RU_NAME = 'Плавильня Лиусвилл'
 
 class ManhDebrisFactory4(ManhMember, ManhBaseDebrisManufactoring):
     INDEX = 4
@@ -195,6 +198,7 @@ class ManhDebrisFactory4(ManhMember, ManhBaseDebrisManufactoring):
         ManhDebrisZone4,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
+    RU_NAME = 'Плавильня Джексон'
 
 
 class ManhDebrisBoxReward(ManhMember, mineable.DefaultDebrisBoxRewardsGroup):
@@ -256,6 +260,7 @@ class ManhDockring(ManhMember, main_objects.LargePlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.LibertyPlanetDealers
     SHIP_SET = markets.ShipSet('li_fighter', 'li_elite', 'li_freighter')
+    RU_NAME = 'Планета Манхеттен'
 
     BASE_PROPS = meta.ManhattanSuperPlanet(
         objectives=[
@@ -276,6 +281,7 @@ class ManhMiningDockring(ManhMember, main_objects.MiningPlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.LibertyPlanetDealers
     SHIP_SET = markets.ShipSet('ge_csv')
+    RU_NAME = 'Планета Питсбург'
 
     BASE_PROPS = meta.MiningPlanet(
         objectives=[
@@ -291,6 +297,7 @@ class ManhShipyard(ManhMember, main_objects.Shipyard):
     SPACE_OBJECT_TEMPLATE = manhattan_megabase.ManhattanMegabase
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyCivilianDealers
+    RU_NAME = 'Верфь Норфолк'
 
     BASE_PROPS = meta.Megabase(
         objectives=[
@@ -309,6 +316,7 @@ class ManhProduction(ManhMember, main_objects.Station):
     SPACE_OBJECT_TEMPLATE = forbes_megafactory.ForbesManufactoring
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyCivilianDealers
+    RU_NAME = 'Станция Финикс'
 
 
 class ManhMilitary(ManhMember, main_objects.Station):
@@ -318,6 +326,7 @@ class ManhMilitary(ManhMember, main_objects.Station):
     SPACE_OBJECT_TEMPLATE = liberty_military.LibertyMilitary
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyMilitaryDealers
+    RU_NAME = 'Станция Вашингтон'
 
 
 class ManhTrading(ManhMember, main_objects.TradingBase):
@@ -326,6 +335,7 @@ class ManhTrading(ManhMember, main_objects.TradingBase):
     SPACE_OBJECT_TEMPLATE = trade_storages.ManhattanStorage
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyCivilianDealers
+    RU_NAME = 'Торговая база Коннектикут'
 
 
 class ManhPolice(ManhMember, main_objects.Outpost):
@@ -335,6 +345,7 @@ class ManhPolice(ManhMember, main_objects.Outpost):
     SPACE_OBJECT_TEMPLATE = police.PoliceOutpostLiberty
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyMilitaryDealers
+    RU_NAME = 'Аванпост Кливленд'
 
 
 class ManhRefinery(ManhMember, main_objects.Refinery):
@@ -343,6 +354,7 @@ class ManhRefinery(ManhMember, main_objects.Refinery):
     SPACE_OBJECT_TEMPLATE = sphere_megabase.SphereRefinery
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyCivilianDealers
+    RU_NAME = 'Станция Бостон'
 
     BASE_PROPS = meta.Refinery(
         objectives=[
@@ -359,6 +371,7 @@ class ManhPrison(ManhMember, main_objects.Prison):
     SPACE_OBJECT_TEMPLATE = prisons.AlaskaPrison
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyMilitaryDealers
+    RU_NAME = 'Тюрьма Спрингфилд'
 
     NEBULA_ZONES = [
         ManhLargeNebula
@@ -387,12 +400,14 @@ class ManhPlanet3(ManhMember, main_objects.Planet):
     RING_ZONE_ALIAS = 'ring'
     RING_ZONE_INDEX = 1
     RING_FILE_NAME = 'li_mmh'
+    RU_NAME = 'Планета Кентукки'
 
 
 class ManhPlanet4(ManhMember, main_objects.Planet):
     INDEX = 4
     ARCHETYPE = 'planet_crater_2000'
     SPHERE_RADIUS = 2000
+    RU_NAME = 'Планета Вермонт'
 
 
 class ManhJunkers(ManhMember, main_objects.JunkerBase):
@@ -402,6 +417,7 @@ class ManhJunkers(ManhMember, main_objects.JunkerBase):
     REL = RIGHT
     SPACE_OBJECT_TEMPLATE = junker.BerlinJunker
     FACTION = faction.LibertyPirate
+    RU_NAME = 'База Рочестер'
 
     DEFENCE_LEVEL = None
 
@@ -421,6 +437,7 @@ class ManhNebulaPirates(ManhMember, main_objects.PirateStation):
     REL = TOP
     SPACE_OBJECT_TEMPLATE = pirate.ManhattanPirateBase
     FACTION = faction.LibertyPirate
+    RU_NAME = 'База Итака'
 
     DEFENCE_LEVEL = None
 

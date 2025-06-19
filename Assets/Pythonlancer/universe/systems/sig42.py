@@ -200,30 +200,35 @@ class Sig42SolarPlant1(Sig42Member, Sig42BaseBretoniaSolarPlant):
     INDEX = 1
     BASE_INDEX = 61
     REL = LEFT
+    RU_NAME = 'Солн.генератор Росс'
 
 
 class Sig42SolarPlant2(Sig42Member, Sig42BaseBretoniaSolarPlant):
     INDEX = 2
     BASE_INDEX = 62
     REL = LEFT
+    RU_NAME = 'Солн.генератор Процион'
 
 
 class Sig42SolarPlant3(Sig42Member, Sig42BaseKusariSolarPlant):
     INDEX = 3
     BASE_INDEX = 63
     REL = LEFT
+    RU_NAME = 'Солн.генератор Эридан'
 
 
 class Sig42SolarPlant4(Sig42Member, Sig42BaseBretoniaSolarPlant):
     INDEX = 4
     BASE_INDEX = 64
     REL = RIGHT
+    RU_NAME = 'Солн.генератор Лайтен'
 
 
 class Sig42SolarPlant5(Sig42Member, Sig42BaseKusariSolarPlant):
     INDEX = 5
     BASE_INDEX = 65
     REL = RIGHT
+    RU_NAME = 'Солн.генератор Рехуа'
 
 
 class Sig42Dockring(Sig42Member, Sig42Bretonia, main_objects.MiningPlanetDockring):
@@ -249,6 +254,7 @@ class Sig42BretoniaStation(Sig42Member, Sig42Bretonia, main_objects.TradelaneSup
     SPACE_OBJECT_TEMPLATE = odissey.OdisseySimple
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.BretoniaCivilianDealers
+    RU_NAME = 'Станция Антарес'
 
     BASE_PROPS = meta.TradelaneSupportStation(
         objectives=[
@@ -264,6 +270,7 @@ class Sig42KusariStation(Sig42Member, Sig42Kusari, main_objects.ResearchStation)
     SPACE_OBJECT_TEMPLATE = research.SiriusResearch
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
+    RU_NAME = 'Станция Канис'
 
     BASE_PROPS = meta.Research(
         objectives=[
@@ -293,6 +300,7 @@ class Sig42TopPirates(Sig42Member, Sig42Bretonia, main_objects.PirateStation):
     FACTION = faction.BretoniaPirate
 
     DEFENCE_LEVEL = None
+    RU_NAME = 'База Исида'
 
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -312,6 +320,7 @@ class Sig42BottomPirates(Sig42Member, Sig42Kusari, main_objects.PirateStation):
     FACTION = faction.KusariPirate
 
     DEFENCE_LEVEL = None
+    RU_NAME = 'База Сотис'
 
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -499,6 +508,7 @@ class AfterLairOsiris(Sig42Member, main_objects.LibertyBattleship):
     EQUIP_FACTION = EQUIP_LI
     # ASF set?
     SHIP_SET = markets.ShipSet('li_elite')
+    RU_NAME = 'Линкор Осирис'
 
 
 class LeaveKusariBattleship(Sig42Member, main_objects.KusariBattleship):
@@ -514,4 +524,5 @@ class LeaveKusariBattleship(Sig42Member, main_objects.KusariBattleship):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_KU
     IS_BASE = False
     AUTOSAVE_FORBIDDEN = True
+    RU_NAME = 'Линкор Мусаси'
 

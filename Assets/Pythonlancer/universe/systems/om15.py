@@ -177,36 +177,43 @@ class Om15BaseRoidMiner(main_objects.RoidMiner):
 class Om15RoidMiner1(Omega15Member, Om15BaseRoidMiner):
     INDEX = 1
     BASE_INDEX = 61
+    RU_NAME = 'Рудокоп Гранта'
 
 
 class Om15RoidMiner2(Omega15Member, Om15BaseRoidMiner):
     INDEX = 2
     BASE_INDEX = 62
+    RU_NAME = 'Рудокоп Каллиопа'
 
 
 class Om15RoidMiner3(Omega15Member, Om15BaseRoidMiner):
     INDEX = 3
     BASE_INDEX = 63
+    RU_NAME = 'Рудокоп Гигея'
 
 
 class Om15RoidMiner4(Omega15Member, Om15BaseRoidMiner):
     INDEX = 4
     BASE_INDEX = 64
+    RU_NAME = 'Рудокоп Веста'
 
 
 class Om15RoidMiner5(Omega15Member, Om15BaseRoidMiner):
     INDEX = 5
     BASE_INDEX = 65
+    RU_NAME = 'Рудокоп Паллада'
 
 
 class Om15RoidMiner6(Omega15Member, Om15BaseRoidMiner):
     INDEX = 6
     BASE_INDEX = 66
+    RU_NAME = 'Рудокоп Матильда'
 
 
 class Om15RoidMiner7(Omega15Member, Om15BaseRoidMiner):
     INDEX = 7
     BASE_INDEX = 67
+    RU_NAME = 'Рудокоп Церера'
 
 
 class Om15NiobiumAsteroidReward(Omega15Member, mineable.AsteroidRewardsGroupUltra):
@@ -342,6 +349,7 @@ class Om15MiningStation(Omega15Member, main_objects.RoidMinerStation):
     INTERIOR_CLASS = interior.OutpostShipdealerInterior
     DEALERS = dealers.RheinlandCivilianDealers
     SHIP_SET = markets.ShipSet('ge_csv')
+    RU_NAME = 'Станция Лейпциг'
 
     BASE_PROPS = meta.RoidMiningStation(
         objectives=[
@@ -356,6 +364,7 @@ class Om15Outpost(Omega15Member, main_objects.Outpost):
     SPACE_OBJECT_TEMPLATE = rheinland_military.KelnShort
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.RheinlandMilitaryDealers
+    RU_NAME = 'Аванпост Билефельд'
 
     ASTEROID_ZONES = [Om15AsteroidZone1]
     AST_EXCLUSION_ZONE_SIZE = 4000
@@ -371,6 +380,7 @@ class Om15Freeport(Omega15Member, main_objects.Freeport):
     SPACE_OBJECT_TEMPLATE = trade_storages.RheinlandOmegaStorage
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.RheinlandMilitaryDealers
+    RU_NAME = 'Фрипорт Любек'
 
 
 class Om15Junkers(Omega15Member, main_objects.JunkerBase):
@@ -381,6 +391,7 @@ class Om15Junkers(Omega15Member, main_objects.JunkerBase):
     FACTION = faction.Junkers
 
     DEFENCE_LEVEL = None
+    RU_NAME = 'База Зиген'
 
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -410,6 +421,7 @@ class Om15AbandonedStation(Omega15Member, main_objects.StationRuins):
     NEBULA_ZONES = [
         Om15RuinsNebula,
     ]
+    RU_NAME = 'Станция Данциг'
 
 
 class Om15AbandonedStationDropPoint1(Omega15Member, main_objects.HackableStation):
@@ -420,6 +432,7 @@ class Om15AbandonedStationDropPoint1(Omega15Member, main_objects.HackableStation
     RELATED_OBJECT_INDEX = 0
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpost
     INTERIOR_CLASS = interior.EquipDeckInterior
+    RU_NAME = 'Исследовательский блок 1 Данцига'
 
 
 class Om15AbandonedStationDropPoint2(Omega15Member, main_objects.HackableStation):
@@ -430,18 +443,21 @@ class Om15AbandonedStationDropPoint2(Omega15Member, main_objects.HackableStation
     RELATED_OBJECT_INDEX = 1
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpost
     INTERIOR_CLASS = interior.EquipDeckInterior
+    RU_NAME = 'Исследовательский блок 2 Данцига'
 
 
 class Om15Planet1(Omega15Member, main_objects.Planet):
     INDEX = 1
     ARCHETYPE = 'planet_moonred_3000'
     SPHERE_RADIUS = 3000
+    RU_NAME = 'Планета Фаэтон'
 
 
 class Om15Planet2(Omega15Member, main_objects.Planet):
     INDEX = 2
     ARCHETYPE = 'planet_gasyelcld_3000'
     SPHERE_RADIUS = 3000
+    RU_NAME = 'Планета Эридан'
 
 
 class Om15VirtualDepot(Omega15Member, main_objects.VirtualDepot):

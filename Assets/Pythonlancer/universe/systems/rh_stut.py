@@ -142,6 +142,7 @@ class StutDebrisFactory1(StutMember, StutBaseDebrisManufactoring):
         StutDebrisZone2,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
+    RU_NAME = 'Плавильня Гейдельберг'
 
 
 class StutDebrisFactory2(StutMember, StutBaseDebrisManufactoring):
@@ -151,6 +152,7 @@ class StutDebrisFactory2(StutMember, StutBaseDebrisManufactoring):
         StutDebrisZone3,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
+    RU_NAME = 'Плавильня Неандерталь'
 
 
 class StutDebrisBoxReward(StutMember, mineable.DefaultDebrisBoxRewardsGroup):
@@ -238,6 +240,7 @@ class StutSolarPlant1(StutMember, StutBaseSolarPlant):
     ASTEROID_ZONES = [
         StutSolarMinesZone1,
     ]
+    RU_NAME = 'Солн.генератор Тюбинген'
 
 
 class StutSolarPlant2(StutMember, StutBaseSolarPlant):
@@ -246,6 +249,7 @@ class StutSolarPlant2(StutMember, StutBaseSolarPlant):
     ASTEROID_ZONES = [
         StutSolarMinesZone2,
     ]
+    RU_NAME = 'Солн.генератор Хейльбронн'
 
 
 class StutSolarPlant3(StutMember, StutBaseSolarPlant):
@@ -254,6 +258,7 @@ class StutSolarPlant3(StutMember, StutBaseSolarPlant):
     ASTEROID_ZONES = [
         StutSolarMinesZone3,
     ]
+    RU_NAME = 'Солн.генератор Кобленц'
 
 
 class StutSolarPlant4(StutMember, StutBaseSolarPlant):
@@ -262,6 +267,7 @@ class StutSolarPlant4(StutMember, StutBaseSolarPlant):
     ASTEROID_ZONES = [
         StutSolarMinesZone4,
     ]
+    RU_NAME = 'Солн.генератор Хамм'
 
 
 class StutSolarPlant5(StutMember, StutBaseSolarPlant):
@@ -270,6 +276,7 @@ class StutSolarPlant5(StutMember, StutBaseSolarPlant):
     ASTEROID_ZONES = [
         StutSolarMinesZone5,
     ]
+    RU_NAME = 'Солн.генератор Кассель'
 
 
 class StutSolarSupriseRewards(StutMember, mineable.DefaultSupriseRewardsGroup):
@@ -351,6 +358,7 @@ class StutDockring(StutMember, main_objects.LargePlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.RheinlandPlanetDealers
     SHIP_SET = markets.ShipSet('ge_fighter2', 'bw_elite2', 'rh_freighter')
+    RU_NAME = 'Планета Штутгарт'
 
     BASE_PROPS = meta.LargePlanet(
         objectives=[
@@ -369,6 +377,7 @@ class StutPoliceOutpost(StutMember, main_objects.Outpost):
     INTERIOR_CLASS = interior.OutpostInterior
     AUDIO_PREFIX = SpaceVoice.BORDER_STATION
     DEALERS = dealers.RheinlandMilitaryDealers
+    RU_NAME = 'Аванпост Цюрих'
 
 
 class StutShipyard(StutMember, main_objects.Shipyard):
@@ -377,6 +386,7 @@ class StutShipyard(StutMember, main_objects.Shipyard):
     SPACE_OBJECT_TEMPLATE = shipyards.StuttgartShipyard
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.RheinlandMilitaryDealers
+    RU_NAME = 'Верфь Росток'
 
 
 class StutMegabase(StutMember, main_objects.Station):
@@ -391,6 +401,7 @@ class StutMegabase(StutMember, main_objects.Station):
     NEBULA_EXCLUSION_ZONE_SIZE = 3500
     EXCLUSION_PARAMS = WALKER_EXCLUSION_PARAMS
     NEBULA_ZONES = [StutOrangeNebula1]
+    RU_NAME = 'Станция Мангейм'
 
     BASE_PROPS = meta.LargePlanet(
         objectives=[
@@ -409,6 +420,7 @@ class StutTraders(StutMember, main_objects.TradingBase):
     SPACE_OBJECT_TEMPLATE = bounty_hunter.ChurchAlive
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.RheinlandCivilianDealers
+    RU_NAME = 'Торговая база Франкфурт'
 
 
 class StutLuxuryDockring(StutMember, main_objects.ResortPlanetDockring):
@@ -419,6 +431,7 @@ class StutLuxuryDockring(StutMember, main_objects.ResortPlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSingleRoomInterior
     DEALERS = dealers.RheinlandPlanetDealers
     SHIP_SET = markets.ShipSet('bw_fighter')
+    RU_NAME = 'Планета Баден-Баден'
 
 
 class StutNebulaPirates(StutMember, main_objects.PirateStation):
@@ -428,6 +441,7 @@ class StutNebulaPirates(StutMember, main_objects.PirateStation):
     FACTION = faction.RheinlandPirate
 
     DEFENCE_LEVEL = None
+    RU_NAME = 'База Фрайбург'
 
     INTERIOR_BG1 = interior.INTERIOR_BG_WALKER
 
@@ -445,6 +459,7 @@ class StutJunkers(StutMember, main_objects.JunkerBase):
     FACTION = faction.Junkers
 
     DEFENCE_LEVEL = None
+    RU_NAME = 'База Висбаден'
 
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -472,6 +487,7 @@ class StutPlanet3(StutMember, main_objects.Planet):
     INDEX = 3
     ARCHETYPE = 'planet_ice_grey_2000'
     SPHERE_RADIUS = 2000
+    RU_NAME = 'Планета '
 
 
 class StutPoliceConn1(StutMember, main_objects.TradeConnection):
@@ -550,8 +566,6 @@ class StutProductionConn1(StutMember, main_objects.TradeConnection):
     SIDE_TO = RIGHT
     TRADELANE_LETTER = 'G'
     HUNTER_DEFENCE_REL = BOTTOM
-
-
 
 
 class StutLuxuryConn1(StutMember, main_objects.TradeConnection):
