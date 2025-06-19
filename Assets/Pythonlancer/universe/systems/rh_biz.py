@@ -494,6 +494,7 @@ class BizmarkPlanet4(BizmarkMember, main_objects.Planet):
     RING_ZONE_ALIAS = 'ring'
     RING_ZONE_INDEX = 1
     RING_FILE_NAME = 'bizmark'
+    RU_NAME = 'Планета Лейденшафт'
 
 
 class BizmarkConnPlanet1(BizmarkMember, main_objects.TradeConnection):

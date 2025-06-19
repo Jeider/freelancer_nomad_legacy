@@ -238,6 +238,7 @@ class Sig42Dockring(Sig42Member, Sig42Bretonia, main_objects.MiningPlanetDockrin
     INTERIOR_CLASS = interior.CustomFullSplitRoomInteriorSecond
     DEALERS = dealers.BretoniaCivilianDealers
     SHIP_SET = markets.ShipSet('br_fighter')
+    RU_NAME = 'Планета Пигар'
 
     BASE_PROPS = meta.MiningPlanet(
         objectives=[
@@ -286,10 +287,12 @@ class Sig42Liner(Sig42Member, Sig42Bretonia, main_objects.LuxuryLiner):
     REL = LEFT
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.BretoniaCivilianDealers
+    RU_NAME = 'Круизный лайнер Каникула'
 
 
 class Sig42VirtualDepot(Sig42Member, Sig42Bretonia, main_objects.VirtualDepot):
     REL = RIGHT
+    RU_NAME = 'Сириус Б'
 
 
 class Sig42TopPirates(Sig42Member, Sig42Bretonia, main_objects.PirateStation):

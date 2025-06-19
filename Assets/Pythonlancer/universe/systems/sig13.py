@@ -159,7 +159,7 @@ class Sig13LibertyStation(Sig13Liberty, Sig13Member, main_objects.GasMiningStati
     LOADOUT = 'smallstation_li'
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyCivilianDealers
-    RU_NAME = 'Станция Сиетл'
+    RU_NAME = 'Станция Альбукерке'
 
     NEBULA_EXCLUSION_ZONE_SIZE = 5000
     EXCLUSION_PARAMS = GENERIC_EXCLUSION_PARAMS

@@ -38,3 +38,4 @@ class Tau44PrinceWales(Tau44Member, main_objects.BretoniaBattleship):
     # ASF set?
     SHIP_SET = markets.ShipSet('br_elite')
     OFFER_MISSIONS = False
+    RU_NAME = 'Линкор Принц Уэльский'

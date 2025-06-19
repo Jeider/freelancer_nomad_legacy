@@ -37,3 +37,4 @@ class SphereTwoOsiris(Sphere2Member, main_objects.LibertyBattleship):
     EQUIP_FACTION = EQUIP_LI
     # ASF set?
     SHIP_SET = markets.ShipSet('bh_elite2')
+    RU_NAME = 'Линкор Осирис'

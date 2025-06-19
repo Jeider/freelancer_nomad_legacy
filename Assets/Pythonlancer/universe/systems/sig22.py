@@ -405,6 +405,7 @@ class Sig22Planet2(Sig22Member, main_objects.Planet):
     INDEX = 2
     ARCHETYPE = 'planet_desorcld_3000'
     SPHERE_RADIUS = 3000
+    RU_NAME = 'Планета Сопдет'
 
 
 class Sig22SouthPirates(Sig22Member, Sig22Liberty, main_objects.PirateStation):

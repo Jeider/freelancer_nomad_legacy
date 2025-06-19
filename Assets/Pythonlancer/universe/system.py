@@ -134,13 +134,18 @@ distance = {tlr_distance}
 
         self.keys = []
 
-        self.ids_name = ids.new_name(self.RU_NAME)
-        self.ids_info = ids.new_name(self.RU_NAME)  # TODO: change
+        name = self.get_name()
+
+        self.ids_name = ids.new_name(name)
+        self.ids_info = ids.new_name(name)  # TODO: change
 
         self.bases_db = {}
         self.bases_list = []
 
         self.process_content()
+
+    def get_name(self):
+        return self.RU_NAME.replace('+', '')
 
     def process_content(self):
         if self.have_dynamic_content():

@@ -37,6 +37,7 @@ class XenosKusariBattleship(XenMember, main_objects.KusariBattleship):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_KU
     EQUIP_SET = markets.OrderSet
     SHIP_SET = markets.ShipSet('ku_elite')
+    RU_NAME = 'Линкор Мусаси'
 
 
 class XenosKusariBattleshipTwo(XenMember, main_objects.KusariBattleship):
@@ -52,3 +53,4 @@ class XenosKusariBattleshipTwo(XenMember, main_objects.KusariBattleship):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_KU
     IS_BASE = False
     AUTOSAVE_FORBIDDEN = True
+    RU_NAME = 'Линкор Мусаси'

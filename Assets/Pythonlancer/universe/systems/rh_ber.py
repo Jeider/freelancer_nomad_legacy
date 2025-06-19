@@ -177,6 +177,7 @@ class BerlinDebrisFactory1(BerlinMember, BerlinBaseDebrisManufactoring):
         BerlinDebrisZone2,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
+    RU_NAME = 'Плавильня Путлиц'
 
 
 class BerlinDebrisFactory2(BerlinMember, BerlinBaseDebrisManufactoring):
@@ -186,6 +187,7 @@ class BerlinDebrisFactory2(BerlinMember, BerlinBaseDebrisManufactoring):
         BerlinDebrisZone3,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
+    RU_NAME = 'Плавильня Рёбель'
 
 
 class BerlinDebrisFactory3(BerlinMember, BerlinBaseDebrisManufactoring):
@@ -195,6 +197,7 @@ class BerlinDebrisFactory3(BerlinMember, BerlinBaseDebrisManufactoring):
         BerlinDebrisZone4,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
+    RU_NAME = 'Плавильня Лёц'
 
 
 class BerlinDebrisBoxReward(BerlinMember, mineable.DefaultDebrisBoxRewardsGroup):

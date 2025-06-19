@@ -35,15 +35,11 @@ class AppearableObject(SystemObject):
     STORY = False
     SPACE_NAME = None
 
-    RU_NAME = None
-
     LOCKED_DOCK = False
     KEY_COLLECT_FX = None
 
     ARCHETYPE_TEMPLATE = '''[Object]
 nickname = {nickname}
-ids_name = {ids_name}
-ids_info = {ids_info}
 pos = {pos}
 rotate = {rotate}
 archetype = {archetype}'''
@@ -51,16 +47,6 @@ archetype = {archetype}'''
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.connections = []
-        # self.ids_name = ids.new_name(self.get_ru_name())
-        # self.ids_info = ids.new_info(
-        #     InfocardBuilder.build_equip_infocard(
-        #         self.get_ru_fullname(),
-        #         self.get_ru_description_content()
-        #     )
-        # )
-
-        # if not self.RU_NAME:
-        #     raise Exception(f'Base {self.get_base_nickname()} have no name')
 
     def add_connection(self, the_conn):
         self.connections.append(the_conn)
@@ -92,6 +78,12 @@ archetype = {archetype}'''
     def get_dock_props(self):
         return ''
 
+    def get_simple_root_props(self):
+        return {
+            'ids_name': self.get_ids_name(),
+            'ids_info': self.get_ids_info(),
+        }
+
     def get_templated_content(self):
         position = self.get_position()
         if not position:
@@ -108,18 +100,16 @@ archetype = {archetype}'''
         return self.ARCHETYPE
 
     def get_ids_name(self):
-        return
+        return 1
 
     def get_ids_info(self):
-        return
+        return 1
 
     def get_single_object_content(self):
         content = [
             self.ARCHETYPE_TEMPLATE.format(
                 nickname=self.get_inspace_nickname(),
                 archetype=self.get_archetype(),
-                ids_name=self.get_ids_name(),
-                ids_info=self.get_ids_info(),
                 pos='{}, {}, {}'.format(*self.get_position()),
                 rotate='{}, {}, {}'.format(*self.get_rotate()),
             )
@@ -342,7 +332,46 @@ class StaticObject(AppearableObject):
         return is_lawful
 
 
-class VirtualDepot(StaticObject):
+class NamedObject(StaticObject):
+    LAZY_NAME = False
+
+    RU_NAME = None
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        if not self.LAZY_NAME:
+            self.set_space_name()
+
+        # self.ids_info = ids.new_info(
+        #     InfocardBuilder.build_equip_infocard(
+        #         self.get_ru_fullname(),
+        #         self.get_ru_description_content()
+        #     )
+        # )
+
+    def set_space_name(self):
+        space_name = self.get_space_name()
+
+        if not space_name:
+            raise Exception(f'System object {self} have no name')
+
+        self.ids_name = self.system.ids.new_name(space_name)
+
+    def get_name(self):
+        return self.RU_NAME
+
+    def get_space_name(self):
+        return self.get_name()
+
+    def get_ids_name(self):
+        return self.ids_name.id
+
+    def get_tradelane_ids_name(self):
+        return self.get_ids_name()
+
+
+class VirtualDepot(NamedObject):
     ALIAS = 'virtual'
 
     def get_system_content(self):
@@ -359,11 +388,12 @@ class RawText(SystemObject):
         return self.SPACE_CONTENT
 
 
-class JumpableObject(StaticObject):
+class JumpableObject(NamedObject):
     TARGET_SYSTEM_NAME = None
     CONNECTION_KIND = connection.CONNECTION_LAWFUL
     FORCE_INSPACE_NAME = None
     FORCE_TARGET_NAME = None
+    LAZY_NAME = True
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -374,6 +404,7 @@ class JumpableObject(StaticObject):
 
     def init_connection(self):
         self.target_system = self.system.get_universe_root().get_system_by_name(self.TARGET_SYSTEM_NAME)
+        self.set_space_name()
 
     def get_target_system(self):
         if not self.target_system:
@@ -421,6 +452,8 @@ class JumpableObject(StaticObject):
     def get_inspace_parameters(self):
         params = super().get_inspace_parameters()
         params.update({
+            'ids_name': self.get_ids_name(),
+            'ids_info': self.get_ids_info(),
             'jump_effect': self.get_jump_effect(),
             'reputation': self.FACTION.get_code(),
             'goto': self.get_goto(),
@@ -428,13 +461,15 @@ class JumpableObject(StaticObject):
         })
         return params
 
+    def get_name(self):
+        return f'{self.system.get_name()} > {self.get_target_system().get_name()}'
+
 
 class Jumpgate(JumpableObject):
     ALIAS = 'jg'
     REL_DRIFT = 500
     REL_APPEND = 2000
 
-    IDS_NAME = 196658
     IDS_INFO = 65551
     ARCHETYPE = 'jumpgate'
 
@@ -458,6 +493,9 @@ class Jumpgate(JumpableObject):
     def get_jump_effect(self):
         return self.system.JUMP_EFFECT.JUMP_EFFECT
 
+    def get_ids_info(self):
+        return self.IDS_INFO
+
 
 class Jumphole(JumpableObject):
     ALIAS = 'jh'
@@ -475,6 +513,9 @@ class Jumphole(JumpableObject):
 
     def get_jump_effect(self):
         return self.system.JUMP_EFFECT.HOLE_EFFECT
+
+    def get_ids_info(self):
+        return self.IDS_INFO
 
 
 class JumpgateAlt(Jumpgate):
@@ -594,7 +635,7 @@ class SunSmall(Sun):
     DRAG_MODIFIER = 4
 
 
-class Planet(GenericSphere):
+class Planet(GenericSphere, NamedObject):
     ALIAS = 'planet'
 
     PLANET_RADIUSES = (1500, 2000, 2500, 3000, 4000, 5000)
@@ -621,8 +662,11 @@ parent = {parent_planet}'''
 
     RELATED_DOCK_RING = None
 
-    IDS_NAME = 1
-    IDS_INFO = 1
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        if related_dock_ring := self.get_related_ring_obj():
+            related_dock_ring.set_related_planet(related_dock_ring)
 
     def get_spin(self):
         if self.SPIN > 0:
@@ -664,6 +708,10 @@ parent = {parent_planet}'''
     def get_inspace_nickname(self):
         return '{system_name}_planet_{index}'.format(system_name=self.system.NAME, index=self.INDEX)
 
+    def get_related_ring_obj(self):
+        if self.RELATED_DOCK_RING:
+            return self.system.get_static_by_class(self.RELATED_DOCK_RING)
+
     def get_inspace_parameters(self):
         params = super().get_inspace_parameters()
         params['atmosphere_range'] = self.get_atmosphere_range()
@@ -671,8 +719,10 @@ parent = {parent_planet}'''
         if spin_data:
             params['spin'] = spin_data
 
-        if self.RELATED_DOCK_RING is not None:
-            params.update(self.system.get_static_by_class(self.RELATED_DOCK_RING).get_raw_root_props())
+        params.update(self.get_simple_root_props())
+
+        if related_dock_ring := self.get_related_ring_obj():
+            params.update(related_dock_ring.get_raw_base_props())
 
         return params
 
@@ -709,9 +759,11 @@ parent = {parent_planet}'''
         else:
             return super().get_position()
 
+    def get_space_name(self):
+        if related_dock_ring := self.get_related_ring_obj():
+            return related_dock_ring.get_name()
 
-class Sattelite(StaticObject):
-    pass
+        return self.get_name()
 
 
 class NotDockableObject(StaticObject):
@@ -725,11 +777,11 @@ class NotDockableObject(StaticObject):
         )
 
 
-class StationRuins(NotDockableObject):
+class StationRuins(NotDockableObject, NamedObject):
     pass
 
 
-class DockableObject(StaticObject):
+class DockableObject(NamedObject):
     ARCHETYPE = 'depot'
     INTERIOR_CLASS = interior.CustomFileInterior  # custom interior
     INTERIOR_EXTRA_ROOMS = []
@@ -855,7 +907,7 @@ BGCS_base_run_by = W02bF44'''
             self.INTERIOR_DEFINITION_TEMPLATE.format(
                 base_name=self.get_base_nickname(),
                 system_name=self.system.NAME,
-                ids_name=self.IDS_NAME,
+                ids_name=self.get_ids_name(),
                 file_location=file_location,
             )
         ]
@@ -881,8 +933,16 @@ BGCS_base_run_by = W02bF44'''
     def get_raw_root_props(self):
         base_name = self.get_base_nickname()
         return {
-            'ids_name': self.IDS_NAME,
-            'ids_info': self.IDS_INFO,
+            'ids_name': self.get_ids_name(),
+            'ids_info': self.get_ids_info(),
+            'base': base_name,
+            'reputation': self.get_faction().get_code(),
+            'behavior': 'NOTHING',
+        }
+
+    def get_raw_base_props(self):
+        base_name = self.get_base_nickname()
+        return {
             'base': base_name,
             'reputation': self.get_faction().get_code(),
             'behavior': 'NOTHING',
@@ -894,8 +954,8 @@ BGCS_base_run_by = W02bF44'''
     def get_dock_props(self):
         base_name = self.get_base_nickname()
         props = {
-            'ids_name': self.IDS_NAME,
-            'ids_info': self.IDS_INFO,
+            'ids_name': self.get_ids_name(),
+            'ids_info': self.get_ids_info(),
             'base': base_name,
             'dock_with': base_name,
             'reputation': self.get_faction().get_code(),
@@ -943,7 +1003,6 @@ BGCS_base_run_by = W02bF44'''
         return True
 
 
-
 class Dockring(DockableObject):
     ALIAS = 'dockring'
     ARCHETYPE = 'dock_ring'
@@ -980,12 +1039,21 @@ behavior = NOTHING
     DEFENCE_LEVEL = DEFENCE_HIGH
     DEFENCE_ZONE_BACKDRIFT = 2000
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.related_planet = None
+
+    def get_related_planet(self):
+        return self.related_planet
+
+    def set_related_planet(self, planet):
+        self.related_planet = planet
+
     def get_rotate(self):
         return (0, self.Y_ROTATE_PER_REL[self.REL], 0)
 
     def get_interior_content(self):
         raise Exception('Interior for dock ring planets should be only manual created')
-
 
     def get_sattelites(self):
         position = self.get_position()
@@ -1004,6 +1072,12 @@ behavior = NOTHING
                 reputation=self.get_faction_code(),
             )
         ]
+
+    def get_space_name(self):
+        return 'Стыковочное кольцо'
+
+    def get_tradelane_ids_name(self):
+        return self.related_planet.get_ids_name()
 
 
 class LargePlanetDockring(Dockring):
@@ -1595,9 +1669,11 @@ pilot = pilot_solar_hard
             extra.append(self.NEXT_RING_TEMPLATE.format(next_ring=next_ring.get_ring_nickname()))
 
         if not prev_ring:
-            extra.append(self.RING_SPACE_NAME_TEMPLATE.format(ids_name=self.trade_connection.OBJ_FROM.IDS_NAME))
+            extra.append(self.RING_SPACE_NAME_TEMPLATE.format(
+                ids_name=self.trade_connection.get_obj_from().get_tradelane_ids_name()))
         elif not next_ring:
-            extra.append(self.RING_SPACE_NAME_TEMPLATE.format(ids_name=self.trade_connection.OBJ_FROM.IDS_NAME))
+            extra.append(self.RING_SPACE_NAME_TEMPLATE.format(
+                ids_name=self.trade_connection.get_obj_to().get_tradelane_ids_name()))
 
         template_params['extra'] = SINGLE_DIVIDER.join(extra)
 
@@ -1681,6 +1757,12 @@ size = {size}'''
             raise Exception('OBJ_TO %s is not SystemObject' % self.OBJ_TO)
 
         return (self.system.get_system_object_instance(self.OBJ_FROM), self.system.get_system_object_instance(self.OBJ_TO))
+
+    def get_obj_from(self):
+        return self.system.get_system_object_instance(self.OBJ_FROM)
+
+    def get_obj_to(self):
+        return self.system.get_system_object_instance(self.OBJ_TO)
 
     def get_attacker_objects(self):
         return [self.system.get_system_object_instance(att) for att in self.ATTACKED_BY]

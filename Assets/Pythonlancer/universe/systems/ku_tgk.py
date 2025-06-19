@@ -444,6 +444,7 @@ class TekagiRuinsDropPoint2(TekagiMember, main_objects.HackableStation):
 
 class TekagiVirtualDepot(TekagiMember, main_objects.VirtualDepot):
     REL = TOP
+    RU_NAME = 'Зона добычи руды'
 
 
 class TekagiFreeportConn1(TekagiMember, main_objects.TradeConnection):

@@ -339,6 +339,7 @@ class CalSig22Jumpgate(CalMember, main_objects.Jumpgate):
 class CalVirtualPoint1(CalMember, main_objects.VirtualDepot):
     REL = TOP
     REL_APPEND = 1000
+    RU_NAME = 'Зона добычи руды'
 
 
 class CalDockring(CalMember, main_objects.LargePlanetDockring):

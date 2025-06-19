@@ -188,6 +188,7 @@ class Sig17AbandonedAstBase1(Sig17Member, main_objects.AbandonedAsteroid):
     INTERIOR_CLASS = interior.EquipDeckInterior
     DEFENCE_LEVEL = None
     LOCKED_DOCK = True
+    RU_NAME = 'База Солт-Лейк-Сити'
 
     AST_EXCLUSION_ZONE_SIZE = 3500
     ASTEROID_ZONES = [
@@ -426,6 +427,7 @@ class Sig17EdgeNebulaPirates(Sig17Member, main_objects.PirateAsteroid):
     FACTION = faction.Corsairs
 
     DEFENCE_LEVEL = None
+    RU_NAME = 'Форт Ред-Ривер'
 
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -451,6 +453,7 @@ class Sig17CrowNebulaPirates(Sig17Member, main_objects.PirateStation):
     FACTION = faction.Corsairs
 
     DEFENCE_LEVEL = None
+    RU_NAME = 'База Моркрофт'
 
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior

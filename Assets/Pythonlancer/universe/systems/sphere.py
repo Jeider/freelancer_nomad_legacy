@@ -47,6 +47,7 @@ file = Universe\SPECIAL\SPHERE\ROOM\dread_mnh_deck.ini
     # ASF set?
     SHIP_SET = markets.ShipSet('li_fighter')
     OFFER_MISSIONS = False
+    RU_NAME = 'Линкор Миссури'
 
 
 class SphereOneMissouriTorp(SphereMember, main_objects.LibertyBattleship):
@@ -73,6 +74,7 @@ file = Universe\SPECIAL\SPHERE\ROOM\dread_mnh_deck.ini
     EQUIP_FACTION = EQUIP_LI
     # ASF set?
     SHIP_SET = markets.ShipSet('li_fighter')
+    RU_NAME = 'Линкор Миссури'
 
 
 class SphereOneLab(SphereMember, main_objects.Station):
@@ -85,6 +87,7 @@ class SphereOneLab(SphereMember, main_objects.Station):
     CALC_STORE = False
     FACTION = faction.LibertyMain
     IS_BASE = False
+    RU_NAME = 'Лаборатория в Сфере'
 
 
 class SphereOneDepotOne(SphereMember, main_objects.Station):
@@ -97,6 +100,7 @@ class SphereOneDepotOne(SphereMember, main_objects.Station):
     CALC_STORE = False
     FACTION = faction.RheinlandMain
     IS_BASE = False
+    RU_NAME = 'Блокпост в Сфере'
 
 
 class SphereOneDepotTwo(SphereMember, main_objects.Station):
@@ -109,3 +113,4 @@ class SphereOneDepotTwo(SphereMember, main_objects.Station):
     CALC_STORE = False
     FACTION = faction.RheinlandMain
     IS_BASE = False
+    RU_NAME = 'Склад в Сфере'

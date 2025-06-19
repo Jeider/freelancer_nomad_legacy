@@ -110,12 +110,14 @@ class KgbPlanet1(KgbMember, main_objects.Planet):
     ARCHETYPE = 'planet_gasicecld_10000'
     SPHERE_RADIUS = 10000
     PLANET_CIRCLE = False
+    RU_NAME = 'Планета Пиллау'
 
 
 class KgbPlanet2(KgbMember, main_objects.Planet):
     INDEX = 2
     ARCHETYPE = 'planet_moonblu_2000'
     SPHERE_RADIUS = 2000
+    RU_NAME = 'Планета Нойхаузен'
 
 
 class KgbPlanet3(KgbMember, main_objects.Planet):
@@ -123,6 +125,7 @@ class KgbPlanet3(KgbMember, main_objects.Planet):
     ARCHETYPE = 'planet_earthsnwcld_4000'
     SPHERE_RADIUS = 4000
     PLANET_CIRCLE = False
+    RU_NAME = 'Планета Нойхаузен'
 
 
 class KgbPlanet4(KgbMember, main_objects.Planet):
@@ -130,12 +133,14 @@ class KgbPlanet4(KgbMember, main_objects.Planet):
     ARCHETYPE = 'planet_rckdes_3000'
     SPHERE_RADIUS = 3000
     PLANET_CIRCLE = False
+    RU_NAME = 'Планета Битенен'
 
 
 class KgbPlanet5(KgbMember, main_objects.Planet):
     INDEX = 5
     ARCHETYPE = 'planet_desorcld_3000'
     SPHERE_RADIUS = 3000
+    RU_NAME = 'Планета Кранц'
 
 
 class KgbSig8Jumphole(KgbMember, main_objects.Jumphole):

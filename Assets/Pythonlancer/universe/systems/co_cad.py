@@ -31,3 +31,4 @@ class CadizOrderBattleship(CadizMember, main_objects.Battleship):
     FACTION = faction.LibertyMain
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_LI
     IS_BASE = False
+    RU_NAME = 'Линкор Навухудоносор'

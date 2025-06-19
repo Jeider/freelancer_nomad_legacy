@@ -462,6 +462,7 @@ class Om15Planet2(Omega15Member, main_objects.Planet):
 
 class Om15VirtualDepot(Omega15Member, main_objects.VirtualDepot):
     REL = TOP
+    RU_NAME = 'Планета Фаэтон'
 
 
 class Om15PoliceConn1(Omega15Member, main_objects.TradeConnection):
@@ -539,6 +540,7 @@ class Om15StoryCorsairBase(Omega15Member, main_objects.VirtualDepot):
     NEBULA_ZONES = [
         Om15StoryNebula
     ]
+    RU_NAME = 'База Корсаров для миссии 2'
 
 
 class Om15StoryCorsairDepot(Omega15Member, main_objects.VirtualDepot):
@@ -550,3 +552,4 @@ class Om15StoryCorsairDepot(Omega15Member, main_objects.VirtualDepot):
     NEBULA_ZONES = [
         Om15StoryNebula
     ]
+    RU_NAME = 'Аванпост Корсаров для миссии 2'

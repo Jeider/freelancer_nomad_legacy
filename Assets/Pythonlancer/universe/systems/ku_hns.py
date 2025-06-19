@@ -386,6 +386,7 @@ class HonsDockring(HonsMember, main_objects.LargePlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.KusariPlanetDealers
     SHIP_SET = markets.ShipSet('ku_fighter', 'ge_fighter5', 'ku_freighter')
+    RU_NAME = 'Планета Хонсю'
 
     BASE_PROPS = meta.LargePlanet(
         objectives=[
@@ -405,6 +406,7 @@ class HonsMilitary(HonsMember, main_objects.Station):
     SPACE_OBJECT_TEMPLATE = honshu_military.HonshuMilitary
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariMilitaryDealers
+    RU_NAME = 'Станция Тиеда'
 
     BASE_PROPS = meta.MediumStation(
         objectives=[

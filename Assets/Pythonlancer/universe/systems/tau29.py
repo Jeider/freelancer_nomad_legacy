@@ -316,6 +316,8 @@ class Tau29RingRuins(Tau29Member, main_objects.StationRuins):
     ]
     AST_EXCLUSION_ZONE_SIZE = 800
 
+    RU_NAME = 'Исследовательская станция Ланкастер'
+
 
 class Tau29RingRuinsSuprisePoint(Tau29Member, main_objects.HackableStation):
     ALIAS = 'ruins_dock'
@@ -324,6 +326,8 @@ class Tau29RingRuinsSuprisePoint(Tau29Member, main_objects.HackableStation):
     RELATED_OBJECT = Tau29RingRuins
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpost
     INTERIOR_CLASS = interior.EquipDeckInterior
+
+    RU_NAME = 'Стыковочный узел Ланкастера'
 
 
 class Tau29CambridgeJumpgate(Tau29Member, main_objects.Jumpgate):
@@ -346,6 +350,7 @@ class Tau29WarwickJumpgate(Tau29Member, main_objects.Jumpgate):
 
 class Tau29VirtualPoint1(Tau29Member, main_objects.VirtualDepot):
     REL = TOP
+    RU_NAME = 'Путь к Ланкастеру'
 
 
 class Tau29LargeStation(Tau29Member, main_objects.GasMiningStation):

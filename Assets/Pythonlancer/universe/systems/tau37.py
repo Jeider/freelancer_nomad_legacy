@@ -314,11 +314,13 @@ class Tau37CambridgeJumpgate(Tau37Member, main_objects.Jumpgate):
 
 class Tau37VirtualPoint1(Tau37Member, main_objects.VirtualDepot):
     REL = TOP
+    RU_NAME = 'Зона добычи руды'
 
 
 class Tau37VirtualPoint2(Tau37Member, main_objects.VirtualDepot):
     INDEX = 2
     REL = BOTTOM
+    RU_NAME = 'Зона добычи руды'
 
 
 class Tau37MiningStation(Tau37Member, main_objects.RoidMinerStation):

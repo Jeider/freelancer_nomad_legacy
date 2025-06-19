@@ -254,6 +254,7 @@ class ColAbandonedAstBase1(ColMember, main_objects.AbandonedAsteroid):
     INTERIOR_CLASS = interior.EquipDeckInterior
     DEFENCE_LEVEL = None
     LOCKED_DOCK = True
+    RU_NAME = 'База Сансарк'
 
     AST_EXCLUSION_ZONE_SIZE = 3500
     ASTEROID_ZONES = [
@@ -579,6 +580,7 @@ class ColTrading(ColMember, main_objects.TradingBase):
     SPACE_OBJECT_TEMPLATE = columbia_new_hope.ColumbiaNewHope
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyCivilianDealers
+    RU_NAME = 'Торговая база Сиетл'
 
 
 class ColPlanet1(ColMember, main_objects.Planet):

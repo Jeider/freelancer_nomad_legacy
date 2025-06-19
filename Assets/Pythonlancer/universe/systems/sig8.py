@@ -367,6 +367,8 @@ class Sig8TemporaryOmicronJumppoint(Sigma8Member, main_objects.VirtualDepot):
     EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS
     NEBULA_ZONES = [Sig8GreenNebula2]
 
+    RU_NAME = 'Временная гипердыра в Малый Омикрон'
+
 
 class Sig8ForbesJumphole(Sigma8Member, main_objects.Jumphole):
     INDEX = 4

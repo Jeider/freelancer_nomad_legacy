@@ -125,6 +125,7 @@ class AvalDebrisFactory1(AvalMember, AvalBaseDebrisManufactoring):
         AvalDebrisZone2,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
+    RU_NAME = 'Плавильня Стокпорт'
 
 
 class AvalDebrisFactory2(AvalMember, AvalBaseDebrisManufactoring):
@@ -134,6 +135,7 @@ class AvalDebrisFactory2(AvalMember, AvalBaseDebrisManufactoring):
         AvalDebrisZone3,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
+    RU_NAME = 'Плавильня Олдем'
 
 
 class AvalDebrisBoxReward(AvalMember, mineable.DefaultDebrisBoxRewardsGroup):

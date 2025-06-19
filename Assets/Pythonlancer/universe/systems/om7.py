@@ -810,6 +810,7 @@ class Om7StoryBattleship(Om7Kusari, Om7Member, main_objects.KusariBattleship):
         Om7HokkaidoJumpgate,  # TODO: haven't real economics connection
     ]
     SHIP_SET = markets.ShipSet('ku_elite')
+    RU_NAME = 'Линкор Мусаси'
 
 
 class Om7OrderJumpgate(Om7Member, main_objects.JumpgateAlt):

@@ -36,3 +36,4 @@ class OrdHQStoryBattleship(OrdHQMember, main_objects.KusariBattleship):
     CALC_STORE = False
     EQUIP_SET = markets.OrderSet
     SHIP_SET = markets.ShipSet('ku_elite')
+    RU_NAME = 'Линкор Мусаси'
