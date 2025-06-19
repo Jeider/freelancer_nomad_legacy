@@ -9,8 +9,8 @@ from tools.crc import crc32_hex_from_str
 from files.writer import FileWriter
 
 
-# PREFIX = ''
-PREFIX = 'm06_'
+PREFIX = ''
+# PREFIX = 'm06_'
 
 OUT_SUBFOLDER = 'hacker'
 
@@ -558,7 +558,7 @@ BUTTONS_PER_LINE = 8
 
 NOT_RANDOMIZED_COLORS = 2
 
-HACKER_PANELS_PER_COLOR_MAP = 2
+HACKER_PANELS_PER_COLOR_MAP = 5
 
 HIT_POINTS = 6000000000
 HIT_POINT_EXTRA_DAMAGE = 500000
@@ -568,22 +568,15 @@ nickname = {root_system_obj_name}
 pos = {position}
 rotate = {rotate}
 archetype = hacker_plate
-loadout = hacker_panel_danger
 reputation = {reputation}
-behavior = NOTHING
-visit = 128
-pilot = pilot_solar_hardest_hacker_danger'''
+behavior = NOTHING'''
 
 SYS_LAYER_TEMPLATE = '''[Object]
 nickname = {layer_system_obj_name}
 pos = {position}
 rotate = {rotate}
 archetype = {layer_archetype}
-reputation = {reputation}
-behavior = NOTHING
-pilot = pilot_solar_hardest_hacker_danger
-visit = 128
-parent = {parent_object}'''
+reputation = {reputation}'''
 
 SYS_VALID_LAYER_TEMPLATE = '''[Object]
 nickname = {layer_system_obj_name}
@@ -913,6 +906,9 @@ class HackerPanel(object):
         self.define_colors()
         self.define_invalid_layers()
         self.define_valid_layer()
+
+        if len(self.layers) < 3:
+            raise Exception(f'Invalid layers count! Its {len(self.layers)}')
 
     def define_near_colors(self):
         next_color = self.valid_color

@@ -13,14 +13,14 @@ mounted = false'''
 nickname = {key_equip}
 equipment = {key_equip}
 category = equipment
-price = 1
+price = 0
 item_icon = Equipment\\models\\commodities\\nn_icons\\COMMOD_credits.3db
 combinable = true'''
 
     EQUIP_TEMPLATE = '''[ShieldGenerator]
 nickname = {key_equip}
-ids_name = 1
-ids_info = 1
+ids_name = {ids_name}
+ids_info = {ids_info}
 DA_archetype = equipment\\models\\hardware\\ge_shield_capacitor.3db
 material_library = equipment\\models\\ge_equip.mat
 HP_child = HpConnect
@@ -48,11 +48,12 @@ locked_gate = {int_hash}
 npc_locked_gate = {int_hash}'''
     STORY_TEMPLATE = 'Act_LockDock = Player, {base_nickname}, lock'
     
-    def __init__(self, locked_base, key_fx):
+    def __init__(self, locked_base, key_fx, key_name):
         self.locked_base = locked_base
         self.base_nickname = self.locked_base.get_base_nickname()
         self.equip_name = self.create_equip_name()
         self.key_fx = key_fx
+        self.ids_name = self.locked_base.system.key_ids.new_name(key_name)
 
     def create_equip_name(self):
         return self.EQUIP_NAME_TEMPLATE.format(base_name=self.base_nickname)
@@ -60,11 +61,22 @@ npc_locked_gate = {int_hash}'''
     def get_equip_name(self):
         return self.equip_name
 
+    def get_ids_name(self):
+        return self.ids_name.id
+
+    def get_ids_info(self):
+        return 1
+
     def get_dock_key(self):
         return self.DOCK_KEY_TEMPLATE.format(key_equip=self.equip_name, base_name=self.locked_base.get_inspace_nickname())
 
     def get_equip(self):
-        return self.EQUIP_TEMPLATE.format(key_equip=self.equip_name, tractored_explosion=self.key_fx)
+        return self.EQUIP_TEMPLATE.format(
+            key_equip=self.equip_name,
+            tractored_explosion=self.key_fx,
+            ids_name=self.get_ids_name(),
+            ids_info=self.get_ids_info()
+        )
 
     def get_good(self):
         return self.GOOD_TEMPLATE.format(key_equip=self.equip_name)

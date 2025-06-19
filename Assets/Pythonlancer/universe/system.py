@@ -90,10 +90,11 @@ distance = {tlr_distance}
 
     ENABLE_POPULATION = True
 
-    def __init__(self, core, universe, ids):
+    def __init__(self, core, universe, ids, key_ids):
         self.core = core
         self.universe_manager = universe
         self.ids = ids
+        self.key_ids = key_ids
         self.template = None
 
         self.last_police_patrol_id = 0

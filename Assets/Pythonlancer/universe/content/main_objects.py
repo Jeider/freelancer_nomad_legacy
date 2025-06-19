@@ -666,7 +666,7 @@ parent = {parent_planet}'''
         super().__init__(*args, **kwargs)
 
         if related_dock_ring := self.get_related_ring_obj():
-            related_dock_ring.set_related_planet(related_dock_ring)
+            related_dock_ring.set_related_planet(self)
 
     def get_spin(self):
         if self.SPIN > 0:
@@ -843,7 +843,10 @@ BGCS_base_run_by = W02bF44'''
         if self.LOCKED_DOCK:
             if not self.KEY_COLLECT_FX:
                 raise Exception('Dockable locked base have no fx for key %s' % self.__class__.__name__)
-            self.key = LockedDockKey(self, key_fx=self.KEY_COLLECT_FX)
+            self.key = LockedDockKey(self, key_fx=self.KEY_COLLECT_FX, key_name=self.get_key_loot_name())
+
+    def get_key_loot_name(self):
+        return f'Ключ для {self.get_name()}'
 
     def get_weapon_faction(self):
         return self.WEAPON_FACTION

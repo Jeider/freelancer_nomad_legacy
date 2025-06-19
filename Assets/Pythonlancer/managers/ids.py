@@ -4,6 +4,7 @@ from text.static import RETURN_NAMES
 INITIAL_WEAPON_ID = 280001
 INITIAL_EQUIP_ID = 290001
 INITIAL_COMMODITY_ID = 300001
+INITIAL_KEY_ID = 315001
 INITIAL_SHIP_ID = 110001
 INITIAL_STORY_ID = 33500
 INITIAL_STORY_SAVE_ID = 33330
@@ -23,6 +24,7 @@ class IDsManager:
         self.weapon = IDsDatabase('weapon', INITIAL_WEAPON_ID)
         self.equip = IDsDatabase('equip', INITIAL_EQUIP_ID)
         self.commodity = IDsDatabase('commodity', INITIAL_COMMODITY_ID)
+        self.key = IDsDatabase('key', INITIAL_KEY_ID)
         self.ship = IDsDatabase('ship', INITIAL_SHIP_ID)
         self.story = IDsDatabase('story', INITIAL_STORY_ID)
         self.story_save = IDsDatabase('story_save', INITIAL_STORY_SAVE_ID)
@@ -35,6 +37,7 @@ class IDsManager:
             self.weapon,
             self.equip,
             self.commodity,
+            self.key,
             self.ship,
             self.story,
             self.story_save,

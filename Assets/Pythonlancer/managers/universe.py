@@ -19,6 +19,7 @@ class UniverseManager:
         self.core = lancer_core
 
         self.ids = self.core.ids.universe
+        self.key_ids = self.core.ids.key
 
         self.hacker_panels_manager = HackerPanelManager()
         self.universe_root = UniverseRoot()
@@ -77,7 +78,7 @@ class UniverseManager:
 
     def load_systems(self):
         for system_class in SiriusSystem.subclasses:
-            system = system_class(self.core, self, ids=self.ids)
+            system = system_class(self.core, self, ids=self.ids, key_ids=self.key_ids)
             self.universe_root.add_system(system)
             if system.have_dynamic_content():
                 self.loadouts += system.loadouts
@@ -165,9 +166,9 @@ class UniverseManager:
         return DIVIDER.join([key.get_equip() for key in self.keys])
 
     def get_key_good(self):
-        return ';blank'
+        # return ';blank'
         # Remove key good to keep keys silent
-        # return DIVIDER.join([key.get_good() for key in self.keys])
+        return DIVIDER.join([key.get_good() for key in self.keys])
 
     def get_key_story(self):
         return SINGLE_DIVIDER.join([key.get_story() for key in self.keys])
