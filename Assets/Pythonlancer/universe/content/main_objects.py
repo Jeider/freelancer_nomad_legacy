@@ -1591,7 +1591,7 @@ class PiratePatrol(PatrolObjective):
 density = 1
 repop_time = 90
 max_battle_size = 3
-pop_type = lane_patrol
+pop_type = attack_patrol
 relief_time = 30
 attack_ids = 10
 tradelane_attack = 50

@@ -164,7 +164,9 @@ class NPC(object):
         MINE_AMMO,
     ]
 
-    PILOT = 'mod_fighter_level_basic'
+    # PILOT = 'mod_fighter_level_basic'
+    PILOT = 'mod_fighter_universe'
+    # PILOT = 'pilot_pirate_easy'
     CLASS_FIGHTER = 'class_fighter'
 
     NPC_SHIPARCH_TEMPLATE = '''[NPCShipArch]
