@@ -324,7 +324,7 @@ class Misson10(ingame_mission.IngameMission):
         for sol in wplatforms:
             defined_points.append(
                 Solar(self, S.xen, sol, ru_name='Орудийная платформа', labels=['enemy', 'wplatforms'],
-                      archetype='wplatform_ms2', loadout='ms2_the_platform'),
+                      archetype='wplatform_ms10', loadout='ms10_the_platform'),
             )
 
         return defined_points
