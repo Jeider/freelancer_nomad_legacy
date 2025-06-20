@@ -35,6 +35,7 @@ class ViennaKusariBattleship(ViennaMember, main_objects.KusariBattleship):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_KU
     WEAPON_FACTION = WEAPON_BW
     EQUIP_FACTION = EQUIP_BW
-    EQUIP_SET = markets.OrderSet
+    EQUIP_SET = markets.MusashiSecondSet
     SHIP_SET = markets.ShipSet('ku_elite')
     RU_NAME = 'Линкор Мусаси'
+    AUTOSAVE_FORBIDDEN = True

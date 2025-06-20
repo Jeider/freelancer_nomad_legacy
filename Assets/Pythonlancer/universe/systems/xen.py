@@ -35,7 +35,7 @@ class XenosKusariBattleship(XenMember, main_objects.KusariBattleship):
     CALC_STORE = False
     FACTION = faction.KusariMain
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_KU
-    EQUIP_SET = markets.OrderSet
+    EQUIP_SET = markets.MusashiSet
     SHIP_SET = markets.ShipSet('ku_elite')
     RU_NAME = 'Линкор Мусаси'
 

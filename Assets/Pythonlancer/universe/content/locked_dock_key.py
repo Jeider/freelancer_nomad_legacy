@@ -17,29 +17,43 @@ price = 0
 item_icon = Equipment\\models\\commodities\\nn_icons\\COMMOD_credits.3db
 combinable = true'''
 
-    EQUIP_TEMPLATE = '''[ShieldGenerator]
-nickname = {key_equip}
-ids_name = {ids_name}
-ids_info = {ids_info}
+    EQUIP_TEMPLATE = '''
+    
+[LootCrate]
+nickname = loot_{key_equip}
 DA_archetype = equipment\\models\\hardware\\ge_shield_capacitor.3db
 material_library = equipment\\models\\ge_equip.mat
-HP_child = HpConnect
-hit_pts = 5000
-explosion_resistance = 0
-debris_type = debris_normal
-parent_impulse = 20
-child_impulse = 80
-volume = 0.000000
-mass = 10
-regeneration_rate = 0
-max_capacity = 0
-toughness = 10
-hp_type = hp_freighter_shield_generator
-constant_power_draw = 0
-rebuild_power_draw = 0
-separation_explosion = sever_debris
 LODranges = 0, 1
-lootable = true
+hit_pts = 5000
+mass = 10
+explosion_arch = {tractored_explosion}
+tractored_explosion = {tractored_explosion}
+
+[Munition]
+nickname = {key_equip}
+loot_appearance = loot_{key_equip}
+units_per_container = 16
+hp_type = hp_gun
+requires_ammo = true
+hit_pts = 2
+one_shot_sound = fire_missile_regular
+detonation_dist = 4
+lifetime = 1
+Motor = rh_missile_01_motor
+force_gun_ori = false
+const_effect = rh_missile02_drive
+HP_trail_parent = HPExhaust
+seeker = LOCK
+time_to_lock = 0
+seeker_range = 1
+seeker_fov_deg = 1
+max_angular_velocity = 1
+DA_archetype = equipment\\models\\hardware\\ge_shield_capacitor.3db
+material_library = equipment\\models\\ge_equip.mat
+ids_name = {ids_name}
+ids_info = {ids_info}
+mass = 10
+volume = 0.000000
 tractored_explosion = {tractored_explosion}
 '''
 

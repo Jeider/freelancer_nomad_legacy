@@ -44,6 +44,7 @@ file = Universe\SPECIAL\SPHERE\ROOM\dread_mnh_deck.ini
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_LI
     WEAPON_FACTION = WEAPON_LI
     EQUIP_FACTION = EQUIP_LI
+    EQUIP_SET = markets.MissoriSet
     # ASF set?
     SHIP_SET = markets.ShipSet('li_fighter')
     OFFER_MISSIONS = False
@@ -72,6 +73,7 @@ file = Universe\SPECIAL\SPHERE\ROOM\dread_mnh_deck.ini
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_LI
     WEAPON_FACTION = WEAPON_LI
     EQUIP_FACTION = EQUIP_LI
+    EQUIP_SET = markets.MissoriSet
     # ASF set?
     SHIP_SET = markets.ShipSet('li_fighter')
     RU_NAME = 'Линкор Миссури'

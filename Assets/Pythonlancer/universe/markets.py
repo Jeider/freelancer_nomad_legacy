@@ -252,6 +252,51 @@ MIL_SECRET1_CLASSES = [2, 4, 6]
 MIL_SECRET2_CLASSES = [1, 3, 5, 8]
 MIL_SECRET3_CLASSES = [2, 4, 7]
 
+STORY_MISSORI_CLASSES = [3, 4, 5]
+STORY_PRINCE_WALES_CLASSES = [3, 4, 5]
+STORY_MUSASHI_CLASSES = [4, 5, 6]
+STORY_OSIRIS_CLASSES = [4, 5, 6, 7]
+
+MissoriSet = EquipSet(
+    Q.GenericGun(LIGHTGUN, eq_classes=STORY_MISSORI_CLASSES),
+    Q.Engine(LI_PIRATE, eq_classes=STORY_MISSORI_CLASSES),
+    Q.Power(LI_PIRATE, eq_classes=STORY_MISSORI_CLASSES),
+    Q.Shield(LI_PIRATE, eq_classes=STORY_MISSORI_CLASSES),
+    Q.Thruster(LI_PIRATE, eq_classes=STORY_MISSORI_CLASSES),
+)
+
+PrinceWalesSet = EquipSet(
+    Q.GenericGun(LIGHTGUN, eq_classes=STORY_PRINCE_WALES_CLASSES),
+    Q.Engine(BR_MAIN, eq_classes=STORY_PRINCE_WALES_CLASSES),
+    Q.Power(BR_MAIN, eq_classes=STORY_PRINCE_WALES_CLASSES),
+    Q.Shield(BR_MAIN, eq_classes=STORY_PRINCE_WALES_CLASSES),
+    Q.Thruster(BR_MAIN, eq_classes=STORY_PRINCE_WALES_CLASSES),
+)
+
+MusashiSet = EquipSet(
+    Q.GenericGun(LIGHTGUN, eq_classes=STORY_MUSASHI_CLASSES),
+    Q.Engine(KU_PIRATE, eq_classes=STORY_MUSASHI_CLASSES),
+    Q.Power(KU_PIRATE, eq_classes=STORY_MUSASHI_CLASSES),
+    Q.Shield(KU_PIRATE, eq_classes=STORY_MUSASHI_CLASSES),
+    Q.Thruster(KU_PIRATE, eq_classes=STORY_MUSASHI_CLASSES),
+)
+
+MusashiSecondSet = EquipSet(
+    Q.GenericGun(HEAVYGUN, eq_classes=STORY_MUSASHI_CLASSES),
+    Q.Engine(KU_MAIN, eq_classes=STORY_MUSASHI_CLASSES),
+    Q.Power(KU_MAIN, eq_classes=STORY_MUSASHI_CLASSES),
+    Q.Shield(KU_MAIN, eq_classes=STORY_MUSASHI_CLASSES),
+    Q.Thruster(KU_MAIN, eq_classes=STORY_MUSASHI_CLASSES),
+)
+
+OsirisSet = EquipSet(
+    Q.GenericGun(LIGHTGUN, eq_classes=STORY_OSIRIS_CLASSES),
+    Q.Engine(LI_MAIN, eq_classes=STORY_OSIRIS_CLASSES),
+    Q.Power(LI_MAIN, eq_classes=STORY_OSIRIS_CLASSES),
+    Q.Shield(LI_MAIN, eq_classes=STORY_OSIRIS_CLASSES),
+    Q.Thruster(LI_MAIN, eq_classes=STORY_OSIRIS_CLASSES),
+)
+
 BattleshipSet = EquipSet(
     Q.GenericGun(LIGHTGUN, eq_classes=MIL_BATTLESHIP_CLASSES),
     Q.Engine(None, eq_classes=MIL_BATTLESHIP_CLASSES),
