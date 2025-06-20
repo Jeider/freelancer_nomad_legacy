@@ -1947,6 +1947,11 @@ size = {size}'''
         lane2_pos = self.tradelanes[first_tradelane_index+1].get_tradelane_pos()
         attacker_base_pos = self.system.get_object_position(attacker_base)
 
+        attacker_base_instance = self.system.get_static_by_class(attacker_base)
+        attacker_base_instance.get_base().add_faction(
+            self.get_unlawful_population_class().get_tlr_attackers_faction()
+        )
+
         return PiratePatrol(
             system=self.system,
             population_kind=self.get_population_kind(),

@@ -1524,7 +1524,7 @@ class CSV(GenericShip, ShipFreighter, Ship):
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04, HpTurret01']
     MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02, HpTurret01']
     EXTRA_PACKAGE_ITEMS = [
-        'addon = csv_manipulator01, HpLapa01',
+        'addon = csv_manipulator01, HpWeapon10',
     ]
 
 
