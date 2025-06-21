@@ -9,7 +9,10 @@ ARCHETYPE = 'archetype'
 ARCHETYPE_MAP = {
     'space_girder': 'attached_girder_rot',
     'space_girdera': 'attached_girder_a',
+    'space_girderc': 'rmbase_attached_girder_c',
     'space_industrial02a': 'attached_industrial02a_root',
+    'space_industrial02d': 'attached_industrial02d',
+    'space_panel': 'attached_solarpnl',
     'space_domea': 'attached_dome_a',
     'space_industrial01a': 'attached_ind01_a_root',
     'space_industriala': 'attached_ind_a_rot',
@@ -35,12 +38,18 @@ ARCHETYPE_MAP = {
     'shipyard': 'attached_shipyard_a_root',
     'space_small_control_block': 'rmbase_attached_small_control_block',
     'space_tankl4': 'attached_tankl4_root',
+    'space_tube_fix': 'attached_space_tube_fix',
+    'space_cloakgen_laser': 'attached_space_cloakgen_laser',
 }
 
 
 
 FORCE_IGNORED_ARCHETYPES = [
     'orderbase_jumphole',
+    'terraforming_core',
+    'sw_center_250',
+    'space_tube_hidden_connect',
+    'hidden_connect',
 ]
 
 

@@ -142,11 +142,7 @@ hitpoints = {damage}
         params.append(f'fuse = {extra_dmg_fuse_name}, 0.000000, 1')
 
         init_dmg_fuse_name = f'fuse_{self.ARCHETYPE}_init_dmg_{part_kind}'
-
-
-        print(init_dmg_fuse_name)
         init_damage = (self.PARTS_HP * self.INITIAL_PART_DAMAGE_FACTOR) * hit_pts_multipler
-        print(init_damage)
         self.add_initial_damage_fuse(
             init_dmg_fuse_name,
             obj,
@@ -159,8 +155,6 @@ hitpoints = {damage}
             'root_health_proxy = true',
         ])
 
-        if init_dmg_fuse_name == 'fuse_ku_battleship_m13_assault_init_dmg_eng1':
-            print('1')
         return SINGLE_DIVIDER.join(params)
 
     @property

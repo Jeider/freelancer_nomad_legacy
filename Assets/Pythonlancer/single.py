@@ -87,7 +87,7 @@ def draw_base_for_hardpoints():
     # new_name = 'or_hq_vienna_entry'
     # move_to = (13900, 0, 32400)
 
-    base_class = nomad_asf_hq.AsfHQOptimal
+    base_class = terraforming.TerraformingTwo
     # new_name = 'or_hq_vienna_entry'
     the_base = base_class()
 
