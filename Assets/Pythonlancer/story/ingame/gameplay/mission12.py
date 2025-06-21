@@ -451,7 +451,7 @@ class Misson12(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.KusariMain,
                     ship=ship.Dragon,
-                    level=NPC.D5,
+                    level=NPC.D12,
                     equip_map=EqMap(base_level=5),
                 )
             ),
@@ -470,7 +470,7 @@ class Misson12(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.KusariMain,
                     ship=ship.Dragon,
-                    level=NPC.D5,
+                    level=NPC.D12,
                     equip_map=EqMap(base_level=5),
                 )
             ),
@@ -489,7 +489,7 @@ class Misson12(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.LibertyMain,
                     ship=ship.Defender,
-                    level=NPC.D5,
+                    level=NPC.D12,
                     equip_map=EqMap(base_level=5),
                 )
             ),
@@ -525,7 +525,7 @@ class Misson12(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.BretoniaMain,
                     ship=ship.Crusader,
-                    level=NPC.D19,
+                    level=NPC.D15,
                     equip_map=EqMap(base_level=6),
                 )
             ),
@@ -543,7 +543,7 @@ class Misson12(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.LibertyPirate,
                     ship=ship.Hammerhead,
-                    level=NPC.D19,
+                    level=NPC.D15,
                     equip_map=EqMap(base_level=6),
                 )
             ),
@@ -563,7 +563,7 @@ class Misson12(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.KusariMain,
                     ship=ship.Dragon,
-                    level=NPC.D5,
+                    level=NPC.D12,
                     equip_map=EqMap(base_level=5),
                 )
             ),
@@ -582,7 +582,7 @@ class Misson12(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.KusariMain,
                     ship=ship.Drake,
-                    level=NPC.D5,
+                    level=NPC.D12,
                     equip_map=EqMap(base_level=5),
                 )
             ),
@@ -602,7 +602,7 @@ class Misson12(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.KusariMain,
                     ship=ship.Dragon,
-                    level=NPC.D5,
+                    level=NPC.D12,
                     equip_map=EqMap(base_level=5),
                 )
             ),
@@ -621,7 +621,7 @@ class Misson12(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.KusariMain,
                     ship=ship.Drake,
-                    level=NPC.D5,
+                    level=NPC.D12,
                     equip_map=EqMap(base_level=5),
                 )
             ),
@@ -642,7 +642,7 @@ class Misson12(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.LibertyMain,
                     ship=ship.Defender,
-                    level=NPC.D5,
+                    level=NPC.D12,
                     equip_map=EqMap(base_level=5),
                 )
             ),
@@ -662,7 +662,7 @@ class Misson12(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.LibertyMain,
                     ship=ship.Defender,
-                    level=NPC.D5,
+                    level=NPC.D12,
                     equip_map=EqMap(base_level=5),
                 )
             ),
@@ -685,7 +685,7 @@ class Misson12(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.OrderMain,
                     ship=ship.Anubis,
-                    level=NPC.D6,
+                    level=NPC.D12,
                     equip_map=EqMap(base_level=6),
                 )
             ),
@@ -707,7 +707,7 @@ class Misson12(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.LibertyMain,
                     ship=ship.Defender,
-                    level=NPC.D6,
+                    level=NPC.D12,
                     equip_map=EqMap(base_level=6),
                 )
             ),
@@ -728,7 +728,7 @@ class Misson12(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.OrderMain,
                     ship=ship.Anubis,
-                    level=NPC.D19,
+                    level=NPC.D13,
                     equip_map=EqMap(base_level=6),
                 )
             ),
@@ -748,7 +748,7 @@ class Misson12(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.OrderMain,
                     ship=ship.Anubis,
-                    level=NPC.D19,
+                    level=NPC.D13,
                     equip_map=EqMap(base_level=6),
                 )
             ),
@@ -770,7 +770,7 @@ class Misson12(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.LibertyMain,
                     ship=ship.Defender,
-                    level=NPC.D10,
+                    level=NPC.D12,
                     equip_map=EqMap(base_level=6),
                 )
             ),

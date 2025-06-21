@@ -419,7 +419,7 @@ class Misson09(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.KusariMain,
                     ship=ship.Drake,
-                    level=NPC.D6,
+                    level=NPC.D10,
                     equip_map=EqMap(base_level=6),
                 )
             ),
@@ -440,7 +440,7 @@ class Misson09(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.KusariMain,
                     ship=ship.Dragon,
-                    level=NPC.D6,
+                    level=NPC.D10,
                     equip_map=EqMap(base_level=6),
                 )
             ),
@@ -461,7 +461,7 @@ class Misson09(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.KusariMain,
                     ship=ship.Dragon,
-                    level=NPC.D6,
+                    level=NPC.D10,
                     equip_map=EqMap(base_level=6),
                 )
             ),
@@ -481,7 +481,7 @@ class Misson09(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.KusariMain,
                     ship=ship.Dragon,
-                    level=NPC.D6,
+                    level=NPC.D10,
                     equip_map=EqMap(base_level=6),
                 )
             ),
@@ -500,7 +500,7 @@ class Misson09(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.KusariMain,
                     ship=ship.Dragon,
-                    level=NPC.D6,
+                    level=NPC.D10,
                     equip_map=EqMap(base_level=6),
                 )
             ),
@@ -519,7 +519,7 @@ class Misson09(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.BretoniaMain,
                     ship=ship.Cavalier,
-                    level=NPC.D5,
+                    level=NPC.D9,
                     equip_map=EqMap(base_level=5),
                 )
             ),
@@ -538,7 +538,7 @@ class Misson09(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.LibertyMain,
                     ship=ship.Patriot,
-                    level=NPC.D5,
+                    level=NPC.D9,
                     equip_map=EqMap(base_level=5),
                 )
             ),
@@ -558,7 +558,7 @@ class Misson09(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.BretoniaMain,
                     ship=ship.Crusader,
-                    level=NPC.D5,
+                    level=NPC.D9,
                     equip_map=EqMap(base_level=5),
                 )
             ),
@@ -578,7 +578,7 @@ class Misson09(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.BretoniaMain,
                     ship=ship.Cavalier,
-                    level=NPC.D5,
+                    level=NPC.D9,
                     equip_map=EqMap(base_level=5),
                 )
             ),
@@ -598,7 +598,7 @@ class Misson09(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.BretoniaMain,
                     ship=ship.Crusader,
-                    level=NPC.D5,
+                    level=NPC.D9,
                     equip_map=EqMap(base_level=5),
                 )
             ),
@@ -640,7 +640,7 @@ class Misson09(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.BretoniaMain,
                     ship=ship.Crusader,
-                    level=NPC.D5,
+                    level=NPC.D9,
                     equip_map=EqMap(base_level=5),
                 )
             ),
@@ -661,7 +661,7 @@ class Misson09(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.BretoniaMain,
                     ship=ship.Crusader,
-                    level=NPC.D5,
+                    level=NPC.D9,
                     equip_map=EqMap(base_level=5),
                 )
             ),
@@ -682,7 +682,7 @@ class Misson09(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.BretoniaMain,
                     ship=ship.Crusader,
-                    level=NPC.D5,
+                    level=NPC.D9,
                     equip_map=EqMap(base_level=5),
                 )
             ),
@@ -703,7 +703,7 @@ class Misson09(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.BretoniaMain,
                     ship=ship.Crusader,
-                    level=NPC.D5,
+                    level=NPC.D9,
                     equip_map=EqMap(base_level=5),
                 )
             ),

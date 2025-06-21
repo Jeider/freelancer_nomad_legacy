@@ -394,7 +394,7 @@ class Misson10(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.Ireland,
                     ship=ship.Centurion,
-                    level=NPC.D5,
+                    level=NPC.D10,
                     equip_map=EqMap(base_level=5),
                 )
             ),

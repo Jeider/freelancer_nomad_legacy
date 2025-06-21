@@ -95,10 +95,10 @@ hitpoints = {damage} ''')
 
         if not self.NO_DEATH_FUSE:
             actions.append(f'''
-    [destroy_group]
-    at_t = 0.99
-    group_name = {obj}
-    fate = {part_fate} ''')
+[destroy_group]
+at_t = 0.99
+group_name = {obj}
+fate = {part_fate} ''')
 
         self.fuses_definitions.append(SINGLE_DIVIDER.join(actions))
 
@@ -180,8 +180,8 @@ hitpoints = {damage}
     def nose(self, obj, hardpoint=None, hit_pts_multipler=2):
         return self.get_damage('nose', obj, hardpoint, hit_pts_multipler=hit_pts_multipler)
 
-    def front(self, obj, hardpoint=None):
-        return self.get_damage('front', obj, hardpoint)
+    def front(self, obj, hardpoint=None, hit_pts_multipler=2):
+        return self.get_damage('front', obj, hardpoint, hit_pts_multipler=hit_pts_multipler)
 
     def tail(self, obj, hardpoint=None):
         return self.get_damage('tail', obj, hardpoint)
@@ -223,11 +223,13 @@ hitpoints = {damage}
         return self.get_damage('wing2', obj, hardpoint, silent=silent,
                                part_fate=DISAPPEAR if disappear else DEBRIS)
 
-    def shield1(self, obj, hardpoint=None):
-        return self.get_damage('shield1', obj, hardpoint, part_fate=DEBRIS)
+    def shield1(self, obj, hardpoint=None, disappear=False):
+        return self.get_damage('shield1', obj, hardpoint,
+                               part_fate=DISAPPEAR if disappear else DEBRIS)
 
-    def shield2(self, obj, hardpoint=None):
-        return self.get_damage('shield2', obj, hardpoint, part_fate=DEBRIS)
+    def shield2(self, obj, hardpoint=None, disappear=False):
+        return self.get_damage('shield2', obj, hardpoint,
+                               part_fate=DISAPPEAR if disappear else DEBRIS)
 
     def spike1(self, obj, hardpoint=None):
         return self.get_damage('spike1', obj, hardpoint, part_fate=DISAPPEAR)
@@ -373,3 +375,20 @@ class Miner(Capital):
     HIT_PTS = 250000
     PARTS_HP = 8000
     EXTRA_DAMAGE = 20000
+
+
+class RheinlandBattleshipM11(Capital):
+    TEMPLATE_CODE = 'rbs_m11'
+    ARCHETYPE = 'rh_battleship_m11'
+    RU_NAME = 'Линкор Рейнланда'
+
+    DAMAGE_FUSE2 = 'rh_battleship_burning_fuse02'
+
+    DAMAGE_FX = 'gf_explosion_rh_battleship_bigexplosion'
+    # gf_explosion_rh_battleship_explosionsmall
+
+    HIT_PTS = 600000
+    PARTS_HP = 25000
+    EXTRA_DAMAGE = 60000
+
+

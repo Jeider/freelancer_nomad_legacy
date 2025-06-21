@@ -450,7 +450,7 @@ class Misson11(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.KusariMain,
                     ship=ship.Dragon,
-                    level=NPC.D6,
+                    level=NPC.D12,
                     equip_map=EqMap(base_level=6),
                 )
             ),
@@ -471,7 +471,7 @@ class Misson11(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.KusariMain,
                     ship=ship.Dragon,
-                    level=NPC.D5,
+                    level=NPC.D12,
                     equip_map=EqMap(base_level=5),
                 )
             ),
@@ -491,7 +491,7 @@ class Misson11(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.KusariMain,
                     ship=ship.Dragon,
-                    level=NPC.D5,
+                    level=NPC.D12,
                     equip_map=EqMap(base_level=5),
                 )
             ),
@@ -510,7 +510,7 @@ class Misson11(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.RheinlandMain,
                     ship=ship.Valkyrie,
-                    level=NPC.D5,
+                    level=NPC.D11,
                     equip_map=EqMap(base_level=5),
                 )
             ),
@@ -529,7 +529,7 @@ class Misson11(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.RheinlandMain,
                     ship=ship.Valkyrie,
-                    level=NPC.D5,
+                    level=NPC.D11,
                     equip_map=EqMap(base_level=5),
                 )
             ),
@@ -550,7 +550,7 @@ class Misson11(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.KusariMain,
                     ship=ship.Dragon,
-                    level=NPC.D5,
+                    level=NPC.D11,
                     equip_map=EqMap(base_level=5),
                 )
             ),
@@ -570,7 +570,7 @@ class Misson11(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.KusariMain,
                     ship=ship.Dragon,
-                    level=NPC.D5,
+                    level=NPC.D11,
                     equip_map=EqMap(base_level=5),
                 )
             ),
@@ -589,7 +589,7 @@ class Misson11(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.RheinlandMain,
                     ship=ship.Valkyrie,
-                    level=NPC.D5,
+                    level=NPC.D11,
                     equip_map=EqMap(base_level=5),
                 )
             ),
@@ -608,7 +608,7 @@ class Misson11(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.RheinlandMain,
                     ship=ship.Valkyrie,
-                    level=NPC.D5,
+                    level=NPC.D11,
                     equip_map=EqMap(base_level=5),
                 )
             ),
@@ -627,7 +627,7 @@ class Misson11(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.RheinlandMain,
                     ship=ship.Valkyrie,
-                    level=NPC.D5,
+                    level=NPC.D11,
                     equip_map=EqMap(base_level=5),
                 )
             ),
