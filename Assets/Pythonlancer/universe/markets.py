@@ -203,6 +203,17 @@ class EquipSet:
                     core.misc_equip.get_thruster_by_query(query)
                 )
 
+            elif query.__class__ == Q.PlayerArmor:
+                if not query.eq_type:
+                    query.eq_type = root_equip_type
+
+                if not query.eq_type:
+                    raise Exception('misc equip type is not defined for some Thruster in EquipSet')
+
+                items.extend(
+                    core.misc_equip.get_armor_by_query(query)
+                )
+
             else:
                 raise Exception('Unknown query type')
 
@@ -263,6 +274,7 @@ MissoriSet = EquipSet(
     Q.Power(LI_PIRATE, eq_classes=STORY_MISSORI_CLASSES),
     Q.Shield(LI_PIRATE, eq_classes=STORY_MISSORI_CLASSES),
     Q.Thruster(LI_PIRATE, eq_classes=STORY_MISSORI_CLASSES),
+    Q.PlayerArmor(LI_PIRATE, eq_classes=STORY_MISSORI_CLASSES),
 )
 
 PrinceWalesSet = EquipSet(
@@ -271,6 +283,7 @@ PrinceWalesSet = EquipSet(
     Q.Power(BR_MAIN, eq_classes=STORY_PRINCE_WALES_CLASSES),
     Q.Shield(BR_MAIN, eq_classes=STORY_PRINCE_WALES_CLASSES),
     Q.Thruster(BR_MAIN, eq_classes=STORY_PRINCE_WALES_CLASSES),
+    Q.PlayerArmor(BR_MAIN, eq_classes=STORY_PRINCE_WALES_CLASSES),
 )
 
 MusashiSet = EquipSet(
@@ -279,6 +292,7 @@ MusashiSet = EquipSet(
     Q.Power(KU_PIRATE, eq_classes=STORY_MUSASHI_CLASSES),
     Q.Shield(KU_PIRATE, eq_classes=STORY_MUSASHI_CLASSES),
     Q.Thruster(KU_PIRATE, eq_classes=STORY_MUSASHI_CLASSES),
+    Q.PlayerArmor(KU_PIRATE, eq_classes=STORY_MUSASHI_CLASSES),
 )
 
 MusashiSecondSet = EquipSet(
@@ -287,6 +301,7 @@ MusashiSecondSet = EquipSet(
     Q.Power(KU_MAIN, eq_classes=STORY_MUSASHI_CLASSES),
     Q.Shield(KU_MAIN, eq_classes=STORY_MUSASHI_CLASSES),
     Q.Thruster(KU_MAIN, eq_classes=STORY_MUSASHI_CLASSES),
+    Q.PlayerArmor(KU_MAIN, eq_classes=STORY_MUSASHI_CLASSES),
 )
 
 OsirisSet = EquipSet(
@@ -295,6 +310,7 @@ OsirisSet = EquipSet(
     Q.Power(LI_MAIN, eq_classes=STORY_OSIRIS_CLASSES),
     Q.Shield(LI_MAIN, eq_classes=STORY_OSIRIS_CLASSES),
     Q.Thruster(LI_MAIN, eq_classes=STORY_OSIRIS_CLASSES),
+    Q.PlayerArmor(LI_MAIN, eq_classes=STORY_OSIRIS_CLASSES),
 )
 
 BattleshipSet = EquipSet(
@@ -303,6 +319,7 @@ BattleshipSet = EquipSet(
     Q.Power(None, eq_classes=MIL_BATTLESHIP_CLASSES),
     Q.Shield(None, eq_classes=MIL_BATTLESHIP_CLASSES),
     Q.Thruster(None, eq_classes=MIL_BATTLESHIP_CLASSES),
+    Q.PlayerArmor(None, eq_classes=MIL_BATTLESHIP_CLASSES),
 )
 
 PoliceOutpostSet = EquipSet(
@@ -311,6 +328,7 @@ PoliceOutpostSet = EquipSet(
     Q.Power(None, eq_classes=PROF_OUTPOST_CLASSES),
     Q.Shield(None, eq_classes=PROF_OUTPOST_CLASSES),
     Q.Thruster(None, eq_classes=PROF_OUTPOST_CLASSES),
+    Q.PlayerArmor(None, eq_classes=PROF_OUTPOST_CLASSES),
 )
 
 PrisonSet = EquipSet(
@@ -319,6 +337,7 @@ PrisonSet = EquipSet(
     Q.Power(None, eq_classes=DEBUG_CLASSES),
     Q.Shield(None, eq_classes=DEBUG_CLASSES),
     Q.Thruster(None, eq_classes=DEBUG_CLASSES),
+    Q.PlayerArmor(None, eq_classes=DEBUG_CLASSES),
 )
 
 ShipyardSet = EquipSet(
@@ -327,6 +346,7 @@ ShipyardSet = EquipSet(
     Q.Power(None, eq_classes=CIV_SHIPYARD_CLASSES),
     Q.Shield(None, eq_classes=CIV_SHIPYARD_CLASSES),
     Q.Thruster(None, eq_classes=CIV_SHIPYARD_CLASSES),
+    Q.PlayerArmor(None, eq_classes=CIV_SHIPYARD_CLASSES),
 )
 
 MainPlanetSet = EquipSet(
@@ -336,6 +356,7 @@ MainPlanetSet = EquipSet(
     Q.Power(None, eq_classes=PROF_PLANET_CLASSES),
     Q.Shield(None, eq_classes=PROF_PLANET_CLASSES),
     Q.Thruster(None, eq_classes=PROF_PLANET_CLASSES),
+    Q.PlayerArmor(None, eq_classes=PROF_PLANET_CLASSES),
 )
 
 CivPlanetSet = EquipSet(
@@ -344,6 +365,7 @@ CivPlanetSet = EquipSet(
     Q.Power(None, eq_classes=CIV_STATION_CLASSES),
     Q.Shield(None, eq_classes=CIV_STATION_CLASSES),
     Q.Thruster(None, eq_classes=CIV_STATION_CLASSES),
+    Q.PlayerArmor(None, eq_classes=CIV_STATION_CLASSES),
 )
 
 StationSet = EquipSet(
@@ -352,6 +374,7 @@ StationSet = EquipSet(
     Q.Power(None, eq_classes=CIV_STATION_CLASSES),
     Q.Shield(None, eq_classes=CIV_STATION_CLASSES),
     Q.Thruster(None, eq_classes=CIV_STATION_CLASSES),
+    Q.PlayerArmor(None, eq_classes=CIV_STATION_CLASSES),
 )
 
 ResearchSet = EquipSet(
@@ -360,6 +383,7 @@ ResearchSet = EquipSet(
     Q.Power(None, eq_classes=CIV_STATION_CLASSES),
     Q.Shield(None, eq_classes=CIV_STATION_CLASSES),
     Q.Thruster(None, eq_classes=CIV_STATION_CLASSES),
+    Q.PlayerArmor(None, eq_classes=CIV_STATION_CLASSES),
 )
 
 LargeStationSet = EquipSet(
@@ -369,6 +393,7 @@ LargeStationSet = EquipSet(
     Q.Power(None, eq_classes=CIV_MEGA_CLASSES),
     Q.Shield(None, eq_classes=CIV_MEGA_CLASSES),
     Q.Thruster(None, eq_classes=CIV_MEGA_CLASSES),
+    Q.PlayerArmor(None, eq_classes=CIV_MEGA_CLASSES),
 )
 
 PirateSet = EquipSet(
@@ -377,6 +402,7 @@ PirateSet = EquipSet(
     Q.Power(None, eq_classes=PROF_OUTPOST_CLASSES),
     Q.Shield(None, eq_classes=PROF_OUTPOST_CLASSES),
     Q.Thruster(None, eq_classes=PROF_OUTPOST_CLASSES),
+    Q.PlayerArmor(None, eq_classes=PROF_OUTPOST_CLASSES),
 )
 
 OutcastSet = EquipSet(
@@ -385,6 +411,7 @@ OutcastSet = EquipSet(
     Q.Power(None, eq_classes=CIV_STATION_CLASSES),
     Q.Shield(None, eq_classes=CIV_STATION_CLASSES),
     Q.Thruster(None, eq_classes=CIV_STATION_CLASSES),
+    Q.PlayerArmor(None, eq_classes=CIV_STATION_CLASSES),
 )
 
 CorsairSet = EquipSet(
@@ -393,6 +420,7 @@ CorsairSet = EquipSet(
     Q.Power(None, eq_classes=PROF_OUTPOST_CLASSES),
     Q.Shield(None, eq_classes=PROF_OUTPOST_CLASSES),
     Q.Thruster(None, eq_classes=PROF_OUTPOST_CLASSES),
+    Q.PlayerArmor(None, eq_classes=PROF_OUTPOST_CLASSES),
 )
 
 OrderSet = EquipSet(
@@ -402,4 +430,5 @@ OrderSet = EquipSet(
     Q.Power(None, eq_classes=MIL_BATTLESHIP_CLASSES),
     Q.Shield(None, eq_classes=MIL_BATTLESHIP_CLASSES),
     Q.Thruster(None, eq_classes=MIL_BATTLESHIP_CLASSES),
+    Q.PlayerArmor(None, eq_classes=MIL_BATTLESHIP_CLASSES),
 )

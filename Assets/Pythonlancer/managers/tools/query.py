@@ -36,3 +36,7 @@ class Shield(MiscEquip):
 
 class Thruster(MiscEquip):
     pass
+
+
+class PlayerArmor(MiscEquip):
+    pass

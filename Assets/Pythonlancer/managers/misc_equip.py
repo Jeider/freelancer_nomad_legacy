@@ -6,7 +6,7 @@ from world.power import Power
 from world.engine import Engine
 from world.shield import Shield, ShieldNPC
 from world.thruster import Thruster
-from world.armor import ArmorNPC
+from world.armor import PlayerArmor
 from world.ship import Ship
 
 
@@ -27,6 +27,8 @@ class MiscEquipManager:
         self.npc_shields_list = []
         self.thrusters_db = {}
         self.thrusters_list = []
+        self.armors_db = {}
+        self.armors_list = []
 
         self.load_game_data()
 
@@ -69,11 +71,16 @@ class MiscEquipManager:
         # generic equipment
         for equip_type in MainMiscEquip.ALL_EQUIP_TYPES:
             self.thrusters_db[equip_type] = {}
+            self.armors_db[equip_type] = {}
 
             for equipment_class in Equipment.BASE_CLASSES:
                 thruster = Thruster(self.ids, equip_type, equipment_class)
                 self.thrusters_db[equip_type][equipment_class] = thruster
                 self.thrusters_list.append(thruster)
+
+                armor = PlayerArmor(self.ids, equip_type, equipment_class)
+                self.armors_db[equip_type][equipment_class] = armor
+                self.armors_list.append(armor)
 
     def get_shipclass_item_by_query(self, query: Q.MiscEquip, func: str):
         items = []
@@ -113,6 +120,9 @@ class MiscEquipManager:
     def get_thruster_by_query(self, query: Q.Thruster):
         return self.get_single_item_by_query(query, 'get_thruster')
 
+    def get_armor_by_query(self, query: Q.Thruster):
+        return self.get_single_item_by_query(query, 'get_armor')
+
     def get_engine(self, shipclass, equip_type, equipment_class):
         return self.engines_db[shipclass][equip_type][equipment_class]
 
@@ -128,6 +138,9 @@ class MiscEquipManager:
     def get_thruster(self, equip_type, equipment_class):
         return self.thrusters_db[equip_type][equipment_class]
 
+    def get_armor(self, equip_type, equipment_class):
+        return self.armors_db[equip_type][equipment_class]
+
     def get_engine_equip(self):
         return ManagerHelper.extract_equips(self.engines_list)
 
@@ -141,10 +154,14 @@ class MiscEquipManager:
         return ManagerHelper.extract_goods(self.powerplants_list)
 
     def get_st_equip(self):
-        return ManagerHelper.extract_equips(self.shields_list, self.npc_shields_list, self.thrusters_list)
+        return ManagerHelper.extract_equips(
+            self.shields_list, self.npc_shields_list, self.thrusters_list, self.armors_list
+        )
 
     def get_st_good(self):
-        return ManagerHelper.extract_goods(self.shields_list, self.npc_shields_list, self.thrusters_list)
+        return ManagerHelper.extract_goods(
+            self.shields_list, self.npc_shields_list, self.thrusters_list, self.armors_list
+        )
 
     def get_lootprops(self):
         return ManagerHelper.extract_lootprops(
