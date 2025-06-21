@@ -29,7 +29,7 @@ class Capital:
     HURT_FX = 'explosion_sfx_csx_large04'
     HURT_HP = 'HpMount'
 
-    INITIAL_PART_DAMAGE_FACTOR = 0.2
+    INITIAL_PART_DAMAGE_FACTOR = 0.5
 
     subclasses = []
 
@@ -142,7 +142,11 @@ hitpoints = {damage}
         params.append(f'fuse = {extra_dmg_fuse_name}, 0.000000, 1')
 
         init_dmg_fuse_name = f'fuse_{self.ARCHETYPE}_init_dmg_{part_kind}'
-        init_damage = (self.EXTRA_DAMAGE * self.INITIAL_PART_DAMAGE_FACTOR) * hit_pts_multipler
+
+
+        print(init_dmg_fuse_name)
+        init_damage = (self.PARTS_HP * self.INITIAL_PART_DAMAGE_FACTOR) * hit_pts_multipler
+        print(init_damage)
         self.add_initial_damage_fuse(
             init_dmg_fuse_name,
             obj,
@@ -155,6 +159,8 @@ hitpoints = {damage}
             'root_health_proxy = true',
         ])
 
+        if init_dmg_fuse_name == 'fuse_ku_battleship_m13_assault_init_dmg_eng1':
+            print('1')
         return SINGLE_DIVIDER.join(params)
 
     @property
@@ -391,4 +397,15 @@ class RheinlandBattleshipM11(Capital):
     PARTS_HP = 25000
     EXTRA_DAMAGE = 60000
 
+
+class KusariBattleshipM12Runner(Capital):
+    TEMPLATE_CODE = 'kbs_runner'
+    ARCHETYPE = 'ku_battleship_m13_assault'
+    RU_NAME = 'Линкор Кусари'
+
+    DAMAGE_FX = 'gf_explosion_ku_battleship_smallexp'
+
+    HIT_PTS = 10000000
+    PARTS_HP = 20000
+    EXTRA_DAMAGE = 2000000
 

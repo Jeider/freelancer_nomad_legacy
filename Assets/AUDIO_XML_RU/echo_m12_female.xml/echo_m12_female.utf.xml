@@ -17,6 +17,7 @@
 <test_voice name="0xAEDB358C" type="file" filename="echo_m12_female\dx_m12_0620_hatcher.wav"/>
 <test_voice name="0xAFDB3588" type="file" filename="echo_m12_female\dx_m12_0720_hatcher.wav"/>
 <test_voice name="0xBBDA3F88" type="file" filename="echo_m12_female\dx_m12_0730_hatcher.wav"/>
+<test_voice name="0x86947305" type="file" filename="echo_m12_female\dx_m12_0740_darcy.wav"/>
 <test_voice name="0x883921CB" type="file" filename="echo_m12_female\dx_m12_0800_hatcher.wav"/>
 <test_voice name="0xA03B35CB" type="file" filename="echo_m12_female\dx_m12_0820_hatcher.wav"/>
 <test_voice name="0x8C3C43CB" type="file" filename="echo_m12_female\dx_m12_0850_hatcher.wav"/>
