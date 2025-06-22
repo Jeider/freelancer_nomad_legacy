@@ -1,5 +1,10 @@
 from text.dividers import SINGLE_DIVIDER
 
+EXTRA_REPAIR = [
+    'cargo = ge_s_repair_01, 2',
+    'cargo = ge_s_battery_01, 2',
+]
+
 
 class EqMap(object):
 
@@ -341,4 +346,7 @@ npc_class = {classes_list}'''
 
         if len(self.extra_equip) > 0:
             loadout += SINGLE_DIVIDER + SINGLE_DIVIDER.join(self.extra_equip)
+
+        loadout += SINGLE_DIVIDER + SINGLE_DIVIDER.join(EXTRA_REPAIR)
+
         return loadout

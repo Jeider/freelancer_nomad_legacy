@@ -16,6 +16,12 @@ class GenericGun:
         self.eq_classes = validate_eq(eq_classes)
 
 
+class GenericLauncher:
+    def __init__(self, launcher_kind, eq_classes):
+        self.launcher_kind = launcher_kind
+        self.eq_classes = validate_eq(eq_classes)
+
+
 class MiscEquip:
     def __init__(self, eq_type, eq_classes):
         self.eq_type = eq_type

@@ -4,6 +4,14 @@ FACTION_BR = 3
 FACTION_KU = 4
 FACTION_CO = 5
 
+ALL_FACTIONS = [
+    FACTION_RH,
+    FACTION_LI,
+    FACTION_BR,
+    FACTION_KU,
+    FACTION_CO,
+]
+
 # GUNS
 
 LIGHTGUN = 'light'
@@ -13,14 +21,23 @@ PIRATEGUN = 'pirate'
 HUNTERGUN = 'hunter'
 SHIELDGUN = 'shield'
 
+# MISSILE
+
+MAIN_MISSILE = 'missile_main'
+FAST_MISSILE = 'missile_fast'
+MAIN_SUPER_MISSILE = 'missile_main_super'
+SHIELD_MISSILE = 'missile_shield'
+CD_MISSILE = 'missile_cd'
+TORPEDO_MISSILE = 'missile_torp'
+
 DEBUG_CLASSES = [1, 2, 3, 4, 5, 6]
 DEBUG_CLASSES_SHIELDGUN = [1, 3, 4]
 
-WEAPON_RH = 'rh'
-WEAPON_LI = 'li'
-WEAPON_BR = 'br'
-WEAPON_KU = 'ku'
-WEAPON_BW = 'bw'
+WEAPON_RH = 1
+WEAPON_LI = 2
+WEAPON_BR = 3
+WEAPON_KU = 4
+WEAPON_BW = 5
 
 EQUIP_RH = 'rh'
 EQUIP_LI = 'li'

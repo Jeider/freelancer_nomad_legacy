@@ -18,6 +18,12 @@ class MarketItem(object):
     def get_marketdata(self):
         raise NotImplementedError
 
+    def get_ammo_nickname(self):
+        raise NotImplementedError
+
+    def get_ammo_marketdata(self):
+        raise NotImplementedError
+
 
 class MarketEquip(MarketItem):
     MARKET_ITEM_TEMPLATE = 'MarketGood = {item_nickname}, {level}, {reputation}, {stock}, {price_mult}'
@@ -50,8 +56,20 @@ class MarketEquip(MarketItem):
             'price_mult': self.get_market_price_multiplier(),
         }
 
+    def get_market_item_ammo_params(self):
+        return {
+            'item_nickname': self.get_ammo_nickname(),
+            'level': self.get_market_level(),
+            'reputation': self.get_market_reputation(),
+            'stock': self.get_market_stock(),
+            'price_mult': self.get_market_price_multiplier(),
+        }
+
     def get_marketdata(self):
         return self.MARKET_ITEM_TEMPLATE.format(**self.get_market_item_params())
+
+    def get_ammo_marketdata(self):
+        return self.MARKET_ITEM_TEMPLATE.format(**self.get_market_item_ammo_params())
 
 
 class MarketShip(MarketItem):
@@ -102,9 +120,10 @@ class Market:
 base = {base_nickname}
 {items}'''
 
-    def __init__(self, base_nickname, items):
+    def __init__(self, base_nickname, items, shop_ammo=None):
         self.base_nickname = base_nickname
         self.items = items
+        self.shop_ammo = shop_ammo if shop_ammo else []
 
     def get_base_nickname(self):
         return self.base_nickname
@@ -124,12 +143,15 @@ base = {base_nickname}
     def get_items_marketdata(self):
         main_items = [item.get_marketdata() for item in self.get_items()]
         main_items.extend(self.get_default_items())
-        return SINGLE_DIVIDER.join(main_items)
+        return main_items
+
+    def get_ammo_marketdata(self):
+        return [item.get_ammo_marketdata() for item in self.shop_ammo]
 
     def get_market_content(self):
         return self.MARKET_TEMPLATE.format(
             base_nickname=self.get_base_nickname(),
-            items=self.get_items_marketdata(),
+            items=SINGLE_DIVIDER.join(self.get_items_marketdata() + self.get_ammo_marketdata()),
         )
 
 
@@ -157,6 +179,15 @@ class EquipSet:
 
                 items.extend(
                     core.weapons.get_generic_guns_by_query(used_weapon_faction, query)
+                )
+
+            elif query.__class__ == Q.GenericLauncher:
+                used_launcher_faction = self.weapon_faction if self.weapon_faction else root_weapon_faction
+                if not used_launcher_faction:
+                    raise Exception('launcher faction is not defined for some EquipSet')
+
+                items.extend(
+                    core.weapons.get_generic_launchers_by_query(used_launcher_faction, query)
                 )
 
             elif query.__class__ == Q.Engine:
@@ -352,6 +383,11 @@ ShipyardSet = EquipSet(
 MainPlanetSet = EquipSet(
     Q.GenericGun(HUNTERGUN, eq_classes=PROF_PLANET_CLASSES),
     Q.GenericGun(SHIELDGUN, eq_classes=MAIN_SHIELDGUN_CLASSES),
+    Q.GenericLauncher(MAIN_MISSILE, eq_classes=PROF_PLANET_CLASSES),
+    Q.GenericLauncher(SHIELD_MISSILE, eq_classes=PROF_PLANET_CLASSES),
+    Q.GenericLauncher(FAST_MISSILE, eq_classes=PROF_PLANET_CLASSES),
+    Q.GenericLauncher(TORPEDO_MISSILE, eq_classes=PROF_PLANET_CLASSES),
+    Q.GenericLauncher(CD_MISSILE, eq_classes=PROF_PLANET_CLASSES),
     Q.Engine(None, eq_classes=PROF_PLANET_CLASSES),
     Q.Power(None, eq_classes=PROF_PLANET_CLASSES),
     Q.Shield(None, eq_classes=PROF_PLANET_CLASSES),

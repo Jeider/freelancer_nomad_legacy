@@ -67,6 +67,7 @@ class Equipment(LootableEquip, MarketEquip):
         CLASS_7: RATE_21,
         CLASS_8: RATE_24,
         CLASS_9: RATE_27,
+        CLASS_10: RATE_28,
     }
 
     CIV_RATES = {
@@ -468,7 +469,7 @@ item_icon = {icon}
 combinable = {combinable}'''
 
     def get_price(self):
-        raise NotImplementedError()
+        raise NotImplementedError
 
     def get_icon(self):
         raise NotImplementedError
@@ -488,6 +489,63 @@ combinable = {combinable}'''
 
     def get_good(self):
         return self.get_good_template().format(**self.get_good_template_params())
+
+
+class LauncherGood(object):
+
+    def get_price(self):
+        raise NotImplementedError
+
+    def get_ammo_price(self):
+        raise NotImplementedError
+
+    def get_icon(self):
+        raise NotImplementedError
+
+    def get_free_ammo(self):
+        return 10
+
+    def get_ammo_icon(self):
+        raise NotImplementedError
+
+    def get_good_template_params(self):
+        nickname = self.get_nickname()
+        return {
+            'nickname': nickname,
+            'equipment': nickname,
+            'price': self.get_price(),
+            'icon': self.get_icon(),
+            'combinable': False
+        }
+
+    def get_good(self):
+        nickname = self.get_nickname()
+        ammo_nickname = self.get_ammo_nickname()
+        return f'''[Good]
+nickname = {nickname}
+equipment = {nickname}
+category = equipment
+price = {self.get_price()}
+item_icon = {self.get_icon()}
+combinable = false
+ids_name = {self.get_ids_name()}
+ids_info = {self.get_ids_info()}
+free_ammo = {ammo_nickname}, {self.get_free_ammo()}
+shop_archetype = equipment\\models\\weapons\\li_rad_launcher.cmp
+material_library = equipment\\models\\li_equip.mat
+
+[Good]
+nickname = {ammo_nickname}
+equipment = {ammo_nickname}
+shop_archetype = equipment\\models\\weapons\\li_rad_missile.3db
+material_library = equipment\\models\\li_equip.mat
+category = equipment
+ids_name = {self.get_ammo_ids_name()}
+ids_info = {self.get_ammo_ids_info()}
+price = {self.get_ammo_price()}
+item_icon = {self.get_ammo_icon()}
+combinable = true
+'''
 
 
 class AdoxaEquipClassGood(DefaultGood):
@@ -518,7 +576,6 @@ attachment_archetype = {model}'''
             'model': self.get_equip_model(),
             'combinable': False
         }
-
 
 
 class Icon(object):
@@ -557,6 +614,12 @@ class Icon(object):
     ICON_GE_HARPOON = 'ge\\ge_harpoon.3db'
     ICON_GE_TRP_LAUNCHER = 'ge\\ge_trp_launcher.3db'
     ICON_GE_UBERGUN = 'ge\\ge_ubergun.3db'
+
+    ICON_RH_ROUND = 'rh\\rh_round.3db'
+    ICON_LI_MISSILE = 'li\\li_missile.3db'
+    ICON_BR_MISSILE = 'br\\br_missile.3db'
+    ICON_KU_ROUND = 'ku\\ku_round.3db'
+    ICON_GE_MISSILE = 'ge\\ge_missile.3db'
 
     ICON_PATH_TEMPLATE = '{root}{icon}'
 
@@ -597,9 +660,18 @@ class MainEquipPrice(object):
         Equipment.RATE_27: 1.0000,
         Equipment.RATE_28: 1.5000,
     }
+    #
+    # def get_max_price(self):
+    #     raise NotImplementedError
+    #
+    # def get_max_ammo_price(self):
+    #     raise NotImplementedError
 
     def get_price_multipler(self):
         return self.PRICE_PER_RATE[self.rate]
 
     def get_price(self):
         return int(self.get_max_price() * self.get_price_multipler())
+
+    def get_ammo_price(self):
+        return int(self.get_max_ammo_price() * self.get_price_multipler())
