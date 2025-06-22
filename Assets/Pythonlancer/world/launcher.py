@@ -347,7 +347,7 @@ class Missile(Launcher):
         ammo = self.AMMO_LIMIT
         if self.faction == Equipment.FACTION_RH:
             ammo *= self.RH_AMMO_LIMIT_MILTIPLIER
-        return ammo
+        return int(ammo)
 
     def is_disruptor(self):
         return (

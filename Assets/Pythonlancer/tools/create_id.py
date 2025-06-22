@@ -24,8 +24,6 @@ class CreateId(object):
         cmd_string = cmd_output.stdout.decode()
         return cmd_string.split(',')
 
-        return items[1]
-
     @staticmethod
     def get_hex_id(nickname):
         return CreateId.run_command(nickname)[1]
