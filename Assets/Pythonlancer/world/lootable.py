@@ -5,6 +5,10 @@ class Lootable(object):
     DROP_MIN = None
     DROP_MAX1 = None
     DROP_MAX2 = None
+    AMMO_DROP_CHANCE = None
+    AMMO_DROP_MAX1 = None
+    AMMO_DROP_MAX2 = None
+
 
     LOOTPROP_TEMPLATE = '''[mLootProps]
 nickname = {nickname}
@@ -40,6 +44,21 @@ drop_properties = {chance}, {min_worth}, {worth_mult}, {min}, {max1}, {max2}'''
             raise NotImplementedError('DROP_MAX2 not defined')
         return self.DROP_MAX2
 
+    def get_ammo_drop_chance(self):
+        if self.AMMO_DROP_CHANCE is None:
+            raise NotImplementedError('DROP_CHANCE not defined')
+        return self.AMMO_DROP_CHANCE
+
+    def get_ammo_drop_max1(self):
+        if self.AMMO_DROP_MAX1 is None:
+            raise NotImplementedError('DROP_MAX1 not defined')
+        return self.AMMO_DROP_MAX1
+
+    def get_ammo_drop_max2(self):
+        if self.AMMO_DROP_MAX2 is None:
+            raise NotImplementedError('DROP_MAX2 not defined')
+        return self.AMMO_DROP_MAX2
+
     def get_lootprops_template_params(self):
         return {
             'nickname': self.get_nickname(),
@@ -51,21 +70,32 @@ drop_properties = {chance}, {min_worth}, {worth_mult}, {min}, {max1}, {max2}'''
             'max2': self.get_drop_max2(),
         }
 
+    def get_ammo_lootprops_template_params(self):
+        return {
+            'nickname': self.get_ammo_nickname(),
+            'chance': self.get_ammo_drop_chance(),
+            'min_worth': self.get_drop_min_worth(),
+            'worth_mult': self.get_drop_worth_mult(),
+            'min': self.get_drop_min(),
+            'max1': self.get_ammo_drop_max1(),
+            'max2': self.get_ammo_drop_max2(),
+        }
+
     def get_lootprops(self):
         return self.LOOTPROP_TEMPLATE.format(**self.get_lootprops_template_params())
+
+    def get_ammo_lootprops(self):
+        return self.LOOTPROP_TEMPLATE.format(**self.get_ammo_lootprops_template_params())
 
 
 class LootableEquip(Lootable):
     DROP_CHANCE = 5
+    AMMO_DROP_CHANCE = 6
     DROP_MIN = 0
     DROP_MAX1 = 2
     DROP_MAX2 = 1
-
-
-class LootableAmmo(Lootable):
-    DROP_MIN = 0
-    DROP_MAX1 = 40
-    DROP_MAX2 = 15
+    AMMO_DROP_MAX1 = 40
+    AMMO_DROP_MAX2 = 15
 
 
 class LootableCommodity(Lootable):
@@ -78,5 +108,5 @@ class LootableCommodity(Lootable):
 class LootableRepair(Lootable):
     CHANCE = 33
     DROP_MIN = 0
-    DROP_MAX1 = 1000
-    DROP_MAX2 = 1000
+    DROP_MAX1 = 150
+    DROP_MAX2 = 150

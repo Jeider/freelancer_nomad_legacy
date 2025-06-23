@@ -28,6 +28,14 @@ class ManagerHelper(object):
         return DIVIDER.join(results)
 
     @staticmethod
+    def extract_ammo_lootprops(*equipment):
+        results = []
+        for equip_group in equipment:
+            for item in equip_group:
+                results.append(item.get_ammo_lootprops())
+        return DIVIDER.join(results)
+
+    @staticmethod
     def extract_marketdata(*equipment):
         results = []
         for equip_group in equipment:

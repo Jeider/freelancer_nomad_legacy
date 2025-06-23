@@ -7,6 +7,8 @@ from world import launcher
 
 from fx.weapon import WeaponFX
 
+from text.dividers import DIVIDER
+
 
 class NotExistLauncherException(Exception):
     pass
@@ -19,7 +21,7 @@ class WeaponManager:
         self.ids = self.core.ids.weapon
 
         self.weapon_factions = [i.WEAPON_FACTION for i in FactionGun.subclasses]
-        self.launcher_types = [
+        self.generic_launcher_types = [
             launcher.MainMissile,
             launcher.FastMissile,
             launcher.MainSuperMissile,
@@ -30,12 +32,16 @@ class WeaponManager:
             launcher.ProfMine,
             launcher.MilMine,
         ]
+        self.single_launcher_types = [
+            launcher.CM,
+        ]
 
         self.guns_list = []
         self.single_guns_db = {}
         self.generic_guns_db = {i: {} for i in self.weapon_factions}
 
         self.generic_launchers_db = {}
+        self.single_launchers_db = {}
         self.launchers_list = []
 
         self.load_game_data()
@@ -63,13 +69,21 @@ class WeaponManager:
         for faction in ALL_FACTIONS:
             self.generic_launchers_db[faction] = {}
 
-            for launcher in self.launcher_types:
-                self.generic_launchers_db[faction][launcher.WEAPON_CODE] = {}
+            for gen_launcher in self.generic_launcher_types:
+                self.generic_launchers_db[faction][gen_launcher.WEAPON_CODE] = {}
 
-                for equipment_class in launcher.CLASSES_KEYS:
-                    the_launcher = launcher(self.ids, faction, equipment_class)
-                    self.generic_launchers_db[faction][launcher.WEAPON_CODE][equipment_class] = the_launcher
+                for equipment_class in gen_launcher.CLASSES_KEYS:
+                    the_launcher = gen_launcher(self.ids, faction, equipment_class)
+                    self.generic_launchers_db[faction][gen_launcher.WEAPON_CODE][equipment_class] = the_launcher
                     self.launchers_list.append(the_launcher)
+
+        for single_launcher in self.single_launcher_types:
+            self.single_launchers_db[single_launcher.WEAPON_CODE] = {}
+
+            for equipment_class in single_launcher.CLASSES_KEYS:
+                the_launcher = single_launcher(self.ids, equipment_class)
+                self.single_launchers_db[single_launcher.WEAPON_CODE][equipment_class] = the_launcher
+                self.launchers_list.append(the_launcher)
 
     def get_guns_by_query(self, gun_query: Q.Gun):
         guns = []
@@ -104,6 +118,18 @@ class WeaponManager:
                 pass
         return launchers
 
+    def get_single_launchers_by_query(self, launcher_query: Q.GenericLauncher):
+        launchers = []
+
+        for the_class in launcher_query.eq_classes:
+            try:
+                launchers.append(
+                    self.get_single_launcher(launcher_query.launcher_kind, the_class)
+                )
+            except NotExistLauncherException:
+                pass
+        return launchers
+
     def get_gun_raw(self, gun_nickname, equipment_class):
         return self.single_guns_db[gun_nickname][equipment_class]
 
@@ -120,6 +146,13 @@ class WeaponManager:
         except KeyError:
             raise NotExistLauncherException('Such class is not exist for launcher')
 
+    def get_single_launcher(self, launcher_kind, equipment_class):
+        kind_launcher = self.single_launchers_db[launcher_kind]
+        try:
+            return kind_launcher[equipment_class]
+        except KeyError:
+            raise NotExistLauncherException('Such class is not exist for launcher')
+
     def get_weapon_equip(self):
         return ManagerHelper.extract_equips(self.guns_list, self.launchers_list)
 
@@ -127,7 +160,9 @@ class WeaponManager:
         return ManagerHelper.extract_goods(self.guns_list, self.launchers_list)
 
     def get_lootprops(self):
-        return ManagerHelper.extract_lootprops(self.guns_list, self.launchers_list)
+        weapons = ManagerHelper.extract_lootprops(self.guns_list, self.launchers_list)
+        ammo = ManagerHelper.extract_ammo_lootprops(self.launchers_list)
+        return DIVIDER.join([weapons, ammo])
 
     def get_demo_marketdata(self):
         return ManagerHelper.extract_marketdata(self.guns_list, self.launchers_list)

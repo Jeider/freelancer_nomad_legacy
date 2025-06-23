@@ -139,7 +139,6 @@ class Launcher(Equipment, MainEquipPrice, LauncherGood):
         BR_SLUGGER: Icon.ICON_BR_MISSILE,
         KU_HORNET: Icon.ICON_KU_ROUND,
         KU_RECOGNIZER: Icon.ICON_KU_ROUND,
-        GE_MINE: Icon.ICON_GE_MISSILE,
         GE_TORPEDO: Icon.ICON_BR_MISSILE,
         LI_CM: Icon.ICON_LI_MISSILE,
         LI_RAD: Icon.ICON_LI_MISSILE,
@@ -212,7 +211,7 @@ class Launcher(Equipment, MainEquipPrice, LauncherGood):
         return self.CLASSES[self.equipment_class]
 
     def get_market_level(self):
-        return level.GUN_LEVEL_PER_CLASS[self.equipment_class]
+        return level.MISSILE_LEVEL_PER_CLASS[self.equipment_class]
 
     def get_faction_letter(self):
         return self.FACTION_LETTERS[self.faction]
@@ -503,59 +502,6 @@ auto_turret = false
 turn_rate = 90
 lootable = true
 LODranges = 0, 200, 300, 500
-'''
-
-
-
-'''
-
-
-
-[CounterMeasure]
-nickname = ge_s_cm_03_ammo
-hit_pts = 2
-loot_appearance = ge_s_cm_03_ammo_crate
-units_per_container = 10
-one_shot_sound = fire_countermeasure
-const_effect = ku_countermeasures
-lifetime = 3
-DA_archetype = equipment\models\countermeasures\ge_cm_mark3.cmp
-material_library = equipment\models\ge_equip.mat
-ids_name = 265755
-ids_info = 266755
-mass = 1
-volume = 0.000000
-owner_safe_time = 2
-force_gun_ori = true
-requires_ammo = true
-linear_drag = 0.500000
-range = 1000
-diversion_pctg = 90
-
-[CounterMeasureDropper]
-nickname = ge_s_cm_03
-ids_name = 263755
-ids_info = 264755
-DA_archetype = equipment\models\weapons\li_cm_dropper01.cmp
-material_library = equipment\models\li_equip.mat
-HP_child = HpConnect
-hit_pts = 1000
-explosion_resistance = 0.500000
-debris_type = debris_normal
-parent_impulse = 20
-child_impulse = 80
-volume = 0.000000
-mass = 10
-power_usage = 1.880000
-refire_delay = 0.250000
-muzzle_velocity = 10
-flash_particle_name = li_laser_01_flash
-flash_radius = 15
-light_anim = l_gun01_flash
-projectile_archetype = ge_s_cm_03_ammo
-separation_explosion = sever_debris
-AI_range = 999
-lootable = true
 '''
 
 
@@ -944,6 +890,10 @@ class Mine(Launcher):
     def get_model(self):
         return self.GE_MINE
 
+    def get_ammo_icon(self):
+        icon = Icon.ICON_MINE_AMMO
+        return Icon.get_icon_path(icon)
+
     def get_equip(self):
         equip_name = self.get_nickname()
         ammo_name = self.get_ammo_nickname()
@@ -1038,6 +988,9 @@ class CivMine(Mine):
     def get_const_fx(self):
         return MINE1_FX_PER_FACTION[self.faction]
 
+    def get_rate(self):
+        return self.get_civ_rate()
+
 
 class ProfMine(Mine):
     WEAPON_CODE = MINE_PROF
@@ -1068,6 +1021,9 @@ class ProfMine(Mine):
     def get_const_fx(self):
         return MINE1_FX_PER_FACTION[self.faction]
 
+    def get_rate(self):
+        return self.get_pirate_rate()
+
 
 class MilMine(Mine):
     WEAPON_CODE = MINE_MIL
@@ -1097,3 +1053,231 @@ class MilMine(Mine):
 
     def get_const_fx(self):
         return MINE2_FX_PER_FACTION[self.faction]
+
+
+class CM(Equipment, MainEquipPrice, LauncherGood):
+    WEAPON_CODE = CM
+    MAX_PRICE = 5000
+    MAX_AMMO_PRICE = 50
+    LAUNCHER_MAX_HIT_PTS = 5000
+
+    CLASSES = GEN_CLASS_TO_MARK
+    CLASSES_KEYS = CLASSES.keys()
+
+    RU_BASE_INFO = 'Установка, предназначенная для отвлечения вражеских ракет. Используйте в случае ракетной опасности'
+
+    CM_FX_PER_MARK = [
+        'br_countermeasures',
+        'br_countermeasures',
+        'br_countermeasures',
+        'br_countermeasures',
+        'ku_countermeasures',
+    ]
+
+    CM_DIVERSION_PCT_PER_MARK = [
+        60, 70, 75, 80, 90
+    ]
+
+    CM_AMMO_PRICE_PER_MARK = [
+        20, 25, 35, 40, 50
+    ]
+
+    CM_NAME_PER_MARK = [
+        'Контрмера',
+        'Модифициров. контрмера',
+        'Продвинутая контрмера',
+        'Улучшенная контрмера',
+        'Элитная контрмера',
+    ]
+
+    CM_DESC_NAME_PER_MARK = [
+        'Базовый постановщик помех',
+        'Модифицированный помостановщик помех',
+        'Продвинутый постановщик помех',
+        'Улучшенный постановщик помех',
+        'Элитный постановщик помех',
+    ]
+
+    def __init__(self, ids, equipment_class):
+        self.ids = ids
+
+        self.equipment_class = equipment_class
+
+        self.rate = self.get_rate()
+        self.mark = Launcher.MARK_PER_CLASS[self.equipment_class]
+
+        self.ids_name = ids.new_name(self.get_ru_name())
+        self.ids_info = ids.new_info(
+            InfocardBuilder.build_equip_infocard(
+                self.get_ru_fullname(),
+                self.get_ru_description_content()
+            )
+        )
+
+        self.ammo_ids_name = ids.new_name(self.get_ru_ammo_name())
+        self.ammo_ids_info = ids.new_info(
+            InfocardBuilder.build_equip_infocard(
+                self.get_ru_ammo_fullname(),
+                self.get_ru_ammo_description_content()
+            )
+        )
+
+    def get_ammo_price(self):
+        return self.CM_AMMO_PRICE_PER_MARK[self.mark-1]
+
+    def get_mark_name(self):
+        return self.CLASSES[self.equipment_class]
+
+    def get_market_level(self):
+        return level.MISSILE_LEVEL_PER_CLASS[self.equipment_class]
+
+    def get_nickname(self):
+        return f'{self.WEAPON_CODE}_{self.mark:02d}'
+
+    def get_ammo_nickname(self):
+        return f'{self.get_nickname()}_ammo'
+
+    def get_rate(self):
+        return self.get_civ_rate()
+
+    def get_ru_name(self):
+        return self.CM_NAME_PER_MARK[self.mark-1]
+
+    def get_ru_ammo_name(self):
+        return f'Снаряд: {self.get_ru_name()}'
+
+    def get_ru_ammo_fullname(self):
+        return 'Снаряд для установки {name}'.format(
+            name=self.get_ru_name()
+        )
+
+    def get_ru_fullname(self):
+        return self.CM_DESC_NAME_PER_MARK[self.mark-1]
+
+    def get_ru_description_content(self):
+        content = []
+
+        content.append(self.RU_BASE_INFO)
+
+        content.append(f'Боекомплект: {self.get_ammo_limit()}')
+
+        content.append(
+            f'*Требуются снаряды типа {self.get_ru_name()}'
+        )
+
+        return content
+
+    def get_ru_ammo_description_content(self):
+        content = []
+
+        content.append(self.RU_BASE_INFO)
+
+        content.append(f'Боекомплект: {self.get_ammo_limit()}')
+
+        content.append(
+            f'Требуется для использования установки {self.get_ru_name()}'
+        )
+
+        return content
+
+    def get_launcher_hit_pts(self):
+        return self.LAUNCHER_MAX_HIT_PTS * self.rate
+
+    def get_ammo_ids_name(self):
+        return self.ammo_ids_name.id
+
+    def get_ammo_ids_info(self):
+        return self.ammo_ids_info.id
+
+    def get_ids_name(self):
+        return self.ids_name.id
+
+    def get_ids_info(self):
+        return self.ids_info.id
+
+    def get_faction_letter_by_model(self):
+        return self.GE_LETTER
+
+    def get_material(self):
+        return Launcher.MATERIAL_PATH_TEMPLATE.format(faction_letter=self.get_faction_letter_by_model())
+
+    def get_icon(self):
+        icon = Launcher.ICON_PER_WEAPON_MODEL[self.get_model()]
+        return Icon.get_icon_path(icon)
+
+    def get_ammo_icon(self):
+        icon = Icon.ICON_CM_AMMO
+        return Icon.get_icon_path(icon)
+
+    def get_max_price(self):
+        return self.MAX_PRICE
+
+    def get_max_ammo_price(self):
+        return self.MAX_AMMO_PRICE
+
+    def get_model(self):
+        return Launcher.GE_MINE
+
+    def get_da_archetype(self):
+        return Launcher.DA_ARCHETYPE_PATH_TEMPLATE.format(model=self.get_model())
+
+    def get_ammo_limit(self):
+        return DYNAMIC_AMMO_LIMIT[self.mark-1]
+
+    def get_const_fx(self):
+        return self.CM_FX_PER_MARK[self.mark-1]
+
+    def get_diversion_pct(self):
+        return self.CM_DIVERSION_PCT_PER_MARK[self.mark-1]
+
+    def get_equip(self):
+        equip_name = self.get_nickname()
+        ammo_name = self.get_ammo_nickname()
+        return f'''[CounterMeasure]
+nickname = {ammo_name}
+hit_pts = 2
+loot_appearance = ammo_crate
+units_per_container = 10
+one_shot_sound = fire_countermeasure
+const_effect = {self.get_const_fx()}
+lifetime = 3
+DA_archetype = equipment\\models\\countermeasures\\ge_cm_mark3.cmp
+material_library = equipment\\models\\ge_equip.mat
+ids_name = {self.get_ammo_ids_name()}
+ids_info = {self.get_ammo_ids_info()}
+mass = 1
+volume = 0.000000
+owner_safe_time = 2
+force_gun_ori = true
+requires_ammo = true
+linear_drag = 0.500000
+range = 1000
+diversion_pctg = {self.get_diversion_pct()}
+ammo_limit = {self.get_ammo_limit()}
+
+[CounterMeasureDropper]
+nickname = {equip_name}
+ids_name = {self.get_ids_name()}
+ids_info = {self.get_ids_info()}
+DA_archetype = {self.get_da_archetype()}
+material_library = {self.get_material()}
+HP_child = HpConnect
+hit_pts = 1000
+explosion_resistance = 0.500000
+debris_type = debris_normal
+parent_impulse = 20
+child_impulse = 80
+volume = 0.000000
+mass = 10
+power_usage = 2
+refire_delay = 0.250000
+muzzle_velocity = 10
+flash_particle_name = li_laser_01_flash
+flash_radius = 15
+light_anim = l_gun01_flash
+projectile_archetype = {ammo_name}
+separation_explosion = sever_debris
+AI_range = 999
+lootable = true
+LODranges = 0, 300
+'''

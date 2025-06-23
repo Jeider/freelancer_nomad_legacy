@@ -55,7 +55,9 @@ class Equipment(LootableEquip, MarketEquip):
     RATE_25 = 0.82
     RATE_26 = 0.88
     RATE_27 = 1.00
-    RATE_28 = 1.50
+    RATE_28 = 1.10
+    RATE_29 = 1.25
+    RATE_30 = 1.50
 
     MAIN_RATES = {
         CLASS_1: RATE_3,
@@ -67,7 +69,7 @@ class Equipment(LootableEquip, MarketEquip):
         CLASS_7: RATE_21,
         CLASS_8: RATE_24,
         CLASS_9: RATE_27,
-        CLASS_10: RATE_28,
+        CLASS_10: RATE_30,
     }
 
     CIV_RATES = {
@@ -80,6 +82,7 @@ class Equipment(LootableEquip, MarketEquip):
         CLASS_7: RATE_19,
         CLASS_8: RATE_22,
         CLASS_9: RATE_25,
+        CLASS_10: RATE_28,
     }
 
     PIRATE_RATES = {
@@ -92,6 +95,7 @@ class Equipment(LootableEquip, MarketEquip):
         CLASS_7: RATE_20,
         CLASS_8: RATE_23,
         CLASS_9: RATE_26,
+        CLASS_10: RATE_29,
     }
 
     SHIPCLASS_FIGHTER = 1
@@ -184,6 +188,9 @@ combinable = {combinable}'''
 
     def get_drop_chance(self):
         return self.DROP_CHANCE_PER_CLASS[self.equipment_class]
+
+    def get_ammo_drop_chance(self):
+        return self.get_drop_chance() + 1
 
     DROP_WORTH_PER_CLASS = {
         CLASS_1: 5000,
@@ -615,6 +622,8 @@ class Icon(object):
     ICON_GE_TRP_LAUNCHER = 'ge\\ge_trp_launcher.3db'
     ICON_GE_UBERGUN = 'ge\\ge_ubergun.3db'
     ICON_GE_DROPPER = 'ge\\ge_mine_cm.3db'
+    ICON_MINE_AMMO = 'ge\\ge_mine03.3db'
+    ICON_CM_AMMO = 'ge\\ge_cm03.3db'
 
     ICON_RH_ROUND = 'rh\\rh_round.3db'
     ICON_LI_MISSILE = 'li\\li_missile.3db'
@@ -659,7 +668,9 @@ class MainEquipPrice(object):
         Equipment.RATE_25: 0.8200,
         Equipment.RATE_26: 0.9600,
         Equipment.RATE_27: 1.0000,
-        Equipment.RATE_28: 1.5000,
+        Equipment.RATE_28: 1.1000,
+        Equipment.RATE_29: 1.2500,
+        Equipment.RATE_30: 1.5000,
     }
     #
     # def get_max_price(self):
