@@ -270,8 +270,14 @@ class Misson13(ingame_mission.IngameMission):
             TextDialog(
                 self, 'work_in_progress', 'Миссия завершена',
                 ru_content=MultiText([
-                    'Вы успешно справились с миссией, но, к сожалению, она еще не закончена. В разработке',
-                    'Ожидайте будущих обновлений. А пока... пока всё',
+                    'Вы успешно справились с миссией, но, к сожалению, она еще не закончена. '
+                    'Проект продолжает разрабатываться и финал вскоре будет доделан',
+                    'Если вам понравился проект, то вы можете оставить свой отзыв или поддержать автора. ',
+                    'Контакты и способы поддержаки можно найти на сайте https://freelancer2.space',
+                    '',
+                    'После нажатия "закрыть" кампания будет закончена и вам будет разрешено играть в открытом мире,'
+                    'но т.к. это альфа-версия, то я просто разрешаю вам поиграть в текущей версии мира. В будущем '
+                    'эндгейм будет выглядеть иначе. Может быть у меня получится сделать скайримо-лансер. Посмотрим :-)'
                 ]),
             ),
         ]
@@ -1249,7 +1255,8 @@ class Misson13(ingame_mission.IngameMission):
                     'enemy',
                 ],
                 radius=0,
-                static_npc_shiparch='ms13_beast_ship_far'
+                static_npc_shiparch='ms13_beast_ship_far',
+                force_name='Крыг',
             ),
             Ship(
                 self,
@@ -1259,7 +1266,8 @@ class Misson13(ingame_mission.IngameMission):
                     'enemy',
                 ],
                 radius=0,
-                static_npc_shiparch='ms13_beast_ship_far_near'
+                static_npc_shiparch='ms13_beast_ship_far_near',
+                force_name='Крыг',
             ),
             Ship(
                 self,

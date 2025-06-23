@@ -637,7 +637,7 @@ class Ship(Target):
                  affiliation=None, jumper=False, labels=None, arrival_obj=None,
                  rel_pos=None, relative_pos=False, relative_target='Player', relative_range=1000,
                  radius=None, system_class=None, base_name=None, unique_npc_entry=False,
-                 slide_x=0, slide_y=0, slide_z=0):
+                 slide_x=0, slide_y=0, slide_z=0, force_name=None):
         self.mission = mission
         self.ids = self.mission.ids
         self.system = (
@@ -670,6 +670,7 @@ class Ship(Target):
         self.slide_z = slide_z
         self.respawn_defined = False
         self.members_respawn_defined = []
+        self.force_name = force_name
 
     def have_npc(self):
         return self.npc or self.static_npc_shiparch
@@ -750,6 +751,9 @@ class Ship(Target):
                     items.append(f'individual_name = {ids_name.id}')
                 except IndexError:
                     pass
+            elif self.force_name:
+                ids_name = self.ids.new_name(self.force_name)
+                items.append(f'individual_name = {ids_name.id}')
 
         return SINGLE_DIVIDER.join(items)
 
@@ -772,7 +776,7 @@ class Ship(Target):
         if self.jumper:
             items.append('jumper = true')
         if not self.actor or not self.actor.RU_NAME:
-            if not self.base_name:
+            if not self.base_name and not self.force_name:
                 items.append('random_name = true')
         if self.rel_pos:
             items.append(f'rel_pos = {self.rel_pos.get_ini()}')
