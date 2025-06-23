@@ -118,7 +118,7 @@ class Launcher(Equipment, MainEquipPrice, LauncherGood):
     BR_SLUGGER = 'br_slugger_launcher.cmp'
     KU_HORNET = 'ku_hornet_launcher.cmp'
     KU_RECOGNIZER = 'ku_recognizer_launcher.cmp'
-    GE_MINE = 'ge_mine_dropper.cmp'
+    GE_MINE = 'ge_mine_dropper.3db'
     GE_TORPEDO = 'ge_torpedo_launcher.cmp'
     LI_CM = 'li_cm_dropper01.cmp'
     LI_RAD = 'li_rad_launcher.cmp'
