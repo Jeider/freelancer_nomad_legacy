@@ -364,6 +364,9 @@ class NamedObject(StaticObject):
     def get_space_name(self):
         return self.get_name()
 
+    def get_base_string_id(self):
+        return self.get_ids_name()
+
     def get_ids_name(self):
         return self.ids_name.id
 
@@ -910,7 +913,7 @@ BGCS_base_run_by = W02bF44'''
             self.INTERIOR_DEFINITION_TEMPLATE.format(
                 base_name=self.get_base_nickname(),
                 system_name=self.system.NAME,
-                ids_name=self.get_ids_name(),
+                ids_name=self.get_base_string_id(),
                 file_location=file_location,
             )
         ]
@@ -1081,6 +1084,11 @@ behavior = NOTHING
 
     def get_tradelane_ids_name(self):
         return self.related_planet.get_ids_name()
+
+    def get_base_string_id(self):
+        if self.related_planet:
+            return self.related_planet.get_ids_name()
+        return self.get_ids_name()
 
 
 class LargePlanetDockring(Dockring):

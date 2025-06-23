@@ -809,7 +809,7 @@ class Om7StoryBattleship(Om7Kusari, Om7Member, main_objects.KusariBattleship):
     FORCE_CONNECTIONS = [
         Om7HokkaidoJumpgate,  # TODO: haven't real economics connection
     ]
-    EQUIP_SET = markets.MusashiSet
+    EQUIP_SET = markets.MusashiSecondSet
     SHIP_SET = markets.ShipSet('ku_elite')
     RU_NAME = 'Линкор Мусаси'
 

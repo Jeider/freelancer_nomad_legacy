@@ -26,6 +26,9 @@ class WeaponManager:
             launcher.ShieldMissile,
             launcher.CruiseDisruptor,
             launcher.Torpedo,
+            launcher.CivMine,
+            launcher.ProfMine,
+            launcher.MilMine,
         ]
 
         self.guns_list = []

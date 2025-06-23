@@ -29,6 +29,9 @@ MAIN_SUPER_MISSILE = 'missile_main_super'
 SHIELD_MISSILE = 'missile_shield'
 CD_MISSILE = 'missile_cd'
 TORPEDO_MISSILE = 'missile_torp'
+MINE_CIV = 'mine_civ'
+MINE_PROF = 'mine_prof'
+MINE_MIL = 'mine_mil'
 
 DEBUG_CLASSES = [1, 2, 3, 4, 5, 6]
 DEBUG_CLASSES_SHIELDGUN = [1, 3, 4]

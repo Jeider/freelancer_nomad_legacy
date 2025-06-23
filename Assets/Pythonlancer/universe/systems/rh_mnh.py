@@ -417,6 +417,7 @@ class MunchOutcastBase(MunchMember, main_objects.PirateAsteroid):
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = astbase.MunchenAsteroidBase
     FACTION = faction.WorkaroundPirate  # Temporary
+    EQUIP_SET = markets.OutcastSet
 
     DEFENCE_LEVEL = None
     RU_NAME = 'База Виго'

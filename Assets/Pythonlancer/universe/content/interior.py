@@ -125,6 +125,8 @@ EQUIPDEALER_NAME_TEMPLATE = '{base_name}_fix_equipdealer'
 COMMTRADER_NAME_TEMPLATE = '{base_name}_fix_commtrader'
 SHIPDEALER_NAME_TEMPLATE = '{base_name}_fix_shipdealer'
 
+INTERIOR_STARS = 'generic_stars'
+
 INTERIOR_BG_CROW = 'crow_exclusion'
 INTERIOR_BG_BARRIER_CLOUD = 'exclusion_barrier_m7'
 INTERIOR_BG_WALKER = 'walker_exclusion'
@@ -178,6 +180,7 @@ class Interior(object):
     DEALER_PLACEMENTS_TEMPLATE = None
     OFFER_MISSIONS = True
     MAIN_ROOM = 'Deck'
+    LOAD_CHARACTERS = True
 
     def __init__(self, base_instance, room_subfolder):
         self.base_instance = base_instance
@@ -203,14 +206,14 @@ class Interior(object):
             )
         )
 
-        if not self.base_instance.LOCKED_DOCK:
+        if not self.base_instance.LOCKED_DOCK and self.LOAD_CHARACTERS:
             base = self.base_instance.get_base()
             main_faction = base.get_main_faction()
             other_factions = base.get_other_factions()
             other_weight_total = len(other_factions) * OTHER_WEIGHT
             main_faction_weight = 100 - other_weight_total
 
-            if self.OFFER_MISSIONS:
+            if self.OFFER_MISSIONS and not self.base_instance.STORY:
                 entries.append(MBASE_MVENDOR)
                 entries.append(
                     MBASE_MAIN_FACTION_TEMPLATE.format(
@@ -311,9 +314,27 @@ class StoryDummyInterior(CustomFileInterior):
     HAVE_EQUIP = False
     HAVE_TRADER = False
     HAVE_SHIPDEALER = False
+    LOAD_CHARACTERS = False
 
-    def get_mbase(self):
-        return ''
+
+class StoryDummyEquipInterior(CustomFileInterior):
+    CUSTOM_INTERIOR_FILE = True
+    HAVE_BAR = False
+    HAVE_EQUIP = True
+    HAVE_TRADER = False
+    HAVE_SHIPDEALER = False
+    DEALER_PLACEMENTS_TEMPLATE = ALL_ON_DECK_DEALERS_TEMPLATE
+    LOAD_CHARACTERS = False
+
+
+class StoryDummyEquipShipInterior(CustomFileInterior):
+    CUSTOM_INTERIOR_FILE = True
+    HAVE_BAR = False
+    HAVE_EQUIP = True
+    HAVE_TRADER = False
+    HAVE_SHIPDEALER = True
+    DEALER_PLACEMENTS_TEMPLATE = SINGLE_CHAR_DEALERS_TEMPLATE
+    LOAD_CHARACTERS = False
 
 
 class CustomFullSingleRoomInterior(CustomFileInterior):

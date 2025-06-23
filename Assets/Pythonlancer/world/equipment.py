@@ -614,6 +614,7 @@ class Icon(object):
     ICON_GE_HARPOON = 'ge\\ge_harpoon.3db'
     ICON_GE_TRP_LAUNCHER = 'ge\\ge_trp_launcher.3db'
     ICON_GE_UBERGUN = 'ge\\ge_ubergun.3db'
+    ICON_GE_DROPPER = 'ge\\ge_mine_cm.3db'
 
     ICON_RH_ROUND = 'rh\\rh_round.3db'
     ICON_LI_MISSILE = 'li\\li_missile.3db'
