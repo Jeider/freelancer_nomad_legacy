@@ -14,6 +14,7 @@ from universe.content.locked_dock_key import LockedDockKey
 from universe.audio.space_voice import SpaceVoice, SpaceCostume
 from universe.content.loadout import Loadout
 from universe import connection
+from universe.content import descriptions_ru
 
 from text.dividers import SINGLE_DIVIDER, DIVIDER
 
@@ -23,6 +24,10 @@ TLR_SMALL_SIZE_RINGS_COUNT = 4
 DEFENCE_SIMPLE = 'simple'
 DEFENCE_MEDIUM = 'medium'
 DEFENCE_HIGH = 'high'
+
+
+def merge_props(props: dict):
+    return SINGLE_DIVIDER.join(['{} = {}'.format(key, value) for key, value in props.items()])
 
 
 class AppearableObject(SystemObject):
@@ -336,19 +341,31 @@ class NamedObject(StaticObject):
     LAZY_NAME = False
 
     RU_NAME = None
-
+    RU_FIRST_DESCRIPTION = None
+    RU_SECOND_DESCRIPTION = None
+    DOUBLE_INFO = False
+    
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
         if not self.LAZY_NAME:
             self.set_space_name()
 
-        # self.ids_info = ids.new_info(
-        #     InfocardBuilder.build_equip_infocard(
-        #         self.get_ru_fullname(),
-        #         self.get_ru_description_content()
-        #     )
-        # )
+        self.ids_info1 = self.system.ids.new_name(
+            self.get_first_description()
+        )
+        if self.DOUBLE_INFO:
+            self.ids_info2 = self.system.ids.new_name(
+                self.get_second_description()
+            )
+
+    def get_first_description(self):
+        if self.RU_FIRST_DESCRIPTION:
+            return "\\n" + self.RU_FIRST_DESCRIPTION
+        return ' '
+
+    def get_second_description(self):
+        return ' '
 
     def set_space_name(self):
         space_name = self.get_space_name()
@@ -372,6 +389,17 @@ class NamedObject(StaticObject):
 
     def get_tradelane_ids_name(self):
         return self.get_ids_name()
+
+    def get_ids_info(self):
+        return self.ids_info1.id
+
+    def get_ids_info1(self):
+        return self.ids_info1.id
+
+    def get_ids_info2(self):
+        if not self.DOUBLE_INFO:
+            raise Exception(f'{self} is not double info object')
+        return self.ids_info2.id
 
 
 class VirtualDepot(NamedObject):
@@ -772,6 +800,9 @@ parent = {parent_planet}'''
 class NotDockableObject(StaticObject):
     DEFENCE_LEVEL = None
 
+    def get_root_props(self):
+        return merge_props(self.get_simple_root_props())
+
     def get_inspace_nickname(self):
         return '{system_name}_{alias}_{index}'.format(
             system_name=self.system.NAME,
@@ -781,11 +812,12 @@ class NotDockableObject(StaticObject):
 
 
 class StationRuins(NotDockableObject, NamedObject):
-    pass
+    RU_FIRST_DESCRIPTION = descriptions_ru.STATION_RUINS
 
 
 class DockableObject(NamedObject):
     ARCHETYPE = 'depot'
+    DOUBLE_INFO = True
     INTERIOR_CLASS = interior.CustomFileInterior  # custom interior
     INTERIOR_EXTRA_ROOMS = []
     INTERIORS_FOLDER = 'GENERATED_INTERIORS'
@@ -955,7 +987,7 @@ BGCS_base_run_by = W02bF44'''
         }
 
     def get_root_props(self):
-        return SINGLE_DIVIDER.join(['{} = {}'.format(key, value) for key, value in self.get_raw_root_props().items()])
+        return merge_props(self.get_raw_root_props())
 
     def get_dock_props(self):
         base_name = self.get_base_nickname()
@@ -1168,6 +1200,7 @@ class AbandonedAsteroid(DockableObject):
     BASE_PROPS = meta.LockedAsteroid()
     IS_BASE = False  # Workaround, keep before new balance will integrated
     KEY_COLLECT_FX = nn.FX_GOT_KEY_ASTEROID
+    RU_FIRST_DESCRIPTION = descriptions_ru.ASTEROID_ROCK
 
 
 class AbandonedAsteroidIce(DockableObject):
@@ -1176,12 +1209,14 @@ class AbandonedAsteroidIce(DockableObject):
     BASE_PROPS = meta.LockedAsteroid()
     IS_BASE = False  # Workaround, keep before new balance will integrated
     KEY_COLLECT_FX = nn.FX_GOT_KEY_ASTEROID
+    RU_FIRST_DESCRIPTION = descriptions_ru.ASTEROID_ICE
 
 
 class GasMinerOld(Station):
     RANDOM_ROBOT = True
     IS_BASE = False  # Workaround, keep before new balance will integrated
     KEY_COLLECT_FX = nn.FX_GOT_KEY_GAS_MINER
+    RU_FIRST_DESCRIPTION = descriptions_ru.GAS_MINER_OLD
 
     CARGO_PODS_POSITION_Y_DRIFT = -60
 
@@ -1213,6 +1248,7 @@ class SolarPlant(Station):
     BASE_PROPS = meta.LockedSolarPlant()
     IS_BASE = False  # Workaround, keep before new balance will integrated
     KEY_COLLECT_FX = nn.FX_GOT_KEY_STATION
+    RU_FIRST_DESCRIPTION = descriptions_ru.SOLAR_PLANT
 
 
 class RoidMiner(Station):
@@ -1221,6 +1257,7 @@ class RoidMiner(Station):
     BASE_PROPS = meta.LockedRoidMiner()
     IS_BASE = False  # Workaround, keep before new balance will integrated
     KEY_COLLECT_FX = nn.FX_GOT_KEY_ROID_MINER
+    RU_FIRST_DESCRIPTION = descriptions_ru.ROID_MINER
 
     ASTEROID_OFFSET = (0, 5, -235)
     ASTEROID_ROTATE = (145, -30, 34)
@@ -1282,6 +1319,7 @@ class DebrisManufactoring(Station):
     BASE_PROPS = meta.LockedSmelter()
     IS_BASE = False  # Workaround, keep before new balance will integrated
     KEY_COLLECT_FX = nn.FX_GOT_KEY_FACTORY
+    RU_FIRST_DESCRIPTION = descriptions_ru.DEBRIS_MANUFACTORING
 
 
 class Outpost(DockableObject):
@@ -1461,21 +1499,25 @@ class Hackable(DockableObject):
 class HackableStation(Hackable):
     AUDIO_PREFIX = SpaceVoice.STATION
     KEY_COLLECT_FX = nn.FX_GOT_KEY_STATION
+    RU_FIRST_DESCRIPTION = descriptions_ru.HACKABLE_STATION
 
 
 class HackableSolarPlant(Hackable):
     AUDIO_PREFIX = SpaceVoice.STATION
     KEY_COLLECT_FX = nn.FX_GOT_KEY_STATION
+    RU_FIRST_DESCRIPTION = descriptions_ru.HACKABLE_SOLAR_PLANT
 
 
 class HackableBattleship(Hackable):
     AUDIO_PREFIX = SpaceVoice.BATTLESHIP
     KEY_COLLECT_FX = nn.FX_GOT_KEY_BATTLESHIP
+    RU_FIRST_DESCRIPTION = descriptions_ru.BATTLESHIP_HACKABLE
 
 
 class HackableLuxury(Hackable):
     AUDIO_PREFIX = SpaceVoice.BATTLESHIP
     KEY_COLLECT_FX = nn.FX_GOT_KEY_BATTLESHIP
+    RU_FIRST_DESCRIPTION = descriptions_ru.HACKABLE_LUXURY
 
 
 class LockedBattleship(Station):
@@ -1486,6 +1528,7 @@ class LockedBattleship(Station):
     DEFENCE_LEVEL = None
     BASE_PROPS = meta.LockedBattleship()
     KEY_COLLECT_FX = nn.FX_GOT_KEY_BATTLESHIP
+    RU_FIRST_DESCRIPTION = descriptions_ru.BATTLESHIP_LOCKED
 
 
 class PatrolObjective(SystemObject):
