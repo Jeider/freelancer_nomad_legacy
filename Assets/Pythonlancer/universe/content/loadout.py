@@ -158,7 +158,11 @@ class SingleAttachedItemLoadout(Loadout):
         self.fill_loadout()
 
     def fill_loadout(self):
-        self.loadout.add_equip(
+        self.loadout.add_cargo(
             self.equip_item,
+            1,
+        )
+        self.loadout.add_equip(
+            'key_marker',
             self.hardpoint,
         )
