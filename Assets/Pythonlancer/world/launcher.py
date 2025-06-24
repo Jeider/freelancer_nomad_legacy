@@ -698,7 +698,7 @@ class ShieldMissile(Missile):
 
 class CruiseDisruptor(Missile):
     WEAPON_CODE = CD_MISSILE
-    RU_KIND = 'Блокиратор'
+    RU_KIND = 'Блокир.'
     RU_BASE_INFO = 'Легкая ракета, способная перехватывать вражеские ракеты и нейтрализовывать круизные двигатели вражеских кораблей'
     MAX_PRICE = 80000
     MAX_AMMO_PRICE = 2500
