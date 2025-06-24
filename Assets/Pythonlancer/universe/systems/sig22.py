@@ -188,6 +188,12 @@ class Sig22OldOutpostRuinsSuprisePoint(Sig22Member, Sig22Liberty, main_objects.H
     HACKABLE_SOLAR_CLASS = hackable.HackableFreeport7Dock
     INTERIOR_CLASS = interior.EquipDeckInterior
     RU_NAME = 'Стыковочный узел фрипорта 4'
+    MISC_EQUIP_TYPE = LI_CIV
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(CD_MISSILE, eq_classes=markets.MISSILE),
+        Q.Shield(LI_CIV, eq_classes=markets.SECRET3),
+    )
 
 
 class Sig22BattleshipRuins1(Sig22Member, Sig22Liberty, main_objects.HackableBattleship):
@@ -201,6 +207,12 @@ class Sig22BattleshipRuins1(Sig22Member, Sig22Liberty, main_objects.HackableBatt
     ASTEROID_ZONES = [
         Sig22AsteroidZone2,
     ]
+    MISC_EQUIP_TYPE = LI_PIRATE
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('li_lightgun', eq_classes=markets.SECRET3),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET3),
+    )
 
 
 class Sig22BattleshipRuins2(Sig22Bretonia, Sig22Member, main_objects.HackableBattleship):
@@ -214,6 +226,12 @@ class Sig22BattleshipRuins2(Sig22Bretonia, Sig22Member, main_objects.HackableBat
     ASTEROID_ZONES = [
         Sig22AsteroidZone2,
     ]
+    MISC_EQUIP_TYPE = BR_PIRATE
+    WEAPON_FACTION = WEAPON_BR
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MAIN_MISSILE, eq_classes=markets.MISSILE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET3),
+    )
 
 
 class Sig22BattleshipRuins3(Sig22Bretonia, Sig22Member, main_objects.HackableBattleship):
@@ -227,6 +245,12 @@ class Sig22BattleshipRuins3(Sig22Bretonia, Sig22Member, main_objects.HackableBat
     ASTEROID_ZONES = [
         Sig22AsteroidZone2,
     ]
+    MISC_EQUIP_TYPE = BR_PIRATE
+    WEAPON_FACTION = WEAPON_BR
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('br_shieldgun', eq_classes=markets.SECRET2),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET2),
+    )
 
 
 class Sig22BaseAbandonedAst(main_objects.AbandonedAsteroid):
@@ -252,6 +276,12 @@ class Sig22AbandonedAstBase1(Sig22Member, Sig22BaseAbandonedAst):
     ASTEROID_ZONES = [
         Sig22AsteroidZone5,
     ]
+    MISC_EQUIP_TYPE = BR_PIRATE
+    WEAPON_FACTION = WEAPON_BR
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('br_iragun', eq_classes=markets.SECRET2),
+        Q.Engine(None, eq_classes=markets.SECRET2),
+    )
 
 
 class Sig22AbandonedAstBase2(Sig22Member, Sig22BaseAbandonedAst):
@@ -262,6 +292,12 @@ class Sig22AbandonedAstBase2(Sig22Member, Sig22BaseAbandonedAst):
     ASTEROID_ZONES = [
         Sig22AsteroidZone6,
     ]
+    MISC_EQUIP_TYPE = LI_PIRATE
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('li_roguegun', eq_classes=markets.SECRET2),
+        Q.Engine(None, eq_classes=markets.SECRET3),
+    )
 
 
 class Sig22AbandonedAstBase3(Sig22Member, Sig22BaseAbandonedAst):
@@ -272,6 +308,12 @@ class Sig22AbandonedAstBase3(Sig22Member, Sig22BaseAbandonedAst):
     ASTEROID_ZONES = [
         Sig22AsteroidZone7,
     ]
+    MISC_EQUIP_TYPE = LI_PIRATE
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('li_pirategun', eq_classes=markets.SECRET2),
+        Q.Engine(None, eq_classes=markets.SECRET2),
+    )
 
 
 class Sig22UnlockAsteroidReward(Sig22Member, mineable.AsteroidRewardsGroupUltra):

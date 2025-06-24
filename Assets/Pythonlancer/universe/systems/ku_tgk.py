@@ -171,6 +171,12 @@ class TekagiRoidMiner1(TekagiMember, TekagiBaseRoidMiner):
     BASE_INDEX = 61
     ASTEROID_ZONES = [TekagiAsteroidZone2]
     RU_NAME = 'Рудокоп Нагато'
+    MISC_EQUIP_TYPE = KU_MAIN
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_PROF, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET1),
+    )
 
 
 class TekagiRoidMiner2(TekagiMember, TekagiBaseRoidMiner):
@@ -178,6 +184,12 @@ class TekagiRoidMiner2(TekagiMember, TekagiBaseRoidMiner):
     BASE_INDEX = 62
     ASTEROID_ZONES = [TekagiAsteroidZone3]
     RU_NAME = 'Рудокоп Хаги'
+    MISC_EQUIP_TYPE = KU_MAIN
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_PROF, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET2),
+    )
 
 
 class TekagiRoidMiner3(TekagiMember, TekagiBaseRoidMiner):
@@ -185,6 +197,12 @@ class TekagiRoidMiner3(TekagiMember, TekagiBaseRoidMiner):
     BASE_INDEX = 63
     ASTEROID_ZONES = [TekagiAsteroidZone1]
     RU_NAME = 'Рудокоп Хофу'
+    MISC_EQUIP_TYPE = KU_MAIN
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_MIL, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET1),
+    )
 
 
 class TekagiRoidMiner4(TekagiMember, TekagiBaseRoidMiner):
@@ -192,6 +210,12 @@ class TekagiRoidMiner4(TekagiMember, TekagiBaseRoidMiner):
     BASE_INDEX = 64
     ASTEROID_ZONES = [TekagiAsteroidZone1]
     RU_NAME = 'Рудокоп Масуда'
+    MISC_EQUIP_TYPE = KU_MAIN
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_PROF, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET3),
+    )
 
 
 class TekagiRoidMiner5(TekagiMember, TekagiBaseRoidMiner):
@@ -199,6 +223,12 @@ class TekagiRoidMiner5(TekagiMember, TekagiBaseRoidMiner):
     BASE_INDEX = 65
     ASTEROID_ZONES = [TekagiAsteroidZone4]
     RU_NAME = 'Рудокоп Хамада'
+    MISC_EQUIP_TYPE = KU_MAIN
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_PROF, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET1),
+    )
 
 
 class TekagiRoidMiner6(TekagiMember, TekagiBaseRoidMiner):
@@ -206,6 +236,12 @@ class TekagiRoidMiner6(TekagiMember, TekagiBaseRoidMiner):
     BASE_INDEX = 66
     ASTEROID_ZONES = [TekagiAsteroidZone2]
     RU_NAME = 'Рудокоп Ода'
+    MISC_EQUIP_TYPE = KU_MAIN
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_PROF, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET2),
+    )
 
 
 class TekagiRoidMiner7(TekagiMember, TekagiBaseRoidMiner):
@@ -213,6 +249,12 @@ class TekagiRoidMiner7(TekagiMember, TekagiBaseRoidMiner):
     BASE_INDEX = 67
     ASTEROID_ZONES = [TekagiAsteroidZone5]
     RU_NAME = 'Рудокоп Идзумо'
+    MISC_EQUIP_TYPE = KU_MAIN
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_MIL, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET3),
+    )
 
 
 class TekagiRoidMiner8(TekagiMember, TekagiBaseRoidMiner):
@@ -220,6 +262,12 @@ class TekagiRoidMiner8(TekagiMember, TekagiBaseRoidMiner):
     BASE_INDEX = 68
     ASTEROID_ZONES = [TekagiAsteroidZone9]
     RU_NAME = 'Рудокоп Сакаиманато'
+    MISC_EQUIP_TYPE = KU_MAIN
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_PROF, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET1),
+    )
 
 
 class TekagiRoidMiner9(TekagiMember, TekagiBaseRoidMiner):
@@ -227,6 +275,12 @@ class TekagiRoidMiner9(TekagiMember, TekagiBaseRoidMiner):
     BASE_INDEX = 69
     ASTEROID_ZONES = [TekagiAsteroidZone8]
     RU_NAME = 'Рудокоп Йонаго'
+    MISC_EQUIP_TYPE = KU_MAIN
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_MIL, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET2),
+    )
 
 
 class TekagiRoidMiner10(TekagiMember, TekagiBaseRoidMiner):
@@ -234,6 +288,12 @@ class TekagiRoidMiner10(TekagiMember, TekagiBaseRoidMiner):
     BASE_INDEX = 70
     ASTEROID_ZONES = [TekagiAsteroidZone8]
     RU_NAME = 'Рудокоп Нитинан'
+    MISC_EQUIP_TYPE = KU_MAIN
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_PROF, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET1),
+    )
 
 
 class TekagiGoldAsteroidReward(TekagiMember, mineable.AsteroidRewardsGroupUltra):
@@ -430,6 +490,13 @@ class TekagiRuinsDropPoint1(TekagiMember, main_objects.HackableStation):
     INTERIOR_CLASS = interior.EquipDeckInterior
     RU_NAME = 'Тюремный блок 1 Формозы'
 
+    MISC_EQUIP_TYPE = KU_MAIN
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(SHIELD_MISSILE, eq_classes=markets.MISSILE),
+        Q.Shield(None, eq_classes=markets.SECRET3),
+    )
+
 
 class TekagiRuinsDropPoint2(TekagiMember, main_objects.HackableStation):
     ALIAS = 'ruins_dock'
@@ -440,6 +507,13 @@ class TekagiRuinsDropPoint2(TekagiMember, main_objects.HackableStation):
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpostRot90
     INTERIOR_CLASS = interior.EquipDeckInterior
     RU_NAME = 'Тюремный блок 2 Формозы'
+
+    MISC_EQUIP_TYPE = KU_MAIN
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('ku_shieldgun', eq_classes=markets.SECRET3),
+        Q.Shield(None, eq_classes=markets.SECRET2),
+    )
 
 
 class TekagiVirtualDepot(TekagiMember, main_objects.VirtualDepot):

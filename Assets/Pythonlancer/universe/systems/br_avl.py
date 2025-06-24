@@ -126,6 +126,11 @@ class AvalDebrisFactory1(AvalMember, AvalBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Стокпорт'
+    MISC_EQUIP_TYPE = BR_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(BR_CIV, eq_classes=markets.SECRET2),
+        Q.Power(BR_MAIN, eq_classes=markets.SECRET3),
+    )
 
 
 class AvalDebrisFactory2(AvalMember, AvalBaseDebrisManufactoring):
@@ -136,6 +141,11 @@ class AvalDebrisFactory2(AvalMember, AvalBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Олдем'
+    MISC_EQUIP_TYPE = BR_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(BR_CIV, eq_classes=markets.SECRET3),
+        Q.Power(BR_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class AvalDebrisBoxReward(AvalMember, mineable.DefaultDebrisBoxRewardsGroup):
@@ -224,6 +234,11 @@ class AvalSolarPlant1(AvalMember, AvalBaseSolarPlant):
         AvalSolarMinesZone1,
     ]
     RU_NAME = 'Солн.генератор Тидворт'
+    MISC_EQUIP_TYPE = BR_PIRATE
+    EQUIP_SET = markets.EquipSet(
+        Q.Power(BR_CIV, eq_classes=markets.SECRET3),
+        Q.Shield(BR_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class AvalSolarPlant2(AvalMember, AvalBaseSolarPlant):
@@ -233,6 +248,11 @@ class AvalSolarPlant2(AvalMember, AvalBaseSolarPlant):
         AvalSolarMinesZone2,
     ]
     RU_NAME = 'Солн.генератор Льюис'
+    MISC_EQUIP_TYPE = BR_PIRATE
+    EQUIP_SET = markets.EquipSet(
+        Q.Power(BR_CIV, eq_classes=markets.SECRET2),
+        Q.Shield(BR_PIRATE, eq_classes=markets.SECRET3),
+    )
 
 
 class AvalSolarPlant3(AvalMember, AvalBaseSolarPlant):
@@ -242,6 +262,11 @@ class AvalSolarPlant3(AvalMember, AvalBaseSolarPlant):
         AvalSolarMinesZone3,
     ]
     RU_NAME = 'Солн.генератор Харлоу'
+    MISC_EQUIP_TYPE = BR_PIRATE
+    EQUIP_SET = markets.EquipSet(
+        Q.Power(BR_PIRATE, eq_classes=markets.SECRET2),
+        Q.Shield(BR_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class AvalSolarPlant4(AvalMember, AvalBaseSolarPlant):
@@ -251,6 +276,11 @@ class AvalSolarPlant4(AvalMember, AvalBaseSolarPlant):
         AvalSolarMinesZone4,
     ]
     RU_NAME = 'Солн.генератор Челси'
+    MISC_EQUIP_TYPE = BR_PIRATE
+    EQUIP_SET = markets.EquipSet(
+        Q.Power(BR_CIV, eq_classes=markets.SECRET2),
+        Q.Shield(BR_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class AvalSolarPlant5(AvalMember, AvalBaseSolarPlant):
@@ -260,6 +290,11 @@ class AvalSolarPlant5(AvalMember, AvalBaseSolarPlant):
         AvalSolarMinesZone5,
     ]
     RU_NAME = 'Солн.генератор Вейбридж'
+    MISC_EQUIP_TYPE = BR_PIRATE
+    EQUIP_SET = markets.EquipSet(
+        Q.Power(BR_CIV, eq_classes=markets.SECRET3),
+        Q.Shield(BR_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class AvalSolarSupriseRewards(AvalMember, mineable.DefaultSupriseRewardsGroup):
@@ -361,6 +396,12 @@ class AvalAbandonedAstBase1(AvalMember, AvalBaseAbandonedAst):
         AvalAsteroidZone1,
     ]
     RU_NAME = 'База Илинг'
+    MISC_EQUIP_TYPE = BR_PIRATE
+    WEAPON_FACTION = WEAPON_BR
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('br_xenosgun', eq_classes=markets.SECRET2),
+        Q.Engine(None, eq_classes=markets.SECRET2),
+    )
 
 
 class AvalAbandonedAstBase2(AvalMember, AvalBaseAbandonedAst):
@@ -371,6 +412,12 @@ class AvalAbandonedAstBase2(AvalMember, AvalBaseAbandonedAst):
         AvalAsteroidZone2,
     ]
     RU_NAME = 'База Вулидж'
+    MISC_EQUIP_TYPE = BR_PIRATE
+    WEAPON_FACTION = WEAPON_BR
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('br_iragun', eq_classes=markets.SECRET2),
+        Q.Engine(None, eq_classes=markets.SECRET1),
+    )
 
 
 class AvalUnlockAsteroidReward(AvalMember, mineable.AsteroidRewardsGroupUltra):

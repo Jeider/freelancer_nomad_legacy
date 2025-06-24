@@ -474,54 +474,90 @@ class Sig13GasMiner1(Sig13Member, Sig13BaseRheinlandGasMiner):
     INDEX = 1
     BASE_INDEX = 51
     RU_NAME = 'Газодобытчик Оснабрюк'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM3),
+        Q.Thruster(RH_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Sig13GasMiner2(Sig13Member, Sig13BaseRheinlandGasMiner):
     INDEX = 2
     BASE_INDEX = 52
     RU_NAME = 'Газодобытчик Эбербах'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM2),
+        Q.Thruster(RH_MAIN, eq_classes=markets.SECRET3),
+    )
 
 
 class Sig13GasMiner3(Sig13Member, Sig13BaseLibertyGasMiner):
     INDEX = 3
     BASE_INDEX = 53
     RU_NAME = 'Газодобытчик Медфорд'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM3),
+        Q.Thruster(LI_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Sig13GasMiner4(Sig13Member, Sig13BaseRheinlandGasMiner):
     INDEX = 4
     BASE_INDEX = 54
     RU_NAME = 'Газодобытчик Ландау'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM2),
+        Q.Thruster(RH_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Sig13GasMiner5(Sig13Member, Sig13BaseRheinlandGasMiner):
     INDEX = 5
     BASE_INDEX = 55
     RU_NAME = 'Газодобытчик Логан'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM3),
+        Q.Thruster(RH_MAIN, eq_classes=markets.SECRET1),
+    )
 
 
 class Sig13GasMiner6(Sig13Member, Sig13BaseRheinlandGasMiner):
     INDEX = 6
     BASE_INDEX = 56
     RU_NAME = 'Газодобытчик Вормс'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM2),
+        Q.Thruster(RH_MAIN, eq_classes=markets.SECRET3),
+    )
 
 
 class Sig13GasMiner7(Sig13Member, Sig13BaseLibertyGasMiner):
     INDEX = 7
     BASE_INDEX = 57
     RU_NAME = 'Газодобытчик Дикинсон'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM3),
+        Q.Thruster(LI_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Sig13GasMiner8(Sig13Member, Sig13BaseLibertyGasMiner):
     INDEX = 8
     BASE_INDEX = 58
     RU_NAME = 'Газодобытчик Каспер'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM2),
+        Q.Thruster(LI_MAIN, eq_classes=markets.SECRET3),
+    )
 
 
 class Sig13GasMiner9(Sig13Member, Sig13BaseLibertyGasMiner):
     INDEX = 9
     BASE_INDEX = 59
     RU_NAME = 'Газодобытчик Уичито'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM3),
+        Q.Thruster(LI_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Sig13SimpleCrystalRewards(Sig13Member, mineable.DefaultGasCrystalRewardsGroup):
@@ -610,6 +646,11 @@ class Sig13AbandonedMiner1(Sig13Member, Sig13Rheinland, Sig13BaseAbandonedMiner)
         Sig13GasPocketsZone1
     ]
     RU_NAME = 'База Лайбах'
+    MISC_EQUIP_TYPE = RH_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('rh_lightgun', eq_classes=markets.SECRET1),
+        Q.Engine(RH_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Sig13AbandonedMiner2(Sig13Member, Sig13Rheinland, Sig13BaseAbandonedMiner):
@@ -619,6 +660,11 @@ class Sig13AbandonedMiner2(Sig13Member, Sig13Rheinland, Sig13BaseAbandonedMiner)
         Sig13GasPocketsZone2
     ]
     RU_NAME = 'База Лемберг'
+    MISC_EQUIP_TYPE = RH_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('rh_heavygun', eq_classes=markets.SECRET2),
+        Q.Engine(RH_MAIN, eq_classes=markets.SECRET3),
+    )
 
 
 class Sig13AbandonedMiner3(Sig13Liberty, Sig13Member, Sig13BaseAbandonedMiner):
@@ -628,6 +674,11 @@ class Sig13AbandonedMiner3(Sig13Liberty, Sig13Member, Sig13BaseAbandonedMiner):
         Sig13GasPocketsZone3
     ]
     RU_NAME = 'База Монтана'
+    MISC_EQUIP_TYPE = LI_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('li_heavygun', eq_classes=markets.SECRET2),
+        Q.Engine(LI_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Sig13ComplexCrystalRewards(Sig13Member, mineable.DefaultGasCrystalRewardsGroup):

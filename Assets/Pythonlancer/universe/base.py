@@ -11,7 +11,8 @@ from universe.content.character import Char
 from universe.content import meta
 from universe.content.main_objects import (
     Jumpgate, DockableObject, RoidMiner, GasMinerOld, DebrisManufactoring, SolarPlant, HackableSolarPlant,
-    AbandonedAsteroid, AbandonedAsteroidIce, StationRuins, HackableBattleship, LockedBattleship, HackableLuxury
+    AbandonedAsteroid, AbandonedAsteroidIce, StationRuins, HackableBattleship, LockedBattleship, HackableLuxury,
+    LockedLuxury
 )
 
 from text.dividers import SINGLE_DIVIDER
@@ -438,6 +439,8 @@ class Base:
             return self.msg.journey_battleship_locked(dockable)
         if issubclass(dockable.__class__, HackableBattleship):
             return self.msg.journey_battleship_hackable(dockable)
+        if issubclass(dockable.__class__, LockedLuxury):
+            return self.msg.journey_luxury_locked(dockable)
         if issubclass(dockable.__class__, HackableLuxury):
             return self.msg.journey_luxury(dockable)
 

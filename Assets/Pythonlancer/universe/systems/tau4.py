@@ -111,6 +111,12 @@ class Tau4AbandonedAstBase1(Tau4Member, main_objects.AbandonedAsteroid):
         'spacedust': Dust.ASTEROID,
         'spacedust_maxparticles': 200,
     }
+    MISC_EQUIP_TYPE = KU_PIRATE
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('ku_pirategun', eq_classes=markets.SECRET3),
+        Q.Engine(None, eq_classes=markets.SECRET2),
+    )
 
 
 class Tau4AsteroidReward(Tau4Member, mineable.AsteroidRewardsGroupUltra):
@@ -180,7 +186,7 @@ WHITE_EXCLUSION_PARAMS = {
 }
 
 
-class Tau4BasePrisonLiner(main_objects.LockedBattleship):
+class Tau4BasePrisonLiner(main_objects.LockedLuxury):
     ALIAS = 'prison_liner'
     ROTATE_RANDOM = True
     ARCHETYPE = 'suprise_prison_liner'
@@ -221,6 +227,12 @@ class Tau4PrisonLiner1(Tau4Member, Tau4BasePrisonLiner):
         Tau4PrisonLinerMinesZone1,
     ]
     RU_NAME = 'Тюремный лайнер Такасэбунэ'
+    MISC_EQUIP_TYPE = KU_PIRATE
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(FAST_MISSILE, eq_classes=markets.MISSILE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET3),
+    )
 
 
 class Tau4PrisonLiner2(Tau4Member, Tau4BasePrisonLiner):
@@ -230,6 +242,12 @@ class Tau4PrisonLiner2(Tau4Member, Tau4BasePrisonLiner):
         Tau4PrisonLinerMinesZone2,
     ]
     RU_NAME = 'Тюремный лайнер Сюинсэн'
+    MISC_EQUIP_TYPE = KU_PIRATE
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('ku_huntergun', eq_classes=markets.SECRET3),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET2),
+    )
 
 
 class Tau4LinerSupriseRewards(Tau4Member, mineable.DefaultSupriseRewardsGroup):
@@ -385,6 +403,13 @@ class Tau4BattleshipRuins1(Tau4Member, main_objects.HackableBattleship):
     INTERIOR_CLASS = interior.EquipDeckInterior
     RU_NAME = 'Линкор Ямато'
 
+    MISC_EQUIP_TYPE = KU_PIRATE
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(FAST_MISSILE, eq_classes=markets.MISSILE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET1),
+    )
+
 
 class Tau4LuxuryRuins1(Tau4Member, main_objects.HackableLuxury):
     ALIAS = 'luxury'
@@ -394,6 +419,13 @@ class Tau4LuxuryRuins1(Tau4Member, main_objects.HackableLuxury):
     HACKABLE_SOLAR_CLASS = hackable.HackableLuxuryLiner
     INTERIOR_CLASS = interior.EquipDeckInterior
     RU_NAME = 'Круизный лайнер Филиппины'
+
+    MISC_EQUIP_TYPE = KU_PIRATE
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('ku_civgun', eq_classes=markets.SECRET3),
+        Q.Engine(None, eq_classes=markets.SECRET3),
+    )
 
 
 class Tau4StationConn1(Tau4Member, main_objects.TradeConnection):

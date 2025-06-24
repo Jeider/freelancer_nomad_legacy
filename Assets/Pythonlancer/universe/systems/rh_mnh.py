@@ -388,6 +388,12 @@ class MunchCivilianStationDropPoint1(MunchMember, main_objects.HackableStation):
     INTERIOR_CLASS = interior.EquipDeckInterior
 
     RU_NAME = 'Стыковочный узел 1 Мюнхена'
+    MISC_EQUIP_TYPE = RH_CIV
+    WEAPON_FACTION = WEAPON_RH
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('rh_civgun', eq_classes=markets.SECRET2),
+        Q.Shield(RH_CIV, eq_classes=markets.SECRET3),
+    )
 
 
 class MunchCivilianStationDropPoint2(MunchMember, main_objects.HackableStation):
@@ -400,6 +406,12 @@ class MunchCivilianStationDropPoint2(MunchMember, main_objects.HackableStation):
     INTERIOR_CLASS = interior.EquipDeckInterior
 
     RU_NAME = 'Стыковочный узел 2 Мюнхена'
+    MISC_EQUIP_TYPE = RH_CIV
+    WEAPON_FACTION = WEAPON_RH
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('rh_huntergun', eq_classes=markets.SECRET2),
+        Q.Shield(RH_CIV, eq_classes=markets.SECRET2),
+    )
 
 
 class MunchBattleStationRuins(MunchMember, main_objects.StationRuins):

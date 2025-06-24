@@ -143,6 +143,11 @@ class StutDebrisFactory1(StutMember, StutBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Гейдельберг'
+    MISC_EQUIP_TYPE = RH_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(RH_PIRATE, eq_classes=markets.SECRET3),
+        Q.Power(RH_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class StutDebrisFactory2(StutMember, StutBaseDebrisManufactoring):
@@ -153,6 +158,11 @@ class StutDebrisFactory2(StutMember, StutBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Неандерталь'
+    MISC_EQUIP_TYPE = RH_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(RH_CIV, eq_classes=markets.SECRET2),
+        Q.Power(RH_MAIN, eq_classes=markets.SECRET3),
+    )
 
 
 class StutDebrisBoxReward(StutMember, mineable.DefaultDebrisBoxRewardsGroup):
@@ -241,6 +251,11 @@ class StutSolarPlant1(StutMember, StutBaseSolarPlant):
         StutSolarMinesZone1,
     ]
     RU_NAME = 'Солн.генератор Тюбинген'
+    MISC_EQUIP_TYPE = RH_PIRATE
+    EQUIP_SET = markets.EquipSet(
+        Q.Power(RH_CIV, eq_classes=markets.SECRET3),
+        Q.Shield(RH_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class StutSolarPlant2(StutMember, StutBaseSolarPlant):
@@ -250,6 +265,11 @@ class StutSolarPlant2(StutMember, StutBaseSolarPlant):
         StutSolarMinesZone2,
     ]
     RU_NAME = 'Солн.генератор Хейльбронн'
+    MISC_EQUIP_TYPE = RH_PIRATE
+    EQUIP_SET = markets.EquipSet(
+        Q.Power(RH_CIV, eq_classes=markets.SECRET2),
+        Q.Shield(RH_PIRATE, eq_classes=markets.SECRET3),
+    )
 
 
 class StutSolarPlant3(StutMember, StutBaseSolarPlant):
@@ -259,6 +279,11 @@ class StutSolarPlant3(StutMember, StutBaseSolarPlant):
         StutSolarMinesZone3,
     ]
     RU_NAME = 'Солн.генератор Кобленц'
+    MISC_EQUIP_TYPE = RH_PIRATE
+    EQUIP_SET = markets.EquipSet(
+        Q.Power(RH_PIRATE, eq_classes=markets.SECRET2),
+        Q.Shield(RH_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class StutSolarPlant4(StutMember, StutBaseSolarPlant):
@@ -268,6 +293,11 @@ class StutSolarPlant4(StutMember, StutBaseSolarPlant):
         StutSolarMinesZone4,
     ]
     RU_NAME = 'Солн.генератор Хамм'
+    MISC_EQUIP_TYPE = RH_PIRATE
+    EQUIP_SET = markets.EquipSet(
+        Q.Power(RH_CIV, eq_classes=markets.SECRET2),
+        Q.Shield(RH_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class StutSolarPlant5(StutMember, StutBaseSolarPlant):
@@ -277,6 +307,11 @@ class StutSolarPlant5(StutMember, StutBaseSolarPlant):
         StutSolarMinesZone5,
     ]
     RU_NAME = 'Солн.генератор Кассель'
+    MISC_EQUIP_TYPE = RH_PIRATE
+    EQUIP_SET = markets.EquipSet(
+        Q.Power(RH_CIV, eq_classes=markets.SECRET3),
+        Q.Shield(RH_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class StutSolarSupriseRewards(StutMember, mineable.DefaultSupriseRewardsGroup):
@@ -487,14 +522,14 @@ class StutPlanet3(StutMember, main_objects.Planet):
     INDEX = 3
     ARCHETYPE = 'planet_ice_grey_2000'
     SPHERE_RADIUS = 2000
-    RU_NAME = 'Планета '
+    RU_NAME = 'Планета Вюртемберг'
 
 
 class StutPoliceConn1(StutMember, main_objects.TradeConnection):
     OBJ_FROM = StutPoliceOutpost
     OBJ_TO = StutOmega7Jumpgate
-    SIDE_FROM = LEFT
-    SIDE_TO = RIGHT
+    SIDE_FROM = RIGHT
+    SIDE_TO = LEFT
     TRADELANE_LETTER = 'A'
     HUNTER_DEFENCE_REL = TOP
     ATTACKED_BY = [

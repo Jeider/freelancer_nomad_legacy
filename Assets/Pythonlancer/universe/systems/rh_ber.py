@@ -178,6 +178,11 @@ class BerlinDebrisFactory1(BerlinMember, BerlinBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Путлиц'
+    MISC_EQUIP_TYPE = RH_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(RH_CIV, eq_classes=markets.SECRET3),
+        Q.Power(RH_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class BerlinDebrisFactory2(BerlinMember, BerlinBaseDebrisManufactoring):
@@ -188,6 +193,11 @@ class BerlinDebrisFactory2(BerlinMember, BerlinBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Рёбель'
+    MISC_EQUIP_TYPE = RH_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(RH_CIV, eq_classes=markets.SECRET2),
+        Q.Power(RH_MAIN, eq_classes=markets.SECRET3),
+    )
 
 
 class BerlinDebrisFactory3(BerlinMember, BerlinBaseDebrisManufactoring):
@@ -198,6 +208,11 @@ class BerlinDebrisFactory3(BerlinMember, BerlinBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Лёц'
+    MISC_EQUIP_TYPE = RH_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(RH_PIRATE, eq_classes=markets.SECRET2),
+        Q.Power(RH_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class BerlinDebrisBoxReward(BerlinMember, mineable.DefaultDebrisBoxRewardsGroup):

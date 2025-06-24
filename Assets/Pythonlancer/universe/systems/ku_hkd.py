@@ -188,6 +188,11 @@ class HokkDebrisFactory1(HokkMember, HokkBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Кусиро'
+    MISC_EQUIP_TYPE = KU_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(KU_CIV, eq_classes=markets.SECRET3),
+        Q.Power(KU_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class HokkDebrisFactory2(HokkMember, HokkBaseDebrisManufactoring):
@@ -198,6 +203,11 @@ class HokkDebrisFactory2(HokkMember, HokkBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Отару'
+    MISC_EQUIP_TYPE = KU_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(KU_CIV, eq_classes=markets.SECRET2),
+        Q.Power(KU_PIRATE, eq_classes=markets.SECRET3),
+    )
 
 
 class HokkDebrisFactory3(HokkMember, HokkBaseDebrisManufactoring):
@@ -208,6 +218,11 @@ class HokkDebrisFactory3(HokkMember, HokkBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Тоётоми'
+    MISC_EQUIP_TYPE = KU_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(KU_PIRATE, eq_classes=markets.SECRET2),
+        Q.Power(KU_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class HokkDebrisFactory4(HokkMember, HokkBaseDebrisManufactoring):
@@ -218,6 +233,11 @@ class HokkDebrisFactory4(HokkMember, HokkBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Немуро'
+    MISC_EQUIP_TYPE = KU_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(KU_PIRATE, eq_classes=markets.SECRET3),
+        Q.Power(KU_PIRATE, eq_classes=markets.SECRET3),
+    )
 
 
 class HokkDebrisBoxReward(HokkMember, mineable.DefaultDebrisBoxRewardsGroup):
@@ -295,6 +315,12 @@ class HokkAbandonedAstBase1(HokkMember, main_objects.AbandonedAsteroid):
     ]
     EXCLUSION_PARAMS = BARRIER_EXCLUSION_PARAMS
     RU_NAME = 'База Хакодате'
+    MISC_EQUIP_TYPE = KU_PIRATE
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('ku_dragongun', eq_classes=markets.SECRET2),
+        Q.Engine(None, eq_classes=markets.SECRET2),
+    )
 
 
 class HokkAsteroidReward(HokkMember, mineable.AsteroidRewardsGroupUltra):
@@ -482,6 +508,13 @@ class HokkOldReserachRuinsSuprisePoint1(HokkMember, main_objects.HackableStation
     INTERIOR_CLASS = interior.EquipDeckInterior
     RU_NAME = 'Исслед.блок 1 Фукусимы'
 
+    MISC_EQUIP_TYPE = KU_MAIN
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MAIN_SUPER_MISSILE, eq_classes=markets.MISSILE),
+        Q.Power(None, eq_classes=markets.SECRET2),
+    )
+
 
 class HokkOldReserachRuinsSuprisePoint2(HokkMember, main_objects.HackableStation):
     ALIAS = 'ruins_dock'
@@ -492,6 +525,13 @@ class HokkOldReserachRuinsSuprisePoint2(HokkMember, main_objects.HackableStation
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpostRot90
     INTERIOR_CLASS = interior.EquipDeckInterior
     RU_NAME = 'Исслед.блок 2 Фукусимы'
+
+    MISC_EQUIP_TYPE = KU_MAIN
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(CD_MISSILE, eq_classes=markets.MISSILE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET2),
+    )
 
 
 class HokkNebulaPirates(HokkMember, main_objects.PirateStation):

@@ -198,6 +198,12 @@ class Sig17AbandonedAstBase1(Sig17Member, main_objects.AbandonedAsteroid):
         'spacedust': Dust.ASTEROID,
         'spacedust_maxparticles': 200,
     }
+    MISC_EQUIP_TYPE = LI_PIRATE
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('li_starlinegun', eq_classes=markets.SECRET2),
+        Q.Engine(None, eq_classes=markets.SECRET2),
+    )
 
 
 class Sig17AsteroidReward(Sig17Member, mineable.AsteroidRewardsGroupUltra):
@@ -405,6 +411,12 @@ class Sig17FreeportSevenRuins1(Sig17Member, main_objects.HackableStation):
     INTERIOR_CLASS = interior.EquipDeckInterior
 
     RU_NAME = 'Стыковочный узел 1 Фрипорта 7'
+    MISC_EQUIP_TYPE = LI_CIV
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('li_shieldgun', eq_classes=markets.SECRET2),
+        Q.Shield(LI_CIV, eq_classes=markets.SECRET3),
+    )
 
 
 class Sig17FreeportSevenRuin2(Sig17Member, main_objects.HackableStation):
@@ -417,6 +429,12 @@ class Sig17FreeportSevenRuin2(Sig17Member, main_objects.HackableStation):
     INTERIOR_CLASS = interior.EquipDeckInterior
 
     RU_NAME = 'Стыковочный узел 2 Фрипорта 7'
+    MISC_EQUIP_TYPE = LI_CIV
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(CD_MISSILE, eq_classes=markets.MISSILE),
+        Q.Shield(LI_PIRATE, eq_classes=markets.SECRET3),
+    )
 
 
 class Sig17EdgeNebulaPirates(Sig17Member, main_objects.PirateAsteroid):
@@ -475,6 +493,12 @@ class Sig17LuxuryRuins1(Sig17Member, main_objects.HackableLuxury):
     INTERIOR_CLASS = interior.EquipDeckInterior
 
     RU_NAME = 'Круизный лайнер Атлантика'
+    MISC_EQUIP_TYPE = LI_CIV
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('li_civgun', eq_classes=markets.SECRET3),
+        Q.Engine(LI_PIRATE, eq_classes=markets.SECRET3),
+    )
 
 
 class Sig17Planet1(Sig17Member, main_objects.Planet):

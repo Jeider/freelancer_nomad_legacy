@@ -423,60 +423,100 @@ class Tau23GasMiner1(Tau23Member, Tau23BaseBretoniaGasMiner):
     INDEX = 1
     BASE_INDEX = 51
     RU_NAME = 'Газодобытчик Эссингтон'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM2),
+        Q.Thruster(BR_MAIN, eq_classes=markets.SECRET3),
+    )
 
 
 class Tau23GasMiner2(Tau23Member, Tau23BaseBretoniaGasMiner):
     INDEX = 2
     BASE_INDEX = 52
     RU_NAME = 'Газодобытчик Косфорд'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM2),
+        Q.Thruster(BR_PIRATE, eq_classes=markets.SECRET3),
+    )
 
 
 class Tau23GasMiner3(Tau23Member, Tau23BaseBretoniaGasMiner):
     INDEX = 3
     BASE_INDEX = 53
     RU_NAME = 'Газодобытчик Дорридж'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM2),
+        Q.Thruster(BR_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Tau23GasMiner4(Tau23Member, Tau23BaseBretoniaGasMiner):
     INDEX = 4
     BASE_INDEX = 54
     RU_NAME = 'Газодобытчик Ширли'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM3),
+        Q.Thruster(BR_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class Tau23GasMiner5(Tau23Member, Tau23BaseBretoniaGasMiner):
     INDEX = 5
     BASE_INDEX = 55
     RU_NAME = 'Газодобытчик Одлем'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM2),
+        Q.Thruster(BR_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Tau23GasMiner6(Tau23Member, Tau23BaseKusariGasMiner):
     INDEX = 6
     BASE_INDEX = 56
     RU_NAME = 'Газодобытчик Карацу'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM3),
+        Q.Thruster(KU_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Tau23GasMiner7(Tau23Member, Tau23BaseKusariGasMiner):
     INDEX = 7
     BASE_INDEX = 57
     RU_NAME = 'Газодобытчик Уресино'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM2),
+        Q.Thruster(KU_MAIN, eq_classes=markets.SECRET3),
+    )
 
 
 class Tau23GasMiner8(Tau23Member, Tau23BaseKusariGasMiner):
     INDEX = 8
     BASE_INDEX = 58
     RU_NAME = 'Газодобытчик Тамана'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM3),
+        Q.Thruster(KU_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class Tau23GasMiner9(Tau23Member, Tau23BaseKusariGasMiner):
     INDEX = 9
     BASE_INDEX = 59
     RU_NAME = 'Газодобытчик Такета'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM2),
+        Q.Thruster(KU_PIRATE, eq_classes=markets.SECRET3),
+    )
 
 
 class Tau23GasMiner10(Tau23Member, Tau23BaseKusariGasMiner):
     INDEX = 9
     BASE_INDEX = 60
     RU_NAME = 'Газодобытчик Ямага'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM3),
+        Q.Thruster(KU_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Tau23SimpleCrystalRewards(Tau23Member, mineable.DefaultGasCrystalRewardsGroup):
@@ -571,6 +611,11 @@ class Tau23AbandonedMiner1(Tau23Member, Tau23Bretonia, Tau23BaseAbandonedMiner):
         Tau23GasPocketsZone1
     ]
     RU_NAME = 'База Айкос'
+    MISC_EQUIP_TYPE = BR_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('br_heavygun', eq_classes=markets.SECRET2),
+        Q.Engine(BR_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Tau23AbandonedMiner2(Tau23Member, Tau23Bretonia, Tau23BaseAbandonedMiner):
@@ -580,6 +625,11 @@ class Tau23AbandonedMiner2(Tau23Member, Tau23Bretonia, Tau23BaseAbandonedMiner):
         Tau23GasPocketsZone2
     ]
     RU_NAME = 'База Теркс'
+    MISC_EQUIP_TYPE = BR_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('br_lightgun', eq_classes=markets.SECRET2),
+        Q.Engine(BR_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Tau23AbandonedMiner3(Tau23Kusari, Tau23Member, Tau23BaseAbandonedMiner):
@@ -589,6 +639,11 @@ class Tau23AbandonedMiner3(Tau23Kusari, Tau23Member, Tau23BaseAbandonedMiner):
         Tau23GasPocketsZone3
     ]
     RU_NAME = 'База Наха'
+    MISC_EQUIP_TYPE = KU_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('ku_heavygun', eq_classes=markets.SECRET2),
+        Q.Engine(KU_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Tau23ComplexCrystalRewards(Tau23Member, mineable.DefaultGasCrystalRewardsGroup):

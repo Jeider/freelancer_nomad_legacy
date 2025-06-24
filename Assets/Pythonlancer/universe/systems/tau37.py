@@ -184,6 +184,12 @@ class Tau37RoidMiner1(Tau37Member, Tau37BaseRoidMiner):
     ASTEROID_ZONES = [Tau37AsteroidZone1]
     NEBULA_ZONES = [Tau37TopNebula]
     RU_NAME = 'Рудокоп Нефин'
+    MISC_EQUIP_TYPE = BR_MAIN
+    WEAPON_FACTION = WEAPON_BR
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_PROF, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET1),
+    )
 
 
 class Tau37RoidMiner2(Tau37Member, Tau37BaseRoidMiner):
@@ -192,6 +198,12 @@ class Tau37RoidMiner2(Tau37Member, Tau37BaseRoidMiner):
     ASTEROID_ZONES = [Tau37AsteroidZone1]
     NEBULA_ZONES = [Tau37TopNebula]
     RU_NAME = 'Рудокоп Бангор'
+    MISC_EQUIP_TYPE = BR_MAIN
+    WEAPON_FACTION = WEAPON_BR
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_MIL, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET2),
+    )
 
 
 class Tau37RoidMiner3(Tau37Member, Tau37BaseRoidMiner):
@@ -200,6 +212,12 @@ class Tau37RoidMiner3(Tau37Member, Tau37BaseRoidMiner):
     ASTEROID_ZONES = [Tau37AsteroidZone1]
     NEBULA_ZONES = [Tau37TopNebula]
     RU_NAME = 'Рудокоп Грисби'
+    MISC_EQUIP_TYPE = BR_MAIN
+    WEAPON_FACTION = WEAPON_BR
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_PROF, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET1),
+    )
 
 
 class Tau37RoidMiner4(Tau37Member, Tau37BaseRoidMiner):
@@ -208,6 +226,12 @@ class Tau37RoidMiner4(Tau37Member, Tau37BaseRoidMiner):
     ASTEROID_ZONES = [Tau37AsteroidZone1]
     NEBULA_ZONES = [Tau37TopNebula]
     RU_NAME = 'Рудокоп Барбридж'
+    MISC_EQUIP_TYPE = BR_MAIN
+    WEAPON_FACTION = WEAPON_BR
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_PROF, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET3),
+    )
 
 
 class Tau37RoidMiner5(Tau37Member, Tau37BaseRoidMiner):
@@ -216,6 +240,12 @@ class Tau37RoidMiner5(Tau37Member, Tau37BaseRoidMiner):
     ASTEROID_ZONES = [Tau37AsteroidZone3]
     NEBULA_ZONES = [Tau37EastNebula]
     RU_NAME = 'Рудокоп Грантем'
+    MISC_EQUIP_TYPE = BR_MAIN
+    WEAPON_FACTION = WEAPON_BR
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_PROF, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET1),
+    )
 
 
 class Tau37RoidMiner6(Tau37Member, Tau37BaseRoidMiner):
@@ -224,6 +254,12 @@ class Tau37RoidMiner6(Tau37Member, Tau37BaseRoidMiner):
     ASTEROID_ZONES = [Tau37AsteroidZone3]
     NEBULA_ZONES = [Tau37EastNebula]
     RU_NAME = 'Рудокоп Кроуленд'
+    MISC_EQUIP_TYPE = BR_MAIN
+    WEAPON_FACTION = WEAPON_BR
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_PROF, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET2),
+    )
 
 
 class Tau37RoidMiner7(Tau37Member, Tau37BaseRoidMiner):
@@ -232,6 +268,12 @@ class Tau37RoidMiner7(Tau37Member, Tau37BaseRoidMiner):
     ASTEROID_ZONES = [Tau37AsteroidZone3]
     NEBULA_ZONES = [Tau37EastNebula]
     RU_NAME = 'Рудокоп Окен'
+    MISC_EQUIP_TYPE = BR_MAIN
+    WEAPON_FACTION = WEAPON_BR
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_MIL, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET3),
+    )
 
 
 class Tau37UraniumAsteroidReward(Tau37Member, mineable.AsteroidRewardsGroupUltra):
@@ -401,6 +443,12 @@ class Tau37DeepNebulaRuinsSuprisePoint(Tau37Member, main_objects.HackableStation
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpost
     INTERIOR_CLASS = interior.EquipDeckInterior
     RU_NAME = 'Стыковочный узел Фолкленда'
+    MISC_EQUIP_TYPE = BR_MAIN
+    WEAPON_FACTION = WEAPON_BR
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MAIN_SUPER_MISSILE, eq_classes=markets.MISSILE),
+        Q.Shield(BR_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Tau37MiningStationConn1(Tau37Member, main_objects.TradeConnection):

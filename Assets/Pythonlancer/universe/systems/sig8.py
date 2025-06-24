@@ -5,6 +5,8 @@ from managers.tools import query as Q
 from world.names import *
 from universe.content import meta
 
+from universe import markets
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -431,6 +433,12 @@ class Sig8OldFreeportRuinsSuprisePoint(Sigma8Member, main_objects.HackableStatio
     INTERIOR_CLASS = interior.EquipDeckInterior
 
     RU_NAME = 'Стыковочный узел Монако'
+    MISC_EQUIP_TYPE = RH_CIV
+    WEAPON_FACTION = WEAPON_RH
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MAIN_SUPER_MISSILE, eq_classes=markets.MISSILE),
+        Q.Shield(RH_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class Sig8BattleshipRuins1(Sigma8Member, main_objects.HackableBattleship):
@@ -445,6 +453,13 @@ class Sig8BattleshipRuins1(Sigma8Member, main_objects.HackableBattleship):
         Sig8AsteroidZone2,
     ]
 
+    MISC_EQUIP_TYPE = RH_PIRATE
+    WEAPON_FACTION = WEAPON_RH
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MAIN_MISSILE, eq_classes=markets.MISSILE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET2),
+    )
+
 
 class Sig8BattleshipRuins2(Sigma8Member, main_objects.HackableBattleship):
     ALIAS = 'ast'
@@ -458,6 +473,13 @@ class Sig8BattleshipRuins2(Sigma8Member, main_objects.HackableBattleship):
         Sig8AsteroidZone3,
     ]
 
+    MISC_EQUIP_TYPE = RH_PIRATE
+    WEAPON_FACTION = WEAPON_RH
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('rh_lightgun', eq_classes=markets.SECRET3),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET3),
+    )
+
 
 class Sig8BattleshipRuins3(Sigma8Member, main_objects.HackableBattleship):
     ALIAS = 'ast'
@@ -470,6 +492,13 @@ class Sig8BattleshipRuins3(Sigma8Member, main_objects.HackableBattleship):
     ASTEROID_ZONES = [
         Sig8AsteroidZone4,
     ]
+
+    MISC_EQUIP_TYPE = RH_PIRATE
+    WEAPON_FACTION = WEAPON_RH
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(TORPEDO_MISSILE, eq_classes=markets.MISSILE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET2),
+    )
 
 
 class Sig8StarkeConn1(Sigma8Member, main_objects.TradeConnection):

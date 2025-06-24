@@ -165,6 +165,11 @@ class ForbesDebrisFactory1(ForbesMember, ForbesBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Канзас'
+    MISC_EQUIP_TYPE = LI_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(LI_CIV, eq_classes=markets.SECRET2),
+        Q.Power(LI_MAIN, eq_classes=markets.SECRET3),
+    )
 
 
 class ForbesDebrisFactory2(ForbesMember, ForbesBaseDebrisManufactoring):
@@ -175,6 +180,11 @@ class ForbesDebrisFactory2(ForbesMember, ForbesBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Конуэй'
+    MISC_EQUIP_TYPE = LI_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(LI_CIV, eq_classes=markets.SECRET3),
+        Q.Power(LI_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class ForbesDebrisFactory3(ForbesMember, ForbesBaseDebrisManufactoring):
@@ -185,6 +195,11 @@ class ForbesDebrisFactory3(ForbesMember, ForbesBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Норман'
+    MISC_EQUIP_TYPE = LI_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(LI_CIV, eq_classes=markets.SECRET2),
+        Q.Power(LI_PIRATE, eq_classes=markets.SECRET3),
+    )
 
 
 class ForbesDebrisFactory4(ForbesMember, ForbesBaseDebrisManufactoring):
@@ -195,6 +210,11 @@ class ForbesDebrisFactory4(ForbesMember, ForbesBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Мемфис'
+    MISC_EQUIP_TYPE = LI_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(LI_PIRATE, eq_classes=markets.SECRET2),
+        Q.Power(LI_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class ForbesDebrisBoxReward(ForbesMember, mineable.DefaultDebrisBoxRewardsGroup):
@@ -436,6 +456,12 @@ class ForbesOldOutpostRuinsSuprisePoint1(ForbesMember, main_objects.HackableStat
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpost
     INTERIOR_CLASS = interior.EquipDeckInterior
     RU_NAME = 'Стыковочный узел Миннесоты'
+    MISC_EQUIP_TYPE = LI_CIV
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MAIN_MISSILE, eq_classes=markets.MISSILE),
+        Q.Shield(LI_CIV, eq_classes=markets.SECRET2),
+    )
 
 
 class ForbesAsteroidPirates(ForbesMember, main_objects.PirateAsteroid):

@@ -247,6 +247,13 @@ class Om7LostRheinlandRuinsSuprisePoint(Om7Rheinland, Om7Member, main_objects.Ha
     INTERIOR_CLASS = interior.EquipDeckInterior
     RU_NAME = 'Стыковочный узел Финшхафена'
 
+    MISC_EQUIP_TYPE = RH_CIV
+    WEAPON_FACTION = WEAPON_RH
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(CD_MISSILE, eq_classes=markets.MISSILE),
+        Q.Engine(RH_MAIN, eq_classes=markets.SECRET2),
+    )
+
 
 class Om7KusariStationConn1(Om7Member, main_objects.TradeConnection):
     OBJ_FROM = Om7KusariStation
@@ -458,54 +465,90 @@ class Om7GasMiner1(Om7Member, Om7BaseKusariGasMiner):
     INDEX = 1
     BASE_INDEX = 51
     RU_NAME = 'Газодобытчик Минамисома'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM2),
+        Q.Thruster(KU_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Om7GasMiner2(Om7Member, Om7BaseKusariGasMiner):
     INDEX = 2
     BASE_INDEX = 52
     RU_NAME = 'Газодобытчик Иваки'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM2),
+        Q.Thruster(KU_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Om7GasMiner3(Om7Member, Om7BaseKusariGasMiner):
     INDEX = 3
     BASE_INDEX = 53
     RU_NAME = 'Газодобытчик Нараха'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM2),
+        Q.Thruster(KU_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Om7GasMiner4(Om7Member, Om7BaseKusariGasMiner):
     INDEX = 4
     BASE_INDEX = 54
     RU_NAME = 'Газодобытчик Хироно'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM2),
+        Q.Thruster(KU_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Om7GasMiner5(Om7Member, Om7BaseRheinlandGasMiner):
     INDEX = 5
     BASE_INDEX = 55
     RU_NAME = 'Газодобытчик Хемниц'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM2),
+        Q.Thruster(RH_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Om7GasMiner6(Om7Member, Om7BaseRheinlandGasMiner):
     INDEX = 6
     BASE_INDEX = 56
     RU_NAME = 'Газодобытчик Цвиккау'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM3),
+        Q.Thruster(RH_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Om7GasMiner7(Om7Member, Om7BaseRheinlandGasMiner):
     INDEX = 7
     BASE_INDEX = 57
     RU_NAME = 'Газодобытчик Грайц'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM2),
+        Q.Thruster(RH_MAIN, eq_classes=markets.SECRET3),
+    )
 
 
 class Om7GasMiner8(Om7Member, Om7BaseRheinlandGasMiner):
     INDEX = 8
     BASE_INDEX = 58
     RU_NAME = 'Газодобытчик Кульмбах'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM3),
+        Q.Thruster(RH_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class Om7GasMiner9(Om7Member, Om7BaseRheinlandGasMiner):
     INDEX = 9
     BASE_INDEX = 59
     RU_NAME = 'Газодобытчик Лихтенфельс'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM2),
+        Q.Thruster(RH_PIRATE, eq_classes=markets.SECRET3),
+    )
 
 
 class Om7SimpleCrystalRewards(Om7Member, mineable.DefaultGasCrystalRewardsGroup):
@@ -594,6 +637,11 @@ class Om7AbandonedMiner1(Om7Rheinland, Om7Member, Om7BaseAbandonedMiner):
         Om7GasPocketsZone1
     ]
     RU_NAME = 'База Пфорцгейм'
+    MISC_EQUIP_TYPE = RH_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('rh_lightgun', eq_classes=markets.SECRET2),
+        Q.Engine(RH_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Om7AbandonedMiner2(Om7Member, Om7Kusari, Om7BaseAbandonedMiner):
@@ -603,6 +651,11 @@ class Om7AbandonedMiner2(Om7Member, Om7Kusari, Om7BaseAbandonedMiner):
         Om7GasPocketsZone2
     ]
     RU_NAME = 'База Акита'
+    MISC_EQUIP_TYPE = KU_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('ku_shieldgun', eq_classes=markets.SECRET2),
+        Q.Engine(KU_MAIN, eq_classes=markets.SECRET3),
+    )
 
 
 class Om7AbandonedMiner3(Om7Member, Om7Kusari, Om7BaseAbandonedMiner):
@@ -612,6 +665,11 @@ class Om7AbandonedMiner3(Om7Member, Om7Kusari, Om7BaseAbandonedMiner):
         Om7GasPocketsZone3
     ]
     RU_NAME = 'База Аомори'
+    MISC_EQUIP_TYPE = KU_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('ku_lightgun', eq_classes=markets.SECRET2),
+        Q.Engine(KU_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Om7ComplexCrystalRewards(Om7Member, mineable.DefaultGasCrystalRewardsGroup):
@@ -661,6 +719,7 @@ class Om7BaseRheinlandLockedBattleship(main_objects.LockedBattleship):
     ARCHETYPE = 'suprise_rh_battleship'
     INTERIOR_CLASS = interior.EquipDeckInterior
     AST_EXCLUSION_ZONE_SIZE = 600
+    ROOM_SUBFOLDER = interior.ROOM_FOLDER_RH
 
 
 class Om7BaseKusariLockedBattleship(main_objects.LockedBattleship):
@@ -703,6 +762,13 @@ class Om7BattleRuins1(Om7Member, Om7BaseKusariLockedBattleship):
     ]
     RU_NAME = 'Линкор Окиносима'
 
+    MISC_EQUIP_TYPE = KU_MAIN
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MAIN_MISSILE, eq_classes=markets.MISSILE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET2),
+    )
+
 
 class Om7BattleRuins2(Om7Member, Om7BaseKusariLockedBattleship):
     INDEX = 2
@@ -712,6 +778,13 @@ class Om7BattleRuins2(Om7Member, Om7BaseKusariLockedBattleship):
         Om7BattlePocketsZone2,
     ]
     RU_NAME = 'Линкор Хюга'
+
+    MISC_EQUIP_TYPE = KU_MAIN
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MAIN_MISSILE, eq_classes=markets.MISSILE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET1),
+    )
 
 
 class Om7BattleRuins3(Om7Member, Om7BaseKusariLockedBattleship):
@@ -723,6 +796,13 @@ class Om7BattleRuins3(Om7Member, Om7BaseKusariLockedBattleship):
     ]
     RU_NAME = 'Линкор Исэ'
 
+    MISC_EQUIP_TYPE = KU_MAIN
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MAIN_MISSILE, eq_classes=markets.MISSILE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET1),
+    )
+
 
 class Om7BattleRuins4(Om7Member, Om7BaseRheinlandLockedBattleship):
     INDEX = 4
@@ -732,6 +812,13 @@ class Om7BattleRuins4(Om7Member, Om7BaseRheinlandLockedBattleship):
         Om7BattlePocketsZone4,
     ]
     RU_NAME = 'Линкор Мольтке'
+
+    MISC_EQUIP_TYPE = RH_MAIN
+    WEAPON_FACTION = WEAPON_RH
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(FAST_MISSILE, eq_classes=markets.MISSILE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET2),
+    )
 
 
 class Om7KusariSupriseRewards(Om7Member, mineable.DefaultSupriseRewardsGroup):

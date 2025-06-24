@@ -176,6 +176,11 @@ class WarwickDebrisFactory1(WarwickMember, WarwickBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Ротбери'
+    MISC_EQUIP_TYPE = BR_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(BR_CIV, eq_classes=markets.SECRET2),
+        Q.Power(BR_PIRATE, eq_classes=markets.SECRET3),
+    )
 
 
 class WarwickDebrisFactory2(WarwickMember, WarwickBaseDebrisManufactoring):
@@ -186,6 +191,11 @@ class WarwickDebrisFactory2(WarwickMember, WarwickBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Тиркс'
+    MISC_EQUIP_TYPE = BR_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(BR_PIRATE, eq_classes=markets.SECRET2),
+        Q.Power(BR_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class WarwickDebrisFactory3(WarwickMember, WarwickBaseDebrisManufactoring):
@@ -196,6 +206,11 @@ class WarwickDebrisFactory3(WarwickMember, WarwickBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Галифакс'
+    MISC_EQUIP_TYPE = BR_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(BR_PIRATE, eq_classes=markets.SECRET3),
+        Q.Power(BR_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class WarwickDebrisFactory4(WarwickMember, WarwickBaseDebrisManufactoring):
@@ -206,6 +221,11 @@ class WarwickDebrisFactory4(WarwickMember, WarwickBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Блекпул'
+    MISC_EQUIP_TYPE = BR_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(BR_CIV, eq_classes=markets.SECRET2),
+        Q.Power(BR_MAIN, eq_classes=markets.SECRET3),
+    )
 
 
 class WarwickDebrisBoxReward(WarwickMember, mineable.DefaultDebrisBoxRewardsGroup):

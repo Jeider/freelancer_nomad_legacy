@@ -5,6 +5,8 @@ from managers.tools import query as Q
 from world.names import *
 from universe.content import meta
 
+from universe import markets
+
 from universe.content.member import Member
 from universe.content.system_object import TOP, BOTTOM, LEFT, RIGHT
 from universe.content import main_objects
@@ -248,18 +250,30 @@ class Tau29GasMiner1(Tau29Member, Tau29BaseGasMiner):
     INDEX = 1
     BASE_INDEX = 51
     RU_NAME = 'Газодобытчик Ашингтон'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM3),
+        Q.Thruster(BR_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class Tau29GasMiner2(Tau29Member, Tau29BaseGasMiner):
     INDEX = 2
     BASE_INDEX = 52
     RU_NAME = 'Газодобытчик Фраддон'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM2),
+        Q.Thruster(BR_MAIN, eq_classes=markets.SECRET3),
+    )
 
 
 class Tau29GasMiner3(Tau29Member, Tau29BaseGasMiner):
     INDEX = 3
     BASE_INDEX = 53
     RU_NAME = 'Газодобытчик Мальборо'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM3),
+        Q.Thruster(BR_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Tau29SimpleCrystalRewards(Tau29Member, mineable.DefaultGasCrystalRewardsGroup):
@@ -328,6 +342,12 @@ class Tau29RingRuinsSuprisePoint(Tau29Member, main_objects.HackableStation):
     INTERIOR_CLASS = interior.EquipDeckInterior
 
     RU_NAME = 'Стыковочный узел Ланкастера'
+    MISC_EQUIP_TYPE = BR_MAIN
+    WEAPON_FACTION = WEAPON_BR
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MAIN_SUPER_MISSILE, eq_classes=markets.MISSILE),
+        Q.Power(BR_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Tau29CambridgeJumpgate(Tau29Member, main_objects.Jumpgate):
@@ -446,6 +466,12 @@ class Tau29AbandonedAstBase1(Tau29Member, main_objects.AbandonedAsteroid):
         'spacedust_maxparticles': 200,
     }
     RU_NAME = 'База Стерлинг'
+    MISC_EQUIP_TYPE = BR_PIRATE
+    WEAPON_FACTION = WEAPON_BR
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('br_pirategun', eq_classes=markets.SECRET2),
+        Q.Engine(None, eq_classes=markets.SECRET2),
+    )
 
 
 class Tau29AbandonedAstBase2(Tau29Member, main_objects.AbandonedAsteroid):
@@ -466,7 +492,13 @@ class Tau29AbandonedAstBase2(Tau29Member, main_objects.AbandonedAsteroid):
         'spacedust': Dust.ASTEROID,
         'spacedust_maxparticles': 200,
     }
-    RU_NAME = 'База Стерлинг'
+    RU_NAME = 'База Ларберт'
+    MISC_EQUIP_TYPE = BR_PIRATE
+    WEAPON_FACTION = WEAPON_BR
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('br_iragun', eq_classes=markets.SECRET3),
+        Q.Engine(None, eq_classes=markets.SECRET3),
+    )
 
 
 class Tau29AsteroidReward(Tau29Member, mineable.AsteroidRewardsGroupUltra):

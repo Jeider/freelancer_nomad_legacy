@@ -169,6 +169,11 @@ class ManhDebrisFactory1(ManhMember, ManhBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Атланта'
+    MISC_EQUIP_TYPE = LI_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(LI_CIV, eq_classes=markets.SECRET3),
+        Q.Power(LI_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class ManhDebrisFactory2(ManhMember, ManhBaseDebrisManufactoring):
@@ -178,7 +183,12 @@ class ManhDebrisFactory2(ManhMember, ManhBaseDebrisManufactoring):
         ManhDebrisZone2,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
-    RU_NAME = 'Плавильня Нашвилл'
+    RU_NAME = 'Плавильня Нешвилл'
+    MISC_EQUIP_TYPE = LI_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(LI_CIV, eq_classes=markets.SECRET2),
+        Q.Power(LI_PIRATE, eq_classes=markets.SECRET3),
+    )
 
 
 class ManhDebrisFactory3(ManhMember, ManhBaseDebrisManufactoring):
@@ -188,8 +198,12 @@ class ManhDebrisFactory3(ManhMember, ManhBaseDebrisManufactoring):
         ManhDebrisZone3,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
-
     RU_NAME = 'Плавильня Лиусвилл'
+    MISC_EQUIP_TYPE = LI_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(LI_PIRATE, eq_classes=markets.SECRET2),
+        Q.Power(LI_MAIN, eq_classes=markets.SECRET2),
+    )
 
 class ManhDebrisFactory4(ManhMember, ManhBaseDebrisManufactoring):
     INDEX = 4
@@ -199,6 +213,11 @@ class ManhDebrisFactory4(ManhMember, ManhBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Джексон'
+    MISC_EQUIP_TYPE = LI_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(LI_PIRATE, eq_classes=markets.SECRET3),
+        Q.Power(LI_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class ManhDebrisBoxReward(ManhMember, mineable.DefaultDebrisBoxRewardsGroup):

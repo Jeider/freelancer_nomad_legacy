@@ -375,6 +375,12 @@ class BizmarkAbandonedAstBase1(BizmarkMember, main_objects.AbandonedAsteroid):
         'spacedust': Dust.ASTEROID,
         'spacedust_maxparticles': 200,
     }
+    MISC_EQUIP_TYPE = RH_PIRATE
+    WEAPON_FACTION = WEAPON_RH
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('rh_junkergun', eq_classes=markets.SECRET2),
+        Q.Engine(None, eq_classes=markets.SECRET2),
+    )
 
 
 class BizmarkDebrisFactory1(BizmarkMember, BizmarkBaseDebrisManufactoring):
@@ -385,6 +391,11 @@ class BizmarkDebrisFactory1(BizmarkMember, BizmarkBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'База Вадерн'
+    MISC_EQUIP_TYPE = RH_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(RH_CIV, eq_classes=markets.SECRET3),
+        Q.Power(RH_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class BizmarkDebrisFactory2(BizmarkMember, BizmarkBaseDebrisManufactoring):
@@ -395,6 +406,11 @@ class BizmarkDebrisFactory2(BizmarkMember, BizmarkBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'База Марпингер'
+    MISC_EQUIP_TYPE = RH_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(RH_CIV, eq_classes=markets.SECRET2),
+        Q.Power(RH_PIRATE, eq_classes=markets.SECRET3),
+    )
 
 
 class BizmarkDebrisFactory3(BizmarkMember, BizmarkBaseDebrisManufactoring):
@@ -405,6 +421,11 @@ class BizmarkDebrisFactory3(BizmarkMember, BizmarkBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'База Герсхайм'
+    MISC_EQUIP_TYPE = RH_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(RH_PIRATE, eq_classes=markets.SECRET2),
+        Q.Power(RH_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class BizmarkPirateAsteroidReward(BizmarkMember, mineable.AsteroidRewardsGroupUltra):

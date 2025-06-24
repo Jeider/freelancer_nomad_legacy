@@ -57,6 +57,7 @@ class SystemObject:
     ROTATE_RANDOM = False
 
     FACTION = None
+    FORCE_FACTION = None
 
     POPULATION_KIND = population.POP_FIRST
 
@@ -173,6 +174,8 @@ class SystemObject:
         return self.system.template.get_item_size(self.get_full_alias())
 
     def get_faction(self):
+        if self.FORCE_FACTION:
+            return self.FORCE_FACTION
         return self.FACTION
 
     def get_faction_code(self):

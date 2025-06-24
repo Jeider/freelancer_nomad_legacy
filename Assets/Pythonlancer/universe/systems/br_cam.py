@@ -37,7 +37,7 @@ class CamMember(Member):
     FACTION = faction.BretoniaMain
     WEAPON_FACTION = WEAPON_BR
     EQUIP_FACTION = EQUIP_BR
-
+    INTERIOR_BG1 = interior.INTERIOR_BR_CAMBRIDGE
 
 class CamStaticText(CamMember, main_objects.RawText):
     SPACE_CONTENT = '''[SystemInfo]
@@ -237,6 +237,11 @@ class CamDebrisFactory1(CamMember, CamBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Ботри'
+    MISC_EQUIP_TYPE = BR_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(BR_CIV, eq_classes=markets.SECRET3),
+        Q.Power(BR_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class CamDebrisFactory2(CamMember, CamBaseDebrisManufactoring):
@@ -247,6 +252,11 @@ class CamDebrisFactory2(CamMember, CamBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Кеттон'
+    MISC_EQUIP_TYPE = BR_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(BR_CIV, eq_classes=markets.SECRET2),
+        Q.Power(BR_PIRATE, eq_classes=markets.SECRET3),
+    )
 
 
 class CamDebrisFactory3(CamMember, CamBaseDebrisManufactoring):
@@ -257,6 +267,11 @@ class CamDebrisFactory3(CamMember, CamBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Анкастер'
+    MISC_EQUIP_TYPE = BR_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(BR_PIRATE, eq_classes=markets.SECRET2),
+        Q.Power(BR_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class CamDebrisBoxReward(CamMember, mineable.DefaultDebrisBoxRewardsGroup):
@@ -304,6 +319,12 @@ class CamBattleshipRuins1(CamMember, main_objects.HackableBattleship):
         CamAsteroidZone2,
     ]
     RU_NAME = 'Линкор Титаник'
+    MISC_EQUIP_TYPE = BR_PIRATE
+    WEAPON_FACTION = WEAPON_BR
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('li_lightgun', eq_classes=markets.SECRET3),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET1),
+    )
 
 
 class CamBattleshipRuins2(CamMember, main_objects.HackableBattleship):
@@ -317,6 +338,12 @@ class CamBattleshipRuins2(CamMember, main_objects.HackableBattleship):
         CamAsteroidZone2,
     ]
     RU_NAME = 'Линкор Бриттаник'
+    MISC_EQUIP_TYPE = BR_PIRATE
+    WEAPON_FACTION = WEAPON_BR
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(TORPEDO_MISSILE, eq_classes=markets.MISSILE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET2),
+    )
 
 
 class CamBattleshipRuins3(CamMember, main_objects.HackableBattleship):
@@ -330,6 +357,12 @@ class CamBattleshipRuins3(CamMember, main_objects.HackableBattleship):
         CamAsteroidZone2,
     ]
     RU_NAME = 'Линкор Олимпик'
+    MISC_EQUIP_TYPE = BR_PIRATE
+    WEAPON_FACTION = WEAPON_BR
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(FAST_MISSILE, eq_classes=markets.MISSILE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET3),
+    )
 
 
 class CamOldOutpostRuins(CamMember, main_objects.StationRuins):
@@ -355,6 +388,12 @@ class CamOldOutpostRuinsSuprisePoint(CamMember, main_objects.HackableStation):
     INTERIOR_CLASS = interior.EquipDeckInterior
 
     RU_NAME = 'Стыковочный узел Мерсии'
+    MISC_EQUIP_TYPE = BR_MAIN
+    WEAPON_FACTION = WEAPON_BR
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(CD_MISSILE, eq_classes=markets.MISSILE),
+        Q.Power(BR_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class CamDockring(CamMember, main_objects.LargePlanetDockring):
@@ -726,6 +765,12 @@ class CamAbandonedStationSuprisePoint1(CamMember, main_objects.HackableStation):
     INTERIOR_CLASS = interior.EquipDeckInterior
 
     RU_NAME = 'Исследовательский блок 1 Оксфорда'
+    MISC_EQUIP_TYPE = BR_MAIN
+    WEAPON_FACTION = WEAPON_BR
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(SHIELD_MISSILE, eq_classes=markets.MISSILE),
+        Q.Power(BR_MAIN, eq_classes=markets.SECRET3),
+    )
 
 
 class CamAbandonedStationSuprisePoint2(CamMember, main_objects.HackableStation):
@@ -738,3 +783,9 @@ class CamAbandonedStationSuprisePoint2(CamMember, main_objects.HackableStation):
     INTERIOR_CLASS = interior.EquipDeckInterior
 
     RU_NAME = 'Исследовательский блок 2 Оксфорда'
+    MISC_EQUIP_TYPE = BR_MAIN
+    WEAPON_FACTION = WEAPON_BR
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('br_shieldgun', eq_classes=markets.SECRET3),
+        Q.Power(BR_MAIN, eq_classes=markets.SECRET2),
+    )

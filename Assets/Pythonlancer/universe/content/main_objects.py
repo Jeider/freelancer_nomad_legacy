@@ -14,6 +14,7 @@ from universe.content.locked_dock_key import LockedDockKey
 from universe.audio.space_voice import SpaceVoice, SpaceCostume
 from universe.content.loadout import Loadout
 from universe import connection
+from universe import faction
 from universe.content import descriptions_ru
 
 from text.dividers import SINGLE_DIVIDER, DIVIDER
@@ -331,9 +332,9 @@ class StaticObject(AppearableObject):
         return params
 
     def is_lawful(self):
-        is_lawful = self.FACTION in self.system.get_lawful_factions()
-        if not is_lawful and self.FACTION not in self.system.get_unlawful_factions():
-            raise Exception('Faction %s isnt defined in system for object %s' % (self.FACTION, self.__class__.__name__))
+        is_lawful = self.get_faction() in self.system.get_lawful_factions()
+        if not is_lawful and self.get_faction() not in self.system.get_unlawful_factions():
+            raise Exception('Faction %s isnt defined in system for object %s' % (self.get_faction(), self.__class__.__name__))
         return is_lawful
 
 
@@ -486,7 +487,7 @@ class JumpableObject(NamedObject):
             'ids_name': self.get_ids_name(),
             'ids_info': self.get_ids_info(),
             'jump_effect': self.get_jump_effect(),
-            'reputation': self.FACTION.get_code(),
+            'reputation': self.get_faction().get_code(),
             'goto': self.get_goto(),
             'msg_id_prefix': self.get_msg_id_prefix(),
         })
@@ -822,7 +823,7 @@ class DockableObject(NamedObject):
     INTERIOR_EXTRA_ROOMS = []
     INTERIORS_FOLDER = 'GENERATED_INTERIORS'
     DEALERS = None
-    IS_BASE = True  # switch to true
+    IS_BASE = True
     EQUIP_SET = None
     SHIP_SET = None
     BASE_INDEX = None
@@ -831,6 +832,7 @@ class DockableObject(NamedObject):
     EQUIP_FACTION = None
     MISC_EQUIP_GEN_TYPE = None
     BASE_PROPS = None
+    SELL_AMMO = True
 
     AUTOSAVE_FORBIDDEN = False
 
@@ -1198,23 +1200,28 @@ class AbandonedAsteroid(DockableObject):
     AUDIO_PREFIX = SpaceVoice.STATION
     RANDOM_ROBOT = True
     BASE_PROPS = meta.LockedAsteroid()
-    IS_BASE = False  # Workaround, keep before new balance will integrated
+    EQUIP_SET = None
+    SELL_AMMO = False
     KEY_COLLECT_FX = nn.FX_GOT_KEY_ASTEROID
     RU_FIRST_DESCRIPTION = descriptions_ru.ASTEROID_ROCK
+    FORCE_FACTION = faction.Unknown
 
 
 class AbandonedAsteroidIce(DockableObject):
     AUDIO_PREFIX = SpaceVoice.STATION
     RANDOM_ROBOT = True
     BASE_PROPS = meta.LockedAsteroid()
-    IS_BASE = False  # Workaround, keep before new balance will integrated
+    SELL_AMMO = False
+    EQUIP_SET = None
     KEY_COLLECT_FX = nn.FX_GOT_KEY_ASTEROID
     RU_FIRST_DESCRIPTION = descriptions_ru.ASTEROID_ICE
+    FORCE_FACTION = faction.Unknown
 
 
 class GasMinerOld(Station):
     RANDOM_ROBOT = True
-    IS_BASE = False  # Workaround, keep before new balance will integrated
+    SELL_AMMO = False
+    EQUIP_SET = None
     KEY_COLLECT_FX = nn.FX_GOT_KEY_GAS_MINER
     RU_FIRST_DESCRIPTION = descriptions_ru.GAS_MINER_OLD
 
@@ -1246,16 +1253,18 @@ class SolarPlant(Station):
     ALIAS = 'solar'
     RANDOM_ROBOT = True
     BASE_PROPS = meta.LockedSolarPlant()
-    IS_BASE = False  # Workaround, keep before new balance will integrated
+    SELL_AMMO = False
     KEY_COLLECT_FX = nn.FX_GOT_KEY_STATION
     RU_FIRST_DESCRIPTION = descriptions_ru.SOLAR_PLANT
+    FORCE_FACTION = faction.Unknown
 
 
 class RoidMiner(Station):
     RANDOM_ROBOT = True
     ROTATE_RANDOM = False
     BASE_PROPS = meta.LockedRoidMiner()
-    IS_BASE = False  # Workaround, keep before new balance will integrated
+    SELL_AMMO = False
+    EQUIP_SET = None
     KEY_COLLECT_FX = nn.FX_GOT_KEY_ROID_MINER
     RU_FIRST_DESCRIPTION = descriptions_ru.ROID_MINER
 
@@ -1317,7 +1326,8 @@ class DebrisManufactoring(Station):
     AUDIO_PREFIX = SpaceVoice.FACTORY
     RANDOM_ROBOT = True
     BASE_PROPS = meta.LockedSmelter()
-    IS_BASE = False  # Workaround, keep before new balance will integrated
+    SELL_AMMO = False
+    EQUIP_SET = None
     KEY_COLLECT_FX = nn.FX_GOT_KEY_FACTORY
     RU_FIRST_DESCRIPTION = descriptions_ru.DEBRIS_MANUFACTORING
 
@@ -1445,7 +1455,9 @@ class Hackable(DockableObject):
     RANDOM_ROBOT = True
     BASE_PROPS = meta.LockedHackableOutpost()
     CALC_STORE = False
-    IS_BASE = False  # Workaround, keep before new balance will integrated
+    SELL_AMMO = False
+    EQUIP_SET = None
+    FORCE_FACTION = faction.Unknown
 
     def get_position(self):
         if self.RELATED_OBJECT:
@@ -1477,7 +1489,7 @@ class Hackable(DockableObject):
 
         return panel.get_space_content(
             space_name=self.get_hacker_name(),
-            reputation=self.FACTION.get_code(),
+            reputation=self.get_faction().get_code(),
             position=self.get_hacker_panel_position(),
             relation=self.HACKABLE_SOLAR_CLASS.PANEL_RELATION,
             success_loadout=hacker_name,
@@ -1529,6 +1541,21 @@ class LockedBattleship(Station):
     BASE_PROPS = meta.LockedBattleship()
     KEY_COLLECT_FX = nn.FX_GOT_KEY_BATTLESHIP
     RU_FIRST_DESCRIPTION = descriptions_ru.BATTLESHIP_LOCKED
+    FORCE_FACTION = faction.Unknown
+
+
+class LockedLuxury(Station):
+    AUDIO_PREFIX = SpaceVoice.BATTLESHIP
+    LOCKED_DOCK = True
+    ROTATE_RANDOM = True
+    RANDOM_ROBOT = True
+    DEFENCE_LEVEL = None
+    BASE_PROPS = meta.LockedBattleship()
+    KEY_COLLECT_FX = nn.FX_GOT_KEY_BATTLESHIP
+    RU_FIRST_DESCRIPTION = descriptions_ru.LUXURY_LOCKED
+    FORCE_FACTION = faction.Unknown
+    EQUIP_SET = None
+    SELL_AMMO = False
 
 
 class PatrolObjective(SystemObject):

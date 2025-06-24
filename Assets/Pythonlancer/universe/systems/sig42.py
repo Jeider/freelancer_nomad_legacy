@@ -201,6 +201,11 @@ class Sig42SolarPlant1(Sig42Member, Sig42BaseBretoniaSolarPlant):
     BASE_INDEX = 61
     REL = LEFT
     RU_NAME = 'Солн.генератор Росс'
+    MISC_EQUIP_TYPE = BR_PIRATE
+    EQUIP_SET = markets.EquipSet(
+        Q.Power(BR_CIV, eq_classes=markets.SECRET3),
+        Q.Shield(BR_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class Sig42SolarPlant2(Sig42Member, Sig42BaseBretoniaSolarPlant):
@@ -208,6 +213,11 @@ class Sig42SolarPlant2(Sig42Member, Sig42BaseBretoniaSolarPlant):
     BASE_INDEX = 62
     REL = LEFT
     RU_NAME = 'Солн.генератор Процион'
+    MISC_EQUIP_TYPE = BR_PIRATE
+    EQUIP_SET = markets.EquipSet(
+        Q.Power(BR_CIV, eq_classes=markets.SECRET2),
+        Q.Shield(BR_PIRATE, eq_classes=markets.SECRET3),
+    )
 
 
 class Sig42SolarPlant3(Sig42Member, Sig42BaseKusariSolarPlant):
@@ -215,6 +225,11 @@ class Sig42SolarPlant3(Sig42Member, Sig42BaseKusariSolarPlant):
     BASE_INDEX = 63
     REL = LEFT
     RU_NAME = 'Солн.генератор Эридан'
+    MISC_EQUIP_TYPE = KU_PIRATE
+    EQUIP_SET = markets.EquipSet(
+        Q.Power(KU_PIRATE, eq_classes=markets.SECRET2),
+        Q.Shield(KU_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class Sig42SolarPlant4(Sig42Member, Sig42BaseBretoniaSolarPlant):
@@ -222,6 +237,11 @@ class Sig42SolarPlant4(Sig42Member, Sig42BaseBretoniaSolarPlant):
     BASE_INDEX = 64
     REL = RIGHT
     RU_NAME = 'Солн.генератор Лайтен'
+    MISC_EQUIP_TYPE = BR_PIRATE
+    EQUIP_SET = markets.EquipSet(
+        Q.Power(BR_CIV, eq_classes=markets.SECRET2),
+        Q.Shield(BR_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Sig42SolarPlant5(Sig42Member, Sig42BaseKusariSolarPlant):
@@ -229,6 +249,11 @@ class Sig42SolarPlant5(Sig42Member, Sig42BaseKusariSolarPlant):
     BASE_INDEX = 65
     REL = RIGHT
     RU_NAME = 'Солн.генератор Рехуа'
+    MISC_EQUIP_TYPE = KU_PIRATE
+    EQUIP_SET = markets.EquipSet(
+        Q.Power(KU_CIV, eq_classes=markets.SECRET3),
+        Q.Shield(KU_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class Sig42Dockring(Sig42Member, Sig42Bretonia, main_objects.MiningPlanetDockring):

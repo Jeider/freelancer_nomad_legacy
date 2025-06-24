@@ -353,30 +353,50 @@ class Tau31GasMiner1(Tau31Member, Tau31BaseLibertyGasMiner):
     INDEX = 1
     BASE_INDEX = 51
     RU_NAME = 'Газодобытчик Флетчер'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM2),
+        Q.Thruster(LI_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Tau31GasMiner2(Tau31Member, Tau31BaseLibertyGasMiner):
     INDEX = 2
     BASE_INDEX = 52
     RU_NAME = 'Газодобытчик Бревард'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM3),
+        Q.Thruster(LI_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class Tau31GasMiner3(Tau31Member, Tau31BaseLibertyGasMiner):
     INDEX = 3
     BASE_INDEX = 53
     RU_NAME = 'Газодобытчик Сапфир'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM2),
+        Q.Thruster(LI_MAIN, eq_classes=markets.SECRET3),
+    )
 
 
 class Tau31GasMiner4(Tau31Member, Tau31BaseLibertyGasMiner):
     INDEX = 4
     BASE_INDEX = 54
     RU_NAME = 'Газодобытчик Оникс'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM3),
+        Q.Thruster(LI_PIRATE, eq_classes=markets.SECRET3),
+    )
 
 
 class Tau31GasMiner5(Tau31Member, Tau31BaseLibertyGasMiner):
     INDEX = 5
     BASE_INDEX = 55
     RU_NAME = 'Газодобытчик Исли'
+    EQUIP_SET = markets.EquipSet(
+        Q.SingleLauncher(CM, eq_classes=markets.CM2),
+        Q.Thruster(LI_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Tau31SimpleCrystalRewards(Tau31Member, mineable.DefaultGasCrystalRewardsGroup):
@@ -441,6 +461,11 @@ class Tau31AbandonedMiner1(Tau31Member, Tau31BaseAbandonedMiner):
         Tau31GasPocketsZone1
     ]
     RU_NAME = 'База Атенс'
+    MISC_EQUIP_TYPE = LI_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('li_heavygun', eq_classes=markets.SECRET2),
+        Q.Engine(LI_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Tau31AbandonedMiner2(Tau31Member, Tau31BaseAbandonedMiner):
@@ -449,7 +474,12 @@ class Tau31AbandonedMiner2(Tau31Member, Tau31BaseAbandonedMiner):
     ASTEROID_ZONES = [
         Tau31GasPocketsZone2
     ]
-    RU_NAME = 'База  '
+    RU_NAME = 'База Огаста'
+    MISC_EQUIP_TYPE = LI_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('li_heavygun', eq_classes=markets.SECRET1),
+        Q.Engine(LI_MAIN, eq_classes=markets.SECRET3),
+    )
 
 
 class Tau31ComplexCrystalRewards(Tau31Member, mineable.DefaultGasCrystalRewardsGroup):
@@ -517,6 +547,12 @@ class Tau31OldResearchRuinsSuprisePoint1(Tau31Member, main_objects.HackableStati
     INTERIOR_CLASS = interior.EquipDeckInterior
 
     RU_NAME = 'Исследовательский блок 1 Массачусетса'
+    MISC_EQUIP_TYPE = LI_MAIN
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('li_shieldgun', eq_classes=markets.SECRET3),
+        Q.Shield(LI_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Tau31OldResearchRuinsSuprisePoint2(Tau31Member, main_objects.HackableStation):
@@ -529,3 +565,9 @@ class Tau31OldResearchRuinsSuprisePoint2(Tau31Member, main_objects.HackableStati
     INTERIOR_CLASS = interior.EquipDeckInterior
 
     RU_NAME = 'Исследовательский блок 2 Массачусетса'
+    MISC_EQUIP_TYPE = LI_MAIN
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(SHIELD_MISSILE, eq_classes=markets.MISSILE),
+        Q.Shield(LI_MAIN, eq_classes=markets.SECRET3),
+    )

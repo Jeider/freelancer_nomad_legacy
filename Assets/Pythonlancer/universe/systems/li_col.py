@@ -160,6 +160,11 @@ class ColDebrisFactory1(ColMember, ColBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Команчи'
+    MISC_EQUIP_TYPE = LI_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(LI_PIRATE, eq_classes=markets.SECRET3),
+        Q.Power(LI_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class ColDebrisFactory2(ColMember, ColBaseDebrisManufactoring):
@@ -170,6 +175,11 @@ class ColDebrisFactory2(ColMember, ColBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Гейтсвилл'
+    MISC_EQUIP_TYPE = LI_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(LI_CIV, eq_classes=markets.SECRET2),
+        Q.Power(LI_MAIN, eq_classes=markets.SECRET3),
+    )
 
 
 class ColDebrisFactory3(ColMember, ColBaseDebrisManufactoring):
@@ -180,6 +190,11 @@ class ColDebrisFactory3(ColMember, ColBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Олни'
+    MISC_EQUIP_TYPE = LI_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(LI_CIV, eq_classes=markets.SECRET3),
+        Q.Power(LI_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class ColDebrisBoxReward(ColMember, mineable.DefaultDebrisBoxRewardsGroup):
@@ -264,6 +279,12 @@ class ColAbandonedAstBase1(ColMember, main_objects.AbandonedAsteroid):
         'spacedust': Dust.ASTEROID,
         'spacedust_maxparticles': 200,
     }
+    MISC_EQUIP_TYPE = LI_PIRATE
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('li_roguegun', eq_classes=markets.SECRET3),
+        Q.Engine(None, eq_classes=markets.SECRET3),
+    )
 
 
 class ColBackgroundAsteroidReward(ColMember, mineable.AsteroidRewardsGroupHigh):
@@ -636,6 +657,12 @@ class ColOldTradingBaseRuinsSuprisePoint1(ColMember, main_objects.HackableStatio
     INTERIOR_CLASS = interior.EquipDeckInterior
 
     RU_NAME = 'Стыковочный узел 1 фрипорта 1'
+    MISC_EQUIP_TYPE = LI_MAIN
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(FAST_MISSILE, eq_classes=markets.MISSILE),
+        Q.Engine(LI_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class ColOldTradingBaseRuinsSuprisePoint2(ColMember, main_objects.HackableStation):
@@ -648,6 +675,12 @@ class ColOldTradingBaseRuinsSuprisePoint2(ColMember, main_objects.HackableStatio
     INTERIOR_CLASS = interior.EquipDeckInterior
 
     RU_NAME = 'Стыковочный узел 2 фрипорта 1'
+    MISC_EQUIP_TYPE = LI_MAIN
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(TORPEDO_MISSILE, eq_classes=markets.MISSILE),
+        Q.Engine(LI_MAIN, eq_classes=markets.SECRET3),
+    )
 
 
 class ColAsteroidPirates(ColMember, main_objects.PirateAsteroid):

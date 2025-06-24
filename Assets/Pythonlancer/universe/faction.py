@@ -562,3 +562,8 @@ class AlaricLike(LawfulFaction, LibertyFleet, BaseLiberty, LibertyMainEquip, Fac
 class Nomad(Faction):
     CODE = 'fc_n_grp'
     STORY_ONLY = True
+
+
+class Unknown(Faction):
+    CODE = 'fc_uk_grp'
+    STORY_ONLY = True

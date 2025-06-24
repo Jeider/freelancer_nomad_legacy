@@ -125,6 +125,11 @@ class KyushuDebrisFactory1(KyushuMember, KyushuBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Амакуса'
+    MISC_EQUIP_TYPE = KU_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(KU_PIRATE, eq_classes=markets.SECRET2),
+        Q.Power(KU_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class KyushuDebrisFactory2(KyushuMember, KyushuBaseDebrisManufactoring):
@@ -135,6 +140,11 @@ class KyushuDebrisFactory2(KyushuMember, KyushuBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Оита'
+    MISC_EQUIP_TYPE = KU_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(KU_PIRATE, eq_classes=markets.SECRET3),
+        Q.Power(KU_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class KyushuDebrisFactory3(KyushuMember, KyushuBaseDebrisManufactoring):
@@ -145,6 +155,11 @@ class KyushuDebrisFactory3(KyushuMember, KyushuBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Вакаяма'
+    MISC_EQUIP_TYPE = KU_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(KU_CIV, eq_classes=markets.SECRET2),
+        Q.Power(KU_MAIN, eq_classes=markets.SECRET3),
+    )
 
 
 class KyushuDebrisBoxReward(KyushuMember, mineable.DefaultDebrisBoxRewardsGroup):
@@ -226,6 +241,12 @@ class KyushuAbandonedAstBase1(KyushuMember, KyushuBaseAbandonedAst):
         KyushuAsteroidZone1,
     ]
     RU_NAME = 'База Тоттори'
+    MISC_EQUIP_TYPE = KU_PIRATE
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('ku_shinobigun', eq_classes=markets.SECRET2),
+        Q.Engine(None, eq_classes=markets.SECRET2),
+    )
 
 
 class KyushuAbandonedAstBase2(KyushuMember, KyushuBaseAbandonedAst):
@@ -236,6 +257,12 @@ class KyushuAbandonedAstBase2(KyushuMember, KyushuBaseAbandonedAst):
         KyushuAsteroidZone2,
     ]
     RU_NAME = 'База Химедзи'
+    MISC_EQUIP_TYPE = KU_PIRATE
+    WEAPON_FACTION = WEAPON_KU
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('ku_dragongun', eq_classes=markets.SECRET2),
+        Q.Engine(None, eq_classes=markets.SECRET3),
+    )
 
 
 class KyushuUnlockAsteroidReward(KyushuMember, mineable.AsteroidRewardsGroupUltra):

@@ -196,54 +196,108 @@ class CalRoidMiner1(CalMember, CalNebula1RoidMiner):
     INDEX = 1
     BASE_INDEX = 61
     RU_NAME = 'Рудокоп Астория'
+    MISC_EQUIP_TYPE = LI_MAIN
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_PROF, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET1),
+    )
 
 
 class CalRoidMiner2(CalMember, CalNebula1RoidMiner):
     INDEX = 2
     BASE_INDEX = 62
     RU_NAME = 'Рудокоп Якима'
+    MISC_EQUIP_TYPE = LI_MAIN
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_PROF, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET2),
+    )
 
 
 class CalRoidMiner3(CalMember, CalNebula1RoidMiner):
     INDEX = 3
     BASE_INDEX = 63
     RU_NAME = 'Рудокоп Сейлем'
+    MISC_EQUIP_TYPE = LI_MAIN
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_PROF, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET1),
+    )
 
 
 class CalRoidMiner4(CalMember, CalNebula1RoidMiner):
     INDEX = 4
     BASE_INDEX = 64
     RU_NAME = 'Рудокоп Бернс'
+    MISC_EQUIP_TYPE = LI_MAIN
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_PROF, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET3),
+    )
 
 
 class CalRoidMiner5(CalMember, CalNebula1RoidMiner):
     INDEX = 5
     BASE_INDEX = 65
     RU_NAME = 'Рудокоп Бенд'
+    MISC_EQUIP_TYPE = LI_MAIN
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_MIL, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET1),
+    )
 
 
 class CalRoidMiner6(CalMember, CalNebula2RoidMiner):
     INDEX = 6
     BASE_INDEX = 66
     RU_NAME = 'Рудокоп Медфорд'
+    MISC_EQUIP_TYPE = LI_MAIN
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_PROF, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET2),
+    )
 
 
 class CalRoidMiner7(CalMember, CalNebula2RoidMiner):
     INDEX = 7
     BASE_INDEX = 67
     RU_NAME = 'Рудокоп Рино'
+    MISC_EQUIP_TYPE = LI_MAIN
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_MIL, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET3),
+    )
 
 
 class CalRoidMiner8(CalMember, CalNebula2RoidMiner):
     INDEX = 8
     BASE_INDEX = 68
     RU_NAME = 'Рудокоп Юрика'
+    MISC_EQUIP_TYPE = LI_MAIN
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_PROF, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET1),
+    )
 
 
 class CalRoidMiner9(CalMember, CalNebula2RoidMiner):
     INDEX = 9
     BASE_INDEX = 69
     RU_NAME = 'Рудокоп Санта-Роза'
+    MISC_EQUIP_TYPE = LI_MAIN
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_PROF, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET2),
+    )
 
 
 class CalBerliliumAsteroidReward(CalMember, mineable.AsteroidRewardsGroupUltra):
@@ -516,6 +570,12 @@ class CalAbandonedStationDropPoint1(CalMember, main_objects.HackableStation):
     INTERIOR_CLASS = interior.EquipDeckInterior
 
     RU_NAME = 'Исследовательский блок 1 Беркли'
+    MISC_EQUIP_TYPE = LI_CIV
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('li_shieldgun', eq_classes=markets.SECRET2),
+        Q.Shield(LI_PIRATE, eq_classes=markets.SECRET3),
+    )
 
 
 class CalAbandonedStationDropPoint2(CalMember, main_objects.HackableStation):
@@ -528,6 +588,12 @@ class CalAbandonedStationDropPoint2(CalMember, main_objects.HackableStation):
     INTERIOR_CLASS = interior.EquipDeckInterior
 
     RU_NAME = 'Исследовательский блок 2 Беркли'
+    MISC_EQUIP_TYPE = LI_CIV
+    WEAPON_FACTION = WEAPON_LI
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MAIN_SUPER_MISSILE, eq_classes=markets.MISSILE),
+        Q.Shield(LI_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class CalMiningStationConn1(CalMember, main_objects.TradeConnection):

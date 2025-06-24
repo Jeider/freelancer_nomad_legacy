@@ -97,7 +97,7 @@ class UniverseManager:
                                     root_weapon_faction=dockable.WEAPON_FACTION,
                                     root_misc_equip_type=dockable.get_equip_type(),
                                 ),
-                                shop_ammo=shop_ammo,
+                                shop_ammo=shop_ammo if dockable.SELL_AMMO else [],
                             )
                         )
                     if dockable.IS_BASE and dockable.have_shipdealer():

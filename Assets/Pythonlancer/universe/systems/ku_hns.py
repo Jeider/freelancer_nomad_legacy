@@ -155,6 +155,11 @@ class HonsDebrisFactory1(HonsMember, HonsBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Гобо'
+    MISC_EQUIP_TYPE = KU_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(KU_PIRATE, eq_classes=markets.SECRET2),
+        Q.Power(KU_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class HonsDebrisFactory2(HonsMember, HonsBaseDebrisManufactoring):
@@ -165,6 +170,11 @@ class HonsDebrisFactory2(HonsMember, HonsBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Сирахама'
+    MISC_EQUIP_TYPE = KU_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(KU_PIRATE, eq_classes=markets.SECRET3),
+        Q.Power(KU_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class HonsDebrisFactory3(HonsMember, HonsBaseDebrisManufactoring):
@@ -175,6 +185,11 @@ class HonsDebrisFactory3(HonsMember, HonsBaseDebrisManufactoring):
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
     RU_NAME = 'Плавильня Сусами'
+    MISC_EQUIP_TYPE = KU_MAIN
+    EQUIP_SET = markets.EquipSet(
+        Q.Thruster(KU_CIV, eq_classes=markets.SECRET3),
+        Q.Power(KU_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class HonsDebrisBoxReward(HonsMember, mineable.DefaultDebrisBoxRewardsGroup):
@@ -269,6 +284,11 @@ class HonsSolarPlant1(HonsMember, HonsBaseSolarPlant):
         HonsSolarMinesZone1,
     ]
     RU_NAME = 'Солн.генератор Кавогоэ'
+    MISC_EQUIP_TYPE = KU_PIRATE
+    EQUIP_SET = markets.EquipSet(
+        Q.Power(KU_CIV, eq_classes=markets.SECRET3),
+        Q.Shield(KU_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class HonsSolarPlant2(HonsMember, HonsBaseSolarPlant):
@@ -278,6 +298,11 @@ class HonsSolarPlant2(HonsMember, HonsBaseSolarPlant):
         HonsSolarMinesZone2,
     ]
     RU_NAME = 'Солн.генератор Итабаси'
+    MISC_EQUIP_TYPE = KU_PIRATE
+    EQUIP_SET = markets.EquipSet(
+        Q.Power(KU_CIV, eq_classes=markets.SECRET2),
+        Q.Shield(KU_PIRATE, eq_classes=markets.SECRET3),
+    )
 
 
 class HonsSolarPlant3(HonsMember, HonsBaseSolarPlant):
@@ -287,6 +312,11 @@ class HonsSolarPlant3(HonsMember, HonsBaseSolarPlant):
         HonsSolarMinesZone3,
     ]
     RU_NAME = 'Солн.генератор Накано'
+    MISC_EQUIP_TYPE = KU_PIRATE
+    EQUIP_SET = markets.EquipSet(
+        Q.Power(KU_PIRATE, eq_classes=markets.SECRET2),
+        Q.Shield(KU_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class HonsSolarPlant4(HonsMember, HonsBaseSolarPlant):
@@ -296,6 +326,11 @@ class HonsSolarPlant4(HonsMember, HonsBaseSolarPlant):
         HonsSolarMinesZone4,
     ]
     RU_NAME = 'Солн.генератор Нэрима'
+    MISC_EQUIP_TYPE = KU_PIRATE
+    EQUIP_SET = markets.EquipSet(
+        Q.Power(KU_CIV, eq_classes=markets.SECRET2),
+        Q.Shield(KU_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class HonsSolarPlant5(HonsMember, HonsBaseSolarPlant):
@@ -305,6 +340,11 @@ class HonsSolarPlant5(HonsMember, HonsBaseSolarPlant):
         HonsSolarMinesZone5,
     ]
     RU_NAME = 'Солн.генератор Кавагути'
+    MISC_EQUIP_TYPE = KU_PIRATE
+    EQUIP_SET = markets.EquipSet(
+        Q.Power(KU_CIV, eq_classes=markets.SECRET3),
+        Q.Shield(KU_PIRATE, eq_classes=markets.SECRET2),
+    )
 
 
 class HonsSolarSupriseRewards(HonsMember, mineable.DefaultSupriseRewardsGroup):

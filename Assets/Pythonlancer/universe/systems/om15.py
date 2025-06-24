@@ -178,42 +178,84 @@ class Om15RoidMiner1(Omega15Member, Om15BaseRoidMiner):
     INDEX = 1
     BASE_INDEX = 61
     RU_NAME = 'Рудокоп Гранта'
+    MISC_EQUIP_TYPE = RH_MAIN
+    WEAPON_FACTION = WEAPON_RH
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_PROF, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET1),
+    )
 
 
 class Om15RoidMiner2(Omega15Member, Om15BaseRoidMiner):
     INDEX = 2
     BASE_INDEX = 62
     RU_NAME = 'Рудокоп Каллиопа'
+    MISC_EQUIP_TYPE = RH_MAIN
+    WEAPON_FACTION = WEAPON_RH
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_PROF, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET2),
+    )
 
 
 class Om15RoidMiner3(Omega15Member, Om15BaseRoidMiner):
     INDEX = 3
     BASE_INDEX = 63
     RU_NAME = 'Рудокоп Гигея'
+    MISC_EQUIP_TYPE = RH_MAIN
+    WEAPON_FACTION = WEAPON_RH
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_PROF, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET1),
+    )
 
 
 class Om15RoidMiner4(Omega15Member, Om15BaseRoidMiner):
     INDEX = 4
     BASE_INDEX = 64
     RU_NAME = 'Рудокоп Веста'
+    MISC_EQUIP_TYPE = RH_MAIN
+    WEAPON_FACTION = WEAPON_RH
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_PROF, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET3),
+    )
 
 
 class Om15RoidMiner5(Omega15Member, Om15BaseRoidMiner):
     INDEX = 5
     BASE_INDEX = 65
     RU_NAME = 'Рудокоп Паллада'
+    MISC_EQUIP_TYPE = RH_MAIN
+    WEAPON_FACTION = WEAPON_RH
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_PROF, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET1),
+    )
 
 
 class Om15RoidMiner6(Omega15Member, Om15BaseRoidMiner):
     INDEX = 6
     BASE_INDEX = 66
     RU_NAME = 'Рудокоп Матильда'
+    MISC_EQUIP_TYPE = RH_MAIN
+    WEAPON_FACTION = WEAPON_RH
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_PROF, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET2),
+    )
 
 
 class Om15RoidMiner7(Omega15Member, Om15BaseRoidMiner):
     INDEX = 7
     BASE_INDEX = 67
     RU_NAME = 'Рудокоп Церера'
+    MISC_EQUIP_TYPE = RH_MAIN
+    WEAPON_FACTION = WEAPON_RH
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(MINE_MIL, eq_classes=markets.MINE),
+        Q.PlayerArmor(None, eq_classes=markets.SECRET3),
+    )
 
 
 class Om15NiobiumAsteroidReward(Omega15Member, mineable.AsteroidRewardsGroupUltra):
@@ -433,6 +475,12 @@ class Om15AbandonedStationDropPoint1(Omega15Member, main_objects.HackableStation
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpost
     INTERIOR_CLASS = interior.EquipDeckInterior
     RU_NAME = 'Исследовательский блок 1 Данцига'
+    MISC_EQUIP_TYPE = RH_CIV
+    WEAPON_FACTION = WEAPON_RH
+    EQUIP_SET = markets.EquipSet(
+        Q.GenericLauncher(SHIELD_MISSILE, eq_classes=markets.MISSILE),
+        Q.Shield(RH_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Om15AbandonedStationDropPoint2(Omega15Member, main_objects.HackableStation):
@@ -444,6 +492,12 @@ class Om15AbandonedStationDropPoint2(Omega15Member, main_objects.HackableStation
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpost
     INTERIOR_CLASS = interior.EquipDeckInterior
     RU_NAME = 'Исследовательский блок 2 Данцига'
+    MISC_EQUIP_TYPE = RH_CIV
+    WEAPON_FACTION = WEAPON_RH
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('rh_shieldgun', eq_classes=markets.SECRET3),
+        Q.Shield(RH_MAIN, eq_classes=markets.SECRET2),
+    )
 
 
 class Om15Planet1(Omega15Member, main_objects.Planet):
