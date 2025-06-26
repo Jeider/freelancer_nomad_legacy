@@ -1466,11 +1466,9 @@ archetype = space_police01
 
 [Object]
 nickname = br_hbr_02_prison1
-ids_name = 068022
 pos = 135, -650, 0
 rotate = 0, 90, 0
 archetype = space_prison_dummy
-ids_info = 068006
 parent = br_hbr_02
 
 [Object]

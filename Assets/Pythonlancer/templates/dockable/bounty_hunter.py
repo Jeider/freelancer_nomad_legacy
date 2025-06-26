@@ -308,7 +308,7 @@ parent = omicron1_01
 
 
 class ChurchAlive(SpaceObjectTemplate):
-    SPACE_OBJECT_NAME = 'omicron1_01'
+    SPACE_OBJECT_NAME = 'omicron1_02'
     TEMPLATE = '''[Object]
 nickname = omicron1_02
 pos = 0, 0, 0

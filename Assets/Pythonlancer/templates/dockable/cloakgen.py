@@ -9,11 +9,7 @@ pos = 0, 0, 0
 rotate = 90, 90, 0
 archetype = xlarge_ring_station
 loadout = cloakgen_fx
-behavior = NOTHING
-reputation = bx_grp
-ids_name = 208610
-ids_info = 067011
-visit = 16
+{root_props}
 
 [Object]
 nickname = br_avl_05_arch01
