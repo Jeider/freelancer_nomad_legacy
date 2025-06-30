@@ -250,7 +250,7 @@ def generate_story_voices():
     script_manager = ScriptManager()
     # import pdb;pdb.set_trace()
     for msn in script_manager.get_missions():
-        if msn.MISSION_INDEX != 12:
+        if msn.MISSION_INDEX != 13:
             continue
         for voice in msn.get_voices():
             audio_folder.AudioFolder.compile_story_voice_to_xml(voice)
@@ -275,29 +275,25 @@ def test_lua():
 
 
 class MySupriseField(mineable.DefaultField):
-    BOX_SIZE = 200
-    DENSITY_MULTIPLER = 2
+    BOX_SIZE = 1800
+    DENSITY_MULTIPLER = 3
     DRIFT_X = 0.8
-    DRIFT_Y = 0.5
+    DRIFT_Y = 1
     DRIFT_Z = 0.8
     EMPTY_CHANCE = 0
-    ROTATE_X_MIN = -180
-    ROTATE_X_MAX = 180
-    ROTATE_Y_MIN = -180
-    ROTATE_Y_MAX = 180
-    ROTATE_Z_MIN = -180
-    ROTATE_Z_MAX = 180
+    # ROTATE_X_MIN = -180
+    # ROTATE_X_MAX = 180
+    # ROTATE_Y_MIN = -180
+    # ROTATE_Y_MAX = 180
+    # ROTATE_Z_MIN = -180
+    # ROTATE_Z_MAX = 180
 
 
 class MyField(mineable.StaticObjectField):
-    ALIAS = 'research_chunks'
+    ALIAS = 'bh_hazard_field'
     INDEX = 1
     STATIC_ARCHETYPES = [
-        'depot_chunk01',
-        'depot_chunk02',
-        'depot_chunk03',
-        'depot_chunk04',
-        'depot_chunk06',
+        'bh_hazard',
     ]
     FIELD_CLASS = MySupriseField
     REWARDS_GROUP_CLASS = mineable.DefaultSupriseRewardsGroup
@@ -306,7 +302,7 @@ class MyField(mineable.StaticObjectField):
 
 def generate_field():
     core = get_core()
-    the_sys = core.universe.universe_root.get_all_system_by_name('sig17')
+    the_sys = core.universe.universe_root.get_all_system_by_name('bh')
 
     field = MyField(system=the_sys)
     content = field.get_system_content()

@@ -86,5 +86,20 @@
 <test_voice name="0x9396220A" type="file" filename="echo_m13_player\dx_m13_2080_trent.wav"/>
 <test_voice name="0xA3D62E8B" type="file" filename="echo_m13_player\dx_m13_2095_trent.wav"/>
 <test_voice name="0xB3830709" type="file" filename="echo_m13_player\dx_m13_2110_trent.wav"/>
+<test_voice name="0xA7960C03" type="file" filename="echo_m13_player\dx_m13_3010_trent.wav"/>
+<test_voice name="0xA7964401" type="file" filename="echo_m13_player\dx_m13_3030_trent.wav"/>
+<test_voice name="0x87969806" type="file" filename="echo_m13_player\dx_m13_3040_trent.wav"/>
+<test_voice name="0x8796D004" type="file" filename="echo_m13_player\dx_m13_3060_trent.wav"/>
+<test_voice name="0xA796D405" type="file" filename="echo_m13_player\dx_m13_3070_trent.wav"/>
+<test_voice name="0xA7972C0B" type="file" filename="echo_m13_player\dx_m13_3090_trent.wav"/>
+<test_voice name="0xA7820D09" type="file" filename="echo_m13_player\dx_m13_3110_trent.wav"/>
+<test_voice name="0x8782410A" type="file" filename="echo_m13_player\dx_m13_3120_trent.wav"/>
+<test_voice name="0x8782990C" type="file" filename="echo_m13_player\dx_m13_3140_trent.wav"/>
+<test_voice name="0x8782D10E" type="file" filename="echo_m13_player\dx_m13_3160_trent.wav"/>
+<test_voice name="0x87832900" type="file" filename="echo_m13_player\dx_m13_3180_trent.wav"/>
+<test_voice name="0xA7832D01" type="file" filename="echo_m13_player\dx_m13_3190_trent.wav"/>
+<test_voice name="0xA7DE4601" type="file" filename="echo_m13_player\dx_m13_3230_trent.wav"/>
+<test_voice name="0xA7DE9E07" type="file" filename="echo_m13_player\dx_m13_3250_trent.wav"/>
+<test_voice name="0xA7DED605" type="file" filename="echo_m13_player\dx_m13_3270_trent.wav"/>
 </UTF_ROOT>
 </UTFXML>

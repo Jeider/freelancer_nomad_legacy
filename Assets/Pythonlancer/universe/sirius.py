@@ -712,6 +712,19 @@ class om13_alt(system.StorySystem, system.SiriusSystem):
     SPACE_FARCLIP = 150000
 
 
+class bh(system.StorySystem, system.SiriusSystem):
+    NAME = 'bh'
+    DIRECT_TEMPLATE_NAME = 'bh_dev'
+    RU_NAME = 'Чёрная дыра'
+    # CONTENT = om13_alt_content
+
+    ALLOW_SYNC = True
+
+    SYSTEM_FOLDER = 'BH'
+    NAVMAP_POS = '14.5, -1.1'
+    SPACE_FARCLIP = 150000
+
+
 class asf_hq(system.StorySystem, system.SiriusSystem):
     NAME = 'asf_hq'
     DIRECT_TEMPLATE_NAME = 'asf_hq_dev'

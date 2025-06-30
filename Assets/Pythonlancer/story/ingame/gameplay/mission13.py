@@ -8,7 +8,7 @@ from story import actors
 from story.ingame import objectives as O
 from story.ingame.tools import (
     Point, Obj, Conn, NNObj, Ship, Solar, Capital, SaveState, DockableBattleshipSolar,
-    Direct, Trigger, MultiLine, TextDialog, MultiText
+    Direct, Trigger, MultiLine, TextDialog, MultiText, DRY_RUN
 )
 
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT, GENERIC_MOUNTED_ROTATABLE, GENERIC_TWO_POINT_MOVE2
@@ -240,6 +240,236 @@ class ActiveKernel:
         return SINGLE_DIVIDER.join(content)
 
 
+class Hazard:
+    SOLAR_NAME = 'Сгусток энергии'
+
+    def __init__(self, pod_root, hazard_index, pod_name):
+        self.pod_root: BlackholePower = pod_root
+        self.hazard_index = hazard_index
+        self.solar = Solar(self.pod_root.mission, S.bh, self.get_hazard_name(),
+                           ru_name=self.SOLAR_NAME, archetype='bh_hazard', loadout='bh_hazard',
+                           labels=['hazards'])
+        self.pod_name = pod_name
+
+    def get_hazard_index(self):
+        return f'{self.hazard_index:02d}'
+
+    def get_hazard_name(self):
+        return self.pod_root.HAZARD_NAME.format(self.hazard_index)
+
+    def get_pod_name(self):
+        return self.pod_root.POD_NAME.format(self.hazard_index)
+
+    def define_solar(self):
+        return self.solar.define()
+
+    def spawn_solar(self):
+        return SINGLE_DIVIDER.join([
+            self.solar.spawn(),
+            self.solar.invulnerable(),
+        ])
+
+    def allow_damage(self):
+        return SINGLE_DIVIDER.join([
+            self.solar.invulnerable(godmode=True, damage_from_player=True),
+            self.solar.mark(),
+        ])
+
+    def mark(self):
+        return SINGLE_DIVIDER.join([
+            self.solar.mark(),
+        ])
+
+    def unmark(self):
+        return SINGLE_DIVIDER.join([
+            self.solar.unmark(),
+        ])
+
+    def destroy(self):
+        return SINGLE_DIVIDER.join([
+            self.solar.destroy(),
+        ])
+
+    def destroy_pod(self):
+        return SINGLE_DIVIDER.join([
+            f'Act_Destroy = {self.get_pod_name()}'
+        ])
+
+    def define_pod(self):
+        return f'''
+[MsnLoot]
+nickname = {self.get_pod_name()}
+archetype = escape_pod
+string_id = {self.pod_name.id}
+rel_pos_obj = {self.get_hazard_name()}
+rel_pos_offset = 0, 0, 0
+velocity = 0, 10, 0
+equip_amount = 1
+health = 1.000000
+Can_Jettison = false
+'''
+
+
+class BlackholePower:
+    MAIN = 'BH_POWER_init'
+    SYSTEM_CLASS = S.bh
+    SYSTEM_NAME = SYSTEM_CLASS.NAME
+    HAZARD_NAME = 'bh_hazard_{0}'
+    POD_NAME = 'hazard_pod_{}'
+    HAZARDS_COUNT = 34
+    POWER_PODS = 8
+    HAZARD_DESTROYED_TRIGGER = 'bl_hazard_{0}_destroyed'
+    POD_ACQUIRED_TRIGGER = 'hazard_pod_{0}_acquired'
+    END_TRIGGER = 'HAZARD_POD_exit'
+
+    TOTAL_COUNTER = 'marker_progress_counter'
+    CHECK_MARKER = 'marker_relative_obj'
+
+    MISSION_TIMEOUT = 60
+
+    SCIENT_NAME = 'Энергия чёрной дыры'
+
+    def __init__(self, mission, direct, trigger):
+        self.mission: ingame_mission.IngameMission = mission
+        self.direct: Direct = direct
+        self.trigger: Trigger = trigger
+        self.hazards: list[Hazard] = []
+        self.objects_defined = False
+        self.triggers_defined = False
+        self.hazard_ids_name = self.mission.ids.new_name(self.SCIENT_NAME)
+        self.init_hazards()
+
+    def init_hazards(self):
+        for i in range(1, self.HAZARDS_COUNT+1):
+            hazard = Hazard(self, hazard_index=i, pod_name=self.hazard_ids_name)
+            self.hazards.append(hazard)
+
+    def turn(self):
+        if not self.objects_defined:
+            raise Exception('Blackhole power objects is not defined')
+        if not self.triggers_defined:
+            raise Exception('Blackhole power triggers is not defined')
+        return self.trigger.turn(self.MAIN)
+
+    def define_objects(self):
+        definitions = [f'''
+[MsnSolar]
+nickname = {self.TOTAL_COUNTER}
+system = bh
+position = 100000, 200, 0
+archetype = msn5_pod_counter
+radius = 0
+string_id = 1
+
+[MsnSolar]
+nickname = {self.CHECK_MARKER}
+system = bh
+position = 100000, 100, 0
+archetype = msn5_pod_counter
+radius = 0
+string_id = 1
+''',
+        ]
+
+        for hazard in self.hazards:
+            definitions.extend([
+                hazard.define_solar(),
+                hazard.define_pod(),
+            ])
+
+        self.objects_defined = True
+        return DIVIDER.join(definitions)
+
+    def draw_main_hazards(self):
+        actions = []
+        for hazard in self.hazards:
+            actions.extend([
+                hazard.spawn_solar(),
+                self.trigger.turn(self.HAZARD_DESTROYED_TRIGGER.format(hazard.hazard_index)),
+            ])
+        return SINGLE_DIVIDER.join(actions)
+
+    def deactivate_hazards(self):
+        actions = []
+        for hazard in self.hazards:
+            actions.append(
+                self.trigger.off(self.HAZARD_DESTROYED_TRIGGER.format(hazard.hazard_index))
+            )
+            actions.append(hazard.unmark())
+        return SINGLE_DIVIDER.join(actions)
+
+    def attack_hazards(self):
+        actions = []
+        for hazard in self.hazards:
+            actions.append(hazard.allow_damage())
+            actions.append(hazard.mark())
+        return SINGLE_DIVIDER.join(actions)
+
+    def mark_all_hazards(self):
+        actions = []
+        for hazard in self.hazards:
+            actions.append(hazard.mark())
+        return SINGLE_DIVIDER.join(actions)
+
+    def unmark_all_hazards(self):
+        actions = []
+        for hazard in self.hazards:
+            actions.append(hazard.unmark())
+        return SINGLE_DIVIDER.join(actions)
+
+    def destroy_all_hazards(self):
+        actions = []
+        for hazard in self.hazards:
+            actions.append(hazard.destroy())
+            actions.append(hazard.destroy_pod())
+        return SINGLE_DIVIDER.join(actions)
+
+    def get_hazard_triggers(self):
+        actions = []
+
+        for hazard in self.hazards:
+            pod_name = hazard.get_pod_name()
+            actions.extend([
+                self.trigger.new(self.HAZARD_DESTROYED_TRIGGER.format(hazard.hazard_index)),
+                f'Cnd_Destroyed = {hazard.get_hazard_name()}',
+                f'Act_SpawnLoot = {pod_name}',
+                f'Act_Invulnerable = {pod_name}, true',
+                f'Act_MarkObj = {pod_name}, 1',
+                self.trigger.turn(self.POD_ACQUIRED_TRIGGER.format(hazard.hazard_index)),
+                '',
+                self.trigger.new(self.POD_ACQUIRED_TRIGGER.format(hazard.hazard_index)),
+                f'Cnd_LootAcquired = {pod_name}, Player',
+                f'Act_RemoveCargo = {pod_name}',
+                self.hit_total_counter(),
+            ])
+
+        return SINGLE_DIVIDER.join(actions)
+
+    def hit_total_counter(self):
+        damage = ((100 / self.POWER_PODS) / 100) * 1.025
+        return f'Act_AdjHealth = {self.TOTAL_COUNTER}, -{damage}'
+
+    def define_triggers(self):
+        self.triggers_defined = True
+        content = [
+            self.trigger.new(self.MAIN, dry=True),
+            self.draw_main_hazards(),
+            f'Act_SpawnSolar = {self.TOTAL_COUNTER}',
+            self.trigger.turn('POD_all_acquired'),
+            '',
+            ####
+            self.trigger.new('POD_all_acquired'),
+            f'Cnd_Destroyed = {self.TOTAL_COUNTER}',
+            self.trigger.off('POD_all_acquired'),
+            self.trigger.turn(self.END_TRIGGER),
+            ####
+            ####
+            self.get_hazard_triggers(),
+            '',
+        ]
+        return SINGLE_DIVIDER.join(content)
+
+
 class Misson13(ingame_mission.IngameMission):
     JINJA_TEMPLATE = 'missions/m13/m13.ini'
     FOLDER = 'M13'
@@ -247,7 +477,7 @@ class Misson13(ingame_mission.IngameMission):
     START_SAVE_ID = 33300
     START_SAVE_RU_NAME = 'Линкор Осирис. Рядом со Сферой'
     SCRIPT_INDEX = 13
-    DIRECT_SYSTEMS = [S.sphere2, S.sphere2_inside, S.beast01, S.om13_alt]
+    DIRECT_SYSTEMS = [S.sphere2, S.sphere2_inside, S.om13_alt, S.bh]
     STATIC_NPCSHIPS = NPCSHIPS
     RTC = ['captured', 'last_brief']
     INIT_OFFER = MultiLine(
@@ -264,6 +494,7 @@ class Misson13(ingame_mission.IngameMission):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.active_kernel = ActiveKernel(direct=self.direct, trigger=self.trigger)
+        self.blackhole_power = BlackholePower(self, direct=self.direct, trigger=self.trigger)
 
     def get_dialogs(self):
         return [
@@ -280,11 +511,20 @@ class Misson13(ingame_mission.IngameMission):
                     'эндгейм будет выглядеть иначе. Может быть у меня получится сделать скайримо-лансер. Посмотрим :-)'
                 ]),
             ),
+
+            TextDialog(
+                self, 'collect_power', 'Сбор энергии Чёрной дыры',
+                ru_content=MultiText([
+                    'Атакуйте сгустки энергии и собирайте полученный концентрат, чтобы загрузить '
+                    'номадское энергоядро энергией Чёрный дыры'
+                ]),
+            ),
         ]
 
     def get_initial_context(self) -> dict:
         context = super().get_initial_context()
         context['active_kernel'] = self.active_kernel
+        context['blackhole_power'] = self.blackhole_power
         return context
 
     def get_save_states(self):
@@ -970,6 +1210,42 @@ class Misson13(ingame_mission.IngameMission):
             Solar(self, S.om13_alt, 'om13alt_bh', ru_name='Чёрная дыра'),
         )
 
+        ### BH
+
+        bh_sols = [
+            DockableBattleshipSolar(
+                self, S.bh, 'enter_lootbox',
+                archetype='hidden_connect_phantom', loadout='om13_lootbox',
+                ru_name='Лутбокс'),
+        ]
+
+        self.add_solar_group('BH_SOLS', bh_sols)
+        defined_points.extend(bh_sols)
+
+        tits = [
+            DockableBattleshipSolar(
+                self, S.bh, 'tits_01',
+                archetype='beast_tits', loadout='nomad_tits', ru_name='Номадский нарост', labels=['no_tits', 'nomad']),
+            DockableBattleshipSolar(
+                self, S.bh, 'tits_02',
+                archetype='beast_tits', loadout='nomad_tits', ru_name='Номадский нарост', labels=['no_tits', 'nomad']),
+            DockableBattleshipSolar(
+                self, S.bh, 'tits_03',
+                archetype='beast_tits', loadout='nomad_tits', ru_name='Номадский нарост', labels=['no_tits', 'nomad']),
+        ]
+
+        self.add_solar_group('BH_TITS', tits)
+        defined_points.extend(tits)
+
+        bh_points = [
+            'bh_to_krieg_run',
+        ]
+
+        for p in bh_points:
+            defined_points.append(
+                Point(self, S.bh, p),
+            )
+
         return defined_points
 
     def get_capital_ships(self):
@@ -1078,6 +1354,11 @@ class Misson13(ingame_mission.IngameMission):
             NNObj(self, 'Подберите энергоядро', name='get_om13_powercell'),
             NNObj(self, 'Направляйтесь в чёрную дыру', target='om13alt_bh', towards=True),
 
+            NNObj(self, 'Ожидайте целей миссии', name='bh_enter'),
+            NNObj(self, 'Направляйтесь к Крыгу', target='bh_to_krieg_run', towards=True),
+            NNObj(self, 'Защищайтесь!', name='bh_defend'),
+            NNObj(self, 'Добудьте энергию чёрной дыры', name='bh_collect_power'),
+            NNObj(self, 'Учнитожьте номадские наросты на Крыге', name='bh_destroy_tits'),
 
 
 
@@ -1301,5 +1582,15 @@ class Misson13(ingame_mission.IngameMission):
                 slide_z=150,
                 labels=['enemy', 'nomad'],
                 static_npc_shiparch='ms13_no_fighter_catcher'
+            ),
+            Ship(
+                self,
+                'kr_fighter',
+                count=5,
+                slide_x=-200,
+                affiliation=faction.Nomad.CODE,
+                system_class=S.bh,
+                labels=['enemy', 'nomad', 'bh_elite'],
+                static_npc_shiparch='ms13_no_elite'
             ),
         ]

@@ -40,5 +40,17 @@
 <test_voice name="0x927ADA03" type="file" filename="echo_m13_female\dx_m13_2070_nn.wav"/>
 <test_voice name="0xA27A9783" type="file" filename="echo_m13_female\dx_m13_2090_nn.wav"/>
 <test_voice name="0xAA7F9CC1" type="file" filename="echo_m13_female\dx_m13_2100_nn.wav"/>
+<test_voice name="0xBF3ADCC3" type="file" filename="echo_m13_female\dx_m13_3020_nn.wav"/>
+<test_voice name="0x873ADA03" type="file" filename="echo_m13_female\dx_m13_3050_nn.wav"/>
+<test_voice name="0xAF3A9443" type="file" filename="echo_m13_female\dx_m13_3080_nn.wav"/>
+<test_voice name="0xAF3F9E41" type="file" filename="echo_m13_female\dx_m13_3100_nn.wav"/>
+<test_voice name="0xB73F9D81" type="file" filename="echo_m13_female\dx_m13_3130_nn.wav"/>
+<test_voice name="0x873F9A01" type="file" filename="echo_m13_female\dx_m13_3150_nn.wav"/>
+<test_voice name="0x973F9881" type="file" filename="echo_m13_female\dx_m13_3170_nn.wav"/>
+<test_voice name="0xAF305E46" type="file" filename="echo_m13_female\dx_m13_3200_nn.wav"/>
+<test_voice name="0xA7305F06" type="file" filename="echo_m13_female\dx_m13_3210_nn.wav"/>
+<test_voice name="0xBF305CC6" type="file" filename="echo_m13_female\dx_m13_3220_nn.wav"/>
+<test_voice name="0x8F305B46" type="file" filename="echo_m13_female\dx_m13_3240_nn.wav"/>
+<test_voice name="0x9F3059C6" type="file" filename="echo_m13_female\dx_m13_3260_nn.wav"/>
 </UTF_ROOT>
 </UTFXML>
