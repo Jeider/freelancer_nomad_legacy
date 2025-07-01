@@ -1640,11 +1640,32 @@ class Direct:
             actions.append(solar.spawn())
         return SINGLE_DIVIDER.join(actions)
 
+    def mark_solar_group(self, group_name):
+        group = self.mission.get_solar_group(group_name)
+        actions = []
+        for solar in group:
+            actions.append(solar.mark())
+        return SINGLE_DIVIDER.join(actions)
+
     def hide_solar_group(self, group_name):
         group = self.mission.get_solar_group(group_name)
         actions = []
         for solar in group:
             actions.append(solar.hide())
+        return SINGLE_DIVIDER.join(actions)
+
+    def invulnerable_solar_group(self, group_name):
+        group = self.mission.get_solar_group(group_name)
+        actions = []
+        for solar in group:
+            actions.append(solar.invulnerable())
+        return SINGLE_DIVIDER.join(actions)
+
+    def damage_from_player_solar_group(self, group_name):
+        group = self.mission.get_solar_group(group_name)
+        actions = []
+        for solar in group:
+            actions.append(solar.invulnerable(damage_from_player=True))
         return SINGLE_DIVIDER.join(actions)
 
     def define_ship_return_back(self, ship_name, system_name, point, range_out, range_back, back_ol):

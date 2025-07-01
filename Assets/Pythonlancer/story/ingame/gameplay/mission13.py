@@ -299,7 +299,7 @@ class Hazard:
         return f'''
 [MsnLoot]
 nickname = {self.get_pod_name()}
-archetype = escape_pod
+archetype = m13_bh_power
 string_id = {self.pod_name.id}
 rel_pos_obj = {self.get_hazard_name()}
 rel_pos_offset = 0, 0, 0
@@ -501,13 +501,18 @@ class Misson13(ingame_mission.IngameMission):
             TextDialog(
                 self, 'work_in_progress', 'Миссия завершена',
                 ru_content=MultiText([
-                    'Вы успешно справились с миссией, но, к сожалению, она еще не закончена. '
-                    'Проект продолжает разрабатываться и финал вскоре будет доделан',
-                    'Если вам понравился проект, то вы можете оставить свой отзыв или поддержать автора. ',
-                    'Контакты и способы поддержаки можно найти на сайте https://freelancer2.space',
-                    '',
-                    'После нажатия "закрыть" кампания будет закончена и вам будет разрешено играть в открытом мире,'
-                    'но т.к. это альфа-версия, то я просто разрешаю вам поиграть в текущей версии мира. В будущем '
+                    'Вы успешно справлись с миссией! Она практически закончена, только не хватает сцены, в которой '
+                    'мы с помощью того же устройства, что и в оригинальной миссии 13, атакуем лазером Крыга и '
+                    'уничтожаем его навсегда!',
+
+                    'Проект продолжает развиваться. Вскоре будут сделаны все оставшиеся катсцены. И в том числе '
+                    'красивый финал :-) Если вам понравился проект, то способы поддержать автора вы можете найти на '
+                    'сайте https://freelancer2.space. Этот проект долгие годы разрабатывался по большей части '
+                    'одним человеком и автор отчаянно ищет мотивацию продолжать развивать проект и очень надеется, '
+                    'что вы ему в этом поможете :-) ',
+
+                    'После закрытия этого окна кампания будет закончена и вам будет разрешено играть в открытом мире,'
+                    'но так как это альфа-версия, то автор просто разрешает вам поиграть в текущей версии мира. В будущем '
                     'эндгейм будет выглядеть иначе. Может быть у меня получится сделать скайримо-лансер. Посмотрим :-)'
                 ]),
             ),
@@ -963,7 +968,7 @@ class Misson13(ingame_mission.IngameMission):
         for sol in gens:
             defined_points.append(
                 Solar(self, S.sphere2, sol, ru_name='Генератор', labels=['enemy', 'lazergen', 'lazer_generators'],
-                      archetype='dyson_generator', loadout='dyson_generator_msn3'),
+                      archetype='dyson_generator_msn13', loadout='dyson_generator_msn3'),
             )
 
         wplatforms_count = 5
@@ -971,7 +976,7 @@ class Misson13(ingame_mission.IngameMission):
         for sol in wplatforms:
             defined_points.append(
                 Solar(self, S.sphere2, sol, ru_name='Орудийная платформа', labels=['enemy', 'lazergen'],
-                      archetype='wplatform_ms2', loadout='ms2_the_platform'),
+                      archetype='wplatform_ms13', loadout='ms2_the_platform'),
             )
 
         krieg_turrets = []
@@ -1237,8 +1242,37 @@ class Misson13(ingame_mission.IngameMission):
         self.add_solar_group('BH_TITS', tits)
         defined_points.extend(tits)
 
+        internal_gen = []
+
+        bh_gens_count = 7
+        bh_gens = [f'bh_gen_{i}' for i in range(1, bh_gens_count+1)]
+        for sol in bh_gens:
+            internal_gen.append(
+                Solar(self, S.bh, sol, ru_name='Генератор', labels=['enemy', 'beast_inernal_gen'],
+                      archetype='beast_generator_short'),
+            )
+
+        internal_turr = []
+
+        bh_small_turrets_count = 12
+        bh_small_wplatforms = [f'bh_def_turr_{i}' for i in range(1, bh_small_turrets_count+1)]
+        for sol in bh_small_wplatforms:
+            solar = Solar(self, S.bh, sol, ru_name='Орудийная платформа',
+                labels=['enemy', 'the_krieg'],
+                archetype='lair_platform', loadout='beast_platform02',
+                pilot='pilot_solar_hardest_beast',
+            )
+            internal_turr.append(solar)
+
+        self.add_solar_group('BH_INTERNAL_GEN', internal_gen)
+        defined_points.extend(internal_gen)
+
+        self.add_solar_group('BH_INTERNAL_TURR', internal_turr)
+        defined_points.extend(internal_turr)
+
         bh_points = [
             'bh_to_krieg_run',
+            'bh_to_krieg_away',
         ]
 
         for p in bh_points:
@@ -1354,14 +1388,12 @@ class Misson13(ingame_mission.IngameMission):
             NNObj(self, 'Подберите энергоядро', name='get_om13_powercell'),
             NNObj(self, 'Направляйтесь в чёрную дыру', target='om13alt_bh', towards=True),
 
-            NNObj(self, 'Ожидайте целей миссии', name='bh_enter'),
+            NNObj(self, 'Подберите наноботы и батареи щита в этой локации', name='bh_enter'),
             NNObj(self, 'Направляйтесь к Крыгу', target='bh_to_krieg_run', towards=True),
             NNObj(self, 'Защищайтесь!', name='bh_defend'),
             NNObj(self, 'Добудьте энергию чёрной дыры', name='bh_collect_power'),
             NNObj(self, 'Учнитожьте номадские наросты на Крыге', name='bh_destroy_tits'),
-
-
-
+            NNObj(self, 'Покиньте чрево Крыга', target='bh_to_krieg_away', towards=True),
         ]
 
     def get_ships(self):

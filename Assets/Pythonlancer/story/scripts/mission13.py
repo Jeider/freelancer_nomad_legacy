@@ -296,7 +296,7 @@ class Msn13Space(Msn13, script.SpaceVoiceProps):
 
         VoiceLine(3120, Trent, ru="А этой энергии чёрной дыр+ы хватит Крыгу, чтобы высвободиться отсюда?"),
         VoiceLine(3130, Neuralnet, ru="Теоретически да"),
-        VoiceLine(3140, Trent, ru="Вот чёрт! Кстати, а нам это по силам?"),
+        VoiceLine(3140, Trent, ru="Вот чёрт! Кстати, а нам по силам выбраться отсюда?"),
         VoiceLine(3150, Neuralnet, ru="Теоретически да"),
         VoiceLine(3160, Trent, ru="А вот это уже звучит гораздо лучше!"),
 
