@@ -194,34 +194,27 @@ class AsteroidRewardPropsUltra(RewardProps):
 class DebrisBoxRewardPropsLow(RewardProps):
     REWARD_TYPE = MINING_REWARD_LOW
     MIN = 1
-    MAX = 3
-    LOADOUTS_COUNT = 10
+    MAX = 2
+    LOADOUTS_COUNT = 5
 
 
 class DebrisBoxRewardPropsMedium(RewardProps):
     REWARD_TYPE = MINING_REWARD_MEDIUM
-    MIN = 5
-    MAX = 10
-    LOADOUTS_COUNT = 10
+    MIN = 3
+    MAX = 4
+    LOADOUTS_COUNT = 5
 
 
 class DebrisBoxRewardPropsHigh(RewardProps):
     REWARD_TYPE = MINING_REWARD_HIGH
-    MIN = 10
-    MAX = 20
-    LOADOUTS_COUNT = 10
+    MIN = 5
+    MAX = 7
+    LOADOUTS_COUNT = 5
 
 
 class DebrisBoxRewardPropsUltra(RewardProps):
     REWARD_TYPE = MINING_REWARD_ULTRA
     LOADOUTS_COUNT = 1
-
-
-class DebrisBoxRewardPropsUltraAdditional(RewardProps):
-    REWARD_TYPE = MINING_REWARD_ULTRA_ADDITIONAL
-    MIN = 10
-    MAX = 25
-    LOADOUTS_COUNT = 10
 
 
 class GasCrystalRewardPropsLow(RewardProps):
@@ -459,12 +452,11 @@ class DefaultAsteroidRewardsGroup(MultipointRewardsGroup):
     ULTRA_REWARD_PROP = AsteroidRewardPropsUltra
 
 
-class DefaultDebrisBoxRewardsGroup(SinglepointRewardsGroup):
+class DefaultDebrisBoxRewardsGroup(MultipointRewardsGroup):
     REWARD_PROPS = [
         DebrisBoxRewardPropsLow,
         DebrisBoxRewardPropsMedium,
         DebrisBoxRewardPropsHigh,
-        DebrisBoxRewardPropsUltraAdditional,
     ]
     ULTRA_REWARD_PROP = DebrisBoxRewardPropsUltra
 
@@ -540,7 +532,6 @@ class DefaultDebrisBoxRewardsGroupUltra(SinglepointRewardsGroup):
         DebrisBoxRewardPropsLow,
         DebrisBoxRewardPropsMedium,
         DebrisBoxRewardPropsHigh,
-        DebrisBoxRewardPropsUltraAdditional,
     ]
     ULTRA_REWARD_PROP = DebrisBoxRewardPropsUltra
 
@@ -683,157 +674,8 @@ visit = 128'''
         )
 
 
-class DebrisBoxRewardField(RewardField):
+class DebrisBoxRewardField(AsteroidRewardField):
     ALIAS = 'deb'
-
-    SYSTEM_OBJECT_TEMPLATE = '''[Object]
-nickname = {nickname}_box01
-pos = {pos_1}
-rotate = 0, 0, 0
-archetype = {archetype}
-loadout = {loadout_1}
-visit = 128
-
-[Object]
-nickname = {nickname}_box02
-pos = {pos_2}
-rotate = 0, 90, 0
-archetype = {archetype}
-loadout = {loadout_2}
-visit = 128
-
-[Object]
-nickname = {nickname}_box03
-pos = {pos_3}
-rotate = 0, 180, 0
-archetype = {archetype}
-loadout = {loadout_3}
-visit = 128
-
-[Object]
-nickname = {nickname}_box04
-pos = {pos_4}
-rotate = 0, -90, 0
-archetype = {archetype}
-loadout = {loadout_4}
-visit = 128
-
-[Object]
-nickname = {nickname}_box05
-pos = {pos_5}
-rotate = 180, -90, 0
-archetype = {archetype}
-loadout = {loadout_5}
-visit = 128
-
-[Object]
-nickname = {nickname}_box06
-pos = {pos_6}
-rotate = 180, 0, 0
-archetype = {archetype}
-loadout = {loadout_6}
-visit = 128
-
-[Object]
-nickname = {nickname}_box07
-pos = {pos_7}
-rotate = 180, 90, 0
-archetype = {archetype}
-loadout = {loadout_7}
-visit = 128
-
-[Object]
-nickname = {nickname}_box08
-pos = {pos_8}
-rotate = 180, 180, 0
-archetype = {archetype}
-loadout = {loadout_8}
-visit = 128'''
-
-    POSITIONS = [
-        (0, 0, 0),
-        (0, 0, -5),
-        (-5, 0, -5),
-        (-5, 0, 0),
-        (0, -0.5, 0),
-        (0, -0.5, -5),
-        (-5, -0.5, -5),
-        (-5, -0.5, 0),
-    ]
-
-    # POSITIONS = [
-    #     (0, 1, 1),
-    #     (0, 1, -6),
-    #     (-5, 1, -6),
-    #     (-5, 1, 1),
-    #     (0, -1.5, 1),
-    #     (0, -1.5, -6),
-    #     (-5, -1.5, -6),
-    #     (-5, -1.5, 1),
-    # ]
-
-
-    # POSITIONS = [
-    #     (10, 110, 10),
-    #     (10, 110, -15),
-    #     (-15, 110, -15),
-    #     (-15, 110, 10),
-    #     (10, -12.5, 10),
-    #     (10, -12.5, -15),
-    #     (-15, -12.5, -15),
-    #     (-15, -12.5, 10),
-    # ]
-
-    # POSITIONS = [
-    #     (0, 0, 0),
-    #     (0, 0, -4.8),
-    #     (-4.8, 0, -4.8),
-    #     (-4.8, 0, 0),
-    #     (0, -0.1, 0),
-    #     (0, -0.1, -4.8),
-    #     (-4.8, -0.1, -4.8),
-    #     (-4.8, -0.1, 0),
-    # ]
-
-
-    ITEMS_COUNT = 8
-
-    POS_KEY_TEMPLATE = 'pos_{i}'
-    LOADOUT_KEY_TEMPLATE = 'loadout_{i}'
-
-    def get_archetype_by_reward_type(self, reward_type):
-        if reward_type == MINING_REWARD_LOW: 
-            return self.rewards_group.solar.get_default_archetype()
-        if reward_type == MINING_REWARD_MEDIUM:
-            return self.rewards_group.solar.get_medium_reward_archetype()
-        if reward_type == MINING_REWARD_HIGH:
-            return self.rewards_group.solar.get_high_reward_archetype()
-        if reward_type == MINING_REWARD_ULTRA:
-            return self.rewards_group.solar.get_ultra_reward_archetype()
-
-        raise Exception('unknown reward_type %s' % reward_type)
-
-    def generate_box_content_item(self, box, reward_type, index):
-        archetype = self.get_archetype_by_reward_type(reward_type)
-        loadouts = self.rewards_group.get_loadout_names_by_reward_type(reward_type, self.ITEMS_COUNT, self.ultra_base_instance)
-
-        template_params = {
-            'nickname': self.create_nickname(index),
-            'archetype': archetype,
-        }
-
-        box_pos = box.get_position()
-
-        for i in range(1, self.ITEMS_COUNT + 1):
-            item_key = i-1
-            i_pos_x, i_pos_y, i_pos_z = self.POSITIONS[item_key]
-            pos_x = box_pos[0] + i_pos_x
-            pos_y = box_pos[1] + i_pos_y
-            pos_z = box_pos[2] + i_pos_z
-            template_params[self.POS_KEY_TEMPLATE.format(i=i)] = '{}, {}, {}'.format(pos_x, pos_y, pos_z)
-            template_params[self.LOADOUT_KEY_TEMPLATE.format(i=i)] = loadouts[item_key]
-
-        return self.SYSTEM_OBJECT_TEMPLATE.format(**template_params)
 
 
 class GasCrystalRewardField(RewardField):

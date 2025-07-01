@@ -320,6 +320,13 @@ MATRICES = [
 FUSE_MAIN = 'debris_box_dmg_box'
 FUSE_DROP = 'debris_box_dmg_xdrop_box'
 
+HARDPOINT_NAME_TEMPLATE = 'HpFX{index:02d}'
+
+CHUNKS = 29
+
+INIT_ITEMS_TEMPLATE = 'equip = {exploder_normal}, {hp}'
+INIT_ITEMS_ULTRA_TEMPLATE = 'equip = {exploder_ultra}, {hp}'
+
 
 class DebrisBoxFactory(object):
 
@@ -431,10 +438,8 @@ class DebrisBoxFactory(object):
         self.final_fuses_drop = "\n".join(fuses_drop)
 
 
-INIT_ITEMS_TEMPLATE = 'equip = attached_xast_exploder, {hp}'
 
-
-class DebrisBox(MineableSolar):
+class DebrisBoxOld(MineableSolar):
     ALIAS = 'debris_box'
 
     DEFAULT_ARCHETYPE = 'debris_box_x29_cube'
@@ -453,6 +458,48 @@ class DebrisBox(MineableSolar):
 
     def get_high_reward_archetype(self):
         return self.ARCHETYPE_REWARD_HIGH
+
+    def get_ultra_reward_archetype(self):
+        return self.ARCHETYPE_REWARD_ULTRA
+
+
+class DebrisBox(MineableSolar):
+    DEFAULT_ARCHETYPE = 'debris_box_2025'
+    ARCHETYPE_REWARD_ULTRA = 'debris_box_2025_ultra'
+
+    EXPLODER_NORMAL = 'attached_debrisbox_exploder'
+    EXPLODER_ULTRA = 'attached_debrisbox_exploder_ultra'
+
+    def __init__(self):
+        self.hardpoints = []
+        for i in range(1, CHUNKS + 1):
+            self.hardpoints.append(HARDPOINT_NAME_TEMPLATE.format(index=i))
+        self.init_loadout_items = [
+            INIT_ITEMS_TEMPLATE.format(exploder_normal=self.EXPLODER_NORMAL,
+                                       hp=hp) for hp in self.hardpoints
+        ]
+        self.init_loadout_items_ultra = [
+            INIT_ITEMS_ULTRA_TEMPLATE.format(exploder_ultra=self.EXPLODER_ULTRA,
+                                             hp=hp) for hp in self.hardpoints
+        ]
+
+    def get_hardpoints(self):
+        return self.hardpoints
+
+    def get_init_loadout_items(self):
+        return self.init_loadout_items
+
+    def get_init_loadout_items_ultra(self):
+        return self.init_loadout_items_ultra
+
+    def get_default_archetype(self):
+        return self.DEFAULT_ARCHETYPE
+
+    def get_medium_reward_archetype(self):
+        return self.DEFAULT_ARCHETYPE
+
+    def get_high_reward_archetype(self):
+        return self.DEFAULT_ARCHETYPE
 
     def get_ultra_reward_archetype(self):
         return self.ARCHETYPE_REWARD_ULTRA
