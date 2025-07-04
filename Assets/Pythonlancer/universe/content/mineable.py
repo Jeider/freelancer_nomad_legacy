@@ -309,6 +309,9 @@ class RewardsGroup(object):
         loadout = self.get_loadout_by_reward_type(reward_type, ultra_base_instance)
         if loadout:
             return loadout.get_loadout_nickname()
+
+        if reward_type == MINING_REWARD_ULTRA:
+            raise Exception(f'Error! Ultra reward loadout not found for {self}')
         return None
 
     def get_multiple_loadouts_by_reward_type(self, reward_type, count, ultra_base_instance):

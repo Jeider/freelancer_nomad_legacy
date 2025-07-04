@@ -464,6 +464,8 @@ class DebrisBoxOld(MineableSolar):
 
 
 class DebrisBox(MineableSolar):
+    ALIAS = 'debris_box_2025'
+
     DEFAULT_ARCHETYPE = 'debris_box_2025'
     ARCHETYPE_REWARD_ULTRA = 'debris_box_2025_ultra'
 

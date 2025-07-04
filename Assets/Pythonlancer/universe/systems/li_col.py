@@ -288,13 +288,13 @@ class ColAbandonedAstBase1(ColMember, main_objects.AbandonedAsteroid):
 
 
 class ColBackgroundAsteroidReward(ColMember, mineable.AsteroidRewardsGroupHigh):
-    NAME = 'li_col_rewardast'
+    NAME = 'li_col_norewardast'
     SOLAR = asteroid.AsteroidCalifornia
     REWARD_ITEM = 'comm_roid_uranium'
 
 
-class ColUnlockerAsteroidReward(ColMember, mineable.AsteroidRewardsGroupHigh):
-    NAME = 'li_for_norewardast'
+class ColUnlockerAsteroidReward(ColMember, mineable.AsteroidRewardsGroupUltra):
+    NAME = 'li_col_rewardast'
     SOLAR = asteroid.AsteroidCalifornia
     REWARD_ITEM = 'comm_roid_uranium'
     ULTRA_REWARD_BASES = [
