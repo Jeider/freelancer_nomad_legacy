@@ -71,9 +71,9 @@ nickname = ms6_no_fighter
 loadout = ms6_no_fighter
 level = d10
 ship_archetype = no_fighter
-pilot = mod_fighter_version_a
+pilot = mod_fighter_universe
 state_graph = FIGHTER
-npc_class = lawful, FIGHTER
+npc_class = lawful, fighter_ace
 
 '''
 
@@ -371,7 +371,7 @@ class Misson06(ingame_mission.IngameMission):
             Solar(
                 self, S.sphere, 'sphere_kernel', faction='fc_n_grp',
                 archetype='nomad_kernel', loadout='sphere_kernel_light',
-                ru_name='Номадское зерно',
+                ru_name='Номадское зерно', labels=['nomad', 'enemy']
             ),
             Solar(
                 self, S.sphere, 'sphere_kernel_deactivator', faction='fc_n_grp',
@@ -379,7 +379,7 @@ class Misson06(ingame_mission.IngameMission):
                 ru_name='Генератор', labels=['nomad_area_gen'],
             ),
             Solar(
-                self, S.sphere, 'sphere_kernel_lazerburner', faction='fc_n_grp',
+                self, S.sphere, 'sphere_kernel_lazerburner',
                 archetype='space_hidden_root', loadout='nomad_sphere_run_laser',
                 ru_name='Излучатель',
             ),
@@ -633,6 +633,7 @@ class Misson06(ingame_mission.IngameMission):
                 self,
                 'no_fighter',
                 count=25,
+                radius=0,
                 affiliation=faction.Nomad.CODE,
                 system_class=S.sphere,
                 labels=['enemy', 'nomad'],
