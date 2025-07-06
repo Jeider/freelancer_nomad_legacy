@@ -256,6 +256,28 @@ def generate_story_voices():
             audio_folder.AudioFolder.compile_story_voice_to_xml(voice)
 
 
+def generate_cutscene_voices():
+    script_manager = ScriptManager()
+    # import pdb;pdb.set_trace()
+    for msn in script_manager.get_missions():
+        if msn.MISSION_INDEX != 9:
+            continue
+        for cutscene in msn.get_cutscenes():
+            audio_folder.AudioFolder.generate_cutscene_sounds(cutscene)
+
+
+def test_interaction():
+    i = input('Wait for you action').strip().lower()
+    if i == 's':
+        print('saved!')
+    elif i == 'x':
+        print('ignored')
+    else:
+        print('unknown action')
+
+    i = input('Next action').strip().lower()
+
+
 def test_elevenlabs():
     result = elevenlabs.ElevenLabs.get_line('Это Рэйнланд, омега один слеш один. Я направляюсь к станции Потсдам. Скоро буду.')
     import pdb;pdb.set_trace()
@@ -478,6 +500,7 @@ ACTIONS = {
     'generate_script': generate_script,
     'test_voices': test_voices,
     'test_steos': test_steos,
+    'test_interaction': test_interaction,
     'test_elevenlabs': test_elevenlabs,
     'test_lua': test_lua,
     'dump_system': dump_system,
@@ -485,6 +508,7 @@ ACTIONS = {
     'compile_pilots_ini': compile_pilots_ini,
     'compile_pilots_audio': compile_pilots_audio,
     'generate_story_voices': generate_story_voices,
+    'generate_cutscene_voices': generate_cutscene_voices,
     'generate_field': generate_field,
     'generate_points': generate_points,
     'dbg': dbg,

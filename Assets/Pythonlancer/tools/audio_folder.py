@@ -56,12 +56,14 @@ XML_FOLDERS = [
     # "dispatcher01",
     # "dispatcher02",
     # "dispatcher03",
-    "nnvoice",
+    # "nnvoice",
 ]
 STORY_XML_TEMPLATE = '{file}.utf.xml'
 STORY_UTF_TEMPLATE = '{file}.utf'
 
+INITIAL_AUDIO_CUTSCENE_FOLDER = 'AUDIO_CUTSCENE_RU'
 INITIAL_AUDIO_XML_FOLDER = 'AUDIO_XML_RU'
+APPLY_AUDIO_CUTSCENE_FOLDER = 'AUDIO_XML_CUTSCENE_APPLY'
 APPLY_AUDIO_XML_FOLDER = 'AUDIO_XML_RU_APPLY'
 
 STORY_FOLDER_TEMPLATE = '../AUDIO_XML_RU_APPLY/{file}.xml'
@@ -70,14 +72,24 @@ STORY_FOLDER_TEMPLATE = '../AUDIO_XML_RU_APPLY/{file}.xml'
 class AudioFolder:
 
     @staticmethod
-    def get_initial_audio_path():
+    def get_initial_xml_audio_path():
         current_path = pathlib.Path().resolve()
         return current_path.parent / INITIAL_AUDIO_XML_FOLDER
 
     @staticmethod
-    def get_apply_audio_path():
+    def get_apply_xml_audio_path():
         current_path = pathlib.Path().resolve()
         return current_path.parent / APPLY_AUDIO_XML_FOLDER
+
+    @staticmethod
+    def get_initial_cutscene_audio_path():
+        current_path = pathlib.Path().resolve()
+        return current_path.parent / INITIAL_AUDIO_CUTSCENE_FOLDER
+
+    @staticmethod
+    def get_apply_cutscene_audio_path():
+        current_path = pathlib.Path().resolve()
+        return current_path.parent / APPLY_AUDIO_CUTSCENE_FOLDER
 
     @classmethod
     def compile_xml_to_utf(cls):
@@ -102,7 +114,7 @@ class AudioFolder:
     def compile_story_voice_to_xml(cls, voice, skip=True):
         # voice.validate_ai_compatibility()
 
-        root_path = cls.get_initial_audio_path()
+        root_path = cls.get_initial_xml_audio_path()
         voice_path = root_path / f'{voice.voice_name}.xml'
         voice_path.mkdir(parents=True, exist_ok=True)
 
@@ -116,7 +128,24 @@ class AudioFolder:
 
         xml_path.write_text(voice.get_xml(), encoding='utf-8')
 
-        for sound in voice.sounds:
+        for sound in voice.get_sounds():
+            file_destination = sounds_path / f"{sound.name}.mp3"
+            alt_file_destination = sounds_path / f"{sound.name}.wav"
+            if file_destination.exists() or alt_file_destination.exists():
+                continue
+
+            if sound.line.actor.STEOS_ID is None:
+                raise Exception('actor %s have no steos for line name %s' % (sound.line.actor.NAME, sound.name))
+
+            steos.SteosVoice.generate_ru_voice(file_destination=file_destination, sound=sound)
+
+    @classmethod
+    def generate_cutscene_sounds(cls, cutscene):
+        root_path = cls.get_initial_cutscene_audio_path()
+        sounds_path = root_path / cutscene.get_cutscene_folder()
+        sounds_path.mkdir(parents=True, exist_ok=True)
+
+        for sound in cutscene.get_sounds():
             file_destination = sounds_path / f"{sound.name}.mp3"
             alt_file_destination = sounds_path / f"{sound.name}.wav"
             if file_destination.exists() or alt_file_destination.exists():

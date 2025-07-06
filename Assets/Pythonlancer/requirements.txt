@@ -6,3 +6,4 @@ requests>=2.31.0
 pywebview>=5.1
 pygit2>=1.15.0
 pulp>=3.0.2
+pydub>=0.25.1

@@ -4,7 +4,7 @@ from audio.sound import SpaceSound, CutsceneSound
 from audio.voice import MaleVoice, FemaleVoice, TrentVoice
 
 
-class MissionSegment(object):
+class MissionSegment:
     ALIAS = ''
     VOICE_LINES = []
     MISSION_INDEX = None
@@ -96,6 +96,9 @@ class CutsceneProps(MissionSegment):
             destination=self.get_destination()
         )
 
+    def get_cutscene_folder(self):
+        return self.mission.get_cutscene_folder()
+
 
 class SpaceVoiceProps(MissionSegment):
     VOICE_LINES = []
@@ -128,7 +131,7 @@ class SpaceVoiceProps(MissionSegment):
             line.set_ids_sub(self.mission.ids.new_name(line.get_ru_subtitle()))
 
 
-class StoryMission(object):
+class StoryMission:
     SPACE_VOICE_LINES = []
     SPACE_CLASS = None
     CUTSCENES = []
@@ -255,6 +258,9 @@ class StoryMission(object):
     def get_actor_file_link(self, actor):
         return f'mission{self.MISSION_INDEX}_{actor.NAME}.html'
 
+    def get_cutscene_folder(self):
+        return f'M{self.MISSION_INDEX:02d}'
+
     def get_short_name(self):
         return f'Миссия {self.MISSION_INDEX}'
 
@@ -304,6 +310,9 @@ class StoryMission(object):
             self.get_trent_space_voice(),
         ]
 
+    def get_cutscenes(self):
+        return self.cutscenes
+
     def get_cutscene_sounds(self):
         sounds = []
         for segment in self.cutscenes:
@@ -311,7 +320,7 @@ class StoryMission(object):
         return sounds
 
 
-class ScriptIndex(object):
+class ScriptIndex:
     STORY_TEMPLATE = '''
 <html>
 <head>

@@ -14,6 +14,9 @@ class Voice:
         self.voice_name = voice_name
         self.sounds = sounds
 
+    def get_sounds(self):
+        return self.sounds
+
     def validate_ai_compatibility(self):
         for sound in self.sounds:
             if sound.line.actor.STEOS_ID is None:
