@@ -95,6 +95,7 @@ class Trent(Actor):
     TYPE = ACTOR_TRENT
     NAME = 'trent'
     COMM_APPEARANCE = 'pi_pirate5_head, player_body, player_commhelmet'
+    CUTSCENE_APPEARANCE = 'trent'
     STEOS_ID = 210
     STEOS_PITCH = -0.5
     STEOS_SPEED = 1.13
@@ -139,6 +140,7 @@ class Darcy(Actor):
     TYPE = ACTOR_FEMALE
     NAME = 'darcy'
     COMM_APPEARANCE = 'ge_female1_head, br_darcy_body, comm_br_darcy_female'
+    CUTSCENE_APPEARANCE = 'darcy'
     STEOS_ID = 219
     STEOS_PITCH = 0
     STEOS_SPEED = 1.2

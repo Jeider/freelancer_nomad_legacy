@@ -1,7 +1,15 @@
 import pathlib
 import shutil
+from pydub import AudioSegment
 
 LOADOUTS_GEN = 'loadout_gen.ini'
+
+
+
+def get_duration_pydub(file_path):
+    audio_file = AudioSegment.from_file(file_path)
+    duration = audio_file.duration_seconds
+    return duration
 
 
 class DataFolder(object):
@@ -42,6 +50,14 @@ class DataFolder(object):
     @classmethod
     def get_fx(cls):
         return cls.get_root() / 'FX'
+
+    @classmethod
+    def get_scripts(cls):
+        return cls.get_root() / 'SCRIPTS'
+
+    @classmethod
+    def get_cutscene_audio(cls):
+        return cls.get_audio() / 'MOD'
 
     @classmethod
     def sync_fuse(cls, fuse_name, content):
@@ -175,4 +191,19 @@ class DataFolder(object):
             cls.get_audio() / out_file_name
         )
 
+    @classmethod
+    def sync_facial(cls, content):
+        facial_file = cls.get_scripts() / 'WORKSPACE' / 'facial.thn'
+        facial_file.write_text(content, encoding='utf-8')
 
+    @classmethod
+    def get_facial(cls):
+        facial_file = open(cls.get_scripts() / 'WORKSPACE' / 'facial.thn')
+        file_content = facial_file.readlines()
+        facial_file.close()
+        return file_content
+
+    @classmethod
+    def watch_cutscene_audio_duration(cls, subfolder, file_path):
+        duration = get_duration_pydub(cls.get_cutscene_audio() / subfolder / file_path)
+        return duration

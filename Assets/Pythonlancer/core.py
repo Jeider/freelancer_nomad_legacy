@@ -12,12 +12,10 @@ from managers.store import StoreManager
 from templates.jinja_manager import JinjaTemplateManager
 
 
-
 class TemplateManger:
 
     def __init__(self, lancer_core):
         self.core = lancer_core
-
 
 
 class LancerCore(object):

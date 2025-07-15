@@ -1,7 +1,1 @@
-{
-  "m09_order_1000_hassler": {
-    "lips": [
-
-    ]
-  }
-}
+{"DX_m09_yokohama_0010_trent": [{"delay": 0.0, "props": "{animation=\"Sc_dx_s015x_0801_trent\", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}"}], "DX_m09_yokohama_0020_darcy": [{"delay": 0.0, "props": "{animation=\"Sc_dx_s070x_2701_Jacobi\", start_time=2.3, duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}"}], "DX_m09_yokohama_0030_trent": [{"delay": 0.0, "props": "{animation=\"Sc_dx_s071b_0101_trent\", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}"}, {"delay": 4.5, "props": "{animation=\"Sc_dx_s064x_1801_trent\", start_time=0.2, duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}"}], "DX_m09_yokohama_0040_darcy": [{"delay": 0.0, "props": "{animation=\"Sc_dx_s070x_2701_Jacobi\", start_time=2.5, duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}"}], "DX_m09_yokohama_0050_hassler": [{"delay": 0.0, "props": "{animation=\"Sc_dx_s033x_0101_dexter\", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}"}], "DX_m09_yokohama_0060_trent": [{"delay": 0.0, "props": "{animation=\"Sc_dx_s006x_0201_trent\", start_time=0.5, duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}"}], "DX_m09_yokohama_0070_hassler": [{"delay": 0.0, "props": "{animation=\"Sc_dx_s032d_0101_dexter\", duration=10, time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}"}], "DX_m09_yokohama_0080_hassler": [{"delay": 0.0, "props": "{animation=\"Sc_dx_s032a_0502_dexter\", duration=10, time_scale=0.9, trans_time=0.25,  weight=1, heading=-1}"}], "DX_m09_yokohama_0090_trent": [{"delay": 0.0, "props": "{animation=\"Sc_dx_s045b_1801_trent\", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}"}]}

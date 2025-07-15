@@ -13,6 +13,8 @@ from managers.script import ScriptManager
 
 from templates.jinja_manager import JinjaTemplateManager
 
+from story.cutscenes.meta import MetaManager
+
 from universe.audio.manager import PilotManager
 from universe.audio import pilot
 from universe.audio import dispatcher
@@ -219,10 +221,6 @@ def test_steos():
 
 
 
-
-
-
-
     return
 
     lines = pilot.get_number_lines()
@@ -387,103 +385,20 @@ archetype = nav_buoy
     print(nav_combined)
 
 
+def meta():
+    tpl_manager = JinjaTemplateManager()
+    script_manager = ScriptManager()
+    meta_manager = MetaManager(tpl_manager=tpl_manager)
+
+    msn = script_manager.get_mission_by_index(9)
+
+    meta_manager.test_edit(msn)
+
+    print('1')
+
+
 def dbg():
-    # positions = [
-    #     [83.005188, 125.17676, 13.371254],
-    #     [2.4011745, -98.823227, -26.740688],
-    #     [-30.598829, -100.68946, -27.857965],
-    #     [1.4011707, -64.689461, -27.857965],
-    #     [-31.8281, -64.08577, -28.232422],
-    #     [-31.8281, 3.9142303, -28.232422],
-    #     [1.2891908, 4.4142303, -28.366173],
-    #     [-30.210812, 37.91423, -28.366173],
-    #     [2.0597906, 71.176613, -27.857933],
-    #     [-28.940208, 103.81059, -28.740768],
-    #     [-65.773544, -10.689415, 20.9259],
-    #     [-32.440212, -14.889441, 20.122753],
-    #     [1.0397639, -14.889441, 18.739208],
-    #     [34.541336, -12.024345, 19.405876],
-    #     [-66.958664, -99.524345, 22.405876],
-    #     [-32.592415, -100.40695, 22.405876],
-    #     [5.915772, -63.532547, 22.405876],
-    #     [53.915779, -98.636322, 27.168423],
-    #     [46.249107, 65.363678, 17.835089],
-    #     [44.366516, 31.863678, 17.968941],
-    #     [44.249157, 22.204842, -22.531059],
-    #     [-63.250843, 116.20483, -22.531059],
-    #     [-65.133362, 81.967628, -23.435417],
-    #     [-65.633362, 29.705048, -28.331703],
-    #     [3.8666401, 119.70505, -28.331703],
-    #     [-63.466682, 88.205048, 25.501633],
-    #     [-67.083984, 54.863571, 26.001633],
-    #     [49.130775, 124.57294, 18.642044],
-    #     [-27.869226, 120.30232, 6.6966648],
-    # ]
-    #
-    # i = 1
-    # for pos_x, pos_y, pos_z in positions:
-    #     print(f'''
-    # <HpFX{i:02d}>
-    #    <Orientation type="Matrix">1, 0, 0, 0, 1, 0, 0, 0, 1</Orientation>
-    #    <Position type="Vector">{pos_x}, {pos_y}, {pos_z}</Position>
-    # </HpFX{i:02d}>
-    #
-    # ''')
-    #
-    #     i += 1
-    
-    
-  for i in range(1, 29+1):
-#         print(f'''
-# g box{i:02d}_lod1
-# usemtl debris_no_alpha
-# f 354/6/36 355/5/36 356/8/36
-# f 355/5/36 357/21/36 356/8/36
-# s 2
-# f 356/6/37 357/5/37 358/8/37
-# f 357/5/37 359/21/37 358/8/37
-# s 1
-# f 358/6/38 359/5/38 360/8/38
-# f 359/5/38 361/21/38 360/8/38
-# s 2
-# f 360/6/39 361/5/39 354/8/39
-# f 361/5/39 355/21/39 354/8/39
-# s 3
-# f 360/6/40 354/5/40 358/8/40
-# f 354/5/40 356/21/40 358/8/40
-# f 355/6/41 361/5/41 357/8/41
-# f 361/5/41 359/21/41 357/8/41
-# # 12 triangles in group''')
-
-
-        print(f'''
-[CollisionGroup]
-obj = box{i:02d}_lod1
-separable = true
-child_impulse = 1.000000
-parent_impulse = 60.000000
-debris_type = debris_vanish
-fuse = debrisbox_is_ultra, 0.000000, 1
-fuse = debris_box_dmg_box{i:02d}, 0.000000, 1
-explosion_resistance = 0.0001
-hit_pts = 2000
-root_health_proxy = false''')
-
-#         print(f'''
-# [fuse]
-# name = debris_box_dmg_box{i:02d}
-# lifetime = 0.100000
-# death_fuse = true
-# 
-# [destroy_hp_attachment]
-# at_t = 0.0
-# hardpoint = HpFX{i:02d}
-# fate = debris
-# 
-# [destroy_group]
-# at_t = 0.000000
-# group_name = box{i:02d}_lod1
-# fate = disappear''')
+    pass
 
 
 
@@ -511,6 +426,7 @@ ACTIONS = {
     'generate_cutscene_voices': generate_cutscene_voices,
     'generate_field': generate_field,
     'generate_points': generate_points,
+    'meta': meta,
     'dbg': dbg,
 }
 

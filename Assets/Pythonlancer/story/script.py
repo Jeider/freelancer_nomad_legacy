@@ -89,11 +89,14 @@ class CutsceneProps(MissionSegment):
     def get_destination(self):
         return f'audio\\mod\\m{self.MISSION_INDEX:02d}'
 
+    def get_subfolder(self):
+        return f'm{self.MISSION_INDEX:02d}'
+
     def get_sound_item(self, line):
         return CutsceneSound(
             name=self.get_name_for_line(line),
             line=line,
-            destination=self.get_destination()
+            mission_segment=self,
         )
 
     def get_cutscene_folder(self):

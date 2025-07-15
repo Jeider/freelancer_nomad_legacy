@@ -2,7 +2,6 @@ import httpx
 import base64
 import pathlib
 
-from audio.sound import Sound
 from pathlib import Path
 
 from settings import STEOS_API_KEY
@@ -52,7 +51,7 @@ class SteosVoice(object):
         return base64.b64decode(response.json()["fileContents"])
 
     @classmethod
-    def generate_ru_voice(cls, sound: Sound, file_destination: Path):
+    def generate_ru_voice(cls, sound, file_destination: Path):
         voice_bytes = cls.generate_voice_bytes(actor=sound.line.actor, text=sound.line.get_ru_clean_text())
         with open(file_destination, "wb") as fout:
             fout.write(voice_bytes)

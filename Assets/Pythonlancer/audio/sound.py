@@ -1,7 +1,7 @@
 import re
 from text.dividers import SINGLE_DIVIDER
 from tools.create_id import CreateId
-
+from tools.audio_folder import DataFolder
 
 SPACE_ATTENUATION = -8
 CUTSCENE_ATTENUATION = 0
@@ -78,19 +78,63 @@ class SpaceSound(Sound):
 
 
 class CutsceneSound(Sound):
-    def __init__(self, destination, **kwargs):
+    def __init__(self, mission_segment, **kwargs):
         super().__init__(**kwargs)
-        self.destination = destination
+        self.mission_segment = mission_segment
+
+    def get_destination(self):
+        return self.mission_segment.get_destination()
+
+    def get_duration(self):
+        return DataFolder.watch_cutscene_audio_duration(self.mission_segment.get_subfolder(), self.get_filename())
 
     def get_nickname(self):
         return f'DX_{self.name}'
 
-    def get_cutscene_ini(self, root):
+    def get_filename(self):
+        return f'{self.name}.wav'
+
+    def get_cutscene_ini(self):
         return SINGLE_DIVIDER.join([
             SOUND_ARCH,
-            f'msg = {self.get_nickname()}',
+            f'nickname = {self.get_nickname()}',
             'type = voice',
             f'attenuation = {CUTSCENE_ATTENUATION}',
-            f'file = {root}\\{self.name}.wav',
+            f'file = {self.get_destination()}\\{self.get_filename()}',
             'is_2d = true',
         ])
+
+    def get_thorn(self):
+        nickname = self.get_nickname()
+        return '''
+{
+    entity_name="'''+nickname+'''",
+    template_name="'''+nickname+'''",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+},
+        '''
+
+    @property
+    def thorn_play(self, start_time=0, duration=30):
+        return '''
+{
+    '''+str(start_time)+''',
+    START_SOUND,
+    {
+        "'''+self.get_nickname()+'''"
+    },
+    {
+        duration='''+str(duration)+'''
+    }
+},
+'''
+
+    @property
+    def thorn_costume(self):
+        actor = self.line.actor
+        if not actor:
+            raise Exception(f'{self.line} have no actor')
+        if actor.CUTSCENE_APPEARANCE == '':
+            raise Exception(f'{actor} have no costume for cutscene')
+
+        return actor.CUTSCENE_APPEARANCE
