@@ -197,6 +197,11 @@ class DataFolder(object):
         facial_file.write_text(content, encoding='utf-8')
 
     @classmethod
+    def sync_scene(cls, scene_name, content):
+        facial_file = cls.get_scripts() / 'GENERATED' / f'{scene_name}.thn'
+        facial_file.write_text(content, encoding='utf-8')
+
+    @classmethod
     def get_facial(cls):
         facial_file = open(cls.get_scripts() / 'WORKSPACE' / 'facial.thn')
         file_content = facial_file.readlines()

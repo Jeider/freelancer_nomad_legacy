@@ -1,0 +1,98 @@
+duration=30
+
+entities={
+	{
+		entity_name="Scene_m09_yokohama",
+		type=SCENE,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		up=Y_AXIS,
+		front=Z_AXIS,
+		ambient={
+		    0,
+		    0,
+		    0
+		}
+	},
+
+	{
+		entity_name="Monitor_1",
+		type=MONITOR,
+		template_name="",
+		template_id=0
+	},
+
+	{
+    entity_name="automarker_Light",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 4.08, 1.01, 5.90 },
+        orient={ {1,0,0},{0,1,0},{0,0,1}
+    }
+}
+,
+{
+    entity_name="automarker_Camera",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.92, -4.69, 3.21 },
+        orient={ {1,0,0},{0,1,0},{0,0,1}
+    }
+}
+,
+{
+    entity_name="automarker_ku_station_bar",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ {1,0,0},{0,1,0},{0,0,1}
+    }
+}
+,
+{
+    entity_name="automarker_trent_stand",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, -1.18, 0.00 },
+        orient={ {1,0,0},{0,1,0},{0,0,1}
+    }
+}
+,
+{
+    entity_name="automarker_trent_chair",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.80, 0.48, 0.00 },
+        orient={ {1,0,0},{0,1,0},{0,0,1}
+    }
+}
+,
+{
+    entity_name="automarker_trent_init",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -4.32, -1.18, 0.00 },
+        orient={ {1,0,0},{0,1,0},{0,0,1}
+    }
+}
+}
+
+events={
+
+    
+
+}

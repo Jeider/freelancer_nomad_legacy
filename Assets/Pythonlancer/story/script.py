@@ -74,6 +74,7 @@ class MissionSegment:
 class CutsceneProps(MissionSegment):
     ALIAS = 'scene'
     VOICE_LINES = []
+    THORN_CLASS = None
 
     LINE_NAME_TEMPLATE = 'm{mission_index:02d}_{scene_alias}_{voiceline_index:04d}_{actor_name}'
 
@@ -85,6 +86,9 @@ class CutsceneProps(MissionSegment):
             voiceline_index=line.index,
             actor_name=line.actor.NAME,
         )
+
+    def get_alias(self):
+        return self.ALIAS
 
     def get_destination(self):
         return f'audio\\mod\\m{self.MISSION_INDEX:02d}'
@@ -101,6 +105,15 @@ class CutsceneProps(MissionSegment):
 
     def get_cutscene_folder(self):
         return self.mission.get_cutscene_folder()
+
+    def get_scene_name(self):
+        return f'm{self.mission.MISSION_INDEX:02d}_{self.get_alias()}'
+
+    def get_thorn(self, tpl_manager):
+        if not self.THORN_CLASS:
+            raise Exception(f'Cutscene {self} have no thorn')
+
+        return self.THORN_CLASS(tpl_manager, self)
 
 
 class SpaceVoiceProps(MissionSegment):
@@ -199,7 +212,12 @@ class StoryMission:
 
     def __init__(self, ids):
         self.ids = ids
-        self.cutscenes = [cutscene(self) for cutscene in self.CUTSCENES]
+        self.cutscenes_list = []
+        self.cutscenes_db = {}
+        for cutscene in self.CUTSCENES:
+            scene = cutscene(self)
+            self.cutscenes_list.append(scene)
+            self.cutscenes_db[scene.get_alias()] = scene
         self.space = self.SPACE_CLASS(self)
         self.actors = self.get_story_actors()
 
@@ -222,7 +240,7 @@ class StoryMission:
 
     def get_story_actors(self):
         actors = set()
-        for cutscene in self.cutscenes:
+        for cutscene in self.cutscenes_list:
             actors |= cutscene.get_actors()
         actors |= self.SPACE_CLASS.get_actors()
 
@@ -242,7 +260,7 @@ class StoryMission:
 
     def get_story_script_content(self):
         content = []
-        for cutscene in self.cutscenes:
+        for cutscene in self.cutscenes_list:
             scene_content = self.CUTSCENE_CONTAINER_TEMPLATE.format(
                 title=cutscene.TITLE,
                 description=cutscene.DESCRIPTION,
@@ -314,11 +332,14 @@ class StoryMission:
         ]
 
     def get_cutscenes(self):
-        return self.cutscenes
+        return self.cutscenes_list
+
+    def get_cutscene_by_code(self, code):
+        return self.cutscenes_db[code]
 
     def get_cutscene_sounds(self):
         sounds = []
-        for segment in self.cutscenes:
+        for segment in self.cutscenes_list:
             sounds.extend(segment.get_sounds())
         return sounds
 

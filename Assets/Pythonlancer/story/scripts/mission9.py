@@ -1,6 +1,7 @@
 from story import script
 from audio.sound import VoiceLine
 from story.actors import Trent, Hatcher, Darcy, Hassler, HasslerOrder, Yamamoto, Kim, SakuraOne, Chrysanthemum, Matome
+from story.cutscenes.story_scenes import m09_yokohama
 
 
 class Msn9(object):
@@ -10,6 +11,7 @@ class Msn9(object):
 class Msn9YokohamaCutscene(Msn9, script.CutsceneProps):
     ALIAS = 'yokohama'
     TITLE = 'Верхний бар станции Йокогама'
+    THORN_CLASS = m09_yokohama.Msn9YokohamaCutsceneThorn
     DESCRIPTION = 'Трент и Д+ерси проходят по бару. Посетители косятся на них и буквально прожигают взглядом. '
     'Вскоре их находит Хасслер и проводит к лифту. Они едут вниз.'
     VOICE_LINES = [
@@ -68,8 +70,8 @@ class Msn9YokohamaCutscene(Msn9, script.CutsceneProps):
         VoiceLine(
             110,
             Hassler,
-            ru='И что характ+ерно - каждый раз вы выход+ите сухим из воды. '
-            'Я бы сказал, не просто сухим из вод+ы, а («снимает шляпу перед дамой») '
+            ru='И что характ+ерно - каждый раз вы вых+одите сух+им из вод+ы. '
+            'Я бы даже сказал не просто сухим из вод+ы, а («снимает шляпу перед дамой») '
             'унося на руках красивую девушку на фоне ядерного гриба.'
         ),
         VoiceLine(

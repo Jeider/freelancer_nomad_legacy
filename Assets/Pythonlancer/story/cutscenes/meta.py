@@ -23,7 +23,6 @@ STAND_ANIM_PER_TYPE = {
 }
 
 
-
 class ExitInteractionException(Exception):
     pass
 
@@ -124,7 +123,7 @@ class LipsParser:
 
 
 class MetaManager:
-    FACIAL_TEMPLATE = 'demo/facial.lua'
+    FACIAL_TEMPLATE = 'cutscenes/demo/facial.lua'
 
     def __init__(self, tpl_manager):
         self.meta_db = MetaDatabase()

@@ -1,2 +1,4 @@
 SINGLE_DIVIDER = "\n"
 DIVIDER = "\n\n"
+STRING_DIVIDER = "\n,\n"
+

@@ -15,3 +15,10 @@ def euler_to_quat(x, y, z):
 def euler_to_matrix(x, y, z):
     r = R.from_euler('xyz', [x, y, z], degrees=True)
     return r.as_matrix().tolist()
+
+
+def quat_to_matrix(quaternion):
+    if len(quaternion) != 4:
+        raise Exception('Failed: income value is not quaternion')
+    r = R.from_quat(quaternion)
+    return r.as_matrix().tolist()

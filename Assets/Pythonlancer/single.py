@@ -37,8 +37,6 @@ from story import actors
 
 from tools.system_template import SystemTemplateLoader
 
-from story.cutscenes.mission9.yokohama import Msn9YokohamaCutsceneThorn
-
 from templates.solar import hacker_panel
 from templates.dockable import terraforming
 from templates.dockable import valensia
@@ -281,19 +279,6 @@ def test_elevenlabs():
     import pdb;pdb.set_trace()
 
 
-def test_lua():
-    manager = maxlancer.SceneEntityLoader.get_entity_manager('m9_yokohama')
-
-    scene = Msn9YokohamaCutsceneThorn()
-
-    content = scene.get_content()
-
-    FileWriter.write('m9_yokohama.lua', content)
-
-
-    import pdb;pdb.set_trace()
-
-
 class MySupriseField(mineable.DefaultField):
     BOX_SIZE = 1800
     DENSITY_MULTIPLER = 3
@@ -397,6 +382,21 @@ def meta():
     print('1')
 
 
+def scene():
+    tpl_manager = JinjaTemplateManager()
+    script_manager = ScriptManager()
+    msn = script_manager.get_mission_by_index(9)
+    cutscene = msn.get_cutscene_by_code('yokohama')
+    thorn = cutscene.get_thorn(tpl_manager)
+    print(thorn.get_content())
+
+
+
+
+
+
+
+
 def dbg():
     pass
 
@@ -417,7 +417,6 @@ ACTIONS = {
     'test_steos': test_steos,
     'test_interaction': test_interaction,
     'test_elevenlabs': test_elevenlabs,
-    'test_lua': test_lua,
     'dump_system': dump_system,
     'dump_story_system': dump_story_system,
     'compile_pilots_ini': compile_pilots_ini,
@@ -427,6 +426,7 @@ ACTIONS = {
     'generate_field': generate_field,
     'generate_points': generate_points,
     'meta': meta,
+    'scene': scene,
     'dbg': dbg,
 }
 
