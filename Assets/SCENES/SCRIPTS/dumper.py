@@ -28,3 +28,6 @@ with open(result_filename, 'w') as dump_file:
     json.dump(results, dump_file)
 
 
+
+# COMMAND:
+# import os; filename = os.getcwd() + '\\SCRIPTS\\dumper.py'; exec(compile(open(filename).read(), filename, 'exec'))

@@ -29,34 +29,36 @@ entities={
 		template_name="",
 		template_id=0
 	},
+	{
+		entity_name="offscreen",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={pos={-10000000,-10000,0},orient={ {1,0,0},{0,1,0},{0,0,1} } },
+	},
 
 	{
-    entity_name="automarker_Light",
+		entity_name="offscreen_back",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={pos={0,-10000,-10000000},orient={ {1,0,0},{0,1,0},{0,0,1} } },
+	},
+
+
+	{
+    entity_name="automarker_cam_dbg",
     type=MARKER,
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
     spatialprops={
-        pos={ 4.08, 1.01, 5.90 },
-        orient={ {1,0,0},{0,1,0},{0,0,1}
-    }
-}
-,
-{
-    entity_name="automarker_Camera",
-    type=MARKER,
-    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
-    spatialprops={
-        pos={ -0.92, -4.69, 3.21 },
-        orient={ {1,0,0},{0,1,0},{0,0,1}
-    }
-}
-,
-{
-    entity_name="automarker_ku_station_bar",
-    type=MARKER,
-    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
-    spatialprops={
-        pos={ 0.00, 0.00, 0.00 },
-        orient={ {1,0,0},{0,1,0},{0,0,1}
+        pos={ -0.92, 3.21, 4.69 },
+        orient={ {1,0,0},{0,1,0},{0,0,1} }
     }
 }
 ,
@@ -65,8 +67,8 @@ entities={
     type=MARKER,
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
     spatialprops={
-        pos={ 0.00, -1.18, 0.00 },
-        orient={ {1,0,0},{0,1,0},{0,0,1}
+        pos={ 0.00, 0.00, 1.18 },
+        orient={ {1,0,0},{0,1,0},{0,0,1} }
     }
 }
 ,
@@ -75,8 +77,8 @@ entities={
     type=MARKER,
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
     spatialprops={
-        pos={ -0.80, 0.48, 0.00 },
-        orient={ {1,0,0},{0,1,0},{0,0,1}
+        pos={ -0.80, 0.00, -0.48 },
+        orient={ {1,0,0},{0,1,0},{0,0,1} }
     }
 }
 ,
@@ -85,14 +87,76 @@ entities={
     type=MARKER,
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
     spatialprops={
-        pos={ -4.32, -1.18, 0.00 },
-        orient={ {1,0,0},{0,1,0},{0,0,1}
+        pos={ -4.32, 0.00, 1.18 },
+        orient={ {1,0,0},{0,1,0},{0,0,1} }
+    }
+}
+,
+{
+    entity_name="automarker_cam_dbg_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 3.79, 1.08, 2.49 },
+        orient={ {1,0,0},{0,1,0},{0,0,1} }
+    }
+}
+,
+{
+    entity_name="automarker_cam_fix",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 3.17, 2.66, 0.83 },
+        orient={ {1,0,0},{0,1,0},{0,0,1} }
+    }
+}
+,
+{
+    entity_name="automarker_ku_station_bar",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, -0.00 },
+        orient={ {1,0,0},{0,1,0},{0,0,1} }
+    }
+}
+,
+{
+    entity_name="cam_dbg",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ -0.92, 3.21, 4.69 },
+        orient={ 
+            { -0.2611509,-0.8858850,-0.3834162 }, 
+            { -0.2844187,0.4501832,-0.8464284 },
+            { 0.9224458,-0.1119948,-0.3695280 }
+         }
+    },
+    cameraprops={
+        fovh=40,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
     }
 }
 }
 
 events={
 
-    
+    {
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_dbg",
+        "automarker_cam_dbg_focus"
+    },
+    {
+        duration=1000, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
 
 }
