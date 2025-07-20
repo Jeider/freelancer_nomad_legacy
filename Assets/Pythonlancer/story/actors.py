@@ -46,6 +46,7 @@ class Actor(SteosInterface):
     STEOS_PITCH = 0
     STEOS_SPEED = 1
     ATTENUATION = None
+    GAME_ACTOR = None
 
     subclasses = []
 
@@ -89,11 +90,16 @@ class Actor(SteosInterface):
     def get_attenuation(cls):
         return cls.ATTENUATION
 
+    @classmethod
+    def get_game_actor(cls):
+        return cls.GAME_ACTOR if cls.GAME_ACTOR else cls.NAME
+
 
 class Trent(Actor):
     RU_NAME = 'Трент'
     TYPE = ACTOR_TRENT
     NAME = 'trent'
+    GAME_ACTOR = 'Player'
     COMM_APPEARANCE = 'pi_pirate5_head, player_body, player_commhelmet'
     CUTSCENE_APPEARANCE = 'trent'
     STEOS_ID = 210
@@ -582,7 +588,7 @@ class HasslerOrder(Actor):
     TYPE = ACTOR_MALE
     NAME = 'hassler'
     COMM_APPEARANCE = 'rh_hassler_head, pi_orillion_body'
-    CUTSCENE_APPEARANCE = 'hassler'
+    CUTSCENE_APPEARANCE = 'hassler_order'
     STEOS_ID = 10071
 
 

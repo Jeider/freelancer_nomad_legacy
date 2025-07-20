@@ -1,6 +1,6 @@
 from story import script
 from audio.sound import VoiceLine
-from story.actors import Trent, Hatcher, Darcy, Hassler, HasslerOrder, Yamamoto, Kim, SakuraOne, Chrysanthemum, Matome
+from story.actors import Trent, Hatcher, Darcy, HasslerOrder, Yamamoto, Kim, SakuraOne, Chrysanthemum, Matome
 from story.cutscenes.story_scenes import m09_yokohama
 
 
@@ -37,7 +37,7 @@ class Msn9YokohamaCutscene(Msn9, script.CutsceneProps):
         ),
         VoiceLine(
             50,
-            Hassler,
+            HasslerOrder,
             ru='Герр Трент, вы действительно верите, что бессмертны?'
         ),
         VoiceLine(
@@ -47,12 +47,12 @@ class Msn9YokohamaCutscene(Msn9, script.CutsceneProps):
         ),
         VoiceLine(
             70,
-            Hassler,
+            HasslerOrder,
             ru='С моей службой в Р+ейнланде покончено герр Трент. Вам повезло лично увидеть закат моей военной карьеры.'
         ),
         VoiceLine(
             80,
-            Hassler,
+            HasslerOrder,
             ru='Но хватит про меня, в наших краях вы суперзвезда, за вашу голову назначена очень хорошая награда...'
         ),
         VoiceLine(
@@ -62,14 +62,14 @@ class Msn9YokohamaCutscene(Msn9, script.CutsceneProps):
         ),
         VoiceLine(
             100,
-            Hassler,
+            HasslerOrder,
             ru='(с усмешкой) А вы даже и не в курсе. Ха-ха. '
             'Многие думают что специально, а я считаю - по незнанию, вы такое количество раз перешли дорогу Новому Ордену, '
             'что у руководства не то что нервные тики - судороги начались. '
         ),
         VoiceLine(
             110,
-            Hassler,
+            HasslerOrder,
             ru='И что характ+ерно - каждый раз вы вых+одите сух+им из вод+ы. '
             'Я бы даже сказал не просто сухим из вод+ы, а («снимает шляпу перед дамой») '
             'унося на руках красивую девушку на фоне ядерного гриба.'
@@ -81,7 +81,7 @@ class Msn9YokohamaCutscene(Msn9, script.CutsceneProps):
         ),
         VoiceLine(
             130,
-            Hassler,
+            HasslerOrder,
             ru='Конечно. После всех этих подвигов так просто заявиться в штаб-квартиру Нового Ордена. '
             'Впрочем, в данный момент вы в полной безопасности, как вам и было обещано.'
         ),
@@ -93,7 +93,7 @@ class Msn9YokohamaCutscene(Msn9, script.CutsceneProps):
         ),
         VoiceLine(
             150,
-            Hassler,
+            HasslerOrder,
             ru='Тогда вам лучше говорить не со мной герр Трент, а с главой Нового Ордена, герром Ямамото.'
         ),
         VoiceLine(
@@ -103,7 +103,7 @@ class Msn9YokohamaCutscene(Msn9, script.CutsceneProps):
         ),
         VoiceLine(
             170,
-            Hassler,
+            HasslerOrder,
             ru='Именно! Причем незамедлительно!'
         ),
         VoiceLine(
@@ -113,14 +113,14 @@ class Msn9YokohamaCutscene(Msn9, script.CutsceneProps):
         ),
         VoiceLine(
             190,
-            Hassler,
+            HasslerOrder,
             ru='Вы и так находитесь в штаб-квартире Нового Ордена, бояться нужно было раньше. '
             'Ямамото-с+ама (-сама - это уважительный суффикс при обращении к мужчине в японии. как у нас господин или в германии герр) '
             'придерживается консервативных взглядов и очень уважает воинскую доблесть. '
         ),
         VoiceLine(
             200,
-            Hassler,
+            HasslerOrder,
             ru='Я рассказал ему о наших с вами совместных приключениях, и '
             ' как мне показалось он проникся уважением к вам. Не думаю что вам что-то угрожает.'
         ),
@@ -140,7 +140,7 @@ class Msn9OrderCutscene(Msn9, script.CutsceneProps):
     VOICE_LINES = [
         VoiceLine(
             10,
-            Hassler,
+            HasslerOrder,
             ru='Герр Ямамото, герр Трент, фрау Д+ерси.'
         ),
         VoiceLine(
@@ -321,7 +321,7 @@ class Msn9RewardCutscene(Msn9, script.CutsceneProps):
         ),
         VoiceLine(
             20,
-            Hassler,
+            HasslerOrder,
             ru='Ким, остынь'
         ),
         VoiceLine(
@@ -331,7 +331,7 @@ class Msn9RewardCutscene(Msn9, script.CutsceneProps):
         ),
         VoiceLine(
             40,
-            Hassler,
+            HasslerOrder,
             ru='Я гарантирую это'
         ),
 
@@ -342,7 +342,7 @@ class Msn9RewardCutscene(Msn9, script.CutsceneProps):
         ),
         VoiceLine(
             110,
-            Hassler,
+            HasslerOrder,
             ru='Не все, герр Трент. Но целеустремленность этих людей воодушевляет'
         ),
         VoiceLine(
@@ -352,7 +352,7 @@ class Msn9RewardCutscene(Msn9, script.CutsceneProps):
         ),
         VoiceLine(
             130,
-            Hassler,
+            HasslerOrder,
             ru='Пока нужно отдохнуть. Для вас и фрау Д+ерси на линкоре выделены индивидуальные каюты, вас проводят'
         ),
     ]

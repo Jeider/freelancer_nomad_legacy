@@ -29,7 +29,7 @@ entities={
 
        {{ sound.get_thorn() }}
 
-
+    ,
 
 	{
 		entity_name="Char_the",

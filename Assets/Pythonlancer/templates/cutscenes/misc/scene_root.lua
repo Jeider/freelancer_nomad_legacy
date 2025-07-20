@@ -51,6 +51,9 @@ entities={
 		spatialprops={pos={0,-10000,-10000000},orient={ {1,0,0},{0,1,0},{0,0,1} } },
 	},
 
+	{{ script_sounds }}
+
+	,
 
 	{{ entities }}
 }

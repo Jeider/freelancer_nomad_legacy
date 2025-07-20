@@ -19,4 +19,4 @@
         Actor="{{ actor }}",
         category="Character"
     }
-},
+}

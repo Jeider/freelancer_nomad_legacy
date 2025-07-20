@@ -10,7 +10,7 @@ BG = 'bg'
 IDLE = 'idle'
 
 MALE_ANIMS = {
-    IDLE: 'Sc_FMBODY_STND_IDLE_000LV_xa_05',
+    IDLE: 'Sc_MLBODY_STND_IDLE_000LV_xa_04',
 }
 
 FEMALE_ANIMS = {
@@ -60,6 +60,9 @@ class Group:
         self.root.add_event(time, event)
         self.time += time_append
 
+    def get_time(self):
+        return self.time
+
 
 class Event:
     TEMPLATE = None
@@ -104,6 +107,34 @@ class LookAtEvent(Event):
         }
 
 
+class SetCameraEvent(Event):
+    TEMPLATE = 'set_camera'
+
+    def __init__(self, camera_name, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.camera_name = camera_name
+
+    def get_params(self):
+        return {
+            'name': self.camera_name,
+        }
+
+
+class SoundEvent(Event):
+    TEMPLATE = 'sound'
+
+    def __init__(self, sound_name, duration=20, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.sound_name = sound_name
+        self.duration = duration
+
+    def get_params(self):
+        return {
+            'sound': self.sound_name,
+            'duration': self.duration,
+        }
+
+
 class MoveEvent(Event):
     TEMPLATE = 'move_linear'
 
@@ -143,6 +174,21 @@ class MotionEvent(Event):
             'time_scale': self.time_scale,
             'start_time': self.start_time,
             'loop': self.loop,
+        }
+
+
+class FacialEvent(Event):
+    TEMPLATE = 'facial'
+
+    def __init__(self, object_name, motion, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.object_name = object_name
+        self.motion = motion
+
+    def get_params(self):
+        return {
+            'object_name': self.object_name,
+            'motion': self.motion,
         }
 
 
@@ -211,18 +257,11 @@ class Character(Entity):
         return {
             'name': self.name,
             'template_name': self.actor.CUTSCENE_APPEARANCE,
-            'actor': self.actor.NAME,
+            'actor': self.actor.get_game_actor(),
             'light_group': self.light_group,
             'init_pos': self.init_pos,
             'init_matrix': self.get_init_matrix(),
         }
-    def move_cam(self, group, index, duration, time_delay=0, time_append=0, smooth=True):
-        target = f'{self.name}{index}'
-        target_obj = self.root.get_automarker(target)
-        MoveEvent(root=self.root, group=group,
-                  object_name=self.name, target_name=target_obj.name,
-                  duration=duration, smooth=smooth,
-                  time_delay=time_delay, time_append=time_append)
 
     def idle(self, group, duration=10, **kwargs):
         animation = self.animations[IDLE]
@@ -231,12 +270,32 @@ class Character(Entity):
                     duration=duration,
                     **kwargs)
 
+    def facial(self, group, index, append=True, extra_delay=0.3):
+        sound = self.root.lookup_single_sound(index)
+        if self.actor != sound.line.actor:
+            raise Exception(f'Sound {index} is belong to actor {sound.line.actor}. Cannot run by {self.actor}')
+
+        meta = self.root.lookup_sound_meta(sound)
+        if len(meta) == 0:
+            raise Exception(f'Empty meta for sound {index} !')
+
+        lip_group = f'motion_{index}'
+        self.root.clone_group(lip_group, original=group)
+
+        for lip in meta:
+            FacialEvent(root=self.root, group=lip_group,
+                        object_name=self.name, motion=lip.get_props(),
+                        time_delay=lip.get_delay(), time_append=lip.get_delay())
+
+        SoundEvent(root=self.root, group=group, sound_name=sound.get_nickname(),
+                   time_append=sound.get_duration()+extra_delay if append else 0)
 
 
 
 
 class Camera(Marker):
-    pass
+    def set(self, group, **kwargs):
+        SetCameraEvent(root=self.root, group=group, camera_name=self.name, **kwargs)
 
 
 class StaticCamera(Camera):

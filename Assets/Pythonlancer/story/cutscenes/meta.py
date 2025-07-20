@@ -57,12 +57,15 @@ class MetaDatabase:
     def record_exist(self, line):
         return self.db.get(line, None) is not None
 
+    def get_record(self, line):
+        return self.db[line]
+
 
 class Lip:
-    def __init__(self, delay_factor=0):
-        self.delay_factor: float = 0
-        self.delay: float = 0
-        self.props = ''
+    def __init__(self, props='', delay=0, delay_factor=0):
+        self.delay_factor: float = delay_factor
+        self.delay: float = delay
+        self.props = props
 
     def set_delay(self, delay):
         self.delay = delay
@@ -75,6 +78,12 @@ class Lip:
             'delay': self.delay + self.delay_factor,
             'props': self.props,
         }
+
+    def get_delay(self):
+        return self.delay
+
+    def get_props(self):
+        return self.props
 
 
 class LipsParser:
@@ -112,7 +121,7 @@ class LipsParser:
                 lips[-1].set_delay(float(clean_line[:-1]))
 
             elif lip_index == 3 and clean_line[:-1] != 'START_MOTION':
-                raise Exception('Invalid action: START_MOTION')
+                raise Exception(f'Invalid action: {clean_line[:-1]}')
 
             elif lip_index == 5:
                 lips[-1].set_props(clean_line)  # props have no ending comma
@@ -148,6 +157,18 @@ class MetaManager:
             sound.get_nickname(),
             [x.get_meta() for x in lips]
         )
+
+    def get_line_meta(self, sound):
+        record = self.meta_db.get_record(sound.get_nickname())
+        results = []
+        for item in record:
+            results.append(
+                Lip(
+                    delay=item['delay'],
+                    props=item['props']
+                )
+            )
+        return results
 
     def sound_meta_is_exist(self, sound):
         return self.meta_db.record_exist(sound.get_nickname())
