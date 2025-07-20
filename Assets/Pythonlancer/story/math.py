@@ -1,4 +1,13 @@
 from scipy.spatial.transform import Rotation as R
+import math
+
+
+def radians_to_degrees(x, y, z):
+    return [
+        math.degrees(x),
+        math.degrees(y),
+        math.degrees(z)
+    ]
 
 
 def euler_to_quat(x, y, z):

@@ -30,7 +30,11 @@ class Scene:
         }
 
         self.load_points_dump()
-        self.load_base_entities()
+        self.action()
+        # self.load_base_entities()
+
+    def action(self):
+        raise NotImplementedError
 
     def get_group(self, group_name):
         return self.groups[group_name]
@@ -60,16 +64,15 @@ class Scene:
             point = Point(
                 name=key,
                 position=value['position'],
-                orientation=value['orientation']
+                orientation=value['orientation'],
+                rotate=value['rotate']
             )
             self.points[key] = point
 
-            self.add_entity(
-                Marker(
-                    self,
-                    name=automarker_name(key),
-                    point_name=key
-                )
+            Marker(
+                root=self,
+                name=automarker_name(key),
+                point_name=key
             )
 
     def get_automarker(self, point_name):

@@ -7,12 +7,24 @@ EVENT_TEMPLATE_FOLDER = 'cutscenes/event/'
 MAIN = 'main'
 BG = 'bg'
 
+IDLE = 'idle'
+
+MALE_ANIMS = {
+    IDLE: 'Sc_FMBODY_STND_IDLE_000LV_xa_05',
+}
+
+FEMALE_ANIMS = {
+    IDLE: 'Sc_FMBODY_STND_IDLE_000LV_xa_05',
+}
+
 
 class Point:
-    def __init__(self, name, position, orientation):
+    def __init__(self, name, position, orientation, rotate):
         self.name = name
         self.position = [position[0], position[2], -position[1]]
-        self.orientation = [orientation[3], orientation[0], orientation[2], -orientation[1]]  # quaternion
+        self.orientation = [orientation[3], orientation[0], orientation[1], -orientation[2]]  # quaternion
+        deg_euler = math.radians_to_degrees(*rotate)
+        self.rotate = [deg_euler[0], deg_euler[1], deg_euler[2]]
         if len(self.orientation) != 4:
             raise Exception(f'Point {name} have wrong quaternion for orientation')
 
@@ -22,11 +34,11 @@ class Point:
 
     @property
     def orient(self):
-        return '{0:.2f}, {1:.2f}, {2:.2f}, {3:.2f}'.format(*self.orientation)
+        return '{0:.2f}, {1:.2f}, {2:.2f}, {3:.2f}'.format(*math.euler_to_quat(*self.rotate))
 
     @property
     def matrix(self):
-        mx = math.quat_to_matrix(self.orientation)
+        mx = math.euler_to_matrix(*self.rotate)
         return '''
             {{ {0:.7f},{1:.7f},{2:.7f} }}, 
             {{ {3:.7f},{4:.7f},{5:.7f} }},
@@ -44,9 +56,9 @@ class Group:
         self.time = time
 
     def add_event(self, event, time_append=0, time_delay=0):
-        self.time += time_delay
-        self.root.add_event(self.time, event)
-        self.time += time_append + time_delay
+        time = self.time + time_delay
+        self.root.add_event(time, event)
+        self.time += time_append
 
 
 class Event:
@@ -92,12 +104,56 @@ class LookAtEvent(Event):
         }
 
 
+class MoveEvent(Event):
+    TEMPLATE = 'move_linear'
+
+    def __init__(self, object_name, target_name, duration, smooth=True, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.object_name = object_name
+        self.target_name = target_name
+        self.duration = duration
+        self.smooth = smooth
+
+    def get_params(self):
+        return {
+            'object_name': self.object_name,
+            'target_name': self.target_name,
+            'duration': self.duration,
+            'smooth': self.smooth,
+        }
+
+
+class MotionEvent(Event):
+    TEMPLATE = 'motion'
+
+    def __init__(self, object_name, anim, duration, time_scale=1, start_time=0, loop=False, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.object_name = object_name
+        self.anim = anim
+        self.duration = duration
+        self.time_scale = time_scale
+        self.start_time = start_time
+        self.loop = loop
+
+    def get_params(self):
+        return {
+            'object_name': self.object_name,
+            'anim': self.anim,
+            'duration': self.duration,
+            'time_scale': self.time_scale,
+            'start_time': self.start_time,
+            'loop': self.loop,
+        }
+
+
 class Entity:
     TEMPLATE_ROOT = ENTITY_TEMPLATE_FOLDER
     TEMPLATE = None
 
-    def __init__(self, root):
+    def __init__(self, root, name):
         self.root = root
+        self.name = name
+        self.root.add_entity(self)
 
     def get_params(self):
         raise NotImplementedError
@@ -114,9 +170,8 @@ class Entity:
 class Marker(Entity):
     TEMPLATE = 'marker'
 
-    def __init__(self, root, name, point_name):
-        super().__init__(root)
-        self.name = name
+    def __init__(self, point_name, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.point_name = point_name
         self.point = self.root.get_point(self.point_name)
 
@@ -127,11 +182,68 @@ class Marker(Entity):
         }
 
 
-class StaticCamera(Marker):
+class Character(Entity):
+    TEMPLATE = 'character'
+
+    def __init__(self, actor, light_group, init_point, rotate=0, *args, **kwargs):
+        self.actor = actor
+        name = f'Char_{self.actor.NAME}'
+        super().__init__(name=name, *args, **kwargs)
+        self.light_group = light_group
+        self.init_point = init_point
+        self.init_pos = self.root.get_point(self.init_point).pos
+        self.rotate = rotate
+        self.animations = FEMALE_ANIMS if self.actor.is_female() else MALE_ANIMS
+
+    def get_init_matrix(self):
+        mx = math.euler_to_matrix(0, self.rotate, 0)
+        return '''
+            {{ {0:.7f},{1:.7f},{2:.7f} }}, 
+            {{ {3:.7f},{4:.7f},{5:.7f} }},
+            {{ {6:.7f},{7:.7f},{8:.7f} }}
+        '''.format(
+            mx[0][0], mx[0][1], mx[0][2],
+            mx[1][0], mx[1][1], mx[1][2],
+            mx[2][0], mx[2][1], mx[2][2],
+        )
+
+    def get_params(self):
+        return {
+            'name': self.name,
+            'template_name': self.actor.CUTSCENE_APPEARANCE,
+            'actor': self.actor.NAME,
+            'light_group': self.light_group,
+            'init_pos': self.init_pos,
+            'init_matrix': self.get_init_matrix(),
+        }
+    def move_cam(self, group, index, duration, time_delay=0, time_append=0, smooth=True):
+        target = f'{self.name}{index}'
+        target_obj = self.root.get_automarker(target)
+        MoveEvent(root=self.root, group=group,
+                  object_name=self.name, target_name=target_obj.name,
+                  duration=duration, smooth=smooth,
+                  time_delay=time_delay, time_append=time_append)
+
+    def idle(self, group, duration=10, **kwargs):
+        animation = self.animations[IDLE]
+        MotionEvent(root=self.root, group=group,
+                    object_name=self.name, anim=animation,
+                    duration=duration,
+                    **kwargs)
+
+
+
+
+
+class Camera(Marker):
+    pass
+
+
+class StaticCamera(Camera):
     TEMPLATE = 'camera'
 
-    def __init__(self, root, name, fov):
-        super().__init__(root, name, name)
+    def __init__(self, fov, *args, **kwargs):
+        super().__init__(point_name=kwargs['name'], *args, **kwargs)
         self.fov = fov
 
     def get_params(self):
@@ -142,13 +254,14 @@ class StaticCamera(Marker):
         }
 
 
-class LookAtCamera(Marker):
+class LookAtCamera(Camera):
     TEMPLATE = 'camera'
 
-    def __init__(self, root, name, fov, look_duration=1000):
-        super().__init__(root, name, name)
+    def __init__(self, fov, look_duration=1000, *args, **kwargs):
+        super().__init__(point_name=kwargs['name'], *args, **kwargs)
         self.fov = fov
-        self.focus = self.root.get_automarker(f'{name}_focus')
+        self.focus_name = f'{self.name}_focus'
+        self.focus = self.root.get_automarker(self.focus_name)
         self.look_at = LookAtEvent(
             root=self.root, group=BG,
             point=self.point, focus=self.focus,
@@ -161,3 +274,19 @@ class LookAtCamera(Marker):
             'point': self.point,
             'fov': self.fov,
         }
+
+    def move_cam(self, group, index, duration, time_delay=0, time_append=0, smooth=True):
+        target = f'{self.name}{index}'
+        target_obj = self.root.get_automarker(target)
+        MoveEvent(root=self.root, group=group,
+                  object_name=self.name, target_name=target_obj.name,
+                  duration=duration, smooth=smooth,
+                  time_delay=time_delay, time_append=time_append)
+
+    def move_focus(self, group, index, duration, time_delay=0, time_append=0, smooth=True):
+        target = f'{self.focus_name}{index}'
+        target_obj = self.root.get_automarker(target)
+        MoveEvent(root=self.root, group=group,
+                  object_name=self.focus.name, target_name=target_obj.name,
+                  duration=duration, smooth=smooth,
+                  time_delay=time_delay, time_append=time_append)
