@@ -746,6 +746,36 @@ class Reichman(Actor):
     STEOS_PITCH = -0.5
 
 
+class YokohamaBarOne(Actor):
+    TYPE = ACTOR_MALE
+    NAME = 'char1'
+    CUTSCENE_APPEARANCE = 'yoko_char1'
+
+
+class YokohamaBarTwo(Actor):
+    TYPE = ACTOR_MALE
+    NAME = 'char2'
+    CUTSCENE_APPEARANCE = 'yoko_char2'
+
+
+class YokohamaBarThree(Actor):
+    TYPE = ACTOR_FEMALE
+    NAME = 'char3'
+    CUTSCENE_APPEARANCE = 'yoko_char3'
+
+
+class YokohamaBarFour(Actor):
+    TYPE = ACTOR_FEMALE
+    NAME = 'char4'
+    CUTSCENE_APPEARANCE = 'yoko_char4'
+
+
+class YokohamaBarFive(Actor):
+    TYPE = ACTOR_MALE
+    NAME = 'char5'
+    CUTSCENE_APPEARANCE = 'yoko_char5'
+
+
 class ActorManager:
     def __init__(self):
         self.actors_per_name = {actor.NAME: actor for actor in Actor.subclasses}

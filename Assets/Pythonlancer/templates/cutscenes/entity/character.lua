@@ -13,7 +13,7 @@
         orient={ {{ init_matrix }} }
     },
     compoundprops={
-        floor_height=0
+        floor_height={{ floor_height }}
     },
     userprops={
         Actor="{{ actor }}",

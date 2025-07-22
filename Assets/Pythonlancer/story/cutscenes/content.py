@@ -4,6 +4,8 @@ from story import math
 ENTITY_TEMPLATE_FOLDER = 'cutscenes/entity/'
 EVENT_TEMPLATE_FOLDER = 'cutscenes/event/'
 
+OFFSCREEN = 'offscreen'
+
 MAIN = 'main'
 BG = 'bg'
 
@@ -137,18 +139,72 @@ class SoundEvent(Event):
 
 class MoveEvent(Event):
     TEMPLATE = 'move_linear'
+    ADJUST_POS = 'pos = {0, 0, 0}'
+    ADJUST_ORIENT = 'q_orient = {1, 0, 0, 0}'
 
-    def __init__(self, object_name, target_name, duration, smooth=True, *args, **kwargs):
+    def __init__(self, object_name, target_name, duration, smooth=True,
+                 adjust_pos=True, adjust_orient=True, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.object_name = object_name
         self.target_name = target_name
         self.duration = duration
         self.smooth = smooth
+        self.adjust_orient = adjust_orient
+        self.adjust_pos = adjust_pos
+
+    def get_move_rules(self):
+        rules = []
+        if self.adjust_pos:
+            rules.append(self.ADJUST_POS)
+
+        if self.adjust_orient:
+            rules.append(self.ADJUST_ORIENT)
+
+        if len(rules) == 0:
+            raise Exception(f'MoveEvent for {self.object_name} have no move rules: it should adjust pos or/and orient')
+
+        return ', '.join(rules)
 
     def get_params(self):
         return {
             'object_name': self.object_name,
             'target_name': self.target_name,
+            'duration': self.duration,
+            'smooth': self.smooth,
+            'move_rules': self.get_move_rules()
+        }
+
+
+class MoveFastEvent(MoveEvent):
+    '''shortcut with zero duration'''
+    def __init__(self, *args, **kwargs):
+        kwargs['smooth'] = False
+        kwargs['duration'] = 0
+        super().__init__(*args, **kwargs)
+
+    def get_params(self):
+        return {
+            'object_name': self.object_name,
+            'target_name': self.target_name,
+            'duration': self.duration,
+            'smooth': self.smooth,
+        }
+
+
+class FloorHeightEvent(Event):
+    TEMPLATE = 'floor_height'
+
+    def __init__(self, char_name, floor_height, duration=0.001, smooth=False, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.char_name = char_name
+        self.floor_height = floor_height
+        self.duration = duration
+        self.smooth = smooth
+
+    def get_params(self):
+        return {
+            'char': self.char_name,
+            'floor_height': self.floor_height,
             'duration': self.duration,
             'smooth': self.smooth,
         }
@@ -231,7 +287,7 @@ class Marker(Entity):
 class Character(Entity):
     TEMPLATE = 'character'
 
-    def __init__(self, actor, light_group, init_point, rotate=0, *args, **kwargs):
+    def __init__(self, actor, light_group, init_point, rotate=0, floor_height=0, *args, **kwargs):
         self.actor = actor
         name = f'Char_{self.actor.NAME}'
         super().__init__(name=name, *args, **kwargs)
@@ -239,6 +295,7 @@ class Character(Entity):
         self.init_point = init_point
         self.init_pos = self.root.get_point(self.init_point).pos
         self.rotate = rotate
+        self.floor_height = floor_height
         self.animations = FEMALE_ANIMS if self.actor.is_female() else MALE_ANIMS
 
     def get_init_matrix(self):
@@ -261,7 +318,19 @@ class Character(Entity):
             'light_group': self.light_group,
             'init_pos': self.init_pos,
             'init_matrix': self.get_init_matrix(),
+            'floor_height': self.floor_height,
         }
+
+    def motion(self, group, anim, duration=10, **kwargs):
+        if self.actor.is_male() and 'fmbody' in anim.lower():
+            raise Exception(f'{anim} has wrong gender for {self.name}')
+        if self.actor.is_female() and 'mlbody' in anim.lower():
+            raise Exception(f'{anim} has wrong gender for {self.name}')
+        print(kwargs)
+        MotionEvent(root=self.root, group=group,
+                    object_name=self.name, anim=anim,
+                    duration=duration,
+                    **kwargs)
 
     def idle(self, group, duration=10, **kwargs):
         animation = self.animations[IDLE]

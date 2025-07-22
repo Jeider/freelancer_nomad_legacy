@@ -743,8 +743,8 @@ class Misson05(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.RheinlandMain,
                     ship=ship.Valkyrie,
-                    level=NPC.D12,
-                    equip_map=EqMap(base_level=6, engine=5),
+                    level=NPC.D10,
+                    equip_map=EqMap(base_level=5),
                     animated_wings=False,
                     extra_equip=[
                         'equip = cloak_fast, HpCloak01, 1',

@@ -10,8 +10,7 @@
         target_part="",
         target_type=ROOT,
         spatialprops={
-            pos={ 0,0,0 },
-            q_orient={ 1,0,0,0 }
+            {{ move_rules }}
         }
         {% if smooth %}
         ,
