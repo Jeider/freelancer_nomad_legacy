@@ -6,6 +6,15 @@ EVENT_TEMPLATE_FOLDER = 'cutscenes/event/'
 
 OFFSCREEN = 'offscreen'
 
+TARGET_ROOT = 'ROOT'
+TARGET_PART = 'PART'
+TARGET_HARDPOINT = 'HARDPOINT'
+
+TARGET_TYPES = [TARGET_ROOT, TARGET_PART, TARGET_HARDPOINT]
+
+BODY_HEAD = 'Body_Head'
+EYE_IK = 'Eye IK Left'
+
 MAIN = 'main'
 BG = 'bg'
 
@@ -21,14 +30,17 @@ FEMALE_ANIMS = {
 
 
 class Point:
-    def __init__(self, name, position, orientation, rotate):
+    # WARNING! temporary only for positions!!
+    def __init__(self, name, position, rotate=None):  # , orientation, rotate
         self.name = name
         self.position = [position[0], position[2], -position[1]]
-        self.orientation = [orientation[3], orientation[0], orientation[1], -orientation[2]]  # quaternion
-        deg_euler = math.radians_to_degrees(*rotate)
-        self.rotate = [deg_euler[0], deg_euler[1], deg_euler[2]]
-        if len(self.orientation) != 4:
-            raise Exception(f'Point {name} have wrong quaternion for orientation')
+        # self.orientation = [orientation[3], orientation[0], orientation[1], -orientation[2]]  # quaternion
+        # deg_euler = math.radians_to_degrees(*rotate)
+        # self.rotate = [deg_euler[0], deg_euler[1], deg_euler[2]]
+        # if len(self.orientation) != 4:
+        #     raise Exception(f'Point {name} have wrong quaternion for orientation')
+        self.rotate = rotate if rotate else [0, 0, 0]
+
 
     @property
     def pos(self):
@@ -36,13 +48,14 @@ class Point:
 
     @property
     def orient(self):
-        return '{0:.2f}, {1:.2f}, {2:.2f}, {3:.2f}'.format(*math.euler_to_quat(*self.rotate))
+        raise NotImplementedError
+        # return '{0:.2f}, {1:.2f}, {2:.2f}, {3:.2f}'.format(*math.euler_to_quat(*self.rotate))
 
     @property
     def matrix(self):
         mx = math.euler_to_matrix(*self.rotate)
         return '''
-            {{ {0:.7f},{1:.7f},{2:.7f} }}, 
+            {{ {0:.7f},{1:.7f},{2:.7f} }},
             {{ {3:.7f},{4:.7f},{5:.7f} }},
             {{ {6:.7f},{7:.7f},{8:.7f} }}
         '''.format(
@@ -53,8 +66,9 @@ class Point:
 
 
 class Group:
-    def __init__(self, root, time=0):
+    def __init__(self, root, name, time=0):
         self.root = root
+        self.name = name
         self.time = time
 
     def add_event(self, event, time_append=0, time_delay=0):
@@ -65,18 +79,20 @@ class Group:
     def get_time(self):
         return self.time
 
+    def get_name(self):
+        return self.name
+
+    def append_time(self, time):
+        self.time += time
+
 
 class Event:
     TEMPLATE = None
 
     def __init__(self, root, group=MAIN, time_append=0, time_delay=0):
         self.root = root
-        self.time = 0
         self.group = self.root.get_group(group)
         self.group.add_event(self, time_append, time_delay)
-
-    def set_time(self, time):
-        self.time = time
 
     def get_params(self):
         raise NotImplementedError
@@ -141,9 +157,11 @@ class MoveEvent(Event):
     TEMPLATE = 'move_linear'
     ADJUST_POS = 'pos = {0, 0, 0}'
     ADJUST_ORIENT = 'q_orient = {1, 0, 0, 0}'
+    ADJUST_ORIENT_TEMPLATE = 'q_orient = {{ {quat} }}'
 
     def __init__(self, object_name, target_name, duration, smooth=True,
-                 adjust_pos=True, adjust_orient=True, *args, **kwargs):
+                 adjust_pos=True, adjust_orient=True,
+                 rotate_y=0, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.object_name = object_name
         self.target_name = target_name
@@ -151,6 +169,7 @@ class MoveEvent(Event):
         self.smooth = smooth
         self.adjust_orient = adjust_orient
         self.adjust_pos = adjust_pos
+        self.rotate = (0, rotate_y, 0)
 
     def get_move_rules(self):
         rules = []
@@ -158,8 +177,10 @@ class MoveEvent(Event):
             rules.append(self.ADJUST_POS)
 
         if self.adjust_orient:
-            rules.append(self.ADJUST_ORIENT)
-
+            rules.append(
+                self.ADJUST_ORIENT_TEMPLATE.format(
+                    quat='{0:.2f}, {1:.2f}, {2:.2f}, {3:.2f}'.format(*math.euler_to_quat(*self.rotate)))
+            )
         if len(rules) == 0:
             raise Exception(f'MoveEvent for {self.object_name} have no move rules: it should adjust pos or/and orient')
 
@@ -171,24 +192,108 @@ class MoveEvent(Event):
             'target_name': self.target_name,
             'duration': self.duration,
             'smooth': self.smooth,
-            'move_rules': self.get_move_rules()
+            'move_rules': self.get_move_rules(),
         }
 
 
 class MoveFastEvent(MoveEvent):
-    '''shortcut with zero duration'''
+    """shortcut with zero duration"""
     def __init__(self, *args, **kwargs):
         kwargs['smooth'] = False
         kwargs['duration'] = 0
+        kwargs['adjust_pos'] = True
         super().__init__(*args, **kwargs)
+
+
+class MoveOffscreenEvent(MoveEvent):
+    """shortcut for offscreen"""
+    def __init__(self, *args, **kwargs):
+        kwargs['smooth'] = False
+        kwargs['duration'] = 0
+        kwargs['target_name'] = OFFSCREEN
+        kwargs['adjust_pos'] = True
+        super().__init__(*args, **kwargs)
+
+
+class RotateAxisEvent(Event):
+    TEMPLATE = 'rotate_axis'
+    AXIS = 'Y_AXIS'
+
+    def __init__(self, object_name, angle, duration, smooth=True, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.object_name = object_name
+        self.angle = angle
+        self.duration = duration
+        self.smooth = smooth
 
     def get_params(self):
         return {
             'object_name': self.object_name,
-            'target_name': self.target_name,
+            'angle': self.angle,
             'duration': self.duration,
             'smooth': self.smooth,
+            'axis': self.AXIS,
         }
+
+
+class IkEvent(Event):
+    TEMPLATE = 'ik'
+
+    def __init__(self, char_name, target_name, duration, end_effector, transition_duration=1,
+                 target_part='',  target_type=TARGET_ROOT, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.char_name = char_name
+        self.target_name = target_name
+        self.duration = duration
+        self.end_effector = end_effector
+        self.transition_duration = transition_duration
+        self.target_part = target_part
+        self.target_type = target_type
+
+        if self.target_type not in TARGET_TYPES:
+            raise Exception(f'IK for {self.char_name} has invalid target_type')
+
+        if self.target_type != TARGET_ROOT and self.target_part == '':
+            raise Exception(f'IK for {self.char_name} requires defined target_part')
+
+    def get_duration(self):
+        return self.duration
+
+    def set_duration(self, duration):
+        self.duration = duration
+
+    def get_params(self):
+        return {
+            'char_name': self.char_name,
+            'target_name': self.target_name,
+            'duration': self.duration,
+            'transition_duration': self.transition_duration,
+            'end_effector': self.end_effector,
+            'target_part': self.target_part,
+            'target_type': self.target_type,
+        }
+
+
+class NeckIkEvent(IkEvent):
+    """shortcut for generic neck ik"""
+    def __init__(self, *args, **kwargs):
+        kwargs['end_effector'] = BODY_HEAD
+        super().__init__(*args, **kwargs)
+
+
+class Char2CharNeckIkEvent(NeckIkEvent):
+    """shortcut for simple next char neck ik"""
+    def __init__(self, *args, **kwargs):
+        kwargs['target_part'] = BODY_HEAD
+        kwargs['target_type'] = TARGET_PART
+        super().__init__(*args, **kwargs)
+
+
+class EyeIkEvent(IkEvent):
+    """shortcut for generic neck ik"""
+    def __init__(self, *args, **kwargs):
+        kwargs['end_effector'] = EYE_IK
+        super().__init__(*args, **kwargs)
 
 
 class FloorHeightEvent(Event):
@@ -200,6 +305,10 @@ class FloorHeightEvent(Event):
         self.floor_height = floor_height
         self.duration = duration
         self.smooth = smooth
+
+    def make_immediately(self):
+        self.duration = 0
+        self.smooth = False
 
     def get_params(self):
         return {
@@ -213,7 +322,8 @@ class FloorHeightEvent(Event):
 class MotionEvent(Event):
     TEMPLATE = 'motion'
 
-    def __init__(self, object_name, anim, duration, time_scale=1, start_time=0, loop=False, *args, **kwargs):
+    def __init__(self, object_name, anim, duration, time_scale=1, start_time=0,
+                 loop=False, trans_time=None, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.object_name = object_name
         self.anim = anim
@@ -221,6 +331,7 @@ class MotionEvent(Event):
         self.time_scale = time_scale
         self.start_time = start_time
         self.loop = loop
+        self.trans_time = trans_time
 
     def get_params(self):
         return {
@@ -230,6 +341,7 @@ class MotionEvent(Event):
             'time_scale': self.time_scale,
             'start_time': self.start_time,
             'loop': self.loop,
+            'trans_time': self.trans_time,
         }
 
 
@@ -326,7 +438,7 @@ class Character(Entity):
             raise Exception(f'{anim} has wrong gender for {self.name}')
         if self.actor.is_female() and 'mlbody' in anim.lower():
             raise Exception(f'{anim} has wrong gender for {self.name}')
-        print(kwargs)
+
         MotionEvent(root=self.root, group=group,
                     object_name=self.name, anim=anim,
                     duration=duration,
@@ -358,8 +470,6 @@ class Character(Entity):
 
         SoundEvent(root=self.root, group=group, sound_name=sound.get_nickname(),
                    time_append=sound.get_duration()+extra_delay if append else 0)
-
-
 
 
 class Camera(Marker):

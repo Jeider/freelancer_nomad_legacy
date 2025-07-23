@@ -2,7 +2,7 @@ import json
 import pathlib
 
 from story.cutscenes.meta import MetaManager
-from story.cutscenes.content import Point, Marker, Event, Group, MAIN, BG
+from story.cutscenes.content import Point, Marker, Event, Group, MAIN, BG, FloorHeightEvent
 from tools.data_folder import DataFolder
 from text.dividers import STRING_DIVIDER
 
@@ -18,6 +18,7 @@ def automarker_name(name):
 class Scene:
     SCENE_AMBIENT = [0, 0, 0]
     MIN_DURATION = 30
+    POINT_ROTATE_OVERRIDES = {}
 
     def __init__(self, tpl_manager, props):
         self.tpl_manager = tpl_manager
@@ -29,17 +30,21 @@ class Scene:
         self.groups = {}
         self.add_group(BG)
         self.add_group(MAIN)
+        self.start_time = 0
 
         self.load_points_dump()
         self.action()
         # self.load_base_entities()
 
+    def set_start_time(self, start_time):
+        self.start_time = start_time
+
     def add_group(self, name, time=0):
-        self.groups[name] = Group(self, time=time)
+        self.groups[name] = Group(self, time=time, name=name)
 
     def clone_group(self, name, original):
         from_group = self.groups[original]
-        self.groups[name] = Group(self, time=from_group.get_time())
+        self.groups[name] = Group(self, time=from_group.get_time(), name=name)
 
     def lookup_single_sound(self, index):
         for sound in self.props.get_sounds():
@@ -85,8 +90,8 @@ class Scene:
             point = Point(
                 name=key,
                 position=value['position'],
-                orientation=value['orientation'],
-                rotate=value['rotate']
+                # orientation=value['orientation'],
+                rotate=self.POINT_ROTATE_OVERRIDES.get(key),
             )
             self.points[key] = point
 
@@ -101,6 +106,9 @@ class Scene:
             raise Exception(f'Unknown point {point_name}')
 
         return self.entities[automarker_name(point_name)]
+
+    def get_automarker_name(self, point_name):
+        return self.get_automarker(point_name).name
 
     def get_point(self, point_name):
         return self.points[point_name]
@@ -126,7 +134,25 @@ class Scene:
         return STRING_DIVIDER.join([e.get_thorn() for e in self.entities.values()])
 
     def get_events_content(self):
-        return STRING_DIVIDER.join([e.get_thorn(time) for time, e in self.events])
+        thorn = []
+
+        for time, e in self.events:
+            event_time = time
+            if e.group.get_name() != BG:
+                event_time -= self.start_time
+                skip_event = True
+                if event_time < 0:
+                    if e.__class__ == FloorHeightEvent:
+                        e.make_immediately()
+                        event_time = 0
+                        skip_event = False
+
+                    if skip_event:
+                        continue
+
+            thorn.append(e.get_thorn(event_time))
+
+        return STRING_DIVIDER.join(thorn)
 
     def get_script_sounds(self):
         return STRING_DIVIDER.join([s.get_thorn() for s in self.props.get_sounds()])

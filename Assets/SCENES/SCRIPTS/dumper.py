@@ -19,8 +19,8 @@ for key, value in C.scene.objects.items():
     rotate = value.rotation_euler
     results[str(key)] = {
         'position': [value.location[0], value.location[1], value.location[2]],
-        'orientation': [orient[0], orient[1], orient[2], orient[3]],
-        'rotate': [rotate[0], rotate[1], rotate[2]],
+        # 'orientation': [orient[0], orient[1], orient[2], orient[3]],
+        # 'rotate': [rotate[0], rotate[1], rotate[2]],
     }
 
 print(result_filename)
