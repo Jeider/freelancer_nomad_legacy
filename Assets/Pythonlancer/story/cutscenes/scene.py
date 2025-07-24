@@ -1,8 +1,8 @@
 import json
 import pathlib
 
-from story.cutscenes.meta import MetaManager
-from story.cutscenes.content import Point, Marker, Event, Group, MAIN, BG, FloorHeightEvent
+from story.cutscenes.meta import LipSyncManager
+from story.cutscenes.content import Point, Marker, Event, Group, MAIN, BG, FloorHeightEvent, SOURCE_BLENDER
 from tools.data_folder import DataFolder
 from text.dividers import STRING_DIVIDER
 
@@ -22,7 +22,7 @@ class Scene:
 
     def __init__(self, tpl_manager, props):
         self.tpl_manager = tpl_manager
-        self.meta_manager = MetaManager(tpl_manager=self.tpl_manager)
+        self.meta_manager = LipSyncManager(tpl_manager=self.tpl_manager)
         self.props = props
         self.entities = {}
         self.events = []
@@ -31,6 +31,7 @@ class Scene:
         self.add_group(BG)
         self.add_group(MAIN)
         self.start_time = 0
+        self.duration = None
 
         self.load_points_dump()
         self.action()
@@ -63,10 +64,15 @@ class Scene:
         return self.groups[group_name]
 
     def get_duration(self):
+        if self.duration is not None:
+            return self.duration
         main_time = self.get_group(MAIN).get_time()
         if main_time > self.MIN_DURATION:
             return main_time
         return self.MIN_DURATION
+
+    def set_duration(self, duration):
+        return self.duration
 
     def get_scene_name(self):
         return self.props.get_scene_name()
@@ -87,13 +93,7 @@ class Scene:
             raise Exception(f'Could not previous cutscene metadata. Reason: {e}')
 
         for key, value in data.items():
-            point = Point(
-                name=key,
-                position=value['position'],
-                # orientation=value['orientation'],
-                rotate=self.POINT_ROTATE_OVERRIDES.get(key),
-            )
-            self.points[key] = point
+            self.add_point(name=key, position=value['position'], source=SOURCE_BLENDER)
 
             Marker(
                 root=self,
@@ -109,6 +109,20 @@ class Scene:
 
     def get_automarker_name(self, point_name):
         return self.get_automarker(point_name).name
+
+    def get_entity(self, entity_name):
+        return self.entities[entity_name]
+
+    def add_point(self, name, position, source, rotate=None):
+        point = Point(
+            name=name,
+            position=position,
+            rotate=rotate if rotate else self.POINT_ROTATE_OVERRIDES.get(name),
+            source=source,
+        )
+        if name in self.points:
+            raise Exception(f'Point {name} is already defined')
+        self.points[name] = point
 
     def get_point(self, point_name):
         return self.points[point_name]

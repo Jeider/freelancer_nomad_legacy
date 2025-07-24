@@ -29,18 +29,18 @@ entities={
 
        
 {
-    entity_name="DX_m09_yokohama_0210_trent",
-    template_name="DX_m09_yokohama_0210_trent",
+    entity_name="DX_m09_yokohama_0100_hassler",
+    template_name="DX_m09_yokohama_0100_hassler",
     type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
-},
+}
         
 
-
+    ,
 
 	{
 		entity_name="Char_the",
 		type=DEFORMABLE,
-		template_name="trent",
+		template_name="hassler_order",
 		lt_grp=0,
 		srt_grp=0,
 		usr_flg=0,
@@ -223,7 +223,7 @@ events={
     0,
     START_SOUND,
     {
-        "DX_m09_yokohama_0210_trent"
+        "DX_m09_yokohama_0100_hassler"
     },
     {
         duration=30
@@ -232,13 +232,52 @@ events={
 
 
 
+
+
+
+	
 	{
 		-- LIP
-		0,
+		0.0,
 		START_MOTION,
 		{"Char_the"},
-		{animation="Sc_dx_s045b_1801_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+		{animation="Sc_dx_GCS_F03cR02_RVP01", start_time=2,duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 	},
+	
+	{
+		-- LIP
+		0.5,
+		START_MOTION,
+		{"Char_the"},
+		{animation="Sc_MLHEAD_HAPPY_LAGH_000LV_XA_%", start_time=0.25, duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+	},
+	
+	{
+		-- LIP
+		2.0,
+		START_MOTION,
+		{"Char_the"},
+		{animation="Sc_dx_s032d_0101_dexter", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+	},
+	
+	{
+		-- LIP
+		4.2,
+		START_MOTION,
+		{"Char_the"},
+		{animation="Sc_dx_s032d_0101_dexter", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+	},
+	
+	{
+		-- LIP
+		7.5,
+		START_MOTION,
+		{"Char_the"},
+		{animation="Sc_dx_s015x_0701_walker", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+	},
+	
+
+
 
 
 

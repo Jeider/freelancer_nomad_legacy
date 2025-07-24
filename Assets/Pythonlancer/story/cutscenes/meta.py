@@ -131,20 +131,22 @@ class LipsParser:
         return lips
 
 
-class MetaManager:
+class LipSyncManager:
     FACIAL_TEMPLATE = 'cutscenes/demo/facial.lua'
 
     def __init__(self, tpl_manager):
         self.meta_db = MetaDatabase()
         self.tpl_manager = tpl_manager
 
-    def prepare_facial_workspace(self, sound):
+    def prepare_facial_workspace(self, sound, new=True):
         actor_type = sound.line.actor.TYPE
         context = {
             'sound': sound,
             'anim': DEFAULT_ANIM_PER_TYPE[actor_type],
             'camera': CAMERA_PER_TYPE[actor_type],
-            'stand_anim': STAND_ANIM_PER_TYPE[actor_type]
+            'stand_anim': STAND_ANIM_PER_TYPE[actor_type],
+            'new': new,
+            'exist_meta': [] if new else self.get_line_meta(sound)
         }
         data = self.tpl_manager.get_result(self.FACIAL_TEMPLATE, context)
         DataFolder.sync_facial(data)
@@ -173,8 +175,8 @@ class MetaManager:
     def sound_meta_is_exist(self, sound):
         return self.meta_db.record_exist(sound.get_nickname())
 
-    def edit_sound_interactive(self, sound):
-        self.prepare_facial_workspace(sound)
+    def edit_sound_interactive(self, sound, new=True):
+        self.prepare_facial_workspace(sound, new)
 
         nickname = sound.get_nickname()
 
@@ -199,11 +201,21 @@ class MetaManager:
     def edit_mission_interactive(self, script_mission):
         raise NotImplementedError
 
+    def get_single_sound_from_scene(self, scene, index):
+        for sound in scene.get_sounds():
+            if sound.line.index == index:
+                return sound
+        raise Exception(f'index {index} not found in scene {scene}')
+
     def test_edit(self, script_mission):
         scenes = script_mission.get_cutscenes()
         scene = scenes[0]
 
-        self.edit_cutscene_interactive(scene)
+        # self.edit_cutscene_interactive(scene)
+
+        sound = self.get_single_sound_from_scene(scene, 100)
+        self.edit_sound_interactive(sound, new=False)
+
 
 
         # sound = scenes[0].get_sounds()[0]

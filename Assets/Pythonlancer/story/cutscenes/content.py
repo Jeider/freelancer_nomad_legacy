@@ -28,12 +28,24 @@ FEMALE_ANIMS = {
     IDLE: 'Sc_FMBODY_STND_IDLE_000LV_xa_05',
 }
 
+HEAD_SIT_FEMALE = 1.25  # 1.1 ??
+HEAD_SIT_MALE = 1.25
+HEAD_STAND_FEMALE = 1.55
+HEAD_STAND_MALE = 1.65
+
+SOURCE_BLENDER = 'blender'
+SOURCE_PYTHONLANCER = 'pythonlancer'
+
 
 class Point:
     # WARNING! temporary only for positions!!
-    def __init__(self, name, position, rotate=None):  # , orientation, rotate
+    def __init__(self, name, position, source, rotate=None):  # , orientation, rotate
         self.name = name
-        self.position = [position[0], position[2], -position[1]]
+        self.source = source
+        if self.source == SOURCE_BLENDER:
+            self.position = [position[0], position[2], -position[1]]
+        else:
+            self.position = position
         # self.orientation = [orientation[3], orientation[0], orientation[1], -orientation[2]]  # quaternion
         # deg_euler = math.radians_to_degrees(*rotate)
         # self.rotate = [deg_euler[0], deg_euler[1], deg_euler[2]]
@@ -399,7 +411,8 @@ class Marker(Entity):
 class Character(Entity):
     TEMPLATE = 'character'
 
-    def __init__(self, actor, light_group, init_point, rotate=0, floor_height=0, *args, **kwargs):
+    def __init__(self, actor, light_group, init_point, rotate=0, floor_height=0,
+                 stand_points=None, sit_points=None, ik_start_point=None, *args, **kwargs):
         self.actor = actor
         name = f'Char_{self.actor.NAME}'
         super().__init__(name=name, *args, **kwargs)
@@ -409,6 +422,80 @@ class Character(Entity):
         self.rotate = rotate
         self.floor_height = floor_height
         self.animations = FEMALE_ANIMS if self.actor.is_female() else MALE_ANIMS
+        self.head_ik_name = f'char_ik_{self.name}_head_ik'
+        self.eye_ik_name = f'char_ik_{self.name}_eye_ik'
+        self.ik_start_point = ik_start_point
+        self.init_char_points()
+
+    def init_char_points(self):
+        ik_position = [0, 0, 0]
+        if self.ik_start_point:
+            ik_position = self.root.get_point(self.ik_start_point).pos
+
+        temp_ik_point_name = f'ikpoint_{self.name}'
+        self.root.add_point(
+            name=temp_ik_point_name,
+            position=ik_position,
+            source=SOURCE_PYTHONLANCER,
+        )
+
+        Marker(
+            root=self.root,
+            name=self.head_ik_name,
+            point_name=temp_ik_point_name
+        )
+
+        Marker(
+            root=self.root,
+            name=self.eye_ik_name,
+            point_name=temp_ik_point_name
+        )
+
+    def move_head_ik(self, group, target_name, immediately=False, **kwargs):
+        event_class = MoveFastEvent if immediately else MoveEvent
+        event_class(root=self.root, group=group,
+                    object_name=self.head_ik_name, target_name=target_name,
+                    **kwargs)
+
+    def move_eye_ik(self, group, target_name, immediately=False, **kwargs):
+        event_class = MoveFastEvent if immediately else MoveEvent
+        event_class(root=self.root, group=group,
+                   object_name=self.eye_ik_name, target_name=target_name,
+                   **kwargs)
+
+    def start_head_ik(self, group, **kwargs):
+        NeckIkEvent(root=self.root, group=group, char_name=self.name,
+                    target_name=self.head_ik_name,
+                    **kwargs)
+
+    def start_eye_ik(self, group, **kwargs):
+        EyeIkEvent(root=self.root, group=group, char_name=self.name,
+                   target_name=self.eye_ik_name,
+                   **kwargs)
+
+    def get_char_marker(self, point_name, y_offset):
+        original_pos = self.root.get_point(point_name).position
+        marker_name = f'charpoint_{point_name}'
+        temp_point_name = f'init_{marker_name}'
+        self.root.add_point(
+            name=temp_point_name,
+            position=[original_pos[0], y_offset, original_pos[2]],
+            source=SOURCE_PYTHONLANCER,
+        )
+        Marker(
+            root=self.root,
+            name=marker_name,
+            point_name=temp_point_name
+        )
+        return marker_name
+
+    def get_stand_marker(self, point_name):
+        y_offset = HEAD_STAND_FEMALE if self.actor.is_female() else HEAD_STAND_MALE
+        return self.get_char_marker(point_name, y_offset)
+
+    def get_sit_marker(self, point_name):
+        y_offset = HEAD_SIT_FEMALE if self.actor.is_female() else HEAD_SIT_MALE
+        return self.get_char_marker(point_name, y_offset)
 
     def get_init_matrix(self):
         mx = math.euler_to_matrix(0, self.rotate, 0)
@@ -466,7 +553,7 @@ class Character(Entity):
         for lip in meta:
             FacialEvent(root=self.root, group=lip_group,
                         object_name=self.name, motion=lip.get_props(),
-                        time_delay=lip.get_delay(), time_append=lip.get_delay())
+                        time_delay=lip.get_delay())
 
         SoundEvent(root=self.root, group=group, sound_name=sound.get_nickname(),
                    time_append=sound.get_duration()+extra_delay if append else 0)

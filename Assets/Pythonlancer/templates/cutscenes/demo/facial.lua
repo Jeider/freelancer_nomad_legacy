@@ -215,6 +215,8 @@ events={
 	{{ sound.thorn_play }}
 
 
+
+{% if new %}
 	{
 		-- LIP
 		0,
@@ -222,7 +224,20 @@ events={
 		{"Char_the"},
 		{animation="{{ anim }}", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 	},
+{% else %}
 
+	{% for item in exist_meta %}
+	{
+		-- LIP
+		{{ item.delay }},
+		START_MOTION,
+		{"Char_the"},
+		{{ item.props }}
+	},
+	{% endfor %}
+
+
+{% endif %}
 
 
 

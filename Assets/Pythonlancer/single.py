@@ -13,7 +13,7 @@ from managers.script import ScriptManager
 
 from templates.jinja_manager import JinjaTemplateManager
 
-from story.cutscenes.meta import MetaManager
+from story.cutscenes.meta import LipSyncManager
 
 from universe.audio.manager import PilotManager
 from universe.audio import pilot
@@ -373,7 +373,7 @@ archetype = nav_buoy
 def meta():
     tpl_manager = JinjaTemplateManager()
     script_manager = ScriptManager()
-    meta_manager = MetaManager(tpl_manager=tpl_manager)
+    meta_manager = LipSyncManager(tpl_manager=tpl_manager)
 
     msn = script_manager.get_mission_by_index(9)
 
