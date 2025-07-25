@@ -2,7 +2,8 @@ import json
 import pathlib
 
 from story.cutscenes.meta import LipSyncManager
-from story.cutscenes.content import Point, Marker, Event, Group, MAIN, BG, FloorHeightEvent, SOURCE_BLENDER
+from story.cutscenes.content import (Point, Marker, Event, Group, MAIN, BG, FloorHeightEvent,
+                                     SOURCE_BLENDER, SOURCE_PYTHONLANCER, DEFAULT_GROUP, BG_GROUP)
 from tools.data_folder import DataFolder
 from text.dividers import STRING_DIVIDER
 
@@ -19,6 +20,7 @@ class Scene:
     SCENE_AMBIENT = [0, 0, 0]
     MIN_DURATION = 30
     POINT_ROTATE_OVERRIDES = {}
+    DEFAULT_POINT_NAME = 'default_point'
 
     def __init__(self, tpl_manager, props):
         self.tpl_manager = tpl_manager
@@ -28,11 +30,12 @@ class Scene:
         self.events = []
         self.points = {}
         self.groups = {}
-        self.add_group(BG)
+        self.add_group(BG, group_type=BG_GROUP)
         self.add_group(MAIN)
         self.start_time = 0
         self.duration = None
 
+        self.load_default_point()
         self.load_points_dump()
         self.action()
         # self.load_base_entities()
@@ -40,8 +43,8 @@ class Scene:
     def set_start_time(self, start_time):
         self.start_time = start_time
 
-    def add_group(self, name, time=0):
-        self.groups[name] = Group(self, time=time, name=name)
+    def add_group(self, name, time=0, group_type=DEFAULT_GROUP):
+        self.groups[name] = Group(self, time=time, name=name, group_type=group_type)
 
     def clone_group(self, name, original):
         from_group = self.groups[original]
@@ -79,6 +82,15 @@ class Scene:
 
     def get_scene_ambient(self):
         return self.SCENE_AMBIENT
+
+    def load_default_point(self):
+        self.add_point(name=self.DEFAULT_POINT_NAME, position=[0, 0, 0], source=SOURCE_PYTHONLANCER)
+
+        Marker(
+            root=self,
+            name=automarker_name(self.DEFAULT_POINT_NAME),
+            point_name=self.DEFAULT_POINT_NAME
+        )
 
     def load_points_dump(self):
         points_file = DUMPS_PATH / f'{self.get_scene_name()}.json'
@@ -152,7 +164,7 @@ class Scene:
 
         for time, e in self.events:
             event_time = time
-            if e.group.get_name() != BG:
+            if e.group.is_default():
                 event_time -= self.start_time
                 skip_event = True
                 if event_time < 0:

@@ -12,11 +12,21 @@ TARGET_HARDPOINT = 'HARDPOINT'
 
 TARGET_TYPES = [TARGET_ROOT, TARGET_PART, TARGET_HARDPOINT]
 
+LIT_DYNAMIC = 'LIT_DYNAMIC'
+LIT_AMBIENT = 'LIT_AMBIENT'
+
+L_DIRECT = 'L_DIRECT'
+L_POINT = 'L_POINT'
+L_SPOT = 'L_SPOT'
+LIGHT_TYPES = [L_DIRECT, L_POINT, L_SPOT]
+
 BODY_HEAD = 'Body_Head'
 EYE_IK = 'Eye IK Left'
 
 MAIN = 'main'
 BG = 'bg'
+DEFAULT_GROUP = 'default_group'
+BG_GROUP = 'bg_group'
 
 IDLE = 'idle'
 
@@ -78,10 +88,11 @@ class Point:
 
 
 class Group:
-    def __init__(self, root, name, time=0):
+    def __init__(self, root, name, group_type=DEFAULT_GROUP, time=0):
         self.root = root
         self.name = name
         self.time = time
+        self.group_type = group_type
 
     def add_event(self, event, time_append=0, time_delay=0):
         time = self.time + time_delay
@@ -96,6 +107,9 @@ class Group:
 
     def append_time(self, time):
         self.time += time
+
+    def is_default(self):
+        return self.group_type == DEFAULT_GROUP
 
 
 class Event:
@@ -372,6 +386,62 @@ class FacialEvent(Event):
         }
 
 
+class LightAnimEvent(Event):
+    TEMPLATE = 'light_anim'
+
+    def __init__(self, object_name, duration, smooth=False,
+                 diffuse=None, ambient=None, on=None, lt_range=None, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.object_name = object_name
+        self.duration = duration
+        self.smooth = smooth
+        self.diffuse = diffuse
+        self.ambient = ambient
+        self.on = on
+        self.lt_range = lt_range
+
+    def get_actions(self):
+        actions = []
+
+        if self.diffuse is not None:
+            if len(self.diffuse) != 3:
+                raise Exception(f'Light anim for {self.object_name} have wrong diffuse')
+
+            actions.append(f'{{ diffuse = {self.diffuse[0]}, {self.diffuse[1]}, {self.diffuse[2]} }}')
+
+        if self.ambient is not None:
+            if len(self.ambient) != 3:
+                raise Exception(f'Light anim for {self.object_name} have wrong ambient')
+
+            actions.append(f'{{ diffuse = {self.ambient[0]}, {self.ambient[1]}, {self.ambient[2]} }}')
+
+        if self.on is not None:
+            actions.append(f'on = {"Y" if self.on else "N"}')
+
+        if self.lt_range is not None:
+            actions.append(f'range = {self.lt_range}')
+
+        if len(actions) == 0:
+            raise Exception(f'Light anim for {self.object_name} has no any action')
+
+        return ', '.join(actions)
+
+    def get_params(self):
+        return {
+            'object_name': self.object_name,
+            'duration': self.duration,
+            'smooth': self.smooth,
+            'light_changes': self.get_actions(),
+        }
+
+
+
+
+
+
+
+
+
 class Entity:
     TEMPLATE_ROOT = ENTITY_TEMPLATE_FOLDER
     TEMPLATE = None
@@ -412,7 +482,7 @@ class Character(Entity):
     TEMPLATE = 'character'
 
     def __init__(self, actor, light_group, init_point, rotate=0, floor_height=0,
-                 stand_points=None, sit_points=None, ik_start_point=None, *args, **kwargs):
+                 ik_start_point=None, use_ambient=False, *args, **kwargs):
         self.actor = actor
         name = f'Char_{self.actor.NAME}'
         super().__init__(name=name, *args, **kwargs)
@@ -425,6 +495,7 @@ class Character(Entity):
         self.head_ik_name = f'char_ik_{self.name}_head_ik'
         self.eye_ik_name = f'char_ik_{self.name}_eye_ik'
         self.ik_start_point = ik_start_point
+        self.use_ambient = use_ambient
         self.init_char_points()
 
     def init_char_points(self):
@@ -509,6 +580,12 @@ class Character(Entity):
             mx[2][0], mx[2][1], mx[2][2],
         )
 
+    def get_flags(self):
+        flags = [LIT_DYNAMIC]
+        if self.use_ambient:
+            flags.append(LIT_AMBIENT)
+        return ' + '.join(flags)
+
     def get_params(self):
         return {
             'name': self.name,
@@ -518,18 +595,23 @@ class Character(Entity):
             'init_pos': self.init_pos,
             'init_matrix': self.get_init_matrix(),
             'floor_height': self.floor_height,
+            'light_flags': self.get_flags(),
         }
 
-    def motion(self, group, anim, duration=10, **kwargs):
+    def motion(self, group, anim, duration=10, repeat=1, **kwargs):
         if self.actor.is_male() and 'fmbody' in anim.lower():
             raise Exception(f'{anim} has wrong gender for {self.name}')
         if self.actor.is_female() and 'mlbody' in anim.lower():
             raise Exception(f'{anim} has wrong gender for {self.name}')
 
-        MotionEvent(root=self.root, group=group,
-                    object_name=self.name, anim=anim,
-                    duration=duration,
-                    **kwargs)
+        if repeat > 1 and kwargs.get('loop'):
+            raise Exception('cannot repeat loop motion event')
+
+        for i in range(1, repeat+1):
+            MotionEvent(root=self.root, group=group,
+                        object_name=self.name, anim=anim,
+                        duration=duration,
+                        **kwargs)
 
     def idle(self, group, duration=10, **kwargs):
         animation = self.animations[IDLE]
@@ -615,3 +697,58 @@ class LookAtCamera(Camera):
                   object_name=self.focus.name, target_name=target_obj.name,
                   duration=duration, smooth=smooth,
                   time_delay=time_delay, time_append=time_append)
+
+
+class Light(Entity):
+    TEMPLATE = 'light'
+
+    def __init__(self, light_group, diffuse, ambient, direction, point_name=None,
+                 light_type=L_DIRECT, on=True, range=2000, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.point_name = point_name if point_name else self.root.DEFAULT_POINT_NAME
+        self.point = self.root.get_point(self.point_name)
+        self.light_group = light_group
+        self.diffuse = diffuse
+        self.ambient = ambient
+        self.direction = direction
+        self.light_type = light_type
+        self.on = on
+        self.range = range
+        if self.light_type not in LIGHT_TYPES:
+            raise Exception(f'Light {self.name} has invalid type {self.light_type}')
+        if len(self.diffuse) != 3:
+            raise Exception(f'Diffuse of light {self.name} should have 3 points')
+        if len(self.ambient) != 3:
+            raise Exception(f'Ambient of light {self.name} should have 3 points')
+        if len(self.direction) != 3:
+            raise Exception(f'Direction of light {self.name} should have 3 points')
+
+    def get_index(self):
+        return self.light_group
+
+    def get_params(self):
+        return {
+            'name': self.name,
+            'point': self.point,
+            'light_group': self.light_group,
+            'light_type': self.light_type,
+            'on': self.on,
+            'range': self.range,
+            'diffuse': ', '.join([str(i) for i in self.diffuse]),
+            'ambient': ', '.join([str(i) for i in self.ambient]),
+            'direction': ', '.join([str(i) for i in self.direction]),
+        }
+
+    def on(self, group, **kwargs):
+        LightAnimEvent(root=self.root, group=group, object_name=self.name, on=True, duration=0, smooth=False, **kwargs)
+
+    def off(self, group, **kwargs):
+        LightAnimEvent(root=self.root, group=group, object_name=self.name, on=False, duration=0, smooth=False, **kwargs)
+
+    def set_diffuse(self, group, diffuse, duration, smooth=False, **kwargs):
+        LightAnimEvent(root=self.root, group=group, object_name=self.name, diffuse=diffuse,
+                       duration=duration, smooth=smooth, **kwargs)
+
+    def set_ambient(self, group, ambient, duration, smooth=False, **kwargs):
+        LightAnimEvent(root=self.root, group=group, object_name=self.name, ambient=ambient,
+                       duration=duration, smooth=smooth, **kwargs)

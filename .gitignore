@@ -155,6 +155,7 @@ drvmgt.dll
 __pycache__/
 *.py[cod]
 *$py.class
+*.blend1
 Assets/Pythonlancer/settings.py
 Assets/Pythonlancer/out.tx
 Assets/AUDIO_XML_RU_APPLY

@@ -5,7 +5,7 @@
     lt_grp={{ light_group }},
     srt_grp=0,
     usr_flg=0,
-    flags=LIT_DYNAMIC,
+    flags={{ light_flags }},
     spatialprops={
         pos={
             {{ init_pos }}

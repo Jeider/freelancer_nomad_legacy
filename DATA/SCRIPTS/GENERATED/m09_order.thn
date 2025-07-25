@@ -1,0 +1,1870 @@
+duration=30
+
+entities={
+	{
+		entity_name="Scene_m09_order",
+		type=SCENE,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		up=Y_AXIS,
+		front=Z_AXIS,
+		ambient={
+		    30,
+		    30,
+		    10
+		}
+	},
+
+	{
+		entity_name="Monitor_1",
+		type=MONITOR,
+		template_name="",
+		template_id=0
+	},
+	{
+		entity_name="offscreen",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={pos={-10000000,-10000,0},orient={ {1,0,0},{0,1,0},{0,0,1} } },
+	},
+
+	{
+		entity_name="offscreen_back",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={pos={0,-10000,-10000000},orient={ {1,0,0},{0,1,0},{0,0,1} } },
+	},
+
+	
+{
+    entity_name="DX_m09_order_0010_hassler",
+    template_name="DX_m09_order_0010_hassler",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m09_order_0020_yamamoto",
+    template_name="DX_m09_order_0020_yamamoto",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m09_order_0030_yamamoto",
+    template_name="DX_m09_order_0030_yamamoto",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m09_order_0040_yamamoto",
+    template_name="DX_m09_order_0040_yamamoto",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m09_order_0050_yamamoto",
+    template_name="DX_m09_order_0050_yamamoto",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m09_order_0060_darcy",
+    template_name="DX_m09_order_0060_darcy",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m09_order_0070_trent",
+    template_name="DX_m09_order_0070_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m09_order_0080_yamamoto",
+    template_name="DX_m09_order_0080_yamamoto",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m09_order_0090_trent",
+    template_name="DX_m09_order_0090_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m09_order_0100_yamamoto",
+    template_name="DX_m09_order_0100_yamamoto",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m09_order_0110_trent",
+    template_name="DX_m09_order_0110_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m09_order_0120_yamamoto",
+    template_name="DX_m09_order_0120_yamamoto",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m09_order_0130_yamamoto",
+    template_name="DX_m09_order_0130_yamamoto",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m09_order_0140_yamamoto",
+    template_name="DX_m09_order_0140_yamamoto",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m09_order_0150_yamamoto",
+    template_name="DX_m09_order_0150_yamamoto",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m09_order_0160_trent",
+    template_name="DX_m09_order_0160_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m09_order_0170_yamamoto",
+    template_name="DX_m09_order_0170_yamamoto",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m09_order_0180_trent",
+    template_name="DX_m09_order_0180_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m09_order_0190_yamamoto",
+    template_name="DX_m09_order_0190_yamamoto",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m09_order_0200_yamamoto",
+    template_name="DX_m09_order_0200_yamamoto",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m09_order_0210_yamamoto",
+    template_name="DX_m09_order_0210_yamamoto",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m09_order_0220_trent",
+    template_name="DX_m09_order_0220_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m09_order_0230_yamamoto",
+    template_name="DX_m09_order_0230_yamamoto",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m09_order_0240_trent",
+    template_name="DX_m09_order_0240_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m09_order_0250_yamamoto",
+    template_name="DX_m09_order_0250_yamamoto",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m09_order_0260_yamamoto",
+    template_name="DX_m09_order_0260_yamamoto",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m09_order_0270_trent",
+    template_name="DX_m09_order_0270_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m09_order_0280_yamamoto",
+    template_name="DX_m09_order_0280_yamamoto",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m09_order_0290_trent",
+    template_name="DX_m09_order_0290_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m09_order_0320_yamamoto",
+    template_name="DX_m09_order_0320_yamamoto",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m09_order_0350_darcy",
+    template_name="DX_m09_order_0350_darcy",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m09_order_0360_trent",
+    template_name="DX_m09_order_0360_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+
+	,
+
+	{
+    entity_name="automarker_default_point",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_dbg",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 5.67, 6.05, 3.17 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_ku_honshu_bar",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, -0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_tekagi_dj",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -2.56, 0.00, -1.79 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_barman1",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -3.01, 0.00, -4.18 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_barman2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.00, 0.00, -4.43 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_dbg_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.46, 0.77, 0.34 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_dancepoint_floor",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -9.36, 1.84, 2.09 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_dancepoint",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -8.74, 1.83, 2.40 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_dance",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.44, 3.77, 2.93 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_dance_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -5.83, 1.48, 2.25 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_dancelook1",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -7.07, 0.00, 0.65 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_dancelook2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -6.36, 0.00, 2.39 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_dancelook3",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -7.09, 0.00, 4.06 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_dancepoint_lookat",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -9.36, 3.10, 2.72 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_light_bartable",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.46, 0.77, -1.93 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="cam_dbg",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ 5.67, 6.05, 3.17 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=45,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+,
+{
+    entity_name="cam_dance",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ -1.44, 3.77, 2.93 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=20,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+,
+{
+    entity_name="LIGHT_ROOMA",
+    type=LIGHT,
+    template_name="",
+    lt_grp=9,
+    srt_grp=0,
+    usr_flg=0,
+    spatialprops={
+        pos={ -1.46, 0.77, -1.93 },
+        orient={
+            {1,0,0},
+            {0,1,0},
+            {0,0,1}
+        }
+    },
+    lightprops={
+        on=Y,
+        color={
+            255,
+            255,
+            255
+        },
+        diffuse={
+            0, 0, 0
+        },
+        specular={
+            0,
+            0,
+            0
+        },
+        ambient={
+            0.6, 0.8, 0.3
+        },
+        direction={
+            0, 0, -1
+        },
+        range=3,
+        cutoff=90,
+        type=L_POINT,
+        theta=90,
+        atten={
+            1,
+            0,
+            0.003
+        }
+    }
+}
+,
+{
+    entity_name="LIGHT_ROOM1",
+    type=LIGHT,
+    template_name="",
+    lt_grp=9,
+    srt_grp=0,
+    usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={
+            {1,0,0},
+            {0,1,0},
+            {0,0,1}
+        }
+    },
+    lightprops={
+        on=N,
+        color={
+            255,
+            255,
+            255
+        },
+        diffuse={
+            0, 0, 0
+        },
+        specular={
+            0,
+            0,
+            0
+        },
+        ambient={
+            0.3, 0.3, 0.3
+        },
+        direction={
+            0, 0, 1
+        },
+        range=6,
+        cutoff=90,
+        type=L_SPOT,
+        theta=90,
+        atten={
+            1,
+            0,
+            0.003
+        }
+    }
+}
+,
+{
+    entity_name="LIGHT_ROOM2",
+    type=LIGHT,
+    template_name="",
+    lt_grp=9,
+    srt_grp=0,
+    usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={
+            {1,0,0},
+            {0,1,0},
+            {0,0,1}
+        }
+    },
+    lightprops={
+        on=Y,
+        color={
+            255,
+            255,
+            255
+        },
+        diffuse={
+            0, 0, 0
+        },
+        specular={
+            0,
+            0,
+            0
+        },
+        ambient={
+            0.3, 0.3, 0.3
+        },
+        direction={
+            1, 0, 0
+        },
+        range=6,
+        cutoff=90,
+        type=L_SPOT,
+        theta=90,
+        atten={
+            1,
+            0,
+            0.003
+        }
+    }
+}
+,
+{
+    entity_name="LIGHT_ROOM3",
+    type=LIGHT,
+    template_name="",
+    lt_grp=9,
+    srt_grp=0,
+    usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={
+            {1,0,0},
+            {0,1,0},
+            {0,0,1}
+        }
+    },
+    lightprops={
+        on=Y,
+        color={
+            255,
+            255,
+            255
+        },
+        diffuse={
+            0, 0, 0
+        },
+        specular={
+            0,
+            0,
+            0
+        },
+        ambient={
+            0.3, 0.3, 0.3
+        },
+        direction={
+            -1, 0, 0
+        },
+        range=6,
+        cutoff=90,
+        type=L_SPOT,
+        theta=90,
+        atten={
+            1,
+            0,
+            0.003
+        }
+    }
+}
+,
+{
+    entity_name="LIGHT_DANCE1",
+    type=LIGHT,
+    template_name="",
+    lt_grp=90,
+    srt_grp=0,
+    usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={
+            {1,0,0},
+            {0,1,0},
+            {0,0,1}
+        }
+    },
+    lightprops={
+        on=Y,
+        color={
+            255,
+            255,
+            255
+        },
+        diffuse={
+            1, 1, 1
+        },
+        specular={
+            0,
+            0,
+            0
+        },
+        ambient={
+            1, 0.6, 0.6
+        },
+        direction={
+            0, 0, 1
+        },
+        range=2000,
+        cutoff=90,
+        type=L_DIRECT,
+        theta=90,
+        atten={
+            1,
+            0,
+            0.003
+        }
+    }
+}
+,
+{
+    entity_name="LIGHT_DANCE2",
+    type=LIGHT,
+    template_name="",
+    lt_grp=91,
+    srt_grp=0,
+    usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={
+            {1,0,0},
+            {0,1,0},
+            {0,0,1}
+        }
+    },
+    lightprops={
+        on=Y,
+        color={
+            255,
+            255,
+            255
+        },
+        diffuse={
+            1, 0.2, 0.2
+        },
+        specular={
+            0,
+            0,
+            0
+        },
+        ambient={
+            0.1, 0.1, 0.1
+        },
+        direction={
+            0, 0, -1
+        },
+        range=2000,
+        cutoff=90,
+        type=L_DIRECT,
+        theta=90,
+        atten={
+            1,
+            0,
+            0.003
+        }
+    }
+}
+,
+{
+    entity_name="LIGHT_DANCE3",
+    type=LIGHT,
+    template_name="",
+    lt_grp=92,
+    srt_grp=0,
+    usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={
+            {1,0,0},
+            {0,1,0},
+            {0,0,1}
+        }
+    },
+    lightprops={
+        on=Y,
+        color={
+            255,
+            255,
+            255
+        },
+        diffuse={
+            1, 0.2, 0.2
+        },
+        specular={
+            0,
+            0,
+            0
+        },
+        ambient={
+            0.1, 0.1, 0.1
+        },
+        direction={
+            1, 0, 0
+        },
+        range=2000,
+        cutoff=90,
+        type=L_DIRECT,
+        theta=90,
+        atten={
+            1,
+            0,
+            0.003
+        }
+    }
+}
+,
+{
+    entity_name="LIGHT_DANCE4",
+    type=LIGHT,
+    template_name="",
+    lt_grp=93,
+    srt_grp=0,
+    usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={
+            {1,0,0},
+            {0,1,0},
+            {0,0,1}
+        }
+    },
+    lightprops={
+        on=Y,
+        color={
+            255,
+            255,
+            255
+        },
+        diffuse={
+            1, 0.2, 0.2
+        },
+        specular={
+            0,
+            0,
+            0
+        },
+        ambient={
+            0.1, 0.1, 0.1
+        },
+        direction={
+            0, 0, 1
+        },
+        range=2000,
+        cutoff=90,
+        type=L_DIRECT,
+        theta=90,
+        atten={
+            1,
+            0,
+            0.003
+        }
+    }
+}
+,
+{
+    entity_name="Char_tekagi",
+    type=DEFORMABLE,
+    template_name="tekagi_dj",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -2.56, 0.00, -1.79
+        },
+        orient={ 
+            { -1.0000000,0.0000000,0.0000000 }, 
+            { 0.0000000,1.0000000,0.0000000 },
+            { -0.0000000,0.0000000,-1.0000000 }
+         }
+    },
+    compoundprops={
+        floor_height=0
+    },
+    userprops={
+        Actor="tekagi",
+        category="Character"
+    }
+}
+,
+{
+    entity_name="char_ik_Char_tekagi_head_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="char_ik_Char_tekagi_eye_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="Char_yoko_dancepoint",
+    type=DEFORMABLE,
+    template_name="yoko_dancepoint",
+    lt_grp=90,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC + LIT_AMBIENT,
+    spatialprops={
+        pos={
+            -8.74, 1.83, 2.40
+        },
+        orient={ 
+            { -0.1736482,0.0000000,0.9848078 }, 
+            { 0.0000000,1.0000000,0.0000000 },
+            { -0.9848078,0.0000000,-0.1736482 }
+         }
+    },
+    compoundprops={
+        floor_height=1.835619568824768
+    },
+    userprops={
+        Actor="yoko_dancepoint",
+        category="Character"
+    }
+}
+,
+{
+    entity_name="char_ik_Char_yoko_dancepoint_head_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="char_ik_Char_yoko_dancepoint_eye_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="Char_yoko_dancelook1",
+    type=DEFORMABLE,
+    template_name="yoko_dancelook1",
+    lt_grp=91,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC + LIT_AMBIENT,
+    spatialprops={
+        pos={
+            -7.07, 0.00, 0.65
+        },
+        orient={ 
+            { -0.6427876,-0.0000000,-0.7660444 }, 
+            { 0.0000000,1.0000000,-0.0000000 },
+            { 0.7660444,0.0000000,-0.6427876 }
+         }
+    },
+    compoundprops={
+        floor_height=0
+    },
+    userprops={
+        Actor="yoko_dancelook1",
+        category="Character"
+    }
+}
+,
+{
+    entity_name="char_ik_Char_yoko_dancelook1_head_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="char_ik_Char_yoko_dancelook1_eye_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="Char_yoko_dancelook2",
+    type=DEFORMABLE,
+    template_name="yoko_dancelook2",
+    lt_grp=92,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC + LIT_AMBIENT,
+    spatialprops={
+        pos={
+            -6.36, 0.00, 2.39
+        },
+        orient={ 
+            { 0.0000000,-0.0000000,-1.0000000 }, 
+            { 0.0000000,1.0000000,-0.0000000 },
+            { 1.0000000,0.0000000,0.0000000 }
+         }
+    },
+    compoundprops={
+        floor_height=0
+    },
+    userprops={
+        Actor="yoko_dancelook2",
+        category="Character"
+    }
+}
+,
+{
+    entity_name="char_ik_Char_yoko_dancelook2_head_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="char_ik_Char_yoko_dancelook2_eye_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="Char_yoko_dancelook3",
+    type=DEFORMABLE,
+    template_name="yoko_dancelook3",
+    lt_grp=93,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC + LIT_AMBIENT,
+    spatialprops={
+        pos={
+            -7.09, 0.00, 4.06
+        },
+        orient={ 
+            { 0.6427876,-0.0000000,-0.7660444 }, 
+            { 0.0000000,1.0000000,-0.0000000 },
+            { 0.7660444,0.0000000,0.6427876 }
+         }
+    },
+    compoundprops={
+        floor_height=0
+    },
+    userprops={
+        Actor="yoko_dancelook3",
+        category="Character"
+    }
+}
+,
+{
+    entity_name="char_ik_Char_yoko_dancelook3_head_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="char_ik_Char_yoko_dancelook3_eye_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+}
+
+events={
+
+    {
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_dbg",
+        "automarker_cam_dbg_focus"
+    },
+    {
+        duration=1000, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_dance",
+        "automarker_cam_dance_focus"
+    },
+    {
+        duration=1000, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    START_MOTION,
+    {"Char_tekagi"},
+    {animation="Sc_MLBODY_STND_WIPE_BAR_000LV_XA_14",
+     duration=5000, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   
+     }
+}
+,
+{
+    0,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=1, time_scale=1, start_time=1.9, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    0.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    15.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    30.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    45.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    60.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    75.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    90.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    105.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    120.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    135.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    150.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    165.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    180.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    195.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    210.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    225.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    240.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    255.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    270.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    285.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    300.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    315.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    330.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    345.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    360.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    375.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    390.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    405.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    420.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    435.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    450.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    465.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    480.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    495.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    510.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    525.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    540.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    555.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    570.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    585.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    600.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    615.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    630.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    645.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    660.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    675.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    690.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    705.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    720.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    735.1,
+    START_MOTION,
+    {"Char_yoko_dancepoint"},
+    {animation="Sc_FMBODY_STND_DANC_000LV_A_20",
+     duration=20, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    0,
+    START_MOTION,
+    {"Char_yoko_dancelook1"},
+    {animation="Sc_MLBODY_STLF_000LV_A_27",
+     duration=1000, time_scale=1, start_time=3, weight=1, heading=-1
+     , event_flags=2   
+     }
+}
+,
+{
+    0,
+    START_MOTION,
+    {"Char_yoko_dancelook2"},
+    {animation="Sc_MLBODY_STLB_LSTN_090LV_A_19",
+     duration=1000, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   
+     }
+}
+,
+{
+    0,
+    START_MOTION,
+    {"Char_yoko_dancelook3"},
+    {animation="Sc_MLBODY_STLF_000LV_A_27",
+     duration=1000, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   
+     }
+}
+,
+{
+    0,
+    START_IK,
+    {
+        "Char_yoko_dancelook1",
+        "automarker_dancepoint_lookat"
+    },
+    {
+        duration=3000,
+        end_effector="Body_Head", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    0,
+    START_IK,
+    {
+        "Char_yoko_dancelook2",
+        "automarker_dancepoint_lookat"
+    },
+    {
+        duration=3000,
+        end_effector="Body_Head", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    0,
+    START_IK,
+    {
+        "Char_yoko_dancelook3",
+        "automarker_dancepoint_lookat"
+    },
+    {
+        duration=3000,
+        end_effector="Body_Head", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    0,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_dbg"
+    }
+}
+
+}

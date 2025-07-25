@@ -776,6 +776,36 @@ class YokohamaBarFive(Actor):
     CUTSCENE_APPEARANCE = 'yoko_char5'
 
 
+class TekagiDj(Actor):
+    TYPE = ACTOR_MALE
+    NAME = 'tekagi'
+    CUTSCENE_APPEARANCE = 'tekagi_dj'
+
+
+class YokoDancepoint(Actor):
+    TYPE = ACTOR_FEMALE
+    NAME = 'yoko_dancepoint'
+    CUTSCENE_APPEARANCE = 'yoko_dancepoint'
+
+
+class YokoDancelook1(Actor):
+    TYPE = ACTOR_MALE
+    NAME = 'yoko_dancelook1'
+    CUTSCENE_APPEARANCE = 'yoko_dancelook1'
+
+
+class YokoDancelook2(Actor):
+    TYPE = ACTOR_MALE
+    NAME = 'yoko_dancelook2'
+    CUTSCENE_APPEARANCE = 'yoko_dancelook2'
+
+
+class YokoDancelook3(Actor):
+    TYPE = ACTOR_MALE
+    NAME = 'yoko_dancelook3'
+    CUTSCENE_APPEARANCE = 'yoko_dancelook3'
+
+
 class ActorManager:
     def __init__(self):
         self.actors_per_name = {actor.NAME: actor for actor in Actor.subclasses}

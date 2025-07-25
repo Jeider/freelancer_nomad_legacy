@@ -386,7 +386,7 @@ def scene():
     tpl_manager = JinjaTemplateManager()
     script_manager = ScriptManager()
     msn = script_manager.get_mission_by_index(9)
-    cutscene = msn.get_cutscene_by_code('yokohama')
+    cutscene = msn.get_cutscene_by_code('order')
     thorn = cutscene.get_thorn(tpl_manager)
     print(thorn.get_content())
 

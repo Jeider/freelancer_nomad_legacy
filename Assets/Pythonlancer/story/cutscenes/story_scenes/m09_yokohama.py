@@ -30,16 +30,12 @@ class Msn9YokohamaCutsceneThorn(Scene):
         cam_darcy = LookAtCamera(root=self, name='cam_darcy', fov=18)
         cam_hassler = LookAtCamera(root=self, name='cam_hassler', fov=18)
 
-        # cam_dbg.move_cam(group=MAIN, index=2, duration=10, smooth=False)
-        # cam_dbg.move_focus(group=MAIN, index=2, duration=10, time_delay=2)
-        # MARKERS
-
         # CHARACTERS
 
         darcy = Character(root=self, actor=actors.Darcy, light_group=0, init_point='darcy_bottom', rotate=-90,
-                          floor_height=down_floor_height, stand_points=['darcy_goend'])
+                          floor_height=down_floor_height)
         trent = Character(root=self, actor=actors.Trent, light_group=0, init_point='trent_bottom', rotate=-90,
-                          floor_height=down_floor_height, stand_points=['trent_goend'])
+                          floor_height=down_floor_height)
 
         darcy.motion(group=MAIN, duration=13, loop=True, anim=Female.Sc_FMBODY_STND_HOLD_ARMS_CROSSED_000LV_XA_03)
         trent.motion(group=MAIN, duration=13, loop=True, anim=Male.Sc_MLBODY_STND_FSTHIPB_HOLD_000LV_XA_02)
@@ -55,7 +51,6 @@ class Msn9YokohamaCutsceneThorn(Scene):
         mrk_hassler_walk = hassler.get_stand_marker('hassler_talk')
         mrk_darcy_left = self.get_automarker_name('head_darcy_left')
         mrk_darcy_right = self.get_automarker_name('head_darcy_right')
-
 
         # not used
         # chair4 = Character(root=self, actor=actors.YokohamaBarFour, light_group=0, init_point='chair_four', rotate=90)

@@ -1,7 +1,7 @@
 from story import script
 from audio.sound import VoiceLine
 from story.actors import Trent, Hatcher, Darcy, HasslerOrder, Yamamoto, Kim, SakuraOne, Chrysanthemum, Matome
-from story.cutscenes.story_scenes import m09_yokohama
+from story.cutscenes.story_scenes import m09_yokohama, m09_order
 
 
 class Msn9(object):
@@ -135,6 +135,7 @@ class Msn9YokohamaCutscene(Msn9, script.CutsceneProps):
 class Msn9OrderCutscene(Msn9, script.CutsceneProps):
     ALIAS = 'order'
     TITLE = 'Нижний бар станции Йокогама'
+    THORN_CLASS = m09_order.Msn9OrderCutsceneThorn
     DESCRIPTION = 'Лифт открывается. Энергичная музыка, треш, угар и прочие штуки. Стриптизерши танцуют. Герои входят'
     'Они подходят к барной стойке, где их поджидает глава Нового Ордена - Ямамаото-сама'
     VOICE_LINES = [
