@@ -1,5 +1,5 @@
 {
-    entity_name="LIGHT_{{ name }}",
+    entity_name="{{ name }}",
     type=LIGHT,
     template_name="",
     lt_grp={{ light_group }},

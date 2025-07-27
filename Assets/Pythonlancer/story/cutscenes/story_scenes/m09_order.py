@@ -15,24 +15,38 @@ class Msn9OrderCutsceneThorn(Scene):
         main_group = self.get_group(MAIN)
 
         dancepoint_floor_height = self.get_point('dancepoint_floor').position[1]
-        spot_ambi = [0.3, 0.3, 0.3]
+        # spot_ambi = [0.3, 0.3, 0.1]
+        start_diffuse = [0.7, 0.4, 0.1]
+        end_diffuse = [0.1, 0, 0]
 
         # CAMERAS
 
         cam_dbg = LookAtCamera(root=self, name='cam_dbg', fov=45)
-        cam_dance = LookAtCamera(root=self, name='cam_dance', fov=20)
+        cam_dance = LookAtCamera(root=self, name='cam_dance', fov=30)
 
-        lt_room = Light(root=self, name='ROOMA', light_group=9, diffuse=[0, 0, 0], point_name='light_bartable',
+        lt_room = Light(root=self, name='ROOMA', point_name='light_bartable', light_group=9, diffuse=[0, 0, 0],
                         ambient=[0.6, 0.8, 0.3], direction=[0, 0, -1], light_type=L_POINT, range=3)
 
-        lt_room1 = Light(root=self, name='ROOM1', light_group=9, diffuse=[0, 0, 0],
-                         ambient=spot_ambi, direction=[0, 0, 1], light_type=L_SPOT, range=6, on=False)
+        lt_room1 = Light(root=self, name='ROOM1', point_name='light1', light_group=9, diffuse=end_diffuse,
+                         ambient=[0, 0, 0], direction=[0, 0, 1], light_type=L_POINT, range=6)
 
-        lt_room2 = Light(root=self, name='ROOM2', light_group=9, diffuse=[0, 0, 0],
-                         ambient=spot_ambi, direction=[1, 0, 0], light_type=L_SPOT, range=6)
+        lt_room2 = Light(root=self, name='ROOM2', point_name='light2', light_group=9, diffuse=start_diffuse,
+                         ambient=[0, 0, 0], direction=[1, 0, 0], light_type=L_POINT, range=6)
 
-        lt_room3 = Light(root=self, name='ROOM3', light_group=9, diffuse=[0, 0, 0],
-                         ambient=spot_ambi, direction=[-1, 0, 0], light_type=L_SPOT, range=6)
+        lt_room3 = Light(root=self, name='ROOM3', point_name='light3', light_group=9, diffuse=end_diffuse,
+                         ambient=[0, 0, 0], direction=[-1, 0, 0], light_type=L_POINT, range=6)
+
+        # lt_room1.animate_ambient(BG, 'lt_room1_anim1', start_ambient=spot_ambi_off, end_ambient=spot_ambi,
+        #                          duration=3, gap=1, smooth=True, repeat=3)
+        lt_room1.animate_diffuse(BG, 'lt_room1_anim1', start_diffuse=end_diffuse, end_diffuse=start_diffuse,
+                                 duration=0.6, start_gap=0.07, end_gap=0.15, smooth=True, repeat=100)
+        lt_room2.animate_diffuse(BG, 'lt_room2_anim1', start_diffuse=start_diffuse, end_diffuse=end_diffuse,
+                                 duration=0.5, start_gap=0.05, end_gap=0.1, smooth=True, repeat=100)
+        lt_room3.animate_diffuse(BG, 'lt_room3_anim1', start_diffuse=start_diffuse, end_diffuse=end_diffuse,
+                                 duration=0.4, start_gap=0.03, end_gap=0.08, smooth=True, repeat=100)
+        # lt_room2.animate_range(BG, 'lt_room2_anim2', start_range=6, end_range=5,
+        #                          duration=2, gap=0, smooth=True, repeat=50)
+
 
         lt_dancepoint_indx = Light(root=self, name='DANCE1', light_group=90, diffuse=[1, 1, 1],
                                    ambient=[1, 0.6, 0.6], direction=[0, 0, 1]).get_index()
@@ -42,6 +56,10 @@ class Msn9OrderCutsceneThorn(Scene):
                                    ambient=[0.1, 0.1, 0.1], direction=[1, 0, 0]).get_index()
         lt_dancelook3_indx = Light(root=self, name='DANCE4', light_group=93, diffuse=[1, 0.2, 0.2],
                                    ambient=[0.1, 0.1, 0.1], direction=[0, 0, 1]).get_index()
+
+        discoball1 = Alchemy(root=self, name='disco_fx1', particles='discobeam', point_name='discobeam1')
+        discoball1.start(group=BG, duration=5000)
+        RotateAxisEvent(root=self, group=BG, object_name=discoball1.name, angle=36000, duration=5000, smooth=False)
 
         # CHARACTERS
 

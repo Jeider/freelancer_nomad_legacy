@@ -440,7 +440,7 @@ entities={
     type=MARKER,
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
     spatialprops={
-        pos={ -1.44, 3.77, 2.93 },
+        pos={ -3.49, 1.45, 3.10 },
         orient={ 
             { 1.0000000,0.0000000,0.0000000 },
             { 0.0000000,1.0000000,0.0000000 },
@@ -454,7 +454,7 @@ entities={
     type=MARKER,
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
     spatialprops={
-        pos={ -5.83, 1.48, 2.25 },
+        pos={ -8.58, 2.29, 2.25 },
         orient={ 
             { 1.0000000,0.0000000,0.0000000 },
             { 0.0000000,1.0000000,0.0000000 },
@@ -524,7 +524,63 @@ entities={
     type=MARKER,
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
     spatialprops={
-        pos={ -1.46, 0.77, -1.93 },
+        pos={ -1.46, 5.80, -1.93 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_light1",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -5.71, 2.27, -3.46 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_light2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 5.37, 1.53, -1.93 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_light3",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.46, 1.50, 4.69 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_discobeam1",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.92, 5.90, 1.69 },
         orient={ 
             { 1.0000000,0.0000000,0.0000000 },
             { 0.0000000,1.0000000,0.0000000 },
@@ -560,7 +616,7 @@ entities={
     template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
     flags=HIDDEN,
     spatialprops={
-        pos={ -1.44, 3.77, 2.93 },
+        pos={ -3.49, 1.45, 3.10 },
         orient={ 
             { 1.0000000,0.0000000,0.0000000 },
             { 0.0000000,1.0000000,0.0000000 },
@@ -568,7 +624,7 @@ entities={
          }
     },
     cameraprops={
-        fovh=20,
+        fovh=30,
         hvaspect=1.85,
         nearplane=0.2,
         farplane=5000
@@ -583,7 +639,7 @@ entities={
     srt_grp=0,
     usr_flg=0,
     spatialprops={
-        pos={ -1.46, 0.77, -1.93 },
+        pos={ -1.46, 5.80, -1.93 },
         orient={
             {1,0,0},
             {0,1,0},
@@ -631,7 +687,7 @@ entities={
     srt_grp=0,
     usr_flg=0,
     spatialprops={
-        pos={ 0.00, 0.00, 0.00 },
+        pos={ -5.71, 2.27, -3.46 },
         orient={
             {1,0,0},
             {0,1,0},
@@ -639,14 +695,14 @@ entities={
         }
     },
     lightprops={
-        on=N,
+        on=Y,
         color={
             255,
             255,
             255
         },
         diffuse={
-            0, 0, 0
+            0.1, 0, 0
         },
         specular={
             0,
@@ -654,14 +710,14 @@ entities={
             0
         },
         ambient={
-            0.3, 0.3, 0.3
+            0, 0, 0
         },
         direction={
             0, 0, 1
         },
         range=6,
         cutoff=90,
-        type=L_SPOT,
+        type=L_POINT,
         theta=90,
         atten={
             1,
@@ -679,7 +735,7 @@ entities={
     srt_grp=0,
     usr_flg=0,
     spatialprops={
-        pos={ 0.00, 0.00, 0.00 },
+        pos={ 5.37, 1.53, -1.93 },
         orient={
             {1,0,0},
             {0,1,0},
@@ -694,7 +750,7 @@ entities={
             255
         },
         diffuse={
-            0, 0, 0
+            0.7, 0.4, 0.1
         },
         specular={
             0,
@@ -702,14 +758,14 @@ entities={
             0
         },
         ambient={
-            0.3, 0.3, 0.3
+            0, 0, 0
         },
         direction={
             1, 0, 0
         },
         range=6,
         cutoff=90,
-        type=L_SPOT,
+        type=L_POINT,
         theta=90,
         atten={
             1,
@@ -727,7 +783,7 @@ entities={
     srt_grp=0,
     usr_flg=0,
     spatialprops={
-        pos={ 0.00, 0.00, 0.00 },
+        pos={ -1.46, 1.50, 4.69 },
         orient={
             {1,0,0},
             {0,1,0},
@@ -742,7 +798,7 @@ entities={
             255
         },
         diffuse={
-            0, 0, 0
+            0.1, 0, 0
         },
         specular={
             0,
@@ -750,14 +806,14 @@ entities={
             0
         },
         ambient={
-            0.3, 0.3, 0.3
+            0, 0, 0
         },
         direction={
             -1, 0, 0
         },
         range=6,
         cutoff=90,
-        type=L_SPOT,
+        type=L_POINT,
         theta=90,
         atten={
             1,
@@ -956,6 +1012,41 @@ entities={
             0,
             0.003
         }
+    }
+}
+,
+{
+    entity_name="disco_fx1",
+    type=PSYS,
+    template_name="discobeam",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=HIDDEN + LIT_DYNAMIC + LIT_AMBIENT,
+    spatialprops={
+        pos={
+            -0.92, 5.90, 1.69
+        },
+        orient={
+            {
+                1,
+                0,
+                0
+            },
+            {
+                0,
+                1,
+                0
+            },
+            {
+                0,
+                0,
+                1
+            }
+        }
+    },
+    psysprops={
+        sparam=0
     }
 }
 ,
@@ -1260,6 +1351,5736 @@ events={
     {
         duration=1000, offset={0,0,0},
         up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    0.6699999999999999,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1.42,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    2.09,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    2.84,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    3.51,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    4.26,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    4.93,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    5.68,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    6.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    7.1,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    7.77,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    8.52,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    9.19,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    9.94,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    10.61,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    11.36,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    12.03,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    12.78,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    13.45,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    14.2,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    14.87,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    15.62,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    16.29,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    17.04,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    17.71,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    18.46,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    19.130000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    19.880000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    20.550000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    21.300000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    21.970000000000006,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    22.720000000000006,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    23.390000000000008,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    24.140000000000008,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    24.81000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    25.56000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    26.23000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    26.98000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    27.650000000000013,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    28.400000000000013,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    29.070000000000014,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    29.820000000000014,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    30.490000000000016,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    31.240000000000016,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    31.910000000000018,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    32.66000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    33.33000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    34.08000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    34.75000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    35.50000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    36.17000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    36.92000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    37.590000000000025,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    38.340000000000025,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    39.010000000000026,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    39.760000000000026,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    40.43000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    41.18000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    41.85000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    42.60000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    43.27000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    44.02000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    44.69000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    45.44000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    46.110000000000035,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    46.860000000000035,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    47.53000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    48.28000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    48.95000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    49.70000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    50.37000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    51.12000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    51.79000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    52.54000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    53.21000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    53.96000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    54.630000000000045,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    55.380000000000045,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    56.05000000000005,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    56.80000000000005,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    57.47000000000005,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    58.22000000000005,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    58.89000000000005,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    59.64000000000005,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    60.31000000000005,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    61.06000000000005,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    61.730000000000054,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    62.480000000000054,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    63.150000000000055,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    63.900000000000055,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    64.57000000000005,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    65.32000000000005,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    65.99000000000005,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    66.74000000000005,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    67.41000000000005,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    68.16000000000005,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    68.83000000000006,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    69.58000000000006,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    70.25000000000006,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM1"
+    },
+    {
+        duration=0.6,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    0.55,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1.15,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1.7,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    2.3,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    2.8499999999999996,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    3.4499999999999997,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    4.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    4.6,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    5.1499999999999995,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    5.749999999999999,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    6.299999999999999,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    6.899999999999999,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    7.449999999999998,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    8.049999999999999,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    8.6,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    9.2,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    9.75,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    10.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    10.9,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    11.5,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    12.05,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    12.65,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    13.200000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    13.8,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    14.350000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    14.950000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    15.500000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    16.1,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    16.650000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    17.250000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    17.800000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    18.400000000000006,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    18.950000000000006,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    19.550000000000008,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    20.10000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    20.70000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    21.25000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    21.850000000000012,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    22.400000000000013,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    23.000000000000014,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    23.550000000000015,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    24.150000000000016,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    24.700000000000017,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    25.30000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    25.85000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    26.45000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    27.00000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    27.600000000000023,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    28.150000000000023,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    28.750000000000025,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    29.300000000000026,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    29.900000000000027,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    30.450000000000028,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    31.05000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    31.60000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    32.20000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    32.75000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    33.35000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    33.90000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    34.50000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    35.050000000000026,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    35.65000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    36.200000000000024,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    36.800000000000026,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    37.35000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    37.950000000000024,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    38.50000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    39.10000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    39.65000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    40.25000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    40.80000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    41.40000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    41.95000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    42.55000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    43.100000000000016,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    43.70000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    44.250000000000014,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    44.850000000000016,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    45.40000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    46.000000000000014,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    46.55000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    47.15000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    47.70000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    48.30000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    48.85000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    49.45000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    50.00000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    50.60000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    51.150000000000006,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    51.75000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    52.300000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    52.900000000000006,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    53.45,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    54.050000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    54.6,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    55.2,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    55.75,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    56.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    56.9,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM2"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    0.43000000000000005,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    0.9100000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1.3400000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1.8200000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    2.2500000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    2.7300000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    3.1600000000000006,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    3.6400000000000006,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    4.07,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    4.550000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    4.98,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    5.460000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    5.890000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    6.370000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    6.800000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    7.280000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    7.710000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    8.190000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    8.620000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    9.100000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    9.530000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    10.010000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    10.440000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    10.920000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    11.350000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    11.830000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    12.260000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    12.740000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    13.170000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    13.650000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    14.080000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    14.560000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    14.990000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    15.470000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    15.900000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    16.380000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    16.810000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    17.290000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    17.720000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    18.200000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    18.630000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    19.110000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    19.540000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    20.020000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    20.450000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    20.930000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    21.360000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    21.840000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    22.270000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    22.750000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    23.180000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    23.660000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    24.090000000000003,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    24.570000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    25.000000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    25.480000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    25.910000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    26.390000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    26.820000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    27.300000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    27.730000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    28.210000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    28.640000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    29.120000000000005,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    29.550000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    30.030000000000005,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    30.460000000000004,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    30.940000000000005,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    31.370000000000005,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    31.850000000000005,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    32.28000000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    32.760000000000005,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    33.190000000000005,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    33.67,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    34.1,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    34.58,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    35.01,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    35.489999999999995,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    35.919999999999995,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    36.39999999999999,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    36.82999999999999,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    37.30999999999999,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    37.73999999999999,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    38.219999999999985,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    38.649999999999984,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    39.12999999999998,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    39.55999999999998,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    40.03999999999998,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    40.46999999999998,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    40.949999999999974,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    41.379999999999974,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    41.85999999999997,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    42.28999999999997,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    42.76999999999997,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    43.19999999999997,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    43.679999999999964,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    44.109999999999964,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    44.58999999999996,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    45.01999999999996,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOM3"
+    },
+    {
+        duration=0.4,
+        lightprops={
+             diffuse = { 0.7, 0.4, 0.1 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    0,
+    START_PSYS,
+    {
+        "disco_fx1"
+    },
+    {
+        duration=5000
+    }
+}
+,
+{
+    0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "disco_fx1"
+    },
+    {
+        duration=5000,
+        target_type=ROOT,
+        spatialprops={
+            axisrot={
+                36000,
+                Y_AXIS
+            }
+        }
+        
     }
 }
 ,

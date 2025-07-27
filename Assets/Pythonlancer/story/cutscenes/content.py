@@ -111,6 +111,12 @@ class Group:
     def is_default(self):
         return self.group_type == DEFAULT_GROUP
 
+    def get_type(self):
+        return self.group_type
+
+
+### EVENTS
+
 
 class Event:
     TEMPLATE = None
@@ -407,13 +413,13 @@ class LightAnimEvent(Event):
             if len(self.diffuse) != 3:
                 raise Exception(f'Light anim for {self.object_name} have wrong diffuse')
 
-            actions.append(f'{{ diffuse = {self.diffuse[0]}, {self.diffuse[1]}, {self.diffuse[2]} }}')
+            actions.append(f' diffuse = {{ {self.diffuse[0]}, {self.diffuse[1]}, {self.diffuse[2]} }}')
 
         if self.ambient is not None:
             if len(self.ambient) != 3:
                 raise Exception(f'Light anim for {self.object_name} have wrong ambient')
 
-            actions.append(f'{{ diffuse = {self.ambient[0]}, {self.ambient[1]}, {self.ambient[2]} }}')
+            actions.append(f' ambient = {{ {self.ambient[0]}, {self.ambient[1]}, {self.ambient[2]} }}')
 
         if self.on is not None:
             actions.append(f'on = {"Y" if self.on else "N"}')
@@ -428,18 +434,29 @@ class LightAnimEvent(Event):
 
     def get_params(self):
         return {
-            'object_name': self.object_name,
+            'name': self.object_name,
             'duration': self.duration,
             'smooth': self.smooth,
             'light_changes': self.get_actions(),
         }
 
 
+class StartAlchemyEvent(Event):
+    TEMPLATE = 'start_alchemy'
+
+    def __init__(self, object_name, duration, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.object_name = object_name
+        self.duration = duration
+
+    def get_params(self):
+        return {
+            'name': self.object_name,
+            'duration': self.duration,
+        }
 
 
-
-
-
+### ENTITIES
 
 
 class Entity:
@@ -723,12 +740,15 @@ class Light(Entity):
         if len(self.direction) != 3:
             raise Exception(f'Direction of light {self.name} should have 3 points')
 
+    def get_light_name(self):
+        return f'LIGHT_{self.name}'
+
     def get_index(self):
         return self.light_group
 
     def get_params(self):
         return {
-            'name': self.name,
+            'name': self.get_light_name(),
             'point': self.point,
             'light_group': self.light_group,
             'light_type': self.light_type,
@@ -740,15 +760,73 @@ class Light(Entity):
         }
 
     def on(self, group, **kwargs):
-        LightAnimEvent(root=self.root, group=group, object_name=self.name, on=True, duration=0, smooth=False, **kwargs)
+        LightAnimEvent(root=self.root, group=group, object_name=self.get_light_name(), on=True, duration=0, smooth=False, **kwargs)
 
     def off(self, group, **kwargs):
-        LightAnimEvent(root=self.root, group=group, object_name=self.name, on=False, duration=0, smooth=False, **kwargs)
+        LightAnimEvent(root=self.root, group=group, object_name=self.get_light_name(), on=False, duration=0, smooth=False, **kwargs)
 
     def set_diffuse(self, group, diffuse, duration, smooth=False, **kwargs):
-        LightAnimEvent(root=self.root, group=group, object_name=self.name, diffuse=diffuse,
+        LightAnimEvent(root=self.root, group=group, object_name=self.get_light_name(), diffuse=diffuse,
                        duration=duration, smooth=smooth, **kwargs)
 
     def set_ambient(self, group, ambient, duration, smooth=False, **kwargs):
-        LightAnimEvent(root=self.root, group=group, object_name=self.name, ambient=ambient,
+        LightAnimEvent(root=self.root, group=group, object_name=self.get_light_name(), ambient=ambient,
                        duration=duration, smooth=smooth, **kwargs)
+
+    def set_range(self, group, range, duration, smooth=False, **kwargs):
+        LightAnimEvent(root=self.root, group=group, object_name=self.get_light_name(), lt_range=range,
+                       duration=duration, smooth=smooth, **kwargs)
+
+    def animate_diffuse(self, group, sequence_name, start_diffuse, end_diffuse,
+                        duration, start_gap, end_gap, repeat, smooth=False):
+        event_group = f'ambient_anim_{sequence_name}'
+        self.root.clone_group(event_group, original=group)
+        first = True
+        for i in range(1, repeat+1):
+            gap = start_gap if first else end_gap
+            self.set_diffuse(group=event_group, diffuse=end_diffuse if first else start_diffuse,
+                             duration=duration, smooth=smooth, time_append=duration+gap)
+            first = not first
+
+    # possible not working???
+    def animate_ambient(self, group, sequence_name, start_ambient, end_ambient,
+                        duration, gap, repeat, smooth=False):
+        event_group = f'ambient_anim_{sequence_name}'
+        self.root.clone_group(event_group, original=group)
+        first = True
+        for i in range(1, repeat+1):
+            self.set_ambient(group=event_group, ambient=end_ambient if first else start_ambient,
+                             duration=duration, smooth=smooth, time_append=duration+gap)
+            first = not first
+
+    def animate_range(self, group, sequence_name, start_range, end_range,
+                        duration, gap, repeat, smooth=False):
+        event_group = f'range_anim_{sequence_name}'
+        self.root.clone_group(event_group, original=group)
+        first = True
+        for i in range(1, repeat+1):
+            self.set_range(group=event_group, range=end_range if first else start_range,
+                           duration=duration, smooth=smooth, time_append=duration+gap)
+            first = not first
+
+
+class Alchemy(Entity):
+    TEMPLATE = 'alchemy'
+
+    def __init__(self, particles, point_name=None, sparam=0, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.point_name = point_name if point_name else self.root.DEFAULT_POINT_NAME
+        self.point = self.root.get_point(self.point_name)
+        self.particles = particles
+        self.sparam = sparam
+
+    def get_params(self):
+        return {
+            'name': self.name,
+            'particles': self.particles,
+            'point': self.point,
+            'sparam': self.sparam,
+        }
+
+    def start(self, group, duration, **kwargs):
+        StartAlchemyEvent(root=self.root, group=group, object_name=self.name, duration=duration, **kwargs)

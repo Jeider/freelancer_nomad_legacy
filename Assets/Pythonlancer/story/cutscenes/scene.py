@@ -48,7 +48,11 @@ class Scene:
 
     def clone_group(self, name, original):
         from_group = self.groups[original]
-        self.groups[name] = Group(self, time=from_group.get_time(), name=name)
+        new_group = Group(self, time=from_group.get_time(), name=name, group_type=from_group.get_type())
+        if name in self.groups:
+            raise Exception(f'Group {name} is already used')
+        self.groups[name] = new_group
+        return new_group
 
     def lookup_single_sound(self, index):
         for sound in self.props.get_sounds():
