@@ -8,7 +8,8 @@ from story import actors
 class Msn9OrderCutsceneThorn(Scene):
     SCENE_AMBIENT = [30, 30, 10]
     POINT_ROTATE_OVERRIDES = {
-        # 'tekagi_dj': (0, 180, 0),
+        'trent_talk': (0, 135, 0),
+        'darcy_talk': (0, 45, 0),
     }
 
     def action(self):
@@ -23,6 +24,11 @@ class Msn9OrderCutsceneThorn(Scene):
 
         cam_dbg = LookAtCamera(root=self, name='cam_dbg', fov=45)
         cam_dance = LookAtCamera(root=self, name='cam_dance', fov=30)
+        cam_tenji = LookAtCamera(root=self, name='cam_tenji', fov=18)
+        cam_tenji_near = LookAtCamera(root=self, name='cam_tenji_near', fov=18)
+        cam_friends = LookAtCamera(root=self, name='cam_friends', fov=24)
+        cam_trent = LookAtCamera(root=self, name='cam_trent', fov=16)
+        cam_darcy = LookAtCamera(root=self, name='cam_darcy', fov=16)
 
         lt_room = Light(root=self, name='ROOMA', point_name='light_bartable', light_group=9, diffuse=[0, 0, 0],
                         ambient=[0.6, 0.8, 0.3], direction=[0, 0, -1], light_type=L_POINT, range=3)
@@ -63,10 +69,10 @@ class Msn9OrderCutsceneThorn(Scene):
 
         # CHARACTERS
 
-        # darcy = Character(root=self, actor=actors.Darcy, light_group=0, init_point='darcy_bottom', rotate=-90,
-        #                   floor_height=0)
-        # trent = Character(root=self, actor=actors.Trent, light_group=0, init_point='trent_bottom', rotate=-90,
-        #                   floor_height=0)
+        darcy = Character(root=self, actor=actors.Darcy, light_group=0, init_point='darcy_init', rotate=-90,
+                          floor_height=0)
+        trent = Character(root=self, actor=actors.Trent, light_group=0, init_point='trent_init', rotate=-90,
+                          floor_height=0)
         #
         # darcy.motion(group=MAIN, duration=13, loop=True, anim=Female.Sc_FMBODY_STND_HOLD_ARMS_CROSSED_000LV_XA_03)
         # trent.motion(group=MAIN, duration=13, loop=True, anim=Male.Sc_MLBODY_STND_FSTHIPB_HOLD_000LV_XA_02)
@@ -77,6 +83,9 @@ class Msn9OrderCutsceneThorn(Scene):
 
         tekagi = Character(root=self, actor=actors.TekagiDj, light_group=0, init_point='tekagi_dj', rotate=180)
         tekagi.motion(group=BG, duration=5000, loop=True, anim=Male.Sc_MLBODY_STND_WIPE_BAR_000LV_XA_14)
+
+        tenji = Character(root=self, actor=actors.Yamamoto, light_group=0, init_point='yamamoto_init', rotate=-45, use_ambient=True)
+        tenji.motion(group=MAIN, duration=100, loop=True, anim=Male.Sc_MLBODY_CHRB_IDLE_000LV_XA_05)
 
         dancepoint = Character(root=self, actor=actors.YokoDancepoint, light_group=lt_dancepoint_indx,
                                init_point='dancepoint', rotate=100,
@@ -111,11 +120,117 @@ class Msn9OrderCutsceneThorn(Scene):
                     duration=3000, transition_duration=1)
 
         # MARKERS
-        #
-        # mrk_trent_goend = trent.get_stand_marker('trent_goend')
-        # mrk_darcy_goend = darcy.get_stand_marker('darcy_goend')
+
+        mrk_tenji_sit = trent.get_sit_marker('yamamoto_init')
+        mrk_trent_sit = trent.get_sit_marker('trent_talk')
+        mrk_darcy_sit = darcy.get_sit_marker('darcy_talk')
+
+        mrk_tenji_front = self.get_automarker_name('yamamoto_front')
+        mrk_darcy_front = self.get_automarker_name('darcy_front')
         # mrk_hassler_walk = hassler.get_stand_marker('hassler_talk')
         # mrk_darcy_left = self.get_automarker_name('head_darcy_left')
         # mrk_darcy_right = self.get_automarker_name('head_darcy_right')
 
-        cam_dbg.set(group=MAIN)
+        # cam_dbg.set(group=MAIN)
+        cam_tenji_near.set(group=MAIN)
+
+
+        # cam_trent.set(group=MAIN)
+
+
+
+
+
+        MoveFastEvent(root=self, group=MAIN, object_name=trent.name, target_name=self.get_automarker_name('trent_talk'),
+                      adjust_pos=True)
+        MoveFastEvent(root=self, group=MAIN, object_name=darcy.name, target_name=self.get_automarker_name('darcy_talk'),
+                      adjust_pos=True)
+
+        trent.motion(group=MAIN, duration=10, loop=True, anim=Male.Sc_MLBODY_CHRB_IDLE_000LV_XA_05, time_scale=0.5)
+        tenji.motion(group=MAIN, duration=10, anim=Male.Sc_MLBODY_CHRB_IDLE_000LV_XA_05, time_scale=1, time_delay=3, trans_time=1)
+        darcy.motion(group=MAIN, duration=10, loop=True, anim=Female.Sc_FMBODY_CHRB_IDLE_000LV_XA_06, time_scale=0.5, time_delay=0.1)
+
+        darcy.move_head_ik(group=MAIN, target_name=mrk_tenji_front, immediately=True)
+        darcy.move_eye_ik(group=MAIN, target_name=mrk_tenji_sit, immediately=True)
+        darcy.start_head_ik(group=MAIN, duration=1000, time_delay=1)
+        darcy.start_eye_ik(group=MAIN, duration=1000, time_delay=1)
+
+        main_group.append_time(2)
+
+
+
+        #
+        # def test():
+        #     def test():
+
+
+        # main_group.append_time(1000)
+
+
+        tenji.motion(group=MAIN, duration=10, anim=Male.Sc_MLBODY_CHRB_GRABL_DRINK_TABL_000LV_XA_02, time_scale=1, time_delay=3, trans_time=1)
+        tenji.facial(group=MAIN, index=20)
+
+        tenji.motion(group=MAIN, duration=10, anim=Male.Sc_MLBODY_CHRB_DRINK_LHND_SIP_000LV_XA_04, time_scale=1, time_delay=-1, trans_time=1)
+
+        main_group.append_time(3)
+
+        tenji.motion(group=MAIN, duration=10, anim=Male.Sc_MLBODY_CHRB_PUTDNL_DRINK_TABL_000LV_XA_06, time_scale=0.8, trans_time=1)
+
+        tenji.facial(group=MAIN, index=30)
+
+        tenji.motion(group=MAIN, duration=10, anim=Male.Sc_MLBODY_CHRB_GRABR_PRDRNK_TABL_000LV_XA_08, time_scale=0.8, time_delay=-2, trans_time=1)
+
+        tenji.facial(group=MAIN, index=40)
+
+        tenji.move_head_ik(group=MAIN, target_name=mrk_trent_sit, immediately=True)
+        tenji.start_head_ik(group=MAIN, duration=1000, time_delay=1)
+
+        tenji.motion(group=MAIN, duration=10, anim=Male.Sc_MLBODY_CHRB_CONV_LHNDUP_TRNS_000LV_XA_02, time_scale=0.8, trans_time=1)
+        tenji.motion(group=MAIN, duration=10, anim=Male.Sc_MLBODY_CHRB_CONV_LHNDDN_TRNS_000LV_XA_02, time_scale=0.8, time_delay=2, trans_time=1)
+
+        tenji.move_head_ik(group=MAIN, target_name=mrk_trent_sit, immediately=True)
+        tenji.start_head_ik(group=MAIN, duration=1000, time_delay=1)
+        tenji.move_head_ik(group=MAIN, target_name=mrk_darcy_front, duration=4, time_delay=2)
+
+        tenji.facial(group=MAIN, index=50)
+
+        cam_friends.set(group=MAIN)
+
+        darcy.facial(group=MAIN, index=60)
+
+        trent.motion(group=MAIN, duration=10, anim=Male.Sc_MLBODY_CHRB_GRABL_DRINK_TABL_000LV_XA_02, time_scale=1, time_delay=0.5, trans_time=1)
+
+        trent.facial(group=MAIN, index=70)
+
+        cam_tenji.set(group=MAIN)
+
+        tenji.move_head_ik(group=MAIN, target_name=mrk_trent_sit, duration=3)
+        tenji.facial(group=MAIN, index=80)
+
+        cam_trent.set(group=MAIN)
+
+        trent.facial(group=MAIN, index=90)
+
+        trent.motion(group=MAIN, duration=10, anim=Male.Sc_MLBODY_CHRB_DRINK_LHND_LARG_000LV_XA_06, time_scale=0.8, time_delay=-1, trans_time=1)
+
+        main_group.append_time(2)
+        cam_tenji_near.set(group=MAIN)
+
+        tenji.facial(group=MAIN, index=100)
+
+        main_group.append_time(0.2)
+        cam_trent.set(group=MAIN)
+        main_group.append_time(1)
+
+
+        trent.facial(group=MAIN, index=110)
+
+
+
+
+        # darcy.facial(group=MAIN, index=60)
+        #
+        # main_group = self.get_group(MAIN)
+        #
+
+        main_group.append_time(1000)
