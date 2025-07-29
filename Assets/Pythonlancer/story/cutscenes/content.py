@@ -481,6 +481,40 @@ class ConnectHardpointEvent(Event):
         self.duration = duration
 
 
+class StartSoundEvent(Event):
+    TEMPLATE = 'start_sound'
+
+    def __init__(self, sound_name, duration, loop=False, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.sound_name = sound_name
+        self.duration = duration
+        self.loop = loop
+
+    def get_params(self):
+        return {
+            'sound': self.sound_name,
+            'duration': self.duration,
+            'loop': self.loop,
+        }
+
+
+class AudioAnimEvent(Event):
+    TEMPLATE = 'audio_anim'
+
+    def __init__(self, sound_name, duration, attenuation, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.sound_name = sound_name
+        self.duration = duration
+        self.attenuation = attenuation
+
+    def get_params(self):
+        return {
+            'sound': self.sound_name,
+            'duration': self.duration,
+            'attenuation': self.attenuation,
+        }
+
+
 ### ENTITIES
 
 
@@ -778,6 +812,30 @@ class LookAtCamera(Camera):
                   object_name=self.focus.name, target_name=target_obj.name,
                   duration=duration, smooth=smooth,
                   time_delay=time_delay, time_append=time_append)
+
+
+class Music(Entity):
+    TEMPLATE = 'music'
+
+    def __init__(self, sound, attenuation, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.sound = sound
+        self.attenuation = attenuation
+
+    def get_params(self):
+        return {
+            'name': self.name,
+            'sound': self.sound,
+            'attenuation': self.attenuation,
+        }
+
+    def start(self, group, duration, loop=False, **kwargs):
+        StartSoundEvent(root=self.root, group=group, sound_name=self.name,
+                        duration=duration, loop=loop, **kwargs)
+
+    def change_attenuation(self, group, duration, attenuation, **kwargs):
+        AudioAnimEvent(root=self.root, group=group, sound_name=self.name,
+                       duration=duration, attenuation=attenuation, **kwargs)
 
 
 class Light(Entity):

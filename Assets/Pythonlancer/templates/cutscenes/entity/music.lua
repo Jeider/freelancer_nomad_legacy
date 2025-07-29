@@ -1,6 +1,6 @@
 {
     entity_name="{{ name }}",
-    template_name="{{ music }}",
+    template_name="{{ sound }}",
     type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
     spatialprops={
         pos={0,0,0},

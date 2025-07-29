@@ -19,8 +19,10 @@ class Msn9OrderCutsceneThorn(Scene):
     def action(self):
         main_group = self.get_group(MAIN)
 
+        music = Music(root=self, name='main_music', sound='music_bar_ku_palace', attenuation=0)
+        music.start(group=BG, duration=1000, loop=True)
 
-        # music_bar_ku_palace
+        #
 
         dancepoint_floor_height = self.get_point('dancepoint_floor').position[1]
         # spot_ambi = [0.3, 0.3, 0.1]
@@ -40,7 +42,7 @@ class Msn9OrderCutsceneThorn(Scene):
         cam_trent = LookAtCamera(root=self, name='cam_trent', fov=16)
         cam_darcy = LookAtCamera(root=self, name='cam_darcy', fov=16)
 
-        light_anim_repeat = 300
+        light_anim_repeat = 400
 
         lt_room = Light(root=self, name='ROOMA', point_name='light_bartable', light_group=9, diffuse=[0, 0, 0],
                         ambient=[0.6, 0.8, 0.3], direction=[0, 0, -1], light_type=L_POINT, range=3)
@@ -282,6 +284,7 @@ class Msn9OrderCutsceneThorn(Scene):
                       adjust_pos=True)
 
 
+        music.change_attenuation(group=MAIN, duration=3, attenuation=-14, time_delay=-1)
         lt_hassler.turn_on(group=MAIN)
         hassler.motion(group=MAIN, duration=10, anim=Male.Sc_MLBODY_STND_CROSS_ARMS_000LV_A_11, time_scale=0.5, start_time=1)
         cam_hassler.set(group=MAIN)
