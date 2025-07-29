@@ -456,6 +456,31 @@ class StartAlchemyEvent(Event):
         }
 
 
+class ConnectHardpointEvent(Event):
+    TEMPLATE = 'connect_hardpoint'
+
+    def __init__(self, target_name, parent_name, duration,
+                 target_hardpoint, parent_hardpoint, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.target_name = target_name
+        self.parent_name = parent_name
+        self.duration = duration
+        self.target_hardpoint = target_hardpoint
+        self.parent_hardpoint = parent_hardpoint
+
+    def get_params(self):
+        return {
+            'target_name': self.target_name,
+            'parent_name': self.parent_name,
+            'duration': self.duration,
+            'target_hardpoint': self.target_hardpoint,
+            'parent_hardpoint': self.parent_hardpoint,
+        }
+
+    def set_duration(self, duration):
+        self.duration = duration
+
+
 ### ENTITIES
 
 
@@ -495,24 +520,84 @@ class Marker(Entity):
         }
 
 
-class Character(Entity):
+class Compound(Entity):
+    def __init__(self, light_group, init_point, rotate_y=0,
+                 use_ambient=False, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.light_group = light_group
+        self.init_point = init_point
+        self.point = self.root.get_point(self.init_point)
+        self.rotate_y = rotate_y
+        self.use_ambient = use_ambient
+
+    def get_init_matrix(self):
+        rotate = (
+            [0, self.rotate_y, 0]
+            if self.rotate_y != 0
+            else self.point.rotate
+
+        )
+        mx = math.euler_to_matrix(*rotate)
+
+        return '''
+            {{ {0:.7f},{1:.7f},{2:.7f} }}, 
+            {{ {3:.7f},{4:.7f},{5:.7f} }},
+            {{ {6:.7f},{7:.7f},{8:.7f} }}
+        '''.format(
+            mx[0][0], mx[0][1], mx[0][2],
+            mx[1][0], mx[1][1], mx[1][2],
+            mx[2][0], mx[2][1], mx[2][2],
+        )
+
+    def get_flags(self):
+        flags = [LIT_DYNAMIC]
+        if self.use_ambient:
+            flags.append(LIT_AMBIENT)
+        return ' + '.join(flags)
+
+    def get_compound_template_name(self):
+        raise NotImplementedError
+
+    def get_params(self):
+        return {
+            'name': self.name,
+            'template_name': self.get_compound_template_name(),
+            'light_group': self.light_group,
+            'init_pos': self.point.pos,
+            'init_matrix': self.get_init_matrix(),
+            'light_flags': self.get_flags(),
+        }
+
+
+class Prop(Compound):
+    COMPOUND_TEMPLATE_NAME = None
+    TEMPLATE = 'prop'
+
+    def get_compound_template_name(self):
+        return self.COMPOUND_TEMPLATE_NAME
+
+
+class Glass(Prop):
+    COMPOUND_TEMPLATE_NAME = 'glass'
+
+
+class BottleWine(Prop):
+    COMPOUND_TEMPLATE_NAME = 'bottle_wine_3'
+
+
+class Character(Compound):
     TEMPLATE = 'character'
 
-    def __init__(self, actor, light_group, init_point, rotate=0, floor_height=0,
-                 ik_start_point=None, use_ambient=False, *args, **kwargs):
+    def __init__(self, actor, floor_height=0,
+                 ik_start_point=None, *args, **kwargs):
         self.actor = actor
         name = f'Char_{self.actor.NAME}'
         super().__init__(name=name, *args, **kwargs)
-        self.light_group = light_group
-        self.init_point = init_point
-        self.init_pos = self.root.get_point(self.init_point).pos
-        self.rotate = rotate
         self.floor_height = floor_height
         self.animations = FEMALE_ANIMS if self.actor.is_female() else MALE_ANIMS
         self.head_ik_name = f'char_ik_{self.name}_head_ik'
         self.eye_ik_name = f'char_ik_{self.name}_eye_ik'
         self.ik_start_point = ik_start_point
-        self.use_ambient = use_ambient
         self.init_char_points()
 
     def init_char_points(self):
@@ -585,35 +670,14 @@ class Character(Entity):
         y_offset = HEAD_SIT_FEMALE if self.actor.is_female() else HEAD_SIT_MALE
         return self.get_char_marker(point_name, y_offset)
 
-    def get_init_matrix(self):
-        mx = math.euler_to_matrix(0, self.rotate, 0)
-        return '''
-            {{ {0:.7f},{1:.7f},{2:.7f} }}, 
-            {{ {3:.7f},{4:.7f},{5:.7f} }},
-            {{ {6:.7f},{7:.7f},{8:.7f} }}
-        '''.format(
-            mx[0][0], mx[0][1], mx[0][2],
-            mx[1][0], mx[1][1], mx[1][2],
-            mx[2][0], mx[2][1], mx[2][2],
-        )
-
-    def get_flags(self):
-        flags = [LIT_DYNAMIC]
-        if self.use_ambient:
-            flags.append(LIT_AMBIENT)
-        return ' + '.join(flags)
+    def get_compound_template_name(self):
+        return self.actor.CUTSCENE_APPEARANCE
 
     def get_params(self):
-        return {
-            'name': self.name,
-            'template_name': self.actor.CUTSCENE_APPEARANCE,
-            'actor': self.actor.get_game_actor(),
-            'light_group': self.light_group,
-            'init_pos': self.init_pos,
-            'init_matrix': self.get_init_matrix(),
-            'floor_height': self.floor_height,
-            'light_flags': self.get_flags(),
-        }
+        params = super().get_params()
+        params['actor'] = self.actor.get_game_actor()
+        params['floor_height'] = self.floor_height
+        return params
 
     def motion(self, group, anim, duration=10, repeat=1, **kwargs):
         if self.actor.is_male() and 'fmbody' in anim.lower():

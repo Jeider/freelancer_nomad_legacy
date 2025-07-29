@@ -32,15 +32,15 @@ class Msn9YokohamaCutsceneThorn(Scene):
 
         # CHARACTERS
 
-        darcy = Character(root=self, actor=actors.Darcy, light_group=0, init_point='darcy_bottom', rotate=-90,
+        darcy = Character(root=self, actor=actors.Darcy, light_group=0, init_point='darcy_bottom', rotate_y=-90,
                           floor_height=down_floor_height)
-        trent = Character(root=self, actor=actors.Trent, light_group=0, init_point='trent_bottom', rotate=-90,
+        trent = Character(root=self, actor=actors.Trent, light_group=0, init_point='trent_bottom', rotate_y=-90,
                           floor_height=down_floor_height)
 
         darcy.motion(group=MAIN, duration=13, loop=True, anim=Female.Sc_FMBODY_STND_HOLD_ARMS_CROSSED_000LV_XA_03)
         trent.motion(group=MAIN, duration=13, loop=True, anim=Male.Sc_MLBODY_STND_FSTHIPB_HOLD_000LV_XA_02)
 
-        hassler = Character(root=self, actor=actors.HasslerOrder, light_group=0, init_point='hassler_init', rotate=90,
+        hassler = Character(root=self, actor=actors.HasslerOrder, light_group=0, init_point='hassler_init', rotate_y=90,
                             stand_points=['hassler_talk'])
         hassler.idle(group=MAIN)
 
@@ -56,10 +56,10 @@ class Msn9YokohamaCutsceneThorn(Scene):
         # chair4 = Character(root=self, actor=actors.YokohamaBarFour, light_group=0, init_point='chair_four', rotate=90)
         # chair4.motion(group=MAIN, duration=15, loop=True, anim=Female.Sc_FMBODY_CHRF_IDLE_000LV_XA_05)
 
-        chair1 = Character(root=self, actor=actors.YokohamaBarOne, light_group=0, init_point='chair_one', rotate=-90)
-        chair2 = Character(root=self, actor=actors.YokohamaBarTwo, light_group=0, init_point='chair_two', rotate=90)
-        chair3 = Character(root=self, actor=actors.YokohamaBarThree, light_group=0, init_point='chair_five', rotate=90)
-        chair5 = Character(root=self, actor=actors.YokohamaBarFive, light_group=0, init_point='chair_three', rotate=-90)
+        chair1 = Character(root=self, actor=actors.YokohamaBarOne, light_group=0, init_point='chair_one', rotate_y=-90)
+        chair2 = Character(root=self, actor=actors.YokohamaBarTwo, light_group=0, init_point='chair_two', rotate_y=90)
+        chair3 = Character(root=self, actor=actors.YokohamaBarThree, light_group=0, init_point='chair_five', rotate_y=90)
+        chair5 = Character(root=self, actor=actors.YokohamaBarFive, light_group=0, init_point='chair_three', rotate_y=-90)
 
         chair1.motion(group=MAIN, duration=15, loop=True, anim=Male.Sc_MLBODY_CHRB_LSTN_000LV_A_19, start_time=4)
         chair2.motion(group=MAIN, duration=15, loop=True, anim=Male.Sc_MLBODY_CHRB_TALK_000UP_A_17, start_time=3)
