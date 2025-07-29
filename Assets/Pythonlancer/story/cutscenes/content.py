@@ -823,10 +823,10 @@ class Light(Entity):
             'direction': ', '.join([str(i) for i in self.direction]),
         }
 
-    def on(self, group, **kwargs):
+    def turn_on(self, group, **kwargs):
         LightAnimEvent(root=self.root, group=group, object_name=self.get_light_name(), on=True, duration=0, smooth=False, **kwargs)
 
-    def off(self, group, **kwargs):
+    def turn_off(self, group, **kwargs):
         LightAnimEvent(root=self.root, group=group, object_name=self.get_light_name(), on=False, duration=0, smooth=False, **kwargs)
 
     def set_diffuse(self, group, diffuse, duration, smooth=False, **kwargs):

@@ -776,6 +776,72 @@ class YokohamaBarFive(Actor):
     CUTSCENE_APPEARANCE = 'yoko_char5'
 
 
+class YokohamaDancer1(Actor):
+    TYPE = ACTOR_MALE
+    NAME = 'dancer1'
+    CUTSCENE_APPEARANCE = 'yoko_dancer1'
+
+
+class YokohamaDancer2(Actor):
+    TYPE = ACTOR_FEMALE
+    NAME = 'dancer2'
+    CUTSCENE_APPEARANCE = 'yoko_dancer2'
+
+
+class YokohamaDancer3(Actor):
+    TYPE = ACTOR_FEMALE
+    NAME = 'dancer3'
+    CUTSCENE_APPEARANCE = 'yoko_dancer3'
+
+
+class YokohamaDancer4(Actor):
+    TYPE = ACTOR_MALE
+    NAME = 'dancer4'
+    CUTSCENE_APPEARANCE = 'yoko_dancer4'
+
+
+class YokohamaDancer5(Actor):
+    TYPE = ACTOR_MALE
+    NAME = 'dancer5'
+    CUTSCENE_APPEARANCE = 'yoko_dancer5'
+
+
+class YokohamaTable1(Actor):
+    TYPE = ACTOR_FEMALE
+    NAME = 'table1'
+    CUTSCENE_APPEARANCE = 'yoko_table1'
+
+
+class YokohamaTable2(Actor):
+    TYPE = ACTOR_FEMALE
+    NAME = 'table2'
+    CUTSCENE_APPEARANCE = 'yoko_table2'
+
+
+class YokohamaTable3(Actor):
+    TYPE = ACTOR_MALE
+    NAME = 'table3'
+    CUTSCENE_APPEARANCE = 'yoko_table3'
+
+
+class YokohamaTable4(Actor):
+    TYPE = ACTOR_MALE
+    NAME = 'table4'
+    CUTSCENE_APPEARANCE = 'yoko_table4'
+
+
+class YokohamaTable5(Actor):
+    TYPE = ACTOR_MALE
+    NAME = 'table5'
+    CUTSCENE_APPEARANCE = 'yoko_table5'
+
+
+class YokohamaTable6(Actor):
+    TYPE = ACTOR_FEMALE
+    NAME = 'table6'
+    CUTSCENE_APPEARANCE = 'yoko_table6'
+
+
 class TekagiDj(Actor):
     TYPE = ACTOR_MALE
     NAME = 'tekagi'
