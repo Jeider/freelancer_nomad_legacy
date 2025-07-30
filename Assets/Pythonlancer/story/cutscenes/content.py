@@ -556,13 +556,14 @@ class Marker(Entity):
 
 class Compound(Entity):
     def __init__(self, light_group, init_point, rotate_y=0,
-                 use_ambient=False, *args, **kwargs):
+                 use_ambient=False, matrix_scale=1, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.light_group = light_group
         self.init_point = init_point
         self.point = self.root.get_point(self.init_point)
         self.rotate_y = rotate_y
         self.use_ambient = use_ambient
+        self.matrix_scale = matrix_scale
 
     def get_init_matrix(self):
         rotate = (
@@ -578,9 +579,9 @@ class Compound(Entity):
             {{ {3:.7f},{4:.7f},{5:.7f} }},
             {{ {6:.7f},{7:.7f},{8:.7f} }}
         '''.format(
-            mx[0][0], mx[0][1], mx[0][2],
-            mx[1][0], mx[1][1], mx[1][2],
-            mx[2][0], mx[2][1], mx[2][2],
+            mx[0][0]*self.matrix_scale, mx[0][1]*self.matrix_scale, mx[0][2]*self.matrix_scale,
+            mx[1][0]*self.matrix_scale, mx[1][1]*self.matrix_scale, mx[1][2]*self.matrix_scale,
+            mx[2][0]*self.matrix_scale, mx[2][1]*self.matrix_scale, mx[2][2]*self.matrix_scale,
         )
 
     def get_flags(self):

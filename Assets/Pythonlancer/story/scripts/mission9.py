@@ -1,7 +1,7 @@
 from story import script
 from audio.sound import VoiceLine
 from story.actors import Trent, Hatcher, Darcy, HasslerOrder, Yamamoto, Kim, SakuraOne, Chrysanthemum, Matome
-from story.cutscenes.story_scenes import m09_yokohama, m09_order
+from story.cutscenes.story_scenes import m09_yokohama, m09_order, m09_reward
 
 
 class Msn9(object):
@@ -314,6 +314,7 @@ class Msn9RewardCutscene(Msn9, script.CutsceneProps):
     ALIAS = 'reward'
     TITLE = 'Ангар линкора Мусаси'
     DESCRIPTION = 'Трент и Д+ерси подходит к Хасслеру'
+    THORN_CLASS = m09_reward.Msn9RewardCutsceneThorn
     VOICE_LINES = [
         VoiceLine(
             10,

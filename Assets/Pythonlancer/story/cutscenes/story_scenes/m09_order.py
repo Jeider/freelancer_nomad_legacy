@@ -5,6 +5,10 @@ from story.cutscenes.anim import Male, Female
 from story import actors
 
 
+class DjBoard(Prop):
+    COMPOUND_TEMPLATE_NAME = 'dj_board'
+
+
 class Msn9OrderCutsceneThorn(Scene):
     SCENE_AMBIENT = [30, 30, 10]
     POINT_ROTATE_OVERRIDES = {
@@ -14,6 +18,11 @@ class Msn9OrderCutsceneThorn(Scene):
         'bottle_wine_1': (90, 0, 0),
         'tenji_glass': (90, 0, 0),
         'trent_glass': (90, 0, 0),
+        'dj_board': (0, 180, 0),
+        'tenji_dancer': (0, 0, 0),
+        'hassler_dancer': (0, 70, 0),
+        'trent_dancer': (0, 180, 0),
+        'darcy_dancer': (0, 90, 0),
     }
 
     def action(self):
@@ -22,7 +31,7 @@ class Msn9OrderCutsceneThorn(Scene):
         music = Music(root=self, name='main_music', sound='music_bar_ku_palace', attenuation=0)
         music.start(group=BG, duration=1000, loop=True)
 
-        #
+        DjBoard(root=self, name='dj_board', init_point='dj_board', light_group=9, matrix_scale=1.75)
 
         dancepoint_floor_height = self.get_point('dancepoint_floor').position[1]
         # spot_ambi = [0.3, 0.3, 0.1]
@@ -34,7 +43,7 @@ class Msn9OrderCutsceneThorn(Scene):
 
         cam_dbg = LookAtCamera(root=self, name='cam_dbg', fov=40)
         cam_start = LookAtCamera(root=self, name='cam_start', fov=35)
-        cam_dance = LookAtCamera(root=self, name='cam_dance', fov=30)
+        cam_dance = LookAtCamera(root=self, name='cam_dance', fov=40)
         cam_hassler = LookAtCamera(root=self, name='cam_hassler', fov=20)
         cam_tenji = LookAtCamera(root=self, name='cam_tenji', fov=20)
         cam_tenji_near = LookAtCamera(root=self, name='cam_tenji_near', fov=18)
@@ -136,7 +145,7 @@ class Msn9OrderCutsceneThorn(Scene):
         tenji.motion(group=MAIN, duration=100, loop=True, anim=Male.Sc_MLBODY_CHRB_IDLE_000LV_XA_05)
 
         dancepoint = Character(root=self, actor=actors.YokoDancepoint, light_group=lt_dancepoint_indx,
-                               init_point='dancepoint', rotate_y=100,
+                               init_point='dancepoint', rotate_y=110,
                                floor_height=dancepoint_floor_height, use_ambient=True)
         dancelook1 = Character(root=self, actor=actors.YokoDancelook1, light_group=lt_dancelook1_indx,
                                init_point='dancelook1', rotate_y=-130,
@@ -234,8 +243,80 @@ class Msn9OrderCutsceneThorn(Scene):
         mrk_go_end = self.get_automarker_name('go_end')
 
 
+        # DANCING VERSION
 
+        # main_group.append_time(1)
+        #
+        # cam_dance.set(group=MAIN)
+        #
+        #
+        # tenji_dancer1 = 'tj_dancer1'
+        # self.add_group(tenji_dancer1, group_type=BG_GROUP)
+        #
+        # trent_dancer1 = 'tr_dancer1'
+        # self.add_group(trent_dancer1, group_type=BG_GROUP)
+        #
+        # darcy_dancer1 = 'dr_dancer1'
+        # self.add_group(darcy_dancer1, group_type=BG_GROUP)
+        #
+        # hassler_dancer1 = 'hs_dancer1'
+        # self.add_group(hassler_dancer1, group_type=BG_GROUP)
+        #
+        #
+        # MoveFastEvent(root=self, group=MAIN, object_name=tenji.name, target_name=self.get_automarker_name('tenji_dancer'),
+        #               adjust_pos=True)
+        #
+        # tenji.motion(group=tenji_dancer1, duration=1, anim=Male.Sc_MLBODY_STND_DANC_000LV_A_28, start_time=1.9, time_append=0.1)
+        # tenji.motion(group=tenji_dancer1, duration=20, repeat=50, anim=Male.Sc_MLBODY_STND_DANC_000LV_A_28, start_time=2, time_append=15, trans_time=1)
+        #
+        # MoveFastEvent(root=self, group=MAIN, object_name=trent.name, target_name=self.get_automarker_name('trent_dancer'),
+        #               adjust_pos=True)
+        #
+        # trent.motion(group=trent_dancer1, duration=1, anim=Male.Sc_MLBODY_STND_DANC_000LV_A_28, start_time=1.9, time_append=0.1)
+        # trent.motion(group=trent_dancer1, duration=20, repeat=50, anim=Male.Sc_MLBODY_STND_DANC_000LV_A_28, start_time=2, time_append=15, trans_time=1)
+        #
+        # MoveFastEvent(root=self, group=MAIN, object_name=darcy.name, target_name=self.get_automarker_name('darcy_dancer'),
+        #               adjust_pos=True)
+        #
+        # darcy.motion(group=darcy_dancer1, duration=1, anim=Female.Sc_FMBODY_STND_DANC_000LV_A_20, start_time=1.9, time_append=0.1)
+        # darcy.motion(group=darcy_dancer1, duration=20, repeat=50, anim=Female.Sc_FMBODY_STND_DANC_000LV_A_20, start_time=2, time_append=15, trans_time=1)
+        #
+        #
+        # MoveFastEvent(root=self, group=MAIN, object_name=hassler.name, target_name=self.get_automarker_name('hassler_dancer'),
+        #               adjust_pos=True)
+        #
+        # hassler.motion(group=hassler_dancer1, duration=1, anim=Male.Sc_MLBODY_STND_DANC_000LV_A_28, start_time=1.9, time_append=0.1)
+        # hassler.motion(group=hassler_dancer1, duration=20, repeat=50, anim=Male.Sc_MLBODY_STND_DANC_000LV_A_28, start_time=2, time_append=15, trans_time=1)
+        #
+        #
+        #
+        # main_group.append_time(1)
+        #
+        # music.start(group=MAIN, duration=1000, loop=True)
+        #
+        # cam_dance.move_cam(group=MAIN, index=2, duration=30, smooth=True)
+        # cam_dance.move_focus(group=MAIN, index=2, duration=30, smooth=True)
+        # main_group.append_time(30)
+        #
+        # cam_dance.move_cam(group=MAIN, index=3, duration=30, smooth=True)
+        # cam_dance.move_focus(group=MAIN, index=3, duration=30, smooth=True)
+        # main_group.append_time(30)
+        #
+        # cam_dance.move_cam(group=MAIN, index=4, duration=30, smooth=True)
+        # cam_dance.move_focus(group=MAIN, index=4, duration=30, smooth=True)
+        # main_group.append_time(30)
+        # # cam_dance.move_cam(group=MAIN, index=2, duration=30, smooth=True)
+        # # cam_dance.move_focus(group=MAIN, index=2, duration=30, smooth=True)
+        #
+        #
+        # main_group.append_time(1000)
+        #
+        #
+        #
+        # return
 
+        #
+        # DANCING VERSION ENDS
 
 
         cam_start.set(group=MAIN)
@@ -243,6 +324,9 @@ class Msn9OrderCutsceneThorn(Scene):
         cam_start.move_cam(group=MAIN, index=2, duration=20, smooth=True)
         cam_start.move_focus(group=MAIN, index=2, duration=20, smooth=True)
 
+        #
+        # cam_start.move_cam(group=MAIN, index=2, duration=2, smooth=True)
+        # cam_start.move_focus(group=MAIN, index=2, duration=2, smooth=True)
 
         main_group.append_time(7)
 
@@ -569,21 +653,3 @@ class Msn9OrderCutsceneThorn(Scene):
         trent.move_eye_ik(group=MAIN, target_name=mrk_tenji_sit, duration=2, time_delay=-2)
 
         main_group.append_time(1)
-
-def test():
-    def test():
-
-
-        # main_group.append_time(1000)
-
-
-
-
-
-
-        # darcy.facial(group=MAIN, index=60)
-        #
-        # main_group = self.get_group(MAIN)
-        #
-
-        main_group.append_time(1000)
