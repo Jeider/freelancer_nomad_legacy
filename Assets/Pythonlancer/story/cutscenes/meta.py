@@ -207,8 +207,17 @@ class LipSyncManager:
                 return sound
         raise Exception(f'index {index} not found in scene {scene}')
 
+    def edit_cutscene(self, script_mission, scene_name):
+        scene = script_mission.get_cutscene_by_code(scene_name)
+        self.edit_cutscene_interactive(scene)
+
+    def edit_sound_from_scene(self, script_mission, scene_name, sound_index):
+        scene = script_mission.get_cutscene_by_code(scene_name)
+        sound = self.get_single_sound_from_scene(scene, sound_index)
+        self.edit_sound_interactive(sound, new=False)
+
     def test_edit(self, script_mission):
-        scene = script_mission.get_cutscene_by_code('order')
+        scene = script_mission.get_cutscene_by_code('reward')
         self.edit_cutscene_interactive(scene)
 
 

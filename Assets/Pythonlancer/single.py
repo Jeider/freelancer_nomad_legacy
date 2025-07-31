@@ -377,16 +377,16 @@ def meta():
 
     msn = script_manager.get_mission_by_index(9)
 
-    meta_manager.test_edit(msn)
+    meta_manager.edit_cutscene(msn, 'reward')
 
-    print('1')
+    print('meta exit')
 
 
 def scene():
     tpl_manager = JinjaTemplateManager()
     script_manager = ScriptManager()
     msn = script_manager.get_mission_by_index(9)
-    cutscene = msn.get_cutscene_by_code('order')
+    cutscene = msn.get_cutscene_by_code('reward')
     thorn = cutscene.get_thorn(tpl_manager)
     print(thorn.get_content())
 

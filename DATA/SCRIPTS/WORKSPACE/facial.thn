@@ -29,8 +29,8 @@ entities={
 
        
 {
-    entity_name="DX_m09_order_0360_trent",
-    template_name="DX_m09_order_0360_trent",
+    entity_name="DX_m09_reward_0130_hassler",
+    template_name="DX_m09_reward_0130_hassler",
     type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
 }
         
@@ -40,7 +40,7 @@ entities={
 	{
 		entity_name="Char_the",
 		type=DEFORMABLE,
-		template_name="trent",
+		template_name="hassler_order",
 		lt_grp=0,
 		srt_grp=0,
 		usr_flg=0,
@@ -223,7 +223,7 @@ events={
     0,
     START_SOUND,
     {
-        "DX_m09_order_0360_trent"
+        "DX_m09_reward_0130_hassler"
     },
     {
         duration=30
@@ -239,7 +239,7 @@ events={
 		0,
 		START_MOTION,
 		{"Char_the"},
-		{animation="Sc_dx_s038x_4301_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+		{animation="Sc_dx_s015x_0701_walker", duration=10, time_scale=0.95, trans_time=0.25,  weight=1, heading=-1}
 	},
 
 
