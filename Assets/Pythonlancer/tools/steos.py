@@ -52,7 +52,7 @@ class SteosVoice(object):
 
     @classmethod
     def generate_ru_voice(cls, sound, file_destination: Path):
-        voice_bytes = cls.generate_voice_bytes(actor=sound.line.actor, text=sound.line.get_ru_clean_text())
+        voice_bytes = cls.generate_voice_bytes(actor=sound.line.actor, text=sound.line.get_ru_ai_gen_text())
         with open(file_destination, "wb") as fout:
             fout.write(voice_bytes)
 

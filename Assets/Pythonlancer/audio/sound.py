@@ -30,7 +30,13 @@ class VoiceLine(object):
         return f'{self.actor.RU_NAME}: {content}'
 
     def get_ru_clean_text(self):
-        return re.sub(r'\(.*?\)', '', self.ru)
+        return re.sub(r'\(.*?\)', '', self.ru).replace(',,', ',')
+
+    def get_ru_clean_ai_text(self):
+        return re.sub(r'\(.*?\)', '', self.ru).replace(',,', '')
+
+    def get_ru_ai_gen_text(self):
+        return self.get_ru_clean_ai_text().replace('СБА', 'эс-бэ-а')
 
     def get_ru_sub_text(self):
         return self.get_ru_clean_text().replace('+', '')

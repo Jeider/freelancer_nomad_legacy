@@ -255,11 +255,11 @@ def generate_story_voices():
 def generate_cutscene_voices():
     script_manager = ScriptManager()
     # import pdb;pdb.set_trace()
-    for msn in script_manager.get_missions():
-        if msn.MISSION_INDEX != 9:
-            continue
-        for cutscene in msn.get_cutscenes():
-            audio_folder.AudioFolder.generate_cutscene_sounds(cutscene)
+
+    msn = script_manager.get_mission_by_index(10)
+
+    for cutscene in msn.get_cutscenes():
+        audio_folder.AudioFolder.generate_cutscene_sounds(cutscene)
 
 
 def test_interaction():
