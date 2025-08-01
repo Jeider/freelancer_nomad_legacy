@@ -1,6 +1,7 @@
 from story import script
 from audio.sound import VoiceLine
 from story.actors import Trent, Darcy, Hassler, HasslerOrder, EdisonTrent, Alaric, Juni, Tor
+from story.cutscenes.story_scenes import m10_rescued
 
 
 class Msn10(object):
@@ -14,7 +15,7 @@ class Msn10OfferCutscene(Msn10, script.CutsceneProps):
     VOICE_LINES = [
         VoiceLine(
             10,
-            Hassler,
+            HasslerOrder,
             ru='Герр Трент, фрау Д+ерси'
         ),
         VoiceLine(
@@ -24,7 +25,7 @@ class Msn10OfferCutscene(Msn10, script.CutsceneProps):
         ),
         VoiceLine(
             30,
-            Hassler,
+            HasslerOrder,
             ru='Прост+ите?'
         ),
         VoiceLine(
@@ -39,7 +40,7 @@ class Msn10OfferCutscene(Msn10, script.CutsceneProps):
         ),
         VoiceLine(
             60,
-            Hassler,
+            HasslerOrder,
             ru='Йа! Точно так. К делу! Наши недавние... хмммм... манёвры, а так же резкая активизация вооруженных сил Р+ейнланда изменили '
                'общую ситуацию не лучшим образом.'
         ),
@@ -50,7 +51,7 @@ class Msn10OfferCutscene(Msn10, script.CutsceneProps):
         ),
         VoiceLine(
             80,
-            Hassler,
+            HasslerOrder,
             ru='Это было необходимо,, герр Трент... А сейчас мы должн+ы реагировать на изменившуюся ситуацию.'
         ),
         VoiceLine(
@@ -60,7 +61,7 @@ class Msn10OfferCutscene(Msn10, script.CutsceneProps):
         ),
         VoiceLine(
             100,
-            Hassler,
+            HasslerOrder,
             ru='Нет,, герр Трент, совсем наоборот. Нужно будет вытащить из тюрьм+ы кс+еносов одного хор+ошего человека, героя войн+ы с кочевниками.'
         ),
         VoiceLine(
@@ -70,7 +71,7 @@ class Msn10OfferCutscene(Msn10, script.CutsceneProps):
         ),
         VoiceLine(
             120,
-            Hassler,
+            HasslerOrder,
             ru='Это не отменяет того,, что были её герои.'
         ),
         VoiceLine(
@@ -80,7 +81,7 @@ class Msn10OfferCutscene(Msn10, script.CutsceneProps):
         ),
         VoiceLine(
             140,
-            Hassler,
+            HasslerOrder,
             ru='Вы не первый, кто пытался освободить интересующего нас человека. Первым был ваш друг Аларик.'
         ),
         VoiceLine(
@@ -90,7 +91,7 @@ class Msn10OfferCutscene(Msn10, script.CutsceneProps):
         ),
         VoiceLine(
             160,
-            Hassler,
+            HasslerOrder,
             ru='Весьма прискорбно, но так и есть. Теперь он содержится в той же тюрьме.'
         ),
         VoiceLine(
@@ -100,7 +101,7 @@ class Msn10OfferCutscene(Msn10, script.CutsceneProps):
         ),
         VoiceLine(
             180,
-            Hassler,
+            HasslerOrder,
             ru='При всём моем уважении к герру Аларику, его способности значительно уступают вашим.'
         ),
         VoiceLine(
@@ -116,25 +117,25 @@ class Msn10OfferCutscene(Msn10, script.CutsceneProps):
         ),
         VoiceLine(
             210,
-            Hassler,
+            HasslerOrder,
             ru='Тюрьма находится в Омега-ирсутае. Система представляет собой по большей части пылевое облако. '
                 'Мус+аси переместится на окраину системы таким образом,, чтобы не привлечь внимание аборигенов.'
         ),
         VoiceLine(
             220,
-            Hassler,
+            HasslerOrder,
             ru='Герр Трент, вы с фр+ойляйн Д+ерси возглавите диверсионное звено. '
                'Ваши корабли получат дополнительную мимикрирующую обработку, чтобы вы могли пробраться к тюрьме незаметно.'
         ),
         VoiceLine(
             230,
-            Hassler,
+            HasslerOrder,
             ru='Вы должн+ы б+удете подавить защитные системы тюрьм+ы. '
                'Следом в дело вступает наш транспорт с десантниками и звено прикрытия.'
         ),
         VoiceLine(
             240,
-            Hassler,
+            HasslerOrder,
             ru='После того,, как десант сделает свое дело, все весело и с фейерверками прорываются обратно на Мус+аси.'
         ),
         VoiceLine(
@@ -149,7 +150,7 @@ class Msn10OfferCutscene(Msn10, script.CutsceneProps):
         ),
         VoiceLine(
             270,
-            Hassler,
+            HasslerOrder,
             ru='Тогда можете готовиться к вылету. Я буду координировать операцию с мостика линкора.'
         ),
     ]
@@ -247,6 +248,7 @@ class Msn10Space(Msn10, script.SpaceVoiceProps):
 class Msn10RescuedCutscene(Msn10, script.CutsceneProps):
     ALIAS = 'rescued'
     TITLE = 'Ангар линкора Мусаси'
+    THORN_CLASS = m10_rescued.Msn9RescuedCutsceneThorn
     DESCRIPTION = 'Поздравления со спасением'
     VOICE_LINES = [
         VoiceLine(
@@ -286,7 +288,7 @@ class Msn10RescuedCutscene(Msn10, script.CutsceneProps):
         ),
         VoiceLine(
             80,
-            Hassler,
+            HasslerOrder,
             ru='Герр Трент, фрау Зейн передаёт, что лорду Ямамото срочно нужна ваша помощь!'
         ),
         VoiceLine(
@@ -296,7 +298,7 @@ class Msn10RescuedCutscene(Msn10, script.CutsceneProps):
         ),
         VoiceLine(
             100,
-            Hassler,
+            HasslerOrder,
             comment='Старый Трент уходит',
             ru='Герр Трент, лейтенант Ким обнаружил Р+окфорда.'
         ),
@@ -317,7 +319,7 @@ class Msn10RescuedCutscene(Msn10, script.CutsceneProps):
         ),
         VoiceLine(
             140,
-            Hassler,
+            HasslerOrder,
             ru='На станции Харадзюку, система Омега 7. Мы планируем подорвать корабль герра Р+окфорда, но для осуществления миссии нам необходимо чтобы вы отвлекли его на себя.'
         ),
         VoiceLine(
@@ -327,7 +329,7 @@ class Msn10RescuedCutscene(Msn10, script.CutsceneProps):
         ),
         VoiceLine(
             160,
-            Hassler,
+            HasslerOrder,
             ru='К сожалению... Чертово воспитание дает о себе знать.'
         ),
         VoiceLine(

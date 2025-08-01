@@ -672,14 +672,14 @@ class Character(Compound):
                    **kwargs)
 
     def start_head_ik(self, group, **kwargs):
-        NeckIkEvent(root=self.root, group=group, char_name=self.name,
-                    target_name=self.head_ik_name,
-                    **kwargs)
+        return NeckIkEvent(root=self.root, group=group, char_name=self.name,
+                           target_name=self.head_ik_name,
+                           **kwargs)
 
     def start_eye_ik(self, group, **kwargs):
-        EyeIkEvent(root=self.root, group=group, char_name=self.name,
-                   target_name=self.eye_ik_name,
-                   **kwargs)
+        return EyeIkEvent(root=self.root, group=group, char_name=self.name,
+                          target_name=self.eye_ik_name,
+                          **kwargs)
 
     def get_char_marker(self, point_name, y_offset):
         original_pos = self.root.get_point(point_name).position
@@ -697,13 +697,13 @@ class Character(Compound):
         )
         return marker_name
 
-    def get_stand_marker(self, point_name):
+    def get_stand_marker(self, point_name, floor_height=0):
         y_offset = HEAD_STAND_FEMALE if self.actor.is_female() else HEAD_STAND_MALE
-        return self.get_char_marker(point_name, y_offset)
+        return self.get_char_marker(point_name, y_offset+floor_height)
 
-    def get_sit_marker(self, point_name):
+    def get_sit_marker(self, point_name, floor_height=0):
         y_offset = HEAD_SIT_FEMALE if self.actor.is_female() else HEAD_SIT_MALE
-        return self.get_char_marker(point_name, y_offset)
+        return self.get_char_marker(point_name, y_offset+floor_height)
 
     def get_compound_template_name(self):
         return self.actor.CUTSCENE_APPEARANCE

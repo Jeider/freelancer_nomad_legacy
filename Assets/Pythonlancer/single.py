@@ -375,9 +375,9 @@ def meta():
     script_manager = ScriptManager()
     meta_manager = LipSyncManager(tpl_manager=tpl_manager)
 
-    msn = script_manager.get_mission_by_index(9)
+    msn = script_manager.get_mission_by_index(10)
 
-    meta_manager.edit_cutscene(msn, 'reward')
+    meta_manager.edit_cutscene(msn, 'rescued')
 
     print('meta exit')
 
@@ -385,8 +385,8 @@ def meta():
 def scene():
     tpl_manager = JinjaTemplateManager()
     script_manager = ScriptManager()
-    msn = script_manager.get_mission_by_index(9)
-    cutscene = msn.get_cutscene_by_code('reward')
+    msn = script_manager.get_mission_by_index(10)
+    cutscene = msn.get_cutscene_by_code('rescued')
     thorn = cutscene.get_thorn(tpl_manager)
     print(thorn.get_content())
 

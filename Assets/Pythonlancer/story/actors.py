@@ -112,9 +112,14 @@ class EdisonTrent(Actor):
     TYPE = ACTOR_TRENT
     NAME = 'edison'
     COMM_APPEARANCE = 'pi_pirate5_head, pl_trent_body, comm_ge_generic1'
-    STEOS_ID = 208
-    STEOS_PITCH = -1
-    STEOS_SPEED = 1.45
+    CUTSCENE_APPEARANCE = 'edison_trent'
+    # gameplay test
+    # STEOS_ID = 208
+    # STEOS_PITCH = -1
+    # STEOS_SPEED = 1.45
+    STEOS_ID = 210
+    STEOS_PITCH = -0.5
+    STEOS_SPEED = 1.13
 
 
 class Juni(Actor):
@@ -870,6 +875,12 @@ class YokoDancelook3(Actor):
     TYPE = ACTOR_MALE
     NAME = 'yoko_dancelook3'
     CUTSCENE_APPEARANCE = 'yoko_dancelook3'
+
+
+class OrderMedic(Actor):
+    TYPE = ACTOR_MALE
+    NAME = 'or_medic'
+    CUTSCENE_APPEARANCE = 'hochstedler'
 
 
 class ActorManager:
