@@ -3,14 +3,6 @@
 <UTFXML filename="echo_m09_female.utf">
 <UTF_ROOT>
 <test_voice name="0xBE5B8D84" type="file" filename="echo_m09_female\dx_m09_0000_hatcher.wav"/>
-<test_voice name="0xA6C93E88" type="file" filename="echo_m09_female\dx_m09_0010_darcy.wav"/>
-<test_voice name="0xAA5A8784" type="file" filename="echo_m09_female\dx_m09_0010_hatcher.wav"/>
-<test_voice name="0xAE5FE584" type="file" filename="echo_m09_female\dx_m09_0040_hatcher.wav"/>
-<test_voice name="0xAEDBE08E" type="file" filename="echo_m09_female\dx_m09_0045_hatcher.wav"/>
-<test_voice name="0xA6C9AE8C" type="file" filename="echo_m09_female\dx_m09_0050_darcy.wav"/>
-<test_voice name="0x865DF184" type="file" filename="echo_m09_female\dx_m09_0060_hatcher.wav"/>
-<test_voice name="0xA6C9E68E" type="file" filename="echo_m09_female\dx_m09_0070_darcy.wav"/>
-<test_voice name="0x9E531D84" type="file" filename="echo_m09_female\dx_m09_0080_hatcher.wav"/>
 <test_voice name="0xA695AD86" type="file" filename="echo_m09_female\dx_m09_0350_darcy.wav"/>
 <test_voice name="0xB6D5A506" type="file" filename="echo_m09_female\dx_m09_0355_darcy.wav"/>
 <test_voice name="0xA64DAB86" type="file" filename="echo_m09_female\dx_m09_0550_darcy.wav"/>

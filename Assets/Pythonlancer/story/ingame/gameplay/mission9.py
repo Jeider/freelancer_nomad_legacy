@@ -129,7 +129,7 @@ class Misson09(ingame_mission.IngameMission):
     SCRIPT_INDEX = 9
     DIRECT_SYSTEMS = [S.ku_tgk, S.sig42]
     STATIC_NPCSHIPS = NPCSHIPS
-    RTC = ['yokohama', 'order', 'final', 'leave_yoko']
+    RTC = ['deck', 'yokohama', 'order', 'final', 'leave_yoko']
     INIT_OFFER = MultiLine(
         'ЗАДАЧА:',
         'Помочь Ордену получить важные данные об СБА',

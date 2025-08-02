@@ -1,11 +1,50 @@
 from story import script
 from audio.sound import VoiceLine
-from story.actors import Trent, Hatcher, Darcy, HasslerOrder, Yamamoto, Kim, SakuraOne, Chrysanthemum, Matome
-from story.cutscenes.story_scenes import m09_yokohama, m09_order, m09_reward
+from story.actors import Trent, HatcherStation, Darcy, HasslerOrder, Yamamoto, Kim, SakuraOne, Chrysanthemum, Matome
+from story.cutscenes.story_scenes import m09_deck, m09_yokohama, m09_order, m09_reward
 
 
 class Msn9(object):
     MISSION_INDEX = 9
+
+
+class Msn9DeckCutscene(Msn9, script.CutsceneProps):
+    ALIAS = 'deck'
+    TITLE = 'Стыковочный шлюз Йокогамы'
+    DESCRIPTION = 'Трент и Дерси сели на станцию Йокогама и готовятся зайти в бар'
+    THORN_CLASS = m09_deck.Msn9YokoDeckScene
+    VOICE_LINES = [
+        VoiceLine(
+            10,
+            Darcy,
+            ru='Ну что,, Трент, гот+ов?'
+        ),
+        VoiceLine(
+            20,
+            Trent,
+            ru='К чему это?'
+        ),
+        VoiceLine(
+            30,
+            Darcy,
+            ru='К встрече с информатором! Мы понятия не имеем,, сколько тут агентов Нового Ордена!'
+        ),
+        VoiceLine(
+            40,
+            Trent,
+            ru='Так ты же у нас прикрытие! Или Бретонская корона уже не так+ая всесильная на территории Кус+ари?'
+        ),
+        VoiceLine(
+            50,
+            Darcy,
+            ru='Эй, всё с нашей короной в порядке! Только от выстрелов лазерных пушек она не защищает! Так что будь покладистей!'
+        ),
+        VoiceLine(
+            60,
+            Trent,
+            ru='Как прикажете, мисс Д+ерси!'
+        ),
+    ]
 
 
 class Msn9YokohamaCutscene(Msn9, script.CutsceneProps):
@@ -364,62 +403,10 @@ class Msn9Space(Msn9, script.SpaceVoiceProps):
     VOICE_LINES = [
         VoiceLine(
             0,
-            Hatcher,
+            HatcherStation,
             comment='интро-диалог',
-            ru='Трент, Д+ерси, вы на связи?.'
-        ),
-        VoiceLine(
-            10,
-            Darcy,
-            ru='Да, слышно.'
-        ),
-        VoiceLine(
-            10,
-            Hatcher,
-            ru='Бандиты назначили встречу.'
-        ),
-        VoiceLine(
-            20,
-            Trent,
-            ru='Чего-о?'
-        ),
-        VoiceLine(
-            40,
-            Hatcher,
-            ru='(максимально уверенно и четко) У меня получилось связаться с представителями Нового Ордена. '
-            'Они согласны принять у себя Трента и гарантируют ему полную безопасность.'
-        ),
-        VoiceLine(
-            45,
-            Hatcher,
-            ru='(резко, с выдохом и последующей паузой) НО! Что-то я им не очень верю. Не люблю ситуации, которые я не могу контролировать. '
-            '(резко и отчетливо) Поэтому, Дэрси?'
-        ),
-        VoiceLine(
-            50,
-            Darcy,
-            ru='Да?'
-        ),
-        VoiceLine(
-            60,
-            Hatcher,
-            ru='(четкий вопрос) Я хочу попросить тебя прикрыть Трента, так скажем, щитом своей юрисдикции.'
-            '(первое предложение на одном дыхании, «так скажем» - на вдохе, «щитом…» - на выходе)'
-        ),
-        VoiceLine(
-            70,
-            Darcy,
-            ru='Без проблем. Вряд ли они захотят ссорится с Бретонской короной.'
-        ),
-        VoiceLine(
-            20,
-            Trent,
-            ru='Это да, принцесса Кейтлин явно будет страшна во гневе.'
-        ),
-        VoiceLine(
-            80,
-            Hatcher,
-            ru='Отлично. Я загружу вам координаты точки встречи. Это станция Йокогама в системе Омега-3. Будьте осторожны.'
+            ru='Трент, мы связались с представителями Нового Ордена. Они готовы к встрече и гарантируют безопасность, '
+               'но для надежности ты должен придти на встречу вместе с Д+ерси. Место встречи: станция Йокогама, система Омега-3.'
         ),
 
 
@@ -469,7 +456,7 @@ class Msn9Space(Msn9, script.SpaceVoiceProps):
         VoiceLine(640, Matome, ru='Мои люди профессионалы своего дела. Мы сделаем свою работу быстро.'),
         VoiceLine(650, Matome, ru='А вы должн+ы всеми силами отвлечь СБА от Хризантемы, пока она будет работать'),
 
-        VoiceLine(660, Trent, ru='Сделаю всё что могу'),
+        VoiceLine(660, Trent, ru='Сделаю всё,, что могу'),
 
         VoiceLine(680, Matome, ru='Мы на месте. Приступаем к сборке Хризантемы'),
         
@@ -563,6 +550,7 @@ class Msn9Space(Msn9, script.SpaceVoiceProps):
 class Mission9(Msn9, script.StoryMission):
     MISSION_INDEX = 9
     CUTSCENES = [
+        Msn9DeckCutscene,
         Msn9YokohamaCutscene,
         Msn9OrderCutscene,
         Msn9RewardCutscene,

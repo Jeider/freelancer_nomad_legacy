@@ -245,18 +245,17 @@ def test_steos():
 def generate_story_voices():
     script_manager = ScriptManager()
     # import pdb;pdb.set_trace()
-    for msn in script_manager.get_missions():
-        if msn.MISSION_INDEX != 13:
-            continue
-        for voice in msn.get_voices():
-            audio_folder.AudioFolder.compile_story_voice_to_xml(voice)
+
+    msn = script_manager.get_mission_by_index(9)
+    for voice in msn.get_voices():
+        audio_folder.AudioFolder.compile_story_voice_to_xml(voice)
 
 
 def generate_cutscene_voices():
     script_manager = ScriptManager()
     # import pdb;pdb.set_trace()
 
-    msn = script_manager.get_mission_by_index(10)
+    msn = script_manager.get_mission_by_index(9)
 
     for cutscene in msn.get_cutscenes():
         audio_folder.AudioFolder.generate_cutscene_sounds(cutscene)
@@ -375,9 +374,9 @@ def meta():
     script_manager = ScriptManager()
     meta_manager = LipSyncManager(tpl_manager=tpl_manager)
 
-    msn = script_manager.get_mission_by_index(10)
+    msn = script_manager.get_mission_by_index(9)
 
-    meta_manager.edit_cutscene(msn, 'rescued')
+    meta_manager.edit_cutscene(msn, 'deck')
 
     print('meta exit')
 
@@ -385,8 +384,8 @@ def meta():
 def scene():
     tpl_manager = JinjaTemplateManager()
     script_manager = ScriptManager()
-    msn = script_manager.get_mission_by_index(10)
-    cutscene = msn.get_cutscene_by_code('rescued')
+    msn = script_manager.get_mission_by_index(9)
+    cutscene = msn.get_cutscene_by_code('deck')
     thorn = cutscene.get_thorn(tpl_manager)
     thorn.sync_content()
 

@@ -638,7 +638,8 @@ class Character(Compound):
     def init_char_points(self):
         ik_position = [0, 0, 0]
         if self.ik_start_point:
-            ik_position = self.root.get_point(self.ik_start_point).pos
+            raise NotImplementedError
+            # ik_position = self.root.get_point(self.ik_start_point).position
 
         temp_ik_point_name = f'ikpoint_{self.name}'
         self.root.add_point(

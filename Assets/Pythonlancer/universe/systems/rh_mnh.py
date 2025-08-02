@@ -465,7 +465,7 @@ class MunchJunkersBase(MunchMember, main_objects.JunkerBase):
     FACTION = faction.Junkers
 
     DEFENCE_LEVEL = None
-    RU_NAME = 'База Виго'
+    RU_NAME = 'Склад Кройзберг'
 
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
