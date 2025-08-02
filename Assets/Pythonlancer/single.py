@@ -386,7 +386,7 @@ def scene():
     script_manager = ScriptManager()
     msn = script_manager.get_mission_by_index(9)
     cutscene = msn.get_cutscene_by_code('order')
-    thorn = cutscene.get_accept_thorn(tpl_manager)
+    thorn = cutscene.get_thorn(tpl_manager)
     thorn.sync_content()
 
 

@@ -1,4 +1,4 @@
-duration=228.93129166666665
+duration=207.11129166666666
 
 entities={
 	{
@@ -1360,6 +1360,34 @@ entities={
 }
 ,
 {
+    entity_name="automarker_cam_decision",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 5.99, 2.31, 1.18 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_decision_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 3.13, 0.84, 3.04 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
     entity_name="main_music",
     template_name="music_bar_ku_palace",
     type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
@@ -2636,7 +2664,7 @@ entities={
     lt_grp=0,
     srt_grp=0,
     usr_flg=0,
-    flags=LIT_DYNAMIC + LIT_AMBIENT,
+    flags=LIT_DYNAMIC,
     spatialprops={
         pos={
             4.60, 0.00, 3.27
@@ -60611,7 +60639,7 @@ events={
     32.872,
     START_MOTION,
     {"Char_hassler"},
-    {animation="Sc_MLBODY_CHRF_IDLE_000LV_XA_06",
+    {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
      duration=10, time_scale=0.5, start_time=0, weight=1, heading=-1
      , event_flags=2   
      }
@@ -61802,6 +61830,24 @@ events={
 ,
 {
     179.89529166666665,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "Char_hassler",
+        "offscreen"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    179.89529166666665,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -61950,288 +61996,6 @@ events={
     },
     {
         duration=20
-    }
-}
-,
-{
-    207.11129166666666,
-    SET_CAMERA,
-    {
-        "Monitor_1",
-        "cam_trent"
-    }
-}
-,
-{
-    206.11129166666666,
-    START_MOTION,
-    {"Char_trent"},
-    {animation="Sc_MLBODY_CHRF_CHRB_TRNS_000LV_XA_02",
-     duration=10, time_scale=0.6, start_time=0, weight=1, heading=-1
-       
-     }
-}
-,
-{
-    208.11129166666666,
-    START_MOTION,
-    {"Char_trent"},
-    {animation="Sc_dx_s045b_1801_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
-}
-,
-{
-    208.11129166666666,
-    START_SOUND,
-    {
-        "DX_m09_order_0290_trent"
-    },
-    {
-        duration=20
-    }
-}
-,
-{
-    210.30329166666667,
-    SET_CAMERA,
-    {
-        "Monitor_1",
-        "cam_tenji"
-    }
-}
-,
-{
-    213.80329166666667,
-    START_SPATIAL_PROP_ANIM,
-    {
-        "char_ik_Char_darcy_head_ik",
-        "automarker_darcy_looktrent"
-    },
-    {
-        duration=3.5,
-        target_part="",
-        target_type=ROOT,
-        spatialprops={
-            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
-        }
-        
-        ,
-        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
-        pcurve_period=-1000
-        
-    }
-}
-,
-{
-    213.80329166666667,
-    START_SPATIAL_PROP_ANIM,
-    {
-        "char_ik_Char_darcy_eye_ik",
-        "charpoint_trent_talk"
-    },
-    {
-        duration=2.5,
-        target_part="",
-        target_type=ROOT,
-        spatialprops={
-            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
-        }
-        
-        ,
-        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
-        pcurve_period=-1000
-        
-    }
-}
-,
-{
-    210.30329166666667,
-    START_MOTION,
-    {"Char_yamamoto"},
-    {animation="Sc_dx_s039x_0504_akira", duration=10, start_time=1, time_scale=1, trans_time=0.5,  weight=1, heading=-1}
-}
-,
-{
-    216.10329166666668,
-    START_MOTION,
-    {"Char_yamamoto"},
-    {animation="Sc_dx_s039x_0504_akira", duration=10, start_time=4, time_scale=1, trans_time=0.5,  weight=1, heading=-1}
-}
-,
-{
-    210.30329166666667,
-    START_SOUND,
-    {
-        "DX_m09_order_0320_yamamoto"
-    },
-    {
-        duration=20
-    }
-}
-,
-{
-    215.73929166666667,
-    START_MOTION,
-    {"Char_yamamoto"},
-    {animation="Sc_MLBODY_CHRB_STNDCR_TRNS_090LV_XA_05",
-     duration=10, time_scale=0.8, start_time=0, weight=1, heading=-1
-       , trans_time=1 
-     }
-}
-,
-{
-    218.73929166666667,
-    SET_CAMERA,
-    {
-        "Monitor_1",
-        "cam_darcy"
-    }
-}
-,
-{
-    218.73929166666667,
-    START_MOTION,
-    {"Char_darcy"},
-    {animation="Sc_dx_s038x_4001_sinclair", duration=10, start_time=3, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
-}
-,
-{
-    218.73929166666667,
-    START_SOUND,
-    {
-        "DX_m09_order_0350_darcy"
-    },
-    {
-        duration=20
-    }
-}
-,
-{
-    222.18329166666666,
-    START_IK,
-    {
-        "Char_trent",
-        "char_ik_Char_trent_eye_ik"
-    },
-    {
-        duration=5000,
-        end_effector="Eye IK Left", transition_duration=1,
-        target_part="", target_type=ROOT,
-        count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
-    }
-}
-,
-{
-    222.18329166666666,
-    SET_CAMERA,
-    {
-        "Monitor_1",
-        "cam_trent"
-    }
-}
-,
-{
-    221.18329166666666,
-    START_SPATIAL_PROP_ANIM,
-    {
-        "char_ik_Char_trent_head_ik",
-        "automarker_darcy_front"
-    },
-    {
-        duration=3,
-        target_part="",
-        target_type=ROOT,
-        spatialprops={
-            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
-        }
-        
-        ,
-        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
-        pcurve_period=-1000
-        
-    }
-}
-,
-{
-    221.18329166666666,
-    START_SPATIAL_PROP_ANIM,
-    {
-        "char_ik_Char_trent_eye_ik",
-        "charpoint_darcy_talk"
-    },
-    {
-        duration=2,
-        target_part="",
-        target_type=ROOT,
-        spatialprops={
-            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
-        }
-        
-        ,
-        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
-        pcurve_period=-1000
-        
-    }
-}
-,
-{
-    222.18329166666666,
-    START_MOTION,
-    {"Char_trent"},
-    {animation="Sc_dx_s038x_4301_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
-}
-,
-{
-    222.18329166666666,
-    START_SOUND,
-    {
-        "DX_m09_order_0360_trent"
-    },
-    {
-        duration=20
-    }
-}
-,
-{
-    225.93129166666665,
-    START_SPATIAL_PROP_ANIM,
-    {
-        "char_ik_Char_trent_head_ik",
-        "automarker_yamamoto_trentlook"
-    },
-    {
-        duration=3,
-        target_part="",
-        target_type=ROOT,
-        spatialprops={
-            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
-        }
-        
-        ,
-        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
-        pcurve_period=-1000
-        
-    }
-}
-,
-{
-    225.93129166666665,
-    START_SPATIAL_PROP_ANIM,
-    {
-        "char_ik_Char_trent_eye_ik",
-        "charpoint_yamamoto_init"
-    },
-    {
-        duration=2,
-        target_part="",
-        target_type=ROOT,
-        spatialprops={
-            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
-        }
-        
-        ,
-        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
-        pcurve_period=-1000
-        
     }
 }
 
