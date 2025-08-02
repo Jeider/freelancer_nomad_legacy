@@ -75,6 +75,8 @@ class CutsceneProps(MissionSegment):
     ALIAS = 'scene'
     VOICE_LINES = []
     THORN_CLASS = None
+    THORN_DECISION_CLASS = None
+    THORN_ACCEPT_CLASS = None
 
     LINE_NAME_TEMPLATE = 'm{mission_index:02d}_{scene_alias}_{voiceline_index:04d}_{actor_name}'
 
@@ -114,6 +116,19 @@ class CutsceneProps(MissionSegment):
             raise Exception(f'Cutscene {self} have no thorn')
 
         return self.THORN_CLASS(tpl_manager, self)
+
+    def get_decision_thorn(self, tpl_manager):
+        if not self.THORN_DECISION_CLASS:
+            raise Exception(f'Cutscene {self} have no decision thorn')
+
+        return self.THORN_DECISION_CLASS(tpl_manager, self, extra_name='decision')
+
+    def get_accept_thorn(self, tpl_manager):
+        if not self.THORN_ACCEPT_CLASS:
+            raise Exception(f'Cutscene {self} have no accept thorn')
+
+        return self.THORN_ACCEPT_CLASS(tpl_manager, self, extra_name='accept')
+
 
 
 class SpaceVoiceProps(MissionSegment):

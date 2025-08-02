@@ -5,10 +5,9 @@ from story.cutscenes.anim import Male, Female
 from story import actors
 
 
-class Msn9RescuedCutsceneThorn(Scene):
+class Msn10RescuedCutsceneThorn(Scene):
     POINT_ROTATE_OVERRIDES = {
         'hassler_arrive': (0, -60, 0),
-        # 'trent_talk': (0, 90, 0),
     }
 
     def action(self):
@@ -29,11 +28,6 @@ class Msn9RescuedCutsceneThorn(Scene):
         cam_hassler_arrive = LookAtCamera(root=self, name='cam_hassler_arrive', fov=25)
         cam_hassler = LookAtCamera(root=self, name='cam_hassler', fov=18)
 
-        # cam_hassler_answer = LookAtCamera(root=self, name='cam_hassler_answer', fov=16)
-
-        # cam_kim = LookAtCamera(root=self, name='cam_kim', fov=16)
-        # cam_trent_top = LookAtCamera(root=self, name='cam_trent_top', fov=20)
-
         # PROPS
 
         # CHARACTERS
@@ -48,8 +42,6 @@ class Msn9RescuedCutsceneThorn(Scene):
                             floor_height=floor_height)
         edison = Character(root=self, actor=actors.EdisonTrent, light_group=0, init_point='edison_init', rotate_y=0,
                            floor_height=floor_height)
-        # medic = Character(root=self, actor=actors.OrderMedic, light_group=0, init_point='medic_init', rotate_y=180,
-        #                   floor_height=floor_height)
 
         # MARKERS
 
@@ -289,7 +281,7 @@ class Msn9RescuedCutsceneThorn(Scene):
 
         main_group.append_time(2)
 
-        cam_hassler_arrive.set(group=MAIN)
+        # cam_hassler_arrive.set(group=MAIN)
 
 
 
@@ -316,6 +308,8 @@ class Msn9RescuedCutsceneThorn(Scene):
         hassler.move_eye_ik(group=MAIN, target_name=mrk_trent_talk, duration=2, time_delay=-1)
 
         main_group.append_time(1)
+
+        MoveOffscreenEvent(root=self, group=MAIN, object_name=edison.name)
 
         hassler.facial(group=MAIN, index=100)
 
@@ -372,6 +366,130 @@ class Msn9RescuedCutsceneThorn(Scene):
 
         hassler.facial(group=MAIN, index=140)
 
+        ### KEEP ENDING AS BACKUP
+
+        # cam_trent_bottom.set(group=MAIN)
+        #
+        # darcy.move_head_ik(group=MAIN, target_name=mrk_trent_front, duration=2.5)
+        # darcy.move_eye_ik(group=MAIN, target_name=mrk_trent_talk, duration=2)
+        #
+        # trent.facial(group=MAIN, index=150)
+        #
+        # cam_hassler.set(group=MAIN)
+        #
+        # hassler.facial(group=MAIN, index=160)
+        #
+        # cam_trent_bottom.set(group=MAIN)
+        #
+        # darcy.move_head_ik(group=MAIN, target_name=mrk_hassler_front2, duration=2.5, time_delay=0.5)
+        # darcy.move_eye_ik(group=MAIN, target_name=mrk_hassler_talk, duration=2, time_delay=0.5)
+        #
+        # trent.motion(group=MAIN, duration=10, anim=Male.Sc_MLBODY_STND_FSTHIPB_RLEASE_000LV_XA_01, time_scale=0.6, trans_time=0.5)
+        # darcy.motion(group=MAIN, duration=10, anim=Female.Sc_FMBODY_STND_UNCRSS_ARMS_000LV_XA_03, time_scale=0.7, trans_time=0.5)
+        #
+        # trent.facial(group=MAIN, index=170)
+        #
+        # main_group.append_time(1)
+
+
+class Msn10RescuedDecisionThorn(Scene):
+
+    def action(self):
+        main_group = self.get_group(MAIN)
+
+        floor_height = self.get_point('floor_height').position[1]
+
+        # CAMERAS
+
+        cam_hassler_arrive = LookAtCamera(root=self, name='cam_hassler_arrive', fov=25)
+
+        # PROPS
+
+        # CHARACTERS
+
+        darcy = Character(root=self, actor=actors.Darcy, light_group=0, init_point='darcy_talk', rotate_y=0,
+                          floor_height=floor_height)
+        trent = Character(root=self, actor=actors.Trent, light_group=0, init_point='trent_talk', rotate_y=60,
+                          floor_height=floor_height)
+        hassler = Character(root=self, actor=actors.HasslerOrder, light_group=0, init_point='hassler_talk', rotate_y=-105,
+                            floor_height=floor_height)
+
+        trent.motion(group=MAIN, duration=12, loop=True, anim=Male.Sc_MLBODY_STND_FSTHIPB_HOLD_000LV_XA_02)
+        darcy.motion(group=MAIN, duration=12, loop=True, anim=Female.Sc_FMBODY_STND_HOLD_ARMS_CROSSED_000LV_XA_03)
+        hassler.motion(group=MAIN, duration=12, loop=True, anim=Male.Sc_MLBODY_STND_IDLE_000LV_xa_04)
+
+        darcy.motion(group=MAIN, duration=1, anim=Female.Sc_FMHAND_HNEUT_GESTL_FIST_000LV_00, time_scale=3)
+        darcy.motion(group=MAIN, duration=1, anim=Female.Sc_FMHAND_HNEUT_GESTR_FIST_000LV_00, time_scale=3)
+
+        cam_hassler_arrive.set(group=MAIN)
+
+        main_group.append_time(1000)
+
+
+class Msn10RescuedAcceptThorn(Scene):
+    POINT_ROTATE_OVERRIDES = {
+        'hassler_arrive': (0, -60, 0),
+    }
+
+    def action(self):
+        main_group = self.get_group(MAIN)
+
+        floor_height = self.get_point('floor_height').position[1]
+
+        # CAMERAS
+
+        cam_trent_bottom = LookAtCamera(root=self, name='cam_trent_bottom', fov=20)
+        cam_hassler = LookAtCamera(root=self, name='cam_hassler', fov=18)
+
+        # PROPS
+
+        # CHARACTERS
+
+        darcy = Character(root=self, actor=actors.Darcy, light_group=0, init_point='darcy_talk', rotate_y=0,
+                          floor_height=floor_height)
+        trent = Character(root=self, actor=actors.Trent, light_group=0, init_point='trent_talk', rotate_y=60,
+                          floor_height=floor_height)
+        hassler = Character(root=self, actor=actors.HasslerOrder, light_group=0, init_point='hassler_talk2', rotate_y=-115,
+                            floor_height=floor_height)
+
+        # MARKERS
+
+        mrk_darcy_talk = darcy.get_stand_marker('darcy_talk', floor_height=floor_height)
+        mrk_trent_talk = trent.get_stand_marker('trent_talk', floor_height=floor_height)
+        mrk_hassler_talk = darcy.get_stand_marker('hassler_talk', floor_height=floor_height)
+
+        mrk_trent_front = self.get_automarker_name('trent_front')
+        mrk_hassler_front = self.get_automarker_name('hassler_front')
+        mrk_hassler_front2 = self.get_automarker_name('hassler_front2')
+        mrk_darcy_front = self.get_automarker_name('darcy_front')
+
+        # EXTRA DEFINITIONS
+
+        darcy.move_head_ik(group=BG, target_name=mrk_hassler_front2, immediately=True)
+        darcy.move_eye_ik(group=BG, target_name=mrk_hassler_talk, immediately=True)
+        trent.move_head_ik(group=BG, target_name=mrk_hassler_front2, immediately=True)
+        trent.move_eye_ik(group=BG, target_name=mrk_hassler_talk, immediately=True)
+
+        hassler.move_head_ik(group=BG, target_name=mrk_trent_talk, immediately=True)
+        hassler.move_eye_ik(group=BG, target_name=mrk_trent_talk, immediately=True)
+
+        trent.start_head_ik(group=BG, duration=1000)
+        trent.start_eye_ik(group=BG, duration=1000)
+        darcy.start_head_ik(group=BG, duration=1000, transition_duration=2)
+        darcy.start_eye_ik(group=BG, duration=1000, transition_duration=2)
+        hassler.start_head_ik(group=BG, duration=1000)
+        hassler.start_eye_ik(group=BG, duration=1000)
+
+
+        # ACTION!
+
+        trent.motion(group=MAIN, duration=12, loop=True, anim=Male.Sc_MLBODY_STND_FSTHIPB_HOLD_000LV_XA_02)
+        darcy.motion(group=MAIN, duration=12, loop=True, anim=Female.Sc_FMBODY_STND_HOLD_ARMS_CROSSED_000LV_XA_03)
+        hassler.motion(group=MAIN, duration=12, loop=True, anim=Male.Sc_MLBODY_STND_IDLE_000LV_xa_04)
+
+        darcy.motion(group=MAIN, duration=1, anim=Female.Sc_FMHAND_HNEUT_GESTL_FIST_000LV_00, time_scale=3)
+        darcy.motion(group=MAIN, duration=1, anim=Female.Sc_FMHAND_HNEUT_GESTR_FIST_000LV_00, time_scale=3)
+
         cam_trent_bottom.set(group=MAIN)
 
         darcy.move_head_ik(group=MAIN, target_name=mrk_trent_front, duration=2.5)
@@ -394,10 +512,3 @@ class Msn9RescuedCutsceneThorn(Scene):
         trent.facial(group=MAIN, index=170)
 
         main_group.append_time(1)
-
-
-
-
-
-
-        # main_group.append_time(1000)

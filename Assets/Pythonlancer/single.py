@@ -388,7 +388,7 @@ def scene():
     msn = script_manager.get_mission_by_index(10)
     cutscene = msn.get_cutscene_by_code('rescued')
     thorn = cutscene.get_thorn(tpl_manager)
-    print(thorn.get_content())
+    thorn.sync_content()
 
 
 

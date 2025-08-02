@@ -248,7 +248,9 @@ class Msn10Space(Msn10, script.SpaceVoiceProps):
 class Msn10RescuedCutscene(Msn10, script.CutsceneProps):
     ALIAS = 'rescued'
     TITLE = 'Ангар линкора Мусаси'
-    THORN_CLASS = m10_rescued.Msn9RescuedCutsceneThorn
+    THORN_CLASS = m10_rescued.Msn10RescuedCutsceneThorn
+    THORN_DECISION_CLASS = m10_rescued.Msn10RescuedDecisionThorn
+    THORN_ACCEPT_CLASS = m10_rescued.Msn10RescuedAcceptThorn
     DESCRIPTION = 'Поздравления со спасением'
     VOICE_LINES = [
         VoiceLine(

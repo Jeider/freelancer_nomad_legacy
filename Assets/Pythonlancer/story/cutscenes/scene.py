@@ -18,13 +18,14 @@ def automarker_name(name):
 
 class Scene:
     SCENE_AMBIENT = [0, 0, 0]
-    MIN_DURATION = 30
+    MIN_DURATION = 1
     POINT_ROTATE_OVERRIDES = {}
     DEFAULT_POINT_NAME = 'default_point'
 
-    def __init__(self, tpl_manager, props):
+    def __init__(self, tpl_manager, props, extra_name=''):
         self.tpl_manager = tpl_manager
         self.meta_manager = LipSyncManager(tpl_manager=self.tpl_manager)
+        self.extra_name = extra_name
         self.props = props
         self.entities = {}
         self.events = []
@@ -79,10 +80,18 @@ class Scene:
         return self.MIN_DURATION
 
     def set_duration(self, duration):
-        return self.duration
+        self.duration = duration
+
+    def get_scene_base_name(self):
+        return self.props.get_scene_name()
 
     def get_scene_name(self):
-        return self.props.get_scene_name()
+        extended_name = (
+            f'_{self.extra_name}'
+            if self.extra_name != ''
+            else ''
+        )
+        return f'{self.props.get_scene_name()}{extended_name}'
 
     def get_scene_ambient(self):
         return self.SCENE_AMBIENT
@@ -97,7 +106,7 @@ class Scene:
         )
 
     def load_points_dump(self):
-        points_file = DUMPS_PATH / f'{self.get_scene_name()}.json'
+        points_file = DUMPS_PATH / f'{self.get_scene_base_name()}.json'
         if not points_file.exists():
             raise Exception(f'Scene {self} have no dump file')
 
@@ -198,5 +207,7 @@ class Scene:
         }
 
     def get_content(self):
-        data = self.tpl_manager.get_result(ROOT_TEMPLATE, self.get_root_params())
-        DataFolder.sync_scene(self.get_scene_name(), data)
+        return self.tpl_manager.get_result(ROOT_TEMPLATE, self.get_root_params())
+
+    def sync_content(self):
+        DataFolder.sync_scene(self.get_scene_name(), self.get_content())
