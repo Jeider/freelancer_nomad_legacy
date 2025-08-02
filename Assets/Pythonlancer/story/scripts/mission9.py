@@ -175,6 +175,8 @@ class Msn9OrderCutscene(Msn9, script.CutsceneProps):
     ALIAS = 'order'
     TITLE = 'Нижний бар станции Йокогама'
     THORN_CLASS = m09_order.Msn9OrderCutsceneThorn
+    THORN_DECISION_CLASS = m09_order.Msn9OrderDecisionThorn
+    THORN_ACCEPT_CLASS = m09_order.Msn9OrderAcceptThorn
     DESCRIPTION = 'Лифт открывается. Энергичная музыка, треш, угар и прочие штуки. Стриптизерши танцуют. Герои входят'
     'Они подходят к барной стойке, где их поджидает глава Нового Ордена - Ямамаото-сама'
     VOICE_LINES = [

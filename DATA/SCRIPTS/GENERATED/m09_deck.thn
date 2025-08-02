@@ -288,7 +288,7 @@ entities={
     type=MARKER,
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
     spatialprops={
-        pos={ 11.13, 1.85, 0.57 },
+        pos={ 11.18, 1.85, 0.65 },
         orient={ 
             { 1.0000000,0.0000000,0.0000000 },
             { 0.0000000,1.0000000,0.0000000 },
@@ -302,7 +302,7 @@ entities={
     type=MARKER,
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
     spatialprops={
-        pos={ 13.02, 1.28, -0.59 },
+        pos={ 13.07, 1.28, -0.51 },
         orient={ 
             { 1.0000000,0.0000000,0.0000000 },
             { 0.0000000,1.0000000,0.0000000 },
@@ -373,7 +373,7 @@ entities={
     template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
     flags=HIDDEN,
     spatialprops={
-        pos={ 11.13, 1.85, 0.57 },
+        pos={ 11.18, 1.85, 0.65 },
         orient={ 
             { 1.0000000,0.0000000,0.0000000 },
             { 0.0000000,1.0000000,0.0000000 },
