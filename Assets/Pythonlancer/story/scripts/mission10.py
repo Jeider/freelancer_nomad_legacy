@@ -1,7 +1,7 @@
 from story import script
 from audio.sound import VoiceLine
 from story.actors import Trent, Darcy, Hassler, HasslerOrder, EdisonTrent, Alaric, Juni, Tor
-from story.cutscenes.story_scenes import m10_rescued
+from story.cutscenes.story_scenes import m10_offer, m10_rescued
 
 
 class Msn10(object):
@@ -11,6 +11,9 @@ class Msn10(object):
 class Msn10OfferCutscene(Msn10, script.CutsceneProps):
     ALIAS = 'offer'
     TITLE = 'Бар линкора Мусаси'
+    THORN_CLASS = m10_offer.Msn10OfferCutsceneThorn
+    THORN_DECISION_CLASS = m10_offer.Msn10OfferDecisionThorn
+    THORN_ACCEPT_CLASS = m10_offer.Msn10OfferAcceptThorn
     DESCRIPTION = 'Трент и Дерси встречаются в баре по предложению Хасслера'
     VOICE_LINES = [
         VoiceLine(

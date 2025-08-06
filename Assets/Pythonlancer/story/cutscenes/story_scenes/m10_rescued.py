@@ -112,10 +112,8 @@ class Msn10RescuedCutsceneThorn(Scene):
         alaric.start_eye_ik(group=BG, duration=1000)
 
 
-        MoveFastEvent(root=self, group=MAIN, object_name=darcy.name, target_name=self.get_automarker_name('darcy_talk'),
-                      adjust_pos=True)
-        MoveFastEvent(root=self, group=MAIN, object_name=trent.name, target_name=self.get_automarker_name('trent_talk'),
-                      adjust_pos=True)
+        MoveFastEvent(root=self, group=MAIN, object_name=darcy.name, target_name=self.get_automarker_name('darcy_talk'))
+        MoveFastEvent(root=self, group=MAIN, object_name=trent.name, target_name=self.get_automarker_name('trent_talk'))
         trent.motion(group=MAIN, duration=12, loop=True, anim=Male.Sc_MLBODY_STND_IDLE_000LV_xa_04)
         darcy.motion(group=MAIN, duration=12, loop=True, anim=Female.Sc_FMBODY_STND_IDLE_000LV_xa_05)
 

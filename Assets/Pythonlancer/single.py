@@ -374,9 +374,9 @@ def meta():
     script_manager = ScriptManager()
     meta_manager = LipSyncManager(tpl_manager=tpl_manager)
 
-    msn = script_manager.get_mission_by_index(9)
+    msn = script_manager.get_mission_by_index(10)
 
-    meta_manager.edit_cutscene(msn, 'deck')
+    meta_manager.edit_cutscene(msn, 'offer')
 
     print('meta exit')
 
@@ -384,10 +384,12 @@ def meta():
 def scene():
     tpl_manager = JinjaTemplateManager()
     script_manager = ScriptManager()
-    msn = script_manager.get_mission_by_index(9)
-    cutscene = msn.get_cutscene_by_code('order')
-    thorn = cutscene.get_thorn(tpl_manager)
-    thorn.sync_content()
+    msn = script_manager.get_mission_by_index(10)
+    cutscene = msn.get_cutscene_by_code('offer')
+    cutscene.get_thorn(tpl_manager).sync_content()
+    cutscene.get_decision_thorn(tpl_manager).sync_content()
+    cutscene.get_accept_thorn(tpl_manager).sync_content()
+
 
 
 
