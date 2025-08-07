@@ -3019,6 +3019,24 @@ events={
 ,
 {
     69.48400000000001,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "Char_alaric",
+        "offscreen"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    69.48400000000001,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_dx_s033x_0101_dexter", duration=10, start_time=0.5, time_scale=1, trans_time=0.25,  weight=1, heading=-1}

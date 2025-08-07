@@ -1,7 +1,7 @@
 from story import script
 from audio.sound import VoiceLine
-from story.actors import Trent, Darcy, Hassler, HasslerOrder, EdisonTrent, Alaric, Juni, Tor
-from story.cutscenes.story_scenes import m10_offer, m10_rescued
+from story.actors import Trent, Darcy, HasslerOrder, EdisonTrent, Alaric, Juni, Tor
+from story.cutscenes.story_scenes import m10_offer, m10_rescued, m10_final
 
 
 class Msn10(object):
@@ -348,12 +348,13 @@ class Msn10RescuedCutscene(Msn10, script.CutsceneProps):
 class Msn10FinalCutscene(Msn10, script.CutsceneProps):
     ALIAS = 'final'
     TITLE = 'Бар линкора Мусаси'
+    THORN_CLASS = m10_final.Msn10FinalCutsceneThorn
     DESCRIPTION = 'Трент подошел к Аларику обсудить планы на будущее'
     VOICE_LINES = [
         VoiceLine(
             10,
             Trent,
-            ru='Ну ка+к т+ы, узник замка Иф, невольник чести?'
+            ru='Ну к+ак т+ы, узник замка Иф, невольник чести?'
         ),
         VoiceLine(
             20,
@@ -379,7 +380,7 @@ class Msn10FinalCutscene(Msn10, script.CutsceneProps):
         VoiceLine(
             60,
             Trent,
-            ru='Балбес ты, Аларик... Слушай, достало меня все это. Может сольёмся отсюда по-тихому?'
+            ru='Балбес ты, Аларик... Слушай, достало меня всё это. Может сольёмся отсюда по-тихому?'
         ),
         VoiceLine(
             70,
@@ -389,7 +390,7 @@ class Msn10FinalCutscene(Msn10, script.CutsceneProps):
         VoiceLine(
             80,
             Trent,
-            ru='Это мы садимся в свои корабли и уходим молча, по-английски. '
+            ru='Это мы сад+имся в свои корабли и уходим м+олча, по-англ+ийски. '
                'Не думаю, что нас начнут расстреливать сразу после отстыковки.'
         ),
         VoiceLine(
@@ -412,7 +413,7 @@ class Msn10FinalCutscene(Msn10, script.CutsceneProps):
         VoiceLine(
             110,
             Trent,
-            ru='Да... И главная причина - ужасно досмотреть хочется, чем все закончится.'
+            ru='Да... И главная причина - ужасно досмотреть хочется, чем всё закончится.'
         ),
         VoiceLine(
             120,
@@ -427,10 +428,46 @@ class Msn10FinalCutscene(Msn10, script.CutsceneProps):
         VoiceLine(
             140,
             Trent,
-            ru='Досмотрим этот боевичек до конца. (в сторону) Пока еще не ясно, до чьего конца!'
+            ru='Досмотрим этот боевичёк до конца. (в сторону) Пока еще не ясно, до чьег+о конца!'
         ),
+        VoiceLine(
+            200,
+            EdisonTrent,
+            comment='После ухода главного героя из бара',
+            ru='А этот парень хор+ош, способный товарищ. Как думаешь?'
+        ),
+        VoiceLine(
+            210,
+            Juni,
+            ru='Такой же безрассудный,, как и ты. Помогает местным фанатикам, а лучше бы их остановил.'
+        ),
+        VoiceLine(
+            220,
+            EdisonTrent,
+            ru='А кто их остановит? Ты думаешь я смогу уломать Ямамото? Он же упёртый похлеще Ор+илиона с Кингом вместе взятыми.'
+        ),
+        VoiceLine(
+            230,
+            Juni,
+            ru='Упёртый,, алчный и коварный. И Ор+илиона больше нет,, чтобы его остановить.'
+        ),
+        VoiceLine(
+            240,
+            EdisonTrent,
+            ru='Да. Вот я и боюсь делать по твоему плану А. Но у меня есть свой план Бэ... '
+        ),
+
+
     ]
 
+
+'''
+А этот парень хор+ош, способный товарищ. Как думаешь?
+Такой же безрассудный, как и ты. Помогает местным фанатикам, а лучше бы их остановил.
+А кто их остановит? Ты думаешь я смогу уломать Ямамото? Он же упёртый похлеще Ор+илиона с Кингом вместе взятыми.
+Упёртый, алчный и коварный. И Ор+илиона больше нет, чтобы его остановить.
+Да. Вот я и боюсь делать по твоему плану А. Но у меня есть свой план Бэ...        
+'''
 
 class Mission10(Msn10, script.StoryMission):
     CUTSCENES = [

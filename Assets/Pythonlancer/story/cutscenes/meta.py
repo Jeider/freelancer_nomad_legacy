@@ -2,24 +2,27 @@ import json
 import pathlib
 
 from tools.data_folder import DataFolder
-from story.actors import ACTOR_TRENT, ACTOR_MALE, ACTOR_FEMALE
+from story.actors import ACTOR_TRENT, ACTOR_MALE, ACTOR_FEMALE, ACTOR_JUNI
 
 CAMERA_PER_TYPE = {
     ACTOR_TRENT: 'cam_dbg_trent',
     ACTOR_MALE: 'cam_dbg_trent',
     ACTOR_FEMALE: 'cam_hatcher',
+    ACTOR_JUNI: 'cam_hatcher',
 }
 
 DEFAULT_ANIM_PER_TYPE = {
     ACTOR_TRENT: 'Sc_dx_s045b_1801_trent',
     ACTOR_MALE: 'Sc_dx_s068x_0201_walker',
     ACTOR_FEMALE: 'Sc_dx_s070x_0801_Jacobi',
+    ACTOR_JUNI: 'Sc_dx_s010x_2802_juni',
 }
 
 STAND_ANIM_PER_TYPE = {
     ACTOR_TRENT: 'Sc_MLBODY_STND_IDLE_000LV_xa_04',
     ACTOR_MALE: 'Sc_MLBODY_STND_IDLE_000LV_xa_04',
     ACTOR_FEMALE: 'Sc_FMBODY_STND_IDLE_000LV_xa_05',
+    ACTOR_JUNI: 'Sc_FMBODY_STND_IDLE_000LV_xa_05',
 }
 
 
@@ -140,13 +143,14 @@ class LipSyncManager:
 
     def prepare_facial_workspace(self, sound, new=True):
         actor_type = sound.line.actor.TYPE
+        is_new = new or not self.sound_meta_is_exist(sound)
         context = {
             'sound': sound,
             'anim': DEFAULT_ANIM_PER_TYPE[actor_type],
             'camera': CAMERA_PER_TYPE[actor_type],
             'stand_anim': STAND_ANIM_PER_TYPE[actor_type],
-            'new': new,
-            'exist_meta': [] if new else self.get_line_meta(sound)
+            'new': is_new,
+            'exist_meta': [] if is_new else self.get_line_meta(sound)
         }
         data = self.tpl_manager.get_result(self.FACIAL_TEMPLATE, context)
         DataFolder.sync_facial(data)

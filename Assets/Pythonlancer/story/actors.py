@@ -125,7 +125,14 @@ class EdisonTrent(Actor):
 class Juni(Actor):
     RU_NAME = 'Джуни'
     TYPE = ACTOR_JUNI  # Анимация имеет ту же природу, что и у Трента. Надеюсь не пригодится
+    CUTSCENE_APPEARANCE = 'junko_zane'
     NAME = 'juni'
+    # STEOS_ID = 178
+    # STEOS_PITCH = 0.1
+    # STEOS_SPEED = 1.3
+    STEOS_ID = 219
+    STEOS_PITCH = -0.2
+    STEOS_SPEED = 1.3
 
 
 class Hatcher(Actor):

@@ -308,6 +308,7 @@ class Msn10RescuedCutsceneThorn(Scene):
         main_group.append_time(1)
 
         MoveOffscreenEvent(root=self, group=MAIN, object_name=edison.name)
+        MoveOffscreenEvent(root=self, group=MAIN, object_name=alaric.name)
 
         hassler.facial(group=MAIN, index=100)
 

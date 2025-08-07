@@ -1,0 +1,3225 @@
+duration=127.63600000000002
+
+entities={
+	{
+		entity_name="Scene_m10_final",
+		type=SCENE,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		up=Y_AXIS,
+		front=Z_AXIS,
+		ambient={
+		    0,
+		    0,
+		    0
+		}
+	},
+
+	{
+		entity_name="Monitor_1",
+		type=MONITOR,
+		template_name="",
+		template_id=0
+	},
+	{
+		entity_name="offscreen",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={pos={-10000000,-10000,0},orient={ {1,0,0},{0,1,0},{0,0,1} } },
+	},
+
+	{
+		entity_name="offscreen_back",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={pos={0,-10000,-10000000},orient={ {1,0,0},{0,1,0},{0,0,1} } },
+	},
+
+	
+{
+    entity_name="DX_m10_final_0010_trent",
+    template_name="DX_m10_final_0010_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m10_final_0020_alaric",
+    template_name="DX_m10_final_0020_alaric",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m10_final_0030_trent",
+    template_name="DX_m10_final_0030_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m10_final_0040_alaric",
+    template_name="DX_m10_final_0040_alaric",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m10_final_0050_alaric",
+    template_name="DX_m10_final_0050_alaric",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m10_final_0060_trent",
+    template_name="DX_m10_final_0060_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m10_final_0070_alaric",
+    template_name="DX_m10_final_0070_alaric",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m10_final_0080_trent",
+    template_name="DX_m10_final_0080_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m10_final_0090_trent",
+    template_name="DX_m10_final_0090_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m10_final_0100_alaric",
+    template_name="DX_m10_final_0100_alaric",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m10_final_0105_alaric",
+    template_name="DX_m10_final_0105_alaric",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m10_final_0110_trent",
+    template_name="DX_m10_final_0110_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m10_final_0120_alaric",
+    template_name="DX_m10_final_0120_alaric",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m10_final_0130_trent",
+    template_name="DX_m10_final_0130_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m10_final_0140_trent",
+    template_name="DX_m10_final_0140_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m10_final_0200_edison",
+    template_name="DX_m10_final_0200_edison",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m10_final_0210_juni",
+    template_name="DX_m10_final_0210_juni",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m10_final_0220_edison",
+    template_name="DX_m10_final_0220_edison",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m10_final_0230_juni",
+    template_name="DX_m10_final_0230_juni",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m10_final_0240_edison",
+    template_name="DX_m10_final_0240_edison",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+
+	,
+
+	{
+    entity_name="automarker_default_point",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_dbg",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.88, 2.89, -1.80 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_dbg_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.27, 1.80, -0.40 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_ku_bship_bar",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, -0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_trent_talk",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.81, 0.00, 10.78 },
+        orient={ 
+            { -1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { -0.0000000,0.0000000,-1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_alaric_chair",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.08, 0.00, 12.20 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_alaric_talk",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.11, 0.00, 12.11 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_trent_init",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.66, 0.00, 4.35 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_start",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.72, 1.67, 6.86 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_start_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.27, 2.58, 10.01 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_start_focus2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.27, 1.52, 10.01 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_start2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.72, 2.18, 6.89 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_trent_walkin",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.47, 1.52, 12.07 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_trent_walkin_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.03, 1.65, 10.44 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_alaric_head_top",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.92, 1.53, 11.82 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_alaric",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.27, 1.52, 10.98 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_alaric_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.17, 1.12, 12.03 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_alaric_light",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.03, 1.75, 9.81 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_trent_light",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.19, 1.75, 12.57 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_alaric_look_front",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.20, 1.30, 11.12 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_alaric_look_side",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.64, 1.30, 11.18 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_trent_look_front",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.13, 1.69, 11.64 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_trent_look_side",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.61, 1.81, 11.70 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_edison_talk",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.30, 0.00, 1.10 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_junko_talk",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.30, 0.00, -0.14 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_edison_chair",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.34, 0.00, 1.16 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_junko_chair",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.32, 0.00, -0.23 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_second",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.07, 1.77, 2.07 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_second_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.85, 1.32, 10.01 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_second2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.28, 1.65, 0.36 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_second_focus2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.16, 1.10, 0.98 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_edison_front",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.05, 1.27, 0.81 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_junko_front",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.05, 1.23, 0.22 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_edison_look_out",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.29, 1.27, -0.26 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_junko",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.08, 1.30, 0.77 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_junko_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.35, 1.03, -0.14 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_edison",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.22, 1.18, -0.12 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_edison_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.51, 1.15, 1.23 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="cam_dbg",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ -0.88, 2.89, -1.80 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=30,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+,
+{
+    entity_name="cam_start",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ 1.72, 1.67, 6.86 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=30,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+,
+{
+    entity_name="cam_alaric",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ -0.27, 1.52, 10.98 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=19,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+,
+{
+    entity_name="cam_trent_walkin",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ -0.47, 1.52, 12.07 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=22,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+,
+{
+    entity_name="cam_second",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ 0.07, 1.77, 2.07 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=30,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+,
+{
+    entity_name="cam_junko",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ 1.08, 1.30, 0.77 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=17,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+,
+{
+    entity_name="cam_edison",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ 1.22, 1.18, -0.12 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=17,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+,
+{
+    entity_name="LIGHT_ROOMA",
+    type=LIGHT,
+    template_name="",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    spatialprops={
+        pos={ -0.19, 1.75, 12.57 },
+        orient={
+            {1,0,0},
+            {0,1,0},
+            {0,0,1}
+        }
+    },
+    lightprops={
+        on=Y,
+        color={
+            255,
+            255,
+            255
+        },
+        diffuse={
+            0.3, 0.35, 0.3
+        },
+        specular={
+            0,
+            0,
+            0
+        },
+        ambient={
+            0, 0, 0
+        },
+        direction={
+            0, 0, -1
+        },
+        range=30,
+        cutoff=90,
+        type=L_POINT,
+        theta=90,
+        atten={
+            1,
+            0,
+            0.003
+        }
+    }
+}
+,
+{
+    entity_name="LIGHT_ROOMA1",
+    type=LIGHT,
+    template_name="",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    spatialprops={
+        pos={ -1.03, 1.75, 9.81 },
+        orient={
+            {1,0,0},
+            {0,1,0},
+            {0,0,1}
+        }
+    },
+    lightprops={
+        on=Y,
+        color={
+            255,
+            255,
+            255
+        },
+        diffuse={
+            0.45, 0.35, 0.35
+        },
+        specular={
+            0,
+            0,
+            0
+        },
+        ambient={
+            0, 0, 0
+        },
+        direction={
+            0, 0, 1
+        },
+        range=30,
+        cutoff=90,
+        type=L_POINT,
+        theta=90,
+        atten={
+            1,
+            0,
+            0.003
+        }
+    }
+}
+,
+{
+    entity_name="Char_alaric",
+    type=DEFORMABLE,
+    template_name="alaric",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1.11, 0.00, 12.11
+        },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 }, 
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    compoundprops={
+        floor_height=0
+    },
+    userprops={
+        Actor="alaric",
+        category="Character"
+    }
+}
+,
+{
+    entity_name="char_ik_Char_alaric_head_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="char_ik_Char_alaric_eye_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="Char_trent",
+    type=DEFORMABLE,
+    template_name="trent",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -0.66, 0.00, 4.35
+        },
+        orient={ 
+            { -1.0000000,0.0000000,0.0000000 }, 
+            { 0.0000000,1.0000000,0.0000000 },
+            { -0.0000000,0.0000000,-1.0000000 }
+         }
+    },
+    compoundprops={
+        floor_height=0
+    },
+    userprops={
+        Actor="Player",
+        category="Character"
+    }
+}
+,
+{
+    entity_name="char_ik_Char_trent_head_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="char_ik_Char_trent_eye_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="Char_edison",
+    type=DEFORMABLE,
+    template_name="edison_trent",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            2.30, 0.00, 1.10
+        },
+        orient={ 
+            { 0.7071068,-0.0000000,-0.7071068 }, 
+            { 0.0000000,1.0000000,-0.0000000 },
+            { 0.7071068,0.0000000,0.7071068 }
+         }
+    },
+    compoundprops={
+        floor_height=0
+    },
+    userprops={
+        Actor="edison",
+        category="Character"
+    }
+}
+,
+{
+    entity_name="char_ik_Char_edison_head_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="char_ik_Char_edison_eye_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="Char_juni",
+    type=DEFORMABLE,
+    template_name="junko_zane",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            2.30, 0.00, -0.14
+        },
+        orient={ 
+            { -0.7071068,-0.0000000,-0.7071068 }, 
+            { 0.0000000,1.0000000,-0.0000000 },
+            { 0.7071068,0.0000000,-0.7071068 }
+         }
+    },
+    compoundprops={
+        floor_height=0
+    },
+    userprops={
+        Actor="juni",
+        category="Character"
+    }
+}
+,
+{
+    entity_name="char_ik_Char_juni_head_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="char_ik_Char_juni_eye_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="charpoint_trent_init",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.66, 1.65, 4.35 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="charpoint_trent_talk",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.81, 1.65, 10.78 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="charpoint_alaric_talk",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.11, 1.25, 12.11 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="charpoint_edison_talk",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.30, 1.25, 1.10 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="charpoint_junko_talk",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.30, 1.25, -0.14 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+}
+
+events={
+
+    {
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_dbg",
+        "automarker_cam_dbg_focus"
+    },
+    {
+        duration=1000, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_start",
+        "automarker_cam_start_focus"
+    },
+    {
+        duration=1000, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_alaric",
+        "automarker_cam_alaric_focus"
+    },
+    {
+        duration=1000, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_trent_walkin",
+        "automarker_cam_trent_walkin_focus"
+    },
+    {
+        duration=1000, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_second",
+        "automarker_cam_second_focus"
+    },
+    {
+        duration=1000, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_junko",
+        "automarker_cam_junko_focus"
+    },
+    {
+        duration=1000, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_edison",
+        "automarker_cam_edison_focus"
+    },
+    {
+        duration=1000, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_head_ik",
+        "automarker_alaric_head_top"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_eye_ik",
+        "charpoint_alaric_talk"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_alaric_head_ik",
+        "charpoint_trent_init"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_alaric_eye_ik",
+        "charpoint_trent_init"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_edison_head_ik",
+        "automarker_junko_front"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_edison_eye_ik",
+        "charpoint_junko_talk"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_juni_head_ik",
+        "automarker_edison_front"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_juni_eye_ik",
+        "charpoint_edison_talk"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    0,
+    START_IK,
+    {
+        "Char_alaric",
+        "char_ik_Char_alaric_head_ik"
+    },
+    {
+        duration=1000,
+        end_effector="Body_Head", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    0,
+    START_IK,
+    {
+        "Char_alaric",
+        "char_ik_Char_alaric_eye_ik"
+    },
+    {
+        duration=1000,
+        end_effector="Eye IK Left", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    0,
+    START_IK,
+    {
+        "Char_trent",
+        "char_ik_Char_trent_head_ik"
+    },
+    {
+        duration=93.37800000000001,
+        end_effector="Body_Head", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    0,
+    START_IK,
+    {
+        "Char_trent",
+        "char_ik_Char_trent_eye_ik"
+    },
+    {
+        duration=93.37800000000001,
+        end_effector="Eye IK Left", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    0,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_MLBODY_CHRF_IDLE_000LV_XA_06",
+     duration=100, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   
+     }
+}
+,
+{
+    2,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_MLBODY_CHRF_CHRB_TRNS_000LV_XA_02",
+     duration=100, time_scale=0.6, start_time=0, weight=1, heading=-1
+       , trans_time=0.5 
+     }
+}
+,
+{
+    6,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+     duration=100, time_scale=0.8, start_time=0, weight=1, heading=-1
+     , event_flags=2   
+     }
+}
+,
+{
+    2.5,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_WLKG_000LV_XA_01",
+     duration=100, time_scale=0.8, start_time=0, weight=1, heading=-1
+     , event_flags=2   
+     }
+}
+,
+{
+    3,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_alaric_head_ik",
+        "charpoint_trent_talk"
+    },
+    {
+        duration=6,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    3,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_alaric_eye_ik",
+        "charpoint_trent_talk"
+    },
+    {
+        duration=6,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    0,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_start"
+    }
+}
+,
+{
+    0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "cam_start",
+        "automarker_cam_start2"
+    },
+    {
+        duration=7,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "automarker_cam_start_focus",
+        "automarker_cam_start_focus2"
+    },
+    {
+        duration=7,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    9,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_trent_walkin"
+    }
+}
+,
+{
+    9,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_WALK_STND_TRNS_000LV_XA_02",
+     duration=10, time_scale=0.8, start_time=0.9, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    11,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
+     duration=10, time_scale=0.7, start_time=0, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    9.25,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s075x_0401_trent", duration=10, time_scale=0.82, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    9.25,
+    START_SOUND,
+    {
+        "DX_m10_final_0010_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    12.862,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_alaric"
+    }
+}
+,
+{
+    14.862,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_alaric_head_ik",
+        "automarker_alaric_look_front"
+    },
+    {
+        duration=2,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    14.862,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_alaric_eye_ik",
+        "automarker_alaric_look_side"
+    },
+    {
+        duration=0.7,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    12.862,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_dx_s015x_0502_walker", duration=10, start_time=0.5, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    12.862,
+    START_SOUND,
+    {
+        "DX_m10_final_0020_alaric"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    17.458,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_trent_walkin"
+    }
+}
+,
+{
+    17.458,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s045b_1801_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    17.458,
+    START_SOUND,
+    {
+        "DX_m10_final_0030_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    19.438,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_alaric"
+    }
+}
+,
+{
+    20.438,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_alaric_head_ik",
+        "charpoint_trent_talk"
+    },
+    {
+        duration=2.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    20.438,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_alaric_eye_ik",
+        "charpoint_trent_talk"
+    },
+    {
+        duration=1.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    29.438,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_alaric_head_ik",
+        "automarker_alaric_look_front"
+    },
+    {
+        duration=2,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    29.438,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_alaric_eye_ik",
+        "automarker_alaric_look_side"
+    },
+    {
+        duration=0.7,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    31.438,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_alaric_head_ik",
+        "charpoint_trent_talk"
+    },
+    {
+        duration=2.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    31.438,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_alaric_eye_ik",
+        "charpoint_trent_talk"
+    },
+    {
+        duration=1.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    22.438,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_MLBODY_CHRB_CONV_RHNDUP_TRNS_000LV_XA_02",
+     duration=100, time_scale=0.6, start_time=0, weight=1, heading=-1
+       , trans_time=0.5 
+     }
+}
+,
+{
+    24.438,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_MLBODY_CHRB_CONV_RHND_CASL_000LV_xa_04",
+     duration=100, time_scale=0.6, start_time=0, weight=1, heading=-1
+     , event_flags=2   , trans_time=1 
+     }
+}
+,
+{
+    28.438,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_MLBODY_CHRB_CONV_RHNDDN_TRNS_000LV_XA_02",
+     duration=100, time_scale=0.6, start_time=0, weight=1, heading=-1
+       , trans_time=0.5 
+     }
+}
+,
+{
+    19.438,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_dx_s015x_0502_walker", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    21.938,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_dx_s015x_0502_walker", duration=10, time_scale=1, trans_time=0.5,  weight=1, heading=-1}
+}
+,
+{
+    24.438,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_dx_s015x_0502_walker", duration=10, time_scale=1, trans_time=0.5,  weight=1, heading=-1}
+}
+,
+{
+    19.438,
+    START_SOUND,
+    {
+        "DX_m10_final_0040_alaric"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    29.554000000000002,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_dx_s015x_0502_walker", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    32.054,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_dx_s015x_0502_walker", duration=10, time_scale=1, trans_time=0.5,  weight=1, heading=-1}
+}
+,
+{
+    29.554000000000002,
+    START_SOUND,
+    {
+        "DX_m10_final_0050_alaric"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    37.222,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_trent_walkin"
+    }
+}
+,
+{
+    39.222,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_FSTHIPB_RLEASE_000LV_XA_01",
+     duration=10, time_scale=0.7, start_time=0, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    37.222,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s011x_0101_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    38.222,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s011x_0101_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    37.222,
+    START_SOUND,
+    {
+        "DX_m10_final_0060_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    43.066,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_alaric"
+    }
+}
+,
+{
+    43.066,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_dx_s064x_1101_king", duration=10, start_time=0, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    43.666000000000004,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_MLHEAD_BASEPOSE_000LV_02_01", duration=10, start_time=0, time_scale=1, trans_time=1,  weight=1, heading=-1}
+}
+,
+{
+    43.066,
+    START_SOUND,
+    {
+        "DX_m10_final_0070_alaric"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    44.422000000000004,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_trent_walkin"
+    }
+}
+,
+{
+    44.422000000000004,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_GESTR_180LV_XA_02",
+     duration=10, time_scale=0.5, start_time=0, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    44.422000000000004,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s020x_1601_trent", duration=10, time_scale=0.9, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    44.422000000000004,
+    START_SOUND,
+    {
+        "DX_m10_final_0080_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    50.514,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_CROSS_ARMS_000LV_xa_06",
+     duration=10, time_scale=0.7, start_time=0, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    56.514,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_head_ik",
+        "automarker_trent_look_front"
+    },
+    {
+        duration=2,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    56.514,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_eye_ik",
+        "automarker_trent_look_side"
+    },
+    {
+        duration=0.7,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    58.514,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_head_ik",
+        "automarker_alaric_head_top"
+    },
+    {
+        duration=2.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    58.514,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_eye_ik",
+        "charpoint_alaric_talk"
+    },
+    {
+        duration=1.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    51.514,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s071b_0102_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    55.914,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s071b_0102_trent", duration=10, time_scale=1, trans_time=0.6,  weight=1, heading=-1}
+}
+,
+{
+    51.514,
+    START_SOUND,
+    {
+        "DX_m10_final_0090_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    62.014,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_alaric"
+    }
+}
+,
+{
+    62.014,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_MLBODY_CHRB_GESTR_NO_000LV_XA_03",
+     duration=10, time_scale=0.5, start_time=0, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    62.014,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_dx_s015x_0701_walker", duration=10, time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    63.714000000000006,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_dx_s015x_0701_walker", duration=10, time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    62.014,
+    START_SOUND,
+    {
+        "DX_m10_final_0100_alaric"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    69.266,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+     duration=40, time_scale=0.5, start_time=0, weight=1, heading=-1
+     , event_flags=2   , trans_time=1 
+     }
+}
+,
+{
+    71.266,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_alaric_head_ik",
+        "automarker_alaric_look_front"
+    },
+    {
+        duration=2,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    71.266,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_alaric_eye_ik",
+        "automarker_alaric_look_side"
+    },
+    {
+        duration=1.3,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    71.266,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_dx_s015x_0701_walker", duration=10, start_time=2,time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    71.266,
+    START_SOUND,
+    {
+        "DX_m10_final_0105_alaric"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    76.174,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_trent_walkin"
+    }
+}
+,
+{
+    77.174,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_UNCRSS_ARMS_000LV_XA_02",
+     duration=10, time_scale=0.4, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    76.174,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s045a_0201_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    77.674,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s038x_3101_trent", duration=10, time_scale=1, trans_time=1,  weight=1, heading=-1}
+}
+,
+{
+    76.174,
+    START_SOUND,
+    {
+        "DX_m10_final_0110_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    81.15400000000001,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_alaric"
+    }
+}
+,
+{
+    81.15400000000001,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_alaric_head_ik",
+        "charpoint_trent_talk"
+    },
+    {
+        duration=1.3,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    81.15400000000001,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_alaric_eye_ik",
+        "charpoint_trent_talk"
+    },
+    {
+        duration=0.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    81.15400000000001,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_dx_s068x_0201_walker", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    81.15400000000001,
+    START_SOUND,
+    {
+        "DX_m10_final_0120_alaric"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    83.01,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_trent_walkin"
+    }
+}
+,
+{
+    83.01,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
+     duration=10, time_scale=0.7, start_time=0, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    83.01,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s037b_0401_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    85.21000000000001,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s038x_4301_trent", duration=10, start_time=1.5, time_scale=1, trans_time=0.5,  weight=1, heading=-1}
+}
+,
+{
+    83.01,
+    START_SOUND,
+    {
+        "DX_m10_final_0130_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    90.14200000000001,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_alaric_head_ik",
+        "automarker_alaric_look_front"
+    },
+    {
+        duration=2,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    90.14200000000001,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_alaric_eye_ik",
+        "automarker_alaric_look_side"
+    },
+    {
+        duration=1.3,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    88.64200000000001,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_head_ik",
+        "automarker_trent_look_front"
+    },
+    {
+        duration=1.6,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    88.64200000000001,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_eye_ik",
+        "automarker_trent_look_side"
+    },
+    {
+        duration=0.7,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    91.14200000000001,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_head_ik",
+        "automarker_alaric_head_top"
+    },
+    {
+        duration=2.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    91.14200000000001,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_eye_ik",
+        "charpoint_alaric_talk"
+    },
+    {
+        duration=1.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    89.14200000000001,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s063x_0801_trent", duration=10, time_scale=0.9, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    89.14200000000001,
+    START_SOUND,
+    {
+        "DX_m10_final_0140_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    93.37800000000001,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_FSTHIPB_RLEASE_000LV_XA_01",
+     duration=10, time_scale=0.7, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    95.37800000000001,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_WALK_TRNS_180LV_XA_02",
+     duration=10, time_scale=0.73, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    98.97800000000001,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_WLKG_000LV_XA_01",
+     duration=10, time_scale=0.73, start_time=0, weight=1, heading=-1
+     , event_flags=2   
+     }
+}
+,
+{
+    93.37800000000001,
+    START_MOTION,
+    {"Char_edison"},
+    {animation="Sc_MLBODY_CHRF_LOOK_270LV_XA_01",
+     duration=100, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   
+     }
+}
+,
+{
+    93.37800000000001,
+    START_MOTION,
+    {"Char_juni"},
+    {animation="Sc_FMBODY_CHRB_IDLE_000LV_XA_06",
+     duration=100, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   
+     }
+}
+,
+{
+    93.87800000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOMA"
+    },
+    {
+        duration=0,
+        lightprops={
+            on = N
+        }
+        
+    }
+}
+,
+{
+    93.87800000000001,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOMA1"
+    },
+    {
+        duration=0,
+        lightprops={
+            on = N
+        }
+        
+    }
+}
+,
+{
+    93.87800000000001,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_edison"
+    }
+}
+,
+{
+    93.87800000000001,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_second"
+    }
+}
+,
+{
+    93.87800000000001,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "cam_second",
+        "automarker_cam_second2"
+    },
+    {
+        duration=12,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    93.87800000000001,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "automarker_cam_second_focus",
+        "automarker_cam_second_focus2"
+    },
+    {
+        duration=12,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    102.87800000000001,
+    START_IK,
+    {
+        "Char_juni",
+        "char_ik_Char_juni_head_ik"
+    },
+    {
+        duration=1000,
+        end_effector="Body_Head", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    102.87800000000001,
+    START_IK,
+    {
+        "Char_juni",
+        "char_ik_Char_juni_eye_ik"
+    },
+    {
+        duration=1000,
+        end_effector="Eye IK Left", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    104.87800000000001,
+    START_IK,
+    {
+        "Char_edison",
+        "char_ik_Char_edison_head_ik"
+    },
+    {
+        duration=1000,
+        end_effector="Body_Head", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    104.87800000000001,
+    START_IK,
+    {
+        "Char_edison",
+        "char_ik_Char_edison_eye_ik"
+    },
+    {
+        duration=1000,
+        end_effector="Eye IK Left", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    102.87800000000001,
+    START_MOTION,
+    {"Char_edison"},
+    {animation="Sc_MLBODY_CHRF_TWSTS_FROM_270LV_XA_02",
+     duration=100, time_scale=1, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    102.87800000000001,
+    START_MOTION,
+    {"Char_edison"},
+    {animation="Sc_dx_s070x_2301_trent", duration=10, start_time=1, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    102.87800000000001,
+    START_SOUND,
+    {
+        "DX_m10_final_0200_edison"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    106.61000000000001,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_junko"
+    }
+}
+,
+{
+    106.61000000000001,
+    START_MOTION,
+    {"Char_juni"},
+    {animation="Sc_dx_s009c_0301_juni", duration=10, start_time=0, time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    108.11000000000001,
+    START_MOTION,
+    {"Char_juni"},
+    {animation="Sc_dx_s026c_0401_juni", duration=10, start_time=1, time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    106.61000000000001,
+    START_SOUND,
+    {
+        "DX_m10_final_0210_juni"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    111.42200000000001,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_edison"
+    }
+}
+,
+{
+    113.42200000000001,
+    START_MOTION,
+    {"Char_edison"},
+    {animation="Sc_MLBODY_CHRF_CHRB_TRNS_000LV_XA_02",
+     duration=100, time_scale=0.7, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    111.42200000000001,
+    START_MOTION,
+    {"Char_edison"},
+    {animation="Sc_dx_s071b_0101_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    114.42200000000001,
+    START_MOTION,
+    {"Char_edison"},
+    {animation="Sc_dx_s045b_1401_trent", duration=10, start_time=2, time_scale=1, trans_time=0.6,  weight=1, heading=-1}
+}
+,
+{
+    111.42200000000001,
+    START_SOUND,
+    {
+        "DX_m10_final_0220_edison"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    117.84200000000001,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_junko"
+    }
+}
+,
+{
+    117.84200000000001,
+    START_MOTION,
+    {"Char_juni"},
+    {animation="Sc_FMBODY_CHRB_CONV_LHND_CASL_000LV_xa_03",
+     duration=100, time_scale=0.6, start_time=0, weight=1, heading=-1
+     , event_flags=2   , trans_time=1 
+     }
+}
+,
+{
+    119.84200000000001,
+    START_MOTION,
+    {"Char_juni"},
+    {animation="Sc_FMBODY_CHRB_CONV_LHNDDN_TRNS_000LV_XA_01",
+     duration=100, time_scale=0.6, start_time=0, weight=1, heading=-1
+       , trans_time=0.5 
+     }
+}
+,
+{
+    117.84200000000001,
+    START_MOTION,
+    {"Char_juni"},
+    {animation="Sc_dx_s010x_2802_juni", duration=10, start_time=0.5, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    117.84200000000001,
+    START_SOUND,
+    {
+        "DX_m10_final_0230_juni"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    122.01600000000002,
+    START_IK,
+    {
+        "Char_edison",
+        "char_ik_Char_edison_head_ik"
+    },
+    {
+        duration=1000,
+        end_effector="Body_Head", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    122.01600000000002,
+    START_IK,
+    {
+        "Char_edison",
+        "char_ik_Char_edison_eye_ik"
+    },
+    {
+        duration=1000,
+        end_effector="Eye IK Left", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    122.01600000000002,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_edison"
+    }
+}
+,
+{
+    125.01600000000002,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_edison_head_ik",
+        "automarker_edison_look_out"
+    },
+    {
+        duration=2,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    125.01600000000002,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_edison_eye_ik",
+        "automarker_edison_look_out"
+    },
+    {
+        duration=0.7,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    123.01600000000002,
+    START_MOTION,
+    {"Char_edison"},
+    {animation="Sc_MLBODY_CHRB_CHRF_TRNS_000LV_XA_02",
+     duration=100, time_scale=1, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    122.01600000000002,
+    START_MOTION,
+    {"Char_edison"},
+    {animation="Sc_dx_s006x_0201_trent", duration=10, start_time=0.4, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    125.01600000000002,
+    START_MOTION,
+    {"Char_edison"},
+    {animation="Sc_dx_s055a_0101_trent", duration=10, start_time=0.35, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    122.01600000000002,
+    START_SOUND,
+    {
+        "DX_m10_final_0240_edison"
+    },
+    {
+        duration=20
+    }
+}
+
+}
