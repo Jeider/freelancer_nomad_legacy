@@ -118,7 +118,7 @@ class EdisonTrent(Actor):
     # STEOS_PITCH = -1
     # STEOS_SPEED = 1.45
     STEOS_ID = 210
-    STEOS_PITCH = -0.5
+    STEOS_PITCH = 0
     STEOS_SPEED = 1.13
 
 
@@ -196,6 +196,7 @@ class Rockford(Actor):
     TYPE = ACTOR_MALE
     NAME = 'rockford'
     COMM_APPEARANCE = 'li_rockford_head, sh_male1_body, comm_ge_generic1'
+    CUTSCENE_APPEARANCE = 'rockford'
     STEOS_ID = 13
     STEOS_PITCH = 0.2
     STEOS_SPEED = 1.05

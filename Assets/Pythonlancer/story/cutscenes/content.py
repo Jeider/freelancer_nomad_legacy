@@ -38,6 +38,14 @@ FEMALE_ANIMS = {
     IDLE: 'Sc_FMBODY_STND_IDLE_000LV_xa_05',
 }
 
+X_AXIS = 'X_AXIS'
+Y_AXIS = 'Y_AXIS'
+Z_AXIS = 'Z_AXIS'
+
+NEG_X_AXIS = 'NEG_X_AXIS'
+NEG_Y_AXIS = 'NEG_Y_AXIS'
+NEG_Z_AXIS = 'NEG_Z_AXIS'
+
 HEAD_SIT_FEMALE = 1.25  # 1.1 ??
 HEAD_SIT_MALE = 1.25
 HEAD_STAND_FEMALE = 1.55
@@ -203,6 +211,9 @@ class MoveEvent(Event):
         self.adjust_pos = adjust_pos
         self.rotate = (0, rotate_y, 0)
 
+    def set_duration(self, duration):
+        self.duration = duration
+
     def get_move_rules(self):
         rules = []
         if self.adjust_pos:
@@ -272,7 +283,7 @@ class IkEvent(Event):
     TEMPLATE = 'ik'
 
     def __init__(self, char_name, target_name, duration, end_effector, transition_duration=1,
-                 target_part='',  target_type=TARGET_ROOT, *args, **kwargs):
+                 target_part='', up=NEG_Y_AXIS, front=Z_AXIS, target_type=TARGET_ROOT, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.char_name = char_name
         self.target_name = target_name
@@ -281,6 +292,8 @@ class IkEvent(Event):
         self.transition_duration = transition_duration
         self.target_part = target_part
         self.target_type = target_type
+        self.up = up
+        self.front = front
 
         if self.target_type not in TARGET_TYPES:
             raise Exception(f'IK for {self.char_name} has invalid target_type')
@@ -303,6 +316,8 @@ class IkEvent(Event):
             'end_effector': self.end_effector,
             'target_part': self.target_part,
             'target_type': self.target_type,
+            'up': self.up,
+            'front': self.front,
         }
 
 
@@ -802,18 +817,18 @@ class LookAtCamera(Camera):
     def move_cam(self, group, index, duration, time_delay=0, time_append=0, smooth=True):
         target = f'{self.name}{index}'
         target_obj = self.root.get_automarker(target)
-        MoveEvent(root=self.root, group=group,
-                  object_name=self.name, target_name=target_obj.name,
-                  duration=duration, smooth=smooth,
-                  time_delay=time_delay, time_append=time_append)
+        return MoveEvent(root=self.root, group=group,
+                         object_name=self.name, target_name=target_obj.name,
+                         duration=duration, smooth=smooth,
+                         time_delay=time_delay, time_append=time_append)
 
     def move_focus(self, group, index, duration, time_delay=0, time_append=0, smooth=True):
         target = f'{self.focus_name}{index}'
         target_obj = self.root.get_automarker(target)
-        MoveEvent(root=self.root, group=group,
-                  object_name=self.focus.name, target_name=target_obj.name,
-                  duration=duration, smooth=smooth,
-                  time_delay=time_delay, time_append=time_append)
+        return MoveEvent(root=self.root, group=group,
+                         object_name=self.focus.name, target_name=target_obj.name,
+                         duration=duration, smooth=smooth,
+                         time_delay=time_delay, time_append=time_append)
 
 
 class Music(Entity):

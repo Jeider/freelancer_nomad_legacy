@@ -255,7 +255,7 @@ def generate_cutscene_voices():
     script_manager = ScriptManager()
     # import pdb;pdb.set_trace()
 
-    msn = script_manager.get_mission_by_index(10)
+    msn = script_manager.get_mission_by_index(11)
 
     for cutscene in msn.get_cutscenes():
         audio_folder.AudioFolder.generate_cutscene_sounds(cutscene)
@@ -374,10 +374,10 @@ def meta():
     script_manager = ScriptManager()
     meta_manager = LipSyncManager(tpl_manager=tpl_manager)
 
-    msn = script_manager.get_mission_by_index(10)
+    msn = script_manager.get_mission_by_index(11)
 
-    # meta_manager.edit_cutscene(msn, 'final')
-    meta_manager.edit_sound_from_scene(msn, 'final', 210)
+    meta_manager.edit_cutscene(msn, 'ambush')
+    # meta_manager.edit_sound_from_scene(msn, 'final', 210)
 
     print('meta done')
 
@@ -385,8 +385,8 @@ def meta():
 def scene():
     tpl_manager = JinjaTemplateManager()
     script_manager = ScriptManager()
-    msn = script_manager.get_mission_by_index(10)
-    cutscene = msn.get_cutscene_by_code('rescued')
+    msn = script_manager.get_mission_by_index(11)
+    cutscene = msn.get_cutscene_by_code('ambush')
     cutscene.get_thorn(tpl_manager).sync_content()
     # cutscene.get_decision_thorn(tpl_manager).sync_content()
     # cutscene.get_accept_thorn(tpl_manager).sync_content()
