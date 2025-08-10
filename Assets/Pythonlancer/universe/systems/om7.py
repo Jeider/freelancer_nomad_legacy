@@ -135,7 +135,7 @@ class Om7KusariStation(Om7Member, Om7Kusari, main_objects.GasMiningStation):
     REL_APPEND = 2000
     ARCHETYPE = 'smallstation1_old'
     LOADOUT = 'smallstation_ku'
-    INTERIOR_CLASS = interior.StationInterior
+    INTERIOR_CLASS = interior.HarajukuInterior
     DEALERS = dealers.KusariCivilianDealers
     RU_NAME = 'Станция Харадзюку'
 

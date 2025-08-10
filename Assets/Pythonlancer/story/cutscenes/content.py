@@ -496,6 +496,37 @@ class ConnectHardpointEvent(Event):
         self.duration = duration
 
 
+class AttachEvent(Event):
+    TEMPLATE = 'attach'
+
+    def __init__(self, target_name, parent_name, duration,
+                 target_part, target_type, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.target_name = target_name
+        self.parent_name = parent_name
+        self.duration = duration
+        self.target_part = target_part
+        self.target_type = target_type
+
+        if self.target_type not in TARGET_TYPES:
+            raise Exception(f'Attach event for {self.parent_name} has invalid target_type')
+
+        if self.target_type != TARGET_ROOT and self.target_part == '':
+            raise Exception(f'Attach event for {self.parent_name} requires defined target_part')
+
+    def get_params(self):
+        return {
+            'target_name': self.target_name,
+            'parent_name': self.parent_name,
+            'duration': self.duration,
+            'target_part': self.target_part,
+            'target_type': self.target_type,
+        }
+
+    def set_duration(self, duration):
+        self.duration = duration
+
+
 class StartSoundEvent(Event):
     TEMPLATE = 'start_sound'
 

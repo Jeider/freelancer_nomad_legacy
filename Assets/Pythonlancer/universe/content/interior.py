@@ -471,6 +471,15 @@ class StationInterior(GenericInterior):
     DEALER_PLACEMENTS_TEMPLATE = DECK_DEALERS_TEMPLATE
 
 
+class HarajukuInterior(GenericInterior):
+    START_ROOM = DECK
+    ROOMS = {
+        DECK: ROOM_STATION_DECK,
+        BAR: 'harajuku_bar',
+    }
+    DEALER_PLACEMENTS_TEMPLATE = DECK_DEALERS_TEMPLATE
+
+
 class StationShipdealerInterior(GenericInterior):
     START_ROOM = DECK
     ROOMS = {

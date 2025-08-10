@@ -29,6 +29,8 @@ class Msn11AmbushScene(Scene):
     def action(self):
         main_group = self.get_group(MAIN)
 
+        lgt = 21
+
         # CAMERAS
 
         cam_dbg = LookAtCamera(root=self, name='cam_dbg', fov=30)
@@ -45,32 +47,46 @@ class Msn11AmbushScene(Scene):
 
         # PROPS
 
-        cig = Cigarette(root=self, name='rock_cig', init_point='mrk_offscreen', light_group=0)
-        Ashtray(root=self, name='rock_ash', init_point='ashtray_2', light_group=0)
-        Glass(root=self, name='glass1', init_point='glass1', light_group=0)
-        Glass(root=self, name='glass2', init_point='glass2', light_group=0)
-        BottleWine2(root=self, name='bottle_wine_1', init_point='bottle_wine_1', light_group=0)
+        cig = Cigarette(root=self, name='rock_cig', init_point='mrk_offscreen', light_group=lgt)
+        Ashtray(root=self, name='rock_ash', init_point='ashtray_2', light_group=lgt)
+        Glass(root=self, name='glass1', init_point='glass1', light_group=lgt)
+        Glass(root=self, name='glass2', init_point='glass2', light_group=lgt)
+        BottleWine2(root=self, name='bottle_wine_1', init_point='bottle_wine_1', light_group=lgt)
 
-        lt_room1 = Light(root=self, name='ROOMA', point_name='light1', light_group=0, diffuse=[0.8, 0.7, 0.3],
+        cig_fx1 = Alchemy(root=self, name='cig_fx1', particles='rtc_sydsmoke', point_name='mrk_offscreen')
+        cig_fx1.start(group=BG, duration=5000)
+
+        cig_fx2 = Alchemy(root=self, name='cig_fx2', particles='rtc_cigaretteglow', point_name='mrk_offscreen')
+        cig_fx2.start(group=BG, duration=5000)
+
+        AttachEvent(root=self, group=BG, target_name=cig_fx1.name, parent_name=cig.name,
+                    duration=1000, target_type=TARGET_HARDPOINT, target_part="hp_cigarette_tip_smoke")
+
+        AttachEvent(root=self, group=BG, target_name=cig_fx2.name, parent_name=cig.name,
+                    duration=1000, target_type=TARGET_HARDPOINT, target_part="hp_cigarette_tip_smoke")
+
+
+        lt_room1 = Light(root=self, name='ROOMA', point_name='light1', light_group=lgt, diffuse=[0.8, 0.7, 0.3],
                          ambient=[0, 0, 0], direction=[0, 0, -1], light_type=L_POINT, range=15)
 
-        lt_room2 = Light(root=self, name='ROOMV', point_name='light2', light_group=0, diffuse=[0.3, 0.0, 0.0],
+        lt_room2 = Light(root=self, name='ROOMV', point_name='light2', light_group=lgt, diffuse=[0.25, 0.0, 0.0],
                          ambient=[0, 0, 0], direction=[0, 0, -1], light_type=L_POINT, range=15)
 
-        lt_room3 = Light(root=self, name='ROOMX', point_name='light3', light_group=0, diffuse=[0.6, 0.5, 0.2],
+        lt_room3 = Light(root=self, name='ROOMX', point_name='light3', light_group=lgt, diffuse=[0.6, 0.5, 0.5],
                          ambient=[0, 0, 0], direction=[0, 0, -1], light_type=L_POINT, range=15, on=False)
+
+        lt_room4 = Light(root=self, name='ROOMX2', point_name='light4', light_group=lgt, diffuse=[0.4, 0.3, 0.2],
+                         ambient=[0, 0, 0], direction=[0, 0, -1], light_type=L_POINT, range=10, on=False)
 
         # CHARACTERS
 
-        rockford = Character(root=self, actor=actors.Rockford, light_group=0, init_point='rockford_talk', rotate_y=45)
-        trent = Character(root=self, actor=actors.Trent, light_group=0, init_point='trent_init', rotate_y=-90)
-        kim = Character(root=self, actor=actors.Kim, light_group=0, init_point='kim_init', rotate_y=0)
+        rockford = Character(root=self, actor=actors.Rockford, light_group=lgt, init_point='rockford_talk', rotate_y=45)
+        trent = Character(root=self, actor=actors.Trent, light_group=lgt, init_point='trent_init', rotate_y=-90)
+        kim = Character(root=self, actor=actors.Kim, light_group=lgt, init_point='kim_init', rotate_y=0)
 
         cig_conn = ConnectHardpointEvent(root=self, group=BG, target_name=cig.name, parent_name=rockford.name,
                                          duration=1000, target_hardpoint="hprightconnect_cigarette2",
                                          parent_hardpoint="hprightconnect")
-
-
 
         # MARKERS
 
@@ -361,9 +377,12 @@ class Msn11AmbushScene(Scene):
 
         main_group.append_time(2)
 
+        lt_room4.turn_on(group=MAIN)
 
         cam_trent_damn.set(group=MAIN)
         cam_trent_damn.move_cam(group=MAIN, index=2, duration=10, smooth=True)
+
+
 
         trent.motion(group=MAIN, duration=100, anim=Male.Sc_MLBODY_CHRF_GRABR_HEAD_RLEASE_000LV_XA_02, time_scale=0.85, time_delay=0)
 
@@ -378,6 +397,7 @@ class Msn11AmbushScene(Scene):
 
         main_group.append_time(1.2)
 
+        lt_room4.turn_off(group=MAIN)
         lt_room3.turn_on(group=MAIN)
         cam_trent_pda.set(group=MAIN)
         cam_trent_pda.move_cam(group=MAIN, index=2, duration=12, smooth=True)
