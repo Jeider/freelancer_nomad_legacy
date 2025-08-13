@@ -376,8 +376,8 @@ def meta():
 
     msn = script_manager.get_mission_by_index(11)
 
-    meta_manager.edit_cutscene(msn, 'ambush')
-    # meta_manager.edit_sound_from_scene(msn, 'final', 210)
+    # meta_manager.edit_cutscene(msn, 'drink')
+    meta_manager.edit_sound_from_scene(msn, 'drink', 40)
 
     print('meta done')
 
@@ -386,7 +386,7 @@ def scene():
     tpl_manager = JinjaTemplateManager()
     script_manager = ScriptManager()
     msn = script_manager.get_mission_by_index(11)
-    cutscene = msn.get_cutscene_by_code('ambush')
+    cutscene = msn.get_cutscene_by_code('drink')
     cutscene.get_thorn(tpl_manager).sync_content()
     # cutscene.get_decision_thorn(tpl_manager).sync_content()
     # cutscene.get_accept_thorn(tpl_manager).sync_content()
@@ -396,7 +396,6 @@ def scene():
 
 def dbg():
     pass
-
 
 
 ACTIONS = {
