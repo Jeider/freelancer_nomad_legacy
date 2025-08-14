@@ -377,7 +377,7 @@ def meta():
     msn = script_manager.get_mission_by_index(11)
 
     # meta_manager.edit_cutscene(msn, 'drink')
-    meta_manager.edit_sound_from_scene(msn, 'drink', 40)
+    meta_manager.edit_sound_from_scene(msn, 'drink', 250)
 
     print('meta done')
 
