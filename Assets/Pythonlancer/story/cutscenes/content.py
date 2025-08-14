@@ -669,17 +669,21 @@ class BottleWine(Prop):
 class Character(Compound):
     TEMPLATE = 'character'
 
-    def __init__(self, actor, floor_height=0,
+    def __init__(self, actor, floor_height=0, extra_ik_markers=None,
                  ik_start_point=None, *args, **kwargs):
         self.actor = actor
         name = f'Char_{self.actor.NAME}'
         super().__init__(name=name, *args, **kwargs)
         self.floor_height = floor_height
         self.animations = FEMALE_ANIMS if self.actor.is_female() else MALE_ANIMS
-        self.head_ik_name = f'char_ik_{self.name}_head_ik'
-        self.eye_ik_name = f'char_ik_{self.name}_eye_ik'
+        self.head_ik_name = self.get_ik_marker('head')
+        self.eye_ik_name = self.get_ik_marker('eye')
         self.ik_start_point = ik_start_point
+        self.extra_ik_markers = extra_ik_markers if extra_ik_markers else []
         self.init_char_points()
+
+    def get_ik_marker(self, ik_name):
+        return f'char_ik_{self.name}_{ik_name}_ik'
 
     def init_char_points(self):
         ik_position = [0, 0, 0]
@@ -706,6 +710,14 @@ class Character(Compound):
             point_name=temp_ik_point_name
         )
 
+        for ik_name in self.extra_ik_markers:
+            Marker(
+                root=self.root,
+                name=self.get_ik_marker(ik_name),
+                point_name=temp_ik_point_name
+            )
+
+
     def move_head_ik(self, group, target_name, immediately=False, **kwargs):
         event_class = MoveFastEvent if immediately else MoveEvent
         event_class(root=self.root, group=group,
@@ -718,6 +730,12 @@ class Character(Compound):
                    object_name=self.eye_ik_name, target_name=target_name,
                    **kwargs)
 
+    def move_ik(self, group, ik_marker, target_name, immediately=False, **kwargs):
+        event_class = MoveFastEvent if immediately else MoveEvent
+        event_class(root=self.root, group=group,
+                   object_name=self.get_ik_marker(ik_marker), target_name=target_name,
+                   **kwargs)
+
     def start_head_ik(self, group, **kwargs):
         return NeckIkEvent(root=self.root, group=group, char_name=self.name,
                            target_name=self.head_ik_name,
@@ -727,6 +745,12 @@ class Character(Compound):
         return EyeIkEvent(root=self.root, group=group, char_name=self.name,
                           target_name=self.eye_ik_name,
                           **kwargs)
+
+    def start_ik(self, group, ik_marker, **kwargs):
+        return IkEvent(root=self.root, group=group, char_name=self.name,
+                       target_name=self.get_ik_marker(ik_marker),
+                       **kwargs)
+
 
     def get_char_marker(self, point_name, y_offset):
         original_pos = self.root.get_point(point_name).position

@@ -1,4 +1,4 @@
-duration=1023.8
+duration=3073.2899999999995
 
 entities={
 	{
@@ -264,7 +264,7 @@ entities={
     type=MARKER,
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
     spatialprops={
-        pos={ 1.80, 2.32, -4.55 },
+        pos={ -1.32, 2.32, -4.55 },
         orient={ 
             { 1.0000000,0.0000000,0.0000000 },
             { 0.0000000,1.0000000,0.0000000 },
@@ -278,7 +278,7 @@ entities={
     type=MARKER,
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
     spatialprops={
-        pos={ -0.66, 1.23, -1.96 },
+        pos={ 1.06, 1.23, -1.96 },
         orient={ 
             { 1.0000000,0.0000000,0.0000000 },
             { 0.0000000,1.0000000,0.0000000 },
@@ -293,216 +293,6 @@ entities={
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
     spatialprops={
         pos={ 0.00, 0.00, -0.00 },
-        orient={ 
-            { 1.0000000,0.0000000,0.0000000 },
-            { 0.0000000,1.0000000,0.0000000 },
-            { 0.0000000,0.0000000,1.0000000 }
-         }
-    }
-}
-,
-{
-    entity_name="automarker_trent_talk",
-    type=MARKER,
-    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
-    spatialprops={
-        pos={ -0.81, 0.00, 10.78 },
-        orient={ 
-            { -1.0000000,0.0000000,0.0000000 },
-            { 0.0000000,1.0000000,0.0000000 },
-            { -0.0000000,0.0000000,-1.0000000 }
-         }
-    }
-}
-,
-{
-    entity_name="automarker_cam_trent_walkin",
-    type=MARKER,
-    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
-    spatialprops={
-        pos={ -0.47, 1.52, 12.07 },
-        orient={ 
-            { 1.0000000,0.0000000,0.0000000 },
-            { 0.0000000,1.0000000,0.0000000 },
-            { 0.0000000,0.0000000,1.0000000 }
-         }
-    }
-}
-,
-{
-    entity_name="automarker_cam_trent_walkin_focus",
-    type=MARKER,
-    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
-    spatialprops={
-        pos={ -1.03, 1.65, 10.44 },
-        orient={ 
-            { 1.0000000,0.0000000,0.0000000 },
-            { 0.0000000,1.0000000,0.0000000 },
-            { 0.0000000,0.0000000,1.0000000 }
-         }
-    }
-}
-,
-{
-    entity_name="automarker_trent_look_front",
-    type=MARKER,
-    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
-    spatialprops={
-        pos={ -1.13, 1.69, 11.64 },
-        orient={ 
-            { 1.0000000,0.0000000,0.0000000 },
-            { 0.0000000,1.0000000,0.0000000 },
-            { 0.0000000,0.0000000,1.0000000 }
-         }
-    }
-}
-,
-{
-    entity_name="automarker_trent_look_side",
-    type=MARKER,
-    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
-    spatialprops={
-        pos={ -1.61, 1.81, 11.70 },
-        orient={ 
-            { 1.0000000,0.0000000,0.0000000 },
-            { 0.0000000,1.0000000,0.0000000 },
-            { 0.0000000,0.0000000,1.0000000 }
-         }
-    }
-}
-,
-{
-    entity_name="automarker_edison_talk",
-    type=MARKER,
-    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
-    spatialprops={
-        pos={ 2.30, 0.00, 1.10 },
-        orient={ 
-            { 1.0000000,0.0000000,0.0000000 },
-            { 0.0000000,1.0000000,0.0000000 },
-            { 0.0000000,0.0000000,1.0000000 }
-         }
-    }
-}
-,
-{
-    entity_name="automarker_edison_chair",
-    type=MARKER,
-    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
-    spatialprops={
-        pos={ 2.34, 0.00, 1.16 },
-        orient={ 
-            { 1.0000000,0.0000000,0.0000000 },
-            { 0.0000000,1.0000000,0.0000000 },
-            { 0.0000000,0.0000000,1.0000000 }
-         }
-    }
-}
-,
-{
-    entity_name="automarker_cam_second",
-    type=MARKER,
-    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
-    spatialprops={
-        pos={ 0.07, 1.77, 2.07 },
-        orient={ 
-            { 1.0000000,0.0000000,0.0000000 },
-            { 0.0000000,1.0000000,0.0000000 },
-            { 0.0000000,0.0000000,1.0000000 }
-         }
-    }
-}
-,
-{
-    entity_name="automarker_cam_second_focus",
-    type=MARKER,
-    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
-    spatialprops={
-        pos={ 1.85, 1.32, 10.01 },
-        orient={ 
-            { 1.0000000,0.0000000,0.0000000 },
-            { 0.0000000,1.0000000,0.0000000 },
-            { 0.0000000,0.0000000,1.0000000 }
-         }
-    }
-}
-,
-{
-    entity_name="automarker_cam_second2",
-    type=MARKER,
-    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
-    spatialprops={
-        pos={ 0.28, 1.65, 0.36 },
-        orient={ 
-            { 1.0000000,0.0000000,0.0000000 },
-            { 0.0000000,1.0000000,0.0000000 },
-            { 0.0000000,0.0000000,1.0000000 }
-         }
-    }
-}
-,
-{
-    entity_name="automarker_cam_second_focus2",
-    type=MARKER,
-    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
-    spatialprops={
-        pos={ 2.16, 1.10, 0.98 },
-        orient={ 
-            { 1.0000000,0.0000000,0.0000000 },
-            { 0.0000000,1.0000000,0.0000000 },
-            { 0.0000000,0.0000000,1.0000000 }
-         }
-    }
-}
-,
-{
-    entity_name="automarker_edison_front",
-    type=MARKER,
-    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
-    spatialprops={
-        pos={ 2.05, 1.27, 0.81 },
-        orient={ 
-            { 1.0000000,0.0000000,0.0000000 },
-            { 0.0000000,1.0000000,0.0000000 },
-            { 0.0000000,0.0000000,1.0000000 }
-         }
-    }
-}
-,
-{
-    entity_name="automarker_edison_look_out",
-    type=MARKER,
-    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
-    spatialprops={
-        pos={ 1.29, 1.27, -0.26 },
-        orient={ 
-            { 1.0000000,0.0000000,0.0000000 },
-            { 0.0000000,1.0000000,0.0000000 },
-            { 0.0000000,0.0000000,1.0000000 }
-         }
-    }
-}
-,
-{
-    entity_name="automarker_cam_edison",
-    type=MARKER,
-    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
-    spatialprops={
-        pos={ 1.22, 1.18, -0.12 },
-        orient={ 
-            { 1.0000000,0.0000000,0.0000000 },
-            { 0.0000000,1.0000000,0.0000000 },
-            { 0.0000000,0.0000000,1.0000000 }
-         }
-    }
-}
-,
-{
-    entity_name="automarker_cam_edison_focus",
-    type=MARKER,
-    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
-    spatialprops={
-        pos={ 2.51, 1.15, 1.23 },
         orient={ 
             { 1.0000000,0.0000000,0.0000000 },
             { 0.0000000,1.0000000,0.0000000 },
@@ -546,9 +336,9 @@ entities={
     spatialprops={
         pos={ -0.52, 0.00, -1.59 },
         orient={ 
-            { 1.0000000,0.0000000,0.0000000 },
+            { 0.5000000,0.0000000,0.8660254 },
             { 0.0000000,1.0000000,0.0000000 },
-            { 0.0000000,0.0000000,1.0000000 }
+            { -0.8660254,0.0000000,0.5000000 }
          }
     }
 }
@@ -736,12 +526,740 @@ entities={
 }
 ,
 {
+    entity_name="automarker_mrk_trent_table",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.42, 1.57, -3.27 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_trent_drink",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.54, 0.00, -2.05 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_trent_drink_low_arm_right",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.23, 1.23, -2.54 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_trent_drink_low_arm_left",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.60, 1.26, -3.27 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_trent_drink2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.54, 0.00, -2.24 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_trent_drink_top_arm_right",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.20, 0.88, -2.66 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_trent_bottom",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.67, 1.28, -2.83 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_trent_bottom2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.86, 1.28, -2.83 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_trent_bottom3",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.10, 1.28, -2.83 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_trent_mid",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.67, 1.52, -2.83 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_trent_mid2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.85, 1.52, -2.83 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_trent_mid3",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.08, 1.52, -2.83 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_trent_front",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.54, 1.67, -2.91 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_trent_drink_top_arm_left",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.10, 0.88, -2.29 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_trent_drink_top_arm_left_drink",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.97, 1.68, -2.80 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_trent_drink_low_arm_left_drink",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.28, 1.81, -2.43 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_trent_drink_hand_drink",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.11, 1.88, -2.52 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_trent_backspine",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.54, 2.60, -2.29 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_trent_spine",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.64, 2.24, -2.35 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_kim_leave",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.55, 1.61, -4.77 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_kim_leave_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.14, 1.39, -2.18 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_kim_leave2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.96, 1.51, -4.24 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_bartender",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.40, 0.00, -3.59 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_bartender_fixture",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 10.20, 0.00, -3.50 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_edison_bar",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.57, 0.00, -2.05 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_edison_init",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 8.67, 0.00, -2.05 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_kim_leave_focus2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.03, 1.45, -2.18 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_bottle_wine_bar",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.64, 1.35, -3.26 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,0.0000000,-1.0000000 },
+            { 0.0000000,1.0000000,0.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_glass_bar",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.76, 1.17, -3.34 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,0.0000000,-1.0000000 },
+            { 0.0000000,1.0000000,0.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_glass_trent",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.76, 1.17, -3.14 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,0.0000000,-1.0000000 },
+            { 0.0000000,1.0000000,0.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_edison_go",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 4.13, 0.00, -0.89 },
+        orient={ 
+            { 0.0000000,-0.0000000,-1.0000000 },
+            { 0.0000000,1.0000000,-0.0000000 },
+            { 1.0000000,0.0000000,0.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_look_trent_front",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.55, 1.71, -2.56 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_look_trent_front2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.55, 1.71, -2.82 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_look_trent_front3",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.55, 1.71, -3.11 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_look_edison_front3",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.38, 1.71, -3.11 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_look_edison_front2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.38, 1.71, -2.82 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_look_edison_front",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.38, 1.71, -2.56 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_edison",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.20, 1.60, -3.65 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_edison_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.66, 1.50, -1.83 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_drinkins",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.36, 1.58, -3.84 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_drinkins_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.75, 1.48, -1.96 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_trent_drink_low_arm_left_drink2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.28, 1.90, -2.27 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_trent_drink_hand_drink2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.11, 1.94, -2.52 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_look_edison_front4",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.09, 1.59, -3.28 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_trent_mid4",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.36, 1.52, -2.83 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_trent_bottom4",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.01, 1.28, -2.83 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_trent_front2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.54, 1.94, -2.91 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_trent_drink_top_arm_right2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.21, 0.88, -2.66 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_trent_drink_top_arm_left2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.03, 0.88, -2.29 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_drinkins2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.02, 1.58, -4.04 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_trent_drink_top_arm_left_drink2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.97, 1.76, -2.80 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_trent_drink_low_arm_right_drink",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.23, 1.23, -2.84 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
     entity_name="cam_dbg",
     type=CAMERA,
     template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
     flags=HIDDEN,
     spatialprops={
-        pos={ 1.80, 2.32, -4.55 },
+        pos={ -1.32, 2.32, -4.55 },
         orient={ 
             { 1.0000000,0.0000000,0.0000000 },
             { 0.0000000,1.0000000,0.0000000 },
@@ -795,6 +1313,138 @@ entities={
         hvaspect=1.85,
         nearplane=0.2,
         farplane=5000
+    }
+}
+,
+{
+    entity_name="cam_kim_leave",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ 0.55, 1.61, -4.77 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=22,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+,
+{
+    entity_name="cam_edison",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ -0.20, 1.60, -3.65 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=18,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+,
+{
+    entity_name="cam_drinkins",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ 0.36, 1.58, -3.84 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=18,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+,
+{
+    entity_name="bottle_wine_bar",
+    type=COMPOUND,
+    template_name="bottle_wine_2",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1.64, 1.35, -3.26
+        },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 }, 
+            { 0.0000000,0.0000000,-1.0000000 },
+            { 0.0000000,1.0000000,0.0000000 }
+         }
+    },
+    userprops={
+        category="Prop"
+    }
+}
+,
+{
+    entity_name="glass_bar",
+    type=COMPOUND,
+    template_name="glass_metal_1",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1.76, 1.17, -3.34
+        },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 }, 
+            { 0.0000000,0.0000000,-1.0000000 },
+            { 0.0000000,1.0000000,0.0000000 }
+         }
+    },
+    userprops={
+        category="Prop"
+    }
+}
+,
+{
+    entity_name="glass_trent",
+    type=COMPOUND,
+    template_name="glass_metal_1",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1.76, 1.17, -3.14
+        },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 }, 
+            { 0.0000000,0.0000000,-1.0000000 },
+            { 0.0000000,1.0000000,0.0000000 }
+         }
+    },
+    userprops={
+        category="Prop"
     }
 }
 ,
@@ -854,6 +1504,76 @@ entities={
 }
 ,
 {
+    entity_name="char_ik_Char_trent_LUpArm_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="char_ik_Char_trent_LLowArm_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="char_ik_Char_trent_RUpArm_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="char_ik_Char_trent_RLowArm_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="char_ik_Char_trent_LHand_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
     entity_name="Char_kim",
     type=DEFORMABLE,
     template_name="kim",
@@ -896,6 +1616,171 @@ entities={
 ,
 {
     entity_name="char_ik_Char_kim_eye_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="Char_edison",
+    type=DEFORMABLE,
+    template_name="edison_trent",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            8.67, 0.00, -2.05
+        },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 }, 
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    compoundprops={
+        floor_height=0
+    },
+    userprops={
+        Actor="edison",
+        category="Character"
+    }
+}
+,
+{
+    entity_name="char_ik_Char_edison_head_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="char_ik_Char_edison_eye_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="Char_musashi_bartender",
+    type=DEFORMABLE,
+    template_name="musashi_bartender",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -0.40, 0.00, -3.59
+        },
+        orient={ 
+            { -1.0000000,0.0000000,0.0000000 }, 
+            { 0.0000000,1.0000000,0.0000000 },
+            { -0.0000000,0.0000000,-1.0000000 }
+         }
+    },
+    compoundprops={
+        floor_height=0
+    },
+    userprops={
+        Actor="musashi_bartender",
+        category="Character"
+    }
+}
+,
+{
+    entity_name="char_ik_Char_musashi_bartender_head_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="char_ik_Char_musashi_bartender_eye_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="Char_bartender",
+    type=DEFORMABLE,
+    template_name="",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            10.20, 0.00, -3.50
+        },
+        orient={ 
+            { -1.0000000,0.0000000,0.0000000 }, 
+            { 0.0000000,1.0000000,0.0000000 },
+            { -0.0000000,0.0000000,-1.0000000 }
+         }
+    },
+    compoundprops={
+        floor_height=0
+    },
+    userprops={
+        Actor="bartender",
+        category="Character"
+    }
+}
+,
+{
+    entity_name="char_ik_Char_bartender_head_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="char_ik_Char_bartender_eye_ik",
     type=MARKER,
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
     spatialprops={
@@ -994,6 +1879,45 @@ events={
 ,
 {
     0,
+    ATTACH_ENTITY,
+    {
+        "cam_kim_leave",
+        "automarker_cam_kim_leave_focus"
+    },
+    {
+        duration=1000, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_edison",
+        "automarker_cam_edison_focus"
+    },
+    {
+        duration=1000, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_drinkins",
+        "automarker_cam_drinkins_focus"
+    },
+    {
+        duration=1000, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_head_ik",
@@ -1066,10 +1990,69 @@ events={
 ,
 {
     0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_edison_head_ik",
+        "automarker_mrk_look_trent_front3"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_edison_eye_ik",
+        "automarker_mrk_look_trent_front2"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    0.0,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_edison"
+    }
+}
+,
+{
+    0.0,
+    CONNECT_HARDPOINTS,
+    {
+        "glass_trent",
+        "Char_trent"
+    },
+    {
+        duration=61,
+        hardpoint="HpLeftConnect_prop_glass_metal_1",
+        parent_hardpoint="hpleftconnect"
+    }
+}
+,
+{
+    0.0,
     START_IK,
     {
-        "Char_kim",
-        "char_ik_Char_kim_head_ik"
+        "Char_edison",
+        "char_ik_Char_edison_head_ik"
     },
     {
         duration=1000,
@@ -1080,11 +2063,11 @@ events={
 }
 ,
 {
-    0,
+    0.0,
     START_IK,
     {
-        "Char_kim",
-        "char_ik_Char_kim_eye_ik"
+        "Char_edison",
+        "char_ik_Char_edison_eye_ik"
     },
     {
         duration=1000,
@@ -1095,7 +2078,133 @@ events={
 }
 ,
 {
-    0,
+    0.0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "Char_edison",
+        "automarker_edison_bar"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    0.0,
+    START_MOTION,
+    {"Char_edison"},
+    {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+     duration=12, time_scale=1, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    1001.0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_edison_head_ik",
+        "automarker_mrk_look_trent_front2"
+    },
+    {
+        duration=1.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1001.0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_edison_eye_ik",
+        "automarker_mrk_look_trent_front"
+    },
+    {
+        duration=0.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1004.0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_edison_head_ik",
+        "automarker_mrk_look_trent_front3"
+    },
+    {
+        duration=1.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1004.0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_edison_eye_ik",
+        "automarker_mrk_look_trent_front"
+    },
+    {
+        duration=0.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1002.0,
+    START_MOTION,
+    {"Char_edison"},
+    {animation="Sc_MLBODY_LEAN_STND_BAR_TRNS_000LV_XA_03",
+     duration=12, time_scale=1, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    1000.0,
     START_IK,
     {
         "Char_trent",
@@ -1110,7 +2219,7 @@ events={
 }
 ,
 {
-    0,
+    1000.0,
     START_IK,
     {
         "Char_trent",
@@ -1125,305 +2234,32 @@ events={
 }
 ,
 {
-    0,
-    SET_CAMERA,
-    {
-        "Monitor_1",
-        "cam_start"
-    }
-}
-,
-{
-    0,
+    1002.0,
     START_SPATIAL_PROP_ANIM,
     {
-        "cam_start",
-        "automarker_cam_start2"
+        "Char_trent",
+        "automarker_trent_drink2"
     },
     {
-        duration=12,
+        duration=0,
         target_part="",
         target_type=ROOT,
         spatialprops={
             pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
         }
         
-        ,
-        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
-        pcurve_period=-1000
-        
     }
 }
 ,
 {
-    0,
-    START_SPATIAL_PROP_ANIM,
-    {
-        "automarker_cam_start_focus",
-        "automarker_cam_start_focus2"
-    },
-    {
-        duration=4,
-        target_part="",
-        target_type=ROOT,
-        spatialprops={
-            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
-        }
-        
-        ,
-        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
-        pcurve_period=-1000
-        
-    }
-}
-,
-{
-    0,
-    START_MOTION,
-    {"Char_kim"},
-    {animation="Sc_MLBODY_STND_LEAN_BAR_TRNS_000LV_XA_02",
-     duration=5, time_scale=0.6, start_time=0.7, weight=1, heading=-1
-       
-     }
-}
-,
-{
-    0,
-    START_MOTION,
-    {"Char_trent"},
-    {animation="Sc_MLBODY_WALK_STND_TRNS_000LV_XA_02",
-     duration=10, time_scale=0.9, start_time=0.3, weight=1, heading=-1
-       
-     }
-}
-,
-{
-    0,
-    START_SPATIAL_PROP_ANIM,
-    {
-        "Char_trent"
-    },
-    {
-        duration=2,
-        target_type=ROOT,
-        spatialprops={
-            axisrot={
-                10,
-                Y_AXIS
-            }
-        }
-        
-        ,
-        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
-        pcurve_period=-1000
-        
-    }
-}
-,
-{
-    2.3,
-    START_MOTION,
-    {"Char_trent"},
-    {animation="Sc_MLBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
-     duration=10, time_scale=0.9, start_time=0, weight=1, heading=-1
-       , trans_time=1 
-     }
-}
-,
-{
-    2.5,
-    START_MOTION,
-    {"Char_kim"},
-    {animation="Sc_MLBODY_LEAN_STND_BAR_TRNS_000LV_XA_03",
-     duration=5, time_scale=1, start_time=0, weight=1, heading=-1
-       , trans_time=0.5 
-     }
-}
-,
-{
-    4.2,
-    START_MOTION,
-    {"Char_kim"},
-    {animation="Sc_MLBODY_STND_TURN_270LV_XA_04",
-     duration=5, time_scale=1, start_time=0, weight=1, heading=-1
-       , trans_time=0.5 
-     }
-}
-,
-{
-    8,
-    START_MOTION,
-    {"Char_kim"},
-    {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
-     duration=15, time_scale=1, start_time=0, weight=1, heading=-1
-     , event_flags=2   , trans_time=0.5 
-     }
-}
-,
-{
-    6,
-    START_SPATIAL_PROP_ANIM,
-    {
-        "Char_kim"
-    },
-    {
-        duration=2,
-        target_type=ROOT,
-        spatialprops={
-            axisrot={
-                20,
-                Y_AXIS
-            }
-        }
-        
-        ,
-        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
-        pcurve_period=-1000
-        
-    }
-}
-,
-{
-    0,
-    START_SPATIAL_PROP_ANIM,
-    {
-        "char_ik_Char_kim_head_ik",
-        "automarker_mrk_kim_forward"
-    },
-    {
-        duration=2.5,
-        target_part="",
-        target_type=ROOT,
-        spatialprops={
-            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
-        }
-        
-        ,
-        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
-        pcurve_period=-1000
-        
-    }
-}
-,
-{
-    0,
-    START_SPATIAL_PROP_ANIM,
-    {
-        "char_ik_Char_kim_eye_ik",
-        "automarker_mrk_kim_forward"
-    },
-    {
-        duration=1.5,
-        target_part="",
-        target_type=ROOT,
-        spatialprops={
-            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
-        }
-        
-        ,
-        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
-        pcurve_period=-1000
-        
-    }
-}
-,
-{
-    2.2,
-    START_SPATIAL_PROP_ANIM,
-    {
-        "char_ik_Char_kim_head_ik",
-        "automarker_mrk_kim_forward2"
-    },
-    {
-        duration=1.5,
-        target_part="",
-        target_type=ROOT,
-        spatialprops={
-            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
-        }
-        
-        ,
-        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
-        pcurve_period=-1000
-        
-    }
-}
-,
-{
-    2,
-    START_SPATIAL_PROP_ANIM,
-    {
-        "char_ik_Char_kim_eye_ik",
-        "automarker_mrk_kim_forward2"
-    },
-    {
-        duration=1,
-        target_part="",
-        target_type=ROOT,
-        spatialprops={
-            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
-        }
-        
-        ,
-        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
-        pcurve_period=-1000
-        
-    }
-}
-,
-{
-    4,
-    START_SPATIAL_PROP_ANIM,
-    {
-        "char_ik_Char_kim_head_ik",
-        "charpoint_trent_angry"
-    },
-    {
-        duration=4,
-        target_part="",
-        target_type=ROOT,
-        spatialprops={
-            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
-        }
-        
-        ,
-        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
-        pcurve_period=-1000
-        
-    }
-}
-,
-{
-    3,
-    START_SPATIAL_PROP_ANIM,
-    {
-        "char_ik_Char_kim_eye_ik",
-        "charpoint_trent_angry"
-    },
-    {
-        duration=2.5,
-        target_part="",
-        target_type=ROOT,
-        spatialprops={
-            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
-        }
-        
-        ,
-        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
-        pcurve_period=-1000
-        
-    }
-}
-,
-{
-    5,
+    1000.0999999999999,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_head_ik",
-        "automarker_mrk_kim_table2"
+        "automarker_mrk_trent_mid2"
     },
     {
-        duration=2.5,
+        duration=0.1,
         target_part="",
         target_type=ROOT,
         spatialprops={
@@ -1438,14 +2274,14 @@ events={
 }
 ,
 {
-    5,
+    1000.0999999999999,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_eye_ik",
-        "automarker_mrk_kim_table2"
+        "automarker_mrk_trent_bottom2"
     },
     {
-        duration=1.5,
+        duration=0.1,
         target_part="",
         target_type=ROOT,
         spatialprops={
@@ -1460,485 +2296,165 @@ events={
 }
 ,
 {
-    1.0,
+    1003.0,
     START_MOTION,
     {"Char_trent"},
-    {animation="Sc_dx_s074x_0201_trent", start_time=1.5, duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
-}
-,
-{
-    1,
-    START_SOUND,
-    {
-        "DX_m11_drink_0010_trent"
-    },
-    {
-        duration=20
-    }
-}
-,
-{
-    6.1,
-    START_MOTION,
-    {"Char_trent"},
-    {animation="Sc_MLBODY_STND_CONV_HNDS_CASL_000LV_xa_04",
-     duration=100, time_scale=0.6, start_time=0, weight=1, heading=-1
-     , event_flags=2   , trans_time=2 
-     }
-}
-,
-{
-    6.6,
-    START_MOTION,
-    {"Char_trent"},
-    {animation="Sc_MLHAND_HNEUT_GESTL_CASL_000LV_00",
-     duration=100, time_scale=0.6, start_time=0, weight=1, heading=-1
-     , event_flags=2   , trans_time=0.2 
-     }
-}
-,
-{
-    6.6,
-    START_MOTION,
-    {"Char_trent"},
-    {animation="Sc_MLHAND_HNEUT_GESTR_CASL_000LV_00",
-     duration=100, time_scale=0.6, start_time=0, weight=1, heading=-1
-     , event_flags=2   , trans_time=0.2 
-     }
-}
-,
-{
-    6.1,
-    START_MOTION,
-    {"Char_trent"},
-    {animation="Sc_dx_s074x_0201_trent", start_time=1.5, duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
-}
-,
-{
-    6.1,
-    START_SOUND,
-    {
-        "DX_m11_drink_0020_trent"
-    },
-    {
-        duration=20
-    }
-}
-,
-{
-    11.175999999999998,
-    START_MOTION,
-    {"Char_trent"},
-    {animation="Sc_MLBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
-     duration=10, time_scale=0.9, start_time=0, weight=1, heading=-1
-       , trans_time=1 
-     }
-}
-,
-{
-    11.175999999999998,
-    START_MOTION,
-    {"Char_trent"},
-    {animation="Sc_MLHAND_HNEUT_EDGE_LEFT_000LV_00",
-     duration=1, time_scale=0.6, start_time=0, weight=1, heading=-1
-       , trans_time=0.2 
-     }
-}
-,
-{
-    11.175999999999998,
-    START_MOTION,
-    {"Char_trent"},
-    {animation="Sc_MLHAND_HNEUT_EDGE_RGHT_000LV_00",
-     duration=1, time_scale=0.6, start_time=0, weight=1, heading=-1
-       , trans_time=0.2 
-     }
-}
-,
-{
-    11.175999999999998,
-    START_MOTION,
-    {"Char_trent"},
-    {animation="Sc_dx_s052x_0401_trent", start_time=2, duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
-}
-,
-{
-    11.175999999999998,
-    START_SOUND,
-    {
-        "DX_m11_drink_0030_trent"
-    },
-    {
-        duration=20
-    }
-}
-,
-{
-    13.131999999999998,
-    SET_CAMERA,
-    {
-        "Monitor_1",
-        "cam_kim"
-    }
-}
-,
-{
-    14.131999999999998,
-    START_SPATIAL_PROP_ANIM,
-    {
-        "char_ik_Char_trent_head_ik",
-        "charpoint_kim_listen"
-    },
-    {
-        duration=2.5,
-        target_part="",
-        target_type=ROOT,
-        spatialprops={
-            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
-        }
-        
-        ,
-        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
-        pcurve_period=-1000
-        
-    }
-}
-,
-{
-    14.131999999999998,
-    START_SPATIAL_PROP_ANIM,
-    {
-        "char_ik_Char_trent_eye_ik",
-        "charpoint_kim_listen"
-    },
-    {
-        duration=1.5,
-        target_part="",
-        target_type=ROOT,
-        spatialprops={
-            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
-        }
-        
-        ,
-        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
-        pcurve_period=-1000
-        
-    }
-}
-,
-{
-    17.131999999999998,
-    START_SPATIAL_PROP_ANIM,
-    {
-        "char_ik_Char_trent_head_ik",
-        "automarker_mrk_kim_table2"
-    },
-    {
-        duration=2.5,
-        target_part="",
-        target_type=ROOT,
-        spatialprops={
-            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
-        }
-        
-        ,
-        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
-        pcurve_period=-1000
-        
-    }
-}
-,
-{
-    17.131999999999998,
-    START_SPATIAL_PROP_ANIM,
-    {
-        "char_ik_Char_trent_eye_ik",
-        "automarker_mrk_kim_table2"
-    },
-    {
-        duration=1.5,
-        target_part="",
-        target_type=ROOT,
-        spatialprops={
-            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
-        }
-        
-        ,
-        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
-        pcurve_period=-1000
-        
-    }
-}
-,
-{
-    20.631999999999998,
-    START_SPATIAL_PROP_ANIM,
-    {
-        "char_ik_Char_trent_head_ik",
-        "automarker_mrk_kim_away"
-    },
-    {
-        duration=2.5,
-        target_part="",
-        target_type=ROOT,
-        spatialprops={
-            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
-        }
-        
-        ,
-        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
-        pcurve_period=-1000
-        
-    }
-}
-,
-{
-    20.631999999999998,
-    START_SPATIAL_PROP_ANIM,
-    {
-        "char_ik_Char_trent_eye_ik",
-        "automarker_mrk_kim_away"
-    },
-    {
-        duration=1.5,
-        target_part="",
-        target_type=ROOT,
-        spatialprops={
-            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
-        }
-        
-        ,
-        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
-        pcurve_period=-1000
-        
-    }
-}
-,
-{
-    14.131999999999998,
-    START_MOTION,
-    {"Char_trent"},
-    {animation="Sc_MLBODY_STND_FSTHIPB_RLEASE_000LV_XA_01",
-     duration=5, time_scale=0.4, start_time=0, weight=1, heading=-1
-       
-     }
-}
-,
-{
-    13.131999999999998,
-    START_MOTION,
-    {"Char_kim"},
-    {animation="Sc_MLBODY_STND_GESTR_NO_000LV_XA_02",
-     duration=5, time_scale=0.9, start_time=0, weight=1, heading=-1
-       , trans_time=0.5 
-     }
-}
-,
-{
-    13.131999999999998,
-    START_MOTION,
-    {"Char_kim"},
-    {animation="Sc_dx_s012x_0501_lonnigan", duration=2, start_time=0.5, time_scale=0.6, trans_time=0.25,  weight=1, heading=-1}
-}
-,
-{
-    15.131999999999998,
-    START_MOTION,
-    {"Char_kim"},
-    {animation="Sc_MLHEAD_BASEPOSE_000LV_02_01", duration=10, time_scale=0.8, trans_time=0.5,  weight=1, heading=-1}
-}
-,
-{
-    13.131999999999998,
-    START_SOUND,
-    {
-        "DX_m11_drink_0040_kim"
-    },
-    {
-        duration=20
-    }
-}
-,
-{
-    15.903999999999998,
-    START_MOTION,
-    {"Char_kim"},
-    {animation="Sc_MLBODY_STND_GEST_HNDS_WAIT_000LV_XA_02",
-     duration=5, time_scale=0.8, start_time=0, weight=1, heading=-1
-       , trans_time=0.5 
-     }
-}
-,
-{
-    15.903999999999998,
-    START_MOTION,
-    {"Char_kim"},
-    {animation="Sc_dx_s012x_0701_lonnigan", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
-}
-,
-{
-    17.903999999999996,
-    START_MOTION,
-    {"Char_kim"},
-    {animation="Sc_dx_s012x_0701_lonnigan", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
-}
-,
-{
-    15.903999999999998,
-    START_SOUND,
-    {
-        "DX_m11_drink_0050_kim"
-    },
-    {
-        duration=20
-    }
-}
-,
-{
-    21.319999999999997,
-    START_SPATIAL_PROP_ANIM,
-    {
-        "char_ik_Char_kim_head_ik",
-        "automarker_mrk_kim_leave"
-    },
-    {
-        duration=1.5,
-        target_part="",
-        target_type=ROOT,
-        spatialprops={
-            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
-        }
-        
-        ,
-        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
-        pcurve_period=-1000
-        
-    }
-}
-,
-{
-    21.319999999999997,
-    START_SPATIAL_PROP_ANIM,
-    {
-        "char_ik_Char_kim_eye_ik",
-        "automarker_mrk_kim_leave"
-    },
-    {
-        duration=0.7,
-        target_part="",
-        target_type=ROOT,
-        spatialprops={
-            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
-        }
-        
-        ,
-        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
-        pcurve_period=-1000
-        
-    }
-}
-,
-{
-    22.819999999999997,
-    START_SPATIAL_PROP_ANIM,
-    {
-        "char_ik_Char_kim_head_ik",
-        "automarker_mrk_kim_away_door"
-    },
-    {
-        duration=1.5,
-        target_part="",
-        target_type=ROOT,
-        spatialprops={
-            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
-        }
-        
-        ,
-        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
-        pcurve_period=-1000
-        
-    }
-}
-,
-{
-    20.819999999999997,
-    START_SPATIAL_PROP_ANIM,
-    {
-        "char_ik_Char_kim_eye_ik",
-        "automarker_mrk_kim_away_door"
-    },
-    {
-        duration=0.7,
-        target_part="",
-        target_type=ROOT,
-        spatialprops={
-            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
-        }
-        
-        ,
-        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
-        pcurve_period=-1000
-        
-    }
-}
-,
-{
-    21.819999999999997,
-    START_SPATIAL_PROP_ANIM,
-    {
-        "Char_kim"
-    },
-    {
-        duration=0.5,
-        target_type=ROOT,
-        spatialprops={
-            axisrot={
-                45,
-                Y_AXIS
-            }
-        }
-        
-        ,
-        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
-        pcurve_period=-1000
-        
-    }
-}
-,
-{
-    21.819999999999997,
-    START_MOTION,
-    {"Char_kim"},
-    {animation="Sc_MLBODY_STND_WALK_TRNS_000LV_XA_01",
-     duration=4, time_scale=1, start_time=0, weight=1, heading=-1
-       
-     }
-}
-,
-{
-    22.889999999999997,
-    START_MOTION,
-    {"Char_kim"},
-    {animation="Sc_MLBODY_WLKG_000LV_XA_01",
-     duration=500, time_scale=1, start_time=0, weight=1, heading=-1
+    {animation="Sc_MLBODY_STND_LEAN_HNDS_BAR_000LV_XA_01",
+     duration=510, time_scale=1, start_time=0, weight=1, heading=-1
      , event_flags=2   
      }
 }
 ,
 {
-    22.919999999999998,
+    1003.0,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLHAND_HNEUT_GESTR_FIST_000LV_00",
+     duration=1, time_scale=1, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    1003.0,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLHAND_HNEUT_HOLDD_LEFT_000LV_00",
+     duration=1, time_scale=1, start_time=1, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    0,
     START_SPATIAL_PROP_ANIM,
     {
-        "Char_kim"
+        "char_ik_Char_trent_LUpArm_ik",
+        "automarker_mrk_trent_drink_top_arm_left"
     },
     {
-        duration=1,
+        duration=0,
+        target_part="",
         target_type=ROOT,
         spatialprops={
-            axisrot={
-                -75,
-                Y_AXIS
-            }
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_LLowArm_ik",
+        "automarker_mrk_trent_drink_low_arm_left"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_RUpArm_ik",
+        "automarker_mrk_trent_drink_top_arm_right"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_RLowArm_ik",
+        "automarker_mrk_trent_drink_low_arm_right"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_LHand_ik",
+        "automarker_mrk_trent_drink_hand_drink"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    1000.0,
+    START_MOTION,
+    {"Char_edison"},
+    {animation="Sc_dx_s020x_0601_trent", duration=10, time_scale=0.9, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    1000.0,
+    START_SOUND,
+    {
+        "DX_m11_drink_0130_edison"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    1005.4559999999999,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_drinkins"
+    }
+}
+,
+{
+    1005.4559999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "cam_drinkins",
+        "automarker_cam_drinkins2"
+    },
+    {
+        duration=30.8299999999997,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
         }
         
         ,
@@ -1949,29 +2465,1473 @@ events={
 }
 ,
 {
-    21.819999999999997,
-    SET_CAMERA,
+    1004.2559999999999,
+    START_IK,
     {
-        "Monitor_1",
-        "cam_start"
+        "Char_trent",
+        "char_ik_Char_trent_LUpArm_ik"
+    },
+    {
+        duration=711,
+        end_effector="LUpArm", transition_duration=0.5,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
     }
 }
 ,
 {
-    21.819999999999997,
-    START_MOTION,
-    {"Char_trent"},
-    {animation="Sc_dx_s045b_1801_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+    1004.2559999999999,
+    START_IK,
+    {
+        "Char_trent",
+        "char_ik_Char_trent_LLowArm_ik"
+    },
+    {
+        duration=711,
+        end_effector="LLowArm", transition_duration=0.5,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
 }
 ,
 {
-    21.819999999999997,
+    1005.2059999999999,
+    START_IK,
+    {
+        "Char_trent",
+        "char_ik_Char_trent_RUpArm_ik"
+    },
+    {
+        duration=711,
+        end_effector="RUpArm", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    1005.2059999999999,
+    START_IK,
+    {
+        "Char_trent",
+        "char_ik_Char_trent_RLowArm_ik"
+    },
+    {
+        duration=711,
+        end_effector="RLowArm", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    1007.4559999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_LUpArm_ik",
+        "automarker_mrk_trent_drink_top_arm_left2"
+    },
+    {
+        duration=1.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1010.4559999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_LUpArm_ik",
+        "automarker_mrk_trent_drink_top_arm_left"
+    },
+    {
+        duration=1.8,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1013.4560000000001,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_LUpArm_ik",
+        "automarker_mrk_trent_drink_top_arm_left2"
+    },
+    {
+        duration=1.2,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1015.4560000000001,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_LUpArm_ik",
+        "automarker_mrk_trent_drink_top_arm_left"
+    },
+    {
+        duration=1.8,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1017.4560000000001,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_LUpArm_ik",
+        "automarker_mrk_trent_drink_top_arm_left2"
+    },
+    {
+        duration=1.2,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1008.4559999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_RUpArm_ik",
+        "automarker_mrk_trent_drink_top_arm_right2"
+    },
+    {
+        duration=1.3,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1011.4560000000001,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_RUpArm_ik",
+        "automarker_mrk_trent_drink_top_arm_right"
+    },
+    {
+        duration=1.57,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1014.9560000000001,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_RUpArm_ik",
+        "automarker_mrk_trent_drink_top_arm_right2"
+    },
+    {
+        duration=1,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1016.4560000000001,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_RUpArm_ik",
+        "automarker_mrk_trent_drink_top_arm_right"
+    },
+    {
+        duration=1.57,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1019.4560000000001,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_RUpArm_ik",
+        "automarker_mrk_trent_drink_top_arm_right2"
+    },
+    {
+        duration=1,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1006.5559999999998,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_head_ik",
+        "automarker_mrk_trent_front"
+    },
+    {
+        duration=1.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1006.5559999999998,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_eye_ik",
+        "automarker_mrk_trent_front"
+    },
+    {
+        duration=0.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1008.4559999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_head_ik",
+        "automarker_mrk_look_edison_front4"
+    },
+    {
+        duration=1.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1008.4559999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_eye_ik",
+        "automarker_mrk_look_edison_front"
+    },
+    {
+        duration=0.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1011.4560000000001,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_head_ik",
+        "automarker_mrk_trent_mid4"
+    },
+    {
+        duration=1.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1011.4560000000001,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_eye_ik",
+        "automarker_mrk_trent_mid4"
+    },
+    {
+        duration=0.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1013.4560000000001,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_head_ik",
+        "automarker_mrk_trent_mid2"
+    },
+    {
+        duration=1.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1013.4560000000001,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_eye_ik",
+        "automarker_mrk_trent_bottom2"
+    },
+    {
+        duration=0.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1016.4560000000001,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_head_ik",
+        "automarker_mrk_trent_front"
+    },
+    {
+        duration=1.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1016.4560000000001,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_eye_ik",
+        "automarker_mrk_trent_front"
+    },
+    {
+        duration=0.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1018.4560000000001,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_head_ik",
+        "automarker_mrk_trent_mid2"
+    },
+    {
+        duration=1.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1018.4560000000001,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_eye_ik",
+        "automarker_mrk_trent_bottom2"
+    },
+    {
+        duration=0.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1005.4559999999999,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s071b_0102_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    1008.356,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s071b_0102_trent", duration=10, start_time=0.5, time_scale=1, trans_time=0.5,  weight=1, heading=-1}
+}
+,
+{
+    1005.4559999999999,
     START_SOUND,
     {
-        "DX_m11_drink_0060_trent"
+        "DX_m11_drink_0140_trent"
     },
     {
         duration=20
+    }
+}
+,
+{
+    1014.2759999999998,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s052x_0201_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    1015.9759999999997,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s074x_0201_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    1014.2759999999998,
+    START_SOUND,
+    {
+        "DX_m11_drink_0150_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    1021.02,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_head_ik",
+        "automarker_mrk_trent_front"
+    },
+    {
+        duration=1.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1021.02,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_eye_ik",
+        "automarker_mrk_trent_front"
+    },
+    {
+        duration=0.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1021.52,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_LUpArm_ik",
+        "automarker_mrk_trent_drink_top_arm_left_drink"
+    },
+    {
+        duration=1.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1021.52,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_LLowArm_ik",
+        "automarker_mrk_trent_drink_low_arm_left_drink"
+    },
+    {
+        duration=1.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1023.02,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_LLowArm_ik",
+        "automarker_mrk_trent_drink_low_arm_left_drink2"
+    },
+    {
+        duration=1,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1023.02,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_LUpArm_ik",
+        "automarker_mrk_trent_drink_top_arm_left_drink2"
+    },
+    {
+        duration=1,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1024.52,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_LUpArm_ik",
+        "automarker_mrk_trent_drink_top_arm_left"
+    },
+    {
+        duration=1.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1024.52,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_LLowArm_ik",
+        "automarker_mrk_trent_drink_low_arm_left"
+    },
+    {
+        duration=2,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1022.3200000000002,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLHEAD_MOTION_DRINK_SWALLOW_TRENT_000LV_XA_%",
+     duration=8, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=0.25 
+     }
+}
+,
+{
+    1023.02,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_head_ik",
+        "automarker_mrk_trent_front2"
+    },
+    {
+        duration=1.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1023.02,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_eye_ik",
+        "automarker_mrk_trent_front2"
+    },
+    {
+        duration=0.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1024.02,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_head_ik",
+        "automarker_mrk_trent_front"
+    },
+    {
+        duration=1.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1024.02,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_eye_ik",
+        "automarker_mrk_trent_front"
+    },
+    {
+        duration=0.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1022.02,
+    START_IK,
+    {
+        "Char_trent",
+        "automarker_mrk_trent_drink_hand_drink"
+    },
+    {
+        duration=3,
+        end_effector="LHand", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    1022.02,
+    START_IK,
+    {
+        "Char_trent",
+        "automarker_mrk_trent_spine"
+    },
+    {
+        duration=3,
+        end_effector="UpperTorso", transition_duration=2,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    1022.02,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_RLowArm_ik",
+        "automarker_mrk_trent_drink_low_arm_right_drink"
+    },
+    {
+        duration=1.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1024.52,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_RLowArm_ik",
+        "automarker_mrk_trent_drink_low_arm_right"
+    },
+    {
+        duration=1.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1027.52,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_LUpArm_ik",
+        "automarker_mrk_trent_drink_top_arm_left2"
+    },
+    {
+        duration=1.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1030.52,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_LUpArm_ik",
+        "automarker_mrk_trent_drink_top_arm_left"
+    },
+    {
+        duration=1.8,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1033.52,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_LUpArm_ik",
+        "automarker_mrk_trent_drink_top_arm_left2"
+    },
+    {
+        duration=1.2,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1035.52,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_LUpArm_ik",
+        "automarker_mrk_trent_drink_top_arm_left"
+    },
+    {
+        duration=1.8,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1037.52,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_LUpArm_ik",
+        "automarker_mrk_trent_drink_top_arm_left2"
+    },
+    {
+        duration=1.2,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1028.52,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_RUpArm_ik",
+        "automarker_mrk_trent_drink_top_arm_right2"
+    },
+    {
+        duration=1.3,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1031.52,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_RUpArm_ik",
+        "automarker_mrk_trent_drink_top_arm_right"
+    },
+    {
+        duration=1.57,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1035.02,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_RUpArm_ik",
+        "automarker_mrk_trent_drink_top_arm_right2"
+    },
+    {
+        duration=1,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1036.52,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_RUpArm_ik",
+        "automarker_mrk_trent_drink_top_arm_right"
+    },
+    {
+        duration=1.57,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1039.52,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_RUpArm_ik",
+        "automarker_mrk_trent_drink_top_arm_right2"
+    },
+    {
+        duration=1,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1026.62,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_head_ik",
+        "automarker_mrk_trent_front"
+    },
+    {
+        duration=1.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1026.62,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_eye_ik",
+        "automarker_mrk_trent_front"
+    },
+    {
+        duration=0.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1028.52,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_head_ik",
+        "automarker_mrk_look_edison_front4"
+    },
+    {
+        duration=1.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1028.52,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_eye_ik",
+        "automarker_mrk_look_edison_front"
+    },
+    {
+        duration=0.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1031.52,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_head_ik",
+        "automarker_mrk_trent_mid4"
+    },
+    {
+        duration=1.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1031.52,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_eye_ik",
+        "automarker_mrk_trent_mid4"
+    },
+    {
+        duration=0.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1033.52,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_head_ik",
+        "automarker_mrk_trent_mid2"
+    },
+    {
+        duration=1.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1033.52,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_eye_ik",
+        "automarker_mrk_trent_bottom2"
+    },
+    {
+        duration=0.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1036.52,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_head_ik",
+        "automarker_mrk_trent_front"
+    },
+    {
+        duration=1.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1036.52,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_eye_ik",
+        "automarker_mrk_trent_front"
+    },
+    {
+        duration=0.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1038.52,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_head_ik",
+        "automarker_mrk_trent_mid2"
+    },
+    {
+        duration=1.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1038.52,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_eye_ik",
+        "automarker_mrk_trent_bottom2"
+    },
+    {
+        duration=0.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    1025.52,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s038x_2601_trent", duration=10,start_time=0.5, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    1025.52,
+    START_SOUND,
+    {
+        "DX_m11_drink_0160_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    1030.1399999999999,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s074x_0201_trent", duration=10, start_time=0.5, time_scale=1, trans_time=0.5,  weight=1, heading=-1}
+}
+,
+{
+    1030.1399999999999,
+    START_SOUND,
+    {
+        "DX_m11_drink_0170_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    1036.2859999999996,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_edison"
     }
 }
 

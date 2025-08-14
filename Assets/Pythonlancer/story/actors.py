@@ -891,6 +891,19 @@ class OrderMedic(Actor):
     CUTSCENE_APPEARANCE = 'hochstedler'
 
 
+class BartenderFixture(Actor):
+    RU_NAME = 'Стандартный бармен'
+    TYPE = ACTOR_MALE
+    NAME = 'bartender'
+
+
+class MusashiBartender(Actor):
+    RU_NAME = 'Бармен Мусаси'
+    TYPE = ACTOR_MALE
+    NAME = 'musashi_bartender'
+    CUTSCENE_APPEARANCE = 'musashi_bartender'
+
+
 class ActorManager:
     def __init__(self):
         self.actors_per_name = {actor.NAME: actor for actor in Actor.subclasses}
