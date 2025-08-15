@@ -251,16 +251,6 @@ def generate_story_voices():
         audio_folder.AudioFolder.compile_story_voice_to_xml(voice)
 
 
-def generate_cutscene_voices():
-    script_manager = ScriptManager()
-    # import pdb;pdb.set_trace()
-
-    msn = script_manager.get_mission_by_index(11)
-
-    for cutscene in msn.get_cutscenes():
-        audio_folder.AudioFolder.generate_cutscene_sounds(cutscene)
-
-
 def test_interaction():
     i = input('Wait for you action').strip().lower()
     if i == 's':
@@ -367,6 +357,16 @@ archetype = nav_buoy
     data_combined = SINGLE_DIVIDER.join(data)
 
     print(nav_combined)
+
+
+def generate_cutscene_voices():
+    script_manager = ScriptManager()
+    # import pdb;pdb.set_trace()
+
+    msn = script_manager.get_mission_by_index(12)
+
+    for cutscene in msn.get_cutscenes():
+        audio_folder.AudioFolder.generate_cutscene_sounds(cutscene)
 
 
 def meta():

@@ -34,7 +34,7 @@ class Msn11DrinkScene(Scene):
         cam_kim_leave = LookAtCamera(root=self, name='cam_kim_leave', fov=22)
         cam_edison = LookAtCamera(root=self, name='cam_edison', fov=18)
         cam_drinkins = LookAtCamera(root=self, name='cam_drinkins', fov=18)
-        cam_ready = LookAtCamera(root=self, name='cam_ready', fov=16)
+        cam_ready = LookAtCamera(root=self, name='cam_ready', fov=18)
         cam_final = LookAtCamera(root=self, name='cam_final', fov=22)
 
         # PROPS
@@ -66,9 +66,6 @@ class Msn11DrinkScene(Scene):
         mrk_trent_drink = trent.get_stand_marker('trent_drink')
         mrk_kim_listen = kim.get_stand_marker('kim_listen')
         mrk_edison_bar = edison.get_stand_marker('edison_bar')
-        # mrk_junko_talk = junko.get_sit_marker('junko_talk')
-        #
-
 
         mrk_trent_angry_front = self.get_automarker_name('mrk_trent_angry_front')
         mrk_kim_forward = self.get_automarker_name('mrk_kim_forward')
@@ -291,7 +288,7 @@ class Msn11DrinkScene(Scene):
                               duration=61, target_hardpoint="HpLeftConnect_prop_glass_metal_1",
                               parent_hardpoint="hpleftconnect")
 
-        conn_time = main_group.get_time()-7  # remove delay
+        conn_time = main_group.get_time()+7  # remove delay
         conn = ConnectHardpointEvent(root=self, group=MAIN, target_name=glass_trent.name, parent_name=trent.name,
                                      duration=61, target_hardpoint="HpLeftConnect_prop_glass_metal_1",
                                      parent_hardpoint="hpleftconnect", time_delay=7)
@@ -483,6 +480,10 @@ class Msn11DrinkScene(Scene):
 
         trent.facial(group=MAIN, index=140)
         trent.facial(group=MAIN, index=150)
+
+
+        MoveFastEvent(root=self, group=MAIN, object_name=edison.name, target_name=self.get_automarker_name('edison_bar'))
+        edison.motion(group=MAIN, duration=1, anim=Male.Sc_MLBODY_STND_IDLE_000LV_xa_04, time_scale=1)
 
         trent.move_head_ik(group=MAIN, target_name=mrk_trent_front, duration=1.5, time_delay=-1.5)
         trent.move_eye_ik(group=MAIN, target_name=mrk_trent_front, duration=0.5, time_delay=-1.5)
@@ -734,7 +735,7 @@ class Msn11DrinkScene(Scene):
         ik1.set_duration(main_group.get_time()-ik_start)
         ik2.set_duration(main_group.get_time()+3-ik_start)
 
-        conn.set_duration(main_group.get_time()+1.8-conn_time)
+        conn.set_duration(main_group.get_time()+1.75-conn_time)
 
 
         trent.move_head_ik(group=MAIN, target_name=mrk_look_edison_front4, duration=2.5, time_delay=1)
@@ -778,7 +779,7 @@ class Msn11DrinkScene(Scene):
         edison.motion(group=MAIN, duration=5, anim=Male.Sc_MLBODY_STND_TURN_270LV_XA_04, trans_time=0.5)
         trent.motion(group=MAIN, duration=5, anim=Male.Sc_MLBODY_STND_TURN_090LV_XA_02, time_delay=1.5)
         edison.facial(group=MAIN, index=280)
-        main_group.append_time(0.5)
+        main_group.append_time(1)
 
 
 
