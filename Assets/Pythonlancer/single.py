@@ -374,10 +374,10 @@ def meta():
     script_manager = ScriptManager()
     meta_manager = LipSyncManager(tpl_manager=tpl_manager)
 
-    msn = script_manager.get_mission_by_index(11)
+    msn = script_manager.get_mission_by_index(12)
 
-    # meta_manager.edit_cutscene(msn, 'drink')
-    meta_manager.edit_sound_from_scene(msn, 'drink', 250)
+    # meta_manager.edit_cutscene(msn, 'sprague')
+    meta_manager.edit_sound_from_scene(msn, 'sprague', 160)
 
     print('meta done')
 
@@ -385,8 +385,8 @@ def meta():
 def scene():
     tpl_manager = JinjaTemplateManager()
     script_manager = ScriptManager()
-    msn = script_manager.get_mission_by_index(11)
-    cutscene = msn.get_cutscene_by_code('drink')
+    msn = script_manager.get_mission_by_index(12)
+    cutscene = msn.get_cutscene_by_code('sprague')
     cutscene.get_thorn(tpl_manager).sync_content()
     # cutscene.get_decision_thorn(tpl_manager).sync_content()
     # cutscene.get_accept_thorn(tpl_manager).sync_content()

@@ -392,6 +392,30 @@ class MotionEvent(Event):
         }
 
 
+class AnimEvent(Event):
+    TEMPLATE = 'anim'
+
+    def __init__(self, object_name, anim, duration, time_scale=1, start_time=0,
+                 loop=False, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.object_name = object_name
+        self.anim = anim
+        self.duration = duration
+        self.time_scale = time_scale
+        self.start_time = start_time
+        self.loop = loop
+
+    def get_params(self):
+        return {
+            'object_name': self.object_name,
+            'anim': self.anim,
+            'duration': self.duration,
+            'time_scale': self.time_scale,
+            'start_time': self.start_time,
+            'loop': self.loop,
+        }
+
+
 class FacialEvent(Event):
     TEMPLATE = 'facial'
 
@@ -601,6 +625,9 @@ class Marker(Entity):
 
 
 class Compound(Entity):
+    FORCE_POS = None
+    FORCE_MATRIX = None
+
     def __init__(self, light_group, init_point, rotate_y=0,
                  use_ambient=False, matrix_scale=1, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -612,13 +639,15 @@ class Compound(Entity):
         self.matrix_scale = matrix_scale
 
     def get_init_matrix(self):
-        rotate = (
-            [0, self.rotate_y, 0]
-            if self.rotate_y != 0
-            else self.point.rotate
-
-        )
-        mx = math.euler_to_matrix(*rotate)
+        if self.FORCE_MATRIX:
+            mx = self.FORCE_MATRIX
+        else:
+            rotate = (
+                [0, self.rotate_y, 0]
+                if self.rotate_y != 0
+                else self.point.rotate
+            )
+            mx = math.euler_to_matrix(*rotate)
 
         return '''
             {{ {0:.7f},{1:.7f},{2:.7f} }}, 
@@ -644,10 +673,16 @@ class Compound(Entity):
             'name': self.name,
             'template_name': self.get_compound_template_name(),
             'light_group': self.light_group,
-            'init_pos': self.point.pos,
+            'init_pos': '{0}, {1}, {2}'.format(*self.FORCE_POS) if self.FORCE_POS else self.point.pos,
             'init_matrix': self.get_init_matrix(),
             'light_flags': self.get_flags(),
         }
+
+    def anim(self, group, anim, duration=10, **kwargs):
+        return MotionEvent(root=self.root, group=group,
+                           object_name=self.name, anim=anim,
+                           duration=duration,
+                           **kwargs)
 
 
 class Prop(Compound):
@@ -886,8 +921,8 @@ class LookAtCamera(Camera):
                          time_delay=time_delay, time_append=time_append)
 
 
-class Music(Entity):
-    TEMPLATE = 'music'
+class Sound(Entity):
+    TEMPLATE = 'sound'
 
     def __init__(self, sound, attenuation, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -908,6 +943,10 @@ class Music(Entity):
     def change_attenuation(self, group, duration, attenuation, **kwargs):
         AudioAnimEvent(root=self.root, group=group, sound_name=self.name,
                        duration=duration, attenuation=attenuation, **kwargs)
+
+
+class Music(Sound):
+    pass
 
 
 class Light(Entity):

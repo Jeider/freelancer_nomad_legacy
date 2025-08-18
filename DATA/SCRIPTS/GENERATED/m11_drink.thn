@@ -1,4 +1,4 @@
-duration=143.72999999999996
+duration=144.22999999999996
 
 entities={
 	{
@@ -334,7 +334,7 @@ entities={
     type=MARKER,
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
     spatialprops={
-        pos={ -0.52, 0.00, -1.59 },
+        pos={ -0.54, 0.00, -1.67 },
         orient={ 
             { 0.5000000,0.0000000,0.8660254 },
             { 0.0000000,1.0000000,0.0000000 },
@@ -1412,7 +1412,7 @@ entities={
     type=MARKER,
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
     spatialprops={
-        pos={ 0.89, 1.64, -3.16 },
+        pos={ 0.35, 1.64, -3.05 },
         orient={ 
             { 1.0000000,0.0000000,0.0000000 },
             { 0.0000000,1.0000000,0.0000000 },
@@ -1426,7 +1426,7 @@ entities={
     type=MARKER,
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
     spatialprops={
-        pos={ -0.55, 1.55, -1.74 },
+        pos={ -0.65, 1.55, -1.85 },
         orient={ 
             { 1.0000000,0.0000000,0.0000000 },
             { 0.0000000,1.0000000,0.0000000 },
@@ -1468,7 +1468,7 @@ entities={
     type=MARKER,
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
     spatialprops={
-        pos={ 0.30, 1.72, -1.55 },
+        pos={ 0.30, 1.72, -2.30 },
         orient={ 
             { 1.0000000,0.0000000,0.0000000 },
             { 0.0000000,1.0000000,0.0000000 },
@@ -1609,7 +1609,7 @@ entities={
     template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
     flags=HIDDEN,
     spatialprops={
-        pos={ 0.89, 1.64, -3.16 },
+        pos={ 0.35, 1.64, -3.05 },
         orient={ 
             { 1.0000000,0.0000000,0.0000000 },
             { 0.0000000,1.0000000,0.0000000 },
@@ -2078,7 +2078,7 @@ entities={
     type=MARKER,
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
     spatialprops={
-        pos={ -0.52, 1.65, -1.59 },
+        pos={ -0.54, 1.65, -1.67 },
         orient={ 
             { 1.0000000,0.0000000,0.0000000 },
             { 0.0000000,1.0000000,0.0000000 },
@@ -3317,7 +3317,7 @@ events={
         "Char_trent"
     },
     {
-        duration=110.04399999999998,
+        duration=102.99399999999997,
         hardpoint="HpLeftConnect_prop_glass_metal_1",
         parent_hardpoint="hpleftconnect"
     }
@@ -4691,6 +4691,34 @@ events={
     {
         duration=20
     }
+}
+,
+{
+    59.224,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "Char_edison",
+        "automarker_edison_bar"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    59.224,
+    START_MOTION,
+    {"Char_edison"},
+    {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+     duration=1, time_scale=1, start_time=0, weight=1, heading=-1
+       
+     }
 }
 ,
 {

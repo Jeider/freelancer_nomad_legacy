@@ -140,6 +140,7 @@ class Hatcher(Actor):
     TYPE = ACTOR_FEMALE
     NAME = 'hatcher'
     COMM_APPEARANCE = 'pl_female2_head, li_hatcher_body, comm_li_hatcher_female'
+    CUTSCENE_APPEARANCE = 'hatcher'
     STEOS_ID = 217
     STEOS_PITCH = -1
     STEOS_SPEED = 1.1

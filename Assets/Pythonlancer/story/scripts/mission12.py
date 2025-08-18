@@ -1,6 +1,7 @@
 from story import script
 from audio.sound import VoiceLine
 from story.actors import Trent, Kim, Darcy, King, Hatcher, Alaric, Mandrake, Kruger, FortBush, Omaha, PromDread1, PromDread2
+from story.cutscenes.story_scenes import m12_sprague, m12_captured
 
 
 class Msn12(object):
@@ -10,6 +11,7 @@ class Msn12(object):
 class Msn12SpragueCutscene(Msn12, script.CutsceneProps):
     ALIAS = 'sprague'
     TITLE = 'Исследовательская зона планеты Спрага'
+    THORN_CLASS = m12_sprague.Msn12SpragueScene
     DESCRIPTION = 'Все в сборе, Трент сразу начинает за правду матку'
     VOICE_LINES = [
 
@@ -27,16 +29,21 @@ class Msn12SpragueCutscene(Msn12, script.CutsceneProps):
         VoiceLine(90, Mandrake, ru='Вообще-то...'),
         VoiceLine(100, Hatcher, ru='Профессор? Вы что-то про это знаете?'),
 
-        VoiceLine(180, Mandrake, ru='Возможно. Я видел подобные документы в архиве, но они засекречены.'),
-        VoiceLine(190, Mandrake, ru='Требуется максимальный уровень доступа, который есть только у двух человек - у Кинга, и еще у кого-то, о ком я не знаю.'),
+        VoiceLine(110, Mandrake, ru='Возможно. Я видел подобные документы в архиве, но они засекречены.'),
+        VoiceLine(120, Mandrake, ru='Требуется максимальный уровень доступа, который есть только у двух человек - у Кинга, и еще у кого-то, о ком я не знаю.'),
 
-        VoiceLine(210, Trent, ru='Полагаю, у меня получится. (прикладывает карту доступа) Вот как-то так.'),
-        VoiceLine(220, Darcy, ru='Нихрен+а-ж себе.'),
-        VoiceLine(230, Alaric, ru='Я о тебе чего-то не знаю?'),
+        VoiceLine(130, Trent, ru='Полагаю,, этого ключа доступа должно быть достаточно. (прикладывает карту доступа)'),
+        VoiceLine(140, Darcy, ru='Нихрен+а-ж себе.'),
+        VoiceLine(150, Alaric, ru='Я о тебе чего-то не знаю?'),
 
-        VoiceLine(240, Hatcher, comment='Тревога! Хетчер подходит к столу с коммуникатором. На её лице ужас',
-                  ru='Эт-то что еще за? Так... Штаб СБА атакован.'),
-        VoiceLine(250, Hatcher, ru='Всем силам СБА в системе Сириуса приказано прибыть в штаб.'),
+        VoiceLine(160, Hatcher, ru='Ладно,, Трент. Допустим,, я тебе верю. Но как ты собираешься проникнуть в Сферу? У тебя же нет ключа от неё'),
+        VoiceLine(170, Trent, ru='(Достает ключ) Ключ от Сферы у меня тоже есть'),
+        VoiceLine(180, Darcy, ru='Трент, колись, на кого тебя подменили?'),
+
+        VoiceLine(190, Alaric, comment='Тревога!', ru='Это еще что такое?'),
+
+        VoiceLine(250, Hatcher, comment='Хетчер подходит к столу с коммуникатором. На её лице ужас',
+                  ru='Штаб СБА атакован. Всем силам СБА приказано прибыть в штаб.'),
         VoiceLine(260, Hatcher, ru='Силы противника превосходят... Да кто же это?'),
 
         VoiceLine(270, Trent, ru='(Ужас) Чёрт... Ким же говорил про спецоперацию... Твою мать... Они на это решились.'),
@@ -53,6 +60,7 @@ class Msn12SpragueCutscene(Msn12, script.CutsceneProps):
 class Msn12CapturedCutscene(Msn12, script.CutsceneProps):
     ALIAS = 'captured'
     TITLE = 'Бар линкора Осирис'
+    THORN_CLASS = m12_captured.Msn12CapturedScene
     DESCRIPTION = 'Ямамото пленён. Теперь нужно убедить Кинга заняться Рокфордом'
     VOICE_LINES = [
         VoiceLine(10, King, ru='Что с Ямамото?'),
