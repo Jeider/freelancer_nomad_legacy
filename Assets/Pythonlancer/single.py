@@ -387,8 +387,8 @@ def scene():
     script_manager = ScriptManager()
     msn = script_manager.get_mission_by_index(12)
     cutscene = msn.get_cutscene_by_code('sprague')
-    cutscene.get_thorn(tpl_manager).sync_content()
-    # cutscene.get_decision_thorn(tpl_manager).sync_content()
+    # cutscene.get_thorn(tpl_manager).sync_content()
+    cutscene.get_decision_thorn(tpl_manager).sync_content()
     # cutscene.get_accept_thorn(tpl_manager).sync_content()
 
     print('scene done')

@@ -950,5 +950,9 @@ class Msn12SpragueScene(Scene):
         # cam_impossible.move_focus(group=MAIN, index=2, duration=1, smooth=True, time_delay=0)
 
 
-
-
+class Msn12SpragueDecisionScene(Scene):
+    def action(self):
+        main_group = self.get_group(MAIN)
+        cam_decision = LookAtCamera(root=self, name='cam_decision', fov=30)
+        cam_decision.set(group=MAIN)
+        main_group.append_time(1000)

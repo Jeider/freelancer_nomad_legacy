@@ -1116,9 +1116,9 @@ entities={
     spatialprops={
         pos={ -4.17, 0.00, -10.41 },
         orient={ 
-            { -1.0000000,-0.0000000,-0.0000000 },
-            { 0.0000000,1.0000000,-0.0000000 },
-            { 0.0000000,0.0000000,-1.0000000 }
+            { -0.2588190,0.0000000,0.9659258 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { -0.9659258,0.0000000,-0.2588190 }
          }
     }
 }
@@ -1208,6 +1208,20 @@ entities={
 }
 ,
 {
+    entity_name="automarker_mrk_hatcher_look_front",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.49, 1.68, -12.70 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
     entity_name="cam_dbg",
     type=CAMERA,
     template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
@@ -1263,7 +1277,7 @@ entities={
          }
     },
     cameraprops={
-        fovh=18,
+        fovh=20,
         hvaspect=1.85,
         nearplane=0.2,
         farplane=5000
@@ -1473,7 +1487,7 @@ entities={
          }
     },
     cameraprops={
-        fovh=18,
+        fovh=20,
         hvaspect=1.85,
         nearplane=0.2,
         farplane=5000
@@ -1491,6 +1505,34 @@ entities={
         }
     },
     audioprops={attenuation=-12,pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
+    userprops={category="Audio",Priority="Story_Sound_1"}
+}
+,
+{
+    entity_name="music1",
+    template_name="rtc_music_anticipation_more_forboding",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+    spatialprops={
+        pos={0,0,0},
+        orient={
+            {1,0,0},{0,1,0},{0,0,1}
+        }
+    },
+    audioprops={attenuation=-12,pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
+    userprops={category="Audio",Priority="Story_Sound_1"}
+}
+,
+{
+    entity_name="music2",
+    template_name="rtc_music_upcoming_action_heavy",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+    spatialprops={
+        pos={0,0,0},
+        orient={
+            {1,0,0},{0,1,0},{0,0,1}
+        }
+    },
+    audioprops={attenuation=-15,pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
     userprops={category="Audio",Priority="Story_Sound_1"}
 }
 ,
@@ -1567,7 +1609,7 @@ entities={
     entity_name="Char_trent",
     type=DEFORMABLE,
     template_name="trent",
-    lt_grp=0,
+    lt_grp=20,
     srt_grp=0,
     usr_flg=0,
     flags=LIT_DYNAMIC,
@@ -1732,7 +1774,7 @@ entities={
     entity_name="Char_alaric",
     type=DEFORMABLE,
     template_name="alaric",
-    lt_grp=0,
+    lt_grp=20,
     srt_grp=0,
     usr_flg=0,
     flags=LIT_DYNAMIC,
@@ -1787,7 +1829,7 @@ entities={
     entity_name="Char_darcy",
     type=DEFORMABLE,
     template_name="darcy",
-    lt_grp=0,
+    lt_grp=20,
     srt_grp=0,
     usr_flg=0,
     flags=LIT_DYNAMIC,
@@ -2303,6 +2345,18 @@ events={
         end_effector="Eye IK Left", transition_duration=1,
         target_part="", target_type=ROOT,
         count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    0,
+    START_SOUND,
+    {"music1"},
+    {
+        duration=88.21399999999997
+        
+        , flags=LOOP
+        
     }
 }
 ,
@@ -3389,7 +3443,7 @@ events={
     SET_CAMERA,
     {
         "Monitor_1",
-        "cam_welcome"
+        "cam_final"
     }
 }
 ,
@@ -5140,6 +5194,32 @@ events={
 ,
 {
     84.21399999999997,
+    START_AUDIO_PROP_ANIM,
+    {
+        "music1"
+    },
+    {
+        duration=2,
+        audioprops={
+            attenuation=-40
+        }
+    }
+}
+,
+{
+    84.21399999999997,
+    START_SOUND,
+    {"music2"},
+    {
+        duration=300
+        
+        , flags=LOOP
+        
+    }
+}
+,
+{
+    84.21399999999997,
     START_SPATIAL_PROP_ANIM,
     {
         "cam_trent_three",
@@ -5381,6 +5461,42 @@ events={
 }
 ,
 {
+    0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_hatcher_head_ik",
+        "charpoint_trent_talk"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_hatcher_eye_ik",
+        "charpoint_trent_talk"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
     89.68999999999997,
     START_SPATIAL_PROP_ANIM,
     {
@@ -5396,6 +5512,34 @@ events={
         }
         
     }
+}
+,
+{
+    89.68999999999997,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "Char_mandrake",
+        "automarker_mandrake_alarm"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    89.68999999999997,
+    START_MOTION,
+    {"Char_mandrake"},
+    {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+     duration=7, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=0.5 
+     }
 }
 ,
 {
@@ -5769,6 +5913,21 @@ events={
      duration=15, time_scale=1, start_time=0, weight=1, heading=-1
        , trans_time=0.6 
      }
+}
+,
+{
+    100.68999999999997,
+    START_IK,
+    {
+        "Char_hatcher",
+        "char_ik_Char_hatcher_head_ik"
+    },
+    {
+        duration=15,
+        end_effector="Body_Head", transition_duration=2,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
 }
 ,
 {
@@ -7051,12 +7210,12 @@ events={
 }
 ,
 {
-    125.92599999999995,
+    125.72599999999994,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_FMBODY_STND_WALK_TRNS_000LV_XA_01",
      duration=7, time_scale=1, start_time=0, weight=1, heading=-1
-       , trans_time=0.5 
+       , trans_time=0.2 
      }
 }
 ,

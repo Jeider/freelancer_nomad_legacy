@@ -12,6 +12,7 @@ class Msn12SpragueCutscene(Msn12, script.CutsceneProps):
     ALIAS = 'sprague'
     TITLE = 'Исследовательская зона планеты Спрага'
     THORN_CLASS = m12_sprague.Msn12SpragueScene
+    THORN_DECISION_CLASS = m12_sprague.Msn12SpragueDecisionScene
     DESCRIPTION = 'Все в сборе, Трент сразу начинает за правду матку'
     VOICE_LINES = [
 
