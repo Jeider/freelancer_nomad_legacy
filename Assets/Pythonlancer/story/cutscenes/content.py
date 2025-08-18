@@ -567,6 +567,9 @@ class StartSoundEvent(Event):
             'loop': self.loop,
         }
 
+    def set_duration(self, duration):
+        self.duration = duration
+
 
 class AudioAnimEvent(Event):
     TEMPLATE = 'audio_anim'
@@ -937,8 +940,8 @@ class Sound(Entity):
         }
 
     def start(self, group, duration, loop=False, **kwargs):
-        StartSoundEvent(root=self.root, group=group, sound_name=self.name,
-                        duration=duration, loop=loop, **kwargs)
+        return StartSoundEvent(root=self.root, group=group, sound_name=self.name,
+                               duration=duration, loop=loop, **kwargs)
 
     def change_attenuation(self, group, duration, attenuation, **kwargs):
         AudioAnimEvent(root=self.root, group=group, sound_name=self.name,

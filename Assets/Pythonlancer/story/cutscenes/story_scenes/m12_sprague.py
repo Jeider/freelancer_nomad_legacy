@@ -46,7 +46,7 @@ class Msn12SpragueScene(Scene):
         'darcy_arrive': (0, -170, 0),
         'hatcher_talk': (0, 30, 0),
         'hatcher_init': (0, -135, 0),
-        'mandrake_alarm': (0, -180, 0),
+        'mandrake_alarm': (0, 105, 0),
 
     }
 
@@ -57,7 +57,7 @@ class Msn12SpragueScene(Scene):
 
         cam_dbg = LookAtCamera(root=self, name='cam_dbg', fov=30)
         cam_start = LookAtCamera(root=self, name='cam_start', fov=25)
-        cam_welcome = LookAtCamera(root=self, name='cam_welcome', fov=18)
+        cam_welcome = LookAtCamera(root=self, name='cam_welcome', fov=20)
         cam_trent = LookAtCamera(root=self, name='cam_trent', fov=18)
         cam_trent_two = LookAtCamera(root=self, name='cam_trent_two', fov=18)
         cam_trent_three = LookAtCamera(root=self, name='cam_trent_three', fov=18)
@@ -67,12 +67,13 @@ class Msn12SpragueScene(Scene):
         cam_access = LookAtCamera(root=self, name='cam_access', fov=18)
         cam_alarm = LookAtCamera(root=self, name='cam_alarm', fov=22)
         cam_what_operation = LookAtCamera(root=self, name='cam_what_operation', fov=18)
-        cam_final = LookAtCamera(root=self, name='cam_final', fov=18)
-
+        cam_final = LookAtCamera(root=self, name='cam_final', fov=20)
 
         # PROPS
 
         alarm = Music(root=self, name='alarm', sound='rtc_klaxon_loop_3', attenuation=-12)
+        music_one = Music(root=self, name='music1', sound='rtc_music_anticipation_more_forboding', attenuation=-12)
+        music_two = Music(root=self, name='music2', sound='rtc_music_upcoming_action_heavy', attenuation=-15)
 
         doors = DigSiteDoors(root=self, name='doors', init_point=self.DEFAULT_POINT_NAME, light_group=0)
         anim_open = 'Sc_door_open'
@@ -85,11 +86,11 @@ class Msn12SpragueScene(Scene):
 
         # CHARACTERS
 
-        trent = Character(root=self, actor=actors.Trent, light_group=0, init_point='trent_init', rotate_y=180)
+        trent = Character(root=self, actor=actors.Trent, light_group=20, init_point='trent_init', rotate_y=180)
         mandrake = Character(root=self, actor=actors.Mandrake, light_group=0, init_point='mandrake_init', rotate_y=-170)
         hatcher = Character(root=self, actor=actors.Hatcher, light_group=0, init_point='hatcher_init', rotate_y=-135)
-        alaric = Character(root=self, actor=actors.Alaric, light_group=0, init_point='alaric_init', rotate_y=0)
-        darcy = Character(root=self, actor=actors.Darcy, light_group=0, init_point='darcy_init', rotate_y=0)
+        alaric = Character(root=self, actor=actors.Alaric, light_group=20, init_point='alaric_init', rotate_y=0)
+        darcy = Character(root=self, actor=actors.Darcy, light_group=20, init_point='darcy_init', rotate_y=0)
 
         # MARKERS
 
@@ -115,6 +116,8 @@ class Msn12SpragueScene(Scene):
         mrk_mandrake_front_right = self.get_automarker_name('mrk_mandrake_front_right')
         mrk_alarm = self.get_automarker_name('mrk_alarm')
         mrk_alarm_top = self.get_automarker_name('mrk_alarm_top')
+        mrk_hatcher_look_front = self.get_automarker_name('mrk_hatcher_look_front')
+
 
         # PREPARE
 
@@ -143,6 +146,8 @@ class Msn12SpragueScene(Scene):
         hatcher_eye_ik1 = hatcher.start_eye_ik(group=MAIN, duration=1000, time_delay=7)
 
         # ACTION!
+
+        music_one_instance = music_one.start(group=MAIN, duration=30, loop=True)
 
         cam_start.set(group=MAIN)
         # cam_welcome.set(group=MAIN)
@@ -267,7 +272,7 @@ class Msn12SpragueScene(Scene):
 
         trent.facial(group=MAIN, index=50)
 
-        cam_welcome.set(group=MAIN)
+        cam_final.set(group=MAIN)
 
         MoveFastEvent(root=self, group=MAIN, object_name=hatcher.name, target_name=self.get_automarker_name('hatcher_talk'))
         hatcher.motion(group=MAIN, duration=7, anim=Female.Sc_FMBODY_STND_FSTHIPB_HOLD_000LV_XA_01, time_scale=1)
@@ -443,6 +448,10 @@ class Msn12SpragueScene(Scene):
         darcy.facial(group=MAIN, index=180)
         alarm.start(group=MAIN, duration=30, loop=True)
         alarm.change_attenuation(group=MAIN, duration=2, attenuation=-20, time_delay=4)
+        music_one.change_attenuation(group=MAIN, duration=2, attenuation=-40)
+        music_one_instance.set_duration(main_group.get_time()+4)
+        music_two.start(group=MAIN, duration=300, loop=True)
+
 
         cam_trent_three.move_cam(group=MAIN, index=2, duration=5, smooth=True)
         cam_trent_three.move_focus(group=MAIN, index=2, duration=5, smooth=True)
@@ -595,12 +604,26 @@ class Msn12SpragueScene(Scene):
         #
         #
         # main_group.append_time(4)
-
-
+        #
+        #
         # main_group.append_time(1000)
+        #
+        #
+        # self.set_start_time(main_group.get_time())
+        #
+        # main_group.append_time(1)
+
+
+
+        hatcher.move_head_ik(group=BG, target_name=mrk_trent_talk, immediately=True)
+        hatcher.move_eye_ik(group=BG, target_name=mrk_trent_talk, immediately=True)
 
         MoveFastEvent(root=self, group=MAIN, object_name=hatcher.name,
                       target_name=self.get_automarker_name('hatcher_init'))
+
+        MoveFastEvent(root=self, group=MAIN, object_name=mandrake.name, target_name=self.get_automarker_name('mandrake_alarm'))
+        mandrake.motion(group=MAIN, duration=7, anim=Male.Sc_MLBODY_STND_IDLE_000LV_xa_04, trans_time=0.5)
+
 
         cam_alarm.set(group=MAIN)
         cam_alarm.move_cam(group=MAIN, index=2, duration=10, smooth=True)
@@ -633,6 +656,9 @@ class Msn12SpragueScene(Scene):
         hatcher.motion(group=MAIN, duration=15, start_time=12, anim=Female.Sc_SPCBODY_s002x_sinclair_XC_STND_000LV_26)
         hatcher.motion(group=MAIN, duration=15, anim=Female.Sc_FMBODY_STND_TURN_RGHT_180LV_XA_02, time_scale=0.8, trans_time=0.6, time_delay=11)
         hatcher.motion(group=MAIN, duration=15, anim=Female.Sc_FMBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01, trans_time=0.6, time_delay=14)
+
+
+        hatcher.start_head_ik(group=MAIN, duration=15, time_delay=11, transition_duration=2)
 
         hatcher.facial(group=MAIN, index=250)
 
@@ -751,7 +777,7 @@ class Msn12SpragueScene(Scene):
         MoveFastEvent(root=self, group=MAIN, object_name=hatcher.name, target_name=self.get_automarker_name('hatcher_talk'))
         hatcher.motion(group=MAIN, duration=7, anim=Female.Sc_FMBODY_STND_FSTHIPB_HOLD_000LV_XA_01)
         hatcher.motion(group=MAIN, duration=7, anim=Female.Sc_FMBODY_STND_FSTHIPB_RLEASE_000LV_XA_01, trans_time=0.5, time_delay=1)
-        hatcher.motion(group=MAIN, duration=7, anim=Female.Sc_FMBODY_STND_WALK_TRNS_000LV_XA_01, trans_time=0.5, time_delay=2)
+        hatcher.motion(group=MAIN, duration=7, anim=Female.Sc_FMBODY_STND_WALK_TRNS_000LV_XA_01, trans_time=0.2, time_delay=1.8)
 
         cam_final.set(group=MAIN)
 
