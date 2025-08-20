@@ -370,13 +370,6 @@ class OmegaJunkerThree(Actor):
     COMM_APPEARANCE = 'pl_male1_head, pi_pirate3_body, comm_pi_pirate'
 
 
-class ForbesSmugglerThree(Actor):
-    RU_NAME = 'Контрабандист'
-    TYPE = ACTOR_MALE
-    NAME = 'smuggler3'
-    COMM_APPEARANCE = 'pl_male1_head, pi_pirate3_body, comm_pi_pirate'
-
-
 class MaleCaptain(Actor):
     RU_NAME = 'Капитан'
     TYPE = ACTOR_MALE
@@ -904,6 +897,14 @@ class MusashiBartender(Actor):
     TYPE = ACTOR_MALE
     NAME = 'musashi_bartender'
     CUTSCENE_APPEARANCE = 'musashi_bartender'
+
+
+class OsirisOfficer(Actor):
+    RU_NAME = 'Капитан'
+    TYPE = ACTOR_FEMALE
+    NAME = 'asf_captn'
+    CUTSCENE_APPEARANCE = 'm8_asf_captain_visor'
+
 
 
 class ActorManager:

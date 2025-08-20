@@ -1,4 +1,4 @@
-duration=10.768
+duration=11.768
 
 entities={
 	{
@@ -450,7 +450,7 @@ entities={
     type=MARKER,
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
     spatialprops={
-        pos={ -1.42, -0.00, -8.59 },
+        pos={ -1.23, -0.00, -7.89 },
         orient={ 
             { 1.0000000,0.0000000,0.0000000 },
             { 0.0000000,1.0000000,0.0000000 },
@@ -1006,6 +1006,20 @@ entities={
 }
 ,
 {
+    entity_name="hero_music",
+    template_name="rtc_music_reveal_enemy_position_of_strength",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+    spatialprops={
+        pos={0,0,0},
+        orient={
+            {1,0,0},{0,1,0},{0,0,1}
+        }
+    },
+    audioprops={attenuation=-25,pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
+    userprops={category="Audio"  , Priority="Story_Sound_1"  }
+}
+,
+{
     entity_name="LIGHT_ROOMC",
     type=LIGHT,
     template_name="",
@@ -1506,6 +1520,30 @@ events={
     {
         duration=1000, offset={0,0,0},
         up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    START_SOUND,
+    {"hero_music"},
+    {
+        duration=1000, start_time=13000
+        
+    }
+}
+,
+{
+    0,
+    START_AUDIO_PROP_ANIM,
+    {
+        "hero_music"
+    },
+    {
+        duration=3,
+        audioprops={
+            attenuation=-15
+        }
     }
 }
 ,
@@ -2169,6 +2207,20 @@ events={
     },
     {
         duration=20
+    }
+}
+,
+{
+    9.768,
+    START_AUDIO_PROP_ANIM,
+    {
+        "hero_music"
+    },
+    {
+        duration=2,
+        audioprops={
+            attenuation=-25
+        }
     }
 }
 

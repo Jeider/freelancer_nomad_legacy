@@ -450,7 +450,7 @@ entities={
     type=MARKER,
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
     spatialprops={
-        pos={ -1.42, -0.00, -8.59 },
+        pos={ -1.23, -0.00, -7.89 },
         orient={ 
             { 1.0000000,0.0000000,0.0000000 },
             { 0.0000000,1.0000000,0.0000000 },
@@ -1418,6 +1418,34 @@ entities={
 }
 ,
 {
+    entity_name="the_bg_music",
+    template_name="backgroundmusic",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+    spatialprops={
+        pos={0,0,0},
+        orient={
+            {1,0,0},{0,1,0},{0,0,1}
+        }
+    },
+    audioprops={attenuation=0,pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
+    userprops={category="Audio"   }
+}
+,
+{
+    entity_name="exposition_music",
+    template_name="rtc_music_reveal_and_exposition",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+    spatialprops={
+        pos={0,0,0},
+        orient={
+            {1,0,0},{0,1,0},{0,0,1}
+        }
+    },
+    audioprops={attenuation=-15,pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
+    userprops={category="Audio"  , Priority="Story_Sound_1"  }
+}
+,
+{
     entity_name="Char_trent",
     type=DEFORMABLE,
     template_name="trent",
@@ -1748,6 +1776,116 @@ entities={
 }
 ,
 {
+    entity_name="Char_bartender",
+    type=DEFORMABLE,
+    template_name="",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            0.00, 0.00, 0.00
+        },
+        orient={ 
+            { -1.0000000,0.0000000,0.0000000 }, 
+            { 0.0000000,1.0000000,0.0000000 },
+            { -0.0000000,0.0000000,-1.0000000 }
+         }
+    },
+    compoundprops={
+        floor_height=0
+    },
+    userprops={
+        Actor="bartender",
+        category="Character"
+    }
+}
+,
+{
+    entity_name="char_ik_Char_bartender_head_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="char_ik_Char_bartender_eye_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="Char_asf_captn",
+    type=DEFORMABLE,
+    template_name="m8_asf_captain_visor",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1.23, -0.00, -7.89
+        },
+        orient={ 
+            { 0.0000000,0.0000000,1.0000000 }, 
+            { 0.0000000,1.0000000,0.0000000 },
+            { -1.0000000,0.0000000,0.0000000 }
+         }
+    },
+    compoundprops={
+        floor_height=0
+    },
+    userprops={
+        Actor="asf_captn",
+        category="Character"
+    }
+}
+,
+{
+    entity_name="char_ik_Char_asf_captn_head_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="char_ik_Char_asf_captn_eye_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
     entity_name="charpoint_trent_talk",
     type=MARKER,
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
@@ -1907,6 +2045,38 @@ events={
     {
         duration=1000, offset={0,0,0},
         up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    3,
+    START_AUDIO_PROP_ANIM,
+    {
+        "the_bg_music"
+    },
+    {
+        duration=3,
+        audioprops={
+            attenuation=-18
+        }
+    }
+}
+,
+{
+    0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "Char_bartender",
+        "offscreen"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
     }
 }
 ,
@@ -2214,6 +2384,36 @@ events={
 {
     0,
     START_MOTION,
+    {"Char_asf_captn"},
+    {animation="Sc_FMBODY_STND_SALUT_000LV_XA_03",
+     duration=10, time_scale=1, start_time=1, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    2,
+    START_MOTION,
+    {"Char_asf_captn"},
+    {animation="Sc_FMBODY_STND_WALK_TRNS_180LV_XA_02",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    4.45,
+    START_MOTION,
+    {"Char_asf_captn"},
+    {animation="Sc_FMBODY_WLKG_000LV_XA_01",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    0,
+    START_MOTION,
     {"Char_king"},
     {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
      duration=10, time_scale=1, start_time=0, weight=1, heading=-1
@@ -2309,6 +2509,24 @@ events={
     },
     {
         duration=20
+    }
+}
+,
+{
+    5.38,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "Char_asf_captn",
+        "offscreen"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
     }
 }
 ,
@@ -2926,6 +3144,20 @@ events={
 ,
 {
     35.34400000000001,
+    START_AUDIO_PROP_ANIM,
+    {
+        "the_bg_music"
+    },
+    {
+        duration=3,
+        audioprops={
+            attenuation=-100
+        }
+    }
+}
+,
+{
+    35.34400000000001,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_dx_s071b_0501_king", start_time=0.5, duration=10, time_scale=1.2, trans_time=0.25,  weight=1, heading=-1}
@@ -3159,6 +3391,16 @@ events={
         spatialprops={
             pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
         }
+        
+    }
+}
+,
+{
+    37.37200000000001,
+    START_SOUND,
+    {"exposition_music"},
+    {
+        duration=100, start_time=0
         
     }
 }
@@ -3446,6 +3688,16 @@ events={
     {animation="Sc_MLBODY_STND_CROSS_ARMS_000LV_xa_06",
      duration=10, time_scale=1, start_time=0, weight=1, heading=-1
        , trans_time=0.5 
+     }
+}
+,
+{
+    71.456,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+     duration=10, time_scale=0.8, start_time=0, weight=1, heading=-1
+     , event_flags=2   , trans_time=0.5 
      }
 }
 ,

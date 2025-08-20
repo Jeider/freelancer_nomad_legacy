@@ -9,5 +9,5 @@
         }
     },
     audioprops={attenuation={{ attenuation }},pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
-    userprops={category="Audio",Priority="Story_Sound_1"}
+    userprops={category="Audio"  {% if priority %}, Priority="{{ priority }}" {% endif %} }
 }

@@ -54,6 +54,9 @@ HEAD_STAND_MALE = 1.65
 SOURCE_BLENDER = 'blender'
 SOURCE_PYTHONLANCER = 'pythonlancer'
 
+BACKGROUND_MUSIC = 'backgroundmusic'
+BACKGROUND_AMBIENT = 'backgroundambient'
+
 
 class Point:
     # WARNING! temporary only for positions!!
@@ -70,7 +73,6 @@ class Point:
         # if len(self.orientation) != 4:
         #     raise Exception(f'Point {name} have wrong quaternion for orientation')
         self.rotate = rotate if rotate else [0, 0, 0]
-
 
     @property
     def pos(self):
@@ -554,17 +556,19 @@ class AttachEvent(Event):
 class StartSoundEvent(Event):
     TEMPLATE = 'start_sound'
 
-    def __init__(self, sound_name, duration, loop=False, *args, **kwargs):
+    def __init__(self, sound_name, duration, loop=False, start_time=0, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.sound_name = sound_name
         self.duration = duration
         self.loop = loop
+        self.start_time = start_time
 
     def get_params(self):
         return {
             'sound': self.sound_name,
             'duration': self.duration,
             'loop': self.loop,
+            'start_time': self.start_time,
         }
 
     def set_duration(self, duration):
@@ -927,20 +931,23 @@ class LookAtCamera(Camera):
 class Sound(Entity):
     TEMPLATE = 'sound'
 
-    def __init__(self, sound, attenuation, *args, **kwargs):
+    def __init__(self, sound, attenuation, priority='Story_Sound_1', *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.sound = sound
         self.attenuation = attenuation
+        self.priority = priority
 
     def get_params(self):
         return {
             'name': self.name,
             'sound': self.sound,
             'attenuation': self.attenuation,
+            'priority': self.priority,
         }
 
-    def start(self, group, duration, loop=False, **kwargs):
+    def start(self, group, duration, loop=False, start_time=0, **kwargs):
         return StartSoundEvent(root=self.root, group=group, sound_name=self.name,
+                               start_time=start_time,
                                duration=duration, loop=loop, **kwargs)
 
     def change_attenuation(self, group, duration, attenuation, **kwargs):

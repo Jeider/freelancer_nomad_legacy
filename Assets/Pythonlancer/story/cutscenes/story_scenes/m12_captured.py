@@ -58,6 +58,11 @@ class Msn12CapturedScene(Scene):
         comm = LiComm(root=self, name='comm', init_point='li_comm', light_group=0)
         screen = LiCommScreen(root=self, name='screen', init_point='li_comm', light_group=0)
 
+        bg_music = Music(root=self, name='the_bg_music', sound=BACKGROUND_MUSIC, attenuation=0, priority=None)
+        bg_music.change_attenuation(group=BG, attenuation=-18, duration=3, time_delay=3)
+
+        exposition_music = Music(root=self, name='exposition_music', sound='rtc_music_reveal_and_exposition', attenuation=-15)
+
         # CHARACTERS
 
         trent = Character(root=self, actor=actors.Trent, light_group=0, init_point='trent_init', rotate_y=0)
@@ -67,6 +72,12 @@ class Msn12CapturedScene(Scene):
         darcy = Character(root=self, actor=actors.Darcy, light_group=0, init_point='darcy_init', rotate_y=0)
         mandrake = Character(root=self, actor=actors.Mandrake, init_point='mandrake_comm', rotate_y=-90,
                              floor_height=mandrake_floor_height, light_group=comm_light)
+        bartender_fixture = Character(root=self, actor=actors.BartenderFixture, light_group=0, init_point=self.DEFAULT_POINT_NAME, rotate_y=180)
+
+        guard = Character(root=self, actor=actors.OsirisOfficer, light_group=0, init_point='guard_init', rotate_y=90)
+
+        MoveOffscreenEvent(root=self, group=BG, object_name=bartender_fixture.name)
+
 
         # MARKERS
 
@@ -116,6 +127,12 @@ class Msn12CapturedScene(Scene):
         cam_start.move_cam(group=MAIN, index=2, duration=6, smooth=True)
         # cam_start.move_focus(group=MAIN, index=2, duration=10, smooth=True)
 
+        guard.motion(group=MAIN, duration=10, anim=Female.Sc_FMBODY_STND_SALUT_000LV_XA_03, start_time=1)
+        guard.motion(group=MAIN, duration=10, anim=Female.Sc_FMBODY_STND_WALK_TRNS_180LV_XA_02, time_delay=2, trans_time=1)
+        guard.motion(group=MAIN, duration=10, anim=Female.Sc_FMBODY_WLKG_000LV_XA_01, time_delay=4.45)
+
+
+
 
         king.motion(group=MAIN, duration=10, loop=True, anim=Male.Sc_MLBODY_STND_IDLE_000LV_xa_04)
         # trent.motion(group=MAIN, duration=10, loop=True, anim=Male.Sc_MLBODY_STND_IDLE_000LV_xa_04)
@@ -138,6 +155,7 @@ class Msn12CapturedScene(Scene):
 
         king.facial(group=MAIN, index=10)
 
+        MoveOffscreenEvent(root=self, group=MAIN, object_name=guard.name)
 
         cam_hatcher.set(group=MAIN)
 
@@ -235,7 +253,10 @@ class Msn12CapturedScene(Scene):
         trent.move_head_ik(group=MAIN, target_name=mrk_mandrake, duration=2.3, time_delay=1.5)
         trent.move_eye_ik(group=MAIN, target_name=mrk_mandrake, duration=0.8, time_delay=1.5)
 
+        bg_music.change_attenuation(group=MAIN, attenuation=-100, duration=3)
+
         king.facial(group=MAIN, index=90)
+
 
         MoveFastEvent(root=self, group=MAIN, object_name=hatcher.name, target_name=self.get_automarker_name('hatcher_comm'))
         MoveFastEvent(root=self, group=MAIN, object_name=alaric.name, target_name=self.get_automarker_name('alaric_comm'))
@@ -258,6 +279,8 @@ class Msn12CapturedScene(Scene):
 
         cam_comm.set(group=MAIN)
         cam_comm.move_cam(group=MAIN, index=2, duration=60, smooth=False)
+
+        exposition_music.start(group=MAIN, duration=100)
 
         mandrake.motion(group=MAIN, duration=10, loop=True, anim=Male.Sc_MLBODY_STND_IDLE_000LV_xa_04)
 
@@ -292,6 +315,8 @@ class Msn12CapturedScene(Scene):
 
         mandrake.motion(group=MAIN, duration=10, loop=True, anim=Male.Sc_MLBODY_STND_IDLE_000LV_xa_04, trans_time=1)
         mandrake.motion(group=MAIN, duration=10, anim=Male.Sc_MLBODY_STND_CROSS_ARMS_000LV_xa_06, trans_time=0.5, time_delay=3)
+
+        trent.motion(group=MAIN, duration=10, loop=True, anim=Male.Sc_MLBODY_STND_IDLE_000LV_xa_04, time_scale=0.8, trans_time=0.5, time_delay=2)
 
         mandrake.facial(group=MAIN, index=150)
 
@@ -416,6 +441,15 @@ class Msn12CapturedAcceptScene(Scene):
         cam_insane = LookAtCamera(root=self, name='cam_insane', fov=18)
 
 
+        # bg_music = Music(root=self, name='the_bg_music', sound=BACKGROUND_MUSIC, attenuation=-100, priority=None)
+        # bg_music.change_attenuation(group=BG, attenuation=-100, duration=0.1)
+
+        hero_music = Music(root=self, name='hero_music', sound='rtc_music_reveal_enemy_position_of_strength', attenuation=-25)
+
+        hero_music.start(group=MAIN, duration=1000, start_time=13000)
+        hero_music.change_attenuation(group=MAIN, duration=3, attenuation=-15)
+
+
         # PROPS
 
         king_light = 35
@@ -510,4 +544,6 @@ class Msn12CapturedAcceptScene(Scene):
         trent.move_eye_ik(group=MAIN, target_name=mrk_alaric_comm, duration=0.7, time_delay=0)
         hatcher.facial(group=MAIN, index=210)
 
-        main_group.append_time(1)
+
+        hero_music.change_attenuation(group=MAIN, duration=2, attenuation=-25)
+        main_group.append_time(2)
