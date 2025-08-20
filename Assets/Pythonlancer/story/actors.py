@@ -180,9 +180,10 @@ class King(Actor):
     TYPE = ACTOR_MALE
     NAME = 'king'
     COMM_APPEARANCE = 'li_scrote_head, li_scrote_body'
+    CUTSCENE_APPEARANCE = 'king'
     STEOS_ID = 218
     STEOS_PITCH = 1
-    STEOS_SPEED = 1.2
+    STEOS_SPEED = 1.1
 
 
 class Tilton(Actor):

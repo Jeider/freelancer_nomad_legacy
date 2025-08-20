@@ -29,8 +29,8 @@ entities={
 
        
 {
-    entity_name="DX_m12_sprague_0160_hatcher",
-    template_name="DX_m12_sprague_0160_hatcher",
+    entity_name="DX_m12_captured_0210_hatcher",
+    template_name="DX_m12_captured_0210_hatcher",
     type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
 }
         
@@ -223,7 +223,7 @@ events={
     0,
     START_SOUND,
     {
-        "DX_m12_sprague_0160_hatcher"
+        "DX_m12_captured_0210_hatcher"
     },
     {
         duration=30
@@ -234,26 +234,13 @@ events={
 
 
 
-
-	
 	{
 		-- LIP
-		0.0,
+		0,
 		START_MOTION,
 		{"Char_the"},
-		{animation="Sc_dx_s070x_2701_Jacobi", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+		{animation="Sc_dx_s070x_2501_Jacobi", start_time=4.4, duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 	},
-	
-	{
-		-- LIP
-		2.5,
-		START_MOTION,
-		{"Char_the"},
-		{animation="Sc_dx_s070x_0801_Jacobi", start_time=1, duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
-	},
-	
-
-
 
 
 
