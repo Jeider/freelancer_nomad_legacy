@@ -700,6 +700,22 @@ class Prop(Compound):
         return self.COMPOUND_TEMPLATE_NAME
 
 
+class Ship(Prop):
+    COMPOUND_TEMPLATE_NAME = None
+    TEMPLATE = 'ship'
+
+    def __init__(self, loadout=None, have_lights=False, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.loadout = loadout
+        self.have_lights = have_lights
+
+    def get_params(self):
+        params = super().get_params()
+        params['loadout'] = self.loadout
+        params['have_lights'] = self.have_lights
+        return params
+
+
 class Glass(Prop):
     COMPOUND_TEMPLATE_NAME = 'glass'
 

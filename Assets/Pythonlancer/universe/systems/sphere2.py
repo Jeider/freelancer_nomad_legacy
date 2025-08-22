@@ -28,6 +28,12 @@ class SphereTwoOsiris(Sphere2Member, main_objects.LibertyBattleship):
     BASE_INDEX = 99
     REL = TOP
     INTERIOR_CLASS = interior.OsirisInterior
+    INTERIOR_EXTRA_ROOMS = ['''
+;mission 02 special room
+[Room]
+nickname = Deck2
+file = Universe\\SPECIAL\\SPHERE2\\Room\\osiris_deck2.ini
+    ''']
     DEALERS = dealers.LibertyMilitaryDealers
     STORY = True
     CALC_STORE = False

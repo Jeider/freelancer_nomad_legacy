@@ -365,7 +365,7 @@ class Sig17Battleship(Sig17Member, main_objects.LibertyBattleship):
     REL = LEFT
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.LibertyMilitaryDealers
-    SHIP_SET = markets.ShipSet('li_elite')
+    SHIP_SET = markets.ShipSet('li_elite2')
 
     RU_NAME = 'Линкор Грифон'
 
