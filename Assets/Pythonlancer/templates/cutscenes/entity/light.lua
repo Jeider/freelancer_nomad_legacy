@@ -5,6 +5,7 @@
     lt_grp={{ light_group }},
     srt_grp=0,
     usr_flg=0,
+    {% if is_reference %} flags=REFERENCE, {% endif %}
     spatialprops={
         pos={ {{ point.pos }} },
         orient={
@@ -35,9 +36,9 @@
             {{ direction }}
         },
         range={{ range }},
-        cutoff=90,
+        cutoff={{ cutoff }},
         type={{ light_type }},
-        theta=90,
+        theta={{ theta }},
         atten={
             1,
             0,

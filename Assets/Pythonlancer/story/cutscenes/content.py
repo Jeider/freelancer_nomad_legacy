@@ -978,8 +978,9 @@ class Music(Sound):
 class Light(Entity):
     TEMPLATE = 'light'
 
-    def __init__(self, light_group, diffuse, ambient, direction, point_name=None,
-                 light_type=L_DIRECT, on=True, range=2000, *args, **kwargs):
+    def __init__(self, light_group, diffuse, ambient, direction, point_name=None, is_reference=False,
+                 extra_name='LIGHT_', light_type=L_DIRECT, on=True,
+                 range=2000, cutoff=90, theta=90, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.point_name = point_name if point_name else self.root.DEFAULT_POINT_NAME
         self.point = self.root.get_point(self.point_name)
@@ -990,6 +991,10 @@ class Light(Entity):
         self.light_type = light_type
         self.on = on
         self.range = range
+        self.cutoff = cutoff
+        self.theta = theta
+        self.is_reference = is_reference
+        self.extra_name = extra_name
         if self.light_type not in LIGHT_TYPES:
             raise Exception(f'Light {self.name} has invalid type {self.light_type}')
         if len(self.diffuse) != 3:
@@ -1000,7 +1005,7 @@ class Light(Entity):
             raise Exception(f'Direction of light {self.name} should have 3 points')
 
     def get_light_name(self):
-        return f'LIGHT_{self.name}'
+        return f'{self.extra_name}{self.name}'
 
     def get_index(self):
         return self.light_group
@@ -1013,6 +1018,9 @@ class Light(Entity):
             'light_type': self.light_type,
             'on': self.on,
             'range': self.range,
+            'cutoff': self.cutoff,
+            'theta': self.theta,
+            'is_reference': self.is_reference,
             'diffuse': ', '.join([str(i) for i in self.diffuse]),
             'ambient': ', '.join([str(i) for i in self.ambient]),
             'direction': ', '.join([str(i) for i in self.direction]),

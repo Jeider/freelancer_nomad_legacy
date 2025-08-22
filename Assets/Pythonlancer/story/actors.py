@@ -906,6 +906,68 @@ class OsirisOfficer(Actor):
     CUTSCENE_APPEARANCE = 'm8_asf_captain_visor'
 
 
+class OsirisMaleElite1(Actor):
+    RU_NAME = 'Капитан'
+    TYPE = ACTOR_MALE
+    NAME = 'osiris_male_1'
+    CUTSCENE_APPEARANCE = 'm13_male1'
+
+
+class OsirisMaleElite2(Actor):
+    RU_NAME = 'Капитан'
+    TYPE = ACTOR_MALE
+    NAME = 'osiris_male_2'
+    CUTSCENE_APPEARANCE = 'm13_male2'
+
+
+class OsirisMaleElite3(Actor):
+    RU_NAME = 'Капитан'
+    TYPE = ACTOR_MALE
+    NAME = 'osiris_male_3'
+    CUTSCENE_APPEARANCE = 'm13_male3'
+
+
+class OsirisMaleElite4(Actor):
+    RU_NAME = 'Капитан'
+    TYPE = ACTOR_MALE
+    NAME = 'osiris_male_4'
+    CUTSCENE_APPEARANCE = 'm13_male4'
+
+
+class OsirisFemaleElite1(Actor):
+    RU_NAME = 'Капитан'
+    TYPE = ACTOR_FEMALE
+    NAME = 'osiris_female_1'
+    CUTSCENE_APPEARANCE = 'm13_female1'
+
+
+class OsirisFemaleElite2(Actor):
+    RU_NAME = 'Капитан'
+    TYPE = ACTOR_FEMALE
+    NAME = 'osiris_female_2'
+    CUTSCENE_APPEARANCE = 'm13_female2'
+
+
+class OsirisFemaleElite3(Actor):
+    RU_NAME = 'Капитан'
+    TYPE = ACTOR_FEMALE
+    NAME = 'osiris_female_3'
+    CUTSCENE_APPEARANCE = 'm13_female3'
+
+
+class OsirisFemaleElite4(Actor):
+    RU_NAME = 'Капитан'
+    TYPE = ACTOR_FEMALE
+    NAME = 'osiris_female_4'
+    CUTSCENE_APPEARANCE = 'm13_female4'
+
+
+class MajorScrew(Actor):
+    RU_NAME = 'Майор Скрю'
+    TYPE = ACTOR_MALE
+    NAME = 'major'
+    CUTSCENE_APPEARANCE = 'major_screw'
+
 
 class ActorManager:
     def __init__(self):
