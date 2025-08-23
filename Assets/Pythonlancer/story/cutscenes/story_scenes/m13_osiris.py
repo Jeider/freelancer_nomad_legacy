@@ -13,6 +13,8 @@ class Msn13OsirisScene(Scene):
     POINT_ROTATE_OVERRIDES = {
         'trent_walk': (0, 135, 0),
         'darcy_walk': (0, 135, 0),
+        'trent_quest': (0, 135, 0),
+        'darcy_quest': (0, 135, 0),
     }
 
     def action(self):
@@ -26,6 +28,9 @@ class Msn13OsirisScene(Scene):
         cam_brief = LookAtCamera(root=self, name='cam_brief', fov=24)
         cam_quest = LookAtCamera(root=self, name='cam_quest', fov=18)
         cam_answer = LookAtCamera(root=self, name='cam_answer', fov=18)
+        cam_brief_end = LookAtCamera(root=self, name='cam_brief_end', fov=20)
+        cam_alaric = LookAtCamera(root=self, name='cam_alaric', fov=18)
+        cam_final = LookAtCamera(root=self, name='cam_final', fov=20)
 
 
         # cam_trent = LookAtCamera(root=self, name='cam_trent', fov=18)
@@ -51,6 +56,7 @@ class Msn13OsirisScene(Scene):
         start_diffuse2 = [0.2, 0, 0]
         end_diffuse2 = [1, 0, 0]
         light_anim_repeat = 100
+        light_anim_repeat2 = 200
 
         set_ambi = Light(root=self, name='ambi_LtG09_Direct_Set_Amb', point_name=self.DEFAULT_POINT_NAME,
                          light_group=9, diffuse=[0, 0, 0], extra_name='', is_reference=True,
@@ -82,13 +88,13 @@ class Msn13OsirisScene(Scene):
         self.clone_group(anim3_grp, BG).append_time(0.35)
 
         spinner1.animate_diffuse(BG, 'spinner1_anim1', start_diffuse=start_diffuse2, end_diffuse=end_diffuse2,
-                                 duration=0.5, start_gap=0.5, end_gap=0.5, smooth=True, repeat=light_anim_repeat)
+                                 duration=0.5, start_gap=0.5, end_gap=0.5, smooth=True, repeat=light_anim_repeat2)
 
         spinner2.animate_diffuse(anim2_grp, 'spinner1_anim2', start_diffuse=start_diffuse, end_diffuse=end_diffuse,
                                  duration=0.5, start_gap=0.5, end_gap=0.5, smooth=True, repeat=light_anim_repeat)
 
         spinner3.animate_diffuse(anim3_grp, 'spinner1_anim3', start_diffuse=start_diffuse, end_diffuse=end_diffuse,
-                                 duration=0.5, start_gap=0.5, end_gap=0.5, smooth=True, repeat=light_anim_repeat)
+                                 duration=0.5, start_gap=0.5, end_gap=0.5, smooth=True, repeat=light_anim_repeat2)
 
 
         # CHARACTERS
@@ -121,15 +127,13 @@ class Msn13OsirisScene(Scene):
             female1, female2, female3, female4,
         ]
 
-
-        # MoveOffscreenEvent(root=self, group=BG, object_name=bartender_fixture.name)
-
         elite_ship.anim(group=BG, anim='Sc_force extend')
 
         # MARKERS
 
         mrk_king = trent.get_stand_marker('king_init')
         mrk_trent_quest = trent.get_stand_marker('trent_quest')
+        mrk_alaric = trent.get_stand_marker('alaric_init')
 
         mrk_female4 = female4.get_stand_marker('female4')
         mrk_female1 = female1.get_stand_marker('female1')
@@ -141,7 +145,10 @@ class Msn13OsirisScene(Scene):
         # # mrk_mandrake_comm = trent.get_stand_marker('mandrake_comm')
         #
         # mrk_mandrake = self.get_automarker_name('mrk_mandrake')
-        # mrk_trent_front = self.get_automarker_name('mrk_trent_front')
+        mrk_trent_talk = self.get_automarker_name('mrk_trent_talk')
+        mrk_trent_front = self.get_automarker_name('mrk_trent_front')
+        mrk_darcy_talk = self.get_automarker_name('mrk_darcy_talk')
+        mrk_darcy_front = self.get_automarker_name('mrk_darcy_front')
         # mrk_trent_front2 = self.get_automarker_name('mrk_trent_front2')
         # mrk_trent_front_eye = self.get_automarker_name('mrk_trent_front_eye')
 
@@ -209,7 +216,9 @@ class Msn13OsirisScene(Scene):
         arrive_trent_group.append_time(1)
 
         trent.start_head_ik(group=arrive_trent, duration=1000)
+        trent.start_eye_ik(group=arrive_trent, duration=1000)
         darcy.start_head_ik(group=arrive_trent, duration=1000)
+        darcy.start_eye_ik(group=arrive_trent, duration=1000)
 
         bg_chars = 'BG_CHARS'
         bg_chars_group = self.clone_group(bg_chars, MAIN)
@@ -284,6 +293,7 @@ class Msn13OsirisScene(Scene):
         ])
 
         alaric.start_head_ik(group=MAIN, duration=1000)
+        alaric.start_eye_ik(group=MAIN, duration=1000)
 
 
 
@@ -291,7 +301,7 @@ class Msn13OsirisScene(Scene):
         king.motion(group=MAIN, duration=10, anim=Male.Sc_MLBODY_STND_ATEASE_HSEC_RLEASE_000LV_XA_03, time_scale=0.5, time_delay=2)
 
         # main_group.append_time(1000)
-        main_group.append_time(2)
+        main_group.append_time(1)
 
         king.move_head_ik(group=MAIN, target_name=mrk_female4, duration=2.3, time_delay=-1)
         king.move_eye_ik(group=MAIN, target_name=mrk_female4, duration=0.8, time_delay=-1)
@@ -406,8 +416,8 @@ class Msn13OsirisScene(Scene):
 
         female2.move_head_ik(group=MAIN, target_name=mrk_trent_quest, duration=2.3, time_delay=0)
         female2.move_eye_ik(group=MAIN, target_name=mrk_trent_quest, duration=0.8, time_delay=0)
-        female2.move_head_ik(group=MAIN, target_name=mrk_king, duration=2.3, time_delay=3)
-        female2.move_eye_ik(group=MAIN, target_name=mrk_king, duration=0.8, time_delay=3)
+        female2.move_head_ik(group=MAIN, target_name=mrk_king, duration=2.7, time_delay=4.5)
+        female2.move_eye_ik(group=MAIN, target_name=mrk_king, duration=1, time_delay=4.5)
 
         king.move_head_ik(group=MAIN, target_name=mrk_trent_quest, duration=2.3, time_delay=0)
         king.move_eye_ik(group=MAIN, target_name=mrk_trent_quest, duration=0.8, time_delay=0)
@@ -433,10 +443,206 @@ class Msn13OsirisScene(Scene):
             ik.set_duration(end_time)
 
         king.motion(group=MAIN, duration=10, anim=Male.Sc_MLBODY_STND_WALK_TRNS_270LV_XA_02,  trans_time=0.5)
+        female2.motion(group=MAIN, duration=10, anim=Female.Sc_FMBODY_STND_WALK_TRNS_180LV_XA_02,  trans_time=0.5, time_delay=-0.1)
+
+        trent.motion(group=MAIN, duration=10, anim=Male.Sc_MLBODY_STND_IDLE_000LV_xa_04, time_scale=1)
+
+        #
+        # main_group.append_time(1000)
+        #
+        # self.set_start_time(main_group.get_time())
+
+
+        # trent.start_head_ik(group=MAIN, duration=1000)
+        # trent.start_eye_ik(group=MAIN, duration=1000)
+        # darcy.start_head_ik(group=MAIN, duration=1000)
+        # darcy.start_eye_ik(group=MAIN, duration=1000)
+        # alaric.start_head_ik(group=MAIN, duration=1000)
+        # alaric.start_eye_ik(group=MAIN, duration=1000)
+
+        main_group.append_time(1)
+
+        cam_brief_end.set(group=MAIN)
+        cam_brief_end.move_cam(group=MAIN, index=2, duration=15, smooth=True)
+        cam_brief_end.move_focus(group=MAIN, index=2, duration=15, smooth=True)
+        cam_brief_end.move_cam(group=MAIN, index=3, duration=10, smooth=True, time_delay=15)
+        cam_brief_end.move_focus(group=MAIN, index=3, duration=10, smooth=True, time_delay=15)
+
+        MoveOffscreenEvent(root=self, group=MAIN, object_name=king.name)
+        MoveOffscreenEvent(root=self, group=MAIN, object_name=female2.name)
+        MoveOffscreenEvent(root=self, group=MAIN, object_name=female3.name)
+        MoveOffscreenEvent(root=self, group=MAIN, object_name=elite_ship.name)
+
+        MoveFastEvent(root=self, group=MAIN, object_name=trent.name, target_name=self.get_automarker_name('trent_quest'))
+        MoveFastEvent(root=self, group=MAIN, object_name=darcy.name, target_name=self.get_automarker_name('darcy_quest'))
+
+
+        male1.motion(group=MAIN, duration=10, loop=True, anim=Male.Sc_MLBODY_STND_IDLE_000LV_xa_04)
+        male1.motion(group=MAIN, duration=10, anim=Male.Sc_MLBODY_STND_WALK_TRNS_180LV_XA_02, time_delay=0.3)
+        male1.motion(group=MAIN, duration=10, loop=True, anim=Male.Sc_MLBODY_WLKG_000LV_XA_01, time_delay=3)
+        RotateAxisEvent(root=self, group=MAIN, object_name=male1.name, angle=30, duration=1, smooth=True, time_delay=1)
+        RotateAxisEvent(root=self, group=MAIN, object_name=male1.name, angle=-70, duration=1, smooth=True, time_delay=2.9)
+
+        male2.motion(group=MAIN, duration=10, anim=Male.Sc_MLBODY_STND_WALK_TRNS_000LV_XA_01)
+        male2.motion(group=MAIN, duration=20, loop=True, anim=Male.Sc_MLBODY_WLKG_000LV_XA_01, time_delay=1.06)
+        RotateAxisEvent(root=self, group=MAIN, object_name=male2.name, angle=-40, duration=4, smooth=True, time_delay=0.3)
+
+        male3.motion(group=MAIN, duration=10, anim=Male.Sc_MLBODY_STND_IDLE_000LV_xa_04)
+        male4.motion(group=MAIN, duration=10, loop=True, anim=Male.Sc_MLBODY_STND_FSTHIPB_HOLD_000LV_XA_02)
+        male4.motion(group=MAIN, duration=10, anim=Male.Sc_MLBODY_STND_WALK_TRNS_090LV_XA_02, trans_time=1, time_delay=1)
+        major.motion(group=MAIN, duration=10, anim=Male.Sc_MLBODY_STND_WALK_TRNS_090LV_XA_02)
+        major.motion(group=MAIN, duration=10, loop=True, anim=Male.Sc_MLBODY_WLKG_000LV_XA_01, time_delay=2.475)
+        alaric.motion(group=MAIN, duration=10, loop=True, anim=Male.Sc_MLBODY_STND_IDLE_000LV_xa_04)
+
+        darcy.motion(group=MAIN, duration=10, loop=True, anim=Female.Sc_FMBODY_STND_IDLE_000LV_xa_05)
+        female1.motion(group=MAIN, duration=10, anim=Female.Sc_FMBODY_STND_WALK_TRNS_180LV_XA_02)
+        female1.motion(group=MAIN, duration=50, loop=True, anim=Female.Sc_FMBODY_WLKG_000LV_XA_01, time_delay=2.475)
+        RotateAxisEvent(root=self, group=MAIN, object_name=female1.name, angle=-40, duration=1, smooth=True, time_delay=0.3)
+        RotateAxisEvent(root=self, group=MAIN, object_name=female1.name, angle=40, duration=1, smooth=True, time_delay=1.4)
+
+        female4.motion(group=MAIN, duration=10, anim=Female.Sc_FMBODY_STND_WALK_TRNS_000LV_XA_01)
+        female4.motion(group=MAIN, duration=10, loop=True, anim=Female.Sc_FMBODY_WLKG_000LV_XA_01, time_delay=1.46)
+        RotateAxisEvent(root=self, group=MAIN, object_name=female4.name, angle=-60, duration=3, smooth=True, time_delay=0.3)
+
+        trent.motion(group=MAIN, duration=10, anim=Male.Sc_MLBODY_STND_2STEP_FRWD_TRNS_000LV_XA_02, trans_time=0.25, time_delay=1)
+        RotateAxisEvent(root=self, group=MAIN, object_name=trent.name, angle=60, duration=2, smooth=True, time_delay=1)
+        trent.motion(group=MAIN, duration=10, anim=Male.Sc_MLBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01, trans_time=0.25, time_delay=4)
+
+        darcy.motion(group=MAIN, duration=10, anim=Female.Sc_FMBODY_STND_1STEP_SIDWYSL_000LV_XA_02, time_delay=1.4)
+        darcy.motion(group=MAIN, duration=10, anim=Female.Sc_FMBODY_STND_CROSS_ARMS_000LV_xa_03, trans_time=0.5, time_delay=3.6)
+
+        alaric.motion(group=MAIN, duration=10, anim=Male.Sc_MLBODY_STND_TURN_045LV_XA_04, trans_time=0.25, time_delay=1)
+        RotateAxisEvent(root=self, group=MAIN, object_name=alaric.name, angle=20, duration=1, smooth=True, time_delay=1)
+
+        trent.move_head_ik(group=MAIN, target_name=mrk_alaric, duration=2.3, time_delay=0)
+        trent.move_eye_ik(group=MAIN, target_name=mrk_alaric, duration=0.8, time_delay=0)
+        darcy.move_head_ik(group=MAIN, target_name=mrk_alaric, duration=2.3, time_delay=1)
+        darcy.move_eye_ik(group=MAIN, target_name=mrk_alaric, duration=0.8, time_delay=1)
+        alaric.move_head_ik(group=MAIN, target_name=mrk_trent_talk, duration=2.3, time_delay=1)
+        alaric.move_eye_ik(group=MAIN, target_name=mrk_trent_talk, duration=0.8, time_delay=1)
+
+
+
+        main_group.append_time(1.6)
+
+        trent.facial(group=MAIN, index=200)
 
 
 
 
+        alaric.motion(group=MAIN, duration=10, anim=Male.Sc_MLBODY_STND_CROSS_ARMS_000LV_xa_06, trans_time=0.25, time_delay=0.15)
+        alaric.facial(group=MAIN, index=210)
+
+        trent.motion(group=MAIN, duration=10, loop=True, anim=Male.Sc_MLBODY_STND_CONV_RHND_CASL_000LV_xa_01, trans_time=1, time_delay=0, time_scale=0.8)
+        trent.motion(group=MAIN, duration=10, loop=True, anim=Male.Sc_MLHAND_HNEUT_GESTR_CASL_000LV_00, start_time=1, trans_time=0.2)
+
+        darcy.move_head_ik(group=MAIN, target_name=mrk_trent_front, duration=2.3, time_delay=-2)
+        darcy.move_eye_ik(group=MAIN, target_name=mrk_trent_talk, duration=0.8, time_delay=-2)
+
+        darcy.motion(group=MAIN, duration=10, anim=Female.Sc_FMBODY_STND_UNCRSS_ARMS_000LV_XA_03, trans_time=0.5, time_delay=2)
+
+        trent.facial(group=MAIN, index=220)
+
+        trent.motion(group=MAIN, duration=10, anim=Male.Sc_MLBODY_STND_CONV_RHNDDN_TRNS_000LV_XA_02, trans_time=1, time_delay=-2, time_scale=0.8)
+        trent.motion(group=MAIN, duration=10, anim=Male.Sc_MLHAND_HNEUT_EDGE_LEFT_000LV_00, start_time=0, time_delay=-2, trans_time=0.2)
+        trent.motion(group=MAIN, duration=10, anim=Male.Sc_MLHAND_HNEUT_EDGE_RGHT_000LV_00, start_time=0, time_delay=-2, trans_time=0.2)
+
+        trent.motion(group=MAIN, duration=10, anim=Male.Sc_MLBODY_STND_CROSS_ARMS_000LV_xa_06, trans_time=1, time_delay=1, time_scale=0.8)
+
+        darcy.move_head_ik(group=MAIN, target_name=mrk_alaric, duration=2.3, time_delay=1)
+        darcy.move_eye_ik(group=MAIN, target_name=mrk_alaric, duration=0.8, time_delay=1)
+
+        alaric.motion(group=MAIN, duration=10, anim=Male.Sc_MLBODY_STND_UNCRSS_ARMS_000LV_XA_02, trans_time=0.25, time_delay=0.15)
+        alaric.motion(group=MAIN, duration=30, loop=True, anim=Male.Sc_MLBODY_STND_IDLE_000LV_xa_04, trans_time=0.25, time_delay=4)
+
+        alaric.facial(group=MAIN, index=230)
+
+        darcy.move_head_ik(group=MAIN, target_name=mrk_trent_front, duration=2.3, time_delay=-0.2)
+        darcy.move_eye_ik(group=MAIN, target_name=mrk_trent_talk, duration=0.8, time_delay=-0.2)
+
+        darcy.move_head_ik(group=MAIN, target_name=mrk_alaric, duration=2.3, time_delay=7)
+        darcy.move_eye_ik(group=MAIN, target_name=mrk_alaric, duration=0.8, time_delay=7)
+
+        darcy.move_head_ik(group=MAIN, target_name=mrk_trent_front, duration=2.3, time_delay=9)
+        darcy.move_eye_ik(group=MAIN, target_name=mrk_trent_talk, duration=0.8, time_delay=9)
+
+        darcy.motion(group=MAIN, duration=10, anim=Female.Sc_FMBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01, trans_time=0.5, time_delay=0)
+        darcy.motion(group=MAIN, duration=10, anim=Female.Sc_FMBODY_STND_FSTHIPB_RLEASE_000LV_XA_01, trans_time=0.5, time_delay=6)
+        darcy.motion(group=MAIN, duration=10, anim=Female.Sc_FMBODY_STND_CROSS_ARMS_000LV_xa_03, trans_time=0.5, time_delay=10)
 
 
-        main_group.append_time(1000)
+        trent.move_head_ik(group=MAIN, target_name=mrk_darcy_front, duration=2.3, time_delay=-0.5)
+        trent.move_eye_ik(group=MAIN, target_name=mrk_darcy_talk, duration=0.8, time_delay=-0.5)
+
+        trent.motion(group=MAIN, duration=10, anim=Male.Sc_MLBODY_STND_UNCRSS_ARMS_000LV_XA_02, trans_time=1, time_delay=3, time_scale=0.8)
+
+        RotateAxisEvent(root=self, group=MAIN, object_name=female1.name, angle=-135, duration=4, smooth=True, time_delay=-3)
+
+        alaric.move_head_ik(group=MAIN, target_name=mrk_darcy_talk, duration=2.3, time_delay=1)
+        alaric.move_eye_ik(group=MAIN, target_name=mrk_darcy_talk, duration=0.8, time_delay=1)
+
+        alaric.move_head_ik(group=MAIN, target_name=mrk_trent_talk, duration=2.3, time_delay=5)
+        alaric.move_eye_ik(group=MAIN, target_name=mrk_trent_talk, duration=0.8, time_delay=5)
+
+        darcy.facial(group=MAIN, index=240)
+
+        trent.move_head_ik(group=MAIN, target_name=mrk_alaric, duration=2.3, time_delay=1)
+        trent.move_eye_ik(group=MAIN, target_name=mrk_alaric, duration=0.8, time_delay=1)
+
+        trent.move_head_ik(group=MAIN, target_name=mrk_darcy_front, duration=2.3, time_delay=3.5)
+        trent.move_eye_ik(group=MAIN, target_name=mrk_darcy_talk, duration=0.8, time_delay=3.5)
+
+        trent.move_head_ik(group=MAIN, target_name=mrk_alaric, duration=2.3, time_delay=6)
+        trent.move_eye_ik(group=MAIN, target_name=mrk_alaric, duration=0.8, time_delay=6)
+
+        trent.motion(group=MAIN, duration=10, anim=Male.Sc_MLBODY_STND_SHRG_SHLDRS_SMALL_000LV_XA_01, time_scale=0.8, trans_time=0.5, time_delay=2)
+
+        trent.facial(group=MAIN, index=250)
+
+        MoveOffscreenEvent(root=self, group=MAIN, object_name=female1.name)
+        MoveOffscreenEvent(root=self, group=MAIN, object_name=male1.name)
+
+
+        cam_alaric.set(group=MAIN)
+
+        alaric.move_head_ik(group=MAIN, target_name=mrk_darcy_talk, duration=2.3, time_delay=1)
+        alaric.move_eye_ik(group=MAIN, target_name=mrk_darcy_talk, duration=0.8, time_delay=1)
+
+        alaric.move_head_ik(group=MAIN, target_name=mrk_trent_talk, duration=2.3, time_delay=3.5)
+        alaric.move_eye_ik(group=MAIN, target_name=mrk_trent_talk, duration=0.8, time_delay=3.5)
+
+        alaric.motion(group=MAIN, duration=10, loop=True, anim=Male.Sc_MLBODY_STND_CONV_HNDS_CASL_000LV_xa_04, start_time=2, trans_time=1, time_delay=0, time_scale=0.8)
+        alaric.motion(group=MAIN, duration=10, loop=True, anim=Male.Sc_MLHAND_HNEUT_GESTR_CASL_000LV_00, start_time=0, time_delay=0.5, trans_time=0.2)
+        alaric.motion(group=MAIN, duration=10, loop=True, anim=Male.Sc_MLHAND_HNEUT_GESTL_CASL_000LV_00, start_time=0, time_delay=0.5, trans_time=0.2)
+
+        alaric.motion(group=MAIN, duration=10, anim=Male.Sc_MLBODY_STND_CONV_HNDSDN_TRNS_000LV_XA_01, trans_time=1, time_delay=4, time_scale=0.8)
+        alaric.motion(group=MAIN, duration=10, anim=Male.Sc_MLHAND_HNEUT_EDGE_LEFT_000LV_00, start_time=0, time_delay=4, trans_time=0.2)
+        alaric.motion(group=MAIN, duration=10, anim=Male.Sc_MLHAND_HNEUT_EDGE_RGHT_000LV_00, start_time=0, time_delay=4, trans_time=0.2)
+
+        alaric.facial(group=MAIN, index=260)
+
+
+        cam_final.set(group=MAIN)
+        cam_final.move_cam(group=MAIN, index=2, duration=6, smooth=True)
+        cam_final.move_focus(group=MAIN, index=2, duration=6, smooth=True)
+
+        darcy.move_head_ik(group=MAIN, target_name=mrk_alaric, duration=2.3, time_delay=-2)
+        darcy.move_eye_ik(group=MAIN, target_name=mrk_alaric, duration=0.8, time_delay=-2)
+
+        darcy.move_head_ik(group=MAIN, target_name=mrk_trent_front, duration=2.3, time_delay=2)
+        darcy.move_eye_ik(group=MAIN, target_name=mrk_trent_talk, duration=0.8, time_delay=2)
+
+        darcy.motion(group=MAIN, duration=10, anim=Female.Sc_FMBODY_STND_UNCRSS_ARMS_000LV_XA_03, trans_time=0.5, time_delay=1)
+
+
+        trent.move_head_ik(group=MAIN, target_name=mrk_darcy_front, duration=2.3, time_delay=1)
+        trent.move_eye_ik(group=MAIN, target_name=mrk_darcy_talk, duration=0.8, time_delay=1)
+
+        trent.move_head_ik(group=MAIN, target_name=mrk_alaric, duration=2.3, time_delay=4)
+        trent.move_eye_ik(group=MAIN, target_name=mrk_alaric, duration=0.8, time_delay=4)
+
+        darcy.facial(group=MAIN, index=270)
+
+        trent.facial(group=MAIN, index=280)
+
+        main_group.append_time(1)

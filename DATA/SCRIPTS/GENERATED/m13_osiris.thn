@@ -1,4 +1,4 @@
-duration=1078.244
+duration=117.62399999999998
 
 entities={
 	{
@@ -428,7 +428,7 @@ entities={
     type=MARKER,
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
     spatialprops={
-        pos={ -6.74, 3.78, 0.82 },
+        pos={ -2.18, 3.78, -2.10 },
         orient={ 
             { 1.0000000,0.0000000,0.0000000 },
             { 0.0000000,1.0000000,0.0000000 },
@@ -442,7 +442,7 @@ entities={
     type=MARKER,
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
     spatialprops={
-        pos={ -3.87, 5.13, -4.67 },
+        pos={ -5.03, 6.55, -6.03 },
         orient={ 
             { 1.0000000,0.0000000,0.0000000 },
             { 0.0000000,1.0000000,0.0000000 },
@@ -710,9 +710,9 @@ entities={
     spatialprops={
         pos={ -4.70, 0.00, -3.09 },
         orient={ 
-            { 1.0000000,0.0000000,0.0000000 },
+            { -0.7071068,0.0000000,0.7071068 },
             { 0.0000000,1.0000000,0.0000000 },
-            { 0.0000000,0.0000000,1.0000000 }
+            { -0.7071068,0.0000000,-0.7071068 }
          }
     }
 }
@@ -793,6 +793,244 @@ entities={
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
     spatialprops={
         pos={ -2.86, 1.51, -1.78 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_brief_end",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.38, 3.31, 0.54 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_brief_end_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -3.35, 1.48, -2.76 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_darcy_quest",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -3.83, 0.00, -4.08 },
+        orient={ 
+            { -0.7071068,0.0000000,0.7071068 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { -0.7071068,0.0000000,-0.7071068 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_trent_talk",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -3.64, 1.71, -3.05 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_brief_end2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.56, 1.74, -1.33 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_brief_end_focus2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -3.02, 1.48, -3.19 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_trent_front",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -3.46, 1.71, -3.19 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_darcy_talk",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -3.40, 1.59, -4.06 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_darcy_front",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -3.20, 1.66, -3.73 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_brief_end3",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.35, 2.08, -2.29 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_brief_end_focus3",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -3.11, 1.56, -3.29 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_alaric",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -3.42, 1.30, -2.50 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_alaric_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -2.08, 1.65, -3.69 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_final",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.35, 1.68, -2.29 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_final_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -3.28, 1.56, -3.79 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_final_focus2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -3.11, 1.56, -2.98 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_final2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -2.21, 1.52, -2.66 },
         orient={ 
             { 1.0000000,0.0000000,0.0000000 },
             { 0.0000000,1.0000000,0.0000000 },
@@ -900,6 +1138,69 @@ entities={
     },
     cameraprops={
         fovh=18,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+,
+{
+    entity_name="cam_brief_end",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ -1.38, 3.31, 0.54 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=20,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+,
+{
+    entity_name="cam_alaric",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ -3.42, 1.30, -2.50 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=18,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+,
+{
+    entity_name="cam_final",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ -1.35, 1.68, -2.29 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=20,
         hvaspect=1.85,
         nearplane=0.2,
         farplane=5000
@@ -1152,7 +1453,7 @@ entities={
     usr_flg=0,
     
     spatialprops={
-        pos={ -3.87, 5.13, -4.67 },
+        pos={ -5.03, 6.55, -6.03 },
         orient={
             {1,0,0},
             {0,1,0},
@@ -1201,7 +1502,7 @@ entities={
     usr_flg=0,
     
     spatialprops={
-        pos={ -6.74, 3.78, 0.82 },
+        pos={ -2.18, 3.78, -2.10 },
         orient={
             {1,0,0},
             {0,1,0},
@@ -1985,6 +2286,20 @@ entities={
 }
 ,
 {
+    entity_name="charpoint_alaric_init",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.99, 1.65, -3.51 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
     entity_name="charpoint_female4",
     type=MARKER,
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
@@ -2115,6 +2430,45 @@ events={
     {
         "cam_answer",
         "automarker_cam_answer_focus"
+    },
+    {
+        duration=1000, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_brief_end",
+        "automarker_cam_brief_end_focus"
+    },
+    {
+        duration=1000, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_alaric",
+        "automarker_cam_alaric_focus"
+    },
+    {
+        duration=1000, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_final",
+        "automarker_cam_final_focus"
     },
     {
         duration=1000, offset={0,0,0},
@@ -4061,6 +4415,1906 @@ events={
 ,
 {
     99.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    100.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    101.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    102.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    103.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    104.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    105.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    106.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    107.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    108.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    109.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    110.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    111.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    112.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    113.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    114.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    115.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    116.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    117.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    118.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    119.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    120.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    121.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    122.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    123.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    124.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    125.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    126.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    127.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    128.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    129.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    130.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    131.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    132.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    133.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    134.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    135.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    136.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    137.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    138.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    139.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    140.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    141.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    142.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    143.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    144.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    145.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    146.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    147.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    148.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    149.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    150.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    151.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    152.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    153.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    154.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    155.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    156.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    157.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    158.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    159.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    160.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    161.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    162.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    163.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    164.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    165.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    166.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    167.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    168.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    169.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    170.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    171.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    172.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    173.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    174.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    175.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    176.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    177.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    178.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    179.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    180.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    181.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    182.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    183.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    184.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    185.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    186.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    187.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    188.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    189.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    190.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    191.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    192.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    193.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    194.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    195.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    196.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    197.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    198.0,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1a"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    199.0,
     START_LIGHT_PROP_ANIM,
     {
         "LIGHT_spinner1a"
@@ -7879,6 +10133,1906 @@ events={
 }
 ,
 {
+    100.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    101.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    102.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    103.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    104.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    105.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    106.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    107.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    108.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    109.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    110.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    111.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    112.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    113.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    114.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    115.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    116.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    117.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    118.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    119.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    120.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    121.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    122.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    123.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    124.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    125.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    126.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    127.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    128.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    129.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    130.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    131.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    132.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    133.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    134.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    135.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    136.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    137.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    138.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    139.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    140.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    141.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    142.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    143.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    144.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    145.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    146.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    147.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    148.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    149.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    150.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    151.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    152.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    153.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    154.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    155.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    156.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    157.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    158.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    159.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    160.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    161.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    162.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    163.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    164.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    165.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    166.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    167.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    168.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    169.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    170.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    171.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    172.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    173.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    174.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    175.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    176.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    177.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    178.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    179.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    180.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    181.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    182.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    183.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    184.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    185.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    186.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    187.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    188.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    189.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    190.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    191.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    192.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    193.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    194.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    195.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    196.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    197.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    198.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 1, 0.2, 0.2 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    199.35,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_spinner1c"
+    },
+    {
+        duration=0.5,
+        lightprops={
+             diffuse = { 0.2, 0, 0 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
     0,
     START_MOTION,
     {"liberty_elite_ship"},
@@ -8667,12 +12821,42 @@ events={
     20.06,
     START_IK,
     {
+        "Char_trent",
+        "char_ik_Char_trent_eye_ik"
+    },
+    {
+        duration=1000,
+        end_effector="Eye IK Left", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    20.06,
+    START_IK,
+    {
         "Char_darcy",
         "char_ik_Char_darcy_head_ik"
     },
     {
         duration=1000,
         end_effector="Body_Head", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    20.06,
+    START_IK,
+    {
+        "Char_darcy",
+        "char_ik_Char_darcy_eye_ik"
+    },
+    {
+        duration=1000,
+        end_effector="Eye IK Left", transition_duration=1,
         target_part="", target_type=ROOT,
         count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
     }
@@ -9146,7 +13330,7 @@ events={
         "char_ik_Char_major_head_ik"
     },
     {
-        duration=67.184,
+        duration=66.568,
         end_effector="Body_Head", transition_duration=1,
         target_part="", target_type=ROOT,
         count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
@@ -9161,7 +13345,7 @@ events={
         "char_ik_Char_osiris_male_1_head_ik"
     },
     {
-        duration=67.184,
+        duration=66.568,
         end_effector="Body_Head", transition_duration=1,
         target_part="", target_type=ROOT,
         count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
@@ -9176,7 +13360,7 @@ events={
         "char_ik_Char_osiris_male_2_head_ik"
     },
     {
-        duration=67.184,
+        duration=66.568,
         end_effector="Body_Head", transition_duration=1,
         target_part="", target_type=ROOT,
         count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
@@ -9191,7 +13375,7 @@ events={
         "char_ik_Char_osiris_male_3_head_ik"
     },
     {
-        duration=67.184,
+        duration=66.568,
         end_effector="Body_Head", transition_duration=1,
         target_part="", target_type=ROOT,
         count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
@@ -9206,7 +13390,7 @@ events={
         "char_ik_Char_osiris_male_4_head_ik"
     },
     {
-        duration=67.184,
+        duration=66.568,
         end_effector="Body_Head", transition_duration=1,
         target_part="", target_type=ROOT,
         count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
@@ -9221,7 +13405,7 @@ events={
         "char_ik_Char_osiris_female_1_head_ik"
     },
     {
-        duration=67.184,
+        duration=66.568,
         end_effector="Body_Head", transition_duration=1,
         target_part="", target_type=ROOT,
         count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
@@ -9236,7 +13420,7 @@ events={
         "char_ik_Char_osiris_female_2_head_ik"
     },
     {
-        duration=67.184,
+        duration=66.568,
         end_effector="Body_Head", transition_duration=1,
         target_part="", target_type=ROOT,
         count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
@@ -9251,7 +13435,7 @@ events={
         "char_ik_Char_osiris_female_3_head_ik"
     },
     {
-        duration=67.184,
+        duration=66.568,
         end_effector="Body_Head", transition_duration=1,
         target_part="", target_type=ROOT,
         count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
@@ -9266,7 +13450,7 @@ events={
         "char_ik_Char_osiris_female_4_head_ik"
     },
     {
-        duration=67.184,
+        duration=66.568,
         end_effector="Body_Head", transition_duration=1,
         target_part="", target_type=ROOT,
         count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
@@ -9281,7 +13465,7 @@ events={
         "char_ik_Char_osiris_female_2_eye_ik"
     },
     {
-        duration=67.184,
+        duration=66.568,
         end_effector="Eye IK Left", transition_duration=1,
         target_part="", target_type=ROOT,
         count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
@@ -9296,7 +13480,7 @@ events={
         "char_ik_Char_king_head_ik"
     },
     {
-        duration=67.184,
+        duration=66.568,
         end_effector="Body_Head", transition_duration=1,
         target_part="", target_type=ROOT,
         count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
@@ -9311,7 +13495,7 @@ events={
         "char_ik_Char_king_eye_ik"
     },
     {
-        duration=67.184,
+        duration=66.568,
         end_effector="Eye IK Left", transition_duration=1,
         target_part="", target_type=ROOT,
         count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
@@ -9328,6 +13512,21 @@ events={
     {
         duration=1000,
         end_effector="Body_Head", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    11.059999999999999,
+    START_IK,
+    {
+        "Char_alaric",
+        "char_ik_Char_alaric_eye_ik"
+    },
+    {
+        duration=1000,
+        end_effector="Eye IK Left", transition_duration=1,
         target_part="", target_type=ROOT,
         count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
     }
@@ -9354,7 +13553,7 @@ events={
 }
 ,
 {
-    12.059999999999999,
+    11.059999999999999,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_head_ik",
@@ -9376,7 +13575,7 @@ events={
 }
 ,
 {
-    12.059999999999999,
+    11.059999999999999,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_eye_ik",
@@ -9398,7 +13597,7 @@ events={
 }
 ,
 {
-    15.059999999999999,
+    14.059999999999999,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_head_ik",
@@ -9420,7 +13619,7 @@ events={
 }
 ,
 {
-    15.059999999999999,
+    14.059999999999999,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_eye_ik",
@@ -9442,7 +13641,7 @@ events={
 }
 ,
 {
-    18.06,
+    17.06,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_head_ik",
@@ -9464,7 +13663,7 @@ events={
 }
 ,
 {
-    18.06,
+    17.06,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_eye_ik",
@@ -9486,7 +13685,7 @@ events={
 }
 ,
 {
-    21.06,
+    20.06,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_head_ik",
@@ -9508,7 +13707,7 @@ events={
 }
 ,
 {
-    21.06,
+    20.06,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_eye_ik",
@@ -9530,7 +13729,7 @@ events={
 }
 ,
 {
-    24.06,
+    23.06,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_head_ik",
@@ -9552,7 +13751,7 @@ events={
 }
 ,
 {
-    24.06,
+    23.06,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_eye_ik",
@@ -9574,7 +13773,7 @@ events={
 }
 ,
 {
-    28.06,
+    27.06,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_head_ik",
@@ -9596,7 +13795,7 @@ events={
 }
 ,
 {
-    28.06,
+    27.06,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_eye_ik",
@@ -9618,7 +13817,7 @@ events={
 }
 ,
 {
-    31.06,
+    30.06,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_head_ik",
@@ -9640,7 +13839,7 @@ events={
 }
 ,
 {
-    31.06,
+    30.06,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_eye_ik",
@@ -9662,7 +13861,7 @@ events={
 }
 ,
 {
-    34.06,
+    33.06,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_head_ik",
@@ -9684,7 +13883,7 @@ events={
 }
 ,
 {
-    34.06,
+    33.06,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_eye_ik",
@@ -9706,7 +13905,7 @@ events={
 }
 ,
 {
-    37.06,
+    36.06,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_head_ik",
@@ -9728,7 +13927,7 @@ events={
 }
 ,
 {
-    37.06,
+    36.06,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_eye_ik",
@@ -9750,7 +13949,7 @@ events={
 }
 ,
 {
-    40.06,
+    39.06,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_head_ik",
@@ -9772,7 +13971,7 @@ events={
 }
 ,
 {
-    40.06,
+    39.06,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_eye_ik",
@@ -9794,7 +13993,7 @@ events={
 }
 ,
 {
-    43.06,
+    42.06,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_head_ik",
@@ -9816,7 +14015,7 @@ events={
 }
 ,
 {
-    43.06,
+    42.06,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_eye_ik",
@@ -9838,7 +14037,7 @@ events={
 }
 ,
 {
-    46.06,
+    45.06,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_head_ik",
@@ -9860,7 +14059,7 @@ events={
 }
 ,
 {
-    46.06,
+    45.06,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_eye_ik",
@@ -9882,7 +14081,7 @@ events={
 }
 ,
 {
-    49.06,
+    48.06,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_head_ik",
@@ -9904,7 +14103,7 @@ events={
 }
 ,
 {
-    49.06,
+    48.06,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_eye_ik",
@@ -9926,7 +14125,7 @@ events={
 }
 ,
 {
-    52.06,
+    51.06,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_head_ik",
@@ -9948,7 +14147,7 @@ events={
 }
 ,
 {
-    52.06,
+    51.06,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_eye_ik",
@@ -9970,7 +14169,7 @@ events={
 }
 ,
 {
-    55.06,
+    54.06,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_head_ik",
@@ -9992,7 +14191,7 @@ events={
 }
 ,
 {
-    55.06,
+    54.06,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_eye_ik",
@@ -10014,7 +14213,7 @@ events={
 }
 ,
 {
-    58.06,
+    57.06,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_head_ik",
@@ -10036,7 +14235,7 @@ events={
 }
 ,
 {
-    58.06,
+    57.06,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_eye_ik",
@@ -10058,7 +14257,7 @@ events={
 }
 ,
 {
-    61.06,
+    60.06,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_head_ik",
@@ -10080,7 +14279,7 @@ events={
 }
 ,
 {
-    61.06,
+    60.06,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_eye_ik",
@@ -10102,21 +14301,21 @@ events={
 }
 ,
 {
-    13.059999999999999,
+    12.059999999999999,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_dx_s070x_2801_orillion",  duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    16.06,
+    15.059999999999999,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_dx_s070x_2801_orillion", start_time=1.8, duration=10, time_scale=1, trans_time=0.5,  weight=1, heading=-1}
 }
 ,
 {
-    13.059999999999999,
+    12.059999999999999,
     START_SOUND,
     {
         "DX_m13_osiris_0020_king"
@@ -10127,7 +14326,7 @@ events={
 }
 ,
 {
-    24.895999999999997,
+    24.016,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_MLBODY_STND_AT-EASE_RLEASE_000LV_XA_01",
@@ -10137,21 +14336,21 @@ events={
 }
 ,
 {
-    20.895999999999997,
+    20.016,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_dx_s067d_0101_orillion", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    22.895999999999997,
+    22.016,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_dx_s075x_0304_orillion", duration=10, start_time=0.5, time_scale=1, trans_time=0.5,  weight=1, heading=-1}
 }
 ,
 {
-    20.895999999999997,
+    20.016,
     START_SOUND,
     {
         "DX_m13_osiris_0030_king"
@@ -10162,7 +14361,7 @@ events={
 }
 ,
 {
-    30.683999999999997,
+    29.804,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_MLBODY_STND_CONV_HNDS_CASL_000LV_xa_04",
@@ -10172,7 +14371,7 @@ events={
 }
 ,
 {
-    31.183999999999997,
+    30.304,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_MLHAND_HNEUT_GESTR_CASL_000LV_00",
@@ -10182,7 +14381,7 @@ events={
 }
 ,
 {
-    31.183999999999997,
+    30.304,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_MLHAND_HNEUT_GESTL_CASL_000LV_00",
@@ -10192,7 +14391,7 @@ events={
 }
 ,
 {
-    40.684,
+    39.804,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_MLBODY_STND_CONV_HNDSDN_TRNS_000LV_XA_01",
@@ -10202,7 +14401,7 @@ events={
 }
 ,
 {
-    40.684,
+    39.804,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_MLHAND_HNEUT_EDGE_LEFT_000LV_00",
@@ -10212,7 +14411,7 @@ events={
 }
 ,
 {
-    40.684,
+    39.804,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_MLHAND_HNEUT_EDGE_RGHT_000LV_00",
@@ -10222,14 +14421,14 @@ events={
 }
 ,
 {
-    28.683999999999997,
+    27.804,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_dx_s070x_2801_orillion", duration=10, time_scale=1.05, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    28.683999999999997,
+    27.804,
     START_SOUND,
     {
         "DX_m13_osiris_0050_king"
@@ -10240,21 +14439,21 @@ events={
 }
 ,
 {
-    34.983999999999995,
+    34.104,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_dx_s064x_1901_orillion", duration=10, start_time=0.4, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    39.483999999999995,
+    38.604,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_dx_s075x_0302_orillion", duration=10, start_time=0, time_scale=1, trans_time=0.5,  weight=1, heading=-1}
 }
 ,
 {
-    34.983999999999995,
+    34.104,
     START_SOUND,
     {
         "DX_m13_osiris_0060_king"
@@ -10265,7 +14464,7 @@ events={
 }
 ,
 {
-    45.43599999999999,
+    44.507999999999996,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_MLBODY_STND_CONV_RHND_CASL_000LV_xa_01",
@@ -10275,7 +14474,7 @@ events={
 }
 ,
 {
-    45.43599999999999,
+    44.507999999999996,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_MLHAND_HNEUT_GESTR_CASL_000LV_00",
@@ -10285,21 +14484,21 @@ events={
 }
 ,
 {
-    45.43599999999999,
+    44.507999999999996,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_dx_s067a_0501_orillion", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    49.43599999999999,
+    48.507999999999996,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_dx_s064x_2103_orillion", duration=10, start_time=2.3, time_scale=1, trans_time=0.5,  weight=1, heading=-1}
 }
 ,
 {
-    45.43599999999999,
+    44.507999999999996,
     START_SOUND,
     {
         "DX_m13_osiris_0070_king"
@@ -10310,7 +14509,7 @@ events={
 }
 ,
 {
-    52.767999999999994,
+    52.12799999999999,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_MLBODY_STND_CONV_RHNDDN_TRNS_000LV_XA_02",
@@ -10320,7 +14519,7 @@ events={
 }
 ,
 {
-    52.767999999999994,
+    52.12799999999999,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_MLHAND_HNEUT_EDGE_LEFT_000LV_00",
@@ -10330,7 +14529,7 @@ events={
 }
 ,
 {
-    52.767999999999994,
+    52.12799999999999,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_MLHAND_HNEUT_EDGE_RGHT_000LV_00",
@@ -10340,21 +14539,21 @@ events={
 }
 ,
 {
-    52.767999999999994,
+    52.12799999999999,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_dx_s075x_0304_orillion", duration=10, start_time=0.5, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    55.767999999999994,
+    55.12799999999999,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_dx_s075x_0307_orillion", duration=4, start_time=0, time_scale=1, trans_time=0.5,  weight=1, heading=-1}
 }
 ,
 {
-    52.767999999999994,
+    52.12799999999999,
     START_SOUND,
     {
         "DX_m13_osiris_0080_king"
@@ -10365,7 +14564,7 @@ events={
 }
 ,
 {
-    57.331999999999994,
+    56.715999999999994,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_MLBODY_STND_AT-EASE_HSEC_RLEASE_000LV_XA_03",
@@ -10375,14 +14574,14 @@ events={
 }
 ,
 {
-    59.331999999999994,
+    58.715999999999994,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_dx_s070x_0301_orillion", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    59.331999999999994,
+    58.715999999999994,
     START_SOUND,
     {
         "DX_m13_osiris_0090_king"
@@ -10393,7 +14592,7 @@ events={
 }
 ,
 {
-    60.903999999999996,
+    60.288,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -10402,7 +14601,7 @@ events={
 }
 ,
 {
-    60.403999999999996,
+    59.788,
     START_MOTION,
     {"Char_osiris_male_2"},
     {animation="Sc_MLBODY_STND_LEAN_RLEG_000LV_XA_02",
@@ -10412,7 +14611,7 @@ events={
 }
 ,
 {
-    62.903999999999996,
+    62.288,
     START_MOTION,
     {"Char_osiris_male_2"},
     {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
@@ -10422,7 +14621,7 @@ events={
 }
 ,
 {
-    61.403999999999996,
+    60.788,
     START_MOTION,
     {"Char_osiris_female_1"},
     {animation="Sc_FMBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
@@ -10432,14 +14631,14 @@ events={
 }
 ,
 {
-    60.903999999999996,
+    60.288,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s014a_0301_trent", duration=10, time_scale=0.9, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    60.903999999999996,
+    60.288,
     START_SOUND,
     {
         "DX_m13_osiris_0100_trent"
@@ -10450,7 +14649,7 @@ events={
 }
 ,
 {
-    63.772,
+    63.156,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -10459,7 +14658,7 @@ events={
 }
 ,
 {
-    63.772,
+    63.156,
     START_SPATIAL_PROP_ANIM,
     {
         "cam_answer",
@@ -10481,7 +14680,7 @@ events={
 }
 ,
 {
-    63.772,
+    63.156,
     START_SPATIAL_PROP_ANIM,
     {
         "automarker_cam_answer_focus",
@@ -10503,7 +14702,7 @@ events={
 }
 ,
 {
-    64.77199999999999,
+    64.156,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_MLBODY_STND_AT-EASE_RLEASE_000LV_XA_01",
@@ -10513,7 +14712,7 @@ events={
 }
 ,
 {
-    65.77199999999999,
+    65.156,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_MLBODY_STND_CONV_RHND_CASL_000LV_xa_01",
@@ -10523,7 +14722,7 @@ events={
 }
 ,
 {
-    63.772,
+    63.156,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_MLHAND_HNEUT_GESTR_CASL_000LV_00",
@@ -10533,7 +14732,7 @@ events={
 }
 ,
 {
-    70.77199999999999,
+    70.156,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_MLBODY_STND_CONV_RHNDDN_TRNS_000LV_XA_02",
@@ -10543,7 +14742,7 @@ events={
 }
 ,
 {
-    70.77199999999999,
+    70.156,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_MLHAND_HNEUT_EDGE_LEFT_000LV_00",
@@ -10553,7 +14752,7 @@ events={
 }
 ,
 {
-    70.77199999999999,
+    70.156,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_MLHAND_HNEUT_EDGE_RGHT_000LV_00",
@@ -10563,7 +14762,7 @@ events={
 }
 ,
 {
-    64.77199999999999,
+    64.156,
     START_MOTION,
     {"Char_osiris_female_2"},
     {animation="Sc_FMBODY_STND_UNCRSS_ARMS_000LV_XA_03",
@@ -10573,7 +14772,7 @@ events={
 }
 ,
 {
-    63.772,
+    63.156,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_osiris_female_2_head_ik",
@@ -10595,7 +14794,7 @@ events={
 }
 ,
 {
-    63.772,
+    63.156,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_osiris_female_2_eye_ik",
@@ -10617,14 +14816,14 @@ events={
 }
 ,
 {
-    66.77199999999999,
+    67.656,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_osiris_female_2_head_ik",
         "charpoint_king_init"
     },
     {
-        duration=2.3,
+        duration=2.7,
         target_part="",
         target_type=ROOT,
         spatialprops={
@@ -10639,14 +14838,14 @@ events={
 }
 ,
 {
-    66.77199999999999,
+    67.656,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_osiris_female_2_eye_ik",
         "charpoint_king_init"
     },
     {
-        duration=0.8,
+        duration=1,
         target_part="",
         target_type=ROOT,
         spatialprops={
@@ -10661,7 +14860,7 @@ events={
 }
 ,
 {
-    63.772,
+    63.156,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_head_ik",
@@ -10683,7 +14882,7 @@ events={
 }
 ,
 {
-    63.772,
+    63.156,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_eye_ik",
@@ -10705,7 +14904,7 @@ events={
 }
 ,
 {
-    66.77199999999999,
+    66.156,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_head_ik",
@@ -10727,7 +14926,7 @@ events={
 }
 ,
 {
-    66.77199999999999,
+    66.156,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_eye_ik",
@@ -10749,7 +14948,7 @@ events={
 }
 ,
 {
-    69.77199999999999,
+    69.156,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_head_ik",
@@ -10771,7 +14970,7 @@ events={
 }
 ,
 {
-    69.77199999999999,
+    69.156,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_eye_ik",
@@ -10793,21 +14992,21 @@ events={
 }
 ,
 {
-    63.772,
+    63.156,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_dx_s070x_2801_orillion", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    69.672,
+    69.056,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_dx_s075x_0305_orillion", duration=10, start_time=0.7, time_scale=1, trans_time=0.5,  weight=1, heading=-1}
 }
 ,
 {
-    63.772,
+    63.156,
     START_SOUND,
     {
         "DX_m13_osiris_0110_king"
@@ -10818,7 +15017,7 @@ events={
 }
 ,
 {
-    73.504,
+    72.888,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_head_ik",
@@ -10840,7 +15039,7 @@ events={
 }
 ,
 {
-    73.504,
+    72.888,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_eye_ik",
@@ -10862,7 +15061,7 @@ events={
 }
 ,
 {
-    75.504,
+    74.888,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_head_ik",
@@ -10884,7 +15083,7 @@ events={
 }
 ,
 {
-    75.504,
+    74.888,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_king_eye_ik",
@@ -10906,28 +15105,28 @@ events={
 }
 ,
 {
-    73.504,
+    72.888,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_dx_s067b_0801_orillion", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    75.504,
+    74.888,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_dx_s070x_0101_orillion", duration=10, time_scale=1, trans_time=0.5,  weight=1, heading=-1}
 }
 ,
 {
-    76.604,
+    75.988,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_dx_s070x_0301_orillion", duration=10, time_scale=1, trans_time=0.5,  weight=1, heading=-1}
 }
 ,
 {
-    73.504,
+    72.888,
     START_SOUND,
     {
         "DX_m13_osiris_0120_king"
@@ -10938,13 +15137,2043 @@ events={
 }
 ,
 {
-    78.244,
+    77.628,
     START_MOTION,
     {"Char_king"},
     {animation="Sc_MLBODY_STND_WALK_TRNS_270LV_XA_02",
      duration=10, time_scale=1, start_time=0, weight=1, heading=-1
        , trans_time=0.5 
      }
+}
+,
+{
+    77.528,
+    START_MOTION,
+    {"Char_osiris_female_2"},
+    {animation="Sc_FMBODY_STND_WALK_TRNS_180LV_XA_02",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=0.5 
+     }
+}
+,
+{
+    77.628,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    78.628,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_brief_end"
+    }
+}
+,
+{
+    78.628,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "cam_brief_end",
+        "automarker_cam_brief_end2"
+    },
+    {
+        duration=15,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    78.628,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "automarker_cam_brief_end_focus",
+        "automarker_cam_brief_end_focus2"
+    },
+    {
+        duration=15,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    93.628,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "cam_brief_end",
+        "automarker_cam_brief_end3"
+    },
+    {
+        duration=10,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    93.628,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "automarker_cam_brief_end_focus",
+        "automarker_cam_brief_end_focus3"
+    },
+    {
+        duration=10,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    78.628,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "Char_king",
+        "offscreen"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    78.628,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "Char_osiris_female_2",
+        "offscreen"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    78.628,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "Char_osiris_female_3",
+        "offscreen"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    78.628,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "liberty_elite_ship",
+        "offscreen"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    78.628,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "Char_trent",
+        "automarker_trent_quest"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    78.628,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "Char_darcy",
+        "automarker_darcy_quest"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    78.628,
+    START_MOTION,
+    {"Char_osiris_male_1"},
+    {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   
+     }
+}
+,
+{
+    78.928,
+    START_MOTION,
+    {"Char_osiris_male_1"},
+    {animation="Sc_MLBODY_STND_WALK_TRNS_180LV_XA_02",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    81.628,
+    START_MOTION,
+    {"Char_osiris_male_1"},
+    {animation="Sc_MLBODY_WLKG_000LV_XA_01",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   
+     }
+}
+,
+{
+    79.628,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "Char_osiris_male_1"
+    },
+    {
+        duration=1,
+        target_type=ROOT,
+        spatialprops={
+            axisrot={
+                30,
+                Y_AXIS
+            }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    81.528,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "Char_osiris_male_1"
+    },
+    {
+        duration=1,
+        target_type=ROOT,
+        spatialprops={
+            axisrot={
+                -70,
+                Y_AXIS
+            }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    78.628,
+    START_MOTION,
+    {"Char_osiris_male_2"},
+    {animation="Sc_MLBODY_STND_WALK_TRNS_000LV_XA_01",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    79.688,
+    START_MOTION,
+    {"Char_osiris_male_2"},
+    {animation="Sc_MLBODY_WLKG_000LV_XA_01",
+     duration=20, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   
+     }
+}
+,
+{
+    78.928,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "Char_osiris_male_2"
+    },
+    {
+        duration=4,
+        target_type=ROOT,
+        spatialprops={
+            axisrot={
+                -40,
+                Y_AXIS
+            }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    78.628,
+    START_MOTION,
+    {"Char_osiris_male_3"},
+    {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    78.628,
+    START_MOTION,
+    {"Char_osiris_male_4"},
+    {animation="Sc_MLBODY_STND_FSTHIPB_HOLD_000LV_XA_02",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   
+     }
+}
+,
+{
+    79.628,
+    START_MOTION,
+    {"Char_osiris_male_4"},
+    {animation="Sc_MLBODY_STND_WALK_TRNS_090LV_XA_02",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    78.628,
+    START_MOTION,
+    {"Char_major"},
+    {animation="Sc_MLBODY_STND_WALK_TRNS_090LV_XA_02",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    81.103,
+    START_MOTION,
+    {"Char_major"},
+    {animation="Sc_MLBODY_WLKG_000LV_XA_01",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   
+     }
+}
+,
+{
+    78.628,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   
+     }
+}
+,
+{
+    78.628,
+    START_MOTION,
+    {"Char_darcy"},
+    {animation="Sc_FMBODY_STND_IDLE_000LV_xa_05",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   
+     }
+}
+,
+{
+    78.628,
+    START_MOTION,
+    {"Char_osiris_female_1"},
+    {animation="Sc_FMBODY_STND_WALK_TRNS_180LV_XA_02",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    81.103,
+    START_MOTION,
+    {"Char_osiris_female_1"},
+    {animation="Sc_FMBODY_WLKG_000LV_XA_01",
+     duration=50, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   
+     }
+}
+,
+{
+    78.928,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "Char_osiris_female_1"
+    },
+    {
+        duration=1,
+        target_type=ROOT,
+        spatialprops={
+            axisrot={
+                -40,
+                Y_AXIS
+            }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    80.028,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "Char_osiris_female_1"
+    },
+    {
+        duration=1,
+        target_type=ROOT,
+        spatialprops={
+            axisrot={
+                40,
+                Y_AXIS
+            }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    78.628,
+    START_MOTION,
+    {"Char_osiris_female_4"},
+    {animation="Sc_FMBODY_STND_WALK_TRNS_000LV_XA_01",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    80.088,
+    START_MOTION,
+    {"Char_osiris_female_4"},
+    {animation="Sc_FMBODY_WLKG_000LV_XA_01",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   
+     }
+}
+,
+{
+    78.928,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "Char_osiris_female_4"
+    },
+    {
+        duration=3,
+        target_type=ROOT,
+        spatialprops={
+            axisrot={
+                -60,
+                Y_AXIS
+            }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    79.628,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_2STEP_FRWD_TRNS_000LV_XA_02",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=0.25 
+     }
+}
+,
+{
+    79.628,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "Char_trent"
+    },
+    {
+        duration=2,
+        target_type=ROOT,
+        spatialprops={
+            axisrot={
+                60,
+                Y_AXIS
+            }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    82.628,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=0.25 
+     }
+}
+,
+{
+    80.028,
+    START_MOTION,
+    {"Char_darcy"},
+    {animation="Sc_FMBODY_STND_1STEP_SIDWYSL_000LV_XA_02",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    82.228,
+    START_MOTION,
+    {"Char_darcy"},
+    {animation="Sc_FMBODY_STND_CROSS_ARMS_000LV_xa_03",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=0.5 
+     }
+}
+,
+{
+    79.628,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_MLBODY_STND_TURN_045LV_XA_04",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=0.25 
+     }
+}
+,
+{
+    79.628,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "Char_alaric"
+    },
+    {
+        duration=1,
+        target_type=ROOT,
+        spatialprops={
+            axisrot={
+                20,
+                Y_AXIS
+            }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    78.628,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_head_ik",
+        "charpoint_alaric_init"
+    },
+    {
+        duration=2.3,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    78.628,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_eye_ik",
+        "charpoint_alaric_init"
+    },
+    {
+        duration=0.8,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    79.628,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_darcy_head_ik",
+        "charpoint_alaric_init"
+    },
+    {
+        duration=2.3,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    79.628,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_darcy_eye_ik",
+        "charpoint_alaric_init"
+    },
+    {
+        duration=0.8,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    79.628,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_alaric_head_ik",
+        "automarker_mrk_trent_talk"
+    },
+    {
+        duration=2.3,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    79.628,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_alaric_eye_ik",
+        "automarker_mrk_trent_talk"
+    },
+    {
+        duration=0.8,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    80.228,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s026c_0301_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    80.228,
+    START_SOUND,
+    {
+        "DX_m13_osiris_0200_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    83.03,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_MLBODY_STND_CROSS_ARMS_000LV_xa_06",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=0.25 
+     }
+}
+,
+{
+    82.88,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_dx_s068x_0301_walker", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    83.88,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_dx_s015x_1001_walker", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    82.88,
+    START_SOUND,
+    {
+        "DX_m13_osiris_0210_alaric"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    86.87599999999999,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_CONV_RHND_CASL_000LV_xa_01",
+     duration=10, time_scale=0.8, start_time=0, weight=1, heading=-1
+     , event_flags=2   , trans_time=1 
+     }
+}
+,
+{
+    86.87599999999999,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLHAND_HNEUT_GESTR_CASL_000LV_00",
+     duration=10, time_scale=1, start_time=1, weight=1, heading=-1
+     , event_flags=2   , trans_time=0.2 
+     }
+}
+,
+{
+    84.87599999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_darcy_head_ik",
+        "automarker_mrk_trent_front"
+    },
+    {
+        duration=2.3,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    84.87599999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_darcy_eye_ik",
+        "automarker_mrk_trent_talk"
+    },
+    {
+        duration=0.8,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    88.87599999999999,
+    START_MOTION,
+    {"Char_darcy"},
+    {animation="Sc_FMBODY_STND_UNCRSS_ARMS_000LV_XA_03",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=0.5 
+     }
+}
+,
+{
+    86.87599999999999,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s028x_0101_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    86.87599999999999,
+    START_SOUND,
+    {
+        "DX_m13_osiris_0220_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    87.40799999999999,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_CONV_RHNDDN_TRNS_000LV_XA_02",
+     duration=10, time_scale=0.8, start_time=0, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    87.40799999999999,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLHAND_HNEUT_EDGE_LEFT_000LV_00",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=0.2 
+     }
+}
+,
+{
+    87.40799999999999,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLHAND_HNEUT_EDGE_RGHT_000LV_00",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=0.2 
+     }
+}
+,
+{
+    90.40799999999999,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_CROSS_ARMS_000LV_xa_06",
+     duration=10, time_scale=0.8, start_time=0, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    90.40799999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_darcy_head_ik",
+        "charpoint_alaric_init"
+    },
+    {
+        duration=2.3,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    90.40799999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_darcy_eye_ik",
+        "charpoint_alaric_init"
+    },
+    {
+        duration=0.8,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    89.55799999999999,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_MLBODY_STND_UNCRSS_ARMS_000LV_XA_02",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=0.25 
+     }
+}
+,
+{
+    93.40799999999999,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+     duration=30, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   , trans_time=0.25 
+     }
+}
+,
+{
+    89.40799999999999,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_dx_s015x_0502_walker", duration=10, start_time=1, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    89.40799999999999,
+    START_SOUND,
+    {
+        "DX_m13_osiris_0230_alaric"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    93.13199999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_darcy_head_ik",
+        "automarker_mrk_trent_front"
+    },
+    {
+        duration=2.3,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    93.13199999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_darcy_eye_ik",
+        "automarker_mrk_trent_talk"
+    },
+    {
+        duration=0.8,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    100.332,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_darcy_head_ik",
+        "charpoint_alaric_init"
+    },
+    {
+        duration=2.3,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    100.332,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_darcy_eye_ik",
+        "charpoint_alaric_init"
+    },
+    {
+        duration=0.8,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    102.332,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_darcy_head_ik",
+        "automarker_mrk_trent_front"
+    },
+    {
+        duration=2.3,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    102.332,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_darcy_eye_ik",
+        "automarker_mrk_trent_talk"
+    },
+    {
+        duration=0.8,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    93.332,
+    START_MOTION,
+    {"Char_darcy"},
+    {animation="Sc_FMBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=0.5 
+     }
+}
+,
+{
+    99.332,
+    START_MOTION,
+    {"Char_darcy"},
+    {animation="Sc_FMBODY_STND_FSTHIPB_RLEASE_000LV_XA_01",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=0.5 
+     }
+}
+,
+{
+    103.332,
+    START_MOTION,
+    {"Char_darcy"},
+    {animation="Sc_FMBODY_STND_CROSS_ARMS_000LV_xa_03",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=0.5 
+     }
+}
+,
+{
+    92.832,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_head_ik",
+        "automarker_mrk_darcy_front"
+    },
+    {
+        duration=2.3,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    92.832,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_eye_ik",
+        "automarker_mrk_darcy_talk"
+    },
+    {
+        duration=0.8,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    96.332,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_UNCRSS_ARMS_000LV_XA_02",
+     duration=10, time_scale=0.8, start_time=0, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    90.332,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "Char_osiris_female_1"
+    },
+    {
+        duration=4,
+        target_type=ROOT,
+        spatialprops={
+            axisrot={
+                -135,
+                Y_AXIS
+            }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    94.332,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_alaric_head_ik",
+        "automarker_mrk_darcy_talk"
+    },
+    {
+        duration=2.3,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    94.332,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_alaric_eye_ik",
+        "automarker_mrk_darcy_talk"
+    },
+    {
+        duration=0.8,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    98.332,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_alaric_head_ik",
+        "automarker_mrk_trent_talk"
+    },
+    {
+        duration=2.3,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    98.332,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_alaric_eye_ik",
+        "automarker_mrk_trent_talk"
+    },
+    {
+        duration=0.8,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    93.332,
+    START_MOTION,
+    {"Char_darcy"},
+    {animation="Sc_dx_s070x_2501_Jacobi", duration=10, time_scale=1, trans_time=0.5,  weight=1, heading=-1}
+}
+,
+{
+    95.332,
+    START_MOTION,
+    {"Char_darcy"},
+    {animation="Sc_dx_s070x_2701_Jacobi", duration=10, time_scale=1, trans_time=0.5,  weight=1, heading=-1}
+}
+,
+{
+    93.332,
+    START_SOUND,
+    {
+        "DX_m13_osiris_0240_darcy"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    100.15199999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_head_ik",
+        "charpoint_alaric_init"
+    },
+    {
+        duration=2.3,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    100.15199999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_eye_ik",
+        "charpoint_alaric_init"
+    },
+    {
+        duration=0.8,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    102.65199999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_head_ik",
+        "automarker_mrk_darcy_front"
+    },
+    {
+        duration=2.3,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    102.65199999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_eye_ik",
+        "automarker_mrk_darcy_talk"
+    },
+    {
+        duration=0.8,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    105.15199999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_head_ik",
+        "charpoint_alaric_init"
+    },
+    {
+        duration=2.3,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    105.15199999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_eye_ik",
+        "charpoint_alaric_init"
+    },
+    {
+        duration=0.8,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    101.15199999999999,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_SHRG_SHLDRS_SMALL_000LV_XA_01",
+     duration=10, time_scale=0.8, start_time=0, weight=1, heading=-1
+       , trans_time=0.5 
+     }
+}
+,
+{
+    99.15199999999999,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s015x_0801_trent", duration=10, start_time=0.6, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    99.15199999999999,
+    START_SOUND,
+    {
+        "DX_m13_osiris_0250_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    104.73199999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "Char_osiris_female_1",
+        "offscreen"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    104.73199999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "Char_osiris_male_1",
+        "offscreen"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    104.73199999999999,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_alaric"
+    }
+}
+,
+{
+    105.73199999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_alaric_head_ik",
+        "automarker_mrk_darcy_talk"
+    },
+    {
+        duration=2.3,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    105.73199999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_alaric_eye_ik",
+        "automarker_mrk_darcy_talk"
+    },
+    {
+        duration=0.8,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    108.23199999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_alaric_head_ik",
+        "automarker_mrk_trent_talk"
+    },
+    {
+        duration=2.3,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    108.23199999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_alaric_eye_ik",
+        "automarker_mrk_trent_talk"
+    },
+    {
+        duration=0.8,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    104.73199999999999,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_MLBODY_STND_CONV_HNDS_CASL_000LV_xa_04",
+     duration=10, time_scale=0.8, start_time=2, weight=1, heading=-1
+     , event_flags=2   , trans_time=1 
+     }
+}
+,
+{
+    105.23199999999999,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_MLHAND_HNEUT_GESTR_CASL_000LV_00",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   , trans_time=0.2 
+     }
+}
+,
+{
+    105.23199999999999,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_MLHAND_HNEUT_GESTL_CASL_000LV_00",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   , trans_time=0.2 
+     }
+}
+,
+{
+    108.73199999999999,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_MLBODY_STND_CONV_HNDSDN_TRNS_000LV_XA_01",
+     duration=10, time_scale=0.8, start_time=0, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    108.73199999999999,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_MLHAND_HNEUT_EDGE_LEFT_000LV_00",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=0.2 
+     }
+}
+,
+{
+    108.73199999999999,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_MLHAND_HNEUT_EDGE_RGHT_000LV_00",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=0.2 
+     }
+}
+,
+{
+    104.73199999999999,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_dx_s068x_0201_walker", duration=10, start_time=0.1, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    106.03199999999998,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_dx_s015x_0301_walker", duration=10, time_scale=1, trans_time=0.5,  weight=1, heading=-1}
+}
+,
+{
+    108.73199999999999,
+    START_MOTION,
+    {"Char_alaric"},
+    {animation="Sc_dx_s068x_0501_walker", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    104.73199999999999,
+    START_SOUND,
+    {
+        "DX_m13_osiris_0260_alaric"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    111.19999999999999,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_final"
+    }
+}
+,
+{
+    111.19999999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "cam_final",
+        "automarker_cam_final2"
+    },
+    {
+        duration=6,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    111.19999999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "automarker_cam_final_focus",
+        "automarker_cam_final_focus2"
+    },
+    {
+        duration=6,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    109.19999999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_darcy_head_ik",
+        "charpoint_alaric_init"
+    },
+    {
+        duration=2.3,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    109.19999999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_darcy_eye_ik",
+        "charpoint_alaric_init"
+    },
+    {
+        duration=0.8,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    113.19999999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_darcy_head_ik",
+        "automarker_mrk_trent_front"
+    },
+    {
+        duration=2.3,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    113.19999999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_darcy_eye_ik",
+        "automarker_mrk_trent_talk"
+    },
+    {
+        duration=0.8,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    112.19999999999999,
+    START_MOTION,
+    {"Char_darcy"},
+    {animation="Sc_FMBODY_STND_UNCRSS_ARMS_000LV_XA_03",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=0.5 
+     }
+}
+,
+{
+    112.19999999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_head_ik",
+        "automarker_mrk_darcy_front"
+    },
+    {
+        duration=2.3,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    112.19999999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_eye_ik",
+        "automarker_mrk_darcy_talk"
+    },
+    {
+        duration=0.8,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    115.19999999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_head_ik",
+        "charpoint_alaric_init"
+    },
+    {
+        duration=2.3,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    115.19999999999999,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_eye_ik",
+        "charpoint_alaric_init"
+    },
+    {
+        duration=0.8,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    111.19999999999999,
+    START_MOTION,
+    {"Char_darcy"},
+    {animation="Sc_dx_s070x_0801_Jacobi", start_time=2, duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    111.19999999999999,
+    START_SOUND,
+    {
+        "DX_m13_osiris_0270_darcy"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    114.16399999999999,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s037a_0301_trent", duration=10, start_time=1.3, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    114.16399999999999,
+    START_SOUND,
+    {
+        "DX_m13_osiris_0280_trent"
+    },
+    {
+        duration=20
+    }
 }
 
 }
