@@ -386,7 +386,7 @@ def scene():
     tpl_manager = JinjaTemplateManager()
     script_manager = ScriptManager()
     msn = script_manager.get_mission_by_index(13)
-    cutscene = msn.get_cutscene_by_code('osiris')
+    cutscene = msn.get_cutscene_by_code('csv')
     cutscene.get_thorn(tpl_manager).sync_content()
     # cutscene.get_decision_thorn(tpl_manager).sync_content()
     # cutscene.get_accept_thorn(tpl_manager).sync_content()

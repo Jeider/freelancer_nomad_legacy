@@ -19,7 +19,6 @@ class Msn13OsirisScene(Scene):
 
     def action(self):
         main_group = self.get_group(MAIN)
-        # mandrake_floor_height = self.get_point('mandrake_floor').position[1]
 
         # CAMERAS
 
@@ -31,14 +30,6 @@ class Msn13OsirisScene(Scene):
         cam_brief_end = LookAtCamera(root=self, name='cam_brief_end', fov=20)
         cam_alaric = LookAtCamera(root=self, name='cam_alaric', fov=18)
         cam_final = LookAtCamera(root=self, name='cam_final', fov=20)
-
-
-        # cam_trent = LookAtCamera(root=self, name='cam_trent', fov=18)
-        # cam_king = LookAtCamera(root=self, name='cam_king', fov=16)
-        # cam_comm = LookAtCamera(root=self, name='cam_comm', fov=22)
-        # cam_team = LookAtCamera(root=self, name='cam_team', fov=24)
-        # cam_insane = LookAtCamera(root=self, name='cam_insane', fov=18)
-
 
         # PROPS
 
@@ -65,8 +56,6 @@ class Msn13OsirisScene(Scene):
                           light_group=3, diffuse=[0, 0, 0], extra_name='', is_reference=True,
                           ambient=[0, 0, 0], direction=[0, 0, 1], light_type=L_DIRECT, range=2000, cutoff=150)
 
-
-
         char_ambi = Light(root=self, name='main_ambi_ltg01', point_name=self.DEFAULT_POINT_NAME,
                           light_group=1, diffuse=[0.22, 0.2, 0.15],
                           ambient=[0.15, 0.15, 0.15], direction=[0, 0, -1], light_type=L_DIRECT, range=2000, cutoff=150)
@@ -79,7 +68,6 @@ class Msn13OsirisScene(Scene):
                          ambient=[0, 0, 0], direction=[0, 0, 1], light_type=L_POINT, range=2000, cutoff=150)
 
         set_ambi.set_ambient(group=BG, duration=0.1, ambient=[0.25,0.25,0.25])
-        # set_ambi.set_ambient(group=BG, duration=0.1, ambient=[0.25,0.25,0.25])
         ship_ambi.turn_off(group=BG)
 
         anim2_grp = 'anim2'
@@ -140,17 +128,12 @@ class Msn13OsirisScene(Scene):
         mrk_male2 = male3.get_stand_marker('male2')
         mrk_male1 = male1.get_stand_marker('male1')
         mrk_major = trent.get_stand_marker('major')
-        # mrk_king = trent.get_stand_marker('king_init')
-        # mrk_alaric_comm = trent.get_stand_marker('alaric_comm')
-        # # mrk_mandrake_comm = trent.get_stand_marker('mandrake_comm')
-        #
-        # mrk_mandrake = self.get_automarker_name('mrk_mandrake')
+
         mrk_trent_talk = self.get_automarker_name('mrk_trent_talk')
         mrk_trent_front = self.get_automarker_name('mrk_trent_front')
         mrk_darcy_talk = self.get_automarker_name('mrk_darcy_talk')
         mrk_darcy_front = self.get_automarker_name('mrk_darcy_front')
-        # mrk_trent_front2 = self.get_automarker_name('mrk_trent_front2')
-        # mrk_trent_front_eye = self.get_automarker_name('mrk_trent_front_eye')
+
 
         # PREPARE
 
@@ -162,12 +145,14 @@ class Msn13OsirisScene(Scene):
         king.move_eye_ik(group=BG, target_name=mrk_female1, immediately=True)
 
         # ACTION!
-        #
+
+
+        king.motion(group=MAIN, duration=30, loop=True, anim=Male.Sc_MLBODY_STND_IDLE_000LV_xa_04)
 
         trent.motion(group=MAIN, duration=12, loop=True, anim=Male.Sc_MLBODY_WLKG_000LV_XA_01)
         darcy.motion(group=MAIN, duration=10, anim=Female.Sc_FMBODY_STND_IDLE_000LV_xa_05)
         darcy.motion(group=MAIN, duration=10, anim=Female.Sc_FMBODY_STND_WALK_TRNS_180LV_XA_02, time_delay=4)
-        darcy.motion(group=MAIN, duration=13, loop=True, anim=Female.Sc_FMBODY_WLKG_000LV_XA_01, time_delay=6.475)
+        darcy.motion(group=MAIN, duration=11, loop=True, anim=Female.Sc_FMBODY_WLKG_000LV_XA_01, time_delay=6.475)
         RotateAxisEvent(root=self, group=MAIN, object_name=darcy.name, angle=5, duration=1, smooth=True, time_delay=6)
         RotateAxisEvent(root=self, group=MAIN, object_name=trent.name, angle=-5, duration=10)
 
@@ -178,7 +163,7 @@ class Msn13OsirisScene(Scene):
         main_group.append_time(4)
         darcy.facial(group=MAIN, index=10)
 
-        main_group.append_time(4)
+        main_group.append_time(1)
 
         MoveOffscreenEvent(root=self, group=MAIN, object_name=trent.name)
         MoveOffscreenEvent(root=self, group=MAIN, object_name=darcy.name)
@@ -297,7 +282,6 @@ class Msn13OsirisScene(Scene):
 
 
 
-        king.motion(group=MAIN, duration=10, loop=True, anim=Male.Sc_MLBODY_STND_IDLE_000LV_xa_04)
         king.motion(group=MAIN, duration=10, anim=Male.Sc_MLBODY_STND_ATEASE_HSEC_RLEASE_000LV_XA_03, time_scale=0.5, time_delay=2)
 
         # main_group.append_time(1000)

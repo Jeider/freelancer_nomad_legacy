@@ -1,3 +1,4 @@
+import re
 from story import math
 
 
@@ -20,6 +21,11 @@ L_POINT = 'L_POINT'
 L_SPOT = 'L_SPOT'
 LIGHT_TYPES = [L_DIRECT, L_POINT, L_SPOT]
 
+POSITION = 'POSITION'
+ORIENTATION = 'ORIENTATION'
+REFERENCE = 'REFERENCE'
+ENTITY_RELATIVE = 'ENTITY_RELATIVE'
+
 BODY_HEAD = 'Body_Head'
 EYE_IK = 'Eye IK Left'
 
@@ -27,6 +33,9 @@ MAIN = 'main'
 BG = 'bg'
 DEFAULT_GROUP = 'default_group'
 BG_GROUP = 'bg_group'
+
+SRT_BACKGROUND = -100
+USR_BACKGROUND = 1
 
 IDLE = 'idle'
 
@@ -592,6 +601,37 @@ class AudioAnimEvent(Event):
         }
 
 
+class PathAnimationEvent(Event):
+    TEMPLATE = 'path_anim'
+
+    def __init__(self, target_name, path, duration, smooth=False,
+                 adjust_pos=True, adjust_orient=False, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.target_name = target_name
+        self.path = path
+        self.duration = duration
+        self.smooth = smooth
+        self.adjust_pos = adjust_pos
+        self.adjust_orient = adjust_orient
+
+    def get_flags(self):
+        flags = []
+        if self.adjust_pos:
+            flags.append(POSITION)
+        if self.adjust_orient:
+            flags.append(ORIENTATION)
+        return ' + '.join(flags)
+
+    def get_params(self):
+        return {
+            'target_name': self.target_name,
+            'path_name': self.path.name,
+            'duration': self.duration,
+            'smooth': self.smooth,
+            'flags': self.get_flags(),
+        }
+
+
 ### ENTITIES
 
 
@@ -634,9 +674,12 @@ class Marker(Entity):
 class Compound(Entity):
     FORCE_POS = None
     FORCE_MATRIX = None
+    SRT_GRP = 0
+    USR_FLG = 0
 
     def __init__(self, light_group, init_point, rotate_y=0,
-                 use_ambient=False, matrix_scale=1, *args, **kwargs):
+                 use_ambient=False, matrix_scale=1,
+                 *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.light_group = light_group
         self.init_point = init_point
@@ -683,6 +726,8 @@ class Compound(Entity):
             'init_pos': '{0}, {1}, {2}'.format(*self.FORCE_POS) if self.FORCE_POS else self.point.pos,
             'init_matrix': self.get_init_matrix(),
             'light_flags': self.get_flags(),
+            'srt_grp': self.SRT_GRP,
+            'usr_flg': self.USR_FLG,
         }
 
     def anim(self, group, anim, duration=10, **kwargs):
@@ -700,6 +745,13 @@ class Prop(Compound):
         return self.COMPOUND_TEMPLATE_NAME
 
 
+class BackgroundProp(Prop):
+    COMPOUND_TEMPLATE_NAME = None
+    TEMPLATE = 'prop'
+    SRT_GRP = SRT_BACKGROUND
+    USR_FLG = USR_BACKGROUND
+
+
 class Ship(Prop):
     COMPOUND_TEMPLATE_NAME = None
     TEMPLATE = 'ship'
@@ -714,6 +766,10 @@ class Ship(Prop):
         params['loadout'] = self.loadout
         params['have_lights'] = self.have_lights
         return params
+
+
+class PlayerShip(Ship):
+    COMPOUND_TEMPLATE_NAME = 'PlayerShip'
 
 
 class Glass(Prop):
@@ -774,7 +830,6 @@ class Character(Compound):
                 name=self.get_ik_marker(ik_name),
                 point_name=temp_ik_point_name
             )
-
 
     def move_head_ik(self, group, target_name, immediately=False, **kwargs):
         event_class = MoveFastEvent if immediately else MoveEvent
@@ -1097,3 +1152,64 @@ class Alchemy(Entity):
 
     def start(self, group, duration, **kwargs):
         StartAlchemyEvent(root=self.root, group=group, object_name=self.name, duration=duration, **kwargs)
+
+
+class MotionPath(Entity):
+    TEMPLATE = 'motion_path'
+
+    def __init__(self, path_data, point_name=None, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.point_name = point_name if point_name else self.root.DEFAULT_POINT_NAME
+        self.point = self.root.get_point(self.point_name)
+        self.path_data = path_data
+        self.validate_path_data()
+
+    def validate_path_data(self):
+        path_clean = re.sub(r"\s+", "", self.path_data, flags=re.UNICODE)
+        path_items = path_clean[1:-1].split('},{')
+        current_iter = 1
+        i = 1
+        for pack in path_items:
+            try:
+                items = pack.split(',')
+            except Exception as e:
+                raise Exception(f'Path pack #{i} of path {self.name} could not be parsed, reason: {e}')
+
+            iter_len = len(items)
+            if current_iter == 1:
+                if iter_len != 3:
+                    raise Exception(f'Path pack #{i} of path {self.name} have len {iter_len}, but should be 3, because it is position')
+            else:
+                if iter_len != 4:
+                    raise Exception(f'Path pack #{i} of path {self.name} have len {iter_len}, but should be 4, because it is orientation')
+
+            j = 1
+            for item in items:
+                try:
+                    float(item)
+                except ValueError:
+                    raise Exception(f'Path pack #{i} of path {self.name}. Item {j} in this pack is not float')
+                j += 1
+
+            if current_iter == 1:
+                current_iter = 2
+            else:
+                current_iter = 1
+
+            i += 1
+
+        if iter == 1:
+            raise Exception(f'Path {self.name} have invalid pair of path animation: ended on pos, not orient')
+
+    def get_params(self):
+        return {
+            'name': self.name,
+            'path_data': self.path_data,
+            'init_pos': self.point.pos,
+            'point': self.point,
+        }
+
+    def anim(self, group, duration, target_name, adjust_pos=True, adjust_orient=False, *args, **kwargs):
+        return PathAnimationEvent(root=self.root, group=group, duration=duration,
+                                  target_name=target_name, path=self,
+                                  adjust_pos=adjust_pos, adjust_orient=adjust_orient, *args, **kwargs)
