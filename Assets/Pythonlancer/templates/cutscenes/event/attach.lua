@@ -16,6 +16,6 @@
         front=NEG_Z_AXIS,
         target_part="{{ target_part }}",
         target_type={{ target_type }},
-        flags=POSITION
+        flags={{ flags }}
     }
 }

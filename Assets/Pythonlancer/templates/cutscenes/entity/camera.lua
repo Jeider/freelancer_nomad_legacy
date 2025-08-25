@@ -11,6 +11,6 @@
         fovh={{ fov }},
         hvaspect=1.85,
         nearplane=0.2,
-        farplane=5000
+        farplane={{ farplane }}
     }
 }

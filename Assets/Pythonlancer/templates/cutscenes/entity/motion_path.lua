@@ -7,7 +7,7 @@
         pos={
             {{ init_pos }}
         },
-        orient={ {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {0.0, 0.0, 1.0} }
+        orient={ {{ init_matrix }} }
     },
     pathprops={
         path_type="CV_CROrientationSplinePath",

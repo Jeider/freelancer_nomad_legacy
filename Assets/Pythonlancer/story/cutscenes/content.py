@@ -37,6 +37,8 @@ BG_GROUP = 'bg_group'
 SRT_BACKGROUND = -100
 USR_BACKGROUND = 1
 
+PLAYER_ENGINES = 'PlayerShipEngines'
+
 IDLE = 'idle'
 
 MALE_ANIMS = {
@@ -403,8 +405,8 @@ class MotionEvent(Event):
         }
 
 
-class AnimEvent(Event):
-    TEMPLATE = 'anim'
+class CompoundAnim(Event):
+    TEMPLATE = 'compound_anim'
 
     def __init__(self, object_name, anim, duration, time_scale=1, start_time=0,
                  loop=False, *args, **kwargs):
@@ -506,6 +508,23 @@ class StartAlchemyEvent(Event):
         }
 
 
+class AlchemyAnimEvent(Event):
+    TEMPLATE = 'alchemy_anim'
+
+    def __init__(self, object_name, duration, sparam, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.object_name = object_name
+        self.duration = duration
+        self.sparam = sparam
+
+    def get_params(self):
+        return {
+            'name': self.object_name,
+            'duration': self.duration,
+            'sparam': self.sparam,
+        }
+
+
 class ConnectHardpointEvent(Event):
     TEMPLATE = 'connect_hardpoint'
 
@@ -535,19 +554,34 @@ class AttachEvent(Event):
     TEMPLATE = 'attach'
 
     def __init__(self, target_name, parent_name, duration,
-                 target_part, target_type, *args, **kwargs):
+                 target_part, target_type,
+                 adjust_pos=True, adjust_orient=False, entity_relative=False,
+                 *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.target_name = target_name
         self.parent_name = parent_name
         self.duration = duration
         self.target_part = target_part
         self.target_type = target_type
+        self.adjust_pos = adjust_pos
+        self.adjust_orient = adjust_orient
+        self.entity_relative = entity_relative
 
         if self.target_type not in TARGET_TYPES:
             raise Exception(f'Attach event for {self.parent_name} has invalid target_type')
 
         if self.target_type != TARGET_ROOT and self.target_part == '':
             raise Exception(f'Attach event for {self.parent_name} requires defined target_part')
+
+    def get_flags(self):
+        flags = []
+        if self.adjust_pos:
+            flags.append(POSITION)
+        if self.adjust_orient:
+            flags.append(ORIENTATION)
+        if self.entity_relative:
+            flags.append(ENTITY_RELATIVE)
+        return ' + '.join(flags)
 
     def get_params(self):
         return {
@@ -556,6 +590,7 @@ class AttachEvent(Event):
             'duration': self.duration,
             'target_part': self.target_part,
             'target_type': self.target_type,
+            'flags': self.get_flags(),
         }
 
     def set_duration(self, duration):
@@ -731,10 +766,10 @@ class Compound(Entity):
         }
 
     def anim(self, group, anim, duration=10, **kwargs):
-        return MotionEvent(root=self.root, group=group,
-                           object_name=self.name, anim=anim,
-                           duration=duration,
-                           **kwargs)
+        return CompoundAnim(root=self.root, group=group,
+                            object_name=self.name, anim=anim,
+                            duration=duration,
+                            **kwargs)
 
 
 class Prop(Compound):
@@ -750,6 +785,16 @@ class BackgroundProp(Prop):
     TEMPLATE = 'prop'
     SRT_GRP = SRT_BACKGROUND
     USR_FLG = USR_BACKGROUND
+
+
+class Solar(Prop):
+    COMPOUND_TEMPLATE_NAME = None
+    TEMPLATE = 'solar'
+
+
+class Equipment(Prop):
+    COMPOUND_TEMPLATE_NAME = None
+    TEMPLATE = 'equip'
 
 
 class Ship(Prop):
@@ -942,6 +987,21 @@ class Character(Compound):
 
 
 class Camera(Marker):
+
+    def __init__(self, name, fov, farplane=5000, *args, **kwargs):
+        point_name = name
+        super().__init__(name=name, point_name=name, *args, **kwargs)
+        self.fov = fov
+        self.farplane = farplane
+
+    def get_params(self):
+        return {
+            'name': self.name,
+            'point': self.point,
+            'fov': self.fov,
+            'farplane': self.farplane,
+        }
+
     def set(self, group, **kwargs):
         SetCameraEvent(root=self.root, group=group, camera_name=self.name, **kwargs)
 
@@ -949,24 +1009,12 @@ class Camera(Marker):
 class StaticCamera(Camera):
     TEMPLATE = 'camera'
 
-    def __init__(self, fov, *args, **kwargs):
-        super().__init__(point_name=kwargs['name'], *args, **kwargs)
-        self.fov = fov
-
-    def get_params(self):
-        return {
-            'name': self.name,
-            'point': self.point,
-            'fov': self.fov,
-        }
-
 
 class LookAtCamera(Camera):
     TEMPLATE = 'camera'
 
-    def __init__(self, fov, look_duration=1000, *args, **kwargs):
-        super().__init__(point_name=kwargs['name'], *args, **kwargs)
-        self.fov = fov
+    def __init__(self, look_duration=1000, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.focus_name = f'{self.name}_focus'
         self.focus = self.root.get_automarker(self.focus_name)
         self.look_at = LookAtEvent(
@@ -974,14 +1022,6 @@ class LookAtCamera(Camera):
             point=self.point, focus=self.focus,
             duration=look_duration,
         )
-
-    def get_params(self):
-        return {
-            'name': self.name,
-            'point': self.point,
-            'fov': self.fov,
-        }
-
     def move_cam(self, group, index, duration, time_delay=0, time_append=0, smooth=True):
         target = f'{self.name}{index}'
         target_obj = self.root.get_automarker(target)
@@ -1001,12 +1041,16 @@ class LookAtCamera(Camera):
 
 class Sound(Entity):
     TEMPLATE = 'sound'
+    FLAGS = None
 
-    def __init__(self, sound, attenuation, priority='Story_Sound_1', *args, **kwargs):
+    def __init__(self, sound, attenuation, priority='Story_Sound_1', dmin=50, dmax=300,
+                 *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.sound = sound
         self.attenuation = attenuation
         self.priority = priority
+        self.dmin = dmin
+        self.dmax = dmax
 
     def get_params(self):
         return {
@@ -1014,6 +1058,9 @@ class Sound(Entity):
             'sound': self.sound,
             'attenuation': self.attenuation,
             'priority': self.priority,
+            'dmin': self.dmin,
+            'dmax': self.dmax,
+            'flags': self.FLAGS,
         }
 
     def start(self, group, duration, loop=False, start_time=0, **kwargs):
@@ -1024,6 +1071,10 @@ class Sound(Entity):
     def change_attenuation(self, group, duration, attenuation, **kwargs):
         AudioAnimEvent(root=self.root, group=group, sound_name=self.name,
                        duration=duration, attenuation=attenuation, **kwargs)
+
+
+class SpatialSound(Sound):
+    FLAGS = 'SPATIAL'
 
 
 class Music(Sound):
@@ -1151,7 +1202,13 @@ class Alchemy(Entity):
         }
 
     def start(self, group, duration, **kwargs):
-        StartAlchemyEvent(root=self.root, group=group, object_name=self.name, duration=duration, **kwargs)
+        return StartAlchemyEvent(root=self.root, group=group, object_name=self.name, duration=duration, **kwargs)
+
+    def set_sparam(self, group, duration, sparam, **kwargs):
+        if sparam < 0 or sparam > 1:
+            raise Exception(f'sparam for {self.name} have invalid range: {sparam}')
+        return AlchemyAnimEvent(root=self.root, group=group, object_name=self.name,
+                                duration=duration, sparam=sparam, **kwargs)
 
 
 class MotionPath(Entity):
@@ -1161,15 +1218,18 @@ class MotionPath(Entity):
         super().__init__(*args, **kwargs)
         self.point_name = point_name if point_name else self.root.DEFAULT_POINT_NAME
         self.point = self.root.get_point(self.point_name)
-        self.path_data = path_data
-        self.validate_path_data()
+        self.path_data = self.validate_path_data(path_data)
 
-    def validate_path_data(self):
-        path_clean = re.sub(r"\s+", "", self.path_data, flags=re.UNICODE)
+    def validate_path_data(self, path_data):
+        path_clean = re.sub(r"\s+", "", path_data, flags=re.UNICODE)
         path_items = path_clean[1:-1].split('},{')
         current_iter = 1
         i = 1
+
+        results = []
+
         for pack in path_items:
+            result = []
             try:
                 items = pack.split(',')
             except Exception as e:
@@ -1186,7 +1246,7 @@ class MotionPath(Entity):
             j = 1
             for item in items:
                 try:
-                    float(item)
+                    result.append(f"{float(item):f}")
                 except ValueError:
                     raise Exception(f'Path pack #{i} of path {self.name}. Item {j} in this pack is not float')
                 j += 1
@@ -1196,16 +1256,26 @@ class MotionPath(Entity):
             else:
                 current_iter = 1
 
+            results.append(result)
             i += 1
 
         if iter == 1:
             raise Exception(f'Path {self.name} have invalid pair of path animation: ended on pos, not orient')
 
+        return results
+
+    def extract_path_data(self):
+        packs = []
+        for data_pack in self.path_data:
+            packs.append(f"{{ {','.join(data_pack)} }}")
+        return ",".join(packs)
+
     def get_params(self):
         return {
             'name': self.name,
-            'path_data': self.path_data,
+            'path_data': self.extract_path_data(),
             'init_pos': self.point.pos,
+            'init_matrix': self.point.matrix,
             'point': self.point,
         }
 

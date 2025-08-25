@@ -21,6 +21,7 @@ class Scene:
     MIN_DURATION = 1
     POINT_ROTATE_OVERRIDES = {}
     DEFAULT_POINT_NAME = 'default_point'
+    OFFSCREEN_POINT_NAME = 'offscreen_point'
 
     def __init__(self, tpl_manager, props, extra_name=''):
         self.tpl_manager = tpl_manager
@@ -103,6 +104,14 @@ class Scene:
             root=self,
             name=automarker_name(self.DEFAULT_POINT_NAME),
             point_name=self.DEFAULT_POINT_NAME
+        )
+
+        self.add_point(name=self.OFFSCREEN_POINT_NAME, position=[0, -10000, 0], source=SOURCE_PYTHONLANCER)
+
+        Marker(
+            root=self,
+            name=automarker_name(self.OFFSCREEN_POINT_NAME),
+            point_name=self.OFFSCREEN_POINT_NAME
         )
 
     def load_points_dump(self):
