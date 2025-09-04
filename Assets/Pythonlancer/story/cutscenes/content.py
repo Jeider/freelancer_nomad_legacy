@@ -70,19 +70,20 @@ BACKGROUND_AMBIENT = 'backgroundambient'
 
 
 class Point:
-    # WARNING! temporary only for positions!!
-    def __init__(self, name, position, source, rotate=None):  # , orientation, rotate
+    def __init__(self, name, position, source, orientation=None, rotate=None):  # , orientation, rotate
         self.name = name
         self.source = source
         if self.source == SOURCE_BLENDER:
             self.position = [position[0], position[2], -position[1]]
         else:
             self.position = position
-        # self.orientation = [orientation[3], orientation[0], orientation[1], -orientation[2]]  # quaternion
-        # deg_euler = math.radians_to_degrees(*rotate)
-        # self.rotate = [deg_euler[0], deg_euler[1], deg_euler[2]]
-        # if len(self.orientation) != 4:
-        #     raise Exception(f'Point {name} have wrong quaternion for orientation')
+
+        # quaternion
+        self.orientation = (
+            math.convert_quat_from_blender_to_fl(orientation)
+            if orientation is not None
+            else None
+        )
         self.rotate = rotate if rotate else [0, 0, 0]
 
     @property
@@ -97,6 +98,21 @@ class Point:
     @property
     def matrix(self):
         mx = math.euler_to_matrix(*self.rotate)
+        return '''
+            {{ {0:.7f},{1:.7f},{2:.7f} }},
+            {{ {3:.7f},{4:.7f},{5:.7f} }},
+            {{ {6:.7f},{7:.7f},{8:.7f} }}
+        '''.format(
+            mx[0][0], mx[0][1], mx[0][2],
+            mx[1][0], mx[1][1], mx[1][2],
+            mx[2][0], mx[2][1], mx[2][2],
+        )
+
+    @property
+    def matrix_from_quat(self):
+        if self.orientation is None:
+            raise Exception(f'Point {self.name} have no orientation data')
+        mx = math.quat_to_matrix(self.orientation)
         return '''
             {{ {0:.7f},{1:.7f},{2:.7f} }},
             {{ {3:.7f},{4:.7f},{5:.7f} }},
@@ -713,19 +729,24 @@ class Compound(Entity):
     USR_FLG = 0
 
     def __init__(self, light_group, init_point, rotate_y=0,
-                 use_ambient=False, matrix_scale=1,
+                 use_ambient=False, matrix_scale=1, rotate_from_quat=False,
                  *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.light_group = light_group
         self.init_point = init_point
         self.point = self.root.get_point(self.init_point)
+        self.rotate_from_quat = rotate_from_quat
         self.rotate_y = rotate_y
         self.use_ambient = use_ambient
         self.matrix_scale = matrix_scale
+        if self.rotate_from_quat is True and self.rotate_y != 0:
+            raise Exception('Cannot use rotate_y and rotate_from_quat at the same time')
 
     def get_init_matrix(self):
         if self.FORCE_MATRIX:
             mx = self.FORCE_MATRIX
+        elif self.rotate_from_quat is True:
+            return self.point.matrix_from_quat
         else:
             rotate = (
                 [0, self.rotate_y, 0]

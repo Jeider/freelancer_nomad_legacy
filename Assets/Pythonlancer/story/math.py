@@ -29,5 +29,28 @@ def euler_to_matrix(x, y, z):
 def quat_to_matrix(quaternion):
     if len(quaternion) != 4:
         raise Exception('Failed: income value is not quaternion')
-    r = R.from_quat(quaternion)
+    r = R.from_quat([
+        quaternion[1],
+        quaternion[2],
+        quaternion[3],
+        quaternion[0],
+    ])
     return r.as_matrix().tolist()
+
+
+def quat_to_euler(quaternion):
+    if len(quaternion) != 4:
+        raise Exception('Failed: income value is not quaternion')
+    r = R.from_quat(quaternion)
+    return r.as_euler().tolist()
+
+
+def convert_quat_from_blender_to_fl(quaternion):
+    if len(quaternion) != 4:
+        raise Exception('Failed: income value is not quaternion')
+    return [
+        quaternion[0],
+        -quaternion[1],
+        -quaternion[2],
+        -quaternion[3],
+    ]

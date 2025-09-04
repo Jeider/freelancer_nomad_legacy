@@ -85,8 +85,8 @@ class Msn13CSVMagnetScene(Scene):
 
         # PROPS
 
-        open_sound = Sound(root=self, name='depot_open_sound', sound='depot_open_sound', attenuation=-3)
-        close_sound = Sound(root=self, name='depot_close_sound', sound='depot_close_sound', attenuation=-3)
+        open_sound = Sound(root=self, name='depot_open_sound', sound='depot_open_sound', attenuation=-6)
+        close_sound = Sound(root=self, name='depot_close_sound', sound='depot_close_sound', attenuation=-6)
 
 
 
@@ -130,7 +130,7 @@ class Msn13CSVMagnetScene(Scene):
 
             i += 1
 
-        playership = PlayerShip(root=self, name='playership_the', light_group=0, init_point=self.DEFAULT_POINT_NAME)
+        playership = PlayerShip(root=self, name='playership_the', light_group=0, init_point='csv_alt', rotate_from_quat=True)
         csv = CSV(root=self, name='csv_the', light_group=0, init_point='csv_test',
                   loadout='rtc_m13_csv', have_lights=True)
 
@@ -172,7 +172,7 @@ class Msn13CSVMagnetScene(Scene):
               ambient=[0.12, 0.12, 0.12], direction=[0, 0, 1], light_type=L_DIRECT, range=2000)
 
         logos = Logos(root=self, name='logos_the', light_group=0, init_point='logos_start',
-                      loadout='or_osiris', have_lights=True)
+                      loadout='li_battleship_01', have_lights=True)
 
         logos_engine = Alchemy(root=self, name='logos_engine', particles='gf_li_largeengine02', sparam=0.9, point_name=self.OFFSCREEN_POINT_NAME)
         logos_engine.start(group=BG, duration=5000)
@@ -270,5 +270,11 @@ class Msn13CSVMagnetScene(Scene):
         csv_eng_loop.change_attenuation(group=MAIN, attenuation=-2, duration=3)
         csv_engine.set_sparam(group=MAIN, duration=3, sparam=0.9)
         csv_trail.set_sparam(group=MAIN, duration=3, sparam=0.9)
+
+        main_group.append_time(1000)
+
+        self.set_start_time(main_group.get_time())
+
+        cam_dbg.set(group=MAIN)
 
         main_group.append_time(1000)

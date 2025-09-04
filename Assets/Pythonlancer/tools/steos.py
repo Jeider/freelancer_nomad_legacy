@@ -57,6 +57,12 @@ class SteosVoice(object):
             fout.write(voice_bytes)
 
     @classmethod
+    def generate_ru_voice_simple(cls, actor, text, file_destination: Path):
+        voice_bytes = cls.generate_voice_bytes(actor=actor, text=text)
+        with open(file_destination, "wb") as fout:
+            fout.write(voice_bytes)
+
+    @classmethod
     def generate_test_sound(cls, actor, text, name):
         voice_bytes = cls.generate_voice_bytes(actor=actor, text=text)
         with open(f'results/steos/{name}.mp3', "wb") as fout:

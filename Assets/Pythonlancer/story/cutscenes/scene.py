@@ -127,7 +127,12 @@ class Scene:
             raise Exception(f'Could not previous cutscene metadata. Reason: {e}')
 
         for key, value in data.items():
-            self.add_point(name=key, position=value['position'], source=SOURCE_BLENDER)
+            self.add_point(
+                name=key,
+                position=value['position'],
+                orientation=value['orientation'],
+                source=SOURCE_BLENDER
+            )
 
             Marker(
                 root=self,
@@ -147,10 +152,11 @@ class Scene:
     def get_entity(self, entity_name):
         return self.entities[entity_name]
 
-    def add_point(self, name, position, source, rotate=None):
+    def add_point(self, name, position, source, rotate=None, orientation=None):
         point = Point(
             name=name,
             position=position,
+            orientation=orientation,
             rotate=rotate if rotate else self.POINT_ROTATE_OVERRIDES.get(name),
             source=source,
         )

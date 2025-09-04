@@ -14,3 +14,7 @@ class FileWriter():
     def write_to_subfolder(subfolder, file, data):
         filepath = OUTPUT_FOLDER / subfolder / file
         filepath.write_text(data, encoding='utf-8')
+
+    @staticmethod
+    def get_subfolder(subfolder):
+        return OUTPUT_FOLDER / subfolder

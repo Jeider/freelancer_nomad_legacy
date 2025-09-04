@@ -14,14 +14,16 @@ results = {}
 
 for key, value in C.scene.objects.items():
     value.rotation_mode = 'QUATERNION'
-    orient = value.rotation_quaternion
-    value.rotation_mode = 'XYZ'
-    rotate = value.rotation_euler
+    blender_quat = value.rotation_quaternion
+        
+    correction_quat = Quaternion((1.0, 0.0, 0.0), -1.5708) # -90 degrees in radians
+    orient =  correction_quat @ blender_quat
+    
     results[str(key)] = {
         'position': [value.location[0], value.location[1], value.location[2]],
-        # 'orientation': [orient[0], orient[1], orient[2], orient[3]],
-        # 'rotate': [rotate[0], rotate[1], rotate[2]],
+        'orientation': [orient[0], orient[1], orient[2], orient[3]],
     }
+
 
 print(result_filename)
 print(results)

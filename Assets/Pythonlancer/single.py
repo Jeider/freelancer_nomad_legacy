@@ -3,6 +3,8 @@ import os
 from time import sleep
 import pathlib
 
+from files.writer import FileWriter
+
 from text.dividers import DIVIDER, SINGLE_DIVIDER
 
 from core import get_core
@@ -394,6 +396,26 @@ def scene():
     print('scene done')
 
 
+HELP_LINES = {}
+
+
+class KingHigh(actors.King):
+    STEOS_ID = 218
+    STEOS_PITCH = 3
+    STEOS_SPEED = 1.7
+
+
+def sound_direct():
+    output_folder = FileWriter.get_subfolder('help')
+    # for index, line in HELP_LINES.items():
+    #     audio_folder.AudioFolder.generate_simple_sound(output_folder / f"{index}.mp3", actors.King, line)
+
+    text = 'Проклятие!'
+    index = 2004
+    actor = KingHigh
+    audio_folder.AudioFolder.generate_simple_sound(output_folder / f"{index}.mp3", actor, text)
+
+
 def dbg():
     pass
 
@@ -423,6 +445,7 @@ ACTIONS = {
     'generate_points': generate_points,
     'meta': meta,
     'scene': scene,
+    'sound_direct': sound_direct,
     'dbg': dbg,
 }
 
