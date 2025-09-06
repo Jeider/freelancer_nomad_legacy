@@ -96,6 +96,12 @@ class Point:
         # return '{0:.2f}, {1:.2f}, {2:.2f}, {3:.2f}'.format(*math.euler_to_quat(*self.rotate))
 
     @property
+    def orient_from_quat(self):
+        if self.orientation is None:
+            raise Exception(f'Point {self.name} have no orientation data')
+        return '{0:.2f}, {1:.2f}, {2:.2f}, {3:.2f}'.format(*self.orientation)
+
+    @property
     def matrix(self):
         mx = math.euler_to_matrix(*self.rotate)
         return '''
@@ -1028,7 +1034,7 @@ class Camera(Marker):
 
 
 class StaticCamera(Camera):
-    TEMPLATE = 'camera'
+    TEMPLATE = 'camera_static'
 
 
 class LookAtCamera(Camera):

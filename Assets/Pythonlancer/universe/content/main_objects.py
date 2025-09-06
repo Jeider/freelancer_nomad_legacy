@@ -1,3 +1,4 @@
+import random
 from random import randint
 
 from fx.space import Dust
@@ -16,7 +17,9 @@ from universe.content.loadout import Loadout
 from universe import connection
 from universe import faction
 from universe.content import descriptions_ru
+from universe.content import trade_point
 
+from story.math import rotate_point, relocate_point
 from text.dividers import SINGLE_DIVIDER, DIVIDER
 
 TLR_HUGE_SIZE_RINGS_COUNT = 5
@@ -95,12 +98,17 @@ archetype = {archetype}'''
         if not position:
             raise Exception('POS is required for getting object instance when it has appaerance')
 
-        return self.SPACE_OBJECT_TEMPLATE().get_instance(
+        content = self.SPACE_OBJECT_TEMPLATE().get_instance(
             root_props=self.get_root_props(),
             dock_props=self.get_dock_props(),
             new_space_object_name=self.get_space_object_name(),
             move_to=position,
         )
+        sattelites = self.get_sattelites()
+        if len(sattelites):
+            content += DIVIDER.join(sattelites)
+
+        return content
 
     def get_archetype(self):
         return self.ARCHETYPE
@@ -863,6 +871,10 @@ BGCS_base_run_by = W02bF44'''
 
     DEFENCE_LEVEL = DEFENCE_MEDIUM
 
+    TRADE_POINTS_OFFSETS = []
+    TRADE_DEPOT_ARCHETYPES = []
+    TRADE_POINT_ARCHETYPE = trade_point.TradingFixture
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
@@ -1089,21 +1101,88 @@ behavior = NOTHING
     def set_related_planet(self, planet):
         self.related_planet = planet
 
+    def get_main_rotate(self):
+        return self.Y_ROTATE_PER_REL[self.REL]
+
     def get_rotate(self):
-        return (0, self.Y_ROTATE_PER_REL[self.REL], 0)
+        return (0, self.get_main_rotate(), 0)
 
     def get_interior_content(self):
         raise Exception('Interior for dock ring planets should be only manual created')
 
+    def get_trade_points(self):
+        space_objects = []
+        root_name = self.get_space_object_name()
+        root_pos = self.get_position()
+        main_rotate = self.get_main_rotate()
+
+        i = 1
+        for fixture_offset in self.TRADE_POINTS_OFFSETS:
+            if main_rotate != 0:
+                fixture_offset = relocate_point(fixture_offset, rotate_y=main_rotate)
+
+            fixture_pos = [
+                root_pos[0] + fixture_offset[0],
+                root_pos[1] + fixture_offset[1],
+                root_pos[2] + fixture_offset[2],
+            ]
+
+            space_objects.append(f'''[Object]
+nickname = {root_name}_tr_point{i}
+pos = {fixture_pos[0]:0.7f}, {fixture_pos[1]:0.7f}, {fixture_pos[2]:0.7f} 
+rotate = 0, {main_rotate}, 0
+archetype = {self.TRADE_POINT_ARCHETYPE.ARCHETYPE}
+behavior = NOTHING
+''')
+
+            j = 1
+            for fixture_point in self.TRADE_POINT_ARCHETYPE.get_points():
+                depot_archetype: trade_point.TradingTrain = random.choice(self.TRADE_DEPOT_ARCHETYPES)
+
+                point_init_pos = [
+                    fixture_point,
+                    0,
+                    depot_archetype.FRONT_OFFSET
+                ]
+                if main_rotate != 0:
+                    point_init_pos = relocate_point(point_init_pos, rotate_y=-main_rotate)
+
+                point_pos = [
+                    point_init_pos[0] + fixture_pos[0],
+                    point_init_pos[1] + fixture_pos[1],
+                    point_init_pos[2] + fixture_pos[2],
+                ]
+
+                space_objects.append(f'''[Object]
+nickname = {root_name}_tr_point{i}_moor_obj{j}
+pos = {point_pos[0]:0.7f}, {point_pos[1]:0.7f}, {point_pos[2]:0.7f} 
+rotate = 0, {main_rotate}, 0
+archetype = {depot_archetype.ARCHETYPE}
+loadout = {depot_archetype.LOADOUT}
+reputation = {self.get_faction_code()}
+ids_name = 261161
+behavior = NOTHING
+''')
+                j += 1
+
+            i += 1
+
+        return space_objects
+
     def get_sattelites(self):
         position = self.get_position()
+
+        sattelites = []
+
+        # DOCKING FIXTURE
+
         fixture_position = (
             self.FIXTURE_POSITION_APPEND[0] + position[0],
             self.FIXTURE_POSITION_APPEND[1] + position[1],
             self.FIXTURE_POSITION_APPEND[2] + position[2],
         )
 
-        return [
+        sattelites.append(
             self.DOCKING_FIXTURE_TEMPLATE.format(
                 parent_object=self.get_space_object_name(),
                 pos='{}, {}, {}'.format(*fixture_position),
@@ -1111,7 +1190,13 @@ behavior = NOTHING
                 parent_base=self.get_base_nickname(),
                 reputation=self.get_faction_code(),
             )
-        ]
+        )
+
+        sattelites.extend(
+            self.get_trade_points()
+        )
+
+        return sattelites
 
     def get_space_name(self):
         return 'Стыковочное кольцо'
@@ -1130,21 +1215,13 @@ class LargePlanetDockring(Dockring):
     MISC_EQUIP_GEN_TYPE = GEN_PIRATE
     EQUIP_SET = markets.MainPlanetSet
 
-
-    #
-    # WEAPON_FACTION = WEAPON_RH
-    # EQUIP_FACTION = EQUIP_RH
-    # MISC_EQUIP_TYPE = RH_MAIN
-    # MISC_EQUIP_GEN_TYPE = GEN_MAIN
-    # EQUIP_SET = markets.EquipSet(
-    #     Q.GenericGun(HUNTERGUN, eq_classes=[1, 3, 5, 7]),
-    #     Q.GenericGun(SHIELDGUN, eq_classes=[1, 3, 5, 7]),
-    #     Q.Engine(None, eq_classes=[1, 3, 5]),
-    #     Q.Power(None, eq_classes=[1, 3, 5]),
-    #     Q.Shield(None, eq_classes=[2, 3, 6]),
-    #     Q.Thruster(None, eq_classes=[1, 4]),
-    #     Q.Engine(RH_CIV, eq_classes=[1, 3, 5]),
-    # )
+    TRADE_POINTS_OFFSETS = [
+        [500, 200, 0],
+        [-500, 200, 0],
+        [500, -200, 0],
+        [-500, -200, 0],
+    ]
+    TRADE_DEPOT_ARCHETYPES = [trade_point.TradingTrain, trade_point.TradingLargeTransport]
 
 
 class MiningPlanetDockring(Dockring):
@@ -1152,17 +1229,37 @@ class MiningPlanetDockring(Dockring):
     EQUIP_SET = markets.CivPlanetSet
     MISC_EQUIP_GEN_TYPE = GEN_CIV
 
+    TRADE_POINTS_OFFSETS = [
+        [500, 200, 0],
+        [-500, 200, 0],
+        [500, -200, 0],
+        [-500, -200, 0],
+    ]
+    TRADE_DEPOT_ARCHETYPES = [trade_point.TradingLargeTransport, trade_point.TradingSmallTransport]
+
 
 class ResortPlanetDockring(Dockring):
     BASE_PROPS = meta.ResortPlanet()
     EQUIP_SET = markets.CivPlanetSet
     MISC_EQUIP_GEN_TYPE = GEN_CIV
 
+    TRADE_POINTS_OFFSETS = [
+        [-500, 200, 0],
+        [-500, -200, 0],
+    ]
+    TRADE_DEPOT_ARCHETYPES = [trade_point.TradingSmallTransport]
+
 
 class WaterPlanetDockring(Dockring):
     BASE_PROPS = meta.WaterPlanet()
     EQUIP_SET = markets.CivPlanetSet
     MISC_EQUIP_GEN_TYPE = GEN_CIV
+
+    TRADE_POINTS_OFFSETS = [
+        [-500, 200, 0],
+        [-500, -200, 0],
+    ]
+    TRADE_DEPOT_ARCHETYPES = [trade_point.TradingSmallTransport]
 
 
 class Station(DockableObject):
@@ -1367,6 +1464,74 @@ class TradingBase(DockableObject):
     BASE_PROPS = meta.TradingBase()
     EQUIP_SET = markets.StationSet
     MISC_EQUIP_GEN_TYPE = GEN_CIV
+
+    TRADE_POINT_Y = -500
+    TRADE_POINT_Z = 1000
+    TRADE_POINT_ORIENTS = [45, 135, 225, 315]
+    TRADE_DEPOT_ARCHETYPES = [trade_point.TradingTrain, trade_point.TradingLargeTransport]
+    TRADE_POINT_ARCHETYPE = trade_point.TradingFixture
+
+    def get_trade_points(self):
+        space_objects = []
+        root_name = self.get_space_object_name()
+        root_pos = self.get_position()
+
+        i = 1
+        for fixture_orient in self.TRADE_POINT_ORIENTS:
+            fixture_offset = [
+                0, self.TRADE_POINT_Y, self.TRADE_POINT_Z
+            ]
+            fixture_offset = relocate_point(fixture_offset, rotate_y=fixture_orient)
+
+            fixture_pos = [
+                root_pos[0] + fixture_offset[0],
+                root_pos[1] + fixture_offset[1],
+                root_pos[2] + fixture_offset[2],
+            ]
+
+            space_objects.append(f'''[Object]
+nickname = {root_name}_tr_point{i}
+pos = {fixture_pos[0]:0.2f}, {fixture_pos[1]:0.2f}, {fixture_pos[2]:0.2f} 
+rotate = 0, {-fixture_orient}, 0
+archetype = {self.TRADE_POINT_ARCHETYPE.ARCHETYPE}
+behavior = NOTHING
+''')
+
+            j = 1
+            for fixture_point in self.TRADE_POINT_ARCHETYPE.get_points():
+                depot_archetype: trade_point.TradingTrain = random.choice(self.TRADE_DEPOT_ARCHETYPES)
+
+                point_init_pos = [
+                    fixture_point,
+                    0,
+                    depot_archetype.FRONT_OFFSET
+                ]
+                point_init_pos = relocate_point(point_init_pos, rotate_y=fixture_orient)
+
+                point_pos = [
+                    point_init_pos[0] + fixture_pos[0],
+                    point_init_pos[1] + fixture_pos[1],
+                    point_init_pos[2] + fixture_pos[2],
+                ]
+
+                space_objects.append(f'''[Object]
+nickname = {root_name}_tr_point{i}_moor_obj{j}
+pos = {point_pos[0]:0.7f}, {point_pos[1]:0.7f}, {point_pos[2]:0.7f}
+rotate = 0, {-fixture_orient}, 0
+archetype = {depot_archetype.ARCHETYPE}
+loadout = {depot_archetype.LOADOUT}
+reputation = {self.get_faction_code()}
+ids_name = 261161
+behavior = NOTHING
+''')
+                j += 1
+
+            i += 1
+
+        return space_objects
+
+    def get_sattelites(self):
+        return self.get_trade_points()
 
 
 class Battleship(DockableObject):

@@ -3,6 +3,9 @@ import os
 from time import sleep
 import pathlib
 
+from scipy.spatial.transform import Rotation as R
+import numpy as np
+
 from files.writer import FileWriter
 
 from text.dividers import DIVIDER, SINGLE_DIVIDER
@@ -16,6 +19,7 @@ from managers.script import ScriptManager
 from templates.jinja_manager import JinjaTemplateManager
 
 from story.cutscenes.meta import LipSyncManager
+from story import math
 
 from universe.audio.manager import PilotManager
 from universe.audio import pilot
@@ -55,6 +59,7 @@ from templates.dockable import m13
 def draw_base():
     new_name = None
     move_to = None
+    rotate_core = 0
     workspace = '1'
 
     # base_class = m13.RockfordGenerator
@@ -75,8 +80,10 @@ def draw_base():
 
     base_class = nomad_asf_hq.AsfHQ
     the_base = base_class()
+    # move_to = (-9500, 0, -10000)
+    rotate_core = 45
 
-    content = the_base.get_instance(new_space_object_name=new_name, move_to=move_to)
+    content = the_base.get_instance(new_space_object_name=new_name, move_to=move_to, rotate_core=rotate_core)
     data_folder.DataFolder.sync_to_test_workspace(content, workspace_index=workspace)
 
 
@@ -417,7 +424,9 @@ def sound_direct():
 
 
 def dbg():
-    pass
+    point = [-132, 0, 65]
+    rotated = math.relocate_point(point, 180)
+    print(rotated)
 
 
 ACTIONS = {

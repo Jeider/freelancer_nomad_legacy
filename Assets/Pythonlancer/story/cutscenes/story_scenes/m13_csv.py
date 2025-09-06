@@ -79,6 +79,7 @@ class Msn13CSVMagnetScene(Scene):
         # CAMERAS
 
         cam_dbg = LookAtCamera(root=self, name='cam_dbg', fov=30, farplane=farplane)
+        cam_dbg3 = StaticCamera(root=self, name='cam_dbg3', fov=35, farplane=farplane)
         cam_xdbg = LookAtCamera(root=self, name='cam_xdbg', fov=30, farplane=farplane)
         cam_start = LookAtCamera(root=self, name='cam_start', fov=30, farplane=farplane)
         cam_launch = LookAtCamera(root=self, name='cam_launch', fov=25, farplane=farplane)
@@ -275,6 +276,6 @@ class Msn13CSVMagnetScene(Scene):
 
         self.set_start_time(main_group.get_time())
 
-        cam_dbg.set(group=MAIN)
+        cam_dbg3.set(group=MAIN)
 
         main_group.append_time(1000)

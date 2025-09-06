@@ -1,4 +1,4 @@
-from story.math import euler_to_quat, euler_to_matrix
+from story.math import euler_to_matrix, relocate_point, rotate_point
 from text.dividers import SINGLE_DIVIDER
 
 POS = 'pos'
@@ -129,7 +129,7 @@ class SpaceObjectTemplate(object):
         self.instance = self.template
         self.last_nickname = ''
 
-    def get_instance(self, dock_props='', root_props='', new_space_object_name=None, move_to=None):
+    def get_instance(self, dock_props='', root_props='', new_space_object_name=None, move_to=None, rotate_core=0):
         replaces = []
 
         if new_space_object_name:
@@ -140,8 +140,8 @@ class SpaceObjectTemplate(object):
 
         self.apply_props(dock_props, root_props)
 
-        if move_to:
-            self.move_position(move_to)
+        if move_to or rotate_core:
+            self.relocate(move_to=move_to, rotate_core=rotate_core)
 
         return self.instance
 
@@ -153,7 +153,9 @@ class SpaceObjectTemplate(object):
     def apply_props(self, dock_props, root_props):
         self.instance = self.instance.format(dock_props=dock_props, root_props=root_props)
 
-    def move_position(self, move_to):
+    def relocate(self, move_to=None, rotate_core=0):
+        if not move_to:
+            move_to = [0, 0, 0]
 
         try:
             move_x = float(move_to[0])
@@ -169,17 +171,48 @@ class SpaceObjectTemplate(object):
             if line.startswith(POS):
                 pos_split = line.split('=')[1].strip().split(',')
                 try:
-                    pos_x = float(pos_split[0]) + move_x
-                    pos_y = float(pos_split[1]) + move_y
-                    pos_z = float(pos_split[2]) + move_z
+                    pos_x = float(pos_split[0])
+                    pos_y = float(pos_split[1])
+                    pos_z = float(pos_split[2])
                 except ValueError as e:
-                    raise Exception('Could not convert value. Last nickname: {nick}. Reason: {ex}'.format(nick=self.last_nickname, ex=e))
-                lines.append('{0} = {1}, {2}, {3}'.format(
+                    raise Exception('Could not convert pos. Last nickname: {nick}. Reason: {ex}'.format(nick=self.last_nickname, ex=e))
+
+                if rotate_core != 0:
+                    pos_x, pos_y, pos_z = relocate_point(
+                        point=[pos_x, pos_y, pos_z],
+                        rotate_y=rotate_core
+                    )
+
+                lines.append('{0} = {1:.5f}, {2:.5f}, {3:.5f}'.format(
                     POS,
-                    prepare_pos(pos_x),
-                    prepare_pos(pos_y),
-                    prepare_pos(pos_z),
+                    prepare_pos(pos_x + move_x),
+                    prepare_pos(pos_y + move_y),
+                    prepare_pos(pos_z + move_z),
                 ))
+
+            elif line.startswith(ROTATE):
+                if rotate_core != 0:
+                    rotate_split = line.split('=')[1].strip().split(',')
+                    try:
+                        rotate_x = float(rotate_split[0])
+                        rotate_y = float(rotate_split[1])
+                        rotate_z = float(rotate_split[2])
+                    except ValueError as e:
+                        raise Exception('Could not convert rotate. Last nickname: {nick}. Reason: {ex}'.format(
+                            nick=self.last_nickname, ex=e))
+
+                    rotate_x, rotate_y, rotate_z = rotate_point(
+                        [rotate_x, rotate_y, rotate_z], rotate_core
+                    )
+
+                    lines.append('{0} = {1:.7f}, {2:.7f}, {3:.7f}'.format(
+                        ROTATE,
+                        prepare_pos(rotate_x),
+                        prepare_pos(rotate_y),
+                        prepare_pos(rotate_z),
+                    ))
+                else:
+                    lines.append(line)
 
             else:
                 if line.startswith(NICKNAME):
