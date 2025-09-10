@@ -40,6 +40,7 @@ from universe.systems import tau44 as tau44_content
 from universe.systems import sphere2 as sphere2_content
 from universe.systems import om13alt as om13_alt_content
 from universe.systems import asf_prom as asf_prom_content
+from universe.systems import co_och as co_och_content
 
 
 
@@ -510,11 +511,16 @@ class co_val(system.System, system.SiriusSystem):
 
 class co_och(system.System, system.SiriusSystem):
     NAME = 'co_och'
+    TEMPLATE_NAME = 'co_och'
     RU_NAME = 'Очо-Р+иос'
+    CONTENT = co_och_content
 
     SYSTEM_FOLDER = 'CO_OCHORIOS'
-    NAVMAP_POS = '12, 15'
+    NAVMAP_POS = '7.5, 12'
     NAVMAP_SCALE = 1.25
+
+    JUMP_EFFECT = jump_effect.Edge
+    ALLOW_SYNC = True
 
 
 class co_cad(system.StorySystem, system.SiriusSystem):

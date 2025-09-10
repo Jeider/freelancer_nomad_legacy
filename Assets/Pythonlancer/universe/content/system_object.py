@@ -147,6 +147,9 @@ class SystemObject:
     def get_system_content(self):
         raise NotImplementedError()
 
+    def get_infocard_map(self):
+        return None
+
     @classmethod
     def get_alias(cls):
         if cls.ALIAS is None:

@@ -35,6 +35,7 @@ class UniverseManager:
         self.commodity_dealers = []
         self.ship_dealers = []
         self.loadouts = []
+        self.infocards_map_items = []
 
         self.asteroid_definitions = []
         self.templated_nebulas = []
@@ -88,6 +89,9 @@ class UniverseManager:
                 self.keys += system.keys
 
                 for dockable in system.get_dockable_objects():
+                    if infocard_map := dockable.get_infocard_map():
+                        self.infocards_map_items.append(infocard_map)
+
                     if dockable.IS_BASE and dockable.have_equip_dealer():
                         self.equip_dealers.append(
                             Market(
@@ -181,6 +185,9 @@ class UniverseManager:
     def get_dock_key_file_content(self):
         return DockKeyTemplate().format({'generated': self.get_dock_key()})
 
+    def get_infocard_map_content(self):
+        return SINGLE_DIVIDER.join(['[InfocardMapTable]'] + self.infocards_map_items)
+
     def sync_data(self):
         if not self.core.write:
             return
@@ -188,6 +195,7 @@ class UniverseManager:
         DataFolder.sync_universe(self.get_universe_file_content())
         DataFolder.sync_mbases(self.get_mbases_file_content())
         DataFolder.sync_dock_key(self.get_dock_key_file_content())
+        DataFolder.sync_infocard_map(self.get_infocard_map_content())
 
         for the_system in self.universe_root.get_all_systems():
             if not the_system.ALLOW_SYNC:

@@ -238,7 +238,7 @@ BELT_OM15 = '''
 [Band]
 render_parts = 6
 shape = asteroid_belt_06
-height = 4000
+height = {belt_height}
 offset_dist = 2000
 fade = 0.800000, 1.250000, 15, 17
 texture_aspect = 1.000000
