@@ -1374,8 +1374,8 @@ class WaterPlanetDockring(Dockring):
     MISC_EQUIP_GEN_TYPE = GEN_CIV
 
     TRADE_POINTS_OFFSETS = [
-        [-500, 200, 0],
-        [-500, -200, 0],
+        [500, 200, 0],
+        [500, -200, 0],
     ]
     TRADE_DEPOT_ARCHETYPES = [diversion.TradingSmallTransport]
 

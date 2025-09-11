@@ -137,7 +137,7 @@ class Misson04(ingame_mission.IngameMission):
             NNObj(self, O.JUMPHOLE, target='sig8_to_for'),
             NNObj(self, 'Ожидайте активации дыры', name='wait_for_activation'),
 
-            NNObj(self, 'Доберитесь до ближайшей базы', target='shipyard'),
+            NNObj(self, 'Доберитесь до ближайшей базы', target='shipyard', towards=True),
             NNObj(self, O.TLR, target='for_tlr_1'),
             NNObj(self, O.DOCKRING, target='final_planet'),
         ]
