@@ -13,7 +13,7 @@ mounted = false'''
 nickname = {key_equip}
 equipment = {key_equip}
 category = equipment
-price = 0
+price = 1
 item_icon = Equipment\\models\\commodities\\nn_icons\\COMMOD_credits.3db
 combinable = true'''
 

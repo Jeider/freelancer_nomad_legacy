@@ -375,10 +375,13 @@ class NamedObject(StaticObject):
         self.ids_info1 = self.system.ids.new_name(
             self.get_first_description()
         )
-        if self.DOUBLE_INFO:
+        if self.have_double_info():
             self.ids_info2 = self.system.ids.new_name(
                 self.get_second_description()
             )
+
+    def have_double_info(self):
+        return self.DOUBLE_INFO is not None
 
     def get_first_description(self):
         if self.RU_FIRST_DESCRIPTION:
@@ -418,12 +421,12 @@ class NamedObject(StaticObject):
         return self.ids_info1.id
 
     def get_ids_info2(self):
-        if not self.DOUBLE_INFO:
+        if not self.have_double_info():
             raise Exception(f'{self} is not double info object')
         return self.ids_info2.id
 
     def get_infocard_map(self):
-        if self.DOUBLE_INFO:
+        if self.have_double_info():
             return f'Map = {self.get_ids_info1()}, {self.get_ids_info2()}'
 
 
@@ -717,6 +720,7 @@ parent = {parent_planet}'''
     DRAG_MODIFIER = 3
 
     RELATED_DOCK_RING = None
+    DOUBLE_INFO = False
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -857,6 +861,7 @@ class DockableObject(NamedObject):
     MISC_EQUIP_GEN_TYPE = None
     BASE_PROPS = None
     SELL_AMMO = True
+    DOCK_ONLY = False
 
     AUTOSAVE_FORBIDDEN = False
 
@@ -1029,11 +1034,12 @@ BGCS_base_run_by = W02bF44'''
         props = {
             'ids_name': self.get_ids_name(),
             'ids_info': self.get_ids_info(),
-            'base': base_name,
             'dock_with': base_name,
             'reputation': self.get_faction().get_code(),
             'behavior': 'NOTHING',
         }
+        if not self.DOCK_ONLY:
+            props['base'] = base_name
 
         if self.ALLOW_SPACE_COSTUME:
             if self.RANDOM_ROBOT and not self.SPACE_VOICE and not self.SPACE_COSTUME:
@@ -1101,7 +1107,7 @@ pos = {fixture_pos[0]:0.7f}, {fixture_pos[1]:0.7f}, {fixture_pos[2]:0.7f}
 rotate = 0, {main_rotate}, 0
 archetype = {self.TRADE_POINT_ARCHETYPE.ARCHETYPE}
 behavior = NOTHING
-reputation = {self.get_faction()}
+reputation = {self.get_faction_code()}
 dock_with = {self.get_base_nickname()}
 ''')
 
@@ -1171,7 +1177,7 @@ pos = {fixture_pos[0]:0.2f}, {fixture_pos[1]:0.2f}, {fixture_pos[2]:0.2f}
 rotate = 0, {-fixture_orient}, 0
 archetype = {self.TRADE_POINT_ARCHETYPE.ARCHETYPE}
 behavior = NOTHING
-reputation = {self.get_faction()}
+reputation = {self.get_faction_code()}
 dock_with = {self.get_base_nickname()}
 ''')
 
@@ -1222,6 +1228,8 @@ class Dockring(DockableObject):
     ARCHETYPE = 'dock_ring'
     REL_DRIFT = 1000
     REL_APPEND = 3000
+    DOCK_ONLY = True
+    DOUBLE_INFO = True
 
     DOCKING_FIXTURE_TEMPLATE = '''[Object]
 nickname = {parent_object}_docking_fixture_1
@@ -1262,6 +1270,10 @@ behavior = NOTHING
 
     def set_related_planet(self, planet):
         self.related_planet = planet
+
+    def get_infocard_map(self):
+        if self.related_planet:
+            return f'Map = {self.related_planet.get_ids_info1()}, {self.get_ids_info2()}'
 
     def get_main_rotate(self):
         return self.Y_ROTATE_PER_REL[self.REL]
