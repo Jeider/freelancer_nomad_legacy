@@ -337,6 +337,7 @@ nickname = li_col_03
 pos = 0, 0, 0
 rotate = 0, 0, 0
 archetype = space_police02
+{dock_props}
 
 [Object]
 nickname = li_col_03_airlock01
