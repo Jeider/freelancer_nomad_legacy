@@ -53,7 +53,7 @@ class MarketEquip(MarketItem):
             'level': self.get_market_level(),
             'reputation': self.get_market_reputation(),
             'stock': self.get_market_stock(),
-            'price_mult': self.get_market_price_multiplier(),
+            'price_mult': f"{self.get_market_price_multiplier():0.3f}",
         }
 
     def get_market_item_ammo_params(self):

@@ -1,5 +1,5 @@
 import operator
-from random import shuffle
+from random import shuffle, randint
 
 from world.names import DEFAULT, BASIC, ROID, ALLOY, PRODUCT, LUXURY, CONTRABAND
 from world import bodyparts
@@ -283,10 +283,13 @@ class Base:
             self.post_check_commodities()
         self.init_characters()
 
+    def get_commodities_values(self):
+        return self.base_commodities_db.values()
+
     def get_commodity_market(self):
         return Market(
             base_nickname=self.get_name(),
-            items=self.base_commodities_db.values(),
+            items=self.get_commodities_values(),
         )
 
     def get_debug_table(self):
@@ -577,7 +580,7 @@ class BaseCommodity(MarketCommodity):
     def get_nickname(self):
         return self.commodity.get_nickname()
 
-    def get_price(self):
+    def get_commodity_price(self):
         if self.is_consume():
             purchase_price = self.get_purchase_price()
             if purchase_price == 0:
@@ -588,9 +591,15 @@ class BaseCommodity(MarketCommodity):
 
         return self.commodity.get_default_price()
 
+    def get_price(self):
+        variance = self.commodity.PRICE_VARIANCE_PERCENT * 100
+        random_variance = randint(-variance, variance) / 100
+        random_multipler = (random_variance / 100) + 1
+        return self.get_commodity_price() * random_multipler
+
     def get_price_percent(self):
         price_pct = ((self.get_price() * 100) / self.commodity.get_default_price()) / 100
-        return f'{price_pct}'  # ;;; {self.get_price()} -- ({self.get_debug_mark()})'
+        return price_pct  # f'{price_pct}'  # ;;; {self.get_price()} -- ({self.get_debug_mark()})'
 
     def get_base_name(self):
         return self.base.get_name()

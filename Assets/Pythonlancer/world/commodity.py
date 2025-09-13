@@ -98,6 +98,8 @@ class Commodity:
     PRICE_NORMAL_RATE = 0.75
     PRICE_BAD_RATE = 1
 
+    PRICE_VARIANCE_PERCENT = 2
+
     PRICE_STEP = 20
 
     UNITS_PER_CONTAINER = 30
