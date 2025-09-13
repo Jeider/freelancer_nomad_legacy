@@ -263,7 +263,7 @@ class Sig42Dockring(Sig42Member, Sig42Bretonia, main_objects.MiningPlanetDockrin
     INTERIOR_CLASS = interior.CustomFullSplitRoomInteriorSecond
     DEALERS = dealers.BretoniaCivilianDealers
     SHIP_SET = markets.ShipSet('br_fighter')
-    RU_NAME = 'Планета Пигар'
+    RU_NAME = 'Планета Спрага'
 
     BASE_PROPS = meta.MiningPlanet(
         objectives=[
