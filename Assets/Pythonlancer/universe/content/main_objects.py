@@ -2450,7 +2450,7 @@ class SmugglerStoragePoint(StoragePoint):
     ORIENTS = diversion.ORIENT_HEXAGON
 
 
-class MetroMining(StaticObject):
+class MetroMiningOne(StaticObject):
     ALIAS = 'metro'
     ASTEROID_ARCHETYPE = 'om15_xxxlarge_asteroid3'
     DRILLER_ARCHETYPE = 'space_co_mining_module_driller'
@@ -2500,3 +2500,9 @@ behavior = NOTHING
 ''')
 
         return DIVIDER.join(space_objects)
+
+
+class MetroMiningTwo(MetroMiningOne):
+    ASTEROID_ARCHETYPE = 'om15_xxxlarge_asteroid4'
+    DRILLER_OFFSET = [315, -235, -10]
+    DRILLER_ROTATE = [-20, 120, 0]

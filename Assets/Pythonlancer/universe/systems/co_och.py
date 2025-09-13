@@ -150,8 +150,12 @@ class OchoMainAsteroidBase(OchoMember, main_objects.PirateAsteroid):
     )
 
 
-class OchoMetro1(OchoMember, main_objects.MetroMining):
+class OchoMetro1(OchoMember, main_objects.MetroMiningOne):
     INDEX = 1
+
+
+class OchoMetro2(OchoMember, main_objects.MetroMiningTwo):
+    INDEX = 2
 
 
 class OchNomadCore(main_objects.Sattelite):

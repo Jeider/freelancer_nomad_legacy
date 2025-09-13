@@ -246,42 +246,49 @@ class BasicCommodity:
     DEFAULT_PRICE = 20
     PRICE_STEP = 5
     IS_BASIC = True
+    PRICE_VARIANCE_PERCENT = 25
 
 
 class DefaultCommodity:
     DEFAULT_PRICE = 40
     PRICE_STEP = 10
     IS_DEFAULT = True
+    PRICE_VARIANCE_PERCENT = 10
 
 
 class Roid:
     DEFAULT_PRICE = 80
     PRICE_STEP = 15
     IS_ROID = True
+    PRICE_VARIANCE_PERCENT = 8
 
 
 class Alloy:
     DEFAULT_PRICE = 150
     PRICE_STEP = 25
     IS_ALLOY = True
+    PRICE_VARIANCE_PERCENT = 7
 
 
 class Product:
     DEFAULT_PRICE = 250
     PRICE_STEP = 50
     IS_PRODUCT = True
+    PRICE_VARIANCE_PERCENT = 5
 
 
 class Luxury:
     DEFAULT_PRICE = 400
     PRICE_STEP = 100
     IS_LUXURY = True
+    PRICE_VARIANCE_PERCENT = 3
 
 
 class Contraband:
     DEFAULT_PRICE = 300
     PRICE_STEP = 40
     IS_CONTRABAND = True
+    PRICE_VARIANCE_PERCENT = 15
 
 
 class TerraformMinerals(Product, Commodity):
