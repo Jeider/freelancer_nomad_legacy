@@ -52,6 +52,7 @@ from templates.misc import rmbase
 from templates.misc import trading
 from templates.dockable import nomad_asf_hq
 from templates.dockable import order_shipyard
+from templates.misc import ast_om15_xxxlarge
 
 from templates.dockable import m13
 
@@ -60,7 +61,7 @@ def draw_base():
     new_name = None
     move_to = None
     rotate_core = 0
-    workspace = '1'
+    workspace = '5'
 
     # base_class = m13.RockfordGenerator
     # new_name = 'or_hq_vienna_entry'
@@ -74,15 +75,14 @@ def draw_base():
     # new_name = 'or_hq_shipyard_01'
     # move_to = (-20000, 0, 0)
 
-    # base_class = ast_om15_xxxlarge.AsteroidOne
+    base_class = ast_om15_xxxlarge.AsteroidFour
     # new_name = 'communicator'
     # move_to = (-9500, 0, -10000)
 
-    base_class = nomad_asf_hq.AsfHQ
-    the_base = base_class()
-    # move_to = (-9500, 0, -10000)
-    rotate_core = 45
+    # base_class = nomad_asf_hq.AsfHQ
+    # rotate_core = 45
 
+    the_base = base_class()
     content = the_base.get_instance(new_space_object_name=new_name, move_to=move_to, rotate_core=rotate_core)
     data_folder.DataFolder.sync_to_test_workspace(content, workspace_index=workspace)
 

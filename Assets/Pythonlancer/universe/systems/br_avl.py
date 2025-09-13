@@ -732,7 +732,7 @@ class AvalTradingConn3(AvalMember, main_objects.TradeConnection):
     TRADELANE_LETTER = 'H'
 
 
-class AvalStoryBattleship(AvalMember, main_objects.KusariBattleship):
+class AvalStoryBattleship(AvalMember, main_objects.BretoniaBattleship):
     ALIAS = 'm7_bship'
     INDEX = 1
     BASE_INDEX = 99
@@ -744,11 +744,11 @@ class AvalStoryBattleship(AvalMember, main_objects.KusariBattleship):
     FORCE_CONNECTIONS = [
         AvalPolice,  # TODO: haven't real economics connection
     ]
-    SHIP_SET = markets.ShipSet('co_elite')
+    SHIP_SET = markets.ShipSet('co_elite_darcy')
     RU_NAME = 'Линкор Принц Уэльский'
 
 
-class AvalStoryBattleshipTwo(AvalMember, main_objects.KusariBattleship):
+class AvalStoryBattleshipTwo(AvalMember, main_objects.BretoniaBattleship):
     ALIAS = 'm8_bship'
     INDEX = 1
     BASE_INDEX = 98

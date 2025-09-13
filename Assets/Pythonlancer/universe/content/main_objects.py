@@ -34,6 +34,40 @@ def merge_props(props: dict):
     return SINGLE_DIVIDER.join(['{} = {}'.format(key, value) for key, value in props.items()])
 
 
+class Sattelite:
+    ALIAS = None
+    ARCHETYPE = None
+    LOADOUT = None
+    OFFSET = [0, 0, 0]
+    ROTATE = [0, 0, 0]
+
+    def __init__(self, parent, *args, **kwargs):
+        self.parent = parent
+        super().__init__(*args, **kwargs)
+        if not self.ALIAS:
+            raise Exception(f'Related obj {self} should have alias')
+        if not self.ARCHETYPE:
+            raise Exception(f'Related obj {self} have not archetype')
+
+    def get_space_content(self):
+        parent_pos = self.parent.get_position()
+        satt_pos = [
+            parent_pos[0] + self.OFFSET[0],
+            parent_pos[1] + self.OFFSET[1],
+            parent_pos[2] + self.OFFSET[2]
+        ]
+        params = [
+            '[Object]',
+            f'nickname = {self.parent.get_inspace_nickname()}_related_{self.ALIAS}',
+            f'pos = {satt_pos[0]:0.3f}, {satt_pos[1]:0.3f}, {satt_pos[2]:0.3f}',
+            f'rotate = {self.ROTATE[0]:0.3f}, {self.ROTATE[1]:0.3f}, {self.ROTATE[2]:0.3f}',
+            f'archetype = {self.ARCHETYPE}',
+        ]
+        if self.LOADOUT:
+            params.append(f'loadout = {self.LOADOUT}')
+        return SINGLE_DIVIDER.join(params)
+
+
 class AppearableObject(SystemObject):
     SPACE_OBJECT_TEMPLATE = None
     SPACE_OBJECT_NAME = None
@@ -45,6 +79,9 @@ class AppearableObject(SystemObject):
     SPACE_NAME = None
     TEMPLATE_ARCHETYPE = False
     TEMPLATE_ROTATE = False
+    TEMPLATE_LOADOUT = False
+
+    SATTELITES = []
 
     LOCKED_DOCK = False
     KEY_COLLECT_FX = None
@@ -117,6 +154,11 @@ archetype = {archetype}'''
             return self.system.template.get_item_archetype(self.get_full_alias())
         return self.ARCHETYPE
 
+    def get_loadout(self):
+        if self.TEMPLATE_LOADOUT:
+            return self.system.template.get_item_loadout(self.get_full_alias())
+        return self.LOADOUT
+
     def get_ids_name(self):
         return 1
 
@@ -133,8 +175,8 @@ archetype = {archetype}'''
             )
         ]
 
-        if self.LOADOUT:
-            content.append('loadout = {}'.format(self.LOADOUT))
+        if loadout := self.get_loadout():
+            content.append('loadout = {}'.format(loadout))
 
         content.append(self.get_dock_props())
 
@@ -143,12 +185,20 @@ archetype = {archetype}'''
 
         item = SINGLE_DIVIDER.join(content)
 
-        sattelites = self.get_sattelites()
+        sattelites = self.get_sattelites() + self.get_root_sattelites()
 
         return DIVIDER.join([item] + sattelites)
 
     def get_sattelites(self):
         return []
+
+    def get_root_sattelites(self):
+        sattelites = []
+        for satt in self.SATTELITES:
+            sattelites.append(
+                satt(parent=self).get_space_content()
+            )
+        return sattelites
 
     def get_inspace_nickname(self):
         print(self.__class__.__name__)
@@ -353,6 +403,7 @@ class StaticObject(AppearableObject):
 class AutoStaticObject(StaticObject):
     ALIAS = 'static'
     TEMPLATE_ARCHETYPE = True
+    TEMPLATE_LOADOUT = False  # Enable when you want it
 
     def get_inspace_nickname(self):
         return '{system_name}_staticobj_{index}'.format(system_name=self.system.NAME, index=self.INDEX)
@@ -426,8 +477,7 @@ class NamedObject(StaticObject):
         return self.ids_info2.id
 
     def get_infocard_map(self):
-        if self.have_double_info():
-            return f'Map = {self.get_ids_info1()}, {self.get_ids_info2()}'
+        return f'Map = {self.get_ids_info1()}, {self.get_ids_info2() if self.have_double_info() else "1"}'
 
 
 class VirtualDepot(NamedObject):
@@ -2398,3 +2448,55 @@ behavior = NOTHING''')
 class SmugglerStoragePoint(StoragePoint):
     ARCHETYPES = [diversion.StorageSmuggler]
     ORIENTS = diversion.ORIENT_HEXAGON
+
+
+class MetroMining(StaticObject):
+    ALIAS = 'metro'
+    ASTEROID_ARCHETYPE = 'om15_xxxlarge_asteroid3'
+    DRILLER_ARCHETYPE = 'space_co_mining_module_driller'
+    DRILLER_LOADOUT = 'co_mining_module_driller'
+    DRILLER_OFFSET = [-490, -400, -550]
+    DRILLER_ROTATE = [-30, -120, 0]
+
+    def has_appearance(self):
+        return True
+
+    def get_inspace_nickname(self):
+        return '{system_name}_metro{index:02d}'.format(system_name=self.system.NAME, index=self.INDEX)
+
+    def get_main_rotate(self):
+        return 0
+
+    def get_system_content(self):
+        space_objects = []
+        root_name = self.get_inspace_nickname()
+        root_pos = self.get_position()
+        root_rotate = self.get_main_rotate()
+        driller_pos = [
+            root_pos[0] + self.DRILLER_OFFSET[0],
+            root_pos[1] + self.DRILLER_OFFSET[1],
+            root_pos[2] + self.DRILLER_OFFSET[2]
+        ]
+        driller_rotate = self.DRILLER_ROTATE.copy()
+
+        # ASTEROID
+        space_objects.append(f'''[Object]
+nickname = {root_name}_asteroid
+pos = {root_pos[0]:0.3f}, {root_pos[1]:0.3f}, {root_pos[2]:0.3f} 
+rotate = 0, {root_rotate}, 0
+archetype = {self.ASTEROID_ARCHETYPE}''')
+
+        # DRILLER
+        space_objects.append(f'''[Object]
+nickname = {root_name}_driller
+pos = {driller_pos[0]:0.3f}, {driller_pos[1]:0.3f}, {driller_pos[2]:0.3f} 
+rotate = {driller_rotate[0]:0.3f}, {driller_rotate[1]:0.3f}, {driller_rotate[2]:0.3f}
+archetype = {self.DRILLER_ARCHETYPE}
+loadout = {self.DRILLER_LOADOUT}
+ids_name = 261161
+ids_info = 1
+reputation = {self.get_faction_code()}
+behavior = NOTHING
+''')
+
+        return DIVIDER.join(space_objects)

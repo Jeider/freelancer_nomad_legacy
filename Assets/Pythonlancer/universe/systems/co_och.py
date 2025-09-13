@@ -148,3 +148,20 @@ class OchoMainAsteroidBase(OchoMember, main_objects.PirateAsteroid):
     EQUIP_SET = markets.EquipSet(
         Q.Gun('bw_corsairgun', eq_classes=markets.SECRET3),
     )
+
+
+class OchoMetro1(OchoMember, main_objects.MetroMining):
+    INDEX = 1
+
+
+class OchNomadCore(main_objects.Sattelite):
+    ALIAS = 'no_core1'
+    ARCHETYPE = 'domkavash_generator'
+    # LOADOUT = 'sun_lair_core_co_och'
+    OFFSET = [240, -315, 70]
+    ROTATE = [0, -61, 0]
+
+
+class OchoStatic5(OchoMember, main_objects.AutoStaticObject):
+    INDEX = 5
+    SATTELITES = [OchNomadCore]

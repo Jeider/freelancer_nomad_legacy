@@ -334,13 +334,13 @@ item_icon = Equipment\\models\\commodities\\nn_icons\\{icon}'''
     MAX_PRICE = None  # must redefine
 
     PRICE_PER_CLASS = {
-        3: 0.015,
-        4: 0.03,
-        5: 0.05,
-        6: 0.1,
-        7: 0.25,
-        8: 0.6,
-        9: 0.78,
+        3: 0.012,
+        4: 0.02,
+        5: 0.035,
+        6: 0.08,
+        7: 0.2,
+        8: 0.5,
+        9: 0.7,
         10: 1,
     }
     
@@ -746,7 +746,7 @@ class BaseInterceptorShip(object):
     MAX_HIT_PTS = 12000
     SHIP_KIND_CODE = 0
 
-    MAX_PRICE = 500000
+    MAX_PRICE = 400000
 
     ADDITIONAL_EQUIP = 'M, CM, CD'
 
@@ -778,7 +778,7 @@ class BaseFighterShip(object):
     MAX_HIT_PTS = 10000
     SHIP_KIND_CODE = 1
 
-    MAX_PRICE = 650000
+    MAX_PRICE = 550000
 
     ADDITIONAL_EQUIP = 'M, CM, CD/T'
 
@@ -813,7 +813,7 @@ class BaseFreighterShip(object):
 
     ADDITIONAL_EQUIP = 'M, CM'
 
-    MAX_PRICE = 800000
+    MAX_PRICE = 700000
 
     HIT_PTS_PER_CLASS = {
         1: 1500,
@@ -1251,6 +1251,14 @@ class Centurion(BretoniaShip, ShipFighter, Ship1, Ship):
     # HP_TORPEDO = 'HpTorpedo01'
     # MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
     # MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+
+
+class CenturionDarcy(Centurion, Ship):
+    ARCHETYPE = 'co_elite_darcy'
+    TEMPLATE_CODE = 'ced'
+
+    def get_ship_price(self):
+        return 5000
 
 
 class Titan(BretoniaShip, ShipFighter, Ship2, Ship):

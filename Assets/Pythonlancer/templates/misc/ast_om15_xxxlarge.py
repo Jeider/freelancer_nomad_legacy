@@ -103,6 +103,11 @@ archetype = om15_xxxlarge_tunnel06
 '''
 
 
+class AsteroidFour(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'om13alt_ast_a02'
+    TEMPLATE = AsteroidTwo.TEMPLATE + AsteroidTwo.EXTRA
+
+
 class AsteroidThree(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'om13alt_ast_a03'
     TEMPLATE = '''
