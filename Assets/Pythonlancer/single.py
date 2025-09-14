@@ -6,8 +6,6 @@ import pathlib
 from scipy.spatial.transform import Rotation as R
 import numpy as np
 
-from files.writer import FileWriter
-
 from text.dividers import DIVIDER, SINGLE_DIVIDER
 
 from core import get_core
@@ -32,8 +30,10 @@ from universe.content import mineable
 from templates.hardcoded_inis.audio import VoicesSpaceMaleTemplate, VoicesSpaceFemaleTemplate
 from templates.hardcoded_inis.missions import VoicePropertiesTemplate
 
+from tools.crc import crc32_hex_from_str
 from tools import merge_image
 from tools import data_folder
+from tools import utf_xml
 from tools import elevenlabs
 from tools import audio_folder
 from tools import maxlancer
@@ -423,6 +423,70 @@ def sound_direct():
     audio_folder.AudioFolder.generate_simple_sound(output_folder / f"{index}.mp3", actor, text)
 
 
+def mass_decode():
+    utf_xml.UTF_XML.mass_decode_utf()
+
+
+def mass_upgrade():
+    subfolder_filename = 'lod0-112.vms.xml'
+    old_outside_material = 'om15_xxlarge'
+    old_inside_material = 'om15_inside'
+
+    original_asteroid_name = 'om15'
+    new_asteroid_name = 'ku_tgk'
+
+    new_outside_material = f'{new_asteroid_name}_xxlarge'
+    new_inside_material = f'{new_asteroid_name}_inside'
+
+    old_mat1 = crc32_hex_from_str(old_outside_material)
+    old_mat2 = crc32_hex_from_str(old_inside_material)
+
+    new_mat1 = crc32_hex_from_str(new_outside_material)
+    new_mat2 = crc32_hex_from_str(new_inside_material)
+
+    subfile_changed_strings = [
+        [old_mat1, new_mat1],
+        [old_mat2, new_mat2],
+        [f'0x0{old_mat1[2:].upper()}', new_mat1],
+        [f'0x0{old_mat2[2:].upper()}', new_mat2],
+    ]
+
+    # print(subfile_changed_strings)
+    # x = subfile_changed_strings
+    # import pdb;pdb.set_trace()
+
+
+    main_file_upgrades = [
+        [
+            f'UTFXML filename="{original_asteroid_name}',
+            f'UTFXML filename="{new_asteroid_name}'
+        ],
+        [
+            '.lod0-112.vms include="',
+            f'_{new_asteroid_name}_edition.lod0-112.vms include="'
+        ],
+        [
+            '.lod0-112.vms,',
+            f'_{new_asteroid_name}_edition.lod0-112.vms,'
+        ],
+
+    ]
+
+    sur_filename_upgrades = [
+        [
+            original_asteroid_name,
+            new_asteroid_name
+        ]
+    ]
+
+    utf_xml.XML_UTF.mass_encode_updated_xml(
+        subfolder_filename,
+        subfile_changed_strings,
+        main_file_upgrades,
+        sur_filename_upgrades,
+    )
+
+
 def dbg():
     point = [-132, 0, 65]
     rotated = math.relocate_point(point, 180)
@@ -455,6 +519,8 @@ ACTIONS = {
     'meta': meta,
     'scene': scene,
     'sound_direct': sound_direct,
+    'mass_decode': mass_decode,
+    'mass_upgrade': mass_upgrade,
     'dbg': dbg,
 }
 
@@ -462,7 +528,7 @@ ACTIONS = {
 def single(action):
     action_function = ACTIONS.get(action, None)
     if action_function is None:
-        raise Exception('Unknown action')
+        raise Exception(f'Unknown action {action}')
 
     action_function()
 
@@ -472,4 +538,3 @@ except IndexError:
     raise Exception('Action argument is required')
 
 single(action)
-

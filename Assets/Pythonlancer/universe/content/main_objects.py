@@ -29,6 +29,8 @@ DEFENCE_SIMPLE = 'simple'
 DEFENCE_MEDIUM = 'medium'
 DEFENCE_HIGH = 'high'
 
+AST_TYPES = ['om15', 'ku_tgk', 'co_cur', 'li_cal', 'tau37']
+
 
 def merge_props(props: dict):
     return SINGLE_DIVIDER.join(['{} = {}'.format(key, value) for key, value in props.items()])
@@ -2452,11 +2454,17 @@ class SmugglerStoragePoint(StoragePoint):
 
 class MetroMiningOne(StaticObject):
     ALIAS = 'metro'
-    ASTEROID_ARCHETYPE = 'om15_xxxlarge_asteroid3'
+    AST_TYPE = None
+    ASTEROID_ARCHETYPE_TEMPLATE = '{ast}_xxxlarge_asteroid3'
     DRILLER_ARCHETYPE = 'space_co_mining_module_driller'
     DRILLER_LOADOUT = 'co_mining_module_driller'
     DRILLER_OFFSET = [-490, -400, -550]
     DRILLER_ROTATE = [-30, -120, 0]
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if self.AST_TYPE not in AST_TYPES:
+            raise Exception(f'Object {self} have invalid AST_TYPE. Actual value: {self.AST_TYPE}')
 
     def has_appearance(self):
         return True
@@ -2484,7 +2492,7 @@ class MetroMiningOne(StaticObject):
 nickname = {root_name}_asteroid
 pos = {root_pos[0]:0.3f}, {root_pos[1]:0.3f}, {root_pos[2]:0.3f} 
 rotate = 0, {root_rotate}, 0
-archetype = {self.ASTEROID_ARCHETYPE}''')
+archetype = {self.ASTEROID_ARCHETYPE_TEMPLATE.format(ast=self.AST_TYPE)}''')
 
         # DRILLER
         space_objects.append(f'''[Object]
@@ -2503,6 +2511,7 @@ behavior = NOTHING
 
 
 class MetroMiningTwo(MetroMiningOne):
-    ASTEROID_ARCHETYPE = 'om15_xxxlarge_asteroid4'
+    ASTEROID_ARCHETYPE_TEMPLATE = '{ast}_xxxlarge_asteroid4'
     DRILLER_OFFSET = [315, -235, -10]
     DRILLER_ROTATE = [-20, 120, 0]
+

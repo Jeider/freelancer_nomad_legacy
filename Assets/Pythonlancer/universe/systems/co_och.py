@@ -29,6 +29,7 @@ class OchoMember(Member):
     INTERIOR_BG2 = interior.INTERIOR_STARS
     WEAPON_FACTION = WEAPON_BW
     EQUIP_FACTION = EQUIP_BW
+    AST_TYPE = 'ku_tgk'
 
 
 class OchoStaticText(OchoMember, main_objects.RawText):
@@ -161,7 +162,6 @@ class OchoMetro2(OchoMember, main_objects.MetroMiningTwo):
 class OchNomadCore(main_objects.Sattelite):
     ALIAS = 'no_core1'
     ARCHETYPE = 'domkavash_generator'
-    # LOADOUT = 'sun_lair_core_co_och'
     OFFSET = [240, -315, 70]
     ROTATE = [0, -61, 0]
 
