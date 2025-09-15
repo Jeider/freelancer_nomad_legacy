@@ -991,10 +991,10 @@ class HackerPanel(object):
         return [button for button in self.buttons if button.get_color() is None]
 
     def get_invalid_buttons(self):
-        return [button for button in self.buttons if button.valid == False]
+        return [button for button in self.buttons if button.valid is False]
 
     def get_valid_buttons(self):
-        return [button for button in self.buttons if button.valid == True]
+        return [button for button in self.buttons if button.valid is True]
 
     def get_button_indexes(self, color):
         return sorted([button.get_index() for button in self.buttons])

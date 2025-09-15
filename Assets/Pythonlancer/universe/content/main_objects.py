@@ -29,7 +29,9 @@ DEFENCE_SIMPLE = 'simple'
 DEFENCE_MEDIUM = 'medium'
 DEFENCE_HIGH = 'high'
 
-AST_TYPES = ['om15', 'ku_tgk', 'co_cur', 'li_cal', 'tau37']
+VISIT_SUPRISE = 16
+
+AST_TYPES = ['om15', 'ku_tgk', 'co_cur', 'li_cal', 'tau37', 'green']
 
 
 def merge_props(props: dict):
@@ -42,6 +44,9 @@ class Sattelite:
     LOADOUT = None
     OFFSET = [0, 0, 0]
     ROTATE = [0, 0, 0]
+    ORIENT_TOGETHER = False
+    ROTATE_RANDOM = False
+    VISIT = None
 
     def __init__(self, parent, *args, **kwargs):
         self.parent = parent
@@ -53,21 +58,39 @@ class Sattelite:
 
     def get_space_content(self):
         parent_pos = self.parent.get_position()
+        satt_pos = self.OFFSET.copy()
+        satt_rot = (
+            [randint(0, 360), randint(0, 360), randint(0, 360)]
+            if self.ROTATE_RANDOM
+            else self.ROTATE.copy()
+        )
+        if self.ORIENT_TOGETHER:
+            parent_rot = self.parent.get_rotate()[1]
+            satt_pos = relocate_point(satt_pos, rotate_y=-parent_rot)
+            satt_rot[1] += parent_rot
+
         satt_pos = [
-            parent_pos[0] + self.OFFSET[0],
-            parent_pos[1] + self.OFFSET[1],
-            parent_pos[2] + self.OFFSET[2]
+            parent_pos[0] + satt_pos[0],
+            parent_pos[1] + satt_pos[1],
+            parent_pos[2] + satt_pos[2]
         ]
+
         params = [
             '[Object]',
             f'nickname = {self.parent.get_inspace_nickname()}_related_{self.ALIAS}',
             f'pos = {satt_pos[0]:0.3f}, {satt_pos[1]:0.3f}, {satt_pos[2]:0.3f}',
-            f'rotate = {self.ROTATE[0]:0.3f}, {self.ROTATE[1]:0.3f}, {self.ROTATE[2]:0.3f}',
+            f'rotate = {satt_rot[0]:0.3f}, {satt_rot[1]:0.3f}, {satt_rot[2]:0.3f}',
             f'archetype = {self.ARCHETYPE}',
         ]
         if self.LOADOUT:
             params.append(f'loadout = {self.LOADOUT}')
+        if self.VISIT:
+            params.append(f'visit = {self.VISIT}')
         return SINGLE_DIVIDER.join(params)
+
+
+class SupriseSattelite(Sattelite):
+    VISIT = VISIT_SUPRISE
 
 
 class AppearableObject(SystemObject):
@@ -2473,19 +2496,23 @@ class MetroMiningOne(StaticObject):
         return '{system_name}_metro{index:02d}'.format(system_name=self.system.NAME, index=self.INDEX)
 
     def get_main_rotate(self):
-        return 0
+        return self.get_rotate()[1]
 
     def get_system_content(self):
         space_objects = []
         root_name = self.get_inspace_nickname()
         root_pos = self.get_position()
         root_rotate = self.get_main_rotate()
+
+        driller_pos = relocate_point(self.DRILLER_OFFSET, rotate_y=-root_rotate)
         driller_pos = [
-            root_pos[0] + self.DRILLER_OFFSET[0],
-            root_pos[1] + self.DRILLER_OFFSET[1],
-            root_pos[2] + self.DRILLER_OFFSET[2]
+            root_pos[0] + driller_pos[0],
+            root_pos[1] + driller_pos[1],
+            root_pos[2] + driller_pos[2]
         ]
+
         driller_rotate = self.DRILLER_ROTATE.copy()
+        driller_rotate[1] += root_rotate
 
         # ASTEROID
         space_objects.append(f'''[Object]
