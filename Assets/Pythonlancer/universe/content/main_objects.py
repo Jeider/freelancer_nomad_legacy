@@ -428,7 +428,7 @@ class StaticObject(AppearableObject):
 class AutoStaticObject(StaticObject):
     ALIAS = 'static'
     TEMPLATE_ARCHETYPE = True
-    TEMPLATE_LOADOUT = False  # Enable when you want it
+    TEMPLATE_LOADOUT = True  # Enable when you want it
 
     def get_inspace_nickname(self):
         return '{system_name}_staticobj_{index}'.format(system_name=self.system.NAME, index=self.INDEX)
@@ -2479,6 +2479,7 @@ class MetroMiningOne(StaticObject):
     ALIAS = 'metro'
     AST_TYPE = None
     ASTEROID_ARCHETYPE_TEMPLATE = '{ast}_xxxlarge_asteroid3'
+    ASTEROID_LOADOUT_TEMPLATE = '{ast}_ast_a03_lock1'
     DRILLER_ARCHETYPE = 'space_co_mining_module_driller'
     DRILLER_LOADOUT = 'co_mining_module_driller'
     DRILLER_OFFSET = [-490, -400, -550]
@@ -2519,7 +2520,8 @@ class MetroMiningOne(StaticObject):
 nickname = {root_name}_asteroid
 pos = {root_pos[0]:0.3f}, {root_pos[1]:0.3f}, {root_pos[2]:0.3f} 
 rotate = 0, {root_rotate}, 0
-archetype = {self.ASTEROID_ARCHETYPE_TEMPLATE.format(ast=self.AST_TYPE)}''')
+archetype = {self.ASTEROID_ARCHETYPE_TEMPLATE.format(ast=self.AST_TYPE)}
+loadout = {self.ASTEROID_LOADOUT_TEMPLATE.format(ast=self.AST_TYPE)}''')
 
         # DRILLER
         space_objects.append(f'''[Object]
@@ -2539,6 +2541,7 @@ behavior = NOTHING
 
 class MetroMiningTwo(MetroMiningOne):
     ASTEROID_ARCHETYPE_TEMPLATE = '{ast}_xxxlarge_asteroid4'
+    ASTEROID_LOADOUT_TEMPLATE = '{ast}_ast_a04_lock1'
     DRILLER_OFFSET = [315, -235, -10]
     DRILLER_ROTATE = [-20, 120, 0]
 
