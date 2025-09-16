@@ -45,7 +45,7 @@ from tools.system_template import SystemTemplateLoader
 
 from templates.solar import hacker_panel
 from templates.dockable import terraforming
-from templates.dockable import valensia
+from templates.dockable import corsair_dreadnought
 from templates.dockable import upsilon_gasinside
 from templates.dockable import tunnel
 from templates.misc import rmbase
@@ -61,7 +61,7 @@ def draw_base():
     new_name = None
     move_to = None
     rotate_core = 0
-    workspace = '5'
+    workspace = '7'
 
     # base_class = m13.RockfordGenerator
     # new_name = 'or_hq_vienna_entry'
@@ -75,7 +75,7 @@ def draw_base():
     # new_name = 'or_hq_shipyard_01'
     # move_to = (-20000, 0, 0)
 
-    base_class = ast_om15_xxxlarge.AsteroidFour
+    base_class = ast_om15_xxxlarge.AsteroidTwo
     # new_name = 'communicator'
     # move_to = (-9500, 0, -10000)
 
@@ -431,24 +431,33 @@ def mass_upgrade():
     subfolder_filename = 'lod0-112.vms.xml'
     old_outside_material = 'om15_xxlarge'
     old_inside_material = 'om15_inside'
+    old_wall_material = 'mat_o15_a'
 
     original_asteroid_name = 'om15'
-    new_asteroid_name = 'ku_tgk'
+    new_asteroid_name = 'tau37'
 
     new_outside_material = f'{new_asteroid_name}_xxlarge'
     new_inside_material = f'{new_asteroid_name}_inside'
+    new_wall_material = f'{new_asteroid_name}_wall'
 
     old_mat1 = crc32_hex_from_str(old_outside_material)
     old_mat2 = crc32_hex_from_str(old_inside_material)
+    old_mat3 = crc32_hex_from_str(old_wall_material)
 
     new_mat1 = crc32_hex_from_str(new_outside_material)
     new_mat2 = crc32_hex_from_str(new_inside_material)
+    new_mat3 = crc32_hex_from_str(new_wall_material)
 
     subfile_changed_strings = [
         [old_mat1, new_mat1],
         [old_mat2, new_mat2],
+        [old_mat3, new_mat3],
         [f'0x0{old_mat1[2:].upper()}', new_mat1],
         [f'0x0{old_mat2[2:].upper()}', new_mat2],
+        [f'0x0{old_mat3[2:].upper()}', new_mat3],
+        [f'0x{old_mat1[2:].upper()}', new_mat1],
+        [f'0x{old_mat2[2:].upper()}', new_mat2],
+        [f'0x{old_mat3[2:].upper()}', new_mat3],
     ]
 
     # print(subfile_changed_strings)

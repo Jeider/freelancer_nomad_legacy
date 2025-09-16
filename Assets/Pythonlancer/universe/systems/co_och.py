@@ -16,8 +16,7 @@ from universe.content import interior
 from universe.content import dealers
 from universe.content import asteroid_definition
 from universe import faction
-from templates.nebula import rh_biz_nebula
-from templates.nebula import rh_mnh_blue_nebula
+from templates.nebula import co_och_nebula
 from templates.nebula import exclusion
 from templates.dockable import upsilon_gasinside
 from templates.dockable import valensia
@@ -82,11 +81,36 @@ class OchoSun(OchoMember, main_objects.Sun):
     LOADOUT = 'small_blue_sun_fx'
 
 
+class OchBaseEdgeNebula(zones.NebulaZone):
+    MUSIC = Ambience.ASTEROID_NOMAD
+    INTERFERENCE = 0.5
+
+    SPACEDUST = Dust.ATTRACT_GREEN
+    SPACEDUST_MAXPARTICLES = 100
+
+    PROPERTY_FLAGS = 32768
+    PROPERTY_FOG_COLOR = '150, 100, 20'
+
+
+EDGE_EXCLUSION_PARAMS = {
+    'zone_shell': exclusion.LINES_EXCLUSION,
+    'shell_scalar': 1.1,
+    'max_alpha': 0.5,
+    'exclusion_tint': '50, 200, 50',
+    'fog_far': 5000,
+}
+
+
+class OchNomadNebula(OchoMember, OchBaseEdgeNebula):
+    INDEX = 1
+    CONTENT_TEMPLATE = co_och_nebula.OchEdgeNebulaTemplate
+
+
 class OchoOmegaStorage(OchoMember, main_objects.SmugglerStoragePoint):
     INDEX = 1
 
 
-class OchoMainAsteroidDefinition(asteroid_definition.TekagiAsteroidDefinition):
+class OchoLargeAsteroidDefinition(asteroid_definition.TekagiAsteroidDefinition):
     BELT = True
     BILLBOARDS = True
     DYNAST = True
@@ -94,9 +118,46 @@ class OchoMainAsteroidDefinition(asteroid_definition.TekagiAsteroidDefinition):
     BELT_HEIGHT = 8000
 
 
+class OchoSmallAsteroidDefinition(asteroid_definition.TekagiAsteroidDefinition):
+    BELT = True
+    BILLBOARDS = True
+    DYNAST = True
+    LOOT = False  # TEMP
+
+
+class OchoNomadAsteroidDefinition(asteroid_definition.NomadDynasteroids):
+    pass
+
+
 class OchoAsteroidZone1(OchoMember, zones.AsteroidZone):
     INDEX = 1
-    ASTEROID_DEFINITION_CLASS = OchoMainAsteroidDefinition
+    ASTEROID_DEFINITION_CLASS = OchoLargeAsteroidDefinition
+    MUSIC = Ambience.AST_ROCK
+
+    SPACEDUST = Dust.ASTEROID
+    SPACEDUST_MAXPARTICLES = 200
+
+
+class OchoAsteroidZone2(OchoMember, zones.AsteroidZone):
+    INDEX = 2
+    ASTEROID_DEFINITION_CLASS = OchoLargeAsteroidDefinition
+    MUSIC = Ambience.AST_ROCK
+
+    SPACEDUST = Dust.ASTEROID
+    SPACEDUST_MAXPARTICLES = 200
+
+
+class OchoAsteroidZone3(OchoMember, zones.AsteroidZone):
+    INDEX = 3
+    ASTEROID_DEFINITION_CLASS = OchoNomadAsteroidDefinition
+
+class OchoAsteroidZone5(OchoMember, zones.AsteroidZone):
+    INDEX = 5
+    ASTEROID_DEFINITION_CLASS = OchoSmallAsteroidDefinition
+    MUSIC = Ambience.AST_ROCK
+
+    SPACEDUST = Dust.ASTEROID
+    SPACEDUST_MAXPARTICLES = 200
 
 
 class BaseOchoAst1Static(main_objects.AutoStaticObject):
@@ -104,29 +165,114 @@ class BaseOchoAst1Static(main_objects.AutoStaticObject):
     ASTEROID_ZONES = [
         OchoAsteroidZone1,
     ]
-    AST_EXCLUSION_ZONE_PARAMS = {
-        'spacedust': Dust.ASTEROID,
-        'spacedust_maxparticles': 200,
-    }
 
 
 class OchoStaticAst1(OchoMember, BaseOchoAst1Static):
     INDEX = 1
 
+    AST_EXCLUSION_ZONE_SIZE = 3500
+    ASTEROID_ZONES = [
+        OchoAsteroidZone1,
+    ]
+
 
 class OchoStaticAst2(OchoMember, BaseOchoAst1Static):
     INDEX = 2
+
+    AST_EXCLUSION_ZONE_SIZE = 3500
+    ASTEROID_ZONES = [
+        OchoAsteroidZone1,
+    ]
 
 
 class OchoStaticAst3(OchoMember, BaseOchoAst1Static):
     INDEX = 3
 
+    AST_EXCLUSION_ZONE_SIZE = 3500
+    ASTEROID_ZONES = [
+        OchoAsteroidZone1,
+    ]
+
+
+class OchSuprise1(main_objects.SupriseSattelite):
+    ALIAS = 'suprise1'
+    ARCHETYPE = 'suprise_pi_freighter'
+    OFFSET = [-350, -150, 200]
+    ROTATE_RANDOM = True
+    ORIENT_TOGETHER = True
+
+
+class OchSuprise2(main_objects.SupriseSattelite):
+    ALIAS = 'suprise2'
+    ARCHETYPE = 'suprise_bw_elite2'
+    OFFSET = [-150, -250, 100]
+    ROTATE_RANDOM = True
+    ORIENT_TOGETHER = True
+
 
 class OchoStaticAst4(OchoMember, BaseOchoAst1Static):
     INDEX = 4
+    SATTELITES = [OchSuprise1, OchSuprise2]
+
+    AST_EXCLUSION_ZONE_SIZE = 3500
+    ASTEROID_ZONES = [
+        OchoAsteroidZone1,
+    ]
 
 
-class OchoMainAsteroidBase(OchoMember, main_objects.PirateAsteroid):
+class OchoStaticAst5(OchoMember, BaseOchoAst1Static):
+    INDEX = 5
+
+    AST_EXCLUSION_ZONE_SIZE = 3500
+    ASTEROID_ZONES = [
+        OchoAsteroidZone2,
+    ]
+
+
+class OchoStaticAst6(OchoMember, BaseOchoAst1Static):
+    INDEX = 6
+
+    AST_EXCLUSION_ZONE_SIZE = 3500
+    ASTEROID_ZONES = [
+        OchoAsteroidZone2,
+    ]
+
+
+class OchSuprise3(main_objects.SupriseSattelite):
+    ALIAS = 'suprise3'
+    ARCHETYPE = 'suprise_bw_freighter'
+    OFFSET = [115, -55, 210]
+    ROTATE_RANDOM = True
+    ORIENT_TOGETHER = True
+
+
+class OchSuprise4(main_objects.SupriseSattelite):
+    ALIAS = 'suprise4'
+    ARCHETYPE = 'suprise_pi_elite'
+    OFFSET = [-250, 310, 100]
+    ROTATE_RANDOM = True
+    ORIENT_TOGETHER = True
+
+
+class OchSuprise5(main_objects.SupriseSattelite):
+    ALIAS = 'suprise5'
+    ARCHETYPE = 'suprise_bw_fighter'
+    OFFSET = [-450, 150, -200]
+    ROTATE_RANDOM = True
+    ORIENT_TOGETHER = True
+
+
+class OchoStaticAst7(OchoMember, BaseOchoAst1Static):
+    INDEX = 7
+    SATTELITES = [OchSuprise3, OchSuprise4, OchSuprise5]
+
+    AST_EXCLUSION_ZONE_SIZE = 3500
+    ASTEROID_ZONES = [
+        OchoAsteroidZone2,
+    ]
+
+
+class OchoLargeAsteroidBase(OchoMember, main_objects.PirateAsteroid):
     ALIAS = 'astbase'
     INDEX = 1
     BASE_INDEX = 1
@@ -134,7 +280,7 @@ class OchoMainAsteroidBase(OchoMember, main_objects.PirateAsteroid):
     LOADOUT = 'co_base_rock_large01_pi_01'
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEFENCE_LEVEL = None
-    RU_NAME = 'База Очо-Риос'
+    RU_NAME = 'База Кадиз'
     SHIP_SET = markets.ShipSet('co_fighter')
     CALC_STORE = False
 
@@ -142,30 +288,95 @@ class OchoMainAsteroidBase(OchoMember, main_objects.PirateAsteroid):
     ASTEROID_ZONES = [
         OchoAsteroidZone1,
     ]
-    AST_EXCLUSION_ZONE_PARAMS = {
-        'spacedust': Dust.ASTEROID,
-        'spacedust_maxparticles': 200,
-    }
     EQUIP_SET = markets.EquipSet(
         Q.Gun('bw_corsairgun', eq_classes=markets.SECRET3),
     )
 
+#
+# class OchoSmallAsteroidBase(OchoMember, main_objects.PirateAsteroid):
+#     ALIAS = 'astbase'
+#     INDEX = 2
+#     BASE_INDEX = 2
+#     ARCHETYPE = 'miningbase_FragC'
+#     LOADOUT = 'miningbase_FragC_pi_03'
+#     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
+#     DEFENCE_LEVEL = None
+#     RU_NAME = 'База Лион'
+#     SHIP_SET = markets.ShipSet('co_fighter')
+#     CALC_STORE = False
+#
+#     AST_EXCLUSION_ZONE_SIZE = 3500
+#     ASTEROID_ZONES = [
+#         OchoAsteroidZone2,
+#     ]
+#     AST_EXCLUSION_ZONE_PARAMS = {
+#         'spacedust': Dust.ASTEROID,
+#         'spacedust_maxparticles': 200,
+#     }
+#     EQUIP_SET = markets.EquipSet(
+#         Q.Gun('bw_corsairgun', eq_classes=markets.SECRET3),
+#     )
+#
 
 class OchoMetro1(OchoMember, main_objects.MetroMiningOne):
     INDEX = 1
+
+    AST_EXCLUSION_ZONE_SIZE = 3500
+    ASTEROID_ZONES = [
+        OchoAsteroidZone2,
+    ]
 
 
 class OchoMetro2(OchoMember, main_objects.MetroMiningTwo):
     INDEX = 2
 
+    AST_EXCLUSION_ZONE_SIZE = 3500
+    ASTEROID_ZONES = [
+        OchoAsteroidZone2,
+    ]
 
-class OchNomadCore(main_objects.Sattelite):
+
+class OchoMetro3(OchoMember, main_objects.MetroMiningOne):
+    INDEX = 3
+
+    AST_EXCLUSION_ZONE_SIZE = 3500
+    ASTEROID_ZONES = [
+        OchoAsteroidZone2,
+    ]
+
+
+class OchoMetro4(OchoMember, main_objects.MetroMiningTwo):
+    INDEX = 4
+
+    AST_EXCLUSION_ZONE_SIZE = 3500
+    ASTEROID_ZONES = [
+        OchoAsteroidZone2,
+    ]
+
+
+class OchNomadObelisk(main_objects.Sattelite):
     ALIAS = 'no_core1'
     ARCHETYPE = 'domkavash_generator'
     OFFSET = [240, -315, 70]
     ROTATE = [0, -61, 0]
 
 
-class OchoStatic5(OchoMember, main_objects.AutoStaticObject):
-    INDEX = 5
-    SATTELITES = [OchNomadCore]
+class OchoNomadStaticAst(OchoMember, main_objects.AutoStaticObject):
+    INDEX = 9
+    SATTELITES = [OchNomadObelisk]
+
+    AST_EXCLUSION_ZONE_SIZE = 4000
+    ASTEROID_ZONES = [
+        OchoAsteroidZone3,
+    ]
+    AST_EXCLUSION_ZONE_PARAMS = {
+        'spacedust': Dust.ORGANISM,
+        'spacedust_maxparticles': 200,
+        'music': Ambience.NOMAD
+    }
+
+    NEBULA_ZONES = [
+        OchBaseEdgeNebula
+    ]
+    EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS
+    NEBULA_EXCLUSION_ZONE_SIZE = 5000

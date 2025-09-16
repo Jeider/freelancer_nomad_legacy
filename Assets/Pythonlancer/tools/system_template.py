@@ -22,7 +22,7 @@ ARCHETYPE = 'archetype'
 LOADOUT = 'loadout'
 
 MULTI_INT_KEYS = (POS, ROTATE, SIZE)
-SCANNED_KEYS = (NICKNAME, POS, ROTATE, SIZE, SHAPE, ARCHETYPE)
+SCANNED_KEYS = (NICKNAME, POS, ROTATE, SIZE, SHAPE, ARCHETYPE, LOADOUT)
 
 MSN_SINGLE = 'msn_single'
 MSN_MULTIPLE = 'msn_multi'
@@ -71,7 +71,11 @@ class SystemTemplate(object):
         return self.items_db[item_key.lower()].lines[ARCHETYPE]
 
     def get_item_loadout(self, item_key):
-        return self.items_db[item_key.lower()].lines[LOADOUT]
+        try:
+            return self.items_db[item_key.lower()].lines[LOADOUT]
+        except KeyError:
+            # raise Exception(f'Item {item_key.lower()} have no loadout')
+            pass
 
     def get_single_mission_vignettes_positions(self):
         return [item.lines[POS] for item in self.items_db[MSN_SINGLE]]

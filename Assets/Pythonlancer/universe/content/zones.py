@@ -81,6 +81,7 @@ class DynamicZone(NamedDynamicSystemObject, Zone):
         self.spacedust = kwargs.get('spacedust')
         self.spacedust_maxparticles = kwargs.get('spacedust_maxparticles')
         self.position = kwargs.get('position')
+        self.music = kwargs.get('music')
         self.edge_fraction = kwargs.get('edge_fraction')
         self.merged_params = kwargs.get('merged_params')
         self.drag_modifier = kwargs.get('drag_modifier')
@@ -97,6 +98,8 @@ class DynamicZone(NamedDynamicSystemObject, Zone):
 
     def get_zone_extra_parameters(self):
         params = {}
+        if self.music:
+            params['music'] = self.music
         if self.interference:
             params['interference'] = self.interference
         if self.damage:
