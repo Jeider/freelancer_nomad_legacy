@@ -2212,6 +2212,15 @@ size = {size}'''
         if not self.system.ENABLE_POPULATION or not self.TLR_OUTER_ZONE:
             return ''
 
+        lawful_population = self.get_lawful_population_class()
+
+        obj_from, obj_to = self.get_destination_objects()
+
+        if base_from := obj_from.get_base():
+            base_from.add_faction(lawful_population.MAIN_TRADERS)
+        if base_to := obj_to.get_base():
+            base_to.add_faction(lawful_population.MAIN_TRADERS)
+
         return SINGLE_DIVIDER.join([
             self.ZONE_TEMPLATE.format(
                 system_name=self.system.NAME.upper(),
@@ -2220,7 +2229,7 @@ size = {size}'''
                 rotate='{0}, {1}, {2}'.format(*self.tracks_raw_outer_zone.lines[ROT_KEY]),
                 size='{0}, {1}, {2}'.format(*self.tracks_raw_outer_zone.lines[SIZE_KEY]),
             ),
-            self.get_lawful_population_class().get_tradelane_arriaval_traders_params(),
+            lawful_population.get_tradelane_arriaval_traders_params(),
         ])
 
     def get_system_content(self):
