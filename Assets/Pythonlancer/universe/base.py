@@ -183,6 +183,9 @@ class Base:
     def calc_store(self):
         return self.system_object.CALC_STORE
 
+    def have_characters(self):
+        return self.system_object.HAVE_CHARACTERS
+
     def get_next_char_index(self):
         self.char_index += 1
         return self.char_index
@@ -459,14 +462,15 @@ class Base:
             self.char_factory.get_male_peasant(main_faction.get_costume())
         )
         self.bartender = self.add_bartender(bartender_costume)
-        self.add_chars_to_faction(
-            main_faction,
-            military_count=self.props.CHARS_MILITARY,
-            trader_count=self.props.CHARS_TRADER,
-            peasant_count=self.props.CHARS_PEASANT,
-            journeyman_count=self.props.CHARS_JOURNEYMAN,
-            pirate_count=self.props.CHARS_PIRATE,
-        )
+        if self.have_characters():
+            self.add_chars_to_faction(
+                main_faction,
+                military_count=self.props.CHARS_MILITARY,
+                trader_count=self.props.CHARS_TRADER,
+                peasant_count=self.props.CHARS_PEASANT,
+                journeyman_count=self.props.CHARS_JOURNEYMAN,
+                pirate_count=self.props.CHARS_PIRATE,
+            )
 
     def add_other_characters(self):
         for faction in self.get_other_factions():

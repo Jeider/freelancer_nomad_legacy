@@ -798,7 +798,7 @@ archetype = space_police01_front_dock
 nickname = co_och_02_FRONT_root01
 pos = 1550, 15, 280
 rotate = 0, 90, 0
-archetype = space_station_small_root
+archetype = space_station_small_root_crop
 parent = co_och_02
 
 [Object]

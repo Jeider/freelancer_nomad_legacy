@@ -946,6 +946,7 @@ class DockableObject(NamedObject):
     BG2_KEY = 'terrain_sml'
 
     CALC_STORE = True
+    HAVE_CHARACTERS = True
 
     ROOM_SUBFOLDER = None
 

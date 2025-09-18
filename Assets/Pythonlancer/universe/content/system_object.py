@@ -153,7 +153,7 @@ class SystemObject:
     @classmethod
     def get_alias(cls):
         if cls.ALIAS is None:
-            raise Exception('unknown alias')
+            raise Exception(f'{cls} have unknown alias')
         return cls.ALIAS
 
     @classmethod

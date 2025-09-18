@@ -1,6 +1,7 @@
 from universe import system
 from universe.content import population
 from universe.content import jump_effect
+from universe.content import interior
 
 from universe.systems import rh_ber as rh_ber_content
 from universe.systems import sig13 as sig13_content
@@ -510,13 +511,17 @@ class co_val(system.System, system.SiriusSystem):
 
 
 class co_och(system.System, system.SiriusSystem):
+    ROOM_SUBFOLDER = interior.ROOM_FOLDER_RH
+    ENABLE_POPULATION = False
+    SPACE_FARCLIP = 50000
+
     NAME = 'co_och'
     TEMPLATE_NAME = 'co_och'
     RU_NAME = 'Очо-Р+иос'
     CONTENT = co_och_content
 
     SYSTEM_FOLDER = 'CO_OCHORIOS'
-    NAVMAP_POS = '7.5, 12'
+    NAVMAP_POS = '12, 15'
     NAVMAP_SCALE = 1.25
 
     JUMP_EFFECT = jump_effect.Edge
@@ -635,7 +640,7 @@ class m8_tau44(system.StorySystem, system.SiriusSystem):
     ALLOW_SYNC = True
 
     SYSTEM_FOLDER = 'MSN8_TAU44'
-    NAVMAP_POS = '14, -1'
+    NAVMAP_POS = '2.5, 6.5'
 
 
 class m8_lair_enter(system.StorySystem, system.SiriusSystem):
@@ -646,7 +651,7 @@ class m8_lair_enter(system.StorySystem, system.SiriusSystem):
     ALLOW_SYNC = True
 
     SYSTEM_FOLDER = 'MSN8_LAIR_ENTER'
-    NAVMAP_POS = '14, -1'
+    NAVMAP_POS = '2, 6.5'
 
 
 class m8_lair_core(system.StorySystem, system.SiriusSystem):
@@ -657,7 +662,7 @@ class m8_lair_core(system.StorySystem, system.SiriusSystem):
     ALLOW_SYNC = True
 
     SYSTEM_FOLDER = 'MSN8_LAIR_CORE'
-    NAVMAP_POS = '14, -1'
+    NAVMAP_POS = '2, 7'
 
 
 class m8_lair_escape(system.StorySystem, system.SiriusSystem):
@@ -668,7 +673,7 @@ class m8_lair_escape(system.StorySystem, system.SiriusSystem):
     ALLOW_SYNC = True
 
     SYSTEM_FOLDER = 'MSN8_LAIR_ESCAPE'
-    NAVMAP_POS = '14, -1'
+    NAVMAP_POS = '2.5, 7'
 
 
 class m8_asf_hq(system.StorySystem, system.SiriusSystem):
@@ -679,7 +684,7 @@ class m8_asf_hq(system.StorySystem, system.SiriusSystem):
     ALLOW_SYNC = True
 
     SYSTEM_FOLDER = 'MSN8_ASF_HQ'
-    NAVMAP_POS = '14, -1'
+    NAVMAP_POS = '4, 6.5'
 
 
 class sphere2(system.StorySystem, system.SiriusSystem):
@@ -702,7 +707,7 @@ class sphere2_inside(system.StorySystem, system.SiriusSystem):
     ALLOW_SYNC = True
 
     SYSTEM_FOLDER = 'SPHERE2_INSIDE'
-    NAVMAP_POS = '14.5, -1.1'
+    NAVMAP_POS = '15, 0'
 
 
 class om13_alt(system.StorySystem, system.SiriusSystem):
@@ -714,7 +719,7 @@ class om13_alt(system.StorySystem, system.SiriusSystem):
     ALLOW_SYNC = True
 
     SYSTEM_FOLDER = 'OMEGA13_ALT'
-    NAVMAP_POS = '14.5, -1.1'
+    NAVMAP_POS = '16, 13'
     SPACE_FARCLIP = 150000
 
 
@@ -725,9 +730,9 @@ class bh(system.StorySystem, system.SiriusSystem):
     # CONTENT = om13_alt_content
 
     ALLOW_SYNC = True
-
+    
     SYSTEM_FOLDER = 'BH'
-    NAVMAP_POS = '14.5, -1.1'
+    NAVMAP_POS = '16, 13'
     SPACE_FARCLIP = 150000
 
 
@@ -739,7 +744,7 @@ class asf_hq(system.StorySystem, system.SiriusSystem):
     ALLOW_SYNC = True
 
     SYSTEM_FOLDER = 'ASF_HQ'
-    NAVMAP_POS = '14.5, -1.1'
+    NAVMAP_POS = '6, 6.5'
 
 
 class asf_prom(system.StorySystem, system.SiriusSystem):
@@ -751,7 +756,7 @@ class asf_prom(system.StorySystem, system.SiriusSystem):
     ALLOW_SYNC = True
 
     SYSTEM_FOLDER = 'ASF_PROMETHEUS'
-    NAVMAP_POS = '14.5, -1.1'
+    NAVMAP_POS = '6, -1'
 
 
 class or_hq(system.StorySystem, system.SiriusSystem):
@@ -763,7 +768,7 @@ class or_hq(system.StorySystem, system.SiriusSystem):
     ALLOW_SYNC = True
 
     SYSTEM_FOLDER = 'ORDER_HQ'
-    NAVMAP_POS = '14.5, -1.1'
+    NAVMAP_POS = '8.5, 10.5'
 
 
 class rh_vien(system.StorySystem, system.SiriusSystem):
@@ -775,7 +780,7 @@ class rh_vien(system.StorySystem, system.SiriusSystem):
     ALLOW_SYNC = True
 
     SYSTEM_FOLDER = 'RH_VIENNA'
-    NAVMAP_POS = '14.5, -1.1'
+    NAVMAP_POS = '10, 10.5'
 
 
 class xen(system.StorySystem, system.SiriusSystem):
