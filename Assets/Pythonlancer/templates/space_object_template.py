@@ -145,7 +145,6 @@ class SpaceObjectTemplate(object):
 
         return self.instance
 
-
     def apply_replaces(self, replaces):
         for replace_from, replace_to in replaces:
             self.instance = self.instance.replace(replace_from, replace_to)
@@ -201,9 +200,7 @@ class SpaceObjectTemplate(object):
                         raise Exception('Could not convert rotate. Last nickname: {nick}. Reason: {ex}'.format(
                             nick=self.last_nickname, ex=e))
 
-                    rotate_x, rotate_y, rotate_z = rotate_point(
-                        [rotate_x, rotate_y, rotate_z], rotate_core
-                    )
+                    rotate_y -= rotate_core
 
                     lines.append('{0} = {1:.7f}, {2:.7f}, {3:.7f}'.format(
                         ROTATE,

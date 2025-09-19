@@ -41,9 +41,10 @@ from tools.audio_pilot import TempPilot, VanillaPilot
 
 from story import actors
 
-from tools.system_template import SystemTemplateLoader
+from tools.system_template import SystemTemplateLoader, ObjectTemplateLoader
 
 from templates.solar import hacker_panel
+from templates.space_object_template import SpaceObjectTemplate
 from templates.dockable import terraforming
 from templates.dockable import corsair_dreadnought
 from templates.dockable import upsilon_gasinside
@@ -61,7 +62,7 @@ def draw_base():
     new_name = None
     move_to = None
     rotate_core = 0
-    workspace = '7'
+    workspace = '9'
 
     # base_class = m13.RockfordGenerator
     # new_name = 'or_hq_vienna_entry'
@@ -82,8 +83,14 @@ def draw_base():
     # base_class = nomad_asf_hq.AsfHQ
     # rotate_core = 45
 
-    the_base = base_class()
-    content = the_base.get_instance(new_space_object_name=new_name, move_to=move_to, rotate_core=rotate_core)
+    # the_base = base_class()
+    # content = the_base.get_instance(new_space_object_name=new_name, move_to=move_to, rotate_core=rotate_core)
+    the_base = SpaceObjectTemplate(
+        template=ObjectTemplateLoader.get_template('om13ast'),
+        space_object_name='om13ast',
+    )
+    content = the_base.get_instance(move_to=(2000, 0, 8000), rotate_core=0)
+
     data_folder.DataFolder.sync_to_test_workspace(content, workspace_index=workspace)
 
 
@@ -427,7 +434,7 @@ def mass_decode():
     utf_xml.UTF_XML.mass_decode_utf()
 
 
-def mass_upgrade():
+def mass_upgrade1():
     subfolder_filename = 'lod0-112.vms.xml'
     old_outside_material = 'om15_xxlarge'
     old_inside_material = 'om15_inside'
@@ -494,6 +501,58 @@ def mass_upgrade():
         main_file_upgrades,
         sur_filename_upgrades,
     )
+
+
+def mass_upgrade():
+    subfolder_filename = 'lod0-112.vms.xml'
+    old_material = '0xEEC380D9'
+
+    original_asteroid_name = 'om15'
+    original_asteroid_name2 = 'o15'
+    new_asteroid_name = 'tau29'
+
+    new_material = f'{new_asteroid_name}_side'
+
+    subfile_changed_strings = [
+        [old_material, new_material],
+    ]
+
+    main_file_upgrades = [
+        [
+            f'UTFXML filename="ast_{original_asteroid_name}',
+            f'UTFXML filename="ast_{new_asteroid_name}'
+        ],
+        [
+            f'UTFXML filename="ast_{original_asteroid_name2}',
+            f'UTFXML filename="ast_{new_asteroid_name}'
+        ],
+        [
+            '.lod0-112.vms include="',
+            f'_{new_asteroid_name}_edition.lod0-112.vms include="'
+        ],
+        [
+            '.lod0-112.vms,',
+            f'_{new_asteroid_name}_edition.lod0-112.vms,'
+        ],
+
+    ]
+
+    sur_filename_upgrades = [
+        [
+            original_asteroid_name,
+            new_asteroid_name
+        ]
+    ]
+
+    utf_xml.XML_UTF.mass_encode_updated_xml(
+        subfolder_filename,
+        subfile_changed_strings,
+        main_file_upgrades,
+        sur_filename_upgrades,
+    )
+
+
+
 
 
 def dbg():

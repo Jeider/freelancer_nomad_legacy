@@ -19,6 +19,8 @@ from universe import faction
 from universe.content import descriptions_ru
 from universe.content import diversion
 
+from tools.system_template import ObjectTemplateLoader
+from templates.space_object_template import SpaceObjectTemplate
 from story.math import rotate_point, relocate_point
 from text.dividers import SINGLE_DIVIDER, DIVIDER
 
@@ -2555,3 +2557,29 @@ class MetroMiningTwo(MetroMiningOne):
     DRILLER_OFFSET = [315, -235, -10]
     DRILLER_ROTATE = [-20, 120, 0]
 
+
+class BackgroundComplexObject(StaticObject):
+    WORKSPACE_TEMPLATE_NAME = None
+    ROTATE = 0
+
+    def has_appearance(self):
+        return True
+
+    def get_inspace_nickname(self):
+        return '{system_name}_bgcmx_{index:02d}'.format(system_name=self.system.NAME, index=self.INDEX)
+
+    def get_template_initial_data(self):
+        if self.WORKSPACE_TEMPLATE_NAME is None:
+            raise Exception(f'Object {self} have no workspace template')
+        return ObjectTemplateLoader.get_template(self.WORKSPACE_TEMPLATE_NAME)
+
+    def get_system_content(self):
+        the_base = SpaceObjectTemplate(
+            template=self.get_template_initial_data(),
+            space_object_name=self.WORKSPACE_TEMPLATE_NAME,  # should be same inside
+        )
+        return the_base.get_instance(
+            new_space_object_name=self.get_inspace_nickname(),
+            move_to=self.get_position(),
+            rotate_core=self.ROTATE
+        )

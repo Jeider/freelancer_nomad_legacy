@@ -35,7 +35,7 @@ class OchoStaticText(OchoMember, main_objects.RawText):
 name = co_och
 space_color = 0, 0, 0
 local_faction = co_grp
-space_farclip = 150000
+space_farclip = 50000
 
 [TexturePanels]
 file = universe\\heavens\\shapes.ini
@@ -238,10 +238,6 @@ class OchoStaticAst5(OchoMember, BaseOchoAst2Static):
 
 class OchoStaticAst6(OchoMember, BaseOchoAst2Static):
     INDEX = 6
-
-
-class OchoStaticAst7(OchoMember, BaseOchoAst2Static):
-    INDEX = 7
 
 
 class OchWalkerSuprise1(main_objects.SupriseSattelite):

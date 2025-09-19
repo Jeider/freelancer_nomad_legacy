@@ -45,7 +45,7 @@ class ForbesStaticText(ForbesMember, main_objects.RawText):
 name = li_for
 space_color = 0, 10, 8
 local_faction = li_grp
-space_farclip = 200000
+space_farclip = 100000
 
 [TexturePanels]
 file = universe\\heavens\\shapes.ini

@@ -42,6 +42,7 @@ from universe.systems import sphere2 as sphere2_content
 from universe.systems import om13alt as om13_alt_content
 from universe.systems import asf_prom as asf_prom_content
 from universe.systems import co_och as co_och_content
+from universe.systems import om11 as om11_content
 
 
 
@@ -561,11 +562,19 @@ class tau26(system.System, system.SiriusSystem):
 
 class om11(system.System, system.SiriusSystem):
     NAME = 'om11'
+    TEMPLATE_NAME = 'om11'
     RU_NAME = 'Ом+ега-11'
+    CONTENT = om11_content
 
     SYSTEM_FOLDER = 'OMEGA11'
     NAVMAP_POS = '8, 14.5'
     NAVMAP_SCALE = 2
+
+    ROOM_SUBFOLDER = interior.ROOM_FOLDER_RH
+    ENABLE_POPULATION = False
+
+    JUMP_EFFECT = jump_effect.Edge
+    ALLOW_SYNC = True
 
 
 class br_uls(system.System, system.SiriusSystem):
