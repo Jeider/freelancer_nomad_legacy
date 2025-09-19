@@ -83,15 +83,15 @@ class Om11Sun(Om11Member, main_objects.Sun):
     DRAG_ZONE_SIZE = 17000
 
 
-class Om11StaticTunnels1(Om11Member, main_objects.BackgroundComplexObject):
-    ALIAS = 'tunnel'
+class Om11StaticTunnels1(Om11Member, main_objects.BackgroundTunnelOmega13):
     INDEX = 1
     WORKSPACE_TEMPLATE_NAME = 'om13ast'
     ROTATE = -20
+    ARCHETYPE_CHANGE_TO = 'tau37'
 
 
-class Om11StaticTunnels2(Om11Member, main_objects.BackgroundComplexObject):
-    ALIAS = 'tunnel'
+class Om11StaticTunnels2(Om11Member, main_objects.BackgroundTunnelOmega13):
     INDEX = 2
     WORKSPACE_TEMPLATE_NAME = 'om13ast'
     ROTATE = 160
+    ARCHETYPE_CHANGE_TO = 'tau37'

@@ -2560,6 +2560,8 @@ class MetroMiningTwo(MetroMiningOne):
 
 class BackgroundComplexObject(StaticObject):
     WORKSPACE_TEMPLATE_NAME = None
+    ARCHETYPE_CHANGE_FROM = None
+    ARCHETYPE_CHANGE_TO = None
     ROTATE = 0
 
     def has_appearance(self):
@@ -2574,12 +2576,30 @@ class BackgroundComplexObject(StaticObject):
         return ObjectTemplateLoader.get_template(self.WORKSPACE_TEMPLATE_NAME)
 
     def get_system_content(self):
+        archetype_changes = []
+        if self.ARCHETYPE_CHANGE_TO:
+
+            if self.ARCHETYPE_CHANGE_FROM is None:
+                raise Exception(f'Object {self} have no configured archetype changes')
+
+            archetype_changes.append(
+                [self.ARCHETYPE_CHANGE_FROM, self.ARCHETYPE_CHANGE_TO]
+            )
+
         the_base = SpaceObjectTemplate(
             template=self.get_template_initial_data(),
             space_object_name=self.WORKSPACE_TEMPLATE_NAME,  # should be same inside
         )
         return the_base.get_instance(
             new_space_object_name=self.get_inspace_nickname(),
+            archetype_changes=archetype_changes,
             move_to=self.get_position(),
             rotate_core=self.ROTATE
         )
+
+
+class BackgroundTunnelOmega13(BackgroundComplexObject):
+    ALIAS = 'tunnel'
+    WORKSPACE_TEMPLATE_NAME = 'om13ast'
+    ARCHETYPE_CHANGE_FROM = 'om15'  # it's initially om15 asteroid kind
+

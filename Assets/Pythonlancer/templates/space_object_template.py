@@ -129,7 +129,8 @@ class SpaceObjectTemplate(object):
         self.instance = self.template
         self.last_nickname = ''
 
-    def get_instance(self, dock_props='', root_props='', new_space_object_name=None, move_to=None, rotate_core=0):
+    def get_instance(self, dock_props='', root_props='', new_space_object_name=None, move_to=None, rotate_core=0,
+                     archetype_changes=None):
         replaces = []
 
         if new_space_object_name:
@@ -141,7 +142,7 @@ class SpaceObjectTemplate(object):
         self.apply_props(dock_props, root_props)
 
         if move_to or rotate_core:
-            self.relocate(move_to=move_to, rotate_core=rotate_core)
+            self.relocate(move_to=move_to, rotate_core=rotate_core, archetype_changes=archetype_changes)
 
         return self.instance
 
@@ -152,7 +153,8 @@ class SpaceObjectTemplate(object):
     def apply_props(self, dock_props, root_props):
         self.instance = self.instance.format(dock_props=dock_props, root_props=root_props)
 
-    def relocate(self, move_to=None, rotate_core=0):
+    def relocate(self, move_to=None, rotate_core=0, archetype_changes=None):
+        archetype_changes = archetype_changes if archetype_changes is not None else []
         if not move_to:
             move_to = [0, 0, 0]
 
@@ -210,6 +212,12 @@ class SpaceObjectTemplate(object):
                     ))
                 else:
                     lines.append(line)
+
+            elif line.startswith(ARCHETYPE):
+                archetype = line
+                for change1, change2 in archetype_changes:
+                    archetype = archetype.replace(change1, change2)
+                lines.append(archetype)
 
             else:
                 if line.startswith(NICKNAME):
