@@ -122,13 +122,14 @@ class XML_UTF(object):
                 file.write_text(file_content, encoding='utf-8')
 
             else:
-                subfile = file / upgraded_subfilename
-                subfile_content = subfile.read_text()
+                for subfile in file.iterdir():
+                    if subfile.is_file():
+                        subfile_content = subfile.read_text()
 
-                for init_string, upgrade in subfile_upgrades:
-                    subfile_content = subfile_content.replace(init_string, upgrade)
+                        for init_string, upgrade in subfile_upgrades:
+                            subfile_content = subfile_content.replace(init_string, upgrade)
 
-                subfile.write_text(subfile_content, encoding='utf-8')
+                        subfile.write_text(subfile_content, encoding='utf-8')
 
         # process final
         for file in input_folder.iterdir():

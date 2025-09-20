@@ -504,38 +504,47 @@ def mass_upgrade1():
 
 
 def mass_upgrade():
-    subfolder_filename = 'lod0-112.vms.xml'
-    old_material = '0xEEC380D9'
+    subfolder_filename = 'lod0-212.vms.xml'
 
-    original_asteroid_name = 'om15'
-    original_asteroid_name2 = 'o15'
-    new_asteroid_name = 'tau29'
+    old_material1 = crc32_hex_from_str('detailmap_planet_frag')
+    old_material2 = crc32_hex_from_str('detailmap_ast_rock02')
 
-    new_material = f'{new_asteroid_name}_side'
+    original_asteroid_name = 'rock'
+    new_asteroid_name = 'green'
+
+    new_material1 = crc32_hex_from_str(f'detailmap_{new_asteroid_name}_side')
 
     subfile_changed_strings = [
-        [old_material, new_material],
+        [f'0x{old_material1[2:].upper()}', new_material1],
+        [f'0x{old_material2[2:].upper()}', new_material1],
+        [f'0x0{old_material1[2:].upper()}', new_material1],
+        [f'0x0{old_material2[2:].upper()}', new_material1],
     ]
+
+    vmeshs = ['lod0-112', 'lod0-212', 'lod1-112', 'lod1-212']
 
     main_file_upgrades = [
         [
-            f'UTFXML filename="ast_{original_asteroid_name}',
-            f'UTFXML filename="ast_{new_asteroid_name}'
+            f'UTFXML filename="{original_asteroid_name}',
+            f'UTFXML filename="{new_asteroid_name}'
         ],
         [
-            f'UTFXML filename="ast_{original_asteroid_name2}',
-            f'UTFXML filename="ast_{new_asteroid_name}'
-        ],
-        [
-            '.lod0-112.vms include="',
-            f'_{new_asteroid_name}_edition.lod0-112.vms include="'
-        ],
-        [
-            '.lod0-112.vms,',
-            f'_{new_asteroid_name}_edition.lod0-112.vms,'
-        ],
-
+            '.3db',
+            f'_{new_asteroid_name}.3db'
+        ]
     ]
+
+    for vmesh in vmeshs:
+        main_file_upgrades.extend([
+            [
+                f'.{vmesh}.vms include="',
+                f'_{new_asteroid_name}_edition.{vmesh}.vms include="'
+            ],
+            [
+                f'.{vmesh}.vms,',
+                f'_{new_asteroid_name}_edition.{vmesh}.vms,'
+            ],
+        ])
 
     sur_filename_upgrades = [
         [
@@ -550,8 +559,6 @@ def mass_upgrade():
         main_file_upgrades,
         sur_filename_upgrades,
     )
-
-
 
 
 
