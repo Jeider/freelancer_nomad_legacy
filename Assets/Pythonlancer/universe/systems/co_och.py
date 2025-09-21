@@ -16,6 +16,8 @@ from universe.content import interior
 from universe.content import dealers
 from universe.content import asteroid_definition
 from universe import faction
+from universe.content import mineable
+from templates.solar import asteroid
 from templates.nebula import co_och_nebula
 from templates.nebula import exclusion
 from templates.dockable import corsair_dreadnought
@@ -392,7 +394,109 @@ class OchoNomadStaticAst(OchoMember, main_objects.AutoStaticObject):
     }
 
     NEBULA_ZONES = [
-        OchBaseEdgeNebula
+        OchNomadNebula
     ]
     EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS
     NEBULA_EXCLUSION_ZONE_SIZE = 5000
+
+
+
+
+
+class OchoResearchBase1(OchoMember, main_objects.AbandonedAsteroid):
+    ALIAS = 'scient'
+    INDEX = 1
+    BASE_INDEX = 51
+    ROTATE_RANDOM = True
+    ARCHETYPE = 'miningbase_nomad'
+    INTERIOR_CLASS = interior.EquipDeckInterior
+    DEFENCE_LEVEL = None
+    LOCKED_DOCK = True
+
+    RU_NAME = 'База Магеллан'
+
+    INTERIOR_BG1 = interior.INTERIOR_BG_EDGE
+    AST_EXCLUSION_ZONE_SIZE = 3500
+    ASTEROID_ZONES = [
+        OchoAsteroidZone3,
+    ]
+    AST_EXCLUSION_ZONE_PARAMS = {
+        'spacedust': Dust.ASTEROID,
+        'spacedust_maxparticles': 200,
+    }
+
+    NEBULA_ZONES = [
+        OchNomadNebula
+    ]
+    EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS
+
+    MISC_EQUIP_TYPE = RH_PIRATE
+    WEAPON_FACTION = WEAPON_RH
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('rh_junkergun', eq_classes=markets.SECRET2),
+        Q.Engine(None, eq_classes=markets.SECRET2),
+    )
+
+class OchoResearchBase2(OchoMember, main_objects.AbandonedAsteroid):
+    ALIAS = 'scient'
+    INDEX = 2
+    BASE_INDEX = 52
+    ROTATE_RANDOM = True
+    ARCHETYPE = 'miningbase_nomad'
+    INTERIOR_CLASS = interior.EquipDeckInterior
+    DEFENCE_LEVEL = None
+    LOCKED_DOCK = True
+
+    RU_NAME = 'База Олдрин'
+
+    INTERIOR_BG1 = interior.INTERIOR_BG_EDGE
+    AST_EXCLUSION_ZONE_SIZE = 3500
+    ASTEROID_ZONES = [
+        OchoAsteroidZone3,
+    ]
+    AST_EXCLUSION_ZONE_PARAMS = {
+        'spacedust': Dust.ASTEROID,
+        'spacedust_maxparticles': 200,
+    }
+
+    NEBULA_ZONES = [
+        OchNomadNebula
+    ]
+    EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS
+
+    MISC_EQUIP_TYPE = RH_PIRATE
+    WEAPON_FACTION = WEAPON_RH
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('rh_junkergun', eq_classes=markets.SECRET2),
+        Q.Engine(None, eq_classes=markets.SECRET2),
+    )
+
+
+class OchoNomadAsteroidReward(OchoMember, mineable.AsteroidRewardsGroupUltra):
+    NAME = 'ocho_rios_nomad'
+    SOLAR = asteroid.AsteroidNomadGreen
+    REWARD_ITEM = 'comm_roid_niobium'
+    ULTRA_REWARD_BASES = [
+        OchoResearchBase1,
+        OchoResearchBase2,
+    ]
+
+
+class OchoResearchAsteroids1(OchoMember, mineable.AsteroidRewardField):
+    ALIAS = 'scient'
+    INDEX = 1
+    FIELD_CLASS = mineable.MineableAsteroidField
+    REWARDS_GROUP_CLASS = OchoNomadAsteroidReward
+    MEDIUM_REWARD_CHANCE = 0.25
+    ULTRA_REWARD = True
+    ULTRA_BASE = OchoResearchBase1
+
+
+class OchoResearchAsteroids2(OchoMember, mineable.AsteroidRewardField):
+    ALIAS = 'scient'
+    INDEX = 2
+    FIELD_CLASS = mineable.MineableAsteroidField
+    REWARDS_GROUP_CLASS = OchoNomadAsteroidReward
+    MEDIUM_REWARD_CHANCE = 0.25
+    ULTRA_REWARD = True
+    ULTRA_BASE = OchoResearchBase2

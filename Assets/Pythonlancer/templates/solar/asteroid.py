@@ -102,11 +102,11 @@ class AsteroidOmega15(AsteroidSolar, MineableSolar):
 
     def get_medium_reward_archetype(self):
         return self.DEFAULT_ARCHETYPE # TEMP
-        return self.ARCHETYPE_REWARD_MEDIUM
+        # return self.ARCHETYPE_REWARD_MEDIUM
 
     def get_high_reward_archetype(self):
         return self.DEFAULT_ARCHETYPE # TEMP
-        return self.ARCHETYPE_REWARD_HIGH
+        # return self.ARCHETYPE_REWARD_HIGH
 
     def get_ultra_reward_archetype(self):
         return self.ARCHETYPE_REWARD_ULTRA
@@ -142,6 +142,22 @@ class AsteroidCuracao(AsteroidOmega15):
 
     EXPLODER_NORMAL = 'attached_co_cur_xast_exploder'
     EXPLODER_ULTRA = 'attached_co_cur_xast_exploder_ultra'
+
+
+class AsteroidOlaf(AsteroidOmega15):
+    DEFAULT_ARCHETYPE = 'tau29_mineast_super'
+    ARCHETYPE_REWARD_ULTRA = 'tau29_mineast_super_ultra'
+
+    EXPLODER_NORMAL = 'attached_tau29_xast_exploder'
+    EXPLODER_ULTRA = 'attached_tau29_xast_exploder_ultra'
+
+
+class AsteroidNomadGreen(AsteroidOmega15):
+    DEFAULT_ARCHETYPE = 'green_mineast_super'
+    ARCHETYPE_REWARD_ULTRA = 'green_mineast_super_ultra'
+
+    EXPLODER_NORMAL = 'attached_green_xast_exploder'
+    EXPLODER_ULTRA = 'attached_green_xast_exploder_ultra'
 
 
 class AsteroidLava(AsteroidOmega15):
