@@ -241,7 +241,7 @@ archetype = {archetype}'''
 class StaticObject(AppearableObject):
     ASTEROID_ZONES = []
     AST_EXCLUSION_ZONE_SIZE = 3000
-    AST_ZONE_NAME_TEMPLATE = 'Zone_{space_name}_ast_exclusion'
+    AST_ZONE_NAME_TEMPLATE = 'Zone_{space_name}_ast_{zone_code}_exclusion'
     AST_EXCLUSION_ZONE_PARAMS = {}
 
     NEBULA_ZONES = []
@@ -277,8 +277,9 @@ class StaticObject(AppearableObject):
     def get_force_connections(self):
         return self.FORCE_CONNECTIONS
 
-    def get_ast_exclusion_zone_name(self):
+    def get_ast_exclusion_zone_name(self, ast_zone):
         return self.AST_ZONE_NAME_TEMPLATE.format(
+            zone_code=ast_zone.ASTEROID_DEFINITION_CLASS.NAME,
             space_name=self.get_inspace_nickname(),
         )
     
@@ -345,14 +346,16 @@ class StaticObject(AppearableObject):
 
     def get_dynamic_zones(self):
         zones = []
-        if len(self.ASTEROID_ZONES) != 0:
+        for ast_zone in self.ASTEROID_ZONES:
             zones.append(
                 DynamicSphereZone(
                     system=self.system,
-                    space_nickname=self.get_ast_exclusion_zone_name(),
+                    space_nickname=self.get_ast_exclusion_zone_name(ast_zone),
                     alias=self.ALIAS,
                     index=self.INDEX,
-                    size=self.AST_EXCLUSION_ZONE_SIZE,
+                    size=(ast_zone.ASTEROID_DEFINITION_CLASS.EXCLUSION_SIZE_OVERRIDE
+                          if ast_zone.ASTEROID_DEFINITION_CLASS.EXCLUSION_SIZE_OVERRIDE > 0 else
+                            self.AST_EXCLUSION_ZONE_SIZE),
                     **self.AST_EXCLUSION_ZONE_PARAMS,
                 )
             )

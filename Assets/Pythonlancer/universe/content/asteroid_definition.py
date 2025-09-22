@@ -459,12 +459,33 @@ max_angular_velocity = 0.05000000
 color_shift = 1.000000, 1.000000, 1.000000
 '''
 
+LARGE_AST_FIELD_TEMPLATE = '''
+cube_size = 1500
+fill_dist = 5000
+diffuse_color = 255, 255, 255
+ambient_color = 255, 255, 255
+ambient_increase = 15, 15, 15
+empty_cube_frequency = 0
+'''
+
+LARGE_AST_CUBE_TEMPLATE = '''
+asteroid = ast_{ast}_xlarge04, 0.600000, 0.200000, -0.200000, 1, 2, 5
+asteroid = ast_{ast}_xlarge02, 0.200000, 0.800000, 0.300000, -5, -155, 3
+asteroid = ast_{ast}_xlarge01, 0.400000, -0.700000, -0.200000, 2, 124, -4
+asteroid = ast_{ast}_xlarge02, -0.300000, -0.300000, 0.800000, 7, -5, -8
+asteroid = ast_{ast}_xlarge04, -0.200000, -0.100000, -0.600000, 0, 4, 5
+asteroid = ast_{ast}_xlarge01, -0.600000, -0.800000, 0.700000, 1, 192, 5
+'''
+
+
 
 class AsteroidDefinition(object):
+    NAME = 'ast'
     SHAPES = []
     FIELD_TEMPLATE = None
     FIELD = False
     CUBE_TEMPLATE = None
+    CUBE_PARAMS = {}
     CUBE = False
     BELT_TEMPLATE = None
     BELT = False
@@ -480,6 +501,7 @@ class AsteroidDefinition(object):
     LOOT_COMMODITY = None
     BELT_HEIGHT = BELT_HEIGHT_DEFAULT
     EXCLUDE_BILLBOARDS = True
+    EXCLUSION_SIZE_OVERRIDE = 0
 
     def __init__(self, system, zone):
         self.system = system
@@ -514,7 +536,7 @@ class AsteroidDefinition(object):
         if self.FIELD:
             params['field'] = self.FIELD_TEMPLATE
         if self.CUBE:
-            params['cube'] = self.CUBE_TEMPLATE
+            params['cube'] = self.CUBE_TEMPLATE.format(**self.CUBE_PARAMS)
         if self.BELT:
             params['belt'] = self.BELT_TEMPLATE.format(belt_height=self.BELT_HEIGHT)
         if self.DYNAST:
@@ -583,6 +605,7 @@ class CuracaoAsteroidDefinition(AsteroidDefinition):
 
 
 class DebrisDefinition(AsteroidDefinition):
+    NAME = 'debris'
     BELT_TEMPLATE = BELT_DEBRIS
     DYNAST_TEMPLATE = DYNAST_DEBRIS
     BILLBOARD_TEMPLATE = BILLBOARD_DEBRIS
@@ -610,6 +633,7 @@ class Omega15NiobiumAsteroidDefinition(Omega15AsteroidDefinition):
 
 
 class SpaceMines(AsteroidDefinition):
+    NAME = 'space_mines'
     FIELD = True
     CUBE = True
     BILLBOARDS = True
@@ -622,6 +646,7 @@ class SpaceMines(AsteroidDefinition):
 
 
 class BadlansDynasteroids(AsteroidDefinition):
+    NAME = 'badland'
     DYNAST = True
     DYNAST_TEMPLATE = DYNAST_BADLANDS
 
@@ -629,3 +654,11 @@ class BadlansDynasteroids(AsteroidDefinition):
 class NomadDynasteroids(AsteroidDefinition):
     DYNAST = True
     DYNAST_TEMPLATE = DYNAST_NOMAD
+
+
+class Tau37LargeAsteroids(Tau37AsteroidDefinition):
+    FIELD_TEMPLATE = LARGE_AST_FIELD_TEMPLATE
+    CUBE_TEMPLATE = LARGE_AST_CUBE_TEMPLATE
+    CUBE_PARAMS = {'ast': 'tau37'}
+    FIELD = True
+    CUBE = True

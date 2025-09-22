@@ -86,7 +86,7 @@ class Om11Sun(Om11Member, main_objects.Sun):
 class Om11StaticTunnels1(Om11Member, main_objects.BackgroundTunnelOmega13):
     INDEX = 1
     WORKSPACE_TEMPLATE_NAME = 'om13ast'
-    ROTATE = -20
+    ROTATE = 0
     ARCHETYPE_CHANGE_TO = 'tau37'
 
 
@@ -95,3 +95,58 @@ class Om11StaticTunnels2(Om11Member, main_objects.BackgroundTunnelOmega13):
     WORKSPACE_TEMPLATE_NAME = 'om13ast'
     ROTATE = 160
     ARCHETYPE_CHANGE_TO = 'tau37'
+
+
+class Om11LargeAsteroidDefinition(asteroid_definition.Tau37LargeAsteroids):
+    ABSTRACT = False
+    NAME = 'om11_large_ast'
+    EXCLUSION_SIZE_OVERRIDE = 2000
+
+
+class Om11DynAsteroidDefinition(asteroid_definition.Tau37AsteroidDefinition):
+    ABSTRACT = False
+    NAME = 'om11_dyn_ast'
+    DYNAST = True
+    BELT = True
+    BILLBOARDS = True
+    LOOT = False  # TEMP
+    EXCLUSION_SIZE_OVERRIDE = 3500
+
+
+class Om11AsteroidLargeZone1(Om11Member, zones.AsteroidZone):
+    INDEX = 1
+    ASTEROID_DEFINITION_CLASS = Om11LargeAsteroidDefinition
+    MUSIC = Ambience.AST_ROCK
+
+    SPACEDUST = Dust.ASTEROID
+    SPACEDUST_MAXPARTICLES = 200
+
+
+class Om11AsteroidDynZone1(Om11Member, zones.AsteroidZone):
+    ALIAS = 'astdyn'
+    INDEX = 1
+    ASTEROID_DEFINITION_CLASS = Om11DynAsteroidDefinition
+
+
+class Om11BigCorsairAsteroidBase(Om11Member, main_objects.PirateAsteroid):
+    ALIAS = 'astbase'
+    INDEX = 1
+    BASE_INDEX = 1
+    ARCHETYPE = 'tau37_base_large01'
+    LOADOUT = 'co_base_rock_large01_pi_01'
+    INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
+    DEFENCE_LEVEL = None
+    RU_NAME = 'База Кадиз'
+    SHIP_SET = markets.ShipSet('co_fighter')
+    CALC_STORE = False
+    HAVE_CHARACTERS = False
+    DEALERS = dealers.RheinlandPirateDealers
+
+    AST_EXCLUSION_ZONE_SIZE = 3500
+    ASTEROID_ZONES = [
+        Om11AsteroidDynZone1,
+        Om11AsteroidLargeZone1,
+    ]
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('bw_corsairgun', eq_classes=markets.SECRET3),
+    )

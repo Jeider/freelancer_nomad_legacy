@@ -48,7 +48,7 @@ from templates.space_object_template import SpaceObjectTemplate
 from templates.dockable import terraforming
 from templates.dockable import corsair_dreadnought
 from templates.dockable import upsilon_gasinside
-from templates.dockable import tunnel
+from templates.dockable import astbase
 from templates.misc import rmbase
 from templates.misc import trading
 from templates.dockable import nomad_asf_hq
@@ -62,7 +62,7 @@ def draw_base():
     new_name = None
     move_to = None
     rotate_core = 0
-    workspace = '9'
+    workspace = '10'
 
     # base_class = m13.RockfordGenerator
     # new_name = 'or_hq_vienna_entry'
@@ -76,20 +76,20 @@ def draw_base():
     # new_name = 'or_hq_shipyard_01'
     # move_to = (-20000, 0, 0)
 
-    base_class = ast_om15_xxxlarge.AsteroidTwo
+    base_class = astbase.ManhattanAsteroidBase
     # new_name = 'communicator'
     # move_to = (-9500, 0, -10000)
 
     # base_class = nomad_asf_hq.AsfHQ
     # rotate_core = 45
 
-    # the_base = base_class()
-    # content = the_base.get_instance(new_space_object_name=new_name, move_to=move_to, rotate_core=rotate_core)
-    the_base = SpaceObjectTemplate(
-        template=ObjectTemplateLoader.get_template('om13ast'),
-        space_object_name='om13ast',
-    )
-    content = the_base.get_instance(move_to=(2000, 0, 8000), rotate_core=0)
+    the_base = base_class()
+    content = the_base.get_instance(new_space_object_name=new_name, move_to=move_to, rotate_core=rotate_core)
+    # the_base = SpaceObjectTemplate(
+    #     template=ObjectTemplateLoader.get_template('om13ast'),
+    #     space_object_name='om13ast',
+    # )
+    # content = the_base.get_instance(move_to=(2000, 0, 8000), rotate_core=0)
 
     data_folder.DataFolder.sync_to_test_workspace(content, workspace_index=workspace)
 
@@ -545,6 +545,12 @@ def mass_upgrade():
                 f'_{new_asteroid_name}_edition.{vmesh}.vms,'
             ],
         ])
+        subfile_changed_strings.append(
+            [
+                f'.{vmesh}.vms,',
+                f'_{new_asteroid_name}_edition.{vmesh}.vms,'
+            ]
+        )
 
     sur_filename_upgrades = [
         [
