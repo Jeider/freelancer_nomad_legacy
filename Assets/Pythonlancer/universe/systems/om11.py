@@ -85,16 +85,41 @@ class Om11Sun(Om11Member, main_objects.Sun):
 
 class Om11StaticTunnels1(Om11Member, main_objects.BackgroundTunnelOmega13):
     INDEX = 1
-    WORKSPACE_TEMPLATE_NAME = 'om13ast'
     ROTATE = 0
     ARCHETYPE_CHANGE_TO = 'tau37'
 
 
 class Om11StaticTunnels2(Om11Member, main_objects.BackgroundTunnelOmega13):
     INDEX = 2
-    WORKSPACE_TEMPLATE_NAME = 'om13ast'
     ROTATE = 160
     ARCHETYPE_CHANGE_TO = 'tau37'
+
+
+class Om11StaticTunnels3(Om11Member, main_objects.BackgroundTunnelOmega13):
+    INDEX = 3
+    ROTATE = -130
+    ARCHETYPE_CHANGE_TO = 'tau37'
+
+
+class Om11StaticTunnels4(Om11Member, main_objects.BackgroundTunnelOmega13):
+    INDEX = 4
+    ROTATE = 150
+    ARCHETYPE_CHANGE_TO = 'tau37'
+
+
+class Om11StaticTunnels5(Om11Member, main_objects.BackgroundTunnelOmega13):
+    INDEX = 5
+    ROTATE = 90
+    ARCHETYPE_CHANGE_TO = 'tau37'
+
+
+class Om11MainAsteroidDefinition(asteroid_definition.Tau37AsteroidDefinition):
+    ABSTRACT = False
+    NAME = 'om11_main_ast'
+    DYNAST = False
+    BELT = True
+    BILLBOARDS = False
+    LOOT = False  # TEMP
 
 
 class Om11LargeAsteroidDefinition(asteroid_definition.Tau37LargeAsteroids):
@@ -107,25 +132,126 @@ class Om11DynAsteroidDefinition(asteroid_definition.Tau37AsteroidDefinition):
     ABSTRACT = False
     NAME = 'om11_dyn_ast'
     DYNAST = True
-    BELT = True
+    BELT = False
     BILLBOARDS = True
     LOOT = False  # TEMP
     EXCLUSION_SIZE_OVERRIDE = 3500
 
 
-class Om11AsteroidLargeZone1(Om11Member, zones.AsteroidZone):
+class Om11AsteroidMainZone1(Om11Member, zones.AsteroidZone):
     INDEX = 1
-    ASTEROID_DEFINITION_CLASS = Om11LargeAsteroidDefinition
+    ASTEROID_DEFINITION_CLASS = Om11MainAsteroidDefinition
     MUSIC = Ambience.AST_ROCK
 
     SPACEDUST = Dust.ASTEROID
     SPACEDUST_MAXPARTICLES = 200
 
 
-class Om11AsteroidDynZone1(Om11Member, zones.AsteroidZone):
-    ALIAS = 'astdyn'
+class Om11AsteroidLargeZone1(Om11Member, zones.AsteroidZoneClone):
     INDEX = 1
+    CLONE_ALIAS = 'astlarge'
+    ASTEROID_DEFINITION_CLASS = Om11LargeAsteroidDefinition
+    ZONE_SCALE = 0.8
+
+
+class Om11AsteroidDynZone1(Om11Member, zones.AsteroidZoneClone):
+    INDEX = 1
+    CLONE_ALIAS = 'astdyn'
     ASTEROID_DEFINITION_CLASS = Om11DynAsteroidDefinition
+    ZONE_SCALE = 0.8
+
+
+class Om11AsteroidMainZone2(Om11Member, zones.AsteroidZone):
+    INDEX = 2
+    ASTEROID_DEFINITION_CLASS = Om11MainAsteroidDefinition
+    MUSIC = Ambience.AST_ROCK
+
+    SPACEDUST = Dust.ASTEROID
+    SPACEDUST_MAXPARTICLES = 200
+
+
+class Om11AsteroidLargeZone2(Om11Member, zones.AsteroidZoneClone):
+    INDEX = 2
+    CLONE_ALIAS = 'astlarge'
+    ASTEROID_DEFINITION_CLASS = Om11LargeAsteroidDefinition
+    ZONE_SCALE = 0.8
+
+
+class Om11AsteroidDynZone2(Om11Member, zones.AsteroidZoneClone):
+    INDEX = 2
+    CLONE_ALIAS = 'astdyn'
+    ASTEROID_DEFINITION_CLASS = Om11DynAsteroidDefinition
+    ZONE_SCALE = 0.8
+
+
+class Om11AsteroidMainZone3(Om11Member, zones.AsteroidZone):
+    INDEX = 3
+    ASTEROID_DEFINITION_CLASS = Om11MainAsteroidDefinition
+    MUSIC = Ambience.AST_ROCK
+
+    SPACEDUST = Dust.ASTEROID
+    SPACEDUST_MAXPARTICLES = 200
+
+
+class Om11AsteroidLargeZone3(Om11Member, zones.AsteroidZoneClone):
+    INDEX = 3
+    CLONE_ALIAS = 'astlarge'
+    ASTEROID_DEFINITION_CLASS = Om11LargeAsteroidDefinition
+    ZONE_SCALE = 0.8
+
+
+class Om11AsteroidDynZone3(Om11Member, zones.AsteroidZoneClone):
+    INDEX = 3
+    CLONE_ALIAS = 'astdyn'
+    ASTEROID_DEFINITION_CLASS = Om11DynAsteroidDefinition
+    ZONE_SCALE = 0.8
+
+
+class Om11AsteroidMainZone4(Om11Member, zones.AsteroidZone):
+    INDEX = 4
+    ASTEROID_DEFINITION_CLASS = Om11MainAsteroidDefinition
+    MUSIC = Ambience.AST_ROCK
+
+    SPACEDUST = Dust.ASTEROID
+    SPACEDUST_MAXPARTICLES = 200
+
+
+class Om11AsteroidLargeZone4(Om11Member, zones.AsteroidZoneClone):
+    INDEX = 4
+    CLONE_ALIAS = 'astlarge'
+    ASTEROID_DEFINITION_CLASS = Om11LargeAsteroidDefinition
+    ZONE_SCALE = 0.8
+
+
+class Om11AsteroidDynZone4(Om11Member, zones.AsteroidZoneClone):
+    INDEX = 4
+    CLONE_ALIAS = 'astdyn'
+    ASTEROID_DEFINITION_CLASS = Om11DynAsteroidDefinition
+    ZONE_SCALE = 0.8
+
+
+class Om11AsteroidMainZone5(Om11Member, zones.AsteroidZone):
+    INDEX = 5
+    ASTEROID_DEFINITION_CLASS = Om11MainAsteroidDefinition
+    MUSIC = Ambience.AST_ROCK
+
+    SPACEDUST = Dust.ASTEROID
+    SPACEDUST_MAXPARTICLES = 200
+
+
+class Om11AsteroidLargeZone5(Om11Member, zones.AsteroidZoneClone):
+    INDEX = 5
+    CLONE_ALIAS = 'astlarge'
+    ASTEROID_DEFINITION_CLASS = Om11LargeAsteroidDefinition
+    ZONE_SCALE = 0.8
+
+
+class Om11AsteroidDynZone5(Om11Member, zones.AsteroidZoneClone):
+    INDEX = 5
+    CLONE_ALIAS = 'astdyn'
+    ASTEROID_DEFINITION_CLASS = Om11DynAsteroidDefinition
+    ZONE_SCALE = 0.8
+
 
 
 class Om11BigCorsairAsteroidBase(Om11Member, main_objects.PirateAsteroid):
@@ -150,3 +276,10 @@ class Om11BigCorsairAsteroidBase(Om11Member, main_objects.PirateAsteroid):
     EQUIP_SET = markets.EquipSet(
         Q.Gun('bw_corsairgun', eq_classes=markets.SECRET3),
     )
+
+
+class Om11MadridJumpgate(Om11Member, main_objects.Jumpgate):
+    INDEX = 1
+    REL = LEFT
+    TARGET_SYSTEM_NAME = 'co_mad'
+    ROTATE_BY_TEMPLATE = True

@@ -807,7 +807,6 @@ parent = co_mad_03
 '''
 
 
-
 class CadizFreeport(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'co_cad_03'
     TEMPLATE = '''[Object]

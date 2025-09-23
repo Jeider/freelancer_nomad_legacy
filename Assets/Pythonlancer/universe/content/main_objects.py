@@ -279,7 +279,7 @@ class StaticObject(AppearableObject):
 
     def get_ast_exclusion_zone_name(self, ast_zone):
         return self.AST_ZONE_NAME_TEMPLATE.format(
-            zone_code=ast_zone.ASTEROID_DEFINITION_CLASS.NAME,
+            zone_code=ast_zone.get_zone_alias(),
             space_name=self.get_inspace_nickname(),
         )
     
@@ -620,14 +620,22 @@ class Jumpgate(JumpableObject):
         TOP: 180,
         BOTTOM: 0,
     }
+    ROTATE_BY_TEMPLATE = False
 
     DEFENCE_ZONE_SIZE = 4000
     DEFENCE_LEVEL = DEFENCE_SIMPLE
 
     CONNECTION_KIND = connection.CONNECTION_LAWFUL
 
+    def get_y_rotate(self):
+        return (
+            self.system.template.get_item_rotate(self.get_full_alias())[1]
+            if self.ROTATE_BY_TEMPLATE
+            else self.Y_ROTATE_PER_REL[self.REL]
+        )
+
     def get_rotate(self):
-        return (0, self.Y_ROTATE_PER_REL[self.REL], 0)
+        return 0, self.get_y_rotate(), 0
 
     def get_jump_effect(self):
         return self.system.JUMP_EFFECT.JUMP_EFFECT
@@ -1995,19 +2003,24 @@ faction = {pirate_faction}, 1.000000'''
         )
 
 
-class Tradelane(object):
+class Tradelane:
     TLR_NAME_ID = 260920
     TLR_INFO_ID = 66170
+    ARCHETYPE = 'Trade_Lane_Ring'
+    MIDDLE_RING_LOADOUT = 'trade_lane_ring_main'
+    LAST_RING_LOADOUT = MIDDLE_RING_LOADOUT
+    START_RING_LOADOUT = MIDDLE_RING_LOADOUT
+
     RING_TEMPLATE = '''[Object]
 nickname = {ring_nickname}
 ids_name = {ids_name}
 ids_info = {ids_info}
 pos = {pos}
 rotate = {rotate}
-archetype = Trade_Lane_Ring
+archetype = {archetype}
 behavior = NOTHING
 reputation = {faction}
-loadout = trade_lane_ring_li_01
+loadout = {loadout}
 pilot = pilot_solar_hard
 {extra}
 '''
@@ -2043,6 +2056,7 @@ pilot = pilot_solar_hard
             'pos': '{0}, {1}, {2}'.format(*self.get_tradelane_pos()),
             'rotate': '{0}, {1}, {2}'.format(*self.get_tradelane_rotate()),
             'faction': self.trade_connection.FACTION.get_code(),
+            'archetype': self.ARCHETYPE,
         }
 
         prev_ring = self.trade_connection.get_prev_ring(self.tradelane_index)
@@ -2055,11 +2069,15 @@ pilot = pilot_solar_hard
             extra.append(self.NEXT_RING_TEMPLATE.format(next_ring=next_ring.get_ring_nickname()))
 
         if not prev_ring:
+            template_params['loadout'] = self.START_RING_LOADOUT
             extra.append(self.RING_SPACE_NAME_TEMPLATE.format(
                 ids_name=self.trade_connection.get_obj_from().get_tradelane_ids_name()))
         elif not next_ring:
+            template_params['loadout'] = self.LAST_RING_LOADOUT
             extra.append(self.RING_SPACE_NAME_TEMPLATE.format(
                 ids_name=self.trade_connection.get_obj_to().get_tradelane_ids_name()))
+        else:
+            template_params['loadout'] = self.MIDDLE_RING_LOADOUT
 
         template_params['extra'] = SINGLE_DIVIDER.join(extra)
 
@@ -2355,6 +2373,19 @@ size = {size}'''
                 (attacker_base_pos[0], 0, attacker_base_pos[2]),
             ]
         )
+
+
+class LargeTradelane(Tradelane):
+    # ARCHETYPE = 'TLR_CORSAIR'
+    MIDDLE_RING_LOADOUT = 'large_co_tradelane_loadout'
+    LAST_RING_LOADOUT = 'large_co_tradelane_loadout_end'
+    START_RING_LOADOUT = 'large_co_tradelane_loadout_start'
+
+
+class LargeTradeConnection(TradeConnection):
+    TLR_DISTANCE = 12000
+    TRADELANE_CLASS = LargeTradelane
+    POLICE_PATROL = False  # Temporary
 
 
 class DestroyedTradelane(Tradelane):

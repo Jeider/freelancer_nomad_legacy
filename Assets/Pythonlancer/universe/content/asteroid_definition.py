@@ -464,7 +464,7 @@ cube_size = 1500
 fill_dist = 5000
 diffuse_color = 255, 255, 255
 ambient_color = 255, 255, 255
-ambient_increase = 15, 15, 15
+ambient_increase = 0, 0, 0
 empty_cube_frequency = 0
 '''
 
