@@ -2010,6 +2010,7 @@ class Tradelane:
     MIDDLE_RING_LOADOUT = 'trade_lane_ring_main'
     LAST_RING_LOADOUT = MIDDLE_RING_LOADOUT
     START_RING_LOADOUT = MIDDLE_RING_LOADOUT
+    TLR_Y_OFFSET = 0
 
     RING_TEMPLATE = '''[Object]
 nickname = {ring_nickname}
@@ -2043,7 +2044,8 @@ pilot = pilot_solar_hard
         )
 
     def get_tradelane_pos(self):
-        return self.tracks_raw_tradelane.lines[POS_KEY]
+        tlr_pos = self.tracks_raw_tradelane.lines[POS_KEY]
+        return tlr_pos[0], tlr_pos[1] + self.TLR_Y_OFFSET, tlr_pos[2]
 
     def get_tradelane_rotate(self):
         return self.tracks_raw_tradelane.lines[ROT_KEY]
@@ -2380,6 +2382,7 @@ class LargeTradelane(Tradelane):
     MIDDLE_RING_LOADOUT = 'large_co_tradelane_loadout'
     LAST_RING_LOADOUT = 'large_co_tradelane_loadout_end'
     START_RING_LOADOUT = 'large_co_tradelane_loadout_start'
+    TLR_Y_OFFSET = 500
 
 
 class LargeTradeConnection(TradeConnection):

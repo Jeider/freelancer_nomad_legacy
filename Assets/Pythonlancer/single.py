@@ -511,7 +511,7 @@ def mass_upgrade():
     old_material2 = crc32_hex_from_str('detailmap_ast_rock02')
 
     original_asteroid_name = 'rock'
-    new_asteroid_name = 'green'
+    new_asteroid_name = 'li_cal'
 
     new_material1 = crc32_hex_from_str(f'detailmap_{new_asteroid_name}_side')
 

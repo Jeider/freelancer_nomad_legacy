@@ -31,7 +31,7 @@ class MadMember(Member):
     WEAPON_FACTION = WEAPON_BW
     EQUIP_FACTION = EQUIP_BW
     AST_TYPE = 'li_cal'
-    REL_APPEND = 5000
+    REL_APPEND = 4000
 
 
 class MadStaticText(MadMember, main_objects.RawText):
