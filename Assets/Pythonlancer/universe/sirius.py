@@ -42,6 +42,8 @@ from universe.systems import sphere2 as sphere2_content
 from universe.systems import om13alt as om13_alt_content
 from universe.systems import asf_prom as asf_prom_content
 from universe.systems import co_och as co_och_content
+from universe.systems import om11 as om11_content
+from universe.systems import co_mad as co_mad_content
 
 
 
@@ -493,21 +495,20 @@ class co_cur(system.System, system.SiriusSystem):
 
 
 class co_mad(system.System, system.SiriusSystem):
+    ROOM_SUBFOLDER = interior.ROOM_FOLDER_KU
+    ENABLE_POPULATION = False
+
     NAME = 'co_mad'
+    TEMPLATE_NAME = 'co_mad'
     RU_NAME = 'Мадр+ид'
+    CONTENT = co_mad_content
 
     SYSTEM_FOLDER = 'CO_MADRID'
     NAVMAP_POS = '5, 15'
     NAVMAP_SCALE = 1.5
 
-
-class co_val(system.System, system.SiriusSystem):
-    NAME = 'co_val'
-    RU_NAME = 'Вал+енсия'
-
-    SYSTEM_FOLDER = 'CO_VALENSIA'
-    NAVMAP_POS = '5.5, 14'
-    NAVMAP_SCALE = 10
+    JUMP_EFFECT = jump_effect.Walker
+    ALLOW_SYNC = True
 
 
 class co_och(system.System, system.SiriusSystem):
@@ -561,11 +562,19 @@ class tau26(system.System, system.SiriusSystem):
 
 class om11(system.System, system.SiriusSystem):
     NAME = 'om11'
+    TEMPLATE_NAME = 'om11'
     RU_NAME = 'Ом+ега-11'
+    CONTENT = om11_content
 
     SYSTEM_FOLDER = 'OMEGA11'
     NAVMAP_POS = '8, 14.5'
     NAVMAP_SCALE = 2
+
+    ROOM_SUBFOLDER = interior.ROOM_FOLDER_RH
+    ENABLE_POPULATION = False
+
+    JUMP_EFFECT = jump_effect.Walker
+    ALLOW_SYNC = True
 
 
 class br_uls(system.System, system.SiriusSystem):

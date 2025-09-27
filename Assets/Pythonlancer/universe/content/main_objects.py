@@ -19,6 +19,8 @@ from universe import faction
 from universe.content import descriptions_ru
 from universe.content import diversion
 
+from tools.system_template import ObjectTemplateLoader
+from templates.space_object_template import SpaceObjectTemplate
 from story.math import rotate_point, relocate_point
 from text.dividers import SINGLE_DIVIDER, DIVIDER
 
@@ -239,7 +241,7 @@ archetype = {archetype}'''
 class StaticObject(AppearableObject):
     ASTEROID_ZONES = []
     AST_EXCLUSION_ZONE_SIZE = 3000
-    AST_ZONE_NAME_TEMPLATE = 'Zone_{space_name}_ast_exclusion'
+    AST_ZONE_NAME_TEMPLATE = 'Zone_{space_name}_ast_{zone_code}_exclusion'
     AST_EXCLUSION_ZONE_PARAMS = {}
 
     NEBULA_ZONES = []
@@ -275,8 +277,9 @@ class StaticObject(AppearableObject):
     def get_force_connections(self):
         return self.FORCE_CONNECTIONS
 
-    def get_ast_exclusion_zone_name(self):
+    def get_ast_exclusion_zone_name(self, ast_zone):
         return self.AST_ZONE_NAME_TEMPLATE.format(
+            zone_code=ast_zone.get_zone_alias(),
             space_name=self.get_inspace_nickname(),
         )
     
@@ -343,14 +346,16 @@ class StaticObject(AppearableObject):
 
     def get_dynamic_zones(self):
         zones = []
-        if len(self.ASTEROID_ZONES) != 0:
+        for ast_zone in self.ASTEROID_ZONES:
             zones.append(
                 DynamicSphereZone(
                     system=self.system,
-                    space_nickname=self.get_ast_exclusion_zone_name(),
+                    space_nickname=self.get_ast_exclusion_zone_name(ast_zone),
                     alias=self.ALIAS,
                     index=self.INDEX,
-                    size=self.AST_EXCLUSION_ZONE_SIZE,
+                    size=(ast_zone.ASTEROID_DEFINITION_CLASS.EXCLUSION_SIZE_OVERRIDE
+                          if ast_zone.ASTEROID_DEFINITION_CLASS.EXCLUSION_SIZE_OVERRIDE > 0 else
+                            self.AST_EXCLUSION_ZONE_SIZE),
                     **self.AST_EXCLUSION_ZONE_PARAMS,
                 )
             )
@@ -615,14 +620,22 @@ class Jumpgate(JumpableObject):
         TOP: 180,
         BOTTOM: 0,
     }
+    ROTATE_BY_TEMPLATE = False
 
     DEFENCE_ZONE_SIZE = 4000
     DEFENCE_LEVEL = DEFENCE_SIMPLE
 
     CONNECTION_KIND = connection.CONNECTION_LAWFUL
 
+    def get_y_rotate(self):
+        return (
+            self.system.template.get_item_rotate(self.get_full_alias())[1]
+            if self.ROTATE_BY_TEMPLATE
+            else self.Y_ROTATE_PER_REL[self.REL]
+        )
+
     def get_rotate(self):
-        return (0, self.Y_ROTATE_PER_REL[self.REL], 0)
+        return 0, self.get_y_rotate(), 0
 
     def get_jump_effect(self):
         return self.system.JUMP_EFFECT.JUMP_EFFECT
@@ -1990,19 +2003,25 @@ faction = {pirate_faction}, 1.000000'''
         )
 
 
-class Tradelane(object):
+class Tradelane:
     TLR_NAME_ID = 260920
     TLR_INFO_ID = 66170
+    ARCHETYPE = 'Trade_Lane_Ring'
+    MIDDLE_RING_LOADOUT = 'trade_lane_ring_main'
+    LAST_RING_LOADOUT = MIDDLE_RING_LOADOUT
+    START_RING_LOADOUT = MIDDLE_RING_LOADOUT
+    TLR_Y_OFFSET = 0
+
     RING_TEMPLATE = '''[Object]
 nickname = {ring_nickname}
 ids_name = {ids_name}
 ids_info = {ids_info}
 pos = {pos}
 rotate = {rotate}
-archetype = Trade_Lane_Ring
+archetype = {archetype}
 behavior = NOTHING
 reputation = {faction}
-loadout = trade_lane_ring_li_01
+loadout = {loadout}
 pilot = pilot_solar_hard
 {extra}
 '''
@@ -2025,7 +2044,8 @@ pilot = pilot_solar_hard
         )
 
     def get_tradelane_pos(self):
-        return self.tracks_raw_tradelane.lines[POS_KEY]
+        tlr_pos = self.tracks_raw_tradelane.lines[POS_KEY]
+        return tlr_pos[0], tlr_pos[1] + self.TLR_Y_OFFSET, tlr_pos[2]
 
     def get_tradelane_rotate(self):
         return self.tracks_raw_tradelane.lines[ROT_KEY]
@@ -2038,6 +2058,7 @@ pilot = pilot_solar_hard
             'pos': '{0}, {1}, {2}'.format(*self.get_tradelane_pos()),
             'rotate': '{0}, {1}, {2}'.format(*self.get_tradelane_rotate()),
             'faction': self.trade_connection.FACTION.get_code(),
+            'archetype': self.ARCHETYPE,
         }
 
         prev_ring = self.trade_connection.get_prev_ring(self.tradelane_index)
@@ -2050,11 +2071,15 @@ pilot = pilot_solar_hard
             extra.append(self.NEXT_RING_TEMPLATE.format(next_ring=next_ring.get_ring_nickname()))
 
         if not prev_ring:
+            template_params['loadout'] = self.START_RING_LOADOUT
             extra.append(self.RING_SPACE_NAME_TEMPLATE.format(
                 ids_name=self.trade_connection.get_obj_from().get_tradelane_ids_name()))
         elif not next_ring:
+            template_params['loadout'] = self.LAST_RING_LOADOUT
             extra.append(self.RING_SPACE_NAME_TEMPLATE.format(
                 ids_name=self.trade_connection.get_obj_to().get_tradelane_ids_name()))
+        else:
+            template_params['loadout'] = self.MIDDLE_RING_LOADOUT
 
         template_params['extra'] = SINGLE_DIVIDER.join(extra)
 
@@ -2352,6 +2377,20 @@ size = {size}'''
         )
 
 
+class LargeTradelane(Tradelane):
+    # ARCHETYPE = 'TLR_CORSAIR'
+    MIDDLE_RING_LOADOUT = 'large_co_tradelane_loadout'
+    LAST_RING_LOADOUT = 'large_co_tradelane_loadout_end'
+    START_RING_LOADOUT = 'large_co_tradelane_loadout_start'
+    TLR_Y_OFFSET = 500
+
+
+class LargeTradeConnection(TradeConnection):
+    TLR_DISTANCE = 12000
+    TRADELANE_CLASS = LargeTradelane
+    POLICE_PATROL = False  # Temporary
+
+
 class DestroyedTradelane(Tradelane):
 
     RING_TEMPLATE = '''[Object]
@@ -2554,4 +2593,50 @@ class MetroMiningTwo(MetroMiningOne):
     ASTEROID_LOADOUT_TEMPLATE = '{ast}_ast_a04_lock1'
     DRILLER_OFFSET = [315, -235, -10]
     DRILLER_ROTATE = [-20, 120, 0]
+
+
+class BackgroundComplexObject(StaticObject):
+    WORKSPACE_TEMPLATE_NAME = None
+    ARCHETYPE_CHANGE_FROM = None
+    ARCHETYPE_CHANGE_TO = None
+    ROTATE = 0
+
+    def has_appearance(self):
+        return True
+
+    def get_inspace_nickname(self):
+        return '{system_name}_bgcmx_{index:02d}'.format(system_name=self.system.NAME, index=self.INDEX)
+
+    def get_template_initial_data(self):
+        if self.WORKSPACE_TEMPLATE_NAME is None:
+            raise Exception(f'Object {self} have no workspace template')
+        return ObjectTemplateLoader.get_template(self.WORKSPACE_TEMPLATE_NAME)
+
+    def get_system_content(self):
+        archetype_changes = []
+        if self.ARCHETYPE_CHANGE_TO:
+
+            if self.ARCHETYPE_CHANGE_FROM is None:
+                raise Exception(f'Object {self} have no configured archetype changes')
+
+            archetype_changes.append(
+                [self.ARCHETYPE_CHANGE_FROM, self.ARCHETYPE_CHANGE_TO]
+            )
+
+        the_base = SpaceObjectTemplate(
+            template=self.get_template_initial_data(),
+            space_object_name=self.WORKSPACE_TEMPLATE_NAME,  # should be same inside
+        )
+        return the_base.get_instance(
+            new_space_object_name=self.get_inspace_nickname(),
+            archetype_changes=archetype_changes,
+            move_to=self.get_position(),
+            rotate_core=self.ROTATE
+        )
+
+
+class BackgroundTunnelOmega13(BackgroundComplexObject):
+    ALIAS = 'tunnel'
+    WORKSPACE_TEMPLATE_NAME = 'om13ast'
+    ARCHETYPE_CHANGE_FROM = 'om15'  # it's initially om15 asteroid kind
 

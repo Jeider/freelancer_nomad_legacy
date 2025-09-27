@@ -547,6 +547,7 @@ class RewardField(Mineable):
     HIGH_REWARD_CHANCE = 0
     ULTRA_REWARD = False
     ULTRA_BASE = None
+    ULTRA_BOXES_COUNT = 2
 
     HAS_REWARDS = True
 
@@ -576,13 +577,14 @@ class RewardField(Mineable):
         box_count = len(available_boxes)
         indexes = list(range(0, box_count))
 
-        ultra_index = None
+        ultra_indexes = []
         high_indexes = []
         medium_indexes = []
 
         if self.ULTRA_REWARD:
-            ultra_index = random.choice(indexes)
-            indexes.remove(ultra_index)
+            ultra_indexes = random.sample(indexes, self.ULTRA_BOXES_COUNT)
+            for ultra_index in ultra_indexes:
+                indexes.remove(ultra_index)
 
         if self.HIGH_REWARD_CHANCE > 0:
             high_count = box_count * self.HIGH_REWARD_CHANCE
@@ -598,7 +600,7 @@ class RewardField(Mineable):
                 indexes.remove(index)
 
         for index, box in enumerate(available_boxes):
-            if ultra_index is not None and index == ultra_index:
+            if index in ultra_indexes:
                 box.set_reward_type(MINING_REWARD_ULTRA)
             elif index in high_indexes:
                 box.set_reward_type(MINING_REWARD_HIGH)
@@ -683,6 +685,7 @@ class DebrisBoxRewardField(AsteroidRewardField):
 
 class GasCrystalRewardField(RewardField):
     ALIAS = 'cryst'
+    ULTRA_BOXES_COUNT = 1
 
     def get_asteroid_archetype_by_reward_type(self, reward_type):
         if reward_type == MINING_REWARD_LOW: 

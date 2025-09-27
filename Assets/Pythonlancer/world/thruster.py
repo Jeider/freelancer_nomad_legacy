@@ -41,21 +41,21 @@ class Thruster(MainEquipPrice, DefaultGood, MainMiscEquip):
         MainMiscEquip.RH_CIV: 'gf_rh_thruster02',
         MainMiscEquip.RH_PIRATE: 'gf_rh_thruster03',
 
-        MainMiscEquip.LI_MAIN: 'gf_li_thruster01',
-        MainMiscEquip.LI_CIV: 'gf_li_thruster01',
-        MainMiscEquip.LI_PIRATE: 'gf_li_thruster01',
+        MainMiscEquip.LI_MAIN: 'gf_rh_thruster04',
+        MainMiscEquip.LI_CIV: 'gf_rh_thruster05',
+        MainMiscEquip.LI_PIRATE: 'gf_rh_thruster06',
 
-        MainMiscEquip.BR_MAIN: 'gf_br_thruster01',
-        MainMiscEquip.BR_CIV: 'gf_br_thruster01',
-        MainMiscEquip.BR_PIRATE: 'gf_br_thruster01',
+        MainMiscEquip.BR_MAIN: 'gf_rh_thruster07',
+        MainMiscEquip.BR_CIV: 'gf_rh_thruster09',
+        MainMiscEquip.BR_PIRATE: 'gf_rh_thruster08',
 
-        MainMiscEquip.KU_MAIN: 'gf_ku_thruster01',
-        MainMiscEquip.KU_CIV: 'gf_ku_thruster01',
-        MainMiscEquip.KU_PIRATE: 'gf_ku_thruster01',
+        MainMiscEquip.KU_MAIN: 'gf_rh_thruster10',
+        MainMiscEquip.KU_CIV: 'gf_rh_thruster12',
+        MainMiscEquip.KU_PIRATE: 'gf_rh_thruster11',
         
-        MainMiscEquip.CO_ORDER: 'gf_co_thruster01',
-        MainMiscEquip.CO_CORSAIR: 'gf_co_thruster01',
-        MainMiscEquip.CO_OUTCAST: 'gf_co_thruster01',
+        MainMiscEquip.CO_ORDER: 'gf_rh_thruster13',
+        MainMiscEquip.CO_CORSAIR: 'gf_rh_thruster14',
+        MainMiscEquip.CO_OUTCAST: 'gf_rh_thruster15',
     }
 
     LINEAR_DRAG = 600

@@ -107,8 +107,7 @@ radius = 0
 '''
 
     def get_msn_solars(self):
-        ast_count = len(self.POSITIONS)
-        valid_index = random.randint(1, ast_count)
+        valid_indexes = [3, 8, 14]
         space_content = []
 
         for index, pos in enumerate(self.POSITIONS, start=1):
@@ -122,8 +121,8 @@ radius = 0
                     nickname=ALT_AST_REWARD_NAME_FORMAT.format(index=index),
                     pos='{0}, {1}, {2}'.format(*pos),
                     orient='{0:.2f}, {1:.2f}, {2:.2f}, {3:.2f}'.format(*euler_to_quat(*rotate)),
-                    archetype=LOW_REAL_AST_ARCHETYPE_ULTRA if index == valid_index else LOW_REAL_AST_ARCHETYPE,
-                    loadout=VALID_AST_LOADOUT if index == valid_index else INVALID_AST_LOADOUT,
+                    archetype=LOW_REAL_AST_ARCHETYPE_ULTRA if index in valid_indexes else LOW_REAL_AST_ARCHETYPE,
+                    loadout=VALID_AST_LOADOUT if index in valid_indexes else INVALID_AST_LOADOUT,
                 )
             )
         return SINGLE_DIVIDER.join(space_content)

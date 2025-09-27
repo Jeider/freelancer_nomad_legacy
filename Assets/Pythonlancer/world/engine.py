@@ -165,18 +165,33 @@ character_loop_sound = engine_rh_freighter_loop
 rumble_sound = rumble_freighter
 engine_kill_sound = engine_rh_freighter_kill'''
 
-
     LI_ENGINE_CORE = '''
 DA_archetype = Equipment\\models\\hardware\\li_free_flow_ion_drive.3db
-material_library = Equipment\\models\\hardware.mat
-flame_effect = gf_li_smallengine02_fire
-trail_effect = gf_li_smallengine02_trail
-trail_effect_player = gf_li_smallengine02_trail'''
+material_library = Equipment\\models\\hardware.mat'''
 
     LI_MAIN_ENGINE_GENERICS = '''
 cruise_start_sound = engine_li_cruise_start
 cruise_loop_sound = engine_li_cruise_loop
-cruise_stop_sound = engine_li_cruise_stop'''
+cruise_stop_sound = engine_li_cruise_stop
+flame_effect = gf_li_smallengine02_fire
+trail_effect = gf_li_smallengine02_trail
+trail_effect_player = gf_li_smallengine02_trail'''
+
+    LI_CIV_ENGINE_GENERICS = '''
+cruise_start_sound = engine_ci_cruise_start
+cruise_loop_sound = engine_ci_cruise_loop
+cruise_stop_sound = engine_ci_cruise_stop
+flame_effect = gf_ci_smallengine04_fire
+trail_effect = gf_ci_smallengine04_trail
+trail_effect_player = gf_ci_smallengine04_trail'''
+
+    LI_PIRATE_ENGINE_GENERICS = '''
+cruise_start_sound = engine_bw_cruise_start
+cruise_loop_sound = engine_bw_cruise_loop
+cruise_stop_sound = engine_bw_cruise_stop
+flame_effect = gf_ci_smallengine02_fire
+trail_effect = gf_ci_smallengine02_trail
+trail_effect_player = gf_ci_smallengine02_trail'''
 
     LI_MAIN_ENGINE_FIGHTER = '''
 character_start_sound = engine_li_fighter_start
@@ -196,18 +211,33 @@ character_loop_sound = engine_li_freighter_loop
 rumble_sound = rumble_freighter
 engine_kill_sound = engine_li_freighter_kill'''
 
-
     BR_ENGINE_CORE = '''
 DA_archetype = Equipment\\models\\hardware\\br_xenon_ion_drive.3db
-material_library = Equipment\\models\\hardware.mat
-flame_effect = gf_br_smallengine02_fire
-trail_effect = gf_br_smallengine02_trail
-trail_effect_player = gf_br_smallengine02_trail'''
+material_library = Equipment\\models\\hardware.mat'''
 
     BR_MAIN_ENGINE_GENERICS = '''
 cruise_start_sound = engine_br_cruise_start
 cruise_loop_sound = engine_br_cruise_loop
-cruise_stop_sound = engine_br_cruise_stop'''
+cruise_stop_sound = engine_br_cruise_stop
+flame_effect = gf_br_smallengine02_fire
+trail_effect = gf_br_smallengine02_trail
+trail_effect_player = gf_br_smallengine02_trail'''
+
+    BR_CIV_ENGINE_GENERICS = '''
+cruise_start_sound = engine_ci_cruise_start
+cruise_loop_sound = engine_ci_cruise_loop
+cruise_stop_sound = engine_ci_cruise_stop
+flame_effect = gf_br_smallengine04_fire
+trail_effect = gf_br_smallengine04_trail
+trail_effect_player = gf_br_smallengine04_trail'''
+
+    BR_PIRATE_ENGINE_GENERICS = '''
+cruise_start_sound = engine_bw_cruise_start
+cruise_loop_sound = engine_bw_cruise_loop
+cruise_stop_sound = engine_bw_cruise_stop
+flame_effect = gf_br_smallengine05_fire
+trail_effect = gf_br_smallengine05_trail
+trail_effect_player = gf_br_smallengine05_trail'''
 
     BR_MAIN_ENGINE_FIGHTER = '''
 character_start_sound = engine_br_fighter_start
@@ -230,15 +260,31 @@ engine_kill_sound = engine_br_freighter_kill'''
 
     KU_ENGINE_CORE = '''
 DA_archetype = Equipment\\models\\hardware\\ku_cylindrical_nuclear_drive.3db
-material_library = Equipment\\models\\hardware.mat
-flame_effect = gf_ku_smallengine02_fire
-trail_effect = gf_ku_smallengine02_trail
-trail_effect_player = gf_ku_smallengine02_trail'''
+material_library = Equipment\\models\\hardware.mat'''
 
     KU_MAIN_ENGINE_GENERICS = '''
 cruise_start_sound = engine_ku_cruise_start
 cruise_loop_sound = engine_ku_cruise_loop
-cruise_stop_sound = engine_ku_cruise_stop'''
+cruise_stop_sound = engine_ku_cruise_stop
+flame_effect = gf_ku_smallengine02_fire
+trail_effect = gf_ku_smallengine02_trail
+trail_effect_player = gf_ku_smallengine02_trail'''
+
+    KU_CIV_ENGINE_GENERICS = '''
+cruise_start_sound = engine_ci_cruise_start
+cruise_loop_sound = engine_ci_cruise_loop
+cruise_stop_sound = engine_ci_cruise_stop
+flame_effect = gf_ku_smallengine04_fire
+trail_effect = gf_ku_smallengine04_trail
+trail_effect_player = gf_ku_smallengine04_trail'''
+
+    KU_PIRATE_ENGINE_GENERICS = '''
+cruise_start_sound = engine_bw_cruise_start
+cruise_loop_sound = engine_bw_cruise_loop
+cruise_stop_sound = engine_bw_cruise_stop
+flame_effect = gf_ku_smallengine05_fire
+trail_effect = gf_ku_smallengine05_trail
+trail_effect_player = gf_ku_smallengine05_trail'''
 
     KU_MAIN_ENGINE_FIGHTER = '''
 character_start_sound = engine_ku_fighter_start
@@ -309,15 +355,31 @@ engine_kill_sound = engine_bw_freighter_kill'''
 
     CO_ENGINE_CORE = '''
 DA_archetype = Equipment\\models\\hardware\\co_compact_toroidal_nuclear_drive.3db
-material_library = Equipment\\models\\hardware.mat
+material_library = Equipment\\models\\hardware.mat'''
+
+    BW_ORDER_ENGINE_GENERICS = '''
+cruise_start_sound = engine_bw_cruise_start
+cruise_loop_sound = engine_bw_cruise_loop
+cruise_stop_sound = engine_bw_cruise_stop
 flame_effect = gf_co_smallengine02_fire
 trail_effect = gf_co_smallengine02_trail
 trail_effect_player = gf_co_smallengine02_trail'''
 
-    CORSAIR_ENGINE_GENERICS = '''
+    BW_CORSAIR_ENGINE_GENERICS = '''
 cruise_start_sound = engine_bw_cruise_start
 cruise_loop_sound = engine_bw_cruise_loop
-cruise_stop_sound = engine_bw_cruise_stop'''
+cruise_stop_sound = engine_bw_cruise_stop
+flame_effect = gf_co_smallengine04_fire
+trail_effect = gf_co_smallengine04_trail
+trail_effect_player = gf_co_smallengine04_trail'''
+
+    BW_OUTCAST_ENGINE_GENERICS = '''
+cruise_start_sound = engine_ci_cruise_start
+cruise_loop_sound = engine_ci_cruise_loop
+cruise_stop_sound = engine_ci_cruise_stop
+flame_effect = gf_ci_smallengine03_fire
+trail_effect = gf_ci_smallengine03_trail
+trail_effect_player = gf_ci_smallengine03_trail'''
 
     CORSAIR_ENGINE_FIGHTER = '''
 character_start_sound = engine_pi_fighter_start
@@ -336,12 +398,6 @@ character_start_sound = engine_pi_freighter_start
 character_loop_sound = engine_pi_freighter_loop
 rumble_sound = rumble_pi_freighter
 engine_kill_sound = engine_pi_freighter_kill'''
-
-
-    OUTCAST_ENGINE_GENERICS = '''
-cruise_start_sound = engine_bw_cruise_start
-cruise_loop_sound = engine_bw_cruise_loop
-cruise_stop_sound = engine_bw_cruise_stop'''
 
     OUTCAST_ENGINE_FIGHTER = '''
 character_start_sound = engine_oe_h_fighter_start
@@ -380,20 +436,20 @@ engine_kill_sound = engine_pi_freighter_kill'''
         MainMiscEquip.RH_PIRATE: RH_PIRATE_ENGINE_GENERICS,
 
         MainMiscEquip.LI_MAIN: LI_MAIN_ENGINE_GENERICS,
-        MainMiscEquip.LI_CIV: CIV_ENGINE_GENERICS,
-        MainMiscEquip.LI_PIRATE: PIRATE_ENGINE_GENERICS,
+        MainMiscEquip.LI_CIV: LI_CIV_ENGINE_GENERICS,
+        MainMiscEquip.LI_PIRATE: LI_PIRATE_ENGINE_GENERICS,
 
         MainMiscEquip.BR_MAIN: BR_MAIN_ENGINE_GENERICS,
-        MainMiscEquip.BR_CIV: CIV_ENGINE_GENERICS,
-        MainMiscEquip.BR_PIRATE: PIRATE_ENGINE_GENERICS,
+        MainMiscEquip.BR_CIV: BR_CIV_ENGINE_GENERICS,
+        MainMiscEquip.BR_PIRATE: BR_PIRATE_ENGINE_GENERICS,
 
         MainMiscEquip.KU_MAIN: KU_MAIN_ENGINE_GENERICS,
-        MainMiscEquip.KU_CIV: CIV_ENGINE_GENERICS,
-        MainMiscEquip.KU_PIRATE: PIRATE_ENGINE_GENERICS,
+        MainMiscEquip.KU_CIV: KU_CIV_ENGINE_GENERICS,
+        MainMiscEquip.KU_PIRATE: KU_PIRATE_ENGINE_GENERICS,
 
-        MainMiscEquip.CO_ORDER: OUTCAST_ENGINE_GENERICS,
-        MainMiscEquip.CO_CORSAIR: CORSAIR_ENGINE_GENERICS,
-        MainMiscEquip.CO_OUTCAST: OUTCAST_ENGINE_GENERICS,
+        MainMiscEquip.CO_ORDER: BW_ORDER_ENGINE_GENERICS,
+        MainMiscEquip.CO_CORSAIR: BW_CORSAIR_ENGINE_GENERICS,
+        MainMiscEquip.CO_OUTCAST: BW_OUTCAST_ENGINE_GENERICS,
     }
 
     FIGHTER_ENGINE_PER_TYPE = {
@@ -415,7 +471,7 @@ engine_kill_sound = engine_pi_freighter_kill'''
 
         MainMiscEquip.CO_ORDER: OUTCAST_ENGINE_FIGHTER,
         MainMiscEquip.CO_CORSAIR: CORSAIR_ENGINE_FIGHTER,
-        MainMiscEquip.CO_OUTCAST: OUTCAST_ENGINE_FIGHTER,
+        MainMiscEquip.CO_OUTCAST: CORSAIR_ENGINE_FIGHTER,
     }
 
     ELITE_ENGINE_PER_TYPE = {

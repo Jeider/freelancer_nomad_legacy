@@ -162,6 +162,7 @@ class SystemObject:
             alias=cls.get_alias(),
             index=cls.INDEX,
         )
+
     def get_position(self):
         return self.system.template.get_item_pos(self.get_full_alias())
 

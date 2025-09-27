@@ -309,14 +309,14 @@ distance = {tlr_distance}
         self.loadouts += static.get_loadouts()
 
         if len(static.ASTEROID_ZONES) > 0:
-            ast_exclusion_zone_name = static.get_ast_exclusion_zone_name()
             for ast_zone in static.ASTEROID_ZONES:
-                self.asteroid_definitions_db[ast_zone.get_full_alias()].add_exclusion(ast_exclusion_zone_name)
+                ast_exclusion_zone_name = static.get_ast_exclusion_zone_name(ast_zone)
+                self.asteroid_definitions_db[ast_zone.get_zone_alias()].add_exclusion(ast_exclusion_zone_name)
 
         if len(static.NEBULA_ZONES) > 0:
             nebula_exclusion_zone_name = static.get_nebula_exclusion_zone_name()
             for neb_zone in static.NEBULA_ZONES:
-                self.templated_nebulas_db[neb_zone.get_full_alias()].add_exclusion(nebula_exclusion_zone_name, static.EXCLUSION_PARAMS)
+                self.templated_nebulas_db[neb_zone.get_zone_alias()].add_exclusion(nebula_exclusion_zone_name, static.EXCLUSION_PARAMS)
 
         self.dynamic_zones.extend(static.get_dynamic_zones())
 
@@ -342,12 +342,12 @@ distance = {tlr_distance}
             if item.ASTEROID_DEFINITION_CLASS is not None:
                 definition = item.ASTEROID_DEFINITION_CLASS(self, zone)
                 self.asteroid_definitions.append(definition)
-                self.asteroid_definitions_db[zone.get_full_alias()] = definition
+                self.asteroid_definitions_db[zone.get_zone_alias()] = definition
 
         elif issubclass(item, zones.NebulaZone):
             self.nebula_zones.append(zone)
             self.templated_nebulas.append(zone)
-            self.templated_nebulas_db[zone.get_full_alias()] = zone
+            self.templated_nebulas_db[zone.get_zone_alias()] = zone
 
         self.static_zones.append(zone)
 

@@ -103,7 +103,7 @@ archetype = space_police02
 nickname = sig17_03_Ast
 pos = -50, 0, -50
 rotate = -90, 0, 90
-archetype = miningbase_nomad
+archetype = miningbase_nomad_sattelite
 parent = sig17_03
 
 [Object]
@@ -626,14 +626,14 @@ archetype = space_police01_front_dock
 nickname = rh_ber_05_asteroid01
 pos = 0, 190, -50
 rotate = 0, 0, 0
-archetype = miningbase_mineableA
+archetype = miningbase_mineableA_sattelite
 parent = rh_ber_05
 
 [Object]
 nickname = rh_ber_05_asteroid02
 pos = 0, 0, -57
 rotate = 0, 0, 180
-archetype = miningbase_mineableB
+archetype = miningbase_mineableB_sattelite
 parent = rh_ber_05
 
 [Object]

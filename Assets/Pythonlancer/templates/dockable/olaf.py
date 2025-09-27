@@ -781,6 +781,14 @@ loadout = hidden_head_panels01
 parent = tau29_03
 
 [Object]
+nickname = olaf_panel_connect08
+pos = -0.1, -450.015, 0
+rotate = 0, 337.5, 0
+archetype = hidden_connect
+loadout = hidden_head_panels01
+parent = tau29_03
+
+[Object]
 nickname = tau29_03_connect01
 pos = 0, -260, 0
 rotate = 90, 0, 0

@@ -4,7 +4,8 @@ import os
 import re
 
 
-TEMPLATES_FOLDER = 'SYSTEMS_TEMPLATES'
+SYSTEM_TEMPLATES_FOLDER = 'SYSTEMS_TEMPLATES'
+OBJECT_TEMPLATES_FOLDER = 'OBJECT_TEMPLATES'
 
 UTF_XML_DIR = 'UTF_XML'
 INPUT_DIR = 'INPUT'
@@ -114,7 +115,7 @@ class SystemTemplateLoader(object):
     @staticmethod
     def get_system_templates_path():
         current_path = pathlib.Path().resolve()
-        return current_path.parent.parent / 'DATA' / 'UNIVERSE' / 'GENERATION_DATA' / TEMPLATES_FOLDER
+        return current_path.parent.parent / 'DATA' / 'UNIVERSE' / 'GENERATION_DATA' / SYSTEM_TEMPLATES_FOLDER
 
     @staticmethod
     def get_template_text_content(template_name, source_path=None):
@@ -167,3 +168,27 @@ class SystemTemplateLoader(object):
         parsed_content = SystemTemplateLoader.parse_template(template_text_content)
         template = SystemTemplate(template_name, parsed_content)
         return template
+
+
+class ObjectTemplateLoader(object):
+
+    @staticmethod
+    def get_system_templates_path():
+        current_path = pathlib.Path().resolve()
+        return current_path.parent.parent / 'DATA' / 'UNIVERSE' / 'GENERATION_DATA' / OBJECT_TEMPLATES_FOLDER
+
+    @classmethod
+    def get_template_text_content(cls, template_name, source_path=None):
+        templates_path = (
+            source_path
+            if source_path
+            else cls.get_system_templates_path()
+        )
+        template_file = open(templates_path / TEMPLATE_FILE_FORMAT.format(template_name))
+        file_content = template_file.read()
+        template_file.close()
+        return file_content
+
+    @classmethod
+    def get_template(cls, template_name, source_path=None):
+        return cls.get_template_text_content(template_name, source_path)

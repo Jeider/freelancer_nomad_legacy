@@ -27,16 +27,20 @@ class RawZone(SystemObject):
 class Zone(SystemObject):
     ABSTRACT = True
 
+    ZONE_SCALE = 1
     ZONE_NICKNAME_TEMPLATE = 'Zone_{base_alias}'
     ZONE_TEMPLATE = '''[Zone]
 {params}'''
 
+    def get_zone_size(self):
+        return [i * self.ZONE_SCALE for i in self.get_size()]
+
     def get_zone_main_params(self):
         shape = self.get_shape().upper()
         if shape == SHAPE_SPHERE:
-            size = '{}'.format(self.get_size()[0])
+            size = '{}'.format(self.get_zone_size()[0])
         else:
-            size = '{}, {}, {}'.format(*self.get_size())
+            size = '{}, {}, {}'.format(*self.get_zone_size())
 
         return {
             'nickname': self.get_zone_nickame(),
@@ -45,6 +49,10 @@ class Zone(SystemObject):
             'shape': shape,
             'size': size,
         }
+
+    @classmethod
+    def get_zone_alias(cls):
+        return cls.get_full_alias()
 
     def get_zone_merged_params(self):
         return ''
@@ -162,7 +170,7 @@ class PropertyZone(Zone):
     def get_zone_base_alias(self):
         return '{system_name}_{alias}_{zone_field_type}'.format(
             system_name=self.system.NAME,
-            alias=self.get_full_alias(),
+            alias=self.get_zone_alias(),
             zone_field_type=self.ZONE_FIELD_TYPE,
         )
 
@@ -220,7 +228,26 @@ zone = {zone}'''
         return self.get_zone_base_alias()
 
 
+class ZoneClone:
+    CLONE_ALIAS = None
+
+    @classmethod
+    def get_zone_alias(cls):
+        if not cls.CLONE_ALIAS:
+            raise Exception(f'Object {cls} have no CLONE_ALIAS')
+        return f'{cls.CLONE_ALIAS}{cls.INDEX}'
+
+
 class AsteroidZone(BaseAsteroidZone):
+    ALIAS = 'ast'
+    ZONE_FIELD_TYPE = 'asteroids'
+
+    ROOT_FOLDER = 'ASTEROIDS_MOD'
+
+    ASTEROID_DEFINITION_CLASS = None
+
+
+class AsteroidZoneClone(ZoneClone, BaseAsteroidZone):
     ALIAS = 'ast'
     ZONE_FIELD_TYPE = 'asteroids'
 

@@ -41,13 +41,15 @@ from tools.audio_pilot import TempPilot, VanillaPilot
 
 from story import actors
 
-from tools.system_template import SystemTemplateLoader
+from tools.system_template import SystemTemplateLoader, ObjectTemplateLoader
 
 from templates.solar import hacker_panel
+from templates.space_object_template import SpaceObjectTemplate
 from templates.dockable import terraforming
 from templates.dockable import corsair_dreadnought
 from templates.dockable import upsilon_gasinside
-from templates.dockable import tunnel
+from templates.dockable import astbase
+from templates.dockable import nomad_babylon
 from templates.misc import rmbase
 from templates.misc import trading
 from templates.dockable import nomad_asf_hq
@@ -61,7 +63,7 @@ def draw_base():
     new_name = None
     move_to = None
     rotate_core = 0
-    workspace = '7'
+    workspace = '11'
 
     # base_class = m13.RockfordGenerator
     # new_name = 'or_hq_vienna_entry'
@@ -75,7 +77,7 @@ def draw_base():
     # new_name = 'or_hq_shipyard_01'
     # move_to = (-20000, 0, 0)
 
-    base_class = ast_om15_xxxlarge.AsteroidTwo
+    base_class = nomad_babylon.Babylon
     # new_name = 'communicator'
     # move_to = (-9500, 0, -10000)
 
@@ -84,6 +86,12 @@ def draw_base():
 
     the_base = base_class()
     content = the_base.get_instance(new_space_object_name=new_name, move_to=move_to, rotate_core=rotate_core)
+    # the_base = SpaceObjectTemplate(
+    #     template=ObjectTemplateLoader.get_template('om13ast'),
+    #     space_object_name='om13ast',
+    # )
+    # content = the_base.get_instance(move_to=(2000, 0, 8000), rotate_core=0)
+
     data_folder.DataFolder.sync_to_test_workspace(content, workspace_index=workspace)
 
 
@@ -427,7 +435,7 @@ def mass_decode():
     utf_xml.UTF_XML.mass_decode_utf()
 
 
-def mass_upgrade():
+def mass_upgrade1():
     subfolder_filename = 'lod0-112.vms.xml'
     old_outside_material = 'om15_xxlarge'
     old_inside_material = 'om15_inside'
@@ -494,6 +502,95 @@ def mass_upgrade():
         main_file_upgrades,
         sur_filename_upgrades,
     )
+
+
+def mass_upgrade_rock():
+    subfolder_filename = 'lod0-212.vms.xml'
+
+    old_material1 = crc32_hex_from_str('detailmap_planet_frag')
+    old_material2 = crc32_hex_from_str('detailmap_ast_rock02')
+
+    original_asteroid_name = 'rock'
+    new_asteroid_name = 'li_cal'
+
+    new_material1 = crc32_hex_from_str(f'detailmap_{new_asteroid_name}_side')
+
+    subfile_changed_strings = [
+        [f'0x{old_material1[2:].upper()}', new_material1],
+        [f'0x{old_material2[2:].upper()}', new_material1],
+        [f'0x0{old_material1[2:].upper()}', new_material1],
+        [f'0x0{old_material2[2:].upper()}', new_material1],
+    ]
+
+    vmeshs = ['lod0-112', 'lod0-212', 'lod1-112', 'lod1-212']
+
+    main_file_upgrades = [
+        [
+            f'UTFXML filename="{original_asteroid_name}',
+            f'UTFXML filename="{new_asteroid_name}'
+        ],
+        [
+            '.3db',
+            f'_{new_asteroid_name}.3db'
+        ]
+    ]
+
+    for vmesh in vmeshs:
+        main_file_upgrades.extend([
+            [
+                f'.{vmesh}.vms include="',
+                f'_{new_asteroid_name}_edition.{vmesh}.vms include="'
+            ],
+            [
+                f'.{vmesh}.vms,',
+                f'_{new_asteroid_name}_edition.{vmesh}.vms,'
+            ],
+        ])
+        subfile_changed_strings.append(
+            [
+                f'.{vmesh}.vms,',
+                f'_{new_asteroid_name}_edition.{vmesh}.vms,'
+            ]
+        )
+
+    sur_filename_upgrades = [
+        [
+            original_asteroid_name,
+            new_asteroid_name
+        ]
+    ]
+
+    utf_xml.XML_UTF.mass_encode_updated_xml(
+        subfolder_filename,
+        subfile_changed_strings,
+        main_file_upgrades,
+        sur_filename_upgrades,
+    )
+
+
+def mass_upgrade():
+
+    start = 1
+    max = 20
+
+    for i in range(start, max+1):
+        new_i = i + 1
+
+        root1 = 'rh_thruster'
+
+        main_file_upgrades = [
+            [
+                f'{root1}{i:02d}',
+                f'{root1}{new_i:02d}'
+            ],
+        ]
+
+        utf_xml.XML_UTF.mass_encode_updated_xml(
+            '',
+            [],
+            main_file_upgrades,
+            [],
+        )
 
 
 def dbg():
