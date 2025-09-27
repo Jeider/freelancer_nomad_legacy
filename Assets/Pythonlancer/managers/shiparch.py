@@ -1,6 +1,5 @@
 from world.ship import Ship
 from world.capital import Capital
-from templates.hardcoded_inis.ships import ShiparchTemplate
 from text.dividers import DIVIDER
 
 from tools.data_folder import DataFolder

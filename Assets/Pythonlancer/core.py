@@ -8,6 +8,7 @@ from managers.npc_armor import NPCArmorManager
 from managers.universe import UniverseManager
 from managers.story import StoryManager
 from managers.store import StoreManager
+from managers.fx import FxManager
 
 from templates.jinja_manager import JinjaTemplateManager
 
@@ -34,6 +35,7 @@ class LancerCore(object):
         self.store = StoreManager(self)
         self.universe = UniverseManager(self)
         self.story = StoryManager(self) if story else None
+        self.fx = FxManager(self)
 
         self.chars.post_load()
 

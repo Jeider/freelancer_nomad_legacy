@@ -504,7 +504,7 @@ def mass_upgrade1():
     )
 
 
-def mass_upgrade():
+def mass_upgrade_rock():
     subfolder_filename = 'lod0-212.vms.xml'
 
     old_material1 = crc32_hex_from_str('detailmap_planet_frag')
@@ -567,6 +567,30 @@ def mass_upgrade():
         sur_filename_upgrades,
     )
 
+
+def mass_upgrade():
+
+    start = 1
+    max = 20
+
+    for i in range(start, max+1):
+        new_i = i + 1
+
+        root1 = 'rh_thruster'
+
+        main_file_upgrades = [
+            [
+                f'{root1}{i:02d}',
+                f'{root1}{new_i:02d}'
+            ],
+        ]
+
+        utf_xml.XML_UTF.mass_encode_updated_xml(
+            '',
+            [],
+            main_file_upgrades,
+            [],
+        )
 
 
 def dbg():

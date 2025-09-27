@@ -70,13 +70,26 @@ crc_table = [
 
 # https://github.com/theonlypwner/crc32/blob/main/crc32.py
 # NOT SIGNED CRC ONLY!!! KEEP LOWER CASE!
-def crc32(data, accum=0):
+def crc32_init(data, accum=0):
     accum = ~accum
     for b in data:
         accum = crc_table[(accum ^ b) & 0xFF] ^ ((accum >> 8) & 0x00FFFFFF)
     accum = ~accum
-    return accum & 0xFFFFFFFF
+
+    return accum
+
+
+def crc32(data, accum=0):
+    return crc32_init(data, accum) & 0xFFFFFFFF
+
+
+def crc32_minus_from_str(data):
+    return crc32_init(bytes(data, 'utf-8'))
+
+
+def crc32_int_from_str(data):
+    return crc32(bytes(data, 'utf-8'))
 
 
 def crc32_hex_from_str(data):
-    return hex(crc32(bytes(data, 'utf-8')))
+    return hex(crc32_int_from_str(data))

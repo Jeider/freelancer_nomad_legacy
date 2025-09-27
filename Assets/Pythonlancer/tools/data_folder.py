@@ -65,6 +65,16 @@ class DataFolder(object):
         loadouts_file.write_text(content, encoding='utf-8')
 
     @classmethod
+    def sync_effects(cls, content):
+        equip_file = cls.get_fx() / 'effects_gen.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    @classmethod
+    def sync_vis_effects(cls, content):
+        equip_file = cls.get_fx() / 'GENERATED' / 'gen_ale.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    @classmethod
     def sync_solar_gen_loadouts(cls, content):
         loadouts_file = cls.get_solar() / LOADOUTS_GEN
         loadouts_file.write_text(content, encoding='utf-8')
