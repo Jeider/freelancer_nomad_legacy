@@ -76,6 +76,40 @@ RU_SUPER_FEATURES_PER_FACTION = {
     Equipment.FACTION_CO: 'Легендарный бонус фракции: 25% вероятность нанесения 100% критических повреждений',
 }
 
+LAUNCHER_ROOT_PER_FACTION = {
+    Equipment.FACTION_RH: 10,
+    Equipment.FACTION_LI: 20,
+    Equipment.FACTION_BR: 30,
+    Equipment.FACTION_KU: 40,
+    Equipment.FACTION_CO: 50,
+}
+
+LAUNCHER_FX_PER_CLASS = {
+    1: 1,
+    2: 1,
+    3: 1,
+    4: 1,
+    5: 2,
+    6: 2,
+    7: 2,
+    8: 2,
+    9: 3,
+    10: 3,
+}
+
+LAUNCHER_FX_PER_CLASS_ALT = {
+    1: 5,
+    2: 5,
+    3: 5,
+    4: 5,
+    5: 6,
+    6: 6,
+    7: 6,
+    8: 6,
+    9: 7,
+    10: 7,
+}
+
 
 class Launcher(Equipment, MainEquipPrice, LauncherGood):
     RU_KIND = None
@@ -89,6 +123,8 @@ class Launcher(Equipment, MainEquipPrice, LauncherGood):
     MAX_PRICE = None
     MAX_AMMO_PRICE = None
     AMMO_LIMIT = 50
+
+    USE_INTRO_NAME = True
 
     EXPLOSION_RADIUS = None
     MAX_HULL_DAMAGE = None
@@ -207,6 +243,9 @@ class Launcher(Equipment, MainEquipPrice, LauncherGood):
             )
         )
 
+    def get_fx_index(self):
+        return LAUNCHER_ROOT_PER_FACTION[self.faction] + LAUNCHER_FX_PER_CLASS[self.equipment_class]
+
     def get_mark_name(self):
         return self.CLASSES[self.equipment_class]
 
@@ -241,11 +280,17 @@ class Launcher(Equipment, MainEquipPrice, LauncherGood):
         return self.RU_NAME_PER_FACTION[self.faction]
 
     def get_ru_name(self):
-        return '{ru_kind} {base_name} {mark}'.format(
-            ru_kind=self.RU_KIND,
-            base_name=self.get_ru_base_name(),
-            mark=self.get_mark_name(),
-        )
+        if self.USE_INTRO_NAME:
+            return '{ru_kind} {base_name} {mark}'.format(
+                ru_kind=self.RU_KIND,
+                base_name=self.get_ru_base_name(),
+                mark=self.get_mark_name(),
+            )
+        else:
+            return '{base_name} {mark}'.format(
+                base_name=self.get_ru_base_name(),
+                mark=self.get_mark_name(),
+            )
 
     def get_ru_ammo_name(self):
         return f'Снаряд: {self.get_ru_base_name()} {self.get_mark_name()}'
@@ -545,14 +590,17 @@ class MainMissile(Missile):
         Equipment.FACTION_LI: 'Основная ракетница Либерти',
         Equipment.FACTION_BR: 'Основная бретонская ракетница',
         Equipment.FACTION_KU: 'Основная ракетница Кусари',
-        Equipment.FACTION_CO: 'Основная ракетница внешних миров',
+        Equipment.FACTION_CO: 'Основная ракетница пограничья',
     }
 
+    def get_fx_index(self):
+        return LAUNCHER_ROOT_PER_FACTION[self.faction] + LAUNCHER_FX_PER_CLASS_ALT[self.equipment_class]
+
     def get_explosion_fx(self):
-        return 'li_missile02_impact'
+        return f'li_missile{self.get_fx_index()}_impact'
 
     def get_const_fx(self):
-        return 'li_missile02_drive'
+        return f'li_missile{self.get_fx_index()}_drive'
 
 
 class FastMissile(Missile):
@@ -599,10 +647,10 @@ class FastMissile(Missile):
     }
 
     def get_explosion_fx(self):
-        return 'li_missile01_impact'
+        return f'li_missile{self.get_fx_index()}_impact'
 
     def get_const_fx(self):
-        return 'li_missile01_drive'
+        return f'li_missile{self.get_fx_index()}_drive'
 
 
 class MainSuperMissile(MainMissile):
@@ -690,10 +738,10 @@ class ShieldMissile(Missile):
     }
 
     def get_explosion_fx(self):
-        return 'rh_empmissile_impact'
+        return f'li_empmissile{self.get_fx_index()}_impact'
 
     def get_const_fx(self):
-        return 'rh_empmissile_drive'
+        return f'li_empmissile{self.get_fx_index()}_drive'
 
 
 class CruiseDisruptor(Missile):
@@ -775,10 +823,10 @@ class CruiseDisruptor(Missile):
         return self.SEEKER_RANGE_PER_MARK[self.mark-1]
 
     def get_explosion_fx(self):
-        return 'li_cruisedis01_impact'
+        return f'li_cruisedis{self.get_fx_index():02d}_impact'
 
     def get_const_fx(self):
-        return 'li_cruisedis01_drive'
+        return f'li_cruisedis{self.get_fx_index():02d}_drive'
 
     def get_hp_gun_type(self):
         return 'hp_torpedo_special_2'
@@ -826,17 +874,17 @@ class Torpedo(Missile):
 
     RU_NAME_DESC_PER_FACTION = {
         Equipment.FACTION_RH: 'Рейнландская торпедная установка',
-        Equipment.FACTION_LI: 'торпедная установка ракетница Либерти',
+        Equipment.FACTION_LI: 'торпедная установка Либерти',
         Equipment.FACTION_BR: 'Бретонская торпедная установка',
         Equipment.FACTION_KU: 'Торпедная установка Кусари',
         Equipment.FACTION_CO: 'Торпедная установка внешних миров',
     }
 
     def get_explosion_fx(self):
-        return 'li_torpedo01_impact'
+        return f'li_torpedo{self.get_fx_index():02d}_impact'
 
     def get_const_fx(self):
-        return 'li_torpedo01_drive'
+        return f'li_torpedo{self.get_fx_index():02d}_drive'
 
     def get_hp_gun_type(self):
         return 'hp_torpedo_special_1'

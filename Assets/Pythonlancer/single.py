@@ -570,17 +570,61 @@ def mass_upgrade_rock():
 
 def mass_upgrade():
 
-    start = 1
+    start = None
     max = 20
 
-    for i in range(start, max+1):
-        new_i = i + 1
+    ids_map = [
+        11,
+        12,
+        13,
 
-        root1 = 'rh_thruster'
+        21,
+        22,
+        23,
+
+        31,
+        32,
+        33,
+
+        41,
+        42,
+        43,
+
+        51,
+        52,
+        53,
+
+        # 15,
+        # 16,
+        # 17,
+        #
+        # 25,
+        # 26,
+        # 27,
+        #
+        # 35,
+        # 36,
+        # 37,
+        #
+        # 45,
+        # 46,
+        # 47,
+        #
+        # 55,
+        # 56,
+        # 57,
+    ]
+
+    i = start
+
+    for item in ids_map:
+        new_i = item
+
+        root1 = 'empmissile'
 
         main_file_upgrades = [
             [
-                f'{root1}{i:02d}',
+                f'{root1}{i:02d}' if i else root1,
                 f'{root1}{new_i:02d}'
             ],
         ]
@@ -591,6 +635,8 @@ def mass_upgrade():
             main_file_upgrades,
             [],
         )
+
+        i = new_i
 
 
 def dbg():
