@@ -2,10 +2,31 @@ from managers.script import ScriptManager
 
 from story.ingame.gameplay import *  # initialize mission files
 from story.ingame.ingame_mission import IngameMission
+from story.ingame.history import get_history_items_dict, HistoryItem
 
 from tools.data_folder import DataFolder
 
 from text.dividers import DIVIDER, SINGLE_DIVIDER
+
+
+class HistoryManager:
+
+    def __init__(self, ids):
+        self.ids = ids
+        self.histories: dict[str, HistoryItem] = get_history_items_dict(ids)
+        self.used = []
+        self.left_keys: list = list(self.histories.keys())
+
+    def item(self, index):
+        if index in self.used:
+            raise Exception(f'index {index} already used')
+        self.left_keys.remove(index)
+        self.used.append(index)
+        return self.histories[index].show()
+
+    def validate_after(self):
+        if len(self.left_keys) > 0:
+            raise Exception(f'Some keys are left ({",".join(self.left_keys)})')
 
 
 class StoryManager:
@@ -18,6 +39,7 @@ class StoryManager:
         universe_root = self.universe.get_universe_root()
         self.ids = self.core.ids.story
         self.ids_save = self.core.ids.story_save
+        self.history_manager = HistoryManager(ids=self.core.ids.history)
 
         self.missions = []
 
@@ -30,7 +52,8 @@ class StoryManager:
         for mission_class in IngameMission.subclasses:
             print(mission_class)
             mission = mission_class(ids=self.ids, ids_save=self.ids_save,
-                                    full_script=self.script, universe_root=universe_root)
+                                    full_script=self.script, universe_root=universe_root,
+                                    history_manager=self.history_manager)
             self.missions.append(mission)
             content = self.core.tpl_manager.get_result(mission.get_template(), mission.get_context())
             self.thorns.extend(mission.ingame_thorns)
@@ -59,6 +82,8 @@ class StoryManager:
             if len(npc_shiparchs):
                 npcships = DIVIDER.join(npc_shiparchs)
                 DataFolder.sync_story_npcships(mission.FOLDER, npcships)
+
+        self.history_manager.validate_after()
 
         loadouts = DIVIDER.join(self.ship_loadouts)
         if self.core.write:

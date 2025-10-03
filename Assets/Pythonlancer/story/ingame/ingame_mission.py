@@ -22,13 +22,14 @@ class IngameMission(object):
         super().__init_subclass__(**kwargs)
         cls.subclasses.append(cls)
 
-    def __init__(self, ids, ids_save, full_script, universe_root):
+    def __init__(self, ids, ids_save, full_script, universe_root, history_manager):
         self.ids = ids
         self.ids_save = ids_save
         self.capital_groups = {}
         self.solar_groups = {}
         self.full_script = full_script
         self.universe_root = universe_root
+        self.history_manager = history_manager
         self.points: dict = self.get_all_points()
         self.nn_objectives = self.get_nn_objectives()
         self.nag = Nag()
@@ -176,6 +177,7 @@ class IngameMission(object):
             'init_offer': self.init_offer,
             'rtc': self.rtc,
             'offer': self.offer,
+            'history': self.history_manager,
         }
         if self.script:
             context['script'] = self.script
