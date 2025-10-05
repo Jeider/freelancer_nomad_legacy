@@ -19,6 +19,8 @@ from world.npc import NPC, EqMap
 from world import ship
 from universe import faction
 
+from text.strings import MultiString as MS
+
 NPCSHIPS = '''
 
 [NPCShipArch]
@@ -83,25 +85,37 @@ class Misson11(ingame_mission.IngameMission):
     FOLDER = 'M11'
     FILE = 'm11'
     START_SAVE_ID = 33100
-    START_SAVE_RU_NAME = 'Омега-7. Линкор Мусаси'
+    START_SAVE_RU_NAME = MS('Омега-7. Линкор Мусаси', 'Omega-7. Battleship Musashi')
     SCRIPT_INDEX = 11
     DIRECT_SYSTEMS = [S.om7, S.or_hq, S.rh_vien, S.sig42]
     STATIC_NPCSHIPS = NPCSHIPS
     RTC = ['rescued', 'alaric', 'ambush', 'drink', 'harajuku_launch_rtc']
     INIT_OFFER = MultiLine(
-        'ЗАДАЧА:',
-        'Помочь Ордену ликвидировать Рокфорда',
-        '',
-        'СЛОЖНОСТЬ:',
-        'Рискованная.',
-        '',
-        'Награда:',
-        'Полное очищение репутации',
+        [
+            'ЗАДАЧА:',
+            'Помочь Ордену ликвидировать Рокфорда.',
+            '',
+            'СЛОЖНОСТЬ:',
+            'Рискованная.',
+            '',
+            'НАГРАДА:',
+            'Полное очищение репутации',
+        ],
+        [
+            'OBJECTIVE:',
+            'Help the order to eliminate Rockford.',
+            '',
+            'DIFFICULTY:',
+            'Risky.',
+            '',
+            'REWARD:',
+            'Full clean up of reputation',
+        ]
     ).get_content()
 
     def get_save_states(self):
         return [
-            SaveState(self, 'hq_battle', 'Штаб Ордена. Битва у станции Вавилон'),
+            SaveState(self, 'hq_battle', MS('Штаб Ордена. Битва у станции Вавилон', 'The Order\'s HQ. Battle near Babylon Station')),
         ]
 
     def get_static_points(self):

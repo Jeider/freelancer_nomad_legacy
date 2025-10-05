@@ -19,6 +19,8 @@ from world.npc import NPC, EqMap
 from world import ship
 from universe import faction
 
+from text.strings import MultiString as MS
+
 NPCSHIPS = '''
 
 [NPCShipArch]
@@ -83,49 +85,71 @@ class Misson06(ingame_mission.IngameMission):
     FOLDER = 'M06'
     FILE = 'm06'
     START_SAVE_ID = 32700
-    START_SAVE_RU_NAME = 'Нью-Йорк, Планета Питтсбург'
+    START_SAVE_RU_NAME = MS('Нью-Йорк, Планета Питтсбург', 'New York, Planet Pittsburgh')
     STATIC_NPCSHIPS = NPCSHIPS
     SCRIPT_INDEX = 6
     DIRECT_SYSTEMS = [S.li_mnh, S.sphere, S.co_cad]
     INIT_OFFER = MultiLine(
-        'ЗАДАЧА:',
-        'Приостановить рейландские исследования на режимном объекте.',
-        '',
-        'СЛОЖНОСТЬ:',
-        'Рискованная.',
-        '',
-        'Награда:',
-        '250 000 кредитов.',
+        [
+            'ЗАДАЧА:',
+            'Приостановить рейландские исследования на режимном объекте.',
+            '',
+            'СЛОЖНОСТЬ:',
+            'Рискованная.',
+            '',
+            'НАГРАДА:',
+            '250 000 кредитов.',
+        ],
+        [
+            'OBJECTIVE:',
+            'Stop Rheinland research at a sensitive site.',
+            '',
+            'DIFFICULTY:',
+            'Risky.',
+            '',
+            'REWARD:',
+            '250 000 credits.',
+        ]
     ).get_content()
 
     def get_save_states(self):
         return [
-            SaveState(self, 'patrols', 'Подлёт к Сфере'),
-            SaveState(self, 'first_tunnel', 'Сфера. После первого шлюза'),
-            SaveState(self, 'nomad_zone', 'Сфера. Зона с Номадами'),
-            SaveState(self, 'the_core', 'Ядро Сферы'),
-            SaveState(self, 'lab', 'Лаборатория'),
+            SaveState(self, 'patrols', MS('Подлёт к Сфере', 'Near The Sphere')),
+            SaveState(self, 'first_tunnel', MS('Сфера. После первого шлюза', 'The Sphere. After first airlock')),
+            SaveState(self, 'nomad_zone', MS('Сфера. Зона с Номадами', 'The Sphere. Nomad Zone')),
+            SaveState(self, 'the_core', MS('Ядро Сферы', "The Sphere's core")),
+            SaveState(self, 'lab', MS('Лаборатория', 'Laboratory')),
         ]
 
     def get_dialogs(self):
         return [
             TextDialog(
-                self, 'mount', 'Установка устройства невидимости',
+                self, 'mount', MS('Установка устройства невидимости', 'Mount cloaking device'),
                 ru_content=MultiText([
-                    'Хетчер выдала вам устройство невидимости. Вы должны установить его на место вашей контрмеры',
+                    'Хетчер выдала вам устройство невидимости. Вы должны установить его на место вашей контрмеры.',
 
                     'Если вы вылетите без установленного устройства невидимости, то миссия будет проиграна.',
-                ]),
+                ],
+                [
+                    'You got cloaking device from Hatcher. You must mount it on your ship on Countermeasure mount point.'
+                    
+                    'Mission will failed when you\'ll try launch without mounted cloaking device',
+                ]
+
+                ),
             ),
             TextDialog(
-                self, 'stealth', 'Устройство невидимости',
+                self, 'stealth', MS('Устройство невидимости', 'Cloaking device'),
                 ru_content=MultiText([
                     'Устройство невидимости активировано. Вы ни в коем случае не должны его выключать до определенного момента, '
                     'иначе миссий будет проиграна.',
+                ],
+                [
+                    'Cloaking device is active. You should deactivate it ONLY by mission objective or mission will be failed',
                 ]),
             ),
             TextDialog(
-                self, 'patrols', 'Патрули',
+                self, 'patrols', MS('Патрули', 'Patrols'),
                 ru_content=MultiText([
                     'Вы входите в зону патрулей, которые могут вас обнаружить. Внимательно следите за передвижением вражеских грузовиков. '
                     'Это единственные корабли, которые могут вас обнаружить. В случае приближения грузовика будет активирована сигнальная система.',
@@ -136,11 +160,21 @@ class Misson06(ingame_mission.IngameMission):
                     'отвлечь вражеский патруль и тем самым спокойно влететь в Сферу.',
 
                     'Загрузить стратегию в нейросеть?'
+                ],[
+                    'You are entering patrol zone. This patrols can detect. You must carefully look at enemy freighters. '
+                    "It's only ships that can detect you. Special alert will be activated when freighter is too near to you."
+
+                    "Analytics' report about patrol zone: ",
+
+                    "There placed some telescope. You can hit on them by your ship (your ship have physical appearance). "
+                    "This action can distract enemy patrol and you can enter The Sphere without problems",
+
+                    "Load this strategy in your NeuralNet?"
                 ]),
                 dialog_type=DIALOG_YES_NO,
             ),
             TextDialog(
-                self, 'nomad_zone', 'Зона с номадами',
+                self, 'nomad_zone', MS('Зона с номадами', 'Nomad Zone'),
                 ru_content=MultiText([
                     'Вам потребуется выключить невидимость, чтобы вступить в схватку. Комбинация по умолчанию: Ctrl+W',
                     'Эту комбинацию можно изменить в настройках: для этого нужно заменить ВТОРУЮ '
@@ -149,14 +183,27 @@ class Misson06(ingame_mission.IngameMission):
                     'Доклад аналитиков про зону с кочевниками:',
 
                     'Снизу есть отверстие к энергетической комнате. Если сломать генератор, то произойдёт экстренный '
-                    'выброс энергии, который сможет уничтожить или хотя бы повредить номадское зерно.',
+                    'выброс энергии, который сможет уничтожить или хотя бы повредить номадское зерно. Важно: эта энергия может '
+                    'повредить в том числе и ваш корабль, вы должны покинуть энергетическую комнату и уклониться от '
+                    'энергетического луча.',
 
                     'Загрузить стратегию в нейросеть?'
+                ],[
+                    "Now you must deactivate your invisibility. Default keyboard combination: Ctrl+W",
+                    "You can change it combination by settings. You need to change SECOND button for action "
+                    "Tractor beam (all) / Invisibility. Combination must contain Ctrl button.",
+
+                    "Analytics' report about Nomad Zone:",
+
+                    "This zone have tunnel at the bottom side. This is tunnel to energy room. You can broke power generator "
+                    "and extract danger energy beam. This beam can damage nomad kernel and nomad fighters. ",
+
+                    "Load this strategy in your NeuralNet?"
                 ]),
                 dialog_type=DIALOG_YES_NO,
             ),
             TextDialog(
-                self, 'the_core', 'Ядро Сферы',
+                self, 'the_core', MS('Ядро Сферы', "The Sphere's core"),
                 ru_content=MultiText([
                     'Вы приближаетесь к ядру. Данные о количестве рейнландских ученых в ядре неизвестно. '
                     'Вы в любом случае не должны дать никому покинуть ядро, иначе миссия будет проиграна.',
@@ -165,30 +212,54 @@ class Misson06(ingame_mission.IngameMission):
 
                     'В районе ядра расположены небольше лаборатории, на которых может укрыться Роттерман. Рекомендуется '
                     'предварительно взломать и заблокировать их двери. Сенсоры кораблей ученых достаточно слабые, поэтому '
-                    'вы можете спокойно лететь вдали от них при этом не будучи замеченным. На ближне аванпосте есть датчики слежения, '
+                    'вы можете спокойно лететь вдали от них при этом не будучи замеченным. На ближнем аванпосте есть датчики слежения, '
                     'поэтому вы должны взломать его последним, так как будет немедленно обнаружены.',
 
                     'Загрузить стратегию в нейросеть?',
+                ],[
+                    'You are near the core. The is no known data about amount of rheinland scients inside sphere. '
+                    'You should no one left the core alive. In other case mission will be failed.',
+
+                    "Analytics's report about the core:",
+
+                    "The are two small laboratories inside the core. Reitherman can dock and hide on the one of them. "
+                    "Recommended to hack and block the doors of the both laboratories. Sensors of scient ships is weak. So, "
+                    "you can easily fly, but keep far range to be not discovered. "
+                    "Near outpost have better sensors. You must hack and deactivate it last, because you will be immediately detected."
+                    
+                    "Load this strategy in your NeuralNet?"
                 ]),
                 dialog_type=DIALOG_YES_NO,
             ),
             TextDialog(
-                self, 'hacking', 'Взлом',
+                self, 'hacking', MS('Взлом', 'Hacking'),
                 ru_content=MultiText([
                     'Чтобы взломать панель, вы должны уничтожить все блоки нужного цвета.',
-                    'Стреляйте по разным блокам в поисках искомого цвета. Разные блоки выдают разные звуки, '
+                    'Стреляйте по разным блокам в поисках искомого цвета. Разные блоки выдают разные звуки '
                     'в зависимости от дальности до искомого цвета: '
                     'Максимальное, Очень высокое, Высокое, Средне, Низкое, Очень низкое, Минимальное.',
                     'Найдите цвет, который будет обозначен как "максимальное" и уничтожьте все блоки с этим цветом.',
+                ],[
+                    'To hack this panel you must fire on blocks with correct colors. ',
+                    'Fire different blocks by your guns. This blocks will activate sounds of this color. '
+                    'Different blocks produce different sounds depending on the distance to the desired color:'
+                    "Maximal, Very high, High, Medium. Low, Very low, Minimal.",
+                    'Find the color with sound "maximal" and destroy blocks with such color',
                 ]),
             ),
             TextDialog(
-                self, 'torpedo', 'Торпеды',
+                self, 'torpedo', MS('Торпеды', 'Torpedoes'),
                 ru_content=MultiText([
                     'Вражеские корабли атакуют Миссури тяжелыми торпедами',
                     'Вы должны уничтожить эти торпеды своими пушками. Можно так же использовать любые ракеты. '
                     'В том числе и ракеты, сбивающие круиз. Торпеды могут об них сдетонировать.',
                     'Не пытайтесь сбить торпеды своим щитом. Вы будете мгновенно уничтожены!'
+                ],[
+                    'Enemy ships attack Missouri by heavy torpedoes',
+                    'You must attack torpedoes by your guns. You also can use any missiles. '
+                    'Also you can use CD missiles. '
+                    'Torpedoes can detonate by missiles.',
+                    'Do not try to detonate torpedoes by your shield. You will be immediately destroyed!'
                 ]),
             ),
         ]
@@ -317,34 +388,36 @@ class Misson06(ingame_mission.IngameMission):
     def get_static_points(self):
         defined_points = []
 
+        missouri_name = MS('Линкор Миссури', 'Battleship Missouri')
+
         defined_points.extend([
             DockableBattleshipSolar(
                 self, S.li_mnh, 'dread_mnh1', faction='li_grp',
                 archetype='l_dreadnought', loadout='li_dreadnought_03',
-                ru_name='Линкор Миссури', base='sphere_01_base',
+                ru_name=missouri_name, base='sphere_01_base',
                 labels=['friend', 'asf', 'dread']
             ),
             DockableBattleshipSolar(
                 self, S.sphere, 'dread_init', faction='li_grp',
                 archetype='l_dreadnought', loadout='li_dreadnought_03',
-                ru_name='Линкор Миссури', base='sphere_01_base',
+                ru_name=missouri_name, base='sphere_01_base',
                 labels=['friend', 'asf', 'dread']
             ),
             DockableBattleshipSolar(
                 self, S.sphere, 'dread_escape', faction='li_grp',
                 archetype='l_dreadnought', loadout='li_dreadnought_03',
-                ru_name='Линкор Миссури', base='sphere_01_base',
+                ru_name=missouri_name, base='sphere_01_base',
                 labels=['friend', 'asf', 'dread']
             ),
             DockableBattleshipSolar(
                 self, S.sphere, 'dread_defend1', faction='li_grp',
                 archetype='l_dreadnought_destroyable', loadout='li_dreadnought_03',
-                ru_name='Линкор Миссури', base='sphere_02_base',
+                ru_name=missouri_name, base='sphere_02_base',
                 labels=['friend', 'asf', 'dread']
             ),
-            Solar(self, S.sphere, 'sphere_laboratory01', faction='li_grp', ru_name='Лаборатория',),
-            StaticJumpgate(self, S.sphere, 'sphere_to_omicron1B', ru_name='Гиперврата в Большой Омикрон'),
-            Solar(self, S.co_cad, 'co_cad_03', ru_name='Фрипорт Тринидат'),
+            Solar(self, S.sphere, 'sphere_laboratory01', faction='li_grp', ru_name=MS('Лаборатория', 'Laboratory'),),
+            StaticJumpgate(self, S.sphere, 'sphere_to_omicron1B', ru_name=MS('Гипердыра в Большой Омикрон', 'Jumphole to Omicron Major')),
+            Solar(self, S.co_cad, 'co_cad_03', ru_name=MS('Фрипорт Тринидат', 'Freeport Trinidad')),
         ])
 
         telescopes = [
@@ -357,7 +430,7 @@ class Misson06(ingame_mission.IngameMission):
         for tele in telescopes:
             tele_sol = Solar(
                 self, S.sphere, tele,
-                ru_name='Телескоп',
+                ru_name=MS('Телескоп', 'Telescope'),
                 archetype='telescope_msn',
                 loadout='telescope',
                 labels=['telescopes'],
@@ -371,22 +444,22 @@ class Misson06(ingame_mission.IngameMission):
             Solar(
                 self, S.sphere, 'sphere_kernel', faction='fc_n_grp',
                 archetype='nomad_kernel', loadout='sphere_kernel_light',
-                ru_name='Номадское зерно', labels=['nomad', 'enemy']
+                ru_name=MS('Номадское зерно', 'Nomad Kernel'), labels=['nomad', 'enemy']
             ),
             Solar(
                 self, S.sphere, 'sphere_kernel_deactivator', faction='fc_n_grp',
                 archetype='msn6_nomad_area_generator', loadout='space_arch_generator',
-                ru_name='Генератор', labels=['nomad_area_gen'],
+                ru_name=MS('Генератор', "Generator"), labels=['nomad_area_gen'],
             ),
             Solar(
                 self, S.sphere, 'sphere_kernel_lazerburner',
                 archetype='space_hidden_root', loadout='nomad_sphere_run_laser',
-                ru_name='Излучатель',
+                ru_name=MS('Излучатель', 'Emitter'),
             ),
             Solar(
                 self, S.sphere, 'sphere_kernel_bottom_lockeddoor',
                 archetype='lair_locked_door',
-                ru_name='Дверь',
+                ru_name=MS('Дверь', 'Door'),
             ),
         ]
 
@@ -397,38 +470,40 @@ class Misson06(ingame_mission.IngameMission):
             Solar(
                 self, S.sphere, 'sphere_laboratory01', faction='rh_grp',
                 archetype='space_port_dmg', loadout='lab01_loadout_wo_shield',
-                ru_name='Лаборатория', base='sphere_99_base'
+                ru_name=MS('Лаборатория', "Laboratory"), base='sphere_99_base'
             ),
             Solar(
                 self, S.sphere, 'lab_shield01', faction='rh_grp',
                     archetype='space_shieldgen_destroyable', loadout='lab01_shielgen_turrets',
-                ru_name='Генератор щита', labels=['lab_shield'],
+                ru_name=MS('Генератор щита', 'Shield generator'), labels=['lab_shield'],
             ),
             Solar(
                 self, S.sphere, 'lab_shield02', faction='rh_grp',
                 archetype='space_shieldgen_destroyable', loadout='lab01_shielgen_turrets',
-                ru_name='Генератор щита', labels=['lab_shield'],
+                ru_name=MS('Генератор щита', 'Shield generator'), labels=['lab_shield'],
             ),
         ]
 
         defined_points.extend(lab_solars)
         self.add_solar_group('LAB', lab_solars)
 
+        hack = MS('Взлом', 'hack')
+
         core_solars = [
             Solar(self, S.sphere, 'sphere_depot_01', faction='rh_grp',
-                  ru_name='Блокпост', archetype='space_police01_front_dock', base='sphere_91_base'),
+                  ru_name=MS('Блокпост', 'Outpost'), archetype='space_police01_front_dock', base='sphere_91_base'),
             Solar(self, S.sphere, 'sphere_depot_02', faction='rh_grp',
-                  ru_name='Склад', archetype='space_police01', base='sphere_92_base'),
+                  ru_name=MS('Склад', "Storage"), archetype='space_police01', base='sphere_92_base'),
 
-            Solar(self, S.sphere, 'sphere_depot_01_hacker_layer_1', ru_name='Взлом', archetype='m06_hacker_02_layer_01'),
-            Solar(self, S.sphere, 'sphere_depot_01_hacker_layer_2', ru_name='Взлом', archetype='m06_hacker_02_layer_02'),
-            Solar(self, S.sphere, 'sphere_depot_01_hacker_layer_3', ru_name='Взлом', archetype='m06_hacker_02_layer_03'),
-            Solar(self, S.sphere, 'sphere_depot_01_hacker_layer_valid', ru_name='Взлом', archetype='m06_hacker_02_valid'),
+            Solar(self, S.sphere, 'sphere_depot_01_hacker_layer_1', ru_name=hack, archetype='m06_hacker_02_layer_01'),
+            Solar(self, S.sphere, 'sphere_depot_01_hacker_layer_2', ru_name=hack, archetype='m06_hacker_02_layer_02'),
+            Solar(self, S.sphere, 'sphere_depot_01_hacker_layer_3', ru_name=hack, archetype='m06_hacker_02_layer_03'),
+            Solar(self, S.sphere, 'sphere_depot_01_hacker_layer_valid', ru_name=hack, archetype='m06_hacker_02_valid'),
 
-            Solar(self, S.sphere, 'sphere_depot_02_hacker_layer_1', ru_name='Взлом', archetype='m06_hacker_01_layer_01'),
-            Solar(self, S.sphere, 'sphere_depot_02_hacker_layer_2', ru_name='Взлом', archetype='m06_hacker_01_layer_02'),
-            Solar(self, S.sphere, 'sphere_depot_02_hacker_layer_3', ru_name='Взлом', archetype='m06_hacker_01_layer_03'),
-            Solar(self, S.sphere, 'sphere_depot_02_hacker_layer_valid', ru_name='Взлом', archetype='m06_hacker_01_valid'),
+            Solar(self, S.sphere, 'sphere_depot_02_hacker_layer_1', ru_name=hack, archetype='m06_hacker_01_layer_01'),
+            Solar(self, S.sphere, 'sphere_depot_02_hacker_layer_2', ru_name=hack, archetype='m06_hacker_01_layer_02'),
+            Solar(self, S.sphere, 'sphere_depot_02_hacker_layer_3', ru_name=hack, archetype='m06_hacker_01_layer_03'),
+            Solar(self, S.sphere, 'sphere_depot_02_hacker_layer_valid', ru_name=hack, archetype='m06_hacker_01_valid'),
         ]
         defined_points.extend(core_solars)
         self.add_solar_group('THE_CORE', core_solars)

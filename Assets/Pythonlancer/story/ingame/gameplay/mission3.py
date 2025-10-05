@@ -14,6 +14,8 @@ from world.npc import NPC, EqMap
 from world import ship
 from universe import faction
 
+from text.strings import MultiString as MS
+
 
 NPCSHIPS = '''
 [NPCShipArch]
@@ -50,24 +52,37 @@ class Misson03(ingame_mission.IngameMission):
     FOLDER = 'M03'
     FILE = 'm03'
     START_SAVE_ID = 32300
-    START_SAVE_RU_NAME = 'Сигма-8. Станция Штарке'
+    START_SAVE_RU_NAME = MS('Сигма-8. Станция Штарке', 'Sigma-8, Station Starke')
     STATIC_NPCSHIPS = NPCSHIPS
     SCRIPT_INDEX = 3
     INIT_OFFER = MultiLine(
-        'ЗАДАЧА:',
-        'Участвовать в операции по ликвидации аванпоста генерала Дитриха.',
-        '',
-        'СЛОЖНОСТЬ:',
-        'Высокая.',
-        '',
-        'Награда:',
-        '25 000 кредитов.',
+        ru_lines=[
+            'ЗАДАЧА:',
+            'Участвовать в операции по ликвидации аванпоста генерала Дитриха.',
+            '',
+            'СЛОЖНОСТЬ:',
+            'Высокая.',
+            '',
+            'НАГРАДА:',
+            '25 000 кредитов.',
+        ],
+        en_lines=[
+            'OBJECTIVE:',
+            'Participate in the operation of elimination of General Dietrich\'s outpost.',
+            '',
+            'DIFFICULTY:',
+            'High.',
+            '',
+            'REWARD:',
+            '25 000 credits.',
+        ]
+
     ).get_content()
 
     def get_save_states(self):
         return [
-            SaveState(self, 'founded', 'Подлёт к Кёнигсбергу'),
-            SaveState(self, 'shield_down', 'Щит Кёнигсберга уничтожен'),
+            SaveState(self, 'founded', MS('Подлёт к Кёнигсбергу', 'Near Königsberg')),
+            SaveState(self, 'shield_down', MS('Щит Кёнигсберга уничтожен', "Königsberg's shield destroyed")),
         ]
 
     def get_ingame_thorns(self):
@@ -194,13 +209,13 @@ class Misson03(ingame_mission.IngameMission):
             )
 
         solar_points = [
-            Solar(self, S.rh_kgb, 'kgb', ru_name='Кёнигсберг'),
-            Solar(self, S.rh_kgb, 'gen1', ru_name='Генератор'),
-            Solar(self, S.rh_kgb, 'gen2', ru_name='Генератор'),
-            Solar(self, S.rh_kgb, 'gen1_laser', ru_name='Заряжающая установка'),
-            Solar(self, S.rh_kgb, 'gen2_laser', ru_name='Заряжающая установка'),
-            Solar(self, S.rh_kgb, 'dock1', ru_name='Стыковочный узел 1'),
-            Solar(self, S.rh_kgb, 'dock2', ru_name='Стыковочный узел 2'),
+            Solar(self, S.rh_kgb, 'kgb', ru_name=MS('Кёнигсберг', 'Königsberg')),
+            Solar(self, S.rh_kgb, 'gen1', ru_name=MS('Генератор', 'Generator')),
+            Solar(self, S.rh_kgb, 'gen2', ru_name=MS('Генератор', 'Generator')),
+            Solar(self, S.rh_kgb, 'gen1_laser', ru_name=MS('Заряжающая установка', 'Charging device')),
+            Solar(self, S.rh_kgb, 'gen2_laser', ru_name=MS('Заряжающая установка', 'Charging device')),
+            Solar(self, S.rh_kgb, 'dock1', ru_name='Dock point 1'),
+            Solar(self, S.rh_kgb, 'dock2', ru_name='Dock point 2'),
         ]
 
         defined_points.extend(solar_points)
@@ -256,7 +271,7 @@ class Misson03(ingame_mission.IngameMission):
                     'trent_wing',
                 ],
                 unique_npc_entry=True,
-                base_name='Каратель',
+                base_name=MS('Каратель', 'Punisher'),
                 npc=NPC(
                     faction=faction.RheinlandMain,
                     ship=ship.Valkyrie,
@@ -275,7 +290,7 @@ class Misson03(ingame_mission.IngameMission):
                     'assistance',
                 ],
                 unique_npc_entry=True,
-                base_name='Мародёр',
+                base_name=MS('Мародёр', 'Marauder'),
                 npc=NPC(
                     faction=faction.RheinlandMain,
                     ship=ship.Valkyrie,
@@ -292,7 +307,7 @@ class Misson03(ingame_mission.IngameMission):
                     'friend',
                     'fleet_defender',
                 ],
-                base_name='Беркут',
+                base_name=MS('Беркут', 'Golden Eagle'),
                 npc=NPC(
                     faction=faction.RheinlandMain,
                     ship=ship.Valkyrie,
@@ -585,7 +600,8 @@ class Misson03(ingame_mission.IngameMission):
 
     def get_nn_objectives(self):
         return [
-            NNObj(self, 'Встретьтесь с Вильгельмом в баре станции Штарке', name='meet_vendor', target='starke'),
+            NNObj(self, MS('Встретьтесь с Вильгельмом в баре станции Штарке',
+                           'Meet with Wilham in bar on station Starke'), name='meet_vendor', target='starke'),
 
             NNObj(self, O.LAUNCH, name='launch'),
             NNObj(self, O.DESTROY_CORSAIRS, name='destroy_corsairs'),
@@ -594,20 +610,20 @@ class Misson03(ingame_mission.IngameMission):
             NNObj(self, O.GOTO, name='goto_fleet', target='m3_init_point'),
 
             NNObj(self, O.GOTO_JUMPHOLE, name='sig8_to_kgb_fly', target='sig8_to_kgb', towards=True),
-            NNObj(self, 'Ждите активации гипердыры', name='wait_for_activation'),
+            NNObj(self, MS('Ждите активации гипердыры', 'Wait for jumphole activation'), name='wait_for_activation'),
             NNObj(self, O.JUMPHOLE, target='sig8_to_kgb'),
 
             NNObj(self, O.GOTO, name='goto_nebula_exit', target='nebula_exit'),
             NNObj(self, O.GOTO, name='goto_kgb_core', target='kgb', towards=True),
 
-            NNObj(self, 'Направляйтесь к генератору', name='goto_gen1', target='gen1', towards=True),
-            NNObj(self, 'Уничтожьте генератор', name='destroy_gen1', target='gen1', nag=False),
+            NNObj(self, MS('Направляйтесь к генератору', 'Go to generator'), name='goto_gen1', target='gen1', towards=True),
+            NNObj(self, MS('Уничтожьте генератор', 'Destroy generator'), name='destroy_gen1', target='gen1', nag=False),
 
             NNObj(self, O.GOTO, name='goto_gen2_wp1', target='wp_to_gen1', towards=True),
             NNObj(self, O.GOTO, name='goto_gen2_wp2', target='wp_to_gen2', towards=True),
 
-            NNObj(self, 'Направляйтесь к генератору', name='goto_gen2', target='gen2', towards=True),
-            NNObj(self, 'Уничтожьте генератор', name='destroy_gen2', target='gen2', nag=False),
+            NNObj(self, MS('Направляйтесь к генератору', 'Go to generator'), name='goto_gen2', target='gen2', towards=True),
+            NNObj(self, MS('Уничтожьте генератор', 'Destroy generator'), name='destroy_gen2', target='gen2', nag=False),
 
             NNObj(self, O.CATCH_DEIDRICH, name='goto_deidrich'),
 
@@ -619,12 +635,12 @@ class Misson03(ingame_mission.IngameMission):
             NNObj(self, O.CATCH_DEIDRICH, name='goto_deidrich_pos7', target='deidrich7', towards=True),
             NNObj(self, O.CATCH_DEIDRICH, name='goto_deidrich_pos8', target='deidrich8', towards=True),
 
-            NNObj(self, 'Уничтожьте Дитриха', name='destroy_deidrich'),
+            NNObj(self, MS('Уничтожьте Дитриха', 'Destroy Dietrich'), name='destroy_deidrich'),
 
-            NNObj(self, 'Следуйте за грузовиком', name='goto_freighter', target='tradepoint', towards=True),
+            NNObj(self, MS('Следуйте за грузовиком', 'Go to freighter'), name='goto_freighter', target='tradepoint', towards=True),
             NNObj(self, O.GOTO_JUMPGATE, name='kgb_to_rh_mnh_fly', target='kgb_to_rh_mnh', towards=True),
             NNObj(self, O.JUMPGATE, target='kgb_to_rh_mnh'),
 
             NNObj(self, O.GOTO, name='final_base_fly', target='final_base', towards=True),
-            NNObj(self, 'Совершите стыковку с базой Виго', target='final_base'),
+            NNObj(self, MS('Совершите стыковку с базой Виго', 'Dock with Vigo base'), target='final_base'),
         ]

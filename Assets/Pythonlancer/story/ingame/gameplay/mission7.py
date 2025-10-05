@@ -16,6 +16,8 @@ from world.npc import NPC, EqMap
 from world import ship
 from universe import faction
 
+from text.strings import MultiString as MS
+
 NPCSHIPS = '''
 
 [NPCShipArch]
@@ -35,27 +37,38 @@ class Misson07(ingame_mission.IngameMission):
     FOLDER = 'M07'
     FILE = 'm07'
     START_SAVE_ID = 32700
-    START_SAVE_RU_NAME = 'Кадиз, фрипорт Тринидад'
+    START_SAVE_RU_NAME = MS('Мальта, фрипорт Тринидад', 'Malta, Freeport Trinidad')
     SCRIPT_INDEX = 7
     DIRECT_SYSTEMS = [S.omicron2, S.co_cad, S.om13, S.br_avl]
     STATIC_NPCSHIPS = NPCSHIPS
     RTC = ['cadiz']
     INIT_OFFER = MultiLine(
-        'ЗАДАЧА:',
-        'Найти способ восстановить связь с СБА и вызволить артефакты',
-        '',
-        'СЛОЖНОСТЬ:',
-        'Рискованная.',
-        '',
-        'Награда:',
-        'Обещанные 250 000 кредитов',
+        [
+            'ЗАДАЧА:',
+            'Найти способ восстановить связь с СБА и вызволить артефакты',
+            '',
+            'СЛОЖНОСТЬ:',
+            'Рискованная.',
+            '',
+            'НАГРАДА:',
+            'Обещанные 250 000 кредитов',
+        ],[
+            'OBJECTIVE:',
+            'Find way to get contact with ASF and get artifacts back.',
+            '',
+            'DIFFICULTY:',
+            'Risky.',
+            '',
+            'REWARD:',
+            'Promised 250 000 credits',
+        ]
     ).get_content()
 
     def get_save_states(self):
         return [
-            SaveState(self, 'ironside', 'Кадиз. Билл Айронсайд найден'),
-            SaveState(self, 'diversion', 'Малый Омикрон. Перед диверсией'),
-            SaveState(self, 'armored', 'Малый Омикрон. Перехват транспорта'),
+            SaveState(self, 'ironside', MS('Мальта. Билл Айронсайд найден', 'Malta. Battle with Ironside')),
+            SaveState(self, 'diversion', MS('Малый Омикрон. Перед диверсией', 'Omicron Minor. Before Diversion')),
+            SaveState(self, 'armored', MS('Малый Омикрон. Перехват транспорта', 'Omicron Minor. Catching of Transport')),
         ]
 
     def get_ingame_thorns(self):
@@ -108,11 +121,11 @@ class Misson07(ingame_mission.IngameMission):
         ]
         for sol in cad_solars:
             defined_points.append(
-                Solar(self, S.co_cad, sol, ru_name='_'),
+                Solar(self, S.co_cad, sol, ru_name=MS('_', '_')),
             )
 
         defined_points.append(
-            StaticJumpgate(self, S.co_cad, 'cad_to_omicron2', ru_name='_'),
+            StaticJumpgate(self, S.co_cad, 'cad_to_omicron2', ru_name=MS('_', '_')),
         )
 
         cad_points = [
@@ -135,20 +148,20 @@ class Misson07(ingame_mission.IngameMission):
             )
 
         defined_points.extend([
-            Solar(self, S.omicron2, 'repair1', ru_name='Ремонтник', labels=['comm_defence']),
-            Solar(self, S.omicron2, 'repair2', ru_name='Ремонтник', labels=['comm_defence']),
+            Solar(self, S.omicron2, 'repair1', ru_name=MS('Ремонтник', "Repair Ship"), labels=['comm_defence']),
+            Solar(self, S.omicron2, 'repair2', ru_name=MS('Ремонтник', "Repair Ship"), labels=['comm_defence']),
 
-            Solar(self, S.omicron2, 'transport1', ru_name='Транспорт', labels=['comm_defence']),
-            Solar(self, S.omicron2, 'transport2', ru_name='Транспорт', labels=['comm_defence']),
+            Solar(self, S.omicron2, 'transport1', ru_name=MS('Транспорт', 'Transport'), labels=['comm_defence']),
+            Solar(self, S.omicron2, 'transport2', ru_name=MS('Транспорт', 'Transport'), labels=['comm_defence']),
         ])
 
         defined_points.append(
-            StaticJumpgate(self, S.omicron2, 'omicron2_to_om13', ru_name='_'),
+            StaticJumpgate(self, S.omicron2, 'omicron2_to_om13', ru_name=MS('_', '_')),
         )
 
         defined_points.append(
             DockableBattleshipSolar(
-                self, S.br_avl, 'm7_bship1', ru_name='Линкор Принц Уэльсский', base='br_avl_99_base',
+                self, S.br_avl, 'm7_bship1', ru_name=MS('Линкор Принц Уэльсский', 'Battleship Prince of Wales'), base='br_avl_99_base',
                 archetype='b_battleship', loadout='br_battleship_station'),
         )
         return defined_points
@@ -208,7 +221,7 @@ class Misson07(ingame_mission.IngameMission):
         }
 
         caps = [
-            Capital(self, 'armored', ru_name='Бронированный транспорт', **armored_ship),
+            Capital(self, 'armored', ru_name=MS('Бронированный транспорт', 'Armored transport'), **armored_ship),
         ]
 
         return caps

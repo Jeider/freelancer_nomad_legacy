@@ -15,6 +15,8 @@ from world.npc import NPC, EqMap
 from world import ship
 from universe import faction
 
+from text.strings import MultiString as MS
+
 NPCSHIPS = '''
 nickname = ms12_ku_gunboat
 loadout = ku_grp_gunboat
@@ -107,26 +109,38 @@ class Misson12(ingame_mission.IngameMission):
     FOLDER = 'M12'
     FILE = 'm12'
     START_SAVE_ID = 33200
-    START_SAVE_RU_NAME = 'Сириус. Планета Спрага'
+    START_SAVE_RU_NAME = MS('Сириус. Планета Спрага', 'Sirius. Planet Sprague')
     SCRIPT_INDEX = 12
     DIRECT_SYSTEMS = [S.sig42, S.asf_hq, S.asf_prom]
     STATIC_NPCSHIPS = NPCSHIPS
     RTC = ['sprague']
     INIT_OFFER = MultiLine(
-        'ЗАДАЧА:',
-        'Не допустить уничтожение станции Энтерпрайз и штаба СБА.',
-        '',
-        'СЛОЖНОСТЬ:',
-        'Спасти человечество.',
-        '',
-        'Награда:',
-        'Выживание',
+        [
+            'ЗАДАЧА:',
+            'Не допустить уничтожение станции Энтерпрайз и штаба СБА.',
+            '',
+            'СЛОЖНОСТЬ:',
+            'Спасти человечество.',
+            '',
+            'Награда:',
+            'Выживание',
+        ],
+        [
+            'OBJECTIVE:',
+            'Don not let Order destroy Station Enterprise and ASF Headquarters.',
+            '',
+            'DIFFICULTY:',
+            'Save the mankind.',
+            '',
+            'REWARD:',
+            'Survival',
+        ]
     ).get_content()
 
     def get_save_states(self):
         return [
-            SaveState(self, 'bush_battle', 'Штаб СБА. Битва в секторе форта Буш'),
-            SaveState(self, 'logos_battle', 'Прометей. Нейтрализация линкора Логос'),
+            SaveState(self, 'bush_battle', MS('Штаб СБА. Битва в секторе форта Буш', "ASF's HQ. Battle in sector of Fort Bush")),
+            SaveState(self, 'logos_battle', MS('Прометей. Нейтрализация линкора Логос', 'Proemetheus. Neutralization of the battleship Logos')),
         ]
 
     def get_static_points(self):

@@ -19,6 +19,8 @@ from world.npc import NPC, EqMap
 from world import ship
 from universe import faction
 
+from text.strings import MultiString as MS
+
 NPCSHIPS = '''
 
 [NPCShipArch]
@@ -35,8 +37,8 @@ npc_class = lawful, CRUISER
 
 
 class ResearchChunk:
-    MANDRAKE_CHUNK = 'Обломок с Мандрейком'
-    GENERIC_CHUNK = 'Обломок станции'
+    MANDRAKE_CHUNK = MS('Обломок с Мандрейком', 'Chunk with Mandrake')
+    GENERIC_CHUNK = MS('Обломок станции', "Station chunk")
 
     def __init__(self, pod_root, chunk_index, pod_name, is_mandrake=False):
         self.pod_root: ScientPods = pod_root
@@ -133,7 +135,7 @@ class ScientPods:
         self.triggers_defined = False
         self.mandrake_chunk = 1
         self.reward_solar = Solar(self.mission, S.sig17, 'research_reward',
-                                  ru_name='Награда', archetype='hidden_connect',
+                                  ru_name=MS('Награда', 'Reward'), archetype='hidden_connect',
                                   loadout='m05_scient_reward')
         self.mandrake_ids_name = self.mission.ids.new_name(self.MANDRAKE_NAME)
         self.scient_ids_name = self.mission.ids.new_name(self.SCIENT_NAME)
@@ -364,19 +366,31 @@ class Misson05(ingame_mission.IngameMission):
     FOLDER = 'M05'
     FILE = 'm05'
     START_SAVE_ID = 32500
-    START_SAVE_RU_NAME = 'Планета Форбс'
+    START_SAVE_RU_NAME = MS('Планета Форбс', 'Planet Forbes')
     STATIC_NPCSHIPS = NPCSHIPS
     SCRIPT_INDEX = 5
     DIRECT_SYSTEMS = [S.li_for, S.sig17]
     INIT_OFFER = MultiLine(
-        'ЗАДАЧА:',
-        'Выяснить местоположения доктора Мандрейка и доставить его на планету Форбс.',
-        '',
-        'СЛОЖНОСТЬ:',
-        'Средняя.',
-        '',
-        'Награда:',
-        '12 500 кредитов.',
+        [
+            'ЗАДАЧА:',
+            'Выяснить местоположения доктора Мандрейка и доставить его на планету Форбс.',
+            '',
+            'СЛОЖНОСТЬ:',
+            'Средняя.',
+            '',
+            'НАГРАДА:',
+            '12 500 кредитов.',
+        ],
+        [
+            'OBJECTIVE:',
+            'Find the location of professor Mandrake and get him to the Planet Forbes.',
+            '',
+            'DIFFICULTY:',
+            'Medium.',
+            '',
+            'REWARD:',
+            '12 500 credits.',
+        ]
     ).get_content()
 
     def __init__(self, *args, **kwargs):
@@ -390,10 +404,10 @@ class Misson05(ingame_mission.IngameMission):
 
     def get_save_states(self):
         return [
-            SaveState(self, 'smuggler', 'Форбс, склад контрабанды'),
-            SaveState(self, 'convoy', 'Сигма-17, транспорт Омега-9'),
-            SaveState(self, 'scient', 'Сигма-17, взрыв исследовательской станции'),
-            SaveState(self, 'arrest_battle', 'Сигма-17, линкор Грифон'),
+            SaveState(self, 'smuggler', MS('Форбс, склад контрабанды', 'Forbes, smuggler Storage')),
+            SaveState(self, 'convoy', MS('Сигма-17, транспорт Омега-9', 'Sigma-17, transport Omega-9')),
+            SaveState(self, 'scient', MS('Сигма-17, взрыв исследовательской станции', 'Sigma-17, explosion of research station')),
+            SaveState(self, 'arrest_battle', MS('Сигма-17, линкор Грифон', 'Sigma-17, battleship Griffin')),
         ]
 
     def get_dialogs(self):
@@ -408,6 +422,15 @@ class Misson05(ingame_mission.IngameMission):
                     'После этого залетайте в туннель и атакуйте ядро.',
 
                     'В будущем вы сможете встретить подобные базы в случайных миссиях, которые можно взять в баре',
+                ],
+                    [
+                    'In order to destoy base, you should enter inside this base and destroy the core.',
+
+                    'Attack the storages, marked by blue color in your interface. Doors will be opened after explode of all storages.',
+
+                    'After you enter the tunnel and destroy the core.',
+
+                    'You can find such bases in bar missions against installations in freeflight mode.',
                 ]),
             ),
             TextDialog(
@@ -418,7 +441,15 @@ class Misson05(ingame_mission.IngameMission):
                     'Уничтожьте обломки станции, чтобы разблокировать спасательные капсулы и подобрать учёных',
 
                     'Скорее! Системы обеспечения скоро откажут!',
-                ]),
+                ],
+                [
+                    'The escape pods did not activate in time!',
+
+                    'You must destroy station chunks and loot extracted escape pods.',
+
+                    'Hurry! Support systems will soon fail!',
+                ]
+                ),
             ),
         ]
 
@@ -551,11 +582,11 @@ class Misson05(ingame_mission.IngameMission):
         defined_points = []
 
         defined_points.extend([
-            Solar(self, S.li_for, 'smuggler_storage', ru_name='Склад контрабанды',
+            Solar(self, S.li_for, 'smuggler_storage', ru_name=MS('Склад контрабанды', "Smuggler's storage"),
                   archetype='rmbase_smuggler', loadout='m05_smuggler_storage',
                   labels=['smuggler']),
 
-            Solar(self, S.sig17, 'research_base', ru_name='Исследовательская станция Кларк',
+            Solar(self, S.sig17, 'research_base', ru_name=MS('Исследовательская станция Кларк', 'Research station Clark'),
                   archetype='d_depot_clean', loadout='depot', labels=['deepspace']),
         ])
 
@@ -579,7 +610,7 @@ class Misson05(ingame_mission.IngameMission):
         }
 
         caps = [
-            Capital(self, 'armored', ru_name='Транспорт Омега-9', **armored_ship),
+            Capital(self, 'armored', ru_name=MS('Транспорт Омега-9', "Transport Omega-9"), **armored_ship),
         ]
 
         return caps

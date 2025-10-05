@@ -43,18 +43,27 @@ class IDsDatabase:
         self.last_id += 1
         return self.last_id
 
-    def add_force(self, the_id, text):
-        the_id = TheID(the_id, text, kind=NAME)
+    def add_force(self, the_id, multi_string):
+        if multi_string.__class__.__name__ != MultiString.__name__:
+            raise Exception(f'String {multi_string} is not instance of MultiString')
+
+        the_id = TheID(the_id, multi_string, kind=NAME)
         self.ids.append(the_id)
         return the_id
 
-    def new_name(self, text):
-        the_id = TheID(self.get_next_id(), text, kind=NAME)
+    def new_name(self, multi_string):
+        if multi_string.__class__.__name__ != MultiString.__name__:
+            raise Exception(f'String {multi_string} is not instance of MultiString')
+
+        the_id = TheID(self.get_next_id(), multi_string, kind=NAME)
         self.ids.append(the_id)
         return the_id
 
-    def new_info(self, text):
-        the_id = TheID(self.get_next_id(), text, kind=INFOCARD)
+    def new_info(self, multi_string):
+        if multi_string.__class__.__name__ != MultiString.__name__:
+            raise Exception(f'String {multi_string} is not instance of MultiString')
+
+        the_id = TheID(self.get_next_id(), multi_string, kind=INFOCARD)
         self.ids.append(the_id)
         return the_id
 
@@ -108,3 +117,18 @@ class StringCompiler(object):
     def compile_infocards(data: dict[int, str]):
         items = [StringCompiler.compile_infocard(name_id, value) for name_id, value in data.items()]
         return ''.join(items)
+
+
+class MultiString:
+    def __init__(self, ru='', en=''):
+        self.ru = ru
+        self.en = en
+
+    def __str__(self):
+        raise Exception(f'Warning! Cannot access to string representation of multistring. ru source: {self.ru}')
+
+    def get_ru(self):
+        return self.ru
+
+    def get_en(self):
+        return self.en

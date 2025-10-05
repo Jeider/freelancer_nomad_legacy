@@ -11,6 +11,8 @@ from world.npc import NPC, EqMap
 from world import ship
 from universe import faction
 
+from text.strings import MultiString as MS
+
 NPCSHIPS = '''
 
 [NPCShipArch]
@@ -31,22 +33,34 @@ class Misson01B(ingame_mission.IngameMission):
     FILE = 'm01b'
     SCRIPT_INDEX = 1
     START_SAVE_ID = 32100
-    START_SAVE_RU_NAME = 'Планета Берлин'
+    START_SAVE_RU_NAME = MS('Планета Берлин', "Planet Berlin")
     STATIC_NPCSHIPS = NPCSHIPS
     INIT_OFFER = MultiLine(
-        'ЗАДАЧА:',
-        'Сопроводить рейнландский торговый конвой.'
-        ''
-        'СЛОЖНОСТЬ:'
-        'Низкая.'
-        ''
-        'Награда:'
-        '5 000 кредитов.'
+        ru_lines=[
+            'ЗАДАЧА:',
+            'Сопроводить рейнландский торговый конвой.'
+            ''
+            'СЛОЖНОСТЬ:'
+            'Низкая.'
+            ''
+            'НАГРАДА:'
+            '5 000 кредитов.'
+        ],
+        en_lines=[
+            'OBJECTIVE:',
+            'Escort Rheinland trade convoy.'
+            ''
+            'DIFFICULTY:'
+            'Low.'
+            ''
+            'REWARD:'
+            '5 000 credits.'
+        ]
     ).get_content()
 
     def get_save_states(self):
         return [
-            SaveState(self, 's8_battle', 'Сигма-8, Астероидное поле'),
+            SaveState(self, 's8_battle', MS('Сигма-8, Астероидное поле', 'Sigma-8, Asteroid field')),
         ]
 
     def get_ingame_thorns(self):
@@ -92,7 +106,7 @@ class Misson01B(ingame_mission.IngameMission):
         }
 
         caps = [
-            Capital(self, 'armored', ru_name='Аделмар', **armored_ship),
+            Capital(self, 'armored', ru_name=MS('Аделмар', 'Adelmar'), **armored_ship),
         ]
 
         return caps
@@ -231,14 +245,12 @@ class Misson01B(ingame_mission.IngameMission):
             ),
         ]
 
-    #
-
     def get_nn_objectives(self):
         return [
             NNObj(self, O.LAUNCH, name='launch'),
-            NNObj(self, 'Направляйтесь к Аделмару', name='goto_adelmar', target='point_b'),
+            NNObj(self, MS('Направляйтесь к Аделмару', 'Go to Adelmar'), name='goto_adelmar', target='point_b'),
             NNObj(self, O.DESTROY_ENEMY, name='destroy_enemy'),
-            NNObj(self, 'Войдите в формацию с Аделмаром', name='join_formation'),
-            NNObj(self, 'Следуйте за Аделмаром', name='follow_adelmar'),
+            NNObj(self, MS('Войдите в формацию с Аделмаром', 'Join Adelmar\'s formation'), name='join_formation'),
+            NNObj(self, MS('Следуйте за Аделмаром', 'Follow Adelmar'), name='follow_adelmar'),
             NNObj(self, O.DOCKRING, target='biz_dockring'),
         ]

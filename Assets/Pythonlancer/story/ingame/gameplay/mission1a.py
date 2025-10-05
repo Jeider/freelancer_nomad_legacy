@@ -11,6 +11,8 @@ from world.npc import NPC, EqMap
 from world import ship
 from universe import faction
 
+from text.strings import MultiString as MS
+
 NPCSHIPS = '''
 
 [NPCShipArch]
@@ -58,22 +60,34 @@ class Misson01A(ingame_mission.IngameMission):
     FILE = 'm01a'
     SCRIPT_INDEX = 1
     START_SAVE_ID = 32000
-    START_SAVE_RU_NAME = 'Сигма-13. Газодобытчик Магдебург'
+    START_SAVE_RU_NAME = MS('Сигма-13. Газодобытчик Магдебург', 'Sigma-13. Gas miner Magdeburg')
     STATIC_NPCSHIPS = NPCSHIPS
     INIT_OFFER = MultiLine(
-        'ЗАДАЧА:',
-        'Сопроводить рейнландский торговый конвой.'
-        ''
-        'СЛОЖНОСТЬ:'
-        'Низкая.'
-        ''
-        'Награда:'
-        '5 000 кредитов.'
+        ru_lines=[
+            'ЗАДАЧА:',
+            'Сопроводить рейнландский торговый конвой.'
+            ''
+            'СЛОЖНОСТЬ:'
+            'Низкая.'
+            ''
+            'НАГРАДА:'
+            '5 000 кредитов.'
+        ],
+        en_lines=[
+            'OBJECTIVE:',
+            'Escort Rheinland trade convoy.'
+            ''
+            'DIFFICULTY:'
+            'Low.'
+            ''
+            'REWARD:'
+            '5 000 credits.'
+        ]
     ).get_content()
 
     def get_save_states(self):
         return [
-            SaveState(self, 'brandenburg', 'Берлин, Аванпост Бранденбург'),
+            SaveState(self, 'brandenburg', MS('Берлин, Аванпост Бранденбург', 'Berlin, Outpost Brandnburg')),
         ]
 
     def get_offers(self):
@@ -82,7 +96,7 @@ class Misson01A(ingame_mission.IngameMission):
     def get_dialogs(self):
         return [
             TextDialog(
-                self, 'engine_controls', 'От автора',
+                self, 'engine_controls', MS('От автора', 'From author'),
                 ru_content=MultiText([
                     'Добро пожаловать в мод Наследие Номадов!',
 
@@ -275,8 +289,8 @@ class Misson01A(ingame_mission.IngameMission):
             NNObj(self, O.TLR, target='s13_tlr'),
             NNObj(self, O.JUMPGATE, target='s13_to_ber'),
             NNObj(self, O.TLR, target='tlr_to_outpost'),
-            NNObj(self, 'Ожидайте прохождения проверки', target='ber_outpost'),
-            NNObj(self, 'Уничтожьте корсаров', name='defend_cruiser'),
+            NNObj(self, MS('Ожидайте прохождения проверки', 'Wait for the inspection to pass'), target='ber_outpost'),
+            NNObj(self, O.DESTROY_CORSAIRS, name='defend_cruiser'),
             NNObj(self, O.TLR, target='tlr_to_planet'),
             NNObj(self, O.DOCKRING, target='ber_dockring'),
         ]

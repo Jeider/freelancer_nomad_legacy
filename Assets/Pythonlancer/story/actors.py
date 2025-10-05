@@ -1,3 +1,5 @@
+from text.strings import MultiString as MS
+
 ACTOR_MALE = 'male'
 ACTOR_TRENT = 'trent'
 ACTOR_FEMALE = 'female'
@@ -96,7 +98,7 @@ class Actor(SteosInterface):
 
 
 class Trent(Actor):
-    RU_NAME = 'Трент'
+    RU_NAME = MS('Трент', 'Trent')
     TYPE = ACTOR_TRENT
     NAME = 'trent'
     GAME_ACTOR = 'Player'
@@ -108,7 +110,7 @@ class Trent(Actor):
 
 
 class EdisonTrent(Actor):
-    RU_NAME = 'Эдисон Трент'
+    RU_NAME = MS('Эдисон Трент', 'Edison Trent')
     TYPE = ACTOR_TRENT
     NAME = 'edison'
     COMM_APPEARANCE = 'pi_pirate5_head, pl_trent_body, comm_ge_generic1'
@@ -123,7 +125,7 @@ class EdisonTrent(Actor):
 
 
 class Juni(Actor):
-    RU_NAME = 'Джуни'
+    RU_NAME = MS('Джуни', 'Juni')
     TYPE = ACTOR_JUNI  # Анимация имеет ту же природу, что и у Трента. Надеюсь не пригодится
     CUTSCENE_APPEARANCE = 'junko_zane'
     NAME = 'juni'
@@ -136,7 +138,7 @@ class Juni(Actor):
 
 
 class Hatcher(Actor):
-    RU_NAME = 'Хетчер'
+    RU_NAME = MS('Хетчер', 'Hatcher')
     TYPE = ACTOR_FEMALE
     NAME = 'hatcher'
     COMM_APPEARANCE = 'pl_female2_head, li_hatcher_body, comm_li_hatcher_female'
@@ -148,14 +150,14 @@ class Hatcher(Actor):
 
 
 class HatcherStation(Hatcher):
-    RU_NAME = 'Хетчер'
+    RU_NAME = MS('Хетчер', 'Hatcher')
     TYPE = ACTOR_FEMALE
     NAME = 'hatcher'
     COMM_APPEARANCE = 'li_hatcher_head, li_hatcher_body, new_fem_glasses'
 
 
 class Darcy(Actor):
-    RU_NAME = 'Дерси'
+    RU_NAME = MS('Дерси', 'Darcy')
     TYPE = ACTOR_FEMALE
     NAME = 'darcy'
     COMM_APPEARANCE = 'ge_female1_head, br_darcy_body, comm_br_darcy_female'
@@ -166,7 +168,7 @@ class Darcy(Actor):
 
 
 class Kaitlyn(Actor):
-    RU_NAME = 'Кейтлин'
+    RU_NAME = MS('Кейтлин', 'Caitlyn')
     TYPE = ACTOR_FEMALE
     NAME = 'kaytlin'
     COMM_APPEARANCE = 'br_kaytlin_head, br_kaytlin_body'
@@ -176,7 +178,7 @@ class Kaitlyn(Actor):
 
 
 class King(Actor):
-    RU_NAME = 'Кинг'
+    RU_NAME = MS('Кинг', 'King')
     TYPE = ACTOR_MALE
     NAME = 'king'
     COMM_APPEARANCE = 'li_scrote_head, li_scrote_body'
@@ -187,14 +189,14 @@ class King(Actor):
 
 
 class Tilton(Actor):
-    RU_NAME = 'Тилтон'
+    RU_NAME = MS('Тилтон', 'Tilton')
     TYPE = ACTOR_MALE
     NAME = 'tilton'
     COMM_APPEARANCE = 'pl_male4_head, li_tilton_body'
 
 
 class Rockford(Actor):
-    RU_NAME = 'Рокфорд'
+    RU_NAME = MS('Рокфорд', 'Rockford')
     TYPE = ACTOR_MALE
     NAME = 'rockford'
     COMM_APPEARANCE = 'li_rockford_head, sh_male1_body, comm_ge_generic1'
@@ -205,7 +207,7 @@ class Rockford(Actor):
 
 
 class RockfordStation(Actor):
-    RU_NAME = 'Рокфорд'
+    RU_NAME = MS('Рокфорд', 'Rockford')
     TYPE = ACTOR_MALE
     NAME = 'rockford'
     COMM_APPEARANCE = 'li_rockford_head, sh_male1_body'
@@ -215,84 +217,84 @@ class RockfordStation(Actor):
 
 
 class Brighton(Actor):
-    RU_NAME = 'Брайтон'
+    RU_NAME = MS('Брайтон', 'Brighton')
     TYPE = ACTOR_MALE
     NAME = 'brighton'
     COMM_APPEARANCE = 'br_brighton_head, br_brighton_body'
 
 
 class DetroitDispatcher(Actor):
-    RU_NAME = 'Детроит'
+    RU_NAME = MS('Детроит', 'Detroit')
     TYPE = ACTOR_FEMALE
     NAME = 'dispatcher'
     COMM_APPEARANCE = 'br_kaitlyn_head, br_kaitlyn_body, prop_neuralnet_e'
 
 
 class ClarkResearch(Actor):
-    RU_NAME = 'Станция Кларк'
+    RU_NAME = MS('Станция Кларк', 'Clark Station')
     TYPE = ACTOR_MALE
     NAME = 'clark'
     COMM_APPEARANCE = 'sh_male2_head, sh_male2_body, prop_hat_male_li_elite_visor'
 
 
 class Sigma17Trader(Actor):
-    RU_NAME = 'Торговец'
+    RU_NAME = MS('Торговец', 'Trader')
     TYPE = ACTOR_FEMALE
     NAME = 'trader'
     COMM_APPEARANCE = 'pl_female3_head, pl_female1_journeyman_body, prop_neuralnet_A'
 
 
 class Sigma17Police(Actor):
-    RU_NAME = 'Полицейский'
+    RU_NAME = MS('Полицейский', 'Officer')
     TYPE = ACTOR_MALE
     NAME = 'police'
     COMM_APPEARANCE = 'li_captain_head, li_male_elite_body, comm_li_elite'
 
 
 class Sigma17Assassin(Actor):
-    RU_NAME = 'Киллер'
+    RU_NAME = MS('Киллер', 'Killer')
     TYPE = ACTOR_MALE
     NAME = 'assassin'
     COMM_APPEARANCE = 'rh_captain_head, rh_male_elite_body, comm_rh_elite'
 
 
 class Kreitmaier(Actor):
-    RU_NAME = 'Крейтмайер'
+    RU_NAME = MS('Крейтмайер', 'Kreitmaier')
     TYPE = ACTOR_MALE
     NAME = 'officer'
     COMM_APPEARANCE = 'rh_captain_head, rh_male_elite_body, comm_rh_elite'
 
 
 class Marauder(Actor):
-    RU_NAME = 'Марадёр'
+    RU_NAME = MS('Марадёр', 'Marauder')
     TYPE = ACTOR_MALE
     NAME = 'marauder'
     COMM_APPEARANCE = 'li_captain_head, rh_male_guard_body, comm_rh_guard'
 
 
 class Punisher(Actor):
-    RU_NAME = 'Каратель'
+    RU_NAME = MS('Каратель', 'Punisher')
     TYPE = ACTOR_MALE
     NAME = 'punisher'
     COMM_APPEARANCE = 'rh_sales_head, rh_male_elite_body, comm_rh_elite'
 
 
 class PunisherCatcher(Actor):
-    RU_NAME = 'Каратель'
+    RU_NAME = MS('Каратель', 'Punisher')
     TYPE = ACTOR_MALE
     NAME = 'catcher'
     COMM_APPEARANCE = 'rh_sales_head, rh_male_elite_body, comm_rh_elite'
 
 
 class Informer(Actor):
-    RU_NAME = 'Информатор'
+    RU_NAME = MS('Информатор', 'Informer')
     TYPE = ACTOR_MALE
     NAME = 'informer'
     COMM_APPEARANCE = 'null, robot_body_E'
 
 
 class Neuralnet(Actor):
-    RU_NAME = 'Нейросеть'
+    RU_NAME = MS('Нейросеть', 'NeuralNet')
     TYPE = ACTOR_FEMALE
     NAME = 'nn'
     COMM_APPEARANCE = 'null, robot_body_E'
@@ -301,42 +303,42 @@ class Neuralnet(Actor):
 
 
 class Adelmar(Actor):
-    RU_NAME = 'Аделмар'
+    RU_NAME = MS('Аделмар', 'Adelmar')
     TYPE = ACTOR_MALE
     NAME = 'adelmar'
     COMM_APPEARANCE = 'pi_pirate3_head, rh_commtrader_body, prop_neuralnet_e_right'
 
 
 class Luc(Actor):
-    RU_NAME = 'Луц'
+    RU_NAME = MS('Луц', 'Lutz')
     TYPE = ACTOR_MALE
     NAME = 'luc'
     COMM_APPEARANCE = 'rh_sales_head, pl_male3_peasant_body, comm_ge_generic1'
 
 
 class Sigma8Cruiser(Actor):
-    RU_NAME = 'Крейсер'
+    RU_NAME = MS('Крейсер', 'Cruiser')
     TYPE = ACTOR_MALE
     NAME = 'cruiser'
     COMM_APPEARANCE = 'rh_sales_head, rh_male_guard_body, prop_neuralnet_d'
 
 
 class BrandenburgCruiser(Actor):
-    RU_NAME = 'Крейсер'
+    RU_NAME = MS('Крейсер', 'Cruiser')
     TYPE = ACTOR_MALE
     NAME = 'cruiser'
     COMM_APPEARANCE = 'rh_sales_head, rh_male_guard_body, prop_neuralnet_d'
 
 
 class CadizEnemyOne(Actor):
-    RU_NAME = 'Контрабандист'
+    RU_NAME = MS('Киллер', 'Killer')
     TYPE = ACTOR_MALE
     NAME = 'enemy1'
     COMM_APPEARANCE = 'pl_male1_head, pi_pirate3_body, comm_pi_pirate'
 
 
 class CadizEnemyTwo(Actor):
-    RU_NAME = 'Контрабандист'
+    RU_NAME = MS('Киллер', 'Killer')
     TYPE = ACTOR_MALE
     NAME = 'enemy2'
     COMM_APPEARANCE = 'pl_male1_head, pi_pirate3_body, comm_pi_pirate'
@@ -351,49 +353,49 @@ class CadizEnemyFour(CadizEnemyOne):
 
 
 class ForbesSmugglerOne(Actor):
-    RU_NAME = 'Контрабандист'
+    RU_NAME = MS('Контрабандист', 'Smuggler')
     TYPE = ACTOR_MALE
     NAME = 'smuggler1'
     COMM_APPEARANCE = 'pl_male1_head, pi_pirate3_body, comm_pi_pirate'
 
 
 class ForbesSmugglerTwo(Actor):
-    RU_NAME = 'Контрабандист'
+    RU_NAME = MS('Контрабандист', 'Smuggler')
     TYPE = ACTOR_MALE
     NAME = 'smuggler2'
     COMM_APPEARANCE = 'pl_male1_head, pi_pirate3_body, comm_pi_pirate'
 
 
 class ForbesSmugglerThree(Actor):
-    RU_NAME = 'Контрабандист'
+    RU_NAME = MS('Контрабандист', 'Smuggler')
     TYPE = ACTOR_MALE
     NAME = 'smuggler3'
     COMM_APPEARANCE = 'pl_male1_head, pi_pirate3_body, comm_pi_pirate'
 
 
 class OmegaJunkerOne(Actor):
-    RU_NAME = 'Мусорщик'
+    RU_NAME = MS('Мусорщик', 'Junker')
     TYPE = ACTOR_MALE
     NAME = 'junker1'
     COMM_APPEARANCE = 'pl_male1_head, pi_pirate3_body, comm_pi_pirate'
 
 
 class OmegaJunkerTwo(Actor):
-    RU_NAME = 'Мусорщик'
+    RU_NAME = MS('Мусорщик', 'Junker')
     TYPE = ACTOR_MALE
     NAME = 'junker2'
     COMM_APPEARANCE = 'pl_male1_head, pi_pirate3_body, comm_pi_pirate'
 
 
 class OmegaJunkerThree(Actor):
-    RU_NAME = 'Мусорщик'
+    RU_NAME = MS('Мусорщик', 'Junker')
     TYPE = ACTOR_MALE
     NAME = 'junker3'
     COMM_APPEARANCE = 'pl_male1_head, pi_pirate3_body, comm_pi_pirate'
 
 
 class MaleCaptain(Actor):
-    RU_NAME = 'Капитан'
+    RU_NAME = MS('Капитан', 'Captain')
     TYPE = ACTOR_MALE
     NAME = 'captain'
     COMM_APPEARANCE = 'li_captain_head, li_male_elite_body'
@@ -401,7 +403,7 @@ class MaleCaptain(Actor):
 
 
 class KusariCaptain(Actor):
-    RU_NAME = 'Капитан'
+    RU_NAME = MS('Капитан', 'Captain')
     TYPE = ACTOR_MALE
     NAME = 'captain'
     COMM_APPEARANCE = 'ku_bartender_head, ku_male_guard_body'
@@ -409,7 +411,7 @@ class KusariCaptain(Actor):
 
 
 class Missouri(Actor):
-    RU_NAME = 'Капитан'
+    RU_NAME = MS('Капитан', 'Captain')
     TYPE = ACTOR_MALE
     NAME = 'missouri'
     COMM_APPEARANCE = 'br_captain_head, li_male_elite_body'
@@ -419,7 +421,7 @@ class Missouri(Actor):
 
 
 class SphereMissouri(Actor):
-    RU_NAME = 'Капитан'
+    RU_NAME = MS('Капитан', 'Captain')
     TYPE = ACTOR_MALE
     NAME = 'captain'
     COMM_APPEARANCE = 'br_captain_head, li_male_elite_body'
@@ -429,14 +431,14 @@ class SphereMissouri(Actor):
 
 
 class Sigma8Outpost(Actor):
-    RU_NAME = 'Аванпост'
+    RU_NAME = MS('Аванпост', 'Outpost')
     TYPE = ACTOR_FEMALE
     NAME = 'outpost'
     COMM_APPEARANCE = 'rh_newscaster_head_gen_hat, rh_female_elite_body, prop_hat_female_rh_elite'
 
 
 class SphereOutpost(Actor):
-    RU_NAME = 'Аванпост'
+    RU_NAME = MS('Аванпост', 'Outpost')
     TYPE = ACTOR_MALE
     NAME = 'outpost'
     COMM_APPEARANCE = 'rh_captain_head, rh_male_elite_body, prop_hat_male_rh_elite_visor'
@@ -444,21 +446,21 @@ class SphereOutpost(Actor):
 
 
 class BrandenburgOutpost(Actor):
-    RU_NAME = 'Бранденбург'
+    RU_NAME = MS('Бранденбург', 'Brandenburg')
     TYPE = ACTOR_MALE
     NAME = 'outpost'
     COMM_APPEARANCE = 'rh_captain_head, rh_male_elite_body, prop_hat_male_rh_elite_visor'
 
 
 class SphereAssistant(Actor):
-    RU_NAME = 'Ассистент'
+    RU_NAME = MS('Ассистент', 'Assistant')
     TYPE = ACTOR_MALE
     NAME = 'scient'
     COMM_APPEARANCE = 'ge_male4_head, sc_scientist3_body, prop_neuralnet_E'
 
 
 class DeltaOne(Actor):
-    RU_NAME = 'Дельта-1'
+    RU_NAME = MS('Дельта-1', 'Delta-1')
     TYPE = ACTOR_MALE
     NAME = 'delta1'
     COMM_APPEARANCE = 'br_bartender_head, pi_pirate2_body'
@@ -468,7 +470,7 @@ class DeltaOne(Actor):
 
 
 class DeltaThree(Actor):
-    RU_NAME = 'Дельта-3'
+    RU_NAME = MS('Дельта-3', 'Delta-3')
     TYPE = ACTOR_MALE
     NAME = 'delta3'
     COMM_APPEARANCE = 'br_quigly_head, pi_pirate3_body'
@@ -478,7 +480,7 @@ class DeltaThree(Actor):
 
 
 class Reitherman(Actor):
-    RU_NAME = 'Роттерман'
+    RU_NAME = MS('Роттерман', 'Reitherman')
     TYPE = ACTOR_MALE
     NAME = 'professor'
     COMM_APPEARANCE = 'ge_male1_head, sc_scientist4_body, prop_neuralnet_D'
@@ -488,7 +490,7 @@ class Reitherman(Actor):
 
 
 class FinnRunner(Actor):
-    RU_NAME = 'Финн'
+    RU_NAME = MS('Финн', 'Finn')
     TYPE = ACTOR_MALE
     NAME = 'runner'
     COMM_APPEARANCE = 'sh_male1_head, sc_scientist1_body, prop_hat_male_rh_grd_visor'
@@ -498,28 +500,28 @@ class FinnRunner(Actor):
 
 
 class Ceed(Actor):
-    RU_NAME = 'Сид'
+    RU_NAME = MS('Сид', 'Ceed')
     TYPE = ACTOR_MALE
     NAME = 'syd'
     COMM_APPEARANCE = 'pl_male7_head, pi_orillion_body'
 
 
 class OrderPilot(Actor):
-    RU_NAME = 'Пилот Ордена'
+    RU_NAME = MS('Пилот Ордена', 'Order Pilot')
     TYPE = ACTOR_MALE
     NAME = 'orderpilot'
     COMM_APPEARANCE = 'pi_pirate2_head, pi_orillion_body, comm_br_guard'
 
 
 class OrderGuard(Actor):
-    RU_NAME = 'Пилот Ордена'
+    RU_NAME = MS('Пилот Ордена', 'Order Pilot')
     TYPE = ACTOR_MALE
     NAME = 'guard'
     COMM_APPEARANCE = 'pi_pirate2_head, pi_orillion_body, comm_br_guard'
 
 
 class Kruger(Actor):
-    RU_NAME = 'Крюгер'
+    RU_NAME = MS('Крюгер', 'Kruger')
     TYPE = ACTOR_MALE
     NAME = 'kruger'
     COMM_APPEARANCE = 'li_captain_head, li_male_elite_body'
@@ -527,7 +529,7 @@ class Kruger(Actor):
 
 
 class Omaha(Actor):
-    RU_NAME = 'Омаха'
+    RU_NAME = MS('Омаха', 'Omaha')
     TYPE = ACTOR_MALE
     NAME = 'omaha'
     COMM_APPEARANCE = 'li_captain_head, li_male_elite_body'
@@ -537,7 +539,7 @@ class Omaha(Actor):
 
 
 class PromDread1(Actor):
-    RU_NAME = 'Цинцинатти'
+    RU_NAME = MS('Цинцинатти', 'Cincinnati')
     TYPE = ACTOR_MALE
     NAME = 'promdread1'
     COMM_APPEARANCE = 'li_captain_head, li_male_elite_body'
@@ -547,7 +549,7 @@ class PromDread1(Actor):
 
 
 class PromDread2(Actor):
-    RU_NAME = 'Рио-Гранде'
+    RU_NAME = MS('Рио-Гранде', 'Rio-Grande')
     TYPE = ACTOR_MALE
     NAME = 'promdread2'
     COMM_APPEARANCE = 'li_captain_head, li_male_elite_body'
@@ -557,7 +559,7 @@ class PromDread2(Actor):
 
 
 class FortBush(Actor):
-    RU_NAME = 'Форт Буш'
+    RU_NAME = MS('Форт Буш', 'Fort Bush')
     TYPE = ACTOR_MALE
     NAME = 'bush'
     COMM_APPEARANCE = 'li_captain_head, li_male_elite_body'
@@ -567,27 +569,27 @@ class FortBush(Actor):
 
 
 class RedLeader(Actor):
-    RU_NAME = 'Красный лидер'
+    RU_NAME = MS('Красный лидер', 'Red Leader')
     TYPE = ACTOR_MALE
     NAME = 'red'
     COMM_APPEARANCE = 'li_captain_head, li_male_elite_body, comm_li_elite'
 
 
 class CruiserCaptain(Actor):
-    RU_NAME = 'Уорфиш'
+    RU_NAME = MS('Уорфиш', 'Warfish')
     TYPE = ACTOR_MALE
     NAME = 'captain'
     COMM_APPEARANCE = 'li_captain_head, li_male_elite_body, comm_li_elite'
 
 
 class JabbaBandit(Actor):
-    RU_NAME = 'Бандит'
+    RU_NAME = MS('Бандит', 'Bandit')
     TYPE = ACTOR_MALE
     NAME = 'bandit'
 
 
 class Tortuga(Actor):
-    RU_NAME = 'Тортуга'
+    RU_NAME = MS('Тортуга', 'Tortuga')
     TYPE = ACTOR_MALE
     NAME = 'tortuga'
     COMM_APPEARANCE = 'br_quigly_head, sh_male2_body, prop_hat_male_pirate_a, prop_neuralnet_d'
@@ -596,52 +598,50 @@ class Tortuga(Actor):
 
 
 class Smith(Actor):
-    RU_NAME = 'Смит'
+    RU_NAME = MS('Смит', 'Smith')
     TYPE = ACTOR_MALE
     NAME = 'smith'
 
 
 class DetroitBarman(Actor):
-    RU_NAME = 'Бармен'
+    RU_NAME = MS('Бармен', 'Bartender')
     TYPE = ACTOR_MALE
     NAME = 'barman'
 
 
 class WalesBarman(Actor):
-    RU_NAME = 'Бармен'
+    RU_NAME = MS('Бармен', 'Bartender')
     TYPE = ACTOR_MALE
     NAME = 'barman'
 
 
 class IntroBarman(Actor):
-    RU_NAME = 'Бармен'
+    RU_NAME = MS('Бармен', 'Bartender')
     TYPE = ACTOR_MALE
     NAME = 'barman'
 
 
 class Jabba(Actor):
-    RU_NAME = 'Джабба'
+    RU_NAME = MS('Джабба', 'Jabba')
     TYPE = ACTOR_MALE
     NAME = 'jabba'
 
 
 class Stewardess(Hatcher):
-    RU_NAME = 'Стюардесса'
+    RU_NAME = MS('Стюардесса', 'Stewardess')
     TYPE = ACTOR_FEMALE
     NAME = 'stuard'
 
 
-
-
 class CorsairBarman(Actor):
-    RU_NAME = 'Бармен'
+    RU_NAME = MS('Бармен', 'Bartender')
     TYPE = ACTOR_MALE
     NAME = 'barman'
     COMM_APPEARANCE = 'sh_male1_head, sh_male2_body'
 
 
 class Yamamoto(Actor):
-    RU_NAME = 'Ямамото'
+    RU_NAME = MS('Ямамото', 'Yamamoto')
     TYPE = ACTOR_MALE
     NAME = 'yamamoto'
     COMM_APPEARANCE = 'ku_tenji_head, pi_pirate4_body'
@@ -650,7 +650,7 @@ class Yamamoto(Actor):
 
 
 class Hassler(Actor):
-    RU_NAME = 'Хасслер'
+    RU_NAME = MS('Хасслер', 'Hassler')
     TYPE = ACTOR_MALE
     NAME = 'hassler'
     COMM_APPEARANCE = 'rh_hassler_head, rh_male_elite_body, comm_rh_reichman'
@@ -659,7 +659,7 @@ class Hassler(Actor):
 
 
 class HasslerOrder(Actor):
-    RU_NAME = 'Хасслер'
+    RU_NAME = MS('Хасслер', 'Hassler')
     TYPE = ACTOR_MALE
     NAME = 'hassler'
     COMM_APPEARANCE = 'rh_hassler_head, pi_orillion_body'
@@ -668,7 +668,7 @@ class HasslerOrder(Actor):
 
 
 class Alaric(Actor):
-    RU_NAME = 'Аларик'
+    RU_NAME = MS('Аларик', 'Alaric')
     TYPE = ACTOR_MALE
     NAME = 'alaric'
     COMM_APPEARANCE = 'rh_alaric_head_hat, pi_pirate6_body, comm_rh_alaric'
@@ -680,7 +680,7 @@ class Alaric(Actor):
 
 
 class AlaricStation(Actor):
-    RU_NAME = 'Аларик'
+    RU_NAME = MS('Аларик', 'Alaric')
     TYPE = ACTOR_MALE
     NAME = 'alaric'
     COMM_APPEARANCE = 'rh_alaric_head, pi_pirate6_body'
@@ -692,7 +692,7 @@ class AlaricStation(Actor):
 
 
 class Jacobo(Actor):
-    RU_NAME = 'Джакобо'
+    RU_NAME = MS('Джакобо', 'Jacobo')
     TYPE = ACTOR_MALE
     NAME = 'jacobo'
     COMM_APPEARANCE = 'pl_male1_head, pi_pirate2_body, comm_br_guard'
@@ -701,7 +701,7 @@ class Jacobo(Actor):
 
 
 class JacoboTrader(Actor):
-    RU_NAME = 'Джакобо'
+    RU_NAME = MS('Джакобо', 'Jacobo')
     TYPE = ACTOR_MALE
     NAME = 'jacobo'
     COMM_APPEARANCE = 'pl_male1_head, pi_pirate2_body, prop_neuralnet_b'
@@ -710,14 +710,14 @@ class JacoboTrader(Actor):
 
 
 class Dietrich(Actor):
-    RU_NAME = 'Дитрих'
+    RU_NAME = MS('Дитрих', 'Dietrich')
     TYPE = ACTOR_MALE
     NAME = 'deidrich'
     COMM_APPEARANCE = 'rh_deidrich_head, rh_deidrich_body'
 
 
 class Wilham(Actor):
-    RU_NAME = 'Вильгельм'
+    RU_NAME = MS('Вильгельм', 'Wilhelm')
     TYPE = ACTOR_MALE
     NAME = 'wilham'
     COMM_APPEARANCE = 'rh_wilham_head, rh_wilham_body, comm_rh_wilham'
@@ -726,7 +726,7 @@ class Wilham(Actor):
 
 
 class WilhamStation(Actor):
-    RU_NAME = 'Вильгельм'
+    RU_NAME = MS('Вильгельм', 'Wilhelm')
     TYPE = ACTOR_MALE
     NAME = 'wilhelm'
     COMM_APPEARANCE = 'rh_wilham_head, rh_wilham_body'
@@ -735,7 +735,7 @@ class WilhamStation(Actor):
 
 
 class Mandrake(Actor):
-    RU_NAME = 'Мандрейк'
+    RU_NAME = MS('Мандрейк', 'Mandrake')
     TYPE = ACTOR_MALE
     NAME = 'mandrake'
     COMM_APPEARANCE = 'ge_male7_head, sc_scientist1_body'
@@ -746,7 +746,7 @@ class Mandrake(Actor):
 
 
 class Kim(Actor):
-    RU_NAME = 'Ким'
+    RU_NAME = MS('Ким', 'Kym')
     TYPE = ACTOR_MALE
     NAME = 'kim'
     COMM_APPEARANCE = 'ku_captain_head, ku_male_elite_body, comm_ku_elite'
@@ -755,7 +755,7 @@ class Kim(Actor):
 
 
 class Matome(Actor):
-    RU_NAME = 'Матомэ'
+    RU_NAME = MS('Матомэ', 'Matome')
     TYPE = ACTOR_MALE
     NAME = 'matome'
     COMM_APPEARANCE = 'ge_male2_head, ku_male_guard_body, prop_neuralnet_e'
@@ -763,7 +763,7 @@ class Matome(Actor):
 
 
 class SakuraOne(Actor):
-    RU_NAME = 'Сакура'
+    RU_NAME = MS('Сакура', 'Sakura')
     TYPE = ACTOR_MALE
     NAME = 'sakura'
     COMM_APPEARANCE = 'ku_sales_head, ku_male_guard_body, comm_ku_guard'
@@ -771,7 +771,7 @@ class SakuraOne(Actor):
 
 
 class Chrysanthemum(Actor):
-    RU_NAME = 'Хризантема'
+    RU_NAME = MS('Хризантема', 'Chrysanthemum')
     TYPE = ACTOR_FEMALE
     NAME = 'chrys'
     COMM_APPEARANCE = 'ku_kym_head, ku_kym_body, prop_neuralnet_d'
@@ -779,7 +779,7 @@ class Chrysanthemum(Actor):
 
 
 class ChrysanthemumTrain(Actor):
-    RU_NAME = 'Хризантема'
+    RU_NAME = MS('Хризантема', 'Chrysanthemum')
     TYPE = ACTOR_MALE
     NAME = 'chrys'
     # COMM_APPEARANCE = ''
@@ -787,7 +787,7 @@ class ChrysanthemumTrain(Actor):
 
 
 class ChrysanthemumLifter(Actor):
-    RU_NAME = 'Погрузчик Хризантемы'
+    RU_NAME = MS('Погрузчик Хризантемы', 'Chrysanthemum\'s Lifter')
     TYPE = ACTOR_MALE
     NAME = 'chrys'
     # COMM_APPEARANCE = ''
@@ -795,7 +795,7 @@ class ChrysanthemumLifter(Actor):
 
 
 class ChrysanthemumRepair(Actor):
-    RU_NAME = 'Монтировщик Хризантемы'
+    RU_NAME = MS('Монтировщик Хризантемы', 'Chrysanthemum\'s Repair Ship')
     TYPE = ACTOR_MALE
     NAME = 'chrys'
     # COMM_APPEARANCE = ''
@@ -803,7 +803,7 @@ class ChrysanthemumRepair(Actor):
 
 
 class Tor(Actor):
-    RU_NAME = 'Тор'
+    RU_NAME = MS('Тор', 'Tor')
     TYPE = ACTOR_MALE
     NAME = 'tor'
     COMM_APPEARANCE = 'ku_bartender_head_hat, ku_male_guard_body, comm_ku_kym'
@@ -811,7 +811,7 @@ class Tor(Actor):
 
 
 class Reichman(Actor):
-    RU_NAME = 'Райхман'
+    RU_NAME = MS('Райхман', 'Reichmann')
     TYPE = ACTOR_MALE
     NAME = 'reichman'
     CUTSCENE_APPEARANCE = 'reichman'
@@ -954,83 +954,83 @@ class OrderMedic(Actor):
 
 
 class BartenderFixture(Actor):
-    RU_NAME = 'Стандартный бармен'
+    RU_NAME = MS('Стандартный бармен', 'Bartender')
     TYPE = ACTOR_MALE
     NAME = 'bartender'
 
 
 class MusashiBartender(Actor):
-    RU_NAME = 'Бармен Мусаси'
+    RU_NAME = MS('Бармен Мусаси', 'Captain')
     TYPE = ACTOR_MALE
     NAME = 'musashi_bartender'
     CUTSCENE_APPEARANCE = 'musashi_bartender'
 
 
 class OsirisOfficer(Actor):
-    RU_NAME = 'Капитан'
+    RU_NAME = MS('Капитан', 'Captain')
     TYPE = ACTOR_FEMALE
     NAME = 'asf_captn'
     CUTSCENE_APPEARANCE = 'm8_asf_captain_visor'
 
 
 class OsirisMaleElite1(Actor):
-    RU_NAME = 'Капитан'
+    RU_NAME = MS('Капитан', 'Captain')
     TYPE = ACTOR_MALE
     NAME = 'osiris_male_1'
     CUTSCENE_APPEARANCE = 'm13_male1'
 
 
 class OsirisMaleElite2(Actor):
-    RU_NAME = 'Капитан'
+    RU_NAME = MS('Капитан', 'Captain')
     TYPE = ACTOR_MALE
     NAME = 'osiris_male_2'
     CUTSCENE_APPEARANCE = 'm13_male2'
 
 
 class OsirisMaleElite3(Actor):
-    RU_NAME = 'Капитан'
+    RU_NAME = MS('Капитан', 'Captain')
     TYPE = ACTOR_MALE
     NAME = 'osiris_male_3'
     CUTSCENE_APPEARANCE = 'm13_male3'
 
 
 class OsirisMaleElite4(Actor):
-    RU_NAME = 'Капитан'
+    RU_NAME = MS('Капитан', 'Captain')
     TYPE = ACTOR_MALE
     NAME = 'osiris_male_4'
     CUTSCENE_APPEARANCE = 'm13_male4'
 
 
 class OsirisFemaleElite1(Actor):
-    RU_NAME = 'Капитан'
+    RU_NAME = MS('Капитан', 'Captain')
     TYPE = ACTOR_FEMALE
     NAME = 'osiris_female_1'
     CUTSCENE_APPEARANCE = 'm13_female1'
 
 
 class OsirisFemaleElite2(Actor):
-    RU_NAME = 'Капитан'
+    RU_NAME = MS('Капитан', 'Captain')
     TYPE = ACTOR_FEMALE
     NAME = 'osiris_female_2'
     CUTSCENE_APPEARANCE = 'm13_female2'
 
 
 class OsirisFemaleElite3(Actor):
-    RU_NAME = 'Капитан'
+    RU_NAME = MS('Капитан', 'Captain')
     TYPE = ACTOR_FEMALE
     NAME = 'osiris_female_3'
     CUTSCENE_APPEARANCE = 'm13_female3'
 
 
 class OsirisFemaleElite4(Actor):
-    RU_NAME = 'Капитан'
+    RU_NAME = MS('Капитан', 'Captain')
     TYPE = ACTOR_FEMALE
     NAME = 'osiris_female_4'
     CUTSCENE_APPEARANCE = 'm13_female4'
 
 
 class MajorScrew(Actor):
-    RU_NAME = 'Майор Скрю'
+    RU_NAME = MS('Майор Скрю', 'Major Screw')
     TYPE = ACTOR_MALE
     NAME = 'major'
     CUTSCENE_APPEARANCE = 'major_screw'

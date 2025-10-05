@@ -18,6 +18,7 @@ from world import ship
 from universe import faction
 
 from text.dividers import SINGLE_DIVIDER, DIVIDER
+from text.strings import MultiString as MS
 
 
 NPCSHIPS = '''
@@ -241,7 +242,7 @@ class ActiveKernel:
 
 
 class Hazard:
-    SOLAR_NAME = 'Сгусток энергии'
+    SOLAR_NAME = MS('Сгусток энергии', 'Clot of Energy')
 
     def __init__(self, pod_root, hazard_index, pod_name):
         self.pod_root: BlackholePower = pod_root
@@ -475,20 +476,32 @@ class Misson13(ingame_mission.IngameMission):
     FOLDER = 'M13'
     FILE = 'm13'
     START_SAVE_ID = 33300
-    START_SAVE_RU_NAME = 'Линкор Осирис. Рядом со Сферой'
+    START_SAVE_RU_NAME = MS('Линкор Осирис. Рядом со Сферой', 'Battleship Osiris. Near The Sphere')
     SCRIPT_INDEX = 13
     DIRECT_SYSTEMS = [S.sphere2, S.sphere2_inside, S.om13_alt, S.bh]
     STATIC_NPCSHIPS = NPCSHIPS
     RTC = ['captured', 'last_brief']
     INIT_OFFER = MultiLine(
-        'ЗАДАЧА:',
-        'Остановить планы Рокфорда в Сфере.',
-        '',
-        'СЛОЖНОСТЬ:',
-        'Спасти человечество.',
-        '',
-        'Награда:',
-        'Выживание',
+        [
+            'ЗАДАЧА:',
+            'Остановить планы Рокфорда в Сфере.',
+            '',
+            'СЛОЖНОСТЬ:',
+            'Спасти человечество.',
+            '',
+            'НАГРАДА:',
+            'Выживание',
+        ],
+        [
+            'OBJECTIVE:',
+            'Stop Rockford\s plans about Sphere.',
+            '',
+            'DIFFICULTY:',
+            'Save the mankind.',
+            '',
+            'REWARD:',
+            'Survival',
+        ]
     ).get_content()
 
     def __init__(self, *args, **kwargs):
@@ -518,10 +531,13 @@ class Misson13(ingame_mission.IngameMission):
             ),
 
             TextDialog(
-                self, 'collect_power', 'Сбор энергии Чёрной дыры',
+                self, 'collect_power', MS('Сбор энергии Чёрной дыры', 'Collecting of Black Hole\'s power'),
                 ru_content=MultiText([
                     'Атакуйте сгустки энергии и собирайте полученный концентрат, чтобы загрузить '
                     'номадское энергоядро энергией Чёрный дыры'
+                ],[
+                    'Attack the energy clots and collect the resulting concentrate '
+                    'to charge the Nomad energy core with the energy of the Black Hole'
                 ]),
             ),
         ]
@@ -534,10 +550,10 @@ class Misson13(ingame_mission.IngameMission):
 
     def get_save_states(self):
         return [
-            SaveState(self, 'beast_reactor', 'Сфера. Крыг ожил'),
-            SaveState(self, 'chamber01', 'Омега-13. Кокон'),
-            SaveState(self, 'chamber02', 'Омега-13. Второй кокон'),
-            SaveState(self, 'chamber02_after', 'Омега-13. После второго кокона'),
+            SaveState(self, 'beast_reactor', MS('Сфера. Крыг ожил', 'The Sphere. Krieg now alive')),
+            SaveState(self, 'chamber01', MS('Омега-13. Кокон', 'Omega-13. Cocoon')),
+            SaveState(self, 'chamber02', MS('Омега-13. Второй кокон', 'Omega-13. Second cocoon')),
+            SaveState(self, 'chamber02_after', MS('Омега-13. После второго кокона', 'Omega-13. After second cocoon')),
         ]
 
     def get_ingame_thorns(self):

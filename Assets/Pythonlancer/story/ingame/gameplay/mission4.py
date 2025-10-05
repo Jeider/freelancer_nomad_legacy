@@ -16,6 +16,8 @@ from world.npc import NPC, EqMap
 from world import ship
 from universe import faction
 
+from text.strings import MultiString as MS
+
 NPCSHIPS = '''
 
 [NPCShipArch]
@@ -53,25 +55,37 @@ class Misson04(ingame_mission.IngameMission):
     FOLDER = 'M04'
     FILE = 'm04'
     START_SAVE_ID = 32400
-    START_SAVE_RU_NAME = 'Мюнхен, Планета Норторф'
+    START_SAVE_RU_NAME = MS('Мюнхен, Планета Норторф', 'Munich, Planet Nortorf')
     STATIC_NPCSHIPS = NPCSHIPS
     SCRIPT_INDEX = 4
     DIRECT_SYSTEMS = [S.sig8, S.rh_biz, S.li_for]
     INIT_OFFER = MultiLine(
-        'ЗАДАЧА:',
-        'Сопроводить Джакобо в систему Форбс',
-        '',
-        'СЛОЖНОСТЬ:',
-        'Неизвестно.',
-        '',
-        'Награда:',
-        'Неизвестно (предположительно высокая).',
+        [
+            'ЗАДАЧА:',
+            'Сопроводить Джакобо в систему Форбс',
+            '',
+            'СЛОЖНОСТЬ:',
+            'Неизвестно.',
+            '',
+            'Награда:',
+            'Неизвестно (предположительно высокая).',
+        ],
+        [
+            'OBJECTIVE:',
+            'Escort Jacobo to the Forbes system',
+            '',
+            'DIFFICULTY:',
+            'Unknown.',
+            '',
+            'REWARD:',
+            'Unknown (theoretically high).',
+        ]
     ).get_content()
 
     def get_save_states(self):
         return [
-            SaveState(self, 'keln', 'Берлин, станция Кёльн'),
-            SaveState(self, 'forbes_jh', 'Сигма-8, гипердыра в Форбс'),
+            SaveState(self, 'keln', MS('Берлин, станция Кёльн', 'Berlin, Station Kologne')),
+            SaveState(self, 'forbes_jh', MS('Сигма-8, гипердыра в Форбс', 'Sigma-8, jumphole to Forbes')),
         ]
 
     def get_dialogs(self):
@@ -86,6 +100,14 @@ class Misson04(ingame_mission.IngameMission):
 
                     'Выбирайте элементы корабля противника с помощью вашего интерфейса, чтобы навести прицел на '
                     'указанную точку. Ваши ракеты тоже будут лететь в наведенную точку корабля противника.',
+                ],[
+                    "It's very difficulty to destroy cruiser by direct attacks. But you can attact vulnerable points!",
+
+                    "Vulnerable points have special colors: by default it's orange. Cruiser will get extra damage "
+                    "after loosing of vulnerable point.",
+
+                    "You can also select vulnerable point by clicking on interface. If will set your crosshair on "
+                    "this point. Your missiles also will be targeted on this point."
                 ]),
             ),
         ]
@@ -109,7 +131,8 @@ class Misson04(ingame_mission.IngameMission):
 
     def get_nn_objectives(self):
         return [
-            NNObj(self, 'Встретьтесь с Джакобо в баре планеты Норторф', name='meet_vendor', target='vendor_planet'),
+            NNObj(self, MS('Встретьтесь с Джакобо в баре планеты Норторф',
+                           'Meet Jacoibo in bar of Planet Nortorf'), name='meet_vendor', target='vendor_planet'),
 
             NNObj(self, O.LAUNCH, name='launch'),
 
@@ -117,15 +140,16 @@ class Misson04(ingame_mission.IngameMission):
             NNObj(self, O.TLR, target='mnh_tlr_2'),
             NNObj(self, O.JUMPGATE, target='mnh_to_biz'),
 
-            NNObj(self, 'Следуйте за офицером', name='follow_officer'),
-            NNObj(self, 'Сражайтесь!', name='destroy_keln_enemy'),
+            NNObj(self, MS('Следуйте за офицером', 'Follow officer'), name='follow_officer'),
+            NNObj(self, MS('Сражайтесь!', 'Fight!'), name='destroy_keln_enemy'),
 
-            NNObj(self, 'Уничтожьте боковую панель реактора', name='destroy_reactor', target='bs_reactor', nag=False),
+            NNObj(self, MS('Уничтожьте боковую панель реактора',
+                           'Destroy side panel of battleship'), name='destroy_reactor', target='bs_reactor', nag=False),
 
             NNObj(self, O.GOTO_JUMPHOLE, name='biz_to_sig8_fly', target='biz_to_sig8', towards=True),
             NNObj(self, O.JUMPHOLE, target='biz_to_sig8'),
 
-            NNObj(self, 'Уничтожьте крейсер', name='attack_cruiser'),
+            NNObj(self, MS('Уничтожьте крейсер', 'Destroy the cruiser'), name='attack_cruiser'),
             NNObj(self, O.DESTROY_FIGHTERS, name='destroy_fighters'),
 
             NNObj(self, O.GOTO, name='goto_escape_point1', target='point_escape1', towards=True, reach_range=2000),
@@ -135,9 +159,9 @@ class Misson04(ingame_mission.IngameMission):
             NNObj(self, O.DESTROY_CORSAIRS, name='destroy_corsairs'),
             NNObj(self, O.GOTO_JUMPHOLE, name='sig8_to_for_fly', target='sig8_to_for', towards=True),
             NNObj(self, O.JUMPHOLE, target='sig8_to_for'),
-            NNObj(self, 'Ожидайте активации дыры', name='wait_for_activation'),
+            NNObj(self, MS('Ожидайте активации дыры', 'Wait for activation'), name='wait_for_activation'),
 
-            NNObj(self, 'Доберитесь до ближайшей базы', target='shipyard', towards=True),
+            NNObj(self, MS('Доберитесь до ближайшей базы', 'Reach nearest base'), target='shipyard', towards=True),
             NNObj(self, O.TLR, target='for_tlr_1'),
             NNObj(self, O.DOCKRING, target='final_planet'),
         ]
@@ -185,10 +209,10 @@ class Misson04(ingame_mission.IngameMission):
             )
 
         defined_points.extend([
-            Solar(self, S.rh_biz, 'bs', ru_name='Линкор Вотан',
+            Solar(self, S.rh_biz, 'bs', ru_name=MS('Линкор Вотан', 'Battleship Wotan'),
                   faction='rh_grp', archetype='rh_battleship_ms4_solar', loadout='rh_battleship_01_no_guns',
                   labels=['keln_capship']),
-            Solar(self, S.rh_biz, 'bs_reactor', ru_name='Реактор линкора',
+            Solar(self, S.rh_biz, 'bs_reactor', ru_name=MS('Реактор линкора', 'Battleship\'s Reactor'),
                   faction='rh_grp', archetype='msn4_rh_battleship_shield'),
         ])
 

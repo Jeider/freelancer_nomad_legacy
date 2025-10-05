@@ -17,6 +17,7 @@ from world import ship
 from universe import faction
 
 from text.dividers import SINGLE_DIVIDER, DIVIDER
+from text.strings import MultiString as MS
 
 NPCSHIPS = '''
 
@@ -240,26 +241,38 @@ class Misson10(ingame_mission.IngameMission):
     FOLDER = 'M10'
     FILE = 'm10'
     START_SAVE_ID = 33000
-    START_SAVE_RU_NAME = 'Система ксеносов. Линкор Мусаси'
+    START_SAVE_RU_NAME = MS('Система ксеносов. Линкор Мусаси', "Xenos' system, Batltesh Musashi")
     SCRIPT_INDEX = 10
     DIRECT_SYSTEMS = [S.xen]
     STATIC_NPCSHIPS = NPCSHIPS
     RTC = ['briefieng']
     INIT_OFFER = MultiLine(
-        'ЗАДАЧА:',
-        'Вызволить заключенных из тюрьмы на базе ксеносов',
-        '',
-        'СЛОЖНОСТЬ:',
-        'Высокая.',
-        '',
-        'Награда:',
-        'Освобождение Аларика, выполнение договора',
+        [
+            'ЗАДАЧА:',
+            'Вызволить заключенных из тюрьмы на базе ксеносов',
+            '',
+            'СЛОЖНОСТЬ:',
+            'Высокая.',
+            '',
+            'НАГРАДА:',
+            'Освобождение Аларика, выполнение договора.',
+        ],
+        [
+            'OBJECTIVE:',
+            'Rescue prosioners from prison on a Xenos\' base',
+            '',
+            'DIFFICULTY:',
+            'High.',
+            '',
+            'REWARD:',
+            'Get freedom for Alaric, implementation of the treaty',
+        ]
     ).get_content()
 
     def get_save_states(self):
         return [
-            SaveState(self, 'inside_nebula', 'Ксеносы. Внутри главной туманности'),
-            SaveState(self, 'near_base', 'Ксеносы. Рядом с базой'),
+            SaveState(self, 'inside_nebula', MS('Ксеносы. Внутри главной туманности', 'Xenos. Inside main nebula')),
+            SaveState(self, 'near_base', MS('Ксеносы. Рядом с базой', 'Xenos. Near base')),
         ]
 
     def __init__(self, *args, **kwargs):

@@ -16,6 +16,8 @@ from world.npc import NPC, EqMap
 from world import ship
 from universe import faction
 
+from text.strings import MultiString as MS
+
 NPCSHIPS = '''
 
 [NPCShipArch]
@@ -85,37 +87,37 @@ npc_class = lawful, TRANSPORT
 '''
 
 BDR_NAMES = [
-    'Сарацин',
-    'Мохок',
-    'Киплинг',
+    MS('Эсминец Сарацин', 'Saracen Destroyer'),
+    MS('Эсминец Мохок', 'Mohawk Destroyer'),
+    MS('Эсминец Киплинг', 'Kipling Destroyer'),
 
-    'Маори',
-    'Нубиец',
-    'Кимберли',
+    MS('Эсминец Маори', 'Maori Destroyer'),
+    MS('Эсминец Нубиец', 'Nubian Destroyer'),
+    MS('Эсминец Кимберли', 'Kimberley Destroyer'),
 
-    'Викинг',
-    'Юпитер',
-    'Нептун',
+    MS('Эсминец Викинг', 'Viking Destroyer'),
+    MS('Эсминец Юпитер', 'Jupiter Destroyer'),
+    MS('Эсминец Нептун', 'Neptune Destroyer'),
 
-    'Уран',
-    'Марс',
-    'Венера',
+    MS('Эсминец Уран', 'Uranus Destroyer'),
+    MS('Эсминец Марс', 'Mars Destroyer'),
+    MS('Эсминец Венера', 'Venus Destroyer'),
 
-    'Плутон',
-    'Меркурий',
-    'Сатурн',
+    MS('Эсминец Плутон', 'Pluto Destroyer'),
+    MS('Эсминец Меркурий', 'Mercury Destroyer'),
+    MS('Эсминец Сатурн', 'Saturn Destroyer'),
 
-    'Монтроз',
-    'Маккей',
-    'Хэвок',
+    MS('Эсминец Монтроз', 'Montrose Destroyer'),
+    MS('Эсминец Маккей', 'Makkey Destroyer'),
+    MS('Эсминец Хэвок', 'Havock Destroyer'),
 
-    'Нестор',
-    'Онслоу',
-    'Джервис',
+    MS('Эсминец Нестор', 'Nestor Destroyer'),
+    MS('Эсминец Онслоу', 'Onslow Destroyer'),
+    MS('Эсминец Джервис', 'Jervis Destroyer'),
 
-    'Келли',
-    'Джуно',
-    'Норман',
+    MS('Эсминец Келли', 'Kelly Destroyer'),
+    MS('Эсминец Джуно', 'Juno Destroyer'),
+    MS('Эсминец Норман', 'Norman Destroyer'),
 ]
 
 
@@ -125,27 +127,39 @@ class Misson09(ingame_mission.IngameMission):
     FOLDER = 'M09'
     FILE = 'm09'
     START_SAVE_ID = 32900
-    START_SAVE_RU_NAME = 'Омега-3. Станция Йокогама'
+    START_SAVE_RU_NAME = MS('Омега-3. Станция Йокогама', 'Omega-3, Station Yokohama')
     SCRIPT_INDEX = 9
     DIRECT_SYSTEMS = [S.ku_tgk, S.sig42]
     STATIC_NPCSHIPS = NPCSHIPS
     RTC = ['deck', 'yokohama', 'order', 'final', 'leave_yoko']
     INIT_OFFER = MultiLine(
-        'ЗАДАЧА:',
-        'Помочь Ордену получить важные данные об СБА',
-        '',
-        'СЛОЖНОСТЬ:',
-        'Высокая.',
-        '',
-        'Награда:',
-        'Выполнение договоренностей со стороны Ордена',
+        [
+            'ЗАДАЧА:',
+            'Помочь Ордену получить важные данные об СБА.',
+            '',
+            'СЛОЖНОСТЬ:',
+            'Высокая.',
+            '',
+            'НАГРАДА:',
+            'Выполнение договоренностей со стороны Ордена',
+        ],
+        [
+            'OBJECTIVE:',
+            'Help the Order to get important data about ASF.',
+            '',
+            'DIFFICULTY:',
+            'High.',
+            '',
+            'REWARD:',
+            'Implementation of the treaty from The Order\'s side',
+        ]
     ).get_content()
 
     def get_save_states(self):
         return [
-            SaveState(self, 'fighter_patrol', 'Сириус. Патруль истребителей'),
-            SaveState(self, 'gunboat_patrol', 'Сириус. Патруль канонерок'),
-            SaveState(self, 'destroyer_attack', 'Сириус. Эсминцы'),
+            SaveState(self, 'fighter_patrol', MS('Сириус. Патруль истребителей', 'Sirius. Fighter patrol')),
+            SaveState(self, 'gunboat_patrol', MS('Сириус. Патруль канонерок', 'Sirius. Gunboat patrol')),
+            SaveState(self, 'destroyer_attack', MS('Сириус. Эсминцы', 'Sirius. Destroyers')),
         ]
 
     def get_static_points(self):
@@ -166,8 +180,8 @@ class Misson09(ingame_mission.IngameMission):
             )
 
         sig42_solars = [
-            ('com_sat', 'Хризантема'),
-            ('check1', 'Датчик'),
+            ('com_sat', MS('Хризантема', 'Chrysanthemum')),
+            ('check1', MS('Датчик', "Sensor")),
         ]
         for sol, ru_name in sig42_solars:
             defined_points.append(
@@ -175,8 +189,9 @@ class Misson09(ingame_mission.IngameMission):
             )
 
         defined_points.extend([
-            DockableBattleshipSolar(self, S.sig42, 'torp_musashi', ru_name='Линкор Мусаси', base='sig42_98_base',
-                archetype='k_battleship', labels=['friend']),
+            DockableBattleshipSolar(self, S.sig42, 'torp_musashi',
+                                    ru_name=MS('Линкор Мусаси', 'Battleship Musashi'), base='sig42_98_base',
+                                    archetype='k_battleship', labels=['friend']),
         ])
 
         return defined_points

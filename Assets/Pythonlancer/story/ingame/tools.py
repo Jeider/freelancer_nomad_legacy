@@ -7,7 +7,7 @@ from universe.content.system_object import Marker
 from universe.content.main_objects import Battleship, JumpableObject
 
 from text.dividers import SINGLE_DIVIDER, DIVIDER
-
+from text.strings import MultiString as MS
 
 DEFAULT_AFFILIATION = 'fc_uk_grp'
 
@@ -747,7 +747,10 @@ class Ship(Target):
         else:
             if self.base_name:
                 try:
-                    ids_name = self.ids.new_name(f'{self.base_name} {index}')
+                    ids_name = self.ids.new_name(MS(
+                        f'{self.base_name.get_ru()} {index}',
+                        f'{self.base_name.get_en()} {index}'
+                    ))
                     items.append(f'individual_name = {ids_name.id}')
                 except IndexError:
                     pass
@@ -1842,20 +1845,27 @@ class SaveState:
 
 class MultiText:
 
-    def __init__(self, lines):
-        self.lines = lines
+    def __init__(self, ru_lines=None, en_lines=None):
+        self.ru_lines = ru_lines if ru_lines else []
+        self.en_lines = en_lines if en_lines else []
 
     def get_content(self):
-        return "\\n\\n".join(self.lines)
-
+        return MS(
+            "\\n\\n".join(self.ru_lines),
+            "\\n\\n".join(self.en_lines)
+        )
 
 class MultiLine:
 
-    def __init__(self, *lines):
-        self.lines = lines
+    def __init__(self, ru_lines=None, en_lines=None):
+        self.ru_lines = ru_lines if ru_lines else []
+        self.en_lines = en_lines if en_lines else []
 
     def get_content(self):
-        return "\\n".join(self.lines)
+        return MS(
+            "\\n".join(self.ru_lines),
+            "\\n".join(self.en_lines)
+        )
 
 
 class TextDialog:

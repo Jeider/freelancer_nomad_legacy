@@ -625,7 +625,8 @@ class Msn9Space(Msn9, script.SpaceVoiceProps):
         VoiceLine(910, Chrysanthemum, ru='Внимание! Приближаются значительные силы противника! Эсминцы!',
                   en="Warning! Significant enemy forces approaching! Destroyers!"),
         VoiceLine(920, Kim,
-                  ru="А вот и вражеская кавалерия. Хризантема, дайте нам ближайшие координаты. Постараемся атаковать врага на подлёте"),
+                  ru="А вот и вражеская кавалерия. Хризантема, дайте нам ближайшие координаты. Постараемся атаковать врага на подлёте",
+                  en="And here comes their cavalry. Chrysanthemum, give us the nearest coordinates. We'll try to hit them on approach."),
 
         VoiceLine(950, Kim,
                   ru='Атакуйте эсминцы! Нужно повредить их до того как они в+ыйдут на огневую позицию!',

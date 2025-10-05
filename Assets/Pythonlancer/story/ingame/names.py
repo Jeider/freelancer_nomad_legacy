@@ -1,7 +1,9 @@
-LI_CRUISER = 'Крейсер Либерти'
-RH_CRUISER = 'Крейсер Рейнланда'
-KU_DESTROYER = 'Эсминец Кусари'
-BR_DESTROYER = 'Эсминец Бретонии'
-RH_GUNBOAT = 'Канонерка Рейнланда'
-KU_GUNBOAT = 'Канонерка Кусари'
-BR_GUNBOAT = 'Канонерка Бретонии'
+from text.strings import MultiString as MS
+
+LI_CRUISER = MS('Крейсер Либерти', 'Liberty Cruiser')
+RH_CRUISER = MS('Крейсер Рейнланда', 'Rheinland Cruiser')
+KU_DESTROYER = MS('Эсминец Кусари', 'Kusari Destroyer')
+BR_DESTROYER = MS('Эсминец Бретонии', 'Bretonia Destroyer')
+RH_GUNBOAT = MS('Канонерка Рейнланда', 'Rheinland Gunboat')
+KU_GUNBOAT = MS('Канонерка Кусари', 'Kusari Gunboat')
+BR_GUNBOAT = MS('Канонерка Бретонии', 'Bretonia Gunboat')
