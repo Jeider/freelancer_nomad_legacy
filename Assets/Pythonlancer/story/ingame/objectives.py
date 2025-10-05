@@ -16,3 +16,4 @@ DESTROY_CORSAIRS = MS('Уничтожьте корсаров', 'Destroy corsairs
 DOCK_BATTLESHIP = MS('Совершите стыковку с линкором', 'Dock with battleship')
 CATCH_DEIDRICH = MS('Преследуйте Дитриха', 'Catch Dietrich')
 CHASE_ROCKFORD = MS('Преследуйте Рокфорда', 'Chase Rockford')
+DESTROY_ROAD_LOCK = MS('Уничтожьте перегородку', "Destroy road lock")

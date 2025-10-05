@@ -122,13 +122,14 @@ class Misson08(ingame_mission.IngameMission):
 
     def get_nn_objectives(self):
         return [
-            NNObj(self, 'Встретьтесь с Дерси в баре планеты Авалон', name='meet_vendor', target='vendor_planet'),
+            NNObj(self, MS('Встретьтесь с Дерси в баре планеты Авалон',
+                           'Meet Darcy in bar of Planet Avalon'), name='meet_vendor', target='vendor_planet'),
             NNObj(self, O.LAUNCH, name='launch'),
 
-            NNObj(self, 'Сядьте на линкор Принц Уэльский', name='dock_wales', target='price_wales_avalon'),
+            NNObj(self, MS('Сядьте на линкор Принц Уэльский', 'Dock with Prince of Wales'), name='dock_wales', target='price_wales_avalon'),
 
-            NNObj(self, 'Подготовьтесь к миссии и вылетайте', name='prepare_and_launch'),
-            NNObj(self, 'Исследуйте локацию', name='explore_area'),
+            NNObj(self, MS('Подготовьтесь к миссии и вылетайте', 'Prepare your ship and launch'), name='prepare_and_launch'),
+            NNObj(self, MS('Исследуйте локацию', 'Explore area'), name='explore_area'),
 
             NNObj(self, O.GOTO, target='explore_area_waypoint1', reach_range=1000),
             NNObj(self, O.GOTO, target='explore_area_waypoint2', reach_range=1000),
@@ -137,7 +138,7 @@ class Misson08(ingame_mission.IngameMission):
             NNObj(self, O.GOTO, target='explore_area_waypoint5', reach_range=1000),
             NNObj(self, O.GOTO, target='explore_area_waypoint6', reach_range=1500),
 
-            NNObj(self, 'Уничтожьте вражеские истребители', name='destroy_entry_liberty'),
+            NNObj(self, O.DESTROY_FIGHTERS, name='destroy_entry_liberty'),
 
             NNObj(self, O.GOTO, target='enter_the_lair_wp1'),
             NNObj(self, O.GOTO, target='enter_the_lair_wp2'),
@@ -152,7 +153,7 @@ class Misson08(ingame_mission.IngameMission):
             NNObj(self, O.GOTO, target='enter_wp8', reach_range=200),
             NNObj(self, O.GOTO, target='enter_wp9', reach_range=200),
 
-            NNObj(self, 'Уничтожьте перегородку шлюза', name='destroy_door', target='locked_door', nag=False),
+            NNObj(self, MS('Уничтожьте перегородку шлюза', 'Destroy airlock lock'), name='destroy_door', target='locked_door', nag=False),
 
             NNObj(self, O.GOTO, target='core_wp1', reach_range=200),
             NNObj(self, O.GOTO, target='core_wp2', reach_range=200),
@@ -170,7 +171,7 @@ class Misson08(ingame_mission.IngameMission):
             NNObj(self, O.GOTO, target='escape_start8', reach_range=300),
 
             NNObj(self, O.GOTO, target='escape_left_door', reach_range=300),
-            NNObj(self, 'Пролетите туннель', name='escape_left_tunnel'),
+            NNObj(self, MS('Пролетите туннель', 'Fly through tunnel'), name='escape_left_tunnel'),
 
             NNObj(self, O.GOTO, target='escape_middle1', reach_range=300),
             NNObj(self, O.GOTO, target='escape_middle2', reach_range=300),
@@ -185,14 +186,14 @@ class Misson08(ingame_mission.IngameMission):
             NNObj(self, O.GOTO, target='escape_end6', reach_range=300),
             NNObj(self, O.GOTO, target='escape_end7', reach_range=300),
 
-            NNObj(self, 'Вступите в битву', name='enter_battle'),
-            NNObj(self, 'Уничтожьте энергетические стойки', name='destroy_columns'),
+            NNObj(self, MS('Вступите в битву', 'Enter the battle'), name='enter_battle'),
+            NNObj(self, MS('Уничтожьте энергетические стойки', 'Destroy energy columns'), name='destroy_columns'),
 
             NNObj(self, O.GOTO, target='leave_lair_zone'),
 
-            NNObj(self, 'Следуйте за Хетчер', name='follow_hatcher'),
+            NNObj(self, MS('Следуйте за Хетчер', 'Follow Hatcher'), name='follow_hatcher'),
             NNObj(self, O.GOTO, name='goto_final_planet', target='final_planet', towards=True),
-            NNObj(self, 'Сядьте на планету Спрага', name='dock_final_planet', target='final_planet'),
+            NNObj(self, MS('Сядьте на планету Спрага', 'Dock with Sprague'), name='dock_final_planet', target='final_planet'),
         ]
 
     def get_static_points(self):
@@ -346,7 +347,7 @@ class Misson08(ingame_mission.IngameMission):
             DockableBattleshipSolar(
                 self, S.m8_asf_hq, 'osiris1', faction='asf_grp',
                 archetype='o_osiris', loadout='li_battleship_02',
-                ru_name=MS('Линкор Осирис', 'Battleship Osiris'), base='sig42_99_base',
+                ru_name=N.OSIRIS, base='sig42_99_base',
                 labels=['friend', 'asf', 'osiris']),
             Solar(
                 self, S.m8_asf_hq, 'dread1', faction='asf_grp',
@@ -356,7 +357,7 @@ class Misson08(ingame_mission.IngameMission):
             DockableBattleshipSolar(
                 self, S.sig42, 'lair_osiris1', faction='asf_grp',
                 archetype='o_osiris', loadout='li_battleship_02',
-                ru_name=MS('Линкор Осирис', 'Battleship Osiris'), base='sig42_99_base',
+                ru_name=N.OSIRIS, base='sig42_99_base',
                 labels=['friend', 'asf', 'osiris']),
         ]
         defined_points.extend(hq_group)

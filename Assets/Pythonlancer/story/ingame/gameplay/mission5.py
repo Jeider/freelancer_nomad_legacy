@@ -525,7 +525,8 @@ class Misson05(ingame_mission.IngameMission):
 
     def get_nn_objectives(self):
         return [
-            NNObj(self, 'Встретьтесь с Хечтер в баре планеты Форбс', name='meet_vendor', target='vendor_planet'),
+            NNObj(self, MS('Встретьтесь с Хечтер в баре планеты Форбс', 'Meet Hatcher in bar of Planet Forbes'),
+                  name='meet_vendor', target='vendor_planet'),
 
             NNObj(self, O.LAUNCH, name='launch'),
 
@@ -534,43 +535,47 @@ class Misson05(ingame_mission.IngameMission):
             NNObj(self, O.TLR, target='for_tlr_3'),
             NNObj(self, O.TLR, target='for_tlr_4'),
 
-            NNObj(self, 'Сядьте на Детроит', name='first_dock_detroit', target='detroit', open_access=False),
+            NNObj(self, MS('Сядьте на Детроит', 'Dock with Detroit'), name='first_dock_detroit', target='detroit', open_access=False),
 
-            NNObj(self, 'Направляйтесь к базу контрабандистов',
+            NNObj(self, MS('Направляйтесь на пиратскую базу', 'Go to pirate base'),
                   name='goto_piratebase', target='piratebase', towards=True),
-            NNObj(self, 'Сядьте на пиратскую базу', name='dock_piratebase', target='piratebase'),
+            NNObj(self, MS('Сядьте на пиратскую базу', 'Dock with pirate base'), name='dock_piratebase', target='piratebase'),
 
-            NNObj(self, 'Направляйтесь к складу контрабанды', name='goto_storage', target='smuggler_storage', towards=True),
+            NNObj(self, MS('Направляйтесь к складу контрабанды', 'Go to smuggler\'s storage'), name='goto_storage', target='smuggler_storage', towards=True),
 
-            NNObj(self, 'Уничтожьте контрабандистов', name='destroy_smugglers'),
-            NNObj(self, 'Уничтожьте склады и ядро склада контрабанды', name='destroy_storage', target='smuggler_storage', nag=False),
-            NNObj(self, 'Заберите ключ', name='get_a_key'),
+            NNObj(self, MS('Уничтожьте контрабандистов', 'Destroy smugglers'), name='destroy_smugglers'),
+            NNObj(self, MS('Уничтожьте склады и ядро склада контрабанды',
+                           'Destroy storage and core of the smuggler\'s storage'),
+                  name='destroy_storage', target='smuggler_storage', nag=False),
+            NNObj(self, MS('Заберите ключ', 'Collect the key'), name='get_a_key'),
 
-            NNObj(self, 'Возвращайтесь на Детроит', name='go_back_detroit', target='detroit', towards=True),
-            NNObj(self, 'Сядьте на Детроит', name='dock_detroit', target='detroit'),
+            NNObj(self, MS('Возвращайтесь на Детроит', 'Go back to Detroit'), name='go_back_detroit', target='detroit', towards=True),
+            NNObj(self, MS('Сядьте на Детроит', 'Dock with Detroit'), name='dock_detroit', target='detroit'),
 
             NNObj(self, O.JUMPGATE, target='sig17_jump'),
 
             NNObj(self, O.TLR, target='sig17_tlr_1'),
             NNObj(self, O.TLR, target='sig17_tlr_2'),
 
-            NNObj(self, 'Доберитесь до исследовательской станции',
+            NNObj(self, MS('Доберитесь до исследовательской станции', 'Reach research station'),
                   name='reach_research',target='research_base', towards=True),
-            NNObj(self, 'Сядьте на исследовательскую станцию', name='try_to_dock_on_research'),
+            NNObj(self, MS('Сядьте на исследовательскую станцию', 'Dock with research station'),
+                  name='try_to_dock_on_research'),
 
             NNObj(self, O.GOTO, name='goto_convoy', target='convoy'),
 
             NNObj(self, O.DESTROY_PIRATES, name='destroy_pirates'),
-            NNObj(self, 'Войдите в формацию с транспортом', name='join_transport_formation'),
-            NNObj(self, 'Сопровождайте транспорт', name='follow_transport'),
-            NNObj(self, 'Ожидайте разрешения на посадку', name='wait_for_docking_approve'),
+            NNObj(self, MS('Войдите в формацию с транспортом', 'Join transport formation'),
+                  name='join_transport_formation'),
+            NNObj(self, MS('Сопровождайте транспорт', 'Escort transport'), name='follow_transport'),
+            NNObj(self, MS('Ожидайте разрешения на посадку', 'Wait docking approvement'), name='wait_for_docking_approve'),
 
-            NNObj(self, 'Спасите Мандрейка из обломков станции', name='find_madrake_and_tractor_him'),
-            NNObj(self, 'Попытайтесь спасти всех учёных!', name='save_all_scients'),
+            NNObj(self, MS('Спасите Мандрейка из обломков станции', 'Save Mandrake from station chunks!'), name='find_madrake_and_tractor_him'),
+            NNObj(self, MS('Попытайтесь спасти всех учёных!', 'Try to save all scients!'), name='save_all_scients'),
 
-            NNObj(self, 'Возвращайтесь к торговому пути', name='goto_bship_tlr', target='bship_tlr2'),
+            NNObj(self, MS('Возвращайтесь к торговому пути', 'Go back to tradelane'), name='goto_bship_tlr', target='bship_tlr2'),
 
-            NNObj(self, 'Уничтожьте рейнландские истребители', name='destroy_rheinland_fighters'),
+            NNObj(self, MS('Уничтожьте рейнландские истребители', 'Destroy rheinland fighters'), name='destroy_rheinland_fighters'),
 
             NNObj(self, O.JUMPGATE, target='for_jump'),
 

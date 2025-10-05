@@ -136,17 +136,17 @@ class Misson11(ingame_mission.IngameMission):
 
         defined_points.append(
             Solar(self, S.om7, 'om7_musashi1',
-                  ru_name='Линкор Мусаси', base='om7_99_base'),
+                  ru_name=N.MUSASHI, base='om7_99_base'),
         )
         defined_points.append(
             Solar(self, S.rh_vien, 'vien_flagship_solar',
-                  ru_name='Линкор Гнейзенау',
+                  ru_name=MS('Линкор Гнейзенау', 'Battleship Gneisenau'),
                   labels=['enemy', 'rh_battleship', 'rheinland', 'vienna_defend']),
         )
         defined_points.append(
             DockableBattleshipSolar(
                 self, S.rh_vien, 'vien_musashi1',
-                ru_name='Линкор Мусаси', base='rh_vien_99_base',
+                ru_name=N.MUSASHI, base='rh_vien_99_base',
                 labels=['enemy', 'ku_battleship', 'ku', 'order', 'vienna_assault']),
         )
 
@@ -175,7 +175,7 @@ class Misson11(ingame_mission.IngameMission):
 
         defined_points.append(
             Solar(self, S.or_hq, 'or_hq_musashi1',
-                  ru_name='Линкор Мусаси', base='or_hq_99_base'),
+                  ru_name=N.MUSASHI, base='or_hq_99_base'),
         )
 
         # Vienna
@@ -413,12 +413,12 @@ class Misson11(ingame_mission.IngameMission):
 
             NNObj(self, O.GOTO, name='to_the_vienna', target='vienna_battle_zone'),
 
-            NNObj(self, 'Уничтожьте исследовательские контейнеры', name='vienna_destroy_scient'),
-            NNObj(self, 'Уничтожьте рейнландский флагман', name='vienna_destroy_flagship'),
+            NNObj(self, MS('Уничтожьте исследовательские контейнеры', 'Destroy research containers'), name='vienna_destroy_scient'),
+            NNObj(self, MS('Уничтожьте рейнландский флагман', 'Destroy rheinland flagship'), name='vienna_destroy_flagship'),
 
-            NNObj(self, 'Сядьте на линкор Мусаси', name='dock_vien_musashi', target='vien_musashi1'),
+            NNObj(self, MS('Сядьте на линкор Мусаси', 'Dock with Musashi'), name='dock_vien_musashi', target='vien_musashi1'),
 
-            NNObj(self, 'Подберите артефакт', name='get_the_loot'),
+            NNObj(self, MS('Подберите артефакт', 'Collect artifact'), name='get_the_loot'),
 
             NNObj(self, O.GOTO, name='to_sirius1', target='to_sirius1'),
             NNObj(self, O.GOTO, name='to_sirius2', target='to_sirius2'),
@@ -426,7 +426,7 @@ class Misson11(ingame_mission.IngameMission):
             NNObj(self, O.JUMPGATE, name='jump_into_sirius', target='jg_or_hq_to_sirius'),
 
             NNObj(self, O.TLR, target='sig42_tlr_1'),
-            NNObj(self, 'Сядьте на планету Спрага', target='sprague'),
+            NNObj(self, MS('Сядьте на планету Спрага', 'Dock with Sprague'), target='sprague'),
 
         ]
 

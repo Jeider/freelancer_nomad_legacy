@@ -4,6 +4,7 @@ from universe import sirius as S
 from story.ingame import ingame_mission
 from story.math import euler_to_quat
 from story import actors
+from story.ingame import names as N
 
 from story.ingame import objectives as O
 from story.ingame.tools import (
@@ -946,18 +947,18 @@ class Misson13(ingame_mission.IngameMission):
 
         for sol in sphere_solars:
             defined_points.append(
-                Solar(self, S.sphere2, sol, ru_name='test'),
+                Solar(self, S.sphere2, sol, ru_name=MS('test', 'test')),
             )
 
         for s_gen in sphere_gens:
             defined_points.append(
-                Solar(self, S.sphere2, s_gen, ru_name='Генератор',
+                Solar(self, S.sphere2, s_gen, ru_name=N.GENERATOR,
                       archetype='sphere_generator', loadout='sphere_generator_laser'),
             )
 
         for kr_gen in krieg_gens:
             defined_points.append(
-                Solar(self, S.sphere2, kr_gen, ru_name='Генератор',
+                Solar(self, S.sphere2, kr_gen, ru_name=N.GENERATOR,
                       archetype='beast_generator', labels=['the_krieg', 'krieg_the_gen']),
             )
 
@@ -967,23 +968,23 @@ class Misson13(ingame_mission.IngameMission):
             )
 
         defined_points.extend([
-            Solar(self, S.sphere2, 'krieg_sleep', ru_name='Крыг', loadout='beast_sleep', archetype='beast_1500'),
-            Solar(self, S.sphere2, 'krieg_opens', ru_name='Крыг', loadout='beast_arrive', archetype='beast_1500',
+            Solar(self, S.sphere2, 'krieg_sleep', ru_name=N.KRIEG, loadout='beast_sleep', archetype='beast_1500'),
+            Solar(self, S.sphere2, 'krieg_opens', ru_name=N.KRIEG, loadout='beast_arrive', archetype='beast_1500',
                   labels=['the_krieg']),
-            Solar(self, S.sphere2, 'krieg_opens_force', ru_name='Крыг',
+            Solar(self, S.sphere2, 'krieg_opens_force', ru_name=N.KRIEG,
                   loadout='beast_force_open', archetype='beast_1500'),
-            Solar(self, S.sphere2, 'krieg_collector', ru_name='Крыг',
+            Solar(self, S.sphere2, 'krieg_collector', ru_name=N.KRIEG,
                   loadout='beast_collector', archetype='beast_1500'),
-            Solar(self, S.sphere2, 'krieg_silent', ru_name='Крыг',
+            Solar(self, S.sphere2, 'krieg_silent', ru_name=N.KRIEG,
                   loadout='beast_silent', archetype='beast_1500'),
-            Solar(self, S.sphere2, 'hit_fx', ru_name='Удар!', loadout='beast_hit', archetype='hidden_connect'),
+            Solar(self, S.sphere2, 'hit_fx', ru_name=MS('Удар!', 'Hit!'), loadout='beast_hit', archetype='hidden_connect'),
         ])
 
         gens_count = 3
         gens = [f'gen{i}' for i in range(1, gens_count+1)]
         for sol in gens:
             defined_points.append(
-                Solar(self, S.sphere2, sol, ru_name='Генератор', labels=['enemy', 'lazergen', 'lazer_generators'],
+                Solar(self, S.sphere2, sol, ru_name=N.GENERATOR, labels=['enemy', 'lazergen', 'lazer_generators'],
                       archetype='dyson_generator_msn13', loadout='dyson_generator_msn3'),
             )
 
@@ -991,7 +992,7 @@ class Misson13(ingame_mission.IngameMission):
         wplatforms = [f'wp{i}' for i in range(1, wplatforms_count+1)]
         for sol in wplatforms:
             defined_points.append(
-                Solar(self, S.sphere2, sol, ru_name='Орудийная платформа', labels=['enemy', 'lazergen'],
+                Solar(self, S.sphere2, sol, ru_name=N.WPLATFORM, labels=['enemy', 'lazergen'],
                       archetype='wplatform_ms13', loadout='ms2_the_platform'),
             )
 
@@ -1000,7 +1001,7 @@ class Misson13(ingame_mission.IngameMission):
         large_turrets_count = 14
         large_wplatforms = [f'big_turr{i:02d}' for i in range(1, large_turrets_count+1)]
         for sol in large_wplatforms:
-            solar = Solar(self, S.sphere2, sol, ru_name='Орудийная платформа',
+            solar = Solar(self, S.sphere2, sol, ru_name=N.WPLATFORM,
                 labels=['enemy', 'the_krieg'],
                 archetype='lair_platform', loadout='beast_platform01',
                 pilot='pilot_solar_hardest_beast',
@@ -1011,7 +1012,7 @@ class Misson13(ingame_mission.IngameMission):
         small_turrets_count = 12
         small_wplatforms = [f'def_turr{i:02d}' for i in range(1, small_turrets_count+1)]
         for sol in small_wplatforms:
-            solar = Solar(self, S.sphere2, sol, ru_name='Орудийная платформа',
+            solar = Solar(self, S.sphere2, sol, ru_name=N.WPLATFORM,
                 labels=['enemy', 'the_krieg'],
                 archetype='lair_platform', loadout='beast_platform02',
                 pilot='pilot_solar_hardest_beast',
@@ -1025,7 +1026,7 @@ class Misson13(ingame_mission.IngameMission):
             DockableBattleshipSolar(
                 self, S.sphere2, 'osiris_arrive1',
                 archetype='o_osiris', loadout='li_battleship_02',
-                ru_name='Линкор Осирис', base='sphere2_99_base',
+                ru_name=N.OSIRIS, base='sphere2_99_base',
                 labels=['friend', 'asf', 'osiris']),
         )
 
@@ -1033,17 +1034,17 @@ class Misson13(ingame_mission.IngameMission):
             DockableBattleshipSolar(
                 self, S.sphere2, 'osiris_escape',
                 archetype='o_osiris', loadout='li_battleship_02',
-                ru_name='Линкор Осирис', base='sphere2_99_base',
+                ru_name=N.OSIRIS, base='sphere2_99_base',
                 labels=['friend', 'asf', 'osiris']),
         )
 
         defined_points.append(
-            Solar(self, S.sphere2_inside, 'inside_column1', ru_name='Поток энергии Сферы',
+            Solar(self, S.sphere2_inside, 'inside_column1', ru_name=MS('Поток энергии Сферы', 'The Sphere energy steam'),
                   labels=['enemy', 'energy_beam'],
                   archetype='sphere_energy_column', loadout='sphere_column_power'),
         )
         defined_points.append(
-            Solar(self, S.sphere2_inside, 'inside_column2', ru_name='Поток энергии Сферы',
+            Solar(self, S.sphere2_inside, 'inside_column2', ru_name=MS('Поток энергии Сферы', 'The Sphere energy steam'),
                   labels=['enemy', 'energy_beam'],
                   archetype='sphere_energy_column', loadout='sphere_column_power'),
         )
@@ -1059,7 +1060,7 @@ class Misson13(ingame_mission.IngameMission):
         for no_cap in sphere_no_caps:
             no_sol = Solar(
                 self, S.sphere2, no_cap,
-                ru_name='Линкор Кочевников',
+                ru_name=N.NO_BATTLESHIP,
                 faction='fc_n_grp',
                 labels=['enemy', 'no_cap', 'nomad'],
                 archetype='d_n_battleship',
@@ -1071,7 +1072,7 @@ class Misson13(ingame_mission.IngameMission):
         self.add_solar_group('SPHERE_NO_CAP', no_caps_sols)
 
         defined_points.append(
-            Solar(self, S.sphere2, 'power_container', ru_name='Контейнер с энергоядром'),
+            Solar(self, S.sphere2, 'power_container', ru_name=MS('Контейнер с энергоядром', 'Container with Power Cell')),
         )
 
         sphere_walls = [
@@ -1084,7 +1085,7 @@ class Misson13(ingame_mission.IngameMission):
         for wall in sphere_walls:
             wall_sol = Solar(
                 self, S.sphere2, wall,
-                ru_name='Стена Сферы',
+                ru_name=MS('Стена Сферы', "Sphere Wall"),
                 archetype='beast_move_block',
                 loadout='sphere_extend_block01'
             )
@@ -1099,7 +1100,7 @@ class Misson13(ingame_mission.IngameMission):
             DockableBattleshipSolar(
                 self, S.om13_alt, 'osiris_bh1',
                 archetype='o_osiris', loadout='li_battleship_02',
-                ru_name='Линкор Осирис', base='om13_alt_99_base',
+                ru_name=N.OSIRIS, base='om13_alt_99_base',
                 labels=['friend', 'asf', 'osiris']),
         )
 
@@ -1140,9 +1141,9 @@ class Misson13(ingame_mission.IngameMission):
             )
 
         defined_points.extend([
-            Solar(self, S.om13_alt, 'inside_kernel01', ru_name='Номадское зерно',
+            Solar(self, S.om13_alt, 'inside_kernel01', ru_name=N.NO_KERNEL,
                   loadout='beast_kernel_light', archetype='inside_beast_kernel'),
-            Solar(self, S.om13_alt, 'inside_kernel02', ru_name='Номадское зерно',
+            Solar(self, S.om13_alt, 'inside_kernel02', ru_name=N.NO_KERNEL,
                   loadout='beast_kernel_light', archetype='inside_beast_kernel'),
         ])
 
@@ -1151,7 +1152,7 @@ class Misson13(ingame_mission.IngameMission):
         kernels1_count = ActiveKernel.KERNELS_COUNT
         kernels1_names = [f'om13_alt_field_kernels1_{i:02d}' for i in range(1, kernels1_count+1)]
         for sol in kernels1_names:
-            solar = Solar(self, S.om13_alt, sol, ru_name='Номадское зерно',
+            solar = Solar(self, S.om13_alt, sol, ru_name=N.NO_KERNEL,
                 archetype='space_kernel', loadout='space_kernel_light',
             )
             defined_points.append(solar)
@@ -1165,7 +1166,7 @@ class Misson13(ingame_mission.IngameMission):
             'om13alt_ast_a_inside_kernel02',
         ]
         kernel_sols = [
-            Solar(self, S.om13_alt, kernel, ru_name='Номадское зерно',
+            Solar(self, S.om13_alt, kernel, ru_name=N.NO_KERNEL,
                   archetype='space_beast_kernel', loadout='space_beast_kernel_light')
             for kernel in kernels
         ]
@@ -1183,7 +1184,7 @@ class Misson13(ingame_mission.IngameMission):
             'om13alt_ast_a_dmg06',
         ]
         wall_sols = [
-            Solar(self, S.om13_alt, wall, ru_name='Перегородка туннеля',
+            Solar(self, S.om13_alt, wall, ru_name=N.TUNNEL_LOCK,
                   archetype='om15_static_xlarge_ast04_dmg')
             for wall in walls
         ]
@@ -1191,17 +1192,17 @@ class Misson13(ingame_mission.IngameMission):
         self.add_solar_group('OM13_WALLS', wall_sols)
 
         defined_points.append(
-            Solar(self, S.om13_alt, 'om13alt_ast_a_lrg01', ru_name='Астероид',
+            Solar(self, S.om13_alt, 'om13alt_ast_a_lrg01', ru_name=N.ASTEROID,
                   archetype='om15_static_large_ast02'),
         )
 
         defined_points.append(
-            Solar(self, S.om13_alt, 'om13alt_ast_a_lrg01', ru_name='Астероид',
+            Solar(self, S.om13_alt, 'om13alt_ast_a_lrg01', ru_name=N.ASTEROID,
                   archetype='om15_static_large_ast02'),
         )
 
         defined_points.extend([
-            Solar(self, S.om13_alt, 'krieg_far', ru_name='Крыг', loadout='beast_sleep', archetype='beast_1500'),
+            Solar(self, S.om13_alt, 'krieg_far', ru_name=N.KRIEG, loadout='beast_sleep', archetype='beast_1500'),
         ])
 
         om13_caps_in_group = 3
@@ -1216,7 +1217,7 @@ class Misson13(ingame_mission.IngameMission):
                 no_cap = f'{group}_{index}'
                 no_sol = Solar(
                     self, S.om13_alt, no_cap,
-                    ru_name='Линкор Кочевников',
+                    ru_name=N.NO_BATTLESHIP,
                     faction='fc_n_grp',
                     labels=['enemy', 'no_cap', 'nomad', group_name],
                     archetype='d_n_battleship',
@@ -1228,7 +1229,7 @@ class Misson13(ingame_mission.IngameMission):
             self.add_solar_group(group_name, group_sols)
 
         defined_points.append(
-            Solar(self, S.om13_alt, 'om13alt_bh', ru_name='Чёрная дыра'),
+            Solar(self, S.om13_alt, 'om13alt_bh', ru_name=MS('Чёрная дыра', 'Black Hole')),
         )
 
         ### BH
@@ -1237,22 +1238,24 @@ class Misson13(ingame_mission.IngameMission):
             DockableBattleshipSolar(
                 self, S.bh, 'enter_lootbox',
                 archetype='hidden_connect_phantom', loadout='om13_lootbox',
-                ru_name='Лутбокс'),
+                ru_name=MS('Лутбокс', 'Lootbox')),
         ]
 
         self.add_solar_group('BH_SOLS', bh_sols)
         defined_points.extend(bh_sols)
 
+        tit_name = MS('Номадский нарост', "Nomad Growth")
+
         tits = [
             DockableBattleshipSolar(
                 self, S.bh, 'tits_01',
-                archetype='beast_tits', loadout='nomad_tits', ru_name='Номадский нарост', labels=['no_tits', 'nomad']),
+                archetype='beast_tits', loadout='nomad_tits', ru_name=tit_name, labels=['no_tits', 'nomad']),
             DockableBattleshipSolar(
                 self, S.bh, 'tits_02',
-                archetype='beast_tits', loadout='nomad_tits', ru_name='Номадский нарост', labels=['no_tits', 'nomad']),
+                archetype='beast_tits', loadout='nomad_tits', ru_name=tit_name, labels=['no_tits', 'nomad']),
             DockableBattleshipSolar(
                 self, S.bh, 'tits_03',
-                archetype='beast_tits', loadout='nomad_tits', ru_name='Номадский нарост', labels=['no_tits', 'nomad']),
+                archetype='beast_tits', loadout='nomad_tits', ru_name=tit_name, labels=['no_tits', 'nomad']),
         ]
 
         self.add_solar_group('BH_TITS', tits)
@@ -1264,7 +1267,7 @@ class Misson13(ingame_mission.IngameMission):
         bh_gens = [f'bh_gen_{i}' for i in range(1, bh_gens_count+1)]
         for sol in bh_gens:
             internal_gen.append(
-                Solar(self, S.bh, sol, ru_name='Генератор', labels=['enemy', 'beast_inernal_gen'],
+                Solar(self, S.bh, sol, ru_name=N.GENERATOR, labels=['enemy', 'beast_inernal_gen'],
                       archetype='beast_generator_short'),
             )
 
@@ -1273,7 +1276,7 @@ class Misson13(ingame_mission.IngameMission):
         bh_small_turrets_count = 12
         bh_small_wplatforms = [f'bh_def_turr_{i}' for i in range(1, bh_small_turrets_count+1)]
         for sol in bh_small_wplatforms:
-            solar = Solar(self, S.bh, sol, ru_name='Орудийная платформа',
+            solar = Solar(self, S.bh, sol, ru_name=N.WPLATFORM,
                 labels=['enemy', 'the_krieg'],
                 archetype='lair_platform', loadout='beast_platform02',
                 pilot='pilot_solar_hardest_beast',
@@ -1315,9 +1318,9 @@ class Misson13(ingame_mission.IngameMission):
         }
 
         caps = [
-            Capital(self, 'li_dread', ru_name='Линкор Миссури', **li_dread),
-            Capital(self, 'krieg_fire', ru_name='Выстрел', radius=0, **beast_fire),
-            Capital(self, 'osiris', ru_name='Линкор Осирис', **osiris),
+            Capital(self, 'li_dread', ru_name=N.MISSOURI, **li_dread),
+            Capital(self, 'krieg_fire', ru_name=MS('Выстрел', 'Fire'), radius=0, **beast_fire),
+            Capital(self, 'osiris', ru_name=N.OSIRIS, **osiris),
         ]
 
         return caps
@@ -1329,7 +1332,8 @@ class Misson13(ingame_mission.IngameMission):
             NNObj(self, O.GOTO, name='goto_core', target='goto_core'),
             NNObj(self, O.GOTO, name='goto_lazer', target='goto_lazer'),
 
-            NNObj(self, 'Уничтожьте генераторы лазерной установки', name='destroy_lazergens'),
+            NNObj(self, MS('Уничтожьте генераторы лазерной установки',
+                           'Destroy laser beam generators'), name='destroy_lazergens'),
 
             NNObj(self, O.GOTO, target='goto_catacomb'),
             NNObj(self, O.GOTO, target='goto_catacomb2'),
@@ -1343,20 +1347,20 @@ class Misson13(ingame_mission.IngameMission):
             NNObj(self, O.GOTO, target='inside06'),
             NNObj(self, O.GOTO, target='inside07'),
 
-            NNObj(self, 'Уничтожьте энергопоток', target='inside_column1'),
-            NNObj(self, 'Уничтожьте энергопоток', target='inside_column2'),
+            NNObj(self, MS('Уничтожьте энергопоток', 'Destroy energy steam'), target='inside_column1'),
+            NNObj(self, MS('Уничтожьте энергопоток', 'Destroy energy steam'), target='inside_column2'),
 
             NNObj(self, O.GOTO, target='exit_catacomb1'),
             NNObj(self, O.GOTO, target='exit_catacomb2'),
 
-            NNObj(self, 'Уничтожьте контейнер энергоядра', name='destroy_powercell_container',
+            NNObj(self, MS('Уничтожьте контейнер энергоядра', 'Destroy container with power cell'), name='destroy_powercell_container',
                   target='power_container'),
-            NNObj(self, 'Подберите энергоядро', name='get_sphere_powercell'),
+            NNObj(self, MS('Подберите энергоядро', 'Collect power cell'), name='get_sphere_powercell'),
 
             NNObj(self, O.GOTO, target='escape1', reach_range=2000),
             NNObj(self, O.GOTO, target='escape2', reach_range=1500),
 
-            NNObj(self, 'Сядьте на Осирис', name='dock_osiris_escape', target='osiris_escape'),
+            NNObj(self, MS('Сядьте на Осирис', 'Dock with Osiris'), name='dock_osiris_escape', target='osiris_escape'),
 
             NNObj(self, O.GOTO, target='kernels1'),
             NNObj(self, O.GOTO, target='kernels1_exit'),
@@ -1387,29 +1391,29 @@ class Misson13(ingame_mission.IngameMission):
             NNObj(self, O.GOTO, target='kernel2_ast5_exit', reach_range=500),
             NNObj(self, O.GOTO, target='kernel2_ast5_out', reach_range=600),
 
-            NNObj(self, 'Уничтожьте перегородку', name='kernels1_door1', target='om13alt_ast_b_dmg2'),
-            NNObj(self, 'Уничтожьте перегородку', name='kernels1_door2', target='om13alt_ast_b_dmg1'),
-            NNObj(self, 'Уничтожьте зерно', name='destroy_inside_kernel01', target='inside_kernel01'),
+            NNObj(self, O.DESTROY_ROAD_LOCK, name='kernels1_door1', target='om13alt_ast_b_dmg2'),
+            NNObj(self, O.DESTROY_ROAD_LOCK, name='kernels1_door2', target='om13alt_ast_b_dmg1'),
+            NNObj(self, MS('Destroy kernel'), name='destroy_inside_kernel01', target='inside_kernel01'),
 
-            NNObj(self, 'Уничтожьте перегородку', name='om13alt_ast_a_dmg01', target='om13alt_ast_a_dmg01'),
-            NNObj(self, 'Уничтожьте перегородку', name='om13alt_ast_a_dmg02', target='om13alt_ast_a_dmg02'),
-            NNObj(self, 'Уничтожьте перегородку', name='om13alt_ast_a_dmg03', target='om13alt_ast_a_dmg03'),
-            NNObj(self, 'Уничтожьте перегородку', name='om13alt_ast_a_dmg04', target='om13alt_ast_a_dmg04'),
-            NNObj(self, 'Уничтожьте перегородку', name='om13alt_ast_a_dmg05', target='om13alt_ast_a_dmg05'),
-            NNObj(self, 'Уничтожьте перегородку', name='om13alt_ast_a_dmg06', target='om13alt_ast_a_dmg06'),
+            NNObj(self, O.DESTROY_ROAD_LOCK, name='om13alt_ast_a_dmg01', target='om13alt_ast_a_dmg01'),
+            NNObj(self, O.DESTROY_ROAD_LOCK, name='om13alt_ast_a_dmg02', target='om13alt_ast_a_dmg02'),
+            NNObj(self, O.DESTROY_ROAD_LOCK, name='om13alt_ast_a_dmg03', target='om13alt_ast_a_dmg03'),
+            NNObj(self, O.DESTROY_ROAD_LOCK, name='om13alt_ast_a_dmg04', target='om13alt_ast_a_dmg04'),
+            NNObj(self, O.DESTROY_ROAD_LOCK, name='om13alt_ast_a_dmg05', target='om13alt_ast_a_dmg05'),
+            NNObj(self, O.DESTROY_ROAD_LOCK, name='om13alt_ast_a_dmg06', target='om13alt_ast_a_dmg06'),
 
-            NNObj(self, 'Уничтожьте номадские истребитекли', name='destroy_chamber_elite'),
-            NNObj(self, 'Уничтожьте зерно', name='destroy_inside_kernel02', target='inside_kernel02'),
+            NNObj(self, MS('Уничтожьте номадские истребитекли', "Destroy nomad fighters"), name='destroy_chamber_elite'),
+            NNObj(self, MS('Уничтожьте зерно', 'Destroy kernel'), name='destroy_inside_kernel02', target='inside_kernel02'),
 
-            NNObj(self, 'Подберите энергоядро', name='get_om13_powercell'),
-            NNObj(self, 'Направляйтесь в чёрную дыру', target='om13alt_bh', towards=True),
+            NNObj(self, MS('Подберите энергоядро', 'Collect power cell'), name='get_om13_powercell'),
+            NNObj(self, MS('Направляйтесь в чёрную дыру', 'Go to the Black Hole'), target='om13alt_bh', towards=True),
 
-            NNObj(self, 'Подберите наноботы и батареи щита в этой локации', name='bh_enter'),
-            NNObj(self, 'Направляйтесь к Крыгу', target='bh_to_krieg_run', towards=True),
-            NNObj(self, 'Защищайтесь!', name='bh_defend'),
-            NNObj(self, 'Добудьте энергию чёрной дыры', name='bh_collect_power'),
-            NNObj(self, 'Учнитожьте номадские наросты на Крыге', name='bh_destroy_tits'),
-            NNObj(self, 'Покиньте чрево Крыга', target='bh_to_krieg_away', towards=True),
+            NNObj(self, MS('Подберите наноботы и батареи щита в этой локации', 'Collect nanobots and shield batteries in nearest location'), name='bh_enter'),
+            NNObj(self, MS('Направляйтесь к Крыгу', 'Go to the Krieg'), target='bh_to_krieg_run', towards=True),
+            NNObj(self, MS('Защищайтесь!', 'Defend yourself!'), name='bh_defend'),
+            NNObj(self, MS('Добудьте энергию чёрной дыры', 'Collect energy of Black Hole'), name='bh_collect_power'),
+            NNObj(self, MS('Учнитожьте номадские наросты на Крыге', 'Destroy nomad growths on the Krieg'), name='bh_destroy_tits'),
+            NNObj(self, MS('Покиньте чрево Крыга', 'Leave Krieg\'s womb'), target='bh_to_krieg_away', towards=True),
         ]
 
     def get_ships(self):

@@ -4,6 +4,7 @@ from universe import sirius as S
 from story.ingame import ingame_mission
 from story.math import euler_to_quat
 from story import actors
+from story.ingame import names as N
 
 from story.ingame import objectives as O
 from story.ingame.tools import (
@@ -241,7 +242,7 @@ class Misson10(ingame_mission.IngameMission):
     FOLDER = 'M10'
     FILE = 'm10'
     START_SAVE_ID = 33000
-    START_SAVE_RU_NAME = MS('Система ксеносов. Линкор Мусаси', "Xenos' system, Batltesh Musashi")
+    START_SAVE_RU_NAME = MS('Система ксеносов. Линкор Мусаси', "Xenos' system, Battleship Musashi")
     SCRIPT_INDEX = 10
     DIRECT_SYSTEMS = [S.xen]
     STATIC_NPCSHIPS = NPCSHIPS
@@ -319,24 +320,28 @@ class Misson10(ingame_mission.IngameMission):
                 Point(self, S.xen, p)
             )
 
-        defined_points.extend([
-            Solar(self, S.xen, 'xenos_control01_door', ru_name='Дверь', archetype='space_door_lock2_destroyable'),
-            Solar(self, S.xen, 'xenos_control_hack_layer_valid', ru_name='Взлом', archetype='m10_hacker_01_valid'),
-            Solar(self, S.xen, 'xenos_control_hack_layer_3', ru_name='Взлом', archetype='m10_hacker_01_layer_03'),
-            Solar(self, S.xen, 'xenos_control_hack_layer_2', ru_name='Взлом', archetype='m10_hacker_01_layer_02'),
-            Solar(self, S.xen, 'xenos_control_hack_layer_1', ru_name='Взлом', archetype='m10_hacker_01_layer_01'),
+        hack = MS('Взлом', 'Hack')
 
-            Solar(self, S.xen, 'xenos_launch_musashi', ru_name='Линкор Мусаси', base='xen_99_base',
-                  archetype='k_battleship'),
-            DockableBattleshipSolar(self, S.xen, 'xenos_leave_musashi', ru_name='Линкор Мусаси', base='xen_98_base',
-                  archetype='k_battleship'),
+        defined_points.extend([
+            Solar(self, S.xen, 'xenos_control01_door', ru_name=MS('Дверь', 'Door'), archetype='space_door_lock2_destroyable'),
+            Solar(self, S.xen, 'xenos_control_hack_layer_valid', ru_name=hack, archetype='m10_hacker_01_valid'),
+            Solar(self, S.xen, 'xenos_control_hack_layer_3', ru_name=hack, archetype='m10_hacker_01_layer_03'),
+            Solar(self, S.xen, 'xenos_control_hack_layer_2', ru_name=hack, archetype='m10_hacker_01_layer_02'),
+            Solar(self, S.xen, 'xenos_control_hack_layer_1', ru_name=hack, archetype='m10_hacker_01_layer_01'),
+
+            Solar(self, S.xen, 'xenos_launch_musashi', ru_name=N.MUSASHI,
+                  base='xen_99_base', archetype='k_battleship'),
+            DockableBattleshipSolar(self, S.xen, 'xenos_leave_musashi',
+                                    ru_name=N.MUSASHI, base='xen_98_base',
+                                    archetype='k_battleship'),
         ])
 
         wplatforms_count = 6
         wplatforms = [f'xen_platform_{i:02d}' for i in range(1, wplatforms_count+1)]
         for sol in wplatforms:
             defined_points.append(
-                Solar(self, S.xen, sol, ru_name='Орудийная платформа', labels=['enemy', 'wplatforms'],
+                Solar(self, S.xen, sol, ru_name=MS('Орудийная платформа', 'Weapons platform'),
+                      labels=['enemy', 'wplatforms'],
                       archetype='wplatform_ms10', loadout='ms10_the_platform'),
             )
 
@@ -347,28 +352,29 @@ class Misson10(ingame_mission.IngameMission):
             NNObj(self, O.LAUNCH, name='launch'),
 
             NNObj(self, O.GOTO, name='first_puff', target='first_puff', nag=False),
-            NNObj(self, 'Доберитесь большого облака, минуя патрули',
+            NNObj(self, MS('Доберитесь большого облака, минуя патрули',
+                           'Reach main cloud without getting discovered by patrols'),
                   name='last_puff', target='last_puff', nag=False),
             NNObj(self, O.GOTO, name='point_control', target='point_control'),
 
-            NNObj(self, 'Уничтожьте дверь', name='destroy_door', target='xenos_control01_door'),
-            NNObj(self, 'Взломайте панель управления', name='hack_the_system'),
+            NNObj(self, MS('Уничтожьте дверь', 'Destroy the door'), name='destroy_door', target='xenos_control01_door'),
+            NNObj(self, MS('Взломайте панель управления', 'Hack control panel'), name='hack_the_system'),
 
-            NNObj(self, 'Доберитесь до места встречи с Дерси и звеном Локи',
+            NNObj(self, MS('Доберитесь до места встречи с Дерси и звеном Локи', 'Go to randvoue point with Darcy and Loki wing'),
                   name='prepare_point', target='prepare_point'),
-            NNObj(self, 'Направляйтесь к базе Ксеносов',
+            NNObj(self, MS('Направляйтесь к базе Ксеносов', 'Go to Xenos base'),
                   name='assault_target', target='assault_target'),
 
-            NNObj(self, 'Уничтожьте орудийные платформы', name='destroy_wplatforms'),
+            NNObj(self, MS('Уничтожьте орудийные платформы', 'Destroy weapons platforms'), name='destroy_wplatforms'),
 
-            NNObj(self, 'Обеспечьте стыковку транспорта', name='defend_armored'),
-            NNObj(self, 'Ожидайте транспорт', name='wait_for_armored'),
-            NNObj(self, 'Обеспечьте защиту транспорта, пока он покидает зону битвы',
+            NNObj(self, MS('Обеспечьте стыковку транспорта', 'Defend transport while it docking with base'), name='defend_armored'),
+            NNObj(self, MS('Ожидайте транспорт', 'Wait for transport'), name='wait_for_armored'),
+            NNObj(self, MS('Обеспечьте защиту транспорта, пока он покидает зону битвы', 'Defend transport while it leaves the battle zone'),
                   name='wait_for_armored_left_out'),
 
             NNObj(self, O.GOTO, name='escape_point1', target='escape_point1'),
             NNObj(self, O.GOTO, name='escape_point2', target='escape_point2'),
-            NNObj(self, 'Сядьте на линкор Мусаси', name='dock_musashi', target='xenos_leave_musashi'),
+            NNObj(self, MS('Сядьте на линкор Мусаси', 'Dock with Musashi'), name='dock_musashi', target='xenos_leave_musashi'),
         ]
 
     def get_ships(self):

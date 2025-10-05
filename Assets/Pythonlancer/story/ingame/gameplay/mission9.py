@@ -190,7 +190,7 @@ class Misson09(ingame_mission.IngameMission):
 
         defined_points.extend([
             DockableBattleshipSolar(self, S.sig42, 'torp_musashi',
-                                    ru_name=MS('Линкор Мусаси', 'Battleship Musashi'), base='sig42_98_base',
+                                    ru_name=N.MUSASHI, base='sig42_98_base',
                                     archetype='k_battleship', labels=['friend']),
         ])
 
@@ -286,26 +286,26 @@ class Misson09(ingame_mission.IngameMission):
 
             NNObj(self, O.GOTO, target='to_train'),
 
-            NNObj(self, 'Войдите формацию с поездом', name='train_formation'),
-            NNObj(self, 'Следуйте за поездом', name='train_follow'),
+            NNObj(self, MS('Войдите формацию с поездом', 'Join train\'s formation'), name='train_formation'),
+            NNObj(self, MS('Следуйте за поездом', 'Follow train'), name='train_follow'),
 
-            NNObj(self, 'Доберитесь до датчика', name='to_check', target='check1', towards=True),
+            NNObj(self, MS('Доберитесь до датчика', 'Reach sensor'), name='to_check', target='check1', towards=True),
 
-            NNObj(self, 'Находитесь как можно ближе к датчику', name='stay_near_check_close'),
+            NNObj(self, MS('Находитесь как можно ближе к датчику', "Stay as close to the sensor as possible"), name='stay_near_check_close'),
 
-            NNObj(self, 'Перехватите вражеский патруль', target='ship_patrol'),
-            NNObj(self, 'Уничтожьте вражеский патруль', name='destroy_ship_patrol'),
+            NNObj(self, MS('Перехватите вражеский патруль', 'Catch enemy patrol'), target='ship_patrol'),
+            NNObj(self, MS('Уничтожьте вражеский патруль', 'Destroy enemy patrol'), name='destroy_ship_patrol'),
 
-            NNObj(self, 'Перехватите канонерки СБА', target='gunboat_patrol'),
-            NNObj(self, 'Уничтожьте корабли СБА', name='destroy_gunboat_patrol'),
+            NNObj(self, MS('Перехватите канонерки СБА', 'Catch enemy gunboats'), target='gunboat_patrol'),
+            NNObj(self, MS('Уничтожьте корабли СБА', "Destroy ASF ships"), name='destroy_gunboat_patrol'),
 
-            NNObj(self, 'Перехватите эсминцы СБА', target='destroyer_patrol'),
-            NNObj(self, 'Повредите вражеские эсминцы', name='hit_bdr'),
-            NNObj(self, 'Перехватите торпеды', name='catch_torpedoes'),
-            NNObj(self, 'Захватите капсулу с Хризантемы', name='collect_chrysatemum'),
+            NNObj(self, MS('Перехватите эсминцы СБА', 'Catch Destroyers'), target='destroyer_patrol'),
+            NNObj(self, MS('Повредите вражеские эсминцы', 'Hurt enemy destroyers'), name='hit_bdr'),
+            NNObj(self, MS('Перехватите торпеды', 'Intercept torpedoes'), name='catch_torpedoes'),
+            NNObj(self, MS('Захватите капсулу с Хризантемы', 'Collect capsule from Chrysantemum'), name='collect_chrysatemum'),
 
             NNObj(self, O.GOTO, target='randevoue'),
-            NNObj(self, 'Сядьте на линкор Мусаси', name='dock_musashi', target='torp_musashi'),
+            NNObj(self, MS('Сядьте на линкор Мусаси', 'Dock with Musashi'), name='dock_musashi', target='torp_musashi'),
         ]
 
     def get_ingame_thorns(self):

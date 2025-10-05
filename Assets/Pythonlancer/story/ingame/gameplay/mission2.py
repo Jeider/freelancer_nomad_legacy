@@ -561,7 +561,7 @@ class Misson02(ingame_mission.IngameMission):
             NNObj(self, MS('Просканируйте объекты', 'Scan marked objects'), name='scan_objects'),
             NNObj(self, MS('Уничтожьте мусорщиков', 'Destroy junkers'), name='destroy_junkers'),
             NNObj(self, MS('Выбейте чёрный ящик', 'Exract the black box by your guns'), name='drop_objects'),
-            NNObj(self, MS('Подберите черный ящик', 'Tractor the black box'), name='get_objects'),
+            NNObj(self, MS('Подберите черный ящик', 'Collect the black box'), name='get_objects'),
 
             NNObj(self, O.TLR, target='om15_tlr_2'),
 
