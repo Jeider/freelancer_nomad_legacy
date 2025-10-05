@@ -9,6 +9,59 @@ class Msn3(object):
     MISSION_INDEX = 3
 
 
+class Msn3Offer(Msn3, script.CutsceneProps):
+    ALIAS = 'offer'
+    TITLE = 'Штарке'
+    DESCRIPTION = ''
+    VOICE_LINES = [
+        VoiceLine(10, Trent, ru="", en="Greetings, gentlemen."),
+        VoiceLine(20, Wilham, ru="",
+                  en="There you are, Herr Trent. Meet Herr Hassler. This mission will require both of you to tightly work together."),
+        VoiceLine(30, Trent, ru="", en="An honor to meet you, Herr Hassler."),
+        VoiceLine(40, Trent, ru="", en="And what will we do on this mission?"),
+        VoiceLine(50, Wilham, ru="", en="The usual thing. Fly, shoot, nothing new."),
+        VoiceLine(60, Trent, ru="",
+                  en="And someone is watching from a safe distance. Definitely nothing new. Can you be more specific?"),
+        VoiceLine(70, Wilham, ru="",
+                  en="Of course. Our intelligence managed to track down Dietrich's position. He's on an ex-military base in Konigsberg."),
+        VoiceLine(75, Wilham, ru="",
+                  en="A strike fleet is preparing to attack that base as we speak. However, our analytics predict that a direct attack on Konigsberg would cause severe losses on our side. "),
+        VoiceLine(77, Wilham, ru="",
+                  en="That's why we're forming a mobile strike team, whose task will be to neutralize the base's defense systems by the time our main strike fleet approaches it."),
+        VoiceLine(80, Trent, ru="", en="You mean, those will be the guys who drag fire away from your asses."),
+        VoiceLine(90, Wilham, ru="",
+                  en="Correct, Herr Trent. By the way, Admiral Reichmann personally insisted on your participation in this mission."),
+        VoiceLine(100, Trent, ru="",
+                  en="I'm flattered. Could you tell me how an elite military base, with top class defense systems, practically in the very center of Rheinland's territory, got abandoned and fell into the hands of rebels and Corsairs?"),
+        VoiceLine(110, Hassler, ru="",
+                  en="Herr Trent, at that time there were two such bases in Rheinland territory - Konigsberg and Regensburg, both in the Munich system, on the border with Kusari. The Kusari military saw Regensburg as nothing more than a pain in their ass."),
+        VoiceLine(115, Hassler, ru="",
+                  en="During our last conflict with Kusari, we suffered a crushing defeat, and under the terms of a peace treaty we were forced to demilitarize Munich. The construction of Konigsberg was halted just before it was finished... "),
+        VoiceLine(120, Hassler, ru="",
+                  en="Our government couldn't bother destroying Konigsberg, or disassembling it. Maybe they hoped for the peace treaty to be re-negotiated so they can put the base into use, I don't know. Eventually, it appeared that Dietrich, one of the highest-ranking military personnel, having all the access keys, simply occupied it..."),
+        VoiceLine(130, Trent, ru="",
+                  en="It seems that asking all sorts of stupid questions, like whether I have a choice, is inappropriate in this situation."),
+        VoiceLine(140, Wilham, ru="", en="You're a wise man, Herr Trent. "),
+        VoiceLine(150, Hassler, ru="",
+                  en="Herr Trent, ninety percent of the local freelancers can only dream of being in your shoes. You're being paid generously, and reporting directly to Admiral Reichmann."),
+        VoiceLine(155, Hassler, ru="",
+                  en="Why are you as nervous as a high-school student before graduation? Let's fly. I'll see you in space."),
+    ]
+
+
+class Msn3Reward(Msn3, script.CutsceneProps):
+    ALIAS = 'reward'
+    TITLE = 'Финал'
+    DESCRIPTION = ''
+    VOICE_LINES = [
+        VoiceLine(10, Hassler, ru="",
+                  en="I asked the locals, they don't know shit. Anyways, thank you, Trent. Your work here is done, we'll be looking for the transport on our channels. Unfortunately, since we screwed up, Reichmann significantly cut the payment."),
+        VoiceLine(20, Trent, ru="",
+                  en="Strange. The base was destroyed, Dietrich's dead, and Reichmann freaks out because of some transport. I don't like this."),
+        VoiceLine(30, Hassler, ru="", en="Me neither... The money's been transferred to your account. See you later."),
+    ]
+
+
 class Msn3Space(Msn3, script.SpaceVoiceProps):
     VOICE_LINES = [
         VoiceLine(
@@ -322,63 +375,77 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
             9010,
             Neuralnet,
             ru="Ост+алось 10 минут до активации щита К+ёнигсберга",
+            en="10 minutes remaining to activation of Königsberg's shield",
         ),
         VoiceLine(
             9020,
             Neuralnet,
             ru="Ост+алось 9 минут до активации щита К+ёнигсберга",
+            en="9 minutes remaining to activation of Königsberg's shield",
         ),
         VoiceLine(
             9030,
             Neuralnet,
             ru="Ост+алось 8 минут до активации щита К+ёнигсберга",
+            en="8 minutes remaining to activation of Königsberg's shield",
         ),
         VoiceLine(
             9040,
             Neuralnet,
             ru="Ост+алось 7 минут до активации щита К+ёнигсберга",
+            en="7 minutes remaining to activation of Königsberg's shield",
         ),
         VoiceLine(
             9050,
             Neuralnet,
             ru="Ост+алось 6 минут до активации щита К+ёнигсберга",
+            en="6 minutes remaining to activation of Königsberg's shield",
         ),
         VoiceLine(
             9060,
             Neuralnet,
             ru="Ост+алось 5 минут до активации щита К+ёнигсберга",
+            en="5 minutes remaining to activation of Königsberg's shield",
         ),
         VoiceLine(
             9070,
             Neuralnet,
             ru="Ост+алось 4 минуты до активации щита К+ёнигсберга",
+            en="4 minutes remaining to activation of Königsberg's shield",
         ),
         VoiceLine(
             9080,
             Neuralnet,
             ru="Ост+алось 3 минуты до активации щита К+ёнигсберга",
+            en="3 minutes remaining to activation of Königsberg's shield",
         ),
         VoiceLine(
             9090,
             Neuralnet,
             ru="Ост+алось две минуты до активации щита К+ёнигсберга",
+            en="2 minutes remaining to activation of Königsberg's shield",
         ),
         VoiceLine(
             9100,
             Neuralnet,
             ru="Ост+алась одна минута до активации щита К+ёнигсберга",
+            en="1 minute remaining to activation of Königsberg's shield",
         ),
         VoiceLine(
             9110,
             Neuralnet,
             ru="Ост+алось 30 секунд до активации щита К+ёнигсберга",
+            en="30 seconds remaining to activation of Königsberg's shield",
         ),
     ]
 
 
 class Mission3(Msn3, script.StoryMission):
     MISSION_INDEX = 3
-    CUTSCENES = []
+    CUTSCENES = [
+        Msn3Offer,
+        Msn3Reward,
+    ]
     SPACE_CLASS = Msn3Space
     SYNC_SPACE = True
 

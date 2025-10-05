@@ -1,12 +1,84 @@
 from story import script
 from audio.sound import VoiceLine
 from story.actors import (
-    Trent, HatcherStation, Alaric, Kreitmaier, Sigma8Cruiser, Reichman, Hassler, JacoboTrader, Sigma8Outpost
+    Trent, Hatcher, HatcherStation, Jacobo, Alaric, Kreitmaier, Sigma8Cruiser, Reichman, Hassler, JacoboTrader, Sigma8Outpost
 )
 
 
 class Msn4(object):
     MISSION_INDEX = 4
+
+
+class Msn4Offer(Msn4, script.CutsceneProps):
+    ALIAS = 'offer'
+    TITLE = 'Предложение'
+    DESCRIPTION = ''
+    VOICE_LINES = [
+        VoiceLine(10, Jacobo, ru="", en="Herr Trent, is that you?"),
+        VoiceLine(20, Jacobo, ru="",
+                  en="Herr Trent, thank you so much for coming. I'm in trouble. The Rheinland authorities are looking for me."),
+        VoiceLine(30, Trent, ru="",
+                  en="I already guessed that. And I'm getting that familiar sense of someone trying to get me into trouble."),
+        VoiceLine(40, Jacobo, ru="",
+                  en="Herr Trent, you do not understand. A matter of utmost importance. I need to deliver important documents to Liberty."),
+        VoiceLine(50, Trent, ru="",
+                  en="And yet again I'm being dragged into a game of espionage... Jacobo, are you aware that I'm currently working for the very same Rheinland authorities you're trying to avoid?"),
+        VoiceLine(60, Jacobo, ru="",
+                  en="Herr Trent, you're a freelancer. You did not take an oath. After the job is done, nothing connects you to your client."),
+        VoiceLine(62, Jacobo, ru="",
+                  en="Herr Trent, if we can deliver these VERY important documents to Liberty, to the Forbes system, they'll pay us a lot of money, and I mean a LOT, you see?"),
+        VoiceLine(65, Jacobo, ru="", en="I probably won't make it alone, but with you on my side..."),
+        VoiceLine(67, Jacobo, ru="", en="And if you don't help me, they'll probably just kill me..."),
+        VoiceLine(70, Trent, ru="", en="I'm gonna regret doing that... So, what's the plan?"),
+        VoiceLine(80, Jacobo, ru="",
+                  en="Herr Trent, thank you! You won't regret it! Launch into space. My friends will help me get to the landing pad quietly. Meet me in orbit."),
+        VoiceLine(90, Trent, ru="", en="See you there."),
+    ]
+
+
+class Msn4Reward(Msn4, script.CutsceneProps):
+    ALIAS = 'reward'
+    TITLE = 'Вознаграждение'
+    DESCRIPTION = ''
+    VOICE_LINES = [
+        VoiceLine(10, Hatcher, ru="", en="Gentlemen."),
+        VoiceLine(20, Trent, ru="", en="Miss Hatcher."),
+        VoiceLine(30, Alaric, ru="", en="Miss Hatcher, you have such lovely, deep eyes."),
+        VoiceLine(40, Hatcher, ru="", en="Cut this nonsense immediately, you don't want to irritate me."),
+        VoiceLine(45, Hatcher, ru="", en="Let's get to our business. You've done a fine job."),
+        VoiceLine(50, Hatcher, ru="", en="I will avoid asking how you managed to escape Rheinland with THIS kind of material."),
+        VoiceLine(55, Hatcher, ru="", en="I'm a delicate lady, I'm afraid I might not be able to handle it."),
+        VoiceLine(60, Trent, ru="", en="We did what we had to do."),
+        VoiceLine(70, Hatcher, ru="", en="Heh, seems like you had fun. And by the way, we are looking for top-notch skilled Freelancers such as yourselves to help us perform, say, some non-standard tasks. Have you got any plans for the near future?"),
+        VoiceLine(80, Alaric, ru="", en="We've always got time for you..."),
+        VoiceLine(90, Trent, ru="", en="Shut up, Alaric. Since we're now considered enemies of the Rheinland state, I suppose we don't have any plans yet."),
+        VoiceLine(100, Hatcher, ru="", en="So, if we have a couple of well-paid tasks that fit your field of work..."),
+        VoiceLine(110, Trent, ru="", en="Then we won't hesitate to fulfill them. That is, unless these tasks make us enemies of the Liberty state, too."),
+        VoiceLine(120, Hatcher, ru="", en="Oh dear, no, I don't think it'll ever come to this."),
+        VoiceLine(130, Trent, ru="", en="Sure hope so..."),
+    ]
+
+
+class Msn4Final(Msn4, script.CutsceneProps):
+    ALIAS = 'reward'
+    TITLE = 'Вознаграждение'
+    DESCRIPTION = ''
+    VOICE_LINES = [
+        VoiceLine(10, Alaric, ru="", en="Awesome, Trent! Who knew you'd be so good at finding clients and closing deals?"),
+        VoiceLine(20, Trent, ru="", en="I'm also good at making enemies and getting close to being murdered."),
+        VoiceLine(30, Alaric, ru="", en="Oh come on... You just started your freelancing career, a complete newbie, and now you're taking jobs for the government with appropriate payments!"),
+        VoiceLine(40, Trent, ru="", en="Mhm, one of those governments have already put a price on my head. And oh do I hope they forget about me soon with everything that's going on there."),
+        VoiceLine(50, Alaric, ru="", en="Seriously, the Rheinland military will most likely fall apart soon. They won't bother looking for us."),
+        VoiceLine(60, Trent, ru="", en="You seem very confident. Come on, Alaric, what are you hiding from me?"),
+        VoiceLine(70, Alaric, ru="", en="That Miss Hatcher, do you know who she is?"),
+        VoiceLine(80, Trent, ru="", en="Well, of course I do! I've known her for a whole three hours! Screw you, Alaric."),
+        VoiceLine(90, Alaric, ru="", en="She's an officer in one of Liberty's secret service agencies."),
+        VoiceLine(100, Trent, ru="", en="God dammit! Not again..."),
+        VoiceLine(110, Alaric, ru="", en="You don't get it. It's such a special and secret service, that not even their own counterparts in their own government know they exist."),
+        VoiceLine(120, Trent, ru="", en="Then how do you know that, Alaric?"),
+        VoiceLine(130, Alaric, ru="", en="Ah... E-e-e..."),
+        VoiceLine(140, Trent, ru="", en="I can't believe I got into this botch again!"),
+    ]
 
 
 class Msn4Space(Msn4, script.SpaceVoiceProps):
@@ -628,7 +700,11 @@ class Msn4Space(Msn4, script.SpaceVoiceProps):
 
 class Mission4(Msn4, script.StoryMission):
     MISSION_INDEX = 4
-    CUTSCENES = []
+    CUTSCENES = [
+        Msn4Offer,
+        Msn4Reward,
+        Msn4Final,
+    ]
     SPACE_CLASS = Msn4Space
     SYNC_SPACE = True
 

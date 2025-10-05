@@ -1,12 +1,120 @@
 from story import script
 from audio.sound import VoiceLine
 from story.actors import (
-    Trent, Alaric, Informer, Dietrich, Adelmar, Luc, BrandenburgOutpost, BrandenburgCruiser
+    Trent, IntroBarman, Stewardess, Alaric, Informer, Dietrich, Adelmar, Luc, BrandenburgOutpost, BrandenburgCruiser
 )
 
 
 class Msn1(object):
     MISSION_INDEX = 1
+
+
+class Msn1Intro(Msn1, script.CutsceneProps):
+    ALIAS = 'intro'
+    TITLE = 'Интро'
+    DESCRIPTION = ''
+    VOICE_LINES = [
+        VoiceLine(10, Trent, ru="", en="The savior of souls!"),
+        VoiceLine(20, IntroBarman, ru="", en="Welcome back, Trent. The usual?"),
+        VoiceLine(30, Trent, ru="", en="Sure, I'll have two!"),
+        VoiceLine(40, IntroBarman, ru="", en="Any reason for this celebration?"),
+        VoiceLine(50, Trent, ru=""),
+        VoiceLine(60, IntroBarman, ru="", en="For the beginning of a new life! This one's on me!"),
+        VoiceLine(70, Trent, ru="",
+                  en="Thanks, friend! You are definitely the best person in this godforsaken place!"),
+        VoiceLine(80, IntroBarman,
+        ru="", en = "But if there's a \"first of all\", there should be \"second of all\". Go on and tell me, or else I'll die of curiousity."),
+        VoiceLine(90, Trent, ru = "", en = "Don't you dare die on me! I'd never get over the loss."),
+        VoiceLine(100, Trent, ru="", en="An old friend sent me a message."),
+        VoiceLine(105, Trent, ru="", en="Look."),
+        VoiceLine(110, Alaric, ru="",
+                  en="Greetings, Trent! This is Alaric! Good news. I think we can fix the hole in your finnances. Meet me at Magdeburg, Sigma-13 System. See you soon!"),
+        VoiceLine(120, Trent, ru="", en="What do you think?"),
+        VoiceLine(130, IntroBarman, ru="", en="I think you're the luckiest son of a bitch on this junkpile of a planet."),
+        VoiceLine(140, Trent, ru="", en="No, I mean... Should I agree and go there?"),
+        VoiceLine(150, IntroBarman, ru="",
+                  en="You could, of course, let things be as they are and do nothing. Got enough money to sustain yourself; a risk-free life, other than dying in your 40s working in the mine. But, I think, if life gives you a chance to get out of this mud-hole - it's a sin not to take that chance. But, it's your call."),
+        VoiceLine(160, Trent, ru="", en="So why aren't you flying away from this \"mud-hole\" yourself?"),
+        VoiceLine(170, IntroBarman, ru="",
+                  en="This, friend, is my mud-hole. I've grown into it and I love it. And I don't have friends like yours, asking me to drop everything I'm doing and come over to Magdeburg. And if I would leave, who's going to be the savior of strangers' souls?"),
+        VoiceLine(180, Trent, ru = "", en = "You're right, without you this place would've been gloomy. I guess I'll head to the spaceport, then."),
+        VoiceLine(190, IntroBarman, ru = "", en = "Good luck, Trent! Hopefully, we'll never meet here again."),
+    ]
+
+
+class Msn1Cityscape(Msn1, script.CutsceneProps):
+    ALIAS = 'cityscape'
+    TITLE = 'Взлётная площадка'
+    DESCRIPTION = ''
+    VOICE_LINES = [
+        VoiceLine(10, Stewardess, ru="", en="Your ticket and documents, sir."),
+        VoiceLine(20, Stewardess, ru="", en="Trent?.. Are you..."),
+        VoiceLine(30, Trent, ru="", en="No, just a coincidence."),
+        VoiceLine(40, Trent, ru="",
+                  en="I'm so sick of it. While my namesake was saving the universe, I was working my ass off to pay off those stupid debts..."),
+    ]
+
+
+class Msn1Offer(Msn1, script.CutsceneProps):
+    ALIAS = 'offer'
+    TITLE = 'Сигма-13'
+    DESCRIPTION = ''
+    VOICE_LINES = [
+        VoiceLine(10, Alaric, ru="", en="Hi Trent, glad to see you!"),
+        VoiceLine(20, Trent, ru="", en="You too, Alaric."),
+        VoiceLine(30, Alaric, ru="",
+                  en="I heard that you've finally dealt with that problem. No more debts, no more duties, right?"),
+        VoiceLine(40, Trent, ru="",
+                  en="Mhm, no ship and no money either. But it has its benefits - no problems with cargo holds. What's mine is mine."),
+        VoiceLine(50, Alaric, ru="", en="A great time to start a new page in your life, isn't it?"),
+        VoiceLine(60, Alaric, ru="", en="I could use a partner for a well-paid job."),
+        VoiceLine(70, Alaric, ru="",
+                  en="I'll give you a ship. An old one, of course, but it will definitely survive a few flights till decommission."),
+        VoiceLine(80, Alaric, ru="",
+                  en="Gotta escort a few Rheinlanders from New Berlin to Bismark. They pay good, real good."),
+        VoiceLine(90, Trent, ru="",
+                  en="Interesting, why would Rheinlanders hire escorts to fly from one system to another, inside their own territory?"),
+        VoiceLine(100, Trent, ru="", en="And a spaceship, you say? You're leaving me no choice, Al!"),
+        VoiceLine(110, Alaric, ru="",
+                  en="Excellent! The ship's waiting for you in the hangar. Check everything over, and I'll meet you outside when you're ready."),
+    ]
+
+
+class Msn1Berlin(Msn1, script.CutsceneProps):
+    ALIAS = 'berlin'
+    TITLE = 'Берлин'
+    DESCRIPTION = ''
+    VOICE_LINES = [
+        VoiceLine(10, Alaric, ru="", en="Guten tag, gentlemen. This is Trent, my friend I was telling you about."),
+        VoiceLine(20, Adelmar, ru="", en="Excellent. We're glad to see you. We have a few problems in our system. Hopefully, they didn't bother you too much."),
+        VoiceLine(30, Trent, ru="", en="A little bit. I'm just glad we made it here."),
+        VoiceLine(40, Luc, ru="", en="Great. If you're doing fine, then let's begin."),
+    ]
+
+
+class Msn1Bizmark(Msn1, script.CutsceneProps):
+    ALIAS = 'bizmark'
+    TITLE = 'Бисмарк'
+    DESCRIPTION = ''
+    VOICE_LINES = [
+        VoiceLine(10, Adelmar, ru="", en="Thank you for the escort! The money's already being transferred to your accounts!"),
+        VoiceLine(20, Trent, ru="", en="You're welcome."),
+        VoiceLine(30, Luc, ru="", en="Additionally, we, as members of the Hanseatic trading community, have added you to our freelancers' whitelist."),
+        VoiceLine(40, Luc, ru="", en="From now on, you can take any missions offered by the Hanseatic merchants."),
+        VoiceLine(50, Alaric, ru="", en="And here's for a special thanks to you, gentlemen! Trent, have you heard? We are no longer some kind of beggers in Rheinland territory, but official freelancers accredited by the Hanseatic trading community!"),
+        VoiceLine(60, Trent, ru="", en="Will I live..."),
+        VoiceLine(70, Luc, ru="", en="And... Trent, a quick word of advice: As soon as you can, get yourself a newer ship to fly around in. No offense, but such antiquities are bought for novelty reasons. Not to actually fly in space."),
+        VoiceLine(80, Trent, ru="", en="I'll think about it."),
+        VoiceLine(90, Alaric, ru="", en="So, how's your new life going, Trent?"),
+        VoiceLine(100, Trent, ru="", en="Exciting. But... Now that I have my own ship, I'm ready to go down the devil's throat."),
+        VoiceLine(110, Alaric, ru="", en="Now that you have the money to maintain and refurbish it. And to think it through - you should buy a new one. As painful as it may sound, Luts made a great point."),
+        VoiceLine(120, Trent, ru="", en="He can suck it. Maybe he has enough money to change ships every goddamn year, but I'm not a millionaire yet."),
+        VoiceLine(125, Alaric, ru="", en="Then just think about upgrading what you already have."),
+        VoiceLine(130, Alaric, ru="", en="On that battle, in the asteroid field, you most certainly didn't have enough energy. It certainly won't hurt you to get a better power generator. And take a look at the rest of the package. This chassis is very flexible in terms of upgrades. Most of its modules can be replaced with better ones..."),
+        VoiceLine(140, Alaric, ru="", en="OK Trent, I got some business to take care of. It requires my immediate attention so I better get going. Will you manage here without me?"),
+        VoiceLine(150, Trent, ru="", en=" I'll try... Good luck, Alaric!!!"),
+        VoiceLine(160, Alaric, ru="", en="Bye-bye!"),
+    ]
 
 
 class Msn1Space(Msn1, script.SpaceVoiceProps):
@@ -424,7 +532,13 @@ class Msn1Space(Msn1, script.SpaceVoiceProps):
 
 class Mission1(Msn1, script.StoryMission):
     MISSION_INDEX = 1
-    CUTSCENES = []
+    CUTSCENES = [
+        Msn1Intro,
+        Msn1Cityscape,
+        Msn1Offer,
+        Msn1Berlin,
+        Msn1Bizmark,
+    ]
     SPACE_CLASS = Msn1Space
     SYNC_SPACE = True
 

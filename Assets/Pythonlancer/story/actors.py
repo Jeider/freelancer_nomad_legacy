@@ -328,6 +328,28 @@ class BrandenburgCruiser(Actor):
     COMM_APPEARANCE = 'rh_sales_head, rh_male_guard_body, prop_neuralnet_d'
 
 
+class CadizEnemyOne(Actor):
+    RU_NAME = 'Контрабандист'
+    TYPE = ACTOR_MALE
+    NAME = 'enemy1'
+    COMM_APPEARANCE = 'pl_male1_head, pi_pirate3_body, comm_pi_pirate'
+
+
+class CadizEnemyTwo(Actor):
+    RU_NAME = 'Контрабандист'
+    TYPE = ACTOR_MALE
+    NAME = 'enemy2'
+    COMM_APPEARANCE = 'pl_male1_head, pi_pirate3_body, comm_pi_pirate'
+
+
+class CadizEnemyThree(CadizEnemyOne):
+    NAME = 'enemy3'
+
+
+class CadizEnemyFour(CadizEnemyOne):
+    NAME = 'enemy4'
+
+
 class ForbesSmugglerOne(Actor):
     RU_NAME = 'Контрабандист'
     TYPE = ACTOR_MALE
@@ -489,6 +511,13 @@ class OrderPilot(Actor):
     COMM_APPEARANCE = 'pi_pirate2_head, pi_orillion_body, comm_br_guard'
 
 
+class OrderGuard(Actor):
+    RU_NAME = 'Пилот Ордена'
+    TYPE = ACTOR_MALE
+    NAME = 'guard'
+    COMM_APPEARANCE = 'pi_pirate2_head, pi_orillion_body, comm_br_guard'
+
+
 class Kruger(Actor):
     RU_NAME = 'Крюгер'
     TYPE = ACTOR_MALE
@@ -564,6 +593,44 @@ class Tortuga(Actor):
     COMM_APPEARANCE = 'br_quigly_head, sh_male2_body, prop_hat_male_pirate_a, prop_neuralnet_d'
     STEOS_ID = 10029
     STEOS_PITCH = 0.25
+
+
+class Smith(Actor):
+    RU_NAME = 'Смит'
+    TYPE = ACTOR_MALE
+    NAME = 'smith'
+
+
+class DetroitBarman(Actor):
+    RU_NAME = 'Бармен'
+    TYPE = ACTOR_MALE
+    NAME = 'barman'
+
+
+class WalesBarman(Actor):
+    RU_NAME = 'Бармен'
+    TYPE = ACTOR_MALE
+    NAME = 'barman'
+
+
+class IntroBarman(Actor):
+    RU_NAME = 'Бармен'
+    TYPE = ACTOR_MALE
+    NAME = 'barman'
+
+
+class Jabba(Actor):
+    RU_NAME = 'Джабба'
+    TYPE = ACTOR_MALE
+    NAME = 'jabba'
+
+
+class Stewardess(Hatcher):
+    RU_NAME = 'Стюардесса'
+    TYPE = ACTOR_FEMALE
+    NAME = 'stuard'
+
+
 
 
 class CorsairBarman(Actor):

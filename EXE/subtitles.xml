@@ -2,26 +2,26 @@
 
 <Subtitles>
 
-<Static AudioFile="mod\intro\intro_0010_trent.wav" TextArea="Cinematic">The savior of souls!</Static>
-<Static AudioFile="mod\intro\intro_0020_barman.wav" TextArea="Cinematic">Welcome back, Trent. The usual?</Static>
-<Static AudioFile="mod\intro\intro_0030_trent.wav" TextArea="Cinematic">Sure, I'll have two!</Static>
-<Static AudioFile="mod\intro\intro_0040_barman.wav" TextArea="Cinematic">Any reason for this celebration?</Static>
-<Static AudioFile="mod\intro\intro_0050_trent.wav" TextArea="Cinematic">Absolutely. Two reasons actually! First of all, I have finally managed to pay off all my debts!</Static>
-<Static AudioFile="mod\intro\intro_0060_barman.wav" TextArea="Cinematic">For the beginning of a new life! This one's on me!</Static>
-<Static AudioFile="mod\intro\intro_0070_trent.wav" TextArea="Cinematic">Thanks, friend! You are definitely the best person in this godforsaken place!</Static>
-<Static AudioFile="mod\intro\intro_0080_barman.wav" TextArea="Cinematic">But if there's a "first of all", there should be "second of all". Go on and tell me, or else I'll die of curiousity.</Static>
-<Static AudioFile="mod\intro\intro_0090_trent.wav" TextArea="Cinematic">Don't you dare die on me! I'd never get over the loss.</Static>
-<Static AudioFile="mod\intro\intro_0100_trent.wav" TextArea="Cinematic">An old friend sent me a message.</Static>
-<Static AudioFile="mod\intro\intro_0105_trent.wav" TextArea="Cinematic">Look.</Static>
-<Static AudioFile="mod\intro\intro_0110_alaric.wav" TextArea="Cinematic">Greetings, Trent! This is Alaric! Good news. I think we can fix the hole in your finnances. Meet me at Magdeburg, Sigma-13 System. See you soon!</Static>
-<Static AudioFile="mod\intro\intro_0120_trent.wav" TextArea="Cinematic">What do you think?</Static>
-<Static AudioFile="mod\intro\intro_0130_barman.wav" TextArea="Cinematic">I think you're the luckiest son of a bitch on this junkpile of a planet.</Static>
-<Static AudioFile="mod\intro\intro_0140_trent.wav" TextArea="Cinematic">No, I mean... Should I agree and go there?</Static>
-<Static AudioFile="mod\intro\intro_0150_barman.wav" TextArea="Cinematic">You could, of course, let things be as they are and do nothing. Got enough money to sustain yourself; a risk-free life, other than dying in your 40s working in the mine. But, I think, if life gives you a chance to get out of this mud-hole - it's a sin not to take that chance. But, it's your call.</Static>
-<Static AudioFile="mod\intro\intro_0160_trent.wav" TextArea="Cinematic">So why aren't you flying away from this "mud-hole" yourself?</Static>
-<Static AudioFile="mod\intro\intro_0170_barman.wav" TextArea="Cinematic">This, friend, is my mud-hole. I've grown into it and I love it. And I don't have friends like yours, asking me to drop everything I'm doing and come over to Magdeburg. And if I would leave, who's going to be the savior of strangers' souls?</Static>
-<Static AudioFile="mod\intro\intro_0180_trent.wav" TextArea="Cinematic">You're right, without you this place would've been gloomy. I guess I'll head to the spaceport, then.</Static>
-<Static AudioFile="mod\intro\intro_0190_barman.wav" TextArea="Cinematic">Good luck, Trent! Hopefully, we'll never meet here again.</Static>
+<Static AudioFile="mod\m01\m01_intro_0010_trent.wav" TextArea="Cinematic">The savior of souls!</Static>
+<Static AudioFile="mod\m01\m01_intro_0020_barman.wav" TextArea="Cinematic">Welcome back, Trent. The usual?</Static>
+<Static AudioFile="mod\m01\m01_intro_0030_trent.wav" TextArea="Cinematic">Sure, I'll have two!</Static>
+<Static AudioFile="mod\m01\m01_intro_0040_barman.wav" TextArea="Cinematic">Any reason for this celebration?</Static>
+<Static AudioFile="mod\m01\m01_intro_0050_trent.wav" TextArea="Cinematic">Absolutely. Two reasons actually! First of all, I have finally managed to pay off all my debts!</Static>
+<Static AudioFile="mod\m01\m01_intro_0060_barman.wav" TextArea="Cinematic">For the beginning of a new life! This one's on me!</Static>
+<Static AudioFile="mod\m01\m01_intro_0070_trent.wav" TextArea="Cinematic">Thanks, friend! You are definitely the best person in this godforsaken place!</Static>
+<Static AudioFile="mod\m01\m01_intro_0080_barman.wav" TextArea="Cinematic">But if there's a "first of all", there should be "second of all". Go on and tell me, or else I'll die of curiousity.</Static>
+<Static AudioFile="mod\m01\m01_intro_0090_trent.wav" TextArea="Cinematic">Don't you dare die on me! I'd never get over the loss.</Static>
+<Static AudioFile="mod\m01\m01_intro_0100_trent.wav" TextArea="Cinematic">An old friend sent me a message.</Static>
+<Static AudioFile="mod\m01\m01_intro_0105_trent.wav" TextArea="Cinematic">Look.</Static>
+<Static AudioFile="mod\m01\m01_intro_0110_alaric.wav" TextArea="Cinematic">Greetings, Trent! This is Alaric! Good news. I think we can fix the hole in your finnances. Meet me at Magdeburg, Sigma-13 System. See you soon!</Static>
+<Static AudioFile="mod\m01\m01_intro_0120_trent.wav" TextArea="Cinematic">What do you think?</Static>
+<Static AudioFile="mod\m01\m01_intro_0130_barman.wav" TextArea="Cinematic">I think you're the luckiest son of a bitch on this junkpile of a planet.</Static>
+<Static AudioFile="mod\m01\m01_intro_0140_trent.wav" TextArea="Cinematic">No, I mean... Should I agree and go there?</Static>
+<Static AudioFile="mod\m01\m01_intro_0150_barman.wav" TextArea="Cinematic">You could, of course, let things be as they are and do nothing. Got enough money to sustain yourself; a risk-free life, other than dying in your 40s working in the mine. But, I think, if life gives you a chance to get out of this mud-hole - it's a sin not to take that chance. But, it's your call.</Static>
+<Static AudioFile="mod\m01\m01_intro_0160_trent.wav" TextArea="Cinematic">So why aren't you flying away from this "mud-hole" yourself?</Static>
+<Static AudioFile="mod\m01\m01_intro_0170_barman.wav" TextArea="Cinematic">This, friend, is my mud-hole. I've grown into it and I love it. And I don't have friends like yours, asking me to drop everything I'm doing and come over to Magdeburg. And if I would leave, who's going to be the savior of strangers' souls?</Static>
+<Static AudioFile="mod\m01\m01_intro_0180_trent.wav" TextArea="Cinematic">You're right, without you this place would've been gloomy. I guess I'll head to the spaceport, then.</Static>
+<Static AudioFile="mod\m01\m01_intro_0190_barman.wav" TextArea="Cinematic">Good luck, Trent! Hopefully, we'll never meet here again.</Static>
 
 <Static AudioFile="mod\m01\m01_cityscape_0010_stuard.wav" TextArea="Cinematic">Your ticket and documents, sir.</Static>
 <Static AudioFile="mod\m01\m01_cityscape_0020_stuard.wav" TextArea="Cinematic">Trent?.. Are you...</Static>

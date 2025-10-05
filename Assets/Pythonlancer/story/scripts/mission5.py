@@ -2,12 +2,144 @@ from story import script
 from audio.sound import VoiceLine
 from story.actors import (
     Trent, Hatcher, HatcherStation, Tilton, DetroitDispatcher, AlaricStation, ForbesSmugglerOne, ForbesSmugglerTwo,
-    ForbesSmugglerThree, Sigma17Trader, Sigma17Police, ClarkResearch, Mandrake, Sigma17Assassin
+    ForbesSmugglerThree, Sigma17Trader, Sigma17Police, ClarkResearch, Mandrake, Sigma17Assassin, Smith, DetroitBarman
 )
 
 
 class Msn5(object):
     MISSION_INDEX = 5
+
+
+class Msn5Offer(Msn5, script.CutsceneProps):
+    ALIAS = 'offer'
+    TITLE = 'Предложение'
+    DESCRIPTION = ''
+    VOICE_LINES = [
+        VoiceLine(10, Hatcher, ru="", en="How are you, Mr. Trent? Doing fine?"),
+        VoiceLine(20, Trent, ru="", en="Well, Miss Hatcher, yesterday I twisted my ankle. And today, when I got out of the shower, I felt stinging pain in my back. But everything's fine regardless."),
+        VoiceLine(30, Hatcher, ru="", en="Mr. Trent! Let's try not to turn a polite greeting into a massive joke. "),
+        VoiceLine(40, Trent, ru="", en="Then why won't we skip the politeness and get straight to business?"),
+        VoiceLine(50, Hatcher, ru="", en="You're not making it any easier for me..."),
+        VoiceLine(60, Hatcher, ru="", en="We've analyzed the documents you brought us, they proved to be of great value to us. However, there's only one problem."),
+        VoiceLine(70, Trent, ru="", en="There's always a problem."),
+        VoiceLine(80, Hatcher, ru="", en="They're complicated scientific papers, consisting of very advanced scientific calculations. So advanced, in fact, that our scientists couldn't stop arguing over their meanings."),
+        VoiceLine(90, Hatcher, ru="", en="You know, Mr. Trent, watching scientists fight each other is very entertaining."),
+        VoiceLine(100, Trent, ru="", en="Shame I couldn't watch them. So where do I come in? Surely you don't want me to watch over your scientists..."),
+        VoiceLine(110, Hatcher, ru="", en="We'll need the help of a very experienced scientist, an expert in his field. Someone who could give us an accurate interpretation of these documents."),
+        VoiceLine(120, Hatcher, ru="", en="Luckily, I happen know a person of such skill; Professor Mandrake. If he can't figure it out, no one can."),
+        VoiceLine(130, Trent, ru="", en="And you can't just call him and ask for his help, because..."),
+        VoiceLine(140, Hatcher, ru="", en="Because he works for Deep Space Engineering, and he's currently occupied with a research expedition. A very important one it seems, because it serves to counter industrial espionage that has ears deep inside our companies."),
+        VoiceLine(150, Trent, ru="", en="And my assignment will be..."),
+        VoiceLine(160, Hatcher, ru="", en="Flying in space... Enough, Mr. Trent. You'll need to fly to Detroit station, which is DSE's HQ. Fond Professor Mandrake, and bring him to me."),
+        VoiceLine(170, Hatcher, ru="", en="I'll give you my business card in case you encounter any problems with DSE's security officers. Tell them you're working for me."),
+        VoiceLine(180, Trent, ru="", en="Alliance Security Force? Never heard of it."),
+        VoiceLine(190, Hatcher, ru="", en="It matters not, Mr. Trent. Your reward for completing this assignment will be very generous."),
+        VoiceLine(200, Trent, ru="", en="Ok, I'll get you what you need."),
+        VoiceLine(210, Hatcher, ru="", en="O-kay freelancer, now let's see what you are all about. You've got quite a mouth there, now it's time to prove your worth in complicated situations. I'll be watching over you... From afar."),
+    ]
+
+
+class Msn5Piratebar(Msn5, script.CutsceneProps):
+    ALIAS = 'piratebar'
+    TITLE = 'Пиратская база'
+    DESCRIPTION = ''
+    VOICE_LINES = [
+        VoiceLine(10, Trent, ru="", en="Hey, bro! Got some more of that? I've been flying in space all day long, could use something to clear my mind..."),
+        VoiceLine(20, Smith, ru="", en="No way, man! Been doing this shit for hours now, that's some of the good stuff!"),
+        VoiceLine(30, Trent, ru="", en="Those jackasses from DSE really pissed me off. I did a fair job for them, and they can't even let me land on Detroit! Not even for a quick drop-off, these assholes just won't let me in! "),
+        VoiceLine(40, Trent, ru="", en="And I have some really fine stuff in my cargo hold... Went on a months-long journey all the way to Omicron, and that stupid businessman just fends me off like I'm nothing."),
+        VoiceLine(50, Trent, ru="", en="And now, since they're apparently ready to kill me, I'm sitting here dunking myself in poison... Heck knows when they're gonna calm down..."),
+        VoiceLine(55, Trent, ru="", en="Ah, could be really nice if I just stumbled upon a security pass... I'd just go and grab my hard-earned payment and get out with my hands full..."),
+        VoiceLine(60, Smith, ru="", en="Listen, friend... What's your name? "),
+        VoiceLine(70, Trent, ru="", en="Trent. And you are?"),
+        VoiceLine(80, Smith, ru="", en="Smith. Mr. Smith."),
+        VoiceLine(90, Trent, ru="", en="Nice to meet you, Mr. Smith. You were saying...?"),
+        VoiceLine(100, Smith, ru="", en="Yeah? Yeah... Oh, yeah! I know where you can get a security pass."),
+        VoiceLine(110, Trent, ru="", en="Oh, really? Where?"),
+        VoiceLine(120, Smith, ru="", en="Look. There's a secret warehouse in this area. They got a couple of security passes kept there just in case, that I know for sure. You could try negotiating with them, but, you're a... Nobody. And the warehouse is top secret!"),
+        VoiceLine(130, Trent, ru="", en="Gotcha, bro! "),
+        VoiceLine(140, Smith, ru="", en="Come back with those full hands of yours..."),
+    ]
+
+
+class Msn5Detroit(Msn5, script.CutsceneProps):
+    ALIAS = 'detroit'
+    TITLE = 'Детроит'
+    DESCRIPTION = ''
+    VOICE_LINES = [
+        VoiceLine(10, Trent, ru="",
+                  en="Hey friend, I'm looking for some professor named Mandrake. Have you seen him around here?"),
+        VoiceLine(20, DetroitBarman, ru="", en="I've never heard this name before."),
+        VoiceLine(30, Trent, ru="", en="Aren't you a nice one. Take a look, friend. I'm from the bartender's union."),
+        VoiceLine(40, DetroitBarman, ru="",
+                  en="Oh shit, you're one of these... Could you just show it to the camera over there, so that I can verify later?"),
+        VoiceLine(45, DetroitBarman, ru="", en="Aha, thanks. He's on a research station in Sigma-17."),
+        VoiceLine(50, Trent, ru="", en="What station?"),
+        VoiceLine(60, DetroitBarman, ru="",
+                  en="R-e-s-e-a-r-c-h Station. Got it? Strange, your kind are usually the smart ones."),
+        VoiceLine(70, Trent, ru="",
+                  en="OK, thanks for the info. You see how easy it is to just go ahead and melt the ice? "),
+        VoiceLine(80, Trent, ru="", en="That's exactly what Humanity lacks – a little bit of warmth."),
+    ]
+
+
+class Msn5Equip(Msn5, script.CutsceneProps):
+    ALIAS = 'equip'
+    TITLE = 'Вознаграждение'
+    DESCRIPTION = ''
+    VOICE_LINES = [
+        VoiceLine(10, Hatcher, ru="", en="Professor Mandrake."),
+        VoiceLine(20, Mandrake, ru="", en="Miss Hatcher."),
+        VoiceLine(30, Hatcher, ru="", en="Professor, I apologize in Tilton's name for keeping you in your capsule an extra hour."),
+        VoiceLine(40, Mandrake, ru="", en="That bastard, I thought he was over you but he can't stop trying to catch you, Miss Hatcher."),
+        VoiceLine(50, Hatcher, ru="", en="The more he tries, the simpler and dumber his schemes become."),
+        VoiceLine(60, Mandrake, ru="", en="You'd better be wary of this kind of person. Statistically, if he tried enough times, he will eventually achieve his goal."),
+        VoiceLine(70, Hatcher, ru="", en="With Tilton? That's highly unlikely. He thinks that doing the same thing over and over again, expecting different results, is not considered crazy."),
+        VoiceLine(80, Mandrake, ru="", en="Yeah, but it's all about his \"progressive ideas\" that the Order have already outlived their purpose, and it's time for Liberty to stop playing around and end them once and for all..."),
+        VoiceLine(90, Hatcher, ru="", en="Only childish morons like him would support his ideas."),
+        VoiceLine(100, Trent, ru="", en="Wait, wait, wait! Am I just a decoration here? Please explain what's going on."),
+        VoiceLine(110, Mandrake, ru="", en="It'll be very difficult and time consuming."),
+        VoiceLine(120, Trent, ru="", en="Let's start with the simple things, what's the Order?"),
+        VoiceLine(130, Hatcher, ru="", en="It's not that simple, Trent... It's an organization..."),
+        VoiceLine(140, Trent, ru="", en="That much I understand. Let's not force the information out of Miss Hatcher; give her the freedom of choice."),
+        VoiceLine(150, Mandrake, ru="", en="Tell him."),
+        VoiceLine(160, Hatcher, ru="", en="Fine. But what I'm about to say shouldn't just stay between us. This information is highly classified, and Trent, if you ever disclose it..."),
+        VoiceLine(170, Trent, ru="", en="Yeah, yeah, I get it. You'll personally kick my balls."),
+        VoiceLine(180, Hatcher, ru="", en="Don't flatter yourself. It's a job for guys like Tilton."),
+        VoiceLine(190, Trent, ru="", en="Okay, I'm shaking in fear. Now let's get down to business. "),
+        VoiceLine(200, Hatcher, ru="", en="Nobody knows how the Order was formed, or who formed it. All we know is that it used to be a powerful organization founded by people of massive influence. Their goal was to ensure humanity's survival by monitoring threats,"),
+        VoiceLine(210, Hatcher, ru="", en="and they weren't interested in wars between nations. Not even the 80-year war, although they do deserve credit for making it an 80-year war rather than 200."),
+        VoiceLine(220, Hatcher, ru="", en="The Order only takes care of serious threats to humanity as a whole. One such threat has already come upon us a good while ago,"),
+        VoiceLine(230, Hatcher, ru="", en="when we faced a parasitic alien race. That threat was isolated, all thanks to the Order."),
+        VoiceLine(240, Trent, ru="", en="A series of mysterious deaths among government officials of several nations, which the media described as unfortunate events."),
+        VoiceLine(250, Hatcher, ru="", en="Exactly. The media hushed it, even though humanity was on the verge of war between all nations, played by an alien race called \"Nomads\"."),
+        VoiceLine(260, Trent, ru="", en="Disguised as \"cross-border incidents\". "),
+        VoiceLine(270, Hatcher, ru="", en="Precise. Although, they were never really incidents. It was a full-on war involving everyone, Nomads included. A silent war, however, with the influence of the Order. "),
+        VoiceLine(280, Hatcher, ru="", en="All those involved received their awards discretely, and everyone agreed it should never be spoken of again. "),
+        VoiceLine(290, Trent, ru="", en="Major King, my own namesake, Jun'Ko Zhane?"),
+        VoiceLine(300, Mandrake, ru="", en="He's smarter than he looks."),
+        VoiceLine(310, Hatcher, ru="", en="I picked him myself... And so, Trent, the Order gained massive influence over our geopolitical systems, putting the organization under immediate risk. "),
+        VoiceLine(320, Hatcher, ru="", en="But, in our conservatively democratic society, the king of the hill rules. Whoever gets a chance to climb over by pushing others down, wins."),
+        VoiceLine(330, Hatcher, ru="", en="And so, an aspiring group of warriors decided to rise against the Order for no apparent reason."),
+        VoiceLine(340, Hatcher, ru="", en="If you sent them to battle against a Nomad fleet, they'll shit their pants and cry for their moms. But in the peaceful days of modern Liberty, they'll happily wage war against the Order."),
+        VoiceLine(350, Hatcher, ru="", en="And it goes without saying that the Order is run by people, not robots. Where there's people involved, conflict arises..."),
+        VoiceLine(360, Trent, ru="", en="And they lived happily ever after, right?"),
+        VoiceLine(370, Hatcher, ru="", en="The story's not over yet... And there's not really a happy ending. The Order split into two independent organizations: The Alliance Security Force, and the New Order."),
+        VoiceLine(380, Trent, ru="", en="So the Order is no more."),
+        VoiceLine(390, Hatcher, ru="", en="Well, not exactly. The Alliance Security Force oversees Liberty territories, among other things, despite resistance from some of Liberty's powers. Those powers are run by douchebags like Tilton."),
+        VoiceLine(400, Hatcher, ru="", en="But in no way does it mean that we forgot our main goal – to protect humanity from external threats."),
+        VoiceLine(410, Trent, ru="", en="If you say so..."),
+        VoiceLine(420, Hatcher, ru="", en="Now, Trent, can I finally..."),
+        VoiceLine(430, Trent, ru="", en="Sure."),
+        VoiceLine(440, Hatcher, ru="", en="Professor, Rheinland officials have gotten their hands on intel about Omicron Alpha..."),
+        VoiceLine(450, Mandrake, ru="", en="And..."),
+        VoiceLine(460, Hatcher, ru="", en="They've captured the objective and are making progress with it."),
+        VoiceLine(470, Mandrake, ru="", en="Rheinlanders are running experiments on the sphere in Omicron Alpha??? Are you out of your mind??? What have you done??? Mr. Trent was right... The Order really is no more..."),
+        VoiceLine(480, Trent, ru="", en="About that Mr. Trent..."),
+        VoiceLine(490, Hatcher, ru="", en="What else do you need?"),
+        VoiceLine(500, Trent, ru="", en="Toss a coin to your freelancer."),
+        VoiceLine(510, Hatcher, ru="", en="Ah, yes, sorry. I'm transferring your credits. We'll be in touch."),
+    ]
 
 
 class Msn5Space(Msn5, script.SpaceVoiceProps):
@@ -580,7 +712,12 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
 
 class Mission5(Msn5, script.StoryMission):
     MISSION_INDEX = 5
-    CUTSCENES = []
+    CUTSCENES = [
+        Msn5Offer,
+        Msn5Piratebar,
+        Msn5Detroit,
+        Msn5Equip,
+    ]
     SPACE_CLASS = Msn5Space
     SYNC_SPACE = True
 
