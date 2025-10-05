@@ -2,22 +2,23 @@ from world.names import *
 from world.equipment import Equipment, Icon, MainEquipPrice, LauncherGood
 from world import level
 from text.infocards import InfocardBuilder
+from text.strings import MultiString as MS
 
 
 GEN_CLASS_TO_MARK = {
-    1: 'Тип A',
-    3: 'Тип Б',
-    5: 'Тип В',
-    7: 'Тип Г',
-    9: 'Тип Д',
+    1: MS('Тип A', 'Type A'),
+    3: MS('Тип Б', 'Type B'),
+    5: MS('Тип В', 'Type C'),
+    7: MS('Тип Г', 'Type D'),
+    9: MS('Тип Д', 'Type E'),
 }
 
 HEAVY_CLASS_TO_MARK = {
-    2: 'Тип A',
-    4: 'Тип Б',
-    6: 'Тип В',
-    8: 'Тип Г',
-    10: 'Тип Д',
+    2: MS('Тип A', 'Type A'),
+    4: MS('Тип Б', 'Type B'),
+    6: MS('Тип В', 'Type C'),
+    8: MS('Тип Г', 'Type D'),
+    10: MS('Тип Д', 'Type E'),
 }
 
 DYNAMIC_AMMO_LIMIT = [
@@ -76,6 +77,22 @@ RU_SUPER_FEATURES_PER_FACTION = {
     Equipment.FACTION_CO: 'Легендарный бонус фракции: 25% вероятность нанесения 100% критических повреждений',
 }
 
+EN_FEATURES_PER_FACTION = {
+    Equipment.FACTION_RH: 'Faction bonus: all Rheinland launchers have extra 30% of ammo',
+    Equipment.FACTION_LI: 'Faction bonus: all Liberty launchers have 20% explosion range of munition',
+    Equipment.FACTION_BR: 'Faction bonus: all Bretonia launchers inflict extra damage',
+    Equipment.FACTION_KU: 'Faction bonus: all Kusari launchers have 30% faster refire rate',
+    Equipment.FACTION_CO: 'Faction bonus: all Border World launchers have 25% chance to inflict 40% extra damage',
+}
+
+EN_SUPER_FEATURES_PER_FACTION = {
+    Equipment.FACTION_RH: 'Legendary faction bonus: double ammo limit',
+    Equipment.FACTION_LI: 'Legendary faction bonus: 50% wider munition explosion range',
+    Equipment.FACTION_BR: 'Legendary faction bonus: considerable increased damage',
+    Equipment.FACTION_KU: 'Legendary faction bonus: instant reload',
+    Equipment.FACTION_CO: 'Legendary faction bonus: 25% chance to inflict 100% extra damage',
+}
+
 LAUNCHER_ROOT_PER_FACTION = {
     Equipment.FACTION_RH: 10,
     Equipment.FACTION_LI: 20,
@@ -112,11 +129,13 @@ LAUNCHER_FX_PER_CLASS_ALT = {
 
 
 class Launcher(Equipment, MainEquipPrice, LauncherGood):
-    RU_KIND = None
-    RU_BASE_INFO = ''
+    RU_KIND: MS = None
+    RU_BASE_INFO: MS = None
     LAUNCHER_MAX_HIT_PTS = 6000
     RU_NAME_PER_FACTION = {}
     RU_NAME_DESC_PER_FACTION = {}
+    EN_NAME_PER_FACTION = {}
+    EN_NAME_DESC_PER_FACTION = {}
     CLASSES = None
     CLASSES_KEYS = None
     WEAPON_CODE = None
@@ -282,7 +301,7 @@ class Launcher(Equipment, MainEquipPrice, LauncherGood):
     def get_ru_name(self):
         if self.USE_INTRO_NAME:
             return '{ru_kind} {base_name} {mark}'.format(
-                ru_kind=self.RU_KIND,
+                ru_kind=self.RU_KIND.get_ru(),
                 base_name=self.get_ru_base_name(),
                 mark=self.get_mark_name(),
             )
@@ -313,7 +332,7 @@ class Launcher(Equipment, MainEquipPrice, LauncherGood):
     def get_ru_description_content(self):
         content = []
 
-        content.append(self.RU_BASE_INFO)
+        content.append(self.RU_BASE_INFO.get_ru())
 
         faction_bonus_text = RU_FEATURES_PER_FACTION.get(self.faction)
         if faction_bonus_text:
@@ -330,12 +349,70 @@ class Launcher(Equipment, MainEquipPrice, LauncherGood):
     def get_ru_ammo_description_content(self):
         content = []
 
-        content.append(self.RU_BASE_INFO)
+        content.append(self.RU_BASE_INFO.get_ru())
 
         content.append(f'Боекомплект: {self.get_ammo_limit()}')
 
         content.append(
             f'Требуется для стрельбы установкой {self.get_ru_name()}'
+        )
+
+        return content
+
+    def get_en_base_name(self):
+        return self.EN_NAME_PER_FACTION[self.faction]
+
+    def get_en_name(self):
+        return '{base_name} {ru_kind} {mark}'.format(
+            ru_kind=self.RU_KIND.get_en(),
+            base_name=self.get_en_base_name(),
+            mark=self.get_mark_name(),
+        )
+
+    def get_en_ammo_name(self):
+        return f'Munition: {self.get_en_base_name()} {self.get_mark_name()}'
+
+    def get_en_name_desc(self):
+        return self.EN_NAME_DESC_PER_FACTION[self.faction]
+
+    def get_en_ammo_fullname(self):
+        return 'Munition for launcher {name}'.format(
+            name=self.get_en_name()
+        )
+
+    def get_en_fullname(self):
+        return '{described_name} {name} {mark}'.format(
+            name=self.get_en_base_name(),
+            mark=self.get_mark_name(),
+            described_name=self.get_en_name_desc(),
+        )
+
+    def get_en_description_content(self):
+        content = []
+
+        content.append(self.RU_BASE_INFO.get_en())
+
+        faction_bonus_text = EN_FEATURES_PER_FACTION.get(self.faction)
+        if faction_bonus_text:
+            content.append(faction_bonus_text)
+
+        content.append(f'Ammo limit: {self.get_ammo_limit()}')
+
+        content.append(
+            f'*Requires munition with type: {self.get_en_name()}'
+        )
+
+        return content
+
+    def get_en_ammo_description_content(self):
+        content = []
+
+        content.append(self.RU_BASE_INFO.get_en())
+
+        content.append(f'Ammo limit: {self.get_ammo_limit()}')
+
+        content.append(
+            f'Требуется для стрельбы установкой {self.get_en_name()}'
         )
 
         return content
@@ -552,8 +629,9 @@ LODranges = 0, 200, 300, 500
 
 class MainMissile(Missile):
     WEAPON_CODE = MAIN_MISSILE
-    RU_KIND = 'Ракета'
-    RU_BASE_INFO = 'Сбалансированная ракета с умеренной скоростью и мощностью'
+    RU_KIND = MS('Ракета', 'Missile')
+    RU_BASE_INFO = MS('Сбалансированная ракета с умеренной скоростью и мощностью',
+                      'A balanced missile with moderate speed and power')
     MAX_PRICE = 120000
     MAX_AMMO_PRICE = 6000
     SHOT_SOUND = 'fire_missile_regular'
@@ -593,6 +671,22 @@ class MainMissile(Missile):
         Equipment.FACTION_CO: 'Основная ракетница пограничья',
     }
 
+    EN_NAME_PER_FACTION = {
+        Equipment.FACTION_RH: 'Destroyer',
+        Equipment.FACTION_LI: 'Javelin',
+        Equipment.FACTION_BR: 'Mortar',
+        Equipment.FACTION_KU: 'Catapult',
+        Equipment.FACTION_CO: 'Dart',
+    }
+
+    EN_NAME_DESC_PER_FACTION = {
+        Equipment.FACTION_RH: 'Main Rheinland missile launcher',
+        Equipment.FACTION_LI: 'Main Liberty missile launcher',
+        Equipment.FACTION_BR: 'Main Bretonia missile launcher',
+        Equipment.FACTION_KU: 'Main Kusari missile launcher',
+        Equipment.FACTION_CO: 'Main Border World missile launcher',
+    }
+
     def get_fx_index(self):
         return LAUNCHER_ROOT_PER_FACTION[self.faction] + LAUNCHER_FX_PER_CLASS_ALT[self.equipment_class]
 
@@ -605,8 +699,9 @@ class MainMissile(Missile):
 
 class FastMissile(Missile):
     WEAPON_CODE = FAST_MISSILE
-    RU_KIND = 'Ракета'
-    RU_BASE_INFO = 'Быстрая ракета для скоростной нейтрализации противника, но с меньшими наносимыми повреждениями'
+    RU_KIND = MS('Ракета', 'Missile')
+    RU_BASE_INFO = MS('Быстрая ракета для скоростной нейтрализации противника, но с меньшими наносимыми повреждениями',
+                      'A fast missile for quickly neutralizing an enemy, but with less damage inflicted.')
     MAX_PRICE = 150000
     MAX_AMMO_PRICE = 8000
     SHOT_SOUND = 'fire_missile_homing'
@@ -646,6 +741,22 @@ class FastMissile(Missile):
         Equipment.FACTION_CO: 'Скоростная ракетница внешних миров',
     }
 
+    EN_NAME_PER_FACTION = {
+        Equipment.FACTION_RH: 'Hunter',
+        Equipment.FACTION_LI: 'Stalker',
+        Equipment.FACTION_BR: 'Ribauldequin',
+        Equipment.FACTION_KU: 'Ballista',
+        Equipment.FACTION_CO: 'FireStalker',
+    }
+
+    EN_NAME_DESC_PER_FACTION = {
+        Equipment.FACTION_RH: 'Fast Rheinland missile launcher',
+        Equipment.FACTION_LI: 'Fast Liberty missile launcher',
+        Equipment.FACTION_BR: 'Fast Bretonia missile launcher',
+        Equipment.FACTION_KU: 'Fast Kusari missile launcher',
+        Equipment.FACTION_CO: 'Fast Border World missile launcher',
+    }
+
     def get_explosion_fx(self):
         return f'li_missile{self.get_fx_index()}_impact'
 
@@ -655,8 +766,9 @@ class FastMissile(Missile):
 
 class MainSuperMissile(MainMissile):
     WEAPON_CODE = MAIN_SUPER_MISSILE
-    RU_KIND = 'Ракета'
-    RU_BASE_INFO = 'Легендарная ракета с усиленными бонусами фракции'
+    RU_KIND = MS('Ракета', 'Missile')
+    RU_BASE_INFO = MS('Легендарная ракета с усиленными бонусами фракции',
+                      'Legendary missile with improved faction bonuses')
     MAX_PRICE = 250000
     MAX_AMMO_PRICE = 8000
 
@@ -693,11 +805,28 @@ class MainSuperMissile(MainMissile):
         Equipment.FACTION_CO: 'Легендарная ракетница внешних миров',
     }
 
+    EN_NAME_PER_FACTION = {
+        Equipment.FACTION_RH: 'Supressor',
+        Equipment.FACTION_LI: 'Tomahawk',
+        Equipment.FACTION_BR: 'Bombard',
+        Equipment.FACTION_KU: 'Trebuchet',
+        Equipment.FACTION_CO: 'Lancer',
+    }
+
+    EN_NAME_DESC_PER_FACTION = {
+        Equipment.FACTION_RH: 'Legendary Rheinland missile launcher',
+        Equipment.FACTION_LI: 'Legendary Liberty missile launcher',
+        Equipment.FACTION_BR: 'Legendary Bretonia missile launcher',
+        Equipment.FACTION_KU: 'Legendary Kusari missile launcher',
+        Equipment.FACTION_CO: 'Legendary Border World missile launcher',
+    }
+
 
 class ShieldMissile(Missile):
     WEAPON_CODE = SHIELD_MISSILE
-    RU_KIND = 'Ракета'
-    RU_BASE_INFO = 'Легкая ракета, предназначенная для выведения вражеских щитов из строя'
+    RU_KIND = MS('Ракета', 'Missile')
+    RU_BASE_INFO = MS('Легкая ракета, предназначенная для выведения вражеских щитов из строя',
+                      'A lightweight missile designed to disable enemy shields')
     MAX_PRICE = 130000
     MAX_AMMO_PRICE = 7500
     SHOT_SOUND = 'fire_missile_emp'
@@ -737,6 +866,22 @@ class ShieldMissile(Missile):
         Equipment.FACTION_CO: 'Противощитовая ракетница внешних миров',
     }
 
+    EN_NAME_PER_FACTION = {
+        Equipment.FACTION_RH: 'Paralyzer',
+        Equipment.FACTION_LI: 'Maverick',
+        Equipment.FACTION_BR: 'Culverine',
+        Equipment.FACTION_KU: 'Arbalet',
+        Equipment.FACTION_CO: 'NightStalker',
+    }
+
+    EN_NAME_DESC_PER_FACTION = {
+        Equipment.FACTION_RH: 'Rheinland anti-shield missile launcher',
+        Equipment.FACTION_LI: 'Liberty anti-shield missile launcher',
+        Equipment.FACTION_BR: 'Bretonia anti-shield missile launcher',
+        Equipment.FACTION_KU: 'Kusari anti-shield missile launcher',
+        Equipment.FACTION_CO: 'Border World anti-shield missile launcher',
+    }
+
     def get_explosion_fx(self):
         return f'li_empmissile{self.get_fx_index()}_impact'
 
@@ -746,8 +891,11 @@ class ShieldMissile(Missile):
 
 class CruiseDisruptor(Missile):
     WEAPON_CODE = CD_MISSILE
-    RU_KIND = 'Блокир.'
-    RU_BASE_INFO = 'Легкая ракета, способная перехватывать вражеские ракеты и нейтрализовывать круизные двигатели вражеских кораблей'
+    RU_KIND = MS('Блокир.', 'CD')
+    RU_BASE_INFO = MS('Легкая ракета, способная перехватывать вражеские ракеты и нейтрализовывать круизные двигатели вражеских кораблей. '
+                      'Блокиратор может быть установлен только на истребитель',
+                      'A lightweight missile capable of intercepting enemy missiles and neutralizing the cruise engines of enemy ships. '
+                      'Cruise disruptor can be mounted only on fighters')
     MAX_PRICE = 80000
     MAX_AMMO_PRICE = 2500
     SHOT_SOUND = 'fire_cruise_disruptor'
@@ -810,6 +958,22 @@ class CruiseDisruptor(Missile):
         Equipment.FACTION_CO: 'Блокиратор круиза из внешних миров',
     }
 
+    EN_NAME_PER_FACTION = {
+        Equipment.FACTION_RH: 'Wasp',
+        Equipment.FACTION_LI: 'Stinger',
+        Equipment.FACTION_BR: 'Falconet',
+        Equipment.FACTION_KU: 'Harpoon',
+        Equipment.FACTION_CO: 'Hornet',
+    }
+
+    EN_NAME_DESC_PER_FACTION = {
+        Equipment.FACTION_RH: 'Rheinland cruise disruptor launcher',
+        Equipment.FACTION_LI: 'Liberty cruise disruptor launcher',
+        Equipment.FACTION_BR: 'Bretonia cruise disruptor launcher',
+        Equipment.FACTION_KU: 'Kusari cruise disruptor launcher',
+        Equipment.FACTION_CO: 'Border World cruise disruptor launcher',
+    }
+
     def get_motor_accel(self):
         return self.MOTOR_ACCEL_PER_MARK[self.mark-1]
 
@@ -837,10 +1001,15 @@ class CruiseDisruptor(Missile):
 
 class Torpedo(Missile):
     WEAPON_CODE = TORPEDO_MISSILE
-    RU_KIND = 'Торпеда'
-    RU_BASE_INFO = ('Торпеда предназначена для нанесения внушительных повреждений по корпусу противника, '
-                    'но при этом имеет минимальную маневренность. '
-                    'Торпеды можно устанавливать только на тяжелые истребители')
+    RU_KIND = MS('Торпеда', 'Torpedo')
+    RU_BASE_INFO = MS('Торпеда предназначена для нанесения внушительных повреждений по корпусу противника, '
+                      'но при этом имеет минимальную маневренность. '
+                      'Торпеды можно устанавливать только на тяжелые истребители',
+
+                      "The torpedo is designed to inflict significant damage to the "
+                      "enemy's hull, but has minimal maneuverability. "
+                      "Torpedo can be mounted only on heavy fighters"
+                      )
     MAX_PRICE = 160000
     MAX_AMMO_PRICE = 7500
     SHOT_SOUND = 'fire_torpedo'
@@ -880,6 +1049,22 @@ class Torpedo(Missile):
         Equipment.FACTION_CO: 'Торпедная установка внешних миров',
     }
 
+    EN_NAME_PER_FACTION = {
+        Equipment.FACTION_RH: 'Devastator',
+        Equipment.FACTION_LI: 'Starkiller',
+        Equipment.FACTION_BR: 'Basilisk',
+        Equipment.FACTION_KU: 'Onager',
+        Equipment.FACTION_CO: 'Sunslayer',
+    }
+
+    EN_NAME_DESC_PER_FACTION = {
+        Equipment.FACTION_RH: 'Rheinland torpedo launcher',
+        Equipment.FACTION_LI: 'Liberty torpedo launcher',
+        Equipment.FACTION_BR: 'Bretonia torpedo launcher',
+        Equipment.FACTION_KU: 'Kusari torpedo launcher',
+        Equipment.FACTION_CO: 'Border World torpedo launcher',
+    }
+
     def get_explosion_fx(self):
         return f'li_torpedo{self.get_fx_index():02d}_impact'
 
@@ -913,6 +1098,14 @@ class Mine(Launcher):
         Equipment.FACTION_BR: 'Бретонская мина',
         Equipment.FACTION_KU: 'Мина Кусари',
         Equipment.FACTION_CO: 'Мина внешних миров',
+    }
+
+    EN_NAME_DESC_PER_FACTION = {
+        Equipment.FACTION_RH: 'Rheinland mine dropper',
+        Equipment.FACTION_LI: 'Liberty mine dropper',
+        Equipment.FACTION_BR: 'Bretonia mine dropper',
+        Equipment.FACTION_KU: 'Kusari mine dropper',
+        Equipment.FACTION_CO: 'Border World mine dropper',
     }
 
     def get_explosion_fx(self):
@@ -1019,8 +1212,9 @@ class CivMine(Mine):
     CLASSES = GEN_CLASS_TO_MARK
     CLASSES_KEYS = CLASSES.keys()
 
-    RU_KIND = 'Мина'
-    RU_BASE_INFO = 'Гражданская мина для защиты от пиратских атак'
+    RU_KIND = MS('Мина', 'Mine')
+    RU_BASE_INFO = MS('Гражданская мина для защиты от пиратских атак',
+                      'Civilian mines for defence against pirate attacks')
 
     RU_NAME_PER_FACTION = {
         Equipment.FACTION_RH: 'Шнек',
@@ -1028,6 +1222,14 @@ class CivMine(Mine):
         Equipment.FACTION_BR: 'Дрон',
         Equipment.FACTION_KU: 'Искатель',
         Equipment.FACTION_CO: 'Мышеловка',
+    }
+
+    EN_NAME_PER_FACTION = {
+        Equipment.FACTION_RH: 'Screw',
+        Equipment.FACTION_LI: 'Cutter',
+        Equipment.FACTION_BR: 'Drone',
+        Equipment.FACTION_KU: 'Seeker',
+        Equipment.FACTION_CO: 'Mousetrap',
     }
 
     def get_explosion_fx(self):
@@ -1052,8 +1254,9 @@ class ProfMine(Mine):
     CLASSES = HEAVY_CLASS_TO_MARK
     CLASSES_KEYS = CLASSES.keys()
 
-    RU_KIND = 'Мина'
-    RU_BASE_INFO = 'Профессиональная боевая мина для эффективных заграждений от надвигающегося противника'
+    RU_KIND = MS('Мина', 'Mine')
+    RU_BASE_INFO = MS('Профессиональная боевая мина для эффективных заграждений от надвигающегося противника',
+                      'A professional combat mine for effective barriers against an advancing enemy')
 
     RU_NAME_PER_FACTION = {
         Equipment.FACTION_RH: 'Буровик',
@@ -1061,6 +1264,14 @@ class ProfMine(Mine):
         Equipment.FACTION_BR: 'Коптер',
         Equipment.FACTION_KU: 'Цепной пёс',
         Equipment.FACTION_CO: 'Мухобойка',
+    }
+
+    EN_NAME_PER_FACTION = {
+        Equipment.FACTION_RH: 'Driller',
+        Equipment.FACTION_LI: 'Razor',
+        Equipment.FACTION_BR: 'Multicopter',
+        Equipment.FACTION_KU: 'Chained dog',
+        Equipment.FACTION_CO: 'Swatter',
     }
 
     def get_explosion_fx(self):
@@ -1085,8 +1296,9 @@ class MilMine(Mine):
     CLASSES = HEAVY_CLASS_TO_MARK
     CLASSES_KEYS = CLASSES.keys()
 
-    RU_KIND = 'Мина'
-    RU_BASE_INFO = 'Тяжелая военная мина для использования в регулярных воинских частях и подразделениях'
+    RU_KIND = MS('Мина', 'Mine')
+    RU_BASE_INFO = MS('Тяжелая военная мина для использования в регулярных воинских частях и подразделениях',
+                      'A heavy military mine for use in regular military units and subdivisions')
 
     RU_NAME_PER_FACTION = {
         Equipment.FACTION_RH: 'Крикун',
@@ -1094,6 +1306,14 @@ class MilMine(Mine):
         Equipment.FACTION_BR: 'Дедал',
         Equipment.FACTION_KU: 'Хищник',
         Equipment.FACTION_CO: 'Капкан',
+    }
+
+    EN_NAME_PER_FACTION = {
+        Equipment.FACTION_RH: 'Screamer',
+        Equipment.FACTION_LI: 'Ripper',
+        Equipment.FACTION_BR: 'Dedal',
+        Equipment.FACTION_KU: 'Predator',
+        Equipment.FACTION_CO: 'Beartrap',
     }
 
     def get_explosion_fx(self):
@@ -1112,7 +1332,8 @@ class CM(Equipment, MainEquipPrice, LauncherGood):
     CLASSES = GEN_CLASS_TO_MARK
     CLASSES_KEYS = CLASSES.keys()
 
-    RU_BASE_INFO = 'Установка, предназначенная для отвлечения вражеских ракет. Используйте в случае ракетной опасности'
+    RU_BASE_INFO = MS('Установка, предназначенная для отвлечения вражеских ракет. Используйте в случае ракетной опасности',
+                      'A device designed to divert enemy missiles. Use in the event of a missile threat.')
 
     CM_FX_PER_MARK = [
         'br_countermeasures',
@@ -1130,7 +1351,7 @@ class CM(Equipment, MainEquipPrice, LauncherGood):
         20, 25, 35, 40, 50
     ]
 
-    CM_NAME_PER_MARK = [
+    RU_CM_NAME_PER_MARK = [
         'Контрмера',
         'Модифициров. контрмера',
         'Продвинутая контрмера',
@@ -1138,12 +1359,28 @@ class CM(Equipment, MainEquipPrice, LauncherGood):
         'Элитная контрмера',
     ]
 
-    CM_DESC_NAME_PER_MARK = [
+    RU_CM_DESC_NAME_PER_MARK = [
         'Базовый постановщик помех',
         'Модифицированный помостановщик помех',
         'Продвинутый постановщик помех',
         'Улучшенный постановщик помех',
         'Элитный постановщик помех',
+    ]
+
+    EN_CM_NAME_PER_MARK = [
+        'Countermeassure',
+        'Modif. Countermeassure',
+        'Imp. Countermeassure',
+        'Adv. Countermeassure',
+        'Elite Countermeassure',
+    ]
+
+    EN_CM_DESC_NAME_PER_MARK = [
+        'Basic Countermeassure dropper',
+        'Modified Countermeassure dropper',
+        'Improved Countermeassure dropper',
+        'Advanced Countermeassure dropper',
+        'Elite Countermeassure dropper',
     ]
 
     def __init__(self, ids, equipment_class):

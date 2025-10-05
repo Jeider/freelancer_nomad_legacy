@@ -726,11 +726,39 @@ engine_kill_sound = engine_pi_freighter_kill'''
         MainMiscEquip.CO_OUTCAST: 'Гиспакарт',
     }
 
+    EN_NAME_PER_TYPE = {
+        MainMiscEquip.RH_MAIN: 'Henkel',
+        MainMiscEquip.RH_CIV: 'Horch',
+        MainMiscEquip.RH_PIRATE: 'Schenker',
+
+        MainMiscEquip.LI_MAIN: 'Continental',
+        MainMiscEquip.LI_CIV: 'Willis',
+        MainMiscEquip.LI_PIRATE: 'Norton',
+
+        MainMiscEquip.BR_MAIN: 'McRae',
+        MainMiscEquip.BR_CIV: 'Oskari',
+        MainMiscEquip.BR_PIRATE: 'Whitelink',
+
+        MainMiscEquip.KU_MAIN: 'Nakajima',
+        MainMiscEquip.KU_CIV: 'Harima',
+        MainMiscEquip.KU_PIRATE: 'Nippon',
+
+        MainMiscEquip.CO_ORDER: 'Cronos',
+        MainMiscEquip.CO_CORSAIR: 'Tramon',
+        MainMiscEquip.CO_OUTCAST: 'Gispacart',
+    }
+
     def get_ru_equip_name(self):
         return 'Двиг.'
 
     def get_ru_equip_fullname(self):
         return 'Двигатель'
+
+    def get_en_equip_name(self):
+        return 'Eng.'
+
+    def get_en_equip_fullname(self):
+        return 'Engine'
 
     def get_ru_base_name(self):
         return self.RU_NAME_PER_TYPE[self.equip_type]
@@ -754,8 +782,35 @@ engine_kill_sound = engine_pi_freighter_kill'''
         if shipclass_features_text:
             content.append(shipclass_features_text)
 
-        content.append(ENGINE_WARNING)
-        content.append(ENGINE_HINT)
+        content.append(RU_ENGINE_WARNING)
+        content.append(RU_ENGINE_HINT)
+
+        return content
+
+    def get_en_base_name(self):
+        return self.EN_NAME_PER_TYPE[self.equip_type]
+
+    def get_en_description_content(self):
+        content = []
+
+        efficient_text = self.get_en_equip_efficienty()
+        if efficient_text:
+            content.append(efficient_text)
+
+        faction_features_text = EN_FEATURES_PER_FACTION.get(self.get_faction())
+        if faction_features_text:
+            content.append(faction_features_text)
+
+        shipclass_restrict_text = EN_RESTRICTIONS_PER_SHIPCLASS.get(self.ship_class)
+        if shipclass_restrict_text:
+            content.append(shipclass_restrict_text)
+
+        shipclass_features_text = EN_FEATURES_PER_SHIPCLASS.get(self.ship_class)
+        if shipclass_features_text:
+            content.append(shipclass_features_text)
+
+        content.append(EN_ENGINE_WARNING)
+        content.append(EN_ENGINE_HINT)
 
         return content
 
@@ -768,13 +823,11 @@ RU_FEATURES_PER_FACTION = {
     MainMiscEquip.FACTION_CO: 'Двигатели пограничных миров на 2 секунды быстрее развивают скорость круиза, но при этом требуют на 10% больше энергии в обычном и круизных режимах полета',
 }
 
-
 RU_RESTRICTIONS_PER_SHIPCLASS = {
     MainMiscEquip.SHIPCLASS_FIGHTER: 'Этот двигатель можно установить только на легкий истребитель',
     MainMiscEquip.SHIPCLASS_ELITE: 'Этот двигатель можно установить только на тяжелый истребитель',
     MainMiscEquip.SHIPCLASS_FREIGHTER: 'Этот двигатель можно установить только на грузовик или CSV',
 }
-
 
 RU_FEATURES_PER_SHIPCLASS = {
     MainMiscEquip.SHIPCLASS_FIGHTER: 'Двигатели легких истребителей быстрее всех набирают круизную скорость',
@@ -782,5 +835,30 @@ RU_FEATURES_PER_SHIPCLASS = {
     MainMiscEquip.SHIPCLASS_FREIGHTER: 'Двигатели грузовиков характеризуются дополнительными 5% скорости круиза за счет на 1 секунду повышенной скорости загрузки круиза',
 }
 
-ENGINE_WARNING = 'Корабль не сможет взлететь без установленного двигателя!'
-ENGINE_HINT = 'Совет: Используйте Выключение двигателя (кнопка Z), чтобы времени отключить потребление энергии двигателем'
+RU_ENGINE_WARNING = 'Корабль не сможет взлететь без установленного двигателя!'
+RU_ENGINE_HINT = 'Совет: Используйте Выключение двигателя (кнопка Z), чтобы времени отключить потребление энергии двигателем'
+
+
+EN_FEATURES_PER_FACTION = {
+    MainMiscEquip.FACTION_RH: 'Rheinland engines have double force of strafe and reverse, but have 10% less speed for thrusters',
+    MainMiscEquip.FACTION_LI: 'Liberty engines have 5% better cruise speed, but requires more time for charge it',
+    MainMiscEquip.FACTION_BR: 'Bretonia engine have 10% better speed, but have minimal force for strafe and reverse',
+    MainMiscEquip.FACTION_KU: 'Kusari engine have 10% better thruster speed, but have 5% less speed in normal flight mode',
+    MainMiscEquip.FACTION_CO: 'Border World engines requires 2 less seconds for charge cruise, but requires 10% power in normal and cruise flight modes',
+}
+
+EN_RESTRICTIONS_PER_SHIPCLASS = {
+    MainMiscEquip.SHIPCLASS_FIGHTER: 'This engine can be mounted only on light fighters',
+    MainMiscEquip.SHIPCLASS_ELITE: 'This engine can be mounted only on heavy fighters',
+    MainMiscEquip.SHIPCLASS_FREIGHTER: 'This engine can be mounted only on freighters and CSVs',
+}
+
+EN_FEATURES_PER_SHIPCLASS = {
+    MainMiscEquip.SHIPCLASS_FIGHTER: 'Light fighter engines have faster cruise charge speed',
+    MainMiscEquip.SHIPCLASS_ELITE: 'Heavy fighter engine have better strafe and reverse',
+    MainMiscEquip.SHIPCLASS_FREIGHTER: 'Freighter engines have 5% faster cruise speed, but requires extra 1 second of cruise charge time',
+}
+
+EN_ENGINE_WARNING = 'Engine can not launch without engine!'
+EN_ENGINE_HINT = 'Hint: use engine kill (keyboard button Z) to temporarily disable engine power drain'
+

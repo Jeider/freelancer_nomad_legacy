@@ -57,6 +57,7 @@ nickname = tau37_01_industrial06
 pos = -616, -323, 1450
 rotate = 90, 0, 0
 archetype = space_industrial02a
+parent = tau37_01
 
 [Object]
 nickname = tau37_01_girder01
@@ -371,7 +372,7 @@ parent = tau37_01
 
 [Object]
 nickname = tau37_01_habitat02
-pos = -926, -3, -100
+pos = -926, -3, 900
 rotate = 0, 0, 0
 archetype = space_habitat_tall
 parent = tau37_01

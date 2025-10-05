@@ -17,6 +17,13 @@ WEAPON_TYPE_PER_WEAPON_FX = {
     WeaponFX.FX_PULSE: 'W_pulse',
 }
 
+EFFICIENT_GAS_MINING_FX = [
+    WeaponFX.FX_PARTICLE,
+    WeaponFX.FX_NEUTRON,
+    WeaponFX.FX_PLASMA,
+    WeaponFX.FX_PULSE,
+]
+
 
 class WeaponMunition(object):
 
@@ -389,6 +396,9 @@ LODranges = {lod_ranges}'''
 
     def get_muzzle_velocity(self):
         return self.MUZZLE_VELOCITY
+
+    def is_gas_efficient(self):
+        return self.weapon_fx in EFFICIENT_GAS_MINING_FX
 
     def get_flash_particle_name(self):
         return self.weapon_fx.get_flash_particle_name()

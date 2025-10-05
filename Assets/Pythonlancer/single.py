@@ -50,6 +50,7 @@ from templates.dockable import corsair_dreadnought
 from templates.dockable import upsilon_gasinside
 from templates.dockable import astbase
 from templates.dockable import nomad_babylon
+from templates.dockable import roid_mining
 from templates.misc import rmbase
 from templates.misc import trading
 from templates.dockable import nomad_asf_hq
@@ -63,7 +64,7 @@ def draw_base():
     new_name = None
     move_to = None
     rotate_core = 0
-    workspace = '11'
+    workspace = '12'
 
     # base_class = m13.RockfordGenerator
     # new_name = 'or_hq_vienna_entry'
@@ -77,7 +78,7 @@ def draw_base():
     # new_name = 'or_hq_shipyard_01'
     # move_to = (-20000, 0, 0)
 
-    base_class = nomad_babylon.Babylon
+    base_class = roid_mining.BretoniaRoidMining
     # new_name = 'communicator'
     # move_to = (-9500, 0, -10000)
 

@@ -1,6 +1,7 @@
 from world.equipment import MainInternalEquip, MainMiscEquip, Equipment, AdoxaEquipClassGood, MainEquipPrice
 from world import level
 
+
 class BasePower(MainInternalEquip):
     DROP_CHANCE = 8
 
@@ -225,6 +226,28 @@ class Power(MainEquipPrice, AdoxaEquipClassGood, BasePower):
         MainMiscEquip.CO_OUTCAST: 'Конфрентес',
     }
 
+    EN_NAME_PER_TYPE = {
+        MainMiscEquip.RH_MAIN: 'Heisenberg',
+        MainMiscEquip.RH_CIV: 'Geiger',
+        MainMiscEquip.RH_PIRATE: 'Döpel',
+
+        MainMiscEquip.LI_MAIN: 'Fermi',
+        MainMiscEquip.LI_CIV: 'Compton',
+        MainMiscEquip.LI_PIRATE: 'Seaborg',
+
+        MainMiscEquip.BR_MAIN: 'Rutherford',
+        MainMiscEquip.BR_CIV: 'Soddy',
+        MainMiscEquip.BR_PIRATE: 'Chadwick',
+
+        MainMiscEquip.KU_MAIN: 'Genkai',
+        MainMiscEquip.KU_CIV: 'Ikata',
+        MainMiscEquip.KU_PIRATE: 'Omagawa',
+
+        MainMiscEquip.CO_ORDER: 'Jupiter',
+        MainMiscEquip.CO_CORSAIR: 'Trillo',
+        MainMiscEquip.CO_OUTCAST: 'Confrentes',
+    }
+
     def get_ru_equip_name(self):
         return 'Генер.'
 
@@ -249,14 +272,42 @@ class Power(MainEquipPrice, AdoxaEquipClassGood, BasePower):
         if shipclass_restrict_text:
             content.append(shipclass_restrict_text)
 
-        content.append(POWERPLANT_WARNING)
+        content.append(RU_POWERPLANT_WARNING)
+
+        return content
+
+    def get_en_equip_name(self):
+        return 'Power'
+
+    def get_en_equip_fullname(self):
+        return 'Powerplant'
+
+    def get_en_base_name(self):
+        return self.EN_NAME_PER_TYPE[self.equip_type]
+
+    def get_en_description_content(self):
+        content = []
+
+        efficient_text = self.get_en_equip_efficienty()
+        if efficient_text:
+            content.append(efficient_text)
+
+        faction_features_text = EN_FEATURES_PER_FACTION.get(self.get_faction())
+        if faction_features_text:
+            content.append(faction_features_text)
+
+        shipclass_restrict_text = EN_RESTRICTIONS_PER_SHIPCLASS.get(self.ship_class)
+        if shipclass_restrict_text:
+            content.append(shipclass_restrict_text)
+
+        content.append(EN_POWERPLANT_WARNING)
 
         return content
 
 
 RU_FEATURES_PER_FACTION = {
     MainMiscEquip.FACTION_RH: 'Рейнландские генераторы характеризуются на 10% большим объемом хранимой энергии',
-    MainMiscEquip.FACTION_LI: 'Генераторы Либертиотличаются на 50% большим объемом энергии для форсажа',
+    MainMiscEquip.FACTION_LI: 'Генераторы Либерти отличаются на 50% большим объемом энергии для форсажа',
     MainMiscEquip.FACTION_BR: 'Бретонские генераторы имеют на 5% больше объема и генерации, но при этом имеют на треть меньший объем энергии для форсажа',
     MainMiscEquip.FACTION_KU: 'Генераторы Кусари на 10% быстрее регенерируют энергию',
     MainMiscEquip.FACTION_CO: 'Генераторы кораблей пограничных миров на 33% быстрее регенерируют форсаж',
@@ -269,4 +320,21 @@ RU_RESTRICTIONS_PER_SHIPCLASS = {
     MainMiscEquip.SHIPCLASS_FREIGHTER: 'Этот генератор можно установить только на грузовик или CSV',
 }
 
-POWERPLANT_WARNING = 'Корабль не сможет взлететь без установленного генератора!'
+RU_POWERPLANT_WARNING = 'Корабль не сможет взлететь без установленного генератора!'
+
+
+EN_FEATURES_PER_FACTION = {
+    MainMiscEquip.FACTION_RH: 'Rheinland powerplants have 10% extra power capacity',
+    MainMiscEquip.FACTION_LI: 'Liberty powerplants have 50% extra trhuster power capacity',
+    MainMiscEquip.FACTION_BR: 'Bretonia powerplants have 5% power capacity and regeneration, but have 30% less thruster power',
+    MainMiscEquip.FACTION_KU: 'Kusari powerplants have 10% power regeneration speed',
+    MainMiscEquip.FACTION_CO: 'Border World powerplants have 33% faster thruster regeneration speed',
+}
+
+EN_RESTRICTIONS_PER_SHIPCLASS = {
+    MainMiscEquip.SHIPCLASS_FIGHTER: 'This powerplant can be munted only light fighter',
+    MainMiscEquip.SHIPCLASS_ELITE: 'This powerplant can be munted only heavy fighter',
+    MainMiscEquip.SHIPCLASS_FREIGHTER: 'This powerplant can be munted only freight and CSV',
+}
+
+EN_POWERPLANT_WARNING = 'Ship can not launch without mounted powerplant!'

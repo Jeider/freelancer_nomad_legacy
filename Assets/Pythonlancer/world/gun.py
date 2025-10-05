@@ -6,11 +6,10 @@ from world.names import *
 
 from fx.weapon import WeaponFX
 
+from text.strings import MultiString as MS
 
-RU_MINING_GAS_BONUS = 'Повышенные повреждения по газовым облакам и ледяным астероидам'
-RU_MINING_JUNK_BONUS = 'Повышенные повреждения по залежам прессованного мусора'
-RU_MINING_AST_BONUS = 'Повышенные повреждения по добываемым астероидам'
-RU_EXPLORATION_BONUS = 'Показывает наиболее выгодные для добычи астероиды, прессованный мусор, газовые облака или ледяные астероиды'
+
+RU_MINING_GAS_BONUS = 'Эта пушка эффективно сжижает газовые облака'
 
 RU_SHIELDGUN_BONUS = 'Это противощитовая пушка и она наносит внушительные повреждения по щиту за счет отсутствующих повреждений по корпусу'
 
@@ -36,6 +35,35 @@ RU_EFFICIENT_TEXT_PER_EQUIP_TYPE = {
     Weapon.EQUIP_CIV: 'Класс эффективности: гражданский',
     Weapon.EQUIP_PIRATE: 'Класс эффективности: профессиональный',
     Weapon.EQUIP_MAIN: 'Класс эффективности: военный',
+}
+
+
+EN_MINING_GAS_BONUS = 'This weapon can efficiently mine gas puffs'
+
+EN_SHIELDGUN_BONUS = 'This is a shield gun and it inflicts considerable damage on shields due to the lack of damage to the hull'
+
+EN_RATE_TEXT_PER_WEAPON_RATE = {
+    Weapon.REFIRE_RATE_10: 'Have maximal rate of fire with minimal damage',
+    Weapon.REFIRE_RATE_8: 'Have considerable fire rate with low damage',
+    Weapon.REFIRE_RATE_6: 'Have increased fire rate with little bit less damage',
+    Weapon.REFIRE_RATE_4: 'Have moderate power and fire rate',
+    Weapon.REFIRE_RATE_3: 'Have increased damage with little bit less fire rate',
+    Weapon.REFIRE_RATE_2: 'Have considerable damage with low fire rate',
+    Weapon.REFIRE_RATE_1: 'Have maximal damage with minimal rate of fire',
+}
+
+EN_FEATURES_PER_FACTION = {
+    Weapon.FACTION_RH: 'Faction bonus: all Rheinland guns have increased firing range',
+    Weapon.FACTION_LI: 'Faction bonus: all Liberty guns have better resistances from explosions of mines, missiles, etc',
+    Weapon.FACTION_BR: 'Faction bonus: hulls of all Bretonia guns have additional 50% hit points',
+    Weapon.FACTION_KU: 'Faction bonus: all Kusari guns have extra 10% damage on shields',
+    Weapon.FACTION_CO: 'Faction bonus: all Border World guns drains on 10% less power',
+}
+
+EN_EFFICIENT_TEXT_PER_EQUIP_TYPE = {
+    Weapon.EQUIP_CIV: 'Efficiency class: civilian',
+    Weapon.EQUIP_PIRATE: 'Efficiency class: professional',
+    Weapon.EQUIP_MAIN: 'Efficiency class: main',
 }
 
 
@@ -120,7 +148,7 @@ class Gun(MainEquipPrice, Weapon, DefaultGood):
         return self.MAX_PRICE
 
     def get_ru_base_name(self):
-        return self.RU_NAME
+        return self.RU_NAME.get_ru()
 
     def get_ru_name(self):
         return '{MODEL} {mark}'.format(
@@ -131,7 +159,7 @@ class Gun(MainEquipPrice, Weapon, DefaultGood):
     def get_ru_fullname(self):
         return '{described_name} {name}'.format(
             name=self.get_ru_name(),
-            described_name=self.RU_NAME_DESC,
+            described_name=self.RU_NAME_DESC.get_en(),
         )
 
     def get_ru_description_content(self):
@@ -148,7 +176,48 @@ class Gun(MainEquipPrice, Weapon, DefaultGood):
         if self.SHIELDGUN:
             content.append(RU_SHIELDGUN_BONUS)
 
+        if self.is_gas_efficient():
+            content.append(RU_MINING_GAS_BONUS)
+
         faction_bonus_text = RU_FEATURES_PER_FACTION.get(self.WEAPON_FACTION)
+        if faction_bonus_text:
+            content.append(faction_bonus_text)
+
+        return content
+
+    def get_en_base_name(self):
+        return self.RU_NAME.get_en()
+
+    def get_en_name(self):
+        return '{MODEL} {mark}'.format(
+            MODEL=self.get_en_base_name(),
+            mark=self.get_mark_name(),
+        )
+
+    def get_en_fullname(self):
+        return '{described_name} {name}'.format(
+            name=self.get_en_name(),
+            described_name=self.RU_NAME_DESC.get_en(),
+        )
+
+    def get_en_description_content(self):
+        content = []
+
+        efficient_text = EN_EFFICIENT_TEXT_PER_EQUIP_TYPE.get(self.EQUIP_TYPE)
+        if efficient_text:
+            content.append(efficient_text)
+
+        rate_text = EN_RATE_TEXT_PER_WEAPON_RATE.get(self.REFIRE_RATE)
+        if rate_text:
+            content.append(rate_text)
+
+        if self.SHIELDGUN:
+            content.append(EN_SHIELDGUN_BONUS)
+
+        if self.is_gas_efficient():
+            content.append(EN_MINING_GAS_BONUS)
+
+        faction_bonus_text = EN_FEATURES_PER_FACTION.get(self.WEAPON_FACTION)
         if faction_bonus_text:
             content.append(faction_bonus_text)
 
@@ -162,8 +231,8 @@ class Gun(MainEquipPrice, Weapon, DefaultGood):
 
 
 class RheinlandLightgun(Gun, RheinlandGun, Lightgun):
-    RU_NAME = 'Гремучий змей'
-    RU_NAME_DESC = 'Легкая пушка рейнландских военных'
+    RU_NAME = MS('Гремучий змей', 'Rattlesnake')
+    RU_NAME_DESC = MS('Легкая пушка рейнландских военных', 'Rheinland military light gun')
     BASE_NICKNAME = 'rh_lightgun'
     MODEL = Weapon.RH_GAMMA_BEAMER
     EQUIP_TYPE = Weapon.EQUIP_MAIN
@@ -175,8 +244,8 @@ class RheinlandLightgun(Gun, RheinlandGun, Lightgun):
 
 
 class RheinlandHeavygun(Gun, RheinlandGun, Heavygun):
-    RU_NAME = 'Огненный поцелуй'
-    RU_NAME_DESC = 'Тяжелая пушка рейнландских военных'
+    RU_NAME = MS('Огненный поцелуй', 'Firekiss')
+    RU_NAME_DESC = MS('Тяжелая пушка рейнландских военных', 'Rheinland military heavy gun')
     BASE_NICKNAME = 'rh_heavygun'
     MODEL = Weapon.RH_PROTON_BLASTER
     EQUIP_TYPE = Weapon.EQUIP_MAIN
@@ -188,8 +257,8 @@ class RheinlandHeavygun(Gun, RheinlandGun, Heavygun):
 
 
 class RheinlandCivgun(Gun, RheinlandGun, Civgun):
-    RU_NAME = 'Звездный луч'
-    RU_NAME_DESC = 'Базовая рейнландская пушка'
+    RU_NAME = MS('Звездный луч', 'Starbeam')
+    RU_NAME_DESC = MS('Гражданская пушка Рейнланда', 'Rheinland Civilian Gun')
     BASE_NICKNAME = 'rh_civgun'
     MODEL = Weapon.RH_THRUSTGUN
     EQUIP_TYPE = Weapon.EQUIP_CIV
@@ -201,8 +270,8 @@ class RheinlandCivgun(Gun, RheinlandGun, Civgun):
 
 
 class RheinlandHuntergun(Gun, RheinlandGun, Huntergun):
-    RU_NAME = 'Незримый клинок'
-    RU_NAME_DESC = 'Пушка рейнландских наемников'
+    RU_NAME = MS('Незримый клинок', 'Stealthblade')
+    RU_NAME_DESC = MS('Пушка рейнландских наемников', 'Rheinland bounty hunters gun')
     BASE_NICKNAME = 'rh_huntergun'
     MODEL = Weapon.RH_GAMMA_BEAMER
     EQUIP_TYPE = Weapon.EQUIP_PIRATE
@@ -214,8 +283,8 @@ class RheinlandHuntergun(Gun, RheinlandGun, Huntergun):
 
 
 class RheinlandPirategun(Gun, RheinlandGun, Pirategun):
-    RU_NAME = 'Наттер'
-    RU_NAME_DESC = 'Пушка рейнландских пиратов'
+    RU_NAME = MS('Наттер', 'Natter')
+    RU_NAME_DESC = MS('Пушка рейнландских пиратов', 'Rheinland Pirate gun')
     BASE_NICKNAME = 'rh_pirategun'
     MODEL = Weapon.RH_THRUSTGUN
     EQUIP_TYPE = Weapon.EQUIP_CIV
@@ -227,8 +296,8 @@ class RheinlandPirategun(Gun, RheinlandGun, Pirategun):
 
 
 class RheinlandHessiangun(Gun, RheinlandGun):
-    RU_NAME = 'Ротер Блиц'
-    RU_NAME_DESC = 'Пушка гессенцев'
+    RU_NAME = MS('Ротер Блиц', 'Roter Blitz')
+    RU_NAME_DESC = MS('Пушка гессенцев', 'Hessians gun')
     BASE_NICKNAME = 'rh_hessiangun'
     MODEL = Weapon.RH_GAMMA_BEAMER
     EQUIP_TYPE = Weapon.EQUIP_PIRATE
@@ -240,8 +309,8 @@ class RheinlandHessiangun(Gun, RheinlandGun):
 
 
 class RheinlandJunkergun(Gun, RheinlandGun):
-    RU_NAME = 'Стервятник'
-    RU_NAME_DESC = 'Пушка мусорщиков'
+    RU_NAME = MS('Стервятник', 'Vulture')
+    RU_NAME_DESC = MS('Пушка мусорщиков', 'Junkers gun')
     BASE_NICKNAME = 'rh_junkergun'
     MODEL = Weapon.CO_SHOCK_THERAPY
     EQUIP_TYPE = Weapon.EQUIP_PIRATE
@@ -253,8 +322,8 @@ class RheinlandJunkergun(Gun, RheinlandGun):
 
 
 class RheinlandShieldgun(Gun, RheinlandGun, Shieldgun):
-    RU_NAME = 'Пламенное проклятие'
-    RU_NAME_DESC = 'Рейнландская противощитовая пушка'
+    RU_NAME = MS('Пламенное проклятие', 'Flamecurse')
+    RU_NAME_DESC = MS('Рейнландская противощитовая пушка', 'Rheinland anti-shield gun')
     BASE_NICKNAME = 'rh_shieldgun'
     MODEL = Weapon.RH_PROTON_BLASTER
     EQUIP_TYPE = Weapon.EQUIP_CIV
@@ -268,8 +337,8 @@ class RheinlandShieldgun(Gun, RheinlandGun, Shieldgun):
 
 class RheinlandHeavyTurret(Gun, RheinlandGun):
     DAMAGE_MULTIPLER = 2
-    RU_NAME = 'Рука Смерти'
-    RU_NAME_DESC = 'Тяжелая рейнландская турель'
+    RU_NAME = MS('Рука Смерти', 'Death Hand')
+    RU_NAME_DESC = MS('Тяжелая рейнландская турель', 'Rheinland heavy turret')
     BASE_NICKNAME = 'rh_heavyturret'
     MODEL = Weapon.RH_PLASMA_GAT_CANNON
     EQUIP_TYPE = Weapon.EQUIP_MAIN
@@ -283,8 +352,8 @@ class RheinlandHeavyTurret(Gun, RheinlandGun):
 
 
 class LibertyLightgun(Gun, LibertyGun, Lightgun):
-    RU_NAME = 'Возмездие'
-    RU_NAME_DESC = 'Легкая пушка военных Либерти'
+    RU_NAME = MS('Возмездие', 'Vengeance')
+    RU_NAME_DESC = MS('Легкая пушка военных Либерти', 'Liberty military light gun')
     BASE_NICKNAME = 'li_lightgun'
     MODEL = Weapon.LI_LASER_BEAM
     EQUIP_TYPE = Weapon.EQUIP_MAIN
@@ -296,8 +365,8 @@ class LibertyLightgun(Gun, LibertyGun, Lightgun):
 
 
 class LibertyHeavygun(Gun, LibertyGun, Heavygun):
-    RU_NAME = 'Молот магмы'
-    RU_NAME_DESC = 'Тяжелая пушка военных Либерти'
+    RU_NAME = MS('Молот магмы', 'Magma Hammer')
+    RU_NAME_DESC = MS('Тяжелая пушка военных Либерти', "Liberty military heavy gun")
     BASE_NICKNAME = 'li_heavygun'
     MODEL = Weapon.LI_HEAVY_ION_BLASTER
     EQUIP_TYPE = Weapon.EQUIP_MAIN
@@ -309,8 +378,8 @@ class LibertyHeavygun(Gun, LibertyGun, Heavygun):
 
 
 class LibertyCivgun(Gun, LibertyGun, Civgun):
-    RU_NAME = 'Справедливость'
-    RU_NAME_DESC = 'Базовая пушка Либерти'
+    RU_NAME = MS('Справедливость', 'Justice')
+    RU_NAME_DESC = MS('Гражданская пушка Либерти', 'Liberty civilian gun')
     BASE_NICKNAME = 'li_civgun'
     MODEL = Weapon.LI_THRUSTGUN
     EQUIP_TYPE = Weapon.EQUIP_CIV
@@ -322,8 +391,8 @@ class LibertyCivgun(Gun, LibertyGun, Civgun):
 
 
 class LibertyHuntergun(Gun, LibertyGun, Huntergun):
-    RU_NAME = 'Винтчестер'
-    RU_NAME_DESC = 'Пушка наемников Либерти'
+    RU_NAME = MS('Винтчестер', 'Winchester')
+    RU_NAME_DESC = MS('Пушка наемников Либерти', 'Liberty bounty hunters gun')
     BASE_NICKNAME = 'li_huntergun'
     MODEL = Weapon.LI_PLASMA_BLASTER
     EQUIP_TYPE = Weapon.EQUIP_PIRATE
@@ -335,8 +404,8 @@ class LibertyHuntergun(Gun, LibertyGun, Huntergun):
 
 
 class LibertyPirategun(Gun, LibertyGun, Pirategun):
-    RU_NAME = 'Азраель'
-    RU_NAME_DESC = 'Пушка пиратов Либерти'
+    RU_NAME = MS('Азраель', "Azrael")
+    RU_NAME_DESC = MS('Пушка пиратов Либерти', 'Liberty pirates gun')
     BASE_NICKNAME = 'li_pirategun'
     MODEL = Weapon.RH_THRUSTGUN
     EQUIP_TYPE = Weapon.EQUIP_CIV
@@ -348,8 +417,8 @@ class LibertyPirategun(Gun, LibertyGun, Pirategun):
 
 
 class LibertyRoguegun(Gun, LibertyGun):
-    RU_NAME = 'Вассаго'
-    RU_NAME_DESC = 'Пушка разбойников Либерти'
+    RU_NAME = MS('Вассаго', 'Vassago')
+    RU_NAME_DESC = MS('Пушка разбойников Либерти', 'Liberty rogues gun')
     BASE_NICKNAME = 'li_roguegun'
     MODEL = Weapon.LI_PLASMA_BLASTER
     EQUIP_TYPE = Weapon.EQUIP_PIRATE
@@ -361,8 +430,8 @@ class LibertyRoguegun(Gun, LibertyGun):
 
 
 class LibertyStarlinegun(Gun, LibertyGun):
-    RU_NAME = 'Разбойник'
-    RU_NAME_DESC = 'Пушка банды Старлайна'
+    RU_NAME = MS('Разбойник', 'Gunslinger')
+    RU_NAME_DESC = MS('Пушка банды Старлайна', 'Starline band gun')
     BASE_NICKNAME = 'li_starlinegun'
     MODEL = Weapon.LI_LASER_BEAM
     EQUIP_TYPE = Weapon.EQUIP_PIRATE
@@ -374,8 +443,8 @@ class LibertyStarlinegun(Gun, LibertyGun):
 
 
 class LibertyShieldgun(Gun, LibertyGun, Shieldgun):
-    RU_NAME = 'Клинок лавы'
-    RU_NAME_DESC = 'Либертийская противощитовая пушка'
+    RU_NAME = MS('Клинок лавы', 'Lavablade')
+    RU_NAME_DESC = MS('Либертийская противощитовая пушка', 'Liberty Anti-Shield gun')
     BASE_NICKNAME = 'li_shieldgun'
     MODEL = Weapon.LI_HEAVY_ION_BLASTER
     EQUIP_TYPE = Weapon.EQUIP_CIV
@@ -388,8 +457,8 @@ class LibertyShieldgun(Gun, LibertyGun, Shieldgun):
 
 
 class BretoniaLightgun(Gun, BretoniaGun, Lightgun):
-    RU_NAME = 'Растворитель'
-    RU_NAME_DESC = 'Легкая пушка бретонских военных'
+    RU_NAME = MS('Растворитель', 'Dissolver')
+    RU_NAME_DESC = MS('Легкая пушка бретонских военных', 'Bretonia military light gun')
     BASE_NICKNAME = 'br_lightgun'
     MODEL = Weapon.BR_MASS_DRIVER
     EQUIP_TYPE = Weapon.EQUIP_MAIN
@@ -401,8 +470,8 @@ class BretoniaLightgun(Gun, BretoniaGun, Lightgun):
 
 
 class BretoniaHeavygun(Gun, BretoniaGun, Heavygun):
-    RU_NAME = 'Небесный путь'
-    RU_NAME_DESC = 'Тяжелая пушка бретонских военных'
+    RU_NAME = MS('Небесный путь', 'Skyrail')
+    RU_NAME_DESC = MS('Тяжелая пушка бретонских военных', 'Bretonia military heavy gun')
     BASE_NICKNAME = 'br_heavygun'
     MODEL = Weapon.BR_RAILGUN
     EQUIP_TYPE = Weapon.EQUIP_MAIN
@@ -414,8 +483,8 @@ class BretoniaHeavygun(Gun, BretoniaGun, Heavygun):
 
 
 class BretoniaCivgun(Gun, BretoniaGun, Civgun):
-    RU_NAME = 'Флешпоинт'
-    RU_NAME_DESC = 'Базовая бретонская пушка'
+    RU_NAME = MS('Флешпоинт', 'Flashpoint')
+    RU_NAME_DESC = MS('Бретонская гражданская пушка', 'Bretonia civilian gun')
     BASE_NICKNAME = 'br_civgun'
     MODEL = Weapon.BR_THRUSTGUN
     EQUIP_TYPE = Weapon.EQUIP_CIV
@@ -427,8 +496,8 @@ class BretoniaCivgun(Gun, BretoniaGun, Civgun):
 
 
 class BretoniaHuntergun(Gun, BretoniaGun, Huntergun):
-    RU_NAME = 'Потрошитель'
-    RU_NAME_DESC = 'Пушка бретонских наемников'
+    RU_NAME = MS('Потрошитель', 'Ripper')
+    RU_NAME_DESC = MS('Пушка бретонских наемников', 'Bretonia bounty hunters gun')
     BASE_NICKNAME = 'br_huntergun'
     MODEL = Weapon.BR_MASS_DRIVER
     EQUIP_TYPE = Weapon.EQUIP_PIRATE
@@ -440,8 +509,8 @@ class BretoniaHuntergun(Gun, BretoniaGun, Huntergun):
 
 
 class BretoniaPirategun(Gun, BretoniaGun, Pirategun):
-    RU_NAME = 'Скорпион'
-    RU_NAME_DESC = 'Пушка бретонских пиратов'
+    RU_NAME = MS('Скорпион', 'Scorpion')
+    RU_NAME_DESC = MS('Пушка бретонских пиратов', 'Bretonia pirate gun')
     BASE_NICKNAME = 'br_pirategun'
     MODEL = Weapon.BR_THRUSTGUN
     EQUIP_TYPE = Weapon.EQUIP_CIV
@@ -453,8 +522,8 @@ class BretoniaPirategun(Gun, BretoniaGun, Pirategun):
 
 
 class BretoniaXenosgun(Gun, BretoniaGun):
-    RU_NAME = 'Тарантул'
-    RU_NAME_DESC = 'Пушка ксеносов'
+    RU_NAME = MS('Тарантул', 'Tarantula')
+    RU_NAME_DESC = MS('Пушка ксеносов', 'Xenos gun')
     BASE_NICKNAME = 'br_xenosgun'
     MODEL = Weapon.CO_RAILDADDY
     EQUIP_TYPE = Weapon.EQUIP_PIRATE
@@ -466,8 +535,8 @@ class BretoniaXenosgun(Gun, BretoniaGun):
 
 
 class BretoniaIragun(Gun, BretoniaGun):
-    RU_NAME = 'Маттертиф'
-    RU_NAME_DESC = 'Пушка ирландских сепаратистов'
+    RU_NAME = MS('Маттертиф', 'Matterthief')
+    RU_NAME_DESC = MS('Пушка ирландских сепаратистов', 'Ireland separatists gun')
     BASE_NICKNAME = 'br_iragun'
     MODEL = Weapon.BR_MASS_DRIVER
     EQUIP_TYPE = Weapon.EQUIP_PIRATE
@@ -479,8 +548,8 @@ class BretoniaIragun(Gun, BretoniaGun):
 
 
 class BretoniaShieldgun(Gun, BretoniaGun, Shieldgun):
-    RU_NAME = 'Солнечный путь'
-    RU_NAME_DESC = 'Бретонская противощитовая пушка'
+    RU_NAME = MS('Солнечный путь', 'Sunrail')
+    RU_NAME_DESC = MS('Бретонская противощитовая пушка', 'Bretonia Anti-Shield Gun')
     BASE_NICKNAME = 'br_shieldgun'
     MODEL = Weapon.BR_RAILGUN
     EQUIP_TYPE = Weapon.EQUIP_CIV
@@ -493,8 +562,8 @@ class BretoniaShieldgun(Gun, BretoniaGun, Shieldgun):
 
 
 class KusariLightgun(Gun, KusariGun, Lightgun):
-    RU_NAME = 'Гром'
-    RU_NAME_DESC = 'Легкая пушка кусарийских военных'
+    RU_NAME = MS('Гром', 'Skyblast')
+    RU_NAME_DESC = MS('Легкая пушка кусарийских военных', "Kusari military light gun")
     BASE_NICKNAME = 'ku_lightgun'
     MODEL = Weapon.KU_ION_BLASTER
     EQUIP_TYPE = Weapon.EQUIP_MAIN
@@ -506,8 +575,8 @@ class KusariLightgun(Gun, KusariGun, Lightgun):
 
 
 class KusariHeavygun(Gun, KusariGun, Heavygun):
-    RU_NAME = 'Дезинфектор'
-    RU_NAME_DESC = 'Тяжелая пушка кусарийских военных'
+    RU_NAME = MS('Дезинфектор', "Disinfector")
+    RU_NAME_DESC = MS('Тяжелая пушка кусарийских военных', 'Kusari heavy gun')
     BASE_NICKNAME = 'ku_heavygun'
     MODEL = Weapon.KU_AUTO_TESLA
     EQUIP_TYPE = Weapon.EQUIP_MAIN
@@ -519,8 +588,8 @@ class KusariHeavygun(Gun, KusariGun, Heavygun):
 
 
 class KusariCivgun(Gun, KusariGun, Civgun):
-    RU_NAME = 'Гелиос'
-    RU_NAME_DESC = 'Базовая кусарийская пушка'
+    RU_NAME = MS('Гелиос', 'Helios')
+    RU_NAME_DESC = MS('Гражданская пушка Кусари', 'Kusari civilian gun')
     BASE_NICKNAME = 'ku_civgun'
     MODEL = Weapon.KU_THRUSTGUN
     EQUIP_TYPE = Weapon.EQUIP_CIV
@@ -532,8 +601,8 @@ class KusariCivgun(Gun, KusariGun, Civgun):
 
 
 class KusariHuntergun(Gun, KusariGun, Huntergun):
-    RU_NAME = 'Ярость'
-    RU_NAME_DESC = 'Пушка кусарийская наемников'
+    RU_NAME = MS('Ярость', 'Fury')
+    RU_NAME_DESC = MS('Пушка кусарийская наемников', 'Kusari bounty hunters gun')
     BASE_NICKNAME = 'ku_huntergun'
     MODEL = Weapon.KU_ION_BLASTER
     EQUIP_TYPE = Weapon.EQUIP_PIRATE
@@ -545,8 +614,8 @@ class KusariHuntergun(Gun, KusariGun, Huntergun):
 
 
 class KusariPirategun(Gun, KusariGun, Pirategun):
-    RU_NAME = 'Танто'
-    RU_NAME_DESC = 'Пушка кусарийская пиратов'
+    RU_NAME = MS('Танто', 'Tanto')
+    RU_NAME_DESC = MS('Пушка кусарийская пиратов', 'Kusari pirates gun')
     BASE_NICKNAME = 'ku_pirategun'
     MODEL = Weapon.KU_THRUSTGUN
     EQUIP_TYPE = Weapon.EQUIP_CIV
@@ -558,8 +627,8 @@ class KusariPirategun(Gun, KusariGun, Pirategun):
 
 
 class KusariShinobigun(Gun, KusariGun):
-    RU_NAME = 'Ниндзято'
-    RU_NAME_DESC = 'Пушка клана Шиноби'
+    RU_NAME = MS('Ниндзято', 'Ninjato')
+    RU_NAME_DESC = MS('Пушка клана Шиноби', 'Shinobi Gun')
     BASE_NICKNAME = 'ku_shinobigun'
     MODEL = Weapon.CO_SHOCK_THERAPY
     EQUIP_TYPE = Weapon.EQUIP_PIRATE
@@ -571,8 +640,8 @@ class KusariShinobigun(Gun, KusariGun):
 
 
 class KusariDragongun(Gun, KusariGun):
-    RU_NAME = 'Вакидзаси'
-    RU_NAME_DESC = 'Пушка кровавых драконов'
+    RU_NAME = MS('Вакидзаси', 'Wakizashi')
+    RU_NAME_DESC = MS('Пушка кровавых драконов', 'Blood Dragons gun')
     BASE_NICKNAME = 'ku_dragongun'
     MODEL = Weapon.KU_ION_BLASTER
     EQUIP_TYPE = Weapon.EQUIP_PIRATE
@@ -584,8 +653,8 @@ class KusariDragongun(Gun, KusariGun):
 
 
 class KusariShieldgun(Gun, KusariGun, Shieldgun):
-    RU_NAME = 'Успокоитель'
-    RU_NAME_DESC = 'Кусарийская противощитовая пушка'
+    RU_NAME = MS('Успокоитель', 'Debilitator')
+    RU_NAME_DESC = MS('Кусарийская противощитовая пушка', 'Kusari Anti-Shield Gun')
     BASE_NICKNAME = 'ku_shieldgun'
     MODEL = Weapon.KU_AUTO_TESLA
     EQUIP_TYPE = Weapon.EQUIP_CIV
@@ -598,8 +667,8 @@ class KusariShieldgun(Gun, KusariGun, Shieldgun):
 
 
 class OrderLightgun(Gun, BorderWorldGun, Lightgun):
-    RU_NAME = 'Цербер'
-    RU_NAME_DESC = 'Легкая пушка Ордена'
+    RU_NAME = MS('Цербер', 'Cerberus')
+    RU_NAME_DESC = MS('Легкая пушка Ордена', "Order Light Gun")
     BASE_NICKNAME = 'or_lightgun'
     MODEL = Weapon.CO_PROTON_COOKER
     EQUIP_TYPE = Weapon.EQUIP_MAIN
@@ -611,8 +680,8 @@ class OrderLightgun(Gun, BorderWorldGun, Lightgun):
 
 
 class OrderHeavygun(Gun, BorderWorldGun, Heavygun):
-    RU_NAME = 'Оникс'
-    RU_NAME_DESC = 'Тяжелая пушка Ордена'
+    RU_NAME = MS('Оникс', 'Onyx')
+    RU_NAME_DESC = MS('Тяжелая пушка Ордена', 'Order Heavy Gun')
     BASE_NICKNAME = 'or_heavygun'
     MODEL = Weapon.CO_SHOCK_THERAPY
     EQUIP_TYPE = Weapon.EQUIP_MAIN
@@ -624,8 +693,8 @@ class OrderHeavygun(Gun, BorderWorldGun, Heavygun):
 
 
 class BorderWorldCorsairgun(Gun, BorderWorldGun):
-    RU_NAME = 'Саламанка'
-    RU_NAME_DESC = 'Пушка Корсаров'
+    RU_NAME = MS('Саламанка', 'Salamanca')
+    RU_NAME_DESC = MS('Пушка Корсаров', 'Corsair gun')
     BASE_NICKNAME = 'bw_corsairgun'
     MODEL = Weapon.CO_RAILDADDY
     EQUIP_TYPE = Weapon.EQUIP_PIRATE
@@ -637,8 +706,8 @@ class BorderWorldCorsairgun(Gun, BorderWorldGun):
 
 
 class BorderWorldShieldgun(Gun, BorderWorldGun, Shieldgun):
-    RU_NAME = 'Рапира'
-    RU_NAME_DESC = 'Противощитовая пушка пограничья'
+    RU_NAME = MS('Рапира', 'Rapier')
+    RU_NAME_DESC = MS('Противощитовая пушка пограничья', 'Border World Anti-Shield Gun')
     BASE_NICKNAME = 'bw_shieldgun'
     MODEL = Weapon.CO_SHOCK_THERAPY
     EQUIP_TYPE = Weapon.EQUIP_PIRATE
@@ -651,8 +720,8 @@ class BorderWorldShieldgun(Gun, BorderWorldGun, Shieldgun):
 
 
 class BorderWorldOutcastgun(Gun, BorderWorldGun):
-    RU_NAME = 'Вирм'
-    RU_NAME_DESC = 'Пушка Изгоев'
+    RU_NAME = MS('Вирм', 'Wyrm')
+    RU_NAME_DESC = MS('Пушка Изгоев', 'Outcast gun')
     BASE_NICKNAME = 'bw_outcastgun'
     MODEL = Weapon.CO_RAILDADDY
     EQUIP_TYPE = Weapon.EQUIP_PIRATE
@@ -664,8 +733,8 @@ class BorderWorldOutcastgun(Gun, BorderWorldGun):
 
 
 class BorderWorldCivgun(Gun, BorderWorldGun, Civgun):
-    RU_NAME = 'Ангелито'
-    RU_NAME_DESC = 'Гражданская пушка пограничья'
+    RU_NAME = MS('Ангелито', "Angelito")
+    RU_NAME_DESC = MS('Гражданская пушка пограничья', 'Border World civilian gun')
     BASE_NICKNAME = 'bw_civgun'
     MODEL = Weapon.CO_THRUSTGUN
     EQUIP_TYPE = Weapon.EQUIP_CIV
@@ -677,8 +746,8 @@ class BorderWorldCivgun(Gun, BorderWorldGun, Civgun):
 
 
 class BorderWorldPirategun(Gun, BorderWorldGun, Pirategun):
-    RU_NAME = 'Драгун'
-    RU_NAME_DESC = 'Пушка пиратов пограничья'
+    RU_NAME = MS('Драгун', 'Dragoon')
+    RU_NAME_DESC = MS('Пушка пиратов пограничья', 'Border World pirate gun')
     BASE_NICKNAME = 'bw_pirategun'
     MODEL = Weapon.CO_THRUSTGUN
     EQUIP_TYPE = Weapon.EQUIP_CIV

@@ -193,7 +193,7 @@ class Misson07(ingame_mission.IngameMission):
                   name='goto_communicator', target='communicator', towards=True),
             NNObj(self, 'Уничтожьте ядро коммуникатора, сбросив бомбы и сдетонировав их',
                   name='destroy_communicator', target='communicator'),
-            NNObj(self, MS('Покиньте Тортугу', 'Left Tortuga space'), name='fly_away_from_tortuga', target='fly_away_tortuga'),
+            NNObj(self, MS('Покиньте Тортугу', 'Left Tortuga area'), name='fly_away_from_tortuga', target='fly_away_tortuga'),
             NNObj(self, MS('Доберитесь до точки засады', 'Reach ambush place'),
                   name='goto_possible_ambush_place', target='possible_ambush_place'),
             NNObj(self, MS('Доберитесь места перехвата', 'Go to catched transport'),

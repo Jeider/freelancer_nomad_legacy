@@ -245,6 +245,28 @@ material_library = equipment\\models\\ge_equip.mat'''
         MainMiscEquip.CO_OUTCAST: 'Перегруженный форсаж',
     }
 
+    EN_NAME_PER_TYPE = {
+        MainMiscEquip.RH_MAIN: 'Thruster Zwei',
+        MainMiscEquip.RH_CIV: 'Thruster Null',
+        MainMiscEquip.RH_PIRATE: 'Thruster Eins',
+
+        MainMiscEquip.LI_MAIN: 'Thruster Gamma',
+        MainMiscEquip.LI_CIV: 'Thruster Alpha',
+        MainMiscEquip.LI_PIRATE: 'Thruster Beta',
+
+        MainMiscEquip.BR_MAIN: 'Advanced thruster',
+        MainMiscEquip.BR_CIV: 'Standard thruster',
+        MainMiscEquip.BR_PIRATE: 'Improved thruster',
+
+        MainMiscEquip.KU_MAIN: 'Thruster type C',
+        MainMiscEquip.KU_CIV: 'Thruster type A',
+        MainMiscEquip.KU_PIRATE: 'Thruster type B',
+
+        MainMiscEquip.CO_ORDER: 'Elite thruster',
+        MainMiscEquip.CO_CORSAIR: 'Heavy thruster',
+        MainMiscEquip.CO_OUTCAST: 'Overloaded thruster',
+    }
+
     def get_max_price(self):
         return self.MAX_PRICE
 
@@ -260,8 +282,25 @@ material_library = equipment\\models\\ge_equip.mat'''
     def get_ru_fullname(self):
         return self.get_ru_name()
 
+    def get_en_base_name(self):
+        return self.EN_NAME_PER_TYPE[self.equip_type]
+
+    def get_en_name(self):
+        return '{model} {mark}'.format(
+            model=self.get_en_base_name(),
+            mark=self.get_mark_name(),
+        )
+
+    def get_en_fullname(self):
+        return self.get_en_name()
+
     def get_ru_thrust_speed_text(self):
         return 'Скорость: {speed}'.format(
+            speed=int(self.get_speed()),
+        )
+
+    def get_en_thrust_speed_text(self):
+        return 'Speed: {speed}'.format(
             speed=int(self.get_speed()),
         )
 
@@ -277,7 +316,23 @@ material_library = equipment\\models\\ge_equip.mat'''
             content.append(faction_features_text)
 
         content.append(self.get_ru_thrust_speed_text())
-        content.append(THRUSTER_SPEED_HINT)
+        content.append(RU_THRUSTER_SPEED_HINT)
+
+        return content
+
+    def get_en_description_content(self):
+        content = []
+
+        efficient_text = self.get_en_equip_efficienty()
+        if efficient_text:
+            content.append(efficient_text)
+
+        faction_features_text = EN_FEATURES_PER_FACTION.get(self.get_faction())
+        if faction_features_text:
+            content.append(faction_features_text)
+
+        content.append(self.get_en_thrust_speed_text())
+        content.append(EN_THRUSTER_SPEED_HINT)
 
         return content
 
@@ -290,4 +345,16 @@ RU_FEATURES_PER_FACTION = {
     MainMiscEquip.FACTION_CO: 'Форсажи кораблей пограничных миров развивают большую скорость, но при этом тратят значительно больше энергии',
 }
 
-THRUSTER_SPEED_HINT = 'Совет: Двигатель может влиять на скорость форсажа. С двигателями Рейнланда форсажи становятся медленнее, с двигателями Кусари быстрее'
+RU_THRUSTER_SPEED_HINT = 'Совет: Двигатель может влиять на скорость форсажа. С двигателями Рейнланда форсажи становятся медленнее, с двигателями Кусари быстрее'
+
+
+EN_FEATURES_PER_FACTION = {
+    MainMiscEquip.FACTION_RH: 'Rheinland thrusters reach better speed, but requires more energy',
+    MainMiscEquip.FACTION_LI: 'Liberty thrusters have better resistance from explosions of mines, missiles, etc',
+    MainMiscEquip.FACTION_BR: 'Bretonia thrusters reaches less speed, but requires considerable less energy',
+    MainMiscEquip.FACTION_KU: 'Kusari thrusters requires little bit less energy',
+    MainMiscEquip.FACTION_CO: 'Border World thrusters reach perfect speed, but requires considerable more energy',
+}
+
+EN_THRUSTER_SPEED_HINT = 'Hint: Engine can affect thruster speed. With Rheinland engine your thruster is slower, with Kusari engines your thruster become faster'
+
