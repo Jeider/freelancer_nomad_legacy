@@ -23,6 +23,8 @@ from templates.nebula import exclusion
 from templates.dockable import nomad_babylon
 from templates.dockable import edge_world
 
+from text.strings import MultiString as MS
+
 
 class MadMember(Member):
     FACTION = faction.Corsairs
@@ -98,7 +100,7 @@ class MadLargeStation(MadMember, main_objects.Station):
     BASE_PROPS = meta.PirateStation()
     DEFENCE_LEVEL = None
 
-    RU_NAME = 'Станция Валенсия'
+    RU_NAME = MS('Станция Валенсия', "Valensia Station")
 
 
 class MadRingStation(MadMember, main_objects.Station):
@@ -115,7 +117,7 @@ class MadRingStation(MadMember, main_objects.Station):
     BASE_PROPS = meta.PirateStation()
     DEFENCE_LEVEL = None
 
-    RU_NAME = 'Станция Морелия'
+    RU_NAME = MS('Станция Морелия', "Morelia Station")
 
 
 class MadDockring(MadMember, main_objects.LargePlanetDockring):
@@ -125,7 +127,7 @@ class MadDockring(MadMember, main_objects.LargePlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.KusariPirateDealers
     SHIP_SET = markets.ShipSet('pi_fighter')
-    RU_NAME = 'Планета Мадрид'
+    RU_NAME = MS('Планета Мадрид', 'Planet Madrid')
     EQUIP_SET = markets.StationSet
     BASE_PROPS = meta.PirateStation()
     CALC_STORE = False
@@ -154,7 +156,7 @@ class MadHunterAstBase(MadMember, main_objects.PirateAsteroid):
     LOADOUT = 'co_base_rock_large01_pi_01'
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEFENCE_LEVEL = None
-    RU_NAME = 'База Кадиз'
+    RU_NAME = MS('База Крит', "Crete Base")
     SHIP_SET = markets.ShipSet('co_fighter')
     CALC_STORE = False
     HAVE_CHARACTERS = False
@@ -183,14 +185,14 @@ class MadPlanet2(MadMember, main_objects.Planet):
     ARCHETYPE = 'planet_ice_blue_800'
     SPHERE_RADIUS = 800
     PLANET_CIRCLE = False
-    RU_NAME = 'Планета Менорка'
+    RU_NAME = MS('Планета Менорка', 'Planet Menorka')
 
 
 class MadPlanet3(MadMember, main_objects.Planet):
     INDEX = 3
     ARCHETYPE = 'planet_rckdes_3000'
     SPHERE_RADIUS = 3000
-    RU_NAME = 'Планета Альхесирас'
+    RU_NAME = MS('Планета Альхесирас', "Planet Algeciras")
 
 
 class MadPlanet4(MadMember, main_objects.Planet):
@@ -201,7 +203,7 @@ class MadPlanet4(MadMember, main_objects.Planet):
     RING_ZONE_ALIAS = 'ring'
     RING_ZONE_INDEX = 1
     RING_FILE_NAME = 'lava_beta'
-    RU_NAME = 'Планета Кордова'
+    RU_NAME = MS('Планета Кордова', "Planet Cordoba")
 
 
 class MadUpsilonMajorJumpgate(MadMember, main_objects.Jumpgate):

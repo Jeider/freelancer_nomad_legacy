@@ -29,6 +29,8 @@ from templates.dockable import police
 from templates.dockable import pirate
 from templates.dockable import station_debris
 
+from text.strings import MultiString as MS
+
 
 class Sig17Member(Member):
     FACTION = faction.LibertyMain
@@ -188,7 +190,7 @@ class Sig17AbandonedAstBase1(Sig17Member, main_objects.AbandonedAsteroid):
     INTERIOR_CLASS = interior.EquipDeckInterior
     DEFENCE_LEVEL = None
     LOCKED_DOCK = True
-    RU_NAME = 'База Солт-Лейк-Сити'
+    RU_NAME = MS('База Солт-Лейк-Сити', "Solt-Lake-City Base")
 
     AST_EXCLUSION_ZONE_SIZE = 3500
     ASTEROID_ZONES = [
@@ -290,7 +292,7 @@ class Sig17DreadRuins1(Sig17Member, Sig17BaseDreadRuins):
     ASTEROID_ZONES = [
         Sig17DreadMinesZone1,
     ]
-    RU_NAME = 'Линкор Невада'
+    RU_NAME = MS('Линкор Невада', 'Battleship Nevada')
 
 
 class Sig17DreadRuins2(Sig17Member, Sig17BaseDreadRuins):
@@ -299,7 +301,7 @@ class Sig17DreadRuins2(Sig17Member, Sig17BaseDreadRuins):
     ASTEROID_ZONES = [
         Sig17DreadMinesZone2,
     ]
-    RU_NAME = 'Линкор Калифорния'
+    RU_NAME = MS('Линкор Калифорния', 'Battleship California')
 
 
 class Sig17DreadSupriseRewards(Sig17Member, mineable.DefaultSupriseRewardsGroup):
@@ -357,7 +359,7 @@ class Sig17Freeport(Sig17Member, main_objects.Freeport):
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyCivilianDealers
 
-    RU_NAME = 'Фрипорт 8'
+    RU_NAME = MS('Фрипорт 8', "Freeport 8")
 
 
 class Sig17Battleship(Sig17Member, main_objects.LibertyBattleship):
@@ -367,7 +369,7 @@ class Sig17Battleship(Sig17Member, main_objects.LibertyBattleship):
     DEALERS = dealers.LibertyMilitaryDealers
     SHIP_SET = markets.ShipSet('li_elite2')
 
-    RU_NAME = 'Линкор Грифон'
+    RU_NAME = MS('Линкор Грифон', 'Battleship Griffin')
 
 
 class Sig17Police(Sig17Member, main_objects.Outpost):
@@ -378,7 +380,7 @@ class Sig17Police(Sig17Member, main_objects.Outpost):
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyMilitaryDealers
 
-    RU_NAME = 'Аванпост Геттисберг'
+    RU_NAME = MS('Аванпост Геттисберг', "Outpost Gettysburg")
 
 
 class Sig17Liner(Sig17Member, main_objects.LuxuryLiner):
@@ -388,7 +390,7 @@ class Sig17Liner(Sig17Member, main_objects.LuxuryLiner):
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.LibertyCivilianDealers
 
-    RU_NAME = 'Круизный лайнер Флостон'
+    RU_NAME = MS('Круизный лайнер Флостон', "Cruise Line Fhloston")
 
 
 class Sig17FreeportSevenRuins(Sig17Member, main_objects.StationRuins):
@@ -398,7 +400,7 @@ class Sig17FreeportSevenRuins(Sig17Member, main_objects.StationRuins):
 
     SPACE_OBJECT_TEMPLATE = station_debris.Freeport7Debris
 
-    RU_NAME = 'Фрипорт 7'
+    RU_NAME = MS('Фрипорт 7', 'Freeport 7')
 
 
 class Sig17FreeportSevenRuins1(Sig17Member, main_objects.HackableStation):
@@ -410,7 +412,7 @@ class Sig17FreeportSevenRuins1(Sig17Member, main_objects.HackableStation):
     HACKABLE_SOLAR_CLASS = hackable.HackableFreeport7Dock
     INTERIOR_CLASS = interior.EquipDeckInterior
 
-    RU_NAME = 'Стыковочный узел 1 Фрипорта 7'
+    RU_NAME = MS('Стыковочный узел 1 Фрипорта 7', 'Freeport 7 Docking Point 1')
     MISC_EQUIP_TYPE = LI_CIV
     WEAPON_FACTION = WEAPON_LI
     EQUIP_SET = markets.EquipSet(
@@ -428,7 +430,7 @@ class Sig17FreeportSevenRuin2(Sig17Member, main_objects.HackableStation):
     HACKABLE_SOLAR_CLASS = hackable.HackableFreeport7DockRot180
     INTERIOR_CLASS = interior.EquipDeckInterior
 
-    RU_NAME = 'Стыковочный узел 2 Фрипорта 7'
+    RU_NAME = MS('Стыковочный узел 2 Фрипорта 7','Freeport 7 Docking Point 2')
     MISC_EQUIP_TYPE = LI_CIV
     WEAPON_FACTION = WEAPON_LI
     EQUIP_SET = markets.EquipSet(
@@ -445,7 +447,7 @@ class Sig17EdgeNebulaPirates(Sig17Member, main_objects.PirateAsteroid):
     FACTION = faction.Corsairs
 
     DEFENCE_LEVEL = None
-    RU_NAME = 'Форт Ред-Ривер'
+    RU_NAME = MS('Форт Ред-Ривер', 'Fort Red-River')
 
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -471,7 +473,7 @@ class Sig17CrowNebulaPirates(Sig17Member, main_objects.PirateStation):
     FACTION = faction.Corsairs
 
     DEFENCE_LEVEL = None
-    RU_NAME = 'База Моркрофт'
+    RU_NAME = MS('База Моркрофт', 'Morecroft Base')
 
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -492,7 +494,7 @@ class Sig17LuxuryRuins1(Sig17Member, main_objects.HackableLuxury):
     HACKABLE_SOLAR_CLASS = hackable.HackableLuxuryLiner
     INTERIOR_CLASS = interior.EquipDeckInterior
 
-    RU_NAME = 'Круизный лайнер Атлантика'
+    RU_NAME = MS('Круизный лайнер Атлантика', 'Cruise Line Atlantic')
     MISC_EQUIP_TYPE = LI_CIV
     WEAPON_FACTION = WEAPON_LI
     EQUIP_SET = markets.EquipSet(
@@ -511,7 +513,7 @@ class Sig17Planet2(Sig17Member, main_objects.Planet):
     INDEX = 2
     ARCHETYPE = 'planet_icemntcld_4000'
     SPHERE_RADIUS = 4000
-    RU_NAME = 'Планета Маскоджи'
+    RU_NAME = MS('Планета Маскоджи', 'Planet Muskogee')
 
 
 class Sig17FreeportConn1(Sig17Member, main_objects.TradeConnection):

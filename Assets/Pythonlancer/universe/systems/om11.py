@@ -20,6 +20,8 @@ from templates.nebula import co_och_nebula
 from templates.nebula import exclusion
 from templates.dockable import corsair_dreadnought
 
+from text.strings import MultiString as MS
+
 
 class Om11Member(Member):
     FACTION = faction.Corsairs
@@ -262,7 +264,7 @@ class Om11BigCorsairAsteroidBase(Om11Member, main_objects.PirateAsteroid):
     LOADOUT = 'co_base_rock_large01_pi_01'
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEFENCE_LEVEL = None
-    RU_NAME = 'База Кадиз'
+    RU_NAME = MS('База Кадиз', "Cadiz Base")
     SHIP_SET = markets.ShipSet('co_fighter')
     CALC_STORE = False
     HAVE_CHARACTERS = False

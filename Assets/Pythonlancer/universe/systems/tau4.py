@@ -27,6 +27,8 @@ from templates.dockable import trade_storages
 from templates.dockable import ulster_megabase
 from templates.dockable import pirate
 
+from text.strings import MultiString as MS
+
 
 class Tau4Member(Member):
     FACTION = faction.KusariMain
@@ -101,7 +103,7 @@ class Tau4AbandonedAstBase1(Tau4Member, main_objects.AbandonedAsteroid):
     INTERIOR_CLASS = interior.EquipDeckInterior
     DEFENCE_LEVEL = None
     LOCKED_DOCK = True
-    RU_NAME = 'База Мацуяма'
+    RU_NAME = MS('База Мацуяма', "Matsuyama Base")
 
     AST_EXCLUSION_ZONE_SIZE = 3500
     ASTEROID_ZONES = [
@@ -226,7 +228,7 @@ class Tau4PrisonLiner1(Tau4Member, Tau4BasePrisonLiner):
     ASTEROID_ZONES = [
         Tau4PrisonLinerMinesZone1,
     ]
-    RU_NAME = 'Тюремный лайнер Такасэбунэ'
+    RU_NAME = MS('Тюремный лайнер Такасэбунэ', 'Prison Liner Takasebune')
     MISC_EQUIP_TYPE = KU_PIRATE
     WEAPON_FACTION = WEAPON_KU
     EQUIP_SET = markets.EquipSet(
@@ -241,7 +243,7 @@ class Tau4PrisonLiner2(Tau4Member, Tau4BasePrisonLiner):
     ASTEROID_ZONES = [
         Tau4PrisonLinerMinesZone2,
     ]
-    RU_NAME = 'Тюремный лайнер Сюинсэн'
+    RU_NAME = MS('Тюремный лайнер Сюинсэн', 'Prison Liner Shuinsen')
     MISC_EQUIP_TYPE = KU_PIRATE
     WEAPON_FACTION = WEAPON_KU
     EQUIP_SET = markets.EquipSet(
@@ -304,7 +306,7 @@ class Tau4Station(Tau4Member, main_objects.TradelaneSupportStation):
     SPACE_OBJECT_TEMPLATE = ulster_megabase.UlsterShortBase
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
-    RU_NAME = 'Станция Осака'
+    RU_NAME = MS('Станция Осака', 'Osaka Station')
 
     BASE_PROPS = meta.TradelaneSupportStation(
         objectives=[
@@ -320,7 +322,7 @@ class Tau4Freeport(Tau4Member, main_objects.Freeport):
     SPACE_OBJECT_TEMPLATE = trade_storages.LibertyLongStorage
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
-    RU_NAME = 'Фрипорт Окинава'
+    RU_NAME = MS('Фрипорт Окинава', 'Freeport Okinawa')
 
 
 class Tau4Battleship(Tau4Member, main_objects.KusariBattleship):
@@ -330,27 +332,27 @@ class Tau4Battleship(Tau4Member, main_objects.KusariBattleship):
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.KusariMilitaryDealers
     SHIP_SET = markets.ShipSet('ku_elite')
-    RU_NAME = 'Линкор Ямасиро'
+    RU_NAME = MS('Линкор Ямасиро', "Battleship Yamashiro")
 
 
 class Tau4Planet1(Tau4Member, main_objects.Planet):
     ARCHETYPE = 'planet_desorcld_3000'
     SPHERE_RADIUS = 3000
-    RU_NAME = 'Планета Сайтама'
+    RU_NAME = MS('Планета Сайтама', 'Planet Saitama')
 
 
 class Tau4Planet2(Tau4Member, main_objects.Planet):
     INDEX = 2
     ARCHETYPE = 'planet_icemntcld_4000'
     SPHERE_RADIUS = 4000
-    RU_NAME = 'Планета Гумма'
+    RU_NAME = MS('Планета Гумма', 'Planet Gumma')
 
 
 class Tau4Planet3(Tau4Member, main_objects.Planet):
     INDEX = 3
     ARCHETYPE = 'planet_icewatcld_3000'
     SPHERE_RADIUS = 3000
-    RU_NAME = 'Планета Хёгу'
+    RU_NAME = MS('Планета Хёгу', 'Planet Hyogu')
 
 
 class Tau4SouthPirates(Tau4Member, main_objects.PirateStation):
@@ -361,7 +363,7 @@ class Tau4SouthPirates(Tau4Member, main_objects.PirateStation):
     FACTION = faction.Corsairs
 
     DEFENCE_LEVEL = None
-    RU_NAME = 'База Муцуэ'
+    RU_NAME = MS('База Муцуэ', "Mutsue Base")
 
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -380,7 +382,7 @@ class Tau4Xenos(Tau4Member, main_objects.PirateStation):
     REL = TOP
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseCalifornia
     FACTION = faction.Corsairs
-    RU_NAME = 'База Сингапур'
+    RU_NAME = MS('База Сингапур', 'Singapore Base')
 
     DEFENCE_LEVEL = None
 
@@ -401,7 +403,7 @@ class Tau4BattleshipRuins1(Tau4Member, main_objects.HackableBattleship):
     REL = BOTTOM
     HACKABLE_SOLAR_CLASS = hackable.HackableKusariBattleship
     INTERIOR_CLASS = interior.EquipDeckInterior
-    RU_NAME = 'Линкор Ямато'
+    RU_NAME = MS('Линкор Ямато', "Battleship Yamato")
 
     MISC_EQUIP_TYPE = KU_PIRATE
     WEAPON_FACTION = WEAPON_KU
@@ -418,7 +420,7 @@ class Tau4LuxuryRuins1(Tau4Member, main_objects.HackableLuxury):
     REL = TOP
     HACKABLE_SOLAR_CLASS = hackable.HackableLuxuryLiner
     INTERIOR_CLASS = interior.EquipDeckInterior
-    RU_NAME = 'Круизный лайнер Филиппины'
+    RU_NAME = MS('Круизный лайнер Филиппины', 'Cruise Liner Philippines')
 
     MISC_EQUIP_TYPE = KU_PIRATE
     WEAPON_FACTION = WEAPON_KU

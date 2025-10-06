@@ -19,7 +19,6 @@ from universe.content import mineable
 from templates.solar import asteroid
 from templates.solar import debris_box
 
-
 from templates.dockable import pirate
 from templates.dockable import police
 from templates.dockable import trade_storages
@@ -27,6 +26,8 @@ from templates.dockable import astbase
 from templates.dockable import shipyards
 from templates.dockable import research
 from templates.dockable import odissey
+
+from text.strings import MultiString as MS
 
 
 class KyushuMember(Member):
@@ -124,7 +125,7 @@ class KyushuDebrisFactory1(KyushuMember, KyushuBaseDebrisManufactoring):
         KyushuDebrisZone1,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
-    RU_NAME = 'Плавильня Амакуса'
+    RU_NAME = MS('Плавильня Амакуса', "Amakusa Smelter")
     MISC_EQUIP_TYPE = KU_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Thruster(KU_PIRATE, eq_classes=markets.SECRET2),
@@ -139,7 +140,7 @@ class KyushuDebrisFactory2(KyushuMember, KyushuBaseDebrisManufactoring):
         KyushuDebrisZone2,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
-    RU_NAME = 'Плавильня Оита'
+    RU_NAME = MS('Плавильня Оита', "Oita Smelter")
     MISC_EQUIP_TYPE = KU_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Thruster(KU_PIRATE, eq_classes=markets.SECRET3),
@@ -154,7 +155,7 @@ class KyushuDebrisFactory3(KyushuMember, KyushuBaseDebrisManufactoring):
         KyushuDebrisZone3,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
-    RU_NAME = 'Плавильня Вакаяма'
+    RU_NAME = MS('Плавильня Вакаяма', "Wakayama Smelter")
     MISC_EQUIP_TYPE = KU_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Thruster(KU_CIV, eq_classes=markets.SECRET2),
@@ -240,7 +241,7 @@ class KyushuAbandonedAstBase1(KyushuMember, KyushuBaseAbandonedAst):
     ASTEROID_ZONES = [
         KyushuAsteroidZone1,
     ]
-    RU_NAME = 'База Тоттори'
+    RU_NAME = MS('База Тоттори', 'Tottori Base')
     MISC_EQUIP_TYPE = KU_PIRATE
     WEAPON_FACTION = WEAPON_KU
     EQUIP_SET = markets.EquipSet(
@@ -256,7 +257,7 @@ class KyushuAbandonedAstBase2(KyushuMember, KyushuBaseAbandonedAst):
     ASTEROID_ZONES = [
         KyushuAsteroidZone2,
     ]
-    RU_NAME = 'База Химедзи'
+    RU_NAME = MS('База Химедзи', "Himeji Base")
     MISC_EQUIP_TYPE = KU_PIRATE
     WEAPON_FACTION = WEAPON_KU
     EQUIP_SET = markets.EquipSet(
@@ -358,7 +359,7 @@ class KyushuDockring(KyushuMember, main_objects.LargePlanetDockring):
             meta.ProduceBad(MOX_FUEL),
         ]
     )
-    RU_NAME = 'Планета Кусю'
+    RU_NAME = MS('Планета Кусю', 'Planet Kyushu')
 
 
 class KyushuMiningDockring(KyushuMember, main_objects.MiningPlanetDockring):
@@ -369,7 +370,7 @@ class KyushuMiningDockring(KyushuMember, main_objects.MiningPlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.KusariPlanetDealers
     SHIP_SET = markets.ShipSet('ge_fighter3')
-    RU_NAME = 'Планета Кумамото'
+    RU_NAME = MS('Планета Кумамото', "Planet Kumamoto")
 
     BASE_PROPS = meta.MiningPlanet(
         objectives=[
@@ -386,7 +387,7 @@ class KyushuMegastation(KyushuMember, main_objects.LargeStation):
     SPACE_OBJECT_TEMPLATE = odissey.Odissey
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
-    RU_NAME = 'Станция Токио'
+    RU_NAME = MS('Станция Токио', 'Tokyo Station')
 
     BASE_PROPS = meta.Megabase(
         objectives=[
@@ -404,7 +405,7 @@ class KyushuShipyard(KyushuMember, main_objects.Shipyard):
     SPACE_OBJECT_TEMPLATE = shipyards.HeavyBarrelShipyard
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
-    RU_NAME = 'Верфь Нагоя'
+    RU_NAME = MS('Верфь Нагоя', 'Nagoya Shipyard')
 
 
 class KyushuTrading(KyushuMember, main_objects.TradingBase):
@@ -413,7 +414,7 @@ class KyushuTrading(KyushuMember, main_objects.TradingBase):
     SPACE_OBJECT_TEMPLATE = trade_storages.HokkaidoStorage
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
-    RU_NAME = 'Станция Гифу'
+    RU_NAME = MS('Станция Гифу', 'Gifu Station')
 
 
 class KyushuResearch(KyushuMember, main_objects.ResearchStation):
@@ -423,7 +424,7 @@ class KyushuResearch(KyushuMember, main_objects.ResearchStation):
     SPACE_OBJECT_TEMPLATE = research.KyushuResearch
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
-    RU_NAME = 'Исследовательская станция Нансей'
+    RU_NAME = MS('Исследовательская станция Нансей', "Nansei Research Station")
 
     BASE_PROPS = meta.Research(
         objectives=[
@@ -440,7 +441,7 @@ class KyushuPolice(KyushuMember, main_objects.Outpost):
     INTERIOR_CLASS = interior.OutpostInterior
     AUDIO_PREFIX = SpaceVoice.BORDER_STATION
     DEALERS = dealers.KusariMilitaryDealers
-    RU_NAME = 'Аванпост Тояма'
+    RU_NAME = MS('Аванпост Тояма', 'Outpost Toyama')
 
 
 class KyushuLiner(KyushuMember, main_objects.LuxuryLiner):
@@ -449,7 +450,7 @@ class KyushuLiner(KyushuMember, main_objects.LuxuryLiner):
     REL = LEFT
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.KusariCivilianDealers
-    RU_NAME = 'Круизный лайнер Бирма'
+    RU_NAME = MS('Круизный лайнер Бирма', "Cruise Liner Burma")
 
 
 class KyushuPlanet1(KyushuMember, main_objects.Planet):
@@ -469,7 +470,7 @@ class KyushuPlanet3(KyushuMember, main_objects.Planet):
     INDEX = 3
     ARCHETYPE = 'planet_ice_blue_3000'
     SPHERE_RADIUS = 3000
-    RU_NAME = 'Планета Сидзуока'
+    RU_NAME = MS('Планета Сидзуока', 'Planet Shizuoka')
 
 
 class KyushuNorthAsteroidPirates(KyushuMember, main_objects.PirateAsteroid):
@@ -479,7 +480,7 @@ class KyushuNorthAsteroidPirates(KyushuMember, main_objects.PirateAsteroid):
     FACTION = faction.KusariPirate
 
     DEFENCE_LEVEL = None
-    RU_NAME = 'База Цусима'
+    RU_NAME = MS('База Цусима', 'Tsushima Base')
 
     INTERIOR_BG1 = interior.INTERIOR_BG_WALKER
 
@@ -499,7 +500,7 @@ class KyushuJunkers(KyushuMember, main_objects.JunkerBase):
     REL = TOP
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseForbes
     FACTION = faction.Junkers
-    RU_NAME = 'База Нагасаки'
+    RU_NAME = MS('База Нагасаки', 'Nagasaki Base')
 
     DEFENCE_LEVEL = None
 

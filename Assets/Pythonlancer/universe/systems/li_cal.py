@@ -29,6 +29,8 @@ from templates.dockable import manhattan_megabase
 from templates.dockable import california_tradestation
 from templates.dockable import roid_mining
 
+from text.strings import MultiString as MS
+
 
 class CalMember(Member):
     FACTION = faction.LibertyMain
@@ -195,7 +197,7 @@ class CalNebula2RoidMiner(CalBaseRoidMiner):
 class CalRoidMiner1(CalMember, CalNebula1RoidMiner):
     INDEX = 1
     BASE_INDEX = 61
-    RU_NAME = 'Рудокоп Астория'
+    RU_NAME = MS('Рудокоп Астория', "Astoria Roid Miner")
     MISC_EQUIP_TYPE = LI_MAIN
     WEAPON_FACTION = WEAPON_LI
     EQUIP_SET = markets.EquipSet(
@@ -207,7 +209,7 @@ class CalRoidMiner1(CalMember, CalNebula1RoidMiner):
 class CalRoidMiner2(CalMember, CalNebula1RoidMiner):
     INDEX = 2
     BASE_INDEX = 62
-    RU_NAME = 'Рудокоп Якима'
+    RU_NAME = MS('Рудокоп Якима', "Roid Miner Yakima")
     MISC_EQUIP_TYPE = LI_MAIN
     WEAPON_FACTION = WEAPON_LI
     EQUIP_SET = markets.EquipSet(
@@ -219,7 +221,7 @@ class CalRoidMiner2(CalMember, CalNebula1RoidMiner):
 class CalRoidMiner3(CalMember, CalNebula1RoidMiner):
     INDEX = 3
     BASE_INDEX = 63
-    RU_NAME = 'Рудокоп Сейлем'
+    RU_NAME = MS('Рудокоп Сейлем', "Roid Miner Salem")
     MISC_EQUIP_TYPE = LI_MAIN
     WEAPON_FACTION = WEAPON_LI
     EQUIP_SET = markets.EquipSet(
@@ -231,7 +233,7 @@ class CalRoidMiner3(CalMember, CalNebula1RoidMiner):
 class CalRoidMiner4(CalMember, CalNebula1RoidMiner):
     INDEX = 4
     BASE_INDEX = 64
-    RU_NAME = 'Рудокоп Бернс'
+    RU_NAME = MS('Рудокоп Бернс', "Roid Miner Burns")
     MISC_EQUIP_TYPE = LI_MAIN
     WEAPON_FACTION = WEAPON_LI
     EQUIP_SET = markets.EquipSet(
@@ -243,7 +245,7 @@ class CalRoidMiner4(CalMember, CalNebula1RoidMiner):
 class CalRoidMiner5(CalMember, CalNebula1RoidMiner):
     INDEX = 5
     BASE_INDEX = 65
-    RU_NAME = 'Рудокоп Бенд'
+    RU_NAME = MS('Рудокоп Бенд', "Roid Miner Band")
     MISC_EQUIP_TYPE = LI_MAIN
     WEAPON_FACTION = WEAPON_LI
     EQUIP_SET = markets.EquipSet(
@@ -255,7 +257,7 @@ class CalRoidMiner5(CalMember, CalNebula1RoidMiner):
 class CalRoidMiner6(CalMember, CalNebula2RoidMiner):
     INDEX = 6
     BASE_INDEX = 66
-    RU_NAME = 'Рудокоп Медфорд'
+    RU_NAME = MS('Рудокоп Медфорд', "Roid Miner Medford")
     MISC_EQUIP_TYPE = LI_MAIN
     WEAPON_FACTION = WEAPON_LI
     EQUIP_SET = markets.EquipSet(
@@ -267,7 +269,7 @@ class CalRoidMiner6(CalMember, CalNebula2RoidMiner):
 class CalRoidMiner7(CalMember, CalNebula2RoidMiner):
     INDEX = 7
     BASE_INDEX = 67
-    RU_NAME = 'Рудокоп Рино'
+    RU_NAME = MS('Рудокоп Рино', "Roid Miner Rhino")
     MISC_EQUIP_TYPE = LI_MAIN
     WEAPON_FACTION = WEAPON_LI
     EQUIP_SET = markets.EquipSet(
@@ -279,7 +281,7 @@ class CalRoidMiner7(CalMember, CalNebula2RoidMiner):
 class CalRoidMiner8(CalMember, CalNebula2RoidMiner):
     INDEX = 8
     BASE_INDEX = 68
-    RU_NAME = 'Рудокоп Юрика'
+    RU_NAME = MS('Рудокоп Эврика', 'Roid Miner Eureka')
     MISC_EQUIP_TYPE = LI_MAIN
     WEAPON_FACTION = WEAPON_LI
     EQUIP_SET = markets.EquipSet(
@@ -291,7 +293,7 @@ class CalRoidMiner8(CalMember, CalNebula2RoidMiner):
 class CalRoidMiner9(CalMember, CalNebula2RoidMiner):
     INDEX = 9
     BASE_INDEX = 69
-    RU_NAME = 'Рудокоп Санта-Роза'
+    RU_NAME = MS('Рудокоп Санта-Роза', 'Roid Miner Santa Rosa')
     MISC_EQUIP_TYPE = LI_MAIN
     WEAPON_FACTION = WEAPON_LI
     EQUIP_SET = markets.EquipSet(
@@ -393,7 +395,7 @@ class CalSig22Jumpgate(CalMember, main_objects.Jumpgate):
 class CalVirtualPoint1(CalMember, main_objects.VirtualDepot):
     REL = TOP
     REL_APPEND = 1000
-    RU_NAME = 'Зона добычи руды'
+    RU_NAME = MS('Зона добычи руды', 'Roid Mining Zone')
 
 
 class CalDockring(CalMember, main_objects.LargePlanetDockring):
@@ -413,7 +415,7 @@ class CalDockring(CalMember, main_objects.LargePlanetDockring):
         ]
     )
 
-    RU_NAME = 'Планета Калифорния'
+    RU_NAME = MS('Планета Калифорния', "Planet California")
 
 
 class CalMiningStation(CalMember, main_objects.RoidMinerStation):
@@ -429,7 +431,7 @@ class CalMiningStation(CalMember, main_objects.RoidMinerStation):
         ]
     )
 
-    RU_NAME = 'Станция Сан-Франциско'
+    RU_NAME = MS('Станция Сан-Франциско', "San-Francisco Station")
 
 
 class CalPolice(CalMember, main_objects.Outpost):
@@ -445,7 +447,7 @@ class CalPolice(CalMember, main_objects.Outpost):
     EXCLUSION_PARAMS = CROW_EXCLUSION_PARAMS
     REL_APPEND = 2000
 
-    RU_NAME = 'Аванпост Сан-Диего'
+    RU_NAME = MS('Аванпост Сан-Диего', "Outpost San-Diego")
 
 
 class CalBattleship(CalMember, main_objects.LibertyBattleship):
@@ -454,7 +456,7 @@ class CalBattleship(CalMember, main_objects.LibertyBattleship):
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.LibertyMilitaryDealers
     SHIP_SET = markets.ShipSet('li_elite')
-    RU_NAME = 'Линкор Нью-Мексико'
+    RU_NAME = MS('Линкор Нью-Мексико', 'Battleship New Mexico')
 
 
 class CalTrading(CalMember, main_objects.TradingBase):
@@ -463,7 +465,7 @@ class CalTrading(CalMember, main_objects.TradingBase):
     SPACE_OBJECT_TEMPLATE = california_tradestation.CaliforniaTradestation
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyCivilianDealers
-    RU_NAME = 'Торговая база Лос-Анджелес'
+    RU_NAME = MS('Торговая база Лос-Анджелес', 'Trading Base Los Angeles')
 
     BASE_PROPS = meta.LargeTradingBase()
 
@@ -477,7 +479,7 @@ class CalPirate1(CalMember, main_objects.PirateAsteroid):
 
     FACTION = faction.LibertyPirate
     DEFENCE_LEVEL = None
-    RU_NAME = 'База Чихуахуа'
+    RU_NAME = MS('База Чихуахуа', 'Chihuahua Base')
 
     ASTEROID_ZONES = [
         CalAsteroidZone3,
@@ -496,7 +498,7 @@ class CalPirate2(CalMember, main_objects.PirateStation):
 
     FACTION = faction.LibertyPirate
     DEFENCE_LEVEL = None
-    RU_NAME = 'База Веракрус'
+    RU_NAME = MS('База Веракрус', "Veracruz Base")
 
     EXCLUSION_PARAMS = CROW_EXCLUSION_PARAMS
     NEBULA_ZONES = [CalNebula4]
@@ -557,7 +559,7 @@ class CalAbandonedStation(CalMember, main_objects.StationRuins):
     NEBULA_ZONES = [
         CalNebula5,
     ]
-    RU_NAME = 'Станция Беркли'
+    RU_NAME = MS('Станция Беркли', "Berkley Research station")
 
 
 class CalAbandonedStationDropPoint1(CalMember, main_objects.HackableStation):
@@ -569,7 +571,7 @@ class CalAbandonedStationDropPoint1(CalMember, main_objects.HackableStation):
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpost
     INTERIOR_CLASS = interior.EquipDeckInterior
 
-    RU_NAME = 'Исследовательский блок 1 Беркли'
+    RU_NAME = MS('Иссл. блок 1 Беркли', 'Berkley Research Block 1')
     MISC_EQUIP_TYPE = LI_CIV
     WEAPON_FACTION = WEAPON_LI
     EQUIP_SET = markets.EquipSet(
@@ -587,7 +589,7 @@ class CalAbandonedStationDropPoint2(CalMember, main_objects.HackableStation):
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpostRot90
     INTERIOR_CLASS = interior.EquipDeckInterior
 
-    RU_NAME = 'Исследовательский блок 2 Беркли'
+    RU_NAME = MS('Иссл. блок 2 Беркли', 'Berkley Research Block 2')
     MISC_EQUIP_TYPE = LI_CIV
     WEAPON_FACTION = WEAPON_LI
     EQUIP_SET = markets.EquipSet(
@@ -697,4 +699,4 @@ class CalPlanet2(CalMember, main_objects.Planet):
     ARCHETYPE = 'planet_ice_blue_1000'
     PLANET_CIRCLE = False
     SPHERE_RADIUS = 1000
-    RU_NAME = 'Планета Невада'
+    RU_NAME = MS('Планета Невада', 'Planet Nevada')

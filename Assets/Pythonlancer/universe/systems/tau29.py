@@ -29,6 +29,8 @@ from templates.dockable import olaf
 from templates.dockable import avalon_megabase
 from templates.dockable import station_debris
 
+from text.strings import MultiString as MS
+
 
 class Tau29Member(Member):
     FACTION = faction.BretoniaMain
@@ -159,7 +161,7 @@ class Tau29Planet1(Tau29Member, main_objects.Planet):
     ASTEROID_ZONES = [Tau29RingAsteroidsField]
     AST_EXCLUSION_ZONE_SIZE = 6000
 
-    RU_NAME = 'Планета Уоррингтон'
+    RU_NAME = MS('Планета Уоррингтон', 'Planet Warrington')
 
 
 class Tau29Planet2(Tau29Member, main_objects.Planet):
@@ -172,7 +174,7 @@ class Tau29Planet2(Tau29Member, main_objects.Planet):
     RING_ZONE_INDEX = 2
     RING_FILE_NAME = 'tau29_rock'
 
-    RU_NAME = 'Планета Марпл'
+    RU_NAME = MS('Планета Марпл', 'Planet Marple')
 
 
 class Tau29Nebula(Tau29Member, zones.NebulaZone):
@@ -249,7 +251,7 @@ class Tau29BaseGasMiner(main_objects.GasMinerOld):
 class Tau29GasMiner1(Tau29Member, Tau29BaseGasMiner):
     INDEX = 1
     BASE_INDEX = 51
-    RU_NAME = 'Газодобытчик Ашингтон'
+    RU_NAME = MS('Газодобытчик Ашингтон', 'Gas Miner Ashington')
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM3),
         Q.Thruster(BR_PIRATE, eq_classes=markets.SECRET2),
@@ -259,7 +261,7 @@ class Tau29GasMiner1(Tau29Member, Tau29BaseGasMiner):
 class Tau29GasMiner2(Tau29Member, Tau29BaseGasMiner):
     INDEX = 2
     BASE_INDEX = 52
-    RU_NAME = 'Газодобытчик Фраддон'
+    RU_NAME = MS('Газодобытчик Фраддон', 'Gas Miner Fraddon')
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM2),
         Q.Thruster(BR_MAIN, eq_classes=markets.SECRET3),
@@ -269,7 +271,7 @@ class Tau29GasMiner2(Tau29Member, Tau29BaseGasMiner):
 class Tau29GasMiner3(Tau29Member, Tau29BaseGasMiner):
     INDEX = 3
     BASE_INDEX = 53
-    RU_NAME = 'Газодобытчик Мальборо'
+    RU_NAME = MS('Газодобытчик Мальборо', 'Gas Miner Malboro')
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM3),
         Q.Thruster(BR_MAIN, eq_classes=markets.SECRET2),
@@ -330,7 +332,7 @@ class Tau29RingRuins(Tau29Member, main_objects.StationRuins):
     ]
     AST_EXCLUSION_ZONE_SIZE = 800
 
-    RU_NAME = 'Исследовательская станция Ланкастер'
+    RU_NAME = MS('Исследовательская станция Ланкастер', 'Lancaster Research Station')
 
 
 class Tau29RingRuinsSuprisePoint(Tau29Member, main_objects.HackableStation):
@@ -341,7 +343,7 @@ class Tau29RingRuinsSuprisePoint(Tau29Member, main_objects.HackableStation):
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpost
     INTERIOR_CLASS = interior.EquipDeckInterior
 
-    RU_NAME = 'Стыковочный узел Ланкастера'
+    RU_NAME = MS('Стыковочный узел Ланкастера', 'Lancaster Docking Point')
     MISC_EQUIP_TYPE = BR_MAIN
     WEAPON_FACTION = WEAPON_BR
     EQUIP_SET = markets.EquipSet(
@@ -370,7 +372,7 @@ class Tau29WarwickJumpgate(Tau29Member, main_objects.Jumpgate):
 
 class Tau29VirtualPoint1(Tau29Member, main_objects.VirtualDepot):
     REL = TOP
-    RU_NAME = 'Путь к Ланкастеру'
+    RU_NAME = MS('Путь к Ланкастеру', 'Route to Lancaster')
 
 
 class Tau29LargeStation(Tau29Member, main_objects.GasMiningStation):
@@ -392,7 +394,7 @@ class Tau29LargeStation(Tau29Member, main_objects.GasMiningStation):
             meta.HaveSolarPanels(),
         ]
     )
-    RU_NAME = 'Станция Арендал'
+    RU_NAME = MS('Станция Арендал', 'Arendal Station')
 
 
 class Tau29Trading(Tau29Member, main_objects.TradingBase):
@@ -401,7 +403,7 @@ class Tau29Trading(Tau29Member, main_objects.TradingBase):
     SPACE_OBJECT_TEMPLATE = avalon_megabase.AvalonMegabaseShort
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.BretoniaCivilianDealers
-    RU_NAME = 'Станция Кент'
+    RU_NAME = MS('Станция Кент', 'Station Kent')
 
 
 class Tau29Police(Tau29Member, main_objects.Outpost):
@@ -411,7 +413,7 @@ class Tau29Police(Tau29Member, main_objects.Outpost):
     SPACE_OBJECT_TEMPLATE = police.PoliceOutpostLiberty
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.BretoniaMilitaryDealers
-    RU_NAME = 'Аванпост Эссекс'
+    RU_NAME = MS('Аванпост Эссекс', 'Outpost Essex')
 
 
 class Tau29BottomPirates(Tau29Member, main_objects.PirateAsteroid):
@@ -427,7 +429,7 @@ class Tau29BottomPirates(Tau29Member, main_objects.PirateAsteroid):
     ASTEROID_ZONES = [
         Tau29AsteroidZone3,
     ]
-    RU_NAME = 'База Йорк'
+    RU_NAME = MS('База Йорк', 'York Base')
 
 
 class Tau29TopPirates(Tau29Member, main_objects.PirateAsteroid):
@@ -444,7 +446,7 @@ class Tau29TopPirates(Tau29Member, main_objects.PirateAsteroid):
     # ASTEROID_ZONES = [
     #     Tau29AsteroidZone5,
     # ]
-    RU_NAME = 'База Данелаг'
+    RU_NAME = MS('База Данелаг', 'Danelaw Base')
 
 
 class Tau29AbandonedAstBase1(Tau29Member, main_objects.AbandonedAsteroid):
@@ -465,7 +467,7 @@ class Tau29AbandonedAstBase1(Tau29Member, main_objects.AbandonedAsteroid):
         'spacedust': Dust.ASTEROID,
         'spacedust_maxparticles': 200,
     }
-    RU_NAME = 'База Стерлинг'
+    RU_NAME = MS('База Стерлинг', "Sterling Base")
     MISC_EQUIP_TYPE = BR_PIRATE
     WEAPON_FACTION = WEAPON_BR
     EQUIP_SET = markets.EquipSet(
@@ -492,7 +494,7 @@ class Tau29AbandonedAstBase2(Tau29Member, main_objects.AbandonedAsteroid):
         'spacedust': Dust.ASTEROID,
         'spacedust_maxparticles': 200,
     }
-    RU_NAME = 'База Ларберт'
+    RU_NAME = MS('База Ларберт', "Larbert Base")
     MISC_EQUIP_TYPE = BR_PIRATE
     WEAPON_FACTION = WEAPON_BR
     EQUIP_SET = markets.EquipSet(

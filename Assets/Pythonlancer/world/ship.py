@@ -5,6 +5,7 @@ from universe.markets import MarketShip
 from text.dividers import SINGLE_DIVIDER
 from text.infocards import InfocardBuilder, INFO_SHIP_ABOUT, INFO_SHIP_TABLE, INFO_SHIP_KEYS, INFO_SHIP_VALUES
 from text.strings import MultiString as MS
+from text.translate import Lang_RU, Lang_EN
 from fx.light import Light
 from world import level
 
@@ -166,10 +167,30 @@ cargo = {nickname}, {amount}'''
         self.ids = ids
         ship_stats = self.get_infocard_values()
         self.ids_name = self.ids.new_name(self.get_ru_name())
-        self.ids_info = self.ids.new_info(InfocardBuilder.build_infocard(INFO_SHIP_TABLE, ship_stats))
-        self.ids_info1 = self.ids.new_info(InfocardBuilder.build_infocard(INFO_SHIP_ABOUT, {}))
-        self.ids_info2 = self.ids.new_info(InfocardBuilder.build_infocard(INFO_SHIP_KEYS, {}))
-        self.ids_info3 = self.ids.new_info(InfocardBuilder.build_infocard(INFO_SHIP_VALUES, ship_stats))
+        self.ids_info = self.ids.new_info(
+            MS(
+                InfocardBuilder.build_infocard(INFO_SHIP_TABLE, ship_stats, language=Lang_RU),
+                InfocardBuilder.build_infocard(INFO_SHIP_TABLE, ship_stats, language=Lang_EN),
+            )
+        )
+        self.ids_info1 = self.ids.new_info(
+            MS(
+                InfocardBuilder.build_infocard(INFO_SHIP_ABOUT, {}, language=Lang_RU),
+                InfocardBuilder.build_infocard(INFO_SHIP_ABOUT, {}, language=Lang_EN)
+            )
+        )
+        self.ids_info2 = self.ids.new_info(
+            MS(
+                InfocardBuilder.build_infocard(INFO_SHIP_KEYS, {}, language=Lang_RU),
+                InfocardBuilder.build_infocard(INFO_SHIP_KEYS, {}, language=Lang_EN)
+            )
+        )
+        self.ids_info3 = self.ids.new_info(
+            MS(
+                InfocardBuilder.build_infocard(INFO_SHIP_VALUES, ship_stats, language=Lang_RU),
+                InfocardBuilder.build_infocard(INFO_SHIP_VALUES, ship_stats, language=Lang_EN)
+            )
+        )
         self.used = False
 
     def is_used(self):

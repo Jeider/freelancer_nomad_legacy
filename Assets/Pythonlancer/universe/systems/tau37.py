@@ -26,6 +26,8 @@ from templates.dockable import trade_storages
 from templates.dockable import roid_mining
 from templates.dockable import station_debris
 
+from text.strings import MultiString as MS
+
 
 class Tau37Member(Member):
     FACTION = faction.BretoniaMain
@@ -183,7 +185,7 @@ class Tau37RoidMiner1(Tau37Member, Tau37BaseRoidMiner):
     BASE_INDEX = 61
     ASTEROID_ZONES = [Tau37AsteroidZone1]
     NEBULA_ZONES = [Tau37TopNebula]
-    RU_NAME = 'Рудокоп Нефин'
+    RU_NAME = MS('Рудокоп Нефин', 'Roid Miner Nefyn')
     MISC_EQUIP_TYPE = BR_MAIN
     WEAPON_FACTION = WEAPON_BR
     EQUIP_SET = markets.EquipSet(
@@ -197,7 +199,7 @@ class Tau37RoidMiner2(Tau37Member, Tau37BaseRoidMiner):
     BASE_INDEX = 62
     ASTEROID_ZONES = [Tau37AsteroidZone1]
     NEBULA_ZONES = [Tau37TopNebula]
-    RU_NAME = 'Рудокоп Бангор'
+    RU_NAME = MS('Рудокоп Бангор', 'Roid Miner Bangor')
     MISC_EQUIP_TYPE = BR_MAIN
     WEAPON_FACTION = WEAPON_BR
     EQUIP_SET = markets.EquipSet(
@@ -211,7 +213,7 @@ class Tau37RoidMiner3(Tau37Member, Tau37BaseRoidMiner):
     BASE_INDEX = 63
     ASTEROID_ZONES = [Tau37AsteroidZone1]
     NEBULA_ZONES = [Tau37TopNebula]
-    RU_NAME = 'Рудокоп Грисби'
+    RU_NAME = MS('Рудокоп Грисби', 'Roid Miner Griesbie')
     MISC_EQUIP_TYPE = BR_MAIN
     WEAPON_FACTION = WEAPON_BR
     EQUIP_SET = markets.EquipSet(
@@ -225,7 +227,7 @@ class Tau37RoidMiner4(Tau37Member, Tau37BaseRoidMiner):
     BASE_INDEX = 64
     ASTEROID_ZONES = [Tau37AsteroidZone1]
     NEBULA_ZONES = [Tau37TopNebula]
-    RU_NAME = 'Рудокоп Барбридж'
+    RU_NAME = MS('Рудокоп Барбридж', 'Roid Miner Burbridge')
     MISC_EQUIP_TYPE = BR_MAIN
     WEAPON_FACTION = WEAPON_BR
     EQUIP_SET = markets.EquipSet(
@@ -239,7 +241,7 @@ class Tau37RoidMiner5(Tau37Member, Tau37BaseRoidMiner):
     BASE_INDEX = 65
     ASTEROID_ZONES = [Tau37AsteroidZone3]
     NEBULA_ZONES = [Tau37EastNebula]
-    RU_NAME = 'Рудокоп Грантем'
+    RU_NAME = MS('Рудокоп Грантем', 'Roid Miner Grantham')
     MISC_EQUIP_TYPE = BR_MAIN
     WEAPON_FACTION = WEAPON_BR
     EQUIP_SET = markets.EquipSet(
@@ -253,7 +255,7 @@ class Tau37RoidMiner6(Tau37Member, Tau37BaseRoidMiner):
     BASE_INDEX = 66
     ASTEROID_ZONES = [Tau37AsteroidZone3]
     NEBULA_ZONES = [Tau37EastNebula]
-    RU_NAME = 'Рудокоп Кроуленд'
+    RU_NAME = MS('Рудокоп Кроуленд', 'Roid Miner Crowland')
     MISC_EQUIP_TYPE = BR_MAIN
     WEAPON_FACTION = WEAPON_BR
     EQUIP_SET = markets.EquipSet(
@@ -267,7 +269,7 @@ class Tau37RoidMiner7(Tau37Member, Tau37BaseRoidMiner):
     BASE_INDEX = 67
     ASTEROID_ZONES = [Tau37AsteroidZone3]
     NEBULA_ZONES = [Tau37EastNebula]
-    RU_NAME = 'Рудокоп Окен'
+    RU_NAME = MS('Рудокоп Окен', 'Roid Miner Oken')
     MISC_EQUIP_TYPE = BR_MAIN
     WEAPON_FACTION = WEAPON_BR
     EQUIP_SET = markets.EquipSet(
@@ -356,13 +358,13 @@ class Tau37CambridgeJumpgate(Tau37Member, main_objects.Jumpgate):
 
 class Tau37VirtualPoint1(Tau37Member, main_objects.VirtualDepot):
     REL = TOP
-    RU_NAME = 'Зона добычи руды'
+    RU_NAME = MS('Зона добычи руды', 'Roid Mining Zone')
 
 
 class Tau37VirtualPoint2(Tau37Member, main_objects.VirtualDepot):
     INDEX = 2
     REL = BOTTOM
-    RU_NAME = 'Зона добычи руды'
+    RU_NAME = MS('Зона добычи руды', 'Roid Mining Zone')
 
 
 class Tau37MiningStation(Tau37Member, main_objects.RoidMinerStation):
@@ -371,7 +373,7 @@ class Tau37MiningStation(Tau37Member, main_objects.RoidMinerStation):
     SPACE_OBJECT_TEMPLATE = roid_mining.BretoniaRoidMining
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.BretoniaCivilianDealers
-    RU_NAME = 'Станция Гибралтар'
+    RU_NAME = MS('Станция Гибралтар', 'Gibraltar Station')
 
     BASE_PROPS = meta.RoidMiningStation(
         objectives=[
@@ -387,7 +389,7 @@ class Tau37Freeport(Tau37Member, main_objects.Freeport):
     SPACE_OBJECT_TEMPLATE = trade_storages.RheinlandOmegaStorage
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.BretoniaCivilianDealers
-    RU_NAME = 'Фрипорт Плимут'
+    RU_NAME = MS('Фрипорт Плимут', 'Freeport Plymouth')
 
 
 class Tau37Battleship(Tau37Member, main_objects.BretoniaBattleship):
@@ -396,7 +398,7 @@ class Tau37Battleship(Tau37Member, main_objects.BretoniaBattleship):
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.BretoniaMilitaryDealers
     SHIP_SET = markets.ShipSet('br_elite')
-    RU_NAME = 'Линкор Нептун'
+    RU_NAME = MS('Линкор Нептун', 'Battleship Neptune')
 
 
 class Tau37CorsairBase(Tau37Member, main_objects.PirateAsteroid):
@@ -406,7 +408,7 @@ class Tau37CorsairBase(Tau37Member, main_objects.PirateAsteroid):
     SPACE_OBJECT_TEMPLATE = astbase.CaliforniaAsteroidBase
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.BretoniaPirateDealers
-    RU_NAME = 'База Сеута'
+    RU_NAME = MS('База Сеута', 'Ceuta Base')
 
     FACTION = faction.Corsairs
     DEFENCE_LEVEL = None
@@ -422,7 +424,7 @@ class Tau37DeepNebulaRuins(Tau37Member, main_objects.StationRuins):
     ALIAS = 'ruins'
     INDEX = 1
     REL = RIGHT
-    RU_NAME = 'Станция Фолкленд'
+    RU_NAME = MS('Станция Фолкленд', 'Falkland Station')
 
     SPACE_OBJECT_TEMPLATE = station_debris.SigmaEightFreeport
 
@@ -442,7 +444,7 @@ class Tau37DeepNebulaRuinsSuprisePoint(Tau37Member, main_objects.HackableStation
     RELATED_OBJECT = Tau37DeepNebulaRuins
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpost
     INTERIOR_CLASS = interior.EquipDeckInterior
-    RU_NAME = 'Стыковочный узел Фолкленда'
+    RU_NAME = MS('Стыковочный узел Фолкленда', 'Falkland Dock Point')
     MISC_EQUIP_TYPE = BR_MAIN
     WEAPON_FACTION = WEAPON_BR
     EQUIP_SET = markets.EquipSet(
@@ -521,4 +523,4 @@ class Tau37Planet1(Tau37Member, main_objects.Planet):
     INDEX = 1
     ARCHETYPE = 'planet_gasicecld_4000'
     SPHERE_RADIUS = 4000
-    RU_NAME = 'Планета Ангилья'
+    RU_NAME = MS('Планета Ангилья', 'Planet Anguilla')

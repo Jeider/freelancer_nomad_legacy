@@ -199,23 +199,21 @@ class Misson08(ingame_mission.IngameMission):
     def get_static_points(self):
         defined_points = []
 
-        wales_name = MS('Линкор Принц Уэльский', "Battleship Prince of Wales")
-
         main_group = [
             DockableBattleshipSolar(
                 self, S.br_avl, 'price_wales_avalon', faction='br_grp',
                 archetype='b_battleship', loadout='br_battleship_station',
-                ru_name=wales_name, base='br_avl_98_base'
+                ru_name=N.PRINCE_OF_WALES, base='br_avl_98_base'
             ),
             DockableBattleshipSolar(
                 self, S.m8_tau44, 'price_wales_start', faction='br_grp',
                 archetype='b_battleship', loadout='br_battleship_station',
-                ru_name=wales_name, base='m8_tau44_99_base'
+                ru_name=N.PRINCE_OF_WALES, base='m8_tau44_99_base'
             ),
             Solar(
                 self, S.m8_tau44, 'price_wales_battle', faction='br_grp',
                 archetype='b_battleship_fuseable', loadout='br_battleship_station',
-                ru_name=wales_name,
+                ru_name=N.PRINCE_OF_WALES,
                 labels=['bretonia'],
             ),
             Solar(

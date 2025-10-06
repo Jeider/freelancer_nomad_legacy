@@ -29,6 +29,8 @@ from templates.dockable import honshu_military
 from templates.dockable import junker
 from templates.dockable import cambridge_research
 
+from text.strings import MultiString as MS
+
 
 class HonsMember(Member):
     FACTION = faction.KusariMain
@@ -154,7 +156,7 @@ class HonsDebrisFactory1(HonsMember, HonsBaseDebrisManufactoring):
         HonsDebrisZone1,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
-    RU_NAME = 'Плавильня Гобо'
+    RU_NAME = MS('Плавильня Гобо', 'Gobo Smelter')
     MISC_EQUIP_TYPE = KU_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Thruster(KU_PIRATE, eq_classes=markets.SECRET2),
@@ -169,7 +171,7 @@ class HonsDebrisFactory2(HonsMember, HonsBaseDebrisManufactoring):
         HonsDebrisZone2,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
-    RU_NAME = 'Плавильня Сирахама'
+    RU_NAME = MS('Плавильня Сирахама', "Sirahama Smelter")
     MISC_EQUIP_TYPE = KU_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Thruster(KU_PIRATE, eq_classes=markets.SECRET3),
@@ -184,7 +186,7 @@ class HonsDebrisFactory3(HonsMember, HonsBaseDebrisManufactoring):
         HonsDebrisZone3,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
-    RU_NAME = 'Плавильня Сусами'
+    RU_NAME = MS('Плавильня Сусами', 'Susami Smelter')
     MISC_EQUIP_TYPE = KU_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Thruster(KU_CIV, eq_classes=markets.SECRET3),
@@ -283,7 +285,7 @@ class HonsSolarPlant1(HonsMember, HonsBaseSolarPlant):
     ASTEROID_ZONES = [
         HonsSolarMinesZone1,
     ]
-    RU_NAME = 'Солн.генератор Кавогоэ'
+    RU_NAME = MS('Солн.генератор Кавогоэ', 'Solar Plant Kavogoe')
     MISC_EQUIP_TYPE = KU_PIRATE
     EQUIP_SET = markets.EquipSet(
         Q.Power(KU_CIV, eq_classes=markets.SECRET3),
@@ -297,7 +299,7 @@ class HonsSolarPlant2(HonsMember, HonsBaseSolarPlant):
     ASTEROID_ZONES = [
         HonsSolarMinesZone2,
     ]
-    RU_NAME = 'Солн.генератор Итабаси'
+    RU_NAME = MS('Солн.генератор Итабаси', "Solar Planet Itabashi")
     MISC_EQUIP_TYPE = KU_PIRATE
     EQUIP_SET = markets.EquipSet(
         Q.Power(KU_CIV, eq_classes=markets.SECRET2),
@@ -311,7 +313,7 @@ class HonsSolarPlant3(HonsMember, HonsBaseSolarPlant):
     ASTEROID_ZONES = [
         HonsSolarMinesZone3,
     ]
-    RU_NAME = 'Солн.генератор Накано'
+    RU_NAME = MS('Солн.генератор Накано', 'Solar Plant Nakano')
     MISC_EQUIP_TYPE = KU_PIRATE
     EQUIP_SET = markets.EquipSet(
         Q.Power(KU_PIRATE, eq_classes=markets.SECRET2),
@@ -325,7 +327,7 @@ class HonsSolarPlant4(HonsMember, HonsBaseSolarPlant):
     ASTEROID_ZONES = [
         HonsSolarMinesZone4,
     ]
-    RU_NAME = 'Солн.генератор Нэрима'
+    RU_NAME = MS('Солн.генератор Нэрима', 'Solar Planet Nerima')
     MISC_EQUIP_TYPE = KU_PIRATE
     EQUIP_SET = markets.EquipSet(
         Q.Power(KU_CIV, eq_classes=markets.SECRET2),
@@ -339,7 +341,7 @@ class HonsSolarPlant5(HonsMember, HonsBaseSolarPlant):
     ASTEROID_ZONES = [
         HonsSolarMinesZone5,
     ]
-    RU_NAME = 'Солн.генератор Кавагути'
+    RU_NAME = MS('Солн.генератор Кавагути', "Solar Planet Kavaguti")
     MISC_EQUIP_TYPE = KU_PIRATE
     EQUIP_SET = markets.EquipSet(
         Q.Power(KU_CIV, eq_classes=markets.SECRET3),
@@ -426,7 +428,7 @@ class HonsDockring(HonsMember, main_objects.LargePlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.KusariPlanetDealers
     SHIP_SET = markets.ShipSet('ku_fighter', 'ge_fighter5', 'ku_freighter')
-    RU_NAME = 'Планета Хонсю'
+    RU_NAME = MS('Планета Хонсю', "Planet Honshu")
 
     BASE_PROPS = meta.LargePlanet(
         objectives=[
@@ -446,7 +448,7 @@ class HonsMilitary(HonsMember, main_objects.Station):
     SPACE_OBJECT_TEMPLATE = honshu_military.HonshuMilitary
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariMilitaryDealers
-    RU_NAME = 'Станция Тиеда'
+    RU_NAME = MS('Станция Тиеда', 'Tieda Station')
 
     BASE_PROPS = meta.MediumStation(
         objectives=[
@@ -462,7 +464,7 @@ class HonsShipyard(HonsMember, main_objects.Shipyard):
     SPACE_OBJECT_TEMPLATE = shipyards.HokkaidoShipyard
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
-    RU_NAME = 'Верфь Окаяма'
+    RU_NAME = MS('Верфь Окаяма', 'Okajama Shipyard')
 
 
 class HonsPrison(HonsMember, main_objects.Prison):
@@ -471,7 +473,7 @@ class HonsPrison(HonsMember, main_objects.Prison):
     SPACE_OBJECT_TEMPLATE = prisons.HonshuPrison
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariMilitaryDealers
-    RU_NAME = 'Тюрьма Вакаяма'
+    RU_NAME = MS('Тюрьма Вакаяма', "Wakajama Prison")
 
 
 class HonsPolice(HonsMember, main_objects.Outpost):
@@ -482,7 +484,7 @@ class HonsPolice(HonsMember, main_objects.Outpost):
     INTERIOR_CLASS = interior.OutpostInterior
     AUDIO_PREFIX = SpaceVoice.BORDER_STATION
     DEALERS = dealers.KusariMilitaryDealers
-    RU_NAME = 'Аванпост Нара'
+    RU_NAME = MS('Аванпост Нара', 'Outpost Nara')
 
 
 class HonsTrading(HonsMember, main_objects.TradingBase):
@@ -492,7 +494,7 @@ class HonsTrading(HonsMember, main_objects.TradingBase):
     SPACE_OBJECT_TEMPLATE = cambridge_research.CambridgeResearchAlternative
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
-    RU_NAME = 'Торговая база Фунабаси'
+    RU_NAME = MS('Торговая база Фунабаси', "Trading base Funabasi")
 
     BASE_PROPS = meta.TradingBase(
         objectives=[
@@ -511,21 +513,21 @@ class HonsPlanet2(HonsMember, main_objects.Planet):
     INDEX = 2
     ARCHETYPE = 'planet_desorcld_3000'
     SPHERE_RADIUS = 3000
-    RU_NAME = 'Планета Ямагути'
+    RU_NAME = MS('Планета Ямагути', "Planet Yamaguchi")
 
 
 class HonsPlanet3(HonsMember, main_objects.Planet):
     INDEX = 3
     ARCHETYPE = 'planet_gasblucld_5000'
     SPHERE_RADIUS = 5000
-    RU_NAME = 'Планета Кагосима'
+    RU_NAME = MS('Планета Кагосима', 'Planet Kagoshima')
 
 
 class HonsPlanet4(HonsMember, main_objects.Planet):
     INDEX = 4
     ARCHETYPE = 'planet_gasgrncld_3000'
     SPHERE_RADIUS = 3000
-    RU_NAME = 'Планета Хёго'
+    RU_NAME = MS('Планета Хёго', 'Planet Hyogo')
 
 
 class HonsNebulaPirates(HonsMember, main_objects.PirateStation):
@@ -534,7 +536,7 @@ class HonsNebulaPirates(HonsMember, main_objects.PirateStation):
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = junker.HonshuJunker
     FACTION = faction.KusariPirate
-    RU_NAME = 'База Содзя'
+    RU_NAME = MS('База Содзя', 'Soja Base')
 
     DEFENCE_LEVEL = None
 
@@ -556,7 +558,7 @@ class HonsJunkers(HonsMember, main_objects.JunkerBase):
     REL = TOP
     SPACE_OBJECT_TEMPLATE = junker.StuttgartJunker
     FACTION = faction.KusariPirate
-    RU_NAME = 'База Чиба'
+    RU_NAME = MS('База Чиба', 'Chiba Base')
 
     DEFENCE_LEVEL = None
 

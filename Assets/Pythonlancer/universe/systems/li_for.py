@@ -32,6 +32,8 @@ from templates.dockable import alg
 from templates.dockable import pirate
 from templates.dockable import station_debris
 
+from text.strings import MultiString as MS
+
 
 class ForbesMember(Member):
     FACTION = faction.LibertyMain
@@ -164,7 +166,7 @@ class ForbesDebrisFactory1(ForbesMember, ForbesBaseDebrisManufactoring):
         ForbesDebrisZone1,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
-    RU_NAME = 'Плавильня Канзас'
+    RU_NAME = MS('Плавильня Канзас', 'Kansas Smelter')
     MISC_EQUIP_TYPE = LI_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Thruster(LI_CIV, eq_classes=markets.SECRET2),
@@ -179,7 +181,7 @@ class ForbesDebrisFactory2(ForbesMember, ForbesBaseDebrisManufactoring):
         ForbesDebrisZone2,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
-    RU_NAME = 'Плавильня Конуэй'
+    RU_NAME = MS('Плавильня Конуэй', 'Conway Smelter')
     MISC_EQUIP_TYPE = LI_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Thruster(LI_CIV, eq_classes=markets.SECRET3),
@@ -194,7 +196,7 @@ class ForbesDebrisFactory3(ForbesMember, ForbesBaseDebrisManufactoring):
         ForbesDebrisZone3,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
-    RU_NAME = 'Плавильня Норман'
+    RU_NAME = MS('Плавильня Норман', 'Norman Smelter')
     MISC_EQUIP_TYPE = LI_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Thruster(LI_CIV, eq_classes=markets.SECRET2),
@@ -209,7 +211,7 @@ class ForbesDebrisFactory4(ForbesMember, ForbesBaseDebrisManufactoring):
         ForbesDebrisZone4,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
-    RU_NAME = 'Плавильня Мемфис'
+    RU_NAME = MS('Плавильня Мемфис', "Memphis Smelter")
     MISC_EQUIP_TYPE = LI_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Thruster(LI_PIRATE, eq_classes=markets.SECRET2),
@@ -332,7 +334,7 @@ class ForbesDockring(ForbesMember, main_objects.LargePlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.LibertyPlanetDealers
     SHIP_SET = markets.ShipSet('bh_fighter', 'bh_elite', 'ge_csv')
-    RU_NAME = 'Планета Форбс'
+    RU_NAME = MS('Планета Форбс', 'Forbes Planet')
 
     BASE_PROPS = meta.LargePlanet(
         objectives=[
@@ -353,7 +355,7 @@ class ForbesShipyard(ForbesMember, main_objects.Shipyard):
     SPACE_OBJECT_TEMPLATE = shipyards.ForbesShipyard
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyCivilianDealers
-    RU_NAME = 'Верфь Филадельфия'
+    RU_NAME = MS('Верфь Филадельфия', 'Philadelphia Shipyard')
 
     NEBULA_ZONES = [
         ForbesBaseGreenNebula
@@ -368,7 +370,7 @@ class ForbesRefinery(ForbesMember, main_objects.Refinery):
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyCivilianDealers
     FACTION = faction.LibertyCivilians
-    RU_NAME = 'Станция Чикаго'
+    RU_NAME = MS('Станция Чикаго', 'Chicago Station')
 
     BASE_PROPS = meta.Refinery(
         objectives=[
@@ -385,7 +387,7 @@ class ForbesPolice(ForbesMember, main_objects.Outpost):
     INTERIOR_CLASS = interior.OutpostInterior
     AUDIO_PREFIX = SpaceVoice.BORDER_STATION
     DEALERS = dealers.LibertyMilitaryDealers
-    RU_NAME = 'Аванпост Милуоки'
+    RU_NAME = MS('Аванпост Милуоки', 'Outpost Milwaukee ')
 
 
 class ForbesLargeStation(ForbesMember, main_objects.Station):
@@ -397,7 +399,7 @@ class ForbesLargeStation(ForbesMember, main_objects.Station):
     INTERIOR_CLASS = interior.StationShipdealerBshbarInterior
     DEALERS = dealers.LibertyCivilianDealers
     SHIP_SET = markets.ShipSet('li_freighter')
-    RU_NAME = 'Станция Детроит'
+    RU_NAME = MS('Станция Детроит', 'Detroit Station')
 
     BASE_PROPS = meta.MediumStation(
         objectives=[
@@ -418,7 +420,7 @@ class ForbesResearch(ForbesMember, main_objects.ResearchStation):
 
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.LibertyCivilianDealers
-    RU_NAME = 'Исследовательская станция Ок-Ридж'
+    RU_NAME = MS('Исследовательская станция Ок-Ридж', 'Oak Ridge Research Station')
 
 
 class ForbesPlanet1(ForbesMember, main_objects.Planet):
@@ -431,7 +433,7 @@ class ForbesPlanet2(ForbesMember, main_objects.Planet):
     INDEX = 2
     ARCHETYPE = 'planet_crater_2000'
     SPHERE_RADIUS = 2000
-    RU_NAME = 'Планета Мичиган'
+    RU_NAME = MS('Планета Мичиган', "Planet Michigan")
 
 
 class ForbesOldOutpostRuins(ForbesMember, main_objects.StationRuins):
@@ -444,7 +446,7 @@ class ForbesOldOutpostRuins(ForbesMember, main_objects.StationRuins):
         ForbesDebrisZone5,
     ]
 
-    RU_NAME = 'Станция Миннесота'
+    RU_NAME = MS('Станция Миннесота', "Minnesota Station")
 
 
 class ForbesOldOutpostRuinsSuprisePoint1(ForbesMember, main_objects.HackableStation):
@@ -455,7 +457,7 @@ class ForbesOldOutpostRuinsSuprisePoint1(ForbesMember, main_objects.HackableStat
     RELATED_OBJECT_INDEX = 0
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpost
     INTERIOR_CLASS = interior.EquipDeckInterior
-    RU_NAME = 'Стыковочный узел Миннесоты'
+    RU_NAME = MS('Стыковочный узел Миннесоты', 'Minnesota Docking Point')
     MISC_EQUIP_TYPE = LI_CIV
     WEAPON_FACTION = WEAPON_LI
     EQUIP_SET = markets.EquipSet(
@@ -469,7 +471,7 @@ class ForbesAsteroidPirates(ForbesMember, main_objects.PirateAsteroid):
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = astbase.BerlinAsteroidBase
     FACTION = faction.LibertyPirate
-    RU_NAME = 'База Сан-Антонио'
+    RU_NAME = MS('База Сан-Антонио', "San-Antonio Base")
 
     DEFENCE_LEVEL = None
 
@@ -490,7 +492,7 @@ class ForbesJunkers(ForbesMember, main_objects.JunkerBase):
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseForbes
     FACTION = faction.Junkers
     SHIP_SET = markets.ShipSet('pi_fighter')
-    RU_NAME = 'База Монтгомери'
+    RU_NAME = MS('База Монтгомери', 'Montgomery Base')
 
     DEFENCE_LEVEL = None
 

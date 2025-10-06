@@ -25,6 +25,8 @@ from templates.dockable import tekagi_megabase
 from templates.dockable import roid_mining
 from templates.dockable import station_debris
 
+from text.strings import MultiString as MS
+
 
 class TekagiMember(Member):
     FACTION = faction.KusariMain
@@ -170,7 +172,7 @@ class TekagiRoidMiner1(TekagiMember, TekagiBaseRoidMiner):
     INDEX = 1
     BASE_INDEX = 61
     ASTEROID_ZONES = [TekagiAsteroidZone2]
-    RU_NAME = 'Рудокоп Нагато'
+    RU_NAME = MS('Рудокоп Нагато', "Roid Miner Nagato")
     MISC_EQUIP_TYPE = KU_MAIN
     WEAPON_FACTION = WEAPON_KU
     EQUIP_SET = markets.EquipSet(
@@ -183,7 +185,7 @@ class TekagiRoidMiner2(TekagiMember, TekagiBaseRoidMiner):
     INDEX = 2
     BASE_INDEX = 62
     ASTEROID_ZONES = [TekagiAsteroidZone3]
-    RU_NAME = 'Рудокоп Хаги'
+    RU_NAME = MS('Рудокоп Хаги', "Roid Miner Hagi")
     MISC_EQUIP_TYPE = KU_MAIN
     WEAPON_FACTION = WEAPON_KU
     EQUIP_SET = markets.EquipSet(
@@ -196,7 +198,7 @@ class TekagiRoidMiner3(TekagiMember, TekagiBaseRoidMiner):
     INDEX = 3
     BASE_INDEX = 63
     ASTEROID_ZONES = [TekagiAsteroidZone1]
-    RU_NAME = 'Рудокоп Хофу'
+    RU_NAME = MS('Рудокоп Хофу', "Roid Miner Hofu")
     MISC_EQUIP_TYPE = KU_MAIN
     WEAPON_FACTION = WEAPON_KU
     EQUIP_SET = markets.EquipSet(
@@ -209,7 +211,7 @@ class TekagiRoidMiner4(TekagiMember, TekagiBaseRoidMiner):
     INDEX = 4
     BASE_INDEX = 64
     ASTEROID_ZONES = [TekagiAsteroidZone1]
-    RU_NAME = 'Рудокоп Масуда'
+    RU_NAME = MS('Рудокоп Масуда', "Roid Miner Masuda")
     MISC_EQUIP_TYPE = KU_MAIN
     WEAPON_FACTION = WEAPON_KU
     EQUIP_SET = markets.EquipSet(
@@ -222,7 +224,7 @@ class TekagiRoidMiner5(TekagiMember, TekagiBaseRoidMiner):
     INDEX = 5
     BASE_INDEX = 65
     ASTEROID_ZONES = [TekagiAsteroidZone4]
-    RU_NAME = 'Рудокоп Хамада'
+    RU_NAME = MS('Рудокоп Хамада', "Roid Miner Hamada")
     MISC_EQUIP_TYPE = KU_MAIN
     WEAPON_FACTION = WEAPON_KU
     EQUIP_SET = markets.EquipSet(
@@ -235,7 +237,7 @@ class TekagiRoidMiner6(TekagiMember, TekagiBaseRoidMiner):
     INDEX = 6
     BASE_INDEX = 66
     ASTEROID_ZONES = [TekagiAsteroidZone2]
-    RU_NAME = 'Рудокоп Ода'
+    RU_NAME = MS('Рудокоп Ода', "Roid Miner Oda")
     MISC_EQUIP_TYPE = KU_MAIN
     WEAPON_FACTION = WEAPON_KU
     EQUIP_SET = markets.EquipSet(
@@ -248,7 +250,7 @@ class TekagiRoidMiner7(TekagiMember, TekagiBaseRoidMiner):
     INDEX = 7
     BASE_INDEX = 67
     ASTEROID_ZONES = [TekagiAsteroidZone5]
-    RU_NAME = 'Рудокоп Идзумо'
+    RU_NAME = MS('Рудокоп Идзумо', "Roid Miner Ijumo")
     MISC_EQUIP_TYPE = KU_MAIN
     WEAPON_FACTION = WEAPON_KU
     EQUIP_SET = markets.EquipSet(
@@ -261,7 +263,7 @@ class TekagiRoidMiner8(TekagiMember, TekagiBaseRoidMiner):
     INDEX = 8
     BASE_INDEX = 68
     ASTEROID_ZONES = [TekagiAsteroidZone9]
-    RU_NAME = 'Рудокоп Сакаиманато'
+    RU_NAME = MS('Рудокоп Сакаиманато', "Roid Miner Sakaimanato")
     MISC_EQUIP_TYPE = KU_MAIN
     WEAPON_FACTION = WEAPON_KU
     EQUIP_SET = markets.EquipSet(
@@ -274,7 +276,7 @@ class TekagiRoidMiner9(TekagiMember, TekagiBaseRoidMiner):
     INDEX = 9
     BASE_INDEX = 69
     ASTEROID_ZONES = [TekagiAsteroidZone8]
-    RU_NAME = 'Рудокоп Йонаго'
+    RU_NAME = MS('Рудокоп Йонаго', "Roid Miner Yonago")
     MISC_EQUIP_TYPE = KU_MAIN
     WEAPON_FACTION = WEAPON_KU
     EQUIP_SET = markets.EquipSet(
@@ -287,7 +289,7 @@ class TekagiRoidMiner10(TekagiMember, TekagiBaseRoidMiner):
     INDEX = 10
     BASE_INDEX = 70
     ASTEROID_ZONES = [TekagiAsteroidZone8]
-    RU_NAME = 'Рудокоп Нитинан'
+    RU_NAME = MS('Рудокоп Нитинан', "Roid Miner Nitinanan")
     MISC_EQUIP_TYPE = KU_MAIN
     WEAPON_FACTION = WEAPON_KU
     EQUIP_SET = markets.EquipSet(
@@ -404,7 +406,7 @@ file = Universe\\SYSTEMS_MOD\\KU_TAGAKI\\Room\\ku_tgk_01_palace.ini
     ''']
     DEALERS = dealers.KusariCivilianDealers
     SHIP_SET = markets.ShipSet('ku_freighter')
-    RU_NAME = 'Станция Йокогама'
+    RU_NAME = MS('Станция Йокогама', "Station Yokohama")
 
     REL_APPEND = 4000
 
@@ -424,7 +426,7 @@ class TekagiMiningStation(TekagiMember, main_objects.RoidMinerStation):
     SPACE_OBJECT_TEMPLATE = roid_mining.UpsilonRoidMining
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
-    RU_NAME = 'Станция Мацуэ'
+    RU_NAME = MS('Станция Мацуэ', "Matsue Station")
 
     BASE_PROPS = meta.RoidMiningStation(
         objectives=[
@@ -440,7 +442,7 @@ class TekagiFreeport(TekagiMember, main_objects.Freeport):
     SPACE_OBJECT_TEMPLATE = trade_storages.TekagiStorage
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.KusariCivilianDealers
-    RU_NAME = 'Фрипорт Фукуяма'
+    RU_NAME = MS('Фрипорт Фукуяма', 'Freeport Fukujama')
 
 
 class TekagiWestPirates(TekagiMember, main_objects.PirateAsteroid):
@@ -450,7 +452,7 @@ class TekagiWestPirates(TekagiMember, main_objects.PirateAsteroid):
     SPACE_OBJECT_TEMPLATE = astbase.BerlinAsteroidBase
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.KusariPirateDealers
-    RU_NAME = 'База Такамацу'
+    RU_NAME = MS('База Такамацу', 'Takamutsu Base')
 
     FACTION = faction.KusariPirate
     DEFENCE_LEVEL = None
@@ -463,7 +465,7 @@ class TekagiEastPirates(TekagiMember, main_objects.PirateAsteroid):
     SPACE_OBJECT_TEMPLATE = astbase.CaliforniaAsteroidBase
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.KusariPirateDealers
-    RU_NAME = 'База Коти'
+    RU_NAME = MS('База Коти', "Koti Base")
 
     FACTION = faction.KusariPirate
     DEFENCE_LEVEL = None
@@ -477,7 +479,7 @@ class TekagiRuins(TekagiMember, main_objects.StationRuins):
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.KusariPirateDealers
     REL_APPEND = 6000
-    RU_NAME = 'Станция Формоза'
+    RU_NAME = MS('Станция Формоза', "Formoza Station")
 
 
 class TekagiRuinsDropPoint1(TekagiMember, main_objects.HackableStation):
@@ -488,7 +490,7 @@ class TekagiRuinsDropPoint1(TekagiMember, main_objects.HackableStation):
     RELATED_OBJECT_INDEX = 0
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpostRot90
     INTERIOR_CLASS = interior.EquipDeckInterior
-    RU_NAME = 'Тюремный блок 1 Формозы'
+    RU_NAME = MS('Тюремный блок 1 Формозы', "Formoza Prison Block 1")
 
     MISC_EQUIP_TYPE = KU_MAIN
     WEAPON_FACTION = WEAPON_KU
@@ -506,7 +508,7 @@ class TekagiRuinsDropPoint2(TekagiMember, main_objects.HackableStation):
     RELATED_OBJECT_INDEX = 1
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpostRot90
     INTERIOR_CLASS = interior.EquipDeckInterior
-    RU_NAME = 'Тюремный блок 2 Формозы'
+    RU_NAME = MS('Тюремный блок 2 Формозы', "Formoza Prison Block 2")
 
     MISC_EQUIP_TYPE = KU_MAIN
     WEAPON_FACTION = WEAPON_KU
@@ -518,7 +520,7 @@ class TekagiRuinsDropPoint2(TekagiMember, main_objects.HackableStation):
 
 class TekagiVirtualDepot(TekagiMember, main_objects.VirtualDepot):
     REL = TOP
-    RU_NAME = 'Зона добычи руды'
+    RU_NAME = MS('Зона добычи руды', "Roid Mining Zone")
 
 
 class TekagiFreeportConn1(TekagiMember, main_objects.TradeConnection):

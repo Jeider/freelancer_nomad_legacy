@@ -29,6 +29,8 @@ from templates.dockable import police
 from templates.dockable import stuttgart_megabase
 from templates.dockable import bounty_hunter
 
+from text.strings import MultiString as MS
+
 
 class StutMember(Member):
     FACTION = faction.RheinlandMain
@@ -142,7 +144,7 @@ class StutDebrisFactory1(StutMember, StutBaseDebrisManufactoring):
         StutDebrisZone2,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
-    RU_NAME = 'Плавильня Гейдельберг'
+    RU_NAME = MS('Плавильня Гейдельберг', "Heidelberg Smelter")
     MISC_EQUIP_TYPE = RH_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Thruster(RH_PIRATE, eq_classes=markets.SECRET3),
@@ -157,7 +159,7 @@ class StutDebrisFactory2(StutMember, StutBaseDebrisManufactoring):
         StutDebrisZone3,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
-    RU_NAME = 'Плавильня Неандерталь'
+    RU_NAME = MS('Плавильня Неандерталь', 'Neanderthal Smelter')
     MISC_EQUIP_TYPE = RH_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Thruster(RH_CIV, eq_classes=markets.SECRET2),
@@ -250,7 +252,7 @@ class StutSolarPlant1(StutMember, StutBaseSolarPlant):
     ASTEROID_ZONES = [
         StutSolarMinesZone1,
     ]
-    RU_NAME = 'Солн.генератор Тюбинген'
+    RU_NAME = MS('Солн.генератор Тюбинген', 'Solar Planet Tübingen ')
     MISC_EQUIP_TYPE = RH_PIRATE
     EQUIP_SET = markets.EquipSet(
         Q.Power(RH_CIV, eq_classes=markets.SECRET3),
@@ -264,7 +266,7 @@ class StutSolarPlant2(StutMember, StutBaseSolarPlant):
     ASTEROID_ZONES = [
         StutSolarMinesZone2,
     ]
-    RU_NAME = 'Солн.генератор Хейльбронн'
+    RU_NAME = MS('Солн.генератор Хейльбронн', 'Solar Planet Heilbronn')
     MISC_EQUIP_TYPE = RH_PIRATE
     EQUIP_SET = markets.EquipSet(
         Q.Power(RH_CIV, eq_classes=markets.SECRET2),
@@ -278,7 +280,7 @@ class StutSolarPlant3(StutMember, StutBaseSolarPlant):
     ASTEROID_ZONES = [
         StutSolarMinesZone3,
     ]
-    RU_NAME = 'Солн.генератор Кобленц'
+    RU_NAME = MS('Солн.генератор Кобленц', 'Solar Plant Koblenz')
     MISC_EQUIP_TYPE = RH_PIRATE
     EQUIP_SET = markets.EquipSet(
         Q.Power(RH_PIRATE, eq_classes=markets.SECRET2),
@@ -292,7 +294,7 @@ class StutSolarPlant4(StutMember, StutBaseSolarPlant):
     ASTEROID_ZONES = [
         StutSolarMinesZone4,
     ]
-    RU_NAME = 'Солн.генератор Хамм'
+    RU_NAME = MS('Солн.генератор Хамм', 'Solar Plant Hamm')
     MISC_EQUIP_TYPE = RH_PIRATE
     EQUIP_SET = markets.EquipSet(
         Q.Power(RH_CIV, eq_classes=markets.SECRET2),
@@ -306,7 +308,7 @@ class StutSolarPlant5(StutMember, StutBaseSolarPlant):
     ASTEROID_ZONES = [
         StutSolarMinesZone5,
     ]
-    RU_NAME = 'Солн.генератор Кассель'
+    RU_NAME = MS('Солн.генератор Кассель', "Solar Planet Kassel")
     MISC_EQUIP_TYPE = RH_PIRATE
     EQUIP_SET = markets.EquipSet(
         Q.Power(RH_CIV, eq_classes=markets.SECRET3),
@@ -393,7 +395,7 @@ class StutDockring(StutMember, main_objects.LargePlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.RheinlandPlanetDealers
     SHIP_SET = markets.ShipSet('ge_fighter2', 'bw_elite2', 'rh_freighter')
-    RU_NAME = 'Планета Штутгарт'
+    RU_NAME = MS('Планета Штутгарт', "Planet Stuttgart")
 
     BASE_PROPS = meta.LargePlanet(
         objectives=[
@@ -412,7 +414,7 @@ class StutPoliceOutpost(StutMember, main_objects.Outpost):
     INTERIOR_CLASS = interior.OutpostInterior
     AUDIO_PREFIX = SpaceVoice.BORDER_STATION
     DEALERS = dealers.RheinlandMilitaryDealers
-    RU_NAME = 'Аванпост Цюрих'
+    RU_NAME = MS('Аванпост Цюрих', 'Outpost Zürich')
 
 
 class StutShipyard(StutMember, main_objects.Shipyard):
@@ -421,7 +423,7 @@ class StutShipyard(StutMember, main_objects.Shipyard):
     SPACE_OBJECT_TEMPLATE = shipyards.StuttgartShipyard
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.RheinlandMilitaryDealers
-    RU_NAME = 'Верфь Росток'
+    RU_NAME = MS('Верфь Росток', 'Rostock Shipyard')
 
 
 class StutMegabase(StutMember, main_objects.Station):
@@ -436,7 +438,7 @@ class StutMegabase(StutMember, main_objects.Station):
     NEBULA_EXCLUSION_ZONE_SIZE = 3500
     EXCLUSION_PARAMS = WALKER_EXCLUSION_PARAMS
     NEBULA_ZONES = [StutOrangeNebula1]
-    RU_NAME = 'Станция Мангейм'
+    RU_NAME = MS('Станция Мангейм', 'Mannheim Station')
 
     BASE_PROPS = meta.LargePlanet(
         objectives=[
@@ -455,7 +457,7 @@ class StutTraders(StutMember, main_objects.TradingBase):
     SPACE_OBJECT_TEMPLATE = bounty_hunter.ChurchAlive
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.RheinlandCivilianDealers
-    RU_NAME = 'Торговая база Франкфурт'
+    RU_NAME = MS('Торговая база Франкфурт', 'Trading base Frankfurt')
 
 
 class StutLuxuryDockring(StutMember, main_objects.ResortPlanetDockring):
@@ -466,7 +468,7 @@ class StutLuxuryDockring(StutMember, main_objects.ResortPlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSingleRoomInterior
     DEALERS = dealers.RheinlandPlanetDealers
     SHIP_SET = markets.ShipSet('bw_fighter')
-    RU_NAME = 'Планета Баден-Баден'
+    RU_NAME = MS('Планета Баден-Баден', 'Planet Baden-Baden')
 
 
 class StutNebulaPirates(StutMember, main_objects.PirateStation):
@@ -476,7 +478,7 @@ class StutNebulaPirates(StutMember, main_objects.PirateStation):
     FACTION = faction.RheinlandPirate
 
     DEFENCE_LEVEL = None
-    RU_NAME = 'База Фрайбург'
+    RU_NAME = MS('База Фрайбург', 'Freiburg Base')
 
     INTERIOR_BG1 = interior.INTERIOR_BG_WALKER
 
@@ -494,7 +496,7 @@ class StutJunkers(StutMember, main_objects.JunkerBase):
     FACTION = faction.Junkers
 
     DEFENCE_LEVEL = None
-    RU_NAME = 'База Висбаден'
+    RU_NAME = MS('База Висбаден', "Wiesbaden Base")
 
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -522,7 +524,7 @@ class StutPlanet3(StutMember, main_objects.Planet):
     INDEX = 3
     ARCHETYPE = 'planet_ice_grey_2000'
     SPHERE_RADIUS = 2000
-    RU_NAME = 'Планета Вюртемберг'
+    RU_NAME = MS('Планета Вюртемберг', "Planet Württemberg")
 
 
 class StutPoliceConn1(StutMember, main_objects.TradeConnection):

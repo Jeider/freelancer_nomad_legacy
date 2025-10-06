@@ -161,7 +161,7 @@ class Misson07(ingame_mission.IngameMission):
 
         defined_points.append(
             DockableBattleshipSolar(
-                self, S.br_avl, 'm7_bship1', ru_name=MS('Линкор Принц Уэльсский', 'Battleship Prince of Wales'), base='br_avl_99_base',
+                self, S.br_avl, 'm7_bship1', ru_name=N.PRINCE_OF_WALES, base='br_avl_99_base',
                 archetype='b_battleship', loadout='br_battleship_station'),
         )
         return defined_points

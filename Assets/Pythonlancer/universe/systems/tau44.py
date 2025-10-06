@@ -17,6 +17,8 @@ from templates.nebula import exclusion
 from templates.dockable import upsilon_gasinside
 from templates.dockable import valensia
 
+from story.ingame.names import PRINCE_OF_WALES
+
 
 class Tau44Member(Member):
     FACTION = faction.ASF
@@ -38,4 +40,4 @@ class Tau44PrinceWales(Tau44Member, main_objects.BretoniaBattleship):
     # ASF set?
     SHIP_SET = markets.ShipSet('br_elite')
     OFFER_MISSIONS = False
-    RU_NAME = 'Линкор Принц Уэльский'
+    RU_NAME = PRINCE_OF_WALES

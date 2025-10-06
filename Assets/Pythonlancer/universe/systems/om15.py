@@ -28,6 +28,8 @@ from templates.dockable import rheinland_military
 from templates.dockable import roid_mining
 from templates.dockable import station_debris
 
+from text.strings import MultiString as MS
+
 
 class Omega15Member(Member):
     FACTION = faction.RheinlandMain
@@ -177,7 +179,7 @@ class Om15BaseRoidMiner(main_objects.RoidMiner):
 class Om15RoidMiner1(Omega15Member, Om15BaseRoidMiner):
     INDEX = 1
     BASE_INDEX = 61
-    RU_NAME = 'Рудокоп Гранта'
+    RU_NAME = MS('Рудокоп Калина', 'Roid Miner Kalina')
     MISC_EQUIP_TYPE = RH_MAIN
     WEAPON_FACTION = WEAPON_RH
     EQUIP_SET = markets.EquipSet(
@@ -189,7 +191,7 @@ class Om15RoidMiner1(Omega15Member, Om15BaseRoidMiner):
 class Om15RoidMiner2(Omega15Member, Om15BaseRoidMiner):
     INDEX = 2
     BASE_INDEX = 62
-    RU_NAME = 'Рудокоп Каллиопа'
+    RU_NAME = MS('Рудокоп Каллиопа', 'Roid Miner Calliope')
     MISC_EQUIP_TYPE = RH_MAIN
     WEAPON_FACTION = WEAPON_RH
     EQUIP_SET = markets.EquipSet(
@@ -201,7 +203,7 @@ class Om15RoidMiner2(Omega15Member, Om15BaseRoidMiner):
 class Om15RoidMiner3(Omega15Member, Om15BaseRoidMiner):
     INDEX = 3
     BASE_INDEX = 63
-    RU_NAME = 'Рудокоп Гигея'
+    RU_NAME = MS('Рудокоп Гигея', 'Roid Miner Hygieia')
     MISC_EQUIP_TYPE = RH_MAIN
     WEAPON_FACTION = WEAPON_RH
     EQUIP_SET = markets.EquipSet(
@@ -213,7 +215,7 @@ class Om15RoidMiner3(Omega15Member, Om15BaseRoidMiner):
 class Om15RoidMiner4(Omega15Member, Om15BaseRoidMiner):
     INDEX = 4
     BASE_INDEX = 64
-    RU_NAME = 'Рудокоп Веста'
+    RU_NAME = MS('Рудокоп Веста', "Roid Miner Vesta")
     MISC_EQUIP_TYPE = RH_MAIN
     WEAPON_FACTION = WEAPON_RH
     EQUIP_SET = markets.EquipSet(
@@ -225,7 +227,7 @@ class Om15RoidMiner4(Omega15Member, Om15BaseRoidMiner):
 class Om15RoidMiner5(Omega15Member, Om15BaseRoidMiner):
     INDEX = 5
     BASE_INDEX = 65
-    RU_NAME = 'Рудокоп Паллада'
+    RU_NAME = MS('Рудокоп Паллада', 'Roid Miner Pallas')
     MISC_EQUIP_TYPE = RH_MAIN
     WEAPON_FACTION = WEAPON_RH
     EQUIP_SET = markets.EquipSet(
@@ -237,7 +239,7 @@ class Om15RoidMiner5(Omega15Member, Om15BaseRoidMiner):
 class Om15RoidMiner6(Omega15Member, Om15BaseRoidMiner):
     INDEX = 6
     BASE_INDEX = 66
-    RU_NAME = 'Рудокоп Матильда'
+    RU_NAME = MS('Рудокоп Матильда', "Roid Miner Matilda")
     MISC_EQUIP_TYPE = RH_MAIN
     WEAPON_FACTION = WEAPON_RH
     EQUIP_SET = markets.EquipSet(
@@ -249,7 +251,7 @@ class Om15RoidMiner6(Omega15Member, Om15BaseRoidMiner):
 class Om15RoidMiner7(Omega15Member, Om15BaseRoidMiner):
     INDEX = 7
     BASE_INDEX = 67
-    RU_NAME = 'Рудокоп Церера'
+    RU_NAME = MS('Рудокоп Церера', "Roid Miner Ceres")
     MISC_EQUIP_TYPE = RH_MAIN
     WEAPON_FACTION = WEAPON_RH
     EQUIP_SET = markets.EquipSet(
@@ -391,7 +393,7 @@ class Om15MiningStation(Omega15Member, main_objects.RoidMinerStation):
     INTERIOR_CLASS = interior.OutpostShipdealerInterior
     DEALERS = dealers.RheinlandCivilianDealers
     SHIP_SET = markets.ShipSet('ge_csv')
-    RU_NAME = 'Станция Лейпциг'
+    RU_NAME = MS('Станция Лейпциг', "Leipzig Station")
 
     BASE_PROPS = meta.RoidMiningStation(
         objectives=[
@@ -406,7 +408,7 @@ class Om15Outpost(Omega15Member, main_objects.Outpost):
     SPACE_OBJECT_TEMPLATE = rheinland_military.KelnShort
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.RheinlandMilitaryDealers
-    RU_NAME = 'Аванпост Билефельд'
+    RU_NAME = MS('Аванпост Билефельд', "Outpost Bielefeld")
 
     ASTEROID_ZONES = [Om15AsteroidZone1]
     AST_EXCLUSION_ZONE_SIZE = 4000
@@ -422,7 +424,7 @@ class Om15Freeport(Omega15Member, main_objects.Freeport):
     SPACE_OBJECT_TEMPLATE = trade_storages.RheinlandOmegaStorage
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.RheinlandMilitaryDealers
-    RU_NAME = 'Фрипорт Любек'
+    RU_NAME = MS('Фрипорт Любек', "Freeport Lübeck")
 
 
 class Om15Junkers(Omega15Member, main_objects.JunkerBase):
@@ -433,7 +435,7 @@ class Om15Junkers(Omega15Member, main_objects.JunkerBase):
     FACTION = faction.Junkers
 
     DEFENCE_LEVEL = None
-    RU_NAME = 'База Зиген'
+    RU_NAME = MS('База Зиген', "Siegen Base")
 
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -463,7 +465,7 @@ class Om15AbandonedStation(Omega15Member, main_objects.StationRuins):
     NEBULA_ZONES = [
         Om15RuinsNebula,
     ]
-    RU_NAME = 'Станция Данциг'
+    RU_NAME = MS('Станция Данциг', "Danzig Station")
 
 
 class Om15AbandonedStationDropPoint1(Omega15Member, main_objects.HackableStation):
@@ -474,7 +476,7 @@ class Om15AbandonedStationDropPoint1(Omega15Member, main_objects.HackableStation
     RELATED_OBJECT_INDEX = 0
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpost
     INTERIOR_CLASS = interior.EquipDeckInterior
-    RU_NAME = 'Исследовательский блок 1 Данцига'
+    RU_NAME = MS('Иссл. блок 1 Данцига', 'Danzig research block 1')
     MISC_EQUIP_TYPE = RH_CIV
     WEAPON_FACTION = WEAPON_RH
     EQUIP_SET = markets.EquipSet(
@@ -491,7 +493,7 @@ class Om15AbandonedStationDropPoint2(Omega15Member, main_objects.HackableStation
     RELATED_OBJECT_INDEX = 1
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpost
     INTERIOR_CLASS = interior.EquipDeckInterior
-    RU_NAME = 'Исследовательский блок 2 Данцига'
+    RU_NAME = MS('Иссл. блок 2 Данцига', 'Danzig research block 2')
     MISC_EQUIP_TYPE = RH_CIV
     WEAPON_FACTION = WEAPON_RH
     EQUIP_SET = markets.EquipSet(
@@ -504,19 +506,19 @@ class Om15Planet1(Omega15Member, main_objects.Planet):
     INDEX = 1
     ARCHETYPE = 'planet_moonred_3000'
     SPHERE_RADIUS = 3000
-    RU_NAME = 'Планета Фаэтон'
+    RU_NAME = MS('Планета Фаэтон', "Planet Phaeton")
 
 
 class Om15Planet2(Omega15Member, main_objects.Planet):
     INDEX = 2
     ARCHETYPE = 'planet_gasyelcld_3000'
     SPHERE_RADIUS = 3000
-    RU_NAME = 'Планета Эридан'
+    RU_NAME = MS('Планета Эридан', 'Planet Eridanus')
 
 
 class Om15VirtualDepot(Omega15Member, main_objects.VirtualDepot):
     REL = TOP
-    RU_NAME = 'Планета Фаэтон'
+    RU_NAME = MS('Планета Фаэтон', "Planet Phaeton")
 
 
 class Om15PoliceConn1(Omega15Member, main_objects.TradeConnection):
@@ -594,7 +596,7 @@ class Om15StoryCorsairBase(Omega15Member, main_objects.VirtualDepot):
     NEBULA_ZONES = [
         Om15StoryNebula
     ]
-    RU_NAME = 'База Корсаров для миссии 2'
+    RU_NAME = MS('База Корсаров для миссии 2', 'Corsair base for mission 2')
 
 
 class Om15StoryCorsairDepot(Omega15Member, main_objects.VirtualDepot):
@@ -606,4 +608,4 @@ class Om15StoryCorsairDepot(Omega15Member, main_objects.VirtualDepot):
     NEBULA_ZONES = [
         Om15StoryNebula
     ]
-    RU_NAME = 'Аванпост Корсаров для миссии 2'
+    RU_NAME = MS('Аванпост Корсаров для миссии 2', "Corsair outpost for mission 2")

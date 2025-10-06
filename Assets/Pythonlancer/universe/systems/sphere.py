@@ -17,6 +17,9 @@ from templates.nebula import exclusion
 from templates.dockable import upsilon_gasinside
 from templates.dockable import valensia
 
+from story.ingame.names import MISSOURI
+from text.strings import MultiString as MS
+
 
 class SphereMember(Member):
     FACTION = faction.ASF
@@ -48,7 +51,7 @@ file = Universe\SPECIAL\SPHERE\ROOM\dread_mnh_deck.ini
     # ASF set?
     SHIP_SET = markets.ShipSet('li_fighter')
     OFFER_MISSIONS = False
-    RU_NAME = 'Линкор Миссури'
+    RU_NAME = MISSOURI
 
 
 class SphereOneMissouriTorp(SphereMember, main_objects.LibertyBattleship):
@@ -76,7 +79,7 @@ file = Universe\SPECIAL\SPHERE\ROOM\dread_mnh_deck.ini
     EQUIP_SET = markets.MissoriSet
     # ASF set?
     SHIP_SET = markets.ShipSet('li_fighter')
-    RU_NAME = 'Линкор Миссури'
+    RU_NAME = MISSOURI
 
 
 class SphereOneLab(SphereMember, main_objects.Station):
@@ -89,7 +92,7 @@ class SphereOneLab(SphereMember, main_objects.Station):
     CALC_STORE = False
     FACTION = faction.LibertyMain
     IS_BASE = False
-    RU_NAME = 'Лаборатория в Сфере'
+    RU_NAME = MS('Лаборатория в Сфере', 'Sphere laboratory')
 
 
 class SphereOneDepotOne(SphereMember, main_objects.Station):
@@ -102,7 +105,7 @@ class SphereOneDepotOne(SphereMember, main_objects.Station):
     CALC_STORE = False
     FACTION = faction.RheinlandMain
     IS_BASE = False
-    RU_NAME = 'Блокпост в Сфере'
+    RU_NAME = MS('Блокпост в Сфере', 'Sphere Outpost')
 
 
 class SphereOneDepotTwo(SphereMember, main_objects.Station):
@@ -115,4 +118,4 @@ class SphereOneDepotTwo(SphereMember, main_objects.Station):
     CALC_STORE = False
     FACTION = faction.RheinlandMain
     IS_BASE = False
-    RU_NAME = 'Склад в Сфере'
+    RU_NAME = MS('Склад в Сфере', 'Sphere storage')

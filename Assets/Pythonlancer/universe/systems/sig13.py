@@ -25,6 +25,8 @@ from templates.nebula import exclusion
 from templates.nebula import sig13_blue_nebula
 from templates.solar import gas_crystal
 
+from text.strings import MultiString as MS
+
 
 class Sig13Member(Member):
     FACTION = faction.RheinlandMain
@@ -159,7 +161,7 @@ class Sig13LibertyStation(Sig13Liberty, Sig13Member, main_objects.GasMiningStati
     LOADOUT = 'smallstation_li'
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyCivilianDealers
-    RU_NAME = 'Станция Альбукерке'
+    RU_NAME = MS('Станция Альбукерке', 'Albuquerque Station')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 5000
     EXCLUSION_PARAMS = GENERIC_EXCLUSION_PARAMS
@@ -175,7 +177,7 @@ class Sig13RheinlandStation(Sig13Member, Sig13Rheinland, main_objects.GasMiningS
     SPACE_OBJECT_TEMPLATE = gas_miner.RheinlandCivilianGasMiner
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.RheinlandCivilianDealers
-    RU_NAME = 'Станция Магдебург'
+    RU_NAME = MS('Станция Магдебург', 'Magdeburg Station')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 3000
     EXCLUSION_PARAMS = GENERIC_EXCLUSION_PARAMS
@@ -191,7 +193,7 @@ class Sig13Battleship(Sig13Member, Sig13Rheinland, main_objects.RheinlandBattles
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.RheinlandMilitaryDealers
     SHIP_SET = markets.ShipSet('rh_elite')
-    RU_NAME = 'Линкор Макграф'
+    RU_NAME = MS('Линкор Маркграф', 'Battleship Markgraf')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
     EXCLUSION_PARAMS = CROW_EXCLUSION_PARAMS
@@ -207,7 +209,7 @@ class Sig13Freeport(Sig13Liberty, Sig13Member, main_objects.Freeport):
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.RheinlandCivilianDealers
     ROTATE_RANDOM = True
-    RU_NAME = 'Фрипорт 3'
+    RU_NAME = MS('Фрипорт 3', 'Freeport 3')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
     EXCLUSION_PARAMS = GENERIC_EXCLUSION_PARAMS
@@ -224,7 +226,7 @@ class Sig13PirateTopRight(Sig13Liberty, Sig13Member, main_objects.PirateGasMiner
     DEALERS = dealers.LibertyPirateDealers
     FACTION = faction.LibertyPirate
     DEFENCE_LEVEL = None
-    RU_NAME = 'База Ванкувер'
+    RU_NAME = MS('База Ванкувер', 'Vancouver Base')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
     EXCLUSION_PARAMS = CROW_EXCLUSION_PARAMS
@@ -241,7 +243,7 @@ class Sig13PirateTopLeft(Sig13Liberty, Sig13Member, main_objects.PirateGasMiner)
     DEALERS = dealers.LibertyPirateDealers
     FACTION = faction.LibertyPirate
     DEFENCE_LEVEL = None
-    RU_NAME = 'База Дакота'
+    RU_NAME = MS('База Дакота', 'Dakota Base')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
     EXCLUSION_PARAMS = CROW_EXCLUSION_PARAMS
@@ -258,7 +260,7 @@ class Sig13PirateBottom(Sig13Member, Sig13Rheinland, main_objects.PirateGasMiner
     DEALERS = dealers.RheinlandPirateDealers
     FACTION = faction.RheinlandPirate
     DEFENCE_LEVEL = None
-    RU_NAME = 'База Гринберг'
+    RU_NAME = MS('База Гринберг', "Greenberg Base")
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
     EXCLUSION_PARAMS = CROW_EXCLUSION_PARAMS
@@ -473,7 +475,7 @@ class Sig13GasPocketsZone3(Sig13Member, zones.AsteroidZone):
 class Sig13GasMiner1(Sig13Member, Sig13BaseRheinlandGasMiner):
     INDEX = 1
     BASE_INDEX = 51
-    RU_NAME = 'Газодобытчик Оснабрюк'
+    RU_NAME = MS('Газодобытчик Оснабрюк', 'Gas Miner Ossenbrügge')
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM3),
         Q.Thruster(RH_MAIN, eq_classes=markets.SECRET2),
@@ -483,7 +485,7 @@ class Sig13GasMiner1(Sig13Member, Sig13BaseRheinlandGasMiner):
 class Sig13GasMiner2(Sig13Member, Sig13BaseRheinlandGasMiner):
     INDEX = 2
     BASE_INDEX = 52
-    RU_NAME = 'Газодобытчик Эбербах'
+    RU_NAME = MS('Газодобытчик Эбербах', 'Gas Miner Eberbach')
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM2),
         Q.Thruster(RH_MAIN, eq_classes=markets.SECRET3),
@@ -493,7 +495,7 @@ class Sig13GasMiner2(Sig13Member, Sig13BaseRheinlandGasMiner):
 class Sig13GasMiner3(Sig13Member, Sig13BaseLibertyGasMiner):
     INDEX = 3
     BASE_INDEX = 53
-    RU_NAME = 'Газодобытчик Медфорд'
+    RU_NAME = MS('Газодобытчик Медфорд', "Gas Miner Medford")
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM3),
         Q.Thruster(LI_MAIN, eq_classes=markets.SECRET2),
@@ -503,7 +505,7 @@ class Sig13GasMiner3(Sig13Member, Sig13BaseLibertyGasMiner):
 class Sig13GasMiner4(Sig13Member, Sig13BaseRheinlandGasMiner):
     INDEX = 4
     BASE_INDEX = 54
-    RU_NAME = 'Газодобытчик Ландау'
+    RU_NAME = MS('Газодобытчик Ландау', "Gas Miner Landau")
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM2),
         Q.Thruster(RH_MAIN, eq_classes=markets.SECRET2),
@@ -513,7 +515,7 @@ class Sig13GasMiner4(Sig13Member, Sig13BaseRheinlandGasMiner):
 class Sig13GasMiner5(Sig13Member, Sig13BaseRheinlandGasMiner):
     INDEX = 5
     BASE_INDEX = 55
-    RU_NAME = 'Газодобытчик Логан'
+    RU_NAME = MS('Газодобытчик Логан', 'Gas Miner Logan')
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM3),
         Q.Thruster(RH_MAIN, eq_classes=markets.SECRET1),
@@ -523,7 +525,7 @@ class Sig13GasMiner5(Sig13Member, Sig13BaseRheinlandGasMiner):
 class Sig13GasMiner6(Sig13Member, Sig13BaseRheinlandGasMiner):
     INDEX = 6
     BASE_INDEX = 56
-    RU_NAME = 'Газодобытчик Вормс'
+    RU_NAME = MS('Газодобытчик Вормс', "Gas Miner Worms")
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM2),
         Q.Thruster(RH_MAIN, eq_classes=markets.SECRET3),
@@ -533,7 +535,7 @@ class Sig13GasMiner6(Sig13Member, Sig13BaseRheinlandGasMiner):
 class Sig13GasMiner7(Sig13Member, Sig13BaseLibertyGasMiner):
     INDEX = 7
     BASE_INDEX = 57
-    RU_NAME = 'Газодобытчик Дикинсон'
+    RU_NAME = MS('Газодобытчик Дикинсон', "Gas Miner Dickinson")
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM3),
         Q.Thruster(LI_MAIN, eq_classes=markets.SECRET2),
@@ -543,7 +545,7 @@ class Sig13GasMiner7(Sig13Member, Sig13BaseLibertyGasMiner):
 class Sig13GasMiner8(Sig13Member, Sig13BaseLibertyGasMiner):
     INDEX = 8
     BASE_INDEX = 58
-    RU_NAME = 'Газодобытчик Каспер'
+    RU_NAME = MS('Газодобытчик Каспер', "Gas Miner Casper")
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM2),
         Q.Thruster(LI_MAIN, eq_classes=markets.SECRET3),
@@ -553,7 +555,7 @@ class Sig13GasMiner8(Sig13Member, Sig13BaseLibertyGasMiner):
 class Sig13GasMiner9(Sig13Member, Sig13BaseLibertyGasMiner):
     INDEX = 9
     BASE_INDEX = 59
-    RU_NAME = 'Газодобытчик Уичито'
+    RU_NAME = MS('Газодобытчик Уичито', "Gas Miner Wichita")
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM3),
         Q.Thruster(LI_MAIN, eq_classes=markets.SECRET2),
@@ -645,7 +647,7 @@ class Sig13AbandonedMiner1(Sig13Member, Sig13Rheinland, Sig13BaseAbandonedMiner)
     ASTEROID_ZONES = [
         Sig13GasPocketsZone1
     ]
-    RU_NAME = 'База Лайбах'
+    RU_NAME = MS('База Лайбах', "Laibach Base")
     MISC_EQUIP_TYPE = RH_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Gun('rh_lightgun', eq_classes=markets.SECRET1),
@@ -659,7 +661,7 @@ class Sig13AbandonedMiner2(Sig13Member, Sig13Rheinland, Sig13BaseAbandonedMiner)
     ASTEROID_ZONES = [
         Sig13GasPocketsZone2
     ]
-    RU_NAME = 'База Лемберг'
+    RU_NAME = MS('База Лемберг', "Lemberg Base")
     MISC_EQUIP_TYPE = RH_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Gun('rh_heavygun', eq_classes=markets.SECRET2),
@@ -673,7 +675,7 @@ class Sig13AbandonedMiner3(Sig13Liberty, Sig13Member, Sig13BaseAbandonedMiner):
     ASTEROID_ZONES = [
         Sig13GasPocketsZone3
     ]
-    RU_NAME = 'База Монтана'
+    RU_NAME = MS('База Монтана', 'Montana Base')
     MISC_EQUIP_TYPE = LI_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Gun('li_heavygun', eq_classes=markets.SECRET2),
