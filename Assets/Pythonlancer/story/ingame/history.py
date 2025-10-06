@@ -1,3 +1,5 @@
+from text.strings import MultiString as MS
+
 ASTERISK = '*'  # MANDATORY to show up in history
 RU_ROOT = f'{ASTERISK}ЛИЧНАЯ ЗАПИСЬ:'
 
@@ -12,7 +14,10 @@ class HistoryItem:
     def __init__(self, ids, record):
         self.ids = ids
         self.record = record
-        self.name = self.ids.new_name(f'{RU_ROOT}\\n{self.record.ru}')
+        self.name = self.ids.new_name(MS(
+            f'{RU_ROOT}\\n{self.record.ru}',
+            ""
+        ))
 
     def show(self):
         return f'Act_NNIds = {self.name}, HISTORY'

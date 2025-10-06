@@ -506,7 +506,7 @@ class Sig17LuxuryRuins1(Sig17Member, main_objects.HackableLuxury):
 class Sig17Planet1(Sig17Member, main_objects.Planet):
     ARCHETYPE = 'planet_gasblucld_5000'
     SPHERE_RADIUS = 5000
-    RU_NAME = 'Планета Чикасо'
+    RU_NAME = MS('Планета Чикасо', 'Planet Chickasaw')
 
 
 class Sig17Planet2(Sig17Member, main_objects.Planet):

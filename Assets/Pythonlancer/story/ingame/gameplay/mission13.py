@@ -329,7 +329,7 @@ class BlackholePower:
 
     MISSION_TIMEOUT = 60
 
-    SCIENT_NAME = 'Энергия чёрной дыры'
+    SCIENT_NAME = MS('Энергия чёрной дыры', 'Energy of Black Hole')
 
     def __init__(self, mission, direct, trigger):
         self.mission: ingame_mission.IngameMission = mission
@@ -513,7 +513,7 @@ class Misson13(ingame_mission.IngameMission):
     def get_dialogs(self):
         return [
             TextDialog(
-                self, 'work_in_progress', 'Миссия завершена',
+                self, 'work_in_progress', MS('Миссия завершена', 'Mission accomplished'),
                 ru_content=MultiText([
                     'Вы успешно справлись с миссией! Она практически закончена, только не хватает сцены, в которой '
                     'мы с помощью того же устройства, что и в оригинальной миссии 13, атакуем лазером Крыга и '
@@ -521,13 +521,28 @@ class Misson13(ingame_mission.IngameMission):
 
                     'Проект продолжает развиваться. Вскоре будут сделаны все оставшиеся катсцены. И в том числе '
                     'красивый финал :-) Если вам понравился проект, то способы поддержать автора вы можете найти на '
-                    'сайте https://freelancer2.space. Этот проект долгие годы разрабатывался по большей части '
+                    'сайте https://freelancer2.space/ru. Этот проект долгие годы разрабатывался по большей части '
                     'одним человеком и автор отчаянно ищет мотивацию продолжать развивать проект и очень надеется, '
-                    'что вы ему в этом поможете :-) ',
+                    'что вы ему в этом поможете :-)',
 
                     'После закрытия этого окна кампания будет закончена и вам будет разрешено играть в открытом мире,'
                     'но так как это альфа-версия, то автор просто разрешает вам поиграть в текущей версии мира. В будущем '
                     'эндгейм будет выглядеть иначе. Может быть у меня получится сделать скайримо-лансер. Посмотрим :-)'
+                ],
+                [
+                    'Well done! You beat the main campaign. It almost done, only final cutscenes is left. Whe need to '
+                    'hit Krieg by vanilla\'s mission 13 device and destroy alien forever!',
+
+                    'Project is still going on. Soon all cutscenes will be completed. Included final :-). '
+                    'Like this project? You can support author on site https://freelancer2.space/en. You can find ways'
+                    ' for support at the bottom side of the site. This project was mostly created by one developer and '
+                    'author still for ways to find more motivation to continue project. He believe, you can help with '
+                    'it :-) ',
+
+                    'After closing of this popup dialog you can continue freelfight. This is ALPHA version, so, this '
+                    'is not final state of end of campaign and universe. Author just allows you to play in current '
+                    'version. It will be changed in future. Also, final mission should start from not from Sprague. But'
+                    ' endgame system insn\'t completed at this moment'
                 ]),
             ),
 
@@ -920,7 +935,7 @@ class Misson13(ingame_mission.IngameMission):
         ]
 
         inside_solars = [
-            ('sph02_ins_airlock_exit', 'выход'),
+            ('sph02_ins_airlock_exit', MS('выход', 'exit')),
         ]
 
         inside_points = [
@@ -1525,7 +1540,7 @@ class Misson13(ingame_mission.IngameMission):
                     'trent_wing'
                 ],
                 unique_npc_entry=True,
-                base_name='Альфа',
+                base_name=MS('Альфа', "Alpha"),
                 npc=NPC(
                     faction=faction.LibertyMain,
                     ship=ship.Defender,
@@ -1589,7 +1604,7 @@ class Misson13(ingame_mission.IngameMission):
                 ],
                 radius=0,
                 static_npc_shiparch='ms13_beast_ship_far',
-                force_name='Крыг',
+                force_name=N.KRIEG,
             ),
             Ship(
                 self,
@@ -1600,7 +1615,7 @@ class Misson13(ingame_mission.IngameMission):
                 ],
                 radius=0,
                 static_npc_shiparch='ms13_beast_ship_far_near',
-                force_name='Крыг',
+                force_name=N.KRIEG,
             ),
             Ship(
                 self,

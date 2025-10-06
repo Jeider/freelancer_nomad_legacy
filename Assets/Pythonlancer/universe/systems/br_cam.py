@@ -481,7 +481,7 @@ class CamRefinery(CamMember, main_objects.Refinery):
     BASE_INDEX = 6
     REL = LEFT
 
-    RU_NAME = 'Derby Station'
+    RU_NAME = MS('Станция Дерби', 'Derby Station')
 
     SPACE_OBJECT_TEMPLATE = columbia_production.ColumbiaSmallProduction
 

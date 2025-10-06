@@ -417,7 +417,7 @@ class BerlinPiratesBottom(BerlinMember, main_objects.PirateStation):
         BerlinDebrisZone5
     ]
     DEFENCE_LEVEL = None
-    RU_NAME = ('База Вюрцбург', "Würzburg Base")
+    RU_NAME = MS('База Вюрцбург', "Würzburg Base")
 
 
 class BerlinPlanet1(BerlinMember, main_objects.Planet):

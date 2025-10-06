@@ -33,7 +33,7 @@ class IDsManager:
         self.script = IDsDatabase('script', INITIAL_SCRIPT_ID)
         self.universe = IDsDatabase('universe', INITIAL_UNIVERSE_ID)
         self.rumors = IDsDatabase('rumor', INITIAL_RUMOR_ID)
-        self.static = IDsDatabase('static', INITIAL_STATICS_ID)
+        # self.static = IDsDatabase('static', INITIAL_STATICS_ID)
 
         self.databases = [
             self.weapon,
@@ -47,15 +47,11 @@ class IDsManager:
             self.script,
             self.universe,
             self.rumors,
-            self.static,
+            # self.static,
         ]
 
-        for item in RETURN_NAMES:
-            self.static.new_name(item)
-
-
-    def compile(self):
-        return ''.join([db.compile() for db in self.databases]).replace('+', '')
+        # for item in RETURN_NAMES:
+        #     self.static.new_name(item)
 
     def get_databases(self):
         return self.databases

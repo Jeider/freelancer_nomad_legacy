@@ -246,19 +246,41 @@ class Launcher(Equipment, MainEquipPrice, LauncherGood):
         self.rate = self.get_rate()
         self.mark = self.MARK_PER_CLASS[self.equipment_class]
 
-        self.ids_name = ids.new_name(self.get_ru_name())
+        self.ids_name = ids.new_name(
+            MS(
+                self.get_ru_name(),
+                self.get_en_name()
+            )
+        )
         self.ids_info = ids.new_info(
-            InfocardBuilder.build_equip_infocard(
-                self.get_ru_fullname(),
-                self.get_ru_description_content()
+            MS(
+                InfocardBuilder.build_equip_infocard(
+                    self.get_ru_fullname(),
+                    self.get_ru_description_content()
+                ),
+                InfocardBuilder.build_equip_infocard(
+                    self.get_en_fullname(),
+                    self.get_en_description_content()
+                )
             )
         )
 
-        self.ammo_ids_name = ids.new_name(self.get_ru_ammo_name())
+        self.ammo_ids_name = ids.new_name(
+            MS(
+                self.get_ru_ammo_name(),
+                self.get_en_ammo_name()
+            )
+        )
         self.ammo_ids_info = ids.new_info(
-            InfocardBuilder.build_equip_infocard(
-                self.get_ru_ammo_fullname(),
-                self.get_ru_ammo_description_content()
+            MS(
+                InfocardBuilder.build_equip_infocard(
+                    self.get_ru_ammo_fullname(),
+                    self.get_ru_ammo_description_content()
+                ),
+                InfocardBuilder.build_equip_infocard(
+                    self.get_en_ammo_fullname(),
+                    self.get_en_ammo_description_content()
+                )
             )
         )
 
@@ -303,16 +325,16 @@ class Launcher(Equipment, MainEquipPrice, LauncherGood):
             return '{ru_kind} {base_name} {mark}'.format(
                 ru_kind=self.RU_KIND.get_ru(),
                 base_name=self.get_ru_base_name(),
-                mark=self.get_mark_name(),
+                mark=self.get_mark_name().get_ru(),
             )
         else:
             return '{base_name} {mark}'.format(
                 base_name=self.get_ru_base_name(),
-                mark=self.get_mark_name(),
+                mark=self.get_mark_name().get_ru(),
             )
 
     def get_ru_ammo_name(self):
-        return f'Снаряд: {self.get_ru_base_name()} {self.get_mark_name()}'
+        return f'Снаряд: {self.get_ru_base_name()} {self.get_mark_name().get_ru()}'
 
     def get_ru_name_desc(self):
         return self.RU_NAME_DESC_PER_FACTION[self.faction]
@@ -325,7 +347,7 @@ class Launcher(Equipment, MainEquipPrice, LauncherGood):
     def get_ru_fullname(self):
         return '{described_name} {name} {mark}'.format(
             name=self.get_ru_base_name(),
-            mark=self.get_mark_name(),
+            mark=self.get_mark_name().get_ru(),
             described_name=self.get_ru_name_desc(),
         )
 
@@ -366,11 +388,11 @@ class Launcher(Equipment, MainEquipPrice, LauncherGood):
         return '{base_name} {ru_kind} {mark}'.format(
             ru_kind=self.RU_KIND.get_en(),
             base_name=self.get_en_base_name(),
-            mark=self.get_mark_name(),
+            mark=self.get_mark_name().get_en(),
         )
 
     def get_en_ammo_name(self):
-        return f'Munition: {self.get_en_base_name()} {self.get_mark_name()}'
+        return f'Munition: {self.get_en_base_name()} {self.get_mark_name().get_en()}'
 
     def get_en_name_desc(self):
         return self.EN_NAME_DESC_PER_FACTION[self.faction]
@@ -383,7 +405,7 @@ class Launcher(Equipment, MainEquipPrice, LauncherGood):
     def get_en_fullname(self):
         return '{described_name} {name} {mark}'.format(
             name=self.get_en_base_name(),
-            mark=self.get_mark_name(),
+            mark=self.get_mark_name().get_en(),
             described_name=self.get_en_name_desc(),
         )
 
@@ -1391,19 +1413,41 @@ class CM(Equipment, MainEquipPrice, LauncherGood):
         self.rate = self.get_rate()
         self.mark = Launcher.MARK_PER_CLASS[self.equipment_class]
 
-        self.ids_name = ids.new_name(self.get_ru_name())
+        self.ids_name = ids.new_name(
+            MS(
+                self.get_ru_name(),
+                self.get_en_name()
+            )
+        )
         self.ids_info = ids.new_info(
-            InfocardBuilder.build_equip_infocard(
-                self.get_ru_fullname(),
-                self.get_ru_description_content()
+            MS(
+                InfocardBuilder.build_equip_infocard(
+                    self.get_ru_fullname(),
+                    self.get_ru_description_content()
+                ),
+                InfocardBuilder.build_equip_infocard(
+                    self.get_en_fullname(),
+                    self.get_en_description_content()
+                )
             )
         )
 
-        self.ammo_ids_name = ids.new_name(self.get_ru_ammo_name())
+        self.ammo_ids_name = ids.new_name(
+            MS(
+                self.get_ru_ammo_name(),
+                self.get_en_ammo_name()
+            )
+        )
         self.ammo_ids_info = ids.new_info(
-            InfocardBuilder.build_equip_infocard(
-                self.get_ru_ammo_fullname(),
-                self.get_ru_ammo_description_content()
+            MS(
+                InfocardBuilder.build_equip_infocard(
+                    self.get_ru_ammo_fullname(),
+                    self.get_ru_ammo_description_content()
+                ),
+                InfocardBuilder.build_equip_infocard(
+                    self.get_en_ammo_fullname(),
+                    self.get_en_ammo_description_content()
+                )
             )
         )
 
@@ -1426,7 +1470,7 @@ class CM(Equipment, MainEquipPrice, LauncherGood):
         return self.get_civ_rate()
 
     def get_ru_name(self):
-        return self.CM_NAME_PER_MARK[self.mark-1]
+        return self.RU_CM_NAME_PER_MARK[self.mark-1]
 
     def get_ru_ammo_name(self):
         return f'Снаряд: {self.get_ru_name()}'
@@ -1437,12 +1481,12 @@ class CM(Equipment, MainEquipPrice, LauncherGood):
         )
 
     def get_ru_fullname(self):
-        return self.CM_DESC_NAME_PER_MARK[self.mark-1]
+        return self.RU_CM_DESC_NAME_PER_MARK[self.mark-1]
 
     def get_ru_description_content(self):
         content = []
 
-        content.append(self.RU_BASE_INFO)
+        content.append(self.RU_BASE_INFO.get_ru())
 
         content.append(f'Боекомплект: {self.get_ammo_limit()}')
 
@@ -1455,12 +1499,52 @@ class CM(Equipment, MainEquipPrice, LauncherGood):
     def get_ru_ammo_description_content(self):
         content = []
 
-        content.append(self.RU_BASE_INFO)
+        content.append(self.RU_BASE_INFO.get_ru())
 
         content.append(f'Боекомплект: {self.get_ammo_limit()}')
 
         content.append(
             f'Требуется для использования установки {self.get_ru_name()}'
+        )
+
+        return content
+
+    def get_en_name(self):
+        return self.EN_CM_NAME_PER_MARK[self.mark-1]
+
+    def get_en_ammo_name(self):
+        return f'Munition: {self.get_en_name()}'
+
+    def get_en_ammo_fullname(self):
+        return 'Munition for launcher {name}'.format(
+            name=self.get_en_name()
+        )
+
+    def get_en_fullname(self):
+        return self.EN_CM_DESC_NAME_PER_MARK[self.mark-1]
+
+    def get_en_description_content(self):
+        content = []
+
+        content.append(self.RU_BASE_INFO.get_en())
+
+        content.append(f'Боекомплект: {self.get_ammo_limit()}')
+
+        content.append(
+            f'*Требуются снаряды типа {self.get_en_name()}'
+        )
+
+        return content
+
+    def get_en_ammo_description_content(self):
+        content = []
+
+        content.append(self.RU_BASE_INFO.get_en())
+
+        content.append(f'Боекомплект: {self.get_ammo_limit()}')
+
+        content.append(
+            f'Требуется для использования установки {self.get_en_name()}'
         )
 
         return content

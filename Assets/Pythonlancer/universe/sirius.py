@@ -1,3 +1,5 @@
+from text.strings import MultiString as MS
+
 from universe import system
 from universe.content import population
 from universe.content import jump_effect
@@ -50,7 +52,7 @@ from universe.systems import co_mad as co_mad_content
 class rh_mnh(system.RheinlandFirst, system.System, system.SiriusSystem):
     NAME = 'rh_mnh'
     TEMPLATE_NAME = 'rh_mnh'
-    RU_NAME = 'Мюнхен'
+    RU_NAME = MS('Мюнхен', 'Munich')
     CONTENT = rh_mnh_content
 
     SYSTEM_FOLDER = 'RH_MUNCHEN'
@@ -64,7 +66,7 @@ class rh_mnh(system.RheinlandFirst, system.System, system.SiriusSystem):
 class rh_biz(system.RheinlandFirst, system.System, system.SiriusSystem):
     NAME = 'rh_biz'
     TEMPLATE_NAME = 'rh_biz'
-    RU_NAME = 'Б+исмарк'
+    RU_NAME = MS('Б+исмарк', 'Bismarck')
     CONTENT = rh_biz_content
 
     SYSTEM_FOLDER = 'RH_BIZMARK'
@@ -78,7 +80,7 @@ class rh_biz(system.RheinlandFirst, system.System, system.SiriusSystem):
 class rh_stut(system.RheinlandFirst, system.System, system.SiriusSystem):
     NAME = 'rh_stut'
     TEMPLATE_NAME = 'rh_stut'
-    RU_NAME = 'Шт+утгарт'
+    RU_NAME = MS('Шт+утгарт', 'Stuttgart')
     CONTENT = rh_stut_content
 
     SYSTEM_FOLDER = 'RH_STUTTGART'
@@ -92,7 +94,7 @@ class rh_stut(system.RheinlandFirst, system.System, system.SiriusSystem):
 class rh_ber(system.RheinlandFirst, system.System, system.SiriusSystem):
     NAME = 'rh_ber'
     TEMPLATE_NAME = 'rh_ber'
-    RU_NAME = 'Берл+ин'
+    RU_NAME = MS('Берл+ин', "Berlin")
     CONTENT = rh_ber_content
 
     SYSTEM_FOLDER = 'RH_BERLIN'
@@ -106,7 +108,7 @@ class rh_ber(system.RheinlandFirst, system.System, system.SiriusSystem):
 class sig8(system.RheinlandFirst, system.System, system.SiriusSystem):
     NAME = 'sig8'
     TEMPLATE_NAME = 'sig8'
-    RU_NAME = 'С+игма-8'
+    RU_NAME = MS('С+игма-8', "Sigma-8")
     CONTENT = sig8_content
 
     SYSTEM_FOLDER = 'SIGMA8'
@@ -120,7 +122,7 @@ class sig8(system.RheinlandFirst, system.System, system.SiriusSystem):
 class om15(system.RheinlandFirst, system.System, system.SiriusSystem):
     NAME = 'om15'
     TEMPLATE_NAME = 'om15'
-    RU_NAME = 'Ом+ега-15'
+    RU_NAME = MS('Ом+ега-15', 'Omega-15')
     CONTENT = om15_content
 
     SYSTEM_FOLDER = 'OMEGA15'
@@ -134,7 +136,7 @@ class om15(system.RheinlandFirst, system.System, system.SiriusSystem):
 class sig13(system.RheinlandFirst, system.LibertySecond, system.System, system.SiriusSystem):
     NAME = 'sig13'
     TEMPLATE_NAME = 'sig13'
-    RU_NAME = 'С+игма-13'
+    RU_NAME = MS('С+игма-13', 'Sigma-13')
     CONTENT = sig13_content
 
     SYSTEM_FOLDER = 'SIGMA13'
@@ -148,7 +150,7 @@ class sig13(system.RheinlandFirst, system.LibertySecond, system.System, system.S
 class li_cal(system.LibertyFirst, system.System, system.SiriusSystem):
     NAME = 'li_cal'
     TEMPLATE_NAME = 'li_cal'
-    RU_NAME = 'Калиф+орния'
+    RU_NAME = MS('Калиф+орния', 'California')
     CONTENT = li_cal_content
 
     SYSTEM_FOLDER = 'LI_CALIFORNIA'
@@ -162,7 +164,7 @@ class li_cal(system.LibertyFirst, system.System, system.SiriusSystem):
 class sig22(system.LibertyFirst, system.BretoniaSecond, system.System, system.SiriusSystem):
     NAME = 'sig22'
     TEMPLATE_NAME = 'sig22'
-    RU_NAME = 'С+игма-22'
+    RU_NAME = MS('С+игма-22', 'Sigma-22')
     CONTENT = sig22_content
 
     SYSTEM_FOLDER = 'SIGMA22'
@@ -176,7 +178,7 @@ class sig22(system.LibertyFirst, system.BretoniaSecond, system.System, system.Si
 class li_mnh(system.LibertyFirst, system.System, system.SiriusSystem):
     NAME = 'li_mnh'
     TEMPLATE_NAME = 'li_mnh'
-    RU_NAME = 'Нь+ю-Й+орк'
+    RU_NAME = MS('Нь+ю-Й+орк', 'New York')
     CONTENT = li_mnh_content
 
     SYSTEM_FOLDER = 'LI_MANHATTAN'
@@ -190,7 +192,7 @@ class li_mnh(system.LibertyFirst, system.System, system.SiriusSystem):
 class li_for(system.LibertyFirst, system.System, system.SiriusSystem):
     NAME = 'li_for'
     TEMPLATE_NAME = 'li_for'
-    RU_NAME = 'Ф+орбс'
+    RU_NAME = MS('Ф+орбс', "Forbes")
     CONTENT = li_for_content
 
     SYSTEM_FOLDER = 'LI_FORBES'
@@ -204,7 +206,7 @@ class li_for(system.LibertyFirst, system.System, system.SiriusSystem):
 class sig17(system.LibertyFirst, system.System, system.SiriusSystem):
     NAME = 'sig17'
     TEMPLATE_NAME = 'sig17'
-    RU_NAME = 'С+игма-17'
+    RU_NAME = MS('С+игма-17', "Sigma-17")
     CONTENT = sig17_content
 
     SYSTEM_FOLDER = 'SIGMA17'
@@ -220,7 +222,7 @@ class sig17(system.LibertyFirst, system.System, system.SiriusSystem):
 class li_col(system.LibertyFirst, system.System, system.SiriusSystem):
     NAME = 'li_col'
     TEMPLATE_NAME = 'li_col'
-    RU_NAME = 'Кол+умбия'
+    RU_NAME = MS('Кол+умбия', "Columbia")
     CONTENT = li_col_content
 
     SYSTEM_FOLDER = 'LI_COLUMBIA'
@@ -234,7 +236,7 @@ class li_col(system.LibertyFirst, system.System, system.SiriusSystem):
 class tau31(system.LibertyFirst, system.System, system.SiriusSystem):
     NAME = 'tau31'
     TEMPLATE_NAME = 'tau31'
-    RU_NAME = 'Т+ау-31'
+    RU_NAME = MS('Т+ау-31', "Tau-31")
     CONTENT = tau31_content
 
     SYSTEM_FOLDER = 'TAU31'
@@ -248,7 +250,7 @@ class tau31(system.LibertyFirst, system.System, system.SiriusSystem):
 class br_wrw(system.BretoniaFirst, system.System, system.SiriusSystem):
     NAME = 'br_wrw'
     TEMPLATE_NAME = 'br_wrw'
-    RU_NAME = 'У+орик'
+    RU_NAME = MS('У+орик', "Warwick")
     CONTENT = br_wrw_content
 
     SYSTEM_FOLDER = 'BR_WARWICK'
@@ -262,7 +264,7 @@ class br_wrw(system.BretoniaFirst, system.System, system.SiriusSystem):
 class tau29(system.BretoniaFirst, system.System, system.SiriusSystem):
     NAME = 'tau29'
     TEMPLATE_NAME = 'tau29'
-    RU_NAME = 'Тау-29'
+    RU_NAME = MS('Тау-29', "Tau-29")
     CONTENT = tau29_content
 
     SYSTEM_FOLDER = 'TAU29'
@@ -276,7 +278,7 @@ class tau29(system.BretoniaFirst, system.System, system.SiriusSystem):
 class br_cam(system.BretoniaFirst, system.System, system.SiriusSystem):
     NAME = 'br_cam'
     TEMPLATE_NAME = 'br_cam'
-    RU_NAME = 'К+ембридж'
+    RU_NAME = MS('К+ембридж', "Cambidge")
     CONTENT = br_cam_content
 
     SYSTEM_FOLDER = 'BR_CAMBRIDGE'
@@ -290,7 +292,7 @@ class br_cam(system.BretoniaFirst, system.System, system.SiriusSystem):
 class tau37(system.BretoniaFirst, system.System, system.SiriusSystem):
     NAME = 'tau37'
     TEMPLATE_NAME = 'tau37'
-    RU_NAME = 'Тау-37'
+    RU_NAME = MS('Тау-37', "Tau-37")
     CONTENT = tau37_content
 
     SYSTEM_FOLDER = 'TAU37'
@@ -306,7 +308,7 @@ class tau37(system.BretoniaFirst, system.System, system.SiriusSystem):
 class br_avl(system.BretoniaFirst, system.System, system.SiriusSystem):
     NAME = 'br_avl'
     TEMPLATE_NAME = 'br_avl'
-    RU_NAME = 'Авал+он'
+    RU_NAME = MS('Авал+он', 'Avalon')
     CONTENT = br_avl_content
 
     SYSTEM_FOLDER = 'BR_AVALON'
@@ -320,7 +322,7 @@ class br_avl(system.BretoniaFirst, system.System, system.SiriusSystem):
 class sig42(system.BretoniaFirst, system.KusariSecond, system.System, system.SiriusSystem):
     NAME = 'sig42'
     TEMPLATE_NAME = 'sig42'
-    RU_NAME = 'С+ириус'
+    RU_NAME = MS('С+ириус', 'Sirius')
     CONTENT = sig42_content
 
     SYSTEM_FOLDER = 'SIGMA42'
@@ -334,7 +336,7 @@ class sig42(system.BretoniaFirst, system.KusariSecond, system.System, system.Sir
 class tau23(system.BretoniaFirst, system.KusariSecond, system.System, system.SiriusSystem):
     NAME = 'tau23'
     TEMPLATE_NAME = 'tau23'
-    RU_NAME = 'Тау-23'
+    RU_NAME = MS('Тау-23', 'Tau-23')
     CONTENT = tau23_content
 
     SYSTEM_FOLDER = 'TAU23'
@@ -348,7 +350,7 @@ class tau23(system.BretoniaFirst, system.KusariSecond, system.System, system.Sir
 class ku_ksu(system.KusariFirst, system.System, system.SiriusSystem):
     NAME = 'ku_ksu'
     TEMPLATE_NAME = 'ku_ksu'
-    RU_NAME = 'Кус+ю'
+    RU_NAME = MS('Кус+ю', 'Kyushu')
     CONTENT = ku_ksu_content
 
     SYSTEM_FOLDER = 'KU_KYUSHU'
@@ -362,7 +364,7 @@ class ku_ksu(system.KusariFirst, system.System, system.SiriusSystem):
 class tau4(system.KusariFirst, system.System, system.SiriusSystem):
     NAME = 'tau4'
     TEMPLATE_NAME = 'tau4'
-    RU_NAME = 'Тау-4'
+    RU_NAME = MS('Тау-4', 'Tau-4')
     CONTENT = tau4_content
 
     SYSTEM_FOLDER = 'TAU4'
@@ -378,7 +380,7 @@ class tau4(system.KusariFirst, system.System, system.SiriusSystem):
 class ku_hns(system.KusariFirst, system.System, system.SiriusSystem):
     NAME = 'ku_hns'
     TEMPLATE_NAME = 'ku_hns'
-    RU_NAME = 'Хонс+ю'
+    RU_NAME = MS('Хонс+ю', 'Honshu')
     CONTENT = ku_hns_content
 
     SYSTEM_FOLDER = 'KU_HONSHU'
@@ -392,7 +394,7 @@ class ku_hns(system.KusariFirst, system.System, system.SiriusSystem):
 class ku_tgk(system.KusariFirst, system.System, system.SiriusSystem):
     NAME = 'ku_tgk'
     TEMPLATE_NAME = 'ku_tgk'
-    RU_NAME = 'Ом+ега-3'
+    RU_NAME = MS('Ом+ега-3', "Omega-3")
     CONTENT = ku_tgk_content
 
     SYSTEM_FOLDER = 'KU_TAGAKI'
@@ -406,7 +408,7 @@ class ku_tgk(system.KusariFirst, system.System, system.SiriusSystem):
 class ku_hkd(system.KusariFirst, system.System, system.SiriusSystem):
     NAME = 'ku_hkd'
     TEMPLATE_NAME = 'ku_hkd'
-    RU_NAME = 'Хокк+айдо'
+    RU_NAME = MS('Хокк+айдо', 'Hokkaido')
     CONTENT = ku_hkd_content
 
     SYSTEM_FOLDER = 'KU_HOKKAIDO'
@@ -420,7 +422,7 @@ class ku_hkd(system.KusariFirst, system.System, system.SiriusSystem):
 class om7(system.KusariFirst, system.RheinlandSecond, system.System, system.SiriusSystem):
     NAME = 'om7'
     TEMPLATE_NAME = 'om7'
-    RU_NAME = 'Ом+ега-7'
+    RU_NAME = MS('Ом+ега-7', 'Omega-7')
     CONTENT = om7_content
 
     SYSTEM_FOLDER = 'OMEGA7'
@@ -434,7 +436,7 @@ class om7(system.KusariFirst, system.RheinlandSecond, system.System, system.Siri
 class rh_kgb(system.RheinlandFirst, system.System, system.SiriusSystem):
     NAME = 'rh_kgb'
     TEMPLATE_NAME = 'rh_kgb'
-    RU_NAME = 'К+ёнигсберг'
+    RU_NAME = MS('К+ёнигсберг', "Konigsberg")
     CONTENT = rh_kgb_content
 
     SYSTEM_FOLDER = 'RH_KOENIGSBERG'
@@ -487,7 +489,7 @@ class rh_kgb(system.RheinlandFirst, system.System, system.SiriusSystem):
 
 class co_cur(system.System, system.SiriusSystem):
     NAME = 'co_cur'
-    RU_NAME = 'Кюрос+ао'
+    RU_NAME = MS('Кюрос+ао', "Curacao")
 
     SYSTEM_FOLDER = 'CO_CURACAO'
     NAVMAP_POS = '1, 2.5'
@@ -500,7 +502,7 @@ class co_mad(system.System, system.SiriusSystem):
 
     NAME = 'co_mad'
     TEMPLATE_NAME = 'co_mad'
-    RU_NAME = 'Мадр+ид'
+    RU_NAME = MS('Мадр+ид', 'Madrid')
     CONTENT = co_mad_content
 
     SYSTEM_FOLDER = 'CO_MADRID'
@@ -518,7 +520,7 @@ class co_och(system.System, system.SiriusSystem):
 
     NAME = 'co_och'
     TEMPLATE_NAME = 'co_och'
-    RU_NAME = 'Очо-Р+иос'
+    RU_NAME = MS('Очо-Р+иос', 'Ocho-Rios')
     CONTENT = co_och_content
 
     SYSTEM_FOLDER = 'CO_OCHORIOS'
@@ -531,7 +533,7 @@ class co_och(system.System, system.SiriusSystem):
 
 class co_cad(system.StorySystem, system.SiriusSystem):
     NAME = 'co_cad'
-    RU_NAME = 'Кад+из'
+    RU_NAME = MS('Мальта', 'Malta')
     DIRECT_TEMPLATE_NAME = 'co_cad_dev'
     CONTENT = co_cad_content
     ALLOW_SYNC = True
@@ -544,7 +546,7 @@ class co_cad(system.StorySystem, system.SiriusSystem):
 
 class om13(system.System, system.SiriusSystem):
     NAME = 'om13'
-    RU_NAME = 'Ом+ега-13'
+    RU_NAME = MS('Ом+ега-13', 'Omega-13')
 
     SYSTEM_FOLDER = 'OMEGA13'
     NAVMAP_POS = '15, 13'
@@ -553,7 +555,7 @@ class om13(system.System, system.SiriusSystem):
 
 class tau26(system.System, system.SiriusSystem):
     NAME = 'tau26'
-    RU_NAME = 'Т+ау-26'
+    RU_NAME = MS('Т+ау-26', 'Tau-26')
 
     SYSTEM_FOLDER = 'TAU26'
     NAVMAP_POS = '-0.3, 10'
@@ -563,7 +565,7 @@ class tau26(system.System, system.SiriusSystem):
 class om11(system.System, system.SiriusSystem):
     NAME = 'om11'
     TEMPLATE_NAME = 'om11'
-    RU_NAME = 'Ом+ега-11'
+    RU_NAME = MS('Ом+ега-11', 'Omega-11')
     CONTENT = om11_content
 
     SYSTEM_FOLDER = 'OMEGA11'
@@ -579,7 +581,7 @@ class om11(system.System, system.SiriusSystem):
 
 class br_uls(system.System, system.SiriusSystem):
     NAME = 'br_uls'
-    RU_NAME = '+Ольстер'
+    RU_NAME = MS('+Ольстер', 'Ulster')
 
     SYSTEM_FOLDER = 'BR_ULSTER'
     NAVMAP_POS = '4.5, 3'
@@ -588,7 +590,7 @@ class br_uls(system.System, system.SiriusSystem):
 
 class upsilon1(system.System, system.SiriusSystem):
     NAME = 'upsilon1'
-    RU_NAME = 'Больш+ой +Ипсилон'
+    RU_NAME = MS('Больш+ой +Ипсилон', 'Upsilon Major')
 
     SYSTEM_FOLDER = 'UPSILON_MAJOR'
     NAVMAP_POS = '2, 13.5'
@@ -597,7 +599,7 @@ class upsilon1(system.System, system.SiriusSystem):
 
 class upsilon2(system.System, system.SiriusSystem):
     NAME = 'upsilon2'
-    RU_NAME = 'М+алый +Ипсилон'
+    RU_NAME = MS('М+алый +Ипсилон', 'Upsilon Minor')
 
     SYSTEM_FOLDER = 'UPSILON_MINOR'
     NAVMAP_POS = '-0, 6'
@@ -606,7 +608,7 @@ class upsilon2(system.System, system.SiriusSystem):
 
 class omicron1(system.System, system.SiriusSystem):
     NAME = 'omicron1'
-    RU_NAME = 'Больш+ой Омикр+он'
+    RU_NAME = MS('Больш+ой Омикр+он', 'Omicron Major')
 
     SYSTEM_FOLDER = 'OMICRON_MAJOR'
     NAVMAP_POS = '16, 3'
@@ -615,7 +617,7 @@ class omicron1(system.System, system.SiriusSystem):
 
 class omicron2(system.StorySystem, system.SiriusSystem):
     NAME = 'omicron2'
-    RU_NAME = 'М+алый Омикр+он'
+    RU_NAME = MS('М+алый Омикр+он', 'Omicron Minor')
     DIRECT_TEMPLATE_NAME = 'omicron2_dev'
     ALLOW_SYNC = True
 
@@ -631,7 +633,7 @@ class omicron2(system.StorySystem, system.SiriusSystem):
 class sphere(system.StorySystem, system.SiriusSystem):
     NAME = 'sphere'
     DIRECT_TEMPLATE_NAME = 'sphere_dev'
-    RU_NAME = 'Сфера'
+    RU_NAME = MS('Сфера', 'Sphere')
     CONTENT = sphere_content
 
     ALLOW_SYNC = True
@@ -643,7 +645,7 @@ class sphere(system.StorySystem, system.SiriusSystem):
 class m8_tau44(system.StorySystem, system.SiriusSystem):
     NAME = 'm8_tau44'
     DIRECT_TEMPLATE_NAME = 'm8_tau44_dev'
-    RU_NAME = 'Тау-44'
+    RU_NAME = MS('Тау-44', 'Tau-44')
     CONTENT = tau44_content
 
     ALLOW_SYNC = True
@@ -655,7 +657,7 @@ class m8_tau44(system.StorySystem, system.SiriusSystem):
 class m8_lair_enter(system.StorySystem, system.SiriusSystem):
     NAME = 'm8_lair_enter'
     DIRECT_TEMPLATE_NAME = 'm8_lair_enter_dev'
-    RU_NAME = 'Тау-44 Вход в логово'
+    RU_NAME = MS('Тау-44 Вход в логово', "Tau-44 Lair enter")
 
     ALLOW_SYNC = True
 
@@ -666,7 +668,7 @@ class m8_lair_enter(system.StorySystem, system.SiriusSystem):
 class m8_lair_core(system.StorySystem, system.SiriusSystem):
     NAME = 'm8_lair_core'
     DIRECT_TEMPLATE_NAME = 'm8_lair_core_dev'
-    RU_NAME = 'Тау-44 Ядро'
+    RU_NAME = MS('Тау-44 Ядро', 'Tau-44 Core')
 
     ALLOW_SYNC = True
 
@@ -677,7 +679,7 @@ class m8_lair_core(system.StorySystem, system.SiriusSystem):
 class m8_lair_escape(system.StorySystem, system.SiriusSystem):
     NAME = 'm8_lair_escape'
     DIRECT_TEMPLATE_NAME = 'm8_lair_escape_dev'
-    RU_NAME = 'Тау-44 Побег'
+    RU_NAME = MS('Тау-44 Побег', 'Tau-44 Escape')
 
     ALLOW_SYNC = True
 
@@ -688,7 +690,7 @@ class m8_lair_escape(system.StorySystem, system.SiriusSystem):
 class m8_asf_hq(system.StorySystem, system.SiriusSystem):
     NAME = 'm8_asf_hq'
     DIRECT_TEMPLATE_NAME = 'm8_asf_hq_dev'
-    RU_NAME = 'Энтерпрайз'
+    RU_NAME = MS('Энтерпрайз', 'Enterprise')
 
     ALLOW_SYNC = True
 
@@ -699,7 +701,7 @@ class m8_asf_hq(system.StorySystem, system.SiriusSystem):
 class sphere2(system.StorySystem, system.SiriusSystem):
     NAME = 'sphere2'
     DIRECT_TEMPLATE_NAME = 'sph2_dev'
-    RU_NAME = 'Сфера'
+    RU_NAME = MS('Сфера', 'Sphere')
     CONTENT = sphere2_content
 
     ALLOW_SYNC = True
@@ -711,7 +713,7 @@ class sphere2(system.StorySystem, system.SiriusSystem):
 class sphere2_inside(system.StorySystem, system.SiriusSystem):
     NAME = 'sphere2_inside'
     DIRECT_TEMPLATE_NAME = 'sph2_inside_dev'
-    RU_NAME = 'Сфера'
+    RU_NAME = MS('Сфера', 'Sphere')
 
     ALLOW_SYNC = True
 
@@ -722,7 +724,7 @@ class sphere2_inside(system.StorySystem, system.SiriusSystem):
 class om13_alt(system.StorySystem, system.SiriusSystem):
     NAME = 'om13_alt'
     DIRECT_TEMPLATE_NAME = 'om13alt_dev'
-    RU_NAME = 'Омега-13'
+    RU_NAME = MS('Омега-13', 'Omega-13')
     CONTENT = om13_alt_content
 
     ALLOW_SYNC = True
@@ -735,7 +737,7 @@ class om13_alt(system.StorySystem, system.SiriusSystem):
 class bh(system.StorySystem, system.SiriusSystem):
     NAME = 'bh'
     DIRECT_TEMPLATE_NAME = 'bh_dev'
-    RU_NAME = 'Чёрная дыра'
+    RU_NAME = MS('Чёрная дыра', 'Black hole')
     # CONTENT = om13_alt_content
 
     ALLOW_SYNC = True
@@ -748,7 +750,7 @@ class bh(system.StorySystem, system.SiriusSystem):
 class asf_hq(system.StorySystem, system.SiriusSystem):
     NAME = 'asf_hq'
     DIRECT_TEMPLATE_NAME = 'asf_hq_dev'
-    RU_NAME = 'Энтерпр+айз'
+    RU_NAME = MS('Энтерпр+айз', 'Enterprise')
 
     ALLOW_SYNC = True
 
@@ -759,7 +761,7 @@ class asf_hq(system.StorySystem, system.SiriusSystem):
 class asf_prom(system.StorySystem, system.SiriusSystem):
     NAME = 'asf_prom'
     DIRECT_TEMPLATE_NAME = 'asf_prom_dev'
-    RU_NAME = 'Промет+ей'
+    RU_NAME = MS('Промет+ей', 'Prometheus')
     CONTENT = asf_prom_content
 
     ALLOW_SYNC = True
@@ -771,7 +773,7 @@ class asf_prom(system.StorySystem, system.SiriusSystem):
 class or_hq(system.StorySystem, system.SiriusSystem):
     NAME = 'or_hq'
     DIRECT_TEMPLATE_NAME = 'or_hq_dev'
-    RU_NAME = 'Вавил+он'
+    RU_NAME = MS('Вавил+он', 'Babylon')
     CONTENT = or_hq_content
 
     ALLOW_SYNC = True
@@ -783,7 +785,7 @@ class or_hq(system.StorySystem, system.SiriusSystem):
 class rh_vien(system.StorySystem, system.SiriusSystem):
     NAME = 'rh_vien'
     DIRECT_TEMPLATE_NAME = 'rh_vien_dev'
-    RU_NAME = 'Вена'
+    RU_NAME = MS('Вена', "Vienna")
     CONTENT = rh_vien_content
 
     ALLOW_SYNC = True
@@ -795,21 +797,10 @@ class rh_vien(system.StorySystem, system.SiriusSystem):
 class xen(system.StorySystem, system.SiriusSystem):
     NAME = 'xen'
     DIRECT_TEMPLATE_NAME = 'xen_dev'
-    RU_NAME = 'Ксеносы'
+    RU_NAME = MS('Омега-38', "Omega-38")
     CONTENT = xen_content
 
     ALLOW_SYNC = True
 
     SYSTEM_FOLDER = 'XENOS'
-    NAVMAP_POS = '14.5, -1.1'
-
-
-class beast01(system.StorySystem, system.SiriusSystem):
-    NAME = 'beast01'
-    DIRECT_TEMPLATE_NAME = 'beast01_dev'
-    RU_NAME = 'Биг Босс 1'
-
-    ALLOW_SYNC = True
-
-    SYSTEM_FOLDER = 'BEAST01'
     NAVMAP_POS = '14.5, -1.1'

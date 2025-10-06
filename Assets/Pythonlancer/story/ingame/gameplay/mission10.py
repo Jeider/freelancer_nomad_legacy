@@ -527,7 +527,7 @@ class Misson10(ingame_mission.IngameMission):
                     'trent_wing'
                 ],
                 unique_npc_entry=True,
-                base_name='Локи',
+                base_name=MS('Локи', 'Loki'),
                 npc=NPC(
                     faction=faction.KusariMain,
                     ship=ship.Falcon,
@@ -546,7 +546,7 @@ class Misson10(ingame_mission.IngameMission):
                     'armor_wing'
                 ],
                 unique_npc_entry=True,
-                base_name='Один',
+                base_name=MS('Один', 'Odin'),
                 npc=NPC(
                     faction=faction.OrderMain,
                     ship=ship.Eagle,
@@ -570,8 +570,8 @@ class Misson10(ingame_mission.IngameMission):
         }
 
         caps = [
-            Capital(self, 'armored', ru_name='Бронированный транспорт', **armored_ship),
-            Capital(self, 'armored_out', ru_name='Бронированный транспорт', **armored_ship_out),
+            Capital(self, 'armored', ru_name=N.ARMORED, **armored_ship),
+            Capital(self, 'armored_out', ru_name=N.ARMORED, **armored_ship_out),
         ]
 
         return caps

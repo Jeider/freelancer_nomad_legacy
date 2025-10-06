@@ -193,7 +193,7 @@ class Misson02(ingame_mission.IngameMission):
     def get_dialogs(self):
         return [
             TextDialog(
-                self, 'vendor', 'Вильгельм',
+                self, 'vendor', MS('Вильгельм', 'Wilhelm'),
                 ru_content=MultiText([
                     'Доброго времени суток, герр Трент, меня зовут Вильгельм и я представляю вооруженные силы Рейнланда. '
                     'Нас впечатлили ваши достижения на территории Рейнланда за столь короткий срок, и мы хотели бы '
@@ -211,15 +211,23 @@ class Misson02(ingame_mission.IngameMission):
                 ])
             ),
             TextDialog(
-                self, 'mining', 'Майнинг астероидов',
+                self, 'mining', MS('Майнинг астероидов', 'Asteroid Mining'),
                 ru_content=MultiText(
                     [
                         'Чтобы получить доступ к рудокопу, вы должны добыть ключ в одном из астероидов.',
+
+                        'Это является не только заданием миссии, это игровая активность. Все подобные объекты вы должны'
+                        ' открывать подобным образом. Чтобы получить подсказки можете открыть описание '
+                        'открываемого объекта. В данном случае - рудокопа.'
 
                         'Хотите запустить обучение?',
                     ],
                     [
                         'In order to get access to roid miner you must extra key from on of near asteroids.',
+
+                        'This is not just mission objective, this is kind of game activity. You should open such '
+                        'objects by this "mini-game". Also, you always can get help by infocard of locked object. '
+                        'Ih this case - infocard of Roid Miner.'
 
                         'Do you want to run tutorial?',
                     ]

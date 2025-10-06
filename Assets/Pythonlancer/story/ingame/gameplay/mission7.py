@@ -140,7 +140,7 @@ class Misson07(ingame_mission.IngameMission):
             )
 
         omicron_solars = [
-            ('communicator', 'Коммуникатор'),
+            ('communicator', MS('Коммуникатор', "Communicator")),
         ]
         for sol, ru_name in omicron_solars:
             defined_points.append(
@@ -191,7 +191,9 @@ class Misson07(ingame_mission.IngameMission):
             NNObj(self, MS('Подберите бомбы', 'Collect bombs'), name='pick_up_bombs'),
             NNObj(self, MS('Доберитесь до коммуникатора', 'Reach the communicator'),
                   name='goto_communicator', target='communicator', towards=True),
-            NNObj(self, 'Уничтожьте ядро коммуникатора, сбросив бомбы и сдетонировав их',
+            NNObj(self,
+                  MS('Уничтожьте ядро коммуникатора, сбросив бомбы и сдетонировав их (будьте осторожны и держите дистанцию)',
+                     'Destroy core of communicator, dropped bomb near core and detonated it by your guns (be careful and keep far distance)'),
                   name='destroy_communicator', target='communicator'),
             NNObj(self, MS('Покиньте Тортугу', 'Left Tortuga area'), name='fly_away_from_tortuga', target='fly_away_tortuga'),
             NNObj(self, MS('Доберитесь до точки засады', 'Reach ambush place'),
@@ -222,7 +224,7 @@ class Misson07(ingame_mission.IngameMission):
         }
 
         caps = [
-            Capital(self, 'armored', ru_name=MS('Бронированный транспорт', 'Armored transport'), **armored_ship),
+            Capital(self, 'armored', ru_name=N.ARMORED, **armored_ship),
         ]
 
         return caps
@@ -359,7 +361,7 @@ class Misson07(ingame_mission.IngameMission):
                     'bandit',
                     'enemy',
                 ],
-                base_name='Бандит',
+                base_name=MS('Бандит', 'Bandit'),
                 npc=NPC(
                     faction=faction.BretoniaPirate,
                     ship=ship.Crusader,

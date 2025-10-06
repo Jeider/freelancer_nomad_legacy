@@ -123,8 +123,8 @@ class ScientPods:
 
     MISSION_TIMEOUT = 60
 
-    MANDRAKE_NAME = 'Капсула Мандрейка'
-    SCIENT_NAME = 'Капсула с учёным'
+    MANDRAKE_NAME = MS('Капсула Мандрейка', 'Capsule with Mandrake')
+    SCIENT_NAME = MS('Капсула с учёным', 'Capsule with scientist')
 
     def __init__(self, mission, direct, trigger):
         self.mission: ingame_mission.IngameMission = mission
@@ -413,7 +413,7 @@ class Misson05(ingame_mission.IngameMission):
     def get_dialogs(self):
         return [
             TextDialog(
-                self, 'smuggler', 'База с уязвимыми точками',
+                self, 'smuggler', MS('База с уязвимыми точками', 'Base with vulnerable points'),
                 ru_content=MultiText([
                     'Чтобы уничтожить базу, вы должны проникнуть внутрь и уничтожить её ядро.',
 
@@ -434,7 +434,7 @@ class Misson05(ingame_mission.IngameMission):
                 ]),
             ),
             TextDialog(
-                self, 'scient_pod', 'Спасение учёных',
+                self, 'scient_pod', MS('Спасение учёных', "Saving of scients"),
                 ru_content=MultiText([
                     'Спасательные капусулы не успели активироваться!',
 

@@ -214,8 +214,8 @@ class Misson03(ingame_mission.IngameMission):
             Solar(self, S.rh_kgb, 'gen2', ru_name=MS('Генератор', 'Generator')),
             Solar(self, S.rh_kgb, 'gen1_laser', ru_name=MS('Заряжающая установка', 'Charging device')),
             Solar(self, S.rh_kgb, 'gen2_laser', ru_name=MS('Заряжающая установка', 'Charging device')),
-            Solar(self, S.rh_kgb, 'dock1', ru_name='Dock point 1'),
-            Solar(self, S.rh_kgb, 'dock2', ru_name='Dock point 2'),
+            Solar(self, S.rh_kgb, 'dock1', ru_name=MS('Стыковочный узел 1', 'Dock point 1')),
+            Solar(self, S.rh_kgb, 'dock2', ru_name=MS('Стыковочный узел 2', 'Dock point 2')),
         ]
 
         defined_points.extend(solar_points)

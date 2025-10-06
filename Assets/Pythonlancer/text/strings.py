@@ -14,11 +14,18 @@ class TheID:
     def set_text(self, text):
         self.text = text
 
-    def compile(self):
+    def compile_ru(self):
         return (
-            StringCompiler.compile_name(self.id, self.text)
+            StringCompiler.compile_name(self.id, self.text.get_ru())
             if self.kind == NAME
-            else StringCompiler.compile_infocard(self.id, self.text)
+            else StringCompiler.compile_infocard(self.id, self.text.get_ru())
+        )
+
+    def compile_en(self):
+        return (
+            StringCompiler.compile_name(self.id, self.text.get_en())
+            if self.kind == NAME
+            else StringCompiler.compile_infocard(self.id, self.text.get_en())
         )
 
 
@@ -67,8 +74,11 @@ class IDsDatabase:
         self.ids.append(the_id)
         return the_id
 
-    def compile(self):
-        return ''.join([i.compile() for i in self.ids])
+    def compile_ru(self):
+        return ''.join([i.compile_ru() for i in self.ids])
+
+    def compile_en(self):
+        return ''.join([i.compile_en() for i in self.ids])
 
 
 class IndexDatabase:

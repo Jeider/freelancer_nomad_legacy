@@ -241,7 +241,7 @@ class Misson06(ingame_mission.IngameMission):
                     'Найдите цвет, который будет обозначен как "максимальное" и уничтожьте все блоки с этим цветом.',
                 ],[
                     'To hack this panel you must fire on blocks with correct colors. ',
-                    'Fire different blocks by your guns. This blocks will activate sounds of this color. '
+                    'Fire different blocks by your guns. Those blocks will activate sounds of this color. '
                     'Different blocks produce different sounds depending on the distance to the desired color:'
                     "Maximal, Very high, High, Medium. Low, Very low, Minimal.",
                     'Find the color with sound "maximal" and destroy blocks with such color',
@@ -923,7 +923,7 @@ class Misson06(ingame_mission.IngameMission):
                 relative_pos=True,
                 relative_range=2000,
                 jumper=False,
-                base_name='Дельта',
+                base_name=MS('Дельта', 'Delta'),
                 affiliation=faction.LibertyMain.CODE,
                 npc=NPC(
                     faction=faction.LibertyMain,

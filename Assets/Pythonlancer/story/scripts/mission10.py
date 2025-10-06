@@ -142,9 +142,9 @@ class Msn10OfferCutscene(Msn10, script.CutsceneProps):
         VoiceLine(
             210,
             HasslerOrder,
-            ru='Тюрьма находится в Омега-35. Система представляет собой по большей части пылевое облако. '
+            ru='Тюрьма находится в Омега-38. Система представляет собой по большей части пылевое облако. '
                 'Мус+аси переместится на окраину системы таким образом,, чтобы не привлечь внимание аборигенов.',
-               en='The prison is in Omega-35. The system is mostly a dust cloud.'
+               en='The prison is in Omega-38. The system is mostly a dust cloud.'
                     'The Musashi will position itself on the system\'s outskirts to avoid drawing local attention.'
         ),
         VoiceLine(

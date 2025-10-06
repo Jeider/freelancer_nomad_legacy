@@ -33,14 +33,12 @@ def main():
         ('key_for_story.ini', core.universe.get_key_story()),
         ('key_for_initial_world.ini', core.universe.get_key_initial_world()),
     ]
-
-    for db in core.ids.get_databases():
-        files_map.append(
-            (db.get_file_name(), db.compile())
-        )
-
     for file, content in files_map:
         FileWriter.write(file, content)
+
+    for db in core.ids.get_databases():
+        FileWriter.write_to_subfolder('ru', db.get_file_name(), db.compile_ru())
+        FileWriter.write_to_subfolder('en', db.get_file_name(), db.compile_en())
 
     DataFolder.sync_equip('weapon_equip', GENERATED, core.weapons.get_weapon_equip())
     DataFolder.sync_equip('weapon_good', GENERATED, core.weapons.get_weapon_good())

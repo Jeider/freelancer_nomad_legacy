@@ -29,6 +29,9 @@ from templates.dockable import trade_storages
 from templates.dockable import kusari_palace
 from templates.dockable import station_debris
 
+from story.ingame.names import MUSASHI
+from text.strings import MultiString as MS
+
 
 class Om7Member(Member):
     FACTION = faction.KusariMain
@@ -137,7 +140,7 @@ class Om7KusariStation(Om7Member, Om7Kusari, main_objects.GasMiningStation):
     LOADOUT = 'smallstation_ku'
     INTERIOR_CLASS = interior.HarajukuInterior
     DEALERS = dealers.KusariCivilianDealers
-    RU_NAME = 'Станция Харадзюку'
+    RU_NAME = MS('Станция Харадзюку', 'Harajuku Station')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 5000
     EXCLUSION_PARAMS = WALKER_EXCLUSION_PARAMS
@@ -154,7 +157,7 @@ class Om7RheinlandStation(Om7Rheinland, Om7Member, main_objects.GasMiningStation
     LOADOUT = 'smallstation_rh'
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.RheinlandCivilianDealers
-    RU_NAME = 'Станция Вольфсбург'
+    RU_NAME = MS('Станция Вольфсбург', "Wolfsburg Station")
 
     NEBULA_EXCLUSION_ZONE_SIZE = 5000
     EXCLUSION_PARAMS = WALKER_EXCLUSION_PARAMS
@@ -169,7 +172,7 @@ class Om7Battleship(Om7Rheinland, Om7Member, main_objects.RheinlandBattleship):
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.RheinlandMilitaryDealers
     SHIP_SET = markets.ShipSet('rh_elite')
-    RU_NAME = 'Линкор Остфрисланд'
+    RU_NAME = MS('Линкор Остфрисланд', 'Battleship Ostfriesland')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 3000
     EXCLUSION_PARAMS = WALKER_EXCLUSION_PARAMS
@@ -183,7 +186,7 @@ class Om7Freeport(Om7Member, Om7Kusari, main_objects.Freeport):
     SPACE_OBJECT_TEMPLATE = trade_storages.HonshuStorage
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.KusariCivilianDealers
-    RU_NAME = 'Фрипорт Рёдзюн'
+    RU_NAME = MS('Фрипорт Рёдзюн', 'Freeport Rejun')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 3500
     EXCLUSION_PARAMS = WALKER_EXCLUSION_PARAMS
@@ -200,7 +203,7 @@ class Om7PirateLargeAsteroid(Om7Member, Om7Kusari, main_objects.PirateStation):
     DEALERS = dealers.KusariPirateDealers
     FACTION = faction.KusariPirate
     DEFENCE_LEVEL = None
-    RU_NAME = 'База Киото'
+    RU_NAME = MS('База Киото', 'Kyoto Base')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 5000
     EXCLUSION_PARAMS = WALKER_EXCLUSION_PARAMS
@@ -216,7 +219,7 @@ class Om7RightPirates(Om7Rheinland, Om7Member, main_objects.PirateGasMiner):
     DEALERS = dealers.RheinlandPirateDealers
     FACTION = faction.RheinlandPirate
     DEFENCE_LEVEL = None
-    RU_NAME = 'База Хельголанд'
+    RU_NAME = MS('База Хельголанд', 'Helgoland Base')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
     EXCLUSION_PARAMS = WALKER_EXCLUSION_PARAMS
@@ -227,7 +230,7 @@ class Om7LostRheinlandRuins(Om7Rheinland, Om7Member, main_objects.StationRuins):
     ALIAS = 'ruins'
     INDEX = 1
     REL = RIGHT
-    RU_NAME = 'Станция Финшхафен'
+    RU_NAME = MS('Станция Финшхафен', 'Finschhafen Station')
 
     REL_APPEND = 1500
 
@@ -245,7 +248,7 @@ class Om7LostRheinlandRuinsSuprisePoint(Om7Rheinland, Om7Member, main_objects.Ha
     RELATED_OBJECT = Om7LostRheinlandRuins
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpostRot90
     INTERIOR_CLASS = interior.EquipDeckInterior
-    RU_NAME = 'Стыковочный узел Финшхафена'
+    RU_NAME = MS('Стыковочный узел Финшхафена', 'Finschhafen Docking Point')
 
     MISC_EQUIP_TYPE = RH_CIV
     WEAPON_FACTION = WEAPON_RH
@@ -464,7 +467,7 @@ class Om7GasPocketsZone3(Om7Member, zones.AsteroidZone):
 class Om7GasMiner1(Om7Member, Om7BaseKusariGasMiner):
     INDEX = 1
     BASE_INDEX = 51
-    RU_NAME = 'Газодобытчик Минамисома'
+    RU_NAME = MS('Газодобытчик Минамисома', 'Gas Miner Minamisoma')
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM2),
         Q.Thruster(KU_MAIN, eq_classes=markets.SECRET2),
@@ -474,7 +477,7 @@ class Om7GasMiner1(Om7Member, Om7BaseKusariGasMiner):
 class Om7GasMiner2(Om7Member, Om7BaseKusariGasMiner):
     INDEX = 2
     BASE_INDEX = 52
-    RU_NAME = 'Газодобытчик Иваки'
+    RU_NAME = MS('Газодобытчик Иваки', "Gas Miner Iwaki")
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM2),
         Q.Thruster(KU_MAIN, eq_classes=markets.SECRET2),
@@ -484,7 +487,7 @@ class Om7GasMiner2(Om7Member, Om7BaseKusariGasMiner):
 class Om7GasMiner3(Om7Member, Om7BaseKusariGasMiner):
     INDEX = 3
     BASE_INDEX = 53
-    RU_NAME = 'Газодобытчик Нараха'
+    RU_NAME = MS('Газодобытчик Нараха', 'Gas Miner Naraha')
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM2),
         Q.Thruster(KU_MAIN, eq_classes=markets.SECRET2),
@@ -494,7 +497,7 @@ class Om7GasMiner3(Om7Member, Om7BaseKusariGasMiner):
 class Om7GasMiner4(Om7Member, Om7BaseKusariGasMiner):
     INDEX = 4
     BASE_INDEX = 54
-    RU_NAME = 'Газодобытчик Хироно'
+    RU_NAME = MS('Газодобытчик Хироно', "Gas Miner Hirono")
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM2),
         Q.Thruster(KU_MAIN, eq_classes=markets.SECRET2),
@@ -504,7 +507,7 @@ class Om7GasMiner4(Om7Member, Om7BaseKusariGasMiner):
 class Om7GasMiner5(Om7Member, Om7BaseRheinlandGasMiner):
     INDEX = 5
     BASE_INDEX = 55
-    RU_NAME = 'Газодобытчик Хемниц'
+    RU_NAME = MS('Газодобытчик Хемниц', 'Gas Miner Chemnitz')
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM2),
         Q.Thruster(RH_MAIN, eq_classes=markets.SECRET2),
@@ -514,7 +517,7 @@ class Om7GasMiner5(Om7Member, Om7BaseRheinlandGasMiner):
 class Om7GasMiner6(Om7Member, Om7BaseRheinlandGasMiner):
     INDEX = 6
     BASE_INDEX = 56
-    RU_NAME = 'Газодобытчик Цвиккау'
+    RU_NAME = MS('Газодобытчик Цвиккау', 'Gas Miner Zwickau')
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM3),
         Q.Thruster(RH_MAIN, eq_classes=markets.SECRET2),
@@ -524,7 +527,7 @@ class Om7GasMiner6(Om7Member, Om7BaseRheinlandGasMiner):
 class Om7GasMiner7(Om7Member, Om7BaseRheinlandGasMiner):
     INDEX = 7
     BASE_INDEX = 57
-    RU_NAME = 'Газодобытчик Грайц'
+    RU_NAME = MS('Газодобытчик Грайц', 'Gas Miner Greiz')
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM2),
         Q.Thruster(RH_MAIN, eq_classes=markets.SECRET3),
@@ -534,7 +537,7 @@ class Om7GasMiner7(Om7Member, Om7BaseRheinlandGasMiner):
 class Om7GasMiner8(Om7Member, Om7BaseRheinlandGasMiner):
     INDEX = 8
     BASE_INDEX = 58
-    RU_NAME = 'Газодобытчик Кульмбах'
+    RU_NAME = MS('Газодобытчик Кульмбах', 'Gas Miner Kulmbach')
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM3),
         Q.Thruster(RH_PIRATE, eq_classes=markets.SECRET2),
@@ -544,7 +547,7 @@ class Om7GasMiner8(Om7Member, Om7BaseRheinlandGasMiner):
 class Om7GasMiner9(Om7Member, Om7BaseRheinlandGasMiner):
     INDEX = 9
     BASE_INDEX = 59
-    RU_NAME = 'Газодобытчик Лихтенфельс'
+    RU_NAME = MS('Газодобытчик Лихтенфельс', "Gas Miner Lichtenfels")
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM2),
         Q.Thruster(RH_PIRATE, eq_classes=markets.SECRET3),
@@ -636,7 +639,7 @@ class Om7AbandonedMiner1(Om7Rheinland, Om7Member, Om7BaseAbandonedMiner):
     ASTEROID_ZONES = [
         Om7GasPocketsZone1
     ]
-    RU_NAME = 'База Пфорцгейм'
+    RU_NAME = MS('База Пфорцхайм', "Pforzheim Base")
     MISC_EQUIP_TYPE = RH_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Gun('rh_lightgun', eq_classes=markets.SECRET2),
@@ -650,7 +653,7 @@ class Om7AbandonedMiner2(Om7Member, Om7Kusari, Om7BaseAbandonedMiner):
     ASTEROID_ZONES = [
         Om7GasPocketsZone2
     ]
-    RU_NAME = 'База Акита'
+    RU_NAME = MS('База Акита', "Akita Base")
     MISC_EQUIP_TYPE = KU_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Gun('ku_shieldgun', eq_classes=markets.SECRET2),
@@ -664,7 +667,7 @@ class Om7AbandonedMiner3(Om7Member, Om7Kusari, Om7BaseAbandonedMiner):
     ASTEROID_ZONES = [
         Om7GasPocketsZone3
     ]
-    RU_NAME = 'База Аомори'
+    RU_NAME = MS('База Аомори', "Aomori Base")
     MISC_EQUIP_TYPE = KU_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Gun('ku_lightgun', eq_classes=markets.SECRET2),
@@ -760,7 +763,7 @@ class Om7BattleRuins1(Om7Member, Om7BaseKusariLockedBattleship):
     ASTEROID_ZONES = [
         Om7BattlePocketsZone1,
     ]
-    RU_NAME = 'Линкор Окиносима'
+    RU_NAME = MS('Линкор Окиносима', "Battleship Okinoshima")
 
     MISC_EQUIP_TYPE = KU_MAIN
     WEAPON_FACTION = WEAPON_KU
@@ -777,7 +780,7 @@ class Om7BattleRuins2(Om7Member, Om7BaseKusariLockedBattleship):
     ASTEROID_ZONES = [
         Om7BattlePocketsZone2,
     ]
-    RU_NAME = 'Линкор Хюга'
+    RU_NAME = MS('Линкор Хюга', 'Battleship Hyuga')
 
     MISC_EQUIP_TYPE = KU_MAIN
     WEAPON_FACTION = WEAPON_KU
@@ -794,7 +797,7 @@ class Om7BattleRuins3(Om7Member, Om7BaseKusariLockedBattleship):
     ASTEROID_ZONES = [
         Om7BattlePocketsZone3,
     ]
-    RU_NAME = 'Линкор Исэ'
+    RU_NAME = MS('Линкор Исэ', "Battleship Ise")
 
     MISC_EQUIP_TYPE = KU_MAIN
     WEAPON_FACTION = WEAPON_KU
@@ -811,7 +814,7 @@ class Om7BattleRuins4(Om7Member, Om7BaseRheinlandLockedBattleship):
     ASTEROID_ZONES = [
         Om7BattlePocketsZone4,
     ]
-    RU_NAME = 'Линкор Мольтке'
+    RU_NAME = MS('Линкор Мольтке', 'Battleship Moltke')
 
     MISC_EQUIP_TYPE = RH_MAIN
     WEAPON_FACTION = WEAPON_RH
@@ -898,7 +901,7 @@ class Om7StoryBattleship(Om7Kusari, Om7Member, main_objects.KusariBattleship):
     ]
     EQUIP_SET = markets.MusashiSecondSet
     SHIP_SET = markets.ShipSet('ku_elite')
-    RU_NAME = 'Линкор Мусаси'
+    RU_NAME = MUSASHI
 
 
 class Om7OrderJumpgate(Om7Member, main_objects.JumpgateAlt):

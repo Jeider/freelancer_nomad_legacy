@@ -420,6 +420,7 @@ class MunchBattleStationRuins(MunchMember, main_objects.StationRuins):
     ALIAS = 'ruins'
     INDEX = 2
     REL = TOP
+    RU_FIRST_DESCRIPTION = MS('', '')  # clear description, this is not regular hackable station
 
     SPACE_OBJECT_TEMPLATE = station_debris.MunchenBattleStationDebris
 
@@ -467,7 +468,7 @@ class MunchJunkersBase(MunchMember, main_objects.JunkerBase):
     FACTION = faction.Junkers
 
     DEFENCE_LEVEL = None
-    RU_NAME = 'Склад Кройзберг'
+    RU_NAME = MS('Склад Кройзберг', 'Kreuzberg Storage')
 
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -491,14 +492,14 @@ class MunchPlanet2(MunchMember, main_objects.Planet):
     ARCHETYPE = 'planet_moonblu_1000'
     SPHERE_RADIUS = 1000
     PLANET_CIRCLE = False
-    RU_NAME = 'Планета Готторп'
+    RU_NAME = MS('Планета Готторп', 'Planet Gottorp')
 
 
 class MunchPlanet3(MunchMember, main_objects.Planet):
     INDEX = 3
     ARCHETYPE = 'planet_rckmnt_4000'
     SPHERE_RADIUS = 4000
-    RU_NAME = 'Планета Хольштейн'
+    RU_NAME = MS('Планета Хольштейн', 'Planet Holstein')
 
 
 class MunchCivRuinsConn1(MunchMember, main_objects.TradeConnection):

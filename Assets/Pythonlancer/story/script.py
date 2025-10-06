@@ -259,12 +259,12 @@ class StoryMission:
             actors |= cutscene.get_actors()
         actors |= self.SPACE_CLASS.get_actors()
 
-        return sorted(list(actors), key=lambda x: x.RU_NAME)
+        return sorted(list(actors), key=lambda x: x.RU_NAME.get_ru())
 
     def get_actors_content(self):
         content = []
         for actor in self.actors:
-            content.append(f'<p><a href="{self.get_actor_file_link(actor)}">{actor.RU_NAME}</a></p>')
+            content.append(f'<p><a href="{self.get_actor_file_link(actor)}">{actor.RU_NAME.get_ru()}</a></p>')
         return SINGLE_DIVIDER.join(content)
 
     def get_space_lines(self):

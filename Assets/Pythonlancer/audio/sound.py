@@ -3,6 +3,8 @@ from text.dividers import SINGLE_DIVIDER
 from tools.create_id import CreateId
 from tools.audio_folder import DataFolder
 
+from text.strings import MultiString as MS
+
 SPACE_ATTENUATION = -8
 CUTSCENE_ATTENUATION = 0
 
@@ -32,6 +34,9 @@ class VoiceLine(object):
     def get_ru_clean_text(self):
         return re.sub(r'\(.*?\)', '', self.ru).replace(',,', ',')
 
+    def get_en_clean_text(self):
+        return re.sub(r'\(.*?\)', '', self.en).replace(',,', ',')
+
     def get_ru_clean_ai_text(self):
         return re.sub(r'\(.*?\)', '', self.ru).replace(',,', '')
 
@@ -43,8 +48,14 @@ class VoiceLine(object):
     def get_ru_sub_text(self):
         return self.get_ru_clean_text().replace('+', '')
 
+    def get_en_sub_text(self):
+        return self.get_en_clean_text().replace('+', '')
+
     def get_ru_subtitle(self):
-        return f'{self.actor.RU_NAME}:\\n{self.get_ru_sub_text()}'
+        return MS(
+            f'{self.actor.RU_NAME.get_ru()}:\\n{self.get_ru_sub_text()}',
+            f'{self.actor.RU_NAME.get_en()}:\\n{self.get_en_sub_text()}'
+        )
 
     def set_ids_sub(self, ids_sub):
         self.ids_sub = ids_sub

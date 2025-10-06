@@ -284,7 +284,7 @@ class Misson01A(ingame_mission.IngameMission):
 
     def get_nn_objectives(self):
         return [
-            NNObj(self, 'Поговорите с Алариком в баре', name='find_job'),
+            NNObj(self, MS('Поговорите с Алариком в баре', 'Talk with Alaric in bar'), name='find_job'),
             NNObj(self, O.LAUNCH, name='launch'),
             NNObj(self, O.TLR, target='s13_tlr'),
             NNObj(self, O.JUMPGATE, target='s13_to_ber'),

@@ -16,13 +16,14 @@ from universe.audio.space_voice import SpaceVoice, SpaceCostume
 from universe.content.loadout import Loadout
 from universe import connection
 from universe import faction
-from universe.content import descriptions_ru
+from universe.content import descriptions
 from universe.content import diversion
 
 from tools.system_template import ObjectTemplateLoader
 from templates.space_object_template import SpaceObjectTemplate
 from story.math import rotate_point, relocate_point
 from text.dividers import SINGLE_DIVIDER, DIVIDER
+from text.strings import MultiString as MS
 
 TLR_HUGE_SIZE_RINGS_COUNT = 5
 TLR_SMALL_SIZE_RINGS_COUNT = 4
@@ -466,11 +467,14 @@ class NamedObject(StaticObject):
 
     def get_first_description(self):
         if self.RU_FIRST_DESCRIPTION:
-            return "\\n" + self.RU_FIRST_DESCRIPTION
-        return ' '
+            return MS(
+                "\\n" + self.RU_FIRST_DESCRIPTION.get_ru(),
+                "\\n" + self.RU_FIRST_DESCRIPTION.get_en()
+            )
+        return MS(' ', ' ')  # empty
 
     def get_second_description(self):
-        return ' '
+        return MS(' ', ' ')  # empty
 
     def set_space_name(self):
         space_name = self.get_space_name()
@@ -601,7 +605,10 @@ class JumpableObject(NamedObject):
         return params
 
     def get_name(self):
-        return f'{self.system.get_name()} > {self.get_target_system().get_name()}'
+        return MS(
+            f'{self.system.get_ru_name()} > {self.get_target_system().get_ru_name()}',
+            f'{self.system.get_en_name()} > {self.get_target_system().get_en_name()}'
+        )
 
 
 class Jumpgate(JumpableObject):
@@ -929,7 +936,7 @@ class NotDockableObject(StaticObject):
 
 
 class StationRuins(NotDockableObject, NamedObject):
-    RU_FIRST_DESCRIPTION = descriptions_ru.STATION_RUINS
+    RU_FIRST_DESCRIPTION = descriptions.STATION_RUINS
 
 
 class DockableObject(NamedObject):
@@ -1010,7 +1017,10 @@ BGCS_base_run_by = W02bF44'''
             self.key = LockedDockKey(self, key_fx=self.KEY_COLLECT_FX, key_name=self.get_key_loot_name())
 
     def get_key_loot_name(self):
-        return f'Ключ для {self.get_name()}'
+        return MS(
+            f'Ключ для {self.get_name().get_ru()}',
+            f'Key for {self.get_name().get_en()}'
+        )
 
     def get_weapon_faction(self):
         return self.WEAPON_FACTION
@@ -1403,7 +1413,7 @@ behavior = NOTHING
         return sattelites
 
     def get_space_name(self):
-        return 'Стыковочное кольцо'
+        return MS('Стыковочное кольцо', 'Docking ring')
 
     def get_tradelane_ids_name(self):
         return self.related_planet.get_ids_name()
@@ -1507,7 +1517,7 @@ class AbandonedAsteroid(DockableObject):
     EQUIP_SET = None
     SELL_AMMO = False
     KEY_COLLECT_FX = nn.FX_GOT_KEY_ASTEROID
-    RU_FIRST_DESCRIPTION = descriptions_ru.ASTEROID_ROCK
+    RU_FIRST_DESCRIPTION = descriptions.ASTEROID_ROCK
     FORCE_FACTION = faction.Unknown
 
 
@@ -1518,7 +1528,7 @@ class AbandonedAsteroidIce(DockableObject):
     SELL_AMMO = False
     EQUIP_SET = None
     KEY_COLLECT_FX = nn.FX_GOT_KEY_ASTEROID
-    RU_FIRST_DESCRIPTION = descriptions_ru.ASTEROID_ICE
+    RU_FIRST_DESCRIPTION = descriptions.ASTEROID_ICE
     FORCE_FACTION = faction.Unknown
 
 
@@ -1527,7 +1537,7 @@ class GasMinerOld(Station):
     SELL_AMMO = False
     EQUIP_SET = None
     KEY_COLLECT_FX = nn.FX_GOT_KEY_GAS_MINER
-    RU_FIRST_DESCRIPTION = descriptions_ru.GAS_MINER_OLD
+    RU_FIRST_DESCRIPTION = descriptions.GAS_MINER_OLD
 
     CARGO_PODS_POSITION_Y_DRIFT = -60
 
@@ -1559,7 +1569,7 @@ class SolarPlant(Station):
     BASE_PROPS = meta.LockedSolarPlant()
     SELL_AMMO = False
     KEY_COLLECT_FX = nn.FX_GOT_KEY_STATION
-    RU_FIRST_DESCRIPTION = descriptions_ru.SOLAR_PLANT
+    RU_FIRST_DESCRIPTION = descriptions.SOLAR_PLANT
     FORCE_FACTION = faction.Unknown
 
 
@@ -1570,7 +1580,7 @@ class RoidMiner(Station):
     SELL_AMMO = False
     EQUIP_SET = None
     KEY_COLLECT_FX = nn.FX_GOT_KEY_ROID_MINER
-    RU_FIRST_DESCRIPTION = descriptions_ru.ROID_MINER
+    RU_FIRST_DESCRIPTION = descriptions.ROID_MINER
 
     ASTEROID_OFFSET = (0, 5, -235)
     ASTEROID_ROTATE = (145, -30, 34)
@@ -1633,7 +1643,7 @@ class DebrisManufactoring(Station):
     SELL_AMMO = False
     EQUIP_SET = None
     KEY_COLLECT_FX = nn.FX_GOT_KEY_FACTORY
-    RU_FIRST_DESCRIPTION = descriptions_ru.DEBRIS_MANUFACTORING
+    RU_FIRST_DESCRIPTION = descriptions.DEBRIS_MANUFACTORING
 
 
 class Outpost(DockableObject):
@@ -1824,25 +1834,25 @@ class Hackable(DockableObject):
 class HackableStation(Hackable):
     AUDIO_PREFIX = SpaceVoice.STATION
     KEY_COLLECT_FX = nn.FX_GOT_KEY_STATION
-    RU_FIRST_DESCRIPTION = descriptions_ru.HACKABLE_STATION
+    RU_FIRST_DESCRIPTION = descriptions.HACKABLE_STATION
 
 
 class HackableSolarPlant(Hackable):
     AUDIO_PREFIX = SpaceVoice.STATION
     KEY_COLLECT_FX = nn.FX_GOT_KEY_STATION
-    RU_FIRST_DESCRIPTION = descriptions_ru.HACKABLE_SOLAR_PLANT
+    RU_FIRST_DESCRIPTION = descriptions.HACKABLE_SOLAR_PLANT
 
 
 class HackableBattleship(Hackable):
     AUDIO_PREFIX = SpaceVoice.BATTLESHIP
     KEY_COLLECT_FX = nn.FX_GOT_KEY_BATTLESHIP
-    RU_FIRST_DESCRIPTION = descriptions_ru.BATTLESHIP_HACKABLE
+    RU_FIRST_DESCRIPTION = descriptions.BATTLESHIP_HACKABLE
 
 
 class HackableLuxury(Hackable):
     AUDIO_PREFIX = SpaceVoice.BATTLESHIP
     KEY_COLLECT_FX = nn.FX_GOT_KEY_BATTLESHIP
-    RU_FIRST_DESCRIPTION = descriptions_ru.HACKABLE_LUXURY
+    RU_FIRST_DESCRIPTION = descriptions.HACKABLE_LUXURY
 
 
 class LockedBattleship(Station):
@@ -1853,7 +1863,7 @@ class LockedBattleship(Station):
     DEFENCE_LEVEL = None
     BASE_PROPS = meta.LockedBattleship()
     KEY_COLLECT_FX = nn.FX_GOT_KEY_BATTLESHIP
-    RU_FIRST_DESCRIPTION = descriptions_ru.BATTLESHIP_LOCKED
+    RU_FIRST_DESCRIPTION = descriptions.BATTLESHIP_LOCKED
     FORCE_FACTION = faction.Unknown
 
 
@@ -1865,7 +1875,7 @@ class LockedLuxury(Station):
     DEFENCE_LEVEL = None
     BASE_PROPS = meta.LockedBattleship()
     KEY_COLLECT_FX = nn.FX_GOT_KEY_BATTLESHIP
-    RU_FIRST_DESCRIPTION = descriptions_ru.LUXURY_LOCKED
+    RU_FIRST_DESCRIPTION = descriptions.LUXURY_LOCKED
     FORCE_FACTION = faction.Unknown
     EQUIP_SET = None
     SELL_AMMO = False

@@ -273,7 +273,9 @@ class Misson09(ingame_mission.IngameMission):
 
     def get_nn_objectives(self):
         return [
-            NNObj(self, 'Встретьтесь с информатором на станции Йокогама в Омеге-3',
+            NNObj(self,
+                  MS('Встретьтесь с информатором на станции Йокогама в Омеге-3',
+                     'Meet informer in Yokohama Station in Omega-3 system'),
                   name='meet_vendor', target='vendor_station'),
 
             NNObj(self, O.LAUNCH, name='launch'),
@@ -430,7 +432,7 @@ class Misson09(ingame_mission.IngameMission):
                 ],
                 slide_x=100,
                 unique_npc_entry=True,
-                base_name='Сакура',
+                base_name=MS('Сакура', 'Sakura'),
                 npc=NPC(
                     faction=faction.KusariMain,
                     ship=ship.Drake,
@@ -451,7 +453,7 @@ class Misson09(ingame_mission.IngameMission):
                 radius=0,
                 slide_x=100,
                 unique_npc_entry=True,
-                base_name='Сузуки',
+                base_name=MS('Сузуки', "Suzuki"),
                 npc=NPC(
                     faction=faction.KusariMain,
                     ship=ship.Dragon,
@@ -472,7 +474,7 @@ class Misson09(ingame_mission.IngameMission):
                 radius=0,
                 slide_x=100,
                 unique_npc_entry=True,
-                base_name='Сузуки',
+                base_name=MS('Сузуки', "Suzuki"),
                 npc=NPC(
                     faction=faction.KusariMain,
                     ship=ship.Dragon,
@@ -492,7 +494,7 @@ class Misson09(ingame_mission.IngameMission):
                 ],
                 slide_z=100,
                 unique_npc_entry=True,
-                base_name='Янаги',
+                base_name=MS('Янаги', 'Yanagi'),
                 npc=NPC(
                     faction=faction.KusariMain,
                     ship=ship.Dragon,
@@ -511,7 +513,7 @@ class Misson09(ingame_mission.IngameMission):
                     'order',
                 ],
                 unique_npc_entry=True,
-                base_name='Янаги',
+                base_name=MS('Янаги', 'Yanagi'),
                 npc=NPC(
                     faction=faction.KusariMain,
                     ship=ship.Dragon,

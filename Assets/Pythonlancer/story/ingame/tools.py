@@ -1618,8 +1618,8 @@ class Direct:
             [ f'Act_DeActTrig = {trig}' for trig in self.trigger_groups[group]]
         )
 
-    def new_string_id(self, ru_name):
-        return self.mission.ids.new_name(ru_name).id
+    def new_string_id(self, ru_name, en_name):
+        return self.mission.ids.new_name(MS(ru_name, en_name)).id
 
     def define_solar_group(self, group_name):
         group = self.mission.get_solar_group(group_name)
@@ -1833,8 +1833,12 @@ class SaveState:
     def __init__(self, mission, code, ru_name):
         self.mission = mission
         self.code = code
-        self.ru_name = f'Миссия {mission.SCRIPT_INDEX}. {ru_name}'
-        self.ids_name = self.mission.ids_save.new_name(self.ru_name)
+        self.ids_name = self.mission.ids_save.new_name(
+            MS(
+                f'Миссия {mission.SCRIPT_INDEX}. {ru_name.get_ru()}',
+                f'Mission {mission.SCRIPT_INDEX}. {ru_name.get_en()}'
+            )
+        )
 
     def get_code(self):
         return self.code

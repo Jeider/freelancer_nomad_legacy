@@ -91,7 +91,7 @@ class Misson04(ingame_mission.IngameMission):
     def get_dialogs(self):
         return [
             TextDialog(
-                self, 'capital', 'Уязвимые точки',
+                self, 'capital', MS('Уязвимые точки', 'Vulnerable points'),
                 ru_content=MultiText([
                     'Вражеский крейсер очень тяжело уничтожить, атакуя в лоб. Но вы можете атаковать его уязвимые точки!',
 
