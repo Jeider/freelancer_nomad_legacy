@@ -23,7 +23,8 @@ class IngameMission(object):
         super().__init_subclass__(**kwargs)
         cls.subclasses.append(cls)
 
-    def __init__(self, ids, ids_save, full_script, universe_root, history_manager):
+    def __init__(self, russian, ids, ids_save, full_script, universe_root, history_manager):
+        self.russian = russian
         self.ids = ids
         self.ids_save = ids_save
         self.capital_groups = {}
@@ -46,6 +47,7 @@ class IngameMission(object):
         self.script = None
         if self.full_script and self.SCRIPT_INDEX:
             self.script = Script(
+                mission=self,
                 msn_script=self.full_script.get_mission_by_index(self.SCRIPT_INDEX)
             )
 
@@ -64,7 +66,7 @@ class IngameMission(object):
 
         self.ids_save.add_force(self.START_SAVE_ID, MS(
             f'Миссия {self.SCRIPT_INDEX}. {self.START_SAVE_RU_NAME.get_ru()}',
-            f'Миссия {self.SCRIPT_INDEX}. {self.START_SAVE_RU_NAME.get_en()}'
+            f'Mission {self.SCRIPT_INDEX}. {self.START_SAVE_RU_NAME.get_en()}'
         ))
 
     def get_mission_title(self):

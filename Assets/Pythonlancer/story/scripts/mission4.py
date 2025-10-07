@@ -60,7 +60,7 @@ class Msn4Reward(Msn4, script.CutsceneProps):
 
 
 class Msn4Final(Msn4, script.CutsceneProps):
-    ALIAS = 'reward'
+    ALIAS = 'final'
     TITLE = 'Вознаграждение'
     DESCRIPTION = ''
     VOICE_LINES = [
@@ -76,7 +76,7 @@ class Msn4Final(Msn4, script.CutsceneProps):
         VoiceLine(100, Trent, ru="", en="God dammit! Not again..."),
         VoiceLine(110, Alaric, ru="", en="You don't get it. It's such a special and secret service, that not even their own counterparts in their own government know they exist."),
         VoiceLine(120, Trent, ru="", en="Then how do you know that, Alaric?"),
-        VoiceLine(130, Alaric, ru="", en="Ah... E-e-e..."),
+        VoiceLine(130, Alaric, ru="", en="Oh... I need to go..."),
         VoiceLine(140, Trent, ru="", en="I can't believe I got into this botch again!"),
     ]
 

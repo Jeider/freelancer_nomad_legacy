@@ -2,6 +2,7 @@ from text.strings import MultiString as MS
 
 ASTERISK = '*'  # MANDATORY to show up in history
 RU_ROOT = f'{ASTERISK}ЛИЧНАЯ ЗАПИСЬ:'
+EN_ROOT = f'{ASTERISK}PERSONAL ENTRY:'
 
 
 class HistRecord:
@@ -16,7 +17,7 @@ class HistoryItem:
         self.record = record
         self.name = self.ids.new_name(MS(
             f'{RU_ROOT}\\n{self.record.ru}',
-            ""
+            f'{EN_ROOT}\\n',
         ))
 
     def show(self):

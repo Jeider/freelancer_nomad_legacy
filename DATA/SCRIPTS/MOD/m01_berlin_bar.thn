@@ -66,13 +66,6 @@ entities={
 	
 	
 	{
-		entity_name="subtitles_pack",
-		template_name="subtitles_pack",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},
-	{
 		entity_name="DX_m01_berlin_0010_alaric",
 		template_name="DX_m01_berlin_0010_alaric",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
@@ -80,13 +73,7 @@ entities={
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
-	{
-		entity_name="subtitles_0010",
-		template_name="subtitles_m01_berlin01",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},
+	
 	{
 		entity_name="DX_m01_berlin_0020_adelmar",
 		template_name="DX_m01_berlin_0020_adelmar",
@@ -95,20 +82,7 @@ entities={
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
-	{
-		entity_name="subtitles_0020a",
-		template_name="subtitles_m01_berlin02",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},
-	{
-		entity_name="subtitles_0020b",
-		template_name="subtitles_m01_berlin03",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},
+
 	{
 		entity_name="DX_m01_berlin_0030_trent",
 		template_name="DX_m01_berlin_0030_trent",
@@ -117,29 +91,16 @@ entities={
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
+
 	{
-		entity_name="subtitles_0030",
-		template_name="subtitles_m01_berlin04",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},
-	{
-		entity_name="DX_m01_berlin_0040_luz",
-		template_name="DX_m01_berlin_0040_luz",
+		entity_name="DX_m01_berlin_0040_luc",
+		template_name="DX_m01_berlin_0040_luc",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
-	{
-		entity_name="subtitles_0040",
-		template_name="subtitles_m01_berlin05",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},
-	
+
 	
 	
 	{
@@ -1274,31 +1235,7 @@ events={
 	}, 
 	
 	
-	{
-		5,
-		ATTACH_ENTITY,
-		{
-			"subtitles_0010",
-			"cam_stand"
-		},
-		{
-			duration=6, offset={0, -0.125,  -0.75},
-			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		}
-	},	
-	{
-		11.001,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"subtitles_0010",
-			"offscreen"
-		},
-		{
-			duration=0.001,
-			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
-		}
-	},	
+
 	{5.5, START_SOUND, {"DX_m01_berlin_0010_alaric"}, {duration=10} },
 	{
 		5.5,
@@ -1567,58 +1504,7 @@ events={
 		}
 	},
 	
-	
-	{
-		12,
-		ATTACH_ENTITY,
-		{
-			"subtitles_0020a",
-			"cam_adelmar"
-		},
-		{
-			duration=3, offset={0, -0.095,  -0.75},
-			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		}
-	},	
-	{
-		15.001,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"subtitles_0020a",
-			"offscreen"
-		},
-		{
-			duration=0.001,
-			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
-		}
-	},	
-	
-	{
-		14,
-		ATTACH_ENTITY,
-		{
-			"subtitles_0020b",
-			"cam_adelmar"
-		},
-		{
-			duration=6, offset={0, -0.125,  -0.75},
-			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		}
-	},	
-	{
-		20.001,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"subtitles_0020b",
-			"offscreen"
-		},
-		{
-			duration=0.001,
-			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
-		}
-	},	
+
 	{12, START_SOUND, {"DX_m01_berlin_0020_adelmar"}, {duration=10} },	
 	{
 		12,
@@ -1731,34 +1617,7 @@ events={
 		{animation="Sc_MLBODY_STND_000LV_E_20",
 		 duration=10, time_scale=1, trans_time=1, weight=1, heading=-1}
 	}, 
-	
 
-	{
-		18,
-		ATTACH_ENTITY,
-		{
-			"subtitles_0030",
-			"cam_trent"
-		},
-		{
-			duration=4, offset={0, -0.125,  -1.0},
-			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		}
-	},	
-	
-	{
-		22.001,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"subtitles_0030",
-			"offscreen"
-		},
-		{
-			duration=0.001,
-			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
-		}
-	},	
 	
 	{18, START_SOUND, {"DX_m01_berlin_0030_trent"}, {duration=10} },		
 	{
@@ -1932,35 +1791,9 @@ events={
 			"cam_luc"
 		}
 	},
+
 	
-	{
-		22,
-		ATTACH_ENTITY,
-		{
-			"subtitles_0040",
-			"cam_luc"
-		},
-		{
-			duration=3, offset={0, -0.125,  -0.75},
-			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		}
-	},	
-	
-	{
-		25.001,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"subtitles_0040",
-			"offscreen"
-		},
-		{
-			duration=0.001,
-			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
-		}
-	},	
-	
-	{22, START_SOUND, {"DX_m01_berlin_0040_luz"}, {duration=10} },
+	{22, START_SOUND, {"DX_m01_berlin_0040_luc"}, {duration=10} },
 	{
 		22,
 		START_MOTION,

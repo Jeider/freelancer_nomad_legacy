@@ -22,7 +22,7 @@ from story import math
 from universe.audio.manager import PilotManager
 from universe.audio import pilot
 from universe.audio import dispatcher
-from universe.audio import nnvoice
+from universe.audio import nnvoice, nnvoice_eng
 from universe.audio import mission_comission
 
 from universe.content import mineable
@@ -121,7 +121,8 @@ def generate_hacker_panels():
 
 
 def compile_audio():
-    audio_folder.AudioFolder.compile_xml_to_utf()
+
+    audio_folder.AudioFolder.compile_xml_to_utf(russian=False)
     print('done')
 
 
@@ -217,7 +218,7 @@ def test_steos():
     #
     # return
 
-    the_pilot = nnvoice.NNVoice()
+    the_pilot = nnvoice_eng.NNVoiceEng()
 
     TempPilot.prepare_temp_folders(the_pilot)
     TempPilot.fill_audio(the_pilot, skip=True)
@@ -258,15 +259,6 @@ def test_steos():
 
 
     return
-
-
-def generate_story_voices():
-    script_manager = ScriptManager()
-    # import pdb;pdb.set_trace()
-
-    msn = script_manager.get_mission_by_index(9)
-    for voice in msn.get_voices():
-        audio_folder.AudioFolder.compile_story_voice_to_xml(voice)
 
 
 def test_interaction():
@@ -377,14 +369,23 @@ archetype = nav_buoy
     print(nav_combined)
 
 
+def generate_story_voices():
+    script_manager = ScriptManager()
+    # import pdb;pdb.set_trace()
+
+    msn = script_manager.get_mission_by_index(1)
+    for voice in msn.get_en_voices():
+        audio_folder.AudioFolder.compile_story_voice_to_xml(voice, russian=False)
+
+
 def generate_cutscene_voices():
     script_manager = ScriptManager()
     # import pdb;pdb.set_trace()
 
-    msn = script_manager.get_mission_by_index(13)
+    msn = script_manager.get_mission_by_index(12)
 
     for cutscene in msn.get_cutscenes():
-        audio_folder.AudioFolder.generate_cutscene_sounds(cutscene)
+        audio_folder.AudioFolder.generate_cutscene_sounds(cutscene, russian=False)
 
 
 def meta():

@@ -105,9 +105,21 @@ class Misson01A(ingame_mission.IngameMission):
 
                     'По этой причине ваш первый двигатель обладаем совсем слабой скоростью. Но не волнуйтесь, '
                     'в будущем вы сможете ставить более лучшее оборудование, которое позволит вам развивать '
-                    'более внушительную скорость.',
+                    'более внушительную скорость. Только будьте осторожны. Хорошее оборудование требует '
+                    'хорошей энергии. Так что всегда первым лучше менять генератор!',
 
                     'Удачных полётов!',
+                ],[
+                    'Greetings! Welcome to mod The Nomad Legacy!',
+
+                    "I want to warn you, your ship now have very flexible equipment system. "
+                    "You can change and modify you engines, generators, thruster, etc.",
+
+                    "So, your first engine have minimal speed. Don't worry, you can improve it later. One day you'll "
+                    "find ship with possibility to mount the best engine with maximum possible speed. Be careful! "
+                    "More efficient equipment requires a lot of energy. At the first time better to change generator!",
+
+                    "Good flights!"
                 ]),
             ),
         ]

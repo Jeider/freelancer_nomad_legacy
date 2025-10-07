@@ -1931,7 +1931,7 @@ events={
 		25,
 		START_SOUND,
 		{"DX_m01_intro_0010_trent"},
-		{duration=2}
+		{duration=25}
 	},	
 	
 
@@ -2001,7 +2001,7 @@ events={
 		26.5,
 		START_SOUND,
 		{"DX_m01_intro_0020_barman"},
-		{duration=3}
+		{duration=35}
 	},	
 	
 
@@ -2018,7 +2018,7 @@ events={
 		29,
 		START_SOUND,
 		{"DX_m01_intro_0030_trent"},
-		{duration=2}
+		{duration=25}
 	},	
 
 	{
@@ -2048,7 +2048,7 @@ events={
 		31,
 		START_SOUND,
 		{"DX_m01_intro_0040_barman"},
-		{duration=4}
+		{duration=45}
 	},	
 
 	{
@@ -2139,7 +2139,7 @@ events={
 		39,
 		START_SOUND,
 		{"DX_m01_intro_0060_barman"},
-		{duration=4}
+		{duration=14}
 	},	
 
 	{
@@ -2252,7 +2252,7 @@ events={
 		45,
 		START_SOUND,
 		{"DX_m01_intro_0070_trent"},
-		{duration=4}
+		{duration=17}
 	},	
 	
 	{
@@ -2412,7 +2412,7 @@ events={
 		54,
 		START_SOUND,
 		{"DX_m01_intro_0090_trent"},
-		{duration=4}
+		{duration=14}
 	},	
 	
 	{
@@ -2555,7 +2555,7 @@ events={
 		58,
 		START_SOUND,
 		{"DX_m01_intro_0100_trent"},
-		{duration=4}
+		{duration=14}
 	},	
 	
 	{
@@ -2732,7 +2732,7 @@ events={
 		64,
 		START_SOUND,
 		{"DX_m01_intro_0110_alaric"},
-		{duration=13}
+		{duration=16}
 	},	
 	
 
@@ -2880,7 +2880,7 @@ events={
 		78,
 		START_SOUND,
 		{"DX_m01_intro_0130_barman"},
-		{duration=13}
+		{duration=23}
 	},	
 	
 	{
@@ -2932,7 +2932,7 @@ events={
 		83,
 		START_SOUND,
 		{"DX_m01_intro_0140_trent"},
-		{duration=2}
+		{duration=15}
 	},	
 	
 	{
@@ -3073,7 +3073,7 @@ events={
 		86,
 		START_SOUND,
 		{"DX_m01_intro_0150_barman"},
-		{duration=25}
+		{duration=235}
 	},	
 	
 	{
@@ -3119,7 +3119,7 @@ events={
 		107,
 		START_SOUND,
 		{"DX_m01_intro_0160_trent"},
-		{duration=2}
+		{duration=22}
 	},	
 	
 	{
@@ -3225,7 +3225,7 @@ events={
 		111,
 		START_SOUND,
 		{"DX_m01_intro_0170_barman"},
-		{duration=25}
+		{duration=35}
 	},	
 
 
@@ -3338,7 +3338,7 @@ events={
 		129,
 		START_SOUND,
 		{"DX_m01_intro_0180_trent"},
-		{duration=6}
+		{duration=16}
 	},	
 	
 	{
@@ -3352,7 +3352,7 @@ events={
 		134.5,
 		START_SOUND,
 		{"DX_m01_intro_0190_barman"},
-		{duration=25}
+		{duration=35}
 	},	
 	
 

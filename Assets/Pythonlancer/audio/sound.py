@@ -40,8 +40,10 @@ class VoiceLine(object):
     def get_ru_clean_ai_text(self):
         return re.sub(r'\(.*?\)', '', self.ru).replace(',,', '')
 
+    def get_en_clean_ai_text(self):
+        return re.sub(r'\(.*?\)', '', self.en).replace(',,', '')
+
     def get_ru_ai_gen_text(self):
-        replaces = []
         return (self.get_ru_clean_ai_text().replace('СБА', 'эс-бэ-а').replace('Трент', 'Трэнт')
                 .replace('Рокфорд', 'Р+окфорд').replace('бизнес', 'б+изнэс'))
 
@@ -50,6 +52,16 @@ class VoiceLine(object):
 
     def get_en_sub_text(self):
         return self.get_en_clean_text().replace('+', '')
+
+    def get_en_ai_gen_text(self):
+        print(self.index)
+        return (self.get_en_clean_ai_text()
+                .replace("'", '')
+                .replace("Mr.", 'mister')
+                .replace("mr.", 'mister')
+                .replace('ASF', 'A-eS-eF')
+                .replace(',,', ',')
+                .replace('Mrs.', 'missis'))
 
     def get_ru_subtitle(self):
         return MS(
@@ -101,8 +113,8 @@ class CutsceneSound(Sound):
         super().__init__(**kwargs)
         self.mission_segment = mission_segment
 
-    def get_destination(self):
-        return self.mission_segment.get_destination()
+    def get_destination(self, suffix=''):
+        return self.mission_segment.get_destination(suffix)
 
     def get_duration(self):
         return DataFolder.watch_cutscene_audio_duration(self.mission_segment.get_subfolder(), self.get_filename())
@@ -113,13 +125,14 @@ class CutsceneSound(Sound):
     def get_filename(self):
         return f'{self.name}.wav'
 
-    def get_cutscene_ini(self):
+    def get_cutscene_ini(self, russian=True):
+        suffix = "" if russian else "_ENG"
         return SINGLE_DIVIDER.join([
             SOUND_ARCH,
             f'nickname = {self.get_nickname()}',
             'type = voice',
             f'attenuation = {CUTSCENE_ATTENUATION}',
-            f'file = {self.get_destination()}\\{self.get_filename()}',
+            f'file = {self.get_destination(suffix)}\\{self.get_filename()}',
             'is_2d = true',
         ])
 

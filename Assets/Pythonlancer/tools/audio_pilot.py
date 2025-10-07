@@ -57,7 +57,7 @@ class TempPilot:
     @classmethod
     def fill_files_for_xml(cls, pilot: PilotVoice):
         pilots_folder = cls.get_root_pilot_path() / pilot.FOLDER
-        audios_root = AudioFolder.get_apply_audio_path() / f'{pilot.FOLDER}.xml'
+        audios_root = AudioFolder.get_apply_xml_audio_path() / f'{pilot.FOLDER}.xml'
         audios_folder = audios_root / pilot.FOLDER
         audios_root.mkdir(exist_ok=True)
         audios_folder.mkdir(exist_ok=True)
@@ -82,7 +82,7 @@ class TempPilot:
 
     @classmethod
     def build_voice_xml(cls, pilot: PilotVoice, skip=False):
-        voice_path = AudioFolder.get_apply_audio_path() / f'{pilot.FOLDER}.xml'
+        voice_path = AudioFolder.get_apply_xml_audio_path() / f'{pilot.FOLDER}.xml'
 
         voice = pilot.get_voice()
 

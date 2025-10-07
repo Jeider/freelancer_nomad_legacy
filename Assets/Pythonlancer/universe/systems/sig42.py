@@ -315,7 +315,7 @@ class Sig42Liner(Sig42Member, Sig42Bretonia, main_objects.LuxuryLiner):
     REL = LEFT
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.BretoniaCivilianDealers
-    RU_NAME = MS('Круизный лайнер Каникула', 'Cruise line Canicola')
+    RU_NAME = MS('Круизный лайнер Каникула', 'Cruise liner Canicola')
 
 
 class Sig42VirtualDepot(Sig42Member, Sig42Bretonia, main_objects.VirtualDepot):

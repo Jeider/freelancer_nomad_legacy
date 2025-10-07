@@ -1,12 +1,12 @@
-from tools.utf_xml import XML_UTF
+from tools.utf_xml import XML_UTF, OUT_DIR
 from tools.data_folder import DataFolder
 from tools import steos
 import pathlib
 
 
 XML_FOLDERS = [
-    # 'echo_m01',
-    # 'echo_m01_player',
+    'echo_m01',
+    'echo_m01_player',
     # 'echo_m02',
     # 'echo_m02_female',
     # 'echo_m02_player',
@@ -29,7 +29,7 @@ XML_FOLDERS = [
     # 'echo_m08_female',
     # 'echo_m08_player',
     # 'echo_m09',
-    'echo_m09_female',
+    # 'echo_m09_female',
     # 'echo_m09_player',
     # 'echo_m10',
     # 'echo_m10_female',
@@ -62,11 +62,14 @@ STORY_XML_TEMPLATE = '{file}.utf.xml'
 STORY_UTF_TEMPLATE = '{file}.utf'
 
 INITIAL_AUDIO_CUTSCENE_FOLDER = 'AUDIO_CUTSCENE_RU'
+INITIAL_AUDIO_CUTSCENE_FOLDER_EN = 'AUDIO_CUTSCENE_EN'
 INITIAL_AUDIO_XML_FOLDER = 'AUDIO_XML_RU'
+INITIAL_AUDIO_XML_FOLDER_EN = 'AUDIO_XML_EN'
 APPLY_AUDIO_CUTSCENE_FOLDER = 'AUDIO_XML_CUTSCENE_APPLY'
 APPLY_AUDIO_XML_FOLDER = 'AUDIO_XML_RU_APPLY'
 
 STORY_FOLDER_TEMPLATE = '../AUDIO_XML_RU_APPLY/{file}.xml'
+STORY_FOLDER_TEMPLATE_EN = '../AUDIO_XML_EN_APPLY/{file}.xml'
 
 
 class AudioFolder:
@@ -75,6 +78,11 @@ class AudioFolder:
     def get_initial_xml_audio_path():
         current_path = pathlib.Path().resolve()
         return current_path.parent / INITIAL_AUDIO_XML_FOLDER
+
+    @staticmethod
+    def get_initial_xml_audio_path_en():
+        current_path = pathlib.Path().resolve()
+        return current_path.parent / INITIAL_AUDIO_XML_FOLDER_EN
 
     @staticmethod
     def get_apply_xml_audio_path():
@@ -87,20 +95,33 @@ class AudioFolder:
         return current_path.parent / INITIAL_AUDIO_CUTSCENE_FOLDER
 
     @staticmethod
+    def get_initial_cutscene_audio_path_eng():
+        current_path = pathlib.Path().resolve()
+        return current_path.parent / INITIAL_AUDIO_CUTSCENE_FOLDER_EN
+
+
+    @staticmethod
     def get_apply_cutscene_audio_path():
         current_path = pathlib.Path().resolve()
         return current_path.parent / APPLY_AUDIO_CUTSCENE_FOLDER
 
     @classmethod
-    def compile_xml_to_utf(cls):
+    def compile_xml_to_utf(cls, russian=True):
         for file in XML_FOLDERS:
-            cls.compile_file(file)
+            cls.compile_file(file, russian)
 
     @classmethod
-    def compile_file(cls, file):
+    def compile_file(cls, file, russian=True):
+        if not russian:
+            file += '_en'
         XML_UTF.run_command(
             STORY_XML_TEMPLATE.format(file=file),
-            STORY_FOLDER_TEMPLATE.format(file=file),
+
+            STORY_FOLDER_TEMPLATE.format(file=file)
+            if russian else
+            STORY_FOLDER_TEMPLATE_EN.format(file=file),
+
+            OUT_DIR
         )
         out_file_name = STORY_UTF_TEMPLATE.format(file=file)
         new_xml = XML_UTF.get_out_path() / out_file_name
@@ -111,10 +132,10 @@ class AudioFolder:
         )
 
     @classmethod
-    def compile_story_voice_to_xml(cls, voice, skip=True):
+    def compile_story_voice_to_xml(cls, voice, skip=True, russian=True):
         # voice.validate_ai_compatibility()
 
-        root_path = cls.get_initial_xml_audio_path()
+        root_path = cls.get_initial_xml_audio_path() if russian else cls.get_initial_xml_audio_path_en()
         voice_path = root_path / f'{voice.voice_name}.xml'
         voice_path.mkdir(parents=True, exist_ok=True)
 
@@ -137,11 +158,14 @@ class AudioFolder:
             if sound.line.actor.STEOS_ID is None:
                 raise Exception('actor %s have no steos for line name %s' % (sound.line.actor.NAME, sound.name))
 
-            steos.SteosVoice.generate_ru_voice(file_destination=file_destination, sound=sound)
+            if russian:
+                steos.SteosVoice.generate_ru_voice(file_destination=file_destination, sound=sound)
+            else:
+                steos.SteosVoice.generate_en_voice(file_destination=file_destination, sound=sound)
 
     @classmethod
-    def generate_cutscene_sounds(cls, cutscene):
-        root_path = cls.get_initial_cutscene_audio_path()
+    def generate_cutscene_sounds(cls, cutscene, russian=True):
+        root_path = cls.get_initial_cutscene_audio_path() if russian else cls.get_initial_cutscene_audio_path_eng()
         sounds_path = root_path / cutscene.get_cutscene_folder()
         sounds_path.mkdir(parents=True, exist_ok=True)
 
@@ -154,7 +178,10 @@ class AudioFolder:
             if sound.line.actor.STEOS_ID is None:
                 raise Exception('actor %s have no steos for line name %s' % (sound.line.actor.NAME, sound.name))
 
-            steos.SteosVoice.generate_ru_voice(file_destination=file_destination, sound=sound)
+            if russian:
+                steos.SteosVoice.generate_ru_voice(file_destination=file_destination, sound=sound)
+            else:
+                steos.SteosVoice.generate_en_voice(file_destination=file_destination, sound=sound)
 
     @classmethod
     def generate_simple_sound(cls, file_destination, actor, line):

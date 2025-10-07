@@ -1273,7 +1273,8 @@ class NNObj:
 
 
 class Script:
-    def __init__(self, msn_script):
+    def __init__(self, mission, msn_script):
+        self.mission = mission
         self.msn_script = msn_script
         self.used_lines = []
 
@@ -1282,7 +1283,7 @@ class Script:
             sound.line.index
         )
         return ETHER_COMM_TEMPLATE.format(
-            voice_root=self.msn_script.get_voice_root_for_sound(sound),
+            voice_root=self.msn_script.get_voice_root_for_sound(sound, suffix='' if self.mission.russian else '_en'),
             string_id=sound.line.get_sub_id(),
             line=sound.get_nickname(),
             comm_appearance=sound.line.actor.get_comm_appearance(),
@@ -1853,6 +1854,12 @@ class MultiText:
         self.ru_lines = ru_lines if ru_lines else []
         self.en_lines = en_lines if en_lines else []
 
+        if len(self.ru_lines) == 0:
+            raise Exception('Multitext have no rus lines')
+
+        if len(self.en_lines) == 0:
+            raise Exception('Multitext have no eng lines')
+
     def get_content(self):
         return MS(
             "\\n\\n".join(self.ru_lines),
@@ -1864,6 +1871,13 @@ class MultiLine:
     def __init__(self, ru_lines=None, en_lines=None):
         self.ru_lines = ru_lines if ru_lines else []
         self.en_lines = en_lines if en_lines else []
+
+        if len(self.ru_lines) == 0:
+            raise Exception('MultiLine have no rus lines')
+
+        if len(self.en_lines) == 0:
+            raise Exception('MultiLine have no eng lines')
+
 
     def get_content(self):
         return MS(

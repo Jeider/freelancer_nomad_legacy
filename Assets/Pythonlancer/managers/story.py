@@ -51,7 +51,8 @@ class StoryManager:
 
         for mission_class in IngameMission.subclasses:
             print(mission_class)
-            mission = mission_class(ids=self.ids, ids_save=self.ids_save,
+            mission = mission_class(russian=self.core.russian,
+                                    ids=self.ids, ids_save=self.ids_save,
                                     full_script=self.script, universe_root=universe_root,
                                     history_manager=self.history_manager)
             self.missions.append(mission)

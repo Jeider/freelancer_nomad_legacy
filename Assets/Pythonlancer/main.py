@@ -1,3 +1,4 @@
+import sys
 from files.writer import FileWriter
 
 from core import LancerCore
@@ -12,7 +13,14 @@ GENERATED = 'GENERATED'
 
 
 def main():
-    core = LancerCore(write=True)
+    russian = True
+    try:
+        if sys.argv[1] == 'en':
+            russian = False
+    except IndexError:
+        pass
+
+    core = LancerCore(write=True, russian=russian)
 
     lootprops_data = [
         core.misc_equip.get_lootprops(),

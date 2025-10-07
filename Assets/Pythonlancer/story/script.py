@@ -92,8 +92,8 @@ class CutsceneProps(MissionSegment):
     def get_alias(self):
         return self.ALIAS
 
-    def get_destination(self):
-        return f'audio\\mod\\m{self.MISSION_INDEX:02d}'
+    def get_destination(self, suffix=''):
+        return f'audio\\MOD{suffix}\\m{self.MISSION_INDEX:02d}'
 
     def get_subfolder(self):
         return f'm{self.MISSION_INDEX:02d}'
@@ -303,39 +303,40 @@ class StoryMission:
     def get_alias(self):
         return f'mission{self.MISSION_INDEX}'
 
-    def get_male_voice_root(self):
-        return f'echo_m{self.MISSION_INDEX:02d}'
+    def get_male_voice_root(self, suffix=''):
+        return f'echo_m{self.MISSION_INDEX:02d}{suffix}'
 
-    def get_female_voice_root(self):
-        return f'echo_m{self.MISSION_INDEX:02d}_female'
+    def get_female_voice_root(self, suffix=''):
+        return f'echo_m{self.MISSION_INDEX:02d}_female{suffix}'
 
-    def get_player_voice_root(self):
-        return f'echo_m{self.MISSION_INDEX:02d}_player'
+    def get_player_voice_root(self, suffix=''):
+        return f'echo_m{self.MISSION_INDEX:02d}_player{suffix}'
 
-    def get_voice_root_for_sound(self, sound):
+    def get_voice_root_for_sound(self, sound, suffix=''):
         if sound.line.actor.is_male():
-            return self.get_male_voice_root()
+            return self.get_male_voice_root(suffix)
         if sound.line.actor.is_female():
-            return self.get_female_voice_root()
+            return self.get_female_voice_root(suffix)
         if sound.line.actor.is_player():
-            return self.get_player_voice_root()
+            return self.get_player_voice_root(suffix)
         raise Exception('unknown voice root exception')
 
-    def get_male_space_voice(self):
+    def get_male_space_voice(self, suffix=''):
+        print(suffix)
         return MaleVoice(
-            voice_name=self.get_male_voice_root(),
+            voice_name=self.get_male_voice_root(suffix),
             sounds=[sound for sound in self.space.get_sounds() if sound.line.actor.is_male()],
         )
 
-    def get_female_space_voice(self):
+    def get_female_space_voice(self, suffix=''):
         return FemaleVoice(
-            voice_name=self.get_female_voice_root(),
+            voice_name=self.get_female_voice_root(suffix),
             sounds=[sound for sound in self.space.get_sounds() if sound.line.actor.is_female()],
         )
 
-    def get_trent_space_voice(self):
+    def get_trent_space_voice(self, suffix=''):
         return TrentVoice(
-            voice_name=self.get_player_voice_root(),
+            voice_name=self.get_player_voice_root(suffix),
             sounds=[sound for sound in self.space.get_sounds() if sound.line.actor.is_player()],
         )
 
@@ -344,6 +345,13 @@ class StoryMission:
             self.get_male_space_voice(),
             self.get_female_space_voice(),
             self.get_trent_space_voice(),
+        ]
+
+    def get_en_voices(self):
+        return [
+            self.get_male_space_voice(suffix='_en'),
+            self.get_female_space_voice(suffix='_en'),
+            self.get_trent_space_voice(suffix='_en'),
         ]
 
     def get_cutscenes(self):

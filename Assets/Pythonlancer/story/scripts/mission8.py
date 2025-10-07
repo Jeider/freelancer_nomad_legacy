@@ -24,8 +24,8 @@ class Msn8Offer(Msn8, script.CutsceneProps):
         VoiceLine(100, Trent, ru="", en="I'll try."),
         VoiceLine(110, Brighton, ru="", en="We have a mission for you ... a mission corresponding to your specialty."),
         VoiceLine(120, Trent, ru="", en="My specialty?"),
-        VoiceLine(130, Brighton, ru="", en="Odrer, Mr.Trent, Order."),
-        VoiceLine(140, Trent, ru="", en="Ah...Aaaaah..."),
+        VoiceLine(130, Brighton, ru="", en="Odrer,, Mr.Trent, Order."),
+        VoiceLine(140, Trent, ru="", en="Hmmm...Ah, okay..."),
         VoiceLine(150, Brighton, ru="", en="Mr.Trent, I must inform you, that this mission is monitored by ... the most high rank officials of Bretonia."),
         VoiceLine(160, Brighton, ru="", en="The lone fact, that Princess Caitlin is present on this meeting, should speak volumes to you."),
         VoiceLine(170, Trent, ru="", en="Of all the woes may God deliver us from both:  from their love and their wrath."),
@@ -123,7 +123,7 @@ class Msn8Osiris(Msn8, script.CutsceneProps):
         VoiceLine(360, King, ru="", en="Miss Hatcher, retrieve all data on Agent Alaric and hand it over to mister Trent."),
         VoiceLine(370, King, ru="",
                   en="Next, your task will be to escortthe  tome of Proteus along with Trent and Miss Darcy to the research base."),
-        VoiceLine(380, Hatcher, ru="", en="Roger!"),
+        VoiceLine(380, Hatcher, ru="", en="Roger that!"),
     ]
 
 class Msn8Space(Msn8, script.SpaceVoiceProps):
@@ -340,7 +340,10 @@ class Msn8Space(Msn8, script.SpaceVoiceProps):
 
 class Mission8(Msn8, script.StoryMission):
     MISSION_INDEX = 8
-    CUTSCENES = []
+    CUTSCENES = [
+        Msn8Offer,
+        Msn8Osiris,
+    ]
     SPACE_CLASS = Msn8Space
     SYNC_SPACE = True
 

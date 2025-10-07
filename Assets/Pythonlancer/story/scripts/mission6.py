@@ -107,7 +107,7 @@ class Msn6LabRoom(Msn6, script.CutsceneProps):
     DESCRIPTION = ''
     VOICE_LINES = [
         VoiceLine(10, Trent, ru="", en="Holy moly, look..."),
-        VoiceLine(20, Alaric, ru="", en="Trent, let's run! You can look at it later"),
+        VoiceLine(20, Alaric, ru="", en="Trent we need to run! You can look at it later"),
     ]
 
 
@@ -144,7 +144,7 @@ class Msn6Prison(Msn6, script.CutsceneProps):
         VoiceLine(30, Ceed, ru="", en="No. They got shockers on them - they'll regret even thinking about it."),
         VoiceLine(40, OrderGuard, ru="", en="Yes, sir."),
         VoiceLine(50, Ceed, ru="", en="Don't worry, lads, I don't bite. Consider yourselves lucky that it all happened while I was on duty."),
-        VoiceLine(60, Ceed, ru="", en="Ah, forgot to introduce myself. Harry Ceed, captain of The Order, but also an ASF lieutenant working here undercover."),
+        VoiceLine(60, Ceed, ru="", en="Also, forgot to introduce myself. Harry Ceed, captain of The Order, but also an ASF lieutenant working here undercover."),
         VoiceLine(65, Ceed, ru="", en="We're going to wait here for a little while, and then I'll help you get off the inhospitable board of Nebuchadnezzar."),
         VoiceLine(70, DeltaThree, ru="", en="Guys, I have a feeling that this is yet another trick from The Order and that this lovely captain is about to put us in front of a squad of fighters with assault rifles..."),
         VoiceLine(80, DeltaOne, ru="", en="You got any better idea? Either way, being shot is probably a better alternative to being interrogated by Order specialists."),

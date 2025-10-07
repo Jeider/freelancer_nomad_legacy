@@ -49,12 +49,23 @@ class Msn7Omega13(Msn7, script.CutsceneProps):
     TITLE = 'Омега-13'
     DESCRIPTION = ''
     VOICE_LINES = [
+        # duplicated for different fx
         VoiceLine(10, Trent, ru="", en="Damn, Rockford, I'm immobilized!"),
+        VoiceLine(15, Trent, ru="", en="Damn, Rockford, I'm immobilized!"),
+
         VoiceLine(20, Rockford, ru="", en="I know."),
+
         VoiceLine(30, Trent, ru="", en="Rockford, what's happening? You are an ASF agent, you must help me."),
+        VoiceLine(35, Trent, ru="", en="Rockford, what's happening? You are an ASF agent, you must help me."),
+
         VoiceLine(40, Rockford, ru="", en="I'm not an ASF agent."),
+
         VoiceLine(50, Trent, ru="", en="But you're going to destroy the artifacts."),
+        VoiceLine(55, Trent, ru="", en="But you're going to destroy the artifacts."),
+
         VoiceLine(60, Rockford, ru="", en="The artifacts will survive the explosion of the ship."),
+
+
         VoiceLine(100, Trent, ru="", en="Come-on old-junk. Turn on!"),
     ]
 
@@ -76,7 +87,7 @@ class Msn7Battleship(Msn7, script.CutsceneProps):
         VoiceLine(100, Darcy, ru="", en="Oh, wow... Impressive."),
         VoiceLine(110, Darcy, ru="", en="How do I know that it isn't from some souvenir shop for tourists?"),
         VoiceLine(120, Trent, ru="", en="God damn it..."),
-        VoiceLine(130, Darcy, ru="", en="All righty then, I have a friend who is an expert on various rarities at a nearby station."),
+        VoiceLine(130, Darcy, ru="", en="All righty then, I have a friend who is an expert on various rarities at a nearby planet."),
         VoiceLine(140, Darcy, ru="", en="Let him take a look at this thing, and if you're telling the truth, I promice you any help I can offer."),
         VoiceLine(150, Darcy, ru="", en="But if it is indeed a souvenir, mister joker, I promice you a teaparty today with Napoleon."),
         VoiceLine(160, Trent, ru="", en="There is a problem. Almost all of the electric circuits on my ship is scorched, I'm not even sure how I managed to make it to this base."),
@@ -96,7 +107,7 @@ class Msn7CheckArtifact(Msn7, script.CutsceneProps):
         VoiceLine(40, Darcy, ru="", en="Hi, Jabba. I want you to check out something."),
         VoiceLine(50, Jabba, ru="", en="Wow! Quite an interesting thing, clearly of alien origin."),
         VoiceLine(60, Jabba, ru="", en="If you're so happened to be broke right now, I can pay you ten thosands credits right away."),
-        VoiceLine(70, Darcy, ru="", en="Oh, shit... So much for \"drink a beer at the bar\". Okay, Trent, we're leaving."),
+        VoiceLine(70, Darcy, ru="", en="Oh,, shit... So much for \"drink a beer at the bar\". Okay, Trent, we're leaving."),
         VoiceLine(80, Darcy, ru="", en="Jabba, you aren't a fool, are you? You will keep your mouth shut, am I right?"),
         VoiceLine(90, Jabba, ru="", en="Of course, Darcy, of course...  "),
     ]
