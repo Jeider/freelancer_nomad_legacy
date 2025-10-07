@@ -120,9 +120,9 @@ class EdisonTrent(Actor):
     # STEOS_ID = 208
     # STEOS_PITCH = -1
     # STEOS_SPEED = 1.45
-    STEOS_ID = 210
-    STEOS_PITCH = 0
-    STEOS_SPEED = 1.13
+    STEOS_ID = 10092
+    # STEOS_PITCH = 0
+    # STEOS_SPEED = 1.13
 
 
 class Juni(Actor):
@@ -230,9 +230,9 @@ class Brighton(Actor):
     TYPE = ACTOR_MALE
     NAME = 'brighton'
     COMM_APPEARANCE = 'br_brighton_head, br_brighton_body'
-    STEOS_ID = 208
-    STEOS_PITCH = -0.5
-    STEOS_SPEED = 1.02
+    STEOS_ID = 644
+    # STEOS_PITCH = -0.1
+    # STEOS_SPEED = 0.9
 
 
 class DetroitDispatcher(Actor):
@@ -240,6 +240,7 @@ class DetroitDispatcher(Actor):
     TYPE = ACTOR_FEMALE
     NAME = 'dispatcher'
     COMM_APPEARANCE = 'br_kaitlyn_head, br_kaitlyn_body, prop_neuralnet_e'
+    STEOS_ID = 13103
 
 
 class ClarkResearch(Actor):
@@ -257,6 +258,7 @@ class Sigma17Trader(Actor):
     TYPE = ACTOR_FEMALE
     NAME = 'trader'
     COMM_APPEARANCE = 'pl_female3_head, pl_female1_journeyman_body, prop_neuralnet_A'
+    STEOS_ID = 13103
 
 
 class Sigma17Police(Actor):
@@ -264,6 +266,7 @@ class Sigma17Police(Actor):
     TYPE = ACTOR_MALE
     NAME = 'police'
     COMM_APPEARANCE = 'li_captain_head, li_male_elite_body, comm_li_elite'
+    STEOS_ID = 13092
 
 
 class Sigma17Assassin(Actor):
@@ -271,6 +274,7 @@ class Sigma17Assassin(Actor):
     TYPE = ACTOR_MALE
     NAME = 'assassin'
     COMM_APPEARANCE = 'rh_captain_head, rh_male_elite_body, comm_rh_elite'
+    STEOS_ID = 13100
 
 
 class Kreitmaier(Actor):
@@ -278,6 +282,8 @@ class Kreitmaier(Actor):
     TYPE = ACTOR_MALE
     NAME = 'officer'
     COMM_APPEARANCE = 'rh_captain_head, rh_male_elite_body, comm_rh_elite'
+    STEOS_ID = 248
+    STEOS_PITCH = 0.11
 
 
 class Marauder(Actor):
@@ -285,6 +291,7 @@ class Marauder(Actor):
     TYPE = ACTOR_MALE
     NAME = 'marauder'
     COMM_APPEARANCE = 'li_captain_head, rh_male_guard_body, comm_rh_guard'
+    STEOS_ID = 254
 
 
 class Punisher(Actor):
@@ -292,6 +299,7 @@ class Punisher(Actor):
     TYPE = ACTOR_MALE
     NAME = 'punisher'
     COMM_APPEARANCE = 'rh_sales_head, rh_male_elite_body, comm_rh_elite'
+    STEOS_ID = 248
 
 
 class PunisherCatcher(Actor):
@@ -299,6 +307,8 @@ class PunisherCatcher(Actor):
     TYPE = ACTOR_MALE
     NAME = 'catcher'
     COMM_APPEARANCE = 'rh_sales_head, rh_male_elite_body, comm_rh_elite'
+    STEOS_ID = 687
+    STEOS_PITCH = 0
 
 
 class Informer(King):
@@ -322,9 +332,9 @@ class Adelmar(Actor):
     TYPE = ACTOR_MALE
     NAME = 'adelmar'
     COMM_APPEARANCE = 'pi_pirate3_head, rh_commtrader_body, prop_neuralnet_e_right'
-    STEOS_ID = 287
-    STEOS_SPEED = 0.9
-    STEOS_PITCH = 0.15
+    STEOS_ID = 13099
+    # STEOS_SPEED = 0.9
+    # STEOS_PITCH = 0.15
 
 
 class Luc(Actor):
@@ -332,9 +342,9 @@ class Luc(Actor):
     TYPE = ACTOR_MALE
     NAME = 'luc'
     COMM_APPEARANCE = 'rh_sales_head, pl_male3_peasant_body, comm_ge_generic1'
-    STEOS_ID = 211
-    STEOS_SPEED = 0.9
-    STEOS_PITCH = 0.25
+    STEOS_ID = 13094
+    # STEOS_SPEED = 0.9
+    STEOS_PITCH = 0.08
 
 
 class Sigma8Cruiser(Actor):
@@ -342,6 +352,8 @@ class Sigma8Cruiser(Actor):
     TYPE = ACTOR_MALE
     NAME = 'cruiser'
     COMM_APPEARANCE = 'rh_sales_head, rh_male_guard_body, prop_neuralnet_d'
+    STEOS_ID = 287
+    STEOS_PITCH = -0.2
 
 
 class BrandenburgCruiser(Actor):
@@ -384,6 +396,8 @@ class ForbesSmugglerOne(Actor):
     TYPE = ACTOR_MALE
     NAME = 'smuggler1'
     COMM_APPEARANCE = 'pl_male1_head, pi_pirate3_body, comm_pi_pirate'
+    STEOS_ID = 263
+    STEOS_PITCH = 0
 
 
 class ForbesSmugglerTwo(Actor):
@@ -391,6 +405,9 @@ class ForbesSmugglerTwo(Actor):
     TYPE = ACTOR_MALE
     NAME = 'smuggler2'
     COMM_APPEARANCE = 'pl_male1_head, pi_pirate3_body, comm_pi_pirate'
+    STEOS_ID = 254
+    STEOS_PITCH = 0
+    STEOS_SPEED = 1
 
 
 class ForbesSmugglerThree(Actor):
@@ -398,6 +415,8 @@ class ForbesSmugglerThree(Actor):
     TYPE = ACTOR_MALE
     NAME = 'smuggler3'
     COMM_APPEARANCE = 'pl_male1_head, pi_pirate3_body, comm_pi_pirate'
+    STEOS_ID = 259
+    STEOS_PITCH = -0.3
 
 
 class OmegaJunkerOne(Actor):
@@ -405,6 +424,8 @@ class OmegaJunkerOne(Actor):
     TYPE = ACTOR_MALE
     NAME = 'junker1'
     COMM_APPEARANCE = 'pl_male1_head, pi_pirate3_body, comm_pi_pirate'
+    STEOS_ID = 263
+    STEOS_PITCH = 0
 
 
 class OmegaJunkerTwo(Actor):
@@ -412,6 +433,9 @@ class OmegaJunkerTwo(Actor):
     TYPE = ACTOR_MALE
     NAME = 'junker2'
     COMM_APPEARANCE = 'pl_male1_head, pi_pirate3_body, comm_pi_pirate'
+    STEOS_ID = 254
+    STEOS_PITCH = 0
+    STEOS_SPEED = 1
 
 
 class OmegaJunkerThree(Actor):
@@ -419,6 +443,8 @@ class OmegaJunkerThree(Actor):
     TYPE = ACTOR_MALE
     NAME = 'junker3'
     COMM_APPEARANCE = 'pl_male1_head, pi_pirate3_body, comm_pi_pirate'
+    STEOS_ID = 259
+    STEOS_PITCH = -0.3
 
 
 class MaleCaptain(Actor):
@@ -462,6 +488,7 @@ class Sigma8Outpost(Actor):
     TYPE = ACTOR_FEMALE
     NAME = 'outpost'
     COMM_APPEARANCE = 'rh_newscaster_head_gen_hat, rh_female_elite_body, prop_hat_female_rh_elite'
+    STEOS_ID = 410
 
 
 class SphereOutpost(Actor):
@@ -485,6 +512,7 @@ class SphereAssistant(Actor):
     TYPE = ACTOR_MALE
     NAME = 'scient'
     COMM_APPEARANCE = 'ge_male4_head, sc_scientist3_body, prop_neuralnet_E'
+    STEOS_ID = 13094
 
 
 class DeltaOne(Actor):
@@ -514,10 +542,7 @@ class Reitherman(Actor):
     TYPE = ACTOR_MALE
     NAME = 'professor'
     COMM_APPEARANCE = 'ge_male1_head, sc_scientist4_body, prop_neuralnet_D'
-    STEOS_ID = 214
-    STEOS_PITCH = -0.5
-    # STEOS_SPEED = 1.1
-    STEOS_SPEED = 1
+    STEOS_ID = 13087
 
 
 class FinnRunner(Actor):
@@ -525,8 +550,8 @@ class FinnRunner(Actor):
     TYPE = ACTOR_MALE
     NAME = 'runner'
     COMM_APPEARANCE = 'sh_male1_head, sc_scientist1_body, prop_hat_male_rh_grd_visor'
-    STEOS_ID = 218
-    STEOS_PITCH = 1
+    STEOS_ID = 13092
+    # STEOS_PITCH = 1
     # STEOS_SPEED = 1.2
     STEOS_SPEED = 1  # en
 
@@ -536,9 +561,9 @@ class Ceed(Actor):
     TYPE = ACTOR_MALE
     NAME = 'syd'
     COMM_APPEARANCE = 'pl_male7_head, pi_orillion_body'
-    STEOS_ID = 211
-    STEOS_PITCH = -0.6
-    STEOS_SPEED = 1
+    STEOS_ID = 13091
+    # STEOS_PITCH = -0.6
+    # STEOS_SPEED = 1
 
 
 class OrderPilot(Actor):
@@ -546,9 +571,8 @@ class OrderPilot(Actor):
     TYPE = ACTOR_MALE
     NAME = 'orderpilot'
     COMM_APPEARANCE = 'pi_pirate2_head, pi_orillion_body, comm_br_guard'
-    STEOS_ID = 13
-    STEOS_PITCH = 0.7
-    STEOS_SPEED = 1
+    STEOS_ID = 13094
+    STEOS_PITCH = -0.2
 
 
 class OrderGuard(Actor):
@@ -556,8 +580,8 @@ class OrderGuard(Actor):
     TYPE = ACTOR_MALE
     NAME = 'guard'
     COMM_APPEARANCE = 'pi_pirate2_head, pi_orillion_body, comm_br_guard'
-    STEOS_ID = 13
-    STEOS_PITCH = 0.7
+    STEOS_ID = 13094
+    STEOS_PITCH = 0.2
     STEOS_SPEED = 1
 
 
@@ -566,7 +590,7 @@ class Kruger(Actor):
     TYPE = ACTOR_MALE
     NAME = 'kruger'
     COMM_APPEARANCE = 'li_captain_head, li_male_elite_body'
-    STEOS_ID = 10090
+    STEOS_ID = 248
 
 
 class Omaha(Actor):
@@ -586,9 +610,9 @@ class PromDread1(Actor):
     TYPE = ACTOR_MALE
     NAME = 'promdread1'
     COMM_APPEARANCE = 'li_captain_head, li_male_elite_body'
-    STEOS_ID = 210
-    STEOS_PITCH = 0.2
-    STEOS_SPEED = 1.1
+    STEOS_ID = 13092
+    # STEOS_PITCH = 0.2
+    # STEOS_SPEED = 1.1
 
 
 class PromDread2(Actor):
@@ -616,6 +640,7 @@ class RedLeader(Actor):
     TYPE = ACTOR_MALE
     NAME = 'red'
     COMM_APPEARANCE = 'li_captain_head, li_male_elite_body, comm_li_elite'
+    STEOS_ID = 248
 
 
 class CruiserCaptain(Actor):
@@ -623,12 +648,14 @@ class CruiserCaptain(Actor):
     TYPE = ACTOR_MALE
     NAME = 'captain'
     COMM_APPEARANCE = 'li_captain_head, li_male_elite_body, comm_li_elite'
+    STEOS_ID = 13092
 
 
 class JabbaBandit(Actor):
     RU_NAME = MS('Бандит', 'Bandit')
     TYPE = ACTOR_MALE
     NAME = 'bandit'
+    STEOS_ID = 296
 
 
 class Tortuga(Actor):
@@ -661,18 +688,18 @@ class WalesBarman(Actor):
     RU_NAME = MS('Бармен', 'Bartender')
     TYPE = ACTOR_MALE
     NAME = 'barman'
-    STEOS_ID = 218
-    STEOS_PITCH = 0.3
-    STEOS_SPEED = 1.1
+    STEOS_ID = 13099
+    # STEOS_PITCH = 0.3
+    # STEOS_SPEED = 1.1
 
 
 class IntroBarman(Actor):
     RU_NAME = MS('Бармен', 'Bartender')
     TYPE = ACTOR_MALE
     NAME = 'barman'
-    STEOS_ID = 287
+    STEOS_ID = 13100
     STEOS_SPEED = 1
-    STEOS_PITCH = 0.09
+    STEOS_PITCH = -0.7
 
 
 class Jabba(Actor):
@@ -685,10 +712,11 @@ class Jabba(Actor):
 
 
 
-class Stewardess(Hatcher):
+class Stewardess(Actor):
     RU_NAME = MS('Стюардесса', 'Stewardess')
     TYPE = ACTOR_FEMALE
     NAME = 'stuard'
+    STEOS_ID = 10061
 
 
 class CorsairBarman(Actor):
@@ -696,9 +724,9 @@ class CorsairBarman(Actor):
     TYPE = ACTOR_MALE
     NAME = 'barman'
     COMM_APPEARANCE = 'sh_male1_head, sh_male2_body'
-    STEOS_ID = 287
-    STEOS_SPEED = 0.9
-    STEOS_PITCH = 0.25
+    STEOS_ID = 13105
+    # STEOS_SPEED = 0.9
+    # STEOS_PITCH = 0.25
 
 
 class Yamamoto(Actor):
@@ -735,22 +763,24 @@ class Alaric(Actor):
     COMM_APPEARANCE = 'rh_alaric_head_hat, pi_pirate6_body, comm_rh_alaric'
     CUTSCENE_APPEARANCE = 'alaric'
     SPACE_VOICE = 'pilot_f_mil_m01'
-    STEOS_ID = 204
-    STEOS_PITCH = -1
+    STEOS_ID = 426
+    STEOS_PITCH = -0.1
+
+    # STEOS_PITCH = -1
     # STEOS_SPEED = 1.1
-    STEOS_SPEED = 1  # For ENG
+    # STEOS_SPEED = 1  # For ENG
 
 
-class AlaricStation(Actor):
+class AlaricStation(Alaric):
     RU_NAME = MS('Аларик', 'Alaric')
     TYPE = ACTOR_MALE
     NAME = 'alaric'
     COMM_APPEARANCE = 'rh_alaric_head, pi_pirate6_body'
     CUTSCENE_APPEARANCE = 'alaric'
     SPACE_VOICE = 'pilot_f_mil_m01'
-    STEOS_ID = 204
-    STEOS_PITCH = 0.1
-    STEOS_SPEED = 1.1
+    # STEOS_ID = 204
+    # STEOS_PITCH = 0.1
+    # STEOS_SPEED = 1.1
 
 
 class Jacobo(Actor):
@@ -764,7 +794,7 @@ class Jacobo(Actor):
     STEOS_PITCH = 0.5
 
 
-class JacoboTrader(Actor):
+class JacoboTrader(Jacobo):
     RU_NAME = MS('Джакобо', 'Jacobo')
     TYPE = ACTOR_MALE
     NAME = 'jacobo'
@@ -778,7 +808,7 @@ class Dietrich(Actor):
     TYPE = ACTOR_MALE
     NAME = 'deidrich'
     COMM_APPEARANCE = 'rh_deidrich_head, rh_deidrich_body'
-    STEOS_ID = 214
+    STEOS_ID = 536
 
 
 class Wilham(Actor):
@@ -796,7 +826,7 @@ class Wilham(Actor):
     STEOS_SPEED = 1
 
 
-class WilhamStation(Actor):
+class WilhamStation(Wilham):
     RU_NAME = MS('Вильгельм', 'Wilhelm')
     TYPE = ACTOR_MALE
     NAME = 'wilhelm'
@@ -839,7 +869,7 @@ class SakuraOne(Actor):
     TYPE = ACTOR_MALE
     NAME = 'sakura'
     COMM_APPEARANCE = 'ku_sales_head, ku_male_guard_body, comm_ku_guard'
-    STEOS_ID = 10071  # 10090
+    STEOS_ID = 193  # 10090
 
 
 class Chrysanthemum(Actor):
@@ -847,7 +877,7 @@ class Chrysanthemum(Actor):
     TYPE = ACTOR_FEMALE
     NAME = 'chrys'
     COMM_APPEARANCE = 'ku_kym_head, ku_kym_body, prop_neuralnet_d'
-    STEOS_ID = 206
+    STEOS_ID = 10061
 
 
 class ChrysanthemumTrain(Actor):
@@ -855,7 +885,7 @@ class ChrysanthemumTrain(Actor):
     TYPE = ACTOR_MALE
     NAME = 'chrys'
     # COMM_APPEARANCE = ''
-    STEOS_ID = 10071
+    STEOS_ID = 10061
 
 
 class ChrysanthemumLifter(Actor):
@@ -863,7 +893,7 @@ class ChrysanthemumLifter(Actor):
     TYPE = ACTOR_MALE
     NAME = 'chrys'
     # COMM_APPEARANCE = ''
-    STEOS_ID = 10071
+    STEOS_ID = 10061
 
 
 class ChrysanthemumRepair(Actor):
@@ -871,7 +901,7 @@ class ChrysanthemumRepair(Actor):
     TYPE = ACTOR_MALE
     NAME = 'chrys'
     # COMM_APPEARANCE = ''
-    STEOS_ID = 10071
+    STEOS_ID = 10061
 
 
 class Tor(Actor):
@@ -893,8 +923,9 @@ class Reichman(Actor):
     # STEOS_ID = 10080
     # STEOS_PITCH = -0.5
     # en
-    STEOS_ID = 220
-    STEOS_PITCH = -0.5
+    STEOS_ID = 270
+    STEOS_PITCH = 0
+    STEOS_SPEED = 1.1
 
 
 class YokohamaBarOne(Actor):

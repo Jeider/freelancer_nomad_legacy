@@ -490,11 +490,13 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             600,
             Hatcher,
             ru="Капсулы не вылетели! Трент, нам нужно спасти Мандрейка! Достань капсулы из обломков базы!",
+            en="Escape pod did not launched! Trent, we need to save Mandrake! Get the capsules from the base chunks!"
         ),
         VoiceLine(
             605,
             Hatcher,
             ru="Мандрейк у нас! Теперь давай постар+аемся спаст+и как можно больше учёных!",
+            en="We got Mandrake! May be we still can save everyone of scientists!"
         ),
         VoiceLine(
             610,
@@ -600,7 +602,7 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
         ),
         VoiceLine(
             780,
-            Trent,
+            Tilton,
             ru="Замолчи, Трент ",
             en="Shut up, Trent!",
         ),

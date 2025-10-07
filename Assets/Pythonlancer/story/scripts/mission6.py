@@ -224,6 +224,8 @@ class Msn6Space(Msn6, script.SpaceVoiceProps):
             HatcherStation,
             ru="Наши военные аналитики разработали стратегии выполнения задания. Эти стратегии уже загружены в ваши корабли. "
                "Можете воспользоваться при необходимости.",
+            en="Our military analytics prepared special mission strategies. Those strategies was uploaded to "
+               "your neuralenets. You can use it at your will."
         ),
         VoiceLine(
             60,

@@ -87,13 +87,13 @@ class Msn4Space(Msn4, script.SpaceVoiceProps):
             0,
             JacoboTrader,
             ru="Герр Трент, это Джакобо! Герр Трент, вы помните меня? Герр Трент, нам очень нужна ваша помощь. Вы же были не против помочь нам если понадобится, помните? Герр Трент, прошу вас как можно быстрее прибыть на планету Норторф в систему Мюнхен!",
-            en="Herr Trent, this is JacoboTrader! Herr Trent, do you remember me? Herr Trent, I really need your help. You said you wouldn't mind helping me if I needed anything, remember? Herr Trent, I need you to come to planet Nortorf in the Munich system as fast as you can!",
+            en="Herr Trent, this is Jacobo! Herr Trent, do you remember me? Herr Trent, I really need your help. You said you wouldn't mind helping me if I needed anything, remember? Herr Trent, I need you to come to planet Nortorf in the Munich system as fast as you can!",
         ),
         VoiceLine(
             10,
             Trent,
             ru="Джакобо, Дромадер? Что это за ведро?",
-            en="JacoboTrader, a Dormedary? What kind of trash can is that? ",
+            en="Jacobo, a Dormedary? What kind of trash can is that? ",
         ),
         VoiceLine(
             20,
@@ -147,7 +147,7 @@ class Msn4Space(Msn4, script.SpaceVoiceProps):
             100,
             Trent,
             ru="Нет других предложений, Джакобо, просто мысли вслух.",
-            en="No other suggestions, JacoboTrader. Just thinking out loud. ",
+            en="No other suggestions, Jacobo. Just thinking out loud. ",
         ),
         VoiceLine(
             110,
@@ -165,7 +165,7 @@ class Msn4Space(Msn4, script.SpaceVoiceProps):
             130,
             Trent,
             ru="Недолго музыка играла... Джакобо, тут без шансов. Маркус, банкуйте, мы сдаемся.",
-            en="The fun didn't last long... JacoboTrader, we don't stand a chance. Marcus, you win. We surrender. ",
+            en="The fun didn't last long... Jacobo, we don't stand a chance. Marcus, you win. We surrender. ",
         ),
         VoiceLine(
             140,
@@ -189,7 +189,7 @@ class Msn4Space(Msn4, script.SpaceVoiceProps):
             170,
             Trent,
             ru="Джакобо, угомонись.",
-            en="JacoboTrader, calm down. ",
+            en="Jacobo, calm down. ",
         ),
         VoiceLine(
             180,
@@ -285,7 +285,7 @@ class Msn4Space(Msn4, script.SpaceVoiceProps):
             330,
             Trent,
             ru="А теперь, объясните мне, пожалуйста, что за хрень вообще происходит? Во что влип Джакобо и я вместе с ним?",
-            en="Now, can someone please tell me what the hell is going on? What did JacoboTrader drag us into?",
+            en="Now, can someone please tell me what the hell is going on? What did Jacobo drag us into?",
         ),
         VoiceLine(
             340,
@@ -333,7 +333,7 @@ class Msn4Space(Msn4, script.SpaceVoiceProps):
             590,
             Trent,
             ru="Джакобо попросил эскортировать его на территорию Либерти. Неплохой парень, мы с ним пересекались по делу когда я работал под юрисдикцией небезызвестного вам герра Вильгельма.",
-            en="And to answer your question, JacoboTrader asked me to escort him to Liberty. He’s a nice guy, we crossed paths when I worked for Herr WIlhelm. ",
+            en="And to answer your question, Jacobo asked me to escort him to Liberty. He’s a nice guy, we crossed paths when I worked for Herr WIlhelm. ",
         ),
         VoiceLine(
             600,
@@ -447,7 +447,7 @@ class Msn4Space(Msn4, script.SpaceVoiceProps):
             750,
             Alaric,
             ru="А знаете что... Было бы еще интереснее завершить эту миссию. Джакобо убит, но у нас есть координаты заказчика и есть то, что ему нужно. Думаю, это будет не только интересно, но и прибыльно.",
-            en="Guys, you know what... Let’s deliver these documents. JacoboTrader’s dead, but we have the buyer’s location and got the goods. I’m just curious to see how it ends, and wouldn’t mind getting paid. ",
+            en="Guys, you know what... Let’s deliver these documents. Jacobo is dead, but we have the buyer’s location and got the goods. I’m just curious to see how it ends, and wouldn’t mind getting paid. ",
         ),
         VoiceLine(
             760,
@@ -663,13 +663,13 @@ class Msn4Space(Msn4, script.SpaceVoiceProps):
             1090,
             HatcherStation,
             ru="Мы ждали вас и... это не мистер Джакобо!",
-            en="We were waiting for you, and... Wait, that’s not Mr. JacoboTrader!  ",
+            en="We were waiting for you, and... Wait, that’s not Mr. Jacobo!  ",
         ),
         VoiceLine(
             1100,
             Trent,
             ru="Правильно, это не мистер Джакобо. Мистер Джакобо погиб, когда нас прижали Рейнландские военные. ",
-            en="That’s right, it’s not Mr. JacoboTrader. Mr. JacoboTrader died when we got attacked by Rheinland’s military.",
+            en="That’s right, it’s not Mr. Jacobo. Mr. Jacobo died when we got attacked by Rheinland’s military.",
         ),
         VoiceLine(
             1110,

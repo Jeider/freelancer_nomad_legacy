@@ -57,11 +57,12 @@ class VoiceLine(object):
         print(self.index)
         return (self.get_en_clean_ai_text()
                 .replace("'", '')
-                .replace("Mr.", 'mister')
-                .replace("mr.", 'mister')
+                .replace("Mr.", 'm+ister')
+                .replace("mr.", 'm+ister')
                 .replace('ASF', 'A-eS-eF')
                 .replace(',,', ',')
-                .replace('Mrs.', 'missis'))
+                .replace('Mrs.', 'missis')
+                .replace('EMP', 'Ee-Em-Pi'))
 
     def get_ru_subtitle(self):
         return MS(

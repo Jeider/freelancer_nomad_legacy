@@ -373,19 +373,25 @@ def generate_story_voices():
     script_manager = ScriptManager()
     # import pdb;pdb.set_trace()
 
-    msn = script_manager.get_mission_by_index(1)
-    for voice in msn.get_en_voices():
-        audio_folder.AudioFolder.compile_story_voice_to_xml(voice, russian=False)
+    indexes = range(1, 12+1)
+    indexes = [11]
+
+    for i in indexes:
+        msn = script_manager.get_mission_by_index(i)
+        for voice in msn.get_en_voices():
+            audio_folder.AudioFolder.compile_story_voice_to_xml(voice, russian=False)
 
 
 def generate_cutscene_voices():
     script_manager = ScriptManager()
     # import pdb;pdb.set_trace()
 
-    msn = script_manager.get_mission_by_index(12)
+    indexes = range(1, 12+1)
 
-    for cutscene in msn.get_cutscenes():
-        audio_folder.AudioFolder.generate_cutscene_sounds(cutscene, russian=False)
+    for i in indexes:
+        msn = script_manager.get_mission_by_index(i)
+        for cutscene in msn.get_cutscenes():
+            audio_folder.AudioFolder.generate_cutscene_sounds(cutscene, russian=False)
 
 
 def meta():

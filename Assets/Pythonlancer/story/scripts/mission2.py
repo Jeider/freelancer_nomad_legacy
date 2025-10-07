@@ -370,7 +370,7 @@ class Msn2Space(Msn2, script.SpaceVoiceProps):
             430,
             PunisherCatcher,
             ru="База! Вижу базу!",
-            en="A base! I see a base!",
+            en="A base! I see corsair base!",
         ),
         VoiceLine(
             440,
@@ -454,27 +454,33 @@ class Msn2Space(Msn2, script.SpaceVoiceProps):
             7000,
             Neuralnet,
             ru="Чтобы получ+ить д+оступ на рудок+оп, вы должн+ы доб+ыть кл+юч. Кл+юч м+ожно доб+ыть в астер+оидах. Атак+уйте вн+утренние п+олости ближ+айших астер+оидов сво+ими п+ушками.",
+            en='To get access to roid miner you must get the key. You can mine key inside asteroids. Attack internal sides of nearest asterods by your guns.',
         ),
         VoiceLine(
             7010,
             Neuralnet,
             ru="+Если п+олость астер+оида разр+ушилась с зел+ёным взр+ывом, зн+ачит с астер+оида м+ожно доб+ыть кл+юч.",
+            en='If side was destroyed with green color, it means this asteroid contains a key',
         ),
         VoiceLine(
             7020,
             Neuralnet,
             ru="Уничтошьте все п+олости +этого астер+оида до тех пор, пока ключ не в+ыпадет. Д+оступ к ст+анции б+удет откр+ыт ср+азу же, как т+олько вы забер+ёте ключ в свой трюм.",
+            en='Destroy all remaining internal sides of asteroid until you get the key. You will get access to roid miner right after collecting this key into your cargo hold.',
         ),
         VoiceLine(
             7030,
             Neuralnet,
             ru="Если п+олость астер+оида была разрушена с б+елым взр+ывом, то на этом астер+оиде не б+удет ключ+а. Вы должн+ы будете направиться к сл+едующему астер+оиду и попр+обовать сн+ова.",
+            en="If side was destroyed with white color, it means this asteroid have no key inside. You must check next asteroid and try again",
         ),
         VoiceLine(
             7040,
             Neuralnet,
             ru="В Секторе Сириуса различные станции нужно взламывать различными способами. "
                "Чтобы получить информацию о методике взлома обратитесь к инфокарте взламываемого объекта.",
+            en="You can find different locked objects in Sirius Sector. They should be opened by different ways. "
+               "Check the inforcard of locked object to get more information.",
         ),
     ]
 
