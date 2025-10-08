@@ -174,6 +174,7 @@ class IngameMission(object):
     def get_rtc_context(self) -> dict:
         return {
             'init_offer': self.init_offer,
+            'suffix': '' if self.russian else '_en',
         }
 
     def get_initial_context(self) -> dict:

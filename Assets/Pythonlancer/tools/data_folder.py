@@ -56,8 +56,12 @@ class DataFolder(object):
         return cls.get_root() / 'SCRIPTS'
 
     @classmethod
-    def get_cutscene_audio(cls):
+    def get_cutscene_audio_ru(cls):
         return cls.get_audio() / 'MOD'
+
+    @classmethod
+    def get_cutscene_audio_en(cls):
+        return cls.get_audio() / 'MOD_ENG'
 
     @classmethod
     def sync_fuse(cls, fuse_name, content):
@@ -219,6 +223,7 @@ class DataFolder(object):
         return file_content
 
     @classmethod
-    def watch_cutscene_audio_duration(cls, subfolder, file_path):
-        duration = get_duration_pydub(cls.get_cutscene_audio() / subfolder / file_path)
+    def watch_cutscene_audio_duration(cls, subfolder, file_path, russian=True):
+        root = cls.get_cutscene_audio_ru() if russian else cls.get_cutscene_audio_en()
+        duration = get_duration_pydub(root / subfolder / file_path)
         return duration

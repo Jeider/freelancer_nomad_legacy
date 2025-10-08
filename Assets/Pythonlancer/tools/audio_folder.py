@@ -5,8 +5,8 @@ import pathlib
 
 
 XML_FOLDERS = [
-    'echo_m01',
-    'echo_m01_player',
+    # 'echo_m01',
+    # 'echo_m01_player',
     # 'echo_m02',
     # 'echo_m02_female',
     # 'echo_m02_player',

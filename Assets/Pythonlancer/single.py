@@ -374,7 +374,7 @@ def generate_story_voices():
     # import pdb;pdb.set_trace()
 
     indexes = range(1, 12+1)
-    indexes = [11]
+    indexes = [7]
 
     for i in indexes:
         msn = script_manager.get_mission_by_index(i)
@@ -408,13 +408,24 @@ def meta():
 
 
 def scene():
+    russian = False
+
     tpl_manager = JinjaTemplateManager()
     script_manager = ScriptManager()
-    msn = script_manager.get_mission_by_index(13)
-    cutscene = msn.get_cutscene_by_code('csv')
-    cutscene.get_thorn(tpl_manager).sync_content()
-    # cutscene.get_decision_thorn(tpl_manager).sync_content()
-    # cutscene.get_accept_thorn(tpl_manager).sync_content()
+    # msn = script_manager.get_mission_by_index(13)
+    # cutscene = msn.get_cutscene_by_code('csv')
+
+    for i in range(9, 12+1):
+        msn = script_manager.get_mission_by_index(i)
+        for cutscene in msn.get_cutscenes():
+            print(cutscene.ALIAS)
+
+            cutscene.get_thorn(tpl_manager, russian).sync_content()
+            if decision := cutscene.get_decision_thorn(tpl_manager, russian, skip=True):
+                decision.sync_content()
+
+            if accept := cutscene.get_accept_thorn(tpl_manager, russian, skip=True):
+                accept.sync_content()
 
     print('scene done')
 

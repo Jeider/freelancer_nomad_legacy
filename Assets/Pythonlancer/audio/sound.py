@@ -117,8 +117,12 @@ class CutsceneSound(Sound):
     def get_destination(self, suffix=''):
         return self.mission_segment.get_destination(suffix)
 
-    def get_duration(self):
-        return DataFolder.watch_cutscene_audio_duration(self.mission_segment.get_subfolder(), self.get_filename())
+    def get_duration(self, russian=True):
+        return DataFolder.watch_cutscene_audio_duration(
+            self.mission_segment.get_subfolder(),
+            self.get_filename(),
+            russian=russian
+        )
 
     def get_nickname(self):
         return f'DX_{self.name}'

@@ -173,7 +173,7 @@ class Darcy(Actor):
 class Kaitlyn(Actor):
     RU_NAME = MS('Кейтлин', 'Caitlyn')
     TYPE = ACTOR_FEMALE
-    NAME = 'kaytlin'
+    NAME = 'kaitlyn'
     COMM_APPEARANCE = 'br_kaytlin_head, br_kaytlin_body'
     STEOS_ID = 203
     STEOS_PITCH = -0.5

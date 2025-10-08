@@ -174,7 +174,7 @@ class Msn6Freeport(Msn6, script.CutsceneProps):
         VoiceLine(30, DeltaOne, ru="", en="Keep a low profile. Feel free to work a few odd jobs on this freeport, other independent stations, or hell, possibly even with the pirates. But under no circumstances should you return to lawful space."),
         VoiceLine(40, DeltaOne, ru="", en="If you're caught there, we won't be able to help you. You'll be turned into a scapegoat."),
         VoiceLine(50, DeltaOne, ru="", en="I must contact with ASF headquarters right away to discuss the situation and develop an action plan."),
-        VoiceLine(60, DeltaOne, ru="", en="As a token of gratitude, I'm transferring you 5,000 credits from my personal account. Additionally, the promised reward from this mission still stands, and you should receive it as soon as our situation is resolved."),
+        VoiceLine(60, DeltaOne, ru="", en="As a token of gratitude, I'm transferring you 5,,000 credits from my personal account. Additionally, the promised reward from this mission still stands, and you should receive it as soon as our situation is resolved."),
         VoiceLine(70, Trent, ru="", en="And what about a compensation for the mental damage?"),
         VoiceLine(90, DeltaOne, ru="", en="Mr. Trent, frankly speaKing, you never gave the impression of a greedy man. You operate very patiently and very effectively in risky life-or-death situations. And you survived thus far."),
         VoiceLine(100, DeltaOne, ru="", en="Greedy people, on the other hand, tend to live much shorter lives in my experience. I'll be in touch once I’ve got any news for you, Mr. Trent."),
