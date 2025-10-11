@@ -9,7 +9,7 @@ from story import actors
 from story.ingame import names as N
 from story.ingame import objectives as O
 from story.ingame.tools import (Point, Obj, Conn, NNObj, Ship, Solar, StaticJumpgate, Capital, SaveState,
-                                DockableBattleshipSolar, MultiLine)
+                                DockableBattleshipSolar, MultiLine, TextDialog, MultiText)
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
 from world.npc import NPC, EqMap
@@ -69,6 +69,63 @@ class Misson07(ingame_mission.IngameMission):
             SaveState(self, 'ironside', MS('Мальта. Билл Айронсайд найден', 'Malta. Battle with Ironside')),
             SaveState(self, 'diversion', MS('Малый Омикрон. Перед диверсией', 'Omicron Minor. Before Diversion')),
             SaveState(self, 'armored', MS('Малый Омикрон. Перехват транспорта', 'Omicron Minor. Catching of Transport')),
+        ]
+
+    def get_dialogs(self):
+        return [
+            TextDialog(
+                self, 'bombs', MS('Сверхтяжелые бомбы', 'Ultra heavy bombs'),
+                ru_content=MultiText([
+                    'Подберите бомбы в свой грузовой отсек.',
+
+                    'Бомбы будут размещены в вашем отсеке в разделе Снаряды.',
+
+                    'Подлетите к коммуникатору и сбросьте бомбы из вашего трюма рядом с ним. Будьте осторожны во '
+                    'время сбрасывания бомб, они могут взорваться от касания об другие объекты.',
+
+                    'Чтобы взорвать бомбы вы должны отлететь на безопасное растояние и выстрелить по ним из своих '
+                    'орудий. Бомбы имеют огромную зону детонации. Рекомендуется делать детонацию на максимальной '
+                    'дальности выстрела ваших пушек или сдетонировать их ракетой.',
+
+                    'Будьте осторожны при выбраывании бомб. Они могут взорваться от любого касания о другие объекты.',
+                ],[
+                    'Collect the bombs and pick up them into your cargo hold.',
+
+                    'Bombs will be appeared in Ammo section of your equipment.',
+
+                    'Fly to communicator and jettison the bombs near communicator. Be careful: bombs can be detonated '
+                    'by hits with other objects.',
+
+                    'To detonate the bombs you must fly to safe distance and detonate the bombs by your guns. '
+                    "Bombs have extremely large explosion range. It's recommend to stay on far possible zone from "
+                    "bombs. You can do by guns and by missiles."
+                ]),
+            ),
+            TextDialog(
+                self, 'emi_cannon', MS('От автора', 'From author'),
+                ru_content=MultiText([
+                    'Броневик оборудован слишком мощным щитом. Вы не сможете пробить его своими пушками',
+
+                    'Вы можете вывести щит из строя в случае, если транспорт будет слишком часто использовать '
+                    'электро-магнитную пушку (ЭМП) и перегреет генератор.',
+
+                    'Просто находиться как можно ближе к броневику, чтобы он атаковал вас своей ЭМП.',
+
+                    'Нужно постоянно находиться в радиусе атаки ЭМП. Если выпокинете зону атаки ЭМП, то генератор '
+                    'транспорта придёт в норму.',
+
+                ],[
+                    'Armored transport has too powerful shield. You can not broke it by your guns.',
+
+                    'You can broke this shield only when armored transport will use it EMI-cannon too much time and '
+                    'its generator will be overheated (EMI - electro-magnetic impulse).',
+
+                    'You should stay near armored transport to be attacked by its EMI-cannon.',
+
+                    'You must stay in EMI-cannon damage zone longer as possible. Armored tranport will restore '
+                    'generator when you leave EMI-cannon damage zone.'
+                ]),
+            ),
         ]
 
     def get_ingame_thorns(self):

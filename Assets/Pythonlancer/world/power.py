@@ -332,9 +332,9 @@ EN_FEATURES_PER_FACTION = {
 }
 
 EN_RESTRICTIONS_PER_SHIPCLASS = {
-    MainMiscEquip.SHIPCLASS_FIGHTER: 'This powerplant can be munted only light fighter',
-    MainMiscEquip.SHIPCLASS_ELITE: 'This powerplant can be munted only heavy fighter',
-    MainMiscEquip.SHIPCLASS_FREIGHTER: 'This powerplant can be munted only freight and CSV',
+    MainMiscEquip.SHIPCLASS_FIGHTER: 'This powerplant can be mounted only light fighter',
+    MainMiscEquip.SHIPCLASS_ELITE: 'This powerplant can be mounted only heavy fighter',
+    MainMiscEquip.SHIPCLASS_FREIGHTER: 'This powerplant can be mounted only freight and CSV',
 }
 
 EN_POWERPLANT_WARNING = 'Ship can not launch without mounted powerplant!'

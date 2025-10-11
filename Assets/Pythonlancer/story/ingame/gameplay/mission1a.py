@@ -4,7 +4,7 @@ from story.ingame import ingame_mission
 from story import actors
 
 from story.ingame import objectives as O
-from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, SaveState, MultiText, MultiLine, TextDialog
+from story.ingame.tools import Point, Obj, Conn, NNObj, Ship, SaveState, MultiText, MultiLine, TextDialog, DIALOG_YES_NO
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
 from world.npc import NPC, EqMap
@@ -95,6 +95,23 @@ class Misson01A(ingame_mission.IngameMission):
 
     def get_dialogs(self):
         return [
+            TextDialog(
+                self, 'intro_select', MS('От автора', 'From author'),
+                dialog_type=DIALOG_YES_NO,
+                ru_content=MultiText([
+                    'Добро пожаловать в Наследие Номадов!',
+
+                    'Нажмите Да, чтобы начать кампанию.',
+
+                    'Нажмите Нет, чтобы начать кампанию и пропустить титры.',
+                ],[
+                    'Greetings! Welcome to mod The Nomad Legacy!',
+
+                    'Press Yes to start the campaign.',
+
+                    'Press No to start the campaign and skip intro titles.',
+                ]),
+            ),
             TextDialog(
                 self, 'engine_controls', MS('От автора', 'From author'),
                 ru_content=MultiText([
