@@ -19,6 +19,11 @@ class DataFolder(object):
         current_path = pathlib.Path().resolve()
         return current_path.parent.parent / 'DATA'
 
+    @staticmethod
+    def get_exe():
+        current_path = pathlib.Path().resolve()
+        return current_path.parent.parent / 'EXE'
+
     @classmethod
     def get_audio(cls):
         return cls.get_root() / 'AUDIO'
@@ -136,6 +141,16 @@ class DataFolder(object):
     @classmethod
     def sync_universe(cls, content):
         equip_file = cls.get_universe() / 'universe.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    @classmethod
+    def sync_initial_world(cls, content):
+        equip_file = cls.get_root() / 'initialworld.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    @classmethod
+    def sync_new_player(cls, content):
+        equip_file = cls.get_exe() / 'newplayer.fl'
         equip_file.write_text(content, encoding='utf-8')
 
     @classmethod

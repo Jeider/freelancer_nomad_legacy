@@ -38,8 +38,6 @@ def main():
         ('debug_store.ini', ''.join(core.universe.get_bases_store_debug_info())),
 
         ('demo_marketdata.ini', DIVIDER.join(markets_demo_data)),
-        ('key_for_story.ini', core.universe.get_key_story()),
-        ('key_for_initial_world.ini', core.universe.get_key_initial_world()),
     ]
     for file, content in files_map:
         FileWriter.write(file, content)

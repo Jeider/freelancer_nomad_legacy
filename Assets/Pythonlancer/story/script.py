@@ -326,7 +326,6 @@ class StoryMission:
         raise Exception('unknown voice root exception')
 
     def get_male_space_voice(self, suffix=''):
-        print(suffix)
         return MaleVoice(
             voice_name=self.get_male_voice_root(suffix),
             sounds=[sound for sound in self.space.get_sounds() if sound.line.actor.is_male()],

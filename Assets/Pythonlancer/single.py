@@ -374,7 +374,7 @@ def generate_story_voices():
     # import pdb;pdb.set_trace()
 
     indexes = range(1, 12+1)
-    indexes = [7]
+    indexes = [11]
 
     for i in indexes:
         msn = script_manager.get_mission_by_index(i)

@@ -23,14 +23,15 @@ class IngameMission(object):
         super().__init_subclass__(**kwargs)
         cls.subclasses.append(cls)
 
-    def __init__(self, russian, ids, ids_save, full_script, universe_root, history_manager):
+    def __init__(self, russian, ids, ids_save, full_script, universe, history_manager):
         self.russian = russian
         self.ids = ids
         self.ids_save = ids_save
         self.capital_groups = {}
         self.solar_groups = {}
         self.full_script = full_script
-        self.universe_root = universe_root
+        self.universe = universe
+        self.universe_root = self.universe.get_universe_root()
         self.history_manager = history_manager
         self.points: dict = self.get_all_points()
         self.nn_objectives = self.get_nn_objectives()

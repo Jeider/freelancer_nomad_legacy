@@ -36,7 +36,6 @@ class StoryManager:
         self.universe = self.core.universe
         self.population = self.core.population
         self.shiparch = self.core.shiparch
-        universe_root = self.universe.get_universe_root()
         self.ids = self.core.ids.story
         self.ids_save = self.core.ids.story_save
         self.history_manager = HistoryManager(ids=self.core.ids.history)
@@ -53,7 +52,7 @@ class StoryManager:
             print(mission_class)
             mission = mission_class(russian=self.core.russian,
                                     ids=self.ids, ids_save=self.ids_save,
-                                    full_script=self.script, universe_root=universe_root,
+                                    full_script=self.script, universe=self.universe,
                                     history_manager=self.history_manager)
             self.missions.append(mission)
             content = self.core.tpl_manager.get_result(mission.get_template(), mission.get_context())

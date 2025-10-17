@@ -1472,6 +1472,10 @@ class Direct:
     def nn_clear(self):
         return CLEAR_OBJECTIVES
 
+    @property
+    def lock_docks(self):
+        return self.mission.universe.get_story_locked_docks()
+
     def save(self, code):
         state = self.save_states.get(code)
         if not state:

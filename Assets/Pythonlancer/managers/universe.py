@@ -12,6 +12,9 @@ from tools.data_folder import DataFolder
 
 from text.dividers import SINGLE_DIVIDER, DIVIDER
 
+INITIAL_WORLD_TEMPLATE = 'hardcoded_inis/static_content/initialworld.ini'
+NEW_PLAYER_TEMPLATE = 'hardcoded_inis/static_content/newplayer.fl'
+
 
 class UniverseManager:
 
@@ -165,8 +168,9 @@ class UniverseManager:
     def get_mbases_file_content(self):
         return MBasesTemplate().format({'generated': self.get_mbases_content()})
 
-    def get_key_initial_world(self):
-        return DIVIDER.join([key.get_initial_world() for key in self.keys])
+    def get_initial_world_locked_docks(self):
+        locks = [key.get_initial_world() for key in self.keys]
+        return DIVIDER.join(locks)
 
     def get_key_equip(self):
         return DIVIDER.join([key.get_equip() for key in self.keys])
@@ -176,7 +180,7 @@ class UniverseManager:
         # Remove key good to keep keys silent
         return DIVIDER.join([key.get_good() for key in self.keys])
 
-    def get_key_story(self):
+    def get_story_locked_docks(self):
         return SINGLE_DIVIDER.join([key.get_story() for key in self.keys])
 
     def get_dock_key(self):
@@ -188,6 +192,18 @@ class UniverseManager:
     def get_infocard_map_content(self):
         return SINGLE_DIVIDER.join(['[InfocardMapTable]'] + self.infocards_map_items)
 
+    def get_initial_world_content(self):
+        context = {
+            'locked_gates': self.get_initial_world_locked_docks(),
+        }
+        return self.core.tpl_manager.get_result(INITIAL_WORLD_TEMPLATE, context)
+
+    def get_new_player_content(self):
+        context = {
+            'locked_gates': self.get_story_locked_docks(),
+        }
+        return self.core.tpl_manager.get_result(NEW_PLAYER_TEMPLATE, context)
+
     def sync_data(self):
         if not self.core.write:
             return
@@ -196,6 +212,8 @@ class UniverseManager:
         DataFolder.sync_mbases(self.get_mbases_file_content())
         DataFolder.sync_dock_key(self.get_dock_key_file_content())
         DataFolder.sync_infocard_map(self.get_infocard_map_content())
+        DataFolder.sync_initial_world(self.get_initial_world_content())
+        DataFolder.sync_new_player(self.get_new_player_content())
 
         for the_system in self.universe_root.get_all_systems():
             if not the_system.ALLOW_SYNC:

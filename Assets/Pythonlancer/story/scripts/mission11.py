@@ -213,7 +213,7 @@ class Msn11DrinkCutscene(Msn11, script.CutsceneProps):
                   en='Kim, can you even answer me?!'),
 
         VoiceLine(40, Kim, ru='(Громкое "Я" с желанием вскрикнуть, вдох и... тихое нет на выдохе...) Я... Нет... Пока нет',
-                  en='I... I... No... Not yet... '),
+                  en='Me... Not... I can\'t... Not yet... '),
         VoiceLine(50, Kim, ru='Так знаешь, давай остынь. Скоро будет дело. Выдыхай. Я скоро выйду на связь.',
                   en='Look. You know what, just cool off. We\'ll have work to do soon. Take a breath. I\'ll be in touch.'),
 
