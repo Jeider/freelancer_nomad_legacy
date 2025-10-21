@@ -2,8 +2,6 @@ from jinja2 import Environment, FileSystemLoader, StrictUndefined
 
 TEMPLATES_DIRECTORY = 'templates'
 
-MISSIONS_FOLDER = 'missions'
-
 
 class JinjaTemplateManager(object):
 

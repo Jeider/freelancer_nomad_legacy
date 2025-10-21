@@ -441,7 +441,7 @@ class HokkPolice(HokkMember, main_objects.Outpost):
     INTERIOR_CLASS = interior.OutpostInterior
     AUDIO_PREFIX = SpaceVoice.BORDER_STATION
     DEALERS = dealers.KusariMilitaryDealers
-    RU_NAME = MS('Верфь Имабари', "Imabari Shipyard")
+    RU_NAME = MS('Аванпост Синдзюку', "Sinjuku Outpost")
 
 
 class HokkStation(HokkMember, main_objects.TradelaneSupportStation):
@@ -488,7 +488,7 @@ class HokkPlanet3(HokkMember, main_objects.Planet):
     RU_NAME = MS('Планета Миядзаки', 'Planet Miyazaki')
 
 
-class HokkOldReserachRuins(HokkMember, main_objects.StationRuins):
+class HokkOldResearchRuins(HokkMember, main_objects.StationRuins):
     ALIAS = 'ruins'
     INDEX = 1
     REL = LEFT
@@ -504,7 +504,7 @@ class HokkOldReserachRuinsSuprisePoint1(HokkMember, main_objects.HackableStation
     ALIAS = 'ruins_dock'
     INDEX = 1
     BASE_INDEX = 71
-    RELATED_OBJECT = HokkOldReserachRuins
+    RELATED_OBJECT = HokkOldResearchRuins
     RELATED_OBJECT_INDEX = 0
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpostRot90
     INTERIOR_CLASS = interior.EquipDeckInterior
@@ -522,7 +522,7 @@ class HokkOldReserachRuinsSuprisePoint2(HokkMember, main_objects.HackableStation
     ALIAS = 'ruins_dock'
     INDEX = 2
     BASE_INDEX = 72
-    RELATED_OBJECT = HokkOldReserachRuins
+    RELATED_OBJECT = HokkOldResearchRuins
     RELATED_OBJECT_INDEX = 1
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpostRot90
     INTERIOR_CLASS = interior.EquipDeckInterior
@@ -681,7 +681,7 @@ class HokkPoliceConn3(HokkMember, main_objects.TradeConnection):
 
 class HokkRuinsConn1(HokkMember, main_objects.BrokenTradeConnection):
     OBJ_FROM = HokkRefinery
-    OBJ_TO = HokkOldReserachRuins
+    OBJ_TO = HokkOldResearchRuins
     SIDE_FROM = TOP
     SIDE_TO = BOTTOM
     TRADELANE_LETTER = 'I'
@@ -690,7 +690,7 @@ class HokkRuinsConn1(HokkMember, main_objects.BrokenTradeConnection):
 
 
 class HokkRuinsConn2(HokkMember, main_objects.BrokenTradeConnection):
-    OBJ_FROM = HokkOldReserachRuins
+    OBJ_FROM = HokkOldResearchRuins
     OBJ_TO = HokkPolice
     SIDE_FROM = TOP
     SIDE_TO = BOTTOM
@@ -698,7 +698,7 @@ class HokkRuinsConn2(HokkMember, main_objects.BrokenTradeConnection):
 
 
 class HokkRuinsConn3(HokkMember, main_objects.BrokenTradeConnection):
-    OBJ_FROM = HokkOldReserachRuins
+    OBJ_FROM = HokkOldResearchRuins
     OBJ_TO = HokkMegaShipyard
     SIDE_FROM = LEFT
     SIDE_TO = RIGHT

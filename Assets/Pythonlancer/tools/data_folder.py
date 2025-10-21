@@ -24,6 +24,11 @@ class DataFolder(object):
         current_path = pathlib.Path().resolve()
         return current_path.parent.parent / 'EXE'
 
+    @staticmethod
+    def get_save():
+        current_path = pathlib.Path().resolve()
+        return current_path.parent.parent / 'SAVE'
+
     @classmethod
     def get_audio(cls):
         return cls.get_root() / 'AUDIO'
@@ -151,6 +156,26 @@ class DataFolder(object):
     @classmethod
     def sync_new_player(cls, content):
         equip_file = cls.get_exe() / 'newplayer.fl'
+        equip_file.write_text(content, encoding='utf-8')
+
+    @classmethod
+    def sync_dacom(cls, content):
+        equip_file = cls.get_exe() / 'dacom.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    @classmethod
+    def sync_perf_options(cls, content):
+        equip_file = cls.get_save() / 'PerfOptions.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    @classmethod
+    def sync_hud_shift(cls, content):
+        equip_file = cls.get_interface() / 'HudShift.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    @classmethod
+    def sync_cameras(cls, content):
+        equip_file = cls.get_root() / 'cameras.ini'
         equip_file.write_text(content, encoding='utf-8')
 
     @classmethod

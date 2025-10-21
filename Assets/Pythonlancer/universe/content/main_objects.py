@@ -1142,10 +1142,13 @@ BGCS_base_run_by = W02bF44'''
 
         if self.ALLOW_SPACE_COSTUME:
             if self.RANDOM_ROBOT and not self.SPACE_VOICE and not self.SPACE_COSTUME:
-                props['voice'] = SpaceVoice.VOICE_ROBOT
+                props['voice'] = SpaceVoice.VOICE_ROBOT_RU if self.system.core.russian else SpaceVoice.VOICE_ROBOT_EN
                 props['space_costume'] = SpaceCostume.random_robot()
             else:
-                props['voice'] = self.SPACE_VOICE if self.SPACE_VOICE else SpaceVoice.DEFAULT
+                if self.system.core.russian:
+                    props['voice'] = self.SPACE_VOICE if self.SPACE_VOICE else SpaceVoice.DEFAULT_RU
+                else:
+                    props['voice'] = self.SPACE_VOICE if self.SPACE_VOICE else SpaceVoice.DEFAULT_EN
                 props['space_costume'] = self.SPACE_COSTUME if self.SPACE_COSTUME else SpaceCostume.DEFAULT
 
         return SINGLE_DIVIDER.join(['{} = {}'.format(key, value) for key, value in props.items()])

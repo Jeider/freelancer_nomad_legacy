@@ -1194,6 +1194,7 @@ seek_dist = {self.SEEK_RANGE}
 top_speed = {self.TOP_SPEED}
 acceleration = {self.ACCELERATION}
 const_effect = {self.get_const_fx()}
+ammo_limit = {self.get_ammo_limit()}
 
 [MineDropper]
 nickname = {equip_name}

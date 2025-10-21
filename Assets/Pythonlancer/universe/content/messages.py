@@ -166,7 +166,7 @@ class MessageBuilder:
     def rumor_produce_require(self, product, component):
         return Rumor(self.core, MS(
             RU.PRODUCER_REQUIRE.format(product=product.get_ru_name_rel2(), component=component.get_ru_name_rel3()),
-            EN.PRODUCER_REQUIRE.format(product=product.get_ru_name_rel2(), component=component.get_en_name_rel3())
+            EN.PRODUCER_REQUIRE.format(product=product.get_en_name_rel2(), component=component.get_en_name_rel3())
         ))
 
     def knowledge_show_consumer_best(self, product, consumer_comm):

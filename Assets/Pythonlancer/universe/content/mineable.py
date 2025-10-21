@@ -685,7 +685,7 @@ class DebrisBoxRewardField(AsteroidRewardField):
 
 class GasCrystalRewardField(RewardField):
     ALIAS = 'cryst'
-    ULTRA_BOXES_COUNT = 1
+    ULTRA_BOXES_COUNT = 2
 
     def get_asteroid_archetype_by_reward_type(self, reward_type):
         if reward_type == MINING_REWARD_LOW: 
@@ -722,6 +722,7 @@ class GasCrystalRewardField(RewardField):
 
 class ComplexGasCrystalRewardField(GasCrystalRewardField):
     ALIAS = 'bigcryst'
+    ULTRA_BOXES_COUNT = 1
 
 
 class SupriseRewardField(RewardField):

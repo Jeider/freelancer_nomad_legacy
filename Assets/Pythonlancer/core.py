@@ -10,7 +10,7 @@ from managers.story import StoryManager
 from managers.store import StoreManager
 from managers.fx import FxManager
 
-from templates.jinja_manager import JinjaTemplateManager
+from managers.jinja_manager import JinjaTemplateManager
 
 
 class TemplateManger:

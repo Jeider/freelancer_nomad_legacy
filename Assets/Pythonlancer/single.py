@@ -1,12 +1,7 @@
 import sys
-import os
-from time import sleep
 import pathlib
 
-from scipy.spatial.transform import Rotation as R
-import numpy as np
-
-from text.dividers import DIVIDER, SINGLE_DIVIDER
+from text.dividers import SINGLE_DIVIDER
 
 from core import get_core
 
@@ -14,21 +9,16 @@ from files.writer import FileWriter
 
 from managers.script import ScriptManager
 
-from templates.jinja_manager import JinjaTemplateManager
+from managers.jinja_manager import JinjaTemplateManager
 
 from story.cutscenes.meta import LipSyncManager
 from story import math
 
 from universe.audio.manager import PilotManager
 from universe.audio import pilot
-from universe.audio import dispatcher
-from universe.audio import nnvoice, nnvoice_eng
-from universe.audio import mission_comission
+from universe.audio import nnvoice_eng
 
 from universe.content import mineable
-
-from templates.hardcoded_inis.audio import VoicesSpaceMaleTemplate, VoicesSpaceFemaleTemplate
-from templates.hardcoded_inis.missions import VoicePropertiesTemplate
 
 from tools.crc import crc32_hex_from_str
 from tools import merge_image
@@ -36,28 +26,15 @@ from tools import data_folder
 from tools import utf_xml
 from tools import elevenlabs
 from tools import audio_folder
-from tools import maxlancer
 from tools.audio_pilot import TempPilot, VanillaPilot
 
 from story import actors
 
-from tools.system_template import SystemTemplateLoader, ObjectTemplateLoader
+from tools.system_template import SystemTemplateLoader
 
 from templates.solar import hacker_panel
-from templates.space_object_template import SpaceObjectTemplate
 from templates.dockable import terraforming
-from templates.dockable import corsair_dreadnought
-from templates.dockable import upsilon_gasinside
-from templates.dockable import astbase
-from templates.dockable import nomad_babylon
 from templates.dockable import roid_mining
-from templates.misc import rmbase
-from templates.misc import trading
-from templates.dockable import nomad_asf_hq
-from templates.dockable import order_shipyard
-from templates.misc import ast_om15_xxxlarge
-
-from templates.dockable import m13
 
 
 def draw_base():

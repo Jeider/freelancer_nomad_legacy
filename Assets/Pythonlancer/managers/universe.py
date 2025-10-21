@@ -14,6 +14,7 @@ from text.dividers import SINGLE_DIVIDER, DIVIDER
 
 INITIAL_WORLD_TEMPLATE = 'hardcoded_inis/static_content/initialworld.ini'
 NEW_PLAYER_TEMPLATE = 'hardcoded_inis/static_content/newplayer.fl'
+DACOM_TEMPLATE = 'hardcoded_inis/static_content/dacom.ini'
 
 
 class UniverseManager:
@@ -204,6 +205,13 @@ class UniverseManager:
         }
         return self.core.tpl_manager.get_result(NEW_PLAYER_TEMPLATE, context)
 
+    def get_dacom_content(self):
+        context = {
+            'russian': self.core.russian,
+            'debug': True,
+        }
+        return self.core.tpl_manager.get_result(DACOM_TEMPLATE, context)
+
     def sync_data(self):
         if not self.core.write:
             return
@@ -214,6 +222,7 @@ class UniverseManager:
         DataFolder.sync_infocard_map(self.get_infocard_map_content())
         DataFolder.sync_initial_world(self.get_initial_world_content())
         DataFolder.sync_new_player(self.get_new_player_content())
+        DataFolder.sync_dacom(self.get_dacom_content())
 
         for the_system in self.universe_root.get_all_systems():
             if not the_system.ALLOW_SYNC:

@@ -334,7 +334,7 @@ class Tau23BaseBretoniaGasMiner(Tau23Bretonia, main_objects.GasMinerOld):
     }
 
 
-class Tau23BaseKusariGasMiner(Tau23Kusari, main_objects.GasMinerOld):
+class Tau23BaseKusariGasMiner(main_objects.GasMinerOld):
     ALIAS = 'cryst'
     ROTATE_RANDOM = True
     ARCHETYPE = 'gas_miner_old'
@@ -471,7 +471,7 @@ class Tau23GasMiner5(Tau23Member, Tau23BaseBretoniaGasMiner):
     )
 
 
-class Tau23GasMiner6(Tau23Member, Tau23BaseKusariGasMiner):
+class Tau23GasMiner6(Tau23Kusari, Tau23Member, Tau23BaseKusariGasMiner):
     INDEX = 6
     BASE_INDEX = 56
     RU_NAME = MS('Газодобытчик Карацу', "Gas Miner Karatsu")
@@ -481,7 +481,7 @@ class Tau23GasMiner6(Tau23Member, Tau23BaseKusariGasMiner):
     )
 
 
-class Tau23GasMiner7(Tau23Member, Tau23BaseKusariGasMiner):
+class Tau23GasMiner7(Tau23Kusari, Tau23Member, Tau23BaseKusariGasMiner):
     INDEX = 7
     BASE_INDEX = 57
     RU_NAME = MS('Газодобытчик Уресино', "Gas Miner Ureshino")
@@ -491,7 +491,7 @@ class Tau23GasMiner7(Tau23Member, Tau23BaseKusariGasMiner):
     )
 
 
-class Tau23GasMiner8(Tau23Member, Tau23BaseKusariGasMiner):
+class Tau23GasMiner8(Tau23Kusari, Tau23Member, Tau23BaseKusariGasMiner):
     INDEX = 8
     BASE_INDEX = 58
     RU_NAME = MS('Газодобытчик Тамана', 'Gas Miner Tamana')
@@ -501,7 +501,7 @@ class Tau23GasMiner8(Tau23Member, Tau23BaseKusariGasMiner):
     )
 
 
-class Tau23GasMiner9(Tau23Member, Tau23BaseKusariGasMiner):
+class Tau23GasMiner9(Tau23Kusari, Tau23Member, Tau23BaseKusariGasMiner):
     INDEX = 9
     BASE_INDEX = 59
     RU_NAME = MS('Газодобытчик Такета', "Gas Miner Taketa")
@@ -511,8 +511,8 @@ class Tau23GasMiner9(Tau23Member, Tau23BaseKusariGasMiner):
     )
 
 
-class Tau23GasMiner10(Tau23Member, Tau23BaseKusariGasMiner):
-    INDEX = 9
+class Tau23GasMiner10(Tau23Kusari, Tau23Member, Tau23BaseKusariGasMiner):
+    INDEX = 10
     BASE_INDEX = 60
     RU_NAME = MS('Газодобытчик Ямага', "Gas Miner Yamaga")
     EQUIP_SET = markets.EquipSet(
