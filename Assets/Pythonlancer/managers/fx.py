@@ -35,5 +35,6 @@ class FxManager:
     def sync_data(self):
         if not self.core.write:
             return
-        DataFolder.sync_effects(self.get_effects_content())
-        DataFolder.sync_vis_effects(self.get_vis_effects_content())
+        data_folder = DataFolder(build_to_folder=self.core.build_folder)
+        data_folder.sync_effects(self.get_effects_content())
+        data_folder.sync_vis_effects(self.get_vis_effects_content())

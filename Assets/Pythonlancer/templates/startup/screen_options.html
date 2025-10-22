@@ -32,6 +32,41 @@ html {
    font-size: 14px;
 }
 
+.row {
+    width: 100%;
+    margin-bottom:20px;
+}
+.col {
+    display: inline-block;
+    width: 20%;
+    margin: 2px;
+    padding: 10px;
+    border: 1px solid silver;
+    height: 200px;
+}
+
+table, th, td {
+  border: 1px solid silver; /* 1px width, solid style, black color */
+}
+
+td {
+   padding: 10px;
+}
+
+table {
+   margin-bottom: 50px;
+}
+
+
+.diff-select {
+    font-size: 18px;
+
+}
+
+.diff-info {
+    font-size: 16px;
+}
+
 
 </style>
 
@@ -41,40 +76,108 @@ html {
 <body>
 
 <div class="section">
-    <h1>Freelancer The Nomad Legacy</h1>
+    <h1>{{ t.text('Freelancer The Nomad Legacy') }}</h1>
 </div>
 
 <div class="section">
-    Screen resolution:
+    {{ t.text('Show dangerous settings') }} <input type="checkbox" id="danger_toggle">
+</div>
+
+<hr>
+
+<div class="section">
+    {{ t.text('Screen resolution:') }}
     <select id="resolution">
         {% for res in resolutions %}
-            <option value="{{ res }}">{{ res }}</option>
+            <option value="{{ res }}" {% if res == current_resolution %}selected{% endif %}>{{ res }}</option>
         {% endfor %}
     </select>
 
 </div>
 
 <div class="section">
-    Windowed mode:
 
-    <input type="checkbox" name="windowed" id="windowed">
+    {{ t.text('Windowed mode:') }}
+
+    <input type="checkbox" name="windowed" id="windowed" {% if is_windowed %}checked{% endif %}>
 
 </div>
 
-<div class="danger-settings section">
-    <div class="section">
-        Dangerous settings!
-    </div>
-    <div class="section">
-        Field of view X: <input type="number" class="integer-input" value="70" id="fovx"> <span class="hint">(default: 70)</span>
-    </div>
-    <div class="section">
-        Field of view Y: <input type="number" class="integer-input" value="70" id="fovy"> <span class="hint">(default: 70)</span>
-    </div>
+<div class="section dangerous" style="display: none;">
+    {{ t.text('Field of view Y (fish eye):') }} <input type="number" class="integer-input" value="{{ fovy }}" id="fovy"> <span class="hint">{{ t.text('(default: 70)') }}</span>
 </div>
+
+<hr>
 
 <div class="section">
-    <button name="run" class="run" onClick="run()">Run Freelancer</button>
+    {{ t.text('Level of difficulty') }}
+</div>
+
+
+<table style="width: 100%">
+    <tr>
+        <td class="diff-select">
+            <input type="radio" name="difficulty" value="easy" id="easy">
+            <label for="easy">{{ t.text('Easy') }}</label>
+        </td>
+        <td class="diff-info">
+            {{ t.text('Cannot change powerplants and engines') }}
+            <br>
+            {{ t.text('Simple difficulty') }}
+            <br>
+            {{ t.text('For game journalists') }}
+        </td>
+
+    </tr>
+
+    <tr>
+        <td class="diff-select">
+            <input type="radio" name="difficulty" value="normal" id="normal" checked>
+            <label for="normal">{{ t.text('Normal') }}</label>
+        </td>
+        <td class="diff-info">
+            {{ t.text('Default difficulty') }}
+            <br>
+            {{ t.text('Main features is available') }}
+        </td>
+
+    </tr>
+
+    <tr>
+        <td class="diff-select">
+            <input type="radio" name="difficulty" value="hard" id="hard">
+            <label for="hard">{{ t.text('Hard') }}</label>
+        </td>
+        <td class="diff-info">
+            {{ t.text('High difficulty') }}
+            <br>
+            {{ t.text('Can change tractor beam and scanner') }}
+            <br>
+            {{ t.text('First tractor beam and scanner are not efficient') }}
+
+        </td>
+
+    </tr>
+
+    <tr>
+        <td class="diff-select">
+            <input type="radio" name="difficulty" value="extreme" id="extreme">
+            <label for="extreme">{{ t.text('Extreme') }}</label>
+        </td>
+        <td class="diff-info">
+            {{ t.text('Extreme challenge for the best freelancers') }}
+            <br>
+            {{ t.text('Minimal drop loot chance') }}
+        </td>
+
+    </tr>
+
+</table>
+
+
+
+<div class="section">
+    <button name="run" class="run" onClick="run()">{{ t.text('Run Freelancer') }}</button>
 
 </div>
 
@@ -84,11 +187,27 @@ function run() {
     var resolution = document.getElementById('resolution').value;
 
     var windowed = document.getElementById('windowed').checked;
-    var fovx = document.getElementById('fovx').value;
     var fovy = document.getElementById('fovy').value;
 
-    pywebview.api.runFreelancer(resolution, windowed, fovx, fovy);
+    var difficulty = document.querySelector('input[name="difficulty"]:checked').value;
+
+    pywebview.api.runFreelancer(resolution, windowed, difficulty, fovy);
 }
+
+const dangerous = document.getElementsByClassName('dangerous');
+const danger_toggle = document.getElementById('danger_toggle');
+
+danger_toggle.addEventListener('change', (event) => {
+  if (event.currentTarget.checked) {
+    for (let i = 0; i < dangerous.length; i++) {
+        dangerous[i].style.display = "block";
+    }
+  } else {
+    for (let i = 0; i < dangerous.length; i++) {
+        dangerous[i].style.display = "none";
+    }
+  }
+})
 
 </script>
 

@@ -70,7 +70,7 @@ def draw_base():
     # )
     # content = the_base.get_instance(move_to=(2000, 0, 8000), rotate_core=0)
 
-    data_folder.DataFolder.sync_to_test_workspace(content, workspace_index=workspace)
+    data_folder.DataFolder().sync_to_test_workspace(content, workspace_index=workspace)
 
 
 def draw_base_for_hardpoints():

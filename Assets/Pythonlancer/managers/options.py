@@ -39,7 +39,7 @@ class OptionsManager:
         # self.sync_data()  # run it from launcher
 
     def load_perf_options(self):
-        for line in DataFolder.get_perf_options():
+        for line in DataFolder().get_perf_options():
             split_line = line.split('=')
             if len(split_line) == 2:
                 key = split_line[0].strip()
@@ -69,6 +69,7 @@ class OptionsManager:
         return self.tpl_manager.get_result(CAMERAS_TEMPLATE, self.config.get_cameras_params())
 
     def sync_data(self):
-        DataFolder.sync_perf_options(self.get_perf_options_content())
-        DataFolder.sync_hud_shift(self.get_hud_shift_content())
-        DataFolder.sync_cameras(self.get_cameras_content())
+        data_folder = DataFolder()
+        data_folder.sync_perf_options(self.get_perf_options_content())
+        data_folder.sync_hud_shift(self.get_hud_shift_content())
+        data_folder.sync_cameras(self.get_cameras_content())

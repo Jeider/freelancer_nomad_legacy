@@ -47,8 +47,10 @@ class StoryManager:
         self.thorns = []
         self.ship_loadouts = []
         self.rtc_files = []
+        data_folder = DataFolder(build_to_folder=self.core.build_folder)
 
         for mission_class in IngameMission.subclasses:
+
             print(mission_class)
             mission = mission_class(russian=self.core.russian,
                                     ids=self.ids, ids_save=self.ids_save,
@@ -70,29 +72,29 @@ class StoryManager:
                 npc_shiparchs.append(npc.get_npc_shiparch())
 
             if self.core.write:
-                DataFolder.sync_story_mission(mission.FOLDER, mission.FILE, content)
+                data_folder.sync_story_mission(mission.FOLDER, mission.FILE, content)
 
             for rtc_name, rtc_template in mission.get_rtc_files():
                 rtc_context = mission.get_rtc_context()
                 rtc_content = self.core.tpl_manager.get_result(rtc_template, rtc_context)
 
                 if self.core.write:
-                    DataFolder.sync_story_mission(mission.FOLDER, rtc_name, rtc_content)
+                    data_folder.sync_story_mission(mission.FOLDER, rtc_name, rtc_content)
 
             if len(npc_shiparchs):
                 npcships = DIVIDER.join(npc_shiparchs)
-                DataFolder.sync_story_npcships(mission.FOLDER, npcships)
+                data_folder.sync_story_npcships(mission.FOLDER, npcships)
 
         self.history_manager.validate_after()
 
         loadouts = DIVIDER.join(self.ship_loadouts)
         if self.core.write:
-            DataFolder.sync_story_ships_loadouts(loadouts)
+            data_folder.sync_story_ships_loadouts(loadouts)
 
         for thorn in self.thorns:
             content = self.core.tpl_manager.get_result(thorn.get_template(), thorn.get_context())
             if self.core.write:
-                DataFolder.sync_story_ingame_thorn(thorn.get_name(), content)
+                data_folder.sync_story_ingame_thorn(thorn.get_name(), content)
 
         if self.core.write:
             self.script.write_script_sounds()

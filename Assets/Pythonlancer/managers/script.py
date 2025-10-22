@@ -44,6 +44,7 @@ class ScriptManager(object):
                 )
 
     def write_script_sounds(self):
+        data_folder = DataFolder()
         cutscene_sounds_ini_ru = []
         cutscene_sounds_ini_en = []
         for mission in self.script_missions_list:
@@ -61,17 +62,17 @@ class ScriptManager(object):
             for voice in voices:
                 voice_ini.append(voice.get_ini())
 
-            DataFolder.sync_audio_ini(
+            data_folder.sync_audio_ini(
                 f'voices_mission{mission.MISSION_INDEX:02d}',
                 DIVIDER.join(voice_ini)
             )
 
-        DataFolder.sync_audio_ini(
+        data_folder.sync_audio_ini(
             'story_sounds_gen_ru',
             DIVIDER.join(cutscene_sounds_ini_ru)
         )
 
-        DataFolder.sync_audio_ini(
+        data_folder.sync_audio_ini(
             'story_sounds_gen_en',
             DIVIDER.join(cutscene_sounds_ini_en)
         )

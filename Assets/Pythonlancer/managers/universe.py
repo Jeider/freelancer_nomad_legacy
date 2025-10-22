@@ -216,27 +216,29 @@ class UniverseManager:
         if not self.core.write:
             return
 
-        DataFolder.sync_universe(self.get_universe_file_content())
-        DataFolder.sync_mbases(self.get_mbases_file_content())
-        DataFolder.sync_dock_key(self.get_dock_key_file_content())
-        DataFolder.sync_infocard_map(self.get_infocard_map_content())
-        DataFolder.sync_initial_world(self.get_initial_world_content())
-        DataFolder.sync_new_player(self.get_new_player_content())
-        DataFolder.sync_dacom(self.get_dacom_content())
+        data_folder = DataFolder(build_to_folder=self.core.build_folder)
+
+        data_folder.sync_universe(self.get_universe_file_content())
+        data_folder.sync_mbases(self.get_mbases_file_content())
+        data_folder.sync_dock_key(self.get_dock_key_file_content())
+        data_folder.sync_infocard_map(self.get_infocard_map_content())
+        data_folder.sync_initial_world(self.get_initial_world_content())
+        data_folder.sync_new_player(self.get_new_player_content())
+        data_folder.sync_dacom(self.get_dacom_content())
 
         for the_system in self.universe_root.get_all_systems():
             if not the_system.ALLOW_SYNC:
                 continue
 
-            DataFolder.sync_system(the_system.NAME, the_system.SYSTEMS_ROOT, the_system.SYSTEM_FOLDER, the_system.get_content())
+            data_folder.sync_system(the_system.NAME, the_system.SYSTEMS_ROOT, the_system.SYSTEM_FOLDER, the_system.get_content())
 
-        DataFolder.sync_solar_gen_loadouts(self.get_system_loadouts())
+        data_folder.sync_solar_gen_loadouts(self.get_system_loadouts())
 
         for definition in self.asteroid_definitions:
-            DataFolder.sync_asteroid_definition(definition.get_file_name(), definition.zone.SUBFOLDER, definition.get_file_content())
+            data_folder.sync_asteroid_definition(definition.get_file_name(), definition.zone.SUBFOLDER, definition.get_file_content())
 
         for tpl_nebula in self.templated_nebulas:
-            DataFolder.sync_templated_nebula(tpl_nebula.get_file_name(), tpl_nebula.GENERATED_NEBULA_SUBFOLDER, tpl_nebula.get_file_content())
+            data_folder.sync_templated_nebula(tpl_nebula.get_file_name(), tpl_nebula.GENERATED_NEBULA_SUBFOLDER, tpl_nebula.get_file_content())
 
         for file_name, content in self.interior_files.items():
-            DataFolder.sync_interior(file_name, content)
+            data_folder.sync_interior(file_name, content)

@@ -126,7 +126,7 @@ class AudioFolder:
         out_file_name = STORY_UTF_TEMPLATE.format(file=file)
         new_xml = XML_UTF.get_out_path() / out_file_name
 
-        DataFolder.move_story_audio(
+        DataFolder().move_story_audio(
             new_xml,
             out_file_name,
         )

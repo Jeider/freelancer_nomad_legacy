@@ -1,52 +1,124 @@
+import shutil
+
 from screeninfo import get_monitors
+import subprocess
 import os
 import webview
 
 from startup.meta import ScreenMeta
 from startup.config import StartupConfig
+from startup.text import LauncherText
+from tools.data_folder import DataFolder
+from managers.crash import CrashManager
 from managers.jinja_manager import JinjaTemplateManager
 from managers.options import OptionsManager
+
+SCREEN_CONFIG_HTML = 'startup/screen_options.html'
+BG_COLOR = "#132231"
+DEFAULT_FOVY = 70
+
+EASY = 'easy'
+NORMAL = 'normal'
+HARD = 'hard'
+EXTREME = 'extreme'
+
+RU_BUILD_PER_DIFF = {
+    EASY: 'RU_EASY',
+    NORMAL: 'RU_NORMAL',
+    HARD: 'RU_HARD',
+    EXTREME: 'RU_EXTREME',
+}
+
+EN_BUILD_PER_DIFF = {
+    EASY: 'EN_EASY',
+    NORMAL: 'EN_NORMAL',
+    HARD: 'EN_HARD',
+    EXTREME: 'EN_EXTREME',
+}
 
 meta = ScreenMeta()
 tpl_manager = JinjaTemplateManager()
 
+russian = True
+my_width = None
+my_height = None
+frontend_resolutions = []
 
-# os.system('"C:\\Documents and Settings\\flow_model\\flow.exe"')
+main_data_folder = DataFolder()
 
-
-russian = False
-screen_width = None
-screen_height = None
 
 for m in get_monitors():
-    screen_width = m.width
-    screen_height = m.height
+    my_width = m.width
+    my_height = m.height
 
-resolutions = meta.get_resolutions_joined()
-if screen_width and screen_height:
-    my_res_joined = f"{screen_width}x{screen_height}"
-    if my_res_joined in resolutions:
-        resolutions.remove(my_res_joined)
-        resolutions.insert(0, my_res_joined)
+    frontend_resolutions.append(
+        f"{my_width}x{my_height}"
+    )
 
 
-SCREEN_CONFIG_HTML = 'startup/screen_options.html'
-BG_COLOR = "#132231"
+for res_width, res_height in meta.get_resolutions():
+    if my_width and my_height:
+        if my_width == res_width and my_height == res_height:
+            continue
+
+        if res_width > my_width or res_height > my_height:
+            continue
+
+    frontend_resolutions.append(
+        f"{res_width}x{res_height}"
+    )
+
+defaults = main_data_folder.get_startup_settings()
+
+
 context = {
-    'resolutions': resolutions
+    'resolutions': frontend_resolutions,
+    'current_resolution': defaults.get('current_resolution', None),
+    'is_windowed': defaults.get('is_windowed', False),
+    'fovy': defaults.get('fovy', DEFAULT_FOVY),
+    't': LauncherText(russian=russian),
 }
 html = tpl_manager.get_result(SCREEN_CONFIG_HTML, context)
 
 
+def apply_settings(resolution, windowed, difficulty, fovy=None):
+    settings_save = {
+        'current_resolution': resolution,
+        'is_windowed': windowed,
+    }
+    if fovy and fovy != DEFAULT_FOVY:
+        settings_save['fovy'] = fovy
 
-def apply_settings(resolution, windowed, fovx=None, fovy=None):
-    config = StartupConfig(screen_meta=meta, resolution=resolution, fovx=fovx, fovy=fovy)
+    main_data_folder.save_startup_settings(settings_save)
+
+    unpacked_resolution = [int(x) for x in resolution.split('x')]
+
+    config = StartupConfig(screen_meta=meta, resolution=unpacked_resolution, fovx=None, fovy=fovy)
     manager = OptionsManager(tpl_manager=tpl_manager, config=config)
     manager.sync_data()
 
-    prev_cwd = os.getcwd()
     file_root = os.getcwd().replace('Assets\\Pythonlancer', '')
     os.chdir(f'{file_root}EXE')
+
+    if russian:
+        build_name = RU_BUILD_PER_DIFF[difficulty]
+    else:
+        build_name = EN_BUILD_PER_DIFF[difficulty]
+
+    game_folder = DataFolder()
+    build_folder = DataFolder(build_to_folder=build_name)
+    if not build_folder.get_root().exists():
+        raise Exception(f'Build {build_name} not found!')
+
+    print('copy !')
+
+    shutil.copytree(
+        build_folder.get_root(),
+        game_folder.get_root(),
+        dirs_exist_ok=True,
+    )
+
+    print(' copy 2')
 
     if windowed:
         if russian:
@@ -63,8 +135,20 @@ def apply_settings(resolution, windowed, fovx=None, fovy=None):
     if windowed:
         run_params.append('-w')
 
-    os.system(' '.join(run_params))
-    os.chdir(prev_cwd)
+    # os.system(' '.join(run_params))
+    try:
+        print('run subprocess')
+        result = subprocess.run(run_params, check=True)
+        print(f"Subprocess completed successfully with return code: {result.returncode}")
+    except subprocess.CalledProcessError as e:
+        CrashManager().register_crash()
+        print(f"Subprocess crashed with return code: {e.returncode}")
+        print(f"Output (stderr): {e.stderr.decode()}")  # Decode if captured as bytes
+    except FileNotFoundError:
+        print("Error: Subprocess script or command not found.")
+
+
+
 
 
 class Api:
@@ -72,25 +156,30 @@ class Api:
         self._window = None
 
     def set_window(self, window: webview.Window):
+        print('set!')
         self._window = window
 
     def quit(self):
         if self._window:
             self._window.destroy()
 
-    def runFreelancer(self, resolution, windowed, fovx, fovy):
-        print(resolution)
-        print(windowed)
-        if fovx == int(70):
-            fovx = None
+    def runFreelancer(self, resolution, windowed, difficulty, fovy):
+        print(f'Run FL with resolution {resolution}')
+        print(f'Windowed mode: {windowed}')
+        print(f'Difficulty: {difficulty}')
         if fovy == int(70):
             fovy = None
 
-        apply_settings([int(x) for x in resolution.split('x')], windowed, fovx, fovy)
+        prev_cwd = os.getcwd()
+        try:
+            apply_settings(resolution, windowed, difficulty, fovy)
+        except Exception:
+            os.chdir(prev_cwd)
 
         self.quit()
 
 
 api = Api()
-webview.create_window('Hello world', html=html, background_color=BG_COLOR, js_api=api)
+webview.create_window('The Nomad Legacy', html=html, background_color=BG_COLOR, js_api=api, width=800, height=700,
+                      resizable=False)
 webview.start()

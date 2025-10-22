@@ -21,7 +21,7 @@ class ShiparchManager:
         self.capitals_db = {}
 
         self.shiparch_context = {}
-        shiparch_loaded = False
+        self.shiparch_loaded = False
 
         for ship in Ship.subclasses:
             instance = ship(self.ids)
@@ -80,5 +80,6 @@ class ShiparchManager:
     def sync_data(self):
         if not self.core.write:
             return
-        DataFolder.sync_shiparch(self.get_shiparch_content())
-        DataFolder.sync_fuse(FUSE_GEN_CAPITAL, self.get_fuses())
+        data_folder = DataFolder(build_to_folder=self.core.build_folder)
+        data_folder.sync_shiparch(self.get_shiparch_content())
+        data_folder.sync_fuse(FUSE_GEN_CAPITAL, self.get_fuses())

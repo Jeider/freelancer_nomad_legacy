@@ -227,4 +227,4 @@ class Scene:
 
     def sync_content(self):
         suffix = '' if self.russian else '_en'
-        DataFolder.sync_scene(f"{self.get_scene_name()}{suffix}", self.get_content())
+        DataFolder().sync_scene(f"{self.get_scene_name()}{suffix}", self.get_content())

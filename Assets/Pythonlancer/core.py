@@ -21,9 +21,10 @@ class TemplateManger:
 
 class LancerCore(object):
 
-    def __init__(self, write=True, story=True, russian=True):
+    def __init__(self, write=True, story=True, russian=True, build_folder=None):
         self.russian = russian
         self.write = write
+        self.build_folder = build_folder
 
         self.tpl_manager = JinjaTemplateManager()
         self.ids = IDsManager(self)

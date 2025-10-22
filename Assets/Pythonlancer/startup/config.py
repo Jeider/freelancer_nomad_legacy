@@ -16,8 +16,10 @@ class StartupConfig:
 
         self.aspect_ratio = get_aspect_ratio(*self.resolution)
         aspect_str = f'{self.aspect_ratio[0]}:{self.aspect_ratio[1]}'
+        print(f'Used aspect ratio: {aspect_str}')
 
         if ratio_data := self.screen_meta.get_aspect_ratio_data(aspect_str):
+            print('Use overrided settings of aspect ratio')
             self.horizontal = ratio_data['horizontal']
             self.status_shift = ratio_data['status_shift']
             self.wide_weapons = ratio_data['wide_weapons']
