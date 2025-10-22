@@ -164,6 +164,16 @@ class DataFolder(object):
         equip_file.write_text(content, encoding='utf-8')
 
     @classmethod
+    def get_perf_options(cls):
+        perf_file = cls.get_save() / 'PerfOptions.ini'
+        if perf_file.exists():
+            opened_file = open(perf_file)
+            file_content = opened_file.readlines()
+            opened_file.close()
+            return file_content
+        return ''
+
+    @classmethod
     def sync_perf_options(cls, content):
         equip_file = cls.get_save() / 'PerfOptions.ini'
         equip_file.write_text(content, encoding='utf-8')

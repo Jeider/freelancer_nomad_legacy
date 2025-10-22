@@ -30,12 +30,12 @@ HACKABLE_SOLAR_PLANT = ('There a multiple solar plants in this system. You can f
 RUINS = ("I know where placed ruins of interestings station. You can find something old unique equipment inside, but "
          "you still need find a way to get inside the base. I can show you")
 LOCKED_BATTLESHIP = ("I can show you where is placed ruins of battleship with armory inside. But you need to find a "
-                     "to get inside this batlteship. Maybe you'll find a key from some ship wrecks near this "
+                     "key to get inside this battleship. Maybe you'll find a key from some ship wrecks near this "
                      "battleship. I can show you this battleship")
 HACKABLE_BATTLESHIP = ("I can show you where is placed ruins of battleship with armory inside. But its doors is pretty "
                        "good locked. I think you can find a way to unlock it. I can show you this battleship")
 LOCKED_LUXURY =  ("I can show you where is placed ruins of liner with equipment inside. But you need to find a "
-                     "to get inside this batlteship. Maybe you'll find a key from some ship wrecks near this "
+                     "key to get inside this liner. Maybe you'll find a key from some ship wrecks near this "
                      "liner. I can show you this liner")
 HACKABLE_LUXURY = ("I can show you where is placed ruins of liner with armory inside. But its doors is pretty "
                        "good locked. I think you can find a way to unlock it. I can show you this liner")

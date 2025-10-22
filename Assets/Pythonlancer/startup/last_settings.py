@@ -2,12 +2,12 @@ import json
 import pathlib
 
 
-class ScreenMeta:
+class LastSettings:
 
     @staticmethod
     def get_database_file_location():
         current_path = pathlib.Path().resolve()
-        return current_path / 'startup' / 'meta.json'
+        return current_path / 'startup' / 'last_settings.json'
 
     def __init__(self):
         db_file_loc = self.get_database_file_location()

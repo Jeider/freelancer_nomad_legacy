@@ -1,0 +1,97 @@
+<html>
+<head>
+<style>
+
+*, body {
+  font-family: 'Arial';
+
+}
+html {
+  filter: invert(1);
+}
+.section {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.danger-settings {
+  border: 1px solid #00FFFF;
+  margin: 5px 5px 20px 5px;
+  padding: 20px;
+}
+
+.integer-input {
+   width: 60px;
+}
+
+.run {
+   font-size: 20px;
+}
+
+.hint {
+   font-size: 14px;
+}
+
+
+</style>
+
+
+</head>
+
+<body>
+
+<div class="section">
+    <h1>Freelancer The Nomad Legacy</h1>
+</div>
+
+<div class="section">
+    Screen resolution:
+    <select id="resolution">
+        {% for res in resolutions %}
+            <option value="{{ res }}">{{ res }}</option>
+        {% endfor %}
+    </select>
+
+</div>
+
+<div class="section">
+    Windowed mode:
+
+    <input type="checkbox" name="windowed" id="windowed">
+
+</div>
+
+<div class="danger-settings section">
+    <div class="section">
+        Dangerous settings!
+    </div>
+    <div class="section">
+        Field of view X: <input type="number" class="integer-input" value="70" id="fovx"> <span class="hint">(default: 70)</span>
+    </div>
+    <div class="section">
+        Field of view Y: <input type="number" class="integer-input" value="70" id="fovy"> <span class="hint">(default: 70)</span>
+    </div>
+</div>
+
+<div class="section">
+    <button name="run" class="run" onClick="run()">Run Freelancer</button>
+
+</div>
+
+
+<script>
+function run() {
+    var resolution = document.getElementById('resolution').value;
+
+    var windowed = document.getElementById('windowed').checked;
+    var fovx = document.getElementById('fovx').value;
+    var fovy = document.getElementById('fovy').value;
+
+    pywebview.api.runFreelancer(resolution, windowed, fovx, fovy);
+}
+
+</script>
+
+</body>
+
+</html>

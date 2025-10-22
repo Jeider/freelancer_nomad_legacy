@@ -38,6 +38,7 @@ class AvalMember(Member):
     FACTION = faction.BretoniaMain
     WEAPON_FACTION = WEAPON_BR
     EQUIP_FACTION = EQUIP_BR
+    INTERIOR_BG1 = interior.INTERIOR_BR_AVALON
 
 
 class AvalStaticText(AvalMember, main_objects.RawText):

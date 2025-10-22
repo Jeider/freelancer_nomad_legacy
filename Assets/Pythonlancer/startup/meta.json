@@ -1,8 +1,5 @@
 {
   "resolutions": [
-    [640, 360],
-    [640, 480],
-    [800, 600],
     [1024, 768],
     [1280, 720],
     [1280, 800],
@@ -32,16 +29,44 @@
 
   "default_horizontal": 0.17,
   "default_status_shift": 0.5100,
+  "default_wide_weapons": true,
 
   "aspect_ratios": {
 
     "4:3": {
       "horizontal": "auto",
-      "status_shift": 0.172
+      "status_shift": 0.172,
+      "wide_weapons": false
     },
     "5:4": {
       "horizontal": "auto",
-      "status_shift": 0.105
+      "status_shift": 0.105,
+      "wide_weapons": false
+    },
+    "32:9": {
+      "horizontal": 0.17,
+      "status_shift": 0.53,
+      "wide_weapons": true
+    },
+
+
+    "21:9": {
+      "horizontal": 0.17,
+      "status_shift": 0.52,
+      "wide_weapons": true
+    },
+    "64:27": {
+      "horizontal": 0.17,
+      "status_shift": 0.52,
+      "wide_weapons": true
+    },
+    "43:18": {
+      "horizontal": 0.17,
+      "status_shift": 0.52,
+      "wide_weapons": true
     }
+
+
+
   }
 }
