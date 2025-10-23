@@ -56,7 +56,7 @@ class StartupConfig:
             fov_params.append(f"fovx={self.fovx}!")
         else:
             fov_params.append("fovx=70")
-        if self.fovy is not None:
+        if self.fovy is not None and self.fovy != 70:
             fov_params.append(f"fovy={self.fovy}")
         fov_string = "\n".join(fov_params)
 

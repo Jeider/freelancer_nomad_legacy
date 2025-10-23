@@ -11,8 +11,8 @@ class LauncherText:
         ('Level of difficulty', 'Уровень сложности'),
 
         ('Easy', 'Лёгкий'),
-        ('Normal', 'Нормальной'),
-        ('Hard', 'Сложный'),
+        ('Normal', 'Нормальный'),
+        ('Hard', 'Тяжелый'),
         ('Extreme', 'Экстремальный'),
 
         ('Cannot change powerplants and engines', 'Невозможно менять генераторы и двигатели'),

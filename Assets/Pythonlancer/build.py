@@ -24,6 +24,9 @@ BUILD_PROPS = [
 ]
 
 PROPS_DB = {b.folder: b for b in BUILD_PROPS}
+DEFAULT_RU = BuildProp(folder=None, russian=True)
+DEFAULT_EN = BuildProp(folder=None, russian=False)
+
 
 
 def build(build_props: BuildProp):
@@ -94,14 +97,22 @@ def build_all():
 def main():
     try:
         if sys.argv[1] == 'all':
+            print('build all packages')
             build_all()
+        elif sys.argv[1] == 'ru':
+            print('build ru direct')
+            build(DEFAULT_RU)
+        elif sys.argv[1] == 'en':
+            print('build en direct')
+            build(DEFAULT_EN)
         else:
+            print(f'build {sys.argv[1]}')
             build(
                 PROPS_DB[sys.argv[1]]
             )
 
     except IndexError:
-        pass
+        print('build type not found')
 
 
 main()

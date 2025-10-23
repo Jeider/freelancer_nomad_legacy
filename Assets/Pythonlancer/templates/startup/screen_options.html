@@ -117,7 +117,7 @@ table {
 <table style="width: 100%">
     <tr>
         <td class="diff-select">
-            <input type="radio" name="difficulty" value="easy" id="easy">
+            <input type="radio" name="difficulty" value="easy" id="easy" {% if difficulty == 'easy' %}checked{% endif %} disabled>
             <label for="easy">{{ t.text('Easy') }}</label>
         </td>
         <td class="diff-info">
@@ -132,7 +132,7 @@ table {
 
     <tr>
         <td class="diff-select">
-            <input type="radio" name="difficulty" value="normal" id="normal" checked>
+            <input type="radio" name="difficulty" value="normal" id="normal" {% if difficulty == 'normal' %}checked{% endif %}>
             <label for="normal">{{ t.text('Normal') }}</label>
         </td>
         <td class="diff-info">
@@ -145,7 +145,7 @@ table {
 
     <tr>
         <td class="diff-select">
-            <input type="radio" name="difficulty" value="hard" id="hard">
+            <input type="radio" name="difficulty" value="hard" id="hard" {% if difficulty == 'hard' %}checked{% endif %} disabled>
             <label for="hard">{{ t.text('Hard') }}</label>
         </td>
         <td class="diff-info">
@@ -161,7 +161,7 @@ table {
 
     <tr>
         <td class="diff-select">
-            <input type="radio" name="difficulty" value="extreme" id="extreme">
+            <input type="radio" name="difficulty" value="extreme" id="extreme" {% if difficulty == 'extreme' %}checked{% endif %} disabled>
             <label for="extreme">{{ t.text('Extreme') }}</label>
         </td>
         <td class="diff-info">

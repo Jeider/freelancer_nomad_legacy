@@ -123,10 +123,7 @@ class DataFolder:
         system_file.write_text(content, encoding='utf-8')
 
     def sync_system(self, system_name, system_root, system_folder, content):
-        if self.build_to_folder:
-            return
-
-        system_file = self.get_universe() / system_root / system_folder / f'{system_name}.ini'
+        system_file = get_and_create(get_and_create(self.get_universe() / system_root) / system_folder) / f'{system_name}.ini'
         system_file.write_text(content, encoding='utf-8')
 
     def sync_asteroid_definition(self, definition_name, subfolder, content):
