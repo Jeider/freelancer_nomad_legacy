@@ -13,7 +13,7 @@ from managers.crash import CrashManager
 from managers.jinja_manager import JinjaTemplateManager
 from managers.options import OptionsManager
 
-SCREEN_CONFIG_HTML = 'startup/screen_options.html'
+SCREEN_CONFIG_HTML = 'startup/launcher.html'
 BG_COLOR = "#132231"
 DEFAULT_FOVY = 70
 
@@ -45,79 +45,6 @@ EN_BUILD_PER_DIFF = {
 }
 
 
-
-def apply_settings(russian, resolution, windowed, difficulty, fovy=None):
-    settings_save = {
-        'current_resolution': resolution,
-        'is_windowed': windowed,
-        'difficulty': difficulty,
-    }
-    if fovy and fovy != DEFAULT_FOVY:
-        settings_save['fovy'] = fovy
-
-    main_data_folder = DataFolder()
-    meta = ScreenMeta()
-    tpl_manager = JinjaTemplateManager()
-
-    main_data_folder.save_startup_settings(settings_save)
-
-    unpacked_resolution = [int(x) for x in resolution.split('x')]
-
-    config = StartupConfig(screen_meta=meta, resolution=unpacked_resolution, fovx=None, fovy=fovy)
-    manager = OptionsManager(tpl_manager=tpl_manager, config=config)
-    manager.sync_data()
-
-    if russian:
-        build_name = RU_BUILD_PER_DIFF[difficulty]
-    else:
-        build_name = EN_BUILD_PER_DIFF[difficulty]
-
-    game_folder = DataFolder()
-    build_folder = DataFolder(build_to_folder=build_name)
-    if not build_folder.get_root().exists():
-        raise Exception(f'Build {build_name} not found!')
-
-    print('Prepare to replace data')
-
-    shutil.copytree(
-        build_folder.get_root(),
-        game_folder.get_root(),
-        dirs_exist_ok=True,
-    )
-
-    print('Data replaced')
-
-    if windowed:
-        if russian:
-            file_name = 'Freelancer_window.exe'
-        else:
-            file_name = 'Freelancer_window_en.exe'
-    else:
-        if russian:
-            file_name = 'Freelancer.exe'
-        else:
-            file_name = 'Freelancer_en.exe'
-
-    run_params = [file_name]
-    if windowed:
-        run_params.append('-w')
-
-    file_root = os.getcwd().replace('Assets\\Pythonlancer', '')
-    os.chdir(f'{file_root}EXE')
-
-    # os.system(' '.join(run_params))
-    try:
-        print('run subprocess')
-        result = subprocess.run(run_params, check=True)
-        print(f"Subprocess completed successfully with return code: {result.returncode}")
-    except subprocess.CalledProcessError as e:
-        CrashManager().register_crash()
-        print(f"Subprocess crashed with return code: {e.returncode}")
-        print(f"Output (stderr): {e.stderr.decode()}")  # Decode if captured as bytes
-    except FileNotFoundError:
-        print("Error: Subprocess script or command not found.")
-
-
 class Api:
     def __init__(self, russian):
         self.russian = russian
@@ -131,21 +58,115 @@ class Api:
         if self._window:
             self._window.destroy()
 
-    def runFreelancer(self, resolution, windowed, difficulty, fovy):
+    def hide(self):
+        if self._window:
+            self._window.hide()
+
+    def show(self):
+        if self._window:
+            self._window.show()
+
+    def runFreelancer(self, resolution, windowed, difficulty, fovy, front_light, trail, player_body, player_commhelmet):
         print(f'Run FL with resolution {resolution}')
         print(f'Windowed mode: {windowed}')
         print(f'Difficulty: {difficulty}')
+        print(f'Front light: {front_light}')
+        print(f'Trail: {trail}')
+        print(f'Player body: {player_body}')
+        print(f'Player commhelmet: {player_commhelmet}')
         if fovy == int(70):
             fovy = None
 
         prev_cwd = os.getcwd()
         try:
-            apply_settings(self.russian, resolution, windowed, difficulty, fovy)
+            self.apply_settings(resolution, windowed, difficulty, fovy, front_light, trail, player_body, player_commhelmet)
         except Exception as e:
+            self.show()
+            print(f'Cannot launch FL. Reason: {e}')
             os.chdir(prev_cwd)
             raise
 
-        # self.quit()
+    def apply_settings(self, resolution, windowed, difficulty, fovy, front_light, trail, player_body, player_commhelmet):
+        settings_save = {
+            'current_resolution': resolution,
+            'is_windowed': windowed,
+            'difficulty': difficulty,
+            'front_light': front_light,
+            'trail': trail,
+            'player_body': player_body,
+            'player_commhelmet': player_commhelmet,
+
+        }
+        if fovy and fovy != DEFAULT_FOVY:
+            settings_save['fovy'] = fovy
+
+        main_data_folder = DataFolder()
+        meta = ScreenMeta()
+        tpl_manager = JinjaTemplateManager()
+        prev_cwd = os.getcwd()
+
+        main_data_folder.save_startup_settings(settings_save)
+
+        unpacked_resolution = [int(x) for x in resolution.split('x')]
+
+        config = StartupConfig(screen_meta=meta, resolution=unpacked_resolution, fovx=None, fovy=fovy,
+                               front_light=front_light, contrail=trail,
+                               player_body=player_body, player_commhelmet=player_commhelmet)
+        manager = OptionsManager(tpl_manager=tpl_manager, config=config)
+        manager.sync_data()
+
+        if self.russian:
+            build_name = RU_BUILD_PER_DIFF[difficulty]
+        else:
+            build_name = EN_BUILD_PER_DIFF[difficulty]
+
+        game_folder = DataFolder()
+        build_folder = DataFolder(build_to_folder=build_name)
+        if not build_folder.get_root().exists():
+            raise Exception(f'Build {build_name} not found!')
+
+        print('Prepare to replace data')
+
+        shutil.copytree(
+            build_folder.get_root(),
+            game_folder.get_root(),
+            dirs_exist_ok=True,
+        )
+
+        print('Data replaced')
+
+        if windowed:
+            if self.russian:
+                file_name = 'Freelancer_window.exe'
+            else:
+                file_name = 'Freelancer_window_en.exe'
+        else:
+            if self.russian:
+                file_name = 'Freelancer.exe'
+            else:
+                file_name = 'Freelancer_en.exe'
+
+        run_params = [file_name]
+        if windowed:
+            run_params.append('-w')
+
+        file_root = os.getcwd().replace('Assets\\Pythonlancer', '')
+        os.chdir(f'{file_root}EXE')
+
+        # os.system(' '.join(run_params))
+        try:
+            print('run subprocess')
+            self.hide()
+            result = subprocess.run(run_params, check=True)
+            os.chdir(prev_cwd)
+            print(f"Subprocess completed successfully with return code: {result.returncode}")
+            self.quit()
+        except subprocess.CalledProcessError as e:
+            CrashManager().register_crash()
+            print(f"Subprocess crashed with return code: {e.returncode}")
+            self.quit()
+        except FileNotFoundError:
+            print("Error: Subprocess script or command not found.")
 
 
 def create_launcher(russian=True):
@@ -190,12 +211,16 @@ def create_launcher(russian=True):
         'is_windowed': defaults.get('is_windowed', False),
         'fovy': defaults.get('fovy', DEFAULT_FOVY),
         'difficulty': diff,
+        'front_light': defaults.get('front_light', 'white'),
+        'trail': defaults.get('trail', 'default'),
+        'player_body': defaults.get('player_body', 'default'),
+        'player_commhelmet': defaults.get('player_commhelmet', 'default'),
         't': LauncherText(russian=russian),
     }
     html = tpl_manager.get_result(SCREEN_CONFIG_HTML, context)
 
     api = Api(russian=russian)
-    webview.create_window('The Nomad Legacy', html=html, background_color=BG_COLOR, js_api=api,
-                          width=800, height=800,
-                          resizable=False)
+    window = webview.create_window('The Nomad Legacy', html=html, background_color=BG_COLOR, js_api=api,
+                                   width=800, height=800, resizable=False)
+    api.set_window(window)
     webview.start()

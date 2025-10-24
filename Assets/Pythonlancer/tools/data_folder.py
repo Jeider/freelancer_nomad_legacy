@@ -81,6 +81,12 @@ class DataFolder:
     def get_scripts(self):
         return get_and_create(self.get_data() / 'SCRIPTS')
 
+    def get_player(self):
+        return get_and_create(self.get_data() / 'PLAYER')
+
+    def get_characters(self):
+        return get_and_create(self.get_data() / 'CHARACTERS')
+
     def get_cutscene_audio_ru(self):
         if self.build_to_folder:
             return
@@ -232,6 +238,27 @@ class DataFolder:
             raise Exception('Impossible to use with build')
 
         equip_file = self.get_data() / 'cameras.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    def sync_front_light(self, content):
+        if self.build_to_folder:
+            raise Exception('Impossible to use with build')
+
+        equip_file = self.get_player() / 'front_light.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    def sync_contrail(self, content):
+        if self.build_to_folder:
+            raise Exception('Impossible to use with build')
+
+        equip_file = self.get_player() / 'contrail.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    def sync_player_bodyparts(self, content):
+        if self.build_to_folder:
+            raise Exception('Impossible to use with build')
+
+        equip_file = self.get_characters() / 'bodyparts_player.ini'
         equip_file.write_text(content, encoding='utf-8')
 
     def sync_mbases(self, content):

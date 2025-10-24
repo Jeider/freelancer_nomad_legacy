@@ -159,7 +159,7 @@ class Gun(MainEquipPrice, Weapon, DefaultGood):
     def get_ru_fullname(self):
         return '{described_name} {name}'.format(
             name=self.get_ru_name(),
-            described_name=self.RU_NAME_DESC.get_en(),
+            described_name=self.RU_NAME_DESC.get_ru(),
         )
 
     def get_ru_description_content(self):

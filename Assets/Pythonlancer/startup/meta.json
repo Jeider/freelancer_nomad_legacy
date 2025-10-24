@@ -48,6 +48,11 @@
       "status_shift": 0.53,
       "wide_weapons": true
     },
+    "8:5": {
+      "horizontal": 0.102,
+      "status_shift": 0.375,
+      "wide_weapons": true
+    },
 
 
     "21:9": {
@@ -68,5 +73,107 @@
 
 
 
+  },
+  "front_light_colors": {
+      "white": {
+        "glow_color": "255, 255, 255",
+        "color": "200, 200, 200"
+      },
+      "green": {
+        "glow_color": "0, 255, 0",
+        "color": "0, 200, 0"
+      },
+      "blue": {
+        "glow_color": "0, 0, 255",
+        "color": "0, 0, 200"
+      },
+      "orange": {
+        "glow_color": "255, 150, 0",
+        "color": "200, 120, 0"
+      },
+      "red": {
+        "glow_color": "255, 0, 0",
+        "color": "200, 0, 0"
+      },
+      "yellow": {
+        "glow_color": "255, 255, 0",
+        "color": "200, 200, 0"
+      }
+  },
+
+  "contrails": {
+      "default": "li_alt_contrail",
+      "green": "rh_contrail",
+      "blue": "br_contrail",
+      "orange": "ku_contrail",
+      "red": "co_contrail",
+      "yellow": "ci_contrail",
+      "white": "li_contrail"
+  },
+
+  "bodies": {
+    "default": "pl_male2_journeyman_body.dfm",
+    "li_elite": "li_male_elite_body.dfm",
+    "li_guard": "li_male_guard_body.dfm",
+    "br_elite": "br_male_elite_body.dfm",
+    "br_guard": "br_male_guard_body.dfm",
+    "rh_elite": "rh_male_elite_body.dfm",
+    "rh_guard": "rh_male_guard_body.dfm",
+    "ku_elite": "ku_male_elite_body.dfm",
+    "ku_guard": "ku_male_guard_body.dfm",
+    "order": "pi_orillion_body.dfm",
+    "classic": "pl_trent_body.dfm"
+  },
+
+  "gloves_per_body": {
+    "li_guard": "yel",
+    "li_elite": "li",
+    "br_elite": "br",
+    "br_guard": "br",
+    "rh_elite": "rh"
+  },
+
+  "hats": {
+    "default": null,
+    "rh_elite": "prop_hat_male_rh_elite.3db",
+    "li_elite": "prop_hat_male_li_elite.3db",
+    "br_elite": "prop_hat_male_br_elite.3db",
+    "ku_elite": "prop_hat_male_ku_elite.3db"
+  },
+
+  "left_gloves": {
+    "rh": "rh_male_glove_left.dfm",
+    "li": "li_male_glove_left.dfm",
+    "yel": "yel_male_glove_left.dfm",
+    "br": "br_male_glove_left.dfm"
+  },
+
+  "right_gloves": {
+    "rh": "rh_male_glove_right.dfm",
+    "li": "li_male_glove_right.dfm",
+    "yel": "yel_male_glove_right.dfm",
+    "br": "br_male_glove_right.dfm"
+  },
+  
+
+  "commhelmets": {
+      "default": "comm_ge_generic2.3db",
+      "ge_generic1": "comm_ge_generic1.3db",
+      "pl_player": "comm_pl_player.3db",
+      "br_brighton": "comm_br_brighton.3db",
+      "br_darcy": "comm_br_darcy.3db",
+      "br_kaitlyn": "comm_br_kaitlyn.3db",
+      "ku_kym": "comm_ku_kym.3db",
+      "li_hatcher": "comm_li_hatcher.3db",
+      "pi_pirate": "comm_pi_pirate.3db",
+      "rh_alaric": "comm_rh_alaric.3db",
+      "rh_reichman": "comm_rh_reichman.3db",
+      "rh_wilham": "comm_rh_wilham.3db",
+      "br_elite": "comm_br_elite.3db",
+      "rh_elite": "comm_rh_elite.3db",
+      "li_elite": "comm_li_elite.3db",
+      "ku_elite": "comm_ku_elite.3db"
   }
+
+  
 }

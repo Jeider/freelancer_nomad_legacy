@@ -36,5 +36,29 @@ class ScreenMeta:
     def get_resolutions(self):
         return self.db['resolutions']
 
+    def get_front_light_colors(self):
+        return self.db['front_light_colors']
+
+    def get_contrails(self):
+        return self.db['contrails']
+
+    def get_bodies(self):
+        return self.db['bodies']
+
+    def get_gloves_per_body(self):
+        return self.db['gloves_per_body']
+
+    def get_hats(self):
+        return self.db['hats']
+
+    def get_commhelmets(self):
+        return self.db['commhelmets']
+
+    def get_left_gloves(self):
+        return self.db['left_gloves']
+
+    def get_right_gloves(self):
+        return self.db['right_gloves']
+
     def get_resolutions_joined(self):
         return [f"{w}x{h}" for w, h in self.db['resolutions']]
