@@ -9,7 +9,7 @@ from startup.meta import ScreenMeta
 from startup.config import StartupConfig
 from startup.text import LauncherText
 from tools.data_folder import DataFolder
-from managers.crash import CrashManager
+# from managers.crash import CrashManager
 from managers.jinja_manager import JinjaTemplateManager
 from managers.options import OptionsManager
 
@@ -162,7 +162,7 @@ class Api:
             print(f"Subprocess completed successfully with return code: {result.returncode}")
             self.quit()
         except subprocess.CalledProcessError as e:
-            CrashManager().register_crash()
+            # CrashManager().register_crash()
             print(f"Subprocess crashed with return code: {e.returncode}")
             self.quit()
         except FileNotFoundError:
