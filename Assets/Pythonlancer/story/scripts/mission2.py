@@ -1,12 +1,91 @@
 from story import script
 from audio.sound import VoiceLine
 from story.actors import (
-    Trent, Wilham, Jacobo, Punisher, PunisherCatcher, OmegaJunkerOne, OmegaJunkerTwo, OmegaJunkerThree, Neuralnet
+    Trent, Wilham, Jacobo, Reichman, Punisher, PunisherCatcher, OmegaJunkerOne, OmegaJunkerTwo, OmegaJunkerThree, Neuralnet
 )
 
 
 class Msn2(object):
     MISSION_INDEX = 2
+
+
+class Msn2Offer(Msn2, script.CutsceneProps):
+    ALIAS = 'offer'
+    TITLE = 'Предложение на линкоре'
+    DESCRIPTION = ''
+    VOICE_LINES = [
+        VoiceLine(10, Trent , ru="", en="Wilhelm, I assume?"),
+        VoiceLine(20, Wilham, ru="", en="Indeed, Herr Trent. I'm glad that you've chosen to work with us."),
+        VoiceLine(30, Trent , ru="", en="I haven't agreed yet, but I'm definitely interested. It's not every day that a representative of the Rheinland military messages my PDA, with a proposal to meet in person, on board a Rheinland military battleship."),
+        VoiceLine(40, Wilham, ru="", en="Which messages are you referring to?"),
+        VoiceLine(50, Trent, ru="", en="These ones... Shit. What's going on? They were right there..."),
+        VoiceLine(60, Wilham, ru="", en="To hell with those messages, Herr Trent, let's get to the point. And so, I hope you understand, that regardless of how our conversation ends, all its details should remain between us?"),
+        VoiceLine(70, Trent, ru="", en="Should - means they would. You military guys don't like messing around... By the way, why me?"),
+        VoiceLine(80, Wilham, ru="", en="Why not? You proved yourself well in the Brandenburg Outpost incident."),
+        VoiceLine(90, Trent, ru="", en="Gotcha. Let's get to the mission, shall we?"),
+        VoiceLine(100, Wilham, ru="", en="Alright. Like any other government, we have some informants in territories of our, let's say, geopolitical rivals. You understand?"),
+        VoiceLine(110, Trent, ru="", en="Sure."),
+        VoiceLine(120, Wilham, ru="", en="Very well. Not so long ago, one of our informants contacted us via secure channel, reporting that he had extremely critical information and headed to our dedicated data transmission point. And, as traditional detective stories go, he never arrived there. No sign received from him during the last week, neither in the transmission point, nor through emergency channels. It can only mean one thing - he is dead."),
+        VoiceLine(130, Wilham, ru="", en="Based on the analysis of chatter between station dispatchers and operators of emergency services in the area of our interest, with a probability of over ninety-nine percent, we've established that the ship of our informant was attacked, and he was killed."),
+        VoiceLine(140, Trent, ru="", en="My condolences. But what do I have to do with it?"),
+        VoiceLine(150, Wilham, ru="", en="Your mission is to find that ship and remove the data of interest from it. It has to be done as soon as possible, since the activity of so-called \"Junkers\" in the area is extremely high. You have to get ahead of them."),
+        VoiceLine(160, Trent, ru="", en="I doubt that I can get ahead of them. First of all, I don't know the area as well as they do. Secondly, unlike them, I'll be there on my own."),
+        VoiceLine(170, Wilham, ru="", en="You can. The thing is, there's a tech enthusiast who's developing devices that can track them and listen to their radio comms. We've been interested in luring him into our department for a while now, so we're closely watching him."),
+        VoiceLine(180, Trent, ru="", en="Like you're watching me?"),
+        VoiceLine(190, Wilham, ru="", en="Even closer. He's been testing his devices in our area of interest. Therefore, he has the best intel regarding every event that recently occurred in that area of space. You'll have to get in touch with him, make an arrangement to get the informant's ship's wreckage coordinates, remove the data from it, and transfer it to us... Without letting any scavenger get to it before you do, naturally."),
+        VoiceLine(200, Trent, ru="", en="And that's it? Can I start now?"),
+        VoiceLine(210, Wilham, ru="", en="If you agree, there's no \"I\", but a \"We\". I'll be assigned as your partner for the duration of this mission."),
+        VoiceLine(220, Trent, ru="", en="Will you be in control of my actions?"),
+        VoiceLine(230, Wilham, ru="", en="No. I'll be your wingman and help you interact with the authorities - I have a fairly high level of clearance in Rheinland systems. The strategical and tactical sides of this operation are entirely on you, Herr Trent."),
+        VoiceLine(240, Trent, ru="", en="Thanks for trusting me... Where do I sign?"),
+        VoiceLine(250, Wilham, ru="", en="Ha-ha-ha. Why would we require such formalities? I'll meet you in space, Herr Trent!"),
+    ]
+
+
+class Msn2Miner(Msn2, script.CutsceneProps):
+    ALIAS = 'miner'
+    TITLE = 'Рудокоп Матильда'
+    DESCRIPTION = ''
+    VOICE_LINES = [
+        VoiceLine(10, Trent, ru="", en="Greetings!"),
+        VoiceLine(20, Jacobo, ru="", en="Likewise. What'cha need?"),
+        VoiceLine(30, Trent, ru="", en="Wilhelm sent me."),
+        VoiceLine(40, Jacobo, ru="", en="Very well."),
+        VoiceLine(45, Jacobo, ru="", en="And what does Herr Wilhelm need this time?"),
+        VoiceLine(50, Trent, ru="", en="Coordinates of some wrecked ship."),
+        VoiceLine(60, Jacobo, ru="", en="Ah! Piece of cake. I'll throw in all the points of accidents involving damage to ships over the past month. Accuracy of twenty millimeters, give or take a few. Choose the one you need, filtered by criteria. No need to thank me."),
+        VoiceLine(70, Trent, ru="", en="We'll fly there together."),
+        VoiceLine(80, Jacobo, ru="", en="And why's that?"),
+        VoiceLine(90, Trent, ru="", en="Wilhelm said that you'll point me to the place of our interest, and I'll have to find it. And how can I possibly know that you're not bullshitting me, to make a half-an-hour trip last till dawn? The military has their own quirks, and so does the freelancer."),
+        VoiceLine(100, Jacobo, ru="", en="A hundred times I curse the day I agreed to help Wilhelm."),
+        VoiceLine(110, Jacobo, ru="", en="And where's he now? Chilling in a bar on a nearby trading outpost?"),
+        VoiceLine(120, Jacobo, ru="", en="Whatever happens out there, he has nothing to do with it, while you and I are the main characters."),
+    ]
+
+
+class Msn2Done(Msn2, script.CutsceneProps):
+    ALIAS = 'done'
+    TITLE = 'Вознаграждение на линкоре'
+    DESCRIPTION = ''
+    VOICE_LINES = [
+        VoiceLine(10, Reichman, ru="", en="So here's the famous Trent."),
+        VoiceLine(20, Trent, ru="", en="And what am I so famous for, Mr... Umm..."),
+        VoiceLine(30, Reichman, ru="", en="Reichmann. Admiral Reichmann, if you may."),
+        VoiceLine(40, Trent, ru="", en="It's my honor, Admiral Reichmann! So, what am I so famous for?"),
+        VoiceLine(50, Reichman, ru="",
+                  en="Oh, Herr Trent, lately some of the higher circles have all been talking about you! I hope Herr Wilhelm adequately pays for your work."),
+        VoiceLine(60, Trent, ru="", en="I'm not complaining."),
+        VoiceLine(70, Reichman, ru="",
+                  en="Modesty - a commendable virtue, Herr Trent, I see virtue often taken for granted. I'll make sure the payment for your last mission will be doubled. All the best to you, Herr Trent!"),
+        VoiceLine(80, Reichman, ru="", en="So you think that he's the one we need?"),
+        VoiceLine(90, Wilham, ru="",
+                  en="Undoubtedly, Herr Admiral. He's the one who can help us accomplish all our tasks at hand."),
+        VoiceLine(100, Reichman, ru="", en="Can you guarantee that?"),
+        VoiceLine(110, Wilham, ru="", en="Absolutely!"),
+        VoiceLine(120, Reichman, ru="", en="Very well, We execute your plan."),
+        VoiceLine(130, Wilham, ru="", en="Thank you for your trust."),
+        VoiceLine(140, Reichman, ru="", en="We will see what comes out of that. You're dismissed, Herr Wilhelm."),
+    ]
 
 
 class Msn2Space(Msn2, script.SpaceVoiceProps):
@@ -291,7 +370,7 @@ class Msn2Space(Msn2, script.SpaceVoiceProps):
             430,
             PunisherCatcher,
             ru="База! Вижу базу!",
-            en="A base! I see a base!",
+            en="A base! I see corsair base!",
         ),
         VoiceLine(
             440,
@@ -375,34 +454,44 @@ class Msn2Space(Msn2, script.SpaceVoiceProps):
             7000,
             Neuralnet,
             ru="Чтобы получ+ить д+оступ на рудок+оп, вы должн+ы доб+ыть кл+юч. Кл+юч м+ожно доб+ыть в астер+оидах. Атак+уйте вн+утренние п+олости ближ+айших астер+оидов сво+ими п+ушками.",
+            en='To get access to roid miner you must get the key. You can mine key inside asteroids. Attack internal sides of nearest asterods by your guns.',
         ),
         VoiceLine(
             7010,
             Neuralnet,
             ru="+Если п+олость астер+оида разр+ушилась с зел+ёным взр+ывом, зн+ачит с астер+оида м+ожно доб+ыть кл+юч.",
+            en='If side was destroyed with green color, it means this asteroid contains a key',
         ),
         VoiceLine(
             7020,
             Neuralnet,
             ru="Уничтошьте все п+олости +этого астер+оида до тех пор, пока ключ не в+ыпадет. Д+оступ к ст+анции б+удет откр+ыт ср+азу же, как т+олько вы забер+ёте ключ в свой трюм.",
+            en='Destroy all remaining internal sides of asteroid until you get the key. You will get access to roid miner right after collecting this key into your cargo hold.',
         ),
         VoiceLine(
             7030,
             Neuralnet,
             ru="Если п+олость астер+оида была разрушена с б+елым взр+ывом, то на этом астер+оиде не б+удет ключ+а. Вы должн+ы будете направиться к сл+едующему астер+оиду и попр+обовать сн+ова.",
+            en="If side was destroyed with white color, it means this asteroid have no key inside. You must check next asteroid and try again",
         ),
         VoiceLine(
             7040,
             Neuralnet,
             ru="В Секторе Сириуса различные станции нужно взламывать различными способами. "
                "Чтобы получить информацию о методике взлома обратитесь к инфокарте взламываемого объекта.",
+            en="You can find different locked objects in Sirius Sector. They should be opened by different ways. "
+               "Check the inforcard of locked object to get more information.",
         ),
     ]
 
 
 class Mission2(Msn2, script.StoryMission):
     MISSION_INDEX = 2
-    CUTSCENES = []
+    CUTSCENES = [
+        Msn2Offer,
+        Msn2Miner,
+        Msn2Done,
+    ]
     SPACE_CLASS = Msn2Space
     SYNC_SPACE = True
 

@@ -10,6 +10,7 @@ from universe import connection
 from universe.base import Base
 
 from text.dividers import SINGLE_DIVIDER, DIVIDER
+from text.strings import MultiString as MS
 
 from tools.tracks import Tracks
 from tools.system_template import SystemTemplateLoader
@@ -54,7 +55,7 @@ class SiriusSystem:
 
 class System:
     NAME = ''
-    RU_NAME = ''
+    RU_NAME = MS('', '')
     CONTENT = None
     TEMPLATE_NAME = None
     ALLOW_SYNC = False
@@ -135,7 +136,7 @@ distance = {tlr_distance}
 
         self.keys = []
 
-        name = self.get_name()
+        name = MS(self.get_ru_name(), self.get_en_name())
 
         self.ids_name = ids.new_name(name)
         self.ids_info = ids.new_name(name)  # TODO: change
@@ -145,8 +146,11 @@ distance = {tlr_distance}
 
         self.process_content()
 
-    def get_name(self):
-        return self.RU_NAME.replace('+', '')
+    def get_ru_name(self):
+        return self.RU_NAME.get_ru().replace('+', '')
+
+    def get_en_name(self):
+        return self.RU_NAME.get_en().replace('+', '')
 
     def process_content(self):
         if self.have_dynamic_content():

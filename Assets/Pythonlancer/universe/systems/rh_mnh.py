@@ -27,6 +27,8 @@ from templates.dockable import trading_outposts
 from templates.dockable import station_debris
 from templates.dockable import junker
 
+from text.strings import MultiString as MS
+
 
 class MunchMember(Member):
     FACTION = faction.RheinlandMain
@@ -200,7 +202,7 @@ class MunchBattleRuins1(MunchMember, MunchBaseRheinlandLockedBattleship):
     ALIAS = 'mines'
     INDEX = 1
     BASE_INDEX = 61
-    RU_NAME = 'Линкор Брауншвейг'
+    RU_NAME = MS('Линкор Брауншвейг', "Battleship Braunschweig")
 
     ASTEROID_ZONES = [
         MunchBattleMinesZone1,
@@ -211,7 +213,7 @@ class MunchBattleRuins2(MunchMember, MunchBaseKusariLockedBattleship):
     ALIAS = 'mines'
     INDEX = 2
     BASE_INDEX = 62
-    RU_NAME = 'Линкор Мусаси'
+    RU_NAME = MS('Линкор Мусаси', "Battleship Musashi")
 
     ASTEROID_ZONES = [
         MunchBattleMinesZone2,
@@ -222,7 +224,7 @@ class MunchBattleRuins3(MunchMember, MunchBaseRheinlandLockedBattleship):
     ALIAS = 'mines'
     INDEX = 3
     BASE_INDEX = 63
-    RU_NAME = 'Линкор Шлейзвиг-Гольштейн'
+    RU_NAME = MS('Линкор Шлейзвиг-Гольштейн', 'Battleship Schleswig-Holstein')
 
     ASTEROID_ZONES = [
         MunchBattleMinesZone3,
@@ -233,7 +235,7 @@ class MunchBattleRuins4(MunchMember, MunchBaseKusariLockedBattleship):
     ALIAS = 'mines'
     INDEX = 4
     BASE_INDEX = 64
-    RU_NAME = 'Линкор Кавати'
+    RU_NAME = MS('Линкор Кавати', 'Battleship Kawati')
 
     ASTEROID_ZONES = [
         MunchBattleMinesZone4,
@@ -244,7 +246,7 @@ class MunchBattleRuins5(MunchMember, MunchBaseRheinlandLockedBattleship):
     ALIAS = 'mines'
     INDEX = 5
     BASE_INDEX = 65
-    RU_NAME = 'Линкор Шлезиен'
+    RU_NAME = MS('Линкор Шлезиен', 'Battleship Schlesien')
 
     ASTEROID_ZONES = [
         MunchBattleMinesZone5,
@@ -351,7 +353,7 @@ class MunchDockring(MunchMember, main_objects.WaterPlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSingleRoomInterior
     DEALERS = dealers.RheinlandPlanetDealers
     SHIP_SET = markets.ShipSet('bw_elite')
-    RU_NAME = 'Планета Норторф'
+    RU_NAME = MS('Планета Норторф', "Planet Nortorf")
 
 
 class MunchTrading(MunchMember, main_objects.TradingBase):
@@ -360,7 +362,7 @@ class MunchTrading(MunchMember, main_objects.TradingBase):
     SPACE_OBJECT_TEMPLATE = trading_outposts.LibertyTradingOutpost
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.RheinlandCivilianDealers
-    RU_NAME = 'Торговая база Шлезвиг'
+    RU_NAME = MS('Торговая база Шлейзвиг', 'Trading base Schleswig')
 
 
 class MunchCivilianStationRuins(MunchMember, main_objects.StationRuins):
@@ -371,7 +373,7 @@ class MunchCivilianStationRuins(MunchMember, main_objects.StationRuins):
 
     SPACE_OBJECT_TEMPLATE = station_debris.MunchenCivilianStationDebris
 
-    RU_NAME = 'Станция Мюнхен'
+    RU_NAME = MS('Станция Мюнхен', 'Munich Station')
 
     # ASTEROID_ZONES = [
     #     Om15GasPocketsZone1,
@@ -387,7 +389,7 @@ class MunchCivilianStationDropPoint1(MunchMember, main_objects.HackableStation):
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpost
     INTERIOR_CLASS = interior.EquipDeckInterior
 
-    RU_NAME = 'Стыковочный узел 1 Мюнхена'
+    RU_NAME = MS('Стыковочный узел 1 Мюнхена', 'Munich Docking Point 1')
     MISC_EQUIP_TYPE = RH_CIV
     WEAPON_FACTION = WEAPON_RH
     EQUIP_SET = markets.EquipSet(
@@ -405,7 +407,7 @@ class MunchCivilianStationDropPoint2(MunchMember, main_objects.HackableStation):
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpost
     INTERIOR_CLASS = interior.EquipDeckInterior
 
-    RU_NAME = 'Стыковочный узел 2 Мюнхена'
+    RU_NAME = MS('Стыковочный узел 2 Мюнхена', 'Munich Docking Point 2')
     MISC_EQUIP_TYPE = RH_CIV
     WEAPON_FACTION = WEAPON_RH
     EQUIP_SET = markets.EquipSet(
@@ -418,10 +420,11 @@ class MunchBattleStationRuins(MunchMember, main_objects.StationRuins):
     ALIAS = 'ruins'
     INDEX = 2
     REL = TOP
+    RU_FIRST_DESCRIPTION = MS('', '')  # clear description, this is not regular hackable station
 
     SPACE_OBJECT_TEMPLATE = station_debris.MunchenBattleStationDebris
 
-    RU_NAME = 'Станция Регенсбург'
+    RU_NAME = MS('Станция Регенсбург', "Regensburg Station")
 
 
 class MunchOutcastBase(MunchMember, main_objects.PirateAsteroid):
@@ -432,7 +435,7 @@ class MunchOutcastBase(MunchMember, main_objects.PirateAsteroid):
     EQUIP_SET = markets.OutcastSet
 
     DEFENCE_LEVEL = None
-    RU_NAME = 'База Виго'
+    RU_NAME = MS('База Виго', "Vigo Base")
 
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -465,7 +468,7 @@ class MunchJunkersBase(MunchMember, main_objects.JunkerBase):
     FACTION = faction.Junkers
 
     DEFENCE_LEVEL = None
-    RU_NAME = 'Склад Кройзберг'
+    RU_NAME = MS('Склад Кройзберг', 'Kreuzberg Storage')
 
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -489,14 +492,14 @@ class MunchPlanet2(MunchMember, main_objects.Planet):
     ARCHETYPE = 'planet_moonblu_1000'
     SPHERE_RADIUS = 1000
     PLANET_CIRCLE = False
-    RU_NAME = 'Планета Готторп'
+    RU_NAME = MS('Планета Готторп', 'Planet Gottorp')
 
 
 class MunchPlanet3(MunchMember, main_objects.Planet):
     INDEX = 3
     ARCHETYPE = 'planet_rckmnt_4000'
     SPHERE_RADIUS = 4000
-    RU_NAME = 'Планета Хольштейн'
+    RU_NAME = MS('Планета Хольштейн', 'Planet Holstein')
 
 
 class MunchCivRuinsConn1(MunchMember, main_objects.TradeConnection):

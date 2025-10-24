@@ -1,16 +1,19 @@
-GOTO = 'Направляйтесь к точке пути'
-LAUNCH = 'Вылетите в космос'
-TLR = 'Используйте указанную торговую линию'
-JUMPGATE = 'Используйте указанные гиперврата'
-JUMPHOLE = 'Используйте указанную гипедыру'
-GOTO_JUMPGATE = 'Направляйтесь у указанным гипервратам'
-GOTO_JUMPHOLE = 'Направляйтесь к указанной гипердыре'
-DOCKRING = 'Совершите посадку на планету'
-DESTROY_ENEMY = 'Уничтожьте неприятеля'
-DESTROY_FIGHTERS = 'Уничтожьте вражеские истребители'
-DESTROY_PIRATES = 'Уничтожьте пиратов'
-DESTROY_WP = 'Уничтожьте орудийные платформы'
-DESTROY_CORSAIRS = 'Уничтожьте корсаров'
-DOCK_BATTLESHIP = 'Совершите стыковку с линкором'
-CATCH_DEIDRICH = 'Преследуйте Дитриха'
-CHASE_ROCKFORD = 'Преследуйте Рокфорда'
+from text.strings import MultiString as MS
+
+GOTO = MS('Направляйтесь к точке пути', 'Go to waypoint')
+LAUNCH = MS('Вылетите в космос', 'Launch to space')
+TLR = MS('Используйте указанную торговую линию', 'Use marked tradelane')
+JUMPGATE = MS('Используйте указанные гиперврата', 'Use marked jumpgate')
+JUMPHOLE = MS('Используйте указанную гипедыру', 'Use marked jumphole')
+GOTO_JUMPGATE = MS('Направляйтесь у указанным гипервратам', 'Go to jumpgate')
+GOTO_JUMPHOLE = MS('Направляйтесь к указанной гипердыре', 'Go to jumphole')
+DOCKRING = MS('Совершите посадку на планету', 'Dock with planet by marked dockring')
+DESTROY_ENEMY = MS('Уничтожьте неприятеля', 'Destroy enemy ships')
+DESTROY_FIGHTERS = MS('Уничтожьте вражеские истребители', 'Destroy enemy fighters')
+DESTROY_PIRATES = MS('Уничтожьте пиратов', 'Destroy pirates')
+DESTROY_WP = MS('Уничтожьте орудийные платформы', 'Destroy weapon platforms')
+DESTROY_CORSAIRS = MS('Уничтожьте корсаров', 'Destroy corsairs')
+DOCK_BATTLESHIP = MS('Совершите стыковку с линкором', 'Dock with battleship')
+CATCH_DEIDRICH = MS('Преследуйте Дитриха', 'Catch Dietrich')
+CHASE_ROCKFORD = MS('Преследуйте Рокфорда', 'Chase Rockford')
+DESTROY_ROAD_LOCK = MS('Уничтожьте перегородку', "Destroy road lock")

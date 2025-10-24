@@ -92,8 +92,8 @@ class CutsceneProps(MissionSegment):
     def get_alias(self):
         return self.ALIAS
 
-    def get_destination(self):
-        return f'audio\\mod\\m{self.MISSION_INDEX:02d}'
+    def get_destination(self, suffix=''):
+        return f'audio\\MOD{suffix}\\m{self.MISSION_INDEX:02d}'
 
     def get_subfolder(self):
         return f'm{self.MISSION_INDEX:02d}'
@@ -111,23 +111,27 @@ class CutsceneProps(MissionSegment):
     def get_scene_name(self):
         return f'm{self.mission.MISSION_INDEX:02d}_{self.get_alias()}'
 
-    def get_thorn(self, tpl_manager):
+    def get_thorn(self, tpl_manager, russian=True):
         if not self.THORN_CLASS:
             raise Exception(f'Cutscene {self} have no thorn')
 
-        return self.THORN_CLASS(tpl_manager, self)
+        return self.THORN_CLASS(tpl_manager, self, russian=russian)
 
-    def get_decision_thorn(self, tpl_manager):
+    def get_decision_thorn(self, tpl_manager, russian=True, skip=False):
         if not self.THORN_DECISION_CLASS:
+            if skip:
+                return
             raise Exception(f'Cutscene {self} have no decision thorn')
 
-        return self.THORN_DECISION_CLASS(tpl_manager, self, extra_name='decision')
+        return self.THORN_DECISION_CLASS(tpl_manager, self, extra_name='decision', russian=russian)
 
-    def get_accept_thorn(self, tpl_manager):
+    def get_accept_thorn(self, tpl_manager, russian=True, skip=False):
         if not self.THORN_ACCEPT_CLASS:
+            if skip:
+                return
             raise Exception(f'Cutscene {self} have no accept thorn')
 
-        return self.THORN_ACCEPT_CLASS(tpl_manager, self, extra_name='accept')
+        return self.THORN_ACCEPT_CLASS(tpl_manager, self, extra_name='accept', russian=russian)
 
 
 
@@ -259,12 +263,12 @@ class StoryMission:
             actors |= cutscene.get_actors()
         actors |= self.SPACE_CLASS.get_actors()
 
-        return sorted(list(actors), key=lambda x: x.RU_NAME)
+        return sorted(list(actors), key=lambda x: x.RU_NAME.get_ru())
 
     def get_actors_content(self):
         content = []
         for actor in self.actors:
-            content.append(f'<p><a href="{self.get_actor_file_link(actor)}">{actor.RU_NAME}</a></p>')
+            content.append(f'<p><a href="{self.get_actor_file_link(actor)}">{actor.RU_NAME.get_ru()}</a></p>')
         return SINGLE_DIVIDER.join(content)
 
     def get_space_lines(self):
@@ -303,39 +307,39 @@ class StoryMission:
     def get_alias(self):
         return f'mission{self.MISSION_INDEX}'
 
-    def get_male_voice_root(self):
-        return f'echo_m{self.MISSION_INDEX:02d}'
+    def get_male_voice_root(self, suffix=''):
+        return f'echo_m{self.MISSION_INDEX:02d}{suffix}'
 
-    def get_female_voice_root(self):
-        return f'echo_m{self.MISSION_INDEX:02d}_female'
+    def get_female_voice_root(self, suffix=''):
+        return f'echo_m{self.MISSION_INDEX:02d}_female{suffix}'
 
-    def get_player_voice_root(self):
-        return f'echo_m{self.MISSION_INDEX:02d}_player'
+    def get_player_voice_root(self, suffix=''):
+        return f'echo_m{self.MISSION_INDEX:02d}_player{suffix}'
 
-    def get_voice_root_for_sound(self, sound):
+    def get_voice_root_for_sound(self, sound, suffix=''):
         if sound.line.actor.is_male():
-            return self.get_male_voice_root()
+            return self.get_male_voice_root(suffix)
         if sound.line.actor.is_female():
-            return self.get_female_voice_root()
+            return self.get_female_voice_root(suffix)
         if sound.line.actor.is_player():
-            return self.get_player_voice_root()
+            return self.get_player_voice_root(suffix)
         raise Exception('unknown voice root exception')
 
-    def get_male_space_voice(self):
+    def get_male_space_voice(self, suffix=''):
         return MaleVoice(
-            voice_name=self.get_male_voice_root(),
+            voice_name=self.get_male_voice_root(suffix),
             sounds=[sound for sound in self.space.get_sounds() if sound.line.actor.is_male()],
         )
 
-    def get_female_space_voice(self):
+    def get_female_space_voice(self, suffix=''):
         return FemaleVoice(
-            voice_name=self.get_female_voice_root(),
+            voice_name=self.get_female_voice_root(suffix),
             sounds=[sound for sound in self.space.get_sounds() if sound.line.actor.is_female()],
         )
 
-    def get_trent_space_voice(self):
+    def get_trent_space_voice(self, suffix=''):
         return TrentVoice(
-            voice_name=self.get_player_voice_root(),
+            voice_name=self.get_player_voice_root(suffix),
             sounds=[sound for sound in self.space.get_sounds() if sound.line.actor.is_player()],
         )
 
@@ -344,6 +348,13 @@ class StoryMission:
             self.get_male_space_voice(),
             self.get_female_space_voice(),
             self.get_trent_space_voice(),
+        ]
+
+    def get_en_voices(self):
+        return [
+            self.get_male_space_voice(suffix='_en'),
+            self.get_female_space_voice(suffix='_en'),
+            self.get_trent_space_voice(suffix='_en'),
         ]
 
     def get_cutscenes(self):

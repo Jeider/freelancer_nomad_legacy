@@ -1,4 +1,5 @@
 from text.dividers import DIVIDER, SINGLE_DIVIDER
+from text.strings import MultiString as MS
 
 DEBRIS = 'debris'
 DISAPPEAR = 'disappear'
@@ -247,7 +248,7 @@ hitpoints = {damage}
 class LibertyCruiser(Capital):
     TEMPLATE_CODE = 'lcr'
     ARCHETYPE = 'li_cruiser'
-    RU_NAME = 'Крейсер Либерти'
+    RU_NAME = MS('Крейсер Либерти', "Liberty Cruiser")
 
     DAMAGE_FUSE1 = 'li_cruiser_burning_fuse01'
     DAMAGE_FUSE2 = 'li_cruiser_burning_fuse02'
@@ -262,7 +263,7 @@ class LibertyCruiser(Capital):
 class BretoniaGunboat(Capital):
     TEMPLATE_CODE = 'bgb'
     ARCHETYPE = 'br_gunboat'
-    RU_NAME = 'Канонерка Бретонии'
+    RU_NAME = MS('Канонерка Бретонии', "Bretonia Gunboat")
 
     DAMAGE_FUSE1 = 'br_gunship_burning_fuse01'
     DAMAGE_FUSE2 = 'br_gunship_burning_fuse02'
@@ -277,7 +278,7 @@ class BretoniaGunboat(Capital):
 class BretoniaDestroyer(Capital):
     TEMPLATE_CODE = 'bdr'
     ARCHETYPE = 'br_destroyer'
-    RU_NAME = 'Эсминец Бретонии'
+    RU_NAME = MS('Эсминец Бретонии', "Bretonia Destroyer")
 
     DAMAGE_FUSE1 = 'br_destroyer_burning_fuse01'
     DAMAGE_FUSE2 = 'br_destroyer_burning_fuse02'
@@ -292,7 +293,7 @@ class BretoniaDestroyer(Capital):
 class KusariGunboat(Capital):
     TEMPLATE_CODE = 'kgb'
     ARCHETYPE = 'ku_gunboat'
-    RU_NAME = 'Канонерка Кусари'
+    RU_NAME = MS('Канонерка Кусари', 'Kusari Gunboat')
 
     DAMAGE_FUSE1 = 'ku_gunship_burning_fuse01'
     DAMAGE_FUSE2 = 'ku_gunship_burning_fuse01'
@@ -307,7 +308,7 @@ class KusariGunboat(Capital):
 class KusariDestroyer(Capital):
     TEMPLATE_CODE = 'kdr'
     ARCHETYPE = 'ku_destroyer'
-    RU_NAME = 'Эсминец Кусари'
+    RU_NAME = MS('Эсминец Кусари', "Kusari Destroyer")
 
     DAMAGE_FUSE1 = 'ku_destroyer_burning_fuse01'
     DAMAGE_FUSE2 = 'ku_destroyer_burning_fuse02'
@@ -322,7 +323,7 @@ class KusariDestroyer(Capital):
 class RheinlandGunboat(Capital):
     TEMPLATE_CODE = 'rgb'
     ARCHETYPE = 'rh_gunboat'
-    RU_NAME = 'Канонерка Рейнланда'
+    RU_NAME = MS('Канонерка Рейнланда', 'Rheinland Gunboat')
 
     DAMAGE_FUSE1 = 'rh_gunship_burning_fuse01'
     DAMAGE_FUSE2 = 'rh_gunship_burning_fuse02'
@@ -337,7 +338,7 @@ class RheinlandGunboat(Capital):
 class RheinlandCruiser(Capital):
     TEMPLATE_CODE = 'rcr'
     ARCHETYPE = 'rh_cruiser'
-    RU_NAME = 'Крейсер Рейнланда'
+    RU_NAME = MS('Крейсер Рейнланда', "Rheinland Cruiser")
 
     DAMAGE_FUSE1 = 'rh_cruiser_burning_fuse01'
     DAMAGE_FUSE2 = 'rh_cruiser_burning_fuse02'
@@ -352,7 +353,7 @@ class RheinlandCruiser(Capital):
 class Armored(Capital):
     TEMPLATE_CODE = 'armored'
     ARCHETYPE = 'ge_armored'
-    RU_NAME = 'Бронированный транспорт'
+    RU_NAME = MS('Бронированный транспорт', 'Armored Transport')
 
     DAMAGE_FUSE1 = 'intermed_damage_smallship01'
     DAMAGE_FUSE2 = 'intermed_damage_smallship02'
@@ -368,7 +369,7 @@ class Armored(Capital):
 class Miner(Capital):
     TEMPLATE_CODE = 'miner'
     ARCHETYPE = 'ge_miner'
-    RU_NAME = 'Рудокоп'
+    RU_NAME = MS('Рудокоп', "Roid Miner")
 
     NO_DEATH_FUSE = True
 
@@ -380,7 +381,7 @@ class Miner(Capital):
 class RheinlandBattleshipM11(Capital):
     TEMPLATE_CODE = 'rbs_m11'
     ARCHETYPE = 'rh_battleship_m11'
-    RU_NAME = 'Линкор Рейнланда'
+    RU_NAME = MS('Линкор Рейнланда', 'Rheinland Battleship')
 
     DAMAGE_FUSE2 = 'rh_battleship_burning_fuse02'
 
@@ -395,7 +396,7 @@ class RheinlandBattleshipM11(Capital):
 class KusariBattleshipM12Runner(Capital):
     TEMPLATE_CODE = 'kbs_runner'
     ARCHETYPE = 'ku_battleship_m13_assault'
-    RU_NAME = 'Линкор Кусари'
+    RU_NAME = MS('Линкор Кусари', 'Kusari Battleship')
 
     DAMAGE_FX = 'gf_explosion_ku_battleship_smallexp'
 

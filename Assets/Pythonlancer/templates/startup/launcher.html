@@ -1,0 +1,638 @@
+<html>
+<head>
+<style>
+
+*, body {
+  font-family: 'Arial';
+
+}
+html {
+  filter: invert(1);
+}
+.section {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.danger-settings {
+  border: 1px solid #00FFFF;
+  margin: 5px 5px 20px 5px;
+  padding: 20px;
+}
+
+.integer-input {
+   width: 60px;
+}
+
+.run {
+   font-size: 20px;
+}
+
+.hint {
+   font-size: 14px;
+}
+
+.row {
+    width: 100%;
+    margin-bottom:20px;
+}
+.col {
+    display: inline-block;
+    width: 20%;
+    margin: 2px;
+    padding: 10px;
+    border: 1px solid silver;
+    height: 200px;
+}
+
+table, th, td {
+  border: 1px solid silver; /* 1px width, solid style, black color */
+}
+
+td, th {
+   padding: 10px;
+}
+
+table {
+   margin-bottom: 50px;
+}
+
+
+.diff-select {
+    font-size: 18px;
+
+}
+
+.diff-info {
+    font-size: 16px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    margin-bottom:20px
+}
+
+.tab-container {
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+}
+
+.tab-container button {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.tab-content {
+  display: none;
+  margin-top: 20px;
+}
+.tab-content.active {
+  display: block;
+}
+.tab-link.active {
+  background-color: #ccc; /* Highlight active tab */
+}
+
+</style>
+
+
+</head>
+
+<body>
+
+<div class="section">
+    <h1>{{ t.text('Freelancer The Nomad Legacy') }}</h1>
+</div>
+
+<div class="tab-container">
+  <div class="tab-links">
+    <button class="tab-link active" data-target="tab1-content">{{ t.text('Game settings') }}</button>
+    <button class="tab-link" data-target="tab2-content">{{ t.text('Ship effects') }}</button>
+    <button class="tab-link" data-target="tab3-content">{{ t.text('Character') }}</button>
+  </div>
+
+
+  <div id="tab1-content" class="tab-content active">
+        <div class="section">
+            {{ t.text('Show dangerous settings') }} <input type="checkbox" id="danger_toggle">
+        </div>
+
+        <hr>
+
+        <div class="section">
+            {{ t.text('Screen resolution:') }}
+            <select id="resolution">
+                {% for res in resolutions %}
+                    <option value="{{ res }}" {% if res == current_resolution %}selected{% endif %}>{{ res }}</option>
+                {% endfor %}
+            </select>
+
+        </div>
+
+        <div class="section">
+
+            {{ t.text('Windowed mode:') }}
+
+            <input type="checkbox" name="windowed" id="windowed" {% if is_windowed %}checked{% endif %}>
+
+        </div>
+
+        <div class="section dangerous" style="display: none;">
+            {{ t.text('Field of view Y (fish eye):') }} <input type="number" class="integer-input" value="{{ fovy }}" id="fovy"> <span class="hint">{{ t.text('(default: 70)') }}</span>
+        </div>
+
+        <hr>
+
+        <div class="section">
+            {{ t.text('Level of difficulty') }}
+        </div>
+
+
+        <table style="width: 100%">
+
+            {#
+            <tr>
+                <td class="diff-select">
+                    <input type="radio" name="difficulty" value="easy" id="easy" {% if difficulty == 'easy' %}checked{% endif %} disabled>
+                    <label for="easy">{{ t.text('Easy') }}</label>
+                </td>
+                <td class="diff-info">
+                    {{ t.text('Cannot change powerplants and engines') }}
+                    <br>
+                    {{ t.text('Simple difficulty') }}
+                    <br>
+                    {{ t.text('For game journalists') }}
+                </td>
+
+            </tr>
+            #}
+
+            <tr>
+                <td class="diff-select">
+                    <input type="radio" name="difficulty" value="normal" id="normal" {% if difficulty == 'normal' %}checked{% endif %}>
+                    <label for="normal">{{ t.text('Normal') }}</label>
+                </td>
+                <td class="diff-info">
+                    {{ t.text('Default difficulty') }}
+                    <br>
+                    {{ t.text('Main features is available') }}
+                </td>
+
+            </tr>
+
+            {#
+            <tr>
+                <td class="diff-select">
+                    <input type="radio" name="difficulty" value="hard" id="hard" {% if difficulty == 'hard' %}checked{% endif %} disabled>
+                    <label for="hard">{{ t.text('Hard') }}</label>
+                </td>
+                <td class="diff-info">
+                    {{ t.text('High difficulty') }}
+                    <br>
+                    {{ t.text('Can change tractor beam and scanner') }}
+                    <br>
+                    {{ t.text('First tractor beam and scanner are not efficient') }}
+
+                </td>
+
+            </tr>
+
+            <tr>
+                <td class="diff-select">
+                    <input type="radio" name="difficulty" value="extreme" id="extreme" {% if difficulty == 'extreme' %}checked{% endif %} disabled>
+                    <label for="extreme">{{ t.text('Extreme') }}</label>
+                </td>
+                <td class="diff-info">
+                    {{ t.text('Extreme challenge for the best freelancers') }}
+                    <br>
+                    {{ t.text('Minimal drop loot chance') }}
+                </td>
+
+            </tr>
+            #}
+
+        </table>
+
+  </div>
+  <div id="tab2-content" class="tab-content">
+    <table>
+        <tr>
+            <th>{{ t.text('Front-light color') }}</th>
+            <th>{{ t.text('Contrail color') }}</th>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                    <input type="radio" name="front_light" value="white" id="fl_white" {% if front_light == 'white' %}checked{% endif %} >
+                    <label for="fl_white">{{ t.text('White (default)') }}</label>
+                </div>
+
+            </td>
+            <td>
+                <div>
+                    <input type="radio" name="trail" value="default" id="trail_default" {% if trail == 'default' %}checked{% endif %} >
+                    <label for="trail_white">{{ t.text('Half-Transparent (default)') }}</label>
+                </div>
+
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>
+                <div>
+                    <input type="radio" name="front_light" value="green" id="fl_green" {% if front_light == 'green' %}checked{% endif %} >
+                    <label for="fl_green">{{ t.text('Green') }}</label>
+                </div>
+
+            </td>
+            <td>
+                <div>
+                    <input type="radio" name="trail" value="green" id="trail_green" {% if trail == 'green' %}checked{% endif %} >
+                    <label for="trail_green">{{ t.text('Green') }}</label>
+                </div>
+
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>
+                <div>
+                    <input type="radio" name="front_light" value="blue" id="fl_blue" {% if front_light == 'blue' %}checked{% endif %} >
+                    <label for="fl_blue">{{ t.text('Blue') }}</label>
+                </div>
+
+            </td>
+            <td>
+                <div>
+                    <input type="radio" name="trail" value="blue" id="trail_blue" {% if trail == 'blue' %}checked{% endif %} >
+                    <label for="trail_blue">{{ t.text('Blue') }}</label>
+                </div>
+
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>
+                <div>
+                    <input type="radio" name="front_light" value="orange" id="fl_orange" {% if front_light == 'orange' %}checked{% endif %} >
+                    <label for="fl_orange">{{ t.text('Orange') }}</label>
+                </div>
+
+            </td>
+            <td>
+                <div>
+                    <input type="radio" name="trail" value="orange" id="trail_orange" {% if trail == 'orange' %}checked{% endif %} >
+                    <label for="trail_orange">{{ t.text('Orange') }}</label>
+                </div>
+
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>
+                <div>
+                    <input type="radio" name="front_light" value="red" id="fl_red" {% if front_light == 'red' %}checked{% endif %} >
+                    <label for="fl_red">{{ t.text('Red') }}</label>
+                </div>
+
+            </td>
+            <td>
+                <div>
+                    <input type="radio" name="trail" value="red" id="trail_red" {% if trail == 'red' %}checked{% endif %} >
+                    <label for="trail_red">{{ t.text('Red') }}</label>
+                </div>
+
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>
+                <div>
+                    <input type="radio" name="front_light" value="yellow" id="fl_yellow" {% if front_light == 'yellow' %}checked{% endif %} >
+                    <label for="fl_yellow">{{ t.text('Yellow') }}</label>
+                </div>
+
+            </td>
+            <td>
+                <div>
+                    <input type="radio" name="trail" value="yellow" id="trail_yellow" {% if trail == 'yellow' %}checked{% endif %} >
+                    <label for="trail_yellow">{{ t.text('Yellow') }}</label>
+                </div>
+
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                <div>
+                    <input type="radio" name="trail" value="white" id="trail_white" {% if trail == 'white' %}checked{% endif %} >
+                    <label for="trail_white">{{ t.text('White') }}</label>
+                </div>
+
+            </td>
+        </tr>
+
+    </table>
+  </div>
+
+
+  <div id="tab3-content" class="tab-content">
+
+    <table>
+        <tr>
+            <th>{{ t.text('Clothes') }}</th>
+            <th>{{ t.text('Communication helmet') }}</th>
+        </tr>
+
+
+
+
+        <tr>
+            <td>
+                <div>
+                    <input type="radio" name="body" value="default" id="body_default" {% if player_body == 'default' %}checked{% endif %} >
+                    <label for="body_default">{{ t.text('Default suit') }}</label>
+                </div>
+
+            </td>
+
+            <td>
+                <div>
+                    <input type="radio" name="commhelmet" value="default" id="commhelmet_default" {% if player_commhelmet == 'default' %}checked{% endif %} >
+                    <label for="trail_white">{{ t.text('Default helmet') }}</label>
+                </div>
+
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>
+                <div>
+                    <input type="radio" name="body" value="rh_guard" id="body_rh_guard" {% if player_body == 'rh_guard' %}checked{% endif %} >
+                    <label for="body_rh_guard">{{ t.text('Rheinland guard') }}</label>
+                </div>
+
+            </td>
+
+            <td>
+                <div>
+                    <input type="radio" name="commhelmet" value="br_brighton" id="commhelmet_br_brighton" {% if player_commhelmet == 'br_brighton' %}checked{% endif %} >
+                    <label for="commhelmet_br_brighton">{{ t.text('Brighton\'s helmet') }}</label>
+                </div>
+
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>
+                <div>
+                    <input type="radio" name="body" value="rh_elite" id="body_rh_elite" {% if player_body == 'rh_elite' %}checked{% endif %} >
+                    <label for="body_rh_elite">{{ t.text('Rheinland elite') }}</label>
+                </div>
+
+            </td>
+
+            <td>
+                <div>
+                    <input type="radio" name="commhelmet" value="br_darcy" id="commhelmet_br_darcy" {% if player_commhelmet == 'br_darcy' %}checked{% endif %} >
+                    <label for="commhelmet_br_darcy">{{ t.text('Darcy\'s helmet') }}</label>
+                </div>
+
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>
+                <div>
+                    <input type="radio" name="body" value="li_guard" id="body_li_guard" {% if player_body == 'li_guard' %}checked{% endif %} >
+                    <label for="body_li_guard">{{ t.text('Liberty guard') }}</label>
+                </div>
+
+            </td>
+
+            <td>
+                <div>
+                    <input type="radio" name="commhelmet" value="br_kaitlyn" id="commhelmet_br_kaitlyn" {% if player_commhelmet == 'br_kaitlyn' %}checked{% endif %} >
+                    <label for="commhelmet_br_kaitlyn">{{ t.text('Caitlyn\'s helmet') }}</label>
+                </div>
+
+
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>
+                <div>
+                    <input type="radio" name="body" value="li_elite" id="body_li_elite" {% if player_body == 'li_elite' %}checked{% endif %} >
+                    <label for="body_li_elite">{{ t.text('Liberty elite') }}</label>
+                </div>
+
+            </td>
+
+            <td>
+                <div>
+                    <input type="radio" name="commhelmet" value="ku_kym" id="commhelmet_ku_kym" {% if player_commhelmet == 'ku_kym' %}checked{% endif %} >
+                    <label for="commhelmet_ku_kym">{{ t.text('Yamamoto\'s helmet') }}</label>
+                </div>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div>
+                    <input type="radio" name="body" value="br_guard" id="body_br_guard" {% if player_body == 'br_guard' %}checked{% endif %} >
+                    <label for="body_br_guard">{{ t.text('Bretonia guard') }}</label>
+                </div>
+
+            </td>
+
+            <td>
+                <div>
+                    <input type="radio" name="commhelmet" value="li_hatcher" id="commhelmet_li_hatcher" {% if player_commhelmet == 'li_hatcher' %}checked{% endif %} >
+                    <label for="commhelmet_li_hatcher">{{ t.text('Hatcher\'s helmet') }}</label>
+                </div>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div>
+                    <input type="radio" name="body" value="br_elite" id="body_br_elite" {% if player_body == 'br_elite' %}checked{% endif %} >
+                    <label for="body_br_elite">{{ t.text('Bretonia elite') }}</label>
+                </div>
+
+            </td>
+
+            <td>
+                <div>
+                    <input type="radio" name="commhelmet" value="pi_pirate" id="commhelmet_pi_pirate" {% if player_commhelmet == 'pi_pirate' %}checked{% endif %} >
+                    <label for="commhelmet_pi_pirate">{{ t.text('Pirate\'s helmet') }}</label>
+                </div>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div>
+                    <input type="radio" name="body" value="ku_guard" id="body_ku_guard" {% if player_body == 'ku_guard' %}checked{% endif %} >
+                    <label for="body_ku_guard">{{ t.text('Kusari guard') }}</label>
+                </div>
+
+            </td>
+
+            <td>
+                <div>
+                    <input type="radio" name="commhelmet" value="rh_alaric" id="commhelmet_rh_alaric" {% if player_commhelmet == 'rh_alaric' %}checked{% endif %} >
+                    <label for="commhelmet_rh_alaric">{{ t.text('Alaric\'s helmet') }}</label>
+                </div>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div>
+                    <input type="radio" name="body" value="ku_elite" id="body_ku_elite" {% if player_body == 'ku_elite' %}checked{% endif %} >
+                    <label for="body_ku_elite">{{ t.text('Kusari elite') }}</label>
+                </div>
+
+            </td>
+
+            <td>
+                <div>
+                    <input type="radio" name="commhelmet" value="rh_reichman" id="commhelmet_rh_reichman" {% if player_commhelmet == 'rh_reichman' %}checked{% endif %} >
+                    <label for="commhelmet_rh_reichman">{{ t.text('Hassler\'s helmet') }}</label>
+                </div>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div>
+                    <input type="radio" name="body" value="order" id="body_order" {% if player_body == 'order' %}checked{% endif %} >
+                    <label for="body_order">{{ t.text('Order suit') }}</label>
+                </div>
+
+            </td>
+
+            <td>
+                <div>
+                    <input type="radio" name="commhelmet" value="rh_wilham" id="commhelmet_rh_wilham" {% if player_commhelmet == 'rh_wilham' %}checked{% endif %} >
+                    <label for="commhelmet_rh_wilham">{{ t.text('Wilham\'s helmet') }}</label>
+                </div>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div>
+                    <input type="radio" name="body" value="classic" id="body_classic" {% if player_body == 'classic' %}checked{% endif %} >
+                    <label for="body_classic">{{ t.text('Classic Trent') }}</label>
+                </div>
+
+            </td>
+
+            <td>
+
+            </td>
+        </tr>
+
+
+    </table>
+
+
+
+
+
+  </div>
+
+
+</div>
+
+<div class="footer">
+    <button name="run" class="run" onClick="run()">{{ t.text('Run Freelancer') }}</button>
+</div>
+
+
+<script>
+function run() {
+    var resolution = document.getElementById('resolution').value;
+
+    var windowed = document.getElementById('windowed').checked;
+    var fovy = document.getElementById('fovy').value;
+
+    var difficulty = document.querySelector('input[name="difficulty"]:checked').value;
+
+    var front_light = document.querySelector('input[name="front_light"]:checked').value;
+
+    var trail = document.querySelector('input[name="trail"]:checked').value;
+
+    var body = document.querySelector('input[name="body"]:checked').value;
+
+    var commhelmet = document.querySelector('input[name="commhelmet"]:checked').value;
+
+    pywebview.api.runFreelancer(resolution, windowed, difficulty, fovy, front_light, trail, body, commhelmet);
+}
+
+const dangerous = document.getElementsByClassName('dangerous');
+const danger_toggle = document.getElementById('danger_toggle');
+
+danger_toggle.addEventListener('change', (event) => {
+  if (event.currentTarget.checked) {
+    for (let i = 0; i < dangerous.length; i++) {
+        dangerous[i].style.display = "block";
+    }
+  } else {
+    for (let i = 0; i < dangerous.length; i++) {
+        dangerous[i].style.display = "none";
+    }
+  }
+})
+
+document.addEventListener('DOMContentLoaded', () => {
+  const tabLinks = document.querySelectorAll('.tab-link');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  tabLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      // Deactivate all links and content
+      tabLinks.forEach(l => l.classList.remove('active'));
+      tabContents.forEach(c => c.classList.remove('active'));
+
+      // Activate clicked link and its content
+      link.classList.add('active');
+      const targetId = link.dataset.target;
+      document.getElementById(targetId).classList.add('active');
+    });
+  });
+});
+
+</script>
+
+</body>
+
+</html>

@@ -17,6 +17,8 @@ from templates.nebula import exclusion
 from templates.dockable import terraforming
 from templates.dockable import valensia
 
+from story.ingame.names import MUSASHI
+
 
 class OrdHQMember(Member):
     FACTION = faction.KusariMain
@@ -36,4 +38,4 @@ class OrdHQStoryBattleship(OrdHQMember, main_objects.KusariBattleship):
     CALC_STORE = False
     EQUIP_SET = markets.MusashiSecondSet
     SHIP_SET = markets.ShipSet('ku_elite')
-    RU_NAME = 'Линкор Мусаси'
+    RU_NAME = MUSASHI

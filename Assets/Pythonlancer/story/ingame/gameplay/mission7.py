@@ -9,12 +9,14 @@ from story import actors
 from story.ingame import names as N
 from story.ingame import objectives as O
 from story.ingame.tools import (Point, Obj, Conn, NNObj, Ship, Solar, StaticJumpgate, Capital, SaveState,
-                                DockableBattleshipSolar, MultiLine)
+                                DockableBattleshipSolar, MultiLine, TextDialog, MultiText)
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
 from world.npc import NPC, EqMap
 from world import ship
 from universe import faction
+
+from text.strings import MultiString as MS
 
 NPCSHIPS = '''
 
@@ -35,27 +37,95 @@ class Misson07(ingame_mission.IngameMission):
     FOLDER = 'M07'
     FILE = 'm07'
     START_SAVE_ID = 32700
-    START_SAVE_RU_NAME = 'Кадиз, фрипорт Тринидад'
+    START_SAVE_RU_NAME = MS('Мальта, фрипорт Тринидад', 'Malta, Freeport Trinidad')
     SCRIPT_INDEX = 7
     DIRECT_SYSTEMS = [S.omicron2, S.co_cad, S.om13, S.br_avl]
     STATIC_NPCSHIPS = NPCSHIPS
     RTC = ['cadiz']
     INIT_OFFER = MultiLine(
-        'ЗАДАЧА:',
-        'Найти способ восстановить связь с СБА и вызволить артефакты',
-        '',
-        'СЛОЖНОСТЬ:',
-        'Рискованная.',
-        '',
-        'Награда:',
-        'Обещанные 250 000 кредитов',
+        [
+            'ЗАДАЧА:',
+            'Найти способ восстановить связь с СБА и вызволить артефакты',
+            '',
+            'СЛОЖНОСТЬ:',
+            'Рискованная.',
+            '',
+            'НАГРАДА:',
+            'Обещанные 250 000 кредитов',
+        ],[
+            'OBJECTIVE:',
+            'Find way to get contact with ASF and get artifacts back.',
+            '',
+            'DIFFICULTY:',
+            'Risky.',
+            '',
+            'REWARD:',
+            'Promised 250 000 credits',
+        ]
     ).get_content()
 
     def get_save_states(self):
         return [
-            SaveState(self, 'ironside', 'Кадиз. Билл Айронсайд найден'),
-            SaveState(self, 'diversion', 'Малый Омикрон. Перед диверсией'),
-            SaveState(self, 'armored', 'Малый Омикрон. Перехват транспорта'),
+            SaveState(self, 'ironside', MS('Мальта. Билл Айронсайд найден', 'Malta. Battle with Ironside')),
+            SaveState(self, 'diversion', MS('Малый Омикрон. Перед диверсией', 'Omicron Minor. Before Diversion')),
+            SaveState(self, 'armored', MS('Малый Омикрон. Перехват транспорта', 'Omicron Minor. Catching of Transport')),
+        ]
+
+    def get_dialogs(self):
+        return [
+            TextDialog(
+                self, 'bombs', MS('Сверхтяжелые бомбы', 'Ultra heavy bombs'),
+                ru_content=MultiText([
+                    'Подберите бомбы в свой грузовой отсек.',
+
+                    'Бомбы будут размещены в вашем отсеке в разделе Снаряды.',
+
+                    'Подлетите к коммуникатору и сбросьте бомбы из вашего трюма рядом с ним. Будьте осторожны во '
+                    'время сбрасывания бомб, они могут взорваться от касания об другие объекты.',
+
+                    'Чтобы взорвать бомбы вы должны отлететь на безопасное растояние и выстрелить по ним из своих '
+                    'орудий. Бомбы имеют огромную зону детонации. Рекомендуется делать детонацию на максимальной '
+                    'дальности выстрела ваших пушек или сдетонировать их ракетой.',
+
+                    'Будьте осторожны при выбраывании бомб. Они могут взорваться от любого касания о другие объекты.',
+                ],[
+                    'Collect the bombs and pick up them into your cargo hold.',
+
+                    'Bombs will be appeared in Ammo section of your equipment.',
+
+                    'Fly to communicator and jettison the bombs near communicator. Be careful: bombs can be detonated '
+                    'by hits with other objects.',
+
+                    'To detonate the bombs you must fly to safe distance and detonate the bombs by your guns. '
+                    "Bombs have extremely large explosion range. It's recommend to stay on far possible zone from "
+                    "bombs. You can do by guns and by missiles."
+                ]),
+            ),
+            TextDialog(
+                self, 'emi_cannon', MS('От автора', 'From author'),
+                ru_content=MultiText([
+                    'Броневик оборудован слишком мощным щитом. Вы не сможете пробить его своими пушками',
+
+                    'Вы можете вывести щит из строя в случае, если транспорт будет слишком часто использовать '
+                    'электро-магнитную пушку (ЭМП) и перегреет генератор.',
+
+                    'Просто находиться как можно ближе к броневику, чтобы он атаковал вас своей ЭМП.',
+
+                    'Нужно постоянно находиться в радиусе атаки ЭМП. Если выпокинете зону атаки ЭМП, то генератор '
+                    'транспорта придёт в норму.',
+
+                ],[
+                    'Armored transport has too powerful shield. You can not broke it by your guns.',
+
+                    'You can broke this shield only when armored transport will use it EMI-cannon too much time and '
+                    'its generator will be overheated (EMI - electro-magnetic impulse).',
+
+                    'You should stay near armored transport to be attacked by its EMI-cannon.',
+
+                    'You must stay in EMI-cannon damage zone longer as possible. Armored tranport will restore '
+                    'generator when you leave EMI-cannon damage zone.'
+                ]),
+            ),
         ]
 
     def get_ingame_thorns(self):
@@ -108,11 +178,11 @@ class Misson07(ingame_mission.IngameMission):
         ]
         for sol in cad_solars:
             defined_points.append(
-                Solar(self, S.co_cad, sol, ru_name='_'),
+                Solar(self, S.co_cad, sol, ru_name=MS('_', '_')),
             )
 
         defined_points.append(
-            StaticJumpgate(self, S.co_cad, 'cad_to_omicron2', ru_name='_'),
+            StaticJumpgate(self, S.co_cad, 'cad_to_omicron2', ru_name=MS('_', '_')),
         )
 
         cad_points = [
@@ -127,7 +197,7 @@ class Misson07(ingame_mission.IngameMission):
             )
 
         omicron_solars = [
-            ('communicator', 'Коммуникатор'),
+            ('communicator', MS('Коммуникатор', "Communicator")),
         ]
         for sol, ru_name in omicron_solars:
             defined_points.append(
@@ -135,20 +205,20 @@ class Misson07(ingame_mission.IngameMission):
             )
 
         defined_points.extend([
-            Solar(self, S.omicron2, 'repair1', ru_name='Ремонтник', labels=['comm_defence']),
-            Solar(self, S.omicron2, 'repair2', ru_name='Ремонтник', labels=['comm_defence']),
+            Solar(self, S.omicron2, 'repair1', ru_name=MS('Ремонтник', "Repair Ship"), labels=['comm_defence']),
+            Solar(self, S.omicron2, 'repair2', ru_name=MS('Ремонтник', "Repair Ship"), labels=['comm_defence']),
 
-            Solar(self, S.omicron2, 'transport1', ru_name='Транспорт', labels=['comm_defence']),
-            Solar(self, S.omicron2, 'transport2', ru_name='Транспорт', labels=['comm_defence']),
+            Solar(self, S.omicron2, 'transport1', ru_name=MS('Транспорт', 'Transport'), labels=['comm_defence']),
+            Solar(self, S.omicron2, 'transport2', ru_name=MS('Транспорт', 'Transport'), labels=['comm_defence']),
         ])
 
         defined_points.append(
-            StaticJumpgate(self, S.omicron2, 'omicron2_to_om13', ru_name='_'),
+            StaticJumpgate(self, S.omicron2, 'omicron2_to_om13', ru_name=MS('_', '_')),
         )
 
         defined_points.append(
             DockableBattleshipSolar(
-                self, S.br_avl, 'm7_bship1', ru_name='Линкор Принц Уэльсский', base='br_avl_99_base',
+                self, S.br_avl, 'm7_bship1', ru_name=N.PRINCE_OF_WALES, base='br_avl_99_base',
                 archetype='b_battleship', loadout='br_battleship_station'),
         )
         return defined_points
@@ -165,39 +235,42 @@ class Misson07(ingame_mission.IngameMission):
             NNObj(self, O.LAUNCH, name='launch'),
             NNObj(self, O.GOTO, name='goto_starline1', target='starline1'),
             NNObj(self, O.GOTO, name='goto_starline2', target='starline2'),
-            NNObj(self, 'Уничтожьте корабли банды Старлайна', name='kill_starline'),
-            NNObj(self, 'Убейте Билла Айронсайда', name='kill_starline_leader'),
+            NNObj(self, MS('Уничтожьте корабли банды Старлайна', 'Destroy Starline band ships'), name='kill_starline'),
+            NNObj(self, MS('Убейте Билла Айронсайда', 'Kill Bill Ironside'), name='kill_starline_leader'),
             NNObj(self, O.GOTO, name='return_to_freeport', target='co_cad_03'),
             NNObj(self, O.TLR, name='tlr_to_cadiz', target='co_cad_CO_TLR_L1_03'),
             NNObj(self, O.TLR, name='dock_with_cadiz', target='co_cad_01_dock_ring'),
-            NNObj(self, 'Уничтожьте истребители Ордена', name='destroy_order_ship'),
+            NNObj(self, MS('Уничтожьте истребители Ордена', 'Destroy Order ships'), name='destroy_order_ship'),
             NNObj(self, O.TLR, name='escape_tlr_1', target='co_cad_CO_TLR_L2_01'),
             NNObj(self, O.TLR, name='escape_tlr_2', target='co_cad_CO_TLR_L3_01'),
             NNObj(self, O.JUMPGATE, name='jump_omicron2', target='cad_to_omicron2'),
             NNObj(self, O.GOTO, name='goto_near_tortuga', target='to_tortuga_road'),
-            NNObj(self, 'Подберите бомбы', name='pick_up_bombs'),
-            NNObj(self, 'Доберитесь до коммуникатора',
+            NNObj(self, MS('Подберите бомбы', 'Collect bombs'), name='pick_up_bombs'),
+            NNObj(self, MS('Доберитесь до коммуникатора', 'Reach the communicator'),
                   name='goto_communicator', target='communicator', towards=True),
-            NNObj(self, 'Уничтожьте ядро коммуникатора, сбросив бомбы и сдетонировав их',
+            NNObj(self,
+                  MS('Уничтожьте ядро коммуникатора, сбросив бомбы и сдетонировав их (будьте осторожны и держите дистанцию)',
+                     'Destroy core of communicator, dropped bomb near core and detonated it by your guns (be careful and keep far distance)'),
                   name='destroy_communicator', target='communicator'),
-            NNObj(self, 'Покиньте Тортугу', name='fly_away_from_tortuga', target='fly_away_tortuga'),
-            NNObj(self, 'Доберитесь до точки засады',
+            NNObj(self, MS('Покиньте Тортугу', 'Left Tortuga area'), name='fly_away_from_tortuga', target='fly_away_tortuga'),
+            NNObj(self, MS('Доберитесь до точки засады', 'Reach ambush place'),
                   name='goto_possible_ambush_place', target='possible_ambush_place'),
-            NNObj(self, 'Доберитесь места перехвата',
+            NNObj(self, MS('Доберитесь места перехвата', 'Go to catched transport'),
                   name='goto_real_ambush_place', target='real_ambush_place'),
-            NNObj(self, 'Атакуйте бронированный транспорт', name='attack_transport'),
-            NNObj(self, 'Приблизьтесь к транспорту, чтобы перегрузить генератор', name='overdose_generator'),
-            NNObj(self, 'Уничтожьте бронированный транспорт', name='destroy_transport'),
-            NNObj(self, 'Подберите артефакты', name='pick_up_artifacts'),
+            NNObj(self, MS('Атакуйте бронированный транспорт', 'Attack armored transport'), name='attack_transport'),
+            NNObj(self, MS('Приблизьтесь к транспорту, чтобы перегрузить генератор',
+                           'Stay near transport to overload it\'s generator'), name='overdose_generator'),
+            NNObj(self, MS('Уничтожьте бронированный транспорт', 'Destroy armored transport'), name='destroy_transport'),
+            NNObj(self, MS('Подберите артефакты', 'Collect artifacts'), name='pick_up_artifacts'),
             NNObj(self, O.GOTO_JUMPHOLE, name='goto_jump_om13', target='omicron2_to_om13', towards=True),
             NNObj(self, O.JUMPHOLE, name='jump_om13', target='omicron2_to_om13'),
             NNObj(self, O.GOTO, name='goto_bship', target='m7_bship1', towards=True),
             NNObj(self, O.DOCK_BATTLESHIP, name='dock_bship', target='m7_bship1'),
-            NNObj(self, 'Улучшите свой корабль и вылетайте в космос',
+            NNObj(self, MS('Улучшите свой корабль и вылетайте в космос', 'Upgrade your ship and launch to space'),
                   name='buy_things_and_launch_to_space'),
             NNObj(self, O.TLR, target='aval_tlr'),
             NNObj(self, O.DOCKRING, target='dock_ring'),
-            NNObj(self, 'Уничтожьте бандитов', name='destroy_bandits'),
+            NNObj(self, MS('Уничтожьте бандитов', 'Destroy bandits'), name='destroy_bandits'),
         ]
 
     def get_capital_ships(self):
@@ -208,7 +281,7 @@ class Misson07(ingame_mission.IngameMission):
         }
 
         caps = [
-            Capital(self, 'armored', ru_name='Бронированный транспорт', **armored_ship),
+            Capital(self, 'armored', ru_name=N.ARMORED, **armored_ship),
         ]
 
         return caps
@@ -345,7 +418,7 @@ class Misson07(ingame_mission.IngameMission):
                     'bandit',
                     'enemy',
                 ],
-                base_name='Бандит',
+                base_name=MS('Бандит', 'Bandit'),
                 npc=NPC(
                     faction=faction.BretoniaPirate,
                     ship=ship.Crusader,

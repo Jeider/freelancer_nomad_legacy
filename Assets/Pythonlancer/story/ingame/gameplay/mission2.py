@@ -16,6 +16,7 @@ from world import ship
 from universe import faction
 
 from text.dividers import SINGLE_DIVIDER
+from text.strings import MultiString as MS
 
 REAL_AST_REWARD_NAME_FORMAT = 'om15_field_miner6_reward_field_asteroid_{index}'
 ALT_AST_REWARD_NAME_FORMAT = 'om15_demo_alt_ast_reward_{index}'
@@ -163,48 +164,83 @@ class Misson02(ingame_mission.IngameMission):
     FOLDER = 'M02'
     FILE = 'm02'
     START_SAVE_ID = 32200
-    START_SAVE_RU_NAME = 'Бисмарк. Линкор Шарнхорст'
+    START_SAVE_RU_NAME = MS('Бисмарк. Линкор Шарнхорст', 'Bismarck, Battleship Scharnhorst')
     STATIC_NPCSHIPS = NPCSHIPS
     SCRIPT_INDEX = 2
     INIT_OFFER = MultiLine(
-        'ЗАДАЧА:',
-        'Найти разрушенный корабль, добыть полезную информацию из него и доставить Вильгельму.',
-        '',
-        'СЛОЖНОСТЬ:',
-        'Низкая.',
-        '',
-        'Награда:',
-        '5 000 кредитов.',
+        ru_lines=[
+            'ЗАДАЧА:',
+            'Найти разрушенный корабль, добыть полезную информацию из него и доставить Вильгельму.',
+            '',
+            'СЛОЖНОСТЬ:',
+            'Низкая.',
+            '',
+            'Награда:',
+            '5 000 кредитов.',
+        ],
+        en_lines=[
+            'OBJECTIVE:',
+            'Find ship wreck, extract important information from this ship and give it back to Wilhelm.',
+            '',
+            'DIFFICULTY:',
+            'Low.',
+            '',
+            'REWARD:',
+            '5 000 credits.',
+        ]
     ).get_content()
 
     def get_dialogs(self):
         return [
             TextDialog(
-                self, 'vendor', 'Вильгельм',
+                self, 'vendor', MS('Вильгельм', 'Wilhelm'),
                 ru_content=MultiText([
                     'Доброго времени суток, герр Трент, меня зовут Вильгельм и я представляю вооруженные силы Рейнланда. '
                     'Нас впечатлили ваши достижения на территории Рейнланда за столь короткий срок, и мы хотели бы '
                     'предложить вам работу по вашему профилю. Хочу сразу предупредить, что работа сопряжена с некоторой '
                     'степенью секретности. Если вас заинтересовало предложение - мы могли бы лично встретиться '
                     'на линкоре Шарнхорст в системе Бисмарк',
+                ],
+                [
+                    'Greetings, herr Trent, My name is Wilhelm and I am an officer of Rheinland military force. '
+                    'We are impressed by your achievements in the Rhineland in such a short period of time and '
+                    'would like to offer you a position in your field.',
+                    'I would like to warn you right away that this work involves a certain degree of secrecy. ',
+                    'If you are interested in the proposal, we could meet in person on the battleship '
+                    'Scharnhorst in the Bismarck system.',
                 ])
             ),
             TextDialog(
-                self, 'mining', 'Майнинг астероидов',
-                ru_content=MultiText([
-                    'Чтобы получить доступ к рудокопу, вы должны добыть ключ в одном из астероидов.',
+                self, 'mining', MS('Майнинг астероидов', 'Asteroid Mining'),
+                ru_content=MultiText(
+                    [
+                        'Чтобы получить доступ к рудокопу, вы должны добыть ключ в одном из астероидов.',
 
-                    'Хотите запустить обучение?',
-                ]),
+                        'Это является не только заданием миссии, это игровая активность. Все подобные объекты вы должны'
+                        ' открывать подобным образом. Чтобы получить подсказки можете открыть описание '
+                        'открываемого объекта. В данном случае - рудокопа.'
+
+                        'Хотите запустить обучение?',
+                    ],
+                    [
+                        'In order to get access to roid miner you must extra key from on of near asteroids.',
+
+                        'This is not just mission objective, this is kind of game activity. You should open such '
+                        'objects by this "mini-game". Also, you always can get help by infocard of locked object. '
+                        'Ih this case - infocard of Roid Miner.'
+
+                        'Do you want to run tutorial?',
+                    ]
+                ),
                 dialog_type=DIALOG_YES_NO,
             ),
         ]
 
     def get_save_states(self):
         return [
-            SaveState(self, 'junker_battle', 'Омега-15, Мусорщики'),
-            SaveState(self, 'meet_punishers', 'Омега-15, Встреча с Карателями'),
-            SaveState(self, 'base_assault', 'Омега-15, штурм базы Корсаров'),
+            SaveState(self, 'junker_battle', MS('Омега-15, Мусорщики', 'Omega-15, Junkers')),
+            SaveState(self, 'meet_punishers', MS('Омега-15, Встреча с Карателями', 'Omega-15, Meeting with Punishers')),
+            SaveState(self, 'base_assault', MS('Омега-15, штурм базы Корсаров', 'Omega-15, Assault on Corsairs\' base')),
         ]
 
     def get_ingame_thorns(self):
@@ -364,7 +400,7 @@ class Misson02(ingame_mission.IngameMission):
                     'rheinland',
                 ],
                 unique_npc_entry=True,
-                base_name='Каратель',
+                base_name=MS('Каратель', 'Punisher'),
                 npc=NPC(
                     faction=faction.RheinlandMain,
                     ship=ship.Valkyrie,
@@ -517,25 +553,28 @@ class Misson02(ingame_mission.IngameMission):
 
     def get_nn_objectives(self):
         return [
-            NNObj(self, 'Найдитель Вильгельма в баре линкора Шарнхорст', name='meet_vendor', target='battleship'),
+            NNObj(self, MS('Найдитель Вильгельма в баре линкора Шарнхорст',
+                           'Find Wilhelm in bar at Battleship Scharnhorst'), name='meet_vendor', target='battleship'),
 
             NNObj(self, O.LAUNCH, name='launch'),
 
             NNObj(self, O.TLR, target='biz_tlr_1'),
             NNObj(self, O.JUMPGATE, target='biz_to_om15'),
             NNObj(self, O.TLR, target='om15_tlr_1'),
-            NNObj(self, 'Получите доступ и сядьте на добывающее судно Матильда', target='om15_jacobo_miner'),
+            NNObj(self, MS('Получите доступ и сядьте на добывающее судно Матильда',
+                           'Get access and dock with roid miner Matilda'), target='om15_jacobo_miner'),
             NNObj(self, O.GOTO, name='scan_wp1', target='waypoint1'),
             NNObj(self, O.GOTO, name='scan_wp2', target='waypoint2'),
 
-            NNObj(self, 'Просканируйте объекты', name='scan_objects'),
-            NNObj(self, 'Уничтожьте мусорщиков', name='destroy_junkers'),
-            NNObj(self, 'Выбейте чёрный ящик', name='drop_objects'),
-            NNObj(self, 'Подберите черный ящик', name='get_objects'),
+            NNObj(self, MS('Просканируйте объекты', 'Scan marked objects'), name='scan_objects'),
+            NNObj(self, MS('Уничтожьте мусорщиков', 'Destroy junkers'), name='destroy_junkers'),
+            NNObj(self, MS('Выбейте чёрный ящик', 'Exract the black box by your guns'), name='drop_objects'),
+            NNObj(self, MS('Подберите черный ящик', 'Collect the black box'), name='get_objects'),
 
             NNObj(self, O.TLR, target='om15_tlr_2'),
 
-            NNObj(self, 'Ожидайте обработки информации из чёрного ящика', name='wait_for_transfer_data'),
+            NNObj(self, MS('Ожидайте обработки информации из чёрного ящика',
+                           'Wait for processing data from the black box'), name='wait_for_transfer_data'),
             NNObj(self, O.GOTO, name='find_corsair_depot', target='depot_waypoint1'),
             NNObj(self, O.GOTO, name='find_corsair_base', target='base1'),
 

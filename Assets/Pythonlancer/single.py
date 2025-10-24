@@ -1,12 +1,7 @@
 import sys
-import os
-from time import sleep
 import pathlib
 
-from scipy.spatial.transform import Rotation as R
-import numpy as np
-
-from text.dividers import DIVIDER, SINGLE_DIVIDER
+from text.dividers import SINGLE_DIVIDER
 
 from core import get_core
 
@@ -14,21 +9,16 @@ from files.writer import FileWriter
 
 from managers.script import ScriptManager
 
-from templates.jinja_manager import JinjaTemplateManager
+from managers.jinja_manager import JinjaTemplateManager
 
 from story.cutscenes.meta import LipSyncManager
 from story import math
 
 from universe.audio.manager import PilotManager
 from universe.audio import pilot
-from universe.audio import dispatcher
-from universe.audio import nnvoice
-from universe.audio import mission_comission
+from universe.audio import nnvoice_eng
 
 from universe.content import mineable
-
-from templates.hardcoded_inis.audio import VoicesSpaceMaleTemplate, VoicesSpaceFemaleTemplate
-from templates.hardcoded_inis.missions import VoicePropertiesTemplate
 
 from tools.crc import crc32_hex_from_str
 from tools import merge_image
@@ -36,34 +26,22 @@ from tools import data_folder
 from tools import utf_xml
 from tools import elevenlabs
 from tools import audio_folder
-from tools import maxlancer
 from tools.audio_pilot import TempPilot, VanillaPilot
 
 from story import actors
 
-from tools.system_template import SystemTemplateLoader, ObjectTemplateLoader
+from tools.system_template import SystemTemplateLoader
 
 from templates.solar import hacker_panel
-from templates.space_object_template import SpaceObjectTemplate
 from templates.dockable import terraforming
-from templates.dockable import corsair_dreadnought
-from templates.dockable import upsilon_gasinside
-from templates.dockable import astbase
-from templates.dockable import nomad_babylon
-from templates.misc import rmbase
-from templates.misc import trading
-from templates.dockable import nomad_asf_hq
-from templates.dockable import order_shipyard
-from templates.misc import ast_om15_xxxlarge
-
-from templates.dockable import m13
+from templates.dockable import roid_mining
 
 
 def draw_base():
     new_name = None
     move_to = None
     rotate_core = 0
-    workspace = '11'
+    workspace = '12'
 
     # base_class = m13.RockfordGenerator
     # new_name = 'or_hq_vienna_entry'
@@ -77,7 +55,7 @@ def draw_base():
     # new_name = 'or_hq_shipyard_01'
     # move_to = (-20000, 0, 0)
 
-    base_class = nomad_babylon.Babylon
+    base_class = roid_mining.BretoniaRoidMining
     # new_name = 'communicator'
     # move_to = (-9500, 0, -10000)
 
@@ -92,7 +70,7 @@ def draw_base():
     # )
     # content = the_base.get_instance(move_to=(2000, 0, 8000), rotate_core=0)
 
-    data_folder.DataFolder.sync_to_test_workspace(content, workspace_index=workspace)
+    data_folder.DataFolder().sync_to_test_workspace(content, workspace_index=workspace)
 
 
 def draw_base_for_hardpoints():
@@ -120,7 +98,8 @@ def generate_hacker_panels():
 
 
 def compile_audio():
-    audio_folder.AudioFolder.compile_xml_to_utf()
+
+    audio_folder.AudioFolder.compile_xml_to_utf(russian=False)
     print('done')
 
 
@@ -216,7 +195,7 @@ def test_steos():
     #
     # return
 
-    the_pilot = nnvoice.NNVoice()
+    the_pilot = nnvoice_eng.NNVoiceEng()
 
     TempPilot.prepare_temp_folders(the_pilot)
     TempPilot.fill_audio(the_pilot, skip=True)
@@ -257,15 +236,6 @@ def test_steos():
 
 
     return
-
-
-def generate_story_voices():
-    script_manager = ScriptManager()
-    # import pdb;pdb.set_trace()
-
-    msn = script_manager.get_mission_by_index(9)
-    for voice in msn.get_voices():
-        audio_folder.AudioFolder.compile_story_voice_to_xml(voice)
 
 
 def test_interaction():
@@ -376,14 +346,29 @@ archetype = nav_buoy
     print(nav_combined)
 
 
+def generate_story_voices():
+    script_manager = ScriptManager()
+    # import pdb;pdb.set_trace()
+
+    indexes = range(1, 12+1)
+    indexes = [11]
+
+    for i in indexes:
+        msn = script_manager.get_mission_by_index(i)
+        for voice in msn.get_en_voices():
+            audio_folder.AudioFolder.compile_story_voice_to_xml(voice, russian=False)
+
+
 def generate_cutscene_voices():
     script_manager = ScriptManager()
     # import pdb;pdb.set_trace()
 
-    msn = script_manager.get_mission_by_index(13)
+    indexes = range(1, 12+1)
 
-    for cutscene in msn.get_cutscenes():
-        audio_folder.AudioFolder.generate_cutscene_sounds(cutscene)
+    for i in indexes:
+        msn = script_manager.get_mission_by_index(i)
+        for cutscene in msn.get_cutscenes():
+            audio_folder.AudioFolder.generate_cutscene_sounds(cutscene, russian=False)
 
 
 def meta():
@@ -400,13 +385,24 @@ def meta():
 
 
 def scene():
+    russian = False
+
     tpl_manager = JinjaTemplateManager()
     script_manager = ScriptManager()
-    msn = script_manager.get_mission_by_index(13)
-    cutscene = msn.get_cutscene_by_code('csv')
-    cutscene.get_thorn(tpl_manager).sync_content()
-    # cutscene.get_decision_thorn(tpl_manager).sync_content()
-    # cutscene.get_accept_thorn(tpl_manager).sync_content()
+    # msn = script_manager.get_mission_by_index(13)
+    # cutscene = msn.get_cutscene_by_code('csv')
+
+    for i in range(9, 12+1):
+        msn = script_manager.get_mission_by_index(i)
+        for cutscene in msn.get_cutscenes():
+            print(cutscene.ALIAS)
+
+            cutscene.get_thorn(tpl_manager, russian).sync_content()
+            if decision := cutscene.get_decision_thorn(tpl_manager, russian, skip=True):
+                decision.sync_content()
+
+            if accept := cutscene.get_accept_thorn(tpl_manager, russian, skip=True):
+                accept.sync_content()
 
     print('scene done')
 

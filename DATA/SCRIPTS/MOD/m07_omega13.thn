@@ -48,8 +48,8 @@ entities={
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="DX_m07_omega13_0010b_trent",
-		template_name="DX_m07_omega13_0010b_trent",
+		entity_name="DX_m07_omega13_0015_trent",
+		template_name="DX_m07_omega13_0015_trent",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
@@ -72,8 +72,8 @@ entities={
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="DX_m07_omega13_0030b_trent",
-		template_name="DX_m07_omega13_0030b_trent",
+		entity_name="DX_m07_omega13_0035_trent",
+		template_name="DX_m07_omega13_0035_trent",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=-100,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
@@ -2935,7 +2935,7 @@ events={
 		1,
 		START_SOUND,
 		{
-			"DX_m07_omega13_0010b_trent"
+			"DX_m07_omega13_0015_trent"
 		},
 		{
 			duration=15
@@ -3013,7 +3013,7 @@ events={
 		7.5,
 		START_SOUND,
 		{
-			"DX_m07_omega13_0030b_trent"
+			"DX_m07_omega13_0035_trent"
 		},
 		{
 			duration=15
@@ -3021,7 +3021,7 @@ events={
 	},
 	
 	{10, START_AUDIO_PROP_ANIM, {"DX_m07_omega13_0030_trent"}, {duration=0.01, audioprops={attenuation=-100}}},
-	{10, START_AUDIO_PROP_ANIM, {"DX_m07_omega13_0030b_trent"}, {duration=0.01, audioprops={attenuation=0}}},
+	{10, START_AUDIO_PROP_ANIM, {"DX_m07_omega13_0035_trent"}, {duration=0.01, audioprops={attenuation=0}}},
 	
 	
 	

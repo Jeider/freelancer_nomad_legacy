@@ -16,6 +16,8 @@ from world.npc import NPC, EqMap
 from world import ship
 from universe import faction
 
+from text.strings import MultiString as MS
+
 NPCSHIPS = '''
 
 [NPCShipArch]
@@ -85,37 +87,37 @@ npc_class = lawful, TRANSPORT
 '''
 
 BDR_NAMES = [
-    'Сарацин',
-    'Мохок',
-    'Киплинг',
+    MS('Эсминец Сарацин', 'Saracen Destroyer'),
+    MS('Эсминец Мохок', 'Mohawk Destroyer'),
+    MS('Эсминец Киплинг', 'Kipling Destroyer'),
 
-    'Маори',
-    'Нубиец',
-    'Кимберли',
+    MS('Эсминец Маори', 'Maori Destroyer'),
+    MS('Эсминец Нубиец', 'Nubian Destroyer'),
+    MS('Эсминец Кимберли', 'Kimberley Destroyer'),
 
-    'Викинг',
-    'Юпитер',
-    'Нептун',
+    MS('Эсминец Викинг', 'Viking Destroyer'),
+    MS('Эсминец Юпитер', 'Jupiter Destroyer'),
+    MS('Эсминец Нептун', 'Neptune Destroyer'),
 
-    'Уран',
-    'Марс',
-    'Венера',
+    MS('Эсминец Уран', 'Uranus Destroyer'),
+    MS('Эсминец Марс', 'Mars Destroyer'),
+    MS('Эсминец Венера', 'Venus Destroyer'),
 
-    'Плутон',
-    'Меркурий',
-    'Сатурн',
+    MS('Эсминец Плутон', 'Pluto Destroyer'),
+    MS('Эсминец Меркурий', 'Mercury Destroyer'),
+    MS('Эсминец Сатурн', 'Saturn Destroyer'),
 
-    'Монтроз',
-    'Маккей',
-    'Хэвок',
+    MS('Эсминец Монтроз', 'Montrose Destroyer'),
+    MS('Эсминец Маккей', 'Makkey Destroyer'),
+    MS('Эсминец Хэвок', 'Havock Destroyer'),
 
-    'Нестор',
-    'Онслоу',
-    'Джервис',
+    MS('Эсминец Нестор', 'Nestor Destroyer'),
+    MS('Эсминец Онслоу', 'Onslow Destroyer'),
+    MS('Эсминец Джервис', 'Jervis Destroyer'),
 
-    'Келли',
-    'Джуно',
-    'Норман',
+    MS('Эсминец Келли', 'Kelly Destroyer'),
+    MS('Эсминец Джуно', 'Juno Destroyer'),
+    MS('Эсминец Норман', 'Norman Destroyer'),
 ]
 
 
@@ -125,27 +127,39 @@ class Misson09(ingame_mission.IngameMission):
     FOLDER = 'M09'
     FILE = 'm09'
     START_SAVE_ID = 32900
-    START_SAVE_RU_NAME = 'Омега-3. Станция Йокогама'
+    START_SAVE_RU_NAME = MS('Омега-3. Станция Йокогама', 'Omega-3, Station Yokohama')
     SCRIPT_INDEX = 9
     DIRECT_SYSTEMS = [S.ku_tgk, S.sig42]
     STATIC_NPCSHIPS = NPCSHIPS
     RTC = ['deck', 'yokohama', 'order', 'final', 'leave_yoko']
     INIT_OFFER = MultiLine(
-        'ЗАДАЧА:',
-        'Помочь Ордену получить важные данные об СБА',
-        '',
-        'СЛОЖНОСТЬ:',
-        'Высокая.',
-        '',
-        'Награда:',
-        'Выполнение договоренностей со стороны Ордена',
+        [
+            'ЗАДАЧА:',
+            'Помочь Ордену получить важные данные об СБА.',
+            '',
+            'СЛОЖНОСТЬ:',
+            'Высокая.',
+            '',
+            'НАГРАДА:',
+            'Выполнение договоренностей со стороны Ордена',
+        ],
+        [
+            'OBJECTIVE:',
+            'Help the Order to get important data about ASF.',
+            '',
+            'DIFFICULTY:',
+            'High.',
+            '',
+            'REWARD:',
+            'Implementation of the treaty from The Order\'s side',
+        ]
     ).get_content()
 
     def get_save_states(self):
         return [
-            SaveState(self, 'fighter_patrol', 'Сириус. Патруль истребителей'),
-            SaveState(self, 'gunboat_patrol', 'Сириус. Патруль канонерок'),
-            SaveState(self, 'destroyer_attack', 'Сириус. Эсминцы'),
+            SaveState(self, 'fighter_patrol', MS('Сириус. Патруль истребителей', 'Sirius. Fighter patrol')),
+            SaveState(self, 'gunboat_patrol', MS('Сириус. Патруль канонерок', 'Sirius. Gunboat patrol')),
+            SaveState(self, 'destroyer_attack', MS('Сириус. Эсминцы', 'Sirius. Destroyers')),
         ]
 
     def get_static_points(self):
@@ -166,8 +180,8 @@ class Misson09(ingame_mission.IngameMission):
             )
 
         sig42_solars = [
-            ('com_sat', 'Хризантема'),
-            ('check1', 'Датчик'),
+            ('com_sat', MS('Хризантема', 'Chrysanthemum')),
+            ('check1', MS('Датчик', "Sensor")),
         ]
         for sol, ru_name in sig42_solars:
             defined_points.append(
@@ -175,8 +189,9 @@ class Misson09(ingame_mission.IngameMission):
             )
 
         defined_points.extend([
-            DockableBattleshipSolar(self, S.sig42, 'torp_musashi', ru_name='Линкор Мусаси', base='sig42_98_base',
-                archetype='k_battleship', labels=['friend']),
+            DockableBattleshipSolar(self, S.sig42, 'torp_musashi',
+                                    ru_name=N.MUSASHI, base='sig42_98_base',
+                                    archetype='k_battleship', labels=['friend']),
         ])
 
         return defined_points
@@ -258,7 +273,9 @@ class Misson09(ingame_mission.IngameMission):
 
     def get_nn_objectives(self):
         return [
-            NNObj(self, 'Встретьтесь с информатором на станции Йокогама в Омеге-3',
+            NNObj(self,
+                  MS('Встретьтесь с информатором на станции Йокогама в Омеге-3',
+                     'Meet informer in Yokohama Station in Omega-3 system'),
                   name='meet_vendor', target='vendor_station'),
 
             NNObj(self, O.LAUNCH, name='launch'),
@@ -271,26 +288,26 @@ class Misson09(ingame_mission.IngameMission):
 
             NNObj(self, O.GOTO, target='to_train'),
 
-            NNObj(self, 'Войдите формацию с поездом', name='train_formation'),
-            NNObj(self, 'Следуйте за поездом', name='train_follow'),
+            NNObj(self, MS('Войдите формацию с поездом', 'Join train\'s formation'), name='train_formation'),
+            NNObj(self, MS('Следуйте за поездом', 'Follow train'), name='train_follow'),
 
-            NNObj(self, 'Доберитесь до датчика', name='to_check', target='check1', towards=True),
+            NNObj(self, MS('Доберитесь до датчика', 'Reach sensor'), name='to_check', target='check1', towards=True),
 
-            NNObj(self, 'Находитесь как можно ближе к датчику', name='stay_near_check_close'),
+            NNObj(self, MS('Находитесь как можно ближе к датчику', "Stay as close to the sensor as possible"), name='stay_near_check_close'),
 
-            NNObj(self, 'Перехватите вражеский патруль', target='ship_patrol'),
-            NNObj(self, 'Уничтожьте вражеский патруль', name='destroy_ship_patrol'),
+            NNObj(self, MS('Перехватите вражеский патруль', 'Catch enemy patrol'), target='ship_patrol'),
+            NNObj(self, MS('Уничтожьте вражеский патруль', 'Destroy enemy patrol'), name='destroy_ship_patrol'),
 
-            NNObj(self, 'Перехватите канонерки СБА', target='gunboat_patrol'),
-            NNObj(self, 'Уничтожьте корабли СБА', name='destroy_gunboat_patrol'),
+            NNObj(self, MS('Перехватите канонерки СБА', 'Catch enemy gunboats'), target='gunboat_patrol'),
+            NNObj(self, MS('Уничтожьте корабли СБА', "Destroy ASF ships"), name='destroy_gunboat_patrol'),
 
-            NNObj(self, 'Перехватите эсминцы СБА', target='destroyer_patrol'),
-            NNObj(self, 'Повредите вражеские эсминцы', name='hit_bdr'),
-            NNObj(self, 'Перехватите торпеды', name='catch_torpedoes'),
-            NNObj(self, 'Захватите капсулу с Хризантемы', name='collect_chrysatemum'),
+            NNObj(self, MS('Перехватите эсминцы СБА', 'Catch Destroyers'), target='destroyer_patrol'),
+            NNObj(self, MS('Повредите вражеские эсминцы', 'Hurt enemy destroyers'), name='hit_bdr'),
+            NNObj(self, MS('Перехватите торпеды', 'Intercept torpedoes'), name='catch_torpedoes'),
+            NNObj(self, MS('Захватите капсулу с Хризантемы', 'Collect capsule from Chrysantemum'), name='collect_chrysatemum'),
 
             NNObj(self, O.GOTO, target='randevoue'),
-            NNObj(self, 'Сядьте на линкор Мусаси', name='dock_musashi', target='torp_musashi'),
+            NNObj(self, MS('Сядьте на линкор Мусаси', 'Dock with Musashi'), name='dock_musashi', target='torp_musashi'),
         ]
 
     def get_ingame_thorns(self):
@@ -415,7 +432,7 @@ class Misson09(ingame_mission.IngameMission):
                 ],
                 slide_x=100,
                 unique_npc_entry=True,
-                base_name='Сакура',
+                base_name=MS('Сакура', 'Sakura'),
                 npc=NPC(
                     faction=faction.KusariMain,
                     ship=ship.Drake,
@@ -436,7 +453,7 @@ class Misson09(ingame_mission.IngameMission):
                 radius=0,
                 slide_x=100,
                 unique_npc_entry=True,
-                base_name='Сузуки',
+                base_name=MS('Сузуки', "Suzuki"),
                 npc=NPC(
                     faction=faction.KusariMain,
                     ship=ship.Dragon,
@@ -457,7 +474,7 @@ class Misson09(ingame_mission.IngameMission):
                 radius=0,
                 slide_x=100,
                 unique_npc_entry=True,
-                base_name='Сузуки',
+                base_name=MS('Сузуки', "Suzuki"),
                 npc=NPC(
                     faction=faction.KusariMain,
                     ship=ship.Dragon,
@@ -477,7 +494,7 @@ class Misson09(ingame_mission.IngameMission):
                 ],
                 slide_z=100,
                 unique_npc_entry=True,
-                base_name='Янаги',
+                base_name=MS('Янаги', 'Yanagi'),
                 npc=NPC(
                     faction=faction.KusariMain,
                     ship=ship.Dragon,
@@ -496,7 +513,7 @@ class Misson09(ingame_mission.IngameMission):
                     'order',
                 ],
                 unique_npc_entry=True,
-                base_name='Янаги',
+                base_name=MS('Янаги', 'Yanagi'),
                 npc=NPC(
                     faction=faction.KusariMain,
                     ship=ship.Dragon,

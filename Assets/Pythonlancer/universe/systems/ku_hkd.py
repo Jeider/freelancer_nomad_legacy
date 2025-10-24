@@ -31,6 +31,8 @@ from templates.dockable import alg
 from templates.dockable import junker
 from templates.dockable import gmg_hq
 
+from text.strings import MultiString as MS
+
 
 class HokkMember(Member):
     FACTION = faction.KusariMain
@@ -187,7 +189,7 @@ class HokkDebrisFactory1(HokkMember, HokkBaseDebrisManufactoring):
         HokkDebrisZone1,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
-    RU_NAME = 'Плавильня Кусиро'
+    RU_NAME = MS('Плавильня Кусиро', 'Kushiro Smelter')
     MISC_EQUIP_TYPE = KU_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Thruster(KU_CIV, eq_classes=markets.SECRET3),
@@ -202,7 +204,7 @@ class HokkDebrisFactory2(HokkMember, HokkBaseDebrisManufactoring):
         HokkDebrisZone2,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
-    RU_NAME = 'Плавильня Отару'
+    RU_NAME = MS('Плавильня Отару', 'Otaru Smelter')
     MISC_EQUIP_TYPE = KU_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Thruster(KU_CIV, eq_classes=markets.SECRET2),
@@ -217,7 +219,7 @@ class HokkDebrisFactory3(HokkMember, HokkBaseDebrisManufactoring):
         HokkDebrisZone3,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
-    RU_NAME = 'Плавильня Тоётоми'
+    RU_NAME = MS('Плавильня Тоётоми', "Toyotomi Smelter")
     MISC_EQUIP_TYPE = KU_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Thruster(KU_PIRATE, eq_classes=markets.SECRET2),
@@ -232,7 +234,7 @@ class HokkDebrisFactory4(HokkMember, HokkBaseDebrisManufactoring):
         HokkDebrisZone4,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
-    RU_NAME = 'Плавильня Немуро'
+    RU_NAME = MS('Плавильня Немуро', "Nemuro Smelter")
     MISC_EQUIP_TYPE = KU_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Thruster(KU_PIRATE, eq_classes=markets.SECRET3),
@@ -314,7 +316,7 @@ class HokkAbandonedAstBase1(HokkMember, main_objects.AbandonedAsteroid):
         HokkBaseBarrierNebula
     ]
     EXCLUSION_PARAMS = BARRIER_EXCLUSION_PARAMS
-    RU_NAME = 'База Хакодате'
+    RU_NAME = MS('База Хакодате', "Hakodate Base")
     MISC_EQUIP_TYPE = KU_PIRATE
     WEAPON_FACTION = WEAPON_KU
     EQUIP_SET = markets.EquipSet(
@@ -394,7 +396,7 @@ class HokkDockring(HokkMember, main_objects.LargePlanetDockring):
             meta.ProduceBad(AMMUNITION),
         ]
     )
-    RU_NAME = 'Планета Хоккайдо'
+    RU_NAME = MS('Планета Хоккайдо', "Planet Hokkaido")
 
 
 class HokkMegaShipyard(HokkMember, main_objects.Shipyard):
@@ -411,7 +413,7 @@ class HokkMegaShipyard(HokkMember, main_objects.Shipyard):
             meta.ConsumeHeavyMunitions(),
         ]
     )
-    RU_NAME = 'Верфь Имабари'
+    RU_NAME = MS('Верфь Имабари', "Imbari Shipyard")
 
 
 class HokkRefinery(HokkMember, main_objects.Refinery):
@@ -421,7 +423,7 @@ class HokkRefinery(HokkMember, main_objects.Refinery):
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
     FACTION = faction.KusariCivilians
-    RU_NAME = 'Станция Саппоро'
+    RU_NAME = MS('Станция Саппоро', 'Sapporo Station')
 
     BASE_PROPS = meta.Refinery(
         objectives=[
@@ -439,7 +441,7 @@ class HokkPolice(HokkMember, main_objects.Outpost):
     INTERIOR_CLASS = interior.OutpostInterior
     AUDIO_PREFIX = SpaceVoice.BORDER_STATION
     DEALERS = dealers.KusariMilitaryDealers
-    RU_NAME = 'Верфь Имабари'
+    RU_NAME = MS('Аванпост Синдзюку', "Sinjuku Outpost")
 
 
 class HokkStation(HokkMember, main_objects.TradelaneSupportStation):
@@ -452,7 +454,7 @@ class HokkStation(HokkMember, main_objects.TradelaneSupportStation):
     AUDIO_PREFIX = SpaceVoice.STATION
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
-    RU_NAME = 'Станция Ниигата'
+    RU_NAME = MS('Станция Ниигата', "Niigata Station")
 
 
 class HokkTrading(HokkMember, main_objects.TradingBase):
@@ -463,7 +465,7 @@ class HokkTrading(HokkMember, main_objects.TradingBase):
 
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.KusariCivilianDealers
-    RU_NAME = 'Станция Сендай'
+    RU_NAME = MS('Станция Сендай', "Sendai Station")
 
 
 class HokkPlanet1(HokkMember, main_objects.Planet):
@@ -476,21 +478,21 @@ class HokkPlanet2(HokkMember, main_objects.Planet):
     INDEX = 2
     ARCHETYPE = 'planet_gasyelcld_3000'
     SPHERE_RADIUS = 3000
-    RU_NAME = 'Планета Тотиги'
+    RU_NAME = MS('Планета Тотиги', 'Planet Totigi')
 
 
 class HokkPlanet3(HokkMember, main_objects.Planet):
     INDEX = 3
     ARCHETYPE = 'planet_icemoon_2500'
     SPHERE_RADIUS = 2500
-    RU_NAME = 'Планета Миядзаки'
+    RU_NAME = MS('Планета Миядзаки', 'Planet Miyazaki')
 
 
-class HokkOldReserachRuins(HokkMember, main_objects.StationRuins):
+class HokkOldResearchRuins(HokkMember, main_objects.StationRuins):
     ALIAS = 'ruins'
     INDEX = 1
     REL = LEFT
-    RU_NAME = 'Станция Фукусима'
+    RU_NAME = MS('Станция Фукусима', 'Planet Fukushima')
 
     SPACE_OBJECT_TEMPLATE = gmg_hq.GmgHQDestroyed
     ASTEROID_ZONES = [
@@ -502,11 +504,11 @@ class HokkOldReserachRuinsSuprisePoint1(HokkMember, main_objects.HackableStation
     ALIAS = 'ruins_dock'
     INDEX = 1
     BASE_INDEX = 71
-    RELATED_OBJECT = HokkOldReserachRuins
+    RELATED_OBJECT = HokkOldResearchRuins
     RELATED_OBJECT_INDEX = 0
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpostRot90
     INTERIOR_CLASS = interior.EquipDeckInterior
-    RU_NAME = 'Исслед.блок 1 Фукусимы'
+    RU_NAME = MS('Исслед.блок 1 Фукусимы', 'Fukushima Research Block 1')
 
     MISC_EQUIP_TYPE = KU_MAIN
     WEAPON_FACTION = WEAPON_KU
@@ -520,11 +522,11 @@ class HokkOldReserachRuinsSuprisePoint2(HokkMember, main_objects.HackableStation
     ALIAS = 'ruins_dock'
     INDEX = 2
     BASE_INDEX = 72
-    RELATED_OBJECT = HokkOldReserachRuins
+    RELATED_OBJECT = HokkOldResearchRuins
     RELATED_OBJECT_INDEX = 1
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpostRot90
     INTERIOR_CLASS = interior.EquipDeckInterior
-    RU_NAME = 'Исслед.блок 2 Фукусимы'
+    RU_NAME = MS('Исслед.блок 2 Фукусимы', 'Fukushima Research Block 2')
 
     MISC_EQUIP_TYPE = KU_MAIN
     WEAPON_FACTION = WEAPON_KU
@@ -539,7 +541,7 @@ class HokkNebulaPirates(HokkMember, main_objects.PirateStation):
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseCalifornia
     FACTION = faction.KusariPirate
-    RU_NAME = 'База Кунашир'
+    RU_NAME = MS('База Кунашир', "Kunashir Base")
 
     DEFENCE_LEVEL = None
 
@@ -556,7 +558,7 @@ class HokkJunkers(HokkMember, main_objects.JunkerBase):
     REL = TOP
     SPACE_OBJECT_TEMPLATE = junker.BerlinJunker
     FACTION = faction.Junkers
-    RU_NAME = 'База Вако'
+    RU_NAME = MS('База Вако', "Vako Base")
 
     DEFENCE_LEVEL = None
 
@@ -679,7 +681,7 @@ class HokkPoliceConn3(HokkMember, main_objects.TradeConnection):
 
 class HokkRuinsConn1(HokkMember, main_objects.BrokenTradeConnection):
     OBJ_FROM = HokkRefinery
-    OBJ_TO = HokkOldReserachRuins
+    OBJ_TO = HokkOldResearchRuins
     SIDE_FROM = TOP
     SIDE_TO = BOTTOM
     TRADELANE_LETTER = 'I'
@@ -688,7 +690,7 @@ class HokkRuinsConn1(HokkMember, main_objects.BrokenTradeConnection):
 
 
 class HokkRuinsConn2(HokkMember, main_objects.BrokenTradeConnection):
-    OBJ_FROM = HokkOldReserachRuins
+    OBJ_FROM = HokkOldResearchRuins
     OBJ_TO = HokkPolice
     SIDE_FROM = TOP
     SIDE_TO = BOTTOM
@@ -696,7 +698,7 @@ class HokkRuinsConn2(HokkMember, main_objects.BrokenTradeConnection):
 
 
 class HokkRuinsConn3(HokkMember, main_objects.BrokenTradeConnection):
-    OBJ_FROM = HokkOldReserachRuins
+    OBJ_FROM = HokkOldResearchRuins
     OBJ_TO = HokkMegaShipyard
     SIDE_FROM = LEFT
     SIDE_TO = RIGHT

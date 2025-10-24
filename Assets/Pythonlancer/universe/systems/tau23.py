@@ -25,6 +25,8 @@ from templates.solar import gas_crystal
 from templates.dockable import gas_miner
 from templates.dockable import trade_storages
 
+from text.strings import MultiString as MS
+
 
 class Tau23Member(Member):
     FACTION = faction.BretoniaMain
@@ -132,7 +134,7 @@ class Tau23BretoniaStation(Tau23Member, Tau23Bretonia, main_objects.GasMiningSta
     SPACE_OBJECT_TEMPLATE = gas_miner.BretoniaCivilianGasMiner
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.BretoniaCivilianDealers
-    RU_NAME = 'Станция Эдинбург'
+    RU_NAME = MS('Станция Эдинбург', 'Station Edinburgh')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 5000
     EXCLUSION_PARAMS = BARRIER_EXCLUSION_PARAMS
@@ -156,7 +158,7 @@ class Tau23KusariStation(Tau23Kusari, Tau23Member, main_objects.GasMiningStation
     LOADOUT = 'smallstation_ku'
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
-    RU_NAME = 'Станция Сибуя'
+    RU_NAME = MS('Станция Сибуя', "Shibuya Base")
 
     NEBULA_EXCLUSION_ZONE_SIZE = 5000
     EXCLUSION_PARAMS = BARRIER_EXCLUSION_PARAMS
@@ -172,7 +174,7 @@ class Tau23BretoniaBattleship(Tau23Member, Tau23Bretonia, main_objects.BretoniaB
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.BretoniaMilitaryDealers
     SHIP_SET = markets.ShipSet('br_elite')
-    RU_NAME = 'Линкор Авангард'
+    RU_NAME = MS('Линкор Авангард', 'Battleship Vanguard')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
     EXCLUSION_PARAMS = BARRIER_EXCLUSION_PARAMS
@@ -188,7 +190,7 @@ class Tau23KusariBattleship(Tau23Kusari, Tau23Member, main_objects.KusariBattles
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.KusariMilitaryDealers
     SHIP_SET = markets.ShipSet('ku_fighter')
-    RU_NAME = 'Линкор Кирисима'
+    RU_NAME = MS('Линкор Кирисима', 'Battleship Kirishima')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
     EXCLUSION_PARAMS = BARRIER_EXCLUSION_PARAMS
@@ -203,7 +205,7 @@ class Tau23Freeport(Tau23Member, Tau23Bretonia, main_objects.Freeport):
     SPACE_OBJECT_TEMPLATE = trade_storages.ManhattanStorage
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.BretoniaCivilianDealers
-    RU_NAME = 'Фрипорт Кельтик'
+    RU_NAME = MS('Фрипорт Кельтик', 'Freeport Celtic')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 3500
     EXCLUSION_PARAMS = BARRIER_EXCLUSION_PARAMS
@@ -219,7 +221,7 @@ class Tau23TopRightPirates(Tau23Member, Tau23Bretonia, main_objects.PirateGasMin
     DEALERS = dealers.BretoniaPirateDealers
     FACTION = faction.WorkaroundPirate
     DEFENCE_LEVEL = None
-    RU_NAME = 'База Брест'
+    RU_NAME = MS('База Брест', "Brest Base")
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
     EXCLUSION_PARAMS = BARRIER_EXCLUSION_PARAMS
@@ -235,7 +237,7 @@ class Tau23BottomLeftPirates(Tau23Kusari, Tau23Member, main_objects.PirateGasMin
     DEALERS = dealers.KusariPirateDealers
     FACTION = faction.KusariPirate
     DEFENCE_LEVEL = None
-    RU_NAME = 'База Кога'
+    RU_NAME = MS('База Кога', 'Koga Base')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
     EXCLUSION_PARAMS = BARRIER_EXCLUSION_PARAMS
@@ -332,7 +334,7 @@ class Tau23BaseBretoniaGasMiner(Tau23Bretonia, main_objects.GasMinerOld):
     }
 
 
-class Tau23BaseKusariGasMiner(Tau23Kusari, main_objects.GasMinerOld):
+class Tau23BaseKusariGasMiner(main_objects.GasMinerOld):
     ALIAS = 'cryst'
     ROTATE_RANDOM = True
     ARCHETYPE = 'gas_miner_old'
@@ -422,7 +424,7 @@ class Tau23GasPocketsZone3(Tau23Member, zones.AsteroidZone):
 class Tau23GasMiner1(Tau23Member, Tau23BaseBretoniaGasMiner):
     INDEX = 1
     BASE_INDEX = 51
-    RU_NAME = 'Газодобытчик Эссингтон'
+    RU_NAME = MS('Газодобытчик Эссингтон', 'Gas Miner Essington')
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM2),
         Q.Thruster(BR_MAIN, eq_classes=markets.SECRET3),
@@ -432,7 +434,7 @@ class Tau23GasMiner1(Tau23Member, Tau23BaseBretoniaGasMiner):
 class Tau23GasMiner2(Tau23Member, Tau23BaseBretoniaGasMiner):
     INDEX = 2
     BASE_INDEX = 52
-    RU_NAME = 'Газодобытчик Косфорд'
+    RU_NAME = MS('Газодобытчик Косфорд', 'Gas Miner Cosford')
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM2),
         Q.Thruster(BR_PIRATE, eq_classes=markets.SECRET3),
@@ -442,7 +444,7 @@ class Tau23GasMiner2(Tau23Member, Tau23BaseBretoniaGasMiner):
 class Tau23GasMiner3(Tau23Member, Tau23BaseBretoniaGasMiner):
     INDEX = 3
     BASE_INDEX = 53
-    RU_NAME = 'Газодобытчик Дорридж'
+    RU_NAME = MS('Газодобытчик Дорридж', 'Gas Miner Dorridge')
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM2),
         Q.Thruster(BR_MAIN, eq_classes=markets.SECRET2),
@@ -452,7 +454,7 @@ class Tau23GasMiner3(Tau23Member, Tau23BaseBretoniaGasMiner):
 class Tau23GasMiner4(Tau23Member, Tau23BaseBretoniaGasMiner):
     INDEX = 4
     BASE_INDEX = 54
-    RU_NAME = 'Газодобытчик Ширли'
+    RU_NAME = MS('Газодобытчик Ширли', 'Gas Miner Shirley')
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM3),
         Q.Thruster(BR_PIRATE, eq_classes=markets.SECRET2),
@@ -462,57 +464,57 @@ class Tau23GasMiner4(Tau23Member, Tau23BaseBretoniaGasMiner):
 class Tau23GasMiner5(Tau23Member, Tau23BaseBretoniaGasMiner):
     INDEX = 5
     BASE_INDEX = 55
-    RU_NAME = 'Газодобытчик Одлем'
+    RU_NAME = MS('Газодобытчик Одлем', 'Gas Miner Alderley Edge')
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM2),
         Q.Thruster(BR_MAIN, eq_classes=markets.SECRET2),
     )
 
 
-class Tau23GasMiner6(Tau23Member, Tau23BaseKusariGasMiner):
+class Tau23GasMiner6(Tau23Kusari, Tau23Member, Tau23BaseKusariGasMiner):
     INDEX = 6
     BASE_INDEX = 56
-    RU_NAME = 'Газодобытчик Карацу'
+    RU_NAME = MS('Газодобытчик Карацу', "Gas Miner Karatsu")
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM3),
         Q.Thruster(KU_MAIN, eq_classes=markets.SECRET2),
     )
 
 
-class Tau23GasMiner7(Tau23Member, Tau23BaseKusariGasMiner):
+class Tau23GasMiner7(Tau23Kusari, Tau23Member, Tau23BaseKusariGasMiner):
     INDEX = 7
     BASE_INDEX = 57
-    RU_NAME = 'Газодобытчик Уресино'
+    RU_NAME = MS('Газодобытчик Уресино', "Gas Miner Ureshino")
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM2),
         Q.Thruster(KU_MAIN, eq_classes=markets.SECRET3),
     )
 
 
-class Tau23GasMiner8(Tau23Member, Tau23BaseKusariGasMiner):
+class Tau23GasMiner8(Tau23Kusari, Tau23Member, Tau23BaseKusariGasMiner):
     INDEX = 8
     BASE_INDEX = 58
-    RU_NAME = 'Газодобытчик Тамана'
+    RU_NAME = MS('Газодобытчик Тамана', 'Gas Miner Tamana')
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM3),
         Q.Thruster(KU_PIRATE, eq_classes=markets.SECRET2),
     )
 
 
-class Tau23GasMiner9(Tau23Member, Tau23BaseKusariGasMiner):
+class Tau23GasMiner9(Tau23Kusari, Tau23Member, Tau23BaseKusariGasMiner):
     INDEX = 9
     BASE_INDEX = 59
-    RU_NAME = 'Газодобытчик Такета'
+    RU_NAME = MS('Газодобытчик Такета', "Gas Miner Taketa")
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM2),
         Q.Thruster(KU_PIRATE, eq_classes=markets.SECRET3),
     )
 
 
-class Tau23GasMiner10(Tau23Member, Tau23BaseKusariGasMiner):
-    INDEX = 9
+class Tau23GasMiner10(Tau23Kusari, Tau23Member, Tau23BaseKusariGasMiner):
+    INDEX = 10
     BASE_INDEX = 60
-    RU_NAME = 'Газодобытчик Ямага'
+    RU_NAME = MS('Газодобытчик Ямага', "Gas Miner Yamaga")
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM3),
         Q.Thruster(KU_MAIN, eq_classes=markets.SECRET2),
@@ -610,7 +612,7 @@ class Tau23AbandonedMiner1(Tau23Member, Tau23Bretonia, Tau23BaseAbandonedMiner):
     ASTEROID_ZONES = [
         Tau23GasPocketsZone1
     ]
-    RU_NAME = 'База Айкос'
+    RU_NAME = MS('База Кайкос', 'Caicos Base')
     MISC_EQUIP_TYPE = BR_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Gun('br_heavygun', eq_classes=markets.SECRET2),
@@ -624,7 +626,7 @@ class Tau23AbandonedMiner2(Tau23Member, Tau23Bretonia, Tau23BaseAbandonedMiner):
     ASTEROID_ZONES = [
         Tau23GasPocketsZone2
     ]
-    RU_NAME = 'База Теркс'
+    RU_NAME = MS('База Теркс', 'Turks Base')
     MISC_EQUIP_TYPE = BR_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Gun('br_lightgun', eq_classes=markets.SECRET2),
@@ -638,7 +640,7 @@ class Tau23AbandonedMiner3(Tau23Kusari, Tau23Member, Tau23BaseAbandonedMiner):
     ASTEROID_ZONES = [
         Tau23GasPocketsZone3
     ]
-    RU_NAME = 'База Наха'
+    RU_NAME = MS('База Наха', "Naha Base")
     MISC_EQUIP_TYPE = KU_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Gun('ku_heavygun', eq_classes=markets.SECRET2),

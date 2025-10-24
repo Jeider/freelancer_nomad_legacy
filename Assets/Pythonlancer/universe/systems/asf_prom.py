@@ -11,11 +11,8 @@ from universe.content import zones
 from universe.content import interior
 from universe.content import dealers
 from universe import faction
-from templates.nebula import rh_biz_nebula
-from templates.nebula import rh_mnh_blue_nebula
-from templates.nebula import exclusion
-from templates.dockable import upsilon_gasinside
-from templates.dockable import valensia
+
+from story.ingame.names import OSIRIS
 
 
 class AsfPromMember(Member):
@@ -35,4 +32,4 @@ class PromOsiris(AsfPromMember, main_objects.LibertyBattleship):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_LI
     IS_BASE = False
     AUTOSAVE_FORBIDDEN = True
-    RU_NAME = 'Линкор Осирис'
+    RU_NAME = OSIRIS

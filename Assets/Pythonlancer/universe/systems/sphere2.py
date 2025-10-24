@@ -17,6 +17,8 @@ from templates.nebula import exclusion
 from templates.dockable import upsilon_gasinside
 from templates.dockable import valensia
 
+from story.ingame.names import OSIRIS
+
 
 class Sphere2Member(Member):
     FACTION = faction.ASF
@@ -44,4 +46,4 @@ file = Universe\\SPECIAL\\SPHERE2\\Room\\osiris_deck2.ini
     # ASF set?
     EQUIP_SET = markets.OsirisSet
     SHIP_SET = markets.ShipSet('bh_elite2')
-    RU_NAME = 'Линкор Осирис'
+    RU_NAME = OSIRIS

@@ -1,6 +1,7 @@
 from world.lootable import LootableEquip
 from universe.markets import MarketEquip
 from text.infocards import InfocardBuilder
+from text.strings import MultiString as MS
 from world.names import *
 
 
@@ -233,6 +234,12 @@ combinable = {combinable}'''
     def get_ru_base_name(self):
         raise NotImplementedError('ru base name must be defined')
 
+    def get_en_equip_name(self):
+        raise NotImplementedError('en equip name must be defined')
+
+    def get_en_base_name(self):
+        raise NotImplementedError('en base name must be defined')
+
     def get_ru_shipclass_name(self):
         if self.ship_class == self.SHIPCLASS_FIGHTER:
             return 'ЛИ'
@@ -240,6 +247,14 @@ combinable = {combinable}'''
             return 'ТИ'
         if self.ship_class == self.SHIPCLASS_FREIGHTER:
             return 'Гр'
+
+    def get_en_shipclass_name(self):
+        if self.ship_class == self.SHIPCLASS_FIGHTER:
+            return 'LF'
+        if self.ship_class == self.SHIPCLASS_ELITE:
+            return 'HF'
+        if self.ship_class == self.SHIPCLASS_FREIGHTER:
+            return 'FR'
 
     def get_ru_shipclass_fullname(self):
         if self.ship_class == self.SHIPCLASS_FIGHTER:
@@ -251,6 +266,16 @@ combinable = {combinable}'''
 
         raise Exception('unknown ship class')
 
+    def get_en_shipclass_fullname(self):
+        if self.ship_class == self.SHIPCLASS_FIGHTER:
+            return '(for light fighters)'
+        if self.ship_class == self.SHIPCLASS_ELITE:
+            return '(for heavy fighters)'
+        if self.ship_class == self.SHIPCLASS_FREIGHTER:
+            return '(for freighters)'
+
+        raise Exception('unknown ship class')
+
     def get_ru_name(self):
         raise NotImplementedError('ru name builder not defined')
 
@@ -259,6 +284,15 @@ combinable = {combinable}'''
 
     def get_ru_description_content(self):
         raise NotImplementedError('ru name builder not defined')
+
+    def get_en_name(self):
+        raise NotImplementedError('en name builder not defined')
+
+    def get_en_fullname(self):
+        raise NotImplementedError('en name builder not defined')
+
+    def get_en_description_content(self):
+        raise NotImplementedError('en name builder not defined')
 
 
 class MainMiscEquip(Equipment):
@@ -305,12 +339,19 @@ class MainMiscEquip(Equipment):
 
         self.set_rate()
 
-        self.ids_name = ids.new_name(self.get_ru_name())
+        self.ids_name = ids.new_name(MS(self.get_ru_name(), self.get_en_name()))
         self.ids_info = ids.new_info(
-            InfocardBuilder.build_equip_infocard(
-                self.get_ru_fullname(),
-                self.get_ru_description_content()
-            )
+            MS(
+                InfocardBuilder.build_equip_infocard(
+                    self.get_ru_fullname(),
+                    self.get_ru_description_content()
+                ),
+                InfocardBuilder.build_equip_infocard(
+                    self.get_en_fullname(),
+                    self.get_en_description_content()
+                )
+            ),
+
         )
 
     def get_ids_name(self):
@@ -401,6 +442,14 @@ class MainMiscEquip(Equipment):
         if self.equip_type in self.PIRATE_EQUIP:
             return 'Класс эффективности: профессиональный'
 
+    def get_en_equip_efficienty(self):
+        if self.equip_type in self.MAIN_EQUIP:
+            return 'Efficiency class: military'
+        if self.equip_type in self.CIV_EQUIP:
+            return 'Efficiency class: civilian'
+        if self.equip_type in self.PIRATE_EQUIP:
+            return 'Efficiency class: professional'
+
 
 class MainInternalEquip(MainMiscEquip):
 
@@ -453,7 +502,18 @@ attachment_archetype = {model}'''
             shipclass=self.get_ru_shipclass_name(),
         )
 
+    def get_en_name(self):
+        return '{model} {equip} {mark} [{shipclass}]'.format(
+            equip=self.get_en_equip_name(),
+            model=self.get_en_base_name(),
+            mark=self.get_mark_name(),
+            shipclass=self.get_en_shipclass_name(),
+        )
+
     def get_ru_equip_fullname(self):
+        raise NotImplementedError
+
+    def get_en_equip_fullname(self):
         raise NotImplementedError
 
     def get_ru_fullname(self):
@@ -462,6 +522,14 @@ attachment_archetype = {model}'''
             model=self.get_ru_base_name(),
             mark=self.get_mark_name(),
             shipclass=self.get_ru_shipclass_fullname(),
+        )
+
+    def get_en_fullname(self):
+        return '{model} {equip} {mark} {shipclass}'.format(
+            equip=self.get_en_equip_fullname(),
+            model=self.get_en_base_name(),
+            mark=self.get_mark_name(),
+            shipclass=self.get_en_shipclass_fullname(),
         )
 
 

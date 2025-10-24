@@ -19,6 +19,8 @@ from world.npc import NPC, EqMap
 from world import ship
 from universe import faction
 
+from text.strings import MultiString as MS
+
 NPCSHIPS = '''
 
 [NPCShipArch]
@@ -47,46 +49,68 @@ class Misson08(ingame_mission.IngameMission):
     FOLDER = 'M08'
     FILE = 'm08'
     START_SAVE_ID = 32800
-    START_SAVE_RU_NAME = 'Планета Авалон'
+    START_SAVE_RU_NAME = MS('Планета Авалон', 'Planet Avalon')
     STATIC_NPCSHIPS = NPCSHIPS
     SCRIPT_INDEX = 8
     DIRECT_SYSTEMS = [S.br_avl, S.m8_tau44, S.m8_lair_enter, S.m8_lair_core, S.m8_lair_escape, S.m8_asf_hq, S.sig42]
     RTC = ['queen_rtc']
     INIT_OFFER = MultiLine(
-        'ЗАДАЧА:',
-        'Изучить обстановку в аванпосте ИРА, находящейся в зоне контроля СБА',
-        '',
-        'СЛОЖНОСТЬ:',
-        'Высокая.',
-        '',
-        'Награда:',
-        '50 000 кредитов',
+        [
+            'ЗАДАЧА:',
+            'Изучить обстановку в аванпосте ИРА, находящейся в зоне контроля СБА',
+            '',
+            'СЛОЖНОСТЬ:',
+            'Умеренная.',
+            '',
+            'НАГРАДА:',
+            '50 000 кредитов',
+        ],
+        [
+            'OBJECTIVE:',
+            'Examine the situation in the IRA outpost inside zone, controlled by ASF.',
+            '',
+            'DIFFICULTY:',
+            'Medium.',
+            '',
+            'REWARD:',
+            '50 000 credits',
+        ]
     ).get_content()
 
     def get_save_states(self):
         return [
-            SaveState(self, 'li_enter', 'Патруль Либерти'),
+            SaveState(self, 'li_enter', MS('Патруль Либерти', 'Liberty Patrol')),
         ]
 
     def get_dialogs(self):
         return [
             TextDialog(
-                self, 'launch', 'Линкор уже на месте',
+                self, 'launch', MS('Линкор уже на месте', 'Battleship already arrived'),
                 ru_content=MultiText([
                     'Линкор уже прибыл на место задания. Вы можете подготовить свой корабль и вылетать по готовности.',
+                ],[
+                    'The battleship has already arrived at the mission site. You can prepare your ship and leave when ready.',
                 ]),
             ),
             TextDialog(
-                self, 'columns', 'Энергетические колонны',
+                self, 'columns', MS('Энергетические колонны', 'Energy columns'),
                 ru_content=MultiText([
                     'Атакуйте энергетические колонны. Они расположены по экватору логова Кочевников.',
-                ]),
+                ],
+                [
+                    'Attack the energy columns. They are placed on the equator line of The Nomad Lair.',
+                ]
+                ),
             ),
             TextDialog(
-                self, 'complete', 'Миссия завершена',
+                self, 'complete', MS('Миссия завершена', 'Mission accomplished'),
                 ru_content=MultiText([
                     'Артефакт успешно передан на научную станцию. Миссия закончена. Ожидайте сообщений от Хетчер.',
-                ]),
+                ],
+                [
+                    'The artifact has been successfully transferred to the science station. The mission is complete. Expect messages from Hatcher.',
+                ]
+                ),
             ),
         ]
 
@@ -98,13 +122,14 @@ class Misson08(ingame_mission.IngameMission):
 
     def get_nn_objectives(self):
         return [
-            NNObj(self, 'Встретьтесь с Дерси в баре планеты Авалон', name='meet_vendor', target='vendor_planet'),
+            NNObj(self, MS('Встретьтесь с Дерси в баре планеты Авалон',
+                           'Meet Darcy in bar of Planet Avalon'), name='meet_vendor', target='vendor_planet'),
             NNObj(self, O.LAUNCH, name='launch'),
 
-            NNObj(self, 'Сядьте на линкор Принц Уэльский', name='dock_wales', target='price_wales_avalon'),
+            NNObj(self, MS('Сядьте на линкор Принц Уэльский', 'Dock with Prince of Wales'), name='dock_wales', target='price_wales_avalon'),
 
-            NNObj(self, 'Подготовьтесь к миссии и вылетайте', name='prepare_and_launch'),
-            NNObj(self, 'Исследуйте локацию', name='explore_area'),
+            NNObj(self, MS('Подготовьтесь к миссии и вылетайте', 'Prepare your ship and launch'), name='prepare_and_launch'),
+            NNObj(self, MS('Исследуйте локацию', 'Explore area'), name='explore_area'),
 
             NNObj(self, O.GOTO, target='explore_area_waypoint1', reach_range=1000),
             NNObj(self, O.GOTO, target='explore_area_waypoint2', reach_range=1000),
@@ -113,7 +138,7 @@ class Misson08(ingame_mission.IngameMission):
             NNObj(self, O.GOTO, target='explore_area_waypoint5', reach_range=1000),
             NNObj(self, O.GOTO, target='explore_area_waypoint6', reach_range=1500),
 
-            NNObj(self, 'Уничтожьте вражеские истребители', name='destroy_entry_liberty'),
+            NNObj(self, O.DESTROY_FIGHTERS, name='destroy_entry_liberty'),
 
             NNObj(self, O.GOTO, target='enter_the_lair_wp1'),
             NNObj(self, O.GOTO, target='enter_the_lair_wp2'),
@@ -128,7 +153,7 @@ class Misson08(ingame_mission.IngameMission):
             NNObj(self, O.GOTO, target='enter_wp8', reach_range=200),
             NNObj(self, O.GOTO, target='enter_wp9', reach_range=200),
 
-            NNObj(self, 'Уничтожьте перегородку шлюза', name='destroy_door', target='locked_door', nag=False),
+            NNObj(self, MS('Уничтожьте перегородку шлюза', 'Destroy airlock lock'), name='destroy_door', target='locked_door', nag=False),
 
             NNObj(self, O.GOTO, target='core_wp1', reach_range=200),
             NNObj(self, O.GOTO, target='core_wp2', reach_range=200),
@@ -146,7 +171,7 @@ class Misson08(ingame_mission.IngameMission):
             NNObj(self, O.GOTO, target='escape_start8', reach_range=300),
 
             NNObj(self, O.GOTO, target='escape_left_door', reach_range=300),
-            NNObj(self, 'Пролетите туннель', name='escape_left_tunnel'),
+            NNObj(self, MS('Пролетите туннель', 'Fly through tunnel'), name='escape_left_tunnel'),
 
             NNObj(self, O.GOTO, target='escape_middle1', reach_range=300),
             NNObj(self, O.GOTO, target='escape_middle2', reach_range=300),
@@ -161,14 +186,14 @@ class Misson08(ingame_mission.IngameMission):
             NNObj(self, O.GOTO, target='escape_end6', reach_range=300),
             NNObj(self, O.GOTO, target='escape_end7', reach_range=300),
 
-            NNObj(self, 'Вступите в битву', name='enter_battle'),
-            NNObj(self, 'Уничтожьте энергетические стойки', name='destroy_columns'),
+            NNObj(self, MS('Вступите в битву', 'Enter the battle'), name='enter_battle'),
+            NNObj(self, MS('Уничтожьте энергетические стойки', 'Destroy energy columns'), name='destroy_columns'),
 
             NNObj(self, O.GOTO, target='leave_lair_zone'),
 
-            NNObj(self, 'Следуйте за Хетчер', name='follow_hatcher'),
+            NNObj(self, MS('Следуйте за Хетчер', 'Follow Hatcher'), name='follow_hatcher'),
             NNObj(self, O.GOTO, name='goto_final_planet', target='final_planet', towards=True),
-            NNObj(self, 'Сядьте на планету Спрага', name='dock_final_planet', target='final_planet'),
+            NNObj(self, MS('Сядьте на планету Спрага', 'Dock with Sprague'), name='dock_final_planet', target='final_planet'),
         ]
 
     def get_static_points(self):
@@ -178,22 +203,22 @@ class Misson08(ingame_mission.IngameMission):
             DockableBattleshipSolar(
                 self, S.br_avl, 'price_wales_avalon', faction='br_grp',
                 archetype='b_battleship', loadout='br_battleship_station',
-                ru_name='Линкор Принц Уэльский', base='br_avl_98_base'
+                ru_name=N.PRINCE_OF_WALES, base='br_avl_98_base'
             ),
             DockableBattleshipSolar(
                 self, S.m8_tau44, 'price_wales_start', faction='br_grp',
                 archetype='b_battleship', loadout='br_battleship_station',
-                ru_name='Линкор Принц Уэльский', base='m8_tau44_99_base'
+                ru_name=N.PRINCE_OF_WALES, base='m8_tau44_99_base'
             ),
             Solar(
                 self, S.m8_tau44, 'price_wales_battle', faction='br_grp',
                 archetype='b_battleship_fuseable', loadout='br_battleship_station',
-                ru_name='Линкор Принц Уэльский',
+                ru_name=N.PRINCE_OF_WALES,
                 labels=['bretonia'],
             ),
             Solar(
                 self, S.m8_lair_enter, 'locked_door', archetype='space_door_lock_destroyable',
-                ru_name='Перегородка шлюза'
+                ru_name=MS('Перегородка шлюза', 'Lock of airlock')
             ),
         ]
         detonators = 12
@@ -201,7 +226,7 @@ class Misson08(ingame_mission.IngameMission):
             main_group.append(
                 Solar(
                     self, S.m8_tau44, f'kernel_launcher{i:02d}', archetype='kernel_launcher',
-                    ru_name='Детонатор', loadout='lair_kernel_launcher'
+                    ru_name=MS('Детонатор', 'Detonator'), loadout='lair_kernel_launcher'
                 ),
             )
 
@@ -301,7 +326,7 @@ class Misson08(ingame_mission.IngameMission):
         cols = []
         for column in columns:
             cols.append(
-                Solar(self, S.m8_tau44, column, ru_name='Энергопоток',
+                Solar(self, S.m8_tau44, column, ru_name=MS('Энергопоток', 'Energy beam'),
                       archetype='lair_energy_column', labels=['outer_energy_column'])
             )
 
@@ -311,26 +336,26 @@ class Misson08(ingame_mission.IngameMission):
         fort_arch = {'archetype': 'rmbase_shipyard', 'loadout': 'rmbase_shipyard_m13'}
 
         hq_group = [
-            Solar(self, S.m8_asf_hq, 'fort_bush',  ru_name='Форт Буш', **fort_arch),
-            Solar(self, S.m8_asf_hq, 'fort1',  ru_name='Форт Джефферсон', **fort_arch),
-            Solar(self, S.m8_asf_hq, 'fort2',  ru_name='Форт Аламо', **fort_arch),
-            Solar(self, S.m8_asf_hq, 'fort3',  ru_name='Форт Стармер', **fort_arch),
-            Solar(self, S.m8_asf_hq, 'fort4',  ru_name='Форт Росс', **fort_arch),
-            Solar(self, S.m8_asf_hq, 'fort5',  ru_name='Форт Нокс', **fort_arch),
+            Solar(self, S.m8_asf_hq, 'fort_bush',  ru_name=MS('Форт Буш', 'Fort Bush'), **fort_arch),
+            Solar(self, S.m8_asf_hq, 'fort1',  ru_name=MS('Форт Джефферсон', 'Fort Jefferson'), **fort_arch),
+            Solar(self, S.m8_asf_hq, 'fort2',  ru_name=MS('Форт Аламо', 'Fort Alamo'), **fort_arch),
+            Solar(self, S.m8_asf_hq, 'fort3',  ru_name=MS('Форт Стармер', 'Fort Starmer'), **fort_arch),
+            Solar(self, S.m8_asf_hq, 'fort4',  ru_name=MS('Форт Росс', 'Fort Ross'), **fort_arch),
+            Solar(self, S.m8_asf_hq, 'fort5',  ru_name=MS('Форт Нокс', 'Fort Nox'), **fort_arch),
             DockableBattleshipSolar(
                 self, S.m8_asf_hq, 'osiris1', faction='asf_grp',
                 archetype='o_osiris', loadout='li_battleship_02',
-                ru_name='Линкор Осирис', base='sig42_99_base',
+                ru_name=N.OSIRIS, base='sig42_99_base',
                 labels=['friend', 'asf', 'osiris']),
             Solar(
                 self, S.m8_asf_hq, 'dread1', faction='asf_grp',
                 archetype='l_dreadnought', loadout='li_dreadnought_03',
-                ru_name='Линкор Миссисипи',
+                ru_name=MS('Линкор Миссисипи', 'Battleship Mississippi'),
                 labels=['friend', 'asf', 'osiris']),
             DockableBattleshipSolar(
                 self, S.sig42, 'lair_osiris1', faction='asf_grp',
                 archetype='o_osiris', loadout='li_battleship_02',
-                ru_name='Линкор Осирис', base='sig42_99_base',
+                ru_name=N.OSIRIS, base='sig42_99_base',
                 labels=['friend', 'asf', 'osiris']),
         ]
         defined_points.extend(hq_group)

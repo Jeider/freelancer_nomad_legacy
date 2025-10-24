@@ -137,6 +137,28 @@ hit_pts_scale = {self.get_armor_scale()}
         MainMiscEquip.CO_OUTCAST: 'Кевлар',
     }
 
+    EN_NAME_PER_TYPE = {
+        MainMiscEquip.RH_MAIN: 'Vanguard Armor',
+        MainMiscEquip.RH_CIV: 'Revenge Armor',
+        MainMiscEquip.RH_PIRATE: 'Condor Armor',
+
+        MainMiscEquip.LI_MAIN: 'Express Armor',
+        MainMiscEquip.LI_CIV: 'Ceradin Armor',
+        MainMiscEquip.LI_PIRATE: 'Point Black Armor',
+
+        MainMiscEquip.BR_MAIN: 'Rabintex Armor',
+        MainMiscEquip.BR_CIV: 'Integris Armor',
+        MainMiscEquip.BR_PIRATE: 'Protect-Tex Armor',
+
+        MainMiscEquip.KU_MAIN: 'Aramid Armor',
+        MainMiscEquip.KU_CIV: 'Granite Armor',
+        MainMiscEquip.KU_PIRATE: 'Corundum Armor',
+
+        MainMiscEquip.CO_ORDER: 'Armor of Mars',
+        MainMiscEquip.CO_CORSAIR: 'Plate Armor',
+        MainMiscEquip.CO_OUTCAST: 'Kevlar Armor',
+    }
+
     def get_max_price(self):
         return self.MAX_PRICE
 
@@ -152,8 +174,23 @@ hit_pts_scale = {self.get_armor_scale()}
     def get_ru_fullname(self):
         return self.get_ru_name()
 
+    def get_en_base_name(self):
+        return self.EN_NAME_PER_TYPE[self.equip_type]
+
+    def get_en_name(self):
+        return '{model} {mark}'.format(
+            model=self.get_en_base_name(),
+            mark=self.get_mark_name(),
+        )
+
+    def get_en_fullname(self):
+        return self.get_en_name()
+
     def get_ru_volume_text(self):
         return f'Объем в трюме: {int(self.get_volume())}'
+
+    def get_en_volume_text(self):
+        return f'Cargo space: {int(self.get_volume())}'
 
     def get_ru_description_content(self):
         content = []
@@ -167,7 +204,23 @@ hit_pts_scale = {self.get_armor_scale()}
             content.append(faction_features_text)
 
         content.append(self.get_ru_volume_text())
-        content.append(SCALE_HINT)
+        content.append(RU_SCALE_HINT)
+
+        return content
+
+    def get_en_description_content(self):
+        content = []
+
+        efficient_text = self.get_en_equip_efficienty()
+        if efficient_text:
+            content.append(efficient_text)
+
+        faction_features_text = EN_FEATURES_PER_FACTION.get(self.get_faction())
+        if faction_features_text:
+            content.append(faction_features_text)
+
+        content.append(self.get_en_volume_text())
+        content.append(EN_SCALE_HINT)
 
         return content
 
@@ -180,4 +233,15 @@ RU_FEATURES_PER_FACTION = {
     MainMiscEquip.FACTION_CO: 'Броня кораблей пограничных миров максимально улучшает корпус корабля за счет значительного объема занимаемого места в трюме',
 }
 
-SCALE_HINT = 'Бонус: броня увеличивает эффективность ваших наноботов'
+RU_SCALE_HINT = 'Бонус: броня увеличивает эффективность ваших наноботов'
+
+
+EN_FEATURES_PER_FACTION = {
+    MainMiscEquip.FACTION_RH: 'Rheinland armor efficiently improves your hull and requires less cargo hold space',
+    MainMiscEquip.FACTION_LI: 'Liberty armor moderate improves ship hull and requires moderate cargo hold space',
+    MainMiscEquip.FACTION_BR: 'Bretonia armor considerable improves shill hull with huge requirements of cargo hold space',
+    MainMiscEquip.FACTION_KU: 'Kusari armor have less hull improvements with less requires of cargo hold space',
+    MainMiscEquip.FACTION_CO: 'Border World armor have maximal improvements to ship hull, but requires huge space in cargo hold',
+}
+
+EN_SCALE_HINT = 'Bonus: armor increases efficiency of your nanobots'

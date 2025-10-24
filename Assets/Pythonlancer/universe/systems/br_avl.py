@@ -30,11 +30,15 @@ from templates.dockable import police
 from templates.dockable import shipyards
 from templates.dockable import prisons
 
+from story.ingame.names import PRINCE_OF_WALES
+from text.strings import MultiString as MS
+
 
 class AvalMember(Member):
     FACTION = faction.BretoniaMain
     WEAPON_FACTION = WEAPON_BR
     EQUIP_FACTION = EQUIP_BR
+    INTERIOR_BG1 = interior.INTERIOR_BR_AVALON
 
 
 class AvalStaticText(AvalMember, main_objects.RawText):
@@ -125,7 +129,7 @@ class AvalDebrisFactory1(AvalMember, AvalBaseDebrisManufactoring):
         AvalDebrisZone2,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
-    RU_NAME = 'Плавильня Стокпорт'
+    RU_NAME = MS('Плавильня Стокпорт', "Stockport Smelter")
     MISC_EQUIP_TYPE = BR_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Thruster(BR_CIV, eq_classes=markets.SECRET2),
@@ -140,7 +144,7 @@ class AvalDebrisFactory2(AvalMember, AvalBaseDebrisManufactoring):
         AvalDebrisZone3,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
-    RU_NAME = 'Плавильня Олдем'
+    RU_NAME = MS('Плавильня Олдем', "Oldham Smelter")
     MISC_EQUIP_TYPE = BR_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Thruster(BR_CIV, eq_classes=markets.SECRET3),
@@ -233,7 +237,7 @@ class AvalSolarPlant1(AvalMember, AvalBaseSolarPlant):
     ASTEROID_ZONES = [
         AvalSolarMinesZone1,
     ]
-    RU_NAME = 'Солн.генератор Тидворт'
+    RU_NAME = MS('Солн.генератор Тидворт', 'Solar Planet Titword')
     MISC_EQUIP_TYPE = BR_PIRATE
     EQUIP_SET = markets.EquipSet(
         Q.Power(BR_CIV, eq_classes=markets.SECRET3),
@@ -247,7 +251,7 @@ class AvalSolarPlant2(AvalMember, AvalBaseSolarPlant):
     ASTEROID_ZONES = [
         AvalSolarMinesZone2,
     ]
-    RU_NAME = 'Солн.генератор Льюис'
+    RU_NAME = MS('Солн.генератор Льюис', "Solar Planet Lewes")
     MISC_EQUIP_TYPE = BR_PIRATE
     EQUIP_SET = markets.EquipSet(
         Q.Power(BR_CIV, eq_classes=markets.SECRET2),
@@ -261,7 +265,7 @@ class AvalSolarPlant3(AvalMember, AvalBaseSolarPlant):
     ASTEROID_ZONES = [
         AvalSolarMinesZone3,
     ]
-    RU_NAME = 'Солн.генератор Харлоу'
+    RU_NAME = MS('Солн.генератор Харлоу', 'Solar Plant Harlow')
     MISC_EQUIP_TYPE = BR_PIRATE
     EQUIP_SET = markets.EquipSet(
         Q.Power(BR_PIRATE, eq_classes=markets.SECRET2),
@@ -275,7 +279,7 @@ class AvalSolarPlant4(AvalMember, AvalBaseSolarPlant):
     ASTEROID_ZONES = [
         AvalSolarMinesZone4,
     ]
-    RU_NAME = 'Солн.генератор Челси'
+    RU_NAME = MS('Солн.генератор Челси', "Solar Plant Chelsey")
     MISC_EQUIP_TYPE = BR_PIRATE
     EQUIP_SET = markets.EquipSet(
         Q.Power(BR_CIV, eq_classes=markets.SECRET2),
@@ -289,7 +293,7 @@ class AvalSolarPlant5(AvalMember, AvalBaseSolarPlant):
     ASTEROID_ZONES = [
         AvalSolarMinesZone5,
     ]
-    RU_NAME = 'Солн.генератор Вейбридж'
+    RU_NAME = MS('Солн.генератор Вейбридж', "Solar Plant Weybridge")
     MISC_EQUIP_TYPE = BR_PIRATE
     EQUIP_SET = markets.EquipSet(
         Q.Power(BR_CIV, eq_classes=markets.SECRET3),
@@ -395,7 +399,7 @@ class AvalAbandonedAstBase1(AvalMember, AvalBaseAbandonedAst):
     ASTEROID_ZONES = [
         AvalAsteroidZone1,
     ]
-    RU_NAME = 'База Илинг'
+    RU_NAME = MS('База Илинг', "Ealing Base")
     MISC_EQUIP_TYPE = BR_PIRATE
     WEAPON_FACTION = WEAPON_BR
     EQUIP_SET = markets.EquipSet(
@@ -411,7 +415,7 @@ class AvalAbandonedAstBase2(AvalMember, AvalBaseAbandonedAst):
     ASTEROID_ZONES = [
         AvalAsteroidZone2,
     ]
-    RU_NAME = 'База Вулидж'
+    RU_NAME = MS('База Вулидж', "Woolwich Base")
     MISC_EQUIP_TYPE = BR_PIRATE
     WEAPON_FACTION = WEAPON_BR
     EQUIP_SET = markets.EquipSet(
@@ -493,7 +497,7 @@ class AvalDockring(AvalMember, main_objects.LargePlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.BretoniaPlanetDealers
     SHIP_SET = markets.ShipSet('co_fighter', 'co_elite', 'br_freighter')
-    RU_NAME = 'Планета Авалон'
+    RU_NAME = MS('Планета Авалон', "Planet Avalon")
 
     BASE_PROPS = meta.LargePlanet(
         objectives=[
@@ -512,7 +516,7 @@ class AvalShipyard(AvalMember, main_objects.Shipyard):
     INDEX = 1
     BASE_INDEX = 2
     REL = BOTTOM
-    RU_NAME = 'Верфь Саутгемптон'
+    RU_NAME = MS('Верфь Саутгемптон', 'Southampton Shipyard')
 
     SPACE_OBJECT_TEMPLATE = shipyards.HeavyBarrelShipyard
 
@@ -525,7 +529,7 @@ class AvalPolice(AvalMember, main_objects.Outpost):
     INDEX = 1
     BASE_INDEX = 3
     REL = BOTTOM
-    RU_NAME = 'Аванпост Манчестер'
+    RU_NAME = MS('Аванпост Манчестер', "Outpost Manchester")
 
     SPACE_OBJECT_TEMPLATE = police.BerlinPoliceOutpost
 
@@ -537,7 +541,7 @@ class AvalTrading(AvalMember, main_objects.TradingBase):
     INDEX = 1
     BASE_INDEX = 4
     REL = RIGHT
-    RU_NAME = 'Торговая станция Бирмингем'
+    RU_NAME = MS('Торговая станция Бирмингем', "Trading station Birmingham")
 
     SPACE_OBJECT_TEMPLATE = trade_storages.TekagiStorage
 
@@ -550,7 +554,7 @@ class AvalMilitary(AvalMember, main_objects.Station):
     INDEX = 1
     BASE_INDEX = 5
     REL = TOP
-    RU_NAME = 'Станция Лондон'
+    RU_NAME = MS('Станция Лондон', "London Station")
 
     SPACE_OBJECT_TEMPLATE = avalon_megabase.AvalonMegabase
 
@@ -569,7 +573,7 @@ class AvalPrison(AvalMember, main_objects.Prison):
     INDEX = 1
     BASE_INDEX = 6
     REL = TOP
-    RU_NAME = 'Тюрьма Голспи'
+    RU_NAME = MS('Тюрьма Голспи', "Golspie Prison")
 
     SPACE_OBJECT_TEMPLATE = prisons.AvalonPrison
 
@@ -591,7 +595,7 @@ class AvalJunkers(AvalMember, main_objects.JunkerBase):
         AvalDebrisZone3
     ]
     DEFENCE_LEVEL = None
-    RU_NAME = 'База Кардиган'
+    RU_NAME = MS('База Кардиган', "Cardigan Base")
 
 
 class AvalPirates(AvalMember, main_objects.PirateStation):
@@ -607,7 +611,7 @@ class AvalPirates(AvalMember, main_objects.PirateStation):
         AvalAsteroidZone3
     ]
     DEFENCE_LEVEL = None
-    RU_NAME = 'База Лонстон'
+    RU_NAME = MS('База Лонстон', 'Launceston Base')
 
 
 class AvalPlanet1(AvalMember, main_objects.Planet):
@@ -621,21 +625,21 @@ class AvalPlanet2(AvalMember, main_objects.Planet):
     INDEX = 2
     ARCHETYPE = 'planet_gasorgcld_5000'
     SPHERE_RADIUS = 5000
-    RU_NAME = 'Планета Эксмор'
+    RU_NAME = MS('Планета Эксмор', 'Planet Exmore')
 
 
 class AvalPlanet3(AvalMember, main_objects.Planet):
     INDEX = 3
     ARCHETYPE = 'planet_moonblu_2500'
     SPHERE_RADIUS = 2500
-    RU_NAME = 'Планета Уотфорд'
+    RU_NAME = MS('Планета Уотфорд', "Planet Watford")
 
 
 class AvalPlanet4(AvalMember, main_objects.Planet):
     INDEX = 4
     ARCHETYPE = 'planet_desored_3000'
     SPHERE_RADIUS = 3000
-    RU_NAME = 'Планета Кроли'
+    RU_NAME = MS('Планета Кроли', 'Planet Crawley')
 
 
 class AvalPoliceConn1(AvalMember, main_objects.TradeConnection):
@@ -745,7 +749,7 @@ class AvalStoryBattleship(AvalMember, main_objects.BretoniaBattleship):
         AvalPolice,  # TODO: haven't real economics connection
     ]
     SHIP_SET = markets.ShipSet('co_elite_darcy')
-    RU_NAME = 'Линкор Принц Уэльский'
+    RU_NAME = PRINCE_OF_WALES
 
 
 class AvalStoryBattleshipTwo(AvalMember, main_objects.BretoniaBattleship):
@@ -759,4 +763,4 @@ class AvalStoryBattleshipTwo(AvalMember, main_objects.BretoniaBattleship):
     CALC_STORE = False
     IS_BASE = False
     AUTOSAVE_FORBIDDEN = True
-    RU_NAME = 'Линкор Принц Уэльский'
+    RU_NAME = PRINCE_OF_WALES

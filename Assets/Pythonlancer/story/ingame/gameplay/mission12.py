@@ -5,6 +5,7 @@ from universe.systems import sig42
 from story.ingame import ingame_mission
 from story.math import euler_to_quat
 from story import actors
+from story.ingame import names as N
 
 from story.ingame import objectives as O
 from story.ingame.tools import (Point, Obj, Conn, NNObj, Ship, Solar, Capital, DockableBattleshipSolar, SaveState,
@@ -14,6 +15,8 @@ from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 from world.npc import NPC, EqMap
 from world import ship
 from universe import faction
+
+from text.strings import MultiString as MS
 
 NPCSHIPS = '''
 nickname = ms12_ku_gunboat
@@ -107,26 +110,38 @@ class Misson12(ingame_mission.IngameMission):
     FOLDER = 'M12'
     FILE = 'm12'
     START_SAVE_ID = 33200
-    START_SAVE_RU_NAME = 'Сириус. Планета Спрага'
+    START_SAVE_RU_NAME = MS('Сириус. Планета Спрага', 'Sirius. Planet Sprague')
     SCRIPT_INDEX = 12
     DIRECT_SYSTEMS = [S.sig42, S.asf_hq, S.asf_prom]
     STATIC_NPCSHIPS = NPCSHIPS
     RTC = ['sprague']
     INIT_OFFER = MultiLine(
-        'ЗАДАЧА:',
-        'Не допустить уничтожение станции Энтерпрайз и штаба СБА.',
-        '',
-        'СЛОЖНОСТЬ:',
-        'Спасти человечество.',
-        '',
-        'Награда:',
-        'Выживание',
+        [
+            'ЗАДАЧА:',
+            'Не допустить уничтожение станции Энтерпрайз и штаба СБА.',
+            '',
+            'СЛОЖНОСТЬ:',
+            'Спасти человечество.',
+            '',
+            'Награда:',
+            'Выживание',
+        ],
+        [
+            'OBJECTIVE:',
+            'Don not let Order destroy Station Enterprise and ASF Headquarters.',
+            '',
+            'DIFFICULTY:',
+            'Save the mankind.',
+            '',
+            'REWARD:',
+            'Survival',
+        ]
     ).get_content()
 
     def get_save_states(self):
         return [
-            SaveState(self, 'bush_battle', 'Штаб СБА. Битва в секторе форта Буш'),
-            SaveState(self, 'logos_battle', 'Прометей. Нейтрализация линкора Логос'),
+            SaveState(self, 'bush_battle', MS('Штаб СБА. Битва в секторе форта Буш', "ASF's HQ. Battle in sector of Fort Bush")),
+            SaveState(self, 'logos_battle', MS('Прометей. Нейтрализация линкора Логос', 'Proemetheus. Neutralization of the battleship Logos')),
         ]
 
     def get_static_points(self):
@@ -151,18 +166,18 @@ class Misson12(ingame_mission.IngameMission):
             )
 
         hq_solars = [
-            ('ku_miner01', 'Добывающее судно Кохая'),
-            ('ku_miner02', 'Добывающее судно Сюинсэн'),
-            ('ku_miner03', 'Добывающее судно Урал'),
-            ('fort_bush', 'Форт Буш'),
-            ('fort1', 'Форт Джефферсон'),
-            ('fort2', 'Форт Аламо'),
-            ('fort3', 'Форт Стармер'),
-            ('fort4', 'Форт Росс'),
-            ('fort5', 'Форт Нокс'),
+            ('ku_miner01', MS('Инженерное судно Кохая', 'Engineer vessel Cochaya')),
+            ('ku_miner02', MS('Инженерное судно Сюинсэн', 'Engineer vessel Sinsene')),
+            ('ku_miner03', MS('Инженерное судно Урал', 'Engineer vessel Ural')),
+            ('fort_bush', MS('Форт Буш', 'Fort Bush')),
+            ('fort1', MS('Форт Джефферсон', 'Fort Jefferson')),
+            ('fort2', MS('Форт Аламо', 'Fort Alamo')),
+            ('fort3', MS('Форт Стармер', 'Fort Starmer')),
+            ('fort4', MS('Форт Росс', 'Fort Ross')),
+            ('fort5', MS('Форт Нокс', 'Fort Nox')),
 
-            ('counter_relative_obj', 'счётчик'),
-            ('counter_assault', 'счётчик'),
+            ('counter_relative_obj', MS('счётчик', 'counter')),
+            ('counter_assault', MS('счётчик', 'counter')),
 
         ]
         for sol, name in hq_solars:
@@ -185,16 +200,7 @@ class Misson12(ingame_mission.IngameMission):
             )
 
         prom_solars = [
-            ('prom_osiris_emi', 'ЭМИ Осириса'),
-
-            ('logos_checker', 'счетчик'),
-            ('logos_dmg_90', '9'),
-            ('logos_dmg_80', '8'),
-            ('logos_dmg_70', '7'),
-            ('logos_dmg_60', '6'),
-            ('logos_dmg_50', '5'),
-            ('logos_dmg_40', '4'),
-            ('logos_dmg_30', '3'),
+            ('prom_osiris_emi', MS('ЭМИ Осириса', "Osiris' EMI gun")),
         ]
         for sol, name in prom_solars:
             defined_points.append(
@@ -204,22 +210,22 @@ class Misson12(ingame_mission.IngameMission):
         defined_points.append(
             DockableBattleshipSolar(
                 self, S.asf_prom, 'logos',
-                ru_name='Линкор Логос', base='asf_prom_99_base',
+                ru_name=MS('Линкор Логос', 'Battleship Logos'), base='asf_prom_99_base',
                 labels=['enemy', 'or_b', 'logos']),
         )
         defined_points.append(
             DockableBattleshipSolar(
                 self, S.asf_prom, 'prom_osiris', faction='asf_grp',
-                ru_name='Линкор Осирис', base='asf_prom_99_base',
+                ru_name=N.OSIRIS, base='asf_prom_99_base',
                 labels=['friend', 'asf', 'osiris']),
         )
 
         logos_segments = [
-            ('logos_shieldgen', 'Генератор щита Логоса'),
-            ('logos_shieldgen_dmg', 'Генератор щита Логоса'),
-            ('logos_control_tower', 'Рубка Логоса'),
-            ('logos_control_tower_dmg', 'Рубка Логоса'),
-            ('logos_reactor', 'Реактор Логоса'),
+            ('logos_shieldgen', MS('Генератор щита Логоса', "Logos' Shield Generator")),
+            ('logos_shieldgen_dmg', MS('Генератор щита Логоса', "Logos' Shield Generator")),
+            ('logos_control_tower', MS('Рубка Логоса', "Logos' Control Tower")),
+            ('logos_control_tower_dmg', MS('Рубка Логоса', "Logos' Control Tower")),
+            ('logos_reactor', MS('Реактор Логоса', "Logos' Reactor")),
         ]
         for p, name in logos_segments:
             defined_points.append(
@@ -303,75 +309,75 @@ class Misson12(ingame_mission.IngameMission):
         }
 
         caps = [
-            Capital(self, 'road_ku_bship', ru_name='Линкор Муцу', **ku_bship),
-            Capital(self, 'road_li_dread', ru_name='Линкор Коннектикут', **li_dread),
-            Capital(self, 'road_ku_destroyer1', ru_name='Эсминец Амаги', **ku_destroyer),
-            Capital(self, 'road_ku_destroyer2', ru_name='Эсминец Конго', **ku_destroyer),
-            Capital(self, 'omaha1', ru_name='Крейсер Омаха', **omaha),
-            Capital(self, 'omaha2', ru_name='Крейсер Делавэр', **omaha),
-            Capital(self, 'omaha3', ru_name='Крейсер Юта', **omaha),
+            Capital(self, 'road_ku_bship', ru_name=MS('Линкор Муцу', 'Battleship Mutsu'), **ku_bship),
+            Capital(self, 'road_li_dread', ru_name=MS('Линкор Коннектикут', "Battleship Connecticut"), **li_dread),
+            Capital(self, 'road_ku_destroyer1', ru_name=MS('Эсминец Амаги', "Amagi Destroyer"), **ku_destroyer),
+            Capital(self, 'road_ku_destroyer2', ru_name=MS('Эсминец Конго', 'Congo Destroyer'), **ku_destroyer),
+            Capital(self, 'omaha1', ru_name=MS('Крейсер Омаха', "Omaha Cruiser"), **omaha),
+            Capital(self, 'omaha2', ru_name=MS('Крейсер Делавэр', 'Delaware Cruiser'), **omaha),
+            Capital(self, 'omaha3', ru_name=MS('Крейсер Юта', 'Utah Cruiser'), **omaha),
 
-            Capital(self, 'nagato', ru_name='Линкор Нагато', **ku_bship),
+            Capital(self, 'nagato', ru_name=MS('Линкор Нагато', 'Battleship Nagato'), **ku_bship),
 
-            Capital(self, 'to_bush_ku_bship', ru_name='Линкор Кавати', **ku_bship),
-            Capital(self, 'to_bush_li_dread', ru_name='Линкор Вермонт', **li_dread),
+            Capital(self, 'to_bush_ku_bship', ru_name=MS('Линкор Кавати', 'Battleship Kawachi'), **ku_bship),
+            Capital(self, 'to_bush_li_dread', ru_name=MS('Линкор Вермонт', 'Battleship Vermont'), **li_dread),
 
-            Capital(self, 'ku_assault1', ru_name='Линкор Ямато', **ku_bship_assault),
-            Capital(self, 'ku_assault2', ru_name='Линкор Тоса', **ku_bship_assault),
-            Capital(self, 'ku_assault3', ru_name='Линкор Исэ', **ku_bship_assault),
+            Capital(self, 'ku_assault1', ru_name=MS('Линкор Ямато', 'Battleship Yamato'), **ku_bship_assault),
+            Capital(self, 'ku_assault2', ru_name=MS('Линкор Тоса', 'Battleship Tosa'), **ku_bship_assault),
+            Capital(self, 'ku_assault3', ru_name=MS('Линкор Исэ', 'Battleship Ise'), **ku_bship_assault),
 
-            Capital(self, 'ku_cr_assault1', ru_name='Эсминец Катори', **ku_destroyer),
-            Capital(self, 'ku_cr_assault2', ru_name='Эсминец Сикисима', **ku_destroyer),
-            Capital(self, 'ku_cr_assault3', ru_name='Эсминец Фудзи', **ku_destroyer),
-            Capital(self, 'ku_cr_assault4', ru_name='Эсминец Чин-Иен', **ku_destroyer),
+            Capital(self, 'ku_cr_assault1', ru_name=MS('Эсминец Катори', 'Katori Destroyer'), **ku_destroyer),
+            Capital(self, 'ku_cr_assault2', ru_name=MS('Эсминец Сикисима', 'Shikishima Destroyer'), **ku_destroyer),
+            Capital(self, 'ku_cr_assault3', ru_name=MS('Эсминец Фудзи', 'Fuji Destroyer'), **ku_destroyer),
+            Capital(self, 'ku_cr_assault4', ru_name=MS('Эсминец Чин-Иен', 'Chin Yen Destroyer'), **ku_destroyer),
 
-            Capital(self, 'li_cr_defend1', ru_name='Крейсер Теннесси', **li_cruiser),
-            Capital(self, 'li_cr_defend2', ru_name='Крейсер Монтана', **li_cruiser),
+            Capital(self, 'li_cr_defend1', ru_name=MS('Крейсер Теннесси', 'Tennessee Cruiser'), **li_cruiser),
+            Capital(self, 'li_cr_defend2', ru_name=MS('Крейсер Монтана', 'Montana Cruiser'), **li_cruiser),
 
-            Capital(self, 'osiris_on_assault', ru_name='Линкор Осирис', **asf_osiris),
+            Capital(self, 'osiris_on_assault', ru_name=N.OSIRIS, **asf_osiris),
         ]
 
         OR_PROM_A = [
-            ('prom_A_order_01', 'Навухудоносор'),
-            ('prom_A_order_02', 'Брахма'),
-            ('prom_A_order_03', 'Кадуцеус'),
-            ('prom_A_order_04', 'Вигилант'),
+            ('prom_A_order_01', MS('Линкор Навухудоносор', 'Battleship Nebuchadnezzar')),
+            ('prom_A_order_02', MS('Линкор Брахма', 'Battleship Brahma')),
+            ('prom_A_order_03', MS('Линкор Кадуцеус', 'Battleship Caduceus')),
+            ('prom_A_order_04', MS('Линкор Вигилант', 'Battleship Vigilant')),
         ]
         OR_PROM_B = [
-            ('prom_B_order_02', 'Ганеша'),
-            ('prom_B_order_03', 'Икарус'),
-            ('prom_B_order_04', 'Артаксеркс'),
-            ('prom_B_order_05', 'Хаммер'),
+            ('prom_B_order_02', MS('Линкор Ганеша', 'Battleship Ganesha')),
+            ('prom_B_order_03', MS('Линкор Икарус', 'Battleship Ikarus')),
+            ('prom_B_order_04', MS('Линкор Артаксеркс', 'Battleship Artaxerxes')),
+            ('prom_B_order_05', MS('Линкор Хаммер', 'Battleship Hammer')),
         ]
         prom_or_ships = []
 
         ASF_PROM_A = [
-            ('prom_A_asf_01', 'Орегон'),
-            ('prom_A_asf_02', 'Кентукки'),
+            ('prom_A_asf_01', MS('Линкор Орегон', 'Battleship Oregon')),
+            ('prom_A_asf_02', MS('Линкор Кентукки', 'Battleship Kentucky')),
         ]
         ASF_PROM_B = [
-            ('prom_B_asf_01', 'Цинцинатти'),
-            ('prom_B_asf_02', 'Рио-Гранде'),
+            ('prom_B_asf_01', MS('Линкор Цинцинатти', 'Battleship Cincinnati')),
+            ('prom_B_asf_02', MS('Линкор Рио-Гранде', 'Battleship Rio-Grande')),
         ]
         prom_asf_ships = []
 
         for cap, name in OR_PROM_A:
-            the_cap = Capital(self, cap, ru_name=f'Линкор {name}', **order_osiris_a)
+            the_cap = Capital(self, cap, ru_name=name, **order_osiris_a)
             caps.append(the_cap)
             prom_or_ships.append(the_cap)
 
         for cap, name in OR_PROM_B:
-            the_cap = Capital(self, cap, ru_name=f'Линкор {name}', **order_osiris_b)
+            the_cap = Capital(self, cap, ru_name=name, **order_osiris_b)
             caps.append(the_cap)
             prom_or_ships.append(the_cap)
 
         for cap, name in ASF_PROM_A:
-            the_cap = Capital(self, cap, ru_name=f'Линкор {name}', **li_dread_a)
+            the_cap = Capital(self, cap, ru_name=name, **li_dread_a)
             caps.append(the_cap)
             prom_asf_ships.append(the_cap)
 
         for cap, name in ASF_PROM_B:
-            the_cap = Capital(self, cap, ru_name=f'Линкор {name}', **li_dread_b)
+            the_cap = Capital(self, cap, ru_name=name, **li_dread_b)
             caps.append(the_cap)
             prom_asf_ships.append(the_cap)
 
@@ -379,10 +385,10 @@ class Misson12(ingame_mission.IngameMission):
         self.add_capital_group('PROM_ASF', prom_asf_ships)
 
         caps.append(
-            Capital(self, 'armored', ru_name='Бронированный транспорт', **armored_ship)
+            Capital(self, 'armored', ru_name=N.ARMORED, **armored_ship)
         )
         caps.append(
-            Capital(self, 'armored_out', ru_name='Бронированный транспорт', **armored_ship_out)
+            Capital(self, 'armored_out', ru_name=N.ARMORED, **armored_ship_out)
         )
 
         return caps
@@ -402,7 +408,7 @@ class Misson12(ingame_mission.IngameMission):
             NNObj(self, O.GOTO, name='asf_miner01', target='asf_miner01'),
             NNObj(self, O.GOTO, name='asf_miner02', target='asf_miner02'),
 
-            NNObj(self, 'Уничтожьте инженерные судна', name='destroy_miners'),
+            NNObj(self, MS('Уничтожьте инженерные судна', "Destroy engineering vessels"), name='destroy_miners'),
 
             NNObj(self, O.GOTO, name='to_bush01', target='to_bush01'),
             NNObj(self, O.GOTO, name='to_bush02', target='to_bush02'),
@@ -411,27 +417,30 @@ class Misson12(ingame_mission.IngameMission):
             NNObj(self, O.GOTO, name='to_bush05', target='to_bush05'),
             NNObj(self, O.GOTO, name='to_bush06', target='to_bush06'),
 
-            NNObj(self, 'Уничтожьте двигатели линкоров Кусари', name='stop_assault_battleships'),
+            NNObj(self, MS('Уничтожьте двигатели линкоров Кусари', "Destroy engines of Kusari battleships"),
+                  name='stop_assault_battleships'),
 
-            NNObj(self, 'Влетите внутрь сферы станции Энтерпрайз', name='jump_to_prom', target='m13_asf_hq_01'),
+            NNObj(self, MS('Влетите внутрь сферы станции Энтерпрайз',
+                           'Enter inside blue sphere of station Enterprise'), name='jump_to_prom', target='m13_asf_hq_01'),
 
             NNObj(self,  O.GOTO, name='prom_goinsde1', target='prom_goinsde1'),
             NNObj(self,  O.GOTO, name='prom_goinsde2', target='prom_goinsde2'),
             NNObj(self,  O.GOTO, name='prom_goinsde3', target='prom_goinsde3'),
 
-            NNObj(self, 'Доберитесь до Логоса', name='goto_logos', target='logos', towards=True),
+            NNObj(self, MS('Доберитесь до Логоса', 'Go to Battleship Logos'), name='goto_logos', target='logos', towards=True),
 
-            NNObj(self, 'Ожидайте прибытия линкора Осирис', name='wait_osiris'),
+            NNObj(self, MS('Ожидайте прибытия линкора Осирис', 'Wait for arrive of Battleship Osiris'), name='wait_osiris'),
 
-            NNObj(self, 'Уничтожьте генератор щита Логоса', name='logos_shieldgen', target='logos_shieldgen'),
-            NNObj(self, 'Уничтожьте командный мостик Логоса', name='logos_control_tower', target='logos_control_tower'),
-            NNObj(self, 'Уничтожьте реактор Логоса', name='logos_reactor', target='logos_reactor'),
+            NNObj(self, MS('Уничтожьте генератор щита Логоса', "Destroy Logos' shield generator"), name='logos_shieldgen', target='logos_shieldgen'),
+            NNObj(self, MS('Уничтожьте командный мостик Логоса', "Destroy Logos' control tower"), name='logos_control_tower', target='logos_control_tower'),
+            NNObj(self, MS('Уничтожьте реактор Логоса', "Destroy Logos' reactor"), name='logos_reactor', target='logos_reactor'),
 
-            NNObj(self, 'Обеспечьте безопасность десантного судна', name='defend_armored'),
-            NNObj(self, 'Ожидайте пленения Ямамото', name='wait_for_armored'),
-            NNObj(self, 'Ожидайте доставки Ямамото на Осирис', name='wait_for_armored_osiris'),
+            NNObj(self, MS('Обеспечьте безопасность десантного судна', 'Defend friendly landing craft'), name='defend_armored'),
+            NNObj(self, MS('Ожидайте пленения Ямамото', 'Wait for capture of Yamamoto'), name='wait_for_armored'),
+            NNObj(self, MS('Ожидайте доставки Ямамото на Осирис',
+                           'Wait for delivery of Yamamoto on Osiris'), name='wait_for_armored_osiris'),
 
-            NNObj(self, 'Сядьте на линкор Осирис', name='dock_osiris', target='prom_osiris'),
+            NNObj(self, MS('Сядьте на линкор Осирис', 'Dock with Osiris'), name='dock_osiris', target='prom_osiris'),
         ]
 
     def get_ships(self):

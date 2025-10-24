@@ -56,353 +56,164 @@ entities={
 		}
 	},
 	{
-		entity_name="subtitles_pack",
-		template_name="subtitles_pack",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},
-	{
-		entity_name="DX_intro_0010_trent",
-		template_name="DX_intro_0010_trent",
+		entity_name="DX_m01_intro_0010_trent",
+		template_name="DX_m01_intro_0010_trent",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
-	},
-	{
-		entity_name="subtitles_0010",
-		template_name="subtitles_intro_bar1",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
 	},	
 	{
-		entity_name="DX_intro_0020_barman",
-		template_name="DX_intro_0020_barman",
+		entity_name="DX_m01_intro_0020_barman",
+		template_name="DX_m01_intro_0020_barman",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="subtitles_0020",
-		template_name="subtitles_intro_bar2",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},	
-	{
-		entity_name="DX_intro_0030_trent",
-		template_name="DX_intro_0030_trent",
+		entity_name="DX_m01_intro_0030_trent",
+		template_name="DX_m01_intro_0030_trent",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="subtitles_0030",
-		template_name="subtitles_intro_bar3",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},	
-	{
-		entity_name="DX_intro_0040_barman",
-		template_name="DX_intro_0040_barman",
+		entity_name="DX_m01_intro_0040_barman",
+		template_name="DX_m01_intro_0040_barman",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="subtitles_0040",
-		template_name="subtitles_intro_bar4",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},	
-	{
-		entity_name="DX_intro_0050_trent",
-		template_name="DX_intro_0050_trent",
+		entity_name="DX_m01_intro_0050_trent",
+		template_name="DX_m01_intro_0050_trent",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="subtitles_0050",
-		template_name="subtitles_intro_bar5",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},	
-	{
-		entity_name="DX_intro_0060_barman",
-		template_name="DX_intro_0060_barman",
+		entity_name="DX_m01_intro_0060_barman",
+		template_name="DX_m01_intro_0060_barman",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="subtitles_0060",
-		template_name="subtitles_intro_bar6",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},	
-	{
-		entity_name="DX_intro_0070_trent",
-		template_name="DX_intro_0070_trent",
+		entity_name="DX_m01_intro_0070_trent",
+		template_name="DX_m01_intro_0070_trent",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="subtitles_0070",
-		template_name="subtitles_intro_bar7",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},	
-	{
-		entity_name="DX_intro_0080_barman",
-		template_name="DX_intro_0080_barman",
+		entity_name="DX_m01_intro_0080_barman",
+		template_name="DX_m01_intro_0080_barman",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="subtitles_0080",
-		template_name="subtitles_intro_bar8",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},	
-	{
-		entity_name="DX_intro_0090_trent",
-		template_name="DX_intro_0090_trent",
+		entity_name="DX_m01_intro_0090_trent",
+		template_name="DX_m01_intro_0090_trent",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="subtitles_0090",
-		template_name="subtitles_intro_bar9",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},	
-	{
-		entity_name="DX_intro_0100_trent",
-		template_name="DX_intro_0100_trent",
+		entity_name="DX_m01_intro_0100_trent",
+		template_name="DX_m01_intro_0100_trent",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="DX_intro_0105_trent",
-		template_name="DX_intro_0105_trent",
+		entity_name="DX_m01_intro_0105_trent",
+		template_name="DX_m01_intro_0105_trent",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="subtitles_0100",
-		template_name="subtitles_intro_bar10",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},
-	{
-		entity_name="DX_intro_0110_alaric",
-		template_name="DX_intro_0110_alaric",
+		entity_name="DX_m01_intro_0110_alaric",
+		template_name="DX_m01_intro_0110_alaric",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="subtitles_0110a",
-		template_name="subtitles_intro_bar11",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},
-	{
-		entity_name="subtitles_0110b",
-		template_name="subtitles_intro_bar12",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},
-	{
-		entity_name="subtitles_0110c",
-		template_name="subtitles_intro_bar13",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},
-	{
-		entity_name="DX_intro_0120_trent",
-		template_name="DX_intro_0120_trent",
+		entity_name="DX_m01_intro_0120_trent",
+		template_name="DX_m01_intro_0120_trent",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="subtitles_0120",
-		template_name="subtitles_intro_bar14",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},
-	{
-		entity_name="DX_intro_0130_barman",
-		template_name="DX_intro_0130_barman",
+		entity_name="DX_m01_intro_0130_barman",
+		template_name="DX_m01_intro_0130_barman",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="subtitles_0130",
-		template_name="subtitles_intro_bar15",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},
-	{
-		entity_name="DX_intro_0140_trent",
-		template_name="DX_intro_0140_trent",
+		entity_name="DX_m01_intro_0140_trent",
+		template_name="DX_m01_intro_0140_trent",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="subtitles_0140",
-		template_name="subtitles_intro_bar16",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},
-	{
-		entity_name="DX_intro_0150_barman",
-		template_name="DX_intro_0150_barman",
+		entity_name="DX_m01_intro_0150_barman",
+		template_name="DX_m01_intro_0150_barman",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="subtitles_0150a",
-		template_name="subtitles_intro_bar17",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},
-	{
-		entity_name="subtitles_0150b",
-		template_name="subtitles_intro_bar18",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},
-	{
-		entity_name="subtitles_0150c",
-		template_name="subtitles_intro_bar19",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},
-	{
-		entity_name="subtitles_0150d",
-		template_name="subtitles_intro_bar20",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},
-	{
-		entity_name="DX_intro_0160_trent",
-		template_name="DX_intro_0160_trent",
+		entity_name="DX_m01_intro_0160_trent",
+		template_name="DX_m01_intro_0160_trent",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="subtitles_0160",
-		template_name="subtitles_intro_bar21",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},
-	{
-		entity_name="DX_intro_0170_barman",
-		template_name="DX_intro_0170_barman",
+		entity_name="DX_m01_intro_0170_barman",
+		template_name="DX_m01_intro_0170_barman",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="subtitles_0170a",
-		template_name="subtitles_intro_bar22",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},
-	{
-		entity_name="subtitles_0170b",
-		template_name="subtitles_intro_bar23",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},
-	{
-		entity_name="subtitles_0170c",
-		template_name="subtitles_intro_bar24",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},
-	{
-		entity_name="DX_intro_0180_trent",
-		template_name="DX_intro_0180_trent",
+		entity_name="DX_m01_intro_0180_trent",
+		template_name="DX_m01_intro_0180_trent",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
 	},
 	{
-		entity_name="subtitles_0180",
-		template_name="subtitles_intro_bar25",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
-	},
-	{
-		entity_name="DX_intro_0190_barman",
-		template_name="DX_intro_0190_barman",
+		entity_name="DX_m01_intro_0190_barman",
+		template_name="DX_m01_intro_0190_barman",
 		type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
 		spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
 		audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0},
 		userprops={category="Audio"}
-	},
-	{
-		entity_name="subtitles_0190",
-		template_name="subtitles_intro_bar26",
-		type=COMPOUND, lt_grp=3,srt_grp=-99,usr_flg=0, flags=LIT_AMBIENT,
-		spatialprops={pos={0,-1000,0},orient={{1,0,0},{0,1,0},{0,0,1}}},
-		userprops={category="Prop"}
 	},
 	{
 		entity_name="sfx_put_down_glass05",
@@ -1466,24 +1277,6 @@ events={
 			--"cam_wonderfull"
 		}
 	},
-	{
-		0,
-		ATTACH_ENTITY,
-		{
-			"cam_dbg",
-			"subtitles_0010"
-		},
-		{
-			duration=100,
-			offset={0,0,0},
-			up=Y_AXIS,
-			front=NEG_Z_AXIS,
-			target_part="",
-			target_type=ROOT,
-			flags=LOOK_AT
-		}
-	},
-	
 	
 	{
 		0,
@@ -2137,33 +1930,8 @@ events={
 	{
 		25,
 		START_SOUND,
-		{"DX_intro_0010_trent"},
-		{duration=2}
-	},	
-	{
-		24.5,
-		ATTACH_ENTITY,
-		{
-			"subtitles_0010",
-			"cam_barman"
-		},
-		{
-			duration=2, offset={0, -0.14,  -0.75},
-			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		}
-	},		
-	{
-		26.501,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"subtitles_0010",
-			"offscreen"
-		},
-		{
-			duration=0.001,
-			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
-		}
+		{"DX_m01_intro_0010_trent"},
+		{duration=25}
 	},	
 	
 
@@ -2232,36 +2000,11 @@ events={
 	{
 		26.5,
 		START_SOUND,
-		{"DX_intro_0020_barman"},
-		{duration=3}
+		{"DX_m01_intro_0020_barman"},
+		{duration=35}
 	},	
 	
-	{
-		26.5,
-		ATTACH_ENTITY,
-		{
-			"subtitles_0020",
-			"cam_barman"
-		},
-		{
-			duration=2.5, offset={0, -0.14,  -0.75},
-			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		}
-	},	
-	{
-		29.01,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"subtitles_0020",
-			"offscreen"
-		},
-		{
-			duration=0.001,
-			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
-		}
-	},
-	
+
 	
 	{
 		26.5,
@@ -2274,34 +2017,10 @@ events={
 	{
 		29,
 		START_SOUND,
-		{"DX_intro_0030_trent"},
-		{duration=2}
+		{"DX_m01_intro_0030_trent"},
+		{duration=25}
 	},	
-	{
-		29,
-		ATTACH_ENTITY,
-		{
-			"subtitles_0030",
-			"cam_barman"
-		},
-		{
-			duration=2, offset={0, -0.14,  -0.75},
-			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		}
-	},		
-	{
-		31.001,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"subtitles_0030",
-			"offscreen"
-		},
-		{
-			duration=0.001,
-			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
-		}
-	},	
+
 	{
 		29,
 		START_MOTION,
@@ -2328,34 +2047,10 @@ events={
 	{
 		31,
 		START_SOUND,
-		{"DX_intro_0040_barman"},
-		{duration=4}
+		{"DX_m01_intro_0040_barman"},
+		{duration=45}
 	},	
-	{
-		31,
-		ATTACH_ENTITY,
-		{
-			"subtitles_0040",
-			"cam_barman"
-		},
-		{
-			duration=2, offset={0, -0.14,  -0.75},
-			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		}
-	},		
-	{
-		33.001,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"subtitles_0040",
-			"offscreen"
-		},
-		{
-			duration=0.001,
-			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
-		}
-	},	
+
 	{
 		31,
 		START_MOTION,
@@ -2385,34 +2080,10 @@ events={
 	{
 		33,
 		START_SOUND,
-		{"DX_intro_0050_trent"},
+		{"DX_m01_intro_0050_trent"},
 		{duration=10}
 	},	
-	{
-		33,
-		ATTACH_ENTITY,
-		{
-			"subtitles_0050",
-			"cam_barman"
-		},
-		{
-			duration=6, offset={0, -0.14,  -0.75},
-			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		}
-	},		
-	{
-		39.001,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"subtitles_0050",
-			"offscreen"
-		},
-		{
-			duration=0.001,
-			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
-		}
-	},	
+
 	{
 		33,
 		START_MOTION,
@@ -2467,34 +2138,10 @@ events={
 	{
 		39,
 		START_SOUND,
-		{"DX_intro_0060_barman"},
-		{duration=4}
+		{"DX_m01_intro_0060_barman"},
+		{duration=14}
 	},	
-	{
-		39,
-		ATTACH_ENTITY,
-		{
-			"subtitles_0060",
-			"cam_bottleput"
-		},
-		{
-			duration=4, offset={0, -0.14,  -0.7},
-			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		}
-	},		
-	{
-		43.001,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"subtitles_0060",
-			"offscreen"
-		},
-		{
-			duration=0.001,
-			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
-		}
-	},	
+
 	{
 		39.25,
 		START_MOTION,
@@ -2604,34 +2251,10 @@ events={
 	{
 		45,
 		START_SOUND,
-		{"DX_intro_0070_trent"},
-		{duration=4}
+		{"DX_m01_intro_0070_trent"},
+		{duration=17}
 	},	
-	{
-		45,
-		ATTACH_ENTITY,
-		{
-			"subtitles_0070",
-			"cam_drinking"
-		},
-		{
-			duration=4, offset={0, -0.14,  -0.7},
-			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		}
-	},		
-	{
-		49.001,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"subtitles_0070",
-			"offscreen"
-		},
-		{
-			duration=0.001,
-			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
-		}
-	},	
+	
 	{
 		44.9,
 		START_MOTION,
@@ -2745,34 +2368,10 @@ events={
 	{
 		49,
 		START_SOUND,
-		{"DX_intro_0080_barman"},
+		{"DX_m01_intro_0080_barman"},
 		{duration=6}
 	},
-	{
-		49,
-		ATTACH_ENTITY,
-		{
-			"subtitles_0080",
-			"cam_drinking"
-		},
-		{
-			duration=5, offset={0, -0.14,  -0.75},
-			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		}
-	},		
-	{
-		54.001,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"subtitles_0080",
-			"offscreen"
-		},
-		{
-			duration=0.001,
-			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
-		}
-	},		
+	
 	{
 		49,
 		START_MOTION,
@@ -2812,34 +2411,10 @@ events={
 	{
 		54,
 		START_SOUND,
-		{"DX_intro_0090_trent"},
-		{duration=4}
+		{"DX_m01_intro_0090_trent"},
+		{duration=14}
 	},	
-	{
-		54,
-		ATTACH_ENTITY,
-		{
-			"subtitles_0090",
-			"cam_drinking"
-		},
-		{
-			duration=3, offset={0, -0.14,  -0.75},
-			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		}
-	},		
-	{
-		57.001,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"subtitles_0090",
-			"offscreen"
-		},
-		{
-			duration=0.001,
-			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
-		}
-	},		
+	
 	{
 		54,
 		START_MOTION,
@@ -2979,34 +2554,10 @@ events={
 	{
 		58,
 		START_SOUND,
-		{"DX_intro_0100_trent"},
-		{duration=4}
+		{"DX_m01_intro_0100_trent"},
+		{duration=14}
 	},	
-	{
-		58,
-		ATTACH_ENTITY,
-		{
-			"subtitles_0100",
-			"cam_drinking"
-		},
-		{
-			duration=4, offset={0, -0.14,  -0.75},
-			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		}
-	},		
-	{
-		62.001,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"subtitles_0100",
-			"offscreen"
-		},
-		{
-			duration=0.001,
-			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
-		}
-	},		
+	
 	{
 		58,
 		START_MOTION,
@@ -3076,7 +2627,7 @@ events={
 	{
 		61,
 		START_SOUND,
-		{"DX_intro_0105_trent"},
+		{"DX_m01_intro_0105_trent"},
 		{duration=1}
 	},	
 	{
@@ -3180,86 +2731,12 @@ events={
 	{
 		64,
 		START_SOUND,
-		{"DX_intro_0110_alaric"},
-		{duration=13}
+		{"DX_m01_intro_0110_alaric"},
+		{duration=16}
 	},	
 	
-	{
-		64,
-		ATTACH_ENTITY,
-		{
-			"subtitles_0110a",
-			"cam_handie"
-		},
-		{
-			duration=4, offset={0, -0.135,  -0.9},
-			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		}
-	},		
-	{
-		68.001,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"subtitles_0110a",
-			"offscreen"
-		},
-		{
-			duration=0.001,
-			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
-		}
-	},	
-	{
-		68,
-		ATTACH_ENTITY,
-		{
-			"subtitles_0110b",
-			"cam_handie"
-		},
-		{
-			duration=4, offset={0, -0.135,  -0.9},
-			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		}
-	},		
-	{
-		72.001,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"subtitles_0110b",
-			"offscreen"
-		},
-		{
-			duration=0.001,
-			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
-		}
-	},	
-	{
-		72,
-		ATTACH_ENTITY,
-		{
-			"subtitles_0110c",
-			"cam_handie"
-		},
-		{
-			duration=4, offset={0, -0.135,  -0.9},
-			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		}
-	},		
-	{
-		76.001,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"subtitles_0110c",
-			"offscreen"
-		},
-		{
-			duration=0.001,
-			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
-		}
-	},	
-	
+
+
 	
 	{
 		64,
@@ -3305,31 +2782,7 @@ events={
 			"cam_pda_done"
 		}
 	},
-	{
-		76,
-		ATTACH_ENTITY,
-		{
-			"subtitles_0120",
-			"cam_pda_done"
-		},
-		{
-			duration=2, offset={0, -0.14,  -0.75},
-			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		}
-	},		
-	{
-		78.001,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"subtitles_0120",
-			"offscreen"
-		},
-		{
-			duration=0.001,
-			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
-		}
-	},	
+
 	{
 		76,
 		START_MOTION,
@@ -3357,7 +2810,7 @@ events={
 	{
 		76.5,
 		START_SOUND,
-		{"DX_intro_0120_trent"},
+		{"DX_m01_intro_0120_trent"},
 		{duration=4}
 	},	
 	{
@@ -3426,34 +2879,10 @@ events={
 	{
 		78,
 		START_SOUND,
-		{"DX_intro_0130_barman"},
-		{duration=13}
+		{"DX_m01_intro_0130_barman"},
+		{duration=23}
 	},	
-	{
-		78,
-		ATTACH_ENTITY,
-		{
-			"subtitles_0130",
-			"cam_wonderfull"
-		},
-		{
-			duration=4, offset={0, -0.15,  -0.6},
-			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		}
-	},		
-	{
-		83.001,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"subtitles_0130",
-			"offscreen"
-		},
-		{
-			duration=0.001,
-			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
-		}
-	},	
+	
 	{
 		78,
 		START_MOTION,
@@ -3502,34 +2931,10 @@ events={
 	{
 		83,
 		START_SOUND,
-		{"DX_intro_0140_trent"},
-		{duration=2}
+		{"DX_m01_intro_0140_trent"},
+		{duration=15}
 	},	
-	{
-		83,
-		ATTACH_ENTITY,
-		{
-			"subtitles_0140",
-			"cam_whatdo"
-		},
-		{
-			duration=3, offset={0, -0.14,  -0.75},
-			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		}
-	},		
-	{
-		86.001,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"subtitles_0140",
-			"offscreen"
-		},
-		{
-			duration=0.001,
-			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
-		}
-	},	
+	
 	{
 		83,
 		START_MOTION,
@@ -3667,108 +3072,8 @@ events={
 	{
 		86,
 		START_SOUND,
-		{"DX_intro_0150_barman"},
-		{duration=25}
-	},	
-	{
-		86,
-		ATTACH_ENTITY,
-		{
-			"subtitles_0150a",
-			"cam_whatdo_explanation"
-		},
-		{
-			duration=5.5, offset={0, -0.15,  -0.6},
-			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		}
-	},		
-	{
-		91.501,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"subtitles_0150a",
-			"offscreen"
-		},
-		{
-			duration=0.001,
-			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
-		}
-	},	
-	{
-		91.5,
-		ATTACH_ENTITY,
-		{
-			"subtitles_0150b",
-			"cam_whatdo_explanation"
-		},
-		{
-			duration=5.5, offset={0, -0.15,  -0.6},
-			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		}
-	},		
-	{
-		97.001,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"subtitles_0150b",
-			"offscreen"
-		},
-		{
-			duration=0.001,
-			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
-		}
-	},	
-	{
-		97,
-		ATTACH_ENTITY,
-		{
-			"subtitles_0150c",
-			"cam_whatdo_explanation"
-		},
-		{
-			duration=5, offset={0, -0.15,  -0.6},
-			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		}
-	},		
-	{
-		102.001,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"subtitles_0150c",
-			"offscreen"
-		},
-		{
-			duration=0.001,
-			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
-		}
-	},	
-	{
-		102,
-		ATTACH_ENTITY,
-		{
-			"subtitles_0150d",
-			"cam_whatdo_explanation"
-		},
-		{
-			duration=3, offset={0, -0.15,  -0.6},
-			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		}
-	},		
-	{
-		105.001,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"subtitles_0150d",
-			"offscreen"
-		},
-		{
-			duration=0.001,
-			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
-		}
+		{"DX_m01_intro_0150_barman"},
+		{duration=235}
 	},	
 	
 	{
@@ -3813,34 +3118,10 @@ events={
 	{
 		107,
 		START_SOUND,
-		{"DX_intro_0160_trent"},
-		{duration=2}
+		{"DX_m01_intro_0160_trent"},
+		{duration=22}
 	},	
-	{
-		107,
-		ATTACH_ENTITY,
-		{
-			"subtitles_0160",
-			"cam_whatdo"
-		},
-		{
-			duration=3, offset={0, -0.14,  -0.75},
-			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		}
-	},		
-	{
-		110.001,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"subtitles_0160",
-			"offscreen"
-		},
-		{
-			duration=0.001,
-			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
-		}
-	},	
+	
 	{
 		107,
 		START_MOTION,
@@ -3943,84 +3224,10 @@ events={
 	{
 		111,
 		START_SOUND,
-		{"DX_intro_0170_barman"},
-		{duration=25}
+		{"DX_m01_intro_0170_barman"},
+		{duration=35}
 	},	
-	{
-		111,
-		ATTACH_ENTITY,
-		{
-			"subtitles_0170a",
-			"cam_whatdo_explanation"
-		},
-		{
-			duration=4, offset={0, -0.15,  -0.6},
-			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		}
-	},		
-	{
-		115.001,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"subtitles_0170a",
-			"offscreen"
-		},
-		{
-			duration=0.001,
-			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
-		}
-	},	
-	{
-		115,
-		ATTACH_ENTITY,
-		{
-			"subtitles_0170b",
-			"cam_whatdo_explanation"
-		},
-		{
-			duration=6, offset={0, -0.15,  -0.6},
-			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		}
-	},		
-	{
-		121.001,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"subtitles_0170b",
-			"offscreen"
-		},
-		{
-			duration=0.001,
-			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
-		}
-	},
-	{
-		121,
-		ATTACH_ENTITY,
-		{
-			"subtitles_0170c",
-			"cam_whatdo_explanation"
-		},
-		{
-			duration=6,offset={0, -0.15,  -0.6},
-			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		}
-	},		
-	{
-		127.001,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"subtitles_0170c",
-			"offscreen"
-		},
-		{
-			duration=0.001,
-			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
-		}
-	},
+
 
 	{
 		111,
@@ -4130,34 +3337,10 @@ events={
 	{
 		129,
 		START_SOUND,
-		{"DX_intro_0180_trent"},
-		{duration=6}
+		{"DX_m01_intro_0180_trent"},
+		{duration=16}
 	},	
-	{
-		129,
-		ATTACH_ENTITY,
-		{
-			"subtitles_0180",
-			"cam_last"
-		},
-		{
-			duration=5.5, offset={0, -0.15,  -0.75},
-			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		}
-	},		
-	{
-		134.501,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"subtitles_0180",
-			"offscreen"
-		},
-		{
-			duration=0.001,
-			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
-		}
-	},
+	
 	{
 		129,
 		START_MOTION,
@@ -4168,34 +3351,10 @@ events={
 	{
 		134.5,
 		START_SOUND,
-		{"DX_intro_0190_barman"},
-		{duration=25}
+		{"DX_m01_intro_0190_barman"},
+		{duration=35}
 	},	
-	{
-		134.5,
-		ATTACH_ENTITY,
-		{
-			"subtitles_0190",
-			"cam_last"
-		},
-		{
-			duration=4, offset={0, -0.15,  -0.75},
-			up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		}
-	},		
-	{
-		138.501,
-		START_SPATIAL_PROP_ANIM,
-		{
-			"subtitles_0190",
-			"offscreen"
-		},
-		{
-			duration=0.001,
-			target_part="", target_type=ROOT, spatialprops={pos={0,0,0},q_orient={1,0,0,0}}
-		}
-	},
+	
 
 	{
 		134.5,
@@ -4293,29 +3452,6 @@ events={
 		}
 	},
 	
-	
-	-- {
-		-- 1,
-		-- SET_CAMERA,
-		-- {
-			-- "Monitor_1",
-			-- "cam_last"
-		-- }
-	-- },
-	
-	-- {
-		-- 1,
-		-- ATTACH_ENTITY,
-		-- {
-			-- "subtitles_0130",
-			-- "cam_last"
-		-- },
-		-- {
-			-- duration=2, offset={0, -0.15,  -0.75},
-			-- up=Y_AXIS,front=NEG_Z_AXIS,target_part="",
-			-- target_type=ROOT, flags=POSITION + ORIENTATION + ENTITY_RELATIVE
-		-- }
-	-- },		
 
 }
 

@@ -1,0 +1,4360 @@
+duration=151.162
+
+entities={
+	{
+		entity_name="Scene_m11_ambush",
+		type=SCENE,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		up=Y_AXIS,
+		front=Z_AXIS,
+		ambient={
+		    0,
+		    0,
+		    0
+		}
+	},
+
+	{
+		entity_name="Monitor_1",
+		type=MONITOR,
+		template_name="",
+		template_id=0
+	},
+	{
+		entity_name="offscreen",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={pos={-10000000,-10000,0},orient={ {1,0,0},{0,1,0},{0,0,1} } },
+	},
+
+	{
+		entity_name="offscreen_back",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={pos={0,-10000,-10000000},orient={ {1,0,0},{0,1,0},{0,0,1} } },
+	},
+
+    
+	
+{
+    entity_name="DX_m11_ambush_0010_trent",
+    template_name="DX_m11_ambush_0010_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m11_ambush_0030_rockford",
+    template_name="DX_m11_ambush_0030_rockford",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m11_ambush_0040_trent",
+    template_name="DX_m11_ambush_0040_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m11_ambush_0050_rockford",
+    template_name="DX_m11_ambush_0050_rockford",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m11_ambush_0060_trent",
+    template_name="DX_m11_ambush_0060_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m11_ambush_0070_trent",
+    template_name="DX_m11_ambush_0070_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m11_ambush_0080_rockford",
+    template_name="DX_m11_ambush_0080_rockford",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m11_ambush_0090_rockford",
+    template_name="DX_m11_ambush_0090_rockford",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m11_ambush_0100_rockford",
+    template_name="DX_m11_ambush_0100_rockford",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m11_ambush_0110_rockford",
+    template_name="DX_m11_ambush_0110_rockford",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m11_ambush_0120_rockford",
+    template_name="DX_m11_ambush_0120_rockford",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m11_ambush_0130_trent",
+    template_name="DX_m11_ambush_0130_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m11_ambush_0150_rockford",
+    template_name="DX_m11_ambush_0150_rockford",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m11_ambush_0160_rockford",
+    template_name="DX_m11_ambush_0160_rockford",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m11_ambush_0170_rockford",
+    template_name="DX_m11_ambush_0170_rockford",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m11_ambush_0180_rockford",
+    template_name="DX_m11_ambush_0180_rockford",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m11_ambush_0200_rockford",
+    template_name="DX_m11_ambush_0200_rockford",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m11_ambush_0205_trent",
+    template_name="DX_m11_ambush_0205_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m11_ambush_0210_rockford",
+    template_name="DX_m11_ambush_0210_rockford",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m11_ambush_0220_rockford",
+    template_name="DX_m11_ambush_0220_rockford",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m11_ambush_0230_trent",
+    template_name="DX_m11_ambush_0230_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m11_ambush_0250_trent",
+    template_name="DX_m11_ambush_0250_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m11_ambush_0260_kim",
+    template_name="DX_m11_ambush_0260_kim",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m11_ambush_0270_trent",
+    template_name="DX_m11_ambush_0270_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m11_ambush_0280_kim",
+    template_name="DX_m11_ambush_0280_kim",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m11_ambush_0290_trent",
+    template_name="DX_m11_ambush_0290_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+     ,
+    
+
+	{
+    entity_name="automarker_default_point",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_offscreen_point",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, -10000.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_dbg",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.19, 4.14, 1.50 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_ku_kyushu_bar",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, -0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_dbg_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 3.26, 1.54, 5.75 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_trent_init",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 7.13, 0.00, 5.79 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_trent_chair",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, -0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_rockford_talk",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.70, 0.00, 8.41 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_rockford_sit",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.61, 0.00, 8.39 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_trent___-",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 3.08, 0.00, 7.05 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_trent_talk",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 3.07, 0.00, 7.00 },
+        orient={ 
+            { -0.7071068,-0.0000000,-0.7071068 },
+            { 0.0000000,1.0000000,-0.0000000 },
+            { 0.7071068,0.0000000,-0.7071068 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_light1",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.29, 1.91, 7.17 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_light2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.77, 1.33, 7.88 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_start",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.74, 3.26, 2.54 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_start_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.24, 1.07, 7.51 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_start_focus2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 4.33, 1.53, 6.36 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_start2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.06, 2.25, 4.22 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_trent_walk",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.81, 1.70, 6.16 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_trent_dbg",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.82, 0.00, 5.79 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_rockford_top",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.85, 1.47, 7.89 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_trent_stand",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.33, 1.23, 8.30 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_trent_stand_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.60, 1.58, 6.50 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_trent_stand",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.70, 0.00, 6.77 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_rockford_first",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.49, 1.73, 5.88 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_rockford_first_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.19, 1.11, 7.79 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_trent_arrive",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.69, 1.70, 6.91 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_trent_sitting",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.22, 1.49, 7.39 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_trent_sitting_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 3.12, 1.15, 6.78 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_trent_near_table",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.35, 0.00, 6.38 },
+        orient={ 
+            { -0.7660444,0.0000000,-0.6427876 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.6427876,0.0000000,-0.7660444 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_trent_sitdown",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.22, 0.95, 7.64 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_trent_sitting_focus2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 3.12, 1.09, 6.99 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_trent_sitting2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.36, 1.40, 7.39 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_rockford",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.51, 1.17, 6.92 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_rockford_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.86, 1.14, 8.57 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_rockford_focus2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.22, 0.69, 8.32 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_offscreen",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.89, -1.15, 7.92 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_glass1",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.81, 0.80, 7.75 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,0.0000000,-1.0000000 },
+            { 0.0000000,1.0000000,0.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_glass2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.54, 0.80, 7.90 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,0.0000000,-1.0000000 },
+            { 0.0000000,1.0000000,0.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_ashtray_2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.39, 0.82, 8.05 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_bottle_wine_1",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.69, 0.98, 7.83 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,0.0000000,-1.0000000 },
+            { 0.0000000,1.0000000,0.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_rockford_smoking",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.55, 1.71, 8.17 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_rockford_smoking2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.59, 1.94, 7.60 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_trent",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.53, 1.10, 7.52 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_trent_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 3.27, 1.18, 7.06 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_trent2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.57, 1.10, 7.64 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_rockford_smoke_eye",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 3.15, 0.66, 6.88 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_rockford_smoke_head",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.65, 1.06, 7.02 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_rockford2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.14, 1.17, 6.91 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_rockford3",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.51, 1.17, 7.07 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_rockford_walkout",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.81, 1.20, 6.91 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_rockford_walkout_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.95, 1.09, 8.26 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_rockford_stand_look",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.73, 1.27, 6.95 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_trent_talk_top",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.61, 1.53, 7.08 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_rockford_walkout2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.94, 1.81, 6.20 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_rockford_walkout_focus2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.71, 1.54, 7.49 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_rockford_walking",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 3.16, 1.43, -1.58 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_mrk_rockford_walking2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 8.99, 1.43, 6.93 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_trent_damn",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.73, 1.17, 8.14 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_trent_damn_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.91, 1.05, 6.96 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_trent_damn2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.93, 1.17, 8.47 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_trent_pda",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.28, 0.69, 6.44 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_trent_pda_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.50, 1.31, 6.59 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_light3",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.77, 0.73, 5.03 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_kim_init",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.70, 0.00, -10.39 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_trent_pda2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.55, 0.69, 5.95 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_light4",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 2.27, 0.35, 8.24 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="cam_dbg",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ 1.19, 4.14, 1.50 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=30,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+,
+{
+    entity_name="cam_start",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ 1.74, 3.26, 2.54 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=21,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+,
+{
+    entity_name="cam_trent_stand",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ 2.33, 1.23, 8.30 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=18,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+,
+{
+    entity_name="cam_trent_sitting",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ 1.22, 1.49, 7.39 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=18,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+,
+{
+    entity_name="cam_trent",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ 1.53, 1.10, 7.52 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=18,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+,
+{
+    entity_name="cam_trent_damn",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ 1.73, 1.17, 8.14 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=19,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+,
+{
+    entity_name="cam_trent_pda",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ 1.28, 0.69, 6.44 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=22,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+,
+{
+    entity_name="cam_rockford_first",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ 2.49, 1.73, 5.88 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=20,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+,
+{
+    entity_name="cam_rockford",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ 2.51, 1.17, 6.92 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=18,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+,
+{
+    entity_name="cam_rockford_walkout",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ 2.81, 1.20, 6.91 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=22,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+,
+{
+    entity_name="rock_cig",
+    type=COMPOUND,
+    template_name="cigarette_2",
+    lt_grp=21,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1.89, -1.15, 7.92
+        },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 }, 
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    userprops={
+        category="Prop"
+    }
+}
+,
+{
+    entity_name="rock_ash",
+    type=COMPOUND,
+    template_name="ashtray_2",
+    lt_grp=21,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            2.39, 0.82, 8.05
+        },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 }, 
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    userprops={
+        category="Prop"
+    }
+}
+,
+{
+    entity_name="glass1",
+    type=COMPOUND,
+    template_name="glass",
+    lt_grp=21,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            2.81, 0.80, 7.75
+        },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 }, 
+            { 0.0000000,0.0000000,-1.0000000 },
+            { 0.0000000,1.0000000,0.0000000 }
+         }
+    },
+    userprops={
+        category="Prop"
+    }
+}
+,
+{
+    entity_name="glass2",
+    type=COMPOUND,
+    template_name="glass",
+    lt_grp=21,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            2.54, 0.80, 7.90
+        },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 }, 
+            { 0.0000000,0.0000000,-1.0000000 },
+            { 0.0000000,1.0000000,0.0000000 }
+         }
+    },
+    userprops={
+        category="Prop"
+    }
+}
+,
+{
+    entity_name="bottle_wine_1",
+    type=COMPOUND,
+    template_name="bottle_wine_1",
+    lt_grp=21,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            2.69, 0.98, 7.83
+        },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 }, 
+            { 0.0000000,0.0000000,-1.0000000 },
+            { 0.0000000,1.0000000,0.0000000 }
+         }
+    },
+    userprops={
+        category="Prop"
+    }
+}
+,
+{
+    entity_name="cig_fx1",
+    type=PSYS,
+    template_name="rtc_sydsmoke",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=HIDDEN + LIT_DYNAMIC + LIT_AMBIENT,
+    spatialprops={
+        pos={
+            1.89, -1.15, 7.92
+        },
+        orient={
+            
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+        
+        }
+    },
+    psysprops={
+        sparam=0
+    }
+}
+,
+{
+    entity_name="cig_fx2",
+    type=PSYS,
+    template_name="rtc_cigaretteglow",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=HIDDEN + LIT_DYNAMIC + LIT_AMBIENT,
+    spatialprops={
+        pos={
+            1.89, -1.15, 7.92
+        },
+        orient={
+            
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+        
+        }
+    },
+    psysprops={
+        sparam=0
+    }
+}
+,
+{
+    entity_name="LIGHT_ROOMA",
+    type=LIGHT,
+    template_name="",
+    lt_grp=21,
+    srt_grp=0,
+    usr_flg=0,
+    
+    spatialprops={
+        pos={ 2.29, 1.91, 7.17 },
+        orient={
+            {1,0,0},
+            {0,1,0},
+            {0,0,1}
+        }
+    },
+    lightprops={
+        on=Y,
+        color={
+            255,
+            255,
+            255
+        },
+        diffuse={
+            0.8, 0.7, 0.3
+        },
+        specular={
+            0,
+            0,
+            0
+        },
+        ambient={
+            0, 0, 0
+        },
+        direction={
+            0, 0, -1
+        },
+        range=15,
+        cutoff=90,
+        type=L_POINT,
+        theta=90,
+        atten={
+            1,
+            0,
+            0.003
+        }
+    }
+}
+,
+{
+    entity_name="LIGHT_ROOMV",
+    type=LIGHT,
+    template_name="",
+    lt_grp=21,
+    srt_grp=0,
+    usr_flg=0,
+    
+    spatialprops={
+        pos={ 2.77, 1.33, 7.88 },
+        orient={
+            {1,0,0},
+            {0,1,0},
+            {0,0,1}
+        }
+    },
+    lightprops={
+        on=Y,
+        color={
+            255,
+            255,
+            255
+        },
+        diffuse={
+            0.25, 0.0, 0.0
+        },
+        specular={
+            0,
+            0,
+            0
+        },
+        ambient={
+            0, 0, 0
+        },
+        direction={
+            0, 0, -1
+        },
+        range=15,
+        cutoff=90,
+        type=L_POINT,
+        theta=90,
+        atten={
+            1,
+            0,
+            0.003
+        }
+    }
+}
+,
+{
+    entity_name="LIGHT_ROOMX",
+    type=LIGHT,
+    template_name="",
+    lt_grp=21,
+    srt_grp=0,
+    usr_flg=0,
+    
+    spatialprops={
+        pos={ 2.77, 0.73, 5.03 },
+        orient={
+            {1,0,0},
+            {0,1,0},
+            {0,0,1}
+        }
+    },
+    lightprops={
+        on=N,
+        color={
+            255,
+            255,
+            255
+        },
+        diffuse={
+            0.6, 0.5, 0.5
+        },
+        specular={
+            0,
+            0,
+            0
+        },
+        ambient={
+            0, 0, 0
+        },
+        direction={
+            0, 0, -1
+        },
+        range=15,
+        cutoff=90,
+        type=L_POINT,
+        theta=90,
+        atten={
+            1,
+            0,
+            0.003
+        }
+    }
+}
+,
+{
+    entity_name="LIGHT_ROOMX2",
+    type=LIGHT,
+    template_name="",
+    lt_grp=21,
+    srt_grp=0,
+    usr_flg=0,
+    
+    spatialprops={
+        pos={ 2.27, 0.35, 8.24 },
+        orient={
+            {1,0,0},
+            {0,1,0},
+            {0,0,1}
+        }
+    },
+    lightprops={
+        on=N,
+        color={
+            255,
+            255,
+            255
+        },
+        diffuse={
+            0.4, 0.3, 0.2
+        },
+        specular={
+            0,
+            0,
+            0
+        },
+        ambient={
+            0, 0, 0
+        },
+        direction={
+            0, 0, -1
+        },
+        range=10,
+        cutoff=90,
+        type=L_POINT,
+        theta=90,
+        atten={
+            1,
+            0,
+            0.003
+        }
+    }
+}
+,
+{
+    entity_name="Char_rockford",
+    type=DEFORMABLE,
+    template_name="rockford",
+    lt_grp=21,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1.70, 0.00, 8.41
+        },
+        orient={ 
+            { 0.7071068,0.0000000,0.7071068 }, 
+            { 0.0000000,1.0000000,0.0000000 },
+            { -0.7071068,0.0000000,0.7071068 }
+         }
+    },
+    compoundprops={
+        floor_height=0
+    },
+    userprops={
+        Actor="rockford",
+        category="Character"
+    }
+}
+,
+{
+    entity_name="char_ik_Char_rockford_head_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="char_ik_Char_rockford_eye_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="Char_trent",
+    type=DEFORMABLE,
+    template_name="trent",
+    lt_grp=21,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            7.13, 0.00, 5.79
+        },
+        orient={ 
+            { 0.0000000,-0.0000000,-1.0000000 }, 
+            { 0.0000000,1.0000000,-0.0000000 },
+            { 1.0000000,0.0000000,0.0000000 }
+         }
+    },
+    compoundprops={
+        floor_height=0
+    },
+    userprops={
+        Actor="Player",
+        category="Character"
+    }
+}
+,
+{
+    entity_name="char_ik_Char_trent_head_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="char_ik_Char_trent_eye_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="Char_kim",
+    type=DEFORMABLE,
+    template_name="kim",
+    lt_grp=21,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            2.70, 0.00, -10.39
+        },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 }, 
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    compoundprops={
+        floor_height=0
+    },
+    userprops={
+        Actor="kim",
+        category="Character"
+    }
+}
+,
+{
+    entity_name="char_ik_Char_kim_head_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="char_ik_Char_kim_eye_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="charpoint_trent_init",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 7.13, 1.65, 5.79 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="charpoint_trent_talk",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 3.07, 1.25, 7.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="charpoint_rockford_talk",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.70, 1.25, 8.41 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+}
+
+events={
+
+    {
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_dbg",
+        "automarker_cam_dbg_focus"
+    },
+    {
+        duration=1000, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_start",
+        "automarker_cam_start_focus"
+    },
+    {
+        duration=1000, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_trent_stand",
+        "automarker_cam_trent_stand_focus"
+    },
+    {
+        duration=1000, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_trent_sitting",
+        "automarker_cam_trent_sitting_focus"
+    },
+    {
+        duration=1000, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_trent",
+        "automarker_cam_trent_focus"
+    },
+    {
+        duration=1000, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_trent_damn",
+        "automarker_cam_trent_damn_focus"
+    },
+    {
+        duration=1000, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_trent_pda",
+        "automarker_cam_trent_pda_focus"
+    },
+    {
+        duration=1000, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_rockford_first",
+        "automarker_cam_rockford_first_focus"
+    },
+    {
+        duration=1000, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_rockford",
+        "automarker_cam_rockford_focus"
+    },
+    {
+        duration=1000, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_rockford_walkout",
+        "automarker_cam_rockford_walkout_focus"
+    },
+    {
+        duration=1000, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    START_PSYS,
+    {
+        "cig_fx1"
+    },
+    {
+        duration=5000
+    }
+}
+,
+{
+    0,
+    START_PSYS,
+    {
+        "cig_fx2"
+    },
+    {
+        duration=5000
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "cig_fx1",
+        "rock_cig"
+    },
+    {
+        duration=1000,
+        offset={
+            0,
+            0,
+            0
+        },
+        up=Y_AXIS,
+        front=NEG_Z_AXIS,
+        target_part="hp_cigarette_tip_smoke",
+        target_type=HARDPOINT,
+        flags=POSITION
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "cig_fx2",
+        "rock_cig"
+    },
+    {
+        duration=1000,
+        offset={
+            0,
+            0,
+            0
+        },
+        up=Y_AXIS,
+        front=NEG_Z_AXIS,
+        target_part="hp_cigarette_tip_smoke",
+        target_type=HARDPOINT,
+        flags=POSITION
+    }
+}
+,
+{
+    0,
+    CONNECT_HARDPOINTS,
+    {
+        "rock_cig",
+        "Char_rockford"
+    },
+    {
+        duration=1000,
+        hardpoint="hprightconnect_cigarette2",
+        parent_hardpoint="hprightconnect"
+    }
+}
+,
+{
+    0,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_MLBODY_CHRF_IDLE_000LV_XA_06",
+     duration=100, time_scale=1, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    1,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_MLBODY_CHRF_GRABR_CHIN_RLEASE_000LV_XA_02",
+     duration=100, time_scale=0.7, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    2,
+    START_IK,
+    {
+        "Char_rockford",
+        "automarker_mrk_rockford_smoking"
+    },
+    {
+        duration=7.746,
+        end_effector="RLowArm", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    2,
+    START_IK,
+    {
+        "Char_rockford",
+        "automarker_mrk_rockford_smoking2"
+    },
+    {
+        duration=7.746,
+        end_effector="RHand", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=X_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_head_ik",
+        "automarker_mrk_trent_walk"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_eye_ik",
+        "automarker_mrk_trent_walk"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_rockford_head_ik",
+        "automarker_mrk_trent_arrive"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_rockford_eye_ik",
+        "automarker_mrk_trent_arrive"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    0,
+    START_IK,
+    {
+        "Char_trent",
+        "char_ik_Char_trent_head_ik"
+    },
+    {
+        duration=123.706,
+        end_effector="Body_Head", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    0,
+    START_IK,
+    {
+        "Char_trent",
+        "char_ik_Char_trent_eye_ik"
+    },
+    {
+        duration=123.706,
+        end_effector="Eye IK Left", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    4,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_WLKG_000LV_XA_01",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   
+     }
+}
+,
+{
+    6.6,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_WALK_STND_TRNS_000LV_XA_02",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    6,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "Char_trent"
+    },
+    {
+        duration=2.5,
+        target_type=ROOT,
+        spatialprops={
+            axisrot={
+                45,
+                Y_AXIS
+            }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    6,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_head_ik",
+        "automarker_mrk_rockford_top"
+    },
+    {
+        duration=2.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    6,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_eye_ik",
+        "charpoint_rockford_talk"
+    },
+    {
+        duration=1.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    0,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_start"
+    }
+}
+,
+{
+    0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "cam_start",
+        "automarker_cam_start2"
+    },
+    {
+        duration=7,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "automarker_cam_start_focus",
+        "automarker_cam_start_focus2"
+    },
+    {
+        duration=7,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    7,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_trent_stand"
+    }
+}
+,
+{
+    8.0,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s045b_1801_trent", duration=10, start_time=0.5, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    8,
+    START_SOUND,
+    {
+        "DX_m11_ambush_0010_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    9.246,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_rockford_first"
+    }
+}
+,
+{
+    9.246,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   
+     }
+}
+,
+{
+    9.246,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_MLBODY_CHRF_HOLD_CHIN_RLEASE_000LV_XA_03",
+     duration=100, time_scale=0.7, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    11.246,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_MLBODY_CHRF_IDLE_000LV_XA_06",
+     duration=10, time_scale=0.7, start_time=0, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    10.246,
+    START_IK,
+    {
+        "Char_rockford",
+        "char_ik_Char_rockford_head_ik"
+    },
+    {
+        duration=1000,
+        end_effector="Body_Head", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    9.246,
+    START_IK,
+    {
+        "Char_rockford",
+        "char_ik_Char_rockford_eye_ik"
+    },
+    {
+        duration=1000,
+        end_effector="Eye IK Left", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    11.246,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_dx_s026b_2401_vance", duration=10, start_time=1, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    11.246,
+    START_SOUND,
+    {
+        "DX_m11_ambush_0030_rockford"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    14.846,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_trent_sitting"
+    }
+}
+,
+{
+    14.846,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "cam_trent_sitting",
+        "automarker_cam_trent_sitting2"
+    },
+    {
+        duration=4,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    14.846,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "automarker_cam_trent_sitting_focus",
+        "automarker_cam_trent_sitting_focus2"
+    },
+    {
+        duration=4,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    14.846,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "Char_trent",
+        "automarker_trent_near_table"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    14.846,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_SITCR_TRNS_180DN_XA_06",
+     duration=100, time_scale=1, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    14.846,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_head_ik",
+        "charpoint_rockford_talk"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    14.846,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_eye_ik",
+        "charpoint_rockford_talk"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    14.846,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_rockford_head_ik",
+        "charpoint_trent_talk"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    14.846,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_rockford_eye_ik",
+        "charpoint_trent_talk"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    17.446,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s045d_0401_trent", duration=10, start_time=0.5, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    17.446,
+    START_SOUND,
+    {
+        "DX_m11_ambush_0040_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    20.826,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_rockford"
+    }
+}
+,
+{
+    20.826,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "Char_trent",
+        "automarker_trent_talk"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    20.826,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+     duration=20, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   
+     }
+}
+,
+{
+    20.826,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_dx_s026b_1901_vance", duration=10, start_time=1, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    20.826,
+    START_SOUND,
+    {
+        "DX_m11_ambush_0050_rockford"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    26.718,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_trent"
+    }
+}
+,
+{
+    26.718,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "cam_trent",
+        "automarker_cam_trent2"
+    },
+    {
+        duration=14,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    26.718,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s068x_0401_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    26.718,
+    START_SOUND,
+    {
+        "DX_m11_ambush_0060_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    31.256,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_CHRB_CHRF_TRNS_000LV_XA_02",
+     duration=100, time_scale=0.8, start_time=0, weight=1, heading=-1
+       , trans_time=0.5 
+     }
+}
+,
+{
+    33.506,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_CHRF_IDLE_000LV_XA_06",
+     duration=20, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   
+     }
+}
+,
+{
+    31.506,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s020x_1601_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    34.006,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s020x_1601_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    31.506,
+    START_SOUND,
+    {
+        "DX_m11_ambush_0070_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    41.302,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_MLBODY_CHRF_IDLE_000LV_XA_06",
+     duration=100, time_scale=1, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    41.302,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_rockford"
+    }
+}
+,
+{
+    41.302,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "cam_rockford",
+        "automarker_cam_rockford2"
+    },
+    {
+        duration=39.276,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    41.302,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_dx_s020x_3402_vanpelt", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    41.302,
+    START_SOUND,
+    {
+        "DX_m11_ambush_0080_rockford"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    45.874,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_dx_s026b_1501_vance", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    45.874,
+    START_SOUND,
+    {
+        "DX_m11_ambush_0090_rockford"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    50.534000000000006,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_MLBODY_CHRF_GRABR_CHIN_RLEASE_000LV_XA_02",
+     duration=100, time_scale=0.6, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    54.534000000000006,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_MLBODY_CHRF_HOLD_CHIN_RLEASE_000LV_XA_03",
+     duration=100, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    56.034000000000006,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_MLBODY_CHRF_IDLE_000LV_XA_06",
+     duration=100, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   , trans_time=1 
+     }
+}
+,
+{
+    52.534000000000006,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_rockford_head_ik",
+        "automarker_mrk_rockford_smoke_head"
+    },
+    {
+        duration=1,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    52.534000000000006,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_rockford_eye_ik",
+        "automarker_mrk_rockford_smoke_eye"
+    },
+    {
+        duration=0.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    54.534000000000006,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_rockford_head_ik",
+        "charpoint_trent_talk"
+    },
+    {
+        duration=1,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    54.534000000000006,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_rockford_eye_ik",
+        "charpoint_trent_talk"
+    },
+    {
+        duration=0.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    52.534000000000006,
+    START_IK,
+    {
+        "Char_rockford",
+        "automarker_mrk_rockford_smoking"
+    },
+    {
+        duration=3,
+        end_effector="RLowArm", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    52.534000000000006,
+    START_IK,
+    {
+        "Char_rockford",
+        "automarker_mrk_rockford_smoking2"
+    },
+    {
+        duration=3,
+        end_effector="RHand", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=X_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    55.534000000000006,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_dx_s026b_2401_vance", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    55.534000000000006,
+    START_SOUND,
+    {
+        "DX_m11_ambush_0100_rockford"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    60.754000000000005,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_dx_s026b_1501_vance", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    63.754000000000005,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_dx_s026b_1501_vance", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    60.754000000000005,
+    START_SOUND,
+    {
+        "DX_m11_ambush_0110_rockford"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    68.414,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_MLBODY_CHRF_CONV_RHNDUP_TRNS_000LV_XA_02",
+     duration=100, time_scale=0.6, start_time=0, weight=1, heading=-1
+       , trans_time=0.5 
+     }
+}
+,
+{
+    70.414,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_MLBODY_CHRF_CONV_RHND_CASL_000LV_XA_04",
+     duration=100, time_scale=0.6, start_time=0, weight=1, heading=-1
+     , event_flags=2   , trans_time=1 
+     }
+}
+,
+{
+    74.414,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_MLBODY_CHRF_CONV_RHNDDN_TRNS_000LV_XA_02",
+     duration=100, time_scale=0.6, start_time=0, weight=1, heading=-1
+       , trans_time=0.5 
+     }
+}
+,
+{
+    76.414,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_MLBODY_CHRF_IDLE_000LV_XA_06",
+     duration=100, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=0.5 
+     }
+}
+,
+{
+    70.414,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="sc_dx_s026b_1001_vance", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    72.914,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_dx_s026b_1501_vance", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    75.414,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="sc_dx_s026b_1001_vance", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    70.414,
+    START_SOUND,
+    {
+        "DX_m11_ambush_0120_rockford"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    80.578,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_trent"
+    }
+}
+,
+{
+    80.578,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_CHRF_CHRB_TRNS_000LV_XA_02",
+     duration=100, time_scale=0.8, start_time=0, weight=1, heading=-1
+       , trans_time=0.5 
+     }
+}
+,
+{
+    80.578,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s014c_0101_trent", duration=10, time_scale=0.9, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    80.578,
+    START_SOUND,
+    {
+        "DX_m11_ambush_0130_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    85.798,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "cam_rockford",
+        "automarker_cam_rockford2"
+    },
+    {
+        duration=0.1,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    85.998,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_rockford"
+    }
+}
+,
+{
+    85.998,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "cam_rockford",
+        "automarker_cam_rockford3"
+    },
+    {
+        duration=28.332000000000008,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    85.998,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_MLBODY_CHRF_IDLE_000LV_XA_06",
+     duration=100, time_scale=1, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    85.998,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_dx_s026b_1701_vance", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    85.998,
+    START_SOUND,
+    {
+        "DX_m11_ambush_0150_rockford"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    88.87400000000001,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_MLBODY_CHRF_CONV_RHNDUP_TRNS_000LV_XA_02",
+     duration=100, time_scale=0.6, start_time=0, weight=1, heading=-1
+       , trans_time=0.5 
+     }
+}
+,
+{
+    90.87400000000001,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_MLBODY_CHRF_CONV_RHND_CASL_000LV_XA_04",
+     duration=100, time_scale=0.6, start_time=0, weight=1, heading=-1
+     , event_flags=2   , trans_time=1 
+     }
+}
+,
+{
+    92.87400000000001,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_dx_s026b_1201_vance", duration=10, start_time=1.25, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    92.87400000000001,
+    START_SOUND,
+    {
+        "DX_m11_ambush_0160_rockford"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    94.822,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_MLBODY_CHRF_GRABR_CHIN_RLEASE_000LV_XA_02",
+     duration=100, time_scale=0.6, start_time=0.5, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    98.822,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_MLBODY_CHRF_HOLD_CHIN_RLEASE_000LV_XA_03",
+     duration=100, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    100.322,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_MLBODY_CHRF_IDLE_000LV_XA_06",
+     duration=100, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   , trans_time=1 
+     }
+}
+,
+{
+    96.822,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_rockford_head_ik",
+        "automarker_mrk_rockford_smoke_head"
+    },
+    {
+        duration=1,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    96.822,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_rockford_eye_ik",
+        "automarker_mrk_rockford_smoke_eye"
+    },
+    {
+        duration=0.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    98.822,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_rockford_head_ik",
+        "charpoint_trent_talk"
+    },
+    {
+        duration=1,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    98.822,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_rockford_eye_ik",
+        "charpoint_trent_talk"
+    },
+    {
+        duration=0.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    96.322,
+    START_IK,
+    {
+        "Char_rockford",
+        "automarker_mrk_rockford_smoking"
+    },
+    {
+        duration=3,
+        end_effector="RLowArm", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    96.322,
+    START_IK,
+    {
+        "Char_rockford",
+        "automarker_mrk_rockford_smoking2"
+    },
+    {
+        duration=3,
+        end_effector="RHand", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=X_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    96.322,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_rockford_head_ik",
+        "automarker_mrk_rockford_smoke_head"
+    },
+    {
+        duration=1,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    96.322,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_rockford_eye_ik",
+        "automarker_mrk_rockford_smoke_eye"
+    },
+    {
+        duration=0.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    98.822,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_rockford_head_ik",
+        "charpoint_trent_talk"
+    },
+    {
+        duration=1,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    98.822,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_rockford_eye_ik",
+        "charpoint_trent_talk"
+    },
+    {
+        duration=0.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    99.822,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_dx_s026b_2101_vance", duration=10, start_time=1, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    99.822,
+    START_SOUND,
+    {
+        "DX_m11_ambush_0170_rockford"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    103.72200000000001,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_dx_s026b_1501_vance", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    107.022,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_dx_s026b_2101_vance", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    103.72200000000001,
+    START_SOUND,
+    {
+        "DX_m11_ambush_0180_rockford"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    111.894,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_MLBODY_CHRF_CHRB_TRNS_000LV_XA_02",
+     duration=100, time_scale=0.6, start_time=0, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    111.894,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_dx_s026b_2101_vance", duration=10, start_time=2.1, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    111.894,
+    START_SOUND,
+    {
+        "DX_m11_ambush_0200_rockford"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    114.63000000000001,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_trent"
+    }
+}
+,
+{
+    114.63000000000001,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+     duration=100, time_scale=0.8, start_time=0, weight=1, heading=-1
+       , trans_time=0.5 
+     }
+}
+,
+{
+    115.13000000000001,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_CHRB_SHRG_SHLDRS_BIG_000LV_XA_03",
+     duration=100, time_scale=0.8, start_time=0, weight=1, heading=-1
+       , trans_time=0.5 
+     }
+}
+,
+{
+    118.83000000000001,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+     duration=100, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   , trans_time=0.5 
+     }
+}
+,
+{
+    114.63000000000001,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s026b_2701_trent", duration=10, time_scale=0.5, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    115.63000000000001,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s026b_2901_trent", duration=10, time_scale=0.75, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    116.63000000000001,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s038x_3901_trent", duration=10, time_scale=0.75, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    114.63000000000001,
+    START_SOUND,
+    {
+        "DX_m11_ambush_0205_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    118.194,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_rockford_walkout"
+    }
+}
+,
+{
+    121.194,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "cam_rockford_walkout",
+        "automarker_cam_rockford_walkout2"
+    },
+    {
+        duration=5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    121.194,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "automarker_cam_rockford_walkout_focus",
+        "automarker_cam_rockford_walkout_focus2"
+    },
+    {
+        duration=5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    118.194,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
+     duration=100, time_scale=1, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    121.194,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_rockford_head_ik",
+        "automarker_mrk_rockford_stand_look"
+    },
+    {
+        duration=1,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    121.194,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_rockford_eye_ik",
+        "automarker_mrk_rockford_stand_look"
+    },
+    {
+        duration=0.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    124.194,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_rockford_head_ik",
+        "automarker_mrk_trent_talk_top"
+    },
+    {
+        duration=1,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    124.194,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_rockford_eye_ik",
+        "charpoint_trent_talk"
+    },
+    {
+        duration=0.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    120.194,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_MLBODY_CHRB_STNDCL_TRNS_270LV_XA_06",
+     duration=100, time_scale=1, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    123.194,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "Char_rockford"
+    },
+    {
+        duration=2,
+        target_type=ROOT,
+        spatialprops={
+            axisrot={
+                -60,
+                Y_AXIS
+            }
+        }
+        
+    }
+}
+,
+{
+    118.194,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_dx_s026b_1702_vance", duration=10, time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    118.194,
+    START_SOUND,
+    {
+        "DX_m11_ambush_0210_rockford"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    123.706,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_dx_s026b_2401_vance", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    123.706,
+    START_SOUND,
+    {
+        "DX_m11_ambush_0220_rockford"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    126.85000000000001,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_MLBODY_STND_WALK_TRNS_000LV_XA_01",
+     duration=100, time_scale=0.85, start_time=0, weight=1, heading=-1
+       , trans_time=0.5 
+     }
+}
+,
+{
+    128.12,
+    START_MOTION,
+    {"Char_rockford"},
+    {animation="Sc_MLBODY_WLKG_000LV_XA_01",
+     duration=25, time_scale=0.85, start_time=0, weight=1, heading=-1
+     , event_flags=2   
+     }
+}
+,
+{
+    126.85000000000001,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_rockford_head_ik",
+        "automarker_mrk_rockford_walking"
+    },
+    {
+        duration=1,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    126.85000000000001,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_rockford_eye_ik",
+        "automarker_mrk_rockford_walking"
+    },
+    {
+        duration=0.5,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    128.45000000000002,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "Char_rockford"
+    },
+    {
+        duration=1,
+        target_type=ROOT,
+        spatialprops={
+            axisrot={
+                20,
+                Y_AXIS
+            }
+        }
+        
+    }
+}
+,
+{
+    126.85000000000001,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_CHRF_IDLE_000LV_XA_06",
+     duration=100, time_scale=1, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    128.85000000000002,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOMX2"
+    },
+    {
+        duration=0,
+        lightprops={
+            on = Y
+        }
+        
+    }
+}
+,
+{
+    128.85000000000002,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_trent_damn"
+    }
+}
+,
+{
+    128.85000000000002,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "cam_trent_damn",
+        "automarker_cam_trent_damn2"
+    },
+    {
+        duration=10,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    128.85000000000002,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_CHRF_GRABR_HEAD_RLEASE_000LV_XA_02",
+     duration=100, time_scale=0.85, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    130.35000000000002,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s045c_0301_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    130.35000000000002,
+    START_SOUND,
+    {
+        "DX_m11_ambush_0230_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    135.746,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_CHRF_HOLD_HEAD_RLEASE_000LV_XA_02",
+     duration=100, time_scale=1, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    135.746,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s026c_0301_trent", duration=10, start_time=0, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    135.746,
+    START_SOUND,
+    {
+        "DX_m11_ambush_0250_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    139.982,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOMX2"
+    },
+    {
+        duration=0,
+        lightprops={
+            on = N
+        }
+        
+    }
+}
+,
+{
+    139.982,
+    START_LIGHT_PROP_ANIM,
+    {
+        "LIGHT_ROOMX"
+    },
+    {
+        duration=0,
+        lightprops={
+            on = Y
+        }
+        
+    }
+}
+,
+{
+    139.982,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_trent_pda"
+    }
+}
+,
+{
+    139.982,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "cam_trent_pda",
+        "automarker_cam_trent_pda2"
+    },
+    {
+        duration=12,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    137.982,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_CHRB_STNDCR_TRNS_090LV_XA_05",
+     duration=100, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=2 
+     }
+}
+,
+{
+    141.582,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_GET_MAP_000LV_A_10",
+     duration=3, time_scale=1, start_time=2, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    142.482,
+    START_MOTION,
+    {"Char_kim"},
+    {animation="Sc_dx_s050d_0101_ozu", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    142.482,
+    START_SOUND,
+    {
+        "DX_m11_ambush_0260_kim"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    146.598,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s045b_1801_trent", duration=10, start_time=0.2, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    146.598,
+    START_SOUND,
+    {
+        "DX_m11_ambush_0270_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    147.882,
+    START_MOTION,
+    {"Char_kim"},
+    {animation="Sc_dx_s046x_0201_ozu", duration=10, start_time=0.5, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    147.882,
+    START_SOUND,
+    {
+        "DX_m11_ambush_0280_kim"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    147.99800000000002,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+     duration=6, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=2 
+     }
+}
+,
+{
+    148.99800000000002,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_dx_s050d_0201_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
+}
+,
+{
+    148.99800000000002,
+    START_SOUND,
+    {
+        "DX_m11_ambush_0290_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    150.162,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_WALK_TRNS_000LV_XA_01",
+     duration=6, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+
+}

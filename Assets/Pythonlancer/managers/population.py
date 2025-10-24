@@ -123,5 +123,6 @@ class PopulationManager:
     def sync_data(self):
         if not self.core.write:
             return
-        DataFolder.sync_ships_loadouts(self.get_loadouts())
-        DataFolder.sync_npcships(self.get_npcships_file_content())
+        data_folder = DataFolder(build_to_folder=self.core.build_folder)
+        data_folder.sync_ships_loadouts(self.get_loadouts())
+        data_folder.sync_npcships(self.get_npcships_file_content())

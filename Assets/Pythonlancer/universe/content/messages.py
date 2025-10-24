@@ -1,73 +1,40 @@
 from random import choice
 from text.dividers import SINGLE_DIVIDER
+from text.strings import MultiString as MS
 
+import universe.content.messages_text_ru as RU
+import universe.content.messages_text_en as EN
+#
+# PRODUCER_BEST = MS(RU.PRODUCER_BEST, EN.PRODUCER_BEST)
+# PRODUCER_ANY = MS(RU.PRODUCER_ANY, EN.PRODUCER_ANY)
+# PRODUCER_REQUIRE = MS(RU.PRODUCER_REQUIRE, EN.PRODUCER_REQUIRE)
+#
+# PRODUCER_SHOW_CONSUMER_BEST = MS(RU.PRODUCER_SHOW_CONSUMER_BEST, EN.PRODUCER_SHOW_CONSUMER_BEST)
 
-CONSUMER_TRADER = ('Я торговец из {from}. Прилетел сюда за {comm}. Мы нуждаемся в этом товаре. '
-                   'Я могу тебе показать местоположение {from} за {credits}')
-CONSUMER_RUMOR = ('Товар {comm} очень хорошо продается на станции {destination}. '
-                  'Я могу тебе показать где это находится за {credits}')
+ROID_MINER = MS(RU.ROID_MINER, EN.ROID_MINER)
 
-TRADING_BASE_PROMOTER = ('Я прилет на эту базу с тороговой станции {tradingbase}. '
-                         'Это большая база разнообразных товаров, которые мы продаем по адекватным ценам. '
-                         'Можешь прилететь и посмотреть на наши товары. Могу показать местоположение '
-                         '{tradingbase} за {credits}')
+GAS_MINER = MS(RU.GAS_MINER, EN.GAS_MINER)
 
-RESELLER_FROM = ('На этой базе я продал товар {comm}, который я привез из {from}. Сейчас я загружусь и полечу '
-                 'обратно. Если тебе интересно, где находится {from}, то могу показать ')
-RESELLER_TO = ('Я прилетел на эту базу, чтобы перепродать {comm}. Я его повезу на {to}. Если не знаешь, '
-               'где это, то могу показать ')
+ABANDONED_ICE_BASE = MS(RU.ABANDONED_ICE_BASE, EN.ABANDONED_ICE_BASE)
 
-PRODUCER_REQUIREMENTS_BEST = ('Эта база является поставщиком {comm}. Но мы нуждаемся в {component}, чтобы продолжать '
-                              'его поставки. Могу показать, где дешевле всего купить {component} за {credits}')
-PRODUCER_REQUIREMENTS_NEAR = ('Эта база является поставщиком {comm}. Но мы нуждаемся в {component}, чтобы продолжать '
-                              'его поставки. Могу показать, где ближе всего купить {component} за {credits}')
+ABANDONED_ASTEROID_BASE = MS(RU.ABANDONED_ASTEROID_BASE, EN.ABANDONED_ASTEROID_BASE)
 
-PRODUCER_BEST = ('Эта база лучший поставщик {product}. Это лучшая цена в секторе Сириуса')
-PRODUCER_ANY = ('Эта база поставляет {product}. Это не лучшая цена, но определённо хорошее предложение')
-PRODUCER_REQUIRE = ('Эта база является поставщиком {product}. Но мы нуждаемся в {component}, чтобы продолжать '
-                    'его поставки. Если у тебя есть товар, то ты можешь его выгодно продать на нашей базе.')
-PRODUCER_SHOW_CONSUMER_BEST = ('На этой базе можно купить {product}. Я могу показать лучшее место, где можно '
-                               'сбыть этот товар. Покажу за ___ ')
-PRODUCER_SHOW_CONSUMER_NEAR = ('Тут продают товар {comm}. Могу показать, где его можно выгодно продать. '
-                               'Расскажу за ___')
+SMELTER = MS(RU.SMELTER, EN.SMELTER)
 
-ROID_MINER = ('В этой системе есть добывающие судна. На них можно найти особое оборудование, если конечно ты сможешь '
-              'добыть особую руду рядом с добывающим судном. Показать тебе, где оно находится? ')
-GAS_MINER = ('В этой системе есть газодобытчики, они могут произвести тебе особые устройства, но только если ты '
-             'сможешь добыть особый газ в ледяных астероидах, которые находятся рядом с базой. '
-             'Могу показать такой ')
-ABANDONED_ICE_BASE = ('В этой системе есть старая ледяная добывающая база. На ней остались производственные мощности. '
-                      'Если сможешь добыть в ледяных астероидах особый газ, то на этой базе тебе смогут собрать '
-                      'интересное оборудование. Могу показать тебе ')
+SOLAR_PLANT = MS(RU.SOLAR_PLANT, EN.SOLAR_PLANT)
 
-ABANDONED_ASTEROID_BASE = ('Ты можешь найти в этой системе старую добывающую станцию. Она частично функционирует, ты '
-                           'даже можешь получить на ней особое оборудование, но для начала надо найти в ближайщих '
-                           'астероидах особую руду. Хочешь попробовать? Могу показать это место ')
-SMELTER = ('В нашей системе много мусора, самый радиактивный и токсичный перерабатывают на мусороперабатывающих '
-           'фабриках. Это станции так же могут производить особые энергетические установки. Только для этого '
-           'нужно в ближайших блоках мусора отыскать особые радиактивные компоненты. Попробуешь? Покажу базу ')
-SOLAR_PLANT = ('В центре этой системы ты можешь найти солнечный генератор энергии. Если сможешь заполучить к нему '
-               'доступ, то сможешь найти интересное оборудование. Я думаю ты сможешь найти способ его взломать на '
-               'одном из разломанных кораблей, недалеко от генератора энергии. Давай покажу тебе генератор ')
-HACKABLE_SOLAR_PLANT = ('В центре этой системы ты можешь найти солнечный генератор энергии. Если сможешь заполучить к нему '
-                        'доступ, то сможешь найти интересное оборудование. Двери плотно закрыты, но точно должен '
-                        'быть какой-то способ сломать систему защиты. Могу показать тебе генератор ')
+HACKABLE_SOLAR_PLANT = MS(RU.HACKABLE_SOLAR_PLANT, EN.HACKABLE_SOLAR_PLANT)
 
-RUINS = ('Я знаю где находятся руины интересной станции. Внутри точно осталась интересное оборудование, нужно только '
-         'найти способ туда пробраться. Показать? Я знаю где она ')
-LOCKED_BATTLESHIP = ('Я могу показать где находятся руины линкора, на нем остался военный арсенал. Вот только бы найти '
-                     'способ в него проникнуть. Я думаю можно что-то найти в разломанных кораблях, находящихся '
-                     'поблизости от этого линкора. Могу показать где находится этот линкор ')
-HACKABLE_BATTLESHIP = ('Я могу показать где находятся руины линкора, на нем остался военный арсенал. Вот только бы найти '
-                       'способ в него проникнуть. Его двери плотно закрыты, но должны быть способ обойти систему '
-                       'безопасности.  Могу показать где находится этот линкор ')
-LOCKED_LUXURY = ('Я могу показать где находятся руины лайнера, на нем точно что-то осталось. Вот только бы найти '
-                 'способ в него проникнуть. Я думаю можно что-то найти в разломанных кораблях, находящихся '
-                 'поблизости от этого лайнера. Могу показать где находится этот лайнер ')
-HACKABLE_LUXURY = ('Могу показать тебе где находятся руины круизного лайнера. Это была трагедия, '
-                   'но большую часть посетителей эвакуировали. Но что-то на нем точно осталось, '
-                   'надо только найти способ в него проникнуть. Двери плотно закрыты, но должен быть способ их взломать. '
-                   'Давай я покажу его тебе ')
+RUINS = MS(RU.RUINS, EN.RUINS)
+
+LOCKED_BATTLESHIP = MS(RU.LOCKED_BATTLESHIP, EN.LOCKED_BATTLESHIP)
+
+HACKABLE_BATTLESHIP = MS(RU.HACKABLE_BATTLESHIP, EN.HACKABLE_BATTLESHIP)
+
+LOCKED_LUXURY = MS(RU.LOCKED_LUXURY, EN.LOCKED_LUXURY)
+
+HACKABLE_LUXURY = MS(RU.HACKABLE_LUXURY, EN.HACKABLE_LUXURY)
+
 
 
 class Message:
@@ -185,22 +152,28 @@ class MessageBuilder:
         self.core = core
 
     def rumor_produce_best(self, product):
-        text = PRODUCER_BEST.format(product=product.get_ru_name_rel2())
-        return Rumor(self.core, text)
+        return Rumor(self.core, MS(
+            RU.PRODUCER_BEST.format(product=product.get_ru_name_rel2()),
+            EN.PRODUCER_BEST.format(product=product.get_en_name_rel2()),
+        ))
 
     def rumor_produce_any(self, product):
-        text = PRODUCER_ANY.format(product=product.get_ru_name_rel1())
-        return Rumor(self.core, text)
+        return Rumor(self.core, MS(
+            RU.PRODUCER_ANY.format(product=product.get_ru_name_rel1()),
+            EN.PRODUCER_ANY.format(product=product.get_en_name_rel1())
+        ))
 
     def rumor_produce_require(self, product, component):
-        text = PRODUCER_REQUIRE.format(product=product.get_ru_name_rel2(), component=component.get_ru_name_rel3())
-        return Rumor(self.core, text)
+        return Rumor(self.core, MS(
+            RU.PRODUCER_REQUIRE.format(product=product.get_ru_name_rel2(), component=component.get_ru_name_rel3()),
+            EN.PRODUCER_REQUIRE.format(product=product.get_en_name_rel2(), component=component.get_en_name_rel3())
+        ))
 
     def knowledge_show_consumer_best(self, product, consumer_comm):
-        text = PRODUCER_SHOW_CONSUMER_BEST.format(
-            product=product.get_ru_name_rel1(),
-        )
-        return Knowledge(self.core, text, system_object=consumer_comm.base.get_system_object(), price=500)
+        return Knowledge(self.core, MS(
+            RU.PRODUCER_SHOW_CONSUMER_BEST.format(product=product.get_ru_name_rel1()),
+            EN.PRODUCER_SHOW_CONSUMER_BEST.format(product=product.get_en_name_rel1())
+        ), system_object=consumer_comm.base.get_system_object(), price=500)
 
     def journey_roid_miner(self, system_object):
         return Knowledge(self.core, ROID_MINER, system_object=system_object, price=500)

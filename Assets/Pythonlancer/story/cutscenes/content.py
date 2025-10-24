@@ -1010,7 +1010,7 @@ class Character(Compound):
                         time_delay=lip.get_delay())
 
         SoundEvent(root=self.root, group=group, sound_name=sound.get_nickname(),
-                   time_append=sound.get_duration()+extra_delay if append else 0)
+                   time_append=sound.get_duration(self.root.russian)+extra_delay if append else 0)
 
 
 class Camera(Marker):

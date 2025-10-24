@@ -19,6 +19,8 @@ from world.npc import NPC, EqMap
 from world import ship
 from universe import faction
 
+from text.strings import MultiString as MS
+
 NPCSHIPS = '''
 
 [NPCShipArch]
@@ -83,25 +85,37 @@ class Misson11(ingame_mission.IngameMission):
     FOLDER = 'M11'
     FILE = 'm11'
     START_SAVE_ID = 33100
-    START_SAVE_RU_NAME = 'Омега-7. Линкор Мусаси'
+    START_SAVE_RU_NAME = MS('Омега-7. Линкор Мусаси', 'Omega-7. Battleship Musashi')
     SCRIPT_INDEX = 11
     DIRECT_SYSTEMS = [S.om7, S.or_hq, S.rh_vien, S.sig42]
     STATIC_NPCSHIPS = NPCSHIPS
     RTC = ['rescued', 'alaric', 'ambush', 'drink', 'harajuku_launch_rtc']
     INIT_OFFER = MultiLine(
-        'ЗАДАЧА:',
-        'Помочь Ордену ликвидировать Рокфорда',
-        '',
-        'СЛОЖНОСТЬ:',
-        'Рискованная.',
-        '',
-        'Награда:',
-        'Полное очищение репутации',
+        [
+            'ЗАДАЧА:',
+            'Помочь Ордену ликвидировать Рокфорда.',
+            '',
+            'СЛОЖНОСТЬ:',
+            'Рискованная.',
+            '',
+            'НАГРАДА:',
+            'Полное очищение репутации',
+        ],
+        [
+            'OBJECTIVE:',
+            'Help the order to eliminate Rockford.',
+            '',
+            'DIFFICULTY:',
+            'Risky.',
+            '',
+            'REWARD:',
+            'Full clean up of reputation',
+        ]
     ).get_content()
 
     def get_save_states(self):
         return [
-            SaveState(self, 'hq_battle', 'Штаб Ордена. Битва у станции Вавилон'),
+            SaveState(self, 'hq_battle', MS('Штаб Ордена. Битва у станции Вавилон', 'The Order\'s HQ. Battle near Babylon Station')),
         ]
 
     def get_static_points(self):
@@ -122,17 +136,17 @@ class Misson11(ingame_mission.IngameMission):
 
         defined_points.append(
             Solar(self, S.om7, 'om7_musashi1',
-                  ru_name='Линкор Мусаси', base='om7_99_base'),
+                  ru_name=N.MUSASHI, base='om7_99_base'),
         )
         defined_points.append(
             Solar(self, S.rh_vien, 'vien_flagship_solar',
-                  ru_name='Линкор Гнейзенау',
+                  ru_name=MS('Линкор Гнейзенау', 'Battleship Gneisenau'),
                   labels=['enemy', 'rh_battleship', 'rheinland', 'vienna_defend']),
         )
         defined_points.append(
             DockableBattleshipSolar(
                 self, S.rh_vien, 'vien_musashi1',
-                ru_name='Линкор Мусаси', base='rh_vien_99_base',
+                ru_name=N.MUSASHI, base='rh_vien_99_base',
                 labels=['enemy', 'ku_battleship', 'ku', 'order', 'vienna_assault']),
         )
 
@@ -153,15 +167,17 @@ class Misson11(ingame_mission.IngameMission):
             )
 
         defined_points.append(
-            StaticJumpgate(self, S.or_hq, 'jg_or_hq_to_rh_vienna', ru_name='Гиперврата в Вену'),
+            StaticJumpgate(self, S.or_hq, 'jg_or_hq_to_rh_vienna',
+                           ru_name=MS('Гиперврата в Вену', 'Jumpgate to Vienna')),
         )
         defined_points.append(
-            StaticJumpgate(self, S.or_hq, 'jg_or_hq_to_sirius', ru_name='Гиперврата в Сириус'),
+            StaticJumpgate(self, S.or_hq, 'jg_or_hq_to_sirius',
+                           ru_name=MS('Гиперврата в Сириус', 'Jumpgate to Sirius')),
         )
 
         defined_points.append(
             Solar(self, S.or_hq, 'or_hq_musashi1',
-                  ru_name='Линкор Мусаси', base='or_hq_99_base'),
+                  ru_name=N.MUSASHI, base='or_hq_99_base'),
         )
 
         # Vienna
@@ -170,7 +186,7 @@ class Misson11(ingame_mission.IngameMission):
         vienn_solars = [f'BOX{i:02d}' for i in range(1, boxes+1)]
         for sol in vienn_solars:
             defined_points.append(
-                Solar(self, S.rh_vien, sol, ru_name='Исследовательский контейнер'),
+                Solar(self, S.rh_vien, sol, ru_name=MS('Исследовательский контейнер', 'Research container')),
             )
 
         vien_points = [
@@ -182,7 +198,7 @@ class Misson11(ingame_mission.IngameMission):
             )
 
         defined_points.append(
-            Solar(self, S.rh_vien, 'lair_power_cell', ru_name='Энергоядро Номадов'),
+            Solar(self, S.rh_vien, 'lair_power_cell', ru_name=MS('Энергоядро Номадов', 'Nomad Powercell')),
         )
 
         return defined_points
@@ -274,15 +290,15 @@ class Misson11(ingame_mission.IngameMission):
         self.add_capital_group('VIEN_KD', vien_kds)
 
         caps.append(
-            Capital(self, 'rockford', ru_name='Рокфорд', **rockford)
+            Capital(self, 'rockford', ru_name=actors.Rockford.RU_NAME, **rockford)
         )
 
         caps.append(
-            Capital(self, 'wilham', ru_name='Вильгельм', **wilham)
+            Capital(self, 'wilham', ru_name=actors.Wilham.RU_NAME, **wilham)
         )
 
         caps.append(
-            Capital(self, 'vien_flagship', ru_name='Линкор Гнейзенау', **vien_rbs)
+            Capital(self, 'vien_flagship', ru_name=MS('Линкор Гнейзенау', 'Battleship Gneisenau'), **vien_rbs)
         )
 
         return caps
@@ -376,7 +392,7 @@ class Misson11(ingame_mission.IngameMission):
             NNObj(self, O.LAUNCH, name='launch'),
 
             NNObj(self, O.TLR, target='om7_tlr_1'),
-            NNObj(self, 'Сядьте на Харадзюку', target='harajuku'),
+            NNObj(self, MS('Сядьте на Харадзюку', 'Dock with Harajuku'), target='harajuku'),
 
             NNObj(self, O.CHASE_ROCKFORD, name='rockford_chase1', target='rockford_chase1'),
             NNObj(self, O.CHASE_ROCKFORD, name='rockford_chase2', target='rockford_chase2'),
@@ -390,7 +406,7 @@ class Misson11(ingame_mission.IngameMission):
             NNObj(self, O.GOTO, name='terra2', target='terra2'),
             NNObj(self, O.GOTO, name='terra3', target='terra3'),
 
-            NNObj(self, 'Уничтожьте рейнландские корабли', name='hq_fight'),
+            NNObj(self, MS('Уничтожьте рейнландские корабли', 'Destroy Rheinland ships'), name='hq_fight'),
 
             NNObj(self, O.GOTO, name='to_vien1', target='to_vien1'),
             NNObj(self, O.GOTO, name='to_vien2', target='to_vien2'),
@@ -399,12 +415,12 @@ class Misson11(ingame_mission.IngameMission):
 
             NNObj(self, O.GOTO, name='to_the_vienna', target='vienna_battle_zone'),
 
-            NNObj(self, 'Уничтожьте исследовательские контейнеры', name='vienna_destroy_scient'),
-            NNObj(self, 'Уничтожьте рейнландский флагман', name='vienna_destroy_flagship'),
+            NNObj(self, MS('Уничтожьте исследовательские контейнеры', 'Destroy research containers'), name='vienna_destroy_scient'),
+            NNObj(self, MS('Уничтожьте рейнландский флагман', 'Destroy rheinland flagship'), name='vienna_destroy_flagship'),
 
-            NNObj(self, 'Сядьте на линкор Мусаси', name='dock_vien_musashi', target='vien_musashi1'),
+            NNObj(self, MS('Сядьте на линкор Мусаси', 'Dock with Musashi'), name='dock_vien_musashi', target='vien_musashi1'),
 
-            NNObj(self, 'Подберите артефакт', name='get_the_loot'),
+            NNObj(self, MS('Подберите артефакт', 'Collect artifact'), name='get_the_loot'),
 
             NNObj(self, O.GOTO, name='to_sirius1', target='to_sirius1'),
             NNObj(self, O.GOTO, name='to_sirius2', target='to_sirius2'),
@@ -412,7 +428,7 @@ class Misson11(ingame_mission.IngameMission):
             NNObj(self, O.JUMPGATE, name='jump_into_sirius', target='jg_or_hq_to_sirius'),
 
             NNObj(self, O.TLR, target='sig42_tlr_1'),
-            NNObj(self, 'Сядьте на планету Спрага', target='sprague'),
+            NNObj(self, MS('Сядьте на планету Спрага', 'Dock with Sprague'), target='sprague'),
 
         ]
 
@@ -446,7 +462,7 @@ class Misson11(ingame_mission.IngameMission):
                 ],
                 slide_x=100,
                 unique_npc_entry=True,
-                base_name='Лямбда',
+                base_name=MS('Лямбда', 'Labmda'),
                 npc=NPC(
                     faction=faction.KusariMain,
                     ship=ship.Dragon,

@@ -40,7 +40,9 @@ class PilotManager:
 
             mission_props.append(pilot.get_mission_props_ini())
 
-        DataFolder.sync_audio_ini(
+        data_folder = DataFolder()
+
+        data_folder.sync_audio_ini(
             'voices_space_male',
             VoicesSpaceMaleTemplate().format({
                 'voices': DIVIDER.join(male_voices),
@@ -48,7 +50,7 @@ class PilotManager:
             })
         )
 
-        DataFolder.sync_audio_ini(
+        data_folder.sync_audio_ini(
             'voices_space_female',
             VoicesSpaceFemaleTemplate().format({
                 'voices': DIVIDER.join(female_voices),
@@ -56,7 +58,7 @@ class PilotManager:
             })
         )
 
-        DataFolder.sync_mission_voice_props(
+        data_folder.sync_mission_voice_props(
             VoicePropertiesTemplate().format({
                 'props': DIVIDER.join(mission_props),
             })

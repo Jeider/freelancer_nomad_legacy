@@ -1,6 +1,7 @@
 from world.equipment import Equipment, Icon, DefaultGood
 from text.dividers import SINGLE_DIVIDER
 from text.infocards import InfocardBuilder
+from text.strings import MultiString as MS
 
 from fx.weapon import WeaponFX
 
@@ -16,6 +17,13 @@ WEAPON_TYPE_PER_WEAPON_FX = {
     WeaponFX.FX_PLASMA: 'W_plasma',
     WeaponFX.FX_PULSE: 'W_pulse',
 }
+
+EFFICIENT_GAS_MINING_FX = [
+    WeaponFX.FX_PARTICLE,
+    WeaponFX.FX_NEUTRON,
+    WeaponFX.FX_PLASMA,
+    WeaponFX.FX_PULSE,
+]
 
 
 class WeaponMunition(object):
@@ -284,11 +292,22 @@ LODranges = {lod_ranges}'''
 
         self.munition = self.create_munition()
 
-        self.ids_name = ids.new_name(self.get_ru_name())
+        self.ids_name = ids.new_name(
+            MS(
+                self.get_ru_name(),
+                self.get_en_name()
+            )
+        )
         self.ids_info = ids.new_info(
-            InfocardBuilder.build_equip_infocard(
-                self.get_ru_fullname(),
-                self.get_ru_description_content()
+            MS(
+                InfocardBuilder.build_equip_infocard(
+                    self.get_ru_fullname(),
+                    self.get_ru_description_content()
+                ),
+                InfocardBuilder.build_equip_infocard(
+                    self.get_en_fullname(),
+                    self.get_en_description_content()
+                )
             )
         )
 
@@ -389,6 +408,9 @@ LODranges = {lod_ranges}'''
 
     def get_muzzle_velocity(self):
         return self.MUZZLE_VELOCITY
+
+    def is_gas_efficient(self):
+        return self.weapon_fx in EFFICIENT_GAS_MINING_FX
 
     def get_flash_particle_name(self):
         return self.weapon_fx.get_flash_particle_name()

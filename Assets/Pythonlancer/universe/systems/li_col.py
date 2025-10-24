@@ -33,6 +33,8 @@ from templates.dockable import columbia_new_hope
 from templates.dockable import junker
 from templates.dockable import station_debris
 
+from text.strings import MultiString as MS
+
 
 class ColMember(Member):
     FACTION = faction.LibertyMain
@@ -159,7 +161,7 @@ class ColDebrisFactory1(ColMember, ColBaseDebrisManufactoring):
         ColDebrisZone1,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
-    RU_NAME = 'Плавильня Команчи'
+    RU_NAME = MS('Плавильня Команчи', 'Comanche Smelter')
     MISC_EQUIP_TYPE = LI_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Thruster(LI_PIRATE, eq_classes=markets.SECRET3),
@@ -174,7 +176,7 @@ class ColDebrisFactory2(ColMember, ColBaseDebrisManufactoring):
         ColDebrisZone2,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
-    RU_NAME = 'Плавильня Гейтсвилл'
+    RU_NAME = MS('Плавильня Гейтсвилл', "Gatesville Smelter")
     MISC_EQUIP_TYPE = LI_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Thruster(LI_CIV, eq_classes=markets.SECRET2),
@@ -189,7 +191,7 @@ class ColDebrisFactory3(ColMember, ColBaseDebrisManufactoring):
         ColDebrisZone3,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
-    RU_NAME = 'Плавильня Олни'
+    RU_NAME = MS('Плавильня Олни', 'Olney Smelter')
     MISC_EQUIP_TYPE = LI_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Thruster(LI_CIV, eq_classes=markets.SECRET3),
@@ -269,7 +271,7 @@ class ColAbandonedAstBase1(ColMember, main_objects.AbandonedAsteroid):
     INTERIOR_CLASS = interior.EquipDeckInterior
     DEFENCE_LEVEL = None
     LOCKED_DOCK = True
-    RU_NAME = 'База Сансарк'
+    RU_NAME = MS('База Сансарк', "Sansark Base")
 
     AST_EXCLUSION_ZONE_SIZE = 3500
     ASTEROID_ZONES = [
@@ -396,7 +398,7 @@ class ColSolarPlant1(ColMember, ColBaseSolarPlant):
     ASTEROID_ZONES = [
         ColSolarMinesZone1,
     ]
-    RU_NAME = 'Солн.генератор Ламеса'
+    RU_NAME = MS('Солн.генератор Ламиса', 'Solar Plant Lamesa')
 
 
 class ColSolarPlant2(ColMember, ColBaseSolarPlant):
@@ -405,7 +407,7 @@ class ColSolarPlant2(ColMember, ColBaseSolarPlant):
     ASTEROID_ZONES = [
         ColSolarMinesZone2,
     ]
-    RU_NAME = 'Солн.генератор Монаханс'
+    RU_NAME = MS('Солн.генератор Монаханс', 'Solar Planet Monahans')
 
 
 class ColSolarPlant3(ColMember, ColBaseSolarPlant):
@@ -414,7 +416,7 @@ class ColSolarPlant3(ColMember, ColBaseSolarPlant):
     ASTEROID_ZONES = [
         ColSolarMinesZone3,
     ]
-    RU_NAME = 'Солн.генератор Андрус'
+    RU_NAME = MS('Солн.генератор Андрус', 'Solar Plant Andrews')
 
 
 class ColSolarPlant4(ColMember, ColBaseSolarPlant):
@@ -423,7 +425,7 @@ class ColSolarPlant4(ColMember, ColBaseSolarPlant):
     ASTEROID_ZONES = [
         ColSolarMinesZone4,
     ]
-    RU_NAME = 'Солн.генератор Ранкин'
+    RU_NAME = MS('Солн.генератор Ранкин', "Solar Plant Rankin")
 
 
 class ColSolarPlant5(ColMember, ColBaseSolarPlant):
@@ -432,7 +434,7 @@ class ColSolarPlant5(ColMember, ColBaseSolarPlant):
     ASTEROID_ZONES = [
         ColSolarMinesZone5,
     ]
-    RU_NAME = 'Солн.генератор Шеффилд'
+    RU_NAME = MS('Солн.генератор Шеффилд', "Solar Planet Sheffield")
 
 
 class ColSolarSupriseRewards(ColMember, mineable.DefaultSupriseRewardsGroup):
@@ -508,7 +510,7 @@ class ColDockring(ColMember, main_objects.LargePlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.LibertyPlanetDealers
     SHIP_SET = markets.ShipSet('bh_fighter', 'bh_elite2', 'bw_freighter')
-    RU_NAME = 'Планета Колумбия'
+    RU_NAME = MS('Планета Колумбия', 'Planet Columbia')
 
     BASE_PROPS = meta.LargePlanet(
         objectives=[
@@ -529,7 +531,7 @@ class ColMiningDockring(ColMember, main_objects.MiningPlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSingleRoomInterior
     DEALERS = dealers.LibertyPlanetDealers
     SHIP_SET = markets.ShipSet('ge_fighter3')
-    RU_NAME = 'Планета Хьюстон'
+    RU_NAME = MS('Планета Хьюстон', "Planet Houston")
 
     BASE_PROPS = meta.MiningPlanet(
         objectives=[
@@ -546,7 +548,7 @@ class ColShipyard(ColMember, main_objects.Shipyard):
     SPACE_OBJECT_TEMPLATE = shipyards.StuttgartShipyard
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyCivilianDealers
-    RU_NAME = 'Верфь Портленд'
+    RU_NAME = MS('Верфь Портленд', 'Portland Shipyard')
 
 
 class ColPrison(ColMember, main_objects.Prison):
@@ -555,7 +557,7 @@ class ColPrison(ColMember, main_objects.Prison):
     SPACE_OBJECT_TEMPLATE = prisons.ColumbiaPrison
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyMilitaryDealers
-    RU_NAME = 'Тюрьма Бомонт'
+    RU_NAME = MS('Тюрьма Бомонт', "Beaumont Prison")
 
 
 class ColPolice(ColMember, main_objects.Outpost):
@@ -566,7 +568,7 @@ class ColPolice(ColMember, main_objects.Outpost):
     INTERIOR_CLASS = interior.OutpostInterior
     AUDIO_PREFIX = SpaceVoice.BORDER_STATION
     DEALERS = dealers.LibertyMilitaryDealers
-    RU_NAME = 'Аванпост Новый Орлеан'
+    RU_NAME = MS('Аванпост Новый Орлеан', "Outpost New Orleans")
 
 
 class ColProduction(ColMember, main_objects.Refinery):
@@ -582,7 +584,7 @@ class ColProduction(ColMember, main_objects.Refinery):
     NEBULA_ZONES = [ColLargeWestNebula]
     NEBULA_EXCLUSION_ZONE_SIZE = 4000
 
-    RU_NAME = 'Станция Даллас'
+    RU_NAME = MS('Станция Даллас', "Dallas Station")
 
     BASE_PROPS = meta.Refinery(
         objectives=[
@@ -601,7 +603,7 @@ class ColTrading(ColMember, main_objects.TradingBase):
     SPACE_OBJECT_TEMPLATE = columbia_new_hope.ColumbiaNewHope
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyCivilianDealers
-    RU_NAME = 'Торговая база Сиетл'
+    RU_NAME = MS('Торговая база Сиетл', "Trading Base Seattle")
 
 
 class ColPlanet1(ColMember, main_objects.Planet):
@@ -627,7 +629,7 @@ class ColPlanet4(ColMember, main_objects.Planet):
     INDEX = 4
     ARCHETYPE = 'planet_ice_blue_3000'
     SPHERE_RADIUS = 3000
-    RU_NAME = 'Планета Аризона'
+    RU_NAME = MS('Планета Аризона', "Planet Arizona")
 
 
 class ColOldTradingBaseRuins(ColMember, main_objects.StationRuins):
@@ -635,7 +637,7 @@ class ColOldTradingBaseRuins(ColMember, main_objects.StationRuins):
     INDEX = 1
     REL = LEFT
 
-    RU_NAME = 'Фрипорт 1'
+    RU_NAME = MS('Фрипорт 1', "Freeport 1")
 
     SPACE_OBJECT_TEMPLATE = station_debris.ColumbiaDebris
     ASTEROID_ZONES = [
@@ -656,7 +658,7 @@ class ColOldTradingBaseRuinsSuprisePoint1(ColMember, main_objects.HackableStatio
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpost
     INTERIOR_CLASS = interior.EquipDeckInterior
 
-    RU_NAME = 'Стыковочный узел 1 фрипорта 1'
+    RU_NAME = MS('Стыковочный узел 1 фрипорта 1', "Freeport 1 Docking point 1")
     MISC_EQUIP_TYPE = LI_MAIN
     WEAPON_FACTION = WEAPON_LI
     EQUIP_SET = markets.EquipSet(
@@ -674,7 +676,7 @@ class ColOldTradingBaseRuinsSuprisePoint2(ColMember, main_objects.HackableStatio
     HACKABLE_SOLAR_CLASS = hackable.HackableOutpost
     INTERIOR_CLASS = interior.EquipDeckInterior
 
-    RU_NAME = 'Стыковочный узел 2 фрипорта 1'
+    RU_NAME = MS('Стыковочный узел 2 фрипорта 1', "Freeport 1 Docking point 2")
     MISC_EQUIP_TYPE = LI_MAIN
     WEAPON_FACTION = WEAPON_LI
     EQUIP_SET = markets.EquipSet(
@@ -691,7 +693,7 @@ class ColAsteroidPirates(ColMember, main_objects.PirateAsteroid):
     FACTION = faction.LibertyRogues  # pirate ?
 
     DEFENCE_LEVEL = None
-    RU_NAME = 'База Вестпорт'
+    RU_NAME = MS('База Вестпорт', "Westport Base")
 
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -709,7 +711,7 @@ class ColNebulaPirates(ColMember, main_objects.PirateStation):
     REL = TOP
     SPACE_OBJECT_TEMPLATE = junker.BerlinJunker
     FACTION = faction.LibertyRogues  # Pirate?
-    RU_NAME = 'База Пальмито'
+    RU_NAME = MS('База Пальмито', "Palmito Base")
 
     DEFENCE_LEVEL = None
 

@@ -19,6 +19,8 @@ from world.npc import NPC, EqMap
 from world import ship
 from universe import faction
 
+from text.strings import MultiString as MS
+
 NPCSHIPS = '''
 
 [NPCShipArch]
@@ -35,8 +37,8 @@ npc_class = lawful, CRUISER
 
 
 class ResearchChunk:
-    MANDRAKE_CHUNK = 'Обломок с Мандрейком'
-    GENERIC_CHUNK = 'Обломок станции'
+    MANDRAKE_CHUNK = MS('Обломок с Мандрейком', 'Chunk with Mandrake')
+    GENERIC_CHUNK = MS('Обломок станции', "Station chunk")
 
     def __init__(self, pod_root, chunk_index, pod_name, is_mandrake=False):
         self.pod_root: ScientPods = pod_root
@@ -121,8 +123,8 @@ class ScientPods:
 
     MISSION_TIMEOUT = 60
 
-    MANDRAKE_NAME = 'Капсула Мандрейка'
-    SCIENT_NAME = 'Капсула с учёным'
+    MANDRAKE_NAME = MS('Капсула Мандрейка', 'Capsule with Mandrake')
+    SCIENT_NAME = MS('Капсула с учёным', 'Capsule with scientist')
 
     def __init__(self, mission, direct, trigger):
         self.mission: ingame_mission.IngameMission = mission
@@ -133,7 +135,7 @@ class ScientPods:
         self.triggers_defined = False
         self.mandrake_chunk = 1
         self.reward_solar = Solar(self.mission, S.sig17, 'research_reward',
-                                  ru_name='Награда', archetype='hidden_connect',
+                                  ru_name=MS('Награда', 'Reward'), archetype='hidden_connect',
                                   loadout='m05_scient_reward')
         self.mandrake_ids_name = self.mission.ids.new_name(self.MANDRAKE_NAME)
         self.scient_ids_name = self.mission.ids.new_name(self.SCIENT_NAME)
@@ -364,19 +366,31 @@ class Misson05(ingame_mission.IngameMission):
     FOLDER = 'M05'
     FILE = 'm05'
     START_SAVE_ID = 32500
-    START_SAVE_RU_NAME = 'Планета Форбс'
+    START_SAVE_RU_NAME = MS('Планета Форбс', 'Planet Forbes')
     STATIC_NPCSHIPS = NPCSHIPS
     SCRIPT_INDEX = 5
     DIRECT_SYSTEMS = [S.li_for, S.sig17]
     INIT_OFFER = MultiLine(
-        'ЗАДАЧА:',
-        'Выяснить местоположения доктора Мандрейка и доставить его на планету Форбс.',
-        '',
-        'СЛОЖНОСТЬ:',
-        'Средняя.',
-        '',
-        'Награда:',
-        '12 500 кредитов.',
+        [
+            'ЗАДАЧА:',
+            'Выяснить местоположения доктора Мандрейка и доставить его на планету Форбс.',
+            '',
+            'СЛОЖНОСТЬ:',
+            'Средняя.',
+            '',
+            'НАГРАДА:',
+            '12 500 кредитов.',
+        ],
+        [
+            'OBJECTIVE:',
+            'Find the location of professor Mandrake and get him to the Planet Forbes.',
+            '',
+            'DIFFICULTY:',
+            'Medium.',
+            '',
+            'REWARD:',
+            '12 500 credits.',
+        ]
     ).get_content()
 
     def __init__(self, *args, **kwargs):
@@ -390,16 +404,16 @@ class Misson05(ingame_mission.IngameMission):
 
     def get_save_states(self):
         return [
-            SaveState(self, 'smuggler', 'Форбс, склад контрабанды'),
-            SaveState(self, 'convoy', 'Сигма-17, транспорт Омега-9'),
-            SaveState(self, 'scient', 'Сигма-17, взрыв исследовательской станции'),
-            SaveState(self, 'arrest_battle', 'Сигма-17, линкор Грифон'),
+            SaveState(self, 'smuggler', MS('Форбс, склад контрабанды', 'Forbes, smuggler Storage')),
+            SaveState(self, 'convoy', MS('Сигма-17, транспорт Омега-9', 'Sigma-17, transport Omega-9')),
+            SaveState(self, 'scient', MS('Сигма-17, взрыв исследовательской станции', 'Sigma-17, explosion of research station')),
+            SaveState(self, 'arrest_battle', MS('Сигма-17, линкор Грифон', 'Sigma-17, battleship Griffin')),
         ]
 
     def get_dialogs(self):
         return [
             TextDialog(
-                self, 'smuggler', 'База с уязвимыми точками',
+                self, 'smuggler', MS('База с уязвимыми точками', 'Base with vulnerable points'),
                 ru_content=MultiText([
                     'Чтобы уничтожить базу, вы должны проникнуть внутрь и уничтожить её ядро.',
 
@@ -408,17 +422,34 @@ class Misson05(ingame_mission.IngameMission):
                     'После этого залетайте в туннель и атакуйте ядро.',
 
                     'В будущем вы сможете встретить подобные базы в случайных миссиях, которые можно взять в баре',
+                ],
+                    [
+                    'In order to destoy base, you should enter inside this base and destroy the core.',
+
+                    'Attack the storages, marked by blue color in your interface. Doors will be opened after explode of all storages.',
+
+                    'After you enter the tunnel and destroy the core.',
+
+                    'You can find such bases in bar missions against installations in freeflight mode.',
                 ]),
             ),
             TextDialog(
-                self, 'scient_pod', 'Спасение учёных',
+                self, 'scient_pod', MS('Спасение учёных', "Saving of scients"),
                 ru_content=MultiText([
                     'Спасательные капусулы не успели активироваться!',
 
                     'Уничтожьте обломки станции, чтобы разблокировать спасательные капсулы и подобрать учёных',
 
                     'Скорее! Системы обеспечения скоро откажут!',
-                ]),
+                ],
+                [
+                    'The escape pods did not activate in time!',
+
+                    'You must destroy station chunks and loot extracted escape pods.',
+
+                    'Hurry! Support systems will soon fail!',
+                ]
+                ),
             ),
         ]
 
@@ -494,7 +525,8 @@ class Misson05(ingame_mission.IngameMission):
 
     def get_nn_objectives(self):
         return [
-            NNObj(self, 'Встретьтесь с Хечтер в баре планеты Форбс', name='meet_vendor', target='vendor_planet'),
+            NNObj(self, MS('Встретьтесь с Хечтер в баре планеты Форбс', 'Meet Hatcher in bar of Planet Forbes'),
+                  name='meet_vendor', target='vendor_planet'),
 
             NNObj(self, O.LAUNCH, name='launch'),
 
@@ -503,43 +535,47 @@ class Misson05(ingame_mission.IngameMission):
             NNObj(self, O.TLR, target='for_tlr_3'),
             NNObj(self, O.TLR, target='for_tlr_4'),
 
-            NNObj(self, 'Сядьте на Детроит', name='first_dock_detroit', target='detroit', open_access=False),
+            NNObj(self, MS('Сядьте на Детроит', 'Dock with Detroit'), name='first_dock_detroit', target='detroit', open_access=False),
 
-            NNObj(self, 'Направляйтесь к базу контрабандистов',
+            NNObj(self, MS('Направляйтесь на пиратскую базу', 'Go to pirate base'),
                   name='goto_piratebase', target='piratebase', towards=True),
-            NNObj(self, 'Сядьте на пиратскую базу', name='dock_piratebase', target='piratebase'),
+            NNObj(self, MS('Сядьте на пиратскую базу', 'Dock with pirate base'), name='dock_piratebase', target='piratebase'),
 
-            NNObj(self, 'Направляйтесь к складу контрабанды', name='goto_storage', target='smuggler_storage', towards=True),
+            NNObj(self, MS('Направляйтесь к складу контрабанды', 'Go to smuggler\'s storage'), name='goto_storage', target='smuggler_storage', towards=True),
 
-            NNObj(self, 'Уничтожьте контрабандистов', name='destroy_smugglers'),
-            NNObj(self, 'Уничтожьте склады и ядро склада контрабанды', name='destroy_storage', target='smuggler_storage', nag=False),
-            NNObj(self, 'Заберите ключ', name='get_a_key'),
+            NNObj(self, MS('Уничтожьте контрабандистов', 'Destroy smugglers'), name='destroy_smugglers'),
+            NNObj(self, MS('Уничтожьте склады и ядро склада контрабанды',
+                           'Destroy storage and core of the smuggler\'s storage'),
+                  name='destroy_storage', target='smuggler_storage', nag=False),
+            NNObj(self, MS('Заберите ключ', 'Collect the key'), name='get_a_key'),
 
-            NNObj(self, 'Возвращайтесь на Детроит', name='go_back_detroit', target='detroit', towards=True),
-            NNObj(self, 'Сядьте на Детроит', name='dock_detroit', target='detroit'),
+            NNObj(self, MS('Возвращайтесь на Детроит', 'Go back to Detroit'), name='go_back_detroit', target='detroit', towards=True),
+            NNObj(self, MS('Сядьте на Детроит', 'Dock with Detroit'), name='dock_detroit', target='detroit'),
 
             NNObj(self, O.JUMPGATE, target='sig17_jump'),
 
             NNObj(self, O.TLR, target='sig17_tlr_1'),
             NNObj(self, O.TLR, target='sig17_tlr_2'),
 
-            NNObj(self, 'Доберитесь до исследовательской станции',
+            NNObj(self, MS('Доберитесь до исследовательской станции', 'Reach research station'),
                   name='reach_research',target='research_base', towards=True),
-            NNObj(self, 'Сядьте на исследовательскую станцию', name='try_to_dock_on_research'),
+            NNObj(self, MS('Сядьте на исследовательскую станцию', 'Dock with research station'),
+                  name='try_to_dock_on_research'),
 
             NNObj(self, O.GOTO, name='goto_convoy', target='convoy'),
 
             NNObj(self, O.DESTROY_PIRATES, name='destroy_pirates'),
-            NNObj(self, 'Войдите в формацию с транспортом', name='join_transport_formation'),
-            NNObj(self, 'Сопровождайте транспорт', name='follow_transport'),
-            NNObj(self, 'Ожидайте разрешения на посадку', name='wait_for_docking_approve'),
+            NNObj(self, MS('Войдите в формацию с транспортом', 'Join transport formation'),
+                  name='join_transport_formation'),
+            NNObj(self, MS('Сопровождайте транспорт', 'Escort transport'), name='follow_transport'),
+            NNObj(self, MS('Ожидайте разрешения на посадку', 'Wait docking approvement'), name='wait_for_docking_approve'),
 
-            NNObj(self, 'Спасите Мандрейка из обломков станции', name='find_madrake_and_tractor_him'),
-            NNObj(self, 'Попытайтесь спасти всех учёных!', name='save_all_scients'),
+            NNObj(self, MS('Спасите Мандрейка из обломков станции', 'Save Mandrake from station chunks!'), name='find_madrake_and_tractor_him'),
+            NNObj(self, MS('Попытайтесь спасти всех учёных!', 'Try to save all scients!'), name='save_all_scients'),
 
-            NNObj(self, 'Возвращайтесь к торговому пути', name='goto_bship_tlr', target='bship_tlr2'),
+            NNObj(self, MS('Возвращайтесь к торговому пути', 'Go back to tradelane'), name='goto_bship_tlr', target='bship_tlr2'),
 
-            NNObj(self, 'Уничтожьте рейнландские истребители', name='destroy_rheinland_fighters'),
+            NNObj(self, MS('Уничтожьте рейнландские истребители', 'Destroy rheinland fighters'), name='destroy_rheinland_fighters'),
 
             NNObj(self, O.JUMPGATE, target='for_jump'),
 
@@ -551,11 +587,11 @@ class Misson05(ingame_mission.IngameMission):
         defined_points = []
 
         defined_points.extend([
-            Solar(self, S.li_for, 'smuggler_storage', ru_name='Склад контрабанды',
+            Solar(self, S.li_for, 'smuggler_storage', ru_name=MS('Склад контрабанды', "Smuggler's storage"),
                   archetype='rmbase_smuggler', loadout='m05_smuggler_storage',
                   labels=['smuggler']),
 
-            Solar(self, S.sig17, 'research_base', ru_name='Исследовательская станция Кларк',
+            Solar(self, S.sig17, 'research_base', ru_name=MS('Исследовательская станция Кларк', 'Research station Clark'),
                   archetype='d_depot_clean', loadout='depot', labels=['deepspace']),
         ])
 
@@ -579,7 +615,7 @@ class Misson05(ingame_mission.IngameMission):
         }
 
         caps = [
-            Capital(self, 'armored', ru_name='Транспорт Омега-9', **armored_ship),
+            Capital(self, 'armored', ru_name=MS('Транспорт Омега-9', "Transport Omega-9"), **armored_ship),
         ]
 
         return caps

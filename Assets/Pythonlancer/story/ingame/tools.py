@@ -7,7 +7,7 @@ from universe.content.system_object import Marker
 from universe.content.main_objects import Battleship, JumpableObject
 
 from text.dividers import SINGLE_DIVIDER, DIVIDER
-
+from text.strings import MultiString as MS
 
 DEFAULT_AFFILIATION = 'fc_uk_grp'
 
@@ -747,7 +747,10 @@ class Ship(Target):
         else:
             if self.base_name:
                 try:
-                    ids_name = self.ids.new_name(f'{self.base_name} {index}')
+                    ids_name = self.ids.new_name(MS(
+                        f'{self.base_name.get_ru()} {index}',
+                        f'{self.base_name.get_en()} {index}'
+                    ))
                     items.append(f'individual_name = {ids_name.id}')
                 except IndexError:
                     pass
@@ -1270,7 +1273,8 @@ class NNObj:
 
 
 class Script:
-    def __init__(self, msn_script):
+    def __init__(self, mission, msn_script):
+        self.mission = mission
         self.msn_script = msn_script
         self.used_lines = []
 
@@ -1279,7 +1283,7 @@ class Script:
             sound.line.index
         )
         return ETHER_COMM_TEMPLATE.format(
-            voice_root=self.msn_script.get_voice_root_for_sound(sound),
+            voice_root=self.msn_script.get_voice_root_for_sound(sound, suffix='' if self.mission.russian else '_en'),
             string_id=sound.line.get_sub_id(),
             line=sound.get_nickname(),
             comm_appearance=sound.line.actor.get_comm_appearance(),
@@ -1468,6 +1472,10 @@ class Direct:
     def nn_clear(self):
         return CLEAR_OBJECTIVES
 
+    @property
+    def lock_docks(self):
+        return self.mission.universe.get_story_locked_docks()
+
     def save(self, code):
         state = self.save_states.get(code)
         if not state:
@@ -1615,8 +1623,8 @@ class Direct:
             [ f'Act_DeActTrig = {trig}' for trig in self.trigger_groups[group]]
         )
 
-    def new_string_id(self, ru_name):
-        return self.mission.ids.new_name(ru_name).id
+    def new_string_id(self, ru_name, en_name):
+        return self.mission.ids.new_name(MS(ru_name, en_name)).id
 
     def define_solar_group(self, group_name):
         group = self.mission.get_solar_group(group_name)
@@ -1830,8 +1838,12 @@ class SaveState:
     def __init__(self, mission, code, ru_name):
         self.mission = mission
         self.code = code
-        self.ru_name = f'Миссия {mission.SCRIPT_INDEX}. {ru_name}'
-        self.ids_name = self.mission.ids_save.new_name(self.ru_name)
+        self.ids_name = self.mission.ids_save.new_name(
+            MS(
+                f'Миссия {mission.SCRIPT_INDEX}. {ru_name.get_ru()}',
+                f'Mission {mission.SCRIPT_INDEX}. {ru_name.get_en()}'
+            )
+        )
 
     def get_code(self):
         return self.code
@@ -1842,20 +1854,40 @@ class SaveState:
 
 class MultiText:
 
-    def __init__(self, lines):
-        self.lines = lines
+    def __init__(self, ru_lines=None, en_lines=None):
+        self.ru_lines = ru_lines if ru_lines else []
+        self.en_lines = en_lines if en_lines else []
+
+        if len(self.ru_lines) == 0:
+            raise Exception('Multitext have no rus lines')
+
+        if len(self.en_lines) == 0:
+            raise Exception('Multitext have no eng lines')
 
     def get_content(self):
-        return "\\n\\n".join(self.lines)
-
+        return MS(
+            "\\n\\n".join(self.ru_lines),
+            "\\n\\n".join(self.en_lines)
+        )
 
 class MultiLine:
 
-    def __init__(self, *lines):
-        self.lines = lines
+    def __init__(self, ru_lines=None, en_lines=None):
+        self.ru_lines = ru_lines if ru_lines else []
+        self.en_lines = en_lines if en_lines else []
+
+        if len(self.ru_lines) == 0:
+            raise Exception('MultiLine have no rus lines')
+
+        if len(self.en_lines) == 0:
+            raise Exception('MultiLine have no eng lines')
+
 
     def get_content(self):
-        return "\\n".join(self.lines)
+        return MS(
+            "\\n".join(self.ru_lines),
+            "\\n".join(self.en_lines)
+        )
 
 
 class TextDialog:

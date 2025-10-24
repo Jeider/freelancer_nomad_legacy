@@ -8,6 +8,7 @@ INITIAL_KEY_ID = 315001
 INITIAL_SHIP_ID = 110001
 INITIAL_STORY_ID = 33500
 INITIAL_STORY_SAVE_ID = 33330
+INITIAL_HISTORY_ID = 45000
 INITIAL_SCRIPT_ID = 150000
 INITIAL_UNIVERSE_ID = 68200
 INITIAL_RUMOR_ID = 138000
@@ -28,10 +29,11 @@ class IDsManager:
         self.ship = IDsDatabase('ship', INITIAL_SHIP_ID)
         self.story = IDsDatabase('story', INITIAL_STORY_ID)
         self.story_save = IDsDatabase('story_save', INITIAL_STORY_SAVE_ID)
+        self.history = IDsDatabase('history', INITIAL_HISTORY_ID)
         self.script = IDsDatabase('script', INITIAL_SCRIPT_ID)
         self.universe = IDsDatabase('universe', INITIAL_UNIVERSE_ID)
         self.rumors = IDsDatabase('rumor', INITIAL_RUMOR_ID)
-        self.static = IDsDatabase('static', INITIAL_STATICS_ID)
+        # self.static = IDsDatabase('static', INITIAL_STATICS_ID)
 
         self.databases = [
             self.weapon,
@@ -41,18 +43,15 @@ class IDsManager:
             self.ship,
             self.story,
             self.story_save,
+            self.history,
             self.script,
             self.universe,
             self.rumors,
-            self.static,
+            # self.static,
         ]
 
-        for item in RETURN_NAMES:
-            self.static.new_name(item)
-
-
-    def compile(self):
-        return ''.join([db.compile() for db in self.databases]).replace('+', '')
+        # for item in RETURN_NAMES:
+        #     self.static.new_name(item)
 
     def get_databases(self):
         return self.databases

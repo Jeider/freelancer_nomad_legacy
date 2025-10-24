@@ -266,14 +266,45 @@ shield_hit_effects = {hit_three}, gf_pi_shield03'''
         MainMiscEquip.CO_OUTCAST: 'Морион',
     }
 
+    EN_NAME_PER_TYPE = {
+        MainMiscEquip.RH_MAIN: 'Bastion',
+        MainMiscEquip.RH_CIV: 'Rampart',
+        MainMiscEquip.RH_PIRATE: 'Palisade',
+
+        MainMiscEquip.LI_MAIN: 'Protector',
+        MainMiscEquip.LI_CIV: 'Sentry',
+        MainMiscEquip.LI_PIRATE: 'Sentinel',
+
+        MainMiscEquip.BR_MAIN: 'Brigantine',
+        MainMiscEquip.BR_CIV: 'Armet',
+        MainMiscEquip.BR_PIRATE: 'Cuisse',
+
+        MainMiscEquip.KU_MAIN: 'Barrier',
+        MainMiscEquip.KU_CIV: 'Amulet',
+        MainMiscEquip.KU_PIRATE: 'Pourpoint',
+
+        MainMiscEquip.CO_ORDER: 'Champion',
+        MainMiscEquip.CO_CORSAIR: 'Doublet',
+        MainMiscEquip.CO_OUTCAST: 'Morion',
+    }
+
     def get_ru_equip_name(self):
         return 'Щит'
 
     def get_ru_equip_fullname(self):
         return 'Щит'
 
+    def get_en_equip_name(self):
+        return 'Shield'
+
+    def get_en_equip_fullname(self):
+        return 'Shield'
+
     def get_ru_base_name(self):
         return self.RU_NAME_PER_TYPE[self.equip_type]
+
+    def get_en_base_name(self):
+        return self.EN_NAME_PER_TYPE[self.equip_type]
 
     def get_ru_description_content(self):
         content = []
@@ -294,7 +325,30 @@ shield_hit_effects = {hit_three}, gf_pi_shield03'''
         if shipclass_features_text:
             content.append(shipclass_features_text)
 
-        content.append(SHIELD_HINT)
+        content.append(RU_SHIELD_HINT)
+
+        return content
+
+    def get_en_description_content(self):
+        content = []
+
+        efficient_text = self.get_en_equip_efficienty()
+        if efficient_text:
+            content.append(efficient_text)
+
+        faction_features_text = EN_FEATURES_PER_FACTION.get(self.get_faction())
+        if faction_features_text:
+            content.append(faction_features_text)
+
+        shipclass_restrict_text = EN_RESTRICTIONS_PER_SHIPCLASS.get(self.ship_class)
+        if shipclass_restrict_text:
+            content.append(shipclass_restrict_text)
+
+        shipclass_features_text = EN_FEATURES_PER_SHIPCLASS.get(self.ship_class)
+        if shipclass_features_text:
+            content.append(shipclass_features_text)
+
+        content.append(EN_SHIELD_HINT)
 
         return content
 
@@ -321,7 +375,32 @@ RU_FEATURES_PER_SHIPCLASS = {
     MainMiscEquip.SHIPCLASS_FREIGHTER: 'Щиты грузовиков имеют 75% защиту от всех противощитовых пушек',
 }
 
-SHIELD_HINT = 'Совет: Полностью заряженный щит потребляет меньше энергии, чем заряжаемый/отключенный'
+RU_SHIELD_HINT = 'Совет: Полностью заряженный щит потребляет меньше энергии, чем заряжаемый/отключенный'
+
+
+EN_FEATURES_PER_FACTION = {
+    MainMiscEquip.FACTION_RH: 'Rheinland shields have 10% more capacity, but it required 10% more energy for regeneration',
+    MainMiscEquip.FACTION_LI: 'Liberty shields requires 25% less energy for regeneration',
+    MainMiscEquip.FACTION_BR: 'Bretonia shields holds on 2 seconds less in deactivated state',
+    MainMiscEquip.FACTION_KU: 'Kusari shields have 10% better regeneration, but requires additional 25% constant energy drain',
+    MainMiscEquip.FACTION_CO: 'Border World shields requires 40% less constant energy drain, but have 10% less capacity and 10% less regeneration speed',
+}
+
+
+EN_RESTRICTIONS_PER_SHIPCLASS = {
+    MainMiscEquip.SHIPCLASS_FIGHTER: 'This shield can be mounted on light fighters',
+    MainMiscEquip.SHIPCLASS_ELITE: 'This shield can be mounted on heavy fighters',
+    MainMiscEquip.SHIPCLASS_FREIGHTER: 'This shield can be mounted on freighters of CSVs',
+}
+
+
+EN_FEATURES_PER_SHIPCLASS = {
+    MainMiscEquip.SHIPCLASS_FIGHTER: 'Shields of light fighters have better defence from station and capital ship turrets',
+    MainMiscEquip.SHIPCLASS_ELITE: None,
+    MainMiscEquip.SHIPCLASS_FREIGHTER: 'Freighter shields have 75% defence against shield guns',
+}
+
+EN_SHIELD_HINT = 'Hint: Full regenerated shield drains less energy than in rechargeable state'
 
 
 class ShieldNPC(Shield):

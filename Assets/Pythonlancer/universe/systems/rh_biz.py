@@ -31,6 +31,8 @@ from templates.dockable import alg
 from templates.dockable import research
 from templates.dockable import rheinland_military
 
+from text.strings import MultiString as MS
+
 
 class BizmarkMember(Member):
     FACTION = faction.RheinlandMain
@@ -189,7 +191,7 @@ class BizmarkDockRing(BizmarkMember, main_objects.LargePlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.RheinlandPlanetDealers
     SHIP_SET = markets.ShipSet('ge_fighter2', 'ge_fighter3', 'bw_freighter')
-    RU_NAME = 'Планета Бисмарк'
+    RU_NAME = MS('Планета Бисмарк', 'Planet Bismarck')
 
     BASE_PROPS = meta.LargePlanet(
         objectives=[
@@ -212,7 +214,7 @@ class BizmarkTrading(BizmarkMember, main_objects.TradingBase):
     INTERIOR_CLASS = interior.OutpostShipdealerInterior
     DEALERS = dealers.RheinlandCivilianDealers
     SHIP_SET = markets.ShipSet('rh_freighter')
-    RU_NAME = 'Станция Бремен'
+    RU_NAME = MS('Станция Бремен', "Bremen Station")
 
     BASE_PROPS = meta.LargeTradingBase(
         objectives=[
@@ -235,7 +237,7 @@ file = Universe\\SYSTEMS_MOD\\RH_BIZMARK\\Room\\rh_biz_03_deck2.ini
     ''']
     DEALERS = dealers.RheinlandMilitaryDealers
     SHIP_SET = markets.ShipSet('bw_fighter')
-    RU_NAME = 'Линкор Шарнхорст'
+    RU_NAME = MS('Линкор Шарнхорст', "Battleship Scharnhorst")
 
 
 class BizmarkResearch(BizmarkMember, main_objects.ResearchStation):
@@ -244,7 +246,7 @@ class BizmarkResearch(BizmarkMember, main_objects.ResearchStation):
     BASE_INDEX = 4
     REL = RIGHT
     SPACE_OBJECT_TEMPLATE = research.RheinlandResearch
-    RU_NAME = 'Исследовательская станция Мюнстер'
+    RU_NAME = MS('Исследовательская станция Мюнстер', 'Münster Research Station')
 
     AUDIO_PREFIX = SpaceVoice.STATION
     INTERIOR_CLASS = interior.StationBshbarInterior
@@ -259,7 +261,7 @@ class BizmarkMilitary(BizmarkMember, main_objects.Station):
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = rheinland_military.RheinlandMilitary
 
-    RU_NAME = 'Станция Кёльн'
+    RU_NAME = MS('Станция Кёльн', 'Station Kologne')
 
     LOCKED_DOCK = True
     KEY_COLLECT_FX = nn.FX_GOT_KEY_STATION
@@ -282,7 +284,7 @@ class BizmarkShipyard(BizmarkMember, main_objects.Shipyard):
     REL = TOP
     REL_DRIFT = 1000
     SPACE_OBJECT_TEMPLATE = constanta.Constanta
-    RU_NAME = 'Верфь Киль'
+    RU_NAME = MS('Верфь Киль', "Kiel Shipyard")
 
     AUDIO_PREFIX = SpaceVoice.SHIPYARD
     INTERIOR_CLASS = interior.StationInterior
@@ -293,7 +295,7 @@ class BizmarkRefinery(BizmarkMember, main_objects.Refinery):
     BASE_INDEX = 7
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = alg.AlgBaseBerlin
-    RU_NAME = 'Станция Дортмунд'
+    RU_NAME = MS('Станция Дортмунд', 'Dortmund Station')
 
     AUDIO_PREFIX = SpaceVoice.FACTORY
     INTERIOR_CLASS = interior.StationInterior
@@ -312,7 +314,7 @@ class BizmarkTopPirate(BizmarkMember, main_objects.PirateStation):
     FACTION = faction.RheinlandPirate
 
     DEFENCE_LEVEL = None
-    RU_NAME = 'База Майнц'
+    RU_NAME = MS('База Майнц', "Mainz Base")
 
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -327,7 +329,7 @@ class BizmarkRightPirate(BizmarkMember, main_objects.PirateAsteroid):
     FACTION = faction.RheinlandPirate
 
     DEFENCE_LEVEL = None
-    RU_NAME = 'База Саарбрюкен'
+    RU_NAME = MS('База Саарбрюкен', "Saarbrücken Base")
 
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -364,7 +366,7 @@ class BizmarkAbandonedAstBase1(BizmarkMember, main_objects.AbandonedAsteroid):
     DEFENCE_LEVEL = None
     LOCKED_DOCK = True
 
-    RU_NAME = 'База Эссен'
+    RU_NAME = MS('База Эссен', "Essen Base")
 
     INTERIOR_BG1 = interior.INTERIOR_RH_BIZMARK
     AST_EXCLUSION_ZONE_SIZE = 3500
@@ -390,7 +392,7 @@ class BizmarkDebrisFactory1(BizmarkMember, BizmarkBaseDebrisManufactoring):
         BizmarkDebrisZone1,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
-    RU_NAME = 'База Вадерн'
+    RU_NAME = MS('База Вадерн', 'Wadern Base')
     MISC_EQUIP_TYPE = RH_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Thruster(RH_CIV, eq_classes=markets.SECRET3),
@@ -405,7 +407,7 @@ class BizmarkDebrisFactory2(BizmarkMember, BizmarkBaseDebrisManufactoring):
         BizmarkDebrisZone2,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
-    RU_NAME = 'База Марпингер'
+    RU_NAME = MS('База Марпинген', "Marpingen Base")
     MISC_EQUIP_TYPE = RH_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Thruster(RH_CIV, eq_classes=markets.SECRET2),
@@ -420,7 +422,7 @@ class BizmarkDebrisFactory3(BizmarkMember, BizmarkBaseDebrisManufactoring):
         BizmarkDebrisZone3,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
-    RU_NAME = 'База Герсхайм'
+    RU_NAME = MS('База Гернсхайм', 'Gersheim Base')
     MISC_EQUIP_TYPE = RH_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Thruster(RH_PIRATE, eq_classes=markets.SECRET2),
@@ -497,14 +499,14 @@ class BizmarkPlanet2(BizmarkMember, main_objects.Planet):
     INDEX = 2
     ARCHETYPE = 'planet_desored_2000'
     SPHERE_RADIUS = 2000
-    RU_NAME = 'Планета Саксония'
+    RU_NAME = MS('Планета Саксония', "Planet Saxony")
 
 
 class BizmarkPlanet3(BizmarkMember, main_objects.Planet):
     INDEX = 3
     ARCHETYPE = 'planet_ice_purple_5000'
     SPHERE_RADIUS = 5000
-    RU_NAME = 'Планета Померания'
+    RU_NAME = MS('Планета Померания', 'Planet Pomerania')
 
 
 class BizmarkPlanet4(BizmarkMember, main_objects.Planet):
@@ -515,7 +517,7 @@ class BizmarkPlanet4(BizmarkMember, main_objects.Planet):
     RING_ZONE_ALIAS = 'ring'
     RING_ZONE_INDEX = 1
     RING_FILE_NAME = 'bizmark'
-    RU_NAME = 'Планета Лейденшафт'
+    RU_NAME = MS('Планета Лейденшафт', 'Planet Leidenschaft')
 
 
 class BizmarkConnPlanet1(BizmarkMember, main_objects.TradeConnection):

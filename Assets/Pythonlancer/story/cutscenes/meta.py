@@ -105,7 +105,7 @@ class LipsParser:
 
     def __init__(self, delay_factor=0):
         self.delay_factor = delay_factor
-        self.data = DataFolder.get_facial()
+        self.data = DataFolder().get_facial()
 
     def get_lips(self):
         lips = []
@@ -153,7 +153,7 @@ class LipSyncManager:
             'exist_meta': [] if is_new else self.get_line_meta(sound)
         }
         data = self.tpl_manager.get_result(self.FACIAL_TEMPLATE, context)
-        DataFolder.sync_facial(data)
+        DataFolder().sync_facial(data)
 
     def get_lips_from_workspace(self):
         return LipsParser().get_lips()

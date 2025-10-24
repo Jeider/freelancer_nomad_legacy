@@ -38,5 +38,5 @@ class CharacterManager:
         if not self.core.write:
             return
 
-        DataFolder.sync_knowledge_map(self.get_knowledge_map_content())
+        DataFolder(build_to_folder=self.core.build_folder).sync_knowledge_map(self.get_knowledge_map_content())
 

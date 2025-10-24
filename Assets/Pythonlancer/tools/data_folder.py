@@ -1,6 +1,7 @@
 import pathlib
 import shutil
 from pydub import AudioSegment
+import json
 
 LOADOUTS_GEN = 'loadout_gen.ini'
 
@@ -12,213 +13,350 @@ def get_duration_pydub(file_path):
     return duration
 
 
-class DataFolder(object):
+def get_and_create(folder):
+    if not folder.exists():
+        folder.mkdir()
+    return folder
 
-    @staticmethod
-    def get_root():
-        current_path = pathlib.Path().resolve()
-        return current_path.parent.parent / 'DATA'
 
-    @classmethod
-    def get_audio(cls):
-        return cls.get_root() / 'AUDIO'
+class DataFolder:
 
-    @classmethod
-    def get_equip(cls):
-        return cls.get_root() / 'EQUIPMENT'
+    def __init__(self, build_to_folder=None):
+        self.root = pathlib.Path().resolve().parent.parent
+        self.build_to_folder = build_to_folder
+        if self.build_to_folder:
+            self.root = self.root / 'BUILDS' / self.build_to_folder
 
-    @classmethod
-    def get_solar(cls):
-        return cls.get_root() / 'SOLAR'
+    def get_root(self):
+        return self.root
 
-    @classmethod
-    def get_universe(cls):
-        return cls.get_root() / 'UNIVERSE'
+    def get_data(self):
+        return get_and_create(self.get_root() / 'DATA')
 
-    @classmethod
-    def get_missions(cls):
-        return cls.get_root() / 'MISSIONS'
+    def get_exe(self):
+        return get_and_create(self.get_root() / 'EXE')
 
-    @classmethod
-    def get_ships(cls):
-        return cls.get_root() / 'SHIPS'
+    def get_save(self):
+        return get_and_create(self.get_root() / 'SAVE')
 
-    @classmethod
-    def get_interface(cls):
-        return cls.get_root() / 'INTERFACE'
+    def get_autosave(self):
+        if self.build_to_folder:
+            raise Exception('Impossible to use with build')
 
-    @classmethod
-    def get_fx(cls):
-        return cls.get_root() / 'FX'
+        return self.get_root() / 'SAVE' / 'Accts' / 'SinglePlayer' / 'AutoSave.fl'
 
-    @classmethod
-    def get_scripts(cls):
-        return cls.get_root() / 'SCRIPTS'
+    def get_crashes_root(self):
+        if self.build_to_folder:
+            raise Exception('Impossible to use with build')
 
-    @classmethod
-    def get_cutscene_audio(cls):
-        return cls.get_audio() / 'MOD'
+        folder = self.get_save() / 'CrashData'
+        if not folder.exists():
+            folder.mkdir()
+        return folder
 
-    @classmethod
-    def sync_fuse(cls, fuse_name, content):
-        loadouts_file = cls.get_fx() / f'{fuse_name}.ini'
+    def get_audio(self):
+        return get_and_create(self.get_data() / 'AUDIO')
+
+    def get_equip(self):
+        return get_and_create(self.get_data() / 'EQUIPMENT')
+
+    def get_solar(self):
+        return get_and_create(self.get_data() / 'SOLAR')
+
+    def get_universe(self):
+        return get_and_create(self.get_data() / 'UNIVERSE')
+
+    def get_missions(self):
+        return get_and_create(self.get_data() / 'MISSIONS')
+
+    def get_ships(self):
+        return get_and_create(self.get_data() / 'SHIPS')
+
+    def get_interface(self):
+        return get_and_create(self.get_data() / 'INTERFACE')
+
+    def get_fx(self):
+        return get_and_create(self.get_data() / 'FX')
+
+    def get_scripts(self):
+        return get_and_create(self.get_data() / 'SCRIPTS')
+
+    def get_player(self):
+        return get_and_create(self.get_data() / 'PLAYER')
+
+    def get_characters(self):
+        return get_and_create(self.get_data() / 'CHARACTERS')
+
+    def get_cutscene_audio_ru(self):
+        if self.build_to_folder:
+            return
+
+        return get_and_create(self.get_audio() / 'MOD')
+
+    def get_cutscene_audio_en(self):
+        if self.build_to_folder:
+            return
+
+        return get_and_create(self.get_audio() / 'MOD_ENG')
+
+    def sync_fuse(self, fuse_name, content):
+        loadouts_file = self.get_fx() / f'{fuse_name}.ini'
         loadouts_file.write_text(content, encoding='utf-8')
 
-    @classmethod
-    def sync_effects(cls, content):
-        equip_file = cls.get_fx() / 'effects_gen.ini'
+    def sync_effects(self, content):
+        if self.build_to_folder:
+            return
+
+        equip_file = self.get_fx() / 'effects_gen.ini'
         equip_file.write_text(content, encoding='utf-8')
 
-    @classmethod
-    def sync_vis_effects(cls, content):
-        equip_file = cls.get_fx() / 'GENERATED' / 'gen_ale.ini'
+    def sync_vis_effects(self, content):
+        if self.build_to_folder:
+            return
+
+        equip_file = get_and_create(self.get_fx() / 'GENERATED') / 'gen_ale.ini'
         equip_file.write_text(content, encoding='utf-8')
 
-    @classmethod
-    def sync_solar_gen_loadouts(cls, content):
-        loadouts_file = cls.get_solar() / LOADOUTS_GEN
+    def sync_solar_gen_loadouts(self, content):
+        loadouts_file = self.get_solar() / LOADOUTS_GEN
         loadouts_file.write_text(content, encoding='utf-8')
 
-    @classmethod
-    def sync_to_test_workspace(cls, content, workspace_index=''):
-        system_file = cls.get_universe() / 'GENERATION_DATA' / 'WORKSPACE' / f'test{workspace_index}.ini'
+    def sync_to_test_workspace(self, content, workspace_index=''):
+        if self.build_to_folder:
+            raise Exception('Impossible to use with build')
+
+        system_file = self.get_universe() / 'GENERATION_DATA' / 'WORKSPACE' / f'test{workspace_index}.ini'
         system_file.write_text(content, encoding='utf-8')
 
-    @classmethod
-    def sync_system(cls, system_name, system_root, system_folder, content):
-        system_file = cls.get_universe() / system_root / system_folder / f'{system_name}.ini'
+    def sync_system(self, system_name, system_root, system_folder, content):
+        system_file = get_and_create(get_and_create(self.get_universe() / system_root) / system_folder) / f'{system_name}.ini'
         system_file.write_text(content, encoding='utf-8')
 
-    @classmethod
-    def sync_asteroid_definition(cls, definition_name, subfolder, content):
-        asteroid_file = cls.get_solar() / 'ASTEROIDS_MOD' / subfolder / f'{definition_name}.ini'
+    def sync_asteroid_definition(self, definition_name, subfolder, content):
+        if self.build_to_folder:
+            return
+
+        asteroid_file = self.get_solar() / 'ASTEROIDS_MOD' / subfolder / f'{definition_name}.ini'
         asteroid_file.write_text(content, encoding='utf-8')
 
-    @classmethod
-    def sync_templated_nebula(cls, nebula_file_name, subfolder, content):
-        nebula_file = cls.get_solar() / 'NEBULA_MOD' / subfolder / f'{nebula_file_name}.ini'
+    def sync_templated_nebula(self, nebula_file_name, subfolder, content):
+        if self.build_to_folder:
+            return
+
+        nebula_file = self.get_solar() / 'NEBULA_MOD' / subfolder / f'{nebula_file_name}.ini'
         nebula_file.write_text(content, encoding='utf-8')
 
-    @classmethod
-    def sync_interior(cls, interior_file_name, content):
-        asteroid_file = cls.get_universe() / 'GENERATED_INTERIORS' / f'{interior_file_name}.ini'
+    def sync_interior(self, interior_file_name, content):
+        if self.build_to_folder:
+            return
+
+        asteroid_file = self.get_universe() / 'GENERATED_INTERIORS' / f'{interior_file_name}.ini'
         asteroid_file.write_text(content, encoding='utf-8')
 
-    @classmethod
-    def sync_equip_root(cls, equip_file_name, content):
-        equip_file = cls.get_equip() / f'{equip_file_name}.ini'
+    def sync_equip_root(self, equip_file_name, content):
+        equip_file = self.get_equip() / f'{equip_file_name}.ini'
         equip_file.write_text(content, encoding='utf-8')
 
-    @classmethod
-    def sync_equip(cls, equip_file_name, subfolder, content):
-        equip_file = cls.get_equip() / subfolder / f'{equip_file_name}.ini'
+    def sync_equip(self, equip_file_name, subfolder, content):
+        equip_file = self.get_equip() / subfolder / f'{equip_file_name}.ini'
         equip_file.write_text(content, encoding='utf-8')
 
-    @classmethod
-    def sync_equip_hardcoded(cls, equip_file_name, content):
-        equip_file = cls.get_equip()  / f'{equip_file_name}.ini'
+    def sync_equip_hardcoded(self, equip_file_name, content):
+        equip_file = self.get_equip()  / f'{equip_file_name}.ini'
         equip_file.write_text(content, encoding='utf-8')
 
-    @classmethod
-    def sync_knowledge_map(cls, content):
-        equip_file = cls.get_interface() / 'knowledgemap.ini'
+    def sync_knowledge_map(self, content):
+        equip_file = self.get_interface() / 'knowledgemap.ini'
         equip_file.write_text(content, encoding='utf-8')
 
-    @classmethod
-    def sync_infocard_map(cls, content):
-        equip_file = cls.get_interface() / 'infocardmap.ini'
+    def sync_infocard_map(self, content):
+        equip_file = self.get_interface() / 'infocardmap.ini'
         equip_file.write_text(content, encoding='utf-8')
 
-    @classmethod
-    def sync_universe(cls, content):
-        equip_file = cls.get_universe() / 'universe.ini'
+    def sync_universe(self, content):
+        equip_file = self.get_universe() / 'universe.ini'
         equip_file.write_text(content, encoding='utf-8')
 
-    @classmethod
-    def sync_mbases(cls, content):
-        equip_file = cls.get_missions() / 'mbases.ini'
+    def sync_initial_world(self, content):
+        equip_file = self.get_data() / 'initialworld.ini'
         equip_file.write_text(content, encoding='utf-8')
 
-    @classmethod
-    def sync_npcships(cls, content):
-        equip_file = cls.get_missions() / 'npcships.ini'
+    def sync_new_player(self, content):
+        equip_file = self.get_exe() / 'newplayer.fl'
         equip_file.write_text(content, encoding='utf-8')
 
-    @classmethod
-    def sync_lootprops(cls, content):
-        equip_file = cls.get_missions() / 'lootprops.ini'
+    def sync_dacom(self, content):
+        equip_file = self.get_exe() / 'dacom.ini'
         equip_file.write_text(content, encoding='utf-8')
 
-    @classmethod
-    def sync_shiparch(cls, content):
-        equip_file = cls.get_ships() / 'shiparch.ini'
+    def get_perf_options(self):
+        if self.build_to_folder:
+            raise Exception('Impossible to use with build')
+
+        perf_file = self.get_save() / 'PerfOptions.ini'
+        if perf_file.exists():
+            opened_file = open(perf_file)
+            file_content = opened_file.readlines()
+            opened_file.close()
+            return file_content
+        return ''
+
+    def get_startup_settings(self):
+        if self.build_to_folder:
+            raise Exception('Impossible to use with build')
+
+        data_file = self.get_save() / 'startup_settings.json'
+        data = {}
+        if data_file.exists():
+            with open(data_file) as db_file:
+                data = json.load(db_file)
+        return data
+
+    def save_startup_settings(self, settings):
+        if self.build_to_folder:
+            raise Exception('Impossible to use with build')
+
+        with open(self.get_save() / 'startup_settings.json', 'w') as data_file:
+            json.dump(settings, data_file)
+
+    def sync_perf_options(self, content):
+        if self.build_to_folder:
+            raise Exception('Impossible to use with build')
+
+        equip_file = self.get_save() / 'PerfOptions.ini'
         equip_file.write_text(content, encoding='utf-8')
 
-    @classmethod
-    def sync_ships_loadouts(cls, content):
-        equip_file = cls.get_ships() / 'loadout_gen.ini'
+    def sync_hud_shift(self, content):
+        if self.build_to_folder:
+            raise Exception('Impossible to use with build')
+
+        equip_file = self.get_interface() / 'HudShift.ini'
         equip_file.write_text(content, encoding='utf-8')
 
-    @classmethod
-    def sync_story_ships_loadouts(cls, content):
-        equip_file = cls.get_ships() / 'loadout_gen_story.ini'
+    def sync_cameras(self, content):
+        if self.build_to_folder:
+            raise Exception('Impossible to use with build')
+
+        equip_file = self.get_data() / 'cameras.ini'
         equip_file.write_text(content, encoding='utf-8')
 
-    @classmethod
-    def sync_dock_key(cls, content):
-        equip_file = cls.get_root() / 'dock_key.ini'
+    def sync_front_light(self, content):
+        if self.build_to_folder:
+            raise Exception('Impossible to use with build')
+
+        equip_file = self.get_player() / 'front_light.ini'
         equip_file.write_text(content, encoding='utf-8')
 
-    @classmethod
-    def sync_story_mission(cls, folder, file, content):
-        equip_file = cls.get_missions() / folder / f'{file}.ini'
+    def sync_contrail(self, content):
+        if self.build_to_folder:
+            raise Exception('Impossible to use with build')
+
+        equip_file = self.get_player() / 'contrail.ini'
         equip_file.write_text(content, encoding='utf-8')
 
-    @classmethod
-    def sync_story_npcships(cls, folder, content):
-        equip_file = cls.get_missions() / folder / f'npcships.ini'
+    def sync_player_bodyparts(self, content):
+        if self.build_to_folder:
+            raise Exception('Impossible to use with build')
+
+        equip_file = self.get_characters() / 'bodyparts_player.ini'
         equip_file.write_text(content, encoding='utf-8')
 
-    @classmethod
-    def sync_story_ingame_thorn(cls, file, content):
-        equip_file = cls.get_missions() / 'GENERATED_THORN' / f'{file}.thn'
+    def sync_mbases(self, content):
+        equip_file = self.get_missions() / 'mbases.ini'
         equip_file.write_text(content, encoding='utf-8')
 
-    @classmethod
-    def sync_audio_ini(cls, file, content):
-        equip_file = cls.get_audio() / f'{file}.ini'
+    def sync_npcships(self, content):
+        equip_file = self.get_missions() / 'npcships.ini'
         equip_file.write_text(content, encoding='utf-8')
 
-    @classmethod
-    def sync_mission_voice_props(cls, content):
-        equip_file = cls.get_missions() / 'voice_properties.ini'
+    def sync_lootprops(self, content):
+        equip_file = self.get_missions() / 'lootprops.ini'
         equip_file.write_text(content, encoding='utf-8')
 
-    @classmethod
-    def move_story_audio(cls, original_file_destination, out_file_name):
+    def sync_shiparch(self, content):
+        equip_file = self.get_ships() / 'shiparch.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    def sync_ships_loadouts(self, content):
+        equip_file = self.get_ships() / 'loadout_gen.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    def sync_story_ships_loadouts(self, content):
+        equip_file = self.get_ships() / 'loadout_gen_story.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    def sync_dock_key(self, content):
+        if self.build_to_folder:
+            return
+
+        equip_file = self.get_data() / 'dock_key.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    def sync_story_mission(self, folder, file, content):
+        equip_file = get_and_create(self.get_missions() / folder) / f'{file}.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    def sync_story_npcships(self, folder, content):
+        equip_file = get_and_create(self.get_missions() / folder) / f'npcships.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    def sync_story_ingame_thorn(self, file, content):
+        if self.build_to_folder:
+            return
+
+        equip_file = self.get_missions() / 'GENERATED_THORN' / f'{file}.thn'
+        equip_file.write_text(content, encoding='utf-8')
+
+    def sync_audio_ini(self, file, content):
+        if self.build_to_folder:
+            return
+
+        equip_file = self.get_audio() / f'{file}.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    def sync_mission_voice_props(self, content):
+        if self.build_to_folder:
+            raise Exception('Impossible to use with build')
+
+        equip_file = self.get_missions() / 'voice_properties.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    def move_story_audio(self, original_file_destination, out_file_name):
+        if self.build_to_folder:
+            raise Exception('Impossible to use with build')
+
         shutil.move(
             original_file_destination,
-            cls.get_audio() / out_file_name
+            self.get_audio() / out_file_name
         )
 
-    @classmethod
-    def sync_facial(cls, content):
-        facial_file = cls.get_scripts() / 'WORKSPACE' / 'facial.thn'
+    def sync_facial(self, content):
+        if self.build_to_folder:
+            raise Exception('Impossible to use with build')
+
+        facial_file = self.get_scripts() / 'WORKSPACE' / 'facial.thn'
         facial_file.write_text(content, encoding='utf-8')
 
-    @classmethod
-    def sync_scene(cls, scene_name, content):
-        facial_file = cls.get_scripts() / 'GENERATED' / f'{scene_name}.thn'
+    def sync_scene(self, scene_name, content):
+        if self.build_to_folder:
+            raise Exception('Impossible to use with build')
+
+        facial_file = self.get_scripts() / 'GENERATED' / f'{scene_name}.thn'
         facial_file.write_text(content, encoding='utf-8')
 
-    @classmethod
-    def get_facial(cls):
-        facial_file = open(cls.get_scripts() / 'WORKSPACE' / 'facial.thn')
+    def get_facial(self):
+        if self.build_to_folder:
+            raise Exception('Impossible to use with build')
+
+        facial_file = open(self.get_scripts() / 'WORKSPACE' / 'facial.thn')
         file_content = facial_file.readlines()
         facial_file.close()
         return file_content
 
-    @classmethod
-    def watch_cutscene_audio_duration(cls, subfolder, file_path):
-        duration = get_duration_pydub(cls.get_cutscene_audio() / subfolder / file_path)
+    def watch_cutscene_audio_duration(self, subfolder, file_path, russian=True):
+        if self.build_to_folder:
+            raise Exception('Impossible to use with build')
+
+        root = self.get_cutscene_audio_ru() if russian else self.get_cutscene_audio_en()
+        duration = get_duration_pydub(root / subfolder / file_path)
         return duration

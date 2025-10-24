@@ -22,6 +22,8 @@ from templates.nebula import co_och_nebula
 from templates.nebula import exclusion
 from templates.dockable import corsair_dreadnought
 
+from text.strings import MultiString as MS
+
 
 class OchoMember(Member):
     FACTION = faction.Corsairs
@@ -303,7 +305,7 @@ class OchoLargeAsteroidBase(OchoMember, main_objects.PirateAsteroid):
     LOADOUT = 'co_base_rock_large01_pi_01'
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEFENCE_LEVEL = None
-    RU_NAME = 'База Очо-Риос'
+    RU_NAME = MS('База Очо-Риос', "Ocho-Rios Base")
     SHIP_SET = markets.ShipSet('co_fighter')
     CALC_STORE = False
     HAVE_CHARACTERS = False
@@ -333,7 +335,7 @@ class OchoLargeDread(OchoMember, main_objects.Station):
         OchoAsteroidZone4,
     ]
 
-    RU_NAME = 'Линкор Конкорд'
+    RU_NAME = MS('Линкор Конкорд', 'Battleship Concord')
 
 
 class OchoMetro1(OchoMember, main_objects.MetroMiningOne):
@@ -413,7 +415,7 @@ class OchoResearchBase1(OchoMember, main_objects.AbandonedAsteroid):
     DEFENCE_LEVEL = None
     LOCKED_DOCK = True
 
-    RU_NAME = 'База Магеллан'
+    RU_NAME = MS('База Магеллан', "Magellan Base")
 
     INTERIOR_BG1 = interior.INTERIOR_BG_EDGE
     AST_EXCLUSION_ZONE_SIZE = 3500
@@ -447,7 +449,7 @@ class OchoResearchBase2(OchoMember, main_objects.AbandonedAsteroid):
     DEFENCE_LEVEL = None
     LOCKED_DOCK = True
 
-    RU_NAME = 'База Олдрин'
+    RU_NAME = MS('База Олдрин', "Aldrin Base")
 
     INTERIOR_BG1 = interior.INTERIOR_BG_EDGE
     AST_EXCLUSION_ZONE_SIZE = 3500

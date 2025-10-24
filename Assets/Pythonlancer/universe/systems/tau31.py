@@ -25,6 +25,8 @@ from templates.dockable import gas_miner
 from templates.dockable import bounty_hunter
 from templates.dockable import upsilon_gasinside
 
+from text.strings import MultiString as MS
+
 
 class Tau31Member(Member):
     FACTION = faction.LibertyMain
@@ -131,7 +133,7 @@ class Tau31Station(Tau31Member, main_objects.GasMiningStation):
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyCivilianDealers
 
-    RU_NAME = 'Станция Колорадо'
+    RU_NAME = MS('Станция Колорадо', 'Colorado Station')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 5000
     EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS
@@ -147,7 +149,7 @@ class Tau31Battleship(Tau31Member, main_objects.LibertyBattleship):
     DEALERS = dealers.LibertyMilitaryDealers
     SHIP_SET = markets.ShipSet('li_elite')
 
-    RU_NAME = 'Линкор Луизиана'
+    RU_NAME = MS('Линкор Луизиана', 'Battleship Luisiana')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 3000
     EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS
@@ -163,7 +165,7 @@ class Tau31Trading(Tau31Member, main_objects.TradingBase):
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.LibertyCivilianDealers
 
-    RU_NAME = 'Торговая база Флорида'
+    RU_NAME = MS('Торговая база Флорида', 'Trading base Florida')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2500
     EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS
@@ -179,7 +181,7 @@ class Tau31BottomPirates(Tau31Member, main_objects.PirateGasMiner):
     DEFENCE_LEVEL = None
     FACTION = faction.LibertyPirate
 
-    RU_NAME = 'База Тубак'
+    RU_NAME = MS('База Тубак', 'Tubac Base')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
     EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS
@@ -195,7 +197,7 @@ class Tau31TopPirates(Tau31Member, main_objects.PirateGasMiner):
     DEALERS = dealers.LibertyPirateDealers
     DEFENCE_LEVEL = None
     FACTION = faction.LibertyPirate
-    RU_NAME = 'База Коринт'
+    RU_NAME = MS('База Коринт', 'Corinth Base')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
     EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS
@@ -352,7 +354,7 @@ class Tau31GasPocketsSpecialZone1(Tau31Member, zones.AsteroidZone):
 class Tau31GasMiner1(Tau31Member, Tau31BaseLibertyGasMiner):
     INDEX = 1
     BASE_INDEX = 51
-    RU_NAME = 'Газодобытчик Флетчер'
+    RU_NAME = MS('Газодобытчик Флетчер', 'Fletcher Gas Miner')
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM2),
         Q.Thruster(LI_MAIN, eq_classes=markets.SECRET2),
@@ -362,7 +364,7 @@ class Tau31GasMiner1(Tau31Member, Tau31BaseLibertyGasMiner):
 class Tau31GasMiner2(Tau31Member, Tau31BaseLibertyGasMiner):
     INDEX = 2
     BASE_INDEX = 52
-    RU_NAME = 'Газодобытчик Бревард'
+    RU_NAME = MS('Газодобытчик Бревард', 'Gas Miner Brevard')
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM3),
         Q.Thruster(LI_PIRATE, eq_classes=markets.SECRET2),
@@ -372,7 +374,7 @@ class Tau31GasMiner2(Tau31Member, Tau31BaseLibertyGasMiner):
 class Tau31GasMiner3(Tau31Member, Tau31BaseLibertyGasMiner):
     INDEX = 3
     BASE_INDEX = 53
-    RU_NAME = 'Газодобытчик Сапфир'
+    RU_NAME = MS('Газодобытчик Сапфир', 'Gas Miner Saphire')
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM2),
         Q.Thruster(LI_MAIN, eq_classes=markets.SECRET3),
@@ -382,7 +384,7 @@ class Tau31GasMiner3(Tau31Member, Tau31BaseLibertyGasMiner):
 class Tau31GasMiner4(Tau31Member, Tau31BaseLibertyGasMiner):
     INDEX = 4
     BASE_INDEX = 54
-    RU_NAME = 'Газодобытчик Оникс'
+    RU_NAME = MS('Газодобытчик Оникс', 'Gas Miner Onyx')
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM3),
         Q.Thruster(LI_PIRATE, eq_classes=markets.SECRET3),
@@ -392,7 +394,7 @@ class Tau31GasMiner4(Tau31Member, Tau31BaseLibertyGasMiner):
 class Tau31GasMiner5(Tau31Member, Tau31BaseLibertyGasMiner):
     INDEX = 5
     BASE_INDEX = 55
-    RU_NAME = 'Газодобытчик Исли'
+    RU_NAME = MS('Газодобытчик Исли', 'Gas Miner Isley')
     EQUIP_SET = markets.EquipSet(
         Q.SingleLauncher(CM, eq_classes=markets.CM2),
         Q.Thruster(LI_MAIN, eq_classes=markets.SECRET2),
@@ -460,7 +462,7 @@ class Tau31AbandonedMiner1(Tau31Member, Tau31BaseAbandonedMiner):
     ASTEROID_ZONES = [
         Tau31GasPocketsZone1
     ]
-    RU_NAME = 'База Атенс'
+    RU_NAME = MS('База Атенс', 'Athens base')
     MISC_EQUIP_TYPE = LI_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Gun('li_heavygun', eq_classes=markets.SECRET2),
@@ -474,7 +476,7 @@ class Tau31AbandonedMiner2(Tau31Member, Tau31BaseAbandonedMiner):
     ASTEROID_ZONES = [
         Tau31GasPocketsZone2
     ]
-    RU_NAME = 'База Огаста'
+    RU_NAME = MS('База Огаста', 'Augusta base')
     MISC_EQUIP_TYPE = LI_MAIN
     EQUIP_SET = markets.EquipSet(
         Q.Gun('li_heavygun', eq_classes=markets.SECRET1),
@@ -534,7 +536,7 @@ class Tau31OldResearchRuins(Tau31Member, main_objects.StationRuins):
     EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS_NEAR
     NEBULA_ZONES = [Tau31Nebula]
 
-    RU_NAME = 'Станция Массачусетс'
+    RU_NAME = MS('Станция Массачусетс', 'Massachusetts Station')
 
 
 class Tau31OldResearchRuinsSuprisePoint1(Tau31Member, main_objects.HackableStation):
@@ -546,7 +548,7 @@ class Tau31OldResearchRuinsSuprisePoint1(Tau31Member, main_objects.HackableStati
     HACKABLE_SOLAR_CLASS = hackable.HackablePrisonRot180
     INTERIOR_CLASS = interior.EquipDeckInterior
 
-    RU_NAME = 'Исследовательский блок 1 Массачусетса'
+    RU_NAME = MS('Иссл. блок 1 Массачусетса', 'Massachusetts Research block 1')
     MISC_EQUIP_TYPE = LI_MAIN
     WEAPON_FACTION = WEAPON_LI
     EQUIP_SET = markets.EquipSet(
@@ -564,7 +566,7 @@ class Tau31OldResearchRuinsSuprisePoint2(Tau31Member, main_objects.HackableStati
     HACKABLE_SOLAR_CLASS = hackable.HackablePrison
     INTERIOR_CLASS = interior.EquipDeckInterior
 
-    RU_NAME = 'Исследовательский блок 2 Массачусетса'
+    RU_NAME = MS('Иссл. блок 2 Массачусетса', 'Massachusetts Research block 2')
     MISC_EQUIP_TYPE = LI_MAIN
     WEAPON_FACTION = WEAPON_LI
     EQUIP_SET = markets.EquipSet(

@@ -1,6 +1,7 @@
 from story.ingame.tools import Nag, Script, Trigger, Cond, Direct, Rtc, Offer
 
 from text.dividers import DIVIDER
+from text.strings import MultiString as MS
 
 
 class IngameMission(object):
@@ -22,13 +23,16 @@ class IngameMission(object):
         super().__init_subclass__(**kwargs)
         cls.subclasses.append(cls)
 
-    def __init__(self, ids, ids_save, full_script, universe_root):
+    def __init__(self, russian, ids, ids_save, full_script, universe, history_manager):
+        self.russian = russian
         self.ids = ids
         self.ids_save = ids_save
         self.capital_groups = {}
         self.solar_groups = {}
         self.full_script = full_script
-        self.universe_root = universe_root
+        self.universe = universe
+        self.universe_root = self.universe.get_universe_root()
+        self.history_manager = history_manager
         self.points: dict = self.get_all_points()
         self.nn_objectives = self.get_nn_objectives()
         self.nag = Nag()
@@ -44,6 +48,7 @@ class IngameMission(object):
         self.script = None
         if self.full_script and self.SCRIPT_INDEX:
             self.script = Script(
+                mission=self,
                 msn_script=self.full_script.get_mission_by_index(self.SCRIPT_INDEX)
             )
 
@@ -60,10 +65,13 @@ class IngameMission(object):
         if not self.START_SAVE_ID or not self.START_SAVE_RU_NAME:
             raise Exception(f'Mission {self.__class__.__name__} have no initial save id or initial save name')
 
-        self.ids_save.add_force(self.START_SAVE_ID, f'Миссия {self.SCRIPT_INDEX}. {self.START_SAVE_RU_NAME}')
+        self.ids_save.add_force(self.START_SAVE_ID, MS(
+            f'Миссия {self.SCRIPT_INDEX}. {self.START_SAVE_RU_NAME.get_ru()}',
+            f'Mission {self.SCRIPT_INDEX}. {self.START_SAVE_RU_NAME.get_en()}'
+        ))
 
     def get_mission_title(self):
-        return f'Миссия {self.SCRIPT_INDEX}'
+        return MS(f'Миссия {self.SCRIPT_INDEX}', f'Mission {self.SCRIPT_INDEX}')
 
     def get_init_title(self):
         return self.title.id
@@ -167,6 +175,7 @@ class IngameMission(object):
     def get_rtc_context(self) -> dict:
         return {
             'init_offer': self.init_offer,
+            'suffix': '' if self.russian else '_en',
         }
 
     def get_initial_context(self) -> dict:
@@ -176,6 +185,7 @@ class IngameMission(object):
             'init_offer': self.init_offer,
             'rtc': self.rtc,
             'offer': self.offer,
+            'history': self.history_manager,
         }
         if self.script:
             context['script'] = self.script

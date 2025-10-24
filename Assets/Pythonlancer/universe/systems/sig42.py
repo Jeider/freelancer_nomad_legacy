@@ -27,6 +27,9 @@ from templates.dockable import research
 from templates.dockable import odissey
 from templates.dockable import pirate
 
+from story.ingame.names import MUSASHI, OSIRIS
+from text.strings import MultiString as MS
+
 
 class Sig42Member(Member):
     FACTION = faction.BretoniaMain
@@ -200,7 +203,7 @@ class Sig42SolarPlant1(Sig42Member, Sig42BaseBretoniaSolarPlant):
     INDEX = 1
     BASE_INDEX = 61
     REL = LEFT
-    RU_NAME = 'Солн.генератор Росс'
+    RU_NAME = MS('Солн.генератор Росс', "Solar Plant Ross")
     MISC_EQUIP_TYPE = BR_PIRATE
     EQUIP_SET = markets.EquipSet(
         Q.Power(BR_CIV, eq_classes=markets.SECRET3),
@@ -212,7 +215,7 @@ class Sig42SolarPlant2(Sig42Member, Sig42BaseBretoniaSolarPlant):
     INDEX = 2
     BASE_INDEX = 62
     REL = LEFT
-    RU_NAME = 'Солн.генератор Процион'
+    RU_NAME = MS('Солн.генератор Процион', "Solar Plant Procyon")
     MISC_EQUIP_TYPE = BR_PIRATE
     EQUIP_SET = markets.EquipSet(
         Q.Power(BR_CIV, eq_classes=markets.SECRET2),
@@ -224,7 +227,7 @@ class Sig42SolarPlant3(Sig42Member, Sig42BaseKusariSolarPlant):
     INDEX = 3
     BASE_INDEX = 63
     REL = LEFT
-    RU_NAME = 'Солн.генератор Эридан'
+    RU_NAME = MS('Солн.генератор Эридан', "Solar Plant Eridanus")
     MISC_EQUIP_TYPE = KU_PIRATE
     EQUIP_SET = markets.EquipSet(
         Q.Power(KU_PIRATE, eq_classes=markets.SECRET2),
@@ -236,7 +239,7 @@ class Sig42SolarPlant4(Sig42Member, Sig42BaseBretoniaSolarPlant):
     INDEX = 4
     BASE_INDEX = 64
     REL = RIGHT
-    RU_NAME = 'Солн.генератор Лайтен'
+    RU_NAME = MS('Солн.генератор Лайтен', 'Solar Plant Lighten')
     MISC_EQUIP_TYPE = BR_PIRATE
     EQUIP_SET = markets.EquipSet(
         Q.Power(BR_CIV, eq_classes=markets.SECRET2),
@@ -248,7 +251,7 @@ class Sig42SolarPlant5(Sig42Member, Sig42BaseKusariSolarPlant):
     INDEX = 5
     BASE_INDEX = 65
     REL = RIGHT
-    RU_NAME = 'Солн.генератор Рехуа'
+    RU_NAME = MS('Солн.генератор Рехуа', 'Solar Plant Rehua')
     MISC_EQUIP_TYPE = KU_PIRATE
     EQUIP_SET = markets.EquipSet(
         Q.Power(KU_CIV, eq_classes=markets.SECRET3),
@@ -263,7 +266,7 @@ class Sig42Dockring(Sig42Member, Sig42Bretonia, main_objects.MiningPlanetDockrin
     INTERIOR_CLASS = interior.CustomFullSplitRoomInteriorSecond
     DEALERS = dealers.BretoniaCivilianDealers
     SHIP_SET = markets.ShipSet('br_fighter')
-    RU_NAME = 'Планета Спрага'
+    RU_NAME = MS('Планета Спрага', 'Planet Sprague')
 
     BASE_PROPS = meta.MiningPlanet(
         objectives=[
@@ -280,7 +283,7 @@ class Sig42BretoniaStation(Sig42Member, Sig42Bretonia, main_objects.TradelaneSup
     SPACE_OBJECT_TEMPLATE = odissey.OdisseySimple
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.BretoniaCivilianDealers
-    RU_NAME = 'Станция Антарес'
+    RU_NAME = MS('Станция Антарес', 'Antares Station')
 
     BASE_PROPS = meta.TradelaneSupportStation(
         objectives=[
@@ -296,7 +299,7 @@ class Sig42KusariStation(Sig42Member, Sig42Kusari, main_objects.ResearchStation)
     SPACE_OBJECT_TEMPLATE = research.SiriusResearch
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
-    RU_NAME = 'Станция Канис'
+    RU_NAME = MS('Станция Канис', 'Kanis Station')
 
     BASE_PROPS = meta.Research(
         objectives=[
@@ -312,12 +315,12 @@ class Sig42Liner(Sig42Member, Sig42Bretonia, main_objects.LuxuryLiner):
     REL = LEFT
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.BretoniaCivilianDealers
-    RU_NAME = 'Круизный лайнер Каникула'
+    RU_NAME = MS('Круизный лайнер Каникула', 'Cruise liner Canicola')
 
 
 class Sig42VirtualDepot(Sig42Member, Sig42Bretonia, main_objects.VirtualDepot):
     REL = RIGHT
-    RU_NAME = 'Сириус Б'
+    RU_NAME = MS('Сириус Б', 'Sirius B')
 
 
 class Sig42TopPirates(Sig42Member, Sig42Bretonia, main_objects.PirateStation):
@@ -328,7 +331,7 @@ class Sig42TopPirates(Sig42Member, Sig42Bretonia, main_objects.PirateStation):
     FACTION = faction.BretoniaPirate
 
     DEFENCE_LEVEL = None
-    RU_NAME = 'База Исида'
+    RU_NAME = MS('База Исида', 'Isis Base')
 
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -348,7 +351,7 @@ class Sig42BottomPirates(Sig42Member, Sig42Kusari, main_objects.PirateStation):
     FACTION = faction.KusariPirate
 
     DEFENCE_LEVEL = None
-    RU_NAME = 'База Сотис'
+    RU_NAME = MS('База Сотис', 'Satis Base')
 
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -536,7 +539,7 @@ class AfterLairOsiris(Sig42Member, main_objects.LibertyBattleship):
     EQUIP_FACTION = EQUIP_LI
     # ASF set?
     SHIP_SET = markets.ShipSet('li_elite')
-    RU_NAME = 'Линкор Осирис'
+    RU_NAME = OSIRIS
 
 
 class LeaveKusariBattleship(Sig42Member, main_objects.KusariBattleship):
@@ -552,5 +555,5 @@ class LeaveKusariBattleship(Sig42Member, main_objects.KusariBattleship):
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_KU
     IS_BASE = False
     AUTOSAVE_FORBIDDEN = True
-    RU_NAME = 'Линкор Мусаси'
+    RU_NAME = MUSASHI
 

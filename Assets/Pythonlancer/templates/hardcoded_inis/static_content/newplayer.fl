@@ -1,0 +1,210 @@
+[Player]
+name = Trent
+rank = 0
+Description = NewPlayer
+
+money = 2500
+
+voice = trent_voice
+costume = trent
+com_costume = trent
+
+;system = the_intro
+;base = the_intro_base
+
+system = the_intro_dark
+
+ship_archetype = ge_fighter
+
+pos = -5000, -5000, -5000
+
+equip = li_engine_01, , 1
+equip = li_power_01, , 1
+equip = scanner01, , 1
+equip = tractor01, , 1
+equip = LargeWhiteSpecialPlayer, HpHeadlight, 1
+equip = DockingLightRedSmall, HpDockLight01, 1
+equip = DockingLightRedSmall, HpDockLight02, 1
+
+
+wg = 0, HpWeapon01
+wg = 0, HpWeapon02 ;;; hbr missile 02
+wg = 0, HpWeapon03
+wg = 0, HpWeapon04
+wg = 0, HpWeapon05
+wg = 0, HpWeapon06
+
+
+
+
+
+house = 0.9, li_n_grp
+house = 0, li_lsf_grp
+house = 0, li_p_grp
+house = 0, br_n_grp
+house = 0.65, br_p_grp
+house = 0, ku_n_grp
+house = 0, ku_p_grp
+house = 0, rh_n_grp
+house = 0, rh_p_grp
+house = 0, co_alg_grp
+house = 0, co_be_grp
+house = -0.65, br_m_grp
+house = 0, co_nws_grp
+house = 0, co_hsp_grp
+house = 0, co_ic_grp
+house = 0, co_khc_grp
+house = 0, co_kt_grp
+house = 0, rh_m_grp
+house = 0, co_me_grp
+house = 0, co_ni_grp
+house = 0, co_os_grp
+house = 0, co_rs_grp
+house = 0, co_shi_grp
+house = 0, co_ss_grp
+house = 0, co_ti_grp
+house = 0, co_vr_grp
+house = 0, fc_bd_grp
+house = 0, fc_b_grp
+house = 0, fc_c_grp
+house = 0, fc_fa_grp
+house = 0, fc_g_grp
+house = 0, fc_gc_grp
+house = 0, fc_h_grp
+house = -0.65, fc_j_grp
+house = 0, fc_lh_grp
+house = -0.8, fc_lr_grp
+house = -0.8, fc_lwb_grp
+house = -0.8, fc_m_grp
+house = 0, fc_ou_grp
+house = 0, fc_rh_grp
+house = 0, fc_or_grp
+house = 0, fc_u_grp
+house = 0, fc_x_grp
+house = 0, gd_gm_grp
+house = 0, fc_uk_grp
+house = 0, fc_n_grp
+house = 0, fc_ln_grp
+house = 0, fc_kn_grp
+house = 0, fc_rn_grp
+house = 0, fc_ouk_grp
+house = 0, fc_q_grp
+house = 0, fc_f_grp
+house = 0, gd_im_grp
+house = 0, gd_z_grp
+house = 0, gd_bh_grp
+
+;MOD REPS
+house = -0.3, rh_grp
+house = -0.3, rc_grp
+house = -0.3, rx_grp
+house = -0.3, li_grp
+house = -0.3, lc_grp
+house = -0.3, lx_grp
+house = -0.3, br_grp
+house = -0.3, bc_grp
+house = -0.3, bx_grp
+house = -0.3, ku_grp
+house = -0.3, kc_grp
+house = -0.3, kx_grp
+house = -0.3, co_grp
+house = -0.3, edv_grp
+house = -0.3, bh_grp
+house = -0.3, tr_grp
+house = -0.3, pi_grp
+house = -0.65, cx_grp
+house = -0.65, sl_grp
+house = -0.9, no_grp
+house = -0.65, nokr_grp
+house = 0, s22_fp_grp
+house = 0, t4_fp_grp
+house = 0, t29_fp_grp
+house = 0, rber_fp_grp
+house = 0, asf_grp
+house = 0, or_grp
+house = -0.65, rm_grp
+house = -0.65, lm_grp
+house = -0.65, bm_grp
+house = -0.65, km_grp
+house = -0.3, junk_grp
+house = 0, miner_grp
+house = 0, expl_grp
+
+
+
+[StoryInfo]
+Mission = Mission_01a
+MissionNum = 1
+delta_worth = -1
+
+
+;; These gates will be locked in single player, but not necessarily multiplayer.
+[mPlayer]
+;matrix
+locked_gate = 2242919685 ; rh_biz_02_matrix_entrypoint01
+locked_gate = 2361801031 ; rh_mnh_02_matrix_entrypoint01
+locked_gate = 2208168783 ; om15_04_matrix_entrypoint01
+locked_gate = 2516111626 ; rh_stut_04_matrix_entrypoint01
+;stations
+locked_gate = 2551124493 ; li_col_06
+locked_gate = 2945896837 ; br_avl_06_dock
+locked_gate = 2503379852 ; rh_biz_05_dock01
+locked_gate = 3040278412 ; rh_biz_05_dock02
+locked_gate = 2548024070 ; ku_ksu_02_dock
+locked_gate = 2342654979 ; rh_ber_07
+;sp gates
+locked_gate = 2216425088 ; MNH_TO_SP1
+locked_gate = 2713834567 ; SIG8_TO_SP1
+locked_gate = 2518019016 ; SIG8_TO_FOR
+
+
+;;;;;
+locked_gate = 2216425088
+locked_gate = 2770614732
+locked_gate = 2713834567
+locked_gate = 3114289743
+locked_gate = 2518019016
+locked_gate = 2850213572
+;__future__
+locked_gate = 2441812805
+locked_gate = 2648019470
+locked_gate = 2865716239
+locked_gate = 2286590223
+locked_gate = 2474504846
+locked_gate = 2867291719
+locked_gate = 3171944329
+locked_gate = 2434674057
+locked_gate = 2500188551
+locked_gate = 2325787211
+locked_gate = 2223262222
+locked_gate = 2525138115
+locked_gate = 2362998470
+locked_gate = 2181181509
+locked_gate = 2992340931
+locked_gate = 2811627717
+locked_gate = 2644716618
+locked_gate = 3156849409
+locked_gate = 2323162566
+locked_gate = 2976667917
+locked_gate = 2878165834
+locked_gate = 2879435014
+locked_gate = 2824490957
+locked_gate = 2286836423
+locked_gate = 2827110861
+locked_gate = 2286854855
+locked_gate = 2295253895
+locked_gate = 2362392013
+locked_gate = 3076531521
+locked_gate = 2743232778
+locked_gate = 2696949761
+locked_gate = 2561201989
+locked_gate = 2374233733
+locked_gate = 2180140739
+locked_gate = 2180140739
+locked_gate = 3041324547
+locked_gate = 2966710469
+locked_gate = 3042529029
+locked_gate = 2298254336
+locked_gate = 3155962882
+locked_gate = 2992175306
+locked_gate = 2686166278

@@ -4,19 +4,19 @@ from text.translate import Lang_RU
 class InfocardBuilder(object):
 
     @staticmethod
-    def build_infocard(infocard_template, template_params):
+    def build_infocard(infocard_template, template_params, language=Lang_RU):
         inline_template = ''.join(infocard_template)
-        template_params.update(Lang_RU.TRANSLATIONS)
+        template_params.update(language.TRANSLATIONS)
 
         return inline_template.format(**template_params)
 
     @staticmethod
-    def build_row(infocard_template, content):
+    def build_row(infocard_template, content, language=Lang_RU):
         inline_template = ''.join(infocard_template)
         template_params = {
             KEY_CONTENT: content
         }
-        template_params.update(Lang_RU.TRANSLATIONS)
+        template_params.update(language.TRANSLATIONS)
 
         return inline_template.format(**template_params)
 
@@ -43,7 +43,7 @@ INFO_SHIP_ABOUT = [
     '<?xml version="1.0" encoding="UTF-16"?>',
     '<RDL>',
     '<PUSH/>',
-    '<TEXT>ТЕСТ</TEXT>',
+    '<TEXT>TEST</TEXT>',
     '<PARA/>',
     '<PARA/>',
     '<POP/>',

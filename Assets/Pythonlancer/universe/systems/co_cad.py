@@ -18,6 +18,8 @@ from templates.nebula import exclusion
 from templates.dockable import upsilon_gasinside
 from templates.dockable import valensia
 
+from text.strings import MultiString as MS
+
 
 class CadizMember(Member):
     FACTION = faction.Ireland
@@ -37,7 +39,7 @@ class CadizOrderBattleship(CadizMember, main_objects.Battleship):
     FACTION = faction.LibertyMain
     ROOM_SUBFOLDER = interior.ROOM_FOLDER_LI
     IS_BASE = False
-    RU_NAME = 'Линкор Навухудоносор'
+    RU_NAME = MS('Линкор Навухудоносор', "Battleship Nebuchadnezzar")
 
 
 class CadizDockring(CadizMember, main_objects.Dockring):
@@ -54,7 +56,7 @@ class CadizDockring(CadizMember, main_objects.Dockring):
     STORY = True
     CALC_STORE = False
     FACTION = faction.Corsairs
-    RU_NAME = 'Планета Кадиз'
+    RU_NAME = MS('Планета Кадиз', 'Planet Malta')
     EQUIP_SET = markets.CorsairSet
     SHIP_SET = markets.ShipSet('pi_elite')
 
@@ -74,5 +76,5 @@ class CadizFreeport(CadizMember, main_objects.Dockring):
     STORY = True
     CALC_STORE = False
     FACTION = faction.Corsairs
-    RU_NAME = 'Фрипорт Тринидад'
+    RU_NAME = MS('Фрипорт Тринидад', "Freeport Trinidad")
     EQUIP_SET = markets.CorsairCivSet

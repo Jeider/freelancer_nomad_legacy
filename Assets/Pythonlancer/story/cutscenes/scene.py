@@ -23,10 +23,11 @@ class Scene:
     DEFAULT_POINT_NAME = 'default_point'
     OFFSCREEN_POINT_NAME = 'offscreen_point'
 
-    def __init__(self, tpl_manager, props, extra_name=''):
+    def __init__(self, tpl_manager, props, extra_name='', russian=True):
         self.tpl_manager = tpl_manager
         self.meta_manager = LipSyncManager(tpl_manager=self.tpl_manager)
         self.extra_name = extra_name
+        self.russian = russian
         self.props = props
         self.entities = {}
         self.events = []
@@ -130,7 +131,7 @@ class Scene:
             self.add_point(
                 name=key,
                 position=value['position'],
-                orientation=value['orientation'],
+                orientation=value.get('orientation', [1, 0, 0, 0]),
                 source=SOURCE_BLENDER
             )
 
@@ -225,4 +226,5 @@ class Scene:
         return self.tpl_manager.get_result(ROOT_TEMPLATE, self.get_root_params())
 
     def sync_content(self):
-        DataFolder.sync_scene(self.get_scene_name(), self.get_content())
+        suffix = '' if self.russian else '_en'
+        DataFolder().sync_scene(f"{self.get_scene_name()}{suffix}", self.get_content())

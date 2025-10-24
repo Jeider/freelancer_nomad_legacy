@@ -3,6 +3,8 @@ from text.dividers import SINGLE_DIVIDER
 from tools.create_id import CreateId
 from tools.audio_folder import DataFolder
 
+from text.strings import MultiString as MS
+
 SPACE_ATTENUATION = -8
 CUTSCENE_ATTENUATION = 0
 
@@ -32,19 +34,41 @@ class VoiceLine(object):
     def get_ru_clean_text(self):
         return re.sub(r'\(.*?\)', '', self.ru).replace(',,', ',')
 
+    def get_en_clean_text(self):
+        return re.sub(r'\(.*?\)', '', self.en).replace(',,', ',')
+
     def get_ru_clean_ai_text(self):
         return re.sub(r'\(.*?\)', '', self.ru).replace(',,', '')
 
+    def get_en_clean_ai_text(self):
+        return re.sub(r'\(.*?\)', '', self.en).replace(',,', '')
+
     def get_ru_ai_gen_text(self):
-        replaces = []
         return (self.get_ru_clean_ai_text().replace('СБА', 'эс-бэ-а').replace('Трент', 'Трэнт')
                 .replace('Рокфорд', 'Р+окфорд').replace('бизнес', 'б+изнэс'))
 
     def get_ru_sub_text(self):
         return self.get_ru_clean_text().replace('+', '')
 
+    def get_en_sub_text(self):
+        return self.get_en_clean_text().replace('+', '')
+
+    def get_en_ai_gen_text(self):
+        print(self.index)
+        return (self.get_en_clean_ai_text()
+                .replace("'", '')
+                .replace("Mr.", 'm+ister')
+                .replace("mr.", 'm+ister')
+                .replace('ASF', 'A-eS-eF')
+                .replace(',,', ',')
+                .replace('Mrs.', 'missis')
+                .replace('EMP', 'Ee-Em-Pi'))
+
     def get_ru_subtitle(self):
-        return f'{self.actor.RU_NAME}:\\n{self.get_ru_sub_text()}'
+        return MS(
+            f'{self.actor.RU_NAME.get_ru()}:\\n{self.get_ru_sub_text()}',
+            f'{self.actor.RU_NAME.get_en()}:\\n{self.get_en_sub_text()}'
+        )
 
     def set_ids_sub(self, ids_sub):
         self.ids_sub = ids_sub
@@ -90,11 +114,15 @@ class CutsceneSound(Sound):
         super().__init__(**kwargs)
         self.mission_segment = mission_segment
 
-    def get_destination(self):
-        return self.mission_segment.get_destination()
+    def get_destination(self, suffix=''):
+        return self.mission_segment.get_destination(suffix)
 
-    def get_duration(self):
-        return DataFolder.watch_cutscene_audio_duration(self.mission_segment.get_subfolder(), self.get_filename())
+    def get_duration(self, russian=True):
+        return DataFolder().watch_cutscene_audio_duration(
+            self.mission_segment.get_subfolder(),
+            self.get_filename(),
+            russian=russian
+        )
 
     def get_nickname(self):
         return f'DX_{self.name}'
@@ -102,13 +130,14 @@ class CutsceneSound(Sound):
     def get_filename(self):
         return f'{self.name}.wav'
 
-    def get_cutscene_ini(self):
+    def get_cutscene_ini(self, russian=True):
+        suffix = "" if russian else "_ENG"
         return SINGLE_DIVIDER.join([
             SOUND_ARCH,
             f'nickname = {self.get_nickname()}',
             'type = voice',
             f'attenuation = {CUTSCENE_ATTENUATION}',
-            f'file = {self.get_destination()}\\{self.get_filename()}',
+            f'file = {self.get_destination(suffix)}\\{self.get_filename()}',
             'is_2d = true',
         ])
 
