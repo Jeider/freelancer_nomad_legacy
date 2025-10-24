@@ -1,16 +1,9 @@
 import pathlib
 import shutil
-from pydub import AudioSegment
 import json
 
 LOADOUTS_GEN = 'loadout_gen.ini'
 
-
-
-def get_duration_pydub(file_path):
-    audio_file = AudioSegment.from_file(file_path)
-    duration = audio_file.duration_seconds
-    return duration
 
 
 def get_and_create(folder):
@@ -352,11 +345,3 @@ class DataFolder:
         file_content = facial_file.readlines()
         facial_file.close()
         return file_content
-
-    def watch_cutscene_audio_duration(self, subfolder, file_path, russian=True):
-        if self.build_to_folder:
-            raise Exception('Impossible to use with build')
-
-        root = self.get_cutscene_audio_ru() if russian else self.get_cutscene_audio_en()
-        duration = get_duration_pydub(root / subfolder / file_path)
-        return duration
