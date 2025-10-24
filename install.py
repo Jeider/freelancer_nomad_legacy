@@ -60,10 +60,13 @@ def install():
     
     branch = repo.branches['origin/' + branch_name]
     branch_ref = repo.lookup_reference(branch.name)
-    
-    if repo.head.target == branch_ref.target:
-        print('No changes. Skip update')
-        return True
+        
+    try:    
+        if repo.head.target == branch_ref.target:
+            print('No changes. Skip update')
+            return True
+    except pygit2.GitError:
+        pass  # have no head, do nothing
 
     repo.checkout(branch_ref, strategy=pygit2.GIT_CHECKOUT_FORCE, callbacks=CheckoutProgressCallback())
     
@@ -85,6 +88,7 @@ freelancer_exe = current_path / 'EXE' / 'Freelancer.exe'
 dacom_dll = current_path / 'EXE' / 'dacom.dll'
 
 if dacom_dll.is_file():
+    install()
     try:
         install()
     except Exception as e:
