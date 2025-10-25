@@ -88,7 +88,6 @@ freelancer_exe = current_path / 'EXE' / 'Freelancer.exe'
 dacom_dll = current_path / 'EXE' / 'dacom.dll'
 
 if dacom_dll.is_file():
-    install()
     try:
         install()
     except Exception as e:
@@ -97,7 +96,7 @@ if dacom_dll.is_file():
         raise
     
     print('\n\nUpdate done! Run launcher...')
-        
+
     launcher_file = 'run_ru.py'
     if len(sys.argv) > 1 and sys.argv[1] == 'en':
         launcher_file = 'run_en.py'
@@ -105,26 +104,28 @@ if dacom_dll.is_file():
     file_root = os.getcwd()
     os.chdir(f'{file_root}\\Assets\\Pythonlancer\\')
     
-    run_params = ['.\..\..\python\python.exe', f'.\{launcher_file}']
-    
+    run_params = ['.\\..\\..\\python\\python.exe', f'.\{launcher_file}']
+
     debug = False
     if len(sys.argv) > 2 and sys.argv[2] == 'debug':
         debug = True
-
-    if not debug:  
-        kernel32 = ctypes.WinDLL('kernel32')
-
-        user32 = ctypes.WinDLL('user32')
-
-        SW_HIDE = 0
-
-        hWnd = kernel32.GetConsoleWindow()
-        user32.ShowWindow(hWnd, SW_HIDE)
+        
+    try:
+        result = subprocess.run(run_params)
             
-    result = subprocess.run(run_params)
+        if not debug:  
+            kernel32 = ctypes.WinDLL('kernel32')
+
+            user32 = ctypes.WinDLL('user32')
+
+            SW_HIDE = 0
+
+            hWnd = kernel32.GetConsoleWindow()
+            user32.ShowWindow(hWnd, SW_HIDE)
+    except Exception as e:
+        print(f'\n\nCannot start launcher! Reson: {e}')
+        time.sleep(3)
 
 else:
     print('\n\nFreelancer not found! Exiting...')
-    time.sleep(1)
-
-
+    time.sleep(3)

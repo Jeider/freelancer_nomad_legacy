@@ -1,4 +1,5 @@
 import shutil
+import time
 
 from screeninfo import get_monitors
 import subprocess
@@ -51,7 +52,6 @@ class Api:
         self._window = None
 
     def set_window(self, window: webview.Window):
-        print('set!')
         self._window = window
 
     def quit(self):
@@ -223,4 +223,8 @@ def create_launcher(russian=True):
     window = webview.create_window('The Nomad Legacy', html=html, background_color=BG_COLOR, js_api=api,
                                    width=800, height=800, resizable=False)
     api.set_window(window)
-    webview.start()
+    try:
+        webview.start()
+    except Exception as e:
+        print(f'Launcher failed! Reason: {e}')
+        time.sleep(10)
