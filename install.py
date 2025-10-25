@@ -104,7 +104,7 @@ if dacom_dll.is_file():
     file_root = os.getcwd()
     os.chdir(f'{file_root}\\Assets\\Pythonlancer\\')
     
-    run_params = ['.\\..\\..\\python\\python.exe', f'.\{launcher_file}']
+    run_params = ['.\\..\\..\\python\\python.exe', f'.\\{launcher_file}']
 
     debug = False
     if len(sys.argv) > 2 and sys.argv[2] == 'debug':
