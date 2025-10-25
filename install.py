@@ -111,8 +111,6 @@ if dacom_dll.is_file():
         debug = True
         
     try:
-        result = subprocess.run(run_params)
-            
         if not debug:  
             kernel32 = ctypes.WinDLL('kernel32')
 
@@ -122,8 +120,10 @@ if dacom_dll.is_file():
 
             hWnd = kernel32.GetConsoleWindow()
             user32.ShowWindow(hWnd, SW_HIDE)
+
+        result = subprocess.run(run_params)            
     except Exception as e:
-        print(f'\n\nCannot start launcher! Reson: {e}')
+        print(f'\n\nCannot start launcher! Reason: {e}')
         time.sleep(3)
 
 else:
