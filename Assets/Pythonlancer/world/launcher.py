@@ -434,7 +434,7 @@ class Launcher(Equipment, MainEquipPrice, LauncherGood):
         content.append(f'Ammo limit: {self.get_ammo_limit()}')
 
         content.append(
-            f'Требуется для стрельбы установкой {self.get_en_name()}'
+            f'This munition is required by launcher: {self.get_en_name()}'
         )
 
         return content
@@ -1529,10 +1529,10 @@ class CM(Equipment, MainEquipPrice, LauncherGood):
 
         content.append(self.RU_BASE_INFO.get_en())
 
-        content.append(f'Боекомплект: {self.get_ammo_limit()}')
+        content.append(f'Ammo limit: {self.get_ammo_limit()}')
 
         content.append(
-            f'*Требуются снаряды типа {self.get_en_name()}'
+            f'*Requires munition with type {self.get_en_name()}'
         )
 
         return content
@@ -1542,10 +1542,10 @@ class CM(Equipment, MainEquipPrice, LauncherGood):
 
         content.append(self.RU_BASE_INFO.get_en())
 
-        content.append(f'Боекомплект: {self.get_ammo_limit()}')
+        content.append(f'Ammo limit: {self.get_ammo_limit()}')
 
         content.append(
-            f'Требуется для использования установки {self.get_en_name()}'
+            f'This munition is required by launcher {self.get_en_name()}'
         )
 
         return content
