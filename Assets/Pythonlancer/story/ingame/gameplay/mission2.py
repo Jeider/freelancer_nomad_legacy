@@ -183,7 +183,7 @@ class Misson02(ingame_mission.IngameMission):
             'Find ship wreck, extract important information from this ship and give it back to Wilhelm.',
             '',
             'DIFFICULTY:',
-            'Low.',
+            'Easy.',
             '',
             'REWARD:',
             '5 000 credits.',
@@ -223,7 +223,7 @@ class Misson02(ingame_mission.IngameMission):
                         'Хотите запустить обучение?',
                     ],
                     [
-                        'In order to get access to roid miner you must extra key from on of near asteroids.',
+                        'In order to get access to roid miner you must extract key from on of near asteroids.',
 
                         'This is not just mission objective, this is kind of game activity. You should open such '
                         'objects by this "mini-game". Also, you always can get help by infocard of locked object. '

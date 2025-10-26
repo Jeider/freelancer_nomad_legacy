@@ -102,4 +102,4 @@ npc_locked_gate = {int_hash}'''
         )
 
     def get_story(self):
-        return self.STORY_TEMPLATE.format(base_nickname=self.base_nickname)
+        return self.STORY_TEMPLATE.format(base_nickname=self.locked_base.get_inspace_nickname())
