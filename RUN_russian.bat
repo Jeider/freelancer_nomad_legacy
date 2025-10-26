@@ -1,2 +1,2 @@
-powershell -command "Unblock-File -Path (\"{0}{1}\" -f ($pwd).path, \"\python\Lib\site-packages\pythonnet\runtime\Python.Runtime.dll\")"
+powershell -command "Get-ChildItem -Path ($pwd).path -Recurse | Unblock-File"
 .\python\python.exe .\install.py
