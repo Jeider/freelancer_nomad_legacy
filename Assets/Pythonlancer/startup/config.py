@@ -23,7 +23,7 @@ class StartupConfig:
 
         self.horizontal = None
         self.status_shift = None
-        self.wide_weapons = False
+        self.wide_weapons = self.screen_meta.get_default_wide_weapons()
 
         self.front_light_glow_color = DEFAULT_FRONT_LIGHT_GLOW_COLOR
         self.front_light_color = DEFAULT_FRONT_LIGHT_COLOR
@@ -82,7 +82,7 @@ class StartupConfig:
         return self.status_shift if self.status_shift else self.screen_meta.get_default_status_shift()
 
     def get_wide_weapons(self):
-        return self.wide_weapons if self.wide_weapons is not None else self.screen_meta.get_default_wide_weapons()
+        return self.wide_weapons
 
     def get_perf_options_params(self):
         return {
