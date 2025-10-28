@@ -16,6 +16,7 @@ from story import math
 
 from universe.audio.manager import PilotManager
 from universe.audio import pilot
+from universe.audio import nnvoice
 from universe.audio import nnvoice_eng
 
 from universe.content import mineable
@@ -195,13 +196,14 @@ def test_steos():
     #
     # return
 
-    the_pilot = nnvoice_eng.NNVoiceEng()
+    # the_pilot = nnvoice_eng.NNVoiceEng()
+    the_pilot = nnvoice.NNVoice()
 
     TempPilot.prepare_temp_folders(the_pilot)
     TempPilot.fill_audio(the_pilot, skip=True)
-
-    TempPilot.fill_files_for_xml(the_pilot)
-    TempPilot.build_voice_xml(the_pilot)
+    #
+    # TempPilot.fill_files_for_xml(the_pilot)
+    # TempPilot.build_voice_xml(the_pilot)
 
 
 

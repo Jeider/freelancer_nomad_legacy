@@ -31,6 +31,7 @@ class NNVoiceEng(PilotVoice):
         L('mod_hacker_color04', 'Low', RuleNNVoice),
         L('mod_hacker_color05', 'Very low', RuleNNVoice),
         L('mod_hacker_color06', 'Minimal', RuleNNVoice),
+        L('mod_hacker_destroy', 'Attack blocks by your weapons. After hit block will say his position relatively to maximal block. Find block marked as maximal. Destroy all blocks with such color', RuleNNVoice),
 
         L('mod_cloak_patrol', 'Patrol is near', RuleNNVoice),
         L('mod_hacked_complete', 'Panel is hacked out', RuleNNVoice),

@@ -1812,14 +1812,27 @@ class Hackable(DockableObject):
     def get_hacker_panel(self):
         panel = self.system.get_random_hacker_panel()
         hacker_name = self.get_hacker_name()
+        hacker_position = self.get_hacker_panel_position()
 
-        return panel.get_space_content(
-            space_name=self.get_hacker_name(),
+        space_panel = panel.get_space_content(
+            space_name=hacker_name,
             reputation=self.get_faction().get_code(),
-            position=self.get_hacker_panel_position(),
+            position=hacker_position,
             relation=self.HACKABLE_SOLAR_CLASS.PANEL_RELATION,
             success_loadout=hacker_name,
         )
+
+#         space_zone = f'''
+# [Zone]
+# nickname = {hacker_name}_help_zone
+# pos = {hacker_position[0]}, {hacker_position[1]}, {hacker_position[2]}
+# shape = SPHERE
+# size = 50
+# spacedust = gf_hacker_help
+# spacedust_maxparticles = 1
+#         '''
+
+        return DIVIDER.join([space_panel])
 
     def get_sattelites(self):
         return [self.get_hacker_panel()]

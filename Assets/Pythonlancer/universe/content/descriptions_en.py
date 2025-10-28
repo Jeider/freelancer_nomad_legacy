@@ -5,7 +5,7 @@ HOW_TO_HACK = ('\\n\\n'
                'Different blocks produce different sounds depending on the distance to the desired color: '
                 "Maximal, Very high, High, Medium. Low, Very low, Minimal."
                '\\n\\n'
-               'Correct color have name "maximal". Sound marks, how long this color is placed to correct color. '
+               'Correct color will be named as "maximal". Sound marks, how long this color is placed to correct color. '
                'Nearest color will be high or very high, far color will low or minimal.'
                '\\n\\n'
                'Find maximal color and destroy all of such colors. Access to base will be granted after collecting of '

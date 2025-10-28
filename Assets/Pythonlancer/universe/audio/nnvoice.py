@@ -185,6 +185,7 @@ class NNVoice(PilotVoice):
         L('mod_hacker_color04', 'Н+изкое', RuleNNVoice),
         L('mod_hacker_color05', '+Очень н+изкое', RuleNNVoice),
         L('mod_hacker_color06', 'Миним+альное', RuleNNVoice),
+        L('mod_hacker_destroy', 'Атакуйте бл+оки своими пушками. При ударе блок укажет свою дальность до максимального блока. Определите блоки, отмеченные максимальным, и уничтошьте их.', RuleNNVoice),
 
         L('mod_cloak_patrol', 'Рядом патруль', RuleNNVoice),
         L('mod_hacked_complete', 'Панэль взломана', RuleNNVoice),
