@@ -12,11 +12,12 @@ DEFAULT_LEFT_HAND = 'benchmarkmalehandleft.dfm'
 
 
 class StartupConfig:
-    def __init__(self, screen_meta, resolution, russian=True, windowed=False, fovx=None, fovy=None,
+    def __init__(self, screen_meta, resolution, russian=True, windowed=False, fovx=None, fovy=None, dxwrapper=False,
                  front_light=None, contrail=None, player_body=None, player_commhelmet=None, player_hat=None):
         self.screen_meta = screen_meta
         self.resolution = resolution
         self.windowed = windowed
+        self.dxwrapper = dxwrapper
         self.fovx = fovx
         self.fovy = fovy
         self.russian = russian

@@ -139,6 +139,15 @@ table {
 
         </div>
 
+        <div class="section">
+
+            {{ t.text('Use dxWrapper:') }}
+
+            <input type="checkbox" name="dxwrapper" id="dxwrapper" {% if is_dxwrapper %}checked{% endif %}> <br>
+            <span class="hint">{{ t.text('Fixes DirectX 8 errors, enables hardware smoothing and filtering') }}</span>
+
+        </div>
+
         <div class="section dangerous" style="display: none;">
             {{ t.text('Field of view Y (fish eye):') }} <input type="number" class="integer-input" value="{{ fovy }}" id="fovy"> <span class="hint">{{ t.text('(default: 70)') }}</span>
         </div>
@@ -583,6 +592,7 @@ function run() {
     var resolution = document.getElementById('resolution').value;
 
     var windowed = document.getElementById('windowed').checked;
+    var dxwrapper = document.getElementById('dxwrapper').checked;
     var fovy = document.getElementById('fovy').value;
 
     var difficulty = document.querySelector('input[name="difficulty"]:checked').value;
@@ -595,7 +605,7 @@ function run() {
 
     var commhelmet = document.querySelector('input[name="commhelmet"]:checked').value;
 
-    pywebview.api.runFreelancer(resolution, windowed, difficulty, fovy, front_light, trail, body, commhelmet);
+    pywebview.api.runFreelancer(resolution, windowed, dxwrapper, difficulty, fovy, front_light, trail, body, commhelmet);
 }
 
 const dangerous = document.getElementsByClassName('dangerous');

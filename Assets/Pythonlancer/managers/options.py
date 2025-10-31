@@ -88,6 +88,7 @@ class OptionsManager:
         data_folder.sync_front_light(self.get_front_light_content())
         data_folder.sync_contrail(self.get_contrail_content())
         data_folder.sync_player_bodyparts(self.get_player_bodyparts_content())
-
-
-
+        if self.config.dxwrapper:
+            data_folder.place_dxwrapper()
+        else:
+            data_folder.remove_all_d3d8_wrappers()

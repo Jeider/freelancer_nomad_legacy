@@ -23,6 +23,9 @@ class DataFolder:
     def get_root(self):
         return self.root
 
+    def get_static(self):
+        return get_and_create(self.get_root() / 'STATIC')
+
     def get_data(self):
         return get_and_create(self.get_root() / 'DATA')
 
@@ -31,6 +34,12 @@ class DataFolder:
 
     def get_save(self):
         return get_and_create(self.get_root() / 'SAVE')
+
+    def get_d3d8(self):
+        return self.get_exe() / 'd3d8.dll'
+
+    def get_base_dxwrapper(self):
+        return self.get_static() / 'd3d8_dxwrapper.dll'
 
     def get_autosave(self):
         if self.build_to_folder:
@@ -345,3 +354,16 @@ class DataFolder:
         file_content = facial_file.readlines()
         facial_file.close()
         return file_content
+
+    def place_dxwrapper(self):
+        self.remove_all_d3d8_wrappers()
+
+        shutil.move(
+            self.get_base_dxwrapper(),
+            self.get_d3d8()
+        )
+
+    def remove_all_d3d8_wrappers(self):
+        d3d8 = self.get_d3d8()
+        if d3d8.exists():
+            self.get_d3d8().unlink()

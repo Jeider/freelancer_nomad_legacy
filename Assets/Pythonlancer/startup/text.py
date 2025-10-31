@@ -4,6 +4,9 @@ class LauncherText:
         ('Show dangerous settings', 'Показать опасные настройки'),
         ('Screen resolution:', 'Разрешение экрана:'),
         ('Windowed mode:', 'Оконный режим:'),
+        ('Use dxWrapper:', 'Использовать dxWrapper:'),
+        ('Fixes DirectX 8 errors, enables hardware smoothing and filtering', 'Исправляет ошибки DirectX 8, включает фильтрацию и сглаживание'),
+
         ('Field of view Y (fish eye):', 'Угол обзора по высоте (вкл. рыбий глаз):'),
         ('(default: 70)', '(по умолчанию: 70)'),
         ('Run Freelancer', 'Запустить Freelancer'),

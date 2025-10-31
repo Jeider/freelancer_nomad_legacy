@@ -144,6 +144,11 @@ DLLS/BIN/Content_or.dll
 DLLS/BIN/test/
 EXE/dacom.dll
 EXE/dalib.dll
+EXE/d3d8.dll
+EXE/dxwrapper-freelancer.log
+EXE/dxwrapper-freelancer_en.log
+EXE/dxwrapper-freelancer_window.log
+EXE/dxwrapper-freelancer_window_en.log
 EBUEula.dll
 EXE_ENG/
 IniLog.txt
