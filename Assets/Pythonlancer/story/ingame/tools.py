@@ -1906,3 +1906,18 @@ class TextDialog:
 
     def show(self):
         return f'Act_Popupdialog = {self.ids_author}, {self.ids_content}, {self.dialog_type}'
+
+
+class Difficulty:
+    def __init__(self, difficulty_class):
+        self.difficulty_class = difficulty_class
+
+    def true(self, attr):
+        return getattr(self.difficulty_class, attr) is True
+
+    def false(self, attr):
+        return getattr(self.difficulty_class, attr) is False
+
+    def val(self, attr):
+        return getattr(self.difficulty_class, attr)
+

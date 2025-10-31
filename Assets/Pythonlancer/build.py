@@ -12,25 +12,59 @@ from text.dividers import DIVIDER
 GENERATED = 'GENERATED'
 
 
+class DifficultySettings:
+    M9_SPAWN_DESTROYER_C = True
+    M9_DESTROYER_B_DELAY = 60
+    M9_DESTROYER_C_DELAY = 120
+    M9_DESTROYER_D_DELAY = 150
+    M9_DESTROYER_E_DELAY = 200
+    M9_DESTROYER_F_DELAY = 300
+
+
+class EasyDifficulty(DifficultySettings):
+    pass
+
+
+class NormalDifficulty(DifficultySettings):
+    M9_SPAWN_WAVE_C = False
+    M9_DESTROYER_B_DELAY = 80
+    M9_DESTROYER_C_DELAY = 150  # Not spawn C wave
+    M9_DESTROYER_D_DELAY = 150
+    M9_DESTROYER_E_DELAY = 220
+    M9_DESTROYER_F_DELAY = 300
+
+
+class HardDifficulty(DifficultySettings):
+    pass
+
+
+class ExtremeDifficulty(DifficultySettings):
+    pass
+
+
+
 class BuildProp:
 
-    def __init__(self, folder, russian: bool):
+    def __init__(self, folder, russian: bool, difficulty: type[DifficultySettings]):
         self.folder = folder
         self.russian = russian
+        self.difficulty = difficulty
+
 
 BUILD_PROPS = [
-    BuildProp('RU_NORMAL', russian=True),
-    BuildProp('EN_NORMAL', russian=False),
+    BuildProp('RU_NORMAL', russian=True, difficulty=NormalDifficulty),
+    BuildProp('EN_NORMAL', russian=False, difficulty=NormalDifficulty),
 ]
 
 PROPS_DB = {b.folder: b for b in BUILD_PROPS}
-DEFAULT_RU = BuildProp(folder=None, russian=True)
-DEFAULT_EN = BuildProp(folder=None, russian=False)
+DEFAULT_RU = BuildProp(folder=None, russian=True, difficulty=NormalDifficulty)
+DEFAULT_EN = BuildProp(folder=None, russian=False, difficulty=NormalDifficulty)
 
 
 
 def build(build_props: BuildProp):
-    core = LancerCore(write=True, russian=build_props.russian, build_folder=build_props.folder)
+    core = LancerCore(write=True, russian=build_props.russian, build_folder=build_props.folder,
+                      difficulty=build_props.difficulty)
 
     lootprops_data = [
         core.misc_equip.get_lootprops(),

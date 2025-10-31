@@ -53,6 +53,7 @@ class StoryManager:
 
             print(mission_class)
             mission = mission_class(russian=self.core.russian,
+                                    difficulty=self.core.difficulty,
                                     ids=self.ids, ids_save=self.ids_save,
                                     full_script=self.script, universe=self.universe,
                                     history_manager=self.history_manager)

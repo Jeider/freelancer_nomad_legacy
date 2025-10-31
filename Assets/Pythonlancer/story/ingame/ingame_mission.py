@@ -1,4 +1,4 @@
-from story.ingame.tools import Nag, Script, Trigger, Cond, Direct, Rtc, Offer
+from story.ingame.tools import Nag, Script, Trigger, Cond, Direct, Rtc, Offer, Difficulty
 
 from text.dividers import DIVIDER
 from text.strings import MultiString as MS
@@ -23,8 +23,9 @@ class IngameMission(object):
         super().__init_subclass__(**kwargs)
         cls.subclasses.append(cls)
 
-    def __init__(self, russian, ids, ids_save, full_script, universe, history_manager):
+    def __init__(self, russian, difficulty, ids, ids_save, full_script, universe, history_manager):
         self.russian = russian
+        self.difficulty = difficulty
         self.ids = ids
         self.ids_save = ids_save
         self.capital_groups = {}
@@ -214,6 +215,7 @@ class IngameMission(object):
         context['trigger'] = self.trigger
         context['cond'] = self.cond
         context['direct'] = self.direct
+        context['diff'] = Difficulty(difficulty_class=self.difficulty)
         # print(context.keys())
         return context
 
