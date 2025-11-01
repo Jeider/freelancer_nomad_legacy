@@ -358,7 +358,7 @@ class DataFolder:
     def place_dxwrapper(self):
         self.remove_all_d3d8_wrappers()
 
-        shutil.move(
+        shutil.copy(
             self.get_base_dxwrapper(),
             self.get_d3d8()
         )
