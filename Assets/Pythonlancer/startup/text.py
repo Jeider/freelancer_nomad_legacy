@@ -47,6 +47,7 @@ class LauncherText:
         ('Red', 'Красный'),
         ('Yellow', 'Желтый'),
         ('White', 'Белый'),
+        ('Purple', 'Фиолетовый'),
 
         ('Clothes', 'Одежда'),
         ('Hat', 'Шляпа'),

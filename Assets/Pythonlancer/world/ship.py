@@ -1430,6 +1430,7 @@ class Dron(KusariShip, ShipFreighter, Ship):
     SHIELD_LINK = 'k_freighter_shield01'
     ENGINE_TYPE = ENGINE_DOUBLE_SAME
     LIGHTS = 12
+    CONTRAILS_COUNT = 6
 
     SHIP_CLASS = 7
 

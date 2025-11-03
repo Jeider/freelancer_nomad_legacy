@@ -98,6 +98,10 @@
       "yellow": {
         "glow_color": "255, 255, 0",
         "color": "200, 200, 0"
+      },
+      "purple": {
+        "glow_color": "255, 0, 255",
+        "color": "200, 0, 200"
       }
   },
 
@@ -108,7 +112,8 @@
       "orange": "ku_contrail",
       "red": "co_contrail",
       "yellow": "ci_contrail",
-      "white": "li_contrail"
+      "white": "li_contrail",
+      "purple": "no_contrail"
   },
 
   "bodies": {
