@@ -14,9 +14,12 @@ class LauncherText:
         ('Level of difficulty', 'Уровень сложности'),
 
         ('Easy', 'Лёгкий'),
-        ('Normal', 'Нормальный'),
-        ('Hard', 'Тяжелый'),
-        ('Extreme', 'Экстремальный'),
+        ('Normal', 'Нормальная'),
+        ('Hard', 'Тяжелая'),
+        ('Extreme', 'Экстремальная'),
+
+        ('Makes game like visual novel with fights. Best for game journalists',
+         'Делает игру чем-то вроде визуальной новеллы с боями. Идеально для игровых журналистов'),
 
         ('Cannot change powerplants and engines', 'Невозможно менять генераторы и двигатели'),
         ('Simple difficulty', 'Простая сложность'),
