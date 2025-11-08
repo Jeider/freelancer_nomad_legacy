@@ -161,10 +161,9 @@ table {
 
         <table style="width: 100%">
 
-            {#
             <tr>
                 <td class="diff-select">
-                    <input type="radio" name="difficulty" value="easy" id="easy" {% if difficulty == 'easy' %}checked{% endif %} disabled>
+                    <input type="radio" name="difficulty" value="easy" id="easy" {% if difficulty == 'easy' %}checked{% endif %}>
                     <label for="easy">{{ t.text('Easy') }}</label>
                 </td>
                 <td class="diff-info">
@@ -176,7 +175,6 @@ table {
                 </td>
 
             </tr>
-            #}
 
             <tr>
                 <td class="diff-select">
@@ -242,7 +240,7 @@ table {
             <td>
                 <div>
                     <input type="radio" name="trail" value="default" id="trail_default" {% if trail == 'default' %}checked{% endif %} >
-                    <label for="trail_white">{{ t.text('Half-Transparent (default)') }}</label>
+                    <label for="trail_default">{{ t.text('Half-Transparent (default)') }}</label>
                 </div>
 
             </td>
@@ -397,7 +395,7 @@ table {
             <td>
                 <div>
                     <input type="radio" name="commhelmet" value="default" id="commhelmet_default" {% if player_commhelmet == 'default' %}checked{% endif %} >
-                    <label for="trail_white">{{ t.text('Default helmet') }}</label>
+                    <label for="commhelmet_default">{{ t.text('Default helmet') }}</label>
                 </div>
 
             </td>

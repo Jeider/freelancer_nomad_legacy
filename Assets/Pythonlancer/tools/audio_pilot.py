@@ -158,6 +158,7 @@ class VanillaPilot:
         'voices_space_male.ini',
         'voices_space_female.ini',
         'voices_recognizable.ini',
+        'voices_base_male.ini',
     ]
 
     @classmethod

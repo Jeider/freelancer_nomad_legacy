@@ -13,7 +13,8 @@ DEFAULT_LEFT_HAND = 'benchmarkmalehandleft.dfm'
 
 class StartupConfig:
     def __init__(self, screen_meta, resolution, russian=True, windowed=False, fovx=None, fovy=None, dxwrapper=False,
-                 front_light=None, contrail=None, player_body=None, player_commhelmet=None, player_hat=None):
+                 front_light=None, contrail=None, player_body=None, player_commhelmet=None, player_hat=None,
+                 difficulty_easy=False, difficulty_hard=False):
         self.screen_meta = screen_meta
         self.resolution = resolution
         self.windowed = windowed
@@ -21,6 +22,15 @@ class StartupConfig:
         self.fovx = fovx
         self.fovy = fovy
         self.russian = russian
+
+        if difficulty_hard and difficulty_easy:
+            raise Exception('Failed! Difficulty cannot be hard and easy at the same time')
+
+        self.internal_difficulty = 1.0
+        if difficulty_easy:
+            self.internal_difficulty = 0.5
+        elif difficulty_hard:
+            self.internal_difficulty = 1.5
 
         self.horizontal = None
         self.status_shift = None
@@ -87,7 +97,7 @@ class StartupConfig:
 
     def get_perf_options_params(self):
         return {
-            'difficulty': 1.00,
+            'difficulty': self.internal_difficulty,
             'width': self.resolution[0],
             'height': self.resolution[1],
         }

@@ -1,10 +1,11 @@
 from universe.faction import Faction
 from world.npc import NPC, EqMap
-from templates.hardcoded_inis.missions import NPCShipsTemplate
 
 from tools.data_folder import DataFolder
 
 from text.dividers import SINGLE_DIVIDER, DIVIDER
+
+NPC_SHIPS_TEMPLATE = 'hardcoded_inis/static_content/npcships.ini'
 
 
 class PopulationManager:
@@ -101,7 +102,7 @@ class PopulationManager:
         return DIVIDER.join([npc.get_npc_shiparch() for npc in self.npc_list])
 
     def get_npcships_file_content(self):
-        return NPCShipsTemplate().format({'generated': self.get_npcships()})
+        return self.core.tpl_manager.get_result(NPC_SHIPS_TEMPLATE, {'generated': self.get_npcships()})
 
     def get_npc_names(self):
         faction_data = []

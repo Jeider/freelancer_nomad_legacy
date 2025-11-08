@@ -160,7 +160,7 @@ class DataFolder:
         equip_file.write_text(content, encoding='utf-8')
 
     def sync_equip(self, equip_file_name, subfolder, content):
-        equip_file = self.get_equip() / subfolder / f'{equip_file_name}.ini'
+        equip_file = get_and_create(self.get_equip() / subfolder) / f'{equip_file_name}.ini'
         equip_file.write_text(content, encoding='utf-8')
 
     def sync_equip_hardcoded(self, equip_file_name, content):
@@ -281,6 +281,10 @@ class DataFolder:
 
     def sync_ships_loadouts(self, content):
         equip_file = self.get_ships() / 'loadout_gen.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    def sync_msn_ships_loadouts(self, content):
+        equip_file = self.get_ships() / 'loadout_msn.ini'
         equip_file.write_text(content, encoding='utf-8')
 
     def sync_story_ships_loadouts(self, content):

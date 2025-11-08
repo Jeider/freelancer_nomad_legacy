@@ -64,7 +64,9 @@ class MiscEquipManager:
                     self.shields_db[shipclass][equip_type][equipment_class] = shield
                     self.shields_list.append(shield)
 
-                    shield_npc = ShieldNPC(**equip_props)
+                    shield_npc = ShieldNPC(capacity_scale=self.core.difficulty.NPC_SHIELD_CAPACITY_SCALE,
+                                           regeneration_scale=self.core.difficulty.NPC_SHIELD_REGENERATION_SCALE,
+                                           **equip_props)
                     self.npc_shields_db[shipclass][equip_type][equipment_class] = shield_npc
                     self.npc_shields_list.append(shield_npc)
 
@@ -159,8 +161,9 @@ class MiscEquipManager:
         )
 
     def get_st_good(self):
+        # ignore npc shields
         return ManagerHelper.extract_goods(
-            self.shields_list, self.npc_shields_list, self.thrusters_list, self.armors_list
+            self.shields_list, self.thrusters_list, self.armors_list
         )
 
     def get_lootprops(self):

@@ -844,8 +844,8 @@ class Misson06(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.LibertyMain,
                     ship=ship.Defender,
-                    level=NPC.D8,
-                    equip_map=EqMap(base_level=4),
+                    level=NPC.D12,
+                    equip_map=EqMap(base_level=5),
                 )
             ),
             Ship(

@@ -91,6 +91,11 @@ shield_hit_effects = {hit_three}, gf_pi_shield03'''
     KU_SHIELD_ICON = 'equipment\\models\\icons\\ku\\ku_shield.3db'
     CO_SHIELD_ICON = 'equipment\\models\\icons\\co\\co_shield.3db'
 
+    def __init__(self, capacity_scale=1, regeneration_scale=1, *args, **kwargs):
+        self.capacity_scale = capacity_scale
+        self.regeneration_scale = regeneration_scale
+        super().__init__(*args, **kwargs)
+
     def get_market_level(self):
         return level.SHIELD_LEVEL_PER_CLASS[self.equipment_class]
 
@@ -166,7 +171,7 @@ shield_hit_effects = {hit_three}, gf_pi_shield03'''
         elif self.equip_type in self.CO_EQUIP:
             capacity *= 0.9
 
-        return capacity * self.rate
+        return capacity * self.rate * self.capacity_scale
 
     def get_max_shield_regen(self):
         if self.ship_class == self.SHIPCLASS_FIGHTER:
@@ -186,7 +191,7 @@ shield_hit_effects = {hit_three}, gf_pi_shield03'''
         elif self.equip_type in self.CO_EQUIP:
             regen *= 0.9
 
-        return regen * self.rate
+        return regen * self.rate * self.regeneration_scale
 
     def get_shield_rebuild_power_draw(self):
         required_power = self.get_power_regen() * self.SHIELD_ACTIVE_POWER_FACTOR
@@ -404,10 +409,6 @@ EN_SHIELD_HINT = 'Hint: Full regenerated shield drains less energy than in recha
 
 
 class ShieldNPC(Shield):
-
-    MAX_SHIELD_REGEN_FIGHTER = 200
-    MAX_SHIELD_REGEN_ELITE = 250
-    MAX_SHIELD_REGEN_FREIGHTER = 350
 
     SHIELD_DEFAULTS = '''
 HP_child = HpConnect

@@ -2,7 +2,7 @@ from world.equipment import MainMiscEquip, Equipment, DefaultGood, MainEquipPric
 from world import level
 
 
-class ArmorNPC():
+class ArmorNPC:
 
     ARMOR_NPC_TEMPLATE = '''[Armor]
 nickname = {nickname}

@@ -1,4 +1,4 @@
-from story.ingame.tools import Nag, Script, Trigger, Cond, Direct, Rtc, Offer, Difficulty
+from story.ingame.tools import Nag, Script, Trigger, Cond, Direct, Rtc, Offer
 
 from text.dividers import DIVIDER
 from text.strings import MultiString as MS
@@ -215,7 +215,7 @@ class IngameMission(object):
         context['trigger'] = self.trigger
         context['cond'] = self.cond
         context['direct'] = self.direct
-        context['diff'] = Difficulty(difficulty_class=self.difficulty)
+        context['diff'] = self.difficulty
         # print(context.keys())
         return context
 

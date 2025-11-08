@@ -183,7 +183,16 @@ def generate_script():
 
 
 def test_voices():
+    '''how to convert voice from vanilla to RAW
+    1. Ensure voice is parsed by audio_pilot.VanillaPilot
+    2. Run in debug mode
+    3. Watch prop is exist in props.props
+    4. Run props.convert_prop('VOICE_NAME')
+    '''
+
     props = VanillaPilot.parse_vanilla_voice_props()
+
+
     return
 
 

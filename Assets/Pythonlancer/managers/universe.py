@@ -1,7 +1,4 @@
 from templates.solar.hacker_panel import HackerPanelManager
-from templates.hardcoded_inis.universe import UniverseTemplate
-from templates.hardcoded_inis.missions import MBasesTemplate
-from templates.hardcoded_inis.root import DockKeyTemplate
 
 from universe.root import UniverseRoot
 from universe.sirius import *  # initialize system objects
@@ -15,6 +12,9 @@ from text.dividers import SINGLE_DIVIDER, DIVIDER
 INITIAL_WORLD_TEMPLATE = 'hardcoded_inis/static_content/initialworld.ini'
 NEW_PLAYER_TEMPLATE = 'hardcoded_inis/static_content/newplayer.fl'
 DACOM_TEMPLATE = 'hardcoded_inis/static_content/dacom.ini'
+
+UNIVERSE_TEMPLATE = 'hardcoded_inis/static_content/universe.ini'
+MBASES_TEMPLATE = 'hardcoded_inis/static_content/mbases.ini'
 
 
 class UniverseManager:
@@ -158,7 +158,7 @@ class UniverseManager:
         return DIVIDER.join(system.get_universe_definition() for system in self.universe_root.get_all_systems())
 
     def get_universe_file_content(self):
-        return UniverseTemplate().format({
+        return self.core.tpl_manager.get_result(UNIVERSE_TEMPLATE, {
             'generated_bases': self.get_interior_definitions(),
             'generated_systems': self.get_system_definitions(),
         })
@@ -167,7 +167,7 @@ class UniverseManager:
         return DIVIDER.join(self.mbases_content)
 
     def get_mbases_file_content(self):
-        return MBasesTemplate().format({'generated': self.get_mbases_content()})
+        return self.core.tpl_manager.get_result(MBASES_TEMPLATE, {'generated': self.get_mbases_content()})
 
     def get_initial_world_locked_docks(self):
         locks = [key.get_initial_world() for key in self.keys]
@@ -188,7 +188,7 @@ class UniverseManager:
         return DIVIDER.join([key.get_dock_key() for key in self.keys])
 
     def get_dock_key_file_content(self):
-        return DockKeyTemplate().format({'generated': self.get_dock_key()})
+        return '[locked_docks]\n' + self.get_dock_key()
 
     def get_infocard_map_content(self):
         return SINGLE_DIVIDER.join(['[InfocardMapTable]'] + self.infocards_map_items)

@@ -9,7 +9,7 @@ from story import actors
 from story.ingame import names as N
 from story.ingame import objectives as O
 from story.ingame.tools import (Point, Obj, Conn, NNObj, Ship, Solar, Capital, DockableBattleshipSolar, SaveState,
-                                MultiLine)
+                                MultiLine, TextDialog, MultiText)
 from story.ingame.ingame_thorn import IngameThorn, GENERIC_TWO_POINT
 
 from world.npc import NPC, EqMap
@@ -160,6 +160,38 @@ class Misson09(ingame_mission.IngameMission):
             SaveState(self, 'fighter_patrol', MS('Сириус. Патруль истребителей', 'Sirius. Fighter patrol')),
             SaveState(self, 'gunboat_patrol', MS('Сириус. Патруль канонерок', 'Sirius. Gunboat patrol')),
             SaveState(self, 'destroyer_attack', MS('Сириус. Эсминцы', 'Sirius. Destroyers')),
+        ]
+
+    def get_dialogs(self):
+        return [
+            TextDialog(
+                self, 'destroyers', MS('Эсминцы', 'Destroyers'),
+                ru_content=MultiText([
+                    'Эсминцы готовятся к торпедному залпу. Вы должны повредить их перед тем, как они сделают залп.',
+
+                    'Вы можете уничтожить двигатели первого звена эсминцев. Если они не долетят до места залпа, '
+                    'то они не смогут войти в бой.',
+
+                    'После того, как эсминцы выйдут на боевую позицию, вы уже не сможете атаковать двигатели. Но вы '
+                    'всё еще можете повреждать место крепления торпедной установки, чтобы вывести эсминец из боя, не '
+                    'уничтожая его целиком.',
+
+                    'Рекомендуется повредить пилоны как можно большего числа эсминцев. Эсминцев будет много. Чем '
+                    'меньше эсминцев сможет запускать торпеды, тем меньшее число торпед вам потребуется перехватить.',
+                ],[
+                    'Destroyers is moving to firing position. You must hurt them before they will launch first torpedoes',
+
+                    'You can destroy engines of first destroyers. If destoyers will not reach firing position, they will '
+                    'never launch any torpedoes.',
+
+                    'After first torpedo launch, you can not attack engines. But you still can destroy mount points of '
+                    'torpedo launchers. That can neutralize destroyers without explode of entire ship.',
+
+                    "It's very recommended to destroy torpedo mount points of most possible amount of destroyers. "
+                    "A lot destroyers will arrive to this mission, so you should prevent all possible torpedo launches. "
+                    "Less torpedo launches - less torpedoes you must intercept in space."
+                ]),
+            ),
         ]
 
     def get_static_points(self):

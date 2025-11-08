@@ -24,7 +24,7 @@ HARD = 'hard'
 EXTREME = 'extreme'
 
 DIFFICULTIES = [
-    # EASY,
+    EASY,
     NORMAL,
     # HARD,
     # EXTREME
@@ -111,10 +111,17 @@ class Api:
 
         unpacked_resolution = [int(x) for x in resolution.split('x')]
 
+        dyn_config_kwargs = {}
+        if difficulty == EASY:
+            dyn_config_kwargs['difficulty_easy'] = True
+        if difficulty == EXTREME:
+            dyn_config_kwargs['difficulty_hard'] = True
+
         config = StartupConfig(screen_meta=meta, resolution=unpacked_resolution, fovx=None, fovy=fovy,
                                dxwrapper=dxwrapper,
                                front_light=front_light, contrail=trail,
-                               player_body=player_body, player_commhelmet=player_commhelmet)
+                               player_body=player_body, player_commhelmet=player_commhelmet,
+                               **dyn_config_kwargs)
         manager = OptionsManager(tpl_manager=tpl_manager, config=config)
         manager.sync_data()
 
