@@ -7,7 +7,11 @@ from world.engine import Engine
 from world.shield import Shield, ShieldNPC
 from world.thruster import Thruster
 from world.armor import PlayerArmor
-from world.ship import Ship
+from world.hardware import RepairKit, ShieldBattery, CloakingDevice
+
+
+
+REPAIR_EQUIP_TYPES = [1]
 
 
 class MiscEquipManager:
@@ -29,6 +33,12 @@ class MiscEquipManager:
         self.thrusters_list = []
         self.armors_db = {}
         self.armors_list = []
+
+        self.misc_list = []
+        self.repairs_db = {}
+        self.batteries_db = {}
+
+        self.singles_db = {}
 
         self.load_game_data()
 
@@ -83,6 +93,34 @@ class MiscEquipManager:
                 armor = PlayerArmor(self.ids, equip_type, equipment_class)
                 self.armors_db[equip_type][equipment_class] = armor
                 self.armors_list.append(armor)
+
+        for equipment_class in REPAIR_EQUIP_TYPES:
+            repair = RepairKit(self.ids, equipment_class)
+            self.repairs_db[equipment_class] = repair
+            self.misc_list.append(repair)
+
+            battery = ShieldBattery(self.ids, equipment_class)
+            self.batteries_db[equipment_class] = battery
+            self.misc_list.append(battery)
+
+        self.add_cloaking_device(
+            CloakingDevice(
+                ids=self.ids, nickname='cloak_msn6', in_time=0.001, out_time=0.001,
+                ru_name='Устройство невидимости (одноразовое)',
+                ru_fullname='Одноразовое устройство невидимости',
+                en_name='Cloaking device (disposable)',
+                en_fullname='Disposable cloaking device',
+                ru_extra_descript='Вы можете использовать это устройство невидимости только единожды. Выключайте его '
+                                  'только по сигналу ваших союзников',
+                en_extra_descript='You can use this cloaking device only once. You should deactivate it only by '
+                                  'command from allies.',
+                price=5000,
+            )
+        )
+
+    def add_cloaking_device(self, device):
+        self.singles_db[device.get_nickname()] = device
+        self.misc_list.append(device)
 
     def get_shipclass_item_by_query(self, query: Q.MiscEquip, func: str):
         items = []
@@ -157,13 +195,13 @@ class MiscEquipManager:
 
     def get_st_equip(self):
         return ManagerHelper.extract_equips(
-            self.shields_list, self.npc_shields_list, self.thrusters_list, self.armors_list
+            self.shields_list, self.npc_shields_list, self.thrusters_list, self.armors_list, self.misc_list
         )
 
     def get_st_good(self):
         # ignore npc shields
         return ManagerHelper.extract_goods(
-            self.shields_list, self.thrusters_list, self.armors_list
+            self.shields_list, self.thrusters_list, self.armors_list, self.misc_list
         )
 
     def get_lootprops(self):

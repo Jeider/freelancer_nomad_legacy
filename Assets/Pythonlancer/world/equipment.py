@@ -534,6 +534,7 @@ attachment_archetype = {model}'''
 
 
 class DefaultGood(object):
+    COMBINABLE = False
 
     DEFAULT_GOOD_TEMPLATE = '''[Good]
 nickname = {nickname}
@@ -559,7 +560,7 @@ combinable = {combinable}'''
             'equipment': nickname,
             'price': self.get_price(),
             'icon': self.get_icon(),
-            'combinable': False
+            'combinable': self.COMBINABLE
         }
 
     def get_good(self):
@@ -698,6 +699,33 @@ class Icon(object):
     ICON_BR_MISSILE = 'br\\br_missile.3db'
     ICON_KU_ROUND = 'ku\\ku_round.3db'
     ICON_GE_MISSILE = 'ge\\ge_missile.3db'
+
+    ICON_RH_TURRET_1X = 'rh\\rh_single_turret.3db'
+    ICON_RH_TURRET_2X = 'rh\\rh_double_turret.3db'
+    ICON_RH_TURRET_3X = 'rh\\rh_triple_turret.3db'
+    ICON_RH_GUNBOAT_GUN = 'rh\\rh_gunboat_gun.3db'
+
+    ICON_LI_TURRET_BIG = 'li\\li_big_turret.3db'
+    ICON_LI_TURRET_1X = 'li\\li_single_turret.3db'
+    ICON_LI_TURRET_2X = 'li\\li_double_turret.3db'
+    ICON_LI_CRUISER_GUN = 'li\\li_cruiser_gun.3db'
+
+    ICON_KU_TURRET_BIG = 'ku\\ku_big_turret.3db'
+    ICON_KU_TURRET_2X = 'ku\\ku_double_turret.3db'
+    ICON_KU_TURRET_1X = 'ku\\ku_single_turret.3db'
+    ICON_KU_GUNBOAT_GUN = 'ku\\ku_gunboat_gun.3db'
+
+    ICON_GE_TURRET_1X = 'ge\\ge_single_turret.3db'
+    ICON_GE_TURRET_2X = 'ge\\ge_double_turret.3db'
+    ICON_GE_TURRET_3X = 'ge\\ge_triple_turret.3db'
+
+    ICON_CO_TURRET_FORCE = 'co\\co_force_turret.3db'
+    ICON_CO_TURRET_2X = 'co\\co_double_turret.3db'
+
+    ICON_BR_TURRET_SIMPLE = 'br\\br_simple_turret.3db'
+    ICON_BR_TURRET_1X = 'br\\br_single_turret.3db'
+    ICON_BR_TURRET_2X = 'br\\br_double_turret.3db'
+    ICON_BR_GUNBOAT_GUN = 'br\\br_gunboat_gun.3db'
 
     ICON_PATH_TEMPLATE = '{root}{icon}'
 

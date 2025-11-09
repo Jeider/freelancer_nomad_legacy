@@ -33,6 +33,9 @@ MINE_CIV = 'mine_civ'
 MINE_PROF = 'mine_prof'
 MINE_MIL = 'mine_mil'
 CM = 'cm'
+REPAIR = 'ge_s_repair'
+BATTERY = 'ge_s_battery'
+CLOAK = 'cloak'
 
 DEBUG_CLASSES = [1, 2, 3, 4, 5, 6]
 DEBUG_CLASSES_SHIELDGUN = [1, 3, 4]
