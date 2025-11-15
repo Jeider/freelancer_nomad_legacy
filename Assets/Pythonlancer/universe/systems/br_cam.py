@@ -432,7 +432,7 @@ class CamStation(CamMember, main_objects.TradelaneSupportStation):
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.BretoniaCivilianDealers
 
-    RU_NAME = MS('Станция Шеффилд', "Sheffield Station")
+    RU_NAME = MS('Станция Ш+еффилд', "Sheffield Station")
 
 
 class CamTrading(CamMember, main_objects.TradingBase):
@@ -446,7 +446,7 @@ class CamTrading(CamMember, main_objects.TradingBase):
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.BretoniaCivilianDealers
 
-    RU_NAME = MS('Станция Челтнем', 'Cheltenham Station')
+    RU_NAME = MS('Станция Челтнэм', 'Cheltenham Station')
 
 
 class CamShipyard(CamMember, main_objects.Shipyard):

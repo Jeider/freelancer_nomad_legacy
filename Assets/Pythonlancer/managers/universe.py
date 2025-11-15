@@ -121,6 +121,9 @@ class UniverseManager:
                     if dockable.have_trader():
                         system.add_base(dockable)
 
+    def get_bases(self):
+        return self.bases_list
+
     def load_system_trade_connections(self):
         for the_system in self.universe_root.get_systems():
             the_system.load_trade_connections()

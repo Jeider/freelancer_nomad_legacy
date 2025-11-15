@@ -424,7 +424,7 @@ class Om15Freeport(Omega15Member, main_objects.Freeport):
     SPACE_OBJECT_TEMPLATE = trade_storages.RheinlandOmegaStorage
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.RheinlandMilitaryDealers
-    RU_NAME = MS('Фрипорт Любек', "Freeport Lübeck")
+    RU_NAME = MS('Фрипорт Л+юбек', "Freeport Lübeck")
 
 
 class Om15Junkers(Omega15Member, main_objects.JunkerBase):

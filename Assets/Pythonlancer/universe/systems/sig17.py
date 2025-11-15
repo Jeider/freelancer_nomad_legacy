@@ -390,7 +390,7 @@ class Sig17Liner(Sig17Member, main_objects.LuxuryLiner):
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.LibertyCivilianDealers
 
-    RU_NAME = MS('Круизный лайнер Флостон', "Cruise Line Fhloston")
+    RU_NAME = MS('Круизный лайнер Фл+остон', "Cruise Line Fhloston")
 
 
 class Sig17FreeportSevenRuins(Sig17Member, main_objects.StationRuins):
@@ -473,7 +473,7 @@ class Sig17CrowNebulaPirates(Sig17Member, main_objects.PirateStation):
     FACTION = faction.Corsairs
 
     DEFENCE_LEVEL = None
-    RU_NAME = MS('База Моркрофт', 'Morecroft Base')
+    RU_NAME = MS('База М+оркрофт', 'Morecroft Base')
 
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior

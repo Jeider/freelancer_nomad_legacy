@@ -17,7 +17,7 @@ from templates.nebula import exclusion
 from templates.dockable import upsilon_gasinside
 from templates.dockable import valensia
 
-from story.ingame.names import MISSOURI
+from story.ingame.names import MISSOURI, MSG_MISSOURI
 from text.strings import MultiString as MS
 
 
@@ -52,6 +52,7 @@ file = Universe\SPECIAL\SPHERE\ROOM\dread_mnh_deck.ini
     SHIP_SET = markets.ShipSet('li_fighter')
     OFFER_MISSIONS = False
     RU_NAME = MISSOURI
+    MSG_PREFIX = MSG_MISSOURI
 
 
 class SphereOneMissouriTorp(SphereMember, main_objects.LibertyBattleship):
@@ -80,6 +81,7 @@ file = Universe\SPECIAL\SPHERE\ROOM\dread_mnh_deck.ini
     # ASF set?
     SHIP_SET = markets.ShipSet('li_fighter')
     RU_NAME = MISSOURI
+    MSG_PREFIX = MSG_MISSOURI
 
 
 class SphereOneLab(SphereMember, main_objects.Station):

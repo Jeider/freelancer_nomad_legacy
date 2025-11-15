@@ -13,6 +13,11 @@ class SpaceVoice(object):
     DEFAULT_RU = VOICE_MALE_RU
     DEFAULT_EN = VOICE_MALE_EN
 
+    LINER = 'mod_refer_base_liner'
+    ROID_MINER = 'mod_refer_base_roid_miner'
+    GAS_MINER = 'mod_refer_base_gas_miner'
+    RESEARCH_BASE = 'mod_refer_base_research_base'
+    SOLAR_PLANT = 'mod_refer_base_solar_plant'
     FREEPORT = 'mod_refer_base_freeport'
     PRISON = 'mod_refer_base_prison'
     OUTPOST = 'mod_refer_base_outpost'

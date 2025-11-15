@@ -213,7 +213,7 @@ class MunchBattleRuins2(MunchMember, MunchBaseKusariLockedBattleship):
     ALIAS = 'mines'
     INDEX = 2
     BASE_INDEX = 62
-    RU_NAME = MS('Линкор Мусаси', "Battleship Musashi")
+    RU_NAME = MS('Линкор Мус+аси', "Battleship Musashi")
 
     ASTEROID_ZONES = [
         MunchBattleMinesZone2,

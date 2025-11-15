@@ -30,7 +30,7 @@ from templates.dockable import police
 from templates.dockable import shipyards
 from templates.dockable import prisons
 
-from story.ingame.names import PRINCE_OF_WALES
+from story.ingame.names import PRINCE_OF_WALES, MSG_PRINCE_OF_WALES
 from text.strings import MultiString as MS
 
 
@@ -516,7 +516,7 @@ class AvalShipyard(AvalMember, main_objects.Shipyard):
     INDEX = 1
     BASE_INDEX = 2
     REL = BOTTOM
-    RU_NAME = MS('Верфь Саутгемптон', 'Southampton Shipyard')
+    RU_NAME = MS('Верфь Саутг+емптон', 'Southampton Shipyard')
 
     SPACE_OBJECT_TEMPLATE = shipyards.HeavyBarrelShipyard
 
@@ -529,7 +529,7 @@ class AvalPolice(AvalMember, main_objects.Outpost):
     INDEX = 1
     BASE_INDEX = 3
     REL = BOTTOM
-    RU_NAME = MS('Аванпост Манчестер', "Outpost Manchester")
+    RU_NAME = MS('Аванпост Манч+естер', "Outpost Manchester")
 
     SPACE_OBJECT_TEMPLATE = police.BerlinPoliceOutpost
 
@@ -541,7 +541,7 @@ class AvalTrading(AvalMember, main_objects.TradingBase):
     INDEX = 1
     BASE_INDEX = 4
     REL = RIGHT
-    RU_NAME = MS('Торговая станция Бирмингем', "Trading station Birmingham")
+    RU_NAME = MS('Торговая станция Б+ирмингем', "Trading station Birmingham")
 
     SPACE_OBJECT_TEMPLATE = trade_storages.TekagiStorage
 
@@ -573,7 +573,7 @@ class AvalPrison(AvalMember, main_objects.Prison):
     INDEX = 1
     BASE_INDEX = 6
     REL = TOP
-    RU_NAME = MS('Тюрьма Голспи', "Golspie Prison")
+    RU_NAME = MS('Тюрьма Г+олспи', "Golspie Prison")
 
     SPACE_OBJECT_TEMPLATE = prisons.AvalonPrison
 
@@ -595,7 +595,7 @@ class AvalJunkers(AvalMember, main_objects.JunkerBase):
         AvalDebrisZone3
     ]
     DEFENCE_LEVEL = None
-    RU_NAME = MS('База Кардиган', "Cardigan Base")
+    RU_NAME = MS('База К+ардиган', "Cardigan Base")
 
 
 class AvalPirates(AvalMember, main_objects.PirateStation):
@@ -611,7 +611,7 @@ class AvalPirates(AvalMember, main_objects.PirateStation):
         AvalAsteroidZone3
     ]
     DEFENCE_LEVEL = None
-    RU_NAME = MS('База Лонстон', 'Launceston Base')
+    RU_NAME = MS('База Л+онстон', 'Launceston Base')
 
 
 class AvalPlanet1(AvalMember, main_objects.Planet):
@@ -750,6 +750,7 @@ class AvalStoryBattleship(AvalMember, main_objects.BretoniaBattleship):
     ]
     SHIP_SET = markets.ShipSet('co_elite_darcy')
     RU_NAME = PRINCE_OF_WALES
+    MSG_PREFIX = MSG_PRINCE_OF_WALES
 
 
 class AvalStoryBattleshipTwo(AvalMember, main_objects.BretoniaBattleship):
@@ -764,3 +765,4 @@ class AvalStoryBattleshipTwo(AvalMember, main_objects.BretoniaBattleship):
     IS_BASE = False
     AUTOSAVE_FORBIDDEN = True
     RU_NAME = PRINCE_OF_WALES
+    MSG_PREFIX = MSG_PRINCE_OF_WALES

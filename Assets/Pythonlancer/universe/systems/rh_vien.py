@@ -17,7 +17,7 @@ from templates.nebula import exclusion
 from templates.dockable import upsilon_gasinside
 from templates.dockable import valensia
 
-from story.ingame.names import MUSASHI
+from story.ingame.names import MUSASHI, MSG_MUSASHI
 
 
 class ViennaMember(Member):
@@ -40,4 +40,5 @@ class ViennaKusariBattleship(ViennaMember, main_objects.KusariBattleship):
     EQUIP_SET = markets.MusashiSecondSet
     SHIP_SET = markets.ShipSet('ku_elite')
     RU_NAME = MUSASHI
+    MSG_PREFIX = MSG_MUSASHI
     AUTOSAVE_FORBIDDEN = True

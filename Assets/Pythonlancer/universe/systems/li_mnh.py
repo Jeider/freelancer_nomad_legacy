@@ -318,7 +318,7 @@ class ManhShipyard(ManhMember, main_objects.Shipyard):
     SPACE_OBJECT_TEMPLATE = manhattan_megabase.ManhattanMegabase
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyCivilianDealers
-    RU_NAME = MS('Верфь Норфолк', "Norfolk Shipyard")
+    RU_NAME = MS('Верфь Н+орфолк', "Norfolk Shipyard")
 
     BASE_PROPS = meta.Megabase(
         objectives=[

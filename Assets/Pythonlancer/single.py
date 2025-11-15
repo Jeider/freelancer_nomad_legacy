@@ -18,6 +18,7 @@ from universe.audio.manager import PilotManager
 from universe.audio import pilot
 from universe.audio import nnvoice
 from universe.audio import nnvoice_eng
+from universe.audio import dispatcher
 
 from universe.content import mineable
 
@@ -105,11 +106,11 @@ def compile_audio():
 
 
 def compile_pilots_ini():
-    PilotManager.compile_pilots_ini()
+    PilotManager().compile_pilots_ini()
 
 
 def compile_pilots_audio():
-    PilotManager.compile_pilots_audio()
+    PilotManager().compile_pilots_audio()
 
 
 def test_hacker_colors():
@@ -200,10 +201,27 @@ def test_steos():
     # SteosVoice.prepare_temp_path()
 
 
+    ### DISPATCHER
     #
-    # PilotManager.prepare_pilots_audio()
+    # core = get_core()
+    #
+    # the_pilot = dispatcher.FemaleDispatcher(core=core)
+    #
+    # TempPilot.prepare_temp_folders(the_pilot)
+    # TempPilot.fill_audio(the_pilot, skip=True)
+    #
     #
     # return
+
+
+
+    ### PILOTS
+
+
+
+    PilotManager().prepare_pilots_audio()
+
+    return
 
     # the_pilot = nnvoice_eng.NNVoiceEng()
     the_pilot = nnvoice.NNVoice()

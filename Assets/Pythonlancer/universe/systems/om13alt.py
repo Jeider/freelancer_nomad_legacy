@@ -9,7 +9,7 @@ from universe import faction
 
 from universe import markets
 
-from story.ingame.names import OSIRIS
+from story.ingame.names import OSIRIS, MSG_OSIRIS
 
 
 class Omega13AltMember(Member):
@@ -33,3 +33,4 @@ class BlackholeOsiris(Omega13AltMember, main_objects.LibertyBattleship):
     # ASF set?
     SHIP_SET = markets.ShipSet('bh_elite2')
     RU_NAME = OSIRIS
+    MSG_PREFIX = MSG_OSIRIS

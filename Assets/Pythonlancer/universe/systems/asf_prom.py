@@ -12,7 +12,7 @@ from universe.content import interior
 from universe.content import dealers
 from universe import faction
 
-from story.ingame.names import OSIRIS
+from story.ingame.names import OSIRIS, MSG_OSIRIS
 
 
 class AsfPromMember(Member):
@@ -33,3 +33,4 @@ class PromOsiris(AsfPromMember, main_objects.LibertyBattleship):
     IS_BASE = False
     AUTOSAVE_FORBIDDEN = True
     RU_NAME = OSIRIS
+    MSG_PREFIX = MSG_OSIRIS

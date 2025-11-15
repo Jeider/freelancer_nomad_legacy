@@ -82,6 +82,9 @@ class StoreManager:
     def get_universe_commodities(self):
         return self.universe_comms_list
 
+    def get_commodities(self):
+        return self.comms_list
+
     def compile_producers(self):
         for u_comm in self.universe_comms_list:
             u_comm.scan_producers()

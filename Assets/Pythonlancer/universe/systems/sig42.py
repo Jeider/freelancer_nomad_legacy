@@ -27,7 +27,7 @@ from templates.dockable import research
 from templates.dockable import odissey
 from templates.dockable import pirate
 
-from story.ingame.names import MUSASHI, OSIRIS
+from story.ingame.names import MUSASHI, OSIRIS, MSG_MUSASHI, MSG_OSIRIS
 from text.strings import MultiString as MS
 
 
@@ -283,7 +283,7 @@ class Sig42BretoniaStation(Sig42Member, Sig42Bretonia, main_objects.TradelaneSup
     SPACE_OBJECT_TEMPLATE = odissey.OdisseySimple
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.BretoniaCivilianDealers
-    RU_NAME = MS('Станция Антарес', 'Antares Station')
+    RU_NAME = MS('Станция Ант+арес', 'Antares Station')
 
     BASE_PROPS = meta.TradelaneSupportStation(
         objectives=[
@@ -299,7 +299,7 @@ class Sig42KusariStation(Sig42Member, Sig42Kusari, main_objects.ResearchStation)
     SPACE_OBJECT_TEMPLATE = research.SiriusResearch
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
-    RU_NAME = MS('Станция Канис', 'Kanis Station')
+    RU_NAME = MS('Станция К+анис', 'Kanis Station')
 
     BASE_PROPS = meta.Research(
         objectives=[
@@ -315,7 +315,7 @@ class Sig42Liner(Sig42Member, Sig42Bretonia, main_objects.LuxuryLiner):
     REL = LEFT
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.BretoniaCivilianDealers
-    RU_NAME = MS('Круизный лайнер Каникула', 'Cruise liner Canicola')
+    RU_NAME = MS('Круизный лайнер Кан+икула', 'Cruise liner Canicola')
 
 
 class Sig42VirtualDepot(Sig42Member, Sig42Bretonia, main_objects.VirtualDepot):
@@ -351,7 +351,7 @@ class Sig42BottomPirates(Sig42Member, Sig42Kusari, main_objects.PirateStation):
     FACTION = faction.KusariPirate
 
     DEFENCE_LEVEL = None
-    RU_NAME = MS('База Сотис', 'Satis Base')
+    RU_NAME = MS('База С+атис', 'Satis Base')
 
     AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -540,6 +540,7 @@ class AfterLairOsiris(Sig42Member, main_objects.LibertyBattleship):
     # ASF set?
     SHIP_SET = markets.ShipSet('li_elite')
     RU_NAME = OSIRIS
+    MSG_PREFIX = MSG_OSIRIS
 
 
 class LeaveKusariBattleship(Sig42Member, main_objects.KusariBattleship):
@@ -556,4 +557,5 @@ class LeaveKusariBattleship(Sig42Member, main_objects.KusariBattleship):
     IS_BASE = False
     AUTOSAVE_FORBIDDEN = True
     RU_NAME = MUSASHI
+    MSG_PREFIX = MSG_MUSASHI
 

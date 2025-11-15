@@ -1,3 +1,5 @@
+from difficulty import NormalDifficulty
+
 from managers.ids import IDsManager
 from managers.chars import CharacterManager
 from managers.misc_equip import MiscEquipManager
@@ -44,4 +46,4 @@ class LancerCore(object):
 
 
 def get_core():
-    return LancerCore(write=False, story=False)
+    return LancerCore(write=False, story=False, difficulty=NormalDifficulty)

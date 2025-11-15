@@ -399,7 +399,7 @@ class ForbesLargeStation(ForbesMember, main_objects.Station):
     INTERIOR_CLASS = interior.StationShipdealerBshbarInterior
     DEALERS = dealers.LibertyCivilianDealers
     SHIP_SET = markets.ShipSet('li_freighter')
-    RU_NAME = MS('Станция Детроит', 'Detroit Station')
+    RU_NAME = MS('Станция Детройт', 'Detroit Station')
 
     BASE_PROPS = meta.MediumStation(
         objectives=[

@@ -112,7 +112,7 @@ class RuleProcessing(RuleDefault):
 
     @classmethod
     def get_temp_text(cls, text):
-        return cls.TEXT_TEMPLATE.format(text=text)
+        return cls.TEXT_TEMPLATE.format(text=text.get_ru())
 
 
 class RuleScream(ParseRule):
@@ -324,8 +324,9 @@ class RuleNumberSecond(RuleNumberFirst):
     TEXT_TEMPLATE = 'альфа {text} деш {text}'
 
 
-class RuleBase(RuleDefault):
+class RuleBase(RuleProcessing):
     SUBFOLDER = SUBFOLDER_BASE
+    TEXT_TEMPLATE = 'К точке {text}'
 
 
 class RuleSystem(RuleProcessing):
@@ -333,8 +334,9 @@ class RuleSystem(RuleProcessing):
     TEXT_TEMPLATE = 'к пункту система {text}'
 
 
-class RuleCommodity(RuleDefault):
+class RuleCommodity(RuleProcessing):
     SUBFOLDER = SUBFOLDER_COMMODITY
+    TEXT_TEMPLATE = 'я везу {text} на'
 
 
 class RulePlayer(RuleProcessing):

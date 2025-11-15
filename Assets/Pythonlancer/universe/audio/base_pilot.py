@@ -208,7 +208,17 @@ class SignedVoice(PilotVoice):
 class BaseIdentifiedVoice(SignedVoice):
 
     def get_bases_lines(self):
-        return []
+        lines = []
+
+        for base in self.core.universe.get_bases():
+            lines.append(
+                L(
+                    code=base.get_base_msg_relative(),
+                    ru_text=base.get_ru_name(),
+                    parse_rule=R.RuleBase
+                )
+            )
+        return lines
 
     def get_lines(self):
         lines = super().get_lines()
@@ -220,6 +230,8 @@ class SystemIdentifiedVoice(BaseIdentifiedVoice):
     def get_system_lines(self):
         lines = []
         for sys in self.core.universe.universe_root.get_all_systems():
+            if sys.IS_STORY:
+                continue
             lines.append(
                 L(
                     code=sys.get_system_msg_relative(),
@@ -227,6 +239,16 @@ class SystemIdentifiedVoice(BaseIdentifiedVoice):
                     parse_rule=R.RuleSystem
                 )
             )
+
+        for comm in self.core.store.get_commodities():
+            lines.append(
+                L(
+                    code=comm.get_msg_id_prefix(),
+                    ru_text=comm.get_name_rel1(),
+                    parse_rule=R.RuleCommodity
+                )
+            )
+
         return lines
 
     def get_dynamic_lines(self):

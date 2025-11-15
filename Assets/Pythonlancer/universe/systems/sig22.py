@@ -479,7 +479,7 @@ class Sig22NorthPirates(Sig22Bretonia, Sig22Member, main_objects.PirateStation):
     REL = RIGHT
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseStuttgart
     FACTION = faction.BretoniaPirate
-    RU_NAME = MS('База Лимерик', "Limerick Base")
+    RU_NAME = MS('База Лим+ерик', "Limerick Base")
 
     DEFENCE_LEVEL = None
 

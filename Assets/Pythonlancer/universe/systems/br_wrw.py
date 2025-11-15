@@ -390,7 +390,7 @@ class WarwickPiratesTop(WarwickMember, main_objects.PirateAsteroid):
         WarwickAsteroidZone1
     ]
     DEFENCE_LEVEL = None
-    RU_NAME = MS('База Голуэй', "Galway Base")
+    RU_NAME = MS('База Г+олуэй', "Galway Base")
 
 
 class WarwickJunkers(WarwickMember, main_objects.JunkerBase):
@@ -404,7 +404,7 @@ class WarwickJunkers(WarwickMember, main_objects.JunkerBase):
         WarwickDebrisZone5
     ]
     DEFENCE_LEVEL = None
-    RU_NAME = MS('База Дуглас', 'Duglas Base')
+    RU_NAME = MS('База Д+углас', 'Duglas Base')
 
 
 class WarwickPlanet1(WarwickMember, main_objects.Planet):

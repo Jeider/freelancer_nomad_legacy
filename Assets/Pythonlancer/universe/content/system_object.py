@@ -213,6 +213,9 @@ class SystemObject:
     def get_loadouts(self):
         return []
 
+    def get_refer_msg(self):
+        raise NotImplementedError
+
 
 class DynamicSystemObject(SystemObject):
     ABSTRACT = True

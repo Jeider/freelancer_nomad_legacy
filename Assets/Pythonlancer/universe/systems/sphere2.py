@@ -17,7 +17,7 @@ from templates.nebula import exclusion
 from templates.dockable import upsilon_gasinside
 from templates.dockable import valensia
 
-from story.ingame.names import OSIRIS
+from story.ingame.names import OSIRIS, MSG_OSIRIS
 
 
 class Sphere2Member(Member):
@@ -47,3 +47,4 @@ file = Universe\\SPECIAL\\SPHERE2\\Room\\osiris_deck2.ini
     EQUIP_SET = markets.OsirisSet
     SHIP_SET = markets.ShipSet('bh_elite2')
     RU_NAME = OSIRIS
+    MSG_PREFIX = MSG_OSIRIS

@@ -413,7 +413,7 @@ class HokkMegaShipyard(HokkMember, main_objects.Shipyard):
             meta.ConsumeHeavyMunitions(),
         ]
     )
-    RU_NAME = MS('Верфь Имабари', "Imbari Shipyard")
+    RU_NAME = MS('Верфь Имаб+ари', "Imbari Shipyard")
 
 
 class HokkRefinery(HokkMember, main_objects.Refinery):

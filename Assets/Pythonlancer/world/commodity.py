@@ -159,7 +159,7 @@ class Commodity:
         return self.RU_NAME.lower()
 
     def get_ru_name_rel1(self):
-        return self.RU_NAME.get_ru().lower()
+        return self.RU_NAME_REL1.lower() if self.RU_NAME_REL1 else self.RU_NAME.get_ru().lower()
 
     def get_ru_name_rel2(self):
         return self.RU_NAME_REL2.lower()
@@ -175,6 +175,9 @@ class Commodity:
 
     def get_en_name_rel3(self):
         return self.RU_NAME.get_en().lower()
+
+    def get_name_rel1(self):
+        return MS(self.get_ru_name_rel1(), self.get_en_name_rel1())
 
     def get_ru_info(self):
         return [self.RU_INFO.get_ru()]
@@ -234,7 +237,7 @@ class Commodity:
         )
 
     def get_msg_id_prefix(self):
-        return f'msg_id_{self.get_nickname()}'
+        return f'gcs_gen_commodity_{self.get_nickname()}'
 
     def get_good_sell_price(self):
         return self.get_good_price_multiplier()
@@ -312,8 +315,8 @@ class Contraband:
 
 class TerraformMinerals(Product, Commodity):
     ALIAS = TERRAFORM_MINERALS
-    RU_NAME = MS('Минеральные удобрения', 'Fertilisers')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Минер+альные удобр+ения', 'Fertilisers')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'минеральных удобрений'
     RU_NAME_REL3 = 'минеральных удобрениях'
     NICKNAME = 'comm_terraform_minerals'
@@ -324,8 +327,8 @@ class TerraformMinerals(Product, Commodity):
 
 class TerraformGases(Product, Commodity):
     ALIAS = TERRAFORM_GASES
-    RU_NAME = MS('Терраформирующие газы', 'Terraforming gases')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Терраформ+ирующие г+азы', 'Terraforming gases')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'терраформирующих газов'
     RU_NAME_REL3 = 'терраформирующих газах'
     NICKNAME = 'comm_terraform_gases'
@@ -337,8 +340,8 @@ class TerraformGases(Product, Commodity):
 
 class LaserBeamParts(Product, Commodity):
     ALIAS = LASER_BEAM_PARS
-    RU_NAME = MS('Компоненты излучателя', 'Laser beam parts')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Компон+енты излуч+ателя', 'Laser beam parts')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'компонентов излучателя'
     RU_NAME_REL3 = 'компонентах излучателя'
     NICKNAME = 'comm_laserbeam_components'
@@ -351,7 +354,7 @@ class LaserBeamParts(Product, Commodity):
 class BasicWater(BasicCommodity, Commodity):
     ALIAS = BASIC_WATER
     RU_NAME = MS('Вода', 'Water')
-    RU_NAME_REL1 = 'Воду'
+    RU_NAME_REL1 = 'В+оду'
     RU_NAME_REL2 = 'воды'
     RU_NAME_REL3 = 'воде'
     NICKNAME = 'comm_basic_water'
@@ -362,8 +365,8 @@ class BasicWater(BasicCommodity, Commodity):
 
 class BasicOxygen(BasicCommodity, Commodity):
     ALIAS = BASIC_OXYGEN
-    RU_NAME = MS('Кислород', 'Oxygen')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Кислор+од', 'Oxygen')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'кислорода'
     RU_NAME_REL3 = 'кислороде'
     NICKNAME = 'comm_basic_oxygen'
@@ -375,7 +378,7 @@ class BasicOxygen(BasicCommodity, Commodity):
 class BasicFood(BasicCommodity, Commodity):
     ALIAS = BASIC_FOOD
     RU_NAME = MS('Синтетическая пища', 'Synthetic food')
-    RU_NAME_REL1 = 'Синтетическую пищу'
+    RU_NAME_REL1 = 'Синтет+ическую пищу'
     RU_NAME_REL2 = 'синтетической пищи'
     RU_NAME_REL3 = 'синтетической пище'
     NICKNAME = 'comm_basic_food'
@@ -386,8 +389,8 @@ class BasicFood(BasicCommodity, Commodity):
 
 class BasicConsumer(BasicCommodity, Commodity):
     ALIAS = BASIC_CONSUMER
-    RU_NAME = MS('Ширпотреб', 'Consumer goods')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Ширпотр+еб', 'Consumer goods')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'ширпотреба'
     RU_NAME_REL3 = 'ширпотребе'
     NICKNAME = 'comm_basic_consumer'
@@ -398,8 +401,8 @@ class BasicConsumer(BasicCommodity, Commodity):
 
 class BasicMeds(BasicCommodity, Commodity):
     ALIAS = BASIC_MEDS
-    RU_NAME = MS('Медпрепараты', 'Medicines')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Медпрепар+аты', 'Medicines')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'медпрепаратов'
     RU_NAME_REL3 = 'медпрепаратах'
     NICKNAME = 'comm_basic_meds'
@@ -410,8 +413,8 @@ class BasicMeds(BasicCommodity, Commodity):
 
 class BasicWeapons(BasicCommodity, Commodity):
     ALIAS = BASIC_WEAPONS
-    RU_NAME = MS('Стрелковое оружие', 'Light arms')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Стрелк+овое оружие', 'Light arms')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'стрелкового оружия'
     RU_NAME_REL3 = 'стрелковом оружии'
     NICKNAME = 'comm_basic_weapons'
@@ -422,8 +425,8 @@ class BasicWeapons(BasicCommodity, Commodity):
 
 class BasicToxic(BasicCommodity, Commodity):
     ALIAS = BASIC_TOXIC
-    RU_NAME = MS('Токсичные отходы', 'Toxic waste')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Токс+ичные отх+оды', 'Toxic waste')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'токсичных отходов'
     RU_NAME_REL3 = 'токсичных отходах'
     NICKNAME = 'comm_basic_toxic'
@@ -434,8 +437,8 @@ class BasicToxic(BasicCommodity, Commodity):
 
 class Metal(DefaultCommodity, Commodity):
     ALIAS = METAL
-    RU_NAME = MS('Металлолом', 'Scrap metal')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Металлол+ом', 'Scrap metal')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'металлолома'
     RU_NAME_REL3 = 'металлоломе'
     NICKNAME = 'comm_scrap_metal'
@@ -445,8 +448,8 @@ class Metal(DefaultCommodity, Commodity):
 
 class PowerSolarEmpty(DefaultCommodity, Commodity):
     ALIAS = POWER_SOLAR_EMPTY
-    RU_NAME = MS('Разряженные генераторы', 'Empty power cells')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Разр+яженные генер+аторы', 'Empty power cells')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'разряженных генераторов'
     RU_NAME_REL3 = 'разряженных генераторах'
     NICKNAME = 'comm_power_solar_empty'
@@ -456,8 +459,8 @@ class PowerSolarEmpty(DefaultCommodity, Commodity):
 
 class PowerSolar(DefaultCommodity, Commodity):
     ALIAS = POWER_SOLAR
-    RU_NAME = MS('Заряженные генераторы', 'Charged power cells')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Зар+яженные генер+аторы', 'Charged power cells')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'заряженных генераторов'
     RU_NAME_REL3 = 'заряженных генераторах'
     NICKNAME = 'comm_power_solar'
@@ -468,8 +471,8 @@ class PowerSolar(DefaultCommodity, Commodity):
 
 class AlloyBasic(DefaultCommodity, Commodity):
     ALIAS = ALLOY_BASIC
-    RU_NAME = MS('Простой сплав', 'Basic alloy')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Прост+ой сплав', 'Basic alloy')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'простого сплава'
     RU_NAME_REL3 = 'простом сплаве'
     NICKNAME = 'comm_alloy_basic'
@@ -480,8 +483,8 @@ class AlloyBasic(DefaultCommodity, Commodity):
 
 class GasBalloons(DefaultCommodity, Commodity):
     ALIAS = GAS_BALLOONS
-    RU_NAME = MS('Сжиженный газ', 'Liquified gas')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Сж+иженный газ', 'Liquified gas')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'газовых баллонов'
     RU_NAME_REL3 = 'газовых баллонах'
     NICKNAME = 'comm_gas_balloons'
@@ -491,8 +494,8 @@ class GasBalloons(DefaultCommodity, Commodity):
 
 class GasFuel(DefaultCommodity, Commodity):
     ALIAS = GAS_FUEL
-    RU_NAME = MS('Газовое топливо', 'Gas fuel')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Г+азовое топливо', 'Gas fuel')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'газового топлива'
     RU_NAME_REL3 = 'газовом топливе'
     NICKNAME = 'comm_gas_fuel'
@@ -503,8 +506,8 @@ class GasFuel(DefaultCommodity, Commodity):
 
 class ShipHullPanels(Product, Commodity):
     ALIAS = SHIP_HULL_PANELS
-    RU_NAME = MS('Панели обшивки корабля', 'Ship hull panels')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Пан+ели обш+ивки корабл+я', 'Ship hull panels')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'панелей обшивки корабля'
     RU_NAME_REL3 = 'панелях обшивки корабля'
     NICKNAME = 'comm_shiphull_panels'
@@ -514,8 +517,8 @@ class ShipHullPanels(Product, Commodity):
 
 class Diamonds(Roid, Commodity):
     ALIAS = DIAMONDS
-    RU_NAME = MS('Алмазы', 'Diamonds')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Алм+азы', 'Diamonds')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'алмазов'
     RU_NAME_REL3 = 'алмазах'
     NICKNAME = 'comm_roid_diamonds'
@@ -526,8 +529,8 @@ class Diamonds(Roid, Commodity):
 
 class LuxuryDiamonds(Luxury, Commodity):
     ALIAS = LUXURY_DIAMONDS
-    RU_NAME = MS('Алмазные украшения', 'Luxury diamonds')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Алм+азные украш+ения', 'Luxury diamonds')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'алмазных украшений'
     RU_NAME_REL3 = 'алмазных украшениях'
     NICKNAME = 'comm_luxury_diamonds'
@@ -538,8 +541,8 @@ class LuxuryDiamonds(Luxury, Commodity):
 
 class Niobium(Roid, Commodity):
     ALIAS = NIOBIUM
-    RU_NAME = MS('Ниобий', 'Niobium')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Ни+обий', 'Niobium')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'ниобия'
     RU_NAME_REL3 = 'ниобии'
     NICKNAME = 'comm_roid_niobium'
@@ -550,8 +553,8 @@ class Niobium(Roid, Commodity):
 
 class ProdMachines(Product, Commodity):
     ALIAS = PROD_MACHINES
-    RU_NAME = MS('Промышленные станки', 'Production machines')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Пром+ышленные станк+и', 'Production machines')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'промышленных станков'
     RU_NAME_REL3 = 'промышленных станках'
     NICKNAME = 'comm_prod_machines'
@@ -562,8 +565,8 @@ class ProdMachines(Product, Commodity):
 
 class StationPanels(Product, Commodity):
     ALIAS = STATION_PANELS
-    RU_NAME = MS('Панели обшивки станций', "Station hull panels")
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Пан+ели обш+ивки ст+анций', "Station hull panels")
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'панелей обшивки станций'
     RU_NAME_REL3 = 'панелях обшивки станций'
     NICKNAME = 'comm_station_panels'
@@ -574,8 +577,8 @@ class StationPanels(Product, Commodity):
 
 class AlloyHeavy(Alloy, Commodity):
     ALIAS = ALLOY_HEAVY
-    RU_NAME = MS('Суперсплав', 'Heavy alloy')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Суперспл+ав', 'Heavy alloy')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'суперсплава'
     RU_NAME_REL3 = 'суперсплаве'
     NICKNAME = 'comm_alloy_heavy'
@@ -586,8 +589,8 @@ class AlloyHeavy(Alloy, Commodity):
 
 class RoidMinerParts(Product, Commodity):
     ALIAS = ROID_MINER_PARTS
-    RU_NAME = MS('Детали рудокопа', 'Roid miner parts')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Дет+али рудок+опа', 'Roid miner parts')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'деталей рудокопа'
     RU_NAME_REL3 = 'деталях рудокопа'
     NICKNAME = 'comm_roidminer_parts'
@@ -598,8 +601,8 @@ class RoidMinerParts(Product, Commodity):
 
 class SmelterParts(Product, Commodity):
     ALIAS = SMELTER_PARTS
-    RU_NAME = MS('Детали плавильной установки', "Smelter parts")
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Дет+али плав+ильной устан+овки', "Smelter parts")
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'деталей плавильной установки'
     RU_NAME_REL3 = 'деталях плавильной установки'
     NICKNAME = 'comm_smelter_parts'
@@ -609,8 +612,8 @@ class SmelterParts(Product, Commodity):
 
 class WaterExtra(Luxury, Commodity):
     ALIAS = WATER_EXTRA
-    RU_NAME = MS('Минеральная вода', 'Luxury mineral water')
-    RU_NAME_REL1 = 'Минеральную воду'
+    RU_NAME = MS('Минер+альная вода', 'Luxury mineral water')
+    RU_NAME_REL1 = 'Минер+альную воду'
     RU_NAME_REL2 = 'минеральной воды'
     RU_NAME_REL3 = 'минеральной воде'
     NICKNAME = 'comm_water_extra'
@@ -621,8 +624,8 @@ class WaterExtra(Luxury, Commodity):
 
 class Berilium(Roid, Commodity):
     ALIAS = BERILIUM
-    RU_NAME = MS('Берилий', 'Berilium')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Бер+илий', 'Berilium')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'берилия'
     RU_NAME_REL3 = 'берилии'
     NICKNAME = 'comm_roid_berilium'
@@ -633,8 +636,8 @@ class Berilium(Roid, Commodity):
 
 class Nicollum(Roid, Commodity):
     ALIAS = NICOLLUM
-    RU_NAME = MS('Никель', 'Nicollum')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Н+икель', 'Nicollum')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'никеля'
     RU_NAME_REL3 = 'никеле'
     NICKNAME = 'comm_roid_nicollum'
@@ -645,8 +648,8 @@ class Nicollum(Roid, Commodity):
 
 class LuxuryGoods(Luxury, Commodity):
     ALIAS = LUXURY_GOODS
-    RU_NAME = MS('Роскошные товары', 'Luxury goods')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Роск+ошные товары', 'Luxury goods')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'роскошных товаров'
     RU_NAME_REL3 = 'роскошных товарах'
     NICKNAME = 'comm_luxury_consumer'
@@ -657,8 +660,8 @@ class LuxuryGoods(Luxury, Commodity):
 
 class TLRParts(Product, Commodity):
     ALIAS = TLR_PARTS
-    RU_NAME = MS('Детали торговых путей', 'Trade lane parts')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Дет+али торг+овых пут+ей', 'Trade lane parts')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'деталей торговых путей'
     RU_NAME_REL3 = 'деталях торговых путей'
     NICKNAME = 'comm_tlr_parts'
@@ -669,8 +672,8 @@ class TLRParts(Product, Commodity):
 
 class EngineParts(Product, Commodity):
     ALIAS = ENGINE_PARTS
-    RU_NAME = MS('Компоненты двигателей', 'Engine parts')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Компон+енты дв+игателей', 'Engine parts')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'компонентов двигателей'
     RU_NAME_REL3 = 'компонентах двигателей'
     NICKNAME = 'comm_engine_components'
@@ -681,10 +684,10 @@ class EngineParts(Product, Commodity):
 
 class JumpGateParts(Product, Commodity):
     ALIAS = JUMPGATE_PARTS
-    RU_NAME = MS('Детали гиперворот', 'Jumpgate parts')
-    RU_NAME_REL1 = RU_NAME
-    RU_NAME_REL2 = 'деталей гиперворот'
-    RU_NAME_REL3 = 'деталях гиперворот'
+    RU_NAME = MS('Дет+али гипервр+ат', 'Jumpgate parts')
+    # RU_NAME_REL1 = RU_NAME
+    RU_NAME_REL2 = 'деталей гиперврат'
+    RU_NAME_REL3 = 'деталях гиперврат'
     NICKNAME = 'comm_jumpgate_parts'
     POD = POD_REFINEDMATS
     ICON = ICON_TLRPARTS
@@ -693,8 +696,8 @@ class JumpGateParts(Product, Commodity):
 
 class AlloyTemperature(Alloy, Commodity):
     ALIAS = ALLOY_TEMPERATURE
-    RU_NAME = MS('Высокотемпературный сплав', 'High-temperature alloy')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Высокотемперат+урный сплав', 'High-temperature alloy')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'высокотемпературного сплава'
     RU_NAME_REL3 = 'высокотемпературном сплаве'
     NICKNAME = 'comm_alloy_temperature'
@@ -705,8 +708,8 @@ class AlloyTemperature(Alloy, Commodity):
 
 class MiningEquipment(Product, Commodity):
     ALIAS = MINING_EQUIPMENT
-    RU_NAME = MS('Горное оборудование', 'Mining equipment')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Г+орное обор+удование', 'Mining equipment')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'горного оборудования'
     RU_NAME_REL3 = 'горном оборудовании'
     NICKNAME = 'comm_mining_equip'
@@ -717,8 +720,8 @@ class MiningEquipment(Product, Commodity):
 
 class Polymers(Product, Commodity):
     ALIAS = POLYMERS
-    RU_NAME = MS('Полимеры', 'Polymers')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Полим+еры', 'Polymers')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'полимеров'
     RU_NAME_REL3 = 'полимерах'
     NICKNAME = 'comm_polymers'
@@ -729,7 +732,7 @@ class Polymers(Product, Commodity):
 class Uranium(Roid, Commodity):
     ALIAS = URANIUM
     RU_NAME = MS('Уран', "Uranium")
-    RU_NAME_REL1 = RU_NAME
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'урана'
     RU_NAME_REL3 = 'уране'
     NICKNAME = 'comm_roid_uranium'
@@ -740,8 +743,8 @@ class Uranium(Roid, Commodity):
 
 class Plumbum(Roid, Commodity):
     ALIAS = PLUMBUM
-    RU_NAME = MS('Свинец', 'Plumbum')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Свин+ец', 'Plumbum')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'свинца'
     RU_NAME_REL3 = 'свинце'
     NICKNAME = 'comm_roid_plumbum'
@@ -752,8 +755,8 @@ class Plumbum(Roid, Commodity):
 
 class Reactors(Product, Commodity):
     ALIAS = REACTORS
-    RU_NAME = MS('Компоненты реактора', "Reactor components")
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Компон+енты ре+актора', "Reactor components")
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'компонентов реактора'
     RU_NAME_REL3 = 'компонентах реактора'
     NICKNAME = 'comm_reactors'
@@ -764,8 +767,8 @@ class Reactors(Product, Commodity):
 
 class MOXFuel(Product, Commodity):
     ALIAS = MOX_FUEL
-    RU_NAME = MS('Реактивное топливо', 'MOX Fuel')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Реакт+ивное топливо', 'MOX Fuel')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'реактивного топлива'
     RU_NAME_REL3 = 'реактивном топливе'
     NICKNAME = 'comm_mox_fuel'
@@ -777,7 +780,7 @@ class MOXFuel(Product, Commodity):
 class Ammunition(Product, Commodity):
     ALIAS = AMMUNITION
     RU_NAME = MS('Тяжелые снаряды', 'Heavy munitions')
-    RU_NAME_REL1 = RU_NAME
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'тяжелых снарядов'
     RU_NAME_REL3 = 'тяжелых снарядах'
     NICKNAME = 'comm_munitions'
@@ -788,8 +791,8 @@ class Ammunition(Product, Commodity):
 
 class LuxuryFood(Luxury, Commodity):
     ALIAS = LUXURY_FOOD
-    RU_NAME = MS('Роскошная пища', 'Luxury food')
-    RU_NAME_REL1 = 'Роскошную пищу'
+    RU_NAME = MS('Роск+ошная пища', 'Luxury food')
+    RU_NAME_REL1 = 'роск+ошную пищу'
     RU_NAME_REL2 = 'роскошной пищи'
     RU_NAME_REL3 = 'роскошной пище'
     NICKNAME = 'comm_luxury_food'
@@ -800,8 +803,8 @@ class LuxuryFood(Luxury, Commodity):
 
 class AlloyRadiation(Commodity):
     ALIAS = ALLOY_RADIATION
-    RU_NAME = MS('Противорадиационный сплав', 'Anti-radiation alloy')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Противорадиаци+онный сплав', 'Anti-radiation alloy')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'противорадиационного сплава'
     RU_NAME_REL3 = 'противорадиационном сплаве'
     NICKNAME = 'comm_alloy_radiation'
@@ -812,8 +815,8 @@ class AlloyRadiation(Commodity):
 
 class GreenhouseParts(Product, Commodity):
     ALIAS = GREENHOUSE_PARTS
-    RU_NAME = MS('Оборудование оранжереи', "Greenhouse parts")
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Обор+удование оранжер+еи', "Greenhouse parts")
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'оборудования оранжереи'
     RU_NAME_REL3 = 'оборудовании оранжереи'
     NICKNAME = 'comm_greenhouse_parts'
@@ -824,8 +827,8 @@ class GreenhouseParts(Product, Commodity):
 
 class DefenceSystems(Product, Commodity):
     ALIAS = DEFENCE_SYSTEMS
-    RU_NAME = MS('Защитные системы', "Defence systems")
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Защ+итные сист+емы', "Defence systems")
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'защитных систем'
     RU_NAME_REL3 = 'защитных системах'
     NICKNAME = 'comm_defence_systems'
@@ -835,8 +838,8 @@ class DefenceSystems(Product, Commodity):
 
 class Gold(Roid, Commodity):
     ALIAS = GOLD
-    RU_NAME = MS('Золото', "Gold")
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('З+олото', "Gold")
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'золота'
     RU_NAME_REL3 = 'золоте'
     NICKNAME = 'comm_roid_gold'
@@ -847,8 +850,8 @@ class Gold(Roid, Commodity):
 
 class Silver(Roid, Commodity):
     ALIAS = SILVER
-    RU_NAME = MS('Серебро', 'Silver')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Серебр+о', 'Silver')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'серебра'
     RU_NAME_REL3 = 'серебре'
     NICKNAME = 'comm_roid_silver'
@@ -859,7 +862,7 @@ class Silver(Roid, Commodity):
 
 class Electronics(Product, Commodity):
     ALIAS = ELECTRONICS
-    RU_NAME = MS('Электроника', 'Electronics')
+    RU_NAME = MS('Электр+оника', 'Electronics')
     RU_NAME_REL1 = 'Электронику'
     RU_NAME_REL2 = 'электроники'
     RU_NAME_REL3 = 'электронике'
@@ -871,8 +874,8 @@ class Electronics(Product, Commodity):
 
 class LuxuryGold(Luxury, Commodity):
     ALIAS = LUXURY_GOLD
-    RU_NAME = MS('Украшения', 'Luxury gold')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Украш+ения', 'Luxury gold')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'украшений'
     RU_NAME_REL3 = 'украшенях'
     NICKNAME = 'comm_luxury_gold'
@@ -883,8 +886,8 @@ class LuxuryGold(Luxury, Commodity):
 
 class OpticalChips(Product, Commodity):
     ALIAS = OPTICAL_CHIPS
-    RU_NAME = MS('Оптические чипы', 'Optical chips')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Опт+ические чипы', 'Optical chips')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'оптических чипов'
     RU_NAME_REL3 = 'оптических чипах'
     NICKNAME = 'comm_optical_chips'
@@ -894,8 +897,8 @@ class OpticalChips(Product, Commodity):
 
 class AlloyConductor(Alloy, Commodity):
     ALIAS = ALLOY_CONDUCTOR
-    RU_NAME = MS('Сверхпроводящий сплав', 'Conductor alloy')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Сверхпровод+ящий сплав', 'Conductor alloy')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'сверхпроводящего сплава'
     RU_NAME_REL3 = 'сверхпроводящем сплаве'
     NICKNAME = 'comm_alloy_conductor'
@@ -906,8 +909,8 @@ class AlloyConductor(Alloy, Commodity):
 
 class GasMinerParts(Product, Commodity):
     ALIAS = GAS_MINER_PARTS
-    RU_NAME = MS('Детали для газодобытчика', "Gas Miner Parts")
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Детали для газодоб+ытчика', "Gas Miner Parts")
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'деталей для газодобытчика'
     RU_NAME_REL3 = 'деталях для газодобытчика'
     NICKNAME = 'comm_gasminer_parts'
@@ -918,8 +921,8 @@ class GasMinerParts(Product, Commodity):
 
 class SolarPlantParts(Product, Commodity):
     ALIAS = SOLAR_PLANT_PARTS
-    RU_NAME = MS('Компоненты солн. генератора', 'Solar Plant components')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Компоненты солн. генер+атора', 'Solar Plant components')
+    RU_NAME_REL1 = 'Компоненты солнечного генер+атора'
     RU_NAME_REL2 = 'компонентов солнечного генератора'
     RU_NAME_REL3 = 'компонентах солнечного генератора'
     NICKNAME = 'comm_solarplant_parts'
@@ -929,8 +932,8 @@ class SolarPlantParts(Product, Commodity):
 
 class ResearchEquip(Product, Commodity):
     ALIAS = RESEARCH_EQUIP
-    RU_NAME = MS('Точное оборудование', 'Research equipment')
-    RU_NAME_REL1 = RU_NAME
+    RU_NAME = MS('Т+очное оборудование', 'Research equipment')
+    # RU_NAME_REL1 = RU_NAME
     RU_NAME_REL2 = 'точного оборудования'
     RU_NAME_REL3 = 'точном оборудовании'
     NICKNAME = 'comm_research_equip'

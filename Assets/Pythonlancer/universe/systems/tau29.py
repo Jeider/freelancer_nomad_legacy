@@ -413,7 +413,7 @@ class Tau29Police(Tau29Member, main_objects.Outpost):
     SPACE_OBJECT_TEMPLATE = police.PoliceOutpostLiberty
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.BretoniaMilitaryDealers
-    RU_NAME = MS('Аванпост Эссекс', 'Outpost Essex')
+    RU_NAME = MS('Аванпост +Эссекс', 'Outpost Essex')
 
 
 class Tau29BottomPirates(Tau29Member, main_objects.PirateAsteroid):

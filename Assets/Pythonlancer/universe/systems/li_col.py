@@ -434,7 +434,7 @@ class ColSolarPlant5(ColMember, ColBaseSolarPlant):
     ASTEROID_ZONES = [
         ColSolarMinesZone5,
     ]
-    RU_NAME = MS('Солн.генератор Шеффилд', "Solar Planet Sheffield")
+    RU_NAME = MS('Солн.генератор Ш+еффилд', "Solar Planet Sheffield")
 
 
 class ColSolarSupriseRewards(ColMember, mineable.DefaultSupriseRewardsGroup):

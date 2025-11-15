@@ -306,7 +306,7 @@ class Tau4Station(Tau4Member, main_objects.TradelaneSupportStation):
     SPACE_OBJECT_TEMPLATE = ulster_megabase.UlsterShortBase
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
-    RU_NAME = MS('Станция Осака', 'Osaka Station')
+    RU_NAME = MS('Станция +Осака', 'Osaka Station')
 
     BASE_PROPS = meta.TradelaneSupportStation(
         objectives=[

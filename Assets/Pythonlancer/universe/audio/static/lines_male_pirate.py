@@ -1,6 +1,8 @@
 from universe.audio.pilot_line import PilotLine as L
 from universe.audio import parse_rule as R
 
+from text.strings import MultiString as MS
+
 
 LINES = [
     L('gcs_combat_announce_allclear_01-', 'Противников не обнаружено.'),
@@ -296,12 +298,13 @@ LINES = [
     # L('gcs_refer_faction_br_m_short', ),
 
     L('gcs_refer_base_testbase-', 'Станция Т+эрра', R.RuleBase),
-    L('gcs_gen_commodity_gold', 'з+олото', R.RuleCommodity),
+    # L('gcs_gen_commodity_gold', 'з+олото', R.RuleCommodity),
     L('gcs_refer_faction_rh_short', 'Р+эйнланд', R.RuleFaction),
     L('gcs_refer_faction_rx_short', 'Г+ессенцы', R.RuleFaction),
     L('gcs_refer_faction_test_short', 'Фракция', R.RuleFaction),
     L('gcs_refer_faction_player_short', 'Фрил+ансер', R.RulePlayer),
 
+    L('mod_refer_base_liner-', MS('лайнер', 'liner'), R.RuleBase),
     L('mod_refer_base_freeport-', 'точка фрипорт', R.RuleBase),
     L('mod_refer_base_prison-', 'точка тюрьма', R.RuleBase),
     L('mod_refer_base_outpost-', 'точка аванпост', R.RuleBase),
@@ -312,5 +315,9 @@ LINES = [
     L('mod_refer_base_factory-', 'точка фабрика', R.RuleBase),
     L('mod_refer_base_station-', 'точка станция', R.RuleBase),
     L('mod_refer_base_border-', 'точка пограничный аванпост', R.RuleBase),
+    L('mod_refer_base_roid_miner-', MS('добывающее судно', 'Roid Miner'), R.RuleBase),
+    L('mod_refer_base_gas_miner-', MS('газодобытчик', 'Gas Miner'), R.RuleBase),
+    L('mod_refer_base_solar_plant-', MS('солнечный генератор', 'Solar Plant'), R.RuleBase),
+    L('mod_refer_base_research_base-', MS('исследовательская база', 'Research Base'), R.RuleBase),
 
 ]

@@ -29,7 +29,7 @@ from templates.dockable import trade_storages
 from templates.dockable import kusari_palace
 from templates.dockable import station_debris
 
-from story.ingame.names import MUSASHI
+from story.ingame.names import MUSASHI, MSG_MUSASHI
 from text.strings import MultiString as MS
 
 
@@ -902,6 +902,7 @@ class Om7StoryBattleship(Om7Kusari, Om7Member, main_objects.KusariBattleship):
     EQUIP_SET = markets.MusashiSecondSet
     SHIP_SET = markets.ShipSet('ku_elite')
     RU_NAME = MUSASHI
+    MSG_PREFIX = MSG_MUSASHI
 
 
 class Om7OrderJumpgate(Om7Member, main_objects.JumpgateAlt):

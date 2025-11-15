@@ -465,7 +465,7 @@ class CalTrading(CalMember, main_objects.TradingBase):
     SPACE_OBJECT_TEMPLATE = california_tradestation.CaliforniaTradestation
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyCivilianDealers
-    RU_NAME = MS('Торговая база Лос-Анджелес', 'Trading Base Los Angeles')
+    RU_NAME = MS('Торговая база Лос-+Анджелес', 'Trading Base Los Angeles')
 
     BASE_PROPS = meta.LargeTradingBase()
 

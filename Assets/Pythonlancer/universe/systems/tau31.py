@@ -165,7 +165,7 @@ class Tau31Trading(Tau31Member, main_objects.TradingBase):
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.LibertyCivilianDealers
 
-    RU_NAME = MS('Торговая база Флорида', 'Trading base Florida')
+    RU_NAME = MS('Торговая база Флор+ида', 'Trading base Florida')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2500
     EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS

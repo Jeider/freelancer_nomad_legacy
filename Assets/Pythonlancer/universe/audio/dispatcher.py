@@ -1,10 +1,12 @@
 from universe.audio.pilot_line import PilotLine as L
 from universe.audio import parse_rule as R
-from universe.audio.base_pilot import SignedVoice
+from universe.audio.base_pilot import BaseIdentifiedVoice
 from universe.audio.static import dispatcher as dispatcher_static
 
+from text.strings import MultiString as MS
 
-class StationDispatcher(SignedVoice):
+
+class StationDispatcher(BaseIdentifiedVoice):
     VOICE_DATA = dispatcher_static.VOICE_DATA
     MVOICE_AUDIO_PROP = dispatcher_static.MVOICE_AUDIO_PROP
     MVOICE_MISSION_PROP = dispatcher_static.MVOICE_MISSION_PROP
@@ -171,6 +173,12 @@ class StationDispatcher(SignedVoice):
         L('mod_refer_base_factory-', 'точка фабрика', R.RuleBase),
         L('mod_refer_base_station-', 'точка станция', R.RuleBase),
         L('mod_refer_base_border-', 'точка пограничный аванпост', R.RuleBase),
+
+        L('mod_refer_base_liner-', MS('лайнер', 'liner'), R.RuleBase),
+        L('mod_refer_base_roid_miner-', MS('добывающее судно', 'Roid Miner'), R.RuleBase),
+        L('mod_refer_base_gas_miner-', MS('газодобытчик', 'Gas Miner'), R.RuleBase),
+        L('mod_refer_base_solar_plant-', MS('солнечный генератор', 'Solar Plant'), R.RuleBase),
+        L('mod_refer_base_research_base-', MS('исследовательская база', 'Research Base'), R.RuleBase),
     ]
 
     subclasses = []

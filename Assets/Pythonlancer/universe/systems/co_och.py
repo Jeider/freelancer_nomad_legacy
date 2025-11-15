@@ -305,7 +305,7 @@ class OchoLargeAsteroidBase(OchoMember, main_objects.PirateAsteroid):
     LOADOUT = 'co_base_rock_large01_pi_01'
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEFENCE_LEVEL = None
-    RU_NAME = MS('База Очо-Риос', "Ocho-Rios Base")
+    RU_NAME = MS('База Очо-Р+иос', "Ocho-Rios Base")
     SHIP_SET = markets.ShipSet('co_fighter')
     CALC_STORE = False
     HAVE_CHARACTERS = False

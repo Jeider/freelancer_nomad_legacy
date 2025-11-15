@@ -957,6 +957,7 @@ class DockableObject(NamedObject):
     BASE_PROPS = None
     SELL_AMMO = True
     DOCK_ONLY = False
+    MSG_PREFIX = None
 
     AUTOSAVE_FORBIDDEN = False
 
@@ -1041,6 +1042,9 @@ BGCS_base_run_by = W02bF44'''
 
     def get_base(self):
         return self.base
+
+    def get_refer_msg(self):
+        return self.MSG_PREFIX if self.MSG_PREFIX else self.get_base_nickname()
 
     def get_ru_name(self):
         return self.RU_NAME

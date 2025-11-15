@@ -134,7 +134,7 @@ class Tau23BretoniaStation(Tau23Member, Tau23Bretonia, main_objects.GasMiningSta
     SPACE_OBJECT_TEMPLATE = gas_miner.BretoniaCivilianGasMiner
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.BretoniaCivilianDealers
-    RU_NAME = MS('Станция Эдинбург', 'Station Edinburgh')
+    RU_NAME = MS('Станция +Эдинбург', 'Station Edinburgh')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 5000
     EXCLUSION_PARAMS = BARRIER_EXCLUSION_PARAMS

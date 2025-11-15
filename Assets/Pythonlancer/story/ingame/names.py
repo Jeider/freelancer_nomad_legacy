@@ -9,7 +9,7 @@ KU_GUNBOAT = MS('Канонерка Кусари', 'Kusari Gunboat')
 BR_GUNBOAT = MS('Канонерка Бретонии', 'Bretonia Gunboat')
 NO_BATTLESHIP = MS('Линкор Кочевников', 'Nomad Battleship')
 NO_KERNEL = MS('Номадское зерно', 'Nomad Kernel')
-MUSASHI = MS('Линкор Мусаси', 'Battleship Musashi')
+MUSASHI = MS('Линкор Мус+аси', 'Battleship Musashi')
 MISSOURI = MS('Линкор Миссури', 'Battleship Missouri')
 OSIRIS = MS('Линкор Осирис', 'Battleship Osiris')
 PRINCE_OF_WALES = MS('Линкор Принц Уэльский', 'Battleship Prince of Wales')
@@ -19,3 +19,8 @@ WPLATFORM = MS('Орудийная платформа', 'Weapons platform')
 GENERATOR = MS('Генератор', 'Generator')
 ASTEROID = MS('Астероид', 'Asteroid')
 TUNNEL_LOCK = MS('Перегородка туннеля', 'Tunnel lock')
+
+MSG_MUSASHI = 'musashi'
+MSG_MISSOURI = 'missouri'
+MSG_OSIRIS = 'osiris'
+MSG_PRINCE_OF_WALES = 'prince_wales'
