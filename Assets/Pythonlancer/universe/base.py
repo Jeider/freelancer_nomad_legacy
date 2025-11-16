@@ -181,13 +181,10 @@ class Base:
                 self.parse_prop_actions()
 
     def get_base_msg(self):
-        return f'gcs_refer_base_{self.get_refer_msg()}'
+        return self.system_object.get_base_msg()
 
     def get_base_msg_relative(self):
-        return f'gcs_refer_base_{self.get_refer_msg()}-'
-
-    def get_refer_msg(self):
-        return self.system_object.get_refer_msg()
+        return self.system_object.get_base_msg_relative()
 
     def get_ru_name(self):
         return self.system_object.RU_NAME

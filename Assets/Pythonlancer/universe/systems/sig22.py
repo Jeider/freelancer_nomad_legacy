@@ -407,7 +407,6 @@ class Sig22ColumbiaJumpgate(Sig22Member, main_objects.Jumpgate):
 class Sig22Dockring(Sig22Bretonia, Sig22Member, main_objects.WaterPlanetDockring):
     BASE_INDEX = 1
     REL = BOTTOM
-    AUDIO_PREFIX = SpaceVoice.BR_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.BretoniaCivilianDealers
     SHIP_SET = markets.ShipSet('bh_elite')
@@ -462,7 +461,6 @@ class Sig22SouthPirates(Sig22Member, Sig22Liberty, main_objects.PirateStation):
     DEFENCE_LEVEL = None
     RU_NAME = MS('База Алькатрас', "Alcatraz Base")
 
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.LibertyPirateDealers
 
@@ -483,7 +481,6 @@ class Sig22NorthPirates(Sig22Bretonia, Sig22Member, main_objects.PirateStation):
 
     DEFENCE_LEVEL = None
 
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.BretoniaPirateDealers
 

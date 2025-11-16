@@ -271,6 +271,10 @@ class DataFolder:
         equip_file = self.get_missions() / 'npcships.ini'
         equip_file.write_text(content, encoding='utf-8')
 
+    def sync_faction_prop(self, content):
+        equip_file = self.get_missions() / 'faction_prop.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
     def sync_lootprops(self, content):
         equip_file = self.get_missions() / 'lootprops.ini'
         equip_file.write_text(content, encoding='utf-8')

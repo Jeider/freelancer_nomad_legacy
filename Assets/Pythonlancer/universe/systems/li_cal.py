@@ -401,7 +401,6 @@ class CalVirtualPoint1(CalMember, main_objects.VirtualDepot):
 class CalDockring(CalMember, main_objects.LargePlanetDockring):
     BASE_INDEX = 1
     REL = TOP
-    AUDIO_PREFIX = SpaceVoice.LI_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.LibertyPlanetDealers
     SHIP_SET = markets.ShipSet('bh_fighter', 'bh_elite', 'ge_csv')

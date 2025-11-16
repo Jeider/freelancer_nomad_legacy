@@ -296,7 +296,6 @@ class WarwickSiriusJumpgate(WarwickMember, main_objects.Jumpgate):
 class WarwickDockring(WarwickMember, main_objects.LargePlanetDockring):
     BASE_INDEX = 1
     REL = TOP
-    AUDIO_PREFIX = SpaceVoice.BR_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.BretoniaPlanetDealers
     SHIP_SET = markets.ShipSet('co_fighter', 'co_elite2', 'ge_csv')
@@ -363,7 +362,6 @@ class WarwickOutpost(WarwickMember, main_objects.Outpost):
     REL = LEFT
     SPACE_OBJECT_TEMPLATE = police.PoliceOutpostBretonia
     INTERIOR_CLASS = interior.OutpostInterior
-    AUDIO_PREFIX = SpaceVoice.BORDER_STATION
     DEALERS = dealers.BretoniaMilitaryDealers
     RU_NAME = MS('Аванпост Ливерпуль', "Outpost Liverpool")
 

@@ -365,7 +365,6 @@ class Tau4SouthPirates(Tau4Member, main_objects.PirateStation):
     DEFENCE_LEVEL = None
     RU_NAME = MS('База Муцуэ', "Mutsue Base")
 
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.KusariPirateDealers
 
@@ -386,7 +385,6 @@ class Tau4Xenos(Tau4Member, main_objects.PirateStation):
 
     DEFENCE_LEVEL = None
 
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.KusariPirateDealers
 

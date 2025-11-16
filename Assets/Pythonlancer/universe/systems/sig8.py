@@ -261,7 +261,6 @@ class Sig8Station(Sigma8Member, main_objects.TradelaneSupportStation):
     ARCHETYPE = 'largestation1_old'
     LOADOUT = 'largestation_rh'
 
-    AUDIO_PREFIX = SpaceVoice.STATION
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.RheinlandCivilianDealers
 
@@ -275,7 +274,6 @@ class Sig8Freeport(Sigma8Member, main_objects.Freeport):
 
     SPACE_OBJECT_TEMPLATE = trade_storages.HonshuStorage
 
-    AUDIO_PREFIX = SpaceVoice.FREEPORT
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.RheinlandCivilianDealers
 
@@ -289,7 +287,6 @@ class Sig8BorderStation(Sigma8Member, main_objects.Outpost):
 
     SPACE_OBJECT_TEMPLATE = police.SigmaEightPoliceOutpost
 
-    AUDIO_PREFIX = SpaceVoice.BORDER_STATION
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.RheinlandMilitaryDealers
 
@@ -307,7 +304,6 @@ class Sig8Junkers(Sigma8Member, main_objects.JunkerBase):
     DEFENCE_LEVEL = None
     RU_NAME = MS('Склад Зуль', "Suhl Storage")
 
-    AUDIO_PREFIX = SpaceVoice.STATION
     INTERIOR_CLASS = interior.PirateStationInterior
     DEALERS = dealers.RheinlandCivilianDealers
 
@@ -327,7 +323,6 @@ class Sig8Pirate(Sigma8Member, main_objects.PirateStation):
     DEFENCE_LEVEL = None
     RU_NAME = MS('База Вернигороде', "Wernigerode Base")
 
-    AUDIO_PREFIX = SpaceVoice.STATION
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.RheinlandPirateDealers
 

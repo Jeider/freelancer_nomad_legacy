@@ -123,7 +123,6 @@ class MadRingStation(MadMember, main_objects.Station):
 class MadDockring(MadMember, main_objects.LargePlanetDockring):
     BASE_INDEX = 1
     REL = BOTTOM
-    AUDIO_PREFIX = SpaceVoice.CO_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.KusariPirateDealers
     SHIP_SET = markets.ShipSet('pi_fighter')

@@ -349,7 +349,6 @@ class MunchKoengisbergJumpgate(MunchMember, main_objects.JumpgateAlt):
 class MunchDockring(MunchMember, main_objects.WaterPlanetDockring):
     BASE_INDEX = 1
     REL = BOTTOM
-    AUDIO_PREFIX = SpaceVoice.RH_PLANET
     INTERIOR_CLASS = interior.CustomFullSingleRoomInterior
     DEALERS = dealers.RheinlandPlanetDealers
     SHIP_SET = markets.ShipSet('bw_elite')
@@ -437,7 +436,6 @@ class MunchOutcastBase(MunchMember, main_objects.PirateAsteroid):
     DEFENCE_LEVEL = None
     RU_NAME = MS('База Виго', "Vigo Base")
 
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
     INTERIOR_EXTRA_ROOMS = ['''
 ;mission 02 special room
@@ -470,7 +468,6 @@ class MunchJunkersBase(MunchMember, main_objects.JunkerBase):
     DEFENCE_LEVEL = None
     RU_NAME = MS('Склад Кройзберг', 'Kreuzberg Storage')
 
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.RheinlandPirateDealers
 

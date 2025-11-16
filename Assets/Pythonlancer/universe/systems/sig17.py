@@ -449,7 +449,6 @@ class Sig17EdgeNebulaPirates(Sig17Member, main_objects.PirateAsteroid):
     DEFENCE_LEVEL = None
     RU_NAME = MS('Форт Ред-Ривер', 'Fort Red-River')
 
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.LibertyPirateDealers
 
@@ -475,7 +474,6 @@ class Sig17CrowNebulaPirates(Sig17Member, main_objects.PirateStation):
     DEFENCE_LEVEL = None
     RU_NAME = MS('База М+оркрофт', 'Morecroft Base')
 
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.LibertyPirateDealers
 

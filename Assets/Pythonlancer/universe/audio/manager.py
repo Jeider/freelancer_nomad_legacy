@@ -75,12 +75,12 @@ class PilotManager:
             TempPilot.fill_audio(the_pilot, skip=True)
 
 
-            # TempPilot.fill_files_for_xml(the_pilot)
-            # TempPilot.build_voice_xml(the_pilot, skip=True)
+            TempPilot.fill_files_for_xml(the_pilot)
+            TempPilot.build_voice_xml(the_pilot, skip=True)
 
             # return
 
     def compile_pilots_audio(self):
-        for a_pilot in ShipVoice.subclasses:
+        for a_pilot in StationDispatcher.subclasses:  # StationDispatcher.subclasses + ShipVoice.subclasses
             folder = a_pilot.FOLDER
             AudioFolder.compile_file(folder)

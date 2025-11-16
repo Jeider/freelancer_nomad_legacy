@@ -77,6 +77,37 @@ duration = 3
 {attenuation}
 Priority = -6
 
+
+[Sound]
+msg = mod_refer_base_liner-
+duration = 3
+{attenuation}
+Priority = -6
+
+[Sound]
+msg = mod_refer_base_roid_miner-
+duration = 3
+{attenuation}
+Priority = -6
+
+[Sound]
+msg = mod_refer_base_gas_miner-
+duration = 3
+{attenuation}
+Priority = -6
+
+[Sound]
+msg = mod_refer_base_solar_plant-
+duration = 3
+{attenuation}
+Priority = -6
+
+[Sound]
+msg = mod_refer_base_research_base-
+duration = 3
+{attenuation}
+Priority = -6
+
 [Sound]
 msg = mod_refer_base_asteroid_station-
 duration = 3

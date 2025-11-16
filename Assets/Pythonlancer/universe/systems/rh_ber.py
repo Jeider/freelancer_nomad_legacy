@@ -279,7 +279,6 @@ class BerlinSigma8Jumpgate(BerlinMember, main_objects.Jumpgate):
 class BerlinDockring(BerlinMember, main_objects.LargePlanetDockring):
     BASE_INDEX = 1
     REL = RIGHT
-    AUDIO_PREFIX = SpaceVoice.RH_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.RheinlandPlanetDealers
     SHIP_SET = markets.ShipSet('rh_fighter', 'bw_elite', 'ge_csv')
@@ -333,7 +332,6 @@ class BerlinOutpost(BerlinMember, main_objects.Outpost):
     REL = RIGHT
     SPACE_OBJECT_TEMPLATE = police.BerlinPoliceOutpost
     INTERIOR_CLASS = interior.OutpostInterior
-    AUDIO_PREFIX = SpaceVoice.BORDER_STATION
     DEALERS = dealers.RheinlandMilitaryDealers
     RU_NAME = MS('Аванпост Бранденбург', "Outpost Brandenburg")
 

@@ -437,7 +437,6 @@ class Om15Junkers(Omega15Member, main_objects.JunkerBase):
     DEFENCE_LEVEL = None
     RU_NAME = MS('База Зиген', "Siegen Base")
 
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.RheinlandPirateDealers
 

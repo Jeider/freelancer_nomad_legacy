@@ -401,7 +401,6 @@ class CamOldOutpostRuinsSuprisePoint(CamMember, main_objects.HackableStation):
 class CamDockring(CamMember, main_objects.LargePlanetDockring):
     BASE_INDEX = 1
     REL = BOTTOM
-    AUDIO_PREFIX = SpaceVoice.BR_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.BretoniaPlanetDealers
     SHIP_SET = markets.ShipSet('br_fighter', 'ge_fighter3', 'bw_freighter')
@@ -428,7 +427,6 @@ class CamStation(CamMember, main_objects.TradelaneSupportStation):
     ARCHETYPE = 'largestation1_old'
     LOADOUT = 'largestation_br'
 
-    AUDIO_PREFIX = SpaceVoice.STATION
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.BretoniaCivilianDealers
 
@@ -442,7 +440,6 @@ class CamTrading(CamMember, main_objects.TradingBase):
 
     SPACE_OBJECT_TEMPLATE = trade_storages.TekagiStorage
 
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.BretoniaCivilianDealers
 

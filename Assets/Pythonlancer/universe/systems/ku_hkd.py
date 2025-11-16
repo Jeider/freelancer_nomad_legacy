@@ -381,7 +381,6 @@ class HokkOmega7Jumpgate(HokkMember, main_objects.Jumpgate):
 class HokkDockring(HokkMember, main_objects.LargePlanetDockring):
     BASE_INDEX = 1
     REL = TOP
-    AUDIO_PREFIX = SpaceVoice.KU_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.KusariPlanetDealers
     SHIP_SET = markets.ShipSet('ge_fighter4', 'ge_fighter6', 'bw_freighter')
@@ -439,7 +438,6 @@ class HokkPolice(HokkMember, main_objects.Outpost):
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = police.SigmaEightPoliceOutpost
     INTERIOR_CLASS = interior.OutpostInterior
-    AUDIO_PREFIX = SpaceVoice.BORDER_STATION
     DEALERS = dealers.KusariMilitaryDealers
     RU_NAME = MS('Аванпост Синдзюку', "Sinjuku Outpost")
 
@@ -451,7 +449,6 @@ class HokkStation(HokkMember, main_objects.TradelaneSupportStation):
     ARCHETYPE = 'largestation1_old'
     LOADOUT = 'largestation_ku'
 
-    AUDIO_PREFIX = SpaceVoice.STATION
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
     RU_NAME = MS('Станция Ниигата', "Niigata Station")
@@ -547,7 +544,6 @@ class HokkNebulaPirates(HokkMember, main_objects.PirateStation):
 
     INTERIOR_BG1 = interior.INTERIOR_BG_WALKER
 
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.KusariPirateDealers
 
@@ -562,7 +558,6 @@ class HokkJunkers(HokkMember, main_objects.JunkerBase):
 
     DEFENCE_LEVEL = None
 
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.KusariPirateDealers
 

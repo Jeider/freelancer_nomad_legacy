@@ -506,7 +506,6 @@ class ColTau31Jumpgate(ColMember, main_objects.Jumpgate):
 class ColDockring(ColMember, main_objects.LargePlanetDockring):
     BASE_INDEX = 1
     REL = BOTTOM
-    AUDIO_PREFIX = SpaceVoice.LI_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.LibertyPlanetDealers
     SHIP_SET = markets.ShipSet('bh_fighter', 'bh_elite2', 'bw_freighter')
@@ -527,7 +526,6 @@ class ColMiningDockring(ColMember, main_objects.MiningPlanetDockring):
     INDEX = 2
     BASE_INDEX = 2
     REL = LEFT
-    AUDIO_PREFIX = SpaceVoice.LI_PLANET
     INTERIOR_CLASS = interior.CustomFullSingleRoomInterior
     DEALERS = dealers.LibertyPlanetDealers
     SHIP_SET = markets.ShipSet('ge_fighter3')
@@ -566,7 +564,6 @@ class ColPolice(ColMember, main_objects.Outpost):
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = police.PoliceOutpostLiberty
     INTERIOR_CLASS = interior.OutpostInterior
-    AUDIO_PREFIX = SpaceVoice.BORDER_STATION
     DEALERS = dealers.LibertyMilitaryDealers
     RU_NAME = MS('Аванпост Новый Орлеан', "Outpost New Orleans")
 
@@ -695,7 +692,6 @@ class ColAsteroidPirates(ColMember, main_objects.PirateAsteroid):
     DEFENCE_LEVEL = None
     RU_NAME = MS('База Вестпорт', "Westport Base")
 
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.LibertyPirateDealers
 
@@ -715,7 +711,6 @@ class ColNebulaPirates(ColMember, main_objects.PirateStation):
 
     DEFENCE_LEVEL = None
 
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.LibertyPirateDealers
 

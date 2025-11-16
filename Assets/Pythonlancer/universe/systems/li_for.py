@@ -330,7 +330,6 @@ class ForbesSig8Jumphole(ForbesMember, main_objects.Jumphole):
 class ForbesDockring(ForbesMember, main_objects.LargePlanetDockring):
     BASE_INDEX = 1
     REL = RIGHT
-    AUDIO_PREFIX = SpaceVoice.LI_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.LibertyPlanetDealers
     SHIP_SET = markets.ShipSet('bh_fighter', 'bh_elite', 'ge_csv')
@@ -385,7 +384,6 @@ class ForbesPolice(ForbesMember, main_objects.Outpost):
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = police.PoliceOutpostLiberty
     INTERIOR_CLASS = interior.OutpostInterior
-    AUDIO_PREFIX = SpaceVoice.BORDER_STATION
     DEALERS = dealers.LibertyMilitaryDealers
     RU_NAME = MS('Аванпост Милуоки', 'Outpost Milwaukee ')
 
@@ -395,7 +393,6 @@ class ForbesLargeStation(ForbesMember, main_objects.Station):
     REL = BOTTOM
     REL_APPEND = 2500
     SPACE_OBJECT_TEMPLATE = forbes_megafactory.ForbesMegafactory
-    AUDIO_PREFIX = SpaceVoice.STATION
     INTERIOR_CLASS = interior.StationShipdealerBshbarInterior
     DEALERS = dealers.LibertyCivilianDealers
     SHIP_SET = markets.ShipSet('li_freighter')
@@ -475,7 +472,6 @@ class ForbesAsteroidPirates(ForbesMember, main_objects.PirateAsteroid):
 
     DEFENCE_LEVEL = None
 
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.LibertyPirateDealers
 
@@ -496,7 +492,6 @@ class ForbesJunkers(ForbesMember, main_objects.JunkerBase):
 
     DEFENCE_LEVEL = None
 
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.OutpostShipdealerInterior
     DEALERS = dealers.LibertyPirateDealers
 

@@ -277,7 +277,6 @@ class ManhTau31Jumpgate(ManhMember, main_objects.Jumpgate):
 class ManhDockring(ManhMember, main_objects.LargePlanetDockring):
     BASE_INDEX = 1
     REL = TOP
-    AUDIO_PREFIX = SpaceVoice.LI_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.LibertyPlanetDealers
     SHIP_SET = markets.ShipSet('li_fighter', 'li_elite', 'li_freighter')
@@ -298,7 +297,6 @@ class ManhMiningDockring(ManhMember, main_objects.MiningPlanetDockring):
     INDEX = 2
     BASE_INDEX = 2
     REL = RIGHT
-    AUDIO_PREFIX = SpaceVoice.LI_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.LibertyPlanetDealers
     SHIP_SET = markets.ShipSet('ge_csv')
@@ -442,7 +440,6 @@ class ManhJunkers(ManhMember, main_objects.JunkerBase):
 
     DEFENCE_LEVEL = None
 
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.LibertyPirateDealers
 
@@ -462,7 +459,6 @@ class ManhNebulaPirates(ManhMember, main_objects.PirateStation):
 
     DEFENCE_LEVEL = None
 
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.LibertyPirateDealers
 

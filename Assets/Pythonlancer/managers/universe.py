@@ -31,6 +31,7 @@ class UniverseManager:
         self.misc_equip = self.core.misc_equip
         self.weapons = self.core.weapons
         self.shiparch = self.core.shiparch
+        self.population = self.core.population
 
         self.bases_db = {}
         self.bases_list = []
@@ -68,6 +69,7 @@ class UniverseManager:
         self.load_interiors()
 
         self.sync_data()
+        self.population.post_sync_data()
 
     def get_random_hacker_panel(self):
         return self.hacker_panels_manager.get_random_hacker_panel()

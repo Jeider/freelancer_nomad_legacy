@@ -187,7 +187,6 @@ class BizmarkSigma8Jumphole(BizmarkMember, main_objects.Jumphole):
 class BizmarkDockRing(BizmarkMember, main_objects.LargePlanetDockring):
     BASE_INDEX = 1
     REL = RIGHT
-    AUDIO_PREFIX = SpaceVoice.RH_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.RheinlandPlanetDealers
     SHIP_SET = markets.ShipSet('ge_fighter2', 'ge_fighter3', 'bw_freighter')
@@ -210,7 +209,6 @@ class BizmarkTrading(BizmarkMember, main_objects.TradingBase):
     REL = RIGHT
     SPACE_OBJECT_TEMPLATE = shipyards.HeavyBarrelShipyard
 
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.OutpostShipdealerInterior
     DEALERS = dealers.RheinlandCivilianDealers
     SHIP_SET = markets.ShipSet('rh_freighter')
@@ -227,7 +225,6 @@ class BizmarkBattleship(BizmarkMember, main_objects.RheinlandBattleship):
     BASE_INDEX = 3
     REL = LEFT
 
-    AUDIO_PREFIX = SpaceVoice.BATTLESHIP
     INTERIOR_CLASS = interior.BattleshipInterior
     INTERIOR_EXTRA_ROOMS = ['''
 ;mission 02 special room
@@ -248,7 +245,6 @@ class BizmarkResearch(BizmarkMember, main_objects.ResearchStation):
     SPACE_OBJECT_TEMPLATE = research.RheinlandResearch
     RU_NAME = MS('Исследовательская станция Мюнстер', 'Münster Research Station')
 
-    AUDIO_PREFIX = SpaceVoice.STATION
     INTERIOR_CLASS = interior.StationBshbarInterior
     DEALERS = dealers.RheinlandCivilianDealers
 
@@ -266,7 +262,6 @@ class BizmarkMilitary(BizmarkMember, main_objects.Station):
     LOCKED_DOCK = True
     KEY_COLLECT_FX = nn.FX_GOT_KEY_STATION
 
-    AUDIO_PREFIX = SpaceVoice.STATION
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.RheinlandMilitaryDealers
 
@@ -286,7 +281,6 @@ class BizmarkShipyard(BizmarkMember, main_objects.Shipyard):
     SPACE_OBJECT_TEMPLATE = constanta.Constanta
     RU_NAME = MS('Верфь Киль', "Kiel Shipyard")
 
-    AUDIO_PREFIX = SpaceVoice.SHIPYARD
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.RheinlandCivilianDealers
 
@@ -297,7 +291,6 @@ class BizmarkRefinery(BizmarkMember, main_objects.Refinery):
     SPACE_OBJECT_TEMPLATE = alg.AlgBaseBerlin
     RU_NAME = MS('Станция Дортмунд', 'Dortmund Station')
 
-    AUDIO_PREFIX = SpaceVoice.FACTORY
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.RheinlandCivilianDealers
 
@@ -316,7 +309,6 @@ class BizmarkTopPirate(BizmarkMember, main_objects.PirateStation):
     DEFENCE_LEVEL = None
     RU_NAME = MS('База Майнц', "Mainz Base")
 
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.RheinlandPirateDealers
 
@@ -331,7 +323,6 @@ class BizmarkRightPirate(BizmarkMember, main_objects.PirateAsteroid):
     DEFENCE_LEVEL = None
     RU_NAME = MS('База Саарбрюкен', "Saarbrücken Base")
 
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.RheinlandPirateDealers
     ASTEROID_ZONES = [

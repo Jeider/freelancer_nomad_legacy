@@ -262,7 +262,6 @@ class Sig42SolarPlant5(Sig42Member, Sig42BaseKusariSolarPlant):
 class Sig42Dockring(Sig42Member, Sig42Bretonia, main_objects.MiningPlanetDockring):
     BASE_INDEX = 1
     REL = BOTTOM
-    AUDIO_PREFIX = SpaceVoice.BR_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInteriorSecond
     DEALERS = dealers.BretoniaCivilianDealers
     SHIP_SET = markets.ShipSet('br_fighter')
@@ -333,7 +332,6 @@ class Sig42TopPirates(Sig42Member, Sig42Bretonia, main_objects.PirateStation):
     DEFENCE_LEVEL = None
     RU_NAME = MS('База Исида', 'Isis Base')
 
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.BretoniaPirateDealers
 
@@ -353,7 +351,6 @@ class Sig42BottomPirates(Sig42Member, Sig42Kusari, main_objects.PirateStation):
     DEFENCE_LEVEL = None
     RU_NAME = MS('База С+атис', 'Satis Base')
 
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.KusariPirateDealers
 

@@ -6,6 +6,7 @@ from tools.data_folder import DataFolder
 from text.dividers import SINGLE_DIVIDER, DIVIDER
 
 NPC_SHIPS_TEMPLATE = 'hardcoded_inis/static_content/npcships.ini'
+FACTION_PROP_TEMPLATE = 'hardcoded_inis/static_content/faction_prop.ini'
 
 
 class PopulationManager:
@@ -125,9 +126,21 @@ class PopulationManager:
     def get_loadouts(self):
         return DIVIDER.join(self.loadouts_list)
 
+    def get_faction_prop_content(self):
+        params = {}
+        for faction in self.world_factions:
+            params[faction.get_msg_code()] = faction
+        return self.core.tpl_manager.get_result(FACTION_PROP_TEMPLATE, params)
+
     def sync_data(self):
         if not self.core.write:
             return
         data_folder = DataFolder(build_to_folder=self.core.build_folder)
         data_folder.sync_ships_loadouts(self.get_loadouts())
         data_folder.sync_npcships(self.get_npcships_file_content())
+
+    def post_sync_data(self):
+        if not self.core.write:
+            return
+        data_folder = DataFolder(build_to_folder=self.core.build_folder)
+        data_folder.sync_faction_prop(self.get_faction_prop_content())

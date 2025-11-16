@@ -424,7 +424,6 @@ class HonsMunchenJumpgate(HonsMember, main_objects.Jumpgate):
 class HonsDockring(HonsMember, main_objects.LargePlanetDockring):
     BASE_INDEX = 1
     REL = LEFT
-    AUDIO_PREFIX = SpaceVoice.KU_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.KusariPlanetDealers
     SHIP_SET = markets.ShipSet('ku_fighter', 'ge_fighter5', 'ku_freighter')
@@ -482,7 +481,6 @@ class HonsPolice(HonsMember, main_objects.Outpost):
     REL = RIGHT
     SPACE_OBJECT_TEMPLATE = police.StuttgartPoliceOutpost
     INTERIOR_CLASS = interior.OutpostInterior
-    AUDIO_PREFIX = SpaceVoice.BORDER_STATION
     DEALERS = dealers.KusariMilitaryDealers
     RU_NAME = MS('Аванпост Нара', 'Outpost Nara')
 
@@ -540,7 +538,6 @@ class HonsNebulaPirates(HonsMember, main_objects.PirateStation):
 
     DEFENCE_LEVEL = None
 
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.KusariPirateDealers
 
@@ -562,7 +559,6 @@ class HonsJunkers(HonsMember, main_objects.JunkerBase):
 
     DEFENCE_LEVEL = None
 
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.KusariPirateDealers
 

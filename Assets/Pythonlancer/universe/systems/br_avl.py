@@ -493,7 +493,6 @@ class AvalTau23Jumpgate(AvalMember, main_objects.Jumpgate):
 class AvalDockring(AvalMember, main_objects.LargePlanetDockring):
     BASE_INDEX = 1
     REL = LEFT
-    AUDIO_PREFIX = SpaceVoice.BR_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.BretoniaPlanetDealers
     SHIP_SET = markets.ShipSet('co_fighter', 'co_elite', 'br_freighter')
@@ -545,7 +544,6 @@ class AvalTrading(AvalMember, main_objects.TradingBase):
 
     SPACE_OBJECT_TEMPLATE = trade_storages.TekagiStorage
 
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.BretoniaCivilianDealers
 
@@ -558,7 +556,6 @@ class AvalMilitary(AvalMember, main_objects.Station):
 
     SPACE_OBJECT_TEMPLATE = avalon_megabase.AvalonMegabase
 
-    AUDIO_PREFIX = SpaceVoice.STATION
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.BretoniaMilitaryDealers
 

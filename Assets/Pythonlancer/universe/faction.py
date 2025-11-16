@@ -57,6 +57,13 @@ class Faction:
     def get_msg_id_prefix(self):
         return f'gcs_refer_faction_{self.get_msg_code()}_short'
 
+    def get_msg_id_prefix_main(self):
+        return f'gcs_refer_faction_{self.get_msg_code()}'
+
+    @property
+    def msg(self):
+        return self.get_msg_id_prefix_main()
+
 
 class LawfulFaction:
     LEGALITY = 'lawful'

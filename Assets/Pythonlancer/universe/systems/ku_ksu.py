@@ -346,7 +346,6 @@ class KyushuTau23Jumpgate(KyushuMember, main_objects.Jumpgate):
 class KyushuDockring(KyushuMember, main_objects.LargePlanetDockring):
     BASE_INDEX = 1
     REL = RIGHT
-    AUDIO_PREFIX = SpaceVoice.KU_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.KusariPlanetDealers
     SHIP_SET = markets.ShipSet('ge_fighter2', 'ge_fighter6', 'ge_csv')
@@ -366,7 +365,6 @@ class KyushuMiningDockring(KyushuMember, main_objects.MiningPlanetDockring):
     INDEX = 2
     BASE_INDEX = 2
     REL = TOP
-    AUDIO_PREFIX = SpaceVoice.KU_PLANET
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEALERS = dealers.KusariPlanetDealers
     SHIP_SET = markets.ShipSet('ge_fighter3')
@@ -439,7 +437,6 @@ class KyushuPolice(KyushuMember, main_objects.Outpost):
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = police.BerlinPoliceOutpost
     INTERIOR_CLASS = interior.OutpostInterior
-    AUDIO_PREFIX = SpaceVoice.BORDER_STATION
     DEALERS = dealers.KusariMilitaryDealers
     RU_NAME = MS('Аванпост Тояма', 'Outpost Toyama')
 
@@ -484,7 +481,6 @@ class KyushuNorthAsteroidPirates(KyushuMember, main_objects.PirateAsteroid):
 
     INTERIOR_BG1 = interior.INTERIOR_BG_WALKER
 
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.KusariPirateDealers
 
@@ -504,7 +500,6 @@ class KyushuJunkers(KyushuMember, main_objects.JunkerBase):
 
     DEFENCE_LEVEL = None
 
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.KusariPirateDealers
 

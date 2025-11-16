@@ -229,6 +229,11 @@ class BaseIdentifiedVoice(SignedVoice):
             )
         return lines
 
+    def get_dynamic_lines(self):
+        lines = super().get_dynamic_lines()
+        lines.extend(self.get_bases_lines())
+        return lines
+
     def get_lines(self):
         lines = super().get_lines()
         lines.extend(self.get_bases_lines())
@@ -261,7 +266,7 @@ class SystemIdentifiedVoice(BaseIdentifiedVoice):
         return lines
 
     def get_dynamic_lines(self):
-        lines = super().get_lines()
+        lines = super().get_dynamic_lines()
         lines.extend(self.get_system_lines())
         return lines
 

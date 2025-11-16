@@ -1046,6 +1046,15 @@ BGCS_base_run_by = W02bF44'''
     def get_refer_msg(self):
         return self.MSG_PREFIX if self.MSG_PREFIX else self.get_base_nickname()
 
+    def get_audio_prefix(self):
+        return self.AUDIO_PREFIX if self.AUDIO_PREFIX else self.get_base_msg()
+
+    def get_base_msg(self):
+        return f'gcs_refer_base_{self.get_refer_msg()}'
+
+    def get_base_msg_relative(self):
+        return f'gcs_refer_base_{self.get_refer_msg()}-'
+
     def get_ru_name(self):
         return self.RU_NAME
 
@@ -1105,11 +1114,6 @@ BGCS_base_run_by = W02bF44'''
         if not self.interior:
             raise Exception('%s have not interior' % self.__class__.__name__)
         return self.interior.get_mbase()
-
-    def get_audio_prefix(self):
-        if not self.AUDIO_PREFIX:
-            raise Exception('unknown audio prefix for %s' % self.__class__.__name__)
-        return self.AUDIO_PREFIX
 
     def get_raw_root_props(self):
         base_name = self.get_base_nickname()
@@ -1488,7 +1492,6 @@ class WaterPlanetDockring(Dockring):
 
 class Station(DockableObject):
     ALIAS = 'station'
-    AUDIO_PREFIX = SpaceVoice.STATION
     BASE_PROPS = meta.SpaceStation()
     EQUIP_SET = markets.StationSet
     MISC_EQUIP_GEN_TYPE = GEN_CIV
@@ -1518,7 +1521,7 @@ class RoidMinerStation(Station):
 
 
 class AbandonedAsteroid(DockableObject):
-    AUDIO_PREFIX = SpaceVoice.STATION
+    AUDIO_PREFIX = SpaceVoice.RESEARCH_BASE
     RANDOM_ROBOT = True
     BASE_PROPS = meta.LockedAsteroid()
     EQUIP_SET = None
@@ -1529,7 +1532,7 @@ class AbandonedAsteroid(DockableObject):
 
 
 class AbandonedAsteroidIce(DockableObject):
-    AUDIO_PREFIX = SpaceVoice.STATION
+    AUDIO_PREFIX = SpaceVoice.RESEARCH_BASE
     RANDOM_ROBOT = True
     BASE_PROPS = meta.LockedAsteroid()
     SELL_AMMO = False
@@ -1543,6 +1546,7 @@ class GasMinerOld(Station):
     RANDOM_ROBOT = True
     SELL_AMMO = False
     EQUIP_SET = None
+    AUDIO_PREFIX = SpaceVoice.GAS_MINER
     KEY_COLLECT_FX = nn.FX_GOT_KEY_GAS_MINER
     RU_FIRST_DESCRIPTION = descriptions.GAS_MINER_OLD
 
@@ -1588,6 +1592,7 @@ class RoidMiner(Station):
     EQUIP_SET = None
     KEY_COLLECT_FX = nn.FX_GOT_KEY_ROID_MINER
     RU_FIRST_DESCRIPTION = descriptions.ROID_MINER
+    AUDIO_PREFIX = SpaceVoice.ROID_MINER
 
     ASTEROID_OFFSET = (0, 5, -235)
     ASTEROID_ROTATE = (145, -30, 34)
@@ -1655,7 +1660,6 @@ class DebrisManufactoring(Station):
 
 class Outpost(DockableObject):
     ALIAS = 'outpost'
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     BASE_PROPS = meta.Outpost()
     EQUIP_SET = markets.PoliceOutpostSet
     MISC_EQUIP_GEN_TYPE = GEN_PIRATE
@@ -1663,7 +1667,6 @@ class Outpost(DockableObject):
 
 class Prison(DockableObject):
     ALIAS = 'prison'
-    AUDIO_PREFIX = SpaceVoice.PRISON
     BASE_PROPS = meta.Prison()
     EQUIP_SET = markets.PrisonSet
     MISC_EQUIP_GEN_TYPE = GEN_PIRATE
@@ -1671,7 +1674,6 @@ class Prison(DockableObject):
 
 class Shipyard(DockableObject):
     ALIAS = 'shipyard'
-    AUDIO_PREFIX = SpaceVoice.SHIPYARD
     BASE_PROPS = meta.Shipyard()
     EQUIP_SET = markets.ShipyardSet
     MISC_EQUIP_GEN_TYPE = GEN_PIRATE
@@ -1684,7 +1686,6 @@ class LargeShipyard(Shipyard):
 
 class TradingBase(DockableObject):
     ALIAS = 'trading'
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     BASE_PROPS = meta.TradingBase()
     EQUIP_SET = markets.StationSet
     MISC_EQUIP_GEN_TYPE = GEN_CIV
@@ -1701,7 +1702,6 @@ class TradingBase(DockableObject):
 
 class Battleship(DockableObject):
     ALIAS = 'bship'
-    AUDIO_PREFIX = SpaceVoice.BATTLESHIP
     BASE_PROPS = meta.Battleship()
     EQUIP_SET = markets.BattleshipSet
     MISC_EQUIP_GEN_TYPE = GEN_MAIN
@@ -1737,7 +1737,6 @@ class LuxuryLiner(Battleship):
 
 class Freeport(DockableObject):
     ALIAS = 'freeport'
-    AUDIO_PREFIX = SpaceVoice.FREEPORT
     BASE_PROPS = meta.Freeport()
     EQUIP_SET = markets.StationSet
     MISC_EQUIP_GEN_TYPE = GEN_PIRATE
@@ -1745,7 +1744,6 @@ class Freeport(DockableObject):
 
 class JunkerBase(DockableObject):
     ALIAS = 'junker'
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     BASE_PROPS = meta.JunkerBase()
     EQUIP_SET = markets.PirateSet
     MISC_EQUIP_GEN_TYPE = GEN_PIRATE
@@ -1753,7 +1751,6 @@ class JunkerBase(DockableObject):
 
 class PirateBase(DockableObject):
     ALIAS = 'pirate'
-    AUDIO_PREFIX = SpaceVoice.OUTPOST
     EQUIP_SET = markets.PirateSet
     MISC_EQUIP_GEN_TYPE = GEN_PIRATE
 
@@ -1772,7 +1769,6 @@ class PirateAsteroid(PirateBase):
 
 class Refinery(DockableObject):
     ALIAS = 'alg'
-    AUDIO_PREFIX = SpaceVoice.FACTORY
     BASE_PROPS = meta.Refinery()
     EQUIP_SET = markets.StationSet
     MISC_EQUIP_GEN_TYPE = GEN_CIV
@@ -1858,7 +1854,7 @@ class HackableStation(Hackable):
 
 
 class HackableSolarPlant(Hackable):
-    AUDIO_PREFIX = SpaceVoice.STATION
+    AUDIO_PREFIX = SpaceVoice.SOLAR_PLANT
     KEY_COLLECT_FX = nn.FX_GOT_KEY_STATION
     RU_FIRST_DESCRIPTION = descriptions.HACKABLE_SOLAR_PLANT
 
@@ -1870,7 +1866,7 @@ class HackableBattleship(Hackable):
 
 
 class HackableLuxury(Hackable):
-    AUDIO_PREFIX = SpaceVoice.BATTLESHIP
+    AUDIO_PREFIX = SpaceVoice.LINER
     KEY_COLLECT_FX = nn.FX_GOT_KEY_BATTLESHIP
     RU_FIRST_DESCRIPTION = descriptions.HACKABLE_LUXURY
 
@@ -1888,7 +1884,7 @@ class LockedBattleship(Station):
 
 
 class LockedLuxury(Station):
-    AUDIO_PREFIX = SpaceVoice.BATTLESHIP
+    AUDIO_PREFIX = SpaceVoice.LINER
     LOCKED_DOCK = True
     ROTATE_RANDOM = True
     RANDOM_ROBOT = True
