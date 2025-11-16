@@ -6,6 +6,8 @@ from world.equipment import MainMiscEquip as misc
 from world import bodyparts
 from world import ship
 
+from text.strings import MultiString as MS
+
 
 class Faction:
     INTERCEPTOR1 = None
@@ -13,9 +15,12 @@ class Faction:
     ELITE1 = None
     ELITE2 = None
     ELITE3 = None
+    RU_NAME = None
 
+    MANAGED = True
     CODE = None
     ALT_CODE = None
+    MSG_CODE = None
 
     COSTUME = None
     GUEST_APPEARANCE = None
@@ -42,6 +47,15 @@ class Faction:
     @classmethod
     def get_guest(cls):
         return cls.GUEST_APPEARANCE
+
+    def get_ru_name(self):
+        return self.RU_NAME
+
+    def get_msg_code(self):
+        return self.MSG_CODE if self.MSG_CODE else self.get_code()
+
+    def get_msg_id_prefix(self):
+        return f'gcs_refer_faction_{self.get_msg_code()}_short'
 
 
 class LawfulFaction:
@@ -341,12 +355,19 @@ class RheinlandMain(LawfulFaction, RheinlandFleet, BaseRheinland, RheinlandMainE
     CODE = 'rh_grp'
     WEAPON = gun.RheinlandLightgun
     GUEST_APPEARANCE = bodyparts.TRADER
+    RU_NAME = MS('Р+эйнланд', "Rheinland")
 
 
 class RheinlandCivilians(LawfulFaction, RheinlandFleet, BaseRheinland, RheinlandCivEquip, Faction):
     CODE = 'rc_grp'
     WEAPON = gun.RheinlandCivgun
     GUEST_APPEARANCE = bodyparts.PEASANT
+    RU_NAME = MS('Д+ауманн', "Daumann")
+
+
+class RheinlandTraders(RheinlandCivilians):
+    CODE = 'tr_grp_rh'
+    RU_NAME = MS('Интерсп+эйс', "Interspace")
 
 
 class RheinlandHunters(LawfulFaction, RheinlandFleet, BaseRheinland, RheinlandCivEquip, Faction):
@@ -354,6 +375,7 @@ class RheinlandHunters(LawfulFaction, RheinlandFleet, BaseRheinland, RheinlandCi
     WEAPON = gun.RheinlandHuntergun
     AFTERBURN = misc.RH_MAIN
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
+    RU_NAME = MS('Асгард', "PMC Asgaard")
 
 
 class WorkaroundHunter(RheinlandHunters):
@@ -361,13 +383,14 @@ class WorkaroundHunter(RheinlandHunters):
     WEAPON = gun.RheinlandHuntergun
     AFTERBURN = misc.RH_MAIN
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
+    MANAGED = False
 
 
 class RheinlandPirate(UnlawfulFaction, RheinlandFleet, BaseRheinland, RheinlandPirateEquip, Faction):
     CODE = 'pi_grp_rh'
-    ALT_CODE = 'pi_grp'
     WEAPON = gun.RheinlandPirategun
     GUEST_APPEARANCE = bodyparts.PIRATE
+    RU_NAME = MS('Бундсчух', "Bundschuh")
 
 
 class WorkaroundPirate(RheinlandHunters):
@@ -375,18 +398,21 @@ class WorkaroundPirate(RheinlandHunters):
     WEAPON = gun.RheinlandHuntergun
     AFTERBURN = misc.RH_MAIN
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
+    MANAGED = False
 
 
 class Hessians(UnlawfulFaction, RheinlandFleet, BaseRheinland, RheinlandPirateEquip, Faction):
     CODE = 'rx_grp'
     WEAPON = gun.RheinlandHessiangun
     GUEST_APPEARANCE = bodyparts.PIRATE
+    RU_NAME = MS('Г+ессенцы', "Hessians")
 
 
 class Junkers(UnlawfulFaction, RheinlandFleet, BaseRheinland, RheinlandPirateEquip, Faction):
     CODE = 'junk_grp'
     WEAPON = gun.RheinlandJunkergun
     GUEST_APPEARANCE = bodyparts.PEASANT
+    RU_NAME = MS('Мусорщики', "Junkers")
 
 
 # Liberty
@@ -396,18 +422,26 @@ class LibertyMain(LawfulFaction, LibertyFleet, BaseLiberty, LibertyMainEquip, Fa
     CODE = 'li_grp'
     WEAPON = gun.LibertyLightgun
     GUEST_APPEARANCE = bodyparts.TRADER
+    RU_NAME = MS('Л+иберти', "Liberty")
 
 
 class ASF(LibertyMain):
     CODE = 'asf_grp'
     WEAPON = gun.LibertyLightgun
     GUEST_APPEARANCE = bodyparts.MILITARY
+    RU_NAME = MS('Эс-Бэ-А', "ASF")
 
 
 class LibertyCivilians(LawfulFaction, LibertyFleet, BaseLiberty, LibertyCivEquip, Faction):
     CODE = 'lc_grp'
     WEAPON = gun.LibertyCivgun
     GUEST_APPEARANCE = bodyparts.PEASANT
+    RU_NAME = MS('Дип Спэйс', "Deep Space Engineering")
+
+
+class LibertyTraders(LibertyCivilians):
+    CODE = 'tr_grp_li'
+    RU_NAME = MS('Адж+ейра', "Ageira")
 
 
 class LibertyHunters(LawfulFaction, LibertyFleet, BaseLiberty, LibertyCivEquip, Faction):
@@ -415,25 +449,35 @@ class LibertyHunters(LawfulFaction, LibertyFleet, BaseLiberty, LibertyCivEquip, 
     WEAPON = gun.LibertyHuntergun
     AFTERBURN = misc.LI_MAIN
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
+    RU_NAME = MS('Щит', "PMC Shield")
 
 
 class LibertyPirate(UnlawfulFaction, LibertyFleet, BaseLiberty, LibertyPirateEquip, Faction):
     CODE = 'pi_grp_li'
-    ALT_CODE = 'pi_grp'
     WEAPON = gun.LibertyPirategun
     GUEST_APPEARANCE = bodyparts.PIRATE
+    RU_NAME = MS('Д+икси', "Dixie")
 
 
 class LibertyRogues(UnlawfulFaction, LibertyFleet, BaseLiberty, LibertyPirateEquip, Faction):
     CODE = 'lx_grp'
     WEAPON = gun.LibertyRoguegun
     GUEST_APPEARANCE = bodyparts.PIRATE
+    RU_NAME = MS('Разбойники Л+иберти', "Liberty Rogues")
 
 
 class Starline(UnlawfulFaction, LibertyFleet, BaseLiberty, LibertyPirateEquip, Faction):
     CODE = 'sl_grp'
     WEAPON = gun.LibertyStarlinegun
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
+    RU_NAME = MS('Старл+айн', "Starline")
+
+
+class LaneHackers(UnlawfulFaction, LibertyFleet, BaseLiberty, LibertyPirateEquip, Faction):
+    CODE = 'hack_grp'
+    WEAPON = gun.LibertyStarlinegun
+    GUEST_APPEARANCE = bodyparts.JOURNEYMAN
+    RU_NAME = MS('Хакеры', "Lane Hackers")
 
 
 # Bretonia
@@ -443,12 +487,19 @@ class BretoniaMain(LawfulFaction, BretoniaFleet, BaseBretonia, BretoniaMainEquip
     CODE = 'br_grp'
     WEAPON = gun.BretoniaLightgun
     GUEST_APPEARANCE = bodyparts.TRADER
+    RU_NAME = MS('Брет+ония', "Bretonia")
 
 
 class BretoniaCivilians(LawfulFaction, BretoniaFleet, BaseBretonia, BretoniaCivEquip, Faction):
     CODE = 'bc_grp'
     WEAPON = gun.BretoniaCivgun
     GUEST_APPEARANCE = bodyparts.PEASANT
+    RU_NAME = MS('Би-Эм-Эм', "BMM")
+
+
+class BretoniaTraders(BretoniaCivilians):
+    CODE = 'tr_grp_br'
+    RU_NAME = MS('Б+овекс', "Bowex")
 
 
 class BretoniaHunters(LawfulFaction, BretoniaFleet, BaseBretonia, BretoniaCivEquip, Faction):
@@ -456,25 +507,28 @@ class BretoniaHunters(LawfulFaction, BretoniaFleet, BaseBretonia, BretoniaCivEqu
     WEAPON = gun.BretoniaHuntergun
     AFTERBURN = misc.BR_MAIN
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
+    RU_NAME = MS('Р+оял-Форс', "PMC Roal Force")
 
 
 class BretoniaPirate(UnlawfulFaction, BretoniaFleet, BaseBretonia, BretoniaPirateEquip, Faction):
     CODE = 'pi_grp_br'
-    ALT_CODE = 'pi_grp'
     WEAPON = gun.BretoniaPirategun
     GUEST_APPEARANCE = bodyparts.PIRATE
+    RU_NAME = MS('Гайане', "Gaians")
 
 
 class Ireland(UnlawfulFaction, BretoniaFleet, BaseBretonia, BretoniaPirateEquip, Faction):
     CODE = 'bx_grp'
     WEAPON = gun.BretoniaIragun
     GUEST_APPEARANCE = bodyparts.PIRATE
+    RU_NAME = MS('И-Эр-А', "IRA")
 
 
 class Xenos(UnlawfulFaction, BretoniaFleet, BaseBretonia, BretoniaPirateEquip, Faction):
-    CODE = 'xs_grp'
+    CODE = 'xenos_grp'
     WEAPON = gun.BretoniaXenosgun
     GUEST_APPEARANCE = bodyparts.PEASANT
+    RU_NAME = MS('Кс+еносы', "Xenos")
 
 
 # Kusari
@@ -484,12 +538,19 @@ class KusariMain(LawfulFaction, KusariFleet, BaseKusari, KusariMainEquip, Factio
     CODE = 'ku_grp'
     WEAPON = gun.KusariLightgun
     GUEST_APPEARANCE = bodyparts.TRADER
+    RU_NAME = MS('Кус+ари', "Kusari")
 
 
 class KusariCivilians(LawfulFaction, KusariFleet, BaseKusari, KusariCivEquip, Faction):
     CODE = 'kc_grp'
     WEAPON = gun.KusariCivgun
     GUEST_APPEARANCE = bodyparts.PEASANT
+    RU_NAME = MS('Киш+иро', "Kishiro")
+
+
+class KusariTraders(KusariCivilians):
+    CODE = 'tr_grp_ku'
+    RU_NAME = MS('Сам+ура', "Samura")
 
 
 class KusariHunters(LawfulFaction, KusariFleet, BaseKusari, KusariCivEquip, Faction):
@@ -497,25 +558,28 @@ class KusariHunters(LawfulFaction, KusariFleet, BaseKusari, KusariCivEquip, Fact
     WEAPON = gun.KusariHuntergun
     AFTERBURN = misc.KU_MAIN
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
+    RU_NAME = MS('Чёрный Дракон', "PMC Black Dragon")
 
 
 class KusariPirate(UnlawfulFaction, KusariFleet, BaseKusari, KusariPirateEquip, Faction):
     CODE = 'pi_grp_ku'
-    ALT_CODE = 'pi_grp'
     WEAPON = gun.KusariPirategun
     GUEST_APPEARANCE = bodyparts.PIRATE
+    RU_NAME = MS('Золот+ые Хризант+емы', "Golden Chrystantems")
 
 
 class Shinobi(UnlawfulFaction, KusariFleet, BaseKusari, KusariPirateEquip, Faction):
     CODE = 'kx_grp'
     WEAPON = gun.KusariShinobigun
     GUEST_APPEARANCE = bodyparts.PIRATE
+    RU_NAME = MS('Клан Шин+оби', "Shinobi Clan")
 
 
-class BloodDragons(UnlawfulFaction, KusariFleet, BaseKusari, KusariPirateEquip, Faction):
-    CODE = 'bd_grp'
+class FarmerAlliance(UnlawfulFaction, KusariFleet, BaseKusari, KusariPirateEquip, Faction):
+    CODE = 'farm_grp'
     WEAPON = gun.KusariDragongun
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
+    RU_NAME = MS('Фермеры', "Farmer Alliance")
 
 
 # Border World
@@ -525,31 +589,41 @@ class OrderMain(LawfulFaction, OrderFleet, BaseBorderWorld, BorderWorldOrderEqui
     CODE = 'or_grp'
     WEAPON = gun.OrderLightgun
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
+    RU_NAME = MS('Орден', "The Order")
 
 
 class Corsairs(LawfulFaction, CorsairFleet, BaseBorderWorld, BorderWorldCorsairEquip, Faction):
     CODE = 'co_grp'
     WEAPON = gun.BorderWorldCorsairgun
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
+    RU_NAME = MS('Корс+ары', "Corsairs")
 
 
 class Outcasts(LawfulFaction, BorderWorldFleet, BaseBorderWorld, BorderWorldOutcastsEquip, Faction):
     CODE = 'edv_grp'
+    MSG_CODE = 'out_grp'
     WEAPON = gun.BorderWorldOutcastgun
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
+    RU_NAME = MS('Изг+ои', "Outcasts")
 
 
 class BorderWorldPirate(UnlawfulFaction, BorderWorldFleet, BaseBorderWorld, BorderWorldCorsairEquip, Faction):
     CODE = 'pi_grp_bw'
-    ALT_CODE = 'pi_grp'
     WEAPON = gun.BorderWorldPirategun
     GUEST_APPEARANCE = bodyparts.PIRATE
+    RU_NAME = MS('Пилигр+имы', "Pilgrims")
+
+
+class BoderWorldTraders(BorderWorldPirate):
+    CODE = 'tr_grp_bw'
+    RU_NAME = MS('Меркадо', "Mercado")
 
 
 class DeidrichPeople(UnlawfulFaction, RheinlandFleet, BaseRheinland, RheinlandMainEquip, Faction):
     CODE = 'fc_b_grp'
     WEAPON = gun.RheinlandLightgun
     STORY_ONLY = True
+    MANAGED = False
 
 
 class AlaricLike(LawfulFaction, LibertyFleet, BaseLiberty, LibertyMainEquip, Faction):
@@ -557,13 +631,16 @@ class AlaricLike(LawfulFaction, LibertyFleet, BaseLiberty, LibertyMainEquip, Fac
     WEAPON = gun.LibertyHuntergun
     AFTERBURN = misc.LI_MAIN
     STORY_ONLY = True
+    MANAGED = False
 
 
 class Nomad(Faction):
     CODE = 'fc_n_grp'
     STORY_ONLY = True
+    MANAGED = False
 
 
 class Unknown(Faction):
     CODE = 'fc_uk_grp'
     STORY_ONLY = True
+    MANAGED = False

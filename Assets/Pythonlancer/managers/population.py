@@ -12,6 +12,7 @@ class PopulationManager:
     def __init__(self, lancer_core):
         self.core = lancer_core
         self.factions = Faction.subclasses
+        self.world_factions = [f() for f in self.factions if f.MANAGED is True]
 
         self.misc_equip = self.core.misc_equip
         self.weapons = self.core.weapons
@@ -28,6 +29,9 @@ class PopulationManager:
         self.load_game_data()
 
         self.sync_data()
+
+    def get_world_factions(self):
+        return self.world_factions
 
     def get_equipment_maps(self):
         return {
@@ -109,7 +113,7 @@ class PopulationManager:
 
         for faction, npcs in self.npc_db.items():
             item = [
-                'affilitation = ',
+                'affiliation = ',
                 faction,
                 SINGLE_DIVIDER,
                 SINGLE_DIVIDER.join(['npc_ship = ' + npc.get_npc_shiparch_nickname() for npc in npcs])

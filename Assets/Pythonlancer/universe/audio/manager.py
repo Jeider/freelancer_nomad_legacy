@@ -74,6 +74,7 @@ class PilotManager:
             TempPilot.prepare_temp_folders(the_pilot)
             TempPilot.fill_audio(the_pilot, skip=True)
 
+
             # TempPilot.fill_files_for_xml(the_pilot)
             # TempPilot.build_voice_xml(the_pilot, skip=True)
 

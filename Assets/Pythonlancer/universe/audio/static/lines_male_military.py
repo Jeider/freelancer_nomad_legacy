@@ -299,9 +299,6 @@ LINES = [
 
     L('gcs_refer_base_testbase-', 'Станция Т+эрра', R.RuleBase),
     # L('gcs_gen_commodity_gold', 'з+олото', R.RuleCommodity),
-    L('gcs_refer_faction_rh_short', 'Р+эйнланд', R.RuleFaction),
-    L('gcs_refer_faction_rx_short', 'Г+ессенцы', R.RuleFaction),
-    L('gcs_refer_faction_test_short', 'Фракция', R.RuleFaction),
     L('gcs_refer_faction_player_short', 'Фрил+ансер', R.RulePlayer),
 
     L('mod_refer_base_liner-', MS('точка лайнер', 'point liner'), R.RuleBase),

@@ -218,6 +218,15 @@ class BaseIdentifiedVoice(SignedVoice):
                     parse_rule=R.RuleBase
                 )
             )
+
+        for faction in self.core.population.get_world_factions():
+            lines.append(
+                L(
+                    code=faction.get_msg_id_prefix(),
+                    ru_text=faction.get_ru_name(),
+                    parse_rule=R.RuleFaction
+                )
+            )
         return lines
 
     def get_lines(self):

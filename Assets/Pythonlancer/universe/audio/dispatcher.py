@@ -158,9 +158,6 @@ class StationDispatcher(BaseIdentifiedVoice):
         # L('gcs_refer_shiparch_mining', ''),
         # L('gcs_refer_shiparch_pliner', ''),
 
-        L('gcs_refer_faction_rh_short', 'Р+эйнланд', R.RuleFaction),
-        L('gcs_refer_faction_rx_short', 'Г+ессенцы', R.RuleFaction),
-        L('gcs_refer_faction_test_short', 'Фракция', R.RuleFaction),
         L('gcs_refer_faction_player_short', 'Фрил+ансер', R.RulePlayer),
 
         L('mod_refer_base_freeport-', 'точка фрипорт', R.RuleBase),
