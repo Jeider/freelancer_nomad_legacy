@@ -2,6 +2,7 @@ from core import get_core
 from managers.jinja_manager import JinjaTemplateManager
 
 from universe.audio.pilot import ShipVoice
+from universe.audio.pilot_en import EnglishShipVoice, EnglishMilitaryHigh, EnglishMilitaryLow, EnglishPirate, EnglishFemale
 from universe.audio.base_pilot import PilotVoice
 from universe.audio.dispatcher import StationDispatcher
 from universe.audio import dispatcher_en
@@ -52,6 +53,9 @@ class PilotManager:
             'voices': DIVIDER.join(male_voices),
             'props': DIVIDER.join(male_props),
             'dispatcher_en01_props': dispatcher_en.EngMaleDispatcher(core=self.core).get_file_sounds_ini(),
+            'pilot_en01_props': EnglishMilitaryLow(core=self.core).get_file_sounds_ini(),
+            'pilot_en03_props': EnglishMilitaryHigh(core=self.core).get_file_sounds_ini(),
+            'pilot_en08_props': EnglishPirate(core=self.core).get_file_sounds_ini(),
         }
 
         voice_female_params = {
@@ -59,6 +63,7 @@ class PilotManager:
             'props': DIVIDER.join(female_props),
             'dispatcher_en02_props': dispatcher_en.EngFemaleDispatcher(core=self.core).get_file_sounds_ini(),
             'dispatcher_en03_props': dispatcher_en.EngFemaleRoboDispatcher(core=self.core).get_file_sounds_ini(),
+            'pilot_en04_props': EnglishFemale(core=self.core).get_file_sounds_ini(),
         }
 
         data_folder.sync_audio_ini(
@@ -78,11 +83,10 @@ class PilotManager:
         )
 
     def prepare_pilots_audio(self):
-        for a_pilot in ShipVoice.subclasses:
+        for a_pilot in EnglishShipVoice.subclasses:
             the_pilot = a_pilot(self.core)
             TempPilot.prepare_temp_folders(the_pilot)
             TempPilot.fill_audio(the_pilot, skip=True)
-
 
             TempPilot.fill_files_for_xml(the_pilot)
             TempPilot.build_voice_xml(the_pilot, skip=True)

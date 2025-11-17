@@ -436,7 +436,7 @@ class ASF(LibertyMain):
     CODE = 'asf_grp'
     WEAPON = gun.LibertyLightgun
     GUEST_APPEARANCE = bodyparts.MILITARY
-    RU_NAME = MS('Эс-Бэ-А', "A-eS-eF")
+    RU_NAME = MS('Эс-Бэ-А', "Ai-eS-eF")
 
 
 class LibertyCivilians(LawfulFaction, LibertyFleet, BaseLiberty, LibertyCivEquip, Faction):

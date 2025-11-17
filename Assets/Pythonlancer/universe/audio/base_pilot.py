@@ -315,3 +315,39 @@ class EnglishBaseIdentifiedVoice(PilotVoice):
         lines = super().get_lines()
         lines.extend(self.get_bases_lines())
         return lines
+
+
+class EnglishSystemIdentifiedVoice(EnglishBaseIdentifiedVoice):
+    def get_system_lines(self):
+        lines = []
+        for sys in self.core.universe.universe_root.get_all_systems():
+            if sys.IS_STORY:
+                continue
+            lines.append(
+                L(
+                    code=sys.get_system_msg_relative(),
+                    ru_text=sys.RU_NAME.get_en(),
+                    parse_rule=R.RuleSystemNoProcess
+                )
+            )
+
+        for comm in self.core.store.get_commodities():
+            lines.append(
+                L(
+                    code=comm.get_msg_id_prefix(),
+                    ru_text=comm.get_name_rel1().get_en(),
+                    parse_rule=R.RuleCommodityNoProcess
+                )
+            )
+
+        return lines
+
+    def get_dynamic_lines(self):
+        lines = super().get_dynamic_lines()
+        lines.extend(self.get_lines())
+        return lines
+
+    def get_lines(self):
+        lines = super().get_lines()
+        lines.extend(self.get_system_lines())
+        return lines

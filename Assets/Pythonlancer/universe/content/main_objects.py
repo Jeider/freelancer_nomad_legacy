@@ -1582,6 +1582,7 @@ class SolarPlant(Station):
     KEY_COLLECT_FX = nn.FX_GOT_KEY_STATION
     RU_FIRST_DESCRIPTION = descriptions.SOLAR_PLANT
     FORCE_FACTION = faction.Unknown
+    AUDIO_PREFIX = SpaceVoice.SOLAR_PLANT
 
 
 class RoidMiner(Station):

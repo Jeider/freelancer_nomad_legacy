@@ -1,26 +1,8 @@
-from universe.audio.base_pilot import SystemIdentifiedVoice
-
-from universe.audio.static import space_pilot as space_pilot_static
-from universe.audio.static.lines_male_military import LINES as male_mil_lines
-from universe.audio.static.lines_female_military import LINES as female_mil_lines
-from universe.audio.static.lines_male_pirate import LINES as male_pir_lines
-from universe.audio.static.lines_female_pirate import LINES as female_pir_lines
+from universe.audio.base_pilot import EnglishSystemIdentifiedVoice
 
 
-STATIC_MIL01 = 'pilot_f_mil_m01'
-STATIC_MIL02 = 'pilot_f_mil_m02'
-STATIC_LEG_MALE = 'pilot_f_leg_m01'
-STATIC_LEG_FEMALE = 'pilot_f_leg_f01'
-STATIC_ILL01 = 'pilot_f_ill_m01'
-STATIC_ILL02 = 'pilot_f_ill_m02'
-
-
-class EngShipVoice(SystemIdentifiedVoice):
-    '''This voice is only for extending of vanilla Freelancer voices'''
-    VOICE_DATA = space_pilot_static.VOICE_DATA
-    MVOICE_AUDIO_PROP = ''
-    MVOICE_MISSION_PROP = ''
-    LINES = None
+class EnglishShipVoice(EnglishSystemIdentifiedVoice):
+    LINES = []
 
     subclasses = []
 
@@ -29,9 +11,23 @@ class EngShipVoice(SystemIdentifiedVoice):
         cls.subclasses.append(cls)
 
 
-class EngMilitaryOne(EngShipVoice):
+class EnglishMilitaryLow(EnglishShipVoice):
     STEOS_ID = 215  # Regis Witcher
-    FOLDER = 'pilot01'
-    STATIC_KIND = STATIC_MIL01
-    ATTENUATION = -3
-    LINES = male_mil_lines
+    FOLDER = 'pilot_en01'
+
+
+class EnglishMilitaryHigh(EnglishShipVoice):
+    STEOS_ID = 211  # Lambert Witcher
+    FOLDER = 'pilot_en03'
+
+
+class EnglishFemale(EnglishShipVoice):
+    STEOS_ID = 216  # Sylvia Anna Witcher
+    FOLDER = 'pilot_en04'
+    IS_MALE = False
+
+
+class EnglishPirate(EnglishShipVoice):
+    STEOS_ID = 181  # Reinhardt
+    FOLDER = 'pilot_en08'
+    ATTENUATION = -6

@@ -115,12 +115,12 @@ class RuleProcessing(RuleDefault):
         return cls.TEXT_TEMPLATE.format(text=text.get_ru())
 
 
-class RuleProcessingEnglish(RuleDefault):
+class RuleSimpleFormat(RuleDefault):
     TEXT_TEMPLATE = '{text}'
 
     @classmethod
     def get_temp_text(cls, text):
-        return cls.TEXT_TEMPLATE.format(text=text.get_en())
+        return cls.TEXT_TEMPLATE.format(text=text)
 
 
 class RuleScream(ParseRule):
@@ -346,9 +346,18 @@ class RuleSystem(RuleProcessing):
     TEXT_TEMPLATE = 'к пункту система {text}'
 
 
+class RuleSystemNoProcess(RuleSimpleFormat):
+    SUBFOLDER = SUBFOLDER_SYSTEM
+    TEXT_TEMPLATE = '{text} system'
+
+
 class RuleCommodity(RuleProcessing):
     SUBFOLDER = SUBFOLDER_COMMODITY
     TEXT_TEMPLATE = 'я везу {text} на'
+
+
+class RuleCommodityNoProcess(RuleDefault):
+    SUBFOLDER = SUBFOLDER_COMMODITY
 
 
 class RulePlayer(RuleProcessing):
@@ -363,5 +372,3 @@ class RuleFaction(RuleProcessing):
 
 class RuleFactionNoProcess(RuleDefault):
     SUBFOLDER = SUBFOLDER_FACTION
-
-

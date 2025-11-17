@@ -203,20 +203,20 @@ def test_steos():
 
     ### DISPATCHER
 
-    core = get_core()
+    # core = get_core()
 
     # the_pilot = dispatcher.FemaleDispatcher(core=core)
     # the_pilot = pilot.PirateThree(core=core)
-    the_pilot = dispatcher_en.EngFemaleDispatcher(core=core)
-
-    TempPilot.prepare_temp_folders(the_pilot)
-    TempPilot.fill_audio(the_pilot, skip=True)
-
-    TempPilot.fill_files_for_xml(the_pilot)
-    TempPilot.build_voice_xml(the_pilot)
-
-
-    return
+    # the_pilot = dispatcher_en.EngFemaleDispatcher(core=core)
+    #
+    # TempPilot.prepare_temp_folders(the_pilot)
+    # TempPilot.fill_audio(the_pilot, skip=True)
+    #
+    # TempPilot.fill_files_for_xml(the_pilot)
+    # TempPilot.build_voice_xml(the_pilot)
+    #
+    #
+    # return
 
 
 
