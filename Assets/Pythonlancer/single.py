@@ -18,7 +18,7 @@ from universe.audio.manager import PilotManager
 from universe.audio import pilot
 from universe.audio import nnvoice
 from universe.audio import nnvoice_eng
-from universe.audio import dispatcher
+from universe.audio import dispatcher, dispatcher_en
 
 from universe.content import mineable
 
@@ -205,8 +205,9 @@ def test_steos():
 
     core = get_core()
 
-    the_pilot = dispatcher.FemaleDispatcher(core=core)
+    # the_pilot = dispatcher.FemaleDispatcher(core=core)
     # the_pilot = pilot.PirateThree(core=core)
+    the_pilot = dispatcher_en.EngFemaleDispatcher(core=core)
 
     TempPilot.prepare_temp_folders(the_pilot)
     TempPilot.fill_audio(the_pilot, skip=True)
@@ -384,7 +385,7 @@ def generate_story_voices():
     # import pdb;pdb.set_trace()
 
     indexes = range(1, 12+1)
-    indexes = [11]
+    indexes = [13]
 
     for i in indexes:
         msn = script_manager.get_mission_by_index(i)
@@ -397,6 +398,7 @@ def generate_cutscene_voices():
     # import pdb;pdb.set_trace()
 
     indexes = range(1, 12+1)
+    indexes = [13]
 
     for i in indexes:
         msn = script_manager.get_mission_by_index(i)
@@ -425,7 +427,7 @@ def scene():
     # msn = script_manager.get_mission_by_index(13)
     # cutscene = msn.get_cutscene_by_code('csv')
 
-    for i in range(9, 12+1):
+    for i in [13]:  # range(9, 12+1):
         msn = script_manager.get_mission_by_index(i)
         for cutscene in msn.get_cutscenes():
             print(cutscene.ALIAS)

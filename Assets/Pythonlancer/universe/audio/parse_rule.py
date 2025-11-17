@@ -115,6 +115,14 @@ class RuleProcessing(RuleDefault):
         return cls.TEXT_TEMPLATE.format(text=text.get_ru())
 
 
+class RuleProcessingEnglish(RuleDefault):
+    TEXT_TEMPLATE = '{text}'
+
+    @classmethod
+    def get_temp_text(cls, text):
+        return cls.TEXT_TEMPLATE.format(text=text.get_en())
+
+
 class RuleScream(ParseRule):
     IS_STATIC = True
 
@@ -329,6 +337,10 @@ class RuleBase(RuleProcessing):
     TEXT_TEMPLATE = 'К точке {text}'
 
 
+class RuleBaseNoProcess(RuleDefault):
+    SUBFOLDER = SUBFOLDER_BASE
+
+
 class RuleSystem(RuleProcessing):
     SUBFOLDER = SUBFOLDER_SYSTEM
     TEXT_TEMPLATE = 'к пункту система {text}'
@@ -347,5 +359,9 @@ class RulePlayer(RuleProcessing):
 class RuleFaction(RuleProcessing):
     SUBFOLDER = SUBFOLDER_FACTION
     TEXT_TEMPLATE = 'говорит {text} бета'
+
+
+class RuleFactionNoProcess(RuleDefault):
+    SUBFOLDER = SUBFOLDER_FACTION
 
 

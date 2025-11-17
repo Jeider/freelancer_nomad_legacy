@@ -117,15 +117,15 @@ class Commodity:
     def __init__(self, ids):
         self.ids = ids
 
-        self.ids_name = ids.new_name(self.get_ru_name())
+        self.ids_name = ids.new_name(self.get_ru_name_clean())
         self.ids_info = ids.new_info(
             MS(
                 InfocardBuilder.build_equip_infocard(
-                    self.get_ru_name().get_ru(),
+                    self.get_ru_name_clean().get_ru(),
                     self.get_en_info()
                 ),
                 InfocardBuilder.build_equip_infocard(
-                    self.get_ru_name().get_en(),
+                    self.get_ru_name_clean().get_en(),
                     self.get_en_info()
                 )
             )
@@ -154,6 +154,12 @@ class Commodity:
 
     def get_ru_name(self):
         return self.RU_NAME
+
+    def get_ru_name_clean(self):
+        return MS(
+            self.RU_NAME.get_ru().replace('+', ''),
+            self.RU_NAME.get_en()
+        )
 
     def get_ru_name_std(self):
         return self.RU_NAME.lower()

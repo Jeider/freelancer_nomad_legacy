@@ -8,6 +8,13 @@ duration = 2
 {attenuation}
 Priority = -6'''
 
+SOUND_FILE_TEMPLATE = '''[Sound]
+msg = {code}
+duration = 2
+{attenuation}
+file = Audio\\MOD_ENG\\{voice}\\{code}.wav
+Priority = -6'''
+
 
 class PilotLine(object):
     def __init__(self, code, ru_text, parse_rule=None):
@@ -47,6 +54,13 @@ class PilotLine(object):
         return SOUND_TEMPLATE.format(
             code=self.code,
             attenuation=attenuation,
+        )
+
+    def get_sound_as_file(self, attenuation, voice):
+        return SOUND_FILE_TEMPLATE.format(
+            code=self.code,
+            attenuation=attenuation,
+            voice=voice
         )
 
     def get_static_file(self):

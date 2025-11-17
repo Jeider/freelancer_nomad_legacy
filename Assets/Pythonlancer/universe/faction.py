@@ -382,7 +382,7 @@ class RheinlandHunters(LawfulFaction, RheinlandFleet, BaseRheinland, RheinlandCi
     WEAPON = gun.RheinlandHuntergun
     AFTERBURN = misc.RH_MAIN
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
-    RU_NAME = MS('Асгард', "PMC Asgaard")
+    RU_NAME = MS('Асгард', "Asgard")
 
 
 class WorkaroundHunter(RheinlandHunters):
@@ -436,14 +436,14 @@ class ASF(LibertyMain):
     CODE = 'asf_grp'
     WEAPON = gun.LibertyLightgun
     GUEST_APPEARANCE = bodyparts.MILITARY
-    RU_NAME = MS('Эс-Бэ-А', "ASF")
+    RU_NAME = MS('Эс-Бэ-А', "A-eS-eF")
 
 
 class LibertyCivilians(LawfulFaction, LibertyFleet, BaseLiberty, LibertyCivEquip, Faction):
     CODE = 'lc_grp'
     WEAPON = gun.LibertyCivgun
     GUEST_APPEARANCE = bodyparts.PEASANT
-    RU_NAME = MS('Дип Спэйс', "Deep Space Engineering")
+    RU_NAME = MS('Дип Спэйс', "Deep Space")
 
 
 class LibertyTraders(LibertyCivilians):
@@ -456,7 +456,7 @@ class LibertyHunters(LawfulFaction, LibertyFleet, BaseLiberty, LibertyCivEquip, 
     WEAPON = gun.LibertyHuntergun
     AFTERBURN = misc.LI_MAIN
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
-    RU_NAME = MS('Щит', "PMC Shield")
+    RU_NAME = MS('Щит', "Shield")
 
 
 class LibertyPirate(UnlawfulFaction, LibertyFleet, BaseLiberty, LibertyPirateEquip, Faction):
@@ -484,7 +484,7 @@ class LaneHackers(UnlawfulFaction, LibertyFleet, BaseLiberty, LibertyPirateEquip
     CODE = 'hack_grp'
     WEAPON = gun.LibertyStarlinegun
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
-    RU_NAME = MS('Хакеры', "Lane Hackers")
+    RU_NAME = MS('Хакеры', "Hackers")
 
 
 # Bretonia
@@ -514,7 +514,7 @@ class BretoniaHunters(LawfulFaction, BretoniaFleet, BaseBretonia, BretoniaCivEqu
     WEAPON = gun.BretoniaHuntergun
     AFTERBURN = misc.BR_MAIN
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
-    RU_NAME = MS('Р+оял-Форс', "PMC Roal Force")
+    RU_NAME = MS('Р+оял-Форс', "Roal Force")
 
 
 class BretoniaPirate(UnlawfulFaction, BretoniaFleet, BaseBretonia, BretoniaPirateEquip, Faction):
@@ -528,7 +528,7 @@ class Ireland(UnlawfulFaction, BretoniaFleet, BaseBretonia, BretoniaPirateEquip,
     CODE = 'bx_grp'
     WEAPON = gun.BretoniaIragun
     GUEST_APPEARANCE = bodyparts.PIRATE
-    RU_NAME = MS('И-Эр-А', "IRA")
+    RU_NAME = MS('И-Эр-А', "I-eR-A")
 
 
 class Xenos(UnlawfulFaction, BretoniaFleet, BaseBretonia, BretoniaPirateEquip, Faction):
@@ -565,7 +565,7 @@ class KusariHunters(LawfulFaction, KusariFleet, BaseKusari, KusariCivEquip, Fact
     WEAPON = gun.KusariHuntergun
     AFTERBURN = misc.KU_MAIN
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
-    RU_NAME = MS('Чёрный Дракон', "PMC Black Dragon")
+    RU_NAME = MS('Чёрный Дракон', "Black Dragon")
 
 
 class KusariPirate(UnlawfulFaction, KusariFleet, BaseKusari, KusariPirateEquip, Faction):
@@ -586,7 +586,7 @@ class FarmerAlliance(UnlawfulFaction, KusariFleet, BaseKusari, KusariPirateEquip
     CODE = 'farm_grp'
     WEAPON = gun.KusariDragongun
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
-    RU_NAME = MS('Фермеры', "Farmer Alliance")
+    RU_NAME = MS('Фермеры', "Farmers")
 
 
 # Border World

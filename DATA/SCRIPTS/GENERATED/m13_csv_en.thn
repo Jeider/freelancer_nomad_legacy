@@ -1,0 +1,5920 @@
+duration=2027
+
+entities={
+	{
+		entity_name="Scene_m13_csv",
+		type=SCENE,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		up=Y_AXIS,
+		front=Z_AXIS,
+		ambient={
+		    0,
+		    0,
+		    0
+		}
+	},
+
+	{
+		entity_name="Monitor_1",
+		type=MONITOR,
+		template_name="",
+		template_id=0
+	},
+	{
+		entity_name="offscreen",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={pos={-10000000,-10000,0},orient={ {1,0,0},{0,1,0},{0,0,1} } },
+	},
+
+	{
+		entity_name="offscreen_back",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={pos={0,-10000,-10000000},orient={ {1,0,0},{0,1,0},{0,0,1} } },
+	},
+
+    
+
+	{
+    entity_name="automarker_default_point",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_offscreen_point",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, -10000.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_shiplook",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 41.73, 15.24, 27.66 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_dbg",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 15.48, 17.16, -24.58 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_dbg_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.08, -0.01, -0.25 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_ship",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.33, 0.05, 0.07 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_dbg2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -101.24, 10.88, -12.52 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_bh",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.33, -8.78, 535.81 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,0.8660254,-0.5000000 },
+            { 0.0000000,0.5000000,0.8660254 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_csv_test",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -35.84, 0.00, -0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_csv_test2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -35.84, 0.00, -80.13 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_csv_launch",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -486.86, -12.65, -1653.69 },
+        orient={ 
+            { 0.8660254,-0.0000000,-0.5000000 },
+            { 0.0000000,1.0000000,-0.0000000 },
+            { 0.5000000,0.0000000,0.8660254 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_logos_launch",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -517.79, 20.27, -1708.67 },
+        orient={ 
+            { -0.8660254,0.0000000,0.5000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { -0.5000000,0.0000000,-0.8660254 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_logos_start",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1298.52, 20.27, -2942.76 },
+        orient={ 
+            { -0.8660254,0.0000000,0.5000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { -0.5000000,0.0000000,-0.8660254 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_start",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1052.62, 4.94, -2882.78 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_start_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -778.71, -0.01, -2257.14 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_launch",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -287.18, 30.88, -1606.32 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_launch_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -481.48, -28.21, -1652.94 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_launch2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -287.18, -15.75, -1606.32 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_csv_launch2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -486.86, -38.44, -1653.69 },
+        orient={ 
+            { 0.8660254,-0.0000000,-0.5000000 },
+            { 0.0000000,1.0000000,-0.0000000 },
+            { 0.5000000,0.0000000,0.8660254 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_xdbg",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -470.98, 51.40, -1656.31 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_xdbg_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -481.48, -28.21, -1652.94 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_launch3",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -287.18, -36.20, -1606.32 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_launch_focus3",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -481.48, -45.27, -1652.94 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_csv_alt",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.25, -9.20, -0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_dbg3",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 31.65, 14.17, -21.41 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="cam_dbg",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ 15.48, 17.16, -24.58 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=30,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=30000
+    }
+}
+,
+{
+    entity_name="cam_dbg3",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ 31.65, 14.17, -21.41 },
+        orient={ 
+            { -0.3297241,-0.3027900,-0.8942037 },
+            { -0.4188201,0.8957798,-0.1488901 },
+            { 0.8460920,0.3254178,-0.4221748 }
+         }
+    },
+    cameraprops={
+        fovh=35,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=30000
+    }
+}
+,
+{
+    entity_name="cam_xdbg",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ -470.98, 51.40, -1656.31 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=30,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=30000
+    }
+}
+,
+{
+    entity_name="cam_start",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ -1052.62, 4.94, -2882.78 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=30,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=30000
+    }
+}
+,
+{
+    entity_name="cam_launch",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ -287.18, 30.88, -1606.32 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=25,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=30000
+    }
+}
+,
+{
+    entity_name="depot_open_sound",
+    template_name="depot_open_sound",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+    
+    spatialprops={
+        pos={0,0,0},
+        orient={
+            {1,0,0},{0,1,0},{0,0,1}
+        }
+    },
+    audioprops={attenuation=-6,pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
+    userprops={category="Audio"  , Priority="Story_Sound_1"  }
+}
+,
+{
+    entity_name="depot_close_sound",
+    template_name="depot_close_sound",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+    
+    spatialprops={
+        pos={0,0,0},
+        orient={
+            {1,0,0},{0,1,0},{0,0,1}
+        }
+    },
+    audioprops={attenuation=-6,pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
+    userprops={category="Audio"  , Priority="Story_Sound_1"  }
+}
+,
+{
+    entity_name="scene_bg1",
+    type=COMPOUND,
+    template_name="om13_nebula",
+    lt_grp=100,
+    srt_grp=-100,
+    usr_flg=1,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            0.00, 0.00, 0.00
+        },
+        orient={ 
+            { -1.0000000,-0.0000000,-0.0000000 }, 
+            { 0.0000000,1.0000000,-0.0000000 },
+            { 0.0000000,0.0000000,-1.0000000 }
+         }
+    },
+    userprops={
+        category="Prop"
+    }
+}
+,
+{
+    entity_name="scene_bg2",
+    type=COMPOUND,
+    template_name="new_generic",
+    lt_grp=100,
+    srt_grp=-100,
+    usr_flg=1,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            0.00, 0.00, 0.00
+        },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 }, 
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    userprops={
+        category="Prop"
+    }
+}
+,
+{
+    entity_name="astbox_0_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -3146.00, -297.00, -3416.00
+        },
+        orient={ 
+            { -0.5038303,-0.4654099,-0.7277009 }, 
+            { 0.3027318,-0.8841450,0.3558666 },
+            { -0.8090170,-0.0410018,0.5863534 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_0_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -3177.00, 532.00, -3429.00
+        },
+        orient={ 
+            { -0.4301089,0.7575910,-0.4909809 }, 
+            { -0.5125838,-0.6526251,-0.5579771 },
+            { -0.7431448,0.0116779,0.6690287 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_1_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -3129.00, -769.00, -2449.00
+        },
+        orient={ 
+            { 0.0285042,-0.1569892,0.9871889 }, 
+            { -0.0438926,-0.9868342,-0.1556654 },
+            { 0.9986295,-0.0388932,-0.0350196 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_1_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -3400.00, 528.00, -2425.00
+        },
+        orient={ 
+            { -0.2276043,0.9450733,-0.2345907 }, 
+            { -0.4280615,-0.3134951,-0.8476345 },
+            { -0.8746197,-0.0925060,0.4759023 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_2_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -3404.00, -766.00, -1659.00
+        },
+        orient={ 
+            { -0.6979723,0.4578620,-0.5506333 }, 
+            { 0.1740240,0.8543022,0.4897789 },
+            { 0.6946584,0.2460287,-0.6759583 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_2_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -3312.00, 867.00, -1528.00
+        },
+        orient={ 
+            { -0.6021688,-0.7420823,0.2944599 }, 
+            { 0.6457470,-0.6696002,-0.3669420 },
+            { 0.4694716,-0.0308144,0.8824097 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_3_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -3057.00, -418.00, -945.00
+        },
+        orient={ 
+            { -0.8100936,0.5167278,0.2770213 }, 
+            { -0.2170639,0.1745874,-0.9604179 },
+            { -0.5446390,-0.8381597,-0.0292692 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_3_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -3383.00, 616.00, -1120.00
+        },
+        orient={ 
+            { 0.9907374,-0.0086839,-0.1355135 }, 
+            { -0.1041307,0.5919357,-0.7992302 },
+            { 0.0871557,0.8059384,0.5855486 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_4_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -3067.00, -286.00, -201.00
+        },
+        orient={ 
+            { 0.2978446,0.3270286,0.8968506 }, 
+            { -0.5845529,-0.6802720,0.4421855 },
+            { 0.7547096,-0.6559591,-0.0114498 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_4_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -3002.00, 784.00, -574.00
+        },
+        orient={ 
+            { 0.5235406,0.3718317,-0.7665810 }, 
+            { 0.1501229,-0.9259242,-0.3465942 },
+            { -0.8386706,0.0663748,-0.5405794 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_5_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -3423.00, -818.00, 121.00
+        },
+        orient={ 
+            { -0.1867382,-0.9760812,-0.1113298 }, 
+            { 0.2666898,-0.1594340,0.9505037 },
+            { -0.9455186,0.1478048,0.2900833 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_5_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -3117.00, 584.00, 354.00
+        },
+        orient={ 
+            { 0.2876062,-0.0588819,-0.9559370 }, 
+            { -0.6459742,-0.7488302,-0.1482249 },
+            { -0.7071068,0.6601411,-0.2534044 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_6_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -2873.00, -618.00, 1173.00
+        },
+        orient={ 
+            { 0.8661080,-0.1223334,-0.4846561 }, 
+            { 0.1217235,0.9920196,-0.0328715 },
+            { 0.4848096,-0.0305238,0.8740869 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_6_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -3346.00, 289.00, 1175.00
+        },
+        orient={ 
+            { -0.9305476,-0.0568121,-0.3617369 }, 
+            { 0.3386916,0.2419329,-0.9092615 },
+            { 0.1391731,-0.9686283,-0.2058883 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_7_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -3134.00, -948.00, 1559.00
+        },
+        orient={ 
+            { 0.4898303,0.8430498,-0.2221110 }, 
+            { -0.1591555,-0.1640158,-0.9735340 },
+            { -0.8571673,0.5122166,0.0538361 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_7_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -3164.00, 263.00, 1653.00
+        },
+        orient={ 
+            { -0.4836286,0.1734364,0.8579179 }, 
+            { 0.0338186,-0.9757369,0.2163190 },
+            { 0.8746197,0.1336316,0.4660289 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_8_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -3143.00, -668.00, 2229.00
+        },
+        orient={ 
+            { -0.2061074,-0.7874338,0.5809197 }, 
+            { -0.4045085,0.6091293,0.6821542 },
+            { -0.8910065,-0.0943899,-0.4440697 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_8_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -3080.00, 608.00, 2564.00
+        },
+        orient={ 
+            { -0.3796405,0.7550834,0.5345298 }, 
+            { -0.7783785,0.0515669,-0.6256739 },
+            { -0.5000000,-0.6535977,0.5681638 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_9_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -2998.00, -813.00, 3036.00
+        },
+        orient={ 
+            { 0.4845143,-0.3573157,-0.7984807 }, 
+            { -0.8740869,-0.1613329,-0.4581962 },
+            { 0.0348995,0.9199441,-0.3904931 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_9_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -3341.00, 260.00, 3356.00
+        },
+        orient={ 
+            { -0.1736217,0.8775946,-0.4468593 }, 
+            { 0.0030306,0.4542246,0.8908820 },
+            { 0.9848078,0.1533222,-0.0815229 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_10_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -2543.00, -859.00, -2997.00
+        },
+        orient={ 
+            { 0.4659722,-0.6479758,0.6024925 }, 
+            { 0.0572142,-0.6574453,-0.7513270 },
+            { 0.8829476,0.3845686,-0.2692778 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_10_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -2180.00, 265.00, -2961.00
+        },
+        orient={ 
+            { 0.0815229,-0.4580814,-0.8851641 }, 
+            { 0.1533222,0.8833126,-0.4430024 },
+            { 0.9848078,-0.0996005,0.1422443 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_11_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -2522.00, -481.00, -2348.00
+        },
+        orient={ 
+            { -0.4993148,-0.0523360,0.8648385 }, 
+            { 0.0261680,-0.9986295,-0.0453243 },
+            { 0.8660254,0.0000000,0.5000000 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_11_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -2356.00, 744.00, -2668.00
+        },
+        orient={ 
+            { -0.1684901,-0.9849720,-0.0379643 }, 
+            { 0.0420093,0.0313045,-0.9986267 },
+            { 0.9848078,-0.1698535,0.0361035 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_12_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -2237.00, -555.00, -1668.00
+        },
+        orient={ 
+            { -0.5345737,0.1426599,0.8329941 }, 
+            { -0.5162318,0.7252736,-0.4555030 },
+            { -0.6691306,-0.6735179,-0.3140666 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_12_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -2171.00, 428.00, -1712.00
+        },
+        orient={ 
+            { -0.7179676,0.6960549,0.0054813 }, 
+            { 0.4842753,0.4938335,0.7222229 },
+            { 0.5000000,0.5211871,-0.6916386 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_13_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -2506.00, -856.00, -987.00
+        },
+        orient={ 
+            { -0.2080262,0.9170987,-0.3400811 }, 
+            { 0.7254734,-0.0885386,-0.6825315 },
+            { -0.6560590,-0.3887042,-0.6469124 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_13_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -2371.00, 406.00, -1009.00
+        },
+        orient={ 
+            { 0.9781476,0.0396714,-0.2040918 }, 
+            { -0.0000000,0.9816272,0.1908090 },
+            { 0.2079117,-0.1866394,0.9601763 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_14_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -2437.00, -581.00, -214.00
+        },
+        orient={ 
+            { -0.9901172,0.1251214,-0.0633441 }, 
+            { -0.0172826,-0.5570941,-0.8302695 },
+            { -0.1391731,-0.8209694,0.5537509 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_14_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -2365.00, 889.00, -422.00
+        },
+        orient={ 
+            { 0.2907701,0.4069231,0.8659483 }, 
+            { -0.9510660,0.2217999,0.2151237 },
+            { -0.1045285,-0.8861255,0.4515035 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_15_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -2442.00, -616.00, 576.00
+        },
+        orient={ 
+            { 0.6164938,0.7328647,0.2878275 }, 
+            { 0.7091950,-0.3580634,-0.6073162 },
+            { -0.3420201,0.5785325,-0.7404879 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_15_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -2390.00, 390.00, 136.00
+        },
+        orient={ 
+            { -0.0000000,0.7547096,-0.6560590 }, 
+            { 0.0000000,-0.6560590,-0.7547096 },
+            { -1.0000000,-0.0000000,0.0000000 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_16_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -2198.00, -370.00, 1222.00
+        },
+        orient={ 
+            { 0.6763771,-0.7319614,-0.0821374 }, 
+            { -0.3596361,-0.4255119,0.8304225 },
+            { -0.6427876,-0.5321392,-0.5510463 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_16_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -2405.00, 872.00, 1071.00
+        },
+        orient={ 
+            { 0.0056819,0.2249017,0.9743649 }, 
+            { 0.0165016,0.9742268,-0.2249661 },
+            { -0.9998477,0.0173568,0.0018243 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_17_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -2451.00, -388.00, 1782.00
+        },
+        orient={ 
+            { -0.6914738,-0.4304084,-0.5801832 }, 
+            { 0.1982769,0.6592115,-0.7253458 },
+            { 0.6946584,-0.6165946,-0.3704874 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_17_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -2724.00, 256.00, 1526.00
+        },
+        orient={ 
+            { -0.1929367,0.2559826,0.9472319 }, 
+            { 0.3211005,-0.8957431,0.3074714 },
+            { 0.9271839,0.3634792,0.0906255 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_18_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -2465.00, -406.00, 2200.00
+        },
+        orient={ 
+            { -0.6197430,-0.3803485,0.6864792 }, 
+            { -0.5200261,0.8541420,0.0037716 },
+            { -0.5877853,-0.3546497,-0.7271397 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_18_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -2378.00, 448.00, 2271.00
+        },
+        orient={ 
+            { 0.9504772,-0.0300722,0.3093361 }, 
+            { -0.0331914,0.9797940,0.1972362 },
+            { -0.3090170,-0.1977358,0.9302736 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_19_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -2221.00, -555.00, 3269.00
+        },
+        orient={ 
+            { 0.2067727,-0.9722438,0.1094854 }, 
+            { 0.6363810,0.0486505,-0.7698392 },
+            { 0.7431448,0.2288561,0.6287771 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_19_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -2380.00, 733.00, 3413.00
+        },
+        orient={ 
+            { -0.0431192,0.1249931,-0.9912202 }, 
+            { -0.1503745,-0.9816522,-0.1172451 },
+            { -0.9876883,0.1439987,0.0611238 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_20_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1653.00, -671.00, -3412.00
+        },
+        orient={ 
+            { 0.8397331,-0.2194357,0.4966854 }, 
+            { -0.4464940,-0.7995924,0.4016157 },
+            { 0.3090170,-0.5590170,-0.7694209 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_20_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1839.00, 527.00, -3193.00
+        },
+        orient={ 
+            { 0.9391202,-0.0211127,0.3429395 }, 
+            { -0.3418118,-0.1587897,0.9262562 },
+            { 0.0348995,-0.9870867,-0.1563392 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_21_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1970.00, -444.00, -2422.00
+        },
+        orient={ 
+            { 0.2676166,-0.3254276,0.9069059 }, 
+            { 0.1545085,-0.9145623,-0.3737685 },
+            { 0.9510565,0.2401513,-0.1944707 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_21_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1712.00, 479.00, -2230.00
+        },
+        orient={ 
+            { 0.6634139,0.6995333,0.2655844 }, 
+            { -0.5566704,0.6985971,-0.4495333 },
+            { -0.5000000,0.1503837,0.8528685 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_22_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1613.00, -352.00, -1735.00
+        },
+        orient={ 
+            { 0.7878907,-0.5521667,-0.2726539 }, 
+            { 0.6155677,0.7187212,0.3232897 },
+            { 0.0174524,-0.4225539,0.9061698 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_22_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1511.00, 827.00, -1855.00
+        },
+        orient={ 
+            { 0.9601763,-0.0672437,-0.2711822 }, 
+            { -0.1866394,0.5679037,-0.8016552 },
+            { 0.2079117,0.8203436,0.5327374 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_23_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1754.00, -577.00, -958.00
+        },
+        orient={ 
+            { 0.0697458,0.7304024,-0.6794467 }, 
+            { 0.9974121,-0.0391431,0.0603066 },
+            { 0.0174524,-0.6818945,-0.7312423 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_23_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1883.00, 926.00, -1153.00
+        },
+        orient={ 
+            { 0.6885162,-0.6743682,0.2667826 }, 
+            { -0.5777337,-0.7323940,-0.3603094 },
+            { 0.4383711,0.0939496,-0.8938704 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_24_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1660.00, -649.00, -551.00
+        },
+        orient={ 
+            { 0.6367003,-0.3072180,0.7072693 }, 
+            { -0.6827775,0.2016563,0.7022461 },
+            { -0.3583679,-0.9300279,-0.0813669 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_24_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1858.00, 306.00, -373.00
+        },
+        orient={ 
+            { 0.6840684,-0.7291298,0.0204974 }, 
+            { 0.2903698,0.2979878,0.9093342 },
+            { -0.6691306,-0.6160950,0.4155613 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_25_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1696.00, -419.00, 252.00
+        },
+        orient={ 
+            { 0.1835751,0.2659793,-0.9463378 }, 
+            { 0.8636531,0.4161325,0.2844945 },
+            { 0.4694716,-0.8695336,-0.1533222 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_25_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1549.00, 802.00, 218.00
+        },
+        orient={ 
+            { 0.2115897,0.5450077,-0.8112931 }, 
+            { 0.8486398,0.3093070,0.4291151 },
+            { 0.4848096,-0.7792919,-0.3970690 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_26_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1513.00, -541.00, 1220.00
+        },
+        orient={ 
+            { 0.0866971,-0.7096921,0.6991572 }, 
+            { -0.2258535,0.6695253,0.7076200 },
+            { -0.9702957,-0.2192557,-0.1022406 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_26_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -2000.00, 805.00, 1207.00
+        },
+        orient={ 
+            { -0.4984702,0.8656731,0.0462339 }, 
+            { 0.6860853,0.4265372,-0.5893666 },
+            { -0.5299193,-0.2620613,-0.8065417 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_27_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1725.00, -785.00, 1886.00
+        },
+        orient={ 
+            { -0.9192433,-0.2256488,0.3226055 }, 
+            { -0.3901956,0.6311348,-0.6703852 },
+            { -0.0523360,-0.7421264,-0.6682136 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_27_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1894.00, 443.00, 1681.00
+        },
+        orient={ 
+            { -0.0516916,0.9976894,-0.0440883 }, 
+            { 0.9863347,0.0440883,-0.1587450 },
+            { -0.1564345,-0.0516916,-0.9863347 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_28_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1786.00, -731.00, 2563.00
+        },
+        orient={ 
+            { 0.9923950,-0.1176204,0.0362992 }, 
+            { -0.0173223,0.1585114,0.9872052 },
+            { -0.1218693,-0.9803263,0.1552684 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_28_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1517.00, 608.00, 2472.00
+        },
+        orient={ 
+            { -0.0852003,-0.8386706,0.5379336 }, 
+            { 0.1311970,-0.5446390,-0.8283451 },
+            { 0.9876883,-0.0000000,0.1564345 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_29_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1711.00, -592.00, 2878.00
+        },
+        orient={ 
+            { 0.8987940,-0.4213894,0.1208315 }, 
+            { -0.0000000,0.2756374,0.9612617 },
+            { -0.4383711,-0.8639763,0.2477412 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_29_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1721.00, 658.00, 3253.00
+        },
+        orient={ 
+            { -0.4574390,0.8641126,-0.2099022 }, 
+            { 0.1056081,-0.1815846,-0.9776881 },
+            { -0.8829476,-0.4694001,-0.0081934 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_30_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -958.00, -310.00, -3383.00
+        },
+        orient={ 
+            { 0.1913837,-0.1613008,0.9681706 }, 
+            { -0.0812376,-0.9856227,-0.1481497 },
+            { 0.9781476,-0.0502984,-0.2017358 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_30_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1201.00, 827.00, -3427.00
+        },
+        orient={ 
+            { 0.3539558,-0.8047808,-0.4764904 }, 
+            { -0.0560611,0.4902998,-0.8697490 },
+            { 0.9335804,0.3345653,0.1284276 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_31_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1303.00, -786.00, -2716.00
+        },
+        orient={ 
+            { 0.0203948,-0.0841082,-0.9962479 }, 
+            { 0.2916595,-0.9526125,0.0863950 },
+            { -0.9563048,-0.2923272,0.0051026 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_31_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1325.00, 373.00, -2273.00
+        },
+        orient={ 
+            { -0.2038749,-0.9770943,0.0610055 }, 
+            { -0.8830792,0.2104429,0.4193864 },
+            { -0.4226183,0.0316297,-0.9057557 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_32_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -783.00, -739.00, -2030.00
+        },
+        orient={ 
+            { 0.9559958,0.2929434,0.0160061 }, 
+            { -0.1004792,0.3781875,-0.9202598 },
+            { -0.2756374,0.8781563,0.3909804 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_32_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -820.00, 565.00, -1993.00
+        },
+        orient={ 
+            { -0.0764473,0.9527038,-0.2941280 }, 
+            { -0.0712882,0.2890138,0.9546670 },
+            { 0.9945219,0.0939496,0.0458223 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_33_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1314.00, -873.00, -801.00
+        },
+        orient={ 
+            { 0.0131715,0.3254686,-0.9454611 }, 
+            { 0.0114498,0.9454320,0.3256181 },
+            { 0.9998477,-0.0151142,0.0087262 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_33_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1097.00, 741.00, -1297.00
+        },
+        orient={ 
+            { -0.2867882,0.5261175,0.8005953 }, 
+            { 0.4967318,-0.6329160,0.5938643 },
+            { 0.8191520,0.5679944,-0.0798264 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_34_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -797.00, -370.00, -83.00
+        },
+        orient={ 
+            { -0.4528846,0.8766040,-0.1626681 }, 
+            { -0.0316688,-0.1981529,-0.9796594 },
+            { -0.8910065,-0.4385211,0.1175014 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_34_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -908.00, 354.00, -452.00
+        },
+        orient={ 
+            { 0.6645188,0.5680648,-0.4855071 }, 
+            { -0.1534163,-0.5321571,-0.8326298 },
+            { -0.7313537,0.6277828,-0.2664780 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_35_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1254.00, -921.00, 126.00
+        },
+        orient={ 
+            { 0.3745495,0.6789821,-0.6314237 }, 
+            { 0.0065378,-0.6829125,-0.7304709 },
+            { -0.9271839,0.2694694,-0.2602236 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_35_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -779.00, 757.00, 251.00
+        },
+        orient={ 
+            { -0.1880086,-0.9702957,-0.1522464 }, 
+            { -0.7540614,0.2419219,-0.6106269 },
+            { 0.6293204,0.0000000,-0.7771460 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_36_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1128.00, -578.00, 1194.00
+        },
+        orient={ 
+            { 0.6455006,-0.5523917,-0.5274394 }, 
+            { 0.4519844,-0.2803913,0.8468121 },
+            { -0.6156615,-0.7850121,0.0686797 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_36_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -783.00, 369.00, 1029.00
+        },
+        orient={ 
+            { -0.7033683,0.6865584,-0.1841481 }, 
+            { -0.4567727,-0.2380552,0.8571397 },
+            { 0.5446390,0.6869987,0.4810417 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_37_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -880.00, -892.00, 1654.00
+        },
+        orient={ 
+            { -0.5125838,0.2804078,-0.8115598 }, 
+            { -0.5692820,0.5965840,0.5656903 },
+            { 0.6427876,0.7519700,-0.1461682 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_37_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1082.00, 826.00, 1881.00
+        },
+        orient={ 
+            { 0.8593653,-0.5113421,-0.0045333 }, 
+            { -0.3298794,-0.5611281,0.7591540 },
+            { -0.3907311,-0.6508952,-0.6508952 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_38_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1093.00, -846.00, 2579.00
+        },
+        orient={ 
+            { 0.8996425,-0.4045827,-0.1641834 }, 
+            { -0.3634792,-0.4856164,-0.7950218 },
+            { 0.2419219,0.7749126,-0.5839385 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_38_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1119.00, 326.00, 2365.00
+        },
+        orient={ 
+            { 0.2311689,0.5304863,-0.8155644 }, 
+            { -0.1501229,0.8476799,0.5088241 },
+            { 0.9612617,0.0048105,0.2755954 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_39_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1071.00, -638.00, 3128.00
+        },
+        orient={ 
+            { 0.3954091,0.2454786,0.8850943 }, 
+            { 0.5862181,-0.8092880,-0.0374346 },
+            { 0.7071068,0.5336603,-0.4639038 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_39_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -785.00, 431.00, 3061.00
+        },
+        orient={ 
+            { -0.1781355,-0.4673812,-0.8659229 }, 
+            { 0.0683798,-0.8837500,0.4629364 },
+            { -0.9816272,0.0232538,0.1893867 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_40_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -559.00, -820.00, -3181.00
+        },
+        orient={ 
+            { 0.5091309,-0.0760998,0.8573182 }, 
+            { -0.3699052,-0.9187451,0.1381213 },
+            { 0.7771460,-0.3874483,-0.4959112 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_40_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -149.00, 469.00, -2913.00
+        },
+        orient={ 
+            { -0.2518073,0.6801571,0.6884616 }, 
+            { -0.8781563,0.1383974,-0.4579167 },
+            { -0.4067366,-0.7198836,0.5624347 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_41_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -248.00, -949.00, -2442.00
+        },
+        orient={ 
+            { 0.4567949,-0.8162312,-0.3537019 }, 
+            { 0.6287243,0.0149471,0.7774846 },
+            { -0.6293204,-0.5775320,0.5200121 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_41_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -216.00, 822.00, -2505.00
+        },
+        orient={ 
+            { -0.1046751,-0.9839573,-0.1444685 }, 
+            { -0.1162535,-0.1321643,0.9843870 },
+            { -0.9876883,0.1198358,-0.1005541 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_42_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -424.00, -425.00, -1942.00
+        },
+        orient={ 
+            { 0.1349223,0.9338419,-0.3312633 }, 
+            { 0.1349223,0.3138914,0.9398235 },
+            { 0.9816272,-0.1714980,-0.0836452 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_42_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -87.00, 714.00, -1472.00
+        },
+        orient={ 
+            { 0.3544375,-0.6347317,0.6866511 }, 
+            { 0.7600937,0.6232771,0.1838023 },
+            { -0.5446390,0.4567727,0.7033683 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_43_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -502.00, -564.00, -1185.00
+        },
+        orient={ 
+            { 0.4203031,-0.8056987,0.4173666 }, 
+            { 0.0441756,0.4775907,0.8774711 },
+            { -0.9063078,-0.3503664,0.2363251 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_43_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -309.00, 317.00, -790.00
+        },
+        orient={ 
+            { 0.4534747,-0.8774069,0.1565817 }, 
+            { 0.1215082,0.2349051,0.9643938 },
+            { -0.8829476,-0.4183022,0.2131356 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_44_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -389.00, -303.00, -629.00
+        },
+        orient={ 
+            { 0.2047530,-0.8578952,-0.4712664 }, 
+            { -0.0361035,-0.4877586,0.8722317 },
+            { -0.9781476,-0.1615777,-0.1308431 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_44_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -501.00, 884.00, -347.00
+        },
+        orient={ 
+            { 0.3648479,-0.9267790,0.0892557 }, 
+            { -0.6861792,-0.3324434,-0.6470236 },
+            { 0.6293204,0.1748198,-0.7572278 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_45_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -278.00, -860.00, 305.00
+        },
+        orient={ 
+            { -0.0713938,-0.9049289,-0.4195315 }, 
+            { 0.8160349,-0.2948573,0.4971380 },
+            { -0.5735764,-0.3068598,0.7595045 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_45_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -588.00, 763.00, 336.00
+        },
+        orient={ 
+            { -0.0963107,-0.9012543,0.4224512 }, 
+            { 0.6080817,-0.3892887,-0.6918750 },
+            { 0.7880108,0.1902499,0.5855289 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_46_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -530.00, -865.00, 926.00
+        },
+        orient={ 
+            { -0.3486414,-0.8946906,0.2792454 }, 
+            { 0.2094849,0.2160166,0.9536524 },
+            { -0.9135455,0.3909804,0.1121118 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_46_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -460.00, 549.00, 1098.00
+        },
+        orient={ 
+            { -0.7776018,0.1246129,0.6162849 }, 
+            { 0.3141715,-0.7720275,0.5525123 },
+            { 0.5446390,0.6232537,0.5611801 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_47_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -374.00, -932.00, 1927.00
+        },
+        orient={ 
+            { 0.5445561,0.7485828,-0.3782625 }, 
+            { -0.0095053,0.4564765,0.8896847 },
+            { 0.8386706,-0.4808877,0.2556925 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_47_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -104.00, 380.00, 1712.00
+        },
+        orient={ 
+            { 0.8029648,-0.4218953,0.4210130 }, 
+            { 0.3244188,-0.2831943,-0.9025261 },
+            { 0.5000000,0.8612812,-0.0905243 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_48_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -238.00, -555.00, 2640.00
+        },
+        orient={ 
+            { 0.9512512,0.0479589,0.3046654 }, 
+            { 0.2548870,0.4339353,-0.8641370 },
+            { -0.1736482,0.8996666,0.4005574 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_48_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -108.00, 727.00, 2414.00
+        },
+        orient={ 
+            { 0.0179746,-0.5403662,0.8412379 }, 
+            { 0.5147243,-0.7163136,-0.4711196 },
+            { 0.8571673,0.4414738,0.2652642 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_49_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -351.00, -700.00, 3166.00
+        },
+        orient={ 
+            { 0.0000000,-0.9876883,0.1564345 }, 
+            { 0.0000000,-0.1564345,-0.9876883 },
+            { 1.0000000,0.0000000,-0.0000000 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_49_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -292.00, 815.00, 3062.00
+        },
+        orient={ 
+            { 0.2489433,-0.5615451,-0.7891098 }, 
+            { 0.6485195,-0.5084924,0.5664433 },
+            { -0.7193398,-0.6527653,0.2375872 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_50_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            497.00, -609.00, -3099.00
+        },
+        orient={ 
+            { -0.0394984,0.0343355,0.9986295 }, 
+            { -0.7536753,0.6551599,-0.0523360 },
+            { -0.6560590,-0.7547096,-0.0000000 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_50_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            184.00, 675.00, -3274.00
+        },
+        orient={ 
+            { -0.8342607,-0.4866524,0.2591881 }, 
+            { -0.3890222,0.1864029,-0.9021728 },
+            { 0.3907311,-0.8534772,-0.3448272 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_51_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            367.00, -559.00, -2408.00
+        },
+        orient={ 
+            { 0.0629068,0.9197073,0.3875323 }, 
+            { 0.0834801,-0.3917895,0.9162598 },
+            { 0.9945219,-0.0252877,-0.1014235 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_51_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            355.00, 726.00, -2416.00
+        },
+        orient={ 
+            { 0.5845529,0.5477620,-0.5985438 }, 
+            { -0.6724512,0.7398615,0.0203573 },
+            { 0.4539905,0.3905916,0.8008314 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_52_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            200.00, -636.00, -1762.00
+        },
+        orient={ 
+            { -0.7269053,-0.1821015,-0.6621538 }, 
+            { -0.1545085,-0.8961138,0.4160615 },
+            { -0.6691306,0.4047457,0.6232537 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_52_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            378.00, 730.00, -1661.00
+        },
+        orient={ 
+            { 0.1797908,0.9761825,-0.1214209 }, 
+            { -0.6709885,0.0314376,-0.7408010 },
+            { -0.7193398,0.2146612,0.6606594 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_53_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            488.00, -446.00, -1024.00
+        },
+        orient={ 
+            { -0.0170710,0.3940117,-0.9189469 }, 
+            { -0.9779986,0.1845354,0.0972902 },
+            { 0.2079117,0.9003896,0.3821927 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_53_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            324.00, 460.00, -1326.00
+        },
+        orient={ 
+            { -0.2810685,0.8171483,0.5032585 }, 
+            { 0.2714246,0.5706742,-0.7750223 },
+            { -0.9205049,-0.0812376,-0.3821927 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_54_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            438.00, -763.00, -619.00
+        },
+        orient={ 
+            { 0.6256826,0.1986393,-0.7543631 }, 
+            { 0.5438976,0.5821261,0.6044044 },
+            { 0.5591929,-0.7884616,0.2561867 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_54_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            494.00, 811.00, -320.00
+        },
+        orient={ 
+            { 0.3520151,0.7362400,-0.5779585 }, 
+            { 0.8712678,-0.0321098,0.4897564 },
+            { 0.3420201,-0.6759583,-0.6527653 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_55_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            488.00, -297.00, 342.00
+        },
+        orient={ 
+            { -0.6885162,-0.6137418,0.3863502 }, 
+            { 0.3358118,0.2023722,0.9199326 },
+            { -0.6427876,0.7631294,0.0667652 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_55_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            402.00, 820.00, 396.00
+        },
+        orient={ 
+            { 0.6064383,-0.7890208,0.0983812 }, 
+            { -0.2827868,-0.0983812,0.9541241 },
+            { -0.7431448,-0.6064383,-0.2827868 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_56_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            351.00, -427.00, 909.00
+        },
+        orient={ 
+            { 0.5591929,0.4635919,-0.6873033 }, 
+            { -0.0000000,-0.8290376,-0.5591929 },
+            { -0.8290376,0.3126967,-0.4635919 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_56_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            109.00, 685.00, 1127.00
+        },
+        orient={ 
+            { -0.7178228,-0.3671211,0.5915679 }, 
+            { 0.1923400,-0.9211782,-0.3382840 },
+            { 0.6691306,-0.1290457,0.7318548 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_57_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            390.00, -260.00, 1913.00
+        },
+        orient={ 
+            { -0.0693743,0.9772809,0.2002730 }, 
+            { -0.9920993,-0.0465524,-0.1164984 },
+            { -0.1045285,-0.2067727,0.9727892 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_57_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            162.00, 446.00, 1557.00
+        },
+        orient={ 
+            { 0.0190646,-0.9264564,-0.3759189 }, 
+            { -0.1552684,0.3686823,-0.9164961 },
+            { 0.9876883,0.0758409,-0.1368207 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_58_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            541.00, -869.00, 2279.00
+        },
+        orient={ 
+            { 0.1271410,0.1938746,-0.9727527 }, 
+            { 0.9046549,0.3794893,0.1938746 },
+            { 0.4067366,-0.9046549,-0.1271410 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_58_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            366.00, 589.00, 2219.00
+        },
+        orient={ 
+            { 0.2341941,0.3555484,0.9048417 }, 
+            { 0.6801491,0.6051100,-0.4138104 },
+            { -0.6946584,0.7123392,-0.1001128 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_59_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            320.00, -430.00, 3201.00
+        },
+        orient={ 
+            { -0.4232123,0.1634149,-0.8911716 }, 
+            { 0.6772813,0.7103994,-0.1913705 },
+            { 0.6018150,-0.6845642,-0.4113277 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_59_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            496.00, 705.00, 3425.00
+        },
+        orient={ 
+            { 0.4820874,0.8413561,-0.2443598 }, 
+            { -0.4045193,-0.0336471,-0.9139103 },
+            { -0.7771460,0.5394329,0.3241240 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_60_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            871.00, -900.00, -3205.00
+        },
+        orient={ 
+            { -0.3696303,0.5916500,0.7164661 }, 
+            { -0.2048894,0.7001966,-0.6839189 },
+            { -0.9063078,-0.3995934,-0.1375910 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_60_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            912.00, 846.00, -3012.00
+        },
+        orient={ 
+            { -0.1484525,0.0065519,-0.9888978 }, 
+            { 0.5540323,-0.8277611,-0.0886552 },
+            { -0.8191520,-0.5610424,0.1192532 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_61_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            849.00, -852.00, -2676.00
+        },
+        orient={ 
+            { -0.8986325,-0.2747395,-0.3420201 }, 
+            { -0.3270755,-0.0999970,0.9396926 },
+            { -0.2923717,0.9563048,0.0000000 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_61_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1160.00, 424.00, -2580.00
+        },
+        orient={ 
+            { 0.5067643,-0.0654395,0.8595974 }, 
+            { 0.8109924,-0.3019786,-0.5010990 },
+            { 0.2923717,0.9510660,-0.0999611 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_62_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1325.00, -677.00, -1486.00
+        },
+        orient={ 
+            { 0.0335917,-0.4862624,0.8731669 }, 
+            { -0.1171483,-0.8695532,-0.4797431 },
+            { 0.9925462,-0.0861746,-0.0861746 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_62_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1108.00, 642.00, -1917.00
+        },
+        orient={ 
+            { -0.0667084,-0.9424374,-0.3276609 }, 
+            { -0.9539752,0.1564701,-0.2558287 },
+            { 0.2923717,0.2955144,-0.9094999 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_63_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1107.00, -266.00, -831.00
+        },
+        orient={ 
+            { -0.0523041,-0.6284961,0.7760521 }, 
+            { -0.0018265,0.7771747,0.6292822 },
+            { -0.9986295,0.0314966,-0.0417974 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_63_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            909.00, 661.00, -1117.00
+        },
+        orient={ 
+            { 0.3069680,0.9262590,0.2186663 }, 
+            { 0.6894615,-0.3748122,0.6198053 },
+            { 0.6560590,-0.0394984,-0.7536753 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_64_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1103.00, -860.00, -331.00
+        },
+        orient={ 
+            { 0.4368096,0.4757158,-0.7634735 }, 
+            { -0.6012168,-0.4769322,-0.6411505 },
+            { -0.6691306,0.7390738,0.0776798 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_64_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1260.00, 390.00, -202.00
+        },
+        orient={ 
+            { -0.0302239,-0.1735636,0.9843588 }, 
+            { -0.8654978,0.4971737,0.0610881 },
+            { -0.5000000,-0.8501141,-0.1652454 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_65_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1240.00, -355.00, 444.00
+        },
+        orient={ 
+            { -0.0536584,-0.5430334,0.8379950 }, 
+            { -0.6133187,-0.6443331,-0.4568096 },
+            { 0.7880108,-0.5384697,-0.2984786 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_65_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1299.00, 709.00, 207.00
+        },
+        orient={ 
+            { 0.0636276,-0.6711674,-0.7385702 }, 
+            { 0.1429100,0.7385702,-0.6588557 },
+            { 0.9876883,-0.0636276,0.1429100 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_66_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            816.00, -424.00, 1244.00
+        },
+        orient={ 
+            { 0.8088938,-0.4320898,0.3987346 }, 
+            { -0.0141193,0.6637011,0.7478646 },
+            { -0.5877853,-0.6105729,0.5307629 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_66_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1171.00, 698.00, 1000.00
+        },
+        orient={ 
+            { -0.0661121,0.9498797,0.3055451 }, 
+            { -0.4174151,0.2518054,-0.8731315 },
+            { -0.9063078,-0.1852637,0.3798468 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_67_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            862.00, -707.00, 1527.00
+        },
+        orient={ 
+            { 0.0975857,0.9358328,0.3386649 }, 
+            { 0.0374597,-0.3435018,0.9384047 },
+            { 0.9945219,-0.0788886,-0.0685768 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_67_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            908.00, 900.00, 1816.00
+        },
+        orient={ 
+            { 0.2472609,0.2530389,0.9353253 }, 
+            { -0.4852769,-0.8031719,0.3455737 },
+            { 0.8386706,-0.5393386,-0.0757991 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_68_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1091.00, -643.00, 2691.00
+        },
+        orient={ 
+            { -0.2895264,0.3362024,-0.8961821 }, 
+            { -0.9469981,-0.2367505,0.2171264 },
+            { -0.1391731,0.9115466,0.3869286 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_68_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1209.00, 660.00, 2608.00
+        },
+        orient={ 
+            { 0.4428698,0.1013388,0.8908405 }, 
+            { 0.5668475,0.7381697,-0.3657724 },
+            { -0.6946584,0.6669602,0.2694694 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_69_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1085.00, -463.00, 3062.00
+        },
+        orient={ 
+            { 0.6351393,-0.4422203,0.6332766 }, 
+            { -0.6133469,0.2095777,0.7615003 },
+            { -0.4694716,-0.8720770,-0.1381234 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_69_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1158.00, 700.00, 3028.00
+        },
+        orient={ 
+            { -0.1281991,0.9487225,0.2889475 }, 
+            { -0.5141784,-0.3127181,0.7986413 },
+            { 0.8480481,-0.0461855,0.5279028 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_70_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1502.00, -539.00, -3338.00
+        },
+        orient={ 
+            { 0.0027302,0.9135325,0.4067566 }, 
+            { -0.0172375,-0.4066547,0.9134193 },
+            { 0.9998477,-0.0095053,0.0146368 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_70_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1495.00, 887.00, -3109.00
+        },
+        orient={ 
+            { 0.0943899,0.5890312,0.8025788 }, 
+            { -0.4440697,0.7464430,-0.4956056 },
+            { -0.8910065,-0.3096208,0.3320276 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_71_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1594.00, -608.00, -2636.00
+        },
+        orient={ 
+            { -0.8877284,0.3855044,-0.2516439 }, 
+            { -0.1406024,-0.7475327,-0.6491732 },
+            { -0.4383711,-0.5409078,0.7178088 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_71_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1748.00, 625.00, -2679.00
+        },
+        orient={ 
+            { 0.7061235,0.0101705,-0.7080157 }, 
+            { 0.6818955,-0.2792097,0.6760624 },
+            { -0.1908090,-0.9601763,-0.2040918 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_72_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1926.00, -609.00, -1786.00
+        },
+        orient={ 
+            { 0.0871425,0.9961959,-0.0000664 }, 
+            { -0.0015211,0.0000664,-0.9999988 },
+            { -0.9961947,0.0871425,0.0015211 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_72_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1515.00, 466.00, -1880.00
+        },
+        orient={ 
+            { 0.1543677,0.8332204,-0.5309561 }, 
+            { -0.1121547,-0.5191463,-0.8472948 },
+            { -0.9816272,0.1903442,0.0133102 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_73_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1652.00, -610.00, -916.00
+        },
+        orient={ 
+            { 0.5295965,0.6268138,-0.5715173 }, 
+            { -0.0184939,-0.6650682,-0.7465536 },
+            { -0.8480481,0.4059417,-0.3406255 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_73_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1532.00, 269.00, -1140.00
+        },
+        orient={ 
+            { 0.8236391,0.4853088,0.2934178 }, 
+            { -0.4755283,0.8729249,-0.1089725 },
+            { -0.3090170,-0.0497745,0.9497531 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_74_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1619.00, -410.00, -460.00
+        },
+        orient={ 
+            { -0.1763191,-0.5006731,-0.8474892 }, 
+            { 0.8295162,-0.5390885,0.1458987 },
+            { -0.5299193,-0.6772813,0.5103681 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_74_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1866.00, 325.00, -514.00
+        },
+        orient={ 
+            { -0.7202428,-0.4318893,0.5428830 }, 
+            { 0.1269982,0.6872527,0.7152308 },
+            { -0.6819984,0.5840850,-0.4401396 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_75_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1538.00, -863.00, 392.00
+        },
+        orient={ 
+            { 0.5918118,0.7858983,0.1792279 }, 
+            { -0.7574846,0.4661839,0.4570445 },
+            { 0.2756374,-0.4062467,0.8711990 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_75_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1618.00, 550.00, 188.00
+        },
+        orient={ 
+            { -0.0707311,0.6475176,0.7587608 }, 
+            { -0.2313511,-0.7505732,0.6189640 },
+            { 0.9702957,-0.1317601,0.2028928 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_76_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1653.00, -754.00, 825.00
+        },
+        orient={ 
+            { -0.0039259,-0.9135248,0.4067640 }, 
+            { -0.0170051,-0.4066473,-0.9134269 },
+            { 0.9998477,-0.0105031,-0.0139381 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_76_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1919.00, 741.00, 929.00
+        },
+        orient={ 
+            { -0.2537255,0.9111889,0.3245892 }, 
+            { 0.8848461,0.0830913,0.4584139 },
+            { 0.3907311,0.4035228,-0.8273443 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_77_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            2001.00, -623.00, 1963.00
+        },
+        orient={ 
+            { -0.7285516,0.0025984,-0.6849860 }, 
+            { -0.6113273,0.4486559,0.6519101 },
+            { 0.3090170,0.8937008,-0.3252805 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_77_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1840.00, 369.00, 1992.00
+        },
+        orient={ 
+            { -0.3718143,0.4135757,-0.8310892 }, 
+            { 0.0456531,-0.8860442,-0.4613474 },
+            { -0.9271839,-0.2094773,0.3105629 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_78_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1775.00, -339.00, 2568.00
+        },
+        orient={ 
+            { -0.9490924,0.1041272,-0.2972895 }, 
+            { 0.2017358,0.9257648,-0.3197847 },
+            { 0.2419219,-0.3634792,-0.8996425 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_78_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1790.00, 570.00, 2224.00
+        },
+        orient={ 
+            { -0.4660289,-0.7234136,-0.5094014 }, 
+            { 0.1336316,0.5115896,-0.8487748 },
+            { 0.8746197,-0.4636257,-0.1417446 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_79_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1625.00, -420.00, 3003.00
+        },
+        orient={ 
+            { -0.0515042,0.9938207,-0.0983244 }, 
+            { -0.4194681,0.0678212,0.9052330 },
+            { 0.9063078,0.0878673,0.4133830 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_79_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            1730.00, 372.00, 3126.00
+        },
+        orient={ 
+            { 0.0903478,-0.1944831,0.9767362 }, 
+            { -0.2780620,0.9368186,0.2122555 },
+            { -0.9563048,-0.2907701,0.0305612 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_80_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            2330.00, -473.00, -2878.00
+        },
+        orient={ 
+            { 0.5336940,0.7797429,0.3273711 }, 
+            { -0.6590572,0.1409208,0.7387726 },
+            { 0.5299193,-0.6100347,0.5891037 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_80_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            2585.00, 550.00, -2887.00
+        },
+        orient={ 
+            { -0.2067727,0.4506344,-0.8684317 }, 
+            { -0.6363810,-0.7361415,-0.2304665 },
+            { -0.7431448,0.5049993,0.4389892 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_81_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            2225.00, -594.00, -2492.00
+        },
+        orient={ 
+            { 0.9630633,0.0603494,-0.2624253 }, 
+            { -0.2401186,0.6335394,-0.7355072 },
+            { 0.1218693,0.7713532,0.6246295 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_81_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            2247.00, 791.00, -2604.00
+        },
+        orient={ 
+            { 0.4522629,0.5686039,0.6871301 }, 
+            { 0.0395679,-0.7824580,0.6214450 },
+            { 0.8910065,-0.2538683,-0.3763752 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_82_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            2350.00, -729.00, -1804.00
+        },
+        orient={ 
+            { -0.1066880,0.9193182,-0.3787765 }, 
+            { -0.6736018,0.2133813,0.7076221 },
+            { 0.7313537,0.3306394,0.5964892 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_82_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            2722.00, 762.00, -1634.00
+        },
+        orient={ 
+            { -0.7053843,-0.5320876,-0.4683116 }, 
+            { -0.0493253,0.6959324,-0.7164113 },
+            { 0.7071068,-0.4822457,-0.5171452 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_83_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            2444.00, -902.00, -918.00
+        },
+        orient={ 
+            { 0.1523662,0.7057531,-0.6918794 }, 
+            { -0.3422202,0.6944206,0.6329813 },
+            { 0.9271839,0.1403301,0.3473292 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_83_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            2338.00, 430.00, -1157.00
+        },
+        orient={ 
+            { -0.0667084,0.9800052,-0.1874561 }, 
+            { -0.9539752,-0.0075927,0.2997892 },
+            { 0.2923717,0.1988269,0.9354072 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_84_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            2439.00, -567.00, -622.00
+        },
+        orient={ 
+            { -0.5047245,-0.8610537,-0.0619652 }, 
+            { 0.3277720,-0.1247367,-0.9364861 },
+            { 0.7986355,-0.4929780,0.3451869 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_84_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            2187.00, 845.00, -225.00
+        },
+        orient={ 
+            { -0.5263593,0.6629822,0.5323537 }, 
+            { -0.2917657,0.4472534,-0.8454804 },
+            { -0.7986355,-0.6003490,-0.0419805 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_85_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            2671.00, -670.00, 337.00
+        },
+        orient={ 
+            { 0.9780762,0.0443840,-0.2034624 }, 
+            { 0.1549121,0.4978826,0.8532967 },
+            { 0.1391731,-0.8661080,0.4800915 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_85_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            2710.00, 855.00, 95.00
+        },
+        orient={ 
+            { -0.3067136,0.9351526,-0.1772467 }, 
+            { 0.9439675,0.2750240,-0.1824477 },
+            { -0.1218693,-0.2232743,-0.9671073 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_86_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            2185.00, -255.00, 1151.00
+        },
+        orient={ 
+            { 0.8279534,-0.5531182,0.0924850 }, 
+            { 0.3686286,0.4125045,-0.8330384 },
+            { 0.4226183,0.7238096,0.5454296 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_86_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            2257.00, 322.00, 989.00
+        },
+        orient={ 
+            { -0.6165946,-0.4038167,-0.6758278 }, 
+            { 0.3704874,-0.9062721,0.2034946 },
+            { -0.6946584,-0.1249120,0.7084114 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_87_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            2534.00, -355.00, 1512.00
+        },
+        orient={ 
+            { -0.1386435,-0.8310309,0.5386703 }, 
+            { 0.0121297,-0.5453074,-0.8381484 },
+            { 0.9902681,-0.1096699,0.0856835 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_87_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            2201.00, 515.00, 2005.00
+        },
+        orient={ 
+            { -0.0048105,0.7431092,0.6691529 }, 
+            { -0.0167763,0.6690064,-0.7430672 },
+            { -0.9998477,-0.0148005,0.0092484 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_88_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            2428.00, -291.00, 2184.00
+        },
+        orient={ 
+            { -0.0072915,-0.6949141,-0.7190558 }, 
+            { 0.1042738,-0.7156832,0.6905973 },
+            { -0.9945219,-0.0699432,0.0776798 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_88_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            2623.00, 493.00, 2722.00
+        },
+        orient={ 
+            { 0.2961981,-0.5789826,-0.7596353 }, 
+            { -0.8137977,0.2633622,-0.5180479 },
+            { 0.5000000,0.7716343,-0.3931673 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_89_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            2650.00, -927.00, 3356.00
+        },
+        orient={ 
+            { 0.6295743,0.5792016,-0.5178434 }, 
+            { 0.6519433,-0.0312793,0.7576223 },
+            { 0.4226183,-0.8145840,-0.3972992 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_89_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            2311.00, 721.00, 3141.00
+        },
+        orient={ 
+            { -0.3161081,0.6504538,-0.6906414 }, 
+            { 0.2296660,0.7587820,0.6095108 },
+            { 0.9205049,0.0340545,-0.3892443 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_90_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            3167.00, -415.00, -3177.00
+        },
+        orient={ 
+            { 0.0697140,0.9635977,0.2581073 }, 
+            { -0.0024345,0.2589003,-0.9659010 },
+            { -0.9975641,0.0667084,0.0203948 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_90_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            3250.00, 493.00, -3279.00
+        },
+        orient={ 
+            { 0.0153016,0.9195024,-0.3927865 }, 
+            { -0.2919710,-0.3716026,-0.8812857 },
+            { -0.9563048,0.1281673,0.2627819 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_91_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            3362.00, -305.00, -2242.00
+        },
+        orient={ 
+            { 0.0429464,-0.9191932,-0.3914582 }, 
+            { 0.0549689,-0.3890522,0.9195742 },
+            { -0.9975641,-0.0610104,0.0338186 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_91_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            3087.00, 298.00, -2572.00
+        },
+        orient={ 
+            { 0.7676977,-0.2900088,0.5714325 }, 
+            { 0.5785017,0.6972168,-0.4233492 },
+            { -0.2756374,0.6555789,0.7030223 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_92_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            3251.00, -902.00, -1596.00
+        },
+        orient={ 
+            { -0.5300123,0.8060891,0.2632629 }, 
+            { 0.4291955,0.5227553,-0.7365583 },
+            { -0.7313537,-0.2773937,-0.6230365 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_92_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            3349.00, 795.00, -1823.00
+        },
+        orient={ 
+            { 0.5336940,0.7265932,-0.4327044 }, 
+            { -0.6590572,0.0367321,-0.7511953 },
+            { -0.5299193,0.6860853,0.4984702 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_93_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            3032.00, -721.00, -1250.00
+        },
+        orient={ 
+            { -0.0000000,-0.4383711,0.8987940 }, 
+            { -0.0000000,-0.8987940,-0.4383711 },
+            { 1.0000000,-0.0000000,0.0000000 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_93_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast04",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            3254.00, 500.00, -1114.00
+        },
+        orient={ 
+            { -0.1985113,-0.9618075,-0.1884666 }, 
+            { -0.3176844,0.2450554,-0.9159828 },
+            { 0.9271839,-0.1219600,-0.3541975 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_94_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            3100.00, -312.00, -346.00
+        },
+        orient={ 
+            { 0.4495077,-0.6504298,0.6122777 }, 
+            { -0.8109333,-0.0096898,0.5850584 },
+            { -0.3746066,-0.7595045,-0.5318108 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_94_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            3368.00, 672.00, -425.00
+        },
+        orient={ 
+            { 0.4470934,0.0459367,0.8933070 }, 
+            { 0.8774701,-0.2163992,-0.4280392 },
+            { 0.1736482,0.9752237,-0.1370587 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_95_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            3000.00, -440.00, 230.00
+        },
+        orient={ 
+            { 0.7874195,0.3998268,-0.4691579 }, 
+            { 0.2257889,0.5211258,0.8230718 },
+            { 0.5735764,-0.7540334,0.3200682 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_95_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            2979.00, 869.00, 91.00
+        },
+        orient={ 
+            { 0.0646771,0.7809752,-0.6212041 }, 
+            { 0.9249253,0.1867694,0.3311049 },
+            { 0.3746066,-0.5959823,-0.7102640 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_96_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            3166.00, -889.00, 1021.00
+        },
+        orient={ 
+            { 0.5785325,0.5662027,0.5871240 }, 
+            { 0.7404879,-0.0627550,-0.6691334 },
+            { -0.3420201,0.8218737,-0.4555720 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_96_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            2907.00, 481.00, 1129.00
+        },
+        orient={ 
+            { 0.4291955,0.8919204,-0.1423699 }, 
+            { -0.4602558,0.0803484,-0.8841429 },
+            { -0.7771460,0.4449967,0.4449967 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_97_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            3032.00, -350.00, 1982.00
+        },
+        orient={ 
+            { 0.4723840,0.7538064,-0.4567596 }, 
+            { -0.1090584,0.5642315,0.8183820 },
+            { 0.8746197,-0.3367771,0.3487429 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_97_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            3171.00, 668.00, 1562.00
+        },
+        orient={ 
+            { -0.1522464,-0.8945889,0.4201568 }, 
+            { 0.1880086,-0.4435640,-0.8763011 },
+            { 0.9702957,-0.0544206,0.2357215 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_98_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            3282.00, -459.00, 2626.00
+        },
+        orient={ 
+            { 0.3195866,-0.5055047,-0.8014546 }, 
+            { -0.9281467,-0.3373217,-0.1573458 },
+            { -0.1908090,0.7941531,-0.5769860 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_98_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            3365.00, 554.00, 2311.00
+        },
+        orient={ 
+            { 0.8593653,0.4641024,0.2147096 }, 
+            { 0.3647789,-0.2621159,-0.8934381 },
+            { -0.3583679,0.8461112,-0.3945481 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_99_a",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            2990.00, -917.00, 3398.00
+        },
+        orient={ 
+            { -0.4987820,0.5842542,0.6402058 }, 
+            { 0.0348782,-0.7245188,0.6883720 },
+            { 0.8660254,0.3656769,0.3409992 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="astbox_99_b",
+    type=COMPOUND,
+    template_name="om15_static_large_ast01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            3189.00, 392.00, 2882.00
+        },
+        orient={ 
+            { 0.9972609,0.0664557,-0.0324690 }, 
+            { 0.0522642,-0.3225321,0.9451145 },
+            { 0.0523360,-0.9442228,-0.3251220 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="the_bh",
+    type=COMPOUND,
+    template_name="BlackHoleCore",
+    lt_grp=101,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            0.00, 0.00, 10000.00
+        },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 }, 
+            { 0.0000000,0.9396926,-0.3420201 },
+            { 0.0000000,0.3420201,0.9396926 }
+         }
+    },
+    userprops={
+        category="Solar"
+    }
+}
+,
+{
+    entity_name="fx_Intro_volcanoplanet_sun",
+    type=PSYS,
+    template_name="Intro_volcanoplanet_sun",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=HIDDEN + LIT_DYNAMIC + LIT_AMBIENT,
+    spatialprops={
+        pos={
+            0.00, 0.00, 10000.00
+        },
+        orient={
+            
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,0.9396926,-0.3420201 },
+            { 0.0000000,0.3420201,0.9396926 }
+        
+        }
+    },
+    psysprops={
+        sparam=0
+    }
+}
+,
+{
+    entity_name="fx_gf_neutronstar",
+    type=PSYS,
+    template_name="gf_neutronstar",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=HIDDEN + LIT_DYNAMIC + LIT_AMBIENT,
+    spatialprops={
+        pos={
+            0.00, 0.00, 10000.00
+        },
+        orient={
+            
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,0.9396926,-0.3420201 },
+            { 0.0000000,0.3420201,0.9396926 }
+        
+        }
+    },
+    psysprops={
+        sparam=0
+    }
+}
+,
+{
+    entity_name="fx_bh_chunks",
+    type=PSYS,
+    template_name="bh_chunks",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=HIDDEN + LIT_DYNAMIC + LIT_AMBIENT,
+    spatialprops={
+        pos={
+            0.00, 0.00, 10000.00
+        },
+        orient={
+            
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,0.9396926,-0.3420201 },
+            { 0.0000000,0.3420201,0.9396926 }
+        
+        }
+    },
+    psysprops={
+        sparam=0
+    }
+}
+,
+{
+    entity_name="playership_the",
+    type=COMPOUND,
+    template_name="PlayerShip",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1.25, -9.20, -0.00
+        },
+        orient={ 
+            { 0.8837280,-0.4508155,0.1256589 },
+            { 0.0580270,-0.1608806,-0.9852666 },
+            { 0.4643895,0.8779993,-0.1160152 }
+         }
+    },
+    userprops={
+        category="Spaceship"
+        
+        
+    }
+}
+,
+{
+    entity_name="csv_the",
+    type=COMPOUND,
+    template_name="ge_csv",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -35.84, 0.00, -0.00
+        },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 }, 
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    userprops={
+        category="Spaceship"
+        
+			, loadout="rtc_m13_csv"
+		
+        
+			, running_lights="true"
+		
+    }
+}
+,
+{
+    entity_name="the_lapa",
+    type=COMPOUND,
+    template_name="rtcprop_lapa",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            0.00, -10000.00, 0.00
+        },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 }, 
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    userprops={
+        category="Equipment"
+    }
+}
+,
+{
+    entity_name="csv_eng",
+    type=PSYS,
+    template_name="gf_br_csv_engine01_fire",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=HIDDEN + LIT_DYNAMIC + LIT_AMBIENT,
+    spatialprops={
+        pos={
+            0.00, -10000.00, 0.00
+        },
+        orient={
+            
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+        
+        }
+    },
+    psysprops={
+        sparam=0
+    }
+}
+,
+{
+    entity_name="csv_eng_trail",
+    type=PSYS,
+    template_name="gf_br_csv_engine01_trail",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=HIDDEN + LIT_DYNAMIC + LIT_AMBIENT,
+    spatialprops={
+        pos={
+            0.00, -10000.00, 0.00
+        },
+        orient={
+            
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+        
+        }
+    },
+    psysprops={
+        sparam=0
+    }
+}
+,
+{
+    entity_name="csv_rumble",
+    template_name="rumble_ci_h_fighter",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+     flags=SPATIAL, 
+    spatialprops={
+        pos={0,0,0},
+        orient={
+            {1,0,0},{0,1,0},{0,0,1}
+        }
+    },
+    audioprops={attenuation=-20,pan=0,dmin=100,dmax=300,ain=360,aout=360,atout=0,rmix=0},
+    userprops={category="Audio"  , Priority="Story_Sound_1"  }
+}
+,
+{
+    entity_name="csv_eng_start",
+    template_name="engine_ci_freighter_start",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+     flags=SPATIAL, 
+    spatialprops={
+        pos={0,0,0},
+        orient={
+            {1,0,0},{0,1,0},{0,0,1}
+        }
+    },
+    audioprops={attenuation=0,pan=0,dmin=100,dmax=300,ain=360,aout=360,atout=0,rmix=0},
+    userprops={category="Audio"  , Priority="Story_Sound_1"  }
+}
+,
+{
+    entity_name="csv_eng_loop",
+    template_name="engine_ci_freighter_loop",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+     flags=SPATIAL, 
+    spatialprops={
+        pos={0,0,0},
+        orient={
+            {1,0,0},{0,1,0},{0,0,1}
+        }
+    },
+    audioprops={attenuation=-20,pan=0,dmin=100,dmax=300,ain=360,aout=360,atout=0,rmix=0},
+    userprops={category="Audio"  , Priority="Story_Sound_1"  }
+}
+,
+{
+    entity_name="LIGHT_test_ambi",
+    type=LIGHT,
+    template_name="",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={
+            {1,0,0},
+            {0,1,0},
+            {0,0,1}
+        }
+    },
+    lightprops={
+        on=Y,
+        color={
+            255,
+            255,
+            255
+        },
+        diffuse={
+            1, 0.8, 0.6
+        },
+        specular={
+            0,
+            0,
+            0
+        },
+        ambient={
+            0.12, 0.12, 0.12
+        },
+        direction={
+            0, 0, 1
+        },
+        range=2000,
+        cutoff=90,
+        type=L_DIRECT,
+        theta=90,
+        atten={
+            1,
+            0,
+            0.003
+        }
+    }
+}
+,
+{
+    entity_name="logos_the",
+    type=COMPOUND,
+    template_name="or_osiris",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1298.52, 20.27, -2942.76
+        },
+        orient={ 
+            { -0.8660254,0.0000000,0.5000000 }, 
+            { 0.0000000,1.0000000,0.0000000 },
+            { -0.5000000,0.0000000,-0.8660254 }
+         }
+    },
+    userprops={
+        category="Spaceship"
+        
+			, loadout="li_battleship_01"
+		
+        
+			, running_lights="true"
+		
+    }
+}
+,
+{
+    entity_name="logos_engine",
+    type=PSYS,
+    template_name="gf_li_largeengine02",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=HIDDEN + LIT_DYNAMIC + LIT_AMBIENT,
+    spatialprops={
+        pos={
+            0.00, -10000.00, 0.00
+        },
+        orient={
+            
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+        
+        }
+    },
+    psysprops={
+        sparam=0.9
+    }
+}
+,
+{
+    entity_name="logos_reactor",
+    type=PSYS,
+    template_name="gf_li_battleship_reactor01",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=HIDDEN + LIT_DYNAMIC + LIT_AMBIENT,
+    spatialprops={
+        pos={
+            0.00, -10000.00, 0.00
+        },
+        orient={
+            
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+        
+        }
+    },
+    psysprops={
+        sparam=0
+    }
+}
+,
+{
+    entity_name="logos_rumble",
+    template_name="rumble_battleship_alt",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+     flags=SPATIAL, 
+    spatialprops={
+        pos={0,0,0},
+        orient={
+            {1,0,0},{0,1,0},{0,0,1}
+        }
+    },
+    audioprops={attenuation=-20,pan=0,dmin=10,dmax=1000000,ain=360,aout=360,atout=0,rmix=0},
+    userprops={category="Audio"  , Priority="Story_Sound_1"  }
+}
+,
+{
+    entity_name="the_path1",
+    type=MOTION_PATH,
+    template_name="",
+    template_id=0,
+    spatialprops={
+        pos={
+            -486.86, -38.44, -1653.69
+        },
+        orient={ 
+            { 0.8660254,-0.0000000,-0.5000000 },
+            { 0.0000000,1.0000000,-0.0000000 },
+            { 0.5000000,0.0000000,0.8660254 }
+         }
+    },
+    pathprops={
+        path_type="CV_CROrientationSplinePath",
+        path_data="OPEN, { 0.000000,0.000000,0.000000 },{ 1.000000,0.000000,0.000000,0.000000 },{ 10.439200,-0.006551,-50.366700 },{ 0.982119,-0.000183,-0.188261,-0.000035 },{ 39.446700,-0.062425,-92.402300 },{ 0.885348,-0.001060,-0.464927,-0.000557 },{ 80.404800,-0.271387,-75.617000 },{ 0.238855,-0.000466,-0.971053,-0.001895 },{ 96.064800,-0.448733,-26.479400 },{ 0.099638,-0.000155,-0.995023,-0.001545 },{ 103.493000,-0.600208,24.696600 },{ 0.050254,-0.000070,-0.998735,-0.001392 },{ 107.168000,-0.739449,76.292600 },{ 0.023005,-0.000030,-0.999735,-0.001304 },{ 108.517000,-0.831906,128.005000 },{ 0.003363,0.000001,-0.999994,0.000164 },{ 108.035000,-0.699112,179.734000 },{ -0.011674,-0.000026,-0.999929,0.002262 },{ 106.310000,-0.392820,231.436000 },{ -0.020681,-0.000073,-0.999780,0.003517 },{ 103.964000,0.000000,283.115000 },{ -0.023678,-0.000093,-0.999712,0.003935 }"
+    }
+}
+}
+
+events={
+
+    {
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_dbg",
+        "automarker_cam_dbg_focus"
+    },
+    {
+        duration=1000, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_xdbg",
+        "automarker_cam_xdbg_focus"
+    },
+    {
+        duration=1000, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_start",
+        "automarker_cam_start_focus"
+    },
+    {
+        duration=1000, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_launch",
+        "automarker_cam_launch_focus"
+    },
+    {
+        duration=1000, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    START_PSYS,
+    {
+        "fx_Intro_volcanoplanet_sun"
+    },
+    {
+        duration=5000
+    }
+}
+,
+{
+    0,
+    START_PSYS,
+    {
+        "fx_gf_neutronstar"
+    },
+    {
+        duration=5000
+    }
+}
+,
+{
+    0,
+    START_PSYS,
+    {
+        "fx_bh_chunks"
+    },
+    {
+        duration=5000
+    }
+}
+,
+{
+    0,
+    CONNECT_HARDPOINTS,
+    {
+        "the_lapa",
+        "csv_the"
+    },
+    {
+        duration=1000,
+        hardpoint="HpConnect",
+        parent_hardpoint="HpLapa01"
+    }
+}
+,
+{
+    0,
+    START_PSYS,
+    {
+        "csv_eng"
+    },
+    {
+        duration=5000
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "csv_eng",
+        "csv_the"
+    },
+    {
+        duration=5000,
+        offset={
+            0,
+            0,
+            0
+        },
+        up=Y_AXIS,
+        front=NEG_Z_AXIS,
+        target_part="HpEngine01",
+        target_type=HARDPOINT,
+        flags=POSITION + ORIENTATION
+    }
+}
+,
+{
+    0,
+    START_PSYS,
+    {
+        "csv_eng_trail"
+    },
+    {
+        duration=5000
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "csv_eng_trail",
+        "csv_the"
+    },
+    {
+        duration=5000,
+        offset={
+            0,
+            0,
+            0
+        },
+        up=Y_AXIS,
+        front=NEG_Z_AXIS,
+        target_part="HpEngine01",
+        target_type=HARDPOINT,
+        flags=POSITION + ORIENTATION
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "csv_rumble",
+        "csv_the"
+    },
+    {
+        duration=5000,
+        offset={
+            0,
+            0,
+            0
+        },
+        up=Y_AXIS,
+        front=NEG_Z_AXIS,
+        target_part="HpEngine01",
+        target_type=HARDPOINT,
+        flags=POSITION
+    }
+}
+,
+{
+    0,
+    START_PSYS,
+    {
+        "logos_engine"
+    },
+    {
+        duration=5000
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "logos_engine",
+        "logos_the"
+    },
+    {
+        duration=5000,
+        offset={
+            0,
+            0,
+            0
+        },
+        up=Y_AXIS,
+        front=NEG_Z_AXIS,
+        target_part="HpEngine01",
+        target_type=HARDPOINT,
+        flags=POSITION + ORIENTATION
+    }
+}
+,
+{
+    0,
+    START_PSYS,
+    {
+        "logos_reactor"
+    },
+    {
+        duration=5000
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "logos_reactor",
+        "logos_the"
+    },
+    {
+        duration=5000,
+        offset={
+            0,
+            0,
+            0
+        },
+        up=Y_AXIS,
+        front=NEG_Z_AXIS,
+        target_part="HpFX02",
+        target_type=HARDPOINT,
+        flags=POSITION + ORIENTATION
+    }
+}
+,
+{
+    0,
+    START_SOUND,
+    {"logos_rumble"},
+    {
+        duration=1000, start_time=0
+        
+        , flags=LOOP
+        
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "logos_rumble",
+        "logos_the"
+    },
+    {
+        duration=5000,
+        offset={
+            0,
+            0,
+            0
+        },
+        up=Y_AXIS,
+        front=NEG_Z_AXIS,
+        target_part="HpEngine01",
+        target_type=HARDPOINT,
+        flags=POSITION
+    }
+}
+,
+{
+    0,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_dbg3"
+    }
+}
+
+}

@@ -4,6 +4,7 @@ from managers.jinja_manager import JinjaTemplateManager
 from universe.audio.pilot import ShipVoice
 from universe.audio.base_pilot import PilotVoice
 from universe.audio.dispatcher import StationDispatcher
+from universe.audio import dispatcher_en
 
 from tools.data_folder import DataFolder
 from tools.audio_pilot import TempPilot
@@ -24,6 +25,7 @@ class PilotManager:
 
     def compile_pilots_ini(self):
         pilots: list[PilotVoice] = StationDispatcher.subclasses + ShipVoice.subclasses
+        # eng_pilots: list[PilotVoice] = EnglishStationDispatcher.subclasses
         male_voices = []
         male_props = []
         female_voices = []
@@ -46,20 +48,27 @@ class PilotManager:
 
         data_folder = DataFolder()
 
+        voice_male_params = {
+            'voices': DIVIDER.join(male_voices),
+            'props': DIVIDER.join(male_props),
+            'dispatcher_en01_props': dispatcher_en.EngMaleDispatcher(core=self.core).get_file_sounds_ini(),
+        }
+
+        voice_female_params = {
+            'voices': DIVIDER.join(female_voices),
+            'props': DIVIDER.join(female_props),
+            'dispatcher_en02_props': dispatcher_en.EngFemaleDispatcher(core=self.core).get_file_sounds_ini(),
+            'dispatcher_en03_props': dispatcher_en.EngFemaleRoboDispatcher(core=self.core).get_file_sounds_ini(),
+        }
+
         data_folder.sync_audio_ini(
             'voices_space_male',
-            self.core.tpl_manager.get_result(VOICES_MALE_TEMPLATE, {
-                'voices': DIVIDER.join(male_voices),
-                'props': DIVIDER.join(male_props),
-            }),
+            self.core.tpl_manager.get_result(VOICES_MALE_TEMPLATE, voice_male_params),
         )
 
         data_folder.sync_audio_ini(
             'voices_space_female',
-            self.core.tpl_manager.get_result(VOICES_FEMALE_TEMPLATE, {
-                'voices': DIVIDER.join(female_voices),
-                'props': DIVIDER.join(female_props),
-            }),
+            self.core.tpl_manager.get_result(VOICES_FEMALE_TEMPLATE, voice_female_params),
         )
 
         data_folder.sync_mission_voice_props(

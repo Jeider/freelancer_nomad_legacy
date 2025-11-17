@@ -100,6 +100,11 @@ class PilotVoice:
     ATTENUATION = -6
     ENABLED = True
 
+    def __init__(self, core, *args, **kwargs):
+        # core mandatory to access ingame data
+        self.core = core
+        super().__init__(*args, **kwargs)
+
     def get_lines(self):
         return self.LINES
 
@@ -129,6 +134,12 @@ class PilotVoice:
 
     def get_nickname(self):
         return self.FOLDER
+
+    def get_file_sounds_ini(self):
+        attenuation = f'attenuation = {self.ATTENUATION}'
+        return DIVIDER.join(
+            [line.get_sound_as_file(attenuation=attenuation, voice=self.get_nickname()) for line in self.get_dynamic_lines()]
+        )
 
     def get_voice_ini(self):
         animations = (
@@ -162,11 +173,6 @@ class PilotVoice:
 
 
 class SignedVoice(PilotVoice):
-
-    def __init__(self, core, *args, **kwargs):
-        # core mandatory to access ingame data
-        self.core = core
-        super().__init__(*args, **kwargs)
 
     def get_number_lines(self):
         lines = []
@@ -273,4 +279,39 @@ class SystemIdentifiedVoice(BaseIdentifiedVoice):
     def get_lines(self):
         lines = super().get_lines()
         lines.extend(self.get_system_lines())
+        return lines
+
+
+class EnglishBaseIdentifiedVoice(PilotVoice):
+
+    def get_bases_lines(self):
+        lines = []
+
+        for base in self.core.universe.get_bases():
+            lines.append(
+                L(
+                    code=base.get_base_msg_relative(),
+                    ru_text=base.get_ru_name().get_en(),
+                    parse_rule=R.RuleBaseNoProcess
+                )
+            )
+
+        for faction in self.core.population.get_world_factions():
+            lines.append(
+                L(
+                    code=faction.get_msg_id_prefix(),
+                    ru_text=faction.get_ru_name().get_en(),
+                    parse_rule=R.RuleFactionNoProcess
+                )
+            )
+        return lines
+
+    def get_dynamic_lines(self):
+        lines = super().get_dynamic_lines()
+        lines.extend(self.get_lines())
+        return lines
+
+    def get_lines(self):
+        lines = super().get_lines()
+        lines.extend(self.get_bases_lines())
         return lines

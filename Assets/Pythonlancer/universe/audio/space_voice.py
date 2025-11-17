@@ -6,9 +6,9 @@ class SpaceVoice(object):
     VOICE_FEMALE_RU = 'dispatcher02'
     VOICE_ROBOT_RU = 'dispatcher03'
 
-    VOICE_MALE_EN = 'atc_leg_m01'
-    VOICE_FEMALE_EN = 'atc_leg_f01'
-    VOICE_ROBOT_EN = 'atc_leg_f01a'
+    VOICE_MALE_EN = 'atc_leg_m01_new'
+    VOICE_FEMALE_EN = 'atc_leg_f01_new'
+    VOICE_ROBOT_EN = 'atc_leg_f01a_new'
 
     DEFAULT_RU = VOICE_MALE_RU
     DEFAULT_EN = VOICE_MALE_EN
