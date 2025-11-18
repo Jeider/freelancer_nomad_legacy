@@ -137,6 +137,7 @@ class Api:
 
         print('Prepare to replace data')
 
+        game_folder.remove_redundant_files()
         shutil.copytree(
             build_folder.get_root(),
             game_folder.get_root(),
@@ -144,6 +145,8 @@ class Api:
         )
 
         print('Data replaced')
+
+
 
         if windowed:
             if self.russian:

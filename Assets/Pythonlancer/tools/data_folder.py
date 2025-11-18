@@ -375,3 +375,11 @@ class DataFolder:
         d3d8 = self.get_d3d8()
         if d3d8.exists():
             self.get_d3d8().unlink()
+
+    def remove_redundant_files(self):
+        nnvoice = self.get_audio() / 'nnvoice.utf'
+        trent_voice = self.get_audio() / 'trent_voice.utf'
+        if nnvoice.exists():
+            nnvoice.unlink()
+        if trent_voice.exists():
+            trent_voice.unlink()

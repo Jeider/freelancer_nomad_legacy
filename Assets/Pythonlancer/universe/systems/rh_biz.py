@@ -36,6 +36,7 @@ from text.strings import MultiString as MS
 
 class BizmarkMember(Member):
     FACTION = faction.RheinlandMain
+    INTERIOR_BG1 = interior.INTERIOR_RH_BIZMARK
     WEAPON_FACTION = WEAPON_RH
     EQUIP_FACTION = EQUIP_RH
 

@@ -4,16 +4,23 @@ from world.bodyparts import Costume
 from text.dividers import SINGLE_DIVIDER
 
 
-MALE_VOICE = 'rvp101'
-FEMALE_VOICE = 'rvp511'
+MALE_VOICE_RU = 'rvp101b'
+FEMALE_VOICE_RU = 'rvp501b'
+
+MALE_VOICE_EN = 'rvp101'
+FEMALE_VOICE_EN = 'rvp501'
 
 
 class Char:
-    def __init__(self, nickname, faction, costume: Costume, room=BAR):
+    def __init__(self, core, nickname, faction, costume: Costume, room=BAR):
+        self.core = core
         self.nickname = nickname
         self.faction = faction
         self.costume = costume
-        self.voice = MALE_VOICE if costume.is_male else FEMALE_VOICE
+        if self.core.russian:
+            self.voice = MALE_VOICE_RU if costume.is_male else FEMALE_VOICE_RU
+        else:
+            self.voice = MALE_VOICE_EN if costume.is_male else FEMALE_VOICE_EN
         self.room = room
         self.messages = []
 

@@ -548,6 +548,7 @@ class Base:
     def add_bartender(self, costume):
         main_faction = self.get_main_faction()
         char = Char(
+            self.core,
             nickname=f'{self.get_name()}_fix_bartender',
             faction=main_faction,
             costume=costume,
@@ -557,6 +558,7 @@ class Base:
 
     def add_character(self, faction, costume, prefix, trade_msg_count, journey_msg_count):
         char = Char(
+            self.core,
             nickname=f'{self.get_name()}_{faction.get_code()}_{prefix}_{self.get_next_char_index():02d}',
             faction=faction,
             costume=costume,
