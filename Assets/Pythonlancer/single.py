@@ -420,12 +420,15 @@ def meta():
 
 
 def scene():
-    russian = False
+    russian = True
 
     tpl_manager = JinjaTemplateManager()
     script_manager = ScriptManager()
-    # msn = script_manager.get_mission_by_index(13)
-    # cutscene = msn.get_cutscene_by_code('csv')
+    msn = script_manager.get_mission_by_index(13)
+    cutscene = msn.get_cutscene_by_code('death')
+    cutscene.get_thorn(tpl_manager, russian).sync_content()
+
+    return
 
     for i in [13]:  # range(9, 12+1):
         msn = script_manager.get_mission_by_index(i)

@@ -9,42 +9,263 @@ class TestShip(Ship):
     COMPOUND_TEMPLATE_NAME = 'li_elite'
 
 
+class Beast(Ship):
+    COMPOUND_TEMPLATE_NAME = 'beast_ship'
+
+
 class SceneBackground(BackgroundProp):
     COMPOUND_TEMPLATE_NAME = 'edge_exclusion'
 
 
-PATH_1 = '''{0.0, 0.0, 012.0}, {1.0, 0.0, 0.0, 0.0}, {0.182068, 0.0, 0.177708}, {1.0, 0.0, 0.0, 0.0}, {0.720062, 0.0, 0.701225}, {1.0, 0.0, 0.0, 0.0}, {1.60178, 0.0, 1.55615}, {1.0, 0.0, 0.0, 0.0}, {2.81494, 0.0, 2.72806}, {1.0, 0.0, 0.0, 0.0}, {4.34735, 0.0, 4.20256}, {1.0, 0.0, 0.0, 0.0}, {6.18671, 0.0, 5.96523}, {1.0, 0.0, 0.0, 0.0}, {8.3208, 0.0, 8.00167}, {1.0, 0.0, 0.0, 0.0}, {10.7374, 0.0, 10.2975}, {1.0, 0.0, 0.0, 0.0}, {13.4242, 0.0, 12.8382}, {1.0, 0.0, 0.0, 0.0}, {16.369, 0.0, 15.6095}, {1.0, 0.0, 0.0, 0.0}, {19.5596, 0.0, 18.5969}, {1.0, 0.0, 0.0, 0.0}, {22.9837, 0.0, 21.7861}, {1.0, 0.0, 0.0, 0.0}, {26.629, 0.0, 25.1625}, {1.0, 0.0, 0.0, 0.0}, {30.4834, 0.0, 28.7119}, {1.0, 0.0, 0.0, 0.0}, {34.5345, 0.0, 32.4197}, {1.0, 0.0, 0.0, 0.0}, {38.7702, 0.0, 36.2717}, {1.0, 0.0, 0.0, 0.0}, {43.1782, 0.0, 40.2533}, {1.0, 0.0, 0.0, 0.0}, {47.7462, 0.0, 44.3502}, {1.0, 0.0, 0.0, 0.0}, {52.462, 0.0, 48.548}, {1.0, 0.0, 0.0, 0.0}, {57.3133, 0.0, 52.8322}, {1.0, 0.0, 0.0, 0.0}, {62.288, 0.0, 57.1884}, {1.0, 0.0, 0.0, 0.0}, {67.3737, 0.0, 61.6023}, {1.0, 0.0, 0.0, 0.0}, {72.5583, 0.0, 66.0594}, {1.0, 0.0, 0.0, 0.0}, {77.8294, 0.0, 70.5453}, {1.0, 0.0, 0.0, 0.0}, {83.1749, 0.0, 75.0457}, {1.0, 0.0, 0.0, 0.0}, {88.5824, 0.0, 79.546}, {1.0, 0.0, 0.0, 0.0}, {94.0399, 0.0, 84.032}, {1.0, 0.0, 0.0, 0.0}, {99.5349, 0.0, 88.4891}, {1.0, 0.0, 0.0, 0.0}, {105.055, 0.0, 92.903}, {1.0, 0.0, 0.0, 0.0}, {110.589, 0.0, 97.2592}, {1.0, 0.0, 0.0, 0.0}, {116.123, 0.0, 101.543}, {1.0, 0.0, 0.0, 0.0}, {121.646, 0.0, 105.741}, {1.0, 0.0, 0.0, 0.0}, {127.145, 0.0, 109.838}, {1.0, 0.0, 0.0, 0.0}, {132.609, 0.0, 113.82}, {1.0, 0.0, 0.0, 0.0}, {138.024, 0.0, 117.672}, {1.0, 0.0, 0.0, 0.0}, {143.379, 0.0, 121.38}, {1.0, 0.0, 0.0, 0.0}, {148.662, 0.0, 124.929}, {1.0, 0.0, 0.0, 0.0}, {153.859, 0.0, 128.305}, {1.0, 0.0, 0.0, 0.0}, {158.96, 0.0, 131.494}, {1.0, 0.0, 0.0, 0.0}, {163.951, 0.0, 134.482}, {1.0, 0.0, 0.0, 0.0}, {168.821, 0.0, 137.253}, {1.0, 0.0, 0.0, 0.0}, {173.556, 0.0, 139.794}, {1.0, 0.0, 0.0, 0.0}, {178.146, 0.0, 142.09}, {1.0, 0.0, 0.0, 0.0}, {182.577, 0.0, 144.126}, {1.0, 0.0, 0.0, 0.0}, {186.838, 0.0, 145.889}, {1.0, 0.0, 0.0, 0.0}, {190.916, 0.0, 147.363}, {1.0, 0.0, 0.0, 0.0}, {194.799, 0.0, 148.535}, {1.0, 0.0, 0.0, 0.0}, {198.475, 0.0, 149.39}, {1.0, 0.0, 0.0, 0.0}, {201.931, 0.0, 149.914}, {1.0, 0.0, 0.0, 0.0}, {205.156, 0.0, 150.091}, {1.0, 0.0, 0.0, 0.0}, {208.104, 0.0, 149.712}, {1.0, 0.0, 0.0, 0.0}, {210.754, 0.0, 148.601}, {1.0, 0.0, 0.0, 0.0}, {213.124, 0.0, 146.798}, {1.0, 0.0, 0.0, 0.0}, {215.234, 0.0, 144.341}, {1.0, 0.0, 0.0, 0.0}, {217.103, 0.0, 141.272}, {1.0, 0.0, 0.0, 0.0}, {218.751, 0.0, 137.629}, {1.0, 0.0, 0.0, 0.0}, {220.198, 0.0, 133.452}, {1.0, 0.0, 0.0, 0.0}, {221.462, 0.0, 128.78}, {1.0, 0.0, 0.0, 0.0}, {222.563, 0.0, 123.653}, {1.0, 0.0, 0.0, 0.0}, {223.521, 0.0, 118.111}, {1.0, 0.0, 0.0, 0.0}, {224.355, 0.0, 112.193}, {1.0, 0.0, 0.0, 0.0}, {225.084, 0.0, 105.938}, {1.0, 0.0, 0.0, 0.0}, {225.728, 0.0, 99.3871}, {1.0, 0.0, 0.0, 0.0}, {226.306, 0.0, 92.5788}, {1.0, 0.0, 0.0, 0.0}, {226.839, 0.0, 85.553}, {1.0, 0.0, 0.0, 0.0}, {227.344, 0.0, 78.3491}, {1.0, 0.0, 0.0, 0.0}, {227.842, 0.0, 71.0067}, {1.0, 0.0, 0.0, 0.0}, {228.353, 0.0, 63.5654}, {1.0, 0.0, 0.0, 0.0}, {228.894, 0.0, 56.0648}, {1.0, 0.0, 0.0, 0.0}, {229.487, 0.0, 48.5444}, {1.0, 0.0, 0.0, 0.0}, {230.151, 0.0, 41.0437}, {1.0, 0.0, 0.0, 0.0}, {230.904, 0.0, 33.6024}, {1.0, 0.0, 0.0, 0.0}, {231.766, 0.0, 26.2601}, {1.0, 0.0, 0.0, 0.0}, {232.758, 0.0, 19.0562}, {1.0, 0.0, 0.0, 0.0}, {233.897, 0.0, 12.0303}, {1.0, 0.0, 0.0, 0.0}, {235.204, 0.0, 5.22203}, {1.0, 0.0, 0.0, 0.0}, {236.698, 0.0, -1.32908}, {1.0, 0.0, 0.0, 0.0}, {238.399, 0.0, -7.58343}, {1.0, 0.0, 0.0, 0.0}, {240.326, 0.0, -13.5015}, {1.0, 0.0, 0.0, 0.0}, {242.498, 0.0, -19.0437}, {1.0, 0.0, 0.0, 0.0}, {244.935, 0.0, -24.1706}, {1.0, 0.0, 0.0, 0.0}, {247.656, 0.0, -28.8424}, {1.0, 0.0, 0.0, 0.0}, {250.682, 0.0, -33.0197}, {1.0, 0.0, 0.0, 0.0}, {254.03, 0.0, -36.6628}, {1.0, 0.0, 0.0, 0.0}, {257.721, 0.0, -39.7323}, {1.0, 0.0, 0.0, 0.0}, {261.774, 0.0, -42.1885}, {1.0, 0.0, 0.0, 0.0}, {266.208, 0.0, -43.992}, {1.0, 0.0, 0.0, 0.0}, {271.044, 0.0, -45.1031}, {1.0, 0.0, 0.0, 0.0}, {276.3, 0.0, -45.4822}, {1.0, 0.0, 0.0, 0.0}, {486.496, 0.0, 112.569}, {1.0, 0.0, 0.0, 0.0}, {494.747, 0.0, 112.2}, {1.0, 0.0, 0.0, 0.0}, {502.419, 0.0, 111.122}, {1.0, 0.0, 0.0, 0.0}, {509.539, 0.0, 109.371}, {1.0, 0.0, 0.0, 0.0}, {516.133, 0.0, 106.986}, {1.0, 0.0, 0.0, 0.0}, {522.226, 0.0, 104.005}, {1.0, 0.0, 0.0, 0.0}, {527.846, 0.0, 100.468}, {1.0, 0.0, 0.0, 0.0}, {533.017, 0.0, 96.4124}, {1.0, 0.0, 0.0, 0.0}, {537.767, 0.0, 91.8764}, {1.0, 0.0, 0.0, 0.0}, {542.121, 0.0, 86.8986}, {1.0, 0.0, 0.0, 0.0}, {546.105, 0.0, 81.5175}, {1.0, 0.0, 0.0, 0.0}, {549.746, 0.0, 75.7714}, {1.0, 0.0, 0.0, 0.0}, {553.069, 0.0, 69.6989}, {1.0, 0.0, 0.0, 0.0}, {556.101, 0.0, 63.3382}, {1.0, 0.0, 0.0, 0.0}, {558.868, 0.0, 56.7279}, {1.0, 0.0, 0.0, 0.0}, {561.396, 0.0, 49.9062}, {1.0, 0.0, 0.0, 0.0}, {563.711, 0.0, 42.9118}, {1.0, 0.0, 0.0, 0.0}, {565.839, 0.0, 35.7828}, {1.0, 0.0, 0.0, 0.0}, {567.807, 0.0, 28.5579}, {1.0, 0.0, 0.0, 0.0}, {569.64, 0.0, 21.2753}, {1.0, 0.0, 0.0, 0.0}, {571.364, 0.0, 13.9735}, {1.0, 0.0, 0.0, 0.0}, {573.006, 0.0, 6.69087}, {1.0, 0.0, 0.0, 0.0}, {574.592, 0.0, -0.534096}, {1.0, 0.0, 0.0, 0.0}, {576.148, 0.0, -7.66303}, {1.0, 0.0, 0.0, 0.0}, {577.7, 0.0, -14.6575}, {1.0, 0.0, 0.0, 0.0}, {579.274, 0.0, -21.4791}, {1.0, 0.0, 0.0, 0.0}, {580.896, 0.0, -28.0895}, {1.0, 0.0, 0.0, 0.0}, {582.593, 0.0, -34.4502}, {1.0, 0.0, 0.0, 0.0}, {584.39, 0.0, -40.5227}, {1.0, 0.0, 0.0, 0.0}, {586.313, 0.0, -46.2688}, {1.0, 0.0, 0.0, 0.0}, {588.39, 0.0, -51.6499}, {1.0, 0.0, 0.0, 0.0}, {590.645, 0.0, -56.6276}, {1.0, 0.0, 0.0, 0.0}, {593.105, 0.0, -61.1637}, {1.0, 0.0, 0.0, 0.0}, {595.796, 0.0, -65.2195}, {1.0, 0.0, 0.0, 0.0}, {598.745, 0.0, -68.7568}, {1.0, 0.0, 0.0, 0.0}, {601.976, 0.0, -71.737}, {1.0, 0.0, 0.0, 0.0}, {605.518, 0.0, -74.1218}, {1.0, 0.0, 0.0, 0.0}, {609.394, 0.0, -75.8729}, {1.0, 0.0, 0.0, 0.0}, {613.632, 0.0, -76.9517}, {1.0, 0.0, 0.0, 0.0}, {618.258, 0.0, -77.3198}, {1.0, 0.0, 0.0, 0.0}, {623.19, 0.0, -75.4713}, {1.0, 0.0, 0.0, 0.0}, {628.352, 0.0, -70.2276}, {1.0, 0.0, 0.0, 0.0}, {633.777, 0.0, -62.0414}, {1.0, 0.0, 0.0, 0.0}, {639.501, 0.0, -51.3654}, {1.0, 0.0, 0.0, 0.0}, {645.559, 0.0, -38.6522}, {1.0, 0.0, 0.0, 0.0}, {651.986, 0.0, -24.3547}, {1.0, 0.0, 0.0, 0.0}, {658.815, 0.0, -8.9254}, {1.0, 0.0, 0.0, 0.0}, {666.081, 0.0, 7.18292}, {1.0, 0.0, 0.0, 0.0}, {673.821, 0.0, 23.5176}, {1.0, 0.0, 0.0, 0.0}, {682.067, 0.0, 39.6259}, {1.0, 0.0, 0.0, 0.0}, {690.854, 0.0, 55.0552}, {1.0, 0.0, 0.0, 0.0}, {700.219, 0.0, 69.3528}, {1.0, 0.0, 0.0, 0.0}, {710.194, 0.0, 82.0659}, {1.0, 0.0, 0.0, 0.0}, {720.815, 0.0, 92.7419}, {1.0, 0.0, 0.0, 0.0}, {732.116, 0.0, 100.928}, {1.0, 0.0, 0.0, 0.0}, {744.133, 0.0, 106.172}, {1.0, 0.0, 0.0, 0.0}, {756.899, 0.0, 108.02}, {1.0, 0.0, 0.0, 0.0}, {779.993, 0.0, 82.5711}, {1.0, 0.0, 0.0, 0.0}, {816.427, 0.0, 21.8846}, {1.0, 0.0, 0.0, 0.0}, {856.386, 0.0, -50.5477}, {1.0, 0.0, 0.0, 0.0}, {890.055, 0.0, -111.234}, {1.0, 0.0, 0.0, 0.0}, {907.621, 0.0, -136.683}, {1.0, 0.0, 0.0, 0.0}, {913.668, 0.0, -135.164}, {1.0, 0.0, 0.0, 0.0}, {919.338, 0.0, -130.728}, {1.0, 0.0, 0.0, 0.0}, {924.65, 0.0, -123.557}, {1.0, 0.0, 0.0, 0.0}, {929.621, 0.0, -113.836}, {1.0, 0.0, 0.0, 0.0}, {934.269, 0.0, -101.746}, {1.0, 0.0, 0.0, 0.0}, {938.613, 0.0, -87.47}, {1.0, 0.0, 0.0, 0.0}, {942.67, 0.0, -71.1916}, {1.0, 0.0, 0.0, 0.0}, {946.459, 0.0, -53.0932}, {1.0, 0.0, 0.0, 0.0}, {949.998, 0.0, -33.3577}, {1.0, 0.0, 0.0, 0.0}, {953.305, 0.0, -12.1677}, {1.0, 0.0, 0.0, 0.0}, {956.397, 0.0, 10.2938}, {1.0, 0.0, 0.0, 0.0}, {959.293, 0.0, 33.8441}, {1.0, 0.0, 0.0, 0.0}, {962.012, 0.0, 58.3003}, {1.0, 0.0, 0.0, 0.0}, {964.57, 0.0, 83.4798}, {1.0, 0.0, 0.0, 0.0}, {966.987, 0.0, 109.2}, {1.0, 0.0, 0.0, 0.0}, {969.281, 0.0, 135.277}, {1.0, 0.0, 0.0, 0.0}, {971.468, 0.0, 161.53}, {1.0, 0.0, 0.0, 0.0}, {973.568, 0.0, 187.774}, {1.0, 0.0, 0.0, 0.0}, {975.599, 0.0, 213.828}, {1.0, 0.0, 0.0, 0.0}, {977.579, 0.0, 239.508}, {1.0, 0.0, 0.0, 0.0}, {979.525, 0.0, 264.632}, {1.0, 0.0, 0.0, 0.0}, {981.456, 0.0, 289.016}, {1.0, 0.0, 0.0, 0.0}, {983.39, 0.0, 312.479}, {1.0, 0.0, 0.0, 0.0}, {985.345, 0.0, 334.838}, {1.0, 0.0, 0.0, 0.0}, {987.339, 0.0, 355.908}, {1.0, 0.0, 0.0, 0.0}, {989.39, 0.0, 375.509}, {1.0, 0.0, 0.0, 0.0}, {991.516, 0.0, 393.456}, {1.0, 0.0, 0.0, 0.0}, {993.736, 0.0, 409.568}, {1.0, 0.0, 0.0, 0.0}, {996.068, 0.0, 423.66}, {1.0, 0.0, 0.0, 0.0}, {998.529, 0.0, 435.552}, {1.0, 0.0, 0.0, 0.0}, {1001.14, 0.0, 445.059}, {1.0, 0.0, 0.0, 0.0}, {1003.91, 0.0, 451.999}, {1.0, 0.0, 0.0, 0.0}, {1006.87, 0.0, 456.188}, {1.0, 0.0, 0.0, 0.0}, {1010.03, 0.0, 457.446}, {1.0, 0.0, 0.0, 0.0}, {1013.41, 0.0, 455.587}, {1.0, 0.0, 0.0, 0.0}, {1017.03, 0.0, 450.43}, {1.0, 0.0, 0.0, 0.0}, {1020.9, 0.0, 441.791}, {1.0, 0.0, 0.0, 0.0}, {1025.05, 0.0, 429.488}, {1.0, 0.0, 0.0, 0.0}, {1029.49, 0.0, 413.338}, {1.0, 0.0, 0.0, 0.0}, {1034.24, 0.0, 393.158}, {1.0, 0.0, 0.0, 0.0}, {1039.32, 0.0, 368.765}, {1.0, 0.0, 0.0, 0.0}, {1044.75, 0.0, 339.976}, {1.0, 0.0, 0.0, 0.0}, {1050.54, 0.0, 306.608}, {1.0, 0.0, 0.0, 0.0}, {1056.71, 0.0, 268.478}, {1.0, 0.0, 0.0, 0.0}, {1063.29, 0.0, 225.404}, {1.0, 0.0, 0.0, 0.0}, {1070.28, 0.0, 177.202}, {1.0, 0.0, 0.0, 0.0}, {1077.71, 0.0, 123.689}, {1.0, 0.0, 0.0, 0.0}, {1085.6, 0.0, 64.683}, {1.0, 0.0, 0.0, 0.0}, {1093.96, 0.0, 0.0}, {1.0, 0.0, 0.0, 0.0}'''
-PATH_2 = '''{0.0, 0.0, 0.0}, {1.0, 0.0, 0.0, 0.0}, {0, 0.0, 0.1}, {0, 0.0, 1.0, 0.0}'''
-
-PATH_3 = '''{0.0, 0.0, 0.0}, {1.0, 0.0, 0, 0}, {5.59604, 0.0, -0.481945}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {11.746, 0.0, -1.60648}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {18.0344, 0.0, -2.89167}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {24.0459, 0.0, -3.85556}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {29.365, 0.0, -4.0162}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {33.5762, 0.0, -2.89167}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {36.2643, 0.0, 0.0}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {38.5009, 0.0, 5.79778}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {42.4337, 0.0, 9.62768}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {47.369, 0.0, 11.7587}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {53.6629, 0.0, 13.4267}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {60.5345, 0.0, 14.8199}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {67.2027, 0.0, 16.1265}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {72.8866, 0.0, 17.5349}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {76.805, 0.0, 19.2333}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {78.1769, 0.0, 21.4099}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {76.2206, 0.0, 24.2532}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {64.3038, 0.0, 33.479}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {57.3254, 0.0, 43.7233}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {52.6037, 0.0, 52.9699}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {47.4569, 0.0, 59.2026}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {39.203, 0.0, 60.404}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {30.4142, 0.0, 63.2981}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {24.198, 0.0, 72.9163}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {18.6745, 0.0, 84.7026}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {11.9638, 0.0, 94.1011}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {2.18534, 0.0, 96.5548}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-7.6977, 0.0, 90.2166}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-15.0515, 0.0, 89.4212}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-20.6602, 0.0, 92.1925}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-25.3079, 0.0, 96.5548}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-31.6386, 0.0, 100.628}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-40.7384, 0.0, 103.706}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-51.0544, 0.0, 105.571}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-61.0338, 0.0, 106.005}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-69.1235, 0.0, 104.792}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-73.7705, 0.0, 101.715}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-73.421, 0.0, 96.5548}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-67.4277, 4.11211, 87.5446}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-67.7279, 8.22422, 81.6432}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-71.0246, 12.3363, 77.9515}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-74.0215, 16.4484, 75.5701}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-73.421, 20.5605, 73.5998}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-71.5008, 24.6727, 70.9432}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-72.0851, 28.7848, 67.2601}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-74.196, 32.8969, 62.7876}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-76.8556, 37.009, 57.7624}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-79.086, 41.1211, 52.4214}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-79.9092, 45.2332, 47.0014}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-78.347, 49.3453, 41.7392}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-73.421, 53.4574, 36.8719}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-62.3199, 53.4574, 30.7008}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-56.4942, 53.4574, 22.9319}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-52.9792, 53.4574, 15.163}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-48.8115, 53.4574, 8.99213}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-41.0272, 53.4574, 6.01709}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-26.6616, 53.4574, 7.83663}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-18.8683, 53.4574, 2.99743}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-11.0751, 53.4574, -1.84178}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {-3.28185, 53.4574, -6.68098}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}, {4.51139, 53.4574, -11.5202}, {0.183407, 0.0903578, 0.978041, -0.0404121}'''
-
+PATH_1 = '{0.0, 0.0, 0.0}, {1.0, 0.0, 0, 0.0}, {10.4392, -0.0065511, -50.3667}, {0.982119, -0.000183236, -0.188261, -3.51244e-05}, {39.4467, -0.0624247, -92.4023}, {0.885348, -0.00106029, -0.464927, -0.000556796}, {80.4048, -0.271387, -75.617}, {0.238855, -0.000466123, -0.971053, -0.001895}, {96.0648, -0.448733, -26.4794}, {0.099638, -0.000154673, -0.995023, -0.00154462}, {103.493, -0.600208, 24.6966}, {0.0502539, -7.00399e-05, -0.998735, -0.00139196}, {107.168, -0.739449, 76.2926}, {0.0230054, -3.00178e-05, -0.999735, -0.00130447}, {108.517, -0.831906, 128.005}, {0.0033625, 5.51487e-07, -0.999994, 0.00016401}, {108.035, -0.699112, 179.734}, {-0.0116737, -2.64099e-05, -0.999929, 0.00226218}, {106.31, -0.39282, 231.436}, {-0.0206812, -7.27599e-05, -0.99978, 0.00351738}, {103.964, 0.0, 283.115}, {-0.0236776, -9.3192e-05, -0.999712, 0.00393474}'
 
 class Msn13KriegDeathScene(Scene):
-    POINT_ROTATE_OVERRIDES = {}
+    POINT_ROTATE_OVERRIDES = {
+        'ship_leave': [0, 180, 0],
+        'fire_conn': [0, 180, 0],
+    }
 
     def action(self):
         main_group = self.get_group(MAIN)
 
-        cam_dbg = LookAtCamera(root=self, name='cam_dbg', fov=40)
+        music = Music(root=self, name='music_hypergate2', sound='rtc_music_finale2', attenuation=0)
+        music.start(group=BG, duration=1000, loop=True)
 
-        ship_ambi = Light(root=self, name='test_ambi', point_name=self.DEFAULT_POINT_NAME,
-                          light_group=0, diffuse=[1, 1, 0.5],
-                          ambient=[0, 0, 0], direction=[0, 0, 1], light_type=L_DIRECT, range=2000, cutoff=150)
+        cam_dbg = LookAtCamera(root=self, name='cam_dbg', fov=40, farplane=100000)
+        cam_leave = StaticCamera(root=self, name='cam_leave', fov=40, farplane=100000)
+        cam_endanim = StaticCamera(root=self, name='cam_endanim', fov=25, farplane=100000)
+        cam_fire = StaticCamera(root=self, name='cam_fire', fov=22, farplane=100000)
+        cam_death = LookAtCamera(root=self, name='cam_death', fov=40, farplane=100000)
 
-        bg = SceneBackground(root=self, name='the_scene_bg', light_group=0, init_point=self.DEFAULT_POINT_NAME)
+        beast = Beast(root=self, name='Beast', init_point='beast', light_group=5)
+        playership = PlayerShip(root=self, name='playership_the', light_group=0, init_point='ship_init', rotate_from_quat=True)
 
 
-        elite_ship = TestShip(root=self, name='liberty_elite_ship', init_point='ship', light_group=0)
+        player_light = Light(root=self, name='test_ambi', point_name=self.DEFAULT_POINT_NAME,
+                             light_group=0, diffuse=[1, 0.2, 0.2],
+                             ambient=[0.05, 0.01, 0.01], direction=[0, 0, 1], light_type=L_DIRECT, range=2000, cutoff=150)
 
-        path = MotionPath(root=self, name='the_path1', path_data=PATH_3)
-        path.anim(group=MAIN, duration=10, target_name=elite_ship.name, adjust_orient=True, time_delay=1, smooth=True)
 
-        # LookAtEvent(
-        #     root=self, group=BG,
-        #     point=elite_ship, focus=self.get_automarker('shiplook'),
-        #     duration=20,
-        # )
+        player_light2 = Light(root=self, name='test_ambi2', point_name=self.DEFAULT_POINT_NAME,
+                             light_group=0, diffuse=[0.5, 0, 0.4],
+                             ambient=[0.05, 0.01, 0.01], direction=[0, 0, -1], light_type=L_DIRECT, range=2000, cutoff=150)
 
-        cam_dbg.set(group=MAIN)
+        beast_light1 = Light(root=self, name='beast_lt1', point_name='beast_lt1',
+                             light_group=5, diffuse=[1, 0, 0], on=True,
+                             ambient=[0.05, 0.01, 0.01], direction=[0, 1, 1], light_type=L_DIRECT, range=20000, cutoff=150)
+
+        beast_light2 = Light(root=self, name='beast_lt2', point_name='beast_lt2',
+                             light_group=5, diffuse=[0.6, 0, 0.1], on=True,
+                             ambient=[0.05, 0.05, 0.1], direction=[0, 1, -1], light_type=L_DIRECT, range=20000, cutoff=150)
+
+        RotateAxisEvent(root=self, group=BG, object_name=beast_light1.name, angle=-90, duration=0.01, smooth=False, axis=Z_AXIS)
+        RotateAxisEvent(root=self, group=BG, object_name=beast_light2.name, angle=90, duration=0, smooth=False, axis=Z_AXIS)
+
+
+        neuro1 = Alchemy(root=self, name='neuro1', particles='bh_neurons', point_name='fx1')
+        neuro2 = Alchemy(root=self, name='neuro2', particles='bh_neurons', point_name='fx2')
+        neuro3 = Alchemy(root=self, name='neuro3', particles='bh_neurons', point_name='fx3')
+        neuro1.start(group=BG, duration=5000)
+        neuro2.start(group=BG, duration=5000)
+        neuro3.start(group=BG, duration=5000)
+
+
+        bang1 = Alchemy(root=self, name='bang1fx', particles='gf_explosion_sphere_box', point_name='bang1')
+        bang2 = Alchemy(root=self, name='bang2fx', particles='gf_explosion_sphere_box', point_name='bang2')
+        bang3 = Alchemy(root=self, name='bang3fx', particles='gf_explosion_sphere_box', point_name='bang3')
+        bang4 = Alchemy(root=self, name='bang4fx', particles='gf_explosion_sphere_box', point_name='bang4')
+        bang1.start(group=BG, duration=15, time_delay=1)
+        bang2.start(group=BG, duration=15, time_delay=4)
+        bang3.start(group=BG, duration=15, time_delay=2)
+        bang4.start(group=BG, duration=15, time_delay=3)
+
+        bang1.start(group=BG, duration=15, time_delay=8)
+        bang3.start(group=BG, duration=15, time_delay=10)
+
+        bang1_sound = Sound(root=self, name='bang1_sound', sound='med_explosion3', attenuation=-8)
+        bang2_sound = Sound(root=self, name='bang2_sound', sound='med_explosion2', attenuation=-8)
+        bang3_sound = Sound(root=self, name='bang3_sound', sound='med_explosion1', attenuation=-8)
+        bang4_sound = Sound(root=self, name='bang4_sound', sound='med_explosion2', attenuation=-8)
+        bang1_sound.start(group=MAIN, duration=5, time_delay=1)
+        bang2_sound.start(group=MAIN, duration=5, time_delay=3)
+        bang3_sound.start(group=MAIN, duration=5, time_delay=5)
+        bang4_sound.start(group=MAIN, duration=5, time_delay=7)
+        bang1_sound.start(group=MAIN, duration=5, time_delay=8)
+        bang2_sound.start(group=MAIN, duration=5, time_delay=10)
+
+        kr_close_sound = Sound(root=self, name='kr_close_sound', sound='debris_explosion4', attenuation=-1)
+        kr_close_sound.start(group=MAIN, duration=5, time_delay=12)
+
+
+        damage1 = Alchemy(root=self, name='damage1fx', particles='gf_sphere_box_damage', point_name='damage1')
+        damage1.start(group=BG, duration=15)
+
+        beastfx1 = Alchemy(root=self, name='beastfx1', particles='beast_core', point_name='beast')
+        beastfx2 = Alchemy(root=self, name='beastfx2', particles='beast_core_shield', point_name='beast')
+        beastfx3 = Alchemy(root=self, name='beastfx3', particles='beast_core_light', point_name='beast')
+        beastfx1.start(group=BG, duration=30)
+        beastfx2.start(group=BG, duration=30)
+        beastfx3.start(group=BG, duration=30)
+
+
+        beast.anim(group=MAIN, anim='Sc_door open force', duration=1)
+
+
+
+
+        player_engine = Alchemy(root=self, name='player_engine', particles=PLAYER_ENGINES, point_name=self.DEFAULT_POINT_NAME,
+                                sparam=0)
+        player_engine.start(group=BG, duration=5000)
+
+        beast.anim(group=MAIN, anim='Sc_door close', time_scale=2, duration=25, time_delay=2)
+
+        player_engine.set_sparam(group=MAIN, sparam=0.9, duration=0.1)
+        MoveEvent(root=self, group=MAIN, object_name=playership.name, target_name=self.get_automarker_name('ship_leave'),
+                  duration=21, smooth=True, adjust_orient=False)
+
+        leave_point = self.get_point('ship_leave')
+        cam_leave_point = self.get_point('cam_endanim')
+
+        AttachEvent(root=self, group=MAIN, duration=100, target_name=cam_endanim.name, parent_name=playership.name,
+                    target_part='', target_type=TARGET_ROOT, adjust_orient=False, entity_relative=False,
+                    offset_x=cam_leave_point.position[0]-leave_point.position[0],
+                    offset_y=cam_leave_point.position[1]-leave_point.position[1],
+                    offset_z=cam_leave_point.position[2]-leave_point.position[2],
+                    )
+
+        cam_leave.set(group=MAIN)
+        main_group.append_time(8)
+        cam_endanim.set(group=MAIN)
+        cam_endanim.change_fov(group=MAIN, fov=40, duration=5)
+
+
+        player_engine.set_sparam(group=MAIN, sparam=0.0, duration=2, time_delay=4)
+        RotateAxisEvent(root=self, group=MAIN, object_name=playership.name, angle=180,
+                        duration=5, smooth=True, axis=Y_AXIS,
+                        time_delay=4)
+
+
+        powersource_fx = Alchemy(root=self, name='powersource_fx', particles='rtc_powesource_on', point_name=self.DEFAULT_POINT_NAME)
+        powersource_beam = Alchemy(root=self, name='powersource_beam', particles='rtc_powesource_on_beam', point_name=self.DEFAULT_POINT_NAME)
+
+        fire_connector = self.get_automarker_name('fire_conn')
+
+
+        AttachEvent(root=self, group=MAIN, duration=100, target_name=powersource_fx.name, parent_name=playership.name,
+                    target_part='', target_type=TARGET_ROOT, adjust_orient=True, entity_relative=False,
+                    offset_y=5)
+
+        AttachEvent(root=self, group=MAIN, duration=100, target_name=powersource_beam.name, parent_name=fire_connector,
+                    target_part='hpcockpit', target_type=TARGET_ROOT, adjust_orient=True, entity_relative=True,
+                    offset_y=2)
+
+        AttachEvent(root=self, group=MAIN, duration=100, target_name=fire_connector, parent_name=playership.name,
+                    target_part='hpcockpit', target_type=TARGET_HARDPOINT, adjust_orient=False, entity_relative=False)
+
+        main_group.append_time(10)
+
+
+        powersource_fx.start(group=MAIN, duration=15, time_delay=-5)
+
+        # rtc_powesource_on
+        # rtc_powesource_on_beam
+
+        cam_fire.set(group=MAIN)
+        cam_fire.move_cam(group=MAIN, index=2, duration=3)
+
+        powersource_beam.start(group=MAIN, duration=5, time_delay=4)
+
+        main_group.append_time(8)
+
+
+
+        cam_death.set(group=MAIN)
+        main_group.append_time(3)
+
+        cam_death.change_fov(group=MAIN, fov=60, duration=25, smooth=True)
+        cam_death.move_cam(group=MAIN, index=2, duration=25, smooth=True)
+
+
+        player_engine.set_sparam(group=MAIN, sparam=0.9, duration=2)
+        path = MotionPath(root=self, name='the_path1', path_data=PATH_1, point_name='ship_leave')
+        path.anim(group=MAIN, duration=10, target_name=playership.name, adjust_orient=True, time_delay=1, smooth=False)
+
+        MoveEvent(root=self, group=MAIN, object_name=playership.name, target_name=self.get_automarker_name('ship_goaway'),
+                  duration=20, smooth=False, time_delay=11)
+
+
+        exp_bang1 = Alchemy(root=self, name='fx_exp_bang1', particles='dyson_city_genexp', point_name='hp1')
+        exp_bang2 = Alchemy(root=self, name='fx_exp_bang2', particles='dyson_city_genexp', point_name='hp2')
+        exp_bang3 = Alchemy(root=self, name='fx_exp_bang3', particles='dyson_city_genexp', point_name='hp3')
+        exp_bang4 = Alchemy(root=self, name='fx_exp_bang4', particles='dyson_city_genexp', point_name='hp4')
+        exp_bang5 = Alchemy(root=self, name='fx_exp_bang5', particles='dyson_city_genexp', point_name='hp5')
+        exp_bang6 = Alchemy(root=self, name='fx_exp_bang6', particles='dyson_city_genexp', point_name='hp6')
+        exp_bang7 = Alchemy(root=self, name='fx_exp_bang7', particles='dyson_city_genexp', point_name='hp7')
+        exp_bang1.start(group=MAIN, duration=15, time_delay=1)
+        exp_bang2.start(group=MAIN, duration=15, time_delay=3)
+        exp_bang3.start(group=MAIN, duration=15, time_delay=2)
+        exp_bang4.start(group=MAIN, duration=15, time_delay=4.5)
+        exp_bang5.start(group=MAIN, duration=15, time_delay=4)
+        exp_bang6.start(group=MAIN, duration=15, time_delay=2.5)
+        exp_bang7.start(group=MAIN, duration=15, time_delay=3.5)
+
+
+        damage2 = Alchemy(root=self, name='damage2fx', particles='gf_sphere_box_damage', point_name='damage1')
+        damage2.start(group=MAIN, duration=30, time_delay=2)
+
+
+        gen_exp_bang1 = Alchemy(root=self, name='fx_gen_exp_bang1', particles='dyson_city_genexp', point_name='genp1')
+        gen_exp_bang2 = Alchemy(root=self, name='fx_gen_exp_bang2', particles='dyson_city_genexp', point_name='genp2')
+        gen_exp_bang3 = Alchemy(root=self, name='fx_gen_exp_bang3', particles='dyson_city_genexp', point_name='genp3')
+        gen_exp_bang4 = Alchemy(root=self, name='fx_gen_exp_bang4', particles='dyson_city_genexp', point_name='genp4')
+        gen_exp_bang5 = Alchemy(root=self, name='fx_gen_exp_bang5', particles='dyson_city_genexp', point_name='genp5')
+        gen_exp_bang6 = Alchemy(root=self, name='fx_gen_exp_bang6', particles='dyson_city_genexp', point_name='genp6')
+
+        gen_exp_bang1.start(group=MAIN, duration=15, time_delay=6)
+        gen_exp_bang2.start(group=MAIN, duration=15, time_delay=7)
+        gen_exp_bang3.start(group=MAIN, duration=15, time_delay=7.8)
+        gen_exp_bang4.start(group=MAIN, duration=15, time_delay=8.6)
+        gen_exp_bang5.start(group=MAIN, duration=15, time_delay=9.2)
+        gen_exp_bang6.start(group=MAIN, duration=15, time_delay=10)
+
+
+        redmoon_damage = Alchemy(root=self, name='fx_redmoon_dmg', particles='gf_redmoon_process_explosion', point_name='beast')
+        redmoon_damage.start(group=MAIN, duration=15, time_delay=12)
+
+        redmoon_damage2 = Alchemy(root=self, name='fx_redmoon_dmg2', particles='gf_redmoon_process_explosion', point_name='beast')
+        redmoon_damage2.start(group=MAIN, duration=15, time_delay=24)
+
+        redmoon_explode = Alchemy(root=self, name='fx_redmoon_expl', particles='gf_redmoon_final_explosion', point_name='beast')
+        redmoon_explode.start(group=MAIN, duration=15, time_delay=22)
+
+        MoveOffscreenEvent(root=self, group=MAIN, object_name=beast.name, time_delay=22.2)
+
+
+        exp1_sound = Sound(root=self, name='exp1_sound', sound='csx_large01', attenuation=-4)
+        exp2_sound = Sound(root=self, name='exp2_sound', sound='csx_large03', attenuation=-4)
+        exp3_sound = Sound(root=self, name='exp3_sound', sound='csx_large04', attenuation=-4)
+        exp4_sound = Sound(root=self, name='exp4_sound', sound='csx_large05', attenuation=-4)
+        exp5_sound = Sound(root=self, name='exp5_sound', sound='csx_large01', attenuation=-4)
+        exp6_sound = Sound(root=self, name='exp6_sound', sound='csx_large03', attenuation=-4)
+        exp7_sound = Sound(root=self, name='exp7_sound', sound='csx_large04', attenuation=-4)
+        exp8_sound = Sound(root=self, name='exp8_sound', sound='csx_large05', attenuation=-4)
+        exp1_sound.start(group=MAIN, duration=5, time_delay=1)
+        exp2_sound.start(group=MAIN, duration=5, time_delay=2)
+        exp3_sound.start(group=MAIN, duration=5, time_delay=3)
+        exp4_sound.start(group=MAIN, duration=5, time_delay=4)
+        exp5_sound.start(group=MAIN, duration=5, time_delay=5)
+        exp6_sound.start(group=MAIN, duration=5, time_delay=6)
+        exp7_sound.start(group=MAIN, duration=5, time_delay=7)
+        exp8_sound.start(group=MAIN, duration=5, time_delay=8)
+        exp1_sound.start(group=MAIN, duration=5, time_delay=9)
+        exp2_sound.start(group=MAIN, duration=5, time_delay=10)
+
+
+        u_exp1_sound = Sound(root=self, name='u_exp1_sound', sound='med_explosion2', attenuation=0)
+        u_exp2_sound = Sound(root=self, name='u_exp2_sound', sound='med_explosion3', attenuation=0)
+        u_exp1_sound.start(group=MAIN, duration=5, time_delay=12)
+        u_exp2_sound.start(group=MAIN, duration=5, time_delay=22)
+
+
 
         main_group.append_time(1000)

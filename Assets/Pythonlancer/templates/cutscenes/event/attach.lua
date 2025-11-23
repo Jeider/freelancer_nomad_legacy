@@ -8,9 +8,9 @@
     {
         duration={{ duration }},
         offset={
-            0,
-            0,
-            0
+            {{ offset_x }},
+            {{ offset_y }},
+            {{ offset_z }}
         },
         up=Y_AXIS,
         front=NEG_Z_AXIS,

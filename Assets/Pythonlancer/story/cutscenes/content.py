@@ -68,6 +68,8 @@ SOURCE_PYTHONLANCER = 'pythonlancer'
 BACKGROUND_MUSIC = 'backgroundmusic'
 BACKGROUND_AMBIENT = 'backgroundambient'
 
+FX_FADE_NEGATIVE = 'rtc_fadenegative_variable'
+
 
 class Point:
     def __init__(self, name, position, source, orientation=None, rotate=None):  # , orientation, rotate
@@ -86,6 +88,9 @@ class Point:
         )
         self.rotate = rotate if rotate else [0, 0, 0]
 
+    def rotate_is_empty(self):
+        return self.rotate[0] == 0 and self.rotate[1] == 0 and self.rotate[2] == 0
+
     @property
     def pos(self):
         return '{0:.2f}, {1:.2f}, {2:.2f}'.format(*self.position)
@@ -103,6 +108,13 @@ class Point:
 
     @property
     def matrix(self):
+        print(self.name)
+        if self.name == 'fire_conn':
+            print('1')
+        if self.rotate_is_empty() and self.orientation is not None:
+            print('quat')
+            return self.matrix_from_quat
+        print('def')
         mx = math.euler_to_matrix(*self.rotate)
         return '''
             {{ {0:.7f},{1:.7f},{2:.7f} }},
@@ -295,14 +307,14 @@ class MoveOffscreenEvent(MoveEvent):
 
 class RotateAxisEvent(Event):
     TEMPLATE = 'rotate_axis'
-    AXIS = 'Y_AXIS'
 
-    def __init__(self, object_name, angle, duration, smooth=True, *args, **kwargs):
+    def __init__(self, object_name, angle, duration, smooth=True, axis=Y_AXIS, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.object_name = object_name
         self.angle = angle
         self.duration = duration
         self.smooth = smooth
+        self.axis = axis
 
     def get_params(self):
         return {
@@ -310,7 +322,7 @@ class RotateAxisEvent(Event):
             'angle': self.angle,
             'duration': self.duration,
             'smooth': self.smooth,
-            'axis': self.AXIS,
+            'axis': self.axis,
         }
 
 
@@ -515,6 +527,25 @@ class LightAnimEvent(Event):
         }
 
 
+class CameraAnimEvent(Event):
+    TEMPLATE = 'camera_prop_anim'
+
+    def __init__(self, camera_name, duration, fov, smooth=False, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.camera_name = camera_name
+        self.duration = duration
+        self.smooth = smooth
+        self.fov = fov
+
+    def get_params(self):
+        return {
+            'name': self.camera_name,
+            'duration': self.duration,
+            'smooth': self.smooth,
+            'fov': self.fov,
+        }
+
+
 class StartAlchemyEvent(Event):
     TEMPLATE = 'start_alchemy'
 
@@ -578,6 +609,7 @@ class AttachEvent(Event):
     def __init__(self, target_name, parent_name, duration,
                  target_part, target_type,
                  adjust_pos=True, adjust_orient=False, entity_relative=False,
+                 offset_x=0, offset_y=0, offset_z=0,
                  *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.target_name = target_name
@@ -588,6 +620,9 @@ class AttachEvent(Event):
         self.adjust_pos = adjust_pos
         self.adjust_orient = adjust_orient
         self.entity_relative = entity_relative
+        self.offset_x = offset_x
+        self.offset_y = offset_y
+        self.offset_z = offset_z
 
         if self.target_type not in TARGET_TYPES:
             raise Exception(f'Attach event for {self.parent_name} has invalid target_type')
@@ -613,6 +648,9 @@ class AttachEvent(Event):
             'target_part': self.target_part,
             'target_type': self.target_type,
             'flags': self.get_flags(),
+            'offset_x': self.offset_x,
+            'offset_y': self.offset_y,
+            'offset_z': self.offset_z,
         }
 
     def set_duration(self, duration):
@@ -1032,6 +1070,17 @@ class Camera(Marker):
     def set(self, group, **kwargs):
         SetCameraEvent(root=self.root, group=group, camera_name=self.name, **kwargs)
 
+    def change_fov(self, group, fov, **kwargs):
+        CameraAnimEvent(root=self.root, group=group, camera_name=self.name, fov=fov, **kwargs)
+
+    def move_cam(self, group, index, duration, time_delay=0, time_append=0, smooth=True):
+        target = f'{self.name}{index}'
+        target_obj = self.root.get_automarker(target)
+        return MoveEvent(root=self.root, group=group,
+                         object_name=self.name, target_name=target_obj.name,
+                         duration=duration, smooth=smooth,
+                         time_delay=time_delay, time_append=time_append)
+
 
 class StaticCamera(Camera):
     TEMPLATE = 'camera_static'
@@ -1049,13 +1098,6 @@ class LookAtCamera(Camera):
             point=self.point, focus=self.focus,
             duration=look_duration,
         )
-    def move_cam(self, group, index, duration, time_delay=0, time_append=0, smooth=True):
-        target = f'{self.name}{index}'
-        target_obj = self.root.get_automarker(target)
-        return MoveEvent(root=self.root, group=group,
-                         object_name=self.name, target_name=target_obj.name,
-                         duration=duration, smooth=smooth,
-                         time_delay=time_delay, time_append=time_append)
 
     def move_focus(self, group, index, duration, time_delay=0, time_append=0, smooth=True):
         target = f'{self.focus_name}{index}'

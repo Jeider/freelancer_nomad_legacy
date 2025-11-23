@@ -1,7 +1,7 @@
 from story import script
 from audio.sound import VoiceLine
 from story.actors import Trent, Rockford, Darcy, EdisonTrent, King, Hatcher, Alaric, Mandrake, Missouri, Neuralnet
-from story.cutscenes.story_scenes import m13_osiris, m13_death, m13_csv
+from story.cutscenes.story_scenes import m13_osiris, m13_enter_bh, m13_death, m13_csv
 
 
 class Msn13(object):
@@ -57,6 +57,14 @@ class Msn13OsirisCutscene(Msn13, script.CutsceneProps):
         VoiceLine(270, Darcy, ru="Хочешь показать им,, кто тут главный гуманоид на районе?", en="Ready to show them who the top humanoid in the entire Sirius Sector is?"),
         VoiceLine(280, Trent, ru="Удачи,, друзья. А теперь приступим!", en="Good luck, friends. Now, let's do this!"),
     ]
+
+
+class Msn13EnterBlackholeCutscene(Msn13, script.CutsceneProps):
+    ALIAS = 'enter_bh'
+    TITLE = 'Влёт в Чёрную Дыру'
+    THORN_CLASS = m13_enter_bh.Msn13EnterBlackholeScene
+    DESCRIPTION = ''
+    VOICE_LINES = []
 
 
 class Msn13KriegDeathCutscene(Msn13, script.CutsceneProps):
@@ -388,6 +396,7 @@ class Msn13Space(Msn13, script.SpaceVoiceProps):
 class Mission13(Msn13, script.StoryMission):
     CUTSCENES = [
         Msn13OsirisCutscene,
+        Msn13EnterBlackholeCutscene,
         Msn13KriegDeathCutscene,
         Msn13CsvMagnetCutscene,
     ]
