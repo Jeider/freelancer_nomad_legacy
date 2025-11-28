@@ -108,13 +108,9 @@ class Point:
 
     @property
     def matrix(self):
-        print(self.name)
-        if self.name == 'fire_conn':
-            print('1')
         if self.rotate_is_empty() and self.orientation is not None:
-            print('quat')
             return self.matrix_from_quat
-        print('def')
+
         mx = math.euler_to_matrix(*self.rotate)
         return '''
             {{ {0:.7f},{1:.7f},{2:.7f} }},

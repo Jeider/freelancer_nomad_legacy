@@ -425,7 +425,7 @@ def scene():
     tpl_manager = JinjaTemplateManager()
     script_manager = ScriptManager()
     msn = script_manager.get_mission_by_index(13)
-    cutscene = msn.get_cutscene_by_code('death')
+    cutscene = msn.get_cutscene_by_code('csv')
     cutscene.get_thorn(tpl_manager, russian).sync_content()
 
     return

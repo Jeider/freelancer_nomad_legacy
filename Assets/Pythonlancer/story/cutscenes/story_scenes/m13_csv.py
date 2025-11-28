@@ -10,6 +10,7 @@ from story import actors
 
 LOGOS_ROT = 30
 PATH_1 = '{0.0, 0.0, 0.0}, {1.0, 0.0, 0, 0.0}, {10.4392, -0.0065511, -50.3667}, {0.982119, -0.000183236, -0.188261, -3.51244e-05}, {39.4467, -0.0624247, -92.4023}, {0.885348, -0.00106029, -0.464927, -0.000556796}, {80.4048, -0.271387, -75.617}, {0.238855, -0.000466123, -0.971053, -0.001895}, {96.0648, -0.448733, -26.4794}, {0.099638, -0.000154673, -0.995023, -0.00154462}, {103.493, -0.600208, 24.6966}, {0.0502539, -7.00399e-05, -0.998735, -0.00139196}, {107.168, -0.739449, 76.2926}, {0.0230054, -3.00178e-05, -0.999735, -0.00130447}, {108.517, -0.831906, 128.005}, {0.0033625, 5.51487e-07, -0.999994, 0.00016401}, {108.035, -0.699112, 179.734}, {-0.0116737, -2.64099e-05, -0.999929, 0.00226218}, {106.31, -0.39282, 231.436}, {-0.0206812, -7.27599e-05, -0.99978, 0.00351738}, {103.964, 0.0, 283.115}, {-0.0236776, -9.3192e-05, -0.999712, 0.00393474}'
+PATH_2 = '{0.0, 0.0, 0.0}, {0.999424, 0.0, -0.0339477, 0.0}, {1.21709, 9.54448e-07, -23.4005}, {0.999847, 0.0, -0.0175067, 0.0}, {1.58493, 7.67895e-06, -46.8293}, {0.999997, 2.59186e-07, 0.00251235, 0.0}, {0.901676, 2.90864e-05, -70.25}, {0.999617, 7.08659e-07, 0.0276894, 0.0}, {-1.13012, 8.12298e-05, -93.5907}, {0.998153, 1.61814e-06, 0.0607566, 0.0}, {-4.97996, 0.000195451, -116.697}, {0.994257, 3.45829e-06, 0.10702, -3.72243e-07}, {-11.4608, 0.000440869, -139.195}, {0.983974, 7.44422e-06, 0.17831, -1.349e-06}, {-22.1531, 0.00100155, -159.971}, {0.951787, 1.73349e-05, 0.306759, -5.58701e-06}, {-40.0319, 0.00250124, -174.534}, {0.811475, 4.24605e-05, 0.584388, -3.05782e-05}, {-61.7168, 0.00637545, -169.637}, {0.389581, 4.31272e-05, 0.920992, -0.000101955}, {-69.6573, 0.012413, -148.313}, {-0.0179429, -2.54667e-06, 0.999839, -0.000141909}'
 
 
 class Logos(Ship):
@@ -76,6 +77,11 @@ class Msn13CSVMagnetScene(Scene):
         main_group = self.get_group(MAIN)
         farplane = 30000
 
+        #
+        # lapa.anim(group=MAIN, anim='Sc_lapa open', duration=3)
+        # lapa.anim(group=MAIN, anim='Sc_lapa close', duration=4, time_delay=5)
+
+
         # CAMERAS
 
         cam_dbg = LookAtCamera(root=self, name='cam_dbg', fov=30, farplane=farplane)
@@ -83,11 +89,15 @@ class Msn13CSVMagnetScene(Scene):
         cam_xdbg = LookAtCamera(root=self, name='cam_xdbg', fov=30, farplane=farplane)
         cam_start = LookAtCamera(root=self, name='cam_start', fov=30, farplane=farplane)
         cam_launch = LookAtCamera(root=self, name='cam_launch', fov=25, farplane=farplane)
+        cam_arrive = StaticCamera(root=self, name='cam_arrive', fov=25, farplane=farplane)
+        cam_player = LookAtCamera(root=self, name='cam_player', fov=25, farplane=farplane)
+        cam_fly = StaticCamera(root=self, name='cam_fly', fov=35, farplane=farplane)
 
         # PROPS
 
         open_sound = Sound(root=self, name='depot_open_sound', sound='depot_open_sound', attenuation=-6)
         close_sound = Sound(root=self, name='depot_close_sound', sound='depot_close_sound', attenuation=-6)
+        equipment_cart_stop_sound = Sound(root=self, name='equipment_cart_stop', sound='equipment_cart_stop', attenuation=0)
 
 
 
@@ -164,8 +174,6 @@ class Msn13CSVMagnetScene(Scene):
 
         # MoveEvent(root=self, group=MAIN, object_name=csv.name, target_name=self.get_automarker_name('csv_test2'), duration=10,)
 
-        lapa.anim(group=MAIN, anim='Sc_lapa open', duration=3)
-        lapa.anim(group=MAIN, anim='Sc_lapa close', duration=4, time_delay=5)
 
 
         Light(root=self, name='test_ambi', point_name=self.DEFAULT_POINT_NAME,
@@ -250,18 +258,20 @@ class Msn13CSVMagnetScene(Scene):
         csv_rumble.start(group=MAIN, duration=1000, loop=True, time_delay=3)
         csv_rumble.change_attenuation(group=MAIN, attenuation=-10, duration=3)
         csv_eng_loop.start(group=MAIN, duration=1000, loop=True, time_delay=3)
-
+        #
         #
         # main_group.append_time(100)
         #
         #
         # self.set_start_time(main_group.get_time())
 
-        # cam_launch.set(group=MAIN)
-        # cam_launch.move_cam(group=MAIN, index=3, duration=8, smooth=True)
-        # cam_launch.move_focus(group=MAIN, index=3, duration=8, smooth=True)
-
         # MoveFastEvent(root=self, group=MAIN, object_name=csv.name, target_name=self.get_automarker_name('csv_launch2'))
+
+        # move for dbg!!!
+
+        cam_launch.set(group=MAIN)
+        cam_launch.move_cam(group=MAIN, index=3, duration=8, smooth=True)
+        cam_launch.move_focus(group=MAIN, index=3, duration=8, smooth=True)
 
         main_group.append_time(7)
         path = MotionPath(root=self, name='the_path1', path_data=PATH_1, point_name='csv_launch2')
@@ -272,10 +282,75 @@ class Msn13CSVMagnetScene(Scene):
         csv_engine.set_sparam(group=MAIN, duration=3, sparam=0.9)
         csv_trail.set_sparam(group=MAIN, duration=3, sparam=0.9)
 
-        main_group.append_time(1000)
 
-        self.set_start_time(main_group.get_time())
+        main_group.append_time(12)
+        # before dbg
 
-        cam_dbg3.set(group=MAIN)
+        #
+        # main_group.append_time(1000)
+        #
+        # self.set_start_time(main_group.get_time())
+        # main_group.append_time(2)
 
-        main_group.append_time(1000)
+
+        cam_player.move_cam(group=MAIN, index=2, duration=0.001, time_delay=-1)
+
+
+        cam_player.set(group=MAIN)
+
+        cam_player.move_cam(group=MAIN, index='', duration=12)
+        main_group.append_time(2)
+
+
+        MoveFastEvent(root=self, group=MAIN, object_name=csv.name, target_name=self.get_automarker_name('csv_arrive'))
+        LookAtEvent(root=self, group=MAIN, point=csv, focus=playership, duration=20)
+
+        path = MotionPath(root=self, name='the_path2', path_data=PATH_2, point_name='csv_arrive')
+        path.anim(group=MAIN, duration=15, target_name=csv.name, adjust_orient=False, time_delay=0.1, smooth=True)
+
+        # cam_arrive.set(group=MAIN)
+        # cam_arrive.move_cam(group=MAIN, index=2, duration=1, time_delay=1)
+
+        main_group.append_time(15)
+
+        cam_arrive.set(group=MAIN, time_delay=-5)
+
+        MoveEvent(root=self, group=MAIN, object_name=csv.name, target_name=self.get_automarker_name('csv_lapa'), adjust_orient=False,
+                  duration=5)
+
+        lapa.anim(group=MAIN, anim='Sc_lapa open', duration=3, time_delay=0.5)
+        equipment_cart_stop_sound.start(group=MAIN, duration=3, time_delay=0.5)
+
+
+        main_group.append_time(5)
+
+        #
+        # main_group.append_time(1000)
+        #
+        #
+        #
+        #
+        # main_group.append_time(1000)
+        #
+        # self.set_start_time(main_group.get_time())
+        # main_group.append_time(1)
+        # lapa.anim(group=MAIN, anim='Sc_lapa open', duration=3, time_scale=5)
+
+
+        # MoveFastEvent(root=self, group=MAIN, object_name=logos.name, target_name=self.get_automarker_name('logos_launch'))
+
+        cam_fly.set(group=MAIN)
+
+        main_group.append_time(1)
+
+        MoveFastEvent(root=self, group=MAIN, object_name=csv.name, target_name=self.get_automarker_name('csv_fly'))
+
+        ConnectHardpointEvent(root=self, group=MAIN, target_name=playership.name, parent_name=lapa.name,
+                              duration=14.99, target_hardpoint="HpTop",
+                              parent_hardpoint="HpPlayerTop")
+
+        MoveEvent(root=self, group=MAIN, object_name=csv.name, target_name=self.get_automarker_name('csv_fly2'), adjust_orient=True,
+                  duration=20, smooth=False)
+
+
+        main_group.append_time(15)

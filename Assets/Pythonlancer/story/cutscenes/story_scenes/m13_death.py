@@ -1,3 +1,7 @@
+from random import randint
+
+from story.math import euler_to_quat
+
 from story.cutscenes.scene import Scene
 from story.cutscenes.content import *
 from story.cutscenes.anim import Male, Female, Trent
@@ -13,6 +17,10 @@ class Beast(Ship):
     COMPOUND_TEMPLATE_NAME = 'beast_ship'
 
 
+class PlayerConnecter(Solar):
+    COMPOUND_TEMPLATE_NAME = 'hidden_connect'
+
+
 class SceneBackground(BackgroundProp):
     COMPOUND_TEMPLATE_NAME = 'edge_exclusion'
 
@@ -23,23 +31,29 @@ class Msn13KriegDeathScene(Scene):
     POINT_ROTATE_OVERRIDES = {
         'ship_leave': [0, 180, 0],
         'fire_conn': [0, 180, 0],
+        'impact': [90, 0, 0],
     }
 
     def action(self):
         main_group = self.get_group(MAIN)
 
         music = Music(root=self, name='music_hypergate2', sound='rtc_music_finale2', attenuation=0)
-        music.start(group=BG, duration=1000, loop=True)
+        music.start(group=BG, duration=5000, loop=True)
 
         cam_dbg = LookAtCamera(root=self, name='cam_dbg', fov=40, farplane=100000)
         cam_leave = StaticCamera(root=self, name='cam_leave', fov=40, farplane=100000)
         cam_endanim = StaticCamera(root=self, name='cam_endanim', fov=25, farplane=100000)
         cam_fire = StaticCamera(root=self, name='cam_fire', fov=22, farplane=100000)
         cam_death = LookAtCamera(root=self, name='cam_death', fov=40, farplane=100000)
+        cam_flee = StaticCamera(root=self, name='cam_flee', fov=35, farplane=100000)
 
         beast = Beast(root=self, name='Beast', init_point='beast', light_group=5)
         playership = PlayerShip(root=self, name='playership_the', light_group=0, init_point='ship_init', rotate_from_quat=True)
+        player_connecter = PlayerConnecter(root=self, name='connecter_the', light_group=1, init_point='ship_flee')
 
+        player_engine = Alchemy(root=self, name='player_engine', particles=PLAYER_ENGINES, point_name=self.DEFAULT_POINT_NAME,
+                                sparam=0)
+        player_engine.start(group=BG, duration=5000)
 
         player_light = Light(root=self, name='test_ambi', point_name=self.DEFAULT_POINT_NAME,
                              light_group=0, diffuse=[1, 0.2, 0.2],
@@ -60,6 +74,13 @@ class Msn13KriegDeathScene(Scene):
 
         RotateAxisEvent(root=self, group=BG, object_name=beast_light1.name, angle=-90, duration=0.01, smooth=False, axis=Z_AXIS)
         RotateAxisEvent(root=self, group=BG, object_name=beast_light2.name, angle=90, duration=0, smooth=False, axis=Z_AXIS)
+
+
+
+
+
+
+
 
 
         neuro1 = Alchemy(root=self, name='neuro1', particles='bh_neurons', point_name='fx1')
@@ -113,9 +134,6 @@ class Msn13KriegDeathScene(Scene):
 
 
 
-        player_engine = Alchemy(root=self, name='player_engine', particles=PLAYER_ENGINES, point_name=self.DEFAULT_POINT_NAME,
-                                sparam=0)
-        player_engine.start(group=BG, duration=5000)
 
         beast.anim(group=MAIN, anim='Sc_door close', time_scale=2, duration=25, time_delay=2)
 
@@ -165,15 +183,20 @@ class Msn13KriegDeathScene(Scene):
         main_group.append_time(10)
 
 
-        powersource_fx.start(group=MAIN, duration=15, time_delay=-5)
+        powersource_fx.start(group=MAIN, duration=2500, time_delay=-7)
+        powersource_fx.set_sparam(group=MAIN, duration=3, sparam=1)
+        # powersource_fx.set_sparam(group=MAIN, duration=3, sparam=0, time_delay=20)
 
-        # rtc_powesource_on
-        # rtc_powesource_on_beam
 
         cam_fire.set(group=MAIN)
-        cam_fire.move_cam(group=MAIN, index=2, duration=3)
+        cam_fire.move_cam(group=MAIN, index=2, duration=4)
 
         powersource_beam.start(group=MAIN, duration=5, time_delay=4)
+
+        l_missile_launch = Sound(root=self, name='powerfire', sound='l_missile_launch', attenuation=-1)
+        l_missile_launch.start(group=MAIN, duration=5, time_delay=4)
+
+
 
         main_group.append_time(8)
 
@@ -229,6 +252,7 @@ class Msn13KriegDeathScene(Scene):
         gen_exp_bang6.start(group=MAIN, duration=15, time_delay=10)
 
 
+
         redmoon_damage = Alchemy(root=self, name='fx_redmoon_dmg', particles='gf_redmoon_process_explosion', point_name='beast')
         redmoon_damage.start(group=MAIN, duration=15, time_delay=12)
 
@@ -238,7 +262,7 @@ class Msn13KriegDeathScene(Scene):
         redmoon_explode = Alchemy(root=self, name='fx_redmoon_expl', particles='gf_redmoon_final_explosion', point_name='beast')
         redmoon_explode.start(group=MAIN, duration=15, time_delay=22)
 
-        MoveOffscreenEvent(root=self, group=MAIN, object_name=beast.name, time_delay=22.2)
+        MoveOffscreenEvent(root=self, group=MAIN, object_name=beast.name, time_delay=22.01)
 
 
         exp1_sound = Sound(root=self, name='exp1_sound', sound='csx_large01', attenuation=-4)
@@ -267,5 +291,56 @@ class Msn13KriegDeathScene(Scene):
         u_exp2_sound.start(group=MAIN, duration=5, time_delay=22)
 
 
+        main_group.append_time(30)
 
-        main_group.append_time(1000)
+        player_engine.set_sparam(group=MAIN, sparam=1, duration=0.1)
+
+        flee_point = self.get_point('ship_flee')
+        cam_flee_point = self.get_point('cam_flee')
+
+        ConnectHardpointEvent(root=self, group=MAIN, target_name=playership.name, parent_name=player_connecter.name,
+                              duration=40, target_hardpoint="HpRoot",
+                              parent_hardpoint="HpConnect")
+
+        AttachEvent(root=self, group=MAIN, duration=100, target_name=cam_flee.name, parent_name=flee_point.name,
+                    target_part='', target_type=TARGET_ROOT, adjust_orient=False, entity_relative=False,
+                    offset_x=cam_flee_point.position[0] - flee_point.position[0],
+                    offset_y=cam_flee_point.position[1] - flee_point.position[1],
+                    offset_z=cam_flee_point.position[2] - flee_point.position[2],
+                    )
+
+        cam_flee.set(group=MAIN)
+
+        flee_path_items = [
+            '{0,0,0},{1,0,0,0}'
+        ]
+        for i in range(0, 100):
+            pos = [randint(-100, 100) / 100, randint(-100, 100) / 100, randint(-100, 100) / 100]
+            quat = euler_to_quat(randint(0, 360), randint(0, 360), randint(0, 360))
+            flee_path_items.append(
+                '{{ {0:.2f}, {1:.2f}, {2:.2f} }},'.format(*pos) + ' {{ {0:.2f}, {1:.2f}, {2:.2f}, {3:.2f} }}'.format(
+                    *quat)
+            )
+
+        flee_path_data = ", ".join(flee_path_items)
+        flee_path = MotionPath(root=self, name='the_path2', path_data=flee_path_data, point_name='ship_flee')
+
+        flee_path.anim(group=MAIN, duration=40, target_name=player_connecter.name, adjust_orient=True, time_delay=13,
+                       smooth=False)
+
+
+        player_light2.set_diffuse(group=MAIN, diffuse=[1,1,1], time_delay=1, duration=15)
+        # player_light2.set_ambient(group=MAIN, ambient=[1,1,1], time_delay=12, duration=15)
+
+        impact = Alchemy(root=self, name='fx_kr_d_impact', particles='gf_barrel_impact', point_name='impact')
+        impact.start(group=MAIN, time_delay=0, duration=40)
+
+        MoveEvent(root=self, group=MAIN, object_name=impact.name, target_name=self.get_automarker_name('ship_flee'),
+                  duration=30, time_delay=0, adjust_orient=False)
+
+
+        main_group.append_time(20)
+
+        music.change_attenuation(group=MAIN, attenuation=-20, duration=5)
+        main_group.append_time(5)
+
