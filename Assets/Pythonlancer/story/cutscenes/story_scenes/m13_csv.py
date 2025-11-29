@@ -352,5 +352,4 @@ class Msn13CSVMagnetScene(Scene):
         MoveEvent(root=self, group=MAIN, object_name=csv.name, target_name=self.get_automarker_name('csv_fly2'), adjust_orient=True,
                   duration=20, smooth=False)
 
-
         main_group.append_time(15)

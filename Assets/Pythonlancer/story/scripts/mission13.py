@@ -372,7 +372,7 @@ class Msn13Space(Msn13, script.SpaceVoiceProps):
 
         VoiceLine(3170, Neuralnet, ru="Мы накопили достаточно сил, чтобы уничтожить щит Крыга. Но сначала нужно уничтожить номадские нар+осты",
 								   en='We have accumulated sufficient power to destroy the Krieg\'s shield. But first, the Nomad growths must be eliminated.'),
-        VoiceLine(3180, Trent, ru="Снести эти три сиськи? Зачётно! Сейчас сделаем!", en='ake out these three... "tits"? Hell yeah! On it!'),
+        VoiceLine(3180, Trent, ru="Снести эти три сиськи? Зачётно! Сейчас сделаем!", en='Take out these three "tits"? Awesome! On my way!'),
 
         VoiceLine(3190, Trent, ru="Нейросеть, а что будет потом? Есть план на уничтожение Крыга?", en='Neural Net, what\'s the plan after that? Any ideas for destroying the Krieg?'),
         VoiceLine(3200, Neuralnet, ru="Теоретически усиленных пушек вашего корабля хватит, чтобы повредить внутренние системы Крыга",

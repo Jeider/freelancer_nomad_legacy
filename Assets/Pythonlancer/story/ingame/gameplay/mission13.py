@@ -481,7 +481,7 @@ class Misson13(ingame_mission.IngameMission):
     SCRIPT_INDEX = 13
     DIRECT_SYSTEMS = [S.sphere2, S.sphere2_inside, S.om13_alt, S.bh]
     STATIC_NPCSHIPS = NPCSHIPS
-    RTC = ['captured', 'last_brief']
+    RTC = ['captured', 'last_brief', 'move_to_bh', 'enter_bh', 'death', 'rescued']
     INIT_OFFER = MultiLine(
         [
             'ЗАДАЧА:',
@@ -570,6 +570,7 @@ class Misson13(ingame_mission.IngameMission):
             SaveState(self, 'chamber01', MS('Омега-13. Кокон', 'Omega-13. Cocoon')),
             SaveState(self, 'chamber02', MS('Омега-13. Второй кокон', 'Omega-13. Second cocoon')),
             SaveState(self, 'chamber02_after', MS('Омега-13. После второго кокона', 'Omega-13. After second cocoon')),
+            SaveState(self, 'blackhole', MS('Чёрная дыра', 'Blackhole')),
         ]
 
     def get_ingame_thorns(self):

@@ -7,6 +7,7 @@ from text.strings import MultiString as MS
 class RepairKit(Equipment, DefaultGood):
     COMBINABLE = True
     WEAPON_CODE = REPAIR
+    ARCHETYPE = 'RepairKit'
 
     INFO = MS('Комплект наноботов, предназначенный для быстрого ремонта корпуса.',
               'Nanobots pack, supposed to fast repair your ship hull on the flight.')
@@ -146,7 +147,7 @@ hit_pts = 250
 mass = 10
 explosion_arch = debris_normal
 
-[RepairKit]
+[{self.ARCHETYPE}]
 nickname = {equip_name}
 ids_name = {self.get_ids_name()}
 ids_info = {self.get_ids_info()}
@@ -162,6 +163,7 @@ lootable = true
 class ShieldBattery(RepairKit):
     COMBINABLE = True
     WEAPON_CODE = BATTERY
+    ARCHETYPE = 'ShieldBattery'
 
     INFO = MS('Набор батарей, предназначенных для быстрой перезарядки щита. Используйте в экстренных ситуациях, '
               'когда вам нужно восстановить щит не дожидаясь его регенерации.',
