@@ -4,9 +4,9 @@
 
 *, body {
   font-family: 'Arial';
-
 }
 html {
+  background-color: #ecddce !important;
   filter: invert(1);
 }
 .section {
@@ -68,6 +68,17 @@ table {
     font-size: 16px;
 }
 
+.to_bottom {
+   position: absolute;
+   bottom: 45px;
+
+   width: 95%;
+
+   border: 1px solid silver;
+   padding: 2px 10px;
+}
+
+
 .footer {
     position: absolute;
     bottom: 0;
@@ -96,6 +107,14 @@ table {
   background-color: #ccc; /* Highlight active tab */
 }
 
+
+
+.boostylink {
+    font-size: 20px;
+    color: blue;
+    margin-right: 10px;
+}
+
 </style>
 
 
@@ -106,6 +125,7 @@ table {
 <div class="section">
     <h1>{{ t.text('Freelancer The Nomad Legacy') }}</h1>
 </div>
+
 
 <div class="tab-container">
   <div class="tab-links">
@@ -597,6 +617,13 @@ table {
 
 </div>
 
+
+<div class="section to_bottom">
+    <p>{{ t.text('This is fan project. You can play it for free. If you want to support the developer, you can send donate or subscribe to project by Boosty.') }}</p>
+    <p><button class="boostylink" onClick="boosty()">{{ t.text('Support project') }}</button></p>
+
+</div>
+
 <div class="footer">
     <button name="run" class="run" onClick="run()">{{ t.text('Run Freelancer') }}</button>
 </div>
@@ -621,6 +648,10 @@ function run() {
     var commhelmet = document.querySelector('input[name="commhelmet"]:checked').value;
 
     pywebview.api.runFreelancer(resolution, windowed, dxwrapper, difficulty, fovy, front_light, trail, body, commhelmet);
+}
+
+function boosty() {
+    pywebview.api.run_boosty();
 }
 
 const dangerous = document.getElementsByClassName('dangerous');

@@ -87,6 +87,9 @@ class Api:
             os.chdir(prev_cwd)
             raise
 
+    def run_boosty(self):
+        os.startfile('https://boosty.to/freelancer2')
+
     def apply_settings(self, resolution, windowed, dxwrapper, difficulty, fovy, front_light, trail, player_body, player_commhelmet):
         settings_save = {
             'current_resolution': resolution,
@@ -235,7 +238,7 @@ def create_launcher(russian=True):
 
     api = Api(russian=russian)
     window = webview.create_window('The Nomad Legacy', html=html, background_color=BG_COLOR, js_api=api,
-                                   width=800, height=800, resizable=False)
+                                   width=800, height=900, resizable=False)
     api.set_window(window)
     try:
         webview.start()

@@ -80,6 +80,9 @@ class DataFolder:
     def get_fx(self):
         return get_and_create(self.get_data() / 'FX')
 
+    def get_fonts(self):
+        return get_and_create(self.get_data() / 'FONTS')
+
     def get_scripts(self):
         return get_and_create(self.get_data() / 'SCRIPTS')
 
@@ -261,6 +264,13 @@ class DataFolder:
             raise Exception('Impossible to use with build')
 
         equip_file = self.get_characters() / 'bodyparts_player.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    def sync_fonts(self, content):
+        if self.build_to_folder:
+            raise Exception('Impossible to use with build')
+
+        equip_file = self.get_fonts() / 'fonts.ini'
         equip_file.write_text(content, encoding='utf-8')
 
     def sync_mbases(self, content):

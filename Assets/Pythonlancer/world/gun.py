@@ -687,7 +687,7 @@ class OrderHeavygun(Gun, BorderWorldGun, Heavygun):
     EQUIP_TYPE = Weapon.EQUIP_MAIN
     REFIRE_RATE = Weapon.REFIRE_RATE_3
     MUZZLE_VELOCITY = 700
-    LIFETIME = 3
+    LIFETIME = 1
     FX_FACTION = WeaponFX.FX_PI
     FX_APPEARANCE = WeaponFX.FX_PLASMA
 

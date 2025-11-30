@@ -9,6 +9,10 @@ DEFAULT_HAT = None
 DEFAULT_EYEWEAR = None
 DEFAULT_RIGHT_HAND = 'benchmarkmalehandright.dfm'
 DEFAULT_LEFT_HAND = 'benchmarkmalehandleft.dfm'
+DEFAULT_FONT_NORMAL = 0.03450
+DEFAULT_FONT_HUD_SMALL = 0.03
+SMALL_FONT_NORMAL = 0.02
+SMALL_FONT_HUD_SMALL = 0.02
 
 
 class StartupConfig:
@@ -144,4 +148,11 @@ class StartupConfig:
             'player_hat': self.player_hat,
             'player_commhelmet': self.player_commhelmet,
             'player_eyewear': self.player_eyewear,
+        }
+
+    def get_fonts_params(self):
+        use_small = self.resolution[1] > 1500
+        return {
+            'normal': SMALL_FONT_NORMAL if use_small else DEFAULT_FONT_NORMAL,
+            'hud_small': SMALL_FONT_HUD_SMALL if use_small else DEFAULT_FONT_HUD_SMALL,
         }

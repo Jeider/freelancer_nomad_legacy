@@ -7,6 +7,12 @@ class LauncherText:
         ('Use dxWrapper:', 'Использовать dxWrapper:'),
         ('Fixes DirectX 8 errors, enables hardware smoothing and filtering', 'Исправляет ошибки DirectX 8, включает фильтрацию и сглаживание'),
 
+        (
+            'This is fan project. You can play it for free. If you want to support the developer, you can send donate or subscribe to project by Boosty.',
+            'Вы играете в фанатский проект. Он бесплатный. Но вы можете поддержать проект, отправив донат или подписавшись через Boosty.'
+        ),
+        ('Support project', 'Поддержать проект'),
+
         ('Field of view Y (fish eye):', 'Угол обзора по высоте (вкл. рыбий глаз):'),
         ('(default: 70)', '(по умолчанию: 70)'),
         ('Run Freelancer', 'Запустить Freelancer'),

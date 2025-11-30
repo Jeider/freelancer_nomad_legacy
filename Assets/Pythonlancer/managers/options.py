@@ -6,7 +6,8 @@ HUD_SHIFT_TEMPLATE = 'hardcoded_inis/static_content/HudShift.ini'
 CAMERAS_TEMPLATE = 'hardcoded_inis/static_content/cameras.ini'
 FRONT_LIGHT_TEMPLATE = 'hardcoded_inis/static_content/front_light.ini'
 CONTRAIL_TEMPLATE = 'hardcoded_inis/static_content/contrail.ini'
-PLAYRE_BODYPARTS_TEMPLATE = 'hardcoded_inis/static_content/bodyparts_player.ini'
+PLAYER_BODYPARTS_TEMPLATE = 'hardcoded_inis/static_content/bodyparts_player.ini'
+FONTS_TEMPLATE = 'hardcoded_inis/static_content/fonts.ini'
 
 MOUSE = "mouse_speed"
 GAMMA = "gamma_ramp"
@@ -78,7 +79,10 @@ class OptionsManager:
         return self.tpl_manager.get_result(CONTRAIL_TEMPLATE, self.config.get_contrail_params())
 
     def get_player_bodyparts_content(self):
-        return self.tpl_manager.get_result(PLAYRE_BODYPARTS_TEMPLATE, self.config.get_player_bodyparts_params())
+        return self.tpl_manager.get_result(PLAYER_BODYPARTS_TEMPLATE, self.config.get_player_bodyparts_params())
+
+    def get_fonts_content(self):
+        return self.tpl_manager.get_result(FONTS_TEMPLATE, self.config.get_fonts_params())
 
     def sync_data(self):
         data_folder = DataFolder()
@@ -88,6 +92,7 @@ class OptionsManager:
         data_folder.sync_front_light(self.get_front_light_content())
         data_folder.sync_contrail(self.get_contrail_content())
         data_folder.sync_player_bodyparts(self.get_player_bodyparts_content())
+        data_folder.sync_fonts(self.get_fonts_content())
         if self.config.dxwrapper:
             data_folder.place_dxwrapper()
         else:
