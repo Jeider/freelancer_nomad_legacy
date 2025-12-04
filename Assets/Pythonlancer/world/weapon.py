@@ -520,9 +520,9 @@ LODranges = {lod_ranges}'''
         items = []
         if len(self.EXTRA):
             items.extend(self.EXTRA)
-        #
-        # if self.MODEL not in self.NOT_ANIMATED_MODELS:
-        #     items.append(USE_ANIMATION)
+
+        if self.MODEL not in self.NOT_ANIMATED_MODELS:
+            items.append(USE_ANIMATION)
 
         return items
 
