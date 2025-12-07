@@ -219,7 +219,7 @@ class Tau23TopRightPirates(Tau23Member, Tau23Bretonia, main_objects.PirateGasMin
     SPACE_OBJECT_TEMPLATE = gas_miner.RheinlandPirateGasMiner
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.BretoniaPirateDealers
-    FACTION = faction.WorkaroundPirate
+    FACTION = faction.Xenos
     DEFENCE_LEVEL = None
     RU_NAME = MS('База Брест', "Brest Base")
 
@@ -235,7 +235,7 @@ class Tau23BottomLeftPirates(Tau23Kusari, Tau23Member, main_objects.PirateGasMin
     SPACE_OBJECT_TEMPLATE = gas_miner.BretoniaPirateGasMiner
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.KusariPirateDealers
-    FACTION = faction.KusariPirate
+    FACTION = faction.FarmerAlliance
     DEFENCE_LEVEL = None
     RU_NAME = MS('База Кога', 'Koga Base')
 

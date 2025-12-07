@@ -533,7 +533,7 @@ class HonsNebulaPirates(HonsMember, main_objects.PirateStation):
     BASE_INDEX = 7
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = junker.HonshuJunker
-    FACTION = faction.KusariPirate
+    FACTION = faction.Shinobi
     RU_NAME = MS('База Содзя', 'Soja Base')
 
     DEFENCE_LEVEL = None

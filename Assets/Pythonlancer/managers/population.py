@@ -12,8 +12,7 @@ FACTION_PROP_TEMPLATE = 'hardcoded_inis/static_content/faction_prop.ini'
 class PopulationManager:
     def __init__(self, lancer_core):
         self.core = lancer_core
-        self.factions = Faction.subclasses
-        self.world_factions = [f() for f in self.factions if f.MANAGED is True]
+        self.world_factions = self.core.factions.get_managed_factions()
 
         self.misc_equip = self.core.misc_equip
         self.weapons = self.core.weapons
@@ -84,13 +83,11 @@ class PopulationManager:
         }
 
     def load_game_data(self):
-        for faction in self.factions:
-            if faction.STORY_ONLY:
-                continue
+        for faction in self.world_factions:
             self.npc_db[faction.CODE] = []
             self.loadouts_db[faction.CODE] = []
 
-            for ship_class in faction.SHIPS:
+            for ship_class in faction.get_ships():
                 for level in ship_class.NPC_LEVELS:
                     equip_map = self.get_equip_map_by_level(level)
                     npc = NPC(faction, ship_class, equip_map=equip_map, level=level)

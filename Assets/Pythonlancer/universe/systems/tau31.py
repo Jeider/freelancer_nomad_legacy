@@ -179,7 +179,7 @@ class Tau31BottomPirates(Tau31Member, main_objects.PirateGasMiner):
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.LibertyPirateDealers
     DEFENCE_LEVEL = None
-    FACTION = faction.LibertyPirate
+    FACTION = faction.LibertyRogues
 
     RU_NAME = MS('База Тубак', 'Tubac Base')
 

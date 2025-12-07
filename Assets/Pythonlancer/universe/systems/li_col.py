@@ -687,7 +687,7 @@ class ColAsteroidPirates(ColMember, main_objects.PirateAsteroid):
     BASE_INDEX = 8
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = astbase.BerlinAsteroidBase
-    FACTION = faction.LibertyRogues  # pirate ?
+    FACTION = faction.LaneHackers
 
     DEFENCE_LEVEL = None
     RU_NAME = MS('База Вестпорт', "Westport Base")
@@ -706,7 +706,7 @@ class ColNebulaPirates(ColMember, main_objects.PirateStation):
     BASE_INDEX = 9
     REL = TOP
     SPACE_OBJECT_TEMPLATE = junker.BerlinJunker
-    FACTION = faction.LibertyRogues  # Pirate?
+    FACTION = faction.LibertyPirate
     RU_NAME = MS('База Пальмито', "Palmito Base")
 
     DEFENCE_LEVEL = None

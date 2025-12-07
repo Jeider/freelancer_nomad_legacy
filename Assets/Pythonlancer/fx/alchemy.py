@@ -10,6 +10,9 @@ EFT_EXPLOSION_MISSILE = 'EFT_EXPLOSION_MISSILE'
 EFT_EXPLOSION_MINE = 'EFT_EXPLOSION_MINE'
 EFT_EXPLOSION_LARGE = 'EFT_EXPLOSION_LARGE'
 EFT_WEAPON_MINE = 'EFT_WEAPON_MINE'
+EFT_MUZZLE_FLASH = 'EFT_MUZZLE_FLASH'
+EFT_WEAPON_IMPACT = 'EFT_WEAPON_IMPACT'
+EFT_WEAPON_PROJ = 'EFT_WEAPON_PROJ'
 
 
 class FX:
@@ -19,6 +22,7 @@ class FX:
     VIS_GENERIC = None
     SOUND = None
     FX_APPEND = ''
+    REFERENCE = False
 
     subclasses = []
 
@@ -276,3 +280,71 @@ class MissileImpact(FX):
     FX_APPEND = '_impact'
     SOUND = 'med_explosion1'
     MEMBERS = [f'li_missile{idx:02d}' for idx in LAUNCHER_IDS + LAUNCHER_IDS_ALT]
+
+
+DTR_GUNS = [1, 2, 3, 4]
+
+
+class DtrPlasmaGunFlash(FX):
+    EFFECT_TYPE = EFT_MUZZLE_FLASH
+    TEXTURES = ['planetflare']
+    FX_APPEND = '_flash'
+    MEMBERS = [f'dtr_plasma_{idx:02d}' for idx in DTR_GUNS]
+
+
+class DtrPulseGunFlash(FX):
+    EFFECT_TYPE = EFT_MUZZLE_FLASH
+    TEXTURES = ['sarma']
+    FX_APPEND = '_flash'
+    MEMBERS = [f'dtr_tachyon_{idx:02d}' for idx in DTR_GUNS]
+    REFERENCE = True
+
+
+
+class DtrTachyonGunFlash(FX):
+    EFFECT_TYPE = EFT_MUZZLE_FLASH
+    TEXTURES = ['planetflare', 'sarma', 'beam', 'hexagon']
+    FX_APPEND = '_flash'
+    MEMBERS = [f'dtr_tachyon_{idx:02d}' for idx in DTR_GUNS]
+
+
+class DtrPlasmaGunImpact(FX):
+    EFFECT_TYPE = EFT_WEAPON_IMPACT
+    TEXTURES = ['planetflare']
+    FX_APPEND = '_impact'
+    MEMBERS = [f'dtr_plasma_{idx:02d}' for idx in DTR_GUNS]
+
+
+class DtrPulseGunImpact(FX):
+    EFFECT_TYPE = EFT_WEAPON_IMPACT
+    TEXTURES = ['sarma', 'planetflare', 'kioncannon', 'newglows']
+    FX_APPEND = '_impact'
+    MEMBERS = [f'dtr_pulse_{idx:02d}' for idx in DTR_GUNS]
+
+
+class DtrTachyonGunImpact(FX):
+    EFFECT_TYPE = EFT_WEAPON_IMPACT
+    TEXTURES = ['planetflare', 'sarma', 'beam', 'hexagon']
+    FX_APPEND = '_impact'
+    MEMBERS = [f'dtr_tachyon_{idx:02d}' for idx in DTR_GUNS]
+
+
+class DtrPlasmaGunProj(FX):
+    EFFECT_TYPE = EFT_WEAPON_IMPACT
+    TEXTURES = ['planetflare', 'sarma', 'standardeffects', 'miningship', 'hexagon']
+    FX_APPEND = '_proj'
+    MEMBERS = [f'dtr_plasma_{idx:02d}' for idx in DTR_GUNS]
+
+
+class DtrPulseGunProj(FX):
+    EFFECT_TYPE = EFT_WEAPON_IMPACT
+    TEXTURES = ['sarma', 'planetflare', 'kioncannon', 'newglows']
+    FX_APPEND = '_proj'
+    MEMBERS = [f'dtr_pulse_{idx:02d}' for idx in DTR_GUNS]
+
+
+class DtrTachyonGunProj(FX):
+    EFFECT_TYPE = EFT_WEAPON_IMPACT
+    TEXTURES = ['planetflare', 'sarma', 'beam', 'hexagon']
+    FX_APPEND = '_proj'
+    MEMBERS = [f'dtr_tachyon_{idx:02d}' for idx in DTR_GUNS]

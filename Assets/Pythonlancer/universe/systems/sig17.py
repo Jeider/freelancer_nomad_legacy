@@ -469,7 +469,7 @@ class Sig17CrowNebulaPirates(Sig17Member, main_objects.PirateStation):
     BASE_INDEX = 6
     REL = LEFT
     SPACE_OBJECT_TEMPLATE = pirate.LibertyRombicPirateBase
-    FACTION = faction.Corsairs
+    FACTION = faction.LibertyRogues
 
     DEFENCE_LEVEL = None
     RU_NAME = MS('База М+оркрофт', 'Morecroft Base')

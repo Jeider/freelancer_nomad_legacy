@@ -11,7 +11,7 @@ POP_MIXED = 'mixed'
 class Population(object):
 
     GENERIC_PIRATES = None
-    BOUNTY_HUNTERS = faction.WorkaroundHunter
+    BOUNTY_HUNTERS = None  # faction.WorkaroundHunter
     GLOBAL_TRADERS = None
     JUNKERS = None
 
@@ -41,7 +41,7 @@ relief_time = 10
 density_restriction = 1, unlawfuls'''
 
     TRADELANE_PARAMS = '''lane_id = 26
-tradelane_down = 10
+tradelane_down = 5
 sort = 6
 toughness = 1
 density = 6

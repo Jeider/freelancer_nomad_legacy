@@ -586,7 +586,7 @@ class AvalJunkers(AvalMember, main_objects.JunkerBase):
     SPACE_OBJECT_TEMPLATE = junker.ForbesJunker
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.BretoniaPirateDealers
-    FACTION = faction.BretoniaPirate
+    FACTION = faction.Xenos
     AST_EXCLUSION_ZONE_SIZE = 2500
     ASTEROID_ZONES = [
         AvalDebrisZone3

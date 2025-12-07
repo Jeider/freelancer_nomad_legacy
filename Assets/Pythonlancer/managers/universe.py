@@ -207,6 +207,7 @@ class UniverseManager:
     def get_new_player_content(self):
         context = {
             'locked_gates': self.get_story_locked_docks(),
+            'player_factions': self.core.factions.get_player_factions()
         }
         return self.core.tpl_manager.get_result(NEW_PLAYER_TEMPLATE, context)
 

@@ -538,7 +538,7 @@ class CamPirates(CamMember, main_objects.PirateStation):
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseStuttgart
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.BretoniaPirateDealers
-    FACTION = faction.BretoniaPirate
+    FACTION = faction.Ireland
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
     NEBULA_ZONES = [
         CamBottomNebula

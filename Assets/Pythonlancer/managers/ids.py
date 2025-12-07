@@ -1,5 +1,5 @@
 from text.strings import IDsDatabase
-from text.static import RETURN_NAMES
+from text.static import RETURN_NAMES, STATIC_NAMES
 
 INITIAL_WEAPON_ID = 280001
 INITIAL_EQUIP_ID = 290001
@@ -15,6 +15,7 @@ INITIAL_RUMOR_ID = 138000
 INITIAL_KNOWLEDGE_ID = 10001
 
 INITIAL_STATICS_ID = 202607
+INITIAL_FACTIONS_ID = 210200
 
 
 class IDsManager:
@@ -33,7 +34,8 @@ class IDsManager:
         self.script = IDsDatabase('script', INITIAL_SCRIPT_ID)
         self.universe = IDsDatabase('universe', INITIAL_UNIVERSE_ID)
         self.rumors = IDsDatabase('rumor', INITIAL_RUMOR_ID)
-        # self.static = IDsDatabase('static', INITIAL_STATICS_ID)
+        self.factions = IDsDatabase('factions', INITIAL_FACTIONS_ID)
+        self.static = IDsDatabase('static', INITIAL_STATICS_ID)
 
         self.databases = [
             self.weapon,
@@ -47,11 +49,15 @@ class IDsManager:
             self.script,
             self.universe,
             self.rumors,
-            # self.static,
+            self.factions,
+            self.static,
         ]
-
+        #
         # for item in RETURN_NAMES:
         #     self.static.new_name(item)
+
+        for item in STATIC_NAMES:
+            self.static.add_force(item.ids, item.ru_name)
 
     def get_databases(self):
         return self.databases

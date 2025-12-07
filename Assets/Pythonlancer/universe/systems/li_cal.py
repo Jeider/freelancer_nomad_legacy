@@ -476,7 +476,7 @@ class CalPirate1(CalMember, main_objects.PirateAsteroid):
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.LibertyPirateDealers
 
-    FACTION = faction.LibertyPirate
+    FACTION = faction.LaneHackers
     DEFENCE_LEVEL = None
     RU_NAME = MS('База Чихуахуа', 'Chihuahua Base')
 

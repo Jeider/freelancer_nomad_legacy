@@ -29,6 +29,9 @@ class WeaponFX(object):
     FX_NEUTRON = 'neutron'
     FX_PLASMA = 'plasma'
     FX_PULSE = 'pulse'
+    FX_DIAMOND = 'bloodhound'
+
+    TEAR_ONLY_ONE = [FX_DIAMOND]
 
     FX_RH = 'rh'
     FX_LI = 'li'
@@ -37,6 +40,8 @@ class WeaponFX(object):
     FX_PI = 'pi'
     FX_GE = 'ge'
     FX_CI = 'ci'
+    FX_SP = 'sp'
+    FX_DTR = 'dtr'
 
     SOUND_CLASS_PER_APPEARANCE = {
         FX_LASER: SoundLaser,
@@ -47,6 +52,7 @@ class WeaponFX(object):
         FX_NEUTRON: SoundNeutron,
         FX_PLASMA: SoundPlasma,
         FX_PULSE: SoundPulse,
+        FX_DIAMOND: SoundTachyon,
     }
 
     def __init__(self, faction, fx_appearance, equip_class):
@@ -56,6 +62,8 @@ class WeaponFX(object):
         self.sound_class = self.get_sound_class()
 
     def get_tier(self):
+        if self.fx_appearance in self.TEAR_ONLY_ONE:
+            return 1
         return TIER_PER_CLASS[self.equip_class]
 
     def get_sound_class(self):

@@ -1443,7 +1443,7 @@ class Dron(KusariShip, ShipFreighter, Ship):
 # CORSAIR / ORDER
 
 
-class Bloodhound(CorsairShip, ShipFighter, Ship1, Ship):
+class Bloodhound(CorsairShip, ShipInterceptor, Ship1, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_CORSAIR_ELITE, CLASS_CORSAIR_FIGHTER_ONLY]
     SHIP_CLASS = 5
     SHIELD_LINK = 'pi_fighter_shield01'

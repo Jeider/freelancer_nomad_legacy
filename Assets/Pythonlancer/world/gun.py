@@ -230,6 +230,34 @@ class Gun(MainEquipPrice, Weapon, DefaultGood):
                 return True
 
 
+class DietrichLightgun(Gun, RheinlandGun, Lightgun):
+    DAMAGE_MULTIPLIER = 1.25
+    RU_NAME = MS('Рогатый змей', 'Hornviper')
+    RU_NAME_DESC = MS('Легкая пушка мятежников Дитриха', 'Dietrich\'s rebels light gun')
+    BASE_NICKNAME = 'dtr_lightgun'
+    MODEL = Weapon.RH_GAMMA_BEAMER
+    EQUIP_TYPE = Weapon.EQUIP_MAIN
+    REFIRE_RATE = Weapon.REFIRE_RATE_8
+    MUZZLE_VELOCITY = 800
+    LIFETIME = 1.0
+    FX_FACTION = WeaponFX.FX_RH
+    FX_APPEARANCE = WeaponFX.FX_TACHYON
+
+
+class DietrichHeavygun(Gun, RheinlandGun, Heavygun):
+    DAMAGE_MULTIPLIER = 1.25
+    RU_NAME = MS('Огненный поцелуй', 'Firekiss')
+    RU_NAME_DESC = MS('Тяжелая пушка мятежников Дитриха', 'Dietrich\'s rebels heavy gun')
+    BASE_NICKNAME = 'dtr_heavygun'
+    MODEL = Weapon.RH_PROTON_BLASTER
+    EQUIP_TYPE = Weapon.EQUIP_MAIN
+    REFIRE_RATE = Weapon.REFIRE_RATE_2
+    MUZZLE_VELOCITY = 500
+    LIFETIME = 1.2
+    FX_FACTION = WeaponFX.FX_RH
+    FX_APPEARANCE = WeaponFX.FX_PLASMA
+
+
 class RheinlandLightgun(Gun, RheinlandGun, Lightgun):
     RU_NAME = MS('Гремучий змей', 'Rattlesnake')
     RU_NAME_DESC = MS('Легкая пушка рейнландских военных', 'Rheinland military light gun')
@@ -244,7 +272,7 @@ class RheinlandLightgun(Gun, RheinlandGun, Lightgun):
 
 
 class RheinlandHeavygun(Gun, RheinlandGun, Heavygun):
-    RU_NAME = MS('Огненный поцелуй', 'Firekiss')
+    RU_NAME = MS('Пламенное проклятие', 'Flamecurse')
     RU_NAME_DESC = MS('Тяжелая пушка рейнландских военных', 'Rheinland military heavy gun')
     BASE_NICKNAME = 'rh_heavygun'
     MODEL = Weapon.RH_PROTON_BLASTER
@@ -322,7 +350,7 @@ class RheinlandJunkergun(Gun, RheinlandGun):
 
 
 class RheinlandShieldgun(Gun, RheinlandGun, Shieldgun):
-    RU_NAME = MS('Пламенное проклятие', 'Flamecurse')
+    RU_NAME = MS('Ослепитель', 'Dazzler')
     RU_NAME_DESC = MS('Рейнландская противощитовая пушка', 'Rheinland anti-shield gun')
     BASE_NICKNAME = 'rh_shieldgun'
     MODEL = Weapon.RH_PROTON_BLASTER
@@ -333,22 +361,6 @@ class RheinlandShieldgun(Gun, RheinlandGun, Shieldgun):
     SHIELDGUN = True
     FX_FACTION = WeaponFX.FX_RH
     FX_APPEARANCE = WeaponFX.FX_PULSE
-
-
-class RheinlandHeavyTurret(Gun, RheinlandGun):
-    DAMAGE_MULTIPLER = 2
-    RU_NAME = MS('Рука Смерти', 'Death Hand')
-    RU_NAME_DESC = MS('Тяжелая рейнландская турель', 'Rheinland heavy turret')
-    BASE_NICKNAME = 'rh_heavyturret'
-    MODEL = Weapon.RH_PLASMA_GAT_CANNON
-    EQUIP_TYPE = Weapon.EQUIP_MAIN
-    REFIRE_RATE = Weapon.REFIRE_RATE_8
-    MUZZLE_VELOCITY = 700
-    LIFETIME = 1
-    FX_FACTION = WeaponFX.FX_RH
-    FX_APPEARANCE = WeaponFX.FX_PULSE
-    IS_TURRET = True
-    EXTRA_SHIELD_DAMAGE_FACTOR = 0.5
 
 
 class LibertyLightgun(Gun, LibertyGun, Lightgun):
@@ -756,3 +768,29 @@ class BorderWorldPirategun(Gun, BorderWorldGun, Pirategun):
     LIFETIME = 1
     FX_FACTION = WeaponFX.FX_PI
     FX_APPEARANCE = WeaponFX.FX_LASER
+
+
+class AsfLightgun(Gun, LibertyGun, Lightgun):
+    RU_NAME = MS('Бриллиант', 'Diamondback')
+    RU_NAME_DESC = MS('Тяжелая пушка СБА', 'ASF heavy gun')
+    BASE_NICKNAME = 'asf_heavygun'
+    MODEL = Weapon.LI_AUTO_CANNON
+    EQUIP_TYPE = Weapon.EQUIP_MAIN
+    REFIRE_RATE = Weapon.REFIRE_RATE_2
+    MUZZLE_VELOCITY = 600
+    LIFETIME = 1.2
+    FX_FACTION = WeaponFX.FX_LI
+    FX_APPEARANCE = WeaponFX.FX_DIAMOND
+
+
+class AsfDiamondback(Gun, LibertyGun, Lightgun):
+    RU_NAME = MS('Бриллиант', 'Diamondback')
+    RU_NAME_DESC = MS('Тяжелая пушка СБА', 'ASF heavy gun')
+    BASE_NICKNAME = 'asf_heavygun'
+    MODEL = Weapon.LI_AUTO_CANNON
+    EQUIP_TYPE = Weapon.EQUIP_MAIN
+    REFIRE_RATE = Weapon.REFIRE_RATE_2
+    MUZZLE_VELOCITY = 800
+    LIFETIME = 1.2
+    FX_FACTION = WeaponFX.FX_LI
+    FX_APPEARANCE = WeaponFX.FX_DIAMOND

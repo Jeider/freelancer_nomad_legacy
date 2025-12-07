@@ -456,7 +456,7 @@ class Sig22SouthPirates(Sig22Member, Sig22Liberty, main_objects.PirateStation):
     BASE_INDEX = 4
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseBizmark
-    FACTION = faction.LibertyPirate
+    FACTION = faction.LaneHackers
 
     DEFENCE_LEVEL = None
     RU_NAME = MS('База Алькатрас', "Alcatraz Base")
@@ -476,7 +476,7 @@ class Sig22NorthPirates(Sig22Bretonia, Sig22Member, main_objects.PirateStation):
     BASE_INDEX = 5
     REL = RIGHT
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseStuttgart
-    FACTION = faction.BretoniaPirate
+    FACTION = faction.Ireland
     RU_NAME = MS('База Лим+ерик', "Limerick Base")
 
     DEFENCE_LEVEL = None

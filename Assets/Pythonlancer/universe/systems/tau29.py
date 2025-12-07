@@ -39,7 +39,7 @@ class Tau29Member(Member):
     EQUIP_FACTION = EQUIP_BR
 
 
-class Tau37StaticText(Tau29Member, main_objects.RawText):
+class Tau29StaticText(Tau29Member, main_objects.RawText):
     SPACE_CONTENT = '''[SystemInfo]
 name = tau29
 space_color = 60, 60, 90
@@ -440,7 +440,7 @@ class Tau29TopPirates(Tau29Member, main_objects.PirateAsteroid):
     INTERIOR_CLASS = interior.OutpostInterior
     DEALERS = dealers.BretoniaPirateDealers
 
-    FACTION = faction.BretoniaPirate
+    FACTION = faction.Ireland
     DEFENCE_LEVEL = None
     #
     # ASTEROID_ZONES = [

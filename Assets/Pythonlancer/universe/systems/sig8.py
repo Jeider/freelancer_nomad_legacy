@@ -319,7 +319,7 @@ class Sig8Pirate(Sigma8Member, main_objects.PirateStation):
 
     SPACE_OBJECT_TEMPLATE = pirate.ManhattanPirateBase
 
-    FACTION = faction.WorkaroundPirate
+    FACTION = faction.RheinlandPirate
     DEFENCE_LEVEL = None
     RU_NAME = MS('База Вернигороде', "Wernigerode Base")
 

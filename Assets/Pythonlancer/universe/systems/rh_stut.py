@@ -472,7 +472,7 @@ class StutNebulaPirates(StutMember, main_objects.PirateStation):
     BASE_INDEX = 7
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseStuttgart
-    FACTION = faction.RheinlandPirate
+    FACTION = faction.Hessians
 
     DEFENCE_LEVEL = None
     RU_NAME = MS('База Фрайбург', 'Freiburg Base')

@@ -22,9 +22,10 @@ class FxManager:
                 self.effects.append(
                     fx.get_effect(member)
                 )
-                self.vis_effects.append(
-                    fx.get_vis_effect(member)
-                )
+                if not fx.REFERENCE:
+                    self.vis_effects.append(
+                        fx.get_vis_effect(member)
+                    )
 
     def get_effects_content(self):
         return DIVIDER.join(self.effects)

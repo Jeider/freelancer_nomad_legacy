@@ -553,7 +553,7 @@ class HokkJunkers(HokkMember, main_objects.JunkerBase):
     BASE_INDEX = 8
     REL = TOP
     SPACE_OBJECT_TEMPLATE = junker.BerlinJunker
-    FACTION = faction.Junkers
+    FACTION = faction.FarmerAlliance
     RU_NAME = MS('База Вако', "Vako Base")
 
     DEFENCE_LEVEL = None

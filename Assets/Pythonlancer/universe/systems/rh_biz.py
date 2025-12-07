@@ -319,7 +319,7 @@ class BizmarkRightPirate(BizmarkMember, main_objects.PirateAsteroid):
     INDEX = 2
     REL = RIGHT
     SPACE_OBJECT_TEMPLATE = astbase.BizmarkAsteroidBase
-    FACTION = faction.RheinlandPirate
+    FACTION = faction.Hessians
 
     DEFENCE_LEVEL = None
     RU_NAME = MS('База Саарбрюкен', "Saarbrücken Base")

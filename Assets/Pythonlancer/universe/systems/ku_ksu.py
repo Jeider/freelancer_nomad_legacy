@@ -495,7 +495,7 @@ class KyushuJunkers(KyushuMember, main_objects.JunkerBase):
     ALIAS = 'pirate'
     REL = TOP
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseForbes
-    FACTION = faction.Junkers
+    FACTION = faction.FarmerAlliance
     RU_NAME = MS('База Нагасаки', 'Nagasaki Base')
 
     DEFENCE_LEVEL = None

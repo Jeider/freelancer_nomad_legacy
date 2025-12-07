@@ -382,7 +382,7 @@ class WarwickPiratesTop(WarwickMember, main_objects.PirateAsteroid):
     SPACE_OBJECT_TEMPLATE = astbase.BerlinAsteroidBase
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.BretoniaPirateDealers
-    FACTION = faction.BretoniaPirate
+    FACTION = faction.Ireland
     AST_EXCLUSION_ZONE_SIZE = 2500
     ASTEROID_ZONES = [
         WarwickAsteroidZone1

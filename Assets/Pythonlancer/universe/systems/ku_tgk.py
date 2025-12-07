@@ -454,7 +454,7 @@ class TekagiWestPirates(TekagiMember, main_objects.PirateAsteroid):
     DEALERS = dealers.KusariPirateDealers
     RU_NAME = MS('База Такамацу', 'Takamutsu Base')
 
-    FACTION = faction.KusariPirate
+    FACTION = faction.Shinobi
     DEFENCE_LEVEL = None
 
 

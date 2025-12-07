@@ -430,7 +430,7 @@ class MunchOutcastBase(MunchMember, main_objects.PirateAsteroid):
     BASE_INDEX = 3
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = astbase.MunchenAsteroidBase
-    FACTION = faction.WorkaroundPirate  # Temporary
+    FACTION = faction.Outcasts  # Temporary
     EQUIP_SET = markets.OutcastSet
 
     DEFENCE_LEVEL = None

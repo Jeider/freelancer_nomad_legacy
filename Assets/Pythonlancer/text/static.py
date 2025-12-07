@@ -1,3 +1,5 @@
+from text.strings import MultiString as MS
+
 RETURN_NAMES = [
     "г. МакКинли ",
     "Скалистые",
@@ -486,21 +488,18 @@ STATIC_NAMES = [
     # Static(210330, 'Мусорщики'),
     # Static(210337, 'Люди Дитриха'),
 
-    Static(238101, 'Гиперврата в Большой Омикрон'),
-    Static(238101, 'Гиперврата в Малый Омикрон'),
-    Static(238102, 'Гиперврата на Мальту'),
-    Static(238103, 'Гипердыра в Омегу-13'),
-    Static(238104, 'Планета Мальта'),
-    Static(238105, 'Станция Гавана'),
-    Static(238106, 'Фрипорт Тринидад'),
-    Static(238107, 'Планета Эрбо'),
-    Static(238108, 'Планета Тахо'),
-    Static(238109, 'База Тортуга'),
-    Static(238110, 'Станция Замора'),
-    Static(238111, 'Платформа Магента'),
-    Static(238112, 'Планета Теруэл'),
-    Static(238115, 'Чёрная дыра'),
+    Static(238101, MS('Гиперврата в Большой Омикрон', 'Jumpgate to Omicron Major')),
+    Static(238101, MS('Гиперврата в Малый Омикрон', 'Jumpgate to Omicron Minor')),
+    Static(238102, MS('Гиперврата на Мальту', 'Jumpgate to Malta')),
+    Static(238103, MS('Гипердыра в Омегу-13', 'Jumphole to Omega-13')),
+    Static(238104, MS('Планета Мальта', 'Planet Malta')),
+    Static(238105, MS('Станция Гавана', "Havana Station")),
+    Static(238106, MS('Фрипорт Тринидад', 'Freeport Trinidad')),
+    Static(238107, MS('Планета Эрбо', 'Planet Erba')),
+    Static(238108, MS('Планета Тахо', 'Planet Tahoe')),
+    Static(238109, MS('База Тортуга', 'Tortuga Base')),
+    Static(238110, MS('Станция Замора', 'Zamora Station')),
+    Static(238111, MS('Платформа Магента', 'Magentha Platform')),
+    Static(238112, MS('Планета Теруэл', 'Planet Teruel')),
+    Static(238115, MS('Чёрная дыра', 'Чёрная дыра')),
 ]
-#
-# for index in range(210199, 210300):
-#     STATIC_NAMES.append(Static(index, '<скоро будет>'))

@@ -435,7 +435,7 @@ class ManhJunkers(ManhMember, main_objects.JunkerBase):
     ALIAS = 'pirate'
     REL = RIGHT
     SPACE_OBJECT_TEMPLATE = junker.BerlinJunker
-    FACTION = faction.LibertyPirate
+    FACTION = faction.LibertyRogues
     RU_NAME = MS('База Рочестер', "Rochester Base")
 
     DEFENCE_LEVEL = None
@@ -454,7 +454,7 @@ class ManhNebulaPirates(ManhMember, main_objects.PirateStation):
     BASE_INDEX = 11
     REL = TOP
     SPACE_OBJECT_TEMPLATE = pirate.ManhattanPirateBase
-    FACTION = faction.LibertyPirate
+    FACTION = faction.LaneHackers
     RU_NAME = MS('База Итака', 'Itaka Base')
 
     DEFENCE_LEVEL = None

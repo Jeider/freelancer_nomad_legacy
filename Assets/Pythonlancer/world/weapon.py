@@ -16,6 +16,7 @@ WEAPON_TYPE_PER_WEAPON_FX = {
     WeaponFX.FX_NEUTRON: 'W_neutron',
     WeaponFX.FX_PLASMA: 'W_plasma',
     WeaponFX.FX_PULSE: 'W_pulse',
+    WeaponFX.FX_DIAMOND: 'W_pulse',
 }
 
 EFFICIENT_GAS_MINING_FX = [
@@ -23,6 +24,7 @@ EFFICIENT_GAS_MINING_FX = [
     WeaponFX.FX_NEUTRON,
     WeaponFX.FX_PLASMA,
     WeaponFX.FX_PULSE,
+    WeaponFX.FX_DIAMOND,
 ]
 
 

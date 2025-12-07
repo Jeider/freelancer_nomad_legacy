@@ -380,7 +380,7 @@ class Tau4Xenos(Tau4Member, main_objects.PirateStation):
     BASE_INDEX = 5
     REL = TOP
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseCalifornia
-    FACTION = faction.Corsairs
+    FACTION = faction.Xenos
     RU_NAME = MS('База Сингапур', 'Singapore Base')
 
     DEFENCE_LEVEL = None

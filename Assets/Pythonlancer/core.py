@@ -7,6 +7,7 @@ from managers.weapon import WeaponManager
 from managers.population import PopulationManager
 from managers.shiparch import ShiparchManager
 from managers.npc_armor import NPCArmorManager
+from managers.factions import FactionManager
 from managers.universe import UniverseManager
 from managers.story import StoryManager
 from managers.store import StoreManager
@@ -36,6 +37,7 @@ class LancerCore(object):
         self.weapons = WeaponManager(self)
         self.shiparch = ShiparchManager(self)
         self.npc_armor = NPCArmorManager(self)
+        self.factions = FactionManager(self)
         self.population = PopulationManager(self)
         self.store = StoreManager(self)
         self.universe = UniverseManager(self)

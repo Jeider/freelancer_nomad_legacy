@@ -160,7 +160,7 @@ class MadHunterAstBase(MadMember, main_objects.PirateAsteroid):
     CALC_STORE = False
     HAVE_CHARACTERS = False
     DEALERS = dealers.KusariPirateDealers
-    FACTION = faction.WorkaroundHunter
+    FACTION = faction.RheinlandHunters
 
     # AST_EXCLUSION_ZONE_SIZE = 3500
     # ASTEROID_ZONES = [

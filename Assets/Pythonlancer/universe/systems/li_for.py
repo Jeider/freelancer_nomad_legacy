@@ -486,7 +486,7 @@ class ForbesJunkers(ForbesMember, main_objects.JunkerBase):
     BASE_INDEX = 8
     REL = TOP
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseForbes
-    FACTION = faction.Junkers
+    FACTION = faction.LibertyRogues
     SHIP_SET = markets.ShipSet('pi_fighter')
     RU_NAME = MS('База Монтгомери', 'Montgomery Base')
 

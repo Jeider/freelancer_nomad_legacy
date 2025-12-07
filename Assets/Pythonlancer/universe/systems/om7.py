@@ -201,7 +201,7 @@ class Om7PirateLargeAsteroid(Om7Member, Om7Kusari, main_objects.PirateStation):
     SPACE_OBJECT_TEMPLATE = kusari_palace.KusariPalace
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.KusariPirateDealers
-    FACTION = faction.KusariPirate
+    FACTION = faction.Shinobi
     DEFENCE_LEVEL = None
     RU_NAME = MS('База Киото', 'Kyoto Base')
 
@@ -217,7 +217,7 @@ class Om7RightPirates(Om7Rheinland, Om7Member, main_objects.PirateGasMiner):
     SPACE_OBJECT_TEMPLATE = gas_miner.RheinlandPirateGasMiner
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.RheinlandPirateDealers
-    FACTION = faction.RheinlandPirate
+    FACTION = faction.Hessians
     DEFENCE_LEVEL = None
     RU_NAME = MS('База Хельголанд', 'Helgoland Base')
 

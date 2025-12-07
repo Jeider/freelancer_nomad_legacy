@@ -224,7 +224,7 @@ class Sig13PirateTopRight(Sig13Liberty, Sig13Member, main_objects.PirateGasMiner
     SPACE_OBJECT_TEMPLATE = gas_miner.CadizGasMiner
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.LibertyPirateDealers
-    FACTION = faction.LibertyPirate
+    FACTION = faction.LibertyRogues
     DEFENCE_LEVEL = None
     RU_NAME = MS('База Ванкувер', 'Vancouver Base')
 
@@ -241,7 +241,7 @@ class Sig13PirateTopLeft(Sig13Liberty, Sig13Member, main_objects.PirateGasMiner)
     SPACE_OBJECT_TEMPLATE = gas_miner.RheinlandPirateGasMiner
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.LibertyPirateDealers
-    FACTION = faction.LibertyPirate
+    FACTION = faction.LaneHackers
     DEFENCE_LEVEL = None
     RU_NAME = MS('База Дакота', 'Dakota Base')
 
