@@ -12,6 +12,7 @@ FACTION_PROP_TEMPLATE = 'hardcoded_inis/static_content/faction_prop.ini'
 class PopulationManager:
     def __init__(self, lancer_core):
         self.core = lancer_core
+        self.all_factions = self.core.factions.get_all()
         self.world_factions = self.core.factions.get_managed_factions()
 
         self.misc_equip = self.core.misc_equip
@@ -36,23 +37,23 @@ class PopulationManager:
     def get_equipment_maps(self):
         return {
             NPC.D1: EqMap(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0),
-            NPC.D2: EqMap(2, 2, 2, 2, 2, 1, 1, 1, 1, 2, 1, 0, 0, 0, 0, 0, 0),
-            NPC.D3: EqMap(2, 2, 2, 3, 2, 2, 2, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1),
-            NPC.D4: EqMap(3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 2),
-            NPC.D5: EqMap(3, 3, 3, 3, 3, 3, 3, 2, 2, 3, 2, 1, 1, 3, 1, 1, 2),
-            NPC.D6: EqMap(3, 3, 3, 4, 3, 3, 3, 3, 2, 3, 3, 1, 1, 3, 2, 1, 2),
-            NPC.D7: EqMap(4, 4, 4, 4, 4, 4, 4, 3, 3, 4, 3, 1, 1, 3, 2, 1, 3),
-            NPC.D8: EqMap(4, 4, 4, 4, 4, 4, 4, 3, 3, 4, 4, 1, 1, 3, 3, 2, 5),
-            NPC.D9: EqMap(4, 4, 4, 5, 5, 4, 4, 4, 4, 5, 4, 1, 1, 3, 3, 2, 5),
-            NPC.D10: EqMap(5, 5, 5, 5, 5, 5, 4, 4, 4, 5, 5, 1, 1, 3, 4, 2, 6),
-            NPC.D11: EqMap(5, 5, 5, 6, 6, 5, 5, 4, 4, 6, 5, 1, 1, 5, 4, 2, 6),
-            NPC.D12: EqMap(6, 6, 6, 6, 6, 6, 5, 5, 5, 6, 6, 1, 1, 5, 5, 3, 6),
-            NPC.D13: EqMap(6, 6, 6, 7, 6, 6, 5, 5, 5, 7, 6, 1, 1, 5, 5, 3, 8),
-            NPC.D14: EqMap(7, 7, 7, 7, 7, 6, 6, 5, 5, 7, 7, 1, 1, 5, 6, 3, 8),
-            NPC.D15: EqMap(7, 7, 7, 7, 7, 7, 6, 6, 6, 7, 7, 1, 1, 7, 6, 3, 10),
-            NPC.D16: EqMap(7, 7, 7, 8, 8, 7, 7, 7, 7, 8, 7, 1, 1, 7, 8, 5, 10),
-            NPC.D17: EqMap(8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 1, 1, 7, 10, 5, 10),
-            NPC.D18: EqMap(8, 8, 8, 9, 9, 8, 8, 8, 8, 9, 8, 1, 1, 7, 10, 20, 20),
+            NPC.D2: EqMap(2, 2, 2, 2, 2, 2, 2, 1, 1, 2, 2, 0, 0, 0, 0, 0, 0),
+            NPC.D3: EqMap(3, 3, 3, 3, 3, 3, 2, 2, 2, 3, 3, 1, 1, 1, 1, 1, 1),
+            NPC.D4: EqMap(4, 4, 4, 4, 4, 4, 3, 3, 3, 4, 4, 1, 1, 1, 1, 1, 2),
+            NPC.D5: EqMap(5, 5, 5, 5, 5, 5, 4, 4, 4, 5, 4, 1, 1, 3, 1, 1, 2),
+            NPC.D6: EqMap(5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1, 1, 3, 2, 1, 2),
+            NPC.D7: EqMap(6, 6, 6, 6, 6, 6, 5, 5, 5, 6, 5, 1, 1, 3, 2, 1, 3),
+            NPC.D8: EqMap(6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 1, 1, 3, 3, 2, 5),
+            NPC.D9: EqMap(7, 7, 7, 7, 7, 6, 6, 6, 6, 7, 6, 1, 1, 3, 3, 2, 5),
+            NPC.D10: EqMap(7, 7, 7, 7, 7, 7, 7, 6, 6, 7, 7, 1, 1, 3, 4, 2, 6),
+            NPC.D11: EqMap(7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 1, 1, 5, 4, 2, 6),
+            NPC.D12: EqMap(8, 8, 8, 8, 8, 7, 7, 7, 7, 8, 7, 1, 1, 5, 5, 3, 6),
+            NPC.D13: EqMap(8, 8, 8, 8, 8, 8, 7, 7, 7, 8, 8, 1, 1, 5, 5, 3, 8),
+            NPC.D14: EqMap(8, 8, 8, 8, 8, 8, 8, 7, 7, 8, 8, 1, 1, 5, 6, 3, 8),
+            NPC.D15: EqMap(8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 1, 1, 7, 6, 3, 10),
+            NPC.D16: EqMap(9, 9, 9, 9, 9, 8, 8, 8, 8, 9, 8, 1, 1, 7, 8, 5, 10),
+            NPC.D17: EqMap(9, 9, 9, 9, 9, 9, 8, 8, 8, 9, 9, 1, 1, 7, 10, 5, 10),
+            NPC.D18: EqMap(9, 9, 9, 9, 9, 9, 9, 8, 8, 9, 9, 1, 1, 7, 10, 20, 20),
             NPC.D19: EqMap(9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 1, 2, 9, 15, 25, 25),
         }
 
@@ -100,6 +101,8 @@ class PopulationManager:
                     self.loadouts_db[faction.CODE].append(loadout)
                     self.loadouts_list.append(loadout)
 
+                    faction.add_npc_ship(npc.get_npc_shiparch_nickname())
+
     def get_npcships(self):
         return DIVIDER.join([npc.get_npc_shiparch() for npc in self.npc_list])
 
@@ -124,9 +127,11 @@ class PopulationManager:
         return DIVIDER.join(self.loadouts_list)
 
     def get_faction_prop_content(self):
+        # # STATIC EDITION
         params = {}
-        for faction in self.world_factions:
-            params[faction.get_msg_code()] = faction
+        for faction in self.all_factions:
+            # params[faction.get_msg_code()] = faction  # static edition
+            params['factions'] = DIVIDER.join(f.get_faction_prop() for f in self.all_factions)
         return self.core.tpl_manager.get_result(FACTION_PROP_TEMPLATE, params)
 
     def sync_data(self):

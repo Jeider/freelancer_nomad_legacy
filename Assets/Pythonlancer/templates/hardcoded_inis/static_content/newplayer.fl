@@ -34,7 +34,7 @@ wg = 0, HpWeapon04
 wg = 0, HpWeapon05
 wg = 0, HpWeapon06
 
-{{ reputations }}
+{{ player_factions }}
 
 
 

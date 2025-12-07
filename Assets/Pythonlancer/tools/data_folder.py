@@ -190,6 +190,10 @@ class DataFolder:
         equip_file = self.get_exe() / 'newplayer.fl'
         equip_file.write_text(content, encoding='utf-8')
 
+    def sync_empathy(self, content):
+        equip_file = self.get_missions() / 'empathy.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
     def sync_dacom(self, content):
         equip_file = self.get_exe() / 'dacom.ini'
         equip_file.write_text(content, encoding='utf-8')

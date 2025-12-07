@@ -151,7 +151,7 @@ class Misson01B(ingame_mission.IngameMission):
                 self,
                 'pir_f_A',
                 count=3,
-                affiliation=faction.WorkaroundPirate.CODE,
+                affiliation=faction.RheinlandPirate.CODE,
                 system_class=S.sig8,
                 labels=[
                     'pi_assault',
@@ -175,7 +175,7 @@ class Misson01B(ingame_mission.IngameMission):
                 self,
                 'pir_e_A',
                 count=2,
-                affiliation=faction.WorkaroundPirate.CODE,
+                affiliation=faction.RheinlandPirate.CODE,
                 system_class=S.sig8,
                 labels=[
                     'pi_assault',
@@ -199,7 +199,7 @@ class Misson01B(ingame_mission.IngameMission):
                 self,
                 'pir_f_B',
                 count=2,
-                affiliation=faction.WorkaroundPirate.CODE,
+                affiliation=faction.RheinlandPirate.CODE,
                 system_class=S.sig8,
                 labels=[
                     'pi_assault',
@@ -223,7 +223,7 @@ class Misson01B(ingame_mission.IngameMission):
                 self,
                 'pir_e_B',
                 count=2,
-                affiliation=faction.WorkaroundPirate.CODE,
+                affiliation=faction.RheinlandPirate.CODE,
                 system_class=S.sig8,
                 labels=[
                     'pi_assault',

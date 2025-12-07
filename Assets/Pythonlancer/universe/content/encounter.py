@@ -39,9 +39,11 @@ class MainTradeTLR(Encounter):
     NICKNAME = 'main_trade_tlr'
     FILENAME = 'missions\\NPC\\GENERIC\\main_trade_tlr.ini'
 
+
 class PatrolPolice(Encounter):
     NICKNAME = 'patrol_police'
     FILENAME = 'missions\\NPC\\patrol_police.ini'
+
 
 class PatrolTLR(Encounter):
     NICKNAME = 'patrol_tlr'

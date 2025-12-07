@@ -508,12 +508,16 @@ distance = {tlr_distance}
         return self.FACTION_CODE
 
     def get_lawful_factions(self):
+        if not self.ENABLE_POPULATION:
+            return []
         factions = self.FIRST_LAWFUL_POPULATION_CLASS.get_lawful_factions()
         if self.SECOND_LAWFUL_POPULATION_CLASS:
             factions += self.SECOND_LAWFUL_POPULATION_CLASS.get_lawful_factions()
         return factions
 
     def get_unlawful_factions(self):
+        if not self.ENABLE_POPULATION:
+            return []
         factions = self.FIRST_UNLAWFUL_POPULATION_CLASS.get_unlawful_factions()
         if self.SECOND_LAWFUL_POPULATION_CLASS:
             factions += self.SECOND_UNLAWFUL_POPULATION_CLASS.get_unlawful_factions()

@@ -418,7 +418,7 @@ class Misson02(ingame_mission.IngameMission):
                 relative_range=1000,
                 npc=NPC(
                     faction=faction.Junkers,
-                    ship=ship.Dagger,
+                    ship=ship.Startracker,
                     level=NPC.D2,
                     equip_map=EqMap(base_level=2),
                 )
@@ -433,7 +433,7 @@ class Misson02(ingame_mission.IngameMission):
                 relative_range=1500,
                 npc=NPC(
                     faction=faction.Junkers,
-                    ship=ship.Stiletto,
+                    ship=ship.Starblazer,
                     level=NPC.D2,
                     equip_map=EqMap(base_level=2),
                 )

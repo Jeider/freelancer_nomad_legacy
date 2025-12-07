@@ -60,6 +60,10 @@ tractored_explosion = {tractored_explosion}
     INTIIAL_WORLD_TEMPLATE = ''';{base_nickname}
 locked_gate = {int_hash}
 npc_locked_gate = {int_hash}'''
+
+    NEW_PLAYER_TEMPLATE = ''';{base_nickname}
+locked_gate = {int_hash}'''
+
     STORY_TEMPLATE = 'Act_LockDock = Player, {base_nickname}, lock'
     
     def __init__(self, locked_base, key_fx, key_name):
@@ -97,6 +101,12 @@ npc_locked_gate = {int_hash}'''
 
     def get_initial_world(self):
         return self.INTIIAL_WORLD_TEMPLATE.format(
+            base_nickname=self.base_nickname,
+            int_hash=CreateId.get_int_id(self.locked_base.get_inspace_nickname())
+        )
+
+    def get_new_player(self):
+        return self.NEW_PLAYER_TEMPLATE.format(
             base_nickname=self.base_nickname,
             int_hash=CreateId.get_int_id(self.locked_base.get_inspace_nickname())
         )

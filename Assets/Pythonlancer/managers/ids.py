@@ -15,7 +15,23 @@ INITIAL_RUMOR_ID = 138000
 INITIAL_KNOWLEDGE_ID = 10001
 
 INITIAL_STATICS_ID = 202607
-INITIAL_FACTIONS_ID = 210200
+
+INITIAL_FACTIONS_SHORTS_ID = 210200
+INITIAL_FACTIONS_DESC_ID = 210300
+INITIAL_FACTIONS_MAIN_ID = 196846
+INITIAL_FACTIONS_OFFER1_ID = 328680
+INITIAL_FACTIONS_OFFER2_ID = 328780
+INITIAL_FACTIONS_OFFER3_ID = 328880
+INITIAL_FACTIONS_OFFER4_ID = 328980
+
+# 047050 - Navy (short)
+
+# 196846 - Liberty Navy (Main!)
+
+# 328680 - Liberty Navy
+# 328780 - the Liberty Navy
+# 328880 - Liberty Navy
+# 328980 - The Liberty Navy
 
 
 class IDsManager:
@@ -34,8 +50,14 @@ class IDsManager:
         self.script = IDsDatabase('script', INITIAL_SCRIPT_ID)
         self.universe = IDsDatabase('universe', INITIAL_UNIVERSE_ID)
         self.rumors = IDsDatabase('rumor', INITIAL_RUMOR_ID)
-        self.factions = IDsDatabase('factions', INITIAL_FACTIONS_ID)
         self.static = IDsDatabase('static', INITIAL_STATICS_ID)
+        self.factions_shorts = IDsDatabase('factions_shorts', INITIAL_FACTIONS_SHORTS_ID)
+        self.factions_desc = IDsDatabase('factions_desc', INITIAL_FACTIONS_DESC_ID)
+        self.factions_main = IDsDatabase('factions_main', INITIAL_FACTIONS_MAIN_ID)
+        self.factions_offer1 = IDsDatabase('factions_offer1', INITIAL_FACTIONS_OFFER1_ID)
+        self.factions_offer2 = IDsDatabase('factions_offer2', INITIAL_FACTIONS_OFFER2_ID)
+        self.factions_offer3 = IDsDatabase('factions_offer3', INITIAL_FACTIONS_OFFER3_ID)
+        self.factions_offer4 = IDsDatabase('factions_offer4', INITIAL_FACTIONS_OFFER4_ID)
 
         self.databases = [
             self.weapon,
@@ -49,8 +71,14 @@ class IDsManager:
             self.script,
             self.universe,
             self.rumors,
-            self.factions,
             self.static,
+            self.factions_shorts,
+            self.factions_desc,
+            self.factions_main,
+            self.factions_offer1,
+            self.factions_offer2,
+            self.factions_offer3,
+            self.factions_offer4,
         ]
         #
         # for item in RETURN_NAMES:

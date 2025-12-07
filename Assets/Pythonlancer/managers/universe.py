@@ -175,8 +175,10 @@ class UniverseManager:
         return self.core.tpl_manager.get_result(MBASES_TEMPLATE, {'generated': self.get_mbases_content()})
 
     def get_initial_world_locked_docks(self):
-        locks = [key.get_initial_world() for key in self.keys]
-        return DIVIDER.join(locks)
+        return DIVIDER.join([key.get_initial_world() for key in self.keys])
+
+    def get_new_player_locked_docks(self):
+        return DIVIDER.join([key.get_new_player() for key in self.keys])
 
     def get_key_equip(self):
         return DIVIDER.join([key.get_equip() for key in self.keys])
@@ -201,13 +203,14 @@ class UniverseManager:
     def get_initial_world_content(self):
         context = {
             'locked_gates': self.get_initial_world_locked_docks(),
+            'factions': self.core.factions.get_initial_world_content(),
         }
         return self.core.tpl_manager.get_result(INITIAL_WORLD_TEMPLATE, context)
 
     def get_new_player_content(self):
         context = {
-            'locked_gates': self.get_story_locked_docks(),
-            'player_factions': self.core.factions.get_player_factions()
+            'locked_gates': self.get_new_player_locked_docks(),
+            'player_factions': self.core.factions.get_player_relations()
         }
         return self.core.tpl_manager.get_result(NEW_PLAYER_TEMPLATE, context)
 
@@ -217,6 +220,9 @@ class UniverseManager:
             'debug': True,
         }
         return self.core.tpl_manager.get_result(DACOM_TEMPLATE, context)
+
+    def get_empathy_content(self):
+        return self.core.factions.get_empathy_content()
 
     def sync_data(self):
         if not self.core.write:
@@ -230,6 +236,7 @@ class UniverseManager:
         data_folder.sync_infocard_map(self.get_infocard_map_content())
         data_folder.sync_initial_world(self.get_initial_world_content())
         data_folder.sync_new_player(self.get_new_player_content())
+        data_folder.sync_empathy(self.get_empathy_content())
         data_folder.sync_dacom(self.get_dacom_content())
 
         for the_system in self.universe_root.get_all_systems():

@@ -162,7 +162,7 @@ class Base:
         self.trade_messages = []
         self.journey_messages = []
         self.factions = {}
-        self.add_faction(self.system_object.get_faction())
+        self.apply_factions()
         self.char_factory = bodyparts.CharacterFactory()
         self.bartender = None
         self.char_index = 0
@@ -179,6 +179,20 @@ class Base:
 
             if self.props:
                 self.parse_prop_actions()
+
+    def apply_factions(self):
+        faction = self.system_object.get_faction()
+        self.add_faction(faction)
+
+        lawful_factions = self.system.get_lawful_factions()
+        unlawful_factions = self.system.get_unlawful_factions()
+
+        if faction in lawful_factions:
+            for faction in lawful_factions:
+                self.add_faction(faction)
+        else:
+            for faction in unlawful_factions:
+                self.add_faction(faction)
 
     def get_base_msg(self):
         return self.system_object.get_base_msg()

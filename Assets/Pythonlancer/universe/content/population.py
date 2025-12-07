@@ -11,7 +11,7 @@ POP_MIXED = 'mixed'
 class Population(object):
 
     GENERIC_PIRATES = None
-    BOUNTY_HUNTERS = None  # faction.WorkaroundHunter
+    BOUNTY_HUNTERS = None
     GLOBAL_TRADERS = None
     JUNKERS = None
 
@@ -238,12 +238,13 @@ faction = {bounty_hunters}, 1.00000'''
 
     @classmethod
     def get_lawful_factions(cls):
-        return [
+        factions = [
             cls.MAIN_FACTION,
             cls.MAIN_TRADERS,
             cls.BOUNTY_HUNTERS,
             cls.GLOBAL_TRADERS,
         ]
+        return [f for f in factions if f is not None]
 
     @classmethod
     def get_encounter_definitions(cls):
@@ -263,6 +264,8 @@ faction = {bounty_hunters}, 1.00000'''
 
 class UnlawfulPopulation(Population):
     MAIN_PIRATES = None
+    GENERIC_PIRATES = None
+    JUNKERS = None
     ATTACK_TLR_PATROL = encounter.PatrolTLR
 
     @classmethod
@@ -277,11 +280,12 @@ class UnlawfulPopulation(Population):
 
     @classmethod
     def get_unlawful_factions(cls):
-        return [
+        factions = [
             cls.MAIN_PIRATES,
             cls.GENERIC_PIRATES,
             cls.JUNKERS,
         ]
+        return [f for f in factions if f is not None]
 
     @classmethod
     def get_encounter_definitions(cls):
@@ -292,8 +296,8 @@ class RheinlandLegalPopulation(LawfulPopulation):
     MAIN_FACTION = faction.RheinlandMain
     MAIN_TRADERS = faction.RheinlandCivilians
     GENERIC_PIRATES = faction.RheinlandPirate
-    # BOUNTY_HUNTERS = faction.RheinlandHunters
-    GLOBAL_TRADERS = faction.RheinlandCivilians
+    BOUNTY_HUNTERS = faction.RheinlandHunters
+    GLOBAL_TRADERS = faction.RheinlandTraders
     JUNKERS = faction.Junkers
 
     HIGH_CAPSHIP_ENC = encounter.RhCruiser
@@ -311,9 +315,9 @@ class LibertyLegalPopulation(LawfulPopulation):
     MAIN_FACTION = faction.LibertyMain
     MAIN_TRADERS = faction.LibertyCivilians
     GENERIC_PIRATES = faction.LibertyPirate
-    # BOUNTY_HUNTERS = faction.LibertyHunters
-    GLOBAL_TRADERS = faction.LibertyCivilians
-    JUNKERS = faction.Junkers
+    BOUNTY_HUNTERS = faction.LibertyHunters
+    GLOBAL_TRADERS = faction.LibertyTraders
+    JUNKERS = faction.LibertyRogues
 
     HIGH_CAPSHIP_ENC = encounter.LiCruiser
     MEDIUM_CAPSHIP_ENC = encounter.LiCruiser
@@ -330,9 +334,9 @@ class BretoniaLegalPopulation(LawfulPopulation):
     MAIN_FACTION = faction.BretoniaMain
     MAIN_TRADERS = faction.BretoniaCivilians
     GENERIC_PIRATES = faction.BretoniaPirate
-    # BOUNTY_HUNTERS = faction.BretoniaHunters
-    GLOBAL_TRADERS = faction.BretoniaCivilians
-    JUNKERS = faction.Junkers
+    BOUNTY_HUNTERS = faction.BretoniaHunters
+    GLOBAL_TRADERS = faction.BretoniaTraders
+    JUNKERS = faction.Xenos
 
     HIGH_CAPSHIP_ENC = encounter.BrDestroyer
     MEDIUM_CAPSHIP_ENC = encounter.BrGunboat
@@ -349,9 +353,9 @@ class KusariLegalPopulation(LawfulPopulation):
     MAIN_FACTION = faction.KusariMain
     MAIN_TRADERS = faction.KusariCivilians
     GENERIC_PIRATES = faction.KusariPirate
-    # BOUNTY_HUNTERS = faction.KusariHunters
-    GLOBAL_TRADERS = faction.KusariCivilians
-    JUNKERS = faction.Junkers
+    BOUNTY_HUNTERS = faction.KusariHunters
+    GLOBAL_TRADERS = faction.KusariTraders
+    JUNKERS = faction.FarmerAlliance
 
     HIGH_CAPSHIP_ENC = encounter.KuDestroyer
     MEDIUM_CAPSHIP_ENC = encounter.KuGunboat
@@ -366,18 +370,26 @@ class KusariLegalPopulation(LawfulPopulation):
 
 class RheinlandPiratePopulation(UnlawfulPopulation):
     MAIN_PIRATES = faction.RheinlandPirate
+    GENERIC_PIRATES = faction.RheinlandPirate
+    JUNKERS = faction.Junkers
 
 
 class LibertyPiratePopulation(UnlawfulPopulation):
     MAIN_PIRATES = faction.LibertyPirate
+    GENERIC_PIRATES = faction.LibertyRogues
+    JUNKERS = faction.LaneHackers
 
 
 class BretoniaPiratePopulation(UnlawfulPopulation):
     MAIN_PIRATES = faction.BretoniaPirate
+    GENERIC_PIRATES = faction.Ireland
+    JUNKERS = faction.Xenos
 
 
 class KusariPiratePopulation(UnlawfulPopulation):
     MAIN_PIRATES = faction.KusariPirate
+    GENERIC_PIRATES = faction.Shinobi
+    JUNKERS = faction.FarmerAlliance
 
 
 class CorsairAttackersPopulation(UnlawfulPopulation):

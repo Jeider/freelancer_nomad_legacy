@@ -980,7 +980,7 @@ class ShipElite(ShipFighter):
     SHIPCLASS_NAME = 'elite'
 
 
-class ShipFreighter(BaseFreighterShip):
+class ShipFreighter(Ship2, BaseFreighterShip):
     EQUIPMENT_SHIPCLASS = Equipment.SHIPCLASS_FREIGHTER
     SHIPCLASS_NAME = 'freighter'
     EXTRA_CLASSES = []
