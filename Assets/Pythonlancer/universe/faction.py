@@ -255,11 +255,11 @@ space_costume = pl_female2_head, pl_female1_journeyman_body, {helmet2}_female
 '''
 
 COMM_ORDER = '''
-space_costume = pi_pirate1_head, pi_orillion_body, {helmet2}
+space_costume = pi_pirate1_head, pi_orillion_body, {helmet1}
 space_costume = pi_pirate4_head, pi_orillion_body, {helmet2}
-space_costume = sh_male4_head, pi_orillion_body, {helmet2}
+space_costume = sh_male4_head, pi_orillion_body, {helmet1}
 space_costume = ge_male2_head, pi_orillion_body, {helmet2}
-space_costume = ge_male4_head, pi_orillion_body, {helmet2}
+space_costume = ge_male4_head, pi_orillion_body, {helmet1}
 space_costume = ge_male1_head, pi_orillion_body, {helmet2}
 space_costume = li_newscaster_head_gen_hat, pl_female2_journeyman_body, {helmet1}_female
 space_costume = li_newscaster_head_gen_hat, pl_female2_journeyman_body, {helmet2}_female
@@ -309,11 +309,18 @@ class Faction:
     FREIGHTER = None
     RU_NAME = None
     RU_NAME_FULL = None
+    FORCE_IDS_NAME = None
+    FORCE_IDS_SHORT_NAME = None
+    FORCE_IDS_INFO = None
     DEFAULT_REPUTATION = NEUTRAL
     SCANNING_CARGO = False
     IS_PIRATE = False
+    IS_MILITARY = False
+    IS_CIVILIAN = False
+    RANDOM_MISSIONS = True
 
     MANAGED = True
+    LISTED = True
     CODE = None
     MSG_CODE = None
     KIND = None
@@ -328,6 +335,9 @@ class Faction:
     COMM_TEMPLATE = None
     LEGALITY = 'lawful'
     EXTRA_NPC_SHIPS = []
+    JUMP_PREFERENCE = None
+    PLURALITY = None
+    HAVE_FACTION_PROPS = True
 
     subclasses = []
 
@@ -342,28 +352,34 @@ class Faction:
         self.russian = russian
         self.ids = ids
         self.relations = {}
-        self.ids_full_name = self.ids.factions_main.new_name(
-            self.get_ru_name_full_clean()
-        )
-        self.ids_short_name = self.ids.factions_shorts.new_name(
-            self.get_ru_name_clean()
-        )
-        self.ids_info = self.ids.factions_desc.new_info(
-            self.get_ru_info()
-        )
-        # misc
-        self.ids_offer1 = self.ids.factions_offer1.new_name(
-            self.get_ru_name_full_clean()
-        )
-        self.ids_offer2 = self.ids.factions_offer2.new_name(
-            self.get_ru_name_full_clean()
-        )
-        self.ids_offer3 = self.ids.factions_offer3.new_name(
-            self.get_ru_name_full_clean()
-        )
-        self.ids_offer4 = self.ids.factions_offer4.new_name(
-            self.get_ru_name_full_clean()
-        )
+
+        if not self.FORCE_IDS_NAME:
+            self.ids_full_name = self.ids.factions_main.new_name(
+                self.get_ru_name_full_clean()
+            )
+            # misc
+            self.ids_offer1 = self.ids.factions_offer1.new_name(
+                self.get_ru_name_full_clean()
+            )
+            self.ids_offer2 = self.ids.factions_offer2.new_name(
+                self.get_ru_name_full_clean()
+            )
+            self.ids_offer3 = self.ids.factions_offer3.new_name(
+                self.get_ru_name_full_clean()
+            )
+            self.ids_offer4 = self.ids.factions_offer4.new_name(
+                self.get_ru_name_full_clean()
+            )
+
+        if not self.FORCE_IDS_SHORT_NAME:
+            self.ids_short_name = self.ids.factions_shorts.new_name(
+                self.get_ru_name_clean()
+            )
+
+        if not self.FORCE_IDS_INFO:
+            self.ids_info = self.ids.factions_desc.new_info(
+                self.get_ru_info()
+            )
         self.npc_ships = []
         if len(self.EXTRA_NPC_SHIPS):
             self.npc_ships += self.EXTRA_NPC_SHIPS
@@ -400,6 +416,18 @@ class Faction:
 
     def is_managed(self):
         return self.MANAGED
+
+    def is_listed(self):
+        return self.LISTED
+
+    def has_military_mission(self):
+        return self.RANDOM_MISSIONS and self.IS_MILITARY and self.MANAGED
+
+    def has_civilian_mission(self):
+        return self.RANDOM_MISSIONS and self.IS_CIVILIAN and self.MANAGED
+
+    def has_pirate_mission(self):
+        return self.RANDOM_MISSIONS and self.IS_PIRATE and self.MANAGED
 
     def get_ships(self):
         ships = []
@@ -462,9 +490,9 @@ class Faction:
     def get_initial_world_content(self):
         return f'''[Group]
 nickname = {self.get_code()}
-ids_name = {self.ids_full_name.id}
-ids_info = {self.ids_info.id}
-ids_short_name = {self.ids_short_name.id}
+ids_name = {self.FORCE_IDS_NAME if self.FORCE_IDS_NAME else self.ids_full_name.id}
+ids_info = {self.FORCE_IDS_INFO if self.FORCE_IDS_INFO else self.ids_info.id}
+ids_short_name = {self.FORCE_IDS_SHORT_NAME if self.FORCE_IDS_SHORT_NAME else self.ids_short_name.id}
 {self.get_relations_data()}
 '''
 
@@ -486,13 +514,22 @@ event = random_mission_abortion, -0.067500
 {self.get_empathy_data()}
 '''
 
+    def get_empty_rep(self, hate=False):
+        return f'rep = {ENEMY_MED if hate else NEUTRAL}, {self.get_code()}'
+
     def get_plurality(self):
+        if self.PLURALITY:
+            return self.PLURALITY
         return 'plural' if self.IS_PIRATE else 'singular'
 
     def get_jump_preference(self):
+        if self.JUMP_PREFERENCE:
+            return self.JUMP_PREFERENCE
         return 'jumphole' if self.IS_PIRATE else 'jumpgate'
 
     def get_faction_prop(self):
+        if not self.HAVE_FACTION_PROPS:
+            return ''
         items = [
             '[FactionProps]',
             f'affiliation = {self.get_code()}',
@@ -835,11 +872,13 @@ class RheinlandMain(LawfulFaction, RheinlandMainFleet, BaseRheinland, RheinlandM
     EXTRA_NPC_SHIPS = [
         'rh_grp_main_cruiser', 'rh_grp_main_gunboat'
     ]
+    IS_MILITARY = True
 
-
-class RheinlandMilitary(RheinlandMain):
-    CODE = 'rm_grp'
-    MANAGED = False
+#
+# class RheinlandMilitary(RheinlandMain):
+#     CODE = 'rm_grp'
+#     MANAGED = False
+#     RANDOM_MISSIONS = False
 
 
 class RheinlandCivilians(LawfulFaction, RheinlandMainFleet, BaseRheinland, RheinlandCivEquip, Faction):
@@ -851,20 +890,22 @@ class RheinlandCivilians(LawfulFaction, RheinlandMainFleet, BaseRheinland, Rhein
     MC_COSTUME = 'mc_siemens'
     COMM_TEMPLATE = COMM_PEASANT
     EXTRA_NPC_SHIPS = [LIFTER]
+    IS_CIVILIAN = True
 
 
 class RheinlandTraders(LawfulFaction, CivilianFleet, BaseRheinland, RheinlandCivEquip, Faction):
-    CODE = 'tr_grp_rh'
+    CODE = 'tr_rh_grp'
     WEAPON = gun.RheinlandCivgun
     GUEST_APPEARANCE = bodyparts.PEASANT
     RU_NAME = MS('Интерсп+эйс', "Interspace")
     RU_NAME_FULL = MS('Коммерция Интерспейс', "Interspace commerce")
     MC_COSTUME = 'mc_siemens'
     COMM_TEMPLATE = COMM_PEASANT
+    IS_CIVILIAN = True
 
 
 class RheinlandHunters(LawfulFaction, RheinlandSecondFleet, BaseRheinland, RheinlandCivEquip, Faction):
-    CODE = 'bh_grp_rh'
+    CODE = 'bh_rh_grp'
     WEAPON = gun.RheinlandHuntergun
     AFTERBURN = misc.RH_MAIN
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
@@ -875,10 +916,11 @@ class RheinlandHunters(LawfulFaction, RheinlandSecondFleet, BaseRheinland, Rhein
     COMM_TEMPLATE = COMM_JOURNEYMAN
     HELMET1 = bodyparts.COMM_RH_ELITE
     HELMET2 = bodyparts.COMM_RH_GUARD
+    IS_CIVILIAN = True
 
 
 class RheinlandPirate(UnlawfulFaction, RheinlandSecondFleet, BaseRheinland, RheinlandPirateEquip, Faction):
-    CODE = 'pi_grp_rh'
+    CODE = 'pi_rh_grp'
     WEAPON = gun.RheinlandPirategun
     GUEST_APPEARANCE = bodyparts.PIRATE
     RU_NAME = MS('Бундсчух', "Bundschuh")
@@ -929,11 +971,13 @@ class LibertyMain(LawfulFaction, LibertyMainFleet, BaseLiberty, LibertyMainEquip
     EXTRA_NPC_SHIPS = [
         'li_grp_main_cruiser',
     ]
+    IS_MILITARY = True
 
-
-class LibertyMilitary(LibertyMain):
-    CODE = 'lm_grp'
-    MANAGED = False
+#
+# class LibertyMilitary(LibertyMain):
+#     CODE = 'lm_grp'
+#     MANAGED = False
+#     RANDOM_MISSIONS = False
 
 
 class ASF(LibertyMain):
@@ -944,6 +988,7 @@ class ASF(LibertyMain):
     RU_NAME = MS('СБА', "ASF")
     RU_NAME_FULL = MS('Служба безопасности Альянса', "Alliance Security Force")
     MANAGED = False
+    RANDOM_MISSIONS = False
 
 
 class LibertyCivilians(LawfulFaction, LibertyMainFleet, BaseLiberty, LibertyCivEquip, Faction):
@@ -955,20 +1000,22 @@ class LibertyCivilians(LawfulFaction, LibertyMainFleet, BaseLiberty, LibertyCivE
     MC_COSTUME = 'mc_deepspace'
     COMM_TEMPLATE = COMM_PEASANT
     EXTRA_NPC_SHIPS = [LIFTER]
+    IS_CIVILIAN = True
 
 
 class LibertyTraders(LawfulFaction, CivilianFleet, BaseLiberty, LibertyCivEquip, Faction):
-    CODE = 'tr_grp_li'
+    CODE = 'tr_li_grp'
     WEAPON = gun.LibertyCivgun
     GUEST_APPEARANCE = bodyparts.PEASANT
     RU_NAME = MS('Адж+ейра', "Ageira")
     RU_NAME_FULL = MS('Адж+ейра Технолоджис', "Ageira Technologies")
     MC_COSTUME = 'mc_deepspace'
     COMM_TEMPLATE = COMM_PEASANT
+    IS_CIVILIAN = True
 
 
 class LibertyHunters(LawfulFaction, LibertySecondFleet, BaseLiberty, LibertyCivEquip, Faction):
-    CODE = 'bh_grp_li'
+    CODE = 'bh_li_grp'
     WEAPON = gun.LibertyHuntergun
     AFTERBURN = misc.LI_MAIN
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
@@ -979,10 +1026,11 @@ class LibertyHunters(LawfulFaction, LibertySecondFleet, BaseLiberty, LibertyCivE
     COMM_TEMPLATE = COMM_JOURNEYMAN
     HELMET1 = bodyparts.COMM_LI_ELITE
     HELMET2 = bodyparts.COMM_LI_GUARD
+    IS_CIVILIAN = True
 
 
 class LibertyPirate(UnlawfulFaction, LibertySecondFleet, BaseLiberty, LibertyPirateEquip, Faction):
-    CODE = 'pi_grp_li'
+    CODE = 'pi_li_grp'
     WEAPON = gun.LibertyPirategun
     GUEST_APPEARANCE = bodyparts.PIRATE
     RU_NAME = MS('Д+икси', "Dixie")
@@ -1045,11 +1093,13 @@ class BretoniaMain(LawfulFaction, BretoniaMainFleet, BaseBretonia, BretoniaMainE
     EXTRA_NPC_SHIPS = [
         'br_grp_main_destroyer', 'br_grp_main_gunboat'
     ]
+    IS_MILITARY = True
 
-
-class BretoniaMilitary(BretoniaMain):
-    CODE = 'bm_grp'
-    MANAGED = False
+#
+# class BretoniaMilitary(BretoniaMain):
+#     CODE = 'bm_grp'
+#     MANAGED = False
+#     RANDOM_MISSIONS = False
 
 
 class BretoniaCivilians(LawfulFaction, BretoniaMainFleet, BaseBretonia, BretoniaCivEquip, Faction):
@@ -1062,20 +1112,22 @@ class BretoniaCivilians(LawfulFaction, BretoniaMainFleet, BaseBretonia, Bretonia
     MC_COSTUME = 'mc_aegis'
     COMM_TEMPLATE = COMM_PEASANT
     EXTRA_NPC_SHIPS = [LIFTER]
+    IS_CIVILIAN = True
 
 
 class BretoniaTraders(LawfulFaction, CivilianFleet, BaseBretonia, BretoniaCivEquip, Faction):
-    CODE = 'tr_grp_br'
+    CODE = 'tr_br_grp'
     WEAPON = gun.BretoniaCivgun
     GUEST_APPEARANCE = bodyparts.PEASANT
     RU_NAME = MS('Б+овекс', "Bowex")
     RU_NAME_FULL = MS('Пограничные перевозки Бовекс', "Border World Exports")
     MC_COSTUME = 'mc_aegis'
     COMM_TEMPLATE = COMM_PEASANT
+    IS_CIVILIAN = True
 
 
 class BretoniaHunters(LawfulFaction, BretoniaSecondFleet, BaseBretonia, BretoniaCivEquip, Faction):
-    CODE = 'bh_grp_br'
+    CODE = 'bh_br_grp'
     WEAPON = gun.BretoniaHuntergun
     AFTERBURN = misc.BR_MAIN
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
@@ -1087,10 +1139,11 @@ class BretoniaHunters(LawfulFaction, BretoniaSecondFleet, BaseBretonia, Bretonia
     COMM_TEMPLATE = COMM_JOURNEYMAN
     HELMET1 = bodyparts.COMM_BR_GUARD
     HELMET2 = bodyparts.COMM_BR_ELITE
+    IS_CIVILIAN = True
 
 
 class BretoniaPirate(UnlawfulFaction, CivilianFleet, BaseBretonia, BretoniaPirateEquip, Faction):
-    CODE = 'pi_grp_br'
+    CODE = 'pi_br_grp'
     WEAPON = gun.BretoniaPirategun
     GUEST_APPEARANCE = bodyparts.PIRATE
     RU_NAME = MS('Гайане', "Gaians")
@@ -1141,11 +1194,13 @@ class KusariMain(LawfulFaction, KusariMainFleet, BaseKusari, KusariMainEquip, Fa
     EXTRA_NPC_SHIPS = [
         'ku_grp_main_destroyer', 'ku_grp_main_gunboat'
     ]
+    IS_MILITARY = True
 
-
-class KusariMilitary(KusariMain):
-    CODE = 'km_grp'
-    MANAGED = False
+#
+# class KusariMilitary(KusariMain):
+#     CODE = 'km_grp'
+#     MANAGED = False
+#     RANDOM_MISSIONS = False
 
 
 class KusariCivilians(LawfulFaction, KusariMainFleet, BaseKusari, KusariCivEquip, Faction):
@@ -1157,20 +1212,22 @@ class KusariCivilians(LawfulFaction, KusariMainFleet, BaseKusari, KusariCivEquip
     MC_COSTUME = 'mc_gasmining'
     COMM_TEMPLATE = COMM_PEASANT
     EXTRA_NPC_SHIPS = [LIFTER]
+    IS_CIVILIAN = True
 
 
 class KusariTraders(LawfulFaction, CivilianFleet, BaseKusari, KusariCivEquip, Faction):
-    CODE = 'tr_grp_ku'
+    CODE = 'tr_ku_grp'
     WEAPON = gun.KusariCivgun
     GUEST_APPEARANCE = bodyparts.PEASANT
     RU_NAME = MS('Сам+ура', "Samura")
     RU_NAME_FULL = MS('Промышленность Сам+ура', "Samura Industries")
     MC_COSTUME = 'mc_gasmining'
     COMM_TEMPLATE = COMM_PEASANT
+    IS_CIVILIAN = True
 
 
 class KusariHunters(LawfulFaction, KusariSecondFleet, BaseKusari, KusariCivEquip, Faction):
-    CODE = 'bh_grp_ku'
+    CODE = 'bh_ku_grp'
     WEAPON = gun.KusariHuntergun
     AFTERBURN = misc.KU_MAIN
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
@@ -1181,10 +1238,11 @@ class KusariHunters(LawfulFaction, KusariSecondFleet, BaseKusari, KusariCivEquip
     COMM_TEMPLATE = COMM_JOURNEYMAN
     HELMET1 = bodyparts.COMM_KU_ELITE
     HELMET2 = bodyparts.COMM_KU_GUARD
+    IS_CIVILIAN = True
 
 
 class KusariPirate(UnlawfulFaction, KusariSecondFleet, BaseKusari, KusariPirateEquip, Faction):
-    CODE = 'pi_grp_ku'
+    CODE = 'pi_ku_grp'
     WEAPON = gun.KusariPirategun
     GUEST_APPEARANCE = bodyparts.PIRATE
     RU_NAME = MS('Золот+ые Хризант+емы', "Golden Chrystantems")
@@ -1235,11 +1293,14 @@ class OrderMain(LawfulFaction, OrderFleet, BaseBorderWorld, BorderWorldOrderEqui
     COMM_TEMPLATE = COMM_ORDER
     HELMET1 = bodyparts.COMM_RH_ALARIC
     HELMET2 = bodyparts.COMM_BR_ELITE
+    IS_MILITARY = True
+    RANDOM_MISSIONS = False
 
-
-class OrderMilitary(OrderMain):
-    CODE = 'om_grp'
-    MANAGED = False
+#
+# class OrderMilitary(OrderMain):
+#     CODE = 'om_grp'
+#     MANAGED = False
+#     RANDOM_MISSIONS = False
 
 
 class Corsairs(UnlawfulFaction, CorsairFleet, BaseBorderWorld, BorderWorldCorsairEquip, Faction):
@@ -1250,15 +1311,17 @@ class Corsairs(UnlawfulFaction, CorsairFleet, BaseBorderWorld, BorderWorldCorsai
     RU_NAME_FULL = MS('Корс+ары', "Corsairs")
     IS_PIRATE = True
     COMM_TEMPLATE = COMM_HISPANIA
+    IS_MILITARY = True
 
-
-class CorsairMilitary(Corsairs):
-    CODE = 'cm_grp'
-    MANAGED = False
+#
+# class CorsairMilitary(Corsairs):
+#     CODE = 'cm_grp'
+#     MANAGED = False
+#     RANDOM_MISSIONS = False
 
 
 class BorderWorldHunters(UnlawfulFaction, CorsairFleet, BaseBorderWorld, BorderWorldCorsairEquip, Faction):
-    CODE = 'bh_grp_bw'
+    CODE = 'bh_bw_grp'
     MSG_CODE = 'co_grp'
     WEAPON = gun.BorderWorldCorsairgun
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
@@ -1279,7 +1342,7 @@ class Outcasts(LawfulFaction, RheinlandSecondFleet, BaseBorderWorld, BorderWorld
 
 
 class BorderWorldPirate(UnlawfulFaction, RheinlandSecondFleet, BaseBorderWorld, BorderWorldCorsairEquip, Faction):
-    CODE = 'pi_grp_bw'
+    CODE = 'cx_grp'
     WEAPON = gun.BorderWorldPirategun
     GUEST_APPEARANCE = bodyparts.PIRATE
     RU_NAME = MS('Пилигр+имы', "Pilgrims")
@@ -1288,7 +1351,7 @@ class BorderWorldPirate(UnlawfulFaction, RheinlandSecondFleet, BaseBorderWorld, 
 
 
 class BorderWorldTraders(UnlawfulFaction, CorsairFleet, BaseBorderWorld, BorderWorldCorsairEquip, Faction):
-    CODE = 'tr_grp_bw'
+    CODE = 'tr_bw_grp'
     WEAPON = gun.BorderWorldPirategun
     GUEST_APPEARANCE = bodyparts.PIRATE
     RU_NAME = MS('Меркадо', "Mercado")
@@ -1303,7 +1366,35 @@ class DeidrichPeople(UnlawfulFaction, BaseRheinland, RheinlandMainEquip, Faction
     MANAGED = False
     RU_NAME = MS('Люди Дитриха', "Deidrich's people")
     RU_NAME_FULL = MS('Люди Дитриха', "Deidrich's people")
+    RANDOM_MISSIONS = False
 
+#
+# class Workaround1(UnlawfulFaction, BaseRheinland, RheinlandMainEquip, Faction):
+#     CODE = 'bh_grp'
+#     WEAPON = gun.RheinlandLightgun
+#     MANAGED = False
+#     RU_NAME = MS('Люди Дитриха', "Deidrich's people")
+#     RU_NAME_FULL = MS('Люди Дитриха', "Deidrich's people")
+#     RANDOM_MISSIONS = False
+#
+#
+# class Workaround2(UnlawfulFaction, BaseRheinland, RheinlandMainEquip, Faction):
+#     CODE = 'pi_grp'
+#     WEAPON = gun.RheinlandLightgun
+#     MANAGED = False
+#     RU_NAME = MS('Люди Дитриха', "Deidrich's people")
+#     RU_NAME_FULL = MS('Люди Дитриха', "Deidrich's people")
+#     RANDOM_MISSIONS = False
+#
+#
+# class Workaround3(UnlawfulFaction, BaseRheinland, RheinlandMainEquip, Faction):
+#     CODE = 'tr_grp'
+#     WEAPON = gun.RheinlandLightgun
+#     MANAGED = False
+#     RU_NAME = MS('Люди Дитриха', "Deidrich's people")
+#     RU_NAME_FULL = MS('Люди Дитриха', "Deidrich's people")
+#     RANDOM_MISSIONS = False
+#
 
 class OdjaPeople(UnlawfulFaction, BaseKusari, KusariMainEquip, Faction):
     CODE = 'odja_grp'
@@ -1311,6 +1402,7 @@ class OdjaPeople(UnlawfulFaction, BaseKusari, KusariMainEquip, Faction):
     MANAGED = False
     RU_NAME = MS('Клан Одзя', "Clan Odja")
     RU_NAME_FULL = MS('Клан Одзя', "Clan Odja")
+    RANDOM_MISSIONS = False
 
 
 class Hispaniola(UnlawfulFaction, BaseBretonia, BretoniaMainEquip, Faction):
@@ -1319,6 +1411,60 @@ class Hispaniola(UnlawfulFaction, BaseBretonia, BretoniaMainEquip, Faction):
     MANAGED = False
     RU_NAME = MS('Экипаж Испаньолы', "Hispaniola crew")
     RU_NAME_FULL = MS('Экипаж Испаньолы', "Hispaniola crew")
+    RANDOM_MISSIONS = False
+
+
+class RheinlandSmuggler(RheinlandPirate):
+    CODE = 'smg_rh_grp'
+    MANAGED = False
+    RU_NAME = MS('', "")
+    RU_NAME_FULL = MS('', "")
+    RANDOM_MISSIONS = False
+
+
+class LibertySmuggler(LibertyPirate):
+    CODE = 'smg_li_grp'
+    MANAGED = False
+    RU_NAME = MS('', "")
+    RU_NAME_FULL = MS('', "")
+    RANDOM_MISSIONS = False
+
+
+class BretoniaSmuggler(BretoniaPirate):
+    CODE = 'smg_br_grp'
+    MANAGED = False
+    RU_NAME = MS('', "")
+    RU_NAME_FULL = MS('', "")
+    RANDOM_MISSIONS = False
+
+
+class KusariSmuggler(KusariPirate):
+    CODE = 'smg_ku_grp'
+    MANAGED = False
+    RU_NAME = MS('', "")
+    RU_NAME_FULL = MS('', "")
+    RANDOM_MISSIONS = False
+
+
+class BorderWorldSmuggler(BorderWorldPirate):
+    CODE = 'smg_bw_grp'
+    MANAGED = False
+    RU_NAME = MS('', "")
+    RU_NAME_FULL = MS('', "")
+    RANDOM_MISSIONS = False
+
+
+class Unknown(Faction):
+    CODE = 'fc_uk_grp'
+    MANAGED = False
+    JUMP_PREFERENCE = 'all'
+    PLURALITY = 'singular'
+    HAVE_FACTION_PROPS = False
+    LISTED = False
+    FORCE_IDS_NAME = 1
+    FORCE_IDS_SHORT_NAME = 1
+    FORCE_IDS_INFO = 1
+    RANDOM_MISSIONS = False
 
 
 class AlaricLike(LawfulFaction, BaseLiberty, LibertyMainEquip, Faction):
@@ -1327,6 +1473,11 @@ class AlaricLike(LawfulFaction, BaseLiberty, LibertyMainEquip, Faction):
     AFTERBURN = misc.LI_MAIN
     MANAGED = False
     ABSTRACT = True
+    FORCE_IDS_NAME = 1
+    FORCE_IDS_SHORT_NAME = 1
+    FORCE_IDS_INFO = 1
+    RANDOM_MISSIONS = False
+    HAVE_FACTION_PROPS = False
 
 
 class Nomad(Faction):
@@ -1335,55 +1486,12 @@ class Nomad(Faction):
     DEFAULT_REPUTATION = ENEMY_MAX
     RU_NAME = MS('Номады', "Nomads")
     RU_NAME_FULL = MS('Номады', "Nomads")
-
-
-class Unknown(Faction):
-    CODE = 'fc_uk_grp'
-    MANAGED = False
-    RU_NAME = MS('', "")
-    RU_NAME_FULL = MS('', "")
-
-
-class WorkaroundOldHunters(Faction):
-    CODE = 'gd_bh_grp'
-    MANAGED = False
-    RU_NAME = MS('', "")
-    RU_NAME_FULL = MS('', "")
-
-
-class RheinlandSmuggler(Faction):
-    CODE = 'smg_grp_rh'
-    MANAGED = False
-    RU_NAME = MS('', "")
-    RU_NAME_FULL = MS('', "")
-
-
-class LibertySmuggler(Faction):
-    CODE = 'smg_grp_li'
-    MANAGED = False
-    RU_NAME = MS('', "")
-    RU_NAME_FULL = MS('', "")
-
-
-class BretoniaSmuggler(Faction):
-    CODE = 'smg_grp_br'
-    MANAGED = False
-    RU_NAME = MS('', "")
-    RU_NAME_FULL = MS('', "")
-
-
-class KusariSmuggler(Faction):
-    CODE = 'smg_grp_ku'
-    MANAGED = False
-    RU_NAME = MS('', "")
-    RU_NAME_FULL = MS('', "")
-
-
-class BorderWorldSmuggler(Faction):
-    CODE = 'smg_grp_bw'
-    MANAGED = False
-    RU_NAME = MS('', "")
-    RU_NAME_FULL = MS('', "")
+    LISTED = False
+    FORCE_IDS_NAME = 1
+    FORCE_IDS_SHORT_NAME = 1
+    FORCE_IDS_INFO = 1
+    RANDOM_MISSIONS = False
+    HAVE_FACTION_PROPS = False
 
 
 class Relation:
@@ -1471,14 +1579,14 @@ PLAYER_RELATIONS = [
 
     Relation(Nomad, ENEMY_MAX),
     Relation(DeidrichPeople, ENEMY_MAX),
-    Relation(OdjaPeople, NEUTRAL),
-    Relation(Hispaniola, NEUTRAL),
-
-    Relation(RheinlandSmuggler, ENEMY_MED),
-    Relation(LibertySmuggler, ENEMY_MED),
-    Relation(BretoniaSmuggler, ENEMY_MED),
-    Relation(KusariSmuggler, ENEMY_MED),
-    Relation(BorderWorldSmuggler, ENEMY_MED),
+    # Relation(OdjaPeople, NEUTRAL),
+    # Relation(Hispaniola, NEUTRAL),
+    #
+    # Relation(RheinlandSmuggler, ENEMY_MED),
+    # Relation(LibertySmuggler, ENEMY_MED),
+    # Relation(BretoniaSmuggler, ENEMY_MED),
+    # Relation(KusariSmuggler, ENEMY_MED),
+    # Relation(BorderWorldSmuggler, ENEMY_MED),
 ]
 
 
@@ -1524,18 +1632,18 @@ RELATIONS = [
             Relation(LibertyPirate, ENEMY_MAX, HATE3),
             Relation(BretoniaPirate, ENEMY_MAX, HATE2),
             Relation(KusariPirate, ENEMY_MAX, HATE3),
-            Relation(BorderWorldPirate, ENEMY_MAX, HATE1),
+            # Relation(BorderWorldPirate, ENEMY_MAX, HATE1),
 
             Relation(Corsairs, ENEMY_MED, HATE6),
             Relation(Outcasts, NEUTRAL),
 
             Relation(Hessians, ENEMY_MED, HATE8),
-            Relation(Junkers, ENEMY_MIN, HATE3),
+            # Relation(Junkers, ENEMY_MIN, HATE3),
             Relation(LibertyRogues, ENEMY_MED, HATE7),
-            Relation(Starline, ENEMY_MED, HATE3),
+            # Relation(Starline, ENEMY_MED, HATE3),
             Relation(LaneHackers, ENEMY_MED, HATE6),
-            Relation(Xenos, ENEMY_MED, HATE7),
-            Relation(Ireland, ENEMY_MED, HATE3),
+            # Relation(Xenos, ENEMY_MED, HATE7),
+            # Relation(Ireland, ENEMY_MED, HATE3),
             Relation(Shinobi, ENEMY_MED, HATE5),
             Relation(FarmerAlliance, ENEMY_MED, HATE5),
 
@@ -2296,7 +2404,7 @@ RELATIONS = [
             Relation(Outcasts, NEUTRAL),
 
             Relation(Hessians, ENEMY_MED, HATE5),
-            Relation(Junkers, ENEMY_MIN, HATE2),
+            # Relation(Junkers, ENEMY_MIN, HATE2),
             Relation(LibertyRogues, ENEMY_MED, HATE1),
             Relation(Starline, ENEMY_MED, HATE1),
             Relation(LaneHackers, ENEMY_MED, HATE4),
@@ -2322,10 +2430,10 @@ RELATIONS = [
             Relation(BretoniaHunters, NEUTRAL, LIKE1),
             Relation(KusariHunters, NEUTRAL, LIKE2),
 
-            Relation(RheinlandCivilians, FRIEND_MAX, LIKE2),
-            Relation(LibertyCivilians, FRIEND_MAX, LIKE2),
-            Relation(BretoniaCivilians, FRIEND_MAX, LIKE2),
-            Relation(KusariCivilians, FRIEND_MAX, LIKE4),
+            Relation(RheinlandCivilians, NEUTRAL, LIKE2),
+            Relation(LibertyCivilians, NEUTRAL, LIKE2),
+            Relation(BretoniaCivilians, NEUTRAL, LIKE2),
+            Relation(KusariCivilians, NEUTRAL, LIKE4),
 
             Relation(RheinlandTraders, FRIEND_MAX, LIKE2),
             Relation(LibertyTraders, FRIEND_MAX, LIKE2),
@@ -2397,11 +2505,11 @@ RELATIONS = [
             Relation(ASF, ENEMY_MAX),
 
             Relation(Unknown, ENEMY_MAX),
-            Relation(RheinlandSmuggler, ENEMY_MAX),
-            Relation(LibertySmuggler, ENEMY_MAX),
-            Relation(BretoniaSmuggler, ENEMY_MAX),
-            Relation(KusariSmuggler, ENEMY_MAX),
-            Relation(BorderWorldSmuggler, ENEMY_MAX),
+            # Relation(RheinlandSmuggler, ENEMY_MAX),
+            # Relation(LibertySmuggler, ENEMY_MAX),
+            # Relation(BretoniaSmuggler, ENEMY_MAX),
+            # Relation(KusariSmuggler, ENEMY_MAX),
+            # Relation(BorderWorldSmuggler, ENEMY_MAX),
 
             Relation(Hessians, ENEMY_MAX),
             Relation(Junkers, ENEMY_MAX),
@@ -2459,102 +2567,26 @@ RELATIONS = [
         ]
     ),
 
-    ###
-    #
-    # FactionRelation(
-    #     Rheinland,
-    #     [
-    #         Relation(RheinlandMain, FRIEND_MAX),
-    #         Relation(LibertyMain, FRIEND_MAX),
-    #         Relation(BretoniaMain, FRIEND_MAX),
-    #         Relation(KusariMain, FRIEND_MAX),
-    #
-    #         Relation(RheinlandHunters, NEUTRAL),
-    #         Relation(LibertyHunters, NEUTRAL),
-    #         Relation(BretoniaHunters, NEUTRAL),
-    #         Relation(KusariHunters, NEUTRAL),
-    #
-    #         Relation(RheinlandCivilians, FRIEND_MAX),
-    #         Relation(LibertyCivilians, FRIEND_MAX),
-    #         Relation(BretoniaCivilians, FRIEND_MAX),
-    #         Relation(KusariCivilians, FRIEND_MAX),
-    #
-    #         Relation(RheinlandTraders, FRIEND_MAX),
-    #         Relation(LibertyTraders, FRIEND_MAX),
-    #         Relation(BretoniaTraders, FRIEND_MAX),
-    #         Relation(KusariTraders, FRIEND_MAX),
-    #         Relation(BorderWorldTraders, NEUTRAL),
-    #
-    #         Relation(RheinlandPirate, ENEMY_MAX),
-    #         Relation(LibertyPirate, ENEMY_MAX),
-    #         Relation(BretoniaPirate, ENEMY_MAX),
-    #         Relation(KusariPirate, ENEMY_MAX),
-    #         Relation(BorderWorldPirate, ENEMY_MAX),
-    #
-    #         Relation(Corsairs, NEUTRAL),
-    #         Relation(Outcasts, NEUTRAL),
-    #
-    #         Relation(Hessians, ENEMY_MED),
-    #         Relation(Junkers, ENEMY_MIN),
-    #         Relation(LibertyRogues, ENEMY_MED),
-    #         Relation(Starline, ENEMY_MED),
-    #         Relation(LaneHackers, ENEMY_MED),
-    #         Relation(Xenos, ENEMY_MED),
-    #         Relation(Ireland, ENEMY_MED),
-    #         Relation(Shinobi, ENEMY_MED),
-    #         Relation(FarmerAlliance, ENEMY_MED),
-    #
-    #         Relation(Nomad, ENEMY_MAX),
-    #         Relation(DeidrichPeople, ENEMY_MAX),
-    #     ]
-    # ),
+    FactionRelation(
+        Outcasts,
+        [
+            Relation(RheinlandHunters, ENEMY_MAX),
+            Relation(LibertyHunters, ENEMY_MAX),
+            Relation(BretoniaHunters, ENEMY_MAX),
+            Relation(KusariHunters, ENEMY_MAX),
+            Relation(BorderWorldHunters, ENEMY_MAX),
+
+            Relation(Hessians, NEUTRAL),
+            Relation(Junkers, NEUTRAL),
+            Relation(LibertyRogues, NEUTRAL),
+            Relation(Starline, ENEMY_MAX, HATE6),
+            Relation(LaneHackers, ENEMY_MIN),
+            Relation(Xenos, ENEMY_MAX, HATE3),
+            Relation(Ireland, ENEMY_MIN),
+            Relation(Shinobi, ENEMY_MAX, HATE1),
+            Relation(FarmerAlliance, ENEMY_MIN),
+        ]
+    ),
+
 
 ]
-#
-# FactionRelation(
-#     LibertyMain,
-#     [
-#         Relation(RheinlandMain, FRIEND_MAX),
-#         Relation(LibertyMain, FRIEND_MAX),
-#         Relation(BretoniaMain, FRIEND_MAX),
-#         Relation(KusariMain, FRIEND_MAX),
-#
-#         Relation(RheinlandHunters, NEUTRAL),
-#         Relation(LibertyHunters, NEUTRAL),
-#         Relation(BretoniaHunters, NEUTRAL),
-#         Relation(KusariHunters, NEUTRAL),
-#
-#         Relation(RheinlandCivilians, FRIEND_MAX),
-#         Relation(LibertyCivilians, FRIEND_MAX),
-#         Relation(BretoniaCivilians, FRIEND_MAX),
-#         Relation(KusariCivilians, FRIEND_MAX),
-#
-#         Relation(RheinlandTraders, FRIEND_MAX),
-#         Relation(LibertyTraders, FRIEND_MAX),
-#         Relation(BretoniaTraders, FRIEND_MAX),
-#         Relation(KusariTraders, FRIEND_MAX),
-#         Relation(BorderWorldTraders, NEUTRAL),
-#
-#         Relation(RheinlandPirate, ENEMY_MAX),
-#         Relation(LibertyPirate, ENEMY_MAX),
-#         Relation(BretoniaPirate, ENEMY_MAX),
-#         Relation(KusariPirate, ENEMY_MAX),
-#         Relation(BorderWorldPirate, ENEMY_MAX),
-#
-#         Relation(Corsairs, NEUTRAL),
-#         Relation(Outcasts, NEUTRAL),
-#
-#         Relation(Hessians, ENEMY_MED),
-#         Relation(Junkers, ENEMY_MIN),
-#         Relation(LibertyRogues, ENEMY_MED),
-#         Relation(Starline, ENEMY_MED),
-#         Relation(LaneHackers, ENEMY_MED),
-#         Relation(Xenos, ENEMY_MED),
-#         Relation(Ireland, ENEMY_MED),
-#         Relation(Shinobi, ENEMY_MED),
-#         Relation(FarmerAlliance, ENEMY_MED),
-#
-#         Relation(Nomad, ENEMY_MAX),
-#         Relation(DeidrichPeople, ENEMY_MAX),
-#     ]
-# ),

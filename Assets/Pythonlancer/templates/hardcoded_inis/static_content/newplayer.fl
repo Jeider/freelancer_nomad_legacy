@@ -12,7 +12,11 @@ com_costume = trent
 ;system = the_intro
 ;base = the_intro_base
 
-system = the_intro_dark
+;;system = the_intro_dark
+
+
+system = om11
+base =om11_01_base
 
 ship_archetype = ge_fighter
 
@@ -34,14 +38,80 @@ wg = 0, HpWeapon04
 wg = 0, HpWeapon05
 wg = 0, HpWeapon06
 
+
+
+
+house = 0.9, li_n_grp
+house = 0, li_lsf_grp
+house = 0, li_p_grp
+house = 0, br_n_grp
+house = 0.65, br_p_grp
+house = 0, ku_n_grp
+house = 0, ku_p_grp
+house = 0, rh_n_grp
+house = 0, rh_p_grp
+house = 0, co_alg_grp
+house = 0, co_be_grp
+house = -0.65, br_m_grp
+house = 0, co_nws_grp
+house = 0, co_hsp_grp
+house = 0, co_ic_grp
+house = 0, co_khc_grp
+house = 0, co_kt_grp
+house = 0, rh_m_grp
+house = 0, co_me_grp
+house = 0, co_ni_grp
+house = 0, co_os_grp
+house = 0, co_rs_grp
+house = 0, co_shi_grp
+house = 0, co_ss_grp
+house = 0, co_ti_grp
+house = 0, co_vr_grp
+house = 0, fc_bd_grp
+house = 0, fc_b_grp
+house = 0, fc_c_grp
+house = 0, fc_fa_grp
+house = 0, fc_g_grp
+house = 0, fc_gc_grp
+house = 0, fc_h_grp
+house = -0.65, fc_j_grp
+house = -0.8, fc_lh_grp
+house = -0.8, fc_lr_grp
+house = -0.8, fc_lwb_grp
+house = -0.8, fc_m_grp
+house = -0.8, fc_ou_grp
+house = -0.8, fc_rh_grp
+house = -0.8, fc_or_grp
+house = -0.8, fc_u_grp
+house = -0.8, fc_x_grp
+house = 0, gd_gm_grp
+house = 0, fc_uk_grp
+house = 0, fc_n_grp
+house = 0, fc_ln_grp
+house = 0, fc_kn_grp
+house = 0, fc_rn_grp
+house = 0, fc_ouk_grp
+house = 0, fc_q_grp
+house = 0, fc_f_grp
+house = 0, gd_im_grp
+house = 0, gd_z_grp
+house = 0, gd_bh_grp
+
 {{ player_factions }}
 
 
 
-[StoryInfo]
+[;;StoryInfo]
 Mission = Mission_01a
 MissionNum = 1
 delta_worth = -1
+
+[StoryInfo]
+ship_bought = false
+Mission = GenericMission
+MissionNum = 0
+delta_worth = -1.000000
+debug = 1
 
 
 ;; These gates will be locked in single player, but not necessarily multiplayer.

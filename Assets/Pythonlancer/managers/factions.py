@@ -1,5 +1,8 @@
 from universe.faction import Faction, PlayerFaction, RELATIONS, FRIEND_MAX
-from text.dividers import DIVIDER
+from tools.data_folder import DataFolder
+from text.dividers import DIVIDER, SINGLE_DIVIDER
+
+VIGNETTE_TEMPLATE = 'hardcoded_inis/static_content/vignette_params.ini'
 
 
 class FactionManager:
@@ -12,6 +15,8 @@ class FactionManager:
 
         self.load_factions()
         self.load_relations_props()
+
+        self.sync_vignettes()
 
     def get_all(self):
         return self.factions_list
@@ -48,8 +53,36 @@ class FactionManager:
                     target_faction.change_reputation(current_faction, target_rel.get_reputation())
                     target_faction.change_empathy(current_faction, target_rel.get_empathy())
 
+    def get_initial_world_empty_reps(self, hate=False):
+        return ''  # SINGLE_DIVIDER.join([x.get_empty_rep(hate=hate) for x in self.factions_list if x.LISTED])
+
     def get_initial_world_content(self):
-        return DIVIDER.join([x.get_initial_world_content() for x in self.factions_list])
+        return DIVIDER.join([x.get_initial_world_content() for x in self.factions_list if x.LISTED])
 
     def get_empathy_content(self):
-        return DIVIDER.join([x.get_empathy_content() for x in self.factions_list])
+        return DIVIDER.join([x.get_empathy_content() for x in self.factions_list if x.LISTED])
+
+    def get_military_factions_list(self):
+        return ', '.join([x.get_code() for x in self.factions_list if x.has_military_mission()])
+
+    def get_civilian_factions_list(self):
+        return ', '.join([x.get_code() for x in self.factions_list if x.has_civilian_mission()])
+
+    def get_pirate_factions_list(self):
+        return ', '.join([x.get_code() for x in self.factions_list if x.has_pirate_mission()])
+
+    def get_vignettes_content(self):
+        context = {
+            'military_factions': self.get_military_factions_list(),
+            'civilian_factions': self.get_civilian_factions_list(),
+            'pirate_factions': self.get_pirate_factions_list(),
+        }
+        return self.core.tpl_manager.get_result(VIGNETTE_TEMPLATE, context)
+
+    def sync_vignettes(self):
+        if not self.core.write:
+            return
+
+        data_folder = DataFolder(build_to_folder=self.core.build_folder)
+
+        data_folder.sync_vignettes(self.get_vignettes_content())

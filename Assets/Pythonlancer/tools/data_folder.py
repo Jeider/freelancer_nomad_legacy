@@ -71,6 +71,9 @@ class DataFolder:
     def get_missions(self):
         return get_and_create(self.get_data() / 'MISSIONS')
 
+    def get_random_missions(self):
+        return get_and_create(self.get_data() / 'RANDOMMISSIONS')
+
     def get_ships(self):
         return get_and_create(self.get_data() / 'SHIPS')
 
@@ -275,6 +278,10 @@ class DataFolder:
             raise Exception('Impossible to use with build')
 
         equip_file = self.get_fonts() / 'fonts.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    def sync_vignettes(self, content):
+        equip_file = self.get_random_missions() / 'VignetteParams.ini'
         equip_file.write_text(content, encoding='utf-8')
 
     def sync_mbases(self, content):

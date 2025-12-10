@@ -203,7 +203,9 @@ class UniverseManager:
     def get_initial_world_content(self):
         context = {
             'locked_gates': self.get_initial_world_locked_docks(),
-            'factions': self.core.factions.get_initial_world_content(),
+            'new_factions': self.core.factions.get_initial_world_content(),
+            'new_rep_default': self.core.factions.get_initial_world_empty_reps(),
+            'new_rep_hate': self.core.factions.get_initial_world_empty_reps(hate=True),
         }
         return self.core.tpl_manager.get_result(INITIAL_WORLD_TEMPLATE, context)
 
