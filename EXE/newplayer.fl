@@ -12,11 +12,11 @@ com_costume = trent
 ;system = the_intro
 ;base = the_intro_base
 
-;;system = the_intro_dark
+system = the_intro_dark
 
 
-system = om11
-base =om11_01_base
+;system = om11
+;base =om11_01_base
 
 ship_archetype = ge_fighter
 
@@ -137,12 +137,12 @@ house = -0.91, dtr_grp
 
 
 
-[;;StoryInfo]
+[StoryInfo]
 Mission = Mission_01a
 MissionNum = 1
 delta_worth = -1
 
-[StoryInfo]
+[;;;StoryInfo]
 ship_bought = false
 Mission = GenericMission
 MissionNum = 0
