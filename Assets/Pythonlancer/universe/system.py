@@ -260,7 +260,7 @@ distance = {tlr_distance}
 
         self.generate_patrols()
 
-        if self.ENABLE_POPULATION:
+        if self.have_population():
             for patrol in self.get_patrols_list():
                 system_content.append(patrol.get_system_content())
 
@@ -507,8 +507,11 @@ distance = {tlr_distance}
             raise Exception('unknown faction for system %s' % self.__class__.__name__)
         return self.FACTION_CODE
 
+    def have_population(self):
+        return self.ENABLE_POPULATION
+
     def get_lawful_factions(self):
-        if not self.ENABLE_POPULATION:
+        if not self.have_population():
             return []
         factions = self.FIRST_LAWFUL_POPULATION_CLASS.get_lawful_factions()
         if self.SECOND_LAWFUL_POPULATION_CLASS:
@@ -516,7 +519,7 @@ distance = {tlr_distance}
         return factions
 
     def get_unlawful_factions(self):
-        if not self.ENABLE_POPULATION:
+        if not self.have_population():
             return []
         factions = self.FIRST_UNLAWFUL_POPULATION_CLASS.get_unlawful_factions()
         if self.SECOND_LAWFUL_POPULATION_CLASS:

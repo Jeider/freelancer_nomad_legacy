@@ -396,7 +396,7 @@ class StaticObject(AppearableObject):
                 )
             )
 
-        if self.DEFENCE_LEVEL and self.system.ENABLE_POPULATION and not self.STORY:
+        if self.DEFENCE_LEVEL and self.system.have_population() and not self.STORY:
             zones.append(
                 self.get_defence_zone(),
             )
@@ -2262,7 +2262,7 @@ size = {size}'''
         return None
 
     def get_tradelane_zone(self):
-        if not self.system.ENABLE_POPULATION or not self.TLR_OUTER_ZONE:
+        if not self.system.have_population() or not self.TLR_OUTER_ZONE:
             return ''
 
         lawful_population = self.get_lawful_population_class()

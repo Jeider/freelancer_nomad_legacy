@@ -71,6 +71,7 @@ class rh_biz(system.RheinlandFirst, system.System, system.SiriusSystem):
 
     SYSTEM_FOLDER = 'RH_BIZMARK'
     ALLOW_SYNC = True
+    # ENABLE_POPULATION = False
 
     JUMP_EFFECT = jump_effect.Rheinland
     NAVMAP_POS = '12, 10'

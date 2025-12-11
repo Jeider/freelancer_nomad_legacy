@@ -551,7 +551,7 @@ ids_name = {self.FORCE_IDS_NAME if self.FORCE_IDS_NAME else self.ids_full_name.i
 ids_info = {self.FORCE_IDS_INFO if self.FORCE_IDS_INFO else self.ids_info.id}
 ids_short_name = {self.FORCE_IDS_SHORT_NAME if self.FORCE_IDS_SHORT_NAME else self.ids_short_name.id}
 {self.get_relations_data()}
-{OTHER_DEFAULTS}
+
 '''
 
     def get_empathy_data(self):
@@ -952,7 +952,8 @@ class RheinlandCivilians(LawfulFaction, RheinlandMainFleet, BaseRheinland, Rhein
 
 
 class RheinlandTraders(LawfulFaction, CivilianFleet, BaseRheinland, RheinlandCivEquip, Faction):
-    CODE = 'tr_rh_grp'
+    CODE = 'tr_grp'
+    MSG_CODE = 'tr_grp_rh'
     WEAPON = gun.RheinlandCivgun
     GUEST_APPEARANCE = bodyparts.PEASANT
     RU_NAME = MS('Интерсп+эйс', "Interspace")
@@ -964,7 +965,8 @@ class RheinlandTraders(LawfulFaction, CivilianFleet, BaseRheinland, RheinlandCiv
 
 
 class RheinlandHunters(LawfulFaction, RheinlandSecondFleet, BaseRheinland, RheinlandCivEquip, Faction):
-    CODE = 'bh_rh_grp'
+    CODE = 'bh_grp'
+    MSG_CODE = 'bh_grp_rh'
     WEAPON = gun.RheinlandHuntergun
     AFTERBURN = misc.RH_MAIN
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
@@ -980,7 +982,8 @@ class RheinlandHunters(LawfulFaction, RheinlandSecondFleet, BaseRheinland, Rhein
 
 
 class RheinlandPirate(UnlawfulFaction, RheinlandSecondFleet, BaseRheinland, RheinlandPirateEquip, Faction):
-    CODE = 'pi_rh_grp'
+    CODE = 'pi_grp'
+    MSG_CODE = 'pi_grp_rh'
     WEAPON = gun.RheinlandPirategun
     GUEST_APPEARANCE = bodyparts.PIRATE
     RU_NAME = MS('Бундсчух', "Bundschuh")
@@ -1064,7 +1067,8 @@ class LibertyCivilians(LawfulFaction, LibertyMainFleet, BaseLiberty, LibertyCivE
 
 
 class LibertyTraders(LawfulFaction, CivilianFleet, BaseLiberty, LibertyCivEquip, Faction):
-    CODE = 'tr_li_grp'
+    CODE = 's22_fp_grp'
+    MSG_CODE = 'tr_grp_li'
     WEAPON = gun.LibertyCivgun
     GUEST_APPEARANCE = bodyparts.PEASANT
     RU_NAME = MS('Адж+ейра', "Ageira")
@@ -1076,7 +1080,8 @@ class LibertyTraders(LawfulFaction, CivilianFleet, BaseLiberty, LibertyCivEquip,
 
 
 class LibertyHunters(LawfulFaction, LibertySecondFleet, BaseLiberty, LibertyCivEquip, Faction):
-    CODE = 'bh_li_grp'
+    CODE = 't4_fp_grp'
+    MSG_CODE = 'bh_grp_li'
     WEAPON = gun.LibertyHuntergun
     AFTERBURN = misc.LI_MAIN
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
@@ -1092,7 +1097,8 @@ class LibertyHunters(LawfulFaction, LibertySecondFleet, BaseLiberty, LibertyCivE
 
 
 class LibertyPirate(UnlawfulFaction, LibertySecondFleet, BaseLiberty, LibertyPirateEquip, Faction):
-    CODE = 'pi_li_grp'
+    CODE = 't29_fp_grp'
+    MSG_CODE = 'pi_grp_li'
     WEAPON = gun.LibertyPirategun
     GUEST_APPEARANCE = bodyparts.PIRATE
     RU_NAME = MS('Д+икси', "Dixie")
@@ -1131,7 +1137,8 @@ class Starline(UnlawfulFaction, LibertyMainFleet, BaseLiberty, LibertyPirateEqui
 
 
 class LaneHackers(UnlawfulFaction, RheinlandSecondFleet, BaseLiberty, LibertyPirateEquip, Faction):
-    CODE = 'hack_grp'
+    CODE = 'rber_fp_grp'
+    MSG_CODE = 'hack_grp'
     WEAPON = gun.LibertyStarlinegun
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
     RU_NAME = MS('Хакеры', "Hackers")
@@ -1178,7 +1185,8 @@ class BretoniaCivilians(LawfulFaction, BretoniaMainFleet, BaseBretonia, Bretonia
 
 
 class BretoniaTraders(LawfulFaction, CivilianFleet, BaseBretonia, BretoniaCivEquip, Faction):
-    CODE = 'tr_br_grp'
+    CODE = 'miner_grp'
+    MSG_CODE = 'tr_grp_br'
     WEAPON = gun.BretoniaCivgun
     GUEST_APPEARANCE = bodyparts.PEASANT
     RU_NAME = MS('Б+овекс', "Bowex")
@@ -1190,7 +1198,8 @@ class BretoniaTraders(LawfulFaction, CivilianFleet, BaseBretonia, BretoniaCivEqu
 
 
 class BretoniaHunters(LawfulFaction, BretoniaSecondFleet, BaseBretonia, BretoniaCivEquip, Faction):
-    CODE = 'bh_br_grp'
+    CODE = 'expl_grp'
+    MSG_CODE = 'bh_grp_br'
     WEAPON = gun.BretoniaHuntergun
     AFTERBURN = misc.BR_MAIN
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
@@ -1207,7 +1216,8 @@ class BretoniaHunters(LawfulFaction, BretoniaSecondFleet, BaseBretonia, Bretonia
 
 
 class BretoniaPirate(UnlawfulFaction, CivilianFleet, BaseBretonia, BretoniaPirateEquip, Faction):
-    CODE = 'pi_br_grp'
+    CODE = 'rm_grp'
+    MSG_CODE = 'pi_grp_br'
     WEAPON = gun.BretoniaPirategun
     GUEST_APPEARANCE = bodyparts.PIRATE
     RU_NAME = MS('Гайане', "Gaians")
@@ -1233,7 +1243,8 @@ class Ireland(UnlawfulFaction, BretoniaSecondFleet, BaseBretonia, BretoniaPirate
 
 
 class Xenos(UnlawfulFaction, BretoniaSecondFleet, BaseBretonia, BretoniaPirateEquip, Faction):
-    CODE = 'xenos_grp'
+    CODE = 'lm_grp'
+    MSG_CODE = 'xenos_grp'
     WEAPON = gun.BretoniaXenosgun
     GUEST_APPEARANCE = bodyparts.PEASANT
     RU_NAME = MS('Кс+еносы', "Xenos")
@@ -1280,7 +1291,8 @@ class KusariCivilians(LawfulFaction, KusariMainFleet, BaseKusari, KusariCivEquip
 
 
 class KusariTraders(LawfulFaction, CivilianFleet, BaseKusari, KusariCivEquip, Faction):
-    CODE = 'tr_ku_grp'
+    CODE = 'bm_grp'
+    MSG_CODE = 'tr_grp_ku'
     WEAPON = gun.KusariCivgun
     GUEST_APPEARANCE = bodyparts.PEASANT
     RU_NAME = MS('Сам+ура', "Samura")
@@ -1292,7 +1304,8 @@ class KusariTraders(LawfulFaction, CivilianFleet, BaseKusari, KusariCivEquip, Fa
 
 
 class KusariHunters(LawfulFaction, KusariSecondFleet, BaseKusari, KusariCivEquip, Faction):
-    CODE = 'bh_ku_grp'
+    CODE = 'km_grp'
+    MSG_CODE = 'bh_grp_ku'
     WEAPON = gun.KusariHuntergun
     AFTERBURN = misc.KU_MAIN
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
@@ -1308,7 +1321,8 @@ class KusariHunters(LawfulFaction, KusariSecondFleet, BaseKusari, KusariCivEquip
 
 
 class KusariPirate(UnlawfulFaction, KusariSecondFleet, BaseKusari, KusariPirateEquip, Faction):
-    CODE = 'pi_ku_grp'
+    CODE = 'no_grp'
+    MSG_CODE = 'pi_grp_ku'
     WEAPON = gun.KusariPirategun
     GUEST_APPEARANCE = bodyparts.PIRATE
     RU_NAME = MS('Золот+ые Хризант+емы', "Golden Chrystantems")
@@ -1334,7 +1348,8 @@ class Shinobi(UnlawfulFaction, KusariMainFleet, BaseKusari, KusariPirateEquip, F
 
 
 class FarmerAlliance(UnlawfulFaction, KusariSecondFleet, BaseKusari, KusariPirateEquip, Faction):
-    CODE = 'farm_grp'
+    CODE = 'nomk_grp'
+    MSG_CODE = 'farm_grp'
     WEAPON = gun.KusariDragongun
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
     RU_NAME = MS('Фермеры', "Farmers")
@@ -1385,20 +1400,21 @@ class Corsairs(UnlawfulFaction, CorsairFleet, BaseBorderWorld, BorderWorldCorsai
 #     MANAGED = False
 #     RANDOM_MISSIONS = False
 
-
-class BorderWorldHunters(UnlawfulFaction, CorsairFleet, BaseBorderWorld, BorderWorldCorsairEquip, Faction):
-    CODE = 'bh_bw_grp'
-    WEAPON = gun.BorderWorldCorsairgun
-    GUEST_APPEARANCE = bodyparts.JOURNEYMAN
-    RU_NAME = MS('Приватиры', "Privateers")
-    RU_NAME_FULL = MS('Приватиры', "Privateers")
-    IS_PIRATE = True
-    COMM_TEMPLATE = COMM_JOURNEYMAN
-    RANDOM_MISSIONS = False
+#
+# class BorderWorldHunters(UnlawfulFaction, CorsairFleet, BaseBorderWorld, BorderWorldCorsairEquip, Faction):
+#     CODE = 'bh_bw_grp'
+#     WEAPON = gun.BorderWorldCorsairgun
+#     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
+#     RU_NAME = MS('Приватиры', "Privateers")
+#     RU_NAME_FULL = MS('Приватиры', "Privateers")
+#     IS_PIRATE = True
+#     COMM_TEMPLATE = COMM_JOURNEYMAN
+#     RANDOM_MISSIONS = False
 
 
 class Outcasts(LawfulFaction, RheinlandSecondFleet, BaseBorderWorld, BorderWorldOutcastsEquip, Faction):
-    CODE = 'out_grp'
+    CODE = 'edv_grp'
+    MSG_CODE = 'out_grp'
     WEAPON = gun.BorderWorldOutcastgun
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
     RU_NAME = MS('Изг+ои', "Outcasts")
@@ -1416,20 +1432,21 @@ class BorderWorldPirate(UnlawfulFaction, RheinlandSecondFleet, BaseBorderWorld, 
     IS_PIRATE = True
     RANDOM_MISSIONS = False
 
-
-class BorderWorldTraders(UnlawfulFaction, CorsairFleet, BaseBorderWorld, BorderWorldCorsairEquip, Faction):
-    CODE = 'tr_bw_grp'
-    WEAPON = gun.BorderWorldPirategun
-    GUEST_APPEARANCE = bodyparts.PIRATE
-    RU_NAME = MS('Меркадо', "Mercado")
-    RU_NAME_FULL = MS('Меркадо', "Mercado")
-    IS_PIRATE = True
-    COMM_TEMPLATE = COMM_PEASANT
-    RANDOM_MISSIONS = False
+#
+# class BorderWorldTraders(UnlawfulFaction, CorsairFleet, BaseBorderWorld, BorderWorldCorsairEquip, Faction):
+#     CODE = 'tr_grp_bw'
+#     WEAPON = gun.BorderWorldPirategun
+#     GUEST_APPEARANCE = bodyparts.PIRATE
+#     RU_NAME = MS('Меркадо', "Mercado")
+#     RU_NAME_FULL = MS('Меркадо', "Mercado")
+#     IS_PIRATE = True
+#     COMM_TEMPLATE = COMM_PEASANT
+#     RANDOM_MISSIONS = False
 
 
 class DeidrichPeople(UnlawfulFaction, BaseRheinland, RheinlandMainEquip, Faction):
-    CODE = 'dtr_grp'
+    CODE = 'nokr_grp'
+    MSG_CODE = 'dtr_grp'
     WEAPON = gun.RheinlandLightgun
     MANAGED = False
     RU_NAME = MS('Люди Дитриха', "Deidrich's people")
@@ -1463,63 +1480,63 @@ class DeidrichPeople(UnlawfulFaction, BaseRheinland, RheinlandMainEquip, Faction
 #     RU_NAME_FULL = MS('Люди Дитриха', "Deidrich's people")
 #     RANDOM_MISSIONS = False
 #
+#
+# class OdjaPeople(UnlawfulFaction, BaseKusari, KusariMainEquip, Faction):
+#     CODE = 'odja_grp'
+#     WEAPON = gun.RheinlandLightgun
+#     MANAGED = False
+#     RU_NAME = MS('Клан Одзя', "Clan Odja")
+#     RU_NAME_FULL = MS('Клан Одзя', "Clan Odja")
+#     RANDOM_MISSIONS = False
+#
+#
+# class Hispaniola(UnlawfulFaction, BaseBretonia, BretoniaMainEquip, Faction):
+#     CODE = 'hsp_grp'
+#     WEAPON = gun.RheinlandLightgun
+#     MANAGED = False
+#     RU_NAME = MS('Экипаж Испаньолы', "Hispaniola crew")
+#     RU_NAME_FULL = MS('Экипаж Испаньолы', "Hispaniola crew")
+#     RANDOM_MISSIONS = False
+#
+#
+# class RheinlandSmuggler(RheinlandPirate):
+#     CODE = 'smg_rh_grp'
+#     MANAGED = False
+#     RU_NAME = MS('', "")
+#     RU_NAME_FULL = MS('', "")
+#     RANDOM_MISSIONS = False
 
-class OdjaPeople(UnlawfulFaction, BaseKusari, KusariMainEquip, Faction):
-    CODE = 'odja_grp'
-    WEAPON = gun.RheinlandLightgun
-    MANAGED = False
-    RU_NAME = MS('Клан Одзя', "Clan Odja")
-    RU_NAME_FULL = MS('Клан Одзя', "Clan Odja")
-    RANDOM_MISSIONS = False
-
-
-class Hispaniola(UnlawfulFaction, BaseBretonia, BretoniaMainEquip, Faction):
-    CODE = 'hsp_grp'
-    WEAPON = gun.RheinlandLightgun
-    MANAGED = False
-    RU_NAME = MS('Экипаж Испаньолы', "Hispaniola crew")
-    RU_NAME_FULL = MS('Экипаж Испаньолы', "Hispaniola crew")
-    RANDOM_MISSIONS = False
-
-
-class RheinlandSmuggler(RheinlandPirate):
-    CODE = 'smg_rh_grp'
-    MANAGED = False
-    RU_NAME = MS('', "")
-    RU_NAME_FULL = MS('', "")
-    RANDOM_MISSIONS = False
-
-
-class LibertySmuggler(LibertyPirate):
-    CODE = 'smg_li_grp'
-    MANAGED = False
-    RU_NAME = MS('', "")
-    RU_NAME_FULL = MS('', "")
-    RANDOM_MISSIONS = False
-
-
-class BretoniaSmuggler(BretoniaPirate):
-    CODE = 'smg_br_grp'
-    MANAGED = False
-    RU_NAME = MS('', "")
-    RU_NAME_FULL = MS('', "")
-    RANDOM_MISSIONS = False
-
-
-class KusariSmuggler(KusariPirate):
-    CODE = 'smg_ku_grp'
-    MANAGED = False
-    RU_NAME = MS('', "")
-    RU_NAME_FULL = MS('', "")
-    RANDOM_MISSIONS = False
-
-
-class BorderWorldSmuggler(BorderWorldPirate):
-    CODE = 'smg_bw_grp'
-    MANAGED = False
-    RU_NAME = MS('', "")
-    RU_NAME_FULL = MS('', "")
-    RANDOM_MISSIONS = False
+#
+# class LibertySmuggler(LibertyPirate):
+#     CODE = 'smg_li_grp'
+#     MANAGED = False
+#     RU_NAME = MS('', "")
+#     RU_NAME_FULL = MS('', "")
+#     RANDOM_MISSIONS = False
+#
+#
+# class BretoniaSmuggler(BretoniaPirate):
+#     CODE = 'smg_br_grp'
+#     MANAGED = False
+#     RU_NAME = MS('', "")
+#     RU_NAME_FULL = MS('', "")
+#     RANDOM_MISSIONS = False
+#
+#
+# class KusariSmuggler(KusariPirate):
+#     CODE = 'smg_ku_grp'
+#     MANAGED = False
+#     RU_NAME = MS('', "")
+#     RU_NAME_FULL = MS('', "")
+#     RANDOM_MISSIONS = False
+#
+#
+# class BorderWorldSmuggler(BorderWorldPirate):
+#     CODE = 'smg_bw_grp'
+#     MANAGED = False
+#     RU_NAME = MS('', "")
+#     RU_NAME_FULL = MS('', "")
+#     RANDOM_MISSIONS = False
 
 
 class Unknown(Faction):
@@ -1612,7 +1629,7 @@ PLAYER_RELATIONS = [
     Relation(LibertyHunters, NEUTRAL),
     Relation(BretoniaHunters, NEUTRAL),
     Relation(KusariHunters, NEUTRAL),
-    Relation(BorderWorldHunters, NEUTRAL),
+    # Relation(BorderWorldHunters, NEUTRAL),
 
     Relation(RheinlandCivilians, NEUTRAL),
     Relation(LibertyCivilians, NEUTRAL),
@@ -1647,14 +1664,14 @@ PLAYER_RELATIONS = [
 
     Relation(Nomad, ENEMY_MED),
     Relation(DeidrichPeople, NEUTRAL),
-    Relation(OdjaPeople, NEUTRAL),
-    Relation(Hispaniola, NEUTRAL),
-
-    Relation(RheinlandSmuggler, ENEMY_MED),
-    Relation(LibertySmuggler, ENEMY_MED),
-    Relation(BretoniaSmuggler, ENEMY_MED),
-    Relation(KusariSmuggler, ENEMY_MED),
-    Relation(BorderWorldSmuggler, ENEMY_MED),
+    # Relation(OdjaPeople, NEUTRAL),
+    # Relation(Hispaniola, NEUTRAL),
+    #
+    # Relation(RheinlandSmuggler, ENEMY_MED),
+    # Relation(LibertySmuggler, ENEMY_MED),
+    # Relation(BretoniaSmuggler, ENEMY_MED),
+    # Relation(KusariSmuggler, ENEMY_MED),
+    # Relation(BorderWorldSmuggler, ENEMY_MED),
 ]
 
 
@@ -1683,7 +1700,7 @@ RELATIONS = [
             Relation(LibertyHunters, NEUTRAL, LIKE1),
             Relation(BretoniaHunters, NEUTRAL, LIKE1),
             Relation(KusariHunters, NEUTRAL, LIKE1),
-            Relation(BorderWorldHunters, NEUTRAL, LIKE1),
+            # Relation(BorderWorldHunters, NEUTRAL, LIKE1),
 
             Relation(RheinlandCivilians, FRIEND_MED, LIKE4),
             Relation(LibertyCivilians, FRIEND_MED, LIKE2),
@@ -1694,7 +1711,7 @@ RELATIONS = [
             Relation(LibertyTraders, FRIEND_MED, LIKE2),
             Relation(BretoniaTraders, FRIEND_MED, LIKE2),
             Relation(KusariTraders, FRIEND_MED, LIKE2),
-            Relation(BorderWorldTraders, NEUTRAL, LIKE2),
+            # Relation(BorderWorldTraders, NEUTRAL, LIKE2),
 
             Relation(RheinlandPirate, FRIEND_MED, HATE5),
             Relation(LibertyPirate, FRIEND_MED, HATE3),
@@ -1731,7 +1748,7 @@ RELATIONS = [
             Relation(LibertyHunters, NEUTRAL, LIKE2),
             Relation(BretoniaHunters, NEUTRAL, LIKE1),
             Relation(KusariHunters, NEUTRAL, LIKE1),
-            Relation(BorderWorldHunters, NEUTRAL, LIKE1),
+            # Relation(BorderWorldHunters, NEUTRAL, LIKE1),
 
             Relation(RheinlandCivilians, FRIEND_MED, LIKE2),
             Relation(LibertyCivilians, FRIEND_MED, LIKE4),
@@ -1742,7 +1759,7 @@ RELATIONS = [
             Relation(LibertyTraders, FRIEND_MED, LIKE3),
             Relation(BretoniaTraders, FRIEND_MED, LIKE2),
             Relation(KusariTraders, FRIEND_MED, LIKE2),
-            Relation(BorderWorldTraders, NEUTRAL, LIKE2),
+            # Relation(BorderWorldTraders, NEUTRAL, LIKE2),
 
             Relation(RheinlandPirate, FRIEND_MED, HATE3),
             Relation(LibertyPirate, FRIEND_MED, HATE5),
@@ -1779,7 +1796,7 @@ RELATIONS = [
             Relation(LibertyHunters, NEUTRAL, LIKE1),
             Relation(BretoniaHunters, NEUTRAL, LIKE2),
             Relation(KusariHunters, NEUTRAL, LIKE1),
-            Relation(BorderWorldHunters, NEUTRAL, LIKE1),
+            # Relation(BorderWorldHunters, NEUTRAL, LIKE1),
 
             Relation(RheinlandCivilians, FRIEND_MED, LIKE2),
             Relation(LibertyCivilians, FRIEND_MED, LIKE2),
@@ -1790,7 +1807,7 @@ RELATIONS = [
             Relation(LibertyTraders, FRIEND_MED, LIKE3),
             Relation(BretoniaTraders, FRIEND_MED, LIKE2),
             Relation(KusariTraders, FRIEND_MED, LIKE2),
-            Relation(BorderWorldTraders, NEUTRAL, LIKE2),
+            # Relation(BorderWorldTraders, NEUTRAL, LIKE2),
 
             Relation(RheinlandPirate, FRIEND_MED, HATE3),
             Relation(LibertyPirate, FRIEND_MED, HATE5),
@@ -1827,7 +1844,7 @@ RELATIONS = [
             Relation(LibertyHunters, NEUTRAL, LIKE1),
             Relation(BretoniaHunters, NEUTRAL, LIKE1),
             Relation(KusariHunters, NEUTRAL, LIKE2),
-            Relation(BorderWorldHunters, NEUTRAL, LIKE1),
+            # Relation(BorderWorldHunters, NEUTRAL, LIKE1),
 
             Relation(RheinlandCivilians, FRIEND_MED, LIKE2),
             Relation(LibertyCivilians, FRIEND_MED, LIKE2),
@@ -1838,7 +1855,7 @@ RELATIONS = [
             Relation(LibertyTraders, FRIEND_MED, LIKE2),
             Relation(BretoniaTraders, FRIEND_MED, LIKE2),
             Relation(KusariTraders, FRIEND_MED, LIKE3),
-            Relation(BorderWorldTraders, NEUTRAL, LIKE2),
+            # Relation(BorderWorldTraders, NEUTRAL, LIKE2),
 
             Relation(RheinlandPirate, FRIEND_MED, HATE3),
             Relation(LibertyPirate, FRIEND_MED, HATE2),
@@ -1877,7 +1894,7 @@ RELATIONS = [
             Relation(LibertyHunters, NEUTRAL, LIKE2),
             Relation(BretoniaHunters, NEUTRAL, LIKE2),
             Relation(KusariHunters, NEUTRAL, LIKE2),
-            Relation(BorderWorldHunters, NEUTRAL, LIKE1),
+            # Relation(BorderWorldHunters, NEUTRAL, LIKE1),
 
             Relation(RheinlandCivilians, FRIEND_MED),
             Relation(LibertyCivilians, FRIEND_MED),
@@ -1888,7 +1905,7 @@ RELATIONS = [
             Relation(LibertyTraders, FRIEND_MED),
             Relation(BretoniaTraders, FRIEND_MED),
             Relation(KusariTraders, FRIEND_MED),
-            Relation(BorderWorldTraders, NEUTRAL),
+            # Relation(BorderWorldTraders, NEUTRAL),
 
             Relation(RheinlandPirate, FRIEND_MED),
             Relation(LibertyPirate, FRIEND_MED),
@@ -1925,7 +1942,7 @@ RELATIONS = [
             Relation(LibertyHunters, NEUTRAL, LIKE2),
             Relation(BretoniaHunters, NEUTRAL, LIKE2),
             Relation(KusariHunters, NEUTRAL, LIKE2),
-            Relation(BorderWorldHunters, NEUTRAL, LIKE1),
+            # Relation(BorderWorldHunters, NEUTRAL, LIKE1),
 
             Relation(RheinlandCivilians, FRIEND_MED),
             Relation(LibertyCivilians, FRIEND_MED),
@@ -1936,7 +1953,7 @@ RELATIONS = [
             Relation(LibertyTraders, FRIEND_MED),
             Relation(BretoniaTraders, FRIEND_MED),
             Relation(KusariTraders, FRIEND_MED),
-            Relation(BorderWorldTraders, NEUTRAL),
+            # Relation(BorderWorldTraders, NEUTRAL),
 
             Relation(RheinlandPirate, FRIEND_MED),
             Relation(LibertyPirate, FRIEND_MED),
@@ -1973,7 +1990,7 @@ RELATIONS = [
             Relation(LibertyHunters, NEUTRAL, LIKE2),
             Relation(BretoniaHunters, NEUTRAL, LIKE2),
             Relation(KusariHunters, NEUTRAL, LIKE2),
-            Relation(BorderWorldHunters, NEUTRAL, LIKE1),
+            # Relation(BorderWorldHunters, NEUTRAL, LIKE1),
 
             Relation(RheinlandCivilians, FRIEND_MED),
             Relation(LibertyCivilians, FRIEND_MED),
@@ -1984,7 +2001,7 @@ RELATIONS = [
             Relation(LibertyTraders, FRIEND_MED),
             Relation(BretoniaTraders, FRIEND_MED),
             Relation(KusariTraders, FRIEND_MED),
-            Relation(BorderWorldTraders, NEUTRAL),
+            # Relation(BorderWorldTraders, NEUTRAL),
 
             Relation(RheinlandPirate, FRIEND_MED),
             Relation(LibertyPirate, FRIEND_MED),
@@ -2031,7 +2048,7 @@ RELATIONS = [
             Relation(LibertyTraders, FRIEND_MED),
             Relation(BretoniaTraders, FRIEND_MED),
             Relation(KusariTraders, FRIEND_MED),
-            Relation(BorderWorldTraders, NEUTRAL),
+            # Relation(BorderWorldTraders, NEUTRAL),
 
             Relation(RheinlandPirate, FRIEND_MED),
             Relation(LibertyPirate, FRIEND_MED),
@@ -2055,53 +2072,53 @@ RELATIONS = [
             Relation(Nomad, FRIEND_MED),
         ]
     ),
-
-    FactionRelation(
-        BorderWorldHunters,
-        [
-            Relation(RheinlandMain, NEUTRAL, LIKE1),
-            Relation(LibertyMain, NEUTRAL, LIKE1),
-            Relation(BretoniaMain, NEUTRAL, LIKE1),
-            Relation(KusariMain, NEUTRAL, LIKE1),
-
-            Relation(RheinlandHunters, NEUTRAL, LIKE2),
-            Relation(LibertyHunters, NEUTRAL, LIKE2),
-            Relation(BretoniaHunters, NEUTRAL, LIKE2),
-            Relation(KusariHunters, NEUTRAL, LIKE2),
-
-            Relation(RheinlandCivilians, FRIEND_MED),
-            Relation(LibertyCivilians, FRIEND_MED),
-            Relation(BretoniaCivilians, FRIEND_MED),
-            Relation(KusariCivilians, FRIEND_MED),
-
-            Relation(RheinlandTraders, FRIEND_MED),
-            Relation(LibertyTraders, FRIEND_MED),
-            Relation(BretoniaTraders, FRIEND_MED),
-            Relation(KusariTraders, FRIEND_MED),
-            Relation(BorderWorldTraders, NEUTRAL),
-
-            Relation(RheinlandPirate, FRIEND_MED),
-            Relation(LibertyPirate, FRIEND_MED),
-            Relation(BretoniaPirate, FRIEND_MED),
-            Relation(KusariPirate, FRIEND_MED),
-            Relation(BorderWorldPirate, FRIEND_MED),
-
-            Relation(Corsairs, ENEMY_MED, HATE5),
-            Relation(Outcasts, ENEMY_MED, HATE2),
-
-            Relation(Hessians, ENEMY_MED, HATE4),
-            Relation(Junkers, ENEMY_MIN, HATE2),
-            Relation(LibertyRogues, ENEMY_MED, HATE4),
-            Relation(Starline, ENEMY_MED, HATE4),
-            Relation(LaneHackers, ENEMY_MED, HATE4),
-            Relation(Xenos, ENEMY_MED, HATE6),
-            Relation(Ireland, ENEMY_MED, HATE4),
-            Relation(Shinobi, ENEMY_MED, HATE4),
-            Relation(FarmerAlliance, ENEMY_MED, HATE4),
-
-            Relation(Nomad, FRIEND_MED),
-        ]
-    ),
+    #
+    # FactionRelation(
+    #     BorderWorldHunters,
+    #     [
+    #         Relation(RheinlandMain, NEUTRAL, LIKE1),
+    #         Relation(LibertyMain, NEUTRAL, LIKE1),
+    #         Relation(BretoniaMain, NEUTRAL, LIKE1),
+    #         Relation(KusariMain, NEUTRAL, LIKE1),
+    #
+    #         Relation(RheinlandHunters, NEUTRAL, LIKE2),
+    #         Relation(LibertyHunters, NEUTRAL, LIKE2),
+    #         Relation(BretoniaHunters, NEUTRAL, LIKE2),
+    #         Relation(KusariHunters, NEUTRAL, LIKE2),
+    #
+    #         Relation(RheinlandCivilians, FRIEND_MED),
+    #         Relation(LibertyCivilians, FRIEND_MED),
+    #         Relation(BretoniaCivilians, FRIEND_MED),
+    #         Relation(KusariCivilians, FRIEND_MED),
+    #
+    #         Relation(RheinlandTraders, FRIEND_MED),
+    #         Relation(LibertyTraders, FRIEND_MED),
+    #         Relation(BretoniaTraders, FRIEND_MED),
+    #         Relation(KusariTraders, FRIEND_MED),
+    #         Relation(BorderWorldTraders, NEUTRAL),
+    #
+    #         Relation(RheinlandPirate, FRIEND_MED),
+    #         Relation(LibertyPirate, FRIEND_MED),
+    #         Relation(BretoniaPirate, FRIEND_MED),
+    #         Relation(KusariPirate, FRIEND_MED),
+    #         Relation(BorderWorldPirate, FRIEND_MED),
+    #
+    #         Relation(Corsairs, ENEMY_MED, HATE5),
+    #         Relation(Outcasts, ENEMY_MED, HATE2),
+    #
+    #         Relation(Hessians, ENEMY_MED, HATE4),
+    #         Relation(Junkers, ENEMY_MIN, HATE2),
+    #         Relation(LibertyRogues, ENEMY_MED, HATE4),
+    #         Relation(Starline, ENEMY_MED, HATE4),
+    #         Relation(LaneHackers, ENEMY_MED, HATE4),
+    #         Relation(Xenos, ENEMY_MED, HATE6),
+    #         Relation(Ireland, ENEMY_MED, HATE4),
+    #         Relation(Shinobi, ENEMY_MED, HATE4),
+    #         Relation(FarmerAlliance, ENEMY_MED, HATE4),
+    #
+    #         Relation(Nomad, FRIEND_MED),
+    #     ]
+    # ),
 
     ### CIVILIANS
 
@@ -2127,7 +2144,7 @@ RELATIONS = [
             Relation(LibertyTraders, FRIEND_MED, LIKE2),
             Relation(BretoniaTraders, FRIEND_MED, LIKE2),
             Relation(KusariTraders, FRIEND_MED, LIKE2),
-            Relation(BorderWorldTraders, NEUTRAL, LIKE2),
+            # Relation(BorderWorldTraders, NEUTRAL, LIKE2),
 
             Relation(RheinlandPirate, FRIEND_MED, HATE5),
             Relation(LibertyPirate, FRIEND_MED, HATE3),
@@ -2175,7 +2192,7 @@ RELATIONS = [
             Relation(LibertyTraders, FRIEND_MED, LIKE3),
             Relation(BretoniaTraders, FRIEND_MED, LIKE2),
             Relation(KusariTraders, FRIEND_MED, LIKE2),
-            Relation(BorderWorldTraders, NEUTRAL, LIKE2),
+            # Relation(BorderWorldTraders, NEUTRAL, LIKE2),
 
             Relation(RheinlandPirate, FRIEND_MED, HATE3),
             Relation(LibertyPirate, FRIEND_MED, HATE5),
@@ -2222,7 +2239,7 @@ RELATIONS = [
             Relation(LibertyTraders, FRIEND_MED, LIKE3),
             Relation(BretoniaTraders, FRIEND_MED, LIKE2),
             Relation(KusariTraders, FRIEND_MED, LIKE2),
-            Relation(BorderWorldTraders, NEUTRAL, LIKE2),
+            # Relation(BorderWorldTraders, NEUTRAL, LIKE2),
 
             Relation(RheinlandPirate, FRIEND_MED, HATE3),
             Relation(LibertyPirate, FRIEND_MED, HATE5),
@@ -2269,7 +2286,7 @@ RELATIONS = [
             Relation(LibertyTraders, FRIEND_MED, LIKE2),
             Relation(BretoniaTraders, FRIEND_MED, LIKE2),
             Relation(KusariTraders, FRIEND_MED, LIKE3),
-            Relation(BorderWorldTraders, NEUTRAL, LIKE2),
+            # Relation(BorderWorldTraders, NEUTRAL, LIKE2),
 
             Relation(RheinlandPirate, FRIEND_MED, HATE3),
             Relation(LibertyPirate, FRIEND_MED, HATE2),
@@ -2318,7 +2335,7 @@ RELATIONS = [
             Relation(LibertyTraders, FRIEND_MED, LIKE2),
             Relation(BretoniaTraders, FRIEND_MED, LIKE2),
             Relation(KusariTraders, FRIEND_MED, LIKE2),
-            Relation(BorderWorldTraders, NEUTRAL, LIKE2),
+            # Relation(BorderWorldTraders, NEUTRAL, LIKE2),
 
             Relation(RheinlandPirate, FRIEND_MED, HATE5),
             Relation(LibertyPirate, FRIEND_MED, HATE3),
@@ -2366,7 +2383,7 @@ RELATIONS = [
             Relation(LibertyTraders, FRIEND_MED, LIKE3),
             Relation(BretoniaTraders, FRIEND_MED, LIKE2),
             Relation(KusariTraders, FRIEND_MED, LIKE2),
-            Relation(BorderWorldTraders, NEUTRAL, LIKE2),
+            # Relation(BorderWorldTraders, NEUTRAL, LIKE2),
 
             Relation(RheinlandPirate, FRIEND_MED, HATE3),
             Relation(LibertyPirate, FRIEND_MED, HATE5),
@@ -2413,7 +2430,7 @@ RELATIONS = [
             Relation(LibertyTraders, FRIEND_MED, LIKE3),
             Relation(BretoniaTraders, FRIEND_MED, LIKE2),
             Relation(KusariTraders, FRIEND_MED, LIKE2),
-            Relation(BorderWorldTraders, NEUTRAL, LIKE2),
+            # Relation(BorderWorldTraders, NEUTRAL, LIKE2),
 
             Relation(RheinlandPirate, FRIEND_MED, HATE3),
             Relation(LibertyPirate, FRIEND_MED, HATE5),
@@ -2460,7 +2477,7 @@ RELATIONS = [
             Relation(LibertyTraders, FRIEND_MED, LIKE2),
             Relation(BretoniaTraders, FRIEND_MED, LIKE2),
             Relation(KusariTraders, FRIEND_MED, LIKE3),
-            Relation(BorderWorldTraders, NEUTRAL, LIKE2),
+            # Relation(BorderWorldTraders, NEUTRAL, LIKE2),
 
             Relation(RheinlandPirate, FRIEND_MED, HATE3),
             Relation(LibertyPirate, FRIEND_MED, HATE2),
@@ -2484,53 +2501,53 @@ RELATIONS = [
             Relation(Nomad, FRIEND_MED),
         ]
     ),
-
-    FactionRelation(
-        BorderWorldTraders,
-        [
-            Relation(RheinlandMain, FRIEND_MED),
-            Relation(LibertyMain, FRIEND_MED),
-            Relation(BretoniaMain, FRIEND_MED),
-            Relation(KusariMain, FRIEND_MED),
-
-            Relation(RheinlandHunters, NEUTRAL, LIKE1),
-            Relation(LibertyHunters, NEUTRAL, LIKE1),
-            Relation(BretoniaHunters, NEUTRAL, LIKE1),
-            Relation(KusariHunters, NEUTRAL, LIKE2),
-
-            Relation(RheinlandCivilians, NEUTRAL, LIKE2),
-            Relation(LibertyCivilians, NEUTRAL, LIKE2),
-            Relation(BretoniaCivilians, NEUTRAL, LIKE2),
-            Relation(KusariCivilians, NEUTRAL, LIKE4),
-
-            Relation(RheinlandTraders, FRIEND_MED, LIKE2),
-            Relation(LibertyTraders, FRIEND_MED, LIKE2),
-            Relation(BretoniaTraders, FRIEND_MED, LIKE2),
-            Relation(KusariTraders, FRIEND_MED, LIKE3),
-            Relation(BorderWorldTraders, NEUTRAL, LIKE2),
-
-            Relation(RheinlandPirate, FRIEND_MED, HATE3),
-            Relation(LibertyPirate, FRIEND_MED, HATE2),
-            Relation(BretoniaPirate, FRIEND_MED, HATE3),
-            Relation(KusariPirate, FRIEND_MED, HATE5),
-            Relation(BorderWorldPirate, FRIEND_MED, HATE2),
-
-            Relation(Corsairs, NEUTRAL),
-            Relation(Outcasts, NEUTRAL),
-
-            Relation(Hessians, ENEMY_MED, HATE5),
-            Relation(Junkers, ENEMY_MIN, HATE2),
-            Relation(LibertyRogues, ENEMY_MED, HATE1),
-            Relation(Starline, ENEMY_MED, HATE1),
-            Relation(LaneHackers, ENEMY_MED, HATE4),
-            Relation(Xenos, ENEMY_MED, HATE8),
-            Relation(Ireland, ENEMY_MED, HATE5),
-            Relation(Shinobi, ENEMY_MED, HATE7),
-            Relation(FarmerAlliance, ENEMY_MED, HATE9),
-
-            Relation(Nomad, FRIEND_MED),
-        ]
-    ),
+    #
+    # FactionRelation(
+    #     BorderWorldTraders,
+    #     [
+    #         Relation(RheinlandMain, FRIEND_MED),
+    #         Relation(LibertyMain, FRIEND_MED),
+    #         Relation(BretoniaMain, FRIEND_MED),
+    #         Relation(KusariMain, FRIEND_MED),
+    #
+    #         Relation(RheinlandHunters, NEUTRAL, LIKE1),
+    #         Relation(LibertyHunters, NEUTRAL, LIKE1),
+    #         Relation(BretoniaHunters, NEUTRAL, LIKE1),
+    #         Relation(KusariHunters, NEUTRAL, LIKE2),
+    #
+    #         Relation(RheinlandCivilians, NEUTRAL, LIKE2),
+    #         Relation(LibertyCivilians, NEUTRAL, LIKE2),
+    #         Relation(BretoniaCivilians, NEUTRAL, LIKE2),
+    #         Relation(KusariCivilians, NEUTRAL, LIKE4),
+    #
+    #         Relation(RheinlandTraders, FRIEND_MED, LIKE2),
+    #         Relation(LibertyTraders, FRIEND_MED, LIKE2),
+    #         Relation(BretoniaTraders, FRIEND_MED, LIKE2),
+    #         Relation(KusariTraders, FRIEND_MED, LIKE3),
+    #         Relation(BorderWorldTraders, NEUTRAL, LIKE2),
+    #
+    #         Relation(RheinlandPirate, FRIEND_MED, HATE3),
+    #         Relation(LibertyPirate, FRIEND_MED, HATE2),
+    #         Relation(BretoniaPirate, FRIEND_MED, HATE3),
+    #         Relation(KusariPirate, FRIEND_MED, HATE5),
+    #         Relation(BorderWorldPirate, FRIEND_MED, HATE2),
+    #
+    #         Relation(Corsairs, NEUTRAL),
+    #         Relation(Outcasts, NEUTRAL),
+    #
+    #         Relation(Hessians, ENEMY_MED, HATE5),
+    #         Relation(Junkers, ENEMY_MIN, HATE2),
+    #         Relation(LibertyRogues, ENEMY_MED, HATE1),
+    #         Relation(Starline, ENEMY_MED, HATE1),
+    #         Relation(LaneHackers, ENEMY_MED, HATE4),
+    #         Relation(Xenos, ENEMY_MED, HATE8),
+    #         Relation(Ireland, ENEMY_MED, HATE5),
+    #         Relation(Shinobi, ENEMY_MED, HATE7),
+    #         Relation(FarmerAlliance, ENEMY_MED, HATE9),
+    #
+    #         Relation(Nomad, FRIEND_MED),
+    #     ]
+    # ),
 
     FactionRelation(
         Nomad,
@@ -2554,7 +2571,7 @@ RELATIONS = [
             Relation(LibertyTraders, FRIEND_MED),
             Relation(BretoniaTraders, FRIEND_MED),
             Relation(KusariTraders, FRIEND_MED),
-            Relation(BorderWorldTraders, FRIEND_MED),
+            # Relation(BorderWorldTraders, FRIEND_MED),
 
             Relation(RheinlandPirate, FRIEND_MED),
             Relation(LibertyPirate, FRIEND_MED),
@@ -2573,11 +2590,11 @@ RELATIONS = [
             Relation(ASF, FRIEND_MED),
 
             Relation(Unknown, FRIEND_MED),
-            Relation(RheinlandSmuggler, FRIEND_MED),
-            Relation(LibertySmuggler, FRIEND_MED),
-            Relation(BretoniaSmuggler, FRIEND_MED),
-            Relation(KusariSmuggler, FRIEND_MED),
-            Relation(BorderWorldSmuggler, FRIEND_MED),
+            # Relation(RheinlandSmuggler, FRIEND_MED),
+            # Relation(LibertySmuggler, FRIEND_MED),
+            # Relation(BretoniaSmuggler, FRIEND_MED),
+            # Relation(KusariSmuggler, FRIEND_MED),
+            # Relation(BorderWorldSmuggler, FRIEND_MED),
 
             Relation(Hessians, FRIEND_MED),
             Relation(Junkers, FRIEND_MED),
@@ -2600,7 +2617,7 @@ RELATIONS = [
             Relation(LibertyHunters, FRIEND_MED),
             Relation(BretoniaHunters, FRIEND_MED),
             Relation(KusariHunters, FRIEND_MED),
-            Relation(BorderWorldHunters, FRIEND_MED),
+            # Relation(BorderWorldHunters, FRIEND_MED),
 
             Relation(Hessians, FRIEND_MED, HATE3),
             Relation(Junkers, NEUTRAL),
@@ -2621,7 +2638,7 @@ RELATIONS = [
             Relation(LibertyHunters, FRIEND_MED),
             Relation(BretoniaHunters, FRIEND_MED),
             Relation(KusariHunters, FRIEND_MED),
-            Relation(BorderWorldHunters, FRIEND_MED),
+            # Relation(BorderWorldHunters, FRIEND_MED),
 
             Relation(Hessians, NEUTRAL),
             Relation(Junkers, NEUTRAL),
@@ -2642,7 +2659,7 @@ RELATIONS = [
             Relation(LibertyHunters, FRIEND_MED),
             Relation(BretoniaHunters, FRIEND_MED),
             Relation(KusariHunters, FRIEND_MED),
-            Relation(BorderWorldHunters, FRIEND_MED),
+            # Relation(BorderWorldHunters, FRIEND_MED),
 
             Relation(Hessians, NEUTRAL),
             Relation(Junkers, NEUTRAL),

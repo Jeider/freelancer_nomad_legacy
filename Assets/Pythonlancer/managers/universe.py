@@ -15,6 +15,7 @@ DACOM_TEMPLATE = 'hardcoded_inis/static_content/dacom.ini'
 
 UNIVERSE_TEMPLATE = 'hardcoded_inis/static_content/universe.ini'
 MBASES_TEMPLATE = 'hardcoded_inis/static_content/mbases.ini'
+EMPATHY_TEMPLATE = 'hardcoded_inis/static_content/empathy.ini'
 
 
 class UniverseManager:
@@ -224,7 +225,10 @@ class UniverseManager:
         return self.core.tpl_manager.get_result(DACOM_TEMPLATE, context)
 
     def get_empathy_content(self):
-        return self.core.factions.get_empathy_content()
+        context = {
+            'generated': self.core.factions.get_empathy_content(),
+        }
+        return self.core.tpl_manager.get_result(EMPATHY_TEMPLATE, context)
 
     def sync_data(self):
         if not self.core.write:

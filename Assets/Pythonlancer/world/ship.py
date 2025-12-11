@@ -1447,7 +1447,7 @@ class Dron(KusariShip, ShipFreighter, Ship):
 
 
 class Bloodhound(CorsairShip, ShipInterceptor, Ship1, Ship):
-    EXTRA_CLASSES = [CLASS_ELITE, CLASS_CORSAIR_ELITE, CLASS_CORSAIR_FIGHTER_ONLY]
+    EXTRA_CLASSES = [CLASS_INTERCEPTOR, CLASS_CORSAIR_INTERCEPTOR]
     SHIP_CLASS = 5
     SHIELD_LINK = 'pi_fighter_shield01'
     ENGINE_TYPE = ENGINE_DOUBLE_SAME
