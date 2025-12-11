@@ -218,11 +218,10 @@ npc_class = {classes_list}'''
         return self.get_npc_shiparch_nickname()
 
     def get_classes_list(self):
-        classes = [
-            self.faction.LEGALITY,
-            self.CLASS_FIGHTER,
-            self.get_npc_level_code(),
-        ]
+        classes = [self.faction.LEGALITY]
+        if self.ship.IS_FIGHTER:
+            classes.append(self.CLASS_FIGHTER)
+        classes.append(self.get_npc_level_code())
         classes += self.ship.EXTRA_CLASSES
         return ', '.join(classes)
 

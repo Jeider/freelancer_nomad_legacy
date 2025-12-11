@@ -142,12 +142,12 @@ class LawfulPopulation(Population):
     HIGH_CAPSHIP_ENC = None
     MEDIUM_CAPSHIP_ENC = None
 
-    BH_PATROL_ENC = None
+    BH_PATROL_ENC = encounter.BhPatrol
 
     GLOBAL_TRADERS_ENC = None
     GLOBAL_TRADERS_TLR_ENC = None
-    BH_TRADE_ENC = None
-    BH_TRADE_TLR_ENC = None
+    BH_TRADE_ENC = encounter.BhTrade
+    BH_TRADE_TLR_ENC = encounter.BhTradeTLR
 
     SIMPLE_DEFENCE_ENCOUNTERS = '''
 encounter = main_defend, 5, 1.00000
@@ -303,12 +303,8 @@ class RheinlandLegalPopulation(LawfulPopulation):
     HIGH_CAPSHIP_ENC = encounter.RhCruiser
     MEDIUM_CAPSHIP_ENC = encounter.RhGunboat
 
-    BH_PATROL_ENC = encounter.BhPatrolRh
-
     GLOBAL_TRADERS_ENC = encounter.RhTransport
     GLOBAL_TRADERS_TLR_ENC = encounter.RhTransportTLR
-    BH_TRADE_ENC = encounter.BhTradeRh
-    BH_TRADE_TLR_ENC = encounter.BhTradeRhTLR
 
 
 class LibertyLegalPopulation(LawfulPopulation):
@@ -322,12 +318,8 @@ class LibertyLegalPopulation(LawfulPopulation):
     HIGH_CAPSHIP_ENC = encounter.LiCruiser
     MEDIUM_CAPSHIP_ENC = encounter.LiCruiser
 
-    BH_PATROL_ENC = encounter.BhPatrolLi
-
     GLOBAL_TRADERS_ENC = encounter.LiTransport
     GLOBAL_TRADERS_TLR_ENC = encounter.LiTransportTLR
-    BH_TRADE_ENC = encounter.BhTradeLi
-    BH_TRADE_TLR_ENC = encounter.BhTradeLiTLR
 
 
 class BretoniaLegalPopulation(LawfulPopulation):
@@ -341,12 +333,8 @@ class BretoniaLegalPopulation(LawfulPopulation):
     HIGH_CAPSHIP_ENC = encounter.BrDestroyer
     MEDIUM_CAPSHIP_ENC = encounter.BrGunboat
 
-    BH_PATROL_ENC = encounter.BhPatrolBr
-
     GLOBAL_TRADERS_ENC = encounter.BrTransport
     GLOBAL_TRADERS_TLR_ENC = encounter.BrTransportTLR
-    BH_TRADE_ENC = encounter.BhTradeBr
-    BH_TRADE_TLR_ENC = encounter.BhTradeBrTLR
 
 
 class KusariLegalPopulation(LawfulPopulation):
@@ -360,12 +348,8 @@ class KusariLegalPopulation(LawfulPopulation):
     HIGH_CAPSHIP_ENC = encounter.KuDestroyer
     MEDIUM_CAPSHIP_ENC = encounter.KuGunboat
 
-    BH_PATROL_ENC = encounter.BhPatrolKu
-
     GLOBAL_TRADERS_ENC = encounter.KuTransport
     GLOBAL_TRADERS_TLR_ENC = encounter.KuTransportTLR
-    BH_TRADE_ENC = encounter.BhTradeKu
-    BH_TRADE_TLR_ENC = encounter.BhTradeKuTLR
 
 
 class RheinlandPiratePopulation(UnlawfulPopulation):

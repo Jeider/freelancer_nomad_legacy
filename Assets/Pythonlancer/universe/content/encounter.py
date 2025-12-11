@@ -60,63 +60,19 @@ class AresXScout(Encounter):
     FILENAME = 'missions\\NPC\\area_rebels.ini'
 
 
-class BhTradeRh(Encounter):
-    NICKNAME = 'bh_grp_rh_trade'
-    FILENAME = 'missions\\npc\\rh\\bh_grp_rh_trade.ini'
+class BhTrade(Encounter):
+    NICKNAME = 'bh_trade'
+    FILENAME = 'missions\\npc\\generic\\bh_trade.ini'
 
 
-class BhTradeRhTLR(Encounter):
-    NICKNAME = 'bh_grp_rh_trade_tlr'
-    FILENAME = 'missions\\npc\\rh\\bh_grp_rh_trade_tlr.ini'
+class BhTradeTLR(Encounter):
+    NICKNAME = 'bh_trade_tlr'
+    FILENAME = 'missions\\npc\\generic\\bh_trade_tlr.ini'
 
 
-class BhPatrolRh(Encounter):
-    NICKNAME = 'bh_grp_rh_patrol'
-    FILENAME = 'missions\\npc\\rh\\bh_grp_rh_patrol.ini'
-
-
-class BhTradeLi(Encounter):
-    NICKNAME = 'bh_grp_li_trade'
-    FILENAME = 'missions\\npc\\li\\bh_grp_li_trade.ini'
-
-
-class BhTradeLiTLR(Encounter):
-    NICKNAME = 'bh_grp_li_trade_tlr'
-    FILENAME = 'missions\\npc\\li\\bh_grp_li_trade_tlr.ini'
-
-class BhPatrolLi(Encounter):
-    NICKNAME = 'bh_grp_li_patrol'
-    FILENAME = 'missions\\npc\\li\\bh_grp_li_patrol.ini'
-
-
-class BhTradeBr(Encounter):
-    NICKNAME = 'bh_grp_br_trade'
-    FILENAME = 'missions\\npc\\br\\bh_grp_br_trade.ini'
-
-
-class BhTradeBrTLR(Encounter):
-    NICKNAME = 'bh_grp_br_trade_tlr'
-    FILENAME = 'missions\\npc\\br\\bh_grp_br_trade_tlr.ini'
-
-
-class BhPatrolBr(Encounter):
-    NICKNAME = 'bh_grp_br_patrol'
-    FILENAME = 'missions\\npc\\br\\bh_grp_br_patrol.ini'
-
-
-class BhTradeKu(Encounter):
-    NICKNAME = 'bh_grp_ku_trade'
-    FILENAME = 'missions\\npc\\ku\\bh_grp_ku_trade.ini'
-
-
-class BhTradeKuTLR(Encounter):
-    NICKNAME = 'bh_grp_ku_trade_tlr'
-    FILENAME = 'missions\\npc\\ku\\bh_grp_ku_trade_tlr.ini'
-
-
-class BhPatrolKu(Encounter):
-    NICKNAME = 'bh_grp_ku_patrol'
-    FILENAME = 'missions\\npc\\ku\\bh_grp_ku_patrol.ini'
+class BhPatrol(Encounter):
+    NICKNAME = 'bh_patrol'
+    FILENAME = 'missions\\npc\\generic\\bh_patrol.ini'
 
 
 class RhCruiser(Encounter):

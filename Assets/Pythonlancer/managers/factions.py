@@ -54,7 +54,7 @@ class FactionManager:
                     target_faction.change_empathy(current_faction, target_rel.get_empathy())
 
     def get_initial_world_empty_reps(self, hate=False):
-        return ''  # SINGLE_DIVIDER.join([x.get_empty_rep(hate=hate) for x in self.factions_list if x.LISTED])
+        return SINGLE_DIVIDER.join([x.get_empty_rep(hate=hate) for x in self.factions_list if x.LISTED])
 
     def get_initial_world_content(self):
         return DIVIDER.join([x.get_initial_world_content() for x in self.factions_list if x.LISTED])
@@ -63,7 +63,7 @@ class FactionManager:
         return DIVIDER.join([x.get_empathy_content() for x in self.factions_list if x.LISTED])
 
     def get_military_factions_list(self):
-        return ', '.join([x.get_code() for x in self.factions_list if x.has_military_mission()])
+        return ', '.join([x.get_code() for x in self.factions_list if x.has_military_mission() or x.has_pirate_mission()])
 
     def get_civilian_factions_list(self):
         return ', '.join([x.get_code() for x in self.factions_list if x.has_civilian_mission()])

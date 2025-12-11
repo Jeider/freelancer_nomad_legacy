@@ -95,6 +95,7 @@ cargo = {nickname}, {amount}'''
     RU_NAME = ''
 
     SHIP_TYPE = None
+    IS_FIGHTER = False
 
     FORCE_HIT_PTS = None
 
@@ -767,6 +768,7 @@ class BaseInterceptorShip(object):
     SHIP_TYPE = LIGHT_FIGHTER
     MAX_HIT_PTS = 12000
     SHIP_KIND_CODE = 0
+    IS_FIGHTER = True
 
     MAX_PRICE = 400000
 
@@ -799,6 +801,7 @@ class BaseFighterShip(object):
     SHIP_TYPE = HEAVY_FIGHTER
     MAX_HIT_PTS = 10000
     SHIP_KIND_CODE = 1
+    IS_FIGHTER = True
 
     MAX_PRICE = 550000
 
@@ -983,7 +986,7 @@ class ShipElite(ShipFighter):
 class ShipFreighter(Ship2, BaseFreighterShip):
     EQUIPMENT_SHIPCLASS = Equipment.SHIPCLASS_FREIGHTER
     SHIPCLASS_NAME = 'freighter'
-    EXTRA_CLASSES = []
+    EXTRA_CLASSES = ['class_main_freighter']
 
     SHIELD_CLASS_TEMPLATE = 'hp_freighter_shield_special_{class_digit}'
     ENGINE_CLASS_TEMPLATE = 'hp_freighter_engine_special_{class_digit}'

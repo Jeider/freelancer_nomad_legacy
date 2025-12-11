@@ -132,8 +132,15 @@ house = -0.65, xenos_grp
 house = -0.65, bx_grp
 house = -0.65, kx_grp
 house = -0.65, farm_grp
-house = -0.91, fc_n_grp
-house = -0.91, dtr_grp
+house = -0.65, fc_n_grp
+house = 0, dtr_grp
+house = 0, odja_grp
+house = 0, hsp_grp
+house = -0.65, smg_rh_grp
+house = -0.65, smg_li_grp
+house = -0.65, smg_br_grp
+house = -0.65, smg_ku_grp
+house = -0.65, smg_bw_grp
 
 
 
