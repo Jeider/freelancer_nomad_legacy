@@ -109,6 +109,15 @@ relief_time = 15'''
         ])
 
     @classmethod
+    def get_pirate_defence_params(cls, faction):
+        # if not cls.GENERAL_DEFENCE_ENCOUNTERS:
+        #     raise Exception('general defence encounters is not defined %s' % cls.__class__.__name__)
+        return SINGLE_DIVIDER.join([
+            cls.MEDIUM_DEFENCE_PARAMS,
+            cls.GENERAL_DEFENCE_ENCOUNTERS.format(main_faction=faction.get_code()),
+        ])
+
+    @classmethod
     def get_trade_template_params(cls):
         return {}
 
@@ -268,6 +277,10 @@ class UnlawfulPopulation(Population):
     JUNKERS = None
     ATTACK_TLR_PATROL = encounter.PatrolTLR
 
+    GENERAL_DEFENCE_ENCOUNTERS = '''
+encounter = main_defend, 5, 0.80000
+faction = {main_faction}, 1.00000'''
+
     @classmethod
     def get_tlr_attackers_encounter(cls):
         return cls.ATTACK_TLR_PATROL.get_nickname()
@@ -295,7 +308,7 @@ class UnlawfulPopulation(Population):
 class RheinlandLegalPopulation(LawfulPopulation):
     MAIN_FACTION = faction.RheinlandMain
     MAIN_TRADERS = faction.RheinlandCivilians
-    GENERIC_PIRATES = faction.RheinlandPirate
+    GENERIC_PIRATES = faction.Hessians
     BOUNTY_HUNTERS = faction.RheinlandHunters
     GLOBAL_TRADERS = faction.RheinlandTraders
     JUNKERS = faction.Junkers
@@ -354,7 +367,7 @@ class KusariLegalPopulation(LawfulPopulation):
 
 class RheinlandPiratePopulation(UnlawfulPopulation):
     MAIN_PIRATES = faction.RheinlandPirate
-    GENERIC_PIRATES = faction.RheinlandPirate
+    GENERIC_PIRATES = faction.Hessians
     JUNKERS = faction.Junkers
 
 

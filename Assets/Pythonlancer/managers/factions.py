@@ -1,5 +1,5 @@
-from universe.faction import Faction, PlayerFaction, RELATIONS, FRIEND_MAX
 from tools.data_folder import DataFolder
+from universe.faction import Faction, PLAYER_RELATIONS, RELATIONS, FRIEND_MAX
 from text.dividers import DIVIDER, SINGLE_DIVIDER
 
 VIGNETTE_TEMPLATE = 'hardcoded_inis/static_content/vignette_params.ini'
@@ -12,11 +12,13 @@ class FactionManager:
 
         self.factions_db = {}
         self.factions_list = []
+        self.player_relations = {}
 
         self.load_factions()
         self.load_relations_props()
+        self.load_player_relations()
 
-        self.sync_vignettes()
+        self.sync_data()
 
     def get_all(self):
         return self.factions_list
@@ -24,8 +26,18 @@ class FactionManager:
     def get_managed_factions(self):
         return [f for f in self.factions_list if f.is_managed()]
 
+    def load_player_relations(self):
+        for rel in PLAYER_RELATIONS:
+            if rel.faction.CODE in self.player_relations:
+                self.player_relations[rel.faction.CODE] = rel.get_reputation()
+
     def get_player_relations(self):
-        return PlayerFaction.get_init_factions()
+        result = []
+        for faction, reputation in self.player_relations.items():
+            result.append(
+                f'house = {reputation}, {faction}'
+            )
+        return SINGLE_DIVIDER.join(result)
 
     def load_factions(self):
         for faction_class in Faction.subclasses:
@@ -37,6 +49,8 @@ class FactionManager:
             self.factions_list.append(faction)
 
         for faction in self.factions_list:
+            if faction.is_listed():
+                self.player_relations[faction.get_code()] = 0
             for rel_faction in self.factions_list:
                 faction.init_relations(rel_faction)
 
@@ -79,7 +93,7 @@ class FactionManager:
         }
         return self.core.tpl_manager.get_result(VIGNETTE_TEMPLATE, context)
 
-    def sync_vignettes(self):
+    def sync_data(self):
         if not self.core.write:
             return
 

@@ -307,7 +307,6 @@ class BizmarkTopPirate(BizmarkMember, main_objects.PirateStation):
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseCalifornia
     FACTION = faction.RheinlandPirate
 
-    DEFENCE_LEVEL = None
     RU_NAME = MS('База Майнц', "Mainz Base")
 
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -321,7 +320,6 @@ class BizmarkRightPirate(BizmarkMember, main_objects.PirateAsteroid):
     SPACE_OBJECT_TEMPLATE = astbase.BizmarkAsteroidBase
     FACTION = faction.Hessians
 
-    DEFENCE_LEVEL = None
     RU_NAME = MS('База Саарбрюкен', "Saarbrücken Base")
 
     INTERIOR_CLASS = interior.PirateOutpostInterior

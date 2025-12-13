@@ -328,7 +328,8 @@ class StaticObject(AppearableObject):
         raise Exception('Unknown defence class for object %s' % self.__class__.__name__)
 
     def get_unlawful_defence_zone_params(self):
-        raise Exception('unlawful not supported at this moment %s' % self.__class__.__name__)
+        population_class = self.get_unlawful_population_class()
+        return population_class.get_pirate_defence_params(self.get_faction())
 
     def get_defence_zone(self):
         return DynamicSphereZone(

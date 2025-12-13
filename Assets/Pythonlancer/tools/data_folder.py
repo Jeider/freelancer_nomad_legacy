@@ -170,7 +170,7 @@ class DataFolder:
         equip_file.write_text(content, encoding='utf-8')
 
     def sync_equip_hardcoded(self, equip_file_name, content):
-        equip_file = self.get_equip()  / f'{equip_file_name}.ini'
+        equip_file = self.get_equip() / f'{equip_file_name}.ini'
         equip_file.write_text(content, encoding='utf-8')
 
     def sync_knowledge_map(self, content):

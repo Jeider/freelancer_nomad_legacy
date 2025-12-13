@@ -1,6 +1,6 @@
 [Player]
 name = Trent
-rank = 5
+rank = 0
 Description = NewPlayer
 
 money = 2500
@@ -9,18 +9,13 @@ voice = trent_voice
 costume = trent
 com_costume = trent
 
-;system = the_intro
-;base = the_intro_base
 
-;;system = the_intro_dark
+system = the_intro_dark
 
-
-system = rh_biz
-base = rh_biz_01_base
 
 ship_archetype = ge_fighter
 
-;;pos = -5000, -5000, -5000
+pos = -5000, -5000, -5000
 
 equip = li_engine_01, HpDrive01, 1
 equip = li_power_01, HpPower01 , 1
@@ -101,71 +96,11 @@ house = 0, gd_bh_grp
 
 
 
-
-[;;StoryInfo]
+[StoryInfo]
 Mission = Mission_01a
 MissionNum = 1
 delta_worth = -1
 
-[StoryInfo]
-ship_bought = false
-Mission = GenericMission
-MissionNum = 0
-delta_worth = -1.000000
-debug = 1
 
-
-;; These gates will be locked in single player, but not necessarily multiplayer.
 [mPlayer]
 {{ locked_gates }}
-
-;;;;;
-locked_gate = 2216425088
-locked_gate = 2770614732
-locked_gate = 2713834567
-locked_gate = 3114289743
-locked_gate = 2518019016
-locked_gate = 2850213572
-;__future__
-locked_gate = 2441812805
-locked_gate = 2648019470
-locked_gate = 2865716239
-locked_gate = 2286590223
-locked_gate = 2474504846
-locked_gate = 2867291719
-locked_gate = 3171944329
-locked_gate = 2434674057
-locked_gate = 2500188551
-locked_gate = 2325787211
-locked_gate = 2223262222
-locked_gate = 2525138115
-locked_gate = 2362998470
-locked_gate = 2181181509
-locked_gate = 2992340931
-locked_gate = 2811627717
-locked_gate = 2644716618
-locked_gate = 3156849409
-locked_gate = 2323162566
-locked_gate = 2976667917
-locked_gate = 2878165834
-locked_gate = 2879435014
-locked_gate = 2824490957
-locked_gate = 2286836423
-locked_gate = 2827110861
-locked_gate = 2286854855
-locked_gate = 2295253895
-locked_gate = 2362392013
-locked_gate = 3076531521
-locked_gate = 2743232778
-locked_gate = 2696949761
-locked_gate = 2561201989
-locked_gate = 2374233733
-locked_gate = 2180140739
-locked_gate = 2180140739
-locked_gate = 3041324547
-locked_gate = 2966710469
-locked_gate = 3042529029
-locked_gate = 2298254336
-locked_gate = 3155962882
-locked_gate = 2992175306
-locked_gate = 2686166278

@@ -6,6 +6,8 @@ from world.equipment import MainMiscEquip as misc
 from world import bodyparts
 from world import ship
 
+from world.names import DEFAULT_COMMS, RH_COMMS, LI_COMMS, BR_COMMS, KU_COMMS, GLOBAL_COMMS
+
 from text.strings import MultiString as MS
 from text.dividers import SINGLE_DIVIDER
 
@@ -376,6 +378,8 @@ class Faction:
     IS_CIVILIAN = False
     RANDOM_MISSIONS = True
 
+    COMMODITY = DEFAULT_COMMS
+
     MANAGED = True
     LISTED = True
     CODE = None
@@ -440,6 +444,9 @@ class Faction:
         self.npc_ships = []
         if len(self.EXTRA_NPC_SHIPS):
             self.npc_ships += self.EXTRA_NPC_SHIPS
+
+    def get_commodities(self):
+        return self.COMMODITY
 
     def add_npc_ship(self, npc_ship):
         self.npc_ships.append(npc_ship)
@@ -931,6 +938,7 @@ class RheinlandMain(LawfulFaction, RheinlandMainFleet, BaseRheinland, RheinlandM
         'rh_grp_main_cruiser', 'rh_grp_main_gunboat'
     ]
     IS_MILITARY = True
+    COMMODITY = RH_COMMS
 
 #
 # class RheinlandMilitary(RheinlandMain):
@@ -949,11 +957,11 @@ class RheinlandCivilians(LawfulFaction, RheinlandMainFleet, BaseRheinland, Rhein
     COMM_TEMPLATE = COMM_PEASANT
     EXTRA_NPC_SHIPS = [LIFTER]
     IS_CIVILIAN = True
+    COMMODITY = RH_COMMS
 
 
 class RheinlandTraders(LawfulFaction, CivilianFleet, BaseRheinland, RheinlandCivEquip, Faction):
-    CODE = 'tr_grp'
-    MSG_CODE = 'tr_grp_rh'
+    CODE = 'tr_grp_rh'
     WEAPON = gun.RheinlandCivgun
     GUEST_APPEARANCE = bodyparts.PEASANT
     RU_NAME = MS('Интерсп+эйс', "Interspace")
@@ -962,11 +970,11 @@ class RheinlandTraders(LawfulFaction, CivilianFleet, BaseRheinland, RheinlandCiv
     COMM_TEMPLATE = COMM_PEASANT
     IS_CIVILIAN = True
     EXTRA_NPC_SHIPS = ['rh_grp_ge_transport_main_01']
+    COMMODITY = GLOBAL_COMMS
 
 
 class RheinlandHunters(LawfulFaction, RheinlandSecondFleet, BaseRheinland, RheinlandCivEquip, Faction):
-    CODE = 'bh_grp'
-    MSG_CODE = 'bh_grp_rh'
+    CODE = 'bh_grp_rh'
     WEAPON = gun.RheinlandHuntergun
     AFTERBURN = misc.RH_MAIN
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
@@ -982,8 +990,7 @@ class RheinlandHunters(LawfulFaction, RheinlandSecondFleet, BaseRheinland, Rhein
 
 
 class RheinlandPirate(UnlawfulFaction, RheinlandSecondFleet, BaseRheinland, RheinlandPirateEquip, Faction):
-    CODE = 'pi_grp'
-    MSG_CODE = 'pi_grp_rh'
+    CODE = 'pi_grp_rh'
     WEAPON = gun.RheinlandPirategun
     GUEST_APPEARANCE = bodyparts.PIRATE
     RU_NAME = MS('Бундсчух', "Bundschuh")
@@ -1035,6 +1042,7 @@ class LibertyMain(LawfulFaction, LibertyMainFleet, BaseLiberty, LibertyMainEquip
         'li_grp_main_cruiser',
     ]
     IS_MILITARY = True
+    COMMODITY = LI_COMMS
 
 #
 # class LibertyMilitary(LibertyMain):
@@ -1064,11 +1072,11 @@ class LibertyCivilians(LawfulFaction, LibertyMainFleet, BaseLiberty, LibertyCivE
     COMM_TEMPLATE = COMM_PEASANT
     EXTRA_NPC_SHIPS = [LIFTER]
     IS_CIVILIAN = True
+    COMMODITY = LI_COMMS
 
 
 class LibertyTraders(LawfulFaction, CivilianFleet, BaseLiberty, LibertyCivEquip, Faction):
-    CODE = 's22_fp_grp'
-    MSG_CODE = 'tr_grp_li'
+    CODE = 'tr_grp_li'
     WEAPON = gun.LibertyCivgun
     GUEST_APPEARANCE = bodyparts.PEASANT
     RU_NAME = MS('Адж+ейра', "Ageira")
@@ -1077,11 +1085,12 @@ class LibertyTraders(LawfulFaction, CivilianFleet, BaseLiberty, LibertyCivEquip,
     COMM_TEMPLATE = COMM_PEASANT
     IS_CIVILIAN = True
     EXTRA_NPC_SHIPS = ['li_grp_ge_large_train_main_01']
+    IS_GLOBAL_TRADER = True
+    COMMODITY = GLOBAL_COMMS
 
 
 class LibertyHunters(LawfulFaction, LibertySecondFleet, BaseLiberty, LibertyCivEquip, Faction):
-    CODE = 't4_fp_grp'
-    MSG_CODE = 'bh_grp_li'
+    CODE = 'bh_grp_li'
     WEAPON = gun.LibertyHuntergun
     AFTERBURN = misc.LI_MAIN
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
@@ -1097,8 +1106,7 @@ class LibertyHunters(LawfulFaction, LibertySecondFleet, BaseLiberty, LibertyCivE
 
 
 class LibertyPirate(UnlawfulFaction, LibertySecondFleet, BaseLiberty, LibertyPirateEquip, Faction):
-    CODE = 't29_fp_grp'
-    MSG_CODE = 'pi_grp_li'
+    CODE = 'pi_grp_li'
     WEAPON = gun.LibertyPirategun
     GUEST_APPEARANCE = bodyparts.PIRATE
     RU_NAME = MS('Д+икси', "Dixie")
@@ -1137,8 +1145,7 @@ class Starline(UnlawfulFaction, LibertyMainFleet, BaseLiberty, LibertyPirateEqui
 
 
 class LaneHackers(UnlawfulFaction, RheinlandSecondFleet, BaseLiberty, LibertyPirateEquip, Faction):
-    CODE = 'rber_fp_grp'
-    MSG_CODE = 'hack_grp'
+    CODE = 'hack_grp'
     WEAPON = gun.LibertyStarlinegun
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
     RU_NAME = MS('Хакеры', "Hackers")
@@ -1163,6 +1170,7 @@ class BretoniaMain(LawfulFaction, BretoniaMainFleet, BaseBretonia, BretoniaMainE
         'br_grp_main_destroyer', 'br_grp_main_gunboat'
     ]
     IS_MILITARY = True
+    COMMODITY = BR_COMMS
 
 #
 # class BretoniaMilitary(BretoniaMain):
@@ -1182,11 +1190,11 @@ class BretoniaCivilians(LawfulFaction, BretoniaMainFleet, BaseBretonia, Bretonia
     COMM_TEMPLATE = COMM_PEASANT
     EXTRA_NPC_SHIPS = [LIFTER]
     IS_CIVILIAN = True
+    COMMODITY = BR_COMMS
 
 
 class BretoniaTraders(LawfulFaction, CivilianFleet, BaseBretonia, BretoniaCivEquip, Faction):
-    CODE = 'miner_grp'
-    MSG_CODE = 'tr_grp_br'
+    CODE = 'tr_grp_br'
     WEAPON = gun.BretoniaCivgun
     GUEST_APPEARANCE = bodyparts.PEASANT
     RU_NAME = MS('Б+овекс', "Bowex")
@@ -1195,11 +1203,11 @@ class BretoniaTraders(LawfulFaction, CivilianFleet, BaseBretonia, BretoniaCivEqu
     COMM_TEMPLATE = COMM_PEASANT
     IS_CIVILIAN = True
     EXTRA_NPC_SHIPS = ['br_grp_ge_transport_main_01']
+    COMMODITY = GLOBAL_COMMS
 
 
 class BretoniaHunters(LawfulFaction, BretoniaSecondFleet, BaseBretonia, BretoniaCivEquip, Faction):
-    CODE = 'expl_grp'
-    MSG_CODE = 'bh_grp_br'
+    CODE = 'bh_grp_br'
     WEAPON = gun.BretoniaHuntergun
     AFTERBURN = misc.BR_MAIN
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
@@ -1216,8 +1224,7 @@ class BretoniaHunters(LawfulFaction, BretoniaSecondFleet, BaseBretonia, Bretonia
 
 
 class BretoniaPirate(UnlawfulFaction, CivilianFleet, BaseBretonia, BretoniaPirateEquip, Faction):
-    CODE = 'rm_grp'
-    MSG_CODE = 'pi_grp_br'
+    CODE = 'pi_grp_br'
     WEAPON = gun.BretoniaPirategun
     GUEST_APPEARANCE = bodyparts.PIRATE
     RU_NAME = MS('Гайане', "Gaians")
@@ -1233,8 +1240,8 @@ class Ireland(UnlawfulFaction, BretoniaSecondFleet, BaseBretonia, BretoniaPirate
     CODE = 'bx_grp'
     WEAPON = gun.BretoniaIragun
     GUEST_APPEARANCE = bodyparts.PIRATE
-    RU_NAME = MS('М+оллис', "Mollys")
-    RU_NAME_FULL = MS('Моллис', "Mollys")
+    RU_NAME = MS('ИРА', "IRA")
+    RU_NAME_FULL = MS('Ирландская республиканская армия', "Ireland Republican Army")
     MC_COSTUME = 'mc_energon'
     IS_PIRATE = True
     COMM_TEMPLATE = COMM_JOURNEYMAN
@@ -1243,8 +1250,7 @@ class Ireland(UnlawfulFaction, BretoniaSecondFleet, BaseBretonia, BretoniaPirate
 
 
 class Xenos(UnlawfulFaction, BretoniaSecondFleet, BaseBretonia, BretoniaPirateEquip, Faction):
-    CODE = 'lm_grp'
-    MSG_CODE = 'xenos_grp'
+    CODE = 'xenos_grp'
     WEAPON = gun.BretoniaXenosgun
     GUEST_APPEARANCE = bodyparts.PEASANT
     RU_NAME = MS('Кс+еносы', "Xenos")
@@ -1270,6 +1276,7 @@ class KusariMain(LawfulFaction, KusariMainFleet, BaseKusari, KusariMainEquip, Fa
         'ku_grp_main_destroyer', 'ku_grp_main_gunboat'
     ]
     IS_MILITARY = True
+    COMMODITY = KU_COMMS
 
 #
 # class KusariMilitary(KusariMain):
@@ -1288,11 +1295,11 @@ class KusariCivilians(LawfulFaction, KusariMainFleet, BaseKusari, KusariCivEquip
     COMM_TEMPLATE = COMM_PEASANT
     EXTRA_NPC_SHIPS = [LIFTER]
     IS_CIVILIAN = True
+    COMMODITY = KU_COMMS
 
 
 class KusariTraders(LawfulFaction, CivilianFleet, BaseKusari, KusariCivEquip, Faction):
-    CODE = 'bm_grp'
-    MSG_CODE = 'tr_grp_ku'
+    CODE = 'tr_grp_ku'
     WEAPON = gun.KusariCivgun
     GUEST_APPEARANCE = bodyparts.PEASANT
     RU_NAME = MS('Сам+ура', "Samura")
@@ -1301,11 +1308,11 @@ class KusariTraders(LawfulFaction, CivilianFleet, BaseKusari, KusariCivEquip, Fa
     COMM_TEMPLATE = COMM_PEASANT
     IS_CIVILIAN = True
     EXTRA_NPC_SHIPS = ['ku_grp_ge_large_train_main_01']
+    COMMODITY = GLOBAL_COMMS
 
 
 class KusariHunters(LawfulFaction, KusariSecondFleet, BaseKusari, KusariCivEquip, Faction):
-    CODE = 'km_grp'
-    MSG_CODE = 'bh_grp_ku'
+    CODE = 'bh_grp_ku'
     WEAPON = gun.KusariHuntergun
     AFTERBURN = misc.KU_MAIN
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
@@ -1321,8 +1328,7 @@ class KusariHunters(LawfulFaction, KusariSecondFleet, BaseKusari, KusariCivEquip
 
 
 class KusariPirate(UnlawfulFaction, KusariSecondFleet, BaseKusari, KusariPirateEquip, Faction):
-    CODE = 'no_grp'
-    MSG_CODE = 'pi_grp_ku'
+    CODE = 'pi_grp_ku'
     WEAPON = gun.KusariPirategun
     GUEST_APPEARANCE = bodyparts.PIRATE
     RU_NAME = MS('Золот+ые Хризант+емы', "Golden Chrystantems")
@@ -1348,8 +1354,7 @@ class Shinobi(UnlawfulFaction, KusariMainFleet, BaseKusari, KusariPirateEquip, F
 
 
 class FarmerAlliance(UnlawfulFaction, KusariSecondFleet, BaseKusari, KusariPirateEquip, Faction):
-    CODE = 'nomk_grp'
-    MSG_CODE = 'farm_grp'
+    CODE = 'farm_grp'
     WEAPON = gun.KusariDragongun
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
     RU_NAME = MS('Фермеры', "Farmers")
@@ -1413,8 +1418,7 @@ class Corsairs(UnlawfulFaction, CorsairFleet, BaseBorderWorld, BorderWorldCorsai
 
 
 class Outcasts(LawfulFaction, RheinlandSecondFleet, BaseBorderWorld, BorderWorldOutcastsEquip, Faction):
-    CODE = 'edv_grp'
-    MSG_CODE = 'out_grp'
+    CODE = 'out_grp'
     WEAPON = gun.BorderWorldOutcastgun
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
     RU_NAME = MS('Изг+ои', "Outcasts")
@@ -1445,8 +1449,7 @@ class BorderWorldPirate(UnlawfulFaction, RheinlandSecondFleet, BaseBorderWorld, 
 
 
 class DeidrichPeople(UnlawfulFaction, BaseRheinland, RheinlandMainEquip, Faction):
-    CODE = 'nokr_grp'
-    MSG_CODE = 'dtr_grp'
+    CODE = 'dtr_grp'
     WEAPON = gun.RheinlandLightgun
     MANAGED = False
     RU_NAME = MS('Люди Дитриха', "Deidrich's people")
@@ -1662,7 +1665,7 @@ PLAYER_RELATIONS = [
     Relation(Shinobi, ENEMY_MED),
     Relation(FarmerAlliance, ENEMY_MED),
 
-    Relation(Nomad, ENEMY_MED),
+    # Relation(Nomad, ENEMY_MED),
     Relation(DeidrichPeople, NEUTRAL),
     # Relation(OdjaPeople, NEUTRAL),
     # Relation(Hispaniola, NEUTRAL),
@@ -1673,18 +1676,6 @@ PLAYER_RELATIONS = [
     # Relation(KusariSmuggler, ENEMY_MED),
     # Relation(BorderWorldSmuggler, ENEMY_MED),
 ]
-
-
-class PlayerFaction:
-
-    @classmethod
-    def get_init_factions(cls):
-        result = []
-        for rel in PLAYER_RELATIONS:
-            result.append(
-                f'house = {rel.reputation}, {rel.faction.CODE}'
-            )
-        return SINGLE_DIVIDER.join(result)
 
 
 RELATIONS = [

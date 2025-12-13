@@ -1,6 +1,12 @@
+from tools.data_folder import DataFolder
+
 from managers.tools.helpers import ManagerHelper
 
 from world.commodity import Commodity
+
+from text.dividers import SINGLE_DIVIDER, DIVIDER
+
+COMM_PER_FACTION_TEMPLATE = 'hardcoded_inis/static_content/commodities_per_faction.ini'
 
 
 class UniverseCommodity:
@@ -62,6 +68,8 @@ class StoreManager:
 
         self.init_commoditites()
 
+        self.sync_data()
+
     def init_commoditites(self):
         for commodity in Commodity.subclasses:
             if not commodity.BASE_COMMODITY:
@@ -98,3 +106,35 @@ class StoreManager:
 
     def get_comm_good(self):
         return ManagerHelper.extract_goods(self.comms_list)
+
+    def get_comms_per_factions(self):
+        results = []
+        for faction in self.core.factions.get_all():
+            if not faction.is_listed():
+                continue
+            comms = []
+            for comm in faction.get_commodities():
+                comms.append(
+                    f'MarketGood = {self.get_by_name(comm).get_nickname()}, 0, 0'
+                )
+            results.append(
+                f'''[FactionGood]
+faction = {faction.get_code()}
+{SINGLE_DIVIDER.join(comms)}
+'''
+            )
+        return DIVIDER.join(results)
+
+    def get_comm_per_faction_content(self):
+        context = {
+            'generated': self.get_comms_per_factions(),
+        }
+        return self.core.tpl_manager.get_result(COMM_PER_FACTION_TEMPLATE, context)
+
+    def sync_data(self):
+        if not self.core.write:
+            return
+
+        data_folder = DataFolder(build_to_folder=self.core.build_folder)
+
+        data_folder.sync_equip_hardcoded('commodities_per_faction', self.get_comm_per_faction_content())
