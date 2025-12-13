@@ -24,6 +24,9 @@ INITIAL_FACTIONS_OFFER2_ID = 328780
 INITIAL_FACTIONS_OFFER3_ID = 328880
 INITIAL_FACTIONS_OFFER4_ID = 328980
 
+INITIAL_SPACE_MISC_ID = 160000
+INITIAL_GENERIC_MISC_ID = 170000
+
 # 047050 - Navy (short)
 
 # 196846 - Liberty Navy (Main!)
@@ -58,6 +61,8 @@ class IDsManager:
         self.factions_offer2 = IDsDatabase('factions_offer2', INITIAL_FACTIONS_OFFER2_ID)
         self.factions_offer3 = IDsDatabase('factions_offer3', INITIAL_FACTIONS_OFFER3_ID)
         self.factions_offer4 = IDsDatabase('factions_offer4', INITIAL_FACTIONS_OFFER4_ID)
+        self.space_misc = IDsDatabase('space_misc', INITIAL_SPACE_MISC_ID)
+        self.generic_misc = IDsDatabase('generic_misc', INITIAL_GENERIC_MISC_ID)
 
         self.databases = [
             self.weapon,
@@ -79,6 +84,8 @@ class IDsManager:
             self.factions_offer2,
             self.factions_offer3,
             self.factions_offer4,
+            self.space_misc,
+            self.generic_misc,
         ]
         #
         # for item in RETURN_NAMES:

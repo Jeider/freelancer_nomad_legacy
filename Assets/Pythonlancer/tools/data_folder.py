@@ -129,6 +129,10 @@ class DataFolder:
         loadouts_file = self.get_solar() / LOADOUTS_GEN
         loadouts_file.write_text(content, encoding='utf-8')
 
+    def sync_solar_gen_store_loadouts(self, content):
+        loadouts_file = self.get_solar() / 'loadout_gen_store.ini'
+        loadouts_file.write_text(content, encoding='utf-8')
+
     def sync_to_test_workspace(self, content, workspace_index=''):
         if self.build_to_folder:
             raise Exception('Impossible to use with build')

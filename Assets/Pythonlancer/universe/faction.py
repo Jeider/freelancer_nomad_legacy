@@ -6,7 +6,11 @@ from world.equipment import MainMiscEquip as misc
 from world import bodyparts
 from world import ship
 
-from world.names import DEFAULT_COMMS, RH_COMMS, LI_COMMS, BR_COMMS, KU_COMMS, GLOBAL_COMMS
+from world.names import (
+    DEFAULT_COMMS, RH_COMMS, LI_COMMS, BR_COMMS, KU_COMMS, GLOBAL_COMMS,
+    DEFAULT_PRODS, RH_COMMS_PRODS, LI_COMMS_PRODS, BR_COMMS_PRODS, KU_COMMS_PRODS,
+)
+
 
 from text.strings import MultiString as MS
 from text.dividers import SINGLE_DIVIDER
@@ -379,6 +383,7 @@ class Faction:
     RANDOM_MISSIONS = True
 
     COMMODITY = DEFAULT_COMMS
+    COMMODITY_PRODS = DEFAULT_PRODS
 
     MANAGED = True
     LISTED = True
@@ -931,7 +936,7 @@ class RheinlandMain(LawfulFaction, RheinlandMainFleet, BaseRheinland, RheinlandM
     CODE = 'rh_grp'
     WEAPON = gun.RheinlandLightgun
     GUEST_APPEARANCE = bodyparts.TRADER
-    RU_NAME = MS('Р+эйнланд', "Rheinland")
+    RU_NAME = MS('Рейнланд', "Rheinland")
     RU_NAME_FULL = MS('Рейнландская империя', "Rheinland Empire")
     SCANNING_CARGO = True
     EXTRA_NPC_SHIPS = [
@@ -939,6 +944,7 @@ class RheinlandMain(LawfulFaction, RheinlandMainFleet, BaseRheinland, RheinlandM
     ]
     IS_MILITARY = True
     COMMODITY = RH_COMMS
+    COMMODITY_PRODS = RH_COMMS_PRODS
 
 #
 # class RheinlandMilitary(RheinlandMain):
@@ -958,6 +964,7 @@ class RheinlandCivilians(LawfulFaction, RheinlandMainFleet, BaseRheinland, Rhein
     EXTRA_NPC_SHIPS = [LIFTER]
     IS_CIVILIAN = True
     COMMODITY = RH_COMMS
+    COMMODITY_PRODS = RH_COMMS_PRODS
 
 
 class RheinlandTraders(LawfulFaction, CivilianFleet, BaseRheinland, RheinlandCivEquip, Faction):
@@ -969,8 +976,9 @@ class RheinlandTraders(LawfulFaction, CivilianFleet, BaseRheinland, RheinlandCiv
     MC_COSTUME = 'mc_siemens'
     COMM_TEMPLATE = COMM_PEASANT
     IS_CIVILIAN = True
-    EXTRA_NPC_SHIPS = ['rh_grp_ge_transport_main_01']
+    EXTRA_NPC_SHIPS = ['rh_grp_ge_transport_main_01', LIFTER]
     COMMODITY = GLOBAL_COMMS
+    COMMODITY_PRODS = RH_COMMS_PRODS
 
 
 class RheinlandHunters(LawfulFaction, RheinlandSecondFleet, BaseRheinland, RheinlandCivEquip, Faction):
@@ -1046,6 +1054,7 @@ class LibertyMain(LawfulFaction, LibertyMainFleet, BaseLiberty, LibertyMainEquip
     ]
     IS_MILITARY = True
     COMMODITY = LI_COMMS
+    COMMODITY_PRODS = LI_COMMS_PRODS
 
 #
 # class LibertyMilitary(LibertyMain):
@@ -1076,6 +1085,7 @@ class LibertyCivilians(LawfulFaction, LibertyMainFleet, BaseLiberty, LibertyCivE
     EXTRA_NPC_SHIPS = [LIFTER]
     IS_CIVILIAN = True
     COMMODITY = LI_COMMS
+    COMMODITY_PRODS = LI_COMMS_PRODS
 
 
 class LibertyTraders(LawfulFaction, CivilianFleet, BaseLiberty, LibertyCivEquip, Faction):
@@ -1087,9 +1097,10 @@ class LibertyTraders(LawfulFaction, CivilianFleet, BaseLiberty, LibertyCivEquip,
     MC_COSTUME = 'mc_deepspace'
     COMM_TEMPLATE = COMM_PEASANT
     IS_CIVILIAN = True
-    EXTRA_NPC_SHIPS = ['li_grp_ge_large_train_main_01']
+    EXTRA_NPC_SHIPS = ['li_grp_ge_large_train_main_01', LIFTER]
     IS_GLOBAL_TRADER = True
     COMMODITY = GLOBAL_COMMS
+    COMMODITY_PRODS = LI_COMMS_PRODS
 
 
 class LibertyHunters(LawfulFaction, LibertySecondFleet, BaseLiberty, LibertyCivEquip, Faction):
@@ -1177,6 +1188,7 @@ class BretoniaMain(LawfulFaction, BretoniaMainFleet, BaseBretonia, BretoniaMainE
     ]
     IS_MILITARY = True
     COMMODITY = BR_COMMS
+    COMMODITY_PRODS = BR_COMMS_PRODS
 
 #
 # class BretoniaMilitary(BretoniaMain):
@@ -1197,6 +1209,7 @@ class BretoniaCivilians(LawfulFaction, BretoniaMainFleet, BaseBretonia, Bretonia
     EXTRA_NPC_SHIPS = [LIFTER]
     IS_CIVILIAN = True
     COMMODITY = BR_COMMS
+    COMMODITY_PRODS = BR_COMMS_PRODS
 
 
 class BretoniaTraders(LawfulFaction, CivilianFleet, BaseBretonia, BretoniaCivEquip, Faction):
@@ -1208,8 +1221,9 @@ class BretoniaTraders(LawfulFaction, CivilianFleet, BaseBretonia, BretoniaCivEqu
     MC_COSTUME = 'mc_aegis'
     COMM_TEMPLATE = COMM_PEASANT
     IS_CIVILIAN = True
-    EXTRA_NPC_SHIPS = ['br_grp_ge_transport_main_01']
+    EXTRA_NPC_SHIPS = ['br_grp_ge_transport_main_01', LIFTER]
     COMMODITY = GLOBAL_COMMS
+    COMMODITY_PRODS = BR_COMMS_PRODS
 
 
 class BretoniaHunters(LawfulFaction, BretoniaSecondFleet, BaseBretonia, BretoniaCivEquip, Faction):
@@ -1285,6 +1299,7 @@ class KusariMain(LawfulFaction, KusariMainFleet, BaseKusari, KusariMainEquip, Fa
     ]
     IS_MILITARY = True
     COMMODITY = KU_COMMS
+    COMMODITY_PRODS = KU_COMMS_PRODS
 
 #
 # class KusariMilitary(KusariMain):
@@ -1304,6 +1319,7 @@ class KusariCivilians(LawfulFaction, KusariMainFleet, BaseKusari, KusariCivEquip
     EXTRA_NPC_SHIPS = [LIFTER]
     IS_CIVILIAN = True
     COMMODITY = KU_COMMS
+    COMMODITY_PRODS = KU_COMMS_PRODS
 
 
 class KusariTraders(LawfulFaction, CivilianFleet, BaseKusari, KusariCivEquip, Faction):
@@ -1315,8 +1331,9 @@ class KusariTraders(LawfulFaction, CivilianFleet, BaseKusari, KusariCivEquip, Fa
     MC_COSTUME = 'mc_gasmining'
     COMM_TEMPLATE = COMM_PEASANT
     IS_CIVILIAN = True
-    EXTRA_NPC_SHIPS = ['ku_grp_ge_large_train_main_01']
+    EXTRA_NPC_SHIPS = ['ku_grp_ge_large_train_main_01', LIFTER]
     COMMODITY = GLOBAL_COMMS
+    COMMODITY_PRODS = KU_COMMS_PRODS
 
 
 class KusariHunters(LawfulFaction, KusariSecondFleet, BaseKusari, KusariCivEquip, Faction):

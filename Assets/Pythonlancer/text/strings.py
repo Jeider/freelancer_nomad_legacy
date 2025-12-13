@@ -66,6 +66,11 @@ class IDsDatabase:
         self.ids.append(the_id)
         return the_id
 
+    def new_name_multi(self, ru, en):
+        the_id = TheID(self.get_next_id(), MultiString(ru, en), kind=NAME)
+        self.ids.append(the_id)
+        return the_id
+
     def new_info(self, multi_string):
         if multi_string.__class__.__name__ != MultiString.__name__:
             raise Exception(f'String {multi_string} is not instance of MultiString')

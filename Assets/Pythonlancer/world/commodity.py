@@ -134,6 +134,14 @@ class Commodity:
         self.good_price_multiplier = 5
         self.bad_price_multiplier = 2
 
+        self.depot_names = {}
+
+    def add_depot_name(self, depot_archetype, ids_name):
+        self.depot_names[depot_archetype] = ids_name
+
+    def get_depot_name(self, depot_archetype):
+        return self.depot_names[depot_archetype]
+
     def get_market_level(self):
         return self.MARKET_DEFAULT_LEVEL
 

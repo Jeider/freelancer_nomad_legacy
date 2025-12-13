@@ -1003,6 +1003,7 @@ BGCS_base_run_by = W02bF44'''
     TRADE_POINT_Z = 1000
     TRADE_POINT_ORIENTS = []
     TRADE_POINT_EMPTY_ARCHETYPE = None
+    USE_PROD_COMMODITIES = True
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -1222,6 +1223,8 @@ nickname = {root_name}_tr_point{i}
 pos = {fixture_pos[0]:0.7f}, {fixture_pos[1]:0.7f}, {fixture_pos[2]:0.7f} 
 rotate = 0, {main_rotate}, 0
 archetype = {self.TRADE_POINT_ARCHETYPE.ARCHETYPE}
+ids_name = {self.system.core.store.get_depot_fixture_name_id()}
+ids_info = {self.system.core.store.get_depot_fixture_info_id()}
 behavior = NOTHING
 reputation = {self.get_faction_code()}
 dock_with = {self.get_base_nickname()}
@@ -1253,16 +1256,29 @@ dock_with = {self.get_base_nickname()}
                         point_init_pos[2] + fixture_pos[2],
                     ]
 
-                    space_objects.append(f'''[Object]
+                    obj = f'''[Object]
 nickname = {root_name}_tr_point{i}_moor_obj{j}
 pos = {point_pos[0]:0.7f}, {point_pos[1]:0.7f}, {point_pos[2]:0.7f} 
 rotate = 0, {main_rotate}, 0
 archetype = {depot_archetype.ARCHETYPE}
 loadout = {depot_archetype.LOADOUT}
-reputation = {self.get_faction_code()}
-ids_name = 261161
 behavior = NOTHING
-''')
+'''
+                    if not depot_archetype.EMPTY:
+                        faction = self.get_faction()
+                        comm_alias = random.choice(
+                            faction.COMMODITY_PRODS if self.USE_PROD_COMMODITIES else faction.COMMODITY
+                        )
+                        commodity = self.system.core.store.get_by_name(comm_alias)
+                        obj += f'{SINGLE_DIVIDER}loadout = {depot_archetype.get_loadout_name(commodity)}'
+                        obj += f'{SINGLE_DIVIDER}reputation = {self.get_faction_code()}'
+
+                        ids_name = commodity.get_depot_name(depot_archetype.ARCHETYPE)
+                        obj += f'{SINGLE_DIVIDER}ids_name = {ids_name}'
+                        obj += f'{SINGLE_DIVIDER}ids_info = {self.system.core.store.get_legal_depot_id()}'
+
+                    space_objects.append(obj)
+
                 j += 1
 
             i += 1
@@ -1292,6 +1308,8 @@ nickname = {root_name}_tr_point{i}
 pos = {fixture_pos[0]:0.2f}, {fixture_pos[1]:0.2f}, {fixture_pos[2]:0.2f} 
 rotate = 0, {-fixture_orient}, 0
 archetype = {self.TRADE_POINT_ARCHETYPE.ARCHETYPE}
+ids_name = {self.system.core.store.get_depot_fixture_name_id()}
+ids_info = {self.system.core.store.get_depot_fixture_info_id()}
 behavior = NOTHING
 reputation = {self.get_faction_code()}
 dock_with = {self.get_base_nickname()}
@@ -1322,16 +1340,28 @@ dock_with = {self.get_base_nickname()}
                         point_init_pos[2] + fixture_pos[2],
                     ]
 
-                    space_objects.append(f'''[Object]
+                    obj = f'''[Object]
 nickname = {root_name}_tr_point{i}_moor_obj{j}
 pos = {point_pos[0]:0.7f}, {point_pos[1]:0.7f}, {point_pos[2]:0.7f}
 rotate = 0, {-fixture_orient}, 0
 archetype = {depot_archetype.ARCHETYPE}
 loadout = {depot_archetype.LOADOUT}
-reputation = {self.get_faction_code()}
-ids_name = 261161
 behavior = NOTHING
-''')
+'''
+                    if not depot_archetype.EMPTY:
+                        faction = self.get_faction()
+                        comm_alias = random.choice(
+                            faction.COMMODITY_PRODS if self.USE_PROD_COMMODITIES else faction.COMMODITY
+                        )
+                        commodity = self.system.core.store.get_by_name(comm_alias)
+                        obj += f'{SINGLE_DIVIDER}loadout = {depot_archetype.get_loadout_name(commodity)}'
+                        obj += f'{SINGLE_DIVIDER}reputation = {self.get_faction_code()}'
+
+                        ids_name = commodity.get_depot_name(depot_archetype.ARCHETYPE)
+                        obj += f'{SINGLE_DIVIDER}ids_name = {ids_name}'
+                        obj += f'{SINGLE_DIVIDER}ids_info = {self.system.core.store.get_legal_depot_id()}'
+                    space_objects.append(obj)
+
                 j += 1
 
             i += 1
@@ -1457,6 +1487,7 @@ class LargePlanetDockring(Dockring):
                               diversion.TradingLargeTransport,
                               diversion.TradingTrainCargo]
     TRADE_POINT_EMPTY_ARCHETYPE = diversion.TradingTrainCargoEmpty
+    USE_PROD_COMMODITIES = False
 
 
 class MiningPlanetDockring(Dockring):
@@ -1703,6 +1734,8 @@ class TradingBase(DockableObject):
     TRADE_POINT_ORIENTS = [45, 135, 225, 315]
     TRADE_DEPOT_ARCHETYPES = [diversion.TradingTrain, diversion.TradingLargeTransport]
     TRADE_POINT_ARCHETYPE = diversion.TradingFixture
+
+    USE_LIFTER = True
 
     def get_sattelites(self):
         return self.get_trade_points_orient()

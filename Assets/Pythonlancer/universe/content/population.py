@@ -270,7 +270,7 @@ faction = {bounty_hunters}, 1.00000'''
     @classmethod
     def get_lifter_template_params(cls):
         return {
-            'main_traders': cls.MAIN_TRADERS.get_code(),
+            'main_traders': cls.GLOBAL_TRADERS.get_code(),
         }
 
     @classmethod

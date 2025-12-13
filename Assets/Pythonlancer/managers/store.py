@@ -3,10 +3,19 @@ from tools.data_folder import DataFolder
 from managers.tools.helpers import ManagerHelper
 
 from world.commodity import Commodity
+from universe.content import diversion
 
 from text.dividers import SINGLE_DIVIDER, DIVIDER
+from text.strings import MultiString as MS
 
 COMM_PER_FACTION_TEMPLATE = 'hardcoded_inis/static_content/commodities_per_faction.ini'
+
+TRAINS = [
+    diversion.TradingTrain,
+    diversion.TradingTrainCargo,
+    diversion.TradingLargeTransport,
+    diversion.TradingSmallTransport,
+]
 
 
 class UniverseCommodity:
@@ -60,13 +69,37 @@ class StoreManager:
     def __init__(self, lancer_core):
         self.core = lancer_core
         self.ids = self.core.ids.commodity
+        self.ids_space = self.core.ids.space_misc
 
         self.comms_db = {}
         self.comms_list = []
         self.universe_comms_db = {}
         self.universe_comms_list: list[UniverseCommodity] = []
+        self.loadouts = []
 
         self.init_commoditites()
+        self.init_depots()
+
+        self.depot_fixture_name = self.ids_space.new_name(MS(
+            'Разгрузочный причал',
+            'Docking fixture'
+        ))
+        self.depot_fixture_info = self.ids_space.new_info(MS(
+            'Данный причал используется для разгрузки транспортов. Причаленные транспорты дожидаются тягачей, '
+            'которые смогут доставить товары на базу или переложить на другие транспорты, чтобы продолжить движение '
+            'на другом судне.',
+            'Those docking fixture are using for unloading of cargo from transport. Moored transport are waiting '
+            'for heavy lifters. Lifters will move cargo to nearest base or reload it to another transport.'
+        ))
+        self.legal_depot_ids_info = self.ids_space.new_info(MS(
+            'В этом объекте находятся товары, готовые к рагрузке тягачами. Вы можете атаковать контейнеры своими '
+            'пушками, чтобы получить товары из контейнеров. Но при этом вы значительно ухудшите репутацию с владельцем '
+            'данного транспорта.',
+
+            'This objects contains commodities, ready for detached by lifters. You can attack containers by '
+            'your guns and get access to commodities inside. But you will get huge reputation damage to owner of '
+            'this transport.'
+        ))
 
         self.sync_data()
 
@@ -86,6 +119,9 @@ class StoreManager:
 
     def get_by_name(self, name):
         return self.comms_db[name]
+
+    def get_universe_comm_by_name(self, name):
+        return self.universe_comms_db[name]
 
     def get_universe_commodities(self):
         return self.universe_comms_list
@@ -131,6 +167,27 @@ faction = {faction.get_code()}
         }
         return self.core.tpl_manager.get_result(COMM_PER_FACTION_TEMPLATE, context)
 
+    def init_depots(self):
+        for train in TRAINS:
+            for comm in self.comms_list:
+                comm.add_depot_name(depot_archetype=train.ARCHETYPE,
+                                    ids_name=train.get_ids_name(self.core.ids.space_misc, commodity=comm))
+                self.loadouts.append(
+                    train.get_loadout_content(comm)
+                )
+
+    def get_store_loadouts_content(self):
+        return DIVIDER.join(self.loadouts)
+
+    def get_legal_depot_id(self):
+        return self.legal_depot_ids_info
+
+    def get_depot_fixture_name_id(self):
+        return self.depot_fixture_name
+
+    def get_depot_fixture_info_id(self):
+        return self.depot_fixture_info
+
     def sync_data(self):
         if not self.core.write:
             return
@@ -138,3 +195,4 @@ faction = {faction.get_code()}
         data_folder = DataFolder(build_to_folder=self.core.build_folder)
 
         data_folder.sync_equip_hardcoded('commodities_per_faction', self.get_comm_per_faction_content())
+        data_folder.sync_solar_gen_store_loadouts(self.get_store_loadouts_content())
