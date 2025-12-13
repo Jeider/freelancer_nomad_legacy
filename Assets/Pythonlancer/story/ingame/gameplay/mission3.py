@@ -553,12 +553,14 @@ class Misson03(ingame_mission.IngameMission):
                     ship=ship.Valkyrie,
                     level=NPC.D12,
                     equip_map=EqMap(base_level=5, engine=4),
+                    gen_armor=False,
                     extra_equip=[
                         'equip = attached_fx_connect01, HpRoot01',
                         'equip = attached_fx_connect02, HpRoot02',
                         'equip = attached_fx_connect03, HpRoot03',
-                        'equip = rh_heavyturret06, HpTurret02',
-                        'equip = rh_heavyturret06, HpTurret03',
+                        'equip = dtr_shieldgun05, HpTurret02',
+                        'equip = dtr_shieldgun05, HpTurret03',
+                        'equip = m03_dtr_armor',
                     ]
                 )
             ),

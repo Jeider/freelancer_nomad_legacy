@@ -488,10 +488,10 @@ STATIC_NAMES = [
     # Static(210330, 'Мусорщики'),
     # Static(210337, 'Люди Дитриха'),
 
-    Static(190000, MS('Рейнланд', 'Rheinland')),
-    Static(190001, MS('Либерти', 'Liberty')),
-    Static(190002, MS('Бретония', 'Bretonia')),
-    Static(190003, MS('Кусари', 'Kusari')),
+    Static(190000, MS('РЕЙНЛАНД', 'RHEINLAND')),
+    Static(190001, MS('ЛИБЕРТИ', 'LIBERTY')),
+    Static(190002, MS('БРЕТОНИЯ', 'BRETONIA')),
+    Static(190003, MS('КУСАРИ', 'KUSARI')),
 
     Static(238101, MS('Гиперврата в Большой Омикрон', 'Jumpgate to Omicron Major')),
     Static(238101, MS('Гиперврата в Малый Омикрон', 'Jumpgate to Omicron Minor')),

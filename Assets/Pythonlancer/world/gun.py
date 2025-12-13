@@ -235,12 +235,12 @@ class DietrichLightgun(Gun, RheinlandGun, Lightgun):
     RU_NAME = MS('Рогатый змей', 'Hornviper')
     RU_NAME_DESC = MS('Легкая пушка мятежников Дитриха', 'Dietrich\'s rebels light gun')
     BASE_NICKNAME = 'dtr_lightgun'
-    MODEL = Weapon.RH_GAMMA_BEAMER
+    MODEL = Weapon.RH_PLASMA_GAT_CANNON
     EQUIP_TYPE = Weapon.EQUIP_MAIN
-    REFIRE_RATE = Weapon.REFIRE_RATE_8
+    REFIRE_RATE = Weapon.REFIRE_RATE_10
     MUZZLE_VELOCITY = 800
-    LIFETIME = 1.0
-    FX_FACTION = WeaponFX.FX_RH
+    LIFETIME = 2.0
+    FX_FACTION = WeaponFX.FX_DTR
     FX_APPEARANCE = WeaponFX.FX_TACHYON
 
 
@@ -254,8 +254,22 @@ class DietrichHeavygun(Gun, RheinlandGun, Heavygun):
     REFIRE_RATE = Weapon.REFIRE_RATE_2
     MUZZLE_VELOCITY = 500
     LIFETIME = 1.2
-    FX_FACTION = WeaponFX.FX_RH
+    FX_FACTION = WeaponFX.FX_DTR
     FX_APPEARANCE = WeaponFX.FX_PLASMA
+
+
+class DietrichShieldgun(Gun, RheinlandGun, Heavygun):
+    DAMAGE_MULTIPLIER = 1.1
+    RU_NAME = MS('Годендаг', 'Goedendag')
+    RU_NAME_DESC = MS('Противощитовая пушка мятежников Дитриха', 'Dietrich\'s rebels shield gun')
+    BASE_NICKNAME = 'dtr_shieldgun'
+    MODEL = Weapon.RH_PROTON_BLASTER
+    EQUIP_TYPE = Weapon.EQUIP_MAIN
+    REFIRE_RATE = Weapon.REFIRE_RATE_4
+    MUZZLE_VELOCITY = 700
+    LIFETIME = 1.0
+    FX_FACTION = WeaponFX.FX_DTR
+    FX_APPEARANCE = WeaponFX.FX_PULSE
 
 
 class RheinlandLightgun(Gun, RheinlandGun, Lightgun):
@@ -773,7 +787,7 @@ class BorderWorldPirategun(Gun, BorderWorldGun, Pirategun):
 class AsfLightgun(Gun, LibertyGun, Lightgun):
     RU_NAME = MS('Бриллиант', 'Diamondback')
     RU_NAME_DESC = MS('Тяжелая пушка СБА', 'ASF heavy gun')
-    BASE_NICKNAME = 'asf_heavygun'
+    BASE_NICKNAME = 'asf_lightgun'
     MODEL = Weapon.LI_AUTO_CANNON
     EQUIP_TYPE = Weapon.EQUIP_MAIN
     REFIRE_RATE = Weapon.REFIRE_RATE_2
@@ -784,6 +798,7 @@ class AsfLightgun(Gun, LibertyGun, Lightgun):
 
 
 class AsfDiamondback(Gun, LibertyGun, Lightgun):
+    DAMAGE_MULTIPLIER = 1.35
     RU_NAME = MS('Бриллиант', 'Diamondback')
     RU_NAME_DESC = MS('Тяжелая пушка СБА', 'ASF heavy gun')
     BASE_NICKNAME = 'asf_heavygun'
@@ -791,6 +806,6 @@ class AsfDiamondback(Gun, LibertyGun, Lightgun):
     EQUIP_TYPE = Weapon.EQUIP_MAIN
     REFIRE_RATE = Weapon.REFIRE_RATE_2
     MUZZLE_VELOCITY = 800
-    LIFETIME = 1.2
-    FX_FACTION = WeaponFX.FX_LI
+    LIFETIME = 1.5
+    FX_FACTION = WeaponFX.FX_SP
     FX_APPEARANCE = WeaponFX.FX_DIAMOND

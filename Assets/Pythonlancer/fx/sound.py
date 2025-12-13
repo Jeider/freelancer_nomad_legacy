@@ -55,6 +55,17 @@ class SoundTachyon(WeaponSound):
     }
 
 
+class SoundTachyonOnlyFive(WeaponSound):
+    BASE_NAME = 'fire_tachyon'
+    INDEX_PER_TIER = {
+        TIER_ONE: 5,
+        TIER_TWO: 5,
+        TIER_THREE: 5,
+        TIER_FOUR: 5,
+        TIER_FIVE: 5,
+    }
+
+
 class Ambience(object):
     AST_ICE = 'zone_field_asteroid_ice'
     AST_LAVA = 'zone_field_asteroid_lava'

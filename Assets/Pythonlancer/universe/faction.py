@@ -1477,7 +1477,7 @@ class BorderWorldPirate(UnlawfulFaction, RheinlandSecondFleet, BaseBorderWorld, 
 
 class DeidrichPeople(UnlawfulFaction, BaseRheinland, RheinlandMainEquip, Faction):
     CODE = 'dtr_grp'
-    WEAPON = gun.RheinlandLightgun
+    WEAPON = gun.DietrichLightgun
     MANAGED = False
     RU_NAME = MS('Люди Дитриха', "Deidrich's people")
     RU_NAME_FULL = MS('Люди Дитриха', "Deidrich's people")

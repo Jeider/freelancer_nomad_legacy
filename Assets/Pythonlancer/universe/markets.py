@@ -378,7 +378,8 @@ MusashiSecondSet = EquipSet(
 )
 
 OsirisSet = EquipSet(
-    Q.GenericGun(LIGHTGUN, eq_classes=STORY_OSIRIS_CLASSES),
+    # Q.Gun('asf_lightgun', eq_classes=[5, 6, 7]),
+    Q.Gun('asf_heavygun', eq_classes=[6, 7]),
     Q.GenericLauncher(MAIN_MISSILE, eq_classes=[5, 7]),
     Q.GenericLauncher(FAST_MISSILE, eq_classes=[5, 7]),
     Q.GenericLauncher(SHIELD_MISSILE, eq_classes=[6]),

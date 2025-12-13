@@ -1,5 +1,6 @@
 from fx.misc import TIER_ONE, TIER_TWO, TIER_THREE, TIER_FOUR, TIER_FIVE
-from fx.sound import SoundLaser, SoundNeutron, SoundParticle, SoundPhoton, SoundPlasma, SoundPulse, SoundTachyon
+from fx.sound import (SoundLaser, SoundNeutron, SoundParticle, SoundPhoton, SoundPlasma, SoundPulse, SoundTachyon,
+                      SoundTachyonOnlyFive)
 
 
 TIER_PER_CLASS = {
@@ -52,7 +53,7 @@ class WeaponFX(object):
         FX_NEUTRON: SoundNeutron,
         FX_PLASMA: SoundPlasma,
         FX_PULSE: SoundPulse,
-        FX_DIAMOND: SoundTachyon,
+        FX_DIAMOND: SoundTachyonOnlyFive,
     }
 
     def __init__(self, faction, fx_appearance, equip_class):

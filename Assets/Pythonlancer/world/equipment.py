@@ -30,10 +30,10 @@ class Equipment(LootableEquip, MarketEquip):
     ]
 
     RATE_1 = 0.06
-    RATE_2 = 0.07
+    RATE_2 = 0.065
     RATE_3 = 0.07
-    RATE_4 = 0.08
-    RATE_5 = 0.08
+    RATE_4 = 0.078
+    RATE_5 = 0.082
     RATE_6 = 0.09
     RATE_7 = 0.10
     RATE_8 = 0.11
