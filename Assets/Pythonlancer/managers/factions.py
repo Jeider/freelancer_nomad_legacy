@@ -80,7 +80,7 @@ class FactionManager:
         return ', '.join([x.get_code() for x in self.factions_list if x.has_military_mission() or x.has_pirate_mission()])
 
     def get_civilian_factions_list(self):
-        return ', '.join([x.get_code() for x in self.factions_list if x.has_civilian_mission()])
+        return ', '.join([x.get_code() for x in self.factions_list if x.has_military_mission() or x.has_pirate_mission()])
 
     def get_pirate_factions_list(self):
         return ', '.join([x.get_code() for x in self.factions_list if x.has_pirate_mission()])
