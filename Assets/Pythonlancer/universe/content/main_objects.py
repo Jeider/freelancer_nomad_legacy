@@ -270,6 +270,8 @@ class StaticObject(AppearableObject):
     LLIGHT_CLOUD_FILE_TEMPLATE = 'solar\\nebula_mod\\{llight_cloud_name}.ini'
     LLIGHT_CLOUD_RANGE = 600000
 
+    USE_LIFTER = False
+
     FORCE_CONNECTIONS = []
 
     def get_base(self):
@@ -316,14 +318,17 @@ class StaticObject(AppearableObject):
             pos_z -= self.DEFENCE_ZONE_BACKDRIFT
         return (pos_x, pos_y, pos_z)
 
+    def has_lifter(self):
+        return self.USE_LIFTER
+
     def get_lawful_defence_zone_params(self):
         population_class = self.get_lawful_population_class()
         if self.DEFENCE_LEVEL == DEFENCE_SIMPLE:
             return population_class.get_simple_defence_params()
         elif self.DEFENCE_LEVEL == DEFENCE_MEDIUM:
-            return population_class.get_medium_defence_params()
+            return population_class.get_medium_defence_params(use_lifter=self.has_lifter())
         elif self.DEFENCE_LEVEL == DEFENCE_HIGH:
-            return population_class.get_high_defence_params()
+            return population_class.get_high_defence_params(use_lifter=self.has_lifter())
 
         raise Exception('Unknown defence class for object %s' % self.__class__.__name__)
 
@@ -1371,6 +1376,7 @@ behavior = NOTHING
     DEFENCE_ZONE_SIZE = 5000
     DEFENCE_LEVEL = DEFENCE_HIGH
     DEFENCE_ZONE_BACKDRIFT = 2000
+    USE_LIFTER = True
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

@@ -91,6 +91,7 @@ class FactionManager:
             'civilian_factions': self.get_civilian_factions_list(),
             'pirate_factions': self.get_pirate_factions_list(),
         }
+        # Keep not changed original file
         return self.core.tpl_manager.get_result(VIGNETTE_TEMPLATE, context)
 
     def sync_data(self):

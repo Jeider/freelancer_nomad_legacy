@@ -15,6 +15,10 @@ class Population(object):
     GLOBAL_TRADERS = None
     JUNKERS = None
 
+    LIFTER_ENCOUNTERS = '''
+encounter = corp_lifter, 5, 1.00000
+faction = {main_traders}, 1.00000'''
+
     SIMPLE_DEFENCE_PARAMS = '''sort = 9
 toughness = 10
 density = 2
@@ -33,10 +37,10 @@ density_restriction = 1, unlawfuls'''
 
     HIGH_DEFENCE_PARAMS = '''sort = 9
 toughness = 10
-density = 6
-repop_time = 6
+density = 12
+repop_time = 10
 max_battle_size = 8
-pop_type = rh_grp, base_cluster_law
+pop_type = base_cluster_law
 relief_time = 10
 density_restriction = 1, unlawfuls'''
 
@@ -67,55 +71,68 @@ relief_time = 15'''
             raise Exception('simple defence encounters is not defined %s' % cls.__class__.__name__)
         if not cls.SIMPLE_ARRIVAL_TRADERS_ENCOUNTERS:
             raise Exception('simple arrived traders encounters is not defined %s' % cls.__class__.__name__)
-        return SINGLE_DIVIDER.join([
+        params = [
             cls.SIMPLE_DEFENCE_PARAMS,
             cls.SIMPLE_DEFENCE_ENCOUNTERS.format(**cls.get_main_defence_template_params()),
             cls.SIMPLE_ARRIVAL_TRADERS_ENCOUNTERS.format(**cls.get_trade_template_params()),
-        ])
+        ]
+        return SINGLE_DIVIDER.join(params)
 
     @classmethod
-    def get_medium_defence_params(cls):
+    def get_medium_defence_params(cls, use_lifter=False):
         if not cls.GENERAL_DEFENCE_ENCOUNTERS:
             raise Exception('general defence encounters is not defined %s' % cls.__class__.__name__)
         if not cls.SIMPLE_ARRIVAL_TRADERS_ENCOUNTERS:
             raise Exception('simple arrived traders encounters is not defined %s' % cls.__class__.__name__)
-        return SINGLE_DIVIDER.join([
+        params = [
             cls.MEDIUM_DEFENCE_PARAMS,
             cls.GENERAL_DEFENCE_ENCOUNTERS.format(**cls.get_main_defence_template_params()),
             cls.MEDIUM_DEFENCE_ENCOUNTERS.format(**cls.get_medium_defence_template_params()),
             cls.SIMPLE_ARRIVAL_TRADERS_ENCOUNTERS.format(**cls.get_trade_template_params()),
-        ])
+        ]
+        if use_lifter:
+            params.append(
+                cls.LIFTER_ENCOUNTERS.format(**cls.get_lifter_template_params())
+            )
+        return SINGLE_DIVIDER.join(params)
 
     @classmethod
-    def get_high_defence_params(cls):
+    def get_high_defence_params(cls, use_lifter=False):
         if not cls.HIGH_DEFENCE_ENCOUNTERS:
             raise Exception('general defence encounters is not defined %s' % cls.__class__.__name__)
         if not cls.SIMPLE_ARRIVAL_TRADERS_ENCOUNTERS:
             raise Exception('simple arrived traders encounters is not defined %s' % cls.__class__.__name__)
-        return SINGLE_DIVIDER.join([
+        params = [
             cls.HIGH_DEFENCE_PARAMS,
             cls.GENERAL_DEFENCE_ENCOUNTERS.format(**cls.get_main_defence_template_params()),
             cls.HIGH_DEFENCE_ENCOUNTERS.format(**cls.get_high_defence_template_params()),
             cls.SIMPLE_ARRIVAL_TRADERS_ENCOUNTERS.format(**cls.get_trade_template_params()),
-        ])
+        ]
+        if use_lifter:
+            params.append(
+                cls.LIFTER_ENCOUNTERS.format(**cls.get_lifter_template_params())
+            )
+        return SINGLE_DIVIDER.join(params)
 
     @classmethod
     def get_tradelane_arriaval_traders_params(cls):
         if not cls.TRADELANE_ARRIVAL_TRADERS_ENCOUNTERS:
             raise Exception('tradelane encounters is not defined %s' % cls.__class__.__name__)
-        return SINGLE_DIVIDER.join([
+        params = [
             cls.TRADELANE_PARAMS,
             cls.TRADELANE_ARRIVAL_TRADERS_ENCOUNTERS.format(**cls.get_trade_template_params()),
-        ])
+        ]
+        return SINGLE_DIVIDER.join(params)
 
     @classmethod
     def get_pirate_defence_params(cls, faction):
         # if not cls.GENERAL_DEFENCE_ENCOUNTERS:
         #     raise Exception('general defence encounters is not defined %s' % cls.__class__.__name__)
-        return SINGLE_DIVIDER.join([
+        params = [
             cls.MEDIUM_DEFENCE_PARAMS,
             cls.GENERAL_DEFENCE_ENCOUNTERS.format(main_faction=faction.get_code()),
-        ])
+        ]
+        return SINGLE_DIVIDER.join(params)
 
     @classmethod
     def get_trade_template_params(cls):
@@ -133,6 +150,10 @@ relief_time = 15'''
     def get_medium_defence_template_params(cls):
         return {}
 
+    @classmethod
+    def get_lifter_template_params(cls):
+        return {}
+
 
 class LawfulPopulation(Population):
     MAIN_FACTION = None
@@ -145,6 +166,7 @@ class LawfulPopulation(Population):
         encounter.MainTrade,
         encounter.MainTradeTLR,
         encounter.AresXScout,
+        encounter.Lifter,
     ]
     POLICE_PATROL = encounter.PatrolPolice
 
@@ -243,6 +265,12 @@ faction = {bounty_hunters}, 1.00000'''
         return {
             'medium_defence_capship_encounter': cls.MEDIUM_CAPSHIP_ENC.get_nickname(),
             'main_faction': cls.MAIN_FACTION.get_code(),
+        }
+
+    @classmethod
+    def get_lifter_template_params(cls):
+        return {
+            'main_traders': cls.MAIN_TRADERS.get_code(),
         }
 
     @classmethod

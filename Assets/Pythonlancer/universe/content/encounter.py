@@ -148,3 +148,8 @@ class KuTransport(Encounter):
 class KuTransportTLR(Encounter):
     NICKNAME = 'tr_grp_ku_transport_tlr'
     FILENAME = 'missions\\npc\\ku\\tr_grp_ku_transport_tlr.ini'
+
+
+class Lifter(Encounter):
+    NICKNAME = 'corp_lifter'
+    FILENAME = 'missions\\npc\\lifter.ini'
