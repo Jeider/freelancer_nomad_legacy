@@ -230,7 +230,7 @@ class Gun(MainEquipPrice, Weapon, DefaultGood):
                 return True
 
 
-class DietrichLightgun(Gun, RheinlandGun, Lightgun):
+class DietrichLightgun(Gun, RheinlandGun):
     DAMAGE_MULTIPLIER = 1.25
     RU_NAME = MS('Рогатый змей', 'Hornviper')
     RU_NAME_DESC = MS('Легкая пушка мятежников Дитриха', 'Dietrich\'s rebels light gun')
@@ -244,7 +244,7 @@ class DietrichLightgun(Gun, RheinlandGun, Lightgun):
     FX_APPEARANCE = WeaponFX.FX_TACHYON
 
 
-class DietrichHeavygun(Gun, RheinlandGun, Heavygun):
+class DietrichHeavygun(Gun, RheinlandGun):
     DAMAGE_MULTIPLIER = 1.25
     RU_NAME = MS('Огненный поцелуй', 'Firekiss')
     RU_NAME_DESC = MS('Тяжелая пушка мятежников Дитриха', 'Dietrich\'s rebels heavy gun')
@@ -784,7 +784,7 @@ class BorderWorldPirategun(Gun, BorderWorldGun, Pirategun):
     FX_APPEARANCE = WeaponFX.FX_LASER
 
 
-class AsfLightgun(Gun, LibertyGun, Lightgun):
+class AsfLightgun(Gun, LibertyGun):
     RU_NAME = MS('Бриллиант', 'Diamondback')
     RU_NAME_DESC = MS('Тяжелая пушка СБА', 'ASF heavy gun')
     BASE_NICKNAME = 'asf_lightgun'
@@ -797,7 +797,7 @@ class AsfLightgun(Gun, LibertyGun, Lightgun):
     FX_APPEARANCE = WeaponFX.FX_DIAMOND
 
 
-class AsfDiamondback(Gun, LibertyGun, Lightgun):
+class AsfDiamondback(Gun, LibertyGun):
     DAMAGE_MULTIPLIER = 1.35
     RU_NAME = MS('Бриллиант', 'Diamondback')
     RU_NAME_DESC = MS('Тяжелая пушка СБА', 'ASF heavy gun')

@@ -97,6 +97,8 @@ class AsteroidOmega15(AsteroidSolar, MineableSolar):
     EXPLODER_NORMAL = 'attached_om15_xast_exploder'
     EXPLODER_ULTRA = 'attached_om15_xast_exploder_ultra'
 
+    STATIC_ARCHETYPES = []
+
     def get_default_archetype(self):
         return self.DEFAULT_ARCHETYPE
 
@@ -111,6 +113,11 @@ class AsteroidOmega15(AsteroidSolar, MineableSolar):
     def get_ultra_reward_archetype(self):
         return self.ARCHETYPE_REWARD_ULTRA
 
+    def get_random_static_archetype(self):
+        if len(self.STATIC_ARCHETYPES) == 0:
+            raise Exception(f'{self} have no defined static archetypes')
+        return random.choice(self.STATIC_ARCHETYPES)
+
 
 class AsteroidTekagi(AsteroidOmega15):
     DEFAULT_ARCHETYPE = 'ku_tgk_mineast_super'
@@ -118,6 +125,13 @@ class AsteroidTekagi(AsteroidOmega15):
 
     EXPLODER_NORMAL = 'attached_ku_tgk_xast_exploder'
     EXPLODER_ULTRA = 'attached_ku_tgk_xast_exploder_ultra'
+
+    STATIC_ARCHETYPES = [
+        'ku_tgk_static_large_ast01',
+        'ku_tgk_static_large_ast02',
+        'ku_tgk_static_large_ast03',
+        'ku_tgk_static_large_ast04',
+    ]
 
 
 class AsteroidTau37(AsteroidOmega15):
@@ -127,6 +141,13 @@ class AsteroidTau37(AsteroidOmega15):
     EXPLODER_NORMAL = 'attached_tau37_xast_exploder'
     EXPLODER_ULTRA = 'attached_tau37_xast_exploder_ultra'
 
+    STATIC_ARCHETYPES = [
+        'tau37_static_large_ast01',
+        'tau37_static_large_ast02',
+        'tau37_static_large_ast03',
+        'tau37_static_large_ast04',
+    ]
+
 
 class AsteroidCalifornia(AsteroidOmega15):
     DEFAULT_ARCHETYPE = 'li_cal_mineast_super'
@@ -134,6 +155,13 @@ class AsteroidCalifornia(AsteroidOmega15):
 
     EXPLODER_NORMAL = 'attached_li_cal_xast_exploder'
     EXPLODER_ULTRA = 'attached_li_cal_xast_exploder_ultra'
+
+    STATIC_ARCHETYPES = [
+        'li_cal_static_large_ast01',
+        'li_cal_static_large_ast02',
+        'li_cal_static_large_ast03',
+        'li_cal_static_large_ast04',
+    ]
 
 
 class AsteroidCuracao(AsteroidOmega15):
@@ -143,13 +171,27 @@ class AsteroidCuracao(AsteroidOmega15):
     EXPLODER_NORMAL = 'attached_co_cur_xast_exploder'
     EXPLODER_ULTRA = 'attached_co_cur_xast_exploder_ultra'
 
+    STATIC_ARCHETYPES = [
+        'co_cur_static_large_ast01',
+        'co_cur_static_large_ast02',
+        'co_cur_static_large_ast03',
+        'co_cur_static_large_ast04',
+    ]
 
-class AsteroidOlaf(AsteroidOmega15):
+
+class AsteroidTau29(AsteroidOmega15):
     DEFAULT_ARCHETYPE = 'tau29_mineast_super'
     ARCHETYPE_REWARD_ULTRA = 'tau29_mineast_super_ultra'
 
     EXPLODER_NORMAL = 'attached_tau29_xast_exploder'
     EXPLODER_ULTRA = 'attached_tau29_xast_exploder_ultra'
+
+    STATIC_ARCHETYPES = [
+        'tau29_static_large_ast01',
+        'tau29_static_large_ast02',
+        'tau29_static_large_ast03',
+        'tau29_static_large_ast04',
+    ]
 
 
 class AsteroidNomadGreen(AsteroidOmega15):
@@ -159,6 +201,13 @@ class AsteroidNomadGreen(AsteroidOmega15):
     EXPLODER_NORMAL = 'attached_green_xast_exploder'
     EXPLODER_ULTRA = 'attached_green_xast_exploder_ultra'
 
+    STATIC_ARCHETYPES = [
+        'green_static_large_ast01',
+        'green_static_large_ast02',
+        'green_static_large_ast03',
+        'green_static_large_ast04',
+    ]
+
 
 class AsteroidLava(AsteroidOmega15):
     DEFAULT_ARCHETYPE = 'lava_mineast_super'
@@ -166,3 +215,10 @@ class AsteroidLava(AsteroidOmega15):
 
     EXPLODER_NORMAL = 'attached_lava_xast_exploder'
     EXPLODER_ULTRA = 'attached_lava_xast_exploder_ultra'
+    #
+    # STATIC_ARCHETYPES = [
+    #     'tau29_static_large_ast01',
+    #     'tau29_static_large_ast02',
+    #     'tau29_static_large_ast03',
+    #     'tau29_static_large_ast04',
+    # ]

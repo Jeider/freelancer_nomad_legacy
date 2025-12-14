@@ -91,8 +91,8 @@ atten_curve = DYNAMIC_DIRECTION
 
 class BerlinPirateAsteroidReward(BerlinMember, mineable.AsteroidRewardsGroupMedium):
     NAME = 'rh_ber_rock'
-    SOLAR = asteroid.AsteroidOmega15
-    REWARD_ITEM = 'comm_roid_niobium'
+    SOLAR = asteroid.AsteroidTau29
+    REWARD_ITEM = roid(DIAMONDS)
 
 
 class BerlinAstField(mineable.DefaultField):
@@ -111,14 +111,14 @@ class BerlinDebrisField(mineable.DefaultField):
     DRIFT_Z = 0.2
 
 
-class BerlinPirateAsteroids(BerlinMember, mineable.AsteroidRewardField):
+class BerlinPirateAsteroids(BerlinMember, mineable.AsteroidStaticField):
     INDEX = 1
     FIELD_CLASS = BerlinAstField
     REWARDS_GROUP_CLASS = BerlinPirateAsteroidReward
     MEDIUM_REWARD_CHANCE = 0.25
 
 
-class BerlinPirateAsteroidDefinition(asteroid_definition.Omega15AsteroidDefinition):
+class BerlinPirateAsteroidDefinition(asteroid_definition.Tau29DiamondAsteroidDefinition):
     ABSTRACT = False
     NAME = 'rh_ber_pirate_astfield'
     DYNAST = True

@@ -305,3 +305,7 @@ KU_COMMS_PRODS = [
 ] + DEFAULT_PRODS
 
 GLOBAL_COMMS = RH_COMMS + LI_COMMS + BR_COMMS + KU_COMMS
+
+
+def roid(item):
+    return f'comm_roid_{item}'

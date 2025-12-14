@@ -1,3 +1,5 @@
+from world.names import *
+
 from text.dividers import SINGLE_DIVIDER
 
 SHAPES_ROCK = 'file = solar\\asteroids\\rock_shapes.ini'
@@ -24,6 +26,7 @@ LOOT_METAL = 'lootcrate_ast_loot_metal'
 LOOT_NIOBIUM = 'lootcrate_ast_loot_niobium'
 LOOT_OXYGEN = 'lootcrate_ast_loot_oxygen'
 LOOT_WATER = 'lootcrate_ast_loot_water'
+
 
 BELT_HEIGHT_DEFAULT = 4000
 
@@ -196,6 +199,35 @@ max_angular_velocity = 0.300000
 color_shift = 1.000000, 1.000000, 1.000000
 '''
 
+DYNAST_TAU29 = '''
+[DynamicAsteroids]
+asteroid = ast_tau29_normal_a
+count = 30
+placement_radius = 1000.000000
+placement_offset = 200.000000
+max_velocity = 20.000000
+max_angular_velocity = 0.300000
+color_shift = 1.000000, 1.000000, 1.000000
+
+[DynamicAsteroids]
+asteroid = ast_tau29_normal_b
+count = 30
+placement_radius = 1000.000000
+placement_offset = 200.000000
+max_velocity = 20.000000
+max_angular_velocity = 0.300000
+color_shift = 1.000000, 1.000000, 1.000000
+
+[DynamicAsteroids]
+asteroid = ast_tau29_normal_c
+count = 30
+placement_radius = 1000.000000
+placement_offset = 200.000000
+max_velocity = 20.000000
+max_angular_velocity = 0.300000
+color_shift = 1.000000, 1.000000, 1.000000
+'''
+
 DYNAST_DEBRIS = '''
 [DynamicAsteroids]
 asteroid = din_debris_xlarge_A
@@ -299,6 +331,19 @@ vert_increase = 2
 color_shift = 1, 1, 0.9
 '''
 
+BELT_TAU29 = '''
+[Band]
+render_parts = 6
+shape = asteroid_belt_06
+height = {belt_height}
+offset_dist = 2000
+fade = 0.800000, 1.250000, 15, 17
+texture_aspect = 1.000000
+ambient_intensity = 0.400000
+vert_increase = 2
+color_shift = 1, 1, 0.9
+'''
+
 BELT_DEBRIS = '''
 [Band]
 render_parts = 10
@@ -363,6 +408,17 @@ start_dist = 1100
 fade_dist_percent = 0.500000
 shape = background_co_cur
 color_shift = 1, 1, 1
+ambient_intensity = 1
+size = 40, 150
+'''
+
+BILLBOARD_TAU29 = '''
+[AsteroidBillboards]
+count = 300
+start_dist = 1100
+fade_dist_percent = 0.500000
+shape = tau29_billboards
+color_shift = 0.6, 0.6, 0.6
 ambient_intensity = 1
 size = 40, 150
 '''
@@ -495,8 +551,8 @@ class AsteroidDefinition(object):
     BILLBOARDS = False
     LOOT = False
     LOOT_MIN = 1
-    LOOT_MAX = 2
-    LOOT_DIFFICULTY = 2
+    LOOT_MAX = 1
+    LOOT_DIFFICULTY = 10
     LOOT_CONTAINER = LOOT_WATER
     LOOT_COMMODITY = None
     BELT_HEIGHT = BELT_HEIGHT_DEFAULT
@@ -604,6 +660,16 @@ class CuracaoAsteroidDefinition(AsteroidDefinition):
     ]
 
 
+class Tau29AsteroidDefinition(AsteroidDefinition):
+    BELT_TEMPLATE = BELT_TAU29
+    DYNAST_TEMPLATE = DYNAST_TAU29
+    BILLBOARD_TEMPLATE = BILLBOARD_TAU29
+    SHAPES = [
+        SHAPES_ROCK,
+        SHAPES_TAU29,
+    ]
+
+
 class DebrisDefinition(AsteroidDefinition):
     NAME = 'debris'
     BELT_TEMPLATE = BELT_DEBRIS
@@ -622,14 +688,45 @@ class DebrisDefinition(AsteroidDefinition):
     LOOT_CONTAINER = LOOT_METAL
     LOOT_COMMODITY = 'comm_scrap_metal'
 
+# OM15 - niobium
+# TAU29 - diamond
+#
+# LI_CAL - berilium
+# CO_CUR - nicollum
+#
+# KU_TGK - gold
+# LI_CAL - SILVER
+#
+# TAU37 - URANIUM
+#
+# CO_CUR - PLUMBUM
+
 
 class Omega15NiobiumAsteroidDefinition(Omega15AsteroidDefinition):
     BELT = False
     BILLBOARDS = False
     DYNAST = True
     LOOT = True
-    LOOT_CONTAINER = 'lootcrate_ast_loot_niobium'
-    LOOT_COMMODITY = 'comm_roid_niobium'
+    LOOT_CONTAINER = LOOT_NIOBIUM
+    LOOT_COMMODITY = roid(NIOBIUM)
+
+
+class Tau29DiamondAsteroidDefinition(Tau29AsteroidDefinition):
+    BELT = False
+    BILLBOARDS = False
+    DYNAST = True
+    LOOT = True
+    LOOT_CONTAINER = LOOT_NIOBIUM
+    LOOT_COMMODITY = roid(DIAMONDS)
+
+
+class CaliforniaBeriliumAsteroidDefinition(CaliforniaAsteroidDefinition):
+    BELT = False
+    BILLBOARDS = False
+    DYNAST = True
+    LOOT = True
+    LOOT_CONTAINER = LOOT_BERYL
+    LOOT_COMMODITY = roid(BERILIUM)
 
 
 class SpaceMines(AsteroidDefinition):

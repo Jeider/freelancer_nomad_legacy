@@ -133,9 +133,9 @@ class DefaultField(Field):
 class BackgroundAsteroidsField(DefaultField):
     BOX_SIZE = 2500
     DENSITY_MULTIPLER = 2
-    DRIFT_X = 0.3
-    DRIFT_Y = 0
-    DRIFT_Z = 0.3
+    DRIFT_X = 0.35
+    DRIFT_Y = 0.3
+    DRIFT_Z = 0.4
 
 
 class MineableAsteroidField(DefaultField):
@@ -566,9 +566,10 @@ class RewardField(Mineable):
 
         self.field = self.FIELD_CLASS()
 
+        self.rewards_group = self.system.get_rewards_group_by_class(self.REWARDS_GROUP_CLASS)
+
         if self.HAS_REWARDS:
             self.mark_rewards()
-            self.rewards_group = self.system.get_rewards_group_by_class(self.REWARDS_GROUP_CLASS)
 
         self.dummy_system_object_string = self.generate_box_content()
 
@@ -676,6 +677,29 @@ visit = 128'''
             rotate='{}, {}, {}'.format(*box.get_rotate()),
             archetype=self.get_archetype_by_reward_type(reward_type),
             loadout=self.rewards_group.get_loadout_name_by_reward_type(reward_type, self.ultra_base_instance)
+        )
+
+
+class AsteroidStaticField(RewardField):
+    ALIAS = 'ast'
+    HAS_REWARDS = False
+
+    SYSTEM_OBJECT_TEMPLATE = '''[Object]
+nickname = {nickname}
+pos = {pos}
+rotate = {rotate}
+archetype = {archetype}
+visit = 128'''
+
+    def get_static_archetype(self):
+        return self.rewards_group.solar.get_random_static_archetype()
+
+    def generate_box_content_item(self, box, reward_type, index):
+        return self.SYSTEM_OBJECT_TEMPLATE.format(
+            nickname=self.create_nickname(index),
+            pos='{}, {}, {}'.format(*box.get_position()),
+            rotate='{}, {}, {}'.format(*box.get_rotate()),
+            archetype=self.get_static_archetype(),
         )
 
 

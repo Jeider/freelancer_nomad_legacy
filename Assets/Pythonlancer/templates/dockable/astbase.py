@@ -566,7 +566,7 @@ class BizmarkAsteroidBase(SpaceObjectTemplate):
 nickname = rh_biz_07
 pos = 0, 0, 0
 rotate = 0, 0, 0
-archetype = miningbase_mineableB
+archetype = li_cal_base_medium02
 {dock_props}
 
 [Object]

@@ -86,13 +86,12 @@ basic_stars = solar\\stars_mod\\new_generic.cmp
 '''
 
 
-class BizmarkAsteroidDefinition(asteroid_definition.Omega15NiobiumAsteroidDefinition):
+class BizmarkAsteroidDefinition(asteroid_definition.CaliforniaBeriliumAsteroidDefinition):
     ABSTRACT = True
     NAME = None
     DYNAST = True
     BELT = True
     BILLBOARDS = True
-    LOOT = False  # TEMP
 
 
 class BizmarkAsteroidZone1(BizmarkMember, zones.AsteroidZone):
@@ -351,7 +350,7 @@ class BizmarkAbandonedAstBase1(BizmarkMember, main_objects.AbandonedAsteroid):
     INDEX = 2
     BASE_INDEX = 61
     ROTATE_RANDOM = True
-    ARCHETYPE = 'miningbase_mineableA'
+    ARCHETYPE = 'li_cal_base_medium02'
     INTERIOR_CLASS = interior.EquipDeckInterior
     DEFENCE_LEVEL = None
     LOCKED_DOCK = True
@@ -422,8 +421,8 @@ class BizmarkDebrisFactory3(BizmarkMember, BizmarkBaseDebrisManufactoring):
 
 class BizmarkPirateAsteroidReward(BizmarkMember, mineable.AsteroidRewardsGroupUltra):
     NAME = 'rh_biz_rock'
-    SOLAR = asteroid.AsteroidOmega15
-    REWARD_ITEM = 'comm_roid_niobium'
+    SOLAR = asteroid.AsteroidCalifornia
+    REWARD_ITEM = roid(BERILIUM)
     ULTRA_REWARD_BASES = [
         BizmarkAbandonedAstBase1,
     ]
@@ -440,11 +439,10 @@ class BizmarkDebrisBoxReward(BizmarkMember, mineable.DefaultDebrisBoxRewardsGrou
     ]
 
 
-class BizmarkPirateAsteroids(BizmarkMember, mineable.AsteroidRewardField):
+class BizmarkPirateAsteroids(BizmarkMember, mineable.AsteroidStaticField):
     INDEX = 1
     FIELD_CLASS = mineable.BackgroundAsteroidsField
     REWARDS_GROUP_CLASS = BizmarkPirateAsteroidReward
-    MEDIUM_REWARD_CHANCE = 0.25
 
 
 class BizmarkAbandonedAsteroids1(BizmarkMember, mineable.AsteroidRewardField):

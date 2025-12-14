@@ -168,11 +168,11 @@ class Sig8BrownNebula2(Sigma8Member, zones.NebulaZone):
     PROPERTY_FOG_COLOR = '100, 80, 10'
 
 
-class Sig8AsteroidDefinition(asteroid_definition.Omega15NiobiumAsteroidDefinition):
+class Sig8AsteroidDefinition(asteroid_definition.Tau29AsteroidDefinition):
     DYNAST = True
     BELT = True
     BILLBOARDS = True
-    LOOT = False  # TEMP
+    LOOT = False
 
 
 class Sig8BaseVanillaAstZone(zones.AsteroidZone):
@@ -204,32 +204,32 @@ class Sig8AsteroidZone5(Sigma8Member, Sig8BaseVanillaAstZone):
 
 class Sigma8EastAsteroidReward(Sigma8Member, mineable.AsteroidRewardsGroupMedium):
     NAME = 'sig8_east_ast'
-    SOLAR = asteroid.AsteroidOmega15
-    REWARD_ITEM = 'comm_roid_niobium'
+    SOLAR = asteroid.AsteroidTau29
+    # REWARD_ITEM = 'comm_roid_niobium'
 
 
-class Sigma8LargeAsteroids1(Sigma8Member, mineable.AsteroidRewardField):
+class Sigma8LargeAsteroids1(Sigma8Member, mineable.AsteroidStaticField):
     INDEX = 1
     FIELD_CLASS = mineable.BackgroundAsteroidsField
     REWARDS_GROUP_CLASS = Sigma8EastAsteroidReward
     MEDIUM_REWARD_CHANCE = 0.25
 
 
-class Sigma8LargeAsteroids2(Sigma8Member, mineable.AsteroidRewardField):
+class Sigma8LargeAsteroids2(Sigma8Member, mineable.AsteroidStaticField):
     INDEX = 2
     FIELD_CLASS = mineable.BackgroundAsteroidsField
     REWARDS_GROUP_CLASS = Sigma8EastAsteroidReward
     MEDIUM_REWARD_CHANCE = 0.25
 
 
-class Sigma8LargeAsteroids3(Sigma8Member, mineable.AsteroidRewardField):
+class Sigma8LargeAsteroids3(Sigma8Member, mineable.AsteroidStaticField):
     INDEX = 3
     FIELD_CLASS = mineable.BackgroundAsteroidsField
     REWARDS_GROUP_CLASS = Sigma8EastAsteroidReward
     MEDIUM_REWARD_CHANCE = 0.25
 
 
-class Sigma8LargeAsteroids4(Sigma8Member, mineable.AsteroidRewardField):
+class Sigma8LargeAsteroids4(Sigma8Member, mineable.AsteroidStaticField):
     INDEX = 4
     FIELD_CLASS = mineable.BackgroundAsteroidsField
     REWARDS_GROUP_CLASS = Sigma8EastAsteroidReward
