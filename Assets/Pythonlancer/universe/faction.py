@@ -660,8 +660,8 @@ class UnlawfulFaction:
 
 
 class CivilianFleet:
-    INTERCEPTOR = ship.Banshee
-    ELITE = ship.Valkyrie
+    INTERCEPTOR = ship.Startracker
+    ELITE = ship.Starblazer
     # use transport as frieghter
 
 

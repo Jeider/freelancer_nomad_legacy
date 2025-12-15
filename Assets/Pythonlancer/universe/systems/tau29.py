@@ -504,7 +504,7 @@ class Tau29AbandonedAstBase2(Tau29Member, main_objects.AbandonedAsteroid):
 class Tau29AsteroidReward(Tau29Member, mineable.AsteroidRewardsGroupUltra):
     NAME = 'tau29_unlock'
     SOLAR = asteroid_solar.AsteroidTau29
-    REWARD_ITEM = 'comm_roid_uranium'
+    REWARD_ITEM = roid(DIAMONDS)
     ULTRA_REWARD_BASES = [
         Tau29AbandonedAstBase1,
         Tau29AbandonedAstBase2,
@@ -514,7 +514,7 @@ class Tau29AsteroidReward(Tau29Member, mineable.AsteroidRewardsGroupUltra):
 class Tau29AsteroidNoReward(Tau29Member, mineable.AsteroidRewardsGroupUltra):
     NAME = 'tau29_any'
     SOLAR = asteroid_solar.AsteroidTau29
-    REWARD_ITEM = 'comm_roid_uranium'
+    REWARD_ITEM = roid(DIAMONDS)
 
 
 class Tau29MineableField(mineable.MineableAsteroidField):
@@ -533,10 +533,10 @@ class Tau29BaseAsteroidRewardField(mineable.AsteroidRewardField):
     ULTRA_REWARD = True
 
 
-class Tau29BaseAsteroidNoRewardField(mineable.AsteroidRewardField):
+class Tau29BaseAsteroidNoRewardField(mineable.AsteroidStaticField):
     ALIAS = 'ast'
     FIELD_CLASS = Tau29MineableField
-    REWARDS_GROUP_CLASS = Tau29AsteroidReward
+    REWARDS_GROUP_CLASS = Tau29AsteroidNoReward
     MEDIUM_REWARD_CHANCE = 0.25
     ULTRA_REWARD = False
 
