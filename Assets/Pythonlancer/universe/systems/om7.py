@@ -431,6 +431,7 @@ asteroid = mine_oxygen, -0.300000, -0.300000, 0.800000, 85, 0, 185, mine
 asteroid = mine_oxygen, -0.700000, 0.400000, -0.400000, 75, 30, 70, mine
 '''
 
+
 class Om7GasPockets(asteroid_definition.AsteroidDefinition):
     FIELD = True
     CUBE = True

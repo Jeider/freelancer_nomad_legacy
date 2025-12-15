@@ -489,6 +489,18 @@ class Faction:
     def is_listed(self):
         return self.LISTED
 
+    @classmethod
+    def is_pirate(cls):
+        return cls.IS_PIRATE
+
+    @classmethod
+    def is_military(cls):
+        return cls.IS_MILITARY
+
+    @classmethod
+    def is_civilian(cls):
+        return cls.IS_CIVILIAN
+
     def has_military_mission(self):
         return self.RANDOM_MISSIONS and self.IS_MILITARY and self.MANAGED
 

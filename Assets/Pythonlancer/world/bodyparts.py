@@ -907,6 +907,15 @@ class Costume:
         print(f'right_hand: {self.left_hand}')
         print(f'accessory: {self.accessory}')
 
+    def get_space_config(self):
+        items = [
+            self.get_head(),
+            self.get_body(),
+        ]
+        if accessory := self.get_accessory():
+            items.append(accessory)
+        return ', '.join(items)
+
 
 class CharacterFactory:
 

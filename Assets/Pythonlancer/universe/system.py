@@ -15,6 +15,8 @@ from text.strings import MultiString as MS
 from tools.tracks import Tracks
 from tools.system_template import SystemTemplateLoader
 
+from world import bodyparts
+
 
 TLR_DISTANCE = 7000
 
@@ -97,6 +99,8 @@ distance = {tlr_distance}
         self.ids = ids
         self.key_ids = key_ids
         self.template = None
+
+        self.char_factory = bodyparts.CharacterFactory()
 
         self.last_police_patrol_id = 0
         self.last_bounty_hunter_patrol_id = 0

@@ -117,7 +117,7 @@ class CamAsteroidDefinition(asteroid_definition.CaliforniaBeriliumAsteroidDefini
     DYNAST = True
     BELT = True
     BILLBOARDS = True
-    LOOT = False  # TEMP
+    LOOT = False
 
 
 class CamBaseVanillaAstZone(zones.AsteroidZone):

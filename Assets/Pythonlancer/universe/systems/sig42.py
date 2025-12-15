@@ -158,7 +158,7 @@ class Sig42AsteroidZone3(Sig42Member, zones.AsteroidZone):
 class Sig42AsteroidReward(Sig42Member, mineable.AsteroidRewardsGroupUltra):
     NAME = 'sig42_bg_ast'
     SOLAR = asteroid.AsteroidCuracao
-    REWARD_ITEM = 'comm_roid_uranium'
+    REWARD_ITEM = roid(URANIUM)
 
 
 class Sig42AstMineableField(mineable.MineableAsteroidField):
@@ -169,7 +169,7 @@ class Sig42AstMineableField(mineable.MineableAsteroidField):
     DRIFT_Z = 0.3
 
 
-class Sig42BaseAsteroidRewardField(mineable.AsteroidRewardField):
+class Sig42BaseAsteroidRewardField(mineable.AsteroidStaticField):
     ALIAS = 'ast'
     FIELD_CLASS = Sig42AstMineableField
     REWARDS_GROUP_CLASS = Sig42AsteroidReward

@@ -1156,15 +1156,33 @@ BGCS_base_run_by = W02bF44'''
             props['base'] = base_name
 
         if self.ALLOW_SPACE_COSTUME:
-            if self.RANDOM_ROBOT and not self.SPACE_VOICE and not self.SPACE_COSTUME:
+            if self.RANDOM_ROBOT:
                 props['voice'] = SpaceVoice.VOICE_ROBOT_RU if self.system.core.russian else SpaceVoice.VOICE_ROBOT_EN
                 props['space_costume'] = SpaceCostume.random_robot()
             else:
-                if self.system.core.russian:
-                    props['voice'] = self.SPACE_VOICE if self.SPACE_VOICE else SpaceVoice.DEFAULT_RU
+                base_faction = self.get_faction()
+
+                if base_faction.is_pirate():
+                    costume = self.system.char_factory.get_pirate(base_faction.get_costume())
+                elif base_faction.is_military():
+                    costume = self.system.char_factory.get_military(base_faction.get_costume())
+                elif base_faction.is_civilian():
+                    costume = self.system.char_factory.get_peasant(base_faction.get_costume())
                 else:
-                    props['voice'] = self.SPACE_VOICE if self.SPACE_VOICE else SpaceVoice.DEFAULT_EN
-                props['space_costume'] = self.SPACE_COSTUME if self.SPACE_COSTUME else SpaceCostume.DEFAULT
+                    costume = self.system.char_factory.get_journeyman(base_faction.get_costume())
+
+                props['space_costume'] = costume.get_space_config()
+
+                if costume.is_male:
+                    if self.system.core.russian:
+                        props['voice'] = SpaceVoice.VOICE_MALE_RU
+                    else:
+                        props['voice'] = SpaceVoice.VOICE_MALE_EN
+                else:
+                    if self.system.core.russian:
+                        props['voice'] = SpaceVoice.VOICE_FEMALE_RU
+                    else:
+                        props['voice'] = SpaceVoice.VOICE_FEMALE_EN
 
         return SINGLE_DIVIDER.join(['{} = {}'.format(key, value) for key, value in props.items()])
 
