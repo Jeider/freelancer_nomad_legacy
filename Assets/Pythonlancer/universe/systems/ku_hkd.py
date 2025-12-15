@@ -282,11 +282,10 @@ class HokkDebrisBoxField4(HokkMember, HokkBaseDebrisBoxRewardField):
     ULTRA_BASE = HokkDebrisFactory4
 
 
-class HokkAsteroidDefinition1(asteroid_definition.TekagiAsteroidDefinition):
+class HokkAsteroidDefinition1(asteroid_definition.CuracaoPlumbumAsteroidDefinition):
     BELT = False
     BILLBOARDS = False
     DYNAST = True
-    LOOT = False  # TEMP
 
 
 class HokkAsteroidZone1(HokkMember, zones.AsteroidZone):
@@ -299,7 +298,7 @@ class HokkAbandonedAstBase1(HokkMember, main_objects.AbandonedAsteroid):
     INDEX = 1
     BASE_INDEX = 61
     ROTATE_RANDOM = True
-    ARCHETYPE = 'miningbase_mineableA'
+    ARCHETYPE = 'co_cur_base_medium03'
     INTERIOR_CLASS = interior.EquipDeckInterior
     DEFENCE_LEVEL = None
     LOCKED_DOCK = True
@@ -327,8 +326,8 @@ class HokkAbandonedAstBase1(HokkMember, main_objects.AbandonedAsteroid):
 
 class HokkAsteroidReward(HokkMember, mineable.AsteroidRewardsGroupUltra):
     NAME = 'ku_hkd_unlock'
-    SOLAR = asteroid.AsteroidTekagi
-    REWARD_ITEM = 'comm_roid_uranium'
+    SOLAR = asteroid.AsteroidCuracao
+    REWARD_ITEM = roid(PLUMBUM)
     ULTRA_REWARD_BASES = [
         HokkAbandonedAstBase1,
     ]
@@ -540,8 +539,6 @@ class HokkNebulaPirates(HokkMember, main_objects.PirateStation):
     FACTION = faction.KusariPirate
     RU_NAME = MS('База Кунашир', "Kunashir Base")
 
-    DEFENCE_LEVEL = None
-
     INTERIOR_BG1 = interior.INTERIOR_BG_WALKER
 
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -555,8 +552,6 @@ class HokkJunkers(HokkMember, main_objects.JunkerBase):
     SPACE_OBJECT_TEMPLATE = junker.BerlinJunker
     FACTION = faction.FarmerAlliance
     RU_NAME = MS('База Вако', "Vako Base")
-
-    DEFENCE_LEVEL = None
 
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.KusariPirateDealers

@@ -113,7 +113,7 @@ class CamBottomNebula(CamMember, zones.NebulaZone):
     PROPERTY_FOG_COLOR = '0, 255, 0'
 
 
-class CamAsteroidDefinition(asteroid_definition.Tau37AsteroidDefinition):
+class CamAsteroidDefinition(asteroid_definition.CaliforniaBeriliumAsteroidDefinition):
     DYNAST = True
     BELT = True
     BILLBOARDS = True
@@ -145,25 +145,25 @@ class CamAsteroidZone4(CamMember, CamBaseVanillaAstZone):
 
 class CamEastAsteroidReward(CamMember, mineable.AsteroidRewardsGroupMedium):
     NAME = 'Cam_east_ast'
-    SOLAR = asteroid.AsteroidOmega15
-    REWARD_ITEM = 'comm_roid_niobium'
+    SOLAR = asteroid.AsteroidCalifornia
+    REWARD_ITEM = roid(BERILIUM)
 
 
-class CamLargeAsteroids2(CamMember, mineable.AsteroidRewardField):
+class CamLargeAsteroids2(CamMember, mineable.AsteroidStaticField):
     INDEX = 2
     FIELD_CLASS = mineable.BackgroundAsteroidsField
     REWARDS_GROUP_CLASS = CamEastAsteroidReward
     MEDIUM_REWARD_CHANCE = 0.25
 
 
-class CamLargeAsteroids3(CamMember, mineable.AsteroidRewardField):
+class CamLargeAsteroids3(CamMember, mineable.AsteroidStaticField):
     INDEX = 3
     FIELD_CLASS = mineable.BackgroundAsteroidsField
     REWARDS_GROUP_CLASS = CamEastAsteroidReward
     MEDIUM_REWARD_CHANCE = 0.25
 
 
-class CamLargeAsteroids4(CamMember, mineable.AsteroidRewardField):
+class CamLargeAsteroids4(CamMember, mineable.AsteroidStaticField):
     INDEX = 4
     FIELD_CLASS = mineable.BackgroundAsteroidsField
     REWARDS_GROUP_CLASS = CamEastAsteroidReward
@@ -526,7 +526,6 @@ class CamJunkers(CamMember, main_objects.JunkerBase):
     ASTEROID_ZONES = [
         CamDebrisZone4
     ]
-    DEFENCE_LEVEL = None
 
     RU_NAME = MS('База Спалдинг', "Spalding Base")
 
@@ -544,7 +543,6 @@ class CamPirates(CamMember, main_objects.PirateStation):
         CamBottomNebula
     ]
     EXCLUSION_PARAMS = CROW_EXCLUSION_PARAMS
-    DEFENCE_LEVEL = None
 
     RU_NAME = MS('База Корк', 'Cork Base')
 

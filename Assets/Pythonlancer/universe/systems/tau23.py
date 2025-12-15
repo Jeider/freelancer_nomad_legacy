@@ -220,7 +220,6 @@ class Tau23TopRightPirates(Tau23Member, Tau23Bretonia, main_objects.PirateGasMin
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.BretoniaPirateDealers
     FACTION = faction.Xenos
-    DEFENCE_LEVEL = None
     RU_NAME = MS('База Брест', "Brest Base")
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
@@ -236,7 +235,6 @@ class Tau23BottomLeftPirates(Tau23Kusari, Tau23Member, main_objects.PirateGasMin
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.KusariPirateDealers
     FACTION = faction.FarmerAlliance
-    DEFENCE_LEVEL = None
     RU_NAME = MS('База Кога', 'Koga Base')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000

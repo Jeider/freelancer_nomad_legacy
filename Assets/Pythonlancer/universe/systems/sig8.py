@@ -301,7 +301,6 @@ class Sig8Junkers(Sigma8Member, main_objects.JunkerBase):
     SPACE_OBJECT_TEMPLATE = junker.SigmaEightJunker
 
     FACTION = faction.Junkers
-    DEFENCE_LEVEL = None
     RU_NAME = MS('Склад Зуль', "Suhl Storage")
 
     INTERIOR_CLASS = interior.PirateStationInterior
@@ -320,7 +319,6 @@ class Sig8Pirate(Sigma8Member, main_objects.PirateStation):
     SPACE_OBJECT_TEMPLATE = pirate.ManhattanPirateBase
 
     FACTION = faction.RheinlandPirate
-    DEFENCE_LEVEL = None
     RU_NAME = MS('База Вернигороде', "Wernigerode Base")
 
     INTERIOR_CLASS = interior.PirateOutpostInterior

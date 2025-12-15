@@ -329,7 +329,6 @@ class Sig42TopPirates(Sig42Member, Sig42Bretonia, main_objects.PirateStation):
     SPACE_OBJECT_TEMPLATE = pirate.LibertyRombicPirateBase
     FACTION = faction.BretoniaPirate
 
-    DEFENCE_LEVEL = None
     RU_NAME = MS('База Исида', 'Isis Base')
 
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -348,7 +347,6 @@ class Sig42BottomPirates(Sig42Member, Sig42Kusari, main_objects.PirateStation):
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseHokkaido
     FACTION = faction.KusariPirate
 
-    DEFENCE_LEVEL = None
     RU_NAME = MS('База С+атис', 'Satis Base')
 
     INTERIOR_CLASS = interior.PirateOutpostInterior

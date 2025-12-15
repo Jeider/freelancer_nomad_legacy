@@ -536,8 +536,6 @@ class HonsNebulaPirates(HonsMember, main_objects.PirateStation):
     FACTION = faction.Shinobi
     RU_NAME = MS('База Содзя', 'Soja Base')
 
-    DEFENCE_LEVEL = None
-
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.KusariPirateDealers
 
@@ -556,8 +554,6 @@ class HonsJunkers(HonsMember, main_objects.JunkerBase):
     SPACE_OBJECT_TEMPLATE = junker.StuttgartJunker
     FACTION = faction.KusariPirate
     RU_NAME = MS('База Чиба', 'Chiba Base')
-
-    DEFENCE_LEVEL = None
 
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.KusariPirateDealers

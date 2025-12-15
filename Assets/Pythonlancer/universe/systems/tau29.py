@@ -91,7 +91,7 @@ class Tau29Sun(Tau29Member, main_objects.Sun):
 
 RING_DYNAST_TEMPLATE = '''
 [DynamicAsteroids]
-asteroid = ast_tau29_normal_a
+asteroid = ast_tau29_ring_a
 count = 50
 placement_radius = 300.000000
 placement_offset = 150.000000
@@ -100,7 +100,7 @@ max_angular_velocity = 0.01
 color_shift = 0.6, 0.8, 1
 
 [DynamicAsteroids]
-asteroid = ast_tau29_normal_b
+asteroid = ast_tau29_ring_b
 count = 50
 placement_radius = 300.000000
 placement_offset = 150.000000
@@ -109,7 +109,7 @@ max_angular_velocity = 0.01
 color_shift = 0.6, 0.8, 1
 
 [DynamicAsteroids]
-asteroid = ast_tau29_normal_c
+asteroid = ast_tau29_ring_c
 count = 50
 placement_radius = 300.000000
 placement_offset = 150.000000
@@ -199,7 +199,7 @@ BARRIER_EXCLUSION_PARAMS = {
 }
 
 
-class Tau29AsteroidDefinition1(asteroid_definition.Tau37AsteroidDefinition):
+class Tau29AsteroidDefinition1(asteroid_definition.Tau29DiamondAsteroidDefinition):
     BELT = True
     BILLBOARDS = True
     DYNAST = True
@@ -424,7 +424,6 @@ class Tau29BottomPirates(Tau29Member, main_objects.PirateAsteroid):
     DEALERS = dealers.BretoniaPirateDealers
 
     FACTION = faction.BretoniaPirate
-    DEFENCE_LEVEL = None
 
     ASTEROID_ZONES = [
         Tau29AsteroidZone3,
@@ -441,7 +440,6 @@ class Tau29TopPirates(Tau29Member, main_objects.PirateAsteroid):
     DEALERS = dealers.BretoniaPirateDealers
 
     FACTION = faction.Ireland
-    DEFENCE_LEVEL = None
     #
     # ASTEROID_ZONES = [
     #     Tau29AsteroidZone5,
@@ -454,7 +452,7 @@ class Tau29AbandonedAstBase1(Tau29Member, main_objects.AbandonedAsteroid):
     INDEX = 4
     BASE_INDEX = 62
     ROTATE_RANDOM = True
-    ARCHETYPE = 'miningbase_mineableA'
+    ARCHETYPE = 'tau29_base_medium01'
     INTERIOR_CLASS = interior.EquipDeckInterior
     DEFENCE_LEVEL = None
     LOCKED_DOCK = True
@@ -481,7 +479,7 @@ class Tau29AbandonedAstBase2(Tau29Member, main_objects.AbandonedAsteroid):
     INDEX = 1
     BASE_INDEX = 63
     ROTATE_RANDOM = True
-    ARCHETYPE = 'miningbase_mineableA'
+    ARCHETYPE = 'tau29_base_medium02'
     INTERIOR_CLASS = interior.EquipDeckInterior
     DEFENCE_LEVEL = None
     LOCKED_DOCK = True
@@ -505,7 +503,7 @@ class Tau29AbandonedAstBase2(Tau29Member, main_objects.AbandonedAsteroid):
 
 class Tau29AsteroidReward(Tau29Member, mineable.AsteroidRewardsGroupUltra):
     NAME = 'tau29_unlock'
-    SOLAR = asteroid_solar.AsteroidTau37
+    SOLAR = asteroid_solar.AsteroidTau29
     REWARD_ITEM = 'comm_roid_uranium'
     ULTRA_REWARD_BASES = [
         Tau29AbandonedAstBase1,
@@ -515,7 +513,7 @@ class Tau29AsteroidReward(Tau29Member, mineable.AsteroidRewardsGroupUltra):
 
 class Tau29AsteroidNoReward(Tau29Member, mineable.AsteroidRewardsGroupUltra):
     NAME = 'tau29_any'
-    SOLAR = asteroid_solar.AsteroidTau37
+    SOLAR = asteroid_solar.AsteroidTau29
     REWARD_ITEM = 'comm_roid_uranium'
 
 

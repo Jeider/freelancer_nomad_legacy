@@ -178,7 +178,6 @@ class Tau31BottomPirates(Tau31Member, main_objects.PirateGasMiner):
     SPACE_OBJECT_TEMPLATE = gas_miner.BretoniaPirateGasMiner
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.LibertyPirateDealers
-    DEFENCE_LEVEL = None
     FACTION = faction.LibertyRogues
 
     RU_NAME = MS('База Тубак', 'Tubac Base')
@@ -195,7 +194,6 @@ class Tau31TopPirates(Tau31Member, main_objects.PirateGasMiner):
     SPACE_OBJECT_TEMPLATE = gas_miner.RheinlandPirateGasMiner
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.LibertyPirateDealers
-    DEFENCE_LEVEL = None
     FACTION = faction.LibertyPirate
     RU_NAME = MS('База Коринт', 'Corinth Base')
 

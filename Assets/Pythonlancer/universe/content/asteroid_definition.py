@@ -729,6 +729,42 @@ class CaliforniaBeriliumAsteroidDefinition(CaliforniaAsteroidDefinition):
     LOOT_COMMODITY = roid(BERILIUM)
 
 
+class CuracaoPlumbumAsteroidDefinition(CuracaoAsteroidDefinition):
+    BELT = False
+    BILLBOARDS = False
+    DYNAST = True
+    LOOT = True
+    LOOT_CONTAINER = LOOT_BERYL
+    LOOT_COMMODITY = roid(PLUMBUM)
+
+
+class Tau37UraniumAsteroidDefinition(Tau37AsteroidDefinition):
+    BELT = False
+    BILLBOARDS = False
+    DYNAST = True
+    LOOT = True
+    LOOT_CONTAINER = LOOT_COBALT
+    LOOT_COMMODITY = roid(URANIUM)
+
+
+class TekagiSilverAsteroidDefinition(TekagiAsteroidDefinition):
+    BELT = False
+    BILLBOARDS = False
+    DYNAST = True
+    LOOT = True
+    LOOT_CONTAINER = LOOT_SILVER
+    LOOT_COMMODITY = roid(SILVER)
+
+
+class TekagiGoldAsteroidDefinition(TekagiAsteroidDefinition):
+    BELT = False
+    BILLBOARDS = False
+    DYNAST = True
+    LOOT = True
+    LOOT_CONTAINER = LOOT_GOLD
+    LOOT_COMMODITY = roid(GOLD)
+
+
 class SpaceMines(AsteroidDefinition):
     NAME = 'space_mines'
     FIELD = True

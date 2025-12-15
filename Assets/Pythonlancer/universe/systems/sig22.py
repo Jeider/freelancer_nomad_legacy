@@ -130,11 +130,10 @@ BLUE_EXCLUSION_PARAMS = {
 }
 
 
-class Sig22AsteroidDefinition1(asteroid_definition.CaliforniaAsteroidDefinition):
+class Sig22AsteroidDefinition1(asteroid_definition.Tau37UraniumAsteroidDefinition):
     BELT = True
     BILLBOARDS = True
     DYNAST = True
-    LOOT = False  # TEMP
 
 
 class Sig22BaseAsteroidZone(zones.AsteroidZone):
@@ -258,7 +257,7 @@ class Sig22BattleshipRuins3(Sig22Bretonia, Sig22Member, main_objects.HackableBat
 class Sig22BaseAbandonedAst(main_objects.AbandonedAsteroid):
     ALIAS = 'ast'
     ROTATE_RANDOM = True
-    ARCHETYPE = 'miningbase_mineableA'
+    ARCHETYPE = 'tau37_base_medium02'
     INTERIOR_CLASS = interior.EquipDeckInterior
     DEFENCE_LEVEL = None
     LOCKED_DOCK = True
@@ -291,6 +290,8 @@ class Sig22AbandonedAstBase2(Sig22Member, Sig22BaseAbandonedAst):
     BASE_INDEX = 66
     RU_NAME = MS('База Алоха', "Aloha Base")
 
+    ARCHETYPE = 'tau37_base_medium01'
+
     ASTEROID_ZONES = [
         Sig22AsteroidZone6,
     ]
@@ -307,6 +308,8 @@ class Sig22AbandonedAstBase3(Sig22Member, Sig22BaseAbandonedAst):
     BASE_INDEX = 67
     RU_NAME = MS('База Оаху', "O'ahu Base")
 
+    ARCHETYPE = 'tau37_base_medium03'
+
     ASTEROID_ZONES = [
         Sig22AsteroidZone7,
     ]
@@ -320,8 +323,8 @@ class Sig22AbandonedAstBase3(Sig22Member, Sig22BaseAbandonedAst):
 
 class Sig22UnlockAsteroidReward(Sig22Member, mineable.AsteroidRewardsGroupUltra):
     NAME = 'sig22_unlock'
-    SOLAR = asteroid.AsteroidCalifornia
-    REWARD_ITEM = 'comm_roid_uranium'
+    SOLAR = asteroid.AsteroidTau37
+    REWARD_ITEM = roid(URANIUM)
     ULTRA_REWARD_BASES = [
         Sig22AbandonedAstBase1,
         Sig22AbandonedAstBase2,
@@ -331,8 +334,8 @@ class Sig22UnlockAsteroidReward(Sig22Member, mineable.AsteroidRewardsGroupUltra)
 
 class Sig22BackgroundAsteroidReward(Sig22Member, mineable.AsteroidRewardsGroupUltra):
     NAME = 'sig22_background'
-    SOLAR = asteroid.AsteroidCalifornia
-    REWARD_ITEM = 'comm_roid_uranium'
+    SOLAR = asteroid.AsteroidTau37
+    REWARD_ITEM = roid(URANIUM)
 
 
 class Sig22MineableField(mineable.MineableAsteroidField):
@@ -351,7 +354,7 @@ class Sig22UnlockAsteroidRewardField(mineable.AsteroidRewardField):
     ULTRA_REWARD = True
 
 
-class Sig22BackgroundAsteroidRewardField(mineable.AsteroidRewardField):
+class Sig22BackgroundAsteroidRewardField(mineable.AsteroidStaticField):
     ALIAS = 'ast'
     FIELD_CLASS = Sig22MineableField
     REWARDS_GROUP_CLASS = Sig22BackgroundAsteroidReward
@@ -458,7 +461,6 @@ class Sig22SouthPirates(Sig22Member, Sig22Liberty, main_objects.PirateStation):
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseBizmark
     FACTION = faction.LaneHackers
 
-    DEFENCE_LEVEL = None
     RU_NAME = MS('База Алькатрас', "Alcatraz Base")
 
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -478,8 +480,6 @@ class Sig22NorthPirates(Sig22Bretonia, Sig22Member, main_objects.PirateStation):
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseStuttgart
     FACTION = faction.Ireland
     RU_NAME = MS('База Лим+ерик', "Limerick Base")
-
-    DEFENCE_LEVEL = None
 
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.BretoniaPirateDealers

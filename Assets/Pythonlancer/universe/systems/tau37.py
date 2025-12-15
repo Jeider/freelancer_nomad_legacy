@@ -411,7 +411,6 @@ class Tau37CorsairBase(Tau37Member, main_objects.PirateAsteroid):
     RU_NAME = MS('База Сеута', 'Ceuta Base')
 
     FACTION = faction.Corsairs
-    DEFENCE_LEVEL = None
 
     ASTEROID_ZONES = [
         Tau37AsteroidZone2,

@@ -355,11 +355,10 @@ class AvalSolarSupriseRewardField5(AvalMember, AvalBaseSolarSupriseRewardField):
     ULTRA_BASE = AvalSolarPlant5
 
 
-class AvalAsteroidDefinition1(asteroid_definition.Tau37AsteroidDefinition):
+class AvalAsteroidDefinition1(asteroid_definition.CuracaoPlumbumAsteroidDefinition):
     BELT = True
     BILLBOARDS = True
     DYNAST = True
-    LOOT = False  # TEMP
 
 
 class AvalAsteroidZone1(AvalMember, zones.AsteroidZone):
@@ -380,7 +379,7 @@ class AvalAsteroidZone3(AvalMember, zones.AsteroidZone):
 class AvalBaseAbandonedAst(main_objects.AbandonedAsteroid):
     ALIAS = 'ast'
     ROTATE_RANDOM = True
-    ARCHETYPE = 'miningbase_mineableA'
+    ARCHETYPE = 'co_cur_base_medium01'
     INTERIOR_CLASS = interior.EquipDeckInterior
     DEFENCE_LEVEL = None
     LOCKED_DOCK = True
@@ -411,6 +410,7 @@ class AvalAbandonedAstBase1(AvalMember, AvalBaseAbandonedAst):
 class AvalAbandonedAstBase2(AvalMember, AvalBaseAbandonedAst):
     INDEX = 2
     BASE_INDEX = 59
+    ARCHETYPE = 'co_cur_base_medium02'
 
     ASTEROID_ZONES = [
         AvalAsteroidZone2,
@@ -426,8 +426,8 @@ class AvalAbandonedAstBase2(AvalMember, AvalBaseAbandonedAst):
 
 class AvalUnlockAsteroidReward(AvalMember, mineable.AsteroidRewardsGroupUltra):
     NAME = 'br_avl_unlock'
-    SOLAR = asteroid.AsteroidTau37
-    REWARD_ITEM = 'comm_roid_uranium'
+    SOLAR = asteroid.AsteroidCuracao
+    REWARD_ITEM = roid(PLUMBUM)
     ULTRA_REWARD_BASES = [
         AvalAbandonedAstBase1,
         AvalAbandonedAstBase2,
@@ -436,8 +436,8 @@ class AvalUnlockAsteroidReward(AvalMember, mineable.AsteroidRewardsGroupUltra):
 
 class AvalBackgroundAsteroidReward(AvalMember, mineable.AsteroidRewardsGroupUltra):
     NAME = 'br_avl_background'
-    SOLAR = asteroid.AsteroidTau37
-    REWARD_ITEM = 'comm_roid_uranium'
+    SOLAR = asteroid.AsteroidCuracao
+    REWARD_ITEM = roid(PLUMBUM)
 
 
 class AvalMineableField(mineable.MineableAsteroidField):
@@ -456,7 +456,7 @@ class AvalUnlockAsteroidRewardField(mineable.AsteroidRewardField):
     ULTRA_REWARD = True
 
 
-class AvalBackgroundAsteroidRewardField(mineable.AsteroidRewardField):
+class AvalBackgroundAsteroidRewardField(mineable.AsteroidStaticField):
     ALIAS = 'ast'
     FIELD_CLASS = AvalMineableField
     REWARDS_GROUP_CLASS = AvalBackgroundAsteroidReward
@@ -591,7 +591,6 @@ class AvalJunkers(AvalMember, main_objects.JunkerBase):
     ASTEROID_ZONES = [
         AvalDebrisZone3
     ]
-    DEFENCE_LEVEL = None
     RU_NAME = MS('База К+ардиган', "Cardigan Base")
 
 
@@ -607,7 +606,6 @@ class AvalPirates(AvalMember, main_objects.PirateStation):
     ASTEROID_ZONES = [
         AvalAsteroidZone3
     ]
-    DEFENCE_LEVEL = None
     RU_NAME = MS('База Л+онстон', 'Launceston Base')
 
 

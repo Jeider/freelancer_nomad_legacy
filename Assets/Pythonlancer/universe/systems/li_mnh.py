@@ -438,8 +438,6 @@ class ManhJunkers(ManhMember, main_objects.JunkerBase):
     FACTION = faction.LibertyRogues
     RU_NAME = MS('База Рочестер', "Rochester Base")
 
-    DEFENCE_LEVEL = None
-
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.LibertyPirateDealers
 
@@ -456,8 +454,6 @@ class ManhNebulaPirates(ManhMember, main_objects.PirateStation):
     SPACE_OBJECT_TEMPLATE = pirate.ManhattanPirateBase
     FACTION = faction.LaneHackers
     RU_NAME = MS('База Итака', 'Itaka Base')
-
-    DEFENCE_LEVEL = None
 
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.LibertyPirateDealers

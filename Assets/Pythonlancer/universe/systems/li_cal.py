@@ -144,12 +144,11 @@ CROW_EXCLUSION_PARAMS = {
 }
 
 
-class CalAsteroidDefinition1(asteroid_definition.CaliforniaAsteroidDefinition):
+class CalAsteroidDefinition1(asteroid_definition.CaliforniaBeriliumAsteroidDefinition):
     BELT = False
     BILLBOARDS = False
     DYNAST = True
     LOOT = True
-    LOOT_COMMODITY = 'comm_roid_berilium'
 
 
 class CalAsteroidZone(zones.AsteroidZone):
@@ -477,7 +476,6 @@ class CalPirate1(CalMember, main_objects.PirateAsteroid):
     DEALERS = dealers.LibertyPirateDealers
 
     FACTION = faction.LaneHackers
-    DEFENCE_LEVEL = None
     RU_NAME = MS('База Чихуахуа', 'Chihuahua Base')
 
     ASTEROID_ZONES = [
@@ -496,7 +494,6 @@ class CalPirate2(CalMember, main_objects.PirateStation):
     DEALERS = dealers.LibertyPirateDealers
 
     FACTION = faction.LibertyPirate
-    DEFENCE_LEVEL = None
     RU_NAME = MS('База Веракрус', "Veracruz Base")
 
     EXCLUSION_PARAMS = CROW_EXCLUSION_PARAMS

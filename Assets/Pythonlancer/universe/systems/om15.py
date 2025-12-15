@@ -143,7 +143,6 @@ class Om15AsteroidDefinition1(asteroid_definition.Omega15NiobiumAsteroidDefiniti
     DYNAST = True
     BELT = False
     BILLBOARDS = False
-    LOOT = False # TEMP
 
 
 class Om15AsteroidZone1(Omega15Member, zones.AsteroidZone):
@@ -434,7 +433,6 @@ class Om15Junkers(Omega15Member, main_objects.JunkerBase):
     SPACE_OBJECT_TEMPLATE = junker.OmegaSmelter
     FACTION = faction.Junkers
 
-    DEFENCE_LEVEL = None
     RU_NAME = MS('База Зиген', "Siegen Base")
 
     INTERIOR_CLASS = interior.PirateOutpostInterior

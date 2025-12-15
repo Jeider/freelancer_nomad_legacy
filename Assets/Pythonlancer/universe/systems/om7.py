@@ -202,7 +202,6 @@ class Om7PirateLargeAsteroid(Om7Member, Om7Kusari, main_objects.PirateStation):
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.KusariPirateDealers
     FACTION = faction.Shinobi
-    DEFENCE_LEVEL = None
     RU_NAME = MS('База Киото', 'Kyoto Base')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 5000
@@ -218,7 +217,6 @@ class Om7RightPirates(Om7Rheinland, Om7Member, main_objects.PirateGasMiner):
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.RheinlandPirateDealers
     FACTION = faction.Hessians
-    DEFENCE_LEVEL = None
     RU_NAME = MS('База Хельголанд', 'Helgoland Base')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000

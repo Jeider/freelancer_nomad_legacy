@@ -124,7 +124,6 @@ class BerlinPirateAsteroidDefinition(asteroid_definition.Tau29DiamondAsteroidDef
     DYNAST = True
     BELT = False
     BILLBOARDS = False
-    LOOT = False  # TEMP
 
 
 class BerlinAsteroidZone1(BerlinMember, zones.AsteroidZone):
@@ -383,7 +382,6 @@ class BerlinJunkers(BerlinMember, main_objects.JunkerBase):
     ASTEROID_ZONES = [
         BerlinDebrisZone1
     ]
-    DEFENCE_LEVEL = None
 
     RU_NAME = MS('База Линц', 'Linz Base')
 
@@ -400,7 +398,6 @@ class BerlinPiratesTop(BerlinMember, main_objects.PirateAsteroid):
     ASTEROID_ZONES = [
         BerlinAsteroidZone1
     ]
-    DEFENCE_LEVEL = None
     RU_NAME = MS('База Ульм', 'Ulm Base')
 
 
@@ -415,7 +412,6 @@ class BerlinPiratesBottom(BerlinMember, main_objects.PirateStation):
     ASTEROID_ZONES = [
         BerlinDebrisZone5
     ]
-    DEFENCE_LEVEL = None
     RU_NAME = MS('База Вюрцбург', "Würzburg Base")
 
 

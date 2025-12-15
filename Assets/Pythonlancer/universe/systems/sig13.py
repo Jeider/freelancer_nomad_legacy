@@ -225,7 +225,6 @@ class Sig13PirateTopRight(Sig13Liberty, Sig13Member, main_objects.PirateGasMiner
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.LibertyPirateDealers
     FACTION = faction.LibertyRogues
-    DEFENCE_LEVEL = None
     RU_NAME = MS('База Ванкувер', 'Vancouver Base')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
@@ -242,7 +241,6 @@ class Sig13PirateTopLeft(Sig13Liberty, Sig13Member, main_objects.PirateGasMiner)
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.LibertyPirateDealers
     FACTION = faction.LaneHackers
-    DEFENCE_LEVEL = None
     RU_NAME = MS('База Дакота', 'Dakota Base')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000
@@ -259,7 +257,6 @@ class Sig13PirateBottom(Sig13Member, Sig13Rheinland, main_objects.PirateGasMiner
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.RheinlandPirateDealers
     FACTION = faction.RheinlandPirate
-    DEFENCE_LEVEL = None
     RU_NAME = MS('База Гринберг', "Greenberg Base")
 
     NEBULA_EXCLUSION_ZONE_SIZE = 2000

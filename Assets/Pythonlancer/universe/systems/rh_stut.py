@@ -474,7 +474,6 @@ class StutNebulaPirates(StutMember, main_objects.PirateStation):
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseStuttgart
     FACTION = faction.Hessians
 
-    DEFENCE_LEVEL = None
     RU_NAME = MS('База Фрайбург', 'Freiburg Base')
 
     INTERIOR_BG1 = interior.INTERIOR_BG_WALKER
@@ -491,7 +490,6 @@ class StutJunkers(StutMember, main_objects.JunkerBase):
     SPACE_OBJECT_TEMPLATE = junker.StuttgartJunker
     FACTION = faction.Junkers
 
-    DEFENCE_LEVEL = None
     RU_NAME = MS('База Висбаден', "Wiesbaden Base")
 
     INTERIOR_CLASS = interior.PirateOutpostInterior

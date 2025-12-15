@@ -433,7 +433,6 @@ class MunchOutcastBase(MunchMember, main_objects.PirateAsteroid):
     FACTION = faction.Outcasts  # Temporary
     EQUIP_SET = markets.OutcastSet
 
-    DEFENCE_LEVEL = None
     RU_NAME = MS('База Виго', "Vigo Base")
 
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -465,7 +464,6 @@ class MunchJunkersBase(MunchMember, main_objects.JunkerBase):
     SPACE_OBJECT_TEMPLATE = junker.OmegaSmelter
     FACTION = faction.Junkers
 
-    DEFENCE_LEVEL = None
     RU_NAME = MS('Склад Кройзберг', 'Kreuzberg Storage')
 
     INTERIOR_CLASS = interior.PirateOutpostInterior

@@ -399,9 +399,21 @@ class RheinlandPiratePopulation(UnlawfulPopulation):
     JUNKERS = faction.Junkers
 
 
+class RheinlandOutcastPopulation(UnlawfulPopulation):
+    MAIN_PIRATES = faction.RheinlandPirate
+    GENERIC_PIRATES = faction.Outcasts
+    JUNKERS = faction.Junkers
+
+
 class LibertyPiratePopulation(UnlawfulPopulation):
     MAIN_PIRATES = faction.LibertyPirate
     GENERIC_PIRATES = faction.LibertyRogues
+    JUNKERS = faction.LaneHackers
+
+
+class LibertyHackersPopulation(UnlawfulPopulation):
+    MAIN_PIRATES = faction.LibertyPirate
+    GENERIC_PIRATES = faction.LaneHackers
     JUNKERS = faction.LaneHackers
 
 
@@ -411,12 +423,37 @@ class BretoniaPiratePopulation(UnlawfulPopulation):
     JUNKERS = faction.Xenos
 
 
+class BretoniaXenosPopulation(UnlawfulPopulation):
+    MAIN_PIRATES = faction.BretoniaPirate
+    GENERIC_PIRATES = faction.Xenos
+    JUNKERS = faction.Xenos
+
+
 class KusariPiratePopulation(UnlawfulPopulation):
+    MAIN_PIRATES = faction.KusariPirate
+    GENERIC_PIRATES = faction.FarmerAlliance
+    JUNKERS = faction.FarmerAlliance
+
+
+class KusariShinobiPopulation(UnlawfulPopulation):
     MAIN_PIRATES = faction.KusariPirate
     GENERIC_PIRATES = faction.Shinobi
     JUNKERS = faction.FarmerAlliance
 
 
-class CorsairAttackersPopulation(UnlawfulPopulation):
+class LibertyCorsairAttackersPopulation(UnlawfulPopulation):
     MAIN_PIRATES = faction.Corsairs
-    ATTACK_TLR_PATROL = encounter.PatrolTLREliteOnly
+    GENERIC_PIRATES = faction.LibertyRogues
+    # ATTACK_TLR_PATROL = encounter.PatrolTLREliteOnly
+
+
+class KusariCorsairAttackersPopulation(UnlawfulPopulation):
+    MAIN_PIRATES = faction.Corsairs
+    GENERIC_PIRATES = faction.FarmerAlliance
+    # ATTACK_TLR_PATROL = encounter.PatrolTLREliteOnly
+
+
+class BretoniaCorsairAttackersPopulation(UnlawfulPopulation):
+    MAIN_PIRATES = faction.Corsairs
+    GENERIC_PIRATES = faction.Ireland
+    # ATTACK_TLR_PATROL = encounter.PatrolTLREliteOnly

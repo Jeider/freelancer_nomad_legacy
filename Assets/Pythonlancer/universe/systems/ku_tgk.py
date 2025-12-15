@@ -85,13 +85,12 @@ class TekagiSun(TekagiMember, main_objects.Sun):
     LOADOUT = 'small_yellow_sun_fx'
 
 
-class TekagiAsteroidDefinition1(asteroid_definition.TekagiAsteroidDefinition):
+class TekagiAsteroidDefinition1(asteroid_definition.TekagiGoldAsteroidDefinition):
     BELT = True
     BILLBOARDS = True
     DYNAST = True
     LOOT = True
     BELT_HEIGHT = 8000
-    LOOT_COMMODITY = 'comm_roid_gold'
 
 
 class TekagiAsteroidZone(zones.AsteroidZone):
@@ -455,7 +454,6 @@ class TekagiWestPirates(TekagiMember, main_objects.PirateAsteroid):
     RU_NAME = MS('База Такамацу', 'Takamutsu Base')
 
     FACTION = faction.Shinobi
-    DEFENCE_LEVEL = None
 
 
 class TekagiEastPirates(TekagiMember, main_objects.PirateAsteroid):
@@ -468,7 +466,6 @@ class TekagiEastPirates(TekagiMember, main_objects.PirateAsteroid):
     RU_NAME = MS('База Коти', "Koti Base")
 
     FACTION = faction.KusariPirate
-    DEFENCE_LEVEL = None
 
 
 class TekagiRuins(TekagiMember, main_objects.StationRuins):

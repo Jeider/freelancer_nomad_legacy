@@ -259,11 +259,10 @@ class ForbesDebrisBoxField4(ForbesMember, ForbesBaseDebrisBoxRewardField):
     ULTRA_BASE = ForbesDebrisFactory4
 
 
-class ForbesAsteroidDefinition1(asteroid_definition.CaliforniaAsteroidDefinition):
+class ForbesAsteroidDefinition1(asteroid_definition.CuracaoPlumbumAsteroidDefinition):
     BELT = True
     BILLBOARDS = True
     DYNAST = True
-    LOOT = False  # TEMP
 
 
 class ForbesAsteroidZone1(ForbesMember, zones.AsteroidZone):
@@ -273,8 +272,8 @@ class ForbesAsteroidZone1(ForbesMember, zones.AsteroidZone):
 
 class ForbesAsteroidReward(ForbesMember, mineable.AsteroidRewardsGroupHigh):
     NAME = 'li_for_norewardast'
-    SOLAR = asteroid.AsteroidCalifornia
-    REWARD_ITEM = 'comm_roid_uranium'
+    SOLAR = asteroid.AsteroidCuracao
+    REWARD_ITEM = roid(PLUMBUM)
 
 
 class ForbesMineableField(mineable.MineableAsteroidField):
@@ -285,7 +284,7 @@ class ForbesMineableField(mineable.MineableAsteroidField):
     DRIFT_Z = 0.3
 
 
-class ForbesBaseAsteroidRewardField(mineable.AsteroidRewardField):
+class ForbesBaseAsteroidRewardField(mineable.AsteroidStaticField):
     ALIAS = 'ast'
     FIELD_CLASS = ForbesMineableField
     REWARDS_GROUP_CLASS = ForbesAsteroidReward
@@ -470,8 +469,6 @@ class ForbesAsteroidPirates(ForbesMember, main_objects.PirateAsteroid):
     FACTION = faction.LibertyPirate
     RU_NAME = MS('База Сан-Антонио', "San-Antonio Base")
 
-    DEFENCE_LEVEL = None
-
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.LibertyPirateDealers
 
@@ -489,8 +486,6 @@ class ForbesJunkers(ForbesMember, main_objects.JunkerBase):
     FACTION = faction.LibertyRogues
     SHIP_SET = markets.ShipSet('pi_fighter')
     RU_NAME = MS('База Монтгомери', 'Montgomery Base')
-
-    DEFENCE_LEVEL = None
 
     INTERIOR_CLASS = interior.OutpostShipdealerInterior
     DEALERS = dealers.LibertyPirateDealers

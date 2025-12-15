@@ -233,18 +233,16 @@ class ColDebrisBoxField3(ColMember, ColBaseDebrisBoxRewardField):
     ULTRA_BASE = ColDebrisFactory3
 
 
-class ColSpaceAsteroidDefinition(asteroid_definition.CaliforniaAsteroidDefinition):
+class ColSpaceAsteroidDefinition(asteroid_definition.TekagiSilverAsteroidDefinition):
     BELT = True
     BILLBOARDS = True
     DYNAST = True
-    LOOT = False  # TEMP
 
 
-class ColNebulaAsteroidDefinition(asteroid_definition.CaliforniaAsteroidDefinition):
+class ColNebulaAsteroidDefinition(asteroid_definition.TekagiSilverAsteroidDefinition):
     BELT = False
     BILLBOARDS = False
     DYNAST = True
-    LOOT = False  # TEMP
 
 
 class ColAsteroidZone1(ColMember, zones.AsteroidZone):
@@ -267,9 +265,8 @@ class ColAbandonedAstBase1(ColMember, main_objects.AbandonedAsteroid):
     INDEX = 1
     BASE_INDEX = 55
     ROTATE_RANDOM = True
-    ARCHETYPE = 'miningbase_mineableA'
+    ARCHETYPE = 'ku_tgk_base_medium03'
     INTERIOR_CLASS = interior.EquipDeckInterior
-    DEFENCE_LEVEL = None
     LOCKED_DOCK = True
     RU_NAME = MS('База Сансарк', "Sansark Base")
 
@@ -291,14 +288,14 @@ class ColAbandonedAstBase1(ColMember, main_objects.AbandonedAsteroid):
 
 class ColBackgroundAsteroidReward(ColMember, mineable.AsteroidRewardsGroupHigh):
     NAME = 'li_col_norewardast'
-    SOLAR = asteroid.AsteroidCalifornia
-    REWARD_ITEM = 'comm_roid_uranium'
+    SOLAR = asteroid.AsteroidTekagi
+    REWARD_ITEM = roid(PLUMBUM)
 
 
 class ColUnlockerAsteroidReward(ColMember, mineable.AsteroidRewardsGroupUltra):
     NAME = 'li_col_rewardast'
-    SOLAR = asteroid.AsteroidCalifornia
-    REWARD_ITEM = 'comm_roid_uranium'
+    SOLAR = asteroid.AsteroidTekagi
+    REWARD_ITEM = roid(PLUMBUM)
     ULTRA_REWARD_BASES = [
         ColAbandonedAstBase1,
     ]
@@ -312,7 +309,7 @@ class ColMineableField(mineable.MineableAsteroidField):
     DRIFT_Z = 0.3
 
 
-class ColBackgroundAsteroidRewardField(mineable.AsteroidRewardField):
+class ColBackgroundAsteroidRewardField(mineable.AsteroidStaticField):
     ALIAS = 'ast'
     FIELD_CLASS = ColMineableField
     REWARDS_GROUP_CLASS = ColBackgroundAsteroidReward
@@ -689,7 +686,6 @@ class ColAsteroidPirates(ColMember, main_objects.PirateAsteroid):
     SPACE_OBJECT_TEMPLATE = astbase.BerlinAsteroidBase
     FACTION = faction.LaneHackers
 
-    DEFENCE_LEVEL = None
     RU_NAME = MS('База Вестпорт', "Westport Base")
 
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -708,8 +704,6 @@ class ColNebulaPirates(ColMember, main_objects.PirateStation):
     SPACE_OBJECT_TEMPLATE = junker.BerlinJunker
     FACTION = faction.LibertyPirate
     RU_NAME = MS('База Пальмито', "Palmito Base")
-
-    DEFENCE_LEVEL = None
 
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.LibertyPirateDealers

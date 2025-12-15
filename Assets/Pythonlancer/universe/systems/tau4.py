@@ -82,11 +82,10 @@ atten_curve = DYNAMIC_DIRECTION
 '''
 
 
-class Tau4AsteroidDefinition1(asteroid_definition.TekagiAsteroidDefinition):
+class Tau4AsteroidDefinition1(asteroid_definition.TekagiSilverAsteroidDefinition):
     BELT = True
     BILLBOARDS = True
     DYNAST = True
-    LOOT = False  # TEMP
 
 
 class Tau4AsteroidZone1(Tau4Member, zones.AsteroidZone):
@@ -99,9 +98,8 @@ class Tau4AbandonedAstBase1(Tau4Member, main_objects.AbandonedAsteroid):
     INDEX = 1
     BASE_INDEX = 51
     ROTATE_RANDOM = True
-    ARCHETYPE = 'miningbase_mineableA'
+    ARCHETYPE = 'ku_tgk_base_medium01'
     INTERIOR_CLASS = interior.EquipDeckInterior
-    DEFENCE_LEVEL = None
     LOCKED_DOCK = True
     RU_NAME = MS('База Мацуяма', "Matsuyama Base")
 
@@ -124,7 +122,7 @@ class Tau4AbandonedAstBase1(Tau4Member, main_objects.AbandonedAsteroid):
 class Tau4AsteroidReward(Tau4Member, mineable.AsteroidRewardsGroupUltra):
     NAME = 'tau4_unlock'
     SOLAR = asteroid.AsteroidTekagi
-    REWARD_ITEM = 'comm_roid_uranium'
+    REWARD_ITEM = roid(BERILIUM)
     ULTRA_REWARD_BASES = [
         Tau4AbandonedAstBase1,
     ]
@@ -362,7 +360,6 @@ class Tau4SouthPirates(Tau4Member, main_objects.PirateStation):
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseBizmark
     FACTION = faction.Corsairs
 
-    DEFENCE_LEVEL = None
     RU_NAME = MS('База Муцуэ', "Mutsue Base")
 
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -380,10 +377,8 @@ class Tau4Xenos(Tau4Member, main_objects.PirateStation):
     BASE_INDEX = 5
     REL = TOP
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseCalifornia
-    FACTION = faction.Xenos
+    FACTION = faction.FarmerAlliance
     RU_NAME = MS('База Сингапур', 'Singapore Base')
-
-    DEFENCE_LEVEL = None
 
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.KusariPirateDealers

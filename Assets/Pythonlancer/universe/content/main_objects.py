@@ -1567,6 +1567,7 @@ class AbandonedAsteroid(DockableObject):
     KEY_COLLECT_FX = nn.FX_GOT_KEY_ASTEROID
     RU_FIRST_DESCRIPTION = descriptions.ASTEROID_ROCK
     FORCE_FACTION = faction.Unknown
+    DEFENCE_LEVEL = None
 
 
 class AbandonedAsteroidIce(DockableObject):
@@ -1578,6 +1579,7 @@ class AbandonedAsteroidIce(DockableObject):
     KEY_COLLECT_FX = nn.FX_GOT_KEY_ASTEROID
     RU_FIRST_DESCRIPTION = descriptions.ASTEROID_ICE
     FORCE_FACTION = faction.Unknown
+    DEFENCE_LEVEL = None
 
 
 class GasMinerOld(Station):
@@ -1587,6 +1589,7 @@ class GasMinerOld(Station):
     AUDIO_PREFIX = SpaceVoice.GAS_MINER
     KEY_COLLECT_FX = nn.FX_GOT_KEY_GAS_MINER
     RU_FIRST_DESCRIPTION = descriptions.GAS_MINER_OLD
+    DEFENCE_LEVEL = None
 
     CARGO_PODS_POSITION_Y_DRIFT = -60
 
@@ -1621,6 +1624,7 @@ class SolarPlant(Station):
     RU_FIRST_DESCRIPTION = descriptions.SOLAR_PLANT
     FORCE_FACTION = faction.Unknown
     AUDIO_PREFIX = SpaceVoice.SOLAR_PLANT
+    DEFENCE_LEVEL = None
 
 
 class RoidMiner(Station):
@@ -1632,6 +1636,7 @@ class RoidMiner(Station):
     KEY_COLLECT_FX = nn.FX_GOT_KEY_ROID_MINER
     RU_FIRST_DESCRIPTION = descriptions.ROID_MINER
     AUDIO_PREFIX = SpaceVoice.ROID_MINER
+    DEFENCE_LEVEL = None
 
     ASTEROID_OFFSET = (0, 5, -235)
     ASTEROID_ROTATE = (145, -30, 34)
@@ -1695,6 +1700,7 @@ class DebrisManufactoring(Station):
     EQUIP_SET = None
     KEY_COLLECT_FX = nn.FX_GOT_KEY_FACTORY
     RU_FIRST_DESCRIPTION = descriptions.DEBRIS_MANUFACTORING
+    DEFENCE_LEVEL = None
 
 
 class Outpost(DockableObject):

@@ -169,11 +169,10 @@ CROW_EXCLUSION_PARAMS = {
 }
 
 
-class Sig17AsteroidDefinition1(asteroid_definition.CaliforniaAsteroidDefinition):
+class Sig17AsteroidDefinition1(asteroid_definition.Omega15NiobiumAsteroidDefinition):
     BELT = True
     BILLBOARDS = True
     DYNAST = True
-    LOOT = False  # TEMP
 
 
 class Sig17AsteroidZone1(Sig17Member, zones.AsteroidZone):
@@ -186,7 +185,7 @@ class Sig17AbandonedAstBase1(Sig17Member, main_objects.AbandonedAsteroid):
     INDEX = 3
     BASE_INDEX = 51
     ROTATE_RANDOM = True
-    ARCHETYPE = 'miningbase_mineableA'
+    ARCHETYPE = 'om15_base_medium01'
     INTERIOR_CLASS = interior.EquipDeckInterior
     DEFENCE_LEVEL = None
     LOCKED_DOCK = True
@@ -210,8 +209,8 @@ class Sig17AbandonedAstBase1(Sig17Member, main_objects.AbandonedAsteroid):
 
 class Sig17AsteroidReward(Sig17Member, mineable.AsteroidRewardsGroupUltra):
     NAME = 'sig17_unlock'
-    SOLAR = asteroid.AsteroidCalifornia
-    REWARD_ITEM = 'comm_roid_uranium'
+    SOLAR = asteroid.AsteroidOmega15
+    REWARD_ITEM = roid(NIOBIUM)
     ULTRA_REWARD_BASES = [
         Sig17AbandonedAstBase1,
     ]
@@ -446,7 +445,6 @@ class Sig17EdgeNebulaPirates(Sig17Member, main_objects.PirateAsteroid):
     SPACE_OBJECT_TEMPLATE = astbase.NomadAsteroidBase
     FACTION = faction.Corsairs
 
-    DEFENCE_LEVEL = None
     RU_NAME = MS('Форт Ред-Ривер', 'Fort Red-River')
 
     INTERIOR_CLASS = interior.PirateOutpostInterior
@@ -471,7 +469,6 @@ class Sig17CrowNebulaPirates(Sig17Member, main_objects.PirateStation):
     SPACE_OBJECT_TEMPLATE = pirate.LibertyRombicPirateBase
     FACTION = faction.LibertyRogues
 
-    DEFENCE_LEVEL = None
     RU_NAME = MS('База М+оркрофт', 'Morecroft Base')
 
     INTERIOR_CLASS = interior.PirateOutpostInterior

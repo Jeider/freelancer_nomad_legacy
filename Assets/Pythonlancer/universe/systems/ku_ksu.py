@@ -197,11 +197,10 @@ class KyushuDebrisBoxField3(KyushuMember, KyushuBaseDebrisBoxRewardField):
     ULTRA_BASE = KyushuDebrisFactory3
 
 
-class KyushuAsteroidDefinition1(asteroid_definition.Tau37AsteroidDefinition):
+class KyushuAsteroidDefinition1(asteroid_definition.Tau37UraniumAsteroidDefinition):
     BELT = True
     BILLBOARDS = True
     DYNAST = True
-    LOOT = False  # TEMP
 
 
 class KyushuAsteroidZone1(KyushuMember, zones.AsteroidZone):
@@ -222,7 +221,7 @@ class KyushuAsteroidZone3(KyushuMember, zones.AsteroidZone):
 class KyushuBaseAbandonedAst(main_objects.AbandonedAsteroid):
     ALIAS = 'ast'
     ROTATE_RANDOM = True
-    ARCHETYPE = 'miningbase_mineableA'
+    ARCHETYPE = 'tau37_base_medium02'
     INTERIOR_CLASS = interior.EquipDeckInterior
     DEFENCE_LEVEL = None
     LOCKED_DOCK = True
@@ -237,6 +236,8 @@ class KyushuBaseAbandonedAst(main_objects.AbandonedAsteroid):
 class KyushuAbandonedAstBase1(KyushuMember, KyushuBaseAbandonedAst):
     INDEX = 1
     BASE_INDEX = 61
+
+    ARCHETYPE = 'tau37_base_medium03'
 
     ASTEROID_ZONES = [
         KyushuAsteroidZone1,
@@ -269,7 +270,7 @@ class KyushuAbandonedAstBase2(KyushuMember, KyushuBaseAbandonedAst):
 class KyushuUnlockAsteroidReward(KyushuMember, mineable.AsteroidRewardsGroupUltra):
     NAME = 'ku_ksu_unlock'
     SOLAR = asteroid.AsteroidTau37
-    REWARD_ITEM = 'comm_roid_uranium'
+    REWARD_ITEM = roid(URANIUM)
     ULTRA_REWARD_BASES = [
         KyushuAbandonedAstBase1,
         KyushuAbandonedAstBase2,
@@ -279,7 +280,7 @@ class KyushuUnlockAsteroidReward(KyushuMember, mineable.AsteroidRewardsGroupUltr
 class KyushuBackgroundAsteroidReward(KyushuMember, mineable.AsteroidRewardsGroupUltra):
     NAME = 'ku_ksu_background'
     SOLAR = asteroid.AsteroidTau37
-    REWARD_ITEM = 'comm_roid_uranium'
+    REWARD_ITEM = roid(URANIUM)
 
 
 class KyushuMineableField(mineable.MineableAsteroidField):
@@ -298,7 +299,7 @@ class KyushuUnlockAsteroidRewardField(mineable.AsteroidRewardField):
     ULTRA_REWARD = True
 
 
-class KyushuBackgroundAsteroidRewardField(mineable.AsteroidRewardField):
+class KyushuBackgroundAsteroidRewardField(mineable.AsteroidStaticField):
     ALIAS = 'ast'
     FIELD_CLASS = KyushuMineableField
     REWARDS_GROUP_CLASS = KyushuBackgroundAsteroidReward
@@ -475,8 +476,6 @@ class KyushuNorthAsteroidPirates(KyushuMember, main_objects.PirateAsteroid):
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = astbase.KyushuAsteroidBase
     FACTION = faction.KusariPirate
-
-    DEFENCE_LEVEL = None
     RU_NAME = MS('База Цусима', 'Tsushima Base')
 
     INTERIOR_BG1 = interior.INTERIOR_BG_WALKER
@@ -497,8 +496,6 @@ class KyushuJunkers(KyushuMember, main_objects.JunkerBase):
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseForbes
     FACTION = faction.FarmerAlliance
     RU_NAME = MS('База Нагасаки', 'Nagasaki Base')
-
-    DEFENCE_LEVEL = None
 
     INTERIOR_CLASS = interior.PirateOutpostInterior
     DEALERS = dealers.KusariPirateDealers
