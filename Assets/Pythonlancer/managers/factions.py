@@ -1,5 +1,5 @@
 from tools.data_folder import DataFolder
-from universe.faction import Faction, PLAYER_RELATIONS, RELATIONS, FRIEND_MAX
+from universe.faction import Faction, PLAYER_RELATIONS, RELATIONS, FRIEND_MAX, BRIBE_GROUPS
 from text.dividers import DIVIDER, SINGLE_DIVIDER
 
 VIGNETTE_TEMPLATE = 'hardcoded_inis/static_content/vignette_params.ini'
@@ -17,6 +17,7 @@ class FactionManager:
         self.load_factions()
         self.load_relations_props()
         self.load_player_relations()
+        self.load_bribe_factions()
 
         self.sync_data()
 
@@ -25,6 +26,9 @@ class FactionManager:
 
     def get_managed_factions(self):
         return [f for f in self.factions_list if f.is_managed()]
+
+    def get_by_code(self, code):
+        return self.factions_db[code]
 
     def load_player_relations(self):
         for rel in PLAYER_RELATIONS:
@@ -66,6 +70,14 @@ class FactionManager:
 
                     target_faction.change_reputation(current_faction, target_rel.get_reputation())
                     target_faction.change_empathy(current_faction, target_rel.get_empathy())
+
+    def load_bribe_factions(self):
+        for faction in self.factions_list:
+            for group in BRIBE_GROUPS:
+                for bribe_faction in group:
+                    if bribe_faction.get_code() == faction.get_code():
+                        faction.add_bribe_group(group)
+                        continue
 
     def get_initial_world_empty_reps(self, hate=False):
         return SINGLE_DIVIDER.join([x.get_empty_rep(hate=hate) for x in self.factions_list if x.LISTED])

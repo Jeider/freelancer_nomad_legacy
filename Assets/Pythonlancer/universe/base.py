@@ -150,6 +150,9 @@ class BaseFaction:
     def get_guest(self):
         return self.faction.get_guest()
 
+    def is_give_bribes(self):
+        return self.faction.GIVE_BRIBES
+
 
 class Base:
 

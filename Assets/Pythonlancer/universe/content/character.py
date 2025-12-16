@@ -1,3 +1,5 @@
+import random
+
 from universe.content.interior import BAR, DECK
 from world.bodyparts import Costume
 
@@ -9,6 +11,9 @@ FEMALE_VOICE_RU = 'rvp501b'
 
 MALE_VOICE_EN = 'rvp101'
 FEMALE_VOICE_EN = 'rvp501'
+
+BRIBE_IDS = [16100, 16101]
+BRIBE_PRICE = 10000
 
 
 class Char:
@@ -48,6 +53,11 @@ class Char:
         ]
         if accessory := self.costume.get_accessory():
             items.append(f'accessory = {accessory}')
+
+        if self.faction.is_give_bribes():
+            for bribe_code in self.core.factions.get_by_code(self.faction.get_code()).get_bribe_factions():
+                items.append(f'bribe = {bribe_code}, {BRIBE_PRICE}, {random.choice(BRIBE_IDS)}')
+
         items.extend(self.get_messages_definition())
         return SINGLE_DIVIDER.join(items)
 

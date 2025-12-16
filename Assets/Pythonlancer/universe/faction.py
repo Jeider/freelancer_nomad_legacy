@@ -381,6 +381,7 @@ class Faction:
     IS_MILITARY = False
     IS_CIVILIAN = False
     RANDOM_MISSIONS = True
+    GIVE_BRIBES = True
 
     COMMODITY = DEFAULT_COMMS
     COMMODITY_PRODS = DEFAULT_PRODS
@@ -418,6 +419,7 @@ class Faction:
         self.russian = russian
         self.ids = ids
         self.relations = {}
+        self.bribe_factions = set()
 
         if not self.FORCE_IDS_NAME:
             self.ids_full_name = self.ids.factions_main.new_name(
@@ -449,6 +451,13 @@ class Faction:
         self.npc_ships = []
         if len(self.EXTRA_NPC_SHIPS):
             self.npc_ships += self.EXTRA_NPC_SHIPS
+
+    def add_bribe_group(self, group):
+        for bribe_faction in group:
+            self.bribe_factions.add(bribe_faction.get_code())
+
+    def get_bribe_factions(self):
+        return self.bribe_factions
 
     def get_commodities(self):
         return self.COMMODITY
@@ -957,6 +966,7 @@ class RheinlandMain(LawfulFaction, RheinlandMainFleet, BaseRheinland, RheinlandM
     IS_MILITARY = True
     COMMODITY = RH_COMMS
     COMMODITY_PRODS = RH_COMMS_PRODS
+    GIVE_BRIBES = False
 
 #
 # class RheinlandMilitary(RheinlandMain):
@@ -1067,6 +1077,7 @@ class LibertyMain(LawfulFaction, LibertyMainFleet, BaseLiberty, LibertyMainEquip
     IS_MILITARY = True
     COMMODITY = LI_COMMS
     COMMODITY_PRODS = LI_COMMS_PRODS
+    GIVE_BRIBES = False
 
 #
 # class LibertyMilitary(LibertyMain):
@@ -1084,6 +1095,7 @@ class ASF(LibertyMain):
     RU_NAME_FULL = MS('Служба безопасности Альянса', "Alliance Security Force")
     MANAGED = False
     RANDOM_MISSIONS = False
+    GIVE_BRIBES = False
 
 
 class LibertyCivilians(LawfulFaction, LibertyMainFleet, BaseLiberty, LibertyCivEquip, Faction):
@@ -1201,6 +1213,7 @@ class BretoniaMain(LawfulFaction, BretoniaMainFleet, BaseBretonia, BretoniaMainE
     IS_MILITARY = True
     COMMODITY = BR_COMMS
     COMMODITY_PRODS = BR_COMMS_PRODS
+    GIVE_BRIBES = False
 
 #
 # class BretoniaMilitary(BretoniaMain):
@@ -1332,6 +1345,7 @@ class KusariCivilians(LawfulFaction, KusariMainFleet, BaseKusari, KusariCivEquip
     IS_CIVILIAN = True
     COMMODITY = KU_COMMS
     COMMODITY_PRODS = KU_COMMS_PRODS
+    GIVE_BRIBES = False
 
 
 class KusariTraders(LawfulFaction, CivilianFleet, BaseKusari, KusariCivEquip, Faction):
@@ -1419,6 +1433,7 @@ class OrderMain(LawfulFaction, OrderFleet, BaseBorderWorld, BorderWorldOrderEqui
     HELMET2 = bodyparts.COMM_BR_ELITE
     IS_MILITARY = True
     RANDOM_MISSIONS = False
+    GIVE_BRIBES = False
 
 #
 # class OrderMilitary(OrderMain):
@@ -1474,6 +1489,7 @@ class BorderWorldPirate(UnlawfulFaction, RheinlandSecondFleet, BaseBorderWorld, 
     RU_NAME_FULL = MS('Пилигр+имы', "Pilgrims")
     IS_PIRATE = True
     RANDOM_MISSIONS = False
+    GIVE_BRIBES = False
 
 #
 # class BorderWorldTraders(UnlawfulFaction, CorsairFleet, BaseBorderWorld, BorderWorldCorsairEquip, Faction):
@@ -1494,6 +1510,7 @@ class DeidrichPeople(UnlawfulFaction, BaseRheinland, RheinlandMainEquip, Faction
     RU_NAME = MS('Люди Дитриха', "Deidrich's people")
     RU_NAME_FULL = MS('Люди Дитриха', "Deidrich's people")
     RANDOM_MISSIONS = False
+    GIVE_BRIBES = False
 
 #
 # class Workaround1(UnlawfulFaction, BaseRheinland, RheinlandMainEquip, Faction):
@@ -1762,7 +1779,7 @@ RELATIONS = [
             Relation(Shinobi, ENEMY_MED, HATE5),
             Relation(FarmerAlliance, ENEMY_MED, HATE5),
 
-            Relation(Nomad, FRIEND_MED),
+            Relation(Nomad, ENEMY_MED),
         ]
     ),
 
@@ -1810,7 +1827,7 @@ RELATIONS = [
             Relation(Shinobi, ENEMY_MED, HATE2),
             Relation(FarmerAlliance, ENEMY_MED, HATE1),
 
-            Relation(Nomad, FRIEND_MED),
+            Relation(Nomad, ENEMY_MED),
         ]
     ),
 
@@ -1858,7 +1875,7 @@ RELATIONS = [
             Relation(Shinobi, ENEMY_MED, HATE2),
             Relation(FarmerAlliance, ENEMY_MED, HATE1),
 
-            Relation(Nomad, FRIEND_MED),
+            Relation(Nomad, ENEMY_MED),
         ]
     ),
 
@@ -1906,7 +1923,7 @@ RELATIONS = [
             Relation(Shinobi, ENEMY_MED, HATE7),
             Relation(FarmerAlliance, ENEMY_MED, HATE9),
 
-            Relation(Nomad, FRIEND_MED),
+            Relation(Nomad, ENEMY_MED),
         ]
     ),
 
@@ -1956,7 +1973,7 @@ RELATIONS = [
             Relation(Shinobi, ENEMY_MED, HATE4),
             Relation(FarmerAlliance, ENEMY_MED, HATE4),
 
-            Relation(Nomad, FRIEND_MED),
+            Relation(Nomad, ENEMY_MED),
         ]
     ),
 
@@ -2004,7 +2021,7 @@ RELATIONS = [
             Relation(Shinobi, ENEMY_MED, HATE4),
             Relation(FarmerAlliance, ENEMY_MED, HATE4),
 
-            Relation(Nomad, FRIEND_MED),
+            Relation(Nomad, ENEMY_MED),
         ]
     ),
 
@@ -2052,7 +2069,7 @@ RELATIONS = [
             Relation(Shinobi, ENEMY_MED, HATE4),
             Relation(FarmerAlliance, ENEMY_MED, HATE4),
 
-            Relation(Nomad, FRIEND_MED),
+            Relation(Nomad, ENEMY_MED),
         ]
     ),
 
@@ -2099,7 +2116,7 @@ RELATIONS = [
             Relation(Shinobi, ENEMY_MED, HATE4),
             Relation(FarmerAlliance, ENEMY_MED, HATE4),
 
-            Relation(Nomad, FRIEND_MED),
+            Relation(Nomad, ENEMY_MED),
         ]
     ),
     #
@@ -2146,7 +2163,7 @@ RELATIONS = [
     #         Relation(Shinobi, ENEMY_MED, HATE4),
     #         Relation(FarmerAlliance, ENEMY_MED, HATE4),
     #
-    #         Relation(Nomad, FRIEND_MED),
+    #         Relation(Nomad, ENEMY_MED),
     #     ]
     # ),
 
@@ -2195,7 +2212,7 @@ RELATIONS = [
             Relation(Shinobi, ENEMY_MED, HATE5),
             Relation(FarmerAlliance, ENEMY_MED, HATE5),
 
-            Relation(Nomad, FRIEND_MED),
+            Relation(Nomad, ENEMY_MED),
             Relation(DeidrichPeople, FRIEND_MED),
         ]
     ),
@@ -2243,7 +2260,7 @@ RELATIONS = [
             Relation(Shinobi, ENEMY_MED, HATE2),
             Relation(FarmerAlliance, ENEMY_MED, HATE1),
 
-            Relation(Nomad, FRIEND_MED),
+            Relation(Nomad, ENEMY_MED),
         ]
     ),
 
@@ -2290,7 +2307,7 @@ RELATIONS = [
             Relation(Shinobi, ENEMY_MED, HATE2),
             Relation(FarmerAlliance, ENEMY_MED, HATE1),
 
-            Relation(Nomad, FRIEND_MED),
+            Relation(Nomad, ENEMY_MED),
         ]
     ),
 
@@ -2337,7 +2354,7 @@ RELATIONS = [
             Relation(Shinobi, ENEMY_MED, HATE7),
             Relation(FarmerAlliance, ENEMY_MED, HATE9),
 
-            Relation(Nomad, FRIEND_MED),
+            Relation(Nomad, ENEMY_MED),
         ]
     ),
 
@@ -2386,7 +2403,7 @@ RELATIONS = [
             Relation(Shinobi, ENEMY_MED, HATE5),
             Relation(FarmerAlliance, ENEMY_MED, HATE5),
 
-            Relation(Nomad, FRIEND_MED),
+            Relation(Nomad, ENEMY_MED),
             Relation(DeidrichPeople, FRIEND_MED),
         ]
     ),
@@ -2434,7 +2451,7 @@ RELATIONS = [
             Relation(Shinobi, ENEMY_MED, HATE2),
             Relation(FarmerAlliance, ENEMY_MED, HATE1),
 
-            Relation(Nomad, FRIEND_MED),
+            Relation(Nomad, ENEMY_MED),
         ]
     ),
 
@@ -2481,7 +2498,7 @@ RELATIONS = [
             Relation(Shinobi, ENEMY_MED, HATE2),
             Relation(FarmerAlliance, ENEMY_MED, HATE1),
 
-            Relation(Nomad, FRIEND_MED),
+            Relation(Nomad, ENEMY_MED),
         ]
     ),
 
@@ -2528,7 +2545,7 @@ RELATIONS = [
             Relation(Shinobi, ENEMY_MED, HATE7),
             Relation(FarmerAlliance, ENEMY_MED, HATE9),
 
-            Relation(Nomad, FRIEND_MED),
+            Relation(Nomad, ENEMY_MED),
         ]
     ),
     #
@@ -2575,66 +2592,66 @@ RELATIONS = [
     #         Relation(Shinobi, ENEMY_MED, HATE7),
     #         Relation(FarmerAlliance, ENEMY_MED, HATE9),
     #
-    #         Relation(Nomad, FRIEND_MED),
+    #         Relation(Nomad, ENEMY_MED),
     #     ]
     # ),
 
     FactionRelation(
         Nomad,
         [
-            Relation(RheinlandMain, FRIEND_MED),
-            Relation(LibertyMain, FRIEND_MED),
-            Relation(BretoniaMain, FRIEND_MED),
-            Relation(KusariMain, FRIEND_MED),
+            Relation(RheinlandMain, ENEMY_MED),
+            Relation(LibertyMain, ENEMY_MED),
+            Relation(BretoniaMain, ENEMY_MED),
+            Relation(KusariMain, ENEMY_MED),
 
-            Relation(RheinlandHunters, FRIEND_MED),
-            Relation(LibertyHunters, FRIEND_MED),
-            Relation(BretoniaHunters, FRIEND_MED),
-            Relation(KusariHunters, FRIEND_MED),
+            Relation(RheinlandHunters, ENEMY_MED),
+            Relation(LibertyHunters, ENEMY_MED),
+            Relation(BretoniaHunters, ENEMY_MED),
+            Relation(KusariHunters, ENEMY_MED),
 
-            Relation(RheinlandCivilians, FRIEND_MED),
-            Relation(LibertyCivilians, FRIEND_MED),
-            Relation(BretoniaCivilians, FRIEND_MED),
-            Relation(KusariCivilians, FRIEND_MED),
+            Relation(RheinlandCivilians, ENEMY_MED),
+            Relation(LibertyCivilians, ENEMY_MED),
+            Relation(BretoniaCivilians, ENEMY_MED),
+            Relation(KusariCivilians, ENEMY_MED),
 
-            Relation(RheinlandTraders, FRIEND_MED),
-            Relation(LibertyTraders, FRIEND_MED),
-            Relation(BretoniaTraders, FRIEND_MED),
-            Relation(KusariTraders, FRIEND_MED),
-            # Relation(BorderWorldTraders, FRIEND_MED),
+            Relation(RheinlandTraders, ENEMY_MED),
+            Relation(LibertyTraders, ENEMY_MED),
+            Relation(BretoniaTraders, ENEMY_MED),
+            Relation(KusariTraders, ENEMY_MED),
+            # Relation(BorderWorldTraders, ENEMY_MED),
 
-            Relation(RheinlandPirate, FRIEND_MED),
-            Relation(LibertyPirate, FRIEND_MED),
-            Relation(BretoniaPirate, FRIEND_MED),
-            Relation(KusariPirate, FRIEND_MED),
-            Relation(BorderWorldPirate, FRIEND_MED),
+            Relation(RheinlandPirate, ENEMY_MED),
+            Relation(LibertyPirate, ENEMY_MED),
+            Relation(BretoniaPirate, ENEMY_MED),
+            Relation(KusariPirate, ENEMY_MED),
+            Relation(BorderWorldPirate, ENEMY_MED),
 
-            Relation(Corsairs, FRIEND_MED),
-            Relation(Outcasts, FRIEND_MED),
-            Relation(OrderMain, FRIEND_MED),
-            Relation(ASF, FRIEND_MED),
+            Relation(Corsairs, ENEMY_MED),
+            Relation(Outcasts, ENEMY_MED),
+            Relation(OrderMain, ENEMY_MED),
+            Relation(ASF, ENEMY_MED),
 
-            Relation(Corsairs, FRIEND_MED),
-            Relation(Outcasts, FRIEND_MED),
-            Relation(OrderMain, FRIEND_MED),
-            Relation(ASF, FRIEND_MED),
+            Relation(Corsairs, ENEMY_MED),
+            Relation(Outcasts, ENEMY_MED),
+            Relation(OrderMain, ENEMY_MED),
+            Relation(ASF, ENEMY_MED),
 
-            Relation(Unknown, FRIEND_MED),
-            # Relation(RheinlandSmuggler, FRIEND_MED),
-            # Relation(LibertySmuggler, FRIEND_MED),
-            # Relation(BretoniaSmuggler, FRIEND_MED),
-            # Relation(KusariSmuggler, FRIEND_MED),
-            # Relation(BorderWorldSmuggler, FRIEND_MED),
+            Relation(Unknown, ENEMY_MED),
+            # Relation(RheinlandSmuggler, ENEMY_MED),
+            # Relation(LibertySmuggler, ENEMY_MED),
+            # Relation(BretoniaSmuggler, ENEMY_MED),
+            # Relation(KusariSmuggler, ENEMY_MED),
+            # Relation(BorderWorldSmuggler, ENEMY_MED),
 
-            Relation(Hessians, FRIEND_MED),
-            Relation(Junkers, FRIEND_MED),
-            Relation(LibertyRogues, FRIEND_MED),
-            Relation(Starline, FRIEND_MED),
-            Relation(LaneHackers, FRIEND_MED),
-            Relation(Xenos, FRIEND_MED),
-            Relation(Ireland, FRIEND_MED),
-            Relation(Shinobi, FRIEND_MED),
-            Relation(FarmerAlliance, FRIEND_MED),
+            Relation(Hessians, ENEMY_MED),
+            Relation(Junkers, ENEMY_MED),
+            Relation(LibertyRogues, ENEMY_MED),
+            Relation(Starline, ENEMY_MED),
+            Relation(LaneHackers, ENEMY_MED),
+            Relation(Xenos, ENEMY_MED),
+            Relation(Ireland, ENEMY_MED),
+            Relation(Shinobi, ENEMY_MED),
+            Relation(FarmerAlliance, ENEMY_MED),
         ]
     ),
 
@@ -2704,4 +2721,20 @@ RELATIONS = [
     ),
 
 
+]
+
+BRIBE_GROUPS = [
+    [RheinlandMain, RheinlandCivilians, RheinlandTraders],
+    [RheinlandHunters, RheinlandPirate, Hessians, Junkers],
+
+    [LibertyMain, LibertyCivilians, LibertyTraders],
+    [LibertyHunters, LibertyPirate, LibertyRogues, LaneHackers, Starline],
+
+    [BretoniaMain, BretoniaCivilians, BretoniaTraders],
+    [BretoniaHunters, BretoniaPirate, Ireland, Xenos],
+
+    [KusariMain, KusariCivilians, KusariTraders],
+    [KusariHunters, KusariPirate, Shinobi, FarmerAlliance],
+
+    [Corsairs, Outcasts, Starline, Xenos, FarmerAlliance, Junkers],
 ]
