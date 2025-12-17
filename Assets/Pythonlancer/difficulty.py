@@ -58,7 +58,7 @@ class EasyDifficulty(DifficultySettings):
 
 class NormalDifficulty(DifficultySettings):
     NPC_ARMOR_SCALE = 1.5
-    NPC_SHIELD_CAPACITY_SCALE = 1.1
+    NPC_SHIELD_CAPACITY_SCALE = 1.5
     NPC_SHIELD_REGENERATION_SCALE = 0.5
     M6_TORPEDO_DAMAGE = 100000
     M9_SPAWN_WAVE_C = False

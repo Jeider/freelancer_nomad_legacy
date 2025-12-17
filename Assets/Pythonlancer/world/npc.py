@@ -5,6 +5,32 @@ EXTRA_REPAIR = [
     'cargo = ge_s_battery_01, 2',
 ]
 
+PILOT1 = 'mod_fighter_universe'
+PILOT2 = 'mod_fighter_universe_mark2'
+PILOT3 = 'mod_fighter_universe_mark3'
+PILOT4 = 'mod_fighter_universe_mark4'
+PILOT_PER_LEVEL = {
+    1: PILOT1,
+    2: PILOT1,
+    3: PILOT1,
+    4: PILOT1,
+    5: PILOT2,
+    6: PILOT2,
+    7: PILOT2,
+    8: PILOT2,
+    9: PILOT2,
+    10: PILOT3,
+    11: PILOT3,
+    12: PILOT3,
+    13: PILOT3,
+    14: PILOT3,
+    15: PILOT4,
+    16: PILOT4,
+    17: PILOT4,
+    18: PILOT4,
+    19: PILOT4,
+}
+
 
 class EqMap(object):
 
@@ -169,9 +195,6 @@ class NPC(object):
         MINE_AMMO,
     ]
 
-    # PILOT = 'mod_fighter_level_basic'
-    PILOT = 'mod_fighter_universe'
-    # PILOT = 'pilot_pirate_easy'
     CLASS_FIGHTER = 'class_fighter'
 
     NPC_SHIPARCH_TEMPLATE = '''[NPCShipArch]
@@ -225,12 +248,15 @@ npc_class = {classes_list}'''
         classes += self.ship.EXTRA_CLASSES
         return ', '.join(classes)
 
+    def get_pilot(self):
+        return PILOT_PER_LEVEL[self.level]
+
     def get_npc_shiparch_template_params(self):
         return {
             'npc_shiparch_nickname': self.get_npc_shiparch_nickname(),
             'loadout_nickname': self.get_loadout_nickname(),
             'shiparch': self.ship.ARCHETYPE,
-            'pilot': self.PILOT,
+            'pilot': self.get_pilot(),
             'classes_list': self.get_classes_list(),
             'level': self.get_npc_level_code(),
         }

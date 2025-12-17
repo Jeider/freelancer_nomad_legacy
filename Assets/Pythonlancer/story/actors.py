@@ -756,6 +756,17 @@ class HasslerOrder(Actor):
     STEOS_ID = 10071
 
 
+class Ironside(Actor):
+    RU_NAME = MS('Билл Айронсайд', 'Bill Ironside')
+    TYPE = ACTOR_MALE
+    NAME = 'alaric'
+    COMM_APPEARANCE = 'rh_alaric_head_hat, pi_pirate6_body, comm_rh_alaric'
+    CUTSCENE_APPEARANCE = 'alaric'
+    SPACE_VOICE = 'pilot_f_mil_m01'
+    STEOS_ID = 426
+    STEOS_PITCH = -0.1
+
+
 class Alaric(Actor):
     RU_NAME = MS('Аларик', 'Alaric')
     TYPE = ACTOR_MALE

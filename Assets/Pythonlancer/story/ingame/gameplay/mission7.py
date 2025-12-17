@@ -341,11 +341,12 @@ class Misson07(ingame_mission.IngameMission):
                 affiliation=faction.Starline.CODE,
                 system_class=S.co_cad,
                 labels=['point_b', 'starline'],
+                actor=actors.Ironside,
                 npc=NPC(
                     faction=faction.Starline,
                     ship=ship.Defender,
                     level=NPC.D10,
-                    equip_map=EqMap(base_level=5),
+                    equip_map=EqMap(base_level=6),
                 )
             ),
             Ship(
@@ -359,8 +360,8 @@ class Misson07(ingame_mission.IngameMission):
                 npc=NPC(
                     faction=faction.OrderMain,
                     ship=ship.Anubis,
-                    level=NPC.D8,
-                    equip_map=EqMap(base_level=5),
+                    level=NPC.D9,
+                    equip_map=EqMap(base_level=6, engine=5),
                 )
             ),
             Ship(
@@ -423,7 +424,7 @@ class Misson07(ingame_mission.IngameMission):
                     faction=faction.BretoniaPirate,
                     ship=ship.Crusader,
                     level=NPC.D10,
-                    equip_map=EqMap(base_level=5),
+                    equip_map=EqMap(base_level=6),
                 ),
             ),
         ]
