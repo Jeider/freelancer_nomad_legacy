@@ -4,7 +4,9 @@ from text.translate import Lang_RU
 class InfocardBuilder(object):
 
     @staticmethod
-    def build_infocard(infocard_template, template_params, language=Lang_RU):
+    def build_infocard(infocard_template, template_params=None, language=Lang_RU):
+        if template_params is None:
+            template_params = {}
         inline_template = ''.join(infocard_template)
         template_params.update(language.TRANSLATIONS)
 

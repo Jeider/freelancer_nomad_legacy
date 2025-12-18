@@ -11,8 +11,10 @@ from world.names import (
     DEFAULT_PRODS, RH_COMMS_PRODS, LI_COMMS_PRODS, BR_COMMS_PRODS, KU_COMMS_PRODS,
 )
 
-
+import universe.faction_info_ru as RU
+import universe.faction_info_en as EN
 from text.strings import MultiString as MS
+from text.infocards import InfocardBuilder
 from text.dividers import SINGLE_DIVIDER
 
 
@@ -371,6 +373,7 @@ class Faction:
     ELITE = None
     FREIGHTER = None
     RU_NAME = None
+    RU_INFO = MS('', '')
     RU_NAME_FULL = None
     FORCE_IDS_NAME = None
     FORCE_IDS_SHORT_NAME = None
@@ -490,7 +493,18 @@ class Faction:
         return self.get_ru_name_clean()
 
     def get_ru_info(self):
-        return MS('', '')
+        if self.RU_INFO.get_ru() == '':
+            return self.RU_INFO
+
+        return MS(
+            InfocardBuilder.build_infocard(
+                [self.RU_INFO.get_ru()],
+            ),
+            InfocardBuilder.build_infocard(
+                [self.RU_INFO.get_en()],
+            )
+        )
+
 
     def is_managed(self):
         return self.MANAGED
@@ -959,6 +973,7 @@ class RheinlandMain(LawfulFaction, RheinlandMainFleet, BaseRheinland, RheinlandM
     GUEST_APPEARANCE = bodyparts.TRADER
     RU_NAME = MS('Рейнланд', "Rheinland")
     RU_NAME_FULL = MS('Рейнландская империя', "Rheinland Empire")
+    RU_INFO = MS(RU.RH, EN.RH)
     SCANNING_CARGO = True
     EXTRA_NPC_SHIPS = [
         'rh_grp_main_cruiser', 'rh_grp_main_gunboat'
@@ -981,6 +996,7 @@ class RheinlandCivilians(LawfulFaction, RheinlandMainFleet, BaseRheinland, Rhein
     GUEST_APPEARANCE = bodyparts.PEASANT
     RU_NAME = MS('Д+ауманн', "Daumann")
     RU_NAME_FULL = MS('Промышленность Дауманн', "Daumann Heavy Construction")
+    RU_INFO = MS(RU.RC, EN.RC)
     MC_COSTUME = 'mc_siemens'
     COMM_TEMPLATE = COMM_PEASANT
     EXTRA_NPC_SHIPS = [LIFTER]
@@ -995,6 +1011,7 @@ class RheinlandTraders(LawfulFaction, CivilianFleet, BaseRheinland, RheinlandCiv
     GUEST_APPEARANCE = bodyparts.PEASANT
     RU_NAME = MS('Интерсп+эйс', "Interspace")
     RU_NAME_FULL = MS('Коммерция Интерспейс', "Interspace commerce")
+    RU_INFO = MS(RU.R_TR, EN.R_TR)
     MC_COSTUME = 'mc_siemens'
     COMM_TEMPLATE = COMM_PEASANT
     IS_CIVILIAN = True
@@ -1010,6 +1027,7 @@ class RheinlandHunters(LawfulFaction, RheinlandSecondFleet, BaseRheinland, Rhein
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
     RU_NAME = MS('Асгард', "Asgard")
     RU_NAME_FULL = MS('ЧВК Асгард', "PMC Asgard")
+    RU_INFO = MS(RU.R_BH, EN.R_BH)
     MC_COSTUME = 'mc_hessian'
     SCANNING_CARGO = True
     COMM_TEMPLATE = COMM_JOURNEYMAN
@@ -1026,6 +1044,7 @@ class RheinlandPirate(UnlawfulFaction, RheinlandSecondFleet, BaseRheinland, Rhei
     GUEST_APPEARANCE = bodyparts.PIRATE
     RU_NAME = MS('Бундсчух', "Bundschuh")
     RU_NAME_FULL = MS('Бундсчух', "Bundschuh")
+    RU_INFO = MS(RU.R_PI, EN.R_PI)
     MC_COSTUME = 'mc_hessian'
     IS_PIRATE = True
     COMM_TEMPLATE = COMM_HISPANIA
@@ -1040,6 +1059,7 @@ class Hessians(UnlawfulFaction, RheinlandSecondFleet, BaseRheinland, RheinlandPi
     GUEST_APPEARANCE = bodyparts.PIRATE
     RU_NAME = MS('Г+ессенцы', "Hessians")
     RU_NAME_FULL = MS('Г+ессенцы', "Hessians")
+    RU_INFO = MS(RU.RX, EN.RX)
     MC_COSTUME = 'mc_hessian'
     IS_PIRATE = True
     COMM_TEMPLATE = COMM_HISPANIA
@@ -1053,6 +1073,7 @@ class Junkers(UnlawfulFaction, CivilianFleet, BaseRheinland, RheinlandPirateEqui
     GUEST_APPEARANCE = bodyparts.PEASANT
     RU_NAME = MS('Мусорщики', "Junkers")
     RU_NAME_FULL = MS('Мусорщики', "Junkers")
+    RU_INFO = MS(RU.JUNK, EN.JUNK)
     MC_COSTUME = 'mc_hessian'
     IS_PIRATE = True
     COMM_TEMPLATE = COMM_HISPANIA
@@ -1070,6 +1091,7 @@ class LibertyMain(LawfulFaction, LibertyMainFleet, BaseLiberty, LibertyMainEquip
     GUEST_APPEARANCE = bodyparts.TRADER
     RU_NAME = MS('Л+иберти', "Liberty")
     RU_NAME_FULL = MS('Республика Либерти', "Liberty Republic")
+    RU_INFO = MS(RU.LI, EN.LI)
     SCANNING_CARGO = True
     EXTRA_NPC_SHIPS = [
         'li_grp_main_cruiser',
@@ -1093,6 +1115,7 @@ class ASF(LibertyMain):
     # RU_NAME = MS('Эс-Бэ-А', "Ai-eS-eF")  # For voice!
     RU_NAME = MS('СБА', "ASF")
     RU_NAME_FULL = MS('Служба безопасности Альянса', "Alliance Security Force")
+    RU_INFO = MS(RU.ASF, EN.ASF)
     MANAGED = False
     RANDOM_MISSIONS = False
     GIVE_BRIBES = False
@@ -1104,6 +1127,7 @@ class LibertyCivilians(LawfulFaction, LibertyMainFleet, BaseLiberty, LibertyCivE
     GUEST_APPEARANCE = bodyparts.PEASANT
     RU_NAME = MS('Дип Спэйс', "Deep Space")
     RU_NAME_FULL = MS('Дип Спэйс Инжиниринг', "Deep Space Engineering")
+    RU_INFO = MS(RU.LC, EN.LC)
     MC_COSTUME = 'mc_deepspace'
     COMM_TEMPLATE = COMM_PEASANT
     EXTRA_NPC_SHIPS = [LIFTER]
@@ -1118,6 +1142,7 @@ class LibertyTraders(LawfulFaction, CivilianFleet, BaseLiberty, LibertyCivEquip,
     GUEST_APPEARANCE = bodyparts.PEASANT
     RU_NAME = MS('Адж+ейра', "Ageira")
     RU_NAME_FULL = MS('Адж+ейра Технолоджис', "Ageira Technologies")
+    RU_INFO = MS(RU.L_TR, EN.L_TR)
     MC_COSTUME = 'mc_deepspace'
     COMM_TEMPLATE = COMM_PEASANT
     IS_CIVILIAN = True
@@ -1134,6 +1159,7 @@ class LibertyHunters(LawfulFaction, LibertySecondFleet, BaseLiberty, LibertyCivE
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
     RU_NAME = MS('Щит', "Shield")
     RU_NAME_FULL = MS('ЧВК Щит', "PMC Shield")
+    RU_INFO = MS(RU.L_BH, EN.L_BH)
     MC_COSTUME = 'mc_rebel'
     SCANNING_CARGO = True
     COMM_TEMPLATE = COMM_JOURNEYMAN
@@ -1150,6 +1176,7 @@ class LibertyPirate(UnlawfulFaction, LibertySecondFleet, BaseLiberty, LibertyPir
     GUEST_APPEARANCE = bodyparts.PIRATE
     RU_NAME = MS('Д+икси', "Dixie")
     RU_NAME_FULL = MS('Конфедеративные мятежники', "Confederate rebels")
+    RU_INFO = MS(RU.L_PI, EN.L_PI)
     MC_COSTUME = 'mc_rebel'
     IS_PIRATE = True
     COMM_TEMPLATE = COMM_HISPANIA
@@ -1163,6 +1190,7 @@ class LibertyRogues(UnlawfulFaction, LibertySecondFleet, BaseLiberty, LibertyPir
     GUEST_APPEARANCE = bodyparts.PIRATE
     RU_NAME = MS('Разбойники Л+иберти', "Liberty Rogues")
     RU_NAME_FULL = MS('Разбойники Л+иберти', "Liberty Rogues")
+    RU_INFO = MS(RU.LX, EN.LX)
     MC_COSTUME = 'mc_rebel'
     IS_PIRATE = True
     COMM_TEMPLATE = COMM_HISPANIA
@@ -1176,6 +1204,7 @@ class Starline(UnlawfulFaction, LibertyMainFleet, BaseLiberty, LibertyPirateEqui
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
     RU_NAME = MS('Старл+айн', "Starline")
     RU_NAME_FULL = MS('Банда Старлайна', "Starline's Band")
+    RU_INFO = MS(RU.SL, EN.SL)
     MC_COSTUME = 'mc_rebel'
     IS_PIRATE = True
     COMM_TEMPLATE = COMM_JOURNEYMAN
@@ -1190,6 +1219,7 @@ class LaneHackers(UnlawfulFaction, RheinlandSecondFleet, BaseLiberty, LibertyPir
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
     RU_NAME = MS('Хакеры', "Hackers")
     RU_NAME_FULL = MS('Путевые хакеры', "Lane Hackers")
+    RU_INFO = MS(RU.HACK, EN.HACK)
     MC_COSTUME = 'mc_rebel'
     IS_PIRATE = True
     COMM_TEMPLATE = COMM_HISPANIA
@@ -1207,6 +1237,7 @@ class BretoniaMain(LawfulFaction, BretoniaMainFleet, BaseBretonia, BretoniaMainE
     GUEST_APPEARANCE = bodyparts.TRADER
     RU_NAME = MS('Брет+ония', "Bretonia")
     RU_NAME_FULL = MS('Королевство Брет+ония', "Bretonia Kingdom")
+    RU_INFO = MS(RU.BR, EN.BR)
     EXTRA_NPC_SHIPS = [
         'br_grp_main_destroyer', 'br_grp_main_gunboat'
     ]
@@ -1229,6 +1260,7 @@ class BretoniaCivilians(LawfulFaction, BretoniaMainFleet, BaseBretonia, Bretonia
     # RU_NAME = MS('Би-Эм-Эм', "BMM")
     RU_NAME = MS('БММ', "BMM")
     RU_NAME_FULL = MS('Королевское предприятие БММ', "Royal Enterprise BMM")
+    RU_INFO = MS(RU.BC, EN.BC)
     MC_COSTUME = 'mc_aegis'
     COMM_TEMPLATE = COMM_PEASANT
     EXTRA_NPC_SHIPS = [LIFTER]
@@ -1243,6 +1275,7 @@ class BretoniaTraders(LawfulFaction, CivilianFleet, BaseBretonia, BretoniaCivEqu
     GUEST_APPEARANCE = bodyparts.PEASANT
     RU_NAME = MS('Б+овекс', "Bowex")
     RU_NAME_FULL = MS('Пограничные перевозки Бовекс', "Border World Exports")
+    RU_INFO = MS(RU.B_TR, EN.B_TR)
     MC_COSTUME = 'mc_aegis'
     COMM_TEMPLATE = COMM_PEASANT
     IS_CIVILIAN = True
@@ -1259,6 +1292,7 @@ class BretoniaHunters(LawfulFaction, BretoniaSecondFleet, BaseBretonia, Bretonia
     # RU_NAME = MS('Р+оял-Форс', "Roal Force")
     RU_NAME = MS('Роял-Форс', "Roal Force")
     RU_NAME_FULL = MS('ЧВК Роял-Форс', "PMC Roal Force")
+    RU_INFO = MS(RU.B_BH, EN.B_BH)
     MC_COSTUME = 'mc_energon'
     SCANNING_CARGO = True
     COMM_TEMPLATE = COMM_JOURNEYMAN
@@ -1275,6 +1309,7 @@ class BretoniaPirate(UnlawfulFaction, CivilianFleet, BaseBretonia, BretoniaPirat
     GUEST_APPEARANCE = bodyparts.PIRATE
     RU_NAME = MS('Гайане', "Gaians")
     RU_NAME_FULL = MS('Гайане', "Gaians")
+    RU_INFO = MS(RU.B_PI, EN.B_PI)
     MC_COSTUME = 'mc_energon'
     IS_PIRATE = True
     COMM_TEMPLATE = COMM_HISPANIA
@@ -1288,6 +1323,7 @@ class Ireland(UnlawfulFaction, BretoniaSecondFleet, BaseBretonia, BretoniaPirate
     GUEST_APPEARANCE = bodyparts.PIRATE
     RU_NAME = MS('ИРА', "IRA")
     RU_NAME_FULL = MS('Ирландская республиканская армия', "Ireland Republican Army")
+    RU_INFO = MS(RU.BX, EN.BX)
     MC_COSTUME = 'mc_energon'
     IS_PIRATE = True
     COMM_TEMPLATE = COMM_JOURNEYMAN
@@ -1301,6 +1337,7 @@ class Xenos(UnlawfulFaction, BretoniaSecondFleet, BaseBretonia, BretoniaPirateEq
     GUEST_APPEARANCE = bodyparts.PEASANT
     RU_NAME = MS('Кс+еносы', "Xenos")
     RU_NAME_FULL = MS('Кс+еносы', "Xenos")
+    RU_INFO = MS(RU.XENOS, EN.XENOS)
     MC_COSTUME = 'mc_energon'
     IS_PIRATE = True
     COMM_TEMPLATE = COMM_HISPANIA
@@ -1318,6 +1355,7 @@ class KusariMain(LawfulFaction, KusariMainFleet, BaseKusari, KusariMainEquip, Fa
     GUEST_APPEARANCE = bodyparts.TRADER
     RU_NAME = MS('Кус+ари', "Kusari")
     RU_NAME_FULL = MS('Сёгунат Кус+ари', "Kusari Shogunate")
+    RU_INFO = MS(RU.KU, EN.KU)
     SCANNING_CARGO = True
     EXTRA_NPC_SHIPS = [
         'ku_grp_main_destroyer', 'ku_grp_main_gunboat'
@@ -1339,6 +1377,7 @@ class KusariCivilians(LawfulFaction, KusariMainFleet, BaseKusari, KusariCivEquip
     GUEST_APPEARANCE = bodyparts.PEASANT
     RU_NAME = MS('Киш+иро', "Kishiro")
     RU_NAME_FULL = MS('Киш+иро Технолоджис', "Kishiro Technologies")
+    RU_INFO = MS(RU.KC, EN.KC)
     MC_COSTUME = 'mc_gasmining'
     COMM_TEMPLATE = COMM_PEASANT
     EXTRA_NPC_SHIPS = [LIFTER]
@@ -1354,6 +1393,7 @@ class KusariTraders(LawfulFaction, CivilianFleet, BaseKusari, KusariCivEquip, Fa
     GUEST_APPEARANCE = bodyparts.PEASANT
     RU_NAME = MS('Сам+ура', "Samura")
     RU_NAME_FULL = MS('Промышленность Сам+ура', "Samura Industries")
+    RU_INFO = MS(RU.K_TR, EN.K_TR)
     MC_COSTUME = 'mc_gasmining'
     COMM_TEMPLATE = COMM_PEASANT
     IS_CIVILIAN = True
@@ -1369,6 +1409,7 @@ class KusariHunters(LawfulFaction, KusariSecondFleet, BaseKusari, KusariCivEquip
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
     RU_NAME = MS('Чёрный Дракон', "Black Dragon")
     RU_NAME_FULL = MS('ЧВК Чёрный Дракон', "PMC Black Dragon")
+    RU_INFO = MS(RU.K_BH, EN.K_BH)
     MC_COSTUME = 'mc_shinobi'
     SCANNING_CARGO = True
     COMM_TEMPLATE = COMM_JOURNEYMAN
@@ -1385,6 +1426,7 @@ class KusariPirate(UnlawfulFaction, KusariSecondFleet, BaseKusari, KusariPirateE
     GUEST_APPEARANCE = bodyparts.PIRATE
     RU_NAME = MS('Золот+ые Хризант+емы', "Golden Chrystantems")
     RU_NAME_FULL = MS('Золот+ые Хризант+емы', "Golden Chrystantems")
+    RU_INFO = MS(RU.K_PI, EN.K_PI)
     MC_COSTUME = 'mc_shinobi'
     IS_PIRATE = True
     COMM_TEMPLATE = COMM_HISPANIA
@@ -1398,6 +1440,7 @@ class Shinobi(UnlawfulFaction, KusariMainFleet, BaseKusari, KusariPirateEquip, F
     GUEST_APPEARANCE = bodyparts.PIRATE
     RU_NAME = MS('Клан Шин+оби', "Shinobi Clan")
     RU_NAME_FULL = MS('Клан Шин+оби', "Shinobi Clan")
+    RU_INFO = MS(RU.KX, EN.KX)
     MC_COSTUME = 'mc_shinobi'
     IS_PIRATE = True
     COMM_TEMPLATE = COMM_JOURNEYMAN
@@ -1411,6 +1454,7 @@ class FarmerAlliance(UnlawfulFaction, KusariSecondFleet, BaseKusari, KusariPirat
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
     RU_NAME = MS('Фермеры', "Farmers")
     RU_NAME_FULL = MS('Альянс фермеров', "Farmer Alliance")
+    RU_INFO = MS(RU.FARM, EN.FARM)
     MC_COSTUME = 'mc_shinobi'
     IS_PIRATE = True
     COMM_TEMPLATE = COMM_JOURNEYMAN
@@ -1427,6 +1471,7 @@ class OrderMain(LawfulFaction, OrderFleet, BaseBorderWorld, BorderWorldOrderEqui
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
     RU_NAME = MS('Орден', "The Order")
     RU_NAME_FULL = MS('Орден', "The Order")
+    RU_INFO = MS(RU.OR, EN.OR)
     MC_COSTUME = 'mc_generic'
     COMM_TEMPLATE = COMM_ORDER
     HELMET1 = bodyparts.COMM_RH_ALARIC
@@ -1448,6 +1493,7 @@ class Corsairs(UnlawfulFaction, CorsairFleet, BaseBorderWorld, BorderWorldCorsai
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
     RU_NAME = MS('Корс+ары', "Corsairs")
     RU_NAME_FULL = MS('Корс+ары', "Corsairs")
+    RU_INFO = MS(RU.CO, EN.CO)
     IS_PIRATE = True
     COMM_TEMPLATE = COMM_HISPANIA
     # IS_MILITARY = True
@@ -1476,6 +1522,7 @@ class Outcasts(LawfulFaction, RheinlandSecondFleet, BaseBorderWorld, BorderWorld
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
     RU_NAME = MS('Изг+ои', "Outcasts")
     RU_NAME_FULL = MS('Изг+ои', "Outcasts")
+    RU_INFO = MS(RU.OUT, EN.OUT)
     IS_PIRATE = True
     COMM_TEMPLATE = COMM_JOURNEYMAN
     # RANDOM_MISSIONS = False
@@ -1487,6 +1534,7 @@ class BorderWorldPirate(UnlawfulFaction, RheinlandSecondFleet, BaseBorderWorld, 
     GUEST_APPEARANCE = bodyparts.PIRATE
     RU_NAME = MS('Пилигр+имы', "Pilgrims")
     RU_NAME_FULL = MS('Пилигр+имы', "Pilgrims")
+    RU_INFO = MS('', '')
     IS_PIRATE = True
     RANDOM_MISSIONS = False
     GIVE_BRIBES = False
@@ -1509,6 +1557,7 @@ class DeidrichPeople(UnlawfulFaction, BaseRheinland, RheinlandMainEquip, Faction
     MANAGED = False
     RU_NAME = MS('Люди Дитриха', "Deidrich's people")
     RU_NAME_FULL = MS('Люди Дитриха', "Deidrich's people")
+    RU_INFO = MS('', '')
     RANDOM_MISSIONS = False
     GIVE_BRIBES = False
 
