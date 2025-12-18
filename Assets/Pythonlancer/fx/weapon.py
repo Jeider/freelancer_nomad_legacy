@@ -16,6 +16,19 @@ TIER_PER_CLASS = {
 }
 
 
+TIER_PER_CLASS_TACHYON = {
+    1: TIER_ONE,
+    2: TIER_ONE,
+    3: TIER_THREE,
+    4: TIER_THREE,
+    5: TIER_FOUR,
+    6: TIER_FOUR,
+    7: TIER_TWO,
+    8: TIER_TWO,
+    9: TIER_TWO,
+}
+
+
 class WeaponFX(object):
     FX_TEMPLATE = '{faction}_{fx_appearance}_0{tier}_{fx_usage}'
     FLASH = 'flash'
@@ -65,6 +78,10 @@ class WeaponFX(object):
     def get_tier(self):
         if self.fx_appearance in self.TEAR_ONLY_ONE:
             return 1
+
+        if self.fx_appearance == self.FX_TACHYON:
+            return TIER_PER_CLASS_TACHYON[self.equip_class]
+
         return TIER_PER_CLASS[self.equip_class]
 
     def get_sound_class(self):
