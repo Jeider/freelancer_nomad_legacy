@@ -27,6 +27,9 @@ class LauncherText:
         ('Makes game like visual novel with fights. Best for game journalists',
          'Делает игру чем-то вроде визуальной новеллы с боями. Идеально для игровых журналистов'),
 
+        ('More difficult enemies with higher shield and armor. NPC cause more damage on player',
+         'Более сложные противники, которые имеют более мощные щиты и броню, а так же наносят игроку больше повреждений'),
+
         ('Cannot change powerplants and engines', 'Невозможно менять генераторы и двигатели'),
         ('Simple difficulty', 'Простая сложность'),
         ('For game journalists', 'Для игровых журналистов'),

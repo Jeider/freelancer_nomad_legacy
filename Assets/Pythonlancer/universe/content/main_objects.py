@@ -285,17 +285,17 @@ class StaticObject(AppearableObject):
             zone_code=ast_zone.get_zone_alias(),
             space_name=self.get_inspace_nickname(),
         )
-    
+
     def get_nebula_exclusion_zone_name(self):
         return self.NEBULA_ZONE_NAME_TEMPLATE.format(
             space_name=self.get_inspace_nickname(),
         )
-    
+
     def get_ring_zone_name(self):
         return self.RING_ZONE_NAME_TEMPLATE.format(
             space_name=self.get_inspace_nickname(),
         )
-    
+
     def get_defence_zone_name(self):
         return self.DEFENCE_ZONE_NAME_TEMPLATE.format(
             space_name=self.get_inspace_nickname(),
@@ -453,23 +453,21 @@ class NamedObject(StaticObject):
     RU_FIRST_DESCRIPTION = None
     RU_SECOND_DESCRIPTION = None
     DOUBLE_INFO = False
-    
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
         if not self.LAZY_NAME:
             self.set_space_name()
 
-        self.ids_info1 = self.system.ids.new_name(
-            self.get_first_description()
-        )
+        self.ids_info1 = self.get_new_info(self.get_first_description())
         if self.have_double_info():
             self.ids_info2 = self.system.ids.new_name(
                 self.get_second_description()
             )
 
     def have_double_info(self):
-        return self.DOUBLE_INFO is not None
+        return self.DOUBLE_INFO is not False
 
     def get_first_description(self):
         if self.RU_FIRST_DESCRIPTION:
@@ -488,13 +486,22 @@ class NamedObject(StaticObject):
         if not space_name:
             raise Exception(f'System object {self} have no name')
 
-        self.ids_name = self.system.ids.new_name(space_name)
+        self.ids_name = self.get_new_name(space_name)
+
+    def get_new_name(self, space_name):
+        return self.system.ids.new_name(space_name)
+
+    def get_new_info(self, space_info):
+        return self.system.ids.new_name(space_info)
 
     def get_name(self):
         return self.RU_NAME
 
     def get_space_name(self):
-        return self.get_name()
+        return MS(
+            self.get_name().get_ru().replace('+', ''),
+            self.get_name().get_en().replace('+', '')
+        )
 
     def get_base_string_id(self):
         return self.get_ids_name()
@@ -716,7 +723,7 @@ class GenericSphere(StaticObject):
 
     def get_zones_force_position(self):
         return None
-    
+
     def get_sphere_damage_zones(self):
         parent_name = self.get_inspace_nickname()
         drag_zone = DynamicSphereZone(
@@ -742,14 +749,15 @@ class GenericSphere(StaticObject):
             damage=self.DAMAGE_ZONE_DAMAGE,
         )
         return [drag_zone, damage_zone]
-    
+
     def get_dynamic_zones(self):
         dynamic_zones = super().get_dynamic_zones()
         return dynamic_zones + self.get_sphere_damage_zones()
 
 
-class Sun(GenericSphere):
+class Sun(GenericSphere, NamedObject):
     ALIAS = 'sun'
+    RU_NAME = MS('Солнце', 'Sun')
 
     ARCHETYPE = 'sun_2000'
 
@@ -763,6 +771,12 @@ class Sun(GenericSphere):
     DEATH_ZONE_DAMAGE = 200000000
     DRAG_ZONE_SIZE = 10500
     DRAG_MODIFIER = 5
+
+    def get_new_name(self, space_name):
+        return self.system.core.ids.space_misc.new_name(space_name)
+
+    def get_new_info(self, space_info):
+        return self.system.core.ids.space_misc.new_name(space_info)
 
     def get_atmosphere_range(self):
         return self.ATMOSHPERE_RANGE
@@ -778,11 +792,16 @@ class Sun(GenericSphere):
         params.update({
             'star': self.STAR,
             'atmosphere_range': self.get_atmosphere_range(),
+            'ids_name': self.get_ids_name(),
+            'ids_info': self.get_ids_info(),
         })
         return params
 
     def get_inspace_nickname(self):
         return '{system_name}_sun_{index}'.format(system_name=self.system.NAME, index=self.INDEX)
+
+    def get_first_description(self):
+        return self.system.core.get_next_desc('stars')
 
 
 class SunSmall(Sun):
@@ -826,8 +845,13 @@ parent = {parent_planet}'''
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        if related_dock_ring := self.get_related_ring_obj():
-            related_dock_ring.set_related_planet(self)
+        self.related_dock_ring = self.get_related_ring_obj()
+
+        if self.related_dock_ring:
+            self.related_dock_ring.set_related_planet(self)
+
+    def have_dock_ring(self):
+        return self.RELATED_DOCK_RING is not None
 
     def get_spin(self):
         if self.SPIN > 0:
@@ -900,9 +924,9 @@ parent = {parent_planet}'''
         pos_x, pos_y, pos_z = self.system.template.get_item_pos(self.RELATED_DOCK_RING.get_full_alias())
         planet_drift = self.SPHERE_RADIUS + self.DOCK_RING_OFFSET
         if self.RELATED_DOCK_RING.REL == LEFT:
-            pos_x -= planet_drift 
+            pos_x -= planet_drift
         elif self.RELATED_DOCK_RING.REL == RIGHT:
-            pos_x += planet_drift 
+            pos_x += planet_drift
         elif self.RELATED_DOCK_RING.REL == TOP:
             pos_z -= planet_drift
         elif self.RELATED_DOCK_RING.REL == BOTTOM:
@@ -925,6 +949,32 @@ parent = {parent_planet}'''
             return related_dock_ring.get_name()
 
         return self.get_name()
+
+    def get_first_description(self):
+        if self.have_dock_ring():
+            return MS(' ', ' ')  # Temporary empty!
+
+        if self.ARCHETYPE.startswith('planet_ice'):
+            return self.system.core.get_next_desc('planet_ice')
+
+        if self.ARCHETYPE.startswith('planet_des') or self.ARCHETYPE.startswith('planet_rckdes'):
+            return self.system.core.get_next_desc('planet_desert')
+
+        if self.ARCHETYPE.startswith('planet_gas'):
+            return self.system.core.get_next_desc('planet_gas')
+
+        if (self.ARCHETYPE.startswith('planet_moonblu') or
+                self.ARCHETYPE.startswith('planet_crater') or
+                self.ARCHETYPE.startswith('planet_rckmnt')):
+            return self.system.core.get_next_desc('planet_moon')
+
+        if self.ARCHETYPE.startswith('planet_moonred'):
+            return self.system.core.get_next_desc('planet_lava')
+
+        if self.ARCHETYPE.startswith('planet_earth'):
+            return self.system.core.get_next_desc('planet_terra')
+
+        raise Exception(f'Planet {self} with archetype {self.ARCHETYPE} have no available description')
 
 
 class NotDockableObject(StaticObject):
@@ -1621,7 +1671,7 @@ behavior = NOTHING'''
 
     def get_cargo_pods(self):
         pos_x, pos_y, pos_z = self.get_position()
-        
+
         return self.CARGO_PODS_TEMPLATE.format(
             parent_gasminer=self.get_inspace_nickname(),
             position='{}, {}, {}'.format(pos_x, pos_y+self.CARGO_PODS_POSITION_Y_DRIFT, pos_z),
@@ -1968,7 +2018,7 @@ class PatrolObjective(SystemObject):
     TRACKS_PATROL_HEADING = '[Path]'
     TRACKS_PATROL_NAME = 'name = {name}, {index}'
     TRACKS_PATROL_ITEM = 'pos = {pos}'
-    
+
     def __init__(self, system, population_kind, index, positions):
         self.system = system
         self.population_kind = population_kind
@@ -2306,7 +2356,7 @@ size = {size}'''
         self.tracks_raw_outer_zone = tracks_raw_tlr_zone
 
     def get_prev_ring(self, index):
-        prev_index = index - 1 
+        prev_index = index - 1
         if prev_index < 1:
             return None
 
@@ -2314,7 +2364,7 @@ size = {size}'''
             if tlr.tradelane_index == prev_index:
                 return tlr
 
-        return None        
+        return None
 
     def get_next_ring(self, index):
         next_index = index + 1
@@ -2380,7 +2430,7 @@ size = {size}'''
                 (obj_from_pos[0], 0, obj_from_pos[2]),
                 (obj_to_pos[0], 0, obj_to_pos[2]),
             ]
-        ) 
+        )
 
     def get_bounty_hunter_patrol(self):
         patrol_rel = self.HUNTER_DEFENCE_REL
@@ -2407,7 +2457,7 @@ size = {size}'''
             obj_from_pos2_z += self.HUNTER_PATROL_DRIFT
             obj_to_pos2_x -= self.HUNTER_PATROL_OFFSET
             obj_to_pos2_z -= self.HUNTER_PATROL_DRIFT
-        
+
         if patrol_rel == RIGHT:
             obj_from_pos2_x += self.HUNTER_PATROL_OFFSET
             obj_from_pos2_z += self.HUNTER_PATROL_DRIFT

@@ -28,7 +28,10 @@ BUILD_PROPS = [
     BuildProp('EN_EASY', russian=False, difficulty=diff.EasyDifficulty),
     BuildProp('RU_NORMAL', russian=True, difficulty=diff.NormalDifficulty),
     BuildProp('EN_NORMAL', russian=False, difficulty=diff.NormalDifficulty),
+    BuildProp('RU_HARD', russian=True, difficulty=diff.HardDifficulty),
+    BuildProp('EN_HARD', russian=False, difficulty=diff.HardDifficulty),
 ]
+
 
 PROPS_DB = {b.folder: b for b in BUILD_PROPS}
 DEFAULT_RU = BuildProp(folder=None, russian=True, difficulty=diff.NormalDifficulty)

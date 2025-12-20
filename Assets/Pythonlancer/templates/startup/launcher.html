@@ -208,23 +208,27 @@ table {
 
             </tr>
 
-            {#
             <tr>
                 <td class="diff-select">
-                    <input type="radio" name="difficulty" value="hard" id="hard" {% if difficulty == 'hard' %}checked{% endif %} disabled>
+                    <input type="radio" name="difficulty" value="hard" id="hard" {% if difficulty == 'hard' %}checked{% endif %}>
                     <label for="hard">{{ t.text('Hard') }}</label>
                 </td>
                 <td class="diff-info">
                     {{ t.text('High difficulty') }}
                     <br>
+                    {{ t.text('More difficult enemies with higher shield and armor. NPC cause more damage on player') }}
+
+                    {#
                     {{ t.text('Can change tractor beam and scanner') }}
                     <br>
                     {{ t.text('First tractor beam and scanner are not efficient') }}
+                    #}
 
                 </td>
 
             </tr>
 
+            {#
             <tr>
                 <td class="diff-select">
                     <input type="radio" name="difficulty" value="extreme" id="extreme" {% if difficulty == 'extreme' %}checked{% endif %} disabled>

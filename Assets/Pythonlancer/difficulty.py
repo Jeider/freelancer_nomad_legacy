@@ -71,9 +71,9 @@ class NormalDifficulty(DifficultySettings):
 
 
 class HardDifficulty(DifficultySettings):
-    NPC_ARMOR_SCALE = 2
-    NPC_SHIELD_CAPACITY_SCALE = 1.25
-    NPC_SHIELD_REGENERATION_SCALE = 0.75
+    NPC_ARMOR_SCALE = 3
+    NPC_SHIELD_CAPACITY_SCALE = 2
+    NPC_SHIELD_REGENERATION_SCALE = 1
     M6_TORPEDO_DAMAGE = 150000
     M9_SPAWN_WAVE_C = True
     M9_DESTROYER_B_DELAY = 60

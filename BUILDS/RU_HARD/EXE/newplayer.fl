@@ -1,0 +1,768 @@
+[Player]
+name = Trent
+rank = 0
+Description = NewPlayer
+
+money = 2500
+
+voice = trent_voice
+costume = trent
+com_costume = trent
+
+
+system = the_intro_dark
+
+
+ship_archetype = ge_fighter
+
+pos = -5000, -5000, -5000
+
+equip = li_engine_01, HpDrive01, 1
+equip = li_power_01, HpPower01 , 1
+equip = scanner01, , 1
+equip = tractor01, , 1
+equip = LargeWhiteSpecialPlayer, HpHeadlight, 1
+equip = DockingLightRedSmall, HpDockLight01, 1
+equip = DockingLightRedSmall, HpDockLight02, 1
+
+
+wg = 0, HpWeapon01
+wg = 0, HpWeapon02
+wg = 0, HpWeapon03
+wg = 0, HpWeapon04
+wg = 0, HpWeapon05
+wg = 0, HpWeapon06
+
+
+
+
+house = 0.9, li_n_grp
+house = 0, li_lsf_grp
+house = 0, li_p_grp
+house = 0, br_n_grp
+house = 0, br_p_grp
+house = 0, ku_n_grp
+house = 0, ku_p_grp
+house = 0, rh_n_grp
+house = 0, rh_p_grp
+house = 0, co_alg_grp
+house = 0, co_be_grp
+house = 0, br_m_grp
+house = 0, co_nws_grp
+house = 0, co_hsp_grp
+house = 0, co_ic_grp
+house = 0, co_khc_grp
+house = 0, co_kt_grp
+house = 0, rh_m_grp
+house = 0, co_me_grp
+house = 0, co_ni_grp
+house = 0, co_os_grp
+house = 0, co_rs_grp
+house = 0, co_shi_grp
+house = 0, co_ss_grp
+house = 0, co_ti_grp
+house = 0, co_vr_grp
+house = 0, fc_bd_grp
+house = 0, fc_b_grp
+house = 0, fc_c_grp
+house = 0, fc_fa_grp
+house = 0, fc_g_grp
+house = 0, fc_gc_grp
+house = 0, fc_h_grp
+house = -0.65, fc_j_grp
+house = -0.8, fc_lh_grp
+house = -0.8, fc_lr_grp
+house = -0.8, fc_lwb_grp
+house = -0.8, fc_m_grp
+house = -0.8, fc_ou_grp
+house = -0.8, fc_rh_grp
+house = -0.8, fc_or_grp
+house = -0.8, fc_u_grp
+house = -0.8, fc_x_grp
+house = 0, gd_gm_grp
+house = 0, fc_uk_grp
+house = -0.7, fc_n_grp
+house = 0, fc_ln_grp
+house = 0, fc_kn_grp
+house = 0, fc_rn_grp
+house = 0, fc_ouk_grp
+house = 0, fc_q_grp
+house = 0, fc_f_grp
+house = 0, gd_im_grp
+house = 0, gd_z_grp
+house = 0, gd_bh_grp
+
+house = 0, rh_grp
+house = 0, rc_grp
+house = 0, tr_grp_rh
+house = 0, bh_grp_rh
+house = -0.65, pi_grp_rh
+house = -0.65, rx_grp
+house = -0.65, junk_grp
+house = 0, li_grp
+house = 0, asf_grp
+house = 0, lc_grp
+house = 0, tr_grp_li
+house = 0, bh_grp_li
+house = -0.65, pi_grp_li
+house = -0.65, lx_grp
+house = -0.65, sl_grp
+house = -0.65, hack_grp
+house = 0, br_grp
+house = 0, bc_grp
+house = 0, tr_grp_br
+house = 0, bh_grp_br
+house = -0.65, pi_grp_br
+house = -0.65, bx_grp
+house = -0.65, xenos_grp
+house = 0, ku_grp
+house = 0, kc_grp
+house = 0, tr_grp_ku
+house = 0, bh_grp_ku
+house = -0.65, pi_grp_ku
+house = -0.65, kx_grp
+house = -0.65, farm_grp
+house = 0, or_grp
+house = -0.65, co_grp
+house = 0, out_grp
+house = -0.65, cx_grp
+house = 0, dtr_grp
+
+
+
+[StoryInfo]
+Mission = Mission_01a
+MissionNum = 1
+delta_worth = -1
+
+
+[mPlayer]
+;rh_mnh_61_base
+locked_gate = 2474272070
+
+;rh_mnh_62_base
+locked_gate = 3011123526
+
+;rh_mnh_63_base
+locked_gate = 2474249542
+
+;rh_mnh_64_base
+locked_gate = 3011174726
+
+;rh_mnh_65_base
+locked_gate = 2474308934
+
+;rh_mnh_51_base
+locked_gate = 2467718476
+
+;rh_mnh_52_base
+locked_gate = 3004569932
+
+;rh_biz_05_base
+locked_gate = 2879533897
+
+;rh_biz_61_base
+locked_gate = 2874843913
+
+;rh_biz_51_base
+locked_gate = 2872484611
+
+;rh_biz_52_base
+locked_gate = 2335629059
+
+;rh_biz_53_base
+locked_gate = 2872494851
+
+;rh_stut_51_base
+locked_gate = 2536981513
+
+;rh_stut_52_base
+locked_gate = 3073849353
+
+;rh_stut_61_base
+locked_gate = 2539340803
+
+;rh_stut_62_base
+locked_gate = 3076208643
+
+;rh_stut_63_base
+locked_gate = 2539334659
+
+;rh_stut_64_base
+locked_gate = 3076243459
+
+;rh_stut_65_base
+locked_gate = 2539377667
+
+;rh_ber_51_base
+locked_gate = 2335632457
+
+;rh_ber_52_base
+locked_gate = 2872479817
+
+;rh_ber_53_base
+locked_gate = 2335605833
+
+;sig8_51_base
+locked_gate = 2194059523
+
+;sig8_61_base
+locked_gate = 2192224521
+
+;sig8_62_base
+locked_gate = 2729102601
+
+;sig8_63_base
+locked_gate = 2192234761
+
+;om15_61_base
+locked_gate = 2576696525
+
+;om15_62_base
+locked_gate = 3113564365
+
+;om15_63_base
+locked_gate = 2576690381
+
+;om15_64_base
+locked_gate = 3113599181
+
+;om15_65_base
+locked_gate = 2576733389
+
+;om15_66_base
+locked_gate = 3113593037
+
+;om15_67_base
+locked_gate = 2576727245
+
+;om15_51_base
+locked_gate = 2583250119
+
+;om15_52_base
+locked_gate = 3120117959
+
+;sig13_51_base
+locked_gate = 2810677007
+
+;sig13_52_base
+locked_gate = 2273835791
+
+;sig13_53_base
+locked_gate = 2810703631
+
+;sig13_54_base
+locked_gate = 2273772303
+
+;sig13_55_base
+locked_gate = 2810648335
+
+;sig13_56_base
+locked_gate = 2273798927
+
+;sig13_57_base
+locked_gate = 2810674959
+
+;sig13_58_base
+locked_gate = 2273751823
+
+;sig13_59_base
+locked_gate = 2810619663
+
+;sig13_60_base
+locked_gate = 2280362757
+
+;sig13_61_base
+locked_gate = 2817230597
+
+;sig13_62_base
+locked_gate = 2280389381
+
+;li_cal_61_base
+locked_gate = 2297934797
+
+;li_cal_62_base
+locked_gate = 2834812877
+
+;li_cal_63_base
+locked_gate = 2297945037
+
+;li_cal_64_base
+locked_gate = 2834773965
+
+;li_cal_65_base
+locked_gate = 2297897933
+
+;li_cal_66_base
+locked_gate = 2834784205
+
+;li_cal_67_base
+locked_gate = 2297908173
+
+;li_cal_68_base
+locked_gate = 2834728909
+
+;li_cal_69_base
+locked_gate = 2297861069
+
+;li_cal_51_base
+locked_gate = 2291905479
+
+;li_cal_52_base
+locked_gate = 2828783559
+
+;sig22_61_base
+locked_gate = 3219358916
+
+;sig22_62_base
+locked_gate = 2682517700
+
+;sig22_63_base
+locked_gate = 3219385540
+
+;sig22_64_base
+locked_gate = 2682454212
+
+;sig22_65_base
+locked_gate = 3219330244
+
+;sig22_66_base
+locked_gate = 2682480836
+
+;sig22_67_base
+locked_gate = 3219356868
+
+;li_mnh_51_base
+locked_gate = 2968420109
+
+;li_mnh_52_base
+locked_gate = 2431517453
+
+;li_mnh_53_base
+locked_gate = 2968393485
+
+;li_mnh_54_base
+locked_gate = 2431580941
+
+;li_for_51_base
+locked_gate = 3101408898
+
+;li_for_52_base
+locked_gate = 2564539010
+
+;li_for_53_base
+locked_gate = 3101415042
+
+;li_for_54_base
+locked_gate = 2564504194
+
+;li_for_71_base
+locked_gate = 3098787458
+
+;sig17_51_base
+locked_gate = 2812774154
+
+;sig17_52_base
+locked_gate = 2275932938
+
+;sig17_53_base
+locked_gate = 2812800778
+
+;sig17_61_base
+locked_gate = 2815133440
+
+;sig17_62_base
+locked_gate = 2278292224
+
+;sig17_63_base
+locked_gate = 2815160064
+
+;li_col_51_base
+locked_gate = 3097230919
+
+;li_col_52_base
+locked_gate = 2560328263
+
+;li_col_53_base
+locked_gate = 3097204295
+
+;li_col_55_base
+locked_gate = 3097194055
+
+;li_col_61_base
+locked_gate = 3103260237
+
+;li_col_62_base
+locked_gate = 2566357581
+
+;li_col_63_base
+locked_gate = 3103233613
+
+;li_col_64_base
+locked_gate = 2566355533
+
+;li_col_65_base
+locked_gate = 3103223373
+
+;li_col_71_base
+locked_gate = 3102998087
+
+;li_col_72_base
+locked_gate = 2566095431
+
+;tau31_51_base
+locked_gate = 3171536271
+
+;tau31_52_base
+locked_gate = 2634658191
+
+;tau31_53_base
+locked_gate = 3171526031
+
+;tau31_54_base
+locked_gate = 2634631567
+
+;tau31_55_base
+locked_gate = 3171507599
+
+;tau31_60_base
+locked_gate = 2640697733
+
+;tau31_61_base
+locked_gate = 3177565573
+
+;tau31_71_base
+locked_gate = 3177303439
+
+;tau31_72_base
+locked_gate = 2640425359
+
+;br_wrw_51_base
+locked_gate = 2985903819
+
+;br_wrw_52_base
+locked_gate = 2449029835
+
+;br_wrw_53_base
+locked_gate = 2985897675
+
+;br_wrw_54_base
+locked_gate = 2449064651
+
+;tau29_51_base
+locked_gate = 3037318277
+
+;tau29_52_base
+locked_gate = 2500440197
+
+;tau29_53_base
+locked_gate = 3037308037
+
+;tau29_61_base
+locked_gate = 3043347599
+
+;tau29_62_base
+locked_gate = 2506469519
+
+;tau29_63_base
+locked_gate = 3043337359
+
+;br_cam_51_base
+locked_gate = 2835927497
+
+;br_cam_52_base
+locked_gate = 2299047369
+
+;br_cam_53_base
+locked_gate = 2835921353
+
+;br_cam_65_base
+locked_gate = 2841919939
+
+;br_cam_66_base
+locked_gate = 2305048003
+
+;br_cam_67_base
+locked_gate = 2841913795
+
+;br_cam_61_base
+locked_gate = 2841956803
+
+;br_cam_71_base
+locked_gate = 2841694665
+
+;br_cam_72_base
+locked_gate = 2304814537
+
+;tau37_61_base
+locked_gate = 3176516994
+
+;tau37_62_base
+locked_gate = 2639638914
+
+;tau37_63_base
+locked_gate = 3176506754
+
+;tau37_64_base
+locked_gate = 2639612290
+
+;tau37_65_base
+locked_gate = 3176488322
+
+;tau37_66_base
+locked_gate = 2639602050
+
+;tau37_67_base
+locked_gate = 3176478082
+
+;tau37_51_base
+locked_gate = 3174681992
+
+;br_avl_51_base
+locked_gate = 2433401613
+
+;br_avl_52_base
+locked_gate = 2970271501
+
+;br_avl_61_base
+locked_gate = 2439430919
+
+;br_avl_62_base
+locked_gate = 2976300807
+
+;br_avl_63_base
+locked_gate = 2439424775
+
+;br_avl_64_base
+locked_gate = 2976270087
+
+;br_avl_65_base
+locked_gate = 2439402247
+
+;br_avl_58_base
+locked_gate = 2970351373
+
+;br_avl_59_base
+locked_gate = 2433475341
+
+;sig42_61_base
+locked_gate = 2414052164
+
+;sig42_62_base
+locked_gate = 2950954820
+
+;sig42_63_base
+locked_gate = 2414078788
+
+;sig42_64_base
+locked_gate = 2950891332
+
+;sig42_65_base
+locked_gate = 2414023492
+
+;tau23_51_base
+locked_gate = 3038366925
+
+;tau23_52_base
+locked_gate = 2501488845
+
+;tau23_53_base
+locked_gate = 3038356685
+
+;tau23_54_base
+locked_gate = 2501462221
+
+;tau23_55_base
+locked_gate = 3038338253
+
+;tau23_56_base
+locked_gate = 2501451981
+
+;tau23_57_base
+locked_gate = 3038328013
+
+;tau23_58_base
+locked_gate = 2501441741
+
+;tau23_59_base
+locked_gate = 3038309581
+
+;tau23_60_base
+locked_gate = 2507528391
+
+;tau23_61_base
+locked_gate = 3044396231
+
+;tau23_62_base
+locked_gate = 2507518151
+
+;tau23_63_base
+locked_gate = 3044385991
+
+;ku_ksu_51_base
+locked_gate = 2551616142
+
+;ku_ksu_52_base
+locked_gate = 3088510606
+
+;ku_ksu_53_base
+locked_gate = 2551642766
+
+;ku_ksu_61_base
+locked_gate = 2558169732
+
+;ku_ksu_62_base
+locked_gate = 3095064196
+
+;tau4_51_base
+locked_gate = 2288790092
+
+;tau4_52_base
+locked_gate = 2825672268
+
+;tau4_53_base
+locked_gate = 2288796236
+
+;tau4_61_base
+locked_gate = 2281712198
+
+;tau4_62_base
+locked_gate = 2818594374
+
+;ku_hns_51_base
+locked_gate = 2955512014
+
+;ku_hns_52_base
+locked_gate = 2418668750
+
+;ku_hns_53_base
+locked_gate = 2955534542
+
+;ku_hns_61_base
+locked_gate = 2957347012
+
+;ku_hns_62_base
+locked_gate = 2420503748
+
+;ku_hns_63_base
+locked_gate = 2957369540
+
+;ku_hns_64_base
+locked_gate = 2420444356
+
+;ku_hns_65_base
+locked_gate = 2957318340
+
+;ku_tgk_61_base
+locked_gate = 3102655300
+
+;ku_tgk_62_base
+locked_gate = 2565783364
+
+;ku_tgk_63_base
+locked_gate = 3102649156
+
+;ku_tgk_64_base
+locked_gate = 2565752644
+
+;ku_tgk_65_base
+locked_gate = 3102626628
+
+;ku_tgk_66_base
+locked_gate = 2565746500
+
+;ku_tgk_67_base
+locked_gate = 3102620484
+
+;ku_tgk_68_base
+locked_gate = 2565863236
+
+;ku_tgk_69_base
+locked_gate = 3102729028
+
+;ku_tgk_70_base
+locked_gate = 2565527374
+
+;ku_tgk_51_base
+locked_gate = 3095577422
+
+;ku_tgk_52_base
+locked_gate = 2558705486
+
+;ku_hkd_51_base
+locked_gate = 2557578248
+
+;ku_hkd_52_base
+locked_gate = 3094474760
+
+;ku_hkd_53_base
+locked_gate = 2557600776
+
+;ku_hkd_54_base
+locked_gate = 3094415368
+
+;ku_hkd_61_base
+locked_gate = 2552073218
+
+;ku_hkd_71_base
+locked_gate = 2551811080
+
+;ku_hkd_72_base
+locked_gate = 3088707592
+
+;om7_71_base
+locked_gate = 2974344768
+
+;om7_51_base
+locked_gate = 2971723328
+
+;om7_52_base
+locked_gate = 2434832960
+
+;om7_53_base
+locked_gate = 2971700800
+
+;om7_54_base
+locked_gate = 2434818624
+
+;om7_55_base
+locked_gate = 2971694656
+
+;om7_56_base
+locked_gate = 2434796096
+
+;om7_57_base
+locked_gate = 2971672128
+
+;om7_58_base
+locked_gate = 2434912832
+
+;om7_59_base
+locked_gate = 2971780672
+
+;om7_61_base
+locked_gate = 2974606922
+
+;om7_62_base
+locked_gate = 2437716554
+
+;om7_63_base
+locked_gate = 2974584394
+
+;om7_72_base
+locked_gate = 2437454400
+
+;om7_73_base
+locked_gate = 2974322240
+
+;om7_74_base
+locked_gate = 2437440064
+
+;om7_75_base
+locked_gate = 2974316096
+
+;co_och_51_base
+locked_gate = 2567464516
+
+;co_och_52_base
+locked_gate = 3104315972

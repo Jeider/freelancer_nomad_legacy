@@ -26,7 +26,7 @@ EXTREME = 'extreme'
 DIFFICULTIES = [
     EASY,
     NORMAL,
-    # HARD,
+    HARD,
     # EXTREME
 ]
 DEFAULT_DIFF = NORMAL
@@ -117,6 +117,8 @@ class Api:
         dyn_config_kwargs = {}
         if difficulty == EASY:
             dyn_config_kwargs['difficulty_easy'] = True
+        if difficulty == HARD:
+            dyn_config_kwargs['difficulty_hard'] = True
         if difficulty == EXTREME:
             dyn_config_kwargs['difficulty_hard'] = True
 
@@ -148,8 +150,6 @@ class Api:
         )
 
         print('Data replaced')
-
-
 
         if windowed:
             if self.russian:

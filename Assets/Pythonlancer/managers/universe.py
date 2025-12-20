@@ -9,6 +9,7 @@ from tools.data_folder import DataFolder
 
 from text.dividers import SINGLE_DIVIDER, DIVIDER
 
+
 INITIAL_WORLD_TEMPLATE = 'hardcoded_inis/static_content/initialworld.ini'
 NEW_PLAYER_TEMPLATE = 'hardcoded_inis/static_content/newplayer.fl'
 DACOM_TEMPLATE = 'hardcoded_inis/static_content/dacom.ini'
