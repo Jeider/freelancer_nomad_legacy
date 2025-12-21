@@ -673,6 +673,18 @@ def mass_upgrade():
         i = new_i
 
 
+def dump_bases():
+    core = get_core()
+
+    for base in core.universe.bases_list:
+        print(f'#{base.get_ru_name().get_ru()}\n{base.get_name()} = MS(RU.{base.get_name()}, EN.{base.get_name()})\n')
+    #
+    # for base in core.universe.bases_list:
+    #     print(f'# {base.get_ru_name().get_ru()}\n{base.get_name()} = ""\n')
+
+
+
+
 def dbg():
     point = [-132, 0, 65]
     rotated = math.relocate_point(point, 180)
@@ -707,6 +719,7 @@ ACTIONS = {
     'sound_direct': sound_direct,
     'mass_decode': mass_decode,
     'mass_upgrade': mass_upgrade,
+    'dump_bases': dump_bases,
     'dbg': dbg,
 }
 

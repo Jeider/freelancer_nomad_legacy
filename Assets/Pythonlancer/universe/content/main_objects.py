@@ -16,7 +16,7 @@ from universe.audio.space_voice import SpaceVoice, SpaceCostume
 from universe.content.loadout import Loadout
 from universe import connection
 from universe import faction
-from universe.content import descriptions
+from universe.content import mineable_info
 from universe.content import diversion
 
 from tools.system_template import ObjectTemplateLoader
@@ -757,7 +757,7 @@ class GenericSphere(StaticObject):
 
 class Sun(GenericSphere, NamedObject):
     ALIAS = 'sun'
-    RU_NAME = MS('Солнце', 'Sun')
+    RU_NAME = MS('Звезда', 'Star')
 
     ARCHETYPE = 'sun_2000'
 
@@ -957,7 +957,7 @@ parent = {parent_planet}'''
         if self.ARCHETYPE.startswith('planet_ice'):
             return self.system.core.get_next_desc('planet_ice')
 
-        if self.ARCHETYPE.startswith('planet_des') or self.ARCHETYPE.startswith('planet_rckdes'):
+        if self.ARCHETYPE.startswith('planet_des'):
             return self.system.core.get_next_desc('planet_desert')
 
         if self.ARCHETYPE.startswith('planet_gas'):
@@ -968,7 +968,7 @@ parent = {parent_planet}'''
                 self.ARCHETYPE.startswith('planet_rckmnt')):
             return self.system.core.get_next_desc('planet_moon')
 
-        if self.ARCHETYPE.startswith('planet_moonred'):
+        if self.ARCHETYPE.startswith('planet_moonred') or self.ARCHETYPE.startswith('planet_rckdes'):
             return self.system.core.get_next_desc('planet_lava')
 
         if self.ARCHETYPE.startswith('planet_earth'):
@@ -992,7 +992,7 @@ class NotDockableObject(StaticObject):
 
 
 class StationRuins(NotDockableObject, NamedObject):
-    RU_FIRST_DESCRIPTION = descriptions.STATION_RUINS
+    RU_FIRST_DESCRIPTION = mineable_info.STATION_RUINS
 
 
 class DockableObject(NamedObject):
@@ -1633,7 +1633,7 @@ class AbandonedAsteroid(DockableObject):
     EQUIP_SET = None
     SELL_AMMO = False
     KEY_COLLECT_FX = nn.FX_GOT_KEY_ASTEROID
-    RU_FIRST_DESCRIPTION = descriptions.ASTEROID_ROCK
+    RU_FIRST_DESCRIPTION = mineable_info.ASTEROID_ROCK
     FORCE_FACTION = faction.Unknown
     DEFENCE_LEVEL = None
 
@@ -1645,7 +1645,7 @@ class AbandonedAsteroidIce(DockableObject):
     SELL_AMMO = False
     EQUIP_SET = None
     KEY_COLLECT_FX = nn.FX_GOT_KEY_ASTEROID
-    RU_FIRST_DESCRIPTION = descriptions.ASTEROID_ICE
+    RU_FIRST_DESCRIPTION = mineable_info.ASTEROID_ICE
     FORCE_FACTION = faction.Unknown
     DEFENCE_LEVEL = None
 
@@ -1656,7 +1656,7 @@ class GasMinerOld(Station):
     EQUIP_SET = None
     AUDIO_PREFIX = SpaceVoice.GAS_MINER
     KEY_COLLECT_FX = nn.FX_GOT_KEY_GAS_MINER
-    RU_FIRST_DESCRIPTION = descriptions.GAS_MINER_OLD
+    RU_FIRST_DESCRIPTION = mineable_info.GAS_MINER_OLD
     DEFENCE_LEVEL = None
 
     CARGO_PODS_POSITION_Y_DRIFT = -60
@@ -1689,7 +1689,7 @@ class SolarPlant(Station):
     BASE_PROPS = meta.LockedSolarPlant()
     SELL_AMMO = False
     KEY_COLLECT_FX = nn.FX_GOT_KEY_STATION
-    RU_FIRST_DESCRIPTION = descriptions.SOLAR_PLANT
+    RU_FIRST_DESCRIPTION = mineable_info.SOLAR_PLANT
     FORCE_FACTION = faction.Unknown
     AUDIO_PREFIX = SpaceVoice.SOLAR_PLANT
     DEFENCE_LEVEL = None
@@ -1702,7 +1702,7 @@ class RoidMiner(Station):
     SELL_AMMO = False
     EQUIP_SET = None
     KEY_COLLECT_FX = nn.FX_GOT_KEY_ROID_MINER
-    RU_FIRST_DESCRIPTION = descriptions.ROID_MINER
+    RU_FIRST_DESCRIPTION = mineable_info.ROID_MINER
     AUDIO_PREFIX = SpaceVoice.ROID_MINER
     DEFENCE_LEVEL = None
 
@@ -1767,7 +1767,7 @@ class DebrisManufactoring(Station):
     SELL_AMMO = False
     EQUIP_SET = None
     KEY_COLLECT_FX = nn.FX_GOT_KEY_FACTORY
-    RU_FIRST_DESCRIPTION = descriptions.DEBRIS_MANUFACTORING
+    RU_FIRST_DESCRIPTION = mineable_info.DEBRIS_MANUFACTORING
     DEFENCE_LEVEL = None
 
 
@@ -1965,25 +1965,25 @@ class Hackable(DockableObject):
 class HackableStation(Hackable):
     AUDIO_PREFIX = SpaceVoice.STATION
     KEY_COLLECT_FX = nn.FX_GOT_KEY_STATION
-    RU_FIRST_DESCRIPTION = descriptions.HACKABLE_STATION
+    RU_FIRST_DESCRIPTION = mineable_info.HACKABLE_STATION
 
 
 class HackableSolarPlant(Hackable):
     AUDIO_PREFIX = SpaceVoice.SOLAR_PLANT
     KEY_COLLECT_FX = nn.FX_GOT_KEY_STATION
-    RU_FIRST_DESCRIPTION = descriptions.HACKABLE_SOLAR_PLANT
+    RU_FIRST_DESCRIPTION = mineable_info.HACKABLE_SOLAR_PLANT
 
 
 class HackableBattleship(Hackable):
     AUDIO_PREFIX = SpaceVoice.BATTLESHIP
     KEY_COLLECT_FX = nn.FX_GOT_KEY_BATTLESHIP
-    RU_FIRST_DESCRIPTION = descriptions.BATTLESHIP_HACKABLE
+    RU_FIRST_DESCRIPTION = mineable_info.BATTLESHIP_HACKABLE
 
 
 class HackableLuxury(Hackable):
     AUDIO_PREFIX = SpaceVoice.LINER
     KEY_COLLECT_FX = nn.FX_GOT_KEY_BATTLESHIP
-    RU_FIRST_DESCRIPTION = descriptions.HACKABLE_LUXURY
+    RU_FIRST_DESCRIPTION = mineable_info.HACKABLE_LUXURY
 
 
 class LockedBattleship(Station):
@@ -1994,7 +1994,7 @@ class LockedBattleship(Station):
     DEFENCE_LEVEL = None
     BASE_PROPS = meta.LockedBattleship()
     KEY_COLLECT_FX = nn.FX_GOT_KEY_BATTLESHIP
-    RU_FIRST_DESCRIPTION = descriptions.BATTLESHIP_LOCKED
+    RU_FIRST_DESCRIPTION = mineable_info.BATTLESHIP_LOCKED
     FORCE_FACTION = faction.Unknown
 
 
@@ -2006,7 +2006,7 @@ class LockedLuxury(Station):
     DEFENCE_LEVEL = None
     BASE_PROPS = meta.LockedBattleship()
     KEY_COLLECT_FX = nn.FX_GOT_KEY_BATTLESHIP
-    RU_FIRST_DESCRIPTION = descriptions.LUXURY_LOCKED
+    RU_FIRST_DESCRIPTION = mineable_info.LUXURY_LOCKED
     FORCE_FACTION = faction.Unknown
     EQUIP_SET = None
     SELL_AMMO = False

@@ -206,6 +206,9 @@ class Base:
     def get_ru_name(self):
         return self.system_object.RU_NAME
 
+    def get_ru_name_clean_ru_only(self):
+        return self.system_object.RU_NAME
+
     def calc_store(self):
         return self.system_object.CALC_STORE
 

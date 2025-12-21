@@ -1,7 +1,7 @@
 from text.strings import MultiString as MS
 
-import universe.content.descriptions_ru as RU
-import universe.content.descriptions_en as EN
+import universe.content.mineable_info_ru as RU
+import universe.content.mineable_info_en as EN
 
 HOW_TO_HACK = MS(RU.HOW_TO_HACK, EN.HOW_TO_HACK)
 

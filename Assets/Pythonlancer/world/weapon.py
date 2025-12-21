@@ -244,7 +244,7 @@ LODranges = {lod_ranges}'''
         REFIRE_RATE_4: 0.25,
         REFIRE_RATE_6: 0.17,
         REFIRE_RATE_8: 0.12,
-        REFIRE_RATE_10: 0.09,
+        REFIRE_RATE_10: 0.1,
     }
 
     MAX_HULL_DAMAGE = 2000

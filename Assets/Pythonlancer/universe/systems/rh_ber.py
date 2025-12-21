@@ -408,7 +408,7 @@ class BerlinPiratesBottom(BerlinMember, main_objects.PirateStation):
     SPACE_OBJECT_TEMPLATE = pirate.PirateBaseBizmark
     INTERIOR_CLASS = interior.PirateStationInterior
     DEALERS = dealers.RheinlandPirateDealers
-    FACTION = faction.RheinlandPirate
+    FACTION = faction.Hessians
     ASTEROID_ZONES = [
         BerlinDebrisZone5
     ]

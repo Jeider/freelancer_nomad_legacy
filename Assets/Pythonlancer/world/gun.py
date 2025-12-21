@@ -239,7 +239,7 @@ class DietrichLightgun(Gun, RheinlandGun):
     EQUIP_TYPE = Weapon.EQUIP_MAIN
     REFIRE_RATE = Weapon.REFIRE_RATE_10
     MUZZLE_VELOCITY = 800
-    LIFETIME = 2.0
+    LIFETIME = 1.2
     FX_FACTION = WeaponFX.FX_DTR
     FX_APPEARANCE = WeaponFX.FX_TACHYON
 

@@ -650,7 +650,7 @@ class Misson12(ingame_mission.IngameMission):
                 ],
                 npc=NPC(
                     faction=faction.LibertyMain,
-                    ship=ship.Defender,
+                    ship=ship.DefenderJuni,
                     level=NPC.D12,
                     equip_map=EqMap(base_level=5),
                 )
@@ -670,7 +670,7 @@ class Misson12(ingame_mission.IngameMission):
                 ],
                 npc=NPC(
                     faction=faction.LibertyMain,
-                    ship=ship.Defender,
+                    ship=ship.DefenderJuni,
                     level=NPC.D12,
                     equip_map=EqMap(base_level=5),
                 )
@@ -715,7 +715,7 @@ class Misson12(ingame_mission.IngameMission):
                 ],
                 npc=NPC(
                     faction=faction.LibertyMain,
-                    ship=ship.Defender,
+                    ship=ship.DefenderJuni,
                     level=NPC.D12,
                     equip_map=EqMap(base_level=6),
                 )
@@ -778,7 +778,7 @@ class Misson12(ingame_mission.IngameMission):
                 ],
                 npc=NPC(
                     faction=faction.LibertyMain,
-                    ship=ship.Defender,
+                    ship=ship.DefenderJuni,
                     level=NPC.D12,
                     equip_map=EqMap(base_level=6),
                 )
