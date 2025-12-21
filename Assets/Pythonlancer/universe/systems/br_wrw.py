@@ -41,7 +41,7 @@ name = br_wrw
 space_color = 25, 20, 5
 ;space_color = 60, 60, 60
 local_faction = br_grp
-space_farclip = 1000000
+space_farclip = 100000
 
 [TexturePanels]
 file = universe\\heavens\\shapes.ini

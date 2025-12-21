@@ -27,6 +27,8 @@ from templates.dockable import trading_outposts
 from templates.dockable import station_debris
 from templates.dockable import junker
 
+from universe.content import dockable_info
+
 from text.strings import MultiString as MS
 
 
@@ -374,9 +376,7 @@ class MunchCivilianStationRuins(MunchMember, main_objects.StationRuins):
 
     RU_NAME = MS('Станция Мюнхен', 'Munich Station')
 
-    # ASTEROID_ZONES = [
-    #     Om15GasPocketsZone1,
-    # ]
+    RU_FIRST_DESCRIPTION = dockable_info.rh_munchen
 
 
 class MunchCivilianStationDropPoint1(MunchMember, main_objects.HackableStation):
@@ -419,7 +419,7 @@ class MunchBattleStationRuins(MunchMember, main_objects.StationRuins):
     ALIAS = 'ruins'
     INDEX = 2
     REL = TOP
-    RU_FIRST_DESCRIPTION = MS('', '')  # clear description, this is not regular hackable station
+    RU_FIRST_DESCRIPTION = dockable_info.rh_regensburgh
 
     SPACE_OBJECT_TEMPLATE = station_debris.MunchenBattleStationDebris
 

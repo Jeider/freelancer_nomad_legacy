@@ -22,6 +22,9 @@ from templates.solar import hackable
 from templates.nebula import om15_orange_nebula
 from templates.nebula import exclusion
 
+
+from universe.content import dockable_info
+
 from templates.dockable import junker
 from templates.dockable import trade_storages
 from templates.dockable import rheinland_military
@@ -451,6 +454,7 @@ class Om15AbandonedStation(Omega15Member, main_objects.StationRuins):
     REL = RIGHT
 
     SPACE_OBJECT_TEMPLATE = station_debris.OmegaDanzigDebris
+    RU_FIRST_DESCRIPTION = dockable_info.om15_danzig
 
     ASTEROID_ZONES = [
         Om15GasPocketsZone1,

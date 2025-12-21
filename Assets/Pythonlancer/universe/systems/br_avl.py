@@ -46,7 +46,7 @@ class AvalStaticText(AvalMember, main_objects.RawText):
 name = br_avl
 space_color = 5, 5, 15
 local_faction = br_grp
-space_farclip = 900000
+space_farclip = 100000
 
 [TexturePanels]
 file = universe\\heavens\\shapes.ini

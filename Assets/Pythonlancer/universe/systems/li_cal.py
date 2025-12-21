@@ -29,6 +29,7 @@ from templates.dockable import manhattan_megabase
 from templates.dockable import california_tradestation
 from templates.dockable import roid_mining
 
+from universe.content import dockable_info
 from text.strings import MultiString as MS
 
 
@@ -544,6 +545,7 @@ class CalAbandonedStation(CalMember, main_objects.StationRuins):
     REL = RIGHT
 
     SPACE_OBJECT_TEMPLATE = station_debris.CaliforniaDebris
+    RU_FIRST_DESCRIPTION = dockable_info.li_berkley
 
     ASTEROID_ZONES = [
         CalGasPocketsZone1,

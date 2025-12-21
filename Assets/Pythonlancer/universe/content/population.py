@@ -412,8 +412,8 @@ class LibertyPiratePopulation(UnlawfulPopulation):
 
 
 class LibertyHackersPopulation(UnlawfulPopulation):
-    MAIN_PIRATES = faction.LibertyPirate
-    GENERIC_PIRATES = faction.LaneHackers
+    MAIN_PIRATES = faction.LaneHackers
+    GENERIC_PIRATES = faction.LibertyPirate
     JUNKERS = faction.LaneHackers
 
 

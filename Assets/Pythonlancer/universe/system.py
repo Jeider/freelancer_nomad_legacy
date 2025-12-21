@@ -603,6 +603,13 @@ class LibertyFirst:
     FIRST_UNLAWFUL_POPULATION_CLASS = population.LibertyPiratePopulation
 
 
+class LibertyFirstHacker:
+    ROOM_SUBFOLDER = interior.ROOM_FOLDER_LI
+
+    FIRST_LAWFUL_POPULATION_CLASS = population.LibertyLegalPopulation
+    FIRST_UNLAWFUL_POPULATION_CLASS = population.LibertyHackersPopulation
+
+
 class LibertySecond:
     SECOND_LAWFUL_POPULATION_CLASS = population.LibertyLegalPopulation
     SECOND_UNLAWFUL_POPULATION_CLASS = population.LibertyPiratePopulation

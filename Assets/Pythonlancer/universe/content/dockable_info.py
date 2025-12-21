@@ -3,6 +3,18 @@ from text.strings import MultiString as MS
 import universe.content.dockable_info_ru as RU
 import universe.content.dockable_info_en as EN
 
+rh_regensburgh = MS(RU.rh_regensburgh, EN.rh_regensburgh)
+
+rh_munchen = MS(RU.rh_munchen, EN.rh_munchen)
+
+sig8_monako = MS(RU.sig8_monako, EN.sig8_monako)
+
+om15_danzig = MS(RU.om15_danzig, EN.om15_danzig)
+
+li_berkley = MS(RU.li_berkley, EN.li_berkley)
+
+# li_berkley
+
 #Планета Норторф
 rh_mnh_01_base = MS(RU.rh_mnh_01_base, EN.rh_mnh_01_base)
 

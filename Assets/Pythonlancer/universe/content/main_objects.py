@@ -17,6 +17,7 @@ from universe.content.loadout import Loadout
 from universe import connection
 from universe import faction
 from universe.content import mineable_info
+from universe.content import dockable_info
 from universe.content import diversion
 
 from tools.system_template import ObjectTemplateLoader
@@ -1073,6 +1074,12 @@ BGCS_base_run_by = W02bF44'''
             if not self.KEY_COLLECT_FX:
                 raise Exception('Dockable locked base have no fx for key %s' % self.__class__.__name__)
             self.key = LockedDockKey(self, key_fx=self.KEY_COLLECT_FX, key_name=self.get_key_loot_name())
+
+    def get_second_description(self):
+        if info := getattr(dockable_info, self.get_base_nickname(), None):
+            return info
+
+        return MS(' ', ' ')  # empty
 
     def get_key_loot_name(self):
         return MS(

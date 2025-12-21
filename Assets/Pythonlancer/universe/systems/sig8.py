@@ -28,6 +28,7 @@ from templates.dockable import junker
 from templates.dockable import police
 from templates.dockable import trade_storages
 
+from universe.content import dockable_info
 from text.strings import MultiString as MS
 
 
@@ -411,6 +412,7 @@ class Sig8OldFreeportRuins(Sigma8Member, main_objects.StationRuins):
     REL = RIGHT
 
     RU_NAME = MS('База Монако', "Monako Base")
+    RU_FIRST_DESCRIPTION = dockable_info.sig8_monako
 
     SPACE_OBJECT_TEMPLATE = station_debris.SigmaEightFreeport
 

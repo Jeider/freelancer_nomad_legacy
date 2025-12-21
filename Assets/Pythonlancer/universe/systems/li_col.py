@@ -48,7 +48,7 @@ class ColStaticText(ColMember, main_objects.RawText):
 name = li_col
 space_color = 25, 5, 20
 local_faction = li_grp
-space_farclip = 200000
+space_farclip = 80000
 
 [TexturePanels]
 file = universe\\heavens\\shapes.ini
@@ -389,13 +389,18 @@ class ColSolarMinesZone5(ColMember, ColBaseMinesZone):
     INDEX = 5
 
 
-class ColSolarPlant1(ColMember, ColBaseSolarPlant):
-    INDEX = 1
-    BASE_INDEX = 61
-    ASTEROID_ZONES = [
-        ColSolarMinesZone1,
-    ]
-    RU_NAME = MS('Солн.генератор Ламиса', 'Solar Plant Lamesa')
+# class ColSolarPlant1(ColMember, ColBaseSolarPlant):
+#     INDEX = 1
+#     BASE_INDEX = 61
+#     ASTEROID_ZONES = [
+#         ColSolarMinesZone1,
+#     ]
+#     RU_NAME = MS('Солн.генератор Ламиса', 'Solar Plant Lamesa')
+#     MISC_EQUIP_TYPE = LI_PIRATE
+#     EQUIP_SET = markets.EquipSet(
+#         Q.Power(LI_CIV, eq_classes=markets.SECRET3),
+#         Q.Shield(LI_PIRATE, eq_classes=markets.SECRET2),
+#     )
 
 
 class ColSolarPlant2(ColMember, ColBaseSolarPlant):
@@ -405,24 +410,39 @@ class ColSolarPlant2(ColMember, ColBaseSolarPlant):
         ColSolarMinesZone2,
     ]
     RU_NAME = MS('Солн.генератор Монаханс', 'Solar Planet Monahans')
-
-
-class ColSolarPlant3(ColMember, ColBaseSolarPlant):
-    INDEX = 3
-    BASE_INDEX = 63
-    ASTEROID_ZONES = [
-        ColSolarMinesZone3,
-    ]
-    RU_NAME = MS('Солн.генератор Андрус', 'Solar Plant Andrews')
-
-
-class ColSolarPlant4(ColMember, ColBaseSolarPlant):
-    INDEX = 4
-    BASE_INDEX = 64
-    ASTEROID_ZONES = [
-        ColSolarMinesZone4,
-    ]
-    RU_NAME = MS('Солн.генератор Ранкин', "Solar Plant Rankin")
+    MISC_EQUIP_TYPE = LI_PIRATE
+    EQUIP_SET = markets.EquipSet(
+        Q.Power(LI_CIV, eq_classes=markets.SECRET3),
+        Q.Shield(LI_PIRATE, eq_classes=markets.SECRET2),
+    )
+#
+#
+# class ColSolarPlant3(ColMember, ColBaseSolarPlant):
+#     INDEX = 3
+#     BASE_INDEX = 63
+#     ASTEROID_ZONES = [
+#         ColSolarMinesZone3,
+#     ]
+#     RU_NAME = MS('Солн.генератор Андрус', 'Solar Plant Andrews')
+#     MISC_EQUIP_TYPE = LI_PIRATE
+#     EQUIP_SET = markets.EquipSet(
+#         Q.Power(LI_CIV, eq_classes=markets.SECRET3),
+#         Q.Shield(LI_PIRATE, eq_classes=markets.SECRET2),
+#     )
+#
+#
+# class ColSolarPlant4(ColMember, ColBaseSolarPlant):
+#     INDEX = 4
+#     BASE_INDEX = 64
+#     ASTEROID_ZONES = [
+#         ColSolarMinesZone4,
+#     ]
+#     RU_NAME = MS('Солн.генератор Ранкин', "Solar Plant Rankin")
+#     MISC_EQUIP_TYPE = LI_PIRATE
+#     EQUIP_SET = markets.EquipSet(
+#         Q.Power(LI_CIV, eq_classes=markets.SECRET3),
+#         Q.Shield(LI_PIRATE, eq_classes=markets.SECRET2),
+#     )
 
 
 class ColSolarPlant5(ColMember, ColBaseSolarPlant):
@@ -432,17 +452,21 @@ class ColSolarPlant5(ColMember, ColBaseSolarPlant):
         ColSolarMinesZone5,
     ]
     RU_NAME = MS('Солн.генератор Ш+еффилд', "Solar Planet Sheffield")
-
+    MISC_EQUIP_TYPE = LI_PIRATE
+    EQUIP_SET = markets.EquipSet(
+        Q.Power(LI_CIV, eq_classes=markets.SECRET2),
+        Q.Shield(LI_PIRATE, eq_classes=markets.SECRET3),
+    )
 
 class ColSolarSupriseRewards(ColMember, mineable.DefaultSupriseRewardsGroup):
     NAME = 'li_col_solar_suprise'
     SOLAR = suprise.LibertyMiscFighter
     REWARD_ITEM = None
     ULTRA_REWARD_BASES = [
-        ColSolarPlant1,
+        # ColSolarPlant1,
         ColSolarPlant2,
-        ColSolarPlant3,
-        ColSolarPlant4,
+        # ColSolarPlant3,
+        # ColSolarPlant4,
         ColSolarPlant5,
     ]
 
@@ -461,26 +485,26 @@ class ColBaseSolarSupriseRewardField(mineable.SupriseRewardField):
     FIELD_CLASS = ColSolarSupriseField
     REWARDS_GROUP_CLASS = ColSolarSupriseRewards
     ULTRA_REWARD = True
-
-
-class ColSolarSupriseRewardField1(ColMember, ColBaseSolarSupriseRewardField):
-    INDEX = 1
-    ULTRA_BASE = ColSolarPlant1
+#
+#
+# class ColSolarSupriseRewardField1(ColMember, ColBaseSolarSupriseRewardField):
+#     INDEX = 1
+#     ULTRA_BASE = ColSolarPlant1
 
 
 class ColSolarSupriseRewardField2(ColMember, ColBaseSolarSupriseRewardField):
     INDEX = 2
     ULTRA_BASE = ColSolarPlant2
-
-
-class ColSolarSupriseRewardField3(ColMember, ColBaseSolarSupriseRewardField):
-    INDEX = 3
-    ULTRA_BASE = ColSolarPlant3
-
-
-class ColSolarSupriseRewardField4(ColMember, ColBaseSolarSupriseRewardField):
-    INDEX = 4
-    ULTRA_BASE = ColSolarPlant4
+#
+#
+# class ColSolarSupriseRewardField3(ColMember, ColBaseSolarSupriseRewardField):
+#     INDEX = 3
+#     ULTRA_BASE = ColSolarPlant3
+#
+#
+# class ColSolarSupriseRewardField4(ColMember, ColBaseSolarSupriseRewardField):
+#     INDEX = 4
+#     ULTRA_BASE = ColSolarPlant4
 
 
 class ColSolarSupriseRewardField5(ColMember, ColBaseSolarSupriseRewardField):
@@ -733,9 +757,6 @@ class ColShipyardConn2(ColMember, main_objects.TradeConnection):
     SIDE_TO = BOTTOM
     TRADELANE_LETTER = 'B'
     HUNTER_DEFENCE_REL = LEFT
-    ATTACKED_BY = [
-        ColNebulaPirates
-    ]
 
 
 class ColShipyardConn3(ColMember, main_objects.TradeConnection):
@@ -769,9 +790,6 @@ class ColTradingConn2(ColMember, main_objects.TradeConnection):
     SIDE_TO = BOTTOM
     TRADELANE_LETTER = 'E'
     HUNTER_DEFENCE_REL = TOP
-    ATTACKED_BY = [
-        ColAsteroidPirates
-    ]
 
 
 class ColMainPlanetConn1(ColMember, main_objects.TradeConnection):
@@ -801,9 +819,6 @@ class ColPoliceConn1(ColMember, main_objects.TradeConnection):
     SIDE_TO = RIGHT
     TRADELANE_LETTER = 'H'
     HUNTER_DEFENCE_REL = BOTTOM
-    ATTACKED_BY = [
-        ColNebulaPirates
-    ]
 
 
 class ColPoliceConn2(ColMember, main_objects.TradeConnection):
