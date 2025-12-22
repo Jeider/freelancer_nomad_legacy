@@ -106,9 +106,7 @@ class Sig22BaseBlueNebula(zones.NebulaZone):
     SPACEDUST_MAXPARTICLES = 40
     MUSIC = Ambience.NEBULA_DMATTER
     INTERFERENCE = 0.5
-
-    PROPERTY_FLAGS = 32768
-    PROPERTY_FOG_COLOR = '150, 100, 20'
+    LOAD_FOG = False
 
 
 class Sig22WestNebula(Sig22Member, Sig22BaseBlueNebula):
@@ -410,13 +408,14 @@ class Sig22ColumbiaJumpgate(Sig22Member, main_objects.Jumpgate):
 class Sig22Dockring(Sig22Bretonia, Sig22Member, main_objects.WaterPlanetDockring):
     BASE_INDEX = 1
     REL = BOTTOM
-    INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
+    INTERIOR_CLASS = interior.CustomFullSingleRoomInterior
     DEALERS = dealers.BretoniaCivilianDealers
     SHIP_SET = markets.ShipSet('bh_elite')
     RU_NAME = MS('Планета Гонолулу', 'Planet Honolulu')
 
 
-class Sig22Station(Sig22Member, Sig22Liberty, main_objects.TradelaneSupportStation):
+class Sig22Station(Sig22Member, Sig22Liberty, main_objects.TradingBase):
+    ALIAS = 'station'
     BASE_INDEX = 2
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = constanta.ConstantaAlternative
@@ -424,7 +423,7 @@ class Sig22Station(Sig22Member, Sig22Liberty, main_objects.TradelaneSupportStati
     DEALERS = dealers.LibertyCivilianDealers
     RU_NAME = MS('Станция Констанца', 'Constanța Station')
 
-    BASE_PROPS = meta.TradelaneSupportStation(
+    BASE_PROPS = meta.TradingBase(
         objectives=[
             meta.HaveGreenhouse(),
         ]

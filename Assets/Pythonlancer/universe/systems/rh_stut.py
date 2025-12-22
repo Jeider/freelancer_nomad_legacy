@@ -391,7 +391,7 @@ class StutOmega7Jumpgate(StutMember, main_objects.Jumpgate):
 class StutDockring(StutMember, main_objects.LargePlanetDockring):
     BASE_INDEX = 1
     REL = TOP
-    INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
+    INTERIOR_CLASS = interior.CustomFullSingleRoomInterior
     DEALERS = dealers.RheinlandPlanetDealers
     SHIP_SET = markets.ShipSet('ge_fighter2', 'bw_elite2', 'rh_freighter')
     RU_NAME = MS('Планета Шт+утгарт', "Planet Stuttgart")

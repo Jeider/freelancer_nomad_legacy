@@ -174,14 +174,20 @@ class PropertyZone(Zone):
             zone_field_type=self.ZONE_FIELD_TYPE,
         )
 
+    def get_property_flags(self):
+        return self.PROPERTY_FLAGS
+
+    def get_property_fog_color(self):
+        return self.PROPERTY_FOG_COLOR
+
     def get_zone_extra_parameters(self):
         params = {}
         if self.MUSIC:
             params['music'] = self.MUSIC
-        if self.PROPERTY_FLAGS:
-            params['property_flags'] = self.PROPERTY_FLAGS
-        if self.PROPERTY_FOG_COLOR:
-            params['property_fog_color'] = self.PROPERTY_FOG_COLOR
+        if property_flags := self.get_property_flags():
+            params['property_flags'] = property_flags
+        if property_fog_color := self.get_property_fog_color():
+            params['property_fog_color'] = property_fog_color
         if self.SPACEDUST:
             params['spacedust'] = self.SPACEDUST
         if self.SPACEDUST_MAXPARTICLES:
@@ -206,6 +212,8 @@ class BaseAsteroidZone(BaseFileAppearanceZone):
     ASTEROID_DEFINITION_CLASS = None
     ROOT_FOLDER = 'ASTEROIDS_MOD'
     SUBFOLDER = 'GENERATED'
+
+    PROPERTY_FLAGS = 66
 
     ASTEROID_DEFINITION_TEMPLATE = '''[Asteroids]
 file = solar\\{root_folder}\\{subfolder}\\{file_name}.ini
@@ -272,6 +280,9 @@ class NebulaZone(BaseFileAppearanceZone):
     ROOT_FOLDER = 'NEBULA_MOD'
     CONTENT_TEMPLATE = None
     GENERATED_NEBULA_SUBFOLDER = 'GENERATED'
+    LOAD_FOG = True
+
+    PROPERTY_FLAGS = 32768
 
     NEBULA_DEFINITION_TEMPLATE = '''[Nebula]
 file = solar\\{root_folder}\\{subfolder}\\{file_name}.ini
@@ -290,6 +301,11 @@ zone = {zone}'''
             subfolder=self.GENERATED_NEBULA_SUBFOLDER,
             zone=self.get_zone_nickame(),
         )
+
+    def get_property_fog_color(self):
+        if self.LOAD_FOG:
+            return self.CONTENT_TEMPLATE.extract_fog_color()
+        return self.CONTENT_TEMPLATE.extract_exterior_color()
 
     def get_file_name(self):
         return f'gen_{self.get_zone_base_alias()}'

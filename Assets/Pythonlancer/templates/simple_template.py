@@ -18,6 +18,30 @@ class SimpleTemplate(BaseTemplate):
             raise Exception('TEMPLATE is required')
         return self.TEMPLATE.format(**params)
 
+    @classmethod
+    def extract_fog_color(cls):
+        is_fog = False
+        for line in cls.TEMPLATE.splitlines():
+            if line.strip() == '[Fog]':
+                is_fog = True
+
+            if is_fog and line.strip().startswith('color'):
+                return line.split('=')[1].strip()
+
+        raise Exception(f'fog not found for {cls}')
+
+    @classmethod
+    def extract_exterior_color(cls):
+        is_exterior = False
+        for line in cls.TEMPLATE.splitlines():
+            if line.strip() == '[Exterior]':
+                is_exterior = True
+
+            if is_exterior and line.strip().startswith('color'):
+                return line.split('=')[1].strip()
+
+        raise Exception(f'fog not found for {cls}')
+
 
 class FileTemplate(BaseTemplate):
     FILE = None

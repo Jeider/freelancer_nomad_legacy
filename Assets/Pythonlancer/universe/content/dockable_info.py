@@ -13,6 +13,8 @@ om15_danzig = MS(RU.om15_danzig, EN.om15_danzig)
 
 li_berkley = MS(RU.li_berkley, EN.li_berkley)
 
+sig22_ruins = MS(RU.sig22_ruins, EN.sig22_ruins)
+
 # li_berkley
 
 #Планета Норторф

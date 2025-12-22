@@ -363,44 +363,30 @@ class ColBaseMinesZone(zones.AsteroidZone):
     DRAG_MODIFIER = 1.5
     PROPERTY_FLAGS = 4128
 
-
-class ColSolarMinesZone1(ColMember, ColBaseMinesZone):
-    ALIAS = 'solar'
-    INDEX = 1
-
+#
+# class ColSolarMinesZone1(ColMember, ColBaseMinesZone):
+#     ALIAS = 'solar'
+#     INDEX = 1
+#
 
 class ColSolarMinesZone2(ColMember, ColBaseMinesZone):
     ALIAS = 'solar'
     INDEX = 2
 
 
-class ColSolarMinesZone3(ColMember, ColBaseMinesZone):
-    ALIAS = 'solar'
-    INDEX = 3
-
-
-class ColSolarMinesZone4(ColMember, ColBaseMinesZone):
-    ALIAS = 'solar'
-    INDEX = 4
+# class ColSolarMinesZone3(ColMember, ColBaseMinesZone):
+#     ALIAS = 'solar'
+#     INDEX = 3
+#
+#
+# class ColSolarMinesZone4(ColMember, ColBaseMinesZone):
+#     ALIAS = 'solar'
+#     INDEX = 4
 
 
 class ColSolarMinesZone5(ColMember, ColBaseMinesZone):
     ALIAS = 'solar'
     INDEX = 5
-
-
-# class ColSolarPlant1(ColMember, ColBaseSolarPlant):
-#     INDEX = 1
-#     BASE_INDEX = 61
-#     ASTEROID_ZONES = [
-#         ColSolarMinesZone1,
-#     ]
-#     RU_NAME = MS('Солн.генератор Ламиса', 'Solar Plant Lamesa')
-#     MISC_EQUIP_TYPE = LI_PIRATE
-#     EQUIP_SET = markets.EquipSet(
-#         Q.Power(LI_CIV, eq_classes=markets.SECRET3),
-#         Q.Shield(LI_PIRATE, eq_classes=markets.SECRET2),
-#     )
 
 
 class ColSolarPlant2(ColMember, ColBaseSolarPlant):
@@ -415,34 +401,6 @@ class ColSolarPlant2(ColMember, ColBaseSolarPlant):
         Q.Power(LI_CIV, eq_classes=markets.SECRET3),
         Q.Shield(LI_PIRATE, eq_classes=markets.SECRET2),
     )
-#
-#
-# class ColSolarPlant3(ColMember, ColBaseSolarPlant):
-#     INDEX = 3
-#     BASE_INDEX = 63
-#     ASTEROID_ZONES = [
-#         ColSolarMinesZone3,
-#     ]
-#     RU_NAME = MS('Солн.генератор Андрус', 'Solar Plant Andrews')
-#     MISC_EQUIP_TYPE = LI_PIRATE
-#     EQUIP_SET = markets.EquipSet(
-#         Q.Power(LI_CIV, eq_classes=markets.SECRET3),
-#         Q.Shield(LI_PIRATE, eq_classes=markets.SECRET2),
-#     )
-#
-#
-# class ColSolarPlant4(ColMember, ColBaseSolarPlant):
-#     INDEX = 4
-#     BASE_INDEX = 64
-#     ASTEROID_ZONES = [
-#         ColSolarMinesZone4,
-#     ]
-#     RU_NAME = MS('Солн.генератор Ранкин', "Solar Plant Rankin")
-#     MISC_EQUIP_TYPE = LI_PIRATE
-#     EQUIP_SET = markets.EquipSet(
-#         Q.Power(LI_CIV, eq_classes=markets.SECRET3),
-#         Q.Shield(LI_PIRATE, eq_classes=markets.SECRET2),
-#     )
 
 
 class ColSolarPlant5(ColMember, ColBaseSolarPlant):

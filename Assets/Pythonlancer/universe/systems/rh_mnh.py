@@ -91,6 +91,7 @@ class MunchBlueNebula(zones.NebulaZone):
 
     PROPERTY_FLAGS = 32768
     PROPERTY_FOG_COLOR = '5, 10, 50'
+    LOAD_FOG = False
 
 
 BLUE_EXCLUSION_PARAMS = {
