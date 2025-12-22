@@ -388,6 +388,26 @@ class ColSolarMinesZone5(ColMember, ColBaseMinesZone):
     ALIAS = 'solar'
     INDEX = 5
 
+#
+# class ColSolarPlant1(ColMember, main_objects.VirtualDepot):
+#     DOUBLE_INFO = True
+#     INDEX = 1
+#     BASE_INDEX = 61
+#     ASTEROID_ZONES = [
+#         # ColSolarMinesZone1,
+#     ]
+#     RU_NAME = MS('Солн.генератор Ламиса', 'Solar Plant Lamesa')
+#     MISC_EQUIP_TYPE = LI_PIRATE
+#     EQUIP_SET = markets.EquipSet(
+#         Q.Power(LI_CIV, eq_classes=markets.SECRET3),
+#         Q.Shield(LI_PIRATE, eq_classes=markets.SECRET2),
+#     )
+#     IS_BASE = False
+#
+#     def get_system_content(self):
+#         # DISABLED
+#         return ''
+
 
 class ColSolarPlant2(ColMember, ColBaseSolarPlant):
     INDEX = 2
@@ -401,6 +421,46 @@ class ColSolarPlant2(ColMember, ColBaseSolarPlant):
         Q.Power(LI_CIV, eq_classes=markets.SECRET3),
         Q.Shield(LI_PIRATE, eq_classes=markets.SECRET2),
     )
+
+
+# class ColSolarPlant3(ColMember, main_objects.VirtualDepot):
+#     DOUBLE_INFO = True
+#     INDEX = 3
+#     BASE_INDEX = 63
+#     ASTEROID_ZONES = [
+#         # ColSolarMinesZone3,
+#     ]
+#     RU_NAME = MS('Солн.генератор Андрус', 'Solar Plant Andrews')
+#     MISC_EQUIP_TYPE = LI_PIRATE
+#     EQUIP_SET = markets.EquipSet(
+#         Q.Power(LI_CIV, eq_classes=markets.SECRET3),
+#         Q.Shield(LI_PIRATE, eq_classes=markets.SECRET2),
+#     )
+#     IS_BASE = False
+#
+#     def get_system_content(self):
+#         # DISABLED
+#         return ''
+#
+#
+# class ColSolarPlant4(ColMember, main_objects.VirtualDepot):
+#     DOUBLE_INFO = True
+#     INDEX = 4
+#     BASE_INDEX = 64
+#     ASTEROID_ZONES = [
+#         # ColSolarMinesZone4,
+#     ]
+#     RU_NAME = MS('Солн.генератор Ранкин', "Solar Plant Rankin")
+#     MISC_EQUIP_TYPE = LI_PIRATE
+#     EQUIP_SET = markets.EquipSet(
+#         Q.Power(LI_CIV, eq_classes=markets.SECRET3),
+#         Q.Shield(LI_PIRATE, eq_classes=markets.SECRET2),
+#     )
+#     IS_BASE = False
+#
+#     def get_system_content(self):
+#         # DISABLED
+#         return ''
 
 
 class ColSolarPlant5(ColMember, ColBaseSolarPlant):
