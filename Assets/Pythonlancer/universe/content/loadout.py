@@ -60,9 +60,9 @@ class DynamicAttachedCargoLoadout(Loadout):
         except TypeError:
             raise Exception('Wrong types passed to DynamicAttachedCargoLoadout')
 
-        if self.min < 1:
-            raise Exception('DynamicAttachedCargoLoadout min value should be larger than 1')
-        if self.max <= self.min:
+        if self.min < 0:
+            raise Exception('DynamicAttachedCargoLoadout min value should be larger than 0')
+        if self.max <= self.min and self.min != 0:
             raise Exception('DynamicAttachedCargoLoadout max value must be larger than min')
         if self.empty_chance > 1 or self.empty_chance < 0:
             raise Exception('DynamicAttachedCargoLoadout empty_chance should be between 0 and 1')
@@ -86,11 +86,13 @@ class DynamicAttachedCargoLoadout(Loadout):
             if hp in self.empty_hardpoints:
                 continue
 
-            self.loadout.add_cargo(
-                self.cargo_item,
-                random.randint(self.min, self.max),
-                hp
-            )
+            items_count = random.randint(self.min, self.max)
+            if items_count > 0:
+                self.loadout.add_cargo(
+                    self.cargo_item,
+                    items_count,
+                    hp
+                )
 
 
 class DynamicInternalCargoLoadout(Loadout):

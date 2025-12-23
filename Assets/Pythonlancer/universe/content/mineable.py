@@ -193,27 +193,29 @@ class AsteroidRewardPropsUltra(RewardProps):
 
 class DebrisBoxRewardPropsLow(RewardProps):
     REWARD_TYPE = MINING_REWARD_LOW
-    MIN = 1
-    MAX = 2
-    LOADOUTS_COUNT = 5
+    MIN = 0
+    MAX = 0
+    LOADOUTS_COUNT = 1
 
 
 class DebrisBoxRewardPropsMedium(RewardProps):
     REWARD_TYPE = MINING_REWARD_MEDIUM
-    MIN = 3
-    MAX = 4
-    LOADOUTS_COUNT = 5
+    MIN = 0
+    MAX = 0
+    LOADOUTS_COUNT = 1
 
 
 class DebrisBoxRewardPropsHigh(RewardProps):
     REWARD_TYPE = MINING_REWARD_HIGH
-    MIN = 5
-    MAX = 7
-    LOADOUTS_COUNT = 5
+    MIN = 0
+    MAX = 0
+    LOADOUTS_COUNT = 1
 
 
 class DebrisBoxRewardPropsUltra(RewardProps):
     REWARD_TYPE = MINING_REWARD_ULTRA
+    MIN = 0
+    MAX = 1
     LOADOUTS_COUNT = 1
 
 
