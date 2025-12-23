@@ -118,11 +118,13 @@ class Commodity:
         self.ids = ids
 
         self.ids_name = ids.new_name(self.get_ru_name_clean())
+        if self.RU_INFO.get_ru() == '':
+            raise Exception(f'Commodity {self} have no info')
         self.ids_info = ids.new_info(
             MS(
                 InfocardBuilder.build_equip_infocard(
                     self.get_ru_name_clean().get_ru(),
-                    self.get_en_info()
+                    self.get_ru_info()
                 ),
                 InfocardBuilder.build_equip_infocard(
                     self.get_ru_name_clean().get_en(),
@@ -458,6 +460,7 @@ class Metal(DefaultCommodity, Commodity):
     NICKNAME = 'comm_scrap_metal'
     POD = POD_REFINEDMATS
     ICON = ICON_REFINEDMATS
+    RU_INFO = ru_info.METAL
 
 
 class PowerSolarEmpty(DefaultCommodity, Commodity):
@@ -469,6 +472,7 @@ class PowerSolarEmpty(DefaultCommodity, Commodity):
     NICKNAME = 'comm_power_solar_empty'
     POD = POD_HIGHTECH
     ICON = ICON_BATTERY
+    RU_INFO = ru_info.POWER_SOLAR_EMPTY
 
 
 class PowerSolar(DefaultCommodity, Commodity):
@@ -504,6 +508,7 @@ class GasBalloons(DefaultCommodity, Commodity):
     NICKNAME = 'comm_gas_balloons'
     POD = POD_TRANSPARTS
     ICON = ICON_HFUEL
+    RU_INFO = ru_info.GAS_LIQUID
 
 
 class GasFuel(DefaultCommodity, Commodity):
@@ -527,6 +532,7 @@ class ShipHullPanels(Product, Commodity):
     NICKNAME = 'comm_shiphull_panels'
     POD = POD_REFINEDMATS
     ICON = ICON_HULLPANELS
+    RU_INFO = ru_info.SHIP_PANELS
 
 
 class Diamonds(Roid, Commodity):
@@ -622,6 +628,7 @@ class SmelterParts(Product, Commodity):
     NICKNAME = 'comm_smelter_parts'
     POD = POD_MACHINES
     ICON = ICON_INDUSTRIAL
+    RU_INFO = ru_info.SMELTER_PARTS
 
 
 class WaterExtra(Luxury, Commodity):
@@ -741,6 +748,7 @@ class Polymers(Product, Commodity):
     NICKNAME = 'comm_polymers'
     POD = POD_HIGHTECH
     ICON = ICON_CHEMICAL
+    RU_INFO = ru_info.POLYMERS
 
 
 class Uranium(Roid, Commodity):
@@ -848,6 +856,7 @@ class DefenceSystems(Product, Commodity):
     NICKNAME = 'comm_defence_systems'
     POD = POD_MUNITIONS
     ICON = ICON_MUNITIONS
+    RU_INFO = ru_info.DEFENCE_SYSTEMS
 
 
 class Gold(Roid, Commodity):
@@ -907,6 +916,7 @@ class OpticalChips(Product, Commodity):
     NICKNAME = 'comm_optical_chips'
     POD = POD_ELECTRONICS
     ICON = ICON_CHIP
+    RU_INFO = ru_info.OPTICAL_CHIPS
 
 
 class AlloyConductor(Alloy, Commodity):
@@ -942,6 +952,7 @@ class SolarPlantParts(Product, Commodity):
     NICKNAME = 'comm_solarplant_parts'
     POD = POD_MACHINES
     ICON = ICON_INDUSTRIAL
+    RU_INFO = ru_info.SOLAR_PLANT_PARTS
 
 
 class ResearchEquip(Product, Commodity):
@@ -953,3 +964,4 @@ class ResearchEquip(Product, Commodity):
     NICKNAME = 'comm_research_equip'
     POD = POD_HIGHTECH
     ICON = ICON_INDUSTRIAL
+    RU_INFO = ru_info.RESEARCH_EQUIP

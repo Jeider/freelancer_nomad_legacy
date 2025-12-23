@@ -35,26 +35,27 @@ class Misson01B(ingame_mission.IngameMission):
     START_SAVE_ID = 32100
     START_SAVE_RU_NAME = MS('Планета Берлин', "Planet Berlin")
     STATIC_NPCSHIPS = NPCSHIPS
+    RTC = ['berlin']
     INIT_OFFER = MultiLine(
         ru_lines=[
             'ЗАДАЧА:',
-            'Сопроводить рейнландский торговый конвой.'
-            ''
-            'СЛОЖНОСТЬ:'
-            'Низкая.'
-            ''
-            'НАГРАДА:'
-            '5 000 кредитов.'
+            'Сопроводить рейнландский торговый конвой.',
+            '',
+            'СЛОЖНОСТЬ:',
+            'Лёгкая.',
+            '',
+            'НАГРАДА:',
+            '5 000 кредитов.',
         ],
         en_lines=[
             'OBJECTIVE:',
-            'Escort Rheinland trade convoy.'
-            ''
-            'DIFFICULTY:'
-            'Low.'
-            ''
-            'REWARD:'
-            '5 000 credits.'
+            'Escort Rheinland trade convoy.',
+            '',
+            'DIFFICULTY:',
+            'Easy.',
+            '',
+            'REWARD:',
+            '5 000 credits.',
         ]
     ).get_content()
 

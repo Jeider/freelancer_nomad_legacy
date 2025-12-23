@@ -54,6 +54,7 @@ npc_class = lawful, class_fighter,  d20
 '''
 
 
+
 class Misson01A(ingame_mission.IngameMission):
     JINJA_TEMPLATE = 'missions/m01/m01a.ini'
     FOLDER = 'M01A'
@@ -62,26 +63,27 @@ class Misson01A(ingame_mission.IngameMission):
     START_SAVE_ID = 32000
     START_SAVE_RU_NAME = MS('Сигма-13. Газодобытчик Магдебург', 'Sigma-13. Gas miner Magdeburg')
     STATIC_NPCSHIPS = NPCSHIPS
+    RTC = ['alaric_sig13']
     INIT_OFFER = MultiLine(
         ru_lines=[
             'ЗАДАЧА:',
-            'Сопроводить рейнландский торговый конвой.'
-            ''
-            'СЛОЖНОСТЬ:'
-            'Низкая.'
-            ''
-            'НАГРАДА:'
-            '5 000 кредитов.'
+            'Сопроводить рейнландский торговый конвой.',
+            '',
+            'СЛОЖНОСТЬ:',
+            'Лёгкая.',
+            '',
+            'НАГРАДА:',
+            '5 000 кредитов.',
         ],
         en_lines=[
             'OBJECTIVE:',
-            'Escort Rheinland trade convoy.'
-            ''
-            'DIFFICULTY:'
-            'Low.'
-            ''
-            'REWARD:'
-            '5 000 credits.'
+            'Escort Rheinland trade convoy.',
+            '',
+            'DIFFICULTY:',
+            'Easy.',
+            '',
+            'REWARD:',
+            '5 000 credits.',
         ]
     ).get_content()
 

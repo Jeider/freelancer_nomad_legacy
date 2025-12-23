@@ -55,6 +55,7 @@ class Misson03(ingame_mission.IngameMission):
     START_SAVE_RU_NAME = MS('Сигма-8. Станция Штарке', 'Sigma-8, Station Starke')
     STATIC_NPCSHIPS = NPCSHIPS
     SCRIPT_INDEX = 3
+    RTC = ['vendor_msn']
     INIT_OFFER = MultiLine(
         ru_lines=[
             'ЗАДАЧА:',

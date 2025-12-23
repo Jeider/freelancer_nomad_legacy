@@ -27,6 +27,7 @@ from templates.dockable import pirate
 from templates.dockable import station_debris
 from templates.dockable import constanta
 
+from universe.content import dockable_info
 from text.strings import MultiString as MS
 
 
@@ -171,6 +172,7 @@ class Sig22OldOutpostRuins(Sig22Member, Sig22Liberty, main_objects.StationRuins)
     INDEX = 1
     REL = RIGHT
     RU_NAME = MS('Фрипорт 4', 'Freeport 4')
+    RU_FIRST_DESCRIPTION = dockable_info.sig22_ruins
 
     SPACE_OBJECT_TEMPLATE = station_debris.Freeport7DebrisAlternative
 

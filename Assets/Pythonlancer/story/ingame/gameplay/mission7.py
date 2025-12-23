@@ -41,7 +41,7 @@ class Misson07(ingame_mission.IngameMission):
     SCRIPT_INDEX = 7
     DIRECT_SYSTEMS = [S.omicron2, S.co_cad, S.om13, S.br_avl]
     STATIC_NPCSHIPS = NPCSHIPS
-    RTC = ['cadiz']
+    RTC = ['cadiz', 'tobago_bar']
     INIT_OFFER = MultiLine(
         [
             'ЗАДАЧА:',

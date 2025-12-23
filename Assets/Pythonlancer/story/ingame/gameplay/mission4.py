@@ -59,6 +59,7 @@ class Misson04(ingame_mission.IngameMission):
     STATIC_NPCSHIPS = NPCSHIPS
     SCRIPT_INDEX = 4
     DIRECT_SYSTEMS = [S.sig8, S.rh_biz, S.li_for]
+    RTC = ['vendor_msn']
     INIT_OFFER = MultiLine(
         [
             'ЗАДАЧА:',

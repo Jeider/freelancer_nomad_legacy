@@ -5,36 +5,95 @@ Characters voices
 Анатолий Матвеев
 AlexD
 Вадим Лёлькин
-
-
-
-Озвучка персонажей
 Владимир Войтов
-McRousseaux
+Станислав Мокроусов
 Андрей Терашкевич
 
 
 
+
 Озвучка персонажей
-Бунёд Кочкоров
+Александр Семёнов
 Cyberion
 GLINA
+Владимир Прибой
+Женя Спицын
+RedComrade
+Лев Гринберг
+Sevez
+
+
 
 
 Озвучка персонажей
-Владимир Прибой
-Женя Спицын
+Нейро-голоса
+Владимир Антоник
+Всеволод Кузнецов
+Светлана Олешковская
+Полина Чекан
+Рогволд Суховерко
+и другие
 
 
-Помощь в промоушене
-DeXiaZ
-Gudrun
+
+Voiced by (AI-voices)
+Vladimir Antonik
+Vsevolod Kuznetsov
+Polina Chekan
+Tatyana Shitova
+
+
+Voiced by (AI-voices)
+Boris Repetur
+Vladimir Vihrov
+Rogvold Suhoverko
+Alexandr Vilkvov
+Vladimir Thereszchuk
+
+
+Voiced by (AI-voices)
+Evgeniy Maluha
+Lina Ivanova
+Alexandr Pozharov
+Irina Kireeva
+and others
+
+
+
+
+
+
+
+
+Работа с текстурами
+Jeider
+DexiaZ
+RenderG
+RedComrade
+
+
+
+
+Спонсоры проекта
+Никола Желев
+Вадим Соломатин
+Joao Pereira
+Владимир Калиниченко
+
 
 
 Тестировщики
 VAKO
 Владимир Войтов
-bakugandenis2013
+Роман Полин
+Айдар Гараев
+
+
+Тестировщики
+Ozu
+Make
+Tonecas
+Polarts
 
 
 Консультанты
@@ -45,4 +104,13 @@ Kosh[EG]
 Плагины
 Adoxa
 Motah
+
+
+Проект посвящается
+[Владимиру Филатову]
+[Котику Кузе]
+
+
+Генеральный продюссер
+Кот Маркиз де Бориска
 

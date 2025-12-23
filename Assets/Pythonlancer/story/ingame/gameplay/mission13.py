@@ -515,34 +515,41 @@ class Misson13(ingame_mission.IngameMission):
             TextDialog(
                 self, 'work_in_progress', MS('Миссия завершена', 'Mission accomplished'),
                 ru_content=MultiText([
-                    'Вы успешно справлись с миссией! Она практически закончена, только не хватает сцены, в которой '
-                    'мы с помощью того же устройства, что и в оригинальной миссии 13, атакуем лазером Крыга и '
-                    'уничтожаем его навсегда!',
+                    'Вы успешно завершили основную кампанию Наследия Номадов! Но на этом ваш миссия закончена. Что '
+                    'же может быть дальше? Пока не известно!',
 
-                    'Проект продолжает развиваться. Вскоре будут сделаны все оставшиеся катсцены. И в том числе '
-                    'красивый финал :-) Если вам понравился проект, то способы поддержать автора вы можете найти на '
-                    'сайте https://freelancer2.space/ru. Этот проект долгие годы разрабатывался по большей части '
-                    'одним человеком и автор отчаянно ищет мотивацию продолжать развивать проект и очень надеется, '
-                    'что вы ему в этом поможете :-)',
+                    'Главный герой был подхвачен таинственным спасителем и в будущем узнает много нового о том, что происходило в мире, '
+                    'пока он был внутри Чёрной дыры. А произошло много чего, ведь игрок получил эффект как у планеты Миллер и был перенесён '
+                    'в будущее через 10 лет после входа Чёрную дыру!',
 
-                    'После закрытия этого окна кампания будет закончена и вам будет разрешено играть в открытом мире,'
-                    'но так как это альфа-версия, то автор просто разрешает вам поиграть в текущей версии мира. В будущем '
-                    'эндгейм будет выглядеть иначе. Может быть у меня получится сделать скайримо-лансер. Посмотрим :-)'
+                    'Хотите узнать, что будет с героем дальше и в какие приключения он еще попадёт? Тогда поддержите проект '
+                    'способами, которые указаны на сайте или в лончере проекта. Вы должны понимать, что львиная доля работы '
+                    'сделана одним человеком и это был значительный труд, поэтому автор надеется, что вы поможете ему '
+                    'получить мотивацию на продолжение проекта.',
+
+                    'На данный момент вы можете продолжить свои полёты в основных мирах Сириуса. Внешние и номадские миры, к сожалению, '
+                    'сейчас недоступны. Они в состоянии доработки и там будет скучно. Поэтому вы можете продолжить изучать основные миры, '
+                    'развивать свой корабль и ждать будущих обновлений. Удачных полётов!'
                 ],
                 [
-                    'Well done! You beat the main campaign. It almost done, only final cutscenes is left. Whe need to '
-                    'hit Krieg by vanilla\'s mission 13 device and destroy alien forever!',
+                    'You have successfully completed the main Nomad Legacy campaign! '
+                    'But your mission is not over yet. What could come next? It remains unknown for now!',
 
-                    'Project is still going on. Soon all cutscenes will be completed. Included final :-). '
-                    'Like this project? You can support author on site https://freelancer2.space/en. You can find ways'
-                    ' for support at the bottom side of the site. This project was mostly created by one developer and '
-                    'author still for ways to find more motivation to continue project. He believe, you can help with '
-                    'it :-) ',
+                    'The main character was rescued by a mysterious savior and will '
+                    'learn much about what happened in the world while they were inside '
+                    'the Black Hole. And a lot has happened, because the player experienced '
+                    'an effect similar to Miller\'s planet and was transported 10 years into the future after entering the Black Hole!',
 
-                    'After closing of this popup dialog you can continue freelfight. This is ALPHA version, so, this '
-                    'is not final state of end of campaign and universe. Author just allows you to play in current '
-                    'version. It will be changed in future. Also, final mission should start from not from Sprague. But'
-                    ' endgame system insn\'t completed at this moment'
+                    'Do you want to find out what happens to the hero next and what other '
+                    'adventures they will have? Then support the project through the methods '
+                    'listed on the website or in the project launcher. You should understand that '
+                    'the lion\'s share of the work was done by one person, '
+                    'and it was a significant effort, so the author hopes you will help them find the motivation to continue the project.',
+
+                    'For now, you can continue your flights in the core worlds of Sirius. '
+                    'Edge and Nomad worlds are currently unavailable, unfortunately. '
+                    'They are under development and would be boring in their current state. '
+                    'Therefore, you can continue exploring the core worlds, upgrade your ship, and wait for future updates. Safe flights!'
                 ]),
             ),
 

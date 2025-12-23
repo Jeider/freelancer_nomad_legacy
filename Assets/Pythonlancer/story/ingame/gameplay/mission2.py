@@ -167,6 +167,7 @@ class Misson02(ingame_mission.IngameMission):
     START_SAVE_RU_NAME = MS('Бисмарк. Линкор Шарнхорст', 'Bismarck, Battleship Scharnhorst')
     STATIC_NPCSHIPS = NPCSHIPS
     SCRIPT_INDEX = 2
+    RTC = ['wilham_msn']
     INIT_OFFER = MultiLine(
         ru_lines=[
             'ЗАДАЧА:',

@@ -259,15 +259,15 @@ class DietrichHeavygun(Gun, RheinlandGun):
 
 
 class DietrichShieldgun(Gun, RheinlandGun, Heavygun):
-    DAMAGE_MULTIPLIER = 1.1
+    DAMAGE_MULTIPLIER = 1.15
     RU_NAME = MS('Годендаг', 'Goedendag')
     RU_NAME_DESC = MS('Противощитовая пушка мятежников Дитриха', 'Dietrich\'s rebels shield gun')
     BASE_NICKNAME = 'dtr_shieldgun'
     MODEL = Weapon.RH_PROTON_BLASTER
     EQUIP_TYPE = Weapon.EQUIP_MAIN
     REFIRE_RATE = Weapon.REFIRE_RATE_4
-    MUZZLE_VELOCITY = 700
-    LIFETIME = 1.0
+    MUZZLE_VELOCITY = 600
+    LIFETIME = 0.8
     FX_FACTION = WeaponFX.FX_DTR
     FX_APPEARANCE = WeaponFX.FX_PULSE
 

@@ -89,6 +89,7 @@ class Misson06(ingame_mission.IngameMission):
     STATIC_NPCSHIPS = NPCSHIPS
     SCRIPT_INDEX = 6
     DIRECT_SYSTEMS = [S.li_mnh, S.sphere, S.co_cad]
+    RTC = ['vendor_msn']
     INIT_OFFER = MultiLine(
         [
             'ЗАДАЧА:',
@@ -291,11 +292,11 @@ class Misson06(ingame_mission.IngameMission):
                   name='05_around_station', target='05_around_station', nag=False),
             NNObj(self, MS('Проникните внутрь Сферы', 'Enter into The Sphere'), name='06_enter_the_sphere', target='06_enter_the_sphere', nag=False),
 
-            NNObj(self, MS('Доберитесь до шлюза', 'Reach airlock'), name='07_goto_first_tunnel_enter_point', target='07_goto_first_tunnel_enter_point'),
+            NNObj(self, MS('Доберитесь до шлюза', 'Reach airlock'), name='07_goto_first_tunnel_enter_point', target='07_goto_first_tunnel_enter_point', nag=False),
 
-            NNObj(self, MS('Пролетите через шлюз', 'Fly through airlock'), name='07_meet_alaric_after_first_tunnel', target='07_meet_alaric_after_first_tunnel'),
+            NNObj(self, MS('Пролетите через шлюз', 'Fly through airlock'), name='07_meet_alaric_after_first_tunnel', target='07_meet_alaric_after_first_tunnel', nag=False),
 
-            NNObj(self, MS('Направляйтесь к следующему шлюзу', 'Go to next airlock'), name='08_goto_second_tunnel', target='08_goto_second_tunnel'),
+            NNObj(self, MS('Направляйтесь к следующему шлюзу', 'Go to next airlock'), name='08_goto_second_tunnel', target='08_goto_second_tunnel', nag=False),
 
             NNObj(self, O.GOTO, name='08_goto_second_tunnel_wp01', target='08_goto_second_tunnel_wp01', nag=False),
             NNObj(self, O.GOTO, name='08_goto_second_tunnel_wp02', target='08_goto_second_tunnel_wp02', nag=False),
@@ -303,15 +304,15 @@ class Misson06(ingame_mission.IngameMission):
             NNObj(self, O.GOTO, name='08_goto_second_tunnel_wp04', target='08_goto_second_tunnel_wp04', nag=False),
             NNObj(self, O.GOTO, name='08_goto_second_tunnel_wp05', target='08_goto_second_tunnel_wp05', nag=False),
 
-            NNObj(self, MS('Пролетите через второй шлюз', 'Fly through second airlock'), name='09_enter_the_second_tunnel', target='09_enter_the_second_tunnel'),
-            NNObj(self, MS('Направляйтесь к шлюзу', 'Go to airlock'), name='09_enter_the_second_tunnel_wp01', target='09_enter_the_second_tunnel_wp01'),
-            NNObj(self, MS('Пролетите через шлюз', 'Fly through airlock'), name='09_enter_the_second_tunnel_wp02', target='09_enter_the_second_tunnel_wp02'),
+            NNObj(self, MS('Пролетите через второй шлюз', 'Fly through second airlock'), name='09_enter_the_second_tunnel', target='09_enter_the_second_tunnel', nag=False),
+            NNObj(self, MS('Направляйтесь к шлюзу', 'Go to airlock'), name='09_enter_the_second_tunnel_wp01', target='09_enter_the_second_tunnel_wp01', nag=False),
+            NNObj(self, MS('Пролетите через шлюз', 'Fly through airlock'), name='09_enter_the_second_tunnel_wp02', target='09_enter_the_second_tunnel_wp02', nag=False),
 
-            NNObj(self, MS('Направляйтесь к следующему шлюзу', 'Go to next airlock'), name='10_goto_third_tunnel', target='10_goto_third_tunnel'),
-            NNObj(self, O.GOTO, name='10_goto_third_tunnel_wp01', target='10_goto_third_tunnel_wp01'),
-            NNObj(self, O.GOTO, name='10_goto_third_tunnel_wp02', target='10_goto_third_tunnel_wp02'),
-            NNObj(self, O.GOTO, name='10_goto_third_tunnel_wp03', target='10_goto_third_tunnel_wp03'),
-            NNObj(self, O.GOTO, name='10_goto_third_tunnel_wp04', target='10_goto_third_tunnel_wp04'),
+            NNObj(self, MS('Направляйтесь к следующему шлюзу', 'Go to next airlock'), name='10_goto_third_tunnel', target='10_goto_third_tunnel', nag=False),
+            NNObj(self, O.GOTO, name='10_goto_third_tunnel_wp01', target='10_goto_third_tunnel_wp01', nag=False),
+            NNObj(self, O.GOTO, name='10_goto_third_tunnel_wp02', target='10_goto_third_tunnel_wp02', nag=False),
+            NNObj(self, O.GOTO, name='10_goto_third_tunnel_wp03', target='10_goto_third_tunnel_wp03', nag=False),
+            NNObj(self, O.GOTO, name='10_goto_third_tunnel_wp04', target='10_goto_third_tunnel_wp04', nag=False),
 
             NNObj(self, O.GOTO, name='NZ_goto_bottom_side', target='nz_goto_bottom_side', nag=False),
             NNObj(self, O.GOTO, name='NZ_goto_bottom_box', target='nz_goto_bottom_box', nag=False),
@@ -321,18 +322,18 @@ class Misson06(ingame_mission.IngameMission):
             NNObj(self, MS('Выйдите из зоны поражения лазера', 'Leave laser damage zone!'), name='NZ_go_away_from_lazerburn', target='nz_go_away_from_lazerburn', nag=False),
 
             NNObj(self, MS('Уничтожьте номадское зерно', 'Destroy nomad kernel'), name='11_destroy_nomad_core',
-                  target='sphere_kernel'),
-            NNObj(self, MS('Уничтожьте номадские истребители', "Destroy nomad fighters"), name='12_destroy_nomad_fighters'),
+                  target='sphere_kernel', nag=False),
+            NNObj(self, MS('Уничтожьте номадские истребители', "Destroy nomad fighters"), name='12_destroy_nomad_fighters', nag=False),
 
-            NNObj(self, MS('Проникните в ядро Сферы', 'Enter the core'), name='13_goto_sphere_core', target='13_goto_sphere_core'),
+            NNObj(self, MS('Проникните в ядро Сферы', 'Enter the core'), name='13_goto_sphere_core', target='13_goto_sphere_core', nag=False),
 
-            NNObj(self, MS('Направляйтесь к шлюзу', 'Go to airlock'), name='13_goto_nomad_area_exit', target='13_goto_nomad_area_exit'),
-            NNObj(self, MS('Пролетите через шлюз', 'Fly through airlock'), name='13_enter_the_last_tunnel', target='13_enter_the_last_tunnel'),
-            NNObj(self, MS('Направляйтесь к ядру Сферы', "Go to the Sphere's core"), name='13_fly_to_core', target='13_fly_to_core'),
+            NNObj(self, MS('Направляйтесь к шлюзу', 'Go to airlock'), name='13_goto_nomad_area_exit', target='13_goto_nomad_area_exit', nag=False),
+            NNObj(self, MS('Пролетите через шлюз', 'Fly through airlock'), name='13_enter_the_last_tunnel', target='13_enter_the_last_tunnel', nag=False),
+            NNObj(self, MS('Направляйтесь к ядру Сферы', "Go to the Sphere's core"), name='13_fly_to_core', target='13_fly_to_core', nag=False),
             NNObj(self, MS('Направляйтесь к шлюзу', 'Go to airlock'), name='13_goto_the_core_last_tunnel', target='13_goto_the_core_last_tunnel', nag=False),
             NNObj(self, MS('Проникните в ядро Сферы', "Ehter the core"), name='13_enter_the_core', target='13_enter_the_core', nag=False),
 
-            NNObj(self, O.GOTO, name='13_second_way_wp01', target='13_second_way_wp01'),
+            NNObj(self, O.GOTO, name='13_second_way_wp01', target='13_second_way_wp01', nag=False),
 
             NNObj(self, O.GOTO, name='TC_alt_way_wp01', target='tc_alt_way_wp01', nag=False),
             NNObj(self, O.GOTO, name='TC_alt_way_wp02', target='tc_alt_way_wp02', nag=False),
