@@ -175,7 +175,10 @@ table {
             {{ t.text('Use ReShade:') }}
 
             <input type="checkbox" name="reshade" id="reshade" {% if is_reshade %}checked{% endif %}> <br>
-            <span class="hint">{{ t.text('Enables additional post-effects, editable right from game. Requires dxwrapper to be active') }}</span>
+            <span class="hint">{{ t.text('Enables additional post-processed effects, editable right from game. Requires dxwrapper to be active') }}</span>
+            <br>
+            <span class="hint">{{ t.text('WARNING! Not recommended in windowed mode') }}</span>
+
 
         </div>
 
@@ -223,7 +226,7 @@ table {
                 <td class="diff-info">
                     {{ t.text('Default difficulty') }}
                     <br>
-                    {{ t.text('Main features is available') }}
+                    {{ t.text('Main features are available') }}
                 </td>
 
             </tr>
@@ -419,8 +422,8 @@ table {
 
     <table>
         <tr>
-            <th>{{ t.text('Clothes') }}</th>
-            <th>{{ t.text('Communication helmet') }}</th>
+            <th colspan="2">{{ t.text('Clothes') }}</th>
+            <th colspan="2">{{ t.text('Communication helmet') }}</th>
         </tr>
 
 
@@ -434,11 +437,25 @@ table {
                 </div>
 
             </td>
+            <td>
+                <div>
+                    <input type="radio" name="body" value="br_guard" id="body_br_guard" {% if player_body == 'br_guard' %}checked{% endif %} >
+                    <label for="body_br_guard">{{ t.text('Bretonia guard') }}</label>
+                </div>
+
+            </td>
 
             <td>
                 <div>
                     <input type="radio" name="commhelmet" value="default" id="commhelmet_default" {% if player_commhelmet == 'default' %}checked{% endif %} >
                     <label for="commhelmet_default">{{ t.text('Default helmet') }}</label>
+                </div>
+
+            </td>
+            <td>
+                <div>
+                    <input type="radio" name="commhelmet" value="li_hatcher" id="commhelmet_li_hatcher" {% if player_commhelmet == 'li_hatcher' %}checked{% endif %} >
+                    <label for="commhelmet_li_hatcher">{{ t.text('Hatcher\'s helmet') }}</label>
                 </div>
 
             </td>
@@ -454,11 +471,24 @@ table {
                 </div>
 
             </td>
+            <td>
+                <div>
+                    <input type="radio" name="body" value="br_elite" id="body_br_elite" {% if player_body == 'br_elite' %}checked{% endif %} >
+                    <label for="body_br_elite">{{ t.text('Bretonia elite') }}</label>
+                </div>
+            </td>
 
             <td>
                 <div>
                     <input type="radio" name="commhelmet" value="br_brighton" id="commhelmet_br_brighton" {% if player_commhelmet == 'br_brighton' %}checked{% endif %} >
                     <label for="commhelmet_br_brighton">{{ t.text('Brighton\'s helmet') }}</label>
+                </div>
+
+            </td>
+            <td>
+                <div>
+                    <input type="radio" name="commhelmet" value="pi_pirate" id="commhelmet_pi_pirate" {% if player_commhelmet == 'pi_pirate' %}checked{% endif %} >
+                    <label for="commhelmet_pi_pirate">{{ t.text('Pirate\'s helmet') }}</label>
                 </div>
 
             </td>
@@ -474,11 +504,24 @@ table {
                 </div>
 
             </td>
+            <td>
+                <div>
+                    <input type="radio" name="body" value="ku_guard" id="body_ku_guard" {% if player_body == 'ku_guard' %}checked{% endif %} >
+                    <label for="body_ku_guard">{{ t.text('Kusari guard') }}</label>
+                </div>
+            </td>
 
             <td>
                 <div>
                     <input type="radio" name="commhelmet" value="br_darcy" id="commhelmet_br_darcy" {% if player_commhelmet == 'br_darcy' %}checked{% endif %} >
                     <label for="commhelmet_br_darcy">{{ t.text('Darcy\'s helmet') }}</label>
+                </div>
+
+            </td>
+            <td>
+                <div>
+                    <input type="radio" name="commhelmet" value="rh_alaric" id="commhelmet_rh_alaric" {% if player_commhelmet == 'rh_alaric' %}checked{% endif %} >
+                    <label for="commhelmet_rh_alaric">{{ t.text('Alaric\'s helmet') }}</label>
                 </div>
 
             </td>
@@ -494,6 +537,12 @@ table {
                 </div>
 
             </td>
+            <td>
+                <div>
+                    <input type="radio" name="body" value="ku_elite" id="body_ku_elite" {% if player_body == 'ku_elite' %}checked{% endif %} >
+                    <label for="body_ku_elite">{{ t.text('Kusari elite') }}</label>
+                </div>
+            </td>
 
             <td>
                 <div>
@@ -501,6 +550,13 @@ table {
                     <label for="commhelmet_br_kaitlyn">{{ t.text('Caitlyn\'s helmet') }}</label>
                 </div>
 
+
+            </td>
+            <td>
+                <div>
+                    <input type="radio" name="commhelmet" value="rh_reichman" id="commhelmet_rh_reichman" {% if player_commhelmet == 'rh_reichman' %}checked{% endif %} >
+                    <label for="commhelmet_rh_reichman">{{ t.text('Hassler\'s helmet') }}</label>
+                </div>
 
             </td>
         </tr>
@@ -515,89 +571,6 @@ table {
                 </div>
 
             </td>
-
-            <td>
-                <div>
-                    <input type="radio" name="commhelmet" value="ku_kym" id="commhelmet_ku_kym" {% if player_commhelmet == 'ku_kym' %}checked{% endif %} >
-                    <label for="commhelmet_ku_kym">{{ t.text('Yamamoto\'s helmet') }}</label>
-                </div>
-
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <div>
-                    <input type="radio" name="body" value="br_guard" id="body_br_guard" {% if player_body == 'br_guard' %}checked{% endif %} >
-                    <label for="body_br_guard">{{ t.text('Bretonia guard') }}</label>
-                </div>
-
-            </td>
-
-            <td>
-                <div>
-                    <input type="radio" name="commhelmet" value="li_hatcher" id="commhelmet_li_hatcher" {% if player_commhelmet == 'li_hatcher' %}checked{% endif %} >
-                    <label for="commhelmet_li_hatcher">{{ t.text('Hatcher\'s helmet') }}</label>
-                </div>
-
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <div>
-                    <input type="radio" name="body" value="br_elite" id="body_br_elite" {% if player_body == 'br_elite' %}checked{% endif %} >
-                    <label for="body_br_elite">{{ t.text('Bretonia elite') }}</label>
-                </div>
-
-            </td>
-
-            <td>
-                <div>
-                    <input type="radio" name="commhelmet" value="pi_pirate" id="commhelmet_pi_pirate" {% if player_commhelmet == 'pi_pirate' %}checked{% endif %} >
-                    <label for="commhelmet_pi_pirate">{{ t.text('Pirate\'s helmet') }}</label>
-                </div>
-
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <div>
-                    <input type="radio" name="body" value="ku_guard" id="body_ku_guard" {% if player_body == 'ku_guard' %}checked{% endif %} >
-                    <label for="body_ku_guard">{{ t.text('Kusari guard') }}</label>
-                </div>
-
-            </td>
-
-            <td>
-                <div>
-                    <input type="radio" name="commhelmet" value="rh_alaric" id="commhelmet_rh_alaric" {% if player_commhelmet == 'rh_alaric' %}checked{% endif %} >
-                    <label for="commhelmet_rh_alaric">{{ t.text('Alaric\'s helmet') }}</label>
-                </div>
-
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <div>
-                    <input type="radio" name="body" value="ku_elite" id="body_ku_elite" {% if player_body == 'ku_elite' %}checked{% endif %} >
-                    <label for="body_ku_elite">{{ t.text('Kusari elite') }}</label>
-                </div>
-
-            </td>
-
-            <td>
-                <div>
-                    <input type="radio" name="commhelmet" value="rh_reichman" id="commhelmet_rh_reichman" {% if player_commhelmet == 'rh_reichman' %}checked{% endif %} >
-                    <label for="commhelmet_rh_reichman">{{ t.text('Hassler\'s helmet') }}</label>
-                </div>
-
-            </td>
-        </tr>
-
-        <tr>
             <td>
                 <div>
                     <input type="radio" name="body" value="order" id="body_order" {% if player_body == 'order' %}checked{% endif %} >
@@ -608,12 +581,21 @@ table {
 
             <td>
                 <div>
+                    <input type="radio" name="commhelmet" value="ku_kym" id="commhelmet_ku_kym" {% if player_commhelmet == 'ku_kym' %}checked{% endif %} >
+                    <label for="commhelmet_ku_kym">{{ t.text('Yamamoto\'s helmet') }}</label>
+                </div>
+
+            </td>
+            <td>
+                <div>
                     <input type="radio" name="commhelmet" value="rh_wilham" id="commhelmet_rh_wilham" {% if player_commhelmet == 'rh_wilham' %}checked{% endif %} >
                     <label for="commhelmet_rh_wilham">{{ t.text('Wilham\'s helmet') }}</label>
                 </div>
 
             </td>
         </tr>
+
+
 
         <tr>
             <td>
@@ -623,11 +605,21 @@ table {
                 </div>
 
             </td>
+            <td>
+
+            </td>
 
             <td>
 
             </td>
+            <td>
+
+            </td>
         </tr>
+
+
+
+
 
 
     </table>

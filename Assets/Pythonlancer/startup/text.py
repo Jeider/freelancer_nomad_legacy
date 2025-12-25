@@ -8,8 +8,9 @@ class LauncherText:
         ('Fixes DirectX 8 errors, enables hardware smoothing and filtering', 'Исправляет ошибки DirectX 8, включает фильтрацию и сглаживание'),
 
         ('Use ReShade:', 'Использовать ReShade:'),
-        ('Enables additional post-effects, editable right from game. Requires dxwrapper to be active',
-         'Включает пост-эффекты, которые можно настроить прямо в игре. Требует включенного dxwrapper'),
+        ('Enables additional post-processed effects, editable right from game. Requires dxwrapper to be active',
+         'Включает эффекты пост-процессинга, которые можно настроить прямо в игре. Требует включенного dxwrapper'),
+        ('WARNING! Not recommended in windowed mode', 'ВНИМАНИЕ! Не рекомендуется в оконном режиме'),
 
         (
             'This is fan project. You can play it for free. If you want to support the developer, you can send donate or subscribe to project by Boosty.',
@@ -39,7 +40,7 @@ class LauncherText:
         ('For game journalists', 'Для игровых журналистов'),
 
         ('Default difficulty', 'Стандартная сложность'),
-        ('Main features is available', 'Доступны все основные возможности игры'),
+        ('Main features are available', 'Доступны все основные возможности игры'),
 
         ('High difficulty', 'Высокая сложность'),
         ('Can change tractor beam and scanner', 'Можно менять магнитный луч и сканер'),
