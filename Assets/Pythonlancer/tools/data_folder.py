@@ -38,10 +38,30 @@ class DataFolder:
     def get_d3d8(self):
         return self.get_exe() / 'd3d8.dll'
 
+    def get_d3d9(self):
+        return self.get_exe() / 'd3d9.dll'
+
+    def get_reshade_props1(self):
+        return self.get_exe() / 'ReShade.ini'
+
+    def get_reshade_props2(self):
+        return self.get_exe() / 'ReShadePreset.ini'
+
     def get_base_dxwrapper(self):
         return self.get_static() / 'd3d8_dxwrapper.dll'
 
+    def get_base_reshade_d3d9(self):
+        return self.get_static() / 'd3d9_reshade.dll'
+
+    def get_base_reshade_props1(self):
+        return self.get_static() / 'ReShade.ini'
+
+    def get_base_reshade_props2(self):
+        return self.get_static() / 'ReShadePreset.ini'
+
     def get_autosave(self):
+        raise Exception('obsolete')
+
         if self.build_to_folder:
             raise Exception('Impossible to use with build')
 
@@ -396,10 +416,31 @@ class DataFolder:
             self.get_d3d8()
         )
 
+    def place_reshade(self):
+        self.remove_all_d3d9_wrappers()
+
+        shutil.copy(
+            self.get_base_reshade_d3d9(),
+            self.get_d3d9()
+        )
+
+        prop1 = self.get_reshade_props1()
+        if not prop1.exists():
+            shutil.copy(prop1, self.get_reshade_props1())
+
+        prop2 = self.get_reshade_props2()
+        if not prop2.exists():
+            shutil.copy(prop2, self.get_reshade_props1())
+
     def remove_all_d3d8_wrappers(self):
         d3d8 = self.get_d3d8()
         if d3d8.exists():
             self.get_d3d8().unlink()
+
+    def remove_all_d3d9_wrappers(self):
+        d3d9 = self.get_d3d9()
+        if d3d9.exists():
+            self.get_d3d9().unlink()
 
     def remove_redundant_files(self):
         nnvoice = self.get_audio() / 'nnvoice.utf'

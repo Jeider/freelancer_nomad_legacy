@@ -66,10 +66,11 @@ class Api:
         if self._window:
             self._window.show()
 
-    def runFreelancer(self, resolution, windowed, dxwrapper, difficulty, fovy, front_light, trail, player_body, player_commhelmet):
+    def runFreelancer(self, resolution, windowed, dxwrapper, reshade, difficulty, fovy, front_light, trail, player_body, player_commhelmet):
         print(f'Run FL with resolution {resolution}')
         print(f'Windowed mode: {windowed}')
         print(f'use DxWrapper: {dxwrapper}')
+        print(f'use ReShade: {reshade}')
         print(f'Difficulty: {difficulty}')
         print(f'Front light: {front_light}')
         print(f'Trail: {trail}')
@@ -80,7 +81,7 @@ class Api:
 
         prev_cwd = os.getcwd()
         try:
-            self.apply_settings(resolution, windowed, dxwrapper, difficulty, fovy, front_light, trail, player_body, player_commhelmet)
+            self.apply_settings(resolution, windowed, dxwrapper, reshade, difficulty, fovy, front_light, trail, player_body, player_commhelmet)
         except Exception as e:
             self.show()
             print(f'Cannot launch FL. Reason: {e}')
@@ -90,11 +91,12 @@ class Api:
     def run_boosty(self):
         os.startfile('https://boosty.to/freelancer2')
 
-    def apply_settings(self, resolution, windowed, dxwrapper, difficulty, fovy, front_light, trail, player_body, player_commhelmet):
+    def apply_settings(self, resolution, windowed, dxwrapper, reshade, difficulty, fovy, front_light, trail, player_body, player_commhelmet):
         settings_save = {
             'current_resolution': resolution,
             'is_windowed': windowed,
             'is_dxwrapper': dxwrapper,
+            'is_reshade': reshade,
             'difficulty': difficulty,
             'front_light': front_light,
             'trail': trail,
@@ -123,7 +125,7 @@ class Api:
             dyn_config_kwargs['difficulty_hard'] = True
 
         config = StartupConfig(screen_meta=meta, resolution=unpacked_resolution, fovx=None, fovy=fovy,
-                               dxwrapper=dxwrapper,
+                               dxwrapper=dxwrapper, reshade=reshade,
                                front_light=front_light, contrail=trail,
                                player_body=player_body, player_commhelmet=player_commhelmet,
                                **dyn_config_kwargs)
@@ -226,6 +228,7 @@ def create_launcher(russian=True):
         'current_resolution': defaults.get('current_resolution', None),
         'is_windowed': defaults.get('is_windowed', False),
         'is_dxwrapper': defaults.get('is_dxwrapper', True),
+        'is_reshade': defaults.get('is_reshade', True),
         'fovy': defaults.get('fovy', DEFAULT_FOVY),
         'difficulty': diff,
         'front_light': defaults.get('front_light', 'white'),

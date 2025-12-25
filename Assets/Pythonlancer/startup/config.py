@@ -17,12 +17,14 @@ SMALL_FONT_HUD_SMALL = 0.02
 
 class StartupConfig:
     def __init__(self, screen_meta, resolution, russian=True, windowed=False, fovx=None, fovy=None, dxwrapper=False,
+                 reshade=False,
                  front_light=None, contrail=None, player_body=None, player_commhelmet=None, player_hat=None,
                  difficulty_easy=False, difficulty_hard=False):
         self.screen_meta = screen_meta
         self.resolution = resolution
         self.windowed = windowed
         self.dxwrapper = dxwrapper
+        self.reshade = reshade
         self.fovx = fovx
         self.fovy = fovy
         self.russian = russian

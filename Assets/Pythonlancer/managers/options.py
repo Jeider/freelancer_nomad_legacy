@@ -97,3 +97,8 @@ class OptionsManager:
             data_folder.place_dxwrapper()
         else:
             data_folder.remove_all_d3d8_wrappers()
+        if self.config.reshade:
+            data_folder.place_reshade()
+        else:
+            data_folder.remove_all_d3d9_wrappers()
+

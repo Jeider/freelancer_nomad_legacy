@@ -169,6 +169,15 @@ table {
 
         </div>
 
+        <div class="section">
+
+            {{ t.text('Use ReShade:') }}
+
+            <input type="checkbox" name="reshade" id="reshade" {% if is_reshade %}checked{% endif %}> <br>
+            <span class="hint">{{ t.text('Enables additional post-effects, editable right from game. Requires dxwrapper to be active') }}</span>
+
+        </div>
+
         <div class="section dangerous" style="display: none;">
             {{ t.text('Field of view Y (fish eye):') }} <input type="number" class="integer-input" value="{{ fovy }}" id="fovy"> <span class="hint">{{ t.text('(default: 70)') }}</span>
         </div>
@@ -639,6 +648,7 @@ function run() {
 
     var windowed = document.getElementById('windowed').checked;
     var dxwrapper = document.getElementById('dxwrapper').checked;
+    var reshade = document.getElementById('reshade').checked;
     var fovy = document.getElementById('fovy').value;
 
     var difficulty = document.querySelector('input[name="difficulty"]:checked').value;
@@ -651,7 +661,7 @@ function run() {
 
     var commhelmet = document.querySelector('input[name="commhelmet"]:checked').value;
 
-    pywebview.api.runFreelancer(resolution, windowed, dxwrapper, difficulty, fovy, front_light, trail, body, commhelmet);
+    pywebview.api.runFreelancer(resolution, windowed, dxwrapper, reshade, difficulty, fovy, front_light, trail, body, commhelmet);
 }
 
 function boosty() {
