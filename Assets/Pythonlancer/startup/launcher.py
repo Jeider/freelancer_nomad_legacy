@@ -241,7 +241,7 @@ def create_launcher(russian=True):
 
     api = Api(russian=russian)
     window = webview.create_window('The Nomad Legacy', html=html, background_color=BG_COLOR, js_api=api,
-                                   width=800, height=900 if my_height >= 900 else my_height, resizable=True)
+                                   width=800, height=750, resizable=True)
     api.set_window(window)
     try:
         webview.start()

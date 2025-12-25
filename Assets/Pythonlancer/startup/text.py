@@ -48,6 +48,8 @@ class LauncherText:
         ('Extreme challenge for the best freelancers', 'Экстремальное испытание для лучших фрилансеров'),
         ('Minimal drop loot chance', 'Минимальный шанс дропа лута'),
 
+
+        ('Visual settings', 'Настройки визуала'),
         ('Game settings', 'Настройки игры'),
         ('Ship effects', 'Эффекты корабля'),
         ('Character', 'Персонаж'),

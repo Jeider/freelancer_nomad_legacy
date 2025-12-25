@@ -129,9 +129,10 @@ table {
 
 <div class="tab-container">
   <div class="tab-links">
-    <button class="tab-link active" data-target="tab1-content">{{ t.text('Game settings') }}</button>
-    <button class="tab-link" data-target="tab2-content">{{ t.text('Ship effects') }}</button>
-    <button class="tab-link" data-target="tab3-content">{{ t.text('Character') }}</button>
+    <button class="tab-link active" data-target="tab1-content">{{ t.text('Visual settings') }}</button>
+    <button class="tab-link" data-target="tab2-content">{{ t.text('Game settings') }}</button>
+    <button class="tab-link" data-target="tab3-content">{{ t.text('Ship effects') }}</button>
+    <button class="tab-link" data-target="tab4-content">{{ t.text('Character') }}</button>
   </div>
 
 
@@ -184,10 +185,20 @@ table {
 
         <hr>
 
+
+<div class="section">
+    <p>{{ t.text('This is fan project. You can play it for free. If you want to support the developer, you can send donate or subscribe to project by Boosty.') }}</p>
+    <p><button class="boostylink" onClick="boosty()">{{ t.text('Support project') }}</button></p>
+
+</div>
+
+
+  </div>
+  <div id="tab2-content" class="tab-content">
+
         <div class="section">
             {{ t.text('Level of difficulty') }}
         </div>
-
 
         <table style="width: 100%">
 
@@ -255,7 +266,7 @@ table {
         </table>
 
   </div>
-  <div id="tab2-content" class="tab-content">
+  <div id="tab3-content" class="tab-content">
     <table>
         <tr>
             <th>{{ t.text('Front-light color') }}</th>
@@ -404,7 +415,7 @@ table {
   </div>
 
 
-  <div id="tab3-content" class="tab-content">
+  <div id="tab4-content" class="tab-content">
 
     <table>
         <tr>
@@ -631,11 +642,6 @@ table {
 </div>
 
 
-<div class="section to_bottom">
-    <p>{{ t.text('This is fan project. You can play it for free. If you want to support the developer, you can send donate or subscribe to project by Boosty.') }}</p>
-    <p><button class="boostylink" onClick="boosty()">{{ t.text('Support project') }}</button></p>
-
-</div>
 
 <div class="footer">
     <button name="run" class="run" onClick="run()">{{ t.text('Run Freelancer') }}</button>
