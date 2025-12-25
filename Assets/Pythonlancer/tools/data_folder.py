@@ -426,11 +426,11 @@ class DataFolder:
 
         prop1 = self.get_reshade_props1()
         if not prop1.exists():
-            shutil.copy(prop1, self.get_reshade_props1())
+            shutil.copy(self.get_base_reshade_props1(), prop1)
 
         prop2 = self.get_reshade_props2()
         if not prop2.exists():
-            shutil.copy(prop2, self.get_reshade_props1())
+            shutil.copy(self.get_base_reshade_props2(), prop2)
 
     def remove_all_d3d8_wrappers(self):
         d3d8 = self.get_d3d8()
