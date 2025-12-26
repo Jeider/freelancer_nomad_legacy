@@ -1,6 +1,4 @@
-from universe.content.messages import MessageBuilder, Knowledge
-
-from world.bodyparts import CharacterFactory
+from text.content.messages import MessageBuilder, Knowledge
 
 from tools.data_folder import DataFolder
 

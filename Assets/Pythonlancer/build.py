@@ -17,11 +17,11 @@ WEAPON_EQUIP_TEMPLATE = 'hardcoded_inis/static_content/weapon_equip.ini'
 
 class BuildProp:
 
-    def __init__(self, folder, russian: bool, difficulty: type[diff.DifficultySettings]):
+    def __init__(self, folder, russian: bool, difficulty: type[diff.DifficultySettings], dacom_debug: bool = False):
         self.folder = folder
         self.russian = russian
         self.difficulty = difficulty
-
+        self.dacom_debug = dacom_debug
 
 BUILD_PROPS = [
     BuildProp('RU_EASY', russian=True, difficulty=diff.EasyDifficulty),
@@ -34,14 +34,14 @@ BUILD_PROPS = [
 
 
 PROPS_DB = {b.folder: b for b in BUILD_PROPS}
-DEFAULT_RU = BuildProp(folder=None, russian=True, difficulty=diff.NormalDifficulty)
-DEFAULT_EN = BuildProp(folder=None, russian=False, difficulty=diff.NormalDifficulty)
+DEFAULT_RU = BuildProp(folder=None, russian=True, difficulty=diff.NormalDifficulty, dacom_debug=True)
+DEFAULT_EN = BuildProp(folder=None, russian=False, difficulty=diff.NormalDifficulty, dacom_debug=True)
 
 
 
 def build(build_props: BuildProp):
     core = LancerCore(write=True, russian=build_props.russian, build_folder=build_props.folder,
-                      difficulty=build_props.difficulty)
+                      difficulty=build_props.difficulty, dacom_debug=build_props.dacom_debug)
     #
     # markets_demo_data = [
     #     core.misc_equip.get_demo_marketdata(),

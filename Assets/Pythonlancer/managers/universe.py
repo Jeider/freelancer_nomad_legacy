@@ -221,7 +221,7 @@ class UniverseManager:
     def get_dacom_content(self):
         context = {
             'russian': self.core.russian,
-            'debug': True,
+            'debug': self.core.dacom_debug,
         }
         return self.core.tpl_manager.get_result(DACOM_TEMPLATE, context)
 

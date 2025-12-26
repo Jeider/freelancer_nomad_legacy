@@ -14,7 +14,6 @@ from universe.content import zones
 from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
-from universe.audio.space_voice import SpaceVoice
 from universe import faction
 from universe.content import mineable
 from templates.solar import asteroid as asteroid_solar
@@ -29,7 +28,7 @@ from templates.dockable import manhattan_megabase
 from templates.dockable import california_tradestation
 from templates.dockable import roid_mining
 
-from universe.content import dockable_info
+from text.content import dockable_info
 from text.strings import MultiString as MS
 
 

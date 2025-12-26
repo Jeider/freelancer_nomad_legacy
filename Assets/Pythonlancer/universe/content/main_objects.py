@@ -16,13 +16,12 @@ from universe.audio.space_voice import SpaceVoice, SpaceCostume
 from universe.content.loadout import Loadout
 from universe import connection
 from universe import faction
-from universe.content import mineable_info
-from universe.content import dockable_info
+from text.content import mineable_info, dockable_info
 from universe.content import diversion
 
 from tools.system_template import ObjectTemplateLoader
 from templates.space_object_template import SpaceObjectTemplate
-from story.math import rotate_point, relocate_point
+from story.math import relocate_point
 from text.dividers import SINGLE_DIVIDER, DIVIDER
 from text.strings import MultiString as MS
 

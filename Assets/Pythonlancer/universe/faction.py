@@ -11,8 +11,8 @@ from world.names import (
     DEFAULT_PRODS, RH_COMMS_PRODS, LI_COMMS_PRODS, BR_COMMS_PRODS, KU_COMMS_PRODS,
 )
 
-import universe.faction_info_ru as RU
-import universe.faction_info_en as EN
+import text.content.faction_info_ru as RU
+import text.content.faction_info_en as EN
 from text.strings import MultiString as MS
 from text.infocards import InfocardBuilder
 from text.dividers import SINGLE_DIVIDER

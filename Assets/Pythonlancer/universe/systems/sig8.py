@@ -3,7 +3,6 @@ from fx.sound import Ambience
 
 from managers.tools import query as Q
 from world.names import *
-from universe.content import meta
 
 from universe import markets
 
@@ -14,7 +13,6 @@ from universe.content import zones
 from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
-from universe.audio.space_voice import SpaceVoice
 from universe import faction
 from universe.content import mineable
 from templates.nebula import sig8_nebula
@@ -28,7 +26,7 @@ from templates.dockable import junker
 from templates.dockable import police
 from templates.dockable import trade_storages
 
-from universe.content import dockable_info
+from text.content import dockable_info
 from text.strings import MultiString as MS
 
 

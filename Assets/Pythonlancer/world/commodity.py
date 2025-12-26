@@ -1,5 +1,5 @@
 from world.names import *
-from text import info_commodity as ru_info
+from text.content import info_commodity as ru_info
 from text.infocards import InfocardBuilder
 from text.strings import MultiString as MS
 

@@ -5,7 +5,7 @@ from world.names import DEFAULT, BASIC, ROID, ALLOY, PRODUCT, LUXURY, CONTRABAND
 from world import bodyparts
 
 from universe.markets import Market, MarketCommodity
-from universe.content.messages import MessageBuilder
+from text.content.messages import MessageBuilder
 from universe.content.character import Char
 
 from universe.content import meta

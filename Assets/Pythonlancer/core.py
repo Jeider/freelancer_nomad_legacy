@@ -15,8 +15,8 @@ from managers.fx import FxManager
 
 from managers.jinja_manager import JinjaTemplateManager
 
-import universe.content.planet_info_ru as PLANET_RU
-import universe.content.planet_info_en as PLANET_EN
+import text.content.planet_info_ru as PLANET_RU
+import text.content.planet_info_en as PLANET_EN
 from text.strings import MultiString as MS
 
 
@@ -44,13 +44,14 @@ class DescriptionPack:
             # return self.ru_infos[self.last_index]
 
 
-class LancerCore(object):
+class LancerCore:
 
-    def __init__(self, difficulty, write=True, story=True, russian=True, build_folder=None):
+    def __init__(self, difficulty, write=True, story=True, russian=True, build_folder=None, dacom_debug=False):
         self.russian = russian
         self.write = write
         self.build_folder = build_folder
         self.difficulty = difficulty  # mandatory!
+        self.dacom_debug = dacom_debug
 
         self.descriptions = {
             'planet_ice': DescriptionPack(PLANET_RU.ICE_PLANETS, PLANET_EN.ICE_PLANETS),

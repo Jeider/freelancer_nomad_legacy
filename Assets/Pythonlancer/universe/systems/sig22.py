@@ -14,7 +14,6 @@ from universe.content import zones
 from universe.content import asteroid_definition
 from universe.content import interior
 from universe.content import dealers
-from universe.audio.space_voice import SpaceVoice
 from universe import faction
 from universe.content import mineable
 from universe.content import population
@@ -27,7 +26,7 @@ from templates.dockable import pirate
 from templates.dockable import station_debris
 from templates.dockable import constanta
 
-from universe.content import dockable_info
+from text.content import dockable_info
 from text.strings import MultiString as MS
 
 
