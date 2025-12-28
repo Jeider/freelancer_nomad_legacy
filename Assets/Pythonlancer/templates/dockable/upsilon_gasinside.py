@@ -3194,7 +3194,7 @@ nickname = up2_04
 pos = 0, 0, 0
 rotate = -10, 10, -100
 archetype = space_prison_dummy
-{dock_props}
+{root_props}
 
 [Object]
 nickname = up2_04_prison01

@@ -17,8 +17,12 @@ sig22_ruins = MS(RU.sig22_ruins, EN.sig22_ruins)
 
 sig17_fp7 = MS(RU.sig17_fp7, EN.sig17_fp7)
 
-# col - new_hope
+li_col_new_hope = MS(RU.li_col_new_hope, EN.li_col_new_hope)
+
+tau31_scient = MS(RU.tau31_scient, EN.tau31_scient)
+
 # tau31 - scient
+# tau29 - ring
 #
 
 #Планета Норторф

@@ -193,126 +193,132 @@ sig22_05_base = ("Base Limerick is the main base in the so-called outer defense 
 # Freeport 4 Ruins
 sig22_ruins = ('Freeport 4 was a prosperous trade base on the route from Warwick to Columbia but soon began suffering frequent attacks from pirates of the Irish Republican Army. For a long time, the governments of Bretonia and Liberty turned a blind eye to the situation, leading to a mass exodus of the population from Freeport 4, and it gradually became inhabited exclusively by pirates and smugglers. Flying along this trade route became too dangerous, leading to the decision to eliminate the threat in the Limerick base area and free Freeport 4 from pirate influence. But as usual, things did not go according to plan. The operation was coordinated very poorly, and due to differing visions of the operation\'s objectives between Bretonia and Liberty, it led to catastrophic consequences. Initially, it was planned to destroy the Limerick base with a powerful assault or at least suppress its defenses, but the IRA was forewarned of the attack and laid minefields in time, forcing the Bretonian ships to attack through an asteroid field where a large fleet\'s maneuvering capabilities were severely limited. The greatest threat was a potential attack from Freeport 4, which, incidentally, did occur. The Bretonian forces were surrounded, and the Liberty forces received orders to eliminate the threat from Freeport 4. The American command, as usual, solved the problem in its own way and simply decided to destroy Freeport 4 with the arsenal originally intended for Limerick. This is a clear case where a formally civilian facility was destroyed by the forces of one of the house governments. This strike did reduce pressure from the pirates and diverted their forces, allowing the battered remnants of the Bretonian fleet to escape the asteroid field. Liberty, however, managed to preserve most of its fleet intact, except for the battleship Pennsylvania. Rumors suggest that Liberty deliberately conducted the operation in such a way as to eliminate a civilian base formally affiliated with Bretonia. At the same time, despite the abundance of pirates, precise information on the number of civilians on the freeport was unknown. This now serves as additional fuel for conspiracy theories against Liberty. Nevertheless, at present, the freeport is destroyed, and there is simply no possibility of its restoration, as this zone is under too much pressure from the IRA, and Bretonia has decided to concentrate its forces on confronting Ulster from the Cambridge system side.')
 
-# Планета Манхеттен
-li_mnh_01_base = ""
+# Planet Manhattan
+li_mnh_01_base = ("Planet Manhattan is the cradle of human civilization in the Sirius sector. It was onto this planet that the first of the sleeper ships, once departed from Earth, landed. The entire population of the planet is concentrated in the eponymous metropolis, inhabited by billions of people. Meanwhile, the remaining territories of the planet are settled and used for agricultural, tourism, and ecological needs. Manhattan is a major trade center and the starting point of the trade route to Kusari and Bretonia. The planet produces the most popular consumer goods in Sirius. Manhattan is the focal point of Liberty's administrative structures. It is on this planet that the President's residence is located, overseeing all affairs in the colony. Additionally, Manhattan houses the offices of many successful and very successful Liberty companies. Various businessmen, aristocrats, and philanthropists are accustomed to living in luxury and are happy to acquire any valuables from across Sirius.")
 
-# Планета Питсбург
-li_mnh_02_base = ""
+# Planet Pittsburgh
+li_mnh_02_base = ("A backwater planet whose population is engaged in maintaining mining production. The main extracted resource is nickel, but beryllium is also mined in parallel. All this ore is supplied on a large scale to foundry productions in Liberty. In the New York system, these productions are located at Phoenix station. Another major plant is Dallas station in the Columbia system. These stations are the main consumers of Pittsburgh's output, but supplies are also made to other foundry productions across Sirius. For example, nickel is actively supplied to Leeds station in Warwick, as well as to smelting plants in the Berlin system in Rheinland.\\n\\nDespite being in a fairly populous system, planet Pittsburgh still requires regular supplies of various provisions, as well as mining equipment and spare parts to promptly update and repair its extraction capacities.")
 
-# Верфь Норфолк
-li_mnh_03_base = ""
+# Shipyard Norfolk
+li_mnh_03_base = ("Shipyard Norfolk is one of the largest shipyards in Sirius. It produces a vast number of various types of both military ships and civilian vessels. It is one of the main suppliers of trade vessels for all transport companies in Sirius. It also carries out repair work, ensuring the reliability and durability of Liberty's entire trade fleet. At the same time, this shipyard is engaged in the most progressive developments in the field of military equipment production, allowing Liberty ships to be the fastest, most maneuverable, durable, and competitive in such a serious market.")
 
-# Станция Финикс
-li_mnh_04_base = ""
+# Station Phoenix
+li_mnh_04_base = ("Station Phoenix is the main industrial complex of New York. This station produces various components for ships, engines, trade lanes, and other route equipment. The station is not the largest-scale production and is noticeably inferior to the capacities in the Forbes system and Detroit station, but nevertheless, this station is the main supplier to the Norfolk shipyard, allowing it to ensure the uninterrupted production of Liberty's ship and vessel fleet.")
 
-# Станция Вашингтон
-li_mnh_05_base = ""
+# Station Washington
+li_mnh_05_base = ("Station Washington, also known as the Pentagon, is the main military base in Liberty. All possible defensive and offensive operations against any potential opponents of Liberty and its allies are planned at this headquarters.")
 
-# Торговая база Коннектикут
-li_mnh_06_base = ""
+# Trade Base Connecticut
+li_mnh_06_base = ("Trade Base Connecticut supports the trade route from Forbes to Columbia. This trade base is used primarily to bypass the already overloaded hub of the Manhattan metropolis. Trade ships dock, leave their valuable cargo, and depart back, often empty or usually with a new load that can be obtained in the New York system. This trade base also has a fast trade route to planet Manhattan, effectively making it a backup port for Manhattan for ships that do not aim to obtain the full range of Liberty goods but arrive for specific orders.")
 
-# Аванпост Кливленд
-li_mnh_07_base = ""
+# Outpost Cleveland
+li_mnh_07_base = ("Outpost Cleveland provides flank defense for planet Manhattan against possible threats from the Tau-31 system. This base ensures border control and inspection of all arriving vessels and also serves as a base for escort ships. Escorts usually accompany vessels to the next Liberty police base, after which they return with the next convoy to their permanent deployment location.")
 
-# Станция Бостон
-li_mnh_08_base = ""
+# Station Boston
+li_mnh_08_base = ("Station Boston is the main smelting station in the New York system. This station is engaged both in smelting ore brought from across Sirius and in processing the scrap that has accumulated in enormous quantities in the New York system. Boston's products are widely popular at nearby stations, with the main consumer being the Norfolk shipyard, where Liberty's primary military productions are located. Thus, Boston is a strategically important enterprise, ensuring the combat readiness of Liberty's space forces but also ensuring trade security, as most of the station's output is consumed by a huge number of productions in nearby systems, and the Norfolk shipyard produces not only military but also civilian trade vessels.")
 
-# Тюрьма Спрингфилд
-li_mnh_09_base = ""
+# Prison Springfield
+li_mnh_09_base = ("Prison Springfield is considered the most mysterious place in the New York system. This prison holds the most dangerous criminals captured not only in Liberty territory but across the entire Sirius sector. The most dangerous bandits would rather die than end up in this place. Rumors circulate about various brutal tortures used by special services to extract the most valuable evidence from prisoners. But sometimes there have also been rumors that this is how special services extracted evidence from completely innocent people. Nevertheless, no one wants to verify this fact firsthand, which is why Springfield is a place where no one wants to be. However, such a heavily guarded prison requires correspondingly high-quality protective equipment. Therefore, you can help Liberty's security by delivering various defense systems that negate any attempts by prisoners to leave such a terrible place.")
 
-# База Рочестер
-li_mnh_10_base = ""
+# Base Rochester
+li_mnh_10_base = ("Base Rochester is an outpost of Liberty Rogues in New York. This base is assembled from scrap debris accumulated in New York over many years. The Rogues share the port with various smugglers and antisocial elements. Local bandits conduct raids on the infrastructure of Norfolk station, allowing them to preemptively attack trade vessels that have not yet been repaired and also obtain valuable goods delivered to such an important shipyard in Liberty.")
 
-# База Итака
-li_mnh_11_base = ""
+# Base Ithaca
+li_mnh_11_base = ("Base Ithaca belongs to the Lane Hackers. This mysterious base is used by pirates to intercept the most lucrative trade lanes in Sirius, as these lanes lead to the main metropolis of Sirius - planet Manhattan. At the same time, the hackers manage to hide it excellently in the nebula, so regular raids by Liberty forces do not solve the pirate threat problem in this area. Hackers intercept all possible vessels and deliver the obtained goods to this base. Smugglers also operate here and use the base as an intermediate point for selling their junk on planet Manhattan.")
 
-# Планета Форбс
-li_for_01_base = ""
+# Planet Forbes
+li_for_01_base = ("Planet Forbes is the industrial capital of Liberty. Most of the heavy industry is concentrated here. The main part of the planet's industry is not related to Liberty's military forces and is primarily associated exclusively with transport and logistics. The planet produces parts for jump gates, parts for transport ships, and freighters. As the planet is one of the starting points of the trade route to Rheinland, the production of trade ships on the planet is set up so that many of them are immediately loaded and sent to their final destination, planet Stuttgart.\\n\\nThere are several opposing views on logistics on the planet, leading to many conflicts, especially during the distribution of government grants. The essence of this conflict lies in the principles of further development of logistics technologies. On one side are the manufacturers of new types of engines, developers of portable hyperdrive systems. With these devices, trade lanes and jump gates could become meaningless, and it would no longer be necessary to build a huge logistics network just to transport cargo from point A to point B. On the other side are the manufacturers of these space and inter-system travel devices themselves. The main part of Forbes' industry is tied to the production of trade lanes and jump gates. And if jump gates are still popular and require parts, trade lanes have recently even stopped being repaired. They do not contribute to improved security and sometimes, on the contrary, attract pirate attention. They have also fallen behind in development compared to ordinary engines. A simple engine in cruise mode is only slightly slower than the speeds achievable on trade lanes. Therefore, many promising developments in this logistics sphere have become useless. For example, near Detroit station, there is a prototype of an improved trade lane that never entered mass production due to the lack of distances requiring overcoming with high speeds.")
 
-# Верфь Филадельфия
-li_for_02_base = ""
+# Shipyard Philadelphia
+li_for_02_base = ("Shipyard Philadelphia is engaged in the production and servicing of trade ships that travel either towards New York, Berlin, or California. Additionally, the shipyard is partially used as a small trade outpost with a full range of services. The service can be so diverse that sometimes from this shipyard, one can depart on a loaded, brand-new container ship, receive an escort at the Milwaukee outpost, and immediately set off to earn their first millions.")
 
-# Станция Чикаго
-li_for_03_base = ""
+# Station Chicago
+li_for_03_base = ("Station Chicago processes deposits of radioactive waste, which exist in huge quantities in the Forbes system. Additionally, the station smelts metals of all types, thus accepting ore of all kinds. Chicago is the main supplier of ore for the Philadelphia shipyard.")
 
-# Аванпост Милуоки
-li_for_04_base = ""
+# Outpost Milwaukee
+li_for_04_base = ("Outpost Milwaukee performs border tasks in the Forbes system. This outpost checks all ships and vessels arriving in the Forbes system. Police forces monitor and ensure security in the border zone with the Sigma-13 system. Furthermore, many trade vessels can hire an escort at this outpost, which can safely accompany traders either to the Berlin system or to the California system. Usually, the route to Sigma-13 leads towards the Los Angeles trade base, and the police themselves escort traders to the New Mexico battleship.")
 
-# Станция Детройт
-li_for_05_base = ""
+# Station Detroit
+li_for_05_base = ("Station Detroit is the headquarters of the DeepSpace corporation. The station is essentially one large factory for producing trade lanes and their parts. Although DeepSpace has sold the license to produce trade lanes to many factories, it is Detroit station that produces the majority of all trade lanes used in the Sirius sector. Unfortunately, the rapid development of engines has significantly reduced the appeal of trade lanes. If in earlier times trade lanes allowed speeds four times greater than the best ship's cruise engine, now this figure is only half of the best engine. For this reason, DeepSpace began developing new, perfect, super-fast trade lanes, but here too they faced failure, as such speeds are not in demand in the inner colonies due to the not-so-great distances within systems. Therefore, the only working prototype of a modern trade lane still stands near the station as an abandoned museum exhibit. Now DeepSpace is intensively developing other means of travel between systems, such as compact engines for fighters. Currently, only battleships can afford such hyperdrives. If DeepSpace succeeds in developing such a hyperdrive, it will revolutionize the logistics system of the Sirius sector. On the other hand, this could devalue DeepSpace's current productions, as it also produces parts for jump gates, which in this case would become completely meaningless.")
 
-# Исследовательская станция Ок-Ридж
-li_for_06_base = ""
+# Research Station Oak Ridge
+li_for_06_base = ("This research station produces Liberty's most advanced developments in the field of energy systems, energy weapons, and other related technologies. The laboratory at this station conducts all possible types of research, but sometimes requires additional scientific information that can only be obtained in the farthest corners of Sirius. At the station itself, one can purchase the most progressive weapons and equipment to gain additional advantages in battle.")
 
-# База Сан-Антонио
-li_for_07_base = ""
+# Base San Antonio
+li_for_07_base = ("Base San Antonio was built as a stronghold for the Confederates on the route from planet Forbes to the Sigma-17 system. The Dixie actively attack trade convoys and knock containers out of trade vessels, then deliver the goods to this base. After that, the goods are quietly resold on the same planet Forbes, but now through smugglers. Therefore, it is more profitable for the local pirates to attack convoys heading towards planet Forbes, not back.")
 
-# База Монтгомери
-li_for_08_base = ""
+# Base Montgomery
+li_for_08_base = ("Base Montgomery was assembled by Liberty Rogues from local scrap and serves as a base for attacks on trade vessels in the Detroit station area. Detroit station produces a huge range of industrial goods, making enemy raids extremely profitable. However, the pirates have to regularly patch up their base due to frequent raids by Liberty forces.")
 
-# Фрипорт 8
-sig17_01_base = ""
+# Freeport 8
+sig17_01_base = ("Freeport 8 is located in orbit of planet Chickasaw as a replacement for the previously destroyed Freeport 7. The old freeport was on very busy trade lanes that could not be ignored. At the same time, there were many rumors about the high crime situation at Freeport 7. This, among other reasons, led the Liberty government to change the trade route and invest in building a new trade post, which, although it has Freeport status, is mostly used by official trade convoys as a point for resupply and repair. However, this base also, like Freeport 7, hosts a significant number of various smugglers, but this time the freeport has a permanent garrison of Liberty soldiers, allowing local authorities not to lose control of the situation.")
 
-# Линкор Грифон
-sig17_02_base = ""
+# Battleship Griffon
+sig17_02_base = ("Battleship Griffon provides additional protection for trade lanes in Sigma-17. Additionally, the battleship regularly monitors the cruise liner Floston. The liner can at any moment exit the tourist zone under the protection of this battleship. Therefore, not only the military is interested in having this battleship in the system. Influential structures lobbied for the project of regular military presence, and the Liberty Pentagon receives significant additional funding from this. At the same time, the battleship continues to perform its real military duties in this area and also protects against pirate attacks on routes towards the New York system.")
 
-# Аванпост Геттисберг
-sig17_03_base = ""
+# Outpost Gettysburg
+sig17_03_base = ("This outpost guards the borders of the trade lanes in Sigma-17 from pirate attacks. It is well known that in Sigma-17 there is a jump hole to the Great Omicron, from which many pirates, Corsairs, and Outcasts arrive. The protection of the Great Omicron is primarily handled by representatives of the Starline gang. Although they are official opponents of Liberty, they still secretly receive supplies from the official colonial administration. The word 'secretly' can immediately be put in quotes, as this is practically common knowledge. But the fact of such publicity does not greatly upset Liberty, as these reputational costs are not so significant, and the main enemy is the pirates, so traders quite support such a policy. Also because the Starline people operate exclusively in Outcast and Corsair territory and do not conduct terrorist operations on lanes within Liberty.")
 
-# Круизный лайнер Флостон
-sig17_04_base = ""
+# Cruise Liner Floston
+sig17_04_base = ("Floston Paradise. That's another name for this cruise liner because it is located in one of the most beautiful places in Sirius. Sigma-17 attracts a huge number of already quite jaded people. They have already heard about everything, enjoyed everything, been everywhere. And they are drawn to the three stars in this system. These people are not afraid of all the threats posed by Sigma-17 and its nebulae, as there are huge numbers of pirates in the system. The wealthy believe that Liberty's forces are sufficient to protect them from pirates, so this cruise liner has a high demand for luxury items that must be provided to all guests. Not to make them happy. But to make them leave as much of their money as possible during such a long journey.")
 
-# Форт Ред-Ривер
-sig17_05_base = ""
+# Fort Red River
+sig17_05_base = ("Fort Red River was initially built by the Confederates, then captured by the Starline gang. Subsequently, the gang cleared the base of population and left it. After that, the base was captured by Corsairs, who needed a stronghold because the Malta system gained independence and the Corsairs lost the ability to have a base in the Malta system. The Corsairs barely hold this base only through distant secret supplies from Curacao and Tortuga. Therefore, the main population of this base is Confederates and local Rogues. The Corsairs try not to expend their personnel, as they have no way to receive quick reinforcements, and the Gettysburg outpost significantly increases the security of this location against Corsair attacks.")
 
-# База Моркрофт
-sig17_06_base = ""
+# Base Morcroft
+sig17_06_base = ("Using Base Morcroft, Liberty Rogues carry out daring attacks on the trade route between Forbes and New York. This is a very busy trade route, so the profits from these attacks are unprecedented. In the old days, most of the goods from attacks were sold through Freeport 7, but after its destruction and the construction of the more authority-loyal Freeport 8, Morcroft's income significantly decreased. However, the pirates continue to sell goods at the freeport, but now through smugglers. This is much harder, so only the most valuable goods are delivered to the freeport, and all sorts of small items are transported to the Corsairs to support Fort Red River.")
+
+# Freeport 7 Ruins
+sig17_fp7 = ("These are the remains of the famous Freeport 7, from which the first war with the Nomads began. This freeport was one of the most popular in all of Sirius, where the most profitable deals were made, and freelancers instantly became millionaires. One such future millionaire was unlucky enough to arrive at the Freeport at the moment when a fugitive from planet Pygar was there, who managed to obtain an artifact belonging to the Nomads. The Nomads absolutely did not want to share the artifact, so they carried out a daring raid on the freeport and completely destroyed it. Only a few managed to survive, one of whom was Edison Trent. He lost his million but in the future gained immense popularity as a hero in the war against the Nomads that began. A simple freelancer showed valor, honesty, and loyalty to humanity, for which he received Liberty's highest award - the Lone Star Medal. Currently, Edison Trent's status is unknown, and the freeport itself remains destroyed. No one has dared to restore it due to the high pirate activity in the area. Traders preferred to reassemble the freeport in another location and change the trade route. Therefore, the old freeport is more of an object of interest for various junkers and seekers of useful debris. Despite the freeport having been destroyed a long time ago, rumors persist that there are still secret compartments within it, opening which could provide access to local arsenals that have not yet been completely looted.")
+
+# Planet Columbia
+li_col_01_base = ("There are quite a few planets in Liberty with good living conditions, but planet Columbia is not one of them. Initially, it was settled only for the construction of a small station, which became a servicing point for numerous future testing grounds on this planet. Various weapons were tested at the testing grounds. To accelerate the development of new weapons, Columbia eventually became a large colony concentrating most of Liberty's major military factories. It was on this planet that the famous Liberty linear cruisers, capable of dealing with any enemy battleship, were developed.\\n\\nIn addition to testing grounds, the planet was used as a prison for inmates. The southern part of the planet is off-limits to any visitors, as it is riddled with prison colonies of various security levels. Many of them are already abandoned, but access to them remains closed, as the prisons could be refilled with personnel and, of course, prisoners. Maintaining prisons on the planet proved unprofitable due to transportation - too much energy is required for landing and delivering prisoners to the required location. For this reason, an orbital prison, Beaumont, was organized in the Columbia system. Prisons on the planet are used either for particularly dangerous prisoners or local convicted citizens.")
+
+# Planet Houston
+li_col_02_base = ("Planet Houston contains deposits of various useful metals, such as niobium and gold. Diamonds are also mined on this planet. With Houston, Liberty gains more stable access to rare earth resources, although the cost of extraction is higher than direct extraction from space. Therefore, goods from Houston are still more expensive than similar ones from Rheinland and Kusari, but the stable possibility of resource extraction ensures Liberty's production independence from competing houses, which is especially critical in case of possible conflicts. Developments on planet Houston are conducted constantly, so the planet requires regular supplies of various components and spare parts for mining operations.\\n\\nHouston's population is primarily engaged in mining, but rumors circulate that there are distant mines on the planet that use convict labor. Thus, Liberty attempts to monetize the excessive number of Confederate prisoners in this system and also reduce the load on Beaumont prison. Maintaining colonies on Houston is more expensive than a space prison but brings greater economic benefit.")
+
+# Shipyard Portland
+li_col_03_base = ("Shipyard Portland ensures the production of vessels for trade routes from planet Columbia. It also handles repair and technical support for passing convoys. The main customers are companies providing trade convoys towards the Omega-3 system and Yokohama station. The second direction is Arendal station in Tau-26. The shipyard regularly requires various goods necessary for production needs. The main suppliers are Dallas station, which is the main industrial giant of Columbia.")
+
+# Prison Beaumont
+li_col_04_base = ("The Columbia system is characterized by an awfully high crime rate, which is why Liberty forces conducted regular raids on all surrounding locations. This did not lead to significant success, so mass raids were also carried out on the population of the stations themselves. All prisons on planet Columbia were overcrowded, and maintaining repair blocks was extremely unprofitable, leading to a whole network of hidden and overt prison facilities appearing in Liberty. Beaumont prison is the main prison in Columbia, to which inmates from California, Sigma-22, and Tau-31 are also exiled. Pirates have repeatedly attempted to disrupt the prison's operation and free prisoners, but all their attempts were unsuccessful. However, these attacks compromise the prison's security, so it requires regular supplies of various components to ensure safety, as well as parts for repairing the station's hull and maintaining the green gardens.")
+
+# Outpost New Orleans
+li_col_05_base = ("New Orleans provides access control and defense of the Columbia system from the Sigma-22 side. Due to the significant presence of the IRA in Sigma-22, this system became an excellent home for various bandits who sought to conduct raids into the Columbia system. Thanks to this outpost, travel between Columbia, California, and Warwick has become significantly safer, primarily because transports can receive additional escort at any time if necessary.")
+
+# Station Dallas
+li_col_06_base = ("Station Dallas is the main industrial giant of Columbia. This station houses all harmful production that could not be placed directly on planet Columbia. It handles preparatory processing of components for goods production on the planet, produces a huge range of goods, alloys, and steels without which mass production of trade vessels and battleships would be impossible.")
+
+# Trade Base Seattle
+li_col_07_base = ("Trade Base Seattle is the main intermediate storage on the trade route from Warwick to New York. This storage accumulates many goods from Avalon, Warwick, Honshu, and Yokohama, which are needed in large quantities in the rest of Liberty's systems. The main task of the base is the timely unloading and loading of arriving container ships, which try not to fly to the distant reaches of Liberty and leave goods right at this base, after which they return with local goods to their original departure point. For example, a significant number of ships depart with industrial goods to Kusari. At this base, traders can not only receive a full range of services but also the opportunity to make new connections with traders from other planets who are resting at this base awaiting further departures.")
+
+# Base Westport
+li_col_08_base = ("Westport is an operational base for the Hackers in the Columbia system. From this base, they conduct their pirate raids on trade routes leading from the Sigma-22 system to Columbia. This is a sufficiently saturated trade route, so the raids have significant effectiveness. Many pirates have amassed fortunes from attacks on local caravans, and many smugglers have amassed no lesser fortunes from selling goods at nearby trade bases.")
+
+# Base Palmito
+li_col_09_base = ("Base Palmito was created by the Confederates as a main base where they could hide from anti-piracy raids in Columbia. After the civil war, Liberty forces conducted cleanups of Dixie cells throughout the system, forcing the Confederates to take refuge in such a secure base. At the same time, the pirates devised a whole system of ciphers to identify double agents from the special services. This allowed the Confederate cell to remain combat-ready and self-sufficient. Currently, the base is used for terrorist attacks along the route from Houston and Seattle towards Tau-31 and New York.")
+
+# Freeport 1 (New Hope) Ruins
+li_col_new_hope = ("Freeport 1 was an active trade base of a neutral nature, providing an alternative trade route between Dallas and Houston. It was one of the first stations of the New Hope class, but this base did not enter the series; the second representative of the series became the improved Seattle base. The reason for halting the series was an armed uprising organized by the Confederates at Freeport 1. At some point, the population of Columbia was alarmed by political changes in Liberty, so they wanted to secede and establish their own model of confederate rule. Despite significant support among Liberty's population, the main industrial class did not side with the Confederates, so the Dixie had to rely solely on the support of the trade elite and some military. As a result of the uprising, the Confederates managed to capture only a small part of the stations in Columbia, Sigma-22, and Tau-31. The counterattack by Liberty forces was quite successful, and Liberty forces managed to cut off the headquarters at Freeport 1 from the main Confederate forces. After that, the organized resistance of the new state was suppressed, garrisons eliminated. The Confederate cell in Sigma-22 held out the longest, but it was suppressed under the pretext of war with Irish separatists. Freeport 1 itself was much better defended, but this only allowed it to meet its fate later. The presence of an asteroid field improved the freeport's defense, but Liberty brought an entire fleet and, using heavy linear cruisers, managed to suppress the defense systems and completely destroy the freeport. All remnants of the Confederate garrison had already been withdrawn to Palmito or were eliminated or arrested, so the main blow fell on the freeport's civilian population, whom Liberty simply classified as smugglers. After that, no one else planned to join the Confederates, and those who tried quickly became inmates of the numerous prisons in both Columbia and New York. The prison in New York, although a quite terrible place, would be an even worse option to end up doing hard labor in Houston or Pittsburgh. Convicts were usually sent to such work on a one-way trip. Information about those released simply does not exist.\\n\\nNow Freeport 1 consists merely of debris from the potential of Confederate forces. The remnants of the Confederates settled at the mysterious Richmond base. Meanwhile, some nodes of Freeport 1 are technically still functioning. Perhaps with their help, one can find something to profit from in the remains of this base.")
+
+# Station Colorado
+tau31_01_base = ("Station Colorado handles the full cycle of gas processing in the Tau-31 system and is also a strong outpost for Liberty forces on the trade route towards Bretonia and the Cambridge system. This station has already extracted the most valuable gas from its location zone, so it requires loading with liquefied gas from nearby gas installations to ultimately produce full-fledged, highly efficient hydrogen fuel.")
+
+# Battleship Louisiana
+tau31_02_base = ("Battleship Louisiana proudly carries out its duty to protect trade routes leading to Columbia from encroachments by various rabble. The initial task of this battleship was to support research at Massachusetts station. But after the unsuccessful conclusion of those experiments, the battleship's combat mission was changed. Therefore, it currently performs only a military function to protect gas miners located throughout the Tau-31 system.")
+
+# Trade Base Florida
+tau31_03_base = ("Trade Base Florida is the main intermediate station on the trade route from Bretonia towards New York. At this base, traders arriving from the Tau-31 system, bringing goods from the Cambridge system, leave their goods. Subsequently, these goods are transferred to transports heading towards Columbia or New York. This base also combines the functions of a police outpost, thus ensuring border defense of the Tau-31 system and border control of all arriving ships and vessels. The base also supports the trade lanes of Tau-31. At this base, one can not only find various traders resting after long flights but also familiarize themselves with their goods.")
+
+# Base Tubac
+tau31_04_base = ("Base Tubac is engaged in producing hydrogen fuel for pirate needs. Liberty Rogues use this base as a stronghold for attacks on trade routes from Columbia towards the gas miner Colorado.")
+
+# Base Corinth
+tau31_05_base = ("The Confederates use Tubac to organize attacks on the lucrative trade route from Bretonia to New York. This is a real center of the local smuggling industry because the base actively sells stolen or illicitly produced goods through its people at Colorado station.")
+
+tau31_scient = ("Research station Massachusetts was studying alien cells of the Procyon-4 class. In the Tau-31 system, there are fields of dense gas clouds, and in one of them, an unprecedented concentration of alien cells was discovered. It was decided to build a huge research station capable of conducting the full spectrum of analysis of these organisms. All research proceeded quite successfully, so Liberty continuously expanded the program's funding.\\n\\nTo accelerate the work, it was decided to study distant icy asteroids from the far sector of the system. The icy asteroids were delivered, and indeed something living was discovered in them. Scientists began conducting experiments and managed to combine Procyon-4 with the organisms found in the icy asteroids. But this led to terrible results. The research went out of control, and strange signals began coming from the station, as if the resulting creature began attacking people, transforming into local pets, and rapidly spreading throughout the entire station. This new alien life form was structurally different from the Nomads but posed a significant threat, so it was imperative that it not spread beyond the station.\\n\\nThanks to the efforts of a scientist named James MacReady, the station was not only powered down but also activated a self-destruct protocol. All station personnel were killed, and the remaining oxygen was ignited to burn away all traces of life on the station. Currently, the station is completely abandoned, and access to it is restricted. However, there is still a possibility to access some docking modules to study the station's remains. Fortunately, only robots remain on the station, so visiting these sealed blocks poses no threat.")
 
 
-
-sig17_fp7 = ("")
-
-# Планета Колумбия
-li_col_01_base = ""
-
-# Планета Хьюстон
-li_col_02_base = ""
-
-# Верфь Портленд
-li_col_03_base = ""
-
-# Тюрьма Бомонт
-li_col_04_base = ""
-
-# Аванпост Новый Орлеан
-li_col_05_base = ""
-
-# Станция Даллас
-li_col_06_base = ""
-
-# Торговая база Сиетл
-li_col_07_base = ""
-
-# База Вестпорт
-li_col_08_base = ""
-
-# База Пальмито
-li_col_09_base = ""
-
-# Станция Колорадо
-tau31_01_base = ""
-
-# Линкор Луизиана
-tau31_02_base = ""
-
-# Торговая база Флорида
-tau31_03_base = ""
-
-# База Тубак
-tau31_04_base = ""
-
-# База Коринт
-tau31_05_base = ""
 
 # Планета Уорик
 br_wrw_01_base = ""

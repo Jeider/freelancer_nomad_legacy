@@ -29,6 +29,8 @@ from templates.dockable import police
 from templates.dockable import pirate
 from templates.dockable import station_debris
 
+from text.content import dockable_info
+
 from text.strings import MultiString as MS
 
 
@@ -400,6 +402,7 @@ class Sig17FreeportSevenRuins(Sig17Member, main_objects.StationRuins):
     SPACE_OBJECT_TEMPLATE = station_debris.Freeport7Debris
 
     RU_NAME = MS('Фрипорт 7', 'Freeport 7')
+    RU_FIRST_DESCRIPTION = dockable_info.sig17_fp7
 
 
 class Sig17FreeportSevenRuins1(Sig17Member, main_objects.HackableStation):

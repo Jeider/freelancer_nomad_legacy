@@ -263,8 +263,6 @@ class DynamicSystemObject(SystemObject):
         return self.system.template.get_item_archetype(self.get_full_dynamic_alias())
 
 
-
-
 class NamedDynamicSystemObject(DynamicSystemObject):
     ABSTRACT = True
 

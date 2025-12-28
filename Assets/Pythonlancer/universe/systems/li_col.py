@@ -33,6 +33,8 @@ from templates.dockable import columbia_new_hope
 from templates.dockable import junker
 from templates.dockable import station_debris
 
+from text.content import dockable_info
+
 from text.strings import MultiString as MS
 
 
@@ -674,6 +676,7 @@ class ColOldTradingBaseRuins(ColMember, main_objects.StationRuins):
     REL = LEFT
 
     RU_NAME = MS('Фрипорт 1', "Freeport 1")
+    RU_FIRST_DESCRIPTION = dockable_info.li_col_new_hope
 
     SPACE_OBJECT_TEMPLATE = station_debris.ColumbiaDebris
     ASTEROID_ZONES = [

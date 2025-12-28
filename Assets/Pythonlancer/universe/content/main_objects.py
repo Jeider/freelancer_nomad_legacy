@@ -450,6 +450,7 @@ class NamedObject(StaticObject):
     LAZY_NAME = False
 
     RU_NAME = None
+    RU_TYPE = None
     RU_FIRST_DESCRIPTION = None
     RU_SECOND_DESCRIPTION = None
     DOUBLE_INFO = False
@@ -470,10 +471,23 @@ class NamedObject(StaticObject):
         return self.DOUBLE_INFO is not False
 
     def get_first_description(self):
+        ru = []
+        en = []
+
+        if self.RU_TYPE:
+            ru.append(f'Тип: {self.RU_TYPE.get_ru()}')
+            en.append(f'Type: {self.RU_TYPE.get_en()}')
+
         if self.RU_FIRST_DESCRIPTION:
+            ru.append("\\n")
+            ru.append(self.RU_FIRST_DESCRIPTION.get_ru())
+            en.append("\\n")
+            en.append(self.RU_FIRST_DESCRIPTION.get_en())
+
+        if len(ru) > 0:
             return MS(
-                "\\n" + self.RU_FIRST_DESCRIPTION.get_ru(),
-                "\\n" + self.RU_FIRST_DESCRIPTION.get_en()
+                "\\n"+"\\n".join(ru),
+                "\\n"+"\\n".join(en)
             )
         return MS(' ', ' ')  # empty
 
@@ -806,6 +820,7 @@ class Sun(GenericSphere, NamedObject):
 
 class SunSmall(Sun):
     ARCHETYPE = 'sun_1000'
+    RU_TYPE = MS('Звезда', 'Star')
 
     ATMOSHPERE_RANGE = 5000
     DEATH_ZONE_SIZE = 4000
@@ -816,6 +831,7 @@ class SunSmall(Sun):
 
 class Planet(GenericSphere, NamedObject):
     ALIAS = 'planet'
+    RU_TYPE = MS('Планета', 'Planet')
 
     PLANET_RADIUSES = (1500, 2000, 2500, 3000, 4000, 5000)
     PLANET_CIRCLE_ARCHETYPE_TEMPLATE = 'planet_{radius}_circle'
@@ -979,6 +995,7 @@ parent = {parent_planet}'''
 
 class NotDockableObject(StaticObject):
     DEFENCE_LEVEL = None
+    RU_TYPE = MS('Нестыкуемый объект', 'Not dockable object')
 
     def get_root_props(self):
         return merge_props(self.get_simple_root_props())
@@ -993,6 +1010,7 @@ class NotDockableObject(StaticObject):
 
 class StationRuins(NotDockableObject, NamedObject):
     RU_FIRST_DESCRIPTION = mineable_info.STATION_RUINS
+    RU_TYPE = MS('Руины станции', 'Ruins of station')
 
 
 class DockableObject(NamedObject):
@@ -1014,6 +1032,7 @@ class DockableObject(NamedObject):
     SELL_AMMO = True
     DOCK_ONLY = False
     MSG_PREFIX = None
+    RU_TYPE = MS('Стыкуемый объект', 'Dockable object')
 
     AUTOSAVE_FORBIDDEN = False
 
@@ -1450,6 +1469,7 @@ class Dockring(DockableObject):
     REL_APPEND = 3000
     DOCK_ONLY = True
     DOUBLE_INFO = True
+    RU_TYPE = MS('Стыковочное кольцо', 'Docking ring')
 
     DOCKING_FIXTURE_TEMPLATE = '''[Object]
 nickname = {parent_object}_docking_fixture_1
@@ -1550,6 +1570,7 @@ class LargePlanetDockring(Dockring):
     BASE_PROPS = meta.LargePlanet()
     MISC_EQUIP_GEN_TYPE = GEN_PIRATE
     EQUIP_SET = markets.MainPlanetSet
+    RU_TYPE = MS('Многонаселённая планета', 'High-populated planet')
 
     TRADE_POINTS_OFFSETS = [
         [500, 200, 0],
@@ -1568,6 +1589,7 @@ class MiningPlanetDockring(Dockring):
     BASE_PROPS = meta.MiningPlanet()
     EQUIP_SET = markets.CivPlanetSet
     MISC_EQUIP_GEN_TYPE = GEN_CIV
+    RU_TYPE = MS('Добывающая планета', 'Mining planet')
 
     TRADE_POINTS_OFFSETS = [
         [500, 200, 0],
@@ -1582,6 +1604,7 @@ class ResortPlanetDockring(Dockring):
     BASE_PROPS = meta.ResortPlanet()
     EQUIP_SET = markets.CivPlanetSet
     MISC_EQUIP_GEN_TYPE = GEN_CIV
+    RU_TYPE = MS('Курорт', 'Resort')
 
     TRADE_POINTS_OFFSETS = [
         [-500, 200, 0],
@@ -1594,6 +1617,7 @@ class WaterPlanetDockring(Dockring):
     BASE_PROPS = meta.WaterPlanet()
     EQUIP_SET = markets.CivPlanetSet
     MISC_EQUIP_GEN_TYPE = GEN_CIV
+    RU_TYPE = MS('Планета с водяными платформами', 'Planet with water platforms')
 
     TRADE_POINTS_OFFSETS = [
         [500, 200, 0],
@@ -1607,29 +1631,35 @@ class Station(DockableObject):
     BASE_PROPS = meta.SpaceStation()
     EQUIP_SET = markets.StationSet
     MISC_EQUIP_GEN_TYPE = GEN_CIV
+    RU_TYPE = MS('Станция', 'Station')
 
 
 class LargeStation(Station):
     EQUIP_SET = markets.LargeStationSet
     MISC_EQUIP_GEN_TYPE = GEN_MAIN
+    RU_TYPE = MS('Большая станция', 'Large station')
 
 
 class TradelaneSupportStation(Station):
     BASE_PROPS = meta.TradelaneSupportStation()
+    RU_TYPE = MS('Станция поддержки торговых путей', 'Tradelane support station')
 
 
 class ResearchStation(Station):
     BASE_PROPS = meta.Research()
     EQUIP_SET = markets.ResearchSet
     MISC_EQUIP_GEN_TYPE = GEN_CIV
+    RU_TYPE = MS('Исследовательская станция', 'Research station')
 
 
 class GasMiningStation(Station):
     BASE_PROPS = meta.GasMiningStation()
+    RU_TYPE = MS('Газодобывающая станция', 'Gas mining station')
 
 
 class RoidMinerStation(Station):
     BASE_PROPS = meta.RoidMiningStation()
+    RU_TYPE = MS('Станция обеспечения добычи руды', 'Roid mining support station')
 
 
 class AbandonedAsteroid(DockableObject):
@@ -1642,6 +1672,7 @@ class AbandonedAsteroid(DockableObject):
     RU_FIRST_DESCRIPTION = mineable_info.ASTEROID_ROCK
     FORCE_FACTION = faction.Unknown
     DEFENCE_LEVEL = None
+    RU_TYPE = MS('Заброшенная астероидная база', 'Abandoned asteroid base')
 
 
 class AbandonedAsteroidIce(DockableObject):
@@ -1654,6 +1685,7 @@ class AbandonedAsteroidIce(DockableObject):
     RU_FIRST_DESCRIPTION = mineable_info.ASTEROID_ICE
     FORCE_FACTION = faction.Unknown
     DEFENCE_LEVEL = None
+    RU_TYPE = MS('Заброшенная астероидная база', 'Abandoned asteroid base')
 
 
 class GasMinerOld(Station):
@@ -1664,6 +1696,7 @@ class GasMinerOld(Station):
     KEY_COLLECT_FX = nn.FX_GOT_KEY_GAS_MINER
     RU_FIRST_DESCRIPTION = mineable_info.GAS_MINER_OLD
     DEFENCE_LEVEL = None
+    RU_TYPE = MS('Газодобытчик', 'Gas Miner')
 
     CARGO_PODS_POSITION_Y_DRIFT = -60
 
@@ -1699,6 +1732,7 @@ class SolarPlant(Station):
     FORCE_FACTION = faction.Unknown
     AUDIO_PREFIX = SpaceVoice.SOLAR_PLANT
     DEFENCE_LEVEL = None
+    RU_TYPE = MS('Солнечный генератор', 'Solar Plant')
 
 
 class RoidMiner(Station):
@@ -1711,6 +1745,7 @@ class RoidMiner(Station):
     RU_FIRST_DESCRIPTION = mineable_info.ROID_MINER
     AUDIO_PREFIX = SpaceVoice.ROID_MINER
     DEFENCE_LEVEL = None
+    RU_TYPE = MS('Рудодобывающее судно', 'Roid Mining Vessel')
 
     ASTEROID_OFFSET = (0, 5, -235)
     ASTEROID_ROTATE = (145, -30, 34)
@@ -1775,6 +1810,7 @@ class DebrisManufactoring(Station):
     KEY_COLLECT_FX = nn.FX_GOT_KEY_FACTORY
     RU_FIRST_DESCRIPTION = mineable_info.DEBRIS_MANUFACTORING
     DEFENCE_LEVEL = None
+    RU_TYPE = MS('Промышленная платформа', 'Manufactoring platform')
 
 
 class Outpost(DockableObject):
@@ -1782,6 +1818,7 @@ class Outpost(DockableObject):
     BASE_PROPS = meta.Outpost()
     EQUIP_SET = markets.PoliceOutpostSet
     MISC_EQUIP_GEN_TYPE = GEN_PIRATE
+    RU_TYPE = MS('Аванпост', 'Outpost')
 
 
 class Prison(DockableObject):
@@ -1789,6 +1826,7 @@ class Prison(DockableObject):
     BASE_PROPS = meta.Prison()
     EQUIP_SET = markets.PrisonSet
     MISC_EQUIP_GEN_TYPE = GEN_PIRATE
+    RU_TYPE = MS('Тюрьма', 'Prison')
 
 
 class Shipyard(DockableObject):
@@ -1796,11 +1834,13 @@ class Shipyard(DockableObject):
     BASE_PROPS = meta.Shipyard()
     EQUIP_SET = markets.ShipyardSet
     MISC_EQUIP_GEN_TYPE = GEN_PIRATE
+    RU_TYPE = MS('Верфь', 'Shipyard')
 
 
 class LargeShipyard(Shipyard):
     EQUIP_SET = markets.LargeStationSet
     MISC_EQUIP_GEN_TYPE = GEN_PIRATE
+    RU_TYPE = MS('Большая верфь', 'Large shipyard')
 
 
 class TradingBase(DockableObject):
@@ -1808,6 +1848,7 @@ class TradingBase(DockableObject):
     BASE_PROPS = meta.TradingBase()
     EQUIP_SET = markets.StationSet
     MISC_EQUIP_GEN_TYPE = GEN_CIV
+    RU_TYPE = MS('Торгоговая база', 'Trading base')
 
     TRADE_POINT_Y = -500
     TRADE_POINT_Z = 1000
@@ -1826,6 +1867,7 @@ class Battleship(DockableObject):
     BASE_PROPS = meta.Battleship()
     EQUIP_SET = markets.BattleshipSet
     MISC_EQUIP_GEN_TYPE = GEN_MAIN
+    RU_TYPE = MS('Линкор', 'Battleship')
 
 
 class RheinlandBattleship(Battleship):
@@ -1854,6 +1896,7 @@ class LuxuryLiner(Battleship):
     BASE_PROPS = meta.LuxuryLiner()
     EQUIP_SET = markets.StationSet
     MISC_EQUIP_GEN_TYPE = GEN_CIV
+    RU_TYPE = MS('Круизный лайнер', 'Luxury Liner')
 
 
 class Freeport(DockableObject):
@@ -1861,6 +1904,7 @@ class Freeport(DockableObject):
     BASE_PROPS = meta.Freeport()
     EQUIP_SET = markets.StationSet
     MISC_EQUIP_GEN_TYPE = GEN_PIRATE
+    RU_TYPE = MS('Свободный порт', 'Freeport')
 
 
 class JunkerBase(DockableObject):
@@ -1868,24 +1912,29 @@ class JunkerBase(DockableObject):
     BASE_PROPS = meta.JunkerBase()
     EQUIP_SET = markets.PirateSet
     MISC_EQUIP_GEN_TYPE = GEN_PIRATE
+    RU_TYPE = MS('База, собранная из мусора', 'Base, created by junk')
 
 
 class PirateBase(DockableObject):
     ALIAS = 'pirate'
     EQUIP_SET = markets.PirateSet
     MISC_EQUIP_GEN_TYPE = GEN_PIRATE
+    RU_TYPE = MS('Пиратская база', 'Pirate base')
 
 
 class PirateStation(PirateBase):
     BASE_PROPS = meta.PirateStation()
+    RU_TYPE = MS('Пиратская станция', 'Pirate station')
 
 
 class PirateGasMiner(PirateBase):
     BASE_PROPS = meta.PirateGasMiner()
+    RU_TYPE = MS('Пиратский газодобытчик', 'Pirate gas miner')
 
 
 class PirateAsteroid(PirateBase):
     BASE_PROPS = meta.PirateAsteroid()
+    RU_TYPE = MS('Пиратская астероидная база', 'Pirate asteroid base')
 
 
 class Refinery(DockableObject):
@@ -1893,6 +1942,7 @@ class Refinery(DockableObject):
     BASE_PROPS = meta.Refinery()
     EQUIP_SET = markets.StationSet
     MISC_EQUIP_GEN_TYPE = GEN_CIV
+    RU_TYPE = MS('Мусороперерабатывающая станция', 'Refinery station')
 
 
 class Hackable(DockableObject):
@@ -1905,6 +1955,7 @@ class Hackable(DockableObject):
     SELL_AMMO = False
     EQUIP_SET = None
     FORCE_FACTION = faction.Unknown
+    RU_TYPE = MS('Заблокированный объект', 'Locked object')
 
     def get_position(self):
         if self.RELATED_OBJECT:
@@ -1972,24 +2023,28 @@ class HackableStation(Hackable):
     AUDIO_PREFIX = SpaceVoice.STATION
     KEY_COLLECT_FX = nn.FX_GOT_KEY_STATION
     RU_FIRST_DESCRIPTION = mineable_info.HACKABLE_STATION
+    RU_TYPE = MS('Заблокированный модуль станции', 'Locked station module')
 
 
 class HackableSolarPlant(Hackable):
     AUDIO_PREFIX = SpaceVoice.SOLAR_PLANT
     KEY_COLLECT_FX = nn.FX_GOT_KEY_STATION
     RU_FIRST_DESCRIPTION = mineable_info.HACKABLE_SOLAR_PLANT
+    RU_TYPE = MS('Заблокированный солнечный генератор', 'Locked solar plant')
 
 
 class HackableBattleship(Hackable):
     AUDIO_PREFIX = SpaceVoice.BATTLESHIP
     KEY_COLLECT_FX = nn.FX_GOT_KEY_BATTLESHIP
     RU_FIRST_DESCRIPTION = mineable_info.BATTLESHIP_HACKABLE
+    RU_TYPE = MS('Заблокированный линкор', 'Locked battleship')
 
 
 class HackableLuxury(Hackable):
     AUDIO_PREFIX = SpaceVoice.LINER
     KEY_COLLECT_FX = nn.FX_GOT_KEY_BATTLESHIP
     RU_FIRST_DESCRIPTION = mineable_info.HACKABLE_LUXURY
+    RU_TYPE = MS('Заблокированный лайнер', 'Locked liner')
 
 
 class LockedBattleship(Station):
@@ -2002,6 +2057,7 @@ class LockedBattleship(Station):
     KEY_COLLECT_FX = nn.FX_GOT_KEY_BATTLESHIP
     RU_FIRST_DESCRIPTION = mineable_info.BATTLESHIP_LOCKED
     FORCE_FACTION = faction.Unknown
+    RU_TYPE = MS('Заминированный линкор', 'Battleship, locked by mines')
 
 
 class LockedLuxury(Station):
@@ -2016,6 +2072,7 @@ class LockedLuxury(Station):
     FORCE_FACTION = faction.Unknown
     EQUIP_SET = None
     SELL_AMMO = False
+    RU_TYPE = MS('Заминированный лайнер', 'Liner, locked by mines')
 
 
 class PatrolObjective(SystemObject):

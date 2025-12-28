@@ -10,7 +10,7 @@ class LauncherText:
         ('Use ReShade:', 'Использовать ReShade:'),
         ('Enables additional post-processed effects, editable right from game. Requires dxwrapper to be active',
          'Включает эффекты пост-процессинга, которые можно настроить прямо в игре. Требует включенного dxwrapper'),
-        ('WARNING! Not recommended in windowed mode', 'ВНИМАНИЕ! Не рекомендуется в оконном режиме'),
+        ('WARNING! Only for fullscreen mode! Because it can broke you mouse crosshair', 'ВНИМАНИЕ! Работает только в полноэкранном режиме, потому что может сломать работу курсора вашей мыши'),
 
         (
             'This is fan project. You can play it for free. If you want to support the developer, you can send donate or subscribe to project by Boosty.',
@@ -38,6 +38,8 @@ class LauncherText:
         ('Cannot change powerplants and engines', 'Невозможно менять генераторы и двигатели'),
         ('Simple difficulty', 'Простая сложность'),
         ('For game journalists', 'Для игровых журналистов'),
+        ('Also you can use it, when you get stuck in mission 6 or mission 9. It changes some game rules and simplify it',
+         'Так же вы можете использовать эту сложность, если застряли в некоторых местах миссии 6 и миссии 9. Сложность меняет некоторые правила игры и упрощает их'),
 
         ('Default difficulty', 'Стандартная сложность'),
         ('Main features are available', 'Доступны все основные возможности игры'),

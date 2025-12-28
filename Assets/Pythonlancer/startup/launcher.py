@@ -125,7 +125,7 @@ class Api:
             dyn_config_kwargs['difficulty_hard'] = True
 
         config = StartupConfig(screen_meta=meta, resolution=unpacked_resolution, fovx=None, fovy=fovy,
-                               dxwrapper=dxwrapper, reshade=reshade,
+                               dxwrapper=dxwrapper, reshade=False if windowed else reshade,
                                front_light=front_light, contrail=trail,
                                player_body=player_body, player_commhelmet=player_commhelmet,
                                **dyn_config_kwargs)

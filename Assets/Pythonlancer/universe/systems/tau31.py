@@ -25,6 +25,8 @@ from templates.dockable import gas_miner
 from templates.dockable import bounty_hunter
 from templates.dockable import upsilon_gasinside
 
+from text.content import dockable_info
+
 from text.strings import MultiString as MS
 
 
@@ -535,6 +537,7 @@ class Tau31OldResearchRuins(Tau31Member, main_objects.StationRuins):
     NEBULA_ZONES = [Tau31Nebula]
 
     RU_NAME = MS('Станция Массачусетс', 'Massachusetts Station')
+    RU_FIRST_DESCRIPTION = dockable_info.tau31_scient
 
 
 class Tau31OldResearchRuinsSuprisePoint1(Tau31Member, main_objects.HackableStation):

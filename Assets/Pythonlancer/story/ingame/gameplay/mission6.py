@@ -84,7 +84,7 @@ class Misson06(ingame_mission.IngameMission):
     JINJA_TEMPLATE = 'missions/m06/m06.ini'
     FOLDER = 'M06'
     FILE = 'm06'
-    START_SAVE_ID = 32700
+    START_SAVE_ID = 32600
     START_SAVE_RU_NAME = MS('Нью-Йорк, Планета Питтсбург', 'New York, Planet Pittsburgh')
     STATIC_NPCSHIPS = NPCSHIPS
     SCRIPT_INDEX = 6
@@ -197,7 +197,8 @@ class Misson06(ingame_mission.IngameMission):
                     "Analytics' report about Nomad Zone:",
 
                     "This zone have tunnel at the bottom side. This is tunnel to energy room. You can broke power generator "
-                    "and extract danger energy beam. This beam can damage nomad kernel and nomad fighters. ",
+                    "and extract danger energy beam. This beam can damage nomad kernel and nomad fighters. But be warned - this power beam "
+                    "can destroy your ship, you must leave this chamber soon as possible.",
 
                     "Load this strategy in your NeuralNet?"
                 ]),
@@ -211,10 +212,15 @@ class Misson06(ingame_mission.IngameMission):
 
                     'Доклад аналитиков про ядро Сферы:',
 
+                    'В районе ядра расположены небольшие базы, на которых может укрыться Роттерман, а так же на них могут находиться ассистенты профессора, которые '
+                    'могут вызвать сигнал о подмоге. Ваша задача - или уничтожить Роттермана вручную, а потом перехватить ассистента. Или вы можете '
+                    'заблокировать двери баз, чтобы ни Роттерман ни ассистенты не могли вылететь. При этом Роттерман в любом случае попытается покинуть '
+
                     'В районе ядра расположены небольше лаборатории, на которых может укрыться Роттерман. Рекомендуется '
                     'предварительно взломать и заблокировать их двери. Сенсоры кораблей ученых достаточно слабые, поэтому '
                     'вы можете спокойно лететь вдали от них при этом не будучи замеченным. На ближнем аванпосте есть датчики слежения, '
-                    'поэтому вы должны взломать его последним, так как будет немедленно обнаружены.',
+                    'поэтому вы должны взломать его последним, так как будет немедленно обнаружены. После этого вы должны незамедлительно атаковать '
+                    'Роттермана',
 
                     'Загрузить стратегию в нейросеть?',
                 ],[
@@ -223,10 +229,11 @@ class Misson06(ingame_mission.IngameMission):
 
                     "Analytics's report about the core:",
 
-                    "The are two small laboratories inside the core. Reitherman can dock and hide on the one of them. "
-                    "Recommended to hack and block the doors of the both laboratories. Sensors of scient ships is weak. So, "
-                    "you can easily fly, but keep far range to be not discovered. "
-                    "Near outpost have better sensors. You must hack and deactivate it last, because you will be immediately detected."
+                    "Near the core area there are small laboratories where Rottman may be hiding. "
+                    "It is recommended to first hack and lock their doors. The sensors on the scientists' "
+                    "ships are quite weak, so you can safely fly at a distance from them without being detected. "
+                    "The nearest outpost has tracking sensors, so you should hack it last, as you will be immediately "
+                    "detected. After that, you must immediately attack Rottman.",
                     
                     "Load this strategy in your NeuralNet?"
                 ]),
@@ -259,7 +266,7 @@ class Misson06(ingame_mission.IngameMission):
                     'Enemy ships attack Missouri by heavy torpedoes',
                     'You must attack torpedoes by your guns. You also can use any missiles. '
                     'Also you can use CD missiles. '
-                    'Torpedoes can detonate by missiles.',
+                    'Torpedoes can detonate by any missile.',
                     'Do not try to detonate torpedoes by your shield. You will be immediately destroyed!'
                 ]),
             ),
