@@ -1,3 +1,20 @@
+SIRIUS_A = ("SIRIUS A (HD 48915, α Canis Majoris) — spectral class A1V, mass 2.063±0.023 M☉, radius 1.711 R☉, luminosity 25.4 L☉. Main sequence, age ~200-300 million years. Surface temperature 9,940 K provides peak emission in the blue-violet range (λmax≈292 nm), creating a hard photon background in the inner system.\\n\\n"
+            "Atmosphere shows anomalies: metallicity [Fe/H] = +0.50±0.03, excess of heavy elements (especially iron and nickel) 3.2 times solar, indicating past material accretion. Micropulsations with period 22.4±0.5 min (p-modes) and amplitude ∆L/L≈1.5×10⁻⁶.\\n\\n"
+            "Chromospheric activity: Ca II K-line with variable intensity, coronal temperature Tcor≈1.6×10⁶ K. Flare activity class F3.8 occurs every 47±12 standard hours, with energy release up to 10²⁶ J in the X-ray range.\\n\\n"
+            "Gravity well creates a Hill sphere radius of 4.7 AU, where tidal influence of the star dominates. Radiation belts (analogous to Van Allen belts) extend to 0.3 AU, with maximum proton density 5×10⁸ cm⁻³ at energies 10-100 MeV.\\n\\n"
+            "Tidal interaction with Sirius B causes quasi-periodic luminosity oscillations with amplitude 0.01% (period 50.1 years). Asteroseismic data indicate a toroidal magnetic field ~0.3 T in the convective zone. Rotational velocity: v_eq = 16 km/s, period Prot = 5.5 days.\\n\\n"
+            "Protoplanetary disk completely dissipated ~150 million years ago, but a residual asteroid belt (analogous to the Kuiper belt) persists at 40-60 AU, consisting predominantly of silicates with albedo 0.12±0.03. The dust component of the disk has temperature 55 K and mass ~0.01 M⊕.\\n\\n"
+            "Cosmogonic models suggest formation in the Scorpius-Centaurus OB association, migration to current position over 80 million years. Anomalous chemical composition is explained by absorption of protoplanetary material during the T Tauri phase.")
+
+SIRIUS_B = ("SIRIUS B (α Canis Majoris B, WD 0642-166) — white dwarf of spectral class DA2, mass 1.018±0.011 M☉, radius 0.0084±0.00025 R☉ (≈5,800 km), luminosity 0.056 L☉. Remnant core of a main sequence star that completed its evolution ~120 million years ago. Surface temperature 25,200±300 K provides peak emission in the far ultraviolet (λmax≈115 nm).\\n\\n"
+            "Atmospheric composition: hydrogen shell thickness ≈10⁻¹⁵ M☉ over a degenerate carbon-oxygen core (C/O ≈ 60/40 by mass). Atmospheric metallicity reduced ([Fe/H] ≈ -2.0) due to gravitational settling of heavy elements. Gravitational settling rate: ~10⁻¹⁶ M☉/year.\\n\\n"
+            "Structure: degenerate electron gas with core density ρcore ≈ 2×10⁹ g/cm³, pressure ~10²² Pa. Crust consists of crystallized carbon (diamond) ≈50 km thick. Cooling follows Mestel track (τcool ≈ 10⁹ years), current age as a white dwarf ≈1.2×10⁸ years.\\n\\n"
+            "Magnetic field: dipole component Bpole ≈ 0.23 T, inclination of axis to rotation axis ≈15°. Sinusoidal field variations with period 2.64 h. Pinch effect in atmosphere creates local magnetic anomalies up to 10³ T.\\n\\n"
+            "Orbital parameters in system: semi-major axis a = 19.8 AU, eccentricity e = 0.5923±0.0019, orbital period Porb = 50.1284±0.0043 years. Apsidal precession: 1.62° per orbit, relativistic contribution ≈65%. Tidal forces heat Sirius A's surface with power ≈10²⁰ W.\\n\\n"
+            "X-ray emission: soft X-ray (0.1-2.4 keV) flux Fx ≈ 3×10⁻¹³ erg/cm²/s, due to accretion of interstellar material at rate ≈10¹⁴ g/s. Hard X-ray emission (>10 keV) absent, indicating complete cessation of thermonuclear reactions.\\n\\n"
+            "Asteroseismic data: non-radial g-modes with periods 150-600 s, excited by gravitational interaction with Sirius A. Pulsation frequency increases by Δν ≈ 2.7 μHz/year due to cooling.\\n\\n"
+            "Evolutionary forecast: further cooling to temperature ≈5,000 K over 2 billion years, transition to DC class. Complete core crystallization in ≈7×10⁹ years with release of latent heat of fusion (≈10⁴³ erg).")
+
 # Planet Nortorf
 rh_mnh_01_base = ("An intermediate base on the route from Honshu to Bismarck. Primarily serves a logistical function as a servicing zone for transports. No significant mining operations are conducted on the planet itself. Mineral extraction is carried out at minimal intensity. The floating platforms are mainly used for resupply. Colonists are primarily engaged in servicing trade ships. Rheinland continues to support this planet primarily due to the destruction of the Munich station, which was the main trade hub in this system. Due to the lack of official status, the planet Nortorf often hosts various bandits and pirates who use it as a freeport. Additionally, the inhabitants of Nortorf continue to scavenge scrap metal, primarily from the destroyed Munich station. This is a quite profitable activity since no one monitors the station. Rumors say that if one could hack certain segments of the station, they might even access the remaining working compartments and storerooms of Munich.")
 
@@ -378,6 +395,10 @@ br_cam_06_base = ""
 
 # Станция Гринвич
 br_cam_07_base = ""
+
+br_mercia = ''
+
+br_oxford = ''
 
 # База Спалдинг
 br_cam_08_base = ""

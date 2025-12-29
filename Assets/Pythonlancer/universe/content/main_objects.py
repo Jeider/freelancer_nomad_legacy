@@ -819,7 +819,9 @@ class Sun(GenericSphere, NamedObject):
         return '{system_name}_sun_{index}'.format(system_name=self.system.NAME, index=self.INDEX)
 
     def get_first_description(self):
-        return self.system.core.get_next_desc('stars')
+        if not self.RU_FIRST_DESCRIPTION:
+            return self.system.core.get_next_desc('stars')
+        return self.RU_FIRST_DESCRIPTION
 
 
 class SunSmall(Sun):

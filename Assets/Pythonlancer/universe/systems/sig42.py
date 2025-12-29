@@ -27,6 +27,8 @@ from templates.dockable import research
 from templates.dockable import odissey
 from templates.dockable import pirate
 
+from text.content import dockable_info
+
 from story.ingame.names import MUSASHI, OSIRIS, MSG_MUSASHI, MSG_OSIRIS
 from text.strings import MultiString as MS
 
@@ -105,6 +107,8 @@ atten_curve = DYNAMIC_DIRECTION
 class Sig42Sun1(Sig42Member, main_objects.Sun):
     STAR = 'sirius_A'
     LOADOUT = 'sirius_A_sun_fx'
+    RU_NAME = MS('Сириус А', 'Sirius A')
+    RU_FIRST_DESCRIPTION = dockable_info.SIRIUS_A
 
     ATMOSHPERE_RANGE = 50000
     DRAG_ZONE_SIZE = 50000
@@ -115,6 +119,8 @@ class Sig42Sun2(Sig42Member, main_objects.Sun):
     INDEX = 2
     STAR = 'med_blue_sun'
     LOADOUT = 'med_blue_sun_fx'
+    RU_NAME = MS('Сириус Б', 'Sirius B')
+    RU_FIRST_DESCRIPTION = dockable_info.SIRIUS_B
 
     ATMOSHPERE_RANGE = 10000
     DRAG_ZONE_SIZE = 9500
@@ -299,6 +305,7 @@ class Sig42KusariStation(Sig42Member, Sig42Kusari, main_objects.ResearchStation)
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.KusariCivilianDealers
     RU_NAME = MS('Станция К+анис', 'Kanis Station')
+    FACTION = faction.KusariMain
 
     BASE_PROPS = meta.Research(
         objectives=[

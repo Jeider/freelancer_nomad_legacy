@@ -3,6 +3,9 @@ from text.strings import MultiString as MS
 import text.content.dockable_info_ru as RU
 import text.content.dockable_info_en as EN
 
+SIRIUS_A = MS(RU.SIRIUS_A, EN.SIRIUS_A)
+SIRIUS_B = MS(RU.SIRIUS_B, EN.SIRIUS_B)
+
 rh_regensburgh = MS(RU.rh_regensburgh, EN.rh_regensburgh)
 
 rh_munchen = MS(RU.rh_munchen, EN.rh_munchen)
@@ -22,6 +25,10 @@ li_col_new_hope = MS(RU.li_col_new_hope, EN.li_col_new_hope)
 tau31_scient = MS(RU.tau31_scient, EN.tau31_scient)
 
 tau29_ring = MS(RU.tau29_ring, EN.tau29_ring)
+
+br_mercia = MS(RU.br_mercia, EN.br_mercia)
+
+br_oxford = MS(RU.br_oxford, EN.br_oxford)
 
 # tau31 - scient
 # tau29 - ring

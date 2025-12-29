@@ -32,6 +32,8 @@ from templates.dockable import shipyards
 from templates.dockable import cambridge_research
 from templates.dockable import station_debris
 
+from text.content import dockable_info
+
 from text.strings import MultiString as MS
 
 
@@ -375,6 +377,7 @@ class CamOldOutpostRuins(CamMember, main_objects.StationRuins):
     RU_NAME = MS('Аванпост Мерсия', "Outpost Mercia")
 
     SPACE_OBJECT_TEMPLATE = station_debris.StuttgartDestroyedOutpost
+    RU_FIRST_DESCRIPTION = dockable_info.br_mercia
 
     ASTEROID_ZONES = [
         CamAsteroidZone1,
@@ -749,7 +752,8 @@ class CamAbandonedStation(CamMember, main_objects.StationRuins):
         CamTopNebula,
     ]
 
-    RU_NAME = MS('Станция Оксфорд', "Oxford Reserach Station")
+    RU_NAME = MS('Станция Оксфорд', "Oxford Research Station")
+    RU_FIRST_DESCRIPTION = dockable_info.br_oxford
 
 
 class CamAbandonedStationSuprisePoint1(CamMember, main_objects.HackableStation):
