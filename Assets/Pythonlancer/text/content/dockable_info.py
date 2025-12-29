@@ -21,6 +21,8 @@ li_col_new_hope = MS(RU.li_col_new_hope, EN.li_col_new_hope)
 
 tau31_scient = MS(RU.tau31_scient, EN.tau31_scient)
 
+tau29_ring = MS(RU.tau29_ring, EN.tau29_ring)
+
 # tau31 - scient
 # tau29 - ring
 #

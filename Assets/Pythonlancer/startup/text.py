@@ -10,7 +10,7 @@ class LauncherText:
         ('Use ReShade:', 'Использовать ReShade:'),
         ('Enables additional post-processed effects, editable right from game. Requires dxwrapper to be active',
          'Включает эффекты пост-процессинга, которые можно настроить прямо в игре. Требует включенного dxwrapper'),
-        ('WARNING! Only for fullscreen mode! Because it can broke you mouse crosshair', 'ВНИМАНИЕ! Работает только в полноэкранном режиме, потому что может сломать работу курсора вашей мыши'),
+        ('WARNING! Only for fullscreen mode! Because it can break your mouse crosshair', 'ВНИМАНИЕ! Работает только в полноэкранном режиме, потому что может сломать работу курсора вашей мыши'),
 
         (
             'This is fan project. You can play it for free. If you want to support the developer, you can send donate or subscribe to project by Boosty.',
@@ -34,6 +34,9 @@ class LauncherText:
 
         ('More difficult enemies with higher shield and armor. NPC cause more damage on player',
          'Более сложные противники, которые имеют более мощные щиты и броню, а так же наносят игроку больше повреждений'),
+
+        ('Did you stacked in mission 6 or mission 9? You can temporary change reduce game difficulty to easy. It also disables some difficult game features and allow you to beat this missions in simpler way.',
+         'Застряли в миссии 6 или миссии 9? Вы можете временно снизить сложность игру на лёгкую. Это так же отключает некоторые игровые требования миссии, что позволяет пройти эти миссии по более простому пути.'),
 
         ('Cannot change powerplants and engines', 'Невозможно менять генераторы и двигатели'),
         ('Simple difficulty', 'Простая сложность'),

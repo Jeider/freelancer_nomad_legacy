@@ -394,7 +394,7 @@ class StutDockring(StutMember, main_objects.LargePlanetDockring):
     INTERIOR_CLASS = interior.CustomFullSingleRoomInterior
     DEALERS = dealers.RheinlandPlanetDealers
     SHIP_SET = markets.ShipSet('ge_fighter2', 'bw_elite2', 'rh_freighter')
-    RU_NAME = MS('Планета Шт+утгарт', "Planet Stuttgart")
+    RU_NAME = MS('Планета Штутгарт', "Planet Stuttgart")
 
     BASE_PROPS = meta.LargePlanet(
         objectives=[

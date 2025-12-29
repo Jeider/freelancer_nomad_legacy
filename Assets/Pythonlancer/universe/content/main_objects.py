@@ -458,6 +458,8 @@ class NamedObject(StaticObject):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
+        self.ids_name = None
+
         if not self.LAZY_NAME:
             self.set_space_name()
 
@@ -521,6 +523,8 @@ class NamedObject(StaticObject):
         return self.get_ids_name()
 
     def get_ids_name(self):
+        if self.ids_name is None:
+            raise Exception(f'object {self} have no name')
         return self.ids_name.id
 
     def get_tradelane_ids_name(self):

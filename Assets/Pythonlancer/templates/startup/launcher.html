@@ -177,7 +177,7 @@ table {
             <input type="checkbox" name="reshade" id="reshade" {% if is_reshade %}checked{% endif %}> <br>
             <span class="hint">{{ t.text('Enables additional post-processed effects, editable right from game. Requires dxwrapper to be active') }}</span>
             <br>
-            <span class="hint">{{ t.text('WARNING! Only for fullscreen mode! Because it can broke you mouse crosshair') }}</span>
+            <span class="hint">{{ t.text('WARNING! Only for fullscreen mode! Because it can break your mouse crosshair') }}</span>
 
 
         </div>
@@ -186,6 +186,11 @@ table {
             {{ t.text('Field of view Y (fish eye):') }} <input type="number" class="integer-input" value="{{ fovy }}" id="fovy"> <span class="hint">{{ t.text('(default: 70)') }}</span>
         </div>
 
+        <hr>
+<div class="section">
+    <p>{{ t.text('Did you stacked in mission 6 or mission 9? You can temporary change reduce game difficulty to easy. It also disables some difficult game features and allow you to beat this missions in simpler way.') }}</p>
+
+</div>
         <hr>
 
 

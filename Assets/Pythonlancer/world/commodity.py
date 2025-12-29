@@ -172,16 +172,16 @@ class Commodity:
         )
 
     def get_ru_name_std(self):
-        return self.RU_NAME.lower()
+        return self.RU_NAME.lower().replace('+', '')
 
     def get_ru_name_rel1(self):
-        return self.RU_NAME_REL1.lower() if self.RU_NAME_REL1 else self.RU_NAME.get_ru().lower()
+        return self.RU_NAME_REL1.lower().replace('+', '') if self.RU_NAME_REL1 else self.RU_NAME.get_ru().lower().replace('+', '')
 
     def get_ru_name_rel2(self):
-        return self.RU_NAME_REL2.lower()
+        return self.RU_NAME_REL2.lower().replace('+', '')
 
     def get_ru_name_rel3(self):
-        return self.RU_NAME_REL3.lower()
+        return self.RU_NAME_REL3.lower().replace('+', '')
 
     def get_en_name_rel1(self):
         return self.RU_NAME.get_en().lower()
