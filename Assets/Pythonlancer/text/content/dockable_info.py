@@ -30,6 +30,10 @@ br_mercia = MS(RU.br_mercia, EN.br_mercia)
 
 br_oxford = MS(RU.br_oxford, EN.br_oxford)
 
+ku_tgk_mega_prison = MS(RU.ku_tgk_mega_prison, EN.ku_tgk_mega_prison)
+
+om7_old_outpost = MS(RU.om7_old_outpost, EN.om7_old_outpost)
+
 # tau31 - scient
 # tau29 - ring
 #

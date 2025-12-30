@@ -577,6 +577,8 @@ ku_tgk_04_base = ""
 # База Коти
 ku_tgk_05_base = ""
 
+ku_tgk_mega_prison = ("")
+
 # Планета Хоккайдо
 ku_hkd_01_base = ""
 
@@ -618,6 +620,8 @@ om7_05_base = ""
 
 # База Хельголанд
 om7_06_base = ""
+
+om7_old_outpost = ("")
 
 # Линкор Мусаси
 om7_99_base = ""
