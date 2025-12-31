@@ -102,7 +102,7 @@ Some files can be marked as viruses by your anti-virus. That's because some engi
 
 ## How to disable sync progress on open of launcher
 
-Launcher looks on ".git" folder inside project folder. Just rename this folder and Launcher will not sync game with github and internet. Warning! This folder is hidden, you must appeared it before this operation.
+Launcher looks on ".git" folder inside project folder. Just rename this folder and Launcher will not sync game with github and internet. Warning! This folder is hidden, you must appear it before this operation.
 
 ## How to run game withot launcher
 
