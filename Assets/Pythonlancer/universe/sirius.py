@@ -91,7 +91,7 @@ class rh_stut(system.RheinlandFirst, system.System, system.SiriusSystem):
 
     JUMP_EFFECT = jump_effect.Walker
     NAVMAP_POS = '10, 12'
-    NAVMAP_SCALE = 1.5
+    NAVMAP_SCALE = 1.4
 
 
 class rh_ber(system.RheinlandFirst, system.System, system.SiriusSystem):
@@ -105,7 +105,7 @@ class rh_ber(system.RheinlandFirst, system.System, system.SiriusSystem):
 
     JUMP_EFFECT = jump_effect.Rheinland
     NAVMAP_POS = '12, 7'
-    NAVMAP_SCALE = 1.5
+    NAVMAP_SCALE = 1.3
 
 
 class sig8(system.RheinlandFirst, system.System, system.SiriusSystem):
@@ -147,7 +147,7 @@ class sig13(system.RheinlandFirst, system.LibertySecond, system.System, system.S
 
     JUMP_EFFECT = jump_effect.Crow
     NAVMAP_POS = '10, 5'
-    NAVMAP_SCALE = 2
+    NAVMAP_SCALE = 1.8
 
 
 class li_cal(system.LibertyFirst, system.System, system.SiriusSystem):
@@ -161,7 +161,7 @@ class li_cal(system.LibertyFirst, system.System, system.SiriusSystem):
 
     JUMP_EFFECT = jump_effect.Crow
     NAVMAP_POS = '8.5, 3.5'
-    NAVMAP_SCALE = 1.5
+    NAVMAP_SCALE = 1.4
 
     FIRST_UNLAWFUL_POPULATION_CLASS = population.LibertyHackersPopulation
 
@@ -177,7 +177,7 @@ class sig22(system.LibertyFirst, system.BretoniaSecond, system.System, system.Si
 
     JUMP_EFFECT = jump_effect.Dark
     NAVMAP_POS = '6.7, 4'
-    NAVMAP_SCALE = 2
+    NAVMAP_SCALE = 1.8
 
     FIRST_UNLAWFUL_POPULATION_CLASS = population.LibertyHackersPopulation
 
@@ -193,7 +193,7 @@ class li_mnh(system.LibertyFirst, system.System, system.SiriusSystem):
 
     JUMP_EFFECT = jump_effect.Liberty
     NAVMAP_POS = '10, 1.5'
-    NAVMAP_SCALE = 1.5
+    NAVMAP_SCALE = 1.3
 
 
 class li_for(system.LibertyFirst, system.System, system.SiriusSystem):
@@ -207,7 +207,7 @@ class li_for(system.LibertyFirst, system.System, system.SiriusSystem):
 
     JUMP_EFFECT = jump_effect.Liberty
     NAVMAP_POS = '12, 4'
-    NAVMAP_SCALE = 1.5
+    NAVMAP_SCALE = 1.3
 
 
 class sig17(system.LibertyFirst, system.System, system.SiriusSystem):
@@ -223,7 +223,7 @@ class sig17(system.LibertyFirst, system.System, system.SiriusSystem):
 
     JUMP_EFFECT = jump_effect.Liberty
     NAVMAP_POS = '14, 3'
-    NAVMAP_SCALE = 1.5
+    NAVMAP_SCALE = 1.6
 
 
 class li_col(system.LibertyFirst, system.System, system.SiriusSystem):
@@ -237,7 +237,7 @@ class li_col(system.LibertyFirst, system.System, system.SiriusSystem):
 
     JUMP_EFFECT = jump_effect.Liberty
     NAVMAP_POS = '6.5, 0.5'
-    NAVMAP_SCALE = 1.5
+    NAVMAP_SCALE = 1.4
 
     FIRST_UNLAWFUL_POPULATION_CLASS = population.LibertyHackersPopulation
 
@@ -267,7 +267,7 @@ class br_wrw(system.BretoniaFirst, system.System, system.SiriusSystem):
 
     JUMP_EFFECT = jump_effect.Bretonia
     NAVMAP_POS = '5, 5.5'
-    NAVMAP_SCALE = 1.5
+    NAVMAP_SCALE = 1.4
 
 
 class tau29(system.BretoniaFirst, system.System, system.SiriusSystem):
@@ -281,7 +281,7 @@ class tau29(system.BretoniaFirst, system.System, system.SiriusSystem):
 
     JUMP_EFFECT = jump_effect.Bretonia
     NAVMAP_POS = '3, 5.5'
-    NAVMAP_SCALE = 1.7
+    NAVMAP_SCALE = 1.6
 
 
 class br_cam(system.BretoniaFirst, system.System, system.SiriusSystem):
@@ -295,7 +295,7 @@ class br_cam(system.BretoniaFirst, system.System, system.SiriusSystem):
 
     JUMP_EFFECT = jump_effect.Bretonia
     NAVMAP_POS = '3, 3'
-    NAVMAP_SCALE = 1.3
+    NAVMAP_SCALE = 1.2
 
 
 class tau37(system.BretoniaFirst, system.System, system.SiriusSystem):
@@ -325,7 +325,7 @@ class br_avl(system.BretoniaFirst, system.System, system.SiriusSystem):
 
     JUMP_EFFECT = jump_effect.Bretonia
     NAVMAP_POS = '1.5, 5.5'
-    NAVMAP_SCALE = 2
+    NAVMAP_SCALE = 1.4
 
     FIRST_UNLAWFUL_POPULATION_CLASS = population.BretoniaXenosPopulation
 
@@ -341,7 +341,7 @@ class sig42(system.BretoniaFirst, system.KusariSecond, system.System, system.Sir
 
     JUMP_EFFECT = jump_effect.Dark
     NAVMAP_POS = '7.5, 6.5'
-    NAVMAP_SCALE = 2
+    NAVMAP_SCALE = 1.6
 
 
 class tau23(system.BretoniaFirst, system.KusariSecond, system.System, system.SiriusSystem):
@@ -371,7 +371,7 @@ class ku_ksu(system.KusariFirst, system.System, system.SiriusSystem):
 
     JUMP_EFFECT = jump_effect.Kusari
     NAVMAP_POS = '3, 9'
-    NAVMAP_SCALE = 1.5
+    NAVMAP_SCALE = 1.3
 
 
 class tau4(system.KusariFirst, system.System, system.SiriusSystem):
@@ -387,7 +387,7 @@ class tau4(system.KusariFirst, system.System, system.SiriusSystem):
 
     JUMP_EFFECT = jump_effect.Kusari
     NAVMAP_POS = '3, 11'
-    NAVMAP_SCALE = 1.75
+    NAVMAP_SCALE = 1.7
 
 
 class ku_hns(system.KusariFirst, system.System, system.SiriusSystem):
@@ -401,7 +401,7 @@ class ku_hns(system.KusariFirst, system.System, system.SiriusSystem):
 
     JUMP_EFFECT = jump_effect.Kusari
     NAVMAP_POS = '7.5, 8.5'
-    NAVMAP_SCALE = 1.5
+    NAVMAP_SCALE = 1.4
 
     FIRST_UNLAWFUL_POPULATION_CLASS = population.KusariShinobiPopulation
 
@@ -417,7 +417,7 @@ class ku_tgk(system.KusariFirst, system.System, system.SiriusSystem):
 
     JUMP_EFFECT = jump_effect.Kusari
     NAVMAP_POS = '5, 9'
-    NAVMAP_SCALE = 1.5
+    NAVMAP_SCALE = 1.4
 
     FIRST_UNLAWFUL_POPULATION_CLASS = population.KusariShinobiPopulation
 
@@ -433,7 +433,7 @@ class ku_hkd(system.KusariFirst, system.System, system.SiriusSystem):
 
     JUMP_EFFECT = jump_effect.Kusari
     NAVMAP_POS = '5, 11'
-    NAVMAP_SCALE = 1.5
+    NAVMAP_SCALE = 1.4
 
 
 class om7(system.KusariFirst, system.RheinlandSecond, system.System, system.SiriusSystem):
@@ -447,7 +447,7 @@ class om7(system.KusariFirst, system.RheinlandSecond, system.System, system.Siri
 
     JUMP_EFFECT = jump_effect.Walker
     NAVMAP_POS = '7.5, 12'
-    NAVMAP_SCALE = 2
+    NAVMAP_SCALE = 1.7
 
     FIRST_UNLAWFUL_POPULATION_CLASS = population.KusariShinobiPopulation
 

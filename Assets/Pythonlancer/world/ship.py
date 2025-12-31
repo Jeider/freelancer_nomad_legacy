@@ -1255,8 +1255,8 @@ class Rhino(LibertyShip, ShipFreighter, Ship):
 
     TEMPLATE_CODE = 'lfr'
     ICON = 'li_freighter.3db'
-    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03, HpTurret01, HpTurret02, HpTurret03']
-    MAX_WEAPONS = ['HpWeapon02', 'HpWeapon03, HpTurret01, HpTurret02']
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpTurret01', 'HpTurret02', 'HpTurret03']
+    MAX_WEAPONS = ['HpWeapon02', 'HpWeapon03', 'HpTurret01', 'HpTurret02']
 
 
 # BRETONIA
@@ -1383,8 +1383,8 @@ class Clydesdale(BretoniaShip, ShipFreighter, Ship):
 
     TEMPLATE_CODE = 'bfr'
     ICON = 'br_freighter.3db'
-    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03, HpTurret01, HpTurret02, HpTurret03']
-    MAX_WEAPONS = ['HpWeapon02', 'HpWeapon03, HpTurret01, HpTurret02']
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpTurret01', 'HpTurret02', 'HpTurret03']
+    MAX_WEAPONS = ['HpWeapon02', 'HpWeapon03', 'HpTurret01', 'HpTurret02']
 
 
 # KUSARI
@@ -1500,7 +1500,7 @@ class Dron(KusariShip, ShipFreighter, Ship):
 
     TEMPLATE_CODE = 'kfr'
     ICON = 'ku_freighter.3db'
-    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04, HpTurret02, HpTurret03']
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpTurret02', 'HpTurret03']
     MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
 
 
@@ -1612,7 +1612,7 @@ class Dromader(GenericShip, ShipFreighter, Ship):
     LIGHTS = 8
 
     MAIN_WEAPONS = ['HpWeapon02', 'HpWeapon03', 'HpTurret02', 'HpTurret03', 'HpTurret04', 'HpTurret05']
-    MAX_WEAPONS = ['HpWeapon02', 'HpWeapon03', 'HpTurret02', 'HpTurret03']
+    MAX_WEAPONS = ['HpWeapon02', 'HpWeapon03']
 
 
 class CSV(GenericShip, ShipFreighter, Ship):
@@ -1628,8 +1628,8 @@ class CSV(GenericShip, ShipFreighter, Ship):
     ENG_FORCE_FEATURE = False
     LIGHTS = 8
 
-    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04, HpTurret01']
-    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02, HpTurret01']
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpTurret01']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpTurret01']
     EXTRA_PACKAGE_ITEMS = [
         'addon = csv_manipulator01, HpWeapon10',
     ]
@@ -1672,7 +1672,7 @@ class Startracker(GenericShip, ShipInterceptor, Ship2, Ship):
     TEMPLATE_CODE = 'gf2'
     ICON = 'cv_startracker.3db'
     HP_TORPEDO = 'HpTorpedo02'
-    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03, HpTorpedo01']
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpTorpedo01']
     MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02']
 
     # mk 2

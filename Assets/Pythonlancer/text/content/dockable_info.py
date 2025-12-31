@@ -34,6 +34,8 @@ ku_tgk_mega_prison = MS(RU.ku_tgk_mega_prison, EN.ku_tgk_mega_prison)
 
 om7_old_outpost = MS(RU.om7_old_outpost, EN.om7_old_outpost)
 
+ku_hkd_research = MS(RU.ku_hkd_research, EN.ku_hkd_research)
+
 # tau31 - scient
 # tau29 - ring
 #

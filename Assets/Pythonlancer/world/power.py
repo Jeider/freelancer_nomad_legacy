@@ -325,7 +325,7 @@ RU_POWERPLANT_WARNING = 'Корабль не сможет взлететь бе�
 
 EN_FEATURES_PER_FACTION = {
     MainMiscEquip.FACTION_RH: 'Rheinland powerplants have 10% extra power capacity',
-    MainMiscEquip.FACTION_LI: 'Liberty powerplants have 50% extra trhuster power capacity',
+    MainMiscEquip.FACTION_LI: 'Liberty powerplants have 50% extra thruster power capacity',
     MainMiscEquip.FACTION_BR: 'Bretonia powerplants have 5% power capacity and regeneration, but have 30% less thruster power',
     MainMiscEquip.FACTION_KU: 'Kusari powerplants have 10% power regeneration speed',
     MainMiscEquip.FACTION_CO: 'Border World powerplants have 33% faster thruster regeneration speed',

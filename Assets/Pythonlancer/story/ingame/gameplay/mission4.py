@@ -133,7 +133,7 @@ class Misson04(ingame_mission.IngameMission):
     def get_nn_objectives(self):
         return [
             NNObj(self, MS('Встретьтесь с Джакобо в баре планеты Норторф',
-                           'Meet Jacoibo in bar of Planet Nortorf'), name='meet_vendor', target='vendor_planet'),
+                           'Meet Jacobo in bar of Planet Nortorf'), name='meet_vendor', target='vendor_planet'),
 
             NNObj(self, O.LAUNCH, name='launch'),
 

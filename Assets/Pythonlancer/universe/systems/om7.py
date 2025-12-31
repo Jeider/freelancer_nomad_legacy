@@ -29,6 +29,8 @@ from templates.dockable import trade_storages
 from templates.dockable import kusari_palace
 from templates.dockable import station_debris
 
+from text.content import dockable_info
+
 from story.ingame.names import MUSASHI, MSG_MUSASHI
 from text.strings import MultiString as MS
 
@@ -229,6 +231,7 @@ class Om7LostRheinlandRuins(Om7Rheinland, Om7Member, main_objects.StationRuins):
     INDEX = 1
     REL = RIGHT
     RU_NAME = MS('Станция Финшхафен', 'Finschhafen Station')
+    RU_FIRST_DESCRIPTION = dockable_info.om7_old_outpost
 
     REL_APPEND = 1500
 

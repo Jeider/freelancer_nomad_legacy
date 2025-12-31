@@ -495,7 +495,7 @@ class Misson13(ingame_mission.IngameMission):
         ],
         [
             'OBJECTIVE:',
-            'Stop Rockford\s plans about Sphere.',
+            'Stop Rockford\'s plans about Sphere.',
             '',
             'DIFFICULTY:',
             'Save the mankind.',

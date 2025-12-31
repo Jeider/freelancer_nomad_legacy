@@ -29,6 +29,8 @@ from templates.dockable import olaf
 from templates.dockable import avalon_megabase
 from templates.dockable import station_debris
 
+from text.content import dockable_info
+
 from text.strings import MultiString as MS
 
 
@@ -333,6 +335,7 @@ class Tau29RingRuins(Tau29Member, main_objects.StationRuins):
     AST_EXCLUSION_ZONE_SIZE = 800
 
     RU_NAME = MS('Исследовательская станция Ланкастер', 'Lancaster Research Station')
+    RU_FIRST_DESCRIPTION = dockable_info.tau29_ring
 
 
 class Tau29RingRuinsSuprisePoint(Tau29Member, main_objects.HackableStation):

@@ -365,13 +365,13 @@ class Msn10RescuedCutscene(Msn10, script.CutsceneProps):
             HasslerOrder,
             comment='Старый Трент уходит',
             ru='Герр Трент, лейтенант Ким обнаружил Р+окфорда.',
-               en='Herr Trent, Lieutenant Kim has located Rockford.'
+               en='Herr Trent, Lieutenant Kym has located Rockford.'
         ),
         VoiceLine(
             110,
             Trent,
             ru='А если лейтенант Ким - то это,, видимо меня.',
-               en='And if it\'s Lieutenant Kim... then that\'s for me.'
+               en='And if it\'s Lieutenant Kym... then that\'s for me.'
         ),
         VoiceLine(
             120,

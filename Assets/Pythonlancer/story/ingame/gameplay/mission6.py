@@ -263,7 +263,7 @@ class Misson06(ingame_mission.IngameMission):
                     'В том числе и ракеты, сбивающие круиз. Торпеды могут об них сдетонировать.',
                     'Не пытайтесь сбить торпеды своим щитом. Вы будете мгновенно уничтожены!'
                 ],[
-                    'Enemy ships attack Missouri by heavy torpedoes',
+                    'Enemy ships attack Missouri with heavy torpedoes',
                     'You must attack torpedoes by your guns. You also can use any missiles. '
                     'Also you can use CD missiles. '
                     'Torpedoes can detonate by any missile.',

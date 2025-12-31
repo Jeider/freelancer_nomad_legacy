@@ -31,6 +31,8 @@ from templates.dockable import alg
 from templates.dockable import junker
 from templates.dockable import gmg_hq
 
+from text.content import dockable_info
+
 from text.strings import MultiString as MS
 
 
@@ -489,6 +491,7 @@ class HokkOldResearchRuins(HokkMember, main_objects.StationRuins):
     INDEX = 1
     REL = LEFT
     RU_NAME = MS('Станция Фукусима', 'Planet Fukushima')
+    RU_FIRST_DESCRIPTION = dockable_info.ku_hkd_research
 
     SPACE_OBJECT_TEMPLATE = gmg_hq.GmgHQDestroyed
     ASTEROID_ZONES = [

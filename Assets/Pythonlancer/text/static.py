@@ -493,7 +493,9 @@ STATIC_NAMES = [
     Static(190002, MS('БРЕТОНИЯ', 'BRETONIA')),
     Static(190003, MS('КУСАРИ', 'KUSARI')),
 
-    Static(238101, MS('Гиперврата в Большой Омикрон', 'Jumpgate to Omicron Major')),
+
+
+    Static(238100, MS('Гиперврата в Большой Омикрон', 'Jumpgate to Omicron Major')),
     Static(238101, MS('Гиперврата в Малый Омикрон', 'Jumpgate to Omicron Minor')),
     Static(238102, MS('Гиперврата на Мальту', 'Jumpgate to Malta')),
     Static(238103, MS('Гипердыра в Омегу-13', 'Jumphole to Omega-13')),
@@ -506,5 +508,71 @@ STATIC_NAMES = [
     Static(238110, MS('Станция Замора', 'Zamora Station')),
     Static(238111, MS('Платформа Магента', 'Magentha Platform')),
     Static(238112, MS('Планета Теруэл', 'Planet Teruel')),
-    Static(238115, MS('Чёрная дыра', 'Чёрная дыра')),
+    Static(238115, MS('Чёрная дыра', 'Black hole')),
+    Static(238116, MS('Звезда', 'Star')),
+    Static(238117, MS('Стыковочное кольцо', 'Docking ring')),
+    Static(238118, MS('Стыковочный узел', 'Docking point')),
+
+    Static(238119, MS('Гипердыра в Сигму-8', 'Jumphole to Sigma-8')),
+
+    Static(238120, MS('Турель', 'Turret')),
+    Static(238121, MS('Торпедная установка', 'Torpedo Launcher')),
+    Static(238122, MS('Торпеда', 'Torpedo')),
+    Static(238123, MS('Бомба', 'Bomb')),
+    Static(238124, MS('ЭМИ', 'EMI')),
+
+    Static(238125, MS('База Рапануи', 'Rapa Nui Base')),
+    Static(238126, MS('Аванпост', 'Outpost')),
+    Static(238127, MS('Орудийная платформа', 'Weapon platform')),
+    Static(238128, MS('Станция Страсбург', 'Strasbourg station')),
+    Static(238129, MS('Станция Вена', 'Vienna station')),
+    Static(238130, MS('Гипервата в Вавилон', 'Jumpgate to Babylon')),
+    Static(238131, MS('Гипервата в Омегу-7', 'Jumpgate to Omega-7')),
+    Static(238132, MS('Гипервата в Сириус', 'Jumpgate to Sirius')),
+    Static(238133, MS('Гипервата в Энтерпрайз', 'Jumpgate to Enterprise')),
+    Static(238134, MS('Гипервата в Вену', 'Jumpgate to Vienna')),
+
+    Static(238135, MS('Планета Терра', 'Planet Terra')),
+    Static(238136, MS('Верфь Ордена', 'Order\'s Shipyard')),
+    Static(238137, MS('Терраформирующая станция', 'Terraforming station')),
+    Static(238138, MS('Станция Вавилон', 'Babylon station')),
+    Static(238139, MS('Логово Номадов', 'Nomad Lair')),
+    Static(238140, MS('Шлюз Логова Номадов', 'Nomad Lair Airlock')),
+    Static(238141, MS('Обломки корабля', 'Ship Wreck')),
+    Static(238142, MS('Исследовательская станция', 'Research station')),
+    Static(238143, MS('Станция Энтерпрайз', 'Enterprise station')),
+    Static(238144, MS('Станция Прометей', 'Prometheus station')),
+    Static(238145, MS('Гипердыра в Тау-44', 'Jumphole to Tau-44')),
+    Static(238146, MS('Линкор Либерти', 'Liberty Dreadnought')),
+
+    Static(238150, MS(
+        ('Торговые линии используются для ускорения торговых маршрутов. Они позволяют разгоняться до внушительных скоростей, но с учетом, что надо лететь только по указанной траектории. '
+        ' Это делает все торговые маршруты в Сириусе гораздо быстрее, но имеет негативный эффект в том плане, что торговые линии являются предметом интереса различных пиратов. При этом сам торговые пути достигли максимума своего развития даже в текущем виде. '
+         'В Либерти были разработаны более современные торговые линии, но они так и не вошли в серию, т.к. к тому моменту уже были улучшены круизные двигатели обычных кораблей и замена торговых линий на более современную версию стало не целесообразным.'),
+        ('Trade lanes are used to accelerate trade routes. They allow travel at impressive speeds, but only along a fixed trajectory. '
+         'This makes all trade routes in Sirius much faster, but has the negative effect of making trade lanes a target for various pirates. Yet, the trade routes themselves have reached the peak of their development even in their current form. '
+         'In Liberty, more modern trade lanes were developed, but they never entered series production because, by that time, the cruise engines of regular ships had already been improved, making the replacement of trade lanes with a more modern version impractical.')
+    )),
+    Static(238151, MS('Торговая линия', 'Trade Lane')),
+
+    Static(238152, MS(
+        'Стыковочный пирс предназначен для крупных кораблей, планирующих получить обслуживание с помощью персонала с планеты. Например, пришвартованные транспорты ожидают, как будут разгружены или загружены новыми товарами.',
+        'The docking pier is intended for large ships planning to receive service from planet-side personnel. For example, docked transports await being unloaded or loaded with new goods.'
+    )),
+    Static(238153, MS(
+        'Гиперврата – основное средство перемещения между системами. Личные варп-двигатели так и не смогли дойти до достаточно малого размера, чтобы их можно было легко устанавливать на малые корабли. Гиперврата в свою очередь позволяют абсолютно любому кораблю переместиться в соседнюю систему, поэтому еще долго не потеряют свою популярность.    ',
+        'Hyperspace gates are the primary means of travel between systems. Personal warp drives never achieved a sufficiently small size to be easily installed on small ships. Hyperspace gates, in turn, allow absolutely any ship to travel to a neighboring system, thus they will not lose their popularity for a long time.'
+    )),
+    Static(238154, MS(
+        'Гипераномалии являются менее стабильными аналогами гиперврат, и по большей части используются пиратами и корсарами. Для активации гипераномалий нужно куда меньше средств, но только некоторые из них могут доставить в нужное место.',
+        'Hyperspace anomalies are less stable analogues of hyperspace gates, and are mostly used by pirates and corsairs. Activating hyperspace anomalies requires far fewer resources, but only some of them lead to the desired destination.'
+    )),
+
+
+
+
+
+
+
+    # Static(238119, MS('Звезда', 'Star')),
 ]

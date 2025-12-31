@@ -25,6 +25,8 @@ from templates.dockable import tekagi_megabase
 from templates.dockable import roid_mining
 from templates.dockable import station_debris
 
+from text.content import dockable_info
+
 from text.strings import MultiString as MS
 
 
@@ -477,6 +479,7 @@ class TekagiRuins(TekagiMember, main_objects.StationRuins):
     DEALERS = dealers.KusariPirateDealers
     REL_APPEND = 6000
     RU_NAME = MS('Станция Формоза', "Formoza Station")
+    RU_FIRST_DESCRIPTION = dockable_info.ku_tgk_mega_prison
 
 
 class TekagiRuinsDropPoint1(TekagiMember, main_objects.HackableStation):

@@ -167,7 +167,7 @@ class Msn11AmbushCutscene(Msn11, script.CutsceneProps):
             Trent,
             comment='Через пару мгновений ожидания до Трента доходит',
             ru='Чёрт... Сообщения от Кима н+е было!',
-               en='Damn it... There\'s been no message from Kim!'
+               en='Damn it... There\'s been no message from Kym!'
         ),
         VoiceLine(
             260,
@@ -206,11 +206,11 @@ class Msn11DrinkCutscene(Msn11, script.CutsceneProps):
     VOICE_LINES = [
 
         VoiceLine(10, Trent, ru='Ким, что случилось с Ямамото? Р+айхманн сдавался. Откуда столько ненависти?',
-                  en='Kim, what happened with Yamamoto? Reichmann was surrendering. Where did all that hatred come from?'),
+                  en='Kym, what happened with Yamamoto? Reichmann was surrendering. Where did all that hatred come from?'),
         VoiceLine(20, Trent, ru='(Охеревающий) А Вавил+он? Почему он так плохо охранялся? Где линкоры, тучи истребителей?..',
                   en='And Babylon? Why was it so poorly guarded? Where were the battleships, the swarms of fighters?'),
         VoiceLine(30, Trent, ru='(Финально) Ким, ты можешь мне ответить?!!',
-                  en='Kim, can you even answer me?!'),
+                  en='Kym, can you even answer me?!'),
 
         VoiceLine(40, Kim, ru='(Громкое "Я" с желанием вскрикнуть, вдох и... тихое нет на выдохе...) Я... Нет... Пока нет',
                   en='Me... Not... I can\'t... Not yet... '),
@@ -349,7 +349,7 @@ class Msn11Space(Msn11, script.SpaceVoiceProps):
             Kim,
             comment='Выдвигаемся к станции Вавилон',
             ru='Это лейтенант Ким, оборона, доложите обстановку.',
-               en='This is Lieutenant Kim to defense forces, report your status.'
+               en='This is Lieutenant Kym to defense forces, report your status.'
         ),
         VoiceLine(
             125,
@@ -412,7 +412,7 @@ class Msn11Space(Msn11, script.SpaceVoiceProps):
             210,
             Yamamoto,
             ru='Энергоядр+о было направлено на станцию Вена. Ударное звено и линкор Мус+аси уже выдвинулись. Ким, направляйтесь к Вене своим ходом.',
-               en='The power core was tracked to Station Vienna. A strike wing and the battleship Musashi are already en route. Kim, proceed to Vena by your own means.'
+               en='The power core was tracked to Station Vienna. A strike wing and the battleship Musashi are already en route. Kym, proceed to Vienna by your own means.'
         ),
         VoiceLine(
             240,

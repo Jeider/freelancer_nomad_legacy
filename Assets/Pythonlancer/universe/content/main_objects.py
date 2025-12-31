@@ -647,7 +647,7 @@ class Jumpgate(JumpableObject):
     REL_DRIFT = 500
     REL_APPEND = 2000
 
-    IDS_INFO = 65551
+    IDS_INFO = 238153
     ARCHETYPE = 'jumpgate'
 
     LOADOUT = 'jumpgate_rh'
@@ -688,7 +688,7 @@ class Jumphole(JumpableObject):
     REL_APPEND = 2000
 
     IDS_NAME = 196718
-    IDS_INFO = 65551
+    IDS_INFO = 238154
     ARCHETYPE = 'jumphole'
     LOADOUT = 'hole_effect_edge'
 
@@ -1483,7 +1483,7 @@ ids_name = 253953
 pos = {pos}
 rotate = {rotate}
 archetype = docking_fixture
-ids_info = 065540
+ids_info = 238152
 dock_with = {parent_base}
 reputation = {reputation}
 behavior = NOTHING
@@ -2214,8 +2214,8 @@ faction = {pirate_faction}, 1.000000'''
 
 
 class Tradelane:
-    TLR_NAME_ID = 260920
-    TLR_INFO_ID = 66170
+    TLR_NAME_ID = 238151
+    TLR_INFO_ID = 238150
     ARCHETYPE = 'Trade_Lane_Ring'
     MIDDLE_RING_LOADOUT = 'trade_lane_ring_main'
     LAST_RING_LOADOUT = MIDDLE_RING_LOADOUT

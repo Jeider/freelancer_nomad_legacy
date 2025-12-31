@@ -336,346 +336,607 @@ tau31_05_base = ("The Confederates use Tubac to organize attacks on the lucrativ
 tau31_scient = ("Research station Massachusetts was studying alien cells of the Procyon-4 class. In the Tau-31 system, there are fields of dense gas clouds, and in one of them, an unprecedented concentration of alien cells was discovered. It was decided to build a huge research station capable of conducting the full spectrum of analysis of these organisms. All research proceeded quite successfully, so Liberty continuously expanded the program's funding.\\n\\nTo accelerate the work, it was decided to study distant icy asteroids from the far sector of the system. The icy asteroids were delivered, and indeed something living was discovered in them. Scientists began conducting experiments and managed to combine Procyon-4 with the organisms found in the icy asteroids. But this led to terrible results. The research went out of control, and strange signals began coming from the station, as if the resulting creature began attacking people, transforming into local pets, and rapidly spreading throughout the entire station. This new alien life form was structurally different from the Nomads but posed a significant threat, so it was imperative that it not spread beyond the station.\\n\\nThanks to the efforts of a scientist named James MacReady, the station was not only powered down but also activated a self-destruct protocol. All station personnel were killed, and the remaining oxygen was ignited to burn away all traces of life on the station. Currently, the station is completely abandoned, and access to it is restricted. However, there is still a possibility to access some docking modules to study the station's remains. Fortunately, only robots remain on the station, so visiting these sealed blocks poses no threat.")
 
 
+# Planet Warwick
+br_wrw_01_base = ("Warwick is an industrial giant of Bretonia, capable of producing absolutely any goods. A huge city is inhabited by countless residents, "
+                  "simply too many to count. At the same time, the overall environmental situation on the planet is close to catastrophic. While the main cities and spaceports are presented as ideal structures in the style of "
+                  "Gothic classicism, all other locations are usually slums, extensions to factories. Nevertheless, to somehow alleviate these problems, the government moved part of the production forces into space, to the new Leeds station. "
+                  "However, this does not fix the situation on Warwick itself. \\n\\n "
+                  "For an ordinary freelancer, Warwick is interesting for its goods; it offers practically the full spectrum of industrial products that can be bought at a bargain price, while desperately needing supplies of "
+                  "equipment to maintain a high level of production. Goods to improve the environmental situation and for partial additional terraforming are also necessary, so as not to completely lose the "
+                  "atmosphere's ability to produce oxygen.")
+
+# Station Leeds
+br_wrw_02_base = ("Leeds Station, together with the planet Warwick, is one large, top-class industrial production facility. It is like a physical twin of Warwick, sharing the same environmental problems, "
+                  "but also having prospects for solving them. Although production is largely automated, people live in terrible conditions. The station requires more energy resources, oxygen, and "
+                  "other supplies than it can produce. Therefore, these supplies are critically important, as are resource deliveries, so the station can produce as much as possible. For if Warwick's output determines "
+                  "the stability of supply for most common goods, Leeds determines the security of the Bretonian Crown, as it makes most components for the Royal Fleet.")
+
+# Station Glasgow
+br_wrw_03_base = ("Glasgow Station is desperately trying to digest the waste products of the planet Warwick and Leeds Station, which, thanks to the volume of their "
+                  "industrial production, have managed to flood the entire system with trash of various levels of radioactive harmfulness. The station can not only produce alloys from trash but also regularly "
+                  "smelts imported ores from other corners of Sirius. Glasgow is the source of stability for Bretonia's industrial production, supplying finished raw materials "
+                  "for the factories of the local industrial giants. Therefore, even if ore supplies from outside cease, the leftover trash in Warwick will last another 100 years of reliable operation for local plants.")
+
+# Outpost Liverpool
+br_wrw_04_base = ("Liverpool Outpost is the Bretonian gateway from Kusari. All Kusari traders arrive here, supplying Warwick with components "
+                  "for the operation of industrial enterprises, in order to later obtain local industrial products. The outpost provides ships with export goods and also protects the trade route "
+                  "to Leeds and Warwick from pirate attacks from the Douglas base.")
+
+# Shipyard Bristol
+br_wrw_05_base = ("Bristol Shipyard is the final assembly shop in Warwick. It receives the full spectrum of components for ship production to ultimately build ships for both the Bretonian Royal Fleet "
+                  "and merchant vessels for the Bretonian Merchant Fleet. This strategic shipyard is capable of producing a huge number of ships and requires regular supply of resources from Leeds and Warwick. At the same time,"
+                  " the shipyard also conducts repair work for all vessels heading to Leeds and moving towards Columbia and California.")
+
+# Base Galway
+br_wrw_06_base = ("The Galway Base belongs to the Irish. From here they carry out their bloody attacks on trade lines from Liberty towards Avalon. "
+                  "Bretonian forces actively tried to dislodge this cell, but the pirates receive regular reinforcements through Sigma-22. This base is a transshipment point for "
+                  "smugglers. They buy or steal goods from Leeds and Warwick, and also supply various harmful contraband, which the local "
+                  "impoverished population loves to use. Although the Irish are formally an ethnic gang, workers from local factories often become outcasts and join the IRA ranks to get "
+                  "some way of earning money.")
+
+# Base Douglas
+br_wrw_08_base = ("The Douglas Base belongs to the Gaians. They strive to ensure the best environmental conditions throughout Bretonia, and Warwick is their most hated spot in Sirius. "
+                  "And it is here that they can find new supporters because living and working on Warwick is almost impossible, and many people have a lot of questions for the government. No one understands "
+                  "why such a high level of environmental catastrophe is maintained, so they join the ranks of the terrorist group, which supposedly fights for a just cause. But at the same time, the Douglas base itself "
+                  "is located in the remnants of that very trash and radioactive waste produced by non-ecological methods, leading to mass infections of radiation sickness and cancer among the local population. "
+                  "But since all the locals are poor, they really don't have much choice.")
+
+# Station Arendal
+tau29_01_base = ("Arendal Station was the station-palace of a local industrial magnate. He built the base in honor of his daughter, Elsa. Subsequently, the industrial magnate died in an accident, so "
+                 "his daughters Elsa and Anna began to manage the station themselves. Initially, the effect of their rule was quite deplorable, leading to problems with "
+                 "life support systems; many people died from hypothermia because the heating systems were destroyed due to an incident in the Nord-Mountain compartment. Rumors say that one of the initiators "
+                 "of the incident was a certain Prince Hans Christian Andersen, who arrived from Rheinland territory, wanting to win the hand of one of the sister rulers of Arendal. But during an armed skirmish, the ruling sisters "
+                 "managed to get rid of Prince Hans, so currently, Arendal Station lives reliably and peacefully. Despite improvements in the heating situation, classic winter activities are very popular on the station. There is a gravity rink, so "
+                 "this station has an excellent school of speed skaters highly valued in competitions on Avalon.\\n\\n"
+                 "Arendal is a service station for gas miners in the Tau-29 system. It is a large hydrogen fuel production plant, thanks to which the station's heating system was restored. But "
+                 "the best years of production are numbered, so the station requires regular infusions of liquefied gas from neighboring gas miners to more actively produce hydrogen fuel.")
+
+# Station Kent
+tau29_02_base = ("Kent Trade Station handles the trade route supply for all of Bretonia. All possible goods from all sides are unloaded here. Moreover, to "
+                 "simplify logistics, transports sometimes simply leave containers at Kent, then pick up local goods needed at their bases and return. The station also"
+                 " provides repair services; it has a simple shipyard and can repair any ships passing through the crossroads of local trade routes.")
+
+# Outpost Essex
+tau29_03_base = ("Essex Outpost is engaged in protecting the crossroads of Bretonian trade routes from pirate encroachments. It provides "
+                 "armed escort services to all passing ships, so many ships arrive at this outpost for such support. "
+                 "Pilots from the main Bretonian planets serve on this outpost; they escort their ships, then rest and return, accompanying convoys flying "
+                 "in the opposite direction.")
+
+# Base York
+tau29_04_base = ("York Base is an operational base of the Gaians. Here they carry out attacks on Bretonian convoys carrying hydrogen fuel to neighboring systems. This allows "
+                 "the Gaians to supply their ships with fuel, eliminating the need for harmful ways of powering their ships. The Gaians have a very negative view of nuclear reactors due to the abundance of waste and the inability "
+                 "to reprocess it without factories that the lawful factions possess.")
+
+# Base Danelaw
+tau29_05_base = ("Danelaw is an important base for the Irish, from which they raid trade routes throughout the Tau-29 system. The Lancaster base was also a target of their attacks. "
+                 "The Irish believed that the Bretons had managed to find a special weapon against the IRA forces, so they launched a preemptive attack and completely destroyed the research station. Currently, "
+                 "IRA pilots continue to fly to Lancaster to inspect it for interesting equipment and wreckage.")
+
+tau29_ring = ('Lancaster Station conducted research in the field of modern firearm equipment. Secret developments were carried out at this base, which, according to rumors, led to the production of unprecedented shotgun cannons. '
+              'It is currently difficult to say whether this is true or not, and whether these cannons even exist, but the Irish attempted to destroy the station so that Bretonia could not obtain the results of this work. '
+              'The station is now destroyed, although there are compartments where useful equipment can be found. But is the coveted shotgun cannon there? A question that still has no answer.')
+
+# Planet Cambridge
+br_cam_01_base = ("The planet Cambridge is known for its prestigious educational institutions, where students from all over the world are sent to study. Scientists of the Cambridge "
+                  "school are represented in almost all research projects in Sirius. Cambridge also possesses advanced technologies "
+                  "in energy production. Cambridge houses significant factories for processing uranium into nuclear fuel. This product is critically important for both Bretonia "
+                  "and all of Sirius. However, despite significant uranium production volumes in Tau-37, Cambridge receives substantial resource supplies "
+                  "through underground channels from the Ulster system. Although the Irish are a huge thorn inside Bretonian territory, local authorities "
+                  "do not shy away from using even the most dangerous methods to access resources.")
+
+# Station Sheffield
+br_cam_02_base = ("Sheffield Station ensures timely repair and support of trade routes in the Cambridge system. It is a stronghold "
+                  "for Bretonia on the trade route from Cambridge to Tau-29 and the crossroads of Bretonian trade routes. The station is not only under construction but also constantly under "
+                  "pressure from Irish terrorists. It's no secret that the Cambridge nebulae harbor not only IRA bases but also jumpholes directly to the Ulster system. "
+                  "This led to a significant increase in the crime rate in Cambridge. It all ended with a military operation in the area of the Mercia Outpost. "
+                  "After the loss of Mercia, Sheffield became the last stronghold on this trade route. Currently, this base is also the starting point for patrols "
+                  "in the area of the Mercia remnants. The police try to suppress pirate activity as best they can.")
+
+# Station Cheltenham
+br_cam_03_base = ("Cheltenham Station is a trade base on the route from Tau-31 and New York towards Avalon and Kusari. This base contains goods not planned for unloading on Cambridge but destined for delivery"
+                  " to the next trade bases. This helps unload the already overloaded Cambridge trade port. Various traders who stop for a break before embarking on their next "
+                  "trade missions can be found at this base.")
+
+# Shipyard Cardiff
+br_cam_04_base = ("Cardiff Shipyard provides the Cambridge and Tau-37 military groups with timely repair of merchant and military vessels. It also produces all current ships "
+                  "intended for military service in the local Royal Fleet or for conducting trade operations to deliver goods to neighboring systems. Cardiff is one of the most efficient Bretonian shipyards, making it "
+                  "a strategic enterprise, as thanks to it, pirates cannot inflict significant damage on the trade logistics of Cambridge and adjacent systems. Recently, rumors have circulated that Cardiff received "
+                  "a large order to build a fleet necessary for a punitive operation in Ulster. Whether true or not, these rumors significantly motivate terrorists to carry out preemptive attacks to prevent "
+                  "Bretonia from obtaining a strong fleet that sooner or later could suppress the IRA's capabilities, despite all their guerrilla tricks.")
+
+# Outpost Blackpool
+br_cam_05_base = ("Blackpool Outpost is the endpoint of the police route from Sheffield Station and is intended to protect Bretonia from encroachments by Irish separatists. "
+                  "It was hastily converted from an old freeport because the protective Mercia Outpost was captured by pirates and completely destroyed during attempts to recapture it. "
+                  "Blackpool conducts regular raids deep into IRA territory, but local forces lack authority for more serious operations. However, there are rumors that some operations are planned soon.")
+
+# Station Derby
+br_cam_06_base = ("Derby Station handles the processing of waste resulting from industrial activity both on Cambridge itself and at Cardiff Shipyard. Cambridge is formally an ecologically clean territory, but this "
+                  "is primarily ensured by local laws requiring absolutely all waste to be dumped into space. Thus, Derby Station has a significant workload requiring its processing capacity. "
+                  "It produces the full spectrum of foundry products from all possible ores. Naturally, this enterprise most efficiently produces anti-radiation alloys, having nearby access to ores that allow "
+                  "the production of such goods.")
+
+# Station Greenwich
+br_cam_07_base = ("Greenwich Station is the main research station in Cambridge. It handles the full spectrum of research work and requires regular receipt of new research data to ensure "
+                  "more efficient work. At the same time, the most advanced and technological devices produced in Bretonia can be found on this base. Greenwich also conducts various additional research aimed at "
+                  "ensuring the environmental and energy security of Bretonia. Regular consultations, forums, and meetings of scientists are held at this station. Important disputes among the entire scientific world are often resolved at local debates, "
+                  "and the local committee awards a special Neo-Nobel Prize to particularly distinguished scientists. ")
+
+# Base Spalding
+br_cam_08_base = ("The Spalding Base was assembled by the Gaians as a data collection point from Greenwich Research Station. Using the obtained data, the Gaians plan "
+                  "to carry out an ecological revolution in Bretonia. Although rumors say they are merely using these facts to recruit new adherents to their teachings. Nevertheless, this connection between pirates and "
+                  "corrupt scientists allows not only the transfer of knowledge to the Gaians but also the Gaians themselves to send various contraband to Greenwich and Cambridge for sale at favorable prices.")
+
+# Base Cork
+br_cam_09_base = ("Cork Base is the gateway to the Ulster system from Cambridge. It houses a permanent garrison of IRA militants who not only regularly attack the outermost Bretonian outposts but also "
+                  "remain in constant combat readiness to repel any possible attack by Bretonian forces. Cork has already proven itself successfully during the last major invasion of Mercia and Oxford, but in doing so "
+                  "lost all its tactical advantages, as Bretonia is now prepared for all known IRA tactics. For this reason, IRA forces keep large forces not for attacks but to carry out a quick counterattack against "
+                  "the forces of the Bretonian Royal Fleet, to then regroup in Ulster itself, which is much better defended than the outer perimeter in Cambridge. To some extent "
+                  "this is a countdown for Cork. The IRA is aware of planned military operations and does not plan to preserve this base. Therefore, it is also simply stuffed with various explosives to, in case of "
+                  "evacuation, inflict significant damage during self-destruction.")
+
+br_mercia = ("The loss of Mercia Outpost is the most shameful loss in Bretonian history, leading to partial occupation of Cambridge territory and subsequently to a prolonged conflict that did not end in victory, "
+             "but at least helped Bretonia establish a security system in Cambridge. During the assault on Mercia, the IRA used new tactics. Instead of a frontal assault, they sent a whole swarm of missile drones and kamikaze drones, which formally did not have significant power but caused immense panic among the "
+             "local Bretonian garrison. Captain Percival issued an order for a general retreat, but Mercia itself had no self-destruct systems, allowing the IRA to capture the outpost and make it their stronghold. "
+             "This led to a complete disaster, as the IRA gained the ability to control literally half of the Cambridge system with impunity. The IRA even managed to attack and capture Oxford. For this reason, Bretonia had to "
+             "implement the most emergency measures, but the IRA was prepared for such a development and deployed their advanced drone systems on Mercia. Using these systems and mining the nearest asteroid fields, the Irish managed to take out several Bretonian battleships, particularly the pride of the local fleet - "
+             "the Titanic, the Britannic, and the Olympic. However, due to these losses, the Royal Fleet changed strategy and decided to destroy Mercia rather than recapture it. They did this using their destroyers. Heavy torpedoes were formally similar drones "
+             "to the Irish unmanned systems. Thus, Mercia was destroyed, and Bretonian patrols eliminated the remaining resistance. Subsequently, Bretonia went to recapture Oxford, but they decided not to restore Mercia because "
+             "this outpost was in a significantly vulnerable position, and its restoration simply made no sense. Nevertheless, Mercia was not completely destroyed, so there is still a possibility to penetrate some of its compartments.")
+
+br_oxford = ("Oxford Station has a very sad fate. And it's not just about the fact of its destruction, but rather the circumstances. During the IRA attack on Mercia Outpost, Bretonia lost military control over the sector where Oxford is located. "
+             "This allowed the IRA not only to attack Oxford but also to capture it in a swift assault. This led to the most severe consequences, as the Irish first occupied the station and made it their base, then, realizing that Mercia wouldn't last long, began evacuating all valuable equipment, research results, and even captured "
+             "scientists, taking them all to Ulster territory. This was a significant blow to Bretonia, as the IRA obtained the results of all Oxford research and gained a significant strategic advantage, enabling Ulster to simultaneously handle forces from both Bretonia in Cambridge and Liberty in Sigma-22. "
+             "After the evacuation, Oxford remained an IRA stronghold for some time until the Bretons adopted a strategy of total enemy destruction after losing their battleships in an IRA ambush. But, unlike Mercia, Oxford could not be torpedoed from a distance, so the Bretons simply "
+             "blockaded all external approaches to the Oxford nebula, forcing the Irish to leave Oxford on their own. However, they still mined and destroyed the station so that Bretonia could not quickly resume research. "
+             "But due to the loss of Mercia, Bretonia could no longer ensure the security of this location, so Oxford remained abandoned. The main problem remained the evacuated scientists, but they still refused to work for the IRA, so they were ransomed for a significant sum. Pirates delivered the scientists to the Oxford area on an old container ship. "
+             "Bretonian forces received the scientists and concluded a temporary truce with the IRA, which has now come to an end, so Bretonia is already preparing for revenge. As for Oxford itself, the IRA did not manage to evacuate all the station's equipment. And they couldn't even blow up all of it. Therefore, there is still a possibility to get into the most "
+             "remote corners of the station to see what might still be there.")
+
+# Station Gibraltar
+tau37_01_base = ("Gibraltar ensures the operation of a significant number of mining vessels in the Tau-37 system. This station is also the main ore warehouse, which traders pick up with container ships. "
+                 "To ensure ore mining, Gibraltar Station critically needs valuable parts for mining vessels, as well as hull components. And due to active corsair attacks, the station itself also needs hull plating.")
+
+# Freeport Plymouth
+tau37_02_base = ("Plymouth Freeport is one of the most remote freeports in Sirius. It is formally a free port where various people can be found, "
+                 "but it is under significant Bretonian control. The Bretonian garrison is quite substantial, so the activity of smugglers and other anti-social elements on the base "
+                 "is quite low. Nevertheless, people from different levels of wealth and factional affiliation can still be found here. The freeport is a calm place for merchant ships to rest, "
+                 "where they can repair, load up on useful goods, and learn something new at the bar. Previously, the freeport was under strong pressure from pirates, but the situation stabilized after the arrival of the battleship Neptune.")
+
+# battleship Neptune
+tau37_03_base = ("The battleship Neptune bravely serves to protect the Tau-37 trade route from corsair attacks. In the deep nebula lies a jumphole to the Curacao system, from which regular "
+                 "corsair attacks occur. Solving this problem once and for all is impossible, as the population of the Curacao colony is simply huge. For this reason, Neptune can only repel numerous enemy raids. "
+                 "To confidently carry out its service and not fall apart, Neptune desperately needs various components and spare parts.")
+
+# Base Ceuta
+tau37_04_base = ("Ceuta Base is a distant corsair outpost in the Tau-37 system. It essentially serves as a transshipment point between Tau-37 and Curacao. Using this base, corsairs can carry out terrorist attacks and also supply "
+                 "rogues with various contraband. Ceuta is an entire illegal market for diverse illegal goods, where a huge range of items found in the Outer Worlds can be found. Corsairs can "
+                 "profit here from anything that could be stolen from the nearest central colonies.")
+
+# Planet Avalon
+br_avl_01_base = ("The planet Avalon is the capital of the Bretonian Kingdom. The colony's main administrations are located on the planet, and the "
+                  "residence of the Bretonian Queen is also there. Most of the Bretonian aristocracy resides on Avalon, buying up almost all luxury "
+                  "goods imported from different ends of the Sirius sector. Bretonia is known for its food products, but it is specifically on Avalon "
+                  "that special farms producing top-grade food are located. Many aristocrats fly to Avalon to taste "
+                  "the freshest food of the highest class. Of course, carefully frozen versions of this luxurious food are of interest "
+                  "to any connoisseur anywhere in Sirius, as not even the richest nobleman would dare to travel to "
+                  "the other end of the known colonies just to taste slightly fresher and more elite food than usual.")
+
+# Shipyard Southampton
+br_avl_02_base = ("Southampton Shipyard is an important Bretonian shipyard; it handles the repair and support of merchant ships traveling from Kusari towards Warwick and Cambridge. The shipyard "
+                  "also produces new merchant vessels and regularly launches a huge number of container ships to the Birmingham trade base, so they receive "
+                  "containers and immediately deliver valuable cargo to Kyushu and Hokkaido.")
+
+# Outpost Manchester
+br_avl_03_base = ("Manchester Outpost handles the important task of border control and general defense of the borders between Bretonia and the Tau-23 system. "
+                  "This base is also the starting point for escorts to Kusari, which can be ordered if additional protection is desired for long flights to Kusari.")
+
+# Trade Station Birmingham
+br_avl_04_base = ("Birmingham ensures regular trade flows between Warwick, Avalon, and Kyushu. Kusari goods are stored here before being "
+                  "sent to various corners of Bretonia. This outpost also helps unload the Avalon trade port, which mainly receives valuable goods, while "
+                  "Birmingham handles the unloading and mounting of containers with goods of lesser importance.")
+
+# Station London
+br_avl_05_base = ("London Station is the main military headquarters of Bretonia. The main forces of the Bretonian Fleet are quartered here, ready for the largest-scale military operations. "
+                  "London produces the main ships of the Bretonian Royal Fleet, ensuring the protection of Avalon from any encroachments by other houses or simple pirates.")
+
+# Prison Golspie
+br_avl_06_base = ("Golspie Prison holds numerous prisoners, predominantly of Irish origin. They are deliberately transported far from access to Ulster to prevent the enemy from quickly rescuing and delivering them "
+                  "to their habitats. To eliminate any possibility of prisoner escapes, this prison requires regular supplies of various security goods. Various sensors, cameras, and other equipment to make "
+                  "control over the prison inmates autonomous, round-the-clock, and minute-by-minute.")
+
+# Base Cardigan
+br_avl_07_base = ("Cardigan Base is used by Xenos for terrorist attacks on trade routes between Tau-29 and Avalon. Xenos lead a secluded lifestyle, so they primarily attack to obtain goods "
+                  "of general purpose. They see no point in attacking ships with luxury goods. They need oxygen, water, and meds. They rarely even engage in selling contraband, as they have a too poor reputation and few even among pirates want to deal with them.")
+
+# Base Lonston
+br_avl_08_base = ("Lonston Base was captured by the Gaians and converted into a stronghold from which they carry out attacks on trade routes from Kyushu to Avalon and back. Unlike the Xenos, "
+                  "the Gaians are more tolerant of smugglers, so they allow the use of their base as a transshipment point and as a way to sell goods obtained by the Gaians during raids.")
+
+# battleship Prince of Wales
+br_avl_99_base = ("")
+
+# battleship Prince of Wales
+br_avl_98_base = ("")
+
+# Planet Sprague
+sig42_01_base = ("Planet Sprague was once an ordinary research base in the very center of Sirius. It was destroyed during Rheinland attacks but was later restored and expanded. Now it is not just a research planet, but "
+                 "a full-fledged planet with a trade port, repair workshops, and other elements of a complete base. This planet is primarily used for research needs, as valuable artifacts of the Dom-Kavash civilization were discovered in its mines. "
+                 "Excavations are actively ongoing, though not as efficiently as before. Nevertheless, it is a significant trading post in Sirius where traders usually stop during their long trade missions.")
+
+# Station Antares
+sig42_02_base = ("Antares Station is a Bretonian checkpoint in the Sirius system. It supports the trade route from Warwick to Honshu and Yokohama. "
+                 "Research missions studying various phenomena on Sirius A and Sirius B are also based here. This research data is then transmitted to scientists at other research bases in the Sirius sector, especially at "
+                 "Greenwich Station in Cambridge.")
+
+# Station Canis
+sig42_03_base = ("Canis Station is a Kusari checkpoint in the Sirius system. It provides research and trade support for convoys traveling from Honshu towards Warwick. "
+                 "This checkpoint is also a concentration point for Kusari forces to protect traders from local pirate encroachments. For this reason, this outpost is a place where additional escort from "
+                 "the Black Dragon PMC can be ordered for one's convoy.")
+
+# Cruise Liner Canicula
+sig42_04_base = ("This cruise liner is named after the Roman name for the star Sirius. Holidays in Rome were a great reason for celebrations, just as this liner is part of entertainment events in Sirius for the wealthiest "
+                 "and most sophisticated connoisseurs of beauty in the Sirius sector. The rich seek ways to spend their money, so there is significant demand on the liner for various high-end luxury goods and corresponding luxury food products.")
+
+# Base Isis
+sig42_05_base = ("Isis Base was built by the Gaians to carry out attacks on trade convoys heading from Sprague to Bretonia. It is a relatively safe place for the Gaians, as they face much greater pressure on Warwick than in Sirius. This base is also used as a large contraband warehouse that can be sold "
+                 "at the nearest Bretonian station. Although contraband is usually sold on Sprague, as that base has less military control from official authorities.")
+
+# Base Satis
+sig42_06_base = ("Satis Base is a Chrysanthemum stronghold in Sirius. They use this place as a relatively safe point for conducting attacks both in Sirius on trade convoys from Kusari and within Kusari itself, as Kusari forces are not so interested in maintaining perfect order in this system. "
+                 "The Chrysanthemums also use this base as a way to sell contraband and for spy surveillance of Kusari forces in the area. Many spies infiltrate Canis Base and then, via legal ships, are sent to Honshu. Thus, the Chrysanthemums saturate legal Kusari bases with their adherents to prepare "
+                 "the ground for a future military coup.")
+
+# Station Edinburgh
+tau23_01_base = ("Edinburgh Station is a large-scale Bretonian gas mining station that supplies huge amounts of hydrogen fuel to the Bretonian market. "
+                 "This station is also a major source of Bretonian military force in the system. However, it has depleted the nearest dense gases and requires regular supplies of "
+                 "liquefied gas from nearby autonomous gas miners. This base protects the border of trade routes from Xenos attacks.")
+
+# Station Shibuya
+tau23_02_base = ("Shibuya Station produces hydrogen fuel for Kusari and also serves as an intermediate trade base on the trade route from Kusari to Bretonia. Some goods produced in Kusari and popular "
+                 "in Bretonia are stored here. This base has depleted a significant portion of the dense gas in the nearby territory, so it requires supplies of "
+                 "liquefied gas from autonomous installations, which may be subject to pirate attacks and require protection.")
+
+# battleship Vanguard
+tau23_03_base = ("The Vanguard battleship protects part of the autonomous gas stations in the outer Bretonian sectors of Tau-23. This area needs defense because it is regularly attacked by "
+                 "Xenos.")
+
+# battleship Kirishima
+tau23_04_base = ("The Kirishima battleship protects Kusari's autonomous gas stations on the far trade line of the Kusari sector in Tau-23. These gas miners are subject to regular attacks by "
+                 "the Farmer's Alliance.")
+
+# Freeport Celtic
+tau23_05_base = ("Celtic Freeport is an intermediate base between Kusari and Bretonia, serving as a transshipment point for many goods and a "
+                 "point of contact between military and traders from Kusari and Bretonia. Smugglers are also often present at this freeport, so "
+                 "goods of various types can be found here. But criminal elements themselves do not try to stand out, as facing resistance from the military of both major lawful houses is a very unenviable prospect.")
+
+# Base Brest
+tau23_06_base = ("Brest Base is a closed community of Xenos, used by the Xenos to carry out attacks on trade routes and gas miners in the area of Bretonian influence in Tau-23. "
+                 "Xenos rarely engage in smuggling, so they primarily conduct terrorist activities.")
+
+# Base Koga
+tau23_07_base = ("Koga Base is used by the Farmer's Alliance to carry out attacks on the Kusari-controlled zone of Tau-23. Despite the presence of a Kusari battleship, these attacks are often quite effective. This base is also distinguished by its absolute autonomy thanks to "
+                 "built-in gas fuel production. This also supplies distant Farmer bases with cheap hydrogen fuel.")
+
+# Planet Kyushu
+ku_ksu_01_base = ("The industry of planet Kyushu specializes in producing mining equipment and fertilizers. "
+                  "Fertilizers significantly improve the yield of farm holdings, which are not many because "
+                  "Kusari planets are mostly filled with water. The produced mining equipment helps improve the production of rare and "
+                  "valuable metals on planet Kumamoto. The equipment is also popular on other planets dedicated solely to "
+                  "mineral extraction.")
+
+# Planet Kumamoto
+ku_ksu_02_base = ("Planet Kumamoto is an important place for mining gold and silver ore in Kusari in the Kyushu prefecture area. Main productions are located in the "
+                  "Omega-3 system, but this production allows, albeit in a more expensive form, to obtain alternative supplies, which are mainly used by Tokyo Station and planet Kyushu. "
+                  "This planet requires regular supplies of provisions and various mining equipment to ensure uninterrupted ore extraction. ")
+
+# Station Tokyo
+ku_ksu_03_base = ("Tokyo Station is the main industrial center of the Kyushu system. This station primarily produces various polymers and generally produces a significant range of "
+                  "goods popular both in Kusari and throughout the Sirius sector. The only problem in this case is the excessive production of waste, the source of which is Tokyo. But "
+                  "Kusari authorities are concerned about this problem and conduct regular work to melt down waste, solving the problem of deficit of heavy and sometimes light metals in production.")
+
+# Shipyard Nagoya
+ku_ksu_04_base = ("Nagoya Shipyard produces the main ships of the merchant fleet for companies headquartered in Kyushu. It also produces mid-class military ships and repairs passing ships. "
+                  "At Nagoya, you can get a full range of repair and restoration services for merchant transports, and all this work is usually done on the spot. Therefore, transports sometimes simply remain on maintenance for several hours to more confidently continue their journey.")
+
+# Station Gifu
+ku_ksu_05_base = ("Gifu Trade Station is the main transshipment warehouse in Kyushu. Goods ready for shipment to Hokkaido are stored here, as well as those goods that "
+                  "have successfully arrived and await transportation to Kyushu and neighboring bases. Bretonian traders also have contracts to transport these goods to Avalon and Warwick. Gifu provides "
+                  "container rearrangement services, conducts customs inspection and control, and is a gathering place for passing traders who like to relax at the bar.")
+
+# Research Station Nansei
+ku_ksu_06_base = ("Nansei researches processes occurring on the pair of stars in the Kyushu system. This data sometimes leads to extraordinary results, so the work of Nansei scientists is highly valued in the scientific world. "
+                  "There are also small production facilities at this station, so you can obtain goods with unique features that may be useful both in interstellar travel and in combat.")
+
+# Outpost Toyama
+ku_ksu_07_base = ("Toyama Outpost protects the trade route towards Tau-23 from various pirate encroachments and provides customs inspection of arriving ships. This outpost provides escort services to trade caravans heading to Tau-23. "
+                  "With such protection, transports are more willing to engage in potentially profitable trade ventures.")
+
+# Cruise Liner Burma
+ku_ksu_08_base = ("The Burma cruise liner regularly departs from planet Tokyo towards the main wonder of the Kyushu system - a pair of magnificent suns. It is believed that visiting these places brings special luck. And particularly lucky patrons always have "
+                  "something to spend their successful capital on, so there is demand on this liner for various luxury products that can be sold to these patrons.")
+
+# Base Tsushima
+ku_ksu_09_base = ("Tsushima Base is hollowed out of an asteroid for the purpose of attacking the trade route from the Tau-23 system. Trade caravans to Tau-23 are numerous enough to provide sufficient profits and prospects. "
+                  "Obtained goods are usually resold by smugglers on Tokyo or planet Kyushu.")
+
+# Base Nagasaki
+ku_ksu_10_base = ("Nagasaki Base was built by the Farmer's Alliance to carry out attacks on trade routes leading to Tau-4. Although these attacks are often successful, this community is in a rather deplorable state. Panels need repair, and supplies are perpetually insufficient. "
+                  "But local smugglers rarely care about the needs of the local population, so important supplies often still go for sale at official stations and are taken away from Nagasaki. The situation is roughly the same with various obtained high-class goods."
+                  " Capital bypasses the local population and always ends up in the hands of enterprising resellers.")
+
+# Station Osaka
+tau4_01_base = ("Osaka is the main station of Tau-4. It serves a universal purpose; parts of the Black Dragon forces are stationed here, it ensures the operation of trade routes, support for transport vessels, and"
+                " other useful tasks without which travel through Tau-4 would be a very tense and dangerous undertaking. The station provides support for transports heading from Kyushu to Hokkaido and back. Previously, Tau-4 was more actively used for cruise transport via liners, "
+                "but due to increased activity by the Farmer's Alliance, an entire liner, the Philippines, was lost. A huge number of wealthy people were captured by farmers and many were released only after a harsh captivity for a huge ransom. This greatly reduced interest "
+                "in cruise travel through Tau-4, so such activities no longer extend beyond the Kyushu system.")
+
+# Freeport Okinawa
+tau4_02_base = ("Okinawa Freeport was once a trade station supporting ships on the trade route between Kyushu and Hokkaido, but the base "
+                "began to suffer significant attacks from the Chrysanthemums and Corsairs, causing substantial damage. This led to a noticeable scandal, as the base had warehouses of many trading companies, and "
+                "as a result of the attack, a fire broke out on the station, destroying a significant part of the cargo. Ultimately, the organization that owned the base went bankrupt, all remaining goods were removed, and the authorities transferred "
+                "Okinawa to freeport status. This enterprise is rather unprofitable, so the freeport does not spend resources trying to restore the destroyed warehouses and left them as they were after the fire. "
+                "Only work to improve the airtightness of the compartments was carried out.")
+
+# battleship Yamashiro
+tau4_03_base = ("The Yamashiro battleship responsibly serves to protect Tau-4 from enemy attacks. It was placed at this point in the system after the fire at the former trade base Okinawa. "
+                "Many trading companies refused to use the trade routes, leading to a shortage of goods in the Kyushu prefecture, which was not yet such an active colony at the time. "
+                "The appearance of the battleship not only restored trust from ships, as paid personal escort services for any legal transport vessels can be obtained on the battleship. Thus, Tau-4 even became "
+                "a relatively safe system, although other problems remain, and there are generally no fewer pirates.")
+
+# Base Mutsuo
+tau4_04_base = ("A Corsair outpost was established for more effective attacks on transport convoys in the Tau-4 territory. Through mining, the Corsairs managed to intercept several Kusari prison liners "
+                "and thereby free a bunch of prisoners. In retaliation, Kusari sent the battleship Yamato on a combat raid, but it also fell into an ambush, though of a different kind. It was completely surrounded by a whole swarm of Corsair ships armed with torpedoes."
+                " The battleship could withstand such an attack, but could not withstand a series of attacks and was destroyed. After this, Kusari ceased active raids in the system and concentrated on protecting trade routes. Regular raids are conducted by small combat groups of "
+                "the Black Dragon, but the Corsairs manage to engage them in skirmishes on the distant approaches to Mutsuo Base, so this outpost remains impregnable and undetected. ")
+
+# Base Singapore
+tau4_05_base = ("Singapore belongs to the Farmer's Alliance. It is a very dangerous base that significantly weakened not only trade but also cruise attractiveness of Tau-4, as previously regular cruise expeditions were conducted towards "
+                "the paranormal planet Saitama. The Alliance destroyed all of this at the root, not only attacking liners but also capturing many visitors of these expeditions. "
+                "The Chrysanthemums tried to contact the farmers to use the wealthy for a government coup in Kusari, but the farmers refused such a development, because many farmer adherents were more interested in "
+                "economic renewal of Kusari and did not want to lead to governmental chaos, which the Chrysanthemums are interested in. This allowed the patricians to buy their lives, but the Chrysanthemums held a grudge against the farmers for this, as they were closer than ever to a government overthrow, but"
+                " the Chrysanthemums have no base in Tau-4 and cannot conduct similar operations.")
+
+# Planet Honshu
+ku_hns_01_base = ("Planet Honshu is the main producer of electronics in Kusari. Local electronics are supplied to all the farthest corners of Sirius. There is hardly a single pirate base without electronics "
+                  "produced on this planet. The headquarters of the Kusari VKS is also located on the planet, its fleet ready at any moment "
+                  "to engage any opponent. This was especially demonstrated during the Munich conflict "
+                  "with Rheinland. The mobility and combat readiness of Kusari forces in this system exceeded all enemy expectations, "
+                  "helping to deal a crushing and irreparable blow.")
+
+# Station Tieda
+ku_hns_02_base = ("The Tieda military factory produces goods exclusively for the Kusari VKS. "
+                  "Despite its status, this station has no docking restrictions. "
+                  "The station mainly produces equipment, cannons, and turrets for small and large ships of the Kusari VKS. "
+                  "Goods produced at the station are intended exclusively for equipping ships and are not for sale. "
+                  "However, with a good reputation, you can find many interesting things from the equipment seller.")
+
+# Shipyard Okayama
+ku_hns_03_base = ("Okayama Shipyard produces warships and merchant vessels for the Honshu fleet. It ensures the trade route from Rheinland to Kusari and also "
+                  "repairs ships passing along this route. This shipyard ensures the transport security of Honshu, as most of the "
+                  "large ships of the Honshu fleet are produced here, except for battleships.")
+
+# Prison Wakayama
+ku_hns_04_base = ("Wakayama Prison holds the most dangerous criminals in Kusari. Strict regime prevents any attempts at armed escape, even though the Chrysanthemums and "
+                  "Shinobi clan warriors regularly try to rescue their comrades. To ensure security, this prison needs various protective-class equipment. Automatic surveillance systems, doors, "
+                  "locking systems, and so on.")
+
+# Outpost Nara
+ku_hns_05_base = ("Nara Outpost protects the borders between Kusari and Rheinland and provides border control. This outpost is also the base of a supervisory body that should study the neighboring Munich system for signs of "
+                  "Rheinland influence expansion. As a result of the peace treaty, Rheinland has a limited number of available military forces in Munich. If this treaty is violated, Kusari has the right to break the peace treaty and"
+                  " continue the once-finished military conflict. ")
+
+# Trade Base Funabashi
+ku_hns_06_base = ("Funabashi Base is a trade base on the route from Kusari to Bretonia. The nearest final destination is Warwick, but some routes are also directed to Rheinland. This "
+                  "base stores various goods intended for further transportation. The most valuable goods are electronics and gold and silver ore produced in Honshu and Yokohama. "
+                  "This base is supported by a fleet of loaders whose goal is to timely mount containers between merchant ships. The faster space is freed, the more efficiently trade caravans will proceed.")
+
+# Base Soja
+ku_hns_07_base = ("The Shinobi clan uses Soja as their stronghold in Honshu. Shinobi often engage in terrorist attacks in Honshu, but they are most interested in orders to assassinate military and political figures. "
+                  "Unfortunately, Shinobi services are quite expensive, but for motivated people, such a price is not a problem when a dangerous competitor can be eliminated. This base engages in "
+                  "intercepting ships flying along the main trade route to Yokohama.")
+
+# Base Chiba
+ku_hns_08_base = ("Chiba Base is assembled from various trash by the Golden Chrysanthemums. They constantly patch this base so it performs its basic function - storing goods taken from trade caravans flying "
+                  "along the route from Sirius or from Rheinland and back. The obtained goods are then often sold on legal bases, like planet Kyushu or Funabashi trade base. This is significantly hindered by the Black Dragons, but "
+                  "Chrysanthemum partners know how to hide and stay in the shadows at the right time and moment.")
+
+# Station Yokohama
+ku_tgk_01_base = ("Yokohama is the main industrial, production giant of Kusari. This base is the headquarters of a huge number of organizations, including highly secret ones. Rumors speak of strange secret "
+                  "sections managed by people with more influence than even the Black Dragon PMC and the local Kusari police. Yokohama produces and supplies a huge range of primarily electronic goods and also engages in "
+                  "production of spare parts for a huge number of machines and automated devices. The base itself supplies products to all points of Sirius. But at the same time, it requires a significant amount of spare parts to keep the station's hull "
+                  "in good condition and have a significant energy reserve to maintain the operability of factories, reactors, and more.")
+
+# Station Matsue
+ku_tgk_02_base = ("Matsue Station handles repair work and supports the mining industry of Omega-3. It also accumulates resources mined by mining vessels "
+                  "for subsequent transportation to other systems. To Yokohama, these goods can be transported even by small ships, but for export to other systems "
+                  "ore is transported by large container ships and trains.")
+
+# Freeport Fukuyama
+ku_tgk_03_base = ("Fukuyama Freeport is a small free-access outpost controlled by the Black Dragon. On this freeport, you can restore your ship and also interact with various bar visitors, who may even be of "
+                  "pirate origin. There is no strict control on this base, but the Black Dragon tries to minimize the factor of pirate influence, so the freeport provides various opportunities for a free explorer, but "
+                  "it is not an outright pirate den.")
+
+# Base Takamatsu
+ku_tgk_04_base = ("The Shinobi have established themselves in Takamatsu to conduct terrorist operations throughout the central systems of Kusari. "
+                  "They conduct attacks on the trade route between Yokohama and Hokkaido, although their main work is carrying out assassination missions for money. They can do this job quickly and cleanly, but such "
+                  "orders are rarely given, so for career growth, Shinobi practice attacks on ordinary traders and Black Dragon pilots.")
+
+# Base Kochi
+ku_tgk_05_base = ("Kochi Base is a base of the Golden Chrysanthemums. The Chrysanthemums intercept merchant ships and deliver them largely intact for disassembly at this base. "
+                  "The main targets are merchant ships on routes between Yokohama and Honshu. Subsequently, goods are delivered to the nearest Fukuyama Freeport, but due to the high influence of "
+                  "the Black Dragon, through bribes, smugglers have carved out a time window during which they can bypass patrols and deliver goods without catching the eye of lawfuls.")
+
+ku_tgk_mega_prison = ("Despite its peaceful status, research station Formosa was, during construction, a project for a future maximum-security prison. According to plan, no transport ships or vessels were to be stationed there, so no one could leave "
+                      "the station of their own will. Due to high asteroid activity, the station was equipped with a huge power plant, "
+                      "configured by the station's personnel. After configuring the power plant, the station needed a little more construction to "
+                      "begin accepting prisoners. But all plans were ruined by an incident that occurred near the station. That day, radioactive fuel was to be loaded onto the station, and the cargo with reactor elements was near the station. For unknown reasons, "
+                      "the transport exploded with such force that all the nearest asteroids were scattered in all directions. There were so many "
+                      "asteroids that the station's shield could not withstand it and the field deactivated. The next wave of asteroids struck the station itself, inflicting critical damage. According to plan, the shield should have withstood much greater loads, so the government decided to close "
+                      "the program, evacuate the surviving personnel, and abandon the station. Rumors say that the cause of the explosion was a planned "
+                      "operation by the Shinobi clan. The reason for this is the frequent sharp statements by Kusari politicians that the prison would solve the problem of "
+                      "rampant illegal mercenaries in the Shogunate. Moreover, this prison, unlike Yukawa Prison, offered members of the Shinobi clan "
+                      "far fewer chances of escape in case of capture. Nevertheless, although the prison is damaged and abandoned, there are still "
+                      "autonomous compartments that can be accessed.")
+
+# Planet Hokkaido
+ku_hkd_01_base = ("Planet Hokkaido is the main governmental, industrial, and cultural center of Kusari. Hokkaido hosts the residences of both the Emperor and the Shogun. The Kusari Emperor carries a ceremonial role, "
+                  "while all power is in the hands of the Shogun - the military leader under whose control is a group of responsible samurai performing military and administrative functions in all Kusari prefectures. "
+                  "Hokkaido produces a huge spectrum of industrial products, the most important of which is innovative optical chips. At the same time, being a cultural center, Hokkaido has many representatives of the Kusari elite, requiring "
+                  "not only the highest respect but also the most expensive and luxurious goods for themselves.")
+
+# Shipyard Imabari
+ku_hkd_02_base = ("Imabari is the place where the largest ships - Kusari battleships - are produced. This shipyard regularly produces battleships to ensure the sovereign rights of Kusari over its "
+                  "territories. At the same time, the shipyard requires a significant influx of resources to ensure its operation. This is not an ordinary shipyard; it is a perpetually operating factory that itself produces a huge range "
+                  "of elements for battleships and other vessels, which sometimes request servicing from Imabari. The shipyard also occasionally produces ordinary transport vessels like trains, but only during periods when it is not loaded "
+                  "with military orders from the Kusari government.")
+
+# Station Sapporo
+ku_hkd_03_base = ("Sapporo Station handles foundry production in the Hokkaido system. It produces various alloys used in battleship production at the Imabari shipyard. "
+                  "This station also processes trash accumulated on the periphery of the Hokkaido system. Of course, the government has plans for trash processing, but battleship production volumes are so large that "
+                  "new trash appears much faster than the government manages to deal with the old trash.")
+
+# Outpost Shinjuku
+ku_hkd_04_base = ("Shinjuku Outpost is the gateway to Kusari from Omega-7. The outpost provides border inspection of ships arriving from Rheinland and also assists transport convoys heading towards Rheinland.")
+
+# Station Niigata
+ku_hkd_05_base = ("Niigata Station is another reason for the excess trash in Hokkaido. This station produces various general-purpose goods, military equipment, weapons, and more. "
+                  "The base produces turrets for Kusari battleships. It primarily handles military supply for the Kusari fleet, though the station itself is also in an unfinished state. The main reason for this state is "
+                  "budget deficit. The station was launched and reached planned production capacity, and government interest in completing the station quickly faded. Theoretically, this process could resume if some incident occurs in the unfinished part of the station.")
+
+# Station Sendai
+ku_hkd_06_base = ("Sendai Trade Base is a backup trade base for Tau-4, built after the incident at Okinawa Trade Base in Tau-4. Maintaining such a trade outpost is cheaper "
+                  "and safer in Hokkaido. This slightly lengthens logistics chains, but this base also helps unload the Hokkaido trade port, as goods from all corners of Sirius are brought to Hokkaido and sometimes "
+                  "there is simply no physical possibility to unload goods quickly. Especially those not meant for delivery to the planet but to be sent further. For example, to Kyushu and Bretonia.")
+
+# Base Kunashir
+ku_hkd_07_base = ("The Golden Chrysanthemums use Kunashir to attack trade convoys flying along the route from Kyushu and Omega-7. Although these attacks are quite effective, due to the high concentration of Black Dragon forces "
+                  "the Chrysanthemums suffer too many losses. For this reason, the frequency of attacks has been reduced to have a chance to avoid patrols of the local PMC.")
+
+# Base Wako
+ku_hkd_08_base = ("Wako Base is an operational base of the Farmer's Alliance in Hokkaido territory. The base is used for aggressive attacks on trade routes between Yokohama and Omega-7. The farmers also attack the Imabari shipyard and desperately try to disrupt "
+                  "the production of Kusari battleships, the most dangerous anti-pirate weapon. Sometimes even other pirates fly to Wako to support such attacks, as with too strong and powerful a Kusari fleet, all pirates would be under threat. Which must never be allowed.")
+
+ku_hkd_research = ("Fukushima Station was a site for developing next-generation power systems but was destroyed due to an incident. Work on the station was conducted inside a trash field, where, due to radiation, strange new "
+                   "energy elements began to form. But the station's creators miscalculated possible threats from nearby passing trash. During an unclear incident, an explosion occurred, causing noticeable inertial movement of a large "
+                   "mass of trash. And all of it collided with the poorly protected parts of the station, deformation disrupted the research complex's operation, the new energy elements went out of control and destroyed the station's core. Fukushima was abandoned, but "
+                   "there are still autonomous compartments that one can attempt to access.")
+
+# Station Harajuku
+om7_01_base = ("Harajuku Gas Mining Station is the main supplier of liquefied gas and gas fuel on the Kusari market. "
+               "Additionally, Harajuku serves as an outpost in the Omega-7 system due to its border status and "
+               "relatively high activity from the Shinobi clan. Moreover, intelligence knows for sure that in this system "
+               "there is a headquarters of the pirate clan. Therefore, a small military unit of the Kusari VKS is always on full alert and "
+               "capable of repelling any pirate attack and ensuring the security of valuable fuel supplies.")
+
+# Station Wolfsburg
+om7_02_base = ("Wolfsburg Station produces gas for the transport needs of Rheinland. This station is essentially a border post, as it also "
+               "conducts inspection of ships and vessels passing along the trade route from Hokkaido to Stuttgart. At the same time, the station has significantly depleted "
+               "the nearest gas accumulations, causing it to require regular supplies of liquefied gas from the nearest autonomous gas mining stations "
+               "on the periphery of the Omega-7 system.")
+
+# Battleship Ostfriesland
+om7_03_base = ("The Ostfriesland battleship serves to protect the Rheinland-controlled zone of Omega-7 in the sector previously protected by the Fischhafen outpost. "
+               "This outpost was destroyed by Shinobi forces, causing this zone to lose protection and require emergency measures to restore order. "
+               "For this reason, Rheinland tasked its troops with organizing defense against both Shinobi clan forces and Hessians and their allies. There is also information about corsair activity in this "
+               "system, so the Ostfriesland battleship performs the strategic task of defending such a vulnerable zone of Omega-7.")
+
+# Freeport Ryojun
+om7_04_base = ("Ryojun Freeport is neutral territory on the route between Rheinland and Kusari. This freeport noticeably benefits from its neutral position, so no PMC can "
+               "gain full control over it, causing a huge number of contraband warehouses to be located at the base. This allows any free trader to obtain "
+               "promising opportunities to acquire starting capital.")
+
+# Base Kyoto
+om7_05_base = ("Kyoto Base is located in a field of explosive gases in the Omega-7 system and was built as a secret residence for the Kusari Shogun "
+               "based on an old base of the Blood Dragons, who later became the Black Dragons. But due to too many security problems, "
+               "no Shogun ever visited Kyoto. Soon it was repurposed for military, and later even for research "
+               "functions. Gradually, the station was left almost unprotected and was captured by Shinobi clan members during an assault. "
+               "The clan organized its central headquarters at the station and converted it into a huge pirate base. "
+               "Kyoto is the center of pirate activity in the nearby territories, housing huge contraband warehouses, "
+               "which are then distributed to Hokkaido, Stuttgart, and more distant corners of Sirius. "
+               "Despite its openly pirate affiliation, the base is constantly attacked by Corsairs - enemies of the Shinobi clan. "
+               "In their time, clan members committed countless contract killings of Corsairs, "
+               "forever blackening relations between the factions. The situation is aggravated by the fact that "
+               "in the Omega-7 system there is a Corsair anomaly, and many merchant ships and military vessels of the Spanish pass through it. "
+               "On one hand, the Shinobi want to establish control over these supplies; on the other, the Corsairs actively resist this, and "
+               "if the Shinobi intercept one Corsair caravan, another attack on the Tieda base inevitably follows.")
+
+# Base Helgoland
+om7_06_base = ("The Hessians established themselves at Helgoland Base, built from the remnants of destroyed autonomous gas miners. This base supplies the Hessians with fuel, allowing "
+               "them to much more easily provide themselves with energy in remote bases. This base is also a contraband warehouse sold at Wolfsburg Base. Rheinland regularly tries to eliminate this base, but usually these "
+               "attempts are futile, as the Hessians have their people in the local Rheinland military group, so they receive important information in a timely manner.")
+
+om7_old_outpost = ("Fischhafen Station was a Rheinland border outpost on the way to Kyoto Station. Construction of this station was carried out under "
+                   "an official agreement. Thus, Rheinland gained greater control over Omega-7, but also concluded a cooperation agreement with Kusari to "
+                   "ensure protection of the trade line from Corsair and pirate attacks. But after the Blood Dragons left Kyoto and relocated to Hokkaido, the Kusari government "
+                   "significantly lost interest in Kyoto Station. After pirates managed to capture Kyoto, Fischhafen Station began to suffer regular attacks, and the trade route to Kyoto was disrupted. "
+                   "The governments of Kusari and Rheinland concluded that the threat from Kyoto was too great and decided to conduct an operation to storm the station, but, as usual happens, Kyoto's expanded capabilities were used "
+                   "by the pirates as they should. Thanks to timely mining, Rheinland and Kusari forces fell into a trap, and several battleships were destroyed. Remnants of these battleships are still near Kyoto Station. "
+                   "Ultimately, allied forces had to retreat to previous defense lines, but the Shinobi took advantage of Rheinland forces' shaky position and attacked Fischhafen. "
+                   "This attack was repelled by battered Rheinland forces, but they realized that holding this station had become pointless and dangerous. So they mined the station and evacuated all personnel and garrison. The Shinobi tried to approach the station, "
+                   "but were hit by the blast wave from activated mines. Thus, Rheinland stopped the enemy advance and gave themselves time to regroup. Unfortunately, gas miners in the Fischhafen area had to be abandoned, but "
+                   "Rheinland forces could more concentratedly defend the remaining trade routes in the lower part of Omega-7. Thus, Fischhafen remained abandoned and destroyed. Scavengers regularly fly to it to try to find something valuable among the station wreckage. "
+                   "But some compartments of the station may still function autonomously. Theoretically, if you hack the doors, you can enter them.")
 
-# Планета Уорик
-br_wrw_01_base = ""
-
-# Станция Лидс
-br_wrw_02_base = ""
-
-# Станция Глазго
-br_wrw_03_base = ""
-
-# Аванпост Ливерпуль
-br_wrw_04_base = ""
-
-# Верфь Бристоль
-br_wrw_05_base = ""
-
-# База Голуэй
-br_wrw_06_base = ""
-
-# База Дуглас
-br_wrw_08_base = ""
-
-# Станция Арендал
-tau29_01_base = ""
-
-# Станция Кент
-tau29_02_base = ""
-
-# Аванпост Эссекс
-tau29_03_base = ""
-
-# База Йорк
-tau29_04_base = ""
-
-# База Данелаг
-tau29_05_base = ""
-
-tau29_ring = ""
-
-# Планета Кембридж
-br_cam_01_base = ""
-
-# Станция Шеффилд
-br_cam_02_base = ""
-
-# Станция Челтнэм
-br_cam_03_base = ""
-
-# Верфь Кардифф
-br_cam_04_base = ""
-
-# Аванпост Блекпул
-br_cam_05_base = ""
-
-# Станция Дерби
-br_cam_06_base = ""
-
-# Станция Гринвич
-br_cam_07_base = ""
-
-br_mercia = ''
-
-br_oxford = ''
-
-# База Спалдинг
-br_cam_08_base = ""
-
-# База Корк
-br_cam_09_base = ""
-
-# Станция Гибралтар
-tau37_01_base = ""
-
-# Фрипорт Плимут
-tau37_02_base = ""
-
-# Линкор Нептун
-tau37_03_base = ""
-
-# База Сеута
-tau37_04_base = ""
-
-# Планета Авалон
-br_avl_01_base = ""
-
-# Верфь Саутгемптон
-br_avl_02_base = ""
-
-# Аванпост Манчестер
-br_avl_03_base = ""
-
-# Торговая станция Бирмингем
-br_avl_04_base = ""
-
-# Станция Лондон
-br_avl_05_base = ""
-
-# Тюрьма Голспи
-br_avl_06_base = ""
-
-# База Кардиган
-br_avl_07_base = ""
-
-# База Лонстон
-br_avl_08_base = ""
-
-# Линкор Принц Уэльский
-br_avl_99_base = ""
-
-# Линкор Принц Уэльский
-br_avl_98_base = ""
-
-# Планета Спрага
-sig42_01_base = ""
-
-# Станция Антарес
-sig42_02_base = ""
-
-# Станция Канис
-sig42_03_base = ""
-
-# Круизный лайнер Каникула
-sig42_04_base = ""
-
-# База Исида
-sig42_05_base = ""
-
-# База Сатис
-sig42_06_base = ""
-
-# Линкор Осирис
-sig42_99_base = ""
-
-# Линкор Мусаси
-sig42_98_base = ""
-
-# Станция Эдинбург
-tau23_01_base = ""
-
-# Станция Сибуя
-tau23_02_base = ""
-
-# Линкор Авангард
-tau23_03_base = ""
-
-# Линкор Кирисима
-tau23_04_base = ""
-
-# Фрипорт Кельтик
-tau23_05_base = ""
-
-# База Брест
-tau23_06_base = ""
-
-# База Кога
-tau23_07_base = ""
-
-# Планета Кусю
-ku_ksu_01_base = ""
-
-# Планета Кумамото
-ku_ksu_02_base = ""
-
-# Станция Токио
-ku_ksu_03_base = ""
-
-# Верфь Нагоя
-ku_ksu_04_base = ""
-
-# Станция Гифу
-ku_ksu_05_base = ""
-
-# Исследовательская станция Нансей
-ku_ksu_06_base = ""
-
-# Аванпост Тояма
-ku_ksu_07_base = ""
-
-# Круизный лайнер Бирма
-ku_ksu_08_base = ""
-
-# База Цусима
-ku_ksu_09_base = ""
-
-# База Нагасаки
-ku_ksu_10_base = ""
-
-# Станция Осака
-tau4_01_base = ""
-
-# Фрипорт Окинава
-tau4_02_base = ""
-
-# Линкор Ямасиро
-tau4_03_base = ""
-
-# База Муцуэ
-tau4_04_base = ""
-
-# База Сингапур
-tau4_05_base = ""
-
-# Планета Хонсю
-ku_hns_01_base = ""
-
-# Станция Тиеда
-ku_hns_02_base = ""
-
-# Верфь Окаяма
-ku_hns_03_base = ""
-
-# Тюрьма Вакаяма
-ku_hns_04_base = ""
-
-# Аванпост Нара
-ku_hns_05_base = ""
-
-# Торговая база Фунабаси
-ku_hns_06_base = ""
-
-# База Содзя
-ku_hns_07_base = ""
-
-# База Чиба
-ku_hns_08_base = ""
-
-# Станция Йокогама
-ku_tgk_01_base = ""
-
-# Станция Мацуэ
-ku_tgk_02_base = ""
-
-# Фрипорт Фукуяма
-ku_tgk_03_base = ""
-
-# База Такамацу
-ku_tgk_04_base = ""
-
-# База Коти
-ku_tgk_05_base = ""
-
-ku_tgk_mega_prison = ("")
-
-# Планета Хоккайдо
-ku_hkd_01_base = ""
-
-# Верфь Имабари
-ku_hkd_02_base = ""
-
-# Станция Саппоро
-ku_hkd_03_base = ""
-
-# Аванпост Синдзюку
-ku_hkd_04_base = ""
-
-# Станция Ниигата
-ku_hkd_05_base = ""
-
-# Станция Сендай
-ku_hkd_06_base = ""
-
-# База Кунашир
-ku_hkd_07_base = ""
-
-# База Вако
-ku_hkd_08_base = ""
-
-# Станция Харадзюку
-om7_01_base = ""
-
-# Станция Вольфсбург
-om7_02_base = ""
-
-# Линкор Остфрисланд
-om7_03_base = ""
-
-# Фрипорт Рёдзюн
-om7_04_base = ""
-
-# База Киото
-om7_05_base = ""
-
-# База Хельголанд
-om7_06_base = ""
-
-om7_old_outpost = ("")
-
-# Линкор Мусаси
-om7_99_base = ""
 
 # Станция Валенсия
-co_mad_02_base = ""
+co_mad_02_base = ("")
 
 # Станция Морелия
-co_mad_03_base = ""
+co_mad_03_base = ("")
 
 # Планета Мадрид
-co_mad_01_base = ""
+co_mad_01_base = ("")
 
 # База Крит
-co_mad_04_base = ""
+co_mad_04_base = ("")
 
 # База Очо-Риос
-co_och_01_base = ""
+co_och_01_base = ("")
 
 # Линкор Конкорд
-co_och_02_base = ""
+co_och_02_base = ("")
 
 # Линкор Навухудоносор
-co_cad_99_base = ""
+co_cad_99_base = ("")
 
 # База Кадиз
-om11_01_base = ""
+om11_01_base = ("")
 
 # Линкор Миссури
-sphere_01_base = ""
+sphere_01_base = ("")
 
 # Линкор Миссури
-sphere_02_base = ""
+sphere_02_base = ("")
 
 # Линкор Принц Уэльский
-m8_tau44_99_base = ""
+m8_tau44_99_base = ("")
 
 # Линкор Осирис
-sphere2_99_base = ""
+sphere2_99_base = ("")
 
 # Линкор Осирис
-om13_alt_99_base = ""
+om13_alt_99_base = ("")
 
 # Линкор Осирис
-asf_prom_99_base = ""
+asf_prom_99_base = ("")
 
 # Линкор Мусаси
-or_hq_99_base = ""
+or_hq_99_base = ("")
 
 # Линкор Мусаси
-rh_vien_99_base = ""
+rh_vien_99_base = ("")
 
 # Линкор Мусаси
-xen_99_base = ""
+xen_99_base = ("")
 
 # Линкор Мусаси
-xen_98_base = ""
+xen_98_base = ("")
+
+# Линкор Мусаси
+om7_99_base = ("")
+
+# Линкор Осирис
+sig42_99_base = ("")
+
+# Линкор Мусаси
+sig42_98_base = ("")

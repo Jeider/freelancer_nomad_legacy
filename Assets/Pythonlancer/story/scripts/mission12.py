@@ -56,7 +56,7 @@ class Msn12SpragueCutscene(Msn12, script.CutsceneProps):
         ru='Штаб СБА атакован. Всем силам СБА приказано прибыть в штаб.', en='ASF Headquarters is under attack. All ASF forces are ordered to report to HQ'),
         VoiceLine(260, Hatcher, ru='Силы противника превосходят... Да кто же это?', en='Enemy forces are superior... Who the hell is it?'),
 
-        VoiceLine(270, Trent, ru='(Ужас) Чёрт... Ким же говорил про спецоперацию... Твою мать... Они на это решились.', en='Fuuuck... Kim mentioned a special operation... Goddammit... They actually went through with it.'),
+        VoiceLine(270, Trent, ru='(Ужас) Чёрт... Ким же говорил про спецоперацию... Твою мать... Они на это решились.', en='Fuuuck... Kym mentioned a special operation... Goddammit... They actually went through with it.'),
         VoiceLine(280, Hatcher, ru='Кто решился? На что? Ты о чём вообще?', en='Who did? With what? What are you talking about?'),
 
         VoiceLine(290, Trent, ru='Орден решил показать кто тут главный и устранить прямого конкурента. Орден атаковал СБА, понимаешь?', en='The Order decided to show who\'s in charge and eliminate their direct competitor.The Order is attacking the ASF, don\'t you get it?'),
