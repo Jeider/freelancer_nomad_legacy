@@ -124,7 +124,7 @@ Inside STATIC folder you can find d3d9_reshade.dll, rename it to d3d9.dll and al
 
 ### Toggle difficulty manual
 
-Open BUILDS folder. There 3 english builds: EN_EASY, EN_NORMAL, EN_HARD. By default it use RUSSIAN RU_NORMAL. To run english version you must swith game to any english difficulty. Just open folder with build, copy DATA and EXE and overwrite files in root project folder. Launcher also did same opearation when it switch difficulty, so you can do it without problems.
+Open BUILDS folder. There 3 english builds: EN_EASY, EN_NORMAL, EN_HARD. By default it use RUSSIAN RU_NORMAL. To run english version you must switch game to any english difficulty. Just open folder with build, copy DATA and EXE and overwrite files in root project folder. Launcher also did same opearation when it switch difficulty, so you can do it without problems.
 
 ## How to run game without launcher with custom resolution
 
