@@ -42,7 +42,7 @@ Windows 10 и новее, 64 бит (запустить на других вер
 
 В папке STATIC вы можете найти файл d3d8_dxwrapper.dll. Переименуйте его в d3d8.dll и положите в папку EXE
 
-В папке STATIC найдите d3d9_reshade.dll, переименуйте в d3d9.dll и тоже положите в EXE. Это запустит Reshade. Внимание! Не используйте Reshade в оконном режиме!
+В папке STATIC найдите d3d9_reshade.dll, переименуйте в d3d9.dll и тоже положите в EXE. Так же скопируйте ReShade.ini и ReShadePreset.ini и положите в папку EXE. Это запустит Reshade. Внимание! Не используйте Reshade в оконном режиме!
 
 ### Переключение сложности вручную
 
@@ -118,7 +118,7 @@ To run game in windows mode you should run EXE/Freelancer_en.bat. If you don't w
 
 Inside STATIC folder you can find d3d8_dxwrapper.dll. Переименуйте его в d3d8.dll и положите в папку EXE
 
-Inside STATIC folder you can find d3d9_reshade.dll, rename it to d3d9.dll and also place in in EXE. It will run Reshade. YOU MUST NOT USE IT IN WINDOW MODE!
+Inside STATIC folder you can find d3d9_reshade.dll, rename it to d3d9.dll and also place it in EXE. Also copy ReShade.ini and ReShadePreset.ini and paste inside EXE folder. It will run Reshade. YOU MUST NOT USE IT IN WINDOW MODE!
 
 <a id='toggle-diff-en'></a>
 
