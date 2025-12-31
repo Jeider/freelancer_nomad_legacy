@@ -2,9 +2,9 @@
 
 [English version](#eng-ver)
 
-<a id='eng-ver'>Eng version</a>
+# Русская версия
 
-# Русская версия {#rus-ver}
+<a id='rus-ver'></a>
 
 ## Мод для Freelancer: Наследие Номадов.
 
@@ -76,7 +76,9 @@ https://github.com/Jeider/freelancer_nomad_legacy/blob/master/DATA/FONTS/fonts.i
 
 Откройте папку BUILDS. Там есть 3 русских билда: RU_EASY, RU_NORMAL, RU_HARD. По умолчанию стоит RU_NORMAL. Чтобы  переключить сложность просто скопируйте DATA и EXE и вставьте их содержимое в папки в корне. Если что, лончер делает точно такую же операцию
 
-# English version {#eng-ver}
+# English version
+
+<a id='eng-ver'></a>
 
 ## Freencer mod The Nomad Legacy
 
