@@ -2,6 +2,8 @@
 
 [English version](#eng-ver)
 
+<a id='eng-ver'>Eng version</a>
+
 # Русская версия {#rus-ver}
 
 ## Мод для Freelancer: Наследие Номадов.
