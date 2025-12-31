@@ -1,7 +1,8 @@
-[Русская версия](#Русская версия)
-[English version](#English version)
+[Русская версия](#rus-ver)
 
-# Русская версия
+[English version](#eng-ver)
+
+# Русская версия {#rus-ver}
 
 ## Мод для Freelancer: Наследие Номадов.
 
@@ -73,13 +74,13 @@ https://github.com/Jeider/freelancer_nomad_legacy/blob/master/DATA/FONTS/fonts.i
 
 Откройте папку BUILDS. Там есть 3 русских билда: RU_EASY, RU_NORMAL, RU_HARD. По умолчанию стоит RU_NORMAL. Чтобы  переключить сложность просто скопируйте DATA и EXE и вставьте их содержимое в папки в корне. Если что, лончер делает точно такую же операцию
 
-# English version
+# English version {#eng-ver}
 
 ## Freencer mod The Nomad Legacy
 
 This is fan project. All rights to original game belong to Microsoft and Digital Anvil.
 
-You can download mod by github, but this files is unplayable without original Freelancer files. You MUST have original Freelancer to play this mod.
+You can download mod by gi	thub, but this files is unplayable without original Freelancer files. You MUST have original Freelancer to play this mod.
 
 More about project at https://freelancer2.space/en
 
