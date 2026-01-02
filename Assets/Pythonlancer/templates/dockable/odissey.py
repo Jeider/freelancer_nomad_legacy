@@ -1046,74 +1046,74 @@ archetype = space_industriala
 parent = tau4_04
 
 [Object]
-nickname = br_cam_04_PAD_dome01
+nickname = tau4_04_PAD_dome01
 pos = 858, 31, -881.5
 rotate = 0, -30, 0
 archetype = space_dome
-parent = br_cam_04
+parent = tau4_04
 
 [Object]
-nickname = br_cam_04_PAD_dome02
+nickname = tau4_04_PAD_dome02
 pos = 1170, 31, -834
 rotate = 0, -45, 0
 archetype = space_dome
-parent = br_cam_04
+parent = tau4_04
 
 [Object]
-nickname = br_cam_04_PAD_dome03
+nickname = tau4_04_PAD_dome03
 pos = 858, 31, -239
 rotate = 0, 210, 0
 archetype = space_dome
-parent = br_cam_04
+parent = tau4_04
 
 [Object]
-nickname = br_cam_04_PAD_dome04
+nickname = tau4_04_PAD_dome04
 pos = 1170, 31, -287
 rotate = 0, 225, 0
 archetype = space_dome
-parent = br_cam_04
+parent = tau4_04
 
 [Object]
-nickname = br_cam_04_PAD_dome05
+nickname = tau4_04_PAD_dome05
 pos = 1380, 31, -560
 rotate = 0, -90, 0
 archetype = space_dome
-parent = br_cam_04
+parent = tau4_04
 
 [Object]
-nickname = br_cam_04_PAD_dome01b
+nickname = tau4_04_PAD_dome01b
 pos = -858, 31, -881.5
 rotate = 0, 30, 0
 archetype = space_dome
-parent = br_cam_04
+parent = tau4_04
 
 [Object]
-nickname = br_cam_04_PAD_dome02b
+nickname = tau4_04_PAD_dome02b
 pos = -1170, 31, -834
 rotate = 0, 45, 0
 archetype = space_dome
-parent = br_cam_04
+parent = tau4_04
 
 [Object]
-nickname = br_cam_04_PAD_dome03b
+nickname = tau4_04_PAD_dome03b
 pos = -858, 31, -239
 rotate = 0, -210, 0
 archetype = space_dome
-parent = br_cam_04
+parent = tau4_04
 
 [Object]
-nickname = br_cam_04_PAD_dome04b
+nickname = tau4_04_PAD_dome04b
 pos = -1170, 31, -287
 rotate = 0, -225, 0
 archetype = space_dome
-parent = br_cam_04
+parent = tau4_04
 
 [Object]
-nickname = br_cam_04_PAD_dome05b
+nickname = tau4_04_PAD_dome05b
 pos = -1380, 31, -560
 rotate = 0, 90, 0
 archetype = space_dome
-parent = br_cam_04
+parent = tau4_04
 
 [Object]
 nickname = tau4_04_sphere01

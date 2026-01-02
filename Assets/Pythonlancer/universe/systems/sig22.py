@@ -438,7 +438,7 @@ class Sig22Battleship(Sig22Member, main_objects.LibertyBattleship):
     INTERIOR_CLASS = interior.BattleshipInterior
     DEALERS = dealers.LibertyMilitaryDealers
     SHIP_SET = markets.ShipSet('li_fighter')
-    RU_NAME = MS('Линкор Аризона', 'Battlship Arizona')
+    RU_NAME = MS('Линкор Аризона', 'Battleship Arizona')
 
 
 class Sig22Planet1(Sig22Member, main_objects.Planet):
