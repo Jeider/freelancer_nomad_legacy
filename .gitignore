@@ -154,6 +154,9 @@ EXE/ReShade.ini
 EXE/ReShadePreset.ini
 EXE/d3d8.dll
 EXE/d3d9.dll
+EXE/flsc.dat
+EXE/flsd.dat
+EXE/subtitles.xml
 EBUEula.dll
 EXE_ENG/
 IniLog.txt

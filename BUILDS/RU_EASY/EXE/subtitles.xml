@@ -1,0 +1,879 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Subtitles>
+
+<Static AudioFile="MOD\m01\m01_intro_0010_trent.wav" TextArea="Cinematic">Привет, целитель душ!</Static>
+<Static AudioFile="MOD\m01\m01_intro_0020_barman.wav" TextArea="Cinematic">Здарова, Трент! Тебе как обычно?</Static>
+<Static AudioFile="MOD\m01\m01_intro_0030_trent.wav" TextArea="Cinematic">Да, и сразу две!</Static>
+<Static AudioFile="MOD\m01\m01_intro_0040_barman.wav" TextArea="Cinematic">Есть что отпраздновать?</Static>
+<Static AudioFile="MOD\m01\m01_intro_0050_trent.wav" TextArea="Cinematic">Есть. Даже два повода! Во-первых, я, наконец, рассчитался со всеми долгами!</Static>
+<Static AudioFile="MOD\m01\m01_intro_0060_barman.wav" TextArea="Cinematic">За начало новой жизни! Эта - за счет заведения!</Static>
+<Static AudioFile="MOD\m01\m01_intro_0070_trent.wav" TextArea="Cinematic">Спасибо, дружище! Ты - лучший человек на этой богом забытой планете!</Static>
+<Static AudioFile="MOD\m01\m01_intro_0080_barman.wav" TextArea="Cinematic">Но если было "во-первых", то должно быть и "во-вторых". Давай рассказывай, я сейчас сдохну от любопытства.</Static>
+<Static AudioFile="MOD\m01\m01_intro_0090_trent.wav" TextArea="Cinematic">Только попробуй! Это будет непоправимой утратой.</Static>
+<Static AudioFile="MOD\m01\m01_intro_0100_trent.wav" TextArea="Cinematic">Старый кореш прислал сообщение.</Static>
+<Static AudioFile="MOD\m01\m01_intro_0105_trent.wav" TextArea="Cinematic">Смотри</Static>
+<Static AudioFile="MOD\m01\m01_intro_0110_alaric.wav" TextArea="Cinematic">Привет, Трент, это Аларик! У меня для тебя хорошие новости! Мне кажется, мы сможем поправить твое финансовое положение. Встречаемся на Магдебурге, в системе Сигма-13. До встречи!</Static>
+<Static AudioFile="MOD\m01\m01_intro_0120_trent.wav" TextArea="Cinematic">Что думаешь?</Static>
+<Static AudioFile="MOD\m01\m01_intro_0130_barman.wav" TextArea="Cinematic">Думаю, сегодня ты самый счастливый сукин сын на всей этой гребаной планете.</Static>
+<Static AudioFile="MOD\m01\m01_intro_0140_trent.wav" TextArea="Cinematic">Да я не про это. Соглашаться? Лететь?</Static>
+<Static AudioFile="MOD\m01\m01_intro_0150_barman.wav" TextArea="Cinematic">Можно, конечно, вообще ничего не делать, оставить все как есть. Денег на кусок хлеба хватит, да и риска никакого, разве что сдохнуть лет в сорок от работы на шахте. Но, мне кажется, что если судьба дает тебе шанс вырваться из этого болота - грех его не использовать. Хотя, решать тебе.</Static>
+<Static AudioFile="MOD\m01\m01_intro_0160_trent.wav" TextArea="Cinematic">А почему сам не улетишь из "этого болота"?</Static>
+<Static AudioFile="MOD\m01\m01_intro_0170_barman.wav" TextArea="Cinematic">Это - моё болото. Я к нему прирос и я его люблю. И друзей, присылающих мен сообщения с просьбой все бросить и прилететь на Магдебург у меня нет. Да и потом, если я улечу, кто здесь будет исцелять души страждущих?</Static>
+<Static AudioFile="MOD\m01\m01_intro_0180_trent.wav" TextArea="Cinematic">Да уж, без тебя здесь стало бы совсем тоскливо. Ну так я в космопорт?</Static>
+<Static AudioFile="MOD\m01\m01_intro_0190_barman.wav" TextArea="Cinematic">Удачи, Трент, надеюсь, мы здесь больше не увидимся.</Static>
+<Static AudioFile="MOD\m01\m01_cityscape_0010_stuard.wav" TextArea="Cinematic">Ваши билет и документы, сэр.</Static>
+<Static AudioFile="MOD\m01\m01_cityscape_0020_stuard.wav" TextArea="Cinematic">Трент?.. А вы...</Static>
+<Static AudioFile="MOD\m01\m01_cityscape_0030_trent.wav" TextArea="Cinematic">Нет, просто однофамилец.</Static>
+<Static AudioFile="MOD\m01\m01_cityscape_0040_trent.wav" TextArea="Cinematic">Достало уже. Пока твой тезка спасает вселенную, ты впахиваешь на дядю не покладая рук и выплачиваешь долги.</Static>
+<Static AudioFile="MOD\m01\m01_offer_0010_alaric.wav" TextArea="Cinematic">Здарова, дружище, рад видеть тебя!</Static>
+<Static AudioFile="MOD\m01\m01_offer_0020_trent.wav" TextArea="Cinematic">Привет, Аларик.</Static>
+<Static AudioFile="MOD\m01\m01_offer_0030_alaric.wav" TextArea="Cinematic">Я слышал ты разобрался со всеми проблемами. Теперь никаких долгов, никаких обязательств, да?</Static>
+<Static AudioFile="MOD\m01\m01_offer_0040_trent.wav" TextArea="Cinematic">Ага, а еще никаких денег и никакого корабля. Есть в этом и плюсы - никаких проблем с багажом. Все мое - на мне. </Static>
+<Static AudioFile="MOD\m01\m01_offer_0050_alaric.wav" TextArea="Cinematic">Подходящий момент чтобы начать жизнь с чистого листа, не так ли? </Static>
+<Static AudioFile="MOD\m01\m01_offer_0060_alaric.wav" TextArea="Cinematic">Мне как раз нужен напарник для хорошо оплачиваемого задания.</Static>
+<Static AudioFile="MOD\m01\m01_offer_0070_alaric.wav" TextArea="Cinematic">Корабль я тебе дам. Старичок, конечно, но пару полетов до регламентного ТО переживет.</Static>
+<Static AudioFile="MOD\m01\m01_offer_0080_alaric.wav" TextArea="Cinematic">Нужно проводить пару рейнландских ребят из Берлина в Бисмарк. Платят хорошие деньги</Static>
+<Static AudioFile="MOD\m01\m01_offer_0090_trent.wav" TextArea="Cinematic">Интересно, с чего бы рейнландским ребятам нанимать охрану для перелета из одной своей системы в другую? </Static>
+<Static AudioFile="MOD\m01\m01_offer_0100_trent.wav" TextArea="Cinematic">А впрочем, корабль, говоришь? Ты не оставил мне шансов, Ал!</Static>
+<Static AudioFile="MOD\m01\m01_offer_0110_alaric.wav" TextArea="Cinematic">Вот и договорились. Корабль ждет тебя в ангаре. Осмотри, все ли с ним в порядке. Я буду ждать тебя в космосе.</Static>
+<Static AudioFile="MOD\m01\m01_berlin_0010_alaric.wav" TextArea="Cinematic">Приветствую, джентльмены. Это - Трент, мой друг о котором я вам рассказывал.</Static>
+<Static AudioFile="MOD\m01\m01_berlin_0020_adelmar.wav" TextArea="Cinematic">Отлично. Рады вас видеть. У нас тут некоторые проблемы в системе, надеюсь, вам это не сильно помешало.</Static>
+<Static AudioFile="MOD\m01\m01_berlin_0030_trent.wav" TextArea="Cinematic">Нисколько. Я просто счастлив что прилетел сюда </Static>
+<Static AudioFile="MOD\m01\m01_berlin_0040_luc.wav" TextArea="Cinematic">Вот и отлично. Если все в сборе, давайте начнем.</Static>
+<Static AudioFile="MOD\m01\m01_bizmark_0010_adelmar.wav" TextArea="Cinematic">Благодарю вас за сопровождение! Деньги уже перечислены на ваши счета!</Static>
+<Static AudioFile="MOD\m01\m01_bizmark_0020_trent.wav" TextArea="Cinematic">Не стоит благодарности. </Static>
+<Static AudioFile="MOD\m01\m01_bizmark_0030_luc.wav" TextArea="Cinematic">Кроме того, мы, как члены Ганзейского торгового сообщества, добавили вас в белый лист фрилансеров. </Static>
+<Static AudioFile="MOD\m01\m01_bizmark_0040_luc.wav" TextArea="Cinematic">Теперь вы можете брать к выполнению миссии Ганзейских купцов.</Static>
+<Static AudioFile="MOD\m01\m01_bizmark_0050_alaric.wav" TextArea="Cinematic">А вот за это отдельное спасибо, джентльмены! Трент, ты слышал? Мы теперь на Рейнландской территории не просто голодранцы какие-то, а аккредитованные Ганзейским торговым сообществом официальные фрилансеры!</Static>
+<Static AudioFile="MOD\m01\m01_bizmark_0060_trent.wav" TextArea="Cinematic">Охренеть. </Static>
+<Static AudioFile="MOD\m01\m01_bizmark_0070_luc.wav" TextArea="Cinematic">И... Трент, бесплатный совет, как можно быстрее поменяй то на чём ты летаешь на что-нибудь более современное. Без обид, но подобные раритеты покупают из эстетических соображений, а не чтобы на них летать.</Static>
+<Static AudioFile="MOD\m01\m01_bizmark_0080_trent.wav" TextArea="Cinematic">Я подумаю над этим.</Static>
+<Static AudioFile="MOD\m01\m01_bizmark_0090_alaric.wav" TextArea="Cinematic">И как тебе новая жизнь Трент?</Static>
+<Static AudioFile="MOD\m01\m01_bizmark_0100_trent.wav" TextArea="Cinematic">Волнительно. Но... сейчас у меня есть свой корабль, а за это я хоть дьяволу в глотку готов залезть.</Static>
+<Static AudioFile="MOD\m01\m01_bizmark_0110_alaric.wav" TextArea="Cinematic">Теперь у тебя еще и деньги есть на его обслуживание и переоборудование. А если подумать - то и на покупку нового. По большому счету, Луц в чем-то прав.</Static>
+<Static AudioFile="MOD\m01\m01_bizmark_0120_trent.wav" TextArea="Cinematic">Да пошел он. Может у него и хватает денег чтобы корабли раз в год менять, а я пока еще миллионером не стал. </Static>
+<Static AudioFile="MOD\m01\m01_bizmark_0125_alaric.wav" TextArea="Cinematic">Тогда стоит задуматься над апгрейдом того что есть. </Static>
+<Static AudioFile="MOD\m01\m01_bizmark_0130_alaric.wav" TextArea="Cinematic">В том бою, в астероидах, тебе иногда явно не хватало энергии. Тебе точно не помешает поменять генератор на более мощный. Да и остальную начинку посмотри. Этот корпус очень эластичен в плане апгрейда. Практически все модули можно поменять на более совершенные...</Static>
+<Static AudioFile="MOD\m01\m01_bizmark_0140_alaric.wav" TextArea="Cinematic">О-кей, Трент, у меня тут есть дела, требующие немедленного разрешения, поэтому я побежал. Освоишься без меня тут?</Static>
+<Static AudioFile="MOD\m01\m01_bizmark_0150_trent.wav" TextArea="Cinematic">Попробую... Удачи, Аларик!!!</Static>
+<Static AudioFile="MOD\m01\m01_bizmark_0160_alaric.wav" TextArea="Cinematic">Пока!</Static>
+<Static AudioFile="MOD\m02\m02_offer_0010_trent.wav" TextArea="Cinematic">Вильгельм, я полагаю?</Static>
+<Static AudioFile="MOD\m02\m02_offer_0020_wilham.wav" TextArea="Cinematic">Так точно, герр Трент. Я рад, что вы согласились с нами работать.</Static>
+<Static AudioFile="MOD\m02\m02_offer_0030_trent.wav" TextArea="Cinematic">Еще не согласился, но определенно заинтересовался. Не каждый день представители вооруженных сил Рейнланда присылают мне сообщения на КПК с предложением личной встречи на борту линкора вооруженных сил Рейнланда.</Static>
+<Static AudioFile="MOD\m02\m02_offer_0040_wilham.wav" TextArea="Cinematic">Это вы о каких сообщениях?</Static>
+<Static AudioFile="MOD\m02\m02_offer_0050_trent.wav" TextArea="Cinematic">Ну вот же... Черт. Что такое? Оно только что было...</Static>
+<Static AudioFile="MOD\m02\m02_offer_0060_wilham.wav" TextArea="Cinematic">Да черт с ними, с сообщениями, герр Трент, давайте лучше о деле. И да, надеюсь, вы понимаете, что вне зависимости от того чем закончится наш разговор, все его детали должны остаться между нами?</Static>
+<Static AudioFile="MOD\m02\m02_offer_0070_trent.wav" TextArea="Cinematic">Должны - значит останутся. Любите вы, военные, жути нагнать... Кстати, а почему именно я?</Static>
+<Static AudioFile="MOD\m02\m02_offer_0080_wilham.wav" TextArea="Cinematic">А почему бы и нет? Вы неплохо показали себя в инциденте у аванпоста Бранденбург.</Static>
+<Static AudioFile="MOD\m02\m02_offer_0090_trent.wav" TextArea="Cinematic">Понятно. Перейдем к сути задания?</Static>
+<Static AudioFile="MOD\m02\m02_offer_0100_wilham.wav" TextArea="Cinematic">Перейдем. Как и любое другое государство, мы имеем ряд информаторов на территории, скажем так, наших геополитических соперников. Понимаете о чем я?</Static>
+<Static AudioFile="MOD\m02\m02_offer_0110_trent.wav" TextArea="Cinematic">О да.</Static>
+<Static AudioFile="MOD\m02\m02_offer_0120_wilham.wav" TextArea="Cinematic">Так вот, некоторое время назад один из информаторов вышел на связь по условленному каналу, сообщил, что имеет информацию крайней степени важности и вылетел на своем корабле в условленную точку для передачи данных. И в лучших традициях детективов в точке этой так и не появился. Не обозначил он своего присутствия в течении недели и по месту внедрения, и по аварийным каналам. Это может означать лишь одно - он мертв. </Static>
+<Static AudioFile="MOD\m02\m02_offer_0130_wilham.wav" TextArea="Cinematic">На основании анализа переговоров диспетчеров станций и операторов экстренных служб в интересующем нас районе с вероятностью более девяноста девяти процентов установлено что корабль нашего информатора был атакован, а сам он погиб.</Static>
+<Static AudioFile="MOD\m02\m02_offer_0140_trent.wav" TextArea="Cinematic">Сочувствую. Но при чем тут я?</Static>
+<Static AudioFile="MOD\m02\m02_offer_0150_wilham.wav" TextArea="Cinematic">Вашей задачей будет найти этот корабль и снять с него интересующие нас данные. Сделать это необходимо как можно скорее, так как в данном районе активность так называемых мусорщиков, чрезвычайно высока. Вы должны их опередить.</Static>
+<Static AudioFile="MOD\m02\m02_offer_0160_trent.wav" TextArea="Cinematic">Я вряд ли смогу их опередить. Во-первых я толком не знаю эту область в отличии от них, а во-вторых, опять же в отличии от них я буду действовать один.</Static>
+<Static AudioFile="MOD\m02\m02_offer_0170_wilham.wav" TextArea="Cinematic">Сможете. Дело в том, что есть один электронщик-энтузиаст, который занимается разработкой систем слежения и трекинга радиопереговоров. Мы давно заинтересованы в том, чтобы переманить его в наше ведомство, поэтому внимательно за ним наблюдаем.</Static>
+<Static AudioFile="MOD\m02\m02_offer_0180_trent.wav" TextArea="Cinematic">Как за мной?</Static>
+<Static AudioFile="MOD\m02\m02_offer_0190_wilham.wav" TextArea="Cinematic">Еще пристальнее. Так вот все свои системы он тестирует как раз на интересующем нас районе. Таким образом, у него есть самая полная информация обо всем что произошло в интересующем нас секторе космоса за последнее время. Вам нужно будет связаться с ним, договориться о передаче координат крушения корабля нашего информатора, снять с него данные и передать их нам... естественно не позволив мусорщикам добраться до них раньше.</Static>
+<Static AudioFile="MOD\m02\m02_offer_0200_trent.wav" TextArea="Cinematic">И всего делов-то? Могу приступать? </Static>
+<Static AudioFile="MOD\m02\m02_offer_0210_wilham.wav" TextArea="Cinematic">Если вы согласны, то не "могу", а "можем". В этом задании я буду приписан к вам в качестве напарника.</Static>
+<Static AudioFile="MOD\m02\m02_offer_0220_trent.wav" TextArea="Cinematic">Будете контролировать мои действия?</Static>
+<Static AudioFile="MOD\m02\m02_offer_0230_wilham.wav" TextArea="Cinematic">Нет. Буду осуществлять поддержку и взаимодействие с властями - у меня достаточно высокий допуск в системах Райнланда. Стратегия операции и тактика её проведения целиком на вас, герр Трент.</Static>
+<Static AudioFile="MOD\m02\m02_offer_0240_trent.wav" TextArea="Cinematic">Спасибо за доверие... где поставить подпись?</Static>
+<Static AudioFile="MOD\m02\m02_offer_0250_wilham.wav" TextArea="Cinematic">Ха-ха-ха. Ну зачем нам эти условности? Встречаемся в космосе, герр Трент!</Static>
+<Static AudioFile="MOD\m02\m02_miner_0010_trent.wav" TextArea="Cinematic">Приветствую!</Static>
+<Static AudioFile="MOD\m02\m02_miner_0020_jacobo.wav" TextArea="Cinematic">Симметрично. Чему обязан?</Static>
+<Static AudioFile="MOD\m02\m02_miner_0030_trent.wav" TextArea="Cinematic">Вильгельму вы обязаны.</Static>
+<Static AudioFile="MOD\m02\m02_miner_0040_jacobo.wav" TextArea="Cinematic">Что есть -то есть. </Static>
+<Static AudioFile="MOD\m02\m02_miner_0045_jacobo.wav" TextArea="Cinematic">И что же на этот раз понадобилось герру Вильгельму?</Static>
+<Static AudioFile="MOD\m02\m02_miner_0050_trent.wav" TextArea="Cinematic">Координаты одного разбившегося корабля. </Static>
+<Static AudioFile="MOD\m02\m02_miner_0060_jacobo.wav" TextArea="Cinematic">А! Это проще простого. Я сейчас скину вам все точки происшествий с повреждением судов за прошедший месяц. Точность позиционирования плюс-минус двадцать миллиметров. Выбирайте что вам нужно, фильтруйте по критериям, спасибо говорить не нужно.</Static>
+<Static AudioFile="MOD\m02\m02_miner_0070_trent.wav" TextArea="Cinematic">Мы вместе полетим.</Static>
+<Static AudioFile="MOD\m02\m02_miner_0080_jacobo.wav" TextArea="Cinematic">Это зачем еще?</Static>
+<Static AudioFile="MOD\m02\m02_miner_0090_trent.wav" TextArea="Cinematic">Вильгельм сказал, ты должен мне указать на место интересующего нас события, а я должен его найти. А как я могу быть уверен, что ты не слил мне туфту, чтобы через полчаса свалить в закат? У военных свои причуды, а у фриленсеров - свои.</Static>
+<Static AudioFile="MOD\m02\m02_miner_0100_jacobo.wav" TextArea="Cinematic">Сотню раз уже проклял тот день когда согласился Вильгельму помогать.</Static>
+<Static AudioFile="MOD\m02\m02_miner_0110_jacobo.wav" TextArea="Cinematic">Сам-то он где сейчас? Сидит в баре на ближайшем торговом посту? </Static>
+<Static AudioFile="MOD\m02\m02_miner_0120_jacobo.wav" TextArea="Cinematic">Что бы ни случилось, он тут не при чем окажется, а вот мы с тобой главные фигуранты.</Static>
+<Static AudioFile="MOD\m02\m02_done_0010_reichman.wav" TextArea="Cinematic">А вот и сам знаменитый Трент.</Static>
+<Static AudioFile="MOD\m02\m02_done_0020_trent.wav" TextArea="Cinematic">И чем же я так знаменит, мистер, эмм...</Static>
+<Static AudioFile="MOD\m02\m02_done_0030_reichman.wav" TextArea="Cinematic">Райхманн. Адмирал Райхманн, если позволите.</Static>
+<Static AudioFile="MOD\m02\m02_done_0040_trent.wav" TextArea="Cinematic">Моё почтение, адмирал Райхманн! Так чем же я знаменит?</Static>
+<Static AudioFile="MOD\m02\m02_done_0050_reichman.wav" TextArea="Cinematic">О, мистер Трент, в последнее время в некоторых кругах только и разговоров, что о вас! Надеюсь, герр Вильгельм достойно оплачивает вашу работу?</Static>
+<Static AudioFile="MOD\m02\m02_done_0060_trent.wav" TextArea="Cinematic">Не жалуюсь.</Static>
+<Static AudioFile="MOD\m02\m02_done_0070_reichman.wav" TextArea="Cinematic">Скромность - похвальная благодетель, герр Трент, но одной благодетелью сыт не будешь, ха-ха. Я распоряжусь, чтобы ваш гонорар за предыдущую миссию был удвоен. Всех благ, герр Трент!</Static>
+<Static AudioFile="MOD\m02\m02_done_0080_reichman.wav" TextArea="Cinematic">Так вы считаете, что он - тот кто нам нужен?</Static>
+<Static AudioFile="MOD\m02\m02_done_0090_wilham.wav" TextArea="Cinematic">Безусловно, герр Адмирал. Он - тот, кто поможет нам выполнить все известные вам задачи.</Static>
+<Static AudioFile="MOD\m02\m02_done_0100_reichman.wav" TextArea="Cinematic">И вы это гарантируете?</Static>
+<Static AudioFile="MOD\m02\m02_done_0110_wilham.wav" TextArea="Cinematic">Абсолютно!</Static>
+<Static AudioFile="MOD\m02\m02_done_0120_reichman.wav" TextArea="Cinematic">Хорошо, мы принимаем в работу ваш сценарий.</Static>
+<Static AudioFile="MOD\m02\m02_done_0130_wilham.wav" TextArea="Cinematic">Благодарю за оказанное доверие.</Static>
+<Static AudioFile="MOD\m02\m02_done_0140_reichman.wav" TextArea="Cinematic">Посмотрим что из этого получится. Не смею задерживать, герр Вильгельм.</Static>
+<Static AudioFile="echo_m02.utf|0x8169D54E" TextArea="Cinematic">О! А шо это шевелится на нашей территории?</Static>
+<Static AudioFile="echo_m02.utf|0xAD664F4E" TextArea="Cinematic">Металлолом какой-то...</Static>
+<Static AudioFile="echo_m02.utf|0x9967514E" TextArea="Cinematic">Ну вот, опять сортировать мусор.</Static>
+<Static AudioFile="echo_m02.utf|0xAE6EA342" TextArea="Cinematic">Да шо вы переживаете, там дел-то на пять минут.</Static>
+<Static AudioFile="MOD\m03\m03_offer_0010_trent.wav" TextArea="Cinematic">Салют, джентльмены.</Static>
+<Static AudioFile="MOD\m03\m03_offer_0020_wilham.wav" TextArea="Cinematic">А вот и герр Трент. Познакомьтесь с герром Хасслером. В ходе этой миссии вам придется плотно сотрудничать.</Static>
+<Static AudioFile="MOD\m03\m03_offer_0030_trent.wav" TextArea="Cinematic">Герр Хасслер, мое почтение.</Static>
+<Static AudioFile="MOD\m03\m03_offer_0040_trent.wav" TextArea="Cinematic">И в чем же будет состоять эта миссия?</Static>
+<Static AudioFile="MOD\m03\m03_offer_0050_wilham.wav" TextArea="Cinematic">Да как обычно. Летаем, стреляем, ничего нового.</Static>
+<Static AudioFile="MOD\m03\m03_offer_0060_trent.wav" TextArea="Cinematic">А кто-то на безопасном расстоянии отсиживается. Действительно, ничего нового. А можно как-то конкретнее?</Static>
+<Static AudioFile="MOD\m03\m03_offer_0070_wilham.wav" TextArea="Cinematic">Можно. Наша разведка локализовала местонахождение Дитриха. Это бывшая военная база Кёнигсберг. </Static>
+<Static AudioFile="MOD\m03\m03_offer_0075_wilham.wav" TextArea="Cinematic">В данный момент собирается ударный флот для атаки базы. Но наши аналитики просчтитали, что прямое нападение на Кёнигсберг приведет к недопустимо большим потерям среди личного состава.</Static>
+<Static AudioFile="MOD\m03\m03_offer_0077_wilham.wav" TextArea="Cinematic">Поэтому мы так же формируем мобильную ударную группу, задачей которой будет нейтрализация защитной системы базы к моменту подхода основных сил.</Static>
+<Static AudioFile="MOD\m03\m03_offer_0080_trent.wav" TextArea="Cinematic">То есть те, кто будет таскать вам каштаны из огня.</Static>
+<Static AudioFile="MOD\m03\m03_offer_0090_wilham.wav" TextArea="Cinematic">Именно так, герр Трент. Кстати на вашем участии в этой миссии настаивал лично адмирал Райхманн.</Static>
+<Static AudioFile="MOD\m03\m03_offer_0100_trent.wav" TextArea="Cinematic">Весьма польщён. А можно узнать, как так оказалось, что элитная военная база с высшим классом защиты практически в самом центре территории Рейнланда осталась бесхозной и в итоге досталась мятежникам и корсарам?</Static>
+<Static AudioFile="MOD\m03\m03_offer_0110_hassler.wav" TextArea="Cinematic">Герр Трент, в свое время на территории Рейнланда строились две такие базы - Кёнигсберг и Регенсбург, в системе Мюнхен, на границе с Кусари. Военные Кусари рассматривали Регенсбург не иначе чем шилом у себя в заднице. </Static>
+<Static AudioFile="MOD\m03\m03_offer_0115_hassler.wav" TextArea="Cinematic">В ходе последнего военного конфликта с Кусари мы потерпели сокрушительное поражение и по условиям мирного договора нам пришлось не только демилитаризовать систему Мюнхен, но и прекратить строительство почти готовой станции Кёнигсберг...</Static>
+<Static AudioFile="MOD\m03\m03_offer_0120_hassler.wav" TextArea="Cinematic">Уничтожить Кёнигсберг или разобрать её так и не дошли руки у нашего правительства, а может, надеялись на пересмотр мирного договора, с тем чтобы достроить ее и ввести в эксплуатацию, не знаю, но в итоге получилось так, что Дитрих, как один из самых высокопоставленных военных, имеющий все ключи доступа, просто-напросто её оккупировал...</Static>
+<Static AudioFile="MOD\m03\m03_offer_0130_trent.wav" TextArea="Cinematic">Я так понимаю, спрашивать всякие глупости типа, есть ли у меня выбор, в этой ситуации неуместно.</Static>
+<Static AudioFile="MOD\m03\m03_offer_0140_wilham.wav" TextArea="Cinematic">: Вы умный человек, герр Трент. </Static>
+<Static AudioFile="MOD\m03\m03_offer_0150_hassler.wav" TextArea="Cinematic">Герр Трент, на вашем месте мечтали бы быть девяносто процентов местных фрилансеров. Вам платят отличные деньги, вас курирует адмирал Райхманн лично. </Static>
+<Static AudioFile="MOD\m03\m03_offer_0155_hassler.wav" TextArea="Cinematic">Что вы капризничаете как старшеклассница на выпускном? Давайте вылетать. Встречаемся в космосе.</Static>
+<Static AudioFile="MOD\m03\m03_reward_0010_hassler.wav" TextArea="Cinematic">Расспросил я местных, нихрена они не знают. В любом случае, спасибо, Трент, твоя работа на этом закончена, будем искать грузовик по нашим каналам. К сожалению, из-за того, что  мы с ним облажались, Райхманн значительно урезал гонорар.</Static>
+<Static AudioFile="MOD\m03\m03_reward_0020_trent.wav" TextArea="Cinematic">Странные дела. Базу уничтожили, Дитриха грохнули, а Райхманн выбесился из-за какого-то грузовика. Не нравится мне это.</Static>
+<Static AudioFile="MOD\m03\m03_reward_0030_hassler.wav" TextArea="Cinematic">Мне тоже... Деньги уже на твоем счету. До скорого.</Static>
+<Static AudioFile="MOD\m04\m04_offer_0010_jacobo.wav" TextArea="Cinematic">Герр Трент, это вы?</Static>
+<Static AudioFile="MOD\m04\m04_offer_0020_jacobo.wav" TextArea="Cinematic">Герр Трент, спасибо что согласились прилететь. У меня неприятности. Меня разыскивают власти Рейнланда.</Static>
+<Static AudioFile="MOD\m04\m04_offer_0030_trent.wav" TextArea="Cinematic">Это я уже понял. И у меня появилось знакомое ощущение что меня очень хотят втянуть в неприятности.</Static>
+<Static AudioFile="MOD\m04\m04_offer_0040_jacobo.wav" TextArea="Cinematic">Герр Трент, вы не понимаете. Дело исключительной важности. Мне необходимо доставить в Либерти важные документы.</Static>
+<Static AudioFile="MOD\m04\m04_offer_0050_trent.wav" TextArea="Cinematic">Опять меня угораздило вляпаться в шпионские игры... Джакобо, вы в курсе, что в данный момент я работаю на те самые власти Рейнланда, которые вас ищут?</Static>
+<Static AudioFile="MOD\m04\m04_offer_0060_jacobo.wav" TextArea="Cinematic">Герр Трент, вы же фриленсер. Вы не давали никаких присяг. После выполнения задания вас с заказчиком ничего не связывает. </Static>
+<Static AudioFile="MOD\m04\m04_offer_0062_jacobo.wav" TextArea="Cinematic">Герр Трент, если мы сможем доставить эти ОЧЕНЬ важные документы в Либерти, в систему Форбс, нам заплатят очень большие деньги, ОЧЕНЬ большие, понимаете? </Static>
+<Static AudioFile="MOD\m04\m04_offer_0065_jacobo.wav" TextArea="Cinematic">У меня одного это скорее всего не получится, но если вы мне поможете... </Static>
+<Static AudioFile="MOD\m04\m04_offer_0067_jacobo.wav" TextArea="Cinematic">А если вы мне не поможете, меня скорее всего просто убьют... </Static>
+<Static AudioFile="MOD\m04\m04_offer_0070_trent.wav" TextArea="Cinematic">Я об этом еще пожалею... Хорошо, каков план?</Static>
+<Static AudioFile="MOD\m04\m04_offer_0080_jacobo.wav" TextArea="Cinematic">Герр Трент, спасибо, вы не пожалеете! Вылетайте в космос, я с помощью друзей попробую незаметно пробраться на взлетную площадку. Встретимся на орбите.</Static>
+<Static AudioFile="MOD\m04\m04_offer_0090_trent.wav" TextArea="Cinematic">Тогда до встречи.</Static>
+<Static AudioFile="MOD\m04\m04_reward_0010_hatcher.wav" TextArea="Cinematic">Мисс Хетчер.</Static>
+<Static AudioFile="MOD\m04\m04_reward_0020_trent.wav" TextArea="Cinematic">Мисс Хетчер.</Static>
+<Static AudioFile="MOD\m04\m04_reward_0030_alaric.wav" TextArea="Cinematic">Мисс Хетчер, у вас такие красивые бездонные глаза, что...</Static>
+<Static AudioFile="MOD\m04\m04_reward_0040_hatcher.wav" TextArea="Cinematic">Что вы перестанете нести эту околесицу, иначе я рассержусь</Static>
+<Static AudioFile="MOD\m04\m04_reward_0045_hatcher.wav" TextArea="Cinematic">. О деле. Все выполнено на лучшем уровне. </Static>
+<Static AudioFile="MOD\m04\m04_reward_0050_hatcher.wav" TextArea="Cinematic">Я даже не буду спрашивать чего стоило вам сбежать из Рейнланда с ТАКИМИ документами</Static>
+<Static AudioFile="MOD\m04\m04_reward_0055_hatcher.wav" TextArea="Cinematic">Я девушка впечатлительная, боюсь в обморок упасть.</Static>
+<Static AudioFile="MOD\m04\m04_reward_0060_trent.wav" TextArea="Cinematic">Мы старались.</Static>
+<Static AudioFile="MOD\m04\m04_reward_0070_hatcher.wav" TextArea="Cinematic">Хе, вы тоже были в этом заинтересованы. А кстати, нам как раз нужны такие умелые и предприимчивые люди как вы, для выполнения, скажем так, нестандартных заданий. Вы в ближайшее время не слишком заняты?</Static>
+<Static AudioFile="MOD\m04\m04_reward_0080_alaric.wav" TextArea="Cinematic">Заткнись, Аларик. Нет, с тех пор как мы стали врагами Рейнландского государства, работы у нас поубавилось.</Static>
+<Static AudioFile="MOD\m04\m04_reward_0090_trent.wav" TextArea="Cinematic">Заткнись, Аларик. Нет, с тех пор как мы стали врагами Рейнландского государства, работы у нас поубавилось.</Static>
+<Static AudioFile="MOD\m04\m04_reward_0100_hatcher.wav" TextArea="Cinematic">То есть если у нас найдется пара заданий по вашему профилю за достойную плату...</Static>
+<Static AudioFile="MOD\m04\m04_reward_0110_trent.wav" TextArea="Cinematic">То мы не против их выполнить, если конечно же эти задания не приведут к тому что мы станем государственными преступниками и в Либерти.</Static>
+<Static AudioFile="MOD\m04\m04_reward_0120_hatcher.wav" TextArea="Cinematic">О, нет, я думаю до этого не дойдет.</Static>
+<Static AudioFile="MOD\m04\m04_reward_0130_trent.wav" TextArea="Cinematic">Я вот тоже думал...</Static>
+<Static AudioFile="MOD\m04\m04_final_0010_alaric.wav" TextArea="Cinematic">Круто, Трент, ты умеешь находить себе заказчиков и покровителей.</Static>
+<Static AudioFile="MOD\m04\m04_final_0020_trent.wav" TextArea="Cinematic">А так же врагов и убийц.</Static>
+<Static AudioFile="MOD\m04\m04_final_0030_alaric.wav" TextArea="Cinematic">Да ладно тебе. Ты фриленесером работать стал всего ничего, и вот уже задания на уровне правительств с соответствующей оплатой.</Static>
+<Static AudioFile="MOD\m04\m04_final_0040_trent.wav" TextArea="Cinematic">Ага, и одно из правительств уже назначило награду за мою голову, и я сомневаюсь что у этого правительства короткая память.</Static>
+<Static AudioFile="MOD\m04\m04_final_0050_alaric.wav" TextArea="Cinematic">Да ладно тебе, с таким прикрытием рейнландцы пупок себе скорее надорвут, чем нас достанут.</Static>
+<Static AudioFile="MOD\m04\m04_final_0060_trent.wav" TextArea="Cinematic">С каким-таким прикрытием? Ну-ка Аларик, чего я не знаю?</Static>
+<Static AudioFile="MOD\m04\m04_final_0070_alaric.wav" TextArea="Cinematic">Эта мисс Хетчер, ты в курсе кто она?</Static>
+<Static AudioFile="MOD\m04\m04_final_0080_trent.wav" TextArea="Cinematic">Ну конечно в курсе. Я знаю её уже целых три часа, я в курсе. Аларик, короче, мать твою!</Static>
+<Static AudioFile="MOD\m04\m04_final_0090_alaric.wav" TextArea="Cinematic">Она офицер в одной из спецслужб Либерти.</Static>
+<Static AudioFile="MOD\m04\m04_final_0100_trent.wav" TextArea="Cinematic">О боже! Нет... Опять...</Static>
+<Static AudioFile="MOD\m04\m04_final_0110_alaric.wav" TextArea="Cinematic">Ты не понимаешь, это настолько крутая спецслужба, что другие спецслужбы даже не подозревают о её существовании.</Static>
+<Static AudioFile="MOD\m04\m04_final_0120_trent.wav" TextArea="Cinematic">Аларик, тогда ты то откуда про это знаешь?</Static>
+<Static AudioFile="MOD\m04\m04_final_0130_alaric.wav" TextArea="Cinematic">А... Э-э-э...</Static>
+<Static AudioFile="MOD\m04\m04_final_0140_trent.wav" TextArea="Cinematic">Короче, трындец, опять вляпался.</Static>
+<Static AudioFile="echo_m04.utf|0xAAD01AC4" TextArea="Cinematic">С вами говорит командир спецгруппы Гессенский Лев Маркус Крейтмайер.</Static>
+<Static AudioFile="echo_m04.utf|0x96D304C4" TextArea="Cinematic">Немедленно отключите оружейные системы и следуйте с нами под конвоем. В случае сопротивления у нас есть полномочия вас уничтожить.</Static>
+<Static AudioFile="echo_m04.utf|0xA4056A06" TextArea="Cinematic">Герр Крейтмайер, говорит адмирал Райхманн. Благодарю вас за успешно выполненное задание.</Static>
+<Static AudioFile="echo_m04.utf|0xA5056A02" TextArea="Cinematic">Доставьте грузовик типа Дромадер на базу для досмотра. Сопровождавший его корабль приказываю уничтожить.</Static>
+<Static AudioFile="MOD\m05\m05_offer_0010_hatcher.wav" TextArea="Cinematic">Как вы мистер Трент? Все в порядке?</Static>
+<Static AudioFile="MOD\m05\m05_offer_0020_trent.wav" TextArea="Cinematic">Все отлично мисс Хетчер. Только вот, знаете, вчера ногу натер, а сегодня утром из душа выходил - так в пояснице кольнуло. </Static>
+<Static AudioFile="MOD\m05\m05_offer_0030_hatcher.wav" TextArea="Cinematic">Мистер Трент, давайте не будем превращать традиционный обмен любезностями в цирк. </Static>
+<Static AudioFile="MOD\m05\m05_offer_0040_trent.wav" TextArea="Cinematic">Так может обойдемся без обмена любезностями и перейдем сразу к делу? </Static>
+<Static AudioFile="MOD\m05\m05_offer_0050_hatcher.wav" TextArea="Cinematic">А с вами будет непросто... </Static>
+<Static AudioFile="MOD\m05\m05_offer_0060_hatcher.wav" TextArea="Cinematic">Мы проанализировали привезенные вами документы, они безусловно представляют огромную ценность для нас, но есть одна проблема. </Static>
+<Static AudioFile="MOD\m05\m05_offer_0070_trent.wav" TextArea="Cinematic">Всегда есть проблема </Static>
+<Static AudioFile="MOD\m05\m05_offer_0080_hatcher.wav" TextArea="Cinematic">Слишком много научных выкладок, причем настолько передовых, что у нас головастики драку устроили, не сойдясь в трактовках данных. </Static>
+<Static AudioFile="MOD\m05\m05_offer_0090_hatcher.wav" TextArea="Cinematic">Знаете, мистер Трент, драка между учеными выглядит со стороны весьма забавно. </Static>
+<Static AudioFile="MOD\m05\m05_offer_0100_trent.wav" TextArea="Cinematic">Жаль не видел. В чем моя роль? Не ученых же ваших разнимать? </Static>
+<Static AudioFile="MOD\m05\m05_offer_0110_hatcher.wav" TextArea="Cinematic">Нам нужно мнение не просто ученого, а гения, светилы в своей области, человека который мог бы дать однозначную трактовку этим данным. </Static>
+<Static AudioFile="MOD\m05\m05_offer_0120_hatcher.wav" TextArea="Cinematic">Я знаю такого человека, я с ним лично знакома. Это профессор Мандрейк. Он сможет во всем разобраться. </Static>
+<Static AudioFile="MOD\m05\m05_offer_0130_trent.wav" TextArea="Cinematic">Но вы не можете просто позвонить ему и попросить вам помочь потому что... </Static>
+<Static AudioFile="MOD\m05\m05_offer_0140_hatcher.wav" TextArea="Cinematic">Потому что он работает в ДипСпейсИнжиниринг и в данный момент отправился в исследовательскую экспедицию, судя по всему очень важную, потому что их служба противодействия промышленному шпионажу буквально на ушах стоит. </Static>
+<Static AudioFile="MOD\m05\m05_offer_0150_trent.wav" TextArea="Cinematic">И мое задание будет состоять в... </Static>
+<Static AudioFile="MOD\m05\m05_offer_0160_hatcher.wav" TextArea="Cinematic">В полете... Мистер Трент, перестаньте. Вам нужно будет вылететь на станцию Детройт - в штаб квартиру ДипСпейс, узнать там местонахождение профессора Мандрейка, забрать его и привезти ко мне. </Static>
+<Static AudioFile="MOD\m05\m05_offer_0170_hatcher.wav" TextArea="Cinematic">Я дам вам свою визитку на случай проблем со службой безопасности ДипСпейс, скажете что действуете от моего имени.</Static>
+<Static AudioFile="MOD\m05\m05_offer_0180_trent.wav" TextArea="Cinematic">Служба безопасности Альянса? Никогда не слышал о такой.</Static>
+<Static AudioFile="MOD\m05\m05_offer_0190_hatcher.wav" TextArea="Cinematic">Это не имеет значения, мистер Трент. Гонорар за выполнение задания будет очень приятным.</Static>
+<Static AudioFile="MOD\m05\m05_offer_0200_trent.wav" TextArea="Cinematic">Ок. Как скажете.</Static>
+<Static AudioFile="MOD\m05\m05_offer_0210_hatcher.wav" TextArea="Cinematic">Окей, фрилансер, теперь посмотрим чего ты стоишь. Языком молотить научился, посмотрим как научился работать извилинами. А я за тобой присмотрю... Издалека.</Static>
+<Static AudioFile="MOD\m05\m05_piratebar_0010_trent.wav" TextArea="Cinematic">Хай, бро! Есть чо? А то я тут с такого дальняка вернулся, что все мозги закисли, расслабиться бы... </Static>
+<Static AudioFile="MOD\m05\m05_piratebar_0020_smith.wav" TextArea="Cinematic">Та не, откуда, сам с пятого на десятое перебиваюсь. </Static>
+<Static AudioFile="MOD\m05\m05_piratebar_0030_trent.wav" TextArea="Cinematic">Вот же козлы все эти пиджаки из ДипСпейс. Я им работу сработал, а они мне на Детройте даже посадку не дали, типа мордой не вышел, пропуска нет.</Static>
+<Static AudioFile="MOD\m05\m05_piratebar_0040_trent.wav" TextArea="Cinematic">А у меня там заначка козырная, месяц оттопыриваться можно - из омикронов привез, дельце там одно провернул.</Static>
+<Static AudioFile="MOD\m05\m05_piratebar_0050_trent.wav" TextArea="Cinematic">А теперь из-за этой мать ее боевой готовности сидеть тут пойлом местным травиться...  А когда она еще закончится, готовность эта...</Static>
+<Static AudioFile="MOD\m05\m05_piratebar_0055_trent.wav" TextArea="Cinematic">Эх, пропуск бы где раздобыть, я бы сундучок-то свой оттуда выцепил бы, оттянулись бы по полной...</Static>
+<Static AudioFile="MOD\m05\m05_piratebar_0060_smith.wav" TextArea="Cinematic">Слыш, это, дружище... Тебя как зовут?</Static>
+<Static AudioFile="MOD\m05\m05_piratebar_0070_trent.wav" TextArea="Cinematic">Трент. а тебя как?</Static>
+<Static AudioFile="MOD\m05\m05_piratebar_0080_smith.wav" TextArea="Cinematic">Смит. Мистер Смит.</Static>
+<Static AudioFile="MOD\m05\m05_piratebar_0090_trent.wav" TextArea="Cinematic">Приятно познакомитьcя. Мистер Смит, ты там что-то сказать хотел. </Static>
+<Static AudioFile="MOD\m05\m05_piratebar_0100_smith.wav" TextArea="Cinematic">Да? Да. А, Да! Я знаю где можно пропуск достать. </Static>
+<Static AudioFile="MOD\m05\m05_piratebar_0110_trent.wav" TextArea="Cinematic">Да ты что! И где. </Static>
+<Static AudioFile="MOD\m05\m05_piratebar_0120_smith.wav" TextArea="Cinematic">Смотри. Вот тут склад есть секретный. Там у ребят пара штук на крайний случай точно есть. Я знаю. Попробуй с ними договориться. Только ты это... Никому. Склад-то секретный! </Static>
+<Static AudioFile="MOD\m05\m05_piratebar_0130_trent.wav" TextArea="Cinematic">Замётано, бро!</Static>
+<Static AudioFile="MOD\m05\m05_piratebar_0140_smith.wav" TextArea="Cinematic">Ты с сундучком-то забегай...</Static>
+<Static AudioFile="MOD\m05\m05_detroit_0010_trent.wav" TextArea="Cinematic">Дружище, я тут одного профессора ищу, по фамилии Мандрейк. Не слышал о таком. </Static>
+<Static AudioFile="MOD\m05\m05_detroit_0020_barman.wav" TextArea="Cinematic">Не видел, не слышал, не разговаривал. </Static>
+<Static AudioFile="MOD\m05\m05_detroit_0030_trent.wav" TextArea="Cinematic">А ты душка, я смотрю. А взгляни вот на это, дружище, я из профсоюза барменов.</Static>
+<Static AudioFile="MOD\m05\m05_detroit_0040_barman.wav" TextArea="Cinematic">Чёрт, ты из этих... Светани-ка этой  штукой вон туда в камеру, чтобы я потом смог оправдаться.</Static>
+<Static AudioFile="MOD\m05\m05_detroit_0045_barman.wav" TextArea="Cinematic">Ага, спасибо. Исследовательская станция в Сигма-17.</Static>
+<Static AudioFile="MOD\m05\m05_detroit_0050_trent.wav" TextArea="Cinematic">Какая именно станция? </Static>
+<Static AudioFile="MOD\m05\m05_detroit_0060_barman.wav" TextArea="Cinematic">Ис-сле-до-ва-тель-ска-я. Компренде? Странно, ваши обычно посообразительнее бывают. </Static>
+<Static AudioFile="MOD\m05\m05_detroit_0070_trent.wav" TextArea="Cinematic">Ок. Спасибо за инфу. Видишь как легко растопить лед и найти взаимопонимание?</Static>
+<Static AudioFile="MOD\m05\m05_detroit_0080_trent.wav" TextArea="Cinematic">Вот чего не хватает человечеству - взаимопонимания.</Static>
+<Static AudioFile="MOD\m05\m05_equip_0010_hatcher.wav" TextArea="Cinematic">Профессор Мандрейк.</Static>
+<Static AudioFile="MOD\m05\m05_equip_0020_mandrake.wav" TextArea="Cinematic">Мисс Хетчер.</Static>
+<Static AudioFile="MOD\m05\m05_equip_0030_hatcher.wav" TextArea="Cinematic">Профессор, вы лишний час просидели в капсуле из-за этого идиота Тилтона. </Static>
+<Static AudioFile="MOD\m05\m05_equip_0040_mandrake.wav" TextArea="Cinematic">Этот недоросль, хотя, скорее, переросль, все никак не может отделаться от навязчивой идеи подловить вас, мисс Хетчер. </Static>
+<Static AudioFile="MOD\m05\m05_equip_0050_hatcher.wav" TextArea="Cinematic">Ага, и чем дальше, тем проще и тупее его схемы. </Static>
+<Static AudioFile="MOD\m05\m05_equip_0060_mandrake.wav" TextArea="Cinematic">Все-таки стоит опасаться таких людей. По теории больших чисел, рано или поздно они смогут добиться своего. </Static>
+<Static AudioFile="MOD\m05\m05_equip_0070_hatcher.wav" TextArea="Cinematic">Тилтон - вряд ли. Он считает, что постоянное повторение одних и тех же действий  в расчете на другой результат не считается сумасшествием.</Static>
+<Static AudioFile="MOD\m05\m05_equip_0080_mandrake.wav" TextArea="Cinematic">Да, но эти его "прогрессивные идеи" про то, что Орден уже отжил свое, и пора бы властям Либерти перестать оказывать хоть какую-то поддержку и вообще считаться с мнением Ордена... </Static>
+<Static AudioFile="MOD\m05\m05_equip_0090_hatcher.wav" TextArea="Cinematic">Могут найти поддержку только среди таких же великовозрастных дебилов, как он сам. </Static>
+<Static AudioFile="MOD\m05\m05_equip_0100_trent.wav" TextArea="Cinematic">Стоп, стоп, стоп! Я тут в качестве мебели что-ли? Объясните, наконец, что происходит. </Static>
+<Static AudioFile="MOD\m05\m05_equip_0110_mandrake.wav" TextArea="Cinematic">Это очень сложно и очень долго, мистер Трент. </Static>
+<Static AudioFile="MOD\m05\m05_equip_0120_trent.wav" TextArea="Cinematic">Начнем с простого. Что такое Орден?</Static>
+<Static AudioFile="MOD\m05\m05_equip_0130_hatcher.wav" TextArea="Cinematic">Не так уж это и просто, Трент... Это организация... </Static>
+<Static AudioFile="MOD\m05\m05_equip_0140_trent.wav" TextArea="Cinematic">Это я понял. Давайте мы не будем выжимать из мисс Хетчер информацию тисками, оставим ей свободу выбора. </Static>
+<Static AudioFile="MOD\m05\m05_equip_0150_mandrake.wav" TextArea="Cinematic">Расскажи ему. </Static>
+<Static AudioFile="MOD\m05\m05_equip_0160_hatcher.wav" TextArea="Cinematic">Хорошо. Но то, что я скажу должно не просто остаться между нами. Это секретная информация, и за ее разглашение, Трент... </Static>
+<Static AudioFile="MOD\m05\m05_equip_0170_trent.wav" TextArea="Cinematic">Да-да, я понял, ты лично открутишь мне яйца. </Static>
+<Static AudioFile="MOD\m05\m05_equip_0180_hatcher.wav" TextArea="Cinematic">Не льсти себе. Этим займутся ребята типа Тилтона. </Static>
+<Static AudioFile="MOD\m05\m05_equip_0190_trent.wav" TextArea="Cinematic">Окей, я достаточно напуган, можно перейти к сути дела. </Static>
+<Static AudioFile="MOD\m05\m05_equip_0200_hatcher.wav" TextArea="Cinematic">Никто не знает теперь как и кем был создан Орден, но он был создан влиятельными людьми, так как в свое время это была могущественная организация, которая следила за угрозами человечеству в целом и его выживанием. </Static>
+<Static AudioFile="MOD\m05\m05_equip_0210_hatcher.wav" TextArea="Cinematic">Её не интересовали войны между государствами, даже 80-летняя война, хотя к их чести стоит сказать, что в определенный момент это им надоело и они приложили некоторые усилия, чтобы она стала 80-летней, а не 200-летней. </Static>
+<Static AudioFile="MOD\m05\m05_equip_0220_hatcher.wav" TextArea="Cinematic">Эта организация была создана на случай серьезной угрозы человечеству в целом. И вот однажды этот момент наступил. </Static>
+<Static AudioFile="MOD\m05\m05_equip_0230_hatcher.wav" TextArea="Cinematic">Некоторое время назад все народы столкнулись с угрозой паразитической инопланетной формы жизни, но при помощи Ордена, ее воздействие удалось локализовать. </Static>
+<Static AudioFile="MOD\m05\m05_equip_0240_trent.wav" TextArea="Cinematic">Ряд загадочных смертей в правительствах разных стран, острые языки журналистов обозвали этот феномен чумой венценосных. </Static>
+<Static AudioFile="MOD\m05\m05_equip_0250_hatcher.wav" TextArea="Cinematic">Именно. Все в итоге удалось замять, хотя человечество и стояло на пороге глобальной междоусобной войны и войны с этими космическими паразитами, прозванными "кочевниками". </Static>
+<Static AudioFile="MOD\m05\m05_equip_0260_trent.wav" TextArea="Cinematic">Целый ряд "пограничных инцидентов". </Static>
+<Static AudioFile="MOD\m05\m05_equip_0270_hatcher.wav" TextArea="Cinematic">Точно. Только на самом деле это были не пограничные инциденты. Это была война всех со всеми и всех против "кочевников". </Static>
+<Static AudioFile="MOD\m05\m05_equip_0280_hatcher.wav" TextArea="Cinematic">Но как я уже сказала, всё это удалось замять, при участии Ордена, кстати. Все причастные получили награды, в узком кругу. И все договорились всё забыть. </Static>
+<Static AudioFile="MOD\m05\m05_equip_0290_trent.wav" TextArea="Cinematic">Майор Кинг, мой тезка, Джунко Зейн? </Static>
+<Static AudioFile="MOD\m05\m05_equip_0300_mandrake.wav" TextArea="Cinematic">А он - молодец. </Static>
+<Static AudioFile="MOD\m05\m05_equip_0310_hatcher.wav" TextArea="Cinematic">Сама выбирала... Так вот, Трент, после этого инцидента, Орден обрел действительно большой вес в нашей геополитической системе. И это сразу поставило его под угрозу. </Static>
+<Static AudioFile="MOD\m05\m05_equip_0320_hatcher.wav" TextArea="Cinematic">А в нашей демократической свято системе исповедуется правило царя горы - кто смог пролезть по головам и взобраться на вершину распихивая локтями других - тот и молодец. </Static>
+<Static AudioFile="MOD\m05\m05_equip_0330_hatcher.wav" TextArea="Cinematic">Вот и появилась целая орда молодых борцов уж не знаю за что, но против Ордена. </Static>
+<Static AudioFile="MOD\m05\m05_equip_0340_hatcher.wav" TextArea="Cinematic">Нет, если их отправить в бой против флота "кочевников", они, конечно, сразу же обделаются и сбегут, но это не мешает им в мирное время бороться против засилия Ордена в повседневной жизни Либерти. </Static>
+<Static AudioFile="MOD\m05\m05_equip_0350_hatcher.wav" TextArea="Cinematic">Ну и не стоит забывать что в Ордене тоже люди, а не роботы... А там, где люди - там власть и борьба за власть... </Static>
+<Static AudioFile="MOD\m05\m05_equip_0360_trent.wav" TextArea="Cinematic">Все плохо кончилось, да? </Static>
+<Static AudioFile="MOD\m05\m05_equip_0370_hatcher.wav" TextArea="Cinematic">Ничего еще не кончилось... Но да, все плохо. Орден распался на две самостоятельные организации - Службу Безопасности Альянса и Новый Орден. </Static>
+<Static AudioFile="MOD\m05\m05_equip_0380_trent.wav" TextArea="Cinematic">Я понял. Ордену конец. </Static>
+<Static AudioFile="MOD\m05\m05_equip_0390_hatcher.wav" TextArea="Cinematic">Нет, не конец. Служба Безопасности Альянса курирует кроме прочего и территорию Либерти, несмотря на противодействие со стороны некоторой части элиты Либерти, которая и натравливает против нас дуболомов типа Тилтона. </Static>
+<Static AudioFile="MOD\m05\m05_equip_0400_hatcher.wav" TextArea="Cinematic">Но это не значит, что мы забыли свою главную функцию - защиту человечества от внешней угрозы. </Static>
+<Static AudioFile="MOD\m05\m05_equip_0410_trent.wav" TextArea="Cinematic">Как скажешь...</Static>
+<Static AudioFile="MOD\m05\m05_equip_0420_hatcher.wav" TextArea="Cinematic">Трент, а можно теперь я наконец... </Static>
+<Static AudioFile="MOD\m05\m05_equip_0430_trent.wav" TextArea="Cinematic">Можно. </Static>
+<Static AudioFile="MOD\m05\m05_equip_0440_hatcher.wav" TextArea="Cinematic">Профессор, рейнландцы откуда-то нашли информацию об Омикроне альфа... </Static>
+<Static AudioFile="MOD\m05\m05_equip_0450_mandrake.wav" TextArea="Cinematic">И...</Static>
+<Static AudioFile="MOD\m05\m05_equip_0460_hatcher.wav" TextArea="Cinematic">Они нашли объект и ведут на нем работы.</Static>
+<Static AudioFile="MOD\m05\m05_equip_0470_mandrake.wav" TextArea="Cinematic">Рейнландцы экспериментируют со Сферой в омикроне альфа??? Вы что там, с ума посходили??? Вы чем занимаетесь??? Мистер Трент был прав... Ордену конец...</Static>
+<Static AudioFile="MOD\m05\m05_equip_0480_trent.wav" TextArea="Cinematic">Кстати, про мистера Трента... </Static>
+<Static AudioFile="MOD\m05\m05_equip_0490_hatcher.wav" TextArea="Cinematic">Чего тебе еще? </Static>
+<Static AudioFile="MOD\m05\m05_equip_0500_trent.wav" TextArea="Cinematic">Чеканную монету, не более... </Static>
+<Static AudioFile="MOD\m05\m05_equip_0510_hatcher.wav" TextArea="Cinematic">Ах, да, извини. Делаю перевод. Свяжусь с тобой позже.</Static>
+<Static AudioFile="echo_m05.utf|0x87C69209" TextArea="Cinematic">Ох, ёптыть, это еще что тут такое? </Static>
+<Static AudioFile="echo_m05.utf|0xA7C752C9" TextArea="Cinematic">Мил человек, ты откуда здесь такой нарисовался некрасивый? Заблудился что-ль? </Static>
+<Static AudioFile="echo_m05.utf|0x87C47F48" TextArea="Cinematic">Твою же... Я сегодня же прикончу этого долбаного торчка. Все мозги себе скурил. </Static>
+<Static AudioFile="echo_m05.utf|0xA7C4FF08" TextArea="Cinematic">Сначала займемся эти пионэром.</Static>
+<Static AudioFile="echo_m05.utf|0xB8D06E41" TextArea="Cinematic">Фриленсер альфа-один, заблокируйте орудийные системы и проследуйте с нами до линкора Грифон. </Static>
+<Static AudioFile="echo_m05.utf|0xB8086841" TextArea="Cinematic">Фриленсер альфа-один, повторяю, заблокируйте орудийные системы и проследуйте с нами до линкора Грифон. Приказ коммандера Тилтона. В случае сопротивления открываем огонь на поражение. </Static>
+<Static AudioFile="echo_m05.utf|0x9DE4630B" TextArea="Cinematic">Этот фрилансер обвиняется ни много ни мало в уничтожении научной станции Кларк! И я имею полномочия делать с ним все, что захочу! </Static>
+<Static AudioFile="echo_m05.utf|0x9DF06201" TextArea="Cinematic">Да я-то здесь причем? Станцию изнутри взорвали, я в это время вообще снаружи был, ожидал... </Static>
+<Static AudioFile="echo_m05.utf|0x9C1C6D0B" TextArea="Cinematic">Замолчи, Трент </Static>
+<Static AudioFile="echo_m05.utf|0xB4838B4B" TextArea="Cinematic">Внимание, враждебные контакты на радаре!</Static>
+<Static AudioFile="echo_m05.utf|0x8CCD2DC9" TextArea="Cinematic">Какая встреча, герр Трент! А вы знаете, что полагается по законам Рейнланда за государственную измену? Правильно, смертная казнь! Звено, к бою! </Static>
+<Static AudioFile="echo_m05_female.utf|0x8E3E0F8C" TextArea="Cinematic">Салют, мальчики! Он под моей юрисдикцией, расслабьтесь. Это наш человек, ясно вам?! </Static>
+<Static AudioFile="echo_m05_female.utf|0xBE32F78C" TextArea="Cinematic">Заткнись, фрилансер</Static>
+<Static AudioFile="echo_m05_player.utf|0xBB166EC9" TextArea="Cinematic">Здравствуйте, хозяева, дома есть? </Static>
+<Static AudioFile="echo_m05_player.utf|0x9B1622CA" TextArea="Cinematic">Мне тут некий мистер Смит намекнул, что у вас пропуск можно получить на Детройт по сходной цене. </Static>
+<Static AudioFile="echo_m05_player.utf|0x9BCE24CA" TextArea="Cinematic">Да что за... Я просто летел к вратам в Форбс, в чем дело? </Static>
+<Static AudioFile="MOD\m06\m06_offer_0010_trent.wav" TextArea="Cinematic">Мисс Хетчер. Аларик, не ожидал, что ты уже здесь.</Static>
+<Static AudioFile="MOD\m06\m06_offer_0020_alaric.wav" TextArea="Cinematic">Как только ты со мной связался, я сразу же прибыл к мисс Хетчер. Видимо, я был ближе к Нориджу, чем ты.</Static>
+<Static AudioFile="MOD\m06\m06_offer_0030_hatcher.wav" TextArea="Cinematic">А теперь, господа, когда все выяснили когда, откуда и каким образом мы все сюда прибыли, перейдем к делу? ... </Static>
+<Static AudioFile="MOD\m06\m06_offer_0040_hatcher.wav" TextArea="Cinematic">Отлично! Как вы уже поняли есть некий объект - Сфера. В свое время его обнаружил еще Орден, но тогда никто не смог понять что это, для чего предназначено и как работает. И про Сферу забыли. </Static>
+<Static AudioFile="MOD\m06\m06_offer_0050_hatcher.wav" TextArea="Cinematic">А теперь мы узнаём что рейнландцам удалось подобрать к ней ключ и они проводят на ней свои исследования. Есть обоснованное мнение, что ничем хорошим это не закончится. Поэтому исследования эти нужно, как бы это сказать... закрыть.</Static>
+<Static AudioFile="MOD\m06\m06_offer_0060_trent.wav" TextArea="Cinematic">Ха-ха-ха, отлично. Если вы не смогли подобрать к Сфере ключ сами, то никто не должен. А если подобрал, то нужно срочно устранить либо ключ, либо Сферу, либо того кто это сделал. Браво! Так не доставайся же ты никому.</Static>
+<Static AudioFile="MOD\m06\m06_offer_0070_hatcher.wav" TextArea="Cinematic">Я не разделяю вашего сарказма, мистер Трент. В прошлый раз подобная ситуация случилась, когда другие рейнландские ученые нашли нечто в Омикронах. Ох уж мне эти неугомонные рейнландцы.</Static>
+<Static AudioFile="MOD\m06\m06_offer_0080_hatcher.wav" TextArea="Cinematic">И все закончилось тем самым кризисом, про который я вам рассказывала в присутствие профессора Мандрейка. Вы поняли, о чем я?</Static>
+<Static AudioFile="MOD\m06\m06_offer_0090_trent.wav" TextArea="Cinematic">Да, понял. Не стоит шутить с ящиком Пандоры.</Static>
+<Static AudioFile="MOD\m06\m06_offer_0100_hatcher.wav" TextArea="Cinematic">Хорошо, с моральной подоплекой наших действий мы разобрались, теперь про материальную. Вы получите вознаграждение втрое больше обычного, и удостоверения внештатных сотрудников СБА. </Static>
+<Static AudioFile="MOD\m06\m06_offer_0110_alaric.wav" TextArea="Cinematic">Чёрт побери, я за! Где ставить подпись? Могу кровью!</Static>
+<Static AudioFile="MOD\m06\m06_offer_0120_trent.wav" TextArea="Cinematic">Аларик, угомонись. Мисс Хетчер, а что конкретно нужно сделать? Уничтожить Сферу, уничтожить ученых? Мне это совсем не по душе, я всё-таки не наёмный убийца.</Static>
+<Static AudioFile="MOD\m06\m06_offer_0130_hatcher.wav" TextArea="Cinematic">А вы уверены? Нет, все не так страшно и кроваво, как вы сейчас расписали. В полученных нами документах профессор нашел способ сделать Сферу невосприимчивой к внешним воздействиям, как сказал профессор "закрыться". </Static>
+<Static AudioFile="MOD\m06\m06_offer_0140_hatcher.wav" TextArea="Cinematic">Все дальнейшие подробности - в том случае, если вы согласитесь.</Static>
+<Static AudioFile="MOD\m06\m06_offer_0150_trent.wav" TextArea="Cinematic">У меня дежавю. Вот только в прошлый раз меня называли не "мистер Трент", а "герр Трент"... С другой стороны, временами было весело... Хорошо, я в деле.</Static>
+<Static AudioFile="MOD\m06\m06_offer_0160_hatcher.wav" TextArea="Cinematic">Тогда встретимся на орбите и продолжим разговор там.</Static>
+<Static AudioFile="MOD\m06\m06_briefing_0010_hatcher.wav" TextArea="Cinematic">Итак, джентльмены, главная задача - ликвидировать рейнландского ученого, профессора Роттермана.</Static>
+<Static AudioFile="MOD\m06\m06_briefing_0020_trent.wav" TextArea="Cinematic">Черт, я так и думал.</Static>
+<Static AudioFile="MOD\m06\m06_briefing_0030_hatcher.wav" TextArea="Cinematic">Не перебивайте, Трент!  Думал он. Может быть, вы также думали, что за такой гонорар вам поручат доставку суши? </Static>
+<Static AudioFile="MOD\m06\m06_briefing_0040_hatcher.wav" TextArea="Cinematic">Пора взрослеть, мистер Трент. </Static>
+<Static AudioFile="MOD\m06\m06_briefing_0050_hatcher.wav" TextArea="Cinematic">Итак, ликвидируете профессора Роттермана и забираете два артефакта - кристалл кочевников и том Протея, они должны находиться либо у профессора, либо рядом с ним.</Static>
+<Static AudioFile="MOD\m06\m06_briefing_0060_hatcher.wav" TextArea="Cinematic">В свое время они хранились в одном из тайников Ордена, но в так называемые смутные времена следы их потерялись.</Static>
+<Static AudioFile="MOD\m06\m06_briefing_0070_hatcher.wav" TextArea="Cinematic">Вы забираете артефакты, увозите их и Сфера закрывается.</Static>
+<Static AudioFile="MOD\m06\m06_briefing_0080_alaric.wav" TextArea="Cinematic">Орден? Смутные времена?</Static>
+<Static AudioFile="MOD\m06\m06_briefing_0090_trent.wav" TextArea="Cinematic">Позже, Аларик.</Static>
+<Static AudioFile="MOD\m06\m06_briefing_0100_hatcher.wav" TextArea="Cinematic">Хватит, чёрт побери, меня перебивать, мы сейчас обсуждаем важнейшую миссию! </Static>
+<Static AudioFile="MOD\m06\m06_briefing_0110_trent.wav" TextArea="Cinematic">Самую важную в вашей жизни, мисс Хетчер? Не забывайте что конкретные исполнители - мы, и вот как исполнители мы хотели бы подробностей о предшествующих ликвидации профессора этапах. </Static>
+<Static AudioFile="MOD\m06\m06_briefing_0120_hatcher.wav" TextArea="Cinematic">Хорошо, Трент. Итак, проникновение внутрь Сферы. Охраняется она беспрецедентно. Я сомневаюсь, что кайзер Рейнланда охраняется так же как она. </Static>
+<Static AudioFile="MOD\m06\m06_briefing_0130_hatcher.wav" TextArea="Cinematic">Рядом со сферой находится военная база, представляющая собою верфь, способную принимать по два линкора и четыре корабля среднего тоннажа одновременно. Понимаете, какая там развернута группировка? Поэтому силовое решение невозможно. </Static>
+<Static AudioFile="MOD\m06\m06_briefing_0140_hatcher.wav" TextArea="Cinematic">Для проникновения вам понадобятся устройства, которые находятся в контейнерах, переданных мною вам перед стыковкой с Миссури. Это устройства, делающие ваши корабли невидимыми как визуально, так и всеми радарными системами. </Static>
+<Static AudioFile="MOD\m06\m06_briefing_0150_hatcher.wav" TextArea="Cinematic">Они создают вокруг корабля локальное искривление пространства, и ваши корабли как бы перестают находиться в нашей реальности. </Static>
+<Static AudioFile="MOD\m06\m06_briefing_0160_hatcher.wav" TextArea="Cinematic">Смонтируете их у себя на кораблях - просто устанавливаете где-нибудь внутри герметичного корпуса, подключаете к энергосистеме и выводите кнопку управления в удобное место приборной доски. Кнопка всего одна, не ошибетесь. </Static>
+<Static AudioFile="MOD\m06\m06_briefing_0170_hatcher.wav" TextArea="Cinematic">Нажимаете один раз - и ваш корабль невидим, нажимаете второй раз - и он снова видим. Проблема устройства в его одноразовости. </Static>
+<Static AudioFile="MOD\m06\m06_briefing_0180_hatcher.wav" TextArea="Cinematic">Я не ученый, поэтому скажу просто, после выключения там что-то перегорает, и оно превращается в коробочку с горелым пластиком и обугленным  металлом. </Static>
+<Static AudioFile="MOD\m06\m06_briefing_0190_trent.wav" TextArea="Cinematic">Огнетушителями запасаться? </Static>
+<Static AudioFile="MOD\m06\m06_briefing_0200_hatcher.wav" TextArea="Cinematic">Нет, все безопасно, все происходит внутри устройства, даже неприятного запаха не появится. </Static>
+<Static AudioFile="MOD\m06\m06_briefing_0210_hatcher.wav" TextArea="Cinematic">По времени работы. Поскольку устройство одноразовое, постарайтесь использовать его максимально эффективно. Наши головастики гарантируют тридцать минут работы. Возможно, оно проработает сорок, больше вряд ли. </Static>
+<Static AudioFile="MOD\m06\m06_briefing_0220_hatcher.wav" TextArea="Cinematic">Если тридцати минут работы не хватило, вы можете попробовать оставаться в невидимости дольше на свой страх и риск. Если устройство сгорит не во время выключения, а во время работы, локальное искривление пространства схлопывается вместе с кораблём. </Static>
+<Static AudioFile="MOD\m06\m06_briefing_0230_alaric.wav" TextArea="Cinematic">И куда попадает корабль? В другое измерение? </Static>
+<Static AudioFile="MOD\m06\m06_briefing_0240_hatcher.wav" TextArea="Cinematic">Понятия не имею. Хотите узнать, мистер Аларик? По глазам вижу, что нет. И да, еще один момент. При включенном устройстве стрелять бесполезно. Выши выстрелы не покинут локальную зону искривления пространства.</Static>
+<Static AudioFile="MOD\m06\m06_briefing_0250_hatcher.wav" TextArea="Cinematic">Вот трехмерный план Сферы и все данные по ней, которые нам удалось собрать.</Static>
+<Static AudioFile="MOD\m06\m06_briefing_0260_alaric.wav" TextArea="Cinematic">Вот это хреновина...</Static>
+<Static AudioFile="MOD\m06\m06_briefing_0270_hatcher.wav" TextArea="Cinematic">Я рада, что вы прониклись, мистер Аларик. Загрузите всё к себе в компьютер. В ходе операции будете передавать нужные данные мистеру Тренту. </Static>
+<Static AudioFile="MOD\m06\m06_briefing_0280_hatcher.wav" TextArea="Cinematic">Ну и последнее - после прибытия на территорию Рейнланда никаких радиопереговоров со мной или с кем-то еще на территории Либерти. Вас запеленгуют их радарные станции, и миссия завершится так и не начавшись. </Static>
+<Static AudioFile="MOD\m06\m06_briefing_0290_hatcher.wav" TextArea="Cinematic">Вот, собственно, и всё. По коням, джентльмены.</Static>
+<Static AudioFile="MOD\m06\m06_mount_0010_trent.wav" TextArea="Cinematic">У тебя редкий талант постоянно влипать в неприятности, Аларик.</Static>
+<Static AudioFile="MOD\m06\m06_mount_0020_alaric.wav" TextArea="Cinematic">Ты о чем? </Static>
+<Static AudioFile="MOD\m06\m06_mount_0030_trent.wav" TextArea="Cinematic">О том что с нами будет происходить в ближайшем будущем.</Static>
+<Static AudioFile="MOD\m06\m06_mount_0040_alaric.wav" TextArea="Cinematic">Ты про нашу миссию?</Static>
+<Static AudioFile="MOD\m06\m06_mount_0050_trent.wav" TextArea="Cinematic">Про нашу СУИЦИДАЛЬНУЮ миссию.</Static>
+<Static AudioFile="MOD\m06\m06_mount_0060_alaric.wav" TextArea="Cinematic">Зато какие выгоды в случае успеха! К тому же ты мог бы отказаться.</Static>
+<Static AudioFile="MOD\m06\m06_mount_0070_trent.wav" TextArea="Cinematic">Боюсь, если бы я отказался, то уже летал бы в космосе без скафандра.</Static>
+<Static AudioFile="MOD\m06\m06_mount_0080_alaric.wav" TextArea="Cinematic">Трент, раз уж мы подписались, надо выполнять. Давай, Трент, полетели. Обещаю, в следующий раз заказчика будешь выбирать ты.</Static>
+<Static AudioFile="MOD\m06\m06_mount_0090_trent.wav" TextArea="Cinematic">Если он будет, этот следующий раз. </Static>
+<Static AudioFile="MOD\m06\m06_lab_land_0010_alaric.wav" TextArea="Cinematic">Трент, у нас мало времени. Я уже установил взрывчатку с таймером обратного отсчета.</Static>
+<Static AudioFile="MOD\m06\m06_lab_land_0020_trent.wav" TextArea="Cinematic">Мы же хотели просто закрыть сферу?</Static>
+<Static AudioFile="MOD\m06\m06_lab_land_0030_alaric.wav" TextArea="Cinematic">Вот мы и закроем. Хетчер решила подстраховаться. Мы уничтожим лабораторию.</Static>
+<Static AudioFile="MOD\m06\m06_lab_land_0040_trent.wav" TextArea="Cinematic">Ясно.</Static>
+<Static AudioFile="MOD\m06\m06_lab_room_0010_trent.wav" TextArea="Cinematic">Обалдеть…</Static>
+<Static AudioFile="MOD\m06\m06_lab_room_0020_alaric.wav" TextArea="Cinematic">Трент, бежим! Потом рассмотришь.</Static>
+<Static AudioFile="MOD\m06\m06_torpedo_alert_0010_hatcher.wav" TextArea="Cinematic">Трент, у нас критическая ситуация! Рейнландцы выпустили против Миссури торпедные канонерки. </Static>
+<Static AudioFile="MOD\m06\m06_torpedo_alert_0020_hatcher.wav" TextArea="Cinematic">Мы не успеваем запустить гипердвигатель, а системы ПВО линкора не смогут перехватить все выпущенные торпеды. </Static>
+<Static AudioFile="MOD\m06\m06_torpedo_alert_0040_trent.wav" TextArea="Cinematic">Но сначала нужно выгрузить артефакты.</Static>
+<Static AudioFile="MOD\m06\m06_torpedo_alert_0050_hatcher.wav" TextArea="Cinematic">В данной ситуации они большей безопасности у вас на борту, а не на Миссури. Вылетайте! Быстрее!</Static>
+<Static AudioFile="MOD\m06\m06_order_deck_0010_orderpilot.wav" TextArea="Cinematic">Капитан Сид, мы обнаружили артефакты на борту этого фриленсера.</Static>
+<Static AudioFile="MOD\m06\m06_order_deck_0020_syd.wav" TextArea="Cinematic">Отлично. Спасибо за работу, ребята. Артефакты – на склад, пленных – в кают-компанию.</Static>
+<Static AudioFile="MOD\m06\m06_order_prison_0010_syd.wav" TextArea="Cinematic">Вольно, рядовой. Идите в диспетчерскую, пусть подготовят корабль для доставки пленных на нашу базу. А я пока начну допрос.</Static>
+<Static AudioFile="MOD\m06\m06_order_prison_0020_guard.wav" TextArea="Cinematic">Сэр, но если...</Static>
+<Static AudioFile="MOD\m06\m06_order_prison_0030_syd.wav" TextArea="Cinematic">Никаких если. На них же шокеры, пусть только попробуют рыпнуться.</Static>
+<Static AudioFile="MOD\m06\m06_order_prison_0040_guard.wav" TextArea="Cinematic">Есть, сэр.</Static>
+<Static AudioFile="MOD\m06\m06_order_prison_0050_syd.wav" TextArea="Cinematic">Спокойно, джентльмены, я не кусаюсь. Вам повезло, что все произошло во время моего дежурства.</Static>
+<Static AudioFile="MOD\m06\m06_order_prison_0060_syd.wav" TextArea="Cinematic">Забыл представиться. Хари Сид, капитан Ордена, лейтенант СБА, работаю тут под прикрытием.</Static>
+<Static AudioFile="MOD\m06\m06_order_prison_0065_syd.wav" TextArea="Cinematic">Сейчас подождем некоторое время, а потом я помогу вам покинуть негостеприимный борт Навуходоносора</Static>
+<Static AudioFile="MOD\m06\m06_order_prison_0070_delta3.wav" TextArea="Cinematic">Сдается мне, ребята, что это очередная провокация Ордена, и выведет нас этот милый капитан на шеренгу бойцов со штурмовыми винтовками.</Static>
+<Static AudioFile="MOD\m06\m06_order_prison_0080_delta1.wav" TextArea="Cinematic">А у тебя что, есть предложения получше? В любом случае, лучше на шеренгу бойцов с винтовками, чем на допрос к специалистам Ордена.</Static>
+<Static AudioFile="MOD\m06\m06_order_prison_0090_trent.wav" TextArea="Cinematic">А что там с артефактами, капитан?</Static>
+<Static AudioFile="MOD\m06\m06_order_prison_0100_syd.wav" TextArea="Cinematic">Летят на базу Ордена.</Static>
+<Static AudioFile="MOD\m06\m06_order_prison_0110_delta1.wav" TextArea="Cinematic"> И вы позволили?</Static>
+<Static AudioFile="MOD\m06\m06_order_prison_0120_syd.wav" TextArea="Cinematic">А что я, по-вашему, должен был сделать? Если бы я начал вставлять Ордену палки в колеса, то сидел бы тут с вами, только не с сигаретой в руке, а с таким же милым ошейником на шее как у вас.</Static>
+<Static AudioFile="MOD\m06\m06_order_prison_0130_trent.wav" TextArea="Cinematic">А как вы собираетесь помочь нам бежать?</Static>
+<Static AudioFile="MOD\m06\m06_order_prison_0140_syd.wav" TextArea="Cinematic">Для начала вы примерите вот это...</Static>
+<Static AudioFile="MOD\m06\m06_order_prison_0145_syd.wav" TextArea="Cinematic">А потом спокойно и небрежно проследуете в ангар к кораблю мистера Трента. </Static>
+<Static AudioFile="MOD\m06\m06_order_prison_0150_syd.wav" TextArea="Cinematic">К сожалению, все остальные уже разбирают на запчасти. А вот корабль Трента пока еще в целости и сохранности. Так что, как говорится, в тесноте, да не в обиде.</Static>
+<Static AudioFile="MOD\m06\m06_order_prison_0160_trent.wav" TextArea="Cinematic">А после нашего побега... Как это скажется на вас? Вы не будете сидеть здесь не с сигаретой в руке, а с ошейником как у нас на шее?</Static>
+<Static AudioFile="MOD\m06\m06_order_prison_0170_syd.wav" TextArea="Cinematic">О, нет. Вы же меня вырубили, этому найдутся неоспоримые доказательства. </Static>
+<Static AudioFile="MOD\m06\m06_order_prison_0180_syd.wav" TextArea="Cinematic">К тому же, что такое побег пленников в сравнении с тем, что я передал в руки  Ордена артефакты, за которыми охотится весь сектор Сириуса.</Static>
+<Static AudioFile="MOD\m06\m06_order_prison_0190_trent.wav" TextArea="Cinematic">Толково, не поспоришь. </Static>
+<Static AudioFile="MOD\m06\m06_freeport_0010_delta1.wav" TextArea="Cinematic">Мистер Трент, Хочу вас поблагодарить за проделанную работу. Прошу извинить нас за то, что попали в неприятности по нашей вине, и я обещаю, что сделаю все возможное, чтобы восстановить вашу репутацию.</Static>
+<Static AudioFile="MOD\m06\m06_freeport_0020_trent.wav" TextArea="Cinematic">Это все хорошо, конечно, но что мне, собственно, делать сейчас?</Static>
+<Static AudioFile="MOD\m06\m06_freeport_0030_delta1.wav" TextArea="Cinematic">Ведите себя тихо, принимайте контракты на этом фрипорте, в других независимых или пиратских системах, но ни в коем случае не возвращайтесь в легальные системы.</Static>
+<Static AudioFile="MOD\m06\m06_freeport_0040_delta1.wav" TextArea="Cinematic">Если вас там задержат, мы будем бессильны что-то с этим сделать. А вас превратят в козла отпущения.</Static>
+<Static AudioFile="MOD\m06\m06_freeport_0050_delta1.wav" TextArea="Cinematic">А сейчас мне нужно выйти на связь со штабом СБА, обсудить создавшуюся ситуацию и выработать дальнейший план действий. </Static>
+<Static AudioFile="MOD\m06\m06_freeport_0060_delta1.wav" TextArea="Cinematic">В благодарность за вашу работу я перевожу вам со своего счета пять тысяч кредитов. Кроме того, вознаграждение за предыдущую миссию остается за вами, и как только мы разрешим эту ситуацию, вы его получите.</Static>
+<Static AudioFile="MOD\m06\m06_freeport_0070_trent.wav" TextArea="Cinematic">А как же компенсация за моральный ущерб?</Static>
+<Static AudioFile="MOD\m06\m06_freeport_0090_delta1.wav" TextArea="Cinematic">Мистер Трент, вы никогда не производили впечатление жадного человека. Вы достаточно долго и успешно действуете в непростых ситуациях. </Static>
+<Static AudioFile="MOD\m06\m06_freeport_0100_delta1.wav" TextArea="Cinematic">А вот жадные люди, я слышал, долго не живут... Как только появятся новости, я свяжусь с вами, мистер Трент.</Static>
+<Static AudioFile="echo_m06.utf|0xB40B038D" TextArea="Cinematic">По данным СБА этот кристалл назвали 'Номадским зерном'. Если кочевники тебя заметят, то из Зерна будут появляться все новые и новые истребители.</Static>
+<Static AudioFile="echo_m06.utf|0xB41F0287" TextArea="Cinematic">Выход должен находиться рядом, но он был автоматически закрыт после активации Зерна. Чтобы система безопасности разблокировала выход необходимо ликвидировать угрозу в этом зале, то есть уничтожить Зерно и все корабли кочевников. </Static>
+<Static AudioFile="echo_m06.utf|0xB5F30D8D" TextArea="Cinematic">Проблема в том, что если ты сильно нашумишь, наши рейнландские друзья могут перевозбудиться, поэтому действовать надо быстро.</Static>
+<Static AudioFile="echo_m06.utf|0x8CE3460F" TextArea="Cinematic">Лидер звена Дельта. Даю координаты прыжковой дыры в Сигма-17.</Static>
+<Static AudioFile="echo_m06.utf|0x8C0DEC04" TextArea="Cinematic">Капитан Сид, цели успешно перехвачены.</Static>
+<Static AudioFile="echo_m06.utf|0xBC3C1443" TextArea="Cinematic">Фиксируйте их и доставьте на борт Навуходоносора.</Static>
+<Static AudioFile="echo_m06_player.utf|0x9B17460C" TextArea="Cinematic">Аларик, тут что-то непонятное. Какой-то кристалл, вокруг которого летают корабли Кочевников.</Static>
+<Static AudioFile="MOD\m07\m07_offer_0010_barman.wav" TextArea="Cinematic">Чего налить?</Static>
+<Static AudioFile="MOD\m07\m07_offer_0020_trent.wav" TextArea="Cinematic">Дельца какого-нибудь, желательно с хорошей оплатой.</Static>
+<Static AudioFile="MOD\m07\m07_offer_0030_barman.wav" TextArea="Cinematic">Да у нас тут вроде и в своих фрилансерах недостатка нет, понимаете же в какой системе находитесь.</Static>
+<Static AudioFile="MOD\m07\m07_offer_0040_trent.wav" TextArea="Cinematic">А я… скидку хорошую сделаю! Выручай дружище, я совсем на мели.</Static>
+<Static AudioFile="MOD\m07\m07_offer_0050_barman.wav" TextArea="Cinematic">Окей, мистер...</Static>
+<Static AudioFile="MOD\m07\m07_offer_0060_trent.wav" TextArea="Cinematic"></Static>
+<Static AudioFile="MOD\m07\m07_offer_0070_barman.wav" TextArea="Cinematic">Трент.</Static>
+<Static AudioFile="MOD\m07\m07_offer_0080_barman.wav" TextArea="Cinematic">Окей, мистер Трент. Будет для вас дельце.</Static>
+<Static AudioFile="MOD\m07\m07_offer_0090_barman.wav" TextArea="Cinematic">К нам тут гастролеры пожаловали из Либерти. Называют себя бандой Старлайна.</Static>
+<Static AudioFile="MOD\m07\m07_offer_0100_barman.wav" TextArea="Cinematic">Найдите их и убейте Билла Айронсайда - их лидера. Координаты их предположительного местонахождения я вам скину. </Static>
+<Static AudioFile="MOD\m07\m07_offer_0110_trent.wav" TextArea="Cinematic">Но учтите, гонорар будет ниже, чем обычно...</Static>
+<Static AudioFile="MOD\m07\m07_cadiz_0010_enemy1.wav" TextArea="Cinematic">Здаров, земляк! Где Рокфорд?</Static>
+<Static AudioFile="MOD\m07\m07_cadiz_0020_trent.wav" TextArea="Cinematic">Понятия не имею.</Static>
+<Static AudioFile="MOD\m07\m07_cadiz_0030_enemy2.wav" TextArea="Cinematic">Слыш, земеля, ты чо такой дерзкий? Тебя по-хорошему спросили нна, где Рокфорд?</Static>
+<Static AudioFile="MOD\m07\m07_cadiz_0040_enemy3.wav" TextArea="Cinematic">Сейчас наладим диалог.</Static>
+<Static AudioFile="MOD\m07\m07_cadiz_0050_enemy4.wav" TextArea="Cinematic">Где Рокфорд, утырок?</Static>
+<Static AudioFile="MOD\m07\m07_cadiz_0060_rockford.wav" TextArea="Cinematic">Я Рокфорд. </Static>
+<Static AudioFile="MOD\m07\m07_cadiz_0065_rockford.wav" TextArea="Cinematic">За мной! Быстро!</Static>
+<Static AudioFile="MOD\m07\m07_omega13_0010_trent.wav" TextArea="Cinematic">Чёрт, Рокфорд, я обездвижен!</Static>
+<Static AudioFile="MOD\m07\m07_omega13_0015_trent.wav" TextArea="Cinematic">Чёрт, Рокфорд, я обездвижен!</Static>
+<Static AudioFile="MOD\m07\m07_omega13_0020_rockford.wav" TextArea="Cinematic">Я знаю.</Static>
+<Static AudioFile="MOD\m07\m07_omega13_0030_trent.wav" TextArea="Cinematic">Рокфорд, что происходит? Ты же агент СБА, ты должен мне помочь</Static>
+<Static AudioFile="MOD\m07\m07_omega13_0035_trent.wav" TextArea="Cinematic">Рокфорд, что происходит? Ты же агент СБА, ты должен мне помочь</Static>
+<Static AudioFile="MOD\m07\m07_omega13_0040_rockford.wav" TextArea="Cinematic">Я не агент СБА.</Static>
+<Static AudioFile="MOD\m07\m07_omega13_0050_trent.wav" TextArea="Cinematic">Ты же уничтожишь артефакты.</Static>
+<Static AudioFile="MOD\m07\m07_omega13_0055_trent.wav" TextArea="Cinematic">Ты же уничтожишь артефакты.</Static>
+<Static AudioFile="MOD\m07\m07_omega13_0060_rockford.wav" TextArea="Cinematic">Артефакты переживут уничтожение корабля.</Static>
+<Static AudioFile="MOD\m07\m07_omega13_0100_trent.wav" TextArea="Cinematic">Да за-пус-тись же ты, ста-ро-е ко-ры-то.</Static>
+<Static AudioFile="MOD\m07\m07_battleship_0010_trent.wav" TextArea="Cinematic">Мне нужна помощь! Дело государственной важности!</Static>
+<Static AudioFile="MOD\m07\m07_battleship_0020_barman.wav" TextArea="Cinematic">Хе... Прям-таки государственной. Тогда вам к представителю государства.</Static>
+<Static AudioFile="MOD\m07\m07_battleship_0030_barman.wav" TextArea="Cinematic">Вон там у нас офицер Дерси сидит, единственная и неповторимая.</Static>
+<Static AudioFile="MOD\m07\m07_battleship_0040_trent.wav" TextArea="Cinematic">Меня зовут Трент. Я работаю на секретную организацию, связанную с Орденом и мне срочно нужно с ней связаться.</Static>
+<Static AudioFile="MOD\m07\m07_battleship_0050_darcy.wav" TextArea="Cinematic">Еще один... Мистер, а вы в курсе, что торговля артефактами инопланетного происхождения является незаконной?</Static>
+<Static AudioFile="MOD\m07\m07_battleship_0060_darcy.wav" TextArea="Cinematic">Мы недавно взяли парочку вот таких вот продавцов. Когда сажали их в камеру, они тоже уверяли что являются агентами Ордена.</Static>
+<Static AudioFile="MOD\m07\m07_battleship_0070_darcy.wav" TextArea="Cinematic">Не хотите ли составить им компанию или, быть может, их другу герцогу Веллингтону в психушке?</Static>
+<Static AudioFile="MOD\m07\m07_battleship_0080_trent.wav" TextArea="Cinematic">Я хочу доставить артефакт особой важности в штаб-квартиру нашей организации как можно быстрее. </Static>
+<Static AudioFile="MOD\m07\m07_battleship_0090_trent.wav" TextArea="Cinematic">Иначе с меня шкуру спустят, а потом, возможно, и с вас. Кстати, об артефактах.</Static>
+<Static AudioFile="MOD\m07\m07_battleship_0100_darcy.wav" TextArea="Cinematic">О как... Впечатляет.</Static>
+<Static AudioFile="MOD\m07\m07_battleship_0110_darcy.wav" TextArea="Cinematic">А откуда мне знать что эта штука не из какой-нибудь сувенирной лавки для туристов?</Static>
+<Static AudioFile="MOD\m07\m07_battleship_0120_trent.wav" TextArea="Cinematic">Черт побери...</Static>
+<Static AudioFile="MOD\m07\m07_battleship_0130_darcy.wav" TextArea="Cinematic">Ладно, есть у меня знакомый специалист по разным редкостям на соседней станции.</Static>
+<Static AudioFile="MOD\m07\m07_battleship_0140_darcy.wav" TextArea="Cinematic">Пусть он взглянет на эту штуку и если вы правы, то я обещаю вам всяческую поддержку.</Static>
+<Static AudioFile="MOD\m07\m07_battleship_0150_darcy.wav" TextArea="Cinematic">Если же это все-таки сувенир, то у вас, мистер шутник, сегодня вечером будет назначено чаепитие с тем самым герцогом Веллингтоном в психушке!</Static>
+<Static AudioFile="MOD\m07\m07_battleship_0160_trent.wav" TextArea="Cinematic">Есть проблема. У меня на корабле сгорела почти вся электроника, даже и не знаю как смог сюда добраться живым.</Static>
+<Static AudioFile="MOD\m07\m07_battleship_0170_darcy.wav" TextArea="Cinematic">Хорошо, я дам вам один из наших кораблей.</Static>
+<Static AudioFile="MOD\m07\m07_battleship_0180_darcy.wav" TextArea="Cinematic">Но если захотите на нем смыться, имейте ввиду, что все наши корабли оборудованы маячками слежения, так что я вас найду где угодно. </Static>
+<Static AudioFile="MOD\m07\m07_check_artifact_0010_trent.wav" TextArea="Cinematic">Ничего себе. Похоже, у этого парня очень разносторонние интересы.</Static>
+<Static AudioFile="MOD\m07\m07_check_artifact_0020_jabba.wav" TextArea="Cinematic">Я интересуюсь редкими вещами, которые можно выгодно купить и еще более выгодно продать.</Static>
+<Static AudioFile="MOD\m07\m07_check_artifact_0030_jabba.wav" TextArea="Cinematic">Привет, Дерси.</Static>
+<Static AudioFile="MOD\m07\m07_check_artifact_0040_darcy.wav" TextArea="Cinematic">Привет Джабба. Я хочу, чтобы ты взглянул на одну вещицу.</Static>
+<Static AudioFile="MOD\m07\m07_check_artifact_0050_jabba.wav" TextArea="Cinematic">Ух ты! Весьма интересная вещица, явно инопланетного происхождения. </Static>
+<Static AudioFile="MOD\m07\m07_check_artifact_0060_jabba.wav" TextArea="Cinematic">Если вы, вдруг, на мели готов дать вам за нее десять тысяч прямо сейчас.</Static>
+<Static AudioFile="MOD\m07\m07_check_artifact_0070_darcy.wav" TextArea="Cinematic">Вот дерьмо... Попила пивка в баре, нечего сказать. Ладно, Трент, уходим.</Static>
+<Static AudioFile="MOD\m07\m07_check_artifact_0080_darcy.wav" TextArea="Cinematic">Джабба, ты же не дурак да? Ты же будешь держать язык за зубами?</Static>
+<Static AudioFile="MOD\m07\m07_check_artifact_0090_jabba.wav" TextArea="Cinematic">Само собой, Дерси, само собой.</Static>
+<Static AudioFile="MOD\m07\m07_reward_0010_darcy.wav" TextArea="Cinematic">Спасибо, Трент. Я понимаю что долг платежом красен, но чуть попозже, хорошо? Оказывается этот урод далеко не всегда «покупал» свои вещички.</Static>
+<Static AudioFile="MOD\m07\m07_reward_0020_darcy.wav" TextArea="Cinematic">С особо несговорчивыми покупателями ему помогали те самые ребятки, которых мы сожгли рядом со станцией. Нам надо с этим всем разобраться...</Static>
+<Static AudioFile="MOD\m07\m07_reward_0030_darcy.wav" TextArea="Cinematic">Кстати, вот вам официально от правительства Бретонии за помощь. Десять тысяч.</Static>
+<Static AudioFile="MOD\m07\m07_reward_0040_trent.wav" TextArea="Cinematic">Но артефакт я тебе все равно не продам.</Static>
+<Static AudioFile="MOD\m07\m07_reward_0050_darcy.wav" TextArea="Cinematic">Да-да. Очень смешно, Трент. До скорого.</Static>
+<Static AudioFile="MOD\m07\m07_reward_0060_trent.wav" TextArea="Cinematic">Постарайтесь побыстрее, Дерси.</Static>
+<Static AudioFile="echo_m07.utf|0xB4F216CD" TextArea="Cinematic">Фрилансер, у тебя есть кое-что что, что очень нужно нам. Отдавай по-хорошему!</Static>
+<Static AudioFile="echo_m07_female.utf|0x864AFC06" TextArea="Cinematic">Мальчики, а вы не охренели? Это мой участок, я здесь главный коп. Трент, давай разберем эту шпану.</Static>
+<Static AudioFile="MOD\m08\m08_offer_0010_darcy.wav" TextArea="Cinematic">Привет. Мы сейчас пройдем в одну комнату, в которой будет пара очень больших шишек. </Static>
+<Static AudioFile="MOD\m08\m08_offer_0020_darcy.wav" TextArea="Cinematic">Очень прошу, постарайся вести себя посдержаннее.</Static>
+<Static AudioFile="MOD\m08\m08_offer_0030_trent.wav" TextArea="Cinematic">Ничего не понял, но постараюсь.</Static>
+<Static AudioFile="MOD\m08\m08_offer_0040_brighton.wav" TextArea="Cinematic">А это мисс Дерси, наша краса и надежда на светлое будущее.</Static>
+<Static AudioFile="MOD\m08\m08_offer_0050_kaitlyn.wav" TextArea="Cinematic">А это, если я все правильно поняла, эксперт по Ордену, о котором мне столько рассказывали.</Static>
+<Static AudioFile="MOD\m08\m08_offer_0060_darcy.wav" TextArea="Cinematic">Да, это мистер Трент. Трент, это адмирал Брайтон и принцесса Кейтлин.</Static>
+<Static AudioFile="MOD\m08\m08_offer_0070_brighton.wav" TextArea="Cinematic">И у нас к вам, мистер Трент, чрезвычайно важное дело.</Static>
+<Static AudioFile="MOD\m08\m08_offer_0080_trent.wav" TextArea="Cinematic">Шо, опять?</Static>
+<Static AudioFile="MOD\m08\m08_offer_0090_brighton.wav" TextArea="Cinematic">Мистер Трент, давайте чуточку серьёзнее. Речь идет о государственной безопасности Бретонии.</Static>
+<Static AudioFile="MOD\m08\m08_offer_0100_trent.wav" TextArea="Cinematic">Я постараюсь.</Static>
+<Static AudioFile="MOD\m08\m08_offer_0110_brighton.wav" TextArea="Cinematic">У нас для вас, мистер Трент, будет небольшое задание по вашему профилю.</Static>
+<Static AudioFile="MOD\m08\m08_offer_0120_trent.wav" TextArea="Cinematic">Моему профилю?</Static>
+<Static AudioFile="MOD\m08\m08_offer_0130_brighton.wav" TextArea="Cinematic">Орден, мистер Трент, Орден.</Static>
+<Static AudioFile="MOD\m08\m08_offer_0140_trent.wav" TextArea="Cinematic">А... Аааа...</Static>
+<Static AudioFile="MOD\m08\m08_offer_0150_brighton.wav" TextArea="Cinematic">Мистер Трент, смею вас заверить, что данная миссия находится на контроле у самых высокопоставленных лиц Бретонии. </Static>
+<Static AudioFile="MOD\m08\m08_offer_0160_brighton.wav" TextArea="Cinematic">Одно то, что на встрече с вами присутствует принцесса Кейтлин, должно о многом вам говорить.</Static>
+<Static AudioFile="MOD\m08\m08_offer_0170_trent.wav" TextArea="Cinematic">Минуй нас пуще всех печалей и барский гнев, и барская любовь...</Static>
+<Static AudioFile="MOD\m08\m08_offer_0180_brighton.wav" TextArea="Cinematic">Я не понимаю вашего скептицизма, мистер Трент, будьте чуточку прозорливее</Static>
+<Static AudioFile="MOD\m08\m08_offer_0190_brighton.wav" TextArea="Cinematic">Вы окажете услугу нам, а мы, при случае, окажем услугу вам.</Static>
+<Static AudioFile="MOD\m08\m08_offer_0200_trent.wav" TextArea="Cinematic">Допустим. А в чём задание-то?</Static>
+<Static AudioFile="MOD\m08\m08_offer_0210_brighton.wav" TextArea="Cinematic">Вот это уже серьёзный разговор, мистер Трент. Принцесса?</Static>
+<Static AudioFile="MOD\m08\m08_offer_0215_kaitlyn.wav" TextArea="Cinematic">Угу...</Static>
+<Static AudioFile="MOD\m08\m08_offer_0220_brighton.wav" TextArea="Cinematic">Мистер Трент, в свое время правительство Бретонии заключило некое соглашение с Орденом.</Static>
+<Static AudioFile="MOD\m08\m08_offer_0230_brighton.wav" TextArea="Cinematic">Оно сводилось к тому, что Бретония, хм…</Static>
+<Static AudioFile="MOD\m08\m08_offer_0235_brighton.wav" TextArea="Cinematic">Мистер Трент, а вы слышали о проблеме кочевников? </Static>
+<Static AudioFile="MOD\m08\m08_offer_0240_trent.wav" TextArea="Cinematic">В общем и целом.</Static>
+<Static AudioFile="MOD\m08\m08_offer_0250_brighton.wav" TextArea="Cinematic">Отлично. Чуточку осторожности не помешает, вы же меня понимаете?</Static>
+<Static AudioFile="MOD\m08\m08_offer_0260_brighton.wav" TextArea="Cinematic">Так вот, по этому соглашению Бретония отказывалась от своих интересов в секторах так называемого "Наследия Номадов", кочевников то есть. Вы понимаете, о чем я, мистер Трент?</Static>
+<Static AudioFile="MOD\m08\m08_offer_0270_trent.wav" TextArea="Cinematic">Чуточку</Static>
+<Static AudioFile="MOD\m08\m08_offer_0280_brighton.wav" TextArea="Cinematic">Гхм, хорошо. Взамен Орден обязался ограничить доступ к этим системам для всех. То есть совсем ограничить. Вы меня понимаете, мистер Трент?</Static>
+<Static AudioFile="MOD\m08\m08_offer_0290_brighton.wav" TextArea="Cinematic">И мы наивно полагали, что СБА, как прямой наследник Ордена, будет придерживаться достигнутых договоренностей. И что же мы видим сейчас?</Static>
+<Static AudioFile="MOD\m08\m08_offer_0300_trent.wav" TextArea="Cinematic">Что?...</Static>
+<Static AudioFile="MOD\m08\m08_offer_0310_brighton.wav" TextArea="Cinematic">А то, что эти ублюдки из ИРА во всю осваивают Тау-44.</Static>
+<Static AudioFile="MOD\m08\m08_offer_0320_trent.wav" TextArea="Cinematic">Вот сволочи. А Ира - это кто?</Static>
+<Static AudioFile="MOD\m08\m08_offer_0330_brighton.wav" TextArea="Cinematic">Не "кто" а "что". Группа фанатиков, в том числе религиозных, требующих независимости Ирландии от Британской короны.</Static>
+<Static AudioFile="MOD\m08\m08_offer_0340_trent.wav" TextArea="Cinematic">Достаточно забавно, учитывая что в секторе Сириуса нет ни Ирландии, ни Британской короны.</Static>
+<Static AudioFile="MOD\m08\m08_offer_0350_kaitlyn.wav" TextArea="Cinematic">Мистер Трент...</Static>
+<Static AudioFile="MOD\m08\m08_offer_0360_trent.wav" TextArea="Cinematic">А что? Дома Ирландии, насколько я знаю, нет.</Static>
+<Static AudioFile="MOD\m08\m08_offer_0370_kaitlyn.wav" TextArea="Cinematic">А ирландцы, к сожалению, есть...</Static>
+<Static AudioFile="MOD\m08\m08_offer_0380_brighton.wav" TextArea="Cinematic">Теперь вы понимаете, мистер Трент, насколько все это дико?</Static>
+<Static AudioFile="MOD\m08\m08_offer_0390_trent.wav" TextArea="Cinematic">Допустим. Что требуется от меня?</Static>
+<Static AudioFile="MOD\m08\m08_offer_0400_brighton.wav" TextArea="Cinematic">Чуточку помочь нам. В составе оперативного отряда вылететь в Тау-44, и очистить систему от присутствия ИРА.</Static>
+<Static AudioFile="MOD\m08\m08_offer_0410_brighton.wav" TextArea="Cinematic">Кроме всего прочего, мы подозреваем что СБА напрямую во всем этом замешано. И здесь нам пригодитесь вы.</Static>
+<Static AudioFile="MOD\m08\m08_offer_0420_trent.wav" TextArea="Cinematic">В качестве кого? Того, кто ткнет на кого-нибудь пальцем и скажет "он из СБА"? Звучит не очень убедительно.</Static>
+<Static AudioFile="MOD\m08\m08_offer_0430_kaitlyn.wav" TextArea="Cinematic">Ахх...</Static>
+<Static AudioFile="MOD\m08\m08_offer_0435_kaitlyn.wav" TextArea="Cinematic">А пятьдесят тысяч звучат достаточно убедительно? Вы просто примите участие в заплыве, вам не обязательно становиться победителем.</Static>
+<Static AudioFile="MOD\m08\m08_offer_0440_trent.wav" TextArea="Cinematic">Олимпийский принцип? За пятьдесят тысяч? Возможно, я сильно поторопился, сказав, что в секторе Сириуса нет британской короны.</Static>
+<Static AudioFile="MOD\m08\m08_offer_0450_kaitlyn.wav" TextArea="Cinematic">И были достаточно умны, чтобы это признать. Непосредственное руководство миссией возложено на адмирала Брайтона, все детали обсудите с ним...</Static>
+<Static AudioFile="MOD\m08\m08_offer_0460_kaitlyn.wav" TextArea="Cinematic">Джентльмены...</Static>
+<Static AudioFile="MOD\m08\m08_offer_0470_brighton.wav" TextArea="Cinematic">Мистер Трент, на орбите планеты находится Принц Уэльский, мой линкор. Стыкуйтесь к нему, все необходимые допуски и разрешения я вам выдам.</Static>
+<Static AudioFile="MOD\m08\m08_offer_0480_darcy.wav" TextArea="Cinematic">Трент, увидимся на Принце Уэльском.</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0010_hatcher.wav" TextArea="Cinematic">Майо... эээ... Простите, генерал Кинг, майор Скрю, Трент доставлен.</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0020_king.wav" TextArea="Cinematic">Спасибо, мисс Хетчер.</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0030_king.wav" TextArea="Cinematic">Мистер Трент, я понимаю, что у вас выдались тяжелые... гхм... несколько дней...</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0040_trent.wav" TextArea="Cinematic">Недель...</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0050_king.wav" TextArea="Cinematic">Пусть даже месяцев, но есть некоторые вещи, которые выше нашего морального и физического состояния. И в данный момент очень важно определить местонахождение известного вам тома Протеуса и ключа. </Static>
+<Static AudioFile="MOD\m08\m08_osiris_0060_king.wav" TextArea="Cinematic">А поэтому, расскажите, пожалуйста, подробно всё, что происходило с вами с момента когда мисс Хетчер приказала вам вместе с отрядом Дельта отправиться в Сигму-17.</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0070_trent.wav" TextArea="Cinematic">Нас перехватили в Большом Омикроне, до сигмы-17 мы так и не добрались.</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0080_king.wav" TextArea="Cinematic">Кто перехватил?</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0090_trent.wav" TextArea="Cinematic">Да хрен его знает, какие-то бравые ребята с линкора под названием "Навухудоноссор". А потом нам помог с него сбежать капитан Сид. </Static>
+<Static AudioFile="MOD\m08\m08_osiris_0100_king.wav" TextArea="Cinematic">Капитан Сид...</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0110_major.wav" TextArea="Cinematic">Капитан Сид...</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0120_trent.wav" TextArea="Cinematic">Потом со мной вышел на контакт агент Рокфорд. Или это я с ним на контакт вышел...</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0130_king.wav" TextArea="Cinematic">Рокфорд?</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0140_trent.wav" TextArea="Cinematic">Рокфорд. И он помог мне вернуть артефакты. Но позже оказалось, что вернуть он их хотел себе, а меня попытался уничтожить.  И это ему почти удалось.</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0145_trent.wav" TextArea="Cinematic">В итоге, в последний момент я ускользнул от него и спас вот это:</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0150_king.wav" TextArea="Cinematic">Значит Рокфорд в курсе</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0160_major.wav" TextArea="Cinematic">И в игре...</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0170_king.wav" TextArea="Cinematic">И в игре... пока...  Нужно это исправить.</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0180_major.wav" TextArea="Cinematic">В данный момент он скорее всего где-то в штате Нового Ордена. Нам нужен агент в Новом Ордене. Агент, который вычислит его местонахождение.</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0190_king.wav" TextArea="Cinematic">И вы нам его обеспечите?</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0200_major.wav" TextArea="Cinematic">Нет, не обеспечу. Моих агентов в Ордене осталось считанные единицы, их там отстреливают как куропаток.</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0210_king.wav" TextArea="Cinematic">А может быть нам в этом поможет…  мистер Трент?</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0220_hatcher.wav" TextArea="Cinematic">Трент просрал два артефакта и звено прикрытия, и что же мы ему предложим? Стать нашим агентом в Ордене... Генерал Кинг, вы в своем уме???</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0230_major.wav" TextArea="Cinematic">Не говоря уже о том, что скорее всего он и есть агент Ордена.</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0240_king.wav" TextArea="Cinematic">А я верю в этого паренька. Трент, давай так, ты помогаешь нам, а мы чистим всю твою биографию перед СБА и платим тройной тариф.</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0250_trent.wav" TextArea="Cinematic">Знаете что, идите нахер, генерал Кинг. Последнее время я только и занимаюсь тем, что стараюсь улучшить репутацию и получить большие деньги. </Static>
+<Static AudioFile="MOD\m08\m08_osiris_0260_trent.wav" TextArea="Cinematic">А все заканчивается тем, что на меня начинают охоту и обвиняют во все более тяжких преступлениях. </Static>
+<Static AudioFile="MOD\m08\m08_osiris_0270_major.wav" TextArea="Cinematic">Генерал Кинг, а вы не напомните, как звали того агента, которого мы внедрили в Орден до Трента?</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0280_king.wav" TextArea="Cinematic">Какая разница? Связь с ним утеряна, он, скорее всего погиб.</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0290_major.wav" TextArea="Cinematic">Тем не менее, генерал.</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0300_king.wav" TextArea="Cinematic">Аларик. По-моему, Аларик.</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0310_trent.wav" TextArea="Cinematic">Сволочи! Что с Алариком, гады?</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0320_major.wav" TextArea="Cinematic">Мы не знаем. Связь с ним прервалась где-то на территории Кусари.</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0330_hatcher.wav" TextArea="Cinematic">: У него почти получилось. Он должен был передать нам базу данных, но не вышел на связь. Мы не знаем, кто наложил лапу на Аларика и его информацию.</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0340_king.wav" TextArea="Cinematic">: Ты можешь помочь и нам и своему другу. Найди его, заверши передачу информации, которую должен был завершить твой друг - и ты свободен.</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0345_king.wav" TextArea="Cinematic">И не вздумай хитрить, дружище, не вздумай</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0350_trent.wav" TextArea="Cinematic">Ладно... ваша взяла...</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0360_king.wav" TextArea="Cinematic">Мисс Хетчер, поднимите все данные по агенту Аларику и передайте их в распоряжение мистеру Тренту.</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0370_king.wav" TextArea="Cinematic">Далее, вашим заданием будет сопровождение тома Протея вместе с Трентом и мисс Дерси на исследовательскую базу.</Static>
+<Static AudioFile="MOD\m08\m08_osiris_0380_hatcher.wav" TextArea="Cinematic">Принято!</Static>
+<Static AudioFile="echo_m08.utf|0xA5AB9403" TextArea="Cinematic">В ваше задание внесены небольшие коррективы. Пришли новые данные от нашей разведки.</Static>
+<Static AudioFile="echo_m08.utf|0xA6AB940F" TextArea="Cinematic">База ИРА в Тау-44 уничтожена, и есть подозрение, что в ее обломках нам оставили сюрприз.</Static>
+<Static AudioFile="echo_m08.utf|0xA7AB940B" TextArea="Cinematic">С учетом этих обстоятельств, вам и Дерси, как частным лицам, предписывается вылететь в сектор и разобраться, что же там произошло.</Static>
+<Static AudioFile="echo_m08.utf|0x8AAB4781" TextArea="Cinematic">Трент??? А ты здесь откуда? Да еще и в компании бретонского офицера. Я вас сюда не приглашал.</Static>
+<Static AudioFile="echo_m08.utf|0xA78C3981" TextArea="Cinematic">Я расскажу, Трент. Вы только не делайте резких движений, а то мои ребята тебя с твоей бретонкой вмиг испепелят.</Static>
+<Static AudioFile="echo_m08.utf|0xA7083C8B" TextArea="Cinematic">Да, Дерси, послушай своего голубка, целее будешь, перевес по стволам на моей стороне. Капитан Уорфиш, орудия крейсера готовы?</Static>
+<Static AudioFile="echo_m08.utf|0x8A557B46" TextArea="Cinematic">Накопители заряжены на сорок три процента.</Static>
+<Static AudioFile="echo_m08.utf|0xA7403E8B" TextArea="Cinematic">У нас есть пара минут, Трент. Что такое "здесь"? "Здесь" - это Логово кочевников. Какими я здесь судьбами? По поручению моего правительства.</Static>
+<Static AudioFile="echo_m08.utf|0xA7543F81" TextArea="Cinematic">Орден предал нас. Правительство Либерти покровительствовало Ордену во время его становления как никакое другое, но как только Орден вошел в силу, все это было забыто.</Static>
+<Static AudioFile="echo_m08.utf|0xA6B8308B" TextArea="Cinematic">Все данные по технологиям кочевников были изъяты и засекречены верхушкой Ордена. После его раскола, нашим агентам удалось получить доступ к части архива СБА, относящейся к Логову кочевников.</Static>
+<Static AudioFile="echo_m08.utf|0xA6AC3181" TextArea="Cinematic">Это - огромный завод по производству ударных звеньев истребителей кочевников. Если я смогу его запустить, он будет бесконечно производить зерна кочевников.</Static>
+<Static AudioFile="echo_m08.utf|0xB399328B" TextArea="Cinematic">Каждое такое зерно, направленное в сторону противника, раскрывается в виде роя истребителей...</Static>
+<Static AudioFile="echo_m08.utf|0x9B511342" TextArea="Cinematic">Накопители заряжены.</Static>
+<Static AudioFile="echo_m08.utf|0xB3D1308B" TextArea="Cinematic">И вам выпала честь присутствовать при этом историческом моменте.</Static>
+<Static AudioFile="echo_m08.utf|0xB31D3781" TextArea="Cinematic">Капитан Уорфиш, огонь.</Static>
+<Static AudioFile="echo_m08.utf|0xB7566542" TextArea="Cinematic">Э-ээ... Коммандер Тилтон, вы точно уверены?</Static>
+<Static AudioFile="echo_m08.utf|0xB3553581" TextArea="Cinematic">Да! Твою мать, да! И если ты сейчас же не выстрелишь, Уорфиш, клянусь, я поднимусь к тебе на мостик и размозжу твою башку о ближайшую переборку.</Static>
+<Static AudioFile="echo_m08.utf|0x9CC8EDC3" TextArea="Cinematic">Принял.</Static>
+<Static AudioFile="echo_m08.utf|0x99D7EF49" TextArea="Cinematic">Так точно!</Static>
+<Static AudioFile="echo_m08_female.utf|0xA681A8C8" TextArea="Cinematic">Внимание неопознанным кораблям! С вами говорит...</Static>
+<Static AudioFile="echo_m08_female.utf|0x8659E2CB" TextArea="Cinematic">"Твоей бретонкой"? Ты кто такой...</Static>
+<Static AudioFile="echo_m08_female.utf|0xA64DE7C0" TextArea="Cinematic">Сумасшедший ублюдок.</Static>
+<Static AudioFile="echo_m08_female.utf|0xA7E9A2C8" TextArea="Cinematic">Трент, Брайтон был единственным... Единственным человеком... Единственным стоящим человеком среди всех этих...</Static>
+<Static AudioFile="echo_m08_female.utf|0x9E98BBCE" TextArea="Cinematic">Вам надо замереть на месте и даже не дышать.</Static>
+<Static AudioFile="echo_m08_female.utf|0xA69EC7CE" TextArea="Cinematic">Мистер Трент. Вы меня не забыли?</Static>
+<Static AudioFile="echo_m08_female.utf|0x8E9CD3CE" TextArea="Cinematic">Ну ты и засранец, Трент. Красный-один, держите этого персонажа на мушке, если рыпнется - разрешаю открыть огонь на поражение. Отвечаешь за него головой...</Static>
+<Static AudioFile="echo_m08_female.utf|0x96923FCE" TextArea="Cinematic">Итак, что тут случилось? И, Трент, почему, стоит мне увидеть на горизонте прорыв какого-нибудь дерьма, ты обязательно оказываешься рядом? Ты ассенизатор? Сантехник? КТО ТЫ, ТВОЮ МАТЬ???</Static>
+<Static AudioFile="echo_m08_female.utf|0x87FDA7C3" TextArea="Cinematic">Наверное, лучше я расскажу. Один из ваших - коммандер Тилтон - решил запустить фабрику кочевников по производству боевых истребителей.</Static>
+<Static AudioFile="echo_m08_female.utf|0xA7FDA3C2" TextArea="Cinematic">Но вместо этого перегрузил ее и пустил вразнос, при этом погиб его крейсер, линкор "Принц Уэльский" пришедший к нам на выручку, и куча людей с обеих сторон.</Static>
+<Static AudioFile="echo_m08_female.utf|0x8B99B1CA" TextArea="Cinematic">Тилтон... Больной ублюдок с манией величия... Я надеюсь, он мучился перед смертью.</Static>
+<Static AudioFile="echo_m08_female.utf|0x9F98BBCA" TextArea="Cinematic">Хорошо. Вы проследуете со мной до нашей базы. Красный-один, вы остаетесь рядом с обломками объекта, начните поверхностное изучение, я пришлю вам с базы яйцеголовых в помощь.</Static>
+<Static AudioFile="echo_m08_player.utf|0xBB4CCA80" TextArea="Cinematic">А это еще кто? Откуда здесь корабли Либерти?</Static>
+<Static AudioFile="echo_m08_player.utf|0xBB94CC80" TextArea="Cinematic">Тилтон. Ты сам-то здесь какими судьбами? И "здесь" - это где?</Static>
+<Static AudioFile="echo_m08_player.utf|0x9B948083" TextArea="Cinematic">Дерси, не сейчас.</Static>
+<Static AudioFile="echo_m08_player.utf|0xBB805D8E" TextArea="Cinematic">Тилтон, а ты уверен, что после "запуска" все будет так, как ты сказал? Что ничего не взорвется? Что там истребители кочевников не начнут атаковать нас?</Static>
+<Static AudioFile="echo_m08_player.utf|0xBA248882" TextArea="Cinematic">Я понимаю, Дерси, но нам надо...</Static>
+<Static AudioFile="echo_m08_player.utf|0xBA245084" TextArea="Cinematic">Хетчер.</Static>
+<Static AudioFile="echo_m08_player.utf|0xBA241886" TextArea="Cinematic">Мисс Хетчер, вы незабываемы.</Static>
+<Static AudioFile="MOD\m09\m09_deck_0010_darcy.wav" TextArea="Cinematic">Ну что, Трент, готов?</Static>
+<Static AudioFile="MOD\m09\m09_deck_0020_trent.wav" TextArea="Cinematic">К чему это?</Static>
+<Static AudioFile="MOD\m09\m09_deck_0030_darcy.wav" TextArea="Cinematic">К встрече с информатором! Мы понятия не имеем, сколько тут агентов Нового Ордена!</Static>
+<Static AudioFile="MOD\m09\m09_deck_0040_trent.wav" TextArea="Cinematic">Так ты же у нас прикрытие! Или Бретонская корона уже не такая всесильная на территории Кусари?</Static>
+<Static AudioFile="MOD\m09\m09_deck_0050_darcy.wav" TextArea="Cinematic">Эй, всё с нашей короной в порядке! Только от выстрелов лазерных пушек она не защищает! Так что будь покладистей!</Static>
+<Static AudioFile="MOD\m09\m09_deck_0060_trent.wav" TextArea="Cinematic">Как прикажете, мисс Дерси!</Static>
+<Static AudioFile="MOD\m09\m09_yokohama_0010_trent.wav" TextArea="Cinematic">Честно сказать, я нервничаю, когда все в баре, включая самого бармена, смотрят исключительно на меня.</Static>
+<Static AudioFile="MOD\m09\m09_yokohama_0020_darcy.wav" TextArea="Cinematic">Тоже заметил, да?</Static>
+<Static AudioFile="MOD\m09\m09_yokohama_0030_trent.wav" TextArea="Cinematic">Трудно на заметить. Они же не просто смотрят, они взглядом прожигают. Короче, если этот парламентер через полчаса не приходит - я сваливаю.</Static>
+<Static AudioFile="MOD\m09\m09_yokohama_0040_darcy.wav" TextArea="Cinematic">Полностью согласна.</Static>
+<Static AudioFile="MOD\m09\m09_yokohama_0050_hassler.wav" TextArea="Cinematic">Герр Трент, вы действительно верите, что бессмертны?</Static>
+<Static AudioFile="MOD\m09\m09_yokohama_0060_trent.wav" TextArea="Cinematic">Герр Хасслер? Рад видеть. Сегодня в штатском?</Static>
+<Static AudioFile="MOD\m09\m09_yokohama_0070_hassler.wav" TextArea="Cinematic">С моей службой в Рейнланде покончено герр Трент. Вам повезло лично увидеть закат моей военной карьеры.</Static>
+<Static AudioFile="MOD\m09\m09_yokohama_0080_hassler.wav" TextArea="Cinematic">Но хватит про меня, в наших краях вы суперзвезда, за вашу голову назначена очень хорошая награда...</Static>
+<Static AudioFile="MOD\m09\m09_yokohama_0090_trent.wav" TextArea="Cinematic">О как... И чем обязан?</Static>
+<Static AudioFile="MOD\m09\m09_yokohama_0100_hassler.wav" TextArea="Cinematic"> А вы даже и не в курсе. Ха-ха. Многие думают что специально, а я считаю - по незнанию, вы такое количество раз перешли дорогу Новому Ордену, что у руководства не то что нервные тики - судороги начались. </Static>
+<Static AudioFile="MOD\m09\m09_yokohama_0110_hassler.wav" TextArea="Cinematic">И что характерно - каждый раз вы выходите сухим из воды. Я бы даже сказал не просто сухим из воды, а  унося на руках красивую девушку на фоне ядерного гриба.</Static>
+<Static AudioFile="MOD\m09\m09_yokohama_0120_trent.wav" TextArea="Cinematic">Именно поэтому на меня все здесь так пялятся?</Static>
+<Static AudioFile="MOD\m09\m09_yokohama_0130_hassler.wav" TextArea="Cinematic">Конечно. После всех этих подвигов так просто заявиться в штаб-квартиру Нового Ордена. Впрочем, в данный момент вы в полной безопасности, как вам и было обещано.</Static>
+<Static AudioFile="MOD\m09\m09_yokohama_0140_trent.wav" TextArea="Cinematic">Хасслер, в данный момент мне нужны ответы на пару вопросов.Первый и главный из них - где находится Аларик и что с ним?</Static>
+<Static AudioFile="MOD\m09\m09_yokohama_0150_hassler.wav" TextArea="Cinematic">Тогда вам лучше говорить не со мной герр Трент, а с главой Нового Ордена, герром Ямамото.</Static>
+<Static AudioFile="MOD\m09\m09_yokohama_0160_trent.wav" TextArea="Cinematic">И вы сможете это устроить?</Static>
+<Static AudioFile="MOD\m09\m09_yokohama_0170_hassler.wav" TextArea="Cinematic">Именно! Причем незамедлительно!</Static>
+<Static AudioFile="MOD\m09\m09_yokohama_0180_darcy.wav" TextArea="Cinematic">Разумно ли это, Трент?</Static>
+<Static AudioFile="MOD\m09\m09_yokohama_0190_hassler.wav" TextArea="Cinematic">Вы и так находитесь в штаб-квартире Нового Ордена, бояться нужно было раньше. Ямамото-сама  придерживается консервативных взглядов и очень уважает воинскую доблесть. </Static>
+<Static AudioFile="MOD\m09\m09_yokohama_0200_hassler.wav" TextArea="Cinematic">Я рассказал ему о наших с вами совместных приключениях, и  как мне показалось он проникся уважением к вам. Не думаю что вам что-то угрожает.</Static>
+<Static AudioFile="MOD\m09\m09_yokohama_0210_trent.wav" TextArea="Cinematic">Хорошо, пойдёт!</Static>
+<Static AudioFile="MOD\m09\m09_order_0010_hassler.wav" TextArea="Cinematic">Герр Ямамото, герр Трент, фрау Дерси.</Static>
+<Static AudioFile="MOD\m09\m09_order_0020_yamamoto.wav" TextArea="Cinematic"> Мистер Трент, я думал, что в свои годы уже утратил способность удивляться, но вы меня просто поразили. По вашей истории можно написать приключенческий роман. А может и не один роман.</Static>
+<Static AudioFile="MOD\m09\m09_order_0030_yamamoto.wav" TextArea="Cinematic">Вчера вы никто, потом работаете на спецслужбу одного государства, потом становитесь врагом этого государства, но не теряете времени и начинаете работать на спецслужбу другого государства, с которой у вас потом тоже начинаются серьёзные неприятности.</Static>
+<Static AudioFile="MOD\m09\m09_order_0040_yamamoto.wav" TextArea="Cinematic">Мимоходом отправляете в мусорную корзину долгосрочные планы надправительственной организации.  А теперь вот стоите здесь и мирно попиваете саке с её руководителем. </Static>
+<Static AudioFile="MOD\m09\m09_order_0050_yamamoto.wav" TextArea="Cinematic"> Кстати, саке, мистер Трент? Мисс Дерси?</Static>
+<Static AudioFile="MOD\m09\m09_order_0060_darcy.wav" TextArea="Cinematic"> Спасибо, Ямамото-сама.</Static>
+<Static AudioFile="MOD\m09\m09_order_0070_trent.wav" TextArea="Cinematic"> Спасибо, мистер Ямамото, у меня к вам дело.</Static>
+<Static AudioFile="MOD\m09\m09_order_0080_yamamoto.wav" TextArea="Cinematic"> Иначе вас бы здесь не было.</Static>
+<Static AudioFile="MOD\m09\m09_order_0090_trent.wav" TextArea="Cinematic">Я должен найти Аттикуса Рокфорда.</Static>
+<Static AudioFile="MOD\m09\m09_order_0100_yamamoto.wav" TextArea="Cinematic"> И зачем?</Static>
+<Static AudioFile="MOD\m09\m09_order_0110_trent.wav" TextArea="Cinematic"> У меня к нему личные счеты. </Static>
+<Static AudioFile="MOD\m09\m09_order_0120_yamamoto.wav" TextArea="Cinematic"> У генерала Кинга, видимо тоже.</Static>
+<Static AudioFile="MOD\m09\m09_order_0130_yamamoto.wav" TextArea="Cinematic"> Не надо темнить, мистер Трент. Я не бармен, которому изливают душу.</Static>
+<Static AudioFile="MOD\m09\m09_order_0140_yamamoto.wav" TextArea="Cinematic"> Кроме того, у меня появилось ощущение, что и к вам Кинг теплых чувств не испытывает.</Static>
+<Static AudioFile="MOD\m09\m09_order_0150_yamamoto.wav" TextArea="Cinematic">...Если послал на самоубийство...</Static>
+<Static AudioFile="MOD\m09\m09_order_0160_trent.wav" TextArea="Cinematic"> Самоубийство?!</Static>
+<Static AudioFile="MOD\m09\m09_order_0170_yamamoto.wav" TextArea="Cinematic">Для того, чтобы ликвидировать Рокфорда не достаточно одного человека, даже такого везучего как вы, мистер Трент.</Static>
+<Static AudioFile="MOD\m09\m09_order_0180_trent.wav" TextArea="Cinematic"> Плевать на Кинга, мистер Ямамото, или, как вас правильно, Ямамото-сама? Я должен прикончить этого ублюдка и вернуть себе то, что он у меня украл.</Static>
+<Static AudioFile="MOD\m09\m09_order_0190_yamamoto.wav" TextArea="Cinematic"> Я вам немного завидую, мистер Трент. Вы молодой, в вас есть страсть...</Static>
+<Static AudioFile="MOD\m09\m09_order_0200_yamamoto.wav" TextArea="Cinematic"> Я готов помочь вам, Рокфорд и у нас, как там, "кость в горле", правильно?</Static>
+<Static AudioFile="MOD\m09\m09_order_0210_yamamoto.wav" TextArea="Cinematic">Но если вы хотите, чтобы я помог вам, окажите и нам одну услугу.</Static>
+<Static AudioFile="MOD\m09\m09_order_0220_trent.wav" TextArea="Cinematic">И в чем же она заключается?</Static>
+<Static AudioFile="MOD\m09\m09_order_0230_yamamoto.wav" TextArea="Cinematic"> Нам нужно разместить специальные сканеры и обеспечить их долговременную работу.</Static>
+<Static AudioFile="MOD\m09\m09_order_0240_trent.wav" TextArea="Cinematic"> Уфф, интересная работа... А можно подробнее?</Static>
+<Static AudioFile="MOD\m09\m09_order_0250_yamamoto.wav" TextArea="Cinematic">Нас интересует система Энтерпрайз. И все защитные мероприятия, которые были проведены СБА после распада Ордена. У нас есть технические средства, чтобы получить интересующую нас информацию. </Static>
+<Static AudioFile="MOD\m09\m09_order_0260_yamamoto.wav" TextArea="Cinematic">Их нужно разместить и удерживать в системе Сириус, охраняемой патрулями... </Static>
+<Static AudioFile="MOD\m09\m09_order_0270_trent.wav" TextArea="Cinematic">СБА...</Static>
+<Static AudioFile="MOD\m09\m09_order_0280_yamamoto.wav" TextArea="Cinematic">Итак, мистер Трент, вы согласны?</Static>
+<Static AudioFile="MOD\m09\m09_order_0290_trent.wav" TextArea="Cinematic"> А почему бы и нет.</Static>
+<Static AudioFile="MOD\m09\m09_order_0320_yamamoto.wav" TextArea="Cinematic">В таком случае, можете вылетать в космос. С вами свяжется лейтенант Ким. Он будет руководить операцией.</Static>
+<Static AudioFile="MOD\m09\m09_order_0350_darcy.wav" TextArea="Cinematic">Трент, ты в своём уме? Эта операция против СБА</Static>
+<Static AudioFile="MOD\m09\m09_order_0360_trent.wav" TextArea="Cinematic"> У меня уже давно ощущение, что я против всех, Дерси, остались только временные союзники.</Static>
+<Static AudioFile="MOD\m09\m09_reward_0010_kim.wav" TextArea="Cinematic"> Эта операция была безрассудной</Static>
+<Static AudioFile="MOD\m09\m09_reward_0020_hassler.wav" TextArea="Cinematic">Ким, остынь</Static>
+<Static AudioFile="MOD\m09\m09_reward_0030_kim.wav" TextArea="Cinematic"> Теперь выполни свою часть работы, чтобы наша жертва не была напрасной</Static>
+<Static AudioFile="MOD\m09\m09_reward_0040_hassler.wav" TextArea="Cinematic">Я гарантирую это</Static>
+<Static AudioFile="MOD\m09\m09_reward_0100_trent.wav" TextArea="Cinematic">Ей, Хасслер, тут все такие безбашенные?</Static>
+<Static AudioFile="MOD\m09\m09_reward_0110_hassler.wav" TextArea="Cinematic">Не все, герр Трент. Но целеустремленность этих людей воодушевляет</Static>
+<Static AudioFile="MOD\m09\m09_reward_0120_trent.wav" TextArea="Cinematic">Это точно, а что теперь делать?</Static>
+<Static AudioFile="MOD\m09\m09_reward_0130_hassler.wav" TextArea="Cinematic">Пока нужно отдохнуть. Для вас и фрау Дерси на линкоре выделены индивидуальные каюты, вас проводят</Static>
+<Static AudioFile="echo_m09.utf|0x88E7BE88" TextArea="Cinematic">Матомэ, идиот, остановись!</Static>
+<Static AudioFile="echo_m09.utf|0x865D330D" TextArea="Cinematic">Это наш единственный шанс! Прощай друг!</Static>
+<Static AudioFile="echo_m09.utf|0xA65DA708" TextArea="Cinematic">Банзай!</Static>
+<Static AudioFile="echo_m09.utf|0x88ED3E8D" TextArea="Cinematic">Стой! Нет!</Static>
+<Static AudioFile="MOD\m10\m10_offer_0010_hassler.wav" TextArea="Cinematic">Герр Трент, фрау Дерси</Static>
+<Static AudioFile="MOD\m10\m10_offer_0020_darcy.wav" TextArea="Cinematic">Фройляйн.</Static>
+<Static AudioFile="MOD\m10\m10_offer_0030_hassler.wav" TextArea="Cinematic">Простите?</Static>
+<Static AudioFile="MOD\m10\m10_offer_0040_darcy.wav" TextArea="Cinematic">Фройляйн Дерси.</Static>
+<Static AudioFile="MOD\m10\m10_offer_0050_trent.wav" TextArea="Cinematic"> Прошу меня извинить, но мы кажется собрались не лингвистические вопросы разбирать.</Static>
+<Static AudioFile="MOD\m10\m10_offer_0060_hassler.wav" TextArea="Cinematic">Йа! Точно так. К делу! Наши недавние... хмммм... манёвры, а так же резкая активизация вооруженных сил Рейнланда изменили общую ситуацию не лучшим образом.</Static>
+<Static AudioFile="MOD\m10\m10_offer_0070_trent.wav" TextArea="Cinematic"> Кто бы мог подумать, что локальная война с СБА в отдельно взятой системе изменит ситуацию не лучшим образом?</Static>
+<Static AudioFile="MOD\m10\m10_offer_0080_hassler.wav" TextArea="Cinematic">Это было необходимо, герр Трент... А сейчас мы должны реагировать на изменившуюся ситуацию.</Static>
+<Static AudioFile="MOD\m10\m10_offer_0090_trent.wav" TextArea="Cinematic">Кого убить на этот раз?</Static>
+<Static AudioFile="MOD\m10\m10_offer_0100_hassler.wav" TextArea="Cinematic">Нет, герр Трент, совсем наоборот. Нужно будет вытащить из тюрьмы ксеносов одного хорошего человека, героя войны с кочевниками.</Static>
+<Static AudioFile="MOD\m10\m10_offer_0110_trent.wav" TextArea="Cinematic">Войны с кочевниками официально ведь не было.</Static>
+<Static AudioFile="MOD\m10\m10_offer_0120_hassler.wav" TextArea="Cinematic">Это не отменяет того, что были её герои.</Static>
+<Static AudioFile="MOD\m10\m10_offer_0130_trent.wav" TextArea="Cinematic">Пусть так, но при чём тут я?</Static>
+<Static AudioFile="MOD\m10\m10_offer_0140_hassler.wav" TextArea="Cinematic">Вы не первый, кто пытался освободить интересующего нас человека. Первым был ваш друг Аларик.</Static>
+<Static AudioFile="MOD\m10\m10_offer_0150_trent.wav" TextArea="Cinematic"> И Аларик облажался...</Static>
+<Static AudioFile="MOD\m10\m10_offer_0160_hassler.wav" TextArea="Cinematic">Весьма прискорбно, но так и есть. Теперь он содержится в той же тюрьме.</Static>
+<Static AudioFile="MOD\m10\m10_offer_0170_trent.wav" TextArea="Cinematic">И вы хотите, чтобы я повторил его подвиг, и нас в тюрьме стало уже трое? И Аларику не скучно, и преферансик на троих можно будет раскинуть.</Static>
+<Static AudioFile="MOD\m10\m10_offer_0180_hassler.wav" TextArea="Cinematic">При всём моем уважении к герру Аларику, его способности значительно уступают вашим.</Static>
+<Static AudioFile="MOD\m10\m10_offer_0190_trent.wav" TextArea="Cinematic">Хорошо... Если вы так считаете, герр Хасслер.  Эх как же я задолбался... Задолбался!</Static>
+<Static AudioFile="MOD\m10\m10_offer_0200_trent.wav" TextArea="Cinematic"> Ладно, каков план?</Static>
+<Static AudioFile="MOD\m10\m10_offer_0210_hassler.wav" TextArea="Cinematic">Тюрьма находится в Омега-38. Система представляет собой по большей части пылевое облако. Мусаси переместится на окраину системы таким образом, чтобы не привлечь внимание аборигенов.</Static>
+<Static AudioFile="MOD\m10\m10_offer_0220_hassler.wav" TextArea="Cinematic">Герр Трент, вы с фройляйн Дерси возглавите диверсионное звено. Ваши корабли получат дополнительную мимикрирующую обработку, чтобы вы могли пробраться к тюрьме незаметно.</Static>
+<Static AudioFile="MOD\m10\m10_offer_0230_hassler.wav" TextArea="Cinematic">Вы должны будете подавить защитные системы тюрьмы. Следом в дело вступает наш транспорт с десантниками и звено прикрытия.</Static>
+<Static AudioFile="MOD\m10\m10_offer_0240_hassler.wav" TextArea="Cinematic">После того, как десант сделает свое дело, все весело и с фейерверками прорываются обратно на Мусаси.</Static>
+<Static AudioFile="MOD\m10\m10_offer_0250_trent.wav" TextArea="Cinematic">Звучит заманчиво.</Static>
+<Static AudioFile="MOD\m10\m10_offer_0260_darcy.wav" TextArea="Cinematic">Посмотрим, как окажется на самом деле.</Static>
+<Static AudioFile="MOD\m10\m10_offer_0270_hassler.wav" TextArea="Cinematic">Тогда можете готовиться к вылету. Я буду координировать операцию с мостика линкора.</Static>
+<Static AudioFile="MOD\m10\m10_rescued_0010_alaric.wav" TextArea="Cinematic">Как я рад тебя видеть, дружище!!! Ты нас спас. А я уже думал сдохну в этой дыре</Static>
+<Static AudioFile="MOD\m10\m10_rescued_0020_trent.wav" TextArea="Cinematic"> Никто больше не соглашался вытаскивать твою задницу из лап сектантов, вот и пришлось мне... Хотя, я уже подумывал оставить тебя там, в назидание.</Static>
+<Static AudioFile="MOD\m10\m10_rescued_0030_alaric.wav" TextArea="Cinematic">Дружище, я там с одним хорошим человеком познакомился. Ты сейчас охренеешь. Итак... Мистер Трент, познакомьтесь, мистер Трент.</Static>
+<Static AudioFile="MOD\m10\m10_rescued_0040_trent.wav" TextArea="Cinematic"> Очень приятно. Не каждый день получается вот так запросто поболтать с легендой.</Static>
+<Static AudioFile="MOD\m10\m10_rescued_0050_edison.wav" TextArea="Cinematic">Вытащить легенду из передряги, в которой ей угораздило утонуть с головой по собственной глупости, вы хотели сказать. Предрекаю вам блестящее будущее.</Static>
+<Static AudioFile="MOD\m10\m10_rescued_0060_trent.wav" TextArea="Cinematic">Неужели в правительство пробьюсь?</Static>
+<Static AudioFile="MOD\m10\m10_rescued_0070_edison.wav" TextArea="Cinematic">Не смешите меня, кому нужны эти правительства?</Static>
+<Static AudioFile="MOD\m10\m10_rescued_0080_hassler.wav" TextArea="Cinematic">Герр Трент, фрау Зейн передаёт, что лорду Ямамото срочно нужна ваша помощь!</Static>
+<Static AudioFile="MOD\m10\m10_rescued_0090_edison.wav" TextArea="Cinematic">Если фрау Зейн, то это меня. Рад знакомству, мистер Трент!</Static>
+<Static AudioFile="MOD\m10\m10_rescued_0100_hassler.wav" TextArea="Cinematic">Герр Трент, лейтенант Ким обнаружил Рокфорда.</Static>
+<Static AudioFile="MOD\m10\m10_rescued_0110_trent.wav" TextArea="Cinematic">А если лейтенант Ким - то это, видимо меня.</Static>
+<Static AudioFile="MOD\m10\m10_rescued_0120_darcy.wav" TextArea="Cinematic">В последнее время немудрено запутаться в этих Трентах.</Static>
+<Static AudioFile="MOD\m10\m10_rescued_0130_trent.wav" TextArea="Cinematic">И где же Рокфорд?</Static>
+<Static AudioFile="MOD\m10\m10_rescued_0140_hassler.wav" TextArea="Cinematic">На станции Харадзюку, система Омега 7. Мы планируем подорвать корабль герра Рокфорда, но для осуществления миссии нам необходимо чтобы вы отвлекли его на себя.</Static>
+<Static AudioFile="MOD\m10\m10_rescued_0150_trent.wav" TextArea="Cinematic">Хасслер, а ты всех "геррами" называешь? Даже таких засранцев, как Рокфорд.</Static>
+<Static AudioFile="MOD\m10\m10_rescued_0160_hassler.wav" TextArea="Cinematic">К сожалению... Чертово воспитание дает о себе знать.</Static>
+<Static AudioFile="MOD\m10\m10_rescued_0170_trent.wav" TextArea="Cinematic">Хорошо, я в деле</Static>
+<Static AudioFile="MOD\m10\m10_final_0010_trent.wav" TextArea="Cinematic">Ну как ты, узник замка Иф, невольник чести?</Static>
+<Static AudioFile="MOD\m10\m10_final_0020_alaric.wav" TextArea="Cinematic">Теперь - отлично. А там... Я уже с жизнью прощался.</Static>
+<Static AudioFile="MOD\m10\m10_final_0030_trent.wav" TextArea="Cinematic">А нахрена полез-то во всё это</Static>
+<Static AudioFile="MOD\m10\m10_final_0040_alaric.wav" TextArea="Cinematic">А как еще? У тебя есть крутой друг, который на одном месте вертел спецслужбы сразу нескольких государств, жёг врагов пачками и всегда выходил сухим из воды.</Static>
+<Static AudioFile="MOD\m10\m10_final_0050_alaric.wav" TextArea="Cinematic">Надо же как-то соответствовать... Вот я и решил... Когда ко мне обратились... Тоже поиграть в спецагентов.</Static>
+<Static AudioFile="MOD\m10\m10_final_0060_trent.wav" TextArea="Cinematic">Балбес ты, Аларик... Слушай, достало меня всё это. Может сольёмся отсюда по-тихому?</Static>
+<Static AudioFile="MOD\m10\m10_final_0070_alaric.wav" TextArea="Cinematic">Это как?</Static>
+<Static AudioFile="MOD\m10\m10_final_0080_trent.wav" TextArea="Cinematic">Это мы садимся в свои корабли и уходим молча, по-английски. Не думаю, что нас начнут расстреливать сразу после отстыковки.</Static>
+<Static AudioFile="MOD\m10\m10_final_0090_trent.wav" TextArea="Cinematic">А там - рванем в приграничье, будем выполнять обычные заказы за толику малую. А то меня от этой политики уже тошнит. Я уже запутался кто против кого, и за кого сейчас я!</Static>
+<Static AudioFile="MOD\m10\m10_final_0100_alaric.wav" TextArea="Cinematic">Да поздно уже когти рвать-то. Улетишь ты в приграничье, а за тобой через недельку какой-нибудь Хасслер вылетит, и вежливо так прикончит. </Static>
+<Static AudioFile="MOD\m10\m10_final_0105_alaric.wav" TextArea="Cinematic">Слишком уж мы с тобой в этом увязли, дружище, слишком много знаем.</Static>
+<Static AudioFile="MOD\m10\m10_final_0110_trent.wav" TextArea="Cinematic">Да... И главная причина - ужасно досмотреть хочется, чем всё закончится.</Static>
+<Static AudioFile="MOD\m10\m10_final_0120_alaric.wav" TextArea="Cinematic">Ага...</Static>
+<Static AudioFile="MOD\m10\m10_final_0130_trent.wav" TextArea="Cinematic">Да ладно, не смотри ты так, никуда я не смоюсь, ты же без меня опять во что-нибудь вляпаешься... </Static>
+<Static AudioFile="MOD\m10\m10_final_0140_trent.wav" TextArea="Cinematic">Досмотрим этот боевичёк до конца.  Пока еще не ясно, до чьего конца!</Static>
+<Static AudioFile="MOD\m10\m10_final_0200_edison.wav" TextArea="Cinematic">А этот парень хорош, способный товарищ. Как думаешь?</Static>
+<Static AudioFile="MOD\m10\m10_final_0210_juni.wav" TextArea="Cinematic">Такой же безрассудный, как и ты. Помогает местным фанатикам, а лучше бы их остановил.</Static>
+<Static AudioFile="MOD\m10\m10_final_0220_edison.wav" TextArea="Cinematic">А кто их остановит? Ты думаешь я смогу уломать Ямамото? Он же упёртый похлеще Орилиона с Кингом вместе взятыми.</Static>
+<Static AudioFile="MOD\m10\m10_final_0230_juni.wav" TextArea="Cinematic">Упёртый, алчный и коварный. И Орилиона больше нет, чтобы его остановить.</Static>
+<Static AudioFile="MOD\m10\m10_final_0240_edison.wav" TextArea="Cinematic">Да. Вот я и боюсь делать по твоему плану А. Но у меня есть свой план Бэ... </Static>
+<Static AudioFile="MOD\m11\m11_ambush_0010_trent.wav" TextArea="Cinematic">Рокфорд!</Static>
+<Static AudioFile="MOD\m11\m11_ambush_0030_rockford.wav" TextArea="Cinematic"> Трент?... Да, конечно, присаживайтесь.</Static>
+<Static AudioFile="MOD\m11\m11_ambush_0040_trent.wav" TextArea="Cinematic"> Рокфорд, отдай номадский ключ.</Static>
+<Static AudioFile="MOD\m11\m11_ambush_0050_rockford.wav" TextArea="Cinematic"> Зачем? Чтобы ты отдал его СБА? Или Ордену? Или на кого ты сейчас работаешь?</Static>
+<Static AudioFile="MOD\m11\m11_ambush_0060_trent.wav" TextArea="Cinematic">Эти артефакты обладают слишком большой разрушительной силой, и если они попадут не в те руки...</Static>
+<Static AudioFile="MOD\m11\m11_ambush_0070_trent.wav" TextArea="Cinematic">Один псих по фамилии Тилтон так недавно чуть не устроил локальный конец света в Тау-44. Они должны находиться под присмотром таких организаций как СБА или Орден.</Static>
+<Static AudioFile="MOD\m11\m11_ambush_0080_rockford.wav" TextArea="Cinematic">А что ты вообще знаешь про Орден и СБА? И от кого?</Static>
+<Static AudioFile="MOD\m11\m11_ambush_0090_rockford.wav" TextArea="Cinematic">Торговля артефактами давно стала прибыльным бизнесом. И не самым опасным, надо сказать.</Static>
+<Static AudioFile="MOD\m11\m11_ambush_0100_rockford.wav" TextArea="Cinematic">А в отсутствии внешней угрозы эти структуры начали заниматься борьбой за власть.</Static>
+<Static AudioFile="MOD\m11\m11_ambush_0110_rockford.wav" TextArea="Cinematic">За власть глобальную, позволяющую не считаться с правительствами. И ключ номадов, том Протеуса и прочее - в этой игре не больше чем козыри.</Static>
+<Static AudioFile="MOD\m11\m11_ambush_0120_rockford.wav" TextArea="Cinematic">И если возникнет необходимость, ни СБА, ни Орден не остановится перед тем чтобы применить их и устроить, как ты выразился, локальный конец света, например, в системе Форбс.</Static>
+<Static AudioFile="MOD\m11\m11_ambush_0130_trent.wav" TextArea="Cinematic">Ого... Рокфорд, ты сейчас произнес больше слов, чем за всё время нашего знакомства.</Static>
+<Static AudioFile="MOD\m11\m11_ambush_0150_rockford.wav" TextArea="Cinematic">Все эти рейнландцы, СБА - не более, чем дети, играющие в песочнице найденной боевой гранатой.</Static>
+<Static AudioFile="MOD\m11\m11_ambush_0160_rockford.wav" TextArea="Cinematic">И вот, им уже стало интересно, что будет, если выдернуть это колечко.</Static>
+<Static AudioFile="MOD\m11\m11_ambush_0170_rockford.wav" TextArea="Cinematic">А я знаю, как все это прекратить. Сейчас. Раз и навсегда.</Static>
+<Static AudioFile="MOD\m11\m11_ambush_0180_rockford.wav" TextArea="Cinematic">В моём будущем не будет ни кочевников, ни их наследия. Только человечество. В полной безопасности от всего этого опасного мусора.</Static>
+<Static AudioFile="MOD\m11\m11_ambush_0200_rockford.wav" TextArea="Cinematic"> Не хочешь помочь мне создать такой мир?...</Static>
+<Static AudioFile="MOD\m11\m11_ambush_0205_trent.wav" TextArea="Cinematic">Я-а... Не знаю-у... О чём вообще речь?</Static>
+<Static AudioFile="MOD\m11\m11_ambush_0210_rockford.wav" TextArea="Cinematic"> Они даже тебе не сказали... Забавно.</Static>
+<Static AudioFile="MOD\m11\m11_ambush_0220_rockford.wav" TextArea="Cinematic"> Хотя бы не мешайся у меня под ногами, Трент. Мое почтение.</Static>
+<Static AudioFile="MOD\m11\m11_ambush_0230_trent.wav" TextArea="Cinematic">Какая же это всё херня, какой смысл...</Static>
+<Static AudioFile="MOD\m11\m11_ambush_0250_trent.wav" TextArea="Cinematic">Чёрт... Сообщения от Кима не было!</Static>
+<Static AudioFile="MOD\m11\m11_ambush_0260_kim.wav" TextArea="Cinematic"> Трент, Рокфорд уходит, скорее взлетаем!</Static>
+<Static AudioFile="MOD\m11\m11_ambush_0270_trent.wav" TextArea="Cinematic">А что с нашими?</Static>
+<Static AudioFile="MOD\m11\m11_ambush_0280_kim.wav" TextArea="Cinematic">Их убили...</Static>
+<Static AudioFile="MOD\m11\m11_ambush_0290_trent.wav" TextArea="Cinematic">Вот чёрт...</Static>
+<Static AudioFile="MOD\m11\m11_drink_0010_trent.wav" TextArea="Cinematic">Ким, что случилось с Ямамото? Райхманн сдавался. Откуда столько ненависти?</Static>
+<Static AudioFile="MOD\m11\m11_drink_0020_trent.wav" TextArea="Cinematic"> А Вавилон? Почему он так плохо охранялся? Где линкоры, тучи истребителей?..</Static>
+<Static AudioFile="MOD\m11\m11_drink_0030_trent.wav" TextArea="Cinematic"> Ким, ты можешь мне ответить?!!</Static>
+<Static AudioFile="MOD\m11\m11_drink_0040_kim.wav" TextArea="Cinematic"> Я... Нет... Пока нет</Static>
+<Static AudioFile="MOD\m11\m11_drink_0050_kim.wav" TextArea="Cinematic">Так знаешь, давай остынь. Скоро будет дело. Выдыхай. Я скоро выйду на связь.</Static>
+<Static AudioFile="MOD\m11\m11_drink_0060_trent.wav" TextArea="Cinematic">Ладно, гуляй себе</Static>
+<Static AudioFile="MOD\m11\m11_drink_0110_edison.wav" TextArea="Cinematic">Неудачный день?</Static>
+<Static AudioFile="MOD\m11\m11_drink_0120_trent.wav" TextArea="Cinematic">Неудачная жизнь.</Static>
+<Static AudioFile="MOD\m11\m11_drink_0130_edison.wav" TextArea="Cinematic">Хм. А по мне так тебе сказочно везет. Да и с Рокфордом у тебя почти получилось.</Static>
+<Static AudioFile="MOD\m11\m11_drink_0140_trent.wav" TextArea="Cinematic">Я устал, нет серьезно, достало всё. Берешь простой заказ, а тебе вместе с оплатой впаривают человека, которому ну просто необходимо помочь.</Static>
+<Static AudioFile="MOD\m11\m11_drink_0150_trent.wav" TextArea="Cinematic">Он обещает тебе златые горы - и вот, трах-бах, и ты уже поуши увяз в интригах спецслужб, и за твою голову назначена неплохая такая цена.</Static>
+<Static AudioFile="MOD\m11\m11_drink_0160_trent.wav" TextArea="Cinematic">И ты пытаешься из всего этого выпутаться, но вместо этого запутываешься еще больше.</Static>
+<Static AudioFile="MOD\m11\m11_drink_0170_trent.wav" TextArea="Cinematic">И в конце концов, ты уже не понимаешь за кого и против кого ты, а самое главное - зачем это всё?</Static>
+<Static AudioFile="MOD\m11\m11_drink_0180_edison.wav" TextArea="Cinematic">Так всегда и бывает, тёзка, ты же фрилансер. Либо ты отстреливаешь мелких бандюков в свободных мирах, летая на ржавом корыте и получаешь за это копейки. Либо вот так...</Static>
+<Static AudioFile="MOD\m11\m11_drink_0190_edison.wav" TextArea="Cinematic">И считай, тебе  повезло. Сумма у тебя на счету с шестью нулями? Летаешь ты на чём? На самом новом, под тебя тюнингованном? Обвес у тебя из самого нового оружия?</Static>
+<Static AudioFile="MOD\m11\m11_drink_0200_edison.wav" TextArea="Cinematic">А если тебе нужно чего для корабля докупить, ты же даже в счет не заглядываешь - и так знаешь, что хватит, и еще останется.</Static>
+<Static AudioFile="MOD\m11\m11_drink_0210_edison.wav" TextArea="Cinematic">И, самое главное, врагов, у тебя конечно становится всё больше и больше, но у тебя появляются друзья.</Static>
+<Static AudioFile="MOD\m11\m11_drink_0220_edison.wav" TextArea="Cinematic">Их немного, гораздо меньше чем врагов, но они настоящие, потому что испытаны боем, прошли огонь, воду, и медные трубы вместе с тобой.</Static>
+<Static AudioFile="MOD\m11\m11_drink_0230_edison.wav" TextArea="Cinematic">И ты уверен, что бы ни случилось, на них можно положиться. И вот эти друзья, они на самом деле намного ценнее, чем шестизначный счет или новейший корабль с лучшим обвесом.</Static>
+<Static AudioFile="MOD\m11\m11_drink_0240_edison.wav" TextArea="Cinematic">Вот так. А пожалеть себя иногда очень хочется, по себе знаю. Главное не злоупотреблять этим - вредно для формы.</Static>
+<Static AudioFile="MOD\m11\m11_drink_0250_trent.wav" TextArea="Cinematic">И вы мне не позволите, да?</Static>
+<Static AudioFile="MOD\m11\m11_drink_0260_edison.wav" TextArea="Cinematic">Я лишь обрисую ситуацию, а ты сам решай...</Static>
+<Static AudioFile="MOD\m11\m11_drink_0270_trent.wav" TextArea="Cinematic">Слушаю внимательно.</Static>
+<Static AudioFile="MOD\m11\m11_drink_0280_edison.wav" TextArea="Cinematic">Не здесь. Нам нужно лететь. Расскажу всё по дороге.</Static>
+<Static AudioFile="echo_m11.utf|0x89E5AA88" TextArea="Cinematic">Он угоняет энергоядро!</Static>
+<Static AudioFile="echo_m11.utf|0xA602A781" TextArea="Cinematic">Остановите его!</Static>
+<Static AudioFile="echo_m11_player.utf|0x9BC8A98D" TextArea="Cinematic">Чёрт, это Рокфорд!</Static>
+<Static AudioFile="MOD\m12\m12_sprague_0010_hatcher.wav" TextArea="Cinematic"> Итак, Трент, надеюсь ты позвал меня по важному делу</Static>
+<Static AudioFile="MOD\m12\m12_sprague_0020_trent.wav" TextArea="Cinematic">Чрезвычайно важному делу</Static>
+<Static AudioFile="MOD\m12\m12_sprague_0030_hatcher.wav" TextArea="Cinematic">Тогда будь добр расскажи, в чём суть. А то я заметила твои выкрутасы в системе Сириус. Теперь у меня снова есть полномочия арестовать тебя</Static>
+<Static AudioFile="MOD\m12\m12_sprague_0040_alaric.wav" TextArea="Cinematic"> Эй, Трент! Что случилось? Почему так срочно?</Static>
+<Static AudioFile="MOD\m12\m12_sprague_0050_trent.wav" TextArea="Cinematic">Рокфорд заполучил артефакты, направляется к Сфере и хочет уничтожить человечество. Мы должны его остановить!</Static>
+<Static AudioFile="MOD\m12\m12_sprague_0060_hatcher.wav" TextArea="Cinematic">Что ты несёшь? Как он это сможет сделать? Подорвёт Сферу динамитом? Трент, придумай что-нибудь более интересное.</Static>
+<Static AudioFile="MOD\m12\m12_sprague_0070_trent.wav" TextArea="Cinematic">Рокфорд продумал эту операцию когда работал на единый Орден. Здесь точно должны быть какие-то документы, планы про это. Хоть что-нибудь</Static>
+<Static AudioFile="MOD\m12\m12_sprague_0080_hatcher.wav" TextArea="Cinematic">Ничего такого не может быть. СБА никогда не будет заниматься этой чепухой!</Static>
+<Static AudioFile="MOD\m12\m12_sprague_0090_mandrake.wav" TextArea="Cinematic">Вообще-то...</Static>
+<Static AudioFile="MOD\m12\m12_sprague_0100_hatcher.wav" TextArea="Cinematic">Профессор? Вы что-то про это знаете?</Static>
+<Static AudioFile="MOD\m12\m12_sprague_0110_mandrake.wav" TextArea="Cinematic">Возможно. Я видел подобные документы в архиве, но они засекречены.</Static>
+<Static AudioFile="MOD\m12\m12_sprague_0120_mandrake.wav" TextArea="Cinematic">Требуется максимальный уровень доступа, который есть только у двух человек - у Кинга, и еще у кого-то, о ком я не знаю.</Static>
+<Static AudioFile="MOD\m12\m12_sprague_0130_trent.wav" TextArea="Cinematic">Полагаю, этого ключа доступа должно быть достаточно. </Static>
+<Static AudioFile="MOD\m12\m12_sprague_0140_darcy.wav" TextArea="Cinematic">Нихрена-ж себе.</Static>
+<Static AudioFile="MOD\m12\m12_sprague_0150_alaric.wav" TextArea="Cinematic">Я о тебе чего-то не знаю?</Static>
+<Static AudioFile="MOD\m12\m12_sprague_0160_hatcher.wav" TextArea="Cinematic">Ладно, Трент. Допустим, я тебе верю. Но как ты собираешься проникнуть в Сферу? У тебя же нет ключа от неё</Static>
+<Static AudioFile="MOD\m12\m12_sprague_0170_trent.wav" TextArea="Cinematic"> Ключ от Сферы у меня тоже есть</Static>
+<Static AudioFile="MOD\m12\m12_sprague_0180_darcy.wav" TextArea="Cinematic">Трент, колись, на кого тебя подменили?</Static>
+<Static AudioFile="MOD\m12\m12_sprague_0190_alaric.wav" TextArea="Cinematic">Это еще что такое?</Static>
+<Static AudioFile="MOD\m12\m12_sprague_0250_hatcher.wav" TextArea="Cinematic">Штаб СБА атакован. Всем силам СБА приказано прибыть в штаб.</Static>
+<Static AudioFile="MOD\m12\m12_sprague_0260_hatcher.wav" TextArea="Cinematic">Силы противника превосходят... Да кто же это?</Static>
+<Static AudioFile="MOD\m12\m12_sprague_0270_trent.wav" TextArea="Cinematic"> Чёрт... Ким же говорил про спецоперацию... Твою мать... Они на это решились.</Static>
+<Static AudioFile="MOD\m12\m12_sprague_0280_hatcher.wav" TextArea="Cinematic">Кто решился? На что? Ты о чём вообще?</Static>
+<Static AudioFile="MOD\m12\m12_sprague_0290_trent.wav" TextArea="Cinematic">Орден решил показать кто тут главный и устранить прямого конкурента. Орден атаковал СБА, понимаешь?</Static>
+<Static AudioFile="MOD\m12\m12_sprague_0300_trent.wav" TextArea="Cinematic">Чтобы полностью уничтожить СБА и стать главной силой в секторе Сириуса. И в самый неподходящий момент.</Static>
+<Static AudioFile="MOD\m12\m12_sprague_0310_trent.wav" TextArea="Cinematic">Нахрен. Не нужны нам никакие кочевники, мы сами друг другу глотку перегрызем. Просто ради удовлетворения амбиций.</Static>
+<Static AudioFile="MOD\m12\m12_sprague_0320_hatcher.wav" TextArea="Cinematic"> Я им этого не позволю! Вылетаем!</Static>
+<Static AudioFile="MOD\m12\m12_captured_0010_king.wav" TextArea="Cinematic">Что с Ямамото?</Static>
+<Static AudioFile="MOD\m12\m12_captured_0020_hatcher.wav" TextArea="Cinematic">Ведем дознание. Не хотите ли поприсутствовать?</Static>
+<Static AudioFile="MOD\m12\m12_captured_0030_king.wav" TextArea="Cinematic">Ооо, да! Этот безбашенный самурай превзошел самого себя.</Static>
+<Static AudioFile="MOD\m12\m12_captured_0040_king.wav" TextArea="Cinematic">С удовольствием посмотрел бы что творится у него в мозгах, а лучше заспиртовал бы их в банке.</Static>
+<Static AudioFile="MOD\m12\m12_captured_0050_trent.wav" TextArea="Cinematic">Генерал Кинг, нужно срочно остановить Рокфорда!</Static>
+<Static AudioFile="MOD\m12\m12_captured_0060_king.wav" TextArea="Cinematic">Дался вам этот Рокфорд... Если он где-нибудь набедокурит, наши силы всё подчистят.</Static>
+<Static AudioFile="MOD\m12\m12_captured_0070_king.wav" TextArea="Cinematic">А его загонят, как зайца, далеко в приграничье. Сам сдаваться придет, вот увидите.</Static>
+<Static AudioFile="MOD\m12\m12_captured_0080_hatcher.wav" TextArea="Cinematic">Генерал Кинг, вызов от профессора Мандрейка.</Static>
+<Static AudioFile="MOD\m12\m12_captured_0090_king.wav" TextArea="Cinematic">Выведите на главный экран.</Static>
+<Static AudioFile="MOD\m12\m12_captured_0100_mandrake.wav" TextArea="Cinematic">Генерал Кинг, мистер Трент, мисс Хетчер. О, да я смотрю, все в сборе.</Static>
+<Static AudioFile="MOD\m12\m12_captured_0110_mandrake.wav" TextArea="Cinematic">Я ознакомился с так называемым планом Рокфорда. Как ученый, могу сказать - он хорош.</Static>
+<Static AudioFile="MOD\m12\m12_captured_0120_mandrake.wav" TextArea="Cinematic">Рокфорд связал около двадцати лазерных орудий кочевников в единую систему. Интересное с инженерной точки зрения решение, надо сказать.</Static>
+<Static AudioFile="MOD\m12\m12_captured_0130_mandrake.wav" TextArea="Cinematic">Он хочет направить получившийся в результате луч на Сферу чтобы уничтожить её, и вместе с ней всё, так называемое, наследие кочевников.</Static>
+<Static AudioFile="MOD\m12\m12_captured_0140_trent.wav" TextArea="Cinematic">И как это произойдёт?</Static>
+<Static AudioFile="MOD\m12\m12_captured_0150_mandrake.wav" TextArea="Cinematic">Если простыми словами - Сфера перестанет существовать. Как и... от половины до двух третей сектора Сириуса.</Static>
+<Static AudioFile="MOD\m12\m12_captured_0160_darcy.wav" TextArea="Cinematic">Масштабненько.</Static>
+<Static AudioFile="MOD\m12\m12_captured_0170_trent.wav" TextArea="Cinematic">ЕГО... НАДО... ОСТАНОВИТЬ!!! Поймите это, наконец!</Static>
+<Static AudioFile="MOD\m12\m12_captured_0180_alaric.wav" TextArea="Cinematic">Я с тобой дружище!</Static>
+<Static AudioFile="MOD\m12\m12_captured_0190_darcy.wav" TextArea="Cinematic">Не могу пропустить такое представление.</Static>
+<Static AudioFile="MOD\m12\m12_captured_0200_king.wav" TextArea="Cinematic">Мои ресурсы в вашем распоряжении. Я выделю вам нашу лучшую спецгруппу.</Static>
+<Static AudioFile="MOD\m12\m12_captured_0210_hatcher.wav" TextArea="Cinematic">И возглавлю её я.</Static>
+<Static AudioFile="MOD\m13\m13_osiris_0010_darcy.wav" TextArea="Cinematic">Трент, давай скорее! Брифинг уже начался!</Static>
+<Static AudioFile="MOD\m13\m13_osiris_0020_king.wav" TextArea="Cinematic">Приходят плохие новости из штаба. Кочевники начинают вторжение в колониях. Угроза оказалась гораздо серьёзнее, чем мы думали</Static>
+<Static AudioFile="MOD\m13\m13_osiris_0030_king.wav" TextArea="Cinematic">Мистер Трент и профессор Мандрейк сейчас занимаются улучшением энергоустановки, которую мы отправим в чёрную дыру, пока еще не поздно</Static>
+<Static AudioFile="MOD\m13\m13_osiris_0050_king.wav" TextArea="Cinematic">Обстановка. Кочевники уже в Омеге-13 и заполнили большую часть астероидных полей в системе.</Static>
+<Static AudioFile="MOD\m13\m13_osiris_0060_king.wav" TextArea="Cinematic">План операции. Основная боевая группа в виде линкора Осирис и прикрытия совершит атаку на флот номадов, чтобы оттянуть их силы от зоны, примыкающей к чёрной дыре</Static>
+<Static AudioFile="MOD\m13\m13_osiris_0070_king.wav" TextArea="Cinematic">В это же время мобильная диверсионная группа в составе обоих мистеров Трентов отправится к чёрной дыре через зону со старыми шахтами</Static>
+<Static AudioFile="MOD\m13\m13_osiris_0080_king.wav" TextArea="Cinematic">Сенсоры отмечают минимальную номадскую активность в этой локации. Путь ожидается относительно безопасным</Static>
+<Static AudioFile="MOD\m13\m13_osiris_0090_king.wav" TextArea="Cinematic">Есть вопросы?</Static>
+<Static AudioFile="MOD\m13\m13_osiris_0100_trent.wav" TextArea="Cinematic">А почему путь через шахты лишь относительно безопасен?</Static>
+<Static AudioFile="MOD\m13\m13_osiris_0110_king.wav" TextArea="Cinematic">В этой зоне обнаружено скопление номадских зёрен. Они пассивны. Если быть осторожными и не будоражить зёрна, то иных препятствий на пути не замечено.</Static>
+<Static AudioFile="MOD\m13\m13_osiris_0120_king.wav" TextArea="Cinematic">Еще вопросы? Нет? Тогда вылетаем по сигналу. Всем удачи</Static>
+<Static AudioFile="MOD\m13\m13_osiris_0200_trent.wav" TextArea="Cinematic">Ну что, Ал, готов сегодня спасти мир?</Static>
+<Static AudioFile="MOD\m13\m13_osiris_0210_alaric.wav" TextArea="Cinematic">Эй! Я смотрю тебе наконец понравилось работать на спецслужбы!</Static>
+<Static AudioFile="MOD\m13\m13_osiris_0220_trent.wav" TextArea="Cinematic">По крайней мере сейчас я знаю за что воюю</Static>
+<Static AudioFile="MOD\m13\m13_osiris_0230_alaric.wav" TextArea="Cinematic">Только давай береги себя, друг. Сейчас ставки как никогда высоки</Static>
+<Static AudioFile="MOD\m13\m13_osiris_0240_darcy.wav" TextArea="Cinematic">Да, Трент. Даже самому крутому эксперту по номадам, как ты, везение сегодня будет не лишним</Static>
+<Static AudioFile="MOD\m13\m13_osiris_0250_trent.wav" TextArea="Cinematic">Да хватит уже. Мы тут все давно эксперты по дом-кавашам, кочевникам, крыгам и всему подобному</Static>
+<Static AudioFile="MOD\m13\m13_osiris_0260_alaric.wav" TextArea="Cinematic">Именно так. Так что давайте воспользуемся нашим экспертным опытом и надерём уже зад этой инопланетной нечисти</Static>
+<Static AudioFile="MOD\m13\m13_osiris_0270_darcy.wav" TextArea="Cinematic">Хочешь показать им, кто тут главный гуманоид на районе?</Static>
+<Static AudioFile="MOD\m13\m13_osiris_0280_trent.wav" TextArea="Cinematic">Удачи, друзья. А теперь приступим!</Static>
+<Static AudioFile="echo_m13.utf|0x9ED97587" TextArea="Cinematic">Но вроде мы спасены? Ничего не взорвалось? Всё хорошо ведь, да?</Static>
+<Static AudioFile="echo_m13.utf|0xB70E95C6" TextArea="Cinematic">Всем срочно отойти на безопасную дистанцию!</Static>
+<Static AudioFile="echo_m13.utf|0x8A14788D" TextArea="Cinematic">Ёлки-палки...</Static>
+<Static AudioFile="echo_m13.utf|0x8A5CA28B" TextArea="Cinematic">Слишком поздно!</Static>
+<Static AudioFile="echo_m13.utf|0xB3183BC4" TextArea="Cinematic">Всем внимание! Крыг замечен в системе!</Static>
+<Static AudioFile="echo_m13_female.utf|0x8610AA4D" TextArea="Cinematic">Лазер ударил по Крыгу! Мы не успели!</Static>
+<Static AudioFile="echo_m13_female.utf|0x86115243" TextArea="Cinematic">Что происходит?</Static>
+<Static AudioFile="echo_m13_female.utf|0xA6047740" TextArea="Cinematic">Оно живое!</Static>
+<Static AudioFile="echo_m13_female.utf|0xBFFB1D8D" TextArea="Cinematic">Всем приготовиться! Мы не знаем на что способна эта тварь!</Static>
+<Static AudioFile="echo_m13_female.utf|0xBFA71E87" TextArea="Cinematic">Миссури под прицелом, выполнить манёвр уклонения!</Static>
+<Static AudioFile="echo_m13_female.utf|0xA27ADD83" TextArea="Cinematic">Двигатели корабля не работают в пространстве чёрной дыры</Static>
+<Static AudioFile="echo_m13_female.utf|0xB27ADF03" TextArea="Cinematic">Предлагаю подключить номадское энергоядро к питанию корабля</Static>
+<Static AudioFile="echo_m13_female.utf|0x927ADA03" TextArea="Cinematic">Подключение выполняется</Static>
+<Static AudioFile="echo_m13_female.utf|0xA27A9783" TextArea="Cinematic">Подключение выполняется</Static>
+<Static AudioFile="echo_m13_female.utf|0xAA7F9CC1" TextArea="Cinematic">Подключено</Static>
+<Static AudioFile="echo_m13_player.utf|0xAA6DFA8D" TextArea="Cinematic">Не падать духом! Вот выход, летите за мной!</Static>
+<Static AudioFile="echo_m13_player.utf|0x976EE489" TextArea="Cinematic">Вот чёрт... кажется сегодня не мой день.</Static>
+<Static AudioFile="echo_m13_player.utf|0x8F108D0D" TextArea="Cinematic">Что стряслось?</Static>
+<Static AudioFile="echo_m13_player.utf|0x9726E689" TextArea="Cinematic">Радиация зерна... разрушила мой корабль... А как ты смог её перенести?</Static>
+<Static AudioFile="echo_m13_player.utf|0x8F10C50F" TextArea="Cinematic">Я не знаю... и что теперь делать</Static>
+<Static AudioFile="echo_m13_player.utf|0x96DEE889" TextArea="Cinematic">Так, знаешь... я передам маяк тебе. Доставь его сам, один</Static>
+<Static AudioFile="echo_m13_player.utf|0x8F113D01" TextArea="Cinematic">Но на моём корабле нет катапульты!</Static>
+<Static AudioFile="echo_m13_player.utf|0xABFDFE89" TextArea="Cinematic">Знаю, знаю... чёрт...</Static>
+<Static AudioFile="echo_m13_player.utf|0xAF4C5200" TextArea="Cinematic">Тёзка, давай мне маяк. Деваться некуда, дотащу сам</Static>
+<Static AudioFile="echo_m13_player.utf|0x93970202" TextArea="Cinematic">Эй, что за дела?</Static>
+<Static AudioFile="echo_m13_player.utf|0x93974A00" TextArea="Cinematic">И какого хрена мне об этом никто не сказал?</Static>
+<Static AudioFile="echo_m13_player.utf|0x93979206" TextArea="Cinematic">Давай попробуем...</Static>
+<Static AudioFile="echo_m13_player.utf|0xB3979607" TextArea="Cinematic">И поскорее!</Static>
+<Static AudioFile="echo_m13_player.utf|0x9397DA04" TextArea="Cinematic">Сколько еще?</Static>
+<Static AudioFile="echo_m13_player.utf|0x9396220A" TextArea="Cinematic">Давай быстрее!</Static>
+<Static AudioFile="echo_m13_player.utf|0xA3D62E8B" TextArea="Cinematic">Скорее, мать твою!</Static>
+
+</Subtitles>

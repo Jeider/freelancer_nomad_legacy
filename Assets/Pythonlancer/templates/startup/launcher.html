@@ -182,15 +182,19 @@ table {
 
         </div>
 
+        <div class="section">
+
+            {{ t.text('Subtitles in cutscenes:') }}
+
+            <input type="checkbox" name="subtitles" id="subtitles" {% if is_subtitles %}checked{% endif %}> <br>
+            <span class="hint">{{ t.text('Show subtitles in cutscenes, can\'t work together with dxwrapper and ReShade and autiomatically disables them') }}</span>
+
+        </div>
+
         <div class="section dangerous" style="display: none;">
             {{ t.text('Field of view Y (fish eye):') }} <input type="number" class="integer-input" value="{{ fovy }}" id="fovy"> <span class="hint">{{ t.text('(default: 70)') }}</span>
         </div>
 
-        <hr>
-<div class="section">
-    <p>{{ t.text('Did you stacked in mission 6 or mission 9? You can temporary change reduce game difficulty to easy. It also disables some difficult game features and allow you to beat this missions in simpler way.') }}</p>
-
-</div>
         <hr>
 
 
@@ -654,6 +658,7 @@ function run() {
     var windowed = document.getElementById('windowed').checked;
     var dxwrapper = document.getElementById('dxwrapper').checked;
     var reshade = document.getElementById('reshade').checked;
+    var subtitles = document.getElementById('subtitles').checked;
     var fovy = document.getElementById('fovy').value;
 
     var difficulty = document.querySelector('input[name="difficulty"]:checked').value;
@@ -666,7 +671,7 @@ function run() {
 
     var commhelmet = document.querySelector('input[name="commhelmet"]:checked').value;
 
-    pywebview.api.runFreelancer(resolution, windowed, dxwrapper, reshade, difficulty, fovy, front_light, trail, body, commhelmet);
+    pywebview.api.runFreelancer(resolution, windowed, dxwrapper, reshade, subtitles, difficulty, fovy, front_light, trail, body, commhelmet);
 }
 
 function boosty() {

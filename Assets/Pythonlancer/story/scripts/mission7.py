@@ -15,17 +15,17 @@ class Msn7Offer(Msn7, script.CutsceneProps):
     TITLE = 'Предложение'
     DESCRIPTION = ''
     VOICE_LINES = [
-        VoiceLine(10, CorsairBarman, ru="", en="Anything to drink?"),
-        VoiceLine(20, Trent, ru="", en="I need a job. Preferably with good compensation."),
-        VoiceLine(30, CorsairBarman, ru="", en="We’re not in shortage of local freelancers, believe it or not. Remember which system we’re in?"),
-        VoiceLine(40, Trent, ru="", en="Actually... I’ll work for minimum wage. Seriously, friend, help me - I’m totally broke."),
-        VoiceLine(50, CorsairBarman, ru="", en="Alright, Mr..."),
+        VoiceLine(10, CorsairBarman, ru="Чего налить?", en="Anything to drink?"),
+        VoiceLine(20, Trent, ru="Дельца какого-нибудь, желательно с хорошей оплатой.", en="I need a job. Preferably with good compensation."),
+        VoiceLine(30, CorsairBarman, ru="Да у нас тут вроде и в своих фрилансерах недостатка нет, понимаете же в какой системе находитесь.", en="We’re not in shortage of local freelancers, believe it or not. Remember which system we’re in?"),
+        VoiceLine(40, Trent, ru="А я… скидку хорошую сделаю! Выручай дружище, я совсем на мели.", en="Actually... I’ll work for minimum wage. Seriously, friend, help me - I’m totally broke."),
+        VoiceLine(50, CorsairBarman, ru="Окей, мистер...", en="Alright, Mr..."),
         VoiceLine(60, Trent, ru="", en="Trent"),
-        VoiceLine(70, CorsairBarman, ru="", en="Very well, Mr. Trent. We do have something for you"),
-        VoiceLine(80, CorsairBarman, ru="", en="A troupe of Liberty crooks recently took hold in our space. They call themselves Starline Robbers."),
-        VoiceLine(90, CorsairBarman, ru="", en="Your task is to eliminate their leader, Bill Ironside. I’ll send you the coordinates if you’re interested."),
-        VoiceLine(100, CorsairBarman, ru="", en="But as we discussed, your payment will be lower than usual"),
-        VoiceLine(110, Trent, ru="", en="Sounds great, I’m in."),
+        VoiceLine(70, CorsairBarman, ru="Трент.", en="Very well, Mr. Trent. We do have something for you"),
+        VoiceLine(80, CorsairBarman, ru="Окей, мистер Трент. Будет для вас дельце.", en="A troupe of Liberty crooks recently took hold in our space. They call themselves Starline Robbers."),
+        VoiceLine(90, CorsairBarman, ru="К нам тут гастролеры пожаловали из Либерти. Называют себя бандой Старлайна.", en="Your task is to eliminate their leader, Bill Ironside. I’ll send you the coordinates if you’re interested."),
+        VoiceLine(100, CorsairBarman, ru="Найдите их и убейте Билла Айронсайда - их лидера. Координаты их предположительного местонахождения я вам скину. ", en="But as we discussed, your payment will be lower than usual"),
+        VoiceLine(110, Trent, ru="Но учтите, гонорар будет ниже, чем обычно...", en="Sounds great, I’m in."),
     ]
 
 
@@ -34,13 +34,13 @@ class Msn7Cadiz(Msn7, script.CutsceneProps):
     TITLE = 'Кадиз'
     DESCRIPTION = ''
     VOICE_LINES = [
-        VoiceLine(10, CadizEnemyOne, ru="", en="Hey, bro, where Rockford is?"),
-        VoiceLine(20, Trent, ru="", en="This is none of your business."),
-        VoiceLine(30, CadizEnemyTwo, ru="", en="Playing brave, shithead? Answer the question before you'll dive deeper into the problems"),
-        VoiceLine(40, CadizEnemyThree, ru="", en="This will make you talk."),
-        VoiceLine(50, CadizEnemyFour, ru="", en="Where Rockford is, prick?"),
-        VoiceLine(60, Rockford, ru="", en="I'm Rockford"),
-        VoiceLine(65, Rockford, ru="", en="Follow me! Immediately!"),
+        VoiceLine(10, CadizEnemyOne, ru="Здаров, земляк! Где Рокфорд?", en="Hey, bro, where Rockford is?"),
+        VoiceLine(20, Trent, ru="Понятия не имею.", en="This is none of your business."),
+        VoiceLine(30, CadizEnemyTwo, ru="Слыш, земеля, ты чо такой дерзкий? Тебя по-хорошему спросили нна, где Рокфорд?", en="Playing brave, shithead? Answer the question before you'll dive deeper into the problems"),
+        VoiceLine(40, CadizEnemyThree, ru="Сейчас наладим диалог.", en="This will make you talk."),
+        VoiceLine(50, CadizEnemyFour, ru="Где Рокфорд, утырок?", en="Where Rockford is, prick?"),
+        VoiceLine(60, Rockford, ru="Я Рокфорд. ", en="I'm Rockford"),
+        VoiceLine(65, Rockford, ru="За мной! Быстро!", en="Follow me! Immediately!"),
     ]
 
 
@@ -50,23 +50,23 @@ class Msn7Omega13(Msn7, script.CutsceneProps):
     DESCRIPTION = ''
     VOICE_LINES = [
         # duplicated for different fx
-        VoiceLine(10, Trent, ru="", en="Damn, Rockford, I'm immobilized!"),
-        VoiceLine(15, Trent, ru="", en="Damn, Rockford, I'm immobilized!"),
+        VoiceLine(10, Trent, ru="Чёрт, Рокфорд, я обездвижен!", en="Damn, Rockford, I'm immobilized!"),
+        VoiceLine(15, Trent, ru="Чёрт, Рокфорд, я обездвижен!", en="Damn, Rockford, I'm immobilized!"),
 
-        VoiceLine(20, Rockford, ru="", en="I know."),
+        VoiceLine(20, Rockford, ru="Я знаю.", en="I know."),
 
-        VoiceLine(30, Trent, ru="", en="Rockford, what's happening? You are an ASF agent, you must help me."),
-        VoiceLine(35, Trent, ru="", en="Rockford, what's happening? You are an ASF agent, you must help me."),
+        VoiceLine(30, Trent, ru="Рокфорд, что происходит? Ты же агент СБА, ты должен мне помочь", en="Rockford, what's happening? You are an ASF agent, you must help me."),
+        VoiceLine(35, Trent, ru="Рокфорд, что происходит? Ты же агент СБА, ты должен мне помочь", en="Rockford, what's happening? You are an ASF agent, you must help me."),
 
-        VoiceLine(40, Rockford, ru="", en="I'm not an ASF agent."),
+        VoiceLine(40, Rockford, ru="Я не агент СБА.", en="I'm not an ASF agent."),
 
-        VoiceLine(50, Trent, ru="", en="But you're going to destroy the artifacts."),
-        VoiceLine(55, Trent, ru="", en="But you're going to destroy the artifacts."),
+        VoiceLine(50, Trent, ru="Ты же уничтожишь артефакты.", en="But you're going to destroy the artifacts."),
+        VoiceLine(55, Trent, ru="Ты же уничтожишь артефакты.", en="But you're going to destroy the artifacts."),
 
-        VoiceLine(60, Rockford, ru="", en="The artifacts will survive the explosion of the ship."),
+        VoiceLine(60, Rockford, ru="Артефакты переживут уничтожение корабля.", en="The artifacts will survive the explosion of the ship."),
 
 
-        VoiceLine(100, Trent, ru="", en="Come-on old-junk. Turn on!"),
+        VoiceLine(100, Trent, ru="Да за-пус-тись же ты, ста-ро-е ко-ры-то.", en="Come-on old-junk. Turn on!"),
     ]
 
 
@@ -75,24 +75,24 @@ class Msn7Battleship(Msn7, script.CutsceneProps):
     TITLE = 'Линкор Принц Уэльский'
     DESCRIPTION = ''
     VOICE_LINES = [
-        VoiceLine(10, Trent, ru="", en="I need help! It is a matter of national importance!"),
-        VoiceLine(20, WalesBarman, ru="", en="Huh, is it really? If so, then you should ask someone representitive of the State."),
-        VoiceLine(30, WalesBarman, ru="", en="Up there we have officer Darcy, she is one of a kind."),
-        VoiceLine(40, Trent, ru="", en="My name is Trent. I work for a secret organisation tied to Order, and I must contact them ASAP."),
-        VoiceLine(50, Darcy, ru="", en="And another one... Mister, don't you know that trading artifacts of alien origin is illegal?"),
-        VoiceLine(60, Darcy, ru="", en="We caught a pair of dealers just like you recently. They were claiming to be agents of the Order too, when we jailed them."),
-        VoiceLine(70, Darcy, ru="", en="Do you want to keep a company to them or, perhaps, their friend, Napoleon in a mental assylum? "),
-        VoiceLine(80, Trent, ru="", en="I must deliver an artifact of great importance to the headquarters of our organistation as soon as possible."),
-        VoiceLine(90, Trent, ru="", en="Or else I will be put to death and possibly you too. Speaking of artifacts..."),
-        VoiceLine(100, Darcy, ru="", en="Oh, wow... Impressive."),
-        VoiceLine(110, Darcy, ru="", en="How do I know that it isn't from some souvenir shop for tourists?"),
-        VoiceLine(120, Trent, ru="", en="God damn it..."),
-        VoiceLine(130, Darcy, ru="", en="All righty then, I have a friend who is an expert on various rarities at a nearby planet."),
-        VoiceLine(140, Darcy, ru="", en="Let him take a look at this thing, and if you're telling the truth, I promice you any help I can offer."),
-        VoiceLine(150, Darcy, ru="", en="But if it is indeed a souvenir, mister joker, I promice you a teaparty today with Napoleon."),
-        VoiceLine(160, Trent, ru="", en="There is a problem. Almost all of the electric circuits on my ship is scorched, I'm not even sure how I managed to make it to this base."),
-        VoiceLine(170, Darcy, ru="", en="All right, I will give you one of our ships."),
-        VoiceLine(180, Darcy, ru="", en="But if you decide to use it to escape, keep in mind, that all of our ships are equipped with track beacons, so I'll find you anywhere. "),
+        VoiceLine(10, Trent, ru="Мне нужна помощь! Дело государственной важности!", en="I need help! It is a matter of national importance!"),
+        VoiceLine(20, WalesBarman, ru="Хе... Прям-таки государственной. Тогда вам к представителю государства.", en="Huh, is it really? If so, then you should ask someone representitive of the State."),
+        VoiceLine(30, WalesBarman, ru="Вон там у нас офицер Дерси сидит, единственная и неповторимая.", en="Up there we have officer Darcy, she is one of a kind."),
+        VoiceLine(40, Trent, ru="Меня зовут Трент. Я работаю на секретную организацию, связанную с Орденом и мне срочно нужно с ней связаться.", en="My name is Trent. I work for a secret organisation tied to Order, and I must contact them ASAP."),
+        VoiceLine(50, Darcy, ru="Еще один... Мистер, а вы в курсе, что торговля артефактами инопланетного происхождения является незаконной?", en="And another one... Mister, don't you know that trading artifacts of alien origin is illegal?"),
+        VoiceLine(60, Darcy, ru="Мы недавно взяли парочку вот таких вот продавцов. Когда сажали их в камеру, они тоже уверяли что являются агентами Ордена.", en="We caught a pair of dealers just like you recently. They were claiming to be agents of the Order too, when we jailed them."),
+        VoiceLine(70, Darcy, ru="Не хотите ли составить им компанию или, быть может, их другу герцогу Веллингтону в психушке?", en="Do you want to keep a company to them or, perhaps, their friend, Napoleon in a mental assylum? "),
+        VoiceLine(80, Trent, ru="Я хочу доставить артефакт особой важности в штаб-квартиру нашей организации как можно быстрее. ", en="I must deliver an artifact of great importance to the headquarters of our organistation as soon as possible."),
+        VoiceLine(90, Trent, ru="Иначе с меня шкуру спустят, а потом, возможно, и с вас. Кстати, об артефактах.", en="Or else I will be put to death and possibly you too. Speaking of artifacts..."),
+        VoiceLine(100, Darcy, ru="О как... Впечатляет.", en="Oh, wow... Impressive."),
+        VoiceLine(110, Darcy, ru="А откуда мне знать что эта штука не из какой-нибудь сувенирной лавки для туристов?", en="How do I know that it isn't from some souvenir shop for tourists?"),
+        VoiceLine(120, Trent, ru="Черт побери...", en="God damn it..."),
+        VoiceLine(130, Darcy, ru="Ладно, есть у меня знакомый специалист по разным редкостям на соседней станции.", en="All righty then, I have a friend who is an expert on various rarities at a nearby planet."),
+        VoiceLine(140, Darcy, ru="Пусть он взглянет на эту штуку и если вы правы, то я обещаю вам всяческую поддержку.", en="Let him take a look at this thing, and if you're telling the truth, I promice you any help I can offer."),
+        VoiceLine(150, Darcy, ru="Если же это все-таки сувенир, то у вас, мистер шутник, сегодня вечером будет назначено чаепитие с тем самым герцогом Веллингтоном в психушке!", en="But if it is indeed a souvenir, mister joker, I promice you a teaparty today with Napoleon."),
+        VoiceLine(160, Trent, ru="Есть проблема. У меня на корабле сгорела почти вся электроника, даже и не знаю как смог сюда добраться живым.", en="There is a problem. Almost all of the electric circuits on my ship is scorched, I'm not even sure how I managed to make it to this base."),
+        VoiceLine(170, Darcy, ru="Хорошо, я дам вам один из наших кораблей.", en="All right, I will give you one of our ships."),
+        VoiceLine(180, Darcy, ru="Но если захотите на нем смыться, имейте ввиду, что все наши корабли оборудованы маячками слежения, так что я вас найду где угодно. ", en="But if you decide to use it to escape, keep in mind, that all of our ships are equipped with track beacons, so I'll find you anywhere. "),
     ]
 
 
@@ -101,15 +101,15 @@ class Msn7CheckArtifact(Msn7, script.CutsceneProps):
     TITLE = 'Проверка артефакта'
     DESCRIPTION = ''
     VOICE_LINES = [
-        VoiceLine(10, Trent, ru="", en="Wow! Looks like this guy's area of interests is wast."),
-        VoiceLine(20, Jabba, ru="", en="I'm interested in rare trinkets, that are profitable to buy and even more profitable to sell."),
-        VoiceLine(30, Jabba, ru="", en="Greetings, Darcy."),
-        VoiceLine(40, Darcy, ru="", en="Hi, Jabba. I want you to check out something."),
-        VoiceLine(50, Jabba, ru="", en="Wow! Quite an interesting thing, clearly of alien origin."),
-        VoiceLine(60, Jabba, ru="", en="If you're so happened to be broke right now, I can pay you ten thosands credits right away."),
-        VoiceLine(70, Darcy, ru="", en="Oh,, shit... So much for \"drink a beer at the bar\". Okay, Trent, we're leaving."),
-        VoiceLine(80, Darcy, ru="", en="Jabba, you aren't a fool, are you? You will keep your mouth shut, am I right?"),
-        VoiceLine(90, Jabba, ru="", en="Of course, Darcy, of course...  "),
+        VoiceLine(10, Trent, ru="Ничего себе. Похоже, у этого парня очень разносторонние интересы.", en="Wow! Looks like this guy's area of interests is wast."),
+        VoiceLine(20, Jabba, ru="Я интересуюсь редкими вещами, которые можно выгодно купить и еще более выгодно продать.", en="I'm interested in rare trinkets, that are profitable to buy and even more profitable to sell."),
+        VoiceLine(30, Jabba, ru="Привет, Дерси.", en="Greetings, Darcy."),
+        VoiceLine(40, Darcy, ru="Привет Джабба. Я хочу, чтобы ты взглянул на одну вещицу.", en="Hi, Jabba. I want you to check out something."),
+        VoiceLine(50, Jabba, ru="Ух ты! Весьма интересная вещица, явно инопланетного происхождения. ", en="Wow! Quite an interesting thing, clearly of alien origin."),
+        VoiceLine(60, Jabba, ru="Если вы, вдруг, на мели готов дать вам за нее десять тысяч прямо сейчас.", en="If you're so happened to be broke right now, I can pay you ten thosands credits right away."),
+        VoiceLine(70, Darcy, ru="Вот дерьмо... Попила пивка в баре, нечего сказать. Ладно, Трент, уходим.", en="Oh,, shit... So much for \"drink a beer at the bar\". Okay, Trent, we're leaving."),
+        VoiceLine(80, Darcy, ru="Джабба, ты же не дурак да? Ты же будешь держать язык за зубами?", en="Jabba, you aren't a fool, are you? You will keep your mouth shut, am I right?"),
+        VoiceLine(90, Jabba, ru="Само собой, Дерси, само собой.", en="Of course, Darcy, of course...  "),
     ]
 
 
@@ -118,12 +118,12 @@ class Msn7Reward(Msn7, script.CutsceneProps):
     TITLE = 'Вознаграждение'
     DESCRIPTION = ''
     VOICE_LINES = [
-        VoiceLine(10, Darcy, ru="", en="Thank you, Trent. I understand that one good turn deserves another, but can't it wait a bit? Turns out not all of the trinkets this bastard had were \"bought\"."),
-        VoiceLine(20, Darcy, ru="", en="To convince some of the least conforming customers, he used the guys we just burnt near the station. All of this needs to be sorted out..."),
-        VoiceLine(30, Darcy, ru="", en="By the way, here is the official payment for your help from the Bretonian goverment. Ten thousands credits."),
-        VoiceLine(40, Trent, ru="", en="I'm still not going to sell you the artifact, Darcy."),
-        VoiceLine(50, Darcy, ru="", en="Yeah-yeah. Very funny, Trent. See you later."),
-        VoiceLine(60, Trent, ru="", en="Try not to drag this, Darcy."),
+        VoiceLine(10, Darcy, ru="Спасибо, Трент. Я понимаю что долг платежом красен, но чуть попозже, хорошо? Оказывается этот урод далеко не всегда «покупал» свои вещички.", en="Thank you, Trent. I understand that one good turn deserves another, but can't it wait a bit? Turns out not all of the trinkets this bastard had were \"bought\"."),
+        VoiceLine(20, Darcy, ru="С особо несговорчивыми покупателями ему помогали те самые ребятки, которых мы сожгли рядом со станцией. Нам надо с этим всем разобраться...", en="To convince some of the least conforming customers, he used the guys we just burnt near the station. All of this needs to be sorted out..."),
+        VoiceLine(30, Darcy, ru="Кстати, вот вам официально от правительства Бретонии за помощь. Десять тысяч.", en="By the way, here is the official payment for your help from the Bretonian goverment. Ten thousands credits."),
+        VoiceLine(40, Trent, ru="Но артефакт я тебе все равно не продам.", en="I'm still not going to sell you the artifact, Darcy."),
+        VoiceLine(50, Darcy, ru="Да-да. Очень смешно, Трент. До скорого.", en="Yeah-yeah. Very funny, Trent. See you later."),
+        VoiceLine(60, Trent, ru="Постарайтесь побыстрее, Дерси.", en="Try not to drag this, Darcy."),
     ]
 
 class Msn7Space(Msn7, script.SpaceVoiceProps):
@@ -242,10 +242,11 @@ class Msn7Space(Msn7, script.SpaceVoiceProps):
         VoiceLine(530, Darcy,
                   ru='Он часто бывает нам полезен, поэтому мы закрываем глаза на его мелкие шалости, но, чует мое сердце, до поры до времени. Когда-нибудь он нарвется.',
 				  en="He's often useful to us, so we turn a blind eye to his little schemes. But I've got a feeling it's only a matter of time. He'll push his luck too far one day."),
-        VoiceLine(550, JabbaBandit, ru='Фрилансер, у тебя есть кое-что что, что очень нужно нам. Отдавай по-хорошему!', en="Freelancer, you've got something we want. Hand it over the easy way!"),
+        VoiceLine(550, JabbaBandit, ru='Фрилансер, у тебя есть кое-что что, что очень нужно нам. Отдавай по-хорошему!', en="Freelancer, you've got something we want. Hand it over the easy way!", cinematic=True),
         VoiceLine(560, Darcy,
                   ru='Мальчики, а вы не охренели? Это мой участок, я здесь главный коп. Трент, давай разберем эту шпану.',
-				  en="Boys, have you completely lost your minds? This is my turf, I'm the top cop around here. Trent, let's clean up this scum."),
+				  en="Boys, have you completely lost your minds? This is my turf, I'm the top cop around here. Trent, let's clean up this scum.",
+                  cinematic=True),
         VoiceLine(570, Darcy,
                   ru='Джабба, засранец, теперь ты точно доигрался. Трент, я вернусь, поговорю с нашим другом еще раз. Увидимся на планете.',
 				  en="Jabba, you son of a bitch, you've really crossed the line now. Trent, I'll be back; I need to have another... chat with our friend. See you at the planet."),

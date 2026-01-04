@@ -563,7 +563,7 @@ class Misson02(ingame_mission.IngameMission):
             NNObj(self, O.JUMPGATE, target='biz_to_om15'),
             NNObj(self, O.TLR, target='om15_tlr_1'),
             NNObj(self, MS('Получите доступ и сядьте на добывающее судно Матильда',
-                           'Get access and dock with roid miner Matilda'), target='om15_jacobo_miner'),
+                           'Get access and dock with roid miner Matilda'), target='om15_jacobo_miner', open_access=False, nag=False),
             NNObj(self, O.GOTO, name='scan_wp1', target='waypoint1'),
             NNObj(self, O.GOTO, name='scan_wp2', target='waypoint2'),
 

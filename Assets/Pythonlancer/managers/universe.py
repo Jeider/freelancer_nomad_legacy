@@ -197,7 +197,7 @@ class UniverseManager:
         return DIVIDER.join([key.get_dock_key() for key in self.keys])
 
     def get_dock_key_file_content(self):
-        return '[locked_docks]\n' + self.get_dock_key()
+        return '[locked_docks]\nkey = li_lightgun01\ndocks = sph_base01\nmounted = false\n\n' + self.get_dock_key()
 
     def get_infocard_map_content(self):
         return SINGLE_DIVIDER.join(['[InfocardMapTable]'] + self.infocards_map_items)

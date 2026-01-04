@@ -12,6 +12,10 @@ class LauncherText:
          'Включает эффекты пост-процессинга, которые можно настроить прямо в игре. Требует включенного dxwrapper'),
         ('WARNING! Only for fullscreen mode! Because it can break your mouse crosshair', 'ВНИМАНИЕ! Работает только в полноэкранном режиме, потому что может сломать работу курсора вашей мыши'),
 
+        ('Show subtitles in cutscenes, can\'t work together with dxwrapper and ReShade and autiomatically disables them',
+         'Показать субтитры в катсценах, не работает вместе с dxwrapper и ReShade и автоматически отключает их'),
+        ('Subtitles in cutscenes:', 'Субтитры в катсценах:'),
+
         (
             'This is fan project. You can play it for free. If you want to support the developer, you can send donate or subscribe to project by Boosty.',
             'Вы играете в фанатский проект. Он бесплатный. Но вы можете поддержать проект, отправив донат или подписавшись через Boosty.'

@@ -1205,7 +1205,7 @@ class NNObj:
         ]
         if self.target:
             open_access = self.target_point.open_access()
-            if open_access is not False and not self.towards:
+            if self.open_access is not False and open_access is not False and not self.towards:
                 actions.append(open_access)
 
             if self.nag:

@@ -130,18 +130,18 @@ class Msn13Space(Msn13, script.SpaceVoiceProps):
         VoiceLine(240, Rockford, ru="Идиоты, вы сделаете только хуже!", en="You idiots, you'll only make things worse!"),
         VoiceLine(250, Alaric, ru="Поздно пить Боржоми, твоим планам настал конец!", en="Too late, slowpoke! Your little plan is toast!"),
 
-        VoiceLine(260, Darcy, ru="Лазер ударил по Крыгу! Мы не успели!", en="The laser has hit the Krieg! We were too late!"),
-        VoiceLine(270, Alaric, ru="Но вроде мы спасены? Ничего не взорвалось? Всё хорошо ведь, да?", en="But... we're safe, right? Nothing\'s blowing up? It\'s all good, yeah?"),
+        VoiceLine(260, Darcy, ru="Лазер ударил по Крыгу! Мы не успели!", en="The laser has hit the Krieg! We were too late!", cinematic=True),
+        VoiceLine(270, Alaric, ru="Но вроде мы спасены? Ничего не взорвалось? Всё хорошо ведь, да?", en="But... we're safe, right? Nothing\'s blowing up? It\'s all good, yeah?", cinematic=True),
 
-        VoiceLine(280, Darcy, ru="Что происходит?", en="What\'s happening?"),
-        VoiceLine(290, King, ru="Всем срочно отойти на безопасную дистанцию!", en="All units, pull back to a safe distance immediately!"),
+        VoiceLine(280, Darcy, ru="Что происходит?", en="What\'s happening?", cinematic=True),
+        VoiceLine(290, King, ru="Всем срочно отойти на безопасную дистанцию!", en="All units, pull back to a safe distance immediately!", cinematic=True),
 
-        VoiceLine(300, Alaric, ru="Ёлки-п+алки...", en="Holy cow..."),
-        VoiceLine(310, Darcy, ru="Оно жив+ое!", en="It\'s alive!"),
-        VoiceLine(320, Hatcher, ru="Всем приготовиться! Мы не знаем на что способна эта тварь!", en="All ships, battle stations! We have no idea what that thing is capable of!"),
+        VoiceLine(300, Alaric, ru="Ёлки-п+алки...", en="Holy cow...", cinematic=True),
+        VoiceLine(310, Darcy, ru="Оно жив+ое!", en="It\'s alive!", cinematic=True),
+        VoiceLine(320, Hatcher, ru="Всем приготовиться! Мы не знаем на что способна эта тварь!", en="All ships, battle stations! We have no idea what that thing is capable of!", cinematic=True),
 
-        VoiceLine(323, Hatcher, ru="Миссури под прицелом, выполнить манёвр уклонения!", en="Missouri is being targeted, execute evasive maneuvers!"),
-        VoiceLine(326, Alaric, ru="Слишком поздно!", en="Too late!"),
+        VoiceLine(323, Hatcher, ru="Миссури под прицелом, выполнить манёвр уклонения!", en="Missouri is being targeted, execute evasive maneuvers!", cinematic=True),
+        VoiceLine(326, Alaric, ru="Слишком поздно!", en="Too late!", cinematic=True),
 
         VoiceLine(330, Hatcher, ru="Мы потеряли Миссури нахер!", en="We've just lost the fucking Missouri!"),
         VoiceLine(340, King, ru="Вышлите спасательные судна с Осириса, срочно!", en="Dispatch rescue craft from the Osiris, now!"),
@@ -200,7 +200,7 @@ class Msn13Space(Msn13, script.SpaceVoiceProps):
         VoiceLine(620, Trent, ru='Генератор у меня, уходим отсюда!', en='I\'ve got the generator, let\'s get out of here!'),
         VoiceLine(630, Hatcher, ru='Чёрт, кочевники перегородили проход, мы заблокированы!', en='Damn it, the Nomads have blocked the passage! We\'re trapped!'),
 
-        VoiceLine(640, EdisonTrent, ru='Не падать духом! Вот выход, летите за мной!', en='Don\'t lose hope! Here\'s an exit, follow me!'),
+        VoiceLine(640, EdisonTrent, ru='Не падать духом! Вот выход, летите за мной!', en='Don\'t lose hope! Here\'s an exit, follow me!', cinematic=True),
         VoiceLine(650, Hatcher, ru='Срочно улетаем через этот проход! Живо!', en='Everyone, through that passage, now! Move!'),
 
         VoiceLine(660, Darcy, ru='Это +Эдисон Трент? Собственной персоной?', en='Is that... Edison Trent? In the flesh?'),
@@ -290,19 +290,19 @@ class Msn13Space(Msn13, script.SpaceVoiceProps):
         VoiceLine(1520, EdisonTrent, ru="Зерно ослабло, его можно бить. Давай быстрее, времени не в обрез", en='The seed is vulnerable, it can be hit now. Hurry, we\'re running out of time!'),
 
         VoiceLine(1530, Trent, ru="Есть! Вышли!", en='Yes! We\'re out!'),
-        VoiceLine(1540, EdisonTrent, ru="Вот чёрт... кажется сегодня не мой день.", en='Ah, damn it... Seems it\'s not my day.'),
-        VoiceLine(1550, Trent, ru="Что стряслось?", en='What\'s wrong?'),
+        VoiceLine(1540, EdisonTrent, ru="Вот чёрт... кажется сегодня не мой день.", en='Ah, damn it... Seems it\'s not my day.', cinematic=True),
+        VoiceLine(1550, Trent, ru="Что стряслось?", en='What\'s wrong?', cinematic=True),
         VoiceLine(1560, EdisonTrent, ru="Радиация зерна... разрушила мой корабль... А как ты смог её перенести?",
-									 en='The seed\'s radiation... it\'s wrecked my ship... How were you able to withstand it?'),
-        VoiceLine(1570, Trent, ru="Я не знаю... и что теперь делать", en='I don\'t know... So what do we do now?'),
+									 en='The seed\'s radiation... it\'s wrecked my ship... How were you able to withstand it?', cinematic=True),
+        VoiceLine(1570, Trent, ru="Я не знаю... и что теперь делать", en='I don\'t know... So what do we do now?', cinematic=True),
         VoiceLine(1580, EdisonTrent, ru="Так, знаешь... я передам маяк тебе. Доставь его сам, один",
-									 en='Okay, listen... I\'m transferring the beacon to you. You have to deliver it alone.'),
-        VoiceLine(1590, Trent, ru="Но на моём корабле нет катапульты!", en='But my ship doesn\'t have a catapult!'),
-        VoiceLine(1600, EdisonTrent, ru="Знаю, знаю... чёрт...", en='I know, I know... damn it...'),
+									 en='Okay, listen... I\'m transferring the beacon to you. You have to deliver it alone.', cinematic=True),
+        VoiceLine(1590, Trent, ru="Но на моём корабле нет катапульты!", en='But my ship doesn\'t have a catapult!', cinematic=True),
+        VoiceLine(1600, EdisonTrent, ru="Знаю, знаю... чёрт...", en='I know, I know... damn it...', cinematic=True),
 
-        VoiceLine(1610, Mandrake, ru="Всем внимание! Крыг замечен в системе!", en='Everyone, attention! The Krieg has been detected in the system!'),
+        VoiceLine(1610, Mandrake, ru="Всем внимание! Крыг замечен в системе!", en='Everyone, attention! The Krieg has been detected in the system!', cinematic=True),
 
-        VoiceLine(1620, Trent, ru="Тёзка, давай мне маяк. Деваться некуда, дотащу сам", en='Namesake, give me the beacon. I have no choice, I\'ll carry it myself!'),
+        VoiceLine(1620, Trent, ru="Тёзка, давай мне маяк. Деваться некуда, дотащу сам", en='Namesake, give me the beacon. I have no choice, I\'ll carry it myself!', cinematic=True),
         VoiceLine(1630, EdisonTrent, ru="Да, сейчас", en='Yeah, here...'),
 
         VoiceLine(1640, Trent, ru="Забрал, а ты тут справишься?", en='I\'ve got it. Will you be okay here?'),
@@ -333,19 +333,19 @@ class Msn13Space(Msn13, script.SpaceVoiceProps):
 
         VoiceLine(1950, Trent, ru="Странно, что мой корабль еще не развалился. Летим напролом!", en='It\'s a miracle my ship is still in one piece. We\'re going through!'),
 
-        VoiceLine(2000, Trent, ru="Эй, что за дел+а?", en='Hey, what\'s going on?!'),
-        VoiceLine(2010, Neuralnet, ru="Двигатели корабля не работают в пространстве чёрной дыры", en='Ship engines are non-functional this close to the event horizon.'),
-        VoiceLine(2020, Trent, ru="И какого хрена мне об этом никто не сказал?", en='And why the hell didn\'t anyone tell me that?!'),
+        VoiceLine(2000, Trent, ru="Эй, что за дел+а?", en='Hey, what\'s going on?!', cinematic=True),
+        VoiceLine(2010, Neuralnet, ru="Двигатели корабля не работают в пространстве чёрной дыры", en='Ship engines are non-functional this close to the event horizon.', cinematic=True),
+        VoiceLine(2020, Trent, ru="И какого хрена мне об этом никто не сказал?", en='And why the hell didn\'t anyone tell me that?!', cinematic=True),
 
-        VoiceLine(2030, Neuralnet, ru="Предлагаю подключить номадское энергоядр+о к питанию корабля", en='Suggest connecting the Nomad power core to the ship\'s systems.'),
-        VoiceLine(2040, Trent, ru="Давай попробуем...", en='Let\'s try it...'),
-        VoiceLine(2050, Trent, ru="И поскор+ее!", en='And make it quick!'),
-        VoiceLine(2060, Trent, ru="Сколько еще?", en='How much longer?!'),
-        VoiceLine(2070, Neuralnet, ru="Подключение выполняется", en='Connection in progress.'),
-        VoiceLine(2080, Trent, ru="Давай быстрее!", en='Faster!'),
-        VoiceLine(2090, Neuralnet, ru="Подключение выполняется", en='Connection in progress.'),
-        VoiceLine(2095, Trent, ru="Скорее, мать твою!", en='Hurry up, goddammit!'),
-        VoiceLine(2100, Neuralnet, ru="Подключено", en='Connected.'),
+        VoiceLine(2030, Neuralnet, ru="Предлагаю подключить номадское энергоядр+о к питанию корабля", en='Suggest connecting the Nomad power core to the ship\'s systems.', cinematic=True),
+        VoiceLine(2040, Trent, ru="Давай попробуем...", en='Let\'s try it...', cinematic=True),
+        VoiceLine(2050, Trent, ru="И поскор+ее!", en='And make it quick!', cinematic=True),
+        VoiceLine(2060, Trent, ru="Сколько еще?", en='How much longer?!', cinematic=True),
+        VoiceLine(2070, Neuralnet, ru="Подключение выполняется", en='Connection in progress.', cinematic=True),
+        VoiceLine(2080, Trent, ru="Давай быстрее!", en='Faster!', cinematic=True),
+        VoiceLine(2090, Neuralnet, ru="Подключение выполняется", en='Connection in progress.', cinematic=True),
+        VoiceLine(2095, Trent, ru="Скорее, мать твою!", en='Hurry up, goddammit!', cinematic=True),
+        VoiceLine(2100, Neuralnet, ru="Подключено", en='Connected.', cinematic=True),
         VoiceLine(2110, Trent, ru="Есть, давим на всю гашетку!", en='Yes! Punch it! Full throttle!'),
 
         VoiceLine(3010, Trent, ru="Класное местечко чтобы помереть. Ну зато мы спасли мир", en='Nice place to die. Well, at least we saved the world.'),

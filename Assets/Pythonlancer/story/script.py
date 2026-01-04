@@ -95,6 +95,9 @@ class CutsceneProps(MissionSegment):
     def get_destination(self, suffix=''):
         return f'audio\\MOD{suffix}\\m{self.MISSION_INDEX:02d}'
 
+    def get_short_destination(self, suffix=''):
+        return f'MOD{suffix}\\m{self.MISSION_INDEX:02d}'
+
     def get_subfolder(self):
         return f'm{self.MISSION_INDEX:02d}'
 
@@ -157,6 +160,7 @@ class SpaceVoiceProps(MissionSegment):
             name=self.get_name_for_line(line),
             line=line,
             attenuation=line.actor.get_attenuation(),
+            mission_segment=self,
         )
 
     def insert_space_ids(self):

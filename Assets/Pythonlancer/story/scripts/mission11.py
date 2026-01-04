@@ -484,7 +484,7 @@ class Msn11Space(Msn11, script.SpaceVoiceProps):
             340,
             Kim,
             ru='Трент, сделай что-нибудь!',
-               en='Trent, do something!'
+            en='Trent, do something!'
         ),
 
         VoiceLine(
@@ -492,19 +492,22 @@ class Msn11Space(Msn11, script.SpaceVoiceProps):
             Trent,
             comment='Проигрывается катсцена. Корабль попадает в засаду и взрывается, а лут забирает Р+окфорд',
             ru='Чёрт, это Р+окфорд!',
-               en='Damn, it\'s Rockford!'
+            en='Damn, it\'s Rockford!',
+            cinematic=True
         ),
         VoiceLine(
             360,
             Kim,
             ru='Он угоняет энергоядр+о!',
-               en='He\'s stealing the power core!'
+            en='He\'s stealing the power core!',
+            cinematic=True
         ),
         VoiceLine(
             370,
             Yamamoto,
             ru='Останов+ите его!',
-               en='Stop him!'
+            en='Stop him!',
+            cinematic=True
         ),
         VoiceLine(
             380,

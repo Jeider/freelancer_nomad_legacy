@@ -50,6 +50,9 @@ class DataFolder:
     def get_base_dxwrapper(self):
         return self.get_static() / 'd3d8_dxwrapper.dll'
 
+    def get_base_subtitles(self):
+        return self.get_static() / 'd3d8_sub.dll'
+
     def get_base_reshade_d3d9(self):
         return self.get_static() / 'd3d9_reshade.dll'
 
@@ -223,6 +226,10 @@ class DataFolder:
 
     def sync_dacom(self, content):
         equip_file = self.get_exe() / 'dacom.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    def sync_subtitles(self, content):
+        equip_file = self.get_exe() / 'subtitles.xml'
         equip_file.write_text(content, encoding='utf-8')
 
     def get_perf_options(self):
@@ -408,11 +415,20 @@ class DataFolder:
         facial_file.close()
         return file_content
 
+
     def place_dxwrapper(self):
         self.remove_all_d3d8_wrappers()
 
         shutil.copy(
             self.get_base_dxwrapper(),
+            self.get_d3d8()
+        )
+
+    def place_subtitles(self):
+        self.remove_all_d3d8_wrappers()
+
+        shutil.copy(
+            self.get_base_subtitles(),
             self.get_d3d8()
         )
 

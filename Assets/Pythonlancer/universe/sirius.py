@@ -287,7 +287,7 @@ class tau29(system.BretoniaFirst, system.System, system.SiriusSystem):
 class br_cam(system.BretoniaFirst, system.System, system.SiriusSystem):
     NAME = 'br_cam'
     TEMPLATE_NAME = 'br_cam'
-    RU_NAME = MS('К+ембридж', "Cambidge")
+    RU_NAME = MS('К+ембридж', "Cambridge")
     CONTENT = br_cam_content
 
     SYSTEM_FOLDER = 'BR_CAMBRIDGE'

@@ -9,6 +9,15 @@ from text.dividers import DIVIDER, SINGLE_DIVIDER
 
 SCRIPT_SUBFOLDER = 'script'
 
+SUBTITLES_TEMPLATE = '''<?xml version="1.0" encoding="UTF-8"?>
+
+<Subtitles>
+
+{subtitles}
+
+</Subtitles>
+'''
+
 
 class ScriptManager(object):
 
@@ -43,20 +52,42 @@ class ScriptManager(object):
                     SCRIPT_SUBFOLDER, mission.get_actor_file_link(actor), mission.get_story_script(actor)
                 )
 
-    def write_script_sounds(self):
-        data_folder = DataFolder()
+    def write_script_sounds(self, build_folder, russian):
+        data_folder = DataFolder(build_to_folder=build_folder)
         cutscene_sounds_ini_ru = []
         cutscene_sounds_ini_en = []
+        subtitles_content = []
         for mission in self.script_missions_list:
             for scene in mission.get_cutscenes():
-                for sounds in scene.get_sounds():
-                    cutscene_sounds_ini_ru.append(sounds.get_cutscene_ini())
-                    cutscene_sounds_ini_en.append(sounds.get_cutscene_ini(russian=False))
+                for sound in scene.get_sounds():
+                    cutscene_sounds_ini_ru.append(sound.get_cutscene_ini())
+                    cutscene_sounds_ini_en.append(sound.get_cutscene_ini(russian=False))
+                    subtitles_content.append(sound.get_subtitle_content(russian=russian))
 
             if not mission.SYNC_SPACE:
-                continue
+                raise Exception('SYNC_SPACE obsolete')
 
-            voices = mission.get_voices() + mission.get_en_voices()
+            ru_space_voices = mission.get_voices()
+            en_space_voices = mission.get_en_voices()
+
+            if russian:
+                for voice in ru_space_voices:
+                    for sound in voice.get_sounds():
+                        if sound.use_in_cinematic():
+                            subtitles_content.append(sound.get_subtitle_content(
+                                russian=True,
+                                root=mission.get_voice_root_for_sound(sound, suffix='')
+                            ))
+            else:
+                for voice in en_space_voices:
+                    for sound in voice.get_sounds():
+                        if sound.use_in_cinematic():
+                            subtitles_content.append(sound.get_subtitle_content(
+                                russian=False,
+                                root=mission.get_voice_root_for_sound(sound, suffix='_en')
+                            ))
+
+            voices = ru_space_voices + en_space_voices
             voice_ini = []
 
             for voice in voices:
@@ -75,4 +106,8 @@ class ScriptManager(object):
         data_folder.sync_audio_ini(
             'story_sounds_gen_en',
             DIVIDER.join(cutscene_sounds_ini_en)
+        )
+
+        data_folder.sync_subtitles(
+            SUBTITLES_TEMPLATE.format(subtitles=SINGLE_DIVIDER.join(subtitles_content))
         )

@@ -1,5 +1,6 @@
 import shutil
 import time
+import ctypes
 
 from screeninfo import get_monitors
 import subprocess
@@ -66,11 +67,12 @@ class Api:
         if self._window:
             self._window.show()
 
-    def runFreelancer(self, resolution, windowed, dxwrapper, reshade, difficulty, fovy, front_light, trail, player_body, player_commhelmet):
+    def runFreelancer(self, resolution, windowed, dxwrapper, reshade, subtitles, difficulty, fovy, front_light, trail, player_body, player_commhelmet):
         print(f'Run FL with resolution {resolution}')
         print(f'Windowed mode: {windowed}')
         print(f'use DxWrapper: {dxwrapper}')
         print(f'use ReShade: {reshade}')
+        print(f'use Subtitles: {subtitles}')
         print(f'Difficulty: {difficulty}')
         print(f'Front light: {front_light}')
         print(f'Trail: {trail}')
@@ -81,7 +83,7 @@ class Api:
 
         prev_cwd = os.getcwd()
         try:
-            self.apply_settings(resolution, windowed, dxwrapper, reshade, difficulty, fovy, front_light, trail, player_body, player_commhelmet)
+            self.apply_settings(resolution, windowed, dxwrapper, reshade, subtitles, difficulty, fovy, front_light, trail, player_body, player_commhelmet)
         except Exception as e:
             self.show()
             print(f'Cannot launch FL. Reason: {e}')
@@ -91,12 +93,13 @@ class Api:
     def run_boosty(self):
         os.startfile('https://boosty.to/freelancer2')
 
-    def apply_settings(self, resolution, windowed, dxwrapper, reshade, difficulty, fovy, front_light, trail, player_body, player_commhelmet):
+    def apply_settings(self, resolution, windowed, dxwrapper, reshade, subtitles, difficulty, fovy, front_light, trail, player_body, player_commhelmet):
         settings_save = {
             'current_resolution': resolution,
             'is_windowed': windowed,
             'is_dxwrapper': dxwrapper,
             'is_reshade': reshade,
+            'is_subtitles': subtitles,
             'difficulty': difficulty,
             'front_light': front_light,
             'trail': trail,
@@ -125,7 +128,9 @@ class Api:
             dyn_config_kwargs['difficulty_hard'] = True
 
         config = StartupConfig(screen_meta=meta, resolution=unpacked_resolution, fovx=None, fovy=fovy,
-                               dxwrapper=dxwrapper, reshade=False if windowed else reshade,
+                               dxwrapper=True if dxwrapper and not subtitles else False,
+                               reshade=reshade if reshade and not windowed and not subtitles else False,
+                               subtitles=subtitles,
                                front_light=front_light, contrail=trail,
                                player_body=player_body, player_commhelmet=player_commhelmet,
                                **dyn_config_kwargs)
@@ -171,6 +176,23 @@ class Api:
         file_root = os.getcwd().replace('Assets\\Pythonlancer', '')
         os.chdir(f'{file_root}EXE')
 
+        if subtitles:
+            try:
+                print('run subtitles')
+                show_console()
+                result = subprocess.run(['Converter.exe'], check=True)
+                print(f"Subprocess completed successfully with return code: {result.returncode}")
+            except subprocess.CalledProcessError as e:
+                # CrashManager().register_crash()
+                print(f"Subprocess crashed with return code: {e.returncode}")
+
+                hide_console()
+                return
+            except FileNotFoundError:
+                print("Error: Subprocess script or command not found.")
+                hide_console()
+                return
+
         # os.system(' '.join(run_params))
         try:
             print('run subprocess')
@@ -185,6 +207,24 @@ class Api:
             self.quit()
         except FileNotFoundError:
             print("Error: Subprocess script or command not found.")
+
+
+def show_console():
+    kernel32 = ctypes.WinDLL('kernel32')
+
+    user32 = ctypes.WinDLL('user32')
+
+    hWnd = kernel32.GetConsoleWindow()
+    user32.ShowWindow(hWnd, 1)
+
+
+def hide_console():
+    kernel32 = ctypes.WinDLL('kernel32')
+
+    user32 = ctypes.WinDLL('user32')
+
+    hWnd = kernel32.GetConsoleWindow()
+    user32.ShowWindow(hWnd, 0)
 
 
 def create_launcher(russian=True):
@@ -229,6 +269,7 @@ def create_launcher(russian=True):
         'is_windowed': defaults.get('is_windowed', False),
         'is_dxwrapper': defaults.get('is_dxwrapper', True),
         'is_reshade': defaults.get('is_reshade', True),
+        'is_subtitles': defaults.get('is_subtitles', False),
         'fovy': defaults.get('fovy', DEFAULT_FOVY),
         'difficulty': diff,
         'front_light': defaults.get('front_light', 'white'),

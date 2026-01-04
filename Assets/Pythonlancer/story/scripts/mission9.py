@@ -687,13 +687,17 @@ class Msn9Space(Msn9, script.SpaceVoiceProps):
         VoiceLine(1330, Matome,
                   ru='Мы совершим атаку камикадзе и отвлечем вражеские силы. А вы уход+ите и доставьте данные на Мус+аси сами',
                   en="We'll launch a kamikaze attack and distract the enemy forces. You escape and deliver the data to the Musashi yourself!"),
-        VoiceLine(1340, Kim, ru='Мат+омэ, идиот, остановись!', en="Matome, you idiot, stop!"),
+        VoiceLine(1340, Kim, ru='Мат+омэ, идиот, остановись!', en="Matome, you idiot, stop!",
+                  cinematic=True),
 
         VoiceLine(1350, Matome, ru='Это наш единственный шанс! Прощай друг!',
-                  en="It's our only chance! Farewell, my friend!"),
-        VoiceLine(1355, Matome, ru='Банзай!', en="Banzai!"),
+                  en="It's our only chance! Farewell, my friend!",
+                  cinematic=True),
+        VoiceLine(1355, Matome, ru='Банзай!', en="Banzai!",
+                  cinematic=True),
 
-        VoiceLine(1360, Kim, ru='Стой! Нет!', en="Stop! No!"),
+        VoiceLine(1360, Kim, ru='Стой! Нет!', en="Stop! No!",
+                  cinematic=True),
 
         VoiceLine(1400, Darcy, ru='Кажется нам пор+а уходить', en="I think it's time for us to go..."),
         VoiceLine(1410, Kim, ru='Всё верно мисс Д+ерси. Летим к указанной точке пути',

@@ -98,4 +98,4 @@ class StoryManager:
                 data_folder.sync_story_ingame_thorn(thorn.get_name(), content)
 
         if self.core.write:
-            self.script.write_script_sounds()
+            self.script.write_script_sounds(build_folder=self.core.build_folder, russian=self.core.russian)

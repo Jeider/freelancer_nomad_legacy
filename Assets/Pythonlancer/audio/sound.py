@@ -15,13 +15,17 @@ class VoiceLine(object):
     COMMENT_START = "<span class='comment'>("
     COMMENT_END = ")</span>"
 
-    def __init__(self, index, actor, ru='', en='', comment=''):
+    def __init__(self, index, actor, ru='', en='', comment='', cinematic=False):
         self.index = index
         self.actor = actor
         self.ru = ru
         self.en = en
         self.comment = comment
         self.ids_sub = None
+        self.cinematic = cinematic
+
+    def is_cinematic(self):
+        return self.cinematic
 
     def get_ru_replaced_text(self):
         return self.ru.replace('(', self.COMMENT_START).replace(')', self.COMMENT_END).replace('+', '')
@@ -54,7 +58,7 @@ class VoiceLine(object):
         return self.get_en_clean_text().replace('+', '')
 
     def get_en_ai_gen_text(self):
-        print(self.index)
+        # print(self.index)
         return (self.get_en_clean_ai_text()
                 .replace("'", '')
                 .replace("Mr.", 'm+ister')
@@ -76,11 +80,15 @@ class VoiceLine(object):
     def get_sub_id(self):
         return self.ids_sub.id
 
+    def get_subtitle_text(self, russian):
+        return self.get_ru_sub_text() if russian else self.get_en_sub_text()
+
 
 class Sound:
-    def __init__(self, line, name, attenuation=None):
+    def __init__(self, line, name, mission_segment, attenuation=None):
         self.line = line
         self.name = name
+        self.mission_segment = mission_segment
         self.attenuation = attenuation
 
     def get_nickname(self):
@@ -95,8 +103,17 @@ class Sound:
     def get_attenuation(self):
         return self.attenuation
 
+    def get_subtitle_content(self, russian=True, root=''):
+        raise NotImplementedError
+
+    def use_in_cinematic(self):
+        return False
+
 
 class SpaceSound(Sound):
+    def use_in_cinematic(self):
+        return self.line.is_cinematic()
+
     def get_nickname(self):
         return self.name
 
@@ -108,14 +125,20 @@ class SpaceSound(Sound):
             f'attenuation = {attenuation if attenuation is not None else SPACE_ATTENUATION}'
         ])
 
+    def get_subtitle_content(self, russian=True, root=''):
+        return f'<Static AudioFile="{root}.utf|{self.get_nickname_hash()}" TextArea="Cinematic">{self.line.get_subtitle_text(russian)}</Static>'
+
 
 class CutsceneSound(Sound):
-    def __init__(self, mission_segment, **kwargs):
-        super().__init__(**kwargs)
-        self.mission_segment = mission_segment
+
+    def use_in_cinematic(self):
+        return True
 
     def get_destination(self, suffix=''):
         return self.mission_segment.get_destination(suffix)
+
+    def get_short_destination(self, suffix=''):
+        return self.mission_segment.get_short_destination(suffix)
 
     def get_duration(self, russian=True):
         return AudioWatcher().watch_cutscene_audio_duration(
@@ -140,6 +163,10 @@ class CutsceneSound(Sound):
             f'file = {self.get_destination(suffix)}\\{self.get_filename()}',
             'is_2d = true',
         ])
+
+    def get_subtitle_content(self, russian=True, root=''):
+        suffix = "" if russian else "_ENG"
+        return f'<Static AudioFile="{self.get_short_destination(suffix)}\\{self.get_filename()}" TextArea="Cinematic">{self.line.get_subtitle_text(russian)}</Static>'
 
     def get_thorn(self):
         nickname = self.get_nickname()
