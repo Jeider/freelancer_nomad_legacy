@@ -182,17 +182,21 @@ table {
 
         </div>
 
-        <div class="section">
-
-            {{ t.text('Subtitles in cutscenes:') }}
-
-            <input type="checkbox" name="subtitles" id="subtitles" {% if is_subtitles %}checked{% endif %}> <br>
-            <span class="hint">{{ t.text('Show subtitles in cutscenes, can\'t work together with dxwrapper and ReShade and autiomatically disables them') }}</span>
-
-        </div>
-
         <div class="section dangerous" style="display: none;">
             {{ t.text('Field of view Y (fish eye):') }} <input type="number" class="integer-input" value="{{ fovy }}" id="fovy"> <span class="hint">{{ t.text('(default: 70)') }}</span>
+
+            <hr>
+
+            <div class="section">
+
+                {{ t.text('Subtitles in cutscenes:') }}
+
+                <input type="checkbox" name="subtitles" id="subtitles" {% if is_subtitles %}checked{% endif %}> <br>
+                <span class="hint">{{ t.text('Show subtitles in cutscenes, can\'t work together with dxwrapper and ReShade and autiomatically disables them') }}</span>
+                <span class="hint">{{ t.text('This feature have possible errors on startup, retry launch when it fails. When console is freezes - just remove Conveter.exe process by Task Manager and try again') }}</span>
+
+            </div>
+
         </div>
 
         <hr>

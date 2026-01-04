@@ -78,6 +78,18 @@ https://github.com/Jeider/freelancer_nomad_legacy/blob/master/DATA/FONTS/fonts.i
 
 <a id='eng-ver'></a>
 
+### Субтитры в катсценах (инструкция на случай нерабочего лончера, в лончере эта функция лежит в категории "опасных")
+
+Доступны субтитры в катсценах, но это экспериментальная фича. Смена языка происходит вместе со сменой уровня сложности. По умолчанию субтитры не лежат в игре - см. раздел "переключение сложности вручную". Скопируйте RU_NORMAL в папку основной игры и субтитры появятся в папке EXE.
+
+Важно! Субтитры не совместимы с dxwrapper и reshade. Вы должны удалить их d3d8.dll и d3d9.dll.
+
+Следом чтобы установить субтитры нужно скопировать файл STATIC/d3d8_sub.dll и положить в папку EXE.
+
+Далее запускайте файл EXE/Converter.exe. Он должен обработать озвучку. Операция может зависнуть и даже намертво. В этом случае просто удалите процесс Converter.exe вашим диспетчером задач и попробуйте запустить его снова. До тех пор, пока он не выдаст результат.
+
+Если результат не получается и вы хотите откатить результат, то просто удалить d3d8.dll от субтитров.
+
 # English version
 
 ## Freencer mod The Nomad Legacy
@@ -155,3 +167,15 @@ If you have 4k monitor you not see speed and truster capacity, you must fix font
 https://github.com/Jeider/freelancer_nomad_legacy/blob/master/DATA/FONTS/fonts.ini#L41
 
 Find text "Edit this font for ultrawide" and change value of  fixed_height of both sections to 0.02. Font will be appeared after this change
+
+### Subtitles in cutscenes (it also available in launcher as dangerous setting)
+
+Subtitles in cutscenes is allowed as experimtal feature. Switch of launcher is happened together when you switch difficulty. By default there's no subtitles in game - look at "change difficulty" section. Copy EN_NORMAL to main game and subtitles will be appear. That's the same for any english difficulty.
+
+Important! Subtitles not compatible with dxwrapper and reshade. You must delete d3d8.dll and d3d9.dll of this features.
+
+Next turn - you need copy STATIC/d3d8_sub.dll and place it in EXE folder of main project.
+
+Next you need to run EXE/Converter.exe. It should process sounds. Operation can be freezed forever. In this case you must remove Converter.exe process by your Windows Task Manager and try to run Conveter.exe again. Do it until Conveter.exe will show you successs result.
+
+You have wrong result and want to remove subtitles? Just remove d3d8.dll of subtitles.

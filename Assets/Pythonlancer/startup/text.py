@@ -20,6 +20,10 @@ class LauncherText:
             'This is fan project. You can play it for free. If you want to support the developer, you can send donate or subscribe to project by Boosty.',
             'Вы играете в фанатский проект. Он бесплатный. Но вы можете поддержать проект, отправив донат или подписавшись через Boosty.'
         ),
+        (
+            'This feature have possible errors on startup, retry launch when it fails. When console is freezes - just remove Conveter.exe process by Task Manager and try again',
+            'Эта возможность имеет возможные проблемы на старте, в случае ошибок повторите операцию. Если консоль зависает - просто удалите процесс Converter.exe ваши диспетчером задач и попробуйте еще раз'
+        ),
         ('Support project', 'Поддержать проект'),
 
         ('Field of view Y (fish eye):', 'Угол обзора по высоте (вкл. рыбий глаз):'),
