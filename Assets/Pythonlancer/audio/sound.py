@@ -33,7 +33,7 @@ class VoiceLine(object):
     def get_ru_story_text(self):
         content = self.get_ru_replaced_text()
 
-        return f'{self.actor.RU_NAME}: {content}'
+        return f'{self.actor.RU_NAME.get_ru()}: {content}'
 
     def get_ru_clean_text(self):
         return re.sub(r'\(.*?\)', '', self.ru).replace(',,', ',')

@@ -182,6 +182,7 @@ class Api:
                 show_console()
                 result = subprocess.run(['Converter.exe'], check=True)
                 print(f"Subprocess completed successfully with return code: {result.returncode}")
+                hide_console()
             except subprocess.CalledProcessError as e:
                 # CrashManager().register_crash()
                 print(f"Subprocess crashed with return code: {e.returncode}")

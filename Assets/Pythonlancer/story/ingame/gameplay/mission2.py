@@ -554,7 +554,7 @@ class Misson02(ingame_mission.IngameMission):
 
     def get_nn_objectives(self):
         return [
-            NNObj(self, MS('Найдитель Вильгельма в баре линкора Шарнхорст',
+            NNObj(self, MS('Найдите Вильгельма в баре линкора Шарнхорст',
                            'Find Wilhelm in bar at Battleship Scharnhorst'), name='meet_vendor', target='battleship'),
 
             NNObj(self, O.LAUNCH, name='launch'),

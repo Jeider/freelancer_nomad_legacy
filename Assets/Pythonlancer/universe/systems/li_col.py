@@ -417,7 +417,7 @@ class ColSolarPlant2(ColMember, ColBaseSolarPlant):
     ASTEROID_ZONES = [
         ColSolarMinesZone2,
     ]
-    RU_NAME = MS('Солн.генератор Монаханс', 'Solar Planet Monahans')
+    RU_NAME = MS('Солн.генератор Монаханс', 'Solar Plant Monahans')
     MISC_EQUIP_TYPE = LI_PIRATE
     EQUIP_SET = markets.EquipSet(
         Q.Power(LI_CIV, eq_classes=markets.SECRET3),
@@ -471,7 +471,7 @@ class ColSolarPlant5(ColMember, ColBaseSolarPlant):
     ASTEROID_ZONES = [
         ColSolarMinesZone5,
     ]
-    RU_NAME = MS('Солн.генератор Ш+еффилд', "Solar Planet Sheffield")
+    RU_NAME = MS('Солн.генератор Ш+еффилд', "Solar Plant Sheffield")
     MISC_EQUIP_TYPE = LI_PIRATE
     EQUIP_SET = markets.EquipSet(
         Q.Power(LI_CIV, eq_classes=markets.SECRET2),

@@ -237,7 +237,7 @@ class AvalSolarPlant1(AvalMember, AvalBaseSolarPlant):
     ASTEROID_ZONES = [
         AvalSolarMinesZone1,
     ]
-    RU_NAME = MS('Солн.генератор Тидворт', 'Solar Planet Titword')
+    RU_NAME = MS('Солн.генератор Тидворт', 'Solar Plant Titword')
     MISC_EQUIP_TYPE = BR_PIRATE
     EQUIP_SET = markets.EquipSet(
         Q.Power(BR_CIV, eq_classes=markets.SECRET3),
@@ -251,7 +251,7 @@ class AvalSolarPlant2(AvalMember, AvalBaseSolarPlant):
     ASTEROID_ZONES = [
         AvalSolarMinesZone2,
     ]
-    RU_NAME = MS('Солн.генератор Льюис', "Solar Planet Lewes")
+    RU_NAME = MS('Солн.генератор Льюис', "Solar Plant Lewes")
     MISC_EQUIP_TYPE = BR_PIRATE
     EQUIP_SET = markets.EquipSet(
         Q.Power(BR_CIV, eq_classes=markets.SECRET2),

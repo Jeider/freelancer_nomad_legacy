@@ -299,7 +299,7 @@ class HonsSolarPlant2(HonsMember, HonsBaseSolarPlant):
     ASTEROID_ZONES = [
         HonsSolarMinesZone2,
     ]
-    RU_NAME = MS('Солн.генератор Итабаси', "Solar Planet Itabashi")
+    RU_NAME = MS('Солн.генератор Итабаси', "Solar Plant Itabashi")
     MISC_EQUIP_TYPE = KU_PIRATE
     EQUIP_SET = markets.EquipSet(
         Q.Power(KU_CIV, eq_classes=markets.SECRET2),
@@ -327,7 +327,7 @@ class HonsSolarPlant4(HonsMember, HonsBaseSolarPlant):
     ASTEROID_ZONES = [
         HonsSolarMinesZone4,
     ]
-    RU_NAME = MS('Солн.генератор Нэрима', 'Solar Planet Nerima')
+    RU_NAME = MS('Солн.генератор Нэрима', 'Solar Plant Nerima')
     MISC_EQUIP_TYPE = KU_PIRATE
     EQUIP_SET = markets.EquipSet(
         Q.Power(KU_CIV, eq_classes=markets.SECRET2),
@@ -341,7 +341,7 @@ class HonsSolarPlant5(HonsMember, HonsBaseSolarPlant):
     ASTEROID_ZONES = [
         HonsSolarMinesZone5,
     ]
-    RU_NAME = MS('Солн.генератор Кавагути', "Solar Planet Kavaguti")
+    RU_NAME = MS('Солн.генератор Кавагути', "Solar Plant Kavaguti")
     MISC_EQUIP_TYPE = KU_PIRATE
     EQUIP_SET = markets.EquipSet(
         Q.Power(KU_CIV, eq_classes=markets.SECRET3),

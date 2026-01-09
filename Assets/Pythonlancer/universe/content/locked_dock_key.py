@@ -1,4 +1,7 @@
 from tools.create_id import CreateId
+from text.infocards import InfocardBuilder
+
+from text.strings import MultiString as MS
 
 
 class LockedDockKey(object):
@@ -72,6 +75,25 @@ locked_gate = {int_hash}'''
         self.equip_name = self.create_equip_name()
         self.key_fx = key_fx
         self.ids_name = self.locked_base.system.key_ids.new_name(key_name)
+        self.ids_info = self.locked_base.system.key_ids.new_info(
+            MS(
+                InfocardBuilder.build_equip_infocard(
+                    key_name.get_ru(),
+                    [
+                        f'Открывает доступ к объекту {self.locked_base.get_space_name().get_ru()} в системе {self.locked_base.system.get_ru_name()}',
+                        'Вы можете продать ключ после использования. Вы всегда сможете добыть его снова при необходимости.'
+                    ]
+                ),
+                InfocardBuilder.build_equip_infocard(
+                    key_name.get_en(),
+                    [
+                        f'Opens access to {self.locked_base.get_space_name().get_en()} in {self.locked_base.system.get_en_name()} system',
+                        'You can sell the key after use. You can always obtain it again if needed.'
+                    ]
+                )
+            ),
+
+        )
 
     def create_equip_name(self):
         return self.EQUIP_NAME_TEMPLATE.format(base_name=self.base_nickname)
@@ -83,7 +105,7 @@ locked_gate = {int_hash}'''
         return self.ids_name.id
 
     def get_ids_info(self):
-        return 1
+        return self.ids_info.id
 
     def get_dock_key(self):
         return self.DOCK_KEY_TEMPLATE.format(key_equip=self.equip_name, base_name=self.locked_base.get_inspace_nickname())

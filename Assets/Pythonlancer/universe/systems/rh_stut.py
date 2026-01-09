@@ -252,7 +252,7 @@ class StutSolarPlant1(StutMember, StutBaseSolarPlant):
     ASTEROID_ZONES = [
         StutSolarMinesZone1,
     ]
-    RU_NAME = MS('Солн.генератор Тюбинген', 'Solar Planet Tübingen ')
+    RU_NAME = MS('Солн.генератор Тюбинген', 'Solar Plant Tübingen ')
     MISC_EQUIP_TYPE = RH_PIRATE
     EQUIP_SET = markets.EquipSet(
         Q.Power(RH_CIV, eq_classes=markets.SECRET3),
@@ -266,7 +266,7 @@ class StutSolarPlant2(StutMember, StutBaseSolarPlant):
     ASTEROID_ZONES = [
         StutSolarMinesZone2,
     ]
-    RU_NAME = MS('Солн.генератор Хейльбронн', 'Solar Planet Heilbronn')
+    RU_NAME = MS('Солн.генератор Хейльбронн', 'Solar Plant Heilbronn')
     MISC_EQUIP_TYPE = RH_PIRATE
     EQUIP_SET = markets.EquipSet(
         Q.Power(RH_CIV, eq_classes=markets.SECRET2),
@@ -308,7 +308,7 @@ class StutSolarPlant5(StutMember, StutBaseSolarPlant):
     ASTEROID_ZONES = [
         StutSolarMinesZone5,
     ]
-    RU_NAME = MS('Солн.генератор Кассель', "Solar Planet Kassel")
+    RU_NAME = MS('Солн.генератор Кассель', "Solar Plant Kassel")
     MISC_EQUIP_TYPE = RH_PIRATE
     EQUIP_SET = markets.EquipSet(
         Q.Power(RH_CIV, eq_classes=markets.SECRET3),

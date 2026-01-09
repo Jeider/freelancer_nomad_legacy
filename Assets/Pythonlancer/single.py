@@ -444,8 +444,12 @@ def scene():
 
     print('scene done')
 
+HELP_LINES = {
+#     1: 'Erzog I presume? Tell me why you killed Falan Orbiplanax. Are you the high priest of the Cult of Agba+a?',
+}
 
-HELP_LINES = {}
+
+
 
 
 class KingHigh(actors.King):
@@ -456,13 +460,14 @@ class KingHigh(actors.King):
 
 def sound_direct():
     output_folder = FileWriter.get_subfolder('help')
-    # for index, line in HELP_LINES.items():
-    #     audio_folder.AudioFolder.generate_simple_sound(output_folder / f"{index}.mp3", actors.King, line)
+    for index, line in HELP_LINES.items():
+        if not (output_folder / f"{index:03d}.mp3").exists():
+            audio_folder.AudioFolder.generate_simple_sound(output_folder / f"{index:03d}.mp3", actors.Neuralnet, line)
 
-    text = 'Проклятие!'
-    index = 2004
-    actor = KingHigh
-    audio_folder.AudioFolder.generate_simple_sound(output_folder / f"{index}.mp3", actor, text)
+    # text = 'Проклятие!'
+    # index = 2004
+    # actor = actors.Neuralnet
+    # audio_folder.AudioFolder.generate_simple_sound(output_folder / f"{index}.mp3", actor, text)
 
 
 def mass_decode():

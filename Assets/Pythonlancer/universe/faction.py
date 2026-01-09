@@ -1290,8 +1290,8 @@ class BretoniaHunters(LawfulFaction, BretoniaSecondFleet, BaseBretonia, Bretonia
     AFTERBURN = misc.BR_MAIN
     GUEST_APPEARANCE = bodyparts.JOURNEYMAN
     # RU_NAME = MS('Р+оял-Форс', "Roal Force")
-    RU_NAME = MS('Роял-Форс', "Roal Force")
-    RU_NAME_FULL = MS('ЧВК Роял-Форс', "PMC Roal Force")
+    RU_NAME = MS('Роял-Форс', "Royal Force")
+    RU_NAME_FULL = MS('ЧВК Роял-Форс', "PMC Royal Force")
     RU_INFO = MS(RU.B_BH, EN.B_BH)
     MC_COSTUME = 'mc_energon'
     SCANNING_CARGO = True

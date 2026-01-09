@@ -559,8 +559,8 @@ class Misson03(ingame_mission.IngameMission):
                         'equip = attached_fx_connect01, HpRoot01',
                         'equip = attached_fx_connect02, HpRoot02',
                         'equip = attached_fx_connect03, HpRoot03',
-                        'equip = dtr_shieldgun05, HpTurret02',
-                        'equip = dtr_shieldgun05, HpTurret03',
+                        'equip = dtr_shieldgun03, HpTurret02',
+                        'equip = dtr_shieldgun03, HpTurret03',
                         'equip = m03_dtr_armor',
                     ]
                 )

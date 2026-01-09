@@ -22,7 +22,9 @@ Windows 10 и новее, 64 бит (запустить на других вер
 
 Права на доступ файлов к записи (не используйте Program Files, фрил точно потеряет права на запись)
 
-Активированный Direct Play
+Активированный DirectPlay: Вы можете установить его самостоятельно или просто запустить файл DirectPlay_Activate.cmd в корне проекта.
+
+Если лончер запустился, но завис или пустой, то скорее всего в вашей Windows не установлен компонент WebView: Microsoft Edge WebView2. Вы можете найти его на сайте Microsoft. Например: https://developer.microsoft.com/ru-ru/microsoft-edge/webview2/
 
 ## Дополнительно
 
@@ -106,7 +108,9 @@ Windows 10 and newer, 64 bit (it's possible to run on other version of Windows, 
 
 Write rules inside FL folder (for example - do not place game inside Program Files)
 
-Activated Direct Play
+Activated DirectPlay: you can install it manually or just run DirectPlay_Activate.cmd in root directory of project.
+
+If launcher working, but freezed or empty - that mean you don't have WebView component in your Windows, named Microsoft Edge WebView2. You should download it from Microsoft site. For example: https://developer.microsoft.com/ru-ru/microsoft-edge/webview2/
 
 ## Additional
 
@@ -154,9 +158,9 @@ If you have unique aspect ratio, you must configure Horizontal and position of s
 
 This data used by launcher: https://github.com/Jeider/freelancer_nomad_legacy/blob/master/Assets/Pythonlancer/startup/meta.json#L34
 
-horizontal is "Actual horizontal value" в HudShift.ini. Find this comment inside hudshift.ini
+horizontal is "Actual horizontal value" in HudShift.ini. Find this comment inside hudshift.ini
 	
-status_shift is "Position of PlayerStatus is second value of next parameter" в HudShift.ini. Find this comment inside hudshift.ini
+status_shift is "Position of PlayerStatus is second value of next parameter" in HudShift.ini. Find this comment inside hudshift.ini
 
 wide_weapons is a parameter HudWeaponGroups on the top of HudShift.ini. If value in metadata should bе false, you must set value "false" of this paramter inside HudShift.ini 
 

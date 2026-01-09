@@ -119,24 +119,24 @@ class Misson01A(ingame_mission.IngameMission):
                 ru_content=MultiText([
                     'Добро пожаловать в мод Наследие Номадов!',
 
-                    'Хочу обратить ваше внимание, что ваш корабль имеет гораздо более гибкую систему оборудования. '
-                    'Вы можете менять и постепенно улучшать двигатели, генераторы, форсажи и прочее.',
+                    'Если вы до этого не играли во Freelancer, то научиться играть будет не сложно. В основном игра управляется мышью, '
+                    'кнопка W - это увеличить скорость, X - реверс, Tab - форсаж. A D - стрейфы. Q E - крен. Z - выключенный двигатель, активирует '
+                    'движение по инерции. Shift+W - полёт в круизе',
 
-                    'По этой причине ваш первый двигатель обладаем совсем слабой скоростью. Но не волнуйтесь, '
-                    'в будущем вы сможете ставить более лучшее оборудование, которое позволит вам развивать '
-                    'более внушительную скорость. Только будьте осторожны. Хорошее оборудование требует '
-                    'хорошей энергии. Так что всегда первым лучше менять генератор!',
+                    'Чтобы активировать действия автопилота вы должны нажимать или на кнопки на верхней панели или '
+                    'нажимать кнопки: F2 - это двигаться к указанной цели, F3 - стыковка с целью, F4 войти в формацию '
+                    'с целью.',
 
                     'Удачных полётов!',
                 ],[
                     'Greetings! Welcome to mod The Nomad Legacy!',
 
-                    "I want to warn you, your ship now have very flexible equipment system. "
-                    "You can change and modify you engines, generators, thruster, etc.",
+                    "If you don't player in Freelancer, you can learn it very fast. Game mostly controller by your mouse, also with buttons: "
+                    "W - increase throttle, X - reverse, Tab - afterburn, A D - strafes, Q E - rotate corkscrew (a.k.a. do a barrel roll), "
+                    "Z - kill engine, activates motion by inertia."
 
-                    "So, your first engine have minimal speed. Don't worry, you can improve it later. One day you'll "
-                    "find ship with possibility to mount the best engine with maximum possible speed. Be careful! "
-                    "More efficient equipment requires a lot of energy. At the first time better to change generator!",
+                    "To activate maneuvers of your autopilot you should use top bar or press keys: F2 - go to target, "
+                    "F3 - dock with target, F4 - join formation with target.",
 
                     "Good flights!"
                 ]),

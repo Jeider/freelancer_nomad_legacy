@@ -27,7 +27,7 @@ class InfocardBuilder(object):
         return ''.join([INFO_ROW_BASIC_INLINE.format(content=row) for row in rows])
 
     @staticmethod
-    def build_equip_infocard(equip_name, equip_raw_info):
+    def build_equip_infocard(equip_name, equip_raw_info: list):
         compiled_content = []
         for item_content in equip_raw_info:
             compiled_content.append(
