@@ -11,6 +11,7 @@ FONTS_TEMPLATE = 'hardcoded_inis/static_content/fonts.ini'
 
 MOUSE = "mouse_speed"
 GAMMA = "gamma_ramp"
+MANEUVER_BAR_HIDE = "autohide_maneuver_bar"
 
 KEEPED_KEYS = [
     MOUSE,
@@ -24,11 +25,12 @@ KEEPED_KEYS = [
     "enable_tooltips",
     "enable_rollover",
     "cockpit",
-    "autohide_maneuver_bar",
+    MANEUVER_BAR_HIDE,
 ]
 DEFAULT_ALL = '1.0'
 DEFAULT_MOUSE = '0.5'
 DEFAULT_GAMMA = '0.3'
+DEFAULT_MANEUVER_BAR_HIDE = '0.0'
 
 
 class OptionsManager:
@@ -59,6 +61,8 @@ class OptionsManager:
                     default = DEFAULT_MOUSE
                 elif key == GAMMA:
                     default = DEFAULT_GAMMA
+                elif key == MANEUVER_BAR_HIDE:
+                    default = DEFAULT_MANEUVER_BAR_HIDE
                 self.exist_perf_options[key] = default
 
     def get_perf_options_content(self):
