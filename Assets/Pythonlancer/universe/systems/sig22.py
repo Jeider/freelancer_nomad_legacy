@@ -422,7 +422,7 @@ class Sig22Station(Sig22Member, Sig22Liberty, main_objects.TradingBase):
     SPACE_OBJECT_TEMPLATE = constanta.ConstantaAlternative
     INTERIOR_CLASS = interior.StationInterior
     DEALERS = dealers.LibertyCivilianDealers
-    RU_NAME = MS('Станция Констанца', 'Constanța Station')
+    RU_NAME = MS('Станция Констанца', 'Constantsa Station')
 
     BASE_PROPS = meta.TradingBase(
         objectives=[

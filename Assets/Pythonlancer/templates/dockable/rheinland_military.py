@@ -13,7 +13,7 @@ archetype = keln_core
 [Object]
 nickname = rh_biz_05_dock01
 pos = -500, 0, 0
-rotate = 0, 90, 0
+rotate = 0, -90, 0
 archetype = space_shipping01_front_dock
 {dock_props}
 
