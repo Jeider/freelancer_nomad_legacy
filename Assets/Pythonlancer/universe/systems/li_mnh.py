@@ -297,7 +297,7 @@ class ManhMiningDockring(ManhMember, main_objects.MiningPlanetDockring):
     INDEX = 2
     BASE_INDEX = 2
     REL = RIGHT
-    INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
+    INTERIOR_CLASS = interior.CustomFullSingleRoomInterior
     DEALERS = dealers.LibertyPlanetDealers
     SHIP_SET = markets.ShipSet('ge_csv')
     RU_NAME = MS('Планета Питсбург', 'Planet Pittsburgh')

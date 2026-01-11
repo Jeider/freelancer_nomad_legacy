@@ -384,7 +384,7 @@ class Misson05(ingame_mission.IngameMission):
         ],
         [
             'OBJECTIVE:',
-            'Find the location of professor Mandrake and get him to the Planet Forbes.',
+            'Find the location of professor Mandrake and bring him to the Planet Forbes.',
             '',
             'DIFFICULTY:',
             'Medium.',

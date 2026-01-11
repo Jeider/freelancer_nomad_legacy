@@ -151,7 +151,7 @@ class Tau31Battleship(Tau31Member, main_objects.LibertyBattleship):
     DEALERS = dealers.LibertyMilitaryDealers
     SHIP_SET = markets.ShipSet('li_elite')
 
-    RU_NAME = MS('Линкор Луизиана', 'Battleship Luisiana')
+    RU_NAME = MS('Линкор Луизиана', 'Battleship Louisiana')
 
     NEBULA_EXCLUSION_ZONE_SIZE = 3000
     EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS

@@ -191,7 +191,7 @@ class Sig17AbandonedAstBase1(Sig17Member, main_objects.AbandonedAsteroid):
     INTERIOR_CLASS = interior.EquipDeckInterior
     DEFENCE_LEVEL = None
     LOCKED_DOCK = True
-    RU_NAME = MS('База Солт-Лейк-Сити', "Solt-Lake-City Base")
+    RU_NAME = MS('База Солт-Лейк-Сити', "Salt-Lake-City Base")
 
     AST_EXCLUSION_ZONE_SIZE = 3500
     ASTEROID_ZONES = [
