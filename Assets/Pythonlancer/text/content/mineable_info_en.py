@@ -20,30 +20,40 @@ GAS_MINING_GUNS = (
     'liquefaction job. You need a lot of time to liquify the gas without such guns. Recommended to have at least one '
     'gun with effective gas liquefaction.'
 )
+AST_MISSILES = (
+    'Hint: all missiles, mines and torpedoes (including cheap) have big efficiency with mining of static asteroids.'
+)
+DEBRIS_MISSILES = (
+    'Hint: all missiles, mines and torpedoes (including cheap) have big efficiency with mining of static debris.'
+)
 
 GAS_MINER_OLD = ('In order to access to this gas miner you need to find key on of the nearest ice '
                  'asteroids. You need to destroy segments of ice asteroids and get free gas puffs. Next you must '
                  'liquefy the gas by your guns. Each successful liquefaction of gas will appear correct asteroid. It '
                  'will be marked by color and sound of your interface. Liquify all gas inside correct asteroid, collect '
                  'dropped key and access to gas miner will be granted'
-                 '\\n\\n' + GAS_MINING_GUNS)
+                 '\\n\\n' + GAS_MINING_GUNS +
+                 '\\n\\n' + AST_MISSILES)
 
 ASTEROID_ICE = ('In order to access to this abandoned research base you need to find key on of the nearest ice '
                 'asteroids. You need to destroy segments of ice asteroids and get free gas puffs. Next you must '
                 'liquefy the gas by your guns. Each successful liquefaction of gas will appear correct asteroid. It '
                 'will be marked by color and sound of your interface. Liquify all gas inside correct asteroid, collect '
                 'dropped key and access to base will be granted'
-                '\\n\\n' + GAS_MINING_GUNS)
+                '\\n\\n' + GAS_MINING_GUNS +
+                '\\n\\n' + AST_MISSILES)
 
 ASTEROID_ROCK = ('In order to access to abandoned research base you need to find key in one of the nearest asteroids. '
                  'Correct asteroid will be marked by green color and sound of your interface. Attack and check '
-                 'asteroids, find correct asteroid, destroy it, get the key and access to base will be granted')
+                 'asteroids, find correct asteroid, destroy it, get the key and access to base will be granted'
+                 '\\n\\n' + AST_MISSILES)
 
 DEBRIS_MANUFACTORING = ('In order to access to this smelter you should attack debris brickets. '
                         'Attack the boxes until you will get the key. Correct debris brikect will be marked by '
                         "visual effect and sound of your interface. You don't need to destroy all boxes. "
                         "Find correct debris bricket, attack all of it's boxes, get the key and access to smelter "
-                        "will be granted")
+                        "will be granted"
+                        '\\n\\n' + DEBRIS_MISSILES)
 
 BATTLESHIP_HACKABLE = ('In order to get access to this battleship you should hack the doors by hackable panel, placed on '
                        'this battleship. Hack the panel and get the key. You can dock to the base after successful hack.'

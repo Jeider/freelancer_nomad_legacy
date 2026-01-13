@@ -77,6 +77,12 @@ RU_SUPER_FEATURES_PER_FACTION = {
     Equipment.FACTION_CO: 'Легендарный бонус фракции: 25% вероятность нанесения 100% критических повреждений',
 }
 
+RU_EXPLOSION_RESISTANCE = ('Все ракеты, мины и торпеды особенно максимально эффективны при майнинге астероидов и мусора, а так же наносят дополнительные повреждения '
+                           'по уявзимым точкам крупных кораблей и уязвимых компонентов станций. При этом они менее эффективны против компонентов вражеских истребителей и прочих мелких кораблей.')
+
+EN_EXPLOSION_RESISTANCE = ('All missiles, mines and torpedos are efficient in process of mining of asteroids and debris. They also affect extra damage '
+                           'on vulnerable points of capital ships and vulnerable components of stations. But they also less efficient against components of fighters and other small ships.')
+
 EN_FEATURES_PER_FACTION = {
     Equipment.FACTION_RH: 'Faction bonus: all Rheinland launchers have extra 30% of ammo',
     Equipment.FACTION_LI: 'Faction bonus: all Liberty launchers have 20% explosion range of munition',
@@ -355,6 +361,7 @@ class Launcher(Equipment, MainEquipPrice, LauncherGood):
         content = []
 
         content.append(self.RU_BASE_INFO.get_ru())
+        content.append(RU_EXPLOSION_RESISTANCE)
 
         faction_bonus_text = RU_FEATURES_PER_FACTION.get(self.faction)
         if faction_bonus_text:
@@ -413,6 +420,7 @@ class Launcher(Equipment, MainEquipPrice, LauncherGood):
         content = []
 
         content.append(self.RU_BASE_INFO.get_en())
+        content.append(EN_EXPLOSION_RESISTANCE)
 
         faction_bonus_text = EN_FEATURES_PER_FACTION.get(self.faction)
         if faction_bonus_text:
@@ -1043,7 +1051,7 @@ class Torpedo(Missile):
     MOTOR_ACCEL = 3.555600
 
     EXPLOSION_RADIUS = 25
-    MAX_HULL_DAMAGE = 12000
+    MAX_HULL_DAMAGE = 25000
     MAX_ENERGY_DAMAGE = 0
 
     MUNITION_LIFETIME = 56.250000

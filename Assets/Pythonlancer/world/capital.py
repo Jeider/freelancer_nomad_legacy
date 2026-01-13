@@ -8,6 +8,10 @@ import world.ship_info_en as EN
 
 DEBRIS = 'debris'
 DISAPPEAR = 'disappear'
+RESIST_ENG = 2
+RESIST_DEFAULT = 3.0
+RESIST_FRONT = 2.5
+RESIST_REACTOR = 4
 
 
 class Capital:
@@ -143,7 +147,7 @@ hitpoints = {damage}
         return SINGLE_DIVIDER.join(self.fuses_definitions)
 
     def get_damage(self, part_kind, obj, hardpoint=None, part_fate=DEBRIS,
-                   hit_pts_multipler=1, silent=False, is_large=False):
+                   hit_pts_multipler=1, silent=False, is_large=False, explosion_resistance=RESIST_DEFAULT):
         if part_kind in self.used_parts:
             raise Exception(f'Part of ship {self.ARCHETYPE} is already used')
         self.used_parts.append(part_kind)
@@ -174,6 +178,7 @@ hitpoints = {damage}
         params.extend([
             f'hit_pts = {self.get_part_hit_pts(hit_pts_multipler)+init_damage}',
             'root_health_proxy = true',
+            f'explosion_resistance = {explosion_resistance}',
         ])
 
         return SINGLE_DIVIDER.join(params)
@@ -199,42 +204,51 @@ hitpoints = {damage}
         return self.get_damage('control_tower', obj, hardpoint, part_fate=DISAPPEAR)
 
     def nose(self, obj, hardpoint=None, hit_pts_multipler=2):
-        return self.get_damage('nose', obj, hardpoint, hit_pts_multipler=hit_pts_multipler)
+        return self.get_damage('nose', obj, hardpoint, hit_pts_multipler=hit_pts_multipler,
+                               explosion_resistance=RESIST_FRONT)
 
     def front(self, obj, hardpoint=None, hit_pts_multipler=2):
-        return self.get_damage('front', obj, hardpoint, hit_pts_multipler=hit_pts_multipler)
+        return self.get_damage('front', obj, hardpoint, hit_pts_multipler=hit_pts_multipler,
+                               explosion_resistance=RESIST_FRONT)
 
     def tail(self, obj, hardpoint=None):
         return self.get_damage('tail', obj, hardpoint)
 
     def platform(self, obj, hardpoint=None):
-        return self.get_damage('platform', obj, hardpoint, part_fate=DISAPPEAR, hit_pts_multipler=2)
+        return self.get_damage('platform', obj, hardpoint, part_fate=DISAPPEAR, hit_pts_multipler=2,
+                               explosion_resistance=RESIST_FRONT)
 
     def eng1(self, obj, hardpoint=None):
-        return self.get_damage('eng1', obj, hardpoint, part_fate=DISAPPEAR)
+        return self.get_damage('eng1', obj, hardpoint, part_fate=DISAPPEAR,
+                               explosion_resistance=RESIST_ENG)
 
     def eng2(self, obj, hardpoint=None):
-        return self.get_damage('eng2', obj, hardpoint, part_fate=DISAPPEAR)
+        return self.get_damage('eng2', obj, hardpoint, part_fate=DISAPPEAR,
+                               explosion_resistance=RESIST_ENG)
 
     def eng3(self, obj, hardpoint=None):
-        return self.get_damage('eng3', obj, hardpoint, part_fate=DISAPPEAR)
+        return self.get_damage('eng3', obj, hardpoint, part_fate=DISAPPEAR,
+                               explosion_resistance=RESIST_ENG)
 
     def eng4(self, obj, hardpoint=None):
-        return self.get_damage('eng4', obj, hardpoint, part_fate=DISAPPEAR)
+        return self.get_damage('eng4', obj, hardpoint, part_fate=DISAPPEAR,
+                               explosion_resistance=RESIST_ENG)
 
     def large_eng1(self, obj, hardpoint=None):
         return self.get_damage('large_eng1', obj, hardpoint, part_fate=DISAPPEAR, is_large=True,
-                               hit_pts_multipler=2)
+                               hit_pts_multipler=2, explosion_resistance=RESIST_ENG)
 
     def large_eng2(self, obj, hardpoint=None):
         return self.get_damage('large_eng2', obj, hardpoint, part_fate=DISAPPEAR, is_large=True,
-                               hit_pts_multipler=2)
+                               hit_pts_multipler=2, explosion_resistance=RESIST_ENG)
 
     def reactor1(self, obj, hardpoint=None):
-        return self.get_damage('reactor1', obj, hardpoint, part_fate=DISAPPEAR)
+        return self.get_damage('reactor1', obj, hardpoint, part_fate=DISAPPEAR,
+                               explosion_resistance=RESIST_REACTOR)
 
     def reactor2(self, obj, hardpoint=None):
-        return self.get_damage('reactor2', obj, hardpoint, part_fate=DISAPPEAR)
+        return self.get_damage('reactor2', obj, hardpoint, part_fate=DISAPPEAR,
+                               explosion_resistance=RESIST_REACTOR)
 
     def wing1(self, obj, hardpoint=None, silent=False, disappear=False):
         return self.get_damage('wing1', obj, hardpoint, silent=silent,
@@ -246,11 +260,13 @@ hitpoints = {damage}
 
     def shield1(self, obj, hardpoint=None, disappear=False):
         return self.get_damage('shield1', obj, hardpoint,
-                               part_fate=DISAPPEAR if disappear else DEBRIS)
+                               part_fate=DISAPPEAR if disappear else DEBRIS,
+                               explosion_resistance=RESIST_REACTOR)
 
     def shield2(self, obj, hardpoint=None, disappear=False):
         return self.get_damage('shield2', obj, hardpoint,
-                               part_fate=DISAPPEAR if disappear else DEBRIS)
+                               part_fate=DISAPPEAR if disappear else DEBRIS,
+                               explosion_resistance=RESIST_REACTOR)
 
     def spike1(self, obj, hardpoint=None):
         return self.get_damage('spike1', obj, hardpoint, part_fate=DISAPPEAR)
