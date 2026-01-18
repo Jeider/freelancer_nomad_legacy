@@ -128,7 +128,7 @@ class Misson12(ingame_mission.IngameMission):
         ],
         [
             'OBJECTIVE:',
-            'Don not let Order destroy Station Enterprise and ASF Headquarters.',
+            'Do not let Order destroy Station Enterprise and ASF Headquarters.',
             '',
             'DIFFICULTY:',
             'Save the mankind.',

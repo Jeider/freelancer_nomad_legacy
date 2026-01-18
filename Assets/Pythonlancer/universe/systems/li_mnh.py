@@ -505,7 +505,7 @@ class ManhProductionConn2(ManhMember, main_objects.TradeConnection):
     TRADELANE_LETTER = 'C'
     HUNTER_DEFENCE_REL = BOTTOM
     ATTACKED_BY = [
-        ManhJunkers
+        # ManhJunkers
     ]
 
 

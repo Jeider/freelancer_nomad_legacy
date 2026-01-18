@@ -260,7 +260,7 @@ class Misson10(ingame_mission.IngameMission):
         ],
         [
             'OBJECTIVE:',
-            'Rescue prosioners from prison on a Xenos\' base',
+            'Rescue prisoners from prison on a Xenos\' base',
             '',
             'DIFFICULTY:',
             'High.',

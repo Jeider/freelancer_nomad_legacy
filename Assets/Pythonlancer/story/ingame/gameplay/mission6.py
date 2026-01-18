@@ -210,6 +210,8 @@ class Misson06(ingame_mission.IngameMission):
                     'Вы приближаетесь к ядру. Данные о количестве рейнландских ученых в ядре неизвестно. '
                     'Вы в любом случае не должны дать никому покинуть ядро, иначе миссия будет проиграна.',
 
+                    'Если вы не справляетесь с миссией, то с помощью лончера может переключить сложность на лёгкую. Тогда ваши цели будут менее стремительно покидать Сферу, когда вас обнаружат.',
+
                     'Доклад аналитиков про ядро Сферы:',
 
                     'В районе ядра расположены небольшие базы, на которых может укрыться Роттерман, а так же на них могут находиться ассистенты профессора, которые '
@@ -226,6 +228,8 @@ class Misson06(ingame_mission.IngameMission):
                 ],[
                     'You are near the core. The is no known data about amount of rheinland scients inside sphere. '
                     'You should no one left the core alive. In other case mission will be failed.',
+
+                    "If you can't handle this mission: you always can switch difficulty to easy by launcher. Then your targets will be less likely to flee the Sphere rapidly when you are discovered.",
 
                     "Analytics's report about the core:",
 

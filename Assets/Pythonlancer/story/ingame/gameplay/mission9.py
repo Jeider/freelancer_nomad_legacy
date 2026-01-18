@@ -178,6 +178,9 @@ class Misson09(ingame_mission.IngameMission):
 
                     'Рекомендуется повредить пилоны как можно большего числа эсминцев. Эсминцев будет много. Чем '
                     'меньше эсминцев сможет запускать торпеды, тем меньшее число торпед вам потребуется перехватить.',
+
+                    'Если вы не справляетесь с миссией, то можете переключить сложность на лёгкую через лончер. В этом случае вам нужно будет уничтожить меньше торпед, чтобы '
+                    'защитить Хризантему от уничтожения.'
                 ],[
                     'Destroyers is moving to firing position. You must hurt them before they will launch first torpedoes',
 
@@ -190,6 +193,9 @@ class Misson09(ingame_mission.IngameMission):
                     "It's very recommended to destroy torpedo mount points of most possible amount of destroyers. "
                     "A lot destroyers will arrive to this mission, so you should prevent all possible torpedo launches. "
                     "Less torpedo launches - less torpedoes you must intercept in space."
+                    
+                    "If you can't handle this mission: you always can switch difficulty to easy by your launcher. "
+                    "In this case you need destroy less amount of torpedoes to keep Chrysantemum operational."
                 ]),
             ),
         ]
