@@ -412,7 +412,7 @@ LODranges = {lod_ranges}'''
         return self.MUZZLE_VELOCITY
 
     def is_gas_efficient(self):
-        return self.weapon_fx in EFFICIENT_GAS_MINING_FX
+        return self.weapon_fx.get_appearance() in EFFICIENT_GAS_MINING_FX
 
     def get_flash_particle_name(self):
         return self.weapon_fx.get_flash_particle_name()

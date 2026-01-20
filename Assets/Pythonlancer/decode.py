@@ -215,7 +215,8 @@ def mass_upgrade_fx():
         i = new_i
 
 
-def mass_upgrade():
+
+def mass_upgrade3():
     main_file_upgrades = [
         [
             f'rh_',
@@ -230,6 +231,53 @@ def mass_upgrade():
         main_file_upgrades,
     )
 
+def mass_upgrade44():
+    pass
+    # elite_256
+    # elite_256B
+    # elite_256LB
+    # elite_256R
+    # elite_256_2side
+    # L_glass
+    # L_wing_128
+    # metal03
+
+def mass_upgrade():
+    subfolder_filename = 'lod0-212.vms.xml'
+
+    old_materials = [
+        'elite_256',
+        'elite_256B',
+        'elite_256LB',
+        'elite_256R',
+        'elite_256_2side',
+        'L_glass',
+        'L_wing_128',
+        'metal03',
+
+    ]
+    subfile_changed_strings = []
+    for old_mat in old_materials:
+        old_mat_hex = crc32_hex_from_str(old_mat.lower())
+        new_mat_hex = crc32_hex_from_str(f'nmd_{old_mat.lower()}')
+        subfile_changed_strings.append(
+            [f'0x{old_mat_hex[2:].upper()}', new_mat_hex],
+        )
+
+    upgrades = [
+        ['data.ships.liberty.li_elite.li_elite', 'data.ships.liberty.li_elite.li_elite_fx1'],
+        ['Li_elite_animated_wings', 'Li_elite_fx1_animated_wings'],
+    ]
+
+    main_file_upgrades = upgrades
+    subfile_changed_strings = subfile_changed_strings + upgrades
+
+    utf_xml.XML_UTF.mass_encode_updated_xml(
+        subfolder_filename,
+        subfile_changed_strings,
+        main_file_upgrades,
+        [],
+    )
 
 def dbg():
     point = [-132, 0, 65]
