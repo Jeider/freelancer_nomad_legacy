@@ -251,22 +251,61 @@ def mass_upgrade():
         'elite_256LB',
         'elite_256R',
         'elite_256_2side',
+        'elite_256LB_2side',
+        'elite_lod',
         'L_glass',
         'L_wing_128',
         'metal03',
+        'metal03D',
+        'Li_dmg',
+        'L_fighter',
+        'L_fighter_LG_2side',
+        'freighter1',
+        'freighter1B',
+        'freighter1D',
+        'freighter1W',
+        'freighter1_2side',
+        'freighter_LOD',
+        'liberty1_256',
+        'liberty1_256B',
+        'liberty1_256R',
+        'liberty1_256_2side',
+        'Li_Equip_gen',
 
     ]
     subfile_changed_strings = []
     for old_mat in old_materials:
         old_mat_hex = crc32_hex_from_str(old_mat.lower())
-        new_mat_hex = crc32_hex_from_str(f'nmd_{old_mat.lower()}')
+        new_mat_hex = crc32_hex_from_str(f'pir_{old_mat.lower()}')
         subfile_changed_strings.append(
             [f'0x{old_mat_hex[2:].upper()}', new_mat_hex],
         )
+        subfile_changed_strings.append(
+            [f'0x0{old_mat_hex[2:].upper()}', new_mat_hex],
+        )
+
+    # upgrades = [
+    #     ['filename="li_elite', 'filename="li_nmd_elite'],
+    #     ['data.ships.liberty.li_elite.li_elite', 'data.ships.liberty.li_elite.li_elite_fx1'],
+    #     ['Li_elite_animated_wings', 'Li_elite_fx1_animated_wings'],
+    #
+    #     ['filename="li_fighter', 'filename="li_nmd_fighter'],
+    #     ['data.ships.liberty.li_fighter.li_fighter', 'data.ships.liberty.li_fighter.li_fighter_fx1'],
+    #     ['fl.li_fighter_wings', 'fl.li_nmd_fighter_wings'],
+    #     ['lif_none', 'lif_none_nmd'],
+    #     ['lod1021021183448', 'nmd_lod1021021183448'],
+    # ]
 
     upgrades = [
-        ['data.ships.liberty.li_elite.li_elite', 'data.ships.liberty.li_elite.li_elite_fx1'],
-        ['Li_elite_animated_wings', 'Li_elite_fx1_animated_wings'],
+        ['filename="li_elite', 'filename="li_pir_elite'],
+        ['data.ships.liberty.li_elite.li_elite', 'data.ships.liberty.li_elite.li_elite_fx2'],
+        ['Li_elite_animated_wings', 'Li_elite_fx2_animated_wings'],
+
+        ['filename="li_fighter', 'filename="li_pir_fighter'],
+        ['data.ships.liberty.li_fighter.li_fighter', 'data.ships.liberty.li_fighter.li_fighter_fx2'],
+        ['fl.li_fighter_wings', 'fl.li_pir_fighter_wings'],
+        ['lif_none', 'lif_none_pir'],
+        ['lod1021021183448', 'pir_lod1021021183448'],
     ]
 
     main_file_upgrades = upgrades
@@ -276,7 +315,7 @@ def mass_upgrade():
         subfolder_filename,
         subfile_changed_strings,
         main_file_upgrades,
-        [],
+        [['li_elite', 'li_pir_elite'], ['li_fighter', 'li_pir_fighter']],
     )
 
 def dbg():
