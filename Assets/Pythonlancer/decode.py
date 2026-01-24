@@ -266,17 +266,39 @@ def mass_upgrade():
         'freighter1W',
         'freighter1_2side',
         'freighter_LOD',
-        'liberty1_256',
-        'liberty1_256B',
+        # 'liberty1_256',
+        # 'liberty1_256B',
+        'liberty1_256LB',
         'liberty1_256R',
         'liberty1_256_2side',
         'Li_Equip_gen',
 
+        'drd_interior3',
+        'drd_interior3D',
+        'drd_interior4',
+        'hangardoor2_128',
+        'liberty1_256',
+        'liberty1_256B',
+        'liberty1_256D',
+        'liberty1_256R',
+        'liberty2_256',
+        'liberty2_256D',
+        'liberty3_256',
+        'liberty3_256D',
+        'liberty_baydoors',
+        'lib_weap1',
+        'li_cruiser_LOD',
+        'li_dreadnought_LOD',
+        'L_R_wnds_256',
+
     ]
+    skin = 'nmd'
+
+
     subfile_changed_strings = []
     for old_mat in old_materials:
         old_mat_hex = crc32_hex_from_str(old_mat.lower())
-        new_mat_hex = crc32_hex_from_str(f'pir_{old_mat.lower()}')
+        new_mat_hex = crc32_hex_from_str(f'{skin}_{old_mat.lower()}')
         subfile_changed_strings.append(
             [f'0x{old_mat_hex[2:].upper()}', new_mat_hex],
         )
@@ -284,29 +306,58 @@ def mass_upgrade():
             [f'0x0{old_mat_hex[2:].upper()}', new_mat_hex],
         )
 
-    # upgrades = [
-    #     ['filename="li_elite', 'filename="li_nmd_elite'],
-    #     ['data.ships.liberty.li_elite.li_elite', 'data.ships.liberty.li_elite.li_elite_fx1'],
-    #     ['Li_elite_animated_wings', 'Li_elite_fx1_animated_wings'],
-    #
-    #     ['filename="li_fighter', 'filename="li_nmd_fighter'],
-    #     ['data.ships.liberty.li_fighter.li_fighter', 'data.ships.liberty.li_fighter.li_fighter_fx1'],
-    #     ['fl.li_fighter_wings', 'fl.li_nmd_fighter_wings'],
-    #     ['lif_none', 'lif_none_nmd'],
-    #     ['lod1021021183448', 'nmd_lod1021021183448'],
-    # ]
-
     upgrades = [
-        ['filename="li_elite', 'filename="li_pir_elite'],
-        ['data.ships.liberty.li_elite.li_elite', 'data.ships.liberty.li_elite.li_elite_fx2'],
-        ['Li_elite_animated_wings', 'Li_elite_fx2_animated_wings'],
+        # ['filename="li_elite', 'filename="li_nmd_elite'],
+        # ['data.ships.liberty.li_elite.li_elite', 'data.ships.liberty.li_elite.li_elite_fx1'],
+        # ['Li_elite_animated_wings', 'Li_elite_fx1_animated_wings'],
 
-        ['filename="li_fighter', 'filename="li_pir_fighter'],
-        ['data.ships.liberty.li_fighter.li_fighter', 'data.ships.liberty.li_fighter.li_fighter_fx2'],
-        ['fl.li_fighter_wings', 'fl.li_pir_fighter_wings'],
-        ['lif_none', 'lif_none_pir'],
-        ['lod1021021183448', 'pir_lod1021021183448'],
+        # ['filename="li_fighter', 'filename="li_nmd_fighter'],
+        # ['data.ships.liberty.li_fighter.li_fighter', 'data.ships.liberty.li_fighter.li_fighter_fx1'],
+        # ['fl.li_fighter_wings', 'fl.li_nmd_fighter_wings'],
+        # ['lif_none', 'lif_none_nmd'],
+        # ['lod1021021183448', 'nmd_lod1021021183448'],
+        #
+        # ['filename="li_freighter', 'filename="li_nmd_freighter'],
+        # ['data.ships.liberty.li_freighter.li_freighter', 'data.ships.liberty.li_nmd_freighter.li_nmd_freighter'],
+        # ['li_fr_none', 'li_fr_nmd_none'],
+        # ['lod1021203111952', 'nmd_lod1021203111952'],
+        #
+        # ['filename="li_freighter', 'filename="li_pir_freighter'],
+        # ['data.ships.liberty.li_freighter.li_freighter', 'data.ships.liberty.li_pir_freighter.li_pir_freighter'],
+        # ['li_fr_none', 'li_fr_pir_none'],
+        # ['lod1021203111952', 'pir_lod1021203111952'],
+
+        # ['filename="bh_vheavy_fighter', 'filename="bh_nmd_vheavy_fighter'],
+        # ['data.ships.bounty_hunter.bh_vheavy_fighter.bh_vheavy_fighter', 'data.ships.bounty_hunter.bh_vheavy_fighter_nmd.bh_vheavy_fighter'],
+        # ['bh_fighter_adv', 'bh_nmd_fighter_adv'],
+        # ['bhfu3_none', 'bhfu3_nmd_none'],
+        # ['bh_hammerhead_fix', 'bh_nmd_hammerhead_fix'],
+        # ['lod1030109200506', 'nmd_lod1030109200506'],
+        #
+        # ['filename="bh_', f'filename="bh_{skin}_'],
+        # ['data.ships.bounty_hunter', f'data.ships.bounty_hunter_{skin}'],
+        # ['bh_fighter_adv', f'bh_{skin}_fighter_adv'],
+        # ['bhfu3_none', f'bhfu3_{skin}_none'],
+        # ['bh_hammerhead_fix', f'bh_{skin}_hammerhead_fix'],
+        # ['lod1030109200506', f'{skin}_lod1030109200506'],
+
+        ['filename="li_', f'filename="li_{skin}_'],
+        ['data.ships.liberty.li_dreadnought', f'data.ships.liberty.li_dreadnought_{skin}'],
+        ['lod1021108124158', f'{skin}_lod1021108124158'],
+
     ]
+
+    # upgrades = [
+    #     ['filename="li_elite', 'filename="li_pir_elite'],
+    #     ['data.ships.liberty.li_elite.li_elite', 'data.ships.liberty.li_elite.li_elite_fx2'],
+    #     ['Li_elite_animated_wings', 'Li_elite_fx2_animated_wings'],
+    #
+    #     ['filename="li_fighter', 'filename="li_pir_fighter'],
+    #     ['data.ships.liberty.li_fighter.li_fighter', 'data.ships.liberty.li_fighter.li_fighter_fx2'],
+    #     ['fl.li_fighter_wings', 'fl.li_pir_fighter_wings'],
+    #     ['lif_none', 'lif_none_pir'],
+    #     ['lod1021021183448', 'pir_lod1021021183448'],
+    # ]
 
     main_file_upgrades = upgrades
     subfile_changed_strings = subfile_changed_strings + upgrades
@@ -315,7 +366,8 @@ def mass_upgrade():
         subfolder_filename,
         subfile_changed_strings,
         main_file_upgrades,
-        [['li_elite', 'li_pir_elite'], ['li_fighter', 'li_pir_fighter']],
+        # [['li_elite', 'li_pir_elite'], ['li_fighter', 'li_pir_fighter'], ['li_freighter', 'li_pir_freighter']],
+        [['li_', f'li_{skin}_']],
     )
 
 def dbg():
