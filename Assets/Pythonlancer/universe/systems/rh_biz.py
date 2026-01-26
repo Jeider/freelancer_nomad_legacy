@@ -257,7 +257,7 @@ class BizmarkMilitary(BizmarkMember, main_objects.Station):
     REL = BOTTOM
     SPACE_OBJECT_TEMPLATE = rheinland_military.RheinlandMilitary
 
-    RU_NAME = MS('Станция Кёльн', 'Station Kologne')
+    RU_NAME = MS('Станция Кёльн', 'Station Köln')
 
     LOCKED_DOCK = True
     KEY_COLLECT_FX = nn.FX_GOT_KEY_STATION
@@ -487,14 +487,14 @@ class BizmarkPlanet2(BizmarkMember, main_objects.Planet):
     INDEX = 2
     ARCHETYPE = 'planet_desored_2000'
     SPHERE_RADIUS = 2000
-    RU_NAME = MS('Планета Саксония', "Planet Saxony")
+    RU_NAME = MS('Планета Саксония', "Planet Sachsen")
 
 
 class BizmarkPlanet3(BizmarkMember, main_objects.Planet):
     INDEX = 3
     ARCHETYPE = 'planet_ice_purple_5000'
     SPHERE_RADIUS = 5000
-    RU_NAME = MS('Планета Померания', 'Planet Pomerania')
+    RU_NAME = MS('Планета Померания', 'Planet Pommern')
 
 
 class BizmarkPlanet4(BizmarkMember, main_objects.Planet):
