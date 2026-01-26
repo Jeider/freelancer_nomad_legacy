@@ -1090,6 +1090,9 @@ class Sabre(RheinlandShip, ShipFighter, Ship2, Ship):
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
     MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
 
+    # MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06', 'HpTurret01']
+    # MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+
 
 class Valkyrie(RheinlandShip, ShipElite, Ship3, Ship):
     EXTRA_CLASSES = [CLASS_ELITE, CLASS_RHEINLAND_ELITE]
@@ -1613,6 +1616,7 @@ class Dromader(GenericShip, ShipFreighter, Ship):
 
     MAIN_WEAPONS = ['HpWeapon02', 'HpWeapon03', 'HpTurret02', 'HpTurret03', 'HpTurret04', 'HpTurret05']
     MAX_WEAPONS = ['HpWeapon02', 'HpWeapon03']
+
 
 
 class CSV(GenericShip, ShipFreighter, Ship):

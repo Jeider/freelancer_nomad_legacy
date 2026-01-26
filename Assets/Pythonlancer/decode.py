@@ -272,6 +272,7 @@ def mass_upgrade():
         'liberty1_256R',
         'liberty1_256_2side',
         'Li_Equip_gen',
+        'elite_order',
 
         'drd_interior3',
         'drd_interior3D',
@@ -289,9 +290,59 @@ def mass_upgrade():
         'lib_weap1',
         'li_cruiser_LOD',
         'li_dreadnought_LOD',
-        'L_R_wnds_256',
+
+        'O_glass',
+
+        'drd_interior3.TGA',
+        'drd_interior4.TGA',
+        'elite_2562sideOR',
+        'elite_256OR',
+        'hangardoor2_128.TGA',
+        'liberty1_256.TGA',
+        'liberty2_256.TGA',
+        'liberty3_256.TGA',
+        'liberty_baydoors.TGA',
+        'lib_weap1OR',
+        'Li_dmgOR',
+        'osiris_lod',
+        'drd_interior4O',
+        'drd_interior3O',
+        'liberty1_256O',
+        'liberty2_256O',
+        'liberty3_256O',
 
     ]
+    # old_materials = [
+    #     'K_Debris',
+    #     'K_dmg',
+    #     'K_dmg2side',
+    #     'K_glass',
+    #     'K_metal03',
+    #     'K_metal03_int',
+    #     'K_metal03_intD',
+    #     'K_panel01_256',
+    #     'K_panel01_256D',
+    #     'K_panel02',
+    #     'K_panel02D',
+    #     'K_panel02R',
+    #     'k_panel03',
+    #
+    #     'K_fighter01',
+    #     'K_fighter01_2side',
+    # ]
+
+    old_materials = [
+        'bw_engine',
+        'bw_glass',
+        'bw_panel2side',
+        'bw_panel2sideD',
+        'bw_panel_128',
+        'bw_panel_128D',
+        'bw_panel_256',
+        'bw_panel_256D',
+    ]
+
+
     skin = 'nmd'
 
 
@@ -340,10 +391,37 @@ def mass_upgrade():
         # ['bhfu3_none', f'bhfu3_{skin}_none'],
         # ['bh_hammerhead_fix', f'bh_{skin}_hammerhead_fix'],
         # ['lod1030109200506', f'{skin}_lod1030109200506'],
+        #
+        # ['filename="li_', f'filename="li_{skin}_'],
+        # ['data.ships.liberty.li_elite', f'data.ships.liberty.li_elite_{skin}'],
+        # ['lod1021107133350', f'{skin}_lod1021107133350'],
+        # ['Li_elite_juni', f'Li_{skin}_elite_juni'],
+        # ['Li_elite_animated_wings', f'Li_elite2_{skin}_animated_wings'],
 
-        ['filename="li_', f'filename="li_{skin}_'],
-        ['data.ships.liberty.li_dreadnought', f'data.ships.liberty.li_dreadnought_{skin}'],
-        ['lod1021108124158', f'{skin}_lod1021108124158'],
+        #
+        # ['filename="or_', f'filename="or_{skin}_'],
+        # ['data.ships.order.or_osiris', f'data.ships.order.or_osiris_{skin}'],
+        # ['lod1021108124813', f'{skin}_lod1021108124813'],
+        #
+        # ['filename="or_', f'filename="or_{skin}_'],
+        # ['order.or_elite', f'order.or_elite_{skin}'],
+        # ['or_elite_telescope', f'or_elite_telescope_{skin}'],
+        # ['lod1021102155951', f'{skin}_lod1021102155951'],
+
+        ['filename="bw_', f'filename="bw_{skin}_'],
+        ['data.ships.border_world', f'data.ships.border_world_{skin}'],
+        ['bw_fighter_none', f'bw_fighter_none_{skin}'],
+        ['bw_fighter_boards', f'bw_fighter_boards_{skin}'],
+        ['bw_orig_elite_none', f'bw_orig_elite_none_{skin}'],
+        ['bw_orig_elite_boards', f'bw_orig_elite_boards_{skin}'],
+        ['bw_elite_boards', f'bw_elite_boards_{skin}'],
+        ['bw_orig_elite2_non', f'bw_orig_elite2_non_{skin}'],
+        ['lod1020912020823', f'{skin}_lod1020912020823'],
+        ['lod1020911031436', f'{skin}_lod1020911031436'],
+        ['lod1020911030723', f'{skin}_lod1020911030723'],
+        ['lod1030109103849', f'{skin}_lod1030109103849'],
+
+
 
     ]
 
@@ -367,7 +445,9 @@ def mass_upgrade():
         subfile_changed_strings,
         main_file_upgrades,
         # [['li_elite', 'li_pir_elite'], ['li_fighter', 'li_pir_fighter'], ['li_freighter', 'li_pir_freighter']],
-        [['li_', f'li_{skin}_']],
+        # [['li_', f'li_{skin}_']],
+        # [['or_', f'or_{skin}_']],
+        [['bw_', f'bw_{skin}_']],
     )
 
 def dbg():
