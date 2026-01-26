@@ -127,7 +127,7 @@ class KgbPlanet3(KgbMember, main_objects.Planet):
     ARCHETYPE = 'planet_earthsnwcld_4000'
     SPHERE_RADIUS = 4000
     PLANET_CIRCLE = False
-    RU_NAME = MS('Планета Эрзгеб', 'Planet Erzgeb')
+    RU_NAME = MS('Планета Эрзгеб', 'Planet Erzgebirge')
 
 
 class KgbPlanet4(KgbMember, main_objects.Planet):
