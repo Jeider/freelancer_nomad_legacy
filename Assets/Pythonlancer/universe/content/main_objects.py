@@ -858,7 +858,7 @@ parent = {parent_planet}'''
     DEATH_ZONE_APPEND = 150
     DRAG_ZONE_APPEND = 300
     PLANET_CIRCLE_Y_DRIFT = 10
-    SPIN = 0.02
+    SPIN = 0.01
     DRAG_MODIFIER = 3
 
     RELATED_DOCK_RING = None

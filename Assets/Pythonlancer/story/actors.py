@@ -318,6 +318,13 @@ class Informer(King):
     COMM_APPEARANCE = 'null, robot_body_E'
 
 
+class LogosRobot(King):
+    RU_NAME = MS('Робот Логоса', 'Logos Robot')
+    TYPE = ACTOR_MALE
+    NAME = 'robot'
+    COMM_APPEARANCE = 'null, robot_body_E'
+
+
 class Neuralnet(Actor):
     RU_NAME = MS('Нейросеть', 'NeuralNet')
     TYPE = ACTOR_FEMALE
