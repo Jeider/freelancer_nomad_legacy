@@ -22,6 +22,7 @@ class Scene:
     POINT_ROTATE_OVERRIDES = {}
     DEFAULT_POINT_NAME = 'default_point'
     OFFSCREEN_POINT_NAME = 'offscreen_point'
+    DUMP_FILE = None
 
     def __init__(self, tpl_manager, props, extra_name='', russian=True):
         self.tpl_manager = tpl_manager
@@ -64,6 +65,17 @@ class Scene:
 
         raise Exception(f'Scene {self}. Dialog with index {index} not found')
 
+    def lookup_multiple_sounds(self, start, end):
+        sounds = []
+        for sound in self.props.get_sounds():
+            if sound.line.index >= start and sound.line.index <= end:
+                sounds.append(sound)
+
+        if len(sounds) == 0:
+            raise Exception(f'Scene {self}. No sound files found with from index {start} to {end}')
+
+        return sounds
+
     def lookup_sound_meta(self, sound):
         return self.meta_manager.get_line_meta(sound)
 
@@ -86,6 +98,11 @@ class Scene:
 
     def get_scene_base_name(self):
         return self.props.get_scene_name()
+
+    def get_dump_name(self):
+        if self.DUMP_FILE:
+            return self.DUMP_FILE
+        return self.get_scene_base_name()
 
     def get_scene_name(self):
         extended_name = (
@@ -116,7 +133,7 @@ class Scene:
         )
 
     def load_points_dump(self):
-        points_file = DUMPS_PATH / f'{self.get_scene_base_name()}.json'
+        points_file = DUMPS_PATH / f'{self.get_dump_name()}.json'
         if not points_file.exists():
             raise Exception(f'Scene {self} have no dump file')
 

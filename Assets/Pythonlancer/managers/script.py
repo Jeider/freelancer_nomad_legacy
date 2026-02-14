@@ -1,6 +1,7 @@
 from files.writer import FileWriter
 
-from story.scripts import *
+from story.scripts.main import *
+from story.scripts.epilogue import *
 from story.script import StoryMission, ScriptIndex
 
 from tools.data_folder import DataFolder

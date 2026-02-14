@@ -1,5 +1,7 @@
 import re
 from story import math
+from story.cutscenes import anim
+from story.actors import ACTOR_TRENT, ACTOR_JUNI, ACTOR_MALE, ACTOR_FEMALE
 
 
 ENTITY_TEMPLATE_FOLDER = 'cutscenes/entity/'
@@ -69,6 +71,13 @@ BACKGROUND_MUSIC = 'backgroundmusic'
 BACKGROUND_AMBIENT = 'backgroundambient'
 
 FX_FADE_NEGATIVE = 'rtc_fadenegative_variable'
+
+ANIM_CLASS_PER_ACTOR_TYPE = {
+    ACTOR_MALE: anim.Male,
+    ACTOR_TRENT: anim.Trent,
+    ACTOR_FEMALE: anim.Female,
+    ACTOR_JUNI: anim.Juni,
+}
 
 
 class Point:
@@ -890,17 +899,41 @@ class Character(Compound):
     TEMPLATE = 'character'
 
     def __init__(self, actor, floor_height=0, extra_ik_markers=None,
-                 ik_start_point=None, *args, **kwargs):
+                 ik_start_point=None, camera=None, anim_sequence=None, *args, **kwargs):
         self.actor = actor
         name = f'Char_{self.actor.NAME}'
         super().__init__(name=name, *args, **kwargs)
         self.floor_height = floor_height
         self.animations = FEMALE_ANIMS if self.actor.is_female() else MALE_ANIMS
+        self.camera = camera
+        self.sequence_len = 0
+        self.sequence_step = 0
+        self.anim_sequence = anim_sequence
+        if self.anim_sequence is not None:
+            self.sequence_len = len(self.anim_sequence)
+
         self.head_ik_name = self.get_ik_marker('head')
         self.eye_ik_name = self.get_ik_marker('eye')
         self.ik_start_point = ik_start_point
         self.extra_ik_markers = extra_ik_markers if extra_ik_markers else []
         self.init_char_points()
+
+    def get_camera(self):
+        if not self.camera:
+            raise Exception(f'Character {self.name} have no assigned camera')
+        return self.camera
+
+    def inc_sequence_step(self):
+        self.sequence_step += 1
+        if self.sequence_step > self.sequence_len-1:
+            self.sequence_step = 0
+
+    def get_current_sequence(self):
+        if self.anim_sequence:
+            seq = self.anim_sequence[self.sequence_step]
+            self.inc_sequence_step()
+            return seq
+        return []
 
     def get_ik_marker(self, ik_name):
         return f'char_ik_{self.name}_{ik_name}_ik'
@@ -1026,25 +1059,77 @@ class Character(Compound):
                     duration=duration,
                     **kwargs)
 
-    def facial(self, group, index, append=True, extra_delay=0.3):
+    def facial(self, group, index, append=True, extra_delay=0.3, auto_lip=False):
         sound = self.root.lookup_single_sound(index)
         if self.actor != sound.line.actor:
             raise Exception(f'Sound {index} is belong to actor {sound.line.actor}. Cannot run by {self.actor}')
 
-        meta = self.root.lookup_sound_meta(sound)
-        if len(meta) == 0:
-            raise Exception(f'Empty meta for sound {index} !')
+        sound_duration = sound.get_duration(self.root.russian)
 
-        lip_group = f'motion_{index}'
-        self.root.clone_group(lip_group, original=group)
+        if auto_lip:
+            anim_class: type[anim.CharAnim] = ANIM_CLASS_PER_ACTOR_TYPE[self.actor.TYPE]
 
-        for lip in meta:
-            FacialEvent(root=self.root, group=lip_group,
-                        object_name=self.name, motion=lip.get_props(),
-                        time_delay=lip.get_delay())
+            facial_anim = anim_class.GENERIC_ANIM
+            facial_duration = anim_class.GENERIC_ANIM_SECONDS
+
+            anim_props = {
+                'animation': f"'{facial_anim}'",
+                'duration': facial_duration,
+                'time_scale': 1,
+                'trans_time': 0.25,
+                'weight': 1,
+                'heading': -1,
+            }
+
+            lip_group = f'motion_{index}'
+            self.root.clone_group(lip_group, original=group)
+
+            lip_delay = 0
+
+            left_duration = sound_duration
+
+            while left_duration > facial_duration:
+                anim_props['duration'] = f'{left_duration+1:.2f}'
+
+                merged_props = f"{{ {','.join([f'{x}={y}' for x, y in anim_props.items()])} }}"
+
+                FacialEvent(root=self.root, group=lip_group, object_name=self.name, motion=merged_props, time_delay=lip_delay)
+
+                left_duration = left_duration - facial_duration
+                lip_delay += facial_duration
+
+            if left_duration > 0:
+                anim_props['duration'] = f'{left_duration+1:.2f}'
+                anim_props['start_time'] = f'{abs(facial_duration - left_duration):.2f}'
+
+                merged_props = f"{{ {','.join([f'{x}={y}' for x, y in anim_props.items()])} }}"
+
+                FacialEvent(root=self.root, group=lip_group, object_name=self.name, motion=merged_props, time_delay=lip_delay)
+
+
+
+            # '{{animation="Sc_dx_s037a_0301_trent", duration=10, start_time=1.3, time_scale=1, trans_time=0.25,  weight=1, heading=-1}}'
+
+
+
+
+
+
+        else:
+            meta = self.root.lookup_sound_meta(sound)
+            if len(meta) == 0:
+                raise Exception(f'Empty meta for sound {index} !')
+
+            lip_group = f'motion_{index}'
+            self.root.clone_group(lip_group, original=group)
+
+            for lip in meta:
+                FacialEvent(root=self.root, group=lip_group,
+                            object_name=self.name, motion=lip.get_props(),
+                            time_delay=lip.get_delay())
 
         SoundEvent(root=self.root, group=group, sound_name=sound.get_nickname(),
-                   time_append=sound.get_duration(self.root.russian)+extra_delay if append else 0)
+                   time_append=sound_duration+extra_delay if append else 0)
 
 
 class Camera(Marker):
@@ -1348,3 +1433,40 @@ class MotionPath(Entity):
         return PathAnimationEvent(root=self.root, group=group, duration=duration,
                                   target_name=target_name, path=self,
                                   adjust_pos=adjust_pos, adjust_orient=adjust_orient, *args, **kwargs)
+
+
+class Autoplay:
+    def __init__(self, root, group, start_index=0, finish_index=9999):
+        self.root = root
+        self.group_name = group
+        self.start_index = start_index
+        self.finish_index = finish_index
+
+        self.make_actions()
+
+    def get_character(self, name):
+        return self.root.entities[f'Char_{name}']
+
+    def make_actions(self):
+        sounds = self.root.lookup_multiple_sounds(self.start_index, self.finish_index)
+
+        for sound in sounds:
+            character = self.get_character(sound.line.actor.NAME)
+
+            camera = character.get_camera()
+            camera.set(group=self.group_name)
+
+            motion_seq = character.get_current_sequence()
+            for motion in motion_seq:
+                character.motion(group=MAIN, duration=10, **motion)
+
+            character.facial(group=self.group_name, index=sound.line.index, auto_lip=True)
+
+
+
+
+        # cam_trent.set(group=MAIN)
+        #
+        # trent.motion(group=MAIN, duration=5, anim=Male.Sc_MLBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01)
+        #
+        # trent.facial(group=MAIN, index=50)

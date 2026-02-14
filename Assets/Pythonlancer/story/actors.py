@@ -323,6 +323,7 @@ class LogosRobot(King):
     TYPE = ACTOR_MALE
     NAME = 'robot'
     COMM_APPEARANCE = 'null, robot_body_E'
+    CUTSCENE_APPEARANCE = 'robot_body_c'
 
 
 class Neuralnet(Actor):
@@ -1162,6 +1163,33 @@ class MajorScrew(Actor):
     STEOS_ID = 211
     STEOS_PITCH = -0.6
     STEOS_SPEED = 1
+
+
+class Kenji(Actor):
+    RU_NAME = MS('Кендзи', 'Kenji')
+    TYPE = ACTOR_MALE
+    NAME = 'kenji'
+    COMM_APPEARANCE = 'ku_tenji_head, pi_pirate4_body'
+    CUTSCENE_APPEARANCE = 'tenji'
+    STEOS_ID = 10029
+
+
+class Otomo(Actor):
+    RU_NAME = MS('Отомо', 'Otomo')
+    TYPE = ACTOR_MALE
+    NAME = 'otomo'
+    COMM_APPEARANCE = 'ku_tenji_head, pi_pirate4_body'
+    CUTSCENE_APPEARANCE = 'tenji'
+    STEOS_ID = 10029
+
+
+class Shinja(Actor):
+    RU_NAME = MS('Шиндзя', 'Shinja')
+    TYPE = ACTOR_MALE
+    NAME = 'shinja'
+    COMM_APPEARANCE = 'ku_tenji_head, pi_pirate4_body'
+    CUTSCENE_APPEARANCE = 'tenji'
+    STEOS_ID = 10029
 
 
 class ActorManager:

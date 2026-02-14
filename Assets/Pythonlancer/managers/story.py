@@ -1,6 +1,6 @@
 from managers.script import ScriptManager
 
-from story.ingame.gameplay import *  # initialize mission files
+from story.ingame.main import *  # initialize mission files
 from story.ingame.ingame_mission import IngameMission
 from story.ingame.history import get_history_items_dict, HistoryItem
 

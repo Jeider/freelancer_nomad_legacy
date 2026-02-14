@@ -398,12 +398,13 @@ def generate_cutscene_voices():
     # import pdb;pdb.set_trace()
 
     indexes = range(1, 12+1)
-    indexes = [13]
+    indexes = [14]
+    russian = True
 
     for i in indexes:
         msn = script_manager.get_mission_by_index(i)
         for cutscene in msn.get_cutscenes():
-            audio_folder.AudioFolder.generate_cutscene_sounds(cutscene, russian=False)
+            audio_folder.AudioFolder.generate_cutscene_sounds(cutscene, russian=russian)
 
 
 def meta():
@@ -424,8 +425,8 @@ def scene():
 
     tpl_manager = JinjaTemplateManager()
     script_manager = ScriptManager()
-    msn = script_manager.get_mission_by_index(13)
-    cutscene = msn.get_cutscene_by_code('csv')
+    msn = script_manager.get_mission_by_index(14)
+    cutscene = msn.get_cutscene_by_code('intro')
     cutscene.get_thorn(tpl_manager, russian).sync_content()
 
     return
