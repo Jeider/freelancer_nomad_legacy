@@ -198,6 +198,17 @@ def test_voices():
 
 
 def test_steos():
+    import httpx
+    from settings import STEOS_API_KEY
+
+    url = f"https://public.api.voice.steos.io/api/v1/steos-voice-controller/available-voices/{STEOS_API_KEY}"
+    response = httpx.get(url)
+
+    for voice in response.json():
+        print(voice)
+
+
+    return
     # SteosVoice.prepare_temp_path()
 
 
@@ -398,7 +409,7 @@ def generate_cutscene_voices():
     # import pdb;pdb.set_trace()
 
     indexes = range(1, 12+1)
-    indexes = [14]
+    indexes = [15]
     russian = True
 
     for i in indexes:
@@ -425,7 +436,7 @@ def scene():
 
     tpl_manager = JinjaTemplateManager()
     script_manager = ScriptManager()
-    msn = script_manager.get_mission_by_index(14)
+    msn = script_manager.get_mission_by_index(15)
     cutscene = msn.get_cutscene_by_code('intro')
     cutscene.get_thorn(tpl_manager, russian).sync_content()
 

@@ -1170,8 +1170,8 @@ class Kenji(Actor):
     TYPE = ACTOR_MALE
     NAME = 'kenji'
     COMM_APPEARANCE = 'ku_tenji_head, pi_pirate4_body'
-    CUTSCENE_APPEARANCE = 'tenji'
-    STEOS_ID = 10029
+    CUTSCENE_APPEARANCE = 'kenji'
+    STEOS_ID = 645
 
 
 class Otomo(Actor):
@@ -1180,7 +1180,7 @@ class Otomo(Actor):
     NAME = 'otomo'
     COMM_APPEARANCE = 'ku_tenji_head, pi_pirate4_body'
     CUTSCENE_APPEARANCE = 'tenji'
-    STEOS_ID = 10029
+    STEOS_ID = 193
 
 
 class Shinja(Actor):
@@ -1189,7 +1189,8 @@ class Shinja(Actor):
     NAME = 'shinja'
     COMM_APPEARANCE = 'ku_tenji_head, pi_pirate4_body'
     CUTSCENE_APPEARANCE = 'tenji'
-    STEOS_ID = 10029
+    STEOS_ID = 643
+
 
 
 class ActorManager:

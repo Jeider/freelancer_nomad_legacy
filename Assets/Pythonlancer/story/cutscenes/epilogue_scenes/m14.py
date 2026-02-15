@@ -15,7 +15,6 @@ class Msn14TrentRescuedScene(Scene):
         main_group = self.get_group(MAIN)
 
         cam_dbg = StaticCamera(root=self, name='cam_dbg', fov=40)
-        cam_dbg.set(group=MAIN)
 
         cam_char6_to8 = StaticCamera(root=self, name='cam_char6_to8', fov=18)
         cam_char6_to8_alt = StaticCamera(root=self, name='cam_char6_to8_alt', fov=22)

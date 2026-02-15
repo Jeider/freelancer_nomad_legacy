@@ -49,7 +49,9 @@ class VoiceLine(object):
 
     def get_ru_ai_gen_text(self):
         return (self.get_ru_clean_ai_text().replace('СБА', 'эс-бэ-а').replace('Трент', 'Трэнт')
-                .replace('Рокфорд', 'Р+окфорд').replace('бизнес', 'б+изнэс'))
+                .replace('Рокфорд', 'Р+окфорд').replace('бизнес', 'б+изнэс')
+                .replace("Одзя", '+Одзя').replace('Кусари', 'Кус+ари')
+                )
 
     def get_ru_sub_text(self):
         return self.get_ru_clean_text().replace('+', '')
