@@ -1052,7 +1052,7 @@ class Character(Compound):
                         duration=duration,
                         **kwargs)
 
-    def idle(self, group, duration=10, **kwargs):
+    def idle(self, group, duration=10, loop=True, **kwargs):
         animation = self.animations[IDLE]
         MotionEvent(root=self.root, group=group,
                     object_name=self.name, anim=animation,
@@ -1436,11 +1436,13 @@ class MotionPath(Entity):
 
 
 class Autoplay:
-    def __init__(self, root, group, start_index=0, finish_index=9999):
+    def __init__(self, root, group, start_index=0, finish_index=9999, head_ik_per_index=None):
         self.root = root
         self.group_name = group
         self.start_index = start_index
         self.finish_index = finish_index
+
+        self.head_ik_per_index: dict[int, list[IkDelay]] = head_ik_per_index or {}
 
         self.make_actions()
 
@@ -1460,6 +1462,12 @@ class Autoplay:
             for motion in motion_seq:
                 character.motion(group=MAIN, duration=10, **motion)
 
+            if sound.line.index in self.head_ik_per_index:
+                for head_ik_delay in self.head_ik_per_index[sound.line.index]:
+                    head_ik_delay.actor.move_head_ik(
+                        group=self.group_name, target_name=head_ik_delay.target_name,
+                        duration=head_ik_delay.duration, time_delay=head_ik_delay.time_delay)
+
             character.facial(group=self.group_name, index=sound.line.index, auto_lip=True)
 
 
@@ -1470,3 +1478,11 @@ class Autoplay:
         # trent.motion(group=MAIN, duration=5, anim=Male.Sc_MLBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01)
         #
         # trent.facial(group=MAIN, index=50)
+
+
+class IkDelay:
+    def __init__(self, actor, target_name, duration=1.2, time_delay=0):
+        self.actor = actor
+        self.target_name = target_name
+        self.duration = duration
+        self.time_delay = time_delay

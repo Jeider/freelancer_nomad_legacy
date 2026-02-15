@@ -1,4 +1,4 @@
-duration=1070.56
+duration=72.56
 
 entities={
 	{
@@ -289,27 +289,6 @@ entities={
 }
 ,
 {
-    entity_name="cam_dbg",
-    type=CAMERA,
-    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
-    flags=HIDDEN,
-    spatialprops={
-        pos={ -0.09, 2.61, -0.05 },
-        orient={ 
-            { 0.8498721,0.0055873,-0.5269594 },
-            { -0.2389526,0.8953275,-0.3758861 },
-            { 0.4697010,0.4453734,0.7622489 }
-         }
-    },
-    cameraprops={
-        fovh=40,
-        hvaspect=1.85,
-        nearplane=0.2,
-        farplane=5000
-    }
-}
-,
-{
     entity_name="cam_greet",
     type=CAMERA,
     template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
@@ -514,15 +493,6 @@ entities={
 events={
 
     {
-    0,
-    SET_CAMERA,
-    {
-        "Monitor_1",
-        "cam_dbg"
-    }
-}
-,
-{
     0,
     START_MOTION,
     {"Char_trent"},

@@ -72,12 +72,12 @@ class Msn12CapturedScene(Scene):
         darcy = Character(root=self, actor=actors.Darcy, light_group=0, init_point='darcy_init', rotate_y=0)
         mandrake = Character(root=self, actor=actors.Mandrake, init_point='mandrake_comm', rotate_y=-90,
                              floor_height=mandrake_floor_height, light_group=comm_light)
-        bartender_fixture = Character(root=self, actor=actors.BartenderFixture, light_group=0, init_point=self.DEFAULT_POINT_NAME, rotate_y=180)
 
         guard = Character(root=self, actor=actors.OsirisOfficer, light_group=0, init_point='guard_init', rotate_y=90)
 
-        MoveOffscreenEvent(root=self, group=BG, object_name=bartender_fixture.name)
 
+        bartender_fixture = Character(root=self, actor=actors.BartenderFixture, light_group=0, init_point=self.DEFAULT_POINT_NAME, rotate_y=180)
+        MoveOffscreenEvent(root=self, group=BG, object_name=bartender_fixture.name)
 
         # MARKERS
 

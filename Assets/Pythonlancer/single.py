@@ -437,7 +437,7 @@ def scene():
     tpl_manager = JinjaTemplateManager()
     script_manager = ScriptManager()
     msn = script_manager.get_mission_by_index(15)
-    cutscene = msn.get_cutscene_by_code('intro')
+    cutscene = msn.get_cutscene_by_code('hokk')
     cutscene.get_thorn(tpl_manager, russian).sync_content()
 
     return

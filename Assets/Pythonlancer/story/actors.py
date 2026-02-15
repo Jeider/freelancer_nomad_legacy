@@ -764,6 +764,15 @@ class HasslerOrder(Actor):
     STEOS_ID = 10071
 
 
+class HasslerEpilogue(Actor):
+    RU_NAME = MS('Хасслер', 'Hassler')
+    TYPE = ACTOR_MALE
+    NAME = 'hassler'
+    COMM_APPEARANCE = 'rh_hassler_head, pl_male1_peasant_body'
+    CUTSCENE_APPEARANCE = 'hassler_epilogue'
+    STEOS_ID = 10071
+
+
 class Ironside(Actor):
     RU_NAME = MS('Билл Айронсайд', 'Bill Ironside')
     TYPE = ACTOR_MALE
@@ -1179,7 +1188,7 @@ class Otomo(Actor):
     TYPE = ACTOR_MALE
     NAME = 'otomo'
     COMM_APPEARANCE = 'ku_tenji_head, pi_pirate4_body'
-    CUTSCENE_APPEARANCE = 'tenji'
+    CUTSCENE_APPEARANCE = 'otomo'
     STEOS_ID = 193
 
 
@@ -1188,7 +1197,7 @@ class Shinja(Actor):
     TYPE = ACTOR_MALE
     NAME = 'shinja'
     COMM_APPEARANCE = 'ku_tenji_head, pi_pirate4_body'
-    CUTSCENE_APPEARANCE = 'tenji'
+    CUTSCENE_APPEARANCE = 'shinja'
     STEOS_ID = 643
 
 
