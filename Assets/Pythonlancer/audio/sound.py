@@ -48,7 +48,7 @@ class VoiceLine(object):
         return re.sub(r'\(.*?\)', '', self.en).replace(',,', '')
 
     def get_ru_ai_gen_text(self):
-        return (self.get_ru_clean_ai_text().replace('СБА', 'эс-бэ-а').replace('Трент', 'Трэнт')
+        return (self.get_ru_clean_ai_text().replace('СБА', 'эс-бэ-а').replace('мистер', 'мистэр').replace('Трент', 'Трэнт')
                 .replace('Рокфорд', 'Р+окфорд').replace('бизнес', 'б+изнэс')
                 .replace("Одзя", '+Одзя').replace('Кусари', 'Кус+ари')
                 )
@@ -60,15 +60,22 @@ class VoiceLine(object):
         return self.get_en_clean_text().replace('+', '')
 
     def get_en_ai_gen_text(self):
-        # print(self.index)
-        return (self.get_en_clean_ai_text()
+        text = (self.get_en_clean_ai_text()
                 .replace("'", '')
                 .replace("Mr.", 'm+ister')
                 .replace("mr.", 'm+ister')
                 .replace('ASF', 'A-eS-eF')
                 .replace(',,', ',')
                 .replace('Mrs.', 'missis')
-                .replace('EMP', 'Ee-Em-Pi'))
+                .replace('EMP', 'Ee-Em-Pi')
+                .replace("It's", "it is")
+                # .replace("It's", "it is")
+                )
+
+        if "'" in text:
+            raise Exception(f'Found apostrophe in {self.index}. What to do?')
+
+        return text
 
     def get_ru_subtitle(self):
         return MS(

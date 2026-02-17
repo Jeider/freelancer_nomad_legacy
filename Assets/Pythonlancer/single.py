@@ -409,8 +409,8 @@ def generate_cutscene_voices():
     # import pdb;pdb.set_trace()
 
     indexes = range(1, 12+1)
-    indexes = [15]
-    russian = True
+    indexes = [14]
+    russian = False
 
     for i in indexes:
         msn = script_manager.get_mission_by_index(i)
@@ -432,12 +432,14 @@ def meta():
 
 
 def scene():
-    russian = True
+    russian = False
+    mission_index = 14
+    scene_name = 'intro'
 
     tpl_manager = JinjaTemplateManager()
     script_manager = ScriptManager()
-    msn = script_manager.get_mission_by_index(15)
-    cutscene = msn.get_cutscene_by_code('hokk')
+    msn = script_manager.get_mission_by_index(mission_index)
+    cutscene = msn.get_cutscene_by_code(scene_name)
     cutscene.get_thorn(tpl_manager, russian).sync_content()
 
     return
