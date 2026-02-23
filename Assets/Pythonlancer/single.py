@@ -433,8 +433,8 @@ def meta():
 
 def scene():
     russian = True
-    mission_index = 17
-    scene_name = 'intro'
+    mission_index = 99
+    scene_name = 'debug'
 
     tpl_manager = JinjaTemplateManager()
     script_manager = ScriptManager()

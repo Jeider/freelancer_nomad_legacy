@@ -13,8 +13,7 @@ class JackMeetScene(Scene):
     def action(self):
         main_group = self.get_group(MAIN)
 
-        # cam_dbg = StaticCamera(root=self, name='cam_dbg', fov=25)
-        cam_greet = StaticCamera(root=self, name='cam_greet', fov=25)
+        cam_greet = StaticCamera(root=self, name='cam_altgreet', fov=25)
 
 
         cam_char8 = StaticCamera(root=self, name='cam_char8', fov=18)

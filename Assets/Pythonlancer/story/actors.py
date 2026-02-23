@@ -125,6 +125,21 @@ class EdisonTrent(Actor):
     # STEOS_SPEED = 1.13
 
 
+class EdisonTrentHolo(Actor):
+    RU_NAME = MS('Эдисон Трент', 'Edison Trent')
+    TYPE = ACTOR_TRENT
+    NAME = 'edison'
+    COMM_APPEARANCE = 'pi_pirate5_head, pl_trent_body, comm_ge_generic1'
+    CUTSCENE_APPEARANCE = 'edison_trent_holo'
+    # gameplay test
+    # STEOS_ID = 208
+    # STEOS_PITCH = -1
+    # STEOS_SPEED = 1.45
+    STEOS_ID = 10092
+    # STEOS_PITCH = 0
+    # STEOS_SPEED = 1.13
+
+
 class Juni(Actor):
     RU_NAME = MS('Джуни', 'Juni')
     TYPE = ACTOR_JUNI  # Анимация имеет ту же природу, что и у Трента. Надеюсь не пригодится
@@ -1219,6 +1234,26 @@ class JackRazorBarber(Actor):
     COMM_APPEARANCE = 'rh_captain_head, rh_male_elite_body, comm_rh_elite'
     CUTSCENE_APPEARANCE = 'jackrazor'
     STEOS_ID = 181
+
+
+class MonkeyKing(Actor):
+    RU_NAME = MS('Тагава', 'Tagawa')
+    TYPE = ACTOR_MALE
+    NAME = 'tagawa'
+    COMM_APPEARANCE = 'ku_tenji_head, pi_pirate4_body'
+    CUTSCENE_APPEARANCE = 'm07_monkeyking'
+    STEOS_ID = 643
+
+
+class MonkeyKingHolo(Actor):
+    RU_NAME = MS('Тагава', 'Tagawa')
+    TYPE = ACTOR_MALE
+    NAME = 'tagawa'
+    COMM_APPEARANCE = 'ku_tenji_head, pi_pirate4_body'
+    CUTSCENE_APPEARANCE = 'monkeyking_holo'
+    STEOS_ID = 643
+
+
 
 
 

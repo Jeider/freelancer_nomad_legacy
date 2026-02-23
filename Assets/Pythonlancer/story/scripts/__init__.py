@@ -4,5 +4,6 @@ from story.scripts.main import (
 )
 
 from story.scripts.epilogue import (
+    debug,
     mission14, mission15, mission16, mission17
 )

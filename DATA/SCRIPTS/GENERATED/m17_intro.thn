@@ -243,7 +243,7 @@ entities={
 }
 ,
 {
-    entity_name="automarker_cam_greet2",
+    entity_name="automarker_cam_altgreet2",
     type=MARKER,
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
     spatialprops={
@@ -266,20 +266,6 @@ entities={
             { 1.0000000,0.0000000,-0.0000000 },
             { -0.0000000,1.0000000,-0.0000037 },
             { 0.0000000,0.0000037,1.0000000 }
-         }
-    }
-}
-,
-{
-    entity_name="automarker_cam_char1",
-    type=MARKER,
-    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
-    spatialprops={
-        pos={ 0.42, 1.41, 0.29 },
-        orient={ 
-            { 0.3640533,0.0241870,-0.9310640 },
-            { 0.1499349,0.9851026,0.0842165 },
-            { 0.9192305,-0.1702583,0.3550034 }
          }
     }
 }
@@ -308,20 +294,6 @@ entities={
             { -0.6244327,-0.0000029,-0.7810786 },
             { -0.0000001,1.0000000,-0.0000037 },
             { 0.7810786,-0.0000022,-0.6244327 }
-         }
-    }
-}
-,
-{
-    entity_name="automarker_cam_char2",
-    type=MARKER,
-    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
-    spatialprops={
-        pos={ -0.05, 1.57, 0.50 },
-        orient={ 
-            { 0.6769264,0.0007524,0.7360503 },
-            { -0.0116140,0.9998859,0.0096590 },
-            { -0.7359591,-0.0150869,0.6768579 }
          }
     }
 }
@@ -397,7 +369,7 @@ entities={
 }
 ,
 {
-    entity_name="automarker_cam_greet",
+    entity_name="automarker_cam_altgreet",
     type=MARKER,
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
     spatialprops={
@@ -411,7 +383,63 @@ entities={
 }
 ,
 {
-    entity_name="cam_greet",
+    entity_name="automarker_cam_greet2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -11.14, 0.55, 2.90 },
+        orient={ 
+            { 0.9738137,0.0032010,-0.2273247 },
+            { 0.0443475,0.9780185,0.2037478 },
+            { 0.2229800,-0.2084937,0.9522659 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_greet",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -11.14, 2.01, 2.90 },
+        orient={ 
+            { 0.9745176,-0.0131877,-0.2239229 },
+            { 0.0175505,0.9996927,0.0175044 },
+            { 0.2236232,-0.0209883,0.9744497 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_char2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -11.93, 1.57, 0.50 },
+        orient={ 
+            { 0.6769264,0.0007524,0.7360503 },
+            { -0.0116140,0.9998859,0.0096590 },
+            { -0.7359591,-0.0150869,0.6768579 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_char1",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -11.46, 1.41, 0.29 },
+        orient={ 
+            { 0.3640533,0.0241870,-0.9310640 },
+            { 0.1499349,0.9851026,0.0842165 },
+            { 0.9192305,-0.1702583,0.3550034 }
+         }
+    }
+}
+,
+{
+    entity_name="cam_altgreet",
     type=CAMERA,
     template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
     flags=HIDDEN,
@@ -705,7 +733,7 @@ events={
     SET_CAMERA,
     {
         "Monitor_1",
-        "cam_greet"
+        "cam_altgreet"
     }
 }
 ,
@@ -713,8 +741,8 @@ events={
     0,
     START_SPATIAL_PROP_ANIM,
     {
-        "cam_greet",
-        "automarker_cam_greet2"
+        "cam_altgreet",
+        "automarker_cam_altgreet2"
     },
     {
         duration=6,
