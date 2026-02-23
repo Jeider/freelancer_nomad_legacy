@@ -1,7 +1,7 @@
 from story import script
 from audio.sound import VoiceLine
 from story.actors import Trent, TripoliBarman
-from story.cutscenes.epilogue_scenes import m15
+from story.cutscenes.epilogue_scenes import m16
 
 
 class MsnFish(object):
@@ -11,7 +11,7 @@ class MsnFish(object):
 class TripoliScene(MsnFish, script.CutsceneProps):
     ALIAS = 'tripoli'
     TITLE = 'Верфь Триполи'
-    # THORN_CLASS = m15.KenjiMeetScene
+    THORN_CLASS = m16.TripoliScene
     DESCRIPTION = ''
     VOICE_LINES = [
         VoiceLine(10, Trent, ru='Эй, друг. Ты не знаешь где тут объект LV-426?'),

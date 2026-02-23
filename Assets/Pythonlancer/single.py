@@ -432,8 +432,8 @@ def meta():
 
 
 def scene():
-    russian = False
-    mission_index = 14
+    russian = True
+    mission_index = 17
     scene_name = 'intro'
 
     tpl_manager = JinjaTemplateManager()

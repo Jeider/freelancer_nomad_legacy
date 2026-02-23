@@ -1,6 +1,7 @@
 import re
 from story import math
 from story.cutscenes import anim
+from story.cutscenes.anim import Male, Female
 from story.actors import ACTOR_TRENT, ACTOR_JUNI, ACTOR_MALE, ACTOR_FEMALE
 
 
@@ -42,13 +43,19 @@ USR_BACKGROUND = 1
 PLAYER_ENGINES = 'PlayerShipEngines'
 
 IDLE = 'idle'
+IDLE_SIT = 'idle_sit'
+IDLE_SIT_TABLE = 'idle_sit_table'
 
 MALE_ANIMS = {
-    IDLE: 'Sc_MLBODY_STND_IDLE_000LV_xa_04',
+    IDLE: Male.Sc_MLBODY_STND_IDLE_000LV_xa_04,
+    IDLE_SIT: Male.Sc_MLBODY_CHRB_IDLE_000LV_XA_05,
+    IDLE_SIT_TABLE: Male.Sc_MLBODY_CHRF_IDLE_000LV_XA_06,
 }
 
 FEMALE_ANIMS = {
-    IDLE: 'Sc_FMBODY_STND_IDLE_000LV_xa_05',
+    IDLE: Female.Sc_FMBODY_STND_IDLE_000LV_xa_05,
+    IDLE_SIT: Female.Sc_FMBODY_CHRB_IDLE_000LV_XA_06,
+    IDLE_SIT_TABLE: Female.Sc_FMBODY_CHRF_IDLE_000LV_XA_05,
 }
 
 X_AXIS = 'X_AXIS'
@@ -1052,12 +1059,21 @@ class Character(Compound):
                         duration=duration,
                         **kwargs)
 
-    def idle(self, group, duration=10, loop=True, **kwargs):
-        animation = self.animations[IDLE]
+    def main_anim(self, anim, group, duration=10, loop=True, **kwargs):
+        animation = self.animations[anim]
         MotionEvent(root=self.root, group=group,
                     object_name=self.name, anim=animation,
-                    duration=duration,
+                    duration=duration, loop=loop,
                     **kwargs)
+
+    def idle(self, group, duration=10, **kwargs):
+        self.main_anim(IDLE, group=group, duration=duration, **kwargs)
+
+    def idle_sit(self, group, duration=10, **kwargs):
+        self.main_anim(IDLE_SIT, group=group, duration=duration, **kwargs)
+
+    def idle_sit_table(self, group, duration=10, **kwargs):
+        self.main_anim(IDLE_SIT_TABLE, group=group, duration=duration, **kwargs)
 
     def facial(self, group, index, append=True, extra_delay=0.3, auto_lip=False):
         sound = self.root.lookup_single_sound(index)
