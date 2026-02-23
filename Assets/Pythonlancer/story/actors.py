@@ -737,6 +737,16 @@ class CorsairBarman(Actor):
     # STEOS_PITCH = 0.25
 
 
+class TripoliBarman(Actor):
+    RU_NAME = MS('Бармен', 'Bartender')
+    TYPE = ACTOR_MALE
+    NAME = 'barman'
+    COMM_APPEARANCE = 'sh_male1_head, sh_male2_body'
+    STEOS_ID = 13105
+    # STEOS_SPEED = 0.9
+    # STEOS_PITCH = 0.25
+
+
 class Yamamoto(Actor):
     RU_NAME = MS('Ямамото', 'Yamamoto')
     TYPE = ACTOR_MALE
@@ -1199,6 +1209,14 @@ class Shinja(Actor):
     COMM_APPEARANCE = 'ku_tenji_head, pi_pirate4_body'
     CUTSCENE_APPEARANCE = 'shinja'
     STEOS_ID = 643
+
+
+class JackRazorBarber(Actor):
+    RU_NAME = MS('Капитан Джек Брадобрей', 'Captain Jack The Razor Barber')
+    TYPE = ACTOR_MALE
+    NAME = 'jackrazor'
+    COMM_APPEARANCE = 'rh_captain_head, rh_male_elite_body, comm_rh_elite'
+    STEOS_ID = 181
 
 
 

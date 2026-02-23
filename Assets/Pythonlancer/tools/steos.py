@@ -27,7 +27,7 @@ class SteosVoice(object):
         if not actor.get_steos_id():
             raise Exception('Actor %s have no steos actor id' % actor.NAME)
         if not text or text == '':
-            raise Exception('text is mandatory')
+            raise Exception(f'text is mandatory for actor {actor.NAME}')
 
         url = f"https://public.api.voice.steos.io/api/v1/synthesize-controller/synthesis-by-text?authToken={STEOS_API_KEY}"
 

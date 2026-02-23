@@ -409,8 +409,8 @@ def generate_cutscene_voices():
     # import pdb;pdb.set_trace()
 
     indexes = range(1, 12+1)
-    indexes = [14]
-    russian = False
+    indexes = [17]
+    russian = True
 
     for i in indexes:
         msn = script_manager.get_mission_by_index(i)
