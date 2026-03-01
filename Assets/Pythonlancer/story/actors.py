@@ -163,7 +163,7 @@ class Hatcher(Actor):
     STEOS_PITCH = -1
     # STEOS_SPEED = 1.1
     STEOS_SPEED = 1  # eng
-    SPACE_VOICE = 'pilot04'
+    # SPACE_VOICE = 'pilot04'
 
 
 class HatcherStation(Hatcher):
@@ -195,6 +195,15 @@ class Kaitlyn(Actor):
     STEOS_SPEED = 1
 
 
+class Gruenwald(Actor):
+    RU_NAME = MS('Грюнвальд', 'Greunwald')
+    TYPE = ACTOR_FEMALE
+    NAME = 'gruenwald'
+    COMM_APPEARANCE = 'rh_gruenwald_head, rh_greunwald_body'
+    CUTSCENE_APPEARANCE = 'gruenwald'
+    STEOS_ID = 10061
+
+
 class King(Actor):
     RU_NAME = MS('Кинг', 'King')
     TYPE = ACTOR_MALE
@@ -213,10 +222,20 @@ class Tilton(Actor):
     RU_NAME = MS('Тилтон', 'Tilton')
     TYPE = ACTOR_MALE
     NAME = 'tilton'
-    COMM_APPEARANCE = 'pl_male4_head, li_tilton_body'
+    COMM_APPEARANCE = 'br_sales_head, li_tilton_body'
     STEOS_ID = 266
     STEOS_PITCH = -0.5
     STEOS_SPEED = 0.9
+
+
+class Washington(Actor):
+    RU_NAME = MS('Президент Вашингтон', 'President Washington')
+    TYPE = ACTOR_MALE
+    NAME = 'washington'
+    COMM_APPEARANCE = 'pl_male4_head, li_tilton_body'
+    CUTSCENE_APPEARANCE = 'washington'
+    STEOS_ID = 644
+
 
 
 class Rockford(Actor):
@@ -1242,7 +1261,7 @@ class MonkeyKing(Actor):
     NAME = 'tagawa'
     COMM_APPEARANCE = 'ku_tenji_head, pi_pirate4_body'
     CUTSCENE_APPEARANCE = 'm07_monkeyking'
-    STEOS_ID = 643
+    STEOS_ID = 10029
 
 
 class MonkeyKingHolo(Actor):
@@ -1251,7 +1270,7 @@ class MonkeyKingHolo(Actor):
     NAME = 'tagawa'
     COMM_APPEARANCE = 'ku_tenji_head, pi_pirate4_body'
     CUTSCENE_APPEARANCE = 'monkeyking_holo'
-    STEOS_ID = 643
+    STEOS_ID = 10029
 
 
 

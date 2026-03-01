@@ -409,7 +409,7 @@ def generate_cutscene_voices():
     # import pdb;pdb.set_trace()
 
     indexes = range(1, 12+1)
-    indexes = [17]
+    indexes = [23]
     russian = True
 
     for i in indexes:
@@ -433,8 +433,11 @@ def meta():
 
 def scene():
     russian = True
-    mission_index = 99
-    scene_name = 'debug'
+    # mission_index = 99
+    # scene_name = 'debug'
+
+    mission_index = 23
+    scene_name = 'pygar'
 
     tpl_manager = JinjaTemplateManager()
     script_manager = ScriptManager()

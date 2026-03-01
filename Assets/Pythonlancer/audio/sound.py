@@ -48,9 +48,22 @@ class VoiceLine(object):
         return re.sub(r'\(.*?\)', '', self.en).replace(',,', '')
 
     def get_ru_ai_gen_text(self):
-        return (self.get_ru_clean_ai_text().replace('СБА', 'эс-бэ-а').replace('мистер', 'мистэр').replace('Трент', 'Трэнт')
-                .replace('Рокфорд', 'Р+окфорд').replace('бизнес', 'б+изнэс')
-                .replace("Одзя", '+Одзя').replace('Кусари', 'Кус+ари')
+        return (self.get_ru_clean_ai_text()
+                .replace('СБА', 'эс-бэ-а')
+                .replace('мистер', 'мистэр')
+                .replace('Трент', 'Трэнт')
+                .replace('Рокфорд', 'Р+окфорд')
+                .replace('бизнес', 'б+изнэс')
+                .replace("Одзя", '+Одзя')
+                .replace('Кусари', 'Кус+ари')
+                .replace('Хетчер', 'Хэтчер')
+                .replace('ХБ-ЧП-Три', 'ХэБ+э-ЧэП+э-Три')
+                # .replace('ХБ-ЧП-Три', 'ХэБэ.ЧэПэ.Три')
+                .replace('Тагава', 'Таг+ава')
+                .replace('Санкрашер', 'Санкр+ашер')
+                .replace('Грюнвальд', 'Гр+юнвальд')
+                .replace('Рейнланд', 'Р+эйнланд')
+
                 )
 
     def get_ru_sub_text(self):

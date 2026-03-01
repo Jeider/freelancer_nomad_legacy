@@ -1036,6 +1036,8 @@ class Character(Compound):
         return self.get_char_marker(point_name, y_offset+floor_height)
 
     def get_compound_template_name(self):
+        if not self.actor.CUTSCENE_APPEARANCE or self.actor.CUTSCENE_APPEARANCE == '':
+            raise Exception(f'Actor {self.actor} have no cutscene appearance')
         return self.actor.CUTSCENE_APPEARANCE
 
     def get_params(self):
@@ -1476,7 +1478,10 @@ class Autoplay:
 
             motion_seq = character.get_current_sequence()
             for motion in motion_seq:
-                character.motion(group=MAIN, duration=10, **motion)
+                duration = 10
+                if override_duration := motion.pop('override_duration', 0):
+                    duration = override_duration
+                character.motion(group=MAIN, duration=duration, **motion)
 
             if sound.line.index in self.head_ik_per_index:
                 for head_ik_delay in self.head_ik_per_index[sound.line.index]:

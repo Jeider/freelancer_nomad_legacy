@@ -1,0 +1,1760 @@
+duration=124.43599999999999
+
+entities={
+	{
+		entity_name="Scene_m26_berlin",
+		type=SCENE,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		up=Y_AXIS,
+		front=Z_AXIS,
+		ambient={
+		    0,
+		    0,
+		    0
+		}
+	},
+
+	{
+		entity_name="Monitor_1",
+		type=MONITOR,
+		template_name="",
+		template_id=0
+	},
+	{
+		entity_name="offscreen",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={pos={-10000000,-10000,0},orient={ {1,0,0},{0,1,0},{0,0,1} } },
+	},
+
+	{
+		entity_name="offscreen_back",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={pos={0,-10000,-10000000},orient={ {1,0,0},{0,1,0},{0,0,1} } },
+	},
+
+    
+	
+{
+    entity_name="DX_m26_berlin_0010_gruenwald",
+    template_name="DX_m26_berlin_0010_gruenwald",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m26_berlin_0020_trent",
+    template_name="DX_m26_berlin_0020_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m26_berlin_0030_gruenwald",
+    template_name="DX_m26_berlin_0030_gruenwald",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m26_berlin_0040_trent",
+    template_name="DX_m26_berlin_0040_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m26_berlin_0050_gruenwald",
+    template_name="DX_m26_berlin_0050_gruenwald",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m26_berlin_0060_gruenwald",
+    template_name="DX_m26_berlin_0060_gruenwald",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m26_berlin_0070_trent",
+    template_name="DX_m26_berlin_0070_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m26_berlin_0080_gruenwald",
+    template_name="DX_m26_berlin_0080_gruenwald",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m26_berlin_0090_gruenwald",
+    template_name="DX_m26_berlin_0090_gruenwald",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m26_berlin_0100_trent",
+    template_name="DX_m26_berlin_0100_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m26_berlin_0110_gruenwald",
+    template_name="DX_m26_berlin_0110_gruenwald",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m26_berlin_0120_trent",
+    template_name="DX_m26_berlin_0120_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m26_berlin_0130_gruenwald",
+    template_name="DX_m26_berlin_0130_gruenwald",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m26_berlin_0140_trent",
+    template_name="DX_m26_berlin_0140_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m26_berlin_0150_gruenwald",
+    template_name="DX_m26_berlin_0150_gruenwald",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m26_berlin_0160_gruenwald",
+    template_name="DX_m26_berlin_0160_gruenwald",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m26_berlin_0170_trent",
+    template_name="DX_m26_berlin_0170_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m26_berlin_0180_gruenwald",
+    template_name="DX_m26_berlin_0180_gruenwald",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m26_berlin_0190_gruenwald",
+    template_name="DX_m26_berlin_0190_gruenwald",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m26_berlin_0200_gruenwald",
+    template_name="DX_m26_berlin_0200_gruenwald",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m26_berlin_0210_trent",
+    template_name="DX_m26_berlin_0210_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m26_berlin_0220_trent",
+    template_name="DX_m26_berlin_0220_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m26_berlin_0230_gruenwald",
+    template_name="DX_m26_berlin_0230_gruenwald",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+     ,
+    
+
+	{
+    entity_name="automarker_default_point",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_offscreen_point",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, -10000.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_rh_berlin_bar",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, -0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,-0.0000000 },
+            { -0.0000000,1.0000000,-0.0000037 },
+            { 0.0000000,0.0000037,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_waypoin",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 1.91, -2.72 },
+        orient={ 
+            { 1.0000000,0.0000000,-0.0000000 },
+            { -0.0000000,1.0000000,-0.0000037 },
+            { 0.0000000,0.0000037,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_char2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.41, 0.00, 2.67 },
+        orient={ 
+            { -0.0829729,-0.0000036,-0.9965518 },
+            { -0.0000000,1.0000000,-0.0000036 },
+            { 0.9965518,-0.0000003,-0.0829729 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_char1",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -3.06, 0.00, 2.53 },
+        orient={ 
+            { -0.0231145,0.0000034,0.9997328 },
+            { 0.0000003,1.0000000,-0.0000034 },
+            { -0.9997328,0.0000003,-0.0231145 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_greet",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -8.68, 4.29, 2.24 },
+        orient={ 
+            { 0.0664103,-0.0125560,0.9977134 },
+            { 0.3596962,0.9329897,-0.0122008 },
+            { -0.9307031,0.3596840,0.0664765 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_char2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -3.09, 1.55, 3.08 },
+        orient={ 
+            { 0.2678173,-0.0203640,0.9632545 },
+            { 0.0601534,0.9981795,0.0043777 },
+            { -0.9615901,0.0567706,0.2685547 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_char1",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.81, 1.51, 2.87 },
+        orient={ 
+            { 0.2814439,0.0122942,-0.9594989 },
+            { 0.0795231,0.9961795,0.0360902 },
+            { 0.9562769,-0.0864597,0.2793910 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_light1",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 1.91, 3.45 },
+        orient={ 
+            { 1.0000000,0.0000000,-0.0000000 },
+            { -0.0000000,1.0000000,-0.0000037 },
+            { 0.0000000,0.0000037,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_greet2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -7.73, 3.48, 0.36 },
+        orient={ 
+            { -0.4193639,-0.0125564,0.9077314 },
+            { 0.3216329,0.9329903,0.1614973 },
+            { -0.8489324,0.3596824,-0.3872239 }
+         }
+    }
+}
+,
+{
+    entity_name="LIGHT_ROOMA",
+    type=LIGHT,
+    template_name="",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    
+    spatialprops={
+        pos={ 0.00, 1.91, 3.45 },
+        orient={
+            {1,0,0},
+            {0,1,0},
+            {0,0,1}
+        }
+    },
+    lightprops={
+        on=Y,
+        color={
+            255,
+            255,
+            255
+        },
+        diffuse={
+            0.3, 0.7, 0.8
+        },
+        specular={
+            0,
+            0,
+            0
+        },
+        ambient={
+            0, 0, 0
+        },
+        direction={
+            0, 0, -1
+        },
+        range=15,
+        cutoff=90,
+        type=L_POINT,
+        theta=90,
+        atten={
+            1,
+            0,
+            0.003
+        }
+    }
+}
+,
+{
+    entity_name="cam_greet",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ -8.68, 4.29, 2.24 },
+        orient={ 
+            { 0.0664103,-0.0125560,0.9977134 },
+            { 0.3596962,0.9329897,-0.0122008 },
+            { -0.9307031,0.3596840,0.0664765 }
+         }
+    },
+    cameraprops={
+        fovh=25,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+,
+{
+    entity_name="cam_char1",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ -1.81, 1.51, 2.87 },
+        orient={ 
+            { 0.2814439,0.0122942,-0.9594989 },
+            { 0.0795231,0.9961795,0.0360902 },
+            { 0.9562769,-0.0864597,0.2793910 }
+         }
+    },
+    cameraprops={
+        fovh=18,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+,
+{
+    entity_name="cam_char2",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ -3.09, 1.55, 3.08 },
+        orient={ 
+            { 0.2678173,-0.0203640,0.9632545 },
+            { 0.0601534,0.9981795,0.0043777 },
+            { -0.9615901,0.0567706,0.2685547 }
+         }
+    },
+    cameraprops={
+        fovh=15,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+,
+{
+    entity_name="Char_trent",
+    type=DEFORMABLE,
+    template_name="trent",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -3.06, 0.00, 2.53
+        },
+        orient={ 
+            { -0.0231145,0.0000034,0.9997328 },
+            { 0.0000003,1.0000000,-0.0000034 },
+            { -0.9997328,0.0000003,-0.0231145 }
+         }
+    },
+    compoundprops={
+        floor_height=0
+    },
+    userprops={
+        Actor="Player",
+        category="Character"
+    }
+}
+,
+{
+    entity_name="char_ik_Char_trent_head_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="char_ik_Char_trent_eye_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="Char_gruenwald",
+    type=DEFORMABLE,
+    template_name="gruenwald",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1.41, 0.00, 2.67
+        },
+        orient={ 
+            { -0.0829729,-0.0000036,-0.9965518 },
+            { -0.0000000,1.0000000,-0.0000036 },
+            { 0.9965518,-0.0000003,-0.0829729 }
+         }
+    },
+    compoundprops={
+        floor_height=0
+    },
+    userprops={
+        Actor="gruenwald",
+        category="Character"
+    }
+}
+,
+{
+    entity_name="char_ik_Char_gruenwald_head_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="char_ik_Char_gruenwald_eye_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="charpoint_char1",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -3.06, 1.65, 2.53 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="charpoint_char2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.41, 1.55, 2.67 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+}
+
+events={
+
+    {
+    0,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   
+     }
+}
+,
+{
+    0,
+    START_MOTION,
+    {"Char_gruenwald"},
+    {animation="Sc_FMBODY_STND_IDLE_000LV_xa_05",
+     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   
+     }
+}
+,
+{
+    0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_trent_head_ik",
+        "charpoint_char2"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "char_ik_Char_gruenwald_head_ik",
+        "charpoint_char1"
+    },
+    {
+        duration=0,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+    }
+}
+,
+{
+    0,
+    START_IK,
+    {
+        "Char_trent",
+        "char_ik_Char_trent_head_ik"
+    },
+    {
+        duration=1000,
+        end_effector="Body_Head", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    0,
+    START_IK,
+    {
+        "Char_gruenwald",
+        "char_ik_Char_gruenwald_head_ik"
+    },
+    {
+        duration=1000,
+        end_effector="Body_Head", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    0,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_greet"
+    }
+}
+,
+{
+    0,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "cam_greet",
+        "automarker_cam_greet2"
+    },
+    {
+        duration=6,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    6,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_char2"
+    }
+}
+,
+{
+    6,
+    START_MOTION,
+    {"Char_gruenwald"},
+    {animation="Sc_FMBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
+     duration=10, time_scale=0.5, start_time=0, weight=1, heading=-1
+       , trans_time=0.8 
+     }
+}
+,
+{
+    6,
+    START_MOTION,
+    {"Char_gruenwald"},
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=3.04,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=1.66 }
+}
+,
+{
+    6,
+    START_SOUND,
+    {
+        "DX_m26_berlin_0010_gruenwald"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    8.34,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_char1"
+    }
+}
+,
+{
+    8.34,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
+     duration=10, time_scale=0.5, start_time=0, weight=1, heading=-1
+       , trans_time=0.8 
+     }
+}
+,
+{
+    8.34,
+    START_MOTION,
+    {"Char_trent"},
+    { animation='Sc_dx_s020x_1601_Trent',duration=3.98,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=2.92 }
+}
+,
+{
+    8.34,
+    START_SOUND,
+    {
+        "DX_m26_berlin_0020_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    11.616,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_char2"
+    }
+}
+,
+{
+    11.616,
+    START_MOTION,
+    {"Char_gruenwald"},
+    {animation="Sc_FMBODY_STND_FSTHIPB_RLEASE_000LV_XA_01",
+     duration=10, time_scale=0.5, start_time=0, weight=1, heading=-1
+       , trans_time=0.8 
+     }
+}
+,
+{
+    11.616,
+    START_MOTION,
+    {"Char_gruenwald"},
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=5.97,time_scale=1,trans_time=0.25,weight=1,heading=-1 }
+}
+,
+{
+    15.315999999999999,
+    START_MOTION,
+    {"Char_gruenwald"},
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=2.27,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=2.43 }
+}
+,
+{
+    11.616,
+    START_SOUND,
+    {
+        "DX_m26_berlin_0030_gruenwald"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    16.884,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_char1"
+    }
+}
+,
+{
+    16.884,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_FSTHIPB_RLEASE_000LV_XA_01",
+     duration=10, time_scale=0.5, start_time=0, weight=1, heading=-1
+       , trans_time=0.8 
+     }
+}
+,
+{
+    16.884,
+    START_MOTION,
+    {"Char_trent"},
+    { animation='Sc_dx_s020x_1601_Trent',duration=5.78,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=1.12 }
+}
+,
+{
+    16.884,
+    START_SOUND,
+    {
+        "DX_m26_berlin_0040_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    21.96,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_char2"
+    }
+}
+,
+{
+    22.21,
+    START_MOTION,
+    {"Char_gruenwald"},
+    {animation="Sc_FMBODY_STND_CONV_RHNDUP_TRNS_000LV_XA_01",
+     duration=10, time_scale=0.6, start_time=0, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    24.21,
+    START_MOTION,
+    {"Char_gruenwald"},
+    {animation="Sc_FMBODY_STND_CONV_RHND_CASL_000LV_xa_03",
+     duration=10, time_scale=0.6, start_time=0, weight=1, heading=-1
+     , event_flags=2   , trans_time=1 
+     }
+}
+,
+{
+    26.21,
+    START_MOTION,
+    {"Char_gruenwald"},
+    {animation="Sc_FMBODY_STND_CONV_RHNDDN_TRNS_000LV_XA_01",
+     duration=10, time_scale=0.5, start_time=0, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    21.96,
+    START_MOTION,
+    {"Char_gruenwald"},
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=7.31,time_scale=1,trans_time=0.25,weight=1,heading=-1 }
+}
+,
+{
+    25.66,
+    START_MOTION,
+    {"Char_gruenwald"},
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=3.61,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=1.09 }
+}
+,
+{
+    21.96,
+    START_SOUND,
+    {
+        "DX_m26_berlin_0050_gruenwald"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    28.572000000000003,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_char2"
+    }
+}
+,
+{
+    28.572000000000003,
+    START_MOTION,
+    {"Char_gruenwald"},
+    {animation="Sc_FMBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
+     duration=10, time_scale=0.5, start_time=0, weight=1, heading=-1
+       , trans_time=0.8 
+     }
+}
+,
+{
+    28.572000000000003,
+    START_MOTION,
+    {"Char_gruenwald"},
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=7.00,time_scale=1,trans_time=0.25,weight=1,heading=-1 }
+}
+,
+{
+    32.272000000000006,
+    START_MOTION,
+    {"Char_gruenwald"},
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=3.30,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=1.40 }
+}
+,
+{
+    28.572000000000003,
+    START_SOUND,
+    {
+        "DX_m26_berlin_0060_gruenwald"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    34.872,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_char1"
+    }
+}
+,
+{
+    34.872,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_CROSS_ARMS_000LV_xa_06",
+     duration=10, time_scale=0.5, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    34.872,
+    START_MOTION,
+    {"Char_trent"},
+    { animation='Sc_dx_s020x_1601_Trent',duration=3.35,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=3.55 }
+}
+,
+{
+    34.872,
+    START_SOUND,
+    {
+        "DX_m26_berlin_0070_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    37.524,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_char2"
+    }
+}
+,
+{
+    37.524,
+    START_MOTION,
+    {"Char_gruenwald"},
+    {animation="Sc_FMBODY_STND_FSTHIPB_RLEASE_000LV_XA_01",
+     duration=10, time_scale=0.5, start_time=0, weight=1, heading=-1
+       , trans_time=0.8 
+     }
+}
+,
+{
+    37.524,
+    START_MOTION,
+    {"Char_gruenwald"},
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=8.03,time_scale=1,trans_time=0.25,weight=1,heading=-1 }
+}
+,
+{
+    41.224000000000004,
+    START_MOTION,
+    {"Char_gruenwald"},
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=4.33,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=0.37 }
+}
+,
+{
+    37.524,
+    START_SOUND,
+    {
+        "DX_m26_berlin_0080_gruenwald"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    44.856,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_char2"
+    }
+}
+,
+{
+    45.106,
+    START_MOTION,
+    {"Char_gruenwald"},
+    {animation="Sc_FMBODY_STND_CROSS_ARMS_000LV_xa_03",
+     duration=10, time_scale=0.8, start_time=0, weight=1, heading=-1
+       , trans_time=0.8 
+     }
+}
+,
+{
+    44.856,
+    START_MOTION,
+    {"Char_gruenwald"},
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=5.99,time_scale=1,trans_time=0.25,weight=1,heading=-1 }
+}
+,
+{
+    48.556000000000004,
+    START_MOTION,
+    {"Char_gruenwald"},
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=2.29,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=2.41 }
+}
+,
+{
+    44.856,
+    START_SOUND,
+    {
+        "DX_m26_berlin_0090_gruenwald"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    50.148,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_char1"
+    }
+}
+,
+{
+    50.148,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_UNCRSS_ARMS_000LV_XA_02",
+     duration=10, time_scale=0.5, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    50.148,
+    START_MOTION,
+    {"Char_trent"},
+    { animation='Sc_dx_s020x_1601_Trent',duration=5.37,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=1.53 }
+}
+,
+{
+    50.148,
+    START_SOUND,
+    {
+        "DX_m26_berlin_0100_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    54.816,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_char2"
+    }
+}
+,
+{
+    55.066,
+    START_MOTION,
+    {"Char_gruenwald"},
+    {animation="Sc_FMBODY_STND_UNCRSS_ARMS_000LV_XA_03",
+     duration=10, time_scale=0.8, start_time=0, weight=1, heading=-1
+       , trans_time=0.8 
+     }
+}
+,
+{
+    54.816,
+    START_MOTION,
+    {"Char_gruenwald"},
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=3.62,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=1.08 }
+}
+,
+{
+    54.816,
+    START_SOUND,
+    {
+        "DX_m26_berlin_0110_gruenwald"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    57.732,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_char1"
+    }
+}
+,
+{
+    57.732,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
+     duration=10, time_scale=0.5, start_time=0, weight=1, heading=-1
+       , trans_time=0.8 
+     }
+}
+,
+{
+    57.732,
+    START_MOTION,
+    {"Char_trent"},
+    { animation='Sc_dx_s020x_1601_Trent',duration=3.18,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=3.72 }
+}
+,
+{
+    57.732,
+    START_SOUND,
+    {
+        "DX_m26_berlin_0120_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    60.216,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_char2"
+    }
+}
+,
+{
+    60.466,
+    START_MOTION,
+    {"Char_gruenwald"},
+    {animation="Sc_FMBODY_STND_CONV_RHNDUP_TRNS_000LV_XA_01",
+     duration=10, time_scale=0.6, start_time=0, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    62.466,
+    START_MOTION,
+    {"Char_gruenwald"},
+    {animation="Sc_FMBODY_STND_CONV_RHND_CASL_000LV_xa_03",
+     duration=10, time_scale=0.6, start_time=0, weight=1, heading=-1
+     , event_flags=2   , trans_time=1 
+     }
+}
+,
+{
+    64.46600000000001,
+    START_MOTION,
+    {"Char_gruenwald"},
+    {animation="Sc_FMBODY_STND_CONV_RHNDDN_TRNS_000LV_XA_01",
+     duration=10, time_scale=0.5, start_time=0, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    60.216,
+    START_MOTION,
+    {"Char_gruenwald"},
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=4.48,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=0.22 }
+}
+,
+{
+    60.216,
+    START_SOUND,
+    {
+        "DX_m26_berlin_0130_gruenwald"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    63.996,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_char1"
+    }
+}
+,
+{
+    63.996,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_FSTHIPB_RLEASE_000LV_XA_01",
+     duration=10, time_scale=0.5, start_time=0, weight=1, heading=-1
+       , trans_time=0.8 
+     }
+}
+,
+{
+    63.996,
+    START_MOTION,
+    {"Char_trent"},
+    { animation='Sc_dx_s020x_1601_Trent',duration=6.59,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=0.31 }
+}
+,
+{
+    63.996,
+    START_SOUND,
+    {
+        "DX_m26_berlin_0140_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    69.888,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_char2"
+    }
+}
+,
+{
+    69.888,
+    START_MOTION,
+    {"Char_gruenwald"},
+    {animation="Sc_FMBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
+     duration=10, time_scale=0.5, start_time=0, weight=1, heading=-1
+       , trans_time=0.8 
+     }
+}
+,
+{
+    69.888,
+    START_MOTION,
+    {"Char_gruenwald"},
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=5.49,time_scale=1,trans_time=0.25,weight=1,heading=-1 }
+}
+,
+{
+    73.58800000000001,
+    START_MOTION,
+    {"Char_gruenwald"},
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=1.79,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=2.91 }
+}
+,
+{
+    69.888,
+    START_SOUND,
+    {
+        "DX_m26_berlin_0150_gruenwald"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    74.676,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_char2"
+    }
+}
+,
+{
+    74.676,
+    START_MOTION,
+    {"Char_gruenwald"},
+    {animation="Sc_FMBODY_STND_FSTHIPB_RLEASE_000LV_XA_01",
+     duration=10, time_scale=0.5, start_time=0, weight=1, heading=-1
+       , trans_time=0.8 
+     }
+}
+,
+{
+    74.676,
+    START_MOTION,
+    {"Char_gruenwald"},
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=8.30,time_scale=1,trans_time=0.25,weight=1,heading=-1 }
+}
+,
+{
+    78.376,
+    START_MOTION,
+    {"Char_gruenwald"},
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=4.60,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=0.10 }
+}
+,
+{
+    74.676,
+    START_SOUND,
+    {
+        "DX_m26_berlin_0160_gruenwald"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    82.272,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_char1"
+    }
+}
+,
+{
+    82.272,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_CROSS_ARMS_000LV_xa_06",
+     duration=10, time_scale=0.5, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    82.272,
+    START_MOTION,
+    {"Char_trent"},
+    { animation='Sc_dx_s020x_1601_Trent',duration=6.16,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=0.74 }
+}
+,
+{
+    82.272,
+    START_SOUND,
+    {
+        "DX_m26_berlin_0170_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    87.732,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_char2"
+    }
+}
+,
+{
+    87.982,
+    START_MOTION,
+    {"Char_gruenwald"},
+    {animation="Sc_FMBODY_STND_CONV_RHNDUP_TRNS_000LV_XA_01",
+     duration=10, time_scale=0.6, start_time=0, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    89.982,
+    START_MOTION,
+    {"Char_gruenwald"},
+    {animation="Sc_FMBODY_STND_CONV_RHND_CASL_000LV_xa_03",
+     duration=10, time_scale=0.6, start_time=0, weight=1, heading=-1
+     , event_flags=2   , trans_time=1 
+     }
+}
+,
+{
+    91.982,
+    START_MOTION,
+    {"Char_gruenwald"},
+    {animation="Sc_FMBODY_STND_CONV_RHNDDN_TRNS_000LV_XA_01",
+     duration=10, time_scale=0.5, start_time=0, weight=1, heading=-1
+       , trans_time=1 
+     }
+}
+,
+{
+    87.732,
+    START_MOTION,
+    {"Char_gruenwald"},
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=8.68,time_scale=1,trans_time=0.25,weight=1,heading=-1 }
+}
+,
+{
+    91.432,
+    START_MOTION,
+    {"Char_gruenwald"},
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=4.98,time_scale=1,trans_time=0.25,weight=1,heading=-1 }
+}
+,
+{
+    95.132,
+    START_MOTION,
+    {"Char_gruenwald"},
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=1.28,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=3.42 }
+}
+,
+{
+    87.732,
+    START_SOUND,
+    {
+        "DX_m26_berlin_0180_gruenwald"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    95.712,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_char2"
+    }
+}
+,
+{
+    95.712,
+    START_MOTION,
+    {"Char_gruenwald"},
+    {animation="Sc_FMBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
+     duration=10, time_scale=0.5, start_time=0, weight=1, heading=-1
+       , trans_time=0.8 
+     }
+}
+,
+{
+    95.712,
+    START_MOTION,
+    {"Char_gruenwald"},
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=6.38,time_scale=1,trans_time=0.25,weight=1,heading=-1 }
+}
+,
+{
+    99.412,
+    START_MOTION,
+    {"Char_gruenwald"},
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=2.68,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=2.02 }
+}
+,
+{
+    95.712,
+    START_SOUND,
+    {
+        "DX_m26_berlin_0190_gruenwald"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    101.388,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_char2"
+    }
+}
+,
+{
+    101.388,
+    START_MOTION,
+    {"Char_gruenwald"},
+    {animation="Sc_FMBODY_STND_FSTHIPB_RLEASE_000LV_XA_01",
+     duration=10, time_scale=0.5, start_time=0, weight=1, heading=-1
+       , trans_time=0.8 
+     }
+}
+,
+{
+    101.388,
+    START_MOTION,
+    {"Char_gruenwald"},
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=8.20,time_scale=1,trans_time=0.25,weight=1,heading=-1 }
+}
+,
+{
+    105.08800000000001,
+    START_MOTION,
+    {"Char_gruenwald"},
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=4.50,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=0.20 }
+}
+,
+{
+    101.388,
+    START_SOUND,
+    {
+        "DX_m26_berlin_0200_gruenwald"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    108.888,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_char1"
+    }
+}
+,
+{
+    108.888,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_UNCRSS_ARMS_000LV_XA_02",
+     duration=10, time_scale=0.5, start_time=0, weight=1, heading=-1
+       
+     }
+}
+,
+{
+    108.888,
+    START_MOTION,
+    {"Char_trent"},
+    { animation='Sc_dx_s020x_1601_Trent',duration=7.05,time_scale=1,trans_time=0.25,weight=1,heading=-1 }
+}
+,
+{
+    114.78800000000001,
+    START_MOTION,
+    {"Char_trent"},
+    { animation='Sc_dx_s020x_1601_Trent',duration=1.15,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=5.75 }
+}
+,
+{
+    108.888,
+    START_SOUND,
+    {
+        "DX_m26_berlin_0210_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    115.236,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_char1"
+    }
+}
+,
+{
+    115.236,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
+     duration=10, time_scale=0.5, start_time=0, weight=1, heading=-1
+       , trans_time=0.8 
+     }
+}
+,
+{
+    115.236,
+    START_MOTION,
+    {"Char_trent"},
+    { animation='Sc_dx_s020x_1601_Trent',duration=5.06,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=1.84 }
+}
+,
+{
+    115.236,
+    START_SOUND,
+    {
+        "DX_m26_berlin_0220_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    119.592,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_char2"
+    }
+}
+,
+{
+    119.842,
+    START_MOTION,
+    {"Char_gruenwald"},
+    {animation="Sc_FMBODY_STND_CROSS_ARMS_000LV_xa_03",
+     duration=10, time_scale=0.8, start_time=0, weight=1, heading=-1
+       , trans_time=0.8 
+     }
+}
+,
+{
+    119.592,
+    START_MOTION,
+    {"Char_gruenwald"},
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=3.54,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=1.16 }
+}
+,
+{
+    119.592,
+    START_SOUND,
+    {
+        "DX_m26_berlin_0230_gruenwald"
+    },
+    {
+        duration=20
+    }
+}
+
+}

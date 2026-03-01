@@ -51,7 +51,7 @@ class Msn1Cityscape(Msn1, script.CutsceneProps):
         VoiceLine(20, Stewardess, ru="Трент?.. А вы...", en="Trent?.. You're not The Tr..."),
         VoiceLine(30, Trent, ru="Нет, просто однофамилец.", en="No, no I'm not."),
         VoiceLine(40, Trent, ru="Достало уже. Пока твой тезка спасает вселенную, ты впахиваешь на дядю не покладая рук и выплачиваешь долги.",
-                  en="So tired of being reminded that Edison Trent saved the universe, while Eriksson Trent saved pennies."),
+                  en="So tired of being reminded that Edison Trent saved the universe, while Addison Trent saved pennies."),
     ]
 
 
