@@ -207,6 +207,18 @@ class Event:
         return self.root.tpl_manager.get_result(self.get_template(), params)
 
 
+class StaticEvent(Event):
+    CONTENT = None
+
+    def get_template(self):
+        raise NotImplementedError
+
+    def get_thorn(self, time):
+        if not self.CONTENT:
+            raise Exception(f'Static entity {self} have no content')
+        return self.CONTENT
+
+
 class LookAtEvent(Event):
     TEMPLATE = 'look_at'
 
@@ -763,6 +775,18 @@ class Entity:
         return self.root.tpl_manager.get_result(self.get_template(), self.get_params())
 
 
+class StaticEntity(Entity):
+    CONTENT = None
+
+    def get_template(self):
+        raise NotImplementedError
+
+    def get_thorn(self):
+        if not self.CONTENT:
+            raise Exception(f'Static entity {self} have no content')
+        return self.CONTENT
+
+
 class Marker(Entity):
     TEMPLATE = 'marker'
 
@@ -924,6 +948,9 @@ class Character(Compound):
         self.ik_start_point = ik_start_point
         self.extra_ik_markers = extra_ik_markers if extra_ik_markers else []
         self.init_char_points()
+
+    def set_camera(self, camera):
+        self.camera = camera
 
     def get_camera(self):
         if not self.camera:

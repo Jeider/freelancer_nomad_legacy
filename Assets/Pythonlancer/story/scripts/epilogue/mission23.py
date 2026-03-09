@@ -17,7 +17,7 @@ class PygarScene(MsnBackToSphere, script.CutsceneProps):
 
         VoiceLine(10, Mandrake, ru="Устройство подключено... ищу частоту... Нашел! Сигнал идёт!"),
         VoiceLine(20, Mandrake, ru="Сигнал идёт с добывающей станции Тай Тэгра."),
-        VoiceLine(30, Mandrake, ru="Получаю картинку."),
+        VoiceLine(30, Mandrake, ru="Получаю изображение."),
 
         VoiceLine(40, EdisonTrentHolo, ru="Приём, приём, как слышно?"),
         VoiceLine(50, Mandrake, ru="Генерал Трент, мы вас слышим!"),
@@ -61,11 +61,11 @@ class BackToSphereSpace(MsnBackToSphere, script.SpaceVoiceProps):
     ]
 
 
-class Mission17(MsnBackToSphere, script.StoryMission):
+class Mission23(MsnBackToSphere, script.StoryMission):
     CUTSCENES = [
         PygarScene,
     ]
     SPACE_CLASS = BackToSphereSpace
     SYNC_SPACE = True
 
-    MISSION_TITLE = 'Эпилог. Вовзращение в Сферу'
+    MISSION_TITLE = 'Эпилог. Возвращение в Сферу'

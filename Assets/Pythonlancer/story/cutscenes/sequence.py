@@ -201,6 +201,20 @@ SEQUENCE_FEMALE_STAND_CROSS = [
 ]
 
 
+SEQUENCE_FEMALE_STAND_FSTHIPB_CROSS = [
+    [
+        {'anim': Female.Sc_FMBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01, 'time_scale': 0.5, 'trans_time': 0.8}
+    ],
+    [
+        {'anim': Female.Sc_FMBODY_STND_FSTHIPB_RLEASE_000LV_XA_01, 'time_scale': 0.5, 'trans_time': 0.8}
+    ],
+    [
+        {'anim': Female.Sc_FMBODY_STND_CROSS_ARMS_000LV_xa_03, 'time_scale': 0.8, 'trans_time': 0.8}
+    ],
+    [
+        {'anim': Female.Sc_FMBODY_STND_UNCRSS_ARMS_000LV_XA_03, 'time_scale': 0.8, 'trans_time': 0.8}
+    ],
+]
 
 
 

@@ -53,6 +53,7 @@ class VoiceLine(object):
                 .replace('мистер', 'мистэр')
                 .replace('Трент', 'Трэнт')
                 .replace('Рокфорд', 'Р+окфорд')
+                .replace('Дерси', 'Д+эрси')
                 .replace('бизнес', 'б+изнэс')
                 .replace("Одзя", '+Одзя')
                 .replace('Кусари', 'Кус+ари')

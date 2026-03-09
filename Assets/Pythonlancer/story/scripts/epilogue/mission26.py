@@ -45,7 +45,7 @@ class GruenwaldSpace(MsnGruenwald, script.SpaceVoiceProps):
     ]
 
 
-class Mission17(MsnGruenwald, script.StoryMission):
+class Mission26(MsnGruenwald, script.StoryMission):
     CUTSCENES = [
         BerlinScene,
     ]

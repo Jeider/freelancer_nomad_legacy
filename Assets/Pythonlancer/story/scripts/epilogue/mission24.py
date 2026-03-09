@@ -39,4 +39,4 @@ class Mission17(MsnCivilWar, script.StoryMission):
     SPACE_CLASS = CivilWarSpace
     SYNC_SPACE = True
 
-    MISSION_TITLE = 'Эпилог. Вовзращение в Сферу'
+    MISSION_TITLE = 'Эпилог. Гражданская война в Либерти'

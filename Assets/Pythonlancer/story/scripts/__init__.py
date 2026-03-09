@@ -6,5 +6,6 @@ from story.scripts.main import (
 from story.scripts.epilogue import (
     debug,
     mission14, mission15, mission16, mission17,
-    mission23, mission24, mission26
+    mission18, mission19, mission20, mission21,
+    mission22, mission23, mission24, mission26
 )
