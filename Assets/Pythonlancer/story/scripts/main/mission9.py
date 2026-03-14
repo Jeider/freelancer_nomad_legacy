@@ -24,25 +24,25 @@ class Msn9DeckCutscene(Msn9, script.CutsceneProps):
             20,
             Trent,
             ru='К чему это?',
-            en="Yeah. Sure. Uhh... remind me what action again?"
+            en="Yeah. Sure. Uhh... what action was that again, exactly?"
         ),
         VoiceLine(
             30,
             Darcy,
             ru='К встрече с информатором! Мы понятия не имеем,, сколько тут агентов Нового Ордена!',
-            en="We're meeting our informant on New Order turf! We have no intel on how many of them there are, and how they'll receive us!"
+            en="We're meeting informants from the Order! We have no idea how many of them there'll be, much less their disposition!"
         ),
         VoiceLine(
             40,
             Trent,
             ru='Так ты же у нас прикрытие! Или Бретонская корона уже не так+ая всесильная на территории Кус+ари?',
-            en="Aren't YOU all the protection I need? Or has Bretonia's influence in Kusari territory waned?"
+            en="Aren't YOU all the protection I need? Or is Bretonia's influence in Kusari territory dwindling?"
         ),
         VoiceLine(
             50,
             Darcy,
             ru='Эй, всё с нашей короной в порядке! Только от выстрелов лазерных пушек она не защищает! Так что будь покладистей!',
-            en="Bretonia's influence is doing just fine. But sadly even the strongest influence doesn't stop laser bolts. So play nice."
+            en="Bretonia's influence is doing just fine. But even the strongest political influence can't stop a laser bolt to the head. So play nice."
         ),
         VoiceLine(
             60,
@@ -76,7 +76,7 @@ class Msn9YokohamaCutscene(Msn9, script.CutsceneProps):
             30,
             Trent,
             ru='Трудно на заметить. Они же не просто смотрят, они взглядом прожигают. Короче, если этот парламентер через полчаса не приходит - я сваливаю.',
-            en="Yeah. Creepy. If this guy doesn't show in the next thirty minutes, I'm out of here."
+            en="Yeah. Creepy. If this guy doesn't show in the next thirty minutes, I'm outta here."
         ),
         VoiceLine(
             40,
@@ -100,19 +100,19 @@ class Msn9YokohamaCutscene(Msn9, script.CutsceneProps):
             70,
             HasslerOrder,
             ru='С моей службой в Р+ейнланде покончено герр Трент. Вам повезло лично увидеть закат моей военной карьеры.',
-            en="My service for Rheinland is permanently terminated, Herr Trent. You have witnessed the sunset of a much-bemedelled military career. Kaputt."
+            en="My service for Rheinland is permanently terminated, Herr Trent. You have witnessed the sunset of a decorated military career. Kaputt. Now I have found a new home with the Order."
         ),
         VoiceLine(
             80,
             HasslerOrder,
             ru='Но хватит про меня, в наших краях вы суперзвезда, за вашу голову назначена очень хорошая награда...',
-            en="But enough about me. Around here, you are a superstar. There is a substantial bounty on your head..."
+            en="But enough about me. Around here, you are a superstar. As you are aware, there is a substantial bounty on your head..."
         ),
         VoiceLine(
             90,
             Trent,
             ru='О как... И чем обязан?',
-            en="Really? ... Any hazards why that might be so?"
+            en="There is? ... Why?"
         ),
         VoiceLine(
             100,
@@ -120,9 +120,9 @@ class Msn9YokohamaCutscene(Msn9, script.CutsceneProps):
             ru='(с усмешкой) А вы даже и не в курсе. Ха-ха. '
                'Многие думают что специально, а я считаю - по незнанию, вы такое количество раз перешли дорогу Новому Ордену, '
                'что у руководства не то что нервные тики - судороги начались. ',
-            en="(Chuckles) And he isn't even aware. Ha-ha. "
-               "And people are saying you are one cool cucumber... if they only knew it was just, how do you say it... ignorance is bliss. Herr Trent, you have crossed the New Order so many times "
-               "our leadership don't just have nervous tics when your name crops up — they have full-blown seizures. And when they recover, they have another seizure..."
+            en="(Chuckles) And he doesn't even know. Ha-ha. "
+               "People are saying that you are one cool cucumber to show up here... if they only knew it was just, how do you say it... ignorance is bliss. Herr Trent, let's just say that you have crossed the Order so many times..."
+               "our leadership don't just have nervous tics when your name comes up — they have full-blown seizures. And when they recover, they have another seizure..."
         ),
         VoiceLine(
             110,
@@ -130,20 +130,20 @@ class Msn9YokohamaCutscene(Msn9, script.CutsceneProps):
             ru='И что характ+ерно - каждый раз вы вых+одите сух+им из вод+ы. '
                'Я бы даже сказал не просто сухим из вод+ы, а («снимает шляпу перед дамой») '
                'унося на руках красивую девушку на фоне ядерного гриба.',
-            en="And each time you emerge from catastrophe not only unscathed,"
+            en="You seem to attract calamity, yet each time you somehow emerge from the brink of disaster not only unscathed,"
                "but with a beautiful girl on your arm, set against the backdrop of a big, black mushroom cloud."
         ),
         VoiceLine(
             120,
             Trent,
-            ru='Именно поэтому на меня все здесь так пялятся?', en="So that's why everyone's gawking at me."
+            ru='Именно поэтому на меня все здесь так пялятся?', en="Oh so that's why everyone's gawking at me."
         ),
         VoiceLine(
             130,
             HasslerOrder,
             ru='Конечно. После всех этих подвигов так просто заявиться в штаб-квартиру Нового Ордена. '
                'Впрочем, в данный момент вы в полной безопасности, как вам и было обещано.',
-            en="You are legend. To just waltz into New Order's HQ after all this... "
+            en="You are a legend. To just waltz into an Order base after all this just to meet me... you are either very brave, or very stupid."
                'Nonetheless, for now you are perfectly safe, as promised.'
         ),
         VoiceLine(
@@ -151,7 +151,7 @@ class Msn9YokohamaCutscene(Msn9, script.CutsceneProps):
             Trent,
             ru='Хасслер, в данный момент мне нужны ответы на пару вопросов.'
                'Первый и главный из них - где находится Аларик и что с ним?',
-            en="Hassler, right now I need answers. "
+            en="Hassler, right now I just need answers. "
                'I really need to know, where is Alaric? Is he alive and well?'
         ),
         VoiceLine(
@@ -168,12 +168,12 @@ class Msn9YokohamaCutscene(Msn9, script.CutsceneProps):
         VoiceLine(
             170,
             HasslerOrder,
-            ru='Именно! Причем незамедлительно!', en="But of course!"
+            ru='Именно! Причем незамедлительно!', en="Already on it!"
         ),
         VoiceLine(
             180,
             Darcy,
-            ru='Разумно ли это, Трент?', en="Are we being a little hasty..."
+            ru='Разумно ли это, Трент?', en="Let's not be too hasty..."
         ),
         VoiceLine(
             190,
@@ -182,7 +182,7 @@ class Msn9YokohamaCutscene(Msn9, script.CutsceneProps):
                'Ямамото-с+ама (-сама - это уважительный суффикс при обращении к мужчине в японии. как у нас господин или в германии герр) '
                'придерживается консервативных взглядов и очень уважает воинскую доблесть. ',
             en="You're already in New Order HQ. It's a little late to be getting cold feet. "
-               'Heads up. Yamamoto-san holds deeply conservative views and has a profound respect for martial prowess.'
+               'Heads up. Yamamoto-san holds deeply conservative views and has a profound respect for martial prowess. Or rather, he only respects martial prowess.'
         ),
         VoiceLine(
             200,
@@ -190,7 +190,7 @@ class Msn9YokohamaCutscene(Msn9, script.CutsceneProps):
             ru='Я рассказал ему о наших с вами совместных приключениях, и '
                ' как мне показалось он проникся уважением к вам. Не думаю что вам что-то угрожает.',
             en="I told him about our previous adventures... or misadventures, "
-               'and seems he has developed a peculiar respect for you. Or perhaps a morbid curiosity. Or both. I don\'t believe you\'re in any danger.'
+               'and he seems to have developed a peculiar respect for you. Or perhaps a morbid curiosity. Or both. I don\'t believe you\'re in any danger. Not mortal danger at least.'
         ),
         VoiceLine(
             210,
@@ -220,7 +220,7 @@ class Msn9OrderCutscene(Msn9, script.CutsceneProps):
             Yamamoto,
             ru='(задумчиво-меланхолично, без пафсоа) Мистер Трент, я думал, что в свои годы уже утратил способность удивляться, '
                'но вы меня просто поразили. По вашей истории можно написать приключенческий роман. А может и не один роман.',
-            en="Mr. Trent, I had thought that at my age I had lost all capacity for surprise, but you, you surprise me. "
+            en="Mr. Trent, I thought that at my age I had lost all capacity for surprise, but you, you surprise me. "
                'One could write an epic tale about your adventures. Or two!'
         ),
         VoiceLine(
@@ -239,7 +239,7 @@ class Msn9OrderCutscene(Msn9, script.CutsceneProps):
             ru='Мимоходом отправляете в мусорную корзину долгосрочные планы надправительственной организации. '
                '(переход на доброжелательный тон) А теперь вот стоите здесь и мирно попиваете саке с её руководителем. ',
             en="And then you casually cast the long-term plans of a supra-governmental secret organization into the trash. "
-               '(Yamamoto shifts to a benevolent tone) And here you stand, looking surprisingly healthy, before its leader.'
+               '(Yamamoto shifts to a benevolent tone) And here you stand, looking surprisingly alive and well, before its leader.'
         ),
         VoiceLine(
             50,
@@ -257,7 +257,7 @@ class Msn9OrderCutscene(Msn9, script.CutsceneProps):
             70,
             Trent,
             ru='(выпивши) Спасибо, мистер Ямамото, у меня к вам дело.',
-            en="Thank you, Mr. Yamamoto. I would have business with you."
+            en="Thank you, Mr. Yamamoto. I need a favour from you."
         ),
         VoiceLine(
             80,
@@ -293,13 +293,13 @@ class Msn9OrderCutscene(Msn9, script.CutsceneProps):
             130,
             Yamamoto,
             ru='(Серьезный тон) Не надо темнить, мистер Трент. Я не бармен, которому изливают душу.',
-            en="(turning serious) Do not be coy, Mr. Trent. I not some bartender with loose lips."
+            en="(turning serious) Do not be coy, Mr. Trent. I am not some bartender with loose lips."
         ),
         VoiceLine(
             140,
             Yamamoto,
             ru='(Саркастичский намёк) Кроме того, у меня появилось ощущение, что и к вам Кинг теплых чувств не испытывает.',
-            en="(sarcastic again) Besides, I have a feeling King isn't feeling too kindly about you either..."
+            en="(sarcastic again) Besides, I have a feeling King may not feel too kindly about you either..."
 
         ),
         VoiceLine(
@@ -318,14 +318,14 @@ class Msn9OrderCutscene(Msn9, script.CutsceneProps):
             170,
             Yamamoto,
             ru='Для того, чтобы ликвидировать Рокфорда не достаточно одного человека, даже такого везучего как вы, мистер Трент.',
-            en="To eliminate Rockford, one man is not enough. Not even one as blessedly lucky as you, Mr. Trent."
+            en="One man is not enough to eliminate a man such as Rockford. Not even a man as ridiculously lucky as you, Mr. Trent."
         ),
         VoiceLine(
             180,
             Trent,
             ru='(Уверенный и непоколебимый) Плевать на Кинга, мистер Ямамото, или, как вас правильно, Ямамото-сама? '
                'Я должен прикончить этого ублюдка и вернуть себе то, что он у меня украл.',
-            en="(confident and unwavering) I don't give a damn about King, Mr. Yamamoto, or should I say, Yamamoto-san? "
+            en="(confident and unwavering) I don't give a damn about King's feelings right now, Mr. Yamamoto, or should I say, Yamamoto-san? "
                'I\'m going track down that murderous bastard Rockford, reclaim what he stole from me and pay him back in kind.'
         ),
         VoiceLine(
@@ -350,13 +350,13 @@ class Msn9OrderCutscene(Msn9, script.CutsceneProps):
             220,
             Trent,
             ru='И в чем же она заключается?',
-            en="I'm not sure we say bone in the throat... it sounds dirty. How exactly, repay the favour?"
+            en="I'm not sure we say bone in the throat... sounds kinda dirty. How exactly will I be repaying the favour?"
         ),
         VoiceLine(
             230,
             Yamamoto,
             ru='(не напрягаясь) Нам нужно разместить специальные сканеры и обеспечить их долговременную работу.',
-            en="We just need you to deploy some an experimental scanner in space. We call it the Chrysanthemum."
+            en="We just need you to deploy an experimental scanner in space. We call it the Chrysanthemum."
         ),
         VoiceLine(
             240,
@@ -369,7 +369,7 @@ class Msn9OrderCutscene(Msn9, script.CutsceneProps):
             Yamamoto,
             ru='Нас интересует система Энтерпрайз. И все защитные мероприятия, которые были проведены СБА после распада Ордена. '
                'У нас есть технические средства, чтобы получить интересующую нас информацию. ',
-            en="We have interests in the Enterprise system. And all the defensive measures the ASF has implemented after the Order's schism. "
+            en="We have interests in the Enterprise system. And knowledge of all defensive measures the ASF has implemented since the schism of the Order. "
                'We have the technical means to acquire all the information we need with this scanner.'
         ),
         VoiceLine(
@@ -377,7 +377,7 @@ class Msn9OrderCutscene(Msn9, script.CutsceneProps):
             Yamamoto,
             ru='Их нужно разместить и удерживать в системе Сириус, охраняемой патрулями... '
                '(обрываем на высшей точке, фраза будет продолжена Трентом)',
-            en="It must be deployed within the Sirius system, which is patrolled by..."
+            en="We just need to deploy it within the Sirius system, which is patrolled by..."
         ),
         VoiceLine(
             270,
@@ -395,7 +395,7 @@ class Msn9OrderCutscene(Msn9, script.CutsceneProps):
             290,
             Trent,
             ru='(А чё нет) А почему бы и нет.',
-            en="Yeah, why not. What are friends for..."
+            en="Yeah, why not. Just another day in my life."
         ),
         VoiceLine(
             320,
@@ -407,7 +407,7 @@ class Msn9OrderCutscene(Msn9, script.CutsceneProps):
             350,
             Darcy,
             ru='Трент, ты в своём уме? Эта операция против СБА',
-            en="Trent, are insane? This operation is against the ASF!"
+            en="Trent, are crazy? This operation is against the bloody ASF!"
         ),
         VoiceLine(
             360,
@@ -428,7 +428,7 @@ class Msn9RewardCutscene(Msn9, script.CutsceneProps):
             10,
             Kim,
             ru='(грубо) Эта операция была безрассудной',
-            en="(rude) This operation was a shit storm!"
+            en="(rude) The operation was a complete fiasco!"
         ),
         VoiceLine(
             20,
@@ -440,7 +440,7 @@ class Msn9RewardCutscene(Msn9, script.CutsceneProps):
             30,
             Kim,
             ru='(грубо) Теперь выполни свою часть работы, чтобы наша жертва не была напрасной',
-            en="(rude) Now you better hold up your end of the deal, so our sacrifices weren't in vain."
+            en="(rude) You better hold up your end of the deal, or the sacrifices of my men would have been in vain."
         ),
         VoiceLine(
             40,
@@ -453,7 +453,7 @@ class Msn9RewardCutscene(Msn9, script.CutsceneProps):
             100,
             Trent,
             ru='Ей, Хасслер, тут все такие безбашенные?',
-            en="Hey, Hassler, is everyone around here nuts or what?"
+            en="Hey, Hassler, is everyone around here loony-tunes or what?"
         ),
         VoiceLine(
             110,
@@ -471,7 +471,7 @@ class Msn9RewardCutscene(Msn9, script.CutsceneProps):
             130,
             HasslerOrder,
             ru='Пока нужно отдохнуть. Для вас и фрау Д+ерси на линкоре выделены индивидуальные каюты, вас проводят',
-            en="For now, we rest. We have prepared quarters for you and Fraulein Darcy on our battleship. An escort lead you there."
+            en="For now, you rest. We have prepared quarters for you and Fraulein Darcy on our battleship. An escort will lead you there."
         ),
     ]
 
@@ -484,7 +484,7 @@ class Msn9Space(Msn9, script.SpaceVoiceProps):
             comment='интро-диалог',
             ru='Трент, мы связались с представителями Нового Ордена. Они готовы к встрече и гарантируют безопасность, '
                'но для надежности ты должен придти на встречу вместе с Д+ерси. Место встречи: станция Йокогама, система Омега-3.',
-            en="Trent, we've made contact with representatives of the New Order. They've agreed to a meeting and guarantee your safety, "
+            en="Trent, we've made contact with representatives of the New Order. They've agreed to a meeting and to guarantee your safety, "
                'but as a precaution, you will take Darcy. The meeting point is Yokohama Station in the Omega-3 system.'
         ),
 
@@ -499,24 +499,24 @@ class Msn9Space(Msn9, script.SpaceVoiceProps):
 
         VoiceLine(300, Matome,
                   ru='Это больш+ая честь участвовать в операции вместе с вами мистер Трент. У вас благородная репутация. Хоть вы и работали на СБА',
-                  en="It is an honor to join you on this operation, Mister Trent. You have a noble reputation. Even despite your work for the ASF."),
+                  en="It is an honor to join you on this operation, Mister Trent. You have a noble reputation. Even despite you working for the ASF."),
 
         VoiceLine(310, Trent,
                   ru='А чем вам не нравится СБА? Вроде же ребята официалы, с пиратами не сотрудничают. В отличие от...',
-                  en="What's the problem with the ASF? They're good guys who don't work with pirates. Unlike..."),
+                  en="What's your beef with the ASF? They're the good guys, and they don't work with pirates. Unlike..."),
 
         VoiceLine(325, Kim,
                   ru='Мы понимаем ваши намёки, мистер Трент. Орден занимается этим. Мы создаем зону всеобщего процветания в Сириусе',
-                  en="Be careful what you insinuate, Mister Trent. The Order sees it as creating a zone of shared prosperity in Sirius, agnostic to affiliation or pasts."),
+                  en="Be careful what you insinuate, Mister Trent. We in the Order are creating a zone of shared prosperity in Sirius, agnostic to past or present affiliations."),
 
         VoiceLine(326, Trent, ru='Зону всепроцветания?', en="A zone of shared prosperity?"),
 
         VoiceLine(328, Kim,
                   ru='Именно. К примеру, после нашего прихода во внешние миры наконец добралась цивилизация',
-                  en="Precisely. For instance, since we arrived, civilization has finally reached the Border Worlds."),
+                  en="Precisely. Civilization finally reached the Border Worlds after the Order arrived."),
         VoiceLine(330, Kim,
                   ru='Мы занимаемся инфраструктурой, терраформировали Кадиз. Искоренили производство Кардамина. Теперь испанцы живут лучше',
-                  en="We terraformed planet Cadiz, eradicated Cardamine production and implemented universal healthcare. Now the citizens of Hispania lead prosperous lives. We are building up infrastructure, creating jobs and enriching lives."),
+                  en="We terraformed planet Malta, eradicated Cardamine production and implemented universal healthcare. Now the citizens of Hispania lead prosperous lives. We are building up infrastructure, creating jobs and enriching lives."),
 
         VoiceLine(340, Trent,
                   ru='Но это все равно не мешает корсарам продолжать совершать набеги и терроризировать Сириус',
@@ -532,7 +532,7 @@ class Msn9Space(Msn9, script.SpaceVoiceProps):
                   en="Change takes time, Miss Darcy. Baby steps. The ASF pursuing their nationalistic agenda is not helping."),
         VoiceLine(370, Matome,
                   ru='СБА больше заинтересованы в защите мифического ящика Панд+оры вместо того, чтобы реально помогать людям и решать их проблемы',
-                  en="The ASF is more interested in safeguarding their mystical Pandora's Box from imaginery threats than helping citizens and solving their problems."),
+                  en="The ASF is more interested in safeguarding their mystical Pandora's Box from imaginery threats than helping citizens solve their mundane problems."),
 
         VoiceLine(380, Trent, ru='Очень хочется надеяться, что вы действительно говорите правду',
                   en="I really hope you're telling the truth."),
@@ -546,10 +546,10 @@ class Msn9Space(Msn9, script.SpaceVoiceProps):
 
         VoiceLine(500, Kim,
                   ru='Итак. Порядок действий такой - мы добираемся вместе с транспортом до точки размещения сканера.',
-                  en="Alright. Here's the plan: we escort the transport to the deployment point."),
+                  en="Alright. Here is the plan: we will first escort the transport to the deployment point."),
         VoiceLine(510, Kim,
                   ru='По периметру области обеспечения находятся буи-детекторы кораблей противника. Обеспечивают нам дистанционную пеленгацию.',
-                  en="The perimeter of the operational area is covered by enemy ship detector buoys. They provide long-range tracking."),
+                  en="The perimeter of the operational area is covered by the enemy's ship detector buoys. They provide long-range detection and tracking."),
         VoiceLine(520, Kim,
                   ru='Вокруг каждого буя небольшая команда прикрытия. Мой отряд и вы - оперативные силы.',
                   en="Each buoy has a small security detail."),
@@ -561,23 +561,23 @@ class Msn9Space(Msn9, script.SpaceVoiceProps):
         VoiceLine(610, Trent, ru='И вы думаете что на этом отшибе системы нас заметят?',
                   en="Any chance they'll spot us?"),
         VoiceLine(620, Kim, ru='Сейчас нет. Но они смогут запеленговать Хризантему, когда мы её запустим',
-                  en="Unlikely. But once the Chrysanthemum activates, they'll home in like bees to honey."),
+                  en="Unlikely. But once the Chrysanthemum activates, they'll home in on it like bees to honey."),
         VoiceLine(630, Trent, ru='Значит у нас не так много времени. Долго собирать эту махину?',
-                  en="So we won't have much time. How long to assemble that monstrosity?"),
+                  en="So we won't have much time. How long will it take to assemble that monstrosity?"),
 
         VoiceLine(640, Matome, ru='Мои люди профессионалы своего дела. Мы сделаем свою работу быстро.',
-                  en="My people are professionals. It'll be done before you know it."),
+                  en="My people are professionals. They will be done before you know it."),
         VoiceLine(650, Matome,
                   ru='А вы должн+ы всеми силами отвлечь СБА от Хризантемы, пока она будет работать',
-                  en="Your job is to draw the ASF away from the Chrysanthemum while it's operating."),
+                  en="Your job is to draw the ASF away from the Chrysanthemum while it is acquiring the data. This will take some time."),
 
-        VoiceLine(660, Trent, ru='Сделаю всё, что могу', en="Okay."),
+        VoiceLine(660, Trent, ru='Сделаю всё, что могу', en="Roger."),
 
         VoiceLine(680, Matome, ru='Мы на месте. Приступаем к сборке Хризантемы',
-                  en="We're on site. Starting assembly of Chrysanthemum now."),
+                  en="We're on site. Beginning assembly of the Chrysanthemum now."),
 
         VoiceLine(700, SakuraOne, ru='Сакура на связи, наш сканер фиксирует приближение патруля',
-                  en="Sakura here, our scanners are picking up an approaching patrol."),
+                  en="Sakura here, our scanners are detecting an approaching patrol."),
         VoiceLine(710, Kim,
                   ru='А вот и они. Слишком быстро. Мистер Трент, летим на помощь Сакуре. Мисс Д+ерси, прикрывайте инженеров',
                   en="What? Already? Too fast. Mister Trent, we're moving to assist Sakura. Miss Darcy, you cover the engineers."),
@@ -600,20 +600,20 @@ class Msn9Space(Msn9, script.SpaceVoiceProps):
 
         VoiceLine(810, SakuraOne,
                   ru='Внимание! Патруль разворачивается! Скорее всего мы обнаружены! Летит к Хризантеме!',
-                  en="Attention! The patrol is turning around! We've been spotted! They're heading for the Chrysanthemum!"),
+                  en="Attention! The patrol is coming back around! We've been spotted! They're heading for the Chrysanthemum!"),
         VoiceLine(820, Kim, ru='Аах, к чёрту всё! Дайте нам их местоположение, летим на перехват',
-                  en="Aah, to hell with it! We're moving to intercept!"),
+                  en="Aah, to hell with it! Move to intercept!"),
 
         VoiceLine(830, Kim, ru='Уничтожить патруль СБА!', en="Take out the ASF patrol!"),
 
         VoiceLine(840, Kim, ru='Хризантема, статус', en="Chrysanthemum, status!"),
         VoiceLine(850, Chrysanthemum,
                   ru='Датчики фиксируют приближение еще одного патруля. На этот раз они вызвали тяжелую технику',
-                  en="Sensors detect another patrol approaching. This time they've got heavyweights!"),
+                  en="Sensors are picking up another incoming patrol. This time they've got heavyweights!"),
         VoiceLine(860, Kim, ru='Летим на перехват', en="Moving to intercept!"),
 
         VoiceLine(870, Trent, ru='А этот отряд уже более серьёзный.',
-                  en="You've got to be kidding."),
+                  en="Oh you've got to be kidding me."),
         VoiceLine(880, Kim, ru='Всё верно, они явно готовят группу зачистки.',
                   en="Gunboats! This is gonna be rough."),
 
@@ -623,14 +623,14 @@ class Msn9Space(Msn9, script.SpaceVoiceProps):
         VoiceLine(900, Kim, ru='Канонерки уничтожены', en="Gunboats destroyed!"),
 
         VoiceLine(910, Chrysanthemum, ru='Внимание! Приближаются значительные силы противника! Эсминцы!',
-                  en="Warning! More forces incoming! Oh my God! Destroyers!"),
+                  en="Warning! Yet more forces incoming! Oh my God! Destroyers!"),
         VoiceLine(920, Kim,
                   ru="А вот и вражеская кавалерия. Хризантема, дайте нам ближайшие координаты. Постараемся атаковать врага на подлёте",
                   en="My God, capital ships! Chrysanthemum, give us the coordinates. We'll try to hit them on approach."),
 
         VoiceLine(950, Kim,
                   ru='Атакуйте эсминцы! Нужно повредить их до того как они в+ыйдут на огневую позицию!',
-                  en="Attack the destroyers! We need to get them before they reach firing position!"),
+                  en="Attack the destroyers! We need to hit them before they reach firing position!"),
         VoiceLine(960, Kim, ru='Атакуйте двигатели, пилоны, всё что угодно!',
                   en="Target their engines, weapon pylons, anything! Just stop them! It doesn't matter how!!"),
 
@@ -651,14 +651,14 @@ class Msn9Space(Msn9, script.SpaceVoiceProps):
                   en="Another wing of enemy destroyers has arrived!"),
 
         VoiceLine(1050, Chrysanthemum, ru='Мы получили удар торпедой! Прикрытие, сделайте что-нибудь!',
-                  en="We've been hit by a torpedo! Strike team, do something!"),
+                  en="We've been hit by a torpedo! Strike team, please try harder!"),
         VoiceLine(1060, Chrysanthemum, ru='Хризантема получила повреждения!',
                   en="The Chrysanthemum is taking damage!"),
         VoiceLine(1070, Chrysanthemum, ru='Хризантема получила серьезные повреждения! Требуется помощь!',
-                  en="We have sustained critical damage! Urrgent assistance required!"),
+                  en="We have sustained critical damage! Urgent assistance required!"),
 
         VoiceLine(1080, Kim, ru='Нет... мы потеряли Хризантему до завершения сканирования. Это провал',
-                  en="No... we lost the Chrysanthemum before the scan completed. We failed!"),
+                  en="No... we lost the Chrysanthemum before the scan could complete. We failed!"),
 
         VoiceLine(1100, Kim, ru='Мат+омэ, как идет сканирование', en="Matome, what's the scan status?"),
         VoiceLine(1110, Matome, ru='Готово на 50 процентов. Нам нужно еще время',
@@ -670,9 +670,9 @@ class Msn9Space(Msn9, script.SpaceVoiceProps):
         VoiceLine(1170, Matome, ru='Сканирование завершено!', en="Scan complete!"),
 
         VoiceLine(1200, Kim, ru='Хризантема включайте самоуничтожение и эвакуируйтесь.',
-                  en="Chrysanthemum, activate self-destruct and get your men the hell out of there!"),
+                  en="Chrysanthemum, activate self-destruct and bail out!"),
         VoiceLine(1210, Kim, ru='Трент, подбери капсулу с хризантемы',
-                  en="Trent, retrieve the escape pod from the Chrysanthemum!"),
+                  en="Trent, retrieve their escape pod from the Chrysanthemum!"),
 
         VoiceLine(1250, Kim, ru='Уходим!', en="We're bailing!"),
 
@@ -686,17 +686,17 @@ class Msn9Space(Msn9, script.SpaceVoiceProps):
 
         VoiceLine(1330, Matome,
                   ru='Мы совершим атаку камикадзе и отвлечем вражеские силы. А вы уход+ите и доставьте данные на Мус+аси сами',
-                  en="A diversionary kamikaze attack on the battleships. The ensuing chaos will give you a window to escape. Deliver the data to the Musashi. Tell them I died with honor."),
+                  en="We will launch a kamikaze attack on the battleships. The ensuing chaos should give you a window to escape. Deliver the data to the Musashi. Tell them that I died with honor."),
         VoiceLine(1340, Kim, ru='Мат+омэ, идиот, остановись!', en="Matome.. we will honour your memory. Thank you.",
                   cinematic=True),
 
         VoiceLine(1350, Matome, ru='Это наш единственный шанс! Прощай друг!',
-                  en="Go now! Farewell, my friend!",
+                  en="Go now! May we meet again, in another life, my friend.",
                   cinematic=True),
         VoiceLine(1355, Matome, ru='Банзай!', en="Banzai!",
                   cinematic=True),
 
-        VoiceLine(1360, Kim, ru='Стой! Нет!', en="Godspeed, my friend. May the heavens smile on you.",
+        VoiceLine(1360, Kim, ru='Стой! Нет!', en="Godspeed, dear friend. May the heavens smile on you.",
                   cinematic=True),
 
         VoiceLine(1400, Darcy, ru='Кажется нам пор+а уходить', en="I think it's about time we left..."),
@@ -710,7 +710,7 @@ class Msn9Space(Msn9, script.SpaceVoiceProps):
 
         VoiceLine(1500, HasslerOrder,
                   ru='Они погибли во славу Ордена. Садитесь на Мус+аси. Нужно убираться отсюда',
-                  en="They died in honour, for the greater good. Their deaths shall not be forgotten. Dock with the Musashi. We need to leave, now."),
+                  en="They died with honour, for the good of all. Their deaths shall not be forgotten. Dock with the Musashi. We need to leave, now."),
     ]
 
 class Mission9(Msn9, script.StoryMission):

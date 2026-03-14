@@ -1255,6 +1255,15 @@ class JackRazorBarber(Actor):
     STEOS_ID = 181
 
 
+class MisterAndrew(Actor):
+    RU_NAME = MS('Мистер Эндрю', 'Mister Andrew')
+    TYPE = ACTOR_MALE
+    NAME = 'mister_andrew'
+    COMM_APPEARANCE = 'rh_captain_head, rh_male_elite_body, comm_rh_elite'
+    CUTSCENE_APPEARANCE = 'mister_andrew'
+    STEOS_ID = 181
+
+
 class MonkeyKing(Actor):
     RU_NAME = MS('Тагава', 'Tagawa')
     TYPE = ACTOR_MALE

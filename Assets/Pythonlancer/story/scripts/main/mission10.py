@@ -106,7 +106,7 @@ class Msn10OfferCutscene(Msn10, script.CutsceneProps):
             150,
             Trent,
             ru='(Подытожив) И Аларик облажался...',
-               en='Didn\'t you guys say Alaric went missing delivering information...'
+               en='Didn\'t you guys say Alaric went missing while delivering information...'
         ),
         VoiceLine(
             160,
@@ -130,7 +130,7 @@ class Msn10OfferCutscene(Msn10, script.CutsceneProps):
             190,
             Trent,
             ru='Хорошо... Если вы так считаете,, герр Хасслер. (тихо, в сторону) Эх как же я задолбался... Задолбался!',
-               en='Alright... If you say so, Herr Hassler. Oh, I\'m so sick of this... And fresh out of matches.'
+               en='Alright... If you say so, Herr Hassler. Oh, I\'m so sick of this... And fresh out of matches. I\'d kill for a smoke.'
         ),
         # место для принятия миссии
         VoiceLine(
@@ -144,7 +144,7 @@ class Msn10OfferCutscene(Msn10, script.CutsceneProps):
             HasslerOrder,
             ru='Тюрьма находится в Омега-38. Система представляет собой по большей части пылевое облако. '
                 'Мус+аси переместится на окраину системы таким образом,, чтобы не привлечь внимание аборигенов.',
-               en='The prison is in Omega-38. The system is mostly dust cloud.'
+               en='The prison is in Omega-38. The system is mostly just a big dust cloud.'
                     'The Musashi will position itself on the system\'s outskirts to avoid drawing undue attention.'
         ),
         VoiceLine(
@@ -173,7 +173,7 @@ class Msn10OfferCutscene(Msn10, script.CutsceneProps):
             250,
             Trent,
             ru='Звучит заманчиво.',
-               en='Sounds appealing.'
+               en='Calm and peaceful. Sounds appealing.'
         ),
         VoiceLine(
             260,
@@ -209,7 +209,7 @@ class Msn10Space(Msn10, script.SpaceVoiceProps):
             30,
             HasslerOrder,
             ru='Эти панели снизят вашу заметность на радарах в разы. В зависимости от характера окружающего пространства от двух до семи раз.',
-               en='These panels reduce your radar signature significantly. Depending on the environment, by a factor of two to seven.'
+               en='These panels will significantly reduce your radar signatures. Depending on the environment, by a factor of two up to seven.'
         ),
         VoiceLine(
             40,
@@ -238,7 +238,7 @@ class Msn10Space(Msn10, script.SpaceVoiceProps):
                   en='Confirmed, I\'m on it. Trent, go on up ahead! We\'ll follow your lead.'),
 
         VoiceLine(110, Trent, ru='Панели работают, даже устройство невидимости не нужно.',
-                  en='The panels are working. No need for some cloaking device microwaving my ass.'),
+                  en='The panels are working. No need for some half-baked cloaking device microwaving my ass.'),
 
         VoiceLine(200, Trent, ru='Я прошел. Что дальше?', en='I\'m through. What\'s next?'),
         VoiceLine(210, Darcy, ru='Мы еще летим. А ты пока отключи местную систему безопасности.',
@@ -251,7 +251,7 @@ class Msn10Space(Msn10, script.SpaceVoiceProps):
 
         VoiceLine(300, Trent, ru='Я у аванпоста, он закрыт', en='I\'m at the outpost, it\'s sealed!'),
         VoiceLine(320, Darcy, ru='Трент, ты что как маленький. Там есть дверь. Ты уже умеешь такие взрывать',
-                  en='Come on Trent. You should know what to do with doors by now!'),
+                  en='Come on Trent. You should know what we do with doors by now.'),
 
         VoiceLine(350, Darcy,
                   ru='Давно практиковал хакерские навыки? Определи нужный цвет, стреляя одиночным огнём по цветным блокам',
@@ -259,16 +259,16 @@ class Msn10Space(Msn10, script.SpaceVoiceProps):
 
         VoiceLine(360, Darcy,
                   ru='Твоя нейрос+еть укажет насколько этот цвет близок к нужному. Искомый цвет будет назван "максимальным"',
-                      en='Your neural net will show you how close that color is to the target. The color you\'re looking for will be called "MAXIMUM"'),
-        VoiceLine(370, Darcy, ru='Найди такой цвет и уничтожь все подобные блоки', en='Find it and destroy all blocks of that color.'),
+                      en='Your neural net will provide you audio feedback indicating how close to the target that color is. The color you\'re looking for will be called "MAXIMUM"'),
+        VoiceLine(370, Darcy, ru='Найди такой цвет и уничтожь все подобные блоки', en='Find it and destroy all blocks of the same color.'),
 
         VoiceLine(390, Trent, ru='Ладно, будем вспоминать как это делается.', en='Alright, the funny bone\'s connected to the...'),
 
         VoiceLine(400, Trent, ru='Система взломана.', en='All done. System hacked.'),
         VoiceLine(410, Darcy, ru='Есть! Давай летим к нашему звену. Мы уже готовы к атаке', en='Got it! Let\'s move to rejoin our wing. We\'re ready to attack!'),
-        VoiceLine(420, Trent, ru='А чего тут за система защиты, что её надо прям ломать', en='Why the geeky hacker approach anyway? Couldn\'t we just blast our way through?'),
+        VoiceLine(420, Trent, ru='А чего тут за система защиты, что её надо прям ломать', en='Why the nerdy hacker approach anyway? Couldn\'t we just blast our way through?'),
         VoiceLine(430, Darcy, ru='Тяжелые турели, которые защищают проход без мин. Он самый простой и безопасный. Конечно когда турели в+ыключены',
-                  en='The ingress is guarded by heavy turrets covering a tiny mine-free passage. We just took the turrets offline.'),
+                  en='The ingress is guarded by heavy turrets covering a tiny mine-free passage. We just took the turrets offline. I could turn them back on just for you, if you\'d like...'),
 
         VoiceLine(450, Darcy,
                   ru='Давай Трент, командуй парадом. Резко подлетаем к базе и разносим орудийные платформы вокруг неё',
@@ -322,7 +322,7 @@ class Msn10RescuedCutscene(Msn10, script.CutsceneProps):
             30,
             Alaric,
             ru='Дружище, я там с одним хорошим человеком познакомился. Ты сейчас охренеешь. Итак... Мистер Трент, познакомьтесь, мистер Трент.',
-            en='Buddy, I met this incredible man in there. I\'ve been waiting to say this... Mister Trent, meet Mister Trent.'
+            en='Buddy, I met this incredible dude in there. I\'ve been waiting forever to say this... Mister Trent, meet Mister Trent.'
         ),
         VoiceLine(
             40,
@@ -334,19 +334,19 @@ class Msn10RescuedCutscene(Msn10, script.CutsceneProps):
             50,
             EdisonTrent,
             ru='Вытащить легенду из передряги, в которой ей угораздило утонуть с головой по собственной глупости, вы хотели сказать. Предрекаю вам блестящее будущее.',
-               en='It\'s all over your face. "How did the legendary Hero of the Nomad War manage to get himself locked up in a crummy Xeno prison?" I\'ll save you the trouble. Stupidity and carelessness. I predict a brilliant future for you.'
+               en='It\'s written all over your face. "How did the legendary Hero of the Nomad War manage to get himself locked up in a crummy Xeno prison?"'
         ),
         VoiceLine(
             60,
             Trent,
             ru='Неужели в правительство пробьюсь?',
-               en='What, I\'ll become a politician, rising star, rise to presidency one day?'
+               en='Well... yeah. So how did you end up imprisoned by the Xenos of all people?'
         ),
         VoiceLine(
             70,
             EdisonTrent,
             ru='Не смешите меня, ком+у нужны эти правительства?',
-               en='Don\'t make me laugh. Who needs those government types anyway?'
+               en='I\'d tell you but then I\'d have to... you know the drill.'
         ),
         VoiceLine(
             80,
@@ -365,13 +365,13 @@ class Msn10RescuedCutscene(Msn10, script.CutsceneProps):
             HasslerOrder,
             comment='Старый Трент уходит',
             ru='Герр Трент, лейтенант Ким обнаружил Р+окфорда.',
-               en='Herr Trent, Lieutenant Kim has located Rockford.'
+               en='Herr Trent, Lieutenant Kim informs me that he has located Rockford.'
         ),
         VoiceLine(
             110,
             Trent,
             ru='А если лейтенант Ким - то это,, видимо меня.',
-               en='And that\'s Lieutenant Kim... then it\'s for this Herr Trent.'
+               en='And that\'s Lieutenant Kim... so it\'s for this Herr Trent.'
         ),
         VoiceLine(
             120,
@@ -383,31 +383,31 @@ class Msn10RescuedCutscene(Msn10, script.CutsceneProps):
             130,
             Trent,
             ru='И где же Р+окфорд?',
-               en='So, have you tracked down Rockford?'
+               en='So, you\'ve tracked down Rockford? Where is he?'
         ),
         VoiceLine(
             140,
             HasslerOrder,
             ru='На станции Харадзюку, система Омега 7. Мы планируем подорвать корабль герра Р+окфорда, но для осуществления миссии нам необходимо чтобы вы отвлекли его на себя.',
-               en='Harajuku Station, Omega-7 system. We plan to blow up Herr Rockford\'s ship, but we\'ll need you to draw his attention while we do it.'
+               en='Harajuku Station, Omega-7 system. We plan to blow up Herr Rockford\'s ship, but we\'ll need you to keep him busy while we do it. We\'ll apprehend him after.'
         ),
         VoiceLine(
             150,
             Trent,
             ru='Хасслер, а ты всех "геррами" называешь? Даже таких засранцев,, как Р+окфорд.',
-               en='Hassler, you call everyone "Herr"? Even scumbags like Rockford?'
+               en='Hassler, do you call everyone "Herr"? Even scumbags like Rockford?'
         ),
         VoiceLine(
             160,
             HasslerOrder,
             ru='К сожалению... Чертово воспитание дает о себе знать.',
-               en='Unfortunately... A good upbringing with a loving family is hard to shake. Bah!'
+               en='Unfortunately... a good upbringing with a loving family is hard to shake. Pah!'
         ),
         VoiceLine(
             170,
             Trent,
             ru='Хорошо, я в деле',
-               en='Alright, Let\'s do this!'
+               en='Disgusting. Alright, Let\'s do this!'
         ),
     ]
 
@@ -422,39 +422,39 @@ class Msn10FinalCutscene(Msn10, script.CutsceneProps):
             10,
             Trent,
             ru='Ну к+ак т+ы, узник замка Иф, невольник чести?',
-               en='So, how are you holding up, ex-prisoner of Azkaban?'
+               en='So, how are you holding up, escapee of Azkaban?'
         ),
         VoiceLine(
             20,
             Alaric,
             ru='Теперь - отлично. А там... Я уже с жизнью прощался.',
-               en='Right now? Good. I thought I was a goner back there. And the dement..ia was real.'
+               en='Right now? Good. I thought I was gonna go nuts back there. The dement..ia was real.'
         ),
         VoiceLine(
             30,
             Trent,
             ru='А нахрена полез-то во всё это',
-               en='Why the hell did you get involved with the Order in the first place?!'
+               en='How the hell did you get involved in the Order in the first place?!'
         ),
         VoiceLine(
             40,
             Alaric,
             ru='А как еще? У тебя есть крутой друг, который на одном месте вертел спецслужбы сразу нескольких государств, '
                'жёг врагов пачками и всегда выходил сухим из воды.',
-               en='What was I supposed to do? My best friend was running circles around the intelligence agencies of multiple states,'
-                  'burning through enemies, and coming out smelling like roses.'
+               en='What was I supposed to do? My best friend was running circles around intelligence agencies of multiple states,'
+                  'burning through bad guys, and coming out smelling like roses each time.'
         ),
         VoiceLine(
             50,
             Alaric,
             ru='Надо же как-то соответствовать... Вот я и решил... Когда ко мне обратились... Тоже поиграть в спецагентов.',
-               en='I felt like I needed to match up... So when they approached me... I thought I\'d try my hand at espionage too.'
+               en='I felt like I had to match up... y\'know? So when they approached me... I jumped.'
         ),
         VoiceLine(
             60,
             Trent,
             ru='Балбес ты, Аларик... Слушай, достало меня всё это. Может сольёмся отсюда по-тихому?',
-               en='You idiot... Listen up, I never enjoyed this one bit. All this spy kids stuff is shit. What about we just slip away quietly?'
+               en='You idiot... Listen, I\'ve never enjoyed this one bit. All this spy kids stuff is just too much for me. What say you we just slip away quietly?'
         ),
         VoiceLine(
             70,
@@ -467,16 +467,16 @@ class Msn10FinalCutscene(Msn10, script.CutsceneProps):
             Trent,
             ru='Это мы сад+имся в свои корабли и уходим м+олча, по-англ+ийски. '
                'Не думаю, что нас начнут расстреливать сразу после отстыковки.',
-               en='Get in our ships and just go. Wham bam, thank you ma\'am. Like right proper Englishmen. '
-                  'I doubt they\'ll start shooting when we undock and afterburner the hell out of here.'
+               en='Get in our ships and just go. Wham bam, thank you ma\'am. Right proper Englishmen-like. '
+                  'Undock and afterburner the hell out of here before they know what hit them.'
         ),
         VoiceLine(
             90,
             Trent,
             ru='А там - рванем в приграничье, будем выполнять обычные заказы за толику малую. А то меня от этой политики уже тошнит. '
                'Я уже запутался кто против кого, и за кого сейчас я!',
-               en='Then we make a run for the Border Worlds, take on some simple jobs for a change. I\'m so sick of politics. '
-                  'I\'ve lost track of who\'s who, who\'s fighting who, and who I am today!!'
+               en='We\'d make a run for the Border Worlds, take on some nice easy jobs for a change. Laze on the beach. None of this political friend versus foe crap. '
+                  'I\'ve lost track of who\'s who, who\'s fighting who, and who I even am anymore!!'
         ),
         VoiceLine(
             100,
@@ -484,7 +484,7 @@ class Msn10FinalCutscene(Msn10, script.CutsceneProps):
             ru='Да поздно уже когти рвать-то. Улетишь ты в приграничье, '
                'а за тобой через недельку какой-нибудь Хасслер вылетит, и вежливо так прикончит. ',
                en='Forget it, Trent. You know it\'s too late to back out now. Fly off to the Border Worlds, '
-                  'a week later some Hassler type will show up and put a bullet in your head after shaking your hand.'
+                  'a week later some Hassler lookalike\'s gonna show up and put a bullet in your head.'
         ),
         VoiceLine(
             105,
@@ -496,7 +496,7 @@ class Msn10FinalCutscene(Msn10, script.CutsceneProps):
             110,
             Trent,
             ru='Да... И главная причина - ужасно досмотреть хочется, чем всё закончится.',
-               en='Yeah... ah hell. Anyway I\'m dying to see how this story ends.'
+               en='Yeah... ah hell. It was nice while it lasted. Anyway I guess I\'m dying to see how this story pans out.'
         ),
         VoiceLine(
             120,
@@ -508,13 +508,13 @@ class Msn10FinalCutscene(Msn10, script.CutsceneProps):
             130,
             Trent,
             ru='Да ладно, не смотри ты так, никуда я не смоюсь, ты же без меня опять во что-нибудь вляпаешься... ',
-               en='Aww come on, don\'t look at me like that. I\'m not going anywhere. You\'ll just get in trouble again without me...'
+               en='Aww come on, don\'t look at me like that. I\'m not going anywhere, honest. You\'d just get in trouble again without me...'
         ),
         VoiceLine(
             140,
             Trent,
             ru='Досмотрим этот боевичёк до конца. (в сторону) Пока еще не ясно, до чьег+о конца!',
-               en='Let\'s see this epic mess through to the end. Whoever\'s end it be!'
+               en='Let\'s see this trainwreck through to the end. Hopefully it won\'t be ours.'
         ),
         VoiceLine(
             200,
@@ -527,25 +527,25 @@ class Msn10FinalCutscene(Msn10, script.CutsceneProps):
             210,
             Juni,
             ru='Такой же безрассудный,, как и ты. Помогает местным фанатикам, а лучше бы их остановил.',
-               en='As dumb and reckless as you were. Enabling the fanatics instead of reigning them in.'
+               en='As dumb and impetuous as a certain someone once was. As far as I\'m concerned the only thing that\'s kept him alive so far is dumb luck. Enabling the fanatics instead of reigning them in.'
         ),
         VoiceLine(
             220,
             EdisonTrent,
             ru='А кто их остановит? Ты думаешь я смогу уломать Ямамото? Он же упёртый похлеще Ор+илиона с Кингом вместе взятыми.',
-               en='Well who\'s going to stop them? You think I can talk Yamamoto down? He\'s more stubborn than Orillion and King put together on a bad day.'
+               en='Well who\'s going to stop them? You think I can talk Yamamoto down? He\'s more stubborn than Orillion and King put together, and that\'s on a good day.'
         ),
         VoiceLine(
             230,
             Juni,
             ru='Упёртый,, алчный и коварный. И Ор+илиона больше нет,, чтобы его остановить.',
-               en='He\'s stubborn, and greedy, and cunning. And without Orillion around to keep him in check...'
+               en='Stubborn, and greedy, and cunning... without Orillion around to keep him in check... he\'s becoming a liability.'
         ),
         VoiceLine(
             240,
             EdisonTrent,
             ru='Да. Вот я и боюсь делать по твоему плану А. Но у меня есть свой план Бэ... ',
-               en='Yeah. You\'re right. Yamamoto\'s a loose cannon. So I\'m no fan, but let\'s stick to Plan A. But if that falls through, we pivot to Plan B...'
+               en='Yeah. You\'re right. Yamamoto\'s a loose cannon. Look I\'m no fan either, but let\'s stick to Plan A for now. But if that falls through, we pivot to Plan B...'
         ),
     ]
 

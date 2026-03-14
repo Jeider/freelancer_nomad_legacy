@@ -1,6 +1,6 @@
 from audio.sound import VoiceLine
 from story.actors import (Trent, EdisonTrentHolo, Washington, Hassler, Alaric, Ceed, MonkeyKing, MonkeyKingHolo,
-                          Mandrake, Juni, Gruenwald, Darcy, JackRazorBarber)
+                          Mandrake, Juni, Gruenwald, Darcy, JackRazorBarber, MisterAndrew)
 
 
 
@@ -27,6 +27,38 @@ lines = [
     VoiceLine(150, Trent, ru="Нужно выступать немедленно. Трент, готовь свой корабль. Джек снова полетит с тобой."),
     VoiceLine(160, Trent, ru="Понял,, принял."),
     VoiceLine(170, Trent, ru="Давай,, матрос, готовь свой корабль быстрее, пока моя команда не станцевала джигу на пеньковой верёвке!"),
+
+
+    # впервые на Испаньоле
+
+    VoiceLine(10, JackRazorBarber, ru="Ну что, соскучилась по открытому морю, старая подруга?"),
+    VoiceLine(20, JackRazorBarber, ru="Мистер Эндрю! Статус систем корабля!"),
+    VoiceLine(30, MisterAndrew, ru="Капитан, все системы работают штатно. Обнаружен недостаток энергии. Нам нужные новые реакторы."),
+    VoiceLine(40, JackRazorBarber, ru="Мистер Эндрю, где мы можем получить новые реакторы."),
+    VoiceLine(50, MisterAndrew, ru="Мы находим в зоне разбора кораблей. Возможно,, в этих обломках остались подходящие нам реакторы."),
+    VoiceLine(60, JackRazorBarber, ru="Капрал Трент!"),
+    VoiceLine(70, Trent, ru="Да,, капитан?"),
+    VoiceLine(80, JackRazorBarber, ru="Трент, нам н+ужно получить новые реакторы,, чтобы раскочегарить сердце Испаньолы."),
+    VoiceLine(90, JackRazorBarber, ru="Ты сможешь найти их?"),
+    VoiceLine(100, Trent, ru="Смогу. Отправляюсь."),
+ 
+
+
+    # реакторы доставлены - пираты бухают в баре
+
+    VoiceLine(10, MisterAndrew, ru="Капитан, реактор Испаньолы работает на полную мощность!"),
+    VoiceLine(10, JackRazorBarber, ru="Она снова дышит! Теперь нас не догонит даже сам дьявол!"),
+    VoiceLine(10, JackRazorBarber, ru="Эй,, капрал, может ну его спасение мира и отправимся грабить караваны?"),
+    VoiceLine(10, Trent, ru="Никак нет,, капитан. У нас есть дело"),
+    VoiceLine(10, JackRazorBarber, ru="Всё хочешь обокрасть этого коллекционера?"),
+    VoiceLine(10, Trent, ru="Возможно я найду более дипломатические способы."),
+    VoiceLine(10, JackRazorBarber, ru="Этот старый лис вцепился в свой сундук мертвой хваткой! Придется отрубить ему руки вместе с ключами!"),
+    VoiceLine(10, Trent, ru="Капитан,, я не улавливаю суть этой гиперболы."),
+    VoiceLine(10, JackRazorBarber, ru="Тебе придётся надрать ему жопу."),
+    VoiceLine(10, Trent, ru="Ну так надерём. Если повезет,, то с кого с кого,, а с Джаббы мы точно сможем содрать что-то ценное."),
+    VoiceLine(10, JackRazorBarber, ru="Тут ты тоже прав. Это самый богатый хрыщ в этих морях."),
+    VoiceLine(10, Trent, ru="Тогда я отправлюсь на рекогносцировку, а вы плывите следом."),
+    VoiceLine(10, Trent, ru="Подготовьте корабль к сражению. Будет жарко."),
 
 
 

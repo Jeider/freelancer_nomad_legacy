@@ -68,7 +68,7 @@ class Msn2Done(Msn2, script.CutsceneProps):
     TITLE = 'Вознаграждение на линкоре'
     DESCRIPTION = ''
     VOICE_LINES = [
-        VoiceLine(10, Reichman, ru="А вот и сам знаменитый Трент.", en="So the infamous Trent."),
+        VoiceLine(10, Reichman, ru="А вот и сам знаменитый Трент.", en="So, the infamous Trent."),
         VoiceLine(20, Trent, ru="И чем же я так знаменит, мистер, эмм...", en="My reputation precedes me, Mr... Umm...?"),
         VoiceLine(30, Reichman, ru="Райхманн. Адмирал Райхманн, если позволите.", en="Reichmann. Admiral Reichmann, if you may."),
         VoiceLine(40, Trent, ru="Моё почтение, адмирал Райхманн! Так чем же я знаменит?", en="An honour, Admiral Reichmann! What am I so famous for, pray tell?"),
@@ -76,8 +76,8 @@ class Msn2Done(Msn2, script.CutsceneProps):
                   en="The inner circles have been all abuzz about the conquering hero in his piece of crap ship. I hope Herr Wilhelm has been compensating you adequately."),
         VoiceLine(60, Trent, ru="Не жалуюсь.", en="No complaints here."),
         VoiceLine(70, Reichman, ru="Скромность - похвальная благодетель, герр Трент, но одной благодетелью сыт не будешь, ха-ха. Я распоряжусь, чтобы ваш гонорар за предыдущую миссию был удвоен. Всех благ, герр Трент!",
-                  en="Modesty - a commendable and often underrated virtue, Herr Trent. I'll make to double your payment. All the best to you, Herr Trent!"),
-        VoiceLine(80, Reichman, ru="Так вы считаете, что он - тот кто нам нужен?", en="So Wilham, you think that he's the one?"),
+                  en="Modesty - a commendable and often underrated virtue, Herr Trent. I'll make sure to double your payment. All the best to your travels, Herr Trent!"),
+        VoiceLine(80, Reichman, ru="Так вы считаете, что он - тот кто нам нужен?", en="So Wilham, you really think that he's the one?"),
         VoiceLine(90, Wilham, ru="Безусловно, герр Адмирал. Он - тот, кто поможет нам выполнить все известные вам задачи.",
                   en="Undoubtedly, Admiral. I can vouch for him personally. He's perfect."),
         VoiceLine(100, Reichman, ru="И вы это гарантируете?", en="Will you stake your reputation and career on him?"),
@@ -166,7 +166,7 @@ class Msn2Space(Msn2, script.SpaceVoiceProps):
             115,
             Jacobo,
             ru="Сейчас, например, они могут начать рассматривать в качестве мусора любой звездолет случайно попавший в их зону влияния и не имеющий должной охраны. Разберут его на составляющие и продадут в виде вторсырья.",
-            en="Eventually their definition of junk became more and more loose... now it includes... say any inadequately guarded spaceship traversing their territory - they tear them apart and them as spare parts. The crew as well. Haven't you noticed how the illegal organ trade has been booming? How do you think that happened?",
+            en="Eventually their definition of junk became more and more loose... now it includes... say any inadequately guarded spaceship traversing their territory - they tear them apart and sell them as spare parts. And any crew...",
         ),
         VoiceLine(
             120,
