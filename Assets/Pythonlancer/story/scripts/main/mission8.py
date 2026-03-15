@@ -1,6 +1,7 @@
 from story import script
 from audio.sound import VoiceLine
-from story.actors import Trent, Hatcher, Darcy, Tilton, Brighton, CruiserCaptain, RedLeader, Kaitlyn, King, MajorScrew
+from story.actors import Trent, Hatcher, Darcy, Tilton, Brighton, CruiserCaptain, RedLeader, Kaitlyn, King, MajorScrew, Mandrake
+from story.cutscenes.story_scenes import m08
 
 
 class Msn8(object):
@@ -374,11 +375,53 @@ class Msn8Space(Msn8, script.SpaceVoiceProps):
     ]
 
 
+class Msn8PrinceWales(Msn8, script.CutsceneProps):
+    ALIAS = 'prince_wales'
+    TITLE = 'Линкор Принц Уэльский'
+    THORN_CLASS = m08.PrinceWalesScene
+    DESCRIPTION = ''
+    VOICE_LINES = [
+        VoiceLine(10, Darcy, ru="Трент,, давай готовь корабль, мы почти приблизились к точке вылета."),
+        VoiceLine(20, Trent, ru="Что,, уже не будет никакого брифинга?"),
+        VoiceLine(30, Darcy, ru="Из тау-44 приходят противоречивые данные. Будем действовать по обстановке."),
+        VoiceLine(40, Trent, ru="Значит будем импровизировать?"),
+        VoiceLine(50, Darcy, ru="Именно так."),
+    ]
+
+
+class Msn8Sprague(Msn8, script.CutsceneProps):
+    ALIAS = 'sprague'
+    TITLE = 'Планета Спрага'
+    THORN_CLASS = m08.SpragueScene
+    DESCRIPTION = ''
+    VOICE_LINES = [
+        VoiceLine(10, Mandrake, ru="Рад снова вас видеть,, мистер Трент."),
+        VoiceLine(20, Mandrake, ru="Хорошо,, что вы смогли доставить до нас хотя бы Том Пр+отэуса. Теперь он точно будет в безопасности."),
+        VoiceLine(30, Trent, ru="К вашим услугам, профессор. Я тоже рад вас видеть."),
+        VoiceLine(40, Mandrake, ru="Кстати,, мистер Трент, у Ордена не было еще каких-либо артефактов?"),
+        VoiceLine(50, Trent, ru="Ну был какой-то кристалл,, который я разбил. После этого я очутился на друг+ом конце Сириуса в Бретонии."),
+        VoiceLine(60, Mandrake, ru="А, так вот как он работает!"),
+        VoiceLine(70, Trent, ru="Что-то не так,, профессор?"),
+        VoiceLine(80, Mandrake, ru="Мы проводили несколько экспериментов и этот артефакт просто испарялся. Мы пробовали на людях. И они испарялись вместе с артефактом..."),
+        VoiceLine(90, Mandrake, ru="Вам повезло,, что вы оказались в обитаемой системе, а не в пустом космическом пространстве в тысяче световых лет от цивилизованных систем."),
+        VoiceLine(100, Trent, ru="Значит я очень большой везунчик. Можно даже сказать,, что родился в рубашке дважды."),
+        VoiceLine(110, Hatcher, ru="Вот чёрт,, Трент, ты действительно спасся чудом."),
+        VoiceLine(120, Trent, ru="Что там по Ордену дальше,, Хетчер?"),
+        VoiceLine(130, Hatcher, ru="Пока ничего, буду наводить справки. Я сообщу,, когда всё будет готово. А пока развлекайся. Я выдам тебе небольшую компенсацию за моральный ущерб."),
+        VoiceLine(140, Trent, ru="А что там по обещанным двухсотпятидесяти тысячам?"),
+        VoiceLine(150, Hatcher, ru="Посмотрим,, как у тебя получится достать второй артефакт у Рокфорда. Если всё пойдёт хорошо,, то я обещаю тебе еще бонус сверху."),
+        VoiceLine(160, Trent, ru="Опять обещания... И куда это на всех еще заведёт..."),
+        VoiceLine(170, Trent, ru="Ладно,, бывайте. Займусь реальной работой. Жду звонка."),
+    ]
+
+
 class Mission8(Msn8, script.StoryMission):
     MISSION_INDEX = 8
     CUTSCENES = [
         Msn8Offer,
+        Msn8PrinceWales,
         Msn8Osiris,
+        Msn8Sprague,
     ]
     SPACE_CLASS = Msn8Space
     SYNC_SPACE = True

@@ -1261,7 +1261,7 @@ class MisterAndrew(Actor):
     NAME = 'mister_andrew'
     COMM_APPEARANCE = 'rh_captain_head, rh_male_elite_body, comm_rh_elite'
     CUTSCENE_APPEARANCE = 'mister_andrew'
-    STEOS_ID = 181
+    STEOS_ID = 10026
 
 
 class MonkeyKing(Actor):

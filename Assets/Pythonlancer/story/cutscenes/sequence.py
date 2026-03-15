@@ -33,6 +33,24 @@ SEQUENCE_MALE_STAND_FSTHIPB_CROSS = [
 ]
 
 
+SEQUENCE_MALE_STAND_FSTHIPB_CROSS_FAST = [
+    [
+        {'anim': Male.Sc_MLBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01, 'time_scale': 0.5, 'trans_time': 0.8}
+    ],
+    [
+        {'anim': Male.Sc_MLBODY_STND_FSTHIPB_RLEASE_000LV_XA_01, 'time_scale': 0.5, 'trans_time': 0.8}
+    ],
+    [
+        {'anim': Male.Sc_MLBODY_STND_CROSS_ARMS_000LV_xa_06, 'time_scale': 0.68, 'trans_time': 0.8}
+    ],
+    [
+        {'anim': Male.Sc_MLBODY_STND_UNCRSS_ARMS_000LV_XA_02, 'time_scale': 0.68, 'trans_time': 0.8}
+    ],
+]
+
+
+
+
 SEQUENCE_MALE_STAND_FSTHIPB = [
     [
         {'anim': Male.Sc_MLBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01, 'time_scale': 0.5, 'trans_time': 0.8}
@@ -216,6 +234,29 @@ SEQUENCE_FEMALE_STAND_FSTHIPB_CROSS = [
     ],
 ]
 
+
+SEQUENCE_FEMALE_STAND_FSTHIPB = [
+    [
+        {'anim': Female.Sc_FMBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01, 'time_scale': 0.5, 'trans_time': 0.8}
+    ],
+    [
+        {'anim': Female.Sc_FMBODY_STND_FSTHIPB_RLEASE_000LV_XA_01, 'time_scale': 0.5, 'trans_time': 0.8}
+    ],
+]
+
+SEQUENCE_FEMALE_STAND_FSTHIPB_ONCE = [
+    [
+        {'anim': Female.Sc_FMBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01, 'time_scale': 0.5, 'trans_time': 0.8}
+    ],
+    [
+        {'anim': Female.Sc_FMBODY_STND_FSTHIPB_RLEASE_000LV_XA_01, 'time_scale': 0.5, 'trans_time': 0.8}
+    ],
+    [],
+    [],
+    [],
+    [],
+    [],
+]
 
 
 SEQUENCE_MALE_SIT_LHAND_PIRATE = [
