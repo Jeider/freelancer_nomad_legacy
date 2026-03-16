@@ -108,10 +108,6 @@ class SpragueScene(Scene):
         cam_greet.set(group=MAIN)
         cam_greet.move_cam(group=MAIN, index=2, duration=6, smooth=True)
 
-
-
-
-
         main_group.append_time(6)
 
         Autoplay(
@@ -137,51 +133,3 @@ class SpragueScene(Scene):
         )
 
         main_group.append_time(2)
-
-        return
-
-        MoveFastEvent(root=self, group=MAIN, object_name=char2.name, target_name=self.get_automarker_name('char2'))
-        char2.idle(group=MAIN)
-        main_group.append_time(0.01)
-        char2.start_head_ik(group=MAIN, duration=1000)
-
-        darcy.set_camera(cam_char1_from2)
-
-
-        Autoplay(
-            self,
-            group=MAIN,
-            start_index=70,
-            finish_index=80,
-            head_ik_per_index={
-                80: [
-                    IkDelay(char1, mrk_char2_alt, duration=2.6, time_delay=-0.25),
-                ],
-            }
-        )
-        jack.set_camera(cam_char2_from1)
-        jack.move_head_ik(group=MAIN, target_name=mrk_char1, duration=3)
-
-        Autoplay(
-            self,
-            group=MAIN,
-            start_index=90,
-            finish_index=140,
-        )
-
-        darcy.move_head_ik(group=MAIN, target_name=mrk_char4, duration=2.5, time_delay=1)
-        jack.set_camera(cam_char2)
-        darcy.set_camera(cam_char1)
-
-        Autoplay(
-            self,
-            group=MAIN,
-            start_index=150,
-            head_ik_per_index={
-                170: [
-                    IkDelay(char2, mrk_char4_alt, duration=2.5, time_delay=-0.5),
-                ],
-            }
-        )
-
-        main_group.append_time(1)

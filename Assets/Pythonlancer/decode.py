@@ -242,7 +242,7 @@ def mass_upgrade44():
     # L_wing_128
     # metal03
 
-def mass_upgrade():
+def mass_upgrade_libw():
     subfolder_filename = 'lod0-212.vms.xml'
 
     old_materials = [
@@ -448,6 +448,115 @@ def mass_upgrade():
         # [['li_', f'li_{skin}_']],
         # [['or_', f'or_{skin}_']],
         [['bw_', f'bw_{skin}_']],
+    )
+
+def mass_upgrade():
+    subfolder_filename = 'lod0-212.vms.xml'
+
+    old_materials = [
+        "rh_battleship_lod",
+        "rh_cruiser_lod",
+        "rh_gunboat_lod",
+        "R_dtl1",
+        "R_dtl1",
+        "R_dtl1D",
+        "R_dtl1G",
+        "R_dtl1M",
+        "R_dtl1Wfrm",
+        "R_dtl1Wtrm",
+        "R_dtl1_Y",
+        "R_dtl2B",
+        "R_dtl2B_M",
+        "R_dtl2B_Y",
+        "R_dtl3",
+        "R_dtl3M",
+        "R_dtl3W",
+
+        "r-dark gray",
+        "Rh_elite_lod",
+        "rh_fighter_lod",
+        "rh_fighter_lod2side",
+        "rh_freigher_lod",
+        "rh_freighter_lod2side",
+        "r_dmg3",
+        "r_glass",
+        "r_panel01_256",
+        "r_panel01_2562side",
+        "r_panel01_256D",
+        "r_panel02_256",
+        "r_panel02_2562side",
+        "r_panel03_256",
+
+    ]
+    # old_materials = [
+    #     'K_Debris',
+    #     'K_dmg',
+    #     'K_dmg2side',
+    #     'K_glass',
+    #     'K_metal03',
+    #     'K_metal03_int',
+    #     'K_metal03_intD',
+    #     'K_panel01_256',
+    #     'K_panel01_256D',
+    #     'K_panel02',
+    #     'K_panel02D',
+    #     'K_panel02R',
+    #     'k_panel03',
+    #
+    #     'K_fighter01',
+    #     'K_fighter01_2side',
+    # ]
+
+    skin = 'pir'
+
+
+    subfile_changed_strings = []
+    for old_mat in old_materials:
+        old_mat_hex = crc32_hex_from_str(old_mat.lower())
+        new_mat_hex = crc32_hex_from_str(f'{skin}_{old_mat.lower()}')
+        subfile_changed_strings.append(
+            [f'0x{old_mat_hex[2:].upper()}', new_mat_hex],
+        )
+        subfile_changed_strings.append(
+            [f'0x0{old_mat_hex[2:].upper()}', new_mat_hex],
+        )
+
+    upgrades = [
+        ['filename="rh_', f'filename="rh_{skin}_'],
+        ['data.ships.rheinland.rh_gunship', f'data.ships.rheinland.rh_gunship_{skin}'],
+        ['data.ships.rheinland.rh_cruiser', f'data.ships.rheinland.rh_cruiser_{skin}'],
+        ['data.ships.rheinland.rh_battleship', f'data.ships.rheinland.rh_battleship_{skin}'],
+        ['data.ships.rheinland.rh_fighter', f'data.ships.rheinland.rh_fighter_{skin}'],
+        ['data.ships.rheinland.rh_elite', f'data.ships.rheinland.rh_elite_{skin}'],
+        ['data.ships.rheinland.rh_freighter', f'data.ships.rheinland.rh_freighter_{skin}'],
+        ['fl.rh', f'fl.rh_{skin}'],
+        ['xrh_fr', f'xrh_fr_{skin}'],
+        # ['bw_fighter_boards', f'bw_fighter_boards_{skin}'],
+        # ['bw_orig_elite_none', f'bw_orig_elite_none_{skin}'],
+        # ['bw_orig_elite_boards', f'bw_orig_elite_boards_{skin}'],
+        # ['bw_elite_boards', f'bw_elite_boards_{skin}'],
+        # ['bw_orig_elite2_non', f'bw_orig_elite2_non_{skin}'],
+        ['lod1020917205920', f'{skin}_lod1020917205920'],
+        ['lod1020917203809', f'{skin}_lod1020917203809'],
+        ['lod1021202173704', f'{skin}_lod1021202173704'],
+        ['lod1020917112833', f'{skin}_lod1020917112833'],
+        ['lod1020917110609', f'{skin}_lod1020917110609'],
+        ['lod1020917142023', f'{skin}_lod1020917142023'],
+
+
+
+    ]
+    main_file_upgrades = upgrades
+    subfile_changed_strings = subfile_changed_strings + upgrades
+
+    utf_xml.XML_UTF.mass_encode_updated_xml(
+        subfolder_filename,
+        subfile_changed_strings,
+        main_file_upgrades,
+        # [['li_elite', 'li_pir_elite'], ['li_fighter', 'li_pir_fighter'], ['li_freighter', 'li_pir_freighter']],
+        # [['li_', f'li_{skin}_']],
+        # [['or_', f'or_{skin}_']],
+        [['rh_', f'rh_{skin}_']],
     )
 
 def dbg():
