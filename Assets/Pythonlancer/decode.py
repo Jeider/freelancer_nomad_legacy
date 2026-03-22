@@ -219,7 +219,7 @@ def mass_upgrade_fx():
 def mass_upgrade3():
     main_file_upgrades = [
         [
-            f'rh_',
+            f'ku_',
             f'dtr_'
         ],
     ]
@@ -450,13 +450,13 @@ def mass_upgrade_libw():
         [['bw_', f'bw_{skin}_']],
     )
 
-def mass_upgrade():
+def mass_upgrade_rh():
     subfolder_filename = 'lod0-212.vms.xml'
 
     old_materials = [
-        "rh_battleship_lod",
-        "rh_cruiser_lod",
-        "rh_gunboat_lod",
+        "ku_battleship_lod",
+        "ku_cruiser_lod",
+        "ku_gunboat_lod",
         "R_dtl1",
         "R_dtl1",
         "R_dtl1D",
@@ -473,11 +473,11 @@ def mass_upgrade():
         "R_dtl3W",
 
         "r-dark gray",
-        "Rh_elite_lod",
-        "rh_fighter_lod",
-        "rh_fighter_lod2side",
-        "rh_freigher_lod",
-        "rh_freighter_lod2side",
+        "ku_elite_lod",
+        "ku_fighter_lod",
+        "ku_fighter_lod2side",
+        "ku_freigher_lod",
+        "ku_freighter_lod2side",
         "r_dmg3",
         "r_glass",
         "r_panel01_256",
@@ -488,26 +488,8 @@ def mass_upgrade():
         "r_panel03_256",
 
     ]
-    # old_materials = [
-    #     'K_Debris',
-    #     'K_dmg',
-    #     'K_dmg2side',
-    #     'K_glass',
-    #     'K_metal03',
-    #     'K_metal03_int',
-    #     'K_metal03_intD',
-    #     'K_panel01_256',
-    #     'K_panel01_256D',
-    #     'K_panel02',
-    #     'K_panel02D',
-    #     'K_panel02R',
-    #     'k_panel03',
-    #
-    #     'K_fighter01',
-    #     'K_fighter01_2side',
-    # ]
 
-    skin = 'pir'
+    skin = 'nmd'
 
 
     subfile_changed_strings = []
@@ -522,20 +504,16 @@ def mass_upgrade():
         )
 
     upgrades = [
-        ['filename="rh_', f'filename="rh_{skin}_'],
-        ['data.ships.rheinland.rh_gunship', f'data.ships.rheinland.rh_gunship_{skin}'],
-        ['data.ships.rheinland.rh_cruiser', f'data.ships.rheinland.rh_cruiser_{skin}'],
-        ['data.ships.rheinland.rh_battleship', f'data.ships.rheinland.rh_battleship_{skin}'],
-        ['data.ships.rheinland.rh_fighter', f'data.ships.rheinland.rh_fighter_{skin}'],
-        ['data.ships.rheinland.rh_elite', f'data.ships.rheinland.rh_elite_{skin}'],
-        ['data.ships.rheinland.rh_freighter', f'data.ships.rheinland.rh_freighter_{skin}'],
-        ['fl.rh', f'fl.rh_{skin}'],
-        ['xrh_fr', f'xrh_fr_{skin}'],
-        # ['bw_fighter_boards', f'bw_fighter_boards_{skin}'],
-        # ['bw_orig_elite_none', f'bw_orig_elite_none_{skin}'],
-        # ['bw_orig_elite_boards', f'bw_orig_elite_boards_{skin}'],
-        # ['bw_elite_boards', f'bw_elite_boards_{skin}'],
-        # ['bw_orig_elite2_non', f'bw_orig_elite2_non_{skin}'],
+        ['filename="ku_', f'filename="ku_{skin}_'],
+        ['data.ships.rheinland.ku_gunship', f'data.ships.rheinland.ku_gunship_{skin}'],
+        ['data.ships.rheinland.ku_cruiser', f'data.ships.rheinland.ku_cruiser_{skin}'],
+        ['data.ships.rheinland.ku_battleship', f'data.ships.rheinland.ku_battleship_{skin}'],
+        ['data.ships.rheinland.ku_fighter', f'data.ships.rheinland.ku_fighter_{skin}'],
+        ['data.ships.rheinland.ku_elite', f'data.ships.rheinland.ku_elite_{skin}'],
+        ['data.ships.rheinland.ku_freighter', f'data.ships.rheinland.ku_freighter_{skin}'],
+        ['fl.rh', f'fl.ku_{skin}'],
+        ['xku_fr', f'xku_fr_{skin}'],
+
         ['lod1020917205920', f'{skin}_lod1020917205920'],
         ['lod1020917203809', f'{skin}_lod1020917203809'],
         ['lod1021202173704', f'{skin}_lod1021202173704'],
@@ -553,10 +531,128 @@ def mass_upgrade():
         subfolder_filename,
         subfile_changed_strings,
         main_file_upgrades,
-        # [['li_elite', 'li_pir_elite'], ['li_fighter', 'li_pir_fighter'], ['li_freighter', 'li_pir_freighter']],
-        # [['li_', f'li_{skin}_']],
-        # [['or_', f'or_{skin}_']],
-        [['rh_', f'rh_{skin}_']],
+        [['ku_', f'ku_{skin}_']],
+    )
+
+def mass_upgrade():
+    subfolder_filename = 'lod0-212.vms.xml'
+
+    old_materials = [
+        "ku_elite_planar",
+        "ku_elite_planar_2side",
+        "Ku_fighter_textures",
+        "Ku_fighter_textures_2side",
+        "ku_freighter_lod_256",
+        "ku_wings_lod2",
+        "K_Debris",
+        "K_dmg",
+        "K_dmg2side",
+        "K_elite_256",
+        "K_elite_256_2side",
+        "K_fighter01",
+        "K_fighter01_2side",
+        "K_glass",
+        "K_metal03",
+        "K_metal03_int",
+        "K_metal03_intD",
+        "K_panel01_256",
+        "K_panel01_256D",
+        "K_panel02",
+        "K_panel02D",
+        "K_panel02R",
+        "k_panel03",
+        "K_panel_trim",
+        "K_panel_trimD",
+        "k_panel_window02",
+
+        "K_wings",
+
+        "k_wings2side",
+
+        "Equip_genD",
+        "Equip_mstrD",
+        "ku_battleship_lod1_planar",
+        "ku_detroyer_textures",
+        "ku_gunboat_textures",
+
+        "K_panel01_256R",
+        "K_panel01_256_D",
+        "K_panel01_256_M",
+        "K_panel02_256",
+        "K_panel03_256",
+        "K_panel03_blu",
+        "K_panel03_D",
+        "K_panel03_O",
+        "K_panel_trim_blu",
+        "K_panel_trim_D",
+        "K_panel_trim_M",
+    ]
+
+    skin = 'pir'
+
+
+    subfile_changed_strings = []
+    for old_mat in old_materials:
+        old_mat_hex = crc32_hex_from_str(old_mat.lower())
+        new_mat_hex = crc32_hex_from_str(f'{skin}_{old_mat.lower()}')
+        subfile_changed_strings.append(
+            [f'0x{old_mat_hex[2:].upper()}', new_mat_hex],
+        )
+        subfile_changed_strings.append(
+            [f'0x0{old_mat_hex[2:].upper()}', new_mat_hex],
+        )
+
+    upgrades = [
+        ['filename="ku_', f'filename="ku_{skin}_'],
+        ['filename="pi_', f'filename="pi_{skin}_'],
+        ['filename="pir_', f'filename="pir_{skin}_'],
+        ['data.ships.kusari.ku_gunship', f'data.ships.kusari.ku_gunship_{skin}'],
+        ['data.ships.kusari.ku_destroyer', f'data.ships.kusari.ku_destroyer_{skin}'],
+        ['data.ships.kusari.ku_battleship', f'data.ships.kusari.ku_battleship_{skin}'],
+        ['data.ships.kusari.ku_fighter', f'data.ships.kusari.ku_fighter_{skin}'],
+        ['data.ships.kusari.ku_elite', f'data.ships.kusari.ku_elite_{skin}'],
+        ['data.ships.pirate.pi_elite', f'data.ships.pirate.pi_elite_{skin}'],
+        ['data.ships.pirate.pi_fighter', f'data.ships.pirate.pi_fighter_{skin}'],
+        ['data.ships.pirate.pi_vheavy_fighter', f'data.ships.pirate.pi_vheavy_fighter_{skin}'],
+
+        ['fl.pi_elite_wings', f'fl.pi_elite_wings_{skin}'],
+        ['fl.co_fighter_wings', f'fl.co_fighter_wings_{skin}'],
+        ['pi_heavy_12345', f'pi_heavy_12345_{skin}'],
+
+        #
+        # ['xke_', f'xke_{skin}_'],
+        # ['KEstarboard', f'KEstarboard{skin}'],
+        # ['KEport', f'KEport{skin}'],
+        #
+        # ['xkf_', f'xke_{skin}_'],
+        # ['KFstarboard', f'KFstarboard{skin}'],
+        # ['KFport', f'KFport{skin}'],
+
+        # ['kf_', f'kf_{skin}_'],
+
+        ['lod1021230105011', f'{skin}_lod1021230105011'],
+        ['lod1021010103358', f'{skin}_lod1021010103358'],
+        ['lod1021010103739', f'{skin}_lod1021010103739'],
+        ['lod1030107115314', f'{skin}_lod1030107115314'],
+        ['lod1030110104503', f'{skin}_lod1030110104503'],
+        ['lod1020916162452', f'{skin}_lod1020916162452'],
+
+        ['lod1TITAN.3db', f'{skin}_lod1TITAN.3db'],
+        ['lod1030109204913', f'{skin}_lod1030109204913'],
+        ['lod1030109205127', f'{skin}_lod1030109205127'],
+    ]
+
+    # upgrades = []
+    main_file_upgrades = upgrades
+    subfile_changed_strings = subfile_changed_strings + upgrades
+
+    utf_xml.XML_UTF.mass_encode_updated_xml(
+        subfolder_filename,
+        subfile_changed_strings,
+        main_file_upgrades,
+        [['pi_', f'pi_{skin}_'],
+
+        ['ku_', f'ku_{skin}_']],
     )
 
 def dbg():
