@@ -588,7 +588,7 @@ def mass_upgrade():
         "K_panel_trim_M",
     ]
 
-    skin = 'pir'
+    skin = 'nmd'
 
 
     subfile_changed_strings = []
@@ -619,14 +619,14 @@ def mass_upgrade():
         ['fl.co_fighter_wings', f'fl.co_fighter_wings_{skin}'],
         ['pi_heavy_12345', f'pi_heavy_12345_{skin}'],
 
-        #
-        # ['xke_', f'xke_{skin}_'],
-        # ['KEstarboard', f'KEstarboard{skin}'],
-        # ['KEport', f'KEport{skin}'],
-        #
-        # ['xkf_', f'xke_{skin}_'],
-        # ['KFstarboard', f'KFstarboard{skin}'],
-        # ['KFport', f'KFport{skin}'],
+
+        ['xke_', f'xke_{skin}_'],
+        ['KEstar', f'KEstar{skin}'],
+        ['KEport', f'KEport{skin}'],
+
+        ['xkf_', f'xkf_{skin}_'],
+        ['KFstar', f'KFstar{skin}'],
+        ['KFport', f'KFport{skin}'],
 
         # ['kf_', f'kf_{skin}_'],
 
