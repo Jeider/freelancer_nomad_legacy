@@ -17,7 +17,7 @@ from templates.nebula import exclusion
 from templates.dockable import upsilon_gasinside
 from templates.dockable import valensia
 
-from story.ingame.names import MISSOURI, MSG_MISSOURI
+from story.gameplay.names import MISSOURI, MSG_MISSOURI
 from text.strings import MultiString as MS
 
 

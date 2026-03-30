@@ -64,6 +64,8 @@ class IDsManager:
         self.space_misc = IDsDatabase('space_misc', INITIAL_SPACE_MISC_ID)
         self.generic_misc = IDsDatabase('generic_misc', INITIAL_GENERIC_MISC_ID)
 
+        self.ship_dbg = IDsDatabase('ship_dbg', INITIAL_SHIP_ID)
+
         self.databases = [
             self.weapon,
             self.equip,

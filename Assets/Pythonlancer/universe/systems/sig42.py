@@ -29,7 +29,7 @@ from templates.dockable import pirate
 
 from text.content import dockable_info
 
-from story.ingame.names import MUSASHI, OSIRIS, MSG_MUSASHI, MSG_OSIRIS
+from story.gameplay.names import MUSASHI, OSIRIS, MSG_MUSASHI, MSG_OSIRIS
 from text.strings import MultiString as MS
 
 

@@ -335,6 +335,10 @@ class DataFolder:
         equip_file = self.get_ships() / 'shiparch.ini'
         equip_file.write_text(content, encoding='utf-8')
 
+    def sync_shiparch_alt(self, content):
+        equip_file = self.get_ships() / 'shiparch2.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
     def sync_ships_loadouts(self, content):
         equip_file = self.get_ships() / 'loadout_gen.ini'
         equip_file.write_text(content, encoding='utf-8')

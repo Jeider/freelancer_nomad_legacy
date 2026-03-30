@@ -5,6 +5,8 @@ from text.infocards import InfocardBuilder
 import world.ship_info_ru as RU
 import world.ship_info_en as EN
 
+from world.simples import *
+
 
 DEBRIS = 'debris'
 DISAPPEAR = 'disappear'
@@ -13,12 +15,14 @@ RESIST_DEFAULT = 3.0
 RESIST_FRONT = 2.5
 RESIST_REACTOR = 4
 
-
 class Capital:
     TEMPLATE_CODE = None
     ARCHETYPE = None
     RU_NAME = MS('', '')
     RU_INFO = MS('', '')
+
+    VISUAL = VIS_DEFAULT
+    SKIP_V1 = False
 
     HIT_PTS = None
     PARTS_HP = None
@@ -58,6 +62,22 @@ class Capital:
 
         self.ids_name = self.ids.new_name(self.RU_NAME)
         self.ids_info = self.ids.new_info(self.get_ru_info())
+
+    def get_visual(self):
+        return self.VISUAL
+
+    def get_visual_prefix(self):
+        return PREFIX_PER_VIS[self.VISUAL]
+
+    @classmethod
+    def is_skip_v1(cls):
+        return cls.VISUAL != VIS_DEFAULT or cls.SKIP_V1 is True
+
+    def get_clean_archetype(self):
+        return self.ARCHETYPE
+
+    def get_archetype(self):
+        return self.ARCHETYPE + self.get_visual_prefix()
 
     def get_hit_pts(self):
         return self.HIT_PTS
@@ -451,3 +471,139 @@ class KusariBattleshipM12Runner(Capital):
     PARTS_HP = 20000
     EXTRA_DAMAGE = 2000000
 
+
+class RheinlandBattleship(Capital):
+    SKIP_V1 = True
+    TEMPLATE_CODE = 'rbs'
+    ARCHETYPE = 'rh_battleship'
+    RU_NAME = MS('Линкор Рейнланда', 'Rheinland Battleship')
+    RU_INFO = MS(RU.BATTLESHIP, EN.BATTLESHIP)
+
+
+class LibertyDreadnought(Capital):
+    SKIP_V1 = True
+    TEMPLATE_CODE = 'ldr'
+    ARCHETYPE = 'li_dreadnought'
+    RU_NAME = MS('Линкор Либерти', 'Kusari Dreadnought')
+    RU_INFO = MS(RU.BATTLESHIP, EN.BATTLESHIP)
+
+
+class BretoniaBattleship(Capital):
+    SKIP_V1 = True
+    TEMPLATE_CODE = 'bbs'
+    ARCHETYPE = 'br_battleship'
+    RU_NAME = MS('Линкор Бретонии', 'Bretonia Battleship')
+    RU_INFO = MS(RU.BATTLESHIP, EN.BATTLESHIP)
+
+
+class KusariBattleship(Capital):
+    SKIP_V1 = True
+    TEMPLATE_CODE = 'kbs'
+    ARCHETYPE = 'ku_battleship'
+    RU_NAME = MS('Линкор Кусари', 'Kusari Battleship')
+    RU_INFO = MS(RU.BATTLESHIP, EN.BATTLESHIP)
+
+
+class Osiris(Capital):
+    SKIP_V1 = True
+    TEMPLATE_CODE = 'osiris'
+    ARCHETYPE = 'or_osiris'
+    RU_NAME = MS('Линкор Осирис', 'Battleship Osiris')
+    RU_INFO = MS(RU.BATTLESHIP, EN.BATTLESHIP)
+
+
+class PirateRheinlandGunboat(RheinlandGunboat):
+    VISUAL = VIS_PIRATE
+
+
+class PirateRheinlandCruiser(RheinlandCruiser):
+    VISUAL = VIS_PIRATE
+
+
+class PirateLibertyCruiser(LibertyCruiser):
+    VISUAL = VIS_PIRATE
+
+
+class PirateBretoniaGunboat(BretoniaGunboat):
+    VISUAL = VIS_PIRATE
+
+
+class PirateBretoniaDestroyer(BretoniaDestroyer):
+    VISUAL = VIS_PIRATE
+
+
+class PirateKusariGunboat(KusariGunboat):
+    VISUAL = VIS_PIRATE
+
+
+class PirateKusariDestroyer(KusariDestroyer):
+    VISUAL = VIS_PIRATE
+
+
+class NomadRheinlandGunboat(RheinlandGunboat):
+    VISUAL = VIS_PIRATE
+
+
+class NomadRheinlandCruiser(RheinlandCruiser):
+    VISUAL = VIS_PIRATE
+
+
+class NomadLibertyCruiser(LibertyCruiser):
+    VISUAL = VIS_NOMAD
+
+
+class NomadBretoniaGunboat(BretoniaGunboat):
+    VISUAL = VIS_NOMAD
+
+
+class NomadBretoniaDestroyer(BretoniaDestroyer):
+    VISUAL = VIS_NOMAD
+
+
+class NomadKusariGunboat(KusariGunboat):
+    VISUAL = VIS_NOMAD
+
+
+class NomadKusariDestroyer(KusariDestroyer):
+    VISUAL = VIS_NOMAD
+
+
+
+class PiratRheinlandBattleship(RheinlandBattleship):
+    VISUAL = VIS_PIRATE
+
+
+class PiratLibertyDreadnought(LibertyDreadnought):
+    VISUAL = VIS_PIRATE
+
+
+class PiratBretoniaBattleship(BretoniaBattleship):
+    VISUAL = VIS_PIRATE
+
+
+class PiratKusariBattleship(KusariBattleship):
+    VISUAL = VIS_PIRATE
+
+
+class PirateOsiris(Osiris):
+    VISUAL = VIS_PIRATE
+
+
+class NomadRheinlandBattleship(RheinlandBattleship):
+    VISUAL = VIS_NOMAD
+
+
+class NomadLibertyDreadnought(LibertyDreadnought):
+    VISUAL = VIS_NOMAD
+
+
+class NomadBretoniaBattleship(BretoniaBattleship):
+    VISUAL = VIS_NOMAD
+
+
+class NomadKusariBattleship(KusariBattleship):
+    VISUAL = VIS_NOMAD
+
+
+class NomadOsiris(Osiris):
+    VISUAL = VIS_NOMAD

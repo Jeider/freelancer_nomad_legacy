@@ -17,7 +17,7 @@ from templates.nebula import exclusion
 from templates.dockable import upsilon_gasinside
 from templates.dockable import valensia
 
-from story.ingame.names import OSIRIS, MSG_OSIRIS
+from story.gameplay.names import OSIRIS, MSG_OSIRIS
 
 
 class Sphere2Member(Member):

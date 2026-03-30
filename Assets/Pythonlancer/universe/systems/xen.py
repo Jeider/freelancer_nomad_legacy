@@ -17,7 +17,7 @@ from templates.nebula import exclusion
 from templates.dockable import upsilon_gasinside
 from templates.dockable import valensia
 
-from story.ingame.names import MUSASHI, MSG_MUSASHI
+from story.gameplay.names import MUSASHI, MSG_MUSASHI
 
 
 class XenMember(Member):

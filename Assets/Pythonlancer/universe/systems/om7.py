@@ -31,7 +31,7 @@ from templates.dockable import station_debris
 
 from text.content import dockable_info
 
-from story.ingame.names import MUSASHI, MSG_MUSASHI
+from story.gameplay.names import MUSASHI, MSG_MUSASHI
 from text.strings import MultiString as MS
 
 

@@ -17,7 +17,7 @@ from templates.nebula import exclusion
 from templates.dockable import upsilon_gasinside
 from templates.dockable import valensia
 
-from story.ingame.names import PRINCE_OF_WALES, MSG_PRINCE_OF_WALES
+from story.gameplay.names import PRINCE_OF_WALES, MSG_PRINCE_OF_WALES
 
 
 class Tau44Member(Member):

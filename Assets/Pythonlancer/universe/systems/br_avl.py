@@ -30,7 +30,7 @@ from templates.dockable import police
 from templates.dockable import shipyards
 from templates.dockable import prisons
 
-from story.ingame.names import PRINCE_OF_WALES, MSG_PRINCE_OF_WALES
+from story.gameplay.names import PRINCE_OF_WALES, MSG_PRINCE_OF_WALES
 from text.strings import MultiString as MS
 
 

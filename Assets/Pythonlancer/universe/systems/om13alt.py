@@ -9,7 +9,7 @@ from universe import faction
 
 from universe import markets
 
-from story.ingame.names import OSIRIS, MSG_OSIRIS
+from story.gameplay.names import OSIRIS, MSG_OSIRIS
 
 
 class Omega13AltMember(Member):

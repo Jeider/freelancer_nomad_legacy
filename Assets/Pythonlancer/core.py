@@ -5,7 +5,7 @@ from managers.chars import CharacterManager
 from managers.misc_equip import MiscEquipManager
 from managers.weapon import WeaponManager
 from managers.population import PopulationManager
-from managers.shiparch import ShiparchManager
+from managers.shiparch import ShiparchManager, ShiparchManagerV2
 from managers.npc_armor import NPCArmorManager
 from managers.factions import FactionManager
 from managers.universe import UniverseManager
@@ -69,6 +69,7 @@ class LancerCore:
         self.misc_equip = MiscEquipManager(self)
         self.weapons = WeaponManager(self)
         self.shiparch = ShiparchManager(self)
+        self.shiparch_v2 = ShiparchManagerV2(self)
         self.npc_armor = NPCArmorManager(self)
         self.factions = FactionManager(self)
         self.population = PopulationManager(self)

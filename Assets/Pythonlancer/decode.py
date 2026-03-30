@@ -534,7 +534,7 @@ def mass_upgrade_rh():
         [['ku_', f'ku_{skin}_']],
     )
 
-def mass_upgrade():
+def mass_upgrade_ku():
     subfolder_filename = 'lod0-212.vms.xml'
 
     old_materials = [
@@ -653,6 +653,112 @@ def mass_upgrade():
         [['pi_', f'pi_{skin}_'],
 
         ['ku_', f'ku_{skin}_']],
+    )
+
+
+def mass_upgrade():
+    subfolder_filename = 'lod0-212.vms.xml'
+
+    old_materials = [
+        # "B-dtl1",
+        # "B-dtl1-2-DB",
+        # "B-dtl1-2-DR",
+        # "B-dtl1-2-Y",
+        # "B-dtl1-2B",
+        # "B-dtl1-DG",
+        # "B-dtl1-DR",
+        # "B-dtl1-DY",
+        # "B-dtl1-LB",
+        # "B-dtl1-MB",
+        # "B-dtl1-R",
+        # "B-dtl1-Y",
+        # "B-dtl2-LB",
+        # "B-dtl2-R",
+        # "B-dtl2-Y",
+        # "B-dtl3-W",
+        # "B-dtl4",
+        # "B-dtl4-B",
+        # "B-dtl4-D2side",
+        # "B-dtl4-DB",
+        # "B-dtl4-R",
+        # "B-dtl4-Y",
+        # "Br_battleship_lod_256",
+        # "Br_destroyer",
+        # "Br_destroyer_lod",
+        # "br_gunship_256",
+        "Br_dmg",
+        "br_elite_lod",
+        "br_elite_lod2-side",
+        "br_fighter_256",
+        "br_fighter_256-2side",
+        "br_freighter_256",
+        "Br_freighter_256-2side",
+        "B_glass",
+        "B_player01_256",
+        "B_player01_256B",
+        "B_player01_256D",
+        "B_player01_256L",
+        "B_player01_256_2side",
+        "B_player02_256",
+        "B_player02_256_2side",
+        "B_player03_256",
+        "B_metal03D",
+        "B_metal03L",
+
+    ]
+
+    skin = 'nmd'
+
+
+    subfile_changed_strings = []
+    for old_mat in old_materials:
+        old_mat_hex = crc32_hex_from_str(old_mat.lower())
+        new_mat_hex = crc32_hex_from_str(f'{skin}_{old_mat.lower()}')
+        subfile_changed_strings.append(
+            [f'0x{old_mat_hex[2:].upper()}', new_mat_hex],
+        )
+        subfile_changed_strings.append(
+            [f'0x0{old_mat_hex[2:].upper()}', new_mat_hex],
+        )
+
+    upgrades = [
+        ['filename="br_', f'filename="br_{skin}_'],
+
+        ['data.ships.bretonia.br_gunship', f'data.ships.bretonia.br_gunship_{skin}'],
+        ['data.ships.bretonia.br_destroyer', f'data.ships.bretonia.br_destroyer_{skin}'],
+        ['data.ships.bretonia.br_battleship', f'data.ships.bretonia.br_battleship_{skin}'],
+        ['data.ships.bretonia.br_fighter', f'data.ships.bretonia.br_fighter_{skin}'],
+        ['data.ships.bretonia.br_elite', f'data.ships.bretonia.br_elite_{skin}'],
+        ['data.ships.bretonia.br_freighter', f'data.ships.bretonia.br_freighter_{skin}'],
+
+        # ['fl.pi_elite_wings', f'fl.pi_elite_wings_{skin}'],
+
+        ['bgb_', f'bgb_{skin}_'],
+        ['br_poly', f'br_poly{skin}_'],
+
+
+
+        ['lod1021119215401', f'{skin}_lod1021119215401'],
+        ['lod1020917152841', f'{skin}_lod1020917152841'],
+        ['lod1020917162701', f'{skin}_lod1020917162701'],
+        ['lod1020916111818', f'{skin}_lod1020916111818'],
+        ['lod1021114142815', f'{skin}_lod1021114142815'],
+        ['lod1030107145834', f'{skin}_lod1030107145834'],
+
+    ]
+
+
+    # upgrades = []
+    main_file_upgrades = upgrades
+    subfile_changed_strings = subfile_changed_strings + upgrades
+
+    utf_xml.XML_UTF.mass_encode_updated_xml(
+        subfolder_filename,
+        subfile_changed_strings,
+        main_file_upgrades,
+        [
+            ['br_', f'br_{skin}_'],
+        ],
     )
 
 def dbg():

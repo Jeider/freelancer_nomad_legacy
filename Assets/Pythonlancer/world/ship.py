@@ -12,6 +12,8 @@ from world import level
 import world.ship_info_ru as RU
 import world.ship_info_en as EN
 
+from world.simples import *
+
 LIGHT_FIGHTER = 'light_fighter'
 HEAVY_FIGHTER = 'heavy_fighter'
 FREIGHTER = 'freighter'
@@ -101,6 +103,8 @@ cargo = {nickname}, {amount}'''
 
     SHIP_TYPE = None
     IS_FIGHTER = False
+
+    VISUAL = VIS_DEFAULT
 
     FORCE_HIT_PTS = None
 
@@ -312,14 +316,26 @@ addon = {power}, HpPower01, 1'''
         super().__init_subclass__(**kwargs)
         cls.subclasses.append(cls)
 
+    def get_visual(self):
+        return self.VISUAL
+
+    def get_visual_prefix(self):
+        return PREFIX_PER_VIS[self.VISUAL]
+
+    def get_clean_archetype(self):
+        return self.ARCHETYPE
+
+    def get_archetype(self):
+        return self.ARCHETYPE + self.get_visual_prefix()
+
     def get_package_nickname(self):
-        return '{archetype}_package'.format(archetype=self.ARCHETYPE)
+        return '{archetype}_package'.format(archetype=self.get_archetype())
 
     def get_nickname(self):
         return self.get_package_nickname()
 
     def get_hull_nickname(self):
-        return '{archetype}_hull'.format(archetype=self.ARCHETYPE)
+        return '{archetype}_hull'.format(archetype=self.get_archetype())
 
     def get_package_extra_template(self):
         components = []
@@ -387,7 +403,7 @@ item_icon = Equipment\\models\\commodities\\nn_icons\\{icon}'''
 
         return self.HULL_BASE_TEMPLATE.format(
             hull_nickname=self.get_hull_nickname(),
-            ship_archetype=self.ARCHETYPE,
+            ship_archetype=self.get_archetype(),
             price=self.get_ship_price(),
             icon=self.ICON,
         )
@@ -549,7 +565,7 @@ item_icon = Equipment\\models\\commodities\\nn_icons\\{icon}'''
 
     def get_base_template_params(self):
         return {
-            'shiparch_name': self.ARCHETYPE,
+            'shiparch_name': self.get_archetype(),
             'ids_name': self.get_ids_name(),
             'ids_info': self.get_ids_info(),
             'ids_info1': self.get_ids_info1(),
@@ -605,7 +621,7 @@ item_icon = Equipment\\models\\commodities\\nn_icons\\{icon}'''
             raise Exception(f'ship {self} already used')
         self.used = True
         params = [
-            f'nickname = {self.ARCHETYPE}',
+            f'nickname = {self.get_archetype()}',
             f'ship_class = {self.SHIP_KIND_CODE}',
             f'ids_name = {self.get_ids_name()}',
             f'ids_info = {self.get_ids_info()}',

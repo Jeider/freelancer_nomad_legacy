@@ -12,7 +12,7 @@ from universe.content import interior
 from universe.content import dealers
 from universe import faction
 
-from story.ingame.names import OSIRIS, MSG_OSIRIS
+from story.gameplay.names import OSIRIS, MSG_OSIRIS
 
 
 class AsfPromMember(Member):

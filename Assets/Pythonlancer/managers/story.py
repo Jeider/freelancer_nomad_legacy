@@ -1,8 +1,8 @@
 from managers.script import ScriptManager
 
-from story.ingame.main import *  # initialize mission files
-from story.ingame.ingame_mission import IngameMission
-from story.ingame.history import get_history_items_dict, HistoryItem
+from story.gameplay.main import *  # initialize mission files
+from story.gameplay.ingame_mission import IngameMission
+from story.gameplay.history import get_history_items_dict, HistoryItem
 
 from tools.data_folder import DataFolder
 
