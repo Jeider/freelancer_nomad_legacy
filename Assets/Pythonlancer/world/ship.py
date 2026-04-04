@@ -1722,3 +1722,17 @@ class Starblazer(GenericShip, ShipElite, Ship2, Ship):
     # HP_TORPEDO = 'HpTorpedo02'
     # MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
     # MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+
+
+
+class NomadValkyrie(Valkyrie):
+    VISUAL = VIS_NOMAD
+    SHIP_CLASS = 10
+
+    RU_NAME = MS('Валькирия', 'Valkyrie')
+    RU_NAME_FULL = MS('Рейнландский тяжелый истребитель', 'Rheinland heavy fighter')
+    RU_INFO = MS(RU.RH_E, EN.RH_E)
+
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
+    MAX_WEAPONS = ['HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']

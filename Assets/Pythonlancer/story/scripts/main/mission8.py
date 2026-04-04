@@ -381,11 +381,11 @@ class Msn8PrinceWales(Msn8, script.CutsceneProps):
     THORN_CLASS = m08.PrinceWalesScene
     DESCRIPTION = ''
     VOICE_LINES = [
-        VoiceLine(10, Darcy, ru="Трент,, давай готовь корабль, мы почти приблизились к точке вылета."),
-        VoiceLine(20, Trent, ru="Что,, уже не будет никакого брифинга?"),
-        VoiceLine(30, Darcy, ru="Из тау-44 приходят противоречивые данные. Будем действовать по обстановке."),
-        VoiceLine(40, Trent, ru="Значит будем импровизировать?"),
-        VoiceLine(50, Darcy, ru="Именно так."),
+        VoiceLine(10, Darcy, ru="Трент,, давай готовь корабль, мы почти приблизились к точке вылета.", en="Trent, get your ship ready, we've almost reached the launch point."),
+        VoiceLine(20, Trent, ru="Что,, уже не будет никакого брифинга?", en="What, no briefing at all?"),
+        VoiceLine(30, Darcy, ru="Из тау-44 приходят противоречивые данные. Будем действовать по обстановке.", en="We're getting conflicting data from Tau-44. We'll have to play it by ear."),
+        VoiceLine(40, Trent, ru="Значит будем импровизировать?", en="So we're improvising?"),
+        VoiceLine(50, Darcy, ru="Именно так.", en="Exactly."),
     ]
 
 
@@ -395,23 +395,23 @@ class Msn8Sprague(Msn8, script.CutsceneProps):
     THORN_CLASS = m08.SpragueScene
     DESCRIPTION = ''
     VOICE_LINES = [
-        VoiceLine(10, Mandrake, ru="Рад снова вас видеть,, мистер Трент."),
-        VoiceLine(20, Mandrake, ru="Хорошо,, что вы смогли доставить до нас хотя бы Том Пр+отэуса. Теперь он точно будет в безопасности."),
-        VoiceLine(30, Trent, ru="К вашим услугам, профессор. Я тоже рад вас видеть."),
-        VoiceLine(40, Mandrake, ru="Кстати,, мистер Трент, у Ордена не было еще каких-либо артефактов?"),
-        VoiceLine(50, Trent, ru="Ну был какой-то кристалл,, который я разбил. После этого я очутился на друг+ом конце Сириуса в Бретонии."),
-        VoiceLine(60, Mandrake, ru="А, так вот как он работает!"),
-        VoiceLine(70, Trent, ru="Что-то не так,, профессор?"),
-        VoiceLine(80, Mandrake, ru="Мы проводили несколько экспериментов и этот артефакт просто испарялся. Мы пробовали на людях. И они испарялись вместе с артефактом..."),
-        VoiceLine(90, Mandrake, ru="Вам повезло,, что вы оказались в обитаемой системе, а не в пустом космическом пространстве в тысяче световых лет от цивилизованных систем."),
-        VoiceLine(100, Trent, ru="Значит я очень большой везунчик. Можно даже сказать,, что родился в рубашке дважды."),
-        VoiceLine(110, Hatcher, ru="Вот чёрт,, Трент, ты действительно спасся чудом."),
-        VoiceLine(120, Trent, ru="Что там по Ордену дальше,, Хетчер?"),
-        VoiceLine(130, Hatcher, ru="Пока ничего, буду наводить справки. Я сообщу,, когда всё будет готово. А пока развлекайся. Я выдам тебе небольшую компенсацию за моральный ущерб."),
-        VoiceLine(140, Trent, ru="А что там по обещанным двухсотпятидесяти тысячам?"),
-        VoiceLine(150, Hatcher, ru="Посмотрим,, как у тебя получится достать второй артефакт у Рокфорда. Если всё пойдёт хорошо,, то я обещаю тебе еще бонус сверху."),
-        VoiceLine(160, Trent, ru="Опять обещания... И куда это на всех еще заведёт..."),
-        VoiceLine(170, Trent, ru="Ладно,, бывайте. Займусь реальной работой. Жду звонка."),
+        VoiceLine(10, Mandrake, ru="Рад снова вас видеть,, мистер Трент.", en="Glad to see you again, Mr. Trent."),
+        VoiceLine(20, Mandrake, ru="Хорошо,, что вы смогли доставить до нас хотя бы Том Пр+отэуса. Теперь он точно будет в безопасности.", en="It's good that you managed to deliver at least the Proteus tome to us. Now it will definitely be safe."),
+        VoiceLine(30, Trent, ru="К вашим услугам, профессор. Я тоже рад вас видеть.", en="At your service, Professor. I'm glad to see you too."),
+        VoiceLine(40, Mandrake, ru="Кстати,, мистер Трент, у Ордена не было еще каких-либо артефактов?", en="By the way, Mr. Trent, did the Order have any other artifacts?"),
+        VoiceLine(50, Trent, ru="Ну был какой-то кристалл,, который я разбил. После этого я очутился на друг+ом конце Сириуса в Бретонии.", en="Well, there was some crystal that I broke. After that, I found myself on the other end of Sirius, in Bretonia."),
+        VoiceLine(60, Mandrake, ru="А, так вот как он работает!", en="Ah, so that's how it works!"),
+        VoiceLine(70, Trent, ru="Что-то не так,, профессор?", en="Is something wrong, Professor?"),
+        VoiceLine(80, Mandrake, ru="Мы проводили несколько экспериментов и этот артефакт просто испарялся. Мы пробовали на людях. И они испарялись вместе с артефактом...", en="We ran several experiments, and that artifact simply evaporated. We tried it on people. And they evaporated along with the artifact..."),
+        VoiceLine(90, Mandrake, ru="Вам повезло,, что вы оказались в обитаемой системе, а не в пустом космическом пространстве в тысяче световых лет от цивилизованных систем.", en="You were lucky to end up in an inhabited system, rather than in empty space a thousand light-years from civilized systems."),
+        VoiceLine(100, Trent, ru="Значит я очень большой везунчик. Можно даже сказать,, что родился в рубашке дважды.", en="So I'm a very lucky guy. You could even say I was born under a lucky star twice over."),
+        VoiceLine(110, Hatcher, ru="Вот чёрт,, Трент, ты действительно спасся чудом.", en="Damn, Trent, you really escaped by a miracle."),
+        VoiceLine(120, Trent, ru="Что там по Ордену дальше,, Хетчер?", en="What's next with the Order, Hatcher?"),
+        VoiceLine(130, Hatcher, ru="Пока ничего, буду наводить справки. Я сообщу,, когда всё будет готово. А пока развлекайся. Я выдам тебе небольшую компенсацию за моральный ущерб.", en="Nothing yet, I'll keep asking around. I'll let you know when everything is ready. Meanwhile, have fun. I'll give you a small compensation for emotional distress."),
+        VoiceLine(140, Trent, ru="А что там по обещанным двухсотпятидесяти тысячам?", en="And what about the promised two hundred and fifty thousand?"),
+        VoiceLine(150, Hatcher, ru="Посмотрим,, как у тебя получится достать второй артефакт у Рокфорда. Если всё пойдёт хорошо,, то я обещаю тебе еще бонус сверху.", en="We'll see how you manage to get the second artifact from Rockford. If everything goes well, I promise you an extra bonus on top."),
+        VoiceLine(160, Trent, ru="Опять обещания... И куда это на всех ещё заведёт...", en="Promises again... And where will that lead everyone..."),
+        VoiceLine(170, Trent, ru="Ладно,, бывайте. Займусь реальной работой. Жду звонка.", en="Alright, take care. I'll get to some real work. Waiting for your call."),
     ]
 
 

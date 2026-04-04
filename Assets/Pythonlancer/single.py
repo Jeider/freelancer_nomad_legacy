@@ -410,14 +410,14 @@ def generate_cutscene_voices():
 
     indexes = range(1, 12+1)
     indexes = [8]
-    alias = 'sprague'
-    russian = True
+    alias = 'prince_wales'
+    russian = False
 
     for i in indexes:
         msn = script_manager.get_mission_by_index(i)
         for cutscene in msn.get_cutscenes():
             print(cutscene.ALIAS)
-            if alias != None and alias != cutscene.ALIAS:
+            if alias is not None and alias != cutscene.ALIAS:
                 continue
 
             audio_folder.AudioFolder.generate_cutscene_sounds(cutscene, russian=russian)
@@ -437,12 +437,12 @@ def meta():
 
 
 def scene():
-    russian = True
+    russian = False
     # mission_index = 99
     # scene_name = 'debug'
 
     mission_index = 8
-    scene_name = 'sprague'
+    scene_name = 'prince_wales'
 
     tpl_manager = JinjaTemplateManager()
     script_manager = ScriptManager()

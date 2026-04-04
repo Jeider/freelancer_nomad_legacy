@@ -53,7 +53,7 @@ class Misson08(ingame_mission.IngameMission):
     STATIC_NPCSHIPS = NPCSHIPS
     SCRIPT_INDEX = 8
     DIRECT_SYSTEMS = [S.br_avl, S.m8_tau44, S.m8_lair_enter, S.m8_lair_core, S.m8_lair_escape, S.m8_asf_hq, S.sig42]
-    RTC = ['queen_rtc']
+    RTC = ['queen_rtc', 'prince_wales', 'sprague']
     INIT_OFFER = MultiLine(
         [
             'ЗАДАЧА:',
