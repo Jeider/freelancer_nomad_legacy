@@ -63,7 +63,8 @@ class ScriptManager(object):
                 for sound in scene.get_sounds():
                     cutscene_sounds_ini_ru.append(sound.get_cutscene_ini())
                     cutscene_sounds_ini_en.append(sound.get_cutscene_ini(russian=False))
-                    subtitles_content.append(sound.get_subtitle_content(russian=russian))
+                    if mission.SYNC_SUBS:
+                        subtitles_content.append(sound.get_subtitle_content(russian=russian))
 
             if not mission.SYNC_SPACE:
                 raise Exception('SYNC_SPACE obsolete')
@@ -71,22 +72,23 @@ class ScriptManager(object):
             ru_space_voices = mission.get_voices()
             en_space_voices = mission.get_en_voices()
 
-            if russian:
-                for voice in ru_space_voices:
-                    for sound in voice.get_sounds():
-                        if sound.use_in_cinematic():
-                            subtitles_content.append(sound.get_subtitle_content(
-                                russian=True,
-                                root=mission.get_voice_root_for_sound(sound, suffix='')
-                            ))
-            else:
-                for voice in en_space_voices:
-                    for sound in voice.get_sounds():
-                        if sound.use_in_cinematic():
-                            subtitles_content.append(sound.get_subtitle_content(
-                                russian=False,
-                                root=mission.get_voice_root_for_sound(sound, suffix='_en')
-                            ))
+            if mission.SYNC_SUBS:
+                if russian:
+                    for voice in ru_space_voices:
+                        for sound in voice.get_sounds():
+                            if sound.use_in_cinematic():
+                                subtitles_content.append(sound.get_subtitle_content(
+                                    russian=True,
+                                    root=mission.get_voice_root_for_sound(sound, suffix='')
+                                ))
+                else:
+                    for voice in en_space_voices:
+                        for sound in voice.get_sounds():
+                            if sound.use_in_cinematic():
+                                subtitles_content.append(sound.get_subtitle_content(
+                                    russian=False,
+                                    root=mission.get_voice_root_for_sound(sound, suffix='_en')
+                                ))
 
             voices = ru_space_voices + en_space_voices
             voice_ini = []

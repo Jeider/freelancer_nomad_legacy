@@ -270,5 +270,6 @@ class Mission7(Msn7, script.StoryMission):
     ]
     SPACE_CLASS = Msn7Space
     SYNC_SPACE = True
+    SYNC_SUBS = True
 
     MISSION_TITLE = 'Миссия 7. Возвращение артефактов'

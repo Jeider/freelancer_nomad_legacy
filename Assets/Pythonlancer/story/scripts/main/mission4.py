@@ -711,5 +711,6 @@ class Mission4(Msn4, script.StoryMission):
     ]
     SPACE_CLASS = Msn4Space
     SYNC_SPACE = True
+    SYNC_SUBS = True
 
     MISSION_TITLE = 'Миссия 4. Сопровождение Джакобо'

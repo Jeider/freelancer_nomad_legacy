@@ -558,5 +558,6 @@ class Mission10(Msn10, script.StoryMission):
     ]
     SPACE_CLASS = Msn10Space
     SYNC_SPACE = True
+    SYNC_SUBS = True
 
     MISSION_TITLE = 'Миссия 10. Вызволение заключенных'

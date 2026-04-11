@@ -448,5 +448,6 @@ class Mission3(Msn3, script.StoryMission):
     ]
     SPACE_CLASS = Msn3Space
     SYNC_SPACE = True
+    SYNC_SUBS = True
 
     MISSION_TITLE = 'Миссия 3. Штурм Кёнигсберга'

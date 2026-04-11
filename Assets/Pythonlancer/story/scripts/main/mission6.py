@@ -553,5 +553,6 @@ class Mission6(Msn6, script.StoryMission):
     ]
     SPACE_CLASS = Msn6Space
     SYNC_SPACE = True
+    SYNC_SUBS = True
 
     MISSION_TITLE = 'Миссия 6. Вход в Сферу'

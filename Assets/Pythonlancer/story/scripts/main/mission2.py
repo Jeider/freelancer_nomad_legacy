@@ -498,5 +498,6 @@ class Mission2(Msn2, script.StoryMission):
     ]
     SPACE_CLASS = Msn2Space
     SYNC_SPACE = True
+    SYNC_SUBS = True
 
     MISSION_TITLE = 'Миссия 2. Мусорная работа'

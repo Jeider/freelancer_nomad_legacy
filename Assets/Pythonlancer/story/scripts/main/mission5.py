@@ -738,5 +738,6 @@ class Mission5(Msn5, script.StoryMission):
     ]
     SPACE_CLASS = Msn5Space
     SYNC_SPACE = True
+    SYNC_SUBS = True
 
     MISSION_TITLE = 'Миссия 5. Поиск учёного'

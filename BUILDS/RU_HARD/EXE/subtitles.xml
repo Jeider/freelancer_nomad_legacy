@@ -284,7 +284,6 @@
 <Static AudioFile="echo_m05.utf|0xB8D06E41" TextArea="Cinematic">Фриленсер альфа-один, заблокируйте орудийные системы и проследуйте с нами до линкора Грифон. </Static>
 <Static AudioFile="echo_m05.utf|0xB8086841" TextArea="Cinematic">Фриленсер альфа-один, повторяю, заблокируйте орудийные системы и проследуйте с нами до линкора Грифон. Приказ коммандера Тилтона. В случае сопротивления открываем огонь на поражение. </Static>
 <Static AudioFile="echo_m05.utf|0x9DE4630B" TextArea="Cinematic">Этот фрилансер обвиняется ни много ни мало в уничтожении научной станции Кларк! И я имею полномочия делать с ним все, что захочу! </Static>
-<Static AudioFile="echo_m05.utf|0x9DF06201" TextArea="Cinematic">Да я-то здесь причем? Станцию изнутри взорвали, я в это время вообще снаружи был, ожидал... </Static>
 <Static AudioFile="echo_m05.utf|0x9C1C6D0B" TextArea="Cinematic">Замолчи, Трент </Static>
 <Static AudioFile="echo_m05.utf|0xB4838B4B" TextArea="Cinematic">Внимание, враждебные контакты на радаре!</Static>
 <Static AudioFile="echo_m05.utf|0x8CCD2DC9" TextArea="Cinematic">Какая встреча, герр Трент! А вы знаете, что полагается по законам Рейнланда за государственную измену? Правильно, смертная казнь! Звено, к бою! </Static>
@@ -293,6 +292,7 @@
 <Static AudioFile="echo_m05_player.utf|0xBB166EC9" TextArea="Cinematic">Здравствуйте, хозяева, дома есть? </Static>
 <Static AudioFile="echo_m05_player.utf|0x9B1622CA" TextArea="Cinematic">Мне тут некий мистер Смит намекнул, что у вас пропуск можно получить на Детройт по сходной цене. </Static>
 <Static AudioFile="echo_m05_player.utf|0x9BCE24CA" TextArea="Cinematic">Да что за... Я просто летел к вратам в Форбс, в чем дело? </Static>
+<Static AudioFile="echo_m05_player.utf|0x9BCEB4CE" TextArea="Cinematic">Да я-то здесь причем? Станцию изнутри взорвали, я в это время вообще снаружи был, ожидал... </Static>
 <Static AudioFile="MOD\m06\m06_offer_0010_trent.wav" TextArea="Cinematic">Мисс Хетчер. Аларик, не ожидал, что ты уже здесь.</Static>
 <Static AudioFile="MOD\m06\m06_offer_0020_alaric.wav" TextArea="Cinematic">Как только ты со мной связался, я сразу же прибыл к мисс Хетчер. Видимо, я был ближе к Нориджу, чем ты.</Static>
 <Static AudioFile="MOD\m06\m06_offer_0030_hatcher.wav" TextArea="Cinematic">А теперь, господа, когда все выяснили когда, откуда и каким образом мы все сюда прибыли, перейдем к делу? ... </Static>
@@ -510,6 +510,11 @@
 <Static AudioFile="MOD\m08\m08_offer_0460_kaitlyn.wav" TextArea="Cinematic">Джентльмены...</Static>
 <Static AudioFile="MOD\m08\m08_offer_0470_brighton.wav" TextArea="Cinematic">Мистер Трент, на орбите планеты находится Принц Уэльский, мой линкор. Стыкуйтесь к нему, все необходимые допуски и разрешения я вам выдам.</Static>
 <Static AudioFile="MOD\m08\m08_offer_0480_darcy.wav" TextArea="Cinematic">Трент, увидимся на Принце Уэльском.</Static>
+<Static AudioFile="MOD\m08\m08_prince_wales_0010_darcy.wav" TextArea="Cinematic">Трент, давай готовь корабль, мы почти приблизились к точке вылета.</Static>
+<Static AudioFile="MOD\m08\m08_prince_wales_0020_trent.wav" TextArea="Cinematic">Что, уже не будет никакого брифинга?</Static>
+<Static AudioFile="MOD\m08\m08_prince_wales_0030_darcy.wav" TextArea="Cinematic">Из тау-44 приходят противоречивые данные. Будем действовать по обстановке.</Static>
+<Static AudioFile="MOD\m08\m08_prince_wales_0040_trent.wav" TextArea="Cinematic">Значит будем импровизировать?</Static>
+<Static AudioFile="MOD\m08\m08_prince_wales_0050_darcy.wav" TextArea="Cinematic">Именно так.</Static>
 <Static AudioFile="MOD\m08\m08_osiris_0010_hatcher.wav" TextArea="Cinematic">Майо... эээ... Простите, генерал Кинг, майор Скрю, Трент доставлен.</Static>
 <Static AudioFile="MOD\m08\m08_osiris_0020_king.wav" TextArea="Cinematic">Спасибо, мисс Хетчер.</Static>
 <Static AudioFile="MOD\m08\m08_osiris_0030_king.wav" TextArea="Cinematic">Мистер Трент, я понимаю, что у вас выдались тяжелые... гхм... несколько дней...</Static>
@@ -550,6 +555,23 @@
 <Static AudioFile="MOD\m08\m08_osiris_0360_king.wav" TextArea="Cinematic">Мисс Хетчер, поднимите все данные по агенту Аларику и передайте их в распоряжение мистеру Тренту.</Static>
 <Static AudioFile="MOD\m08\m08_osiris_0370_king.wav" TextArea="Cinematic">Далее, вашим заданием будет сопровождение тома Протея вместе с Трентом и мисс Дерси на исследовательскую базу.</Static>
 <Static AudioFile="MOD\m08\m08_osiris_0380_hatcher.wav" TextArea="Cinematic">Принято!</Static>
+<Static AudioFile="MOD\m08\m08_sprague_0010_mandrake.wav" TextArea="Cinematic">Рад снова вас видеть, мистер Трент.</Static>
+<Static AudioFile="MOD\m08\m08_sprague_0020_mandrake.wav" TextArea="Cinematic">Хорошо, что вы смогли доставить до нас хотя бы Том Протэуса. Теперь он точно будет в безопасности.</Static>
+<Static AudioFile="MOD\m08\m08_sprague_0030_trent.wav" TextArea="Cinematic">К вашим услугам, профессор. Я тоже рад вас видеть.</Static>
+<Static AudioFile="MOD\m08\m08_sprague_0040_mandrake.wav" TextArea="Cinematic">Кстати, мистер Трент, у Ордена не было еще каких-либо артефактов?</Static>
+<Static AudioFile="MOD\m08\m08_sprague_0050_trent.wav" TextArea="Cinematic">Ну был какой-то кристалл, который я разбил. После этого я очутился на другом конце Сириуса в Бретонии.</Static>
+<Static AudioFile="MOD\m08\m08_sprague_0060_mandrake.wav" TextArea="Cinematic">А, так вот как он работает!</Static>
+<Static AudioFile="MOD\m08\m08_sprague_0070_trent.wav" TextArea="Cinematic">Что-то не так, профессор?</Static>
+<Static AudioFile="MOD\m08\m08_sprague_0080_mandrake.wav" TextArea="Cinematic">Мы проводили несколько экспериментов и этот артефакт просто испарялся. Мы пробовали на людях. И они испарялись вместе с артефактом...</Static>
+<Static AudioFile="MOD\m08\m08_sprague_0090_mandrake.wav" TextArea="Cinematic">Вам повезло, что вы оказались в обитаемой системе, а не в пустом космическом пространстве в тысяче световых лет от цивилизованных систем.</Static>
+<Static AudioFile="MOD\m08\m08_sprague_0100_trent.wav" TextArea="Cinematic">Значит я очень большой везунчик. Можно даже сказать, что родился в рубашке дважды.</Static>
+<Static AudioFile="MOD\m08\m08_sprague_0110_hatcher.wav" TextArea="Cinematic">Вот чёрт, Трент, ты действительно спасся чудом.</Static>
+<Static AudioFile="MOD\m08\m08_sprague_0120_trent.wav" TextArea="Cinematic">Что там по Ордену дальше, Хетчер?</Static>
+<Static AudioFile="MOD\m08\m08_sprague_0130_hatcher.wav" TextArea="Cinematic">Пока ничего, буду наводить справки. Я сообщу, когда всё будет готово. А пока развлекайся. Я выдам тебе небольшую компенсацию за моральный ущерб.</Static>
+<Static AudioFile="MOD\m08\m08_sprague_0140_trent.wav" TextArea="Cinematic">А что там по обещанным двухсотпятидесяти тысячам?</Static>
+<Static AudioFile="MOD\m08\m08_sprague_0150_hatcher.wav" TextArea="Cinematic">Посмотрим, как у тебя получится достать второй артефакт у Рокфорда. Если всё пойдёт хорошо, то я обещаю тебе еще бонус сверху.</Static>
+<Static AudioFile="MOD\m08\m08_sprague_0160_trent.wav" TextArea="Cinematic">Опять обещания... И куда это на всех ещё заведёт...</Static>
+<Static AudioFile="MOD\m08\m08_sprague_0170_trent.wav" TextArea="Cinematic">Ладно, бывайте. Займусь реальной работой. Жду звонка.</Static>
 <Static AudioFile="echo_m08.utf|0xA5AB9403" TextArea="Cinematic">В ваше задание внесены небольшие коррективы. Пришли новые данные от нашей разведки.</Static>
 <Static AudioFile="echo_m08.utf|0xA6AB940F" TextArea="Cinematic">База ИРА в Тау-44 уничтожена, и есть подозрение, что в ее обломках нам оставили сюрприз.</Static>
 <Static AudioFile="echo_m08.utf|0xA7AB940B" TextArea="Cinematic">С учетом этих обстоятельств, вам и Дерси, как частным лицам, предписывается вылететь в сектор и разобраться, что же там произошло.</Static>

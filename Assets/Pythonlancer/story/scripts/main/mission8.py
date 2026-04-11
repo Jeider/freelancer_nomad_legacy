@@ -425,5 +425,6 @@ class Mission8(Msn8, script.StoryMission):
     ]
     SPACE_CLASS = Msn8Space
     SYNC_SPACE = True
+    SYNC_SUBS = True
 
     MISSION_TITLE = 'Миссия 8. Эксперт по Кочевникам'

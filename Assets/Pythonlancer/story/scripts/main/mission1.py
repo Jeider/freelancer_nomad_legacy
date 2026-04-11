@@ -23,8 +23,7 @@ class Msn1Intro(Msn1, script.CutsceneProps):
         VoiceLine(70, Trent, ru="Спасибо, дружище! Ты - лучший человек на этой богом забытой планете!",
                   en="Thanks, bud. Everytime I hear you say that I suddenly remember who my favouritest person in the whole wide world is..."),
         VoiceLine(80, IntroBarman,
-        ru='Но если было "во-первых", то должно быть и "во-вторых". Давай рассказывай, я сейчас сдохну от любопытства.',
-                  en = "Yeah yeah. So if there's a \"first up\", there's gotta be a \"second up\". Spit it out already before I die of curiosity."),
+        ru='Но если было "во-первых", то должно быть и "во-вторых". Давай рассказывай, я сейчас сдохну от любопытства.', en = "Yeah yeah. So if there's a 'first up', there's gotta be a 'second up'. Spit it out already before I die of curiosity."),
         VoiceLine(90, Trent, ru="Только попробуй! Это будет непоправимой утратой.", en="Don't you die on me. Wouldn't know where to get free drinks."),
         VoiceLine(100, Trent, ru="Старый кореш прислал сообщение.", en="So anyway, an old friend sent me this pad-message."),
         VoiceLine(105, Trent, ru='Смотри', en="Check it out."),
@@ -34,8 +33,8 @@ class Msn1Intro(Msn1, script.CutsceneProps):
         VoiceLine(130, IntroBarman, ru="Думаю, сегодня ты самый счастливый сукин сын на всей этой гребаной планете.", en="I think you're the luckiest son of a bitch this side of the planet."),
         VoiceLine(140, Trent, ru="Да я не про это. Соглашаться? Лететь?", en="Naturally... but I mean... should I just up and go?"),
         VoiceLine(150, IntroBarman, ru="Можно, конечно, вообще ничего не делать, оставить все как есть. Денег на кусок хлеба хватит, да и риска никакого, разве что сдохнуть лет в сорок от работы на шахте. Но, мне кажется, что если судьба дает тебе шанс вырваться из этого болота - грех его не использовать. Хотя, решать тебе.",
-                  en="Well let's see. You could stay here and hang with your only real friend in the universe, eke out a miserable living, freeze your ass in that dingy little flat of yours and die an alcoholic washed-up loser decades from now. Or you could grab the life by the horns and fly off to live a real life... but don't let me influence you unduly."),
-        VoiceLine(160, Trent, ru="А почему сам не улетишь из \"этого болота\"?", en="If you feel so strongly why haven't you flown the coop?"),
+                  en="Well let's see. You could stay here and hang with your only real friend in the universe, eke out a miserable living, freeze your ass off in that dingy little flat of yours and die an alcoholic washed-up loser decades from now. Or you could grab life by the horns and fly off to live a real life... but don't let me influence you unduly."),
+        VoiceLine(160, Trent, ru="А почему сам не улетишь из \"этого болота\"?", en="If you feel so strongly about leaving here why haven't you flown the coop?"),
         VoiceLine(170, IntroBarman, ru="Это - моё болото. Я к нему прирос и я его люблю. И друзей, присылающих мен сообщения с просьбой все бросить и прилететь на Магдебург у меня нет. Да и потом, если я улечу, кто здесь будет исцелять души страждущих?",
                   en="Well, see... this may be a shit hole, but it's my shit hole. My bar, my life... guess I've grown attached. And unlike you I don't have friends with get-rich-quick schemes offering to share the spoils. 'Sides if I leave, who'd save everyone's souls after a shitty day?"),
         VoiceLine(180, Trent, ru = "Да уж, без тебя здесь стало бы совсем тоскливо. Ну так я в космопорт?", en = "You're right, without you this place just wouldn't be the same. I guess I'll be heading out to spaceport, then. Take care."),
@@ -74,10 +73,10 @@ class Msn1Offer(Msn1, script.CutsceneProps):
         VoiceLine(80, Alaric, ru="Нужно проводить пару рейнландских ребят из Берлина в Бисмарк. Платят хорошие деньги",
                   en="All we have to do is escort some flush Rheinlanders from New Berlin to Bismark. Deep pockets, real generous paycheck, Kaching."),
         VoiceLine(90, Trent, ru="Интересно, с чего бы рейнландским ребятам нанимать охрану для перелета из одной своей системы в другую? ",
-                  en="Hmm... what's the catch? Why would Rheinlanders fork out for hired guns to escort them within their own territory? Why not go to the authorities..."),
-        VoiceLine(100, Trent, ru="А впрочем, корабль, говоришь? Ты не оставил мне шансов, Ал!", en="I'm probably overthinking things. As they say, don't look a gift horse in the ass... And a genuine antique ship! I'm touched. You're really twisting my arm, Al!"),
+                  en="Hmm... what's the catch? Why would Rheinlanders fork out for hired guns to escort them within their own territory? Why not go to their own authorities..."),
+        VoiceLine(100, Trent, ru="А впрочем, корабль, говоришь? Ты не оставил мне шансов, Ал!", en="Ah, I'm probably overthinking things. As they say, don't look a gift horse in the ass... And a genuine antique ship! I'm touched. You're really twisting my arm, Al!"),
         VoiceLine(110, Alaric, ru="Вот и договорились. Корабль ждет тебя в ангаре. Осмотри, все ли с ним в порядке. Я буду ждать тебя в космосе.",
-                  en="I knew you'd see it my way. Your ship's awaiting you in the hangar. Best check it over, put some duct tape up on the holes if you know what I mean... I'll meet you topside when you're ready to blow... I mean roll."),
+                  en="I knew you'd see it my way. Your ship's awaiting you in the hangar. Best check it over, put some duct tape on the holes if you know what I mean... I'll meet you topside when you're ready to blow... I mean roll."),
     ]
 
 
@@ -100,9 +99,9 @@ class Msn1Bizmark(Msn1, script.CutsceneProps):
     VOICE_LINES = [
         VoiceLine(10, Adelmar, ru="Благодарю вас за сопровождение! Деньги уже перечислены на ваши счета!", en="Vielen Dank for the most excellent escort! We have transferred the money into your account!"),
         VoiceLine(20, Trent, ru="Не стоит благодарности. ", en="You're most welcome. Please feel free to contact us again if you need to."),
-        VoiceLine(30, Luc, ru="Кроме того, мы, как члены Ганзейского торгового сообщества, добавили вас в белый лист фрилансеров. ", en="As a.. how do you say... bogus? Deal sweetener? We have added you to our Hanseatic trading community freelancers' whitelist."),
+        VoiceLine(30, Luc, ru="Кроме того, мы, как члены Ганзейского торгового сообщества, добавили вас в белый лист фрилансеров. ", en="As a.. how do you say... bogus? Sweetener of the deal? We have added you to our Hanseatic trading community freelancers' whitelist."),
         VoiceLine(40, Luc, ru="Теперь вы можете брать к выполнению миссии Ганзейских купцов.", en="From now on, you may take on missions offered by Hanseatic merchants, mein friend."),
-        VoiceLine(50, Alaric, ru="А вот за это отдельное спасибо, джентльмены! Трент, ты слышал? Мы теперь на Рейнландской территории не просто голодранцы какие-то, а аккредитованные Ганзейским торговым сообществом официальные фрилансеры!", en="Ah, thank you so much for your kind generosity, gentlemen! Trent, you heart that? We have been elevated from bottom feeding gutter trash to honest to God accredited freelancers of the Hanseatic trading community!"),
+        VoiceLine(50, Alaric, ru="А вот за это отдельное спасибо, джентльмены! Трент, ты слышал? Мы теперь на Рейнландской территории не просто голодранцы какие-то, а аккредитованные Ганзейским торговым сообществом официальные фрилансеры!", en="Ah, thank you so much for your kind generosity, gentlemen! Trent, you hear that? We have been elevated from bottom feeding gutter trash to honest to God accredited freelancers of the Hanseatic trading community!"),
         VoiceLine(60, Trent, ru="Охренеть. ", en="I'm overwhelmed..."),
         VoiceLine(70, Luc, ru="И... Трент, бесплатный совет, как можно быстрее поменяй то на чём ты летаешь на что-нибудь более современное. Без обид, но подобные раритеты покупают из эстетических соображений, а не чтобы на них летать.", en="And Herr Trent, a friendly word of advice: that ship of yours... it is more holey than the church and leakier than a faucet. If it wasn't so ugly you might be able to sell it to a museum. Perhaps best to change to something less likely to kill you."),
         VoiceLine(80, Trent, ru="Я подумаю над этим.", en="Yeah... I'll think about it."),
@@ -160,7 +159,7 @@ class Msn1Space(Msn1, script.SpaceVoiceProps):
             70,
             Alaric,
             ru="Трент, не заморачивайся, кто-то из генералитета Рейнланда решил снюхаться с корсарами. И все бы ничего, да это был кто-то из самых высших кругов Рейнланда. ",
-            en="Relax Trent, it's not for us. Rumour is some government bigwig in Rheinlands' decided to go on a witch-hunt for Corsairs. Someone really high up from the looks of it. We're talking Inntermost circles.",
+            en="Relax Trent, it's not for us. Rumour is some government bigwig in Rheinland's decided to go on a witch-hunt for Corsairs. Someone really high up from the looks of it. We're talking Inntermost circles.",
         ),
         VoiceLine(
             80,
@@ -542,5 +541,6 @@ class Mission1(Msn1, script.StoryMission):
     ]
     SPACE_CLASS = Msn1Space
     SYNC_SPACE = True
+    SYNC_SUBS = True
 
     MISSION_TITLE = 'Миссия 1. Конвой в Бисмарк'

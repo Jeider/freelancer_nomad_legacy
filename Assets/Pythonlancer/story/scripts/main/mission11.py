@@ -688,5 +688,6 @@ class Mission11(Msn11, script.StoryMission):
     ]
     SPACE_CLASS = Msn11Space
     SYNC_SPACE = True
+    SYNC_SUBS = True
 
     MISSION_TITLE = 'Миссия 11. Засада на Рокфорда'

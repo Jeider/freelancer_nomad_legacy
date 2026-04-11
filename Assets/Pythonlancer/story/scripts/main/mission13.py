@@ -402,5 +402,6 @@ class Mission13(Msn13, script.StoryMission):
     ]
     SPACE_CLASS = Msn13Space
     SYNC_SPACE = True
+    SYNC_SUBS = True
 
     MISSION_TITLE = 'Миссия 13. Финал'

@@ -177,6 +177,7 @@ class StoryMission:
     MISSION_TITLE = None
     MISSION_INDEX = None
     SYNC_SPACE = False
+    SYNC_SUBS = False
 
     STYLES = '''
 .line_name {
