@@ -101,7 +101,7 @@ def generate_hacker_panels():
 
 def compile_audio():
 
-    audio_folder.AudioFolder.compile_xml_to_utf(russian=False)
+    audio_folder.AudioFolder.compile_xml_to_utf(russian=True)
     print('done')
 
 
@@ -396,12 +396,14 @@ def generate_story_voices():
     # import pdb;pdb.set_trace()
 
     indexes = range(1, 12+1)
-    indexes = [13]
+    indexes = [5]
+    russian = True
 
     for i in indexes:
         msn = script_manager.get_mission_by_index(i)
-        for voice in msn.get_en_voices():
-            audio_folder.AudioFolder.compile_story_voice_to_xml(voice, russian=False)
+        voices = msn.get_voices() if russian else msn.get_en_voices()
+        for voice in voices:
+            audio_folder.AudioFolder.compile_story_voice_to_xml(voice, russian=russian)
 
 
 def generate_cutscene_voices():

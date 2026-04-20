@@ -13,10 +13,10 @@ XML_FOLDERS = [
     # 'echo_m03',
     # 'echo_m03_female',
     # 'echo_m03_player',
-    'echo_m04',
+    # 'echo_m04',
     # 'echo_m04_female',
     # 'echo_m04_player',
-    # 'echo_m05',
+    'echo_m05',
     # 'echo_m05_female',
     # 'echo_m05_player',
     # 'echo_m06',
@@ -99,7 +99,6 @@ class AudioFolder:
         current_path = pathlib.Path().resolve()
         return current_path.parent / INITIAL_AUDIO_CUTSCENE_FOLDER_EN
 
-
     @staticmethod
     def get_apply_cutscene_audio_path():
         current_path = pathlib.Path().resolve()
@@ -154,6 +153,8 @@ class AudioFolder:
             alt_file_destination = sounds_path / f"{sound.name}.wav"
             if file_destination.exists() or alt_file_destination.exists():
                 continue
+
+            print(sound.line.get_info())
 
             if sound.line.actor.STEOS_ID is None:
                 raise Exception('actor %s have no steos for line name %s' % (sound.line.actor.NAME, sound.name))

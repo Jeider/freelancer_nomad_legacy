@@ -283,16 +283,17 @@
 <Static AudioFile="echo_m05_en.utf|0xA7C4FF08" TextArea="Cinematic">Let's deal with this moron first. Get him!</Static>
 <Static AudioFile="echo_m05_en.utf|0xB8D06E41" TextArea="Cinematic">Freelancer alpha-one, power down your weapons and follow us to the battleship Griffin.</Static>
 <Static AudioFile="echo_m05_en.utf|0xB8086841" TextArea="Cinematic">Freelancer alpha-one, I repeat, power down your weapons and follow us to battleship Griffin. This is a direct order from Commander Tilton. If you fail to comply, we will open fire. </Static>
-<Static AudioFile="echo_m05_en.utf|0x9DE4630B" TextArea="Cinematic">This man is responsible for the destruction of Clark research station! And I have been granted the authority to deal with him as I please!</Static>
-<Static AudioFile="echo_m05_en.utf|0x9C1C6D0B" TextArea="Cinematic">Shut up, Freelancer!</Static>
+<Static AudioFile="echo_m05_en.utf|0x9DE4630B" TextArea="Cinematic">Miss Hatcher! Long time no see. Your agents have been quite a pain in the ass. But now, oh, now you've crossed the line! </Static>
+<Static AudioFile="echo_m05_en.utf|0xBDE4F70E" TextArea="Cinematic">This man is responsible for the destruction of Clark research station! And I have been granted the authority to deal with him as I please!</Static>
+<Static AudioFile="echo_m05_en.utf|0xBC1CF90E" TextArea="Cinematic">Shut up, Trent!</Static>
 <Static AudioFile="echo_m05_en.utf|0xB4838B4B" TextArea="Cinematic">Attention, we're reading incoming hostiles on radar!</Static>
 <Static AudioFile="echo_m05_en.utf|0x8CCD2DC9" TextArea="Cinematic">What a pleasant surprise to encounter you here, Herr Trent! Rheinland sends its regards. All wingmen, destroy the freelancer!</Static>
 <Static AudioFile="echo_m05_female_en.utf|0x8E3E0F8C" TextArea="Cinematic">Whoa there, boys! Freelancer alpha-one is under my employ. He's on our side. Is that clear?</Static>
-<Static AudioFile="echo_m05_female_en.utf|0xBE32F78C" TextArea="Cinematic">Shut up, Trent!</Static>
+<Static AudioFile="echo_m05_female_en.utf|0xBE32F78C" TextArea="Cinematic">Shut up, Freelancer!</Static>
 <Static AudioFile="echo_m05_player_en.utf|0xBB166EC9" TextArea="Cinematic">Knock knock. Anybody home?</Static>
 <Static AudioFile="echo_m05_player_en.utf|0x9B1622CA" TextArea="Cinematic">A little bird told me that I could get a Detroit security pass for a reasonable price here. </Static>
 <Static AudioFile="echo_m05_player_en.utf|0x9BCE24CA" TextArea="Cinematic">What the... I'm a freelancer escorting these folks to Forbes, what right do you have...</Static>
-<Static AudioFile="echo_m05_player_en.utf|0x9BCEB4CE" TextArea="Cinematic">I'm responsible for WHAT? The station blew up from the inside, while I was waiting outside in space waiting for...</Static>
+<Static AudioFile="echo_m05_player_en.utf|0xBBCF48C1" TextArea="Cinematic">I'm responsible for WHAT? The station blew up from the inside, while I was waiting outside in space waiting for...</Static>
 <Static AudioFile="MOD_ENG\m06\m06_offer_0010_trent.wav" TextArea="Cinematic">Miss Hatcher. Alaric, I didn't expect to see you here already!</Static>
 <Static AudioFile="MOD_ENG\m06\m06_offer_0020_alaric.wav" TextArea="Cinematic">I flew to see Miss Hatcher right away as soon as she contacted me. Looks like I was closer to Norwich than you were.</Static>
 <Static AudioFile="MOD_ENG\m06\m06_offer_0030_hatcher.wav" TextArea="Cinematic">Gentlemen, now that we're all caught up with our travel itineraries, shall we get down to business?</Static>

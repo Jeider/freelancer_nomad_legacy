@@ -24,6 +24,9 @@ class VoiceLine(object):
         self.ids_sub = None
         self.cinematic = cinematic
 
+    def get_info(self):
+        return f"{self.index} {self.actor}"
+
     def is_cinematic(self):
         return self.cinematic
 

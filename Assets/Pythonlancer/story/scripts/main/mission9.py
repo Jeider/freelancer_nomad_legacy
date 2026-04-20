@@ -515,7 +515,7 @@ class Msn9Space(Msn9, script.SpaceVoiceProps):
                   ru='Именно. К примеру, после нашего прихода во внешние миры наконец добралась цивилизация',
                   en="Precisely. Civilization finally reached the Border Worlds after the Order arrived."),
         VoiceLine(330, Kim,
-                  ru='Мы занимаемся инфраструктурой, терраформировали Кадиз. Искоренили производство Кардамина. Теперь испанцы живут лучше',
+                  ru='Мы занимаемся инфраструктурой, терраформировали Мальту. Искоренили производство Кардамина. Теперь испанцы живут лучше',
                   en="We terraformed planet Malta, eradicated Cardamine production and implemented universal healthcare. Now the citizens of Hispania lead prosperous lives. We are building up infrastructure, creating jobs and enriching lives."),
 
         VoiceLine(340, Trent,

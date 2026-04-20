@@ -283,16 +283,17 @@
 <Static AudioFile="echo_m05.utf|0xA7C4FF08" TextArea="Cinematic">Сначала займемся эти пионэром.</Static>
 <Static AudioFile="echo_m05.utf|0xB8D06E41" TextArea="Cinematic">Фриленсер альфа-один, заблокируйте орудийные системы и проследуйте с нами до линкора Грифон. </Static>
 <Static AudioFile="echo_m05.utf|0xB8086841" TextArea="Cinematic">Фриленсер альфа-один, повторяю, заблокируйте орудийные системы и проследуйте с нами до линкора Грифон. Приказ коммандера Тилтона. В случае сопротивления открываем огонь на поражение. </Static>
-<Static AudioFile="echo_m05.utf|0x9DE4630B" TextArea="Cinematic">Этот фрилансер обвиняется ни много ни мало в уничтожении научной станции Кларк! И я имею полномочия делать с ним все, что захочу! </Static>
-<Static AudioFile="echo_m05.utf|0x9C1C6D0B" TextArea="Cinematic">Замолчи, Трент </Static>
+<Static AudioFile="echo_m05.utf|0x9DE4630B" TextArea="Cinematic">Хетчер, давно не виделись. Ваши агенты влияния изрядно у нас попили крови, но сейчас ты облажалась по полной!</Static>
+<Static AudioFile="echo_m05.utf|0xBDE4F70E" TextArea="Cinematic">Этот фрилансер обвиняется в уничтожении научной станции Кларк! И я имею полномочия делать с ним всё, что захочу! </Static>
+<Static AudioFile="echo_m05.utf|0xBC1CF90E" TextArea="Cinematic">Заткнись, фрилансер</Static>
 <Static AudioFile="echo_m05.utf|0xB4838B4B" TextArea="Cinematic">Внимание, враждебные контакты на радаре!</Static>
 <Static AudioFile="echo_m05.utf|0x8CCD2DC9" TextArea="Cinematic">Какая встреча, герр Трент! А вы знаете, что полагается по законам Рейнланда за государственную измену? Правильно, смертная казнь! Звено, к бою! </Static>
 <Static AudioFile="echo_m05_female.utf|0x8E3E0F8C" TextArea="Cinematic">Салют, мальчики! Он под моей юрисдикцией, расслабьтесь. Это наш человек, ясно вам?! </Static>
-<Static AudioFile="echo_m05_female.utf|0xBE32F78C" TextArea="Cinematic">Заткнись, фрилансер</Static>
+<Static AudioFile="echo_m05_female.utf|0xBE32F78C" TextArea="Cinematic">Замолчи, Трент </Static>
 <Static AudioFile="echo_m05_player.utf|0xBB166EC9" TextArea="Cinematic">Здравствуйте, хозяева, дома есть? </Static>
 <Static AudioFile="echo_m05_player.utf|0x9B1622CA" TextArea="Cinematic">Мне тут некий мистер Смит намекнул, что у вас пропуск можно получить на Детройт по сходной цене. </Static>
 <Static AudioFile="echo_m05_player.utf|0x9BCE24CA" TextArea="Cinematic">Да что за... Я просто летел к вратам в Форбс, в чем дело? </Static>
-<Static AudioFile="echo_m05_player.utf|0x9BCEB4CE" TextArea="Cinematic">Да я-то здесь причем? Станцию изнутри взорвали, я в это время вообще снаружи был, ожидал... </Static>
+<Static AudioFile="echo_m05_player.utf|0xBBCF48C1" TextArea="Cinematic">Да я-то здесь причем? Станцию изнутри взорвали, я в это время вообще снаружи был, ожидал... </Static>
 <Static AudioFile="MOD\m06\m06_offer_0010_trent.wav" TextArea="Cinematic">Мисс Хетчер. Аларик, не ожидал, что ты уже здесь.</Static>
 <Static AudioFile="MOD\m06\m06_offer_0020_alaric.wav" TextArea="Cinematic">Как только ты со мной связался, я сразу же прибыл к мисс Хетчер. Видимо, я был ближе к Нориджу, чем ты.</Static>
 <Static AudioFile="MOD\m06\m06_offer_0030_hatcher.wav" TextArea="Cinematic">А теперь, господа, когда все выяснили когда, откуда и каким образом мы все сюда прибыли, перейдем к делу? ... </Static>
