@@ -238,9 +238,9 @@ RU_SCALE_HINT = 'Бонус: броня увеличивает эффектив�
 
 EN_FEATURES_PER_FACTION = {
     MainMiscEquip.FACTION_RH: 'Rheinland armor efficiently improves your hull and requires less cargo hold space',
-    MainMiscEquip.FACTION_LI: 'Liberty armor moderate improves ship hull and requires moderate cargo hold space',
-    MainMiscEquip.FACTION_BR: 'Bretonia armor considerable improves shill hull with huge requirements of cargo hold space',
-    MainMiscEquip.FACTION_KU: 'Kusari armor have less hull improvements with less requires of cargo hold space',
+    MainMiscEquip.FACTION_LI: 'Liberty armor moderately improves ship hull and requires moderate cargo hold space',
+    MainMiscEquip.FACTION_BR: 'Bretonia armor considerably improves shill hull with huge cargo hold space requirements',
+    MainMiscEquip.FACTION_KU: 'Kusari armor have less hull improvements but requires less cargo hold space',
     MainMiscEquip.FACTION_CO: 'Border World armor have maximal improvements to ship hull, but requires huge space in cargo hold',
 }
 
