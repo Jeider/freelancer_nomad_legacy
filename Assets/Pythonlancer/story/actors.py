@@ -364,7 +364,7 @@ class BrandenburgCruiser(Actor):
     STEOS_ID = 10029
 
 
-class CadizEnemyOne(Actor):
+class MaltaEnemyOne(Actor):
     RU_NAME = MS('Киллер', 'Killer')
     TYPE = ACTOR_MALE
     NAME = 'enemy1'
@@ -374,7 +374,7 @@ class CadizEnemyOne(Actor):
     STEOS_SPEED = 1
 
 
-class CadizEnemyTwo(Actor):
+class MaltaEnemyTwo(Actor):
     RU_NAME = MS('Киллер', 'Killer')
     TYPE = ACTOR_MALE
     NAME = 'enemy2'
@@ -383,11 +383,11 @@ class CadizEnemyTwo(Actor):
     STEOS_PITCH = -1
 
 
-class CadizEnemyThree(CadizEnemyOne):
+class MaltaEnemyThree(MaltaEnemyOne):
     NAME = 'enemy3'
 
 
-class CadizEnemyFour(CadizEnemyOne):
+class MaltaEnemyFour(MaltaEnemyOne):
     NAME = 'enemy4'
 
 
