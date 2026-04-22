@@ -360,7 +360,7 @@ class Misson10(ingame_mission.IngameMission):
             NNObj(self, MS('Уничтожьте дверь', 'Destroy the door'), name='destroy_door', target='xenos_control01_door'),
             NNObj(self, MS('Взломайте панель управления', 'Hack control panel'), name='hack_the_system'),
 
-            NNObj(self, MS('Доберитесь до места встречи с Дерси и звеном Локи', 'Go to randvoue point with Darcy and Loki wing'),
+            NNObj(self, MS('Доберитесь до места встречи с Дерси и звеном Локи', 'Go to rendezvous point with Darcy and Loki wing'),
                   name='prepare_point', target='prepare_point'),
             NNObj(self, MS('Направляйтесь к базе Ксеносов', 'Go to Xenos base'),
                   name='assault_target', target='assault_target'),
