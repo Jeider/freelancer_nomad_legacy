@@ -324,17 +324,17 @@ RU_POWERPLANT_WARNING = 'Корабль не сможет взлететь бе�
 
 
 EN_FEATURES_PER_FACTION = {
-    MainMiscEquip.FACTION_RH: 'Rheinland powerplants have 10% extra power capacity',
-    MainMiscEquip.FACTION_LI: 'Liberty powerplants have 50% extra thruster power capacity',
-    MainMiscEquip.FACTION_BR: 'Bretonia powerplants have 5% power capacity and regeneration, but have 30% less thruster power',
-    MainMiscEquip.FACTION_KU: 'Kusari powerplants have 10% power regeneration speed',
-    MainMiscEquip.FACTION_CO: 'Border World powerplants have 33% faster thruster regeneration speed',
+    MainMiscEquip.FACTION_RH: 'Rheinland powerplants have 10% more power capacity',
+    MainMiscEquip.FACTION_LI: 'Liberty powerplants have 50% more thruster power capacity',
+    MainMiscEquip.FACTION_BR: 'Bretonia powerplants have 5% more power capacity and regeneration, but have 30% less thruster power capacity',
+    MainMiscEquip.FACTION_KU: 'Kusari powerplants have 10% more power regeneration',
+    MainMiscEquip.FACTION_CO: 'Border World powerplants have 33% faster thruster regeneration',
 }
 
 EN_RESTRICTIONS_PER_SHIPCLASS = {
-    MainMiscEquip.SHIPCLASS_FIGHTER: 'This powerplant can be mounted only light fighter',
-    MainMiscEquip.SHIPCLASS_ELITE: 'This powerplant can be mounted only heavy fighter',
-    MainMiscEquip.SHIPCLASS_FREIGHTER: 'This powerplant can be mounted only freight and CSV',
+    MainMiscEquip.SHIPCLASS_FIGHTER: 'This powerplant can only be mounted on light fighters',
+    MainMiscEquip.SHIPCLASS_ELITE: 'This powerplant can only be mounted on heavy fighters',
+    MainMiscEquip.SHIPCLASS_FREIGHTER: 'This powerplant can only be mounted on freighters and CSV',
 }
 
-EN_POWERPLANT_WARNING = 'Ship can not launch without mounted powerplant!'
+EN_POWERPLANT_WARNING = 'Ship can not launch without powerplant mounted!'
