@@ -841,10 +841,10 @@ RU_ENGINE_HINT = 'Совет: Используйте Выключение дви
 
 EN_FEATURES_PER_FACTION = {
     MainMiscEquip.FACTION_RH: 'Rheinland engines have double force of strafe and reverse, but have 10% less speed for thrusters',
-    MainMiscEquip.FACTION_LI: 'Liberty engines have 5% better cruise speed, but requires more time for charge it',
-    MainMiscEquip.FACTION_BR: 'Bretonia engine have 10% better speed, but have minimal force for strafe and reverse',
-    MainMiscEquip.FACTION_KU: 'Kusari engine have 10% better thruster speed, but have 5% less speed in normal flight mode',
-    MainMiscEquip.FACTION_CO: 'Border World engines requires 2 less seconds for charge cruise, but requires 10% power in normal and cruise flight modes',
+    MainMiscEquip.FACTION_LI: 'Liberty engines have 5% faster cruise speed, but requires more time for charge it',
+    MainMiscEquip.FACTION_BR: 'Bretonia engine have 10% faster normal flight speed, but have minimal force for strafe and reverse',
+    MainMiscEquip.FACTION_KU: 'Kusari engine have 10% faster thruster speed, but have 5% slower normal flight speed',
+    MainMiscEquip.FACTION_CO: 'Border World engines requires 2 less seconds for charge cruise, but requires 10% more power in normal and cruise flight modes',
 }
 
 EN_RESTRICTIONS_PER_SHIPCLASS = {
@@ -859,6 +859,6 @@ EN_FEATURES_PER_SHIPCLASS = {
     MainMiscEquip.SHIPCLASS_FREIGHTER: 'Freighter engines have 5% faster cruise speed, but requires extra 1 second of cruise charge time',
 }
 
-EN_ENGINE_WARNING = 'Engine can not launch without engine!'
+EN_ENGINE_WARNING = 'Ship can not launch without engine!'
 EN_ENGINE_HINT = 'Hint: use engine kill (keyboard button Z) to temporarily disable engine power drain'
 
