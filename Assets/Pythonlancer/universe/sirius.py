@@ -46,6 +46,7 @@ from universe.systems import asf_prom as asf_prom_content
 from universe.systems import co_och as co_och_content
 from universe.systems import om11 as om11_content
 from universe.systems import co_mad as co_mad_content
+from universe.systems import co_cur as co_cur_content
 
 
 
@@ -507,12 +508,21 @@ class rh_kgb(system.RheinlandFirst, system.System, system.SiriusSystem):
 
 
 class co_cur(system.System, system.SiriusSystem):
+    ROOM_SUBFOLDER = interior.ROOM_FOLDER_BR
+    ENABLE_POPULATION = False
+    SPACE_FARCLIP = 70000
+
     NAME = 'co_cur'
+    TEMPLATE_NAME = 'co_cur'
     RU_NAME = MS('Кюрос+ао', "Curacao")
+    CONTENT = co_cur_content
 
     SYSTEM_FOLDER = 'CO_CURACAO'
     NAVMAP_POS = '1, 2.5'
     NAVMAP_SCALE = 1.5
+
+    JUMP_EFFECT = jump_effect.Edge
+    ALLOW_SYNC = True
 
 
 class co_mad(system.System, system.SiriusSystem):

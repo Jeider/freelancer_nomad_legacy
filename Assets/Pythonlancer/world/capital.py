@@ -10,10 +10,10 @@ from world.simples import *
 
 DEBRIS = 'debris'
 DISAPPEAR = 'disappear'
-RESIST_ENG = 2
-RESIST_DEFAULT = 3.0
-RESIST_FRONT = 2.5
-RESIST_REACTOR = 4
+RESIST_ENG = 1
+RESIST_DEFAULT = 1.5
+RESIST_FRONT = 1.25
+RESIST_REACTOR = 2
 
 class Capital:
     TEMPLATE_CODE = None

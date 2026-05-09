@@ -111,3 +111,8 @@ class BreoniaMainFighter(Suprise):
 class BretoniaMiscFighter(Suprise):
     DROP_HARDPOINT = 'HpShield01'
     DEFAULT_ARCHETYPES = [CO_FIGHTER, CO_ELITE, CO_ELITE2]
+
+
+class BretoniaMiscFighterEdge(Suprise):
+    DROP_HARDPOINT = 'HpShield01'
+    DEFAULT_ARCHETYPES = [CO_FIGHTER, CO_ELITE, CO_ELITE2, PI_ELITE, PI_FIGHTER]

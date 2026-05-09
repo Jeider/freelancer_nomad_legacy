@@ -43,7 +43,7 @@ def draw_base():
     new_name = None
     move_to = None
     rotate_core = 0
-    workspace = '12'
+    workspace = '15'
 
     # base_class = m13.RockfordGenerator
     # new_name = 'or_hq_vienna_entry'
@@ -57,7 +57,7 @@ def draw_base():
     # new_name = 'or_hq_shipyard_01'
     # move_to = (-20000, 0, 0)
 
-    base_class = roid_mining.BretoniaRoidMining
+    base_class = terraforming.TerraformingRotate
     # new_name = 'communicator'
     # move_to = (-9500, 0, -10000)
 

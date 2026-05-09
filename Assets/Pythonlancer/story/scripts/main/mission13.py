@@ -112,7 +112,7 @@ class Msn13Space(Msn13, script.SpaceVoiceProps):
 
         VoiceLine(120, Trent, ru='И Р+окфорд хочет запустить этот процесс.', en='And Rockford wants to exploit this and turn it on the sphere.'),
         VoiceLine(130, Mandrake, ru='Правильно. А что происходит когда за короткий промежуток времени выделяется практически бесконечная энергия?', en='Precisely. If this gargantuan amount of energy is released, the sphere will implode, collapsing the dimensions into one other and ripping all of causality to shreds.'),
-        VoiceLine(140, Hatcher, ru='Большой пиздец...', en='Jesus. A total fucking cataclysm...'),
+        VoiceLine(140, Hatcher, ru='Большой пипец...', en='Jesus. A total fucking cataclysm...'),
         VoiceLine(150, Darcy, ru=' Фи, мадам... Но по сути – точно.', en='Language, ma\'am... But yeah. Fuck.'),
         VoiceLine(160, Trent, ru='Попробуем остановить?', en='Dammit. So not a recipe for dessert after all. Can we stop it?'),
         VoiceLine(170, Mandrake, ru='Попытаемся, мистер Трент, попытаемся...', en='We can but try, Mister Trent... we can but try. But basically, once the sphere implodes... no.'),
@@ -122,7 +122,7 @@ class Msn13Space(Msn13, script.SpaceVoiceProps):
         VoiceLine(190, Trent, ru='Принял.', en='Understood.'),
         VoiceLine(200, Rockford, ru='Останов+итесь, глупцы, что вы делаете? Я уничт+ожу эту зар+азу раз и навсегда!',
 								 en='Stop, you fools! What are you doing? I must destroy this monstrosity once and for all!'),
-        VoiceLine(210, Hatcher, ru='И половину сектора Сириуса, придурок! Ох, попадись ты мне маленький засранец...',
+        VoiceLine(210, Hatcher, ru='И половину сектора Сириуса, придурок!',
 								en='You depraved lunatic, it\'s going to take everything out with it... Don\'t you get it?'),
         VoiceLine(220, Rockford, ru='Вы не сможете меня остановить, сейчас всё свершится!', en='You can\'t stop it now! It\'s almost done!'),
         VoiceLine(230, Alaric, ru='Слабительного принял что-ли?', en='Did you take a laxative? Because shit is coming out your mouth!'),
