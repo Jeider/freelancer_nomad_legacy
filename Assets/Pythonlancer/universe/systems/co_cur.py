@@ -39,7 +39,7 @@ class CurMember(Member):
 class CurStaticText(CurMember, main_objects.RawText):
     SPACE_CONTENT = '''[SystemInfo]
 name = co_cur
-space_color = 10, 10, 10
+space_color = 10, 15, 35
 local_faction = co_grp
 space_farclip = 70000
 
@@ -50,12 +50,12 @@ file = universe\\heavens\\shapes.ini
 spacedust = Dust
 
 [Music]
-space = music_omicron_space
-danger = music_omicron_danger
-battle = music_omicron_battle
+space = music_iw_space
+danger = music_iw_danger
+battle = music_iw_battle
 
 [Ambient]
-color = 30, 15, 10
+color = 10, 15, 35
 
 [Background]
 nebulae = solar\\stars_mod\\co_cur_nebula.cmp

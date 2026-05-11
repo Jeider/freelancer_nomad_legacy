@@ -1,4 +1,4 @@
-duration=125.69999999999999
+duration=131.628
 
 entities={
 	{
@@ -51,6 +51,7 @@ entities={
 		spatialprops={pos={0,-10000,-10000000},orient={ {1,0,0},{0,1,0},{0,0,1} } },
 	},
 
+    
 	
 {
     entity_name="DX_m10_offer_0010_hassler",
@@ -266,8 +267,8 @@ entities={
     type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
 }
         
-
-	,
+     ,
+    
 
 	{
     entity_name="automarker_default_point",
@@ -275,6 +276,20 @@ entities={
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
     spatialprops={
         pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_offscreen_point",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, -10000.00, 0.00 },
         orient={ 
             { 1.0000000,0.0000000,0.0000000 },
             { 0.0000000,1.0000000,0.0000000 },
@@ -2223,7 +2238,7 @@ events={
 }
 ,
 {
-    20.732,
+    20.9,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -2232,7 +2247,7 @@ events={
 }
 ,
 {
-    20.732,
+    20.9,
     START_SPATIAL_PROP_ANIM,
     {
         "Char_darcy",
@@ -2250,7 +2265,7 @@ events={
 }
 ,
 {
-    20.732,
+    20.9,
     START_SPATIAL_PROP_ANIM,
     {
         "Char_trent",
@@ -2268,7 +2283,7 @@ events={
 }
 ,
 {
-    20.732,
+    20.9,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
@@ -2278,7 +2293,7 @@ events={
 }
 ,
 {
-    20.732,
+    20.9,
     START_MOTION,
     {"Char_darcy"},
     {animation="Sc_FMBODY_CHRB_IDLE_000LV_XA_06",
@@ -2288,7 +2303,7 @@ events={
 }
 ,
 {
-    20.732,
+    20.9,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_hassler_head_ik",
@@ -2310,7 +2325,7 @@ events={
 }
 ,
 {
-    20.732,
+    20.9,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_hassler_eye_ik",
@@ -2332,7 +2347,7 @@ events={
 }
 ,
 {
-    26.732,
+    26.9,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_hassler_head_ik",
@@ -2354,7 +2369,7 @@ events={
 }
 ,
 {
-    26.732,
+    26.9,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_hassler_eye_ik",
@@ -2376,7 +2391,7 @@ events={
 }
 ,
 {
-    22.732,
+    22.9,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_MLBODY_CHRB_CHRF_TRNS_000LV_XA_02",
@@ -2386,7 +2401,7 @@ events={
 }
 ,
 {
-    25.732,
+    25.9,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_MLBODY_CHRF_IDLE_000LV_XA_06",
@@ -2396,21 +2411,21 @@ events={
 }
 ,
 {
-    20.732,
+    20.9,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_dx_s032a_0502_dexter", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    24.732,
+    24.9,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_dx_s033x_0302_dexter", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    20.732,
+    20.9,
     START_SOUND,
     {
         "DX_m10_offer_0060_hassler"
@@ -2421,7 +2436,7 @@ events={
 }
 ,
 {
-    30.392,
+    30.56,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -2430,7 +2445,7 @@ events={
 }
 ,
 {
-    30.392,
+    30.56,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_CHRB_SHRG_SHLDRS_BIG_000LV_XA_03",
@@ -2440,7 +2455,7 @@ events={
 }
 ,
 {
-    34.092,
+    34.26,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
@@ -2450,21 +2465,21 @@ events={
 }
 ,
 {
-    30.392,
+    30.56,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s012x_0901_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    32.391999999999996,
+    32.56,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s012x_0901_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    30.392,
+    30.56,
     START_SOUND,
     {
         "DX_m10_offer_0070_trent"
@@ -2475,7 +2490,7 @@ events={
 }
 ,
 {
-    36.092,
+    38.372,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -2484,7 +2499,7 @@ events={
 }
 ,
 {
-    36.092,
+    38.372,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_hassler_head_ik",
@@ -2506,7 +2521,7 @@ events={
 }
 ,
 {
-    36.092,
+    38.372,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_hassler_eye_ik",
@@ -2528,14 +2543,14 @@ events={
 }
 ,
 {
-    36.092,
+    38.372,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_dx_s032a_0701_dexter", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    36.092,
+    38.372,
     START_SOUND,
     {
         "DX_m10_offer_0080_hassler"
@@ -2546,7 +2561,7 @@ events={
 }
 ,
 {
-    41.312,
+    43.592,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -2555,7 +2570,7 @@ events={
 }
 ,
 {
-    41.312,
+    43.592,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_CHRB_CHRF_TRNS_000LV_XA_02",
@@ -2565,14 +2580,14 @@ events={
 }
 ,
 {
-    41.312,
+    43.592,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s045b_1801_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    41.312,
+    43.592,
     START_SOUND,
     {
         "DX_m10_offer_0090_trent"
@@ -2583,7 +2598,7 @@ events={
 }
 ,
 {
-    42.955999999999996,
+    45.356,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -2592,7 +2607,7 @@ events={
 }
 ,
 {
-    42.955999999999996,
+    45.356,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_MLBODY_CHRF_CONV_RHNDUP_TRNS_000LV_XA_02",
@@ -2602,7 +2617,7 @@ events={
 }
 ,
 {
-    44.955999999999996,
+    47.356,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_MLBODY_CHRF_CONV_RHND_CASL_000LV_XA_04",
@@ -2612,7 +2627,7 @@ events={
 }
 ,
 {
-    48.955999999999996,
+    51.356,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_MLBODY_CHRF_CONV_RHNDDN_TRNS_000LV_XA_02",
@@ -2622,21 +2637,21 @@ events={
 }
 ,
 {
-    42.955999999999996,
+    45.356,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_dx_s068x_0201_walker", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    44.156,
+    46.556000000000004,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_dx_s015x_0701_walker", duration=10, time_scale=0.85, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    42.955999999999996,
+    45.356,
     START_SOUND,
     {
         "DX_m10_offer_0100_hassler"
@@ -2647,7 +2662,7 @@ events={
 }
 ,
 {
-    51.104,
+    53.504000000000005,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -2656,7 +2671,7 @@ events={
 }
 ,
 {
-    51.104,
+    53.504000000000005,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_CHRF_IDLE_000LV_XA_06",
@@ -2666,14 +2681,14 @@ events={
 }
 ,
 {
-    51.104,
+    53.504000000000005,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s046x_0801_trent", duration=10, time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    51.104,
+    53.504000000000005,
     START_SOUND,
     {
         "DX_m10_offer_0110_trent"
@@ -2684,7 +2699,7 @@ events={
 }
 ,
 {
-    53.708,
+    56.01200000000001,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -2693,14 +2708,14 @@ events={
 }
 ,
 {
-    53.708,
+    56.01200000000001,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_dx_s015x_0301_walker", duration=10, start_time=0.7, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    53.708,
+    56.01200000000001,
     START_SOUND,
     {
         "DX_m10_offer_0120_hassler"
@@ -2711,7 +2726,7 @@ events={
 }
 ,
 {
-    56.048,
+    58.352000000000004,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -2720,7 +2735,7 @@ events={
 }
 ,
 {
-    56.048,
+    58.352000000000004,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_CHRF_CHRB_TRNS_000LV_XA_02",
@@ -2730,14 +2745,14 @@ events={
 }
 ,
 {
-    56.048,
+    58.352000000000004,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s014a_0301_trent", duration=10, start_time=0.3, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    56.048,
+    58.352000000000004,
     START_SOUND,
     {
         "DX_m10_offer_0130_trent"
@@ -2748,7 +2763,7 @@ events={
 }
 ,
 {
-    58.316,
+    60.332,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -2757,7 +2772,7 @@ events={
 }
 ,
 {
-    58.316,
+    60.332,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_MLBODY_CHRF_CHRB_TRNS_000LV_XA_02",
@@ -2767,14 +2782,14 @@ events={
 }
 ,
 {
-    58.316,
+    60.332,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_dx_s032d_0301_dexter", duration=10, time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    58.316,
+    60.332,
     START_SOUND,
     {
         "DX_m10_offer_0140_hassler"
@@ -2785,7 +2800,7 @@ events={
 }
 ,
 {
-    63.92,
+    65.936,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -2794,7 +2809,7 @@ events={
 }
 ,
 {
-    63.92,
+    65.936,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_CHRF_LSTN_000UP_B_15",
@@ -2804,14 +2819,14 @@ events={
 }
 ,
 {
-    63.92,
+    65.936,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s045b_1801_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    63.92,
+    65.936,
     START_SOUND,
     {
         "DX_m10_offer_0150_trent"
@@ -2822,7 +2837,7 @@ events={
 }
 ,
 {
-    65.42,
+    68.73200000000001,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -2831,21 +2846,21 @@ events={
 }
 ,
 {
-    65.42,
+    68.73200000000001,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_dx_s015x_0301_walker", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    66.42,
+    69.73200000000001,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_dx_s015x_0301_walker", duration=10, time_scale=0.9, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    65.42,
+    68.73200000000001,
     START_SOUND,
     {
         "DX_m10_offer_0160_hassler"
@@ -2856,7 +2871,7 @@ events={
 }
 ,
 {
-    69.848,
+    73.16000000000001,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -2865,7 +2880,7 @@ events={
 }
 ,
 {
-    69.848,
+    73.16000000000001,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
@@ -2875,7 +2890,7 @@ events={
 }
 ,
 {
-    73.848,
+    77.16000000000001,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_CHRB_CHRF_TRNS_000LV_XA_02",
@@ -2885,21 +2900,21 @@ events={
 }
 ,
 {
-    69.848,
+    73.16000000000001,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s034x_1301_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    71.848,
+    75.16000000000001,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s034x_1301_trent", duration=10, time_scale=1, trans_time=0.5,  weight=1, heading=-1}
 }
 ,
 {
-    69.848,
+    73.16000000000001,
     START_SOUND,
     {
         "DX_m10_offer_0170_trent"
@@ -2910,7 +2925,7 @@ events={
 }
 ,
 {
-    78.524,
+    83.132,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -2919,14 +2934,14 @@ events={
 }
 ,
 {
-    78.524,
+    83.132,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_dx_s032d_0101_dexter", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    78.524,
+    83.132,
     START_SOUND,
     {
         "DX_m10_offer_0180_hassler"
@@ -2937,7 +2952,7 @@ events={
 }
 ,
 {
-    83.384,
+    87.992,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -2946,7 +2961,7 @@ events={
 }
 ,
 {
-    83.384,
+    87.992,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_CHRF_CHRB_TRNS_000LV_XA_02",
@@ -2956,7 +2971,7 @@ events={
 }
 ,
 {
-    85.884,
+    90.492,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_head_ik",
@@ -2978,7 +2993,7 @@ events={
 }
 ,
 {
-    85.884,
+    90.492,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_eye_ik",
@@ -3000,21 +3015,21 @@ events={
 }
 ,
 {
-    83.384,
+    87.992,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s014c_0101_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    84.684,
+    89.292,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s038x_4301_trent", duration=10, start_time=1, time_scale=1, trans_time=0.5,  weight=1, heading=-1}
 }
 ,
 {
-    83.384,
+    87.992,
     START_SOUND,
     {
         "DX_m10_offer_0190_trent"
@@ -3025,7 +3040,7 @@ events={
 }
 ,
 {
-    89.24,
+    94.88,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_head_ik",
@@ -3047,7 +3062,7 @@ events={
 }
 ,
 {
-    89.24,
+    94.88,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_eye_ik",
@@ -3069,14 +3084,14 @@ events={
 }
 ,
 {
-    89.24,
+    94.88,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s045b_1801_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    89.24,
+    94.88,
     START_SOUND,
     {
         "DX_m10_offer_0200_trent"
@@ -3087,7 +3102,7 @@ events={
 }
 ,
 {
-    91.076,
+    97.00399999999999,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
@@ -3097,7 +3112,7 @@ events={
 }
 ,
 {
-    91.076,
+    97.00399999999999,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_CHRB_IDLE_BIG_000LV_XA_05",
@@ -3107,7 +3122,7 @@ events={
 }
 ,
 {
-    91.076,
+    97.00399999999999,
     START_MOTION,
     {"Char_darcy"},
     {animation="Sc_FMBODY_CHRB_IDLE_BIG_000LV_XA_05",
@@ -3117,7 +3132,7 @@ events={
 }
 ,
 {
-    96.076,
+    102.00399999999999,
     START_MOTION,
     {"Char_darcy"},
     {animation="Sc_FMBODY_CHRB_CHRF_TRNS_000LV_XA_02",
@@ -3127,7 +3142,7 @@ events={
 }
 ,
 {
-    106.076,
+    112.00399999999999,
     START_MOTION,
     {"Char_darcy"},
     {animation="Sc_FMBODY_CHRF_CHRB_TRNS_000LV_XA_02",
@@ -3137,7 +3152,7 @@ events={
 }
 ,
 {
-    91.076,
+    97.00399999999999,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_head_ik",
@@ -3159,7 +3174,7 @@ events={
 }
 ,
 {
-    91.076,
+    97.00399999999999,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_eye_ik",
@@ -3181,7 +3196,7 @@ events={
 }
 ,
 {
-    108.076,
+    114.00399999999999,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_head_ik",
@@ -3203,7 +3218,7 @@ events={
 }
 ,
 {
-    108.076,
+    114.00399999999999,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_eye_ik",
@@ -3225,7 +3240,7 @@ events={
 }
 ,
 {
-    112.076,
+    118.00399999999999,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_head_ik",
@@ -3247,7 +3262,7 @@ events={
 }
 ,
 {
-    112.076,
+    118.00399999999999,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_eye_ik",
@@ -3269,7 +3284,7 @@ events={
 }
 ,
 {
-    102.076,
+    108.00399999999999,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_hassler_head_ik",
@@ -3291,7 +3306,7 @@ events={
 }
 ,
 {
-    102.076,
+    108.00399999999999,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_hassler_eye_ik",
@@ -3313,7 +3328,7 @@ events={
 }
 ,
 {
-    105.076,
+    111.00399999999999,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_hassler_head_ik",
@@ -3335,7 +3350,7 @@ events={
 }
 ,
 {
-    105.076,
+    111.00399999999999,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_hassler_eye_ik",
@@ -3357,7 +3372,7 @@ events={
 }
 ,
 {
-    109.076,
+    115.00399999999999,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_head_ik",
@@ -3379,7 +3394,7 @@ events={
 }
 ,
 {
-    109.076,
+    115.00399999999999,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_eye_ik",
@@ -3401,7 +3416,7 @@ events={
 }
 ,
 {
-    113.076,
+    119.00399999999999,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_head_ik",
@@ -3423,7 +3438,7 @@ events={
 }
 ,
 {
-    113.076,
+    119.00399999999999,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_eye_ik",
@@ -3445,7 +3460,7 @@ events={
 }
 ,
 {
-    94.076,
+    100.00399999999999,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_CHRF_LSTN_000UP_B_15",
@@ -3455,7 +3470,7 @@ events={
 }
 ,
 {
-    99.076,
+    105.00399999999999,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_CHRB_IDLE_BIG_000LV_XA_05",
@@ -3465,7 +3480,7 @@ events={
 }
 ,
 {
-    91.076,
+    97.00399999999999,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -3474,7 +3489,7 @@ events={
 }
 ,
 {
-    91.076,
+    97.00399999999999,
     START_SPATIAL_PROP_ANIM,
     {
         "cam_scene",
@@ -3496,7 +3511,7 @@ events={
 }
 ,
 {
-    91.076,
+    97.00399999999999,
     START_SPATIAL_PROP_ANIM,
     {
         "automarker_cam_scene_focus",
@@ -3518,7 +3533,7 @@ events={
 }
 ,
 {
-    91.076,
+    97.00399999999999,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_MLBODY_CHRB_CHRF_TRNS_000LV_XA_02",
@@ -3528,7 +3543,7 @@ events={
 }
 ,
 {
-    99.076,
+    105.00399999999999,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_MLBODY_CHRF_CONV_RHNDUP_TRNS_000LV_XA_02",
@@ -3538,7 +3553,7 @@ events={
 }
 ,
 {
-    101.076,
+    107.00399999999999,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_MLBODY_CHRF_CONV_RHND_CASL_000LV_XA_04",
@@ -3548,7 +3563,7 @@ events={
 }
 ,
 {
-    111.076,
+    117.00399999999999,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_MLBODY_CHRF_CONV_RHNDDN_TRNS_000LV_XA_02",
@@ -3558,21 +3573,21 @@ events={
 }
 ,
 {
-    91.076,
+    97.00399999999999,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_dx_s033x_0302_dexter", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    96.076,
+    102.00399999999999,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_dx_s033x_0302_dexter", duration=10, start_time=0.7, time_scale=1, trans_time=0.5,  weight=1, heading=-1}
 }
 ,
 {
-    91.076,
+    97.00399999999999,
     START_SOUND,
     {
         "DX_m10_offer_0210_hassler"
@@ -3583,28 +3598,28 @@ events={
 }
 ,
 {
-    101.55199999999999,
+    107.47999999999999,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_dx_s068x_0201_walker", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    102.55199999999999,
+    108.47999999999999,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_dx_s033x_0302_dexter", duration=10, time_scale=1, trans_time=0.5,  weight=1, heading=-1}
 }
 ,
 {
-    105.55199999999999,
+    111.47999999999999,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_dx_s033x_0302_dexter", duration=10, time_scale=1, trans_time=0.5,  weight=1, heading=-1}
 }
 ,
 {
-    101.55199999999999,
+    107.47999999999999,
     START_SOUND,
     {
         "DX_m10_offer_0220_hassler"
@@ -3615,21 +3630,21 @@ events={
 }
 ,
 {
-    111.66799999999999,
+    117.59599999999999,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_dx_s068x_0201_walker", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    112.66799999999999,
+    118.59599999999999,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_dx_s033x_0302_dexter", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    111.66799999999999,
+    117.59599999999999,
     START_SOUND,
     {
         "DX_m10_offer_0230_hassler"
@@ -3640,14 +3655,14 @@ events={
 }
 ,
 {
-    118.63999999999999,
+    124.56799999999998,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_dx_s033x_0302_dexter", duration=10, start_time=0, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    118.63999999999999,
+    124.56799999999998,
     START_SOUND,
     {
         "DX_m10_offer_0240_hassler"

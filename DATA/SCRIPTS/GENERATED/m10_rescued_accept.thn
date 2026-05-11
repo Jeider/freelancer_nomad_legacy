@@ -1,4 +1,4 @@
-duration=10.684
+duration=11.212
 
 entities={
 	{
@@ -51,6 +51,7 @@ entities={
 		spatialprops={pos={0,-10000,-10000000},orient={ {1,0,0},{0,1,0},{0,0,1} } },
 	},
 
+    
 	
 {
     entity_name="DX_m10_rescued_0010_alaric",
@@ -186,8 +187,8 @@ entities={
     type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
 }
         
-
-	,
+     ,
+    
 
 	{
     entity_name="automarker_default_point",
@@ -195,6 +196,20 @@ entities={
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
     spatialprops={
         pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_offscreen_point",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, -10000.00, 0.00 },
         orient={ 
             { 1.0000000,0.0000000,0.0000000 },
             { 0.0000000,1.0000000,0.0000000 },
@@ -1417,7 +1432,7 @@ events={
 }
 ,
 {
-    4.5,
+    4.9319999999999995,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -1426,14 +1441,14 @@ events={
 }
 ,
 {
-    4.5,
+    4.9319999999999995,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_dx_s032a_0702_dexter", duration=10, start_time=1.2, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    4.5,
+    4.9319999999999995,
     START_SOUND,
     {
         "DX_m10_rescued_0160_hassler"
@@ -1444,7 +1459,7 @@ events={
 }
 ,
 {
-    7.848,
+    8.28,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -1453,7 +1468,7 @@ events={
 }
 ,
 {
-    8.347999999999999,
+    8.78,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_head_ik",
@@ -1475,7 +1490,7 @@ events={
 }
 ,
 {
-    8.347999999999999,
+    8.78,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_eye_ik",
@@ -1497,7 +1512,7 @@ events={
 }
 ,
 {
-    7.848,
+    8.28,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_STND_FSTHIPB_RLEASE_000LV_XA_01",
@@ -1507,7 +1522,7 @@ events={
 }
 ,
 {
-    7.848,
+    8.28,
     START_MOTION,
     {"Char_darcy"},
     {animation="Sc_FMBODY_STND_UNCRSS_ARMS_000LV_XA_03",
@@ -1517,14 +1532,14 @@ events={
 }
 ,
 {
-    7.848,
+    8.28,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s045b_1801_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    7.848,
+    8.28,
     START_SOUND,
     {
         "DX_m10_rescued_0170_trent"

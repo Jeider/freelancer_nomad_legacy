@@ -1,4 +1,4 @@
-duration=127.63600000000002
+duration=131.092
 
 entities={
 	{
@@ -51,6 +51,7 @@ entities={
 		spatialprops={pos={0,-10000,-10000000},orient={ {1,0,0},{0,1,0},{0,0,1} } },
 	},
 
+    
 	
 {
     entity_name="DX_m10_final_0010_trent",
@@ -210,8 +211,8 @@ entities={
     type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
 }
         
-
-	,
+     ,
+    
 
 	{
     entity_name="automarker_default_point",
@@ -219,6 +220,20 @@ entities={
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
     spatialprops={
         pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_offscreen_point",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, -10000.00, 0.00 },
         orient={ 
             { 1.0000000,0.0000000,0.0000000 },
             { 0.0000000,1.0000000,0.0000000 },
@@ -899,6 +914,7 @@ entities={
     lt_grp=0,
     srt_grp=0,
     usr_flg=0,
+    
     spatialprops={
         pos={ -0.19, 1.75, 12.57 },
         orient={
@@ -947,6 +963,7 @@ entities={
     lt_grp=0,
     srt_grp=0,
     usr_flg=0,
+    
     spatialprops={
         pos={ -1.03, 1.75, 9.81 },
         orient={
@@ -1554,7 +1571,7 @@ events={
         "char_ik_Char_trent_head_ik"
     },
     {
-        duration=93.37800000000001,
+        duration=96.834,
         end_effector="Body_Head", transition_duration=1,
         target_part="", target_type=ROOT,
         count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
@@ -1569,7 +1586,7 @@ events={
         "char_ik_Char_trent_eye_ik"
     },
     {
-        duration=93.37800000000001,
+        duration=96.834,
         end_effector="Eye IK Left", transition_duration=1,
         target_part="", target_type=ROOT,
         count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
@@ -1761,7 +1778,7 @@ events={
 }
 ,
 {
-    12.862,
+    12.742,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -1770,7 +1787,7 @@ events={
 }
 ,
 {
-    14.862,
+    14.742,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_head_ik",
@@ -1792,7 +1809,7 @@ events={
 }
 ,
 {
-    14.862,
+    14.742,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_eye_ik",
@@ -1814,14 +1831,14 @@ events={
 }
 ,
 {
-    12.862,
+    12.742,
     START_MOTION,
     {"Char_alaric"},
     {animation="Sc_dx_s015x_0502_walker", duration=10, start_time=0.5, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    12.862,
+    12.742,
     START_SOUND,
     {
         "DX_m10_final_0020_alaric"
@@ -1832,7 +1849,7 @@ events={
 }
 ,
 {
-    17.458,
+    17.362000000000002,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -1841,14 +1858,14 @@ events={
 }
 ,
 {
-    17.458,
+    17.362000000000002,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s045b_1801_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    17.458,
+    17.362000000000002,
     START_SOUND,
     {
         "DX_m10_final_0030_trent"
@@ -1859,7 +1876,7 @@ events={
 }
 ,
 {
-    19.438,
+    19.414,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -1868,7 +1885,7 @@ events={
 }
 ,
 {
-    20.438,
+    20.414,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_head_ik",
@@ -1890,7 +1907,7 @@ events={
 }
 ,
 {
-    20.438,
+    20.414,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_eye_ik",
@@ -1912,7 +1929,7 @@ events={
 }
 ,
 {
-    29.438,
+    29.414,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_head_ik",
@@ -1934,7 +1951,7 @@ events={
 }
 ,
 {
-    29.438,
+    29.414,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_eye_ik",
@@ -1956,7 +1973,7 @@ events={
 }
 ,
 {
-    31.438,
+    31.414,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_head_ik",
@@ -1978,7 +1995,7 @@ events={
 }
 ,
 {
-    31.438,
+    31.414,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_eye_ik",
@@ -2000,7 +2017,7 @@ events={
 }
 ,
 {
-    22.438,
+    22.414,
     START_MOTION,
     {"Char_alaric"},
     {animation="Sc_MLBODY_CHRB_CONV_RHNDUP_TRNS_000LV_XA_02",
@@ -2010,7 +2027,7 @@ events={
 }
 ,
 {
-    24.438,
+    24.414,
     START_MOTION,
     {"Char_alaric"},
     {animation="Sc_MLBODY_CHRB_CONV_RHND_CASL_000LV_xa_04",
@@ -2020,7 +2037,7 @@ events={
 }
 ,
 {
-    28.438,
+    28.414,
     START_MOTION,
     {"Char_alaric"},
     {animation="Sc_MLBODY_CHRB_CONV_RHNDDN_TRNS_000LV_XA_02",
@@ -2030,28 +2047,28 @@ events={
 }
 ,
 {
-    19.438,
+    19.414,
     START_MOTION,
     {"Char_alaric"},
     {animation="Sc_dx_s015x_0502_walker", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    21.938,
+    21.914,
     START_MOTION,
     {"Char_alaric"},
     {animation="Sc_dx_s015x_0502_walker", duration=10, time_scale=1, trans_time=0.5,  weight=1, heading=-1}
 }
 ,
 {
-    24.438,
+    24.414,
     START_MOTION,
     {"Char_alaric"},
     {animation="Sc_dx_s015x_0502_walker", duration=10, time_scale=1, trans_time=0.5,  weight=1, heading=-1}
 }
 ,
 {
-    19.438,
+    19.414,
     START_SOUND,
     {
         "DX_m10_final_0040_alaric"
@@ -2087,7 +2104,7 @@ events={
 }
 ,
 {
-    37.222,
+    37.246,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -2096,7 +2113,7 @@ events={
 }
 ,
 {
-    39.222,
+    39.246,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_STND_FSTHIPB_RLEASE_000LV_XA_01",
@@ -2106,21 +2123,21 @@ events={
 }
 ,
 {
-    37.222,
+    37.246,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s011x_0101_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    38.222,
+    38.246,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s011x_0101_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    37.222,
+    37.246,
     START_SOUND,
     {
         "DX_m10_final_0060_trent"
@@ -2131,7 +2148,7 @@ events={
 }
 ,
 {
-    43.066,
+    42.682,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -2140,21 +2157,21 @@ events={
 }
 ,
 {
-    43.066,
+    42.682,
     START_MOTION,
     {"Char_alaric"},
     {animation="Sc_dx_s064x_1101_king", duration=10, start_time=0, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    43.666000000000004,
+    43.282000000000004,
     START_MOTION,
     {"Char_alaric"},
     {animation="Sc_MLHEAD_BASEPOSE_000LV_02_01", duration=10, start_time=0, time_scale=1, trans_time=1,  weight=1, heading=-1}
 }
 ,
 {
-    43.066,
+    42.682,
     START_SOUND,
     {
         "DX_m10_final_0070_alaric"
@@ -2165,7 +2182,7 @@ events={
 }
 ,
 {
-    44.422000000000004,
+    44.062000000000005,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -2174,7 +2191,7 @@ events={
 }
 ,
 {
-    44.422000000000004,
+    44.062000000000005,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_STND_GESTR_180LV_XA_02",
@@ -2184,14 +2201,14 @@ events={
 }
 ,
 {
-    44.422000000000004,
+    44.062000000000005,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s020x_1601_trent", duration=10, time_scale=0.9, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    44.422000000000004,
+    44.062000000000005,
     START_SOUND,
     {
         "DX_m10_final_0080_trent"
@@ -2202,7 +2219,7 @@ events={
 }
 ,
 {
-    50.514,
+    51.018,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_STND_CROSS_ARMS_000LV_xa_06",
@@ -2212,7 +2229,7 @@ events={
 }
 ,
 {
-    56.514,
+    57.018,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_head_ik",
@@ -2234,7 +2251,7 @@ events={
 }
 ,
 {
-    56.514,
+    57.018,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_eye_ik",
@@ -2256,7 +2273,7 @@ events={
 }
 ,
 {
-    58.514,
+    59.018,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_head_ik",
@@ -2278,7 +2295,7 @@ events={
 }
 ,
 {
-    58.514,
+    59.018,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_eye_ik",
@@ -2300,21 +2317,21 @@ events={
 }
 ,
 {
-    51.514,
+    52.018,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s071b_0102_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    55.914,
+    56.418,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s071b_0102_trent", duration=10, time_scale=1, trans_time=0.6,  weight=1, heading=-1}
 }
 ,
 {
-    51.514,
+    52.018,
     START_SOUND,
     {
         "DX_m10_final_0090_trent"
@@ -2325,7 +2342,7 @@ events={
 }
 ,
 {
-    62.014,
+    64.558,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -2334,7 +2351,7 @@ events={
 }
 ,
 {
-    62.014,
+    64.558,
     START_MOTION,
     {"Char_alaric"},
     {animation="Sc_MLBODY_CHRB_GESTR_NO_000LV_XA_03",
@@ -2344,21 +2361,21 @@ events={
 }
 ,
 {
-    62.014,
+    64.558,
     START_MOTION,
     {"Char_alaric"},
     {animation="Sc_dx_s015x_0701_walker", duration=10, time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    63.714000000000006,
+    66.25800000000001,
     START_MOTION,
     {"Char_alaric"},
     {animation="Sc_dx_s015x_0701_walker", duration=10, time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    62.014,
+    64.558,
     START_SOUND,
     {
         "DX_m10_final_0100_alaric"
@@ -2369,7 +2386,7 @@ events={
 }
 ,
 {
-    69.266,
+    71.834,
     START_MOTION,
     {"Char_alaric"},
     {animation="Sc_MLBODY_CHRB_IDLE_000LV_XA_05",
@@ -2379,7 +2396,7 @@ events={
 }
 ,
 {
-    71.266,
+    73.834,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_head_ik",
@@ -2401,7 +2418,7 @@ events={
 }
 ,
 {
-    71.266,
+    73.834,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_eye_ik",
@@ -2423,14 +2440,14 @@ events={
 }
 ,
 {
-    71.266,
+    73.834,
     START_MOTION,
     {"Char_alaric"},
     {animation="Sc_dx_s015x_0701_walker", duration=10, start_time=2,time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    71.266,
+    73.834,
     START_SOUND,
     {
         "DX_m10_final_0105_alaric"
@@ -2441,7 +2458,7 @@ events={
 }
 ,
 {
-    76.174,
+    78.766,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -2450,7 +2467,7 @@ events={
 }
 ,
 {
-    77.174,
+    79.766,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_STND_UNCRSS_ARMS_000LV_XA_02",
@@ -2460,21 +2477,21 @@ events={
 }
 ,
 {
-    76.174,
+    78.766,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s045a_0201_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    77.674,
+    80.266,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s038x_3101_trent", duration=10, time_scale=1, trans_time=1,  weight=1, heading=-1}
 }
 ,
 {
-    76.174,
+    78.766,
     START_SOUND,
     {
         "DX_m10_final_0110_trent"
@@ -2485,7 +2502,7 @@ events={
 }
 ,
 {
-    81.15400000000001,
+    83.938,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -2494,7 +2511,7 @@ events={
 }
 ,
 {
-    81.15400000000001,
+    83.938,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_head_ik",
@@ -2516,7 +2533,7 @@ events={
 }
 ,
 {
-    81.15400000000001,
+    83.938,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_eye_ik",
@@ -2538,14 +2555,14 @@ events={
 }
 ,
 {
-    81.15400000000001,
+    83.938,
     START_MOTION,
     {"Char_alaric"},
     {animation="Sc_dx_s068x_0201_walker", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    81.15400000000001,
+    83.938,
     START_SOUND,
     {
         "DX_m10_final_0120_alaric"
@@ -2556,7 +2573,7 @@ events={
 }
 ,
 {
-    83.01,
+    85.818,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -2565,7 +2582,7 @@ events={
 }
 ,
 {
-    83.01,
+    85.818,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
@@ -2575,21 +2592,21 @@ events={
 }
 ,
 {
-    83.01,
+    85.818,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s037b_0401_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    85.21000000000001,
+    88.018,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s038x_4301_trent", duration=10, start_time=1.5, time_scale=1, trans_time=0.5,  weight=1, heading=-1}
 }
 ,
 {
-    83.01,
+    85.818,
     START_SOUND,
     {
         "DX_m10_final_0130_trent"
@@ -2600,7 +2617,7 @@ events={
 }
 ,
 {
-    90.14200000000001,
+    92.038,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_head_ik",
@@ -2622,7 +2639,7 @@ events={
 }
 ,
 {
-    90.14200000000001,
+    92.038,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_eye_ik",
@@ -2644,7 +2661,7 @@ events={
 }
 ,
 {
-    88.64200000000001,
+    90.538,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_head_ik",
@@ -2666,7 +2683,7 @@ events={
 }
 ,
 {
-    88.64200000000001,
+    90.538,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_eye_ik",
@@ -2688,7 +2705,7 @@ events={
 }
 ,
 {
-    91.14200000000001,
+    93.038,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_head_ik",
@@ -2710,7 +2727,7 @@ events={
 }
 ,
 {
-    91.14200000000001,
+    93.038,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_eye_ik",
@@ -2732,14 +2749,14 @@ events={
 }
 ,
 {
-    89.14200000000001,
+    91.038,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s063x_0801_trent", duration=10, time_scale=0.9, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    89.14200000000001,
+    91.038,
     START_SOUND,
     {
         "DX_m10_final_0140_trent"
@@ -2750,7 +2767,7 @@ events={
 }
 ,
 {
-    93.37800000000001,
+    96.834,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_STND_FSTHIPB_RLEASE_000LV_XA_01",
@@ -2760,7 +2777,7 @@ events={
 }
 ,
 {
-    95.37800000000001,
+    98.834,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_STND_WALK_TRNS_180LV_XA_02",
@@ -2770,7 +2787,7 @@ events={
 }
 ,
 {
-    98.97800000000001,
+    102.434,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_WLKG_000LV_XA_01",
@@ -2780,7 +2797,7 @@ events={
 }
 ,
 {
-    93.37800000000001,
+    96.834,
     START_MOTION,
     {"Char_edison"},
     {animation="Sc_MLBODY_CHRF_LOOK_270LV_XA_01",
@@ -2790,7 +2807,7 @@ events={
 }
 ,
 {
-    93.37800000000001,
+    96.834,
     START_MOTION,
     {"Char_juni"},
     {animation="Sc_FMBODY_CHRB_IDLE_000LV_XA_06",
@@ -2800,7 +2817,7 @@ events={
 }
 ,
 {
-    93.87800000000001,
+    97.334,
     START_LIGHT_PROP_ANIM,
     {
         "LIGHT_ROOMA"
@@ -2815,7 +2832,7 @@ events={
 }
 ,
 {
-    93.87800000000001,
+    97.334,
     START_LIGHT_PROP_ANIM,
     {
         "LIGHT_ROOMA1"
@@ -2830,7 +2847,7 @@ events={
 }
 ,
 {
-    93.87800000000001,
+    97.334,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -2839,7 +2856,7 @@ events={
 }
 ,
 {
-    93.87800000000001,
+    97.334,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -2848,7 +2865,7 @@ events={
 }
 ,
 {
-    93.87800000000001,
+    97.334,
     START_SPATIAL_PROP_ANIM,
     {
         "cam_second",
@@ -2870,7 +2887,7 @@ events={
 }
 ,
 {
-    93.87800000000001,
+    97.334,
     START_SPATIAL_PROP_ANIM,
     {
         "automarker_cam_second_focus",
@@ -2892,7 +2909,7 @@ events={
 }
 ,
 {
-    102.87800000000001,
+    106.334,
     START_IK,
     {
         "Char_juni",
@@ -2907,7 +2924,7 @@ events={
 }
 ,
 {
-    102.87800000000001,
+    106.334,
     START_IK,
     {
         "Char_juni",
@@ -2922,7 +2939,7 @@ events={
 }
 ,
 {
-    104.87800000000001,
+    108.334,
     START_IK,
     {
         "Char_edison",
@@ -2937,7 +2954,7 @@ events={
 }
 ,
 {
-    104.87800000000001,
+    108.334,
     START_IK,
     {
         "Char_edison",
@@ -2952,7 +2969,7 @@ events={
 }
 ,
 {
-    102.87800000000001,
+    106.334,
     START_MOTION,
     {"Char_edison"},
     {animation="Sc_MLBODY_CHRF_TWSTS_FROM_270LV_XA_02",
@@ -2962,14 +2979,14 @@ events={
 }
 ,
 {
-    102.87800000000001,
+    106.334,
     START_MOTION,
     {"Char_edison"},
     {animation="Sc_dx_s070x_2301_trent", duration=10, start_time=1, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    102.87800000000001,
+    106.334,
     START_SOUND,
     {
         "DX_m10_final_0200_edison"
@@ -2980,7 +2997,7 @@ events={
 }
 ,
 {
-    106.61000000000001,
+    110.066,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -2989,21 +3006,21 @@ events={
 }
 ,
 {
-    106.61000000000001,
+    110.066,
     START_MOTION,
     {"Char_juni"},
     {animation="Sc_dx_s009c_0301_juni", duration=10, start_time=0, time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    108.11000000000001,
+    111.566,
     START_MOTION,
     {"Char_juni"},
     {animation="Sc_dx_s026c_0401_juni", duration=10, start_time=1, time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    106.61000000000001,
+    110.066,
     START_SOUND,
     {
         "DX_m10_final_0210_juni"
@@ -3014,7 +3031,7 @@ events={
 }
 ,
 {
-    111.42200000000001,
+    114.878,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -3023,7 +3040,7 @@ events={
 }
 ,
 {
-    113.42200000000001,
+    116.878,
     START_MOTION,
     {"Char_edison"},
     {animation="Sc_MLBODY_CHRF_CHRB_TRNS_000LV_XA_02",
@@ -3033,21 +3050,21 @@ events={
 }
 ,
 {
-    111.42200000000001,
+    114.878,
     START_MOTION,
     {"Char_edison"},
     {animation="Sc_dx_s071b_0101_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    114.42200000000001,
+    117.878,
     START_MOTION,
     {"Char_edison"},
     {animation="Sc_dx_s045b_1401_trent", duration=10, start_time=2, time_scale=1, trans_time=0.6,  weight=1, heading=-1}
 }
 ,
 {
-    111.42200000000001,
+    114.878,
     START_SOUND,
     {
         "DX_m10_final_0220_edison"
@@ -3058,7 +3075,7 @@ events={
 }
 ,
 {
-    117.84200000000001,
+    121.298,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -3067,7 +3084,7 @@ events={
 }
 ,
 {
-    117.84200000000001,
+    121.298,
     START_MOTION,
     {"Char_juni"},
     {animation="Sc_FMBODY_CHRB_CONV_LHND_CASL_000LV_xa_03",
@@ -3077,7 +3094,7 @@ events={
 }
 ,
 {
-    119.84200000000001,
+    123.298,
     START_MOTION,
     {"Char_juni"},
     {animation="Sc_FMBODY_CHRB_CONV_LHNDDN_TRNS_000LV_XA_01",
@@ -3087,14 +3104,14 @@ events={
 }
 ,
 {
-    117.84200000000001,
+    121.298,
     START_MOTION,
     {"Char_juni"},
     {animation="Sc_dx_s010x_2802_juni", duration=10, start_time=0.5, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    117.84200000000001,
+    121.298,
     START_SOUND,
     {
         "DX_m10_final_0230_juni"
@@ -3105,7 +3122,7 @@ events={
 }
 ,
 {
-    122.01600000000002,
+    125.47200000000001,
     START_IK,
     {
         "Char_edison",
@@ -3120,7 +3137,7 @@ events={
 }
 ,
 {
-    122.01600000000002,
+    125.47200000000001,
     START_IK,
     {
         "Char_edison",
@@ -3135,7 +3152,7 @@ events={
 }
 ,
 {
-    122.01600000000002,
+    125.47200000000001,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -3144,7 +3161,7 @@ events={
 }
 ,
 {
-    125.01600000000002,
+    128.472,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_edison_head_ik",
@@ -3166,7 +3183,7 @@ events={
 }
 ,
 {
-    125.01600000000002,
+    128.472,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_edison_eye_ik",
@@ -3188,7 +3205,7 @@ events={
 }
 ,
 {
-    123.01600000000002,
+    126.47200000000001,
     START_MOTION,
     {"Char_edison"},
     {animation="Sc_MLBODY_CHRB_CHRF_TRNS_000LV_XA_02",
@@ -3198,21 +3215,21 @@ events={
 }
 ,
 {
-    122.01600000000002,
+    125.47200000000001,
     START_MOTION,
     {"Char_edison"},
     {animation="Sc_dx_s006x_0201_trent", duration=10, start_time=0.4, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    125.01600000000002,
+    128.472,
     START_MOTION,
     {"Char_edison"},
     {animation="Sc_dx_s055a_0101_trent", duration=10, start_time=0.35, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    122.01600000000002,
+    125.47200000000001,
     START_SOUND,
     {
         "DX_m10_final_0240_edison"

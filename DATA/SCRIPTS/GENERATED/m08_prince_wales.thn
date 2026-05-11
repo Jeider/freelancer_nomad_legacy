@@ -1,4 +1,4 @@
-duration=24.02
+duration=24.524
 
 entities={
 	{
@@ -1021,7 +1021,7 @@ events={
     10.428,
     START_MOTION,
     {"Char_trent"},
-    { animation='Sc_dx_s020x_1601_Trent',duration=3.18,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=3.72 }
+    { animation='Sc_dx_s020x_1601_Trent',duration=3.78,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=3.12 }
 }
 ,
 {
@@ -1036,7 +1036,7 @@ events={
 }
 ,
 {
-    12.912,
+    13.512,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -1045,7 +1045,7 @@ events={
 }
 ,
 {
-    12.912,
+    13.512,
     START_MOTION,
     {"Char_darcy"},
     {animation="Sc_FMBODY_STND_FSTHIPB_RLEASE_000LV_XA_01",
@@ -1055,21 +1055,21 @@ events={
 }
 ,
 {
-    12.912,
+    13.512,
     START_MOTION,
     {"Char_darcy"},
     { animation='Sc_dx_s070x_2701_Jacobi',duration=6.33,time_scale=1,trans_time=0.25,weight=1,heading=-1 }
 }
 ,
 {
-    16.612000000000002,
+    17.212,
     START_MOTION,
     {"Char_darcy"},
     { animation='Sc_dx_s070x_2701_Jacobi',duration=2.63,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=2.07 }
 }
 ,
 {
-    12.912,
+    13.512,
     START_SOUND,
     {
         "DX_m08_prince_wales_0030_darcy"
@@ -1080,7 +1080,7 @@ events={
 }
 ,
 {
-    18.54,
+    19.14,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -1089,7 +1089,7 @@ events={
 }
 ,
 {
-    18.54,
+    19.14,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_STND_FSTHIPB_RLEASE_000LV_XA_01",
@@ -1099,14 +1099,14 @@ events={
 }
 ,
 {
-    18.54,
+    19.14,
     START_MOTION,
     {"Char_trent"},
-    { animation='Sc_dx_s020x_1601_Trent',duration=2.87,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=4.03 }
+    { animation='Sc_dx_s020x_1601_Trent',duration=2.78,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=4.12 }
 }
 ,
 {
-    18.54,
+    19.14,
     START_SOUND,
     {
         "DX_m08_prince_wales_0040_trent"
@@ -1117,7 +1117,7 @@ events={
 }
 ,
 {
-    20.712,
+    21.216,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -1126,14 +1126,14 @@ events={
 }
 ,
 {
-    20.712,
+    21.216,
     START_MOTION,
     {"Char_darcy"},
     { animation='Sc_dx_s070x_2701_Jacobi',duration=2.01,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=2.69 }
 }
 ,
 {
-    20.712,
+    21.216,
     START_SOUND,
     {
         "DX_m08_prince_wales_0050_darcy"

@@ -1,4 +1,4 @@
-duration=127.44999999999995
+duration=142.114
 
 entities={
 	{
@@ -51,6 +51,7 @@ entities={
 		spatialprops={pos={0,-10000,-10000000},orient={ {1,0,0},{0,1,0},{0,0,1} } },
 	},
 
+    
 	
 {
     entity_name="DX_m12_sprague_0010_hatcher",
@@ -266,8 +267,8 @@ entities={
     type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
 }
         
-
-	,
+     ,
+    
 
 	{
     entity_name="automarker_default_point",
@@ -275,6 +276,20 @@ entities={
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
     spatialprops={
         pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_offscreen_point",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, -10000.00, 0.00 },
         orient={ 
             { 1.0000000,0.0000000,0.0000000 },
             { 0.0000000,1.0000000,0.0000000 },
@@ -1222,6 +1237,34 @@ entities={
 }
 ,
 {
+    entity_name="automarker_cam_decision",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 12.04, 4.38, -4.51 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_decision_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 5.89, 0.99, 0.49 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
     entity_name="cam_dbg",
     type=CAMERA,
     template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
@@ -1498,6 +1541,7 @@ entities={
     entity_name="alarm",
     template_name="rtc_klaxon_loop_3",
     type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+    
     spatialprops={
         pos={0,0,0},
         orient={
@@ -1505,13 +1549,14 @@ entities={
         }
     },
     audioprops={attenuation=-12,pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
-    userprops={category="Audio",Priority="Story_Sound_1"}
+    userprops={category="Audio"  , Priority="Story_Sound_1"  }
 }
 ,
 {
     entity_name="music1",
     template_name="rtc_music_anticipation_more_forboding",
     type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+    
     spatialprops={
         pos={0,0,0},
         orient={
@@ -1519,13 +1564,14 @@ entities={
         }
     },
     audioprops={attenuation=-12,pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
-    userprops={category="Audio",Priority="Story_Sound_1"}
+    userprops={category="Audio"  , Priority="Story_Sound_1"  }
 }
 ,
 {
     entity_name="music2",
     template_name="rtc_music_upcoming_action_heavy",
     type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+    
     spatialprops={
         pos={0,0,0},
         orient={
@@ -1533,7 +1579,7 @@ entities={
         }
     },
     audioprops={attenuation=-15,pan=0,dmin=50,dmax=300,ain=360,aout=360,atout=0,rmix=0},
-    userprops={category="Audio",Priority="Story_Sound_1"}
+    userprops={category="Audio"  , Priority="Story_Sound_1"  }
 }
 ,
 {
@@ -2326,7 +2372,7 @@ events={
         "char_ik_Char_hatcher_head_ik"
     },
     {
-        duration=77.68999999999997,
+        duration=86.73800000000001,
         end_effector="Body_Head", transition_duration=1,
         target_part="", target_type=ROOT,
         count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
@@ -2341,7 +2387,7 @@ events={
         "char_ik_Char_hatcher_eye_ik"
     },
     {
-        duration=77.68999999999997,
+        duration=86.73800000000001,
         end_effector="Eye IK Left", transition_duration=1,
         target_part="", target_type=ROOT,
         count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
@@ -2353,7 +2399,7 @@ events={
     START_SOUND,
     {"music1"},
     {
-        duration=88.21399999999997
+        duration=97.09400000000001, start_time=0
         
         , flags=LOOP
         
@@ -2396,8 +2442,8 @@ events={
     START_MOTION,
     {"doors"},
     {animation="Sc_door_open",
-     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
-       
+     duration=10, time_scale=1, start_time=0, weight=1, trans_scale=1
+     
      }
 }
 ,
@@ -2566,8 +2612,8 @@ events={
     START_MOTION,
     {"doors"},
     {animation="Sc_door_close",
-     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
-       
+     duration=10, time_scale=1, start_time=0, weight=1, trans_scale=1
+     
      }
 }
 ,
@@ -2576,8 +2622,8 @@ events={
     START_MOTION,
     {"table"},
     {animation="Sc_table animation",
-     duration=2, time_scale=1, start_time=0, weight=1, heading=-1
-       
+     duration=2, time_scale=1, start_time=0, weight=1, trans_scale=1
+     
      }
 }
 ,
@@ -2595,8 +2641,8 @@ events={
     START_MOTION,
     {"table"},
     {animation="Sc_table animation",
-     duration=2, time_scale=1, start_time=2, weight=1, heading=-1
-       
+     duration=2, time_scale=1, start_time=2, weight=1, trans_scale=1
+     
      }
 }
 ,
@@ -2647,7 +2693,7 @@ events={
 }
 ,
 {
-    11.608,
+    12.040000000000001,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_FMHEAD_MAD_COLD_000LV_XA_%",
@@ -2657,7 +2703,7 @@ events={
 }
 ,
 {
-    11.858,
+    12.290000000000001,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -2666,7 +2712,7 @@ events={
 }
 ,
 {
-    11.858,
+    12.290000000000001,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_STND_CONV_RHND_CASL_000LV_xa_01",
@@ -2676,7 +2722,7 @@ events={
 }
 ,
 {
-    11.858,
+    12.290000000000001,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLHAND_HNEUT_GESTR_CASL_000LV_00",
@@ -2686,14 +2732,14 @@ events={
 }
 ,
 {
-    11.858,
+    12.290000000000001,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s045b_1801_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    11.858,
+    12.290000000000001,
     START_SOUND,
     {
         "DX_m12_sprague_0020_trent"
@@ -2704,7 +2750,7 @@ events={
 }
 ,
 {
-    13.022,
+    13.910000000000002,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
@@ -2714,17 +2760,17 @@ events={
 }
 ,
 {
-    13.372,
+    14.260000000000002,
     START_MOTION,
     {"doors"},
     {animation="Sc_door_open",
-     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
-       
+     duration=10, time_scale=1, start_time=0, weight=1, trans_scale=1
+     
      }
 }
 ,
 {
-    13.622,
+    14.510000000000002,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -2733,7 +2779,7 @@ events={
 }
 ,
 {
-    13.622,
+    14.510000000000002,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_FMBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
@@ -2743,7 +2789,7 @@ events={
 }
 ,
 {
-    15.622,
+    16.51,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_FMBODY_STND_CROSS_ARMS_000LV_XB_03",
@@ -2753,7 +2799,7 @@ events={
 }
 ,
 {
-    17.622,
+    18.51,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_FMBODY_STND_UNCRSS_ARMS_000LV_XA_03",
@@ -2763,7 +2809,7 @@ events={
 }
 ,
 {
-    19.622,
+    20.51,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_FMBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
@@ -2773,21 +2819,21 @@ events={
 }
 ,
 {
-    13.622,
+    14.510000000000002,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_dx_s070x_2501_Jacobi", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    17.922,
+    18.810000000000002,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_dx_s070x_0701_Jacobi", start_time=1, duration=10, time_scale=1, trans_time=0.5,  weight=1, heading=-1}
 }
 ,
 {
-    13.622,
+    14.510000000000002,
     START_SOUND,
     {
         "DX_m12_sprague_0030_hatcher"
@@ -2798,7 +2844,7 @@ events={
 }
 ,
 {
-    21.073999999999998,
+    22.490000000000002,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_FMHEAD_MAD_COLD_000LV_XA_%",
@@ -2808,7 +2854,7 @@ events={
 }
 ,
 {
-    21.073999999999998,
+    22.490000000000002,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -2817,7 +2863,7 @@ events={
 }
 ,
 {
-    21.073999999999998,
+    22.490000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "cam_deal",
@@ -2839,7 +2885,7 @@ events={
 }
 ,
 {
-    21.073999999999998,
+    22.490000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "automarker_cam_deal_focus",
@@ -2861,7 +2907,7 @@ events={
 }
 ,
 {
-    21.073999999999998,
+    22.490000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "Char_trent",
@@ -2879,7 +2925,7 @@ events={
 }
 ,
 {
-    21.073999999999998,
+    22.490000000000002,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
@@ -2889,7 +2935,7 @@ events={
 }
 ,
 {
-    21.573999999999998,
+    22.990000000000002,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_STND_TURN_045LV_XA_04",
@@ -2899,7 +2945,7 @@ events={
 }
 ,
 {
-    21.073999999999998,
+    22.490000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "Char_alaric",
@@ -2917,7 +2963,7 @@ events={
 }
 ,
 {
-    21.073999999999998,
+    22.490000000000002,
     START_MOTION,
     {"Char_alaric"},
     {animation="Sc_MLBODY_WALK_STND_TRNS_000LV_XA_02",
@@ -2927,7 +2973,7 @@ events={
 }
 ,
 {
-    21.073999999999998,
+    22.490000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "Char_darcy",
@@ -2945,7 +2991,7 @@ events={
 }
 ,
 {
-    21.073999999999998,
+    22.490000000000002,
     START_MOTION,
     {"Char_darcy"},
     {animation="Sc_FMBODY_WLKG_000LV_XA_01",
@@ -2955,7 +3001,7 @@ events={
 }
 ,
 {
-    22.374,
+    23.790000000000003,
     START_MOTION,
     {"Char_darcy"},
     {animation="Sc_FMBODY_WALK_STND_TRNS_000LV_XA_01",
@@ -2965,7 +3011,7 @@ events={
 }
 ,
 {
-    24.073999999999998,
+    25.490000000000002,
     START_MOTION,
     {"Char_darcy"},
     {animation="Sc_FMBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
@@ -2975,7 +3021,7 @@ events={
 }
 ,
 {
-    21.174,
+    22.590000000000003,
     START_IK,
     {
         "Char_alaric",
@@ -2990,7 +3036,7 @@ events={
 }
 ,
 {
-    21.174,
+    22.590000000000003,
     START_IK,
     {
         "Char_alaric",
@@ -3005,7 +3051,7 @@ events={
 }
 ,
 {
-    21.174,
+    22.590000000000003,
     START_IK,
     {
         "Char_darcy",
@@ -3020,7 +3066,7 @@ events={
 }
 ,
 {
-    21.174,
+    22.590000000000003,
     START_IK,
     {
         "Char_darcy",
@@ -3035,7 +3081,7 @@ events={
 }
 ,
 {
-    22.073999999999998,
+    23.490000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_head_ik",
@@ -3057,7 +3103,7 @@ events={
 }
 ,
 {
-    22.073999999999998,
+    23.490000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_eye_ik",
@@ -3079,7 +3125,7 @@ events={
 }
 ,
 {
-    24.473999999999997,
+    25.89,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_head_ik",
@@ -3101,7 +3147,7 @@ events={
 }
 ,
 {
-    24.473999999999997,
+    25.89,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_eye_ik",
@@ -3123,7 +3169,7 @@ events={
 }
 ,
 {
-    22.073999999999998,
+    23.490000000000002,
     START_IK,
     {
         "Char_trent",
@@ -3138,7 +3184,7 @@ events={
 }
 ,
 {
-    22.073999999999998,
+    23.490000000000002,
     START_IK,
     {
         "Char_trent",
@@ -3153,24 +3199,24 @@ events={
 }
 ,
 {
-    21.073999999999998,
+    22.490000000000002,
     START_MOTION,
     {"doors"},
     {animation="Sc_door_close",
-     duration=10, time_scale=1, start_time=0, weight=1, heading=-1
-       
+     duration=10, time_scale=1, start_time=0, weight=1, trans_scale=1
+     
      }
 }
 ,
 {
-    21.573999999999998,
+    22.990000000000002,
     START_MOTION,
     {"Char_alaric"},
     {animation="Sc_dx_s068x_0301_walker", duration=10, time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    21.573999999999998,
+    22.990000000000002,
     START_SOUND,
     {
         "DX_m12_sprague_0040_alaric"
@@ -3181,7 +3227,7 @@ events={
 }
 ,
 {
-    25.377999999999997,
+    26.026000000000003,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
@@ -3191,7 +3237,7 @@ events={
 }
 ,
 {
-    27.377999999999997,
+    28.026000000000003,
     START_MOTION,
     {"Char_darcy"},
     {animation="Sc_FMBODY_STND_FSTHIPB_RLEASE_000LV_XA_01",
@@ -3201,7 +3247,7 @@ events={
 }
 ,
 {
-    28.377999999999997,
+    29.026000000000003,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_head_ik",
@@ -3223,7 +3269,7 @@ events={
 }
 ,
 {
-    28.377999999999997,
+    29.026000000000003,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_eye_ik",
@@ -3245,7 +3291,7 @@ events={
 }
 ,
 {
-    27.377999999999997,
+    28.026000000000003,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_head_ik",
@@ -3267,7 +3313,7 @@ events={
 }
 ,
 {
-    27.377999999999997,
+    28.026000000000003,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_eye_ik",
@@ -3289,7 +3335,7 @@ events={
 }
 ,
 {
-    29.677999999999997,
+    30.326000000000004,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_head_ik",
@@ -3311,7 +3357,7 @@ events={
 }
 ,
 {
-    29.677999999999997,
+    30.326000000000004,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_eye_ik",
@@ -3333,7 +3379,7 @@ events={
 }
 ,
 {
-    26.377999999999997,
+    27.026000000000003,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_head_ik",
@@ -3355,7 +3401,7 @@ events={
 }
 ,
 {
-    26.377999999999997,
+    27.026000000000003,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_eye_ik",
@@ -3377,7 +3423,7 @@ events={
 }
 ,
 {
-    28.777999999999995,
+    29.426000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_head_ik",
@@ -3399,7 +3445,7 @@ events={
 }
 ,
 {
-    28.777999999999995,
+    29.426000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_eye_ik",
@@ -3421,14 +3467,14 @@ events={
 }
 ,
 {
-    25.377999999999997,
+    26.026000000000003,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s020x_1601_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    25.377999999999997,
+    26.026000000000003,
     START_SOUND,
     {
         "DX_m12_sprague_0050_trent"
@@ -3439,7 +3485,7 @@ events={
 }
 ,
 {
-    31.701999999999998,
+    33.406000000000006,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -3448,7 +3494,7 @@ events={
 }
 ,
 {
-    31.701999999999998,
+    33.406000000000006,
     START_SPATIAL_PROP_ANIM,
     {
         "Char_hatcher",
@@ -3466,7 +3512,7 @@ events={
 }
 ,
 {
-    31.701999999999998,
+    33.406000000000006,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_FMBODY_STND_FSTHIPB_HOLD_000LV_XA_01",
@@ -3476,7 +3522,7 @@ events={
 }
 ,
 {
-    33.702,
+    35.406000000000006,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_FMBODY_STND_CONV_HNDS_CASL_000LV_xa_03",
@@ -3486,7 +3532,7 @@ events={
 }
 ,
 {
-    36.102,
+    37.806000000000004,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_FMBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
@@ -3496,21 +3542,21 @@ events={
 }
 ,
 {
-    31.701999999999998,
+    33.406000000000006,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_dx_s070x_2501_Jacobi", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    33.501999999999995,
+    35.206,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_dx_s070x_0801_Jacobi", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    31.701999999999998,
+    33.406000000000006,
     START_SOUND,
     {
         "DX_m12_sprague_0060_hatcher"
@@ -3521,7 +3567,7 @@ events={
 }
 ,
 {
-    38.193999999999996,
+    40.61800000000001,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -3530,7 +3576,7 @@ events={
 }
 ,
 {
-    39.193999999999996,
+    41.61800000000001,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLHAND_HNEUT_GESTR_CASL_000LV_00",
@@ -3540,7 +3586,7 @@ events={
 }
 ,
 {
-    40.193999999999996,
+    42.61800000000001,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_STND_CONV_RHNDUP_TRNS_000LV_XA_01",
@@ -3550,7 +3596,7 @@ events={
 }
 ,
 {
-    41.193999999999996,
+    43.61800000000001,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_STND_CONV_RHND_CASL_000LV_xa_01",
@@ -3560,7 +3606,7 @@ events={
 }
 ,
 {
-    44.193999999999996,
+    46.61800000000001,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_STND_CONV_RHNDDN_TRNS_000LV_XA_02",
@@ -3570,7 +3616,7 @@ events={
 }
 ,
 {
-    40.193999999999996,
+    42.61800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_head_ik",
@@ -3592,7 +3638,7 @@ events={
 }
 ,
 {
-    40.193999999999996,
+    42.61800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_eye_ik",
@@ -3614,7 +3660,7 @@ events={
 }
 ,
 {
-    43.193999999999996,
+    45.61800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_head_ik",
@@ -3636,7 +3682,7 @@ events={
 }
 ,
 {
-    43.193999999999996,
+    45.61800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_eye_ik",
@@ -3658,21 +3704,21 @@ events={
 }
 ,
 {
-    38.193999999999996,
+    40.61800000000001,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s034x_1301_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    42.193999999999996,
+    44.61800000000001,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s045b_1401_trent", start_time=2, duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    38.193999999999996,
+    40.61800000000001,
     START_SOUND,
     {
         "DX_m12_sprague_0070_trent"
@@ -3683,7 +3729,7 @@ events={
 }
 ,
 {
-    45.742,
+    49.48600000000001,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -3692,7 +3738,7 @@ events={
 }
 ,
 {
-    50.742,
+    54.48600000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "cam_impossible",
@@ -3714,7 +3760,7 @@ events={
 }
 ,
 {
-    48.742,
+    52.48600000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "automarker_cam_impossible_focus",
@@ -3736,21 +3782,21 @@ events={
 }
 ,
 {
-    45.742,
+    49.48600000000001,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_dx_s070x_2501_Jacobi", start_time=2, duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    47.742,
+    51.48600000000001,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_dx_s070x_0701_Jacobi", start_time=2, duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    45.742,
+    49.48600000000001,
     START_SOUND,
     {
         "DX_m12_sprague_0080_hatcher"
@@ -3761,7 +3807,7 @@ events={
 }
 ,
 {
-    49.87,
+    55.174000000000014,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_FMHEAD_MAD_COLD_000LV_XA_%",
@@ -3771,7 +3817,7 @@ events={
 }
 ,
 {
-    48.87,
+    54.174000000000014,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_mandrake_head_ik",
@@ -3793,7 +3839,7 @@ events={
 }
 ,
 {
-    48.87,
+    54.174000000000014,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_mandrake_eye_ik",
@@ -3815,14 +3861,14 @@ events={
 }
 ,
 {
-    49.87,
+    55.174000000000014,
     START_MOTION,
     {"Char_mandrake"},
     {animation="Sc_dx_s068x_0201_walker", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    49.87,
+    55.174000000000014,
     START_SOUND,
     {
         "DX_m12_sprague_0090_mandrake"
@@ -3833,7 +3879,7 @@ events={
 }
 ,
 {
-    52.297999999999995,
+    57.60200000000001,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_FMBODY_STND_UNCRSS_ARMS_000LV_XA_03",
@@ -3843,7 +3889,7 @@ events={
 }
 ,
 {
-    50.59799999999999,
+    55.90200000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_hatcher_head_ik",
@@ -3865,7 +3911,7 @@ events={
 }
 ,
 {
-    50.59799999999999,
+    55.90200000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_hatcher_eye_ik",
@@ -3887,14 +3933,14 @@ events={
 }
 ,
 {
-    51.297999999999995,
+    56.60200000000001,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_dx_s070x_2701_Jacobi", start_time=1.5, duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    51.297999999999995,
+    56.60200000000001,
     START_SOUND,
     {
         "DX_m12_sprague_0100_hatcher"
@@ -3905,7 +3951,7 @@ events={
 }
 ,
 {
-    53.87799999999999,
+    59.75800000000001,
     START_MOTION,
     {"Char_mandrake"},
     {animation="Sc_MLBODY_STND_GRABR_CHIN_RLEASE_000LV_XA_01",
@@ -3915,7 +3961,7 @@ events={
 }
 ,
 {
-    54.87799999999999,
+    60.75800000000001,
     START_MOTION,
     {"Char_mandrake"},
     {animation="Sc_MLHAND_HNEUT_GESTR_FIST_000LV_00",
@@ -3925,7 +3971,7 @@ events={
 }
 ,
 {
-    55.37799999999999,
+    61.25800000000001,
     START_MOTION,
     {"Char_mandrake"},
     {animation="Sc_MLHAND_HNEUT_GESTR_FIST_000LV_00",
@@ -3935,7 +3981,7 @@ events={
 }
 ,
 {
-    55.87799999999999,
+    61.75800000000001,
     START_MOTION,
     {"Char_mandrake"},
     {animation="Sc_MLHAND_HNEUT_GESTR_FIST_000LV_00",
@@ -3945,7 +3991,7 @@ events={
 }
 ,
 {
-    56.37799999999999,
+    62.25800000000001,
     START_MOTION,
     {"Char_mandrake"},
     {animation="Sc_MLHAND_HNEUT_GESTR_FIST_000LV_00",
@@ -3955,7 +4001,7 @@ events={
 }
 ,
 {
-    56.87799999999999,
+    62.75800000000001,
     START_MOTION,
     {"Char_mandrake"},
     {animation="Sc_MLHAND_HNEUT_GESTR_FIST_000LV_00",
@@ -3965,7 +4011,7 @@ events={
 }
 ,
 {
-    57.37799999999999,
+    63.25800000000001,
     START_MOTION,
     {"Char_mandrake"},
     {animation="Sc_MLHAND_HNEUT_GESTR_FIST_000LV_00",
@@ -3975,7 +4021,7 @@ events={
 }
 ,
 {
-    53.88799999999999,
+    59.76800000000001,
     START_IK,
     {
         "Char_mandrake",
@@ -3990,7 +4036,7 @@ events={
 }
 ,
 {
-    53.87799999999999,
+    59.75800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_mandrake_head_ik",
@@ -4012,7 +4058,7 @@ events={
 }
 ,
 {
-    53.87799999999999,
+    59.75800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_mandrake_eye_ik",
@@ -4034,7 +4080,7 @@ events={
 }
 ,
 {
-    56.87799999999999,
+    62.75800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_mandrake_head_ik",
@@ -4056,7 +4102,7 @@ events={
 }
 ,
 {
-    56.87799999999999,
+    62.75800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_mandrake_eye_ik",
@@ -4078,7 +4124,7 @@ events={
 }
 ,
 {
-    53.87799999999999,
+    59.75800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "automarker_cam_impossible_focus",
@@ -4100,7 +4146,7 @@ events={
 }
 ,
 {
-    52.87799999999999,
+    58.75800000000001,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_FMBODY_STND_IDLE_BIG_000LV_xa_05",
@@ -4110,7 +4156,7 @@ events={
 }
 ,
 {
-    56.87799999999999,
+    62.75800000000001,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_FMBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
@@ -4120,7 +4166,7 @@ events={
 }
 ,
 {
-    61.87799999999999,
+    67.75800000000001,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_FMBODY_STND_FSTHIPB_RLEASE_000LV_XA_01",
@@ -4130,14 +4176,14 @@ events={
 }
 ,
 {
-    53.87799999999999,
+    59.75800000000001,
     START_MOTION,
     {"Char_mandrake"},
     {animation="Sc_dx_s020x_2101_vanpelt", duration=10, time_scale=0.98, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    53.87799999999999,
+    59.75800000000001,
     START_SOUND,
     {
         "DX_m12_sprague_0110_mandrake"
@@ -4148,7 +4194,7 @@ events={
 }
 ,
 {
-    59.85799999999999,
+    65.73800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_hatcher_head_ik",
@@ -4170,7 +4216,7 @@ events={
 }
 ,
 {
-    59.85799999999999,
+    65.73800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_hatcher_eye_ik",
@@ -4192,7 +4238,7 @@ events={
 }
 ,
 {
-    62.85799999999999,
+    68.73800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_hatcher_head_ik",
@@ -4214,7 +4260,7 @@ events={
 }
 ,
 {
-    62.85799999999999,
+    68.73800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_hatcher_eye_ik",
@@ -4236,7 +4282,7 @@ events={
 }
 ,
 {
-    57.85799999999999,
+    63.738000000000014,
     START_MOTION,
     {"Char_mandrake"},
     {animation="Sc_MLBODY_STND_HOLD_CHIN_RLEASE_000LV_XA_01",
@@ -4246,7 +4292,7 @@ events={
 }
 ,
 {
-    59.85799999999999,
+    65.73800000000001,
     START_MOTION,
     {"Char_mandrake"},
     {animation="Sc_MLBODY_STND_CROSS_ARMS_000LV_xa_06",
@@ -4256,7 +4302,7 @@ events={
 }
 ,
 {
-    60.85799999999999,
+    66.73800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_mandrake_head_ik",
@@ -4278,7 +4324,7 @@ events={
 }
 ,
 {
-    60.85799999999999,
+    66.73800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_mandrake_eye_ik",
@@ -4300,7 +4346,7 @@ events={
 }
 ,
 {
-    63.85799999999999,
+    69.73800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_mandrake_head_ik",
@@ -4322,7 +4368,7 @@ events={
 }
 ,
 {
-    63.85799999999999,
+    69.73800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_mandrake_eye_ik",
@@ -4344,21 +4390,21 @@ events={
 }
 ,
 {
-    58.85799999999999,
+    64.73800000000001,
     START_MOTION,
     {"Char_mandrake"},
     {animation="Sc_dx_s020x_2102_vanpelt", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    60.35799999999999,
+    66.23800000000001,
     START_MOTION,
     {"Char_mandrake"},
     {animation="Sc_dx_s020x_2102_vanpelt", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    58.85799999999999,
+    64.73800000000001,
     START_SOUND,
     {
         "DX_m12_sprague_0120_mandrake"
@@ -4369,7 +4415,7 @@ events={
 }
 ,
 {
-    65.78999999999999,
+    71.67000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_head_ik",
@@ -4387,7 +4433,7 @@ events={
 }
 ,
 {
-    65.78999999999999,
+    71.67000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_eye_ik",
@@ -4405,7 +4451,7 @@ events={
 }
 ,
 {
-    65.78999999999999,
+    71.67000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_head_ik",
@@ -4423,7 +4469,7 @@ events={
 }
 ,
 {
-    65.78999999999999,
+    71.67000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_eye_ik",
@@ -4441,7 +4487,7 @@ events={
 }
 ,
 {
-    66.78999999999999,
+    72.67000000000002,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -4450,7 +4496,7 @@ events={
 }
 ,
 {
-    67.78999999999999,
+    73.67000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_head_ik",
@@ -4472,7 +4518,7 @@ events={
 }
 ,
 {
-    67.78999999999999,
+    73.67000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_eye_ik",
@@ -4494,7 +4540,7 @@ events={
 }
 ,
 {
-    67.78999999999999,
+    73.67000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_head_ik",
@@ -4516,7 +4562,7 @@ events={
 }
 ,
 {
-    67.78999999999999,
+    73.67000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_eye_ik",
@@ -4538,7 +4584,7 @@ events={
 }
 ,
 {
-    66.78999999999999,
+    72.67000000000002,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_STND_GIVE_VEND_000LV_B_07",
@@ -4548,7 +4594,7 @@ events={
 }
 ,
 {
-    66.78999999999999,
+    72.67000000000002,
     START_MOTION,
     {"Char_alaric"},
     {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
@@ -4558,7 +4604,7 @@ events={
 }
 ,
 {
-    66.78999999999999,
+    72.67000000000002,
     START_MOTION,
     {"Char_darcy"},
     {animation="Sc_FMBODY_STND_IDLE_000LV_xa_05",
@@ -4568,7 +4614,7 @@ events={
 }
 ,
 {
-    68.78999999999999,
+    74.67000000000002,
     START_MOTION,
     {"Char_darcy"},
     {animation="Sc_FMBODY_STND_CROSS_ARMS_000LV_XB_03",
@@ -4578,7 +4624,7 @@ events={
 }
 ,
 {
-    68.78999999999999,
+    74.67000000000002,
     START_MOTION,
     {"Char_darcy"},
     {animation="Sc_FMHAND_HNEUT_GESTL_FIST_000LV_00",
@@ -4588,7 +4634,7 @@ events={
 }
 ,
 {
-    68.78999999999999,
+    74.67000000000002,
     START_MOTION,
     {"Char_darcy"},
     {animation="Sc_FMHAND_HNEUT_GESTR_FIST_000LV_00",
@@ -4598,7 +4644,7 @@ events={
 }
 ,
 {
-    66.78999999999999,
+    72.67000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_head_ik",
@@ -4620,7 +4666,7 @@ events={
 }
 ,
 {
-    66.78999999999999,
+    72.67000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_eye_ik",
@@ -4642,7 +4688,7 @@ events={
 }
 ,
 {
-    71.78999999999999,
+    77.67000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_head_ik",
@@ -4664,7 +4710,7 @@ events={
 }
 ,
 {
-    71.78999999999999,
+    77.67000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_eye_ik",
@@ -4686,14 +4732,14 @@ events={
 }
 ,
 {
-    66.78999999999999,
+    72.67000000000002,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s014a_0101_trent", duration=10, start_time=0.8, time_scale=0.9, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    66.78999999999999,
+    72.67000000000002,
     START_SOUND,
     {
         "DX_m12_sprague_0130_trent"
@@ -4704,21 +4750,21 @@ events={
 }
 ,
 {
-    69.63399999999999,
+    76.76200000000001,
     START_MOTION,
     {"Char_darcy"},
     {animation="Sc_dx_GCS_W01cG06_RVP51", duration=10, start_time=1.3, time_scale=0.8, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    70.83399999999999,
+    77.96200000000002,
     START_MOTION,
     {"Char_darcy"},
     {animation="Sc_FMHEAD_BASEPOSE_000LV_02_01", duration=10, time_scale=1, trans_time=1,  weight=1, heading=-1}
 }
 ,
 {
-    69.63399999999999,
+    76.76200000000001,
     START_SOUND,
     {
         "DX_m12_sprague_0140_darcy"
@@ -4729,7 +4775,7 @@ events={
 }
 ,
 {
-    70.96599999999998,
+    78.09400000000001,
     START_MOTION,
     {"Char_alaric"},
     {animation="Sc_MLBODY_STND_CONV_RHNDUP_TRNS_000LV_XA_01",
@@ -4739,7 +4785,7 @@ events={
 }
 ,
 {
-    70.96599999999998,
+    78.09400000000001,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLHAND_HNEUT_GESTR_CASL_000LV_00",
@@ -4749,14 +4795,14 @@ events={
 }
 ,
 {
-    70.96599999999998,
+    78.09400000000001,
     START_MOTION,
     {"Char_alaric"},
     {animation="Sc_dx_s067b_2001_king", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    70.96599999999998,
+    78.09400000000001,
     START_SOUND,
     {
         "DX_m12_sprague_0150_alaric"
@@ -4767,7 +4813,7 @@ events={
 }
 ,
 {
-    72.89799999999998,
+    80.09800000000001,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -4776,7 +4822,7 @@ events={
 }
 ,
 {
-    72.89799999999998,
+    80.09800000000001,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_FMBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
@@ -4786,7 +4832,7 @@ events={
 }
 ,
 {
-    75.39799999999998,
+    82.59800000000001,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_FMBODY_STND_CONV_HNDS_CASL_000LV_xb_03",
@@ -4796,7 +4842,7 @@ events={
 }
 ,
 {
-    76.89799999999998,
+    84.09800000000001,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_FMBODY_STND_SHRG_SHLDRS_SMALL_000LV_XA_02",
@@ -4806,7 +4852,7 @@ events={
 }
 ,
 {
-    72.89799999999998,
+    80.09800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_hatcher_head_ik",
@@ -4828,7 +4874,7 @@ events={
 }
 ,
 {
-    72.89799999999998,
+    80.09800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_hatcher_eye_ik",
@@ -4850,21 +4896,21 @@ events={
 }
 ,
 {
-    72.89799999999998,
+    80.09800000000001,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_dx_s070x_2701_Jacobi", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    75.39799999999998,
+    82.59800000000001,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_dx_s070x_0801_Jacobi", start_time=1, duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    72.89799999999998,
+    80.09800000000001,
     START_SOUND,
     {
         "DX_m12_sprague_0160_hatcher"
@@ -4875,7 +4921,7 @@ events={
 }
 ,
 {
-    79.24599999999998,
+    87.33400000000002,
     START_MOTION,
     {"Char_darcy"},
     {animation="Sc_FMBODY_STND_UNCRSS_ARMS_000LV_XA_03",
@@ -4885,7 +4931,7 @@ events={
 }
 ,
 {
-    82.24599999999998,
+    90.33400000000002,
     START_MOTION,
     {"Char_darcy"},
     {animation="Sc_FMBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
@@ -4895,7 +4941,7 @@ events={
 }
 ,
 {
-    79.24599999999998,
+    87.33400000000002,
     START_MOTION,
     {"Char_alaric"},
     {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
@@ -4905,7 +4951,7 @@ events={
 }
 ,
 {
-    79.24599999999998,
+    87.33400000000002,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -4914,21 +4960,21 @@ events={
 }
 ,
 {
-    79.24599999999998,
+    87.33400000000002,
     CONNECT_HARDPOINTS,
     {
         "prop_artifact",
         "Char_trent"
     },
     {
-        duration=8.443999999999988,
+        duration=9.403999999999996,
         hardpoint="hplefthandconnect_prop_crystal",
         parent_hardpoint="hpleftconnect"
     }
 }
 ,
 {
-    79.24599999999998,
+    87.33400000000002,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_SPCBODY_s020x_Trent_XA_STND_SHOW_ARTFCT_000LV_06",
@@ -4938,7 +4984,7 @@ events={
 }
 ,
 {
-    79.24599999999998,
+    87.33400000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_head_ik",
@@ -4960,7 +5006,7 @@ events={
 }
 ,
 {
-    79.24599999999998,
+    87.33400000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_eye_ik",
@@ -4982,7 +5028,7 @@ events={
 }
 ,
 {
-    82.24599999999998,
+    90.33400000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_head_ik",
@@ -5004,7 +5050,7 @@ events={
 }
 ,
 {
-    82.24599999999998,
+    90.33400000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_eye_ik",
@@ -5026,7 +5072,7 @@ events={
 }
 ,
 {
-    80.34599999999998,
+    88.43400000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_head_ik",
@@ -5048,7 +5094,7 @@ events={
 }
 ,
 {
-    80.24599999999998,
+    88.33400000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_eye_ik",
@@ -5070,7 +5116,7 @@ events={
 }
 ,
 {
-    80.14599999999999,
+    88.23400000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_head_ik",
@@ -5092,7 +5138,7 @@ events={
 }
 ,
 {
-    80.24599999999998,
+    88.33400000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_eye_ik",
@@ -5114,7 +5160,7 @@ events={
 }
 ,
 {
-    80.24599999999998,
+    88.33400000000002,
     START_MOTION,
     {"Char_alaric"},
     {animation="Sc_FMHEAD_SURPRSE_IMPRESSED_000LV_XA_%",
@@ -5124,14 +5170,14 @@ events={
 }
 ,
 {
-    79.24599999999998,
+    87.33400000000002,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s064x_2001_trent", duration=10, time_scale=0.98, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    79.24599999999998,
+    87.33400000000002,
     START_SOUND,
     {
         "DX_m12_sprague_0170_trent"
@@ -5142,21 +5188,21 @@ events={
 }
 ,
 {
-    81.32199999999997,
+    90.20200000000001,
     START_MOTION,
     {"Char_darcy"},
     {animation="Sc_dx_s070x_0801_Jacobi", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    83.32199999999997,
+    92.20200000000001,
     START_MOTION,
     {"Char_darcy"},
     {animation="Sc_FMHEAD_BASEPOSE_000LV_02_01", duration=10, time_scale=1, trans_time=0.6,  weight=1, heading=-1}
 }
 ,
 {
-    81.32199999999997,
+    90.20200000000001,
     START_SOUND,
     {
         "DX_m12_sprague_0180_darcy"
@@ -5167,11 +5213,11 @@ events={
 }
 ,
 {
-    84.21399999999997,
+    93.09400000000001,
     START_SOUND,
     {"alarm"},
     {
-        duration=30
+        duration=30, start_time=0
         
         , flags=LOOP
         
@@ -5179,7 +5225,7 @@ events={
 }
 ,
 {
-    88.21399999999997,
+    97.09400000000001,
     START_AUDIO_PROP_ANIM,
     {
         "alarm"
@@ -5193,7 +5239,7 @@ events={
 }
 ,
 {
-    84.21399999999997,
+    93.09400000000001,
     START_AUDIO_PROP_ANIM,
     {
         "music1"
@@ -5207,11 +5253,11 @@ events={
 }
 ,
 {
-    84.21399999999997,
+    93.09400000000001,
     START_SOUND,
     {"music2"},
     {
-        duration=300
+        duration=300, start_time=0
         
         , flags=LOOP
         
@@ -5219,7 +5265,7 @@ events={
 }
 ,
 {
-    84.21399999999997,
+    93.09400000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "cam_trent_three",
@@ -5241,7 +5287,7 @@ events={
 }
 ,
 {
-    84.21399999999997,
+    93.09400000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "automarker_cam_trent_three_focus",
@@ -5263,7 +5309,7 @@ events={
 }
 ,
 {
-    85.21399999999997,
+    94.09400000000001,
     START_MOTION,
     {"Char_alaric"},
     {animation="Sc_MLBODY_STND_TURN_315LV_XA_02",
@@ -5273,7 +5319,7 @@ events={
 }
 ,
 {
-    84.96399999999997,
+    93.84400000000001,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_STND_TURN_045LV_XA_04",
@@ -5283,7 +5329,7 @@ events={
 }
 ,
 {
-    85.21399999999997,
+    94.09400000000001,
     START_MOTION,
     {"Char_darcy"},
     {animation="Sc_FMBODY_STND_FSTHIPB_RLEASE_000LV_XA_01",
@@ -5293,7 +5339,7 @@ events={
 }
 ,
 {
-    85.21399999999997,
+    94.09400000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_head_ik",
@@ -5315,7 +5361,7 @@ events={
 }
 ,
 {
-    85.21399999999997,
+    94.09400000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_eye_ik",
@@ -5337,7 +5383,7 @@ events={
 }
 ,
 {
-    85.21399999999997,
+    94.09400000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_head_ik",
@@ -5359,7 +5405,7 @@ events={
 }
 ,
 {
-    85.21399999999997,
+    94.09400000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_eye_ik",
@@ -5381,7 +5427,7 @@ events={
 }
 ,
 {
-    86.11399999999998,
+    94.99400000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_head_ik",
@@ -5403,7 +5449,7 @@ events={
 }
 ,
 {
-    86.21399999999997,
+    95.09400000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_eye_ik",
@@ -5425,14 +5471,14 @@ events={
 }
 ,
 {
-    86.21399999999997,
+    95.09400000000001,
     START_MOTION,
     {"Char_alaric"},
     {animation="Sc_dx_s009c_0201_king", start_time=1, duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    86.21399999999997,
+    95.09400000000001,
     START_SOUND,
     {
         "DX_m12_sprague_0190_alaric"
@@ -5443,7 +5489,7 @@ events={
 }
 ,
 {
-    88.68999999999997,
+    97.73800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "prop_artifact",
@@ -5497,7 +5543,7 @@ events={
 }
 ,
 {
-    89.68999999999997,
+    98.73800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "Char_hatcher",
@@ -5515,7 +5561,7 @@ events={
 }
 ,
 {
-    89.68999999999997,
+    98.73800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "Char_mandrake",
@@ -5533,7 +5579,7 @@ events={
 }
 ,
 {
-    89.68999999999997,
+    98.73800000000001,
     START_MOTION,
     {"Char_mandrake"},
     {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
@@ -5543,7 +5589,7 @@ events={
 }
 ,
 {
-    89.68999999999997,
+    98.73800000000001,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -5552,7 +5598,7 @@ events={
 }
 ,
 {
-    89.68999999999997,
+    98.73800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "cam_alarm",
@@ -5574,7 +5620,7 @@ events={
 }
 ,
 {
-    89.68999999999997,
+    98.73800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "automarker_cam_alarm_focus",
@@ -5596,7 +5642,7 @@ events={
 }
 ,
 {
-    89.68999999999997,
+    98.73800000000001,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLHAND_NEUT_LEFT_000LV_A_00",
@@ -5606,7 +5652,7 @@ events={
 }
 ,
 {
-    89.68999999999997,
+    98.73800000000001,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLHAND_NEUT_RGHT_000LV_A_00",
@@ -5616,7 +5662,7 @@ events={
 }
 ,
 {
-    90.68999999999997,
+    99.73800000000001,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_STND_TURN_270LV_XA_04",
@@ -5626,7 +5672,7 @@ events={
 }
 ,
 {
-    93.68999999999997,
+    102.73800000000001,
     START_MOTION,
     {"Char_mandrake"},
     {animation="Sc_MLBODY_STND_TURN_045LV_XA_04",
@@ -5636,7 +5682,7 @@ events={
 }
 ,
 {
-    96.68999999999997,
+    105.73800000000001,
     START_MOTION,
     {"Char_mandrake"},
     {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
@@ -5646,7 +5692,7 @@ events={
 }
 ,
 {
-    91.68999999999997,
+    100.73800000000001,
     START_MOTION,
     {"Char_alaric"},
     {animation="Sc_MLBODY_STND_TURN_045LV_XA_04",
@@ -5656,7 +5702,7 @@ events={
 }
 ,
 {
-    92.68999999999997,
+    101.73800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_mandrake_head_ik",
@@ -5678,7 +5724,7 @@ events={
 }
 ,
 {
-    92.68999999999997,
+    101.73800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_mandrake_eye_ik",
@@ -5700,7 +5746,7 @@ events={
 }
 ,
 {
-    89.78999999999996,
+    98.83800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_head_ik",
@@ -5722,7 +5768,7 @@ events={
 }
 ,
 {
-    89.78999999999996,
+    98.83800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_eye_ik",
@@ -5744,7 +5790,7 @@ events={
 }
 ,
 {
-    91.68999999999997,
+    100.73800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_head_ik",
@@ -5766,7 +5812,7 @@ events={
 }
 ,
 {
-    91.68999999999997,
+    100.73800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_eye_ik",
@@ -5788,7 +5834,7 @@ events={
 }
 ,
 {
-    91.68999999999997,
+    100.73800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_head_ik",
@@ -5810,7 +5856,7 @@ events={
 }
 ,
 {
-    91.68999999999997,
+    100.73800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_eye_ik",
@@ -5832,7 +5878,7 @@ events={
 }
 ,
 {
-    90.68999999999997,
+    99.73800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_head_ik",
@@ -5854,7 +5900,7 @@ events={
 }
 ,
 {
-    90.68999999999997,
+    99.73800000000001,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_eye_ik",
@@ -5876,17 +5922,17 @@ events={
 }
 ,
 {
-    89.68999999999997,
+    98.73800000000001,
     START_MOTION,
     {"table"},
     {animation="Sc_table animation",
-     duration=1, time_scale=1, start_time=1, weight=1, heading=-1
-       
+     duration=1, time_scale=1, start_time=1, weight=1, trans_scale=1
+     
      }
 }
 ,
 {
-    89.68999999999997,
+    98.73800000000001,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_SPCBODY_s002x_sinclair_XC_STND_000LV_26",
@@ -5896,7 +5942,7 @@ events={
 }
 ,
 {
-    100.68999999999997,
+    109.73800000000001,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_FMBODY_STND_TURN_RGHT_180LV_XA_02",
@@ -5906,7 +5952,7 @@ events={
 }
 ,
 {
-    103.68999999999997,
+    112.73800000000001,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_FMBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
@@ -5916,7 +5962,7 @@ events={
 }
 ,
 {
-    100.68999999999997,
+    109.73800000000001,
     START_IK,
     {
         "Char_hatcher",
@@ -5931,14 +5977,14 @@ events={
 }
 ,
 {
-    89.68999999999997,
+    98.73800000000001,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_dx_s070x_2701_Jacobi", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    89.68999999999997,
+    98.73800000000001,
     START_SOUND,
     {
         "DX_m12_sprague_0250_hatcher"
@@ -5949,7 +5995,7 @@ events={
 }
 ,
 {
-    93.66199999999996,
+    103.33400000000002,
     START_MOTION,
     {"Char_alaric"},
     {animation="Sc_MLBODY_STND_CROSS_ARMS_000LV_xa_06",
@@ -5959,7 +6005,7 @@ events={
 }
 ,
 {
-    92.66199999999996,
+    102.33400000000002,
     START_MOTION,
     {"Char_darcy"},
     {animation="Sc_FMBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
@@ -5969,7 +6015,7 @@ events={
 }
 ,
 {
-    97.66199999999996,
+    107.33400000000002,
     START_MOTION,
     {"Char_darcy"},
     {animation="Sc_FMBODY_STND_FSTHIPB_RLEASE_000LV_XA_01",
@@ -5979,14 +6025,14 @@ events={
 }
 ,
 {
-    93.66199999999996,
+    103.33400000000002,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_dx_s070x_2701_Jacobi", start_time=0.5, duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    93.66199999999996,
+    103.33400000000002,
     START_SOUND,
     {
         "DX_m12_sprague_0260_hatcher"
@@ -5997,7 +6043,7 @@ events={
 }
 ,
 {
-    97.93799999999996,
+    107.82600000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_mandrake_head_ik",
@@ -6019,7 +6065,7 @@ events={
 }
 ,
 {
-    97.93799999999996,
+    107.82600000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_mandrake_eye_ik",
@@ -6041,7 +6087,7 @@ events={
 }
 ,
 {
-    96.43799999999996,
+    106.32600000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_head_ik",
@@ -6063,7 +6109,7 @@ events={
 }
 ,
 {
-    96.43799999999996,
+    106.32600000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_eye_ik",
@@ -6085,7 +6131,7 @@ events={
 }
 ,
 {
-    96.93799999999996,
+    106.82600000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_head_ik",
@@ -6107,7 +6153,7 @@ events={
 }
 ,
 {
-    96.93799999999996,
+    106.82600000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_eye_ik",
@@ -6129,7 +6175,7 @@ events={
 }
 ,
 {
-    98.93799999999996,
+    108.82600000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_head_ik",
@@ -6151,7 +6197,7 @@ events={
 }
 ,
 {
-    98.93799999999996,
+    108.82600000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_eye_ik",
@@ -6173,7 +6219,7 @@ events={
 }
 ,
 {
-    100.93799999999996,
+    110.82600000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_head_ik",
@@ -6195,7 +6241,7 @@ events={
 }
 ,
 {
-    100.93799999999996,
+    110.82600000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_eye_ik",
@@ -6217,7 +6263,7 @@ events={
 }
 ,
 {
-    99.93799999999996,
+    109.82600000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_head_ik",
@@ -6239,7 +6285,7 @@ events={
 }
 ,
 {
-    99.93799999999996,
+    109.82600000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_eye_ik",
@@ -6261,7 +6307,7 @@ events={
 }
 ,
 {
-    98.93799999999996,
+    108.82600000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_head_ik",
@@ -6283,7 +6329,7 @@ events={
 }
 ,
 {
-    98.93799999999996,
+    108.82600000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_eye_ik",
@@ -6305,7 +6351,7 @@ events={
 }
 ,
 {
-    99.93799999999996,
+    109.82600000000002,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_STND_TURN_045LV_XA_04",
@@ -6315,14 +6361,14 @@ events={
 }
 ,
 {
-    96.93799999999996,
+    106.82600000000002,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s038x_2601_trent", duration=10, start_time=0.5, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    96.93799999999996,
+    106.82600000000002,
     START_SOUND,
     {
         "DX_m12_sprague_0270_trent"
@@ -6333,7 +6379,7 @@ events={
 }
 ,
 {
-    101.72599999999996,
+    112.74200000000002,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -6342,24 +6388,24 @@ events={
 }
 ,
 {
-    101.72599999999996,
+    112.74200000000002,
     START_MOTION,
     {"table"},
     {animation="Sc_table animation",
-     duration=2, time_scale=1, start_time=2, weight=1, heading=-1
-       
+     duration=2, time_scale=1, start_time=2, weight=1, trans_scale=1
+     
      }
 }
 ,
 {
-    101.72599999999996,
+    112.74200000000002,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_dx_s070x_3001_Jacobi", duration=10, start_time=2, time_scale=1.1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    101.72599999999996,
+    112.74200000000002,
     START_SOUND,
     {
         "DX_m12_sprague_0280_hatcher"
@@ -6370,7 +6416,7 @@ events={
 }
 ,
 {
-    104.92999999999995,
+    116.57000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "Char_hatcher",
@@ -6388,7 +6434,7 @@ events={
 }
 ,
 {
-    105.92999999999995,
+    117.57000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_head_ik",
@@ -6410,7 +6456,7 @@ events={
 }
 ,
 {
-    105.92999999999995,
+    117.57000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_eye_ik",
@@ -6432,7 +6478,7 @@ events={
 }
 ,
 {
-    105.92999999999995,
+    117.57000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_head_ik",
@@ -6454,7 +6500,7 @@ events={
 }
 ,
 {
-    105.92999999999995,
+    117.57000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_eye_ik",
@@ -6476,7 +6522,7 @@ events={
 }
 ,
 {
-    108.92999999999995,
+    120.57000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_head_ik",
@@ -6498,7 +6544,7 @@ events={
 }
 ,
 {
-    108.92999999999995,
+    120.57000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_eye_ik",
@@ -6520,7 +6566,7 @@ events={
 }
 ,
 {
-    111.92999999999995,
+    123.57000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_head_ik",
@@ -6542,7 +6588,7 @@ events={
 }
 ,
 {
-    111.92999999999995,
+    123.57000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_eye_ik",
@@ -6564,7 +6610,7 @@ events={
 }
 ,
 {
-    113.92999999999995,
+    125.57000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_head_ik",
@@ -6586,7 +6632,7 @@ events={
 }
 ,
 {
-    113.92999999999995,
+    125.57000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_eye_ik",
@@ -6608,7 +6654,7 @@ events={
 }
 ,
 {
-    104.92999999999995,
+    116.57000000000002,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -6617,7 +6663,7 @@ events={
 }
 ,
 {
-    104.92999999999995,
+    116.57000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "cam_trent_final",
@@ -6639,7 +6685,7 @@ events={
 }
 ,
 {
-    104.92999999999995,
+    116.57000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "automarker_cam_trent_final_focus",
@@ -6661,7 +6707,7 @@ events={
 }
 ,
 {
-    104.92999999999995,
+    116.57000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_head_ik",
@@ -6683,7 +6729,7 @@ events={
 }
 ,
 {
-    104.92999999999995,
+    116.57000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_eye_ik",
@@ -6705,7 +6751,7 @@ events={
 }
 ,
 {
-    104.92999999999995,
+    116.57000000000002,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_STND_TURN_270LV_XA_04",
@@ -6715,14 +6761,14 @@ events={
 }
 ,
 {
-    104.92999999999995,
+    116.57000000000002,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s074x_0201_trent", start_time=0.4, duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    104.92999999999995,
+    116.57000000000002,
     START_SOUND,
     {
         "DX_m12_sprague_0290_trent"
@@ -6733,7 +6779,7 @@ events={
 }
 ,
 {
-    110.98999999999995,
+    123.25400000000002,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_STND_CONV_HNDS_CASL_000LV_xa_04",
@@ -6743,7 +6789,7 @@ events={
 }
 ,
 {
-    110.98999999999995,
+    123.25400000000002,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLHAND_HNEUT_GESTR_CASL_000LV_00",
@@ -6753,7 +6799,7 @@ events={
 }
 ,
 {
-    110.98999999999995,
+    123.25400000000002,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLHAND_HNEUT_GESTL_CASL_000LV_00",
@@ -6763,14 +6809,14 @@ events={
 }
 ,
 {
-    110.98999999999995,
+    123.25400000000002,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s074x_0201_trent", start_time=0.5, duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    110.98999999999995,
+    123.25400000000002,
     START_SOUND,
     {
         "DX_m12_sprague_0300_trent"
@@ -6781,7 +6827,7 @@ events={
 }
 ,
 {
-    115.88199999999995,
+    129.70600000000002,
     START_MOTION,
     {"Char_alaric"},
     {animation="Sc_MLBODY_STND_UNCRSS_ARMS_000LV_XA_02",
@@ -6791,7 +6837,7 @@ events={
 }
 ,
 {
-    112.88199999999995,
+    126.70600000000002,
     START_MOTION,
     {"Char_darcy"},
     {animation="Sc_FMBODY_STND_CROSS_ARMS_000LV_XB_03",
@@ -6801,7 +6847,7 @@ events={
 }
 ,
 {
-    117.88199999999995,
+    131.70600000000002,
     START_MOTION,
     {"Char_darcy"},
     {animation="Sc_FMBODY_STND_UNCRSS_ARMS_000LV_XA_03",
@@ -6811,7 +6857,7 @@ events={
 }
 ,
 {
-    118.88199999999995,
+    132.70600000000002,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
@@ -6821,7 +6867,7 @@ events={
 }
 ,
 {
-    116.88199999999995,
+    130.70600000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_head_ik",
@@ -6843,7 +6889,7 @@ events={
 }
 ,
 {
-    116.88199999999995,
+    130.70600000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_eye_ik",
@@ -6865,7 +6911,7 @@ events={
 }
 ,
 {
-    116.88199999999995,
+    130.70600000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "Char_mandrake",
@@ -6883,21 +6929,21 @@ events={
 }
 ,
 {
-    116.88199999999995,
+    130.70600000000002,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s074x_0201_trent", duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    120.88199999999995,
+    134.70600000000002,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_dx_s038x_2601_trent", start_time=2, duration=10, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    116.88199999999995,
+    130.70600000000002,
     START_SOUND,
     {
         "DX_m12_sprague_0310_trent"
@@ -6908,7 +6954,7 @@ events={
 }
 ,
 {
-    117.92599999999995,
+    132.35000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_head_ik",
@@ -6930,7 +6976,7 @@ events={
 }
 ,
 {
-    117.92599999999995,
+    132.35000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_eye_ik",
@@ -6952,7 +6998,7 @@ events={
 }
 ,
 {
-    119.92599999999995,
+    134.35000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_head_ik",
@@ -6974,7 +7020,7 @@ events={
 }
 ,
 {
-    119.92599999999995,
+    134.35000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_eye_ik",
@@ -6996,7 +7042,7 @@ events={
 }
 ,
 {
-    121.92599999999995,
+    136.35000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_head_ik",
@@ -7018,7 +7064,7 @@ events={
 }
 ,
 {
-    121.92599999999995,
+    136.35000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_alaric_eye_ik",
@@ -7040,7 +7086,7 @@ events={
 }
 ,
 {
-    118.92599999999995,
+    133.35000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_head_ik",
@@ -7062,7 +7108,7 @@ events={
 }
 ,
 {
-    118.92599999999995,
+    133.35000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_eye_ik",
@@ -7084,7 +7130,7 @@ events={
 }
 ,
 {
-    120.92599999999995,
+    135.35000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_head_ik",
@@ -7106,7 +7152,7 @@ events={
 }
 ,
 {
-    120.92599999999995,
+    135.35000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_eye_ik",
@@ -7128,7 +7174,7 @@ events={
 }
 ,
 {
-    122.92599999999995,
+    137.35000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_head_ik",
@@ -7150,7 +7196,7 @@ events={
 }
 ,
 {
-    122.92599999999995,
+    137.35000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_darcy_eye_ik",
@@ -7172,7 +7218,7 @@ events={
 }
 ,
 {
-    123.92599999999995,
+    138.35000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "Char_hatcher",
@@ -7190,7 +7236,7 @@ events={
 }
 ,
 {
-    123.92599999999995,
+    138.35000000000002,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_FMBODY_STND_FSTHIPB_HOLD_000LV_XA_01",
@@ -7200,7 +7246,7 @@ events={
 }
 ,
 {
-    124.92599999999995,
+    139.35000000000002,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_FMBODY_STND_FSTHIPB_RLEASE_000LV_XA_01",
@@ -7210,7 +7256,7 @@ events={
 }
 ,
 {
-    125.72599999999994,
+    140.15000000000003,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_FMBODY_STND_WALK_TRNS_000LV_XA_01",
@@ -7220,7 +7266,7 @@ events={
 }
 ,
 {
-    123.92599999999995,
+    138.35000000000002,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -7229,14 +7275,14 @@ events={
 }
 ,
 {
-    123.92599999999995,
+    138.35000000000002,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_dx_s070x_0701_Jacobi", duration=10, start_time=1.8, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    123.92599999999995,
+    138.35000000000002,
     START_SOUND,
     {
         "DX_m12_sprague_0320_hatcher"
@@ -7247,7 +7293,7 @@ events={
 }
 ,
 {
-    126.34999999999995,
+    141.014,
     START_MOTION,
     {"Char_hatcher"},
     {animation="Sc_FMHEAD_MAD_SNARL_000LV_XA_%",

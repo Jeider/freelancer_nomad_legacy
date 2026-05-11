@@ -1,4 +1,4 @@
-duration=10.675999999999998
+duration=11.324
 
 entities={
 	{
@@ -51,6 +51,7 @@ entities={
 		spatialprops={pos={0,-10000,-10000000},orient={ {1,0,0},{0,1,0},{0,0,1} } },
 	},
 
+    
 	
 {
     entity_name="DX_m10_offer_0010_hassler",
@@ -266,8 +267,8 @@ entities={
     type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
 }
         
-
-	,
+     ,
+    
 
 	{
     entity_name="automarker_default_point",
@@ -275,6 +276,20 @@ entities={
     template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
     spatialprops={
         pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_offscreen_point",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, -10000.00, 0.00 },
         orient={ 
             { 1.0000000,0.0000000,0.0000000 },
             { 0.0000000,1.0000000,0.0000000 },
@@ -1639,7 +1654,7 @@ events={
 }
 ,
 {
-    2.476,
+    3.124,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_head_ik",
@@ -1661,7 +1676,7 @@ events={
 }
 ,
 {
-    2.476,
+    3.124,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_trent_eye_ik",
@@ -1683,14 +1698,14 @@ events={
 }
 ,
 {
-    2.476,
+    3.124,
     START_MOTION,
     {"Char_darcy"},
     {animation="Sc_dx_s070x_0801_Jacobi", duration=10, start_time=2.3, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    2.476,
+    3.124,
     START_SOUND,
     {
         "DX_m10_offer_0260_darcy"
@@ -1701,7 +1716,7 @@ events={
 }
 ,
 {
-    4.816,
+    5.464,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -1710,7 +1725,7 @@ events={
 }
 ,
 {
-    4.816,
+    5.464,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_MLBODY_CHRF_CHRB_TRNS_000LV_XA_02",
@@ -1720,7 +1735,7 @@ events={
 }
 ,
 {
-    6.816,
+    7.464,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_hassler_head_ik",
@@ -1742,7 +1757,7 @@ events={
 }
 ,
 {
-    6.816,
+    7.464,
     START_SPATIAL_PROP_ANIM,
     {
         "char_ik_Char_hassler_eye_ik",
@@ -1764,14 +1779,14 @@ events={
 }
 ,
 {
-    4.816,
+    5.464,
     START_MOTION,
     {"Char_hassler"},
     {animation="Sc_dx_s033x_0302_dexter", duration=10, start_time=1, time_scale=1, trans_time=0.25,  weight=1, heading=-1}
 }
 ,
 {
-    4.816,
+    5.464,
     START_SOUND,
     {
         "DX_m10_offer_0270_hassler"

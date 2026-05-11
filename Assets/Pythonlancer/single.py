@@ -439,22 +439,24 @@ def meta():
 
 
 def scene():
-    russian = False
+    russian = True
     # mission_index = 99
     # scene_name = 'debug'
 
     mission_index = 8
-    scene_name = 'prince_wales'
+    scene_name = 'sprague'
 
     tpl_manager = JinjaTemplateManager()
     script_manager = ScriptManager()
-    msn = script_manager.get_mission_by_index(mission_index)
-    cutscene = msn.get_cutscene_by_code(scene_name)
-    cutscene.get_thorn(tpl_manager, russian).sync_content()
+    #
+    #
+    # msn = script_manager.get_mission_by_index(mission_index)
+    # cutscene = msn.get_cutscene_by_code(scene_name)
+    # cutscene.get_thorn(tpl_manager, russian).sync_content()
+    #
+    # return
 
-    return
-
-    for i in [13]:  # range(9, 12+1):
+    for i in [12]:  # range(9, 12+1):
         msn = script_manager.get_mission_by_index(i)
         for cutscene in msn.get_cutscenes():
             print(cutscene.ALIAS)
