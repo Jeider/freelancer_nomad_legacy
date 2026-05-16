@@ -33,6 +33,7 @@ class WarwickMember(Member):
     FACTION = faction.BretoniaMain
     WEAPON_FACTION = WEAPON_BR
     EQUIP_FACTION = EQUIP_BR
+    INTERIOR_BG1 = interior.INTERIOR_BR_WARWICK
 
 
 class WarwickStaticText(WarwickMember, main_objects.RawText):

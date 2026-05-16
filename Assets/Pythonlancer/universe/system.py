@@ -365,6 +365,7 @@ distance = {tlr_distance}
     def get_interiors_data(self):
         interior_definitions = []
         interior_files = {}
+        interior_extra_rooms = []
         mbases_content = []
 
         for static in self.get_dockable_objects():
@@ -372,8 +373,9 @@ distance = {tlr_distance}
             interior_definitions.append(static.get_interior_definition())
             if not static.INTERIOR_CLASS.CUSTOM_INTERIOR_FILE:
                 interior_files[static.get_interior_file_name()] = static.get_interior_content()
+            interior_extra_rooms += static.get_extra_rooms()
 
-        return interior_definitions, interior_files, mbases_content
+        return interior_definitions, interior_files, interior_extra_rooms, mbases_content
 
     def process_template(self):
         if self.TEMPLATE_NAME is None:

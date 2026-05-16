@@ -48,6 +48,7 @@ class UniverseManager:
         self.templated_nebulas = []
         self.interior_files = {}
         self.interior_definitions = []
+        self.interior_extra_rooms = []
         self.mbases_content = []
 
         self.keys = []
@@ -135,9 +136,10 @@ class UniverseManager:
     def load_interiors(self):
         for the_system in self.universe_root.get_systems():
             if the_system.have_dynamic_content():
-                interior_definitions, interior_files, mbases_content = the_system.get_interiors_data()
+                interior_definitions, interior_files, interior_extra_rooms, mbases_content = the_system.get_interiors_data()
                 self.interior_definitions += interior_definitions
                 self.interior_files.update(interior_files)
+                self.interior_extra_rooms += interior_extra_rooms
                 self.mbases_content += mbases_content
 
     def get_market_equip(self):
@@ -262,3 +264,7 @@ class UniverseManager:
 
         for file_name, content in self.interior_files.items():
             data_folder.sync_interior(file_name, content)
+
+        for room in self.interior_extra_rooms:
+            content = self.core.tpl_manager.get_result(f'room/{room.get_subfolder()}/{room.get_template()}.ini', room.get_context())
+            data_folder.sync_interior_room(room.get_name(), content)

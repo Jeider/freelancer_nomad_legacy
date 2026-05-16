@@ -36,6 +36,7 @@ from text.strings import MultiString as MS
 
 class ManhMember(Member):
     FACTION = faction.LibertyMain
+    INTERIOR_BG1 = interior.INTERIOR_LI_MANHATTAN
     WEAPON_FACTION = WEAPON_LI
     EQUIP_FACTION = EQUIP_LI
 

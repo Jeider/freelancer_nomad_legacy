@@ -1198,6 +1198,11 @@ BGCS_base_run_by = W02bF44'''
 
         return SINGLE_DIVIDER.join(definition)
 
+    def get_extra_rooms(self):
+        if not self.interior:
+            return []
+        return self.interior.get_extra_rooms()
+
     def get_mbases_content(self):
         if not self.interior:
             raise Exception('%s have not interior' % self.__class__.__name__)

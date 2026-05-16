@@ -1,3 +1,5 @@
+from random import randint
+
 from text.dividers import DIVIDER
 
 ROOM_FOLDER_RH = 'RH'
@@ -48,6 +50,7 @@ file = {destination}'''
 
 DEFAULT_DESTINATION_TEMLATE = 'UNIVERSE\\ROOM\\{room_subfolder}\\{room_file}.ini'
 OVERRIDED_DESTINATION_TEMLATE = 'UNIVERSE\\{systems_folder}\\{system_folder}\\ROOM\\{room_file}.ini'
+GENERATED_DESTINATION_TEMLATE = 'UNIVERSE\\GENERATED_ROOMS\\{room_file}.ini'
 
 MBASE_ROOT_TEMPLATE = '''[MBase]
 nickname = {base_name}
@@ -171,9 +174,30 @@ INTERIOR_TAU31 = 'tau31_nebula'
 INTERIOR_UPSILON1 = 'upslion1_nebula'
 
 OTHER_WEIGHT = 5
+NEW_BAR_MUSIC_COUNT = 21
 
 
-class Interior(object):
+class InteriorRoom:
+    def __init__(self, name, subfolder, template, context):
+        self.name = name
+        self.subfolder = subfolder
+        self.template = template
+        self.context = context
+
+    def get_name(self):
+        return self.name
+
+    def get_subfolder(self):
+        return self.subfolder
+
+    def get_template(self):
+        return self.template
+
+    def get_context(self):
+        return self.context
+
+
+class Interior:
     START_ROOM = None
     ROOMS = {}
     PIRATE_BAR = False
@@ -182,17 +206,30 @@ class Interior(object):
     OFFER_MISSIONS = True
     MAIN_ROOM = 'Deck'
     LOAD_CHARACTERS = True
+    NEW_BAR_MUSIC = False
+    BAR_IS_DECK = False
 
     def __init__(self, base_instance, room_subfolder):
         self.base_instance = base_instance
         self.base_nickname = self.base_instance.get_base_nickname()
         self.room_subfolder = room_subfolder
+        self.extra_rooms: list[InteriorRoom] = []
 
         if not self.CUSTOM_INTERIOR_FILE and not self.room_subfolder:
             raise Exception('room subfolder not defined for %s' % self.__class__.__name__)
 
     def get_base_info(self):
         raise NotImplementedError
+
+    def create_extra_room(self, room: InteriorRoom):
+        self.extra_rooms.append(room)
+
+    def get_extra_rooms(self) -> list[InteriorRoom]:
+        return self.extra_rooms
+
+    def get_random_new_music(self):
+        random_item = randint(1, NEW_BAR_MUSIC_COUNT)
+        return f'music_bar_new{random_item:02d}'
 
     def get_mbase(self):
         entries = []
@@ -386,15 +423,37 @@ class GenericInterior(Interior):
             if room_name == BAR and self.PIRATE_BAR:
                 room_subfolder = ROOM_FOLDER_CO
 
-            items.append(
-                ROOM_TEMPLATE.format(
-                    room_name=room_name,
-                    destination=DEFAULT_DESTINATION_TEMLATE.format(
-                        room_subfolder=room_subfolder,
-                        room_file=room_file
+            if self.NEW_BAR_MUSIC and (room_name == BAR or (room_name == DECK and self.BAR_IS_DECK)):
+                new_bar_room = f'{room_name}_{self.base_nickname}'
+
+                room = InteriorRoom(
+                    name=new_bar_room,
+                    subfolder=room_subfolder,
+                    template=room_file,
+                    context={
+                        'music': self.get_random_new_music()
+                    }
+                )
+                self.create_extra_room(room)
+
+                items.append(
+                    ROOM_TEMPLATE.format(
+                        room_name=room_name,
+                        destination=GENERATED_DESTINATION_TEMLATE.format(
+                            room_file=new_bar_room
+                        )
                     )
                 )
-            )
+            else:
+                items.append(
+                    ROOM_TEMPLATE.format(
+                        room_name=room_name,
+                        destination=DEFAULT_DESTINATION_TEMLATE.format(
+                            room_subfolder=room_subfolder,
+                            room_file=room_file
+                        )
+                    )
+                )
         items.extend(self.base_instance.INTERIOR_EXTRA_ROOMS)
 
         return DIVIDER.join(items)
@@ -512,6 +571,7 @@ class StationShipdealerBshbarInterior(GenericInterior):
 
 class PirateBar(object):
     PIRATE_BAR = True
+    NEW_BAR_MUSIC = True
 
 
 class PirateOutpostInterior(PirateBar, OutpostInterior):
@@ -527,6 +587,7 @@ class PirateStationInterior(PirateBar, StationInterior):
         DECK: ROOM_STATION_DECK,
         BAR: ROOM_OUTPOST_BAR_MSN,
     }
+    NEW_BAR_MUSIC = True
 
 
 class PirateStationShipdealerInterior(PirateBar, StationShipdealerInterior):
@@ -535,6 +596,7 @@ class PirateStationShipdealerInterior(PirateBar, StationShipdealerInterior):
         BAR: ROOM_OUTPOST_SHIP_BAR_MSN,
         SHIPDEALER: ROOM_STATION_SHIPDEALER,
     }
+    NEW_BAR_MUSIC = True
 
 
 class EquipDeckInterior(GenericInterior):
@@ -542,6 +604,8 @@ class EquipDeckInterior(GenericInterior):
     ROOMS = {
         DECK: EQUIP_DEPOT_DECK,
     }
+    NEW_BAR_MUSIC = True
+    BAR_IS_DECK = True
 
     def have_trader(self):
         return False

@@ -34,7 +34,7 @@ from text.strings import MultiString as MS
 
 class Omega15Member(Member):
     FACTION = faction.RheinlandMain
-    INTERIOR_BG1 = interior.INTERIOR_BG_WALKER
+    INTERIOR_BG1 = interior.INTERIOR_OMEGA15
     WEAPON_FACTION = WEAPON_RH
     EQUIP_FACTION = EQUIP_RH
 

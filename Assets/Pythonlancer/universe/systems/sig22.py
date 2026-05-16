@@ -34,6 +34,7 @@ class Sig22Member(Member):
     FACTION = faction.LibertyMain
     WEAPON_FACTION = WEAPON_LI
     EQUIP_FACTION = EQUIP_LI
+    INTERIOR_BG1 = interior.INTERIOR_SIGMA22
 
 
 class Sig22Liberty(object):

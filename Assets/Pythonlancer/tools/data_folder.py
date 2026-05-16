@@ -188,6 +188,13 @@ class DataFolder:
         asteroid_file = self.get_universe() / 'GENERATED_INTERIORS' / f'{interior_file_name}.ini'
         asteroid_file.write_text(content, encoding='utf-8')
 
+    def sync_interior_room(self, room_file_name, content):
+        if self.build_to_folder:
+            return
+
+        asteroid_file = self.get_universe() / 'GENERATED_ROOMS' / f'{room_file_name}.ini'
+        asteroid_file.write_text(content, encoding='utf-8')
+
     def sync_equip_root(self, equip_file_name, content):
         equip_file = self.get_equip() / f'{equip_file_name}.ini'
         equip_file.write_text(content, encoding='utf-8')

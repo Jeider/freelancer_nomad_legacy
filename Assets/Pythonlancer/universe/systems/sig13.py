@@ -32,6 +32,7 @@ class Sig13Member(Member):
     FACTION = faction.RheinlandMain
     WEAPON_FACTION = WEAPON_RH
     EQUIP_FACTION = EQUIP_RH
+    INTERIOR_BG1 = interior.INTERIOR_BG_CROW
 
 
 class Sig13Rheinland(object):
@@ -166,7 +167,6 @@ class Sig13LibertyStation(Sig13Liberty, Sig13Member, main_objects.GasMiningStati
     NEBULA_EXCLUSION_ZONE_SIZE = 5000
     EXCLUSION_PARAMS = GENERIC_EXCLUSION_PARAMS
     NEBULA_ZONES = [Sig13Nebula]
-    INTERIOR_BG1 = interior.INTERIOR_BG_CROW
 
 
 class Sig13RheinlandStation(Sig13Member, Sig13Rheinland, main_objects.GasMiningStation):
@@ -182,7 +182,6 @@ class Sig13RheinlandStation(Sig13Member, Sig13Rheinland, main_objects.GasMiningS
     NEBULA_EXCLUSION_ZONE_SIZE = 3000
     EXCLUSION_PARAMS = GENERIC_EXCLUSION_PARAMS
     NEBULA_ZONES = [Sig13Nebula]
-    INTERIOR_BG1 = interior.INTERIOR_BG_CROW
 
 
 class Sig13Battleship(Sig13Member, Sig13Rheinland, main_objects.RheinlandBattleship):

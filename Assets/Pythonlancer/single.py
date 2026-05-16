@@ -36,14 +36,14 @@ from tools.system_template import SystemTemplateLoader
 
 from templates.solar import hacker_panel
 from templates.dockable import terraforming
-from templates.dockable import roid_mining
+from templates.dockable import cloakgen
 
 
 def draw_base():
     new_name = None
     move_to = None
     rotate_core = 0
-    workspace = '15'
+    workspace = '16'
 
     # base_class = m13.RockfordGenerator
     # new_name = 'or_hq_vienna_entry'
@@ -57,12 +57,14 @@ def draw_base():
     # new_name = 'or_hq_shipyard_01'
     # move_to = (-20000, 0, 0)
 
-    base_class = terraforming.TerraformingRotate
+    # base_class = terraforming.TerraformingRotate
     # new_name = 'communicator'
     # move_to = (-9500, 0, -10000)
 
     # base_class = nomad_asf_hq.AsfHQ
     # rotate_core = 45
+
+    base_class = cloakgen.Cloakgen
 
     the_base = base_class()
     content = the_base.get_instance(new_space_object_name=new_name, move_to=move_to, rotate_core=rotate_core)
