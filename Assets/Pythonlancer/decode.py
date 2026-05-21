@@ -242,7 +242,7 @@ def mass_upgrade44():
     # L_wing_128
     # metal03
 
-def mass_upgrade_libw():
+def mass_upgrade():
     subfolder_filename = 'lod0-212.vms.xml'
 
     old_materials = [
@@ -331,31 +331,31 @@ def mass_upgrade_libw():
     #     'K_fighter01_2side',
     # ]
 
-    old_materials = [
-        'bw_engine',
-        'bw_glass',
-        'bw_panel2side',
-        'bw_panel2sideD',
-        'bw_panel_128',
-        'bw_panel_128D',
-        'bw_panel_256',
-        'bw_panel_256D',
-    ]
+    # old_materials = [
+    #     'bw_engine',
+    #     'bw_glass',
+    #     'bw_panel2side',
+    #     'bw_panel2sideD',
+    #     'bw_panel_128',
+    #     'bw_panel_128D',
+    #     'bw_panel_256',
+    #     'bw_panel_256D',
+    # ]
 
 
-    skin = 'nmd'
+    skin = 'alt'
 
 
     subfile_changed_strings = []
-    for old_mat in old_materials:
-        old_mat_hex = crc32_hex_from_str(old_mat.lower())
-        new_mat_hex = crc32_hex_from_str(f'{skin}_{old_mat.lower()}')
-        subfile_changed_strings.append(
-            [f'0x{old_mat_hex[2:].upper()}', new_mat_hex],
-        )
-        subfile_changed_strings.append(
-            [f'0x0{old_mat_hex[2:].upper()}', new_mat_hex],
-        )
+    # for old_mat in old_materials:
+    #     old_mat_hex = crc32_hex_from_str(old_mat.lower())
+    #     new_mat_hex = crc32_hex_from_str(f'{skin}_{old_mat.lower()}')
+    #     subfile_changed_strings.append(
+    #         [f'0x{old_mat_hex[2:].upper()}', new_mat_hex],
+    #     )
+    #     subfile_changed_strings.append(
+    #         [f'0x0{old_mat_hex[2:].upper()}', new_mat_hex],
+    #     )
 
     upgrades = [
         # ['filename="li_elite', 'filename="li_nmd_elite'],
@@ -378,13 +378,13 @@ def mass_upgrade_libw():
         # ['li_fr_none', 'li_fr_pir_none'],
         # ['lod1021203111952', 'pir_lod1021203111952'],
 
-        # ['filename="bh_vheavy_fighter', 'filename="bh_nmd_vheavy_fighter'],
-        # ['data.ships.bounty_hunter.bh_vheavy_fighter.bh_vheavy_fighter', 'data.ships.bounty_hunter.bh_vheavy_fighter_nmd.bh_vheavy_fighter'],
-        # ['bh_fighter_adv', 'bh_nmd_fighter_adv'],
-        # ['bhfu3_none', 'bhfu3_nmd_none'],
-        # ['bh_hammerhead_fix', 'bh_nmd_hammerhead_fix'],
-        # ['lod1030109200506', 'nmd_lod1030109200506'],
-        #
+        # ['filename="bh_vheavy_fighter', f'filename="bh_{skin}_vheavy_fighter'],
+        # ['data.ships.bounty_hunter.bh_vheavy_fighter.bh_vheavy_fighter', f'data.ships.bounty_hunter.bh_vheavy_fighter_{skin}.bh_vheavy_fighter'],
+        # ['bh_fighter_adv', f'bh_{skin}_fighter_adv'],
+        # ['bhfu3_none', f'bhfu3_{skin}_none'],
+        # ['bh_hammer', f'bh_{skin}_hammer'],
+        # ['lod1030109200506', f'{skin}_lod1030109200506'],
+
         # ['filename="bh_', f'filename="bh_{skin}_'],
         # ['data.ships.bounty_hunter', f'data.ships.bounty_hunter_{skin}'],
         # ['bh_fighter_adv', f'bh_{skin}_fighter_adv'],
@@ -437,8 +437,13 @@ def mass_upgrade_libw():
     #     ['lod1021021183448', 'pir_lod1021021183448'],
     # ]
 
+    utf_xml.XML_UTF.mass_force_encode_updated_xml()
+
+    return
+
     main_file_upgrades = upgrades
     subfile_changed_strings = subfile_changed_strings + upgrades
+
 
     utf_xml.XML_UTF.mass_encode_updated_xml(
         subfolder_filename,
@@ -656,7 +661,7 @@ def mass_upgrade_ku():
     )
 
 
-def mass_upgrade():
+def mass_upgrade_br():
     subfolder_filename = 'lod0-212.vms.xml'
 
     old_materials = [

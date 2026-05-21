@@ -149,6 +149,21 @@ class XML_UTF(object):
                 shutil.copy(file, output_folder / new_name)
 
 
+    @classmethod
+    def mass_force_encode_updated_xml(cls):
+        input_folder = cls.get_utf_xml_path() / MASS_ENCODE_INPUT_DIR
+        output_folder = cls.get_utf_xml_path() / MASS_ENCODE_OUT_DIR
+
+        # process final
+        for file in input_folder.iterdir():
+            if not file.is_file():
+                continue
+
+            extension = file.suffix
+            if extension == '.xml':
+                XML_UTF.run_command(file.name, input_dir=MASS_ENCODE_INPUT_DIR, out_dir=MASS_ENCODE_OUT_DIR)
+
+
 
 
 
