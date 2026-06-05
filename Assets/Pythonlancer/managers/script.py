@@ -114,3 +114,28 @@ class ScriptManager(object):
         data_folder.sync_subtitles(
             SUBTITLES_TEMPLATE.format(subtitles=SINGLE_DIVIDER.join(subtitles_content))
         )
+
+    def get_actors_meta(self):
+        actors_lines = {}
+
+
+        for mission in self.script_missions_list:
+            for scene in mission.get_cutscenes():
+                for line in scene.get_lines():
+                    name = line.actor.NAME
+                    if name not in actors_lines:
+                        actors_lines[name] = []
+
+                    actors_lines[name].append(line)
+
+            ru_space_voices = mission.get_voices()
+
+            for voice in ru_space_voices:
+                for sound in voice.get_sounds():
+                    name = sound.line.actor.NAME
+                    if name not in actors_lines:
+                        actors_lines[name] = []
+
+                    actors_lines[name].append(sound.line)
+
+        return actors_lines

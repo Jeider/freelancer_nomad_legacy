@@ -242,7 +242,7 @@ def mass_upgrade44():
     # L_wing_128
     # metal03
 
-def mass_upgrade():
+def mass_upgrade_li():
     subfolder_filename = 'lod0-212.vms.xml'
 
     old_materials = [
@@ -539,7 +539,7 @@ def mass_upgrade_rh():
         [['ku_', f'ku_{skin}_']],
     )
 
-def mass_upgrade_ku():
+def mass_upgrade():
     subfolder_filename = 'lod0-212.vms.xml'
 
     old_materials = [
@@ -593,19 +593,19 @@ def mass_upgrade_ku():
         "K_panel_trim_M",
     ]
 
-    skin = 'nmd'
+    skin = 'alt'
 
 
     subfile_changed_strings = []
-    for old_mat in old_materials:
-        old_mat_hex = crc32_hex_from_str(old_mat.lower())
-        new_mat_hex = crc32_hex_from_str(f'{skin}_{old_mat.lower()}')
-        subfile_changed_strings.append(
-            [f'0x{old_mat_hex[2:].upper()}', new_mat_hex],
-        )
-        subfile_changed_strings.append(
-            [f'0x0{old_mat_hex[2:].upper()}', new_mat_hex],
-        )
+    # for old_mat in old_materials:
+    #     old_mat_hex = crc32_hex_from_str(old_mat.lower())
+    #     new_mat_hex = crc32_hex_from_str(f'{skin}_{old_mat.lower()}')
+    #     subfile_changed_strings.append(
+    #         [f'0x{old_mat_hex[2:].upper()}', new_mat_hex],
+    #     )
+    #     subfile_changed_strings.append(
+    #         [f'0x0{old_mat_hex[2:].upper()}', new_mat_hex],
+    #     )
 
     upgrades = [
         ['filename="ku_', f'filename="ku_{skin}_'],
@@ -646,6 +646,10 @@ def mass_upgrade_ku():
         ['lod1030109204913', f'{skin}_lod1030109204913'],
         ['lod1030109205127', f'{skin}_lod1030109205127'],
     ]
+
+    utf_xml.XML_UTF.mass_force_encode_updated_xml()
+
+    return
 
     # upgrades = []
     main_file_upgrades = upgrades
