@@ -312,7 +312,7 @@ class Msn4Space(Msn4, script.SpaceVoiceProps):
         VoiceLine(
             410,
             Hassler,
-            ru="Ну так вот, Дитрих в свое время смог выкрасть из генштаба Рейнланда некие очень важные и сверхсекретные документы. Так вот вся операция была затеяна для того чтобы эти документы вернуть.",
+            ru="Я выяснил, что Дитрих в своё время смог выкрасть из генштаба Рейнланда некие важные сверхсекретные документы. Так вот вся операция была затеяна для того чтобы эти документы вернуть.",
             en="Turns out someone... acquired some extremely important documents from a mole in Rheinland’s Joint Staff. So the real goal of the mission all along was to retrieve the documents, not to take out Dietrich and his men.",
         ),
         VoiceLine(
@@ -360,7 +360,7 @@ class Msn4Space(Msn4, script.SpaceVoiceProps):
         VoiceLine(
             630,
             Hassler,
-            ru="Как они нас нашли?",
+            ru="Засада! Как они нас нашли?",
             en="Sheisse! How'd they find us?",
         ),
         VoiceLine(
@@ -414,15 +414,15 @@ class Msn4Space(Msn4, script.SpaceVoiceProps):
         VoiceLine(
             690,
             Hassler,
-            ru="Меня заинтересовала странная тактика этого отряда. Они целенаправленно преследовали самый безобидный корабль в нашем отряде, пока мы продолжали бой с ними.",
+            ru="Вражеский отряд вёл концентрированный огонь по самому безобидному кораблю из нашей команды. Это выглядит весь странно, герр Трент, не находите?",
             en="Those fighters’ tactics - didn't they strike you as strange? They only targeted the weakest ship without concern for their own lives while we picked them off.",
         ),
-        VoiceLine(
-            700,
-            Hassler,
-            ru="Было бы логичнее связать боем и уничтожить самый опасный - меня или вас, герр Трент.",
-            en="It would have made more sense for them to take out the fighters first then pick off the Dromedary. ",
-        ),
+        # VoiceLine(
+        #     700,
+        #     Hassler,
+        #     ru="Было бы логичнее связать боем и уничтожить самый опасный - меня или вас, герр Трент.",
+        #     en="It would have made more sense for them to take out the fighters first then pick off the Dromedary. ",
+        # ),
         VoiceLine(
             710,
             Trent,
@@ -432,7 +432,7 @@ class Msn4Space(Msn4, script.SpaceVoiceProps):
         VoiceLine(
             720,
             Hassler,
-            ru="Вот и я о том же. Документы. Кстати, герр Трент, документов теперь нет? конец истории?",
+            ru="Вот и я о том же. Документы. Кстати, герр Трент, документов теперь нет? Конец истории?",
             en="Yes I think so too. So, (maliciously) Mr Trent, what now? Another last-minute failure like Konigsberg, now that the documents are vaporized?",
         ),
         VoiceLine(
@@ -456,19 +456,19 @@ class Msn4Space(Msn4, script.SpaceVoiceProps):
         VoiceLine(
             760,
             Hassler,
-            ru="А нам больше и деваться некуда. Герр Трент?",
+            ru="А нам ведь больше и некуда деваться. Так ведь, герр Трент?",
             en="Well, it's not like we have anything better to do. Herr Trent? ",
         ),
         VoiceLine(
             770,
             Trent,
-            ru="слушайте, Хасслер, мне этот ваш герр настолько надоел в Рейнланде... Можно просто Трент? Тем более что мы в Либерти летим?",
+            ru="Слушайте, Хасслер, мне этот ваш герр настолько надоел в Рейнланде... Можно просто Трент? Тем более что мы в Либерти летим?",
             en="Listen, Hassler. I’m sick and tired of your Herr this and that, let's just lose the formalities okay? Call me Trent. You know, when in Rome, do as the Romans do.",
         ),
         VoiceLine(
             780,
             Hassler,
-            ru="Как скажете, герр Трент.",
+            ru="Как вам будет угодно, герр Трент.",
             en="But that's all Greek to me, Mr Trent.",
         ),
         VoiceLine(
@@ -480,39 +480,39 @@ class Msn4Space(Msn4, script.SpaceVoiceProps):
         VoiceLine(
             800,
             Hassler,
-            ru="Нет ничего проще, летим к аванпосту Аугсбург.",
+            ru="Нет ничего проще, мы воспользуемся моим устройством для активации аномалий и покинем Рейнланд через обходной путь.",
             en="Augsburg outpost.",
         ),
-        VoiceLine(
-            810,
-            Trent,
-            ru="Вам Кёльна мало показалось, герр Хасслер?",
-            en="Don’t you mean Cologne, Hassler? ",
-        ),
-        VoiceLine(
-            820,
-            Hassler,
-            ru="Трент, вы помните как мы попали к станции Кёнигсберг в той самой, вызывающей у нас теперь столь устойчивую икоту миссии? И давайте без герров, вы же сами предложили",
-            en="Trent, do you remember how we got to Konigsberg, when this whole messed-up... mess... started? And please drop the Herr too, you’re the one who asked to dispense with formalities. ",
-        ),
-        VoiceLine(
-            830,
-            Trent,
-            ru="Через аномалию, которую открыл... Открыл ты, Хасслер, каким-то специальным устройством!",
-            en="Sure. The space anomaly, that... you activated. You still have that ability?",
-        ),
-        VoiceLine(
-            840,
-            Hassler,
-            ru="Ну так вот, это устройство все еще на моем корабле, а ближайшая аномалия недалеко от аванпоста Аугсбург.",
-            en="Yes, my ship has been outfitted with some quite unusual technology. It can open dormant anomalies. The nearest anomaly out of Rheinland is just next to Augsburg. ",
-        ),
-        VoiceLine(
-            850,
-            Trent,
-            ru="Я понял. Веди.",
-            en="Roger that. Take the lead. ",
-        ),
+        # VoiceLine(
+        #     810,
+        #     Trent,
+        #     ru="Вам Кёльна мало показалось, герр Хасслер?",
+        #     en="Don’t you mean Cologne, Hassler? ",
+        # ),
+        # VoiceLine(
+        #     820,
+        #     Hassler,
+        #     ru="Трент, вы помните как мы попали к станции Кёнигсберг в той самой, вызывающей у нас теперь столь устойчивую икоту миссии? И давайте без герров, вы же сами предложили",
+        #     en="Trent, do you remember how we got to Konigsberg, when this whole messed-up... mess... started? And please drop the Herr too, you’re the one who asked to dispense with formalities. ",
+        # ),
+        # VoiceLine(
+        #     830,
+        #     Trent,
+        #     ru="Через аномалию, которую открыл... Открыл ты, Хасслер, каким-то специальным устройством!",
+        #     en="Sure. The space anomaly, that... you activated. You still have that ability?",
+        # ),
+        # VoiceLine(
+        #     840,
+        #     Hassler,
+        #     ru="Ну так вот, это устройство все еще на моем корабле, а ближайшая аномалия недалеко от аванпоста Аугсбург.",
+        #     en="Yes, my ship has been outfitted with some quite unusual technology. It can open dormant anomalies. The nearest anomaly out of Rheinland is just next to Augsburg. ",
+        # ),
+        # VoiceLine(
+        #     850,
+        #     Trent,
+        #     ru="Я понял. Веди.",
+        #     en="Roger that. Take the lead. ",
+        # ),
         VoiceLine(
             900,
             Sigma8Outpost,
@@ -543,12 +543,12 @@ class Msn4Space(Msn4, script.SpaceVoiceProps):
             ru="Ха-ха-ха.",
             en="Ha-ha-ha. ",
         ),
-        VoiceLine(
-            950,
-            Hassler,
-            ru="Как изысканно...",
-            en="What shocking language... ",
-        ),
+        # VoiceLine(
+        #     950,
+        #     Hassler,
+        #     ru="Как изысканно...",
+        #     en="What shocking language... ",
+        # ),
         VoiceLine(
             860,
             Hassler,
@@ -564,21 +564,21 @@ class Msn4Space(Msn4, script.SpaceVoiceProps):
         VoiceLine(
             875,
             Hassler,
-            ru="Нет, мне гораздо комфортнее будет залечь на дно на периферии Рейнланда, чем лететь на территорию стратегического союзника, где меня обязательно выпотрошат на предмет всех знаний которыми я обладаю как бывший офицер спецслужб. Нет, увольте.",
+            ru="Нет, спасибо, мне гораздо комфортнее будет залечь на дно на периферии Рейнланда. Ну и как бывшему офицеру спецслужб мне было бы очень опасно появляться в Либерти. Я слишком много знаю.",
             en="No. I’m better off going to ground here in Rheinland than being seen flying straight into the hands of Liberty. I imagine I'd be gutted for the things I could disclose as a former intelligence officer...  So, no thanks. ",
         ),
-        VoiceLine(
-            880,
-            Trent,
-            ru="Но тебя же разыскивают власти.",
-            en="But the authorities, if they find you... ",
-        ),
-        VoiceLine(
-            890,
-            Hassler,
-            ru="Наши власти много кого разыскивают, но далеко не всех находят, поверьте мне, с моими связями и навыками мне будет гораздо безопаснее на территории Рейнланда, чем на территории Либерти.",
-            en="Our authorities are looking for a great deal of people, but not all that’s lost is found. Believe me, with my connections and skillset I’ll be much safer right here in Rheinland. ",
-        ),
+        # VoiceLine(
+        #     880,
+        #     Trent,
+        #     ru="Но тебя же разыскивают власти.",
+        #     en="But the authorities, if they find you... ",
+        # ),
+        # VoiceLine(
+        #     890,
+        #     Hassler,
+        #     ru="Наши власти много кого разыскивают, но далеко не всех находят, поверьте мне, с моими связями и навыками мне будет гораздо безопаснее на территории Рейнланда, чем на территории Либерти.",
+        #     en="Our authorities are looking for a great deal of people, but not all that’s lost is found. Believe me, with my connections and skillset I’ll be much safer right here in Rheinland. ",
+        # ),
         VoiceLine(
             960,
             Hassler,
@@ -588,7 +588,7 @@ class Msn4Space(Msn4, script.SpaceVoiceProps):
         VoiceLine(
             970,
             Alaric,
-            ru="Черт, корсары!",
+            ru="Чёрт, корсары!",
             en="Curses, Corsairs! Of all the shitty timing! ",
         ),
         VoiceLine(

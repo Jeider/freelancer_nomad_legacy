@@ -754,6 +754,12 @@ def dbg():
     print(rotated)
 
 
+
+
+# Вывод: Hex: 0xff34a21f
+
+
+
 ACTIONS = {
     'generate_hacker_panels': generate_hacker_panels,
     'compile_audio': compile_audio,

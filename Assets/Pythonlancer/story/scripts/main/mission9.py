@@ -99,7 +99,7 @@ class Msn9YokohamaCutscene(Msn9, script.CutsceneProps):
         VoiceLine(
             70,
             HasslerOrder,
-            ru='С моей службой в Р+ейнланде покончено герр Трент. Вам повезло лично увидеть закат моей военной карьеры.',
+            ru='С моей службой в Р+ейнланде покончено, герр Трент. Вам повезло лично увидеть закат моей военной карьеры.',
             en="My service for Rheinland is permanently terminated, Herr Trent. You have witnessed the sunset of a decorated military career. Kaputt. Now I have found a new home with the Order."
         ),
         VoiceLine(
@@ -179,8 +179,7 @@ class Msn9YokohamaCutscene(Msn9, script.CutsceneProps):
             190,
             HasslerOrder,
             ru='Вы и так находитесь в штаб-квартире Нового Ордена, бояться нужно было раньше. '
-               'Ямамото-с+ама (-сама - это уважительный суффикс при обращении к мужчине в японии. как у нас господин или в германии герр) '
-               'придерживается консервативных взглядов и очень уважает воинскую доблесть. ',
+               'Ямамото-сан придерживается консервативных взглядов и очень уважает воинскую доблесть. ',
             en="You're already in New Order HQ. It's a little late to be getting cold feet. "
                'Heads up. Yamamoto-san holds deeply conservative views and has a profound respect for martial prowess. Or rather, he only respects martial prowess.'
         ),
@@ -433,7 +432,7 @@ class Msn9RewardCutscene(Msn9, script.CutsceneProps):
         VoiceLine(
             20,
             HasslerOrder,
-            ru='Ким, остынь',
+            ru='Ким, давай остынь',
             en="Kim, stand down please."
         ),
         VoiceLine(
@@ -709,7 +708,7 @@ class Msn9Space(Msn9, script.SpaceVoiceProps):
                   en="The Data has been successfully acquired. But all our men... are lost."),
 
         VoiceLine(1500, HasslerOrder,
-                  ru='Они погибли во славу Ордена. Садитесь на Мус+аси. Нужно убираться отсюда',
+                  ru='Они погибли во славу Ордена. Садитесь на Мус+аси. Нужно скорее убираться отсюда',
                   en="They died with honour, for the good of all. Their deaths shall not be forgotten. Dock with the Musashi. We need to leave, now."),
     ]
 

@@ -130,7 +130,7 @@ class Msn10OfferCutscene(Msn10, script.CutsceneProps):
             190,
             Trent,
             ru='Хорошо... Если вы так считаете,, герр Хасслер. (тихо, в сторону) Эх как же я задолбался... Задолбался!',
-               en='Alright... If you say so, Herr Hassler. Oh, I\'m so sick of this... And fresh out of matches. I\'d kill for a smoke.'
+            en='Alright... If you say so, Herr Hassler. Oh, I\'m so sick of this... And fresh out of matches. I\'d kill for a smoke.'
         ),
         # место для принятия миссии
         VoiceLine(
@@ -184,7 +184,7 @@ class Msn10OfferCutscene(Msn10, script.CutsceneProps):
         VoiceLine(
             270,
             HasslerOrder,
-            ru='Тогда можете готовиться к вылету. Я буду координировать операцию с мостика линкора.',
+            ru='Тогда можете готовиться к вылету. Я буду координировать операцию с мостика Мусаси.',
                en='Prepare for launch. I will be coordinating the operation from the bridge of the battleship.'
         ),
     ]
@@ -192,31 +192,31 @@ class Msn10OfferCutscene(Msn10, script.CutsceneProps):
 
 class Msn10Space(Msn10, script.SpaceVoiceProps):
     VOICE_LINES = [
-        VoiceLine(
-            10,
-            Darcy,
-            comment='Взлёт после принятия миссии',
-            ru='Эй, Хасслер, чего там твои инженеры шаманили над нашими кораблями?',
-               en='Hey, Hassler, what were your engineers doing to our ships?'
-        ),
+        # VoiceLine(
+        #     10,
+        #     Darcy,
+        #     comment='Взлёт после принятия миссии',
+        #     ru='Эй, Хасслер, чего там твои инженеры шаманили над нашими кораблями?',
+        #        en='Hey, Hassler, what were your engineers doing to our ships?'
+        # ),
         VoiceLine(
             20,
             HasslerOrder,
-            ru='Устанавливали мимикрирующие панели, фр+ойляйн Д+ерси.',
+            ru='Господа, на ваши корабли были установлены особые мимикрирующие панели. Они заметно снизят вашу заметность на радарах, пока вы будете находиться в туманности.',
                en='They were installing the mimetic panels, Fräulein Darcy. I mentioned this during the briefing.'
         ),
-        VoiceLine(
-            30,
-            HasslerOrder,
-            ru='Эти панели снизят вашу заметность на радарах в разы. В зависимости от характера окружающего пространства от двух до семи раз.',
-               en='These panels will significantly reduce your radar signatures. Depending on the environment, by a factor of two up to seven.'
-        ),
-        VoiceLine(
-            40,
-            HasslerOrder,
-            ru='Кроме того они подстраиваются под характер окружающего пространства визуально. В плотном пылевом облаке если вы не двигаетесь вас можно будет обнаружить только радаром и только вплотную.',
-               en='They also react to the surrounding space and warp the flow of light around your ship. In a dense dust cloud, if you remain completely stationary, you will be virtually invisible, until the enemy is right on top of you.'
-        ),
+        # VoiceLine(
+        #     30,
+        #     HasslerOrder,
+        #     ru='ы. В зависимости от характера окружающего пространства от двух до семи раз.',
+        #        en='These panels will significantly reduce your radar signatures. Depending on the environment, by a factor of two up to seven.'
+        # ),
+        # VoiceLine(
+        #     40,
+        #     HasslerOrder,
+        #     ru='Кроме того они подстраиваются под характер окружающего пространства визуально. В плотном пылевом облаке если вы не двигаетесь вас можно будет обнаружить только радаром и только вплотную.',
+        #        en='They also react to the surrounding space and warp the flow of light around your ship. In a dense dust cloud, if you remain completely stationary, you will be virtually invisible, until the enemy is right on top of you.'
+        # ),
         VoiceLine(
             50,
             Trent,
@@ -226,12 +226,11 @@ class Msn10Space(Msn10, script.SpaceVoiceProps):
         VoiceLine(
             60,
             HasslerOrder,
-            ru='Придется. Кс+еносы очень не любят чужаков. А чужаков, которые приближаются к их тюрьме с намерением выкрасть парочку заключенных, они не любят особенно сильно.',
-               en='Stealth is essential, Herr Trent. The Xenos do not care for outsiders. And for some reason they are particularly unwelcoming to outsiders staging a jailbreak.'
+            ru='Придется. Кс+еносы очень не любят чужаков. Особенно тех чужаков, которые приближаются к местной тюрьме с намерением выкрасть парочку заключенных.',
+            en='Stealth is essential, Herr Trent. The Xenos do not care for outsiders. And for some reason they are particularly unwelcoming to outsiders staging a jailbreak.'
         ),
 
-        VoiceLine(70, HasslerOrder, ru='Трент, ты ведешь звено Локи. Уничтожьте защитные системы и дайте нам сигнал '
-                                        'в случае успеха. Карта местности загружена в компьютер Д+ерси.',
+        VoiceLine(70, HasslerOrder, ru='Трент, ты ведешь звено Локи. Уничтожьте защитные системы и в случае успеха дайте нам сигнал. Карта местности загружена в компьютер Д+ерси.',
                                              en='Trent, you\'re leading Loki Wing. Take out the defense systems then send us the signal '
                                                 'when it\'s done. The terrain map has been loaded into Darcy\'s computer.'),
         VoiceLine(80, Darcy, ru='Да, я буду помогать. Трент, лети вперед! Мы полетим за тобой',
@@ -388,7 +387,7 @@ class Msn10RescuedCutscene(Msn10, script.CutsceneProps):
         VoiceLine(
             140,
             HasslerOrder,
-            ru='На станции Харадзюку, система Омега 7. Мы планируем подорвать корабль герра Р+окфорда, но для осуществления миссии нам необходимо чтобы вы отвлекли его на себя.',
+            ru='На станции Харадзюку, система Омега-7. Мы планируем подорвать корабль герра Р+окфорда, но для осуществления миссии нам необходимо чтобы вы отвлекли Р+окфорда на себя.',
                en='Harajuku Station, Omega-7 system. We plan to blow up Herr Rockford\'s ship, but we\'ll need you to keep him busy while we do it. We\'ll apprehend him after.'
         ),
         VoiceLine(

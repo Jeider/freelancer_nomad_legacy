@@ -33,12 +33,21 @@ class Msn3Offer(Msn3, script.CutsceneProps):
                   en="You are so good at guessing, Herr Trent. By the way, Admiral Reichmann personally requested for you to be on the secondary strike team."),
         VoiceLine(100, Trent, ru="Весьма польщён. А можно узнать, как так оказалось, что элитная военная база с высшим классом защиты практически в самом центре территории Рейнланда осталась бесхозной и в итоге досталась мятежникам и корсарам?",
                   en="I don't know whether to be flattered or flustered. Could you explain to me how an ultra-secure military base with best in class defense systems, smack in the center of Rheinland came to be abandoned and fall into the hands of Corsairs, rebels and riff-raff?"),
-        VoiceLine(110, Hassler, ru="Герр Трент, в свое время на территории Рейнланда строились две такие базы - Кёнигсберг и Регенсбург, в системе Мюнхен, на границе с Кусари. Военные Кусари рассматривали Регенсбург не иначе чем шилом у себя в заднице. ",
+
+
+        VoiceLine(110, Hassler, ru="Герр Трент, станция Кёнигисберг когда-то была частью Мюнхенского контура обороны. Военные Кусари рассматривали этот контур не иначе, чем шило у себя в заднице. ",
                   en="During the Kusari wars there were two major bases nearing completion in Rheinland territory - Konigsberg and Regensburg, both were in the Munich system, on the border with Kusari. The Kusari military saw Regensburg as a mere thorn in their side. Konigsberg, however was more significant strategically."),
-        VoiceLine(115, Hassler, ru="В ходе последнего военного конфликта с Кусари мы потерпели сокрушительное поражение и по условиям мирного договора нам пришлось не только демилитаризовать систему Мюнхен, но и прекратить строительство почти готовой станции Кёнигсберг...",
+
+
+        VoiceLine(115, Hassler, ru="В ходе разравившегося конфликта с Кусари мы потерпели сокрушительное поражение и по условиям мирного договора строительство контура было прекращено, а система Мюнхен была полностью демилитаризована.",
                   en="During our last conflict with Kusari, we were dealt a crushing defeat and under the terms of the resulting armistace we were forced to demilitarize Munich. The construction of Konigsberg was halted just before completion... "),
-        VoiceLine(120, Hassler, ru="Уничтожить Кёнигсберг или разобрать её так и не дошли руки у нашего правительства, а может, надеялись на пересмотр мирного договора, с тем чтобы достроить ее и ввести в эксплуатацию, не знаю, но в итоге получилось так, что Дитрих, как один из самых высокопоставленных военных, имеющий все ключи доступа, просто-напросто её оккупировал...",
+
+
+        VoiceLine(120, Hassler, ru="Станция Кёнигсберг была законсервирована до нынешних пор, когда Дитрих, воспользовавшись старыми ключами и доступами, не решил сделать из станции свой опорный пункт.",
                   en="Our government strangely did not take steps to scuttle or dismantle Konigsberg base. Perhaps they were hoping for a re-negotiation of the peace treaty, or perhaps they had some other scheme lost to history, I don't know. Eventually, Dietrich, having turned coat, and being in possession of all the access keys, just waltzed in and claimed it..."),
+
+
+
         VoiceLine(130, Trent, ru="Я так понимаю, спрашивать всякие глупости типа, есть ли у меня выбор, в этой ситуации неуместно.",
                   en="I'm guessing that asking whether I have a choice or not to participate is a stupid question."),
         VoiceLine(140, Wilham, ru=": Вы умный человек, герр Трент. ", en="You so wise, for a stupid man, Herr Trent. "),
@@ -157,7 +166,7 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
         VoiceLine(
             70,
             Hassler,
-            ru="Внимание! Вижу корабли корсаров! Боевое построение!",
+            ru="Внимание! Обнаружены корабли корсаров! Боевое построение! Уничтожить вражеские истребители!",
             en="Achtung! I'm reading Corsair ships! Enter battle formation!",
         ),
         VoiceLine(
@@ -169,13 +178,13 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
         VoiceLine(
             1110,
             Hassler,
-            ru="Направляемся к станции.",
+            ru="Каратели, Мародёры, направляемся к станции Кёнигсберг.",
             en="Heading to the station. ",
         ),
         VoiceLine(
             80,
             Hassler,
-            ru="Генераторы станции начали зарядку щита! Задача - уничтожить генераторы до полной зарядки! Повторяю - основная цель - генераторы!",
+            ru="Генераторы станции начали зарядку щита! Задача - уничтожить генераторы до полной зарядки! Повторяю: основная цель - генераторы!",
             en="The stations' generators have started charging the shields! Destroy the generators before they're fully charged! I repeat–our main goal is the generators!",
         ),
         VoiceLine(
@@ -223,7 +232,7 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
         VoiceLine(
             150,
             Hassler,
-            ru="К черту тебя, предатель! Зубы ты о нас обломаешь.",
+            ru="Пошёл ты к чёрту, Дитрих! Ты ответишь за все свои преступления против народа Рейнланда!",
             en="Go to hell, you traitor! Chew on this, I hope you break your teeth!",
         ),
         VoiceLine(
@@ -235,7 +244,7 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
         VoiceLine(
             170,
             Hassler,
-            ru="Себе попробуй сохранить!",
+            ru="Себе попробуй сохранить, предатель! Тебе грозит смертный приговор — а зубы ты о нас обломаешь, пока я его не привёл в исполнение.",
             en="Honour? What about all the men you've murdered! I'll trade your honour for justice.",
         ),
         VoiceLine(
@@ -259,7 +268,7 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
         VoiceLine(
             1160,
             Hassler,
-            ru="Это каратель-1, вас понял.",
+            ru="Это каратель-1, вас понял. Приказ - уничтожить все истребители противника!",
             en="This is Punisher-1, receiving loud and clear. ",
         ),
         VoiceLine(
@@ -277,7 +286,7 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
         VoiceLine(
             210,
             Hassler,
-            ru="А, черт. Башня, это Каратель-1. Похоже Дитрих с небольшой группой прикрытия решил уйти от нас!",
+            ru="А, чёрт. Башня, это Каратель-1. Похоже Дитрих с небольшой группой прикрытия решил уйти от нас!",
             en="Oh, hell. Tower, this is Punisher-1. Dietrich is escaping with a small fighter wing and a transport!",
         ),
         VoiceLine(
@@ -295,7 +304,7 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
         VoiceLine(
             240,
             Hassler,
-            ru="Уничтожить корабли противника!",
+            ru="Уничтожить Дитриха! Немедленно!",
             en="Destroy the enemy!",
         ),
         VoiceLine(
@@ -331,7 +340,7 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
         VoiceLine(
             280,
             Hassler,
-            ru="Дитрих и его отряд уничтожен. Ушел один грузовик из их отряда.",
+            ru="Дитрих и его эскорт уничтожен. Грузовик, который был в формации Дитриха, покинул место боя и скрылся.",
             en="Dietrich and his squad are destroyed. The transport got away.",
         ),
         VoiceLine(
@@ -355,7 +364,7 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
         VoiceLine(
             1190,
             Hassler,
-            ru="Летим следом. Может, еще нагоним.",
+            ru="Летим следом. Возможно мы ещё его нагоним.",
             en="Follow it in. We may still be able to catch up with it.",
         ),
         VoiceLine(
@@ -367,7 +376,7 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
         VoiceLine(
             320,
             Hassler,
-            ru="Направляемся на базу изгоев Виго. Может там что-нибудь знают...",
+            ru="Направляемся на базу Виго. Может там что-нибудь знают...",
             en="We'll head to the Rogue base Vigo. They might know something...",
         ),
 
