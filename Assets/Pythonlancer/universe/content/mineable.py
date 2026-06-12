@@ -264,6 +264,18 @@ class SupriseRewardPropsUltra(RewardProps):
     LOADOUTS_COUNT = 1
 
 
+class DysonRubicRewardPropsLow(RewardProps):
+    REWARD_TYPE = MINING_REWARD_LOW
+    MIN = 1
+    MAX = 2
+    LOADOUTS_COUNT = 1
+
+
+class DysonRubicRewardPropsUltra(RewardProps):
+    REWARD_TYPE = MINING_REWARD_ULTRA
+    LOADOUTS_COUNT = 1
+
+
 class RewardsGroup(object):
     ABSTRACT = True
 
@@ -476,6 +488,13 @@ class DefaultGasCrystalRewardsGroup(SinglepointRewardsGroup):
     ULTRA_REWARD_PROP = GasCrystalRewardPropsUltra
 
 
+class DefaultDysonRubicRewardGroup(SinglepointRewardsGroup):
+    REWARD_PROPS = [
+        DysonRubicRewardPropsLow,
+    ]
+    ULTRA_REWARD_PROP = DysonRubicRewardPropsUltra
+
+
 class DefaultSupriseRewardsGroup(SinglepointRewardsGroup):
     REWARD_PROPS = []
     ULTRA_REWARD_PROP = SupriseRewardPropsUltra
@@ -573,7 +592,12 @@ class RewardField(Mineable):
         if self.HAS_REWARDS:
             self.mark_rewards()
 
+        self.post_init()
+
         self.dummy_system_object_string = self.generate_box_content()
+
+    def post_init(self):
+        pass
 
     def mark_rewards(self):
         available_boxes = self.field.get_boxes_without_reward()
@@ -793,4 +817,39 @@ class StaticObjectField(SupriseRewardField):
             rotate='{}, {}, {}'.format(*box.get_rotate()),
             archetype=self.get_archetype(),
         )
+        return sys_object
+
+
+class DysonRubicRewardField(RewardField):
+    ALIAS = 'rubic'
+    GLYPH = None
+    ULTRA_BOXES_COUNT = 1
+
+    SYSTEM_OBJECT_TEMPLATE = '''[Object]
+nickname = {nickname}
+pos = {pos}
+rotate = {rotate}
+archetype = {archetype}'''
+
+    def post_init(self):
+        if self.GLYPH:
+            self.rewards_group.solar.set_glyph(self.GLYPH)
+
+    def get_rubic_archetype_by_reward_type(self, reward_type):
+        if reward_type == MINING_REWARD_ULTRA:
+            return self.rewards_group.solar.get_ultra_reward_archetype()
+
+        return self.rewards_group.solar.get_default_archetype()
+
+    def generate_box_content_item(self, box, reward_type, index):
+        archetype = self.get_rubic_archetype_by_reward_type(reward_type)
+        sys_object = self.SYSTEM_OBJECT_TEMPLATE.format(
+            nickname=self.create_nickname(index),
+            pos='{}, {}, {}'.format(*box.get_position()),
+            rotate='{}, {}, {}'.format(*box.get_rotate()),
+            archetype=archetype,
+        )
+        loadout = self.rewards_group.get_loadout_name_by_reward_type(reward_type, self.ultra_base_instance)
+        if loadout:
+            sys_object += SINGLE_DIVIDER + f'loadout = {loadout}'
         return sys_object

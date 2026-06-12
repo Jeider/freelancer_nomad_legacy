@@ -57,8 +57,8 @@ class Msn9YokohamaCutscene(Msn9, script.CutsceneProps):
     ALIAS = 'yokohama'
     TITLE = 'Верхний бар станции Йокогама'
     THORN_CLASS = m09_yokohama.Msn9YokohamaCutsceneThorn
-    DESCRIPTION = 'Трент и Д+ерси проходят по бару. Посетители косятся на них и буквально прожигают взглядом. '
-    'Вскоре их находит Хасслер и проводит к лифту. Они едут вниз.'
+    DESCRIPTION = ('Трент и Д+ерси проходят по бару. Посетители косятся на них и буквально прожигают взглядом. '
+                   'Вскоре их находит Хасслер и предлагает встретиться с Ямамото.')
     VOICE_LINES = [
         VoiceLine(
             10,
@@ -87,6 +87,7 @@ class Msn9YokohamaCutscene(Msn9, script.CutsceneProps):
         VoiceLine(
             50,
             HasslerOrder,
+            comment='Появление из-за спины',
             ru='Герр Трент, вы действительно верите, что бессмертны?',
             en="Herr Trent, we meet again."
         ),
@@ -129,7 +130,7 @@ class Msn9YokohamaCutscene(Msn9, script.CutsceneProps):
             HasslerOrder,
             ru='И что характ+ерно - каждый раз вы вых+одите сух+им из вод+ы. '
                'Я бы даже сказал не просто сухим из вод+ы, а («снимает шляпу перед дамой») '
-               'унося на руках красивую девушку на фоне ядерного гриба.',
+               'унося на руках красивую даму на фоне ядерного гриба.',
             en="You seem to attract calamity, yet each time you somehow emerge from the brink of disaster not only unscathed,"
                "but with a beautiful girl on your arm, set against the backdrop of a big, black mushroom cloud."
         ),
@@ -157,7 +158,7 @@ class Msn9YokohamaCutscene(Msn9, script.CutsceneProps):
         VoiceLine(
             150,
             HasslerOrder,
-            ru='Тогда вам лучше говорить не со мной герр Трент, а с главой Нового Ордена, герром Ямамото.',
+            ru='Тогда вам лучше говорить не со мной, герр Трент, а с главой Нового Ордена, герром Ямамото.',
             en="For this, Herr Trent, you will have to speak to the head of the New Order, Herr Yamamoto."
         ),
         VoiceLine(
@@ -187,7 +188,7 @@ class Msn9YokohamaCutscene(Msn9, script.CutsceneProps):
             200,
             HasslerOrder,
             ru='Я рассказал ему о наших с вами совместных приключениях, и '
-               ' как мне показалось он проникся уважением к вам. Не думаю что вам что-то угрожает.',
+               ' как мне показалось, он проникся уважением к вам. Не думаю что вам что-то угрожает.',
             en="I told him about our previous adventures... or misadventures, "
                'and he seems to have developed a peculiar respect for you. Or perhaps a morbid curiosity. Or both. I don\'t believe you\'re in any danger. Not mortal danger at least.'
         ),
@@ -205,19 +206,19 @@ class Msn9OrderCutscene(Msn9, script.CutsceneProps):
     THORN_CLASS = m09_order.Msn9OrderCutsceneThorn
     THORN_DECISION_CLASS = m09_order.Msn9OrderDecisionThorn
     THORN_ACCEPT_CLASS = m09_order.Msn9OrderAcceptThorn
-    DESCRIPTION = 'Лифт открывается. Энергичная музыка, треш, угар и прочие штуки. Стриптизерши танцуют. Герои входят'
+    DESCRIPTION = 'Лифт открывается. Энергичная музыка, треш, угар и прочие штуки. Стриптизерши танцуют. Герои входят. Хасслер ведёт Трента и Дерси к столику Ямамото'
     'Они подходят к барной стойке, где их поджидает глава Нового Ордена - Ямамаото-сама'
     VOICE_LINES = [
         VoiceLine(
             10,
             HasslerOrder,
-            ru='Герр Ямамото, герр Трент, фрау Д+ерси.',
+            ru='Герр Ямамото. Знакомьтесь - это герр Трент и фрау Д+ерси.',
             en="Herr Yamamoto please meet Herr Trent and Fraulein Darcy."
         ),
         VoiceLine(
             20,
             Yamamoto,
-            ru='(задумчиво-меланхолично, без пафсоа) Мистер Трент, я думал, что в свои годы уже утратил способность удивляться, '
+            ru='(задумчиво-меланхолично, без пафоса) Мистер Трент, я думал, что в свои годы уже утратил способность удивляться, '
                'но вы меня просто поразили. По вашей истории можно написать приключенческий роман. А может и не один роман.',
             en="Mr. Trent, I thought that at my age I had lost all capacity for surprise, but you, you surprise me. "
                'One could write an epic tale about your adventures. Or two!'
@@ -420,7 +421,7 @@ class Msn9OrderCutscene(Msn9, script.CutsceneProps):
 class Msn9RewardCutscene(Msn9, script.CutsceneProps):
     ALIAS = 'reward'
     TITLE = 'Ангар линкора Мусаси'
-    DESCRIPTION = 'Трент и Д+ерси подходит к Хасслеру'
+    DESCRIPTION = 'Это была тяжелая миссия. Трент, Дерси и Ким подходят к Хасслеру. Ким в бешенстве.'
     THORN_CLASS = m09_reward.Msn9RewardCutsceneThorn
     VOICE_LINES = [
         VoiceLine(
@@ -444,7 +445,7 @@ class Msn9RewardCutscene(Msn9, script.CutsceneProps):
         VoiceLine(
             40,
             HasslerOrder,
-            ru='Я гарантирую это',
+            ru='Так и будет. Я гарантирую это',
             en="We will. I promise"
         ),
 
@@ -457,7 +458,7 @@ class Msn9RewardCutscene(Msn9, script.CutsceneProps):
         VoiceLine(
             110,
             HasslerOrder,
-            ru='Не все, герр Трент. Но целеустремленность этих людей воодушевляет',
+            ru='Не все, герр Трент. Но целеустремленность этих людей и правда воодушевляет',
             en="Not everyone, Herr Trent. But their determination is ...inspiring."
         ),
         VoiceLine(

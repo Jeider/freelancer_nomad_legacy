@@ -86,13 +86,14 @@ class DynamicAttachedCargoLoadout(Loadout):
             if hp in self.empty_hardpoints:
                 continue
 
-            items_count = random.randint(self.min, self.max)
-            if items_count > 0:
-                self.loadout.add_cargo(
-                    self.cargo_item,
-                    items_count,
-                    hp
-                )
+            if self.cargo_item is not None:
+                items_count = random.randint(self.min, self.max)
+                if items_count > 0:
+                    self.loadout.add_cargo(
+                        self.cargo_item,
+                        items_count,
+                        hp
+                    )
 
 
 class DynamicInternalCargoLoadout(Loadout):
@@ -117,10 +118,11 @@ class DynamicInternalCargoLoadout(Loadout):
         self.fill_loadout()
 
     def fill_loadout(self):
-        self.loadout.add_cargo(
-            self.cargo_item,
-            random.randint(self.min, self.max),
-        )
+        if self.cargo_item is not None:
+            self.loadout.add_cargo(
+                self.cargo_item,
+                random.randint(self.min, self.max),
+            )
 
 
 class SingleInternalCargoLoadout(Loadout):

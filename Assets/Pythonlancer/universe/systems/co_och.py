@@ -22,6 +22,8 @@ from templates.nebula import co_och_nebula
 from templates.nebula import exclusion
 from templates.dockable import corsair_dreadnought
 
+from templates.solar import dyson_rubic
+
 from text.strings import MultiString as MS
 
 
@@ -110,13 +112,21 @@ EDGE_EXCLUSION_PARAMS = {
     'zone_shell': exclusion.LINES_EXCLUSION,
     'shell_scalar': 1.1,
     'max_alpha': 0.5,
-    'exclusion_tint': '50, 200, 50',
+    'exclusion_tint': '50, 150, 50',
     'fog_far': 5000,
 }
 
 
+EDGE_EXCLUSION_PARAMS2 = {
+    'zone_shell': exclusion.VORTEX_EXCLUSION,
+    'shell_scalar': 1.1,
+    'max_alpha': 0.5,
+    'exclusion_tint': '150, 180, 160',
+    'fog_far': 2500,
+}
+
+
 WALKER_EXCLUSION_PARAMS = {
-    'zone_shell': exclusion.WALKER_EXCLUSION,
     'shell_scalar': 1.1,
     'max_alpha': 0.5,
     'exclusion_tint': '200, 200, 200',
@@ -402,9 +412,6 @@ class OchoNomadStaticAst(OchoMember, main_objects.AutoStaticObject):
     NEBULA_EXCLUSION_ZONE_SIZE = 5000
 
 
-
-
-
 class OchoResearchBase1(OchoMember, main_objects.AbandonedAsteroid):
     ALIAS = 'scient'
     INDEX = 1
@@ -438,6 +445,7 @@ class OchoResearchBase1(OchoMember, main_objects.AbandonedAsteroid):
         Q.Gun('rh_junkergun', eq_classes=markets.SECRET2),
         Q.Engine(None, eq_classes=markets.SECRET2),
     )
+
 
 class OchoResearchBase2(OchoMember, main_objects.AbandonedAsteroid):
     ALIAS = 'scient'
@@ -502,3 +510,148 @@ class OchoResearchAsteroids2(OchoMember, mineable.AsteroidRewardField):
     MEDIUM_REWARD_CHANCE = 0.25
     ULTRA_REWARD = True
     ULTRA_BASE = OchoResearchBase2
+
+
+
+NO_FIELD_TEMPLATE = '''
+cube_size = 400
+fill_dist = 1500
+diffuse_color = 100, 150, 255
+ambient_color = 100, 200, 255
+ambient_increase = 20, 30, 255
+empty_cube_frequency = 0.000000
+max_alpha = 0.400000
+'''
+
+NO_CUBE_TEMPLATE = '''
+asteroid = mine_oxygen, 0.800000, -0.500000, -0.200000, 15, 90, 120, mine
+asteroid = mine_oxygen, -0.300000, 0.600000, 0.800000, 85, 0, 185, mine
+asteroid = mine_oxygen, 0.400000, -0.700000, -0.200000, 15, 90, 120, mine
+asteroid = mine_oxygen, -0.300000, -0.300000, 0.800000, 85, 0, 185, mine
+asteroid = mine_oxygen, -0.700000, 0.400000, -0.400000, 75, 30, 70, mine
+'''
+
+TRN_FIELD_TEMPLATE = '''
+cube_size = 1000 ;single version
+;cube_size = 3300 ;multiple version
+fill_dist = 2000 
+empty_cube_frequency = 0.000000
+'''
+
+TRN_CUBE_TEMPLATE = '''
+asteroid = mod_red_biglair02, -0.80, -0.75, -0.70, 27, 154, 293
+asteroid = mod_red_biglair01, -0.65, -0.60, -0.55, 312, 89, 175
+asteroid = mod_red_biglair02, -0.50, -0.45, -0.40, 84, 231, 46
+asteroid = mod_red_biglair01, -0.35, -0.30, -0.25, 198, 347, 268
+asteroid = mod_red_biglair02, -0.20, -0.15, -0.10, 43, 112, 359
+asteroid = mod_red_biglair01, -0.05, 0.00, 0.05, 271, 56, 134
+asteroid = mod_red_biglair02, 0.10, 0.15, 0.20, 156, 298, 77
+asteroid = mod_red_biglair01, 0.25, 0.30, 0.35, 335, 183, 212
+asteroid = mod_red_biglair02, 0.40, 0.45, 0.50, 68, 45, 341
+asteroid = mod_red_biglair01, 0.55, 0.60, 0.65, 247, 364, 108
+asteroid = mod_red_biglair02, 0.70, 0.75, 0.80, 139, 73, 286
+asteroid = mod_red_biglair01, -0.78, -0.38, 0.02, 32, 259, 165
+asteroid = mod_red_biglair02, 0.42, 0.72, -0.48, 295, 141, 48
+asteroid = mod_red_biglair01, -0.22, 0.58, -0.72, 113, 316, 227
+asteroid = mod_red_biglair02, 0.68, -0.28, 0.28, 186, 65, 302
+asteroid = mod_red_biglair01, -0.52, -0.72, 0.62, 51, 278, 89
+asteroid = mod_red_biglair02, 0.32, 0.82, -0.18, 344, 129, 14
+asteroid = mod_red_biglair01, -0.62, 0.22, -0.32, 221, 96, 357
+asteroid = mod_red_biglair02, 0.78, -0.62, -0.12, 79, 210, 146
+asteroid = mod_red_biglair01, -0.12, -0.52, 0.78, 163, 305, 233
+asteroid = mod_red_biglair02, 0.23, -0.77, 0.43, 288, 53, 71
+asteroid = mod_red_biglair01, -0.43, 0.73, -0.23, 107, 387, 198
+asteroid = mod_red_biglair02, 0.53, 0.13, -0.83, 254, 172, 49
+asteroid = mod_red_biglair01, -0.73, -0.13, 0.63, 41, 249, 310
+asteroid = mod_red_biglair02, 0.13, -0.63, -0.33, 315, 104, 135
+asteroid = mod_red_biglair01, -0.83, 0.43, 0.73, 177, 338, 266
+asteroid = mod_red_biglair02, 0.63, 0.83, -0.53, 62, 187, 59
+asteroid = mod_red_biglair01, -0.33, -0.83, 0.13, 228, 42, 324
+asteroid = mod_red_biglair02, 0.83, -0.33, -0.63, 93, 263, 181
+asteroid = mod_red_biglair01, -0.53, 0.63, 0.33, 355, 116, 42
+
+'''
+
+
+class OchoRubicNomadAst(asteroid_definition.AsteroidDefinition):
+    FIELD = True
+    CUBE = True
+    FIELD_TEMPLATE = TRN_FIELD_TEMPLATE
+    CUBE_TEMPLATE = TRN_CUBE_TEMPLATE
+
+
+class OchoRubicAstZone1(OchoMember, zones.AsteroidZone):
+    ALIAS = 'rubic'
+    INDEX = 1
+    ASTEROID_DEFINITION_CLASS = OchoRubicNomadAst
+    SPACEDUST = Dust.ATTRACT_PURPLE
+    SPACEDUST_MAXPARTICLES = 200
+    DRAG_MODIFIER = 1.3
+    INTERFERENCE = 0.5
+
+
+class OchoNomadGate(OchoMember, main_objects.Jumpgate):
+    ALIAS = 'jg'
+    INDEX = 3
+    ARCHETYPE = 'nomad_gate'
+
+    TARGET_SYSTEM_NAME = 'virt1'
+    ROTATE_BY_TEMPLATE = True
+
+    ASTEROID_ZONES = [
+        OchoAsteroidZone3,
+    ]
+    AST_EXCLUSION_ZONE_SIZE = 8000
+
+    NEBULA_ZONES = [
+        OchNomadNebula
+    ]
+    EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS2
+    NEBULA_EXCLUSION_ZONE_SIZE = 3000
+    NEBULA_EXCLUSION_EDGE_FRACTION = 0.4
+
+
+class OchoNomadGateHelper(OchoMember, main_objects.NotAppearableObject):
+    ALIAS = 'virt'
+    INDEX = 1
+
+    ASTEROID_ZONES = [
+        OchoRubicAstZone1,
+    ]
+    AST_EXCLUSION_ZONE_SIZE = 2500
+
+
+class OchoDysonRubicNomadGateRewards(OchoMember, mineable.DefaultDysonRubicRewardGroup):
+    NAME = 'och_rubic'
+    SOLAR = dyson_rubic.DysonRubic
+    REWARD_ITEM = None
+    ULTRA_REWARD_BASES = [
+        OchoResearchAsteroids1,
+    ]
+
+
+class OchoDysonRubicFieldProps(mineable.DefaultField):
+    BOX_SIZE = 1500
+    DENSITY_MULTIPLER = 1
+    DRIFT_X = 0.11
+    DRIFT_Y = 0.025
+    DRIFT_Z = 0.11
+    ROTATE_X_MIN = 0
+    ROTATE_X_MAX = 0
+    ROTATE_Y_MIN = -180
+    ROTATE_Y_MAX = 180
+    ROTATE_Z_MIN = 0
+    ROTATE_Z_MAX = 0
+
+
+class OchoDysonRubicField(OchoMember, mineable.DysonRubicRewardField):
+    FIELD_CLASS = OchoDysonRubicFieldProps
+    REWARDS_GROUP_CLASS = OchoDysonRubicNomadGateRewards
+    MEDIUM_REWARD_CHANCE = 0
+    HIGH_REWARD_CHANCE = 0
+    ULTRA_REWARD = True
+    GLYPH = dyson_rubic.GLYPH3
+
+    INDEX = 1
+    ULTRA_BASE = OchoResearchAsteroids1
+

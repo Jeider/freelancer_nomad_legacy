@@ -75,6 +75,9 @@ class LancerCore:
         self.population = PopulationManager(self)
         self.store = StoreManager(self)
         self.universe = UniverseManager(self)
+
+        story = False
+
         self.story = StoryManager(self) if story else None
         self.fx = FxManager(self)
 

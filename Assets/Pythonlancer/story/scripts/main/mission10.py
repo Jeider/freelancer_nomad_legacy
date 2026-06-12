@@ -75,7 +75,7 @@ class Msn10OfferCutscene(Msn10, script.CutsceneProps):
         VoiceLine(
             100,
             HasslerOrder,
-            ru='Нет, герр Трент, совсем наоборот. Нужно будет вытащить из тюрьм+ы кс+еносов одного хор+ошего человека, героя войн+ы с кочевниками.',
+            ru='Нет, герр Трент, совсем наоборот. Нужно будет вытащить из тюрьм+ы Кс+еносов одного хор+ошего человека, героя войн+ы с кочевниками.',
                en='Nein, Herr Trent, quite the opposite. We need you to break a man out of a Xeno prison. A hero in the war against the Nomads.'
         ),
         VoiceLine(
@@ -87,7 +87,7 @@ class Msn10OfferCutscene(Msn10, script.CutsceneProps):
         VoiceLine(
             120,
             HasslerOrder,
-            ru='Это не отменяет того,, что были её герои.',
+            ru='Это не отменяет того факта,, что были её герои.',
                en='Of course. An unofficial hero then.'
         ),
         VoiceLine(
@@ -123,7 +123,7 @@ class Msn10OfferCutscene(Msn10, script.CutsceneProps):
         VoiceLine(
             180,
             HasslerOrder,
-            ru='При всём моем уважении к герру Аларику, его способности значительно уступают вашим.',
+            ru='При всём моем уважении к герру Аларику, его способности значительно уступают вашим, герр Трент.',
                en='With all due respect to Herr Alaric, his capabilities were... significantly inferior to yours.'
         ),
         VoiceLine(

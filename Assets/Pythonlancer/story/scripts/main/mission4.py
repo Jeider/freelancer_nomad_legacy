@@ -222,6 +222,7 @@ class Msn4Space(Msn4, script.SpaceVoiceProps):
         VoiceLine(
             220,
             Hassler,
+            comment='Вот это поворот! Появляется внезапный бог из машины!',
             ru="Герр Крейтмайер, вас ввели в заблуждение! Заговор! Освободите конвоируемых!",
             en="Herr Creitmeier, you are making huge a mistake. Release the escort now!",
         ),
@@ -246,6 +247,7 @@ class Msn4Space(Msn4, script.SpaceVoiceProps):
         VoiceLine(
             260,
             Trent,
+            comment='Начинается битва!',
             ru="Спасибо, ребята, теперь валим отсюда!",
             en="Thanks for the save, guys. Now let's get the hell outta here! ",
         ),
@@ -264,30 +266,33 @@ class Msn4Space(Msn4, script.SpaceVoiceProps):
         VoiceLine(
             290,
             Hassler,
-            ru="Маленький сюрприз от знакомых изгоев. Трент, я уничтожил броневой пояс линкора в районе реактора торпедой. Второй у меня нет. Ты должен нанести урон реактору и пустить его вразнос!",
+            comment='Хасслер выстреливает какой-то торпедой по боковой панели реактора линкора',
+            ru="(в пылу боя) Маленький сюрприз от знакомых Изгоев: сверхмощная торпеда. Трент, я нанёс критический урон по линкору, но второй такой торпеды у меня нет. Ты должен добить реактор линкора и пустить его вразнос!",
             en="A little torpedo surprise from our Outcast friends. Trent, I've weakened the armor around the battleships' reactor. I don't have another torpedo. We need to punch through to the reactor. ",
         ),
         VoiceLine(
             300,
             Hassler,
-            ru="Этот линкор - Вотан, он идет на ремонт, у них как раз проблемы с системой охлаждения. Постарайся как можно быстрее! Мы с Алариком займемся истребителями!",
+            ru="(в пылу боя) Этот линкор стоит на ремонте, у него как раз проблемы с системой охлаждения. Постарайся как можно быстрее! Мы с Алариком займемся истребителями!",
             en="According to our intelligence the battleship is the Wotan, and it has a malfunctioning cooling system. Even minor damage to the reactor should result in catastrophic failure. Be fast and precise. Alaric and I will hold off of the fighters!",
         ),
         VoiceLine(
             310,
             Hassler,
-            ru="А теперь, валим отсюда, как метко выразился герр Трент.",
+            comment='Линкор взорвался!',
+            ru="А теперь действительно валим отсюда. Скорее!",
             en="Now, let's, as Herr Trent put it so well, get the hell outta here. ",
         ),
         VoiceLine(
             320,
             Alaric,
-            ru="Включаем круиз.",
-            en="Cruise engines online.",
+            ru="Включаем круиз!",
+            en="Cruise engines online!",
         ),
         VoiceLine(
             330,
             Trent,
+            comment='Летим',
             ru="А теперь, объясните мне, пожалуйста, что за хрень вообще происходит? Во что влип Джакобо и я вместе с ним?",
             en="Now, could someone please tell me what the hell is going on? What has Jacobo gotten me into now?",
         ),
@@ -306,19 +311,19 @@ class Msn4Space(Msn4, script.SpaceVoiceProps):
         VoiceLine(
             360,
             Hassler,
-            ru="Герр Трент, если вы помните, финал миссии в Кёнигсберге выглядел со всех сторон сомнительно. И я решил копнуть глубже.",
+            ru="Как вы помните, финал миссии в Кёнигсберге выглядел со всех сторон сомнительно. И я решил копнуть глубже.",
             en="Do you recall how our stint in Konigsberg wound up disappointing the General? I found it suspicious, so I dug deeper.",
         ),
         VoiceLine(
             410,
             Hassler,
-            ru="Я выяснил, что Дитрих в своё время смог выкрасть из генштаба Рейнланда некие важные сверхсекретные документы. Так вот вся операция была затеяна для того чтобы эти документы вернуть.",
+            ru="Я выяснил, что Дитрих в своё время смог выкрасть из генштаба Рейнланда некие важные сверхсекретные документы. Так вот, вся операция была затеяна для того чтобы эти документы вернуть.",
             en="Turns out someone... acquired some extremely important documents from a mole in Rheinland’s Joint Staff. So the real goal of the mission all along was to retrieve the documents, not to take out Dietrich and his men.",
         ),
         VoiceLine(
             420,
             Hassler,
-            ru="И даже если бы Дитрих скрылся, но документы оказались бы в руках Райхманна, операция была бы признана успешной.",
+            ru="Если бы Райхман достал документы, а Дитрих при этом скрылся, операция всё равно была бы признана успешной.",
             en="Dietrich was just a red herring to lend legitimacy to the whole operation.",
         ),
         VoiceLine(
@@ -360,6 +365,7 @@ class Msn4Space(Msn4, script.SpaceVoiceProps):
         VoiceLine(
             630,
             Hassler,
+            comment='Вражеский крейсер и истребители после вылета из гипердыры',
             ru="Засада! Как они нас нашли?",
             en="Sheisse! How'd they find us?",
         ),
@@ -396,12 +402,14 @@ class Msn4Space(Msn4, script.SpaceVoiceProps):
         VoiceLine(
             9300,
             Hassler,
-            ru="Скорее уходим.",
+            comment='Враги уничтожены',
+            ru="Скорее уходим!",
             en="Come on Trent, we gave to get outta here.",
         ),
         VoiceLine(
             670,
             Hassler,
+            comment='Пока летим...',
             ru="Очень интересно.",
             en="Strange.",
         ),
@@ -582,6 +590,7 @@ class Msn4Space(Msn4, script.SpaceVoiceProps):
         VoiceLine(
             960,
             Hassler,
+            comment='Аномалия рядом',
             ru="А вот и аномалия. Активирую...",
             en="And here's the anomaly. Activating... ",
         ),
@@ -600,6 +609,7 @@ class Msn4Space(Msn4, script.SpaceVoiceProps):
         VoiceLine(
             990,
             Hassler,
+            comment='Корсары убиты, теперь точно прощаемся',
             ru="Надеюсь, на этот раз нам не помешают. Активирую аномалию...",
             en="Okay, that's sorted. Peace and quiet at last, I hope. Activating the anomaly...",
         ),

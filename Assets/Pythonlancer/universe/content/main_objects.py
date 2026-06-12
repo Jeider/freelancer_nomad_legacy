@@ -437,13 +437,23 @@ class StaticObject(AppearableObject):
         return is_lawful
 
 
+class NotAppearableObject(StaticObject):
+    ALIAS = 'not_appear'
+
+    def has_appearance(self):
+        return False
+
+    def get_inspace_nickname(self):
+        return '{system_name}_{alias}_staticobj_{index}'.format(system_name=self.system.NAME, alias=self.ALIAS, index=self.INDEX)
+
+
 class AutoStaticObject(StaticObject):
     ALIAS = 'static'
     TEMPLATE_ARCHETYPE = True
     TEMPLATE_LOADOUT = True  # Enable when you want it
 
     def get_inspace_nickname(self):
-        return '{system_name}_staticobj_{index}'.format(system_name=self.system.NAME, index=self.INDEX)
+        return '{system_name}_{alias}_staticobj_{index}'.format(system_name=self.system.NAME, alias=self.ALIAS, index=self.INDEX)
 
 
 class NamedObject(StaticObject):
@@ -665,7 +675,10 @@ class Jumpgate(JumpableObject):
 
     CONNECTION_KIND = connection.CONNECTION_LAWFUL
 
+    JUMP_OUT_POINT = None
+
     def get_y_rotate(self):
+        self.get_jump_out_point()
         return (
             self.system.template.get_item_rotate(self.get_full_alias())[1]
             if self.ROTATE_BY_TEMPLATE
@@ -680,6 +693,22 @@ class Jumpgate(JumpableObject):
 
     def get_ids_info(self):
         return self.IDS_INFO
+
+    def get_jump_out_point(self):
+        if self.JUMP_OUT_POINT is not None:
+            point_pos = self.system.template.get_item_pos(self.JUMP_OUT_POINT)
+            item_pos = self.get_position()
+
+            final_pos = [
+                item_pos[0] - point_pos[0],
+                item_pos[1] - point_pos[1],
+                item_pos[2] - point_pos[2],
+            ]
+
+            print(final_pos)
+
+            return
+
 
 
 class Jumphole(JumpableObject):

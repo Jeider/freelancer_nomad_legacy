@@ -685,7 +685,10 @@ class StorySystem(System):
         return ''.join(new_lines)
 
     def get_content(self):
-        return self.get_static_content()
+        content = [self.get_static_content()]
+        if self.have_dynamic_content():
+            content.append(self.get_dynamic_content())
+        return DIVIDER.join(content)
 
     def process_content(self):
         if self.have_dynamic_content():

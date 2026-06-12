@@ -48,6 +48,8 @@ from universe.systems import om11 as om11_content
 from universe.systems import co_mad as co_mad_content
 from universe.systems import co_cur as co_cur_content
 
+from universe.systems import virt1 as virt1_content
+
 
 
 class rh_mnh(system.RheinlandFirst, system.System, system.SiriusSystem):
@@ -833,3 +835,18 @@ class xen(system.StorySystem, system.SiriusSystem):
 
     SYSTEM_FOLDER = 'XENOS'
     NAVMAP_POS = '14.5, -1.1'
+
+
+class virtual1(system.StorySystem, system.SiriusSystem):
+    NAME = 'virt1'
+    DIRECT_TEMPLATE_NAME = 'virt1_dev'
+    RU_NAME = MS('Киберзона 1', "Cyberzone 1")
+    CONTENT = virt1_content
+
+    ALLOW_SYNC = True
+
+    SYSTEM_FOLDER = 'VIRT1'
+    NAVMAP_POS = '12.5, 15.5'
+    SPACE_FARCLIP = 100000
+
+    JUMP_EFFECT = jump_effect.Edge

@@ -539,7 +539,7 @@ def mass_upgrade_rh():
         [['ku_', f'ku_{skin}_']],
     )
 
-def mass_upgrade():
+def mass_upgrade__():
     subfolder_filename = 'lod0-212.vms.xml'
 
     old_materials = [
@@ -770,16 +770,62 @@ def mass_upgrade_br():
         ],
     )
 
-def dbg():
-    point = [-132, 0, 65]
-    rotated = math.relocate_point(point, 180)
-    print(rotated)
+
+def mass_upgrade():
+    subfolder_filename = 'lod0-212.vms.xml'
+
+    old_materials = [
+        "lavastroid",
+        "lavastroid02",
+    ]
+
+    skin = 'nexus'
+
+    # red
+    # sphere
+    # fish
+    # nexus
+
+
+    subfile_changed_strings = []
+    for old_mat in old_materials:
+        old_mat_hex = crc32_hex_from_str(old_mat.lower())
+        new_mat_hex = crc32_hex_from_str(f'{skin}_{old_mat.lower()}')
+        subfile_changed_strings.append(
+            [f'0x{old_mat_hex[2:].upper()}', new_mat_hex],
+        )
+        subfile_changed_strings.append(
+            [f'0x0{old_mat_hex[2:].upper()}', new_mat_hex],
+        )
+
+    upgrades = [
+        ['filename="ast_', f'filename="ast_{skin}_'],
+
+        ['data.solar.asteroids.models.ast_lava', f'data.solar.asteroids.models.ast_lava_{skin}'],
+
+        # ['fl.pi_elite_wings', f'fl.pi_elite_wings_{skin}'],
+
+
+    ]
+
+
+    # upgrades = []
+    main_file_upgrades = upgrades
+    subfile_changed_strings = subfile_changed_strings + upgrades
+
+    utf_xml.XML_UTF.mass_encode_updated_xml(
+        subfolder_filename,
+        subfile_changed_strings,
+        main_file_upgrades,
+        [
+            ['ast_', f'ast_{skin}_'],
+        ],
+    )
 
 
 ACTIONS = {
     'mass_decode': mass_decode,
     'mass_upgrade': mass_upgrade,
-    'dbg': dbg,
 }
 
 

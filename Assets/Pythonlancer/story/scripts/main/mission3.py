@@ -12,7 +12,7 @@ class Msn3(object):
 class Msn3Offer(Msn3, script.CutsceneProps):
     ALIAS = 'offer'
     TITLE = 'Штарке'
-    DESCRIPTION = ''
+    DESCRIPTION = 'Бар станции. Два военных проводят брифинг и предлагают, как обычно, сверх опасную миссию.'
     VOICE_LINES = [
         VoiceLine(10, Trent, ru="Салют, джентльмены.", en="Greetings, gentlemen."),
         VoiceLine(20, Wilham, ru="А вот и герр Трент. Познакомьтесь с герром Хасслером. В ходе этой миссии вам придется плотно сотрудничать.",
@@ -136,6 +136,7 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
         VoiceLine(
             1050,
             Hassler,
+            comment='Брифинг окончен',
             ru="Всё поняли, ребята? Выдвигаемся.",
             en="Everything clear, people? Moving in.  ",
         ),
@@ -166,7 +167,7 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
         VoiceLine(
             70,
             Hassler,
-            ru="Внимание! Обнаружены корабли корсаров! Боевое построение! Уничтожить вражеские истребители!",
+            ru="(Кругом враги!) Внимание! Обнаружены корабли корсаров! Боевое построение! Уничтожить вражеские истребители!",
             en="Achtung! I'm reading Corsair ships! Enter battle formation!",
         ),
         VoiceLine(
@@ -184,6 +185,7 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
         VoiceLine(
             80,
             Hassler,
+            comment='Мы вылетели из туманности и видим Кёнигсберг',
             ru="Генераторы станции начали зарядку щита! Задача - уничтожить генераторы до полной зарядки! Повторяю: основная цель - генераторы!",
             en="The stations' generators have started charging the shields! Destroy the generators before they're fully charged! I repeat–our main goal is the generators!",
         ),
@@ -196,6 +198,7 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
         VoiceLine(
             90,
             Hassler,
+            comment='Взорвали первый генератор щита',
             ru="Генераторы верхней полусферы уничтожены!",
             en="The upper hemispheres' generators are down!",
         ),
@@ -226,6 +229,7 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
         VoiceLine(
             140,
             Dietrich,
+            comment='Дитрих выходит на связь и начинает переманивать на тёмную сторону силы',
             ru="Каратель, Мародер, какие красочные позывные! Как жаль что придется вас уничтожить. Мародер уже готов, Каратель - на очереди.",
             en="Punisher, Marauder, such sexy call signs! Such a shame you are in my way. Marauder wing is dead. Punisher wing – it's your turn.",
         ),
@@ -244,12 +248,13 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
         VoiceLine(
             170,
             Hassler,
-            ru="Себе попробуй сохранить, предатель! Тебе грозит смертный приговор — а зубы ты о нас обломаешь, пока я его не привёл в исполнение.",
+            ru="Себе попробуй сохранить, предатель! Тебе грозит смертный приговор. Сдавайся сам, пока я до тебя еще не добрался!",
             en="Honour? What about all the men you've murdered! I'll trade your honour for justice.",
         ),
         VoiceLine(
             180,
             Hassler,
+            comment='Мы уничтожили второй генератор',
             ru="Говорит Каратель-1! Генераторы нижней полусферы уничтожены! Повторяю, генераторы щита уничтожены!",
             en="This is Punisher-1! Lower hemisphere generators destroyed! I repeat, the shield generators are destroyed!",
         ),
@@ -262,6 +267,7 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
         VoiceLine(
             1150,
             Wilham,
+            comment='Флот тут!',
             ru="Флот прибыл. Каратели, расчистите зону от оставшихся кораблей неприятеля.",
             en="The fleet has arrived. Punishers, clear the area of any remaining hostiles. ",
         ),
@@ -274,6 +280,7 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
         VoiceLine(
             1170,
             Hassler,
+            comment='Мы раскидали истребителей, щит Кёнигсберга вырубился',
             ru="Щит упал. Каратели, выдвигаемся к базе.",
             en="The shield is down. Punishers, close on the base.",
         ),
@@ -304,6 +311,7 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
         VoiceLine(
             240,
             Hassler,
+            comment='Догнали Дитриха, он развернулся и вступил с нами в бой',
             ru="Уничтожить Дитриха! Немедленно!",
             en="Destroy the enemy!",
         ),
@@ -316,7 +324,7 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
         VoiceLine(
             260,
             Hassler,
-            ru="Займемся им позже.",
+            ru="Займемся им позже. Сейчас нужно разобраться с Дитрихом.",
             en="Too much heat. We'll deal with the transport later. Stay on Dietrich and his men.",
         ),
         VoiceLine(
@@ -328,19 +336,20 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
         VoiceLine(
             1210,
             Hassler,
-            ru="Продолжайте огонь по нему, он не сможет защищаться бесконечно.",
+            ru="Продолжайте огонь по Дитриху. Чтобы там у него на корабле не было, он не сможет сопротивляться бесконечно.",
             en="Keep firing, I'm sure it can't last forever.",
         ),
         VoiceLine(
             270,
             Reichman,
+            comment='Дитрих всё, Кёнигсберг взорван',
             ru="Говорит адмирал Райхманн. Станция уничтожена. Всем спасибо. Хасслер, доложите статус.",
             en="This is Admiral Reichmann. The station is destroyed. Well done everyone. Hassler, status report.",
         ),
         VoiceLine(
             280,
             Hassler,
-            ru="Дитрих и его эскорт уничтожен. Грузовик, который был в формации Дитриха, покинул место боя и скрылся.",
+            ru="(сухой отчёт) Дитрих и его эскорт уничтожен. Грузовик, который был в формации Дитриха, покинул место боя и скрылся.",
             en="Dietrich and his squad are destroyed. The transport got away.",
         ),
         VoiceLine(
@@ -352,7 +361,7 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
         VoiceLine(
             300,
             Hassler,
-            ru="Каратели, за мной.",
+            ru="(выдохнув после оплеухи) Каратели, за мной.",
             en="Punishers, on me.",
         ),
         VoiceLine(
@@ -376,7 +385,7 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
         VoiceLine(
             320,
             Hassler,
-            ru="Направляемся на базу Виго. Может там что-нибудь знают...",
+            ru="Ладно, направляемся на базу Виго. Может хоть там что-то знают...",
             en="We'll head to the Rogue base Vigo. They might know something...",
         ),
 

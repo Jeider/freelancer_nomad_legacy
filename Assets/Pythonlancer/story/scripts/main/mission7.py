@@ -34,12 +34,12 @@ class Msn7Cadiz(Msn7, script.CutsceneProps):
     TITLE = 'Кадиз'
     DESCRIPTION = ''
     VOICE_LINES = [
-        VoiceLine(10, CadizEnemyOne, ru="Здаров, земляк! Где Рокфорд?", en="Hey, bro, know where Rockford's at?"),
+        VoiceLine(10, CadizEnemyOne, comment='Два странных поцыка подходят к Тренту', ru="Здаров, земляк! Где Рокфорд?", en="Hey, bro, know where Rockford's at?"),
         VoiceLine(20, Trent, ru="Понятия не имею.", en="None of your bees wax."),
-        VoiceLine(30, CadizEnemyTwo, ru="Слыш, земеля, ты чо такой дерзкий? Тебя по-хорошему спросили нна, где Рокфорд?", en="Tough guy, eh, shithead? Best answer before we make you."),
-        VoiceLine(40, CadizEnemyThree, ru="Сейчас наладим диалог.", en="This'll make you talk."),
-        VoiceLine(50, CadizEnemyFour, ru="Где Рокфорд, утырок?", en="Where's Rockford, you prick?"),
-        VoiceLine(60, Rockford, ru="Я Рокфорд. ", en="I'm right here."),
+        VoiceLine(30, CadizEnemyTwo, ru="Слыш, земеля, ты чо такой дерзкий? Тебя по-хорошему спросили, где Рокфорд?", en="Tough guy, eh, shithead? Best answer before we make you."),
+        VoiceLine(40, CadizEnemyOne, ru="Сейчас наладим диалог (достаёт пушку).", en="This'll make you talk."),
+        VoiceLine(50, CadizEnemyOne, ru="Где Рокфорд, утырок?", en="Where's Rockford, you prick?"),
+        VoiceLine(60, Rockford, comment='Поцыков выносят ударом в спину', ru="Я Рокфорд. ", en="I'm right here."),
         VoiceLine(65, Rockford, ru="За мной! Быстро!", en="Follow me. Immediately!"),
     ]
 
