@@ -51,7 +51,7 @@ class Msn3Offer(Msn3, script.CutsceneProps):
         VoiceLine(130, Trent, ru="Я так понимаю, спрашивать всякие глупости типа, есть ли у меня выбор, в этой ситуации неуместно.",
                   en="I'm guessing that asking whether I have a choice or not to participate is a stupid question."),
         VoiceLine(140, Wilham, ru=": Вы умный человек, герр Трент. ", en="You so wise, for a stupid man, Herr Trent. "),
-        VoiceLine(150, Hassler, ru="Герр Трент, на вашем месте мечтали бы быть девяносто процентов местных фрилансеров. Вам платят отличные деньги, вас курирует адмирал Райхманн лично. ",
+        VoiceLine(150, Hassler, ru="Герр Трент, вам предлагают работу, которая и не снилась большей части местных фрилансеров.",
                   en="Herr Trent, ninety percent of the local freelancers could only dream of being in your shoes. Astronomical pay and reporting directly to none other than the legendary Admiral Reichmann. Something others would die for. In fact, many have."),
         VoiceLine(155, Hassler, ru="Что вы капризничаете как старшеклассница на выпускном? Давайте вылетать. Встречаемся в космосе.",
                   en="Are you well? You look as nervous as a highschool girl on graduation day. Or prom night. Ha ha. Let's fly. See you in space."),
@@ -63,7 +63,9 @@ class Msn3Reward(Msn3, script.CutsceneProps):
     TITLE = 'Финал'
     DESCRIPTION = ''
     VOICE_LINES = [
-        VoiceLine(10, Hassler, ru="Расспросил я местных, нихрена они не знают. В любом случае, спасибо, Трент, твоя работа на этом закончена, будем искать грузовик по нашим каналам. К сожалению, из-за того, что  мы с ним облажались, Райхманн значительно урезал гонорар.",
+        VoiceLine(10, Hassler, ru="Расспросил я местных, нихрена они не знают. В любом случае, спасибо, Трент, твоя работа на этом закончена, будем искать грузовик по нашим каналам.",
+                  en="The locals haven't reported anything unusual. Anyway, thank you, Trent. Your work here is done, we'll continue searching for the transport on our own. Unfortunately, since we screwed up, Reichmann cut your payment significantly ."),
+        VoiceLine(15, Hassler, ru="К сожалению, из-за того, что  мы с ним облажались, Райхманн значительно урезал гонорар.",
                   en="The locals haven't reported anything unusual. Anyway, thank you, Trent. Your work here is done, we'll continue searching for the transport on our own. Unfortunately, since we screwed up, Reichmann cut your payment significantly ."),
         VoiceLine(20, Trent, ru="Странные дела. Базу уничтожили, Дитриха грохнули, а Райхманн выбесился из-за какого-то грузовика. Не нравится мне это.",
                   en="Crap. The rebel base was destroyed, Dietrich's dead, yet Reichmann freaks out and stiffs me because of some puny transport. I'm not a happy camper."),
@@ -161,7 +163,7 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
         VoiceLine(
             65,
             Hassler,
-            ru="Входим.",
+            ru="Готово. Входим в аномалию.",
             en="Go on in.",
         ),
         VoiceLine(

@@ -19,37 +19,31 @@ class Msn10OfferCutscene(Msn10, script.CutsceneProps):
         VoiceLine(
             10,
             HasslerOrder,
-            ru='Герр Трент, фрау Д+ерси',
+            ru='Герр Трент, фрау Дерси, вы готовы к следующей операции?',
                en='Herr Trent, Fraulein Darcy!'
         ),
         VoiceLine(
             20,
             Darcy,
-            ru='Фр+ойляйн.',
+            ru='Ты опять пошлешь нас воевать с моими союзниками. А, Хасслер?',
                en='Fräulein.'
         ),
         VoiceLine(
             30,
             HasslerOrder,
-            ru='Прост+ите?',
+            ru='На этот раз нет. Эта операция будет более локальной.',
                en='What?'
         ),
         VoiceLine(
             40,
             Darcy,
-            ru='Фр+ойляйн Д+ерси.',
+            ru='Тогда не томи, Хасслер. Переходи к делу.',
                en='It\'s Fräulein Darcy.'
-        ),
-        VoiceLine(
-            50,
-            Trent,
-            ru='(Возмущенно) Прошу меня извинить, но мы кажется собрались не лингвистические вопросы разбирать.',
-               en='Excuse me, but I believe we have more pressing matters at hand than linguistics.'
         ),
         VoiceLine(
             60,
             HasslerOrder,
-            ru='Йа! Точно так. К делу! Наши недавние... хмммм... манёвры, а так же резкая активизация вооруженных сил Р+ейнланда изменили '
+            ru='Хорошо! Итак, наши недавние... хмммм... манёвры, а так же резкая активизация вооруженных сил Р+ейнланда изменили '
                'общую ситуацию не лучшим образом.',
                en='Ja! Exactly. Let\'s get to the point! Our recent... hmmm... maneuvers, as well as the sudden increase in activity of Rheinland\'s armed forces,'
                   'have changed the situation for the worse.'

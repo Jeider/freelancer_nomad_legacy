@@ -1,4 +1,4 @@
-from text.dividers import SINGLE_DIVIDER
+from text.dividers import DIVIDER
 
 from audio.sound import SpaceSound, CutsceneSound
 from audio.voice import MaleVoice, FemaleVoice, TrentVoice
@@ -11,7 +11,7 @@ class MissionSegment:
 
     COMMENT_TEMPLATE = '<p class="comment_before_line">{comment}</p>'
     LINE_TEMPLATE = ('<p class="line_name actor_{actor_name}">{name}</p>'
-                     '<p class="line_value actor_{actor_name}""><span class="line_content">{value}</span></p>')
+                     '<p class="line_value actor_{actor_name}"><span class="line_content">{value}</span></p>')
 
     def __init__(self, mission):
         self.mission = mission
@@ -59,7 +59,7 @@ class MissionSegment:
                     value=line.get_ru_story_text(),
                 )
             )
-            lines.append(''.join(content))
+            lines.append(DIVIDER.join(content))
         return lines
 
     @classmethod
@@ -190,7 +190,7 @@ class StoryMission:
     background-color: white;
 }
 .line_content {
-    background-color: #FFFF8F;
+    background-color: #e8e8e1;
 }
 .comment_before_line {
     font-weight: bold;
@@ -250,7 +250,7 @@ class StoryMission:
         if actor:
             styles += f'''
             .actor_{actor.NAME} .line_content {{
-                background-color: #50C878;
+                background-color: #FFFF8F;
             }}
              
             '''
@@ -259,7 +259,7 @@ class StoryMission:
             styles=styles,
             root_link=ScriptIndex.get_index_filename(),
             actors=self.get_actors_content(),
-            script_content=f'{SINGLE_DIVIDER}<hr>'.join(self.get_story_script_content())
+            script_content=f'{DIVIDER}<hr>'.join(self.get_story_script_content())
         )
 
     def get_story_actors(self):
@@ -274,7 +274,7 @@ class StoryMission:
         content = []
         for actor in self.actors:
             content.append(f'<p><a href="{self.get_actor_file_link(actor)}">{actor.RU_NAME.get_ru()}</a></p>')
-        return SINGLE_DIVIDER.join(content)
+        return DIVIDER.join(content)
 
     def get_space_lines(self):
         return self.SPACE_CLASS.get_lines()
@@ -288,11 +288,11 @@ class StoryMission:
             scene_content = self.CUTSCENE_CONTAINER_TEMPLATE.format(
                 title=cutscene.TITLE,
                 description=cutscene.DESCRIPTION,
-                lines=''.join(cutscene.get_lines_for_script()),
+                lines=DIVIDER.join(cutscene.get_lines_for_script()),
             )
             content.append(scene_content)
         space_content = self.SPACE_CONTAINER_TEMPLATE.format(
-            lines=''.join(self.SPACE_CLASS.get_lines_for_script()),
+            lines=DIVIDER.join(self.SPACE_CLASS.get_lines_for_script()),
         )
         content.append(space_content)
         return content
@@ -400,6 +400,6 @@ class ScriptIndex:
         links = []
         for mission in missions:
             links.append(f'<p><a href="{mission.get_root_file_link()}">{mission.get_short_name()}</a></p>')
-        content = SINGLE_DIVIDER.join(links)
+        content = DIVIDER.join(links)
         return cls.STORY_TEMPLATE.format(content=content)
 
