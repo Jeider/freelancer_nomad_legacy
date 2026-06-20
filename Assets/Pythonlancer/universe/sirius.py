@@ -49,6 +49,7 @@ from universe.systems import co_mad as co_mad_content
 from universe.systems import co_cur as co_cur_content
 
 from universe.systems import virt1 as virt1_content
+from universe.systems import virt2 as virt2_content
 
 
 
@@ -846,6 +847,21 @@ class virtual1(system.StorySystem, system.SiriusSystem):
     ALLOW_SYNC = True
 
     SYSTEM_FOLDER = 'VIRT1'
+    NAVMAP_POS = '12.5, 15.5'
+    SPACE_FARCLIP = 100000
+
+    JUMP_EFFECT = jump_effect.Edge
+
+
+class virtual21(system.StorySystem, system.SiriusSystem):
+    NAME = 'virt2'
+    DIRECT_TEMPLATE_NAME = 'virt2_dev'
+    RU_NAME = MS('Киберзона 2', "Cyberzone 2")
+    CONTENT = virt2_content
+
+    ALLOW_SYNC = True
+
+    SYSTEM_FOLDER = 'VIRT2'
     NAVMAP_POS = '12.5, 15.5'
     SPACE_FARCLIP = 100000
 
