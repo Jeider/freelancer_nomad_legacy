@@ -27,7 +27,7 @@ from templates.solar import dyson_rubic
 from text.strings import MultiString as MS
 
 
-class Virt2Member(Member):
+class Virt3Member(Member):
     FACTION = faction.Corsairs
     INTERIOR_BG1 = interior.INTERIOR_CO_OCHO_RIOS
     INTERIOR_BG2 = interior.INTERIOR_STARS

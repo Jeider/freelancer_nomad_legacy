@@ -19,21 +19,23 @@ class Msn3Offer(Msn3, script.CutsceneProps):
                   en="Herr Trent, please meet Herr Hassler. This next mission will require both of you to work closely together."),
         VoiceLine(30, Trent, ru="Герр Хасслер, мое почтение.", en="An honor to meet you, Herr Hassler."),
         VoiceLine(40, Trent, ru="И в чем же будет состоять эта миссия?", en="And what will we be doing on this mission?"),
-        VoiceLine(50, Wilham, ru="Да как обычно. Летаем, стреляем, ничего нового.", en="The usual. Hours of boredom, seconds of terror, fly vast distances, blow things up. Nothing special."),
-        VoiceLine(60, Trent, ru="А кто-то на безопасном расстоянии отсиживается. Действительно, ничего нового. А можно как-то конкретнее?",
-                  en="While a certain someone is watching safely from afar. Starting to see a pattern here. Could you be any less specific?"),
-        VoiceLine(70, Wilham, ru="Можно. Наша разведка локализовала местонахождение Дитриха. Это бывшая военная база Кёнигсберг. ",
-                  en="Of course. Rhineland intelligence has managed to track down Dietrich's position. He's camping out on an old military base in Konigsberg."),
-        VoiceLine(75, Wilham, ru="В данный момент собирается ударный флот для атаки базы. Но наши аналитики просчтитали, что прямое нападение на Кёнигсберг приведет к недопустимо большим потерям среди личного состава.",
-                  en="We are amassing a strike fleet to raid his base as we speak. However our analysts project we will suffer massive casualties if we stage a frontal assault on Konigsberg."),
-        VoiceLine(77, Wilham, ru="Поэтому мы так же формируем мобильную ударную группу, задачей которой будет нейтрализация защитной системы базы к моменту подхода основных сил.",
-                  en="That's why we're forming a secondary strike team, which will neutralize the base's defense systems just in time for our main strike fleet to sweep in and decimate it."),
-        VoiceLine(80, Trent, ru="То есть те, кто будет таскать вам каштаны из огня.", en="Let me guess, you need some stooges to make up the secondary strike team..."),
-        VoiceLine(90, Wilham, ru="Именно так, герр Трент. Кстати на вашем участии в этой миссии настаивал лично адмирал Райхманн.",
-                  en="You are so good at guessing, Herr Trent. By the way, Admiral Reichmann personally requested for you to be on the secondary strike team."),
-        VoiceLine(100, Trent, ru="Весьма польщён. А можно узнать, как так оказалось, что элитная военная база с высшим классом защиты практически в самом центре территории Рейнланда осталась бесхозной и в итоге досталась мятежникам и корсарам?",
-                  en="I don't know whether to be flattered or flustered. Could you explain to me how an ultra-secure military base with best in class defense systems, smack in the center of Rheinland came to be abandoned and fall into the hands of Corsairs, rebels and riff-raff?"),
 
+        VoiceLine(70, Wilham, ru="Наша разведка локализовала местонахождение Дитриха. Это бывшая военная база Кёнигсберг. ",
+                  en="Of course. Rhineland intelligence has managed to track down Dietrich's position. He's camping out on an old military base in Konigsberg."),
+        VoiceLine(75, Wilham, ru="В данный момент собирается ударный флот для атаки базы, но её системы защита будет готова к лобовому удару.",
+                  en="We are amassing a strike fleet to raid his base as we speak. However our analysts project we will suffer massive casualties if we stage a frontal assault on Konigsberg."),
+        VoiceLine(77, Wilham, ru="Поэтому мы формируем мобильную диверсионную группу, которая нанесет критические повреждения Кёнигсбергу до момента подхода основных сил.",
+                  en="That's why we're forming a secondary strike team, which will neutralize the base's defense systems just in time for our main strike fleet to sweep in and decimate it."),
+
+        VoiceLine(80, Trent, ru="То есть те, кто будет таскать вам каштаны из огня.",
+                  en="Let me guess, you need some stooges to make up the secondary strike team..."),
+
+        VoiceLine(90, Wilham,
+                  ru="Именно так, герр Трент. Кстати на вашем участии в этой миссии настаивал лично адмирал Райхманн.",
+                  en="You are so good at guessing, Herr Trent. By the way, Admiral Reichmann personally requested for you to be on the secondary strike team."),
+
+        VoiceLine(100, Trent, ru="А можно узнать, как так оказалось, что элитная военная база осталась бесхозной и в итоге досталась мятежникам и корсарам?",
+                  en="I don't know whether to be flattered or flustered. Could you explain to me how an ultra-secure military base with best in class defense systems, smack in the center of Rheinland came to be abandoned and fall into the hands of Corsairs, rebels and riff-raff?"),
 
         VoiceLine(110, Hassler, ru="Герр Трент, станция Кёнигисберг когда-то была частью Мюнхенского контура обороны. Военные Кусари рассматривали этот контур не иначе, чем шило у себя в заднице. ",
                   en="During the Kusari wars there were two major bases nearing completion in Rheinland territory - Konigsberg and Regensburg, both were in the Munich system, on the border with Kusari. The Kusari military saw Regensburg as a mere thorn in their side. Konigsberg, however was more significant strategically."),
@@ -47,10 +49,9 @@ class Msn3Offer(Msn3, script.CutsceneProps):
                   en="Our government strangely did not take steps to scuttle or dismantle Konigsberg base. Perhaps they were hoping for a re-negotiation of the peace treaty, or perhaps they had some other scheme lost to history, I don't know. Eventually, Dietrich, having turned coat, and being in possession of all the access keys, just waltzed in and claimed it..."),
 
 
-
         VoiceLine(130, Trent, ru="Я так понимаю, спрашивать всякие глупости типа, есть ли у меня выбор, в этой ситуации неуместно.",
                   en="I'm guessing that asking whether I have a choice or not to participate is a stupid question."),
-        VoiceLine(140, Wilham, ru=": Вы умный человек, герр Трент. ", en="You so wise, for a stupid man, Herr Trent. "),
+        VoiceLine(140, Wilham, ru="Вы умный человек, герр Трент. ", en="You so wise, for a stupid man, Herr Trent. "),
         VoiceLine(150, Hassler, ru="Герр Трент, вам предлагают работу, которая и не снилась большей части местных фрилансеров.",
                   en="Herr Trent, ninety percent of the local freelancers could only dream of being in your shoes. Astronomical pay and reporting directly to none other than the legendary Admiral Reichmann. Something others would die for. In fact, many have."),
         VoiceLine(155, Hassler, ru="Что вы капризничаете как старшеклассница на выпускном? Давайте вылетать. Встречаемся в космосе.",

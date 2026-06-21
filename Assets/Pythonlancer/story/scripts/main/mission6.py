@@ -17,7 +17,7 @@ class Msn6Offer(Msn6, script.CutsceneProps):
     DESCRIPTION = ''
     VOICE_LINES = [
         VoiceLine(10, Trent, ru="Мисс Хетчер. Аларик, не ожидал, что ты уже здесь.", en="Miss Hatcher. Alaric, I didn't expect to see you here already!"),
-        VoiceLine(20, Alaric, ru="Как только ты со мной связался, я сразу же прибыл к мисс Хетчер. Видимо, я был ближе к Нориджу, чем ты.", en="I flew to see Miss Hatcher right away as soon as she contacted me. Looks like I was closer to Norwich than you were."),
+        VoiceLine(20, Alaric, ru="Как только ты со мной связался, я сразу же прибыл к мисс Хетчер. Видимо, я был ближе, чем ты.", en="I flew to see Miss Hatcher right away as soon as she contacted me. Looks like I was closer than you were."),
         VoiceLine(30, Hatcher, ru="А теперь, господа, когда все выяснили когда, откуда и каким образом мы все сюда прибыли, перейдем к делу? ... ", en="Gentlemen, now that we're all caught up with our travel itineraries, shall we get down to business?"),
         VoiceLine(40, Hatcher, ru="Отлично! Как вы уже поняли есть некий объект - Сфера. В свое время его обнаружил еще Орден, но тогда никто не смог понять что это, для чего предназначено и как работает. И про Сферу забыли. ", en="So, to recap, you both remember the alien artefact we call The Sphere. Originally discovered by The Order, it was one of a very few active, and by far the largest and most complex artefact ever discovered. Naturally, it generated immense... interest amongst the houses. Everyone tried claim a stake in it. However despite the best efforts to crack it, it remained an inscrutable and eventually uncrackable puzzle. Left to rot."),
         VoiceLine(50, Hatcher, ru="А теперь мы узнаём что рейнландцам удалось подобрать к ней ключ и они проводят на ней свои исследования. Есть обоснованное мнение, что ничем хорошим это не закончится. Поэтому исследования эти нужно, как бы это сказать... закрыть.", en="However, thanks to Jacobo's misappropriated documents, we've learnt that the Rheinlanders are on the cusp of figuring out the technology required to to communicate with it, and are currently working on it even as we speak. Based on his readings, Professor Mandrake believes that the Sphere is a shuttered gateway to another system housing hostile beings wielding such unimagineable power even the creators were terrified of them. We need your help to stop the Rhinelanders before they activate the sphere and re-open the portal."),
@@ -106,7 +106,7 @@ class Msn6LabRoom(Msn6, script.CutsceneProps):
     TITLE = 'Лаборатория'
     DESCRIPTION = ''
     VOICE_LINES = [
-        VoiceLine(10, Trent, ru="Обалдеть…", en="Holy crap, look at that..."),
+        VoiceLine(10, Trent, ru="Обалдеть...", en="Holy crap, look at that..."),
         VoiceLine(20, Alaric, ru="Трент, бежим! Потом рассмотришь.", en="Trent we need to skedaddle! You can play with it later!!"),
     ]
 
@@ -169,15 +169,14 @@ class Msn6Freeport(Msn6, script.CutsceneProps):
     TITLE = 'Фрипорт'
     DESCRIPTION = ''
     VOICE_LINES = [
-        VoiceLine(10, DeltaOne, ru="Мистер Трент, Хочу вас поблагодарить за проделанную работу. Прошу извинить нас за то, что попали в неприятности по нашей вине, и я обещаю, что сделаю все возможное, чтобы восстановить вашу репутацию.", en="Mr. Trent, I'd like to thank you for all the help. Please accept our apologies for dragging you into such a dangerous situation, and I promise that I'll do everything I can to restore your reputation with Liberty when we can."),
-        VoiceLine(20, Trent, ru="Это все хорошо, конечно, но что мне, собственно, делать сейчас?", en="Well that's all fine and dandy, but what do I do now?"),
-        VoiceLine(30, DeltaOne, ru="Ведите себя тихо, принимайте контракты на этом фрипорте, в других независимых или пиратских системах, но ни в коем случае не возвращайтесь в легальные системы.", en="Keep a low profile. Feel free to work a few jobs here on this freeport, or any other independent stations, or hell, possibly even work for the pirates. But under no circumstances return to lawful space."),
-        VoiceLine(40, DeltaOne, ru="Если вас там задержат, мы будем бессильны что-то с этим сделать. А вас превратят в козла отпущения.", en="If you're caught there, we won't be able to help you. You'll be turned into a scapegoat and executed. Or worse."),
-        VoiceLine(50, DeltaOne, ru="А сейчас мне нужно выйти на связь со штабом СБА, обсудить создавшуюся ситуацию и выработать дальнейший план действий. ", en="I need to contact ASF headquarters right away to discuss the situation and develop an action plan."),
-        VoiceLine(60, DeltaOne, ru="В благодарность за вашу работу я перевожу вам со своего счета пять тысяч кредитов. Кроме того, вознаграждение за предыдущую миссию остается за вами, и как только мы разрешим эту ситуацию, вы его получите.", en="As a token of our gratitude, I'm transferring you 5,000 credits from my personal account. Additionally, the promised reward from this mission still stands, and you should receive it as soon as our situation is resolved."),
-        VoiceLine(70, Trent, ru="А как же компенсация за моральный ущерб?", en="And what about compensation for all the emotional damage?"),
-        VoiceLine(90, DeltaOne, ru="Мистер Трент, вы никогда не производили впечатление жадного человека. Вы достаточно долго и успешно действуете в непростых ситуациях. ", en="Mr. Trent, I'm pretty sure whatever emotional damage you had was pre-existing.... Frankly speaking, you've been extraordinarily calm, precise and reliable throughout this entire mission. You strike me as a professional, paid his weight in gold for the quality of his work, and proud of it."),
-        VoiceLine(100, DeltaOne, ru="А вот жадные люди, я слышал, долго не живут... Как только появятся новости, я свяжусь с вами, мистер Трент.", en="Don't make me think you're a greedy person... greedy people live much shorter lives, in my experience... I'll be in touch once I’ve got news. Stay safe."),
+        VoiceLine(10, DeltaOne, ru="Мистер Трент, мы благодарим вас за вашу работу. Мы виноваты в том, что вы попали в неприятности. И мы постараемся исправить ситуацию.", en=""),
+        VoiceLine(20, Trent, ru="Это все хорошо, конечно, но что мне, собственно, делать сейчас?", en=""),
+        VoiceLine(30, DeltaOne, ru="Ведите себя тихо, пока можете выполнять контрактны на местных базах, но ни в коем случае не возвращайтесь в легальные системы.", en=""),
+        VoiceLine(40, DeltaOne, ru="А я пока постараюсь наладить связь со штабом СБА и выработать дальнейший план действий.", en=""),
+        VoiceLine(50, DeltaOne, ru="В благодарность за вашу работу я сейчас переведу вам пять тысяч кредитов. Обещанное вознаграждение за миссию так же остается за вами и будет выплачено позже.", en=""),
+        VoiceLine(70, Trent, ru="А как же компенсация за моральный ущерб?", en=""),
+        VoiceLine(80, DeltaOne, ru="Будьте реалистом, мистер Трент. Сейчас больше стоит вопрос вашей жизни, а не лишних денег.", en=""),
+        VoiceLine(90, DeltaOne, ru="Так что... как только появятся новости, мы с вами свяжемся.", en=""),
     ]
 
 
@@ -429,7 +428,7 @@ class Msn6Space(Msn6, script.SpaceVoiceProps):
         VoiceLine(
             420,
             DeltaOne,
-            ru="Я знаю эту систему. Это Мальта. Территория Изгоев. Здесь есть свободный порт, куда пускают всех кто смог до него добраться. Называется Фрипорт Тринидад. Там можно будет отсидеться. Вот координаты.",
+            ru="Я знаю эту систему. Это Мальта. Территория Изгоев. Здесь есть свободный порт, куда пускают всех, кто смог до него добраться. Называется Фрипорт Тринидад. Там можно будет отсидеться. Вот координаты.",
             en="I know this system. This is Malta, in Outcast territory. There's a Freeport here that welcomes allcomers, it's called Trinidad Freeport. We can wait it out there. Sending you the coordinates.",
         ),
         VoiceLine(
@@ -453,27 +452,10 @@ class Msn6Space(Msn6, script.SpaceVoiceProps):
         VoiceLine(
             460,
             DeltaOne,
-            ru="Улетело пять истребителей с артефактами. Вернулись живые все пятеро, но на одном истребителе и без артефактов. И никто в сказочки с Капитаном Сидом не поверит. Я сам не верил когда однажды задерживал попавших в похожую ситуацию.",
+            ru="Улетело пять истребителей с артефактами. Вернулись живые все пятеро, но на одном истребителе и без артефактов. И никто в сказочки с Капитаном Сидом не поверит.",
             en="Of course, there's another option:",
         ),
-        VoiceLine(
-            470,
-            DeltaOne,
-            ru="Есть конечно еще один вариант - напасть на этом истребителе на Навуходоносор, победить там всех узнать координаты базы Ордена, захватить ее и уже с артефактами и высоко поднятой головой торжественно вернуться в систему Манхеттен. ",
-            en="- deftly assassinate every soul aboard this battleship, decipher the secret coordinates to their base, fly over and capture it, return to Manhattan glorious victors, with the artifacts held triumphantly aloft in our hands.",
-        ),
-        VoiceLine(
-            480,
-            DeltaOne,
-            ru="Как думаете, мистер Трент, ваш истребитель способен на такие боевые действия?",
-            en="Okay, no need to be sarcastic. Mr. Trent, your thoughts?",
-        ),
-        VoiceLine(
-            490,
-            Trent,
-            ru="Не-а. Сто процентов. К тому же, хочу напомнить, господа, вы сейчас находитесь на моем корабле, а посему полетим мы туда, куда скажу я. И сейчас мы летим на Тринидад.",
-            en="Trinidad it is.",
-        ),
+
         VoiceLine(
             1010,
             Reitherman,

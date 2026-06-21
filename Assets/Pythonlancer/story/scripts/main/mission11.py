@@ -235,7 +235,7 @@ class Msn11DrinkCutscene(Msn11, script.CutsceneProps):
                   en='That\'s the way it goes, Trent. That\s what being a freelancer\'s all about. You either settle for small-time jobs popping two-bit thugs in obscure outer systems... Or you go after the big fish and wind up neck deep in.... this. Take it from me, I\'ve been where you are now.'),
         VoiceLine(190, EdisonTrent, ru='И считай,, тебе  повезло. Сумма у тебя на счету с шестью нулями? Летаешь ты на чём? На самом новом, под тебя тюнингованном? Обвес у тебя из самого нового оружия?', en='And know what? You\'re lucky. Crazy lucky, you just don\'t appreciate it. That credit balance of yours is looking mighty healthy. You\'re not wanting for cash. You\'ve made enough to afford that tricked-out hot rod of yours. Top-of-the-line weapons, generators, the works!'),
         VoiceLine(200, EdisonTrent, ru='А если тебе нужно чего для корабля докупить, ты же даже в счет не заглядываешь - и так знаешь, что хватит, и еще останется.', en='I\'ll bet these days you don\'t even bother checking your bank balance when you decide on an upgrade.'),
-        VoiceLine(210, EdisonTrent, ru='И,, самое главное, врагов,, у тебя конечно становится всё больше и больше, но у тебя появляются друзья.',
+        VoiceLine(210, EdisonTrent, ru='И,, самое главное, врагов,, у тебя конечно становится всё больше и больше, но у тебя появляются и друзья.',
             en='And sure, you\'re accumulating enemies. But you\'re making friends, too.'),
         VoiceLine(220, EdisonTrent, ru='Их немного, гораздо меньше чем врагов, но они настоящие, потому что испытаны боем, прошли огонь,, воду,, и медные трубы вместе с тобой.', en='Granted, maybe more enemies than friends... But real friends, Trent are hard to find. People willing to go through hell and high water with you. Even if they might not make it.'),
         VoiceLine(230, EdisonTrent, ru='И ты уверен, что бы ни случилось, на них можно положиться. И вот эти друзья, они на самом деле намного ценнее, чем шестизначный счет или новейший корабль с лучшим обвесом.',
@@ -586,6 +586,10 @@ class Msn11Space(Msn11, script.SpaceVoiceProps):
                en='Trent, dock with the Musashi. Our work here is done.'
         ),
 
+
+
+
+
         VoiceLine(1170, Trent, ru='Ну так, о чём речь.', en='Trent, what\'s the deal?'),
 
         VoiceLine(1180, EdisonTrent,
@@ -596,7 +600,7 @@ class Msn11Space(Msn11, script.SpaceVoiceProps):
         VoiceLine(1200, Trent, ru='А кто такой вообще этот Р+окфорд?', en='Just who is Rockford, really?'),
 
         VoiceLine(1210, EdisonTrent,
-                  ru='Один очень хороший человек, внезапно слетевший с катушек и задавшийся целью осчастливить человечество.',
+                  ru='Один человек, внезапно слетевший с катушек и задавшийся целью осчастливить человечество.',
                       en='A complete nutcase.'),
         VoiceLine(1220, EdisonTrent,
                   ru='Проблема в том что в этом случае обычные клерки приносят в патентные бюро чертежи вечных двигателей, а вот фигуры масштаба Р+окфорда могут и уничтожить человечество, пока его же и спасает.',
@@ -604,9 +608,9 @@ class Msn11Space(Msn11, script.SpaceVoiceProps):
 
         VoiceLine(1230, Trent, ru='А поконкретнее?', en='But who is he really? Who does he work for?'),
 
-        VoiceLine(1240, EdisonTrent, ru='Аттикус Р+окфорд... великий и ужасный. Он - из ветеранов Ордена.', en='He was a brilliant Order scientist until he went rogue. '),
+        VoiceLine(1240, EdisonTrent, ru='Аттикус Р+окфорд был ветераном Ордена.', en='He was a brilliant Order scientist until he went rogue. '),
         VoiceLine(1250, EdisonTrent,
-                  ru='Очень болезненно отнесся к тому что Орден не смог предотвратить экспансию кочевников во время того инцедента и занялся изучением артефактов - так называемого наследия кочевников.',
+                  ru='Он очень болезненно отнесся к тому что Орден не смог предотвратить экспансию кочевников во время того инцедента и занялся изучением артефактов - так называемого наследия кочевников.',
                       en='When The Order failed to prevent the Nomad incursion during the... incident, he began to lose faith and decided to take things into his own hands. He threw himself into studying the artifacts—the so-called Nomad Legacy.'),
         VoiceLine(1260, EdisonTrent,
                   ru='Именно он обнаружил ту самую Сферу, и каким-то образом понял что она - своего рода ящик Панд+оры, и содержит в себе смертоносную силу.',

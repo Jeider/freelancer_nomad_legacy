@@ -90,8 +90,7 @@ class Msn13Space(Msn13, script.SpaceVoiceProps):
         VoiceLine(20, Mandrake, ru='Да, удал+ось. И всё достаточно серьёзно. В сфере заточён Кр+ыг.', en='Yes, indeed. It was pretty heavy reading. The Sphere contains the Krieg.'),
         VoiceLine(30, Alaric, ru='Круг? В сф+ере?', en='Crab? Inside the Sphere?'),
         VoiceLine(40, Darcy, ru='Аларик, не вр+емя.', en='Alaric, not the time.'),
-        VoiceLine(50, Mandrake, ru='Крыгом я для простот+ы называю корабль расы Крыг, '
-                               'чтобы не выдумывать специ+ально название, не плодить с+ущности.',
+        VoiceLine(50, Mandrake, ru='Крыгом я для простот+ы называю корабль расы Крыг, чтобы не плодить с+ущности.',
 							   en='For simplicity, I\'m using "Krieg" to refer to a dimension containing the Krieg race, '
 							   'to avoid creating confusion I refrained from multiplying entities and....'),
 
@@ -137,7 +136,7 @@ class Msn13Space(Msn13, script.SpaceVoiceProps):
         VoiceLine(290, King, ru="Всем срочно отойти на безопасную дистанцию!", en="All units, withdraw to a safe distance right now!", cinematic=True),
 
         VoiceLine(300, Alaric, ru="Ёлки-п+алки...", en="Dear God, something's coming through...It must be a Krieg!", cinematic=True),
-        VoiceLine(310, Darcy, ru="Оно жив+ое!", en="THAT's a Krieg?? It's humongous!", cinematic=True),
+        VoiceLine(310, Darcy, ru="Оно жив+ое!", en="It's humongous!", cinematic=True),
         VoiceLine(320, Hatcher, ru="Всем приготовиться! Мы не знаем на что способна эта тварь!", en="All ships, battle stations! We have no idea what that thing is capable of!", cinematic=True),
 
         VoiceLine(323, Hatcher, ru="Миссури под прицелом, выполнить манёвр уклонения!", en="It\'s targeting the Missouri, take evasive maneuvers!", cinematic=True),

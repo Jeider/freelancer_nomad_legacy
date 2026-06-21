@@ -14,29 +14,22 @@ class Msn2Offer(Msn2, script.CutsceneProps):
     TITLE = 'Предложение на линкоре'
     DESCRIPTION = ''
     VOICE_LINES = [
-        VoiceLine(10, Trent , ru="Вильгельм, я полагаю?", en="Are you Wilhelm?"),
-        VoiceLine(20, Wilham, ru="Так точно, герр Трент. Я рад, что вы согласились с нами работать.", en="Herr Trent. We are pleased you have agreed to work with us."),
-        VoiceLine(30, Trent , ru="Еще не согласился, но определенно заинтересовался. Не каждый день представители вооруженных сил Рейнланда присылают мне сообщения на КПК с предложением личной встречи на борту линкора вооруженных сил Рейнланда.", en="Whoa now, let's not jump the gun. I can't say I'm not curious, but it's a little intimidating getting instructions on my Pad to report to a Rhineland battleship in the middle of nowhere. It's a little off-putting."),
-        VoiceLine(40, Wilham, ru="Это вы о каких сообщениях?", en="Perhaps you are mistaken, Herr Trent. We would never resort to such unrefined tactics, as gentlemen of the Rhineland empire. Could you have imagined these... supposed messages?"),
-        VoiceLine(50, Trent, ru="Ну вот же... Черт. Что такое? Оно только что было...", en="No, I'm dead certain. Look, they're right... here... what's going on? How did they disapp..."),
-        VoiceLine(60, Wilham, ru="Да черт с ними, с сообщениями, герр Трент, давайте лучше о деле. И да, надеюсь, вы понимаете, что вне зависимости от того чем закончится наш разговор, все его детали должны остаться между нами?", en="Unimportant. That you are here now tells us you are agreeable. Herr Trent, let's cut to the chase. But before this, I hope you understand, regardless of how our conversation ends, all details must remain strictly confidential."),
-        VoiceLine(70, Trent, ru="Должны - значит останутся. Любите вы, военные, жути нагнать... Кстати, а почему именно я?", en="Okay, my lips are sealed. You military types don't mess around... Give me the details. By the way, why me?"),
-        VoiceLine(80, Wilham, ru="А почему бы и нет? Вы неплохо показали себя в инциденте у аванпоста Бранденбург.", en="You proved yourself earlier at Brandenburg. We couldn't help but notice how you managed to stay alive and even score kills in that death trap poop bucket you are flying."),
-        VoiceLine(90, Trent, ru="Понятно. Перейдем к сути задания?", en="Again with the insults to my poor ship. She's a classic, okay? Let's get on to the mission, OK?"),
-        VoiceLine(100, Wilham, ru="Перейдем. Как и любое другое государство, мы имеем ряд информаторов на территории, скажем так, наших геополитических соперников. Понимаете о чем я?", en="Alright. Like all governments, we have informants in the territories of our, shall we say, rivals. You are following?"),
-        VoiceLine(110, Trent, ru="О да.", en="Sure. Spies."),
-        VoiceLine(120, Wilham, ru="Так вот, некоторое время назад один из информаторов вышел на связь по условленному каналу, сообщил, что имеет информацию крайней степени важности и вылетел на своем корабле в условленную точку для передачи данных. И в лучших традициях детективов в точке этой так и не появился. Не обозначил он своего присутствия в течении недели и по месту внедрения, и по аварийным каналам. Это может означать лишь одно - он мертв. ", en="Informants. Not long ago, one of our sp... informants contacted us via a secure channel, reporting that he had critical information to disclose and that he was headed to our secured data transmission point. Predictably, he never arrived. We have had no word since, in the following week. It can only mean one thing - he is dead."),
-        VoiceLine(130, Wilham, ru="На основании анализа переговоров диспетчеров станций и операторов экстренных служб в интересующем нас районе с вероятностью более девяноста девяти процентов установлено что корабль нашего информатора был атакован, а сам он погиб.", en="Based on analysis of chatter between station dispatchers and operators of emergency services in the area of interest, we have established that our informant was attacked and killed in his ship. There is an over 99% probability of this."),
-        VoiceLine(140, Trent, ru="Сочувствую. Но при чем тут я?", en="My condolences for your loss. How do I come into the picture?"),
-        VoiceLine(150, Wilham, ru="Вашей задачей будет найти этот корабль и снять с него интересующие нас данные. Сделать это необходимо как можно скорее, так как в данном районе активность так называемых мусорщиков, чрезвычайно высока. Вы должны их опередить.", en="We need you to find his ship and extricate the supposely critical data for us. Time is critical as activity of so-called \"Junkers\" in the area is escalating rapidly. You must get there ahead of them."),
-        VoiceLine(160, Trent, ru="Я вряд ли смогу их опередить. Во-первых я толком не знаю эту область в отличии от них, а во-вторых, опять же в отличии от них я буду действовать один.", en="How am I supposed to do that? I'm a stranger here, and I'm all by my lonesome."),
-        VoiceLine(170, Wilham, ru="Сможете. Дело в том, что есть один электронщик-энтузиаст, который занимается разработкой систем слежения и трекинга радиопереговоров. Мы давно заинтересованы в том, чтобы переманить его в наше ведомство, поэтому внимательно за ним наблюдаем.", en="You will have help. We are aware of a certain eccentric technophile who's been tapping into their radio comms and tracking them. We've been keeping a close eye on him for a while now, hoping to recruit him."),
-        VoiceLine(180, Trent, ru="Как за мной?", en="Like me, eh? You going to send him an invitatory pad-Psalm too? Perhaps a firebomb?"),
-        VoiceLine(190, Wilham, ru="Еще пристальнее. Так вот все свои системы он тестирует как раз на интересующем нас районе. Таким образом, у него есть самая полная информация обо всем что произошло в интересующем нас секторе космоса за последнее время. Вам нужно будет связаться с ним, договориться о передаче координат крушения корабля нашего информатора, снять с него данные и передать их нам... естественно не позволив мусорщикам добраться до них раньше.", en="No, Herr Kent, we are sending you to him. He has the most thorough intel regarding every event that's occurred in that region of space. You must find and recruit him, use him to locate the coordinates of the shipwreck, extricate the data and transfer it to us... Without letting any Junker or other scavengers beat you to it. Easy."),
-        VoiceLine(200, Trent, ru="И всего делов-то? Могу приступать? ", en="Oh that's all there is to it? Why didn't you say so. Walk in the park. When do I start."),
-        VoiceLine(210, Wilham, ru='Если вы согласны, то не "могу", а "можем". В этом задании я буду приписан к вам в качестве напарника.', en="There's no \"I\" in \"TEAM\". I'll be your assigned team-mate for this mission."),
+        VoiceLine(10, Trent, ru="Вильгельм, полагаю?", en=""),
+        VoiceLine(20, Wilham, ru="Так точно, герр Трент. Я рад, что вы согласились с нами работать.", en=""),
+        VoiceLine(30, Trent , ru="Еще не согласился, но определенно заинтересовался.", en=""),
+        VoiceLine(40, Wilham, ru="Тогда присаживайтесь, я введу вас в курс дела. Только давайте договоримся, что вне зависимости от того чем закончится наш разговор, все его детали должны остаться между нами. Хорошо?", en=""),
+        VoiceLine(50, Trent, ru="Должны - значит останутся. Любите вы, военные, жути нагнать...", en=""),
+        VoiceLine(60, Wilham, ru="Тогда перейдём к делу. Силы Рейнланда проводят регулярный мониторинг ситуации в системе Омега-15. Один наш секретный агент добыл важные сведения и должен был доставить на полицейский аванпост в зоне рудокопов", en=""),
+        VoiceLine(70, Wilham, ru="Но по непонятной для нас причине он так и не добрался до указанного места встречи. Скорее всего он был перехвачен и убит.", en=""),
+        VoiceLine(80, Trent, ru="Сочувствую. Но при чем тут я?", en=""),
+        VoiceLine(90, Wilham, ru="Вашей задачей будет найти этот корабль и получить с него интересующие нас данные.", en=""),
+        VoiceLine(100, Wilham, ru="Вам в этом поможет наш внешний агент, электронщик-энтузиаст. Он работает в местной общие рудокопов.", en=""),
+        VoiceLine(110, Wilham, ru="Там он помогает рабочим находить астероиды с ценной рудой, а так же имеет все данные об обломках кораблей, которые могут быть нам интересны.", en=""),
+        VoiceLine(120, Trent, ru="И всего делов-то? Могу приступать? ", en=""),
+
+        VoiceLine(210, Wilham, ru='Не "могу", а "можем", герр Трент. В этом задании я буду приписан к вам в качестве напарника.', en="There's no \"I\" in \"TEAM\". I'll be your assigned team-mate for this mission."),
         VoiceLine(220, Trent, ru="Будете контролировать мои действия?", en="Oh so you're the \"A\"? Will you be the boss of me?"),
-        VoiceLine(230, Wilham, ru="Нет. Буду осуществлять поддержку и взаимодействие с властями - у меня достаточно высокий допуск в системах Райнланда. Стратегия операции и тактика её проведения целиком на вас, герр Трент.", en="Nein. I will be your wingman and liason to the authorities - I have a fairly high standing and security clearance in Rheinland. The strategic and tactical aspects of this operation are entirely yours, Herr Trent. So if we fail, it's entirely on you. You understand my meaning, yes?"),
+        VoiceLine(230, Wilham, ru="Нет. Буду осуществлять поддержку и взаимодействие с властями. Стратегия операции и тактика её проведения целиком на вас, герр Трент.", en="Nein. I will be your wingman and liason to the authorities - I have a fairly high standing and security clearance in Rheinland. The strategic and tactical aspects of this operation are entirely yours, Herr Trent. So if we fail, it's entirely on you. You understand my meaning, yes?"),
         VoiceLine(240, Trent, ru="Спасибо за доверие... где поставить подпись?", en="Ominous... I like it already. So where do I sign?"),
         VoiceLine(250, Wilham, ru="Ха-ха-ха. Ну зачем нам эти условности? Встречаемся в космосе, герр Трент!", en="Ha-ha. No need for such formalities. They leave a lasting record. I'll meet you in space, Herr Trent. Tschuss!"),
     ]
@@ -91,6 +84,12 @@ class Msn2Done(Msn2, script.CutsceneProps):
 class Msn2Space(Msn2, script.SpaceVoiceProps):
     VOICE_LINES = [
         VoiceLine(
+            10,
+            Wilham,
+            ru="Мистер Трент, с вами говорит лейтенант Вильгельм. У нас есть для вас предложение о работе. Расскажу всё на личной встрече. Жду вас в баре линкора Шархорст, система Бисмарк.",
+            en="Ya, that's exactly how we lost our last agent, not to mention exposing our intents to our enemies.",
+        ),
+        VoiceLine(
             30,
             Trent,
             ru="А зачем вам вообще фриленсеры? Вооруженные силы Рейнланда вполне способны сами решить любую проблему. Оцепили сектор, нашли обломки, изъяли данные...",
@@ -101,12 +100,6 @@ class Msn2Space(Msn2, script.SpaceVoiceProps):
             Wilham,
             ru="Тем самым дезавуировали своего бывшего агента, выставили на всеобщее обозрение все свои интересы. ",
             en="Ya, that's exactly how we lost our last agent, not to mention exposing our intents to our enemies.",
-        ),
-        VoiceLine(
-            45,
-            Wilham,
-            ru="Не говоря уже о том, что интересующая нас область находится вне юрисдикции Рейнланда. И кто согласился бы с нами работать после того, как мы устроили подобный цирк?",
-            en="Not to mention the fact that the area of interest is outside of Rheinland's jurisdiction. And after the fiasco at Brandenburg willing collaborators have dwindled.",
         ),
         VoiceLine(
             50,

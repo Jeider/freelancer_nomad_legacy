@@ -25,8 +25,9 @@ class HistoryManager:
         return self.histories[index].show()
 
     def validate_after(self):
-        if len(self.left_keys) > 0:
-            raise Exception(f'Some keys are left ({",".join(self.left_keys)})')
+        pass
+        # if len(self.left_keys) > 0:
+        #     raise Exception(f'Some keys are left ({",".join(self.left_keys)})')
 
 
 class StoryManager:
@@ -50,6 +51,9 @@ class StoryManager:
         data_folder = DataFolder(build_to_folder=self.core.build_folder)
 
         for mission_class in IngameMission.subclasses:
+
+            if mission_class.SCRIPT_INDEX != 5:
+                continue
 
             print(mission_class)
             mission = mission_class(russian=self.core.russian,

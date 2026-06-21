@@ -97,12 +97,13 @@ class Msn1Bizmark(Msn1, script.CutsceneProps):
     TITLE = 'Бисмарк'
     DESCRIPTION = ''
     VOICE_LINES = [
-        VoiceLine(10, Adelmar, ru="Благодарю вас за сопровождение! Деньги уже перечислены на ваши счета!", en="Vielen Dank for the most excellent escort! We have transferred the money into your account!"),
+        VoiceLine(10, Adelmar, ru="Благодарю вас за сопровождение! Деньги уже перечислены на ваши счета!",
+                  en="Vielen Dank for the most excellent escort! We have transferred the money into your account!"),
         VoiceLine(20, Trent, ru="Не стоит благодарности. ", en="You're most welcome. Please feel free to contact us again if you need to."),
-        VoiceLine(30, Luc, ru="Кроме того, мы, как члены Ганзейского торгового сообщества, добавили вас в белый лист фрилансеров. ", en="As a.. how do you say... bogus? Sweetener of the deal? We have added you to our Hanseatic trading community freelancers' whitelist."),
-        VoiceLine(40, Luc, ru="Теперь вы можете брать к выполнению миссии Ганзейских купцов.", en="From now on, you may take on missions offered by Hanseatic merchants, mein friend."),
-        VoiceLine(50, Alaric, ru="А вот за это отдельное спасибо, джентльмены! Трент, ты слышал? Мы теперь на Рейнландской территории не просто голодранцы какие-то, а аккредитованные Ганзейским торговым сообществом официальные фрилансеры!", en="Ah, thank you so much for your kind generosity, gentlemen! Trent, you hear that? We have been elevated from bottom feeding gutter trash to honest to God accredited freelancers of the Hanseatic trading community!"),
-        VoiceLine(60, Trent, ru="Охренеть. ", en="I'm overwhelmed..."),
+        # VoiceLine(30, Luc, ru="Кроме того, мы, как члены Ганзейского торгового сообщества, добавили вас в белый лист фрилансеров. ", en="As a.. how do you say... bogus? Sweetener of the deal? We have added you to our Hanseatic trading community freelancers' whitelist."),
+        #VoiceLine(40, Luc, ru="Теперь вы можете брать к выполнению миссии Ганзейских купцов.", en="From now on, you may take on missions offered by Hanseatic merchants, mein friend."),
+        #VoiceLine(50, Alaric, ru="А вот за это отдельное спасибо, джентльмены! Трент, ты слышал? Мы теперь на Рейнландской территории не просто голодранцы какие-то, а аккредитованные Ганзейским торговым сообществом официальные фрилансеры!", en="Ah, thank you so much for your kind generosity, gentlemen! Trent, you hear that? We have been elevated from bottom feeding gutter trash to honest to God accredited freelancers of the Hanseatic trading community!"),
+        #VoiceLine(60, Trent, ru="Охренеть. ", en="I'm overwhelmed..."),
         VoiceLine(70, Luc, ru="И... Трент, бесплатный совет, как можно быстрее поменяй то на чём ты летаешь на что-нибудь более современное. Без обид, но подобные раритеты покупают из эстетических соображений, а не чтобы на них летать.", en="And Herr Trent, a friendly word of advice: that ship of yours... it is more holey than the church and leakier than a faucet. If it wasn't so ugly you might be able to sell it to a museum. Perhaps best to change to something less likely to kill you."),
         VoiceLine(80, Trent, ru="Я подумаю над этим.", en="Yeah... I'll think about it."),
         VoiceLine(90, Alaric, ru="И как тебе новая жизнь Трент?", en="So, Trent, how're you adjusting to the heady life of a debt free freelancer?"),
@@ -278,13 +279,13 @@ class Msn1Space(Msn1, script.SpaceVoiceProps):
         VoiceLine(
             270,
             Luc,
-            ru="Ага, ты больше слушай этих придурков-репортеров, они тебе ради сенсации такооого порасскажут. ",
+            ru="(акцент на такооого) Ага, ты больше слушай этих придурков-репортеров. Ради сенсации они тебе такого порасскажут. ",
             en="Ah, don't go listening to those idiotic reporters. They'd say anything for better ratings.",
         ),
         VoiceLine(
             280,
             Luc,
-            ru="Кто-то в туалете воздух испортил - они раструбят что взрыв на станции.",
+            ru="В туалете кто-то воздух испортил, а в статье напишут, что взрыв на станции.",
             en="Someone just farted in the toilet - then made it out as an explosion in the station.",
         ),
         VoiceLine(
@@ -326,19 +327,19 @@ class Msn1Space(Msn1, script.SpaceVoiceProps):
         VoiceLine(
             350,
             Adelmar,
-            ru="Я не знаю что произошло, но он вдруг ополчился на всех и ушёл в жёсткую оппозицию. А потом... Ну в общем, вы все видите.",
+            ru="Я не знаю что произошло, но он вдруг ополчился на всех и ушёл в жёсткую оппозицию. А потом... Ну в общем, вы всё и сами видите.",
             en="But all of a sudden for reasons unknown he went rogue and joined the rebel extremist nuts. And then… Well… You've saw for yourself.",
         ),
         VoiceLine(
             360,
             Luc,
-            ru="В общем, слухов ходит дохрена и больше, а я могу только порекомендовать держаться от этой всей политики подальше. ",
+            ru="В общем, слухов ходит мама не горюй. Но я дам совет от себя. Держись от всей этой политики подальше.",
             en="Really, there are way too many rumors. My advice to you is keep your head down and steer clear of politics.",
         ),
         VoiceLine(
             370,
             Luc,
-            ru="И чем дальше - тем лучше, выше вероятность голову на плечах сохранить во всем этом винегрете.",
+            ru="И чем дальше, тем лучше. А то сам попадёшь под чью-либу горячую руку.",
             en="The further you are from it, the better your chances of keeping your head attached to your shoulders.",
         ),
         VoiceLine(
@@ -500,13 +501,13 @@ class Msn1Space(Msn1, script.SpaceVoiceProps):
         VoiceLine(
             640,
             Luc,
-            ru="Я уже хотел весь этот полицейский гадюшник на уши поднять, но эта их непробиваемая бюрократия... ",
+            ru="Как я не пытался поднять этот полицейский гадюшник, их бюрократия неробиваема.",
             en="I tried to call in the police, but for their ridiculous bureaucracy and a thousand questions... ",
         ),
         VoiceLine(
             650,
             Luc,
-            ru="Иногда мне кажется, что если тебя будут убивать у них на пороге, они с тебя же справку потребуют что это не по обоюдному согласию...",
+            ru="Иногда мне кажется, что если тебя будут убивать у них на пороге, они с тебя же справку потребуют, что это не по обоюдному согласию...",
             en="Yes, sometimes it feels like if someone were to murder you on their doorstep, they'd demand proof that it wasn't done by mutual consent before taking action…",
         ),
         VoiceLine(

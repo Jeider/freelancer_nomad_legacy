@@ -32,6 +32,12 @@
 <test_voice name="0xA5D3FDCF" type="file" filename="echo_m05_female\dx_m05_0880_hatcher.wav"/>
 <test_voice name="0x84DB6DCB" type="file" filename="echo_m05_female\dx_m05_0900_hatcher.wav"/>
 <test_voice name="0xB8D873CB" type="file" filename="echo_m05_female\dx_m05_0930_hatcher.wav"/>
-<test_voice name="0xBCDD11CB" type="file" filename="echo_m05_female\dx_m05_0960_hatcher.wav"/>
+<test_voice name="0xB158E7C5" type="file" filename="echo_m05_female\dx_m05_1030_hatcher.wav"/>
+<test_voice name="0x895E9BC5" type="file" filename="echo_m05_female\dx_m05_1050_hatcher.wav"/>
+<test_voice name="0xA15C8FC5" type="file" filename="echo_m05_female\dx_m05_1070_hatcher.wav"/>
+<test_voice name="0xB95263C5" type="file" filename="echo_m05_female\dx_m05_1090_hatcher.wav"/>
+<test_voice name="0x8C5BF9C1" type="file" filename="echo_m05_female\dx_m05_1100_hatcher.wav"/>
+<test_voice name="0xA459EDC1" type="file" filename="echo_m05_female\dx_m05_1120_hatcher.wav"/>
+<test_voice name="0x9C5F91C1" type="file" filename="echo_m05_female\dx_m05_1140_hatcher.wav"/>
 </UTF_ROOT>
 </UTFXML>

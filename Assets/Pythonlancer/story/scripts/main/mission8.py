@@ -13,9 +13,6 @@ class Msn8Offer(Msn8, script.CutsceneProps):
     TITLE = 'Предложение'
     DESCRIPTION = ''
     VOICE_LINES = [
-        VoiceLine(10, Darcy, ru="Привет. Мы сейчас пройдем в одну комнату, в которой будет пара очень больших шишек. ", en="Trent. Behind that door are some really really big names. I'm talking huge."),
-        VoiceLine(20, Darcy, ru="Очень прошу, постарайся вести себя посдержаннее.", en="Please try to behave with some restraint."),
-        VoiceLine(30, Trent, ru="Ничего не понял, но постараюсь.", en="Dont know what you're talking about. I'm always on my best behaviour. Paragon of restraint, me."),
         VoiceLine(40, Brighton, ru="А это мисс Дерси, наша краса и надежда на светлое будущее.", en="Ah, Ms.Darcy - our beauty with brains, and hope for a brighter age."),
         VoiceLine(50, Kaitlyn, ru="А это, если я все правильно поняла, эксперт по Ордену, о котором мне столько рассказывали.", en="And this must the Freelancer. I've heard so much about you."),
         VoiceLine(60, Darcy, ru="Да, это мистер Трент. Трент, это адмирал Брайтон и принцесса Кейтлин.", en="Yes, this is Mister Trent. Trent, this are Admiral Brighton, and the honorable Princess Caitlin."),
@@ -258,6 +255,20 @@ class Msn8Space(Msn8, script.SpaceVoiceProps):
                   cinematic=True),
         VoiceLine(580, Darcy, ru='Трент, пора валить отсюда, не находишь?', en="Trent, I think this would be a good time to make ourselves scarce."),
         VoiceLine(590, Trent, ru='Полностью согласен.', en="Couldn't agree more."),
+
+        VoiceLine(4900, Darcy, ru='У моего двигателя мощность упала почти вдвое. Какая же тут мощная гравитация.',
+                  en="My engine output just halved. The gravity in here is insane."),
+        VoiceLine(4910, Darcy, ru='Трент, не попади под лопасти этой странной мельницы!',
+                  en="Trent, don't get caught in the blades of that damned mill thingie!"),
+        VoiceLine(5000, Darcy, ru='Сейчас тут всё нахрен взорвётся! Трент, шевелись! Не отставай!',
+                  en="This whole place is about to blow! Trent, move it! Don't fall behind!"),
+        VoiceLine(5010, Darcy, ru='Черт! Проход закрыт! Трент, гляди! Слева еще тоннель! Летим туда!',
+                  en="Damn it! The passage is blocked! Trent, look! There's another tunnel on the left! Let's go!"),
+        VoiceLine(5020, Darcy, ru='Осторожно, Трент, тут эти вертящиеся мельницы.',
+                  en="Watch out, Trent, more spinning mills ahead."),
+        VoiceLine(5030, Darcy, ru='Чё за нафиг! Впереди двойная мельница!',
+                  en="Well fuck me! Double spinning mills dead ahead!"),
+
         VoiceLine(600, Brighton, ru='Рад видеть вас целыми и невредимыми', en="Good to see you both in one piece."),
         VoiceLine(610, Darcy, ru='Брайтон... Линкор "Принц Уэльский"?', en="Brighton... the \"Prince of Wales\"? Really?"),
         VoiceLine(620, Brighton, ru='Мы решили вам чуточку помочь. Вытащить вас из этой передряги.', en="Thought we'd swoop in and sweep you out of this mess. The more firepower the better."),
@@ -366,12 +377,6 @@ class Msn8Space(Msn8, script.SpaceVoiceProps):
         VoiceLine(1150, Darcy, ru='Уже. Мое начальство одобрило сотрудничество с СБА и с вами конкретно.', en="Already done. They've green-lighted full cooperation with the ASF, and specifically, with you, ma'am."),
         VoiceLine(1160, Trent, ru='Какая милота. Я вам не мешаю?', en="Ooh sexy. Can I watch, later."),
         VoiceLine(1170, Darcy, ru='Трент, не будь ребенком.', en="Trent, grow up."),
-        VoiceLine(4900, Darcy, ru='У моего двигателя мощность упала почти вдвое. Какая же тут мощная гравитация.', en="My engine output just halved. The gravity in here is insane."),
-        VoiceLine(4910, Darcy, ru='Трент, не попади под лопасти этой странной мельницы!', en="Trent, don't get caught in the blades of that damned mill thingie!"),
-        VoiceLine(5000, Darcy, ru='Сейчас тут всё нахрен взорвётся! Трент, шевелись! Не отставай!', en="This whole place is about to blow! Trent, move it! Don't fall behind!"),
-        VoiceLine(5010, Darcy, ru='Черт! Проход закрыт! Трент, гляди! Слева еще тоннель! Летим туда!', en="Damn it! The passage is blocked! Trent, look! There's another tunnel on the left! Let's go!"),
-        VoiceLine(5020, Darcy, ru='Осторожно, Трент, тут эти вертящиеся мельницы.', en="Watch out, Trent, more spinning mills ahead."),
-        VoiceLine(5030, Darcy, ru='Чё за нафиг! Впереди двойная мельница!', en="Well fuck me! Double spinning mills dead ahead!"),
     ]
 
 

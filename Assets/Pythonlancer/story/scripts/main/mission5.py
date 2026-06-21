@@ -88,57 +88,82 @@ class Msn5Equip(Msn5, script.CutsceneProps):
     TITLE = 'Вознаграждение'
     DESCRIPTION = ''
     VOICE_LINES = [
-        VoiceLine(10, Hatcher, ru="Профессор Мандрейк.", en="Professor Mandrake."),
-        VoiceLine(20, Mandrake, ru="Мисс Хетчер.", en="Miss Hatcher."),
-        VoiceLine(30, Hatcher, ru="Профессор, вы лишний час просидели в капсуле из-за этого идиота Тилтона. ", en="Professor, I apologize for Tilton delaying you in your capsule over an hour. It must have been uncomfortable."),
-        VoiceLine(40, Mandrake, ru="Этот недоросль, хотя, скорее, переросль, все никак не может отделаться от навязчивой идеи подловить вас, мисс Хетчер. ", en="That bastard, I thought he was over you but he clearly isn't, Miss Hatcher."),
-        VoiceLine(50, Hatcher, ru="Ага, и чем дальше, тем проще и тупее его схемы. ", en="Yeah, well the more he tries, the dumber he gets."),
-        VoiceLine(60, Mandrake, ru="Все-таки стоит опасаться таких людей. По теории больших чисел, рано или поздно они смогут добиться своего. ", en="You'd better be careful, Miss Hatcher. Statistically, if he tries enough times, he will eventually achieve his goal."),
-        VoiceLine(70, Hatcher, ru='Тилтон - вряд ли. Он считает, что постоянное повторение одних и тех же действий  в расчете на другой результат не считается сумасшествием.', en="Tilton? Insanity is doing the same thing over and over again and expecting different results. The fool is incapable of change."),
-        VoiceLine(80, Mandrake, ru='Да, но эти его "прогрессивные идеи" про то, что Орден уже отжил свое, и пора бы властям Либерти перестать оказывать хоть какую-то поддержку и вообще считаться с мнением Ордена... ', en="Yeah, but these \"progressive ideas\" of his about the Order having outlived its usefulness, and Liberty needing to pull the plug on it..."),
-        VoiceLine(90, Hatcher, ru="Могут найти поддержку только среди таких же великовозрастных дебилов, как он сам. ", en="Only fools like him would lend him support, and there aren't many fools like him."),
-        VoiceLine(100, Trent, ru="Стоп, стоп, стоп! Я тут в качестве мебели что-ли? Объясните, наконец, что происходит. ", en="Uh excuse me? I'm right here. Could someone fill me in?"),
-        VoiceLine(110, Mandrake, ru="Это очень сложно и очень долго, мистер Трент. ", en="Too difficult and time consuming."),
-        VoiceLine(120, Trent, ru="Начнем с простого. Что такое Орден?", en="How about we start with the basics, what's the Order?"),
-        VoiceLine(130, Hatcher, ru="Не так уж это и просто, Трент... Это организация... ", en="The Order, Trent is an organization..."),
-        VoiceLine(140, Trent, ru="Это я понял. Давайте мы не будем выжимать из мисс Хетчер информацию тисками, оставим ей свободу выбора. ", en="I got that much. Please don't patronize me. What do they do? Are they the bad guys or the good guys?"),
-        VoiceLine(150, Mandrake, ru="Расскажи ему. ", en="Tell him."),
-        VoiceLine(160, Hatcher, ru="Хорошо. Но то, что я скажу должно не просто остаться между нами. Это секретная информация, и за ее разглашение, Трент... ", en="Okay fine. But what I'm about to say is highly classified. If you ever disclose it..."),
-        VoiceLine(170, Trent, ru="Да-да, я понял, ты лично открутишь мне яйца. ", en="Yeah, yeah, I get it. You'll bite my head off."),
-        VoiceLine(180, Hatcher, ru="Не льсти себе. Этим займутся ребята типа Тилтона. ", en="Don't flatter yourself. That's Tilton's kind of gig. I prefer performing orchidectomies."),
-        VoiceLine(190, Trent, ru="Окей, я достаточно напуган, можно перейти к сути дела. ", en="Okay, I'm shaking in my boots. Strictly between us. "),
-        VoiceLine(200, Hatcher, ru="Никто не знает теперь как и кем был создан Орден, но он был создан влиятельными людьми, так как в свое время это была могущественная организация, которая следила за угрозами человечеству в целом и его выживанием. ", en="Nobody knows how exactly the Order was formed, or who founded it. All we know is that it's been around for a very, very long time, and its' goal is to ensure humanity's survival by monitoring for extinction level threats,"),
-        VoiceLine(210, Hatcher, ru="Её не интересовали войны между государствами, даже 80-летняя война, хотя к их чести стоит сказать, что в определенный момент это им надоело и они приложили некоторые усилия, чтобы она стала 80-летней, а не 200-летней. ", en="Not trivial things like wars between nations. Not even the 80-year war, which claimed innumerable lives."),
-        VoiceLine(220, Hatcher, ru="Эта организация была создана на случай серьезной угрозы человечеству в целом. И вот однажды этот момент наступил. ", en="The Order only intervenes when humanity faces extinction. One such threat occurred a while back,"),
-        VoiceLine(230, Hatcher, ru="Некоторое время назад все народы столкнулись с угрозой паразитической инопланетной формы жизни, но при помощи Ордена, ее воздействие удалось локализовать. ", en="when we encountered a parasitic, mind-controlling alien race. That threat was neutralized by the Order."),
-        VoiceLine(240, Trent, ru="Ряд загадочных смертей в правительствах разных стран, острые языки журналистов обозвали этот феномен чумой венценосных. ", en="I remember. There was a number of sudden unexpected deaths among top government officials from different nations. The media described it as a series of unfortunate coincidences."),
-        VoiceLine(250, Hatcher, ru='Именно. Все в итоге удалось замять, хотя человечество и стояло на пороге глобальной междоусобной войны и войны с этими космическими паразитами, прозванными "кочевниками". ', en="No coincidence. The media covered it up at the will of their collective governments. Humanity was on the verge of all-out interstellar war, our leaders puppeted by an alien race called the \"Nomads\"."),
-        VoiceLine(260, Trent, ru='Целый ряд "пограничных инцидентов". ', en="Disguised as isolated \"cross-border incidents\". "),
-        VoiceLine(270, Hatcher, ru='Точно. Только на самом деле это были не пограничные инциденты. Это была война всех со всеми и всех против "кочевников". ', en="Exactly. But in reality, these weren't isolated border incidents. It was a war of everyone against everyone, and the Order against the \"Nomads\". "),
-        VoiceLine(280, Hatcher, ru="Но как я уже сказала, всё это удалось замять, при участии Ордена, кстати. Все причастные получили награды, в узком кругу. И все договорились всё забыть. ", en="All those who had a hand in overcoming the Nomads were rewarded discreetly, and the matter was buried. "),
-        VoiceLine(290, Trent, ru="Майор Кинг, мой тезка, Джунко Зейн? ", en="Oh, Major King, Jun'Ko Zhane and my namesake, Edison Trent?"),
-        VoiceLine(300, Mandrake, ru="А он - молодец. ", en="He's smarter than he looks."),
-        VoiceLine(310, Hatcher, ru="Сама выбирала... Так вот, Трент, после этого инцидента, Орден обрел действительно большой вес в нашей геополитической системе. И это сразу поставило его под угрозу. ", en="I'm not so sure... Anyway, Trent, the Order coming out of the shadows put it at immediate risk. "),
-        VoiceLine(320, Hatcher, ru="А в нашей демократической свято системе исповедуется правило царя горы - кто смог пролезть по головам и взобраться на вершину распихивая локтями других - тот и молодец. ", en="In our Liberterian society where democracy is supposedly sacrosanct, the sad truth is whoever rises to the top of the shit pile is king."),
-        VoiceLine(330, Hatcher, ru="Вот и появилась целая орда молодых борцов уж не знаю за что, но против Ордена. ", en="And so a horde of rival organizations has appeared, all hell-bent on usurping the Order."),
-        VoiceLine(340, Hatcher, ru='Нет, если их отправить в бой против флота "кочевников", они, конечно, сразу же обделаются и сбегут, но это не мешает им в мирное время бороться против засилия Ордена в повседневной жизни Либерти. ', en="If you sent them into battle against the Nomads they'd shit their pants and run home with their tails between their legs. But right now, after such a long period of peace, these pampered upstarts are happy to politic the Order out of existence in a war of words."),
-        VoiceLine(350, Hatcher, ru="Ну и не стоит забывать что в Ордене тоже люди, а не роботы... А там, где люди - там власть и борьба за власть... ", en="And the Order itself has softened, done in by internal egos and petty conflicts."),
-        VoiceLine(360, Trent, ru="Все плохо кончилось, да? ", en="...and they lived happily ever after, right?."),
-        VoiceLine(370, Hatcher, ru="Ничего еще не кончилось... Но да, все плохо. Орден распался на две самостоятельные организации - Службу Безопасности Альянса и Новый Орден. ", en="Don't interrupt... I'm still talking. The Order fractured into two separate entities: The Alliance Security Force, and the new Order."),
-        VoiceLine(380, Trent, ru="Я понял. Ордену конец. ", en="The Order is dead? Tell me it ain't so, mummy."),
-        VoiceLine(390, Hatcher, ru="Нет, не конец. Служба Безопасности Альянса курирует кроме прочего и территорию Либерти, несмотря на противодействие со стороны некоторой части элиты Либерти, которая и натравливает против нас дуболомов типа Тилтона. ", en="Not quite. Today, the Alliance Security Force oversees Liberty but faces low-level resistance from some of the other Liberterian sub-factions."),
-        VoiceLine(400, Hatcher, ru="Но это не значит, что мы забыли свою главную функцию - защиту человечества от внешней угрозы. ", en="The new Order operates out of the shadows, a shadow of its' former self. It supposedly remains true to its' original goal – to protect humanity from extinction level threats. But they rarely make an appearance, dwindling away with time."),
-        VoiceLine(410, Trent, ru="Как скажешь...", en="I'm so confused..."),
-        VoiceLine(420, Hatcher, ru="Трент, а можно теперь я наконец... ", en="Now you know, Trent. Run along now, the grown ups need to talk."),
-        VoiceLine(430, Trent, ru="Можно. ", en="Okay."),
-        VoiceLine(440, Hatcher, ru="Профессор, рейнландцы откуда-то нашли информацию об Омикроне альфа... ", en="Professor, Rheinland officials have managed to steal our intel on Omicron Alpha..."),
-        VoiceLine(450, Mandrake, ru="И...", en="And I should care because?"),
-        VoiceLine(460, Hatcher, ru="Они нашли объект и ведут на нем работы.", en="They've set up camp around it and are experimenting on it right now."),
-        VoiceLine(470, Mandrake, ru="Рейнландцы экспериментируют со Сферой в омикроне альфа??? Вы что там, с ума посходили??? Вы чем занимаетесь??? Мистер Трент был прав... Ордену конец...", en="What? Are they out of their minds??? The fools!!! Who knows what could happen! Why was't the Sphere secured? Hatcher, how could the Order have allowed this??? Mr. Trent is right... it really is dead..."),
-        VoiceLine(480, Trent, ru="Кстати, про мистера Трента... ", en="About Mr. Trent..."),
-        VoiceLine(490, Hatcher, ru="Чего тебе еще? ", en="Why are you still here?"),
-        VoiceLine(500, Trent, ru="Чеканную монету, не более... ", en="Spare change?"),
-        VoiceLine(510, Hatcher, ru="Ах, да, извини. Делаю перевод. Свяжусь с тобой позже.", en="Ah, yes, of course. I'm transferring you your credits now. We'll be in touch. Professor, I have some Rheinland documents I need you to take a look at..."),
+        VoiceLine(10, Mandrake, ru="Хетчер, рад тебя видеть. Вы с фрилансером оказались очень вовремя.", en=""),
+        VoiceLine(20, Hatcher, ru="Профессор, простите нас, вы лишний час просидели в капсуле из-за этого идиота Тилтона", en=""),
+
+        VoiceLine(30, Mandrake, ru="Что с Тилтоном на этот раз? Опять хочет отжать полномия у СБА и получить доступ к вашим разработкам?", en=""),
+        VoiceLine(40, Hatcher, ru="Чёрта с два у него это выйдет! Я этого никогда не допущу!", en=""),
+
+        VoiceLine(50, Mandrake, ru="Да, я знаю. Ты никогда не отступаешь. Но зачем тебе понадобился я?", en=""),
+
+        VoiceLine(60, Hatcher, ru="Мы получили секретную информацию о разработках рейнландских учёных. Они что-то делают в Сфере. И у них большой прогресс.", en=""),
+
+        VoiceLine(70, Mandrake, ru="Как... как вы это могли допустить? Где же флот, охрана? Как?", en=""),
+        VoiceLine(80, Hatcher, ru="Ну... У Тилтона стали появляться союзники. Наши силы поубавились... поэтому нам нужна ваша помощь.", en=""),
+        VoiceLine(90, Mandrake, ru="Конечно, Хетчер! Нужно действовать как можно скорее.", en=""),
+
+        VoiceLine(100, Trent, ru="Кхм кхм. Можно я вас перебью?", en=""),
+
+        VoiceLine(110, Hatcher, ru="Что такое, Трент?", en=""),
+
+        VoiceLine(120, Trent, ru="У меня два вопроса. Во-первых, о чеканной монете.", en=""),
+        VoiceLine(130, Hatcher, ru="Ах, да. Сейчас переведу деньги на твой. Счёт. А что еще?", en=""),
+        VoiceLine(140, Trent, ru="Во-вторых, что-то твоя СБА не кажется такой уж мегаструктурой, если Либерти крутит её направо и налево.", en=""),
+        VoiceLine(150, Hatcher, ru="Так, знаешь Трент, если тебе что-то не нравится, то можешь задать такой же вопрос Тилтону. Или ты хочешь, чтобы я отменила тот звонок на Грифон?", en=""),
+
+        VoiceLine(160, Trent, ru="Не стоит, я всё понял. Тогда до связи.", en=""),
+
+        # VoiceLine(10, Hatcher, ru="Профессор Мандрейк.", en="Professor Mandrake."),
+        # VoiceLine(20, Mandrake, ru="Мисс Хетчер.", en="Miss Hatcher."),
+        # VoiceLine(30, Hatcher, ru="Профессор, вы лишний час просидели в капсуле из-за этого идиота Тилтона. ", en="Professor, I apologize for Tilton delaying you in your capsule over an hour. It must have been uncomfortable."),
+        # VoiceLine(40, Mandrake, ru="Этот недоросль, хотя, скорее, переросль, все никак не может отделаться от навязчивой идеи подловить вас, мисс Хетчер. ", en="That bastard, I thought he was over you but he clearly isn't, Miss Hatcher."),
+        # VoiceLine(50, Hatcher, ru="Ага, и чем дальше, тем проще и тупее его схемы. ", en="Yeah, well the more he tries, the dumber he gets."),
+        # VoiceLine(60, Mandrake, ru="Все-таки стоит опасаться таких людей. По теории больших чисел, рано или поздно они смогут добиться своего. ", en="You'd better be careful, Miss Hatcher. Statistically, if he tries enough times, he will eventually achieve his goal."),
+        # VoiceLine(70, Hatcher, ru='Тилтон - вряд ли. Он считает, что постоянное повторение одних и тех же действий  в расчете на другой результат не считается сумасшествием.', en="Tilton? Insanity is doing the same thing over and over again and expecting different results. The fool is incapable of change."),
+        # VoiceLine(80, Mandrake, ru='Да, но эти его "прогрессивные идеи" про то, что Орден уже отжил свое, и пора бы властям Либерти перестать оказывать хоть какую-то поддержку и вообще считаться с мнением Ордена... ', en="Yeah, but these \"progressive ideas\" of his about the Order having outlived its usefulness, and Liberty needing to pull the plug on it..."),
+        # VoiceLine(90, Hatcher, ru="Могут найти поддержку только среди таких же великовозрастных дебилов, как он сам. ", en="Only fools like him would lend him support, and there aren't many fools like him."),
+        # VoiceLine(100, Trent, ru="Стоп, стоп, стоп! Я тут в качестве мебели что-ли? Объясните, наконец, что происходит. ", en="Uh excuse me? I'm right here. Could someone fill me in?"),
+        # VoiceLine(110, Mandrake, ru="Это очень сложно и очень долго, мистер Трент. ", en="Too difficult and time consuming."),
+        # VoiceLine(120, Trent, ru="Начнем с простого. Что такое Орден?", en="How about we start with the basics, what's the Order?"),
+        # VoiceLine(130, Hatcher, ru="Не так уж это и просто, Трент... Это организация... ", en="The Order, Trent is an organization..."),
+        # VoiceLine(140, Trent, ru="Это я понял. Давайте мы не будем выжимать из мисс Хетчер информацию тисками, оставим ей свободу выбора. ", en="I got that much. Please don't patronize me. What do they do? Are they the bad guys or the good guys?"),
+        # VoiceLine(150, Mandrake, ru="Расскажи ему. ", en="Tell him."),
+        # VoiceLine(160, Hatcher, ru="Хорошо. Но то, что я скажу должно не просто остаться между нами. Это секретная информация, и за ее разглашение, Трент... ", en="Okay fine. But what I'm about to say is highly classified. If you ever disclose it..."),
+        # VoiceLine(170, Trent, ru="Да-да, я понял, ты лично открутишь мне яйца. ", en="Yeah, yeah, I get it. You'll bite my head off."),
+        # VoiceLine(180, Hatcher, ru="Не льсти себе. Этим займутся ребята типа Тилтона. ", en="Don't flatter yourself. That's Tilton's kind of gig. I prefer performing orchidectomies."),
+        # VoiceLine(190, Trent, ru="Окей, я достаточно напуган, можно перейти к сути дела. ", en="Okay, I'm shaking in my boots. Strictly between us. "),
+        # VoiceLine(200, Hatcher, ru="Никто не знает теперь как и кем был создан Орден, но он был создан влиятельными людьми, так как в свое время это была могущественная организация, которая следила за угрозами человечеству в целом и его выживанием. ", en="Nobody knows how exactly the Order was formed, or who founded it. All we know is that it's been around for a very, very long time, and its' goal is to ensure humanity's survival by monitoring for extinction level threats,"),
+        # VoiceLine(210, Hatcher, ru="Её не интересовали войны между государствами, даже 80-летняя война, хотя к их чести стоит сказать, что в определенный момент это им надоело и они приложили некоторые усилия, чтобы она стала 80-летней, а не 200-летней. ", en="Not trivial things like wars between nations. Not even the 80-year war, which claimed innumerable lives."),
+        # VoiceLine(220, Hatcher, ru="Эта организация была создана на случай серьезной угрозы человечеству в целом. И вот однажды этот момент наступил. ", en="The Order only intervenes when humanity faces extinction. One such threat occurred a while back,"),
+        # VoiceLine(230, Hatcher, ru="Некоторое время назад все народы столкнулись с угрозой паразитической инопланетной формы жизни, но при помощи Ордена, ее воздействие удалось локализовать. ", en="when we encountered a parasitic, mind-controlling alien race. That threat was neutralized by the Order."),
+        # VoiceLine(240, Trent, ru="Ряд загадочных смертей в правительствах разных стран, острые языки журналистов обозвали этот феномен чумой венценосных. ", en="I remember. There was a number of sudden unexpected deaths among top government officials from different nations. The media described it as a series of unfortunate coincidences."),
+        # VoiceLine(250, Hatcher, ru='Именно. Все в итоге удалось замять, хотя человечество и стояло на пороге глобальной междоусобной войны и войны с этими космическими паразитами, прозванными "кочевниками". ', en="No coincidence. The media covered it up at the will of their collective governments. Humanity was on the verge of all-out interstellar war, our leaders puppeted by an alien race called the \"Nomads\"."),
+        # VoiceLine(260, Trent, ru='Целый ряд "пограничных инцидентов". ', en="Disguised as isolated \"cross-border incidents\". "),
+        # VoiceLine(270, Hatcher, ru='Точно. Только на самом деле это были не пограничные инциденты. Это была война всех со всеми и всех против "кочевников". ', en="Exactly. But in reality, these weren't isolated border incidents. It was a war of everyone against everyone, and the Order against the \"Nomads\". "),
+        # VoiceLine(280, Hatcher, ru="Но как я уже сказала, всё это удалось замять, при участии Ордена, кстати. Все причастные получили награды, в узком кругу. И все договорились всё забыть. ", en="All those who had a hand in overcoming the Nomads were rewarded discreetly, and the matter was buried. "),
+        # VoiceLine(290, Trent, ru="Майор Кинг, мой тезка, Джунко Зейн? ", en="Oh, Major King, Jun'Ko Zhane and my namesake, Edison Trent?"),
+        # VoiceLine(300, Mandrake, ru="А он - молодец. ", en="He's smarter than he looks."),
+        # VoiceLine(310, Hatcher, ru="Сама выбирала... Так вот, Трент, после этого инцидента, Орден обрел действительно большой вес в нашей геополитической системе. И это сразу поставило его под угрозу. ", en="I'm not so sure... Anyway, Trent, the Order coming out of the shadows put it at immediate risk. "),
+        # VoiceLine(320, Hatcher, ru="А в нашей демократической свято системе исповедуется правило царя горы - кто смог пролезть по головам и взобраться на вершину распихивая локтями других - тот и молодец. ", en="In our Liberterian society where democracy is supposedly sacrosanct, the sad truth is whoever rises to the top of the shit pile is king."),
+        # VoiceLine(330, Hatcher, ru="Вот и появилась целая орда молодых борцов уж не знаю за что, но против Ордена. ", en="And so a horde of rival organizations has appeared, all hell-bent on usurping the Order."),
+        # VoiceLine(340, Hatcher, ru='Нет, если их отправить в бой против флота "кочевников", они, конечно, сразу же обделаются и сбегут, но это не мешает им в мирное время бороться против засилия Ордена в повседневной жизни Либерти. ', en="If you sent them into battle against the Nomads they'd shit their pants and run home with their tails between their legs. But right now, after such a long period of peace, these pampered upstarts are happy to politic the Order out of existence in a war of words."),
+        # VoiceLine(350, Hatcher, ru="Ну и не стоит забывать что в Ордене тоже люди, а не роботы... А там, где люди - там власть и борьба за власть... ", en="And the Order itself has softened, done in by internal egos and petty conflicts."),
+        # VoiceLine(360, Trent, ru="Все плохо кончилось, да? ", en="...and they lived happily ever after, right?."),
+        # VoiceLine(370, Hatcher, ru="Ничего еще не кончилось... Но да, все плохо. Орден распался на две самостоятельные организации - Службу Безопасности Альянса и Новый Орден. ", en="Don't interrupt... I'm still talking. The Order fractured into two separate entities: The Alliance Security Force, and the new Order."),
+        # VoiceLine(380, Trent, ru="Я понял. Ордену конец. ", en="The Order is dead? Tell me it ain't so, mummy."),
+        # VoiceLine(390, Hatcher, ru="Нет, не конец. Служба Безопасности Альянса курирует кроме прочего и территорию Либерти, несмотря на противодействие со стороны некоторой части элиты Либерти, которая и натравливает против нас дуболомов типа Тилтона. ", en="Not quite. Today, the Alliance Security Force oversees Liberty but faces low-level resistance from some of the other Liberterian sub-factions."),
+        # VoiceLine(400, Hatcher, ru="Но это не значит, что мы забыли свою главную функцию - защиту человечества от внешней угрозы. ", en="The new Order operates out of the shadows, a shadow of its' former self. It supposedly remains true to its' original goal – to protect humanity from extinction level threats. But they rarely make an appearance, dwindling away with time."),
+        # VoiceLine(410, Trent, ru="Как скажешь...", en="I'm so confused..."),
+        # VoiceLine(420, Hatcher, ru="Трент, а можно теперь я наконец... ", en="Now you know, Trent. Run along now, the grown ups need to talk."),
+        # VoiceLine(430, Trent, ru="Можно. ", en="Okay."),
+        # VoiceLine(440, Hatcher, ru="Профессор, рейнландцы откуда-то нашли информацию об Омикроне альфа... ", en="Professor, Rheinland officials have managed to steal our intel on Omicron Alpha..."),
+        # VoiceLine(450, Mandrake, ru="И...", en="And I should care because?"),
+        # VoiceLine(460, Hatcher, ru="Они нашли объект и ведут на нем работы.", en="They've set up camp around it and are experimenting on it right now."),
+        # VoiceLine(470, Mandrake, ru="Рейнландцы экспериментируют со Сферой в омикроне альфа??? Вы что там, с ума посходили??? Вы чем занимаетесь??? Мистер Трент был прав... Ордену конец...", en="What? Are they out of their minds??? The fools!!! Who knows what could happen! Why was't the Sphere secured? Hatcher, how could the Order have allowed this??? Mr. Trent is right... it really is dead..."),
+        # VoiceLine(480, Trent, ru="Кстати, про мистера Трента... ", en="About Mr. Trent..."),
+        # VoiceLine(490, Hatcher, ru="Чего тебе еще? ", en="Why are you still here?"),
+        # VoiceLine(500, Trent, ru="Чеканную монету, не более... ", en="Spare change?"),
+        # VoiceLine(510, Hatcher, ru="Ах, да, извини. Делаю перевод. Свяжусь с тобой позже.", en="Ah, yes, of course. I'm transferring you your credits now. We'll be in touch. Professor, I have some Rheinland documents I need you to take a look at..."),
     ]
 
 
@@ -713,25 +738,90 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             ru="Валим отсюда, быстро!!! В этой игре столько игроков что никогда не знаешь какой следующий приказ в течение этих пяти минут получит этот паладин-переросток! ",
             en="Let's get out of here, Trent!!! There are too many pieces on the board and I can't guarantee this buffoon won't get any bright ideas or conflicting orders in the next five minutes!",
         ),
-        VoiceLine(
-            950,
-            Trent,
-            ru="Хетчер, мне кажется, или у вас с этим Тилтоном давняя любовная история? ",
-            en="Hatcher, I get the feeling that you and Tilton had something going in the past.",
-        ),
-        VoiceLine(
-            960,
-            Hatcher,
-            ru="Не твоё дело, фриленсер! ",
-            en="Shut it, Trent!",
-        ),
-        VoiceLine(
-            970,
-            Trent,
-            ru="Понял, входим во врата...",
-            en="Gotcha, docking with the gate...",
-        ),
 
+        # перед джампом в форбс
+
+        VoiceLine(1010, Trent, ru="Хетчер, я вот не пойму, ты вот вроде за Либерти, но с военными не особо в ладах.", en=""),
+        VoiceLine(1020, Trent, ru="А стоит показать твою карточку, так все гражданские сразу становятся на короткой ноге. В чём твой секрет?", en=""),
+
+        VoiceLine(1030, Hatcher, ru='Ты хочешь спросить, с какой теперь спецслужбой работаешь?', en=""),
+
+        VoiceLine(1040, Trent, ru="Да-да, что-то вроде того.", en=""),
+
+        # прилетели
+
+        VoiceLine(1050, Hatcher, ru="Ладно. Трент. Ты слышал историю про Орден?", en=""),
+        VoiceLine(1060, Trent, ru="Это про моего тёзку, Джунко Зейн и прочих?", en=""),
+
+        VoiceLine(1070, Hatcher, ru="Да, про них. Вкратце - организация СБА это часть того самого Ордена", en=""),
+        VoiceLine(1080, Trent, ru="Тогда почему только часть?", en=""),
+        VoiceLine(1090, Hatcher, ru="Ну, когда-то Орден стал своего рода одной большой спецслужбой, которая следила за всем Сектором Сириуса.", en=""),
+        VoiceLine(1100, Hatcher, ru="Но потом случился раздор, эта структура разделилась на Новый Орден и СБА. По началу организации сотрудничали, а со временем стали соперничать.", en=""),
+
+        VoiceLine(1110, Trent, ru="То есть Аларик был прав. Вы тут местные большие шишки. Примерно как у меня было с Рейнландом.", en=""),
+        VoiceLine(1120, Hatcher, ru="Что-то вроде такого. Только СБА гораздо больше. Мы занимаемся защитой человечества от инопланетных угроз.", en=""),
+
+        VoiceLine(1130, Trent, ru="Звучит так, будто вы действительно серьёзные ребята.", en=""),
+
+        VoiceLine(1140, Hatcher, ru="Только будь на чеку, фрилансер, эта информация не для всеобщего распространения.", en=""),
+
+        VoiceLine(1150, Trent, ru="Понял, понял. Всё как обычно.", en=""),
+
+
+
+        #
+        # "Хетчер, я вот не пойму, ты вот вроде за Либерти, но с военными не особо в ладах."
+        # "А стоит показать твою карточку, так все гражданские сразу становятся на короткой ноге. В чём твой секрет?"
+        #
+        # 'Ты хочешь спросить, с какой теперь спецслужбой работаешь?'
+        #
+        # "Да-да, что-то вроде того."
+        #
+        # "Ладно. Трент. Ты слышал историю про Орден?"
+        # "Это про моего тёзку, Джунко Зейн и прочих?"
+        #
+        # "Да, про них. Вкратце - организация СБА это часть того самого Ордена"
+        # "Тогда почему только часть?"
+        # "Ну, когда-то Орден стал своего рода одной большой спецслужбой, которая следит за всем Сектором Сириуса."
+        # "Но потом случился раздор, эта структура разделилась на Новый Орден и СБА. По началу организации сотрудничали, а со временем стали соперничать."
+        #
+        # "То есть Аларик был прав. Вы тут местные большие шишки. Примерно как у меня было с Рейнландом."
+        # "Что-то вроде такого. Только СБА гораздо больше. Мы занимаемся защитой человечества от инопланетных угроз."
+        #
+        # "Звучит так, будто вы действительно серьёзные ребята."
+        #
+        # "Только будь на чеку, фрилансер, эта информация не для всеобщего распространения."
+        #
+        # "Понял, понял. Всё как обычно."
+        #
+        #
+        #
+        # "Хетчер, рад тебя видеть. Вы с фрилансером оказались очень вовремя."
+        # "Профессор, простите нас, вы лишний час просидели в капсуле из-за этого идиота Тилтона"
+        #
+        # "Что с Тилтоном на этот раз? Опять хочет отжать полномия у СБА и получить доступ к вашим разработкам?"
+        # "Чёрта с два у него это выйдет! Я этого никогда не допущу!"
+        #
+        # "Да, я знаю. Ты никогда не отступаешь. Но зачем тебе понадобился я?"
+        #
+        # "Мы получили секретную информацию о разработках рейнландских учёных. Они что-то делают в Сфере. И у них большой прогресс."
+        #
+        # "Как... как вы это могли допустить? Где же флот, охрана? Как?"
+        # "Ну... У Тилтона стали появляться союзники. Наши силы поубавились... поэтому нам нужна ваша помощь."
+        # "Конечно, Хетчер! Нужно действовать как можно скорее."
+        #
+        # "Кхм кхм. Можно я вас перебью"
+        #
+        # "Что такое, Трент?"
+        #
+        # "У меня два вопроса. Во-первых, о чеканной монете."
+        #
+        # "Ах, да. Сейчас переведу деньги на твой. Счёт. А что еще?"
+        #
+        # "Во-вторых, что-то твоя СБА не кажется такой уж мегаструктурой, если Либерти крутит её направо и налево."
+        # "Так, знаешь Трент, если тебе что-то не нравится, то можешь задать такой же вопрос Тилтону. Или ты хочешь, чтобы я отменила тот звонок на Грифон?"
+        #
+        # "Не стоит, я всё понял. Тогда до связи."
     ]
 
 
