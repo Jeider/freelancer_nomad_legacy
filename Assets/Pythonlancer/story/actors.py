@@ -800,6 +800,14 @@ class Hassler(Actor):
     STEOS_ID = 10071
 
 
+class Jameson(Actor):
+    RU_NAME = MS('Джеймсон', 'Jameson')
+    TYPE = ACTOR_MALE
+    NAME = 'jameson'
+    CUTSCENE_APPEARANCE = 'jameson'
+    STEOS_ID = 10071
+
+
 class HasslerOrder(Actor):
     RU_NAME = MS('Хасслер', 'Hassler')
     TYPE = ACTOR_MALE

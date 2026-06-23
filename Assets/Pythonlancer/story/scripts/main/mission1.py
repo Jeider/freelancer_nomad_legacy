@@ -1,7 +1,7 @@
 from story import script
 from audio.sound import VoiceLine
 from story.actors import (
-    Trent, IntroBarman, Stewardess, Alaric, Informer, Dietrich, Adelmar, Luc, BrandenburgOutpost, BrandenburgCruiser
+    Trent, IntroBarman, Jameson, Stewardess, Alaric, Informer, Dietrich, Adelmar, Luc, BrandenburgOutpost, BrandenburgCruiser
 )
 
 
@@ -12,33 +12,67 @@ class Msn1(object):
 class Msn1Intro(Msn1, script.CutsceneProps):
     ALIAS = 'intro'
     TITLE = 'Интро'
-    DESCRIPTION = ''
+    DESCRIPTION = 'Трент подходит к бармену и своему рабодателю, мистер Харрисону (из финала фрила 1.0)'
     VOICE_LINES = [
-        VoiceLine(10, Trent, ru="Привет, целитель душ!", en="The Savior of my soul!"),
-        VoiceLine(20, IntroBarman, ru="Здарова, Трент! Тебе как обычно?", en="Welcome back, Trent. The usual?"),
-        VoiceLine(30, Trent, ru="Да, и сразу две!", en="No... you know what, gimme the good stuff."),
-        VoiceLine(40, IntroBarman, ru="Есть что отпраздновать?", en="Celebrating something special?"),
-        VoiceLine(50, Trent, ru="Есть. Даже два повода! Во-первых, я, наконец, рассчитался со всеми долгами!", en="Yeah. Two somethings. First up, I present the new improved debt-free Trent 2.0!"),
-        VoiceLine(60, IntroBarman, ru="За начало новой жизни! Эта - за счет заведения!", en="Ah, life after debt. Lazarus, this one's on me."),
-        VoiceLine(70, Trent, ru="Спасибо, дружище! Ты - лучший человек на этой богом забытой планете!",
-                  en="Thanks, bud. Everytime I hear you say that I suddenly remember who my favouritest person in the whole wide world is..."),
-        VoiceLine(80, IntroBarman,
-        ru='Но если было "во-первых", то должно быть и "во-вторых". Давай рассказывай, я сейчас сдохну от любопытства.', en = "Yeah yeah. So if there's a 'first up', there's gotta be a 'second up'. Spit it out already before I die of curiosity."),
-        VoiceLine(90, Trent, ru="Только попробуй! Это будет непоправимой утратой.", en="Don't you die on me. Wouldn't know where to get free drinks."),
-        VoiceLine(100, Trent, ru="Старый кореш прислал сообщение.", en="So anyway, an old friend sent me this pad-message."),
-        VoiceLine(105, Trent, ru='Смотри', en="Check it out."),
-        VoiceLine(110, Alaric, ru="Привет, Трент, это Аларик! У меня для тебя хорошие новости! Мне кажется, мы сможем поправить твое финансовое положение. Встречаемся на Магдебурге, в системе Сигма-13. До встречи!",
+        VoiceLine(10, Trent, ru="Всем доброго дня.", en=""),
+        VoiceLine(20, Jameson, ru="Здорова, Трент, пришел за новым нарядом?", en=""),
+        VoiceLine(30, Trent, ru="Нет, спасибо. Мистер Джеймсон, я пришел увольняться!", en=""),
+        VoiceLine(40, Jameson, ru="С чего это? Опять поругался с кем-то на объекте?", en=""),
+        VoiceLine(50, Trent, ru="Нет, всё серьёзно, смотрите.", en=""),
+        VoiceLine(70, Alaric, ru="Привет, Трент, это Аларик! У меня для тебя хорошие новости! Мне кажется, мы сможем поправить твое финансовое положение. Встречаемся на Магдебурге, в системе Сигма-13. До встречи!",
                   en=">Greetings, loser! This is Alaric, your old buddy and life coach. Great news - I've found a gig that'll patch that black hole in your wallet. Meet me on Magdeburg, Sigma-13 System ASAP! And I mean now, like yesterday, Trent!"),
-        VoiceLine(120, Trent, ru="Что думаешь?", en="Whatcha reckon?"),
-        VoiceLine(130, IntroBarman, ru="Думаю, сегодня ты самый счастливый сукин сын на всей этой гребаной планете.", en="I think you're the luckiest son of a bitch this side of the planet."),
-        VoiceLine(140, Trent, ru="Да я не про это. Соглашаться? Лететь?", en="Naturally... but I mean... should I just up and go?"),
-        VoiceLine(150, IntroBarman, ru="Можно, конечно, вообще ничего не делать, оставить все как есть. Денег на кусок хлеба хватит, да и риска никакого, разве что сдохнуть лет в сорок от работы на шахте. Но, мне кажется, что если судьба дает тебе шанс вырваться из этого болота - грех его не использовать. Хотя, решать тебе.",
-                  en="Well let's see. You could stay here and hang with your only real friend in the universe, eke out a miserable living, freeze your ass off in that dingy little flat of yours and die an alcoholic washed-up loser decades from now. Or you could grab life by the horns and fly off to live a real life... but don't let me influence you unduly."),
-        VoiceLine(160, Trent, ru="А почему сам не улетишь из \"этого болота\"?", en="If you feel so strongly about leaving here why haven't you flown the coop?"),
-        VoiceLine(170, IntroBarman, ru="Это - моё болото. Я к нему прирос и я его люблю. И друзей, присылающих мен сообщения с просьбой все бросить и прилететь на Магдебург у меня нет. Да и потом, если я улечу, кто здесь будет исцелять души страждущих?",
-                  en="Well, see... this may be a shit hole, but it's my shit hole. My bar, my life... guess I've grown attached. And unlike you I don't have friends with get-rich-quick schemes offering to share the spoils. 'Sides if I leave, who'd save everyone's souls after a shitty day?"),
-        VoiceLine(180, Trent, ru = "Да уж, без тебя здесь стало бы совсем тоскливо. Ну так я в космопорт?", en = "You're right, without you this place just wouldn't be the same. I guess I'll be heading out to spaceport, then. Take care."),
-        VoiceLine(190, IntroBarman, ru = "Удачи, Трент, надеюсь, мы здесь больше не увидимся.", en = "Yeah go on, abandon me here. Good riddance to bad rubbish, don't let the door hit your ass on the way out... and Trent... good luck."),
+        VoiceLine(80, Jameson, ru="А, этот прохиндей Аларик даже не сгинул в приграничье?", en=""),
+        VoiceLine(90, Trent, ru="Да, жив здоров! Так что хватит работать на дядю, пойду во фрилансеры, как мой знаменитый тёзка! Почему бы и нет?", en=""),
+        VoiceLine(100, Trent, ru="Заработаю денег столько, сколько вы и во снах не видовали!", en=""),
+        VoiceLine(110, Jameson, ru="Да, ты там и медаль одинокой звезды получить не забудь. Смотри не зазвездись, звёздный боец!", en=""),
+
+
+        VoiceLine(120, IntroBarman, comment="Харрисон уходит", ru="Ну что, Трент, поздравляю тебя с началом новой жизни и получением билета не покидание этого болота!", en=""),
+        VoiceLine(130, Trent, ru="А ты чего сам не улетишь из этого болота?", en=""),
+        VoiceLine(140, IntroBarman, ru="Нет, Трент, это твоё дело молодое. А я буду дальше помогать местным заблудшим душам. Не все же такие амбициозные, как ты!", en=""),
+        VoiceLine(150, Trent, ru="Да, друг, без тебя здесь стало бы совсем тоскливо. Так, мой транспорт почти прибыл. Так что мне пора.", en=""),
+        VoiceLine(160, IntroBarman, ru="Давай, Трент, удачи!", en=""),
+
+
+        # VoiceLine(10, Trent, ru="Привет, целитель душ!", en="The Savior of my soul!"),
+        # VoiceLine(20, IntroBarman, ru="Здарова, Трент! Тебе как обычно?", en="Welcome back, Trent. The usual?"),
+        # VoiceLine(30, Trent, ru="Да, и сразу две!", en="No... you know what, gimme the good stuff."),
+        # VoiceLine(40, IntroBarman, ru="Есть что отпраздновать?", en="Celebrating something special?"),
+        # VoiceLine(50, Trent, ru="Есть. Даже два повода! Во-первых, я, наконец, рассчитался со всеми долгами!",
+        #           en="Yeah. Two somethings. First up, I present the new improved debt-free Trent 2.0!"),
+        # VoiceLine(60, IntroBarman, ru="За начало новой жизни! Эта - за счет заведения!",
+        #           en="Ah, life after debt. Lazarus, this one's on me."),
+        # VoiceLine(70, Trent, ru="Спасибо, дружище! Ты - лучший человек на этой богом забытой планете!",
+        #           en="Thanks, bud. Everytime I hear you say that I suddenly remember who my favouritest person in the whole wide world is..."),
+        # VoiceLine(80, IntroBarman,
+        #           ru='Но если было "во-первых", то должно быть и "во-вторых". Давай рассказывай, я сейчас сдохну от любопытства.',
+        #           en="Yeah yeah. So if there's a 'first up', there's gotta be a 'second up'. Spit it out already before I die of curiosity."),
+        # VoiceLine(90, Trent, ru="Только попробуй! Это будет непоправимой утратой.",
+        #           en="Don't you die on me. Wouldn't know where to get free drinks."),
+        # VoiceLine(100, Trent, ru="Старый кореш прислал сообщение.",
+        #           en="So anyway, an old friend sent me this pad-message."),
+        # VoiceLine(105, Trent, ru='Смотри', en="Check it out."),
+        # VoiceLine(110, Alaric,
+        #           ru="Привет, Трент, это Аларик! У меня для тебя хорошие новости! Мне кажется, мы сможем поправить твое финансовое положение. Встречаемся на Магдебурге, в системе Сигма-13. До встречи!",
+        #           en=">Greetings, loser! This is Alaric, your old buddy and life coach. Great news - I've found a gig that'll patch that black hole in your wallet. Meet me on Magdeburg, Sigma-13 System ASAP! And I mean now, like yesterday, Trent!"),
+        # VoiceLine(120, Trent, ru="Что думаешь?", en="Whatcha reckon?"),
+        # VoiceLine(130, IntroBarman, ru="Думаю, сегодня ты самый счастливый сукин сын на всей этой гребаной планете.",
+        #           en="I think you're the luckiest son of a bitch this side of the planet."),
+        # VoiceLine(140, Trent, ru="Да я не про это. Соглашаться? Лететь?",
+        #           en="Naturally... but I mean... should I just up and go?"),
+        # VoiceLine(150, IntroBarman,
+        #           ru="Можно, конечно, вообще ничего не делать, оставить все как есть. Денег на кусок хлеба хватит, да и риска никакого, разве что сдохнуть лет в сорок от работы на шахте. Но, мне кажется, что если судьба дает тебе шанс вырваться из этого болота - грех его не использовать. Хотя, решать тебе.",
+        #           en="Well let's see. You could stay here and hang with your only real friend in the universe, eke out a miserable living, freeze your ass off in that dingy little flat of yours and die an alcoholic washed-up loser decades from now. Or you could grab life by the horns and fly off to live a real life... but don't let me influence you unduly."),
+        # VoiceLine(160, Trent, ru="А почему сам не улетишь из \"этого болота\"?",
+        #           en="If you feel so strongly about leaving here why haven't you flown the coop?"),
+        # VoiceLine(170, IntroBarman,
+        #           ru="Это - моё болото. Я к нему прирос и я его люблю. И друзей, присылающих мен сообщения с просьбой все бросить и прилететь на Магдебург у меня нет. Да и потом, если я улечу, кто здесь будет исцелять души страждущих?",
+        #           en="Well, see... this may be a shit hole, but it's my shit hole. My bar, my life... guess I've grown attached. And unlike you I don't have friends with get-rich-quick schemes offering to share the spoils. 'Sides if I leave, who'd save everyone's souls after a shitty day?"),
+        # VoiceLine(180, Trent, ru="Да уж, без тебя здесь стало бы совсем тоскливо. Ну так я в космопорт?",
+        #           en="You're right, without you this place just wouldn't be the same. I guess I'll be heading out to spaceport, then. Take care."),
+        # VoiceLine(190, IntroBarman, ru="Удачи, Трент, надеюсь, мы здесь больше не увидимся.",
+        #           en="Yeah go on, abandon me here. Good riddance to bad rubbish, don't let the door hit your ass on the way out... and Trent... good luck."),
+
     ]
 
 
@@ -104,7 +138,7 @@ class Msn1Bizmark(Msn1, script.CutsceneProps):
         #VoiceLine(40, Luc, ru="Теперь вы можете брать к выполнению миссии Ганзейских купцов.", en="From now on, you may take on missions offered by Hanseatic merchants, mein friend."),
         #VoiceLine(50, Alaric, ru="А вот за это отдельное спасибо, джентльмены! Трент, ты слышал? Мы теперь на Рейнландской территории не просто голодранцы какие-то, а аккредитованные Ганзейским торговым сообществом официальные фрилансеры!", en="Ah, thank you so much for your kind generosity, gentlemen! Trent, you hear that? We have been elevated from bottom feeding gutter trash to honest to God accredited freelancers of the Hanseatic trading community!"),
         #VoiceLine(60, Trent, ru="Охренеть. ", en="I'm overwhelmed..."),
-        VoiceLine(70, Luc, ru="И... Трент, бесплатный совет, как можно быстрее поменяй то на чём ты летаешь на что-нибудь более современное. Без обид, но подобные раритеты покупают из эстетических соображений, а не чтобы на них летать.", en="And Herr Trent, a friendly word of advice: that ship of yours... it is more holey than the church and leakier than a faucet. If it wasn't so ugly you might be able to sell it to a museum. Perhaps best to change to something less likely to kill you."),
+        VoiceLine(70, Luc, ru="И... Трент, бесплатный совет: как можно быстрее поменяй свой звездолёт на что-нибудь более современное. Без обид, но подобные раритеты нужно выставлять в музее, а не летать на них..", en="And Herr Trent, a friendly word of advice: that ship of yours... it is more holey than the church and leakier than a faucet. If it wasn't so ugly you might be able to sell it to a museum. Perhaps best to change to something less likely to kill you."),
         VoiceLine(80, Trent, ru="Я подумаю над этим.", en="Yeah... I'll think about it."),
         VoiceLine(90, Alaric, ru="И как тебе новая жизнь Трент?", en="So, Trent, how're you adjusting to the heady life of a debt free freelancer?"),
         VoiceLine(100, Trent, ru="Волнительно. Но... сейчас у меня есть свой корабль, а за это я хоть дьяволу в глотку готов залезть.", en="It's exciting I'll give you that. Now that I have my very own ship, I'm ready to fly down the maw of the devil himself."),
@@ -321,7 +355,7 @@ class Msn1Space(Msn1, script.SpaceVoiceProps):
         VoiceLine(
             340,
             Adelmar,
-            ru="Он был вторым человеком после кайзера. Совсем недавно. А затем. ",
+            ru="Он был вторым человеком после кайзера. Совсем недавно. А затем...",
             en="He used to be the Kaizer's second in command, not too long ago. Loyal as they came, lapdog type.",
         ),
         VoiceLine(
@@ -333,7 +367,7 @@ class Msn1Space(Msn1, script.SpaceVoiceProps):
         VoiceLine(
             360,
             Luc,
-            ru="В общем, слухов ходит мама не горюй. Но я дам совет от себя. Держись от всей этой политики подальше.",
+            ru="В общем, слухов ходит мама не горюй. Но я дам тебе совет. Держись подальше от всей этой политики.",
             en="Really, there are way too many rumors. My advice to you is keep your head down and steer clear of politics.",
         ),
         VoiceLine(
@@ -387,7 +421,7 @@ class Msn1Space(Msn1, script.SpaceVoiceProps):
         VoiceLine(
             450,
             Luc,
-            ru="Если кто-то захочет нас перехватить, он сделает засаду на точке самого очевидного маршрута. например в районе Штарке.",
+            ru="Если кто-то захочет нас перехватить, он сделает засаду на точке самого очевидного маршрута. Например в районе Штарке.",
             en="Change of plans. If someone is going to hijack our cargo, they'll hit us on the most commonly used route. Starke's on that route.",
         ),
         VoiceLine(
@@ -501,13 +535,13 @@ class Msn1Space(Msn1, script.SpaceVoiceProps):
         VoiceLine(
             640,
             Luc,
-            ru="Как я не пытался поднять этот полицейский гадюшник, их бюрократия неробиваема.",
+            ru="Как я не пытался поднять этот полицейский гадюшник, но их бюрократия абсолютно непробиваема.",
             en="I tried to call in the police, but for their ridiculous bureaucracy and a thousand questions... ",
         ),
         VoiceLine(
             650,
             Luc,
-            ru="Иногда мне кажется, что если тебя будут убивать у них на пороге, они с тебя же справку потребуют, что это не по обоюдному согласию...",
+            ru="Иногда мне кажется, что если тебя будут убивать у них на пороге, то они с тебя же справку потребуют, что это не по обоюдному согласию...",
             en="Yes, sometimes it feels like if someone were to murder you on their doorstep, they'd demand proof that it wasn't done by mutual consent before taking action…",
         ),
         VoiceLine(

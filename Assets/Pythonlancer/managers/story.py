@@ -25,6 +25,7 @@ class HistoryManager:
         return self.histories[index].show()
 
     def validate_after(self):
+        print('WARNING! Story validation DISABLED')
         pass
         # if len(self.left_keys) > 0:
         #     raise Exception(f'Some keys are left ({",".join(self.left_keys)})')

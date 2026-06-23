@@ -51,6 +51,7 @@ from universe.systems import co_cur as co_cur_content
 from universe.systems import virt1 as virt1_content
 from universe.systems import virt2 as virt2_content
 from universe.systems import virt3 as virt3_content
+from universe.systems import lair_enter as lair_enter_content
 
 
 
@@ -878,6 +879,21 @@ class virtual3(system.StorySystem, system.SiriusSystem):
     ALLOW_SYNC = True
 
     SYSTEM_FOLDER = 'VIRT3'
+    NAVMAP_POS = '12.5, 15.5'
+    SPACE_FARCLIP = 100000
+
+    JUMP_EFFECT = jump_effect.Edge
+
+
+class lair_enter(system.StorySystem, system.SiriusSystem):
+    NAME = 'lair_enter'
+    DIRECT_TEMPLATE_NAME = 'lair_enter_dev'
+    RU_NAME = MS('Логово Номадов: вход', "Nomad Lair enter")
+    CONTENT = lair_enter_content
+
+    ALLOW_SYNC = True
+
+    SYSTEM_FOLDER = 'LAIR_ENTER'
     NAVMAP_POS = '12.5, 15.5'
     SPACE_FARCLIP = 100000
 
