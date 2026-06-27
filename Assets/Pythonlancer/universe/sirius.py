@@ -51,6 +51,7 @@ from universe.systems import co_cur as co_cur_content
 from universe.systems import virt1 as virt1_content
 from universe.systems import virt2 as virt2_content
 from universe.systems import virt3 as virt3_content
+from universe.systems import monkey as monkey_content
 from universe.systems import lair_enter as lair_enter_content
 
 
@@ -894,6 +895,36 @@ class lair_enter(system.StorySystem, system.SiriusSystem):
     ALLOW_SYNC = True
 
     SYSTEM_FOLDER = 'LAIR_ENTER'
+    NAVMAP_POS = '12.5, 15.5'
+    SPACE_FARCLIP = 100000
+
+    JUMP_EFFECT = jump_effect.Edge
+
+
+class monkey(system.StorySystem, system.SiriusSystem):
+    NAME = 'monkey'
+    DIRECT_TEMPLATE_NAME = 'mnk_dev'
+    RU_NAME = MS('Обезъянья неизвестная', "Monkey's monkown")
+    CONTENT = monkey_content
+
+    ALLOW_SYNC = True
+
+    SYSTEM_FOLDER = 'MONKEY'
+    NAVMAP_POS = '12.5, 15.5'
+    SPACE_FARCLIP = 100000
+
+    JUMP_EFFECT = jump_effect.Edge
+
+
+class nomad_anomaly(system.StorySystem, system.SiriusSystem):
+    NAME = 'anm'
+    DIRECT_TEMPLATE_NAME = 'anm_dev'
+    RU_NAME = MS('Номадская аномалия', "Nomad Anomaly")
+    # CONTENT = monkey_content
+
+    ALLOW_SYNC = True
+
+    SYSTEM_FOLDER = 'ANOMALY'
     NAVMAP_POS = '12.5, 15.5'
     SPACE_FARCLIP = 100000
 

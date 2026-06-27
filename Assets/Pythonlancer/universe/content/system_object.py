@@ -53,6 +53,7 @@ class SystemObject:
 
     REL_APPEND = 3000  # distance between object and tradelane
     REL_DRIFT = 0  # move initial pos for tradelane start point
+    MIN_REL_IGNORE = False
 
     ROTATE_RANDOM = False
 
@@ -81,7 +82,7 @@ class SystemObject:
 
     @classmethod
     def get_rel_append(cls):
-        if cls.REL_APPEND < MIN_REL_APPEND:
+        if cls.REL_APPEND < MIN_REL_APPEND and not cls.MIN_REL_IGNORE:
             raise Exception('Too small REL_APPEND')
         return cls.REL_APPEND
 
