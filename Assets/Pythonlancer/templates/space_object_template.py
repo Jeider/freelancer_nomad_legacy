@@ -7,8 +7,11 @@ NICKNAME = 'nickname'
 ARCHETYPE = 'archetype'
 
 ARCHETYPE_MAP = {
+    'small_ring': 'attached_small_ring',
+    'smallest_ring': 'attached_smallest_ring',
     'space_girder': 'attached_girder_rot',
     'space_girdera': 'attached_girder_a',
+    'space_girderb': 'attached_girder_b',
     'space_girderc': 'rmbase_attached_girder_c',
     'space_industrial02a': 'attached_industrial02a_root',
     'space_industrial02d': 'attached_industrial02d',
@@ -40,6 +43,7 @@ ARCHETYPE_MAP = {
     'space_tankl4': 'attached_tankl4_root',
     'space_tube_fix': 'attached_space_tube_fix',
     'space_cloakgen_laser': 'attached_space_cloakgen_laser',
+    'space_industrialc': 'attached_ind_c',
 }
 
 

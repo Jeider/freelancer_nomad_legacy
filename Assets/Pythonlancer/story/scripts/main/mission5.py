@@ -88,7 +88,7 @@ class Msn5Equip(Msn5, script.CutsceneProps):
     TITLE = 'Вознаграждение'
     DESCRIPTION = ''
     VOICE_LINES = [
-        VoiceLine(10, Mandrake, ru="Хетчер, рад тебя видеть. Вы с фрилансером оказались очень вовремя.", en=""),
+        VoiceLine(10, Mandrake, ru="(слабый и радостный) Хетчер, рад тебя видеть. Вы с фрилансером оказались очень вовремя.", en=""),
         VoiceLine(20, Hatcher, ru="Профессор, простите нас, вы лишний час просидели в капсуле из-за этого идиота Тилтона", en=""),
 
         VoiceLine(30, Mandrake, ru="Что с Тилтоном на этот раз? Опять хочет отжать полномия у СБА и получить доступ к вашим разработкам?", en=""),
@@ -98,7 +98,7 @@ class Msn5Equip(Msn5, script.CutsceneProps):
 
         VoiceLine(60, Hatcher, ru="Мы получили секретную информацию о разработках рейнландских учёных. Они что-то делают в Сфере. И у них большой прогресс.", en=""),
 
-        VoiceLine(70, Mandrake, ru="Как... как вы это могли допустить? Где же флот, охрана? Как?", en=""),
+        VoiceLine(70, Mandrake, ru="(возмущение) Как... как вы это могли допустить? Где же флот, охрана? Как?", en=""),
         VoiceLine(80, Hatcher, ru="Ну... У Тилтона стали появляться союзники. Наши силы поубавились... поэтому нам нужна ваша помощь.", en=""),
         VoiceLine(90, Mandrake, ru="Конечно, Хетчер! Нужно действовать как можно скорее.", en=""),
 
@@ -529,72 +529,84 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             ru="Мандрейк у нас! Теперь давай постар+аемся спаст+и как можно больше учёных!",
             en="We've got get Mandrake! Maybe we still can save him!"
         ),
+        # VoiceLine(
+        #     610,
+        #     Trent,
+        #     ru="Хетчер, а другим ты помочь не хочешь?",
+        #     en="Hatcher, don't you want to help the other people too?",
+        # ),
         VoiceLine(
-            610,
+            1300,
             Trent,
-            ru="Хетчер, а другим ты помочь не хочешь?",
-            en="Hatcher, don't you want to help the other people too?",
+            ru="Итак, Мандрейк у меня. Куда дальше?",
+            en="",
         ),
         VoiceLine(
-            620,
-            Trent,
-            ru="Профессор Мандрейк. ",
-            en="Professor Mandrake. ",
-        ),
-        VoiceLine(
-            630,
-            Mandrake,
-            ru="Спасибо за своевременное спасение фриленсер... ",
-            en="Thanks for saving me. You got here just in time, freelancer... ",
-        ),
-        VoiceLine(
-            640,
-            Mandrake,
-            ru="Хотя, у меня ощущения что в тех местах, где изволите находиться вы, постоянно  что-нибудь взрывается и кто-нибудь с кем-нибудь сражается... ",
-            en="Although, one hazards that wherever you go death and destruction follow...",
-        ),
-        VoiceLine(
-            650,
-            Trent,
-            ru="Хетчер была права. Гений. ",
-            en="Hatcher was right. You are a genius! ",
-        ),
-        VoiceLine(
-            660,
-            Mandrake,
-            ru="Мисс Хетчер? Впрочем, неважно, нам нужно срочно вылететь на планету Форбс, мистер... ",
-            en="Miss Hatcher said that? Never mind. We have to fly to planet Forbes as fast as we can go, Mr. ... ",
-        ),
-        VoiceLine(
-            670,
-            Trent,
-            ru="Трент. Но у меня задание... ",
-            en="Trent. But I'm already on a mission...",
-        ),
-        VoiceLine(
-            680,
-            Mandrake,
-            ru="Молодой человек, у нас нет времени на все это. Мистер... э ... Трент, нам необходимо срочно прибыть на планету Форбс, понимаете, СРОЧНО! ",
-            en="Young man, we don't have time for that. Mr. … Trent, we have to get to Forbes IMMEDIATELY, this is NOT NEGOTIABLE! ",
-        ),
-        VoiceLine(
-            690,
-            Mandrake,
-            ru="Если вопрос в деньгах, то вопроса нет, я заплачу вам столько, сколько стоит ваш корабль вместе с вами. Я вас покупаю!!! ",
-            en="If this is about money, I'll pay you double whatever you're owed. Triple, even!!!",
-        ),
-        VoiceLine(
-            700,
+            1310,
             Hatcher,
-            ru="Трент, если ты не понял - отказывать профессору бесполезно. Проще сделать то, чего он хочет и уж потом вернуться к нашим делам. ",
-            en="Trent, as you can see, it's impossible to bargain with the professor. It'd be much easier if we just do what he wants and get back to our business later.",
+            ru="Пора возвращаться на базу. Летим в систему Форбс.",
+            en="",
         ),
-        VoiceLine(
-            710,
-            Trent,
-            ru="Как скажете. Я только за. К вратам в Форбс, леди и джентльмены! ",
-            en="Yeah, I read you. Onwards to Forbes, ladies and gentlemen!  ",
-        ),
+        # VoiceLine(
+        #     620,
+        #     Trent,
+        #     ru="Профессор Мандрейк. ",
+        #     en="Professor Mandrake. ",
+        # ),
+        # VoiceLine(
+        #     630,
+        #     Mandrake,
+        #     ru="Спасибо за своевременное спасение фриленсер... ",
+        #     en="Thanks for saving me. You got here just in time, freelancer... ",
+        # ),
+        # VoiceLine(
+        #     640,
+        #     Mandrake,
+        #     ru="Хотя, у меня ощущения что в тех местах, где изволите находиться вы, постоянно  что-нибудь взрывается и кто-нибудь с кем-нибудь сражается... ",
+        #     en="Although, one hazards that wherever you go death and destruction follow...",
+        # ),
+        # VoiceLine(
+        #     650,
+        #     Trent,
+        #     ru="Хетчер была права. Гений. ",
+        #     en="Hatcher was right. You are a genius! ",
+        # ),
+        # VoiceLine(
+        #     660,
+        #     Mandrake,
+        #     ru="Мисс Хетчер? Впрочем, неважно, нам нужно срочно вылететь на планету Форбс, мистер... ",
+        #     en="Miss Hatcher said that? Never mind. We have to fly to planet Forbes as fast as we can go, Mr. ... ",
+        # ),
+        # VoiceLine(
+        #     670,
+        #     Trent,
+        #     ru="Трент. Но у меня задание... ",
+        #     en="Trent. But I'm already on a mission...",
+        # ),
+        # VoiceLine(
+        #     680,
+        #     Mandrake,
+        #     ru="Молодой человек, у нас нет времени на все это. Мистер... э ... Трент, нам необходимо срочно прибыть на планету Форбс, понимаете, СРОЧНО! ",
+        #     en="Young man, we don't have time for that. Mr. … Trent, we have to get to Forbes IMMEDIATELY, this is NOT NEGOTIABLE! ",
+        # ),
+        # VoiceLine(
+        #     690,
+        #     Mandrake,
+        #     ru="Если вопрос в деньгах, то вопроса нет, я заплачу вам столько, сколько стоит ваш корабль вместе с вами. Я вас покупаю!!! ",
+        #     en="If this is about money, I'll pay you double whatever you're owed. Triple, even!!!",
+        # ),
+        # VoiceLine(
+        #     700,
+        #     Hatcher,
+        #     ru="Трент, если ты не понял - отказывать профессору бесполезно. Проще сделать то, чего он хочет и уж потом вернуться к нашим делам. ",
+        #     en="Trent, as you can see, it's impossible to bargain with the professor. It'd be much easier if we just do what he wants and get back to our business later.",
+        # ),
+        # VoiceLine(
+        #     710,
+        #     Trent,
+        #     ru="Как скажете. Я только за. К вратам в Форбс, леди и джентльмены! ",
+        #     en="Yeah, I read you. Onwards to Forbes, ladies and gentlemen!  ",
+        # ),
         VoiceLine(
             720,
             Sigma17Police,

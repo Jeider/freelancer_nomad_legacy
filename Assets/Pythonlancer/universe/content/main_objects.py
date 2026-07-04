@@ -2255,6 +2255,7 @@ class Tradelane:
     LAST_RING_LOADOUT = MIDDLE_RING_LOADOUT
     START_RING_LOADOUT = MIDDLE_RING_LOADOUT
     TLR_Y_OFFSET = 0
+    TLR_Y_SYSTEM_OFFSET = False
 
     RING_TEMPLATE = '''[Object]
 nickname = {ring_nickname}
@@ -2287,9 +2288,17 @@ pilot = pilot_solar_hard
             index=self.tradelane_index,
         )
 
+    def get_y_offset(self):
+        if self.TLR_Y_SYSTEM_OFFSET:
+            return self.trade_connection.get_obj_from().get_position()[1]
+
+        return self.TLR_Y_OFFSET
+
+
     def get_tradelane_pos(self):
         tlr_pos = self.tracks_raw_tradelane.lines[POS_KEY]
-        return tlr_pos[0], tlr_pos[1] + self.TLR_Y_OFFSET, tlr_pos[2]
+
+        return tlr_pos[0], tlr_pos[1] + self.get_y_offset(), tlr_pos[2]
 
     def get_tradelane_rotate(self):
         return self.tracks_raw_tradelane.lines[ROT_KEY]
@@ -2633,6 +2642,34 @@ class LargeTradeConnection(TradeConnection):
     TLR_DISTANCE = 12000
     TRADELANE_CLASS = LargeTradelane
     POLICE_PATROL = False  # Temporary
+
+
+class AnomalyTradelane(Tradelane):
+    ARCHETYPE = 'Trade_Lane_Ring_Anomaly'
+    MIDDLE_RING_LOADOUT = 'anomaly_tradelane_loadout'
+    LAST_RING_LOADOUT = MIDDLE_RING_LOADOUT
+    START_RING_LOADOUT = MIDDLE_RING_LOADOUT
+    TLR_Y_SYSTEM_OFFSET = True
+
+
+class AnomalyTradeConnection(TradeConnection):
+    TLR_DISTANCE = 12000
+    TRADELANE_CLASS = AnomalyTradelane
+    POLICE_PATROL = False
+
+
+class AnomalySlowTradelane(Tradelane):
+    ARCHETYPE = 'Trade_Lane_Ring_Anomaly_Slow'
+    MIDDLE_RING_LOADOUT = 'anomaly_tradelane_loadout'
+    LAST_RING_LOADOUT = MIDDLE_RING_LOADOUT
+    START_RING_LOADOUT = MIDDLE_RING_LOADOUT
+    TLR_Y_SYSTEM_OFFSET = True
+
+
+class AnomalySlowTradeConnection(TradeConnection):
+    TLR_DISTANCE = 7000
+    TRADELANE_CLASS = AnomalySlowTradelane
+    POLICE_PATROL = False
 
 
 class DestroyedTradelane(Tradelane):

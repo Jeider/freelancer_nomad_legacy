@@ -52,6 +52,8 @@ from universe.systems import virt1 as virt1_content
 from universe.systems import virt2 as virt2_content
 from universe.systems import virt3 as virt3_content
 from universe.systems import monkey as monkey_content
+from universe.systems import anomaly as anomaly_content
+from universe.systems import ice as ice_content
 from universe.systems import lair_enter as lair_enter_content
 
 
@@ -916,16 +918,33 @@ class monkey(system.StorySystem, system.SiriusSystem):
     JUMP_EFFECT = jump_effect.Edge
 
 
+# TODO: rename to ice anomaly
 class nomad_anomaly(system.StorySystem, system.SiriusSystem):
     NAME = 'anm'
     DIRECT_TEMPLATE_NAME = 'anm_dev'
     RU_NAME = MS('Номадская аномалия', "Nomad Anomaly")
-    # CONTENT = monkey_content
+    CONTENT = anomaly_content
 
     ALLOW_SYNC = True
 
     SYSTEM_FOLDER = 'ANOMALY'
     NAVMAP_POS = '12.5, 15.5'
-    SPACE_FARCLIP = 100000
+    SPACE_FARCLIP = 1000000
 
     JUMP_EFFECT = jump_effect.Edge
+
+
+class nomad_ice(system.StorySystem, system.SiriusSystem):
+    NAME = 'ice'
+    DIRECT_TEMPLATE_NAME = 'ice_dev'
+    RU_NAME = MS('Ледяная система', "Ice System")
+    CONTENT = ice_content
+
+    ALLOW_SYNC = True
+
+    SYSTEM_FOLDER = 'ICE'
+    NAVMAP_POS = '12.5, 15.5'
+    SPACE_FARCLIP = 1000000
+
+    JUMP_EFFECT = jump_effect.Edge
+

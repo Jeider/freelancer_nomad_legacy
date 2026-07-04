@@ -400,12 +400,12 @@ class Msn8Sprague(Msn8, script.CutsceneProps):
     THORN_CLASS = m08.SpragueScene
     DESCRIPTION = ''
     VOICE_LINES = [
-        VoiceLine(10, Mandrake, ru="Рад снова вас видеть,, мистер Трент.", en="Glad to see you again, Mr. Trent."),
-        VoiceLine(20, Mandrake, ru="Хорошо,, что вы смогли доставить до нас хотя бы Том Пр+отэуса. Теперь он точно будет в безопасности.", en="It's good that you managed to deliver at least the Proteus tome to us. Now it will definitely be safe."),
+        VoiceLine(10, Mandrake, ru="Рад снова вас видеть, мистер Трент!", en="Glad to see you again, Mr. Trent."),
+        VoiceLine(20, Mandrake, ru="Хорошо, что вы смогли доставить до нас хотя бы Том Про́тэуса. Теперь он точно будет в безопасности.", en="It's good that you managed to deliver at least the Proteus tome to us. Now it will definitely be safe."),
         VoiceLine(30, Trent, ru="К вашим услугам, профессор. Я тоже рад вас видеть.", en="At your service, Professor. I'm glad to see you too."),
         VoiceLine(40, Mandrake, ru="Кстати,, мистер Трент, у Ордена не было еще каких-либо артефактов?", en="By the way, Mr. Trent, did the Order have any other artifacts?"),
         VoiceLine(50, Trent, ru="Ну был какой-то кристалл,, который я разбил. После этого я очутился на друг+ом конце Сириуса в Бретонии.", en="Well, there was some crystal that I broke. After that, I found myself on the other end of Sirius, in Bretonia."),
-        VoiceLine(60, Mandrake, ru="А, так вот как он работает!", en="Ah, so that's how it works!"),
+        VoiceLine(60, Mandrake, ru="(удивление учёного!) А, так вот как он работает!", en="Ah, so that's how it works!"),
         VoiceLine(70, Trent, ru="Что-то не так,, профессор?", en="Is something wrong, Professor?"),
         VoiceLine(80, Mandrake, ru="Мы проводили несколько экспериментов и этот артефакт просто испарялся. Мы пробовали на людях. И они испарялись вместе с артефактом...", en="We ran several experiments, and that artifact simply evaporated. We tried it on people. And they evaporated along with the artifact..."),
         VoiceLine(90, Mandrake, ru="Вам повезло,, что вы оказались в обитаемой системе, а не в пустом космическом пространстве в тысяче световых лет от цивилизованных систем.", en="You were lucky to end up in an inhabited system, rather than in empty space a thousand light-years from civilized systems."),

@@ -2,8 +2,8 @@ import sys
 import glob
 from PIL import Image
 
-THE_PATH = 'E:/FL/IMG_OUT/BOLT/*.png'
-OUT_IMAGE = 'E:/FL/IMG_OUT/VID_RESULT/merged_image_bolt_{index}.png'
+THE_PATH = 'E:/FL/IMG_OUT/BOLT2/*.png'
+OUT_IMAGE = 'E:/FL/IMG_OUT/VID_RESULT/merged_image_bolt2_{index}.png'
 
 FRAME_SIZE = 1024
 FRAMES_PER_LINE = 8

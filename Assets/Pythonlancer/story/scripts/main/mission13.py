@@ -171,7 +171,7 @@ class Msn13Space(Msn13, script.SpaceVoiceProps):
         VoiceLine(470, Mandrake, ru='Мы лишили Крыга естественного притока энергии, теперь он пытается восполнить её из Сферы',
 								 en='Destroying the generators cut off the Krieg\'s ability to siphon energy from it\'s environment; it\'s drawing power directly from the Sphere instead.'),
 
-        VoiceLine(480, Mandrake, ru='Мистер Трент, нужно дестабилизировать работу энергосистемы Сферы!', en='Mister Trent, we have one chance! Destabilize the Sphere\'s energy grid!'),
+        VoiceLine(480, Mandrake, ru='(приказ!) Мистер Трент, нужно дестабилизировать работу энергосистемы Сферы!', en='Mister Trent, we have one chance! Destabilize the Sphere\'s energy grid!'),
         VoiceLine(490, Mandrake, ru='Вы должн+ы залезть в канализационные каналы и нарушить целостность энергосетей!',
 								 en='You must enter the maintenance conduits and disrupt the power network from within!'),
 
@@ -187,12 +187,12 @@ class Msn13Space(Msn13, script.SpaceVoiceProps):
 								en='The Sphere has powered down. Good work, Trent, now get the hell out of that death trap!'),
 
         VoiceLine(550, Alaric, ru='И что теперь? Что нам делать с Крыгом', en=' So now what? How do we deal with the Krieg?'),
-        VoiceLine(560, Mandrake, ru='У меня есть одна идея, только нам нужно...', en='I have an idea, but we need to...'),
+        VoiceLine(560, Mandrake, ru='(не успеть сказать как...)У меня есть одна идея, только нам нужно...', en='I have an idea, but we need to...'),
 
-        VoiceLine(570, Darcy, ru='Корабли Кочевников! Как они тут оказались?!', en='Nomad ships! How did they get here?!'),
+        VoiceLine(570, Darcy, comment='Появилися корабли инопланетян!', ru='Корабли Кочевников! Как они тут оказались?!', en='Nomad ships! How did they get here?!'),
         VoiceLine(580, Mandrake, ru='Крыг их подчинил!', en='The Krieg must have taken them over!'),
         VoiceLine(590, Alaric, ru='Как?!', en='How?!'),
-        VoiceLine(600, Mandrake, ru='Полностью! Мистер Трент, нужно срочно вынуть номадское энергоядр+о из установки Р+окфорда!',
+        VoiceLine(600, Mandrake, ru='(приказ, все на панике!) Полностью! Мистер Трент, нужно срочно вынуть номадское энергоядр+о из установки Р+окфорда!',
 								 en='Who cares! Mister Trent, we must remove the Nomad power core from Rockford\'s device!'),
         VoiceLine(610, Trent, ru='Принято, сейчас сделаем', en='Understood, on it!'),
 
@@ -217,7 +217,7 @@ class Msn13Space(Msn13, script.SpaceVoiceProps):
 								 en='Precisely. My calculations indicate the power core can be used to emit Dom\'Kavash signatures—the same entities the Krieg is programmed to annihilate.'),
         VoiceLine(750, Mandrake, ru='Мне лишь неизвестно каким образом это сделать', en='However I am unsure how precisely to do this.'),
         VoiceLine(760, EdisonTrent, ru='Не проблема. На моём корабле есть старая установка профессора Квентейна, которой мы победили кочевников в прошлый раз. Нужно лишь внести пару доработок', en='My ship still has Professor Quintaine\'s old device on board, the one we used to defeat the Nomads last time around. It\'ll work, it just needs a few tweaks.'),
-        VoiceLine(770, Mandrake, ru='Мистер Трент, вы просто восхитительны!', en='Incredible!'),
+        VoiceLine(770, Mandrake, comment='В сюжете два "Трент", первый это персонаж первой части, опытный чувак, поэтому Мандрейк обращается к нему с большим уважением', ru='Мистер Трент, вы просто восхитительны!', en='Incredible!'),
         VoiceLine(780, King, ru='Это звучит как хороший план. Трент, рад тебя слышать. Садитесь на Осирис. Мы доставим вас до Омеги-13',
 							 en='Now that\'s a solid plan. Trent, good to hear your voice. Trent you too. Damn this is getting confusing. Everyone, dock with the Osiris. We\'ll get everyone to Omega-13.'),
 
@@ -299,7 +299,7 @@ class Msn13Space(Msn13, script.SpaceVoiceProps):
         VoiceLine(1590, Trent, ru="Но на моём корабле нет катапульты!", en='But my ship doesn\'t have a catapult!', cinematic=True),
         VoiceLine(1600, EdisonTrent, ru="Знаю, знаю... чёрт...", en='I know, I know... damn it...', cinematic=True),
 
-        VoiceLine(1610, Mandrake, ru="Всем внимание! Крыг замечен в системе!", en='Everyone, attention! The Krieg has arrived!', cinematic=True),
+        VoiceLine(1610, Mandrake, ru="(Вниманиеее!) Всем внимание! Крыг замечен в системе!", en='Everyone, attention! The Krieg has arrived!', cinematic=True),
 
         VoiceLine(1620, Trent, ru="Тёзка, давай мне маяк. Деваться некуда, дотащу сам", en='Okay Trent, give me the beacon. I\'ll get it done.', cinematic=True),
         VoiceLine(1630, EdisonTrent, ru="Да, сейчас", en='Yeah, okay here you go.'),

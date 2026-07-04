@@ -93,9 +93,7 @@ class Msn12CapturedCutscene(Msn12, script.CutsceneProps):
 
         VoiceLine(100, Mandrake, ru='Генерал Кинг, мистер Трент, мисс Хетчер. О, да я смотрю,, все в сборе.', en='General King, Mister Trent, Miss Hatcher. Oh, I see everyone is here. '),
         VoiceLine(110, Mandrake, ru='Я ознакомился с так называемым планом Рокфорда. Как ученый,, могу сказать - он хорош.', en=' I\'ve found and reviewed Rockford\'s previous proposal to destroy the Sphere. As a scientist, I must say — it\'s brilliant.'),
-        VoiceLine(120, Mandrake, ru='Рокфорд связал около двадцати лазерных орудий кочевников в единую систему. '
-        'Интересное с инженерной точки зрения решение,, надо сказать.',
-        en='Rockford plans to use the Key to activate the Sphere, which will in turn combine some twenty Nomad weapons into a single, unified super laser weapon.'
+        VoiceLine(120, Mandrake, ru='Рокфорд собрал мощную излучающую установку и усилил её нома́дским энергоядром ', en='Rockford plans to use the Key to activate the Sphere, which will in turn combine some twenty Nomad weapons into a single, unified super laser weapon.'
         'A fascinating feat of engineering, I must say.'),
         VoiceLine(130, Mandrake, ru='Он хочет направить получившийся в результате луч на Сферу чтобы уничтожить её, '
         'и вместе с ней всё,, так называемое,, наследие кочевников.',
