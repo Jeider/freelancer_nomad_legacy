@@ -918,7 +918,6 @@ class monkey(system.StorySystem, system.SiriusSystem):
     JUMP_EFFECT = jump_effect.Edge
 
 
-# TODO: rename to ice anomaly
 class nomad_anomaly(system.StorySystem, system.SiriusSystem):
     NAME = 'anm'
     DIRECT_TEMPLATE_NAME = 'anm_dev'
@@ -929,7 +928,7 @@ class nomad_anomaly(system.StorySystem, system.SiriusSystem):
 
     SYSTEM_FOLDER = 'ANOMALY'
     NAVMAP_POS = '12.5, 15.5'
-    SPACE_FARCLIP = 1000000
+    SPACE_FARCLIP = 600000
 
     JUMP_EFFECT = jump_effect.Edge
 

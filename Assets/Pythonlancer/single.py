@@ -35,15 +35,15 @@ from story import actors
 from tools.system_template import SystemTemplateLoader
 
 from templates.solar import hacker_panel
-from templates.dockable import terraforming
+from templates.dockable import dyson
 from templates.dockable import scient
 
 
 def draw_base():
-    new_name = None
+    new_name = 'nmd_anm_dyson'
     move_to = None
     rotate_core = 0
-    workspace = '17'
+    workspace = '18'
 
     # base_class = m13.RockfordGenerator
     # new_name = 'or_hq_vienna_entry'
@@ -59,12 +59,12 @@ def draw_base():
 
     # base_class = terraforming.TerraformingRotate
     # new_name = 'communicator'
-    move_to = (55000, 0, -3000)
+    move_to = (-19000, 0, -18000)
 
     # base_class = nomad_asf_hq.AsfHQ
     # rotate_core = 45
 
-    base_class = scient.WillardFull
+    base_class = dyson.DysonCity
 
     the_base = base_class()
     content = the_base.get_instance(new_space_object_name=new_name, move_to=move_to, rotate_core=rotate_core)
