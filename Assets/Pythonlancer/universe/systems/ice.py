@@ -118,6 +118,26 @@ class IceTredelaneRing7(IceMember, main_objects.VirtualDepot):
     MIN_REL_IGNORE = True
 
 
+class IceTredelaneRing12(IceMember, main_objects.VirtualDepot):
+    ALIAS = 'ring'
+    INDEX = 12
+    REL = RIGHT
+    RU_NAME = MS('Точка', "Point")
+    REL_DRIFT = 0
+    REL_APPEND = 0
+    MIN_REL_IGNORE = True
+
+
+class IceTredelaneRing13(IceMember, main_objects.VirtualDepot):
+    ALIAS = 'ring'
+    INDEX = 13
+    REL = RIGHT
+    RU_NAME = MS('Точка', "Point")
+    REL_DRIFT = 0
+    REL_APPEND = 0
+    MIN_REL_IGNORE = True
+
+
 class IceTredelaneRing8(IceMember, main_objects.VirtualDepot):
     ALIAS = 'ring'
     INDEX = 8
@@ -146,6 +166,27 @@ class IceTredelaneRing10(IceMember, main_objects.VirtualDepot):
     REL_DRIFT = 0
     REL_APPEND = 0
     MIN_REL_IGNORE = True
+
+
+class IceTredelaneBuoy1(IceMember, main_objects.VirtualDepot):
+    ALIAS = 'buoy'
+    INDEX = 1
+    REL = RIGHT
+    RU_NAME = MS('Точка', "Point")
+    REL_DRIFT = 0
+    REL_APPEND = 0
+    MIN_REL_IGNORE = True
+
+
+class IceTredelaneBuoy2(IceMember, main_objects.VirtualDepot):
+    ALIAS = 'buoy'
+    INDEX = 2
+    REL = RIGHT
+    RU_NAME = MS('Точка', "Point")
+    REL_DRIFT = 0
+    REL_APPEND = 0
+    MIN_REL_IGNORE = True
+
 
 
 class IceTunnel1(IceMember, main_objects.AnomalyTradeConnection):
@@ -202,10 +243,35 @@ class IceTunnel5(IceMember, main_objects.AnomalyTradeConnection):
     SIDE_FROM = LEFT
     SIDE_TO = RIGHT
     TRADELANE_LETTER = 'E'
-    TLR_DISTANCE = 10000
+    TLR_DISTANCE = 7000
     REL_DRIFT = 0
     REL_APPEND = 0
     MIN_REL_IGNORE = True
+
+
+class IceTunnel6(IceMember, main_objects.AnomalyTradeConnection):
+    OBJ_FROM = IceTredelaneRing12
+    OBJ_TO = IceTredelaneRing13
+    SIDE_FROM = LEFT
+    SIDE_TO = RIGHT
+    TRADELANE_LETTER = 'F'
+    TLR_DISTANCE = 25000
+    REL_DRIFT = 0
+    REL_APPEND = 0
+    MIN_REL_IGNORE = True
+
+
+class IceTunnel7(IceMember, main_objects.AnomalyBuoyTradeConnection):
+    OBJ_FROM = IceTredelaneBuoy1
+    OBJ_TO = IceTredelaneBuoy2
+    SIDE_FROM = LEFT
+    SIDE_TO = RIGHT
+    TRADELANE_LETTER = 'G'
+    TLR_DISTANCE = 5000
+    REL_DRIFT = 0
+    REL_APPEND = 0
+    MIN_REL_IGNORE = True
+    POLICE_PATROL = False
 
 
 

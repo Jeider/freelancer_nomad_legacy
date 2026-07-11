@@ -2709,12 +2709,13 @@ class BrokenTradeConnection(TradeConnection):
 
 
 class NavBuoyTradelane(Tradelane):
+    BUOY_ARCHETYPE = 'nav_buoy_non_targetable'
 
     RING_TEMPLATE = '''[Object]
 nickname = {ring_nickname}
 pos = {pos}
 rotate = {rotate}
-archetype = nav_buoy_non_targetable
+archetype = {archetype}
 visit = 128
 '''
 
@@ -2724,17 +2725,23 @@ visit = 128
             letter=self.trade_connection.TRADELANE_LETTER,
             index=self.tradelane_index,
         )
-
-    def get_tradelane_pos(self):
-        return self.tracks_raw_tradelane.lines[POS_KEY]
+    #
+    # def get_tradelane_pos(self):
+    #     return self.tracks_raw_tradelane.lines[POS_KEY]
 
     def get_system_object(self):
         template_params = {
             'ring_nickname': self.get_ring_nickname(),
-            'pos': '{0}, {1}, {2}'.format(*self.tracks_raw_tradelane.lines[POS_KEY]),
+            'pos': '{0}, {1}, {2}'.format(*self.get_tradelane_pos()),
             'rotate': '{0}, {1}, {2}'.format(*self.tracks_raw_tradelane.lines[ROT_KEY]),
+            'archetype': self.BUOY_ARCHETYPE,
         }
         return self.RING_TEMPLATE.format(**template_params)
+
+
+class AnomalyBuoy(NavBuoyTradelane):
+    TLR_Y_SYSTEM_OFFSET = True
+    BUOY_ARCHETYPE = 'nav_buoy'
 
 
 class BuoyTradeConnection(TradeConnection):
@@ -2743,6 +2750,14 @@ class BuoyTradeConnection(TradeConnection):
     TLR_OUTER_ZONE = False
 
     TLR_DISTANCE = 2000
+
+
+class AnomalyBuoyTradeConnection(TradeConnection):
+    TRADELANE_CLASS = AnomalyBuoy
+    POLICE_PATROL = False
+    TLR_OUTER_ZONE = False
+
+    TLR_DISTANCE = 5000
 
 
 class AbandonedBuoyTradeConnection(BuoyTradeConnection):

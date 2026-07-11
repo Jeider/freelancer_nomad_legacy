@@ -167,3 +167,38 @@ class MnkPortal(MonkeyMember, main_objects.NotDockableObject):
     ]
 
     RU_NAME = MS('Портал', 'Portal')
+
+
+
+
+
+class MonkeyTredelaneRing1(MonkeyMember, main_objects.VirtualDepot):
+    ALIAS = 'ring'
+    INDEX = 1
+    REL = RIGHT
+    RU_NAME = MS('Точка', "Point")
+    REL_DRIFT = 0
+    REL_APPEND = 0
+    MIN_REL_IGNORE = True
+
+
+class MonkeyTredelaneRing2(MonkeyMember, main_objects.VirtualDepot):
+    ALIAS = 'ring'
+    INDEX = 2
+    REL = RIGHT
+    RU_NAME = MS('Точка', "Point")
+    REL_DRIFT = 0
+    REL_APPEND = 0
+    MIN_REL_IGNORE = True
+
+
+class IceFastTradelane1(MonkeyMember, main_objects.AnomalyTradeConnection):
+    OBJ_FROM = MonkeyTredelaneRing1
+    OBJ_TO = MonkeyTredelaneRing2
+    SIDE_FROM = LEFT
+    SIDE_TO = RIGHT
+    TRADELANE_LETTER = 'E'
+    TLR_DISTANCE = 20000
+    REL_DRIFT = 0
+    REL_APPEND = 0
+    MIN_REL_IGNORE = True
