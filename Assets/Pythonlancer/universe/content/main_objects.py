@@ -2652,6 +2652,14 @@ class AnomalyTradelane(Tradelane):
     TLR_Y_SYSTEM_OFFSET = True
 
 
+class DysonAnomalyTradelane(Tradelane):
+    ARCHETYPE = 'Trade_Lane_Ring_Anomaly_Dyson'
+    MIDDLE_RING_LOADOUT = 'anomaly_tradelane_loadout'
+    LAST_RING_LOADOUT = MIDDLE_RING_LOADOUT
+    START_RING_LOADOUT = MIDDLE_RING_LOADOUT
+    TLR_Y_SYSTEM_OFFSET = True
+
+
 class AnomalyTradeConnection(TradeConnection):
     TLR_DISTANCE = 12000
     TRADELANE_CLASS = AnomalyTradelane
@@ -2669,6 +2677,26 @@ class AnomalySlowTradelane(Tradelane):
 class AnomalySlowTradeConnection(TradeConnection):
     TLR_DISTANCE = 7000
     TRADELANE_CLASS = AnomalySlowTradelane
+    POLICE_PATROL = False
+
+
+class DysonAnomalyTradeConnection(TradeConnection):
+    TLR_DISTANCE = 12000
+    TRADELANE_CLASS = DysonAnomalyTradelane
+    POLICE_PATROL = False
+
+
+class DysonAnomalySlowTradelane(Tradelane):
+    ARCHETYPE = 'Trade_Lane_Ring_Anomaly_Dyson_Slow'
+    MIDDLE_RING_LOADOUT = 'anomaly_tradelane_loadout'
+    LAST_RING_LOADOUT = MIDDLE_RING_LOADOUT
+    START_RING_LOADOUT = MIDDLE_RING_LOADOUT
+    TLR_Y_SYSTEM_OFFSET = True
+
+
+class DysonAnomalySlowTradeConnection(TradeConnection):
+    TLR_DISTANCE = 7000
+    TRADELANE_CLASS = DysonAnomalySlowTradelane
     POLICE_PATROL = False
 
 

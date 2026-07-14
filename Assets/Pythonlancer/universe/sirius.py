@@ -947,3 +947,18 @@ class nomad_ice(system.StorySystem, system.SiriusSystem):
 
     JUMP_EFFECT = jump_effect.Edge
 
+
+class nomad_outworld(system.StorySystem, system.SiriusSystem):
+    NAME = 'outworld'
+    DIRECT_TEMPLATE_NAME = 'outworld_dev'
+    RU_NAME = MS('Номадский внешний мир', "Nomad Outworld")
+    # CONTENT = anomaly_content
+
+    ALLOW_SYNC = True
+
+    SYSTEM_FOLDER = 'OUTWORLD'
+    NAVMAP_POS = '12.5, 15.5'
+    SPACE_FARCLIP = 600000
+
+    JUMP_EFFECT = jump_effect.Edge
+

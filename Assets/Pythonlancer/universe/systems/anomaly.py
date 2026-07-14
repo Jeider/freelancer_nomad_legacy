@@ -188,7 +188,7 @@ class AnomalyTredelaneRing14(AnomalyMember, main_objects.VirtualDepot):
     MIN_REL_IGNORE = True
 
 
-class AnomalyTunnel1(AnomalyMember, main_objects.AnomalyTradeConnection):
+class AnomalyTunnel1(AnomalyMember, main_objects.DysonAnomalyTradeConnection):
     OBJ_FROM = AnomalyTredelaneRing1
     OBJ_TO = AnomalyTredelaneRing2
     SIDE_FROM = LEFT
@@ -200,7 +200,7 @@ class AnomalyTunnel1(AnomalyMember, main_objects.AnomalyTradeConnection):
     MIN_REL_IGNORE = True
 
 
-class AnomalyTunnel2(AnomalyMember, main_objects.AnomalyTradeConnection):
+class AnomalyTunnel2(AnomalyMember, main_objects.DysonAnomalyTradeConnection):
     OBJ_FROM = AnomalyTredelaneRing3
     OBJ_TO = AnomalyTredelaneRing4
     SIDE_FROM = LEFT
@@ -212,7 +212,7 @@ class AnomalyTunnel2(AnomalyMember, main_objects.AnomalyTradeConnection):
     MIN_REL_IGNORE = True
 
 
-class AnomalyTunnel3(AnomalyMember, main_objects.AnomalyTradeConnection):
+class AnomalyTunnel3(AnomalyMember, main_objects.DysonAnomalyTradeConnection):
     OBJ_FROM = AnomalyTredelaneRing5
     OBJ_TO = AnomalyTredelaneRing6
     SIDE_FROM = LEFT
@@ -224,7 +224,7 @@ class AnomalyTunnel3(AnomalyMember, main_objects.AnomalyTradeConnection):
     MIN_REL_IGNORE = True
 
 
-class AnomalyTunnel4(AnomalyMember, main_objects.AnomalyTradeConnection):
+class AnomalyTunnel4(AnomalyMember, main_objects.DysonAnomalyTradeConnection):
     OBJ_FROM = AnomalyTredelaneRing7
     OBJ_TO = AnomalyTredelaneRing8
     SIDE_FROM = LEFT
@@ -236,7 +236,7 @@ class AnomalyTunnel4(AnomalyMember, main_objects.AnomalyTradeConnection):
     MIN_REL_IGNORE = True
 
 
-class AnomalyTunnel5(AnomalyMember, main_objects.AnomalyTradeConnection):
+class AnomalyTunnel5(AnomalyMember, main_objects.DysonAnomalyTradeConnection):
     OBJ_FROM = AnomalyTredelaneRing9
     OBJ_TO = AnomalyTredelaneRing10
     SIDE_FROM = LEFT
@@ -248,7 +248,7 @@ class AnomalyTunnel5(AnomalyMember, main_objects.AnomalyTradeConnection):
     MIN_REL_IGNORE = True
 
 
-class AnomalyTunnel6(AnomalyMember, main_objects.AnomalyTradeConnection):
+class AnomalyTunnel6(AnomalyMember, main_objects.DysonAnomalyTradeConnection):
     OBJ_FROM = AnomalyTredelaneRing11
     OBJ_TO = AnomalyTredelaneRing12
     SIDE_FROM = LEFT
@@ -260,7 +260,7 @@ class AnomalyTunnel6(AnomalyMember, main_objects.AnomalyTradeConnection):
     MIN_REL_IGNORE = True
 
 
-class AnomalyTunnel7(AnomalyMember, main_objects.AnomalyTradeConnection):
+class AnomalyTunnel7(AnomalyMember, main_objects.DysonAnomalyTradeConnection):
     OBJ_FROM = AnomalyTredelaneRing13
     OBJ_TO = AnomalyTredelaneRing14
     SIDE_FROM = LEFT
