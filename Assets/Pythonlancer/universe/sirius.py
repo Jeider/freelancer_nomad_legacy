@@ -962,3 +962,30 @@ class nomad_outworld(system.StorySystem, system.SiriusSystem):
 
     JUMP_EFFECT = jump_effect.Edge
 
+
+class nomad_arch(system.StorySystem, system.SiriusSystem):
+    NAME = 'arch'
+    DIRECT_TEMPLATE_NAME = 'arch_dev'
+    RU_NAME = MS('Арка', "Arch")
+    # CONTENT = anomaly_content
+
+    ALLOW_SYNC = True
+
+    SYSTEM_FOLDER = 'ARCH'
+    NAVMAP_POS = '12.5, 15.5'
+    SPACE_FARCLIP = 600000
+
+    JUMP_EFFECT = jump_effect.Edge
+
+
+class sphere3a(system.StorySystem, system.SiriusSystem):
+    NAME = 'sphere3a'
+    DIRECT_TEMPLATE_NAME = 'sph3a_inside_dev'
+    RU_NAME = MS('Сфера', 'Sphere')
+
+    ALLOW_SYNC = True
+
+    SYSTEM_FOLDER = 'SPHERE3A'
+    NAVMAP_POS = '15, 0'
+
+
