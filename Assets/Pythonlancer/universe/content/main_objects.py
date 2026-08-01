@@ -18,6 +18,7 @@ from universe import connection
 from universe import faction
 from text.content import mineable_info, dockable_info
 from universe.content import diversion
+from universe.content import encounter
 
 from tools.system_template import ObjectTemplateLoader
 from templates.space_object_template import SpaceObjectTemplate
@@ -456,6 +457,37 @@ class AutoStaticObject(StaticObject):
         return '{system_name}_{alias}_staticobj_{index}'.format(system_name=self.system.NAME, alias=self.ALIAS, index=self.INDEX)
 
 
+class MultipleStaticObjects(StaticObject):
+    ALIAS = 'static'
+    MAX_OBJECTS = 5
+
+    def has_appearance(self):
+        return True
+
+    def get_system_content(self):
+        content = []
+
+        for i in range(1, self.MAX_OBJECTS+1):
+            full_alias = f'{self.ALIAS}{i}'
+            try:
+                pos = self.system.template.get_item_pos(full_alias)
+            except Exception:
+                break
+
+            rot = self.system.template.get_item_rotate(full_alias)
+            archetype = self.system.template.get_item_archetype(full_alias)
+
+            content.append(
+                self.ARCHETYPE_TEMPLATE.format(
+                    nickname=f'{self.system.NAME}_auto_{self.ALIAS}_{i}',
+                    archetype=archetype,
+                    pos='{}, {}, {}'.format(*pos),
+                    rotate='{}, {}, {}'.format(*rot),
+                )
+            )
+
+        return DIVIDER.join(content)
+
 class NamedObject(StaticObject):
     LAZY_NAME = False
 
@@ -710,7 +742,6 @@ class Jumpgate(JumpableObject):
             return
 
 
-
 class Jumphole(JumpableObject):
     ALIAS = 'jh'
     REL_DRIFT = 500
@@ -737,6 +768,60 @@ class JumpgateAlt(Jumpgate):
 
     def get_jump_effect(self):
         return self.system.JUMP_EFFECT.JUMP_EFFECT_ALT
+
+
+class DangeonTradelane(NamedObject):
+    TARGET_INDEX = None
+    ALIAS = 'tlr'
+    ARCHETYPE = 'dangeon_tradelane'
+
+    def get_system_content(self):
+        system_name = self.system.NAME
+        name1 = self.get_inspace_nickname()
+        name2 = self.get_second_inspace_nickname()
+        pos1 = self.get_position()
+        rot1 = self.get_rotate()
+        pos2 = self.get_second_position()
+        rot2 = self.get_second_rotate()
+        return f'''
+[Object]
+nickname = {name1}
+ids_name = 068025
+pos = {pos1[0]:0.2f}, {pos1[1]:0.2f}, {pos1[2]:0.2f}
+rotate = {rot1[0]:0.2f}, {rot1[1]:0.2f}, {rot1[2]:0.2f}
+archetype = {self.ARCHETYPE}
+jump_effect = jump_effect_dangeon_tlr
+ids_info = 068003
+goto = {system_name}, {name2}, gate_tunnel_airlock
+
+[Object]
+nickname = {name2}
+ids_name = 068025
+pos = {pos2[0]:0.2f}, {pos2[1]:0.2f}, {pos2[2]:0.2f}
+rotate = {rot2[0]:0.2f}, {rot2[1]:0.2f}, {rot2[2]:0.2f}
+archetype =  {self.ARCHETYPE}
+jump_effect = jump_effect_dangeon_tlr
+ids_info = 068003
+goto = {system_name}, {name1}, gate_tunnel_airlock
+ '''
+
+    def get_inspace_nickname(self):
+        return '{system_name}_dangeon_tlr_{index}'.format(system_name=self.system.NAME, index=self.INDEX)
+
+    def get_second_inspace_nickname(self):
+        return '{system_name}_dangeon_tlr_{index}'.format(system_name=self.system.NAME, index=self.TARGET_INDEX)
+
+    def get_second_full_alias(self):
+        return self.FULL_ALIAS_TEMPLATE.format(
+            alias=self.get_alias(),
+            index=self.TARGET_INDEX,
+        )
+
+    def get_second_position(self):
+        return self.system.template.get_item_pos(self.get_second_full_alias())
+
+    def get_second_rotate(self):
+        return self.system.template.get_item_rotate(self.get_second_full_alias())
 
 
 class GenericSphere(StaticObject):
@@ -2701,14 +2786,15 @@ class DysonAnomalySlowTradeConnection(TradeConnection):
 
 
 class DestroyedTradelane(Tradelane):
-
+    ARCHETYPE = 'Trade_Lane_Ring_Damage_A'
+    TRADELANE_POSITION_DRIFT = 0
     RING_TEMPLATE = '''[Object]
 nickname = {ring_nickname}
 ids_name = 260920
 ids_info = 66170
 pos = {pos}
 rotate = {rotate}
-archetype = Trade_Lane_Ring_Damage_A
+archetype = {archetype}
 '''
 
     def get_ring_nickname(self):
@@ -2722,16 +2808,34 @@ archetype = Trade_Lane_Ring_Damage_A
         return self.tracks_raw_tradelane.lines[POS_KEY]
 
     def get_system_object(self):
+        pos = list(self.tracks_raw_tradelane.lines[POS_KEY])
+        if self.TRADELANE_POSITION_DRIFT > 0:
+            pos[0] += random.randint(0, self.TRADELANE_POSITION_DRIFT)
+            pos[1] += random.randint(0, self.TRADELANE_POSITION_DRIFT)
+            pos[2] += random.randint(0, self.TRADELANE_POSITION_DRIFT)
+
         template_params = {
             'ring_nickname': self.get_ring_nickname(),
-            'pos': '{0}, {1}, {2}'.format(*self.tracks_raw_tradelane.lines[POS_KEY]),
+            'pos': '{0}, {1}, {2}'.format(*pos),
             'rotate': '{0}, {1}, {2}'.format(*self.tracks_raw_tradelane.lines[ROT_KEY]),
+            'archetype': self.ARCHETYPE,
         }
         return self.RING_TEMPLATE.format(**template_params)
 
 
 class BrokenTradeConnection(TradeConnection):
     TRADELANE_CLASS = DestroyedTradelane
+    POLICE_PATROL = False
+    TLR_OUTER_ZONE = False
+
+
+class ParticleTradelane(DestroyedTradelane):
+    ARCHETYPE = 'm10_buoy'
+    TRADELANE_POSITION_DRIFT = 50
+
+
+class ParticleTradeConnection(TradeConnection):
+    TRADELANE_CLASS = ParticleTradelane
     POLICE_PATROL = False
     TLR_OUTER_ZONE = False
 
@@ -2964,3 +3068,121 @@ class BackgroundTunnelOmega13(BackgroundComplexObject):
     WORKSPACE_TEMPLATE_NAME = 'om13ast'
     ARCHETYPE_CHANGE_FROM = 'om15'  # it's initially om15 asteroid kind
 
+
+class DangeonDeathZone(BackgroundComplexObject):
+    ALIAS = 'death'
+    WORKSPACE_TEMPLATE_NAME = 'arch_death'
+    # ARCHETYPE_CHANGE_FROM = 'om15'  # do nothing
+
+
+class CustomerEncounterZone(SystemObject):
+    ALIAS = 'npc'
+    SHIPS = None
+
+    def get_inspace_nickname(self):
+        return '{system_name}_enc_{alias}_{index}'.format(system_name=self.system.NAME, alias=self.ALIAS, index=self.INDEX)
+
+    def get_ships(self):
+        return self.SHIPS
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        if self.SHIPS is None or len(self.SHIPS) == 0:
+            raise Exception(f'Encounter {self} have no ships')
+
+        self.faction = None
+        for ship in self.SHIPS:
+            if self.faction is None:
+                self.faction = ship.npc.faction
+            elif self.faction != ship.npc.faction:
+                raise Exception(f'Encounter {self} trying to use multiple factions! Correct: {self.faction.get_code()}, trying to use {ship.npc.faction.get_code()}')
+
+            ship.npc.set_name(f'custom_enc_{self.system.NAME}_{ship.name}')
+            ship.npc.change_have_npc_class(False)  # force remove from universe
+
+        enc_name = self.get_inspace_nickname()
+
+        self.enc = encounter.DynamicEncounter(
+            self.system,
+            enc_name,
+            self.SHIPS,
+            encounter.JOB_ASSAULT,
+        )
+
+    def get_system_content2(self):
+        system_name = self.system.NAME
+        name1 = self.get_inspace_nickname()
+        name2 = self.get_second_inspace_nickname()
+        pos1 = self.get_position()
+        rot1 = self.get_rotate()
+        pos2 = self.get_second_position()
+        rot2 = self.get_second_rotate()
+        return f'''
+[Object]
+nickname = {name1}
+ids_name = 068025
+pos = {pos1[0]:0.2f}, {pos1[1]:0.2f}, {pos1[2]:0.2f}
+rotate = {rot1[0]:0.2f}, {rot1[1]:0.2f}, {rot1[2]:0.2f}
+archetype = {self.ARCHETYPE}
+jump_effect = jump_effect_dangeon_tlr
+ids_info = 068003
+goto = {system_name}, {name2}, gate_tunnel_airlock
+
+[Object]
+nickname = {name2}
+ids_name = 068025
+pos = {pos2[0]:0.2f}, {pos2[1]:0.2f}, {pos2[2]:0.2f}
+rotate = {rot2[0]:0.2f}, {rot2[1]:0.2f}, {rot2[2]:0.2f}
+archetype =  {self.ARCHETYPE}
+jump_effect = jump_effect_dangeon_tlr
+ids_info = 068003
+goto = {system_name}, {name1}, gate_tunnel_airlock
+ '''
+    def get_system_content(self):
+
+        pos = self.get_position()
+        rot = self.get_rotate()
+        shape = self.get_shape()
+        size = self.get_size()
+
+        content = f'''[zone]
+nickname = Zone_{self.get_inspace_nickname()}_enc
+pos = {pos[0]:0.2f}, {pos[1]:0.2f}, {pos[2]:0.2f}
+rotate = {rot[0]:0.2f}, {rot[1]:0.2f}, {rot[2]:0.2f}
+shape = {shape}
+size = {','.join([str(s) for s in size])}
+toughness = 0
+density = 8
+repop_time = 30
+max_battle_size = 8
+relief_time = 57
+population_additive = false
+encounter = {self.enc.get_nickname()}, 1, 1
+faction = {self.faction.get_code()}, 1
+'''
+        return content
+
+
+    # def get_police_patrol(self):
+    #     if not self.POLICE_PATROL:
+    #         return
+    #     obj_from, obj_to = self.get_destination_objects()
+    #     obj_from_pos = self.system.get_object_position(obj_from)
+    #     obj_to_pos = self.system.get_object_position(obj_to)
+    #
+    #     patrol_faction = self.get_lawful_population_class().get_police_faction()
+    #     if base_from := obj_from.get_base():
+    #         base_from.add_faction(patrol_faction)
+    #     if base_to := obj_to.get_base():
+    #         base_to.add_faction(patrol_faction)
+    #
+    #     return PolicePatrol(
+    #         system=self.system,
+    #         population_kind=self.get_population_kind(),
+    #         index=,
+    #         positions=[
+    #             (obj_from_pos[0], 0, obj_from_pos[2]),
+    #             (obj_to_pos[0], 0, obj_to_pos[2]),
+    #         ]
+    #     )

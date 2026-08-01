@@ -160,25 +160,25 @@ class LawfulPopulation(Population):
     MAIN_TRADERS = None
 
     MAIN_ENCOUNTERS = [
-        encounter.MainDefend,
-        encounter.MainPatrol,
-        encounter.MainScout,
-        encounter.MainTrade,
-        encounter.MainTradeTLR,
-        encounter.AresXScout,
-        encounter.Lifter,
+        encounter.MainDefend(),
+        encounter.MainPatrol(),
+        encounter.MainScout(),
+        encounter.MainTrade(),
+        encounter.MainTradeTLR(),
+        encounter.AresXScout(),
+        encounter.Lifter(),
     ]
-    POLICE_PATROL = encounter.PatrolPolice
+    POLICE_PATROL = encounter.PatrolPolice()
 
     HIGH_CAPSHIP_ENC = None
     MEDIUM_CAPSHIP_ENC = None
 
-    BH_PATROL_ENC = encounter.BhPatrol
+    BH_PATROL_ENC = encounter.BhPatrol()
 
     GLOBAL_TRADERS_ENC = None
     GLOBAL_TRADERS_TLR_ENC = None
-    BH_TRADE_ENC = encounter.BhTrade
-    BH_TRADE_TLR_ENC = encounter.BhTradeTLR
+    BH_TRADE_ENC = encounter.BhTrade()
+    BH_TRADE_TLR_ENC = encounter.BhTradeTLR()
 
     SIMPLE_DEFENCE_ENCOUNTERS = '''
 encounter = main_defend, 5, 1.00000
@@ -303,7 +303,7 @@ class UnlawfulPopulation(Population):
     MAIN_PIRATES = None
     GENERIC_PIRATES = None
     JUNKERS = None
-    ATTACK_TLR_PATROL = encounter.PatrolTLR
+    ATTACK_TLR_PATROL = encounter.PatrolTLR()
 
     GENERAL_DEFENCE_ENCOUNTERS = '''
 encounter = main_defend, 5, 0.80000
@@ -341,11 +341,11 @@ class RheinlandLegalPopulation(LawfulPopulation):
     GLOBAL_TRADERS = faction.RheinlandTraders
     JUNKERS = faction.Junkers
 
-    HIGH_CAPSHIP_ENC = encounter.RhCruiser
-    MEDIUM_CAPSHIP_ENC = encounter.RhGunboat
+    HIGH_CAPSHIP_ENC = encounter.RhCruiser()
+    MEDIUM_CAPSHIP_ENC = encounter.RhGunboat()
 
-    GLOBAL_TRADERS_ENC = encounter.RhTransport
-    GLOBAL_TRADERS_TLR_ENC = encounter.RhTransportTLR
+    GLOBAL_TRADERS_ENC = encounter.RhTransport()
+    GLOBAL_TRADERS_TLR_ENC = encounter.RhTransportTLR()
 
 
 class LibertyLegalPopulation(LawfulPopulation):
@@ -356,11 +356,11 @@ class LibertyLegalPopulation(LawfulPopulation):
     GLOBAL_TRADERS = faction.LibertyTraders
     JUNKERS = faction.LibertyRogues
 
-    HIGH_CAPSHIP_ENC = encounter.LiCruiser
-    MEDIUM_CAPSHIP_ENC = encounter.LiCruiser
+    HIGH_CAPSHIP_ENC = encounter.LiCruiser()
+    MEDIUM_CAPSHIP_ENC = encounter.LiCruiser()
 
-    GLOBAL_TRADERS_ENC = encounter.LiTransport
-    GLOBAL_TRADERS_TLR_ENC = encounter.LiTransportTLR
+    GLOBAL_TRADERS_ENC = encounter.LiTransport()
+    GLOBAL_TRADERS_TLR_ENC = encounter.LiTransportTLR()
 
 
 class BretoniaLegalPopulation(LawfulPopulation):
@@ -371,11 +371,11 @@ class BretoniaLegalPopulation(LawfulPopulation):
     GLOBAL_TRADERS = faction.BretoniaTraders
     JUNKERS = faction.Xenos
 
-    HIGH_CAPSHIP_ENC = encounter.BrDestroyer
-    MEDIUM_CAPSHIP_ENC = encounter.BrGunboat
+    HIGH_CAPSHIP_ENC = encounter.BrDestroyer()
+    MEDIUM_CAPSHIP_ENC = encounter.BrGunboat()
 
-    GLOBAL_TRADERS_ENC = encounter.BrTransport
-    GLOBAL_TRADERS_TLR_ENC = encounter.BrTransportTLR
+    GLOBAL_TRADERS_ENC = encounter.BrTransport()
+    GLOBAL_TRADERS_TLR_ENC = encounter.BrTransportTLR()
 
 
 class KusariLegalPopulation(LawfulPopulation):
@@ -386,11 +386,11 @@ class KusariLegalPopulation(LawfulPopulation):
     GLOBAL_TRADERS = faction.KusariTraders
     JUNKERS = faction.FarmerAlliance
 
-    HIGH_CAPSHIP_ENC = encounter.KuDestroyer
-    MEDIUM_CAPSHIP_ENC = encounter.KuGunboat
+    HIGH_CAPSHIP_ENC = encounter.KuDestroyer()
+    MEDIUM_CAPSHIP_ENC = encounter.KuGunboat()
 
-    GLOBAL_TRADERS_ENC = encounter.KuTransport
-    GLOBAL_TRADERS_TLR_ENC = encounter.KuTransportTLR
+    GLOBAL_TRADERS_ENC = encounter.KuTransport()
+    GLOBAL_TRADERS_TLR_ENC = encounter.KuTransportTLR()
 
 
 class RheinlandPiratePopulation(UnlawfulPopulation):

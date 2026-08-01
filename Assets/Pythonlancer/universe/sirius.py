@@ -55,6 +55,8 @@ from universe.systems import monkey as monkey_content
 from universe.systems import anomaly as anomaly_content
 from universe.systems import ice as ice_content
 from universe.systems import lair_enter as lair_enter_content
+from universe.systems import sphere3b as sphere3b_content
+from universe.systems import arch as arch_content
 
 
 
@@ -963,21 +965,6 @@ class nomad_outworld(system.StorySystem, system.SiriusSystem):
     JUMP_EFFECT = jump_effect.Edge
 
 
-class nomad_arch(system.StorySystem, system.SiriusSystem):
-    NAME = 'arch'
-    DIRECT_TEMPLATE_NAME = 'arch_dev'
-    RU_NAME = MS('Арка', "Arch")
-    # CONTENT = anomaly_content
-
-    ALLOW_SYNC = True
-
-    SYSTEM_FOLDER = 'ARCH'
-    NAVMAP_POS = '12.5, 15.5'
-    SPACE_FARCLIP = 600000
-
-    JUMP_EFFECT = jump_effect.Edge
-
-
 class sphere3a(system.StorySystem, system.SiriusSystem):
     NAME = 'sphere3a'
     DIRECT_TEMPLATE_NAME = 'sph3a_inside_dev'
@@ -989,3 +976,29 @@ class sphere3a(system.StorySystem, system.SiriusSystem):
     NAVMAP_POS = '15, 0'
 
 
+class sphere3b(system.StorySystem, system.SiriusSystem):
+    NAME = 'sphere3b'
+    DIRECT_TEMPLATE_NAME = 'sph3_dev'
+    RU_NAME = MS('Сфера', 'Sphere')
+    CONTENT = sphere3b_content
+
+    ALLOW_SYNC = True
+
+    SYSTEM_FOLDER = 'SPHERE3B'
+    NAVMAP_POS = '15, 0'
+
+
+class nomad_arch(system.System, system.SiriusSystem):
+    NAME = 'arch'
+    RU_NAME = MS('Арка', "Arch")
+    TEMPLATE_NAME = 'arch'
+    CONTENT = arch_content
+
+    ALLOW_SYNC = True
+    ENABLE_POPULATION = False
+
+    SYSTEM_FOLDER = 'ARCH'
+    NAVMAP_POS = '12.5, 15.5'
+    SPACE_FARCLIP = 100000
+
+    JUMP_EFFECT = jump_effect.Edge

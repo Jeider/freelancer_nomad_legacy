@@ -208,7 +208,7 @@ npc_class = {classes_list}'''
 
     def __init__(self, faction, ship, equip_map=None, level=None, name=None,
                  extra_equip=None, have_afterburn1=True, have_afterburn2=True, gen_armor=True,
-                 animated_wings=True):
+                 animated_wings=True, have_npc_class=True):
         self.faction = faction
         self.ship = ship
         self.equip_map = equip_map
@@ -220,6 +220,7 @@ npc_class = {classes_list}'''
         self.have_afterburn2 = have_afterburn2
         self.gen_armor = gen_armor
         self.animated_wings = animated_wings
+        self.have_npc_class = have_npc_class
 
     def set_name(self, name):
         self.name = name
@@ -240,12 +241,16 @@ npc_class = {classes_list}'''
     def get_loadout_nickname(self):
         return self.get_npc_shiparch_nickname()
 
+    def change_have_npc_class(self, have_npc_class):
+        self.have_npc_class = have_npc_class
+
     def get_classes_list(self):
         classes = [self.faction.LEGALITY]
-        if self.ship.IS_FIGHTER:
-            classes.append(self.CLASS_FIGHTER)
-        classes.append(self.get_npc_level_code())
-        classes += self.ship.EXTRA_CLASSES
+        if self.have_npc_class:
+            if self.ship.IS_FIGHTER:
+                classes.append(self.CLASS_FIGHTER)
+            classes.append(self.get_npc_level_code())
+            classes += self.ship.EXTRA_CLASSES
         return ', '.join(classes)
 
     def get_pilot(self):

@@ -46,6 +46,8 @@ class UniverseManager:
 
         self.asteroid_definitions = []
         self.templated_nebulas = []
+        self.custom_encounters = []
+        self.custom_enc_ship_loadouts = []
         self.interior_files = {}
         self.interior_definitions = []
         self.interior_extra_rooms = []
@@ -70,9 +72,9 @@ class UniverseManager:
             base.post_store_load()
 
         self.load_interiors()
+        self.load_custom_encounters()
 
         self.sync_data()
-        self.population.post_sync_data()
 
     def get_random_hacker_panel(self):
         return self.hacker_panels_manager.get_random_hacker_panel()
@@ -96,6 +98,7 @@ class UniverseManager:
                 self.asteroid_definitions += system.asteroid_definitions
                 self.templated_nebulas += system.templated_nebulas
                 self.keys += system.keys
+                self.custom_encounters += system.custom_encounters
 
                 for dockable in system.get_dockable_objects():
                     if infocard_map := dockable.get_infocard_map():
@@ -142,6 +145,20 @@ class UniverseManager:
                 self.interior_extra_rooms += interior_extra_rooms
                 self.mbases_content += mbases_content
 
+    def load_custom_encounters(self):
+        for custom_enc in self.custom_encounters:
+            for ship in custom_enc.get_ships():
+                npc = ship.npc
+
+                npc.set_equipment_package(self.population.get_equipment_package(npc))
+                loadout = npc.get_loadout(self.shiparch)
+
+                self.custom_enc_ship_loadouts.append(loadout)
+                self.core.population.add_npc_to_list(npc)
+
+                faction = self.core.factions.get_by_code(npc.faction.CODE)
+                faction.add_npc_ship(npc.get_npc_shiparch_nickname())
+
     def get_market_equip(self):
         return DIVIDER.join([dealer.get_market_content() for dealer in self.equip_dealers])
 
@@ -156,6 +173,9 @@ class UniverseManager:
 
     def get_system_loadouts(self):
         return DIVIDER.join([loadout.build_loadout() for loadout in self.loadouts])
+
+    def get_custom_enc_loadouts(self):
+        return DIVIDER.join(self.custom_enc_ship_loadouts)
 
     def get_system_asteroid_definitions(self):
         return [asteroid_definition.get_file_content() for asteroid_definition in self.asteroid_definitions]
@@ -255,12 +275,16 @@ class UniverseManager:
             data_folder.sync_system(the_system.NAME, the_system.SYSTEMS_ROOT, the_system.SYSTEM_FOLDER, the_system.get_content())
 
         data_folder.sync_solar_gen_loadouts(self.get_system_loadouts())
+        data_folder.sync_custom_enc_ships_loadouts(self.get_custom_enc_loadouts())
 
         for definition in self.asteroid_definitions:
             data_folder.sync_asteroid_definition(definition.get_file_name(), definition.zone.SUBFOLDER, definition.get_file_content())
 
         for tpl_nebula in self.templated_nebulas:
             data_folder.sync_templated_nebula(tpl_nebula.get_file_name(), tpl_nebula.GENERATED_NEBULA_SUBFOLDER, tpl_nebula.get_file_content())
+
+        for custom_enc in self.custom_encounters:
+            data_folder.sync_custom_encounters(custom_enc.enc.get_nickname(), custom_enc.enc.get_file_content())
 
         for file_name, content in self.interior_files.items():
             data_folder.sync_interior(file_name, content)

@@ -17,8 +17,6 @@ POS_KEY = 'pos'
 ROT_KEY = 'rotate'
 SIZE_KEY = 'size'
 
-FULL_ALIAS_TEMPLATE = '{alias}{index}'
-
 RAND_ROTATE_MIN = -360
 RAND_ROTATE_MAX = 360
 
@@ -61,6 +59,8 @@ class SystemObject:
     FORCE_FACTION = None
 
     POPULATION_KIND = population.POP_FIRST
+
+    FULL_ALIAS_TEMPLATE = '{alias}{index}'
 
     @classmethod
     def is_abstract(cls):
@@ -159,7 +159,7 @@ class SystemObject:
 
     @classmethod
     def get_full_alias(cls):
-        return FULL_ALIAS_TEMPLATE.format(
+        return cls.FULL_ALIAS_TEMPLATE.format(
             alias=cls.get_alias(),
             index=cls.INDEX,
         )
@@ -240,7 +240,7 @@ class DynamicSystemObject(SystemObject):
         return self.alias
 
     def get_full_dynamic_alias(self):
-        return FULL_ALIAS_TEMPLATE.format(
+        return self.FULL_ALIAS_TEMPLATE.format(
             alias=self.get_dynamic_alias(),
             index=self.index,
         )

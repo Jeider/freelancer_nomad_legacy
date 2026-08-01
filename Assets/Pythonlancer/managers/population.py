@@ -27,9 +27,10 @@ class PopulationManager:
 
         self.equip_maps = self.get_equipment_maps()
 
+    def post_process_population(self):
         self.load_game_data()
-
         self.sync_data()
+        self.post_sync_data()
 
     def get_world_factions(self):
         return self.world_factions
@@ -102,6 +103,9 @@ class PopulationManager:
                     self.loadouts_list.append(loadout)
 
                     faction.add_npc_ship(npc.get_npc_shiparch_nickname())
+
+    def add_npc_to_list(self, npc):
+        self.npc_list.append(npc)
 
     def get_npcships(self):
         return DIVIDER.join([npc.get_npc_shiparch() for npc in self.npc_list])

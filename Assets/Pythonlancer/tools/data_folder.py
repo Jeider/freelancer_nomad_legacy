@@ -181,6 +181,13 @@ class DataFolder:
         nebula_file = self.get_solar() / 'NEBULA_MOD' / subfolder / f'{nebula_file_name}.ini'
         nebula_file.write_text(content, encoding='utf-8')
 
+    def sync_custom_encounters(self, encounter_filename, content):
+        if self.build_to_folder:
+            return
+
+        nebula_file = self.get_missions() / 'NPC' / 'GENERATED' / f'{encounter_filename}.ini'
+        nebula_file.write_text(content, encoding='utf-8')
+
     def sync_interior(self, interior_file_name, content):
         if self.build_to_folder:
             return
@@ -356,6 +363,10 @@ class DataFolder:
 
     def sync_story_ships_loadouts(self, content):
         equip_file = self.get_ships() / 'loadout_gen_story.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
+    def sync_custom_enc_ships_loadouts(self, content):
+        equip_file = self.get_ships() / 'loadout_gen_custom_enc.ini'
         equip_file.write_text(content, encoding='utf-8')
 
     def sync_dock_key(self, content):

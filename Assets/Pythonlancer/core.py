@@ -76,6 +76,8 @@ class LancerCore:
         self.store = StoreManager(self)
         self.universe = UniverseManager(self)
 
+        self.population.post_process_population()  # finalize population after universe is ready
+
         story = False
 
         self.story = StoryManager(self) if story else None

@@ -1,7 +1,7 @@
 import pathlib
 
 from universe.content.system_object import SystemObject
-from universe.content.main_objects import RawText, TradeConnection, JumpableObject, DockableObject, StaticObject
+from universe.content.main_objects import RawText, TradeConnection, JumpableObject, DockableObject, StaticObject, CustomerEncounterZone
 from universe.content import zones
 from universe.content.mineable import Mineable, RewardsGroup
 from universe.content import interior
@@ -138,6 +138,8 @@ distance = {tlr_distance}
         self.jumpgates_db = {}
         self.lawful_connections = []
 
+        self.custom_encounters = []
+
         self.keys = []
 
         name = MS(self.get_ru_name(), self.get_en_name())
@@ -187,7 +189,7 @@ distance = {tlr_distance}
             if not isinstance(item, type) or not issubclass(item, SystemObject):
                 continue
 
-            if item in (TradeConnection, DockableObject, TradeConnection):
+            if item in (TradeConnection, DockableObject):
                 continue
 
             if issubclass(item, RawText):
@@ -200,6 +202,8 @@ distance = {tlr_distance}
                 self.add_trade_connection(item)
             elif issubclass(item, zones.Zone):
                 self.add_static_zone(item)
+            elif issubclass(item, CustomerEncounterZone):
+                self.add_custom_encounter_zone(item)
 
         self.process_reward_groups()
 
@@ -269,6 +273,10 @@ distance = {tlr_distance}
                 system_content.append(patrol.get_system_content())
 
         system_content.extend(self.get_mission_vignettes())
+
+        for enc in self.get_custom_encounters():
+            system_content.append(enc.get_system_content())
+
 
         return DIVIDER.join(system_content)
 
@@ -532,6 +540,15 @@ distance = {tlr_distance}
             factions += self.SECOND_UNLAWFUL_POPULATION_CLASS.get_unlawful_factions()
         return factions
 
+    def add_custom_encounter_zone(self, item):
+        enc = item(self)
+        self.custom_encounters.append(
+            enc
+        )
+
+    def get_custom_encounters(self):
+        return self.custom_encounters
+
     def get_encounters_definitions(self):
         pop_classes = [
             self.FIRST_LAWFUL_POPULATION_CLASS,
@@ -551,6 +568,13 @@ distance = {tlr_distance}
                 if enc_name not in encounter_names:
                     encounters.append(pop_enc)
                     encounter_names.add(enc_name)
+
+        for custom_enc in self.get_custom_encounters():
+            enc = custom_enc.enc
+            enc_name = enc.get_nickname()
+            if enc_name not in encounter_names:
+                encounters.append(enc)
+                encounter_names.add(enc_name)
 
         return DIVIDER.join([enc.get_definition() for enc in encounters])
 
