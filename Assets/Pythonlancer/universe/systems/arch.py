@@ -479,7 +479,9 @@ class ArchDysonRubicNomadGateRewards(ArchMember, mineable.DefaultDysonRubicRewar
     SOLAR = dyson_rubic.DysonRubic
     REWARD_ITEM = None
     ULTRA_REWARD_BASES = [
-        ArchDemoBase,
+        ArchDangeonTradelane1,
+        ArchDangeonTradelane2,
+        ArchDangeonTradelane3,
     ]
 
 
@@ -507,7 +509,7 @@ class ArchDysonRubicField1(ArchMember, mineable.DysonRubicRewardField):
 
     INDEX = 1
 
-    ULTRA_BASE = ArchDemoBase
+    ULTRA_BASE = ArchDangeonTradelane1
 
 
 class ArchDysonRubicField2(ArchMember, mineable.DysonRubicRewardField):
@@ -520,7 +522,7 @@ class ArchDysonRubicField2(ArchMember, mineable.DysonRubicRewardField):
 
     INDEX = 2
 
-    ULTRA_BASE = ArchDemoBase
+    ULTRA_BASE = ArchDangeonTradelane2
 
 
 class ArchDysonRubicField3(ArchMember, mineable.DysonRubicRewardField):
@@ -533,7 +535,7 @@ class ArchDysonRubicField3(ArchMember, mineable.DysonRubicRewardField):
 
     INDEX = 3
 
-    ULTRA_BASE = ArchDemoBase
+    ULTRA_BASE = ArchDangeonTradelane3
 #
 #
 # class ArchEnc1(ArchMember, main_objects.CustomerEncounterZone):

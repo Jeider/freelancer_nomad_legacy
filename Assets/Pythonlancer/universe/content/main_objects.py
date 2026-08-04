@@ -127,6 +127,9 @@ archetype = {archetype}'''
         super().__init__(*args, **kwargs)
         self.connections = []
 
+    def get_key_archetype_name(self):
+        raise NotImplementedError
+
     def add_connection(self, the_conn):
         self.connections.append(the_conn)
 
@@ -673,11 +676,14 @@ class JumpableObject(NamedObject):
             system=self.system,
             locked_bases=[self.get_inspace_nickname()],
             unlocks_bases=[self.get_inspace_nickname()],
-            key_archetype_nickname=f'key_{self.get_space_object_name()}_unlock',
+            key_archetype_nickname=self.get_key_archetype_name(),
             key_fx=self.KEY_COLLECT_FX,
             key_name=key_name,
             key_description=key_desc,
         )
+
+    def get_key_archetype_name(self):
+        return f'key_{self.get_space_object_name()}_unlock'
 
     def get_key(self):
         if not self.LOCKED_DOCK:
@@ -685,6 +691,12 @@ class JumpableObject(NamedObject):
         if self.key is None:
             raise Exception(f'Key for {self} still not initialized')
         return self.key
+
+    def get_key_name(self):
+        if not self.key:
+            raise Exception('this base could not be locked')
+
+        return self.key.get_equip_name()
 
     def init_connection(self):
         self.target_system = self.system.get_universe_root().get_system_by_name(self.TARGET_SYSTEM_NAME)
@@ -925,16 +937,25 @@ class DangeonTradelane(NamedObject):
             system=self.system,
             locked_bases=locked_bases,
             unlocks_bases=unlocks_bases,
-            key_archetype_nickname=f'key_{self.get_inspace_nickname()}_unlock',
+            key_archetype_nickname=self.get_key_archetype_name(),
             key_fx=self.KEY_COLLECT_FX,
             key_name=key_name,
             key_description=key_desc,
         )
 
+    def get_key_archetype_name(self):
+        return f'key_{self.get_inspace_nickname()}_unlock'
+
     def get_key(self):
         if not self.LOCKED_DOCK:
             raise Exception(f'Dockable {self} have no keys')
         return self.key
+
+    def get_key_name(self):
+        if not self.key:
+            raise Exception('this base could not be locked')
+
+        return self.key.get_equip_name()
 
     def get_system_content(self):
         system_name = self.system.NAME
@@ -1401,16 +1422,25 @@ BGCS_base_run_by = W02bF44'''
             system=self.system,
             locked_bases=[self.get_inspace_nickname()],
             unlocks_bases=[self.get_inspace_nickname()],
-            key_archetype_nickname=f'key_{self.get_base_nickname()}_unlock',
+            key_archetype_nickname=self.get_key_archetype_name(),
             key_fx=self.KEY_COLLECT_FX,
             key_name=key_name,
             key_description=key_desc,
         )
 
+    def get_key_archetype_name(self):
+        return f'key_{self.get_base_nickname()}_unlock'
+
     def get_key(self):
         if not self.LOCKED_DOCK:
             raise Exception(f'Dockable {self} have no keys')
         return self.key
+
+    def get_key_name(self):
+        if not self.key:
+            raise Exception('this base could not be locked')
+
+        return self.key.get_equip_name()
 
     def get_second_description(self):
         if info := getattr(dockable_info, self.get_base_nickname(), None):
@@ -1452,12 +1482,6 @@ BGCS_base_run_by = W02bF44'''
 
     def get_ru_name(self):
         return self.RU_NAME
-
-    def get_key_name(self):
-        if not self.key:
-            raise Exception('this base could not be locked')
-
-        return self.key.get_equip_name()
 
     def get_inspace_nickname(self):
         return '{system_name}_{base_index:02d}'.format(system_name=self.system.NAME, base_index=self.BASE_INDEX)

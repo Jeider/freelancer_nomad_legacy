@@ -312,7 +312,7 @@ class RewardsGroup(object):
     def get_loadout_by_reward_type(self, reward_type, ultra_base_instance):
         try:
             if reward_type == MINING_REWARD_ULTRA:
-                return self.ultra_loadouts_db[ultra_base_instance.get_base_nickname()]
+                return self.ultra_loadouts_db[ultra_base_instance.get_key_archetype_name()]
             else:
                 return random.choice(self.loadouts_db[reward_type])
         except KeyError as e:
@@ -333,7 +333,7 @@ class RewardsGroup(object):
             if reward_type == MINING_REWARD_ULTRA:
                 additional_items_count = count - 1
                 ultra_items = random.choices(self.loadouts_db[MINING_REWARD_ULTRA_ADDITIONAL], k=additional_items_count)
-                ultra_items.append(self.ultra_loadouts_db[ultra_base_instance.get_base_nickname()])
+                ultra_items.append(self.ultra_loadouts_db[ultra_base_instance.get_key_archetype_name()])
                 random.shuffle(ultra_items)
                 return ultra_items
             else:
@@ -380,7 +380,7 @@ class MultipointRewardsGroup(RewardsGroup):
                 ultra_hardpoint = random.choice(hardpoints)
                 no_ultra_hardpoints = [item for item in hardpoints if item != ultra_hardpoint]
 
-                base_nickname = base_instance.get_base_nickname()
+                base_nickname = base_instance.get_key_archetype_name()
                 base_key = base_instance.get_key_name()
 
                 nickname = self.LOADOUT_NICKNAME_TEMPLATE.format(
@@ -433,7 +433,7 @@ class SinglepointRewardsGroup(RewardsGroup):
                 if not base_instance.LOCKED_DOCK:
                     raise Exception('this base is not locked')
 
-                base_nickname = base_instance.get_base_nickname()
+                base_nickname = base_instance.get_key_archetype_name()
                 base_key = base_instance.get_key_name()
 
                 nickname = self.LOADOUT_NICKNAME_TEMPLATE.format(
