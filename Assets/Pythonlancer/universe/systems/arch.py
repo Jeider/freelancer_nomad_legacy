@@ -24,8 +24,9 @@ from universe.content import mineable
 from universe.content import encounter
 from templates.solar import asteroid
 from templates.nebula import co_och_nebula
+from templates.nebula import li_cal_nebula
 from templates.nebula import exclusion
-from templates.dockable import corsair_dreadnought
+from templates.dockable import arch
 
 from templates.solar import dyson_rubic
 
@@ -51,9 +52,9 @@ local_faction = fc_n_grp
 file = universe\\heavens\\shapes.ini
 
 [Music]
-space = music_beta_exploration_08
-danger = music_beta_danger_08
-battle = music_beta_battle_08
+space = music_omicron_space
+danger = music_omicron_danger
+battle = music_omicron_battle
 
 [Dust]
 spacedust = Dust
@@ -75,81 +76,7 @@ type = DIRECTIONAL
 atten_curve = DYNAMIC_DIRECTION
 
 
-[Object]
-nickname = arch_02
-ids_name = 196765
-pos = 47988, 1000, 20578
-rotate = 0, -71, 2
-archetype = space_arch
-ids_info = 65879
-base = Ku07_02_Base
-dock_with = Ku07_02_Base
-visit = 0
-behavior = NOTHING
 
-[Object]
-nickname = arch_02_Asteroid
-ids_name = 196765
-pos = 47988, 1000, 20578
-rotate = 0, -71, 2
-archetype = space_arch_asteroid2
-ids_info = 65879
-visit = 128
-behavior = NOTHING
-parent = arch_02
-
-[Object]
-nickname = arch_space_arch_chunk1a_1
-pos = 46645, 0, 11560
-rotate = 0, -70, 0
-archetype = space_arch_chunk1a
-
-[Object]
-nickname = arch_space_arch_chunk1b_1
-pos = 40552, 1200, 6758
-rotate = 0, -60, 0
-archetype = space_arch_chunk1b
-
-[Object]
-nickname = arch_space_arch_chunk2a_1
-pos = 38163, 1000, 2818
-rotate = 20, -20, 0
-archetype = space_arch_chunk2a
-
-[Object]
-nickname = arch_space_arch_chunk2b_1
-pos = 43067, -300, 15756
-rotate = -110, -49, 102
-archetype = space_arch_chunk2b
-
-[Object]
-nickname = arch_space_arch_chunk3a_1
-pos = 49265, 1000, 5147
-rotate = 30, 60, 0
-archetype = space_arch_chunk3a
-
-[Object]
-nickname = arch_space_arch_chunk3b_1
-pos = 45084, 1000, 2233
-rotate = 0, -20, 0
-archetype = space_arch_chunk3b
-
-[Object]
-nickname = arch_space_arch_chunk3c_1
-pos = 45852, 1000, 9329
-archetype = space_arch_chunk3c
-
-[Object]
-nickname = arch_space_arch_chunk3d_1
-pos = 46382, 1000, 7292
-rotate = 0, -20, 0
-archetype = space_arch_chunk3d
-
-[Object]
-nickname = arch_space_arch_chunk3e_1
-pos = 40401, 1000, 12303
-rotate = 115, -20, 0
-archetype = space_arch_chunk3e
 '''
 
 
@@ -161,12 +88,12 @@ EDGE_EXCLUSION_PARAMS2 = {
     'fog_far': 2500,
 }
 
-
-WALKER_EXCLUSION_PARAMS = {
+CROW_EXCLUSION_PARAMS2 = {
+    'zone_shell': exclusion.VORTEX_EXCLUSION,
     'shell_scalar': 1.1,
     'max_alpha': 0.5,
-    'exclusion_tint': '200, 200, 200',
-    'fog_far': 5000,
+    'exclusion_tint': '150, 160, 180',
+    'fog_far': 2500,
 }
 
 
@@ -186,6 +113,16 @@ class ArchNebula1(ArchMember, ArchBaseEdgeNebula):
     CONTENT_TEMPLATE = co_och_nebula.OchEdgeNebulaTemplate
 
 
+class ArchNebula2(ArchMember, ArchBaseEdgeNebula):
+    INDEX = 2
+    CONTENT_TEMPLATE = co_och_nebula.OchEdgeNebulaTemplate
+
+
+class ArchNebula3(ArchMember, ArchBaseEdgeNebula):
+    INDEX = 3
+    CONTENT_TEMPLATE = co_och_nebula.OchEdgeNebulaTemplate
+
+
 class ArchSun(ArchMember, main_objects.Sun):
     STAR = 'Ku07_Sun'
     # LOADOUT = 'small_blue_sun_fx'
@@ -195,11 +132,24 @@ class ArchDeathZone(ArchMember, main_objects.DangeonDeathZone):
     pass
 
 
+class ArchDangeonTradelane4(ArchMember, main_objects.DangeonTradelane):
+    INDEX = 7
+    TARGET_INDEX = 8
+    RU_NAME = MS('Далее', 'Next')
+    RU_NAME_TARGET = MS('Пред', 'Prev')
+    LOCKED_DOCK = True
+    MAKE_KEYS = False
+    ALLOW_UNLOCK_FIRST_GATE = True
+    ALLOW_UNLOCK_SECOND_GATE = True
+
+
 class ArchDangeonTradelane1(ArchMember, main_objects.DangeonTradelane):
     INDEX = 1
     TARGET_INDEX = 2
     RU_NAME = MS('Далее', 'Next')
     RU_NAME_TARGET = MS('Пред', 'Prev')
+    LOCKED_DOCK = True
+    ALLOW_UNLOCK_SECOND_GATE = False
 
 
 class ArchDangeonTradelane2(ArchMember, main_objects.DangeonTradelane):
@@ -207,6 +157,8 @@ class ArchDangeonTradelane2(ArchMember, main_objects.DangeonTradelane):
     TARGET_INDEX = 4
     RU_NAME = MS('Далее', 'Next')
     RU_NAME_TARGET = MS('Пред', 'Prev')
+    LOCKED_DOCK = True
+    ALLOW_UNLOCK_SECOND_GATE = False
 
 
 class ArchDangeonTradelane3(ArchMember, main_objects.DangeonTradelane):
@@ -214,70 +166,105 @@ class ArchDangeonTradelane3(ArchMember, main_objects.DangeonTradelane):
     TARGET_INDEX = 6
     RU_NAME = MS('Далее', 'Next')
     RU_NAME_TARGET = MS('Пред', 'Prev')
+    LOCKED_DOCK = True
+    ALLOW_UNLOCK_SECOND_GATE = False
+    UNLOCK_ANOTHER_DANGEON_TLR = ArchDangeonTradelane4
 
 
-class ArchRoadPoint1(ArchMember, main_objects.VirtualDepot):
+class ArchRoadPoint1(ArchMember, main_objects.NavBuoy):
     ALIAS = 'road'
     INDEX = 1
-    REL = LEFT
-    RU_NAME = MS('Точка', "Point")
-    REL_DRIFT = 0
-    REL_APPEND = 0
-    MIN_REL_IGNORE = True
 
 
-class ArchRoadPoint2(ArchMember, main_objects.VirtualDepot):
+class ArchRoadPoint2(ArchMember, main_objects.NavBuoy):
     ALIAS = 'road'
     INDEX = 2
-    REL = RIGHT
-    RU_NAME = MS('Точка', "Point")
-    REL_DRIFT = 0
-    REL_APPEND = 0
-    MIN_REL_IGNORE = True
 
 
-class ArchRoadPoint3(ArchMember, main_objects.VirtualDepot):
+class ArchRoadPoint3(ArchMember, main_objects.NavBuoy):
     ALIAS = 'road'
     INDEX = 3
-    REL = LEFT
-    RU_NAME = MS('Точка', "Point")
-    REL_DRIFT = 0
-    REL_APPEND = 0
-    MIN_REL_IGNORE = True
 
 
-class ArchRoadPoint4(ArchMember, main_objects.VirtualDepot):
+class ArchRoadPoint4(ArchMember, main_objects.NavBuoy):
     ALIAS = 'road'
     INDEX = 4
-    REL = RIGHT
-    RU_NAME = MS('Точка', "Point")
-    REL_DRIFT = 0
-    REL_APPEND = 0
-    MIN_REL_IGNORE = True
+
+
+class ArchRoadPoint5(ArchMember, main_objects.NavBuoy):
+    ALIAS = 'road'
+    INDEX = 5
+
+
+class ArchRoadPoint6(ArchMember, main_objects.NavBuoy):
+    ALIAS = 'road'
+    INDEX = 6
+
+
+class ArchRoadPoint7(ArchMember, main_objects.NavBuoy):
+    ALIAS = 'road'
+    INDEX = 7
+
+
+class ArchRoadPoint8(ArchMember, main_objects.NavBuoy):
+    ALIAS = 'road'
+    INDEX = 8
+
+
+class ArchRoadPoint9(ArchMember, main_objects.NavBuoy):
+    ALIAS = 'road'
+    INDEX = 9
+
+
+class ArchRoadPoint10(ArchMember, main_objects.NavBuoy):
+    ALIAS = 'road'
+    INDEX = 10
+
+
+class ArchRoadPoint11(ArchMember, main_objects.NavBuoy):
+    ALIAS = 'road'
+    INDEX = 11
+
+
+class ArchRoadPoint12(ArchMember, main_objects.NavBuoy):
+    ALIAS = 'road'
+    INDEX = 12
 
 
 class ArchHelpway1(ArchMember, main_objects.ParticleTradeConnection):
     OBJ_FROM = ArchRoadPoint1
     OBJ_TO = ArchRoadPoint2
-    SIDE_FROM = LEFT
-    SIDE_TO = RIGHT
     TRADELANE_LETTER = 'A'
-    TLR_DISTANCE = 800
-    REL_DRIFT = 0
-    REL_APPEND = 0
-    MIN_REL_IGNORE = True
 
 
 class ArchHelpway2(ArchMember, main_objects.ParticleTradeConnection):
     OBJ_FROM = ArchRoadPoint3
     OBJ_TO = ArchRoadPoint4
-    SIDE_FROM = LEFT
-    SIDE_TO = RIGHT
     TRADELANE_LETTER = 'B'
-    TLR_DISTANCE = 800
-    REL_DRIFT = 0
-    REL_APPEND = 0
-    MIN_REL_IGNORE = True
+
+
+class ArchHelpway3(ArchMember, main_objects.ParticleTradeConnection):
+    OBJ_FROM = ArchRoadPoint5
+    OBJ_TO = ArchRoadPoint6
+    TRADELANE_LETTER = 'C'
+
+
+class ArchHelpway4(ArchMember, main_objects.ParticleTradeConnection):
+    OBJ_FROM = ArchRoadPoint7
+    OBJ_TO = ArchRoadPoint8
+    TRADELANE_LETTER = 'D'
+
+
+class ArchHelpway5(ArchMember, main_objects.ParticleTradeConnection):
+    OBJ_FROM = ArchRoadPoint9
+    OBJ_TO = ArchRoadPoint10
+    TRADELANE_LETTER = 'E'
+
+
+class ArchHelpway6(ArchMember, main_objects.ParticleTradeConnection):
+    OBJ_FROM = ArchRoadPoint11
+    OBJ_TO = ArchRoadPoint12
+    TRADELANE_LETTER = 'F'
 
 
 class ArchArrows(ArchMember, main_objects.MultipleStaticObjects):
@@ -285,12 +272,41 @@ class ArchArrows(ArchMember, main_objects.MultipleStaticObjects):
     MAX_OBJECTS = 10
 
 
+class ArchHelp1(ArchMember, main_objects.HelpPlayback):
+    INDEX = 1
+    SOUND = 'dangeon_rules'
+
+
+class ArchHelp2(ArchMember, main_objects.HelpPlayback):
+    INDEX = 2
+    SOUND = 'dyson_rubic'
+
+
+class ArchHelp3(ArchMember, main_objects.HelpPlayback):
+    INDEX = 3
+    SOUND = 'dangeon_forward'
+
+
+class ArchHelp4(ArchMember, main_objects.HelpPlayback):
+    INDEX = 4
+    SOUND = 'dangeon_final_exit'
+
+
+class ArchHelp5(ArchMember, main_objects.HelpPlayback):
+    INDEX = 5
+    SOUND = 'arch_step2'
+
+
+class ArchHelp6(ArchMember, main_objects.HelpPlayback):
+    INDEX = 6
+    SOUND = 'battleship_shield_lock'
+
+
 class ArchDemoBase(ArchMember, main_objects.Station):
-    ALIAS = 'temp'
+    ALIAS = 'base'
     INDEX = 1
     BASE_INDEX = 1
-    ARCHETYPE = 'co_base_rock_large02'
-    LOADOUT = 'co_base_rock_large01_pi_01'
+    SPACE_OBJECT_TEMPLATE = arch.SpaceArch
     INTERIOR_CLASS = interior.CustomFullSplitRoomInterior
     DEFENCE_LEVEL = None
     RANDOM_ROBOT = True
@@ -404,9 +420,10 @@ class ArchRubicAstZone3(ArchMember, zones.AsteroidZone):
     INTERFERENCE = 0.5
 
 
-class ArchNomadGateHelper1(ArchMember, main_objects.NotAppearableObject):
-    ALIAS = 'virt'
+class ArchPowerGen1(ArchMember, main_objects.AutoStaticObject):
+    ALIAS = 'gen'
     INDEX = 1
+    TEMPLATE_LOADOUT = False
 
     ASTEROID_ZONES = [
         ArchRubicAstZone1,
@@ -421,24 +438,40 @@ class ArchNomadGateHelper1(ArchMember, main_objects.NotAppearableObject):
     NEBULA_EXCLUSION_EDGE_FRACTION = 0.4
 
 
-class ArchNomadGateHelper2(ArchMember, main_objects.NotAppearableObject):
-    ALIAS = 'virt'
+class ArchPowerGen2(ArchMember, main_objects.AutoStaticObject):
+    ALIAS = 'gen'
     INDEX = 2
+    TEMPLATE_LOADOUT = False
 
     ASTEROID_ZONES = [
         ArchRubicAstZone2,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
 
+    NEBULA_ZONES = [
+        ArchNebula2
+    ]
+    EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS2
+    NEBULA_EXCLUSION_ZONE_SIZE = 3000
+    NEBULA_EXCLUSION_EDGE_FRACTION = 0.4
 
-class ArchNomadGateHelper3(ArchMember, main_objects.NotAppearableObject):
-    ALIAS = 'virt'
+
+class ArchPowerGen3(ArchMember, main_objects.AutoStaticObject):
+    ALIAS = 'gen'
     INDEX = 3
+    TEMPLATE_LOADOUT = False
 
     ASTEROID_ZONES = [
         ArchRubicAstZone3,
     ]
     AST_EXCLUSION_ZONE_SIZE = 3500
+
+    NEBULA_ZONES = [
+        ArchNebula3
+    ]
+    EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS2
+    NEBULA_EXCLUSION_ZONE_SIZE = 3000
+    NEBULA_EXCLUSION_EDGE_FRACTION = 0.4
 
 
 class ArchDysonRubicNomadGateRewards(ArchMember, mineable.DefaultDysonRubicRewardGroup):
@@ -501,29 +534,171 @@ class ArchDysonRubicField3(ArchMember, mineable.DysonRubicRewardField):
     INDEX = 3
 
     ULTRA_BASE = ArchDemoBase
+#
+#
+# class ArchEnc1(ArchMember, main_objects.CustomerEncounterZone):
+#     INDEX = 1
+#     FACTION = faction.Nomad
+#     DENSITY = 10
+#     REPOP_TIME = 10
+#     RELIEF_TIME = 25
+#     SHIPS = [
+#         encounter.NpcShipEncounter(
+#             'zone1a',
+#             npc=NPC(
+#                 faction=faction.Outcasts,
+#                 ship=ship.NomadStiletto,
+#                 level=NPC.D1,
+#                 equip_map=EqMap(base_level=1),
+#             ),
+#             count=1
+#         ),
+#         encounter.NpcShipEncounter(
+#             'zone1b',
+#             npc=NPC(
+#                 faction=faction.Outcasts,
+#                 ship=ship.NomadDagger,
+#                 level=NPC.D1,
+#                 equip_map=EqMap(base_level=1),
+#             ),
+#             count=2
+#         ),
+#     ]
 
 
-class ArchEnc1(ArchMember, main_objects.CustomerEncounterZone):
-    INDEX = 1
+class ArchEnc2(ArchMember, main_objects.CustomerEncounterZone):
+    INDEX = 2
+    FACTION = faction.Nomad
+    DENSITY = 10
+    REPOP_TIME = 10
+    RELIEF_TIME = 25
     SHIPS = [
         encounter.NpcShipEncounter(
-            'main_outcast',
+            'zone2b',
             npc=NPC(
                 faction=faction.Outcasts,
-                ship=ship.Dagger,
-                level=NPC.D2,
-                equip_map=EqMap(base_level=2),
+                ship=ship.NomadCenturion,
+                level=NPC.D1,
+                equip_map=EqMap(base_level=1),
             ),
             count=1
         ),
         encounter.NpcShipEncounter(
-            'second_outcast',
+            'zone2c',
             npc=NPC(
                 faction=faction.Outcasts,
-                ship=ship.Sabre,
-                level=NPC.D5,
-                equip_map=EqMap(base_level=5),
+                ship=ship.NomadLegionnaire,
+                level=NPC.D1,
+                equip_map=EqMap(base_level=1),
             ),
-            count=3
-        )
+            count=2
+        ),
     ]
+
+
+
+
+class ArchEnc3(ArchMember, main_objects.CustomerEncounterZone):
+    INDEX = 3
+    FACTION = faction.Nomad
+    DENSITY = 10
+    REPOP_TIME = 10
+    RELIEF_TIME = 25
+    SHIPS = [
+        encounter.NpcShipEncounter(
+            'zone3a',
+            npc=NPC(
+                faction=faction.Outcasts,
+                ship=ship.NomadTitan,
+                level=NPC.D1,
+                equip_map=EqMap(base_level=1),
+            ),
+            count=1
+        ),
+        encounter.NpcShipEncounter(
+            'zone3b',
+            npc=NPC(
+                faction=faction.Outcasts,
+                ship=ship.NomadCenturion,
+                level=NPC.D1,
+                equip_map=EqMap(base_level=1),
+            ),
+            count=1
+        ),
+        encounter.NpcShipEncounter(
+            'zone3c',
+            npc=NPC(
+                faction=faction.Outcasts,
+                ship=ship.NomadLegionnaire,
+                level=NPC.D1,
+                equip_map=EqMap(base_level=1),
+            ),
+            count=1
+        ),
+    ]
+
+
+
+
+class ArchEnc4(ArchMember, main_objects.CustomerEncounterZone):
+    INDEX = 4
+    FACTION = faction.Nomad
+    DENSITY = 10
+    REPOP_TIME = 10
+    RELIEF_TIME = 25
+    SHIPS = [
+        encounter.NpcShipEncounter(
+            'zon42a',
+            npc=NPC(
+                faction=faction.Outcasts,
+                ship=ship.NomadCrusader,
+                level=NPC.D1,
+                equip_map=EqMap(base_level=1),
+            ),
+            count=1
+        ),
+        encounter.NpcShipEncounter(
+            'zone4b',
+            npc=NPC(
+                faction=faction.Outcasts,
+                ship=ship.NomadCavalier,
+                level=NPC.D1,
+                equip_map=EqMap(base_level=1),
+            ),
+            count=1
+        ),
+        encounter.NpcShipEncounter(
+            'zone4c',
+            npc=NPC(
+                faction=faction.Outcasts,
+                ship=ship.NomadTitan,
+                level=NPC.D1,
+                equip_map=EqMap(base_level=1),
+            ),
+            count=1
+        ),
+    ]
+
+
+class ArchEnterGate(ArchMember, main_objects.AutoStaticObject):
+    ALIAS = 'jg'
+    INDEX = 1
+    TEMPLATE_LOADOUT = False
+
+
+class ArchExitGate(ArchMember, main_objects.AutoStaticObject):
+    ALIAS = 'jg'
+    INDEX = 2
+    TEMPLATE_LOADOUT = False
+
+
+class ArchShield1(ArchMember, main_objects.AutoStaticObject):
+    ALIAS = 'shield'
+    INDEX = 1
+    TEMPLATE_LOADOUT = False
+
+
+class ArchBattleship1(ArchMember, main_objects.AutoStaticObject):
+    ALIAS = 'bship'
+    INDEX = 1
+    TEMPLATE_LOADOUT = False

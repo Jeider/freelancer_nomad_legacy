@@ -3,6 +3,7 @@ from random import randint
 
 from fx.space import Dust
 import fx.neuralnet as nn
+from fx.sound import AutoSoundFX
 
 from world.names import *
 from universe import markets
@@ -24,6 +25,7 @@ from tools.system_template import ObjectTemplateLoader
 from templates.space_object_template import SpaceObjectTemplate
 from story.math import relocate_point
 from text.dividers import SINGLE_DIVIDER, DIVIDER
+from text.infocards import InfocardBuilder
 from text.strings import MultiString as MS
 
 TLR_HUGE_SIZE_RINGS_COUNT = 5
@@ -274,6 +276,8 @@ class StaticObject(AppearableObject):
     USE_LIFTER = False
 
     FORCE_CONNECTIONS = []
+
+    LOCKED_DOCK = False
 
     def get_base(self):
         return None
@@ -597,6 +601,21 @@ class VirtualDepot(NamedObject):
         return '{system_name}_virtual_{index}'.format(system_name=self.system.NAME, index=self.INDEX)
 
 
+class NavBuoy(StaticObject):
+    ALIAS = 'virtual'
+    REL = LEFT
+    RU_NAME = MS('Точка', "Point")
+    REL_DRIFT = 0
+    REL_APPEND = 0
+    MIN_REL_IGNORE = True
+
+    def get_system_content(self):
+        return ''
+
+    def get_inspace_nickname(self):
+        return '{system_name}_nav_buoy_{index}'.format(system_name=self.system.NAME, index=self.INDEX)
+
+
 class RawText(SystemObject):
     SPACE_CONTENT = ''
 
@@ -611,6 +630,9 @@ class JumpableObject(NamedObject):
     FORCE_TARGET_NAME = None
     LAZY_NAME = True
 
+    LOCKED_DOCK = False
+    KEY_COLLECT_FX = nn.FX_GOT_KEY_ASTEROID  # Temporary!
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.target_system = None
@@ -618,9 +640,58 @@ class JumpableObject(NamedObject):
         if self.TARGET_SYSTEM_NAME is None:
             raise Exception('Jumpgate %s have no target system' % self.__class__.__name__)
 
+        self.key = None  # Key should be initiated only after getting target system
+
+        if self.LOCKED_DOCK:
+            if not self.KEY_COLLECT_FX:
+                # Try to check it immediately and not wait for define of target system
+                raise Exception('Dockable locked base have no fx for key %s' % self.__class__.__name__)
+
+    def load_key(self):
+        key_name = MS(
+            f'Ключ для {self.get_name().get_ru()}',
+            f'Key for {self.get_name().get_en()}'
+        )
+        key_desc = MS(
+            InfocardBuilder.build_equip_infocard(
+                key_name.get_ru(),
+                [
+                    f'Открывает доступ к объекту {self.get_space_name().get_ru()} в системе {self.system.get_ru_name()}',
+                    'Вы можете продать ключ после использования. Вы всегда сможете добыть его снова при необходимости.'
+                ]
+            ),
+            InfocardBuilder.build_equip_infocard(
+                key_name.get_en(),
+                [
+                    f'Opens access to {self.get_space_name().get_en()} in {self.system.get_en_name()} system',
+                    'You can sell the key after use. You can always obtain it again if needed.'
+                ]
+            )
+        )
+
+        return LockedDockKey(
+            system=self.system,
+            locked_bases=[self.get_inspace_nickname()],
+            unlocks_bases=[self.get_inspace_nickname()],
+            key_archetype_nickname=f'key_{self.get_space_object_name()}_unlock',
+            key_fx=self.KEY_COLLECT_FX,
+            key_name=key_name,
+            key_description=key_desc,
+        )
+
+    def get_key(self):
+        if not self.LOCKED_DOCK:
+            raise Exception(f'Dockable {self} have no keys')
+        if self.key is None:
+            raise Exception(f'Key for {self} still not initialized')
+        return self.key
+
     def init_connection(self):
         self.target_system = self.system.get_universe_root().get_system_by_name(self.TARGET_SYSTEM_NAME)
         self.set_space_name()
+
+        if self.LOCKED_DOCK:
+            self.key = self.load_key()
 
     def get_target_system(self):
         if not self.target_system:
@@ -774,6 +845,96 @@ class DangeonTradelane(NamedObject):
     TARGET_INDEX = None
     ALIAS = 'tlr'
     ARCHETYPE = 'dangeon_tradelane'
+
+    LOCKED_DOCK = True
+    MAKE_KEYS = False
+    ALLOW_UNLOCK_FIRST_GATE = True
+    ALLOW_UNLOCK_SECOND_GATE = False
+    UNLOCK_ANOTHER_DANGEON_TLR = None
+
+    KEY_COLLECT_FX = nn.FX_GOT_KEY_ASTEROID  # Temporary!
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.key = None
+        if self.LOCKED_DOCK:
+            if not self.KEY_COLLECT_FX:
+                raise Exception('Dockable locked base have no fx for key %s' % self.__class__.__name__)
+
+            self.key = self.load_keys()
+
+    def load_keys(self):
+        key_name = MS(
+            f'Ключ для {self.get_name().get_ru()}',
+            f'Key for {self.get_name().get_en()}'
+        )
+        key_desc = MS(
+            InfocardBuilder.build_equip_infocard(
+                key_name.get_ru(),
+                [
+                    f'Открывает доступ к объекту {self.get_space_name().get_ru()} в системе {self.system.get_ru_name()}',
+                    'Вы можете продать ключ после использования. Вы всегда сможете добыть его снова при необходимости.'
+                ]
+            ),
+            InfocardBuilder.build_equip_infocard(
+                key_name.get_en(),
+                [
+                    f'Opens access to {self.get_space_name().get_en()} in {self.system.get_en_name()} system',
+                    'You can sell the key after use. You can always obtain it again if needed.'
+                ]
+            )
+        )
+
+        locked_bases = [
+            self.get_inspace_nickname(),
+            self.get_second_inspace_nickname(),
+        ]
+        unlocks_bases = []
+
+        if self.MAKE_KEYS:
+            unlocks_bases += [
+                self.get_inspace_nickname(),
+                self.get_second_inspace_nickname(),
+            ]
+
+        if self.ALLOW_UNLOCK_FIRST_GATE:
+            unlocks_bases.append(
+                self.get_inspace_nickname()
+            )
+
+        if self.ALLOW_UNLOCK_SECOND_GATE:
+            unlocks_bases.append(
+                self.get_second_inspace_nickname()
+            )
+
+        if self.UNLOCK_ANOTHER_DANGEON_TLR is not None:
+            another_tlr = self.system.get_static_by_class(self.UNLOCK_ANOTHER_DANGEON_TLR)
+
+            if another_tlr.ALLOW_UNLOCK_FIRST_GATE:
+                unlocks_bases.append(
+                    another_tlr.get_inspace_nickname()
+                )
+
+            if another_tlr.ALLOW_UNLOCK_SECOND_GATE:
+                unlocks_bases.append(
+                    another_tlr.get_second_inspace_nickname()
+                )
+
+        return LockedDockKey(
+            system=self.system,
+            locked_bases=locked_bases,
+            unlocks_bases=unlocks_bases,
+            key_archetype_nickname=f'key_{self.get_inspace_nickname()}_unlock',
+            key_fx=self.KEY_COLLECT_FX,
+            key_name=key_name,
+            key_description=key_desc,
+        )
+
+    def get_key(self):
+        if not self.LOCKED_DOCK:
+            raise Exception(f'Dockable {self} have no keys')
+        return self.key
 
     def get_system_content(self):
         system_name = self.system.NAME
@@ -1211,19 +1372,51 @@ BGCS_base_run_by = W02bF44'''
         if self.LOCKED_DOCK:
             if not self.KEY_COLLECT_FX:
                 raise Exception('Dockable locked base have no fx for key %s' % self.__class__.__name__)
-            self.key = LockedDockKey(self, key_fx=self.KEY_COLLECT_FX, key_name=self.get_key_loot_name())
+
+            self.key = self.load_key()
+
+    def load_key(self):
+        key_name = MS(
+            f'Ключ для {self.get_name().get_ru()}',
+            f'Key for {self.get_name().get_en()}'
+        )
+        key_desc = MS(
+            InfocardBuilder.build_equip_infocard(
+                key_name.get_ru(),
+                [
+                    f'Открывает доступ к объекту {self.get_space_name().get_ru()} в системе {self.system.get_ru_name()}',
+                    'Вы можете продать ключ после использования. Вы всегда сможете добыть его снова при необходимости.'
+                ]
+            ),
+            InfocardBuilder.build_equip_infocard(
+                key_name.get_en(),
+                [
+                    f'Opens access to {self.get_space_name().get_en()} in {self.system.get_en_name()} system',
+                    'You can sell the key after use. You can always obtain it again if needed.'
+                ]
+            )
+        )
+
+        return LockedDockKey(
+            system=self.system,
+            locked_bases=[self.get_inspace_nickname()],
+            unlocks_bases=[self.get_inspace_nickname()],
+            key_archetype_nickname=f'key_{self.get_base_nickname()}_unlock',
+            key_fx=self.KEY_COLLECT_FX,
+            key_name=key_name,
+            key_description=key_desc,
+        )
+
+    def get_key(self):
+        if not self.LOCKED_DOCK:
+            raise Exception(f'Dockable {self} have no keys')
+        return self.key
 
     def get_second_description(self):
         if info := getattr(dockable_info, self.get_base_nickname(), None):
             return info
 
         return MS(' ', ' ')  # empty
-
-    def get_key_loot_name(self):
-        return MS(
-            f'Ключ для {self.get_name().get_ru()}',
-            f'Key for {self.get_name().get_en()}'
-        )
 
     def get_weapon_faction(self):
         return self.WEAPON_FACTION
@@ -2838,6 +3031,12 @@ class ParticleTradeConnection(TradeConnection):
     TRADELANE_CLASS = ParticleTradelane
     POLICE_PATROL = False
     TLR_OUTER_ZONE = False
+    SIDE_FROM = LEFT
+    SIDE_TO = RIGHT
+    TLR_DISTANCE = 800
+    REL_DRIFT = 0
+    REL_APPEND = 0
+    MIN_REL_IGNORE = True
 
 
 class NavBuoyTradelane(Tradelane):
@@ -3078,6 +3277,14 @@ class DangeonDeathZone(BackgroundComplexObject):
 class CustomerEncounterZone(SystemObject):
     ALIAS = 'npc'
     SHIPS = None
+    TOUGHNESS = 20
+    # DENSITY = 3
+    # REPOP_TIME = 25
+    # MAX_BATTLE_SIZE = 4
+    # RELIEF_TIME = 35
+    DENSITY = 3
+    MAX_BATTLE_SIZE = 4
+    RELIEF_TIME = 25
 
     def get_inspace_nickname(self):
         return '{system_name}_enc_{alias}_{index}'.format(system_name=self.system.NAME, alias=self.ALIAS, index=self.INDEX)
@@ -3091,13 +3298,10 @@ class CustomerEncounterZone(SystemObject):
         if self.SHIPS is None or len(self.SHIPS) == 0:
             raise Exception(f'Encounter {self} have no ships')
 
-        self.faction = None
-        for ship in self.SHIPS:
-            if self.faction is None:
-                self.faction = ship.npc.faction
-            elif self.faction != ship.npc.faction:
-                raise Exception(f'Encounter {self} trying to use multiple factions! Correct: {self.faction.get_code()}, trying to use {ship.npc.faction.get_code()}')
+        if self.get_faction() is None:
+            raise Exception(f'Encounter {self} have no faction')
 
+        for ship in self.SHIPS:
             ship.npc.set_name(f'custom_enc_{self.system.NAME}_{ship.name}')
             ship.npc.change_have_npc_class(False)  # force remove from universe
 
@@ -3107,40 +3311,10 @@ class CustomerEncounterZone(SystemObject):
             self.system,
             enc_name,
             self.SHIPS,
-            encounter.JOB_ASSAULT,
+            encounter.JOB_DEFEND,
         )
 
-    def get_system_content2(self):
-        system_name = self.system.NAME
-        name1 = self.get_inspace_nickname()
-        name2 = self.get_second_inspace_nickname()
-        pos1 = self.get_position()
-        rot1 = self.get_rotate()
-        pos2 = self.get_second_position()
-        rot2 = self.get_second_rotate()
-        return f'''
-[Object]
-nickname = {name1}
-ids_name = 068025
-pos = {pos1[0]:0.2f}, {pos1[1]:0.2f}, {pos1[2]:0.2f}
-rotate = {rot1[0]:0.2f}, {rot1[1]:0.2f}, {rot1[2]:0.2f}
-archetype = {self.ARCHETYPE}
-jump_effect = jump_effect_dangeon_tlr
-ids_info = 068003
-goto = {system_name}, {name2}, gate_tunnel_airlock
-
-[Object]
-nickname = {name2}
-ids_name = 068025
-pos = {pos2[0]:0.2f}, {pos2[1]:0.2f}, {pos2[2]:0.2f}
-rotate = {rot2[0]:0.2f}, {rot2[1]:0.2f}, {rot2[2]:0.2f}
-archetype =  {self.ARCHETYPE}
-jump_effect = jump_effect_dangeon_tlr
-ids_info = 068003
-goto = {system_name}, {name1}, gate_tunnel_airlock
- '''
     def get_system_content(self):
-
         pos = self.get_position()
         rot = self.get_rotate()
         shape = self.get_shape()
@@ -3152,37 +3326,71 @@ pos = {pos[0]:0.2f}, {pos[1]:0.2f}, {pos[2]:0.2f}
 rotate = {rot[0]:0.2f}, {rot[1]:0.2f}, {rot[2]:0.2f}
 shape = {shape}
 size = {','.join([str(s) for s in size])}
-toughness = 0
-density = 8
-repop_time = 30
-max_battle_size = 8
-relief_time = 57
-population_additive = false
+toughness = {self.TOUGHNESS}
+density = {self.DENSITY}
+repop_time = {self.REPOP_TIME}
+max_battle_size = {self.MAX_BATTLE_SIZE}
+relief_time = {self.RELIEF_TIME}
 encounter = {self.enc.get_nickname()}, 1, 1
-faction = {self.faction.get_code()}, 1
+faction = {self.get_faction_code()}, 1
 '''
         return content
 
 
-    # def get_police_patrol(self):
-    #     if not self.POLICE_PATROL:
-    #         return
-    #     obj_from, obj_to = self.get_destination_objects()
-    #     obj_from_pos = self.system.get_object_position(obj_from)
-    #     obj_to_pos = self.system.get_object_position(obj_to)
-    #
-    #     patrol_faction = self.get_lawful_population_class().get_police_faction()
-    #     if base_from := obj_from.get_base():
-    #         base_from.add_faction(patrol_faction)
-    #     if base_to := obj_to.get_base():
-    #         base_to.add_faction(patrol_faction)
-    #
-    #     return PolicePatrol(
-    #         system=self.system,
-    #         population_kind=self.get_population_kind(),
-    #         index=,
-    #         positions=[
-    #             (obj_from_pos[0], 0, obj_from_pos[2]),
-    #             (obj_to_pos[0], 0, obj_to_pos[2]),
-    #         ]
-    #     )
+class HelpPlayback(StaticObject):
+    ALIAS = 'help'
+    ARCHETYPE = 'dangeon_infocard'
+    PLAYBACK_ARCHETYPE = 'help_playback'
+    PLAYBACK_OFFSET = (0, 100, 0)
+    SOUND = None
+
+    def has_appearance(self):
+        return True
+
+    def get_system_content(self):
+        content = []
+
+        if self.SOUND is None:
+            raise Exception(f'Help file {self} have no sound')
+
+        if self.SOUND not in AutoSoundFX.MEMBERS:
+            raise Exception('Unknown sound')
+
+        full_alias = self.get_full_alias()
+
+        pos = self.system.template.get_item_pos(full_alias)
+        rot = self.system.template.get_item_rotate(full_alias)
+
+        playback_pos = [
+            pos[0] + self.PLAYBACK_OFFSET[0],
+            pos[1] + self.PLAYBACK_OFFSET[1],
+            pos[2] + self.PLAYBACK_OFFSET[2],
+        ]
+        playback_rot = [180, 0, 0]
+
+        content.append(
+            self.ARCHETYPE_TEMPLATE.format(
+                nickname=f'{self.system.NAME}_help_{self.ALIAS}_{self.INDEX}',
+                archetype=self.ARCHETYPE,
+                pos='{}, {}, {}'.format(*pos),
+                rotate='{}, {}, {}'.format(*rot),
+            )
+        )
+
+        content.append(
+            self.ARCHETYPE_TEMPLATE.format(
+                nickname=f'{self.system.NAME}_help_{self.ALIAS}_{self.INDEX}_playback',
+                archetype=self.PLAYBACK_ARCHETYPE,
+                pos='{}, {}, {}'.format(*playback_pos),
+                rotate='{}, {}, {}'.format(*playback_rot),
+            )
+        )
+
+        loadout = f'infocard_playback_{self.SOUND}'
+        content.append(f'loadout = {loadout}')
+        content.append(f'visit = 0')
+        content.append(f'reputation = fc_n_grp')
+        content.append(f'behavior = NOTHING')
+        content.append(f'pilot = pilot_solar_ultimate')
+
+        return DIVIDER.join(content)

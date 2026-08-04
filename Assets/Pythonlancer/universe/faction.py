@@ -632,6 +632,12 @@ event = random_mission_abortion, -0.067500
             return self.JUMP_PREFERENCE
         return 'jumphole' if self.IS_PIRATE else 'jumpgate'
 
+    def get_npc_ships(self):
+        items = []
+        for ship in self.npc_ships:
+            items.append(f'npc_ship = {ship}')
+        return SINGLE_DIVIDER.join(items)
+
     def get_faction_prop(self):
         if not self.HAVE_FACTION_PROPS:
             return ''

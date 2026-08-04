@@ -74,7 +74,7 @@ class EqMap(object):
         self.mine_ammo = mine_ammo
 
 
-class NPC(object):
+class NPC:
     D1 = 1
     D2 = 2
     D3 = 3
@@ -234,7 +234,7 @@ npc_class = {classes_list}'''
         return 'gen_{faction_code}_{shipclass_name}_{ship_archetype}_{level_code}'.format(
             faction_code=self.faction.CODE,
             shipclass_name=self.ship.SHIPCLASS_NAME,
-            ship_archetype=self.ship.ARCHETYPE,
+            ship_archetype=self.ship.get_archetype(),
             level_code=self.get_npc_level_code()
         )
 
@@ -260,7 +260,7 @@ npc_class = {classes_list}'''
         return {
             'npc_shiparch_nickname': self.get_npc_shiparch_nickname(),
             'loadout_nickname': self.get_loadout_nickname(),
-            'shiparch': self.ship.ARCHETYPE,
+            'shiparch': self.ship.get_archetype(),
             'pilot': self.get_pilot(),
             'classes_list': self.get_classes_list(),
             'level': self.get_npc_level_code(),
@@ -340,7 +340,7 @@ npc_class = {classes_list}'''
         )
         params = {
             self.LOADOUT_NICKNAME: self.get_loadout_nickname(),
-            self.SHIP_ARCHETYPE: self.ship.ARCHETYPE,
+            self.SHIP_ARCHETYPE: self.ship.get_archetype(),
             self.ENGINE: self.package[self.ENGINE].get_nickname(),
             self.POWER: self.package[self.POWER].get_nickname(),
             self.SHIELD: self.package[self.SHIELD].get_nickname(),

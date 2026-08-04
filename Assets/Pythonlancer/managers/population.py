@@ -134,8 +134,9 @@ class PopulationManager:
         # # STATIC EDITION
         params = {}
         for faction in self.all_factions:
-            # params[faction.get_msg_code()] = faction  # static edition
-            params['factions'] = DIVIDER.join(f.get_faction_prop() for f in self.all_factions)
+            params[faction.get_msg_code()] = faction  # static edition
+        params['factions'] = DIVIDER.join(f.get_faction_prop() for f in self.all_factions)
+
         return self.core.tpl_manager.get_result(FACTION_PROP_TEMPLATE, params)
 
     def sync_data(self):

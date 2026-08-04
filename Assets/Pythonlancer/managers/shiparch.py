@@ -37,7 +37,7 @@ class ShiparchManager:
             instance = ship(self.ids)
             self.shiparch_context[ship.TEMPLATE_CODE] = instance
             self.ships.append(instance)
-            self.ships_db[instance.ARCHETYPE] = instance
+            self.ships_db[instance.get_archetype()] = instance
 
         for capital in Capital.subclasses:
             if capital.is_skip_v1():

@@ -908,7 +908,9 @@ class HackerPanel(object):
         self.define_valid_layer()
 
         if len(self.layers) < 3:
-            raise Exception(f'Invalid layers count! Its {len(self.layers)}')
+            print("WARNING! Invalid layers in hacker panel is allowed")
+            # raise Exception(f'Invalid layers count! Its {len(self.layers)}')
+
 
     def define_near_colors(self):
         next_color = self.valid_color

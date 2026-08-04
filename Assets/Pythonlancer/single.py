@@ -14,6 +14,8 @@ from managers.jinja_manager import JinjaTemplateManager
 from story.cutscenes.meta import LipSyncManager
 from story import math
 
+from universe.audio.infocard import INFO_RU
+
 from universe.audio.manager import PilotManager
 from universe.audio import pilot
 from universe.audio import nnvoice
@@ -35,12 +37,12 @@ from story import actors
 from tools.system_template import SystemTemplateLoader
 
 from templates.solar import hacker_panel
-from templates.dockable import dyson
+from templates.dockable import arch
 from templates.dockable import scient
 
 
 def draw_base():
-    new_name = 'nmd_anm_dyson'
+    new_name = None
     move_to = None
     rotate_core = 0
     workspace = '18'
@@ -59,12 +61,12 @@ def draw_base():
 
     # base_class = terraforming.TerraformingRotate
     # new_name = 'communicator'
-    move_to = (-19000, 0, -18000)
+    move_to = (-47988, -1000, -20578)
 
     # base_class = nomad_asf_hq.AsfHQ
     # rotate_core = 45
 
-    base_class = dyson.DysonCity
+    base_class = arch.SpaceArch
 
     the_base = base_class()
     content = the_base.get_instance(new_space_object_name=new_name, move_to=move_to, rotate_core=rotate_core)
@@ -517,10 +519,17 @@ class KingHigh(actors.King):
 
 
 def sound_direct():
+    # items = HELP_LINES.items()
+
+    items = INFO_RU.items()
     output_folder = FileWriter.get_subfolder('help')
-    for index, line in HELP_LINES.items():
-        if not (output_folder / f"{index:03d}.mp3").exists():
-            audio_folder.AudioFolder.generate_simple_sound(output_folder / f"{index:03d}.mp3", actors.Neuralnet, line)
+    for key, line in items:
+        # file_name = f"{index:03d}.mp3"
+        file_name = f"{key}.mp3"
+        line = line.replace(',,', ',')
+        if not (output_folder / file_name).exists():
+            audio_folder.AudioFolder.generate_simple_sound(output_folder / file_name, actors.Neuralnet, line)
+            print(file_name)
 
     # text = 'Проклятие!'
     # index = 2004

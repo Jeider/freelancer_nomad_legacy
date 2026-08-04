@@ -35,6 +35,12 @@ class NpcShipEncounter:
         self.npc = npc
         self.count = count
 
+    def get_name(self):
+        return self.name
+
+    def get_count(self):
+        return self.count
+
 
 class DynamicEncounter(Encounter):
 
@@ -58,10 +64,11 @@ class DynamicEncounter(Encounter):
 
         i = 0
         for ship_enc in self.ship_encounters:
+            self.system.add_custom_encounter_ship_name(ship_enc.get_name())
             if i == 0:
                 ships_data.append(
                     f'''
-ship_by_npc_arch = {ship_enc.count}, {ship_enc.count}, {ship_enc.npc.get_npc_shiparch_nickname()}
+ship_by_npc_arch = {ship_enc.get_count()}, {ship_enc.get_count()}, {ship_enc.npc.get_npc_shiparch_nickname()}
 pilot_job = {self.job}_leader_job
 make_class = wanderer
 '''
@@ -69,7 +76,7 @@ make_class = wanderer
             else:
                 ships_data.append(
                     f'''
-ship_by_npc_arch = {ship_enc.count}, {ship_enc.count}, {ship_enc.npc.get_npc_shiparch_nickname()}, -1
+ship_by_npc_arch = {ship_enc.get_count()}, {ship_enc.get_count()}, {ship_enc.npc.get_npc_shiparch_nickname()}, -1
 pilot_job = {self.job}_job
 make_class = wanderer
 '''

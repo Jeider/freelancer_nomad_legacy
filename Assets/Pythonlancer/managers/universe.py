@@ -53,6 +53,7 @@ class UniverseManager:
         self.interior_extra_rooms = []
         self.mbases_content = []
 
+        self.objects_with_keys = []
         self.keys = []
 
         self.load_systems()
@@ -73,6 +74,8 @@ class UniverseManager:
 
         self.load_interiors()
         self.load_custom_encounters()
+
+        self.load_keys()
 
         self.sync_data()
 
@@ -97,7 +100,7 @@ class UniverseManager:
                 self.loadouts += system.loadouts
                 self.asteroid_definitions += system.asteroid_definitions
                 self.templated_nebulas += system.templated_nebulas
-                self.keys += system.keys
+                self.objects_with_keys += system.objects_with_keys
                 self.custom_encounters += system.custom_encounters
 
                 for dockable in system.get_dockable_objects():
@@ -156,8 +159,12 @@ class UniverseManager:
                 self.custom_enc_ship_loadouts.append(loadout)
                 self.core.population.add_npc_to_list(npc)
 
-                faction = self.core.factions.get_by_code(npc.faction.CODE)
+                faction = self.core.factions.get_by_code(custom_enc.get_faction_code())
                 faction.add_npc_ship(npc.get_npc_shiparch_nickname())
+
+    def load_keys(self):
+        for static in self.objects_with_keys:
+            self.keys.append(static.get_key())
 
     def get_market_equip(self):
         return DIVIDER.join([dealer.get_market_content() for dealer in self.equip_dealers])

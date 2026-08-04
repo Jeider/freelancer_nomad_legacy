@@ -1,7 +1,8 @@
 import pathlib
 
 from universe.content.system_object import SystemObject
-from universe.content.main_objects import RawText, TradeConnection, JumpableObject, DockableObject, StaticObject, CustomerEncounterZone
+from universe.content.main_objects import (RawText, TradeConnection, JumpableObject, DockableObject,
+                                           StaticObject, CustomerEncounterZone, DangeonTradelane)
 from universe.content import zones
 from universe.content.mineable import Mineable, RewardsGroup
 from universe.content import interior
@@ -139,8 +140,10 @@ distance = {tlr_distance}
         self.lawful_connections = []
 
         self.custom_encounters = []
+        self.custom_encounter_names = []
+        self.custom_encounter_ship_names = []
 
-        self.keys = []
+        self.objects_with_keys = []
 
         name = MS(self.get_ru_name(), self.get_en_name())
 
@@ -337,10 +340,16 @@ distance = {tlr_distance}
         self.dynamic_zones.extend(static.get_dynamic_zones())
 
         if issubclass(static.__class__, DockableObject) and static.LOCKED_DOCK:
-            self.keys.append(static.key)
+            self.objects_with_keys.append(static)
 
         if issubclass(static.__class__, JumpableObject):
             self.jumpable.append(static)
+
+            if static.LOCKED_DOCK:
+                self.objects_with_keys.append(static)
+
+        if issubclass(static.__class__, DangeonTradelane) and static.LOCKED_DOCK:
+            self.objects_with_keys.append(static)
 
     def get_static_by_class(self, item_class):
         return self.statics_db[item_class.get_full_alias()]
@@ -542,9 +551,22 @@ distance = {tlr_distance}
 
     def add_custom_encounter_zone(self, item):
         enc = item(self)
+        enc_nickname = enc.get_inspace_nickname()
+
+        if enc_nickname in self.custom_encounter_names:
+            raise Exception(f'System {self} already have encounter {enc_nickname}')
+
+        self.custom_encounter_names.append(enc_nickname)
+
         self.custom_encounters.append(
             enc
         )
+
+    def add_custom_encounter_ship_name(self, ship_name):
+        if ship_name in self.custom_encounter_ship_names:
+            raise Exception(f'System {self} already have ship encounter {ship_name}')
+
+        self.custom_encounter_ship_names.append(ship_name)
 
     def get_custom_encounters(self):
         return self.custom_encounters

@@ -22,7 +22,7 @@ class FX:
     VIS_GENERIC = None
     SOUND = None
     FX_APPEND = ''
-    REFERENCE = False
+    REFERENCE = False  # do not add vis_effect when is true
 
     subclasses = []
 

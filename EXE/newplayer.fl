@@ -137,635 +137,669 @@ delta_worth = -1
 
 
 [mPlayer]
-;rh_mnh_61_base
+;key_rh_mnh_61_base_unlock
 locked_gate = 2474272070
 
-;rh_mnh_62_base
+;key_rh_mnh_62_base_unlock
 locked_gate = 3011123526
 
-;rh_mnh_63_base
+;key_rh_mnh_63_base_unlock
 locked_gate = 2474249542
 
-;rh_mnh_64_base
+;key_rh_mnh_64_base_unlock
 locked_gate = 3011174726
 
-;rh_mnh_65_base
+;key_rh_mnh_65_base_unlock
 locked_gate = 2474308934
 
-;rh_mnh_51_base
+;key_rh_mnh_jg_to_rh_kgb_unlock
+locked_gate = 2183863182
+
+;key_rh_mnh_51_base_unlock
 locked_gate = 2467718476
 
-;rh_mnh_52_base
+;key_rh_mnh_52_base_unlock
 locked_gate = 3004569932
 
-;rh_biz_05_base
+;key_rh_biz_05_base_unlock
 locked_gate = 2879533897
 
-;rh_biz_61_base
+;key_rh_biz_61_base_unlock
 locked_gate = 2874843913
 
-;rh_biz_51_base
+;key_rh_biz_51_base_unlock
 locked_gate = 2872484611
 
-;rh_biz_52_base
+;key_rh_biz_52_base_unlock
 locked_gate = 2335629059
 
-;rh_biz_53_base
+;key_rh_biz_53_base_unlock
 locked_gate = 2872494851
 
-;rh_stut_51_base
+;key_rh_stut_51_base_unlock
 locked_gate = 2536981513
 
-;rh_stut_52_base
+;key_rh_stut_52_base_unlock
 locked_gate = 3073849353
 
-;rh_stut_61_base
+;key_rh_stut_61_base_unlock
 locked_gate = 2539340803
 
-;rh_stut_62_base
+;key_rh_stut_62_base_unlock
 locked_gate = 3076208643
 
-;rh_stut_63_base
+;key_rh_stut_63_base_unlock
 locked_gate = 2539334659
 
-;rh_stut_64_base
+;key_rh_stut_64_base_unlock
 locked_gate = 3076243459
 
-;rh_stut_65_base
+;key_rh_stut_65_base_unlock
 locked_gate = 2539377667
 
-;rh_ber_51_base
+;key_rh_ber_51_base_unlock
 locked_gate = 2335632457
 
-;rh_ber_52_base
+;key_rh_ber_52_base_unlock
 locked_gate = 2872479817
 
-;rh_ber_53_base
+;key_rh_ber_53_base_unlock
 locked_gate = 2335605833
 
-;sig8_51_base
+;key_sig8_51_base_unlock
 locked_gate = 2194059523
 
-;sig8_61_base
+;key_sig8_61_base_unlock
 locked_gate = 2192224521
 
-;sig8_62_base
+;key_sig8_62_base_unlock
 locked_gate = 2729102601
 
-;sig8_63_base
+;key_sig8_63_base_unlock
 locked_gate = 2192234761
 
-;om15_61_base
+;key_om15_61_base_unlock
 locked_gate = 2576696525
 
-;om15_62_base
+;key_om15_62_base_unlock
 locked_gate = 3113564365
 
-;om15_63_base
+;key_om15_63_base_unlock
 locked_gate = 2576690381
 
-;om15_64_base
+;key_om15_64_base_unlock
 locked_gate = 3113599181
 
-;om15_65_base
+;key_om15_65_base_unlock
 locked_gate = 2576733389
 
-;om15_66_base
+;key_om15_66_base_unlock
 locked_gate = 3113593037
 
-;om15_67_base
+;key_om15_67_base_unlock
 locked_gate = 2576727245
 
-;om15_51_base
+;key_om15_51_base_unlock
 locked_gate = 2583250119
 
-;om15_52_base
+;key_om15_52_base_unlock
 locked_gate = 3120117959
 
-;sig13_51_base
+;key_sig13_51_base_unlock
 locked_gate = 2810677007
 
-;sig13_52_base
+;key_sig13_52_base_unlock
 locked_gate = 2273835791
 
-;sig13_53_base
+;key_sig13_53_base_unlock
 locked_gate = 2810703631
 
-;sig13_54_base
+;key_sig13_54_base_unlock
 locked_gate = 2273772303
 
-;sig13_55_base
+;key_sig13_55_base_unlock
 locked_gate = 2810648335
 
-;sig13_56_base
+;key_sig13_56_base_unlock
 locked_gate = 2273798927
 
-;sig13_57_base
+;key_sig13_57_base_unlock
 locked_gate = 2810674959
 
-;sig13_58_base
+;key_sig13_58_base_unlock
 locked_gate = 2273751823
 
-;sig13_59_base
+;key_sig13_59_base_unlock
 locked_gate = 2810619663
 
-;sig13_60_base
+;key_sig13_60_base_unlock
 locked_gate = 2280362757
 
-;sig13_61_base
+;key_sig13_61_base_unlock
 locked_gate = 2817230597
 
-;sig13_62_base
+;key_sig13_62_base_unlock
 locked_gate = 2280389381
 
-;li_cal_61_base
+;key_li_cal_61_base_unlock
 locked_gate = 2297934797
 
-;li_cal_62_base
+;key_li_cal_62_base_unlock
 locked_gate = 2834812877
 
-;li_cal_63_base
+;key_li_cal_63_base_unlock
 locked_gate = 2297945037
 
-;li_cal_64_base
+;key_li_cal_64_base_unlock
 locked_gate = 2834773965
 
-;li_cal_65_base
+;key_li_cal_65_base_unlock
 locked_gate = 2297897933
 
-;li_cal_66_base
+;key_li_cal_66_base_unlock
 locked_gate = 2834784205
 
-;li_cal_67_base
+;key_li_cal_67_base_unlock
 locked_gate = 2297908173
 
-;li_cal_68_base
+;key_li_cal_68_base_unlock
 locked_gate = 2834728909
 
-;li_cal_69_base
+;key_li_cal_69_base_unlock
 locked_gate = 2297861069
 
-;li_cal_51_base
+;key_li_cal_51_base_unlock
 locked_gate = 2291905479
 
-;li_cal_52_base
+;key_li_cal_52_base_unlock
 locked_gate = 2828783559
 
-;sig22_61_base
+;key_sig22_61_base_unlock
 locked_gate = 3219358916
 
-;sig22_62_base
+;key_sig22_62_base_unlock
 locked_gate = 2682517700
 
-;sig22_63_base
+;key_sig22_63_base_unlock
 locked_gate = 3219385540
 
-;sig22_64_base
+;key_sig22_64_base_unlock
 locked_gate = 2682454212
 
-;sig22_65_base
+;key_sig22_65_base_unlock
 locked_gate = 3219330244
 
-;sig22_66_base
+;key_sig22_66_base_unlock
 locked_gate = 2682480836
 
-;sig22_67_base
+;key_sig22_67_base_unlock
 locked_gate = 3219356868
 
-;li_mnh_51_base
+;key_li_mnh_51_base_unlock
 locked_gate = 2968420109
 
-;li_mnh_52_base
+;key_li_mnh_52_base_unlock
 locked_gate = 2431517453
 
-;li_mnh_53_base
+;key_li_mnh_53_base_unlock
 locked_gate = 2968393485
 
-;li_mnh_54_base
+;key_li_mnh_54_base_unlock
 locked_gate = 2431580941
 
-;li_for_51_base
+;key_li_for_51_base_unlock
 locked_gate = 3101408898
 
-;li_for_52_base
+;key_li_for_52_base_unlock
 locked_gate = 2564539010
 
-;li_for_53_base
+;key_li_for_53_base_unlock
 locked_gate = 3101415042
 
-;li_for_54_base
+;key_li_for_54_base_unlock
 locked_gate = 2564504194
 
-;li_for_71_base
+;key_li_for_71_base_unlock
 locked_gate = 3098787458
 
-;sig17_51_base
+;key_sig17_51_base_unlock
 locked_gate = 2812774154
 
-;sig17_52_base
+;key_sig17_52_base_unlock
 locked_gate = 2275932938
 
-;sig17_53_base
+;key_sig17_53_base_unlock
 locked_gate = 2812800778
 
-;sig17_61_base
+;key_sig17_61_base_unlock
 locked_gate = 2815133440
 
-;sig17_62_base
+;key_sig17_62_base_unlock
 locked_gate = 2278292224
 
-;sig17_63_base
+;key_sig17_63_base_unlock
 locked_gate = 2815160064
 
-;li_col_51_base
+;key_li_col_51_base_unlock
 locked_gate = 3097230919
 
-;li_col_52_base
+;key_li_col_52_base_unlock
 locked_gate = 2560328263
 
-;li_col_53_base
+;key_li_col_53_base_unlock
 locked_gate = 3097204295
 
-;li_col_55_base
+;key_li_col_55_base_unlock
 locked_gate = 3097194055
 
-;li_col_62_base
+;key_li_col_62_base_unlock
 locked_gate = 2566357581
 
-;li_col_65_base
+;key_li_col_65_base_unlock
 locked_gate = 3103223373
 
-;li_col_71_base
+;key_li_col_71_base_unlock
 locked_gate = 3102998087
 
-;li_col_72_base
+;key_li_col_72_base_unlock
 locked_gate = 2566095431
 
-;tau31_51_base
+;key_tau31_51_base_unlock
 locked_gate = 3171536271
 
-;tau31_52_base
+;key_tau31_52_base_unlock
 locked_gate = 2634658191
 
-;tau31_53_base
+;key_tau31_53_base_unlock
 locked_gate = 3171526031
 
-;tau31_54_base
+;key_tau31_54_base_unlock
 locked_gate = 2634631567
 
-;tau31_55_base
+;key_tau31_55_base_unlock
 locked_gate = 3171507599
 
-;tau31_60_base
+;key_tau31_60_base_unlock
 locked_gate = 2640697733
 
-;tau31_61_base
+;key_tau31_61_base_unlock
 locked_gate = 3177565573
 
-;tau31_71_base
+;key_tau31_71_base_unlock
 locked_gate = 3177303439
 
-;tau31_72_base
+;key_tau31_72_base_unlock
 locked_gate = 2640425359
 
-;br_wrw_51_base
+;key_br_wrw_51_base_unlock
 locked_gate = 2985903819
 
-;br_wrw_52_base
+;key_br_wrw_52_base_unlock
 locked_gate = 2449029835
 
-;br_wrw_53_base
+;key_br_wrw_53_base_unlock
 locked_gate = 2985897675
 
-;br_wrw_54_base
+;key_br_wrw_54_base_unlock
 locked_gate = 2449064651
 
-;tau29_51_base
+;key_tau29_51_base_unlock
 locked_gate = 3037318277
 
-;tau29_52_base
+;key_tau29_52_base_unlock
 locked_gate = 2500440197
 
-;tau29_53_base
+;key_tau29_53_base_unlock
 locked_gate = 3037308037
 
-;tau29_61_base
+;key_tau29_61_base_unlock
 locked_gate = 3043347599
 
-;tau29_62_base
+;key_tau29_62_base_unlock
 locked_gate = 2506469519
 
-;tau29_63_base
+;key_tau29_63_base_unlock
 locked_gate = 3043337359
 
-;br_cam_51_base
+;key_br_cam_51_base_unlock
 locked_gate = 2835927497
 
-;br_cam_52_base
+;key_br_cam_52_base_unlock
 locked_gate = 2299047369
 
-;br_cam_53_base
+;key_br_cam_53_base_unlock
 locked_gate = 2835921353
 
-;br_cam_65_base
+;key_br_cam_65_base_unlock
 locked_gate = 2841919939
 
-;br_cam_66_base
+;key_br_cam_66_base_unlock
 locked_gate = 2305048003
 
-;br_cam_67_base
+;key_br_cam_67_base_unlock
 locked_gate = 2841913795
 
-;br_cam_61_base
+;key_br_cam_61_base_unlock
 locked_gate = 2841956803
 
-;br_cam_71_base
+;key_br_cam_71_base_unlock
 locked_gate = 2841694665
 
-;br_cam_72_base
+;key_br_cam_72_base_unlock
 locked_gate = 2304814537
 
-;tau37_61_base
+;key_tau37_61_base_unlock
 locked_gate = 3176516994
 
-;tau37_62_base
+;key_tau37_62_base_unlock
 locked_gate = 2639638914
 
-;tau37_63_base
+;key_tau37_63_base_unlock
 locked_gate = 3176506754
 
-;tau37_64_base
+;key_tau37_64_base_unlock
 locked_gate = 2639612290
 
-;tau37_65_base
+;key_tau37_65_base_unlock
 locked_gate = 3176488322
 
-;tau37_66_base
+;key_tau37_66_base_unlock
 locked_gate = 2639602050
 
-;tau37_67_base
+;key_tau37_67_base_unlock
 locked_gate = 3176478082
 
-;tau37_51_base
+;key_tau37_51_base_unlock
 locked_gate = 3174681992
 
-;br_avl_51_base
+;key_br_avl_51_base_unlock
 locked_gate = 2433401613
 
-;br_avl_52_base
+;key_br_avl_52_base_unlock
 locked_gate = 2970271501
 
-;br_avl_61_base
+;key_br_avl_61_base_unlock
 locked_gate = 2439430919
 
-;br_avl_62_base
+;key_br_avl_62_base_unlock
 locked_gate = 2976300807
 
-;br_avl_63_base
+;key_br_avl_63_base_unlock
 locked_gate = 2439424775
 
-;br_avl_64_base
+;key_br_avl_64_base_unlock
 locked_gate = 2976270087
 
-;br_avl_65_base
+;key_br_avl_65_base_unlock
 locked_gate = 2439402247
 
-;br_avl_58_base
+;key_br_avl_58_base_unlock
 locked_gate = 2970351373
 
-;br_avl_59_base
+;key_br_avl_59_base_unlock
 locked_gate = 2433475341
 
-;sig42_61_base
+;key_sig42_61_base_unlock
 locked_gate = 2414052164
 
-;sig42_62_base
+;key_sig42_62_base_unlock
 locked_gate = 2950954820
 
-;sig42_63_base
+;key_sig42_63_base_unlock
 locked_gate = 2414078788
 
-;sig42_64_base
+;key_sig42_64_base_unlock
 locked_gate = 2950891332
 
-;sig42_65_base
+;key_sig42_65_base_unlock
 locked_gate = 2414023492
 
-;tau23_51_base
+;key_jg_sirius_to_or_hq_unlock
+locked_gate = 2852262409
+
+;key_jg_sirius_to_asf_hq_unlock
+locked_gate = 3046140481
+
+;key_sig42_jh_to_ku_tgk_unlock
+locked_gate = 3214545152
+
+;key_tau23_51_base_unlock
 locked_gate = 3038366925
 
-;tau23_52_base
+;key_tau23_52_base_unlock
 locked_gate = 2501488845
 
-;tau23_53_base
+;key_tau23_53_base_unlock
 locked_gate = 3038356685
 
-;tau23_54_base
+;key_tau23_54_base_unlock
 locked_gate = 2501462221
 
-;tau23_55_base
+;key_tau23_55_base_unlock
 locked_gate = 3038338253
 
-;tau23_56_base
+;key_tau23_56_base_unlock
 locked_gate = 2501451981
 
-;tau23_57_base
+;key_tau23_57_base_unlock
 locked_gate = 3038328013
 
-;tau23_58_base
+;key_tau23_58_base_unlock
 locked_gate = 2501441741
 
-;tau23_59_base
+;key_tau23_59_base_unlock
 locked_gate = 3038309581
 
-;tau23_60_base
+;key_tau23_60_base_unlock
 locked_gate = 2507528391
 
-;tau23_61_base
+;key_tau23_61_base_unlock
 locked_gate = 3044396231
 
-;tau23_62_base
+;key_tau23_62_base_unlock
 locked_gate = 2507518151
 
-;tau23_63_base
+;key_tau23_63_base_unlock
 locked_gate = 3044385991
 
-;ku_ksu_51_base
+;key_ku_ksu_51_base_unlock
 locked_gate = 2551616142
 
-;ku_ksu_52_base
+;key_ku_ksu_52_base_unlock
 locked_gate = 3088510606
 
-;ku_ksu_53_base
+;key_ku_ksu_53_base_unlock
 locked_gate = 2551642766
 
-;ku_ksu_61_base
+;key_ku_ksu_61_base_unlock
 locked_gate = 2558169732
 
-;ku_ksu_62_base
+;key_ku_ksu_62_base_unlock
 locked_gate = 3095064196
 
-;tau4_51_base
+;key_tau4_51_base_unlock
 locked_gate = 2288790092
 
-;tau4_52_base
+;key_tau4_52_base_unlock
 locked_gate = 2825672268
 
-;tau4_53_base
+;key_tau4_53_base_unlock
 locked_gate = 2288796236
 
-;tau4_61_base
+;key_tau4_61_base_unlock
 locked_gate = 2281712198
 
-;tau4_62_base
+;key_tau4_62_base_unlock
 locked_gate = 2818594374
 
-;ku_hns_51_base
+;key_ku_hns_51_base_unlock
 locked_gate = 2955512014
 
-;ku_hns_52_base
+;key_ku_hns_52_base_unlock
 locked_gate = 2418668750
 
-;ku_hns_53_base
+;key_ku_hns_53_base_unlock
 locked_gate = 2955534542
 
-;ku_hns_61_base
+;key_ku_hns_61_base_unlock
 locked_gate = 2957347012
 
-;ku_hns_62_base
+;key_ku_hns_62_base_unlock
 locked_gate = 2420503748
 
-;ku_hns_63_base
+;key_ku_hns_63_base_unlock
 locked_gate = 2957369540
 
-;ku_hns_64_base
+;key_ku_hns_64_base_unlock
 locked_gate = 2420444356
 
-;ku_hns_65_base
+;key_ku_hns_65_base_unlock
 locked_gate = 2957318340
 
-;ku_tgk_61_base
+;key_ku_tgk_61_base_unlock
 locked_gate = 3102655300
 
-;ku_tgk_62_base
+;key_ku_tgk_62_base_unlock
 locked_gate = 2565783364
 
-;ku_tgk_63_base
+;key_ku_tgk_63_base_unlock
 locked_gate = 3102649156
 
-;ku_tgk_64_base
+;key_ku_tgk_64_base_unlock
 locked_gate = 2565752644
 
-;ku_tgk_65_base
+;key_ku_tgk_65_base_unlock
 locked_gate = 3102626628
 
-;ku_tgk_66_base
+;key_ku_tgk_66_base_unlock
 locked_gate = 2565746500
 
-;ku_tgk_67_base
+;key_ku_tgk_67_base_unlock
 locked_gate = 3102620484
 
-;ku_tgk_68_base
+;key_ku_tgk_68_base_unlock
 locked_gate = 2565863236
 
-;ku_tgk_69_base
+;key_ku_tgk_69_base_unlock
 locked_gate = 3102729028
 
-;ku_tgk_70_base
+;key_ku_tgk_70_base_unlock
 locked_gate = 2565527374
 
-;ku_tgk_51_base
+;key_ku_tgk_51_base_unlock
 locked_gate = 3095577422
 
-;ku_tgk_52_base
+;key_ku_tgk_52_base_unlock
 locked_gate = 2558705486
 
-;ku_hkd_51_base
+;key_ku_tgk_jh_to_sig42_unlock
+locked_gate = 2869510027
+
+;key_ku_hkd_51_base_unlock
 locked_gate = 2557578248
 
-;ku_hkd_52_base
+;key_ku_hkd_52_base_unlock
 locked_gate = 3094474760
 
-;ku_hkd_53_base
+;key_ku_hkd_53_base_unlock
 locked_gate = 2557600776
 
-;ku_hkd_54_base
+;key_ku_hkd_54_base_unlock
 locked_gate = 3094415368
 
-;ku_hkd_61_base
+;key_ku_hkd_61_base_unlock
 locked_gate = 2552073218
 
-;ku_hkd_71_base
+;key_ku_hkd_71_base_unlock
 locked_gate = 2551811080
 
-;ku_hkd_72_base
+;key_ku_hkd_72_base_unlock
 locked_gate = 3088707592
 
-;om7_71_base
+;key_om7_71_base_unlock
 locked_gate = 2974344768
 
-;om7_51_base
+;key_om7_51_base_unlock
 locked_gate = 2971723328
 
-;om7_52_base
+;key_om7_52_base_unlock
 locked_gate = 2434832960
 
-;om7_53_base
+;key_om7_53_base_unlock
 locked_gate = 2971700800
 
-;om7_54_base
+;key_om7_54_base_unlock
 locked_gate = 2434818624
 
-;om7_55_base
+;key_om7_55_base_unlock
 locked_gate = 2971694656
 
-;om7_56_base
+;key_om7_56_base_unlock
 locked_gate = 2434796096
 
-;om7_57_base
+;key_om7_57_base_unlock
 locked_gate = 2971672128
 
-;om7_58_base
+;key_om7_58_base_unlock
 locked_gate = 2434912832
 
-;om7_59_base
+;key_om7_59_base_unlock
 locked_gate = 2971780672
 
-;om7_61_base
+;key_om7_61_base_unlock
 locked_gate = 2974606922
 
-;om7_62_base
+;key_om7_62_base_unlock
 locked_gate = 2437716554
 
-;om7_63_base
+;key_om7_63_base_unlock
 locked_gate = 2974584394
 
-;om7_72_base
+;key_om7_72_base_unlock
 locked_gate = 2437454400
 
-;om7_73_base
+;key_om7_73_base_unlock
 locked_gate = 2974322240
 
-;om7_74_base
+;key_om7_74_base_unlock
 locked_gate = 2437440064
 
-;om7_75_base
+;key_om7_75_base_unlock
 locked_gate = 2974316096
 
-;co_cur_61_base
+;key_jg_om7_to_or_hq_unlock
+locked_gate = 3018689220
+
+;key_co_cur_61_base_unlock
 locked_gate = 2840327436
 
-;co_cur_62_base
+;key_co_cur_62_base_unlock
 locked_gate = 2303428876
 
-;co_cur_51_base
+;key_co_cur_51_base_unlock
 locked_gate = 2837968134
 
-;co_och_51_base
+;key_co_och_51_base_unlock
 locked_gate = 2567464516
 
-;co_och_52_base
+;key_co_och_52_base_unlock
 locked_gate = 3104315972
 
-;arch_01_base
+;key_arch_dangeon_tlr_7_unlock
+locked_gate = 2341259210
+locked_gate = 2878147530
+
+;key_arch_dangeon_tlr_1_unlock
+locked_gate = 2341224394
+locked_gate = 2878096330
+
+;key_arch_dangeon_tlr_3_unlock
+locked_gate = 2341230538
+locked_gate = 2878127050
+
+;key_arch_dangeon_tlr_5_unlock
+locked_gate = 2341253066
+locked_gate = 2878133194
+
+;key_arch_01_base_unlock
 locked_gate = 3177388878

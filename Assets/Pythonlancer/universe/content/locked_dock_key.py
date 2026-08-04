@@ -1,16 +1,9 @@
 from tools.create_id import CreateId
-from text.infocards import InfocardBuilder
 
-from text.strings import MultiString as MS
+from text.dividers import SINGLE_DIVIDER
 
 
 class LockedDockKey(object):
-
-    DOCK_KEY_TEMPLATE = '''key = {key_equip}
-docks = {base_name}
-mounted = false'''
-
-    EQUIP_NAME_TEMPLATE = 'key_{base_name}_unlock'
 
     GOOD_TEMPLATE = '''[Good]
 nickname = {key_equip}
@@ -59,44 +52,31 @@ mass = 10
 volume = 0.000000
 tractored_explosion = {tractored_explosion}
 '''
-
-    INTIIAL_WORLD_TEMPLATE = ''';{base_nickname}
-locked_gate = {int_hash}
-npc_locked_gate = {int_hash}'''
-
-    NEW_PLAYER_TEMPLATE = ''';{base_nickname}
-locked_gate = {int_hash}'''
-
-    STORY_TEMPLATE = 'Act_LockDock = Player, {base_nickname}, lock'
     
-    def __init__(self, locked_base, key_fx, key_name):
-        self.locked_base = locked_base
-        self.base_nickname = self.locked_base.get_base_nickname()
-        self.equip_name = self.create_equip_name()
-        self.key_fx = key_fx
-        self.ids_name = self.locked_base.system.key_ids.new_name(key_name)
-        self.ids_info = self.locked_base.system.key_ids.new_info(
-            MS(
-                InfocardBuilder.build_equip_infocard(
-                    key_name.get_ru(),
-                    [
-                        f'Открывает доступ к объекту {self.locked_base.get_space_name().get_ru()} в системе {self.locked_base.system.get_ru_name()}',
-                        'Вы можете продать ключ после использования. Вы всегда сможете добыть его снова при необходимости.'
-                    ]
-                ),
-                InfocardBuilder.build_equip_infocard(
-                    key_name.get_en(),
-                    [
-                        f'Opens access to {self.locked_base.get_space_name().get_en()} in {self.locked_base.system.get_en_name()} system',
-                        'You can sell the key after use. You can always obtain it again if needed.'
-                    ]
-                )
-            ),
+    def __init__(self, system, key_archetype_nickname,
+                 locked_bases, unlocks_bases,
+                 key_fx=None, key_name=None, key_description=None):
+        self.system = system
+        self.key_archetype_nickname = key_archetype_nickname
+        if len(locked_bases) == 0:
+            raise Exception('Locked bases should be list and not null')
+        self.locked_bases = locked_bases
+        self.unlocks_bases = unlocks_bases
 
-        )
+        self.unlockable = len(unlocks_bases) > 0
 
-    def create_equip_name(self):
-        return self.EQUIP_NAME_TEMPLATE.format(base_name=self.base_nickname)
+        if self.unlockable:
+            if key_fx is None:
+                raise Exception(f'Key {key_archetype_nickname} is unlockable and key_fx is required')
+            if key_name is None:
+                raise Exception(f'Key {key_archetype_nickname} is unlockable and key_name is required')
+            if key_description is None:
+                raise Exception(f'Key {key_archetype_nickname} is unlockable and key_description is required')
+
+            self.equip_name = key_archetype_nickname
+            self.key_fx = key_fx
+            self.ids_name = self.system.key_ids.new_name(key_name)
+            self.ids_info = self.system.key_ids.new_info(key_description)
 
     def get_equip_name(self):
         return self.equip_name
@@ -108,9 +88,21 @@ locked_gate = {int_hash}'''
         return self.ids_info.id
 
     def get_dock_key(self):
-        return self.DOCK_KEY_TEMPLATE.format(key_equip=self.equip_name, base_name=self.locked_base.get_inspace_nickname())
+        if not self.unlockable:
+            return ''  # Allow key to be unlocked by something else
+
+        items = [f'key = {self.equip_name}']
+        for b in self.unlocks_bases:
+            items.append(
+                f'docks = {b}'
+            )
+        items.append('mounted = false')
+        return SINGLE_DIVIDER.join(items)
 
     def get_equip(self):
+        if not self.unlockable:
+            return ''  # Do not make key unlock equip, because it isn't required
+
         return self.EQUIP_TEMPLATE.format(
             key_equip=self.equip_name,
             tractored_explosion=self.key_fx,
@@ -119,19 +111,28 @@ locked_gate = {int_hash}'''
         )
 
     def get_good(self):
+        if not self.unlockable:
+            return ''  # Do not make key unlock equip, because it isn't required
+
         return self.GOOD_TEMPLATE.format(key_equip=self.equip_name)
 
     def get_initial_world(self):
-        return self.INTIIAL_WORLD_TEMPLATE.format(
-            base_nickname=self.base_nickname,
-            int_hash=CreateId.get_int_id(self.locked_base.get_inspace_nickname())
-        )
+        items = [f';{self.key_archetype_nickname}']
+        for b in self.locked_bases:
+            int_hash = CreateId.get_int_id(b)
+            items.append(f'locked_gate = {int_hash}')
+            items.append(f'npc_locked_gate = {int_hash}')
+        return SINGLE_DIVIDER.join(items)
 
     def get_new_player(self):
-        return self.NEW_PLAYER_TEMPLATE.format(
-            base_nickname=self.base_nickname,
-            int_hash=CreateId.get_int_id(self.locked_base.get_inspace_nickname())
-        )
+        items = [f';{self.key_archetype_nickname}']
+        for b in self.locked_bases:
+            int_hash = CreateId.get_int_id(b)
+            items.append(f'locked_gate = {int_hash}')
+        return SINGLE_DIVIDER.join(items)
 
     def get_story(self):
-        return self.STORY_TEMPLATE.format(base_nickname=self.locked_base.get_inspace_nickname())
+        items = []
+        for b in self.locked_bases:
+            items.append(f'Act_LockDock = Player, {b}, lock')
+        return SINGLE_DIVIDER.join(items)

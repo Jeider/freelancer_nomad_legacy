@@ -319,14 +319,16 @@ addon = {power}, HpPower01, 1'''
     def get_visual(self):
         return self.VISUAL
 
-    def get_visual_prefix(self):
-        return PREFIX_PER_VIS[self.VISUAL]
+    @classmethod
+    def get_visual_prefix(cls):
+        return PREFIX_PER_VIS[cls.VISUAL]
 
     def get_clean_archetype(self):
         return self.ARCHETYPE
 
-    def get_archetype(self):
-        return self.ARCHETYPE + self.get_visual_prefix()
+    @classmethod
+    def get_archetype(cls):
+        return cls.ARCHETYPE + cls.get_visual_prefix()
 
     def get_package_nickname(self):
         return '{archetype}_package'.format(archetype=self.get_archetype())
@@ -532,7 +534,10 @@ item_icon = Equipment\\models\\commodities\\nn_icons\\{icon}'''
         return math.ceil(self.SHIP_MASS * self.SHIP_MASS_MULTIPLER)
 
     def get_hold_size(self):
-        return math.ceil((self.CARGO_PER_CLASS[self.SHIP_CLASS] * self.CARGO_HOLD_MULTIPLER) + self.EXTRA_CARGO)
+        try:
+            return math.ceil((self.CARGO_PER_CLASS[self.SHIP_CLASS] * self.CARGO_HOLD_MULTIPLER) + self.EXTRA_CARGO)
+        except Exception as e:
+            raise Exception(f'Something get wrong with ship {self}. Reason: {e}')
 
     def get_strafe_force(self):
         return math.ceil(self.STRAFE_FORCE * self.STRAFE_FORCE_MULTIPLER)
@@ -1724,10 +1729,63 @@ class Starblazer(GenericShip, ShipElite, Ship2, Ship):
     # MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
 
 
+# ========== RHEINLAND ==========
+
+class NomadDagger(Dagger):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 6
+
+    RU_NAME = MS('Кинжал', 'Dagger')
+    RU_NAME_FULL = MS('Лёгкий истребитель пограничья', 'Border world light fighter')
+    RU_INFO = MS(RU.BW_F, EN.BW_F)
+
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02']
+
+
+class NomadBanshee(Banshee):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 7
+
+    RU_NAME = MS('Баньши', 'Banshee')
+    RU_NAME_FULL = MS('Рейнландский лёгкий истребитель', 'Rheinland light fighter')
+    RU_INFO = MS(RU.RH_F, EN.RH_F)
+
+    HP_TORPEDO = 'HpTorpedo02'
+    MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+    MAX_WEAPONS = ['HpTorpedo01', 'HpWeapon03', 'HpWeapon04']
+
+
+class NomadStiletto(Stiletto):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 7
+
+    RU_NAME = MS('Стилет', 'Stiletto')
+    RU_NAME_FULL = MS('Тяжелый истребитель пограничья', 'Border world heavy fighter')
+    RU_INFO = MS(RU.BW_E, EN.BW_E)
+
+    HP_TORPEDO = 'HpWeapon06'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03']
+
+
+class NomadSabre(Sabre):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 7
+
+    RU_NAME = MS('Сабля', 'Sabre')
+    RU_NAME_FULL = MS('Тяжелый истребитель пограничья', 'Border world heavy fighter')
+    RU_INFO = MS(RU.BW_E2, EN.BW_E2)
+
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+
 
 class NomadValkyrie(Valkyrie):
     VISUAL = VIS_NOMAD
-    SHIP_CLASS = 10
+    # SHIP_CLASS = 7
 
     RU_NAME = MS('Валькирия', 'Valkyrie')
     RU_NAME_FULL = MS('Рейнландский тяжелый истребитель', 'Rheinland heavy fighter')
@@ -1736,3 +1794,848 @@ class NomadValkyrie(Valkyrie):
     HP_TORPEDO = 'HpTorpedo01'
     MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
     MAX_WEAPONS = ['HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
+
+
+class NomadHumpback(Humpback):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 10
+
+    RU_NAME = MS('Горбун', 'Humpback')
+    RU_NAME_FULL = MS('Рейнландский грузовик', 'Rheinland freighter')
+    RU_INFO = MS(RU.RH_FR, EN.RH_FR)
+
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon05', 'HpWeapon06', 'HpWeapon10']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon05', 'HpWeapon06']
+
+
+# ========== LIBERTY ==========
+
+class NomadPiranha(Piranha):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 7
+
+    RU_NAME = MS('Пиранья', 'Piranha')
+    RU_NAME_FULL = MS('Лёгкий истребитель Либерти', 'Liberty light fighter')
+    RU_INFO = MS(RU.BH_F, EN.BH_F)
+
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+    MAX_WEAPONS = ['HpWeapon03', 'HpWeapon04']
+
+
+class NomadPatriot(Patriot):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 8
+
+    RU_NAME = MS('Патриот', 'Patriot')
+    RU_NAME_FULL = MS('Лёгкий истребитель Либерти', 'Liberty light fighter')
+    RU_INFO = MS(RU.LI_F, EN.LI_F)
+
+    HP_TORPEDO = 'HpTorpedo02'
+    MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+    MAX_WEAPONS = ['HpWeapon03', 'HpWeapon04']
+
+
+class NomadBarracuda(Barracuda):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 7
+
+    RU_NAME = MS('Барракуда', 'Barracuda')
+    RU_NAME_FULL = MS('Тяжелый истребитель Либерти', 'Liberty heavy fighter')
+    RU_INFO = MS(RU.BH_E, EN.BH_E)
+
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05']
+    MAX_WEAPONS = ['HpWeapon03', 'HpWeapon04', 'HpWeapon05']
+
+
+class NomadHammerhead(Hammerhead):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 10
+
+    RU_NAME = MS('Рыба-молот', 'Hammerhead')
+    RU_NAME_FULL = MS('Тяжелый истребитель Либерти', 'Liberty heavy fighter')
+    RU_INFO = MS(RU.BH_E2, EN.BH_E2)
+
+    HP_TORPEDO = 'HpWeapon06'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon07']
+    MAX_WEAPONS = ['HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon07']
+
+
+class NomadDefender(Defender):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 8
+
+    RU_NAME = MS('Защитник', 'Defender')
+    RU_NAME_FULL = MS('Тяжелый истребитель Либерти', 'Liberty heavy fighter')
+    RU_INFO = MS(RU.LI_E, EN.LI_E)
+
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05']
+    MAX_WEAPONS = ['HpWeapon03', 'HpWeapon04']
+
+
+class NomadDefenderJuni(DefenderJuni):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 11
+
+    RU_NAME = MS('Рейнджер', 'Ranger')
+    RU_NAME_FULL = MS('Тяжелый истребитель ASF', 'ASF heavy fighter')
+    RU_INFO = MS(RU.LI_E2, EN.LI_E2)
+
+    HP_TORPEDO = 'HpTorpedo02'
+    MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05']
+    MAX_WEAPONS = ['HpTorpedo01', 'HpWeapon03', 'HpWeapon04']
+
+
+class NomadRhino(Rhino):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 7
+
+    RU_NAME = MS('Носорог', 'Rhino')
+    RU_NAME_FULL = MS('Грузовик Либерти', 'Liberty freighter')
+    RU_INFO = MS(RU.LI_FR, EN.LI_FR)
+
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpTurret01', 'HpTurret02', 'HpTurret03']
+    MAX_WEAPONS = ['HpWeapon02', 'HpWeapon03', 'HpTurret01', 'HpTurret02']
+
+
+# ========== BRETONIA ==========
+
+class NomadLegionnaire(Legionnaire):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 8
+
+    RU_NAME = MS('Легионер', 'Legionnaire')
+    RU_NAME_FULL = MS('Бретонский лёгкий истребитель', 'Bretonia light fighter')
+    RU_INFO = MS(RU.EX_CO_F, EN.EX_CO_F)
+
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+    MAX_WEAPONS = ['HpWeapon03', 'HpWeapon04']
+
+
+class NomadCavalier(Cavalier):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 9
+
+    RU_NAME = MS('Кавалер', 'Cavalier')
+    RU_NAME_FULL = MS('Бретонский лёгкий истребитель', 'Bretonia light fighter')
+    RU_INFO = MS(RU.BR_F, EN.BR_F)
+
+    HP_TORPEDO = 'HpTorpedo02'
+    MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+    MAX_WEAPONS = ['HpTorpedo01', 'HpWeapon03', 'HpWeapon04']
+
+
+class NomadCenturion(Centurion):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 8
+
+    RU_NAME = MS('Центурион', 'Centurion')
+    RU_NAME_FULL = MS('Бретонский тяжелый истребитель', 'Bretonia heavy fighter')
+    RU_INFO = MS(RU.EX_CO_E, EN.EX_CO_E)
+
+    HP_TORPEDO = 'HpTorpedo02'
+    MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+    MAX_WEAPONS = ['HpTorpedo01', 'HpWeapon03', 'HpWeapon04']
+
+
+class NomadCenturionDarcy(CenturionDarcy):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 8
+
+    RU_NAME = MS('Центурион', 'Centurion')
+    RU_NAME_FULL = MS('Бретонский тяжелый истребитель', 'Bretonia heavy fighter')
+    RU_INFO = MS(RU.EX_CO_E, EN.EX_CO_E)
+
+    HP_TORPEDO = 'HpTorpedo02'
+    MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+    MAX_WEAPONS = ['HpTorpedo01', 'HpWeapon03', 'HpWeapon04']
+
+
+class NomadTitan(Titan):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 11
+
+    RU_NAME = MS('Титан', 'Titan')
+    RU_NAME_FULL = MS('Бретонский тяжелый истребитель', 'Bretonia heavy fighter')
+    RU_INFO = MS(RU.EX_CO_E2, EN.EX_CO_E2)
+
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+
+
+class NomadCrusader(Crusader):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 9
+
+    RU_NAME = MS('Крестоносец', 'Crusader')
+    RU_NAME_FULL = MS('Бретонский тяжелый истребитель', 'Bretonia heavy fighter')
+    RU_INFO = MS(RU.BR_E, EN.BR_E)
+
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon05', 'HpWeapon06']
+
+
+class NomadClydesdale(Clydesdale):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 8
+
+    RU_NAME = MS('Клейндсаль', 'Clydesdale')
+    RU_NAME_FULL = MS('Бретонский грузовик', 'Bretonia freighter')
+    RU_INFO = MS(RU.BR_FR, EN.BR_FR)
+
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpTurret01', 'HpTurret02', 'HpTurret03']
+    MAX_WEAPONS = ['HpWeapon02', 'HpWeapon03', 'HpTurret01', 'HpTurret02']
+
+
+# ========== KUSARI ==========
+
+class NomadHawk(Hawk):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 8
+
+    RU_NAME = MS('Ястреб', 'Hawk')
+    RU_NAME_FULL = MS('Лёгкий гражданский истребитель типа 2', 'Civilian type-2 light fighter')
+    RU_INFO = MS(RU.GF4, EN.GF4)
+
+    HP_TORPEDO = 'HpTorpedo01'
+
+
+class NomadDrake(Drake):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 9
+
+    RU_NAME = MS('Дрейк', 'Drake')
+    RU_NAME_FULL = MS('Лёгкий истребитель Кусари', 'Kusari light fighter')
+    RU_INFO = MS(RU.KU_F, EN.KU_F)
+
+    HP_TORPEDO = 'HpTorpedo02'
+    MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02']
+
+
+class NomadFalcon(Falcon):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 8
+
+    RU_NAME = MS('Сокол', 'Falcon')
+    RU_NAME_FULL = MS('Тяжелый гражданский истребитель типа 2', 'Civilian type-2 heavy fighter')
+    RU_INFO = MS(RU.GF5, EN.GF5)
+
+    HP_TORPEDO = 'HpTorpedo01'
+
+
+class NomadEagle(Eagle):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 11
+
+    RU_NAME = MS('Орел', "Eagle")
+    RU_NAME_FULL = MS('Тяжелый гражданский истребитель типа 3', 'Civilian type-3 heavy fighter')
+    RU_INFO = MS(RU.GF6, EN.GF6)
+
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+
+
+class NomadDragon(Dragon):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 9
+
+    RU_NAME = MS('Дракон', 'Dragon')
+    RU_NAME_FULL = MS('Тяжелый истребитель Кусари', 'Kusari heavy fighter')
+    RU_INFO = MS(RU.KU_E, EN.KU_E)
+
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon05', 'HpWeapon06']
+
+
+class NomadDron(Dron):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 9
+
+    RU_NAME = MS('Дрон', 'Drone')
+    RU_NAME_FULL = MS('Грузовик Кусари', 'Kusari freighter')
+    RU_INFO = MS(RU.KU_FR, EN.KU_FR)
+
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpTurret02', 'HpTurret03']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+
+
+# ========== CORSAIR / ORDER ==========
+
+class NomadBloodhound(Bloodhound):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 7
+
+    RU_NAME = MS('Гончая', 'Bloodhound')
+    RU_NAME_FULL = MS('Лёгкий истребитель Корсаров', 'Corsair light fighter')
+    RU_INFO = MS(RU.CO_F, EN.CO_F)
+
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03']
+
+
+class NomadWolfhound(Wolfhound):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 9
+
+    RU_NAME = MS('Волкодав', 'Wolfhound')
+    RU_NAME_FULL = MS('Тяжёлый истребитель Корсаров', 'Corsair heavy fighter')
+    RU_INFO = MS(RU.CO_E, EN.CO_E)
+
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+
+
+class NomadAnubis(Anubis):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 11
+
+    RU_NAME = MS('Анубис', 'Anubis')
+    RU_NAME_FULL = MS('Тяжёлый истребитель Ордена', 'Order heavy fighter')
+    RU_INFO = MS(RU.OR_E, EN.OR_E)
+
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+
+
+class NomadMule(Mule):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 9
+
+    RU_NAME = MS('Мул', 'Mule')
+    RU_NAME_FULL = MS('Грузовик Корсаров', 'Corsair freighter')
+    RU_INFO = MS(RU.CO_FR, EN.CO_FR)
+
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+
+
+# ========== GENERIC ==========
+
+class NomadDromader(Dromader):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 6
+
+    RU_NAME = MS('Дромадер', 'Dromader')
+    RU_NAME_FULL = MS('Грузовик пограничья', 'Border world freighter')
+    RU_INFO = MS(RU.BW_FR, EN.BW_FR)
+
+    MAIN_WEAPONS = ['HpWeapon02', 'HpWeapon03', 'HpTurret02', 'HpTurret03', 'HpTurret04', 'HpTurret05']
+    MAX_WEAPONS = ['HpWeapon02', 'HpWeapon03']
+
+
+class NomadCSV(CSV):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 7
+
+    RU_NAME = MS('CSV', 'CSV')
+    RU_NAME_FULL = MS('Гражданский грузовик', 'Civilian freighter')
+    RU_INFO = MS(RU.CSV, EN.CSV)
+
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpTurret01']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpTurret01']
+
+
+class NomadStarflier(Starflier):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 5
+
+    RU_NAME = MS('Старфлаер', 'Starflyer')
+    RU_NAME_FULL = MS('Лёгкий гражданский истребитель', 'Civilian light fighter')
+    RU_INFO = MS(RU.GF1, EN.GF1)
+
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03']
+    MAX_WEAPONS = ['HpWeapon03']
+
+
+class NomadStartracker(Startracker):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 6
+
+    RU_NAME = MS('Стартрекер', 'Startracker')
+    RU_NAME_FULL = MS('Лёгкий гражданский истребитель', 'Civilian light fighter')
+    RU_INFO = MS(RU.GF2, EN.GF2)
+
+    HP_TORPEDO = 'HpTorpedo02'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpTorpedo01']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02']
+
+
+class NomadStarblazer(Starblazer):
+    VISUAL = VIS_NOMAD
+    # SHIP_CLASS = 6
+
+    RU_NAME = MS('Старблейзер', 'Starblazer')
+    RU_NAME_FULL = MS('Тяжелый гражданский истребитель', 'Civilian heavy fighter')
+    RU_INFO = MS(RU.GF3, EN.GF3)
+
+    HP_TORPEDO = 'HpWeapon04'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon05', 'HpWeapon06']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03']
+
+
+# ========== RHEINLAND ==========
+
+class PirateValkyrie(Valkyrie):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 8
+
+    RU_NAME = MS('Валькирия', 'Valkyrie')
+    RU_NAME_FULL = MS('Рейнландский тяжелый истребитель', 'Rheinland heavy fighter')
+    RU_INFO = MS(RU.RH_E, EN.RH_E)
+
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
+    MAX_WEAPONS = ['HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
+
+
+class PirateDagger(Dagger):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 4
+
+    RU_NAME = MS('Кинжал', 'Dagger')
+    RU_NAME_FULL = MS('Лёгкий истребитель пограничья', 'Border world light fighter')
+    RU_INFO = MS(RU.BW_F, EN.BW_F)
+
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02']
+
+
+class PirateBanshee(Banshee):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 8
+
+    RU_NAME = MS('Баньши', 'Banshee')
+    RU_NAME_FULL = MS('Рейнландский лёгкий истребитель', 'Rheinland light fighter')
+    RU_INFO = MS(RU.RH_F, EN.RH_F)
+
+    HP_TORPEDO = 'HpTorpedo02'
+    MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+    MAX_WEAPONS = ['HpTorpedo01', 'HpWeapon03', 'HpWeapon04']
+
+
+class PirateStiletto(Stiletto):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 5
+
+    RU_NAME = MS('Стилет', 'Stiletto')
+    RU_NAME_FULL = MS('Тяжелый истребитель пограничья', 'Border world heavy fighter')
+    RU_INFO = MS(RU.BW_E, EN.BW_E)
+
+    HP_TORPEDO = 'HpWeapon06'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03']
+
+
+class PirateSabre(Sabre):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 9
+
+    RU_NAME = MS('Сабля', 'Sabre')
+    RU_NAME_FULL = MS('Тяжелый истребитель пограничья', 'Border world heavy fighter')
+    RU_INFO = MS(RU.BW_E2, EN.BW_E2)
+
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+
+
+class PirateHumpback(Humpback):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 8
+
+    RU_NAME = MS('Горбун', 'Humpback')
+    RU_NAME_FULL = MS('Рейнландский грузовик', 'Rheinland freighter')
+    RU_INFO = MS(RU.RH_FR, EN.RH_FR)
+
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon05', 'HpWeapon06', 'HpWeapon10']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon05', 'HpWeapon06']
+
+
+# ========== LIBERTY ==========
+
+class PiratePiranha(Piranha):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 5
+
+    RU_NAME = MS('Пиранья', 'Piranha')
+    RU_NAME_FULL = MS('Лёгкий истребитель Либерти', 'Liberty light fighter')
+    RU_INFO = MS(RU.BH_F, EN.BH_F)
+
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+    MAX_WEAPONS = ['HpWeapon03', 'HpWeapon04']
+
+
+class PiratePatriot(Patriot):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 6
+
+    RU_NAME = MS('Патриот', 'Patriot')
+    RU_NAME_FULL = MS('Лёгкий истребитель Либерти', 'Liberty light fighter')
+    RU_INFO = MS(RU.LI_F, EN.LI_F)
+
+    HP_TORPEDO = 'HpTorpedo02'
+    MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+    MAX_WEAPONS = ['HpWeapon03', 'HpWeapon04']
+
+
+class PirateBarracuda(Barracuda):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 5
+
+    RU_NAME = MS('Барракуда', 'Barracuda')
+    RU_NAME_FULL = MS('Тяжелый истребитель Либерти', 'Liberty heavy fighter')
+    RU_INFO = MS(RU.BH_E, EN.BH_E)
+
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05']
+    MAX_WEAPONS = ['HpWeapon03', 'HpWeapon04', 'HpWeapon05']
+
+
+class PirateHammerhead(Hammerhead):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 8
+
+    RU_NAME = MS('Рыба-молот', 'Hammerhead')
+    RU_NAME_FULL = MS('Тяжелый истребитель Либерти', 'Liberty heavy fighter')
+    RU_INFO = MS(RU.BH_E2, EN.BH_E2)
+
+    HP_TORPEDO = 'HpWeapon06'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon07']
+    MAX_WEAPONS = ['HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon07']
+
+
+class PirateDefender(Defender):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 6
+
+    RU_NAME = MS('Защитник', 'Defender')
+    RU_NAME_FULL = MS('Тяжелый истребитель Либерти', 'Liberty heavy fighter')
+    RU_INFO = MS(RU.LI_E, EN.LI_E)
+
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05']
+    MAX_WEAPONS = ['HpWeapon03', 'HpWeapon04']
+
+
+class PirateDefenderJuni(DefenderJuni):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 9
+
+    RU_NAME = MS('Рейнджер', 'Ranger')
+    RU_NAME_FULL = MS('Тяжелый истребитель ASF', 'ASF heavy fighter')
+    RU_INFO = MS(RU.LI_E2, EN.LI_E2)
+
+    HP_TORPEDO = 'HpTorpedo02'
+    MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05']
+    MAX_WEAPONS = ['HpTorpedo01', 'HpWeapon03', 'HpWeapon04']
+
+
+class PirateRhino(Rhino):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 5
+
+    RU_NAME = MS('Носорог', 'Rhino')
+    RU_NAME_FULL = MS('Грузовик Либерти', 'Liberty freighter')
+    RU_INFO = MS(RU.LI_FR, EN.LI_FR)
+
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpTurret01', 'HpTurret02', 'HpTurret03']
+    MAX_WEAPONS = ['HpWeapon02', 'HpWeapon03', 'HpTurret01', 'HpTurret02']
+
+
+# ========== BRETONIA ==========
+
+class PirateLegionnaire(Legionnaire):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 6
+
+    RU_NAME = MS('Легионер', 'Legionnaire')
+    RU_NAME_FULL = MS('Бретонский лёгкий истребитель', 'Bretonia light fighter')
+    RU_INFO = MS(RU.EX_CO_F, EN.EX_CO_F)
+
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+    MAX_WEAPONS = ['HpWeapon03', 'HpWeapon04']
+
+
+class PirateCavalier(Cavalier):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 7
+
+    RU_NAME = MS('Кавалер', 'Cavalier')
+    RU_NAME_FULL = MS('Бретонский лёгкий истребитель', 'Bretonia light fighter')
+    RU_INFO = MS(RU.BR_F, EN.BR_F)
+
+    HP_TORPEDO = 'HpTorpedo02'
+    MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+    MAX_WEAPONS = ['HpTorpedo01', 'HpWeapon03', 'HpWeapon04']
+
+
+class PirateCenturion(Centurion):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 6
+
+    RU_NAME = MS('Центурион', 'Centurion')
+    RU_NAME_FULL = MS('Бретонский тяжелый истребитель', 'Bretonia heavy fighter')
+    RU_INFO = MS(RU.EX_CO_E, EN.EX_CO_E)
+
+    HP_TORPEDO = 'HpTorpedo02'
+    MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+    MAX_WEAPONS = ['HpTorpedo01', 'HpWeapon03', 'HpWeapon04']
+
+
+class PirateCenturionDarcy(CenturionDarcy):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 6
+
+    RU_NAME = MS('Центурион', 'Centurion')
+    RU_NAME_FULL = MS('Бретонский тяжелый истребитель', 'Bretonia heavy fighter')
+    RU_INFO = MS(RU.EX_CO_E, EN.EX_CO_E)
+
+    HP_TORPEDO = 'HpTorpedo02'
+    MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+    MAX_WEAPONS = ['HpTorpedo01', 'HpWeapon03', 'HpWeapon04']
+
+
+class PirateTitan(Titan):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 9
+
+    RU_NAME = MS('Титан', 'Titan')
+    RU_NAME_FULL = MS('Бретонский тяжелый истребитель', 'Bretonia heavy fighter')
+    RU_INFO = MS(RU.EX_CO_E2, EN.EX_CO_E2)
+
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+
+
+class PirateCrusader(Crusader):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 7
+
+    RU_NAME = MS('Крестоносец', 'Crusader')
+    RU_NAME_FULL = MS('Бретонский тяжелый истребитель', 'Bretonia heavy fighter')
+    RU_INFO = MS(RU.BR_E, EN.BR_E)
+
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon05', 'HpWeapon06']
+
+
+class PirateClydesdale(Clydesdale):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 6
+
+    RU_NAME = MS('Клейндсаль', 'Clydesdale')
+    RU_NAME_FULL = MS('Бретонский грузовик', 'Bretonia freighter')
+    RU_INFO = MS(RU.BR_FR, EN.BR_FR)
+
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpTurret01', 'HpTurret02', 'HpTurret03']
+    MAX_WEAPONS = ['HpWeapon02', 'HpWeapon03', 'HpTurret01', 'HpTurret02']
+
+
+# ========== KUSARI ==========
+
+class PirateHawk(Hawk):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 6
+
+    RU_NAME = MS('Ястреб', 'Hawk')
+    RU_NAME_FULL = MS('Лёгкий гражданский истребитель типа 2', 'Civilian type-2 light fighter')
+    RU_INFO = MS(RU.GF4, EN.GF4)
+
+    HP_TORPEDO = 'HpTorpedo01'
+
+
+class PirateDrake(Drake):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 7
+
+    RU_NAME = MS('Дрейк', 'Drake')
+    RU_NAME_FULL = MS('Лёгкий истребитель Кусари', 'Kusari light fighter')
+    RU_INFO = MS(RU.KU_F, EN.KU_F)
+
+    HP_TORPEDO = 'HpTorpedo02'
+    MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02']
+
+
+class PirateFalcon(Falcon):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 6
+
+    RU_NAME = MS('Сокол', 'Falcon')
+    RU_NAME_FULL = MS('Тяжелый гражданский истребитель типа 2', 'Civilian type-2 heavy fighter')
+    RU_INFO = MS(RU.GF5, EN.GF5)
+
+    HP_TORPEDO = 'HpTorpedo01'
+
+
+class PirateEagle(Eagle):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 9
+
+    RU_NAME = MS('Орел', "Eagle")
+    RU_NAME_FULL = MS('Тяжелый гражданский истребитель типа 3', 'Civilian type-3 heavy fighter')
+    RU_INFO = MS(RU.GF6, EN.GF6)
+
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+
+
+class PirateDragon(Dragon):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 7
+
+    RU_NAME = MS('Дракон', 'Dragon')
+    RU_NAME_FULL = MS('Тяжелый истребитель Кусари', 'Kusari heavy fighter')
+    RU_INFO = MS(RU.KU_E, EN.KU_E)
+
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon05', 'HpWeapon06']
+
+
+class PirateDron(Dron):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 7
+
+    RU_NAME = MS('Дрон', 'Drone')
+    RU_NAME_FULL = MS('Грузовик Кусари', 'Kusari freighter')
+    RU_INFO = MS(RU.KU_FR, EN.KU_FR)
+
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpTurret02', 'HpTurret03']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+
+
+# ========== CORSAIR / ORDER ==========
+
+class PirateBloodhound(Bloodhound):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 5
+
+    RU_NAME = MS('Гончая', 'Bloodhound')
+    RU_NAME_FULL = MS('Лёгкий истребитель Корсаров', 'Corsair light fighter')
+    RU_INFO = MS(RU.CO_F, EN.CO_F)
+
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03']
+
+
+class PirateWolfhound(Wolfhound):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 7
+
+    RU_NAME = MS('Волкодав', 'Wolfhound')
+    RU_NAME_FULL = MS('Тяжёлый истребитель Корсаров', 'Corsair heavy fighter')
+    RU_INFO = MS(RU.CO_E, EN.CO_E)
+
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+
+
+class PirateAnubis(Anubis):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 9
+
+    RU_NAME = MS('Анубис', 'Anubis')
+    RU_NAME_FULL = MS('Тяжёлый истребитель Ордена', 'Order heavy fighter')
+    RU_INFO = MS(RU.OR_E, EN.OR_E)
+
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+
+
+class PirateMule(Mule):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 7
+
+    RU_NAME = MS('Мул', 'Mule')
+    RU_NAME_FULL = MS('Грузовик Корсаров', 'Corsair freighter')
+    RU_INFO = MS(RU.CO_FR, EN.CO_FR)
+
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+
+
+# ========== GENERIC ==========
+
+class PirateDromader(Dromader):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 4
+
+    RU_NAME = MS('Дромадер', 'Dromader')
+    RU_NAME_FULL = MS('Грузовик пограничья', 'Border world freighter')
+    RU_INFO = MS(RU.BW_FR, EN.BW_FR)
+
+    MAIN_WEAPONS = ['HpWeapon02', 'HpWeapon03', 'HpTurret02', 'HpTurret03', 'HpTurret04', 'HpTurret05']
+    MAX_WEAPONS = ['HpWeapon02', 'HpWeapon03']
+
+
+class PirateCSV(CSV):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 5
+
+    RU_NAME = MS('CSV', 'CSV')
+    RU_NAME_FULL = MS('Гражданский грузовик', 'Civilian freighter')
+    RU_INFO = MS(RU.CSV, EN.CSV)
+
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpTurret01']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpTurret01']
+
+
+class PirateStarflier(Starflier):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 3
+
+    RU_NAME = MS('Старфлаер', 'Starflyer')
+    RU_NAME_FULL = MS('Лёгкий гражданский истребитель', 'Civilian light fighter')
+    RU_INFO = MS(RU.GF1, EN.GF1)
+
+    HP_TORPEDO = 'HpTorpedo01'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03']
+    MAX_WEAPONS = ['HpWeapon03']
+
+
+class PirateStartracker(Startracker):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 4
+
+    RU_NAME = MS('Стартрекер', 'Startracker')
+    RU_NAME_FULL = MS('Лёгкий гражданский истребитель', 'Civilian light fighter')
+    RU_INFO = MS(RU.GF2, EN.GF2)
+
+    HP_TORPEDO = 'HpTorpedo02'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpTorpedo01']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02']
+
+
+class PirateStarblazer(Starblazer):
+    VISUAL = VIS_PIRATE
+    # SHIP_CLASS = 4
+
+    RU_NAME = MS('Старблейзер', 'Starblazer')
+    RU_NAME_FULL = MS('Тяжелый гражданский истребитель', 'Civilian heavy fighter')
+    RU_INFO = MS(RU.GF3, EN.GF3)
+
+    HP_TORPEDO = 'HpWeapon04'
+    MAIN_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon05', 'HpWeapon06']
+    MAX_WEAPONS = ['HpWeapon01', 'HpWeapon02', 'HpWeapon03']

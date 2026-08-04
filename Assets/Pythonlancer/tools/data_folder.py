@@ -148,8 +148,19 @@ class DataFolder:
         equip_file = get_and_create(self.get_fx() / 'GENERATED') / 'gen_ale.ini'
         equip_file.write_text(content, encoding='utf-8')
 
+    def sync_sound(self, content):
+        if self.build_to_folder:
+            return
+
+        equip_file = self.get_audio() / 'sounds_gen.ini'
+        equip_file.write_text(content, encoding='utf-8')
+
     def sync_solar_gen_loadouts(self, content):
         loadouts_file = self.get_solar() / LOADOUTS_GEN
+        loadouts_file.write_text(content, encoding='utf-8')
+
+    def sync_solar_gen_sound_loadouts(self, content):
+        loadouts_file = self.get_solar() / 'loadout_gen_sound.ini'
         loadouts_file.write_text(content, encoding='utf-8')
 
     def sync_solar_gen_store_loadouts(self, content):
