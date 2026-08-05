@@ -47,6 +47,7 @@ class ArchStaticText(ArchMember, main_objects.RawText):
 [SystemInfo]
 space_color = 0, 0, 0
 local_faction = fc_n_grp
+space_farclip = 30000
 
 [TexturePanels]
 file = universe\\heavens\\shapes.ini
@@ -75,7 +76,54 @@ range = 70000
 type = DIRECTIONAL
 atten_curve = DYNAMIC_DIRECTION
 
+[LightSource]
+nickname = arch_system_light
+pos = 0, 0, 0
+color = 225, 255, 243
+range = 70000
+type = DIRECTIONAL
+atten_curve = DYNAMIC_DIRECTION
 
+[LightSource]
+nickname = arch_system_light
+pos = 0, 0, 0
+color = 225, 255, 243
+range = 70000
+type = DIRECTIONAL
+atten_curve = DYNAMIC_DIRECTION
+
+
+
+
+'''
+
+    tmp = '''
+[LightSource]
+nickname = arch_nmd_lgt1
+pos = 50000, 0, -5000
+color = 255, 255, 255
+range = 10000
+type = DIRECTIONAL
+atten_curve = AMBI_LIGHT
+color_curve = sphere_nomad_energy, 3
+
+[LightSource]
+nickname = arch_nmd_lgt2
+pos = -50000, 0, -10000
+color = 255, 255, 255
+range = 10000
+type = DIRECTIONAL
+atten_curve = AMBI_LIGHT
+color_curve = sphere_nomad_energy, 4
+
+[LightSource]
+nickname = arch_nmd_lgt3
+pos = 0, 0, -50000
+color = 255, 255, 255
+range = 10000
+type = DIRECTIONAL
+atten_curve = AMBI_LIGHT
+color_curve = sphere_nomad_energy, 4
 
 '''
 
@@ -125,7 +173,7 @@ class ArchNebula3(ArchMember, ArchBaseEdgeNebula):
 
 class ArchSun(ArchMember, main_objects.Sun):
     STAR = 'Ku07_Sun'
-    # LOADOUT = 'small_blue_sun_fx'
+    LOADOUT = 'small_yellow_sun_fx'
 
 
 class ArchDeathZone(ArchMember, main_objects.DangeonDeathZone):
@@ -139,7 +187,7 @@ class ArchDangeonTradelane4(ArchMember, main_objects.DangeonTradelane):
     RU_NAME_TARGET = MS('Пред', 'Prev')
     LOCKED_DOCK = True
     MAKE_KEYS = False
-    ALLOW_UNLOCK_FIRST_GATE = True
+    ALLOW_UNLOCK_FIRST_GATE = False
     ALLOW_UNLOCK_SECOND_GATE = True
 
 
@@ -302,6 +350,26 @@ class ArchHelp6(ArchMember, main_objects.HelpPlayback):
     SOUND = 'battleship_shield_lock'
 
 
+class ArchHelp7(ArchMember, main_objects.HelpPlayback):
+    INDEX = 7
+    SOUND = 'dyson_rubic'
+
+
+class ArchHelp8(ArchMember, main_objects.HelpPlayback):
+    INDEX = 8
+    SOUND = 'dyson_rubic'
+
+
+class ArchHelp9(ArchMember, main_objects.HelpPlayback):
+    INDEX = 9
+    SOUND = 'arch_step3'
+
+
+class ArchHelp10(ArchMember, main_objects.HelpPlayback):
+    INDEX = 10
+    SOUND = 'arch_step4'
+
+
 class ArchDemoBase(ArchMember, main_objects.Station):
     ALIAS = 'base'
     INDEX = 1
@@ -435,7 +503,10 @@ class ArchPowerGen1(ArchMember, main_objects.AutoStaticObject):
     ]
     EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS2
     NEBULA_EXCLUSION_ZONE_SIZE = 3000
-    NEBULA_EXCLUSION_EDGE_FRACTION = 0.4
+    NEBULA_EXCLUSION_EDGE_FRACTION = 0.3
+    NEBULA_EXCLUSION_ZONE_PARAMS = {
+        'music': Ambience.NOMAD,
+    }
 
 
 class ArchPowerGen2(ArchMember, main_objects.AutoStaticObject):
@@ -453,7 +524,10 @@ class ArchPowerGen2(ArchMember, main_objects.AutoStaticObject):
     ]
     EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS2
     NEBULA_EXCLUSION_ZONE_SIZE = 3000
-    NEBULA_EXCLUSION_EDGE_FRACTION = 0.4
+    NEBULA_EXCLUSION_EDGE_FRACTION = 0.3
+    NEBULA_EXCLUSION_ZONE_PARAMS = {
+        'music': Ambience.NOMAD,
+    }
 
 
 class ArchPowerGen3(ArchMember, main_objects.AutoStaticObject):
@@ -471,7 +545,10 @@ class ArchPowerGen3(ArchMember, main_objects.AutoStaticObject):
     ]
     EXCLUSION_PARAMS = EDGE_EXCLUSION_PARAMS2
     NEBULA_EXCLUSION_ZONE_SIZE = 3000
-    NEBULA_EXCLUSION_EDGE_FRACTION = 0.4
+    NEBULA_EXCLUSION_EDGE_FRACTION = 0.3
+    NEBULA_EXCLUSION_ZONE_PARAMS = {
+        'music': Ambience.NOMAD,
+    }
 
 
 class ArchDysonRubicNomadGateRewards(ArchMember, mineable.DefaultDysonRubicRewardGroup):
@@ -571,25 +648,25 @@ class ArchDysonRubicField3(ArchMember, mineable.DysonRubicRewardField):
 class ArchEnc2(ArchMember, main_objects.CustomerEncounterZone):
     INDEX = 2
     FACTION = faction.Nomad
-    DENSITY = 10
+    DENSITY = 3
     REPOP_TIME = 10
     RELIEF_TIME = 25
     SHIPS = [
         encounter.NpcShipEncounter(
             'zone2b',
             npc=NPC(
-                faction=faction.Outcasts,
-                ship=ship.NomadCenturion,
+                faction=faction.LibertyMain,
+                ship=ship.NomadBarracuda,
                 level=NPC.D1,
                 equip_map=EqMap(base_level=1),
             ),
-            count=1
+            count=2
         ),
         encounter.NpcShipEncounter(
             'zone2c',
             npc=NPC(
-                faction=faction.Outcasts,
-                ship=ship.NomadLegionnaire,
+                faction=faction.LibertyMain,
+                ship=ship.NomadPiranha,
                 level=NPC.D1,
                 equip_map=EqMap(base_level=1),
             ),
@@ -603,37 +680,37 @@ class ArchEnc2(ArchMember, main_objects.CustomerEncounterZone):
 class ArchEnc3(ArchMember, main_objects.CustomerEncounterZone):
     INDEX = 3
     FACTION = faction.Nomad
-    DENSITY = 10
+    DENSITY = 3
     REPOP_TIME = 10
     RELIEF_TIME = 25
     SHIPS = [
         encounter.NpcShipEncounter(
             'zone3a',
             npc=NPC(
-                faction=faction.Outcasts,
-                ship=ship.NomadTitan,
-                level=NPC.D1,
-                equip_map=EqMap(base_level=1),
+                faction=faction.LibertyMain,
+                ship=ship.NomadHammerhead,
+                level=NPC.D5,
+                equip_map=EqMap(base_level=5),
             ),
             count=1
         ),
         encounter.NpcShipEncounter(
             'zone3b',
             npc=NPC(
-                faction=faction.Outcasts,
-                ship=ship.NomadCenturion,
-                level=NPC.D1,
-                equip_map=EqMap(base_level=1),
+                faction=faction.LibertyMain,
+                ship=ship.NomadBarracuda,
+                level=NPC.D5,
+                equip_map=EqMap(base_level=5),
             ),
             count=1
         ),
         encounter.NpcShipEncounter(
             'zone3c',
             npc=NPC(
-                faction=faction.Outcasts,
+                faction=faction.LibertyMain,
                 ship=ship.NomadLegionnaire,
-                level=NPC.D1,
-                equip_map=EqMap(base_level=1),
+                level=NPC.D5,
+                equip_map=EqMap(base_level=5),
             ),
             count=1
         ),
@@ -652,30 +729,30 @@ class ArchEnc4(ArchMember, main_objects.CustomerEncounterZone):
         encounter.NpcShipEncounter(
             'zon42a',
             npc=NPC(
-                faction=faction.Outcasts,
-                ship=ship.NomadCrusader,
-                level=NPC.D1,
-                equip_map=EqMap(base_level=1),
+                faction=faction.LibertyMain,
+                ship=ship.NomadDefender,
+                level=NPC.D6,
+                equip_map=EqMap(base_level=6),
             ),
             count=1
         ),
         encounter.NpcShipEncounter(
             'zone4b',
             npc=NPC(
-                faction=faction.Outcasts,
-                ship=ship.NomadCavalier,
-                level=NPC.D1,
-                equip_map=EqMap(base_level=1),
+                faction=faction.LibertyMain,
+                ship=ship.NomadPatriot,
+                level=NPC.D6,
+                equip_map=EqMap(base_level=6),
             ),
-            count=1
+            count=2
         ),
         encounter.NpcShipEncounter(
             'zone4c',
             npc=NPC(
-                faction=faction.Outcasts,
-                ship=ship.NomadTitan,
-                level=NPC.D1,
-                equip_map=EqMap(base_level=1),
+                faction=faction.LibertyMain,
+                ship=ship.NomadHammerhead,
+                level=NPC.D6,
+                equip_map=EqMap(base_level=6),
             ),
             count=1
         ),
@@ -697,6 +774,12 @@ class ArchExitGate(ArchMember, main_objects.AutoStaticObject):
 class ArchShield1(ArchMember, main_objects.AutoStaticObject):
     ALIAS = 'shield'
     INDEX = 1
+    TEMPLATE_LOADOUT = False
+
+
+class ArchShield2(ArchMember, main_objects.AutoStaticObject):
+    ALIAS = 'shield'
+    INDEX = 2
     TEMPLATE_LOADOUT = False
 
 

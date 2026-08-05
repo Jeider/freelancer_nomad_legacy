@@ -108,6 +108,7 @@ class AutoSoundFX:
         'arch_step4',
         'battleship_shield_lock',
         'repair',
+        'mod_valid_rubic',
 
     ]
     EFFECT_TYPE = 'EFT_EXPLOSION_LARGE'

@@ -130,23 +130,25 @@ def build_all():
 
 def main():
     try:
-        if sys.argv[1] == 'all':
-            print('build all packages')
-            build_all()
-        elif sys.argv[1] == 'ru':
-            print('build ru direct')
-            build(DEFAULT_RU)
-        elif sys.argv[1] == 'en':
-            print('build en direct')
-            build(DEFAULT_EN)
-        else:
-            print(f'build {sys.argv[1]}')
-            build(
-                PROPS_DB[sys.argv[1]]
-            )
-
+        build_type = sys.argv[1]
     except IndexError:
         print('build type not found')
+        return
+
+    if build_type == 'all':
+        print('build all packages')
+        build_all()
+    elif build_type == 'ru':
+        print('build ru direct')
+        build(DEFAULT_RU)
+    elif build_type == 'en':
+        print('build en direct')
+        build(DEFAULT_EN)
+    else:
+        print(f'build {build_type}')
+        build(
+            PROPS_DB[build_type]
+        )
 
 
 main()
