@@ -53,6 +53,8 @@ class UniverseManager:
         self.interior_extra_rooms = []
         self.mbases_content = []
 
+        self.used_extra_rooms = []
+
         self.objects_with_keys = []
         self.keys = []
 
@@ -143,6 +145,14 @@ class UniverseManager:
         for the_system in self.universe_root.get_systems():
             if the_system.have_dynamic_content():
                 interior_definitions, interior_files, interior_extra_rooms, mbases_content = the_system.get_interiors_data()
+
+                for room in interior_extra_rooms:
+                    room_name = room.get_name()
+                    if room_name in self.used_extra_rooms:
+                        raise Exception(f'Room {room_name} is already used. Wrong name?')
+
+                    self.used_extra_rooms.append(room_name)
+
                 self.interior_definitions += interior_definitions
                 self.interior_files.update(interior_files)
                 self.interior_extra_rooms += interior_extra_rooms
@@ -151,16 +161,17 @@ class UniverseManager:
     def load_custom_encounters(self):
         for custom_enc in self.custom_encounters:
             for ship in custom_enc.get_ships():
-                npc = ship.npc
+                if ship.is_dynamic():
+                    npc = ship.npc
 
-                npc.set_equipment_package(self.population.get_equipment_package(npc))
-                loadout = npc.get_loadout(self.shiparch)
+                    npc.set_equipment_package(self.population.get_equipment_package(npc))
+                    loadout = npc.get_loadout(self.shiparch)
 
-                self.custom_enc_ship_loadouts.append(loadout)
-                self.core.population.add_npc_to_list(npc)
+                    self.custom_enc_ship_loadouts.append(loadout)
+                    self.core.population.add_npc_to_list(npc)
 
                 faction = self.core.factions.get_by_code(custom_enc.get_faction_code())
-                faction.add_npc_ship(npc.get_npc_shiparch_nickname())
+                faction.add_npc_ship(ship.get_npc_shiparch_nickname())
 
     def load_keys(self):
         for static in self.objects_with_keys:
@@ -291,11 +302,14 @@ class UniverseManager:
             data_folder.sync_templated_nebula(tpl_nebula.get_file_name(), tpl_nebula.GENERATED_NEBULA_SUBFOLDER, tpl_nebula.get_file_content())
 
         for custom_enc in self.custom_encounters:
-            data_folder.sync_custom_encounters(custom_enc.enc.get_nickname(), custom_enc.enc.get_file_content())
+            for enc in custom_enc.get_defined_encounters():
+                data_folder.sync_custom_encounters(enc.get_nickname(), enc.get_file_content())
 
         for file_name, content in self.interior_files.items():
             data_folder.sync_interior(file_name, content)
 
         for room in self.interior_extra_rooms:
-            content = self.core.tpl_manager.get_result(f'room/{room.get_subfolder()}/{room.get_template()}.ini', room.get_context())
+            context = room.get_context()
+            context['suffix'] = '' if self.core.russian else '_en'
+            content = self.core.tpl_manager.get_result(f'room/{room.get_subfolder()}/{room.get_template()}.ini', context)
             data_folder.sync_interior_room(room.get_name(), content)

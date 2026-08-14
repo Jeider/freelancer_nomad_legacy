@@ -69,7 +69,8 @@ class FactionManager:
                     current_faction.change_empathy(target_faction, target_rel.get_empathy())
 
                     target_faction.change_reputation(current_faction, target_rel.get_reputation())
-                    target_faction.change_empathy(current_faction, target_rel.get_empathy())
+                    if not target_rel.empathy_is_forward:
+                        target_faction.change_empathy(current_faction, target_rel.get_empathy())
 
     def load_bribe_factions(self):
         for faction in self.factions_list:

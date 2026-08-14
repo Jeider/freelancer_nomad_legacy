@@ -10,20 +10,57 @@ costume = trent
 com_costume = trent
 
 
-system = the_intro_dark
+;system = the_intro_dark
 
 
-ship_archetype = ge_fighter
+;ship_archetype = ge_fighter
+;
+;pos = -5000, -5000, -5000
+;
+;equip = li_engine_01, HpDrive01, 1
+;equip = li_power_01, HpPower01 , 1
+;equip = scanner01, , 1
+;equip = tractor01, , 1
+;equip = LargeWhiteSpecialPlayer, HpHeadlight, 1
+;equip = DockingLightRedSmall, HpDockLight01, 1
+;equip = DockingLightRedSmall, HpDockLight02, 1
 
-pos = -5000, -5000, -5000
+system = heavy_barrel2
+pos = 49815.7,415.019,-4878.53
+rotate = 176.026,-0.923776,-177.436
 
-equip = li_engine_01, HpDrive01, 1
-equip = li_power_01, HpPower01 , 1
-equip = scanner01, , 1
-equip = tractor01, , 1
-equip = LargeWhiteSpecialPlayer, HpHeadlight, 1
-equip = DockingLightRedSmall, HpDockLight01, 1
-equip = DockingLightRedSmall, HpDockLight02, 1
+ship_archetype = or_elite_nmd
+
+equip = or_engine_08_ELITE, HpDrive01, 1
+equip = or_power_08_ELITE, HpPower01, 1
+equip = scanner_npc
+equip = tractor01
+equip = or_shield_08_ELITE, HpShield01, 1
+equip = LargeWhiteSpecialPlayer, HpHeadlight
+equip = DockingLightRedSmall, HpDockLight01
+equip = DockingLightRedSmall, HpDockLight02
+equip = launch_extend
+equip = or_lightgun08, HpWeapon01
+equip = or_lightgun08, HpWeapon02
+equip = or_lightgun08, HpWeapon03
+equip = or_lightgun08, HpWeapon04
+equip = or_lightgun08, HpWeapon05
+equip = or_lightgun08, HpWeapon06
+equip = or_afterburn_08, HpThruster01
+equip = or_afterburn_08, HpThruster02
+equip = player_contrail, HpContrail01
+equip = player_contrail, HpContrail02
+equip = player_contrail, HpContrail03
+equip = player_contrail, HpContrail04
+equip = SlowSmallPurple, HpRunningLight01
+equip = SlowSmallPurple, HpRunningLight02
+equip = SlowSmallPurple, HpRunningLight03
+equip = SlowSmallPurple, HpRunningLight04
+equip = SlowSmallPurple, HpRunningLight05
+equip = SlowSmallPurple, HpRunningLight06
+cargo = ge_s_repair_01, 2
+cargo = ge_s_battery_01, 2
+
 
 
 wg = 0, HpWeapon01
@@ -127,13 +164,15 @@ house = -0.65, co_grp
 house = 0, out_grp
 house = -0.65, cx_grp
 house = 0, dtr_grp
+house = -0.91, hbr_nmd1_grp
+house = -0.91, hbr_asf_ex_grp
 
 
 
-[StoryInfo]
-Mission = Mission_01a
-MissionNum = 1
-delta_worth = -1
+;[StoryInfo]
+;Mission = Mission_01a
+;MissionNum = 1
+;delta_worth = -1
 
 
 [mPlayer]
@@ -803,3 +842,16 @@ locked_gate = 2878133194
 
 ;key_arch_01_base_unlock
 locked_gate = 3177388878
+
+;key_heavy_barrel1_01_base_unlock
+locked_gate = 2897193933
+
+;key_heavy_barrel2_01_base_unlock
+locked_gate = 2897718222
+
+;key_heavy_barrel2_dangeon_tlr_7_unlock
+locked_gate = 3115497475
+locked_gate = 2578674691
+
+;key_heavy_barrel2_02_base_unlock
+locked_gate = 2360858574

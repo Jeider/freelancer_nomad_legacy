@@ -110,6 +110,21 @@ class AutoSoundFX:
         'repair',
         'mod_valid_rubic',
 
+
+        'nn_hbr1_help1',
+        'nn_hbr1_help2',
+        'nn_hbr1_help3',
+        'nn_hbr1_help4',
+
+        'nn_hbr2_help1',
+        'nn_hbr2_help2',
+        'nn_hbr2_help3',
+        'nn_hbr2_help4',
+
+        'nn_hbr_planet_loot',
+        'nn_hbr_planet_exploded',
+
+
     ]
     EFFECT_TYPE = 'EFT_EXPLOSION_LARGE'
     PARTICLE_FX = 'ku_laser_01_impact'

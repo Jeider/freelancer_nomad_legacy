@@ -30,10 +30,15 @@ filename = {filename}'''
 
 
 class NpcShipEncounter:
-    def __init__(self, name, npc, count):
+    def __init__(self, name, count, npc=None, static_npc_shiparch=None):
         self.name = name
         self.npc = npc
+        self.static_npc_shiparch = static_npc_shiparch
         self.count = count
+        if not self.npc and not self.static_npc_shiparch:
+            raise Exception(f'Encounter {self} of class {self} have no any npc')
+        if self.npc is not None and self.static_npc_shiparch is not None:
+            raise Exception(f'Encounter {self} of class {self} have must use only one type of NPC')
 
     def get_name(self):
         return self.name
@@ -41,14 +46,42 @@ class NpcShipEncounter:
     def get_count(self):
         return self.count
 
+    def get_npc_shiparch_nickname(self):
+        if self.npc:
+            return self.npc.get_npc_shiparch_nickname()
+        else:
+            return self.static_npc_shiparch
+
+    def is_dynamic(self):
+        return self.npc is not None
+
+    def is_static(self):
+        return self.static_npc_shiparch is not None
+
+
+class EncounterEntry:
+    def __init__(self, ships, chance=1):
+        if chance > 1 or chance < 0:
+            raise Exception(f'Encounter entry {self} have too small chance')
+
+        self.ships = ships
+        self.chance = chance
+
+    def get_ships(self):
+        return self.ships
+
+    def get_chance(self):
+        return self.chance
+
 
 class DynamicEncounter(Encounter):
 
-    def __init__(self, system, nickname, ship_encounters: list[NpcShipEncounter], job: str):
+    def __init__(self, system, nickname, ship_encounters: list[NpcShipEncounter], job: str, chance=1):
         self.system = system
         self.nickname = nickname
         self.ship_encounters = ship_encounters
         self.job = job
+        self.chance = chance
 
         if self.job not in JOBS:
             raise Exception(f'Encounter {self} have unknown job {self.job}')
@@ -59,6 +92,9 @@ class DynamicEncounter(Encounter):
     def get_filename(self):
         return f'missions\\NPC\\GENERATED\\{self.nickname}.ini'
 
+    def get_chance(self):
+        return self.chance
+
     def get_file_content(self):
         ships_data = []
 
@@ -68,7 +104,7 @@ class DynamicEncounter(Encounter):
             if i == 0:
                 ships_data.append(
                     f'''
-ship_by_npc_arch = {ship_enc.get_count()}, {ship_enc.get_count()}, {ship_enc.npc.get_npc_shiparch_nickname()}
+ship_by_npc_arch = {ship_enc.get_count()}, {ship_enc.get_count()}, {ship_enc.get_npc_shiparch_nickname()}
 pilot_job = {self.job}_leader_job
 make_class = wanderer
 '''
@@ -76,7 +112,7 @@ make_class = wanderer
             else:
                 ships_data.append(
                     f'''
-ship_by_npc_arch = {ship_enc.get_count()}, {ship_enc.get_count()}, {ship_enc.npc.get_npc_shiparch_nickname()}, -1
+ship_by_npc_arch = {ship_enc.get_count()}, {ship_enc.get_count()}, {ship_enc.get_npc_shiparch_nickname()}, -1
 pilot_job = {self.job}_job
 make_class = wanderer
 '''

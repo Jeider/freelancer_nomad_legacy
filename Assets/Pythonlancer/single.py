@@ -37,7 +37,7 @@ from story import actors
 from tools.system_template import SystemTemplateLoader
 
 from templates.solar import hacker_panel
-from templates.dockable import arch
+from templates.dockable import megacannon
 from templates.dockable import scient
 
 
@@ -61,12 +61,14 @@ def draw_base():
 
     # base_class = terraforming.TerraformingRotate
     # new_name = 'communicator'
-    move_to = (-47988, -1000, -20578)
+    # move_to = (-47988, -1000, -20578)
+
+    move_to = (10000, -2000, -25000)
 
     # base_class = nomad_asf_hq.AsfHQ
     # rotate_core = 45
 
-    base_class = arch.SpaceArch
+    base_class = megacannon.HeavyBarrelWithPlanet
 
     the_base = base_class()
     content = the_base.get_instance(new_space_object_name=new_name, move_to=move_to, rotate_core=rotate_core)

@@ -7,6 +7,7 @@ ROOM_FOLDER_LI = 'LI'
 ROOM_FOLDER_BR = 'BR'
 ROOM_FOLDER_KU = 'KU'
 ROOM_FOLDER_CO = 'CO'
+ROOM_FOLDER_PLAYBACK = 'PLAYBACK'
 
 BAR = 'Bar'
 DECK = 'Deck'
@@ -209,14 +210,19 @@ class Interior:
     NEW_BAR_MUSIC = False
     BAR_IS_DECK = False
 
-    def __init__(self, base_instance, room_subfolder):
+    def __init__(self, base_instance, room_subfolder, start_room_override=None):
         self.base_instance = base_instance
         self.base_nickname = self.base_instance.get_base_nickname()
         self.room_subfolder = room_subfolder
         self.extra_rooms: list[InteriorRoom] = []
+        self.start_room_override = start_room_override
 
         if not self.CUSTOM_INTERIOR_FILE and not self.room_subfolder:
             raise Exception('room subfolder not defined for %s' % self.__class__.__name__)
+
+
+        for room_file in self.base_instance.INTERIOR_EXTRA_ROOM_FILES:
+            self.create_extra_room(room_file)
 
     def get_base_info(self):
         raise NotImplementedError
@@ -415,7 +421,11 @@ class GenericInterior(Interior):
         items = [
             BASE_INFO_TEMPLATE.format(
                 base_nickname=self.base_nickname,
-                start_room=self.START_ROOM,
+                start_room=(
+                    self.base_instance.INTERIOR_CUSTOM_START_ROOM
+                    if self.base_instance.INTERIOR_CUSTOM_START_ROOM
+                    else self.START_ROOM
+                ),
             )
         ]
         for room_name, room_file in self.ROOMS.items():

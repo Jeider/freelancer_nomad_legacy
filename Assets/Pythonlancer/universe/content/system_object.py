@@ -57,6 +57,7 @@ class SystemObject:
 
     FACTION = None
     FORCE_FACTION = None
+    FORCE_SPACE_FACTION = None
 
     POPULATION_KIND = population.POP_FIRST
 
@@ -183,8 +184,16 @@ class SystemObject:
             return self.FORCE_FACTION
         return self.FACTION
 
+    def get_space_faction(self):
+        if self.FORCE_SPACE_FACTION:
+            return self.FORCE_SPACE_FACTION
+        return self.get_faction()
+
     def get_faction_code(self):
         return self.get_faction().get_code()
+
+    def get_space_faction_code(self):
+        return self.get_space_faction().get_code()
 
     def get_population_kind(self):
         return self.POPULATION_KIND

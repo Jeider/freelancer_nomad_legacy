@@ -394,6 +394,8 @@ class Faction:
     CODE = None
     MSG_CODE = None
     KIND = None
+    HAVE_VOICE = True
+    HAVE_MSG_ID_PREFIX = True
 
     COSTUME = None
     GUEST_APPEARANCE = None
@@ -466,6 +468,9 @@ class Faction:
         return self.COMMODITY
 
     def add_npc_ship(self, npc_ship):
+        if npc_ship in self.npc_ships:
+            return
+            # raise Exception('This is debug information. Ship already presented in faction. Duplicate?')
         self.npc_ships.append(npc_ship)
 
     def get_ru_name_clean(self):
@@ -581,6 +586,8 @@ class Faction:
 
     @property
     def msg(self):
+        if not self.HAVE_MSG_ID_PREFIX:
+            return 'ignore'
         return self.get_msg_id_prefix_main()
 
     def get_relations_data(self):
@@ -652,16 +659,17 @@ event = random_mission_abortion, -0.067500
         for ship in self.npc_ships:
             items.append(f'npc_ship = {ship}')
 
-        if self.IS_PIRATE:
-            if self.russian:
-                items.append(RU_VOICES_PIRATE)
+        if self.HAVE_VOICE:
+            if self.IS_PIRATE:
+                if self.russian:
+                    items.append(RU_VOICES_PIRATE)
+                else:
+                    items.append(EN_VOICES_PIRATE)
             else:
-                items.append(EN_VOICES_PIRATE)
-        else:
-            if self.russian:
-                items.append(RU_VOICES_LEGAL)
-            else:
-                items.append(EN_VOICES_LEGAL)
+                if self.russian:
+                    items.append(RU_VOICES_LEGAL)
+                else:
+                    items.append(EN_VOICES_LEGAL)
 
         items.append(f'mc_costume = {self.MC_COSTUME}')
 
@@ -1693,11 +1701,38 @@ class Nomad(Faction):
     HAVE_FACTION_PROPS = False
 
 
+class NomadMegaCannon(Faction):
+    CODE = 'hbr_nmd1_grp'
+    MANAGED = False
+    DEFAULT_REPUTATION = ENEMY_MAX
+    RU_NAME = MS('Номады', "Nomads")
+    RU_NAME_FULL = MS('Номады', "Nomads")
+    LISTED = True
+    RANDOM_MISSIONS = False
+    HAVE_FACTION_PROPS = True
+    HAVE_VOICE = False
+    PLURALITY = 'singular'
+
+
+class ASFMegaCannonExit(Faction):
+    CODE = 'hbr_asf_ex_grp'
+    MANAGED = False
+    DEFAULT_REPUTATION = ENEMY_MAX
+    RU_NAME = MS('СБА', "ASF")
+    RU_NAME_FULL = MS('СБА', "ASF")
+    LISTED = True
+    RANDOM_MISSIONS = False
+    HAVE_FACTION_PROPS = True
+    HAVE_VOICE = False
+    PLURALITY = 'plural'
+
+
 class Relation:
-    def __init__(self, faction, reputation: float = NEUTRAL, empathy: float = NEUTRAL):
+    def __init__(self, faction, reputation: float = NEUTRAL, empathy: float = NEUTRAL, empathy_only_forward: bool = False):
         self.faction = faction
         self.reputation = reputation
         self.empathy = empathy
+        self.empathy_only_forward = empathy_only_forward
 
     def get_faction(self):
         return self.faction
@@ -1707,6 +1742,9 @@ class Relation:
 
     def get_empathy(self):
         return self.empathy
+
+    def empathy_is_forward(self):
+        return self.empathy_only_forward
 
     def get_reputation_inverse(self):
         if self.reputation == 0:
@@ -1786,6 +1824,9 @@ PLAYER_RELATIONS = [
     # Relation(BretoniaSmuggler, ENEMY_MED),
     # Relation(KusariSmuggler, ENEMY_MED),
     # Relation(BorderWorldSmuggler, ENEMY_MED),
+
+    Relation(NomadMegaCannon, ENEMY_MAX),
+    Relation(ASFMegaCannonExit, ENEMY_MAX),
 ]
 
 
@@ -2754,6 +2795,13 @@ RELATIONS = [
         ]
     ),
 
+    FactionRelation(
+        NomadMegaCannon,
+        [
+            Relation(ASF, ENEMY_MAX),
+            Relation(ASFMegaCannonExit, ENEMY_MAX, HATE9, empathy_only_forward=True),
+        ]
+    ),
 
 
 ]

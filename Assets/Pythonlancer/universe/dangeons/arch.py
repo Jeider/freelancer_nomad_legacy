@@ -76,24 +76,6 @@ range = 70000
 type = DIRECTIONAL
 atten_curve = DYNAMIC_DIRECTION
 
-[LightSource]
-nickname = arch_system_light
-pos = 0, 0, 0
-color = 225, 255, 243
-range = 70000
-type = DIRECTIONAL
-atten_curve = DYNAMIC_DIRECTION
-
-[LightSource]
-nickname = arch_system_light
-pos = 0, 0, 0
-color = 225, 255, 243
-range = 70000
-type = DIRECTIONAL
-atten_curve = DYNAMIC_DIRECTION
-
-
-
 
 '''
 
@@ -176,7 +158,7 @@ class ArchSun(ArchMember, main_objects.Sun):
     LOADOUT = 'small_yellow_sun_fx'
 
 
-class ArchDeathZone(ArchMember, main_objects.DangeonDeathZone):
+class ArchDeathZone(ArchMember, main_objects.DangeonMainDeathZone):
     pass
 
 
@@ -651,30 +633,32 @@ class ArchEnc2(ArchMember, main_objects.CustomerEncounterZone):
     DENSITY = 3
     REPOP_TIME = 10
     RELIEF_TIME = 25
-    SHIPS = [
-        encounter.NpcShipEncounter(
-            'zone2b',
-            npc=NPC(
-                faction=faction.LibertyMain,
-                ship=ship.NomadBarracuda,
-                level=NPC.D1,
-                equip_map=EqMap(base_level=1),
-            ),
-            count=2
-        ),
-        encounter.NpcShipEncounter(
-            'zone2c',
-            npc=NPC(
-                faction=faction.LibertyMain,
-                ship=ship.NomadPiranha,
-                level=NPC.D1,
-                equip_map=EqMap(base_level=1),
-            ),
-            count=2
-        ),
+    ENCOUNTERS = [
+        encounter.EncounterEntry(
+            ships=[
+                encounter.NpcShipEncounter(
+                    'zone2b',
+                    npc=NPC(
+                        faction=faction.LibertyMain,
+                        ship=ship.NomadBarracuda,
+                        level=NPC.D1,
+                        equip_map=EqMap(base_level=1),
+                    ),
+                    count=2
+                ),
+                encounter.NpcShipEncounter(
+                    'zone2c',
+                    npc=NPC(
+                        faction=faction.LibertyMain,
+                        ship=ship.NomadPiranha,
+                        level=NPC.D1,
+                        equip_map=EqMap(base_level=1),
+                    ),
+                    count=2
+                ),
+            ]
+        )
     ]
-
-
 
 
 class ArchEnc3(ArchMember, main_objects.CustomerEncounterZone):
@@ -683,40 +667,42 @@ class ArchEnc3(ArchMember, main_objects.CustomerEncounterZone):
     DENSITY = 3
     REPOP_TIME = 10
     RELIEF_TIME = 25
-    SHIPS = [
-        encounter.NpcShipEncounter(
-            'zone3a',
-            npc=NPC(
-                faction=faction.LibertyMain,
-                ship=ship.NomadHammerhead,
-                level=NPC.D5,
-                equip_map=EqMap(base_level=5),
-            ),
-            count=1
-        ),
-        encounter.NpcShipEncounter(
-            'zone3b',
-            npc=NPC(
-                faction=faction.LibertyMain,
-                ship=ship.NomadBarracuda,
-                level=NPC.D5,
-                equip_map=EqMap(base_level=5),
-            ),
-            count=1
-        ),
-        encounter.NpcShipEncounter(
-            'zone3c',
-            npc=NPC(
-                faction=faction.LibertyMain,
-                ship=ship.NomadLegionnaire,
-                level=NPC.D5,
-                equip_map=EqMap(base_level=5),
-            ),
-            count=1
-        ),
+    ENCOUNTERS = [
+        encounter.EncounterEntry(
+            ships=[
+                encounter.NpcShipEncounter(
+                    'zone3a',
+                    npc=NPC(
+                        faction=faction.LibertyMain,
+                        ship=ship.NomadHammerhead,
+                        level=NPC.D5,
+                        equip_map=EqMap(base_level=5),
+                    ),
+                    count=1
+                ),
+                encounter.NpcShipEncounter(
+                    'zone3b',
+                    npc=NPC(
+                        faction=faction.LibertyMain,
+                        ship=ship.NomadBarracuda,
+                        level=NPC.D5,
+                        equip_map=EqMap(base_level=5),
+                    ),
+                    count=1
+                ),
+                encounter.NpcShipEncounter(
+                    'zone3c',
+                    npc=NPC(
+                        faction=faction.LibertyMain,
+                        ship=ship.NomadLegionnaire,
+                        level=NPC.D5,
+                        equip_map=EqMap(base_level=5),
+                    ),
+                    count=1
+                ),
+            ]
+        )
     ]
-
-
 
 
 class ArchEnc4(ArchMember, main_objects.CustomerEncounterZone):
@@ -725,37 +711,41 @@ class ArchEnc4(ArchMember, main_objects.CustomerEncounterZone):
     DENSITY = 10
     REPOP_TIME = 10
     RELIEF_TIME = 25
-    SHIPS = [
-        encounter.NpcShipEncounter(
-            'zon42a',
-            npc=NPC(
-                faction=faction.LibertyMain,
-                ship=ship.NomadDefender,
-                level=NPC.D6,
-                equip_map=EqMap(base_level=6),
-            ),
-            count=1
-        ),
-        encounter.NpcShipEncounter(
-            'zone4b',
-            npc=NPC(
-                faction=faction.LibertyMain,
-                ship=ship.NomadPatriot,
-                level=NPC.D6,
-                equip_map=EqMap(base_level=6),
-            ),
-            count=2
-        ),
-        encounter.NpcShipEncounter(
-            'zone4c',
-            npc=NPC(
-                faction=faction.LibertyMain,
-                ship=ship.NomadHammerhead,
-                level=NPC.D6,
-                equip_map=EqMap(base_level=6),
-            ),
-            count=1
-        ),
+    ENCOUNTERS = [
+        encounter.EncounterEntry(
+            ships=[
+                encounter.NpcShipEncounter(
+                    'zon42a',
+                    npc=NPC(
+                        faction=faction.LibertyMain,
+                        ship=ship.NomadDefender,
+                        level=NPC.D6,
+                        equip_map=EqMap(base_level=6),
+                    ),
+                    count=1
+                ),
+                encounter.NpcShipEncounter(
+                    'zone4b',
+                    npc=NPC(
+                        faction=faction.LibertyMain,
+                        ship=ship.NomadPatriot,
+                        level=NPC.D6,
+                        equip_map=EqMap(base_level=6),
+                    ),
+                    count=2
+                ),
+                encounter.NpcShipEncounter(
+                    'zone4c',
+                    npc=NPC(
+                        faction=faction.LibertyMain,
+                        ship=ship.NomadHammerhead,
+                        level=NPC.D6,
+                        equip_map=EqMap(base_level=6),
+                    ),
+                    count=1
+                ),
+            ]
+        )
     ]
 
 

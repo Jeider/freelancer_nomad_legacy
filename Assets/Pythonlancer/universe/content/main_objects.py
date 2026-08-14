@@ -112,6 +112,8 @@ class AppearableObject(SystemObject):
     TEMPLATE_ROTATE = False
     TEMPLATE_LOADOUT = False
 
+    AUTO_KEY_LOADOUT_FOR_BASE = None
+
     SATTELITES = []
 
     LOCKED_DOCK = False
@@ -126,6 +128,24 @@ archetype = {archetype}'''
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.connections = []
+        self.auto_loadout = None
+
+        if self.AUTO_KEY_LOADOUT_FOR_BASE:
+            self.auto_loadout = self.get_auto_loadout()
+
+    def get_auto_loadout(self):
+        loadout = Loadout(loadout_nickname=f'auto_loadout_{self.get_space_object_name()}')
+        base_instance = self.system.get_static_by_class(self.AUTO_KEY_LOADOUT_FOR_BASE)
+        base_key = base_instance.get_key_name()
+        loadout.add_cargo(base_key)
+        return loadout
+
+    def get_loadouts(self):
+        loadouts = []
+        if self.AUTO_KEY_LOADOUT_FOR_BASE:
+            loadouts.append(self.auto_loadout)
+
+        return loadouts
 
     def get_key_archetype_name(self):
         raise NotImplementedError
@@ -189,8 +209,12 @@ archetype = {archetype}'''
         return self.ARCHETYPE
 
     def get_loadout(self):
+        if self.AUTO_KEY_LOADOUT_FOR_BASE:
+            return self.auto_loadout.get_loadout_nickname()
+
         if self.TEMPLATE_LOADOUT:
             return self.system.template.get_item_loadout(self.get_full_alias())
+
         return self.LOADOUT
 
     def get_ids_name(self):
@@ -466,6 +490,7 @@ class AutoStaticObject(StaticObject):
 
 class MultipleStaticObjects(StaticObject):
     ALIAS = 'static'
+    START_INDEX = 1
     MAX_OBJECTS = 5
 
     def has_appearance(self):
@@ -474,12 +499,12 @@ class MultipleStaticObjects(StaticObject):
     def get_system_content(self):
         content = []
 
-        for i in range(1, self.MAX_OBJECTS+1):
+        for i in range(self.START_INDEX, self.MAX_OBJECTS+1):
             full_alias = f'{self.ALIAS}{i}'
             try:
                 pos = self.system.template.get_item_pos(full_alias)
             except Exception:
-                break
+                continue  # skip and try again
 
             rot = self.system.template.get_item_rotate(full_alias)
             archetype = self.system.template.get_item_archetype(full_alias)
@@ -494,6 +519,7 @@ class MultipleStaticObjects(StaticObject):
             )
 
         return DIVIDER.join(content)
+
 
 class NamedObject(StaticObject):
     LAZY_NAME = False
@@ -694,7 +720,7 @@ class JumpableObject(NamedObject):
 
     def get_key_name(self):
         if not self.key:
-            raise Exception('this base could not be locked')
+            raise Exception(f'Base {self} could not be unlocked')
 
         return self.key.get_equip_name()
 
@@ -754,7 +780,7 @@ class JumpableObject(NamedObject):
             'ids_name': self.get_ids_name(),
             'ids_info': self.get_ids_info(),
             'jump_effect': self.get_jump_effect(),
-            'reputation': self.get_faction().get_code(),
+            'reputation': self.get_space_faction_code(),
             'goto': self.get_goto(),
             'msg_id_prefix': self.get_msg_id_prefix(),
         })
@@ -1315,12 +1341,41 @@ class StationRuins(NotDockableObject, NamedObject):
     RU_TYPE = MS('Руины станции', 'Ruins of station')
 
 
+class DockableReference(NotDockableObject, NamedObject):
+    RU_TYPE = MS('Стыкуемый объект', 'Dockable object')
+    REFERENCED_DOCKABLE = None
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        if not self.REFERENCED_DOCKABLE:
+            raise Exception(f'Referenced station {self} have not connected station')
+
+        self.connected_dockable = self.system.get_system_object_instance(self.REFERENCED_DOCKABLE)
+
+    def get_dock_props(self):
+        return merge_props(self.get_raw_root_props())
+
+    def get_raw_root_props(self):
+        base_name = self.connected_dockable.get_base_nickname()
+        return {
+            'ids_name': self.get_ids_name(),
+            'ids_info': self.get_ids_info(),
+            'base': base_name,
+            'dock_with': base_name,
+            'reputation': self.get_space_faction_code(),
+            'behavior': 'NOTHING',
+        }
+
+
 class DockableObject(NamedObject):
     ARCHETYPE = 'depot'
     DOUBLE_INFO = True
     INTERIOR_CLASS = interior.CustomFileInterior  # custom interior
     INTERIOR_EXTRA_ROOMS = []
     INTERIORS_FOLDER = 'GENERATED_INTERIORS'
+    INTERIOR_CUSTOM_START_ROOM = None
+    INTERIOR_EXTRA_ROOM_FILES = []
     DEALERS = None
     IS_BASE = True
     EQUIP_SET = None
@@ -1545,7 +1600,7 @@ BGCS_base_run_by = W02bF44'''
             'ids_name': self.get_ids_name(),
             'ids_info': self.get_ids_info(),
             'base': base_name,
-            'reputation': self.get_faction().get_code(),
+            'reputation': self.get_space_faction_code(),
             'behavior': 'NOTHING',
         }
 
@@ -1553,7 +1608,7 @@ BGCS_base_run_by = W02bF44'''
         base_name = self.get_base_nickname()
         return {
             'base': base_name,
-            'reputation': self.get_faction().get_code(),
+            'reputation': self.get_space_faction_code(),
             'behavior': 'NOTHING',
         }
 
@@ -1566,7 +1621,7 @@ BGCS_base_run_by = W02bF44'''
             'ids_name': self.get_ids_name(),
             'ids_info': self.get_ids_info(),
             'dock_with': base_name,
-            'reputation': self.get_faction().get_code(),
+            'reputation': self.get_space_faction_code(),
             'behavior': 'NOTHING',
         }
         if not self.DOCK_ONLY:
@@ -1661,7 +1716,7 @@ archetype = {self.TRADE_POINT_ARCHETYPE.ARCHETYPE}
 ids_name = {self.system.core.store.get_depot_fixture_name_id()}
 ids_info = {self.system.core.store.get_depot_fixture_info_id()}
 behavior = NOTHING
-reputation = {self.get_faction_code()}
+reputation = {self.get_space_faction_code()}
 dock_with = {self.get_base_nickname()}
 ''')
 
@@ -1706,7 +1761,7 @@ behavior = NOTHING
                         )
                         commodity = self.system.core.store.get_by_name(comm_alias)
                         obj += f'{SINGLE_DIVIDER}loadout = {depot_archetype.get_loadout_name(commodity)}'
-                        obj += f'{SINGLE_DIVIDER}reputation = {self.get_faction_code()}'
+                        obj += f'{SINGLE_DIVIDER}reputation = {self.get_space_faction_code()}'
 
                         ids_name = commodity.get_depot_name(depot_archetype.ARCHETYPE)
                         obj += f'{SINGLE_DIVIDER}ids_name = {ids_name}'
@@ -1746,7 +1801,7 @@ archetype = {self.TRADE_POINT_ARCHETYPE.ARCHETYPE}
 ids_name = {self.system.core.store.get_depot_fixture_name_id()}
 ids_info = {self.system.core.store.get_depot_fixture_info_id()}
 behavior = NOTHING
-reputation = {self.get_faction_code()}
+reputation = {self.get_space_faction_code()}
 dock_with = {self.get_base_nickname()}
 ''')
 
@@ -1790,7 +1845,7 @@ behavior = NOTHING
                         )
                         commodity = self.system.core.store.get_by_name(comm_alias)
                         obj += f'{SINGLE_DIVIDER}loadout = {depot_archetype.get_loadout_name(commodity)}'
-                        obj += f'{SINGLE_DIVIDER}reputation = {self.get_faction_code()}'
+                        obj += f'{SINGLE_DIVIDER}reputation = {self.get_space_faction_code()}'
 
                         ids_name = commodity.get_depot_name(depot_archetype.ARCHETYPE)
                         obj += f'{SINGLE_DIVIDER}ids_name = {ids_name}'
@@ -1886,7 +1941,7 @@ behavior = NOTHING
                 pos='{}, {}, {}'.format(*fixture_position),
                 rotate='{}, {}, {}'.format(*self.get_rotate()),
                 parent_base=self.get_base_nickname(),
-                reputation=self.get_faction_code(),
+                reputation=self.get_space_faction_code(),
             )
         )
 
@@ -2057,7 +2112,7 @@ behavior = NOTHING'''
             parent_gasminer=self.get_inspace_nickname(),
             position='{}, {}, {}'.format(pos_x, pos_y+self.CARGO_PODS_POSITION_Y_DRIFT, pos_z),
             rotate='{}, {}, {}'.format(*self.get_rotate()),
-            faction=self.get_faction().get_code(),
+            faction=self.get_space_faction_code(),
         )
 
     def get_sattelites(self):
@@ -2132,7 +2187,7 @@ ids_info = 66150'''
             parent_roidminer=self.get_inspace_nickname(),
             position='{}, {}, {}'.format(pos_x, pos_y+self.CARGO_PODS_POSITION_Y_DRIFT, pos_z),
             rotate='{}, {}, {}'.format(*self.get_rotate()),
-            faction=self.get_faction().get_code(),
+            faction=self.get_space_faction_code(),
             loadout=self.CARGO_PODS_LOADOUT,
         )
 
@@ -2330,7 +2385,7 @@ class Hackable(DockableObject):
 
         space_panel = panel.get_space_content(
             space_name=hacker_name,
-            reputation=self.get_faction().get_code(),
+            reputation=self.get_space_faction_code(),
             position=hacker_position,
             relation=self.HACKABLE_SOLAR_CLASS.PANEL_RELATION,
             success_loadout=hacker_name,
@@ -2612,7 +2667,7 @@ pilot = pilot_solar_hard
             'ring_nickname': self.get_ring_nickname(),
             'pos': '{0}, {1}, {2}'.format(*self.get_tradelane_pos()),
             'rotate': '{0}, {1}, {2}'.format(*self.get_tradelane_rotate()),
-            'faction': self.trade_connection.FACTION.get_code(),
+            'faction': self.trade_connection.get_space_faction_code(),
             'archetype': self.ARCHETYPE,
         }
 
@@ -3161,7 +3216,7 @@ pos = {storage_pos[0]:0.3f}, {storage_pos[1]:0.3f}, {storage_pos[2]:0.3f}
 rotate = 0, {-self.get_single_rotate()}, 0
 archetype = {storage_archetype.ARCHETYPE}
 loadout = {storage_archetype.LOADOUT}
-reputation = {self.get_faction_code()}
+reputation = {self.get_space_faction_code()}
 ids_name = 261161
 behavior = NOTHING''')
 
@@ -3232,7 +3287,7 @@ archetype = {self.DRILLER_ARCHETYPE}
 loadout = {self.DRILLER_LOADOUT}
 ids_name = 261161
 ids_info = 1
-reputation = {self.get_faction_code()}
+reputation = {self.get_space_faction_code()}
 behavior = NOTHING
 ''')
 
@@ -3292,15 +3347,22 @@ class BackgroundTunnelOmega13(BackgroundComplexObject):
     ARCHETYPE_CHANGE_FROM = 'om15'  # it's initially om15 asteroid kind
 
 
-class DangeonDeathZone(BackgroundComplexObject):
+class DangeonMainDeathZone(BackgroundComplexObject):
     ALIAS = 'death'
     WORKSPACE_TEMPLATE_NAME = 'arch_death'
+    # ARCHETYPE_CHANGE_FROM = 'om15'  # do nothing
+
+
+class DangeonRtcDeathZone(BackgroundComplexObject):
+    ALIAS = 'death'
+    WORKSPACE_TEMPLATE_NAME = 'rtc_death'
     # ARCHETYPE_CHANGE_FROM = 'om15'  # do nothing
 
 
 class CustomerEncounterZone(SystemObject):
     ALIAS = 'npc'
     SHIPS = None
+    ENCOUNTERS = None
     TOUGHNESS = 20
     # DENSITY = 3
     # REPOP_TIME = 25
@@ -3308,35 +3370,54 @@ class CustomerEncounterZone(SystemObject):
     # RELIEF_TIME = 35
     DENSITY = 3
     MAX_BATTLE_SIZE = 4
-    RELIEF_TIME = 25
+    REPOP_TIME = 25
+    RELIEF_TIME = 35
 
     def get_inspace_nickname(self):
         return '{system_name}_enc_{alias}_{index}'.format(system_name=self.system.NAME, alias=self.ALIAS, index=self.INDEX)
 
+    def get_encounters(self):
+        return self.ENCOUNTERS
+
     def get_ships(self):
-        return self.SHIPS
+        ships = []
+        for enc in self.ENCOUNTERS:
+            ships += enc.get_ships()
+        return ships
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        if self.SHIPS is None or len(self.SHIPS) == 0:
-            raise Exception(f'Encounter {self} have no ships')
+        if self.ENCOUNTERS is None or len(self.ENCOUNTERS) == 0:
+            raise Exception(f'Encounter {self} have no encounters')
 
         if self.get_faction() is None:
             raise Exception(f'Encounter {self} have no faction')
 
-        for ship in self.SHIPS:
-            ship.npc.set_name(f'custom_enc_{self.system.NAME}_{ship.name}')
-            ship.npc.change_have_npc_class(False)  # force remove from universe
-
+        self.encounters = []
         enc_name = self.get_inspace_nickname()
+        i = 1
 
-        self.enc = encounter.DynamicEncounter(
-            self.system,
-            enc_name,
-            self.SHIPS,
-            encounter.JOB_DEFEND,
-        )
+        for enc in self.ENCOUNTERS:
+            for ship in enc.get_ships():
+                if ship.is_dynamic():
+                    ship.npc.set_name(f'custom_enc_{self.system.NAME}_{ship.name}')
+                    ship.npc.change_have_npc_class(False)  # force remove from universe
+
+            self.encounters.append(
+                encounter.DynamicEncounter(
+                    self.system,
+                    f'{enc_name}_{i}',
+                    enc.get_ships(),
+                    encounter.JOB_DEFEND,
+                    chance=enc.get_chance(),
+                )
+            )
+
+            i += 1
+
+    def get_defined_encounters(self):
+        return self.encounters
 
     def get_system_content(self):
         pos = self.get_position()
@@ -3344,7 +3425,7 @@ class CustomerEncounterZone(SystemObject):
         shape = self.get_shape()
         size = self.get_size()
 
-        content = f'''[zone]
+        content = [f'''[zone]
 nickname = Zone_{self.get_inspace_nickname()}_enc
 pos = {pos[0]:0.2f}, {pos[1]:0.2f}, {pos[2]:0.2f}
 rotate = {rot[0]:0.2f}, {rot[1]:0.2f}, {rot[2]:0.2f}
@@ -3355,10 +3436,16 @@ density = {self.DENSITY}
 repop_time = {self.REPOP_TIME}
 max_battle_size = {self.MAX_BATTLE_SIZE}
 relief_time = {self.RELIEF_TIME}
-encounter = {self.enc.get_nickname()}, 1, 1
-faction = {self.get_faction_code()}, 1
-'''
-        return content
+''']
+
+        for enc in self.encounters:
+            content.append(
+                f'encounter = {enc.get_nickname()}, 1, {enc.get_chance()}'
+            )
+            content.append(
+                f'faction = {self.get_faction_code()}, 1'
+            )
+        return SINGLE_DIVIDER.join(content)
 
 
 class HelpPlayback(StaticObject):
@@ -3367,6 +3454,7 @@ class HelpPlayback(StaticObject):
     PLAYBACK_ARCHETYPE = 'help_playback'
     PLAYBACK_OFFSET = (0, 100, 0)
     SOUND = None
+    PLAYBACK_FACTION = faction.Nomad
 
     def has_appearance(self):
         return True
@@ -3413,7 +3501,7 @@ class HelpPlayback(StaticObject):
         loadout = f'infocard_playback_{self.SOUND}'
         content.append(f'loadout = {loadout}')
         content.append(f'visit = 0')
-        content.append(f'reputation = fc_n_grp')
+        content.append(f'reputation = {self.PLAYBACK_FACTION.get_code()}')
         content.append(f'behavior = NOTHING')
         content.append(f'pilot = pilot_solar_ultimate')
 

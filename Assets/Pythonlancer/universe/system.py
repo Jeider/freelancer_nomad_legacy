@@ -280,7 +280,6 @@ distance = {tlr_distance}
         for enc in self.get_custom_encounters():
             system_content.append(enc.get_system_content())
 
-
         return DIVIDER.join(system_content)
 
     def get_content(self):
@@ -592,11 +591,11 @@ distance = {tlr_distance}
                     encounter_names.add(enc_name)
 
         for custom_enc in self.get_custom_encounters():
-            enc = custom_enc.enc
-            enc_name = enc.get_nickname()
-            if enc_name not in encounter_names:
-                encounters.append(enc)
-                encounter_names.add(enc_name)
+            for enc in custom_enc.get_defined_encounters():
+                enc_name = enc.get_nickname()
+                if enc_name not in encounter_names:
+                    encounters.append(enc)
+                    encounter_names.add(enc_name)
 
         return DIVIDER.join([enc.get_definition() for enc in encounters])
 
@@ -740,3 +739,11 @@ class StorySystem(System):
         if self.have_dynamic_content():
             self.init_dynamic_content()
         self.process_template()
+
+
+class Dangeon(System):
+    SYSTEMS_ROOT = 'DANGEON'
+
+    ENABLE_POPULATION = False
+
+    SCAN_JUMP = False

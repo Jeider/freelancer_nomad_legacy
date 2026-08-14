@@ -33,7 +33,6 @@ from universe.systems import tau29 as tau29_content
 from universe.systems import tau31 as tau31_content
 from universe.systems import tau37 as tau37_content
 from universe.systems import rh_kgb as rh_kgb_content
-from universe.systems import or_hq_static as or_hq_content
 from universe.systems import or_hq as or_hq_content
 from universe.systems import rh_vien as rh_vien_content
 from universe.systems import xen as xen_content
@@ -56,8 +55,10 @@ from universe.systems import anomaly as anomaly_content
 from universe.systems import ice as ice_content
 from universe.systems import lair_enter as lair_enter_content
 from universe.systems import sphere3b as sphere3b_content
-from universe.systems import arch as arch_content
-
+from universe.dangeons import arch as arch_content
+from universe.dangeons import heavy_barrel1 as hbr1_content
+from universe.dangeons import heavy_barrel2 as hbr2_content
+from universe.dangeons import heavy_barrel3 as hbr3_content
 
 
 class rh_mnh(system.RheinlandFirst, system.System, system.SiriusSystem):
@@ -988,7 +989,7 @@ class sphere3b(system.StorySystem, system.SiriusSystem):
     NAVMAP_POS = '15, 0'
 
 
-class nomad_arch(system.System, system.SiriusSystem):
+class nomad_arch(system.Dangeon, system.SiriusSystem):
     NAME = 'arch'
     RU_NAME = MS('Арка', "Arch")
     TEMPLATE_NAME = 'arch'
@@ -1002,3 +1003,51 @@ class nomad_arch(system.System, system.SiriusSystem):
     SPACE_FARCLIP = 100000
 
     JUMP_EFFECT = jump_effect.Edge
+
+
+class heavy_barrel1(system.Dangeon, system.SiriusSystem):
+    NAME = 'heavy_barrel1'
+    RU_NAME = MS('Мегапушка', "Mega Cannon")
+    TEMPLATE_NAME = 'heavy_barrel1'
+    CONTENT = hbr1_content
+
+    ALLOW_SYNC = True
+    ENABLE_POPULATION = False
+
+    SYSTEM_FOLDER = 'HEAVY_BARREL1'
+    NAVMAP_POS = '12.5, 15.5'
+    SPACE_FARCLIP = 100000
+
+    JUMP_EFFECT = jump_effect.Edge
+
+
+class heavy_barrel2(system.Dangeon, system.SiriusSystem):
+    NAME = 'heavy_barrel2'
+    RU_NAME = MS('Мегапушка', "Mega Cannon")
+    TEMPLATE_NAME = 'heavy_barrel2'
+    CONTENT = hbr2_content
+
+    ALLOW_SYNC = True
+    ENABLE_POPULATION = False
+
+    SYSTEM_FOLDER = 'HEAVY_BARREL2'
+    NAVMAP_POS = '12.5, 15.5'
+    SPACE_FARCLIP = 100000
+
+    JUMP_EFFECT = jump_effect.Edge
+
+#
+# class heavy_barrel3(system.Dangeon, system.SiriusSystem):
+#     NAME = 'heavy_barrel3'
+#     RU_NAME = MS('Мегапушка', "Mega Cannon")
+#     TEMPLATE_NAME = 'heavy_barrel3'
+#     CONTENT = hbr3_content
+#
+#     ALLOW_SYNC = True
+#     ENABLE_POPULATION = False
+#
+#     SYSTEM_FOLDER = 'HEAVY_BARREL3'
+#     NAVMAP_POS = '12.5, 15.5'
+#     SPACE_FARCLIP = 100000
+#
+#     JUMP_EFFECT = jump_effect.Edge
