@@ -455,7 +455,7 @@ def mass_upgrade_li():
         [['bw_', f'bw_{skin}_']],
     )
 
-def mass_upgrade_rh():
+def mass_upgrade():
     subfolder_filename = 'lod0-212.vms.xml'
 
     old_materials = [
@@ -494,30 +494,30 @@ def mass_upgrade_rh():
 
     ]
 
-    skin = 'nmd'
+    skin = 'alt'
 
 
     subfile_changed_strings = []
-    for old_mat in old_materials:
-        old_mat_hex = crc32_hex_from_str(old_mat.lower())
-        new_mat_hex = crc32_hex_from_str(f'{skin}_{old_mat.lower()}')
-        subfile_changed_strings.append(
-            [f'0x{old_mat_hex[2:].upper()}', new_mat_hex],
-        )
-        subfile_changed_strings.append(
-            [f'0x0{old_mat_hex[2:].upper()}', new_mat_hex],
-        )
+    # for old_mat in old_materials:
+    #     old_mat_hex = crc32_hex_from_str(old_mat.lower())
+    #     new_mat_hex = crc32_hex_from_str(f'{skin}_{old_mat.lower()}')
+    #     subfile_changed_strings.append(
+    #         [f'0x{old_mat_hex[2:].upper()}', new_mat_hex],
+    #     )
+    #     subfile_changed_strings.append(
+    #         [f'0x0{old_mat_hex[2:].upper()}', new_mat_hex],
+    #     )
 
     upgrades = [
-        ['filename="ku_', f'filename="ku_{skin}_'],
-        ['data.ships.rheinland.ku_gunship', f'data.ships.rheinland.ku_gunship_{skin}'],
-        ['data.ships.rheinland.ku_cruiser', f'data.ships.rheinland.ku_cruiser_{skin}'],
-        ['data.ships.rheinland.ku_battleship', f'data.ships.rheinland.ku_battleship_{skin}'],
-        ['data.ships.rheinland.ku_fighter', f'data.ships.rheinland.ku_fighter_{skin}'],
-        ['data.ships.rheinland.ku_elite', f'data.ships.rheinland.ku_elite_{skin}'],
-        ['data.ships.rheinland.ku_freighter', f'data.ships.rheinland.ku_freighter_{skin}'],
-        ['fl.rh', f'fl.ku_{skin}'],
-        ['xku_fr', f'xku_fr_{skin}'],
+        ['filename="rh_', f'filename="rh_{skin}_'],
+        ['data.ships.rheinland.rh_gunship', f'data.ships.rheinland.rh_gunship_{skin}'],
+        ['data.ships.rheinland.rh_cruiser', f'data.ships.rheinland.rh_cruiser_{skin}'],
+        ['data.ships.rheinland.rh_battleship', f'data.ships.rheinland.rh_battleship_{skin}'],
+        ['data.ships.rheinland.rh_fighter', f'data.ships.rheinland.rh_fighter_{skin}'],
+        ['data.ships.rheinland.rh_elite', f'data.ships.rheinland.rh_elite_{skin}'],
+        ['data.ships.rheinland.rh_freighter', f'data.ships.rheinland.rh_freighter_{skin}'],
+        ['fl.rh', f'fl.rh_{skin}'],
+        ['xrh_fr', f'xrh_fr_{skin}'],
 
         ['lod1020917205920', f'{skin}_lod1020917205920'],
         ['lod1020917203809', f'{skin}_lod1020917203809'],
@@ -536,10 +536,10 @@ def mass_upgrade_rh():
         subfolder_filename,
         subfile_changed_strings,
         main_file_upgrades,
-        [['ku_', f'ku_{skin}_']],
+        [['rh_', f'rh_{skin}_']],
     )
 
-def mass_upgrade__():
+def mass_upgrade_ku():
     subfolder_filename = 'lod0-212.vms.xml'
 
     old_materials = [
@@ -647,9 +647,9 @@ def mass_upgrade__():
         ['lod1030109205127', f'{skin}_lod1030109205127'],
     ]
 
-    utf_xml.XML_UTF.mass_force_encode_updated_xml()
+    # utf_xml.XML_UTF.mass_force_encode_updated_xml()
 
-    return
+    # return
 
     # upgrades = []
     main_file_upgrades = upgrades
@@ -665,7 +665,7 @@ def mass_upgrade__():
     )
 
 
-def mass_upgrade_br():
+def mass_upgrade_br():  # _br
     subfolder_filename = 'lod0-212.vms.xml'
 
     old_materials = [
@@ -695,28 +695,28 @@ def mass_upgrade_br():
         # "Br_destroyer",
         # "Br_destroyer_lod",
         # "br_gunship_256",
-        "Br_dmg",
-        "br_elite_lod",
-        "br_elite_lod2-side",
-        "br_fighter_256",
-        "br_fighter_256-2side",
-        "br_freighter_256",
-        "Br_freighter_256-2side",
-        "B_glass",
-        "B_player01_256",
-        "B_player01_256B",
-        "B_player01_256D",
-        "B_player01_256L",
-        "B_player01_256_2side",
-        "B_player02_256",
-        "B_player02_256_2side",
-        "B_player03_256",
-        "B_metal03D",
-        "B_metal03L",
+        # "Br_dmg",
+        # "br_elite_lod",
+        # "br_elite_lod2-side",
+        # "br_fighter_256",
+        # "br_fighter_256-2side",
+        # "br_freighter_256",
+        # "Br_freighter_256-2side",
+        # "B_glass",
+        # "B_player01_256",
+        # "B_player01_256B",
+        # "B_player01_256D",
+        # "B_player01_256L",
+        # "B_player01_256_2side",
+        # "B_player02_256",
+        # "B_player02_256_2side",
+        # "B_player03_256",
+        # "B_metal03D",
+        # "B_metal03L",
 
     ]
 
-    skin = 'nmd'
+    skin = 'alt'
 
 
     subfile_changed_strings = []
@@ -771,7 +771,7 @@ def mass_upgrade_br():
     )
 
 
-def mass_upgrade():
+def mass_upgrade99():
     subfolder_filename = 'lod0-212.vms.xml'
 
     old_materials = [
