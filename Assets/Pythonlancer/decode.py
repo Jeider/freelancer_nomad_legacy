@@ -455,7 +455,7 @@ def mass_upgrade_li():
         [['bw_', f'bw_{skin}_']],
     )
 
-def mass_upgrade():
+def mass_upgrade_rh():
     subfolder_filename = 'lod0-212.vms.xml'
 
     old_materials = [
@@ -804,8 +804,6 @@ def mass_upgrade99():
         ['data.solar.asteroids.models.ast_lava', f'data.solar.asteroids.models.ast_lava_{skin}'],
 
         # ['fl.pi_elite_wings', f'fl.pi_elite_wings_{skin}'],
-
-
     ]
 
 
@@ -821,6 +819,172 @@ def mass_upgrade99():
             ['ast_', f'ast_{skin}_'],
         ],
     )
+
+
+def mass_upgrade_weapon():
+    subfolder_filename = 'lod0-212.vms.xml'
+
+    old_materials = [
+        "CART_128LY",
+        "co_cart_128MD",
+        "Equip_genDY",
+        "Equip_genMY",
+        "Equip_mstrDY",
+        "Equip_mstrMY",
+        "Equip_genDB",
+        "Equip_genMB",
+        "Equip_genLRd",
+        "Equip_genMRd",
+        "Equip_genBr",
+        "Equip_genLDr",
+        "Equip_genLDr2side",
+        "Equip_genLGr",
+        "Equip_genMGr",
+        "weapon_1",
+        "weapon_1B",
+        "weapon_1D",
+        "weapon_1MY",
+        "weapon_1LRd",
+        "weapon_kusari",
+        "weapon_kusariDY",
+        "weapon_kusariMY",
+        "Weapon_Rheinland",
+        "Weapon_RheinlandLGr",
+        "Weapon_RheinlandMGr",
+        "weapon_bretonia",
+        "weapon_bretoniaLRd",
+        "weapon_bretoniaMG",
+        "weapon_bretoniaMRd",
+        "Weapon_generic",
+        "Weapon_genericMG",
+        "Weapon_Pirate",
+        "Weapon_PirateDBr",
+        "Weapon_PirateLBr",
+        "Weapon_PirateMB",
+    ]
+
+    skin = 'nmd'
+
+    # red
+    # sphere
+    # fish
+    # nexus
+
+
+    subfile_changed_strings = []
+    for old_mat in old_materials:
+        old_mat_hex = crc32_hex_from_str(old_mat.lower())
+        new_mat_hex = crc32_hex_from_str(f'{skin}_{old_mat.lower()}')
+        subfile_changed_strings.append(
+            [f'0x{old_mat_hex[2:].upper()}', new_mat_hex],
+        )
+        subfile_changed_strings.append(
+            [f'0x0{old_mat_hex[2:].upper()}', new_mat_hex],
+        )
+
+    upgrades = [
+        ['filename="', f'filename="{skin}_'],
+
+        ['data.equipment.models.weapons', f'data.equipment.models.weapons_{skin}'],
+        ['data.equipment.models.st', f'data.equipment.models.st_{skin}'],
+
+        # ['.3db', f'_{skin}.3db'],
+    ]
+
+    # utf_xml.XML_UTF.mass_force_encode_updated_xml()
+    #
+    # return
+
+
+    # upgrades = []
+    main_file_upgrades = upgrades
+    subfile_changed_strings = subfile_changed_strings + upgrades
+
+    utf_xml.XML_UTF.mass_encode_updated_xml(
+        subfolder_filename,
+        subfile_changed_strings,
+        main_file_upgrades,
+        [
+        ],
+        filename_prepend=f'{skin}_',
+    )
+
+
+
+def mass_upgrade():
+    subfolder_filename = 'lod0-212.vms.xml'
+
+    old_materials = [
+        "dtl1M",
+        "R_dtl2B",
+        "R_dtl2B_M",
+        "Damage1_128M",
+
+        "space_dtldmg", # ge space sp
+        "liner2_256"
+        "utility_panels_01M",
+        "utility_panels_03M",
+
+        "liberty1_256",
+        "lib_weap1",
+
+        "K_panel01_256",
+        "K_panel01_256_D",
+        "K_panel03_256",
+        "K_panel03_D",
+
+        "B-dtl1-2B",
+        "B-dtl1-Y",
+
+
+
+    ]
+
+    skin = 'pir'
+
+    # red
+    # sphere
+    # fish
+    # nexus
+
+
+    subfile_changed_strings = []
+    for old_mat in old_materials:
+        old_mat_hex = crc32_hex_from_str(old_mat.lower())
+        new_mat_hex = crc32_hex_from_str(f'{skin}_{old_mat.lower()}')
+        subfile_changed_strings.append(
+            [f'0x{old_mat_hex[2:].upper()}', new_mat_hex],
+        )
+        subfile_changed_strings.append(
+            [f'0x0{old_mat_hex[2:].upper()}', new_mat_hex],
+        )
+
+    upgrades = [
+        ['filename="', f'filename="{skin}_'],
+
+        ['data.equipment.models.turret', f'data.equipment.models.turret_{skin}'],
+
+        # ['.3db', f'_{skin}.3db'],
+    ]
+
+    # utf_xml.XML_UTF.mass_force_encode_updated_xml()
+    #
+    # return
+
+
+    # upgrades = []
+    main_file_upgrades = upgrades
+    subfile_changed_strings = subfile_changed_strings + upgrades
+
+    utf_xml.XML_UTF.mass_encode_updated_xml(
+        subfolder_filename,
+        subfile_changed_strings,
+        main_file_upgrades,
+        [
+        ],
+        filename_prepend=f'{skin}_',
+    )
+
 
 
 ACTIONS = {

@@ -58,6 +58,7 @@ class UTF_XML(object):
         input_folder = cls.get_mass_input_path()
 
         for file in input_folder.iterdir():
+            print(file.name)
             if not file.is_file():
                 continue
 
@@ -103,7 +104,8 @@ class XML_UTF(object):
 
 
     @classmethod
-    def mass_encode_updated_xml(cls, upgraded_subfilename, subfile_upgrades, file_upgrades, filename_upgrades):
+    def mass_encode_updated_xml(cls, upgraded_subfilename, subfile_upgrades, file_upgrades, filename_upgrades,
+                                filename_prepend=''):
         input_folder = cls.get_utf_xml_path() / MASS_ENCODE_INPUT_DIR
         output_folder = cls.get_utf_xml_path() / MASS_ENCODE_OUT_DIR
 
@@ -133,6 +135,7 @@ class XML_UTF(object):
 
         # process final
         for file in input_folder.iterdir():
+            print(file.name)
             if not file.is_file():
                 continue
 
@@ -143,6 +146,8 @@ class XML_UTF(object):
             elif extension == '.sur':
 
                 new_name = file.name
+                if filename_prepend != '':
+                    new_name = f'{filename_prepend}{new_name}'
                 for init_string, upgrade in filename_upgrades:
                     new_name = new_name.replace(init_string, upgrade)
 
@@ -156,6 +161,7 @@ class XML_UTF(object):
 
         # process final
         for file in input_folder.iterdir():
+            print(file.name)
             if not file.is_file():
                 continue
 
