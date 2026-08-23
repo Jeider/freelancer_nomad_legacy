@@ -53,8 +53,11 @@ class UTF_XML(object):
         UTF_XML.run_command(request_file_name, flags=flags)
 
     @classmethod
-    def mass_decode_utf(cls):
+    def mass_decode_utf(cls, decode_all=False):
         flags = ['i']
+        if decode_all:
+            flags.append('g')
+            flags.append('a')
         input_folder = cls.get_mass_input_path()
 
         for file in input_folder.iterdir():
@@ -124,7 +127,11 @@ class XML_UTF(object):
                 file.write_text(file_content, encoding='utf-8')
 
             else:
+
                 for subfile in file.iterdir():
+                    extension = subfile.suffix
+                    if extension != '.xml':
+                        continue
                     if subfile.is_file():
                         subfile_content = subfile.read_text()
 
@@ -170,9 +177,32 @@ class XML_UTF(object):
                 XML_UTF.run_command(file.name, input_dir=MASS_ENCODE_INPUT_DIR, out_dir=MASS_ENCODE_OUT_DIR)
 
 
+    @classmethod
+    def mass_dump_materials(cls, print_result=True):
+        input_folder = cls.get_utf_xml_path() / MASS_ENCODE_INPUT_DIR
+        materials = []
 
+        # make upgrades
+        for file in input_folder.iterdir():
+            if file.is_file():
+                extension = file.suffix
+                if extension != '.xml':
+                    continue
 
+                file_content = file.read_text()
+                watch_next_line = False
 
+                for line in file_content.splitlines():
+                    content = line.strip()
 
+                    if watch_next_line:
+                        watch_next_line = False
+                        result = content.replace('<', '').replace('>', '')
+                        materials.append(result)
+                        if print_result:
+                            print(f'"{result}",')
 
+                    if '<Material_library' in content:
+                        watch_next_line = True
 
+        return materials

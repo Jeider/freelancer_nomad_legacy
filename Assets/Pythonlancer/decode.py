@@ -8,7 +8,11 @@ from tools import utf_xml
 
 
 def mass_decode():
-    utf_xml.UTF_XML.mass_decode_utf()
+    utf_xml.UTF_XML.mass_decode_utf(decode_all=True)
+
+
+def mass_dump_materials():
+    utf_xml.XML_UTF.mass_dump_materials(print_result=True)
 
 
 def mass_upgrade1():
@@ -910,8 +914,7 @@ def mass_upgrade_weapon():
     )
 
 
-
-def mass_upgrade():
+def mass_upgrade_turret():
     subfolder_filename = 'lod0-212.vms.xml'
 
     old_materials = [
@@ -935,9 +938,6 @@ def mass_upgrade():
 
         "B-dtl1-2B",
         "B-dtl1-Y",
-
-
-
     ]
 
     skin = 'pir'
@@ -987,9 +987,189 @@ def mass_upgrade():
 
 
 
+def mass_upgrade():
+    subfolder_filename = 'lod0-212.vms.xml'
+
+    old_materials = [
+        "equip11",
+        "equip12",
+        "ico27",
+        "ico29",
+        "equip19",
+        "ico31",
+        "equip16",
+        "equip14",
+        "equip15",
+        "ic_thr_br",
+        "equip13",
+        "equip20",
+        "equip18",
+        "ico32",
+        "ico30",
+        "ico28",
+        "equip17",
+        "ico34",
+        "ico42",
+        "ico35",
+        "ico41",
+        "ico36",
+        "ico37",
+        "ic_thr_co",
+        "ico38",
+        "ico39",
+        "ico40",
+        "ico_module6",
+        "ico_module1",
+        "ico20",
+        "ico21",
+        "ico01",
+        "ico02",
+        "ico03",
+        "ico17",
+        "ico_module3",
+        "Gun04b",
+        "ico_module2",
+        "ico04",
+        "ico05",
+        "ico06",
+        "Gun03c",
+        "Gun05b",
+        "Gun05e",
+        "ico_module4",
+        "Gun05c",
+        "Gun05f",
+        "Gun05d",
+        "ico18",
+        "Gun03e",
+        "ico19",
+        "ico07",
+        "Gun03b",
+        "ico_module5",
+        "equip01",
+        "equip02",
+        "ico22",
+        "ico23",
+        "equip03",
+        "ico25",
+        "equip09",
+        "equip06",
+        "equip08",
+        "ic_thr_ku",
+        "equip04",
+        "equip07",
+        "equip05",
+        "ico24",
+        "ico26",
+        "equip10",
+        "Gun04d",
+        "Gun03a",
+        "ico09",
+        "ico10",
+        "ico11",
+        "Gun02f",
+        "Gun02c",
+        "Gun04c",
+        "Gun02b",
+        "ic_thr_li",
+        "Gun05a",
+        "Gun02e",
+        "Gun04a",
+        "ico08",
+        "ico12",
+        "Gun02d",
+        "Gun04e",
+        "Gun02a",
+        "ico13",
+        "Gun01e",
+        "ico33",
+        "ico14",
+        "Gun01b",
+        "Gun01d",
+        "Gun01a",
+        "ic_thr_rh",
+        "Gun01f",
+        "Gun03d",
+        "Gun03f",
+        "ico15",
+        "Gun04f",
+        "ico16",
+        "Gun01c",
+
+    ]
+
+    skin = 'lvl5'
+
+    # red
+    # sphere
+    # fish
+    # nexus
+
+
+    subfile_changed_strings = []
+    for old_mat in old_materials:
+        old_mat_hex = crc32_hex_from_str(old_mat.lower())
+        new_mat_hex = crc32_hex_from_str(f'{skin}_{old_mat.lower()}')
+        subfile_changed_strings.append(
+            [f'0x{old_mat_hex[2:].upper()}', new_mat_hex],
+        )
+        subfile_changed_strings.append(
+            [f'0x0{old_mat_hex[2:].upper()}', new_mat_hex],
+        )
+
+    upgrades = [
+        # ['filename="', f'filename="{skin}_'],
+
+        ['.lod0-112.vms', f'_{skin}.lod0-112.vms'],
+
+        [
+            '<Type type="text">DcDt</Type>',
+            f'<Type type="text">DcDtEt</Type><Et_flags type="int">0x40</Et_flags><Et_name type="text">eq_label_{skin}</Et_name>'
+        ],
+    ]
+
+    for old_mat in old_materials:
+        upgrades.append(
+            [
+                f'<{old_mat}>',
+                f'<{skin}_{old_mat}>'
+            ]
+        )
+        upgrades.append(
+            [
+                f'</{old_mat}>',
+                f'</{skin}_{old_mat}>'
+            ]
+        )
+
+
+
+    # utf_xml.XML_UTF.mass_force_encode_updated_xml()
+    #
+    # return
+
+
+    # upgrades = []
+    main_file_upgrades = upgrades
+    subfile_changed_strings = subfile_changed_strings + upgrades
+
+    utf_xml.XML_UTF.mass_encode_updated_xml(
+        subfolder_filename,
+        subfile_changed_strings,
+        main_file_upgrades,
+        [
+        ],
+        filename_prepend=f'{skin}_',
+    )
+
+
+
+
+
+
 ACTIONS = {
     'mass_decode': mass_decode,
     'mass_upgrade': mass_upgrade,
+    'mass_dump_materials': mass_dump_materials,
 }
 
 
