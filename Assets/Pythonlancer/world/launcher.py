@@ -1,5 +1,5 @@
 from world.names import *
-from world.equipment import Equipment, Icon, MainEquipPrice, LauncherGood
+from world.equipment import Equipment, Icon, MainEquipPrice, LauncherGood, IconProps
 from world import level
 from text.infocards import InfocardBuilder
 from text.strings import MultiString as MS
@@ -496,9 +496,15 @@ class Launcher(Equipment, MainEquipPrice, LauncherGood):
             else ''
         )
 
+    def get_icon_middle_folder(self):
+        if self.FORCE_MIDDLE_ICON:
+            return self.FORCE_MIDDLE_ICON
+
+        return IconProps.MAIN
+
     def get_icon(self):
         icon = self.ICON_PER_WEAPON_MODEL[self.get_model()]
-        return Icon.get_icon_path(icon)
+        return Icon.get_icon_path(icon, middle=self.get_icon_middle_folder())
 
     def get_ammo_icon(self):
         icon = self.AMMO_ICON_PER_WEAPON_MODEL[self.get_model()]
@@ -543,7 +549,6 @@ class Missile(Launcher):
     SEEKER_RANGE = None
     SEEKER_FOV = None
     ANGULAR_VELOCITY = None
-
 
     IS_DISRUPTOR = False
 
@@ -685,6 +690,8 @@ class MainMissile(Missile):
     MUZZLE_VELOCITY = 30.299999
     DETONATION_DIST = 4
 
+    FORCE_MIDDLE_ICON = IconProps.LVL2
+
     RU_NAME_PER_FACTION = {
         Equipment.FACTION_RH: 'Разрушитель',
         Equipment.FACTION_LI: 'Джавелин',
@@ -755,6 +762,8 @@ class FastMissile(Missile):
     MUZZLE_VELOCITY = 33.299999
     DETONATION_DIST = 4
 
+    FORCE_MIDDLE_ICON = IconProps.LVL2
+
     RU_NAME_PER_FACTION = {
         Equipment.FACTION_RH: 'Охотник',
         Equipment.FACTION_LI: 'Сталкер',
@@ -810,6 +819,8 @@ class MainSuperMissile(MainMissile):
     LI_EXPLOSION_MULTIPLIER = 1.5
     CRITICAL_DAMAGE_POSSIBILITY = 25
     CRITICAL_DAMAGE = 2
+
+    FORCE_MIDDLE_ICON = IconProps.LVL3
 
     DAMAGE_MULTIPLIER_PER_FACTION = {
         Equipment.FACTION_RH: 1.3,
@@ -879,6 +890,8 @@ class ShieldMissile(Missile):
     REFIRE_DELAY = 2
     MUZZLE_VELOCITY = 30.299999
     DETONATION_DIST = 4
+
+    FORCE_MIDDLE_ICON = IconProps.LVL2
 
     RU_NAME_PER_FACTION = {
         Equipment.FACTION_RH: 'Парализатор',
@@ -1240,6 +1253,8 @@ class CivMine(Mine):
     MAX_PRICE = 120000
     MAX_AMMO_PRICE = 7000
 
+    FORCE_MIDDLE_ICON = IconProps.LVL1
+
     CLASSES = GEN_CLASS_TO_MARK
     CLASSES_KEYS = CLASSES.keys()
 
@@ -1282,6 +1297,8 @@ class ProfMine(Mine):
     MAX_PRICE = 120000
     MAX_AMMO_PRICE = 7000
 
+    FORCE_MIDDLE_ICON = IconProps.LVL2
+
     CLASSES = HEAVY_CLASS_TO_MARK
     CLASSES_KEYS = CLASSES.keys()
 
@@ -1323,6 +1340,8 @@ class MilMine(Mine):
     MAX_HULL_DAMAGE = 5000
     MAX_PRICE = 150000
     MAX_AMMO_PRICE = 7500
+
+    FORCE_MIDDLE_ICON = IconProps.LVL3
 
     CLASSES = HEAVY_CLASS_TO_MARK
     CLASSES_KEYS = CLASSES.keys()

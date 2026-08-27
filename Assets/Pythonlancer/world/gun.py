@@ -1,4 +1,4 @@
-from world.equipment import DefaultGood, MainEquipPrice, Icon
+from world.equipment import DefaultGood, MainEquipPrice, Icon, IconProps
 from world.weapon import Weapon
 from world import level
 
@@ -142,7 +142,7 @@ class Gun(MainEquipPrice, Weapon, DefaultGood):
 
     def get_icon(self):
         icon = self.ICON_PER_WEAPON_MODEL[self.MODEL]
-        return Icon.get_icon_path(icon)
+        return Icon.get_icon_path(icon, self.get_icon_middle_folder())
 
     def get_max_price(self):
         return self.MAX_PRICE
@@ -242,6 +242,7 @@ class DietrichLightgun(Gun, RheinlandGun):
     LIFETIME = 1.2
     FX_FACTION = WeaponFX.FX_DTR
     FX_APPEARANCE = WeaponFX.FX_TACHYON
+    FORCE_MIDDLE_ICON = IconProps.LVL4
 
 
 class DietrichHeavygun(Gun, RheinlandGun):
@@ -256,6 +257,7 @@ class DietrichHeavygun(Gun, RheinlandGun):
     LIFETIME = 1.2
     FX_FACTION = WeaponFX.FX_DTR
     FX_APPEARANCE = WeaponFX.FX_PLASMA
+    FORCE_MIDDLE_ICON = IconProps.LVL4
 
 
 class DietrichShieldgun(Gun, RheinlandGun, Heavygun):
@@ -270,6 +272,7 @@ class DietrichShieldgun(Gun, RheinlandGun, Heavygun):
     LIFETIME = 0.8
     FX_FACTION = WeaponFX.FX_DTR
     FX_APPEARANCE = WeaponFX.FX_PULSE
+    FORCE_MIDDLE_ICON = IconProps.LVL4
 
 
 class RheinlandLightgun(Gun, RheinlandGun, Lightgun):
@@ -795,6 +798,7 @@ class AsfLightgun(Gun, LibertyGun):
     LIFETIME = 1.2
     FX_FACTION = WeaponFX.FX_LI
     FX_APPEARANCE = WeaponFX.FX_DIAMOND
+    FORCE_MIDDLE_ICON = IconProps.LVL4
 
 
 class AsfDiamondback(Gun, LibertyGun):
@@ -809,3 +813,4 @@ class AsfDiamondback(Gun, LibertyGun):
     LIFETIME = 1.5
     FX_FACTION = WeaponFX.FX_SP
     FX_APPEARANCE = WeaponFX.FX_DIAMOND
+    FORCE_MIDDLE_ICON = IconProps.LVL4

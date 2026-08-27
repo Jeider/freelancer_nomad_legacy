@@ -1,4 +1,4 @@
-from world.equipment import MainInternalEquip, MainMiscEquip, Equipment, AdoxaEquipClassGood, MainEquipPrice
+from world.equipment import MainInternalEquip, MainMiscEquip, Icon, AdoxaEquipClassGood, MainEquipPrice
 from world import level
 
 
@@ -59,11 +59,11 @@ material_library = Equipment\\models\\hardware.mat'''
     KU_POWER_MODEL = 'Equipment\\models\\hardware\\ku_phase_wave_generator.3db'
     CO_POWER_MODEL = 'Equipment\\models\\hardware\\ge_high_temp_nuclear_core.3db'
 
-    RH_POWER_ICON = 'equipment\\models\\icons\\rh\\rh_power.3db'
-    LI_POWER_ICON = 'equipment\\models\\icons\\li\\li_power.3db'
-    BR_POWER_ICON = 'equipment\\models\\icons\\br\\br_power.3db'
-    KU_POWER_ICON = 'equipment\\models\\icons\\ku\\ku_power.3db'
-    CO_POWER_ICON = 'equipment\\models\\icons\\co\\co_power.3db'
+    RH_POWER_ICON = 'equipment\\models\\icons\\{0}\\rh_power.3db'
+    LI_POWER_ICON = 'equipment\\models\\icons\\{0}\\li_power.3db'
+    BR_POWER_ICON = 'equipment\\models\\icons\\{0}\\br_power.3db'
+    KU_POWER_ICON = 'equipment\\models\\icons\\{0}\\ku_power.3db'
+    CO_POWER_ICON = 'equipment\\models\\icons\\{0}\\co_power.3db'
 
     def get_market_level(self):
         return level.POWER_LEVEL_PER_CLASS[self.equipment_class]
@@ -191,16 +191,18 @@ class Power(MainEquipPrice, AdoxaEquipClassGood, BasePower):
         raise Exception('unknown power model')
 
     def get_icon(self):
+        middle = self.ICON_PER_TYPE[self.equip_type]
+
         if self.equip_type in self.RH_EQUIP:
-            return self.RH_POWER_ICON
+            return self.RH_POWER_ICON.format(middle)
         if self.equip_type in self.LI_EQUIP:
-            return self.LI_POWER_ICON
+            return self.LI_POWER_ICON.format(middle)
         if self.equip_type in self.BR_EQUIP:
-            return self.BR_POWER_ICON
+            return self.BR_POWER_ICON.format(middle)
         if self.equip_type in self.KU_EQUIP:
-            return self.KU_POWER_ICON
+            return self.KU_POWER_ICON.format(middle)
         if self.equip_type in self.CO_EQUIP:
-            return self.CO_POWER_ICON
+            return self.CO_POWER_ICON.format(middle)
 
         raise Exception('unknown power icon')
 

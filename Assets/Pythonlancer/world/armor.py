@@ -54,11 +54,11 @@ class PlayerArmor(MainEquipPrice, DefaultGood, MainMiscEquip):
     }
 
     ICON_PER_FACTION = {
-        MainMiscEquip.FACTION_RH: 'equipment\\models\\icons\\rh\\rh_armor.3db',
-        MainMiscEquip.FACTION_LI: 'equipment\\models\\icons\\li\\li_armor.3db',
-        MainMiscEquip.FACTION_BR: 'equipment\\models\\icons\\br\\br_armor01.3db',
-        MainMiscEquip.FACTION_CO: 'equipment\\models\\icons\\br\\br_armor02.3db',
-        MainMiscEquip.FACTION_KU: 'equipment\\models\\icons\\ku\\ku_armor.3db',
+        MainMiscEquip.FACTION_RH: 'equipment\\models\\icons\\{0}\\rh_armor.3db',
+        MainMiscEquip.FACTION_LI: 'equipment\\models\\icons\\{0}\\li_armor.3db',
+        MainMiscEquip.FACTION_BR: 'equipment\\models\\icons\\{0}\\br_armor01.3db',
+        MainMiscEquip.FACTION_CO: 'equipment\\models\\icons\\{0}\\br_armor02.3db',
+        MainMiscEquip.FACTION_KU: 'equipment\\models\\icons\\{0}\\ku_armor.3db',
     }
 
     ARMOR_HIT_PTS = 1000
@@ -93,7 +93,8 @@ class PlayerArmor(MainEquipPrice, DefaultGood, MainMiscEquip):
         return (self.rate / 2 * self.SCALE_MULTIPLIER_PER_FACTION[self.get_faction()]) + 1
 
     def get_icon(self):
-        return self.ICON_PER_FACTION[self.get_faction()]
+        middle = self.ICON_PER_TYPE[self.equip_type]
+        return self.ICON_PER_FACTION[self.get_faction()].format(middle)
 
     def get_equip(self):
         return f'''[Armor]

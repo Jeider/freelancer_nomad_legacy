@@ -112,11 +112,11 @@ material_library = equipment\\models\\ku_equip.mat'''
 DA_archetype = equipment\\models\\st\\co_thruster02.3db
 material_library = equipment\\models\\ge_equip.mat'''
 
-    RH_THRUSTER_ICON = 'equipment\\models\\icons\\rh\\rh_afterburn.3db'
-    LI_THRUSTER_ICON = 'equipment\\models\\icons\\li\\li_afterburn.3db'
-    BR_THRUSTER_ICON = 'equipment\\models\\icons\\br\\br_afterburn.3db'
-    KU_THRUSTER_ICON = 'equipment\\models\\icons\\ku\\ku_afterburn.3db'
-    CO_THRUSTER_ICON = 'equipment\\models\\icons\\co\\co_afterburn.3db'
+    RH_THRUSTER_ICON = 'equipment\\models\\icons\\{0}\\rh_afterburn.3db'
+    LI_THRUSTER_ICON = 'equipment\\models\\icons\\{0}\\li_afterburn.3db'
+    BR_THRUSTER_ICON = 'equipment\\models\\icons\\{0}\\br_afterburn.3db'
+    KU_THRUSTER_ICON = 'equipment\\models\\icons\\{0}\\ku_afterburn.3db'
+    CO_THRUSTER_ICON = 'equipment\\models\\icons\\{0}\\co_afterburn.3db'
 
     MAX_PRICE = 60000
 
@@ -210,16 +210,18 @@ material_library = equipment\\models\\ge_equip.mat'''
         return self.THRUSTER_TEMPLATE.format(**self.get_thruster_template_params())
 
     def get_icon(self):
+        middle = self.ICON_PER_TYPE[self.equip_type]
+
         if self.equip_type in self.RH_EQUIP:
-            return self.RH_THRUSTER_ICON
+            return self.RH_THRUSTER_ICON.format(middle)
         if self.equip_type in self.LI_EQUIP:
-            return self.LI_THRUSTER_ICON
+            return self.LI_THRUSTER_ICON.format(middle)
         if self.equip_type in self.BR_EQUIP:
-            return self.BR_THRUSTER_ICON
+            return self.BR_THRUSTER_ICON.format(middle)
         if self.equip_type in self.KU_EQUIP:
-            return self.KU_THRUSTER_ICON
+            return self.KU_THRUSTER_ICON.format(middle)
         if self.equip_type in self.CO_EQUIP:
-            return self.CO_THRUSTER_ICON
+            return self.CO_THRUSTER_ICON.format(middle)
 
         raise Exception('unknown thruster icon')
 

@@ -219,7 +219,7 @@ class ShieldBattery(RepairKit):
     ]
 
     def get_icon(self):
-        return r'equipment\models\icons\ge\ge_battery.3db'
+        return r'equipment\models\icons\main\ge_battery.3db'
 
 
 class CloakingDevice(Equipment, DefaultGood):
@@ -311,7 +311,7 @@ class CloakingDevice(Equipment, DefaultGood):
         return self.ids_info.id
 
     def get_icon(self):
-        return r'equipment\models\icons\ge\ge_scanner01.3db'
+        return r'equipment\models\icons\lvl3\ge_scanner01.3db'
 
     def get_equip(self):
         return f'''[CloakingDevice]

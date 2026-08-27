@@ -1,4 +1,4 @@
-from world.equipment import Equipment, MainMiscEquip, AdoxaEquipClassGood, MainEquipPrice
+from world.equipment import Equipment, MainMiscEquip, AdoxaEquipClassGood, MainEquipPrice, Icon
 from world.power import BasePower
 from world import level
 
@@ -424,11 +424,11 @@ engine_kill_sound = engine_pi_freighter_kill'''
     KU_ENGINE_MODEL = 'Equipment\\models\\hardware\\ku_cylindrical_nuclear_drive.3db'
     CO_ENGINE_MODEL = 'Equipment\\models\\hardware\\co_compact_toroidal_nuclear_drive.3db'
 
-    RH_ENGINE_ICON = 'equipment\\models\\icons\\rh\\rh_engine.3db'
-    LI_ENGINE_ICON = 'equipment\\models\\icons\\li\\li_engine.3db'
-    BR_ENGINE_ICON = 'equipment\\models\\icons\\br\\br_engine.3db'
-    KU_ENGINE_ICON = 'equipment\\models\\icons\\ku\\ku_engine.3db'
-    CO_ENGINE_ICON = 'equipment\\models\\icons\\co\\co_engine.3db'
+    RH_ENGINE_ICON = 'equipment\\models\\icons\\{0}\\rh_engine.3db'
+    LI_ENGINE_ICON = 'equipment\\models\\icons\\{0}\\li_engine.3db'
+    BR_ENGINE_ICON = 'equipment\\models\\icons\\{0}\\br_engine.3db'
+    KU_ENGINE_ICON = 'equipment\\models\\icons\\{0}\\ku_engine.3db'
+    CO_ENGINE_ICON = 'equipment\\models\\icons\\{0}\\co_engine.3db'
 
     GENERICS_PER_TYPE = {
         MainMiscEquip.RH_MAIN: RH_MAIN_ENGINE_GENERICS,
@@ -691,16 +691,18 @@ engine_kill_sound = engine_pi_freighter_kill'''
         raise Exception('unknown engine model')
 
     def get_icon(self):
+        middle = self.ICON_PER_TYPE[self.equip_type]
+
         if self.equip_type in self.RH_EQUIP:
-            return self.RH_ENGINE_ICON
+            return self.RH_ENGINE_ICON.format(middle)
         if self.equip_type in self.LI_EQUIP:
-            return self.LI_ENGINE_ICON
+            return self.LI_ENGINE_ICON.format(middle)
         if self.equip_type in self.BR_EQUIP:
-            return self.BR_ENGINE_ICON
+            return self.BR_ENGINE_ICON.format(middle)
         if self.equip_type in self.KU_EQUIP:
-            return self.KU_ENGINE_ICON
+            return self.KU_ENGINE_ICON.format(middle)
         if self.equip_type in self.CO_EQUIP:
-            return self.CO_ENGINE_ICON
+            return self.CO_ENGINE_ICON.format(middle)
 
         raise Exception('unknown engine icon')
 

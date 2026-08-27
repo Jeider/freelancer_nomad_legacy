@@ -5,6 +5,18 @@ from text.strings import MultiString as MS
 from world.names import *
 
 
+class IconProps:
+    MAIN = 'MAIN'
+    LVL1 = 'LVL1'
+    LVL2 = 'LVL2'
+    LVL3 = 'LVL3'
+    LVL4 = 'LVL4'
+    LVL5 = 'LVL5'
+    ALLOWED_FOLDERS = [
+        MAIN, LVL1, LVL2, LVL3, LVL4, LVL5,
+    ]
+
+
 class Equipment(LootableEquip, MarketEquip):
     CLASS_1 = 1
     CLASS_2 = 2
@@ -118,6 +130,8 @@ class Equipment(LootableEquip, MarketEquip):
     CO_LETTER = 'co'
     GE_LETTER = 'ge'
     PI_LETTER = 'pi'
+
+    FORCE_MIDDLE_ICON = None
     
     LOOT_DEFAULTS = '''
 debris_type = debris_normal
@@ -332,6 +346,28 @@ class MainMiscEquip(Equipment):
     MAX_PRICE_ELITE = 260000
     MAX_PRICE_FREIGHTER = 320000
 
+    ICON_PER_TYPE = {
+        RH_MAIN: IconProps.LVL3,
+        RH_CIV: IconProps.LVL1,
+        RH_PIRATE: IconProps.LVL2,
+
+        LI_MAIN: IconProps.LVL3,
+        LI_CIV: IconProps.LVL1,
+        LI_PIRATE: IconProps.LVL2,
+
+        BR_MAIN: IconProps.LVL3,
+        BR_CIV: IconProps.LVL1,
+        BR_PIRATE: IconProps.LVL2,
+
+        KU_MAIN: IconProps.LVL3,
+        KU_CIV: IconProps.LVL1,
+        KU_PIRATE: IconProps.LVL2,
+
+        CO_ORDER: IconProps.LVL3,
+        CO_CORSAIR: IconProps.LVL1,
+        CO_OUTCAST: IconProps.LVL2,
+    }
+
     def __init__(self, ids, equip_type, equipment_class):
         self.ids = ids
         self.equip_type = equip_type
@@ -533,7 +569,7 @@ attachment_archetype = {model}'''
         )
 
 
-class DefaultGood(object):
+class DefaultGood:
     COMBINABLE = False
 
     DEFAULT_GOOD_TEMPLATE = '''[Good]
@@ -567,7 +603,7 @@ combinable = {combinable}'''
         return self.get_good_template().format(**self.get_good_template_params())
 
 
-class LauncherGood(object):
+class LauncherGood:
 
     def get_price(self):
         raise NotImplementedError
@@ -654,84 +690,84 @@ attachment_archetype = {model}'''
         }
 
 
-class Icon(object):
+class Icon:
     ICONS_FOLDER = 'equipment\\models\\icons\\'
 
-    ICON_RH_LIGHTGUN = 'rh\\rh_lightgun.3db'
-    ICON_RH_HEAVYGUN = 'rh\\rh_heavygun.3db'
-    ICON_RH_THRUSTGUN = 'rh\\rh_miscgun.3db'
-    ICON_RH_LAUNCHER = 'rh\\rh_launcher.3db'
-    ICON_RH_UBERGUN = 'rh\\rh_ubergun.3db'
+    ICON_RH_LIGHTGUN = 'rh_lightgun.3db'
+    ICON_RH_HEAVYGUN = 'rh_heavygun.3db'
+    ICON_RH_THRUSTGUN = 'rh_miscgun.3db'
+    ICON_RH_LAUNCHER = 'rh_launcher.3db'
+    ICON_RH_UBERGUN = 'rh_ubergun.3db'
 
-    ICON_LI_LIGHTGUN = 'li\\li_lightgun.3db'
-    ICON_LI_HEAVYGUN = 'li\\li_heavygun.3db'
-    ICON_LI_THRUSTGUN = 'li\\li_miscgun.3db'
-    ICON_LI_LAUNCHER = 'li\\li_launcher.3db'
-    ICON_LI_UBERGUN = 'li\\li_ubergun.3db'
+    ICON_LI_LIGHTGUN = 'li_lightgun.3db'
+    ICON_LI_HEAVYGUN = 'li_heavygun.3db'
+    ICON_LI_THRUSTGUN = 'li_miscgun.3db'
+    ICON_LI_LAUNCHER = 'li_launcher.3db'
+    ICON_LI_UBERGUN = 'li_ubergun.3db'
 
-    ICON_BR_LIGHTGUN = 'br\\br_lightgun.3db'
-    ICON_BR_HEAVYGUN = 'br\\br_heavygun.3db'
-    ICON_BR_THRUSTGUN = 'br\\br_miscgun.3db'
-    ICON_BR_LAUNCHER = 'br\\br_launcher.3db'
-    ICON_BR_UBERGUN = 'br\\br_ubergun.3db'
+    ICON_BR_LIGHTGUN = 'br_lightgun.3db'
+    ICON_BR_HEAVYGUN = 'br_heavygun.3db'
+    ICON_BR_THRUSTGUN = 'br_miscgun.3db'
+    ICON_BR_LAUNCHER = 'br_launcher.3db'
+    ICON_BR_UBERGUN = 'br_ubergun.3db'
 
-    ICON_KU_LIGHTGUN = 'ku\\ku_lightgun.3db'
-    ICON_KU_HEAVYGUN = 'ku\\ku_heavygun.3db'
-    ICON_KU_THRUSTGUN = 'ku\\ku_miscgun.3db'
-    ICON_KU_LAUNCHER = 'ku\\ku_launcher.3db'
-    ICON_KU_UBERGUN = 'ku\\ku_ubergun.3db'
+    ICON_KU_LIGHTGUN = 'ku_lightgun.3db'
+    ICON_KU_HEAVYGUN = 'ku_heavygun.3db'
+    ICON_KU_THRUSTGUN = 'ku_miscgun.3db'
+    ICON_KU_LAUNCHER = 'ku_launcher.3db'
+    ICON_KU_UBERGUN = 'ku_ubergun.3db'
 
-    ICON_CO_LIGHTGUN = 'co\\co_lightgun.3db'
-    ICON_CO_HEAVYGUN = 'co\\co_heavygun.3db'
-    ICON_CO_THRUSTGUN = 'co\\co_miscgun.3db'
-    ICON_CO_LAUNCHER = 'co\\co_launcher.3db'
-    ICON_CO_UBERGUN = 'co\\co_ubergun.3db'
+    ICON_CO_LIGHTGUN = 'co_lightgun.3db'
+    ICON_CO_HEAVYGUN = 'co_heavygun.3db'
+    ICON_CO_THRUSTGUN = 'co_miscgun.3db'
+    ICON_CO_LAUNCHER = 'co_launcher.3db'
+    ICON_CO_UBERGUN = 'co_ubergun.3db'
 
-    ICON_GE_HARPOON = 'ge\\ge_harpoon.3db'
-    ICON_GE_TRP_LAUNCHER = 'ge\\ge_trp_launcher.3db'
-    ICON_GE_UBERGUN = 'ge\\ge_ubergun.3db'
-    ICON_GE_DROPPER = 'ge\\ge_mine_cm.3db'
-    ICON_MINE_AMMO = 'ge\\ge_mine03.3db'
-    ICON_CM_AMMO = 'ge\\ge_cm03.3db'
+    ICON_GE_HARPOON = 'ge_harpoon.3db'
+    ICON_GE_TRP_LAUNCHER = 'ge_trp_launcher.3db'
+    ICON_GE_UBERGUN = 'ge_ubergun.3db'
+    ICON_GE_DROPPER = 'ge_mine_cm.3db'
+    ICON_MINE_AMMO = 'ge_mine03.3db'
+    ICON_CM_AMMO = 'ge_cm03.3db'
 
-    ICON_RH_ROUND = 'rh\\rh_round.3db'
-    ICON_LI_MISSILE = 'li\\li_missile.3db'
-    ICON_BR_MISSILE = 'br\\br_missile.3db'
-    ICON_KU_ROUND = 'ku\\ku_round.3db'
-    ICON_GE_MISSILE = 'ge\\ge_missile.3db'
+    ICON_RH_ROUND = 'rh_round.3db'
+    ICON_LI_MISSILE = 'li_missile.3db'
+    ICON_BR_MISSILE = 'br_missile.3db'
+    ICON_KU_ROUND = 'ku_round.3db'
+    ICON_GE_MISSILE = 'ge_missile.3db'
 
-    ICON_RH_TURRET_1X = 'rh\\rh_single_turret.3db'
-    ICON_RH_TURRET_2X = 'rh\\rh_double_turret.3db'
-    ICON_RH_TURRET_3X = 'rh\\rh_triple_turret.3db'
-    ICON_RH_GUNBOAT_GUN = 'rh\\rh_gunboat_gun.3db'
+    ICON_RH_TURRET_1X = 'rh_single_turret.3db'
+    ICON_RH_TURRET_2X = 'rh_double_turret.3db'
+    ICON_RH_TURRET_3X = 'rh_triple_turret.3db'
+    ICON_RH_GUNBOAT_GUN = 'rh_gunboat_gun.3db'
 
-    ICON_LI_TURRET_BIG = 'li\\li_big_turret.3db'
-    ICON_LI_TURRET_1X = 'li\\li_single_turret.3db'
-    ICON_LI_TURRET_2X = 'li\\li_double_turret.3db'
-    ICON_LI_CRUISER_GUN = 'li\\li_cruiser_gun.3db'
+    ICON_LI_TURRET_BIG = 'li_big_turret.3db'
+    ICON_LI_TURRET_1X = 'li_single_turret.3db'
+    ICON_LI_TURRET_2X = 'li_double_turret.3db'
+    ICON_LI_CRUISER_GUN = 'li_cruiser_gun.3db'
 
-    ICON_KU_TURRET_BIG = 'ku\\ku_big_turret.3db'
-    ICON_KU_TURRET_2X = 'ku\\ku_double_turret.3db'
-    ICON_KU_TURRET_1X = 'ku\\ku_single_turret.3db'
-    ICON_KU_GUNBOAT_GUN = 'ku\\ku_gunboat_gun.3db'
+    ICON_KU_TURRET_BIG = 'ku_big_turret.3db'
+    ICON_KU_TURRET_2X = 'ku_double_turret.3db'
+    ICON_KU_TURRET_1X = 'ku_single_turret.3db'
+    ICON_KU_GUNBOAT_GUN = 'ku_gunboat_gun.3db'
 
-    ICON_GE_TURRET_1X = 'ge\\ge_single_turret.3db'
-    ICON_GE_TURRET_2X = 'ge\\ge_double_turret.3db'
-    ICON_GE_TURRET_3X = 'ge\\ge_triple_turret.3db'
+    ICON_GE_TURRET_1X = 'ge_single_turret.3db'
+    ICON_GE_TURRET_2X = 'ge_double_turret.3db'
+    ICON_GE_TURRET_3X = 'ge_triple_turret.3db'
 
-    ICON_CO_TURRET_FORCE = 'co\\co_force_turret.3db'
-    ICON_CO_TURRET_2X = 'co\\co_double_turret.3db'
+    ICON_CO_TURRET_FORCE = 'co_force_turret.3db'
+    ICON_CO_TURRET_2X = 'co_double_turret.3db'
 
-    ICON_BR_TURRET_SIMPLE = 'br\\br_simple_turret.3db'
-    ICON_BR_TURRET_1X = 'br\\br_single_turret.3db'
-    ICON_BR_TURRET_2X = 'br\\br_double_turret.3db'
-    ICON_BR_GUNBOAT_GUN = 'br\\br_gunboat_gun.3db'
+    ICON_BR_TURRET_SIMPLE = 'br_simple_turret.3db'
+    ICON_BR_TURRET_1X = 'br_single_turret.3db'
+    ICON_BR_TURRET_2X = 'br_double_turret.3db'
+    ICON_BR_GUNBOAT_GUN = 'br_gunboat_gun.3db'
 
-    ICON_PATH_TEMPLATE = '{root}{icon}'
-
-    @staticmethod
-    def get_icon_path(icon):
-        return Icon.ICON_PATH_TEMPLATE.format(root=Icon.ICONS_FOLDER, icon=icon)
+    @classmethod
+    def get_icon_path(cls, icon, middle='MAIN'):
+        if middle not in IconProps.ALLOWED_FOLDERS:
+            raise Exception(f'Unknown middle folder {middle}')
+        return f'{Icon.ICONS_FOLDER}\\{middle}\\{icon}'
 
 
 class MainEquipPrice(object):

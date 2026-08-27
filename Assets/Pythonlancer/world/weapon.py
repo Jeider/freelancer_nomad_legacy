@@ -1,4 +1,4 @@
-from world.equipment import Equipment, Icon, DefaultGood
+from world.equipment import Equipment, Icon, IconProps, DefaultGood
 from text.dividers import SINGLE_DIVIDER
 from text.infocards import InfocardBuilder
 from text.strings import MultiString as MS
@@ -324,6 +324,19 @@ LODranges = {lod_ranges}'''
             self.rate = self.get_civ_rate()
         elif self.EQUIP_TYPE == self.EQUIP_PIRATE:
             self.rate = self.get_pirate_rate()
+
+        if not self.rate:
+            raise Exception('unknown rate')
+
+    def get_icon_middle_folder(self):
+        if self.FORCE_MIDDLE_ICON:
+            return self.FORCE_MIDDLE_ICON
+        elif self.EQUIP_TYPE == self.EQUIP_MAIN:
+            return IconProps.LVL3
+        elif self.EQUIP_TYPE == self.EQUIP_CIV:
+            return IconProps.LVL1
+        elif self.EQUIP_TYPE == self.EQUIP_PIRATE:
+            return IconProps.LVL2
 
         if not self.rate:
             raise Exception('unknown rate')

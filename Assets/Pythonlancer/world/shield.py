@@ -85,11 +85,11 @@ shield_hit_effects = {hit_one}, gf_pi_shield01
 shield_hit_effects = {hit_two}, gf_pi_shield02
 shield_hit_effects = {hit_three}, gf_pi_shield03'''
 
-    RH_SHIELD_ICON = 'equipment\\models\\icons\\rh\\rh_shield.3db'
-    LI_SHIELD_ICON = 'equipment\\models\\icons\\li\\li_shield.3db'
-    BR_SHIELD_ICON = 'equipment\\models\\icons\\br\\br_shield.3db'
-    KU_SHIELD_ICON = 'equipment\\models\\icons\\ku\\ku_shield.3db'
-    CO_SHIELD_ICON = 'equipment\\models\\icons\\co\\co_shield.3db'
+    RH_SHIELD_ICON = 'equipment\\models\\icons\\{0}\\rh_shield.3db'
+    LI_SHIELD_ICON = 'equipment\\models\\icons\\{0}\\li_shield.3db'
+    BR_SHIELD_ICON = 'equipment\\models\\icons\\{0}\\br_shield.3db'
+    KU_SHIELD_ICON = 'equipment\\models\\icons\\{0}\\ku_shield.3db'
+    CO_SHIELD_ICON = 'equipment\\models\\icons\\{0}\\co_shield.3db'
 
     def __init__(self, capacity_scale=1, regeneration_scale=1, *args, **kwargs):
         self.capacity_scale = capacity_scale
@@ -235,16 +235,18 @@ shield_hit_effects = {hit_three}, gf_pi_shield03'''
         return self.SHIELD_TEMPLATE.format(**self.get_shield_template_params())
 
     def get_icon(self):
+        middle = self.ICON_PER_TYPE[self.equip_type]
+
         if self.equip_type in self.RH_EQUIP:
-            return self.RH_SHIELD_ICON
+            return self.RH_SHIELD_ICON.format(middle)
         if self.equip_type in self.LI_EQUIP:
-            return self.LI_SHIELD_ICON
+            return self.LI_SHIELD_ICON.format(middle)
         if self.equip_type in self.BR_EQUIP:
-            return self.BR_SHIELD_ICON
+            return self.BR_SHIELD_ICON.format(middle)
         if self.equip_type in self.KU_EQUIP:
-            return self.KU_SHIELD_ICON
+            return self.KU_SHIELD_ICON.format(middle)
         if self.equip_type in self.CO_EQUIP:
-            return self.CO_SHIELD_ICON
+            return self.CO_SHIELD_ICON.format(middle)
 
         raise Exception('unknown shield icon')
 
