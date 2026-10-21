@@ -1,0 +1,61 @@
+[TexturePanels]
+file = solar\nebula_mod\nomad_shapes.ini
+
+[Clouds]  ;llight clouds
+max_distance = 20000
+puff_count = 70
+puff_radius = 5000
+;puff_colora = 50, 190, 220
+;puff_colorb = 120, 220, 255
+puff_colora = 255, 255, 255
+puff_colorb = 255, 255, 255
+puff_max_alpha = 0.5
+; 0.500000
+;;puff_shape = no_test_circle
+puff_shape = no_test_exterior1
+puff_shape = no_test_exterior2
+puff_shape = no_test_exterior3
+puff_shape = no_test_exterior4
+puff_shape = no_test_exterior5
+puff_shape = no_test_exterior6
+puff_shape = no_test_exterior7
+puff_shape = no_test_exterior8
+puff_weights = 1, 1, 1, 1, 1, 1, 1, 1
+puff_drift = 3.000000
+near_fade_distance = 18000, 20000
+lightning_intensity = 1.000000
+lightning_color = 0, 200, 255
+lightning_gap = 3.000000
+lightning_duration = 0.5
+;;lightning_shape = no_test_circle
+
+[TexturePanels]
+file = solar\nebula\crow_shapes.ini
+
+[Clouds2]  ;llight clouds
+max_distance = 20000
+puff_count = 30
+puff_radius = 4000
+;puff_colora = 50, 190, 220
+;puff_colorb = 120, 220, 255
+puff_colora = 255, 255, 255
+puff_colorb = 255, 255, 255
+puff_max_alpha = 0.5
+; 0.500000
+puff_shape = no_test_exterior1
+puff_shape = no_test_exterior2
+puff_shape = no_test_exterior3
+puff_shape = no_test_exterior4
+puff_shape = no_test_exterior5
+puff_shape = no_test_exterior6
+puff_shape = no_test_exterior7
+puff_shape = no_test_exterior8
+puff_weights = 1, 1, 1, 1, 1, 1, 1, 1
+puff_weights = 1, 1, 1, 1
+puff_drift = 3.000000
+near_fade_distance = 9000, 10000
+lightning_intensity = 1.000000
+lightning_color = 0, 200, 255
+lightning_gap = 3.000000
+lightning_duration = 0.5
+lightning_shape = nebula_circle2

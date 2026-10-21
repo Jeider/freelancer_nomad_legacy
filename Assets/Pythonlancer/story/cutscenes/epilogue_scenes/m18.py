@@ -27,7 +27,7 @@ class ReunionScene(Scene):
                           floor_height=floor_height,
                           actor=actors.Darcy, anim_sequence=sequence.SEQUENCE_FEMALE_STAND_FSTHIPB_CROSS)
 
-        char2 = Character(root=self,light_group=0, init_point='char2', rotate_from_quat=True, camera=cam_char2,
+        char2 = Character(root=self, light_group=0, init_point='char2', rotate_from_quat=True, camera=cam_char2,
                           floor_height=floor_height,
                           actor=actors.JackRazorBarber, anim_sequence=sequence.SEQUENCE_MALE_STAND_LHAND)
         #

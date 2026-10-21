@@ -150,7 +150,7 @@ class Juni(Actor):
     # STEOS_SPEED = 1.3
     STEOS_ID = 219
     STEOS_PITCH = -0.2
-    STEOS_SPEED = 1.3
+    STEOS_SPEED = 1.1
 
 
 class Hatcher(Actor):

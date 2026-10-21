@@ -22,7 +22,9 @@ SUBTITLES_TEMPLATE = '''<?xml version="1.0" encoding="UTF-8"?>
 
 class ScriptManager(object):
 
-    def __init__(self, ids=None):
+    def __init__(self, ids=None, core=None):
+        self.core = core
+
         self.script_missions_db = {}
         self.script_missions_list = []
 
@@ -30,6 +32,10 @@ class ScriptManager(object):
             msn = mission(ids=ids)
             self.script_missions_db[msn.MISSION_INDEX] = msn
             self.script_missions_list.append(msn)
+
+        if self.core and self.core.write:
+            self.write_script_sounds(build_folder=self.core.build_folder, russian=self.core.russian)
+
 
     def get_mission_by_index(self, index):
         if index not in self.script_missions_db:
@@ -139,3 +145,4 @@ class ScriptManager(object):
                     actors_lines[name].append(sound.line)
 
         return actors_lines
+

@@ -1,5 +1,3 @@
-from managers.script import ScriptManager
-
 from story.gameplay.main import *  # initialize mission files
 from story.gameplay.ingame_mission import IngameMission
 from story.gameplay.history import get_history_items_dict, HistoryItem
@@ -44,7 +42,7 @@ class StoryManager:
 
         self.missions = []
 
-        self.script = ScriptManager(ids=self.core.ids.script)
+        self.script = self.core.script
 
         self.thorns = []
         self.ship_loadouts = []
@@ -101,6 +99,3 @@ class StoryManager:
             content = self.core.tpl_manager.get_result(thorn.get_template(), thorn.get_context())
             if self.core.write:
                 data_folder.sync_story_ingame_thorn(thorn.get_name(), content)
-
-        if self.core.write:
-            self.script.write_script_sounds(build_folder=self.core.build_folder, russian=self.core.russian)

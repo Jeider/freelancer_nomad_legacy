@@ -315,3 +315,36 @@ SEQUENCE_FEMALE_STAND_RHAND_ALT = [
         {'anim': Female.Sc_FMBODY_STND_CONV_RHNDDN_TRNS_000LV_XA_01, 'time_scale': 0.5, 'trans_time': 1, 'time_delay': 4.25},
     ],
 ]
+
+
+
+SEQUENCE_FEMALE_STAND_LHAND_ALT = [
+    [
+        {'anim': Female.Sc_FMBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01, 'time_scale': 0.5, 'trans_time': 0.8}
+    ],
+    [
+        {'anim': Female.Sc_FMBODY_STND_FSTHIPB_RLEASE_000LV_XA_01, 'time_scale': 0.5, 'trans_time': 0.8}
+    ],
+    [
+        {'anim': Female.Sc_FMBODY_STND_CONV_LHNDUP_TRNS_000LV_XA_01, 'time_scale': 0.6, 'trans_time': 1, 'time_delay': 0.25},
+        {'anim': Female.Sc_FMBODY_STND_CONV_LHND_CASL_000LV_xa_04, 'time_scale': 0.6, 'trans_time': 1, 'time_delay': 2.25, 'loop': True},
+        {'anim': Female.Sc_FMBODY_STND_CONV_LHNDDN_TRNS_000LV_XA_00, 'time_scale': 0.5, 'trans_time': 1, 'time_delay': 4.25},
+    ],
+    [
+        {'anim': Female.Sc_FMBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01, 'time_scale': 0.5, 'trans_time': 0.8}
+    ],
+    [
+        {'anim': Female.Sc_FMBODY_STND_FSTHIPB_RLEASE_000LV_XA_01, 'time_scale': 0.5, 'trans_time': 0.8}
+    ],
+    [
+        {'anim': Female.Sc_FMBODY_STND_CROSS_ARMS_000LV_xa_03, 'time_scale': 0.8, 'trans_time': 0.8, 'time_delay': 0.25}
+    ],
+    [
+        {'anim': Female.Sc_FMBODY_STND_UNCRSS_ARMS_000LV_XA_03, 'time_scale': 0.8, 'trans_time': 0.8, 'time_delay': 0.25}
+    ],
+    [
+        {'anim': Female.Sc_FMBODY_STND_CONV_LHNDUP_TRNS_000LV_XA_01, 'time_scale': 0.6, 'trans_time': 1, 'time_delay': 0.25},
+        {'anim': Female.Sc_FMBODY_STND_CONV_LHND_CASL_000LV_xa_04, 'time_scale': 0.6, 'trans_time': 1, 'time_delay': 2.25, 'loop': True},
+        {'anim': Female.Sc_FMBODY_STND_CONV_LHNDDN_TRNS_000LV_XA_00, 'time_scale': 0.5, 'trans_time': 1, 'time_delay': 4.25},
+    ],
+]

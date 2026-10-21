@@ -99,7 +99,7 @@ class HokkaidoCutscene(MsnOdja, script.CutsceneProps):
         VoiceLine(60, HasslerEpilogue,
                   ru='Так ли был хорош тот план, по итогу которого глава самой могущественной организации в Сириусе попад+ает в плен ко своему главному врагу?',
                   en='how brilliant could that plan have been, if it resulted in the leader of the most powerful organization in Sirius being captured by his mortal enemy?'),
-        VoiceLine(70, Trent, ru='А ты хорош, Хасслер, умеешь красиво убеждать. Так ты по службе и продвигаешься?',
+        VoiceLine(70, Trent, ru='А ты хLairBriefSceneорош, Хасслер, умеешь красиво убеждать. Так ты по службе и продвигаешься?',
                   en='You\'re good, Hassler. You\'ve got a way with words. Is that how you\'re climbing the ladder?'),
         VoiceLine(80, HasslerEpilogue, ru='Не без этого, герр Трент. Красивая презентация всегда имеет значение.',
                   en='It certainly helps, Herr Trent. A polished presentation always matters.'),

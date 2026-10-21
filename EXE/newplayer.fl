@@ -824,6 +824,12 @@ locked_gate = 2567464516
 ;key_co_och_52_base_unlock
 locked_gate = 3104315972
 
+;key_co_och_90_base_unlock
+locked_gate = 3099095684
+
+;key_co_och_91_base_unlock
+locked_gate = 2562221700
+
 ;key_arch_dangeon_tlr_7_unlock
 locked_gate = 2341259210
 locked_gate = 2878147530

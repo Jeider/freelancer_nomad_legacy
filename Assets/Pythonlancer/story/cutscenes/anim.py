@@ -1,6 +1,8 @@
 class CharAnim:
     GENERIC_ANIM = None
     GENERIC_ANIM_SECONDS = None
+    GENERIC_ANIM2 = None
+    GENERIC_ANIM2_SECONDS = None
 
 
 class Male(CharAnim):
@@ -2410,8 +2412,10 @@ class Juni(CharAnim):
     Sc_FMHEAD_SURPRSE_JUNI_000LV_XA_ = "Sc_FMHEAD_SURPRSE_JUNI_000LV_XA_%"
     Sc_FMHEAD_SYMPTHY_JUNI_000LV_XA_ = "Sc_FMHEAD_SYMPTHY_JUNI_000LV_XA_%"
 
-    GENERIC_ANIM = Sc_dx_s009b_0201_juni
-    GENERIC_ANIM_SECONDS = 6.5
+    GENERIC_ANIM = Sc_dx_s046x_0704_juni
+    GENERIC_ANIM_SECONDS = 5
+    GENERIC_ANIM2 = Sc_dx_s046x_0704_juni
+    GENERIC_ANIM2_SECONDS = 5
 
 
 class Trent(CharAnim):

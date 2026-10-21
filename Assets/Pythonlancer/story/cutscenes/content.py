@@ -930,12 +930,13 @@ class Character(Compound):
     TEMPLATE = 'character'
 
     def __init__(self, actor, floor_height=0, extra_ik_markers=None,
-                 ik_start_point=None, camera=None, anim_sequence=None, *args, **kwargs):
+                 ik_start_point=None, camera=None, anim_sequence=None,
+                 facial_indexes=1, *args, **kwargs):
         self.actor = actor
         name = f'Char_{self.actor.NAME}'
         super().__init__(name=name, *args, **kwargs)
         self.floor_height = floor_height
-        self.animations = FEMALE_ANIMS if self.actor.is_female() else MALE_ANIMS
+        self.animations = FEMALE_ANIMS if self.actor.is_female() or self.actor.is_juni() else MALE_ANIMS
         self.camera = camera
         self.sequence_len = 0
         self.sequence_step = 0
@@ -943,11 +944,16 @@ class Character(Compound):
         if self.anim_sequence is not None:
             self.sequence_len = len(self.anim_sequence)
 
+        self.facial_indexes = facial_indexes
+
         self.head_ik_name = self.get_ik_marker('head')
         self.eye_ik_name = self.get_ik_marker('eye')
         self.ik_start_point = ik_start_point
         self.extra_ik_markers = extra_ik_markers if extra_ik_markers else []
         self.init_char_points()
+
+    def get_name(self):
+        return self.name
 
     def set_camera(self, camera):
         self.camera = camera
@@ -1104,7 +1110,7 @@ class Character(Compound):
     def idle_sit_table(self, group, duration=10, **kwargs):
         self.main_anim(IDLE_SIT_TABLE, group=group, duration=duration, **kwargs)
 
-    def facial(self, group, index, append=True, extra_delay=0.3, auto_lip=False):
+    def facial(self, group, index, append=True, extra_delay=0.3, auto_lip=False, auto_lip_anim_index=1):
         sound = self.root.lookup_single_sound(index)
         if self.actor != sound.line.actor:
             raise Exception(f'Sound {index} is belong to actor {sound.line.actor}. Cannot run by {self.actor}')
@@ -1114,8 +1120,12 @@ class Character(Compound):
         if auto_lip:
             anim_class: type[anim.CharAnim] = ANIM_CLASS_PER_ACTOR_TYPE[self.actor.TYPE]
 
-            facial_anim = anim_class.GENERIC_ANIM
-            facial_duration = anim_class.GENERIC_ANIM_SECONDS
+            if auto_lip_anim_index == 2:
+                facial_anim = anim_class.GENERIC_ANIM2
+                facial_duration = anim_class.GENERIC_ANIM2_SECONDS
+            else:
+                facial_anim = anim_class.GENERIC_ANIM
+                facial_duration = anim_class.GENERIC_ANIM_SECONDS
 
             anim_props = {
                 'animation': f"'{facial_anim}'",
@@ -1497,6 +1507,8 @@ class Autoplay:
     def make_actions(self):
         sounds = self.root.lookup_multiple_sounds(self.start_index, self.finish_index)
 
+        facial_index_memory = {}
+
         for sound in sounds:
             character = self.get_character(sound.line.actor.NAME)
 
@@ -1516,7 +1528,20 @@ class Autoplay:
                         group=self.group_name, target_name=head_ik_delay.target_name,
                         duration=head_ik_delay.duration, time_delay=head_ik_delay.time_delay)
 
-            character.facial(group=self.group_name, index=sound.line.index, auto_lip=True)
+            facial_index = 1
+
+            if character.facial_indexes > 1:
+                char_name = character.get_name()
+                current_index = facial_index_memory.get(char_name, 0)
+                next_index = current_index + 1
+                if next_index > character.facial_indexes:
+                    next_index = 1
+
+                facial_index_memory[char_name] = next_index
+                facial_index = next_index
+
+            character.facial(group=self.group_name, index=sound.line.index, auto_lip=True,
+                             auto_lip_anim_index=facial_index)
 
 
 

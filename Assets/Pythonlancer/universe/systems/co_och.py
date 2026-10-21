@@ -1,6 +1,7 @@
 from fx.space import Dust, JumpholeEffect
 from fx.sound import Ambience
 from universe.audio.space_voice import SpaceVoice, SpaceCostume
+import fx.neuralnet as nn
 
 from managers.tools import query as Q
 from world.names import *
@@ -655,3 +656,90 @@ class OchoDysonRubicField(OchoMember, mineable.DysonRubicRewardField):
     INDEX = 1
     ULTRA_BASE = OchoResearchAsteroids1
 
+
+
+
+
+
+
+
+
+
+class OchLairMissionBase(OchoMember, main_objects.Station):
+    ALIAS = 'base'
+    INDEX = 90
+    BASE_INDEX = 90
+    ARCHETYPE = 'depot'
+    INTERIOR_CLASS = interior.OutpostInterior
+    ROOM_SUBFOLDER = interior.ROOM_FOLDER_KU
+    DEFENCE_LEVEL = None
+    SPACE_VOICE = None
+    ALLOW_SPACE_COSTUME = False
+    OFFICIAL_BARTENDER = False
+    RU_NAME = MS('База Очо-Р+иос', "Ocho-Rios Base")
+    CALC_STORE = False
+    HAVE_CHARACTERS = False
+    DEALERS = dealers.RheinlandPirateDealers
+    LOCKED_DOCK = True
+    KEY_COLLECT_FX = nn.FX_GOT_KEY_STATION
+
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('bw_corsairgun', eq_classes=markets.SECRET3),
+    )
+    INTERIOR_EXTRA_ROOMS = ['''
+[Room]
+nickname = Playback
+file = Universe\\GENERATED_ROOMS\\playback_lair_brief.ini
+    ''']
+    INTERIOR_CUSTOM_START_ROOM = 'Playback'
+    INTERIOR_EXTRA_ROOM_FILES = [
+        interior.InteriorRoom(
+            name='playback_lair_brief',
+            subfolder=interior.ROOM_FOLDER_PLAYBACK,
+            template='li_station_deck',
+            context={
+                'script_folder': 'generated',
+                'script_file': 'm14_lair_brief',
+            }
+        )
+    ]
+
+
+class OchLairMissionBase2(OchoMember, main_objects.Station):
+    ALIAS = 'base'
+    INDEX = 90
+    BASE_INDEX = 91
+    ARCHETYPE = 'depot'
+    INTERIOR_CLASS = interior.OutpostInterior
+    ROOM_SUBFOLDER = interior.ROOM_FOLDER_KU
+    DEFENCE_LEVEL = None
+    SPACE_VOICE = None
+    ALLOW_SPACE_COSTUME = False
+    OFFICIAL_BARTENDER = False
+    RU_NAME = MS('База Очо-Р+иос', "Ocho-Rios Base")
+    CALC_STORE = False
+    HAVE_CHARACTERS = False
+    DEALERS = dealers.RheinlandPirateDealers
+    LOCKED_DOCK = True
+    KEY_COLLECT_FX = nn.FX_GOT_KEY_STATION
+
+    EQUIP_SET = markets.EquipSet(
+        Q.Gun('bw_corsairgun', eq_classes=markets.SECRET3),
+    )
+    INTERIOR_EXTRA_ROOMS = ['''
+[Room]
+nickname = Playback
+file = Universe\\GENERATED_ROOMS\\playback_lair_done.ini
+    ''']
+    INTERIOR_CUSTOM_START_ROOM = 'Playback'
+    INTERIOR_EXTRA_ROOM_FILES = [
+        interior.InteriorRoom(
+            name='playback_lair_done',
+            subfolder=interior.ROOM_FOLDER_PLAYBACK,
+            template='li_station_deck',
+            context={
+                'script_folder': 'generated',
+                'script_file': 'm14_lair_done',
+            }
+        )
+    ]

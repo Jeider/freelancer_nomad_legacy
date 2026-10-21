@@ -421,16 +421,17 @@ def generate_cutscene_voices():
     # import pdb;pdb.set_trace()
 
     indexes = range(1, 12+1)
-    indexes = [8]
-    alias = 'prince_wales'
-    russian = False
+    indexes = [14]
+    alias = 'lair_done'
+    russian = True
 
     for i in indexes:
         msn = script_manager.get_mission_by_index(i)
         for cutscene in msn.get_cutscenes():
-            print(cutscene.ALIAS)
             if alias is not None and alias != cutscene.ALIAS:
                 continue
+
+            print(cutscene.ALIAS)
 
             audio_folder.AudioFolder.generate_cutscene_sounds(cutscene, russian=russian)
 
@@ -453,18 +454,18 @@ def scene():
     # mission_index = 99
     # scene_name = 'debug'
 
-    mission_index = 8
-    scene_name = 'sprague'
+    mission_index = 14
+    scene_name = 'lair_done'
 
     tpl_manager = JinjaTemplateManager()
     script_manager = ScriptManager()
     #
-    #
-    # msn = script_manager.get_mission_by_index(mission_index)
-    # cutscene = msn.get_cutscene_by_code(scene_name)
-    # cutscene.get_thorn(tpl_manager, russian).sync_content()
-    #
-    # return
+
+    msn = script_manager.get_mission_by_index(mission_index)
+    cutscene = msn.get_cutscene_by_code(scene_name)
+    cutscene.get_thorn(tpl_manager, russian).sync_content()
+
+    return
 
     for i in [12]:  # range(9, 12+1):
         msn = script_manager.get_mission_by_index(i)

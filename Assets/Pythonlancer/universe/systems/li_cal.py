@@ -145,6 +145,9 @@ CROW_EXCLUSION_PARAMS = {
 
 
 class CalAsteroidDefinition1(asteroid_definition.CaliforniaBeriliumAsteroidDefinition):
+    # Preserve the fog/ambient participation when regenerating the three California fields.
+    FIELD = True
+    FIELD_TEMPLATE = "contains_fog_zone = 1"
     BELT = False
     BILLBOARDS = False
     DYNAST = True
@@ -501,6 +504,7 @@ class CalPirate2(CalMember, main_objects.PirateStation):
 
 
 FIELD_TEMPLATE = '''
+contains_fog_zone = 1
 cube_size = 400
 fill_dist = 1500
 diffuse_color = 100, 150, 255

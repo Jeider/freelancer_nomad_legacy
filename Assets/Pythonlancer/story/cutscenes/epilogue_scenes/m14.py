@@ -1,6 +1,6 @@
 from story.cutscenes.scene import Scene
 from story.cutscenes.content import *
-from story.cutscenes.anim import Male, Female, Trent
+from story.cutscenes.anim import Male, Female, Trent, Juni
 from story.cutscenes import sequence
 
 from story import actors
@@ -77,3 +77,58 @@ class Msn14TrentRescuedScene(Scene):
         # trent.facial(group=MAIN, index=30, auto_lip=True)
 
         # main_group.append_time(1000)
+
+
+
+class JuniMeetScene(Scene):
+    DUMP_FILE = 'station_deck'
+
+    def action(self):
+        main_group = self.get_group(MAIN)
+
+        floor_height = self.get_point('floor').position[1]
+
+        cam_greet = StaticCamera(root=self, name='cam_greet', fov=25)
+        cam_char1 = StaticCamera(root=self, name='cam_char1b', fov=18)
+        cam_char4 = StaticCamera(root=self, name='cam_char4', fov=18)
+
+        print(floor_height)
+
+        trent = Character(root=self, actor=actors.Trent, light_group=0, init_point='char4', rotate_from_quat=True,
+                          floor_height=floor_height,
+                          camera=cam_char4, anim_sequence=sequence.SEQUENCE_MALE_STAND_CROSS_FSTHIPB)
+        juni = Character(root=self, actor=actors.Juni, light_group=0, init_point='char1', rotate_from_quat=True,
+                          floor_height=floor_height,
+                          camera=cam_char1, anim_sequence=sequence.SEQUENCE_FEMALE_STAND_RHAND_ALT)
+
+        trent.idle(group=MAIN)
+        juni.idle(group=MAIN)
+
+        mrk_trent = trent.get_stand_marker('char4', floor_height=floor_height)
+        mrk_juni = juni.get_stand_marker('char1', floor_height=floor_height)
+
+        trent.move_head_ik(group=MAIN, target_name=mrk_juni, duration=1, time_delay=0.1)
+        juni.move_head_ik(group=MAIN, target_name=mrk_trent, duration=1, time_delay=0.1)
+        #
+        # trent.start_head_ik(group=MAIN, duration=1000)
+        # juni.start_head_ik(group=MAIN, duration=1000, transition_duration=2)
+
+
+        # juni.motion(group=MAIN, duration=3, anim=Juni.Sc_FMHEAD_MOTION_HUH_JUNI_000LV_XA_, time_delay=0.1)
+
+        cam_greet.set(group=MAIN)
+        cam_greet.move_cam(group=MAIN, index=2, duration=6, smooth=True)
+
+        main_group.append_time(6)
+
+        Autoplay(
+            self,
+            group=MAIN,
+            start_index=0,
+        )
+
+        cam_greet.set(group=MAIN)
+
+        # cam_greet.move_cam(group=MAIN, index=1, duration=6, smooth=True)
+
+        main_group.append_time(4500)

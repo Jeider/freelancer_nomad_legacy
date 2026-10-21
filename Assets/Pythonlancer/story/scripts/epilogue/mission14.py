@@ -64,6 +64,57 @@ class TrentRescuedCutscene(Msn14, script.CutsceneProps):
     ]
 
 
+class LairBriefScene(Msn14, script.CutsceneProps):
+    ALIAS = 'lair_brief'
+    TITLE = 'Станция перед логовом'
+    THORN_CLASS = m14.JuniMeetScene
+    VOICE_LINES = [
+
+        VoiceLine(10, Trent, ru='Мисс Зэйн, рад встрече с такой легендарной персоной!'),
+        VoiceLine(20, Juni, ru='Оставьте свои любезности, мистер Трент. Я призвала вас по важному делу.'),
+        VoiceLine(30, Trent, ru='Очередные номадские вторжения?'),
+        VoiceLine(40, Juni, ru='Пока еще не масштабные, но мы наблюдаем подозрительную активность. Поэтому мне нужна ваша помощь.'),
+        VoiceLine(50, Trent, ru='Мне предстоит сразиться с инопланетянами?'),
+        VoiceLine(60, Juni, ru='Не совсем. Мы обнаружили активность в ранее заброшенном логове номадов.'),
+        VoiceLine(70, Juni, ru='На данный момент оно не представляет особой опасности, но нам было бы спокойней, если бы мы превентивно предовратили такие активности.'),
+        VoiceLine(80, Trent, ru='Каким образом я могу сделать вашу жизнь спокойней?'),
+        VoiceLine(90, Juni, ru='Проникните в логово номадов и демонтируйте ядро энергосистемы.'),
+        VoiceLine(100, Trent, ru='Там находится полноценный генератор?'),
+        VoiceLine(110, Juni, ru='Нет, там непонятным нам образом сформировался альтернативный генератор.'),
+        VoiceLine(120, Juni, ru='Добудьте его и доставьте нам для анализа. Справитесь?'),
+        VoiceLine(130, Trent, ru='Думаю смогу.'),
+        VoiceLine(140, Juni, ru='Тогда готовьте корабль и вылетайте по готовности.'),
+    ]
+    DESCRIPTION = ''
+
+
+class LairFinalScene(Msn14, script.CutsceneProps):
+    ALIAS = 'lair_done'
+    TITLE = 'Станция после логова'
+    THORN_CLASS = m14.JuniMeetScene
+    VOICE_LINES = [
+        VoiceLine(10, Juni,
+                  ru='Спасибо за вашу работу,, м+истер Трент. Теперь мы будем разбираться с полученными данными.'),
+        VoiceLine(20, Trent, ru='А что мне делать дальше? Бить баклуши?'),
+        VoiceLine(30, Juni, ru='Едва ли,, м+истер Трент. Ваши услуги требуются нашему союзнику из Кусари.'),
+        VoiceLine(40, Juni, ru='Его зовут Кендзи, он является наследником престола и сейчас находится в изгнании.'),
+        VoiceLine(50, Trent, ru='С чего это он в изгнании?'),
+        VoiceLine(60, Juni, ru='Лорд Т+аррант, отец Кендзи, вступил в конфликт с Ямамото.'),
+        VoiceLine(70, Juni, ru='Ямамото убил Т+арранта и разместил на троне своего ставленника.'),
+        VoiceLine(80, Trent, ru='Значит вы хотите устроить государственный переворот наоборот?'),
+        VoiceLine(90, Juni, ru='Именно так, Кендзи является отличным кандидатом. Он собирает силы в Омеге-7.'),
+        VoiceLine(100, Juni,
+                  ru='Найдите Кендзи на линкоре Тюг+оку. Точные координаты можете получить у информатора в баре текущей станции.'),
+        VoiceLine(110, Trent, ru='Вроде бы всё понятно. Тогда пойду искать вашего Кендзи.'),
+    ]
+    DESCRIPTION = ''
+
+
+
+
+
+
+
 class Msn14Space(Msn14, script.SpaceVoiceProps):
     VOICE_LINES = [
         # VoiceLine(5, Hatcher, ru='Направляемся в Сферу. Трент, веди нас', en='Setting course for the Sphere. Trent, lead the way!'),
@@ -73,6 +124,8 @@ class Msn14Space(Msn14, script.SpaceVoiceProps):
 class Mission14(Msn14, script.StoryMission):
     CUTSCENES = [
         TrentRescuedCutscene,
+        LairBriefScene,
+        LairFinalScene,
     ]
     SPACE_CLASS = Msn14Space
     SYNC_SPACE = True
