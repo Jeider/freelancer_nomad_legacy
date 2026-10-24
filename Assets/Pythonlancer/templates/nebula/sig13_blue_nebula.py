@@ -8,8 +8,8 @@ file = solar\\nebula\\crow_shapes.ini
 
 [Fog]
 fog_enabled = 1
-near = 150
-distance = 2000
+near = 200
+distance = 3000
 color = 0, 50, 80
 
 [properties]
@@ -36,13 +36,13 @@ color = 30, 80, 130
 
 [NebulaLight]
 ambient = 20, 40, 50
-sun_burnthrough_intensity = 0.500000
-sun_burnthrough_scaler = 2
+sun_burnthrough_intensity = 0.5
+sun_burnthrough_scaler = 1.5
 
 
 [Clouds]
 max_distance = 500
-puff_count = 25
+puff_count = 250
 puff_radius = 100
 puff_colora = 50, 150, 255
 puff_colorb = 255, 255, 255

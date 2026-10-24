@@ -11,8 +11,8 @@ flag = nebula
 
 [Fog]
 fog_enabled = 1
-near = 0
-distance = 1000
+near = 200
+distance = 3000
 color = 15, 15, 30
 
 [Exclusion Zones]
@@ -36,12 +36,12 @@ color = 60, 60, 90
 
 [NebulaLight]
 ambient = 15, 10, 45
-sun_burnthrough_intensity = 0.500000
-sun_burnthrough_scaler = 1.750000
+sun_burnthrough_intensity = 0.5
+sun_burnthrough_scaler = 1.5
 
 [Clouds]
 max_distance = 1500
-puff_count = 100
+puff_count = 250
 puff_radius = 100
 puff_colora = 60, 60, 90
 puff_colorb = 90, 60, 120

@@ -52,6 +52,92 @@ file = universe\\heavens\\shapes.ini
 [Dust]
 spacedust = Dust
 
+[;SpaceHaze]
+; Cheap world-anchored gas at three distances (one fullscreen pass): air and parallax in open space.
+; Walker's amber-brown (the om15 nebulae: [Fog] 150, 90, 20, puffs 128, 85, 0 / 60, 43, 0), darkened:
+; dark gas against the bright nebulae reads in flight. Even light, thinned toward the sun.
+color = 90, 55, 14
+color_b = 55, 33, 8
+alpha = 0.15
+; Dust, not cloud: smaller features, a fine sandy grain, some ridges, crisper edges.
+shell = 2500, 1400
+shell = 9000, 4500
+shell = 30000, 14000
+coverage = 0.6
+softness = 0.22
+detail = 0.45
+detail_scale = 3.5
+grain = 0.2
+grain_scale = 11
+billow = 0
+ambient = 1
+forward = 0
+sun_clear = 0.9
+sun_clear_power = 3
+; Flicker as om15's light cloud puffs (lightning_color 255, 200, 0 lightened; gap 3, duration 0.2).
+flash = 1
+flash_color = 255, 220, 140
+flash_size = 0.5
+flash_density = 0.4
+flash_gap = 3
+flash_duration = 0.2
+
+[SpaceLayer]
+; Far veils: huge, faint, world-anchored -- air and parallax between the ship and the sky.
+shapes = solar\\nebula\\walker_shapes.ini
+shape = walker_exterior1
+shape = walker_exterior2
+shape = walker_exterior3
+shape = walker_exterior4
+color = 200, 130, 60
+color_b = 150, 90, 40
+alpha = 0.08
+size = 800, 1800
+near_distance = 8000
+far_distance = 40000
+density = 1.2
+clump_size = 15000
+clump_coverage = 0.5
+forward = 2
+spin = 0.5
+count = 40
+
+[SpaceLayer]
+; Mid wisps: closer and smaller, they stream past when flying.
+shapes = solar\\nebula\\walker_shapes.ini
+shape = walker_cloud1
+shape = walker_cloud2
+shape = walker_cloud3
+shape = walker_cloud4
+color = 210, 150, 80
+alpha = 0.08
+size = 120, 300
+near_distance = 1000
+far_distance = 7000
+density = 1
+clump_size = 3500
+clump_coverage = 0.5
+spin = 1.5
+count = 50
+
+[SpaceLayer]
+; Near stars: soft points between the ship and the star sphere, a faint parallax when flying.
+shapes = solar\\stararch.ini
+shape = glow2
+color = 255, 225, 190
+color_b = 255, 245, 230
+alpha = 0.5
+size = 30, 90
+near_distance = 15000
+far_distance = 45000
+density = 0.6
+clump_size = 30000
+clump_coverage = 0.3
+blend = additive
+lit = 0
+spin = 0
+count = 300
+
 [Music]
 space = music_omega_space
 danger = music_omega_danger
@@ -125,7 +211,7 @@ WALKER_EXCLUSION_PARAMS = {
     'shell_scalar': 1.1,
     'max_alpha': 0.5,
     'exclusion_tint': '255, 255, 255',
-    'fog_far': 5000,
+    'fog_far': 20000,
 }
 
 
@@ -134,7 +220,7 @@ WALKER_DARK_EXCLUSION_PARAMS = {
     'shell_scalar': 1.1,
     'max_alpha': 0.5,
     'exclusion_tint': '200, 160, 70',
-    'fog_far': 5000,
+    'fog_far': 20000,
 }
 
 

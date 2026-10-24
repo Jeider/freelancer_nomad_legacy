@@ -110,7 +110,7 @@ BROWN_EXCLUSION_PARAMS = {
     'shell_scalar': 1.1,
     'max_alpha': 0.5,
     'exclusion_tint': '100, 80, 10',
-    'fog_far': 5000,
+    'fog_far': 15000,
 }
 
 
@@ -119,7 +119,7 @@ EDGE_EXCLUSION_PARAMS = {
     'shell_scalar': 1.1,
     'max_alpha': 0.5,
     'exclusion_tint': '200, 255, 200',
-    'fog_far': 5000,
+    'fog_far': 15000,
 }
 
 
@@ -170,6 +170,8 @@ class Sig8BrownNebula2(Sigma8Member, zones.NebulaZone):
 class Sig8AsteroidDefinition(asteroid_definition.Tau29AsteroidDefinition):
     DYNAST = True
     BELT = True
+    FAR_ROCKS = True
+    FIELD_DUST = True
     BILLBOARDS = True
     LOOT = False
 

@@ -9,8 +9,8 @@ file = solar\\nebula\\generic_shapes.ini
 
 [Fog]
 fog_enabled = 1
-near = 0
-distance = 1400
+near = 200
+distance = 2500
 color = 30, 55, 40
 
 [properties]
@@ -40,7 +40,7 @@ ambient = 20, 40, 30
 
 [Clouds]
 max_distance = 1500
-puff_count = 50
+puff_count = 250
 puff_radius = 100
 puff_colora = 0, 50, 50
 puff_colorb = 60, 150, 100

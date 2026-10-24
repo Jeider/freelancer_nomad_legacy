@@ -114,7 +114,7 @@ EDGE_EXCLUSION_PARAMS = {
     'shell_scalar': 1.1,
     'max_alpha': 0.5,
     'exclusion_tint': '50, 150, 50',
-    'fog_far': 5000,
+    'fog_far': 15000,
 }
 
 
@@ -123,7 +123,7 @@ EDGE_EXCLUSION_PARAMS2 = {
     'shell_scalar': 1.1,
     'max_alpha': 0.5,
     'exclusion_tint': '150, 180, 160',
-    'fog_far': 2500,
+    'fog_far': 15000,
 }
 
 
@@ -131,7 +131,7 @@ WALKER_EXCLUSION_PARAMS = {
     'shell_scalar': 1.1,
     'max_alpha': 0.5,
     'exclusion_tint': '200, 200, 200',
-    'fog_far': 5000,
+    'fog_far': 15000,
 }
 
 

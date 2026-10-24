@@ -158,7 +158,7 @@ EDGE_EXCLUSION_PARAMS = {
     'shell_scalar': 1.1,
     'max_alpha': 0.5,
     'exclusion_tint': '200, 200, 200',
-    'fog_far': 5000,
+    'fog_far': 15000,
 }
 
 
@@ -167,7 +167,7 @@ CROW_EXCLUSION_PARAMS = {
     'shell_scalar': 1.1,
     'max_alpha': 0.5,
     'exclusion_tint': '255, 255, 255',
-    'fog_far': 5000,
+    'fog_far': 15000,
 }
 
 

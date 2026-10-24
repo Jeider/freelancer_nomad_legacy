@@ -8,8 +8,8 @@ file = solar\\nebula\\walker_shapes.ini
 
 [Fog]
 fog_enabled = 1
-near = 0
-distance = 1000
+near = 200
+distance = 2500
 color = 150, 90, 20
 
 [properties]
@@ -36,12 +36,12 @@ color = 255, 255, 255
 
 [NebulaLight]
 ambient = 80, 40, 0
-sun_burnthrough_intensity = 0.500000
-sun_burnthrough_scaler = 2
+sun_burnthrough_intensity = 0.6
+sun_burnthrough_scaler = 1.5
 
 [Clouds]
 max_distance = 1500
-puff_count = 200
+puff_count = 250
 puff_radius = 100
 puff_colora = 250, 180, 70
 puff_colorb = 60, 43, 0
@@ -74,8 +74,8 @@ file = solar\\nebula\\walker_shapes.ini
 
 [Fog]
 fog_enabled = 1
-near = 0
-distance = 1000
+near = 200
+distance = 2500
 color = 100, 60, 10
 
 [properties]
@@ -102,12 +102,12 @@ color = 255, 255, 255
 
 [NebulaLight]
 ambient = 60, 40, 20
-sun_burnthrough_intensity = 0.500000
-sun_burnthrough_scaler = 2
+sun_burnthrough_intensity = 0.6
+sun_burnthrough_scaler = 1.5
 
 [Clouds]
 max_distance = 1500
-puff_count = 200
+puff_count = 250
 puff_radius = 100
 puff_colora = 255, 200, 0
 puff_colorb = 80, 40, 0
@@ -145,8 +145,8 @@ file = solar\\nebula\\walker_shapes.ini
 
 [Fog]
 fog_enabled = 1
-near = 0
-distance = 1000
+near = 200
+distance = 2500
 color = 150, 90, 20
 
 [properties]
@@ -173,12 +173,12 @@ color = 255, 255, 255
 
 [NebulaLight]
 ambient = 80, 40, 0
-sun_burnthrough_intensity = 0.500000
-sun_burnthrough_scaler = 2
+sun_burnthrough_intensity = 0.6
+sun_burnthrough_scaler = 1.5
 
 [Clouds]
 max_distance = 1500
-puff_count = 200
+puff_count = 250
 puff_radius = 100
 puff_colora = 128, 85, 0
 puff_colorb = 60, 43, 0
@@ -212,8 +212,8 @@ file = solar\\nebula\\walker_shapes.ini
 
 [Fog]
 fog_enabled = 1
-near = 0
-distance = 1000
+near = 200
+distance = 2500
 color = 150, 90, 20
 opacity = 0.5
 
@@ -243,8 +243,8 @@ color = 255, 255, 255
 
 [NebulaLight]
 ambient = 80, 40, 0
-sun_burnthrough_intensity = 0.500000
-sun_burnthrough_scaler = 2
+sun_burnthrough_intensity = 0.6
+sun_burnthrough_scaler = 1.5
 
 [Clouds]
 max_distance = 1500

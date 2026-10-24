@@ -97,7 +97,7 @@ BLUE_EXCLUSION_PARAMS = {
     'shell_scalar': 1,
     'max_alpha': 0.3,
     'exclusion_tint': '255, 255, 255',
-    'fog_far': 5000,
+    'fog_far': 15000,
 }
 
 
@@ -106,7 +106,7 @@ BLUE_ALT_EXCLUSION_PARAMS = {
     'shell_scalar': 1,
     'max_alpha': 0.3,
     'exclusion_tint': '255, 255, 255',
-    'fog_far': 5000,
+    'fog_far': 15000,
 }
 
 

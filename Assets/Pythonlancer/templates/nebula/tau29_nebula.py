@@ -7,8 +7,8 @@ file = solar\\nebula\\white_shapes.ini
 
 [Fog]
 fog_enabled = 1
-near = 0
-distance = 1800
+near = 200
+distance = 3000
 color = 60, 80, 130
 
 [Exclusion Zones]
@@ -35,12 +35,12 @@ color = 110, 110, 140
 
 [NebulaLight]
 ambient = 60, 60, 70
-sun_burnthrough_intensity = 0.700000
-sun_burnthrough_scaler = 1.750000
+sun_burnthrough_intensity = 0.5
+sun_burnthrough_scaler = 1.5
 
 [Clouds]
 max_distance = 1500
-puff_count = 100
+puff_count = 250
 puff_radius = 100
 puff_colora = 100, 200, 255
 puff_colorb = 50, 100, 200

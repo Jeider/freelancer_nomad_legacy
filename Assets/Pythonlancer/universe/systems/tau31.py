@@ -90,7 +90,7 @@ EDGE_EXCLUSION_PARAMS = {
     'shell_scalar': 1.1,
     'max_alpha': 0.5,
     'exclusion_tint': '110, 130, 110',
-    'fog_far': 5000,
+    'fog_far': 15000,
 }
 
 EDGE_EXCLUSION_PARAMS_NEAR = {
@@ -98,7 +98,7 @@ EDGE_EXCLUSION_PARAMS_NEAR = {
     'shell_scalar': 1.1,
     'max_alpha': 0.5,
     'exclusion_tint': '110, 130, 110',
-    'fog_far': 2500,
+    'fog_far': 15000,
 }
 
 

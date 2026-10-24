@@ -54,6 +54,62 @@ file = universe\\heavens\\shapes.ini
 [Dust]
 spacedust = Dust
 
+[SpaceLayer]
+; Far veils: huge, faint, world-anchored -- air and parallax between the ship and the sky.
+shapes = solar\\nebula\\generic_shapes.ini
+shape = generic_exterior1
+shape = generic_exterior2
+shape = generic_exterior3
+shape = generic_exterior4
+color = 150, 110, 80
+color_b = 90, 60, 40
+alpha = 0.08
+size = 800, 1800
+near_distance = 8000
+far_distance = 40000
+density = 1.2
+clump_size = 15000
+clump_coverage = 0.5
+forward = 2
+spin = 0.5
+count = 40
+
+[SpaceLayer]
+; Mid wisps: closer and smaller, they stream past when flying.
+shapes = solar\\nebula\\generic_shapes.ini
+shape = generic_cloud1
+shape = generic_cloud2
+shape = generic_cloud3
+shape = generic_cloud4
+color = 170, 130, 100
+alpha = 0.08
+size = 120, 300
+near_distance = 1000
+far_distance = 7000
+density = 1
+clump_size = 3500
+clump_coverage = 0.5
+spin = 1.5
+count = 50
+
+[SpaceLayer]
+; Near stars: soft points between the ship and the star sphere, a faint parallax when flying.
+shapes = solar\\stararch.ini
+shape = glow2
+color = 255, 230, 200
+color_b = 255, 245, 230
+alpha = 0.5
+size = 30, 90
+near_distance = 15000
+far_distance = 45000
+density = 0.6
+clump_size = 30000
+clump_coverage = 0.3
+blend = additive
+lit = 0
+spin = 0
+count = 300
+
 [Music]
 space = music_rh_space
 danger = music_rh_danger
@@ -168,7 +224,7 @@ BROWN_EXCLUSION_PARAMS = {
     'shell_scalar': 1.1,
     'max_alpha': 0.5,
     'exclusion_tint': '150, 80, 40',
-    'fog_far': 5000,
+    'fog_far': 15000,
 }
 
 

@@ -49,6 +49,10 @@ AST_TEMPLATE = '''
 
 {belt}
 
+{field_dust}
+
+{far_rocks}
+
 {billboards}
 
 {loot_props}
@@ -535,6 +539,114 @@ asteroid = ast_{ast}_xlarge01, -0.600000, -0.800000, 0.700000, 1, 192, 5
 
 
 
+FIELD_DUST_TEMPLATE = '''[FieldDust]
+opacity = 0.22
+max_opacity = 0.35
+brightness = 0.8
+ambient = 0.12
+forward = 0.55
+forward_weight = 0.5
+back = 0.25
+noise_scale = 4000
+coverage = 0.45
+softness = 0.25
+clump = 0.7
+steps = 6'''
+
+FAR_ROCKS_TEMPLATE = '''[FarRocks]
+replace_band = 1'''
+
+
+# BEGIN ordinary-world mesh Band profiles v1
+ORDINARY_WORLD_MESH_FAR_ROCKS = """[FarRocks]
+type = mesh
+count = 1000
+model_scale = 3
+start_dist = 4500
+start_fade = 700
+replace_band = 1"""
+
+ORDINARY_WORLD_DEBRIS_FAR_ROCKS = """[FarRocks]
+type = debris
+count = 1000
+model_scale = 2
+size_power = 2.3
+edge_softness = 1.2
+clump_size = 3200
+clump_coverage = 0.45
+clump_softness = 0.2
+clump_amount = 0.65
+start_dist = 4500
+start_fade = 700
+far_dist = 55000
+far_fade = 18000
+color = 255, 255, 255
+brightness = 1.0
+ambient = 1.0
+min_pixels = 1
+solid_pixels = 5
+replace_band = 1"""
+
+ORDINARY_WORLD_DEBRIS_FIELD_DUST = """[FieldDust]
+opacity = 0.06
+max_opacity = 0.10
+color = 110, 115, 120
+brightness = 0.65
+ambient = 0.18
+forward = 0.35
+forward_weight = 0.3
+back = 0.1
+noise_scale = 3200
+coverage = 0.5
+softness = 0.2
+clump = 0.65
+edge_softness = 1.2
+clear_radius = 1000
+steps = 8
+lod_distance = 100000
+far_dist = 55000
+far_fade = 18000
+exclude_zones = 1"""
+
+
+def _ordinary_world_mesh_band(field, params):
+    system = field.system
+    name = str(getattr(system, 'NAME', '')).lower()
+    if (getattr(system, 'SYSTEMS_ROOT', None) != 'SYSTEMS_MOD'
+            or getattr(system, 'IS_STORY', False)
+            or not name or name in ('om11', 'tau44', 'm8_tau44')
+            or name.startswith('sphere')
+            or not field.BELT or not field.DYNAST or not field.FAR_ROCKS):
+        return
+    # Even a non-asteroid Cube directive is conservatively considered filled.
+    def active_lines(value):
+        return [line.split(';', 1)[0].split('#', 1)[0].strip()
+                for line in value.splitlines()
+                if line.split(';', 1)[0].split('#', 1)[0].strip()]
+    if active_lines(params['cube']):
+        return
+    if '[band]' not in [line.lower() for line in active_lines(params['belt'])]:
+        return
+    models = []
+    section = ''
+    for line in active_lines(params['dynasteroids']):
+        if line.startswith('['):
+            section = line.lower()
+        elif section == '[dynamicasteroids]' and '=' in line:
+            key, value = line.split('=', 1)
+            if key.strip().lower() == 'asteroid' and value.strip():
+                models.append(value.strip().split(',', 1)[0].strip())
+    if not models or any(not model or '{' in model or '}' in model for model in models):
+        return
+    debris = isinstance(field, DebrisDefinition) or all(
+        model.lower().startswith('din_debris_') for model in models)
+    params['far_rocks'] = (ORDINARY_WORLD_DEBRIS_FAR_ROCKS if debris
+                           else ORDINARY_WORLD_MESH_FAR_ROCKS)
+    if debris and field.FIELD_DUST:
+        params['field_dust'] = ORDINARY_WORLD_DEBRIS_FIELD_DUST
+# END ordinary-world mesh Band profiles v1
+
+
 class AsteroidDefinition(object):
     NAME = 'ast'
     SHAPES = []
@@ -545,6 +657,10 @@ class AsteroidDefinition(object):
     CUBE = False
     BELT_TEMPLATE = None
     BELT = False
+    FAR_ROCKS_TEMPLATE = FAR_ROCKS_TEMPLATE
+    FAR_ROCKS = True  # with a BELT: far rock shells replace the band
+    FIELD_DUST_TEMPLATE = FIELD_DUST_TEMPLATE
+    FIELD_DUST = True  # with a BELT: the field's dust volume
     DYNAST_TEMPLATE = None
     DYNAST = False
     BILLBOARD_TEMPLATE = None
@@ -583,6 +699,8 @@ class AsteroidDefinition(object):
             'shapes': SINGLE_DIVIDER.join(self.SHAPES),
             'exclusions': SINGLE_DIVIDER.join([exclusion_template.format(zone_name=exclusion) for exclusion in self.exclusions]),
             'belt': '',
+            'far_rocks': '',
+            'field_dust': '',
             'dynasteroids': '',
             'billboards': '',
             'loot_props': '',
@@ -595,6 +713,10 @@ class AsteroidDefinition(object):
             params['cube'] = self.CUBE_TEMPLATE.format(**self.CUBE_PARAMS)
         if self.BELT:
             params['belt'] = self.BELT_TEMPLATE.format(belt_height=self.BELT_HEIGHT)
+        if self.FAR_ROCKS and self.BELT:
+            params['far_rocks'] = self.FAR_ROCKS_TEMPLATE
+        if self.FIELD_DUST and self.BELT:
+            params['field_dust'] = self.FIELD_DUST_TEMPLATE
         if self.DYNAST:
             params['dynasteroids'] = self.DYNAST_TEMPLATE
         if self.BILLBOARDS:
@@ -607,6 +729,7 @@ class AsteroidDefinition(object):
                 loot_max=self.LOOT_MAX,
                 loot_difficulty=self.LOOT_DIFFICULTY,
             )
+        _ordinary_world_mesh_band(self, params)
         return AST_TEMPLATE.format(**params)
 
 

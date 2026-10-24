@@ -94,27 +94,30 @@ class Tau29Sun(Tau29Member, main_objects.Sun):
 RING_DYNAST_TEMPLATE = '''
 [DynamicAsteroids]
 asteroid = ast_tau29_ring_a
-count = 50
-placement_radius = 300.000000
-placement_offset = 150.000000
+count = 100
+placement_radius = 600.000000
+band_thickness = 100
+placement_offset = 300.000000
 max_velocity = 0.01
 max_angular_velocity = 0.01
 color_shift = 0.6, 0.8, 1
 
 [DynamicAsteroids]
 asteroid = ast_tau29_ring_b
-count = 50
-placement_radius = 300.000000
-placement_offset = 150.000000
+count = 100
+placement_radius = 600.000000
+band_thickness = 100
+placement_offset = 300.000000
 max_velocity = 0.01
 max_angular_velocity = 0.01
 color_shift = 0.6, 0.8, 1
 
 [DynamicAsteroids]
 asteroid = ast_tau29_ring_c
-count = 50
-placement_radius = 300.000000
-placement_offset = 150.000000
+count = 100
+placement_radius = 600.000000
+band_thickness = 100
+placement_offset = 300.000000
 max_velocity = 0.01
 max_angular_velocity = 0.01
 color_shift = 0.6, 0.8, 1
@@ -129,7 +132,7 @@ fade_dist_percent = 0.98
 shape = tau29_billboards
 color_shift = 0.6, 0.8, 1
 ;ambient_intensity = 5	
-size = 30, 60
+size = 15, 30
 '''
 
 
@@ -141,7 +144,7 @@ class Tau29RingAsteroidsDefinition(asteroid_definition.AsteroidDefinition):
     BILLBOARDS = True
     DYNAST_TEMPLATE = RING_DYNAST_TEMPLATE
     BILLBOARD_TEMPLATE = RING_BILLBOARDS_TEMPLATE
-    EXCLUDE_BILLBOARDS = False
+    EXCLUDE_BILLBOARDS = True
 
 
 class Tau29RingAsteroidsField(Tau29Member, zones.AsteroidZone):
@@ -197,7 +200,7 @@ BARRIER_EXCLUSION_PARAMS = {
     'shell_scalar': 1.1,
     'max_alpha': 0.5,
     'exclusion_tint': '120, 180, 200',
-    'fog_far': 5000,
+    'fog_far': 15000,
 }
 
 

@@ -53,6 +53,87 @@ file = universe\\heavens\\shapes.ini
 [Dust]
 spacedust = Dust
 
+[;SpaceHaze]
+; Cheap world-anchored gas at three distances (one fullscreen pass): air and parallax in open space.
+; The crow exterior's teal ([Exterior] color 80, 170, 180), darkened: dark gas against the bright
+; nebulae reads in flight. Even light (ambient 1, no forward glow) and thinned toward the sun.
+color = 40, 90, 100
+color_b = 22, 55, 75
+alpha = 0.22
+shell = 2500, 2000
+shell = 9000, 6000
+shell = 30000, 18000
+coverage = 0.55
+softness = 0.2
+detail = 0.35
+ambient = 1
+forward = 0
+sun_clear = 0.9
+sun_clear_power = 3
+; Flicker as the light cloud's puffs: lightning_color, intensity, gap, duration of its [Clouds].
+flash = 1
+flash_color = 150, 230, 255
+flash_size = 0.5
+flash_density = 0.4
+flash_gap = 3
+flash_duration = 0.5
+
+[SpaceLayer]
+; Far veils: huge, faint, world-anchored -- air and parallax between the ship and the sky.
+shapes = solar\\nebula\\crow_shapes.ini
+shape = crow_exterior1
+shape = crow_exterior2
+shape = crow_exterior3
+shape = crow_exterior4
+color = 70, 140, 180
+color_b = 40, 90, 140
+alpha = 0.08
+size = 800, 1800
+near_distance = 8000
+far_distance = 40000
+density = 1.2
+clump_size = 15000
+clump_coverage = 0.5
+forward = 2
+spin = 0.5
+count = 40
+
+[SpaceLayer]
+; Mid wisps: closer and smaller, they stream past when flying.
+shapes = solar\\nebula\\crow_shapes.ini
+shape = crow_cloud1
+shape = crow_cloud2
+shape = crow_cloud3
+shape = crow_cloud4
+color = 90, 160, 200
+alpha = 0.08
+size = 120, 300
+near_distance = 1000
+far_distance = 7000
+density = 1
+clump_size = 3500
+clump_coverage = 0.5
+spin = 1.5
+count = 50
+
+[SpaceLayer]
+; Near stars: soft points between the ship and the star sphere, a faint parallax when flying.
+shapes = solar\\stararch.ini
+shape = glow2
+color = 200, 225, 255
+color_b = 255, 245, 230
+alpha = 0.5
+size = 30, 90
+near_distance = 15000
+far_distance = 45000
+density = 0.6
+clump_size = 30000
+clump_coverage = 0.3
+blend = additive
+lit = 0
+spin = 0
+count = 300
+
 [Music]
 space = music_li_space
 danger = music_li_danger
@@ -140,7 +221,7 @@ CROW_EXCLUSION_PARAMS = {
     'shell_scalar': 1.1,
     'max_alpha': 0.5,
     'exclusion_tint': '255, 255, 200',
-    'fog_far': 5000,
+    'fog_far': 15000,
 }
 
 
