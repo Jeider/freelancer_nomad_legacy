@@ -411,6 +411,35 @@ class Static:
 
 
 STATIC_NAMES = [
+    Static(238226, MS('Нажми Enter, чтобы пропустить катсцену', 'Press Enter to skip the cutscene')),  # CutsceneSkipPrompt
+    Static(238225, MS('Список целей', 'Target list')),  # TargetList
+    # HUD: Targeting / Health. MS(Russian, English); keep numeric IDs stable.
+    Static(238200, MS('Показать/скрыть окно цели', 'Show/hide target window')),  # TargetWindow
+    Static(238201, MS('Зафиксировать состояние окна цели', 'Lock target window open/closed state')),  # TargetLock
+    Static(238202, MS('Разрешить автоматическое открытие и скрытие окна цели', 'Enable automatic target window opening and hiding')),  # TargetUnlock
+    Static(238203, MS('Включить выбор деталей под курсором', 'Enable subsystem selection under the cursor')),  # AutoselectEnable
+    Static(238204, MS('Отключить выбор деталей под курсором', 'Disable subsystem selection under the cursor')),  # AutoselectDisable
+    Static(238205, MS('Цель: стандартный вид', 'Target: standard view')),  # TargetVanilla
+    Static(238206, MS('Цель: вписать в окно', 'Target: fit to window')),  # TargetFit
+    Static(238207, MS('Цель: вид сверху', 'Target: top view')),  # TargetTop
+    Static(238208, MS('Цель: вид справа', 'Target: right view')),  # TargetRight
+    Static(238209, MS('Закрыть окно цели', 'Close target window')),  # TargetClose
+    Static(238210, MS('Показать/скрыть состояние корабля', 'Show/hide ship status')),  # HealthWindow
+    Static(238211, MS('Запретить открытие окна при повреждениях', 'Disable opening on ship damage')),  # HealthLock
+    Static(238212, MS('Разрешить открытие окна при повреждениях', 'Enable opening on ship damage')),  # HealthUnlock
+    Static(238213, MS('Сложить/разложить крылья', 'Fold/unfold wings')),  # WingPlay
+    Static(238214, MS('Продолжить движение крыльев', 'Resume wing animation')),  # WingResume
+    Static(238215, MS('Приостановить движение крыльев', 'Pause wing animation')),  # WingPause
+    Static(238216, MS('Отключить автоматическое движение крыльев на круизе', 'Disable automatic cruise wing animation')),  # WingLock
+    Static(238217, MS('Включить автоматическое движение крыльев на круизе', 'Enable automatic cruise wing animation')),  # WingUnlock
+    Static(238218, MS('Корабль: вид сверху', 'Ship: top view')),  # HealthTop
+    Static(238219, MS('Корабль: вид слева', 'Ship: left view')),  # HealthLeft
+    Static(238220, MS('Закрыть окно состояния корабля', 'Close ship status window')),  # HealthClose
+    Static(238221, MS('Группа орудий 1', 'Weapon group 1')),  # WeaponGroup1
+    Static(238222, MS('Группа орудий 2', 'Weapon group 2')),  # WeaponGroup2
+    Static(238223, MS('Группа орудий 3', 'Weapon group 3')),  # WeaponGroup3
+    Static(238224, MS('Показать список орудий', 'Show weapon list')),  # WeaponList
+
     # Static(196850, 'Рейнландская империя'),
     # Static(196851, 'Промышленность Дауманн'),
     # Static(196852, 'Гессенцы'),

@@ -44,8 +44,6 @@ class Capital:
     HURT_FX = 'explosion_sfx_csx_large04'
     HURT_HP = 'HpMount'
 
-    INITIAL_PART_DAMAGE_FACTOR = 0.5
-
     subclasses = []
 
     def __init_subclass__(cls, **kwargs):
@@ -147,22 +145,6 @@ fate = {part_fate} ''')
 
         self.fuses_definitions.append(SINGLE_DIVIDER.join(actions))
 
-    def add_initial_damage_fuse(self, fuse_name, obj, damage):
-        self.fuses_definitions.append(
-            f''' 
-[fuse]
-name = {fuse_name}
-lifetime = 0.100000
-death_fuse = true
-
-[damage_group]
-group_name = {obj}
-at_t = 0.100000
-damage_type = relative
-hitpoints = {damage}
-            '''
-        )
-
     def get_part_fuses_definitions(self):
         return SINGLE_DIVIDER.join(self.fuses_definitions)
 
@@ -186,17 +168,10 @@ hitpoints = {damage}
         )
         params.append(f'fuse = {extra_dmg_fuse_name}, 0.000000, 1')
 
-        init_dmg_fuse_name = f'fuse_{self.ARCHETYPE}_init_dmg_{part_kind}'
-        init_damage = (self.PARTS_HP * self.INITIAL_PART_DAMAGE_FACTOR) * hit_pts_multipler
-        self.add_initial_damage_fuse(
-            init_dmg_fuse_name,
-            obj,
-            init_damage,
-        )
-        params.append(f'fuse = {init_dmg_fuse_name}, 0.000000, {self.get_hit_pts()*2}')
+        params.append('vulnerable = true')
 
         params.extend([
-            f'hit_pts = {self.get_part_hit_pts(hit_pts_multipler)+init_damage}',
+            f'hit_pts = {self.get_part_hit_pts(hit_pts_multipler)}',
             'root_health_proxy = true',
             f'explosion_resistance = {explosion_resistance}',
         ])
