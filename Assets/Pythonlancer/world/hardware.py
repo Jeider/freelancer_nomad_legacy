@@ -316,6 +316,7 @@ class CloakingDevice(Equipment, DefaultGood):
     def get_equip(self):
         return f'''[CloakingDevice]
 nickname = {self.get_nickname()}
+hp_type = hp_hardware_special_1
 ids_name = {self.get_ids_name()}
 ids_info = {self.get_ids_info()}
 hit_pts = 10000

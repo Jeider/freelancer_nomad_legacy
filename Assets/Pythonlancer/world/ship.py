@@ -510,10 +510,11 @@ item_icon = Equipment\\models\\commodities\\nn_icons\\{icon}'''
         return lines
 
     def get_generic_equip_lines(self):
-        lines = []
+        lines = ['equipment_slot = HpHardware01, hardware, 1']
 
         if self.THRUSTERS:
-            lines.append(self.build_equip_line(self.THRUSTER_CLASS, ', '.join(self.THRUSTERS)))
+            for tier in range(1, self.get_equipment_level() + 1):
+                lines.append(self.build_equip_line(f'hp_thruster_special_{tier}', ', '.join(self.THRUSTERS)))
 
         lines.append(self.build_equip_line(self.MINE_CLASS, self.HP_MINE))
         lines.append(self.build_equip_line(self.CM_CLASS, self.HP_CM))

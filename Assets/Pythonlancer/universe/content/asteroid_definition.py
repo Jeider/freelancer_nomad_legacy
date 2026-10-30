@@ -647,6 +647,78 @@ def _ordinary_world_mesh_band(field, params):
 # END ordinary-world mesh Band profiles v1
 
 
+# BEGIN server asteroid ordinary world v1
+_SERVER_ASTEROID_SYSTEMS = ('br_avl', 'br_cam', 'br_uls', 'br_wrw', 'co_cur', 'co_och', 'ku_hkd', 'ku_hns', 'ku_ksu', 'ku_tgk', 'li_cal', 'li_col', 'li_for', 'li_mnh', 'om13', 'om15', 'omicron1', 'rh_ber', 'rh_biz', 'rh_mnh', 'rh_stut', 'sig17', 'sig22', 'sig42', 'sig8', 'tau26', 'tau37', 'tau4', 'upsilon1')
+_SERVER_ASTEROID_MODELS = ('ast_co_cur_normal_a', 'ast_co_cur_normal_b', 'ast_co_cur_normal_c', 'ast_co_cur_x2', 'ast_ku_tgk_normal_a', 'ast_ku_tgk_normal_b', 'ast_ku_tgk_normal_c', 'ast_lava_normal_a', 'ast_lava_normal_b', 'ast_lava_normal_c', 'ast_li_cal_normal_a', 'ast_li_cal_normal_b', 'ast_li_cal_normal_c', 'ast_om15_normal_a', 'ast_om15_normal_b', 'ast_om15_normal_c', 'ast_tau29_normal_a', 'ast_tau29_normal_b', 'ast_tau29_normal_c', 'ast_tau37_normal_a', 'ast_tau37_normal_b', 'ast_tau37_normal_c', 'din_debris_xlarge_a', 'din_debris_xlarge_b', 'din_debris_xlarge_c', 'din_debris_xlarge_d', 'mod_dbadlands_large', 'mod_nomad_large', 'mod_nomad_medium')
+
+def _convert_server_field(content, models, population_scale=1):
+    import collections
+    import math
+    import re
+
+    header = re.compile(r'^\[([^\]\r\n]+)\][ \t]*\r?$', re.M)
+    headers = list(header.finditer(content))
+    parts = [(m[1].lower(), m.start(), headers[i+1].start() if i+1 < len(headers) else len(content))
+             for i, m in enumerate(headers)]
+
+    def values(body):
+        return {m[1].lower(): m[2].strip() for m in re.finditer(
+            r'^[ \t]*(\w+)[ \t]*=[ \t]*([^;\r\n]*)', body, re.M)}
+
+    dynamic = [values(content[a:b]) for kind, a, b in parts if kind == 'dynamicasteroids']
+    existing = [values(content[a:b]) for kind, a, b in parts if kind == 'serverdynamicasteroids']
+    if existing:
+        expected = collections.Counter('srv_' + d['asteroid'].lower() for d in dynamic)
+        actual = collections.Counter(s['asteroid'].lower() for s in existing)
+        if expected != actual or any(float(d['count']) != 0 for d in dynamic):
+            raise ValueError('Partial/ambiguous server asteroid conversion')
+        return content
+    newline = '\r\n' if '\r\n' in content else '\n'
+    additions = []
+    for index, d in enumerate(dynamic):
+        model = d['asteroid'].lower()
+        if model not in models:
+            raise ValueError('Unregistered server asteroid model: ' + model)
+        count = int(d['count']) * population_scale
+        if not 0 <= count <= 256:
+            raise ValueError('Unsupported asteroid count: ' + str(count))
+        # Keep authored density/speeds, with Sig8's distant ship-based formation.
+        radius = max(3000.0, float(d.get('placement_radius', 3000)))
+        if not math.isfinite(radius) or radius > 100000:
+            raise ValueError('Invalid placement radius')
+        settings = dict(asteroid='srv_' + model, spawn_mode='forward', count=str(count),
+                        placement_radius=f'{radius:g}', placement_offset=f'{radius*.85:g}',
+                        despawn_radius=f'{radius*1.5:g}',
+                        max_velocity=d.get('max_velocity', '10'),
+                        max_angular_velocity=d.get('max_angular_velocity', '0.1'), seed=str(801+index))
+        if 'band_thickness' in d:
+            settings['band_thickness'] = d['band_thickness']
+        additions.append('[ServerDynamicAsteroids]' + newline +
+                         ''.join(f'{k} = {v}{newline}' for k, v in settings.items()))
+    if not additions:
+        return content
+    result = content
+    for kind, a, b in reversed(parts):
+        if kind != 'dynamicasteroids':
+            continue
+        body, count = re.subn(r'(?mi)^([ \t]*count[ \t]*=[ \t]*)[^;\r\n]*',
+                             r'\g<1>0', content[a:b])
+        if count != 1:
+            raise ValueError('Missing/duplicate dynamic count')
+        result = result[:a] + body + result[b:]
+    return result + newline + newline.join(additions)
+
+def _server_world_field(field, content):
+    system = field.system
+    if (getattr(system, 'SYSTEMS_ROOT', None) != 'SYSTEMS_MOD'
+            or getattr(system, 'IS_STORY', False)
+            or str(getattr(system, 'NAME', '')).lower() not in _SERVER_ASTEROID_SYSTEMS):
+        return content
+    scale = 2 if str(system.NAME).lower() == 'sig8' else 1
+    return _convert_server_field(content, _SERVER_ASTEROID_MODELS, scale)
+# END server asteroid ordinary world v1
+
+
 class AsteroidDefinition(object):
     NAME = 'ast'
     SHAPES = []
@@ -730,7 +802,7 @@ class AsteroidDefinition(object):
                 loot_difficulty=self.LOOT_DIFFICULTY,
             )
         _ordinary_world_mesh_band(self, params)
-        return AST_TEMPLATE.format(**params)
+        return _server_world_field(self, AST_TEMPLATE.format(**params))
 
 
 class Omega15AsteroidDefinition(AsteroidDefinition):

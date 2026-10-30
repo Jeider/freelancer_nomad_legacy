@@ -1,4 +1,5 @@
 from world.ship import Ship
+from tools.equipment_hardware import upgrade_ships
 from world.capital import Capital
 from text.dividers import DIVIDER
 
@@ -66,7 +67,7 @@ class ShiparchManager:
         shiparch = self.core.tpl_manager.get_result(SHIPARCH_TEMPLATE, self.shiparch_context)
         self.validate_shiparch()
         self.shiparch_loaded = True
-        return shiparch
+        return upgrade_ships(shiparch)
 
     def get_ship_goods(self):
         data = []
@@ -220,7 +221,7 @@ class ShiparchManagerV2:
         shiparch = self.core.tpl_manager.get_result(SHIPARCH2_TEMPLATE, self.shiparch_context)
         self.validate_shiparch()
         self.shiparch_loaded = True
-        return shiparch
+        return upgrade_ships(shiparch)
 
     def get_ship_goods(self):
         data = []

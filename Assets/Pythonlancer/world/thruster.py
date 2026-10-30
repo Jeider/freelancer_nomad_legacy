@@ -72,6 +72,7 @@ class Thruster(MainEquipPrice, DefaultGood, MainMiscEquip):
 
     THRUSTER_TEMPLATE = '''[Thruster]
 nickname = {nickname}
+hp_type = hp_thruster_special_{equipment_class}
 ids_name = {ids_name}
 ids_info = {ids_info}
 hit_pts = {hit_pts}
@@ -194,6 +195,7 @@ material_library = equipment\\models\\ge_equip.mat'''
     def get_thruster_template_params(self):
         return {
             'nickname': self.get_nickname(),
+            'equipment_class': self.equipment_class,
             'ids_name': self.get_ids_name(),
             'ids_info': self.get_ids_info(),
             'hit_pts': self.get_thruster_hit_pts(),
