@@ -1465,6 +1465,13 @@ archetype = space_police01
 {dock_props}
 
 [Object]
+nickname = br_hbr_02_wire
+pos = 0, -650, 0
+rotate = 0, 0, 0
+archetype = hbr_shipyard_core
+parent = br_hbr_02
+
+[Object]
 nickname = br_hbr_02_prison1
 pos = 135, -650, 0
 rotate = 0, 90, 0

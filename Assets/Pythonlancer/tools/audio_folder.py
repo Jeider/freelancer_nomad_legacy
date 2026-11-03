@@ -1,6 +1,6 @@
 from tools.utf_xml import XML_UTF, OUT_DIR
 from tools.data_folder import DataFolder
-from tools import steos
+from tools.voice_api import VoiceApi
 import pathlib
 
 
@@ -156,13 +156,10 @@ class AudioFolder:
 
             print(sound.line.get_info())
 
-            if sound.line.actor.STEOS_ID is None:
-                raise Exception('actor %s have no steos for line name %s' % (sound.line.actor.NAME, sound.name))
-
             if russian:
-                steos.SteosVoice.generate_ru_voice(file_destination=file_destination, sound=sound)
+                VoiceApi.generate_ru_voice(file_destination=file_destination, sound=sound)
             else:
-                steos.SteosVoice.generate_en_voice(file_destination=file_destination, sound=sound)
+                VoiceApi.generate_en_voice(file_destination=file_destination, sound=sound)
 
     @classmethod
     def generate_cutscene_sounds(cls, cutscene, russian=True):
@@ -176,20 +173,14 @@ class AudioFolder:
             if file_destination.exists() or alt_file_destination.exists():
                 continue
 
-            if sound.line.actor.STEOS_ID is None:
-                raise Exception('actor %s have no steos for line name %s' % (sound.line.actor.NAME, sound.name))
-
             if russian:
-                steos.SteosVoice.generate_ru_voice(file_destination=file_destination, sound=sound)
+                VoiceApi.generate_ru_voice(file_destination=file_destination, sound=sound)
             else:
-                steos.SteosVoice.generate_en_voice(file_destination=file_destination, sound=sound)
+                VoiceApi.generate_en_voice(file_destination=file_destination, sound=sound)
 
     @classmethod
     def generate_simple_sound(cls, file_destination, actor, line):
         if file_destination.exists():
             return
 
-        if actor.STEOS_ID is None:
-            raise Exception('actor %s have no steos' % actor.NAME)
-
-        steos.SteosVoice.generate_ru_voice_simple(file_destination=file_destination, text=line, actor=actor)
+        VoiceApi.generate_ru_voice_simple(file_destination=file_destination, text=line, actor=actor)

@@ -7,7 +7,7 @@ class TekagiMegabase(SpaceObjectTemplate):
 nickname = ku_tgk_01
 pos = 0, 0, 0
 rotate = 0, -90, 0
-archetype = smallstation1
+archetype = smallstation1_tgk
 loadout = smallstation1_nosound
 {dock_props}
 

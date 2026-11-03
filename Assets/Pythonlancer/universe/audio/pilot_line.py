@@ -17,10 +17,11 @@ Priority = -6'''
 
 
 class PilotLine(object):
-    def __init__(self, code, ru_text, parse_rule=None):
+    def __init__(self, code, ru_text, parse_rule=None, delivery=None):
         self.code = code
         self.ru_text = ru_text
         self.parse_rule = parse_rule if parse_rule else RuleDefault
+        self.delivery = delivery
 
     def get_text(self):
         return self.ru_text

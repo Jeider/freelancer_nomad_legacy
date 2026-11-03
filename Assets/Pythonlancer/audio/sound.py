@@ -15,7 +15,7 @@ class VoiceLine(object):
     COMMENT_START = "<span class='comment'>("
     COMMENT_END = ")</span>"
 
-    def __init__(self, index, actor, ru='', en='', comment='', cinematic=False):
+    def __init__(self, index, actor, ru='', en='', comment='', cinematic=False, delivery=None):
         self.index = index
         self.actor = actor
         self.ru = ru
@@ -23,6 +23,7 @@ class VoiceLine(object):
         self.comment = comment
         self.ids_sub = None
         self.cinematic = cinematic
+        self.delivery = delivery
 
     def get_info(self):
         return f"{self.index} {self.actor}"

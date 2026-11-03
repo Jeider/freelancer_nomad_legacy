@@ -411,6 +411,48 @@ class Static:
 
 
 STATIC_NAMES = [
+    # Port UI: HUD and preferences. MS(Russian, English); keep numeric IDs stable.
+    Static(238227, MS('Интерфейс', 'Interface')),  # Interface
+    Static(238228, MS('Общее', 'General')),  # GeneralTab
+    Static(238229, MS('Навигация', 'Navigation')),  # NavigationTab
+    Static(238230, MS('Автопоказ радара', 'Show radar automatically')),  # RadarAuto
+    Static(238231, MS('Автоматически открывать статус врага', 'Open enemy status automatically')),  # TargetAutoOpen
+    Static(238232, MS('Автоматически показывать статус корабля', 'Show ship status automatically')),  # HealthAutoOpen
+    Static(238233, MS('Включить автотурели', 'Enable auto turrets')),  # AutoTurrets
+    Static(238234, MS('Резерв энергии автотурелей', 'Auto turret energy reserve')),  # AutoTurretReserve
+    Static(238235, MS('Генератор маршрута', 'Route generator')),  # RouteGenerator
+    Static(238236, MS('Автопролёт маршрута по F2', 'Follow route with F2')),  # RouteFollowF2
+    Static(238237, MS('Автостыковка с базами', 'Auto-dock with bases')),  # AutoDock
+    Static(238238, MS('Наклон HUD', 'HUD tilt')),  # HudTilt
+    Static(238239, MS('Кнопки в статусе корабля', 'Ship status buttons')),  # ShipStatusButtons
+    Static(238240, MS('Автовыбор элементов крупных кораблей', 'Capship subtarget autoselect')),  # CapshipAutoselect
+    Static(238241, MS('Анимация крыльев на круизе', 'Wing animation in cruise')),  # CruiseWingAnimation
+    Static(238242, MS('Анимация корабля', 'Ship animation')),  # ShipAnimation
+    Static(238243, MS('Группы орудий', 'Weapon groups')),  # WeaponGroups
+    Static(238244, MS('Стандартный', 'Standard')),  # Standard
+    Static(238245, MS('Обход препятствий', 'Avoid obstacles')),  # AvoidObstacles
+    Static(238246, MS('Нет', 'No')),  # RadarNever
+    Static(238247, MS('При появлении любой цели', 'When any contact appears')),  # RadarAnyContact
+    Static(238248, MS('При появлении противника', 'When an enemy appears')),  # RadarEnemy
+    Static(238249, MS('Не удалось сохранить настройки', 'Could not save settings')),  # SettingsSaveFailed
+    Static(238250, MS('Недоступно', 'Unavailable')),  # Unavailable
+    Static(238251, MS('Тени', 'Shadows')),  # GraphicsShadows
+    Static(238252, MS('Рельеф поверхностей', 'Surface relief')),  # GraphicsSurfaceRelief
+    Static(238253, MS('Блики', 'Highlights')),  # GraphicsHighlights
+    Static(238254, MS('Отражения', 'Reflections')),  # GraphicsReflections
+    Static(238255, MS('Анизотропная фильтрация', 'Anisotropic filtering')),  # GraphicsAnisotropy
+    Static(238256, MS('Сглаживание', 'Antialiasing')),  # GraphicsAntialiasing
+    Static(238257, MS('Объёмные туманности', 'Volumetric nebulae')),  # GraphicsNebulae
+    Static(238258, MS('Вертикальная синхронизация', 'Vertical sync')),  # GraphicsVsync
+    Static(238259, MS('Лимит FPS', 'FPS limit')),  # GraphicsFpsLimit
+    Static(238260, MS('Выкл', 'Off')),  # GraphicsOff
+    Static(238261, MS('Вкл', 'On')),  # GraphicsOn
+    Static(238262, MS('Низкое', 'Low')),  # GraphicsLow
+    Static(238263, MS('Среднее', 'Medium')),  # GraphicsMedium
+    Static(238264, MS('Высокое', 'High')),  # GraphicsHigh
+    Static(238265, MS('Изменения вступят в силу после перезапуска игры', 'Changes take effect after restarting the game')),  # GraphicsRestartPending
+    Static(238266, MS('Эти настройки применяются после перезапуска игры', 'These settings apply after restarting the game')),  # GraphicsRestartHint
+
     Static(238226, MS('Нажми Enter, чтобы пропустить катсцену', 'Press Enter to skip the cutscene')),  # CutsceneSkipPrompt
     Static(238225, MS('Список целей', 'Target list')),  # TargetList
     # HUD: Targeting / Health. MS(Russian, English); keep numeric IDs stable.

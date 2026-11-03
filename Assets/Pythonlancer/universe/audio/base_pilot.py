@@ -99,6 +99,8 @@ class PilotVoice:
     MVOICE_MISSION_PROP = None
     ATTENUATION = -6
     ENABLED = True
+    SOURCE_LANG = 'ru'
+    VOICE_DELIVERY = None
 
     def __init__(self, core, *args, **kwargs):
         # core mandatory to access ingame data
@@ -283,6 +285,7 @@ class SystemIdentifiedVoice(BaseIdentifiedVoice):
 
 
 class EnglishBaseIdentifiedVoice(PilotVoice):
+    SOURCE_LANG = 'en'
 
     def get_bases_lines(self):
         lines = []

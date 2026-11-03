@@ -1,6 +1,6 @@
 from tools.utf_xml import XML_UTF
 from tools.data_folder import DataFolder
-from tools.steos import SteosVoice
+from tools.voice_api import VoiceApi
 from tools.audio_folder import AudioFolder
 from tools.create_id import CreateId
 import pathlib
@@ -47,10 +47,15 @@ class TempPilot:
             if line.is_static():
                 continue
 
-            SteosVoice.generate_sound(
+            VoiceApi.generate_sound(
                 actor=line.get_actor(steos_id=pilot.STEOS_ID),
                 text=line.get_temp_text(),
-                file_destination=file_destination
+                file_destination=file_destination,
+                source_name=type(pilot).__name__,
+                source_lang=pilot.SOURCE_LANG,
+                speech_lang=pilot.SOURCE_LANG,
+                delivery=getattr(line, 'delivery', None) or pilot.VOICE_DELIVERY,
+                speed=line.parse_rule.STEOS_SPEED,
             )
             sleep(0.2)
 

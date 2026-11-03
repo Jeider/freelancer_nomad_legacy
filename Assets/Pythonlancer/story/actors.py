@@ -1,3 +1,4 @@
+from audio.delivery import *
 from text.strings import MultiString as MS
 
 ACTOR_MALE = 'male'
@@ -47,6 +48,7 @@ class Actor(SteosInterface):
     STEOS_ID = None
     STEOS_PITCH = 0
     STEOS_SPEED = 1
+    VOICE_DELIVERY = VERY_HIGH_PITCH
     ATTENUATION = None
     GAME_ACTOR = None
 
@@ -67,6 +69,10 @@ class Actor(SteosInterface):
     @classmethod
     def get_steos_speed(cls):
         return cls.STEOS_SPEED
+
+    @classmethod
+    def get_voice_delivery(cls):
+        return cls.VOICE_DELIVERY
 
     @classmethod
     def is_male(cls):
@@ -108,6 +114,7 @@ class Trent(Actor):
     STEOS_PITCH = -0.5
     # STEOS_SPEED = 1.13
     STEOS_SPEED = 1  # For ENG
+    VOICE_DELIVERY = LIGHTER
 
 
 class EdisonTrent(Actor):
@@ -742,6 +749,7 @@ class IntroBarman(Actor):
     STEOS_ID = 13100
     STEOS_SPEED = 1
     STEOS_PITCH = -0.7
+    VOICE_DELIVERY = VERY_HIGH_PITCH_SLOW
 
 
 class Jabba(Actor):
@@ -806,6 +814,7 @@ class Jameson(Actor):
     NAME = 'jameson'
     CUTSCENE_APPEARANCE = 'jameson'
     STEOS_ID = 10071
+    VOICE_DELIVERY = HIGH_PITCH
 
 
 class HasslerOrder(Actor):
