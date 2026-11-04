@@ -2,7 +2,7 @@ from story import script
 from audio.sound import VoiceLine
 from story.actors import (
     Trent, Darcy, CorsairBarman, Rockford, Tortuga, JabbaBandit, RockfordStation,
-    CadizEnemyOne, CadizEnemyTwo, CadizEnemyThree, CadizEnemyFour, WalesBarman, Jabba
+    MaltaEnemyOne, MaltaEnemyTwo, MaltaEnemyThree, MaltaEnemyFour, WalesBarman, Jabba
 )
 
 
@@ -29,16 +29,16 @@ class Msn7Offer(Msn7, script.CutsceneProps):
     ]
 
 
-class Msn7Cadiz(Msn7, script.CutsceneProps):
-    ALIAS = 'cadiz'
+class Msn7Malta(Msn7, script.CutsceneProps):
+    ALIAS = 'malta'
     TITLE = 'Кадиз'
     DESCRIPTION = ''
     VOICE_LINES = [
-        VoiceLine(10, CadizEnemyOne, comment='Два странных поцыка подходят к Тренту', ru="Здаров, земляк! Где Рокфорд?", en="Hey, countryman! Where's Rockford?"),
+        VoiceLine(10, MaltaEnemyOne, comment='Два странных поцыка подходят к Тренту', ru="Здаров, земляк! Где Рокфорд?", en="Hey, countryman! Where's Rockford?"),
         VoiceLine(20, Trent, ru="Понятия не имею.", en="I have no idea."),
-        VoiceLine(30, CadizEnemyTwo, ru="Слыш, земеля, ты чо такой дерзкий? Тебя по-хорошему спросили, где Рокфорд?", en="Hey, countryman, why so cocky? You were asked nicely. Where's Rockford?"),
-        VoiceLine(40, CadizEnemyOne, ru="Сейчас наладим диалог (достаёт пушку).", en="We'll get a dialogue going now (draws a gun)."),
-        VoiceLine(50, CadizEnemyOne, ru="Где Рокфорд, утырок?", en="Where's Rockford, you prick?"),
+        VoiceLine(30, MaltaEnemyTwo, ru="Слыш, земеля, ты чо такой дерзкий? Тебя по-хорошему спросили, где Рокфорд?", en="Hey, countryman, why so cocky? You were asked nicely. Where's Rockford?"),
+        VoiceLine(40, MaltaEnemyOne, ru="Сейчас наладим диалог (достаёт пушку).", en="We'll get a dialogue going now (draws a gun)."),
+        VoiceLine(50, MaltaEnemyOne, ru="Где Рокфорд, утырок?", en="Where's Rockford, you prick?"),
         VoiceLine(60, Rockford, comment='Поцыков выносят ударом в спину', ru="Я Рокфорд. ", en="I'm Rockford."),
         VoiceLine(65, Rockford, ru="За мной! Быстро!", en="Follow me! Fast!"),
     ]
@@ -259,7 +259,7 @@ class Mission7(Msn7, script.StoryMission):
     MISSION_INDEX = 7
     CUTSCENES = [
         Msn7Offer,
-        Msn7Cadiz,
+        Msn7Malta,
         Msn7Omega13,
         Msn7Battleship,
         Msn7CheckArtifact,
