@@ -132,9 +132,9 @@ class Misson06(ingame_mission.IngameMission):
                     'Если вы вылетите без установленного устройства невидимости, то миссия будет проиграна.',
                 ],
                 [
-                    'You got cloaking device from Hatcher. You must mount it on your ship on Countermeasure mount point.'
+                    'You got a cloaking device from Hatcher. You must mount it on your ship\'s Countermeasure mount point.'
                     
-                    'Mission will failed when you\'ll try launch without mounted cloaking device',
+                    'Mission will fail if you try to launch without the cloaking device mounted',
                 ]
 
                 ),
@@ -146,7 +146,7 @@ class Misson06(ingame_mission.IngameMission):
                     'иначе миссий будет проиграна.',
                 ],
                 [
-                    'Cloaking device is active. You should deactivate it ONLY by mission objective or mission will be failed',
+                    'Cloaking device is active. You should deactivate it ONLY when the mission tell you to ortherwise the mission will fail',
                 ]),
             ),
             TextDialog(
@@ -162,13 +162,13 @@ class Misson06(ingame_mission.IngameMission):
 
                     'Загрузить стратегию в нейросеть?'
                 ],[
-                    'You are entering patrol zone. This patrols can detect. You must carefully look at enemy freighters. '
-                    "It's only ships that can detect you. Special alert will be activated when freighter is too near to you."
+                    'You are entering a patrol zone. The patrols can detect you even cloaked. You must carefully look at enemy freighters. '
+                    "They are the only ships that can detect you. Special alert will be activated when enemy freighter is too close."
 
                     "Analytics' report about patrol zone: ",
 
-                    "There placed some telescope. You can hit on them by your ship (your ship have physical appearance). "
-                    "This action can distract enemy patrol and you can enter The Sphere without problems",
+                    "There are some telescope deployed. You can ram them with your ship (your ship still is physicaly here). "
+                    "This action can distract enemy patrols and allow you to enter The Sphere without problems",
 
                     "Load this strategy in your NeuralNet?"
                 ]),
@@ -190,15 +190,15 @@ class Misson06(ingame_mission.IngameMission):
 
                     'Загрузить стратегию в нейросеть?'
                 ],[
-                    "Now you must deactivate your invisibility. Default keyboard combination: Ctrl+W",
-                    "You can change it combination by settings. You need to change SECOND button for action "
-                    "Tractor beam (all) / Invisibility. Combination must contain Ctrl button.",
+                    "Now you must deactivate your cloak. Default keyboard combination: Ctrl+W",
+                    "You can change it in your settings by changing the SECOND button for action "
+                    "\'Tractor beam (all) / Invisibility\'. Combination must contain Ctrl button.",
 
                     "Analytics' report about Nomad Zone:",
 
-                    "This zone have tunnel at the bottom side. This is tunnel to energy room. You can broke power generator "
-                    "and extract danger energy beam. This beam can damage nomad kernel and nomad fighters. But be warned - this power beam "
-                    "can destroy your ship, you must leave this chamber soon as possible.",
+                    "This zone has a passages, at the bottom, to an energy room. You can destroy the power generator "
+                    "to generate a dangerous energy beam. This beam can damage the nomad kernel and nomad fighters. But be warned - this energy beam "
+                    "can destroy your ship, you must leave the energy room as soon as possible.",
 
                     "Load this strategy in your NeuralNet?"
                 ]),
@@ -226,17 +226,17 @@ class Misson06(ingame_mission.IngameMission):
 
                     'Загрузить стратегию в нейросеть?',
                 ],[
-                    'You are near the core. The is no known data about amount of rheinland scients inside sphere. '
-                    'You should no one left the core alive. In other case mission will be failed.',
+                    'You are near the core. There is no known data about the amount of rheinland scientists inside. '
+                    'No one should be left alive in the core, Otherwise the mission will fail.',
 
                     "If you can't handle this mission: you always can switch difficulty to easy by launcher. Then your targets will be less likely to flee the Sphere rapidly when you are discovered.",
 
                     "Analytics's report about the core:",
 
-                    "Near the core area there are small laboratories where Rottman may be hiding. "
+                    "Near the core, there are small laboratories where Rottman could hide. "
                     "It is recommended to first hack and lock their doors. The sensors on the scientists' "
                     "ships are quite weak, so you can safely fly at a distance from them without being detected. "
-                    "The nearest outpost has tracking sensors, so you should hack it last, as you will be immediately "
+                    "The Outpost has tracking sensors, so you should hack it last, as you will be immediately "
                     "detected. After that, you must immediately attack Rottman.",
                     
                     "Load this strategy in your NeuralNet?"
@@ -253,10 +253,10 @@ class Misson06(ingame_mission.IngameMission):
                     'Найдите цвет, который будет обозначен как "максимальное" и уничтожьте все блоки с этим цветом.',
                 ],[
                     'To hack this panel you must fire on blocks with correct colors. ',
-                    'Fire different blocks by your guns. Those blocks will activate sounds of this color. '
+                    'Fire different blocks with your guns. Those blocks will activate and sounds with the corresponding color. '
                     'Different blocks produce different sounds depending on the distance to the desired color:'
                     "Maximal, Very high, High, Medium. Low, Very low, Minimal.",
-                    'Find the color with sound "maximal" and destroy blocks with such color',
+                    'Find the color corresponding to "Maximal" and destroy the blocks with that color',
                 ]),
             ),
             TextDialog(
@@ -267,11 +267,11 @@ class Misson06(ingame_mission.IngameMission):
                     'В том числе и ракеты, сбивающие круиз. Торпеды могут об них сдетонировать.',
                     'Не пытайтесь сбить торпеды своим щитом. Вы будете мгновенно уничтожены!'
                 ],[
-                    'Enemy ships attack Missouri with heavy torpedoes',
-                    'You must attack torpedoes by your guns. You also can use any missiles. '
+                    'Enemy ships attack Missouri with heavy torpedoes, you must destroy them',
+                    'You can attack torpedoes with your guns. You also can use any missiles. '
                     'Also you can use CD missiles. '
-                    'Torpedoes can detonate by any missile.',
-                    'Do not try to detonate torpedoes by your shield. You will be immediately destroyed!'
+                    'Torpedoes can be detonated by any missile.',
+                    'Do not try to detonate torpedoes with your shield. You will be immediately destroyed!'
                 ]),
             ),
         ]
@@ -293,7 +293,7 @@ class Misson06(ingame_mission.IngameMission):
 
             NNObj(self, O.GOTO, name='T_goto_telescope01',
                   target='telescope01', nag=False),
-            NNObj(self, MS('Совершите физический удар по телескопу, не выходя из невидимости', 'Make physical hit on telescope without exiting out of invisibility mode'),
+            NNObj(self, MS('Совершите физический удар по телескопу, не выходя из невидимости', 'Ram the telescope without deactivating the cloak'),
                   name='T_hit_telescope01',
                   target='telescope01', nag=False),
             NNObj(self, O.GOTO, name='T_go_to_upper_wp01', target='t_go_to_upper_wp01', nag=False),
