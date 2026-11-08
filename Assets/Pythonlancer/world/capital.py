@@ -182,6 +182,7 @@ fate = {part_fate} ''')
     def root(self):
         params = [
             f'nickname = {self.ARCHETYPE}',
+            'extra_maneuvers = false',
             f'hit_pts = {self.get_hit_pts()}',
             f'ids_name = {self.get_ids_name()}',
             f'ids_info = {self.get_ids_info()}',

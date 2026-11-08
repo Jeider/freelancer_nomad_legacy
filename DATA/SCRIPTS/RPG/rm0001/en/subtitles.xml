@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Subtitles>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0001_l001_vendor.wav" TextArea="Cinematic">Hello, Trent. I am the head of the local trade authority.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0002_l001_player.wav" TextArea="Cinematic">Do you have any jobs for me?</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0003_l001_vendor.wav" TextArea="Cinematic">Of course. We need a locomotive driver. How many wagons can you handle?</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0004_l001_player.wav" TextArea="Cinematic">I would like a job with two wagons.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0005_l001_player.wav" TextArea="Cinematic">I would like a job with five wagons.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0006_l001_player.wav" TextArea="Cinematic">I would like a job with ten wagons.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0007_l001_player.wav" TextArea="Cinematic">I would like a job with twenty wagons.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0008_l001_vendor.wav" TextArea="Cinematic">Your work order is ready. You can launch now. The locomotive is waiting for you.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0009_l001_vendor.wav" TextArea="Cinematic">Sorry, son. I cannot help you. Your reputation is too poor.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0010_l001_player.wav" TextArea="Cinematic">What do you require of your drivers?</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0011_l001_vendor.wav" TextArea="Cinematic">We need reliable people. We will check your reputation first, then you can choose the number of wagons.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0012_l001_player.wav" TextArea="Cinematic">Let us get back to the job.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0013_l001_vendor.wav" TextArea="Cinematic">So, are you interested in working as a train driver?</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0014_l001_player.wav" TextArea="Cinematic">Not right now. See you around.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0015_l001_vendor.wav" TextArea="Cinematic">All right, Trent. See you around.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0016_l001_vendor.wav" TextArea="Cinematic">You already have an active assignment. Take care of that first.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0017_l001_vendor.wav" TextArea="Cinematic">I cannot issue the work order right now. Please come back later.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0018_l001_vendor.wav" TextArea="Cinematic">Hello, Trent. The local trade authority is at your service.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0019_l001_vendor.wav" TextArea="Cinematic">Hello, Trent. I run the trade authority here. What can I do for you?</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0020_l001_vendor.wav" TextArea="Cinematic">The work order is issued. Launch when you are ready, Trent. The locomotive is waiting.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0021_l001_vendor.wav" TextArea="Cinematic">With your reputation, I cannot entrust you with a train. Sorry, Trent.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0022_l001_vendor.wav" TextArea="Cinematic">Of course. We need train drivers. Your skill and licence determine how many wagons you may haul. Choose an assignment within your qualification.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0023_l001_vendor.wav" TextArea="Cinematic">We check your reputation and train driver licence. Your qualification is permanent: once you reach ten wagons, you may take ten-wagon trains on later shifts too.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0024_l001_player.wav" TextArea="Cinematic">Explain how to operate the locomotive.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0025_l001_vendor.wav" TextArea="Cinematic">Let us go through boarding the locomotive, coupling the wagons, and making a delivery. Where shall we start?</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0026_l001_player.wav" TextArea="Cinematic">How do I board the locomotive?</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0027_l001_vendor.wav" TextArea="Cinematic">Take the work order and launch. The locomotive is waiting by the docking fixture, marked as your objective. Select it and use the normal docking command to take the controls. Your own ship will be stored.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0028_l001_player.wav" TextArea="Cinematic">How do I couple the wagons?</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0029_l001_vendor.wav" TextArea="Cinematic">At the pickup marker, turn off cruise and autopilot. Align with the wagons and bring the rear coupling up to the first wagon: within fifteen metres, at a closing speed no higher than two metres per second. Press Couple wagons and wait for confirmation.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0030_l001_player.wav" TextArea="Cinematic">How do I deliver the cargo and uncouple the train?</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0031_l001_vendor.wav" TextArea="Cinematic">The work order names the destination system, and navigation shows the route. Bring the wagons to the delivery marker, turn off cruise and autopilot, and stop. Press Uncouple wagons, then wait for delivery and payment confirmation.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0001\rm0001_frag0032_l001_player.wav" TextArea="Cinematic">I have another question about the locomotive.</Static>
+</Subtitles>

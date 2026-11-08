@@ -89,7 +89,7 @@ class Misson01A(ingame_mission.IngameMission):
 
     def get_save_states(self):
         return [
-            SaveState(self, 'brandenburg', MS('Берлин, Аванпост Бранденбург', 'Berlin, Outpost Brandnburg')),
+            SaveState(self, 'brandenburg', MS('Берлин, Аванпост Бранденбург', 'Berlin, Brandenburg Outpost')),
         ]
 
     def get_offers(self):
@@ -119,24 +119,23 @@ class Misson01A(ingame_mission.IngameMission):
                 ru_content=MultiText([
                     'Добро пожаловать в мод Наследие Номадов!',
 
-                    'Если вы до этого не играли во Freelancer, то научиться играть будет не сложно. В основном игра управляется мышью, '
-                    'кнопка W - это увеличить скорость, X - реверс, Tab - форсаж. A D - стрейфы. Q E - крен. Z - выключенный двигатель, активирует '
-                    'движение по инерции. Shift+W - полёт в круизе',
+                    'Если вы до этого не играли во Freelancer, научиться будет несложно. В основном игра управляется мышью. '
+                    'Кнопка W увеличивает скорость, X — реверс, Tab — форсаж. A и D — стрейф. Q и E — крен. Z выключает двигатель и включает '
+                    'движение по инерции. Shift+W — полёт в круизе.',
 
-                    'Чтобы активировать действия автопилота вы должны нажимать или на кнопки на верхней панели или '
-                    'нажимать кнопки: F2 - это двигаться к указанной цели, F3 - стыковка с целью, F4 войти в формацию '
-                    'с целью.',
+                    'Действия автопилота включаются кнопками на верхней панели или клавишами: '
+                    'F2 — лететь к указанной цели, F3 — стыковка с целью, F4 — войти в формацию с целью.',
 
                     'Удачных полётов!',
                 ],[
                     'Greetings! Welcome to mod The Nomad Legacy!',
 
-                    "If you don't player in Freelancer, you can learn it very fast. Game mostly controller by your mouse, also with buttons: "
-                    "W - increase throttle, X - reverse, Tab - afterburn, A D - strafes, Q E - rotate corkscrew (a.k.a. do a barrel roll), "
-                    "Z - kill engine, activates motion by inertia."
+                    "If you have not played Freelancer before, it is not hard to learn. The game is mostly controlled with the mouse. "
+                    "W increases speed, X is reverse, Tab is afterburner. A and D strafe. Q and E roll. Z cuts the engine and lets you drift. "
+                    "Shift+W is cruise.",
 
-                    "To activate maneuvers of your autopilot you should use top bar or press keys: F2 - go to target, "
-                    "F3 - dock with target, F4 - join formation with target.",
+                    "Autopilot actions are the buttons on the top bar, or these keys: F2 flies to the selected target, "
+                    "F3 docks with the target, F4 joins formation with the target.",
 
                     "Good flights!"
                 ]),

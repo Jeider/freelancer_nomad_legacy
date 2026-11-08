@@ -1,9 +1,13 @@
 import hashlib
+import io
+import wave
 import json
 import pathlib
 import time
 
 import httpx
+from pydub import AudioSegment
+from pydub.silence import detect_nonsilent
 
 from settings import VOICESTUDIO_API_KEY, VOICESTUDIO_BASE_URL, VOICESTUDIO_MODEL
 
@@ -155,7 +159,7 @@ class VoiceStudioClone(object):
         return max(0.25, min(float(speed), 4.0))
 
     @classmethod
-    def generate_voice_bytes(cls, actor, text, source_lang, speech_lang=None, delivery=None, speed=None, source_name=None):
+    def generate_voice_bytes(cls, actor, text, source_lang, speech_lang=None, delivery=None, speed=None, source_name=None, denoise=True):
         if not text:
             raise Exception('text is mandatory')
         source_name = cls.source_name_of(actor, source_name)
@@ -167,9 +171,10 @@ class VoiceStudioClone(object):
         body = {
             'model': VOICESTUDIO_MODEL,
             'input': text,
-            'response_format': 'mp3',
+            'response_format': 'wav',
             'speed': cls._speed_of(actor, speed, delivery),
             'language': SPEECH_LANG.get(speech_lang, speech_lang),
+            'denoise': denoise,
         }
         if delivery is not None and delivery.instruct:
             body['instruct'] = delivery.instruct
@@ -179,25 +184,72 @@ class VoiceStudioClone(object):
         with cls._client() as client:
             body['voice'] = cls._profile_id(client, source_name, source_lang, source)
             preview = text if len(text) <= 80 else text[:77] + '...'
-            cls._log('speech voice=%s lang=%s speed=%s instruct=%s text=%r' % (
-                body['voice'], body['language'], body['speed'], body.get('instruct'), preview,
+            cls._log('speech voice=%s lang=%s speed=%s denoise=%s instruct=%s text=%r' % (
+                body['voice'], body['language'], body['speed'], body['denoise'], body.get('instruct'), preview,
             ))
             response = cls._request(client, 'POST', '/v1/audio/speech', json=body)
         if response.status_code != 200:
             raise Exception(
                 'VoiceStudio speech failed (%s): %s' % (response.status_code, response.text)
             )
-        return response.content
+        return cls._pcm_wav(response.content)
+
+    @staticmethod
+    def output_path(file_destination):
+        return pathlib.Path(file_destination).with_suffix('.wav')
+
+    @staticmethod
+    def _pcm_wav(voice_bytes):
+        # Reject MP3 (including MP3-in-WAV), raw PCM, empty/truncated responses.
+        # Preserve the engine's sample rate and channels; store integer PCM16.
+        try:
+            with wave.open(io.BytesIO(voice_bytes), 'rb') as wav:
+                channels, width, rate, frames, compression, _ = wav.getparams()
+                samples = wav.readframes(frames)
+        except (wave.Error, EOFError) as error:
+            raise ValueError('VoiceStudio must return an uncompressed PCM WAV') from error
+        if compression != 'NONE' or not frames or len(samples) != frames * channels * width:
+            raise ValueError('VoiceStudio returned empty or truncated PCM WAV')
+        segment = AudioSegment(data=samples, sample_width=width, frame_rate=rate, channels=channels)
+        result = io.BytesIO()
+        segment.set_sample_width(2).export(result, format='wav')
+        return result.getvalue()
 
     @classmethod
-    def _write(cls, voice_bytes, file_destination):
+    def trim_leading(cls, file_destination, thresh=-34, pad_ms=40, min_cut_ms=60):
         path = pathlib.Path(file_destination)
+        if any(part.lower() == 'data' for part in path.resolve().parts):
+            raise ValueError('Trimming source recordings cannot write DATA')
+        seg = AudioSegment.from_wav(path).set_sample_width(2)
+        regions = detect_nonsilent(seg, min_silence_len=180, silence_thresh=thresh)
+        if not regions:
+            return 0
+        start, end = regions[0]
+        if len(regions) > 1 and (end - start) < 250 and regions[1][0] - end >= 180:
+            start = regions[1][0]
+        cut = start - pad_ms
+        if cut < min_cut_ms or len(seg) - cut < 150:
+            return 0
+        tmp = path.with_suffix(path.suffix + '.trim')
+        seg[cut:].export(tmp, format='wav')
+        tmp.replace(path)
+        return cut
+
+    @classmethod
+    def _write(cls, voice_bytes, file_destination, trim_lead=False):
+        path = cls.output_path(file_destination)
+        if any(part.lower() == 'data' for part in path.resolve().parts):
+            raise ValueError('VoiceStudio writes source recordings only; use DataFolder for DATA')
+        pcm_wav = cls._pcm_wav(voice_bytes)
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_bytes(voice_bytes)
+        path.write_bytes(pcm_wav)
+        if trim_lead:
+            cls.trim_leading(path)
+        return path
 
     @classmethod
     def generate_ru_voice(cls, sound, file_destination):
-        cls._write(
+        return cls._write(
             cls.generate_voice_bytes(
                 actor=sound.line.actor,
                 text=sound.line.get_ru_ai_gen_text(),
@@ -210,7 +262,7 @@ class VoiceStudioClone(object):
 
     @classmethod
     def generate_en_voice(cls, sound, file_destination):
-        cls._write(
+        return cls._write(
             cls.generate_voice_bytes(
                 actor=sound.line.actor,
                 text=sound.line.get_en_ai_gen_text(),
@@ -223,14 +275,14 @@ class VoiceStudioClone(object):
 
     @classmethod
     def generate_ru_voice_simple(cls, actor, text, file_destination):
-        cls._write(
+        return cls._write(
             cls.generate_voice_bytes(actor=actor, text=text, source_lang='ru', speech_lang='ru'),
             file_destination,
         )
 
     @classmethod
-    def generate_sound(cls, actor, text, file_destination, source_name=None, source_lang='ru', speech_lang=None, delivery=None, speed=None):
-        cls._write(
+    def generate_sound(cls, actor, text, file_destination, source_name=None, source_lang='ru', speech_lang=None, delivery=None, speed=None, denoise=True, trim_lead=False):
+        return cls._write(
             cls.generate_voice_bytes(
                 actor=actor,
                 text=text,
@@ -239,6 +291,8 @@ class VoiceStudioClone(object):
                 delivery=delivery,
                 speed=speed,
                 source_name=source_name,
+                denoise=denoise,
             ),
             file_destination,
+            trim_lead=trim_lead,
         )

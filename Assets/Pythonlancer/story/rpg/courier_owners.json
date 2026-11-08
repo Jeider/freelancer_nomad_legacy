@@ -1,0 +1,328 @@
+{
+  "schema": 1,
+  "bases": [
+    {
+      "base": "br_avl_01_base",
+      "system": "br_avl",
+      "faction": "br_grp",
+      "economic_type": "LargePlanet",
+      "name_ru": "Планета Авалон",
+      "name_en": "Planet Avalon",
+      "group": "rm0200",
+      "voice_group": "rm0001",
+      "actor": "loco_br_avl_01",
+      "appearance": {
+        "head": "ge_male1_head",
+        "body": "br_commtrader_body"
+      },
+      "spot": "Zg/NPC/mFloor4/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "br_cam_01_base",
+      "system": "br_cam",
+      "faction": "br_grp",
+      "economic_type": "LargePlanet",
+      "name_ru": "Планета Кембридж",
+      "name_en": "Planet Cambridge",
+      "group": "rm0201",
+      "voice_group": "rm0001",
+      "actor": "loco_br_cam_01",
+      "appearance": {
+        "head": "ge_male2_head",
+        "body": "br_commtrader_body"
+      },
+      "spot": "Zg/NPC/mTable2/02/A/SitLow",
+      "posture": "sit"
+    },
+    {
+      "base": "br_wrw_01_base",
+      "system": "br_wrw",
+      "faction": "br_grp",
+      "economic_type": "LargePlanet",
+      "name_ru": "Планета Уорик",
+      "name_en": "Warwick Planet",
+      "group": "rm0202",
+      "voice_group": "rm0001",
+      "actor": "loco_br_wrw_01",
+      "appearance": {
+        "head": "ge_male3_head",
+        "body": "br_commtrader_body"
+      },
+      "spot": "Zg/NPC/mFloor2/02/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "br_wrw_02_base",
+      "system": "br_wrw",
+      "faction": "br_grp",
+      "economic_type": "Megabase",
+      "name_ru": "Станция Лидс",
+      "name_en": "Station Leeds",
+      "group": "rm0203",
+      "voice_group": "rm0001",
+      "actor": "loco_br_wrw_02",
+      "appearance": {
+        "head": "ge_male4_head",
+        "body": "br_commtrader_body"
+      },
+      "spot": "Zg/NPC/mTable2/01/A/SitLow",
+      "posture": "sit"
+    },
+    {
+      "base": "ku_hkd_01_base",
+      "system": "ku_hkd",
+      "faction": "ku_grp",
+      "economic_type": "LargePlanet",
+      "name_ru": "Планета Хоккайдо",
+      "name_en": "Planet Hokkaido",
+      "group": "rm0204",
+      "voice_group": "rm0001",
+      "actor": "loco_ku_hkd_01",
+      "appearance": {
+        "head": "ge_male6_head",
+        "body": "ku_commtrader_body"
+      },
+      "spot": "Zg/NPC/mTable3/01/A/SitLow",
+      "posture": "sit"
+    },
+    {
+      "base": "ku_hns_01_base",
+      "system": "ku_hns",
+      "faction": "ku_grp",
+      "economic_type": "LargePlanet",
+      "name_ru": "Планета Хонсю",
+      "name_en": "Planet Honshu",
+      "group": "rm0205",
+      "voice_group": "rm0001",
+      "actor": "loco_ku_hns_01",
+      "appearance": {
+        "head": "ge_male7_head",
+        "body": "ku_commtrader_body"
+      },
+      "spot": "Zg/NPC/mTable4/01/A/SitLow",
+      "posture": "sit"
+    },
+    {
+      "base": "ku_ksu_01_base",
+      "system": "ku_ksu",
+      "faction": "ku_grp",
+      "economic_type": "LargePlanet",
+      "name_ru": "Планета Кусю",
+      "name_en": "Planet Kyushu",
+      "group": "rm0206",
+      "voice_group": "rm0001",
+      "actor": "loco_ku_ksu_01",
+      "appearance": {
+        "head": "pl_male1_head",
+        "body": "ku_commtrader_body"
+      },
+      "spot": "Zg/NPC/mTable4/01/A/SitLow",
+      "posture": "sit"
+    },
+    {
+      "base": "ku_ksu_03_base",
+      "system": "ku_ksu",
+      "faction": "ku_grp",
+      "economic_type": "Megabase",
+      "name_ru": "Станция Токио",
+      "name_en": "Tokyo Station",
+      "group": "rm0207",
+      "voice_group": "rm0001",
+      "actor": "loco_ku_ksu_03",
+      "appearance": {
+        "head": "pl_male2_head",
+        "body": "ku_commtrader_body"
+      },
+      "spot": "Zg/NPC/mFloor2/02/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "ku_tgk_01_base",
+      "system": "ku_tgk",
+      "faction": "ku_grp",
+      "economic_type": "MegaTradingbase",
+      "name_ru": "Станция Йокогама",
+      "name_en": "Station Yokohama",
+      "group": "rm0208",
+      "voice_group": "rm0001",
+      "actor": "loco_ku_tgk_01",
+      "appearance": {
+        "head": "pl_male3_head",
+        "body": "ku_commtrader_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "li_cal_01_base",
+      "system": "li_cal",
+      "faction": "li_grp",
+      "economic_type": "LargePlanet",
+      "name_ru": "Планета Калифорния",
+      "name_en": "Planet California",
+      "group": "rm0209",
+      "voice_group": "rm0001",
+      "actor": "loco_li_cal_01",
+      "appearance": {
+        "head": "pl_male4_head",
+        "body": "li_commtrader_body"
+      },
+      "spot": "Zg/NPC/mFloor2/02/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "li_col_01_base",
+      "system": "li_col",
+      "faction": "li_grp",
+      "economic_type": "LargePlanet",
+      "name_ru": "Планета Колумбия",
+      "name_en": "Planet Columbia",
+      "group": "rm0210",
+      "voice_group": "rm0001",
+      "actor": "loco_li_col_01",
+      "appearance": {
+        "head": "pl_male5_head",
+        "body": "li_commtrader_body"
+      },
+      "spot": "Zg/NPC/mFloor2/02/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "li_for_01_base",
+      "system": "li_for",
+      "faction": "li_grp",
+      "economic_type": "LargePlanet",
+      "name_ru": "Планета Форбс",
+      "name_en": "Forbes Planet",
+      "group": "rm0211",
+      "voice_group": "rm0001",
+      "actor": "loco_li_for_01",
+      "appearance": {
+        "head": "pl_male6_head",
+        "body": "li_commtrader_body"
+      },
+      "spot": "Zg/NPC/mTable1/05/A/SitLow",
+      "posture": "sit"
+    },
+    {
+      "base": "li_mnh_01_base",
+      "system": "li_mnh",
+      "faction": "li_grp",
+      "economic_type": "ManhattanSuperPlanet",
+      "name_ru": "Планета Манхеттен",
+      "name_en": "Planet Manhattan",
+      "group": "rm0212",
+      "voice_group": "rm0001",
+      "actor": "loco_li_mnh_01",
+      "appearance": {
+        "head": "ge_male1_head",
+        "body": "li_commtrader_body"
+      },
+      "spot": "Zg/NPC/mFloor3/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "li_mnh_03_base",
+      "system": "li_mnh",
+      "faction": "li_grp",
+      "economic_type": "Megabase",
+      "name_ru": "Верфь Норфолк",
+      "name_en": "Norfolk Shipyard",
+      "group": "rm0213",
+      "voice_group": "rm0001",
+      "actor": "loco_li_mnh_03",
+      "appearance": {
+        "head": "ge_male2_head",
+        "body": "li_commtrader_body"
+      },
+      "spot": "Zg/NPC/mFloor2/02/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "rh_ber_01_base",
+      "system": "rh_ber",
+      "faction": "rh_grp",
+      "economic_type": "LargePlanet",
+      "name_ru": "Планета Берлин",
+      "name_en": "Planet Berlin",
+      "group": "rm0214",
+      "voice_group": "rm0001",
+      "actor": "loco_rh_ber_01",
+      "appearance": {
+        "head": "ge_male3_head",
+        "body": "rh_commtrader_body"
+      },
+      "spot": "Zg/NPC/mFloor2/02/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "rh_ber_04_base",
+      "system": "rh_ber",
+      "faction": "rh_grp",
+      "economic_type": "Megabase",
+      "name_ru": "Станция Потсдам",
+      "name_en": "Potsdam Station",
+      "group": "rm0215",
+      "voice_group": "rm0001",
+      "actor": "loco_rh_ber_04",
+      "appearance": {
+        "head": "ge_male4_head",
+        "body": "rh_commtrader_body"
+      },
+      "spot": "Zg/NPC/mFloor2/02/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "rh_biz_01_base",
+      "system": "rh_biz",
+      "faction": "rh_grp",
+      "economic_type": "LargePlanet",
+      "name_ru": "Планета Бисмарк",
+      "name_en": "Planet Bismarck",
+      "group": "rm0216",
+      "voice_group": "rm0001",
+      "actor": "rpg_biz_contact",
+      "appearance": {
+        "head": "br_brighton_head",
+        "body": "rh_commtrader_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "rh_stut_01_base",
+      "system": "rh_stut",
+      "faction": "rh_grp",
+      "economic_type": "LargePlanet",
+      "name_ru": "Планета Штутгарт",
+      "name_en": "Planet Stuttgart",
+      "group": "rm0217",
+      "voice_group": "rm0001",
+      "actor": "loco_rh_stut_01",
+      "appearance": {
+        "head": "ge_male7_head",
+        "body": "rh_commtrader_body"
+      },
+      "spot": "Zg/NPC/mTable4/01/A/SitLow",
+      "posture": "sit"
+    },
+    {
+      "base": "rh_stut_04_base",
+      "system": "rh_stut",
+      "faction": "rh_grp",
+      "economic_type": "LargePlanet",
+      "name_ru": "Станция Мангейм",
+      "name_en": "Mannheim Station",
+      "group": "rm0218",
+      "voice_group": "rm0001",
+      "actor": "loco_rh_stut_04",
+      "appearance": {
+        "head": "pl_male1_head",
+        "body": "rh_commtrader_body"
+      },
+      "spot": "Zg/NPC/mFloor2/02/A/Stand",
+      "posture": "stand"
+    }
+  ]
+}

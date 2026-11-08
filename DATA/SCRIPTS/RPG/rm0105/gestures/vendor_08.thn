@@ -1,0 +1,16 @@
+-- Complete authored gesture step; independent of speech fragments.
+duration=10.400000
+entities={
+{entity_name="Char_rpg_avalon_parking_officer",type=DEFORMABLE,template_name="",flags=LIT_DYNAMIC,lt_grp=0,srt_grp=0,userprops={Actor="park_co_cad_01",category="Character"}}
+}
+events={
+{
+    0.4,
+    START_MOTION,
+    {"Char_rpg_avalon_parking_officer"},
+    {animation="Sc_MLBODY_STND_UNCRSS_ARMS_000LV_XA_02",
+     duration=10, time_scale=0.5, start_time=0, weight=1, heading=-1
+       , trans_time=0.8 
+     }
+}
+}

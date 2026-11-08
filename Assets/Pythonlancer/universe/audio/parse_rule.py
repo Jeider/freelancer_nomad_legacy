@@ -284,6 +284,14 @@ class RuleShipAskFreighter(RuleMiddle):
     TEXT_TEMPLATE = 'обращаюсь к грузовику типа {text}, куда летите'
 
 
+class RuleAskNoProcess(RuleDefault):
+    SUBFOLDER = SUBFOLDER_MIDDLE
+
+
+class RuleDefaultNoProcess(RuleDefault):
+    SUBFOLDER = SUBFOLDER_DEFAULT
+
+
 class RuleFrom(RuleMiddle):
     TEXT_TEMPLATE = 'Спокойно летит {text} красивых мест'
 

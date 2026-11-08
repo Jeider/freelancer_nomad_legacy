@@ -515,12 +515,12 @@ class Misson13(ingame_mission.IngameMission):
             TextDialog(
                 self, 'work_in_progress', MS('Миссия завершена', 'Mission accomplished'),
                 ru_content=MultiText([
-                    'Вы успешно завершили основную кампанию Наследия Номадов! Но на этом ваш миссия закончена. Что '
-                    'же может быть дальше? Пока не известно!',
+                    'Вы успешно завершили основную кампанию Наследия Номадов! Но на этом ваша миссия не закончена. Что '
+                    'же может быть дальше? Пока неизвестно!',
 
                     'Главный герой был подхвачен таинственным спасителем и в будущем узнает много нового о том, что происходило в мире, '
                     'пока он был внутри Чёрной дыры. А произошло много чего, ведь игрок получил эффект как у планеты Миллер и был перенесён '
-                    'в будущее через 10 лет после входа Чёрную дыру!',
+                    'в будущее через 10 лет после входа в Чёрную дыру!',
 
                     'Хотите узнать, что будет с героем дальше и в какие приключения он еще попадёт? Тогда поддержите проект '
                     'способами, которые указаны на сайте или в лончере проекта. Вы должны понимать, что львиная доля работы '
@@ -557,7 +557,7 @@ class Misson13(ingame_mission.IngameMission):
                 self, 'collect_power', MS('Сбор энергии Чёрной дыры', 'Collecting of Black Hole\'s power'),
                 ru_content=MultiText([
                     'Атакуйте сгустки энергии и собирайте полученный концентрат, чтобы загрузить '
-                    'номадское энергоядро энергией Чёрный дыры'
+                    'номадское энергоядро энергией Чёрной дыры.'
                 ],[
                     'Attack the energy clots and collect the resulting concentrate '
                     'to charge the Nomad energy core with the energy of the Black Hole'
@@ -1062,12 +1062,12 @@ class Misson13(ingame_mission.IngameMission):
         )
 
         defined_points.append(
-            Solar(self, S.sphere2_inside, 'inside_column1', ru_name=MS('Поток энергии Сферы', 'The Sphere energy steam'),
+            Solar(self, S.sphere2_inside, 'inside_column1', ru_name=MS('Поток энергии Сферы', 'Sphere energy stream'),
                   labels=['enemy', 'energy_beam'],
                   archetype='sphere_energy_column', loadout='sphere_column_power'),
         )
         defined_points.append(
-            Solar(self, S.sphere2_inside, 'inside_column2', ru_name=MS('Поток энергии Сферы', 'The Sphere energy steam'),
+            Solar(self, S.sphere2_inside, 'inside_column2', ru_name=MS('Поток энергии Сферы', 'Sphere energy stream'),
                   labels=['enemy', 'energy_beam'],
                   archetype='sphere_energy_column', loadout='sphere_column_power'),
         )
@@ -1370,8 +1370,8 @@ class Misson13(ingame_mission.IngameMission):
             NNObj(self, O.GOTO, target='inside06'),
             NNObj(self, O.GOTO, target='inside07'),
 
-            NNObj(self, MS('Уничтожьте энергопоток', 'Destroy energy steam'), target='inside_column1'),
-            NNObj(self, MS('Уничтожьте энергопоток', 'Destroy energy steam'), target='inside_column2'),
+            NNObj(self, MS('Уничтожьте энергопоток', 'Destroy the energy stream'), target='inside_column1'),
+            NNObj(self, MS('Уничтожьте энергопоток', 'Destroy the energy stream'), target='inside_column2'),
 
             NNObj(self, O.GOTO, target='exit_catacomb1'),
             NNObj(self, O.GOTO, target='exit_catacomb2'),
@@ -1425,7 +1425,7 @@ class Misson13(ingame_mission.IngameMission):
             NNObj(self, O.DESTROY_ROAD_LOCK, name='om13alt_ast_a_dmg05', target='om13alt_ast_a_dmg05'),
             NNObj(self, O.DESTROY_ROAD_LOCK, name='om13alt_ast_a_dmg06', target='om13alt_ast_a_dmg06'),
 
-            NNObj(self, MS('Уничтожьте номадские истребитекли', "Destroy nomad fighters"), name='destroy_chamber_elite'),
+            NNObj(self, MS('Уничтожьте номадские истребители', 'Destroy the Nomad fighters'), name='destroy_chamber_elite'),
             NNObj(self, MS('Уничтожьте зерно', 'Destroy kernel'), name='destroy_inside_kernel02', target='inside_kernel02'),
 
             NNObj(self, MS('Подберите энергоядро', 'Collect power cell'), name='get_om13_powercell'),
@@ -1435,7 +1435,7 @@ class Misson13(ingame_mission.IngameMission):
             NNObj(self, MS('Направляйтесь к Крыгу', 'Go to the Krieg'), target='bh_to_krieg_run', towards=True),
             NNObj(self, MS('Защищайтесь!', 'Defend yourself!'), name='bh_defend'),
             NNObj(self, MS('Добудьте энергию чёрной дыры', 'Collect energy of Black Hole'), name='bh_collect_power'),
-            NNObj(self, MS('Учнитожьте номадские наросты на Крыге', 'Destroy nomad growths on the Krieg'), name='bh_destroy_tits'),
+            NNObj(self, MS('Уничтожьте номадские наросты на Крыге', 'Destroy the Nomad growths on Krieg'), name='bh_destroy_tits'),
             NNObj(self, MS('Покиньте чрево Крыга', 'Leave Krieg\'s womb'), target='bh_to_krieg_away', towards=True),
         ]
 

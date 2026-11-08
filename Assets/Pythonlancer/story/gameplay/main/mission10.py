@@ -352,8 +352,8 @@ class Misson10(ingame_mission.IngameMission):
             NNObj(self, O.LAUNCH, name='launch'),
 
             NNObj(self, O.GOTO, name='first_puff', target='first_puff', nag=False),
-            NNObj(self, MS('Доберитесь большого облака, минуя патрули',
-                           'Reach main cloud without getting discovered by patrols'),
+            NNObj(self, MS('Доберитесь до большого облака, минуя патрули',
+                           'Reach the main cloud without being spotted by patrols'),
                   name='last_puff', target='last_puff', nag=False),
             NNObj(self, O.GOTO, name='point_control', target='point_control'),
 
@@ -367,7 +367,7 @@ class Misson10(ingame_mission.IngameMission):
 
             NNObj(self, MS('Уничтожьте орудийные платформы', 'Destroy weapons platforms'), name='destroy_wplatforms'),
 
-            NNObj(self, MS('Обеспечьте стыковку транспорта', 'Defend transport while it docking with base'), name='defend_armored'),
+            NNObj(self, MS('Обеспечьте стыковку транспорта', 'Defend the transport while it docks with the base'), name='defend_armored'),
             NNObj(self, MS('Ожидайте транспорт', 'Wait for transport'), name='wait_for_armored'),
             NNObj(self, MS('Обеспечьте защиту транспорта, пока он покидает зону битвы', 'Defend transport while it leaves the battle zone'),
                   name='wait_for_armored_left_out'),

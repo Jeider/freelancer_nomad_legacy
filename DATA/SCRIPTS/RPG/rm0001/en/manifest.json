@@ -1,0 +1,1047 @@
+{
+  "schema": 1,
+  "group": "rm0001",
+  "language": "en",
+  "runtime_connected": false,
+  "contract": {
+    "actor_binding": {
+      "vendor": "rpg_biz_contact",
+      "player": "Player"
+    },
+    "bind_mode": 2,
+    "require_existing_actors": true,
+    "session_cameras": {
+      "vendor": "RpgCamera_vendor",
+      "player": "RpgCamera_player"
+    },
+    "position_actors_once": true,
+    "skip": "current_fragment_only"
+  },
+  "dialogue": {
+    "schema": 1,
+    "id": "rm0001",
+    "status": "design_prototype",
+    "scenario": "train_courier_vendor",
+    "start": "greeting",
+    "binding": {
+      "vendor": "rpg_biz_contact",
+      "player": "Player"
+    },
+    "rules": {
+      "wagon_options": [
+        2,
+        5,
+        10,
+        20
+      ],
+      "reputation": {
+        "enabled": true,
+        "faction": "contact.affiliation",
+        "minimum": null
+      },
+      "first_greeting": "rm0001_frag0001",
+      "rotation": "shuffle_bag_no_immediate_repeat",
+      "escape_during_speech": "skip_current_fragment",
+      "escape_during_wagon_choice": "main_menu"
+    },
+    "fragments": [
+      {
+        "id": "rm0001_frag0001",
+        "role": "vendor",
+        "pool": "greeting",
+        "ru": "Привет, Трент. Я глава местного торгового управления.",
+        "en": "Hello, Trent. I am the head of the local trade authority."
+      },
+      {
+        "id": "rm0001_frag0002",
+        "role": "player",
+        "pool": "ask_jobs",
+        "ru": "Есть задания для меня?",
+        "en": "Do you have any jobs for me?"
+      },
+      {
+        "id": "rm0001_frag0003",
+        "role": "vendor",
+        "pool": "legacy_offer",
+        "ru": "Конечно есть. Нам нужен машинист локомотива. Какой состав возьмёшь?",
+        "en": "Of course. We need a locomotive driver. How many wagons can you handle?"
+      },
+      {
+        "id": "rm0001_frag0004",
+        "role": "player",
+        "pool": "choose_2",
+        "ru": "Хочу задание с двумя вагонами.",
+        "en": "I would like a job with two wagons."
+      },
+      {
+        "id": "rm0001_frag0005",
+        "role": "player",
+        "pool": "choose_5",
+        "ru": "Хочу задание с пятью вагонами.",
+        "en": "I would like a job with five wagons."
+      },
+      {
+        "id": "rm0001_frag0006",
+        "role": "player",
+        "pool": "choose_10",
+        "ru": "Хочу задание с десятью вагонами.",
+        "en": "I would like a job with ten wagons."
+      },
+      {
+        "id": "rm0001_frag0007",
+        "role": "player",
+        "pool": "choose_20",
+        "ru": "Хочу задание с двадцатью вагонами.",
+        "en": "I would like a job with twenty wagons."
+      },
+      {
+        "id": "rm0001_frag0008",
+        "role": "vendor",
+        "pool": "issued",
+        "ru": "Я выдаю тебе наряд. Можешь вылетать в космос: локомотив ждёт тебя.",
+        "en": "Your work order is ready. You can launch now. The locomotive is waiting for you."
+      },
+      {
+        "id": "rm0001_frag0009",
+        "role": "vendor",
+        "pool": "bad_reputation",
+        "ru": "Извини, сынок, ничем не могу помочь. У тебя слишком плохая репутация.",
+        "en": "Sorry, son. I cannot help you. Your reputation is too poor."
+      },
+      {
+        "id": "rm0001_frag0010",
+        "role": "player",
+        "pool": "ask_requirements",
+        "ru": "Какие у вас требования к машинисту?",
+        "en": "What do you require of your drivers?"
+      },
+      {
+        "id": "rm0001_frag0011",
+        "role": "vendor",
+        "pool": "legacy_requirements",
+        "ru": "Нам нужны надёжные люди. Сначала проверим твою репутацию, потом выберешь число вагонов.",
+        "en": "We need reliable people. We will check your reputation first, then you can choose the number of wagons."
+      },
+      {
+        "id": "rm0001_frag0012",
+        "role": "player",
+        "pool": "back",
+        "ru": "Вернёмся к работе.",
+        "en": "Let us get back to the job."
+      },
+      {
+        "id": "rm0001_frag0013",
+        "role": "vendor",
+        "pool": "resume",
+        "ru": "Итак, тебя интересует работа машинистом?",
+        "en": "So, are you interested in working as a train driver?"
+      },
+      {
+        "id": "rm0001_frag0014",
+        "role": "player",
+        "pool": "leave",
+        "ru": "Не сейчас. До встречи.",
+        "en": "Not right now. See you around."
+      },
+      {
+        "id": "rm0001_frag0015",
+        "role": "vendor",
+        "pool": "farewell",
+        "ru": "Хорошо, Трент. До встречи.",
+        "en": "All right, Trent. See you around."
+      },
+      {
+        "id": "rm0001_frag0016",
+        "role": "vendor",
+        "pool": "busy",
+        "ru": "У тебя уже есть действующее задание. Сначала разберись с ним.",
+        "en": "You already have an active assignment. Take care of that first."
+      },
+      {
+        "id": "rm0001_frag0017",
+        "role": "vendor",
+        "pool": "failed",
+        "ru": "Сейчас не получается оформить наряд. Попробуй обратиться позже.",
+        "en": "I cannot issue the work order right now. Please come back later."
+      },
+      {
+        "id": "rm0001_frag0018",
+        "role": "vendor",
+        "pool": "greeting",
+        "ru": "Здравствуй, Трент. Местное торговое управление к твоим услугам.",
+        "en": "Hello, Trent. The local trade authority is at your service."
+      },
+      {
+        "id": "rm0001_frag0019",
+        "role": "vendor",
+        "pool": "greeting",
+        "ru": "Привет, Трент. Я здесь руковожу торговым управлением. По какому вопросу?",
+        "en": "Hello, Trent. I run the trade authority here. What can I do for you?"
+      },
+      {
+        "id": "rm0001_frag0020",
+        "role": "vendor",
+        "pool": "issued",
+        "ru": "Наряд оформлен. Вылетай, Трент. Локомотив уже ждёт.",
+        "en": "The work order is issued. Launch when you are ready, Trent. The locomotive is waiting."
+      },
+      {
+        "id": "rm0001_frag0021",
+        "role": "vendor",
+        "pool": "bad_reputation",
+        "ru": "С такой репутацией я не могу доверить тебе состав. Извини, Трент.",
+        "en": "With your reputation, I cannot entrust you with a train. Sorry, Trent."
+      },
+      {
+        "id": "rm0001_frag0022",
+        "role": "vendor",
+        "pool": "licensed_offer",
+        "ru": "Конечно. Нам нужны машинисты. Допустимая длина состава зависит от твоего навыка и лицензии. Выбирай наряд в пределах своего допуска.",
+        "en": "Of course. We need train drivers. Your skill and licence determine how many wagons you may haul. Choose an assignment within your qualification."
+      },
+      {
+        "id": "rm0001_frag0023",
+        "role": "vendor",
+        "pool": "licensed_requirements",
+        "ru": "Проверяем репутацию и лицензию машиниста. Достигнутый допуск сохраняется: дорос до десяти вагонов — можешь брать такие составы и в следующих сменах.",
+        "en": "We check your reputation and train driver licence. Your qualification is permanent: once you reach ten wagons, you may take ten-wagon trains on later shifts too."
+      },
+      {
+        "id": "rm0001_frag0024",
+        "role": "player",
+        "pool": "ask_tutorial",
+        "ru": "Объясни, как управлять локомотивом.",
+        "en": "Explain how to operate the locomotive."
+      },
+      {
+        "id": "rm0001_frag0025",
+        "role": "vendor",
+        "pool": "tutorial",
+        "ru": "Разберём по порядку: как занять локомотив, подцепить вагоны и сдать состав. С чего начнём?",
+        "en": "Let us go through boarding the locomotive, coupling the wagons, and making a delivery. Where shall we start?"
+      },
+      {
+        "id": "rm0001_frag0026",
+        "role": "player",
+        "pool": "ask_boarding",
+        "ru": "Как мне сесть в локомотив?",
+        "en": "How do I board the locomotive?"
+      },
+      {
+        "id": "rm0001_frag0027",
+        "role": "vendor",
+        "pool": "boarding",
+        "ru": "Получи наряд и вылетай. Локомотив ждёт у причала и отмечен заданием. Выбери его и выполни обычную стыковку: так ты займёшь место машиниста. Личный корабль останется на хранении.",
+        "en": "Take the work order and launch. The locomotive is waiting by the docking fixture, marked as your objective. Select it and use the normal docking command to take the controls. Your own ship will be stored."
+      },
+      {
+        "id": "rm0001_frag0028",
+        "role": "player",
+        "pool": "ask_coupling",
+        "ru": "Как прицепить вагоны?",
+        "en": "How do I couple the wagons?"
+      },
+      {
+        "id": "rm0001_frag0029",
+        "role": "vendor",
+        "pool": "coupling",
+        "ru": "У маркера погрузки отключи круиз и автопилот. Выровняй локомотив с вагонами и подведи кормовую сцепку к первому вагону: не дальше пятнадцати метров, скорость сближения — до двух метров в секунду. Нажми «Сцепить вагоны» и дождись подтверждения.",
+        "en": "At the pickup marker, turn off cruise and autopilot. Align with the wagons and bring the rear coupling up to the first wagon: within fifteen metres, at a closing speed no higher than two metres per second. Press Couple wagons and wait for confirmation."
+      },
+      {
+        "id": "rm0001_frag0030",
+        "role": "player",
+        "pool": "ask_delivery",
+        "ru": "Как сдать груз и отцепить состав?",
+        "en": "How do I deliver the cargo and uncouple the train?"
+      },
+      {
+        "id": "rm0001_frag0031",
+        "role": "vendor",
+        "pool": "delivery",
+        "ru": "Система назначения указана в наряде, маршрут — в навигации. Приведи вагоны к маркеру получателя, отключи круиз и автопилот и остановись. Нажми «Отцепить вагоны». Дождись подтверждения сдачи и оплаты.",
+        "en": "The work order names the destination system, and navigation shows the route. Bring the wagons to the delivery marker, turn off cruise and autopilot, and stop. Press Uncouple wagons, then wait for delivery and payment confirmation."
+      },
+      {
+        "id": "rm0001_frag0032",
+        "role": "player",
+        "pool": "tutorial_back",
+        "ru": "У меня ещё вопрос о локомотиве.",
+        "en": "I have another question about the locomotive."
+      }
+    ],
+    "nodes": {
+      "greeting": {
+        "pool": "greeting",
+        "choices": "main"
+      },
+      "offer": {
+        "pool": "licensed_offer",
+        "choices": "wagons"
+      },
+      "requirements": {
+        "pool": "licensed_requirements",
+        "choices": "information"
+      },
+      "resume": {
+        "pool": "resume",
+        "choices": "main"
+      },
+      "issued": {
+        "pool": "issued",
+        "terminal": true
+      },
+      "bad_reputation": {
+        "pool": "bad_reputation",
+        "choices": "refusal"
+      },
+      "busy": {
+        "pool": "busy",
+        "choices": "refusal"
+      },
+      "failed": {
+        "pool": "failed",
+        "choices": "refusal"
+      },
+      "farewell": {
+        "pool": "farewell",
+        "terminal": true
+      },
+      "tutorial": {
+        "pool": "tutorial",
+        "choices": "tutorial_topics"
+      },
+      "boarding": {
+        "pool": "boarding",
+        "choices": "tutorial_return"
+      },
+      "coupling": {
+        "pool": "coupling",
+        "choices": "tutorial_return"
+      },
+      "delivery": {
+        "pool": "delivery",
+        "choices": "tutorial_return"
+      }
+    },
+    "choice_sets": {
+      "main": [
+        "ask_jobs",
+        "requirements",
+        "tutorial",
+        "leave"
+      ],
+      "wagons": [
+        "choose_2",
+        "choose_5",
+        "choose_10",
+        "choose_20"
+      ],
+      "information": [
+        "ask_jobs",
+        "tutorial",
+        "back",
+        "leave"
+      ],
+      "refusal": [
+        "requirements",
+        "leave"
+      ],
+      "tutorial_topics": [
+        "boarding",
+        "coupling",
+        "delivery",
+        "back"
+      ],
+      "tutorial_return": [
+        "tutorial_back",
+        "ask_jobs",
+        "back",
+        "leave"
+      ]
+    },
+    "choices": {
+      "ask_jobs": {
+        "pool": "ask_jobs",
+        "ru": "Есть задания для меня?",
+        "en": "Any jobs for me?",
+        "action": "check_courier_eligibility",
+        "outcomes": {
+          "eligible": "offer",
+          "bad_reputation": "bad_reputation",
+          "busy": "busy",
+          "failed": "failed"
+        }
+      },
+      "requirements": {
+        "pool": "ask_requirements",
+        "ru": "Какие требования?",
+        "en": "What are the requirements?",
+        "goto": "requirements"
+      },
+      "back": {
+        "pool": "back",
+        "ru": "Вернёмся к работе",
+        "en": "Back to business",
+        "goto": "resume"
+      },
+      "leave": {
+        "pool": "leave",
+        "ru": "Не сейчас. До встречи",
+        "en": "Not now. Goodbye",
+        "goto": "farewell"
+      },
+      "choose_2": {
+        "pool": "choose_2",
+        "ru": "Состав: 2 вагона",
+        "en": "Train: 2 wagons",
+        "action": "start_train_courier",
+        "first_wagons": 2,
+        "outcomes": {
+          "started": "issued",
+          "bad_reputation": "bad_reputation",
+          "busy": "busy",
+          "failed": "failed"
+        }
+      },
+      "choose_5": {
+        "pool": "choose_5",
+        "ru": "Состав: 5 вагонов",
+        "en": "Train: 5 wagons",
+        "action": "start_train_courier",
+        "first_wagons": 5,
+        "outcomes": {
+          "started": "issued",
+          "bad_reputation": "bad_reputation",
+          "busy": "busy",
+          "failed": "failed"
+        }
+      },
+      "choose_10": {
+        "pool": "choose_10",
+        "ru": "Состав: 10 вагонов",
+        "en": "Train: 10 wagons",
+        "action": "start_train_courier",
+        "first_wagons": 10,
+        "outcomes": {
+          "started": "issued",
+          "bad_reputation": "bad_reputation",
+          "busy": "busy",
+          "failed": "failed"
+        }
+      },
+      "choose_20": {
+        "pool": "choose_20",
+        "ru": "Состав: 20 вагонов",
+        "en": "Train: 20 wagons",
+        "action": "start_train_courier",
+        "first_wagons": 20,
+        "outcomes": {
+          "started": "issued",
+          "bad_reputation": "bad_reputation",
+          "busy": "busy",
+          "failed": "failed"
+        }
+      },
+      "tutorial": {
+        "pool": "ask_tutorial",
+        "ru": "Как управлять локомотивом?",
+        "en": "How do I operate the locomotive?",
+        "goto": "tutorial"
+      },
+      "boarding": {
+        "pool": "ask_boarding",
+        "ru": "Как сесть в локомотив?",
+        "en": "How do I board?",
+        "goto": "boarding"
+      },
+      "coupling": {
+        "pool": "ask_coupling",
+        "ru": "Как прицепить вагоны?",
+        "en": "How do I couple wagons?",
+        "goto": "coupling"
+      },
+      "delivery": {
+        "pool": "ask_delivery",
+        "ru": "Как сдать груз?",
+        "en": "How do I make a delivery?",
+        "goto": "delivery"
+      },
+      "tutorial_back": {
+        "pool": "tutorial_back",
+        "ru": "Ещё вопрос о локомотиве",
+        "en": "Another locomotive question",
+        "goto": "tutorial"
+      }
+    },
+    "casting": {
+      "vendor": "RpgTradeDirector",
+      "player": "Trent"
+    }
+  },
+  "fragments": [
+    {
+      "id": "rm0001_frag0001",
+      "role": "vendor",
+      "pool": "greeting",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0001.thn",
+      "sha256": "9901bd425e15b78178e7c495acc821ceffbfa8d56c31e289fd6cdd7f6ea0fc4c",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0001_l001_vendor.wav",
+      "audio_sha256": "70c360ae841d058b3cba7ff65a61d51939a298825175bad85bc3bea2bae14b34",
+      "sound": "DX_rm0001_frag0001_l001_vendor_en",
+      "speech_seconds": 2.7279166666666668,
+      "scene_seconds": 4.1779166666666665,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Hello, Trent. I am the head of the local trade authority."
+    },
+    {
+      "id": "rm0001_frag0002",
+      "role": "player",
+      "pool": "ask_jobs",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0002.thn",
+      "sha256": "ad1e354bdb2779c174e7fa54f76f1cc61f84bc0c8f6ccdaad4a5ac83a64cc471",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0002_l001_player.wav",
+      "audio_sha256": "7b8232d035d9141c97f4b95b9800bd75010981dd20ac0e37770a23931c86255a",
+      "sound": "DX_rm0001_frag0002_l001_player_en",
+      "speech_seconds": 1.4407916666666667,
+      "scene_seconds": 2.890791666666667,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Do you have any jobs for me?"
+    },
+    {
+      "id": "rm0001_frag0003",
+      "role": "vendor",
+      "pool": "legacy_offer",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0003.thn",
+      "sha256": "9f5973aea247def784c949d66007e389e930aba58b483f77dcdf7451edd33168",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0003_l001_vendor.wav",
+      "audio_sha256": "abada6dea7dc5fe6bbfcad79796b62c50807983524b0b3928722147db17c8aea",
+      "sound": "DX_rm0001_frag0003_l001_vendor_en",
+      "speech_seconds": 3.384375,
+      "scene_seconds": 4.834375,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Of course. We need a locomotive driver. How many wagons can you handle?"
+    },
+    {
+      "id": "rm0001_frag0004",
+      "role": "player",
+      "pool": "choose_2",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0004.thn",
+      "sha256": "5a32803f102397b571d4ad95d4cbfee7eead01cd57f96dac43357516cc852030",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0004_l001_player.wav",
+      "audio_sha256": "d90c812530a5116c2a7c574e7af57d1275785aec2e679ed59f37a81bf86d0aa0",
+      "sound": "DX_rm0001_frag0004_l001_player_en",
+      "speech_seconds": 1.8055833333333333,
+      "scene_seconds": 3.255583333333333,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "I would like a job with two wagons."
+    },
+    {
+      "id": "rm0001_frag0005",
+      "role": "player",
+      "pool": "choose_5",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0005.thn",
+      "sha256": "d86605daf795fcab000fe9e31c60163536102d8e11cf76dbe518becd247adc78",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0005_l001_player.wav",
+      "audio_sha256": "6788c8e1b2fd04b85db8095044f5c21ce46df712f39662b9340ada6e73475b84",
+      "sound": "DX_rm0001_frag0005_l001_player_en",
+      "speech_seconds": 2.072625,
+      "scene_seconds": 3.5226249999999997,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "I would like a job with five wagons."
+    },
+    {
+      "id": "rm0001_frag0006",
+      "role": "player",
+      "pool": "choose_10",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0006.thn",
+      "sha256": "159397051c0f99fd612b4bc21dc165e3a9ee06a759f39e13706e3066a4cf791e",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0006_l001_player.wav",
+      "audio_sha256": "5168cf785945a587ab51e1191b08abb99aa19d0edf418c02c3729f4e9337ea3e",
+      "sound": "DX_rm0001_frag0006_l001_player_en",
+      "speech_seconds": 1.63,
+      "scene_seconds": 3.08,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "I would like a job with ten wagons."
+    },
+    {
+      "id": "rm0001_frag0007",
+      "role": "player",
+      "pool": "choose_20",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0007.thn",
+      "sha256": "e23d403233559c63698f63e38aac4b0af3c2790c64e59e6e90474fd2ec428924",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0007_l001_player.wav",
+      "audio_sha256": "34760f570db6c4516ec58e456ae158ba091b1cf62183319c1bcf93acfed7f13e",
+      "sound": "DX_rm0001_frag0007_l001_player_en",
+      "speech_seconds": 1.943125,
+      "scene_seconds": 3.393125,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "I would like a job with twenty wagons."
+    },
+    {
+      "id": "rm0001_frag0008",
+      "role": "vendor",
+      "pool": "issued",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0008.thn",
+      "sha256": "a684e2f341227a73d33429eaa4a11b4af7dd7054f75015c2c6cd9972cfb943f6",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0008_l001_vendor.wav",
+      "audio_sha256": "f56eb0e0624c89ca980da3c120afa14d491ea1ebcb585951207b3ca18bb2feb7",
+      "sound": "DX_rm0001_frag0008_l001_vendor_en",
+      "speech_seconds": 3.835541666666667,
+      "scene_seconds": 5.285541666666667,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Your work order is ready. You can launch now. The locomotive is waiting for you."
+    },
+    {
+      "id": "rm0001_frag0009",
+      "role": "vendor",
+      "pool": "bad_reputation",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0009.thn",
+      "sha256": "556fd2e2f0124fe3634df09dc3d054bd4ded646cbc233b87124a110f49db6a32",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0009_l001_vendor.wav",
+      "audio_sha256": "77bac9e6efbbfcfd6cd09e0d96d015f90112bce715332759df77b4b2ca1f3062",
+      "sound": "DX_rm0001_frag0009_l001_vendor_en",
+      "speech_seconds": 2.810791666666667,
+      "scene_seconds": 4.260791666666666,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Sorry, son. I cannot help you. Your reputation is too poor."
+    },
+    {
+      "id": "rm0001_frag0010",
+      "role": "player",
+      "pool": "ask_requirements",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0010.thn",
+      "sha256": "2083cd034f5c0b20acf72cecdf7268ec73cd2ee47a1c93cc0570385631a75feb",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0010_l001_player.wav",
+      "audio_sha256": "e74dbcc4e7c04f17d92deb8dcc4c83a38b311b47c21d8b6f630f98a390d32b21",
+      "sound": "DX_rm0001_frag0010_l001_player_en",
+      "speech_seconds": 1.7652916666666667,
+      "scene_seconds": 3.2152916666666664,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "What do you require of your drivers?"
+    },
+    {
+      "id": "rm0001_frag0011",
+      "role": "vendor",
+      "pool": "legacy_requirements",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0011.thn",
+      "sha256": "608f4f6ad47bfa7a9aac1d3a2492881b32d7d02e24cb7e14a843086401808a1b",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0011_l001_vendor.wav",
+      "audio_sha256": "ce299e21cb6e9784a3ec07b86c5510b9a306d1196e10bbe107c060c09ab1c216",
+      "sound": "DX_rm0001_frag0011_l001_vendor_en",
+      "speech_seconds": 4.973541666666667,
+      "scene_seconds": 6.423541666666667,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "We need reliable people. We will check your reputation first, then you can choose the number of wagons."
+    },
+    {
+      "id": "rm0001_frag0012",
+      "role": "player",
+      "pool": "back",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0012.thn",
+      "sha256": "d91d5d2b2b052b429775559f6ff6cb8706cbed0c490d944202b644a9a7e98d26",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0012_l001_player.wav",
+      "audio_sha256": "8ccb34a12b4f96c9e69942428b9860055bb123238495a206bef9bd40d5cdf07f",
+      "sound": "DX_rm0001_frag0012_l001_player_en",
+      "speech_seconds": 1.501375,
+      "scene_seconds": 2.9513749999999996,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Let us get back to the job."
+    },
+    {
+      "id": "rm0001_frag0013",
+      "role": "vendor",
+      "pool": "resume",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0013.thn",
+      "sha256": "33cfe9253d5f0c24873f99b6e0e64344dfa0a925cf325717661e948576301853",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0013_l001_vendor.wav",
+      "audio_sha256": "279510ba665acd586367edeff304b24a697b0e5d45e7d6e6a5bddd813d631d34",
+      "sound": "DX_rm0001_frag0013_l001_vendor_en",
+      "speech_seconds": 2.5308333333333333,
+      "scene_seconds": 3.980833333333333,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "So, are you interested in working as a train driver?"
+    },
+    {
+      "id": "rm0001_frag0014",
+      "role": "player",
+      "pool": "leave",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0014.thn",
+      "sha256": "fc83da189150a192d2fe37d7486f8c41ed723327c7f529eda65a94941294cc21",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0014_l001_player.wav",
+      "audio_sha256": "7cd6e14098137dd864e7e3802647dbc433b53fab15aa02a1bf6192767d0de932",
+      "sound": "DX_rm0001_frag0014_l001_player_en",
+      "speech_seconds": 1.8832916666666666,
+      "scene_seconds": 3.3332916666666663,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Not right now. See you around."
+    },
+    {
+      "id": "rm0001_frag0015",
+      "role": "vendor",
+      "pool": "farewell",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0015.thn",
+      "sha256": "ca252e9e09b5b87cc03888ad61360493efa8a0a9f4c1ad75cb8260eeaec57324",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0015_l001_vendor.wav",
+      "audio_sha256": "754a6b72489128218aa742d6cbaefee7d0a685fb39d5e0ec7fca6bba8f3617eb",
+      "sound": "DX_rm0001_frag0015_l001_vendor_en",
+      "speech_seconds": 1.8675,
+      "scene_seconds": 3.3175,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "All right, Trent. See you around."
+    },
+    {
+      "id": "rm0001_frag0016",
+      "role": "vendor",
+      "pool": "busy",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0016.thn",
+      "sha256": "d0242f8ceb503905065db866e05328c5d59f76f25a7f672ab7fe2045fe804065",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0016_l001_vendor.wav",
+      "audio_sha256": "5e6b4f5381329a01f608a242ce6df33f73d047df96f9ab2b76ae70ec4263dbde",
+      "sound": "DX_rm0001_frag0016_l001_vendor_en",
+      "speech_seconds": 2.8242083333333334,
+      "scene_seconds": 4.274208333333333,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "You already have an active assignment. Take care of that first."
+    },
+    {
+      "id": "rm0001_frag0017",
+      "role": "vendor",
+      "pool": "failed",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0017.thn",
+      "sha256": "53050cc2bbdfcf2533e0a1f58ac1a6ea4dad3791844ec37674774c0f5a6d2519",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0017_l001_vendor.wav",
+      "audio_sha256": "a1d6ff3a0dd7bef5e2d4c4aa25eed4b2a221018b7dbcc709a5c6280004319567",
+      "sound": "DX_rm0001_frag0017_l001_vendor_en",
+      "speech_seconds": 3.0879166666666666,
+      "scene_seconds": 4.537916666666666,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "I cannot issue the work order right now. Please come back later."
+    },
+    {
+      "id": "rm0001_frag0018",
+      "role": "vendor",
+      "pool": "greeting",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0018.thn",
+      "sha256": "595b766cabfe7a56bf33803309c817edcc2c6197cda11e06e065dd07c301b7f2",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0018_l001_vendor.wav",
+      "audio_sha256": "18c3482c6c7965ea63886bb88d939bb248571c08e6cbd9ae93e6ec00bda1dfa9",
+      "sound": "DX_rm0001_frag0018_l001_vendor_en",
+      "speech_seconds": 2.8938333333333333,
+      "scene_seconds": 4.3438333333333325,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Hello, Trent. The local trade authority is at your service."
+    },
+    {
+      "id": "rm0001_frag0019",
+      "role": "vendor",
+      "pool": "greeting",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0019.thn",
+      "sha256": "954ec1c0a93361753d002ee96942436aba5e153e80cc2333d12a9a70fb96f999",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0019_l001_vendor.wav",
+      "audio_sha256": "a2d0380a89d61656eeaeefa7ac2f321164bc5e6b26da1c565b78b19d500e30f4",
+      "sound": "DX_rm0001_frag0019_l001_vendor_en",
+      "speech_seconds": 3.1575416666666665,
+      "scene_seconds": 4.607541666666666,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Hello, Trent. I run the trade authority here. What can I do for you?"
+    },
+    {
+      "id": "rm0001_frag0020",
+      "role": "vendor",
+      "pool": "issued",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0020.thn",
+      "sha256": "a6e87e397589d9948cc2c4f6f9c38da9bec73b23bc37c57267c9c3f4937575e2",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0020_l001_vendor.wav",
+      "audio_sha256": "538c58e1705a7b6852a85b38377f12d84b1cd0600d1909f6a92b72819bdf17a0",
+      "sound": "DX_rm0001_frag0020_l001_vendor_en",
+      "speech_seconds": 4.11525,
+      "scene_seconds": 5.56525,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "The work order is issued. Launch when you are ready, Trent. The locomotive is waiting."
+    },
+    {
+      "id": "rm0001_frag0021",
+      "role": "vendor",
+      "pool": "bad_reputation",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0021.thn",
+      "sha256": "3f37e670782021a3ea3970863da0281f41eeeaede9df3d7e94a403c787f3552f",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0021_l001_vendor.wav",
+      "audio_sha256": "ff2b4bfce2297f5eaca683a82c30eea4275e6b89f45c000e5f660283ff546d05",
+      "sound": "DX_rm0001_frag0021_l001_vendor_en",
+      "speech_seconds": 3.3493333333333335,
+      "scene_seconds": 4.799333333333333,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "With your reputation, I cannot entrust you with a train. Sorry, Trent."
+    },
+    {
+      "id": "rm0001_frag0022",
+      "role": "vendor",
+      "pool": "licensed_offer",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0022.thn",
+      "sha256": "2bc83891e491909bbed25ca51184f77eacd8691b0e658defddd3cd46f5df2131",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0022_l001_vendor.wav",
+      "audio_sha256": "49322a0cc93b34d56c76c15296e402bfc29d575c5fd19a63492c295c94925193",
+      "sound": "DX_rm0001_frag0022_l001_vendor_en",
+      "speech_seconds": 7.00325,
+      "scene_seconds": 8.45325,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Of course. We need train drivers. Your skill and licence determine how many wagons you may haul. Choose an assignment within your qualification."
+    },
+    {
+      "id": "rm0001_frag0023",
+      "role": "vendor",
+      "pool": "licensed_requirements",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0023.thn",
+      "sha256": "cec55ebdf54b24ce6b010b87dba5e29b1bf44fd297138a5cd6597923a2000bfe",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0023_l001_vendor.wav",
+      "audio_sha256": "33d908f42ab32500b75c11a794ea7ba83e3b04c9c37386933e561556c13fe7d3",
+      "sound": "DX_rm0001_frag0023_l001_vendor_en",
+      "speech_seconds": 7.7977083333333335,
+      "scene_seconds": 9.247708333333334,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "We check your reputation and train driver licence. Your qualification is permanent: once you reach ten wagons, you may take ten-wagon trains on later shifts too."
+    },
+    {
+      "id": "rm0001_frag0024",
+      "role": "player",
+      "pool": "ask_tutorial",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0024.thn",
+      "sha256": "a4d50b1d4127f9266918f3303d7f41a239e940081280fb25f022f0ef4b493957",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0024_l001_player.wav",
+      "audio_sha256": "f1a27db64817fa86bface4d6a68ba0b5036612fea82bb70765ee817432abb067",
+      "sound": "DX_rm0001_frag0024_l001_player_en",
+      "speech_seconds": 2.2867083333333333,
+      "scene_seconds": 3.736708333333333,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Explain how to operate the locomotive."
+    },
+    {
+      "id": "rm0001_frag0025",
+      "role": "vendor",
+      "pool": "tutorial",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0025.thn",
+      "sha256": "f56ed1f2fb2d67c5841ff5d864ff84b8825cae5dea8bf8bc2e7c5807cf8a207d",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0025_l001_vendor.wav",
+      "audio_sha256": "abb824c0a49329cbfb9794f33c05655bebdbed8729a51e41a41208f7885d4aee",
+      "sound": "DX_rm0001_frag0025_l001_vendor_en",
+      "speech_seconds": 5.2504583333333334,
+      "scene_seconds": 6.700458333333334,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Let us go through boarding the locomotive, coupling the wagons, and making a delivery. Where shall we start?"
+    },
+    {
+      "id": "rm0001_frag0026",
+      "role": "player",
+      "pool": "ask_boarding",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0026.thn",
+      "sha256": "fbc6e803b3414f4f9c7e560aeef3145a7751ece1aab1527935448c7ad1d8d126",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0026_l001_player.wav",
+      "audio_sha256": "a95271d3d07ed59b395daa4a2baa9baf0961d5efda87998e6bf8040dbfa49a81",
+      "sound": "DX_rm0001_frag0026_l001_player_en",
+      "speech_seconds": 1.6780416666666667,
+      "scene_seconds": 3.128041666666667,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "How do I board the locomotive?"
+    },
+    {
+      "id": "rm0001_frag0027",
+      "role": "vendor",
+      "pool": "boarding",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0027.thn",
+      "sha256": "529accb725edcf700566393ef74a2017346b9ef2206df805cb380dc5614eec44",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0027_l001_vendor.wav",
+      "audio_sha256": "3a28dea7b03ca00d8aa6aa6f7db6f666b66156185b1f0d9e9e1de3cac05843a4",
+      "sound": "DX_rm0001_frag0027_l001_vendor_en",
+      "speech_seconds": 9.763458333333332,
+      "scene_seconds": 11.213458333333334,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Take the work order and launch. The locomotive is waiting by the docking fixture, marked as your objective. Select it and use the normal docking command to take the controls. Your own ship will be stored."
+    },
+    {
+      "id": "rm0001_frag0028",
+      "role": "player",
+      "pool": "ask_coupling",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0028.thn",
+      "sha256": "c5ee105462bca433395b40149e38b2224a726de0fd0e0bf2d72b9a4fa1d8a1f9",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0028_l001_player.wav",
+      "audio_sha256": "0023670bbd3c16a54c4afb0f64c851ededa654137191217e2d0943a8d11e4a39",
+      "sound": "DX_rm0001_frag0028_l001_player_en",
+      "speech_seconds": 1.4245833333333333,
+      "scene_seconds": 2.8745833333333333,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "How do I couple the wagons?"
+    },
+    {
+      "id": "rm0001_frag0029",
+      "role": "vendor",
+      "pool": "coupling",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0029.thn",
+      "sha256": "559db79533eed8728232becc04cafd959921e54f3261c4ee95aa7cd01de4341c",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0029_l001_vendor.wav",
+      "audio_sha256": "49717fc7254a1fe3308a442449cc8ddb271b7429c5acebed57286ca39f56c8d5",
+      "sound": "DX_rm0001_frag0029_l001_vendor_en",
+      "speech_seconds": 12.023916666666667,
+      "scene_seconds": 13.473916666666668,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "At the pickup marker, turn off cruise and autopilot. Align with the wagons and bring the rear coupling up to the first wagon: within fifteen metres, at a closing speed no higher than two metres per second. Press Couple wagons and wait for confirmation."
+    },
+    {
+      "id": "rm0001_frag0030",
+      "role": "player",
+      "pool": "ask_delivery",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0030.thn",
+      "sha256": "47eaf454677dfb2162d0ff51f3d7d14c20f1b7d426523e8d64d24c4446fb541b",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0030_l001_player.wav",
+      "audio_sha256": "9dbe4b95c343181683c4881d4b89a73a6fce68537f0e1f453d5b32990acce7c2",
+      "sound": "DX_rm0001_frag0030_l001_player_en",
+      "speech_seconds": 2.6125833333333333,
+      "scene_seconds": 4.0625833333333325,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "How do I deliver the cargo and uncouple the train?"
+    },
+    {
+      "id": "rm0001_frag0031",
+      "role": "vendor",
+      "pool": "delivery",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0031.thn",
+      "sha256": "37ac58599b32fcfcee31c768248a06988fd665821ca11131e1df90fdd29e3a70",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0031_l001_vendor.wav",
+      "audio_sha256": "32a3e31181c95da0aa741dd7be0f3466180c1f728425136a0a94fa60eccfe2d0",
+      "sound": "DX_rm0001_frag0031_l001_vendor_en",
+      "speech_seconds": 11.157083333333333,
+      "scene_seconds": 12.607083333333334,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "The work order names the destination system, and navigation shows the route. Bring the wagons to the delivery marker, turn off cruise and autopilot, and stop. Press Uncouple wagons, then wait for delivery and payment confirmation."
+    },
+    {
+      "id": "rm0001_frag0032",
+      "role": "player",
+      "pool": "tutorial_back",
+      "path": "SCRIPTS/RPG/rm0001/en/rm0001_frag0032.thn",
+      "sha256": "d7320ee6f2c96733dbfd1a27c49af7bea5fece133097b47ff31d2427451826a4",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0001/rm0001_frag0032_l001_player.wav",
+      "audio_sha256": "922961b50ca547e6e5388b300b39da286885579c8b635f6ef11230eb36d77ae6",
+      "sound": "DX_rm0001_frag0032_l001_player_en",
+      "speech_seconds": 2.1094583333333334,
+      "scene_seconds": 3.559458333333333,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "I have another question about the locomotive."
+    }
+  ],
+  "gestures": [
+    {
+      "role": "vendor",
+      "step": 0,
+      "path": "SCRIPTS/RPG/rm0001/gestures/vendor_01.thn",
+      "duration": 14.4,
+      "sha256": "6572674f8ce0d11a29b65651d7eee3f8ed6196b9b970e6003eb69f9063a549c9"
+    },
+    {
+      "role": "vendor",
+      "step": 1,
+      "path": "SCRIPTS/RPG/rm0001/gestures/vendor_02.thn",
+      "duration": 10.15,
+      "sha256": "6d746db9d8e45be7c932ee85618cbfa1a9f837c43ef4dfb7db14516157dbb6a2"
+    },
+    {
+      "role": "vendor",
+      "step": 2,
+      "path": "SCRIPTS/RPG/rm0001/gestures/vendor_03.thn",
+      "duration": 10.15,
+      "sha256": "4742cce4de6fe471fcd117f4e1fcc49bc6f6683af7040abc96edcd69a4d499f1"
+    },
+    {
+      "role": "vendor",
+      "step": 3,
+      "path": "SCRIPTS/RPG/rm0001/gestures/vendor_04.thn",
+      "duration": 14.4,
+      "sha256": "6572674f8ce0d11a29b65651d7eee3f8ed6196b9b970e6003eb69f9063a549c9"
+    },
+    {
+      "role": "vendor",
+      "step": 4,
+      "path": "SCRIPTS/RPG/rm0001/gestures/vendor_05.thn",
+      "duration": 10.15,
+      "sha256": "6d746db9d8e45be7c932ee85618cbfa1a9f837c43ef4dfb7db14516157dbb6a2"
+    },
+    {
+      "role": "vendor",
+      "step": 5,
+      "path": "SCRIPTS/RPG/rm0001/gestures/vendor_06.thn",
+      "duration": 10.15,
+      "sha256": "4742cce4de6fe471fcd117f4e1fcc49bc6f6683af7040abc96edcd69a4d499f1"
+    },
+    {
+      "role": "vendor",
+      "step": 6,
+      "path": "SCRIPTS/RPG/rm0001/gestures/vendor_07.thn",
+      "duration": 10.4,
+      "sha256": "1aba431b337410a14ed78d420cac299dfd72c45295413988bb21add824ecd545"
+    },
+    {
+      "role": "vendor",
+      "step": 7,
+      "path": "SCRIPTS/RPG/rm0001/gestures/vendor_08.thn",
+      "duration": 10.4,
+      "sha256": "67617511f2ae1497f2ceb7381678737d9ea42ee44e67c25c8ab0138dc9f63bad"
+    },
+    {
+      "role": "player",
+      "step": 0,
+      "path": "SCRIPTS/RPG/rm0001/gestures/player_01.thn",
+      "duration": 14.4,
+      "sha256": "688a9be7b53e08e3cdc2bbd59aa97a533b24969b37d8485cb39b30027ec0bc79"
+    },
+    {
+      "role": "player",
+      "step": 1,
+      "path": "SCRIPTS/RPG/rm0001/gestures/player_02.thn",
+      "duration": 10.15,
+      "sha256": "dfc2e592d384be0ea196563be0aec05b780650826ffd0927495af4667d55d469"
+    },
+    {
+      "role": "player",
+      "step": 2,
+      "path": "SCRIPTS/RPG/rm0001/gestures/player_03.thn",
+      "duration": 10.15,
+      "sha256": "60033752ac32bdaa761ae0db139ee250792ef59cac0b8767017fdd95ac895c53"
+    },
+    {
+      "role": "player",
+      "step": 3,
+      "path": "SCRIPTS/RPG/rm0001/gestures/player_04.thn",
+      "duration": 14.4,
+      "sha256": "688a9be7b53e08e3cdc2bbd59aa97a533b24969b37d8485cb39b30027ec0bc79"
+    },
+    {
+      "role": "player",
+      "step": 4,
+      "path": "SCRIPTS/RPG/rm0001/gestures/player_05.thn",
+      "duration": 10.15,
+      "sha256": "dfc2e592d384be0ea196563be0aec05b780650826ffd0927495af4667d55d469"
+    },
+    {
+      "role": "player",
+      "step": 5,
+      "path": "SCRIPTS/RPG/rm0001/gestures/player_06.thn",
+      "duration": 10.15,
+      "sha256": "60033752ac32bdaa761ae0db139ee250792ef59cac0b8767017fdd95ac895c53"
+    },
+    {
+      "role": "player",
+      "step": 6,
+      "path": "SCRIPTS/RPG/rm0001/gestures/player_07.thn",
+      "duration": 10.4,
+      "sha256": "82d6f58bdb873ddeae071a03545c2f5164342f7e0195fd5f94cad145bb7916a4"
+    },
+    {
+      "role": "player",
+      "step": 7,
+      "path": "SCRIPTS/RPG/rm0001/gestures/player_08.thn",
+      "duration": 10.4,
+      "sha256": "278d29135084bdb9e11de81a04476c4fd4c395ecf83e32a6b85c26d75a873584"
+    }
+  ],
+  "gesture_sequence": "SEQUENCE_MALE_STAND_RHAND_ALT2"
+}

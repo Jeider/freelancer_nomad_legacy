@@ -1,0 +1,987 @@
+{
+  "schema": 1,
+  "bases": [
+    {
+      "base": "arch_01_base",
+      "system": "arch",
+      "faction": "co_grp",
+      "name_ru": "База Очо-Риос",
+      "name_en": "Ocho-Rios Base",
+      "locked": true,
+      "group": "rm0100",
+      "region": "free",
+      "surname": "Vega",
+      "style": 0,
+      "appearance": {
+        "head": "pi_pirate1_head",
+        "body": "pi_pirate1_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "br_avl_01_base",
+      "system": "br_avl",
+      "faction": "br_grp",
+      "name_ru": "Планета Авалон",
+      "name_en": "Planet Avalon",
+      "locked": false,
+      "group": "rm0002",
+      "authored": true
+    },
+    {
+      "base": "br_avl_99_base",
+      "system": "br_avl",
+      "faction": "br_grp",
+      "name_ru": "Линкор Принц Уэльский",
+      "name_en": "Battleship Prince of Wales",
+      "locked": false,
+      "group": "rm0101",
+      "region": "br",
+      "surname": "Whitmore",
+      "style": 0,
+      "appearance": {
+        "head": "ge_male6_head",
+        "body": "br_male_elite_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "br_cam_01_base",
+      "system": "br_cam",
+      "faction": "br_grp",
+      "name_ru": "Планета Кембридж",
+      "name_en": "Planet Cambridge",
+      "locked": false,
+      "group": "rm0102",
+      "region": "br",
+      "surname": "Bennett",
+      "style": 1,
+      "appearance": {
+        "head": "br_captain_head",
+        "body": "br_male_guard_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "br_wrw_01_base",
+      "system": "br_wrw",
+      "faction": "br_grp",
+      "name_ru": "Планета Уорик",
+      "name_en": "Warwick Planet",
+      "locked": false,
+      "group": "rm0103",
+      "region": "br",
+      "surname": "Hawthorne",
+      "style": 2,
+      "appearance": {
+        "head": "ge_male1_head",
+        "body": "br_male_elite_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "br_wrw_02_base",
+      "system": "br_wrw",
+      "faction": "br_grp",
+      "name_ru": "Станция Лидс",
+      "name_en": "Station Leeds",
+      "locked": false,
+      "group": "rm0104",
+      "region": "br",
+      "surname": "Ashford",
+      "style": 3,
+      "appearance": {
+        "head": "ge_male1_head",
+        "body": "br_male_guard_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "co_cad_01_base",
+      "system": "co_cad",
+      "faction": "co_grp",
+      "name_ru": "Планета Кадиз",
+      "name_en": "Planet Malta",
+      "locked": false,
+      "group": "rm0105",
+      "region": "free",
+      "surname": "Ramos",
+      "style": 1,
+      "appearance": {
+        "head": "pi_pirate1_head",
+        "body": "pi_pirate2_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "co_cur_01_base",
+      "system": "co_cur",
+      "faction": "co_grp",
+      "name_ru": "База Лион",
+      "name_en": "Lion Base",
+      "locked": false,
+      "group": "rm0106",
+      "region": "free",
+      "surname": "Silva",
+      "style": 2,
+      "appearance": {
+        "head": "pi_pirate1_head",
+        "body": "pi_pirate6_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "co_mad_01_base",
+      "system": "co_mad",
+      "faction": "co_grp",
+      "name_ru": "Планета Мадрид",
+      "name_en": "Planet Madrid",
+      "locked": false,
+      "group": "rm0107",
+      "region": "free",
+      "surname": "Cruz",
+      "style": 3,
+      "appearance": {
+        "head": "pi_pirate1_head",
+        "body": "pl_male2_journeyman_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "co_mad_04_base",
+      "system": "co_mad",
+      "faction": "bh_grp_rh",
+      "name_ru": "База Крит",
+      "name_en": "Crete Base",
+      "locked": false,
+      "group": "rm0108",
+      "region": "free",
+      "surname": "Navarro",
+      "style": 0,
+      "appearance": {
+        "head": "pi_pirate2_head",
+        "body": "pi_pirate1_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "co_och_01_base",
+      "system": "co_och",
+      "faction": "co_grp",
+      "name_ru": "База Очо-Риос",
+      "name_en": "Ocho-Rios Base",
+      "locked": false,
+      "group": "rm0109",
+      "region": "free",
+      "surname": "Ortega",
+      "style": 1,
+      "appearance": {
+        "head": "pi_pirate2_head",
+        "body": "pi_pirate2_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "heavy_barrel2_01_base",
+      "system": "heavy_barrel2",
+      "faction": "asf_grp",
+      "name_ru": "База Очо-Риос",
+      "name_en": "Ocho-Rios Base",
+      "locked": true,
+      "group": "rm0110",
+      "region": "free",
+      "surname": "Serrano",
+      "style": 2,
+      "appearance": {
+        "head": "pi_pirate2_head",
+        "body": "pi_pirate6_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "ku_hkd_01_base",
+      "system": "ku_hkd",
+      "faction": "ku_grp",
+      "name_ru": "Планета Хоккайдо",
+      "name_en": "Planet Hokkaido",
+      "locked": false,
+      "group": "rm0111",
+      "region": "ku",
+      "surname": "Sato",
+      "style": 0,
+      "appearance": {
+        "head": "ku_captain_head",
+        "body": "ku_male_elite_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "ku_hns_01_base",
+      "system": "ku_hns",
+      "faction": "ku_grp",
+      "name_ru": "Планета Хонсю",
+      "name_en": "Planet Honshu",
+      "locked": false,
+      "group": "rm0112",
+      "region": "ku",
+      "surname": "Mori",
+      "style": 1,
+      "appearance": {
+        "head": "ku_captain_head",
+        "body": "ku_male_guard_body"
+      },
+      "spot": "Zg/NPC/mFloor1/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "ku_ksu_01_base",
+      "system": "ku_ksu",
+      "faction": "ku_grp",
+      "name_ru": "Планета Кусю",
+      "name_en": "Planet Kyushu",
+      "locked": false,
+      "group": "rm0113",
+      "region": "ku",
+      "surname": "Tanaka",
+      "style": 2,
+      "appearance": {
+        "head": "ge_male1_head",
+        "body": "ku_male_elite_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "ku_ksu_02_base",
+      "system": "ku_ksu",
+      "faction": "ku_grp",
+      "name_ru": "Планета Кумамото",
+      "name_en": "Planet Kumamoto",
+      "locked": false,
+      "group": "rm0114",
+      "region": "ku",
+      "surname": "Kato",
+      "style": 3,
+      "appearance": {
+        "head": "ge_male1_head",
+        "body": "ku_male_guard_body"
+      },
+      "spot": "Zg/NPC/mFloor2/02/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "ku_tgk_01_base",
+      "system": "ku_tgk",
+      "faction": "ku_grp",
+      "name_ru": "Станция Йокогама",
+      "name_en": "Station Yokohama",
+      "locked": false,
+      "group": "rm0115",
+      "region": "ku",
+      "surname": "Abe",
+      "style": 0,
+      "appearance": {
+        "head": "ge_male2_head",
+        "body": "ku_male_elite_body"
+      },
+      "spot": "Zg/NPC/mFloor2/02/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "li_cal_01_base",
+      "system": "li_cal",
+      "faction": "li_grp",
+      "name_ru": "Планета Калифорния",
+      "name_en": "Planet California",
+      "locked": false,
+      "group": "rm0116",
+      "region": "li",
+      "surname": "Carter",
+      "style": 0,
+      "appearance": {
+        "head": "li_captain_head",
+        "body": "li_male_elite_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "li_cal_04_base",
+      "system": "li_cal",
+      "faction": "li_grp",
+      "name_ru": "Линкор Нью-Мексико",
+      "name_en": "Battleship New Mexico",
+      "locked": false,
+      "group": "rm0117",
+      "region": "li",
+      "surname": "Hayes",
+      "style": 1,
+      "appearance": {
+        "head": "li_captain_head",
+        "body": "li_male_guard_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "li_col_01_base",
+      "system": "li_col",
+      "faction": "li_grp",
+      "name_ru": "Планета Колумбия",
+      "name_en": "Planet Columbia",
+      "locked": false,
+      "group": "rm0118",
+      "region": "li",
+      "surname": "Morgan",
+      "style": 2,
+      "appearance": {
+        "head": "ge_male1_head",
+        "body": "li_male_elite_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "li_col_02_base",
+      "system": "li_col",
+      "faction": "li_grp",
+      "name_ru": "Планета Хьюстон",
+      "name_en": "Planet Houston",
+      "locked": false,
+      "group": "rm0119",
+      "region": "li",
+      "surname": "Reed",
+      "style": 3,
+      "appearance": {
+        "head": "ge_male1_head",
+        "body": "li_male_guard_body"
+      },
+      "spot": "Zg/NPC/mFloor2/02/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "li_for_01_base",
+      "system": "li_for",
+      "faction": "li_grp",
+      "name_ru": "Планета Форбс",
+      "name_en": "Forbes Planet",
+      "locked": false,
+      "group": "rm0120",
+      "region": "li",
+      "surname": "Grant",
+      "style": 0,
+      "appearance": {
+        "head": "ge_male2_head",
+        "body": "li_male_elite_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "li_for_05_base",
+      "system": "li_for",
+      "faction": "li_grp",
+      "name_ru": "Станция Детройт",
+      "name_en": "Detroit Station",
+      "locked": false,
+      "group": "rm0121",
+      "region": "li",
+      "surname": "Brooks",
+      "style": 1,
+      "appearance": {
+        "head": "ge_male2_head",
+        "body": "li_male_guard_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "li_for_08_base",
+      "system": "li_for",
+      "faction": "lx_grp",
+      "name_ru": "База Монтгомери",
+      "name_en": "Montgomery Base",
+      "locked": false,
+      "group": "rm0122",
+      "region": "free",
+      "surname": "Duarte",
+      "style": 3,
+      "appearance": {
+        "head": "pi_pirate2_head",
+        "body": "pl_male2_journeyman_body"
+      },
+      "spot": "Zg/NPC/mFloor1/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "li_mnh_01_base",
+      "system": "li_mnh",
+      "faction": "li_grp",
+      "name_ru": "Планета Манхеттен",
+      "name_en": "Planet Manhattan",
+      "locked": false,
+      "group": "rm0123",
+      "region": "li",
+      "surname": "Cole",
+      "style": 2,
+      "appearance": {
+        "head": "ge_male3_head",
+        "body": "li_male_elite_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "li_mnh_02_base",
+      "system": "li_mnh",
+      "faction": "li_grp",
+      "name_ru": "Планета Питсбург",
+      "name_en": "Planet Pittsburgh",
+      "locked": false,
+      "group": "rm0124",
+      "region": "li",
+      "surname": "Ward",
+      "style": 3,
+      "appearance": {
+        "head": "ge_male3_head",
+        "body": "li_male_guard_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "m8_tau44_99_base",
+      "system": "m8_tau44",
+      "faction": "br_grp",
+      "name_ru": "Линкор Принц Уэльский",
+      "name_en": "Battleship Prince of Wales",
+      "locked": false,
+      "group": "rm0125",
+      "region": "br",
+      "surname": "Sinclair",
+      "style": 0,
+      "appearance": {
+        "head": "ge_male2_head",
+        "body": "br_male_elite_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "om11_01_base",
+      "system": "om11",
+      "faction": "co_grp",
+      "name_ru": "База Кадиз",
+      "name_en": "Cadiz Base",
+      "locked": false,
+      "group": "rm0126",
+      "region": "free",
+      "surname": "Rojas",
+      "style": 0,
+      "appearance": {
+        "head": "ge_male1_head",
+        "body": "pi_pirate1_body"
+      },
+      "spot": "Zg/NPC/mTable5/01/A/SitLow",
+      "posture": "sit"
+    },
+    {
+      "base": "om13_alt_99_base",
+      "system": "om13_alt",
+      "faction": "li_grp",
+      "name_ru": "Линкор Осирис",
+      "name_en": "Battleship Osiris",
+      "locked": false,
+      "group": "rm0127",
+      "region": "li",
+      "surname": "Turner",
+      "style": 0,
+      "appearance": {
+        "head": "ge_male4_head",
+        "body": "li_male_elite_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "om15_01_base",
+      "system": "om15",
+      "faction": "rh_grp",
+      "name_ru": "Станция Лейпциг",
+      "name_en": "Leipzig Station",
+      "locked": false,
+      "group": "rm0128",
+      "region": "rh",
+      "surname": "Adler",
+      "style": 0,
+      "appearance": {
+        "head": "rh_captain_head",
+        "body": "rh_male_elite_body"
+      },
+      "spot": "Zg/NPC/mTable4/05/A/SitLow",
+      "posture": "sit"
+    },
+    {
+      "base": "om7_03_base",
+      "system": "om7",
+      "faction": "rh_grp",
+      "name_ru": "Линкор Остфрисланд",
+      "name_en": "Battleship Ostfriesland",
+      "locked": false,
+      "group": "rm0129",
+      "region": "rh",
+      "surname": "Vogel",
+      "style": 1,
+      "appearance": {
+        "head": "rh_captain_head",
+        "body": "rh_male_guard_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "om7_99_base",
+      "system": "om7",
+      "faction": "ku_grp",
+      "name_ru": "Линкор Мусаси",
+      "name_en": "Battleship Musashi",
+      "locked": false,
+      "group": "rm0130",
+      "region": "ku",
+      "surname": "Hayashi",
+      "style": 1,
+      "appearance": {
+        "head": "ge_male2_head",
+        "body": "ku_male_guard_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "or_hq_99_base",
+      "system": "or_hq",
+      "faction": "ku_grp",
+      "name_ru": "Линкор Мусаси",
+      "name_en": "Battleship Musashi",
+      "locked": false,
+      "group": "rm0131",
+      "region": "ku",
+      "surname": "Kondo",
+      "style": 2,
+      "appearance": {
+        "head": "ge_male3_head",
+        "body": "ku_male_elite_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "rh_ber_01_base",
+      "system": "rh_ber",
+      "faction": "rh_grp",
+      "name_ru": "Планета Берлин",
+      "name_en": "Planet Berlin",
+      "locked": false,
+      "group": "rm0132",
+      "region": "rh",
+      "surname": "Keller",
+      "style": 2,
+      "appearance": {
+        "head": "ge_male1_head",
+        "body": "rh_male_elite_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "rh_biz_01_base",
+      "system": "rh_biz",
+      "faction": "rh_grp",
+      "name_ru": "Планета Бисмарк",
+      "name_en": "Planet Bismarck",
+      "locked": false,
+      "group": "rm0133",
+      "region": "rh",
+      "surname": "Brandt",
+      "style": 3,
+      "appearance": {
+        "head": "ge_male1_head",
+        "body": "rh_male_guard_body"
+      },
+      "spot": "Zg/NPC/mFloor2/02/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "rh_biz_02_base",
+      "system": "rh_biz",
+      "faction": "rh_grp",
+      "name_ru": "Станция Бремен",
+      "name_en": "Bremen Station",
+      "locked": false,
+      "group": "rm0134",
+      "region": "rh",
+      "surname": "Fischer",
+      "style": 0,
+      "appearance": {
+        "head": "ge_male2_head",
+        "body": "rh_male_elite_body"
+      },
+      "spot": "Zg/NPC/mTable4/01/A/SitLow",
+      "posture": "sit"
+    },
+    {
+      "base": "rh_biz_03_base",
+      "system": "rh_biz",
+      "faction": "rh_grp",
+      "name_ru": "Линкор Шарнхорст",
+      "name_en": "Battleship Scharnhorst",
+      "locked": false,
+      "group": "rm0135",
+      "region": "rh",
+      "surname": "Weber",
+      "style": 1,
+      "appearance": {
+        "head": "ge_male2_head",
+        "body": "rh_male_guard_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "rh_mnh_01_base",
+      "system": "rh_mnh",
+      "faction": "rh_grp",
+      "name_ru": "Планета Норторф",
+      "name_en": "Planet Nortorf",
+      "locked": false,
+      "group": "rm0136",
+      "region": "rh",
+      "surname": "Wolf",
+      "style": 2,
+      "appearance": {
+        "head": "ge_male3_head",
+        "body": "rh_male_elite_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "rh_stut_01_base",
+      "system": "rh_stut",
+      "faction": "rh_grp",
+      "name_ru": "Планета Штутгарт",
+      "name_en": "Planet Stuttgart",
+      "locked": false,
+      "group": "rm0137",
+      "region": "rh",
+      "surname": "Braun",
+      "style": 3,
+      "appearance": {
+        "head": "ge_male3_head",
+        "body": "rh_male_guard_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "rh_stut_06_base",
+      "system": "rh_stut",
+      "faction": "rh_grp",
+      "name_ru": "Планета Баден-Баден",
+      "name_en": "Planet Baden-Baden",
+      "locked": false,
+      "group": "rm0138",
+      "region": "rh",
+      "surname": "Kraus",
+      "style": 0,
+      "appearance": {
+        "head": "ge_male4_head",
+        "body": "rh_male_elite_body"
+      },
+      "spot": "Zg/NPC/mFloor2/02/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "rh_vien_99_base",
+      "system": "rh_vien",
+      "faction": "ku_grp",
+      "name_ru": "Линкор Мусаси",
+      "name_en": "Battleship Musashi",
+      "locked": false,
+      "group": "rm0139",
+      "region": "ku",
+      "surname": "Shimizu",
+      "style": 3,
+      "appearance": {
+        "head": "ge_male3_head",
+        "body": "ku_male_guard_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "sig13_04_base",
+      "system": "sig13",
+      "faction": "rh_grp",
+      "name_ru": "Линкор Маркграф",
+      "name_en": "Battleship Markgraf",
+      "locked": false,
+      "group": "rm0140",
+      "region": "rh",
+      "surname": "Stein",
+      "style": 1,
+      "appearance": {
+        "head": "ge_male4_head",
+        "body": "rh_male_guard_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "sig17_02_base",
+      "system": "sig17",
+      "faction": "li_grp",
+      "name_ru": "Линкор Грифон",
+      "name_en": "Battleship Griffin",
+      "locked": false,
+      "group": "rm0141",
+      "region": "li",
+      "surname": "Miller",
+      "style": 1,
+      "appearance": {
+        "head": "ge_male4_head",
+        "body": "li_male_guard_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "sig22_01_base",
+      "system": "sig22",
+      "faction": "br_grp",
+      "name_ru": "Планета Гонолулу",
+      "name_en": "Planet Honolulu",
+      "locked": false,
+      "group": "rm0142",
+      "region": "br",
+      "surname": "Clarke",
+      "style": 1,
+      "appearance": {
+        "head": "ge_male2_head",
+        "body": "br_male_guard_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "sig22_03_base",
+      "system": "sig22",
+      "faction": "li_grp",
+      "name_ru": "Линкор Аризона",
+      "name_en": "Battleship Arizona",
+      "locked": false,
+      "group": "rm0143",
+      "region": "li",
+      "surname": "Bennett",
+      "style": 2,
+      "appearance": {
+        "head": "ge_male6_head",
+        "body": "li_male_elite_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "sig42_01_base",
+      "system": "sig42",
+      "faction": "br_grp",
+      "name_ru": "Планета Спрага",
+      "name_en": "Planet Sprague",
+      "locked": false,
+      "group": "rm0144",
+      "region": "br",
+      "surname": "Hughes",
+      "style": 2,
+      "appearance": {
+        "head": "ge_male3_head",
+        "body": "br_male_elite_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "sphere2_99_base",
+      "system": "sphere2",
+      "faction": "li_grp",
+      "name_ru": "Линкор Осирис",
+      "name_en": "Battleship Osiris",
+      "locked": false,
+      "group": "rm0145",
+      "region": "li",
+      "surname": "Shaw",
+      "style": 3,
+      "appearance": {
+        "head": "ge_male6_head",
+        "body": "li_male_guard_body"
+      },
+      "spot": "Zg/NPC/mFloor2/02/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "sphere_01_base",
+      "system": "sphere",
+      "faction": "li_grp",
+      "name_ru": "Линкор Миссури",
+      "name_en": "Battleship Missouri",
+      "locked": false,
+      "group": "rm0146",
+      "region": "li",
+      "surname": "Parker",
+      "style": 0,
+      "appearance": {
+        "head": "ge_male7_head",
+        "body": "li_male_elite_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "sphere_02_base",
+      "system": "sphere",
+      "faction": "li_grp",
+      "name_ru": "Линкор Миссури",
+      "name_en": "Battleship Missouri",
+      "locked": false,
+      "group": "rm0147",
+      "region": "li",
+      "surname": "Wells",
+      "style": 1,
+      "appearance": {
+        "head": "ge_male7_head",
+        "body": "li_male_guard_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "tau23_03_base",
+      "system": "tau23",
+      "faction": "br_grp",
+      "name_ru": "Линкор Авангард",
+      "name_en": "Battleship Vanguard",
+      "locked": false,
+      "group": "rm0148",
+      "region": "br",
+      "surname": "Lancaster",
+      "style": 3,
+      "appearance": {
+        "head": "ge_male3_head",
+        "body": "br_male_guard_body"
+      },
+      "spot": "Zg/NPC/mFloor2/02/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "tau23_04_base",
+      "system": "tau23",
+      "faction": "ku_grp",
+      "name_ru": "Линкор Кирисима",
+      "name_en": "Battleship Kirishima",
+      "locked": false,
+      "group": "rm0149",
+      "region": "ku",
+      "surname": "Ishida",
+      "style": 0,
+      "appearance": {
+        "head": "ge_male4_head",
+        "body": "ku_male_elite_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "tau31_02_base",
+      "system": "tau31",
+      "faction": "li_grp",
+      "name_ru": "Линкор Луизиана",
+      "name_en": "Battleship Louisiana",
+      "locked": false,
+      "group": "rm0150",
+      "region": "li",
+      "surname": "Davis",
+      "style": 2,
+      "appearance": {
+        "head": "pl_male1_head",
+        "body": "li_male_elite_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "tau37_03_base",
+      "system": "tau37",
+      "faction": "br_grp",
+      "name_ru": "Линкор Нептун",
+      "name_en": "Battleship Neptune",
+      "locked": false,
+      "group": "rm0151",
+      "region": "br",
+      "surname": "Pembroke",
+      "style": 0,
+      "appearance": {
+        "head": "ge_male4_head",
+        "body": "br_male_elite_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "tau4_03_base",
+      "system": "tau4",
+      "faction": "ku_grp",
+      "name_ru": "Линкор Ямасиро",
+      "name_en": "Battleship Yamashiro",
+      "locked": false,
+      "group": "rm0152",
+      "region": "ku",
+      "surname": "Watanabe",
+      "style": 1,
+      "appearance": {
+        "head": "ge_male4_head",
+        "body": "ku_male_guard_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    },
+    {
+      "base": "xen_99_base",
+      "system": "xen",
+      "faction": "ku_grp",
+      "name_ru": "Линкор Мусаси",
+      "name_en": "Battleship Musashi",
+      "locked": false,
+      "group": "rm0153",
+      "region": "ku",
+      "surname": "Okada",
+      "style": 2,
+      "appearance": {
+        "head": "ge_male6_head",
+        "body": "ku_male_elite_body"
+      },
+      "spot": "Zg/NPC/mFloor2/01/A/Stand",
+      "posture": "stand"
+    }
+  ]
+}

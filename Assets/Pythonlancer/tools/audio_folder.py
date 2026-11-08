@@ -1,6 +1,7 @@
 from tools.utf_xml import XML_UTF, OUT_DIR
 from tools.data_folder import DataFolder
 from tools.voice_api import VoiceApi
+from tools.voice_output import output_path
 import pathlib
 
 
@@ -67,6 +68,7 @@ INITIAL_AUDIO_XML_FOLDER = 'AUDIO_XML_RU'
 INITIAL_AUDIO_XML_FOLDER_EN = 'AUDIO_XML_EN'
 APPLY_AUDIO_CUTSCENE_FOLDER = 'AUDIO_XML_CUTSCENE_APPLY'
 APPLY_AUDIO_XML_FOLDER = 'AUDIO_XML_RU_APPLY'
+APPLY_AUDIO_XML_FOLDER_EN = 'AUDIO_XML_EN_APPLY'
 
 STORY_FOLDER_TEMPLATE = '../AUDIO_XML_RU_APPLY/{file}.xml'
 STORY_FOLDER_TEMPLATE_EN = '../AUDIO_XML_EN_APPLY/{file}.xml'
@@ -88,6 +90,11 @@ class AudioFolder:
     def get_apply_xml_audio_path():
         current_path = pathlib.Path().resolve()
         return current_path.parent / APPLY_AUDIO_XML_FOLDER
+
+    @staticmethod
+    def get_apply_xml_audio_path_en():
+        current_path = pathlib.Path().resolve()
+        return current_path.parent / APPLY_AUDIO_XML_FOLDER_EN
 
     @staticmethod
     def get_initial_cutscene_audio_path():
@@ -149,8 +156,8 @@ class AudioFolder:
         xml_path.write_text(voice.get_xml(), encoding='utf-8')
 
         for sound in voice.get_sounds():
-            file_destination = sounds_path / f"{sound.name}.mp3"
-            alt_file_destination = sounds_path / f"{sound.name}.wav"
+            file_destination = output_path(sounds_path / f"{sound.name}.mp3")
+            alt_file_destination = file_destination.with_suffix('.mp3' if file_destination.suffix == '.wav' else '.wav')
             if file_destination.exists() or alt_file_destination.exists():
                 continue
 
@@ -168,8 +175,8 @@ class AudioFolder:
         sounds_path.mkdir(parents=True, exist_ok=True)
 
         for sound in cutscene.get_sounds():
-            file_destination = sounds_path / f"{sound.name}.mp3"
-            alt_file_destination = sounds_path / f"{sound.name}.wav"
+            file_destination = output_path(sounds_path / f"{sound.name}.mp3")
+            alt_file_destination = file_destination.with_suffix('.mp3' if file_destination.suffix == '.wav' else '.wav')
             if file_destination.exists() or alt_file_destination.exists():
                 continue
 
@@ -180,7 +187,9 @@ class AudioFolder:
 
     @classmethod
     def generate_simple_sound(cls, file_destination, actor, line):
-        if file_destination.exists():
+        file_destination = output_path(file_destination)
+        alternate = file_destination.with_suffix('.mp3' if file_destination.suffix == '.wav' else '.wav')
+        if file_destination.exists() or alternate.exists():
             return
 
         VoiceApi.generate_ru_voice_simple(file_destination=file_destination, text=line, actor=actor)

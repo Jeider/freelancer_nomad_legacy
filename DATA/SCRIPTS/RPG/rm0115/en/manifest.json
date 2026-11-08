@@ -1,0 +1,800 @@
+{
+  "schema": 1,
+  "group": "rm0115",
+  "language": "en",
+  "runtime_connected": false,
+  "contract": {
+    "actor_binding": {
+      "vendor": "park_ku_tgk_01",
+      "player": "Player"
+    },
+    "bind_mode": 2,
+    "require_existing_actors": true,
+    "session_cameras": {
+      "vendor": "RpgCamera_vendor",
+      "player": "RpgCamera_player"
+    },
+    "position_actors_once": true,
+    "skip": "current_fragment_only"
+  },
+  "dialogue": {
+    "schema": 1,
+    "id": "rm0115",
+    "status": "generated",
+    "scenario": "parking_commandant",
+    "start": "parking_start",
+    "binding": {
+      "vendor": "park_ku_tgk_01",
+      "player": "Player"
+    },
+    "casting": {
+      "vendor": "RpgAvalonParkingOfficer",
+      "player": "Trent"
+    },
+    "parking": {
+      "base": "ku_tgk_01_base",
+      "seller": "park_ku_tgk_01"
+    },
+    "appearance": {
+      "head": "ge_male2_head",
+      "body": "ku_male_elite_body"
+    },
+    "rules": {
+      "reputation": {
+        "enabled": true,
+        "faction": "contact.affiliation",
+        "minimum": 0,
+        "strict": true,
+        "enforced_by": "server.parking"
+      },
+      "first_greeting": "rm0115_frag0001",
+      "rotation": "shuffle_bag_no_immediate_repeat",
+      "escape_during_speech": "skip_current_fragment",
+      "price_and_limit": "RPG/ship_parking.ini",
+      "purchase": "one_permanent_slot_on_this_base_per_confirmation"
+    },
+    "fragments": [
+      {
+        "id": "rm0115_frag0001",
+        "role": "vendor",
+        "pool": "greeting",
+        "ru": "Добро пожаловать. Станция Йокогама. Я комендант стоянки Abe. Нужно место для корабля?",
+        "en": "Welcome to Station Yokohama. I am Commandant Abe. I handle parking berths here."
+      },
+      {
+        "id": "rm0115_frag0002",
+        "role": "player",
+        "pool": "ask_buy",
+        "ru": "Хочу купить место для своего корабля.",
+        "en": "I'd like to buy a berth for my ship."
+      },
+      {
+        "id": "rm0115_frag0003",
+        "role": "vendor",
+        "pool": "quote",
+        "ru": "Вот условия покупки. Проверь стоимость и подтверди, если всё устраивает.",
+        "en": "Here are the terms. Check the price, and confirm if you're ready to proceed."
+      },
+      {
+        "id": "rm0115_frag0004",
+        "role": "player",
+        "pool": "confirm",
+        "ru": "Условия устраивают. Оформляйте одно место.",
+        "en": "The terms look good. I'll take one berth."
+      },
+      {
+        "id": "rm0115_frag0005",
+        "role": "vendor",
+        "pool": "success",
+        "ru": "Оплата принята. Станция Йокогама: место закреплено за тобой. Можешь оставить корабль.",
+        "en": "Payment received. Your berth at Station Yokohama is registered. You can store a ship here now."
+      },
+      {
+        "id": "rm0115_frag0006",
+        "role": "player",
+        "pool": "cancel",
+        "ru": "Пока отложим покупку.",
+        "en": "Let's hold off on the purchase."
+      },
+      {
+        "id": "rm0115_frag0007",
+        "role": "vendor",
+        "pool": "resume",
+        "ru": "Хорошо. Что ещё тебя интересует?",
+        "en": "All right. What else would you like to know?"
+      },
+      {
+        "id": "rm0115_frag0008",
+        "role": "player",
+        "pool": "ask_rules",
+        "ru": "Какие у вас условия хранения кораблей?",
+        "en": "What are the rules for storing ships here?"
+      },
+      {
+        "id": "rm0115_frag0009",
+        "role": "vendor",
+        "pool": "rules",
+        "ru": "Место покупается навсегда. Заберёшь корабль — место останется твоим. Текущий корабль отдельного места не занимает.",
+        "en": "A berth is yours permanently. It stays yours when you collect the ship. Your current ship doesn't take up a berth."
+      },
+      {
+        "id": "rm0115_frag0010",
+        "role": "player",
+        "pool": "ask_scope",
+        "ru": "Это место будет доступно и на других базах?",
+        "en": "Can I use that berth at other bases too?"
+      },
+      {
+        "id": "rm0115_frag0011",
+        "role": "vendor",
+        "pool": "scope",
+        "ru": "Место действует только здесь: Станция Йокогама. На другой базе его нужно покупать отдельно.",
+        "en": "This berth is only valid at Station Yokohama. You will need a separate berth at any other base."
+      },
+      {
+        "id": "rm0115_frag0012",
+        "role": "player",
+        "pool": "ask_full",
+        "ru": "А если все мои места будут заняты?",
+        "en": "What happens when all my berths are occupied?"
+      },
+      {
+        "id": "rm0115_frag0013",
+        "role": "vendor",
+        "pool": "full",
+        "ru": "Ещё один корабль поставить не получится. Но можно забрать оставленный или обменять его на текущий. Для обмена свободное место не нужно.",
+        "en": "You won't be able to park another ship. You can still collect a stored ship or swap it with your current one. A swap doesn't need an empty berth."
+      },
+      {
+        "id": "rm0115_frag0014",
+        "role": "vendor",
+        "pool": "no_money",
+        "ru": "На счету недостаточно кредитов. Оплата не прошла. Возвращайся, когда будет нужная сумма.",
+        "en": "You don't have enough credits. No payment was taken. Come back when you have the funds."
+      },
+      {
+        "id": "rm0115_frag0015",
+        "role": "vendor",
+        "pool": "maximum",
+        "ru": "Ты уже приобрёл все доступные тебе места на этой базе. Ещё одно оформить не могу.",
+        "en": "You already own the maximum number of berths at this base. I cannot register another one."
+      },
+      {
+        "id": "rm0115_frag0016",
+        "role": "vendor",
+        "pool": "error",
+        "ru": "Оформить покупку не удалось. Деньги не списаны. Давай проверим условия ещё раз.",
+        "en": "The purchase couldn't be completed. You haven't been charged. Let's check the terms again."
+      },
+      {
+        "id": "rm0115_frag0017",
+        "role": "player",
+        "pool": "back",
+        "ru": "Вернёмся к покупке места.",
+        "en": "Let's get back to buying a berth."
+      },
+      {
+        "id": "rm0115_frag0018",
+        "role": "player",
+        "pool": "leave",
+        "ru": "На этом всё. До встречи, комендант.",
+        "en": "That is all for now. Goodbye, Commandant."
+      },
+      {
+        "id": "rm0115_frag0019",
+        "role": "vendor",
+        "pool": "farewell",
+        "ru": "До встречи, Трент. Удачных полётов.",
+        "en": "Goodbye, Trent. Safe flying."
+      },
+      {
+        "id": "rm0115_frag0020",
+        "role": "vendor",
+        "pool": "greeting",
+        "ru": "С возвращением. Комендант Abe слушает. По поводу стоянки?",
+        "en": "Welcome back. Commandant Abe speaking. Here about ship storage?"
+      },
+      {
+        "id": "rm0115_frag0021",
+        "role": "vendor",
+        "pool": "greeting",
+        "ru": "Привет, Трент. Стоянка базы «Станция Йокогама» к твоим услугам.",
+        "en": "Hello, Trent. Need another berth at Station Yokohama?"
+      },
+      {
+        "id": "rm0115_frag0022",
+        "role": "vendor",
+        "pool": "success",
+        "ru": "Готово. Место оплачено и закреплено за тобой. Пользуйся.",
+        "en": "All done. The berth is paid for and registered in your name. It's yours to use."
+      },
+      {
+        "id": "rm0115_frag0023",
+        "role": "vendor",
+        "pool": "bad_reputation",
+        "ru": "Не могу продать тебе место. Твоя репутация у нашей фракции должна быть положительной.",
+        "en": "I cannot sell you a berth. Your reputation with our faction must be positive."
+      }
+    ],
+    "nodes": {
+      "parking_start": {
+        "pool": "greeting",
+        "choices": "main",
+        "text_ru": "Стоянка {base}. Куплено: {owned} из {maximum}. Занято: {used}. Цена места: {price} кредитов.",
+        "text_en": "{base} parking. Owned: {owned} of {maximum}. Occupied: {used}. Price per berth: {price} credits."
+      },
+      "parking_confirm": {
+        "pool": "quote",
+        "choices": "confirm",
+        "text_ru": "Купить одно постоянное место на {base} за {price} кредитов? Куплено: {owned} из {maximum}.",
+        "text_en": "Buy one permanent berth on {base} for {price} credits? Owned: {owned} of {maximum}."
+      },
+      "parking_resume": {
+        "pool": "resume",
+        "choices": "main"
+      },
+      "parking_help": {
+        "pool": "rules",
+        "choices": "information"
+      },
+      "parking_scope": {
+        "pool": "scope",
+        "choices": "information"
+      },
+      "parking_full": {
+        "pool": "full",
+        "choices": "information"
+      },
+      "parking_success": {
+        "pool": "success",
+        "choices": "result",
+        "text_ru": "Место оплачено. На {base} у вас {owned} из {maximum} мест. Занято: {used}.",
+        "text_en": "Berth purchased. You own {owned} of {maximum} berths on {base}. Occupied: {used}."
+      },
+      "parking_no_money": {
+        "pool": "no_money",
+        "choices": "result"
+      },
+      "parking_maximum": {
+        "pool": "maximum",
+        "choices": "result"
+      },
+      "parking_error": {
+        "pool": "error",
+        "choices": "result"
+      },
+      "parking_farewell": {
+        "pool": "farewell",
+        "terminal": true
+      },
+      "parking_bad_reputation": {
+        "pool": "bad_reputation",
+        "choices": "result"
+      }
+    },
+    "choice_sets": {
+      "main": [
+        "buy",
+        "rules",
+        "leave"
+      ],
+      "confirm": [
+        "confirm",
+        "cancel"
+      ],
+      "information": [
+        "scope",
+        "full",
+        "back",
+        "leave"
+      ],
+      "result": [
+        "back",
+        "leave"
+      ]
+    },
+    "choices": {
+      "buy": {
+        "pool": "ask_buy",
+        "ru": "Купить место",
+        "en": "Buy a berth",
+        "action": "quote_parking",
+        "goto": "parking_confirm",
+        "outcomes": {
+          "maximum": "parking_maximum",
+          "bad_reputation": "parking_bad_reputation"
+        }
+      },
+      "confirm": {
+        "pool": "confirm",
+        "ru": "Купить за {price} кредитов",
+        "en": "Buy for {price} credits",
+        "action": "buy_parking",
+        "outcomes": {
+          "success": "parking_success",
+          "no_money": "parking_no_money",
+          "maximum": "parking_maximum",
+          "failed": "parking_error",
+          "bad_reputation": "parking_bad_reputation"
+        }
+      },
+      "cancel": {
+        "pool": "cancel",
+        "ru": "Отложить покупку",
+        "en": "Cancel purchase",
+        "goto": "parking_resume"
+      },
+      "rules": {
+        "pool": "ask_rules",
+        "ru": "Условия хранения",
+        "en": "Storage rules",
+        "goto": "parking_help"
+      },
+      "scope": {
+        "pool": "ask_scope",
+        "ru": "Место действует на других базах?",
+        "en": "Does it apply at other bases?",
+        "goto": "parking_scope"
+      },
+      "full": {
+        "pool": "ask_full",
+        "ru": "Если все места заняты?",
+        "en": "What if all berths are occupied?",
+        "goto": "parking_full"
+      },
+      "back": {
+        "pool": "back",
+        "ru": "Вернуться к покупке",
+        "en": "Back to the purchase",
+        "goto": "parking_start"
+      },
+      "leave": {
+        "pool": "leave",
+        "ru": "До встречи, комендант",
+        "en": "Goodbye, Commandant",
+        "goto": "parking_farewell"
+      }
+    },
+    "local_scene": true,
+    "vendor_posture": "stand"
+  },
+  "fragments": [
+    {
+      "id": "rm0115_frag0001",
+      "role": "vendor",
+      "pool": "greeting",
+      "path": "SCRIPTS/RPG/rm0115/en/rm0115_frag0001.thn",
+      "sha256": "a2ba67e29208405168ad61d72a97dbf843bb8ea6627fff9286f4df36913eb6c0",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0115/rm0115_frag0001_l001_vendor.wav",
+      "audio_sha256": "17bcc9a03de34dc8a74cef5143dce3cf17f62ed87293c168ac4597902d81a1cc",
+      "sound": "DX_rm0115_frag0001_l001_vendor_en",
+      "speech_seconds": 3.768,
+      "scene_seconds": 5.218,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Welcome to Station Yokohama. I am Commandant Abe. I handle parking berths here."
+    },
+    {
+      "id": "rm0115_frag0002",
+      "role": "player",
+      "pool": "ask_buy",
+      "path": "SCRIPTS/RPG/rm0115/en/rm0115_frag0002.thn",
+      "sha256": "60bb8782e0e7a442aa172ef33b5dfd8cdc086d4301164181ca33d4a604148012",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0115/rm0115_frag0002_l001_player.wav",
+      "audio_sha256": "043f1eb5fd6be8e6cb32c9f559e33043ac1057d585ed8bbb12e14d59ca28bb3d",
+      "sound": "DX_rm0115_frag0002_l001_player_en",
+      "speech_seconds": 1.806125,
+      "scene_seconds": 3.256125,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "I'd like to buy a berth for my ship."
+    },
+    {
+      "id": "rm0115_frag0003",
+      "role": "vendor",
+      "pool": "quote",
+      "path": "SCRIPTS/RPG/rm0115/en/rm0115_frag0003.thn",
+      "sha256": "d472aa14ece0b5172e6970e0da1a7b1b9c0cc658ae30699029289b43d66e7b6c",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0115/rm0115_frag0003_l001_vendor.wav",
+      "audio_sha256": "fa3b71b921f3dd9bd9feb45f32ad1a3783ea21c5d0e813882fb4de404709cde4",
+      "sound": "DX_rm0115_frag0003_l001_vendor_en",
+      "speech_seconds": 3.219625,
+      "scene_seconds": 4.669625,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Here are the terms. Check the price, and confirm if you're ready to proceed."
+    },
+    {
+      "id": "rm0115_frag0004",
+      "role": "player",
+      "pool": "confirm",
+      "path": "SCRIPTS/RPG/rm0115/en/rm0115_frag0004.thn",
+      "sha256": "73140522b6e9cf7ec7845f0cbac7854ffe6e4614d6cdd0a37ddffec6b8f68263",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0115/rm0115_frag0004_l001_player.wav",
+      "audio_sha256": "87f54a8fdd15c8f9b7d488df791cb54f7186f8388d3ed261dc600ec2949c38b1",
+      "sound": "DX_rm0115_frag0004_l001_player_en",
+      "speech_seconds": 2.019375,
+      "scene_seconds": 3.469375,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "The terms look good. I'll take one berth."
+    },
+    {
+      "id": "rm0115_frag0005",
+      "role": "vendor",
+      "pool": "success",
+      "path": "SCRIPTS/RPG/rm0115/en/rm0115_frag0005.thn",
+      "sha256": "28949bfeb97e8fa1c641e997799b82642eaf935291f0eda1c93e662a48e54218",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0115/rm0115_frag0005_l001_vendor.wav",
+      "audio_sha256": "48b7248e30fba7b51d243a7d5499542beb386a4b09caf39c8f381809b52ec3b9",
+      "sound": "DX_rm0115_frag0005_l001_vendor_en",
+      "speech_seconds": 4.4703333333333335,
+      "scene_seconds": 5.920333333333334,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Payment received. Your berth at Station Yokohama is registered. You can store a ship here now."
+    },
+    {
+      "id": "rm0115_frag0006",
+      "role": "player",
+      "pool": "cancel",
+      "path": "SCRIPTS/RPG/rm0115/en/rm0115_frag0006.thn",
+      "sha256": "0bf16f4493e4ee3aadadafe14944aa6a5e581410a5662f9a60e5c7c6e3c48d96",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0115/rm0115_frag0006_l001_player.wav",
+      "audio_sha256": "feb3659c7f429f308ae7329aa5efcb0d3269b993306e66b5b8a8ba0a21919c76",
+      "sound": "DX_rm0115_frag0006_l001_player_en",
+      "speech_seconds": 1.439375,
+      "scene_seconds": 2.8893750000000002,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Let's hold off on the purchase."
+    },
+    {
+      "id": "rm0115_frag0007",
+      "role": "vendor",
+      "pool": "resume",
+      "path": "SCRIPTS/RPG/rm0115/en/rm0115_frag0007.thn",
+      "sha256": "67733effb73c5fa59dccde541cfe08e21059906cfe983cb9d1f9e0177a945c0d",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0115/rm0115_frag0007_l001_vendor.wav",
+      "audio_sha256": "3f19514837d9bc1c4a191afde199363663c88a767d2665b27504fdd7461a09c4",
+      "sound": "DX_rm0115_frag0007_l001_vendor_en",
+      "speech_seconds": 1.8420416666666666,
+      "scene_seconds": 3.2920416666666665,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "All right. What else would you like to know?"
+    },
+    {
+      "id": "rm0115_frag0008",
+      "role": "player",
+      "pool": "ask_rules",
+      "path": "SCRIPTS/RPG/rm0115/en/rm0115_frag0008.thn",
+      "sha256": "deafff07232925990bf435cd759c1fde0bd34e94036e2ace22b9b72b454359c4",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0115/rm0115_frag0008_l001_player.wav",
+      "audio_sha256": "ac47bda61e700c3850327c64ec43d8afc87b26878816b1aa3de9f3894ad68ee9",
+      "sound": "DX_rm0115_frag0008_l001_player_en",
+      "speech_seconds": 2.03975,
+      "scene_seconds": 3.48975,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "What are the rules for storing ships here?"
+    },
+    {
+      "id": "rm0115_frag0009",
+      "role": "vendor",
+      "pool": "rules",
+      "path": "SCRIPTS/RPG/rm0115/en/rm0115_frag0009.thn",
+      "sha256": "841d2cd23975b3c022771cafafaf73423c9e213680b6ce55c6368a0005ca5d58",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0115/rm0115_frag0009_l001_vendor.wav",
+      "audio_sha256": "e4c050566ebbd043e607500820b12f8e484fd3584d71fe9345ebddab92b88390",
+      "sound": "DX_rm0115_frag0009_l001_vendor_en",
+      "speech_seconds": 5.0761666666666665,
+      "scene_seconds": 6.526166666666667,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "A berth is yours permanently. It stays yours when you collect the ship. Your current ship doesn't take up a berth."
+    },
+    {
+      "id": "rm0115_frag0010",
+      "role": "player",
+      "pool": "ask_scope",
+      "path": "SCRIPTS/RPG/rm0115/en/rm0115_frag0010.thn",
+      "sha256": "62dca2333f61a5c11cbaa3ec0f6fb07013e0813ad5c9da8fdddf5565bed43782",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0115/rm0115_frag0010_l001_player.wav",
+      "audio_sha256": "7c39193d37f81a5075d869af3c6be3decc71f66510a6a5e66af4da486f0b9d93",
+      "sound": "DX_rm0115_frag0010_l001_player_en",
+      "speech_seconds": 2.048791666666667,
+      "scene_seconds": 3.4987916666666665,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Can I use that berth at other bases too?"
+    },
+    {
+      "id": "rm0115_frag0011",
+      "role": "vendor",
+      "pool": "scope",
+      "path": "SCRIPTS/RPG/rm0115/en/rm0115_frag0011.thn",
+      "sha256": "a0661ab67c623d9e18654304fbc44efcde174bce4a68579edd8b338afda6e519",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0115/rm0115_frag0011_l001_vendor.wav",
+      "audio_sha256": "4e52fd0a0af8d69a89868d49e8f5f082254d5933e83b4a074ef073fb1231ca75",
+      "sound": "DX_rm0115_frag0011_l001_vendor_en",
+      "speech_seconds": 4.481625,
+      "scene_seconds": 5.931625,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "This berth is only valid at Station Yokohama. You will need a separate berth at any other base."
+    },
+    {
+      "id": "rm0115_frag0012",
+      "role": "player",
+      "pool": "ask_full",
+      "path": "SCRIPTS/RPG/rm0115/en/rm0115_frag0012.thn",
+      "sha256": "076812deb6dd480cb73c84aa75a92eb5b4a58f842a3b00783807c206e210c2a9",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0115/rm0115_frag0012_l001_player.wav",
+      "audio_sha256": "f0f8edfbde360d923305df2a75aef24f63b66a1c6878e862009a3aa44165f52b",
+      "sound": "DX_rm0115_frag0012_l001_player_en",
+      "speech_seconds": 2.161583333333333,
+      "scene_seconds": 3.611583333333333,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "What happens when all my berths are occupied?"
+    },
+    {
+      "id": "rm0115_frag0013",
+      "role": "vendor",
+      "pool": "full",
+      "path": "SCRIPTS/RPG/rm0115/en/rm0115_frag0013.thn",
+      "sha256": "a4f2673ff37460f2f760ccc944921e575b9d04f6634620452693041448590c41",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0115/rm0115_frag0013_l001_vendor.wav",
+      "audio_sha256": "29020db828d106c12c7ffbd856b7a7c61b10df7666a8e9351fcf3440c0ebdd68",
+      "sound": "DX_rm0115_frag0013_l001_vendor_en",
+      "speech_seconds": 6.449583333333333,
+      "scene_seconds": 7.899583333333333,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "You won't be able to park another ship. You can still collect a stored ship or swap it with your current one. A swap doesn't need an empty berth."
+    },
+    {
+      "id": "rm0115_frag0014",
+      "role": "vendor",
+      "pool": "no_money",
+      "path": "SCRIPTS/RPG/rm0115/en/rm0115_frag0014.thn",
+      "sha256": "76b7db3b17c659c89feefb627ff29eea3de24ecd11be5f0f43f7efc1fa1c7179",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0115/rm0115_frag0014_l001_vendor.wav",
+      "audio_sha256": "374deb3fb1e5baef911a0f55b478be2f91be46f80017a4b41ff6be72f3f651e0",
+      "sound": "DX_rm0115_frag0014_l001_vendor_en",
+      "speech_seconds": 3.7259583333333333,
+      "scene_seconds": 5.175958333333334,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "You don't have enough credits. No payment was taken. Come back when you have the funds."
+    },
+    {
+      "id": "rm0115_frag0015",
+      "role": "vendor",
+      "pool": "maximum",
+      "path": "SCRIPTS/RPG/rm0115/en/rm0115_frag0015.thn",
+      "sha256": "1586468f55007f09ecb268c06e0acb25560fa5e7599989b876adab87ebf6cfb2",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0115/rm0115_frag0015_l001_vendor.wav",
+      "audio_sha256": "3d35fc3b59d81b98e80f2b97ab798bb544b4b4e5acb0c3310ac72655f758c0c8",
+      "sound": "DX_rm0115_frag0015_l001_vendor_en",
+      "speech_seconds": 4.218541666666667,
+      "scene_seconds": 5.668541666666667,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "You already own the maximum number of berths at this base. I cannot register another one."
+    },
+    {
+      "id": "rm0115_frag0016",
+      "role": "vendor",
+      "pool": "error",
+      "path": "SCRIPTS/RPG/rm0115/en/rm0115_frag0016.thn",
+      "sha256": "5ea6b740e31adf05355da8cb0994eeff81297c34ee867b2dfdc1453bb95ac238",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0115/rm0115_frag0016_l001_vendor.wav",
+      "audio_sha256": "51fa9faccd4769144363da1e5aa06869ab76f188a5e88f92b0c9c6849147241a",
+      "sound": "DX_rm0115_frag0016_l001_vendor_en",
+      "speech_seconds": 3.9690833333333333,
+      "scene_seconds": 5.419083333333334,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "The purchase couldn't be completed. You haven't been charged. Let's check the terms again."
+    },
+    {
+      "id": "rm0115_frag0017",
+      "role": "player",
+      "pool": "back",
+      "path": "SCRIPTS/RPG/rm0115/en/rm0115_frag0017.thn",
+      "sha256": "1a7d8fd7ee6e1aef3737509b4c3277de88afa1650d1f0a0fe9e764080cbc3b79",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0115/rm0115_frag0017_l001_player.wav",
+      "audio_sha256": "a7ff4d91a64b005a6dc0bcdcee4c4ef3640f9acc8ca57c7aead402edcb9eb72a",
+      "sound": "DX_rm0115_frag0017_l001_player_en",
+      "speech_seconds": 1.6185,
+      "scene_seconds": 3.0685000000000002,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Let's get back to buying a berth."
+    },
+    {
+      "id": "rm0115_frag0018",
+      "role": "player",
+      "pool": "leave",
+      "path": "SCRIPTS/RPG/rm0115/en/rm0115_frag0018.thn",
+      "sha256": "7df715382772b13102c5b70b5a0b8b055ce9c98bf53ea76c228a61f0c9712e67",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0115/rm0115_frag0018_l001_player.wav",
+      "audio_sha256": "8aa18b0f16f4046cb3356c70822ceb5f07823ac4d91019e47e28ee1e194fb51c",
+      "sound": "DX_rm0115_frag0018_l001_player_en",
+      "speech_seconds": 2.2087083333333335,
+      "scene_seconds": 3.6587083333333332,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "That is all for now. Goodbye, Commandant."
+    },
+    {
+      "id": "rm0115_frag0019",
+      "role": "vendor",
+      "pool": "farewell",
+      "path": "SCRIPTS/RPG/rm0115/en/rm0115_frag0019.thn",
+      "sha256": "b6badbace16d75fe12af4ac4cea6b48964565ba5a408ac85ead397109393656f",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0115/rm0115_frag0019_l001_vendor.wav",
+      "audio_sha256": "ce98261ba597a9dbb97e7cac6ae343e21afe9b6e4961183ce21324f5d2ba316c",
+      "sound": "DX_rm0115_frag0019_l001_vendor_en",
+      "speech_seconds": 1.555625,
+      "scene_seconds": 3.005625,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Goodbye, Trent. Safe flying."
+    },
+    {
+      "id": "rm0115_frag0020",
+      "role": "vendor",
+      "pool": "greeting",
+      "path": "SCRIPTS/RPG/rm0115/en/rm0115_frag0020.thn",
+      "sha256": "2edcdfceedd4c114ca3dde8d04b9517affb018103f32bf55b53ed791241e6da5",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0115/rm0115_frag0020_l001_vendor.wav",
+      "audio_sha256": "597f01efc054ba5f88bcdfffe8a5eaca79d4c753ba01aea8e9e2a8569964daff",
+      "sound": "DX_rm0115_frag0020_l001_vendor_en",
+      "speech_seconds": 3.0432083333333333,
+      "scene_seconds": 4.4932083333333335,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Welcome back. Commandant Abe speaking. Here about ship storage?"
+    },
+    {
+      "id": "rm0115_frag0021",
+      "role": "vendor",
+      "pool": "greeting",
+      "path": "SCRIPTS/RPG/rm0115/en/rm0115_frag0021.thn",
+      "sha256": "7f5caf07f35bdf723f28dc69fcf953e323c4e7903a6d72514153231cc418ee64",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0115/rm0115_frag0021_l001_vendor.wav",
+      "audio_sha256": "9ebb23325be27cf22265746c19440d65634c0bb3e83fe7fc17275cacf386aa5d",
+      "sound": "DX_rm0115_frag0021_l001_vendor_en",
+      "speech_seconds": 2.50475,
+      "scene_seconds": 3.9547499999999998,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Hello, Trent. Need another berth at Station Yokohama?"
+    },
+    {
+      "id": "rm0115_frag0022",
+      "role": "vendor",
+      "pool": "success",
+      "path": "SCRIPTS/RPG/rm0115/en/rm0115_frag0022.thn",
+      "sha256": "281fae92eeb159afb01fb9968f3c2fc26f8d98d441c982e43638453eeafcce47",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0115/rm0115_frag0022_l001_vendor.wav",
+      "audio_sha256": "8051013c9c337e886202d2f111c59f6781cc0d52416b96fae8560946d983a7de",
+      "sound": "DX_rm0115_frag0022_l001_vendor_en",
+      "speech_seconds": 3.6124583333333335,
+      "scene_seconds": 5.062458333333334,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "All done. The berth is paid for and registered in your name. It's yours to use."
+    },
+    {
+      "id": "rm0115_frag0023",
+      "role": "vendor",
+      "pool": "bad_reputation",
+      "path": "SCRIPTS/RPG/rm0115/en/rm0115_frag0023.thn",
+      "sha256": "7e0f095c9ff1e682f8e0e1b86066118e031bbd4105d6d1ffa431fc5a7dd8eb26",
+      "audio": "AUDIO/MOD_ENG/RPG/rm0115/rm0115_frag0023_l001_vendor.wav",
+      "audio_sha256": "d389e525477c1bfd4e15eed3db2d848bf4e5599dc3d9189e9caf6f555b914059",
+      "sound": "DX_rm0115_frag0023_l001_vendor_en",
+      "speech_seconds": 3.622375,
+      "scene_seconds": 5.072375,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "I cannot sell you a berth. Your reputation with our faction must be positive."
+    }
+  ],
+  "gestures": [
+    {
+      "role": "vendor",
+      "step": 0,
+      "path": "SCRIPTS/RPG/rm0115/gestures/vendor_01.thn",
+      "duration": 14.4,
+      "sha256": "0f3fba9a63d4df847e7f5874565b97b029394141c576ea371cc11fb557e408bc"
+    },
+    {
+      "role": "vendor",
+      "step": 1,
+      "path": "SCRIPTS/RPG/rm0115/gestures/vendor_02.thn",
+      "duration": 10.15,
+      "sha256": "ee18465f81ddf58b9edfd5a025f9481e77a288eb4cc075c9d0294dccc0f6f3a6"
+    },
+    {
+      "role": "vendor",
+      "step": 2,
+      "path": "SCRIPTS/RPG/rm0115/gestures/vendor_03.thn",
+      "duration": 10.15,
+      "sha256": "c7cca122d0e11d86b9a096da10398b904d0093e12df51a5466f2a3505172dd63"
+    },
+    {
+      "role": "vendor",
+      "step": 3,
+      "path": "SCRIPTS/RPG/rm0115/gestures/vendor_04.thn",
+      "duration": 14.4,
+      "sha256": "0f3fba9a63d4df847e7f5874565b97b029394141c576ea371cc11fb557e408bc"
+    },
+    {
+      "role": "vendor",
+      "step": 4,
+      "path": "SCRIPTS/RPG/rm0115/gestures/vendor_05.thn",
+      "duration": 10.15,
+      "sha256": "ee18465f81ddf58b9edfd5a025f9481e77a288eb4cc075c9d0294dccc0f6f3a6"
+    },
+    {
+      "role": "vendor",
+      "step": 5,
+      "path": "SCRIPTS/RPG/rm0115/gestures/vendor_06.thn",
+      "duration": 10.15,
+      "sha256": "c7cca122d0e11d86b9a096da10398b904d0093e12df51a5466f2a3505172dd63"
+    },
+    {
+      "role": "vendor",
+      "step": 6,
+      "path": "SCRIPTS/RPG/rm0115/gestures/vendor_07.thn",
+      "duration": 10.4,
+      "sha256": "af96ca5c21276b0f945e5ce0073ffe792243eafab0c4f4c1e9ef5769c2e04334"
+    },
+    {
+      "role": "vendor",
+      "step": 7,
+      "path": "SCRIPTS/RPG/rm0115/gestures/vendor_08.thn",
+      "duration": 10.4,
+      "sha256": "e7a53b487734d43ec14aa50a44fa4345de202428744af557b73ab9e168f0c20f"
+    },
+    {
+      "role": "player",
+      "step": 0,
+      "path": "SCRIPTS/RPG/rm0115/gestures/player_01.thn",
+      "duration": 14.4,
+      "sha256": "688a9be7b53e08e3cdc2bbd59aa97a533b24969b37d8485cb39b30027ec0bc79"
+    },
+    {
+      "role": "player",
+      "step": 1,
+      "path": "SCRIPTS/RPG/rm0115/gestures/player_02.thn",
+      "duration": 10.15,
+      "sha256": "dfc2e592d384be0ea196563be0aec05b780650826ffd0927495af4667d55d469"
+    },
+    {
+      "role": "player",
+      "step": 2,
+      "path": "SCRIPTS/RPG/rm0115/gestures/player_03.thn",
+      "duration": 10.15,
+      "sha256": "60033752ac32bdaa761ae0db139ee250792ef59cac0b8767017fdd95ac895c53"
+    },
+    {
+      "role": "player",
+      "step": 3,
+      "path": "SCRIPTS/RPG/rm0115/gestures/player_04.thn",
+      "duration": 14.4,
+      "sha256": "688a9be7b53e08e3cdc2bbd59aa97a533b24969b37d8485cb39b30027ec0bc79"
+    },
+    {
+      "role": "player",
+      "step": 4,
+      "path": "SCRIPTS/RPG/rm0115/gestures/player_05.thn",
+      "duration": 10.15,
+      "sha256": "dfc2e592d384be0ea196563be0aec05b780650826ffd0927495af4667d55d469"
+    },
+    {
+      "role": "player",
+      "step": 5,
+      "path": "SCRIPTS/RPG/rm0115/gestures/player_06.thn",
+      "duration": 10.15,
+      "sha256": "60033752ac32bdaa761ae0db139ee250792ef59cac0b8767017fdd95ac895c53"
+    },
+    {
+      "role": "player",
+      "step": 6,
+      "path": "SCRIPTS/RPG/rm0115/gestures/player_07.thn",
+      "duration": 10.4,
+      "sha256": "82d6f58bdb873ddeae071a03545c2f5164342f7e0195fd5f94cad145bb7916a4"
+    },
+    {
+      "role": "player",
+      "step": 7,
+      "path": "SCRIPTS/RPG/rm0115/gestures/player_08.thn",
+      "duration": 10.4,
+      "sha256": "278d29135084bdb9e11de81a04476c4fd4c395ecf83e32a6b85c26d75a873584"
+    }
+  ],
+  "gesture_sequence": "SEQUENCE_MALE_STAND_RHAND_ALT2"
+}

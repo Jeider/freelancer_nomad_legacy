@@ -2,7 +2,7 @@ from story import script
 from audio.sound import VoiceLine
 from story.actors import (
     Trent, Darcy, CorsairBarman, Rockford, Tortuga, JabbaBandit, RockfordStation,
-    MaltaEnemyOne, MaltaEnemyTwo, MaltaEnemyThree, MaltaEnemyFour, WalesBarman, Jabba
+    CadizEnemyOne, CadizEnemyTwo, CadizEnemyThree, CadizEnemyFour, WalesBarman, Jabba
 )
 
 
@@ -29,16 +29,16 @@ class Msn7Offer(Msn7, script.CutsceneProps):
     ]
 
 
-class Msn7Malta(Msn7, script.CutsceneProps):
-    ALIAS = 'malta'
+class Msn7Cadiz(Msn7, script.CutsceneProps):
+    ALIAS = 'cadiz'
     TITLE = 'Кадиз'
     DESCRIPTION = ''
     VOICE_LINES = [
-        VoiceLine(10, MaltaEnemyOne, comment='Два странных поцыка подходят к Тренту', ru="Здаров, земляк! Где Рокфорд?", en="Hey, countryman! Where's Rockford?"),
+        VoiceLine(10, CadizEnemyOne, comment='Два странных поцыка подходят к Тренту', ru="Здаров, земляк! Где Рокфорд?", en="Hey, countryman! Where's Rockford?"),
         VoiceLine(20, Trent, ru="Понятия не имею.", en="I have no idea."),
-        VoiceLine(30, MaltaEnemyTwo, ru="Слыш, земеля, ты чо такой дерзкий? Тебя по-хорошему спросили, где Рокфорд?", en="Hey, countryman, why so cocky? You were asked nicely. Where's Rockford?"),
-        VoiceLine(40, MaltaEnemyOne, ru="Сейчас наладим диалог (достаёт пушку).", en="We'll get a dialogue going now (draws a gun)."),
-        VoiceLine(50, MaltaEnemyOne, ru="Где Рокфорд, утырок?", en="Where's Rockford, you prick?"),
+        VoiceLine(30, CadizEnemyTwo, ru="Слыш, земеля, ты чо такой дерзкий? Тебя по-хорошему спросили, где Рокфорд?", en="Hey, countryman, why so cocky? You were asked nicely. Where's Rockford?"),
+        VoiceLine(40, CadizEnemyOne, ru="Сейчас наладим диалог (достаёт пушку).", en="We'll get a dialogue going now (draws a gun)."),
+        VoiceLine(50, CadizEnemyOne, ru="Где Рокфорд, утырок?", en="Where's Rockford, you prick?"),
         VoiceLine(60, Rockford, comment='Поцыков выносят ударом в спину', ru="Я Рокфорд. ", en="I'm Rockford."),
         VoiceLine(65, Rockford, ru="За мной! Быстро!", en="Follow me! Fast!"),
     ]
@@ -142,8 +142,8 @@ class Msn7Space(Msn7, script.SpaceVoiceProps):
                   ru='Проще было вообще перевод не делать - на банковской комиссии больше потеряли. Стоит, пожалуй, еще пару вопросов этому бармену задать. Например, "где деньги, Лебовски?".',
 				  en="It would've been easier not to make the transfer at all. They lost more on the bank fee. I should probably ask that barman a couple more questions. For example, \"where's the money, Lebowski?\"."),
         VoiceLine(40, RockfordStation,
-                  ru='Мистер Трент, меня зовут Р+окфорд, СБА прислало меня пом+очь вам в поиске артефактов. Жду вас в баре на планете Кадиз. Прошу вас быть как можно скорее, счет идет на секунды.',
-				  en="Mr. Trent, my name is Rockford. The ASF sent me to help you search for the artifacts. I'm waiting for you at the bar on planet Cadiz. Please get here as soon as you can. Time is counted in seconds."),
+                  ru='Мистер Трент, меня зовут Р+окфорд, СБА прислало меня пом+очь вам в поиске артефактов. Жду вас в баре на планете Мальта. Прошу вас быть как можно скорее, счет идет на секунды.',
+				  en="Mr. Trent, my name is Rockford. The ASF sent me to help you search for the artifacts. I'm waiting for you at the bar on planet Malta. Please get here as soon as you can. Time is counted in seconds."),
         VoiceLine(60, Rockford, ru='Трент, жить хочешь? Помогай!', en="Trent, want to live? Help!"),
         VoiceLine(70, Rockford,
                   ru='Трент, теперь летим в торговую линию! Нам нужно добраться до Малого Омикрона.',
@@ -160,11 +160,11 @@ class Msn7Space(Msn7, script.SpaceVoiceProps):
                   ru='Я агент СБА Р+окфорд и меня прислали на помощь группе Дельта и вам, Трент, потому что вы вляпались в неприятности.',
 				  en="I'm ASF agent Rockford, and I was sent to help Delta group and you, Trent, because you've gotten into trouble."),
         VoiceLine(160, Trent,
-                  ru='Да твою же налево... Хорошо, тогда расскажите более развернуто, как вы меня нашли, почему вас, то есть нас на Кадизе ждали, и что вообще мы теперь планируем делать.',
-				  en="Oh, for fuck's sake... All right, then tell me in more detail how you found me, why they were waiting for you, that is, for us, on Cadiz, and what we're planning to do now."),
+                  ru='Да твою же налево... Хорошо, тогда расскажите более развернуто, как вы меня нашли, почему вас, то есть нас на Мальте ждали, и что вообще мы теперь планируем делать.',
+				  en="Oh, for fuck's sake... All right, then tell me in more detail how you found me, why they were waiting for you, that is, for us, on Malta, and what we're planning to do now."),
         VoiceLine(170, Rockford,
-                  ru='Когда я прибыл в систему Кадиз, я вышел на связь с лидером Дельта и узнал от него о сложившейся ситуации и о том, что боеспособный корабль остался только у вас.',
-				  en="When I arrived in the Cadiz system, I made contact with the Delta leader and learned from him about the situation, and that a combat-capable ship was left only with you."),
+                  ru='Когда я прибыл в систему Мальта, я вышел на связь с лидером Дельта и узнал от него о сложившейся ситуации и о том, что боеспособный корабль остался только у вас.',
+				  en="When I arrived in the Malta system, I made contact with the Delta leader and learned from him about the situation, and that a combat-capable ship was left only with you."),
         VoiceLine(180, Rockford,
                   ru='Я отследил все взятые в этой системе фрилансерами контракты и определил ваше местонахождение. Кстати, Трент, вы действительно готовы работать за такие грош+и?',
 				  en="I tracked every contract freelancers took in this system and found your location. By the way, Trent, are you really willing to work for pennies like that?"),
@@ -173,11 +173,11 @@ class Msn7Space(Msn7, script.SpaceVoiceProps):
                   ru='Я знал что за вами следят агенты Ордена. Кроме того, они подозревали о моем присутствии в системе.',
 				  en="I knew Order agents were following you. Besides that, they suspected I was in the system."),
         VoiceLine(210, Rockford,
-                  ru='Поэтому я решил устроить им ловушку и послал вам сообщение с просьбой о встрече в максимально удаленной от их главных сил точке - на планете Кадиз.',
-				  en="So I decided to set a trap for them, and sent you a message asking to meet at the point farthest from their main forces, on planet Cadiz."),
+                  ru='Поэтому я решил устроить им ловушку и послал вам сообщение с просьбой о встрече в максимально удаленной от их главных сил точке - на планете Мальта.',
+				  en="So I decided to set a trap for them, and sent you a message asking to meet at the point farthest from their main forces, on planet Malta."),
         VoiceLine(220, Rockford,
-                  ru='Они смогли отправить на Кадиз только небольшую группу перехвата, а мы с вами, Трент смогли ее уничтожить. Насчет того, что делать дальше, по-моему очевидно, забирать артефакты.',
-				  en="They were able to send only a small interception group to Cadiz, and you and I, Trent, were able to destroy it. As for what to do next, I think it's obvious: take the artifacts."),
+                  ru='Они смогли отправить на Мальту только небольшую группу перехвата, а мы с вами, Трент смогли ее уничтожить. Насчет того, что делать дальше, по-моему очевидно, забирать артефакты.',
+				  en="They were able to send only a small interception group to Malta, and you and I, Trent, were able to destroy it. As for what to do next, I think it's obvious: take the artifacts."),
         VoiceLine(230, Trent, ru='И у нас уже есть план?', en="And we already have a plan?"),
         VoiceLine(240, Rockford, ru='Конечно. Как можно лететь куда-то без плана?', en="Of course. How can you fly somewhere without a plan?"),
         VoiceLine(250, Trent, ru='Меня в него не посветите?', en="Won't you let me in on it?"),
@@ -259,7 +259,7 @@ class Mission7(Msn7, script.StoryMission):
     MISSION_INDEX = 7
     CUTSCENES = [
         Msn7Offer,
-        Msn7Malta,
+        Msn7Cadiz,
         Msn7Omega13,
         Msn7Battleship,
         Msn7CheckArtifact,

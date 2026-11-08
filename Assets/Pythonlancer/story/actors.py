@@ -114,7 +114,7 @@ class Trent(Actor):
     STEOS_PITCH = -0.5
     # STEOS_SPEED = 1.13
     STEOS_SPEED = 1  # For ENG
-    VOICE_DELIVERY = LIGHTER
+    VOICE_DELIVERY = TEENAGER_HIGH_PITCH
 
 
 class EdisonTrent(Actor):
@@ -413,7 +413,7 @@ class BrandenburgCruiser(Actor):
     STEOS_ID = 10029
 
 
-class MaltaEnemyOne(Actor):
+class CadizEnemyOne(Actor):
     RU_NAME = MS('Киллер', 'Killer')
     TYPE = ACTOR_MALE
     NAME = 'enemy1'
@@ -423,7 +423,7 @@ class MaltaEnemyOne(Actor):
     STEOS_SPEED = 1
 
 
-class MaltaEnemyTwo(Actor):
+class CadizEnemyTwo(Actor):
     RU_NAME = MS('Киллер', 'Killer')
     TYPE = ACTOR_MALE
     NAME = 'enemy2'
@@ -432,11 +432,11 @@ class MaltaEnemyTwo(Actor):
     STEOS_PITCH = -1
 
 
-class MaltaEnemyThree(MaltaEnemyOne):
+class CadizEnemyThree(CadizEnemyOne):
     NAME = 'enemy3'
 
 
-class MaltaEnemyFour(MaltaEnemyOne):
+class CadizEnemyFour(CadizEnemyOne):
     NAME = 'enemy4'
 
 

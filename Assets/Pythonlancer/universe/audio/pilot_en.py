@@ -1,7 +1,10 @@
+from audio.delivery import HIGH_PITCH
 from universe.audio.base_pilot import EnglishSystemIdentifiedVoice
 
 
 class EnglishShipVoice(EnglishSystemIdentifiedVoice):
+    DENOISE = False
+    VOICE_DELIVERY = HIGH_PITCH
     LINES = []
 
     subclasses = []
@@ -11,23 +14,33 @@ class EnglishShipVoice(EnglishSystemIdentifiedVoice):
         cls.subclasses.append(cls)
 
 
-class EnglishMilitaryLow(EnglishShipVoice):
-    STEOS_ID = 215  # Regis Witcher
-    FOLDER = 'pilot_en01'
+class EngMilitaryOne(EnglishShipVoice):
+    FOLDER = 'pilot_f_mil_m01'
 
 
-class EnglishMilitaryHigh(EnglishShipVoice):
-    STEOS_ID = 211  # Lambert Witcher
-    FOLDER = 'pilot_en03'
+class EngMilitaryTwo(EnglishShipVoice):
+    FOLDER = 'pilot_f_mil_m02'
 
 
-class EnglishFemale(EnglishShipVoice):
-    STEOS_ID = 216  # Sylvia Anna Witcher
-    FOLDER = 'pilot_en04'
+class EngLegalOne(EnglishShipVoice):
+    FOLDER = 'pilot_f_leg_m01'
+
+
+class EngFemaleOne(EnglishShipVoice):
+    FOLDER = 'pilot_f_leg_f01'
     IS_MALE = False
 
 
-class EnglishPirate(EnglishShipVoice):
-    STEOS_ID = 181  # Reinhardt
-    FOLDER = 'pilot_en08'
+class EngFemaleTwo(EnglishShipVoice):
+    FOLDER = 'pilot_f_leg_f01a'
+    IS_MALE = False
+
+
+class EngPirateOne(EnglishShipVoice):
+    FOLDER = 'pilot_f_ill_m01'
+    ATTENUATION = -6
+
+
+class EngPirateTwo(EnglishShipVoice):
+    FOLDER = 'pilot_f_ill_m02'
     ATTENUATION = -6

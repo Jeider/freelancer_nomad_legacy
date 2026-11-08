@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Subtitles>
+<Static AudioFile="MOD_ENG\RPG\rm0100\rm0100_frag0001_l001_vendor.wav" TextArea="Cinematic">Welcome to Ocho-Rios Base. I am Commandant Vega. I handle parking berths here.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0100\rm0100_frag0002_l001_player.wav" TextArea="Cinematic">I'd like to buy a berth for my ship.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0100\rm0100_frag0003_l001_vendor.wav" TextArea="Cinematic">Here are the terms. Check the price, and confirm if you're ready to proceed.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0100\rm0100_frag0004_l001_player.wav" TextArea="Cinematic">The terms look good. I'll take one berth.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0100\rm0100_frag0005_l001_vendor.wav" TextArea="Cinematic">Payment received. Your berth at Ocho-Rios Base is registered. You can store a ship here now.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0100\rm0100_frag0006_l001_player.wav" TextArea="Cinematic">Let's hold off on the purchase.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0100\rm0100_frag0007_l001_vendor.wav" TextArea="Cinematic">All right. What else would you like to know?</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0100\rm0100_frag0008_l001_player.wav" TextArea="Cinematic">What are the rules for storing ships here?</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0100\rm0100_frag0009_l001_vendor.wav" TextArea="Cinematic">A berth is yours permanently. It stays yours when you collect the ship. Your current ship doesn't take up a berth.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0100\rm0100_frag0010_l001_player.wav" TextArea="Cinematic">Can I use that berth at other bases too?</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0100\rm0100_frag0011_l001_vendor.wav" TextArea="Cinematic">This berth is only valid at Ocho-Rios Base. You will need a separate berth at any other base.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0100\rm0100_frag0012_l001_player.wav" TextArea="Cinematic">What happens when all my berths are occupied?</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0100\rm0100_frag0013_l001_vendor.wav" TextArea="Cinematic">You won't be able to park another ship. You can still collect a stored ship or swap it with your current one. A swap doesn't need an empty berth.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0100\rm0100_frag0014_l001_vendor.wav" TextArea="Cinematic">You don't have enough credits. No payment was taken. Come back when you have the funds.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0100\rm0100_frag0015_l001_vendor.wav" TextArea="Cinematic">You already own the maximum number of berths at this base. I cannot register another one.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0100\rm0100_frag0016_l001_vendor.wav" TextArea="Cinematic">The purchase couldn't be completed. You haven't been charged. Let's check the terms again.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0100\rm0100_frag0017_l001_player.wav" TextArea="Cinematic">Let's get back to buying a berth.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0100\rm0100_frag0018_l001_player.wav" TextArea="Cinematic">That is all for now. Goodbye, Commandant.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0100\rm0100_frag0019_l001_vendor.wav" TextArea="Cinematic">Goodbye, Trent. Safe flying.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0100\rm0100_frag0020_l001_vendor.wav" TextArea="Cinematic">Welcome back. Commandant Vega speaking. Here about ship storage?</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0100\rm0100_frag0021_l001_vendor.wav" TextArea="Cinematic">Hello, Trent. Need another berth at Ocho-Rios Base?</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0100\rm0100_frag0022_l001_vendor.wav" TextArea="Cinematic">All done. The berth is paid for and registered in your name. It's yours to use.</Static>
+<Static AudioFile="MOD_ENG\RPG\rm0100\rm0100_frag0023_l001_vendor.wav" TextArea="Cinematic">I cannot sell you a berth. Your reputation with our faction must be positive.</Static>
+</Subtitles>

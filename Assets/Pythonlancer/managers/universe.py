@@ -313,3 +313,10 @@ class UniverseManager:
             context['suffix'] = '' if self.core.russian else '_en'
             content = self.core.tpl_manager.get_result(f'room/{room.get_subfolder()}/{room.get_template()}.ini', context)
             data_folder.sync_interior_room(room.get_name(), content)
+
+        from managers.parking_commandants import sync_from_universe
+        sync_from_universe(self, data_folder)
+
+        from managers.courier_owners import sync_from_universe as sync_courier_owners
+        sync_courier_owners(self, data_folder)
+

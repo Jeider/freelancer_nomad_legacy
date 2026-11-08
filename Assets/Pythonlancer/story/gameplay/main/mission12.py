@@ -118,7 +118,7 @@ class Misson12(ingame_mission.IngameMission):
     INIT_OFFER = MultiLine(
         [
             'ЗАДАЧА:',
-            'Не допустить уничтожение станции Энтерпрайз и штаба СБА.',
+            'Не допустить уничтожения станции Энтерпрайз и штаба СБА.',
             '',
             'СЛОЖНОСТЬ:',
             'Спасти человечество.',
@@ -128,7 +128,7 @@ class Misson12(ingame_mission.IngameMission):
         ],
         [
             'OBJECTIVE:',
-            'Do not let Order destroy Station Enterprise and ASF Headquarters.',
+            'Prevent the destruction of Enterprise station and ASF headquarters.',
             '',
             'DIFFICULTY:',
             'Save the mankind.',
@@ -429,7 +429,7 @@ class Misson12(ingame_mission.IngameMission):
 
             NNObj(self, MS('Доберитесь до Логоса', 'Go to Battleship Logos'), name='goto_logos', target='logos', towards=True),
 
-            NNObj(self, MS('Ожидайте прибытия линкора Осирис', 'Wait for arrive of Battleship Osiris'), name='wait_osiris'),
+            NNObj(self, MS('Ожидайте прибытия линкора Осирис', 'Wait for the battleship Osiris to arrive'), name='wait_osiris'),
 
             NNObj(self, MS('Уничтожьте генератор щита Логоса', "Destroy Logos' shield generator"), name='logos_shieldgen', target='logos_shieldgen'),
             NNObj(self, MS('Уничтожьте командный мостик Логоса', "Destroy Logos' control tower"), name='logos_control_tower', target='logos_control_tower'),

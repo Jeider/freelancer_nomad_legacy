@@ -1,0 +1,463 @@
+{
+  "schema": 1,
+  "id": "rm0001",
+  "status": "design_prototype",
+  "scenario": "train_courier_vendor",
+  "start": "greeting",
+  "binding": {
+    "vendor": "rpg_biz_contact",
+    "player": "Player"
+  },
+  "rules": {
+    "wagon_options": [
+      2,
+      5,
+      10,
+      20
+    ],
+    "reputation": {
+      "enabled": true,
+      "faction": "contact.affiliation",
+      "minimum": 0,
+      "strict": true
+    },
+    "first_greeting": "rm0001_frag0001",
+    "rotation": "shuffle_bag_no_immediate_repeat",
+    "escape_during_speech": "skip_current_fragment",
+    "escape_during_wagon_choice": "main_menu"
+  },
+  "fragments": [
+    {
+      "id": "rm0001_frag0001",
+      "role": "vendor",
+      "pool": "greeting",
+      "ru": "Привет, Трент. Я глава местного торгового управления.",
+      "en": "Hello, Trent. I am the head of the local trade authority."
+    },
+    {
+      "id": "rm0001_frag0002",
+      "role": "player",
+      "pool": "ask_jobs",
+      "ru": "Есть задания для меня?",
+      "en": "Do you have any jobs for me?"
+    },
+    {
+      "id": "rm0001_frag0003",
+      "role": "vendor",
+      "pool": "legacy_offer",
+      "ru": "Конечно есть. Нам нужен машинист локомотива. Какой состав возьмёшь?",
+      "en": "Of course. We need a locomotive driver. How many wagons can you handle?"
+    },
+    {
+      "id": "rm0001_frag0004",
+      "role": "player",
+      "pool": "choose_2",
+      "ru": "Хочу задание с двумя вагонами.",
+      "en": "I would like a job with two wagons."
+    },
+    {
+      "id": "rm0001_frag0005",
+      "role": "player",
+      "pool": "choose_5",
+      "ru": "Хочу задание с пятью вагонами.",
+      "en": "I would like a job with five wagons."
+    },
+    {
+      "id": "rm0001_frag0006",
+      "role": "player",
+      "pool": "choose_10",
+      "ru": "Хочу задание с десятью вагонами.",
+      "en": "I would like a job with ten wagons."
+    },
+    {
+      "id": "rm0001_frag0007",
+      "role": "player",
+      "pool": "choose_20",
+      "ru": "Хочу задание с двадцатью вагонами.",
+      "en": "I would like a job with twenty wagons."
+    },
+    {
+      "id": "rm0001_frag0008",
+      "role": "vendor",
+      "pool": "issued",
+      "ru": "Я выдаю тебе наряд. Можешь вылетать в космос: локомотив ждёт тебя.",
+      "en": "Your work order is ready. You can launch now. The locomotive is waiting for you."
+    },
+    {
+      "id": "rm0001_frag0009",
+      "role": "vendor",
+      "pool": "bad_reputation",
+      "ru": "Извини, сынок, ничем не могу помочь. У тебя слишком плохая репутация.",
+      "en": "Sorry, son. I cannot help you. Your reputation is too poor."
+    },
+    {
+      "id": "rm0001_frag0010",
+      "role": "player",
+      "pool": "ask_requirements",
+      "ru": "Какие у вас требования к машинисту?",
+      "en": "What do you require of your drivers?"
+    },
+    {
+      "id": "rm0001_frag0011",
+      "role": "vendor",
+      "pool": "legacy_requirements",
+      "ru": "Нам нужны надёжные люди. Сначала проверим твою репутацию, потом выберешь число вагонов.",
+      "en": "We need reliable people. We will check your reputation first, then you can choose the number of wagons."
+    },
+    {
+      "id": "rm0001_frag0012",
+      "role": "player",
+      "pool": "back",
+      "ru": "Вернёмся к работе.",
+      "en": "Let us get back to the job."
+    },
+    {
+      "id": "rm0001_frag0013",
+      "role": "vendor",
+      "pool": "resume",
+      "ru": "Итак, тебя интересует работа машинистом?",
+      "en": "So, are you interested in working as a train driver?"
+    },
+    {
+      "id": "rm0001_frag0014",
+      "role": "player",
+      "pool": "leave",
+      "ru": "Не сейчас. До встречи.",
+      "en": "Not right now. See you around."
+    },
+    {
+      "id": "rm0001_frag0015",
+      "role": "vendor",
+      "pool": "farewell",
+      "ru": "Хорошо, Трент. До встречи.",
+      "en": "All right, Trent. See you around."
+    },
+    {
+      "id": "rm0001_frag0016",
+      "role": "vendor",
+      "pool": "busy",
+      "ru": "У тебя уже есть действующее задание. Сначала разберись с ним.",
+      "en": "You already have an active assignment. Take care of that first."
+    },
+    {
+      "id": "rm0001_frag0017",
+      "role": "vendor",
+      "pool": "failed",
+      "ru": "Сейчас не получается оформить наряд. Попробуй обратиться позже.",
+      "en": "I cannot issue the work order right now. Please come back later."
+    },
+    {
+      "id": "rm0001_frag0018",
+      "role": "vendor",
+      "pool": "greeting",
+      "ru": "Здравствуй, Трент. Местное торговое управление к твоим услугам.",
+      "en": "Hello, Trent. The local trade authority is at your service."
+    },
+    {
+      "id": "rm0001_frag0019",
+      "role": "vendor",
+      "pool": "greeting",
+      "ru": "Привет, Трент. Я здесь руковожу торговым управлением. По какому вопросу?",
+      "en": "Hello, Trent. I run the trade authority here. What can I do for you?"
+    },
+    {
+      "id": "rm0001_frag0020",
+      "role": "vendor",
+      "pool": "issued",
+      "ru": "Наряд оформлен. Вылетай, Трент. Локомотив уже ждёт.",
+      "en": "The work order is issued. Launch when you are ready, Trent. The locomotive is waiting."
+    },
+    {
+      "id": "rm0001_frag0021",
+      "role": "vendor",
+      "pool": "bad_reputation",
+      "ru": "С такой репутацией я не могу доверить тебе состав. Извини, Трент.",
+      "en": "With your reputation, I cannot entrust you with a train. Sorry, Trent."
+    },
+    {
+      "id": "rm0001_frag0022",
+      "role": "vendor",
+      "pool": "licensed_offer",
+      "ru": "Конечно. Нам нужны машинисты. Допустимая длина состава зависит от твоего навыка и лицензии. Выбирай наряд в пределах своего допуска.",
+      "en": "Of course. We need train drivers. Your skill and licence determine how many wagons you may haul. Choose an assignment within your qualification."
+    },
+    {
+      "id": "rm0001_frag0023",
+      "role": "vendor",
+      "pool": "licensed_requirements",
+      "ru": "Проверяем репутацию и лицензию машиниста. Достигнутый допуск сохраняется: дорос до десяти вагонов — можешь брать такие составы и в следующих сменах.",
+      "en": "We check your reputation and train driver licence. Your qualification is permanent: once you reach ten wagons, you may take ten-wagon trains on later shifts too."
+    },
+    {
+      "id": "rm0001_frag0024",
+      "role": "player",
+      "pool": "ask_tutorial",
+      "ru": "Объясни, как управлять локомотивом.",
+      "en": "Explain how to operate the locomotive."
+    },
+    {
+      "id": "rm0001_frag0025",
+      "role": "vendor",
+      "pool": "tutorial",
+      "ru": "Разберём по порядку: как занять локомотив, подцепить вагоны и сдать состав. С чего начнём?",
+      "en": "Let us go through boarding the locomotive, coupling the wagons, and making a delivery. Where shall we start?"
+    },
+    {
+      "id": "rm0001_frag0026",
+      "role": "player",
+      "pool": "ask_boarding",
+      "ru": "Как мне сесть в локомотив?",
+      "en": "How do I board the locomotive?"
+    },
+    {
+      "id": "rm0001_frag0027",
+      "role": "vendor",
+      "pool": "boarding",
+      "ru": "Получи наряд и вылетай. Локомотив ждёт у причала и отмечен заданием. Выбери его и выполни обычную стыковку: так ты займёшь место машиниста. Личный корабль останется на хранении.",
+      "en": "Take the work order and launch. The locomotive is waiting by the docking fixture, marked as your objective. Select it and use the normal docking command to take the controls. Your own ship will be stored."
+    },
+    {
+      "id": "rm0001_frag0028",
+      "role": "player",
+      "pool": "ask_coupling",
+      "ru": "Как прицепить вагоны?",
+      "en": "How do I couple the wagons?"
+    },
+    {
+      "id": "rm0001_frag0029",
+      "role": "vendor",
+      "pool": "coupling",
+      "ru": "У маркера погрузки отключи круиз и автопилот. Выровняй локомотив с вагонами и подведи кормовую сцепку к первому вагону: не дальше пятнадцати метров, скорость сближения — до двух метров в секунду. Нажми «Сцепить вагоны» и дождись подтверждения.",
+      "en": "At the pickup marker, turn off cruise and autopilot. Align with the wagons and bring the rear coupling up to the first wagon: within fifteen metres, at a closing speed no higher than two metres per second. Press Couple wagons and wait for confirmation."
+    },
+    {
+      "id": "rm0001_frag0030",
+      "role": "player",
+      "pool": "ask_delivery",
+      "ru": "Как сдать груз и отцепить состав?",
+      "en": "How do I deliver the cargo and uncouple the train?"
+    },
+    {
+      "id": "rm0001_frag0031",
+      "role": "vendor",
+      "pool": "delivery",
+      "ru": "Система назначения указана в наряде, маршрут — в навигации. Приведи вагоны к маркеру получателя, отключи круиз и автопилот и остановись. Нажми «Отцепить вагоны». Дождись подтверждения сдачи и оплаты.",
+      "en": "The work order names the destination system, and navigation shows the route. Bring the wagons to the delivery marker, turn off cruise and autopilot, and stop. Press Uncouple wagons, then wait for delivery and payment confirmation."
+    },
+    {
+      "id": "rm0001_frag0032",
+      "role": "player",
+      "pool": "tutorial_back",
+      "ru": "У меня ещё вопрос о локомотиве.",
+      "en": "I have another question about the locomotive."
+    }
+  ],
+  "nodes": {
+    "greeting": {
+      "pool": "greeting",
+      "choices": "main"
+    },
+    "offer": {
+      "pool": "licensed_offer",
+      "choices": "wagons"
+    },
+    "requirements": {
+      "pool": "licensed_requirements",
+      "choices": "information"
+    },
+    "resume": {
+      "pool": "resume",
+      "choices": "main"
+    },
+    "issued": {
+      "pool": "issued",
+      "terminal": true
+    },
+    "bad_reputation": {
+      "pool": "bad_reputation",
+      "choices": "refusal"
+    },
+    "busy": {
+      "pool": "busy",
+      "choices": "refusal"
+    },
+    "failed": {
+      "pool": "failed",
+      "choices": "refusal"
+    },
+    "farewell": {
+      "pool": "farewell",
+      "terminal": true
+    },
+    "tutorial": {
+      "pool": "tutorial",
+      "choices": "tutorial_topics"
+    },
+    "boarding": {
+      "pool": "boarding",
+      "choices": "tutorial_return"
+    },
+    "coupling": {
+      "pool": "coupling",
+      "choices": "tutorial_return"
+    },
+    "delivery": {
+      "pool": "delivery",
+      "choices": "tutorial_return"
+    }
+  },
+  "choice_sets": {
+    "main": [
+      "ask_jobs",
+      "requirements",
+      "tutorial",
+      "leave"
+    ],
+    "wagons": [
+      "choose_2",
+      "choose_5",
+      "choose_10",
+      "choose_20"
+    ],
+    "information": [
+      "ask_jobs",
+      "tutorial",
+      "back",
+      "leave"
+    ],
+    "refusal": [
+      "requirements",
+      "leave"
+    ],
+    "tutorial_topics": [
+      "boarding",
+      "coupling",
+      "delivery",
+      "back"
+    ],
+    "tutorial_return": [
+      "tutorial_back",
+      "ask_jobs",
+      "back",
+      "leave"
+    ]
+  },
+  "choices": {
+    "ask_jobs": {
+      "pool": "ask_jobs",
+      "ru": "Есть задания для меня?",
+      "en": "Any jobs for me?",
+      "action": "check_courier_eligibility",
+      "outcomes": {
+        "eligible": "offer",
+        "bad_reputation": "bad_reputation",
+        "busy": "busy",
+        "failed": "failed"
+      }
+    },
+    "requirements": {
+      "pool": "ask_requirements",
+      "ru": "Какие требования?",
+      "en": "What are the requirements?",
+      "goto": "requirements"
+    },
+    "back": {
+      "pool": "back",
+      "ru": "Вернёмся к работе",
+      "en": "Back to business",
+      "goto": "resume"
+    },
+    "leave": {
+      "pool": "leave",
+      "ru": "Не сейчас. До встречи",
+      "en": "Not now. Goodbye",
+      "goto": "farewell"
+    },
+    "choose_2": {
+      "pool": "choose_2",
+      "ru": "Состав: 2 вагона",
+      "en": "Train: 2 wagons",
+      "action": "start_train_courier",
+      "first_wagons": 2,
+      "outcomes": {
+        "started": "issued",
+        "bad_reputation": "bad_reputation",
+        "busy": "busy",
+        "failed": "failed"
+      }
+    },
+    "choose_5": {
+      "pool": "choose_5",
+      "ru": "Состав: 5 вагонов",
+      "en": "Train: 5 wagons",
+      "action": "start_train_courier",
+      "first_wagons": 5,
+      "outcomes": {
+        "started": "issued",
+        "bad_reputation": "bad_reputation",
+        "busy": "busy",
+        "failed": "failed"
+      }
+    },
+    "choose_10": {
+      "pool": "choose_10",
+      "ru": "Состав: 10 вагонов",
+      "en": "Train: 10 wagons",
+      "action": "start_train_courier",
+      "first_wagons": 10,
+      "outcomes": {
+        "started": "issued",
+        "bad_reputation": "bad_reputation",
+        "busy": "busy",
+        "failed": "failed"
+      }
+    },
+    "choose_20": {
+      "pool": "choose_20",
+      "ru": "Состав: 20 вагонов",
+      "en": "Train: 20 wagons",
+      "action": "start_train_courier",
+      "first_wagons": 20,
+      "outcomes": {
+        "started": "issued",
+        "bad_reputation": "bad_reputation",
+        "busy": "busy",
+        "failed": "failed"
+      }
+    },
+    "tutorial": {
+      "pool": "ask_tutorial",
+      "ru": "Как управлять локомотивом?",
+      "en": "How do I operate the locomotive?",
+      "goto": "tutorial"
+    },
+    "boarding": {
+      "pool": "ask_boarding",
+      "ru": "Как сесть в локомотив?",
+      "en": "How do I board?",
+      "goto": "boarding"
+    },
+    "coupling": {
+      "pool": "ask_coupling",
+      "ru": "Как прицепить вагоны?",
+      "en": "How do I couple wagons?",
+      "goto": "coupling"
+    },
+    "delivery": {
+      "pool": "ask_delivery",
+      "ru": "Как сдать груз?",
+      "en": "How do I make a delivery?",
+      "goto": "delivery"
+    },
+    "tutorial_back": {
+      "pool": "tutorial_back",
+      "ru": "Ещё вопрос о локомотиве",
+      "en": "Another locomotive question",
+      "goto": "tutorial"
+    }
+  },
+  "casting": {
+    "vendor": "RpgTradeDirector",
+    "player": "Trent"
+  }
+}

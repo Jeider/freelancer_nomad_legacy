@@ -2,6 +2,10 @@ from templates.simple_template import SimpleTemplate
 
 
 class Omega15LargeNebulaTemplate(SimpleTemplate):
+    # Matched to GPU-rendered walker midtones with Om15 lighting/exposure.
+    # The exclusion shell is unlit; keep max_alpha and the model unchanged.
+    EXCLUSION_TINT_BY_SHELL = {'solar\\nebula_mod\\exclusion_walker_new.3db': '142, 88, 10'}
+
     TEMPLATE = '''
 [TexturePanels]
 file = solar\\nebula\\walker_shapes.ini
@@ -68,6 +72,10 @@ color = 40, 20, 10
 
 
 class Omega15DangerNebulaTemplate(SimpleTemplate):
+    # Matched to GPU-rendered walker midtones with Om15 lighting/exposure.
+    # The exclusion shell is unlit; keep max_alpha and the model unchanged.
+    EXCLUSION_TINT_BY_SHELL = {'solar\\nebula_mod\\exclusion_walker_new.3db': '110, 74, 3'}
+
     TEMPLATE = '''
 [TexturePanels]
 file = solar\\nebula\\walker_shapes.ini
@@ -139,6 +147,10 @@ intensity_increase = 1
 '''
 
 class Omega15SmallNebulaTemplate(SimpleTemplate):
+    # Matched to GPU-rendered walker midtones with Om15 lighting/exposure.
+    # The exclusion shell is unlit; keep max_alpha and the model unchanged.
+    EXCLUSION_TINT_BY_SHELL = {'solar\\nebula_mod\\exclusion_walker_new.3db': '123, 71, 9'}
+
     TEMPLATE = '''
 [TexturePanels]
 file = solar\\nebula\\walker_shapes.ini
@@ -206,6 +218,10 @@ color = 40, 20, 10
 
 
 class Omega15NorthStoryNebulaTemplate(SimpleTemplate):
+    # Matched to GPU-rendered walker midtones with Om15 lighting/exposure.
+    # The exclusion shell is unlit; keep max_alpha and the model unchanged.
+    EXCLUSION_TINT_BY_SHELL = {'solar\\nebula_mod\\exclusion_walker_new.3db': '123, 71, 9'}
+
     TEMPLATE = '''
 [TexturePanels]
 file = solar\\nebula\\walker_shapes.ini

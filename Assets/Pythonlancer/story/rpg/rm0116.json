@@ -1,0 +1,341 @@
+{
+  "schema": 1,
+  "id": "rm0116",
+  "status": "generated",
+  "scenario": "parking_commandant",
+  "start": "parking_start",
+  "binding": {
+    "vendor": "park_li_cal_01",
+    "player": "Player"
+  },
+  "casting": {
+    "vendor": "RpgAvalonParkingOfficer",
+    "player": "Trent"
+  },
+  "parking": {
+    "base": "li_cal_01_base",
+    "seller": "park_li_cal_01"
+  },
+  "appearance": {
+    "head": "li_captain_head",
+    "body": "li_male_elite_body"
+  },
+  "rules": {
+    "reputation": {
+      "enabled": true,
+      "faction": "contact.affiliation",
+      "minimum": 0,
+      "strict": true,
+      "enforced_by": "server.parking"
+    },
+    "first_greeting": "rm0116_frag0001",
+    "rotation": "shuffle_bag_no_immediate_repeat",
+    "escape_during_speech": "skip_current_fragment",
+    "price_and_limit": "RPG/ship_parking.ini",
+    "purchase": "one_permanent_slot_on_this_base_per_confirmation"
+  },
+  "fragments": [
+    {
+      "id": "rm0116_frag0001",
+      "role": "vendor",
+      "pool": "greeting",
+      "ru": "Добро пожаловать. Планета Калифорния. Я комендант стоянки Carter. Нужно место для корабля?",
+      "en": "Welcome to Planet California. I am Commandant Carter. I handle parking berths here."
+    },
+    {
+      "id": "rm0116_frag0002",
+      "role": "player",
+      "pool": "ask_buy",
+      "ru": "Хочу купить место для своего корабля.",
+      "en": "I'd like to buy a berth for my ship."
+    },
+    {
+      "id": "rm0116_frag0003",
+      "role": "vendor",
+      "pool": "quote",
+      "ru": "Вот условия покупки. Проверь стоимость и подтверди, если всё устраивает.",
+      "en": "Here are the terms. Check the price, and confirm if you're ready to proceed."
+    },
+    {
+      "id": "rm0116_frag0004",
+      "role": "player",
+      "pool": "confirm",
+      "ru": "Условия устраивают. Оформляйте одно место.",
+      "en": "The terms look good. I'll take one berth."
+    },
+    {
+      "id": "rm0116_frag0005",
+      "role": "vendor",
+      "pool": "success",
+      "ru": "Оплата принята. Планета Калифорния: место закреплено за тобой. Можешь оставить корабль.",
+      "en": "Payment received. Your berth at Planet California is registered. You can store a ship here now."
+    },
+    {
+      "id": "rm0116_frag0006",
+      "role": "player",
+      "pool": "cancel",
+      "ru": "Пока отложим покупку.",
+      "en": "Let's hold off on the purchase."
+    },
+    {
+      "id": "rm0116_frag0007",
+      "role": "vendor",
+      "pool": "resume",
+      "ru": "Хорошо. Что ещё тебя интересует?",
+      "en": "All right. What else would you like to know?"
+    },
+    {
+      "id": "rm0116_frag0008",
+      "role": "player",
+      "pool": "ask_rules",
+      "ru": "Какие у вас условия хранения кораблей?",
+      "en": "What are the rules for storing ships here?"
+    },
+    {
+      "id": "rm0116_frag0009",
+      "role": "vendor",
+      "pool": "rules",
+      "ru": "Место покупается навсегда. Заберёшь корабль — место останется твоим. Текущий корабль отдельного места не занимает.",
+      "en": "A berth is yours permanently. It stays yours when you collect the ship. Your current ship doesn't take up a berth."
+    },
+    {
+      "id": "rm0116_frag0010",
+      "role": "player",
+      "pool": "ask_scope",
+      "ru": "Это место будет доступно и на других базах?",
+      "en": "Can I use that berth at other bases too?"
+    },
+    {
+      "id": "rm0116_frag0011",
+      "role": "vendor",
+      "pool": "scope",
+      "ru": "Место действует только здесь: Планета Калифорния. На другой базе его нужно покупать отдельно.",
+      "en": "This berth is only valid at Planet California. You will need a separate berth at any other base."
+    },
+    {
+      "id": "rm0116_frag0012",
+      "role": "player",
+      "pool": "ask_full",
+      "ru": "А если все мои места будут заняты?",
+      "en": "What happens when all my berths are occupied?"
+    },
+    {
+      "id": "rm0116_frag0013",
+      "role": "vendor",
+      "pool": "full",
+      "ru": "Ещё один корабль поставить не получится. Но можно забрать оставленный или обменять его на текущий. Для обмена свободное место не нужно.",
+      "en": "You won't be able to park another ship. You can still collect a stored ship or swap it with your current one. A swap doesn't need an empty berth."
+    },
+    {
+      "id": "rm0116_frag0014",
+      "role": "vendor",
+      "pool": "no_money",
+      "ru": "На счету недостаточно кредитов. Оплата не прошла. Возвращайся, когда будет нужная сумма.",
+      "en": "You don't have enough credits. No payment was taken. Come back when you have the funds."
+    },
+    {
+      "id": "rm0116_frag0015",
+      "role": "vendor",
+      "pool": "maximum",
+      "ru": "Ты уже приобрёл все доступные тебе места на этой базе. Ещё одно оформить не могу.",
+      "en": "You already own the maximum number of berths at this base. I cannot register another one."
+    },
+    {
+      "id": "rm0116_frag0016",
+      "role": "vendor",
+      "pool": "error",
+      "ru": "Оформить покупку не удалось. Деньги не списаны. Давай проверим условия ещё раз.",
+      "en": "The purchase couldn't be completed. You haven't been charged. Let's check the terms again."
+    },
+    {
+      "id": "rm0116_frag0017",
+      "role": "player",
+      "pool": "back",
+      "ru": "Вернёмся к покупке места.",
+      "en": "Let's get back to buying a berth."
+    },
+    {
+      "id": "rm0116_frag0018",
+      "role": "player",
+      "pool": "leave",
+      "ru": "На этом всё. До встречи, комендант.",
+      "en": "That is all for now. Goodbye, Commandant."
+    },
+    {
+      "id": "rm0116_frag0019",
+      "role": "vendor",
+      "pool": "farewell",
+      "ru": "До встречи, Трент. Удачных полётов.",
+      "en": "Goodbye, Trent. Safe flying."
+    },
+    {
+      "id": "rm0116_frag0020",
+      "role": "vendor",
+      "pool": "greeting",
+      "ru": "С возвращением. Комендант Carter слушает. По поводу стоянки?",
+      "en": "Welcome back. Commandant Carter speaking. Here about ship storage?"
+    },
+    {
+      "id": "rm0116_frag0021",
+      "role": "vendor",
+      "pool": "greeting",
+      "ru": "Привет, Трент. Стоянка базы «Планета Калифорния» к твоим услугам.",
+      "en": "Hello, Trent. Need another berth at Planet California?"
+    },
+    {
+      "id": "rm0116_frag0022",
+      "role": "vendor",
+      "pool": "success",
+      "ru": "Готово. Место оплачено и закреплено за тобой. Пользуйся.",
+      "en": "All done. The berth is paid for and registered in your name. It's yours to use."
+    },
+    {
+      "id": "rm0116_frag0023",
+      "role": "vendor",
+      "pool": "bad_reputation",
+      "ru": "Не могу продать тебе место. Твоя репутация у нашей фракции должна быть положительной.",
+      "en": "I cannot sell you a berth. Your reputation with our faction must be positive."
+    }
+  ],
+  "nodes": {
+    "parking_start": {
+      "pool": "greeting",
+      "choices": "main",
+      "text_ru": "Стоянка {base}. Куплено: {owned} из {maximum}. Занято: {used}. Цена места: {price} кредитов.",
+      "text_en": "{base} parking. Owned: {owned} of {maximum}. Occupied: {used}. Price per berth: {price} credits."
+    },
+    "parking_confirm": {
+      "pool": "quote",
+      "choices": "confirm",
+      "text_ru": "Купить одно постоянное место на {base} за {price} кредитов? Куплено: {owned} из {maximum}.",
+      "text_en": "Buy one permanent berth on {base} for {price} credits? Owned: {owned} of {maximum}."
+    },
+    "parking_resume": {
+      "pool": "resume",
+      "choices": "main"
+    },
+    "parking_help": {
+      "pool": "rules",
+      "choices": "information"
+    },
+    "parking_scope": {
+      "pool": "scope",
+      "choices": "information"
+    },
+    "parking_full": {
+      "pool": "full",
+      "choices": "information"
+    },
+    "parking_success": {
+      "pool": "success",
+      "choices": "result",
+      "text_ru": "Место оплачено. На {base} у вас {owned} из {maximum} мест. Занято: {used}.",
+      "text_en": "Berth purchased. You own {owned} of {maximum} berths on {base}. Occupied: {used}."
+    },
+    "parking_no_money": {
+      "pool": "no_money",
+      "choices": "result"
+    },
+    "parking_maximum": {
+      "pool": "maximum",
+      "choices": "result"
+    },
+    "parking_error": {
+      "pool": "error",
+      "choices": "result"
+    },
+    "parking_farewell": {
+      "pool": "farewell",
+      "terminal": true
+    },
+    "parking_bad_reputation": {
+      "pool": "bad_reputation",
+      "choices": "result"
+    }
+  },
+  "choice_sets": {
+    "main": [
+      "buy",
+      "rules",
+      "leave"
+    ],
+    "confirm": [
+      "confirm",
+      "cancel"
+    ],
+    "information": [
+      "scope",
+      "full",
+      "back",
+      "leave"
+    ],
+    "result": [
+      "back",
+      "leave"
+    ]
+  },
+  "choices": {
+    "buy": {
+      "pool": "ask_buy",
+      "ru": "Купить место",
+      "en": "Buy a berth",
+      "action": "quote_parking",
+      "goto": "parking_confirm",
+      "outcomes": {
+        "maximum": "parking_maximum",
+        "bad_reputation": "parking_bad_reputation"
+      }
+    },
+    "confirm": {
+      "pool": "confirm",
+      "ru": "Купить за {price} кредитов",
+      "en": "Buy for {price} credits",
+      "action": "buy_parking",
+      "outcomes": {
+        "success": "parking_success",
+        "no_money": "parking_no_money",
+        "maximum": "parking_maximum",
+        "failed": "parking_error",
+        "bad_reputation": "parking_bad_reputation"
+      }
+    },
+    "cancel": {
+      "pool": "cancel",
+      "ru": "Отложить покупку",
+      "en": "Cancel purchase",
+      "goto": "parking_resume"
+    },
+    "rules": {
+      "pool": "ask_rules",
+      "ru": "Условия хранения",
+      "en": "Storage rules",
+      "goto": "parking_help"
+    },
+    "scope": {
+      "pool": "ask_scope",
+      "ru": "Место действует на других базах?",
+      "en": "Does it apply at other bases?",
+      "goto": "parking_scope"
+    },
+    "full": {
+      "pool": "ask_full",
+      "ru": "Если все места заняты?",
+      "en": "What if all berths are occupied?",
+      "goto": "parking_full"
+    },
+    "back": {
+      "pool": "back",
+      "ru": "Вернуться к покупке",
+      "en": "Back to the purchase",
+      "goto": "parking_start"
+    },
+    "leave": {
+      "pool": "leave",
+      "ru": "До встречи, комендант",
+      "en": "Goodbye, Commandant",
+      "goto": "parking_farewell"
+    }
+  },
+  "local_scene": true,
+  "vendor_posture": "stand"
+}

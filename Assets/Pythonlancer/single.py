@@ -1,4 +1,12 @@
 import sys
+# BEGIN RPG CUTSCENE DISPATCH
+# Keep RPG authoring independent of LancerCore/story startup and voice services.
+if __name__ == "__main__" and len(sys.argv) > 1 and sys.argv[1] == "rpg":
+    sys.dont_write_bytecode = True
+    from tools.rpg_voices import main as rpg_cutscenes_main
+    rpg_cutscenes_main(sys.argv[2:])
+    raise SystemExit(0)
+# END RPG CUTSCENE DISPATCH
 import pathlib
 
 from text.dividers import SINGLE_DIVIDER
@@ -6,6 +14,7 @@ from text.dividers import SINGLE_DIVIDER
 from core import get_core
 
 from files.writer import FileWriter
+from tools.voice_output import output_path
 
 from managers.script import ScriptManager
 
@@ -17,7 +26,7 @@ from story import math
 from universe.audio.infocard import INFO_RU
 
 from universe.audio.manager import PilotManager
-from universe.audio import pilot
+from universe.audio import pilot, pilot_en
 from universe.audio import nnvoice
 from universe.audio import nnvoice_eng
 from universe.audio import dispatcher, dispatcher_en
@@ -208,36 +217,36 @@ def test_voices():
 
 
 def test_steos():
-    import httpx
-    from settings import STEOS_API_KEY
-
-    url = f"https://public.api.voice.steos.io/api/v1/steos-voice-controller/available-voices/{STEOS_API_KEY}"
-    response = httpx.get(url)
-
-    for voice in response.json():
-        print(voice)
-
-
-    return
+    # import httpx
+    # from settings import STEOS_API_KEY
+    #
+    # url = f"https://public.api.voice.steos.io/api/v1/steos-voice-controller/available-voices/{STEOS_API_KEY}"
+    # response = httpx.get(url)
+    #
+    # for voice in response.json():
+    #     print(voice)
+    #
+    #
+    # return
     # SteosVoice.prepare_temp_path()
 
 
     ### DISPATCHER
 
-    # core = get_core()
+    core = get_core()
 
-    # the_pilot = dispatcher.FemaleDispatcher(core=core)
+    the_pilot = dispatcher_en.EngMaleDispatcher(core=core)
     # the_pilot = pilot.PirateThree(core=core)
-    # the_pilot = dispatcher_en.EngFemaleDispatcher(core=core)
+    # the_pilot = pilot_en.EngLegalOne(core=core)
     #
-    # TempPilot.prepare_temp_folders(the_pilot)
-    # TempPilot.fill_audio(the_pilot, skip=True)
-    #
-    # TempPilot.fill_files_for_xml(the_pilot)
+    TempPilot.prepare_temp_folders(the_pilot)
+    TempPilot.fill_audio(the_pilot, skip=True)
+
+    TempPilot.fill_files_for_xml(the_pilot, russian=False)
     # TempPilot.build_voice_xml(the_pilot)
     #
-    #
-    # return
+
+    return
 
 
 
@@ -528,7 +537,7 @@ def sound_direct():
     output_folder = FileWriter.get_subfolder('help')
     for key, line in items:
         # file_name = f"{index:03d}.mp3"
-        file_name = f"{key}.mp3"
+        file_name = output_path(f"{key}.mp3").name
         line = line.replace(',,', ',')
         if not (output_folder / file_name).exists():
             audio_folder.AudioFolder.generate_simple_sound(output_folder / file_name, actors.Neuralnet, line)

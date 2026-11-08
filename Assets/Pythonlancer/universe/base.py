@@ -1,4 +1,3 @@
-import operator
 from random import shuffle, randint
 
 from world.names import DEFAULT, BASIC, ROID, ALLOY, PRODUCT, LUXURY, CONTRABAND
@@ -357,7 +356,7 @@ class Base:
                             kind == BASIC and product.commodity.IS_BASIC,
                             kind == ROID and product.commodity.IS_ROID,
                             kind == ALLOY and product.commodity.IS_ALLOY,
-                            kind == PRODUCT and product.commodity.IS_DEFAULT,
+                            kind == PRODUCT and product.commodity.IS_PRODUCT,
                             kind == LUXURY and product.commodity.IS_LUXURY,
                             kind == CONTRABAND and product.commodity.IS_CONTRABAND,
                             )):
@@ -397,35 +396,23 @@ class Base:
 
             depth_map = []
             for producer in producers:
+                if producer.get_base_name() == self.get_name():
+                    depth_map.append((0, producer))
+                    continue
                 try:
                     depth = self.graph.get_depth_by_base_name(producer.get_base_name())
                     depth_map.append((depth, producer))
                 except KeyError:
-                    # failed = 1
-                    # print(f'BASE: {self.get_name()}')
-                    # print(f'COMM: {base_comm.get_comm_name()}')
-                    # print(f'Graph not contain base {producer.get_base_name()}')
                     raise Exception(f'Graph not contain base {producer.get_base_name()}')
-            #
-            # if failed == 1:
-            #     continue
 
-            cheapest_producers_price = []
-            min_depth = (min(depth_map, key=operator.itemgetter(0)))[0]
+            quotes = []
             for depth, producer in depth_map:
-                if depth == min_depth:
-                    cheapest_producers_price.append(producer.get_produce_price())
+                quotes.append(base_comm.universe_commodity.commodity.get_consume_price(
+                    produce_price=producer.get_produce_price(),
+                    depth=depth,
+                ))
 
-            produce_price = (
-                min(cheapest_producers_price)
-                if len(cheapest_producers_price) > 0
-                else cheapest_producers_price[0]
-            )
-
-            purchase_price = base_comm.universe_commodity.commodity.get_consume_price(
-                produce_price=produce_price,
-                depth=min_depth,
-            )
+            purchase_price = min(quotes)
 
             base_comm.set_purchase_price(purchase_price)
 
@@ -627,10 +614,11 @@ class BaseCommodity(MarketCommodity):
         return self.commodity.get_default_price()
 
     def get_price(self):
-        variance = self.commodity.PRICE_VARIANCE_PERCENT * 100
-        random_variance = randint(-variance, variance) / 100
-        random_multipler = (random_variance / 100) + 1
-        return self.get_commodity_price() * random_multipler
+        points = int(self.commodity.PRICE_VARIANCE_PERCENT * 10)
+        if points <= 0:
+            return self.get_commodity_price()
+        roll = randint(-points, points) / 1000
+        return self.get_commodity_price() * (1 + roll)
 
     def get_price_percent(self):
         price_pct = ((self.get_price() * 100) / self.commodity.get_default_price()) / 100

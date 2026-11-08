@@ -1,6 +1,7 @@
 from tools.utf_xml import XML_UTF
 from tools.data_folder import DataFolder
 from tools.voice_api import VoiceApi
+from tools.voice_output import output_path
 from tools.audio_folder import AudioFolder
 from tools.create_id import CreateId
 import pathlib
@@ -39,9 +40,10 @@ class TempPilot:
         lines = pilot.get_lines()
         for line in lines:
             code = line.get_code()
-            file_destination = pilot_folder / line.get_subfolder() / f'{code}.mp3'
+            file_destination = output_path(pilot_folder / line.get_subfolder() / f'{code}.mp3')
 
-            if skip and file_destination.exists():
+            alternate = file_destination.with_suffix('.mp3' if file_destination.suffix == '.wav' else '.wav')
+            if skip and (file_destination.exists() or alternate.exists()):
                 continue
 
             if line.is_static():
@@ -56,13 +58,20 @@ class TempPilot:
                 speech_lang=pilot.SOURCE_LANG,
                 delivery=getattr(line, 'delivery', None) or pilot.VOICE_DELIVERY,
                 speed=line.parse_rule.STEOS_SPEED,
+                denoise=pilot.DENOISE,
+                trim_lead=pilot.TRIM_LEAD,
             )
             sleep(0.2)
 
     @classmethod
-    def fill_files_for_xml(cls, pilot: PilotVoice):
+    def fill_files_for_xml(cls, pilot: PilotVoice, russian=True):
         pilots_folder = cls.get_root_pilot_path() / pilot.FOLDER
-        audios_root = AudioFolder.get_apply_xml_audio_path() / f'{pilot.FOLDER}.xml'
+        voice_root = (
+            AudioFolder.get_apply_xml_audio_path()
+            if russian else
+            AudioFolder.get_apply_xml_audio_path_en()
+        )
+        audios_root = voice_root / f'{pilot.FOLDER}.xml'
         audios_folder = audios_root / pilot.FOLDER
         audios_root.mkdir(exist_ok=True)
         audios_folder.mkdir(exist_ok=True)
@@ -72,8 +81,12 @@ class TempPilot:
             code = line.get_code()
 
             if not line.is_static():
-                file_destination = pilots_folder / line.get_subfolder() / f'{code}.mp3'
-                target_destination = audios_folder / f'{code}.mp3'
+                file_destination = output_path(pilots_folder / line.get_subfolder() / f'{code}.mp3')
+                if not file_destination.exists():
+                    alternate = file_destination.with_suffix('.mp3' if file_destination.suffix == '.wav' else '.wav')
+                    if alternate.exists():
+                        file_destination = alternate
+                target_destination = audios_folder / file_destination.name
             else:
                 if line.is_static_from_root():
                     file_destination = cls.get_root_pilot_path() / line.get_static_file()
@@ -86,8 +99,13 @@ class TempPilot:
                 shutil.copy(str(file_destination), str(target_destination))
 
     @classmethod
-    def build_voice_xml(cls, pilot: PilotVoice, skip=False):
-        voice_path = AudioFolder.get_apply_xml_audio_path() / f'{pilot.FOLDER}.xml'
+    def build_voice_xml(cls, pilot: PilotVoice, skip=False, russian=True):
+        voice_root = (
+            AudioFolder.get_apply_xml_audio_path()
+            if russian else
+            AudioFolder.get_apply_xml_audio_path_en()
+        )
+        voice_path = voice_root / f'{pilot.FOLDER}.xml'
 
         voice = pilot.get_voice()
 

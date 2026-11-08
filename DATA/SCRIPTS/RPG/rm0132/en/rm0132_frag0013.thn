@@ -1,0 +1,46 @@
+-- RPG fragment: requires bound actors and session cameras; see manifest.json
+duration=7.899583
+entities={
+{entity_name="Monitor_1",type=MONITOR,template_name=""},
+{entity_name="RpgCamera_vendor",type=CAMERA,template_name="",flags=REFERENCE,cameraprops={fovh=30,hvaspect=1.333333,nearplane=.1,farplane=10000}},
+{entity_name="Char_rpg_avalon_parking_officer",type=DEFORMABLE,template_name="",flags=LIT_DYNAMIC,lt_grp=0,srt_grp=0,userprops={Actor="park_rh_ber_01",category="Character"}},
+
+{
+    entity_name="DX_rm0132_frag0013_l001_vendor_en",
+    template_name="DX_rm0132_frag0013_l001_vendor_en",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+}
+events={
+{
+    0.15,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "RpgCamera_vendor"
+    }
+},
+{
+    0.15,
+    START_MOTION,
+    {"Char_rpg_avalon_parking_officer"},
+    { animation='Sc_dx_s070x_2801_Orillion',duration=7.45,time_scale=1,trans_time=0.25,weight=1,heading=-1 }
+},
+{
+    0.15,
+    START_SOUND,
+    {
+        "DX_rm0132_frag0013_l001_vendor_en"
+    },
+    {
+        duration=6.449583333333333
+    }
+},
+{
+    6.050000000000001,
+    START_MOTION,
+    {"Char_rpg_avalon_parking_officer"},
+    { animation='Sc_dx_s070x_2801_Orillion',duration=1.55,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=5.35 }
+}
+}

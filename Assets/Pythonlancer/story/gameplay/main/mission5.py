@@ -435,9 +435,9 @@ class Misson05(ingame_mission.IngameMission):
                 ]),
             ),
             TextDialog(
-                self, 'scient_pod', MS('Спасение учёных', "Saving of scients"),
+                self, 'scient_pod', MS('Спасение учёных', 'Rescuing the scientists'),
                 ru_content=MultiText([
-                    'Спасательные капусулы не успели активироваться!',
+                    'Спасательные капсулы не успели активироваться!',
 
                     'Уничтожьте обломки станции, чтобы разблокировать спасательные капсулы и подобрать учёных',
 
@@ -526,7 +526,7 @@ class Misson05(ingame_mission.IngameMission):
 
     def get_nn_objectives(self):
         return [
-            NNObj(self, MS('Встретьтесь с Хечтер в баре планеты Форбс', 'Meet Hatcher in bar of Planet Forbes'),
+            NNObj(self, MS('Встретьтесь с Хетчер в баре планеты Форбс', 'Meet Hatcher in the bar on Forbes'),
                   name='meet_vendor', target='vendor_planet'),
 
             NNObj(self, O.LAUNCH, name='launch'),
@@ -569,10 +569,10 @@ class Misson05(ingame_mission.IngameMission):
             NNObj(self, MS('Войдите в формацию с транспортом', 'Join transport formation'),
                   name='join_transport_formation'),
             NNObj(self, MS('Сопровождайте транспорт', 'Escort transport'), name='follow_transport'),
-            NNObj(self, MS('Ожидайте разрешения на посадку', 'Wait docking approvement'), name='wait_for_docking_approve'),
+            NNObj(self, MS('Ожидайте разрешения на посадку', 'Wait for docking clearance'), name='wait_for_docking_approve'),
 
             NNObj(self, MS('Спасите Мандрейка из обломков станции', 'Save Mandrake from station chunks!'), name='find_madrake_and_tractor_him'),
-            NNObj(self, MS('Попытайтесь спасти всех учёных!', 'Try to save all scients!'), name='save_all_scients'),
+            NNObj(self, MS('Попытайтесь спасти всех учёных!', 'Try to save all the scientists!'), name='save_all_scients'),
 
             NNObj(self, MS('Возвращайтесь к торговому пути', 'Go back to tradelane'), name='goto_bship_tlr', target='bship_tlr2'),
 

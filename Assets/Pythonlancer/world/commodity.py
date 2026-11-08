@@ -94,14 +94,18 @@ class Commodity:
     IS_CONTRABAND = False
 
     DEFAULT_PRICE = 100
-    PRICE_BEST_RATE = 0.25
-    PRICE_CHEAP_RATE = 0.5
-    PRICE_NORMAL_RATE = 0.75
-    PRICE_BAD_RATE = 1
+    PRICE_BEST_RATE = 0.85
+    PRICE_CHEAP_RATE = 0.95
+    PRICE_NORMAL_RATE = 1.05
+    PRICE_BAD_RATE = 1.15
+    PRICE_STEP_RATE = 0.14
+    PRICE_STEP_DECAY = 0.88
+    FREIGHT_HOP_CAP = 6
+    PRICE_MAX_RATIO = 2.6
+    GOOD_BUY_RATE = 1.000
+    GOOD_SELL_RATE = 1.500
 
     PRICE_VARIANCE_PERCENT = 2
-
-    PRICE_STEP = 20
 
     UNITS_PER_CONTAINER = 30
     DECAY_PER_SECOND = 0
@@ -133,9 +137,6 @@ class Commodity:
             )
         )
 
-        self.good_price_multiplier = 5
-        self.bad_price_multiplier = 2
-
         self.depot_names = {}
 
     def add_depot_name(self, depot_archetype, ids_name):
@@ -149,18 +150,6 @@ class Commodity:
 
     def get_nickname(self):
         return self.NICKNAME
-
-    def set_good_price_multiplier(self, multiplier):
-        self.good_price_multiplier = multiplier
-
-    def set_bad_price_multiplier(self, multiplier):
-        self.bad_price_multiplier = multiplier
-
-    def get_good_price_multiplier(self):
-        return self.good_price_multiplier
-
-    def get_bad_price_multiplier(self):
-        return self.bad_price_multiplier
 
     def get_ru_name(self):
         return self.RU_NAME
@@ -205,27 +194,34 @@ class Commodity:
         return self.DEFAULT_PRICE
 
     def get_best_price(self):
-        return self.get_default_price() * self.PRICE_BEST_RATE
+        return int(round(self.get_default_price() * self.PRICE_BEST_RATE))
 
     def get_cheap_price(self):
-        return self.get_default_price() * self.PRICE_CHEAP_RATE
+        return int(round(self.get_default_price() * self.PRICE_CHEAP_RATE))
 
     def get_normal_price(self):
-        return self.get_default_price() * self.PRICE_NORMAL_RATE
+        return int(round(self.get_default_price() * self.PRICE_NORMAL_RATE))
 
     def get_bad_price(self):
-        return self.get_default_price() * self.PRICE_BAD_RATE
+        return int(round(self.get_default_price() * self.PRICE_BAD_RATE))
 
     def get_price_step(self, depth):
-        # TODO: increase by depth
-        return self.PRICE_STEP
+        step = self.get_default_price() * self.PRICE_STEP_RATE
+        for _ in range(1, depth):
+            step *= self.PRICE_STEP_DECAY
+        return step
 
     def get_consume_price(self, produce_price, depth):
         price = produce_price
-        for i in range(1, depth+1):
+        hops = depth if depth < self.FREIGHT_HOP_CAP else self.FREIGHT_HOP_CAP
+        for i in range(1, hops + 1):
             price += self.get_price_step(i)
-
-        return price
+        ceiling = self.get_best_price() * self.PRICE_MAX_RATIO
+        if price > ceiling:
+            price = ceiling
+        if price < produce_price:
+            price = produce_price
+        return int(round(price))
 
     def get_ids_name(self):
         return self.ids_name.id
@@ -256,16 +252,16 @@ class Commodity:
         return f'gcs_gen_commodity_{self.get_nickname()}'
 
     def get_good_sell_price(self):
-        return self.get_good_price_multiplier()
+        return f'{self.GOOD_SELL_RATE:.3f}'
 
     def get_bad_buy_price(self):
-        return self.get_good_price_multiplier()
+        return f'{self.GOOD_SELL_RATE:.3f}'
 
     def get_bad_sell_price(self):
-        return self.get_bad_price_multiplier()
+        return f'{self.GOOD_BUY_RATE:.3f}'
 
     def get_good_buy_price(self):
-        return self.get_bad_price_multiplier()
+        return f'{self.GOOD_BUY_RATE:.3f}'
 
     def get_good(self):
         return GOOD_TEMPLATE.format(
@@ -281,50 +277,97 @@ class Commodity:
 
 
 class BasicCommodity:
-    DEFAULT_PRICE = 20
-    PRICE_STEP = 5
+    DEFAULT_PRICE = 30
+    PRICE_STEP_RATE = 0.18
+    PRICE_STEP_DECAY = 0.88
+    FREIGHT_HOP_CAP = 6
+    PRICE_MAX_RATIO = 2.4
+    GOOD_BUY_RATE = 1.000
+    GOOD_SELL_RATE = 1.450
     IS_BASIC = True
     PRICE_VARIANCE_PERCENT = 25
 
 
 class DefaultCommodity:
-    DEFAULT_PRICE = 40
-    PRICE_STEP = 10
+    DEFAULT_PRICE = 45
+    PRICE_STEP_RATE = 0.16
+    PRICE_STEP_DECAY = 0.88
+    FREIGHT_HOP_CAP = 6
+    PRICE_MAX_RATIO = 2.6
+    GOOD_BUY_RATE = 1.000
+    GOOD_SELL_RATE = 1.500
     IS_DEFAULT = True
     PRICE_VARIANCE_PERCENT = 10
 
 
 class Roid:
-    DEFAULT_PRICE = 80
-    PRICE_STEP = 15
+    DEFAULT_PRICE = 200
+    PRICE_BEST_RATE = 0.75
+    PRICE_CHEAP_RATE = 0.90
+    PRICE_NORMAL_RATE = 1.05
+    PRICE_BAD_RATE = 1.20
+    PRICE_STEP_RATE = 0.20
+    PRICE_STEP_DECAY = 0.90
+    FREIGHT_HOP_CAP = 8
+    PRICE_MAX_RATIO = 3.2
+    GOOD_BUY_RATE = 1.050
+    GOOD_SELL_RATE = 1.800
     IS_ROID = True
     PRICE_VARIANCE_PERCENT = 8
 
 
 class Alloy:
-    DEFAULT_PRICE = 150
-    PRICE_STEP = 25
+    DEFAULT_PRICE = 110
+    PRICE_STEP_RATE = 0.14
+    PRICE_STEP_DECAY = 0.88
+    FREIGHT_HOP_CAP = 6
+    PRICE_MAX_RATIO = 2.6
+    GOOD_BUY_RATE = 1.000
+    GOOD_SELL_RATE = 1.350
     IS_ALLOY = True
     PRICE_VARIANCE_PERCENT = 7
 
 
 class Product:
-    DEFAULT_PRICE = 250
-    PRICE_STEP = 50
+    DEFAULT_PRICE = 180
+    PRICE_STEP_RATE = 0.14
+    PRICE_STEP_DECAY = 0.88
+    FREIGHT_HOP_CAP = 7
+    PRICE_MAX_RATIO = 2.8
+    GOOD_BUY_RATE = 1.050
+    GOOD_SELL_RATE = 1.350
     IS_PRODUCT = True
     PRICE_VARIANCE_PERCENT = 5
 
 
 class Luxury:
-    DEFAULT_PRICE = 400
-    PRICE_STEP = 100
+    DEFAULT_PRICE = 260
+    PRICE_BEST_RATE = 0.90
+    PRICE_CHEAP_RATE = 1.00
+    PRICE_NORMAL_RATE = 1.10
+    PRICE_BAD_RATE = 1.20
+    PRICE_STEP_RATE = 0.22
+    PRICE_STEP_DECAY = 0.90
+    FREIGHT_HOP_CAP = 8
+    PRICE_MAX_RATIO = 3.6
+    GOOD_BUY_RATE = 1.150
+    GOOD_SELL_RATE = 1.900
     IS_LUXURY = True
     PRICE_VARIANCE_PERCENT = 3
 
 
 class Contraband:
-    DEFAULT_PRICE = 300
-    PRICE_STEP = 40
+    DEFAULT_PRICE = 360
+    PRICE_BEST_RATE = 0.85
+    PRICE_CHEAP_RATE = 1.00
+    PRICE_NORMAL_RATE = 1.15
+    PRICE_BAD_RATE = 1.30
+    PRICE_STEP_RATE = 0.24
+    PRICE_STEP_DECAY = 0.90
+    FREIGHT_HOP_CAP = 8
+    PRICE_MAX_RATIO = 4.2
+    GOOD_BUY_RATE = 1.200
+    GOOD_SELL_RATE = 2.100
     IS_CONTRABAND = True
     PRICE_VARIANCE_PERCENT = 15
 
@@ -823,7 +866,7 @@ class LuxuryFood(Luxury, Commodity):
     RU_INFO = ru_info.LUXURY_FOOD
 
 
-class AlloyRadiation(Commodity):
+class AlloyRadiation(Alloy, Commodity):
     ALIAS = ALLOY_RADIATION
     RU_NAME = MS('Противорадиаци+онный сплав', 'Anti-radiation alloy')
     # RU_NAME_REL1 = RU_NAME

@@ -463,7 +463,7 @@ class Misson11(ingame_mission.IngameMission):
                 ],
                 slide_x=100,
                 unique_npc_entry=True,
-                base_name=MS('Лямбда', 'Labmda'),
+                base_name=MS('Лямбда', 'Lambda'),
                 npc=NPC(
                     faction=faction.KusariMain,
                     ship=ship.Dragon,

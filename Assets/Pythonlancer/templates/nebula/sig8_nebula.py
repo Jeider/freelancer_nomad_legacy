@@ -2,6 +2,8 @@ from templates.simple_template import SimpleTemplate
 
 
 class Sig8BrownNebulaTemplate(SimpleTemplate):
+	# Hand-tuned to the cloud palette; retain the system exclusion tint.
+	MATCH_EXCLUSION_PALETTE = False
 	TEMPLATE = '''
 [TexturePanels]
 file = solar\\nebula\\generic_shapes.ini
@@ -66,6 +68,8 @@ color = 230, 170, 80
 
 
 class Sig8LargeEdgeNebulaTemplate(SimpleTemplate):
+	# Hand-tuned to the cloud palette; retain the system exclusion tint.
+	MATCH_EXCLUSION_PALETTE = False
 	TEMPLATE = '''
 [TexturePanels]
 file = solar\\nebula\\generic_shapes.ini
@@ -161,6 +165,8 @@ color = 20, 20, 20
 
 
 class Sig8SmallEdgeNebulaTemplate(SimpleTemplate):
+	# Hand-tuned to the cloud palette; retain the system exclusion tint.
+	MATCH_EXCLUSION_PALETTE = False
 	TEMPLATE = '''
 [TexturePanels]
 file = solar\\nebula\\generic_shapes.ini

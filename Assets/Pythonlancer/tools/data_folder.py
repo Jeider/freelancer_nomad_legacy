@@ -14,11 +14,223 @@ def get_and_create(folder):
 
 class DataFolder:
 
-    def __init__(self, build_to_folder=None):
-        self.root = pathlib.Path().resolve().parent.parent
+    def __init__(self, build_to_folder=None, *, root=None):
+        self.root = pathlib.Path(root).resolve() if root is not None else pathlib.Path().resolve().parent.parent
         self.build_to_folder = build_to_folder
         if self.build_to_folder:
             self.root = self.root / 'BUILDS' / self.build_to_folder
+
+    # Central DATA output API, also used for staging and installation rollback.
+    def data_path(self, relative):
+        relative = pathlib.Path(str(relative).replace('\\', '/'))
+        if (relative.is_absolute() or relative.drive or not relative.parts or
+                '..' in relative.parts or any(':' in part for part in relative.parts)):
+            raise ValueError('Expected a path relative to DATA: ' + str(relative))
+        root = (self.get_root() / 'DATA').resolve()
+        target = (root / relative).resolve()
+        if not target.is_relative_to(root) or target == root:
+            raise ValueError('Path escapes DATA: ' + str(relative))
+        return target
+
+    def sync_data_file(self, relative, content):
+        target = self.data_path(relative)
+        target.parent.mkdir(parents=True, exist_ok=True)
+        if isinstance(content, str):
+            target.write_text(content, encoding='utf-8')
+        else:
+            target.write_bytes(content)
+        return target
+
+    def remove_data_file(self, relative):
+        # Only an individual DATA file; never remove a directory recursively.
+        self.data_path(relative).unlink(missing_ok=True)
+
+    def sync_ship_parking(self, files):
+        for relative in files:
+            name = str(relative).replace('\\', '/')
+            if not (name in ('RPG/ship_parking.ini', 'RPG/parking_contacts.ini') or
+                    (name.startswith('RPG/parking/') and name.endswith('.ini'))):
+                raise ValueError('Unexpected ship parking file: ' + name)
+            self.data_path(name)
+        for relative, content in files.items():
+            self.sync_data_file(relative, content)
+
+
+    # BEGIN RPG AUDIO OUTPUT
+    def rpg_bin_path(self, name):
+        if name not in ('freelancer.ini', 'freelan_en_port.ini'):
+            raise ValueError('Unexpected RPG audio launch configuration')
+        root = self.get_root().resolve()
+        path = (root / 'bin' / name).resolve()
+        if not path.is_relative_to(root / 'bin'):
+            raise ValueError('RPG launch configuration escaped bin')
+        return path
+
+    def sync_rpg_bin_file(self, name, content):
+        path = self.rpg_bin_path(name)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(content)
+
+    def sync_rpg_audio(self, group, files, configs, backup_root):
+        """One group's audio transaction. All DATA writes and rollback stay here."""
+        import re
+        if not re.fullmatch(r'rm[0-9]{4}', group):
+            raise ValueError('Invalid RPG audio group')
+        for relative in files:
+            wav = re.fullmatch(r'AUDIO/(MOD|MOD_ENG)/RPG/' + group + '/' + group +
+                               r'_frag[0-9]{4}_l001_(vendor|player)\.wav', relative)
+            if not wav and relative not in (f'AUDIO/RPG/{group}.json', f'AUDIO/RPG/{group}_sounds.ini'):
+                raise ValueError('Unexpected RPG audio target: ' + relative)
+            self.data_path(relative)
+        for name in configs:
+            self.rpg_bin_path(name)
+        self._sync_rpg_files(group, files, configs, backup_root)
+
+    def sync_rpg_scenes(self, group, files, backup_root):
+        import re
+        if not re.fullmatch(r'rm[0-9]{4}', group):
+            raise ValueError('Invalid RPG scene group')
+        for relative in files:
+            pattern = (r'SCRIPTS/RPG/' + group + r'/(ru|en)/(' + group +
+                       r'_frag[0-9]{4}\.thn|manifest\.json|subtitles\.xml)')
+            gesture = r'SCRIPTS/RPG/' + group + r'/gestures/(vendor|player)_0[1-8]\.thn'
+            if not re.fullmatch(pattern, relative) and not re.fullmatch(gesture, relative):
+                raise ValueError('Unexpected RPG scene target: ' + relative)
+            self.data_path(relative)
+        self._sync_rpg_files(group, files, {}, backup_root)
+
+    def _sync_rpg_files(self, group, files, configs, backup_root):
+        backup_root = pathlib.Path(backup_root).resolve()
+        if backup_root == self.get_root().resolve() or backup_root.is_relative_to(self.data_path('AUDIO').parent):
+            raise ValueError('Backup must be outside game DATA')
+        backup = DataFolder(root=backup_root)
+        before = {name: self.data_path(name).read_bytes() if self.data_path(name).exists() else None
+                  for name in files}
+        before_configs = {name: self.rpg_bin_path(name).read_bytes() for name in configs}
+        changed = {name: content for name, content in files.items() if before[name] != content}
+        changed_configs = {name: content for name, content in configs.items() if before_configs[name] != content}
+        for name in changed:
+            if before[name] is not None:
+                backup.sync_data_file(name, before[name])
+        for name in changed_configs:
+            backup.sync_rpg_bin_file(name, before_configs[name])
+        backup_root.mkdir(parents=True, exist_ok=True)
+        (backup_root / 'transaction.json').write_text(json.dumps({
+            'group': group, 'destination': str(self.get_root()),
+            'data_files': {name: before[name] is not None for name in changed},
+            'bin_files': list(changed_configs)}, indent=2), encoding='utf-8')
+        touched, touched_configs = [], []
+        try:
+            for name, content in changed.items():
+                touched.append(name)
+                self.sync_data_file(name, content)
+            for name, content in changed_configs.items():
+                touched_configs.append(name)
+                self.sync_rpg_bin_file(name, content)
+        except Exception:
+            for name in reversed(touched_configs):
+                self.sync_rpg_bin_file(name, before_configs[name])
+            for name in reversed(touched):
+                if before[name] is None:
+                    self.remove_data_file(name)
+                else:
+                    self.sync_data_file(name, before[name])
+            raise
+    def sync_rpg_runtime(self, files, backup_root):
+        allowed = {'RPG/rm0001_dialog.ini', 'RPG/rh_biz_contact.ini', 'SCRIPTS/RPG/conversation.thn'}
+        if set(files) != allowed:
+            raise ValueError('Unexpected RPG runtime targets')
+        for relative in files:
+            self.data_path(relative)
+        self._sync_rpg_files('rm0001', files, {}, backup_root)
+    def sync_rpg_parking_runtime(self, files, backup_root):
+        allowed = {'RPG/rm0002_dialog.ini', 'RPG/parking/br_avl_01_base.ini'}
+        if set(files) != allowed:
+            raise ValueError('Unexpected Avalon parking runtime targets')
+        for relative in files:
+            self.data_path(relative)
+        self._sync_rpg_files('rm0002', files, {}, backup_root)
+    # END RPG AUDIO OUTPUT
+
+    def sync_parking_commandants(self, files, backup_root):
+        """Atomic commandants, additive parking hotspots and missing base definitions."""
+        import re
+        allowed = {'RPG/ship_parking.ini', 'RPG/parking_contacts.ini',
+                   'Interface/Baseside/navbar.ini', 'Interface/Baseside/parking_p.3db',
+                   'Universe/SYSTEMS_MOD/CO_MADRID/co_mad_04_base.ini',
+                   'Universe/DANGEON/ARCH/arch_01_base.ini',
+                   'Universe/DANGEON/HEAVY_BARREL2/heavy_barrel2_01_base.ini'}
+        for name in files:
+            # Room edits are constrained to the additive parking-hotspot transform.
+            room = name.lower().startswith('universe/') and name.lower().endswith('.ini') and name not in allowed
+            if room:
+                from managers.parking_rooms import ensure_parking_hotspot, LANDING_PATHS
+                from managers.parking_commandants import parse, one
+                content = files[name]
+                if isinstance(content, str): content = content.encode('utf-8')
+                declared_dealer = name.lower() in LANDING_PATHS
+                if not declared_dealer and not any(k == 'hotspot' and one(r, 'behavior').lower() == 'startshipdealer'
+                           for k, r in parse(content)):
+                    raise ValueError('Room is not a ship dealer: ' + name)
+                if ensure_parking_hotspot(content, declared_dealer) != content:
+                    raise ValueError('Missing parking hotspot: ' + name)
+                target = self.data_path(name)
+                if target.exists() and ensure_parking_hotspot(target.read_bytes(), declared_dealer) != content:
+                    raise ValueError('Room changed since planning or edit is not additive: ' + name)
+                continue
+            if (name not in allowed and
+                    not re.fullmatch(r'RPG/parking/[a-z0-9_]+_base\.ini', name) and
+                    not re.fullmatch(r'RPG/rm[0-9]{4}_dialog\.ini', name) and
+                    not re.fullmatch(r'SCRIPTS/RPG/rm[0-9]{4}/conversation\.thn', name)):
+                raise ValueError('Unexpected parking commandant target: ' + name)
+            self.data_path(name)
+        self._sync_rpg_files('parking_commandants', files, {}, backup_root)
+
+    def sync_courier_owners(self, files, backup_root):
+        """Publish locomotive contacts, catalog and required transfer registrations."""
+        import re
+        allowed = {'RPG/courier_contacts.ini', 'RPG/rh_biz_contact.ini',
+                   'MISSIONS/TrainCourier/catalog.ini', 'UNIVERSE/universe.ini', 'MISSIONS/mbases.ini'}
+        for name in files:
+            if (name not in allowed and
+                    not re.fullmatch(r'UNIVERSE/TrainCourier/tc_[a-z0-9_]+_base\.ini', name) and
+                    not re.fullmatch(r'MISSIONS/TrainCourier/launch_[a-z0-9_]+\.ini', name) and
+                    not re.fullmatch(r'RPG/courier/[a-z0-9_]+_base(?:_dialog)?\.ini', name) and
+                    not re.fullmatch(r'SCRIPTS/RPG/rm[0-9]{4}/(?:conversation\.thn|gestures/(?:vendor|player)_0[1-8]\.thn)', name)):
+                raise ValueError('Unexpected courier owner target: ' + name)
+            self.data_path(name)
+        self._sync_rpg_files('courier_owners', files, {}, backup_root)
+
+
+    def sync_parking_ui(self, files, backup_root):
+        """Publish the parking button and presentation-only RPG contact icon edits."""
+        import re
+        allowed = {'Interface/Baseside/navbar.ini', 'Interface/Baseside/parking_p.3db',
+                   'RPG/rh_biz_contact.ini'}
+        for name in files:
+            if name not in allowed and not re.fullmatch(r'RPG/(?:parking|courier)/[a-z0-9_]+\.ini', name):
+                raise ValueError('Unexpected parking UI target: ' + name)
+            self.data_path(name)
+            if name.startswith('RPG/'):
+                original = self.data_path(name).read_bytes()
+                content = files[name]
+                # Changing the marker must never rewrite the actor or dialogue.
+                strip = lambda data: re.sub(rb'(?im)^icon\s*=[^\r\n]*\r?\n', b'', data)
+                if strip(original) != strip(content):
+                    raise ValueError('Contact edit is not icon-only: ' + name)
+                icons = re.findall(rb'(?im)^icon\s*=\s*(mission|rumor)\s*$', content)
+                if len(icons) != 1:
+                    raise ValueError('Expected one valid contact icon: ' + name)
+        self._sync_rpg_files('parking_ui', files, {}, backup_root)
+
+    def sync_service_reputation(self, files, backup_root):
+        import re
+        for name in files:
+            if (name != 'RPG/ship_parking.ini' and
+                    not re.fullmatch(r'RPG/(?:parking/[a-z0-9_]+|courier/[a-z0-9_]+_base_dialog|rm[0-9]{4}_dialog)\.ini', name)):
+                raise ValueError('Unexpected service reputation target: '+name)
+            self.data_path(name)
+        self._sync_rpg_files('service_reputation',files,{},backup_root)
 
     def get_root(self):
         return self.root

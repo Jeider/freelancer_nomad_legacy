@@ -93,7 +93,7 @@ class Misson06(ingame_mission.IngameMission):
     INIT_OFFER = MultiLine(
         [
             'ЗАДАЧА:',
-            'Приостановить рейландские исследования на режимном объекте.',
+            'Приостановить рейнландские исследования на режимном объекте.',
             '',
             'СЛОЖНОСТЬ:',
             'Рискованная.',
@@ -143,10 +143,10 @@ class Misson06(ingame_mission.IngameMission):
                 self, 'stealth', MS('Устройство невидимости', 'Cloaking device'),
                 ru_content=MultiText([
                     'Устройство невидимости активировано. Вы ни в коем случае не должны его выключать до определенного момента, '
-                    'иначе миссий будет проиграна.',
+                    'иначе миссия будет проиграна.',
                 ],
                 [
-                    'Cloaking device is active. You should deactivate it ONLY when the mission tell you to ortherwise the mission will fail',
+                    'The cloaking device is active. Do not turn it off until the mission tells you to. Otherwise the mission will fail.',
                 ]),
             ),
             TextDialog(
@@ -155,7 +155,7 @@ class Misson06(ingame_mission.IngameMission):
                     'Вы входите в зону патрулей, которые могут вас обнаружить. Внимательно следите за передвижением вражеских грузовиков. '
                     'Это единственные корабли, которые могут вас обнаружить. В случае приближения грузовика будет активирована сигнальная система.',
 
-                    'Доклад анатиликов про зону с патрулями:',
+                    'Доклад аналитиков про зону с патрулями:',
 
                     'По периметру базы размещены телескопы. Находясь в подпространстве вы все еще можете наносить физические повреждения. Если ударить телескоп, можно '
                     'отвлечь вражеский патруль и тем самым спокойно влететь в Сферу.',
@@ -207,37 +207,32 @@ class Misson06(ingame_mission.IngameMission):
             TextDialog(
                 self, 'the_core', MS('Ядро Сферы', "The Sphere's core"),
                 ru_content=MultiText([
-                    'Вы приближаетесь к ядру. Данные о количестве рейнландских ученых в ядре неизвестно. '
+                    'Вы приближаетесь к ядру. Данных о количестве рейнландских учёных в ядре нет. '
                     'Вы в любом случае не должны дать никому покинуть ядро, иначе миссия будет проиграна.',
 
-                    'Если вы не справляетесь с миссией, то с помощью лончера может переключить сложность на лёгкую. Тогда ваши цели будут менее стремительно покидать Сферу, когда вас обнаружат.',
+                    'Если вы не справляетесь с миссией, сложность можно переключить на лёгкую через лончер. Тогда цели будут медленнее покидать Сферу, когда вас обнаружат.',
 
                     'Доклад аналитиков про ядро Сферы:',
 
-                    'В районе ядра расположены небольшие базы, на которых может укрыться Роттерман, а так же на них могут находиться ассистенты профессора, которые '
-                    'могут вызвать сигнал о подмоге. Ваша задача - или уничтожить Роттермана вручную, а потом перехватить ассистента. Или вы можете '
-                    'заблокировать двери баз, чтобы ни Роттерман ни ассистенты не могли вылететь. При этом Роттерман в любом случае попытается покинуть '
-
-                    'В районе ядра расположены небольше лаборатории, на которых может укрыться Роттерман. Рекомендуется '
-                    'предварительно взломать и заблокировать их двери. Сенсоры кораблей ученых достаточно слабые, поэтому '
-                    'вы можете спокойно лететь вдали от них при этом не будучи замеченным. На ближнем аванпосте есть датчики слежения, '
-                    'поэтому вы должны взломать его последним, так как будет немедленно обнаружены. После этого вы должны незамедлительно атаковать '
-                    'Роттермана',
+                    'В районе ядра расположены небольшие лаборатории, на которых может укрыться Роттерман. Рекомендуется '
+                    'заранее взломать и заблокировать их двери. Сенсоры кораблей учёных достаточно слабые, поэтому '
+                    'вы можете лететь в стороне от них и оставаться незамеченным. На ближнем аванпосте есть датчики слежения, '
+                    'поэтому взломайте его последним: иначе вас сразу обнаружат. После этого немедленно атакуйте '
+                    'Роттермана.',
 
                     'Загрузить стратегию в нейросеть?',
                 ],[
-                    'You are near the core. There is no known data about the amount of rheinland scientists inside. '
-                    'No one should be left alive in the core, Otherwise the mission will fail.',
+                    'You are approaching the core. There is no data on how many Rheinland scientists are inside. '
+                    'Do not let anyone leave the core, or the mission will fail.',
 
                     "If you can't handle this mission: you always can switch difficulty to easy by launcher. Then your targets will be less likely to flee the Sphere rapidly when you are discovered.",
 
                     "Analytics's report about the core:",
 
-                    "Near the core, there are small laboratories where Rottman could hide. "
-                    "It is recommended to first hack and lock their doors. The sensors on the scientists' "
-                    "ships are quite weak, so you can safely fly at a distance from them without being detected. "
-                    "The Outpost has tracking sensors, so you should hack it last, as you will be immediately "
-                    "detected. After that, you must immediately attack Rottman.",
+                    "Near the core there are small laboratories where Rotterman may hide. "
+                    "Hack and lock their doors first. The scientists' ship sensors are weak, so you can fly "
+                    "well clear of them and stay undetected. The near outpost has tracking sensors, so hack it last, "
+                    "or you will be spotted at once. Then attack Rotterman immediately.",
                     
                     "Load this strategy in your NeuralNet?"
                 ]),
@@ -262,9 +257,9 @@ class Misson06(ingame_mission.IngameMission):
             TextDialog(
                 self, 'torpedo', MS('Торпеды', 'Torpedoes'),
                 ru_content=MultiText([
-                    'Вражеские корабли атакуют Миссури тяжелыми торпедами',
-                    'Вы должны уничтожить эти торпеды своими пушками. Можно так же использовать любые ракеты. '
-                    'В том числе и ракеты, сбивающие круиз. Торпеды могут об них сдетонировать.',
+                    'Вражеские корабли атакуют Миссури тяжёлыми торпедами.',
+                    'Вы должны уничтожить эти торпеды своими пушками. Можно также использовать любые ракеты, '
+                    'в том числе сбивающие круиз. Торпеды могут сдетонировать о них.',
                     'Не пытайтесь сбить торпеды своим щитом. Вы будете мгновенно уничтожены!'
                 ],[
                     'Enemy ships attack Missouri with heavy torpedoes, you must destroy them',
@@ -283,7 +278,7 @@ class Misson06(ingame_mission.IngameMission):
 
     def get_nn_objectives(self):
         return [
-            NNObj(self, MS('Встретьтесь с Хечтер в баре планеты Питтсбург', 'Meet Hatcher in bar of Planet Pittsburgh'), name='00_meet_vendor', target='vendor_planet'),
+            NNObj(self, MS('Встретьтесь с Хетчер в баре планеты Питтсбург', 'Meet Hatcher in the bar on Pittsburgh'), name='00_meet_vendor', target='vendor_planet'),
             NNObj(self, O.LAUNCH, name='00_launch_to_space'),
             NNObj(self, MS('Направляйтесь к Миссури', 'Go to Missouri'), name='01_goto_dread', target='dread_mnh1', towards=True),
             NNObj(self, MS('Подберите указанное устройство', 'Collect cloaking device'), name='02_pick_up_cloaking_device'),

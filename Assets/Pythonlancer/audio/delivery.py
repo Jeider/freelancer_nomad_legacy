@@ -32,6 +32,7 @@ VERY_LOW_PITCH = Delivery('very_low_pitch', instruct='very low pitch')
 LOW_PITCH = Delivery('low_pitch', instruct='low pitch')
 MODERATE_PITCH = Delivery('moderate_pitch', instruct='moderate pitch')
 HIGH_PITCH = Delivery('high_pitch', instruct='high pitch')
+TEENAGER_HIGH_PITCH = Delivery('teenager_high_pitch', instruct='teenager, high pitch')
 VERY_HIGH_PITCH = Delivery('very_high_pitch', instruct='very high pitch')
 VERY_HIGH_PITCH_SLOW = Delivery('very_high_pitch_slow', instruct='very high pitch', speed=0.85)
 

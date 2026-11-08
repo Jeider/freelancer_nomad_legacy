@@ -101,6 +101,8 @@ class PilotVoice:
     ENABLED = True
     SOURCE_LANG = 'ru'
     VOICE_DELIVERY = None
+    DENOISE = True
+    TRIM_LEAD = False
 
     def __init__(self, core, *args, **kwargs):
         # core mandatory to access ingame data
@@ -317,6 +319,31 @@ class EnglishBaseIdentifiedVoice(PilotVoice):
     def get_lines(self):
         lines = super().get_lines()
         lines.extend(self.get_bases_lines())
+        return lines
+
+
+class EnglishCommodityVoice(EnglishBaseIdentifiedVoice):
+    def get_system_lines(self):
+        lines = []
+        for comm in self.core.store.get_commodities():
+            lines.append(
+                L(
+                    code=comm.get_msg_id_prefix(),
+                    ru_text=comm.get_name_rel1().get_en(),
+                    parse_rule=R.RuleCommodityNoProcess
+                )
+            )
+
+        return lines
+
+    def get_dynamic_lines(self):
+        lines = super().get_dynamic_lines()
+        lines.extend(self.get_lines())
+        return lines
+
+    def get_lines(self):
+        lines = super().get_lines()
+        lines.extend(self.get_system_lines())
         return lines
 
 

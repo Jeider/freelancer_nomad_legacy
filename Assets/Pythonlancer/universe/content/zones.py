@@ -317,7 +317,8 @@ zone = {zone}'''
         entries = []
         for name, params in self.exclusions.items():
             excl_params = {'exclusion': name}
-            excl_params.update(params)
+            from templates.nebula.exclusion import match_exclusion_palette
+            excl_params.update(match_exclusion_palette(self.CONTENT_TEMPLATE, params))
             entry = SINGLE_DIVIDER.join(['{} = {}'.format(key, value) for key, value in excl_params.items()])
             entries.append(entry)
 

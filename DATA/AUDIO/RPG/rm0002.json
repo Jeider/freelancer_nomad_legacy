@@ -1,0 +1,215 @@
+{
+  "schema": 1,
+  "group": "rm0002",
+  "languages": {
+    "en": [
+      {
+        "fragment": "rm0002_frag0001",
+        "file": "AUDIO/MOD_ENG/RPG/rm0002/rm0002_frag0001_l001_vendor.wav",
+        "nickname": "DX_rm0002_frag0001_l001_vendor_en",
+        "sha256": "4b720c757672d2a0d3f94e1dfcfbe74a0098b2db785622ad5e1c8802f6e33a8d",
+        "duration_seconds": 3.333666666666667,
+        "sample_rate": 24000,
+        "channels": 1
+      },
+      {
+        "fragment": "rm0002_frag0002",
+        "file": "AUDIO/MOD_ENG/RPG/rm0002/rm0002_frag0002_l001_player.wav",
+        "nickname": "DX_rm0002_frag0002_l001_player_en",
+        "sha256": "71e4cad822d9dcb89c7c5161a20b7f561b03a2b401ca9d04384737fef64fa11a",
+        "duration_seconds": 1.7580833333333334,
+        "sample_rate": 24000,
+        "channels": 1
+      },
+      {
+        "fragment": "rm0002_frag0003",
+        "file": "AUDIO/MOD_ENG/RPG/rm0002/rm0002_frag0003_l001_vendor.wav",
+        "nickname": "DX_rm0002_frag0003_l001_vendor_en",
+        "sha256": "451e66d75ce70dd83c809e93d3827b89f28a47db0f36dcb2c0d5acc8bf3c3832",
+        "duration_seconds": 3.5142083333333334,
+        "sample_rate": 24000,
+        "channels": 1
+      },
+      {
+        "fragment": "rm0002_frag0004",
+        "file": "AUDIO/MOD_ENG/RPG/rm0002/rm0002_frag0004_l001_player.wav",
+        "nickname": "DX_rm0002_frag0004_l001_player_en",
+        "sha256": "d563aafb24f3d8b3bcc0cc4c80572ece467d2f33e6f7491b63df2e529f41cb10",
+        "duration_seconds": 2.145875,
+        "sample_rate": 24000,
+        "channels": 1
+      },
+      {
+        "fragment": "rm0002_frag0005",
+        "file": "AUDIO/MOD_ENG/RPG/rm0002/rm0002_frag0005_l001_vendor.wav",
+        "nickname": "DX_rm0002_frag0005_l001_vendor_en",
+        "sha256": "799a59b84dfebe5b6d1a786ccbd3b0254ffd6a2d907c8bb0e6b0df4ef304caa5",
+        "duration_seconds": 3.9497916666666666,
+        "sample_rate": 24000,
+        "channels": 1
+      },
+      {
+        "fragment": "rm0002_frag0006",
+        "file": "AUDIO/MOD_ENG/RPG/rm0002/rm0002_frag0006_l001_player.wav",
+        "nickname": "DX_rm0002_frag0006_l001_player_en",
+        "sha256": "dd01349c238d95f4144a7058b1eedd918678584de5827780d71eb5e4ca799ec2",
+        "duration_seconds": 1.5000833333333334,
+        "sample_rate": 24000,
+        "channels": 1
+      },
+      {
+        "fragment": "rm0002_frag0007",
+        "file": "AUDIO/MOD_ENG/RPG/rm0002/rm0002_frag0007_l001_vendor.wav",
+        "nickname": "DX_rm0002_frag0007_l001_vendor_en",
+        "sha256": "6fa55b0ee3c142ddf158dc1cb8739f0a56f7c889b5c2c8424d67007a719c231b",
+        "duration_seconds": 2.0555833333333333,
+        "sample_rate": 24000,
+        "channels": 1
+      },
+      {
+        "fragment": "rm0002_frag0008",
+        "file": "AUDIO/MOD_ENG/RPG/rm0002/rm0002_frag0008_l001_player.wav",
+        "nickname": "DX_rm0002_frag0008_l001_player_en",
+        "sha256": "892a62229d98a7d78a64c15af32455b17faddb01adab0213ab9faa1c9359f990",
+        "duration_seconds": 1.9331666666666667,
+        "sample_rate": 24000,
+        "channels": 1
+      },
+      {
+        "fragment": "rm0002_frag0009",
+        "file": "AUDIO/MOD_ENG/RPG/rm0002/rm0002_frag0009_l001_vendor.wav",
+        "nickname": "DX_rm0002_frag0009_l001_vendor_en",
+        "sha256": "0ad894b0ae2fcaf5e41c6d778b8fdbcf3a4c2e3745bd064b632e08c6fa633150",
+        "duration_seconds": 5.2755,
+        "sample_rate": 24000,
+        "channels": 1
+      },
+      {
+        "fragment": "rm0002_frag0010",
+        "file": "AUDIO/MOD_ENG/RPG/rm0002/rm0002_frag0010_l001_player.wav",
+        "nickname": "DX_rm0002_frag0010_l001_player_en",
+        "sha256": "11a2e8d25bd635e52731ec63c296ba247d116551827241d6eb157ce0f4fd8b93",
+        "duration_seconds": 1.9795833333333333,
+        "sample_rate": 24000,
+        "channels": 1
+      },
+      {
+        "fragment": "rm0002_frag0011",
+        "file": "AUDIO/MOD_ENG/RPG/rm0002/rm0002_frag0011_l001_vendor.wav",
+        "nickname": "DX_rm0002_frag0011_l001_vendor_en",
+        "sha256": "ce7cf56f6636bd49fe2a72b309be7217b7de24ba47bee655138c27b2a520e404",
+        "duration_seconds": 5.125041666666666,
+        "sample_rate": 24000,
+        "channels": 1
+      },
+      {
+        "fragment": "rm0002_frag0012",
+        "file": "AUDIO/MOD_ENG/RPG/rm0002/rm0002_frag0012_l001_player.wav",
+        "nickname": "DX_rm0002_frag0012_l001_player_en",
+        "sha256": "b2b7981aeca88cfb2dd0ee9e384e6afb3b7f860bf167fd203c0f907964f3bbb8",
+        "duration_seconds": 2.2652916666666667,
+        "sample_rate": 24000,
+        "channels": 1
+      },
+      {
+        "fragment": "rm0002_frag0013",
+        "file": "AUDIO/MOD_ENG/RPG/rm0002/rm0002_frag0013_l001_vendor.wav",
+        "nickname": "DX_rm0002_frag0013_l001_vendor_en",
+        "sha256": "85863bf6749da6375e5af9daae7a6ced7764cbaeaec2309856845447dd5910f5",
+        "duration_seconds": 6.585875,
+        "sample_rate": 24000,
+        "channels": 1
+      },
+      {
+        "fragment": "rm0002_frag0014",
+        "file": "AUDIO/MOD_ENG/RPG/rm0002/rm0002_frag0014_l001_vendor.wav",
+        "nickname": "DX_rm0002_frag0014_l001_vendor_en",
+        "sha256": "2d0ab84cd855678fecab2aff6c43f20cfbc8cd6983819311b8b7c55379499f63",
+        "duration_seconds": 3.872,
+        "sample_rate": 24000,
+        "channels": 1
+      },
+      {
+        "fragment": "rm0002_frag0015",
+        "file": "AUDIO/MOD_ENG/RPG/rm0002/rm0002_frag0015_l001_vendor.wav",
+        "nickname": "DX_rm0002_frag0015_l001_vendor_en",
+        "sha256": "f2ca2a8c3e0fa9db559033b74c588086e217107576277042d66d3fdd0bec8ff8",
+        "duration_seconds": 4.405458333333334,
+        "sample_rate": 24000,
+        "channels": 1
+      },
+      {
+        "fragment": "rm0002_frag0016",
+        "file": "AUDIO/MOD_ENG/RPG/rm0002/rm0002_frag0016_l001_vendor.wav",
+        "nickname": "DX_rm0002_frag0016_l001_vendor_en",
+        "sha256": "b9c0f3bb573673e8caeda42e3680fcd9871704a06836694a055143f9c4a29368",
+        "duration_seconds": 4.145041666666667,
+        "sample_rate": 24000,
+        "channels": 1
+      },
+      {
+        "fragment": "rm0002_frag0017",
+        "file": "AUDIO/MOD_ENG/RPG/rm0002/rm0002_frag0017_l001_player.wav",
+        "nickname": "DX_rm0002_frag0017_l001_player_en",
+        "sha256": "f36ce788325f05c5fba6f497b05dc13be1dff62e18dd33b2fdc625489d9934dd",
+        "duration_seconds": 1.6077083333333333,
+        "sample_rate": 24000,
+        "channels": 1
+      },
+      {
+        "fragment": "rm0002_frag0018",
+        "file": "AUDIO/MOD_ENG/RPG/rm0002/rm0002_frag0018_l001_player.wav",
+        "nickname": "DX_rm0002_frag0018_l001_player_en",
+        "sha256": "4238660398873eac2b05d3f673d67d31d06f5f6013eb385aedab6375188fbf28",
+        "duration_seconds": 2.089916666666667,
+        "sample_rate": 24000,
+        "channels": 1
+      },
+      {
+        "fragment": "rm0002_frag0019",
+        "file": "AUDIO/MOD_ENG/RPG/rm0002/rm0002_frag0019_l001_vendor.wav",
+        "nickname": "DX_rm0002_frag0019_l001_vendor_en",
+        "sha256": "e6e1693daeca16cd7211e6ec20149df93f32e31488b33c662bc169d7bfc36833",
+        "duration_seconds": 1.5993333333333333,
+        "sample_rate": 24000,
+        "channels": 1
+      },
+      {
+        "fragment": "rm0002_frag0020",
+        "file": "AUDIO/MOD_ENG/RPG/rm0002/rm0002_frag0020_l001_vendor.wav",
+        "nickname": "DX_rm0002_frag0020_l001_vendor_en",
+        "sha256": "4449478249ff065dbd92771ff77b9294fd27a6a28dc94b578e1caa012facbb43",
+        "duration_seconds": 2.825083333333333,
+        "sample_rate": 24000,
+        "channels": 1
+      },
+      {
+        "fragment": "rm0002_frag0021",
+        "file": "AUDIO/MOD_ENG/RPG/rm0002/rm0002_frag0021_l001_vendor.wav",
+        "nickname": "DX_rm0002_frag0021_l001_vendor_en",
+        "sha256": "ad2e0175a903292946b3ef9c13a3273712643ae8ec111653ed6c86251da8cda3",
+        "duration_seconds": 1.9609166666666666,
+        "sample_rate": 24000,
+        "channels": 1
+      },
+      {
+        "fragment": "rm0002_frag0022",
+        "file": "AUDIO/MOD_ENG/RPG/rm0002/rm0002_frag0022_l001_vendor.wav",
+        "nickname": "DX_rm0002_frag0022_l001_vendor_en",
+        "sha256": "b837c76ad3ec9eb08f6f5d0d8f8eca8b1f9b12430ec6834dc5236845d2b5196e",
+        "duration_seconds": 3.465625,
+        "sample_rate": 24000,
+        "channels": 1
+      },
+      {
+        "fragment": "rm0002_frag0023",
+        "file": "AUDIO/MOD_ENG/RPG/rm0002/rm0002_frag0023_l001_vendor.wav",
+        "nickname": "DX_rm0002_frag0023_l001_vendor_en",
+        "sha256": "d389e525477c1bfd4e15eed3db2d848bf4e5599dc3d9189e9caf6f555b914059",
+        "duration_seconds": 3.622375,
+        "sample_rate": 24000,
+        "channels": 1
+      }
+    ]
+  }
+}
