@@ -103,6 +103,20 @@ class Actor(SteosInterface):
         return cls.GAME_ACTOR if cls.GAME_ACTOR else cls.NAME
 
 
+class Default(Actor):
+    RU_NAME = MS('Трент', 'Trent')
+    TYPE = ACTOR_TRENT
+    NAME = 'trent'
+    GAME_ACTOR = 'Player'
+    COMM_APPEARANCE = 'pi_pirate5_head, player_body, player_commhelmet'
+    CUTSCENE_APPEARANCE = 'trent'
+    STEOS_ID = 210
+    STEOS_PITCH = -0.5
+    # STEOS_SPEED = 1.13
+    STEOS_SPEED = 1  # For ENG
+    VOICE_DELIVERY = TEENAGER_HIGH_PITCH
+
+
 class Trent(Actor):
     RU_NAME = MS('Трент', 'Trent')
     TYPE = ACTOR_TRENT
@@ -381,6 +395,7 @@ class Adelmar(Actor):
     TYPE = ACTOR_MALE
     NAME = 'adelmar'
     COMM_APPEARANCE = 'pi_pirate3_head, rh_commtrader_body, prop_neuralnet_e_right'
+    CUTSCENE_APPEARANCE = 'Adelmar_Till'
     STEOS_ID = 13099
     # STEOS_SPEED = 0.9
     # STEOS_PITCH = 0.15
@@ -391,6 +406,7 @@ class Luc(Actor):
     TYPE = ACTOR_MALE
     NAME = 'luc'
     COMM_APPEARANCE = 'rh_sales_head, pl_male3_peasant_body, comm_ge_generic1'
+    CUTSCENE_APPEARANCE = 'Luc_Till'
     STEOS_ID = 13094
     # STEOS_SPEED = 0.9
     STEOS_PITCH = 0.08
@@ -746,6 +762,7 @@ class IntroBarman(Actor):
     RU_NAME = MS('Бармен', 'Bartender')
     TYPE = ACTOR_MALE
     NAME = 'barman'
+    CUTSCENE_APPEARANCE = 'li_manhattan_bartender'
     STEOS_ID = 13100
     STEOS_SPEED = 1
     STEOS_PITCH = -0.7
@@ -766,6 +783,7 @@ class Stewardess(Actor):
     RU_NAME = MS('Стюардесса', 'Stewardess')
     TYPE = ACTOR_FEMALE
     NAME = 'stuard'
+    CUTSCENE_APPEARANCE = 'intro_stuard'
     STEOS_ID = 10061
 
 
@@ -838,9 +856,9 @@ class HasslerEpilogue(Actor):
 class Ironside(Actor):
     RU_NAME = MS('Билл Айронсайд', 'Bill Ironside')
     TYPE = ACTOR_MALE
-    NAME = 'alaric'
+    NAME = 'ironside'
     COMM_APPEARANCE = 'rh_alaric_head_hat, pi_pirate6_body, comm_rh_alaric'
-    CUTSCENE_APPEARANCE = 'alaric'
+    CUTSCENE_APPEARANCE = 'ironside'
     SPACE_VOICE = 'pilot_f_mil_m01'
     STEOS_ID = 426
     STEOS_PITCH = -0.1
@@ -855,6 +873,7 @@ class Alaric(Actor):
     SPACE_VOICE = 'pilot_f_mil_m01'
     STEOS_ID = 426
     STEOS_PITCH = -0.1
+    VOICE_DELIVERY = LOW_PITCH
 
     # STEOS_PITCH = -1
     # STEOS_SPEED = 1.1

@@ -1,5 +1,4 @@
 import hashlib
-import io
 import wave
 import json
 import pathlib
@@ -9,7 +8,7 @@ import httpx
 from pydub import AudioSegment
 from pydub.silence import detect_nonsilent
 
-from settings import VOICESTUDIO_API_KEY, VOICESTUDIO_BASE_URL, VOICESTUDIO_MODEL
+from settings import VOICESTUDIO_API_KEY, VOICESTUDIO_BASE_URL, VOICESTUDIO_MODEL, VOICESTUDIO_STEPS
 
 SOURCE_DIRS = {
     'ru': 'VOICE_SOURCE_RU',
@@ -47,18 +46,48 @@ class VoiceStudioClone(object):
         return name
 
     @classmethod
-    def source_file(cls, source_name, source_lang):
+    def _source_folder(cls, source_lang):
         if source_lang not in SOURCE_DIRS:
             raise Exception('source_lang must be ru or en, got %s' % source_lang)
-        folder = cls.assets_root() / SOURCE_DIRS[source_lang]
+        return cls.assets_root() / SOURCE_DIRS[source_lang]
+
+    @classmethod
+    def _existing_source(cls, source_name, source_lang):
+        folder = cls._source_folder(source_lang)
         for ext in SOURCE_EXTENSIONS:
             path = folder / f'{source_name}{ext}'
             if path.exists():
                 return path
-        expected = folder / f'{source_name}.wav'
+        return None
+
+    @classmethod
+    def source_file(cls, source_name, source_lang):
+        path = cls._existing_source(source_name, source_lang)
+        if path:
+            return path
+        expected = cls._source_folder(source_lang) / f'{source_name}.wav'
         raise Exception(
             'Missing clone source for %s (%s): %s' % (source_name, source_lang, expected)
         )
+
+    @classmethod
+    def resolve_source(cls, source_name, source_lang, default_actor=None):
+        path = cls._existing_source(source_name, source_lang)
+        if path:
+            return source_name, path
+        if not default_actor or default_actor == source_name:
+            cls.source_file(source_name, source_lang)
+        fallback = cls._existing_source(default_actor, source_lang)
+        if not fallback:
+            folder = cls._source_folder(source_lang)
+            raise Exception(
+                'Missing clone source for %s (%s): %s; default %s also missing: %s' % (
+                    source_name, source_lang, folder / f'{source_name}.wav',
+                    default_actor, folder / f'{default_actor}.wav',
+                )
+            )
+        cls._log('missing source for %s (%s), using default %s' % (source_name, source_lang, default_actor))
+        return default_actor, fallback
 
     @classmethod
     def _client(cls):
@@ -159,11 +188,11 @@ class VoiceStudioClone(object):
         return max(0.25, min(float(speed), 4.0))
 
     @classmethod
-    def generate_voice_bytes(cls, actor, text, source_lang, speech_lang=None, delivery=None, speed=None, source_name=None, denoise=True):
+    def generate_voice_bytes(cls, actor, text, source_lang, speech_lang=None, delivery=None, speed=None, source_name=None, denoise=True, default_actor=None):
         if not text:
             raise Exception('text is mandatory')
         source_name = cls.source_name_of(actor, source_name)
-        source = cls.source_file(source_name, source_lang)
+        source_name, source = cls.resolve_source(source_name, source_lang, default_actor)
         speech_lang = speech_lang or source_lang
         delivery = cls._delivery_of(actor, delivery)
         cls._warn_delivery(delivery)
@@ -175,6 +204,8 @@ class VoiceStudioClone(object):
             'speed': cls._speed_of(actor, speed, delivery),
             'language': SPEECH_LANG.get(speech_lang, speech_lang),
             'denoise': denoise,
+            'preprocess_prompt': True,
+            'num_step': VOICESTUDIO_STEPS,
         }
         if delivery is not None and delivery.instruct:
             body['instruct'] = delivery.instruct
@@ -192,35 +223,18 @@ class VoiceStudioClone(object):
             raise Exception(
                 'VoiceStudio speech failed (%s): %s' % (response.status_code, response.text)
             )
-        return cls._pcm_wav(response.content)
+        return response.content
 
     @staticmethod
     def output_path(file_destination):
         return pathlib.Path(file_destination).with_suffix('.wav')
-
-    @staticmethod
-    def _pcm_wav(voice_bytes):
-        # Reject MP3 (including MP3-in-WAV), raw PCM, empty/truncated responses.
-        # Preserve the engine's sample rate and channels; store integer PCM16.
-        try:
-            with wave.open(io.BytesIO(voice_bytes), 'rb') as wav:
-                channels, width, rate, frames, compression, _ = wav.getparams()
-                samples = wav.readframes(frames)
-        except (wave.Error, EOFError) as error:
-            raise ValueError('VoiceStudio must return an uncompressed PCM WAV') from error
-        if compression != 'NONE' or not frames or len(samples) != frames * channels * width:
-            raise ValueError('VoiceStudio returned empty or truncated PCM WAV')
-        segment = AudioSegment(data=samples, sample_width=width, frame_rate=rate, channels=channels)
-        result = io.BytesIO()
-        segment.set_sample_width(2).export(result, format='wav')
-        return result.getvalue()
 
     @classmethod
     def trim_leading(cls, file_destination, thresh=-34, pad_ms=40, min_cut_ms=60):
         path = pathlib.Path(file_destination)
         if any(part.lower() == 'data' for part in path.resolve().parts):
             raise ValueError('Trimming source recordings cannot write DATA')
-        seg = AudioSegment.from_wav(path).set_sample_width(2)
+        seg = AudioSegment.from_wav(path)
         regions = detect_nonsilent(seg, min_silence_len=180, silence_thresh=thresh)
         if not regions:
             return 0
@@ -230,8 +244,13 @@ class VoiceStudioClone(object):
         cut = start - pad_ms
         if cut < min_cut_ms or len(seg) - cut < 150:
             return 0
+        kept = seg[cut:]
         tmp = path.with_suffix(path.suffix + '.trim')
-        seg[cut:].export(tmp, format='wav')
+        with wave.open(str(tmp), 'wb') as wav:
+            wav.setnchannels(kept.channels)
+            wav.setsampwidth(kept.sample_width)
+            wav.setframerate(kept.frame_rate)
+            wav.writeframes(kept.raw_data)
         tmp.replace(path)
         return cut
 
@@ -240,15 +259,14 @@ class VoiceStudioClone(object):
         path = cls.output_path(file_destination)
         if any(part.lower() == 'data' for part in path.resolve().parts):
             raise ValueError('VoiceStudio writes source recordings only; use DataFolder for DATA')
-        pcm_wav = cls._pcm_wav(voice_bytes)
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_bytes(pcm_wav)
+        path.write_bytes(voice_bytes)
         if trim_lead:
             cls.trim_leading(path)
         return path
 
     @classmethod
-    def generate_ru_voice(cls, sound, file_destination):
+    def generate_ru_voice(cls, sound, file_destination, default_actor=None):
         return cls._write(
             cls.generate_voice_bytes(
                 actor=sound.line.actor,
@@ -256,12 +274,13 @@ class VoiceStudioClone(object):
                 source_lang='ru',
                 speech_lang='ru',
                 delivery=sound.line.delivery,
+                default_actor=default_actor,
             ),
             file_destination,
         )
 
     @classmethod
-    def generate_en_voice(cls, sound, file_destination):
+    def generate_en_voice(cls, sound, file_destination, default_actor=None):
         return cls._write(
             cls.generate_voice_bytes(
                 actor=sound.line.actor,
@@ -269,6 +288,7 @@ class VoiceStudioClone(object):
                 source_lang='en',
                 speech_lang='en',
                 delivery=sound.line.delivery,
+                default_actor=default_actor,
             ),
             file_destination,
         )

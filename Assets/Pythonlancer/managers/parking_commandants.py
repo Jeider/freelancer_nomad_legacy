@@ -243,6 +243,8 @@ def plan(project, folder, registry, assets_root=None):
         if base not in prices: config+=f'\n[ParkingBase]\nbase = {base}\nseller = {seller}\n'
         if base not in known: catalog+=f'\n[RpgContact]\nnickname = {seller}\nenabled = true\nbase = {base}\nrtc = RPG\\parking\\{base}.ini\n'
         report.append(dict(entry,contact=target,voiced=len(available)))
+    config=re.sub(r'\n\[ParkingBase\]\s*\nbase\s*=\s*the_intro_base\s*\n(?:.*\n){0,4}','\n',config,flags=re.I)
+    catalog=re.sub(r'\n\[RpgContact\]\s*\nnickname\s*=\s*park_the_intro\s*\n(?:.*\n){0,4}','\n',catalog,flags=re.I)
     config=parking_rules(config,{r['base']:r['faction'] for r in registry['bases']})
     files['RPG/ship_parking.ini']=config.encode('utf-8')
     files['RPG/parking_contacts.ini']=catalog.encode('utf-8')
@@ -268,5 +270,6 @@ def sync_from_universe(universe, folder):
         (project/'story/rpg'/f'{group}.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     (project/'story/rpg/parking_commandants.json').write_text(json.dumps(registry,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     folder.sync_parking_commandants(files,output/'backups'/datetime.datetime.now().strftime('%Y%m%d_%H%M%S_%f'))
+    folder.remove_data_file('RPG/parking/the_intro_base.ini')
     (output/'coverage.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
     return report

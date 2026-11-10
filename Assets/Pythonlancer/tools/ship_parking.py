@@ -127,6 +127,9 @@ def generate(game, output, *, folder=None):
         if kind != 'base':
             continue
         base = one(row, 'nickname').lower()
+        if base == 'the_intro_base':
+            skipped.append(dict(base=base, reason='Intro base has no parking commandant'))
+            continue
         definition_path = one(row, 'file').lower()
         if base in seen:
             # Universe::GBases.insert keeps the first record for a duplicate nickname.
@@ -203,10 +206,12 @@ individual_name = {NAME_ID}
             files['DATA/' + path] = existing.read_bytes()
         entries.append(dict(base=base, seller=seller, room=room, spot=spot))
     from files.rpg_reputation import parking_rules
+    config = re.sub(r'\n\[ParkingBase\]\s*\nbase\s*=\s*the_intro_base\s*\n(?:.*\n){0,4}', '\n', config, flags=re.I)
     files['DATA/RPG/ship_parking.ini'] = parking_rules(config, factions)
     files['DATA/RPG/parking_contacts.ini'] = catalog_text
     assert (game / 'DATA/RPG/dialogue_choice.thn').is_file(), 'Install RPG dialog scene first'
     folder.sync_ship_parking({relative.removeprefix('DATA/'): text for relative, text in files.items()})
+    folder.remove_data_file('RPG/parking/the_intro_base.ini')
     report = dict(managers=entries, skipped=skipped)
     (output / 'parking_report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf-8')
     print(f'Generated {len(entries)} parking managers; {len(skipped)} bases skipped. Report: {output / "parking_report.json"}')

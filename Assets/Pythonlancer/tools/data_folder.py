@@ -244,6 +244,9 @@ class DataFolder:
     def get_exe(self):
         return get_and_create(self.get_root() / 'EXE')
 
+    def get_bin(self):
+        return get_and_create(self.get_root() / 'bin')
+
     def get_save(self):
         return get_and_create(self.get_root() / 'SAVE')
 
@@ -465,9 +468,12 @@ class DataFolder:
         equip_file = self.get_exe() / 'dacom.ini'
         equip_file.write_text(content, encoding='utf-8')
 
-    def sync_subtitles(self, content):
-        equip_file = self.get_exe() / 'subtitles.xml'
-        equip_file.write_text(content, encoding='utf-8')
+    def sync_subtitles(self, content, name='subtitles.xml'):
+        if name not in ('subtitles.xml', 'subtitles_ru.xml', 'subtitles_en.xml'):
+            raise ValueError('Unexpected subtitle file: ' + name)
+        text = content if isinstance(content, str) else content.decode('utf-8')
+        for folder in (self.get_exe(), self.get_bin()):
+            (folder / name).write_text(text, encoding='utf-8')
 
     def get_perf_options(self):
         if self.build_to_folder:

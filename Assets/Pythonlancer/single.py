@@ -18,6 +18,8 @@ from tools.voice_output import output_path
 
 from managers.script import ScriptManager
 
+from story.actors import Default
+
 from managers.jinja_manager import JinjaTemplateManager
 
 from story.cutscenes.meta import LipSyncManager
@@ -433,6 +435,7 @@ def generate_cutscene_voices():
     indexes = [1]
     alias = 'intro'
     russian = False
+    default_actor = 'Default'
 
     for i in indexes:
         msn = script_manager.get_mission_by_index(i)
@@ -442,7 +445,9 @@ def generate_cutscene_voices():
 
             print(cutscene.ALIAS)
 
-            audio_folder.AudioFolder.generate_cutscene_sounds(cutscene, russian=russian)
+            audio_folder.AudioFolder.generate_cutscene_sounds(
+                cutscene, russian=russian, default_actor=default_actor,
+            )
 
 
 def meta():
@@ -459,12 +464,12 @@ def meta():
 
 
 def scene():
-    russian = True
+    russian = False
     # mission_index = 99
     # scene_name = 'debug'
 
-    mission_index = 14
-    scene_name = 'lair_done'
+    mission_index = 1
+    scene_name = 'intro'
 
     tpl_manager = JinjaTemplateManager()
     script_manager = ScriptManager()

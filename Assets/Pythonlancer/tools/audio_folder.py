@@ -169,7 +169,7 @@ class AudioFolder:
                 VoiceApi.generate_en_voice(file_destination=file_destination, sound=sound)
 
     @classmethod
-    def generate_cutscene_sounds(cls, cutscene, russian=True):
+    def generate_cutscene_sounds(cls, cutscene, russian=True, default_actor=None):
         root_path = cls.get_initial_cutscene_audio_path() if russian else cls.get_initial_cutscene_audio_path_eng()
         sounds_path = root_path / cutscene.get_cutscene_folder()
         sounds_path.mkdir(parents=True, exist_ok=True)
@@ -181,9 +181,9 @@ class AudioFolder:
                 continue
 
             if russian:
-                VoiceApi.generate_ru_voice(file_destination=file_destination, sound=sound)
+                VoiceApi.generate_ru_voice(file_destination=file_destination, sound=sound, default_actor=default_actor)
             else:
-                VoiceApi.generate_en_voice(file_destination=file_destination, sound=sound)
+                VoiceApi.generate_en_voice(file_destination=file_destination, sound=sound, default_actor=default_actor)
 
     @classmethod
     def generate_simple_sound(cls, file_destination, actor, line):

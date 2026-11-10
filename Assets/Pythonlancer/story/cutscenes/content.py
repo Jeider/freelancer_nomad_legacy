@@ -1110,7 +1110,9 @@ class Character(Compound):
     def idle_sit_table(self, group, duration=10, **kwargs):
         self.main_anim(IDLE_SIT_TABLE, group=group, duration=duration, **kwargs)
 
-    def facial(self, group, index, append=True, extra_delay=0.3, auto_lip=False, auto_lip_anim_index=1):
+    def facial(self, group, index, append=True, extra_delay=0.3,
+               auto_lip=False, auto_lip_anim_index=1,
+               auto_anim_force=None, auto_anim_force_seconds=None):
         sound = self.root.lookup_single_sound(index)
         if self.actor != sound.line.actor:
             raise Exception(f'Sound {index} is belong to actor {sound.line.actor}. Cannot run by {self.actor}')
@@ -1118,14 +1120,22 @@ class Character(Compound):
         sound_duration = sound.get_duration(self.root.russian)
 
         if auto_lip:
-            anim_class: type[anim.CharAnim] = ANIM_CLASS_PER_ACTOR_TYPE[self.actor.TYPE]
+            if auto_anim_force is not None:
+                if auto_anim_force_seconds is None:
+                    raise Exception('{self} have no force seconds config')
+                facial_anim = auto_anim_force
+                facial_duration = auto_anim_force_seconds
 
-            if auto_lip_anim_index == 2:
-                facial_anim = anim_class.GENERIC_ANIM2
-                facial_duration = anim_class.GENERIC_ANIM2_SECONDS
             else:
-                facial_anim = anim_class.GENERIC_ANIM
-                facial_duration = anim_class.GENERIC_ANIM_SECONDS
+
+                anim_class: type[anim.CharAnim] = ANIM_CLASS_PER_ACTOR_TYPE[self.actor.TYPE]
+
+                if auto_lip_anim_index == 2:
+                    facial_anim = anim_class.GENERIC_ANIM2
+                    facial_duration = anim_class.GENERIC_ANIM2_SECONDS
+                else:
+                    facial_anim = anim_class.GENERIC_ANIM
+                    facial_duration = anim_class.GENERIC_ANIM_SECONDS
 
             anim_props = {
                 'animation': f"'{facial_anim}'",
@@ -1490,6 +1500,9 @@ class MotionPath(Entity):
                                   adjust_pos=adjust_pos, adjust_orient=adjust_orient, *args, **kwargs)
 
 
+# Old-format Facial clips are listed in db/facial_anims.json. Autoplay replaces
+# them: parse the old events, comment them, and keep hand lipsync in audio_meta.json
+# (python single.py meta) for lines that must not use auto facial.
 class Autoplay:
     def __init__(self, root, group, start_index=0, finish_index=9999, head_ik_per_index=None):
         self.root = root

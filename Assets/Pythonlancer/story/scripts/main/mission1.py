@@ -1,6 +1,7 @@
 from story import script
 from audio.sound import VoiceLine
 from audio.delivery import *
+from story.cutscenes.story_scenes import m01, m01_berlin, m01_bizmark, m01_cityscape, m01_offer
 from story.actors import (
     Trent, IntroBarman, Jameson, Stewardess, Alaric, Informer, Dietrich, Adelmar, Luc, BrandenburgOutpost, BrandenburgCruiser
 )
@@ -12,29 +13,53 @@ class Msn1(object):
 
 class Msn1Intro(Msn1, script.CutsceneProps):
     ALIAS = 'intro'
+    THORN_CLASS = m01.BarmanScene
     TITLE = 'Интро'
     DESCRIPTION = 'Трент подходит к бармену и своему рабодателю, мистер Харрисону (из финала фрила 1.0)'
     VOICE_LINES = [
+        # VoiceLine(10, Trent, ru="Привет, целитель душ!", en="The savior of souls!"),
+        # VoiceLine(20, IntroBarman, ru="Здарова, Трент! Тебе как обычно?", en="Welcome back, Trent. The usual?"),
+        # VoiceLine(30, Trent, ru="Да, и сразу две!", en="Sure, I'll have two!"),
+        # VoiceLine(40, IntroBarman, ru="Есть что отпраздновать?", en="Any reason for this celebration?"),
+        # VoiceLine(50, Trent, ru="Есть. Даже два повода! Во-первых, я, наконец, рассчитался со всеми долгами!", en="Absolutely. Two reasons actually! First of all, I have finally managed to pay off all my debts!"),
+        # VoiceLine(60, IntroBarman, ru="За начало новой жизни! Эта - за счет заведения!", en="For the beginning of a new life! This one's on me!"),
+        # VoiceLine(70, Trent, ru="Спасибо, дружище! Ты - лучший человек на этой богом забытой планете!",
+        #           en="Thanks, friend! You are definitely the best person in this godforsaken place!"),
+        # VoiceLine(80, IntroBarman,
+        #           ru='Но если было "во-первых", то должно быть и "во-вторых". Давай рассказывай, я сейчас сдохну от любопытства.',
+        #           en="But if there's a \"first of all\", there should be \"second\". Go on and tell me, or else I'll die of curiousity."),
+        # VoiceLine(90, Trent, ru="Только попробуй! Это будет непоправимой утратой.", en="Don't you dare die on me! I'd never get over the loss."),
+        # VoiceLine(100, Trent, ru="Старый кореш прислал сообщение.", en="An old friend sent me a message."),
+        # VoiceLine(105, Trent, ru='Смотри', en="Look."),
+        # VoiceLine(110, Alaric, ru="Привет, Трент, это Аларик! У меня для тебя хорошие новости! Мне кажется, мы сможем поправить твое финансовое положение. Встречаемся на Магдебурге, в системе Сигма-13. До встречи!",
+        #           en="Greetings, Trent! This is Alaric! Good news. I think we can fix the hole in your finnances. Meet me at Magdeburg, Sigma-13 System. See you soon!"),
+        # VoiceLine(120, Trent, ru="Что думаешь?", en="What do you think?"),
+        # VoiceLine(130, IntroBarman, ru="Думаю, сегодня ты самый счастливый сукин сын на всей этой гребаной планете.", en="I think you're the luckiest son of a bitch on this junkpile of a planet."),
+        # VoiceLine(140, Trent, ru="Да я не про это. Соглашаться? Лететь?", en="No, I mean... Should I agree and go there?"),
+        # VoiceLine(150, IntroBarman, ru="Можно, конечно, вообще ничего не делать, оставить все как есть. Денег на кусок хлеба хватит, да и риска никакого, разве что сдохнуть лет в сорок от работы на шахте. Но, мне кажется, что если судьба дает тебе шанс вырваться из этого болота - грех его не использовать. Хотя, решать тебе.",
+        #           en="You could, of course, let things be as they are and do nothing. Got enough money to sustain yourself; a risk-free life, other than dying in your 40s working in the mine. But, I think, if life gives you a chance to get out of this mud-hole - it's a sin not to take that chance. But, it's your call."),
+        # VoiceLine(160, Trent, ru="А почему сам не улетишь из \"этого болота\"?", en="So why aren't you flying away from this \"mud-hole\" yourself?"),
+        # VoiceLine(170, IntroBarman, ru="Это - моё болото. Я к нему прирос и я его люблю. И друзей, присылающих мен сообщения с просьбой все бросить и прилететь на Магдебург у меня нет. Да и потом, если я улечу, кто здесь будет исцелять души страждущих?",
+        #           en="This, friend, is my mud-hole. I've grown into it and I love it. And I don't have friends like yours, asking me to drop everything I'm doing and come over to Magdeburg. And if I would leave, who's going to be the savior of strangers' souls?"),
+        # VoiceLine(180, Trent, ru="Да уж, без тебя здесь стало бы совсем тоскливо. Ну так я в космопорт?", en="You're right, without you this place would've been gloomy. I guess I'll head to the spaceport, then."),
+        # VoiceLine(190, IntroBarman, ru="Удачи, Трент, надеюсь, мы здесь больше не увидимся.", en="Good luck, Trent! Hopefully, we'll never meet here again."),
+
         VoiceLine(10, Trent, ru="Всем доброго дня.", en="Good day, everyone."),
         VoiceLine(20, Jameson, ru="Здорова, Трент, пришел за новым нарядом?", en="Hey, Trent. Here for a new assignment?"),
         VoiceLine(30, Trent, ru="Нет, спасибо. Мистер Джеймсон, я пришел увольняться!", en="No, thanks. Mr. Jameson, I came to quit."),
         VoiceLine(40, Jameson, ru="С чего это? Опять поругался с кем-то на объекте?", en="How come? You get in another fight on site?"),
         VoiceLine(50, Trent, ru="Нет, всё серьёзно, смотрите.", en="No. It's serious. Look."),
         VoiceLine(70, Alaric, ru="Привет, Трент, это Аларик! У меня для тебя хорошие новости! Мне кажется, мы сможем поправить твое финансовое положение. Встречаемся на Магдебурге, в системе Сигма-13. До встречи!",
-                  en="Hey, Trent, it's Alaric! I've got good news. I think we can sort out your money. Meet me on Magdeburg, in Sigma-13. See you!",
-                      delivery=VERY_HIGH_PITCH),
+                  en="Hey, Trent, it's Alaric! I've got good news. I think we can sort out your money. Meet me on Magdeburg, in Sigma-13. See you!"),
         VoiceLine(80, Jameson, ru="А, этот прохиндей Аларик даже не сгинул в приграничье?", en="Huh. That crook Alaric didn't even get himself killed in the Border Worlds?"),
         VoiceLine(90, Trent, ru="Да, жив здоров! Так что хватит работать на дядю, пойду во фрилансеры, как мой знаменитый тёзка! Почему бы и нет?", en="Alive and well! So I'm done working for the boss. I'll go freelance, like my famous namesake. Why not?"),
         VoiceLine(100, Trent, ru="Заработаю денег столько, сколько вы и во снах не видовали!", en="I'll make more money than you've ever seen, even in your dreams!"),
         VoiceLine(110, Jameson, ru="Да, ты там и медаль одинокой звезды получить не забудь. Смотри не зазвездись, звёздный боец!", en="Sure. And don't forget your Lone Star medal. Don't let it go to your head, star fighter."),
-
-
         VoiceLine(120, IntroBarman, comment="Харрисон уходит", ru="Ну что, Трент, поздравляю тебя с началом новой жизни и получением билета не покидание этого болота!", en="Well, Trent. Congratulations on the new life, and on getting a ticket out of this swamp!", delivery=HAPPY),
         VoiceLine(130, Trent, ru="А ты чего сам не улетишь из этого болота?", en="Then why don't you fly out of this swamp yourself?"),
         VoiceLine(140, IntroBarman, ru="Нет, Трент, это твоё дело молодое. А я буду дальше помогать местным заблудшим душам. Не все же такие амбициозные, как ты!", en="No, Trent. That's a young man's business. I'll keep helping the lost souls around here. Not everyone's as ambitious as you."),
         VoiceLine(150, Trent, ru="Да, друг, без тебя здесь стало бы совсем тоскливо. Так, мой транспорт почти прибыл. Так что мне пора.", en="Yeah, friend. It'd be pretty dull here without you. Right, my transport's almost here. I should go."),
         VoiceLine(160, IntroBarman, ru="Давай, Трент, удачи!", en="Go on, Trent. Good luck!"),
-
 
         # VoiceLine(10, Trent, ru="Привет, целитель душ!", en="The Savior of my soul!"),
         # VoiceLine(20, IntroBarman, ru="Здарова, Трент! Тебе как обычно?", en="Welcome back, Trent. The usual?"),
@@ -80,6 +105,7 @@ class Msn1Intro(Msn1, script.CutsceneProps):
 
 class Msn1Cityscape(Msn1, script.CutsceneProps):
     ALIAS = 'cityscape'
+    THORN_CLASS = m01_cityscape.CityscapeScene
     TITLE = 'Взлётная площадка'
     DESCRIPTION = ''
     VOICE_LINES = [
@@ -93,6 +119,7 @@ class Msn1Cityscape(Msn1, script.CutsceneProps):
 
 class Msn1Offer(Msn1, script.CutsceneProps):
     ALIAS = 'offer'
+    THORN_CLASS = m01_offer.OfferScene
     TITLE = 'Сигма-13'
     DESCRIPTION = ''
     VOICE_LINES = [
@@ -118,6 +145,7 @@ class Msn1Offer(Msn1, script.CutsceneProps):
 
 class Msn1Berlin(Msn1, script.CutsceneProps):
     ALIAS = 'berlin'
+    THORN_CLASS = m01_berlin.BerlinScene
     TITLE = 'Берлин'
     DESCRIPTION = ''
     VOICE_LINES = [
@@ -130,6 +158,7 @@ class Msn1Berlin(Msn1, script.CutsceneProps):
 
 class Msn1Bizmark(Msn1, script.CutsceneProps):
     ALIAS = 'bizmark'
+    THORN_CLASS = m01_bizmark.BizmarkScene
     TITLE = 'Бисмарк'
     DESCRIPTION = ''
     VOICE_LINES = [
