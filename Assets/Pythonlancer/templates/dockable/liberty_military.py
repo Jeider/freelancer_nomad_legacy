@@ -1,7 +1,7 @@
 from templates.space_object_template import SpaceObjectTemplate
 
 
-class LibertyMilitary(SpaceObjectTemplate):
+class LibertyMilitaryOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'li_col_06'
     TEMPLATE = '''[Object]
 nickname = li_col_06
@@ -466,4 +466,320 @@ pos = 0, -200, 140
 rotate = 0, 0, 0
 archetype = space_small_control_tower_lowdetail
 parent = li_col_06
+'''
+
+
+class LibertyMilitary(LibertyMilitaryOriginal):
+    TEMPLATE = '''[Object]
+nickname = li_col_06
+pos = 0, 0, 0
+rotate = 0, 180, 0
+archetype = space_police01_columbia
+{dock_props}
+
+[Object]
+nickname = li_col_06_CORE_Sphere
+pos = 0, 0, 140
+rotate = 0, 180, 0
+archetype = sw_center_200
+loadout = odissey_sphere_control_towers
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_prison01
+pos = 0, -1, 640
+rotate = 0, 0, 0
+archetype = space_prison
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_prison02
+pos = 270, 0, 530
+rotate = 0, 225, 0
+archetype = space_prison
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_prison03
+pos = -270, 0, 530
+rotate = 0, -45, 0
+archetype = space_prison
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_prison04
+pos = 335, 0, -160
+rotate = 0, -240, 0
+archetype = space_prison
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_prison05
+pos = -335, 0, -160
+rotate = 0, 60, 0
+archetype = space_prison
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_ind01
+pos = 0, 0, 255
+rotate = 0, 0, 0
+archetype = batch_liberty_military_structure0
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_CORE_dock_ctrl_block01
+pos = 0, 0, 130
+rotate = 0, 0, 0
+archetype = batch_liberty_military_core0
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_CORE_connect01
+pos = -1, 0, 140
+rotate = 0, 135, 0
+archetype = hidden_connect_lowdetail
+loadout = odissey_lock_dock_connect
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_CORE_connect02
+pos = 0, 0, 141
+rotate = 0, 90, 0
+archetype = hidden_connect_lowdetail
+loadout = odissey_lock_dock_connect
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_CORE_connect03
+pos = -1, 0, 140
+rotate = 0, 225, 0
+archetype = hidden_connect_lowdetail
+loadout = odissey_lock_dock_connect
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_CORE_connect04
+pos = 1, 0, 140
+rotate = 0, 270, 0
+archetype = hidden_connect_lowdetail
+loadout = odissey_lock_dock_connect
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_CORE_connect05
+pos = 0, 0, 139
+rotate = 0, 45, 0
+archetype = hidden_connect_lowdetail
+loadout = odissey_lock_dock_connect
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_CORE_connect06
+pos = 0, 0, 141
+rotate = 0, -45, 0
+archetype = hidden_connect_lowdetail
+loadout = odissey_lock_dock_connect
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_CORE_connectA01
+pos = -1, -10, 140
+rotate = 0, -22.5, 0
+archetype = hidden_connect_lowdetail
+loadout = odissey_front_wins_connect_full
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_CORE_connectA02
+pos = 0, -10, 139
+rotate = 0, 22.5, 0
+archetype = hidden_connect_lowdetail
+loadout = odissey_front_wins_connect_full
+parent = li_col_06
+
+
+
+[Object]
+nickname = li_col_06_col_structure0_collision00
+pos = -519.780805, 0.501350384, 289.776773
+rotate = 0, 0, 0
+archetype = batch_liberty_military_structure0_collision00
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_col_structure0_collision01
+pos = -492.125938, 0.501350384, 228.98246
+rotate = 0, 0, 0
+archetype = batch_liberty_military_structure0_collision01
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_col_structure0_collision02
+pos = -430.009908, 0.222499847, 159.491104
+rotate = 0, 0, 0
+archetype = batch_liberty_military_structure0_collision02
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_col_structure0_collision03
+pos = 520.301454, 0.501350384, 289.916269
+rotate = 0, 0, 0
+archetype = batch_liberty_military_structure0_collision03
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_col_structure0_collision04
+pos = 492.448623, 0.501350384, 228.93684
+rotate = 0, 0, 0
+archetype = batch_liberty_military_structure0_collision04
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_col_structure0_collision05
+pos = 429.990092, 0.222499847, 159.491104
+rotate = 0, 0, 0
+archetype = batch_liberty_military_structure0_collision05
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_col_structure0_collision06
+pos = -0.0127677917, 0.222499847, 471.764076
+rotate = 0, 0, 0
+archetype = batch_liberty_military_structure0_collision06
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_col_structure0_collision07
+pos = -0.043510437, -0.00915573024, 309.850011
+rotate = 0, 0, 0
+archetype = batch_liberty_military_structure0_collision07
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_col_structure0_collision08
+pos = 6.79901886, -0.00915573024, 309.850011
+rotate = 0, 0, 0
+archetype = batch_liberty_military_structure0_collision08
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_col_structure0_collision09
+pos = -231.3305, 0.000932693481, 200.981207
+rotate = 0, 0, 0
+archetype = batch_liberty_military_structure0_collision09
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_col_structure0_collision10
+pos = -0.0114014936, 0.000932693481, 198.607325
+rotate = 0, 0, 0
+archetype = batch_liberty_military_structure0_collision10
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_col_structure0_collision11
+pos = 515.037219, 0.000932693481, 40.0377555
+rotate = 0, 0, 0
+archetype = batch_liberty_military_structure0_collision11
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_col_core0_collision00
+pos = 0.0692892075, -140.981648, 280.065035
+rotate = 0, 0, 0
+archetype = batch_liberty_military_core0_collision00
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_col_core0_collision01
+pos = 0.0650351569, -140.981648, -0.0692892044
+rotate = 0, 0, 0
+archetype = batch_liberty_military_core0_collision01
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_col_core0_collision02
+pos = 139.930711, -140.981648, 139.934965
+rotate = 0, 0, 0
+archetype = batch_liberty_military_core0_collision02
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_col_core0_collision03
+pos = -140.065035, -140.981648, 140.069289
+rotate = 0, 0, 0
+archetype = batch_liberty_military_core0_collision03
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_col_core0_collision04
+pos = 0.0692892075, 140.981647, 279.934971
+rotate = 0, 0, 0
+archetype = batch_liberty_military_core0_collision04
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_col_core0_collision05
+pos = 139.930711, 140.981647, 140.065029
+rotate = 0, 0, 0
+archetype = batch_liberty_military_core0_collision05
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_col_core0_collision06
+pos = -46.5257652, 140.981647, 63.6285839
+rotate = 0, 0, 0
+archetype = batch_liberty_military_core0_collision06
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_col_core0_collision07
+pos = 0.678039549, -100.06718, -19.9080305
+rotate = 0, 0, 0
+archetype = batch_liberty_military_core0_collision07
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_col_core0_collision08
+pos = -0.043510437, 169.850012, 140.009155
+rotate = 0, 0, 0
+archetype = batch_liberty_military_core0_collision08
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_col_core0_collision09
+pos = 6.79901886, 169.850012, 140.009155
+rotate = 0, 0, 0
+archetype = batch_liberty_military_core0_collision09
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_col_core0_collision10
+pos = -0.271690369, 200.215936, 141.30706
+rotate = 0, 0, 0
+archetype = batch_liberty_military_core0_collision10
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_col_core0_collision11
+pos = -0.043510437, -170.149988, 140.009155
+rotate = 0, 0, 0
+archetype = batch_liberty_military_core0_collision11
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_col_core0_collision12
+pos = 6.79901886, -170.149988, 140.009155
+rotate = 0, 0, 0
+archetype = batch_liberty_military_core0_collision12
+parent = li_col_06
+
+[Object]
+nickname = li_col_06_col_core0_collision13
+pos = -0.271690369, -199.784064, 141.30706
+rotate = 0, 0, 0
+archetype = batch_liberty_military_core0_collision13
+parent = li_col_06
+
 '''

@@ -1,3 +1,4 @@
+from story.cutscenes.story_scenes import m06_briefing, m06_lab_land, m06_lab_room, m06_mount, m06_offer, m06_offer_accept, m06_offer_decision, m06_order_deck, m06_prison_new, m06_torpedo_alert
 from story import script
 from audio.sound import VoiceLine
 from story.actors import (
@@ -12,6 +13,9 @@ class Msn6(object):
 
 
 class Msn6Offer(Msn6, script.CutsceneProps):
+    THORN_DECISION_CLASS = m06_offer_decision.ReconstructedScene
+    THORN_ACCEPT_CLASS = m06_offer_accept.ReconstructedScene
+    THORN_CLASS = m06_offer.ReconstructedScene
     ALIAS = 'offer'
     TITLE = 'Предложение'
     DESCRIPTION = ''
@@ -36,6 +40,7 @@ class Msn6Offer(Msn6, script.CutsceneProps):
 
 
 class Msn6Briefieng(Msn6, script.CutsceneProps):
+    THORN_CLASS = m06_briefing.ReconstructedScene
     ALIAS = 'briefing'
     TITLE = 'Брифинг'
     DESCRIPTION = ''
@@ -73,6 +78,7 @@ class Msn6Briefieng(Msn6, script.CutsceneProps):
 
 
 class Msn6Mount(Msn6, script.CutsceneProps):
+    THORN_CLASS = m06_mount.ReconstructedScene
     ALIAS = 'mount'
     TITLE = 'Установка устройства'
     DESCRIPTION = ''
@@ -90,6 +96,7 @@ class Msn6Mount(Msn6, script.CutsceneProps):
 
 
 class Msn6LabLand(Msn6, script.CutsceneProps):
+    THORN_CLASS = m06_lab_land.ReconstructedScene
     ALIAS = 'lab_land'
     TITLE = 'Посадка на лабораторию'
     DESCRIPTION = ''
@@ -102,6 +109,7 @@ class Msn6LabLand(Msn6, script.CutsceneProps):
 
 
 class Msn6LabRoom(Msn6, script.CutsceneProps):
+    THORN_CLASS = m06_lab_room.ReconstructedScene
     ALIAS = 'lab_room'
     TITLE = 'Лаборатория'
     DESCRIPTION = ''
@@ -112,6 +120,7 @@ class Msn6LabRoom(Msn6, script.CutsceneProps):
 
 
 class Msn6TorpedoAlert(Msn6, script.CutsceneProps):
+    THORN_CLASS = m06_torpedo_alert.ReconstructedScene
     ALIAS = 'torpedo_alert'
     TITLE = 'Торпедная тревога'
     DESCRIPTION = ''
@@ -124,6 +133,7 @@ class Msn6TorpedoAlert(Msn6, script.CutsceneProps):
 
 
 class Msn6OrderDeck(Msn6, script.CutsceneProps):
+    THORN_CLASS = m06_order_deck.ReconstructedScene
     ALIAS = 'order_deck'
     TITLE = 'Стыковочный узел Навухудоносора'
     DESCRIPTION = ''
@@ -135,6 +145,7 @@ class Msn6OrderDeck(Msn6, script.CutsceneProps):
 
 
 class Msn6Prison(Msn6, script.CutsceneProps):
+    THORN_CLASS = m06_prison_new.ReconstructedScene
     ALIAS = 'order_prison'
     TITLE = 'Тюремная камера'
     DESCRIPTION = ''

@@ -1,7 +1,7 @@
 from templates.space_object_template import SpaceObjectTemplate
 
 
-class Constanta(SpaceObjectTemplate):
+class ConstantaOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'sig22_02'
     TEMPLATE = '''[Object]
 nickname = sig22_02_dock
@@ -744,7 +744,7 @@ parent = sig22_02
 '''
 
 
-class ConstantaAlternative(SpaceObjectTemplate):
+class ConstantaAlternativeOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'sig22_02'
     TEMPLATE = '''[Object]
 nickname = sig22_02_dock
@@ -1375,4 +1375,277 @@ pos = 446, 250, 1207
 rotate = 0, -30, 0
 archetype = shipyard
 parent = sig22_02
+'''
+
+
+class Constanta(ConstantaOriginal):
+    TEMPLATE = '''[Object]
+nickname = sig22_02_dock
+pos = 0, 0, 0
+rotate = 0, 90, 0
+archetype = space_police01
+{dock_props}
+
+[Object]
+nickname = sig22_02
+pos = 0, 0, 950
+rotate = 0, -90, 0
+archetype = constanta_core
+{root_props}
+
+;ROOT
+
+[Object]
+nickname = sig22_02_ROOT_cntrl_block01
+pos = 0, 0, 560
+rotate = 0, 0, 0
+archetype = batch_constanta_root0
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_TOP_cntrl_twr01
+pos = 0, 422.5, 950
+rotate = 0, 0, 0
+archetype = batch_constanta_top0
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_BOTTOM_cntrl_twr01
+pos = 0, -422.5, 950
+rotate = 0, 0, 0
+archetype = batch_constanta_bottom0
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_DOCK_cntrl_twr01
+pos = 0, 0, 376
+rotate = 0, 0, 0
+archetype = batch_constanta_dock0
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_DOME_cntrl_twr01
+pos = -447, 15, 1206.5
+rotate = 0, 0, 0
+archetype = batch_constanta_dome0
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_STORE_cntrl_twr01
+pos = 519, 0, 1291
+rotate = 0, 0, 0
+archetype = batch_constanta_store0
+parent = sig22_02
+
+
+
+[Object]
+nickname = sig22_02_col_root0_collision00
+pos = -0.0679779053, -30.0793628, 558.566591
+rotate = 0, 0, 0
+archetype = batch_constanta_root0_collision00
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_col_root0_collision01
+pos = -0.0679779053, -26.5586327, 950.014305
+rotate = 0, 0, 0
+archetype = batch_constanta_root0_collision01
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_col_root0_collision02
+pos = -0.0908829259, 0.17399556, 863.658383
+rotate = 0, 0, 0
+archetype = batch_constanta_root0_collision02
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_col_root0_collision03
+pos = 0.0057143276, 0.17399556, 867.713124
+rotate = 0, 0, 0
+archetype = batch_constanta_root0_collision03
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_col_top0_collision00
+pos = -0.0679779053, 457.5, 949.985693
+rotate = 0, 0, 0
+archetype = batch_constanta_top0_collision00
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_col_bottom0_collision00
+pos = -0.0679779053, -457.5, 950.014305
+rotate = 0, 0, 0
+archetype = batch_constanta_bottom0_collision00
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_col_dock0_collision00
+pos = -0.0665474721, 1.38979044e-06, 435.027557
+rotate = 0, 0, 0
+archetype = batch_constanta_dock0_collision00
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_col_dock0_collision01
+pos = -0.124509923, 0.501350384, 319.97585
+rotate = 0, 0, 0
+archetype = batch_constanta_dock0_collision01
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_col_dome0_collision00
+pos = -446.066547, 1.38979044e-06, 1207.02756
+rotate = 0, 0, 0
+archetype = batch_constanta_dome0_collision00
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_col_dome0_collision01
+pos = -447.000001, 21.037796, 1206.5
+rotate = 0, 0, 0
+archetype = batch_constanta_dome0_collision01
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_col_store0_collision00
+pos = 445.933453, 75.0000014, 1207.02756
+rotate = 0, 0, 0
+archetype = batch_constanta_store0_collision00
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_col_store0_collision01
+pos = 541.866882, -0.772062789, 1272.07362
+rotate = 0, 0, 0
+archetype = batch_constanta_store0_collision01
+parent = sig22_02
+
+'''
+
+
+class ConstantaAlternative(ConstantaAlternativeOriginal):
+    TEMPLATE = '''[Object]
+nickname = sig22_02_dock
+pos = 0, 0, -150
+rotate = 0, 90, 0
+archetype = space_shipping01
+{dock_props}
+
+[Object]
+nickname = sig22_02
+pos = 0, 0, 950
+rotate = 0, -90, 0
+archetype = constanta_core
+{root_props}
+
+[Object]
+nickname = sig22_02_ROOT_cntrl_twr01
+pos = -5, 0, 886
+rotate = 0, 0, 0
+archetype = batch_constanta_f8a16161_root0
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_ROOT_industrial01
+pos = 0, 100, 950
+rotate = 90, 0, 0
+archetype = space_airlock_dummy
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_TOP_cntrl_twr01
+pos = 0, 422.5, 950
+rotate = 0, 0, 0
+archetype = batch_constanta_f8a16161_top0
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_BOTTOM_cntrl_twr01
+pos = 0, -422.5, 950
+rotate = 0, 0, 0
+archetype = batch_constanta_f8a16161_bottom0
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_DOME_cntrl_twr01
+pos = -447, -15, 1206.5
+rotate = 0, 0, 0
+archetype = batch_constanta_f8a16161_dome0
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_STORE_cntrl_twr01
+pos = 446, 50, 1207
+rotate = 0, 0, 0
+archetype = batch_constanta_f8a16161_store0
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_STORE_shipyard01
+pos = 446, -250, 1207
+rotate = 0, 30, 180
+archetype = shipyard
+parent = sig22_02
+
+
+
+[Object]
+nickname = sig22_02_col_root0_collision00
+pos = -0.0679779053, 1.38979044e-06, 949.999999
+rotate = 0, 0, 0
+archetype = batch_constanta_f8a16161_root0_collision00
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_col_root0_collision01
+pos = -4.99428567, -73.1392726, 842.221089
+rotate = 0, 0, 0
+archetype = batch_constanta_f8a16161_root0_collision01
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_col_top0_collision00
+pos = -0.0679779053, 457.5, 949.985693
+rotate = 0, 0, 0
+archetype = batch_constanta_f8a16161_top0_collision00
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_col_bottom0_collision00
+pos = -0.0679779053, -457.5, 950.014305
+rotate = 0, 0, 0
+archetype = batch_constanta_f8a16161_bottom0_collision00
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_col_dome0_collision00
+pos = -446.066547, 1.38979044e-06, 1207.02756
+rotate = 0, 0, 0
+archetype = batch_constanta_f8a16161_dome0_collision00
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_col_dome0_collision01
+pos = -447.000001, -42.1091709, 1206.5
+rotate = 0, 0, 0
+archetype = batch_constanta_f8a16161_dome0_collision01
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_col_store0_collision00
+pos = 445.933453, 75.0000014, 1207.02756
+rotate = 0, 0, 0
+archetype = batch_constanta_f8a16161_store0_collision00
+parent = sig22_02
+
+[Object]
+nickname = sig22_02_col_store0_collision01
+pos = 446.189906, 109.897593, 1207.07204
+rotate = 0, 0, 0
+archetype = batch_constanta_f8a16161_store0_collision01
+parent = sig22_02
+
 '''

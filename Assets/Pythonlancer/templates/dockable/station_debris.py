@@ -1,7 +1,7 @@
 from templates.space_object_template import SpaceObjectTemplate
 
 
-class TekagiDebris(SpaceObjectTemplate):
+class TekagiDebrisOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'ku_tgk_06'
     LOCKED_OBJECT_OFFSETS = [
         (0, 300, -1052),
@@ -1485,7 +1485,7 @@ parent = li_for_07
 '''
 
 
-class ColumbiaDebris(SpaceObjectTemplate):
+class ColumbiaDebrisOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'li_col_05'
     LOCKED_OBJECT_OFFSETS = [
         (0, 400, -610),
@@ -2194,3 +2194,223 @@ archetype = space_tanks_1dmg
 parent = sig17_01
 '''
 
+
+
+class ColumbiaDebris(ColumbiaDebrisOriginal):
+    TEMPLATE = '''[Object]
+nickname = li_col_05
+pos = 0, 0, 0
+rotate = 0, -90, 0
+archetype = space_police_dmg_clickable
+{root_props}
+
+[Object]
+nickname = li_col_05_industrial_A01
+pos = 0, 0, -590
+rotate = 0, 0, 0
+archetype = batch_columbia_debris_structure0
+parent = li_col_05
+
+
+
+[Object]
+nickname = li_col_05_batch_columbia_debris_structure0_collision00
+pos = 0.307205503, 46.1947021, -1033.23282
+rotate = 0, 0, 0
+archetype = batch_columbia_debris_structure0_collision00
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_batch_columbia_debris_structure0_collision01
+pos = 24.5193971, -45.7912587, -1033.23874
+rotate = 0, 0, 0
+archetype = batch_columbia_debris_structure0_collision01
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_batch_columbia_debris_structure0_collision02
+pos = -22.5362826, -22.6555912, -615.59755
+rotate = 0, 0, 0
+archetype = batch_columbia_debris_structure0_collision02
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_batch_columbia_debris_structure0_collision03
+pos = -0.169701309, 20.3669881, -555.894391
+rotate = 0, 0, 0
+archetype = batch_columbia_debris_structure0_collision03
+parent = li_col_05
+
+'''
+
+
+class TekagiDebris(TekagiDebrisOriginal):
+    TEMPLATE = '''[Object]
+nickname = ku_tgk_06_space_arch_chunk1a_2
+pos = 3046.5, 200, -2901
+rotate = 0, 0, 0
+archetype = batch_tekagi_debris_structure0
+parent = ku_tgk_06
+
+[Object]
+nickname = ku_tgk_06_extra_space_arch_chunk2a_1
+pos = 8482, 600, -9242
+rotate = 20, -20, 0
+archetype = space_arch_chunk2a
+
+[Object]
+nickname = ku_tgk_06_extra_space_arch_chunk2b_1
+pos = 3578, -700, 3696
+rotate = -110, -49, 102
+archetype = space_arch_chunk2b
+
+[Object]
+nickname = ku_tgk_06_extra_space_arch_chunk3a_1
+pos = -2620, 600, -6913
+rotate = 30, 60, 0
+archetype = space_arch_chunk3a
+
+[Object]
+nickname = ku_tgk_06_extra_space_arch_chunk3b_1
+pos = 1561, 600, -9827
+rotate = 0, -20, 0
+archetype = space_arch_chunk3b
+
+[Object]
+nickname = ku_tgk_06_extra_space_arch_chunk3c_1
+pos = 793, 600, -2731
+archetype = space_arch_chunk3c
+
+[Object]
+nickname = ku_tgk_06_extra_space_arch_chunk3d_1
+pos = 263, 600, -4768
+rotate = 0, -20, 0
+archetype = space_arch_chunk3d
+
+[Object]
+nickname = ku_tgk_06_extra_space_arch_chunk3e_1
+pos = 6244, 600, 243
+rotate = 115, -20, 0
+archetype = space_arch_chunk3e
+
+[Object]
+nickname = ku_tgk_06
+pos = 0, 0, 0
+rotate = 90, 0, 0
+archetype = space_industrial01_station_root
+{root_props}
+
+[Object]
+nickname = ku_tgk_06_SHIELDGEN_gird01
+pos = 0, 410, 0
+rotate = 0, 0, 0
+archetype = batch_tekagi_debris_shieldgen0
+parent = ku_tgk_06
+
+[Object]
+nickname = ku_tgk_06_SHIELDGEN_ring01
+pos = 0, 410, 0
+rotate = 90, 0, 0
+archetype = small_ring
+parent = ku_tgk_06
+
+[Object]
+nickname = ku_tgk_06_REACTOR_ind01
+pos = 0, 105, 0
+rotate = 0, 0, 0
+archetype = batch_tekagi_debris_reactor0
+parent = ku_tgk_06
+
+[Object]
+nickname = ku_tgk_06_PRODUCTION_tube01
+pos = -115.5, -65, 0
+rotate = 0, 0, 0
+archetype = batch_tekagi_debris_production0
+parent = ku_tgk_06
+
+[Object]
+nickname = ku_tgk_06_HILL_tube01
+pos = -575, -45, 0
+rotate = 0, 0, 0
+archetype = batch_tekagi_debris_hill0
+parent = ku_tgk_06
+
+[Object]
+nickname = ku_tgk_06_HILL_dock01
+pos = -905, 0, 405
+rotate = 10, 90, 0
+archetype = space_police_dmg
+parent = ku_tgk_06
+
+[Object]
+nickname = ku_tgk_06_HILL_dock02
+pos = -910, 50, -415
+rotate = 95, 80, 95
+archetype = space_police_dmg
+parent = ku_tgk_06
+
+
+[Object]
+nickname = ku_tgk_06_col_structure0_collision00
+pos = 2944.20313, -1509.18518, -2823.0444
+rotate = 0, 0, 0
+archetype = batch_tekagi_debris_structure0_collision00
+parent = ku_tgk_06
+
+[Object]
+nickname = ku_tgk_06_col_shieldgen0_collision00
+pos = -0.0325329166, 410.001324, -0.0338570707
+rotate = 0, 0, 0
+archetype = batch_tekagi_debris_shieldgen0_collision00
+parent = ku_tgk_06
+
+[Object]
+nickname = ku_tgk_06_col_reactor0_collision00
+pos = -0.182491302, -177.188252, -23.1858093
+rotate = 0, 0, 0
+archetype = batch_tekagi_debris_reactor0_collision00
+parent = ku_tgk_06
+
+[Object]
+nickname = ku_tgk_06_col_reactor0_collision01
+pos = -0.0679779053, 208.235924, 0.0143051147
+rotate = 0, 0, 0
+archetype = batch_tekagi_debris_reactor0_collision01
+parent = ku_tgk_06
+
+[Object]
+nickname = ku_tgk_06_col_production0_collision00
+pos = -109.757584, -31.1426584, -0.182335252
+rotate = 0, 0, 0
+archetype = batch_tekagi_debris_production0_collision00
+parent = ku_tgk_06
+
+[Object]
+nickname = ku_tgk_06_col_production0_collision01
+pos = -0.043510437, 49.8500118, 0.00915527344
+rotate = 0, 0, 0
+archetype = batch_tekagi_debris_production0_collision01
+parent = ku_tgk_06
+
+[Object]
+nickname = ku_tgk_06_col_production0_collision02
+pos = -0.043510437, -4.86209965, 56.422163
+rotate = 0, 0, 0
+archetype = batch_tekagi_debris_production0_collision02
+parent = ku_tgk_06
+
+[Object]
+nickname = ku_tgk_06_col_hill0_collision00
+pos = -540.534168, -114.7426, 0.222500242
+rotate = 0, 0, 0
+archetype = batch_tekagi_debris_hill0_collision00
+parent = ku_tgk_06
+
+[Object]
+nickname = ku_tgk_06_col_hill0_collision01
+pos = -910.04351, -59.6202693, -44.9089332
+rotate = 0, 0, 0
+archetype = batch_tekagi_debris_hill0_collision01
+parent = ku_tgk_06
+
+'''

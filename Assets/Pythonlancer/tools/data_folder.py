@@ -45,6 +45,10 @@ class DataFolder:
         # Only an individual DATA file; never remove a directory recursively.
         self.data_path(relative).unlink(missing_ok=True)
 
+    def remove_empty_data_directory(self, relative):
+        """Remove only an empty directory within DATA; never recursive."""
+        self.data_path(relative).rmdir()
+
     def sync_ship_parking(self, files):
         for relative in files:
             name = str(relative).replace('\\', '/')
@@ -404,8 +408,10 @@ class DataFolder:
         if self.build_to_folder:
             return
 
-        nebula_file = self.get_solar() / 'NEBULA_MOD' / subfolder / f'{nebula_file_name}.ini'
-        nebula_file.write_text(content, encoding='utf-8')
+        from tools.nebula_exclusion import prepare_exclusion_shells
+        self.sync_data_file(
+            f'SOLAR/NEBULA_MOD/{subfolder}/{nebula_file_name}.ini',
+            prepare_exclusion_shells(content))
 
     def sync_custom_encounters(self, encounter_filename, content):
         if self.build_to_folder:

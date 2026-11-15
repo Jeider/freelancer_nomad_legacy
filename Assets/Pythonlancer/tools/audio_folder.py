@@ -138,7 +138,7 @@ class AudioFolder:
         )
 
     @classmethod
-    def compile_story_voice_to_xml(cls, voice, skip=True, russian=True):
+    def compile_story_voice_to_xml(cls, voice, skip=True, russian=True, default_actor=None):
         # voice.validate_ai_compatibility()
 
         root_path = cls.get_initial_xml_audio_path() if russian else cls.get_initial_xml_audio_path_en()
@@ -164,9 +164,9 @@ class AudioFolder:
             print(sound.line.get_info())
 
             if russian:
-                VoiceApi.generate_ru_voice(file_destination=file_destination, sound=sound)
+                VoiceApi.generate_ru_voice(file_destination=file_destination, sound=sound, default_actor=default_actor)
             else:
-                VoiceApi.generate_en_voice(file_destination=file_destination, sound=sound)
+                VoiceApi.generate_en_voice(file_destination=file_destination, sound=sound, default_actor=default_actor)
 
     @classmethod
     def generate_cutscene_sounds(cls, cutscene, russian=True, default_actor=None):

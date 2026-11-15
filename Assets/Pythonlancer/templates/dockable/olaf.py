@@ -1,7 +1,7 @@
 from templates.space_object_template import SpaceObjectTemplate
 
 
-class Olaf(SpaceObjectTemplate):
+class OlafOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'tau29_03'
     TEMPLATE = '''[Object]
 nickname = tau29_03
@@ -983,4 +983,612 @@ pos = 720, -827, 0
 rotate = 90, 0, -120
 archetype = space_tanks4x4
 parent = tau29_03
+'''
+
+class Olaf(OlafOriginal):
+    TEMPLATE = '''[Object]
+nickname = tau29_03
+pos = 0, -600, 0
+rotate = 0, 0, 0
+archetype = arendal_core
+{root_props}
+
+[Object]
+nickname = tau29_03_dock
+pos = 0, 305, 0
+rotate = 90, 0, 0
+archetype = space_police02
+{dock_props}
+
+[Object]
+nickname = tau29_03_center
+pos = 0, -600, 0
+rotate = 0, 45, 0
+archetype = sw_center_250
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_tunnel01
+pos = 0, -500, 150
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_panel_connect01
+pos = 0.00999999999839929, -449.99, 0
+rotate = 0, 22.5, 0
+archetype = hidden_connect
+loadout = hidden_head_panels01
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_panel_connect02
+pos = 0, -449.985, 0
+rotate = 0, 67.5, 0
+archetype = hidden_connect
+loadout = hidden_head_panels01
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_panel_connect03
+pos = 0.014999999999417923, -449.99, 0
+rotate = 0, 112.5, 0
+archetype = hidden_connect
+loadout = hidden_head_panels01
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_panel_connect04
+pos = 0, -449.985, 0
+rotate = 0, 157.5, 0
+archetype = hidden_connect
+loadout = hidden_head_panels03
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_panel_connect05
+pos = 0.00999999999839929, -450.01, 0
+rotate = 0, 202.5, 0
+archetype = hidden_connect
+loadout = hidden_head_panels02
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_panel_connect06
+pos = 0.014999999999417923, -450.015, 0
+rotate = 0, 247.5, 0
+archetype = hidden_connect
+loadout = hidden_head_panels01
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_panel_connect07
+pos = 0.014999999999417923, -450.01, 0
+rotate = 0, 292.5, 0
+archetype = hidden_connect
+loadout = hidden_head_panels01
+parent = tau29_03
+
+[Object]
+nickname = olaf_panel_connect08
+pos = -0.1, -450.015, 0
+rotate = 0, 337.5, 0
+archetype = hidden_connect
+loadout = hidden_head_panels01
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_connect01
+pos = 0, -260, 0
+rotate = 90, 0, 0
+archetype = space_airlock_dummy
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_LEFT_industrial01
+pos = -453.5, -706, 0
+rotate = 0, 0, 0
+archetype = batch_olaf_left0
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_RIGHT_industrial01
+pos = 453.5, -706, 0
+rotate = 0, 0, 0
+archetype = batch_olaf_right0
+parent = tau29_03
+
+
+
+[Object]
+nickname = tau29_03_col_structure0_collision00
+pos = -3.81469727e-06, 263.139271, 2.23675705e-05
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision00
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision01
+pos = -0.043510437, 189.850012, 0.00915527344
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision01
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision02
+pos = 6.79901886, 189.850012, 0.00915527344
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision02
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision03
+pos = -0.271690369, 70.2159357, 1.30706024
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision03
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision04
+pos = -0.271690369, 0.215935707, 1.30706024
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision04
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision05
+pos = -0.271690369, -139.784064, 1.30706024
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision05
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision06
+pos = -0.271690369, -197.385581, 1.30706024
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision06
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision07
+pos = -0.271690369, -831.30706, 360.215936
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision07
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision08
+pos = -0.271690369, -1081.30706, 360.215936
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision08
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision09
+pos = -0.271690369, -548.69294, 236.784065
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision09
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision10
+pos = 141.30706, -1079.78406, 1.77169037
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision10
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision11
+pos = -138.69294, -1079.78406, 1.77169037
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision11
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision12
+pos = 141.30706, -1259.78406, 1.77169037
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision12
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision13
+pos = 139.72831, -1289.78406, 2.80706024
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision13
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision14
+pos = -138.69294, -1259.78406, 1.77169037
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision14
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision15
+pos = -11.6423643, -1189.83136, 2.80706024
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision15
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision16
+pos = 0.728309631, -954.784064, 141.30706
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision16
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision17
+pos = 0.728309631, -954.784064, -12.4443741
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision17
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision18
+pos = -0.0679855347, -830.149987, 0.0143051147
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision18
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision19
+pos = -0.0679779053, -830.149987, 0.0143051147
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision19
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision20
+pos = -0.043510437, -369.85001, -0.00915618704
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision20
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision21
+pos = 6.79901886, -369.850011, -0.00915618704
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision21
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision22
+pos = 0.202747345, -1000.64645, 0.0919694901
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision22
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision23
+pos = 95.5867599, -830.182335, 198.568069
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision23
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision24
+pos = -95.6679869, -830.182335, -198.868724
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision24
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision25
+pos = -0.0979101615, -830.182335, -0.0927689248
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision25
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision26
+pos = 213.737232, -749.8775, 1.76407623
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision26
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision27
+pos = -213.762768, -749.7775, 1.76407623
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision27
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision28
+pos = 1.76407622, -749.8775, 213.762768
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision28
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision29
+pos = 149.5722, -749.7775, 151.746596
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision29
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision30
+pos = 1.76407622, -749.8775, -213.737232
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision30
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision31
+pos = -151.9278, -749.7775, -149.753404
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision31
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision32
+pos = 151.746596, -749.8775, -149.5722
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision32
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision33
+pos = -149.753404, -749.7775, 151.9278
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision33
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision34
+pos = 285.269512, -955.158897, -0.501350403
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision34
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision35
+pos = -284.730488, -955.158897, -0.501350403
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision35
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision36
+pos = -0.501350814, -955.158897, 284.730488
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision36
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision37
+pos = 201.236962, -955.158897, 200.625018
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision37
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision38
+pos = -0.501350814, -955.158897, -285.269512
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision38
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision39
+pos = -200.763038, -955.158897, -201.374982
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision39
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision40
+pos = 200.625018, -955.158897, -201.236962
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision40
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision41
+pos = -201.374982, -955.158897, 200.763038
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision41
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision42
+pos = 0.202747345, -1080.18233, -0.173995972
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision42
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision43
+pos = 95.5867599, -1080.18233, 198.568069
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision43
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision44
+pos = -95.6679869, -1080.18233, -198.868724
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision44
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision45
+pos = -0.0979101615, -1080.18233, -0.0927689248
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision45
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision46
+pos = 213.737232, -1154.8775, 1.76407623
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision46
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision47
+pos = -213.762768, -1154.7775, 1.76407623
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision47
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision48
+pos = 1.76407622, -1154.8775, 213.762768
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision48
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision49
+pos = 149.5722, -1154.7775, 151.746596
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision49
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision50
+pos = 1.76407622, -1154.8775, -213.737232
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision50
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision51
+pos = -151.9278, -1154.7775, -149.753404
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision51
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision52
+pos = 151.746596, -1154.8775, -149.5722
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision52
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision53
+pos = -60.0303766, -792.376203, 107.062413
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision53
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision54
+pos = -5.67471081, -389.877813, 46.0904199
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision54
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision55
+pos = -0.15289798, -389.877813, -84.6764294
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision55
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision56
+pos = 75.3647627, -179.729111, 4.01300704
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision56
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision57
+pos = -213.762768, -9.77750015, 1.76407623
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision57
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision58
+pos = 1.76407622, -9.67750015, 213.762768
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision58
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision59
+pos = 149.5722, -9.77750015, 151.746596
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision59
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision60
+pos = 1.76407622, -9.67750015, -213.737232
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision60
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision61
+pos = -151.9278, -9.77750015, -149.753404
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision61
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision62
+pos = 151.746596, -9.67750015, -149.5722
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision62
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision63
+pos = -60.0303766, 115.123797, 107.062413
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision63
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision64
+pos = -5.67471081, 280.122187, 46.0904199
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision64
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision65
+pos = -0.15289798, 280.122187, -84.6764294
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision65
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision66
+pos = -28.1187387, 149.24869, 200.067322
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision66
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_structure0_collision67
+pos = -0.271690369, 68.6929398, 474.211246
+rotate = 0, 0, 0
+archetype = batch_olaf_structure0_collision67
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_left0_collision00
+pos = -420.891673, -681.026955, -0.00231693952
+rotate = 0, 0, 0
+archetype = batch_olaf_left0_collision00
+parent = tau29_03
+
+[Object]
+nickname = tau29_03_col_right0_collision00
+pos = 420.721321, -680.658073, -0.00231693952
+rotate = 0, 0, 0
+archetype = batch_olaf_right0_collision00
+parent = tau29_03
+
 '''

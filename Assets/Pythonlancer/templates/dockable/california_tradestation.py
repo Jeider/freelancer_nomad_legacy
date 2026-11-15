@@ -1,7 +1,7 @@
 from templates.space_object_template import SpaceObjectTemplate
 
 
-class CaliforniaTradestation(SpaceObjectTemplate):
+class CaliforniaTradestationOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'li_cal_07'
     TEMPLATE = '''[Object]
 nickname = li_cal_07
@@ -1024,4 +1024,563 @@ pos = 0, 0, -725
 rotate = -90, 0, 0
 archetype = space_small_control_block
 parent = li_cal_07
+'''
+
+
+class CaliforniaTradestation(CaliforniaTradestationOriginal):
+    TEMPLATE = '''[Object]
+nickname = li_cal_07
+pos = 0, 0, -315
+rotate = 0, 0, 0
+archetype = losangeles_two_docks
+{dock_props}
+
+[Object]
+nickname = li_cal_07_shipyard01
+pos = 725, 232.5, -315
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_shipyard03
+pos = -725, 232.5, -315
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_airlock01
+pos = 0, 325, -315
+rotate = 90, 45, 0
+archetype = space_airlock_dummy
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_airlock02
+pos = 0, 0, -615
+rotate = 0, 0, 0
+archetype = space_airlock_dummy
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_airlock03
+pos = 0, 0, -15
+rotate = 0, 180, 0
+archetype = space_airlock_dummy
+parent = li_cal_07
+
+
+
+[Object]
+nickname = li_cal_07_col_structure1_collision00
+pos = 200.000046, -285.813172, -393.570226
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision00
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure1_collision01
+pos = 200.000046, -285.813293, -338.622437
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision01
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure1_collision02
+pos = 200.000065, -287.504022, -244.413169
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision02
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure1_collision03
+pos = 200.000051, -290.383243, -236.735246
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision03
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure1_collision04
+pos = 65.0000458, -285.813172, -393.570226
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision04
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure1_collision05
+pos = 65.0000458, -285.813293, -338.622437
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision05
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure1_collision06
+pos = 65.0000648, -287.504022, -244.413169
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision06
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure1_collision07
+pos = 65.0000515, -290.383243, -236.735246
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision07
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure1_collision08
+pos = 126.664196, 179.649204, -314.29899
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision08
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure1_collision09
+pos = 126.664196, -180.350796, -314.29899
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision09
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure1_collision10
+pos = 126.664196, -0.701009771, -495.350796
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision10
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure1_collision11
+pos = 126.664196, -0.701009771, -135.350796
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision11
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure1_collision12
+pos = 126.664196, -90.5380612, -470.130755
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision12
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure1_collision13
+pos = 126.664196, 89.8498858, -470.509617
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision13
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure1_collision14
+pos = 126.664196, 89.4619388, -160.130755
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision14
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure1_collision15
+pos = 126.664196, -90.1501142, -160.509617
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision15
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure1_collision16
+pos = 126.664196, -154.869245, -225.538059
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision16
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure1_collision17
+pos = 126.664196, 155.130755, -405.538059
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision17
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure1_collision18
+pos = 126.664196, 154.490384, -224.849887
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision18
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure1_collision19
+pos = 126.664196, -155.509616, -404.849887
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision19
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure1_collision20
+pos = 186.359285, 125.2225, -315.012764
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision20
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure1_collision21
+pos = 126.664196, -225.350796, -314.29899
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision21
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure1_collision22
+pos = 82.1499867, 0.0143051091, -314.932022
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision22
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure1_collision23
+pos = 82.1499877, 0.0143051091, -314.932014
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision23
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure1_collision24
+pos = 165.149987, 0.0143051091, -314.932022
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision24
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure1_collision25
+pos = 165.149988, 0.0143051091, -314.932014
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision25
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure1_collision26
+pos = 245.149988, -0.0143058299, -315.067986
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision26
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure1_collision27
+pos = 245.149988, -0.0143058299, -315.067978
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision27
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure1_collision28
+pos = -0.0651258312, 688.149989, -314.968984
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision28
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure1_collision29
+pos = -0.0651258312, 688.149989, -251.114244
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision29
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure1_collision30
+pos = 40.0810699, -63.0562706, -314.988477
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision30
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure1_collision31
+pos = 773.172622, 336.717881, -314.908031
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure1_collision31
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision00
+pos = -64.9999542, -285.813172, -393.570226
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision00
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision01
+pos = -64.9999542, -285.813293, -338.622437
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision01
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision02
+pos = -64.9999352, -287.504022, -244.413169
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision02
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision03
+pos = -64.9999485, -290.383243, -236.735246
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision03
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision04
+pos = -199.999954, -285.813172, -393.570226
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision04
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision05
+pos = -199.999954, -285.813293, -338.622437
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision05
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision06
+pos = -199.999935, -287.504022, -244.413169
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision06
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision07
+pos = -199.999949, -290.383243, -236.735246
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision07
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision08
+pos = -123.335804, 179.649204, -314.29899
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision08
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision09
+pos = -123.335804, -180.350796, -314.29899
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision09
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision10
+pos = -123.335804, -0.701009771, -495.350796
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision10
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision11
+pos = -123.335804, -0.701009771, -135.350796
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision11
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision12
+pos = -123.335804, -90.5380612, -470.130755
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision12
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision13
+pos = -123.335804, 89.8498858, -470.509617
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision13
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision14
+pos = -123.335804, 89.4619388, -160.130755
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision14
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision15
+pos = -123.335804, -90.1501142, -160.509617
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision15
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision16
+pos = -123.335804, -154.869245, -225.538059
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision16
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision17
+pos = -123.335804, 155.130755, -405.538059
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision17
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision18
+pos = -123.335804, 154.490384, -224.849887
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision18
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision19
+pos = -123.335804, -155.509616, -404.849887
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision19
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision20
+pos = -0.0127677917, 396.764076, -315.2225
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision20
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision21
+pos = -91.7256911, 432.969258, -315.106888
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision21
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision22
+pos = -123.335804, -225.350796, -314.29899
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision22
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision23
+pos = -1.85001329, 0.0143051091, -314.932022
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision23
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision24
+pos = -1.85001227, 0.0143051091, -314.932014
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision24
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision25
+pos = -83.8500133, 0.0143051091, -314.932022
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision25
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision26
+pos = -83.8500123, 0.0143051091, -314.932014
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision26
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision27
+pos = -164.850013, 0.0143051091, -314.932022
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision27
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision28
+pos = -164.850012, 0.0143051091, -314.932014
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision28
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision29
+pos = -244.850013, 0.0143051091, -314.932022
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision29
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision30
+pos = -244.850012, 0.0143051091, -314.932014
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision30
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision31
+pos = -0.043510437, 209.850012, -314.990845
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision31
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision32
+pos = 6.79901886, 209.850012, -314.990845
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision32
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision33
+pos = -0.043510437, -0.00915573024, -525.149989
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision33
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision34
+pos = 6.79901886, -0.00915573024, -525.149989
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision34
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision35
+pos = -0.043510437, -0.00915573024, -105.149989
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision35
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision36
+pos = 6.79901886, -0.00915573024, -105.149989
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision36
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision37
+pos = -0.0679855347, 519.850013, -314.985695
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision37
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision38
+pos = -0.0679779053, 519.850013, -314.985695
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision38
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision39
+pos = -40.0755538, -63.0562706, -314.988477
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision39
+parent = li_cal_07
+
+[Object]
+nickname = li_cal_07_col_structure0_collision40
+pos = -791.381983, 336.675381, -314.908031
+rotate = 0, 0, 0
+archetype = batch_californi_18ddf783_structure0_collision40
+parent = li_cal_07
+
 '''

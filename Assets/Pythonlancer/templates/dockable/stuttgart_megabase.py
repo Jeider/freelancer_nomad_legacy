@@ -1,7 +1,7 @@
 from templates.space_object_template import SpaceObjectTemplate
 
 
-class StuttgartMegabase(SpaceObjectTemplate):
+class StuttgartMegabaseOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'rh_stut_04'
     TEMPLATE = '''[Object]
 nickname = rh_stut_04
@@ -3863,7 +3863,7 @@ parent = rh_stut_04
 '''
 
 
-class MannhaimShortGasless(SpaceObjectTemplate):
+class MannhaimShortGaslessOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'rh_stut_04'
     TEMPLATE = '''[Object]
 nickname = rh_stut_04
@@ -4550,3 +4550,914 @@ archetype = space_girdera
 parent = rh_stut_04
 '''
 
+
+
+class StuttgartMegabase(StuttgartMegabaseOriginal):
+    TEMPLATE = '''[Object]
+nickname = rh_stut_04
+pos = 0, -1650, 0
+rotate = 0, 0, 0
+archetype = manhaim_core
+{root_props}
+
+[Object]
+nickname = rh_stut_04_dock
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = space_port_dmg_dock
+{dock_props}
+
+;RIGHT FACTORIES
+
+[Object]
+nickname = rh_stut_04_RIGHT_FACTORY1_ind01
+pos = 500, -1650, 0
+rotate = 0, 0, 0
+archetype = stuttgart_mega_right_factory1
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_RIGHT_FACTORY2_ind01
+pos = 900, -1650, 0
+rotate = 0, 0, 0
+archetype = stuttgart_mega_right_factory2
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_RIGHT_FACTORY3_ind01
+pos = 1300, -1650, 0
+rotate = 0, 0, 0
+archetype = stuttgart_mega_right_factory3
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_RIGHT_MINER_ind01
+pos = 1595, -1650, 0
+rotate = 0, 0, 0
+archetype = stuttgart_mega_right_miner
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_RIGHT_gird01
+pos = 1100, -1450, 0
+rotate = 0, 0, 0
+archetype = stuttgart_mega_right
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_ind01
+pos = -500, -1650, 0
+rotate = 0, 0, 0
+archetype = stuttgart_mega_left_factory1
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_ind01
+pos = -900, -1650, 0
+rotate = 0, 0, 0
+archetype = stuttgart_mega_left_factory2
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_ind01
+pos = -1300, -1650, 0
+rotate = 0, 0, 0
+archetype = stuttgart_mega_left_factory3
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_MINER_ind01
+pos = -1595, -1650, 0
+rotate = 0, 0, 0
+archetype = stuttgart_mega_left_miner
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_gird01
+pos = -1100, -1450, 0
+rotate = 0, 0, 0
+archetype = stuttgart_mega_left
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_CORE_the
+pos = 0, -1655, 62.5
+rotate = 0, 0, 0
+archetype = stuttgart_mega_core
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_FRONT_ind01
+pos = -50, -1650, 250
+rotate = 0, 0, 0
+archetype = stuttgart_mega_front
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_BACK_ind01
+pos = -50, -1650, -250
+rotate = 0, 0, 0
+archetype = stuttgart_mega_back
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_TOP_airlock
+pos = 0, -707.5, 0
+rotate = 0, 0, 0
+archetype = stuttgart_mega_top
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_BOTTOM_airlock
+pos = 0, -2652.5, 0
+rotate = 0, 0, 0
+archetype = stuttgart_mega_bottom
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_right_factory1_collision00
+pos = 501.764, -1649.78, 1.76408
+rotate = 0, 0, 0
+archetype = stuttgart_mega_right_factory1_collision00
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_right_factory1_collision01
+pos = 499.499, -1650.13, 324.122
+rotate = 0, 0, 0
+archetype = stuttgart_mega_right_factory1_collision01
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_right_factory1_collision02
+pos = 499.499, -1650.13, -68.1164
+rotate = 0, 0, 0
+archetype = stuttgart_mega_right_factory1_collision02
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_right_factory1_collision03
+pos = 500, -1650, 2.97584e-06
+rotate = 0, 0, 0
+archetype = stuttgart_mega_right_factory1_collision03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_right_factory1_collision04
+pos = 462.971, -1650, -3.8932e-05
+rotate = 0, 0, 0
+archetype = stuttgart_mega_right_factory1_collision04
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_right_factory2_collision00
+pos = 901.764, -1649.78, 1.76408
+rotate = 0, 0, 0
+archetype = stuttgart_mega_right_factory2_collision00
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_right_factory2_collision01
+pos = 899.499, -1650.13, 324.122
+rotate = 0, 0, 0
+archetype = stuttgart_mega_right_factory2_collision01
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_right_factory2_collision02
+pos = 899.499, -1650.13, -68.1164
+rotate = 0, 0, 0
+archetype = stuttgart_mega_right_factory2_collision02
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_right_factory2_collision03
+pos = 900, -1650, 2.97584e-06
+rotate = 0, 0, 0
+archetype = stuttgart_mega_right_factory2_collision03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_right_factory2_collision04
+pos = 862.971, -1650, -3.8932e-05
+rotate = 0, 0, 0
+archetype = stuttgart_mega_right_factory2_collision04
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_right_factory3_collision00
+pos = 1301.76, -1649.78, 1.76408
+rotate = 0, 0, 0
+archetype = stuttgart_mega_right_factory3_collision00
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_right_factory3_collision01
+pos = 1299.5, -1650.13, 324.122
+rotate = 0, 0, 0
+archetype = stuttgart_mega_right_factory3_collision01
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_right_factory3_collision02
+pos = 1299.5, -1650.13, -68.1164
+rotate = 0, 0, 0
+archetype = stuttgart_mega_right_factory3_collision02
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_right_factory3_collision03
+pos = 1300, -1650, 2.97584e-06
+rotate = 0, 0, 0
+archetype = stuttgart_mega_right_factory3_collision03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_right_factory3_collision04
+pos = 1262.97, -1650, -3.8932e-05
+rotate = 0, 0, 0
+archetype = stuttgart_mega_right_factory3_collision04
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_right_miner_collision00
+pos = 1619.94, -1650.14, -0.350796
+rotate = 0, 0, 0
+archetype = stuttgart_mega_right_miner_collision00
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_right_miner_collision01
+pos = 1657.91, -1549.69, 0.0201282
+rotate = 0, 0, 0
+archetype = stuttgart_mega_right_miner_collision01
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_right_miner_collision02
+pos = 1663.14, -1471.24, 0.0403919
+rotate = 0, 0, 0
+archetype = stuttgart_mega_right_miner_collision02
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_right_miner_collision03
+pos = 1782.53, -1546.44, 0.0201283
+rotate = 0, 0, 0
+archetype = stuttgart_mega_right_miner_collision03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_right_miner_collision04
+pos = 1774.33, -1471.24, 0.0403958
+rotate = 0, 0, 0
+archetype = stuttgart_mega_right_miner_collision04
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_right_miner_collision05
+pos = 1665.67, -1828.76, 0.0403958
+rotate = 0, 0, 0
+archetype = stuttgart_mega_right_miner_collision05
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_right_miner_collision06
+pos = 1657.47, -1753.56, 0.0201283
+rotate = 0, 0, 0
+archetype = stuttgart_mega_right_miner_collision06
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_right_miner_collision07
+pos = 1776.86, -1828.76, 0.0403919
+rotate = 0, 0, 0
+archetype = stuttgart_mega_right_miner_collision07
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_right_miner_collision08
+pos = 1782.09, -1750.31, 0.0201282
+rotate = 0, 0, 0
+archetype = stuttgart_mega_right_miner_collision08
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_right_collision00
+pos = 924.486, -1450.17, 0.174046
+rotate = 0, 0, 0
+archetype = stuttgart_mega_right_collision00
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_left_factory1_collision00
+pos = -498.236, -1649.78, 1.76408
+rotate = 0, 0, 0
+archetype = stuttgart_mega_left_factory1_collision00
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_left_factory1_collision01
+pos = -500.501, -1650.13, 324.122
+rotate = 0, 0, 0
+archetype = stuttgart_mega_left_factory1_collision01
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_left_factory1_collision02
+pos = -500.501, -1650.13, -68.1164
+rotate = 0, 0, 0
+archetype = stuttgart_mega_left_factory1_collision02
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_left_factory1_collision03
+pos = -500, -1650, 2.97584e-06
+rotate = 0, 0, 0
+archetype = stuttgart_mega_left_factory1_collision03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_left_factory1_collision04
+pos = -537.029, -1650, -3.8932e-05
+rotate = 0, 0, 0
+archetype = stuttgart_mega_left_factory1_collision04
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_left_factory2_collision00
+pos = -898.236, -1649.78, 1.76408
+rotate = 0, 0, 0
+archetype = stuttgart_mega_left_factory2_collision00
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_left_factory2_collision01
+pos = -900.501, -1650.13, 324.122
+rotate = 0, 0, 0
+archetype = stuttgart_mega_left_factory2_collision01
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_left_factory2_collision02
+pos = -900.501, -1650.13, -68.1164
+rotate = 0, 0, 0
+archetype = stuttgart_mega_left_factory2_collision02
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_left_factory2_collision03
+pos = -900, -1650, 2.97584e-06
+rotate = 0, 0, 0
+archetype = stuttgart_mega_left_factory2_collision03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_left_factory2_collision04
+pos = -937.029, -1650, -3.8932e-05
+rotate = 0, 0, 0
+archetype = stuttgart_mega_left_factory2_collision04
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_left_factory3_collision00
+pos = -1298.24, -1649.78, 1.76408
+rotate = 0, 0, 0
+archetype = stuttgart_mega_left_factory3_collision00
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_left_factory3_collision01
+pos = -1300.5, -1650.13, 324.122
+rotate = 0, 0, 0
+archetype = stuttgart_mega_left_factory3_collision01
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_left_factory3_collision02
+pos = -1300.5, -1650.13, -68.1164
+rotate = 0, 0, 0
+archetype = stuttgart_mega_left_factory3_collision02
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_left_factory3_collision03
+pos = -1300, -1650, 2.97584e-06
+rotate = 0, 0, 0
+archetype = stuttgart_mega_left_factory3_collision03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_left_factory3_collision04
+pos = -1337.03, -1650, -3.8932e-05
+rotate = 0, 0, 0
+archetype = stuttgart_mega_left_factory3_collision04
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_left_miner_collision00
+pos = -1618.28, -1650.14, -0.350796
+rotate = 0, 0, 0
+archetype = stuttgart_mega_left_miner_collision00
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_left_miner_collision01
+pos = -1782.09, -1549.69, 0.0201282
+rotate = 0, 0, 0
+archetype = stuttgart_mega_left_miner_collision01
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_left_miner_collision02
+pos = -1776.86, -1471.24, 0.0403919
+rotate = 0, 0, 0
+archetype = stuttgart_mega_left_miner_collision02
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_left_miner_collision03
+pos = -1657.47, -1546.44, 0.0201283
+rotate = 0, 0, 0
+archetype = stuttgart_mega_left_miner_collision03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_left_miner_collision04
+pos = -1665.67, -1471.24, 0.0403958
+rotate = 0, 0, 0
+archetype = stuttgart_mega_left_miner_collision04
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_left_miner_collision05
+pos = -1774.33, -1828.76, 0.0403958
+rotate = 0, 0, 0
+archetype = stuttgart_mega_left_miner_collision05
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_left_miner_collision06
+pos = -1782.53, -1753.56, 0.0201283
+rotate = 0, 0, 0
+archetype = stuttgart_mega_left_miner_collision06
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_left_miner_collision07
+pos = -1663.14, -1828.76, 0.0403919
+rotate = 0, 0, 0
+archetype = stuttgart_mega_left_miner_collision07
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_left_miner_collision08
+pos = -1657.91, -1750.31, 0.0201282
+rotate = 0, 0, 0
+archetype = stuttgart_mega_left_miner_collision08
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_left_collision00
+pos = -924.486, -1450.17, 0.173979
+rotate = 0, 0, 0
+archetype = stuttgart_mega_left_collision00
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_core_collision00
+pos = -2.22838e-09, -1650, -12.3856
+rotate = 0, 0, 0
+archetype = stuttgart_mega_core_collision00
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_core_collision01
+pos = 249.906, -1649.83, 250.164
+rotate = 0, 0, 0
+archetype = stuttgart_mega_core_collision01
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_core_collision02
+pos = -250.094, -1649.83, 250.164
+rotate = 0, 0, 0
+archetype = stuttgart_mega_core_collision02
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_core_collision03
+pos = 249.906, -1649.83, -249.836
+rotate = 0, 0, 0
+archetype = stuttgart_mega_core_collision03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_core_collision04
+pos = -250.094, -1649.83, -249.836
+rotate = 0, 0, 0
+archetype = stuttgart_mega_core_collision04
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_core_collision05
+pos = 124.818, -1349.83, 0.0493584
+rotate = 0, 0, 0
+archetype = stuttgart_mega_core_collision05
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_core_collision06
+pos = -0.182491, -1349.83, 125.049
+rotate = 0, 0, 0
+archetype = stuttgart_mega_core_collision06
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_core_collision07
+pos = -125.182, -1349.83, 0.0493584
+rotate = 0, 0, 0
+archetype = stuttgart_mega_core_collision07
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_core_collision08
+pos = -0.182491, -1349.83, -124.951
+rotate = 0, 0, 0
+archetype = stuttgart_mega_core_collision08
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_core_collision09
+pos = 124.818, -1949.83, 0.0493584
+rotate = 0, 0, 0
+archetype = stuttgart_mega_core_collision09
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_core_collision10
+pos = -0.182491, -1949.83, 125.049
+rotate = 0, 0, 0
+archetype = stuttgart_mega_core_collision10
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_core_collision11
+pos = -125.182, -1949.83, 0.0493584
+rotate = 0, 0, 0
+archetype = stuttgart_mega_core_collision11
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_core_collision12
+pos = -4.00162e-07, -1664.08, 2.82416e-07
+rotate = 0, 0, 0
+archetype = stuttgart_mega_core_collision12
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_core_collision13
+pos = -0.0679779, -1500.15, 0.0143051
+rotate = 0, 0, 0
+archetype = stuttgart_mega_core_collision13
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_core_collision14
+pos = -0.0679779, -1800.15, 0.0143051
+rotate = 0, 0, 0
+archetype = stuttgart_mega_core_collision14
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_core_collision15
+pos = -0.0679779, -1210.15, 0.0143051
+rotate = 0, 0, 0
+archetype = stuttgart_mega_core_collision15
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_core_collision16
+pos = 61.7978, -1804.52, 62.036
+rotate = 0, 0, 0
+archetype = stuttgart_mega_core_collision16
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_core_collision17
+pos = -0.184332, -1649.78, -0.00779548
+rotate = 0, 0, 0
+archetype = stuttgart_mega_core_collision17
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_core_collision18
+pos = 27.5997, -1524.78, -124.509
+rotate = 0, 0, 0
+archetype = stuttgart_mega_core_collision18
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_core_collision19
+pos = 1.30706, -1649.78, 0.27169
+rotate = 0, 0, 0
+archetype = stuttgart_mega_core_collision19
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_front_collision00
+pos = 2.26408, -1556.23, 306.354
+rotate = 0, 0, 0
+archetype = stuttgart_mega_front_collision00
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_front_collision01
+pos = -6.85009, -1650, 321.445
+rotate = 0, 0, 0
+archetype = stuttgart_mega_front_collision01
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_back_collision00
+pos = 2.26408, -1556.25, -306.143
+rotate = 0, 0, 0
+archetype = stuttgart_mega_back_collision00
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_back_collision01
+pos = -6.85009, -1650, -321.445
+rotate = 0, 0, 0
+archetype = stuttgart_mega_back_collision01
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_top_collision00
+pos = -0.191306, -680.309, 2.06077e-05
+rotate = 0, 0, 0
+archetype = stuttgart_mega_top_collision00
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_top_collision01
+pos = -0.0679779, -640.15, 0.0143051
+rotate = 0, 0, 0
+archetype = stuttgart_mega_top_collision01
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_top_collision02
+pos = -0.0679779, -550.15, 0.0143051
+rotate = 0, 0, 0
+archetype = stuttgart_mega_top_collision02
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_top_collision03
+pos = -0.0679779, -460.15, 0.0143051
+rotate = 0, 0, 0
+archetype = stuttgart_mega_top_collision03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_top_collision04
+pos = -0.0671797, -447.958, 0.0919695
+rotate = 0, 0, 0
+archetype = stuttgart_mega_top_collision04
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_bottom_collision00
+pos = -0.191306, -2619.69, -3.8111e-06
+rotate = 0, 0, 0
+archetype = stuttgart_mega_bottom_collision00
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_bottom_collision01
+pos = -0.0679779, -2660.15, 0.0143051
+rotate = 0, 0, 0
+archetype = stuttgart_mega_bottom_collision01
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_bottom_collision02
+pos = -0.0679779, -2750.15, 0.0143051
+rotate = 0, 0, 0
+archetype = stuttgart_mega_bottom_collision02
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_bottom_collision03
+pos = -0.0679779, -2840.15, 0.0143051
+rotate = 0, 0, 0
+archetype = stuttgart_mega_bottom_collision03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_bottom_collision04
+pos = -0.0435104, -3005.15, 0.00915527
+rotate = 0, 0, 0
+archetype = stuttgart_mega_bottom_collision04
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_stuttgart_mega_bottom_collision05
+pos = -0.0671797, -3038.45, 0.0919695
+rotate = 0, 0, 0
+archetype = stuttgart_mega_bottom_collision05
+parent = rh_stut_04
+
+'''
+
+
+class MannhaimShortGasless(MannhaimShortGaslessOriginal):
+    TEMPLATE = '''[Object]
+nickname = rh_stut_04
+pos = 0, 0, 1230
+rotate = 0, 90, 0
+archetype = space_shipping01
+{dock_props}
+
+[Object]
+nickname = rh_stut_04_ind01
+pos = 0, -15, -355
+rotate = 0, 0, 0
+archetype = batch_mannhaim__06c8cdd6_structure0
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_CORE_tube04
+pos = 400, 0, 0
+rotate = 0, 0, 0
+archetype = batch_mannhaim__06c8cdd6_core0
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_ind01
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = batch_mannhaim__06c8cdd6_left0
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_prod02
+pos = 400, -40, 130
+rotate = 180, 0, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_prod03
+pos = 400, 40, -130
+rotate = 0, 0, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY1_prod04
+pos = 400, -40, -130
+rotate = 0, 0, 180
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_prod02
+pos = 0, -40, 130
+rotate = 180, 0, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_prod03
+pos = 0, 40, -130
+rotate = 0, 0, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY2_prod04
+pos = 0, -40, -130
+rotate = 0, 0, 180
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_prod01
+pos = -400, 40, 130
+rotate = 0, 180, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_prod02
+pos = -400, -40, 130
+rotate = 180, 0, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_prod03
+pos = -400, 40, -130
+rotate = 0, 0, 0
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_LEFT_FACTORY3_prod04
+pos = -400, -40, -130
+rotate = 0, 0, 180
+archetype = space_production
+loadout = mplatform_module_white
+parent = rh_stut_04
+
+
+
+[Object]
+nickname = rh_stut_04_col_structure0_collision00
+pos = 0.772064203, 1.21369171, -359.70554
+rotate = 0, 0, 0
+archetype = batch_mannhaim__06c8cdd6_structure0_collision00
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_col_core0_collision00
+pos = 12.6144185, 0.176393509, -0.200215584
+rotate = 0, 0, 0
+archetype = batch_mannhaim__06c8cdd6_core0_collision00
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_col_left0_collision00
+pos = 399.498649, 0.222499847, 153.637139
+rotate = 0, 0, 0
+archetype = batch_mannhaim__06c8cdd6_left0_collision00
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_col_left0_collision01
+pos = 399.498649, -0.12858586, -54.0902217
+rotate = 0, 0, 0
+archetype = batch_mannhaim__06c8cdd6_left0_collision01
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_col_left0_collision02
+pos = 190.673208, -6.33377504e-05, -3.89319741e-05
+rotate = 0, 0, 0
+archetype = batch_mannhaim__06c8cdd6_left0_collision02
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_col_left0_collision03
+pos = -0.501350564, 0.222499847, 153.637139
+rotate = 0, 0, 0
+archetype = batch_mannhaim__06c8cdd6_left0_collision03
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_col_left0_collision04
+pos = -0.501350564, -0.12858586, -68.1163928
+rotate = 0, 0, 0
+archetype = batch_mannhaim__06c8cdd6_left0_collision04
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_col_left0_collision05
+pos = -209.326792, 15.2489891, 4.00161611e-07
+rotate = 0, 0, 0
+archetype = batch_mannhaim__06c8cdd6_left0_collision05
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_col_left0_collision06
+pos = -400.501351, -92.7306984, 0.00910165411
+rotate = 0, 0, 0
+archetype = batch_mannhaim__06c8cdd6_left0_collision06
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_col_left0_collision07
+pos = -400.501351, -42.8182532, -68.1074012
+rotate = 0, 0, 0
+archetype = batch_mannhaim__06c8cdd6_left0_collision07
+parent = rh_stut_04
+
+[Object]
+nickname = rh_stut_04_col_left0_collision08
+pos = -77.1590318, -6.33377504e-05, 0.173979271
+rotate = 0, 0, 0
+archetype = batch_mannhaim__06c8cdd6_left0_collision08
+parent = rh_stut_04
+
+'''

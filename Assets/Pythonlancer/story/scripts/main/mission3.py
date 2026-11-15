@@ -1,3 +1,4 @@
+from story.cutscenes.story_scenes import m03_offer, m03_offer_accept, m03_offer_decision, m03_reward
 from story import script
 from audio.sound import VoiceLine
 from story.actors import (
@@ -10,6 +11,9 @@ class Msn3(object):
 
 
 class Msn3Offer(Msn3, script.CutsceneProps):
+    THORN_DECISION_CLASS = m03_offer_decision.ReconstructedScene
+    THORN_ACCEPT_CLASS = m03_offer_accept.ReconstructedScene
+    THORN_CLASS = m03_offer.ReconstructedScene
     ALIAS = 'offer'
     TITLE = 'Штарке'
     DESCRIPTION = 'Бар станции. Два военных проводят брифинг и предлагают, как обычно, сверх опасную миссию.'
@@ -60,6 +64,7 @@ class Msn3Offer(Msn3, script.CutsceneProps):
 
 
 class Msn3Reward(Msn3, script.CutsceneProps):
+    THORN_CLASS = m03_reward.ReconstructedScene
     ALIAS = 'reward'
     TITLE = 'Финал'
     DESCRIPTION = ''

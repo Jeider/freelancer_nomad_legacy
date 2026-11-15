@@ -15,7 +15,8 @@ cache_lipsync().
 """
 import json
 import pathlib
-import re
+
+from story.cutscenes.thn_parser import ThnParseError, parse_motion_tables
 
 FACIAL_FILES = {
     "trent": "facialtrent.anm",
@@ -38,10 +39,12 @@ def facial_names():
 
 def is_facial(animation):
     name = animation.strip().strip("'\"")
+    low = name.lower()
+    if "body" in low or "hand" in low:
+        return False
     if name in facial_names():
         return True
-    low = name.lower()
-    return low.startswith("sc_dx_") or "head_" in low or low.startswith("sc_fmhead") or low.startswith("sc_mlhead") or low.startswith("sc_adhead")
+    return low.startswith("sc_dx_") or low.startswith("sc_fmhead") or low.startswith("sc_mlhead") or low.startswith("sc_adhead")
 
 
 def motion_line(actor, animation, start, duration, auto_facial=True, **kwargs):
@@ -85,22 +88,15 @@ def cache_lipsync(nickname, events):
     return meta
 
 
-_EVENT = re.compile(
-    r"\{\s*([0-9.]+)\s*,\s*START_MOTION\s*,\s*\{[^}]*\}\s*,\s*\{([^}]+)\}\s*\}",
-    re.S,
-)
-
-
 def parse_old_motions(text):
-    events = []
-    for delay, props in _EVENT.findall(text):
-        anim = re.search(r'animation\s*=\s*"([^"]+)"', props)
-        if not anim:
-            continue
-        events.append({
-            "delay": float(delay),
-            "animation": anim.group(1),
-            "props": "{" + " ".join(props.split()) + "}",
-            "facial": is_facial(anim.group(1)),
-        })
+    """Extract literal START_MOTION tables without executing the THN.
+
+    Keeps the original delay/animation/props/facial keys and adds targets and
+    parameters (raw Lua values). Props retain whitespace and comments exactly.
+    Malformed motions raise ThnParseError with source coordinates. Other event
+    types are outside this motion-only API, not declared supported by it.
+    """
+    events = parse_motion_tables(text)
+    for event in events:
+        event['facial'] = is_facial(event['animation'])
     return events

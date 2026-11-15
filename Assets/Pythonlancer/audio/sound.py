@@ -79,19 +79,17 @@ class VoiceLine(object):
 
     def get_en_ai_gen_text(self):
         text = (self.get_en_clean_ai_text()
-                .replace("'", '')
-                .replace("Mr.", 'm+ister')
-                .replace("mr.", 'm+ister')
-                .replace('ASF', 'A-eS-eF')
+                #.replace("Mr.", 'm+ister')
+                #.replace("mr.", 'm+ister')
+                # .replace('ASF', 'A-eS-eF')
                 .replace(',,', ',')
-                .replace('Mrs.', 'missis')
-                .replace('EMP', 'Ee-Em-Pi')
-                .replace("It's", "it is")
+                #.replace('Mrs.', 'missis')
+                # .replace('EMP', 'Ee-Em-Pi')
                 # .replace("It's", "it is")
                 )
 
-        if "'" in text:
-            raise Exception(f'Found apostrophe in {self.index}. What to do?')
+        # if "'" in text:
+        #     raise Exception(f'Found apostrophe in {self.index}. What to do?')
 
         return text
 

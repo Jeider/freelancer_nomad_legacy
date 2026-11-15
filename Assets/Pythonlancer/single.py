@@ -419,25 +419,28 @@ def generate_story_voices():
     indexes = range(1, 12+1)
     indexes = [5]
     russian = True
+    default_actor = 'Default'
 
     for i in indexes:
         msn = script_manager.get_mission_by_index(i)
         voices = msn.get_voices() if russian else msn.get_en_voices()
         for voice in voices:
-            audio_folder.AudioFolder.compile_story_voice_to_xml(voice, russian=russian)
+            audio_folder.AudioFolder.compile_story_voice_to_xml(voice, russian=russian, default_actor=default_actor)
 
 
 def generate_cutscene_voices():
     script_manager = ScriptManager()
     # import pdb;pdb.set_trace()
 
-    indexes = range(1, 12+1)
-    indexes = [1]
-    alias = 'intro'
-    russian = False
+    indexes = range(1, 14+1)
+    # indexes = []
+    # alias = 'offer'
+    alias = None
+    russian = True
     default_actor = 'Default'
 
     for i in indexes:
+        print(i)
         msn = script_manager.get_mission_by_index(i)
         for cutscene in msn.get_cutscenes():
             if alias is not None and alias != cutscene.ALIAS:
@@ -469,11 +472,10 @@ def scene():
     # scene_name = 'debug'
 
     mission_index = 1
-    scene_name = 'intro'
-
+    scene_name = 'bizmark'
+    #
     tpl_manager = JinjaTemplateManager()
     script_manager = ScriptManager()
-    #
 
     msn = script_manager.get_mission_by_index(mission_index)
     cutscene = msn.get_cutscene_by_code(scene_name)
@@ -481,7 +483,7 @@ def scene():
 
     return
 
-    for i in [12]:  # range(9, 12+1):
+    for i in [13]:  # range(9, 12+1):
         msn = script_manager.get_mission_by_index(i)
         for cutscene in msn.get_cutscenes():
             print(cutscene.ALIAS)

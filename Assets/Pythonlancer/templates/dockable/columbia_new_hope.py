@@ -1,7 +1,7 @@
 from templates.space_object_template import SpaceObjectTemplate
 
 
-class ColumbiaNewHope(SpaceObjectTemplate):
+class ColumbiaNewHopeOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'li_col_05'
     TEMPLATE = '''[Object]
 nickname = li_col_05
@@ -618,4 +618,94 @@ pos = 980, 41, -770
 rotate = 0, 0, 180
 archetype = space_tanks4
 parent = li_col_05
+'''
+
+
+class ColumbiaNewHope(ColumbiaNewHopeOriginal):
+    TEMPLATE = '''[Object]
+nickname = li_col_05
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = space_shipping01_no_moor
+{dock_props}
+
+[Object]
+nickname = li_col_05_ctrl_twr01
+pos = 980, -105, -625
+rotate = 0, 0, 0
+archetype = batch_columbia_new_hope_structure0
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_ctrl_block01
+pos = 1100, 170, 0
+rotate = 0, 90, 0
+archetype = space_control_block
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_industrial_A10
+pos = 980, -105, 625
+rotate = 0, 0, 0
+archetype = batch_columbia_new_hope_structure1
+parent = li_col_05
+
+
+
+[Object]
+nickname = li_col_05_col_structure0_collision00
+pos = 1000.6931, 124.930572, 0.0143051147
+rotate = 0, 0, 0
+archetype = batch_columbia_new_hope_structure0_collision00
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_col_structure0_collision01
+pos = 979.97778, 0.0515912441, 1.76407623
+rotate = 0, 0, 0
+archetype = batch_columbia_new_hope_structure0_collision01
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_col_structure0_collision02
+pos = 980.187753, -44.0498035, -624.881535
+rotate = 0, 0, 0
+archetype = batch_columbia_new_hope_structure0_collision02
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_col_structure0_collision03
+pos = 979.547127, -6.23202823e-10, -625.916741
+rotate = 0, 0, 0
+archetype = batch_columbia_new_hope_structure0_collision03
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_col_structure1_collision00
+pos = 979.987232, -104.7775, 1.76407623
+rotate = 0, 0, 0
+archetype = batch_columbia_new_hope_structure1_collision00
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_col_structure1_collision01
+pos = 941.85516, -314.7775, 375.18076
+rotate = 0, 0, 0
+archetype = batch_columbia_new_hope_structure1_collision01
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_col_structure1_collision02
+pos = 979.830301, -111.719303, 745.057986
+rotate = 0, 0, 0
+archetype = batch_columbia_new_hope_structure1_collision02
+parent = li_col_05
+
+[Object]
+nickname = li_col_05_col_structure1_collision03
+pos = 979.830299, 119.748645, 476.960095
+rotate = 0, 0, 0
+archetype = batch_columbia_new_hope_structure1_collision03
+parent = li_col_05
+
 '''

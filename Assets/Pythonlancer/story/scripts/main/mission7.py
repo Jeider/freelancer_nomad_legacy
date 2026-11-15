@@ -1,3 +1,5 @@
+from story.cutscenes.story_scenes import m07_battleship, m07_check_artifact, m07_gunners, m07_offer, m07_offer_accept, m07_offer_decision, m07_omega13, m07_reward
+from audio.delivery import HIGH_PITCH_NOT_FAST
 from story import script
 from audio.sound import VoiceLine
 from story.actors import (
@@ -11,6 +13,9 @@ class Msn7(object):
 
 
 class Msn7Offer(Msn7, script.CutsceneProps):
+    THORN_DECISION_CLASS = m07_offer_decision.ReconstructedScene
+    THORN_ACCEPT_CLASS = m07_offer_accept.ReconstructedScene
+    THORN_CLASS = m07_offer.ReconstructedScene
     ALIAS = 'offer'
     TITLE = 'Предложение'
     DESCRIPTION = ''
@@ -20,7 +25,7 @@ class Msn7Offer(Msn7, script.CutsceneProps):
         VoiceLine(30, CorsairBarman, ru="Да у нас тут вроде и в своих фрилансерах недостатка нет, понимаете же в какой системе находитесь.", en="Well, we don't seem short of our own freelancers here. You do understand what system you're in."),
         VoiceLine(40, Trent, ru="А я… скидку хорошую сделаю! Выручай дружище, я совсем на мели.", en="And I'll... give a good discount! Help me out, buddy, I'm completely broke."),
         VoiceLine(50, CorsairBarman, ru="Окей, мистер...", en="Okay, mister..."),
-        VoiceLine(60, Trent, ru="", en=""),
+        VoiceLine(60, Trent, ru="Трент", en="My name is Trent"),
         VoiceLine(70, CorsairBarman, ru="Окей, мистер Трент. Будет для вас дельце.", en="Okay, Mr. Trent. There'll be a little job for you."),
         VoiceLine(80, CorsairBarman, ru="К нам тут гастролеры пожаловали из Либерти. Называют себя бандой Старлайна.", en="Some touring crews from Liberty have shown up. They call themselves the Starline gang."),
         VoiceLine(90, CorsairBarman, ru="Найдите их и убейте Билла Айронсайда - их лидера. Координаты их предположительного местонахождения я вам скину. ", en="Find them and kill Bill Ironside, their leader. I'll send you the coordinates of where they're likely to be."),
@@ -30,6 +35,7 @@ class Msn7Offer(Msn7, script.CutsceneProps):
 
 
 class Msn7Cadiz(Msn7, script.CutsceneProps):
+    THORN_CLASS = m07_gunners.ReconstructedScene
     ALIAS = 'cadiz'
     TITLE = 'Кадиз'
     DESCRIPTION = ''
@@ -38,13 +44,14 @@ class Msn7Cadiz(Msn7, script.CutsceneProps):
         VoiceLine(20, Trent, ru="Понятия не имею.", en="I have no idea."),
         VoiceLine(30, CadizEnemyTwo, ru="Слыш, земеля, ты чо такой дерзкий? Тебя по-хорошему спросили, где Рокфорд?", en="Hey, countryman, why so cocky? You were asked nicely. Where's Rockford?"),
         VoiceLine(40, CadizEnemyOne, ru="Сейчас наладим диалог (достаёт пушку).", en="We'll get a dialogue going now (draws a gun)."),
-        VoiceLine(50, CadizEnemyOne, ru="Где Рокфорд, утырок?", en="Where's Rockford, you prick?"),
+        VoiceLine(50, CadizEnemyOne, ru="Где Рокфорд, утырок?", en="Where's Rockford, you prick?!"),
         VoiceLine(60, Rockford, comment='Поцыков выносят ударом в спину', ru="Я Рокфорд. ", en="I'm Rockford."),
         VoiceLine(65, Rockford, ru="За мной! Быстро!", en="Follow me! Fast!"),
     ]
 
 
 class Msn7Omega13(Msn7, script.CutsceneProps):
+    THORN_CLASS = m07_omega13.ReconstructedScene
     ALIAS = 'omega13'
     TITLE = 'Омега-13'
     DESCRIPTION = ''
@@ -71,6 +78,7 @@ class Msn7Omega13(Msn7, script.CutsceneProps):
 
 
 class Msn7Battleship(Msn7, script.CutsceneProps):
+    THORN_CLASS = m07_battleship.ReconstructedScene
     ALIAS = 'battleship'
     TITLE = 'Линкор Принц Уэльский'
     DESCRIPTION = ''
@@ -89,27 +97,36 @@ class Msn7Battleship(Msn7, script.CutsceneProps):
         VoiceLine(130, Darcy, ru="Ладно, есть у меня знакомый специалист по разным редкостям.", en="All right, I know a specialist in various rarities."),
         VoiceLine(140, Darcy, ru="Пусть он взглянет на эту штуку и если ты говоришь правду, то я постараюсь помочь чем смогу.", en="Let him take a look at this thing, and if you're telling the truth, I'll try to help however I can."),
         VoiceLine(150, Darcy, ru="Если же это все-таки сувенир, то отправишь в камеру к тем ребятам из Ордена!", en="But if it is a souvenir after all, you'll go to the cell with those guys from the Order!"),
+
+        VoiceLine(160, Trent, ru="Есть проблема. У меня на корабле сгорела почти вся электроника, даже и не знаю как смог сюда добраться живым.",
+                  en="There's a problem. Almost all the electronics on my ship are fried. I don't even know how I made it here alive."),
+        VoiceLine(170, Darcy, ru="(после долгого молчания и закатывания глаз) Хорошо, я дам вам один из наших кораблей",
+                  en="(after a long silence and an eye roll) All right, I'll give you one of our ships."),
+        VoiceLine(180, Darcy, ru="(угрожающе) Но если захотите на нем смыться, имейте ввиду, что все наши корабли оборудованы маячками слежения, так что я вас найду где угодно.",
+                  en="(threateningly) But if you're thinking of taking off with it, keep in mind that all our ships have tracking beacons. I'll find you wherever you go."),
     ]
 
 
 class Msn7CheckArtifact(Msn7, script.CutsceneProps):
+    THORN_CLASS = m07_check_artifact.ReconstructedScene
     ALIAS = 'check_artifact'
     TITLE = 'Проверка артефакта'
     DESCRIPTION = ''
     VOICE_LINES = [
         VoiceLine(10, Trent, ru="Ничего себе. Похоже, у этого парня очень разносторонние интересы.", en="Wow. Looks like this guy has very wide-ranging interests."),
-        VoiceLine(20, Jabba, ru="Я интересуюсь редкими вещами, которые можно выгодно купить и еще более выгодно продать.", en="I'm interested in rare things that can be bought at a profit and sold at an even greater profit."),
+        VoiceLine(20, Jabba, ru="Я интересуюсь редкими вещами, которые можно выгодно купить и еще более выгодно продать.", en="Some may call this junk. Me, I call them treasures."),
         VoiceLine(30, Jabba, ru="Привет, Дерси.", en="Hi, Darcy."),
         VoiceLine(40, Darcy, ru="Привет Джабба. Я хочу, чтобы ты взглянул на одну вещицу.", en="Hi, Jabba. I want you to take a look at a little item."),
         VoiceLine(50, Jabba, ru="Ух ты! Весьма интересная вещица, явно инопланетного происхождения. ", en="Whoa! Quite an interesting little item. Clearly of alien origin."),
         VoiceLine(60, Jabba, ru="Если вы, вдруг, на мели готов дать вам за нее десять тысяч прямо сейчас.", en="If you happen to be broke, I'm ready to give you ten thousand for it right now."),
-        VoiceLine(70, Darcy, ru="Вот дерьмо... Попила пивка в баре, нечего сказать. Ладно, Трент, уходим.", en="Well, shit... Had a beer at the bar, what can you say. All right, Trent, we're leaving."),
+        VoiceLine(70, Darcy, ru="Вот дерьмо... Попила пивка в баре, нечего сказать. Ладно, Трент, уходим.", en="Well, shit... Had a beer at the bar, what can you say. All right, Trent, we're leaving.", delivery=HIGH_PITCH_NOT_FAST),
         VoiceLine(80, Darcy, ru="Джабба, ты же не дурак да? Ты же будешь держать язык за зубами?", en="Jabba, you're not a fool, right? You'll keep your mouth shut?"),
         VoiceLine(90, Jabba, ru="Само собой, Дерси, само собой.", en="Of course, Darcy, of course."),
     ]
 
 
 class Msn7Reward(Msn7, script.CutsceneProps):
+    THORN_CLASS = m07_reward.ReconstructedScene
     ALIAS = 'reward'
     TITLE = 'Вознаграждение'
     DESCRIPTION = ''

@@ -1,7 +1,7 @@
 from templates.space_object_template import SpaceObjectTemplate
 
 
-class HonshuMilitary(SpaceObjectTemplate):
+class HonshuMilitaryOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'ku_hns_02'
     TEMPLATE = '''[Object]
 nickname = ku_hns_02
@@ -994,4 +994,157 @@ pos = 0, 191, 0
 rotate = 90, 90, 0
 archetype = space_tanks4x4
 parent = ku_hns_02
+'''
+
+
+class HonshuMilitary(HonshuMilitaryOriginal):
+    TEMPLATE = '''[Object]
+nickname = ku_hns_02
+pos = 0, 0, 0
+rotate = 0, 180, 0
+archetype = space_police01_honshu
+{dock_props}
+
+[Object]
+nickname = ku_hns_02_panelA01
+pos = 0, -130, 0
+rotate = 0, 0, 0
+archetype = batch_honshu_military_structure0
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_panelA05
+pos = -315, 35, 120
+rotate = 15, 0, 180
+archetype = space_station_panelb
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_panelB05
+pos = 315, 35, 120
+rotate = 15, 0, 180
+archetype = space_station_panelb
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_panelC01
+pos = 0, 175, -130
+rotate = 15, 0, 0
+archetype = space_station_panelb
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_panelC02
+pos = 0, 175, 120
+rotate = -15, 0, 0
+archetype = space_station_panelb
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_INNER_shipayrd01
+pos = 0, 65, 2.5
+rotate = 0, 0, 0
+archetype = batch_honshu_military_inner0
+parent = ku_hns_02
+
+
+
+[Object]
+nickname = ku_hns_02_col_structure0_collision00
+pos = -315, 46.3682704, 1.45101923
+rotate = 0, 0, 0
+archetype = batch_honshu_military_structure0_collision00
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_col_structure0_collision01
+pos = -338.335804, 24.6492043, 0.701009771
+rotate = 0, 0, 0
+archetype = batch_honshu_military_structure0_collision01
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_col_structure0_collision02
+pos = 107.369655, 24.6492043, 1.45101923
+rotate = 0, 0, 0
+archetype = batch_honshu_military_structure0_collision02
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_col_structure0_collision03
+pos = 341.664196, 24.6492043, -24.7989902
+rotate = 0, 0, 0
+archetype = batch_honshu_military_structure0_collision03
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_col_structure0_collision04
+pos = 263.921433, 159.183954, 0.701009771
+rotate = 0, 0, 0
+archetype = batch_honshu_military_structure0_collision04
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_col_structure0_collision05
+pos = -0.0679779053, 24.8500118, 0.0143051147
+rotate = 0, 0, 0
+archetype = batch_honshu_military_structure0_collision05
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_col_structure0_collision06
+pos = -0.043510437, 283.783196, -0.0491121121
+rotate = 0, 0, 0
+archetype = batch_honshu_military_structure0_collision06
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_col_structure0_collision07
+pos = 3.83164831e-07, -196.764076, 0.18249136
+rotate = 0, 0, 0
+archetype = batch_honshu_military_structure0_collision07
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_col_structure0_collision08
+pos = -0.043510437, -210, -3.64209995e-10
+rotate = 0, 0, 0
+archetype = batch_honshu_military_structure0_collision08
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_col_structure0_collision09
+pos = -0.043510437, -475.633264, 0.00915527344
+rotate = 0, 0, 0
+archetype = batch_honshu_military_structure0_collision09
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_col_structure0_collision10
+pos = 0.0692892075, -738.449093, 0.0650351536
+rotate = 0, 0, 0
+archetype = batch_honshu_military_structure0_collision10
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_col_inner0_collision00
+pos = -300.302945, 25.0000574, 4.36996864
+rotate = 0, 0, 0
+archetype = batch_honshu_military_inner0_collision00
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_col_inner0_collision01
+pos = 68.1827327, 24.9999999, 4.36996864
+rotate = 0, 0, 0
+archetype = batch_honshu_military_inner0_collision01
+parent = ku_hns_02
+
+[Object]
+nickname = ku_hns_02_col_inner0_collision02
+pos = -3.33216721, 60.23843, 3.69892025
+rotate = 0, 0, 0
+archetype = batch_honshu_military_inner0_collision02
+parent = ku_hns_02
+
 '''

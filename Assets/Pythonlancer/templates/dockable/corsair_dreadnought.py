@@ -778,7 +778,7 @@ parent = om2_02
 '''
 
 
-class CorsairDreadnoughtAlive(SpaceObjectTemplate):
+class CorsairDreadnoughtAliveOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'co_och_02'
     TEMPLATE = '''[Object]
 nickname = co_och_02
@@ -2260,4 +2260,388 @@ pos = 230, -325, 245
 rotate = 0, -90, 0
 archetype = space_girdera
 parent = co_och_02
+'''
+
+
+class CorsairDreadnoughtAlive(CorsairDreadnoughtAliveOriginal):
+    TEMPLATE = '''[Object]
+nickname = co_och_02
+pos = 550, 15, 280
+rotate = 0, 90, 0
+archetype = corsair_four_docks
+{dock_props}
+
+[Object]
+nickname = co_och_02_FRONT_root01
+pos = 1225, -20, 280
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_front0
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_LEFT_S1_ind01
+pos = 274.5, 15, 525
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_left0
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_RIGHT_S1_ind01
+pos = 274.5, 15, 35
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_right0
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_TOP_S1_window01
+pos = 325, 227, 280
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_top0
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_TOP_S1_shipyard02
+pos = -80, 230, 280
+rotate = 0, 90, 0
+archetype = luxury_liner
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_TOP_S1_core01
+pos = 310, 175, 280
+rotate = 0, 0, 0
+archetype = sw_center_200
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_FINAL_dome01
+pos = 310, 360, 280
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_final0
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_FINAL_control01
+pos = 230, 215, 280
+rotate = 0, -90, 0
+archetype = space_control_block
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_BOTTOM_S1_core01
+pos = 645, -35, 280
+rotate = 0, 0, 0
+archetype = sw_center_200
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_BOTTOM_S1_core02
+pos = 45, -35, 280
+rotate = 0, 0, 0
+archetype = sw_center_200
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_BOTTOM_S1_ind01
+pos = 275, -147.5, 280
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_bottom0
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_ENGINE_S1_cntrl_twr01
+pos = -270, 15, 280
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_engine0
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_GUN01_ind01
+pos = 802.5, -60, 280
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_structure0
+parent = co_och_02
+
+
+
+[Object]
+nickname = co_och_02_col_front0_collision00
+pos = 1447.3208, -70.0731354, 280.276682
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_front0_collision00
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_front0_collision01
+pos = 1734.84893, -70.0731435, 280.276681
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_front0_collision01
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_front0_collision02
+pos = 1173.63555, -65.1588974, 280.147995
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_front0_collision02
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_front0_collision03
+pos = 1149.79903, -63.1314699, 342.31562
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_front0_collision03
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_front0_collision04
+pos = 1259.93202, -64.9999986, 279.999999
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_front0_collision04
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_front0_collision05
+pos = 1149.95649, 15.1499895, 279.990844
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_front0_collision05
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_front0_collision06
+pos = 1088.08055, 0.501350384, 360.70769
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_front0_collision06
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_front0_collision07
+pos = 900.931579, 0.501350384, 263.299305
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_front0_collision07
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_left0_collision00
+pos = 504.498649, -0.1588974, 560.72836
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_left0_collision00
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_left0_collision01
+pos = 274.66233, 29.5808907, 506.004655
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_left0_collision01
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_left0_collision02
+pos = 274.826004, 14.8411026, 455.451527
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_left0_collision02
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_left0_collision03
+pos = 165.503585, -81.590293, 455.435227
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_left0_collision03
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_right0_collision00
+pos = 504.498649, -0.1588974, -0.905902639
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_right0_collision00
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_right0_collision01
+pos = 274.66233, 29.5808907, 53.8845701
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_right0_collision01
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_right0_collision02
+pos = 274.826004, 14.8411026, 104.359819
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_right0_collision02
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_right0_collision03
+pos = 165.503587, -81.5094659, 104.376085
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_right0_collision03
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_top0_collision00
+pos = 309.633856, 248.890556, 370.401218
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_top0_collision00
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_top0_collision01
+pos = 313.530003, 227.718511, 282.295595
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_top0_collision01
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_top0_collision02
+pos = 304.417995, 218.305735, 280.067978
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_top0_collision02
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_top0_collision03
+pos = 276.620395, 195.841103, 279.49865
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_top0_collision03
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_top0_collision04
+pos = 186.545795, 276.819687, 279.730488
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_top0_collision04
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_top0_collision05
+pos = 309.932022, 290.999999, 279.985693
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_top0_collision05
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_final0_collision00
+pos = 309.998638, 380.618322, 280.022312
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_final0_collision00
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_bottom0_collision00
+pos = 564.817509, -114.950642, 279.826004
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_bottom0_collision00
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_bottom0_collision01
+pos = 100.269512, -114.950642, 279.662331
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_bottom0_collision01
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_bottom0_collision02
+pos = 344.932022, -145.149987, 280.014305
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_bottom0_collision02
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_bottom0_collision03
+pos = 344.95649, -210.149988, 280.009155
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_bottom0_collision03
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_engine0_collision00
+pos = -259.850012, 14.9801525, 280.041683
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_engine0_collision00
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_engine0_collision01
+pos = -271.852941, 36.089027, 364.509743
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_engine0_collision01
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_engine0_collision02
+pos = -330.683731, 116.053081, 110.151821
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_engine0_collision02
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_engine0_collision03
+pos = -330.683731, -87.9469189, 450.151821
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_engine0_collision03
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_engine0_collision04
+pos = -330.683731, -87.9469189, 110.151821
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_engine0_collision04
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_engine0_collision05
+pos = -320.683731, 14.0530811, 280.151821
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_engine0_collision05
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_engine0_collision06
+pos = -302.046518, 14.4739358, 400.084341
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_engine0_collision06
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_engine0_collision07
+pos = -302.046518, 14.4739358, 160.084341
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_engine0_collision07
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_structure0_collision00
+pos = 1170.75728, 77.7655886, 281.764076
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_structure0_collision00
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_structure0_collision01
+pos = 1352.2951, 29.575423, 281.764076
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_structure0_collision01
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_structure0_collision02
+pos = 1116.47636, -110.801996, 281.764076
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_structure0_collision02
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_structure0_collision03
+pos = 347.149214, -214.478074, 281.764076
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_structure0_collision03
+parent = co_och_02
+
+[Object]
+nickname = co_och_02_col_structure0_collision04
+pos = 52.8816799, -211.35939, 280.000055
+rotate = 0, 0, 0
+archetype = batch_corsair_d_f6258558_structure0_collision04
+parent = co_och_02
+
 '''

@@ -1,5 +1,6 @@
 import json
 import pathlib
+import re
 
 ENTITY_FILE_FORMAT = '{}.lua'
 
@@ -12,6 +13,24 @@ SCANNED_KEYS = [
     POS,
     ORIENT,
 ]
+
+_COMMENT = re.compile(r'--[^\n]*')
+_ENTITY_NAME = re.compile(r'entity_name\s*=\s*"([^"]+)"', re.I)
+_POS = re.compile(r'\bpos\s*=\s*\{([^{}]*)\}', re.I)
+_ORIENT = re.compile(
+    r'\borient\s*=\s*\{\s*\{([^{}]+)\}\s*,\s*\{([^{}]+)\}\s*,\s*\{([^{}]+)\}\s*\}',
+    re.I | re.S,
+)
+_QORIENT = re.compile(r'\bq_orient\s*=\s*\{([^{}]+)\}', re.I)
+
+
+def quat_to_matrix(quaternion):
+    weight, x, y, z = quaternion
+    return [
+        [1 - 2 * (y * y + z * z), 2 * (x * y - z * weight), 2 * (x * z + y * weight)],
+        [2 * (x * y + z * weight), 1 - 2 * (x * x + z * z), 2 * (y * z - x * weight)],
+        [2 * (x * z - y * weight), 2 * (y * z + x * weight), 1 - 2 * (x * x + y * y)],
+    ]
 
 
 class SceneEntityManager(object):
@@ -32,33 +51,37 @@ class SceneEntityManager(object):
                 return item
 
     def load_entities(self, text_content):
-        entity = None
-        last_key = None
-        for line in text_content:
-            split_line = line.split('=')
-            if len(split_line) < 2:
-                continue
+        if isinstance(text_content, str):
+            text = text_content
+        else:
+            text = ''.join(
+                line if line.endswith('\n') else line + '\n'
+                for line in text_content
+            )
+        text = _COMMENT.sub('', text)
+        matches = list(_ENTITY_NAME.finditer(text))
+        for index, match in enumerate(matches):
+            end = matches[index + 1].start() if index + 1 < len(matches) else len(text)
+            window = text[match.end():end]
+            entity = SceneEntity(name=match.group(1).lower())
+            pos = _POS.search(window)
+            orient = _ORIENT.search(window)
+            quaternion = _QORIENT.search(window)
+            if pos:
+                entity.parse_pos_from_lua('{' + pos.group(1) + '}')
+            if orient:
+                rows = []
+                for group in orient.groups():
+                    rows.append(self._numbers(group))
+                entity.parse_matrix_from_lua(json.dumps(rows))
+            elif quaternion:
+                entity.orient_matrix = quat_to_matrix(self._numbers(quaternion.group(1)))
+            if entity.pos is not None:
+                self.add_entity(entity)
 
-            line_key = split_line[0].strip().lower()
-            line_value = split_line[1].strip().lower()
-
-            if line_key not in SCANNED_KEYS:
-                continue
-
-            last_key = line_key
-
-            if line_key == ENTITY_NAME:
-                if entity:
-                    self.add_entity(entity)
-                entity = SceneEntity(name=line_value)
-            elif line_key == POS:
-                entity.parse_pos_from_lua(line_value)
-            elif line_key == ORIENT:
-                entity.parse_matrix_from_lua(line_value)
-
-        # add final item
-        if last_key == ORIENT:
-            self.add_entity(entity)
+    @staticmethod
+    def _numbers(raw):
+        return [float(item) for item in re.findall(r'[-+]?(?:\d+\.\d*|\.\d+|\d+)(?:[eE][-+]?\d+)?', raw)]
 
 
 class SceneEntity(object):

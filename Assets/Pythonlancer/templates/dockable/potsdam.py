@@ -1,7 +1,7 @@
 from templates.space_object_template import SpaceObjectTemplate
 
 
-class Potsdam(SpaceObjectTemplate):
+class PotsdamOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'rh_ber_04'
     TEMPLATE = '''[Object]
 nickname = rh_ber_04
@@ -822,4 +822,116 @@ pos = 2525, -1530, 985
 rotate = 90, 90, 0
 archetype = space_tankl4x4
 parent = rh_ber_04
+'''
+
+
+class Potsdam(PotsdamOriginal):
+    TEMPLATE = '''[Object]
+nickname = rh_ber_04
+pos = 1980, -545, 935
+rotate = 0, 0, 0
+archetype = potsdam_core
+{root_props}
+
+[Object]; dock
+nickname = rh_ber_04_dock
+pos = 0, 0, 0
+rotate = 0, -90, 0
+archetype = space_shipping01
+{dock_props}
+
+;main construction
+[Object]
+nickname = rh_ber_04_space_research01
+pos = 1980, -545, -40
+rotate = 0, 0, 0
+archetype = pdm_main
+parent = rh_ber_04
+
+[Object]
+nickname = rh_ber_04_SH_space_industrial01
+pos = 3870, -545, 987.5
+rotate = 0, 0, 0
+archetype = pdm_sh
+parent = rh_ber_04
+
+[Object]
+nickname = rh_ber_04_IND_LVL1_space_industrial01
+pos = 1980, -545, 2215
+rotate = 0, 0, 0
+archetype = pdm_ind_lvl1
+parent = rh_ber_04
+
+[Object]
+nickname = rh_ber_04_IND_LVL2_space_industrial01
+pos = 1980, 0, 1805
+rotate = 0, 0, 0
+archetype = pdm_ind_lvl2
+parent = rh_ber_04
+
+[Object]
+nickname = rh_ber_04_IND_LVL3_space_industrial01
+pos = 1980, -1090, 1805
+rotate = 0, 0, 0
+archetype = pdm_ind_lvl3
+parent = rh_ber_04
+
+[Object]
+nickname = rh_ber_04_IND_NRG_space_industrial01
+pos = 1980, -545, 1805
+rotate = 0, 0, 0
+archetype = pdm_ind_nrg
+parent = rh_ber_04
+
+[Object]
+nickname = rh_ber_04_HILL_space_industrial01
+pos = 1980, -486.5, -270
+rotate = 0, 0, 0
+archetype = pdm_hill
+parent = rh_ber_04
+
+[Object]
+nickname = rh_ber_04_DOCK_space_industrial01
+pos = 572.5, -332.5, 1307.5
+rotate = 0, 0, 0
+archetype = pdm_dock
+parent = rh_ber_04
+
+[Object]
+nickname = rh_ber_04_DOCK_battleship01
+pos = 580, -495, 1280
+rotate = 0, 90, 0
+archetype = r_battleship
+parent = rh_ber_04
+
+[Object]
+nickname = rh_ber_04_DOCK_battleship02
+pos = 580, -495, 1880
+rotate = 0, 90, 0
+archetype = r_Battleship
+parent = rh_ber_04
+
+[Object]
+nickname = rh_ber_04_DOCK_battleship03
+pos = 545, 45, 1305
+rotate = 0, 0, 0
+archetype = r_battleship
+parent = rh_ber_04
+
+;ENERGY top
+
+[Object]
+nickname = rh_ber_04_TOP_solar_plant01
+pos = 1930, 855, 685
+rotate = 0, 0, 0
+archetype = pdm_top_rotating
+parent = rh_ber_04
+
+[Object]
+nickname = rh_ber_04_STOR_space_industrial01
+pos = 1980, -2027.5, 982.5
+rotate = 0, 0, 0
+archetype = pdm_stor
+parent = rh_ber_04
+
 '''

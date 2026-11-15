@@ -1684,7 +1684,7 @@ parent = alt_cur_02
 '''
 
 
-class TerraformingRotate(SpaceObjectTemplate):
+class TerraformingRotateOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'alt_cur_02'
     TEMPLATE = '''[Object]
 nickname = alt_cur_02
@@ -2748,4 +2748,166 @@ ids_name = 261162
 pos = 2485.93300759389, 200, 1965.32906827742
 archetype = nav_buoy_non_targetable
 ids_info = 66147
+'''
+
+# Static OR_HQ body with independent animated ring carriers.
+class TerraformingTwoOrHQ(SpaceObjectTemplate):
+    SPACE_OBJECT_NAME = 'alt_cur_02'
+    TEMPLATE = '''[Object]
+nickname = alt_cur_02
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = tfm_or_hq_body
+{root_props}
+
+[Object]
+nickname = alt_cur_02_SPHERE
+pos = 0, -1, 0
+rotate = 0, 0, 0
+archetype = sw_center_250
+parent = alt_cur_02
+
+[Object]
+nickname = alt_cur_02_rings_root01
+pos = 0, -921, 0
+rotate = 90, 0, 0
+archetype = ring_root_hidden_connect
+loadout = planetform_rings
+parent = alt_cur_02
+
+[Object]
+nickname = alt_cur_02_rings_root02
+pos = 0, -421, 0
+rotate = -90, 0, 0
+archetype = ring_root_hidden_connect
+loadout = planetform_rings
+parent = alt_cur_02
+
+'''
+
+
+class TerraformingRotate(TerraformingRotateOriginal):
+    TEMPLATE = '''[Object]
+nickname = alt_cur_02
+pos = -379, 500, 11
+rotate = 0, 0, 0
+archetype = space_police01
+{dock_props}
+
+[Object]
+nickname = alt_cur_02_tankdmg1
+pos = 586.5, 167, -11.5
+rotate = 0, 0, 0
+archetype = batch_terraform_fc6262a9_structure1
+parent = alt_cur_02
+
+[Object]
+nickname = alt_cur_02_SPHERE
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = sw_center_250
+parent = alt_cur_02
+
+[Object]
+nickname = alt_cur_02_xgird01
+pos = -677.5, -22.5, 7
+rotate = 0, 0, 0
+archetype = batch_terraform_fc6262a9_structure0
+parent = alt_cur_02
+
+[Object]
+nickname = alt_cur_02_tube03
+pos = 900, -200, -35
+rotate = 16, 87, -170
+archetype = space_short_tube
+parent = alt_cur_02
+
+[;Object]
+nickname = alt_cur_02_tube01_tanks
+pos = 928, 140, 205
+rotate = 85, 59, -93
+archetype = space_tube_hidden_connect
+loadout = space_tube_tanks
+parent = alt_cur_02
+
+[;Object]
+nickname = alt_cur_02_tube02_tanks
+pos = 910, 135, -274
+rotate = 85, -60, -86
+archetype = space_tube_hidden_connect
+loadout = space_tube_tanks
+parent = alt_cur_02
+
+[Object]
+nickname = alt_cur_02_TOWER_controlA01
+pos = -1122.5, 0.5, 31.5
+rotate = 0, 0, 0
+archetype = batch_terraform_fc6262a9_tower0
+parent = alt_cur_02
+
+
+
+[Object]
+nickname = alt_cur_02_col_structure1_collision00
+pos = 240.469164, -70.83291, -33.3116409
+rotate = 0, 0, 0
+archetype = batch_terraform_fc6262a9_structure1_collision00
+parent = alt_cur_02
+
+[Object]
+nickname = alt_cur_02_col_structure1_collision01
+pos = 542.689999, 163.800213, -11.4656259
+rotate = 0, 0, 0
+archetype = batch_terraform_fc6262a9_structure1_collision01
+parent = alt_cur_02
+
+[Object]
+nickname = alt_cur_02_col_structure0_collision00
+pos = -379.149726, 145.886445, 13.5726861
+rotate = 0, 0, 0
+archetype = batch_terraform_fc6262a9_structure0_collision00
+parent = alt_cur_02
+
+[Object]
+nickname = alt_cur_02_col_structure0_collision01
+pos = -483.605842, -1.51052634, 14.2196787
+rotate = 0, 0, 0
+archetype = batch_terraform_fc6262a9_structure0_collision01
+parent = alt_cur_02
+
+[Object]
+nickname = alt_cur_02_col_structure0_collision02
+pos = -1142.32819, -219.347847, 43.9642984
+rotate = 0, 0, 0
+archetype = batch_terraform_fc6262a9_structure0_collision02
+parent = alt_cur_02
+
+[Object]
+nickname = alt_cur_02_col_structure0_collision03
+pos = -1073.3787, -72.2228238, 105.163601
+rotate = 0, 0, 0
+archetype = batch_terraform_fc6262a9_structure0_collision03
+parent = alt_cur_02
+
+[Object]
+nickname = alt_cur_02_col_structure0_collision04
+pos = -1053.72022, 110.404435, 84.4224553
+rotate = 0, 0, 0
+archetype = batch_terraform_fc6262a9_structure0_collision04
+parent = alt_cur_02
+
+[Object]
+nickname = alt_cur_02_col_structure0_collision05
+pos = -564.062802, -24.0616679, 7.81603323
+rotate = 0, 0, 0
+archetype = batch_terraform_fc6262a9_structure0_collision05
+parent = alt_cur_02
+
+[Object]
+nickname = alt_cur_02_col_tower0_collision00
+pos = -1127.44974, 1.29934214, 31.2031104
+rotate = 0, 0, 0
+archetype = batch_terraform_fc6262a9_tower0_collision00
+parent = alt_cur_02
+
 '''

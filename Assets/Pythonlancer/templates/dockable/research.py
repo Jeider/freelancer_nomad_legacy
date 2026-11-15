@@ -1,7 +1,7 @@
 from templates.space_object_template import SpaceObjectTemplate
 
 
-class KyushuResearch(SpaceObjectTemplate):
+class KyushuResearchOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'ku_ksu_04'
     TEMPLATE = '''[Object]
 nickname = ku_ksu_04
@@ -224,7 +224,7 @@ parent = ku_ksu_04
 '''
 
 
-class SiriusResearch(SpaceObjectTemplate):
+class SiriusResearchOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'sig42_02'
     TEMPLATE = '''[Object]
 nickname = sig42_02
@@ -1165,4 +1165,257 @@ pos = -120, 0, -280
 rotate = 0, 0, -90
 archetype = space_tanklx4
 parent = li_for_05
+'''
+
+
+class SiriusResearch(SiriusResearchOriginal):
+    TEMPLATE = '''[Object]
+nickname = sig42_02
+pos = 0, 0, 0
+rotate = 0, 90, 0
+archetype = space_police01
+{dock_props}
+
+[Object]
+nickname = sig42_02_girderA01
+pos = 0, -336.2, -2.5
+rotate = 0, 0, 0
+archetype = batch_sirius_research_structure0
+parent = sig42_02
+
+[Object]
+nickname = sig42_02_panelA01
+pos = 0, -310, 376
+rotate = 0, 0, 0
+archetype = hidden_connect
+loadout = space_sirius_panels01
+parent = sig42_02
+
+[Object]
+nickname = sig42_02_panelA02
+pos = 0, -310, 626
+rotate = 0, 0, 0
+archetype = hidden_connect
+loadout = space_sirius_panels02
+parent = sig42_02
+
+[Object]
+nickname = sig42_02_panelA03
+pos = 0, -310, -376
+rotate = 0, 0, 0
+archetype = hidden_connect
+loadout = space_sirius_panels01
+parent = sig42_02
+
+[Object]
+nickname = sig42_02_panelA04
+pos = 0, -310, -626
+rotate = 0, 180, 0
+archetype = hidden_connect
+loadout = space_sirius_panels02
+parent = sig42_02
+
+[Object]
+nickname = sig42_02_panelA05
+pos = 0, -440, 376
+rotate = 180, 0, 0
+archetype = hidden_connect
+loadout = space_sirius_panels01
+parent = sig42_02
+
+[Object]
+nickname = sig42_02_panelA06
+pos = 0, -440, 626
+rotate = 180, 180, 0
+archetype = hidden_connect
+loadout = space_sirius_panels02
+parent = sig42_02
+
+[Object]
+nickname = sig42_02_panelA07
+pos = 0, -440, -376
+rotate = 180, 0, 0
+archetype = hidden_connect
+loadout = space_sirius_panels01
+parent = sig42_02
+
+[Object]
+nickname = sig42_02_panelA08
+pos = 0, -440, -626
+rotate = 180, 0, 0
+archetype = hidden_connect
+loadout = space_sirius_panels02
+parent = sig42_02
+
+
+
+[Object]
+nickname = sig42_02_batch_sirius_research_structure0_collision00
+pos = 1.76407622, -228.089336, -74.4858208
+rotate = 0, 0, 0
+archetype = batch_sirius_research_structure0_collision00
+parent = sig42_02
+
+[Object]
+nickname = sig42_02_batch_sirius_research_structure0_collision01
+pos = 1.76407622, -374.950642, -216.597544
+rotate = 0, 0, 0
+archetype = batch_sirius_research_structure0_collision01
+parent = sig42_02
+
+[Object]
+nickname = sig42_02_batch_sirius_research_structure0_collision02
+pos = 0.0927689202, -374.950642, -0.0979101658
+rotate = 0, 0, 0
+archetype = batch_sirius_research_structure0_collision02
+parent = sig42_02
+
+[Object]
+nickname = sig42_02_batch_sirius_research_structure0_collision03
+pos = -95.7122879, -374.950642, 342.672701
+rotate = 0, 0, 0
+archetype = batch_sirius_research_structure0_collision03
+parent = sig42_02
+
+[Object]
+nickname = sig42_02_batch_sirius_research_structure0_collision04
+pos = 0.881057937, -472.720659, -303.22235
+rotate = 0, 0, 0
+archetype = batch_sirius_research_structure0_collision04
+parent = sig42_02
+
+[Object]
+nickname = sig42_02_batch_sirius_research_structure0_collision05
+pos = -0.043510437, -375.149988, 400.009155
+rotate = 0, 0, 0
+archetype = batch_sirius_research_structure0_collision05
+parent = sig42_02
+
+[Object]
+nickname = sig42_02_batch_sirius_research_structure0_collision06
+pos = -0.0671796799, -375.149988, 0.0919694901
+rotate = 0, 0, 0
+archetype = batch_sirius_research_structure0_collision06
+parent = sig42_02
+
+[Object]
+nickname = sig42_02_batch_sirius_research_structure0_collision07
+pos = -4.00161639e-07, -274.492485, 4.00161639e-07
+rotate = 0, 0, 0
+archetype = batch_sirius_research_structure0_collision07
+parent = sig42_02
+
+[Object]
+nickname = sig42_02_batch_sirius_research_structure0_collision08
+pos = 0.0354032883, -375, 0.0354063583
+rotate = 0, 0, 0
+archetype = batch_sirius_research_structure0_collision08
+parent = sig42_02
+
+[Object]
+nickname = sig42_02_batch_sirius_research_structure0_collision09
+pos = 0.955797195, -448.472372, 0.119316101
+rotate = 0, 0, 0
+archetype = batch_sirius_research_structure0_collision09
+parent = sig42_02
+
+[Object]
+nickname = sig42_02_batch_sirius_research_structure0_collision10
+pos = 0.955797195, -375, -0.119315107
+rotate = 0, 0, 0
+archetype = batch_sirius_research_structure0_collision10
+parent = sig42_02
+
+'''
+
+
+class KyushuResearch(KyushuResearchOriginal):
+    TEMPLATE = '''[Object]
+nickname = ku_ksu_04
+pos = 0, 0, 0
+rotate = 0, 90, 0
+archetype = space_police02
+{dock_props}
+
+[Object]
+nickname = ku_ksu_04_lightpanel01
+pos = 563, 0, 0
+rotate = 0, 90, 0
+archetype = nansei_panel_rotor
+loadout = nansei_panel_rotor_animation
+parent = ku_ksu_04
+
+[Object]
+nickname = ku_ksu_04_lightpanel02
+pos = 308, 0, 0
+rotate = 90, 45, 90
+archetype = nansei_panel_rotor
+loadout = nansei_panel_rotor_reverse
+parent = ku_ksu_04
+
+[Object]
+nickname = ku_ksu_04_ind01
+pos = 50.5, 0, 0
+rotate = 0, 0, 0
+archetype = batch_kyushu_research_structure0
+parent = ku_ksu_04
+
+
+
+[Object]
+nickname = ku_ksu_04_col_structure0_collision00
+pos = 9.35928512, 0.222499847, -0.0127635828
+rotate = 0, 0, 0
+archetype = batch_kyushu_research_structure0_collision00
+parent = ku_ksu_04
+
+[Object]
+nickname = ku_ksu_04_col_structure0_collision01
+pos = 147.850013, -0.0143058285, 0.0679780143
+rotate = 0, 0, 0
+archetype = batch_kyushu_research_structure0_collision01
+parent = ku_ksu_04
+
+[Object]
+nickname = ku_ksu_04_col_structure0_collision02
+pos = 147.850011, -0.0143058285, 0.0679855305
+rotate = 0, 0, 0
+archetype = batch_kyushu_research_structure0_collision02
+parent = ku_ksu_04
+
+[Object]
+nickname = ku_ksu_04_col_structure0_collision03
+pos = 77.8500129, -0.0143058285, 0.0679780143
+rotate = 0, 0, 0
+archetype = batch_kyushu_research_structure0_collision03
+parent = ku_ksu_04
+
+[Object]
+nickname = ku_ksu_04_col_structure0_collision04
+pos = 77.8500109, -0.0143058285, 0.0679855305
+rotate = 0, 0, 0
+archetype = batch_kyushu_research_structure0_collision04
+parent = ku_ksu_04
+
+[Object]
+nickname = ku_ksu_04_col_structure0_collision05
+pos = 7.85001291, -0.0143058285, 0.0679780143
+rotate = 0, 0, 0
+archetype = batch_kyushu_research_structure0_collision05
+parent = ku_ksu_04
+
+[Object]
+nickname = ku_ksu_04_col_structure0_collision06
+pos = 7.85001088, -0.0143058285, 0.0679855305
+rotate = 0, 0, 0
+archetype = batch_kyushu_research_structure0_collision06
+parent = ku_ksu_04
+
+[Object]
+nickname = ku_ksu_04_col_structure0_collision07
+pos = 26.2545802, -0.0919726834, 0.0919694901
+rotate = 0, 0, 0
+archetype = batch_kyushu_research_structure0_collision07
+parent = ku_ksu_04
+
 '''

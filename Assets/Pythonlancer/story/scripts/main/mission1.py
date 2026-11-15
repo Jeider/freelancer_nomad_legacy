@@ -120,6 +120,7 @@ class Msn1Cityscape(Msn1, script.CutsceneProps):
 class Msn1Offer(Msn1, script.CutsceneProps):
     ALIAS = 'offer'
     THORN_CLASS = m01_offer.OfferScene
+    THORN_ACCEPT_CLASS = m01_offer.OfferAcceptScene
     TITLE = 'Сигма-13'
     DESCRIPTION = ''
     VOICE_LINES = [

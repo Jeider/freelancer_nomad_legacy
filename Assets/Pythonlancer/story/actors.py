@@ -48,7 +48,8 @@ class Actor(SteosInterface):
     STEOS_ID = None
     STEOS_PITCH = 0
     STEOS_SPEED = 1
-    VOICE_DELIVERY = VERY_HIGH_PITCH
+    VOICE_DELIVERY = HIGH_PITCH_NOT_FAST
+    DENOISE = True
     ATTENUATION = None
     GAME_ACTOR = None
 
@@ -69,6 +70,10 @@ class Actor(SteosInterface):
     @classmethod
     def get_steos_speed(cls):
         return cls.STEOS_SPEED
+
+    @classmethod
+    def get_denoise(cls):
+        return cls.DENOISE
 
     @classmethod
     def get_voice_delivery(cls):
@@ -185,6 +190,7 @@ class Hatcher(Actor):
     # STEOS_SPEED = 1.1
     STEOS_SPEED = 1  # eng
     # SPACE_VOICE = 'pilot04'
+    VOICE_DELIVERY = VERY_LOW_PITCH
 
 
 class HatcherStation(Hatcher):
@@ -214,6 +220,7 @@ class Kaitlyn(Actor):
     STEOS_ID = 203
     STEOS_PITCH = -0.5
     STEOS_SPEED = 1
+    VOICE_DELIVERY = HIGH_PITCH_SLOW
 
 
 class Gruenwald(Actor):
@@ -237,6 +244,7 @@ class King(Actor):
     STEOS_ID = 218
     STEOS_PITCH = 0.2
     STEOS_SPEED = 1
+    VOICE_DELIVERY = LOW_PITCH_NOT_FAST
 
 
 class Tilton(Actor):
@@ -268,6 +276,7 @@ class Rockford(Actor):
     STEOS_ID = 13
     STEOS_PITCH = 0.2
     STEOS_SPEED = 1.05
+    VOICE_DELIVERY = LOW_PITCH
 
 
 class RockfordStation(Actor):
@@ -288,6 +297,7 @@ class Brighton(Actor):
     STEOS_ID = 644
     # STEOS_PITCH = -0.1
     # STEOS_SPEED = 0.9
+    VOICE_DELIVERY = MODERATE_PITCH
 
 
 class DetroitDispatcher(Actor):
@@ -379,6 +389,8 @@ class LogosRobot(King):
     NAME = 'robot'
     COMM_APPEARANCE = 'null, robot_body_E'
     CUTSCENE_APPEARANCE = 'robot_body_c'
+    DENOISE = False
+    VOICE_DELIVERY = MODERATE_PITCH
 
 
 class Neuralnet(Actor):
@@ -398,6 +410,7 @@ class Adelmar(Actor):
     CUTSCENE_APPEARANCE = 'Adelmar_Till'
     STEOS_ID = 13099
     # STEOS_SPEED = 0.9
+    VOICE_DELIVERY = LOW_PITCH
     # STEOS_PITCH = 0.15
 
 
@@ -410,6 +423,7 @@ class Luc(Actor):
     STEOS_ID = 13094
     # STEOS_SPEED = 0.9
     STEOS_PITCH = 0.08
+    VOICE_DELIVERY = TEENAGER_HIGH_PITCH
 
 
 class Sigma8Cruiser(Actor):
@@ -446,6 +460,7 @@ class CadizEnemyTwo(Actor):
     COMM_APPEARANCE = 'pl_male1_head, pi_pirate3_body, comm_pi_pirate'
     STEOS_ID = 287
     STEOS_PITCH = -1
+    VOICE_DELIVERY = HIGH_PITCH_FAST
 
 
 class CadizEnemyThree(CadizEnemyOne):
@@ -589,6 +604,7 @@ class DeltaOne(Actor):
     STEOS_PITCH = -1
     # STEOS_SPEED = 1.45
     STEOS_SPEED = 1   # en
+    VOICE_DELIVERY = LOW_PITCH_SLOW
 
 
 class DeltaThree(Actor):
@@ -600,6 +616,7 @@ class DeltaThree(Actor):
     STEOS_PITCH = -0.3
     # STEOS_SPEED = 1.1
     STEOS_SPEED = 0.9  # en
+    VOICE_DELIVERY = LOW_PITCH_FAST
 
 
 class Reitherman(Actor):
@@ -629,6 +646,7 @@ class Ceed(Actor):
     STEOS_ID = 13091
     # STEOS_PITCH = -0.6
     # STEOS_SPEED = 1
+    VOICE_DELIVERY = LOW_PITCH_XFAST
 
 
 class OrderPilot(Actor):
@@ -738,6 +756,7 @@ class Smith(Actor):
     NAME = 'smith'
     STEOS_ID = 205
     STEOS_PITCH = 1
+    VOICE_DELIVERY = VERY_HIGH_PITCH_SUPER_SLOW
 
 
 class DetroitBarman(Actor):
@@ -756,6 +775,7 @@ class WalesBarman(Actor):
     STEOS_ID = 13099
     # STEOS_PITCH = 0.3
     # STEOS_SPEED = 1.1
+    VOICE_DELIVERY = HIGH_PITCH_NOT_FAST
 
 
 class IntroBarman(Actor):
@@ -815,6 +835,7 @@ class Yamamoto(Actor):
     COMM_APPEARANCE = 'ku_tenji_head, pi_pirate4_body'
     CUTSCENE_APPEARANCE = 'tenji'
     STEOS_ID = 10029
+    VOICE_DELIVERY = VERY_LOW_PITCH_SLOW
 
 
 class Hassler(Actor):
@@ -824,6 +845,7 @@ class Hassler(Actor):
     COMM_APPEARANCE = 'rh_hassler_head, rh_male_elite_body, comm_rh_reichman'
     CUTSCENE_APPEARANCE = 'hassler'
     STEOS_ID = 10071
+    VOICE_DELIVERY = MIDDLE_AGED_SLOW
 
 
 class Jameson(Actor):
@@ -842,6 +864,7 @@ class HasslerOrder(Actor):
     COMM_APPEARANCE = 'rh_hassler_head, pi_orillion_body'
     CUTSCENE_APPEARANCE = 'hassler_order'
     STEOS_ID = 10071
+    VOICE_DELIVERY = MIDDLE_AGED_SLOW
 
 
 class HasslerEpilogue(Actor):
@@ -901,6 +924,7 @@ class Jacobo(Actor):
     SPACE_VOICE = 'pilot_f_mil_m01'
     STEOS_ID = 205
     STEOS_PITCH = 0.5
+    VOICE_DELIVERY = MODERATE_PITCH
 
 
 class JacoboTrader(Jacobo):
@@ -910,6 +934,7 @@ class JacoboTrader(Jacobo):
     COMM_APPEARANCE = 'pl_male1_head, pi_pirate2_body, prop_neuralnet_b'
     CUTSCENE_APPEARANCE = 'jacobo'
     SPACE_VOICE = 'pilot_f_mil_m01'
+    VOICE_DELIVERY = HIGH_PITCH
 
 
 class Dietrich(Actor):
@@ -933,6 +958,7 @@ class Wilham(Actor):
     STEOS_ID = 218
     STEOS_PITCH = 1
     STEOS_SPEED = 1
+    VOICE_DELIVERY = MIDDLE_AGED
 
 
 class WilhamStation(Wilham):
@@ -954,6 +980,7 @@ class Mandrake(Actor):
     STEOS_PITCH = -0.5
     # STEOS_SPEED = 1.1
     STEOS_SPEED = 1 # ENG
+    VOICE_DELIVERY = ELDERLY_NO_FAST
 
 
 class Kim(Actor):
@@ -1035,6 +1062,7 @@ class Reichman(Actor):
     STEOS_ID = 270
     STEOS_PITCH = 0
     STEOS_SPEED = 1.1
+    VOICE_DELIVERY = ELDERLY_SLOW
 
 
 class YokohamaBarOne(Actor):
@@ -1262,6 +1290,7 @@ class Kenji(Actor):
     COMM_APPEARANCE = 'ku_tenji_head, pi_pirate4_body'
     CUTSCENE_APPEARANCE = 'kenji'
     STEOS_ID = 645
+    VOICE_DELIVERY = HIGH_PITCH
 
 
 class Otomo(Actor):

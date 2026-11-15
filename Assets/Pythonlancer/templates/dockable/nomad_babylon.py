@@ -1213,7 +1213,7 @@ parent = no_station_01
 '''
 
 
-class BabylonShippingDock(SpaceObjectTemplate):
+class BabylonShippingDockOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'no_station_01'
     TEMPLATE = '''[Object]
 nickname = no_station_01
@@ -2242,3 +2242,226 @@ archetype = space_girderc
 parent = no_station_01
 '''
 
+
+
+class BabylonShippingDock(BabylonShippingDockOriginal):
+    TEMPLATE = '''[Object]
+nickname = no_station_01
+pos = 0, 369, -1380
+rotate = 0, -90, 0
+archetype = space_shipping01
+{dock_props}
+
+[Object]
+nickname = no_station_01_CORE_tube01
+pos = 0, 867.5, 0
+rotate = 0, 0, 0
+archetype = batch_babylon_s_1bb69db6_core0
+parent = no_station_01
+
+[Object]
+nickname = no_station_01_CORE_control_block01
+pos = -140, 720, -140
+rotate = 0, 45, 0
+archetype = space_control_block
+parent = no_station_01
+
+[Object]
+nickname = no_station_01_CORE_control_block02
+pos = -140, 720, 140
+rotate = 0, 135, 0
+archetype = space_control_block
+parent = no_station_01
+
+[Object]
+nickname = no_station_01_CORE_control_block03
+pos = 140, 720, -140
+rotate = 0, -45, 0
+archetype = space_control_block
+parent = no_station_01
+
+[Object]
+nickname = no_station_01_CORE_control_block04
+pos = 140, 720, 140
+rotate = 0, -135, 0
+archetype = space_control_block
+parent = no_station_01
+
+[Object]
+nickname = no_station_01_MISC_girder02
+pos = 0, 255, 220
+rotate = 0, 0, 0
+archetype = batch_babylon_s_1bb69db6_misc0
+parent = no_station_01
+
+[Object]
+nickname = no_station_01_MISC_control_block01
+pos = -275, 370, -275
+rotate = 0, 45, 0
+archetype = space_control_block
+parent = no_station_01
+
+[Object]
+nickname = no_station_01_MISC_control_block02
+pos = -275, 370, 275
+rotate = 0, 135, 0
+archetype = space_control_block
+parent = no_station_01
+
+[Object]
+nickname = no_station_01_MISC_control_block03
+pos = 275, 370, -275
+rotate = 0, -45, 0
+archetype = space_control_block
+parent = no_station_01
+
+[Object]
+nickname = no_station_01_MISC_control_block04
+pos = 275, 370, 275
+rotate = 0, -135, 0
+archetype = space_control_block
+parent = no_station_01
+
+
+
+[Object]
+nickname = no_station_01_batch_babylon_s_1bb69db6_core0_collision00
+pos = -0.0679779053, 743.314388, 0.0143051147
+rotate = 0, 0, 0
+archetype = batch_babylon_s_1bb69db6_core0_collision00
+parent = no_station_01
+
+[Object]
+nickname = no_station_01_batch_babylon_s_1bb69db6_core0_collision01
+pos = -0.0679779053, 369.850013, 0.0143051147
+rotate = 0, 0, 0
+archetype = batch_babylon_s_1bb69db6_core0_collision01
+parent = no_station_01
+
+[Object]
+nickname = no_station_01_batch_babylon_s_1bb69db6_core0_collision02
+pos = -0.0679779053, 549.850013, 0.0143051147
+rotate = 0, 0, 0
+archetype = batch_babylon_s_1bb69db6_core0_collision02
+parent = no_station_01
+
+[Object]
+nickname = no_station_01_batch_babylon_s_1bb69db6_core0_collision03
+pos = -0.0679779053, 549.850013, 0.0143051147
+rotate = 0, 0, 0
+archetype = batch_babylon_s_1bb69db6_core0_collision03
+parent = no_station_01
+
+[Object]
+nickname = no_station_01_batch_babylon_s_1bb69db6_core0_collision04
+pos = -0.0679779053, 729.850013, 0.0143051147
+rotate = 0, 0, 0
+archetype = batch_babylon_s_1bb69db6_core0_collision04
+parent = no_station_01
+
+[Object]
+nickname = no_station_01_batch_babylon_s_1bb69db6_core0_collision05
+pos = -0.0679779053, 729.850013, 0.0143051147
+rotate = 0, 0, 0
+archetype = batch_babylon_s_1bb69db6_core0_collision05
+parent = no_station_01
+
+[Object]
+nickname = no_station_01_batch_babylon_s_1bb69db6_core0_collision06
+pos = -1.6382466e-06, 726.624786, -7.67375496e-09
+rotate = 0, 0, 0
+archetype = batch_babylon_s_1bb69db6_core0_collision06
+parent = no_station_01
+
+[Object]
+nickname = no_station_01_batch_babylon_s_1bb69db6_core0_collision07
+pos = -7.67347075e-09, 672.541461, 1.63824689e-06
+rotate = 0, 0, 0
+archetype = batch_babylon_s_1bb69db6_core0_collision07
+parent = no_station_01
+
+[Object]
+nickname = no_station_01_batch_babylon_s_1bb69db6_core0_collision08
+pos = -0.0671796799, 825.774027, 0.0919694901
+rotate = 0, 0, 0
+archetype = batch_babylon_s_1bb69db6_core0_collision08
+parent = no_station_01
+
+[Object]
+nickname = no_station_01_batch_babylon_s_1bb69db6_core0_collision09
+pos = -97.1458387, 549.695209, 38.5953776
+rotate = 0, 0, 0
+archetype = batch_babylon_s_1bb69db6_core0_collision09
+parent = no_station_01
+
+[Object]
+nickname = no_station_01_batch_babylon_s_1bb69db6_core0_collision10
+pos = -0.38095492, 549.649204, 1.13211023
+rotate = 0, 0, 0
+archetype = batch_babylon_s_1bb69db6_core0_collision10
+parent = no_station_01
+
+[Object]
+nickname = no_station_01_batch_babylon_s_1bb69db6_core0_collision11
+pos = 0.0673217788, 936.719505, 0.0673217773
+rotate = 0, 0, 0
+archetype = batch_babylon_s_1bb69db6_core0_collision11
+parent = no_station_01
+
+[Object]
+nickname = no_station_01_batch_babylon_s_1bb69db6_misc0_collision00
+pos = -4.00825627e-07, 369.999997, 380.365296
+rotate = 0, 0, 0
+archetype = batch_babylon_s_1bb69db6_misc0_collision00
+parent = no_station_01
+
+[Object]
+nickname = no_station_01_batch_babylon_s_1bb69db6_misc0_collision01
+pos = -275.04351, 369.850012, 0.00915527344
+rotate = 0, 0, 0
+archetype = batch_babylon_s_1bb69db6_misc0_collision01
+parent = no_station_01
+
+[Object]
+nickname = no_station_01_batch_babylon_s_1bb69db6_misc0_collision02
+pos = 274.95649, 369.850012, 0.00915527344
+rotate = 0, 0, 0
+archetype = batch_babylon_s_1bb69db6_misc0_collision02
+parent = no_station_01
+
+[Object]
+nickname = no_station_01_batch_babylon_s_1bb69db6_misc0_collision03
+pos = -0.0127677917, 220.2225, 0.0127677955
+rotate = 0, 0, 0
+archetype = batch_babylon_s_1bb69db6_misc0_collision03
+parent = no_station_01
+
+[Object]
+nickname = no_station_01_batch_babylon_s_1bb69db6_misc0_collision04
+pos = -4.00161639e-07, 184.640318, 4.00161639e-07
+rotate = 0, 0, 0
+archetype = batch_babylon_s_1bb69db6_misc0_collision04
+parent = no_station_01
+
+[Object]
+nickname = no_station_01_batch_babylon_s_1bb69db6_misc0_collision05
+pos = -0.182491302, 250.173996, 0.0493584258
+rotate = 0, 0, 0
+archetype = batch_babylon_s_1bb69db6_misc0_collision05
+parent = no_station_01
+
+[Object]
+nickname = no_station_01_batch_babylon_s_1bb69db6_misc0_collision06
+pos = -0.182491302, 250.173996, 0.0493584258
+rotate = 0, 0, 0
+archetype = batch_babylon_s_1bb69db6_misc0_collision06
+parent = no_station_01
+
+[Object]
+nickname = no_station_01_batch_babylon_s_1bb69db6_misc0_collision07
+pos = 0.0308761597, 223.61254, -0.0308761598
+rotate = 0, 0, 0
+archetype = batch_babylon_s_1bb69db6_misc0_collision07
+parent = no_station_01
+
+'''

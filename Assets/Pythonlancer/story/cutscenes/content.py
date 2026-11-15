@@ -222,17 +222,25 @@ class StaticEvent(Event):
 class LookAtEvent(Event):
     TEMPLATE = 'look_at'
 
-    def __init__(self, point, focus, duration, *args, **kwargs):
+    def __init__(self, point, focus, duration, target_part='', target_type=TARGET_ROOT, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.point = point
         self.focus = focus
         self.duration = duration
+        self.target_part = target_part
+        self.target_type = target_type
+        if self.target_type not in TARGET_TYPES:
+            raise Exception(f'LookAt for {self.point} has invalid target_type')
+        if self.target_type != TARGET_ROOT and self.target_part == '':
+            raise Exception(f'LookAt for {self.point} requires defined target_part')
 
     def get_params(self):
         return {
             'point': self.point,
             'focus': self.focus,
             'duration': self.duration,
+            'target_part': self.target_part,
+            'target_type': self.target_type,
         }
 
 
@@ -724,7 +732,7 @@ class PathAnimationEvent(Event):
     TEMPLATE = 'path_anim'
 
     def __init__(self, target_name, path, duration, smooth=False,
-                 adjust_pos=True, adjust_orient=False, *args, **kwargs):
+                 adjust_pos=True, adjust_orient=False, start_percent=0, stop_percent=1, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.target_name = target_name
         self.path = path
@@ -732,6 +740,8 @@ class PathAnimationEvent(Event):
         self.smooth = smooth
         self.adjust_pos = adjust_pos
         self.adjust_orient = adjust_orient
+        self.start_percent = start_percent
+        self.stop_percent = stop_percent
 
     def get_flags(self):
         flags = []
@@ -748,6 +758,8 @@ class PathAnimationEvent(Event):
             'duration': self.duration,
             'smooth': self.smooth,
             'flags': self.get_flags(),
+            'start_percent': self.start_percent,
+            'stop_percent': self.stop_percent,
         }
 
 
@@ -1301,7 +1313,7 @@ class Light(Entity):
 
     def __init__(self, light_group, diffuse, ambient, direction, point_name=None, is_reference=False,
                  extra_name='LIGHT_', light_type=L_DIRECT, on=True,
-                 range=2000, cutoff=90, theta=90, *args, **kwargs):
+                 range=2000, cutoff=90, theta=90, color=None, attenuation=None, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.point_name = point_name if point_name else self.root.DEFAULT_POINT_NAME
         self.point = self.root.get_point(self.point_name)
@@ -1314,6 +1326,10 @@ class Light(Entity):
         self.range = range
         self.cutoff = cutoff
         self.theta = theta
+        self.color = [255, 255, 255] if color is None else color
+        self.attenuation = [1, 0, 0.003] if attenuation is None else attenuation
+        if len(self.color) != 3 or len(self.attenuation) != 3:
+            raise ValueError('Light color and attenuation must have three components')
         self.is_reference = is_reference
         self.extra_name = extra_name
         if self.light_type not in LIGHT_TYPES:
@@ -1345,6 +1361,8 @@ class Light(Entity):
             'diffuse': ', '.join([str(i) for i in self.diffuse]),
             'ambient': ', '.join([str(i) for i in self.ambient]),
             'direction': ', '.join([str(i) for i in self.direction]),
+            'color': ', '.join(str(i) for i in self.color),
+            'attenuation': ', '.join(str(i) for i in self.attenuation),
         }
 
     def turn_on(self, group, **kwargs):

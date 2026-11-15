@@ -1,0 +1,54 @@
+{
+  "Camera_1": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "Camera_1_focus": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "CameraMarker": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "main_object": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  }
+}

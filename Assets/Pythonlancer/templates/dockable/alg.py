@@ -1,7 +1,7 @@
 from templates.space_object_template import SpaceObjectTemplate
 
 
-class AlgBaseHokkaido(SpaceObjectTemplate):
+class AlgBaseHokkaidoOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'ku_hkd_07'
     TEMPLATE = '''[Object]
 nickname = ku_hkd_07
@@ -659,4 +659,59 @@ pos = 250, 0, 184
 rotate = 0, -90, 0
 archetype = space_small_pad
 parent = rh_ber_07
+'''
+
+
+class AlgBaseHokkaido(AlgBaseHokkaidoOriginal):
+    TEMPLATE = '''[Object]
+nickname = ku_hkd_07
+pos = 0, 0, 0
+rotate = 90, 0, -90
+archetype = space_shipping01
+{dock_props}
+
+[Object]
+nickname = ku_hkd_07_tube01
+pos = 0, -390, 0
+rotate = 0, 0, 0
+archetype = batch_alg_base_hokkaido_structure0
+parent = ku_hkd_07
+
+
+
+[Object]
+nickname = ku_hkd_07_batch_alg_base_hokkaido_structure0_collision00
+pos = 0.0673217788, -419.514638, 0.0673217773
+rotate = 0, 0, 0
+archetype = batch_alg_base_hokkaido_structure0_collision00
+parent = ku_hkd_07
+
+[Object]
+nickname = ku_hkd_07_batch_alg_base_hokkaido_structure0_collision01
+pos = 0.350795736, -725.70101, -0.350795725
+rotate = 0, 0, 0
+archetype = batch_alg_base_hokkaido_structure0_collision01
+parent = ku_hkd_07
+
+[Object]
+nickname = ku_hkd_07_batch_alg_base_hokkaido_structure0_collision02
+pos = -10.2720818, -724.999999, 0.0480571859
+rotate = 0, 0, 0
+archetype = batch_alg_base_hokkaido_structure0_collision02
+parent = ku_hkd_07
+
+[Object]
+nickname = ku_hkd_07_batch_alg_base_hokkaido_structure0_collision03
+pos = 9.57723501e-09, -1056.54393, 3.81469727e-06
+rotate = 0, 0, 0
+archetype = batch_alg_base_hokkaido_structure0_collision03
+parent = ku_hkd_07
+
+[Object]
+nickname = ku_hkd_07_batch_alg_base_hokkaido_structure0_collision04
+pos = -0.271690369, -390, 1.30706024
+rotate = 0, 0, 0
+archetype = batch_alg_base_hokkaido_structure0_collision04
+parent = ku_hkd_07
+
 '''

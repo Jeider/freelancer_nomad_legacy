@@ -1,0 +1,67 @@
+{
+  "Camera_1": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "cam_final_pos": {
+    "position": [
+      -60.0,
+      650.0,
+      60.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "CoreMarker": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "CameraMarker": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "Camera_1_focus": {
+    "position": [
+      0.0,
+      0.0,
+      400.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  }
+}

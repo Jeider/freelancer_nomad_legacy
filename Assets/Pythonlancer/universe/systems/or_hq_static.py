@@ -71,7 +71,7 @@ class OrdHQTerraform1(OrdHQMember, main_objects.NotDockableObject):
     INDEX = 1
     REL = RIGHT
 
-    SPACE_OBJECT_TEMPLATE = terraforming.TerraformingTwo
+    SPACE_OBJECT_TEMPLATE = terraforming.TerraformingTwoOrHQ
 
 
 class OrdHQTerraform2(OrdHQMember, main_objects.NotDockableObject):
@@ -79,7 +79,7 @@ class OrdHQTerraform2(OrdHQMember, main_objects.NotDockableObject):
     INDEX = 2
     REL = RIGHT
 
-    SPACE_OBJECT_TEMPLATE = terraforming.TerraformingTwo
+    SPACE_OBJECT_TEMPLATE = terraforming.TerraformingTwoOrHQ
 
 
 class OrdHQTerraform3(OrdHQMember, main_objects.NotDockableObject):
@@ -87,7 +87,7 @@ class OrdHQTerraform3(OrdHQMember, main_objects.NotDockableObject):
     INDEX = 3
     REL = RIGHT
 
-    SPACE_OBJECT_TEMPLATE = terraforming.TerraformingTwo
+    SPACE_OBJECT_TEMPLATE = terraforming.TerraformingTwoOrHQ
 
 
 class OrdHQTerraformFX1(OrdHQMember, main_objects.NotDockableObject):

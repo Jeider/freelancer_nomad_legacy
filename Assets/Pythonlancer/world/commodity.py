@@ -190,6 +190,24 @@ class Commodity:
     def get_en_info(self):
         return [self.RU_INFO.get_en()]
 
+    def courier_class(self):
+        explicit = getattr(self, 'COURIER_CLASS', None)
+        if explicit:
+            return explicit
+        if self.IS_BASIC:
+            return 'basic'
+        if self.IS_DEFAULT:
+            return 'default'
+        if self.IS_ROID:
+            return 'roid'
+        if self.IS_ALLOY:
+            return 'alloy'
+        if self.IS_PRODUCT:
+            return 'product'
+        if self.IS_LUXURY:
+            return 'luxury'
+        return 'default'
+
     def get_default_price(self):
         return self.DEFAULT_PRICE
 
@@ -681,6 +699,10 @@ class WaterExtra(Luxury, Commodity):
     RU_NAME_REL2 = 'минеральной воды'
     RU_NAME_REL3 = 'минеральной воде'
     NICKNAME = 'comm_water_extra'
+    COURIER_CLASS = 'water_extra'
+    PRICE_STEP_RATE = 0.18
+    PRICE_STEP_DECAY = 0.88
+    PRICE_MAX_RATIO = 2.4
     POD = POD_RAWMATS
     ICON = ICON_WATERROID
     RU_INFO = ru_info.WATER_EXTRA

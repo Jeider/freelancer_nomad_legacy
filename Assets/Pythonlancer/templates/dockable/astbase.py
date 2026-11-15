@@ -90,7 +90,7 @@ parent = ku_ksu_05
 '''
 
 
-class NomadAsteroidBase(SpaceObjectTemplate):
+class NomadAsteroidBaseOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'sig17_03'
     TEMPLATE = '''[Object]
 nickname = sig17_03
@@ -924,4 +924,52 @@ pos = 75, -45, -40
 rotate = 0, 90, 0
 archetype = space_hangar
 parent = li_cal_09
+'''
+
+
+class NomadAsteroidBase(NomadAsteroidBaseOriginal):
+    TEMPLATE = '''[Object]
+nickname = sig17_03
+pos = 0, 0, 0
+rotate = 0, -135, 0
+archetype = space_police02
+{dock_props}
+
+[Object]
+nickname = sig17_03_Ast
+pos = -50, 0, -50
+rotate = -90, 0, 90
+archetype = miningbase_nomad_sattelite
+parent = sig17_03
+
+[Object]
+nickname = sig17_03_habitat01
+pos = -97.5, 22.5, -85
+rotate = 0, 0, 0
+archetype = batch_nomad_asteroid_base_structure0
+parent = sig17_03
+
+
+
+[Object]
+nickname = sig17_03_batch_nomad_asteroid_base_structure0_collision00
+pos = -50.0629713, 22.4999996, -97.4080305
+rotate = 0, 0, 0
+archetype = batch_nomad_asteroid_base_structure0_collision00
+parent = sig17_03
+
+[Object]
+nickname = sig17_03_batch_nomad_asteroid_base_structure0_collision01
+pos = -50.3909304, 70.2159357, -76.1929398
+rotate = 0, 0, 0
+archetype = batch_nomad_asteroid_base_structure0_collision01
+parent = sig17_03
+
+[Object]
+nickname = sig17_03_batch_nomad_asteroid_base_structure0_collision02
+pos = -99.6488562, 29.1377116, -72.5931498
+rotate = 0, 0, 0
+archetype = batch_nomad_asteroid_base_structure0_collision02
+parent = sig17_03
+
 '''

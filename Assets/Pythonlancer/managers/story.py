@@ -51,8 +51,8 @@ class StoryManager:
 
         for mission_class in IngameMission.subclasses:
 
-            if mission_class.SCRIPT_INDEX != 5:
-                continue
+            # if mission_class.SCRIPT_INDEX != 1:
+            #     continue
 
             print(mission_class)
             mission = mission_class(russian=self.core.russian,

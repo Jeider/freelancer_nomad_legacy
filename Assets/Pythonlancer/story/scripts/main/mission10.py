@@ -320,7 +320,7 @@ class Msn10RescuedCutscene(Msn10, script.CutsceneProps):
         VoiceLine(
             50,
             EdisonTrent,
-            ru='Вытащить легенду из передряги, в которой ей угораздило утонуть с головой по собственной глупости, вы хотели сказать. Предрекаю вам блестящее будущее.',
+            ru='Вытащить легенду из передряги, в которой ей угораздило утонуть с головой, это вы хотели сказать. Предрекаю вам блестящее будущее.',
                en='Pull the legend out of the mess it was stupid enough to drown in, head and all, you meant to say. I predict a brilliant future for you.'
         ),
         VoiceLine(

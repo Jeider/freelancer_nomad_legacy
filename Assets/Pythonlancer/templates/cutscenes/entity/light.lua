@@ -17,9 +17,7 @@
     lightprops={
         on={% if on %}Y{% else %}N{% endif %},
         color={
-            255,
-            255,
-            255
+            {{ color }}
         },
         diffuse={
             {{ diffuse }}
@@ -40,9 +38,7 @@
         type={{ light_type }},
         theta={{ theta }},
         atten={
-            1,
-            0,
-            0.003
+            {{ attenuation }}
         }
     }
 }

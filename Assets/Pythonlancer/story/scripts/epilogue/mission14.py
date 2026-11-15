@@ -110,11 +110,6 @@ class LairFinalScene(Msn14, script.CutsceneProps):
     DESCRIPTION = ''
 
 
-
-
-
-
-
 class Msn14Space(Msn14, script.SpaceVoiceProps):
     VOICE_LINES = [
         # VoiceLine(5, Hatcher, ru='Направляемся в Сферу. Трент, веди нас', en='Setting course for the Sphere. Trent, lead the way!'),

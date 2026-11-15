@@ -1,5 +1,6 @@
 from story import script
 from audio.sound import VoiceLine
+from audio import delivery
 from story.actors import Trent, Rockford, Darcy, EdisonTrent, King, Hatcher, Alaric, Mandrake, Missouri, Neuralnet
 from story.cutscenes.story_scenes import m13_osiris, m13_enter_bh, m13_death, m13_csv
 
@@ -16,31 +17,31 @@ class Msn13OsirisCutscene(Msn13, script.CutsceneProps):
     VOICE_LINES = [
         VoiceLine(10, Darcy, ru="Трент,, давай скорее! Брифинг уже началс+я!", en="Trent, hurry up! The briefing has already started!"),
 
-        VoiceLine(20, King,
+        VoiceLine(20, King, delivery=delivery.VERY_HIGH_PITCH_FAST,
                   ru="Приходят плохие новости из штаба. Кочевники начинают вторжение в колониях. Угроза оказалась гораздо серьёзнее,, чем мы думали",
 				  en="Bad news is coming in from headquarters. The Nomads are starting an invasion in the colonies. The threat turned out much more serious than we thought."),
-        VoiceLine(30, King,
+        VoiceLine(30, King, delivery=delivery.VERY_HIGH_PITCH_FAST,
                   ru="Мистер Трент и профессор Мандрейк сейчас занимаются улучшением энергоустановки, которую мы отправим в чёрную дыру,, пока еще не поздно",
 				  en="Mister Trent and Professor Mandrake are currently improving the power plant we'll send into the black hole, while it's not too late yet."),
 
-        VoiceLine(50, King,
+        VoiceLine(50, King, delivery=delivery.VERY_HIGH_PITCH_FAST,
                   ru="Обстановка. Кочевники уже в Омеге-13 и заполнили большую часть астероидных полей в системе.",
 				  en="Situation. The Nomads are already in Omega-13 and have filled most of the asteroid fields in the system."),
-        VoiceLine(60, King,
+        VoiceLine(60, King, delivery=delivery.VERY_HIGH_PITCH,
                   ru="План операции. Основн+ая боевая группа в виде линкора Осирис и прикрытия совершит атаку на флот номадов, чтобы оттянуть их силы от зоны, примыкающей к чёрной дыре",
 				  en="Plan of the operation. The main battle group, the battleship Osiris and its escort, will attack the Nomad fleet to draw their forces away from the zone next to the black hole."),
-        VoiceLine(70, King,
+        VoiceLine(70, King, delivery=delivery.VERY_HIGH_PITCH,
                   ru="В это же время мобильная диверсионная группа в составе обоих мистеров Трентов отправится к чёрной дыре через зону со старыми шахтами",
 				  en="At the same time, a mobile sabotage group made up of both Mister Trents will head to the black hole through the zone with the old mines."),
-        VoiceLine(80, King,
+        VoiceLine(80, King, delivery=delivery.VERY_HIGH_PITCH,
                   ru="Сенсоры отмечают минимальную номадскую активность в этой локации. Путь ожидается относительно безопасным",
 				  en="Sensors show minimal Nomad activity in this location. The route is expected to be relatively safe."),
-        VoiceLine(90, King, ru="Есть вопросы?", en='Any questions?'),
+        VoiceLine(90, King, delivery=delivery.VERY_HIGH_PITCH, ru="Есть вопросы?", en='Any questions?'),
         VoiceLine(100, Trent, ru="А почему путь через шахты лишь относительно безопасен?", en="And why is the path through the mines only relatively safe?"),
-        VoiceLine(110, King,
+        VoiceLine(110, King, delivery=delivery.VERY_HIGH_PITCH,
                   ru="В этой зоне обнаружено скопление номадских зёрен. Они пассивны. Если быть осторожными и не будоражить зёрна, то иных препятствий на пути не замечено.",
 				  en="A cluster of Nomad seeds has been found in this zone. They're passive. If you're careful and don't stir up the seeds, no other obstacles have been noted on the way."),
-        VoiceLine(120, King, ru="Еще вопросы? Нет? Тогда вылетаем по сигналу. Всем удачи", en="Any more questions? No? Then we launch on the signal. Good luck to everyone."),
+        VoiceLine(120, King, delivery=delivery.VERY_HIGH_PITCH, ru="Еще вопросы? Нет? Тогда вылетаем по сигналу. Всем удачи", en="Any more questions? No? Then we launch on the signal. Good luck to everyone."),
 
         VoiceLine(200, Trent, ru="Ну что,, Ал, гот+ов сегодня спасти мир?", en="So, Al, ready to save the world today?"),
         VoiceLine(210, Alaric, ru="Эй! Я смотрю тебе наконец понравилось работать на спецслужбы!", en="Hey! I see you finally like working for the agencies!"),
@@ -291,7 +292,7 @@ class Msn13Space(Msn13, script.SpaceVoiceProps):
         VoiceLine(1560, EdisonTrent, ru="Радиация зерна... разрушила мой корабль... А как ты смог её перенести?",
 									 en='The seed\'s radiation... destroyed my ship... And how did you withstand it?', cinematic=True),
         VoiceLine(1570, Trent, ru="Я не знаю... и что теперь делать", en='I don\'t know... and what do we do now.', cinematic=True),
-        VoiceLine(1580, EdisonTrent, ru="Так, знаешь... я передам маяк тебе. Доставь его сам, один",
+        VoiceLine(1580, EdisonTrent, ru="Так, знаешь... я передам маяк тебе. Доставь его сам, в одиночку",
 									 en='Okay, listen... I\'ll transfer the beacon to you. Deliver it yourself, alone.', cinematic=True),
         VoiceLine(1590, Trent, ru="Но на моём корабле нет катапульты!", en='But my ship doesn\'t have a catapult!', cinematic=True),
         VoiceLine(1600, EdisonTrent, ru="Знаю, знаю... чёрт...", en='I know, I know... damn...', cinematic=True),

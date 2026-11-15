@@ -1,0 +1,54 @@
+{
+  "Shot06_Camera_0": {
+    "position": [
+      20025.0,
+      -4970.0,
+      -1985.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "Shot06_Camera_0_focus": {
+    "position": [
+      12000.0,
+      -10000.0,
+      -2000.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "Path_Marker": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "Path_Camera": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  }
+}

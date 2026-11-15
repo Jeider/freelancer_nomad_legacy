@@ -1,7 +1,7 @@
 from templates.space_object_template import SpaceObjectTemplate
 
 
-class KusariPalace(SpaceObjectTemplate):
+class KusariPalaceOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'om7_03'
     TEMPLATE = '''[Object]
 nickname = om7_03
@@ -464,4 +464,136 @@ pos = 0, -150, 0
 rotate = 90, 0, 0
 archetype = space_girder
 parent = om7_03
+'''
+
+
+class KusariPalace(KusariPalaceOriginal):
+    TEMPLATE = '''[Object]
+nickname = om7_03
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = space_police01
+{dock_props}
+
+[Object]
+nickname = om7_03_asteroid
+pos = -300, -1637.5, 145
+rotate = 0, 0, 0
+archetype = batch_kusari_palace_structure0
+parent = om7_03
+
+[Object]
+nickname = om7_03_industrial01
+pos = -2675, -2000, 145
+rotate = 0, 0, 0
+archetype = space_prison
+parent = om7_03
+
+[Object]
+nickname = om7_03_PALACE_tube01
+pos = 1057.5, -820, -662.5
+rotate = 0, 0, 0
+archetype = batch_kusari_palace_palace0
+parent = om7_03
+
+
+
+[Object]
+nickname = om7_03_batch_kusari_palace_structure0_collision00
+pos = -1917.71057, -3686.41449, 508.19104
+rotate = 0, 0, 0
+archetype = batch_kusari_palace_structure0_collision00
+parent = om7_03
+
+[Object]
+nickname = om7_03_batch_kusari_palace_structure0_collision01
+pos = 1130.5867, -3781.44705, 396.450806
+rotate = 0, 0, 0
+archetype = batch_kusari_palace_structure0_collision01
+parent = om7_03
+
+[Object]
+nickname = om7_03_batch_kusari_palace_structure0_collision02
+pos = 400.666206, -1384.04415, 173.669633
+rotate = 0, 0, 0
+archetype = batch_kusari_palace_structure0_collision02
+parent = om7_03
+
+[Object]
+nickname = om7_03_batch_kusari_palace_palace0_collision00
+pos = 987.702747, -1075.2765, -697.682335
+rotate = 0, 0, 0
+archetype = batch_kusari_palace_palace0_collision00
+parent = om7_03
+
+[Object]
+nickname = om7_03_batch_kusari_palace_palace0_collision01
+pos = 1252.08845, -492.131279, -702.618144
+rotate = 0, 0, 0
+archetype = batch_kusari_palace_palace0_collision01
+parent = om7_03
+
+[Object]
+nickname = om7_03_batch_kusari_palace_palace0_collision02
+pos = 1116.3143, -378.94835, -613.051226
+rotate = 0, 0, 0
+archetype = batch_kusari_palace_palace0_collision02
+parent = om7_03
+
+[Object]
+nickname = om7_03_batch_kusari_palace_palace0_collision03
+pos = 904.72831, -574.784064, -768.69294
+rotate = 0, 0, 0
+archetype = batch_kusari_palace_palace0_collision03
+parent = om7_03
+
+[Object]
+nickname = om7_03_batch_kusari_palace_palace0_collision04
+pos = 849.932022, -289.999999, -980.000001
+rotate = 0, 0, 0
+archetype = batch_kusari_palace_palace0_collision04
+parent = om7_03
+
+[Object]
+nickname = om7_03_batch_kusari_palace_palace0_collision05
+pos = 885.81138, -530.149988, -944.109788
+rotate = 0, 0, 0
+archetype = batch_kusari_palace_palace0_collision05
+parent = om7_03
+
+[Object]
+nickname = om7_03_batch_kusari_palace_palace0_collision06
+pos = 1132.48015, -700.149988, -697.458317
+rotate = 0, 0, 0
+archetype = batch_kusari_palace_palace0_collision06
+parent = om7_03
+
+[Object]
+nickname = om7_03_batch_kusari_palace_palace0_collision07
+pos = 1199.98015, -490.149988, -209.958317
+rotate = 0, 0, 0
+archetype = batch_kusari_palace_palace0_collision07
+parent = om7_03
+
+[Object]
+nickname = om7_03_batch_kusari_palace_palace0_collision08
+pos = 494.95649, -700.149988, 0.00915527344
+rotate = 0, 0, 0
+archetype = batch_kusari_palace_palace0_collision08
+parent = om7_03
+
+[Object]
+nickname = om7_03_batch_kusari_palace_palace0_collision09
+pos = 109.119294, -490.149987, -734.140082
+rotate = 0, 0, 0
+archetype = batch_kusari_palace_palace0_collision09
+parent = om7_03
+
+[Object]
+nickname = om7_03_batch_kusari_palace_palace0_collision10
+pos = 1082.49321, -334.138703, -233.565253
+rotate = 0, 0, 0
+archetype = batch_kusari_palace_palace0_collision10
+parent = om7_03
+
 '''

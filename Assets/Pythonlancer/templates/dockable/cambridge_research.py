@@ -1,7 +1,7 @@
 from templates.space_object_template import SpaceObjectTemplate
 
 
-class CambridgeResearch(SpaceObjectTemplate):
+class CambridgeResearchOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'br_cam_04'
     TEMPLATE = '''[Object]
 nickname = br_cam_04
@@ -933,7 +933,7 @@ parent = br_cam_04
 '''
 
 
-class CambridgeResearchAlternative(SpaceObjectTemplate):
+class CambridgeResearchAlternativeOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'br_cam_04'
     TEMPLATE = '''[Object]
 nickname = br_cam_04
@@ -1221,4 +1221,197 @@ pos = 0, -1025, 0
 rotate = 0, 0, 0
 archetype = space_tankl2
 parent = br_cam_04
+'''
+
+class CambridgeResearch(CambridgeResearchOriginal):
+    TEMPLATE = '''[Object]
+nickname = br_cam_04
+pos = 0, 0, -1180
+rotate = 0, 90, 0
+archetype = cambridge_shipping_core
+{dock_props}
+
+[Object]
+nickname = br_cam_04_PAD_ctrl_twr01
+pos = 0, 0, -1640
+rotate = 0, 0, 0
+archetype = batch_cambridge_research_pad0
+parent = br_cam_04
+
+[Object]
+nickname = br_cam_04_BTM_industrial01
+pos = 0, -302.5, -1180
+rotate = 0, 0, 0
+archetype = batch_cambridge_research_btm0
+parent = br_cam_04
+
+[Object]
+nickname = br_cam_04_TREE_industrial01
+pos = 0, 650, -1180
+rotate = 0, 0, 0
+archetype = batch_cambridge_research_tree0
+parent = br_cam_04
+
+
+
+[Object]
+nickname = br_cam_04_col_pad0_collision00
+pos = -0.235299602, 0.149988983, -1015.37085
+rotate = 0, 0, 0
+archetype = batch_cambridge_research_pad0_collision00
+parent = br_cam_04
+
+[Object]
+nickname = br_cam_04_col_pad0_collision01
+pos = -0.104476367, -1.65815699e-06, -1178.23592
+rotate = 0, 0, 0
+archetype = batch_cambridge_research_pad0_collision01
+parent = br_cam_04
+
+[Object]
+nickname = br_cam_04_col_pad0_collision02
+pos = -0.00117418307, 1.04105186, -1978.31269
+rotate = 0, 0, 0
+archetype = batch_cambridge_research_pad0_collision02
+parent = br_cam_04
+
+[Object]
+nickname = br_cam_04_col_btm0_collision00
+pos = -0.0127677917, -313.470543, -1179.99448
+rotate = 0, 0, 0
+archetype = batch_cambridge_research_btm0_collision00
+parent = br_cam_04
+
+[Object]
+nickname = br_cam_04_col_tree0_collision00
+pos = -0.178273446, 752.5, -1178.3358
+rotate = 0, 0, 0
+archetype = batch_cambridge_research_tree0_collision00
+parent = br_cam_04
+
+[Object]
+nickname = br_cam_04_col_tree0_collision01
+pos = -0.178273446, 669.640355, -1110.33134
+rotate = 0, 0, 0
+archetype = batch_cambridge_research_tree0_collision01
+parent = br_cam_04
+
+[Object]
+nickname = br_cam_04_col_tree0_collision02
+pos = 0.269512177, 364.905831, -1099.59187
+rotate = 0, 0, 0
+archetype = batch_cambridge_research_tree0_collision02
+parent = br_cam_04
+
+[Object]
+nickname = br_cam_04_col_tree0_collision03
+pos = -0.0690102398, 249.841103, -1218.5752
+rotate = 0, 0, 0
+archetype = batch_cambridge_research_tree0_collision03
+parent = br_cam_04
+
+[Object]
+nickname = br_cam_04_col_tree0_collision04
+pos = -120.725516, 250.2225, -1189.32626
+rotate = 0, 0, 0
+archetype = batch_cambridge_research_tree0_collision04
+parent = br_cam_04
+
+[Object]
+nickname = br_cam_04_col_tree0_collision05
+pos = 0.40641785, 250.155626, -1068.8032
+rotate = 0, 0, 0
+archetype = batch_cambridge_research_tree0_collision05
+parent = br_cam_04
+
+[Object]
+nickname = br_cam_04_col_tree0_collision06
+pos = 3.75816398e-07, 632.075235, -1189.67019
+rotate = 0, 0, 0
+archetype = batch_cambridge_research_tree0_collision06
+parent = br_cam_04
+
+[Object]
+nickname = br_cam_04_col_tree0_collision07
+pos = 2.45733335e-06, 616.347316, -1180
+rotate = 0, 0, 0
+archetype = batch_cambridge_research_tree0_collision07
+parent = br_cam_04
+
+'''
+
+
+class CambridgeResearchAlternative(CambridgeResearchAlternativeOriginal):
+    TEMPLATE = '''[Object]
+nickname = br_cam_04
+pos = 0, 0, 0
+rotate = 0, 90, 0
+archetype = space_police01
+{dock_props}
+
+[Object]
+nickname = br_cam_04_PAD_ctrl_twr01
+pos = 0, -405, -685
+rotate = 0, 0, 0
+archetype = batch_cambridge_e212610b_pad0
+parent = br_cam_04
+
+[Object]
+nickname = br_cam_04_PAD_hab01
+pos = 0, -450, 685
+rotate = 0, 0, 0
+archetype = batch_cambridge_e212610b_pad1
+parent = br_cam_04
+
+[Object]
+nickname = br_cam_04_PAD_airlock01
+pos = 0, -470, 0
+rotate = 90, 0, 0
+archetype = space_airlock_dummy
+parent = br_cam_04
+
+[Object]
+nickname = br_cam_04_BTM_industrial01
+pos = 0, -872.5, 0
+rotate = 0, 0, 0
+archetype = batch_cambridge_e212610b_btm0
+parent = br_cam_04
+
+
+
+[Object]
+nickname = br_cam_04_col_pad0_collision00
+pos = -0.0679779053, -428.756716, -87.4735305
+rotate = 0, 0, 0
+archetype = batch_cambridge_e212610b_pad0_collision00
+parent = br_cam_04
+
+[Object]
+nickname = br_cam_04_col_pad0_collision01
+pos = -0.00117418307, -568.958948, -798.312687
+rotate = 0, 0, 0
+archetype = batch_cambridge_e212610b_pad0_collision01
+parent = br_cam_04
+
+[Object]
+nickname = br_cam_04_col_pad1_collision00
+pos = -0.104476367, -382.642867, 266.52131
+rotate = 0, 0, 0
+archetype = batch_cambridge_e212610b_pad1_collision00
+parent = br_cam_04
+
+[Object]
+nickname = br_cam_04_col_pad1_collision01
+pos = 0.00117418301, -568.958948, 905.398528
+rotate = 0, 0, 0
+archetype = batch_cambridge_e212610b_pad1_collision01
+parent = br_cam_04
+
+[Object]
+nickname = br_cam_04_col_btm0_collision00
+pos = -0.0127677917, -883.470543, 0.00551605225
+rotate = 0, 0, 0
+archetype = batch_cambridge_e212610b_btm0_collision00
+parent = br_cam_04
+
 '''

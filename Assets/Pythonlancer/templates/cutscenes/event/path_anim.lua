@@ -7,8 +7,8 @@
     },
     {
         duration={{ duration }},
-        start_percent=0,
-        stop_percent=1,
+        start_percent={{ start_percent }},
+        stop_percent={{ stop_percent }},
         offset={
             0,
             0,

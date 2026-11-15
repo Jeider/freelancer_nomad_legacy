@@ -2,7 +2,7 @@ from templates.space_object_template import SpaceObjectTemplate
 
 
 # NEED TO REMOVE SECOND DOCK?
-class RheinlandMilitary(SpaceObjectTemplate):
+class RheinlandMilitaryOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'rh_biz_05'
     TEMPLATE = '''[Object]
 nickname = rh_biz_05
@@ -618,4 +618,93 @@ pos = 100, -350, 100
 rotate = 0, 0, 0
 archetype = space_habitat_wide
 parent = rh_biz_05
+'''
+
+
+class RheinlandMilitary(RheinlandMilitaryOriginal):
+    TEMPLATE = '''[Object]
+nickname = rh_biz_05
+pos = 0, 0, 0
+rotate = 0, 180, 0
+archetype = keln_core
+
+[Object]
+nickname = rh_biz_05_dock01
+pos = -500, 0, 0
+rotate = 0, -90, 0
+archetype = space_shipping01_front_dock
+{dock_props}
+
+[Object]
+nickname = rh_biz_05_indA01
+pos = 0, 10, 0
+rotate = 0, 0, 0
+archetype = batch_rheinland_military_structure0
+parent = rh_biz_05
+
+
+
+[Object]
+nickname = rh_biz_05_batch_rheinland_military_structure0_collision00
+pos = -0.163920897, -0.0941270601, 3.75458285e-07
+rotate = 0, 0, 0
+archetype = batch_rheinland_military_structure0_collision00
+parent = rh_biz_05
+
+[Object]
+nickname = rh_biz_05_batch_rheinland_military_structure0_collision01
+pos = 139.500092, 104.320792, -0.501350403
+rotate = 0, 0, 0
+archetype = batch_rheinland_military_structure0_collision01
+parent = rh_biz_05
+
+[Object]
+nickname = rh_biz_05_batch_rheinland_military_structure0_collision02
+pos = 0.269512177, -0.1588974, -0.501350403
+rotate = 0, 0, 0
+archetype = batch_rheinland_military_structure0_collision02
+parent = rh_biz_05
+
+[Object]
+nickname = rh_biz_05_batch_rheinland_military_structure0_collision03
+pos = 85.9025383, -0.1588974, 1.35113525
+rotate = 0, 0, 0
+archetype = batch_rheinland_military_structure0_collision03
+parent = rh_biz_05
+
+[Object]
+nickname = rh_biz_05_batch_rheinland_military_structure0_collision04
+pos = -128.965106, 7.94983634e-09, 0.772064209
+rotate = 0, 0, 0
+archetype = batch_rheinland_military_structure0_collision04
+parent = rh_biz_05
+
+[Object]
+nickname = rh_biz_05_batch_rheinland_military_structure0_collision05
+pos = -0.0679779053, 696.191691, -7.13751433e-07
+rotate = 0, 0, 0
+archetype = batch_rheinland_military_structure0_collision05
+parent = rh_biz_05
+
+[Object]
+nickname = rh_biz_05_batch_rheinland_military_structure0_collision06
+pos = -0.0679779053, -637.649987, 0.0143051147
+rotate = 0, 0, 0
+archetype = batch_rheinland_military_structure0_collision06
+parent = rh_biz_05
+
+[Object]
+nickname = rh_biz_05_batch_rheinland_military_structure0_collision07
+pos = -0.0679779053, -84.0210341, 187.044682
+rotate = 0, 0, 0
+archetype = batch_rheinland_military_structure0_collision07
+parent = rh_biz_05
+
+[Object]
+nickname = rh_biz_05_batch_rheinland_military_structure0_collision08
+pos = 0.0692892075, -149.981648, -619.934965
+rotate = 0, 0, 0
+archetype = batch_rheinland_military_structure0_collision08
+parent = rh_biz_05
+
 '''

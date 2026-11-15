@@ -7,6 +7,6 @@
     },
     {
         duration={{ duration }}, offset={0,0,0},
-        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="{{ target_part }}", target_type={{ target_type }}, flags=LOOK_AT
     }
 }

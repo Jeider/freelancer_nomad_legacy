@@ -774,7 +774,7 @@ parent = li_mnh_06
 '''
 
 
-class PirateBaseForbes(SpaceObjectTemplate):
+class PirateBaseForbesOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'li_for_04'
     TEMPLATE = '''[Object]
 nickname = li_for_04
@@ -1233,3 +1233,51 @@ archetype = space_tankl4x4
 parent = li_cal_08
 '''
 
+
+
+class PirateBaseForbes(PirateBaseForbesOriginal):
+    TEMPLATE = '''[Object]
+nickname = li_for_04
+pos = 0, 0, 0
+rotate = 90, 0, 0
+archetype = space_police02
+{dock_props}
+
+[Object]
+nickname = li_for_04_cntrl_twr01
+pos = 0, -382.5, 0
+rotate = 0, 0, 0
+archetype = batch_pirate_base_forbes_structure0
+parent = li_for_04
+
+
+
+[Object]
+nickname = li_for_04_batch_pirate_base_forbes_structure0_collision00
+pos = -0.0679779053, -200.149987, 0.0143051147
+rotate = 0, 0, 0
+archetype = batch_pirate_base_forbes_structure0_collision00
+parent = li_for_04
+
+[Object]
+nickname = li_for_04_batch_pirate_base_forbes_structure0_collision01
+pos = 19.9564896, -580.729352, 13.3402863
+rotate = 0, 0, 0
+archetype = batch_pirate_base_forbes_structure0_collision01
+parent = li_for_04
+
+[Object]
+nickname = li_for_04_batch_pirate_base_forbes_structure0_collision02
+pos = -5.20891945e-07, -375.031052, -28.1856095
+rotate = 0, 0, 0
+archetype = batch_pirate_base_forbes_structure0_collision02
+parent = li_for_04
+
+[Object]
+nickname = li_for_04_batch_pirate_base_forbes_structure0_collision03
+pos = 0.0308761597, -65.126848, 0.0446449814
+rotate = 0, 0, 0
+archetype = batch_pirate_base_forbes_structure0_collision03
+parent = li_for_04
+
+'''

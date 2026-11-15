@@ -2,7 +2,7 @@ from templates.space_object_template import SpaceObjectTemplate
 
 
 # NEED TO REVISIT THIS BASE
-class ValensiaOutside(SpaceObjectTemplate):
+class ValensiaOutsideOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'co_mad_02'
     TEMPLATE = '''[Object]
 nickname = co_mad_02
@@ -2974,7 +2974,7 @@ parent = co_mad_02
 '''
 
 
-class ValensiaOutsideTwo(SpaceObjectTemplate):
+class ValensiaOutsideTwoOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'co_mad_02'
     TEMPLATE = '''[Object]
 nickname = co_mad_02
@@ -5089,4 +5089,351 @@ pos = -498, -60, -686
 rotate = 0, -54, 0
 archetype = space_industrial02a
 parent = co_mad_02
+'''
+
+
+class ValensiaOutside(ValensiaOutsideOriginal):
+    TEMPLATE = '''[Object]
+nickname = co_mad_02
+pos = 0, 0, 0
+archetype = valensia_core
+ids_name = 203811
+ids_info = 065718
+reputation = co_grp
+base = co_val_01_base
+
+[Object]
+nickname = co_mad_02_core
+pos = 0, 0, 0
+rotate = 0, 55, 0
+archetype = sw_center_750
+parent = co_mad_02
+
+[Object]
+nickname = co_mad_ROOT_LEFT
+pos = 0, 0, 800
+rotate = 0, 0, 0
+archetype = sw_center_450
+parent = co_mad_02
+
+[Object]
+nickname = co_mad_ROOT_RIGHT
+pos = 0, 0, -800
+rotate = 0, 0, 0
+archetype = sw_center_450
+parent = co_mad_02
+
+[;Object]
+nickname = co_mad_ROOT_FRONT
+pos = 350, 0, 0
+rotate = 0, 0, 0
+archetype = sw_center_450
+parent = co_mad_02
+
+[;Object]
+nickname = co_mad_ROOT_BACK
+pos = -350, 0, 0
+rotate = 0, 0, 0
+archetype = sw_center_450
+parent = co_mad_02
+
+
+[Object]
+nickname = co_mad_cntrl_twr01
+pos = 0, 0, 1250
+rotate = -90, 0, 0
+archetype = space_control_tower
+parent = co_mad_02
+
+[Object]
+nickname = co_mad_cntrl_twr02
+pos = 0, 0, -1250
+rotate = 90, 0, 0
+archetype = space_control_tower
+parent = co_mad_02
+
+[Object]
+nickname = co_mad_cntrl_twr03
+pos = 800, 0, 0
+rotate = 0, 0, 90
+archetype = space_control_tower
+parent = co_mad_02
+
+[Object]
+nickname = co_mad_cntrl_twr04
+pos = -800, 0, 0
+rotate = 0, 0, -90
+archetype = space_control_tower
+parent = co_mad_02
+
+[Object]
+nickname = co_mad_airlock01
+pos = 0, 0, 1370
+rotate = 0, 180, 0
+archetype = space_airlock
+jump_effect = jump_effect_airlock
+goto = co_val, co_val_airlock01, gate_tunnel_airlock
+ids_name = 203812
+ids_info = 065739
+reputation = co_grp
+behavior = NOTHING
+
+[Object]
+nickname = co_mad_airlock02
+pos = 0, 0, -1370
+rotate = 0, 0, 0
+archetype = space_airlock
+jump_effect = jump_effect_airlock
+goto = co_val, co_val_airlock02, gate_tunnel_airlock
+ids_name = 203812
+ids_info = 065739
+reputation = co_grp
+behavior = NOTHING
+
+[Object]
+nickname = co_mad_airlock03
+pos = 920, 0, 0
+rotate = 0, -90, 0
+archetype = space_airlock
+jump_effect = jump_effect_airlock
+goto = co_val, co_val_airlock03, gate_tunnel_airlock
+ids_name = 203812
+ids_info = 065739
+reputation = co_grp
+behavior = NOTHING
+
+[Object]
+nickname = co_mad_airlock04
+pos = -920, 0, 0
+rotate = 0, 90, 0
+archetype = space_airlock
+jump_effect = jump_effect_airlock
+goto = co_val, co_val_airlock04, gate_tunnel_airlock
+ids_name = 203812
+ids_info = 065739
+reputation = co_grp
+behavior = NOTHING
+
+[Object]
+nickname = co_mad_TOP_cntrl_twr01
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = vlm_v1_top
+parent = co_mad_02
+
+[Object]
+nickname = co_mad_BOTTOM_cntrl_twr01
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = vlm_v1_bottom
+parent = co_mad_02
+
+[Object]
+nickname = co_mad_industrial_L1_A01
+pos = 0, 0, 800
+rotate = 0, 0, 0
+archetype = vlm_v1_l1
+parent = co_mad_02
+
+[Object]
+nickname = co_mad_industrial_L2_A01
+pos = 0, 0, -800
+rotate = 0, 0, 0
+archetype = vlm_v1_l2
+parent = co_mad_02
+
+[Object]
+nickname = co_mad_industrial_L3_A01
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = vlm_v1_l3
+parent = co_mad_02
+
+[Object]
+nickname = co_mad_industrial_L4_A01
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = vlm_v1_l4
+parent = co_mad_02
+
+[Object]
+nickname = co_mad_industrial_L7_A02
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = vlm_v1_waist
+parent = co_mad_02
+
+'''
+
+
+class ValensiaOutsideTwo(ValensiaOutsideTwoOriginal):
+    TEMPLATE = '''[Object]
+nickname = co_mad_02
+ids_name = 203811
+pos = 0, 0, 0
+archetype = valensia_core
+ids_info = 065718
+base = co_val_01_base
+reputation = co_grp
+
+[Object]
+nickname = co_mad_02_core
+pos = 0, 0, 0
+rotate = 0, 55, 0
+archetype = sw_center_750
+parent = co_mad_02
+
+[Object]
+nickname = co_mad_ROOT_LEFT
+pos = 0, 0, 800
+rotate = 0, 0, 0
+archetype = sw_center_480
+parent = co_mad_02
+
+[Object]
+nickname = co_mad_ROOT_RIGHT
+pos = 0, 0, -800
+rotate = 0, 0, 0
+archetype = sw_center_480
+parent = co_mad_02
+
+[Object]
+nickname = co_mad_ROOT_FRONT
+pos = 400, 0, 0
+rotate = 0, 0, 0
+archetype = sw_center_480
+parent = co_mad_02
+
+[Object]
+nickname = co_mad_ROOT_BACK
+pos = -400, 0, 0
+rotate = 0, 0, 0
+archetype = sw_center_480
+parent = co_mad_02
+
+[Object]
+nickname = co_mad_cntrl_twr01
+pos = 0, 0, 1270
+rotate = -90, 0, 0
+archetype = space_control_tower
+parent = co_mad_02
+
+[Object]
+nickname = co_mad_cntrl_twr02
+pos = 0, 0, -1270
+rotate = 90, 0, 0
+archetype = space_control_tower
+parent = co_mad_02
+
+[Object]
+nickname = co_mad_cntrl_twr03
+pos = 860, 0, 0
+rotate = 0, 0, 90
+archetype = space_control_tower
+parent = co_mad_02
+
+[Object]
+nickname = co_mad_cntrl_twr04
+pos = -860, 0, 0
+rotate = 0, 0, -90
+archetype = space_control_tower
+parent = co_mad_02
+
+[Object]
+nickname = co_mad_airlock01
+ids_name = 203812
+pos = 0, 0, 1370
+rotate = 0, 180, 0
+archetype = space_airlock
+jump_effect = jump_effect_airlock
+ids_info = 065739
+reputation = co_grp
+behavior = NOTHING
+goto = co_val, co_val_airlock01, gate_tunnel_airlock
+
+[Object]
+nickname = co_mad_airlock02
+ids_name = 203812
+pos = 0, 0, -1370
+rotate = 0, 0, 0
+archetype = space_airlock
+jump_effect = jump_effect_airlock
+ids_info = 065739
+reputation = co_grp
+behavior = NOTHING
+goto = co_val, co_val_airlock02, gate_tunnel_airlock
+
+[Object]
+nickname = co_mad_airlock03
+ids_name = 203812
+pos = 950, 0, 0
+rotate = 0, -90, 0
+archetype = space_airlock
+jump_effect = jump_effect_airlock
+ids_info = 065739
+reputation = co_grp
+behavior = NOTHING
+goto = co_val, co_val_airlock03, gate_tunnel_airlock
+
+[Object]
+nickname = co_mad_airlock04
+ids_name = 203812
+pos = -950, 0, 0
+rotate = 0, 90, 0
+archetype = space_airlock
+jump_effect = jump_effect_airlock
+ids_info = 065739
+reputation = co_grp
+behavior = NOTHING
+goto = co_val, co_val_airlock04, gate_tunnel_airlock
+
+[Object]
+nickname = co_mad_TOP_cntrl_twr01
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = vlm_v2_top
+parent = co_mad_02
+
+[Object]
+nickname = co_mad_BOTTOM_cntrl_twr01
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = vlm_v2_bottom
+parent = co_mad_02
+
+[Object]
+nickname = co_mad_industrial_L1_B01
+pos = 0, 0, 800
+rotate = 0, 0, 0
+archetype = vlm_v2_l1
+parent = co_mad_02
+
+[Object]
+nickname = co_mad_industrial_L2_B01
+pos = 0, 0, -800
+rotate = 0, 0, 0
+archetype = vlm_v2_l2
+parent = co_mad_02
+
+[Object]
+nickname = co_mad_industrial_L3_B01
+pos = 400, 0, 0
+rotate = 0, 0, 0
+archetype = vlm_v2_l3
+parent = co_mad_02
+
+[Object]
+nickname = co_mad_industrial_L4_B01
+pos = -400, 0, 0
+rotate = 0, 0, 0
+archetype = vlm_v2_l4
+parent = co_mad_02
+
+[Object]
+nickname = co_mad_industrial_L7_A02
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = vlm_v2_waist
+parent = co_mad_02
+
 '''

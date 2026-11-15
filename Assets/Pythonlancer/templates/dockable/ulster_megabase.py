@@ -1,7 +1,7 @@
 from templates.space_object_template import SpaceObjectTemplate
 
 
-class UlsterMegabase(SpaceObjectTemplate):
+class UlsterMegabaseOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'br_uls_02'
     TEMPLATE = '''[Object]
 nickname = br_uls_02
@@ -1723,7 +1723,7 @@ parent = br_uls_02
 '''
 
 
-class UlsterShortBase(SpaceObjectTemplate):
+class UlsterShortBaseOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'br_uls_02'
     TEMPLATE = '''[Object]
 nickname = br_uls_02
@@ -2381,4 +2381,252 @@ pos = -110, -200, -195
 rotate = 120, 0, 90
 archetype = space_habitat_tall_low_detail
 parent = br_uls_02
+'''
+
+
+class UlsterMegabase(UlsterMegabaseOriginal):
+    TEMPLATE = '''[Object]
+nickname = br_uls_02
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = ulster_largestation_core
+{root_props}
+
+[Object]
+nickname = br_uls_02_dock
+pos = 115, 0, 300
+rotate = 0, 0, 0
+archetype = space_shipping01_front_dock
+{dock_props}
+
+[Object]
+nickname = br_uls_02_DOCK_ind01
+pos = 0, -15, -100
+rotate = 0, 0, 0
+archetype = ulster_megabase_dock
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_core
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = sw_center_200
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_PANEL_LEFT_panels01
+pos = -1235, 0, 0
+rotate = 0, 0, 0
+archetype = ulster_megabase_panel_left
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_PANEL_RIGHT_panels01
+pos = 1235, 0, 0
+rotate = 0, 0, 0
+archetype = ulster_megabase_panel_right
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_CORE_tower01
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = ulster_megabase_core
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_TOPLINE_airlock01
+pos = 0, 635, 0
+rotate = 0, 0, 0
+archetype = ulster_megabase_topline
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_BOTTOMLINE_airlock01
+pos = 0, -635, 0
+rotate = 0, 0, 0
+archetype = ulster_megabase_bottomline
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_TOP_indA01
+pos = 0, 1207.5, 0
+rotate = 0, 0, 0
+archetype = ulster_megabase_top
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_BOTTOM_indA01
+pos = 0, -1207.5, 0
+rotate = 0, 0, 0
+archetype = ulster_megabase_bottom
+parent = br_uls_02
+
+'''
+
+
+class UlsterShortBase(UlsterShortBaseOriginal):
+    TEMPLATE = '''[Object]
+nickname = br_uls_02
+pos = 0, 300, 0
+rotate = 0, 0,0
+archetype = space_police01
+{dock_props}
+
+[Object]
+nickname = br_uls_02_TOPLINE_airlock02
+pos = 0, -830, 0
+rotate = 0, 0, 0
+archetype = ulster_shortsplit_topline
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_TOPLINE_tower01
+pos = 0, -400, 0
+rotate = 0, 15, 0
+archetype = space_control_tower_lowdetail
+loadout = bx_energy_industrials
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_TOPLINE_tower03
+pos = 0, -880, 0
+rotate = 0, 15, 0
+archetype = space_medium_control_tower_lowdetail
+loadout = bx_energy_industrials
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_TOP_indA01
+pos = 0, -250, 0
+rotate = 0, 0, 0
+archetype = ulster_shortsplit_top
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_ulster_shortsplit_topline_collision00
+pos = -1.07643e-09, -870.637, 1.0761e-09
+rotate = 0, 0, 0
+archetype = ulster_shortsplit_topline_collision00
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_ulster_shortsplit_topline_collision01
+pos = -0.0593888, -667.342, 0.0408966
+rotate = 0, 0, 0
+archetype = ulster_shortsplit_topline_collision01
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_ulster_shortsplit_top_collision00
+pos = 5.66435e-06, -400, -6.30939e-09
+rotate = 0, 0, 0
+archetype = ulster_shortsplit_top_collision00
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_ulster_shortsplit_top_collision01
+pos = 3.2213e-06, -400, -149.057
+rotate = 0, 0, 0
+archetype = ulster_shortsplit_top_collision01
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_ulster_shortsplit_top_collision02
+pos = 183.398, -599.778, 0.0127678
+rotate = 0, 0, 0
+archetype = ulster_shortsplit_top_collision02
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_ulster_shortsplit_top_collision03
+pos = -80.0775, -599.778, 169.902
+rotate = 0, 0, 0
+archetype = ulster_shortsplit_top_collision03
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_ulster_shortsplit_top_collision04
+pos = 67.9645, -599.778, -67.7922
+rotate = 0, 0, 0
+archetype = ulster_shortsplit_top_collision04
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_ulster_shortsplit_top_collision05
+pos = 0.657802, -599.778, 0.0603137
+rotate = 0, 0, 0
+archetype = ulster_shortsplit_top_collision05
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_ulster_shortsplit_top_collision06
+pos = 183.398, -199.778, 0.0127678
+rotate = 0, 0, 0
+archetype = ulster_shortsplit_top_collision06
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_ulster_shortsplit_top_collision07
+pos = -80.0775, -199.778, 169.902
+rotate = 0, 0, 0
+archetype = ulster_shortsplit_top_collision07
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_ulster_shortsplit_top_collision08
+pos = 67.9645, -199.778, -67.7922
+rotate = 0, 0, 0
+archetype = ulster_shortsplit_top_collision08
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_ulster_shortsplit_top_collision09
+pos = 1.12827, -277.8, 4.63275
+rotate = 0, 0, 0
+archetype = ulster_shortsplit_top_collision09
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_ulster_shortsplit_top_collision10
+pos = -1.15152e-08, -399.951, 2.59771e-07
+rotate = 0, 0, 0
+archetype = ulster_shortsplit_top_collision10
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_ulster_shortsplit_top_collision11
+pos = -0.21311, -399.951, 513.156
+rotate = 0, 0, 0
+archetype = ulster_shortsplit_top_collision11
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_ulster_shortsplit_top_collision12
+pos = 0.21311, -399.951, -207.121
+rotate = 0, 0, 0
+archetype = ulster_shortsplit_top_collision12
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_ulster_shortsplit_top_collision13
+pos = 8.94687, -290.072, -86.6103
+rotate = 0, 0, 0
+archetype = ulster_shortsplit_top_collision13
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_ulster_shortsplit_top_collision14
+pos = -0.0671797, -53.7075, 0.00915527
+rotate = 0, 0, 0
+archetype = ulster_shortsplit_top_collision14
+parent = br_uls_02
+
+[Object]
+nickname = br_uls_02_ulster_shortsplit_top_collision15
+pos = -3.46168e-07, -129.335, 4.00162e-07
+rotate = 0, 0, 0
+archetype = ulster_shortsplit_top_collision15
+parent = br_uls_02
+
 '''

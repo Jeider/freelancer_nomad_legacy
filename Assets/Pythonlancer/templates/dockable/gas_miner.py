@@ -287,7 +287,7 @@ parent = tau23_01
 '''
 
 
-class RheinlandCivilianGasMiner(SpaceObjectTemplate):
+class RheinlandCivilianGasMinerOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'sig13_01'
     TEMPLATE = '''[Object]
 nickname = sig13_01
@@ -815,4 +815,91 @@ rotate = 4, 90, 0
 archetype = gas_miner_small_disc
 ;spin = -0.2, 0, 0
 parent = co_cad_04
+'''
+
+
+class RheinlandCivilianGasMiner(RheinlandCivilianGasMinerOriginal):
+    TEMPLATE = '''[Object]
+nickname = sig13_01
+pos = 0, 0, 0
+rotate = 0, 90, 0
+archetype = space_police01_gas_station
+{dock_props}
+
+[Object]
+nickname = sig13_01_gas_miner01
+pos = 0, -465, -400
+rotate = 0, 90, 0
+archetype = gas_miner_nodock
+loadout = gasminer_original_rh
+parent = sig13_01
+
+[Object]
+nickname = sig13_01_gas_miner02
+pos = 400, -465, 0
+rotate = 0, 0, 0
+archetype = gas_miner_nodock
+loadout = gasminer_original_rh
+parent = sig13_01
+
+[Object]
+nickname = sig13_01_gas_miner03
+pos = 0, -465, 400
+rotate = 0, -90, 0
+archetype = gas_miner_nodock
+loadout = gasminer_original_rh
+parent = sig13_01
+
+[Object]
+nickname = sig13_01_gas_miner04
+pos = -400, -465, 0
+rotate = 0, 180, 0
+archetype = gas_miner_nodock
+loadout = gasminer_original_rh
+parent = sig13_01
+
+[Object]
+nickname = sig13_01_ind01
+pos = 0, -452.5, 0
+rotate = 0, 0, 0
+archetype = batch_rheinland_fce7253c_structure0
+parent = sig13_01
+
+
+
+[Object]
+nickname = sig13_01_col_structure0_collision00
+pos = -0.0127677917, -466.764076, 0.222500242
+rotate = 0, 0, 0
+archetype = batch_rheinland_fce7253c_structure0_collision00
+parent = sig13_01
+
+[Object]
+nickname = sig13_01_col_structure0_collision01
+pos = -113.925204, -344.52053, 0.140281748
+rotate = 0, 0, 0
+archetype = batch_rheinland_fce7253c_structure0_collision01
+parent = sig13_01
+
+[Object]
+nickname = sig13_01_col_structure0_collision02
+pos = -0.043510437, -464.999999, -4.56800933e-07
+rotate = 0, 0, 0
+archetype = batch_rheinland_fce7253c_structure0_collision02
+parent = sig13_01
+
+[Object]
+nickname = sig13_01_col_structure0_collision03
+pos = 0.269512177, -464.49865, -0.158897361
+rotate = 0, 0, 0
+archetype = batch_rheinland_fce7253c_structure0_collision03
+parent = sig13_01
+
+[Object]
+nickname = sig13_01_col_structure0_collision04
+pos = -2.82416266e-07, -442.075044, 2.82416266e-07
+rotate = 0, 0, 0
+archetype = batch_rheinland_fce7253c_structure0_collision04
+parent = sig13_01
+
 '''

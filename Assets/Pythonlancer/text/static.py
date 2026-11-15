@@ -412,6 +412,22 @@ class Static:
 
 STATIC_NAMES = [
     # Port UI: HUD and preferences. MS(Russian, English); keep numeric IDs stable.
+    Static(238413, MS('Выкл всё', 'All off')),  # GraphicsAllOff
+
+    # Port UI: HUD and preferences. MS(Russian, English); keep numeric IDs stable.
+    Static(238411, MS('Стандартное', 'Standard')),  # GraphicsStandard
+    Static(238412, MS('Дополнительно', 'Additional')),  # GraphicsAdditional
+    Static(238406, MS('Улучшенная графика', 'Enhanced graphics')),  # GraphicsImageTab
+    Static(238407, MS('Стандартная графика', 'Standard graphics')),  # GraphicsDisplayTab
+
+    # Port UI: HUD and preferences. MS(Russian, English); keep numeric IDs stable.
+    Static(238410, MS('Качество интерьеров', 'Interior quality')),  # GraphicsInteriors
+
+    # Port UI: HUD and preferences. MS(Russian, English); keep numeric IDs stable.
+    Static(238408, MS('Свет от оружия', 'Weapon lights')),  # GraphicsWeaponLights
+    Static(238409, MS('Качество аномалий', 'Anomaly quality')),  # GraphicsAnomalies
+
+    # Port UI: HUD and preferences. MS(Russian, English); keep numeric IDs stable.
     Static(238400, MS('Цветокоррекция', 'Color grading')),  # ColorGradeLabel
     Static(238401, MS('Естественный', 'Natural')),  # ColorGradeNatural
     Static(238402, MS('Тёплый', 'Warm')),  # ColorGradeWarm
@@ -972,9 +988,9 @@ STATIC_NAMES = [
     Static(238249, MS('Не удалось сохранить настройки', 'Could not save settings')),  # SettingsSaveFailed
     Static(238250, MS('Недоступно', 'Unavailable')),  # Unavailable
     Static(238251, MS('Тени', 'Shadows')),  # GraphicsShadows
-    Static(238252, MS('Рельеф поверхностей', 'Surface relief')),  # GraphicsSurfaceRelief
-    Static(238253, MS('Блики', 'Highlights')),  # GraphicsHighlights
-    Static(238254, MS('Отражения', 'Reflections')),  # GraphicsReflections
+    Static(238252, MS('Рельеф в космосе', 'Space surface relief')),  # GraphicsSurfaceRelief
+    Static(238253, MS('Блики в космосе', 'Space highlights')),  # GraphicsHighlights
+    Static(238254, MS('Отражения в космосе', 'Space reflections')),  # GraphicsReflections
     Static(238255, MS('Анизотропная фильтрация', 'Anisotropic filtering')),  # GraphicsAnisotropy
     Static(238256, MS('Сглаживание', 'Antialiasing')),  # GraphicsAntialiasing
     Static(238257, MS('Объёмные туманности', 'Volumetric nebulae')),  # GraphicsNebulae

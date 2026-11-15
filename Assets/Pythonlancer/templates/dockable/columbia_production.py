@@ -1,7 +1,7 @@
 from templates.space_object_template import SpaceObjectTemplate
 
 
-class ColumbiaProduction(SpaceObjectTemplate):
+class ColumbiaProductionOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'li_col_03'
     TEMPLATE = '''[Object]
 nickname = li_col_03
@@ -518,4 +518,137 @@ pos = 0, 185, 170
 rotate = 0, 0, 0
 archetype = space_solar_pnl
 parent = li_col_03
+'''
+
+
+class ColumbiaProduction(ColumbiaProductionOriginal):
+    TEMPLATE = '''[Object]
+nickname = li_col_03
+pos = 0, 0, 0
+rotate = 0, 0, 0
+archetype = space_police02
+{dock_props}
+
+[Object]
+nickname = li_col_03_airlock01
+pos = 0, 110, 580
+rotate = 0, 0, 0
+archetype = batch_columbia_production_structure0
+parent = li_col_03
+
+[Object]
+nickname = li_col_03_factoryA01
+pos = -100, 110, 345
+rotate = 0, 0, 0
+archetype = space_large_production
+loadout = mplatform_module_red
+parent = li_col_03
+
+[Object]
+nickname = li_col_03_factoryA02
+pos = -200, -15, 345
+rotate = 0, 0, 0
+archetype = space_large_production
+loadout = mplatform_module_red
+parent = li_col_03
+
+[Object]
+nickname = li_col_03_factoryA03
+pos = 100, 110, 345
+rotate = 0, 0, 0
+archetype = space_large_production
+loadout = mplatform_module_red
+parent = li_col_03
+
+[Object]
+nickname = li_col_03_factoryA04
+pos = 200, -15, 345
+rotate = 0, 0, 0
+archetype = space_large_production
+loadout = mplatform_module_red
+parent = li_col_03
+
+[Object]
+nickname = li_col_03_factoryB01
+pos = -100, 110, 775
+rotate = 0, 180, 0
+archetype = space_large_production
+loadout = mplatform_module_red
+parent = li_col_03
+
+[Object]
+nickname = li_col_03_factoryB02
+pos = -200, -15, 775
+rotate = 0, 180, 0
+archetype = space_large_production
+loadout = mplatform_module_red
+parent = li_col_03
+
+[Object]
+nickname = li_col_03_factoryB03
+pos = 100, 110, 775
+rotate = 0, 180, 0
+archetype = space_large_production
+loadout = mplatform_module_red
+parent = li_col_03
+
+[Object]
+nickname = li_col_03_factoryB04
+pos = 200, -15, 775
+rotate = 0, 180, 0
+archetype = space_large_production
+loadout = mplatform_module_red
+parent = li_col_03
+
+
+
+[Object]
+nickname = li_col_03_batch_columbia_production_structure0_collision00
+pos = 4.14702868e-06, 1.90734863e-05, 615.770041
+rotate = 0, 0, 0
+archetype = batch_columbia_production_structure0_collision00
+parent = li_col_03
+
+[Object]
+nickname = li_col_03_batch_columbia_production_structure0_collision01
+pos = -0.0679779053, 64.9856942, 785
+rotate = 0, 0, 0
+archetype = batch_columbia_production_structure0_collision01
+parent = li_col_03
+
+[Object]
+nickname = li_col_03_batch_columbia_production_structure0_collision02
+pos = 19.6742134, 135.387146, 324.705443
+rotate = 0, 0, 0
+archetype = batch_columbia_production_structure0_collision02
+parent = li_col_03
+
+[Object]
+nickname = li_col_03_batch_columbia_production_structure0_collision03
+pos = -50.0127678, 31.7224998, 341.764076
+rotate = 0, 0, 0
+archetype = batch_columbia_production_structure0_collision03
+parent = li_col_03
+
+[Object]
+nickname = li_col_03_batch_columbia_production_structure0_collision04
+pos = -0.182491302, 221.166191, 540.605572
+rotate = 0, 0, 0
+archetype = batch_columbia_production_structure0_collision04
+parent = li_col_03
+
+[Object]
+nickname = li_col_03_batch_columbia_production_structure0_collision05
+pos = -0.0127677917, 24.7348461, 781.764076
+rotate = 0, 0, 0
+archetype = batch_columbia_production_structure0_collision05
+parent = li_col_03
+
+[Object]
+nickname = li_col_03_batch_columbia_production_structure0_collision06
+pos = -0.182491302, 221.166191, 780
+rotate = 0, 0, 0
+archetype = batch_columbia_production_structure0_collision06
+parent = li_col_03
+
 '''

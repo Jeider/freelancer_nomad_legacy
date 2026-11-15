@@ -166,16 +166,23 @@ class VoiceStudioClone(object):
         return getattr(actor, 'VOICE_DELIVERY', None)
 
     @classmethod
+    def _emotion_of(cls, delivery):
+        if delivery is None:
+            return None
+        if delivery.emo_vector:
+            return 'vector'
+        if delivery.emo_text:
+            return 'text'
+        return None
+
+    @classmethod
     def _warn_delivery(cls, delivery):
-        if delivery is None or delivery.instruct or not delivery.emo_text:
+        if cls._emotion_of(delivery) is None or VOICESTUDIO_MODEL == 'indextts2':
             return
         if delivery.code in cls._warned:
             return
         cls._warned.add(delivery.code)
-        cls._log(
-            'delivery %s is reserved; omnivoice ignores it and clones the reference as-is'
-            % delivery.code
-        )
+        cls._log('delivery %s -> indextts2' % delivery.code)
 
     @classmethod
     def _speed_of(cls, actor, speed, delivery):
@@ -188,13 +195,24 @@ class VoiceStudioClone(object):
         return max(0.25, min(float(speed), 4.0))
 
     @classmethod
-    def generate_voice_bytes(cls, actor, text, source_lang, speech_lang=None, delivery=None, speed=None, source_name=None, denoise=True, default_actor=None):
+    def _denoise_of(cls, actor, denoise):
+        if denoise is not None:
+            return denoise
+        if actor is not None and hasattr(actor, 'get_denoise'):
+            return actor.get_denoise()
+        if actor is not None and hasattr(actor, 'DENOISE'):
+            return actor.DENOISE
+        return True
+
+    @classmethod
+    def generate_voice_bytes(cls, actor, text, source_lang, speech_lang=None, delivery=None, speed=None, source_name=None, denoise=None, default_actor=None):
         if not text:
             raise Exception('text is mandatory')
         source_name = cls.source_name_of(actor, source_name)
         source_name, source = cls.resolve_source(source_name, source_lang, default_actor)
         speech_lang = speech_lang or source_lang
         delivery = cls._delivery_of(actor, delivery)
+        denoise = cls._denoise_of(actor, denoise)
         cls._warn_delivery(delivery)
 
         body = {
@@ -209,21 +227,45 @@ class VoiceStudioClone(object):
         }
         if delivery is not None and delivery.instruct:
             body['instruct'] = delivery.instruct
-        if delivery is not None and delivery.emo_text:
-            body['description'] = delivery.emo_text
 
         with cls._client() as client:
-            body['voice'] = cls._profile_id(client, source_name, source_lang, source)
+            profile_id = cls._profile_id(client, source_name, source_lang, source)
             preview = text if len(text) <= 80 else text[:77] + '...'
-            cls._log('speech voice=%s lang=%s speed=%s denoise=%s instruct=%s text=%r' % (
-                body['voice'], body['language'], body['speed'], body['denoise'], body.get('instruct'), preview,
-            ))
-            response = cls._request(client, 'POST', '/v1/audio/speech', json=body)
+            if cls._emotion_of(delivery):
+                response = cls._index_speech(client, body, profile_id, delivery, preview)
+            else:
+                body['voice'] = profile_id
+                cls._log('speech voice=%s lang=%s speed=%s denoise=%s instruct=%s text=%r' % (
+                    body['voice'], body['language'], body['speed'], body['denoise'], body.get('instruct'), preview,
+                ))
+                response = cls._request(client, 'POST', '/v1/audio/speech', json=body)
         if response.status_code != 200:
             raise Exception(
                 'VoiceStudio speech failed (%s): %s' % (response.status_code, response.text)
             )
         return response.content
+
+    @classmethod
+    def _index_speech(cls, client, body, profile_id, delivery, preview):
+        form = {
+            'text': body['input'],
+            'language': body['language'],
+            'speed': str(body['speed']),
+            'denoise': 'true' if body['denoise'] else 'false',
+            'profile_id': profile_id,
+            'engine': 'indextts2',
+            'num_step': str(body['num_step']),
+        }
+        if delivery.instruct:
+            form['instruct'] = delivery.instruct
+        if delivery.emo_vector:
+            form['emo_vector'] = json.dumps(list(delivery.emo_vector))
+        else:
+            form['emo_text'] = delivery.emo_text
+            if delivery.emo_alpha is not None:
+                form['emo_alpha'] = str(delivery.emo_alpha)
+        cls._log('index emotion=%s text=%r' % (form.get('emo_vector') or form.get('emo_text'), preview))
+        return cls._request(client, 'POST', '/generate', data=form)
 
     @staticmethod
     def output_path(file_destination):
@@ -301,7 +343,7 @@ class VoiceStudioClone(object):
         )
 
     @classmethod
-    def generate_sound(cls, actor, text, file_destination, source_name=None, source_lang='ru', speech_lang=None, delivery=None, speed=None, denoise=True, trim_lead=False):
+    def generate_sound(cls, actor, text, file_destination, source_name=None, source_lang='ru', speech_lang=None, delivery=None, speed=None, denoise=None, trim_lead=False):
         return cls._write(
             cls.generate_voice_bytes(
                 actor=actor,

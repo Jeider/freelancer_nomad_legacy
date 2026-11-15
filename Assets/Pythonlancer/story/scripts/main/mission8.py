@@ -1,3 +1,4 @@
+from story.cutscenes.story_scenes import m08_offer, m08_offer_accept, m08_offer_decision, m08_osiris
 from story import script
 from audio.sound import VoiceLine
 from story.actors import Trent, Hatcher, Darcy, Tilton, Brighton, CruiserCaptain, RedLeader, Kaitlyn, King, MajorScrew, Mandrake
@@ -9,10 +10,16 @@ class Msn8(object):
 
 
 class Msn8Offer(Msn8, script.CutsceneProps):
+    THORN_DECISION_CLASS = m08_offer_decision.ReconstructedScene
+    THORN_ACCEPT_CLASS = m08_offer_accept.ReconstructedScene
+    THORN_CLASS = m08_offer.ReconstructedScene
     ALIAS = 'offer'
     TITLE = 'Предложение'
     DESCRIPTION = ''
     VOICE_LINES = [
+        VoiceLine(10, Darcy, ru="Привет. Мы сейчас пройдем в одну комнату, в которой будет пара очень больших шишек. ", en="Hi. We're about to head into a room with a couple of very important people."),
+        VoiceLine(20, Darcy, ru="Очень прошу, постарайся вести себя посдержаннее.", en="Please, try to be on your best behavior."),
+        VoiceLine(30, Trent, ru="Ничего не понял, но постараюсь.", en="I have no idea what's going on, but I'll try."),
         VoiceLine(40, Brighton, ru="А это мисс Дерси, наша краса и надежда на светлое будущее.", en="And this is Miss Darcy, our beauty and our hope for a brighter future."),
         VoiceLine(50, Kaitlyn, ru="А это, если я все правильно поняла, эксперт по Ордену, о котором мне столько рассказывали.", en="And this, if I've understood correctly, is the Order expert I've heard so much about."),
         VoiceLine(60, Darcy, ru="Да, это мистер Трент. Трент, это адмирал Брайтон и принцесса Кейтлин.", en="Yes, this is Mister Trent. Trent, this is Admiral Brighton and Princess Kaitlyn."),
@@ -65,11 +72,12 @@ class Msn8Offer(Msn8, script.CutsceneProps):
 
 
 class Msn8Osiris(Msn8, script.CutsceneProps):
+    THORN_CLASS = m08_osiris.ReconstructedScene
     ALIAS = 'osiris'
     TITLE = 'Осирис'
     DESCRIPTION = ''
     VOICE_LINES = [
-        VoiceLine(10, Hatcher, ru="Майо... эээ... Простите, генерал Кинг, майор Скрю, Трент доставлен.", en="Majo... uh... Sorry, General King, Major Screw, Trent has been delivered."),
+        VoiceLine(10, Hatcher, ru="Майо... эээ... Простите, генерал Кинг, майор Скрю, Трент доставлен.", en="Major... uh... Sorry, General King, Major Screw, Trent has been delivered."),
         VoiceLine(20, King, ru="Спасибо, мисс Хетчер.", en="Thank you, Miss Hatcher."),
         VoiceLine(30, King, ru="Мистер Трент, я понимаю, что у вас выдались тяжелые... гхм... несколько дней...", en="Mister Trent, I understand you've had a hard... ahem... few days..."),
         VoiceLine(40, Trent, ru="Недель...", en="Weeks..."),

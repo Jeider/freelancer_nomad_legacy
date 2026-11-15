@@ -79,8 +79,6 @@ class LancerCore:
 
         self.population.post_process_population()  # finalize population after universe is ready
 
-        story = False
-
         self.script = ScriptManager(core=self, ids=self.ids.script)
 
         self.story = StoryManager(self) if story else None

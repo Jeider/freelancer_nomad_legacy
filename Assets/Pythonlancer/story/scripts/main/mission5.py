@@ -1,3 +1,4 @@
+from story.cutscenes.story_scenes import m05_detroit, m05_equip, m05_offer, m05_offer_accept, m05_offer_decision, m05_piratebar
 from story import script
 from audio.sound import VoiceLine
 from story.actors import (
@@ -11,6 +12,9 @@ class Msn5(object):
 
 
 class Msn5Offer(Msn5, script.CutsceneProps):
+    THORN_DECISION_CLASS = m05_offer_decision.ReconstructedScene
+    THORN_ACCEPT_CLASS = m05_offer_accept.ReconstructedScene
+    THORN_CLASS = m05_offer.ReconstructedScene
     ALIAS = 'offer'
     TITLE = 'Предложение'
     DESCRIPTION = ''
@@ -40,6 +44,7 @@ class Msn5Offer(Msn5, script.CutsceneProps):
 
 
 class Msn5Piratebar(Msn5, script.CutsceneProps):
+    THORN_CLASS = m05_piratebar.ReconstructedScene
     ALIAS = 'piratebar'
     TITLE = 'Пиратская база'
     DESCRIPTION = ''
@@ -63,6 +68,7 @@ class Msn5Piratebar(Msn5, script.CutsceneProps):
 
 
 class Msn5Detroit(Msn5, script.CutsceneProps):
+    THORN_CLASS = m05_detroit.ReconstructedScene
     ALIAS = 'detroit'
     TITLE = 'Детроит'
     DESCRIPTION = ''
@@ -84,6 +90,7 @@ class Msn5Detroit(Msn5, script.CutsceneProps):
 
 
 class Msn5Equip(Msn5, script.CutsceneProps):
+    THORN_CLASS = m05_equip.ReconstructedScene
     ALIAS = 'equip'
     TITLE = 'Вознаграждение'
     DESCRIPTION = ''
@@ -102,7 +109,7 @@ class Msn5Equip(Msn5, script.CutsceneProps):
         VoiceLine(80, Hatcher, ru="Ну... У Тилтона стали появляться союзники. Наши силы поубавились... поэтому нам нужна ваша помощь.", en="Well... Tilton's been gaining allies. Our forces have thinned... so we need your help."),
         VoiceLine(90, Mandrake, ru="Конечно, Хетчер! Нужно действовать как можно скорее.", en="Of course, Hatcher! We need to act as soon as possible."),
 
-        VoiceLine(100, Trent, ru="Кхм кхм. Можно я вас перебью?", en="Ahem, ahem. Mind if I interrupt?"),
+        VoiceLine(100, Trent, ru="Кхм кхм. Можно я вас перебью?", en="Ahem. Mind if I interrupt?"),
 
         VoiceLine(110, Hatcher, ru="Что такое, Трент?", en="What is it, Trent?"),
 

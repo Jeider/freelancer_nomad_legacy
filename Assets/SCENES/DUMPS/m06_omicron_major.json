@@ -1,0 +1,678 @@
+{
+  "Camera_1": {
+    "position": [
+      75.0,
+      0.0,
+      -5.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "Camera_1_focus": {
+    "position": [
+      0.0,
+      0.0,
+      10.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "Marker_CamArrive": {
+    "position": [
+      50.0,
+      0.0,
+      40.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "Marker_LookArrive": {
+    "position": [
+      0.0,
+      0.0,
+      50.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "Marker_Lapa": {
+    "position": [
+      0.0,
+      0.0,
+      50.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "Player_Marker": {
+    "position": [
+      0.0,
+      0.0,
+      12.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "marker_start_path": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "marker_bigship_arrive_path": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "marker_baydoor_path": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "marker_baydoor_down_path": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "marker_getting_path": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "Light_SCENE": {
+    "position": [
+      -11.071395874023438,
+      -9.72991943359375,
+      0.40696799755096436
+    ],
+    "orientation": [
+      0.9261621236801147,
+      -0.009562581777572632,
+      0.3769618272781372,
+      -0.005675822496414185
+    ]
+  },
+  "X/Shipcentre/01": {
+    "position": [
+      0.0,
+      0.0,
+      -100000000.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "BIGSHIP": {
+    "position": [
+      0.0,
+      400.0,
+      75.0
+    ],
+    "orientation": [
+      0.0,
+      0.0,
+      -1.0,
+      0.0
+    ]
+  },
+  "PlayerShip": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "Player_connecter": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "li_elite01": {
+    "position": [
+      -50.0,
+      -50.0,
+      15.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "li_elite02": {
+    "position": [
+      -90.0,
+      -90.0,
+      10.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "li_elite03": {
+    "position": [
+      50.0,
+      -40.0,
+      7.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "li_elite04": {
+    "position": [
+      100.0,
+      -20.0,
+      12.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "or_elite01": {
+    "position": [
+      -75.0,
+      100.0,
+      1110.0
+    ],
+    "orientation": [
+      0.0,
+      0.0,
+      -1.0,
+      0.0
+    ]
+  },
+  "or_elite02": {
+    "position": [
+      -40.0,
+      100.0,
+      11110.0
+    ],
+    "orientation": [
+      0.0,
+      0.0,
+      -1.0,
+      0.0
+    ]
+  },
+  "ambi_LtG11_Puffs_Amb": {
+    "position": [
+      2.6751880645751953,
+      -0.15803399682044983,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "ambi_skydome_clouds_snow": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "Path_GOTO_PL": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "Path_Order01_Position": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "Path_Order02_Position": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "lapa": {
+    "position": [
+      100000.0,
+      -100000.0,
+      100000.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "lapa_down": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "lapa_up": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "player_up": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "PlayerShipEngines_2": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "fx_li_engine1": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "fx_li_engine2": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "fx_li_engine3": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "fx_li_engine4": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "fx_li_trapped1": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "fx_li_trapped2": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "fx_li_trapped3": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "fx_player_trapped": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "fx_li_trapped4": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "fx_or_engine1a": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "fx_or_engine1b": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "fx_or_engine1c": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "fx_or_engine2a": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "fx_or_engine2b": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "fx_or_engine2c": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "camera_start_path": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "camera_bigship_arrive_path": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "camera_baydoor_path": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "camera_getting_path": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "gf_rtc_shipcushion_1": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  }
+}

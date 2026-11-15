@@ -1,7 +1,7 @@
 from templates.space_object_template import SpaceObjectTemplate
 
 
-class ForbesMegafactory(SpaceObjectTemplate):
+class ForbesMegafactoryOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'li_for_02'
     TEMPLATE = '''[Object]
 nickname = li_for_02
@@ -726,7 +726,7 @@ archetype = shipyard
 parent = li_for_02
 '''
 
-class ForbesManufactoring(SpaceObjectTemplate):
+class ForbesManufactoringOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'li_for_02'
     TEMPLATE = '''[Object]
 nickname = li_for_02
@@ -1064,4 +1064,536 @@ pos = -205, -120, 885
 rotate = 0, 90, 0
 archetype = space_girder
 parent = li_for_02
+'''
+
+
+class ForbesMegafactory(ForbesMegafactoryOriginal):
+    TEMPLATE = '''[Object]
+nickname = li_for_02
+pos = 0, 0, 0
+rotate = 0, 180, 0
+archetype = prison_detroit
+{dock_props}
+
+[Object]
+nickname = li_for_02_tube01
+pos = -205, -100, 1635
+rotate = 0, 0, 0
+archetype = forbes_mega_tubes
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S1_ind01
+pos = -205, -120, 1635
+rotate = 0, 0, 0
+archetype = forbes_mega_s1
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S2_ind01
+pos = -205, -120, 1385
+rotate = 0, 0, 0
+archetype = forbes_mega_s2
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S3_ind01
+pos = -205, -120, 1135
+rotate = 0, 0, 0
+archetype = forbes_mega_s3
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S4_ind01
+pos = -205, -120, 885
+rotate = 0, 0, 0
+archetype = forbes_mega_s4
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S5_ind01
+pos = -205, -120, 635
+rotate = 0, 0, 0
+archetype = forbes_mega_s5
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S6_ind01
+pos = -205, -120, 385
+rotate = 0, 0, 0
+archetype = forbes_mega_s6
+parent = li_for_02
+
+[zone]
+nickname = Zone_LI_FOR_03_inner_features
+pos = -205, -120, -120
+shape = BOX
+size = 810, 450, 450
+interference = 0.300000
+drag_modifier = 3
+
+[Object]
+nickname = li_for_02_prison01
+pos = -205, -120, -120
+rotate = 0, 0, 0
+archetype = forbes_mega_core
+parent = li_for_02
+
+[;Object] ;THIS IS ROOT
+nickname = li_for_02_prison02
+pos = 0, 0, 0
+rotate = 0, 180, 0
+archetype = space_prison_dummy
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_TLR_cntrl_twr01
+pos = -5, 175, -120.5
+rotate = 0, 0, 0
+archetype = forbes_mega_tlr
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_HILL_cntrl_twr01
+pos = -410, 285, -120
+rotate = 0, 0, 0
+archetype = forbes_mega_hill
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_PROD_tlr01
+pos = -205, -20, -665
+rotate = 0, -90, 0
+archetype = space_co_tlr_dummy
+loadout = large_co_tradelane_dummy_loadout
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_PROD_girder01
+pos = -155, -70, -580
+rotate = 0, 0, 0
+archetype = forbes_mega_prod
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_STOR_shipyard01
+pos = -205, -510, -115
+rotate = 0, 0, 0
+archetype = forbes_mega_stor
+parent = li_for_02
+
+
+
+[Object]
+nickname = li_for_02_forbes_mega_tubes_collision00
+pos = -204.97855, -99.9869404, 855.367246
+rotate = 0, 0, 0
+archetype = forbes_mega_tubes_collision00
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_s1_collision00
+pos = -205.305969, -120.059889, 1636.76408
+rotate = 0, 0, 0
+archetype = forbes_mega_s1_collision00
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_s1_collision01
+pos = -205.173996, -119.950642, 1635.18249
+rotate = 0, 0, 0
+archetype = forbes_mega_s1_collision01
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_s2_collision00
+pos = -205.305969, -120.059889, 1386.76408
+rotate = 0, 0, 0
+archetype = forbes_mega_s2_collision00
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_s2_collision01
+pos = -205.173996, -119.950642, 1385.18249
+rotate = 0, 0, 0
+archetype = forbes_mega_s2_collision01
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_s3_collision00
+pos = -205.305969, -120.059889, 1136.76408
+rotate = 0, 0, 0
+archetype = forbes_mega_s3_collision00
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_s3_collision01
+pos = -205.173996, -119.950642, 1135.18249
+rotate = 0, 0, 0
+archetype = forbes_mega_s3_collision01
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_s4_collision00
+pos = -205.305969, -120.059889, 886.764076
+rotate = 0, 0, 0
+archetype = forbes_mega_s4_collision00
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_s4_collision01
+pos = -205.173996, -119.950642, 885.182491
+rotate = 0, 0, 0
+archetype = forbes_mega_s4_collision01
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_s5_collision00
+pos = -205.305969, -120.059889, 636.764076
+rotate = 0, 0, 0
+archetype = forbes_mega_s5_collision00
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_s5_collision01
+pos = -205.173996, -119.950642, 635.182491
+rotate = 0, 0, 0
+archetype = forbes_mega_s5_collision01
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_s6_collision00
+pos = -205.305969, -120.059889, 386.764076
+rotate = 0, 0, 0
+archetype = forbes_mega_s6_collision00
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_s6_collision01
+pos = -205.173996, -119.950642, 385.182491
+rotate = 0, 0, 0
+archetype = forbes_mega_s6_collision01
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_core_collision00
+pos = -413.56595, 3.81469727e-05, -7.60493818e-06
+rotate = 0, 0, 0
+archetype = forbes_mega_core_collision00
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_core_collision01
+pos = -413.56595, -239.999962, -7.60493818e-06
+rotate = 0, 0, 0
+archetype = forbes_mega_core_collision01
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_core_collision02
+pos = 3.56595612, -239.999962, 7.62939453e-06
+rotate = 0, 0, 0
+archetype = forbes_mega_core_collision02
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_core_collision03
+pos = -413.56595, 3.81469727e-05, -240.000008
+rotate = 0, 0, 0
+archetype = forbes_mega_core_collision03
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_core_collision04
+pos = 3.56595612, 3.81469727e-05, -239.999992
+rotate = 0, 0, 0
+archetype = forbes_mega_core_collision04
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_core_collision05
+pos = -413.56595, -239.999962, -240.000008
+rotate = 0, 0, 0
+archetype = forbes_mega_core_collision05
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_core_collision06
+pos = 3.56595612, -239.999962, -239.999992
+rotate = 0, 0, 0
+archetype = forbes_mega_core_collision06
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_tlr_collision00
+pos = -0.0679779053, 224.850012, -119.985695
+rotate = 0, 0, 0
+archetype = forbes_mega_tlr_collision00
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_tlr_collision01
+pos = 0.0692892075, 420.981647, -120.065029
+rotate = 0, 0, 0
+archetype = forbes_mega_tlr_collision01
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_tlr_collision02
+pos = -5.69928034, 217.900014, -201.475475
+rotate = 0, 0, 0
+archetype = forbes_mega_tlr_collision02
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_tlr_collision03
+pos = 5.6992801, 217.900014, -38.5245253
+rotate = 0, 0, 0
+archetype = forbes_mega_tlr_collision03
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_tlr_collision04
+pos = 81.4754748, 217.900014, -125.69928
+rotate = 0, 0, 0
+archetype = forbes_mega_tlr_collision04
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_tlr_collision05
+pos = -81.475475, 217.900014, -114.30072
+rotate = 0, 0, 0
+archetype = forbes_mega_tlr_collision05
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_tlr_collision06
+pos = -112.607894, 217.900014, -223.610947
+rotate = 0, 0, 0
+archetype = forbes_mega_tlr_collision06
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_tlr_collision07
+pos = 90.6109461, 217.900014, -220.607886
+rotate = 0, 0, 0
+archetype = forbes_mega_tlr_collision07
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_tlr_collision08
+pos = 102.607889, 217.900014, -27.3890536
+rotate = 0, 0, 0
+archetype = forbes_mega_tlr_collision08
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_tlr_collision09
+pos = -68.7206497, 155.514184, -46.822472
+rotate = 0, 0, 0
+archetype = forbes_mega_tlr_collision09
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_hill_collision00
+pos = -410.067978, 204.850013, -119.985695
+rotate = 0, 0, 0
+archetype = forbes_mega_hill_collision00
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_hill_collision01
+pos = -410.067978, 307.500001, -120.000001
+rotate = 0, 0, 0
+archetype = forbes_mega_hill_collision01
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_hill_collision02
+pos = -410.06718, 321.649456, -119.908031
+rotate = 0, 0, 0
+archetype = forbes_mega_hill_collision02
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_prod_collision00
+pos = -155.267548, -100.416305, -420.22816
+rotate = 0, 0, 0
+archetype = forbes_mega_prod_collision00
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_forbes_mega_stor_collision00
+pos = -204.999983, -478.786308, -115.000005
+rotate = 0, 0, 0
+archetype = forbes_mega_stor_collision00
+parent = li_for_02
+
+'''
+
+
+class ForbesManufactoring(ForbesManufactoringOriginal):
+    TEMPLATE = '''[Object]
+nickname = li_for_02
+pos = -205, -120, 0
+rotate = 0, -90, 0
+archetype = prison
+{dock_props}
+
+[Object]
+nickname = li_for_02_tube01
+pos = -205, -100, 1037.5
+rotate = 0, 0, 0
+archetype = batch_forbes_ma_018e8df6_structure0
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_prod01
+pos = 110, -170, 600
+rotate = 0, -90, 0
+archetype = space_large_production
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_prod02
+pos = 110, -170, 400
+rotate = 0, -90, 0
+archetype = space_large_production
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_prod03
+pos = 110, -170, 200
+rotate = 0, -90, 0
+archetype = space_large_production
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_prod04
+pos = 110, -170, 0
+rotate = 0, -90, 0
+archetype = space_large_production
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_prod01b
+pos = -510, -170, 600
+rotate = 0, 90, 0
+archetype = space_large_production
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_prod02b
+pos = -510, -170, 400
+rotate = 0, 90, 0
+archetype = space_large_production
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_prod03b
+pos = -510, -170, 200
+rotate = 0, 90, 0
+archetype = space_large_production
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_prod04b
+pos = -510, -170, 0
+rotate = 0, 90, 0
+archetype = space_large_production
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S1_ind01
+pos = -205, -120, 1635
+rotate = 0, 0, 0
+archetype = batch_forbes_ma_018e8df6_s10
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S2_ind01
+pos = -205, -120, 1385
+rotate = 0, 0, 0
+archetype = batch_forbes_ma_018e8df6_s20
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S3_ind01
+pos = -205, -120, 1135
+rotate = 0, 0, 0
+archetype = batch_forbes_ma_018e8df6_s30
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_S4_ind01
+pos = -205, -120, 758
+rotate = 0, 0, 0
+archetype = batch_forbes_ma_018e8df6_s40
+parent = li_for_02
+
+
+
+[Object]
+nickname = li_for_02_batch_forbes_ma_018e8df6_structure0_collision00
+pos = -205.000008, -102.296579, 921.838116
+rotate = 0, 0, 0
+archetype = batch_forbes_ma_018e8df6_structure0_collision00
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_batch_forbes_ma_018e8df6_s10_collision00
+pos = -205.305969, -120.059889, 1636.76408
+rotate = 0, 0, 0
+archetype = batch_forbes_ma_018e8df6_s10_collision00
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_batch_forbes_ma_018e8df6_s10_collision01
+pos = -205.173996, -119.950642, 1635.18249
+rotate = 0, 0, 0
+archetype = batch_forbes_ma_018e8df6_s10_collision01
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_batch_forbes_ma_018e8df6_s20_collision00
+pos = -205.305969, -120.059889, 1386.76408
+rotate = 0, 0, 0
+archetype = batch_forbes_ma_018e8df6_s20_collision00
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_batch_forbes_ma_018e8df6_s20_collision01
+pos = -205.173996, -119.950642, 1385.18249
+rotate = 0, 0, 0
+archetype = batch_forbes_ma_018e8df6_s20_collision01
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_batch_forbes_ma_018e8df6_s30_collision00
+pos = -205.305969, -120.059889, 1136.76408
+rotate = 0, 0, 0
+archetype = batch_forbes_ma_018e8df6_s30_collision00
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_batch_forbes_ma_018e8df6_s30_collision01
+pos = -205.173996, -119.950642, 1135.18249
+rotate = 0, 0, 0
+archetype = batch_forbes_ma_018e8df6_s30_collision01
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_batch_forbes_ma_018e8df6_s40_collision00
+pos = -205.305969, -120.059889, 821.640717
+rotate = 0, 0, 0
+archetype = batch_forbes_ma_018e8df6_s40_collision00
+parent = li_for_02
+
+[Object]
+nickname = li_for_02_batch_forbes_ma_018e8df6_s40_collision01
+pos = -205.173996, -191.550847, 885.182491
+rotate = 0, 0, 0
+archetype = batch_forbes_ma_018e8df6_s40_collision01
+parent = li_for_02
+
 '''

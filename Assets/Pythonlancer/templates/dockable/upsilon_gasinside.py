@@ -3182,7 +3182,7 @@ parent = up2_01
 '''
 
 
-class UpsilonLostResearch(SpaceObjectTemplate):
+class UpsilonLostResearchOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'up2_04'
     LOCKED_OBJECT_OFFSETS = [
         # space_prison_dummy objects
@@ -9667,4 +9667,150 @@ pos = -270, -90, -2554
 rotate = 180, 30, 0
 archetype = space_domea
 parent = up2_01
+'''
+
+
+class UpsilonLostResearch(UpsilonLostResearchOriginal):
+    TEMPLATE = '''[Object]
+nickname = up2_04
+pos = 0, 0, 0
+rotate = -10, 10, -100
+archetype = space_prison_dummy
+{root_props}
+
+[Object]
+nickname = up2_04_prison01
+pos = 0, -534, -440
+rotate = 0, 0, 0
+archetype = batch_upsilon_lost_research_structure3
+parent = up2_04
+
+[Object]
+nickname = up2_04_conn_dock01
+pos = 100, -120, 700
+rotate = 20, 70, 0
+archetype = space_police_dmg
+parent = up2_04
+
+[Object]
+nickname = up2_04_conn_dock02
+pos = 70, -120, 950
+rotate = 15, -35, 10
+archetype = space_police_dmg
+parent = up2_04
+
+[Object]
+nickname = up2_04_conn_dock03
+pos = -50, -120, 1250
+rotate = 15, -150, 10
+archetype = space_police_dmg
+parent = up2_04
+
+[Object]
+nickname = up2_04_dmg01
+pos = -100, 150, -1300
+rotate = -30, 90, 0
+archetype = shipyard_dmgA
+parent = up2_04
+
+[Object]
+nickname = up2_04_dmg02
+pos = 0, -530, -1300
+rotate = -30, 120, 0
+archetype = shipyard_dmgB
+parent = up2_04
+
+[Object]
+nickname = up2_04_indB04
+pos = 102.5, -1592.5, -2
+rotate = 0, 0, 0
+archetype = batch_upsilon_lost_research_structure2
+parent = up2_04
+
+[Object]
+nickname = up2_04_tube07
+pos = 255, -2220, -296.5
+rotate = 0, 0, 0
+archetype = batch_upsilon_lost_research_structure1
+parent = up2_04
+
+[Object]
+nickname = up2_04_research03
+pos = -40, -4250, 0
+rotate = 0, 0, 0
+archetype = batch_upsilon_lost_research_structure0
+parent = up2_04
+
+
+
+[Object]
+nickname = up2_04_batch_upsilon_lost_research_structure3_collision00
+pos = 299.82302, -149.360247, -50.0201675
+rotate = 0, 0, 0
+archetype = batch_upsilon_lost_research_structure3_collision00
+parent = up2_04
+
+[Object]
+nickname = up2_04_batch_upsilon_lost_research_structure3_collision01
+pos = -320.486905, -99.3885198, -0.0201833783
+rotate = 0, 0, 0
+archetype = batch_upsilon_lost_research_structure3_collision01
+parent = up2_04
+
+[Object]
+nickname = up2_04_batch_upsilon_lost_research_structure3_collision02
+pos = 49.8781517, -119.424711, 300.301137
+rotate = 0, 0, 0
+archetype = batch_upsilon_lost_research_structure3_collision02
+parent = up2_04
+
+[Object]
+nickname = up2_04_batch_upsilon_lost_research_structure3_collision03
+pos = -0.0295005302, -191.657606, -622.677275
+rotate = 0, 0, 0
+archetype = batch_upsilon_lost_research_structure3_collision03
+parent = up2_04
+
+[Object]
+nickname = up2_04_batch_upsilon_lost_research_structure3_collision04
+pos = -47.141882, -542.176841, -0.182335252
+rotate = 0, 0, 0
+archetype = batch_upsilon_lost_research_structure3_collision04
+parent = up2_04
+
+[Object]
+nickname = up2_04_batch_upsilon_lost_research_structure2_collision00
+pos = 81.2196544, -1643.61357, 144.996307
+rotate = 0, 0, 0
+archetype = batch_upsilon_lost_research_structure2_collision00
+parent = up2_04
+
+[Object]
+nickname = up2_04_batch_upsilon_lost_research_structure2_collision01
+pos = 60.8092173, -1479.90211, -2.03269225
+rotate = 0, 0, 0
+archetype = batch_upsilon_lost_research_structure2_collision01
+parent = up2_04
+
+[Object]
+nickname = up2_04_batch_upsilon_lost_research_structure2_collision02
+pos = 284.353763, -1910.05884, 140.647717
+rotate = 0, 0, 0
+archetype = batch_upsilon_lost_research_structure2_collision02
+parent = up2_04
+
+[Object]
+nickname = up2_04_batch_upsilon_lost_research_structure1_collision00
+pos = 57.1773065, -3016.94279, -278.484836
+rotate = 0, 0, 0
+archetype = batch_upsilon_lost_research_structure1_collision00
+parent = up2_04
+
+[Object]
+nickname = up2_04_batch_upsilon_lost_research_structure0_collision00
+pos = -39.309835, -4541.98181, 67.2199462
+rotate = 0, 0, 0
+archetype = batch_upsilon_lost_research_structure0_collision00
+parent = up2_04
+
 '''

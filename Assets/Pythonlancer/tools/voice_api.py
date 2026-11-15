@@ -43,7 +43,7 @@ class VoiceApi(object):
         return _finish(_backend().generate_ru_voice_simple(actor=actor, text=text, file_destination=file_destination))
 
     @classmethod
-    def generate_sound(cls, actor, text, file_destination, source_name=None, source_lang='ru', speech_lang=None, delivery=None, speed=None, denoise=True, trim_lead=False):
+    def generate_sound(cls, actor, text, file_destination, source_name=None, source_lang='ru', speech_lang=None, delivery=None, speed=None, denoise=None, trim_lead=False):
         if VOICE_BACKEND == 'steos':
             return SteosVoice.generate_sound(actor, text, file_destination)
         return _finish(VoiceStudioClone.generate_sound(

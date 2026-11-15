@@ -1,3 +1,5 @@
+from story.cutscenes.story_scenes import m04_final, m04_hatcher, m04_offer, m04_offer_accept, m04_offer_decision
+from audio import delivery
 from story import script
 from audio.sound import VoiceLine
 from story.actors import (
@@ -10,38 +12,42 @@ class Msn4(object):
 
 
 class Msn4Offer(Msn4, script.CutsceneProps):
+    THORN_DECISION_CLASS = m04_offer_decision.ReconstructedScene
+    THORN_ACCEPT_CLASS = m04_offer_accept.ReconstructedScene
+    THORN_CLASS = m04_offer.ReconstructedScene
     ALIAS = 'offer'
     TITLE = 'Предложение'
     DESCRIPTION = ''
     VOICE_LINES = [
-        VoiceLine(10, Jacobo, ru="Герр Трент, это вы?", en="Herr Trent, is that you?"),
+        VoiceLine(10, Jacobo, ru="Герр Трент, это вы?", en="Herr Trent, is that you?", delivery=delivery.HIGH_PITCH),
         VoiceLine(20, Jacobo, ru="Герр Трент, спасибо что согласились прилететь. У меня неприятности. Меня разыскивают власти Рейнланда.",
-                  en="Herr Trent, thank you for agreeing to come. I'm in trouble. The Rheinland authorities are looking for me."),
+                  en="Herr Trent, thank you for agreeing to come. I'm in trouble. The Rheinland authorities are looking for me.", delivery=delivery.HIGH_PITCH),
         VoiceLine(30, Trent, ru="Это я уже понял. И у меня появилось знакомое ощущение что меня очень хотят втянуть в неприятности.",
                   en="I already figured that out. And I've got that familiar feeling that someone really wants to drag me into trouble."),
         VoiceLine(40, Jacobo, ru="Герр Трент, вы не понимаете. Дело исключительной важности. Мне необходимо доставить в Либерти важные документы.",
-                  en="Herr Trent, you don't understand. This is a matter of exceptional importance. I need to deliver important documents to Liberty."),
+                  en="Herr Trent, you don't understand. This is a matter of exceptional importance. I need to deliver important documents to Liberty.", delivery=delivery.HIGH_PITCH),
         VoiceLine(50, Trent, ru="Опять меня угораздило вляпаться в шпионские игры... Джакобо, вы в курсе, что в данный момент я работаю на те самые власти Рейнланда, которые вас ищут?",
                   en="I've gone and gotten into spy games again... Jacobo, are you aware that right now I work for the very Rheinland authorities who are looking for you?"),
         VoiceLine(60, Jacobo, ru="Герр Трент, вы же фриленсер. Вы не давали никаких присяг. После выполнения задания вас с заказчиком ничего не связывает. ",
-                  en="Herr Trent, you're a freelancer. You didn't take any oaths. Once a job is done, nothing ties you to the client."),
+                  en="Herr Trent, you're a freelancer. You didn't take any oaths. Once a job is done, nothing ties you to the client.", delivery=delivery.HIGH_PITCH),
         VoiceLine(62, Jacobo, ru="Герр Трент, если мы сможем доставить эти ОЧЕНЬ важные документы в Либерти, в систему Форбс, нам заплатят очень большие деньги, ОЧЕНЬ большие, понимаете? ",
-                  en="Herr Trent, if we can deliver these VERY important documents to Liberty, to the Forbes system, they'll pay us very big money, VERY big, you understand?"),
-        VoiceLine(65, Jacobo, ru="У меня одного это скорее всего не получится, но если вы мне поможете... ", en="On my own I most likely won't manage it, but if you help me..."),
-        VoiceLine(67, Jacobo, ru="А если вы мне не поможете, меня скорее всего просто убьют... ", en="And if you don't help me, they'll most likely just kill me..."),
+                  en="Herr Trent, if we can deliver these VERY important documents to Liberty, to the Forbes system, they'll pay us very big money, VERY big, you understand?", delivery=delivery.HIGH_PITCH),
+        VoiceLine(65, Jacobo, ru="У меня одного это скорее всего не получится, но если вы мне поможете... ", en="On my own I most likely won't manage it, but if you help me...", delivery=delivery.HIGH_PITCH),
+        VoiceLine(67, Jacobo, ru="А если вы мне не поможете, меня скорее всего просто убьют... ", en="And if you don't help me, they'll most likely just kill me...", delivery=delivery.HIGH_PITCH),
         VoiceLine(70, Trent, ru="Я об этом еще пожалею... Хорошо, каков план?", en="I'm going to regret this... All right, what's the plan?"),
         VoiceLine(80, Jacobo, ru="Герр Трент, спасибо, вы не пожалеете! Вылетайте в космос, я с помощью друзей попробую незаметно пробраться на взлетную площадку. Встретимся на орбите.",
-                  en="Herr Trent, thank you, you won't regret it! Launch into space. With my friends' help I'll try to sneak onto the launch pad unnoticed. We'll meet in orbit."),
+                  en="Herr Trent, thank you, you won't regret it! Launch into space. With my friends' help I'll try to sneak onto the launch pad unnoticed. We'll meet in orbit.", delivery=delivery.HIGH_PITCH),
         VoiceLine(90, Trent, ru="Тогда до встречи.", en="Then, see you."),
     ]
 
 
 class Msn4Reward(Msn4, script.CutsceneProps):
+    THORN_CLASS = m04_hatcher.ReconstructedScene
     ALIAS = 'reward'
     TITLE = 'Вознаграждение'
     DESCRIPTION = ''
     VOICE_LINES = [
-        VoiceLine(10, Hatcher, ru="Мисс Хетчер.", en="Miss Hatcher."),
+        VoiceLine(10, Hatcher, ru="Джентльмены.", en="Gentlemen."),
         VoiceLine(20, Trent, ru="Мисс Хетчер.", en="Miss Hatcher."),
         VoiceLine(30, Alaric, ru="Мисс Хетчер, у вас такие красивые бездонные глаза, что...", en="Miss Hatcher, you have such beautiful, bottomless eyes that..."),
         VoiceLine(40, Hatcher, ru="Что вы перестанете нести эту околесицу, иначе я рассержусь", en="That you'll stop talking this nonsense, or I'll get angry"),
@@ -60,6 +66,7 @@ class Msn4Reward(Msn4, script.CutsceneProps):
 
 
 class Msn4Final(Msn4, script.CutsceneProps):
+    THORN_CLASS = m04_final.ReconstructedScene
     ALIAS = 'final'
     TITLE = 'Вознаграждение'
     DESCRIPTION = ''

@@ -1,7 +1,7 @@
 from templates.space_object_template import SpaceObjectTemplate
 
 
-class BretoniaRoidMining(SpaceObjectTemplate):
+class BretoniaRoidMiningOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'tau37_01'
     TEMPLATE = '''[Object]
 nickname = tau37_01
@@ -912,7 +912,7 @@ parent = li_cal_05
 '''
 
 
-class UpsilonRoidMining(SpaceObjectTemplate):
+class UpsilonRoidMiningOriginal(SpaceObjectTemplate):
     SPACE_OBJECT_NAME = 'up1_01'
     TEMPLATE = '''[Object]
 nickname = up1_01
@@ -1291,4 +1291,110 @@ pos = 880, 55, 0
 rotate = 90, 0, 0
 archetype = space_tanks2x2
 parent = up1_01
+'''
+
+
+class BretoniaRoidMining(BretoniaRoidMiningOriginal):
+    TEMPLATE = '''[Object]
+nickname = tau37_01
+pos = 0, 0, 0
+rotate = 0, 180, 0
+archetype = space_shipping01
+{dock_props}
+
+[Object]
+nickname = tau37_01_research01
+pos = -182.5, -323, 725
+rotate = 0, 0, 0
+archetype = batch_bretonia_roid_mining_structure0
+parent = tau37_01
+
+[Object]
+nickname = tau37_01_solar_plant01
+pos = -1376, -323, 350
+rotate = 0, 0, 0
+archetype = space_solar_plant
+parent = tau37_01
+spin = 0.1, 0, 0
+
+[Object]
+nickname = tau37_01_solar_plant02
+pos = -1396, -323, 900
+rotate = 0, 0, 0
+archetype = space_solar_plant
+parent = tau37_01
+spin = 0.1, 0, 0
+
+[Object]
+nickname = tau37_01_solar_plant03
+pos = -1416, -323, 1450
+rotate = 0, 0, 0
+archetype = space_solar_plant
+parent = tau37_01
+spin = 0.1, 0, 0
+
+
+
+[Object]
+nickname = tau37_01_batch_bretonia_roid_mining_structure0_collision00
+pos = -417.128845, -273.067322, 902.089256
+rotate = 0, 0, 0
+archetype = batch_bretonia_roid_mining_structure0_collision00
+parent = tau37_01
+
+[Object]
+nickname = tau37_01_batch_bretonia_roid_mining_structure0_collision01
+pos = -199.371042, -323, 767.10684
+rotate = 0, 0, 0
+archetype = batch_bretonia_roid_mining_structure0_collision01
+parent = tau37_01
+
+'''
+
+
+class UpsilonRoidMining(UpsilonRoidMiningOriginal):
+    TEMPLATE = '''[Object]
+nickname = up1_01
+pos = 0, 0, 0
+rotate = 0, 90, 0
+archetype = space_mining01
+{dock_props}
+
+[Object]
+nickname = up1_01_ind01
+pos = 813, -32.5, 0
+rotate = 0, 0, 0
+archetype = batch_upsilon_roid_mining_structure0
+parent = up1_01
+
+
+
+[Object]
+nickname = up1_01_batch_upsilon_roid_mining_structure0_collision00
+pos = 815.744533, -5.42212296, -4.19360902e-07
+rotate = 0, 0, 0
+archetype = batch_upsilon_roid_mining_structure0_collision00
+parent = up1_01
+
+[Object]
+nickname = up1_01_batch_upsilon_roid_mining_structure0_collision01
+pos = 469.925812, -103.724902, -4.19360902e-07
+rotate = 0, 0, 0
+archetype = batch_upsilon_roid_mining_structure0_collision01
+parent = up1_01
+
+[Object]
+nickname = up1_01_batch_upsilon_roid_mining_structure0_collision02
+pos = 721.925812, -103.724902, -4.19360902e-07
+rotate = 0, 0, 0
+archetype = batch_upsilon_roid_mining_structure0_collision02
+parent = up1_01
+
+[Object]
+nickname = up1_01_batch_upsilon_roid_mining_structure0_collision03
+pos = 880.200523, -103.724902, -5.2553577
+rotate = 0, 0, 0
+archetype = batch_upsilon_roid_mining_structure0_collision03
+parent = up1_01
+
 '''

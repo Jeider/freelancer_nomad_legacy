@@ -1,3 +1,5 @@
+from story.cutscenes.story_scenes import m02_bship_bar_accept, m02_bship_bar_decision, m02_bship_bar_offer, m02_jacobo_offer, m02_reichman
+from audio import delivery
 from story import script
 from audio.sound import VoiceLine
 from story.actors import (
@@ -10,6 +12,9 @@ class Msn2(object):
 
 
 class Msn2Offer(Msn2, script.CutsceneProps):
+    THORN_DECISION_CLASS = m02_bship_bar_decision.ReconstructedScene
+    THORN_ACCEPT_CLASS = m02_bship_bar_accept.ReconstructedScene
+    THORN_CLASS = m02_bship_bar_offer.ReconstructedScene
     ALIAS = 'offer'
     TITLE = 'Предложение на линкоре'
     DESCRIPTION = ''
@@ -31,11 +36,12 @@ class Msn2Offer(Msn2, script.CutsceneProps):
         VoiceLine(220, Trent, ru="Будете контролировать мои действия?", en="You'll be controlling my actions?"),
         VoiceLine(230, Wilham, ru="Нет. Буду осуществлять поддержку и взаимодействие с властями. Стратегия операции и тактика её проведения целиком на вас, герр Трент.", en="No. I'll provide support and handle contact with the authorities. The strategy of the operation, and the tactics of carrying it out, are entirely up to you, Herr Trent."),
         VoiceLine(240, Trent, ru="Спасибо за доверие... где поставить подпись?", en="Thanks for the trust... where do I sign?"),
-        VoiceLine(250, Wilham, ru="Ха-ха-ха. Ну зачем нам эти условности? Встречаемся в космосе, герр Трент!", en="Ha-ha-ha. And why do we need these formalities? We'll meet in space, Herr Trent!"),
+        VoiceLine(250, Wilham, ru="Ха-ха-ха. Ну зачем нам эти условности? Встречаемся в космосе, герр Трент!", en="And why do we need these formalities? We'll meet in space, Herr Trent!", delivery=delivery.HAPPY),
     ]
 
 
 class Msn2Miner(Msn2, script.CutsceneProps):
+    THORN_CLASS = m02_jacobo_offer.ReconstructedScene
     ALIAS = 'miner'
     TITLE = 'Рудокоп Матильда'
     DESCRIPTION = ''
@@ -57,6 +63,7 @@ class Msn2Miner(Msn2, script.CutsceneProps):
 
 
 class Msn2Done(Msn2, script.CutsceneProps):
+    THORN_CLASS = m02_reichman.ReconstructedScene
     ALIAS = 'done'
     TITLE = 'Вознаграждение на линкоре'
     DESCRIPTION = ''
