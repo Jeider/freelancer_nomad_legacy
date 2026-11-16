@@ -602,7 +602,7 @@ class Msn9Space(Msn9, script.SpaceVoiceProps):
         VoiceLine(880, Kim, ru='Всё верно, они явно готовят группу зачистки.',
                   en="That's right. They're clearly preparing a cleanup team."),
 
-        VoiceLine(890, Kim, ru='Атакуйте уязвимые точки Канонерок! Они не должн+ы добраться до Хризантемы!',
+        VoiceLine(890, Kim, ru='Атакуйте уязвимые точки Канонерок! Они не должны добраться до Хризантемы!',
                   en="Attack the gunboats' weak points! They must not reach the Chrysanthemum!"),
 
         VoiceLine(900, Kim, ru='Канонерки уничтожены', en="Gunboats destroyed."),
@@ -614,14 +614,14 @@ class Msn9Space(Msn9, script.SpaceVoiceProps):
                   en="And here's the enemy cavalry. Chrysanthemum, give us the nearest coordinates. We'll try to attack the enemy on approach."),
 
         VoiceLine(950, Kim,
-                  ru='Атакуйте эсминцы! Нужно повредить их до того как они в+ыйдут на огневую позицию!',
+                  ru='Атакуйте эсминцы! Нужно повредить их до того как они выйдут на огневую позицию!',
                   en="Attack the destroyers! We need to damage them before they reach firing position!"),
         VoiceLine(960, Kim, ru='Атакуйте двигатели, пилоны, всё что угодно!',
                   en="Attack the engines, the pylons, anything!"),
 
-        VoiceLine(980, Kim, ru='Эсминцы стали выход+ить на боевой рубеж',
+        VoiceLine(980, Kim, ru='Эсминцы стали выходить на боевой рубеж',
                   en="The destroyers have started moving to the line of battle."),
-        VoiceLine(985, Kim, ru='Трент, нужно уничтожить торпеды. Мы должн+ы защитить Хризантему любой ценой',
+        VoiceLine(985, Kim, ru='Трент, нужно уничтожить торпеды. Мы должны защитить Хризантему любой ценой',
                   en="Trent, we need to destroy the torpedoes. We must protect the Chrysanthemum at any cost."),
 
         VoiceLine(1000, Chrysanthemum, ru='Приближается новая группа эсминцев',
@@ -630,7 +630,7 @@ class Msn9Space(Msn9, script.SpaceVoiceProps):
                   en="New enemy reinforcement spotted."),
         VoiceLine(1020, Chrysanthemum, ru='Новая группа эсминцев готовится к залпу',
                   en="A new group of destroyers is preparing for a salvo."),
-        VoiceLine(1030, Chrysanthemum, ru='Еще группа эсминцев на изгот+овке',
+        VoiceLine(1030, Chrysanthemum, ru='Еще группа эсминцев на изготовке',
                   en="Another group of destroyers is standing ready."),
         VoiceLine(1035, Chrysanthemum, ru='Прилетело еще одно звено вражеских эсминцев',
                   en="Another flight of enemy destroyers has flown in."),
@@ -645,7 +645,7 @@ class Msn9Space(Msn9, script.SpaceVoiceProps):
         VoiceLine(1080, Kim, ru='Нет... мы потеряли Хризантему до завершения сканирования. Это провал',
                   en="No... we lost the Chrysanthemum before the scan was finished. This is a failure."),
 
-        VoiceLine(1100, Kim, ru='Мат+омэ, как идет сканирование', en="Matome, how's the scan going?"),
+        VoiceLine(1100, Kim, ru='Матомэ, как идет сканирование', en="Matome, how's the scan going?"),
         VoiceLine(1110, Matome, ru='Готово на 50 процентов. Нам нужно еще время',
                   en="Fifty percent done. We need more time."),
 
@@ -665,14 +665,14 @@ class Msn9Space(Msn9, script.SpaceVoiceProps):
                   en="Enemy battleships have arrived! Retreat routes are cut off! We're surrounded!"),
 
         VoiceLine(1310, Matome,
-                  ru='Ким, нам нужно сделать отвлекающий ман+ёвр. Эти данные слишком важны для Ордена',
+                  ru='Ким, нам нужно сделать отвлекающий манёвр. Эти данные слишком важны для Ордена',
                   en="Kim, we need to make a diversion. This data is too important for the Order."),
         VoiceLine(1320, Kim, ru='И что ты предлагаешь', en="And what do you propose?"),
 
         VoiceLine(1330, Matome,
-                  ru='Мы совершим атаку камикадзе и отвлечем вражеские силы. А вы уход+ите и доставьте данные на Мус+аси сами',
+                  ru='Мы совершим атаку камикадзе и отвлечем вражеские силы. А вы уходите и доставьте данные на Мусаси сами',
                   en="We'll make a kamikaze attack and draw off the enemy forces. And you leave, and deliver the data to the Musashi yourselves."),
-        VoiceLine(1340, Kim, ru='Мат+омэ, идиот, остановись!', en="Matome, you idiot, stop!",
+        VoiceLine(1340, Kim, ru='Матомэ, идиот, остановись!', en="Matome, you idiot, stop!",
                   cinematic=True),
 
         VoiceLine(1350, Matome, ru='Это наш единственный шанс! Прощай друг!',
@@ -684,17 +684,17 @@ class Msn9Space(Msn9, script.SpaceVoiceProps):
         VoiceLine(1360, Kim, ru='Стой! Нет!', en="Stop! No!",
                   cinematic=True),
 
-        VoiceLine(1400, Darcy, ru='Кажется нам пор+а уходить', en="I think it's time for us to leave."),
-        VoiceLine(1410, Kim, ru='Всё верно мисс Д+ерси. Летим к указанной точке пути',
+        VoiceLine(1400, Darcy, ru='Кажется нам пора уходить', en="I think it's time for us to leave."),
+        VoiceLine(1410, Kim, ru='Всё верно мисс Дерси. Летим к указанной точке пути',
                   en="That's right, Miss Darcy. We're flying to the designated waypoint."),
 
-        VoiceLine(1420, HasslerOrder, ru='Мус+аси на связи. Ким, наш статус',
+        VoiceLine(1420, HasslerOrder, ru='Мусаси на связи. Ким, наш статус',
                   en="Musashi here. Kim, our status."),
         VoiceLine(1430, Kim, ru='Данные успешно получены. Но прикрытие потеряно полностью',
                   en="Data successfully obtained. But the cover is completely lost."),
 
         VoiceLine(1500, HasslerOrder,
-                  ru='Они погибли во славу Ордена. Садитесь на Мус+аси. Нужно скорее убираться отсюда',
+                  ru='Они погибли во славу Ордена. Садитесь на Мусаси. Нужно скорее убираться отсюда',
                   en="They died for the glory of the Order. Dock with the Musashi. We need to get out of here quickly."),
     ]
 

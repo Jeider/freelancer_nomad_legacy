@@ -412,6 +412,10 @@ class Static:
 
 STATIC_NAMES = [
     # Port UI: HUD and preferences. MS(Russian, English); keep numeric IDs stable.
+    Static(238414, MS('Качество торговых путей', 'Trade lane quality')),  # GraphicsTradeLane
+    Static(238415, MS('Качество гиперпрыжка', 'Hyperspace quality')),  # GraphicsHyperspace
+
+    # Port UI: HUD and preferences. MS(Russian, English); keep numeric IDs stable.
     Static(238413, MS('Выкл всё', 'All off')),  # GraphicsAllOff
 
     # Port UI: HUD and preferences. MS(Russian, English); keep numeric IDs stable.

@@ -1014,6 +1014,7 @@ class Chrysanthemum(Actor):
     NAME = 'chrys'
     COMM_APPEARANCE = 'ku_kym_head, ku_kym_body, prop_neuralnet_d'
     STEOS_ID = 10061
+    VOICE_DELIVERY = MODERATE_PITCH
 
 
 class ChrysanthemumTrain(Actor):

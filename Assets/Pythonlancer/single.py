@@ -417,9 +417,9 @@ def generate_story_voices():
     # import pdb;pdb.set_trace()
 
     indexes = range(1, 12+1)
-    indexes = [5]
+    indexes = [9]
     russian = True
-    default_actor = 'Default'
+    default_actor = None
 
     for i in indexes:
         msn = script_manager.get_mission_by_index(i)
@@ -467,12 +467,12 @@ def meta():
 
 
 def scene():
-    russian = False
+    russian = True
     # mission_index = 99
     # scene_name = 'debug'
 
-    mission_index = 1
-    scene_name = 'bizmark'
+    mission_index = 10
+    scene_name = 'offer'
     #
     tpl_manager = JinjaTemplateManager()
     script_manager = ScriptManager()
