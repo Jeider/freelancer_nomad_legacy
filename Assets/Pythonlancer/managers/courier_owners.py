@@ -15,6 +15,12 @@ from files.rpg_runtime import dialog_ini
 from story.rpg.script import RpgScript
 
 
+COURIER_EMPLOYERS = {'rh_grp': 'tr_grp_rh', 'rc_grp': 'tr_grp_rh', 'li_grp': 'tr_grp_li', 'lc_grp': 'tr_grp_li', 'br_grp': 'tr_grp_br', 'bc_grp': 'tr_grp_br', 'ku_grp': 'tr_grp_ku', 'kc_grp': 'tr_grp_ku', 'co_grp': 'co_grp'}
+
+def courier_employer(faction):
+    return COURIER_EMPLOYERS.get(faction, faction)
+
+
 def asset_path(project, folder, name):
     """Builds use newly generated rooms first and installed shared assets second."""
     path=folder.data_path(name)
@@ -163,7 +169,7 @@ def extend_catalog(universe, folder, registry, project=None, universe_data=None)
         top = max(xyz(r)[1] + max(1500.,float(one(solars.get(one(r,'archetype'),{}),'solar_radius','1500'))) for r in assembly)
         pos[1] = max(pos[1]+4000, top+2000)
         yaw = float(one(anchor,'rotate','0,0,0').split(',')[1])
-        common = (f'base = {name}\nsystem = {system}\nfaction = {entry["faction"]}\n'
+        common = (f'base = {name}\nsystem = {system}\nfaction = {entry["faction"]}\nemployer = {courier_employer(entry["faction"])}\n'
                   f'name_ids = {one(definitions[name],"strid_name","0")}\n'
                   f'voice_name = {bases[name].get_base_msg_relative()}\ntransfer_base = tc_{system}_base\n')
         if name not in points:

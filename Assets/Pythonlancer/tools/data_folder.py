@@ -722,3 +722,76 @@ class DataFolder:
             nnvoice.unlink()
         if trent_voice.exists():
             trent_voice.unlink()
+
+    # BEGIN RH CONCEPT B ASSET OUTPUT
+    def sync_rh_concept_b(self, files):
+        """Install, stage or restore the approved model through the DATA API."""
+        import re
+        fixed = {'SHIPS/shiparch.ini',
+                 'ships/rheinland/rh_concept_b/rh_concept_b.cmp',
+                 'ships/rheinland/rh_concept_b/rh_concept_b.sur',
+                 'ships/rheinland/rh_concept_b/rh_concept_b_lods.mat'}
+        for name in files:
+            damage = re.fullmatch(r'ships/rheinland/rh_concept_b/damage/rh_b_(dmg|break)_(port_wing|starboard_wing|port_engine|starboard_engine|tail)\.(3db|sur)', name)
+            if name not in fixed and not damage:
+                raise ValueError('Unexpected RH concept B target: ' + name)
+            self.data_path(name)
+        for name, content in files.items():
+            if content is None:
+                self.remove_data_file(name)
+            else:
+                self.sync_data_file(name, content)
+    # END RH CONCEPT B ASSET OUTPUT
+
+    def sync_train_evacuation(self, files):
+        """Evacuation content, including staged publication and rollback."""
+        allowed = {'MISSIONS/empathy.ini', 'MISSIONS/TrainCourier/catalog.ini',
+                   'MISSIONS/TrainCourier/courier.ini', 'SOLAR/train_courier.ini',
+                   'INTERFACE/HUD/EXTRA/hud_train_evacuate.3db'}
+        for name in files:
+            if name not in allowed:
+                raise ValueError('Unexpected evacuation DATA file: ' + name)
+            self.data_path(name)
+        for name, content in files.items():
+            if content is None:
+                self.remove_data_file(name)
+            else:
+                self.sync_data_file(name, content)
+
+    # BEGIN RH PIR ELITE ASSET OUTPUT
+    def sync_rh_pir_elite(self, files=None):
+        """Canonical fighter assets; no detached-debris caps or INI rewrites.
+
+        With no argument, load the checked-in source assets for normal builds.
+        Explicit payloads use the same API for staging and transaction rollback.
+        """
+        import hashlib
+        base = 'ships/rheinland/rh_pir_elite/'
+        allowed = {'rh_pir_elite.cmp', 'rh_pir_elite.sur'}
+        for zone in ('port_wing', 'starboard_wing', 'port_engine', 'starboard_engine', 'tail'):
+            for extension in ('.3db', '.sur'):
+                allowed.add('rh_pir_elite_dmg_' + zone + extension)
+        if files is None:
+            source = pathlib.Path(__file__).resolve().parents[1] / 'assets' / base
+            manifest = json.loads((source / 'manifest.json').read_text(encoding='utf-8'))
+            if set(manifest['files']) != allowed:
+                raise ValueError('Incomplete RH pirate source asset manifest')
+            files = {}
+            for name, expected in manifest['files'].items():
+                content = (source / name).read_bytes()
+                if hashlib.sha256(content).hexdigest() != expected['sha256']:
+                    raise ValueError('RH pirate source asset hash mismatch: ' + name)
+                files[base + name] = content
+        # Validate the entire set before writing anything.
+        for name, content in files.items():
+            if name not in {base + item for item in allowed}:
+                raise ValueError('Unexpected RH pirate asset target: ' + name)
+            if content is not None and not isinstance(content, bytes):
+                raise TypeError('RH pirate asset payload must be bytes or None')
+            self.data_path(name)
+        for name, content in files.items():
+            if content is None:
+                self.remove_data_file(name)
+            else:
+                self.sync_data_file(name, content)
+    # END RH PIR ELITE ASSET OUTPUT

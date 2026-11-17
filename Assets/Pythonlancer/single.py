@@ -417,9 +417,9 @@ def generate_story_voices():
     # import pdb;pdb.set_trace()
 
     indexes = range(1, 12+1)
-    indexes = [9]
+    indexes = [10]
     russian = True
-    default_actor = None
+    default_actor = 'Default'
 
     for i in indexes:
         msn = script_manager.get_mission_by_index(i)
@@ -471,7 +471,7 @@ def scene():
     # mission_index = 99
     # scene_name = 'debug'
 
-    mission_index = 10
+    mission_index = 2
     scene_name = 'offer'
     #
     tpl_manager = JinjaTemplateManager()
@@ -479,11 +479,13 @@ def scene():
 
     msn = script_manager.get_mission_by_index(mission_index)
     cutscene = msn.get_cutscene_by_code(scene_name)
-    cutscene.get_thorn(tpl_manager, russian).sync_content()
+    cutscene.get_accept_thorn(tpl_manager, russian).sync_content()
 
     return
 
-    for i in [13]:  # range(9, 12+1):
+    indexes = [2]
+
+    for i in indexes:  # range(9, 12+1):
         msn = script_manager.get_mission_by_index(i)
         for cutscene in msn.get_cutscenes():
             print(cutscene.ALIAS)

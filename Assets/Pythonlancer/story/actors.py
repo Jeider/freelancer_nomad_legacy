@@ -896,7 +896,8 @@ class Alaric(Actor):
     SPACE_VOICE = 'pilot_f_mil_m01'
     STEOS_ID = 426
     STEOS_PITCH = -0.1
-    VOICE_DELIVERY = LOW_PITCH
+    # VOICE_DELIVERY = LOW_PITCH
+    VOICE_DELIVERY = TEENAGER_HIGH_PITCH
 
     # STEOS_PITCH = -1
     # STEOS_SPEED = 1.1

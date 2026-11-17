@@ -616,6 +616,11 @@ ids_short_name = {self.FORCE_IDS_SHORT_NAME if self.FORCE_IDS_SHORT_NAME else se
             )
         return SINGLE_DIVIDER.join(result)
 
+    # Courier events are configurable per faction, just like retail mission events.
+    TRAIN_DELIVERY_LATE = -0.01
+    TRAIN_CARGO_LOSS = -0.1
+    TRAIN_LOCOMOTIVE_LOSS = -0.2
+
     def get_empathy_content(self):
         return f'''[RepChangeEffects]
 group = {self.get_code()}
@@ -623,6 +628,9 @@ event = object_destruction, -0.030000
 event = random_mission_success, 0.130700
 event = random_mission_failure, -0.045000
 event = random_mission_abortion, -0.067500
+event = train_delivery_late, {self.TRAIN_DELIVERY_LATE:.6f}
+event = train_cargo_loss, {self.TRAIN_CARGO_LOSS:.6f}
+event = train_locomotive_loss, {self.TRAIN_LOCOMOTIVE_LOSS:.6f}
 {self.get_empathy_data()}
 '''
 
@@ -2459,7 +2467,8 @@ RELATIONS = [
     FactionRelation(
         RheinlandTraders,
         [
-            Relation(RheinlandMain, FRIEND_MED),
+            # Company standing also affects Rheinland, including locomotive losses.
+            Relation(RheinlandMain, FRIEND_MED, 1.0, empathy_only_forward=True),
             Relation(LibertyMain, FRIEND_MED),
             Relation(BretoniaMain, FRIEND_MED),
             Relation(KusariMain, FRIEND_MED),

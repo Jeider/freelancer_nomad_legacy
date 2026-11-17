@@ -174,6 +174,7 @@ class BizmarkScene(Scene):
         MoveEvent(root=self, group=MAIN, object_name='automarker_alaric_eye_ik', target_name='automarker_head_luc2', duration=1, smooth=True, time_delay=t)
         main_group.append_time(2)
 
+
         # Line 70, source 47..61s.
         t = 0
         # THN event 161, source 47s
@@ -205,9 +206,9 @@ class BizmarkScene(Scene):
         # THN event 169, source 60s
         MoveEvent(root=self, group=MAIN, object_name='automarker_luc_eye_ik', target_name='automarker_outpoint', duration=2, smooth=True, time_delay=t)
         # THN event 172, source 60s
-        MoveEvent(root=self, group=MAIN, object_name='automarker_trent_head_ik', target_name='automarker_head_luc2_walk', duration=3, smooth=True, time_delay=t)
-        # THN event 173, source 60s
-        MoveEvent(root=self, group=MAIN, object_name='automarker_trent_eye_ik', target_name='automarker_head_luc2_walk', duration=2, smooth=True, time_delay=t)
+        # MoveEvent(root=self, group=MAIN, object_name='automarker_trent_head_ik', target_name='automarker_head_luc2_walk', duration=3, smooth=True, time_delay=t)
+        # # THN event 173, source 60s
+        # MoveEvent(root=self, group=MAIN, object_name='automarker_trent_eye_ik', target_name='automarker_head_luc2_walk', duration=2, smooth=True, time_delay=t)
         # THN event 178, source 60s
         MoveEvent(root=self, group=MAIN, object_name='automarker_alaric_head_ik', target_name='automarker_head_luc2_walk', duration=3, smooth=True, time_delay=t)
         # THN event 179, source 60s
@@ -218,6 +219,10 @@ class BizmarkScene(Scene):
         MoveEvent(root=self, group=MAIN, object_name='automarker_cam_goaway_focus', target_name='automarker_cam_goaway_focus2', duration=10, smooth=True, time_delay=t)
         luc.facial(group=MAIN, index=70, auto_lip=True, extra_delay=0)
         # Original facial allocation 13.5s; source gap 0.5s.
+        MoveEvent(root=self, group=MAIN, object_name='automarker_trent_head_ik', target_name='automarker_trent_front',
+                  duration=1, smooth=False)
+        MoveEvent(root=self, group=MAIN, object_name='automarker_trent_eye_ik', target_name='automarker_trent_front',
+                  duration=1, smooth=False)
         main_group.append_time(0.5)
 
         # Line 80, source 61..71s.

@@ -173,7 +173,8 @@ class ShiparchManagerV2:
             self.ships.append(instance)
             self.ships_db[instance.get_archetype()] = instance
 
-            template = PLAYERSHIPS_TEMPLATE_FORMAT.format(archetype=instance.get_clean_archetype())
+            template = PLAYERSHIPS_TEMPLATE_FORMAT.format(
+                archetype=instance.SHIPARCH_TEMPLATE or instance.get_clean_archetype())
             playerships_content.append(
                 self.core.tpl_manager.get_result(template, {
                     'prefix': instance.get_visual_prefix(),
@@ -250,5 +251,7 @@ class ShiparchManagerV2:
         if not self.core.write:
             return
         data_folder = DataFolder(build_to_folder=self.core.build_folder)
-        data_folder.sync_shiparch_alt(self.get_shiparch_content())  # Temporary!
+        content = self.get_shiparch_content()
+        data_folder.sync_rh_pir_elite()
+        data_folder.sync_shiparch_alt(content)  # Temporary!
         # data_folder.sync_fuse(FUSE_GEN_CAPITAL, self.get_fuses())

@@ -82,6 +82,7 @@ ENGINE_TRIPLE_DIFF = 5
 class Ship(MarketShip):
     ARCHETYPE = None
     TEMPLATE_CODE = None
+    SHIPARCH_TEMPLATE = None
     MISSILE_MOUNT_POINT = None
     EQUIP_TEMPLATE= '''
 equip = {nickname}, {hardpoint}'''
@@ -2189,6 +2190,7 @@ class NomadStarblazer(Starblazer):
 # ========== RHEINLAND ==========
 
 class PirateValkyrie(Valkyrie):
+    SHIPARCH_TEMPLATE = 'rh_pir_elite'
     VISUAL = VIS_PIRATE
     # SHIP_CLASS = 8
 
