@@ -467,7 +467,7 @@ def meta():
 
 
 def scene():
-    russian = True
+    russian = False
     # mission_index = 99
     # scene_name = 'debug'
 
@@ -479,7 +479,12 @@ def scene():
 
     msn = script_manager.get_mission_by_index(mission_index)
     cutscene = msn.get_cutscene_by_code(scene_name)
-    cutscene.get_accept_thorn(tpl_manager, russian).sync_content()
+    cutscene.get_thorn(tpl_manager, russian).sync_content()
+    if decision := cutscene.get_decision_thorn(tpl_manager, russian, skip=True):
+        decision.sync_content()
+
+    if accept := cutscene.get_accept_thorn(tpl_manager, russian, skip=True):
+        accept.sync_content()
 
     return
 

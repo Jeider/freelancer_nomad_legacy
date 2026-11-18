@@ -13,7 +13,7 @@ class Msn2(object):
 
 class Msn2Offer(Msn2, script.CutsceneProps):
     THORN_DECISION_CLASS = m02_bship_bar_decision.ReconstructedScene
-    THORN_ACCEPT_CLASS = m02_bship_bar_accept.ReconstructedScene
+    THORN_ACCEPT_CLASS = m02_bship_bar_accept.Msn2OfferAcceptScene
     THORN_CLASS = m02_bship_bar_offer.Msn2OfferScene
     ALIAS = 'offer'
     TITLE = 'Предложение на линкоре'

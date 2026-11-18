@@ -1390,7 +1390,7 @@ events={
     {"Char_trent"},
     {animation="Sc_MLBODY_CHRB_LSTN_000LV_A_19",
      duration=3, time_scale=1, start_time=0, weight=1, heading=-1
-     , event_flags=2   
+     , event_flags=2   , trans_time=1 
      }
 }
 ,

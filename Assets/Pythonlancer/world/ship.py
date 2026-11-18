@@ -2256,6 +2256,7 @@ class PirateSabre(Sabre):
 
 
 class PirateHumpback(Humpback):
+    SHIPARCH_TEMPLATE = 'rh_pir_freighter'
     VISUAL = VIS_PIRATE
     # SHIP_CLASS = 8
 

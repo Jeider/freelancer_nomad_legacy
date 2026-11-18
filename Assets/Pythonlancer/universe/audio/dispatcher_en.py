@@ -1,5 +1,6 @@
 from universe.audio.pilot_line import PilotLine as L
 from universe.audio import parse_rule as R
+from universe.audio import evacuation_en
 from universe.audio.base_pilot import EnglishBaseIdentifiedVoice, EnglishCommodityVoice
 from universe.audio.static import dispatcher as dispatcher_static
 
@@ -85,6 +86,11 @@ class EngMaleDispatcher(EnglishCommodityVoice, EnglishStationDispatcher):
     STEOS_ID = 294  # lebedev, stalker
     FOLDER = 'dispatcher_en01'
     ATTENUATION = -4
+
+    def get_dynamic_lines(self):
+        # The two English identification mixins otherwise expand these twice.
+        return list({line.get_code(): line for line in self.get_lines()}.values())
+
     def get_lines(self):
         lines = list(super().get_lines())
         lines.extend([
@@ -222,6 +228,7 @@ class EngMaleDispatcher(EnglishCommodityVoice, EnglishStationDispatcher):
             L('tc_reposition_empty_09-', 'This is a move to the next loading point. Take the locomotive alone and leave the completed delivery here. The next order is as follows.', R.RuleDefaultNoProcess),
             L('tc_reposition_empty_10-', 'The receiving crew will handle the train you delivered. Head to the new marker with the locomotive only. Here are the details of the next load.', R.RuleDefaultNoProcess),
         ])
+        lines.extend(evacuation_en.lines())
         return lines
 
 

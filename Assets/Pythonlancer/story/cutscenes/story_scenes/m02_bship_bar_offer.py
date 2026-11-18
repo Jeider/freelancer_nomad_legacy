@@ -95,7 +95,7 @@ class Msn2OfferScene(Scene):
         wilham.motion(group=MAIN, anim=Male.Sc_MLBODY_CHRB_TALK_000UP_A_17, duration=14, trans_time=2, loop=True,
             time_delay=t)
         t += 3
-        trent.motion(group=MAIN, anim=Male.Sc_MLBODY_STND_IDLE_000LV_XB_04, duration=2, time_delay=t)
+        trent.motion(group=MAIN, anim=Male.Sc_MLBODY_STND_IDLE_000LV_XB_04, duration=10, time_delay=t, loop=True)
         wilham.facial(group=MAIN, index=20, auto_lip=True, extra_delay=0)
 
         # 30: trent.
@@ -138,7 +138,7 @@ class Msn2OfferScene(Scene):
         t = 0
         cam_trent_near.set(group=MAIN, time_delay=t)
         trent.motion(group=MAIN, anim=Male.Sc_MLBODY_CHRB_YESS_000LV_A_01, duration=6, time_scale=0.6,
-            time_delay=t)
+            time_delay=t, trans_time=0.5)
         t += 2
         trent.motion(group=MAIN, anim=Male.Sc_MLBODY_CHRB_TALK_000UP_A_17, duration=6, time_scale=0.8,
             trans_time=1, time_delay=t)

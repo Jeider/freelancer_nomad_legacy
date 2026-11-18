@@ -59,7 +59,7 @@ class TempPilot:
                 delivery=getattr(line, 'delivery', None) or pilot.VOICE_DELIVERY,
                 speed=line.parse_rule.STEOS_SPEED,
                 denoise=pilot.DENOISE,
-                trim_lead=pilot.TRIM_LEAD,
+                trim_lead=getattr(line, 'trim_lead', pilot.TRIM_LEAD),
             )
             sleep(0.2)
 

@@ -795,3 +795,19 @@ class DataFolder:
             else:
                 self.sync_data_file(name, content)
     # END RH PIR ELITE ASSET OUTPUT
+
+    def sync_train_evacuation_audio(self, files):
+        """English evacuation radio, including staging and transaction rollback."""
+        import re
+        fixed = {'AUDIO/voices_space_male.ini', 'MISSIONS/voice_properties.ini',
+                 'MISSIONS/TrainCourier/courier.ini'}
+        for name in files:
+            if name not in fixed and not re.fullmatch(
+                    r'AUDIO/MOD_ENG/dispatcher_en01/te_[a-z0-9_]+_0[1-5]-\.wav', name):
+                raise ValueError('Unexpected evacuation audio target: ' + name)
+            self.data_path(name)
+        for name, content in files.items():
+            if content is None:
+                self.remove_data_file(name)
+            else:
+                self.sync_data_file(name, content)

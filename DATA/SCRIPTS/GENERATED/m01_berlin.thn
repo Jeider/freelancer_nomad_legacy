@@ -1,4 +1,4 @@
-duration=25.055999999999997
+duration=25.289583333333336
 
 entities={
 	{
@@ -1422,7 +1422,7 @@ events={
     5.5,
     START_MOTION,
     {"Char_alaric"},
-    { animation='Sc_dx_s070x_2801_Orillion',duration=5.56,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=1.34 }
+    { animation='Sc_dx_s070x_2801_Orillion',duration=5.61,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=1.29 }
 }
 ,
 {
@@ -1437,7 +1437,7 @@ events={
 }
 ,
 {
-    10.559999999999999,
+    10.608,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -1446,7 +1446,7 @@ events={
 }
 ,
 {
-    10.559999999999999,
+    10.608,
     START_IK,
     {
         "Char_adelmar",
@@ -1461,7 +1461,7 @@ events={
 }
 ,
 {
-    11.559999999999999,
+    11.608,
     START_SPATIAL_PROP_ANIM,
     {
         "automarker_adelmar_ik",
@@ -1483,7 +1483,7 @@ events={
 }
 ,
 {
-    13.559999999999999,
+    13.608,
     START_SPATIAL_PROP_ANIM,
     {
         "automarker_adelmar_ik",
@@ -1505,7 +1505,7 @@ events={
 }
 ,
 {
-    15.559999999999999,
+    15.608,
     START_IK,
     {
         "Char_trent",
@@ -1520,7 +1520,7 @@ events={
 }
 ,
 {
-    16.06,
+    16.108,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_STND_TILT_HEAD_QUZZCLLY_000LV_XA_03",
@@ -1530,14 +1530,14 @@ events={
 }
 ,
 {
-    10.559999999999999,
+    10.608,
     START_MOTION,
     {"Char_adelmar"},
     { animation='Sc_dx_s070x_2801_Orillion',duration=6.02,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=0.88 }
 }
 ,
 {
-    10.559999999999999,
+    10.608,
     START_SOUND,
     {
         "DX_m01_berlin_0020_adelmar"
@@ -1548,7 +1548,7 @@ events={
 }
 ,
 {
-    16.076,
+    16.124000000000002,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -1557,7 +1557,7 @@ events={
 }
 ,
 {
-    16.076,
+    16.124000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "automarker_trent_table_ik",
@@ -1579,7 +1579,7 @@ events={
 }
 ,
 {
-    16.076,
+    16.124000000000002,
     START_IK,
     {
         "Char_trent",
@@ -1594,7 +1594,7 @@ events={
 }
 ,
 {
-    16.076,
+    16.124000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "automarker_trent_mega_ik",
@@ -1612,7 +1612,7 @@ events={
 }
 ,
 {
-    17.076,
+    17.124000000000002,
     START_SPATIAL_PROP_ANIM,
     {
         "automarker_trent_mega_ik",
@@ -1630,7 +1630,7 @@ events={
 }
 ,
 {
-    17.576,
+    17.624000000000002,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_STND_000LV_E_20",
@@ -1640,7 +1640,7 @@ events={
 }
 ,
 {
-    18.076,
+    18.124000000000002,
     START_IK,
     {
         "Char_luc",
@@ -1655,14 +1655,14 @@ events={
 }
 ,
 {
-    16.076,
+    16.124000000000002,
     START_MOTION,
     {"Char_trent"},
-    { animation='Sc_dx_s020x_1601_Trent',duration=4.14,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=2.76 }
+    { animation='Sc_dx_s020x_1601_Trent',duration=4.19,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=2.71 }
 }
 ,
 {
-    16.076,
+    16.124000000000002,
     START_SOUND,
     {
         "DX_m01_berlin_0030_trent"
@@ -1673,7 +1673,7 @@ events={
 }
 ,
 {
-    19.72,
+    19.816000000000003,
     START_SPATIAL_PROP_ANIM,
     {
         "automarker_luc_ik",
@@ -1695,7 +1695,7 @@ events={
 }
 ,
 {
-    19.72,
+    19.816000000000003,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -1704,7 +1704,7 @@ events={
 }
 ,
 {
-    19.72,
+    19.816000000000003,
     START_MOTION,
     {"Char_luc"},
     {animation="Sc_MLBODY_CHRB_SHRG_SHLDRS_BIG_000LV_XA_03",
@@ -1714,7 +1714,7 @@ events={
 }
 ,
 {
-    22.22,
+    22.316000000000003,
     START_MOTION,
     {"Char_luc"},
     {animation="Sc_MLBODY_CHRB_STNDCR_TRNS_090LV_XA_05",
@@ -1724,14 +1724,14 @@ events={
 }
 ,
 {
-    19.72,
+    19.816000000000003,
     START_MOTION,
     {"Char_luc"},
-    { animation='Sc_dx_s070x_2801_Orillion',duration=4.34,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=2.56 }
+    { animation='Sc_dx_s070x_2801_Orillion',duration=4.47,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=2.43 }
 }
 ,
 {
-    19.72,
+    19.816000000000003,
     START_SOUND,
     {
         "DX_m01_berlin_0040_luc"
