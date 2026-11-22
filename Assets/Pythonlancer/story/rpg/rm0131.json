@@ -39,7 +39,7 @@
       "id": "rm0131_frag0001",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Добро пожаловать. Линкор Мусаси. Я комендант стоянки Kondo. Нужно место для корабля?",
+      "ru": "Добро пожаловать. Линкор Мусаси. Я комендант стоянки Кондо. Нужно место для корабля?",
       "en": "You have reached the parking office for Battleship Musashi. Commandant Kondo. What can I do for you?"
     },
     {
@@ -172,14 +172,14 @@
       "id": "rm0131_frag0020",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "С возвращением. Комендант Kondo слушает. По поводу стоянки?",
+      "ru": "С возвращением. Комендант Кондо слушает. По поводу стоянки?",
       "en": "Welcome back. Commandant Kondo speaking. Here about ship storage?"
     },
     {
       "id": "rm0131_frag0021",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Привет, Трент. Стоянка базы «Линкор Мусаси» к твоим услугам.",
+      "ru": "Привет, Трент. Стоянка к твоим услугам.",
       "en": "Hello, Trent. Need another berth at Battleship Musashi?"
     },
     {

@@ -39,7 +39,7 @@
       "id": "rm0103_frag0001",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Добро пожаловать. Планета Уорик. Я комендант стоянки Hawthorne. Нужно место для корабля?",
+      "ru": "Добро пожаловать. Планета Уорик. Я комендант стоянки Хоторн. Нужно место для корабля?",
       "en": "You have reached the parking office for Warwick Planet. Commandant Hawthorne. What can I do for you?"
     },
     {
@@ -172,14 +172,14 @@
       "id": "rm0103_frag0020",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "С возвращением. Комендант Hawthorne слушает. По поводу стоянки?",
+      "ru": "С возвращением. Комендант Хоторн слушает. По поводу стоянки?",
       "en": "Welcome back. Commandant Hawthorne speaking. Here about ship storage?"
     },
     {
       "id": "rm0103_frag0021",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Привет, Трент. Стоянка базы «Планета Уорик» к твоим услугам.",
+      "ru": "Привет, Трент. Стоянка к твоим услугам.",
       "en": "Hello, Trent. Need another berth at Warwick Planet?"
     },
     {

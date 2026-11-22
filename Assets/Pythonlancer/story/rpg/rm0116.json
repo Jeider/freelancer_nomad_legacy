@@ -39,7 +39,7 @@
       "id": "rm0116_frag0001",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Добро пожаловать. Планета Калифорния. Я комендант стоянки Carter. Нужно место для корабля?",
+      "ru": "Добро пожаловать. Планета Калифорния. Я комендант стоянки Картер. Нужно место для корабля?",
       "en": "Welcome to Planet California. I am Commandant Carter. I handle parking berths here."
     },
     {
@@ -172,14 +172,14 @@
       "id": "rm0116_frag0020",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "С возвращением. Комендант Carter слушает. По поводу стоянки?",
+      "ru": "С возвращением. Комендант Картер слушает. По поводу стоянки?",
       "en": "Welcome back. Commandant Carter speaking. Here about ship storage?"
     },
     {
       "id": "rm0116_frag0021",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Привет, Трент. Стоянка базы «Планета Калифорния» к твоим услугам.",
+      "ru": "Привет, Трент. Стоянка к твоим услугам.",
       "en": "Hello, Trent. Need another berth at Planet California?"
     },
     {

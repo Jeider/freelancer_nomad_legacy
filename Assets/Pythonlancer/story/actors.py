@@ -842,7 +842,7 @@ class Hassler(Actor):
     RU_NAME = MS('Хасслер', 'Hassler')
     TYPE = ACTOR_MALE
     NAME = 'hassler'
-    COMM_APPEARANCE = 'rh_hassler_head, rh_male_elite_body, comm_rh_reichman'
+    COMM_APPEARANCE = 'rh_hassler_head, rh_hassler_body, comm_rh_reichman'
     CUTSCENE_APPEARANCE = 'hassler'
     STEOS_ID = 10071
     VOICE_DELIVERY = MIDDLE_AGED_SLOW

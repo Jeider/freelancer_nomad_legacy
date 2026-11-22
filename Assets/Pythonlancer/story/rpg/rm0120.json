@@ -39,7 +39,7 @@
       "id": "rm0120_frag0001",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Добро пожаловать. Планета Форбс. Я комендант стоянки Grant. Нужно место для корабля?",
+      "ru": "Добро пожаловать. Планета Форбс. Я комендант стоянки Грант. Нужно место для корабля?",
       "en": "Welcome to Forbes Planet. I am Commandant Grant. I handle parking berths here."
     },
     {
@@ -172,14 +172,14 @@
       "id": "rm0120_frag0020",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "С возвращением. Комендант Grant слушает. По поводу стоянки?",
+      "ru": "С возвращением. Комендант Грант слушает. По поводу стоянки?",
       "en": "Welcome back. Commandant Grant speaking. Here about ship storage?"
     },
     {
       "id": "rm0120_frag0021",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Привет, Трент. Стоянка базы «Планета Форбс» к твоим услугам.",
+      "ru": "Привет, Трент. Стоянка к твоим услугам.",
       "en": "Hello, Trent. Need another berth at Forbes Planet?"
     },
     {

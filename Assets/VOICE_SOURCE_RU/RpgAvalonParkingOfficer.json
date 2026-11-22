@@ -1,0 +1,85 @@
+{
+  "path": "D:\\Games\\FL_MOD\\Assets\\VOICE_SOURCE_RU\\RpgAvalonParkingOfficer.wav",
+  "sha256": "7ba4a29d19e52f36d5d06bbd0627af8c3da7f7418c84fdf42691d8620fd3e446",
+  "sources": [
+    {
+      "path": "D:\\Games\\FL_MOD\\Assets\\PILOTS\\mc_leg_m01\\default\\rmb_success_ships_01-.mp3",
+      "sha256": "e6af387608d907bd1543704366bfcb05d15cdafb1515c4bac289c68a569f915b",
+      "text": "Зона зачищена. Вы успешно справились с задачей. Отличная работа. Конец связи.",
+      "asr": {
+        "task": "transcribe",
+        "language": "ru",
+        "duration": 7.223,
+        "text": "Зона зачищена. Вы успешно справились с задачей. Отличная работа. Конец связи.",
+        "segments": [
+          {
+            "id": 0,
+            "seek": 0,
+            "start": 0.14,
+            "end": 5.34,
+            "text": " Зона зачищена. Вы успешно справились с задачей. Отличная работа.",
+            "tokens": [],
+            "temperature": 0.0,
+            "avg_logprob": 0.0,
+            "compression_ratio": 0.0,
+            "no_speech_prob": 0.0
+          },
+          {
+            "id": 1,
+            "seek": 0,
+            "start": 5.58,
+            "end": 6.68,
+            "text": " Конец связи.",
+            "tokens": [],
+            "temperature": 0.0,
+            "avg_logprob": 0.0,
+            "compression_ratio": 0.0,
+            "no_speech_prob": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "path": "D:\\Games\\FL_MOD\\Assets\\PILOTS\\mc_leg_m01\\default\\rmb_flytosystem_01-.mp3",
+      "sha256": "49bd467152e82bae81b22fcb2f7153d4423ce5329f73478c972d89cd0b88dc8d",
+      "text": "Направляйтесь к целевой системе. Она отмечена в вашей навигационной карте.",
+      "asr": {
+        "task": "transcribe",
+        "language": "ru",
+        "duration": 5.56275,
+        "text": "Направляйтесь к целевой системе. Она отмечена в вашей навигационной карте.",
+        "segments": [
+          {
+            "id": 0,
+            "seek": 0,
+            "start": 0.14,
+            "end": 5.02,
+            "text": " Направляйтесь к целевой системе. Она отмечена в вашей навигационной карте.",
+            "tokens": [],
+            "temperature": 0.0,
+            "avg_logprob": 0.0,
+            "compression_ratio": 0.0,
+            "no_speech_prob": 0.0
+          }
+        ]
+      }
+    }
+  ],
+  "text": "Зона зачищена. Вы успешно справились с задачей. Отличная работа. Конец связи. Направляйтесь к целевой системе. Она отмечена в вашей навигационной карте.",
+  "duration": 10.935666666666666,
+  "rate": 24000,
+  "channels": 1,
+  "sample_bits": 16,
+  "rms_dbfs": -19.66920767094335,
+  "peak_dbfs": -1.0001519038193567,
+  "approved_generation": {
+    "engine": "omnivoice",
+    "language": "ru",
+    "speed": "1.0",
+    "denoise": "false",
+    "postprocess_output": "false",
+    "pronounce": "false",
+    "num_step": "128",
+    "guidance_scale": "3.0"
+  }
+}

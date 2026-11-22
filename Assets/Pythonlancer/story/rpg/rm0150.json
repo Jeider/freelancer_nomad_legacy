@@ -39,7 +39,7 @@
       "id": "rm0150_frag0001",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Добро пожаловать. Линкор Луизиана. Я комендант стоянки Davis. Нужно место для корабля?",
+      "ru": "Добро пожаловать. Линкор Луизиана. Я комендант стоянки Дэвис. Нужно место для корабля?",
       "en": "You have reached the parking office for Battleship Louisiana. Commandant Davis. What can I do for you?"
     },
     {
@@ -172,14 +172,14 @@
       "id": "rm0150_frag0020",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "С возвращением. Комендант Davis слушает. По поводу стоянки?",
+      "ru": "С возвращением. Комендант Дэвис слушает. По поводу стоянки?",
       "en": "Welcome back. Commandant Davis speaking. Here about ship storage?"
     },
     {
       "id": "rm0150_frag0021",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Привет, Трент. Стоянка базы «Линкор Луизиана» к твоим услугам.",
+      "ru": "Привет, Трент. Стоянка к твоим услугам.",
       "en": "Hello, Trent. Need another berth at Battleship Louisiana?"
     },
     {

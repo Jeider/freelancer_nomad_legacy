@@ -39,7 +39,7 @@
       "id": "rm0143_frag0001",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Добро пожаловать. Линкор Аризона. Я комендант стоянки Bennett. Нужно место для корабля?",
+      "ru": "Добро пожаловать. Линкор Аризона. Я комендант стоянки Беннет. Нужно место для корабля?",
       "en": "You have reached the parking office for Battleship Arizona. Commandant Bennett. What can I do for you?"
     },
     {
@@ -172,14 +172,14 @@
       "id": "rm0143_frag0020",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "С возвращением. Комендант Bennett слушает. По поводу стоянки?",
+      "ru": "С возвращением. Комендант Беннет слушает. По поводу стоянки?",
       "en": "Welcome back. Commandant Bennett speaking. Here about ship storage?"
     },
     {
       "id": "rm0143_frag0021",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Привет, Трент. Стоянка базы «Линкор Аризона» к твоим услугам.",
+      "ru": "Привет, Трент. Стоянка к твоим услугам.",
       "en": "Hello, Trent. Need another berth at Battleship Arizona?"
     },
     {

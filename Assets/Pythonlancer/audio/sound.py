@@ -15,7 +15,7 @@ class VoiceLine(object):
     COMMENT_START = "<span class='comment'>("
     COMMENT_END = ")</span>"
 
-    def __init__(self, index, actor, ru='', en='', comment='', cinematic=False, delivery=None):
+    def __init__(self, index, actor, ru='', en='', comment='', cinematic=False, delivery=None, delivery_en=None):
         self.index = index
         self.actor = actor
         self.ru = ru
@@ -24,6 +24,26 @@ class VoiceLine(object):
         self.ids_sub = None
         self.cinematic = cinematic
         self.delivery = delivery
+        self.delivery_en = delivery_en
+
+    def get_delivery(self, language):
+        """EN acting direction overlays voice traits; RU retains legacy delivery."""
+        if language != 'en' or self.delivery_en is None:
+            return self.delivery
+        from audio.delivery import Delivery
+        base = self.delivery
+        if base is None:
+            getter = getattr(self.actor, 'get_voice_delivery', None)
+            base = getter() if getter else getattr(self.actor, 'VOICE_DELIVERY', None)
+        override = self.delivery_en
+        return Delivery(
+            override.code,
+            instruct=override.instruct if override.instruct is not None else getattr(base, 'instruct', None),
+            emo_text=override.emo_text,
+            emo_alpha=override.emo_alpha,
+            emo_vector=override.emo_vector,
+            speed=override.speed if override.speed is not None else getattr(base, 'speed', None),
+        )
 
     def get_info(self):
         return f"{self.index} {self.actor}"

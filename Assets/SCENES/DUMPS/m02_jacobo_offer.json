@@ -103,7 +103,7 @@
       0.0
     ]
   },
-  "cam_begin_pos2": {
+  "cam_begin2": {
     "position": [
       1.0,
       -5.0,
@@ -129,7 +129,7 @@
       0.0
     ]
   },
-  "cam_begin_point2": {
+  "cam_begin_focus2": {
     "position": [
       4.052434921264648,
       -4.293148040771484,
@@ -233,7 +233,7 @@
       0.0
     ]
   },
-  "cam_trent_arrival_pos2": {
+  "cam_trent_arrival2": {
     "position": [
       4.0,
       -2.5,
@@ -259,7 +259,7 @@
       0.0
     ]
   },
-  "cam_trent_arrival_point2": {
+  "cam_trent_arrival_focus2": {
     "position": [
       3.5,
       -5.0,
@@ -311,7 +311,7 @@
       0.0
     ]
   },
-  "cam_trent_stand_far_pos2": {
+  "cam_trent_stand_far2": {
     "position": [
       4.5,
       -3.9000000953674316,
@@ -350,7 +350,7 @@
       0.0
     ]
   },
-  "cam_walkout1_pos2": {
+  "cam_walkout12": {
     "position": [
       1.0,
       1.0,
@@ -376,7 +376,7 @@
       0.0
     ]
   },
-  "cam_walkout1_point2": {
+  "cam_walkout1_focus2": {
     "position": [
       2.75,
       -1.0,
@@ -402,7 +402,7 @@
       0.0
     ]
   },
-  "cam_walkout2_pos2": {
+  "cam_walkout22": {
     "position": [
       -6.0,
       -2.0,
@@ -428,7 +428,7 @@
       0.0
     ]
   },
-  "cam_walkout2_point2": {
+  "cam_walkout2_focus2": {
     "position": [
       -1.0,
       -0.5,

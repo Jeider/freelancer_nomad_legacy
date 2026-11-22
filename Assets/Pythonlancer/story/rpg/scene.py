@@ -71,7 +71,7 @@ class FragmentScene(Scene):
     def lookup_multiple_sounds(self, start, end):
         return [self.sound]
 
-    def lookup_single_sound(self, index):
+    def lookup_single_sound(self, index, props=None):
         return self.sound
 
     def get_content(self):

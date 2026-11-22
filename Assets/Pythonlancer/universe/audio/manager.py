@@ -69,21 +69,18 @@ class PilotManager:
             'pilot_leg02_props': pilot_en.EngFemaleTwo(core=self.core).get_file_sounds_ini(),
         }
 
-        data_folder.sync_audio_ini(
-            'voices_space_male',
-            self.core.tpl_manager.get_result(VOICES_MALE_TEMPLATE, voice_male_params),
-        )
-
-        data_folder.sync_audio_ini(
-            'voices_space_female',
-            self.core.tpl_manager.get_result(VOICES_FEMALE_TEMPLATE, voice_female_params),
-        )
-
-        data_folder.sync_mission_voice_props(
-            self.core.tpl_manager.get_result(VOICE_PROPS_TEMPLATE, {
+        # RU dispatcher WAVs and their INI paths form one verified transaction.
+        from pathlib import Path
+        from tools.dispatcher_files import compile_dispatchers
+        files = {
+            'AUDIO/voices_space_male.ini': self.core.tpl_manager.get_result(VOICES_MALE_TEMPLATE, voice_male_params).encode('utf-8'),
+            'AUDIO/voices_space_female.ini': self.core.tpl_manager.get_result(VOICES_FEMALE_TEMPLATE, voice_female_params).encode('utf-8'),
+            'MISSIONS/voice_properties.ini': self.core.tpl_manager.get_result(VOICE_PROPS_TEMPLATE, {
                 'props': DIVIDER.join(mission_props),
-            }),
-        )
+            }).encode('utf-8'),
+        }
+        project = Path(__file__).resolve().parents[2]
+        return compile_dispatchers(project, data_folder, files, output=project/'results/dispatcher_files')
 
     def prepare_pilots_audio(self):
         for a_pilot in pilot_en.EnglishShipVoice.subclasses:
@@ -97,6 +94,5 @@ class PilotManager:
             # return
 
     def compile_pilots_audio(self):
-        for a_pilot in StationDispatcher.subclasses:  # StationDispatcher.subclasses + ShipVoice.subclasses
-            folder = a_pilot.FOLDER
-            AudioFolder.compile_file(folder)
+        # Keep the established command, now compiling WAV files and matching INIs.
+        return self.compile_pilots_ini()

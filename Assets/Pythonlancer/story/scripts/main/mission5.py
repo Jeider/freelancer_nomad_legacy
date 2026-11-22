@@ -1,3 +1,5 @@
+from audio import story_delivery as performance
+from story.cutscenes.story_scenes import m05_barman
 from story.cutscenes.story_scenes import m05_detroit, m05_equip, m05_offer, m05_offer_accept, m05_offer_decision, m05_piratebar
 from story import script
 from audio.sound import VoiceLine
@@ -12,102 +14,102 @@ class Msn5(object):
 
 
 class Msn5Offer(Msn5, script.CutsceneProps):
-    THORN_DECISION_CLASS = m05_offer_decision.ReconstructedScene
-    THORN_ACCEPT_CLASS = m05_offer_accept.ReconstructedScene
-    THORN_CLASS = m05_offer.ReconstructedScene
+    THORN_DECISION_CLASS = m05_offer_decision.M05OfferDecisionScene
+    THORN_ACCEPT_CLASS = m05_offer_accept.M05OfferAcceptScene
+    THORN_CLASS = m05_offer.M05OfferScene
     ALIAS = 'offer'
     TITLE = 'Предложение'
     DESCRIPTION = ''
     VOICE_LINES = [
         VoiceLine(10, Hatcher, ru="Как вы мистер Трент? Все в порядке?", en="How are you, Mr. Trent? Everything all right?"),
-        VoiceLine(20, Trent, ru="Все отлично мисс Хетчер. Только вот, знаете, вчера ногу натер, а сегодня утром из душа выходил - так в пояснице кольнуло. ", en="All good, Miss Hatcher. Only, you know, I rubbed my foot raw yesterday, and this morning, getting out of the shower, my lower back twinged."),
-        VoiceLine(30, Hatcher, ru="Мистер Трент, давайте не будем превращать традиционный обмен любезностями в цирк. ", en="Mr. Trent, let's not turn the usual exchange of pleasantries into a circus."),
+        VoiceLine(20, Trent, ru="Все отлично мисс Хетчер. Только вот, знаете, вчера ногу натер, а сегодня утром из душа выходил - так в пояснице кольнуло. ", en="All good, Miss Hatcher. Only, you know, I rubbed my foot raw yesterday, and this morning, getting out of the shower, my lower back twinged.", delivery_en=performance.TEASING),
+        VoiceLine(30, Hatcher, ru="Мистер Трент, давайте не будем превращать традиционный обмен любезностями в цирк. ", en="Mr. Trent, let's not turn the usual exchange of pleasantries into a circus.", delivery_en=performance.STERN),
         VoiceLine(40, Trent, ru="Так может обойдемся без обмена любезностями и перейдем сразу к делу? ", en="So maybe we skip the pleasantries and get straight to business?"),
-        VoiceLine(50, Hatcher, ru="А с вами будет непросто... ", en="You're not going to make this easy..."),
-        VoiceLine(60, Hatcher, ru="Мы проанализировали привезенные вами документы, они безусловно представляют огромную ценность для нас, но есть одна проблема. ", en="We've analyzed the documents you brought. They're certainly of great value to us, but there's one problem."),
-        VoiceLine(70, Trent, ru="Всегда есть проблема ", en="There's always a problem."),
+        VoiceLine(50, Hatcher, ru="А с вами будет непросто... ", en="You're not going to make this easy...", delivery_en=performance.WEARY),
+        VoiceLine(60, Hatcher, ru="Мы проанализировали привезенные вами документы, они безусловно представляют огромную ценность для нас, но есть одна проблема. ", en="We've analyzed the documents you brought. They're certainly of great value to us, but there's one problem.", delivery_en=performance.CONCERNED),
+        VoiceLine(70, Trent, ru="Всегда есть проблема ", en="There's always a problem.", delivery_en=performance.WEARY),
         VoiceLine(80, Hatcher, ru="Слишком много научных выкладок, причем настолько передовых, что у нас головастики драку устроили, не сойдясь в трактовках данных. ", en="Too many scientific calculations, and so advanced that our eggheads got into a fight because they couldn't agree on how to interpret the data."),
-        VoiceLine(90, Hatcher, ru="Знаете, мистер Трент, драка между учеными выглядит со стороны весьма забавно. ", en="You know, Mr. Trent, a fight between scientists looks pretty amusing from the outside."),
-        VoiceLine(100, Trent, ru="Жаль не видел. В чем моя роль? Не ученых же ваших разнимать? ", en="Shame I missed it. What's my part? Not breaking up your scientists, I hope?"),
+        VoiceLine(90, Hatcher, ru="Знаете, мистер Трент, драка между учеными выглядит со стороны весьма забавно. ", en="You know, Mr. Trent, a fight between scientists looks pretty amusing from the outside.", delivery_en=performance.AMUSED),
+        VoiceLine(100, Trent, ru="Жаль не видел. В чем моя роль? Не ученых же ваших разнимать? ", en="Shame I missed it. What's my part? Not breaking up your scientists, I hope?", delivery_en=performance.SARDONIC),
         VoiceLine(110, Hatcher, ru="Нам нужно мнение не просто ученого, а гения, светилы в своей области, человека который мог бы дать однозначную трактовку этим данным. ", en="We need the opinion not just of a scientist, but of a genius, a leading light in his field, someone who could give a definitive reading of this data."),
         VoiceLine(120, Hatcher, ru="Я знаю такого человека, я с ним лично знакома. Это профессор Мандрейк. Он сможет во всем разобраться. ", en="I know such a person. I know him personally. It's Professor Mandrake. He'll be able to make sense of all of it."),
         VoiceLine(130, Trent, ru="Но вы не можете просто позвонить ему и попросить вам помочь потому что... ", en="But you can't just call him and ask him to help you because..."),
-        VoiceLine(140, Hatcher, ru="Потому что он работает в ДипСпейсИнжиниринг и в данный момент отправился в исследовательскую экспедицию, судя по всему очень важную, потому что их служба противодействия промышленному шпионажу буквально на ушах стоит. ", en="Because he works at Deep Space Engineering, and right now he's gone on a research expedition. Apparently a very important one, because their industrial counterespionage service is practically in an uproar."),
+        VoiceLine(140, Hatcher, ru="Потому что он работает в ДипСпейсИнжиниринг и в данный момент отправился в исследовательскую экспедицию, судя по всему очень важную, потому что их служба противодействия промышленному шпионажу буквально на ушах стоит. ", en="Because he works at Deep Space Engineering, and right now he's gone on a research expedition. Apparently a very important one, because their industrial counterespionage service is practically in an uproar.", delivery_en=performance.CONCERNED),
         VoiceLine(150, Trent, ru="И мое задание будет состоять в... ", en="And my assignment will consist of..."),
-        VoiceLine(160, Hatcher, ru="В полете... Мистер Трент, перестаньте. Вам нужно будет вылететь на станцию Детройт - в штаб квартиру ДипСпейс, узнать там местонахождение профессора Мандрейка, забрать его и привезти ко мне. ", en="Of flying... Mr. Trent, stop. You'll need to fly to Detroit station, to Deep Space headquarters, find out Professor Mandrake's location there, pick him up, and bring him to me."),
+        VoiceLine(160, Hatcher, ru="В полете... Мистер Трент, перестаньте. Вам нужно будет вылететь на станцию Детройт - в штаб квартиру ДипСпейс, узнать там местонахождение профессора Мандрейка, забрать его и привезти ко мне. ", en="Of flying... Mr. Trent, stop. You'll need to fly to Detroit station, to Deep Space headquarters, find out Professor Mandrake's location there, pick him up, and bring him to me.", delivery_en=performance.STERN),
         VoiceLine(170, Hatcher, ru="Я дам вам свою визитку на случай проблем со службой безопасности ДипСпейс, скажете что действуете от моего имени.", en="I'll give you my card in case there's trouble with Deep Space security. Say you're acting on my behalf."),
         VoiceLine(180, Trent, ru="Служба безопасности Альянса? Никогда не слышал о такой.", en="Alliance Security Service? Never heard of it."),
         VoiceLine(190, Hatcher, ru="Это не имеет значения, мистер Трент. Гонорар за выполнение задания будет очень приятным.", en="That doesn't matter, Mr. Trent. The fee for completing the assignment will be very nice."),
         VoiceLine(200, Trent, ru="Ок. Как скажете.", en="Okay. As you say."),
-        VoiceLine(210, Hatcher, ru="Окей, фрилансер, теперь посмотрим чего ты стоишь. Языком молотить научился, посмотрим как научился работать извилинами. А я за тобой присмотрю... Издалека.", en="Okay, freelancer, now we'll see what you're worth. You've learned to run your mouth. Let's see how well you've learned to use your head. And I'll be keeping an eye on you... From a distance."),
+        VoiceLine(210, Hatcher, ru="Окей, фрилансер, теперь посмотрим чего ты стоишь. Языком молотить научился, посмотрим как научился работать извилинами. А я за тобой присмотрю... Издалека.", en="Okay, freelancer, now we'll see what you're worth. You've learned to run your mouth. Let's see how well you've learned to use your head. And I'll be keeping an eye on you... From a distance.", delivery_en=performance.SARDONIC),
     ]
 
 
 class Msn5Piratebar(Msn5, script.CutsceneProps):
-    THORN_CLASS = m05_piratebar.ReconstructedScene
+    THORN_CLASS = m05_piratebar.M05PiratebarScene
     ALIAS = 'piratebar'
     TITLE = 'Пиратская база'
     DESCRIPTION = ''
     VOICE_LINES = [
-        VoiceLine(10, Trent, ru="Хай, бро! Есть чо? А то я тут с такого дальняка вернулся, что все мозги закисли, расслабиться бы... ", en="Hey, bro! Got anything? I just got back from so far out, my brain's gone sour. Could use a chance to unwind..."),
-        VoiceLine(20, Smith, ru="Та не, откуда, сам с пятого на десятое перебиваюсь. ", en="Nah, where from? I'm barely scraping by myself."),
-        VoiceLine(30, Trent, ru="Вот же козлы все эти пиджаки из ДипСпейс. Я им работу сработал, а они мне на Детройте даже посадку не дали, типа мордой не вышел, пропуска нет.", en="What assholes, all these suits from Deep Space. I did a job for them, and they wouldn't even let me land on Detroit. Like my face doesn't fit, no pass."),
-        VoiceLine(40, Trent, ru="А у меня там заначка козырная, месяц оттопыриваться можно - из омикронов привез, дельце там одно провернул.", en="And I've got a prime stash there, enough to party for a month. Brought it from the Omicrons, pulled a little job out there."),
-        VoiceLine(50, Trent, ru="А теперь из-за этой мать ее боевой готовности сидеть тут пойлом местным травиться...  А когда она еще закончится, готовность эта...", en="And now, because of this goddamn combat readiness, I'm stuck here poisoning myself on the local swill... And who knows when this readiness is even going to end..."),
-        VoiceLine(55, Trent, ru="Эх, пропуск бы где раздобыть, я бы сундучок-то свой оттуда выцепил бы, оттянулись бы по полной...", en="Eh, if I could get a pass somewhere, I'd snag that chest of mine out of there, and we'd really live it up..."),
-        VoiceLine(60, Smith, ru="Слыш, это, дружище... Тебя как зовут?", en="Hey, uh, buddy... What's your name?"),
+        VoiceLine(10, Trent, ru="Хай, бро! Есть чо? А то я тут с такого дальняка вернулся, что все мозги закисли, расслабиться бы... ", en="Hey, bro! Got anything? I just got back from so far out, my brain's gone sour. Could use a chance to unwind...", delivery_en=performance.WARM),
+        VoiceLine(20, Smith, ru="Та не, откуда, сам с пятого на десятое перебиваюсь. ", en="Nah, where from? I'm barely scraping by myself.", delivery_en=performance.WEARY),
+        VoiceLine(30, Trent, ru="Вот же козлы все эти пиджаки из ДипСпейс. Я им работу сработал, а они мне на Детройте даже посадку не дали, типа мордой не вышел, пропуска нет.", en="What assholes, all these suits from Deep Space. I did a job for them, and they wouldn't even let me land on Detroit. Like my face doesn't fit, no pass.", delivery_en=performance.ANGRY),
+        VoiceLine(40, Trent, ru="А у меня там заначка козырная, месяц оттопыриваться можно - из омикронов привез, дельце там одно провернул.", en="And I've got a prime stash there, enough to party for a month. Brought it from the Omicrons, pulled a little job out there.", delivery_en=performance.PROUD),
+        VoiceLine(50, Trent, ru="А теперь из-за этой мать ее боевой готовности сидеть тут пойлом местным травиться...  А когда она еще закончится, готовность эта...", en="And now, because of this goddamn combat readiness, I'm stuck here poisoning myself on the local swill... And who knows when this readiness is even going to end...", delivery_en=performance.WEARY),
+        VoiceLine(55, Trent, ru="Эх, пропуск бы где раздобыть, я бы сундучок-то свой оттуда выцепил бы, оттянулись бы по полной...", en="Eh, if I could get a pass somewhere, I'd snag that chest of mine out of there, and we'd really live it up...", delivery_en=performance.EXCITED),
+        VoiceLine(60, Smith, ru="Слыш, это, дружище... Тебя как зовут?", en="Hey, uh, buddy... What's your name?", delivery_en=performance.UNCERTAIN),
         VoiceLine(70, Trent, ru="Трент. а тебя как?", en="Trent. And you?"),
         VoiceLine(80, Smith, ru="Смит. Мистер Смит.", en="Smith. Mister Smith."),
-        VoiceLine(90, Trent, ru="Приятно познакомитьcя. Мистер Смит, ты там что-то сказать хотел. ", en="Nice to meet you. Mister Smith, you wanted to say something."),
-        VoiceLine(100, Smith, ru="Да? Да. А, Да! Я знаю где можно пропуск достать. ", en="Yeah? Yeah. Oh, yeah! I know where you can get a pass."),
-        VoiceLine(110, Trent, ru="Да ты что! И где. ", en="You don't say! And where."),
-        VoiceLine(120, Smith, ru="Смотри. Вот тут склад есть секретный. Там у ребят пара штук на крайний случай точно есть. Я знаю. Попробуй с ними договориться. Только ты это... Никому. Склад-то секретный! ", en="Look. There's a secret warehouse right around here. The guys there definitely have a couple for an emergency. I know. Try to make a deal with them. Only, uh... Don't tell anyone. The warehouse is secret!"),
-        VoiceLine(130, Trent, ru="Замётано, бро!", en="You got it, bro!"),
-        VoiceLine(140, Smith, ru="Ты с сундучком-то забегай...", en="Swing by with that chest..."),
+        VoiceLine(90, Trent, ru="Приятно познакомитьcя. Мистер Смит, ты там что-то сказать хотел. ", en="Nice to meet you. Mister Smith, you wanted to say something.", delivery_en=performance.WARM),
+        VoiceLine(100, Smith, ru="Да? Да. А, Да! Я знаю где можно пропуск достать. ", en="Yeah? Yeah. Oh, yeah! I know where you can get a pass.", delivery_en=performance.EXCITED),
+        VoiceLine(110, Trent, ru="Да ты что! И где. ", en="You don't say! And where.", delivery_en=performance.EXCITED),
+        VoiceLine(120, Smith, ru="Смотри. Вот тут склад есть секретный. Там у ребят пара штук на крайний случай точно есть. Я знаю. Попробуй с ними договориться. Только ты это... Никому. Склад-то секретный! ", en="Look. There's a secret warehouse right around here. The guys there definitely have a couple for an emergency. I know. Try to make a deal with them. Only, uh... Don't tell anyone. The warehouse is secret!", delivery_en=performance.CONCERNED),
+        VoiceLine(130, Trent, ru="Замётано, бро!", en="You got it, bro!", delivery_en=performance.WARM),
+        VoiceLine(140, Smith, ru="Ты с сундучком-то забегай...", en="Swing by with that chest...", delivery_en=performance.WARM),
     ]
 
 
 class Msn5Detroit(Msn5, script.CutsceneProps):
-    THORN_CLASS = m05_detroit.ReconstructedScene
+    THORN_CLASS = m05_detroit.M05DetroitScene
     ALIAS = 'detroit'
     TITLE = 'Детроит'
     DESCRIPTION = ''
     VOICE_LINES = [
         VoiceLine(10, Trent, ru="Дружище, я тут одного профессора ищу, по фамилии Мандрейк. Не слышал о таком. ",
                   en="Buddy, I'm looking for a professor here, last name Mandrake. Ever heard of one?"),
-        VoiceLine(20, DetroitBarman, ru="Не видел, не слышал, не разговаривал. ", en="Didn't see him, didn't hear of him, didn't talk to him."),
-        VoiceLine(30, Trent, ru="А ты душка, я смотрю. А взгляни вот на это, дружище, я из профсоюза барменов.", en="Aren't you a sweetheart. Take a look at this, buddy. I'm from the bartenders' union."),
+        VoiceLine(20, DetroitBarman, ru="Не видел, не слышал, не разговаривал. ", en="Didn't see him, didn't hear of him, didn't talk to him.", delivery_en=performance.DRY),
+        VoiceLine(30, Trent, ru="А ты душка, я смотрю. А взгляни вот на это, дружище, я из профсоюза барменов.", en="Aren't you a sweetheart. Take a look at this, buddy. I'm from the bartenders' union.", delivery_en=performance.SARDONIC),
         VoiceLine(40, DetroitBarman, ru="Чёрт, ты из этих... Светани-ка этой  штукой вон туда в камеру, чтобы я потом смог оправдаться.",
-                  en="Damn, you're one of those... Flash that thing at the camera over there, so I can cover myself later."),
+                  en="Damn, you're one of those... Flash that thing at the camera over there, so I can cover myself later.", delivery_en=performance.CONCERNED),
         VoiceLine(45, DetroitBarman, ru="Ага, спасибо. Исследовательская станция в Сигма-17.", en="Yeah, thanks. A research station in Sigma-17."),
         VoiceLine(50, Trent, ru="Какая именно станция? ", en="Which station exactly?"),
         VoiceLine(60, DetroitBarman, ru="Ис-сле-до-ва-тель-ска-я. Компренде? Странно, ваши обычно посообразительнее бывают. ",
-                  en="Re-se-arch. Comprende? Strange, your people are usually a bit sharper."),
+                  en="Re-se-arch. Comprende? Strange, your people are usually a bit sharper.", delivery_en=performance.SARDONIC),
         VoiceLine(70, Trent, ru="Ок. Спасибо за инфу. Видишь как легко растопить лед и найти взаимопонимание?",
-                  en="Okay. Thanks for the info. See how easy it is to melt the ice and find some mutual understanding?"),
-        VoiceLine(80, Trent, ru="Вот чего не хватает человечеству - взаимопонимания.", en="That's what humanity is missing — mutual understanding."),
+                  en="Okay. Thanks for the info. See how easy it is to melt the ice and find some mutual understanding?", delivery_en=performance.SARDONIC),
+        VoiceLine(80, Trent, ru="Вот чего не хватает человечеству - взаимопонимания.", en="That's what humanity is missing — mutual understanding.", delivery_en=performance.SARDONIC),
     ]
 
 
 class Msn5Equip(Msn5, script.CutsceneProps):
-    THORN_CLASS = m05_equip.ReconstructedScene
+    THORN_CLASS = m05_equip.M05EquipScene
     ALIAS = 'equip'
     TITLE = 'Вознаграждение'
     DESCRIPTION = ''
     VOICE_LINES = [
-        VoiceLine(10, Mandrake, ru="(слабый и радостный) Хетчер, рад тебя видеть. Вы с фрилансером оказались очень вовремя.", en="(weak and joyful) Hatcher, good to see you. You and the freelancer showed up just in time."),
-        VoiceLine(20, Hatcher, ru="Профессор, простите нас, вы лишний час просидели в капсуле из-за этого идиота Тилтона", en="Professor, forgive us. You sat an extra hour in the capsule because of that idiot Tilton."),
+        VoiceLine(10, Mandrake, ru="(слабый и радостный) Хетчер, рад тебя видеть. Вы с фрилансером оказались очень вовремя.", en="(weak and joyful) Hatcher, good to see you. You and the freelancer showed up just in time.", delivery_en=performance.RELIEVED),
+        VoiceLine(20, Hatcher, ru="Профессор, простите нас, вы лишний час просидели в капсуле из-за этого идиота Тилтона", en="Professor, forgive us. You sat an extra hour in the capsule because of that idiot Tilton.", delivery_en=performance.CONCERNED),
 
         VoiceLine(30, Mandrake, ru="Что с Тилтоном на этот раз? Опять хочет отжать полномия у СБА и получить доступ к вашим разработкам?", en="What's with Tilton this time? Trying to muscle the authority away from the ASF again and get access to your work?"),
-        VoiceLine(40, Hatcher, ru="Чёрта с два у него это выйдет! Я этого никогда не допущу!", en="Like hell he'll pull that off! I'll never allow it!"),
+        VoiceLine(40, Hatcher, ru="Чёрта с два у него это выйдет! Я этого никогда не допущу!", en="Like hell he'll pull that off! I'll never allow it!", delivery_en=performance.ANGRY),
 
         VoiceLine(50, Mandrake, ru="Да, я знаю. Ты никогда не отступаешь. Но зачем тебе понадобился я?", en="Yes, I know. You never back down. But why did you need me?"),
 
         VoiceLine(60, Hatcher, ru="Мы получили секретную информацию о разработках рейнландских учёных. Они что-то делают в Сфере. И у них большой прогресс.", en="We've received secret information on the Rheinland scientists' work. They're doing something in the Sphere. And they've made a lot of progress."),
 
-        VoiceLine(70, Mandrake, ru="(возмущение) Как... как вы это могли допустить? Где же флот, охрана? Как?", en="(outraged) How... how could you let this happen? Where's the fleet, the security? How?"),
-        VoiceLine(80, Hatcher, ru="Ну... У Тилтона стали появляться союзники. Наши силы поубавились... поэтому нам нужна ваша помощь.", en="Well... Tilton's been gaining allies. Our forces have thinned... so we need your help."),
-        VoiceLine(90, Mandrake, ru="Конечно, Хетчер! Нужно действовать как можно скорее.", en="Of course, Hatcher! We need to act as soon as possible."),
+        VoiceLine(70, Mandrake, ru="(возмущение) Как... как вы это могли допустить? Где же флот, охрана? Как?", en="(outraged) How... how could you let this happen? Where's the fleet, the security? How?", delivery_en=performance.ANGRY),
+        VoiceLine(80, Hatcher, ru="Ну... У Тилтона стали появляться союзники. Наши силы поубавились... поэтому нам нужна ваша помощь.", en="Well... Tilton's been gaining allies. Our forces have thinned... so we need your help.", delivery_en=performance.CONCERNED),
+        VoiceLine(90, Mandrake, ru="Конечно, Хетчер! Нужно действовать как можно скорее.", en="Of course, Hatcher! We need to act as soon as possible.", delivery_en=performance.URGENT),
 
         VoiceLine(100, Trent, ru="Кхм кхм. Можно я вас перебью?", en="Ahem. Mind if I interrupt?"),
 
@@ -115,8 +117,8 @@ class Msn5Equip(Msn5, script.CutsceneProps):
 
         VoiceLine(120, Trent, ru="У меня два вопроса. Во-первых, о чеканной монете.", en="I've got two questions. First, about the hard cash."),
         VoiceLine(130, Hatcher, ru="Ах, да. Сейчас переведу деньги на твой. Счёт. А что еще?", en="Oh, right. I'll transfer the money to your account now. What else?"),
-        VoiceLine(140, Trent, ru="Во-вторых, что-то твоя СБА не кажется такой уж мегаструктурой, если Либерти крутит её направо и налево.", en="Second, your ASF doesn't seem like much of a megastructure if Liberty pushes it around any way it likes."),
-        VoiceLine(150, Hatcher, ru="Так, знаешь Трент, если тебе что-то не нравится, то можешь задать такой же вопрос Тилтону. Или ты хочешь, чтобы я отменила тот звонок на Грифон?", en="Look, Trent, if you don't like something, you can ask Tilton the same question. Or do you want me to cancel that call to the Griffin?"),
+        VoiceLine(140, Trent, ru="Во-вторых, что-то твоя СБА не кажется такой уж мегаструктурой, если Либерти крутит её направо и налево.", en="Second, your ASF doesn't seem like much of a megastructure if Liberty pushes it around any way it likes.", delivery_en=performance.SARDONIC),
+        VoiceLine(150, Hatcher, ru="Так, знаешь Трент, если тебе что-то не нравится, то можешь задать такой же вопрос Тилтону. Или ты хочешь, чтобы я отменила тот звонок на Грифон?", en="Look, Trent, if you don't like something, you can ask Tilton the same question. Or do you want me to cancel that call to the Griffin?", delivery_en=performance.THREATENING),
 
         VoiceLine(160, Trent, ru="Не стоит, я всё понял. Тогда до связи.", en="No need. I get it. Talk later, then."),
 
@@ -174,6 +176,12 @@ class Msn5Equip(Msn5, script.CutsceneProps):
     ]
 
 
+class Msn5Barman(Msn5, script.CutsceneProps):
+    THORN_CLASS = m05_barman.M05BarmanScene
+    ALIAS = 'barman'
+    TITLE = 'm05_barman'
+    DESCRIPTION = ''
+
 class Msn5Space(Msn5, script.SpaceVoiceProps):
     VOICE_LINES = [
         VoiceLine(
@@ -187,6 +195,7 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             Trent,
             ru="Детр+оит значит. До него лететь всего ничего. Легкотня, а не миссия.",
             en="Detroit, then. It's barely a flight to get there. Easy, not a mission.",
+            delivery_en=performance.AMUSED,
         ),
         VoiceLine(
             5,
@@ -205,18 +214,21 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             Trent,
             ru="Замечательно. И где мне его взять? ",
             en="Wonderful. And where am I supposed to get one?",
+            delivery_en=performance.SARDONIC,
         ),
         VoiceLine(
             30,
             DetroitDispatcher,
             ru="Фрилансер альфа-один немедленно покиньте зону стыковки! ",
             en="Freelancer alpha-one, leave the docking zone immediately!",
+            delivery_en=performance.STERN,
         ),
         VoiceLine(
             40,
             Trent,
             ru="Да покидаю, покидаю, угомонись.",
             en="Yeah, I'm leaving, I'm leaving. Calm down.",
+            delivery_en=performance.SARDONIC,
         ),
         VoiceLine(
             50,
@@ -241,6 +253,7 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             Trent,
             ru="Значит нам туда дорога. Если и не выгорит ничего - хоть горло промочу.",
             en="Then that's where we're headed. Even if nothing pans out, at least I'll wet my throat.",
+            delivery_en=performance.TEASING,
         ),
         VoiceLine(
             100,
@@ -255,6 +268,7 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             ru="Ох, ёптыть, это еще что тут такое? ",
             en="Oh, shit, what the hell is this now?",
             cinematic=True,
+            delivery_en=performance.ANGRY,
         ),
         VoiceLine(
             120,
@@ -262,6 +276,7 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             ru="Мил человек, ты откуда здесь такой нарисовался некрасивый? Заблудился что-ль? ",
             en="My good man, where did an ugly one like you turn up from? Lost, are you?",
             cinematic=True,
+            delivery_en=performance.TEASING,
         ),
         VoiceLine(
             130,
@@ -276,6 +291,7 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             ru="Твою же... Я сегодня же прикончу этого долбаного торчка. Все мозги себе скурил. ",
             en="Goddamn... I'm killing that damn junkie today. He's smoked his brains out.",
             cinematic=True,
+            delivery_en=performance.ANGRY,
         ),
         VoiceLine(
             150,
@@ -283,6 +299,7 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             ru="Сначала займемся эти пионэром.",
             en="First we'll deal with this pioneer.",
             cinematic=True,
+            delivery_en=performance.THREATENING,
         ),
         VoiceLine(
             160,
@@ -295,12 +312,14 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             Trent,
             ru="Самую малость. ",
             en="Just a little.",
+            delivery_en=performance.SARDONIC,
         ),
         VoiceLine(
             180,
             Hatcher,
             ru="Мистер Трент, этими джентльменами займусь я, а вы пока найдите пропуск, он должен быть на одном из этих складов",
             en="Mr. Trent, I'll deal with these gentlemen, and you find the pass in the meantime. It should be in one of these warehouses.",
+            delivery_en=performance.REASSURING,
         ),
         VoiceLine(
             190,
@@ -313,6 +332,7 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             Hatcher,
             ru="Отлично, теперь - в Детройт! ",
             en="Excellent. Now, to Detroit!",
+            delivery_en=performance.PROUD,
         ),
         VoiceLine(
             210,
@@ -331,6 +351,7 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             Trent,
             ru="Не делайте мне мозг, Хетчер.",
             en="Don't mess with my head, Hatcher.",
+            delivery_en=performance.STERN,
         ),
         VoiceLine(
             240,
@@ -343,36 +364,42 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             Trent,
             ru="Мисс Хетчер, приглашаю вас в романтическое путешествие до системы Сигма-17. ",
             en="Miss Hatcher, I invite you on a romantic trip to the Sigma-17 system.",
+            delivery_en=performance.TEASING,
         ),
         VoiceLine(
             310,
             Trent,
             ru="Там правда нужно будет еще станцию какую-то найти. Ис-сле-до-ва-тель-ску-ю. Но, думаю, мы справимся. ",
             en="Though we'll also have to find some station or other. A re-se-arch one. But I think we'll manage.",
+            delivery_en=performance.TEASING,
         ),
         VoiceLine(
             320,
             Hatcher,
             ru="Не могу вам отказать, мистер Трент. ",
             en="I can't refuse you, Mr. Trent.",
+            delivery_en=performance.TEASING,
         ),
         VoiceLine(
             330,
             Trent,
             ru="Вот так бы всегда с женщинами. ",
             en="If only it were always like this with women.",
+            delivery_en=performance.AMUSED,
         ),
         VoiceLine(
             340,
             Hatcher,
             ru="Есть проблема, мистер Трент. ",
             en="There's a problem, Mr. Trent.",
+            delivery_en=performance.CONCERNED,
         ),
         VoiceLine(
             350,
             Trent,
             ru="Всегда есть проблема. Какая на этот раз? ",
             en="There's always a problem. What is it this time?",
+            delivery_en=performance.SARDONIC,
         ),
         VoiceLine(
             360,
@@ -391,12 +418,14 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             Hatcher,
             ru="У нас с ними есть некий конфликт интересов. ",
             en="We have a certain conflict of interest with them.",
+            delivery_en=performance.CONCERNED,
         ),
         VoiceLine(
             390,
             Trent,
             ru="Это обнадеживает...",
             en="That's reassuring...",
+            delivery_en=performance.SARDONIC,
         ),
         VoiceLine(
             395,
@@ -409,18 +438,21 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             ClarkResearch,
             ru="Фрилансер альфа-один, в стыковке отказано! Немедленно покиньте зону стыковки, или мы будем вынуждены открыть огонь! ",
             en="Freelancer alpha-one, docking denied! Leave the docking zone immediately, or we will be forced to open fire!",
+            delivery_en=performance.THREATENING,
         ),
         VoiceLine(
             410,
             Trent,
             ru="Да что-ж такое-то. Все как сговорились. Мисс Хет... ",
             en="What is this. Like they all agreed. Miss Hat...",
+            delivery_en=performance.ANGRY,
         ),
         VoiceLine(
             420,
             Sigma17Trader,
             ru="SOS! Всем кто рядом! Это торговец омега-9. Подвергаюсь нападению пиратов! Срочно нужна помощь! Кларк, помогите! ",
             en="SOS! Everyone nearby! This is trader omega-9. I'm under attack by pirates! I need help urgently! Clark, help!",
+            delivery_en=performance.PANICKED,
         ),
         VoiceLine(
             430,
@@ -433,18 +465,21 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             Trent,
             ru="Вот тупые уроды. Какие у них свои силы? Там вообще люди или роботы сидят? Хетчер, за мной! ",
             en="What stupid bastards. What forces of their own do they have? Are there even people in there, or robots? Hatcher, follow me!",
+            delivery_en=performance.ANGRY,
         ),
         VoiceLine(
             450,
             Hatcher,
             ru="Трент... Чёрт!",
             en="Trent... Damn!",
+            delivery_en=performance.ANGRY,
         ),
         VoiceLine(
             460,
             Sigma17Trader,
             ru="Спасибо вам, фриленсер! Мы у вас в долгу! Если можем чем-то помочь... ",
             en="Thank you, freelancer! We're in your debt! If we can help with anything...",
+            delivery_en=performance.WARM,
         ),
         VoiceLine(
             470,
@@ -487,6 +522,7 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             Mandrake,
             ru="Чёрт, что вы привезли? ",
             en="Damn, what did you bring?",
+            delivery_en=performance.ANGRY,
         ),
         VoiceLine(
             540,
@@ -499,6 +535,7 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             Mandrake,
             ru="Я заказывал компоненты для лазера из Штутгарта, от наших проверенных поставщиков, а вижу непонятные ящики с какой-то нелепой маркировкой. ",
             en="I ordered laser components from Stuttgart, from our trusted suppliers, and I see strange crates with some ridiculous markings.",
+            delivery_en=performance.ANGRY,
         ),
         VoiceLine(
             560,
@@ -511,30 +548,35 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             ClarkResearch,
             ru="Внимание техническому персоналу, отправить инженерную команду в док два. Резкое повышение температуры в складских помещениях. ",
             en="Attention, technical personnel. Send an engineering team to dock two. Sharp rise in temperature in the storage rooms.",
+            delivery_en=performance.CONCERNED,
         ),
         VoiceLine(
             580,
             ClarkResearch,
             ru="Взрывная разгерметизация дока два! Нарушение конструктивной целостности станции! ",
             en="Explosive decompression in dock two! Station structural integrity compromised!",
+            delivery_en=performance.ALARMED,
         ),
         VoiceLine(
             590,
             ClarkResearch,
             ru="Всему персоналу немедленно проследовать к ближайшим спасательным капсулам! Повторяю Всему персоналу неме... сле... жа...",
             en="All personnel, proceed immediately to the nearest escape pods! I repeat, all personnel, imme... diate... ly...",
+            delivery_en=performance.PANICKED,
         ),
         VoiceLine(
             600,
             Hatcher,
             ru="Капсулы не вылетели! Трент, нам нужно спасти Мандрейка! Достань капсулы из обломков базы!",
-            en="The pods didn't launch! Trent, we need to save Mandrake! Get the pods out of the station wreckage!"
+            en="The pods didn't launch! Trent, we need to save Mandrake! Get the pods out of the station wreckage!",
+            delivery_en=performance.URGENT,
         ),
         VoiceLine(
             605,
             Hatcher,
             ru="Мандрейк у нас! Теперь давай постар+аемся спаст+и как можно больше учёных!",
-            en="We've got Mandrake! Now let's try to save as many scientists as we can!"
+            en="We've got Mandrake! Now let's try to save as many scientists as we can!",
+            delivery_en=performance.URGENT,
         ),
         # VoiceLine(
         #     610,
@@ -620,6 +662,7 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             ru="Фриленсер альфа-один, заблокируйте орудийные системы и проследуйте с нами до линкора Грифон. ",
             en="Freelancer alpha-one, lock your weapon systems and proceed with us to the battleship Griffin.",
             cinematic=True,
+            delivery_en=performance.STERN,
         ),
         VoiceLine(
             730,
@@ -627,6 +670,7 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             ru="Да что за... Я просто летел к вратам в Форбс, в чем дело? ",
             en="What the... I was just flying to the jump gate to Forbes. What's the matter?",
             cinematic=True,
+            delivery_en=performance.SHOCKED,
         ),
         VoiceLine(
             740,
@@ -634,6 +678,7 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             ru="Фриленсер альфа-один, повторяю, заблокируйте орудийные системы и проследуйте с нами до линкора Грифон. Приказ коммандера Тилтона. В случае сопротивления открываем огонь на поражение. ",
             en="Freelancer alpha-one, I repeat, lock your weapon systems and proceed with us to the battleship Griffin. Order of Commander Tilton. If you resist, we open fire to kill.",
             cinematic=True,
+            delivery_en=performance.THREATENING,
         ),
         VoiceLine(
             750,
@@ -641,6 +686,7 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             ru="Салют, мальчики! Он под моей юрисдикцией, расслабьтесь. Это наш человек, ясно вам?! ",
             en="Hey, boys! He's under my jurisdiction. Relax. This is our man, is that clear?!",
             cinematic=True,
+            delivery_en=performance.ANGRY,
         ),
         VoiceLine(
             760,
@@ -648,6 +694,7 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             ru="Хетчер, давно не виделись. Ваши агенты влияния изрядно у нас попили крови, но сейчас ты облажалась по полной!",
             en="Hatcher, long time no see. Your agents of influence have given us plenty of grief, but now you've screwed up completely!",
             cinematic=True,
+            delivery_en=performance.DISGUSTED,
         ),
         VoiceLine(
             765,
@@ -655,6 +702,7 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             ru="Этот фрилансер обвиняется в уничтожении научной станции Кларк! И я имею полномочия делать с ним всё, что захочу! ",
             en="This freelancer is accused of destroying Clark research station! And I have the authority to do whatever I want with him!",
             cinematic=True,
+            delivery_en=performance.THREATENING,
         ),
         VoiceLine(
             780,
@@ -662,6 +710,7 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             ru="Да я-то здесь причем? Станцию изнутри взорвали, я в это время вообще снаружи был, ожидал... ",
             en="What do I have to do with this? The station was blown up from the inside. I was outside the whole time, waiting...",
             cinematic=True,
+            delivery_en=performance.ANGRY,
         ),
         VoiceLine(
             785,
@@ -669,6 +718,7 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             ru="Заткнись, фрилансер",
             en="Shut up, freelancer.",
             cinematic=True,
+            delivery_en=performance.ANGRY,
         ),
         VoiceLine(
             790,
@@ -676,6 +726,7 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             ru="Замолчи, Трент ",
             en="Be quiet, Trent.",
             cinematic=True,
+            delivery_en=performance.STERN,
         ),
         VoiceLine(
             810,
@@ -683,6 +734,7 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             ru="Внимание, враждебные контакты на радаре!",
             en="Attention, hostile contacts on radar!",
             cinematic=True,
+            delivery_en=performance.ALARMED,
         ),
         VoiceLine(
             820,
@@ -690,36 +742,42 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             ru="Какая встреча, герр Трент! А вы знаете, что полагается по законам Рейнланда за государственную измену? Правильно, смертная казнь! Звено, к бою! ",
             en="What a meeting, Herr Trent! Do you know what Rheinland law prescribes for treason? That's right, the death penalty! Wing, to battle!",
             cinematic=True,
+            delivery_en=performance.THREATENING,
         ),
         VoiceLine(
             830,
             Sigma17Police,
             ru="Звено, к бою! ",
             en="Wing, to battle!",
+            delivery_en=performance.COMMAND,
         ),
         VoiceLine(
             840,
             Tilton,
             ru="Капитан, промежуточный калибр на подавление враждебных контактов! Уничтожить агрессора!",
             en="Captain, intermediate caliber to suppress hostile contacts! Destroy the aggressor!",
+            delivery_en=performance.COMMAND,
         ),
         VoiceLine(
             850,
             Tilton,
             ru="Мистер Трент, вижу, у вас дар заводить себе друзей. ",
             en="Mr. Trent, I see you have a gift for making friends.",
+            delivery_en=performance.SARDONIC,
         ),
         VoiceLine(
             860,
             Hatcher,
             ru="Тилтон, не тяни кота за яйца. ",
             en="Tilton, quit dragging this out.",
+            delivery_en=performance.ANGRY,
         ),
         VoiceLine(
             870,
             Tilton,
             ru="Это ты о чем, Хетчер? ",
             en="What are you talking about, Hatcher?",
+            delivery_en=performance.DRY,
         ),
         VoiceLine(
             880,
@@ -732,12 +790,14 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             Tilton,
             ru="Я действительно, как будто что-то получил, сейчас прочитаю... ",
             en="I did seem to receive something. I'll read it now...",
+            delivery_en=performance.DRY,
         ),
         VoiceLine(
             900,
             Hatcher,
             ru="Тилтон, мать твою, если в течении пяти секунд... Ты получишь лично от меня и перед твоим личным составом. ",
             en="Tilton, damn you, if within five seconds... You'll get it from me personally, and in front of your personnel.",
+            delivery_en=performance.FURIOUS,
         ),
         VoiceLine(
             910,
@@ -750,12 +810,14 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
             Trent,
             ru="О, спасибо, коммандер... ",
             en="Oh, thank you, commander...",
+            delivery_en=performance.SARDONIC,
         ),
         VoiceLine(
             930,
             Hatcher,
             ru="Валим отсюда, быстро!!! В этой игре столько игроков что никогда не знаешь какой следующий приказ в течение этих пяти минут получит этот паладин-переросток! ",
             en="Let's get out of here, fast!!! There are so many players in this game, you never know what next order this overgrown paladin will get within these five minutes!",
+            delivery_en=performance.URGENT,
         ),
 
         # перед джампом в форбс
@@ -782,9 +844,9 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
 
         VoiceLine(1130, Trent, ru="Звучит так, будто вы действительно серьёзные ребята.", en="Sounds like you really are serious people."),
 
-        VoiceLine(1140, Hatcher, ru="Только будь на чеку, фрилансер, эта информация не для всеобщего распространения.", en="Just stay sharp, freelancer. This information isn't for general distribution."),
+        VoiceLine(1140, Hatcher, ru="Только будь на чеку, фрилансер, эта информация не для всеобщего распространения.", en="Just stay sharp, freelancer. This information isn't for general distribution.", delivery_en=performance.STERN),
 
-        VoiceLine(1150, Trent, ru="Понял, понял. Всё как обычно.", en="Got it, got it. Same as always."),
+        VoiceLine(1150, Trent, ru="Понял, понял. Всё как обычно.", en="Got it, got it. Same as always.", delivery_en=performance.SARDONIC),
 
 
 
@@ -847,6 +909,7 @@ class Msn5Space(Msn5, script.SpaceVoiceProps):
 class Mission5(Msn5, script.StoryMission):
     MISSION_INDEX = 5
     CUTSCENES = [
+        Msn5Barman,
         Msn5Offer,
         Msn5Piratebar,
         Msn5Detroit,

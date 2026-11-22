@@ -11,6 +11,7 @@ events={
     {animation="Sc_MLBODY_CHRB_IDLE_MED_000LV_XA_07",
      duration=10, time_scale=0.6, start_time=0, weight=1, heading=-1
        , trans_time=0.8 
+     
      }
 }
 }

@@ -39,7 +39,7 @@
       "id": "rm0102_frag0001",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Добро пожаловать. Планета Кембридж. Я комендант стоянки Bennett. Нужно место для корабля?",
+      "ru": "Добро пожаловать. Планета Кембридж. Я комендант стоянки Беннет. Нужно место для корабля?",
       "en": "Commandant Bennett, at your service. If you need to store a ship at Planet Cambridge, talk to me."
     },
     {
@@ -172,14 +172,14 @@
       "id": "rm0102_frag0020",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "С возвращением. Комендант Bennett слушает. По поводу стоянки?",
+      "ru": "С возвращением. Комендант Беннет слушает. По поводу стоянки?",
       "en": "Welcome back. Commandant Bennett speaking. Here about ship storage?"
     },
     {
       "id": "rm0102_frag0021",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Привет, Трент. Стоянка базы «Планета Кембридж» к твоим услугам.",
+      "ru": "Привет, Трент. Стоянка к твоим услугам.",
       "en": "Hello, Trent. Need another berth at Planet Cambridge?"
     },
     {

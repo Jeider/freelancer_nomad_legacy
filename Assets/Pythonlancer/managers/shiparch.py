@@ -253,5 +253,6 @@ class ShiparchManagerV2:
         data_folder = DataFolder(build_to_folder=self.core.build_folder)
         content = self.get_shiparch_content()
         data_folder.sync_rh_pir_elite()
+        data_folder.sync_rh_pir_freighter()
         data_folder.sync_shiparch_alt(content)  # Temporary!
         # data_folder.sync_fuse(FUSE_GEN_CAPITAL, self.get_fuses())

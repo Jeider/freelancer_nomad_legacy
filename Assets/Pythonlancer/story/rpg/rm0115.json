@@ -39,7 +39,7 @@
       "id": "rm0115_frag0001",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Добро пожаловать. Станция Йокогама. Я комендант стоянки Abe. Нужно место для корабля?",
+      "ru": "Добро пожаловать. Станция Йокогама. Я комендант стоянки Абэ. Нужно место для корабля?",
       "en": "Welcome to Station Yokohama. I am Commandant Abe. I handle parking berths here."
     },
     {
@@ -172,14 +172,14 @@
       "id": "rm0115_frag0020",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "С возвращением. Комендант Abe слушает. По поводу стоянки?",
+      "ru": "С возвращением. Комендант Абэ слушает. По поводу стоянки?",
       "en": "Welcome back. Commandant Abe speaking. Here about ship storage?"
     },
     {
       "id": "rm0115_frag0021",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Привет, Трент. Стоянка базы «Станция Йокогама» к твоим услугам.",
+      "ru": "Привет, Трент. Стоянка к твоим услугам.",
       "en": "Hello, Trent. Need another berth at Station Yokohama?"
     },
     {

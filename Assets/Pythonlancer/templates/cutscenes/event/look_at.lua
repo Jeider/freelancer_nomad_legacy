@@ -2,11 +2,11 @@
     {{ time }},
     ATTACH_ENTITY,
     {
-        "{{ point.name }}",
-        "{{ focus.name }}"
+        "{{ point_name }}",
+        "{{ focus_name }}"
     },
     {
         duration={{ duration }}, offset={0,0,0},
-        up=Y_AXIS, front=NEG_Z_AXIS, target_part="{{ target_part }}", target_type={{ target_type }}, flags=LOOK_AT
+        up={{ up }}, front={{ front }}, target_part="{{ target_part }}", target_type={{ target_type }}, flags=LOOK_AT
     }
 }

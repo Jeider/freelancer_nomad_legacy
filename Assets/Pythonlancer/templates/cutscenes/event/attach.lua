@@ -1,5 +1,5 @@
 {
-    0,
+    {{ time }},
     ATTACH_ENTITY,
     {
         "{{ target_name }}",
@@ -12,8 +12,8 @@
             {{ offset_y }},
             {{ offset_z }}
         },
-        up=Y_AXIS,
-        front=NEG_Z_AXIS,
+        up={{ up }},
+        front={{ front }},
         target_part="{{ target_part }}",
         target_type={{ target_type }},
         flags={{ flags }}

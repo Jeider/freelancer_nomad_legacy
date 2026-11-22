@@ -329,7 +329,7 @@ class VoiceStudioClone(object):
                 text=sound.line.get_en_ai_gen_text(),
                 source_lang='en',
                 speech_lang='en',
-                delivery=sound.line.delivery,
+                delivery=sound.line.get_delivery('en'),
                 default_actor=default_actor,
             ),
             file_destination,

@@ -39,7 +39,7 @@
       "id": "rm0140_frag0001",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Добро пожаловать. Линкор Маркграф. Я комендант стоянки Stein. Нужно место для корабля?",
+      "ru": "Добро пожаловать. Линкор Маркграф. Я комендант стоянки Штайн. Нужно место для корабля?",
       "en": "Commandant Stein, at your service. If you need to store a ship at Battleship Markgraf, talk to me."
     },
     {
@@ -172,14 +172,14 @@
       "id": "rm0140_frag0020",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "С возвращением. Комендант Stein слушает. По поводу стоянки?",
+      "ru": "С возвращением. Комендант Штайн слушает. По поводу стоянки?",
       "en": "Welcome back. Commandant Stein speaking. Here about ship storage?"
     },
     {
       "id": "rm0140_frag0021",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Привет, Трент. Стоянка базы «Линкор Маркграф» к твоим услугам.",
+      "ru": "Привет, Трент. Стоянка к твоим услугам.",
       "en": "Hello, Trent. Need another berth at Battleship Markgraf?"
     },
     {

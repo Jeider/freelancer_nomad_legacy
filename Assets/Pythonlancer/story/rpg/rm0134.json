@@ -39,7 +39,7 @@
       "id": "rm0134_frag0001",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Добро пожаловать. Станция Бремен. Я комендант стоянки Fischer. Нужно место для корабля?",
+      "ru": "Добро пожаловать. Станция Бремен. Я комендант стоянки Фишер. Нужно место для корабля?",
       "en": "Welcome to Bremen Station. I am Commandant Fischer. I handle parking berths here."
     },
     {
@@ -172,14 +172,14 @@
       "id": "rm0134_frag0020",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "С возвращением. Комендант Fischer слушает. По поводу стоянки?",
+      "ru": "С возвращением. Комендант Фишер слушает. По поводу стоянки?",
       "en": "Welcome back. Commandant Fischer speaking. Here about ship storage?"
     },
     {
       "id": "rm0134_frag0021",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Привет, Трент. Стоянка базы «Станция Бремен» к твоим услугам.",
+      "ru": "Привет, Трент. Стоянка к твоим услугам.",
       "en": "Hello, Trent. Need another berth at Bremen Station?"
     },
     {

@@ -39,7 +39,7 @@
       "id": "rm0123_frag0001",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Добро пожаловать. Планета Манхеттен. Я комендант стоянки Cole. Нужно место для корабля?",
+      "ru": "Добро пожаловать. Планета Манхеттен. Я комендант стоянки Коул. Нужно место для корабля?",
       "en": "You have reached the parking office for Planet Manhattan. Commandant Cole. What can I do for you?"
     },
     {
@@ -172,14 +172,14 @@
       "id": "rm0123_frag0020",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "С возвращением. Комендант Cole слушает. По поводу стоянки?",
+      "ru": "С возвращением. Комендант Коул слушает. По поводу стоянки?",
       "en": "Welcome back. Commandant Cole speaking. Here about ship storage?"
     },
     {
       "id": "rm0123_frag0021",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Привет, Трент. Стоянка базы «Планета Манхеттен» к твоим услугам.",
+      "ru": "Привет, Трент. Стоянка к твоим услугам.",
       "en": "Hello, Trent. Need another berth at Planet Manhattan?"
     },
     {

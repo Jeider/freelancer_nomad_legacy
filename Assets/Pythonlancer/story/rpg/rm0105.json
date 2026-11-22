@@ -39,7 +39,7 @@
       "id": "rm0105_frag0001",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Добро пожаловать. Планета Кадиз. Я комендант стоянки Ramos. Нужно место для корабля?",
+      "ru": "Добро пожаловать. Планета Кадиз. Я комендант стоянки Рамос. Нужно место для корабля?",
       "en": "Commandant Ramos, at your service. If you need to store a ship at Planet Malta, talk to me."
     },
     {
@@ -172,14 +172,14 @@
       "id": "rm0105_frag0020",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "С возвращением. Комендант Ramos слушает. По поводу стоянки?",
+      "ru": "С возвращением. Комендант Рамос слушает. По поводу стоянки?",
       "en": "Welcome back. Commandant Ramos speaking. Here about ship storage?"
     },
     {
       "id": "rm0105_frag0021",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Привет, Трент. Стоянка базы «Планета Кадиз» к твоим услугам.",
+      "ru": "Привет, Трент. Стоянка к твоим услугам.",
       "en": "Hello, Trent. Need another berth at Planet Malta?"
     },
     {

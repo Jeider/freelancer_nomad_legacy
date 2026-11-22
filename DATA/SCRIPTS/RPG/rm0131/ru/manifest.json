@@ -1,0 +1,800 @@
+{
+  "schema": 1,
+  "group": "rm0131",
+  "language": "ru",
+  "runtime_connected": false,
+  "contract": {
+    "actor_binding": {
+      "vendor": "park_or_hq_99",
+      "player": "Player"
+    },
+    "bind_mode": 2,
+    "require_existing_actors": true,
+    "session_cameras": {
+      "vendor": "RpgCamera_vendor",
+      "player": "RpgCamera_player"
+    },
+    "position_actors_once": true,
+    "skip": "current_fragment_only"
+  },
+  "dialogue": {
+    "schema": 1,
+    "id": "rm0131",
+    "status": "generated",
+    "scenario": "parking_commandant",
+    "start": "parking_start",
+    "binding": {
+      "vendor": "park_or_hq_99",
+      "player": "Player"
+    },
+    "casting": {
+      "vendor": "RpgAvalonParkingOfficer",
+      "player": "Trent"
+    },
+    "parking": {
+      "base": "or_hq_99_base",
+      "seller": "park_or_hq_99"
+    },
+    "appearance": {
+      "head": "ge_male3_head",
+      "body": "ku_male_elite_body"
+    },
+    "rules": {
+      "reputation": {
+        "enabled": true,
+        "faction": "contact.affiliation",
+        "minimum": 0,
+        "strict": true,
+        "enforced_by": "server.parking"
+      },
+      "first_greeting": "rm0131_frag0001",
+      "rotation": "shuffle_bag_no_immediate_repeat",
+      "escape_during_speech": "skip_current_fragment",
+      "price_and_limit": "RPG/ship_parking.ini",
+      "purchase": "one_permanent_slot_on_this_base_per_confirmation"
+    },
+    "fragments": [
+      {
+        "id": "rm0131_frag0001",
+        "role": "vendor",
+        "pool": "greeting",
+        "ru": "Добро пожаловать. Линкор Мусаси. Я комендант стоянки Кондо. Нужно место для корабля?",
+        "en": "You have reached the parking office for Battleship Musashi. Commandant Kondo. What can I do for you?"
+      },
+      {
+        "id": "rm0131_frag0002",
+        "role": "player",
+        "pool": "ask_buy",
+        "ru": "Хочу купить место для своего корабля.",
+        "en": "I'd like to buy a berth for my ship."
+      },
+      {
+        "id": "rm0131_frag0003",
+        "role": "vendor",
+        "pool": "quote",
+        "ru": "Вот условия покупки. Проверь стоимость и подтверди, если всё устраивает.",
+        "en": "Here are the terms. Check the price, and confirm if you're ready to proceed."
+      },
+      {
+        "id": "rm0131_frag0004",
+        "role": "player",
+        "pool": "confirm",
+        "ru": "Условия устраивают. Оформляйте одно место.",
+        "en": "The terms look good. I'll take one berth."
+      },
+      {
+        "id": "rm0131_frag0005",
+        "role": "vendor",
+        "pool": "success",
+        "ru": "Оплата принята. Линкор Мусаси: место закреплено за тобой. Можешь оставить корабль.",
+        "en": "Payment received. Your berth at Battleship Musashi is registered. You can store a ship here now."
+      },
+      {
+        "id": "rm0131_frag0006",
+        "role": "player",
+        "pool": "cancel",
+        "ru": "Пока отложим покупку.",
+        "en": "Let's hold off on the purchase."
+      },
+      {
+        "id": "rm0131_frag0007",
+        "role": "vendor",
+        "pool": "resume",
+        "ru": "Хорошо. Что ещё тебя интересует?",
+        "en": "All right. What else would you like to know?"
+      },
+      {
+        "id": "rm0131_frag0008",
+        "role": "player",
+        "pool": "ask_rules",
+        "ru": "Какие у вас условия хранения кораблей?",
+        "en": "What are the rules for storing ships here?"
+      },
+      {
+        "id": "rm0131_frag0009",
+        "role": "vendor",
+        "pool": "rules",
+        "ru": "Место покупается навсегда. Заберёшь корабль — место останется твоим. Текущий корабль отдельного места не занимает.",
+        "en": "A berth is yours permanently. It stays yours when you collect the ship. Your current ship doesn't take up a berth."
+      },
+      {
+        "id": "rm0131_frag0010",
+        "role": "player",
+        "pool": "ask_scope",
+        "ru": "Это место будет доступно и на других базах?",
+        "en": "Can I use that berth at other bases too?"
+      },
+      {
+        "id": "rm0131_frag0011",
+        "role": "vendor",
+        "pool": "scope",
+        "ru": "Место действует только здесь: Линкор Мусаси. На другой базе его нужно покупать отдельно.",
+        "en": "This berth is only valid at Battleship Musashi. You will need a separate berth at any other base."
+      },
+      {
+        "id": "rm0131_frag0012",
+        "role": "player",
+        "pool": "ask_full",
+        "ru": "А если все мои места будут заняты?",
+        "en": "What happens when all my berths are occupied?"
+      },
+      {
+        "id": "rm0131_frag0013",
+        "role": "vendor",
+        "pool": "full",
+        "ru": "Ещё один корабль поставить не получится. Но можно забрать оставленный или обменять его на текущий. Для обмена свободное место не нужно.",
+        "en": "You won't be able to park another ship. You can still collect a stored ship or swap it with your current one. A swap doesn't need an empty berth."
+      },
+      {
+        "id": "rm0131_frag0014",
+        "role": "vendor",
+        "pool": "no_money",
+        "ru": "На счету недостаточно кредитов. Оплата не прошла. Возвращайся, когда будет нужная сумма.",
+        "en": "You don't have enough credits. No payment was taken. Come back when you have the funds."
+      },
+      {
+        "id": "rm0131_frag0015",
+        "role": "vendor",
+        "pool": "maximum",
+        "ru": "Ты уже приобрёл все доступные тебе места на этой базе. Ещё одно оформить не могу.",
+        "en": "You already own the maximum number of berths at this base. I cannot register another one."
+      },
+      {
+        "id": "rm0131_frag0016",
+        "role": "vendor",
+        "pool": "error",
+        "ru": "Оформить покупку не удалось. Деньги не списаны. Давай проверим условия ещё раз.",
+        "en": "The purchase couldn't be completed. You haven't been charged. Let's check the terms again."
+      },
+      {
+        "id": "rm0131_frag0017",
+        "role": "player",
+        "pool": "back",
+        "ru": "Вернёмся к покупке места.",
+        "en": "Let's get back to buying a berth."
+      },
+      {
+        "id": "rm0131_frag0018",
+        "role": "player",
+        "pool": "leave",
+        "ru": "На этом всё. До встречи, комендант.",
+        "en": "That is all for now. Goodbye, Commandant."
+      },
+      {
+        "id": "rm0131_frag0019",
+        "role": "vendor",
+        "pool": "farewell",
+        "ru": "До встречи, Трент. Удачных полётов.",
+        "en": "Goodbye, Trent. Safe flying."
+      },
+      {
+        "id": "rm0131_frag0020",
+        "role": "vendor",
+        "pool": "greeting",
+        "ru": "С возвращением. Комендант Кондо слушает. По поводу стоянки?",
+        "en": "Welcome back. Commandant Kondo speaking. Here about ship storage?"
+      },
+      {
+        "id": "rm0131_frag0021",
+        "role": "vendor",
+        "pool": "greeting",
+        "ru": "Привет, Трент. Стоянка к твоим услугам.",
+        "en": "Hello, Trent. Need another berth at Battleship Musashi?"
+      },
+      {
+        "id": "rm0131_frag0022",
+        "role": "vendor",
+        "pool": "success",
+        "ru": "Готово. Место оплачено и закреплено за тобой. Пользуйся.",
+        "en": "All done. The berth is paid for and registered in your name. It's yours to use."
+      },
+      {
+        "id": "rm0131_frag0023",
+        "role": "vendor",
+        "pool": "bad_reputation",
+        "ru": "Не могу продать тебе место. Твоя репутация у нашей фракции должна быть положительной.",
+        "en": "I cannot sell you a berth. Your reputation with our faction must be positive."
+      }
+    ],
+    "nodes": {
+      "parking_start": {
+        "pool": "greeting",
+        "choices": "main",
+        "text_ru": "Стоянка {base}. Куплено: {owned} из {maximum}. Занято: {used}. Цена места: {price} кредитов.",
+        "text_en": "{base} parking. Owned: {owned} of {maximum}. Occupied: {used}. Price per berth: {price} credits."
+      },
+      "parking_confirm": {
+        "pool": "quote",
+        "choices": "confirm",
+        "text_ru": "Купить одно постоянное место на {base} за {price} кредитов? Куплено: {owned} из {maximum}.",
+        "text_en": "Buy one permanent berth on {base} for {price} credits? Owned: {owned} of {maximum}."
+      },
+      "parking_resume": {
+        "pool": "resume",
+        "choices": "main"
+      },
+      "parking_help": {
+        "pool": "rules",
+        "choices": "information"
+      },
+      "parking_scope": {
+        "pool": "scope",
+        "choices": "information"
+      },
+      "parking_full": {
+        "pool": "full",
+        "choices": "information"
+      },
+      "parking_success": {
+        "pool": "success",
+        "choices": "result",
+        "text_ru": "Место оплачено. На {base} у вас {owned} из {maximum} мест. Занято: {used}.",
+        "text_en": "Berth purchased. You own {owned} of {maximum} berths on {base}. Occupied: {used}."
+      },
+      "parking_no_money": {
+        "pool": "no_money",
+        "choices": "result"
+      },
+      "parking_maximum": {
+        "pool": "maximum",
+        "choices": "result"
+      },
+      "parking_error": {
+        "pool": "error",
+        "choices": "result"
+      },
+      "parking_farewell": {
+        "pool": "farewell",
+        "terminal": true
+      },
+      "parking_bad_reputation": {
+        "pool": "bad_reputation",
+        "choices": "result"
+      }
+    },
+    "choice_sets": {
+      "main": [
+        "buy",
+        "rules",
+        "leave"
+      ],
+      "confirm": [
+        "confirm",
+        "cancel"
+      ],
+      "information": [
+        "scope",
+        "full",
+        "back",
+        "leave"
+      ],
+      "result": [
+        "back",
+        "leave"
+      ]
+    },
+    "choices": {
+      "buy": {
+        "pool": "ask_buy",
+        "ru": "Купить место",
+        "en": "Buy a berth",
+        "action": "quote_parking",
+        "goto": "parking_confirm",
+        "outcomes": {
+          "maximum": "parking_maximum",
+          "bad_reputation": "parking_bad_reputation"
+        }
+      },
+      "confirm": {
+        "pool": "confirm",
+        "ru": "Купить за {price} кредитов",
+        "en": "Buy for {price} credits",
+        "action": "buy_parking",
+        "outcomes": {
+          "success": "parking_success",
+          "no_money": "parking_no_money",
+          "maximum": "parking_maximum",
+          "failed": "parking_error",
+          "bad_reputation": "parking_bad_reputation"
+        }
+      },
+      "cancel": {
+        "pool": "cancel",
+        "ru": "Отложить покупку",
+        "en": "Cancel purchase",
+        "goto": "parking_resume"
+      },
+      "rules": {
+        "pool": "ask_rules",
+        "ru": "Условия хранения",
+        "en": "Storage rules",
+        "goto": "parking_help"
+      },
+      "scope": {
+        "pool": "ask_scope",
+        "ru": "Место действует на других базах?",
+        "en": "Does it apply at other bases?",
+        "goto": "parking_scope"
+      },
+      "full": {
+        "pool": "ask_full",
+        "ru": "Если все места заняты?",
+        "en": "What if all berths are occupied?",
+        "goto": "parking_full"
+      },
+      "back": {
+        "pool": "back",
+        "ru": "Вернуться к покупке",
+        "en": "Back to the purchase",
+        "goto": "parking_start"
+      },
+      "leave": {
+        "pool": "leave",
+        "ru": "До встречи, комендант",
+        "en": "Goodbye, Commandant",
+        "goto": "parking_farewell"
+      }
+    },
+    "local_scene": true,
+    "vendor_posture": "stand"
+  },
+  "fragments": [
+    {
+      "id": "rm0131_frag0001",
+      "role": "vendor",
+      "pool": "greeting",
+      "path": "SCRIPTS/RPG/rm0131/ru/rm0131_frag0001.thn",
+      "sha256": "ed9ab3ea390980d1b60232c51913dfedab8f984b7a12f880856fa20ffcba38f0",
+      "audio": "AUDIO/MOD/RPG/rm0131/rm0131_frag0001_l001_vendor.wav",
+      "audio_sha256": "26fb38aaf4f35e4e64197ee1ebbac31d54177d3c8a22c5df0de690e9ee6652bf",
+      "sound": "DX_rm0131_frag0001_l001_vendor_ru",
+      "speech_seconds": 6.056625,
+      "scene_seconds": 7.5066250000000005,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Добро пожаловать. Линкор Мусаси. Я комендант стоянки Кондо. Нужно место для корабля?"
+    },
+    {
+      "id": "rm0131_frag0002",
+      "role": "player",
+      "pool": "ask_buy",
+      "path": "SCRIPTS/RPG/rm0131/ru/rm0131_frag0002.thn",
+      "sha256": "19c31ae4a4416d9b4b0cbc0fe87acb6fe4b8338a440e19504864bea36d07d020",
+      "audio": "AUDIO/MOD/RPG/rm0131/rm0131_frag0002_l001_player.wav",
+      "audio_sha256": "10832d7dbed2e5b625c81705b1e2fd722d29312d7be788e50e08a2705ad20847",
+      "sound": "DX_rm0131_frag0002_l001_player_ru",
+      "speech_seconds": 2.476166666666667,
+      "scene_seconds": 3.9261666666666666,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Хочу купить место для своего корабля."
+    },
+    {
+      "id": "rm0131_frag0003",
+      "role": "vendor",
+      "pool": "quote",
+      "path": "SCRIPTS/RPG/rm0131/ru/rm0131_frag0003.thn",
+      "sha256": "296ca080db32eef44371812b9feb2a575853b2f7e5e0996f9ade2cacd87a5df9",
+      "audio": "AUDIO/MOD/RPG/rm0131/rm0131_frag0003_l001_vendor.wav",
+      "audio_sha256": "749c73982a17d9d75c3c9e61eda93fe588536d5722ddb79b40fa3f28cf853b34",
+      "sound": "DX_rm0131_frag0003_l001_vendor_ru",
+      "speech_seconds": 5.174541666666666,
+      "scene_seconds": 6.6245416666666666,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Вот условия покупки. Проверь стоимость и подтверди, если всё устраивает."
+    },
+    {
+      "id": "rm0131_frag0004",
+      "role": "player",
+      "pool": "confirm",
+      "path": "SCRIPTS/RPG/rm0131/ru/rm0131_frag0004.thn",
+      "sha256": "1da60b2c29ba8535f8bc1ea0b28f0da2d6d1210a08d1ff42c656b02b77aaff68",
+      "audio": "AUDIO/MOD/RPG/rm0131/rm0131_frag0004_l001_player.wav",
+      "audio_sha256": "e4d23bc3e82b06403d248d6c256d9339441cc36f2693a162fce413ce9e86f63a",
+      "sound": "DX_rm0131_frag0004_l001_player_ru",
+      "speech_seconds": 3.078625,
+      "scene_seconds": 4.528625,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Условия устраивают. Оформляйте одно место."
+    },
+    {
+      "id": "rm0131_frag0005",
+      "role": "vendor",
+      "pool": "success",
+      "path": "SCRIPTS/RPG/rm0131/ru/rm0131_frag0005.thn",
+      "sha256": "48852f086b2b2ef01cea0812cd9defea51004d3385e3ff8a219769ff6535a3be",
+      "audio": "AUDIO/MOD/RPG/rm0131/rm0131_frag0005_l001_vendor.wav",
+      "audio_sha256": "c74d6d2feb0d3e632d7f9bed0c630c3a6d9cd5cc9af52d9d7f3e14e539ebf236",
+      "sound": "DX_rm0131_frag0005_l001_vendor_ru",
+      "speech_seconds": 5.926583333333333,
+      "scene_seconds": 7.3765833333333335,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Оплата принята. Линкор Мусаси: место закреплено за тобой. Можешь оставить корабль."
+    },
+    {
+      "id": "rm0131_frag0006",
+      "role": "player",
+      "pool": "cancel",
+      "path": "SCRIPTS/RPG/rm0131/ru/rm0131_frag0006.thn",
+      "sha256": "187be0e11838748a5cfcf49863f6f748cecbf3e21713f8dd56e615558e953e2a",
+      "audio": "AUDIO/MOD/RPG/rm0131/rm0131_frag0006_l001_player.wav",
+      "audio_sha256": "29fabdd1df16e165c4d321002d5fbb2e24298782a6683f28b3b4f5f69b07a8d3",
+      "sound": "DX_rm0131_frag0006_l001_player_ru",
+      "speech_seconds": 1.8020833333333333,
+      "scene_seconds": 3.252083333333333,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Пока отложим покупку."
+    },
+    {
+      "id": "rm0131_frag0007",
+      "role": "vendor",
+      "pool": "resume",
+      "path": "SCRIPTS/RPG/rm0131/ru/rm0131_frag0007.thn",
+      "sha256": "bc38cb053e9a7d728ebe2670c03ebde560b98511dd4d4ddd278cf8525e27395d",
+      "audio": "AUDIO/MOD/RPG/rm0131/rm0131_frag0007_l001_vendor.wav",
+      "audio_sha256": "5b7ef1f91c3bba44775febaa22bde4894e6f3ea3a8154c78d64cbb8e175e188f",
+      "sound": "DX_rm0131_frag0007_l001_vendor_ru",
+      "speech_seconds": 2.3117083333333333,
+      "scene_seconds": 3.761708333333333,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Хорошо. Что ещё тебя интересует?"
+    },
+    {
+      "id": "rm0131_frag0008",
+      "role": "player",
+      "pool": "ask_rules",
+      "path": "SCRIPTS/RPG/rm0131/ru/rm0131_frag0008.thn",
+      "sha256": "8764ed27acfb8465bf9c59165441e4134eff1776302048fb8a3307320357dfe6",
+      "audio": "AUDIO/MOD/RPG/rm0131/rm0131_frag0008_l001_player.wav",
+      "audio_sha256": "24f1d8a1a98737e0a92506d9fedc6b94abc4318ec3377da3b4a3592c227a94f1",
+      "sound": "DX_rm0131_frag0008_l001_player_ru",
+      "speech_seconds": 2.860125,
+      "scene_seconds": 4.310124999999999,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Какие у вас условия хранения кораблей?"
+    },
+    {
+      "id": "rm0131_frag0009",
+      "role": "vendor",
+      "pool": "rules",
+      "path": "SCRIPTS/RPG/rm0131/ru/rm0131_frag0009.thn",
+      "sha256": "2aaa85e88bcd6615cb0d5c2bd15fe047af608bddf1b17c8ad565877c7ec38654",
+      "audio": "AUDIO/MOD/RPG/rm0131/rm0131_frag0009_l001_vendor.wav",
+      "audio_sha256": "4e36d293414f546c046698401edf4990a3a80d2f364a60281971e964851e72a5",
+      "sound": "DX_rm0131_frag0009_l001_vendor_ru",
+      "speech_seconds": 8.243708333333334,
+      "scene_seconds": 9.693708333333335,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Место покупается навсегда. Заберёшь корабль — место останется твоим. Текущий корабль отдельного места не занимает."
+    },
+    {
+      "id": "rm0131_frag0010",
+      "role": "player",
+      "pool": "ask_scope",
+      "path": "SCRIPTS/RPG/rm0131/ru/rm0131_frag0010.thn",
+      "sha256": "b916b11edb445740a46bc94b57cc464f51b9203fb27b112834e768422b7f8971",
+      "audio": "AUDIO/MOD/RPG/rm0131/rm0131_frag0010_l001_player.wav",
+      "audio_sha256": "eaa0381b3b4050973c23302b2213e627383626dfc42aca635d8383fafe36cd27",
+      "sound": "DX_rm0131_frag0010_l001_player_ru",
+      "speech_seconds": 3.1384166666666666,
+      "scene_seconds": 4.588416666666666,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Это место будет доступно и на других базах?"
+    },
+    {
+      "id": "rm0131_frag0011",
+      "role": "vendor",
+      "pool": "scope",
+      "path": "SCRIPTS/RPG/rm0131/ru/rm0131_frag0011.thn",
+      "sha256": "6e91b1b13c9630e65c9449d8d290a61915ce01f32d872b609f6842b77cf2af4b",
+      "audio": "AUDIO/MOD/RPG/rm0131/rm0131_frag0011_l001_vendor.wav",
+      "audio_sha256": "148ff3984f2cf42ec61adc26af3097c0da14f2a4bb8efcd1f660162ead814426",
+      "sound": "DX_rm0131_frag0011_l001_vendor_ru",
+      "speech_seconds": 6.2885,
+      "scene_seconds": 7.7385,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Место действует только здесь: Линкор Мусаси. На другой базе его нужно покупать отдельно."
+    },
+    {
+      "id": "rm0131_frag0012",
+      "role": "player",
+      "pool": "ask_full",
+      "path": "SCRIPTS/RPG/rm0131/ru/rm0131_frag0012.thn",
+      "sha256": "ba1943faed66d50e36ca1240eb3f59d57ec5cc7aeeb680d7d22903cc6c511181",
+      "audio": "AUDIO/MOD/RPG/rm0131/rm0131_frag0012_l001_player.wav",
+      "audio_sha256": "f552b7bd39259ecf3221028d379d1c96b3d738f743dd8fc190ed5e8b8643dbc8",
+      "sound": "DX_rm0131_frag0012_l001_player_ru",
+      "speech_seconds": 2.4430833333333335,
+      "scene_seconds": 3.8930833333333332,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "А если все мои места будут заняты?"
+    },
+    {
+      "id": "rm0131_frag0013",
+      "role": "vendor",
+      "pool": "full",
+      "path": "SCRIPTS/RPG/rm0131/ru/rm0131_frag0013.thn",
+      "sha256": "134f965bfb8896511c9613fad0895a1e320863a65d15076b2c5e7d11fda603e5",
+      "audio": "AUDIO/MOD/RPG/rm0131/rm0131_frag0013_l001_vendor.wav",
+      "audio_sha256": "eb66f2ac12d29b650c2e9e110bb147a19f725475e5e16b01cf6cf781dc075cc5",
+      "sound": "DX_rm0131_frag0013_l001_vendor_ru",
+      "speech_seconds": 9.698208333333334,
+      "scene_seconds": 11.148208333333335,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Ещё один корабль поставить не получится. Но можно забрать оставленный или обменять его на текущий. Для обмена свободное место не нужно."
+    },
+    {
+      "id": "rm0131_frag0014",
+      "role": "vendor",
+      "pool": "no_money",
+      "path": "SCRIPTS/RPG/rm0131/ru/rm0131_frag0014.thn",
+      "sha256": "bdc105f73f24f29ca2c6909129f34ea77d376202d6dde0a5bcef3fbcb73b1eac",
+      "audio": "AUDIO/MOD/RPG/rm0131/rm0131_frag0014_l001_vendor.wav",
+      "audio_sha256": "33a200b989f7b33df121988430b0258da668bd71809588dd822c93523d55f115",
+      "sound": "DX_rm0131_frag0014_l001_vendor_ru",
+      "speech_seconds": 6.346,
+      "scene_seconds": 7.796,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "На счету недостаточно кредитов. Оплата не прошла. Возвращайся, когда будет нужная сумма."
+    },
+    {
+      "id": "rm0131_frag0015",
+      "role": "vendor",
+      "pool": "maximum",
+      "path": "SCRIPTS/RPG/rm0131/ru/rm0131_frag0015.thn",
+      "sha256": "1c21e6e26e9a8ef0657da8ef63e78d9614a75905f91562106fde32bb15012474",
+      "audio": "AUDIO/MOD/RPG/rm0131/rm0131_frag0015_l001_vendor.wav",
+      "audio_sha256": "497d62330f1730596aff9c3c98eb82a9e91da7e64882128a7e0171319bcfa57d",
+      "sound": "DX_rm0131_frag0015_l001_vendor_ru",
+      "speech_seconds": 5.673583333333333,
+      "scene_seconds": 7.123583333333333,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Ты уже приобрёл все доступные тебе места на этой базе. Ещё одно оформить не могу."
+    },
+    {
+      "id": "rm0131_frag0016",
+      "role": "vendor",
+      "pool": "error",
+      "path": "SCRIPTS/RPG/rm0131/ru/rm0131_frag0016.thn",
+      "sha256": "8c8fbc0133063f1694d442e1230009940ed03471c8dd14a34f5f25430896cfbf",
+      "audio": "AUDIO/MOD/RPG/rm0131/rm0131_frag0016_l001_vendor.wav",
+      "audio_sha256": "097b5d322cc380d69eb6e85a14720c59808b8a8ecaaccd5677b93dd8aedb42ca",
+      "sound": "DX_rm0131_frag0016_l001_vendor_ru",
+      "speech_seconds": 5.700083333333334,
+      "scene_seconds": 7.150083333333334,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Оформить покупку не удалось. Деньги не списаны. Давай проверим условия ещё раз."
+    },
+    {
+      "id": "rm0131_frag0017",
+      "role": "player",
+      "pool": "back",
+      "path": "SCRIPTS/RPG/rm0131/ru/rm0131_frag0017.thn",
+      "sha256": "e1a40f8bec80fe56c55c01a2c509e3c159e1b4fab106a750a193a56c56beb2ff",
+      "audio": "AUDIO/MOD/RPG/rm0131/rm0131_frag0017_l001_player.wav",
+      "audio_sha256": "0be99bf69573c07a9a459a439a6d17ebc8ca018c5a86ca3d6106e51952128d57",
+      "sound": "DX_rm0131_frag0017_l001_player_ru",
+      "speech_seconds": 1.850625,
+      "scene_seconds": 3.3006249999999997,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Вернёмся к покупке места."
+    },
+    {
+      "id": "rm0131_frag0018",
+      "role": "player",
+      "pool": "leave",
+      "path": "SCRIPTS/RPG/rm0131/ru/rm0131_frag0018.thn",
+      "sha256": "7573974b4781505db20515ce920c1fcc41e0c6209c7dc9b2cd27cfa9e08e1073",
+      "audio": "AUDIO/MOD/RPG/rm0131/rm0131_frag0018_l001_player.wav",
+      "audio_sha256": "18fe3999cec3b73bcd80cb71bdb4d29f79b5f97db8a3ba4105cfb3300720184a",
+      "sound": "DX_rm0131_frag0018_l001_player_ru",
+      "speech_seconds": 2.4040416666666666,
+      "scene_seconds": 3.8540416666666664,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "На этом всё. До встречи, комендант."
+    },
+    {
+      "id": "rm0131_frag0019",
+      "role": "vendor",
+      "pool": "farewell",
+      "path": "SCRIPTS/RPG/rm0131/ru/rm0131_frag0019.thn",
+      "sha256": "8f98e754a749cb92c000ca89a3c312fd1cff5af0fed30484c118a03b7ed89e58",
+      "audio": "AUDIO/MOD/RPG/rm0131/rm0131_frag0019_l001_vendor.wav",
+      "audio_sha256": "19c97f59de116c1f6d00c50bf22af4967518ca938fce2f0368bda9d7baadb1f2",
+      "sound": "DX_rm0131_frag0019_l001_vendor_ru",
+      "speech_seconds": 2.527,
+      "scene_seconds": 3.977,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "До встречи, Трент. Удачных полётов."
+    },
+    {
+      "id": "rm0131_frag0020",
+      "role": "vendor",
+      "pool": "greeting",
+      "path": "SCRIPTS/RPG/rm0131/ru/rm0131_frag0020.thn",
+      "sha256": "107ea08a52f5f8e9d9f6f9f411f54c10f409e0aeee2102e48e7845ee9816c289",
+      "audio": "AUDIO/MOD/RPG/rm0131/rm0131_frag0020_l001_vendor.wav",
+      "audio_sha256": "51db10811bbba833fb5bcdabba196553fa97230067fdcf55a05cf4fbf20d9927",
+      "sound": "DX_rm0131_frag0020_l001_vendor_ru",
+      "speech_seconds": 4.29225,
+      "scene_seconds": 5.74225,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "С возвращением. Комендант Кондо слушает. По поводу стоянки?"
+    },
+    {
+      "id": "rm0131_frag0021",
+      "role": "vendor",
+      "pool": "greeting",
+      "path": "SCRIPTS/RPG/rm0131/ru/rm0131_frag0021.thn",
+      "sha256": "f3b8a5dc35d085ebc0b256c9ce392d052cffa24496ffd642466cb0dc35134af1",
+      "audio": "AUDIO/MOD/RPG/rm0131/rm0131_frag0021_l001_vendor.wav",
+      "audio_sha256": "2f1c580ef42e1d27a8f36683d52254a75966cd113f38323dcf25202ee91e74c2",
+      "sound": "DX_rm0131_frag0021_l001_vendor_ru",
+      "speech_seconds": 2.7545,
+      "scene_seconds": 4.2044999999999995,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Привет, Трент. Стоянка к твоим услугам."
+    },
+    {
+      "id": "rm0131_frag0022",
+      "role": "vendor",
+      "pool": "success",
+      "path": "SCRIPTS/RPG/rm0131/ru/rm0131_frag0022.thn",
+      "sha256": "52df9b9b67f88bed4518561a9ef20b126c361bf7932d023839971aeaec692be1",
+      "audio": "AUDIO/MOD/RPG/rm0131/rm0131_frag0022_l001_vendor.wav",
+      "audio_sha256": "968a6e73a5ad28ac6b7c8f29ae394b27a56b1717299fa0a4a53b7f22699864b0",
+      "sound": "DX_rm0131_frag0022_l001_vendor_ru",
+      "speech_seconds": 4.0295,
+      "scene_seconds": 5.4795,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Готово. Место оплачено и закреплено за тобой. Пользуйся."
+    },
+    {
+      "id": "rm0131_frag0023",
+      "role": "vendor",
+      "pool": "bad_reputation",
+      "path": "SCRIPTS/RPG/rm0131/ru/rm0131_frag0023.thn",
+      "sha256": "da54a747640c1bd3477000546ee252e54ee5db0c7fbae0a6228b4e5428a6c26c",
+      "audio": "AUDIO/MOD/RPG/rm0131/rm0131_frag0023_l001_vendor.wav",
+      "audio_sha256": "fe39ce0e1870974185fb32e9a305d28735bbc5005a292e4bfe2bfd8c92624677",
+      "sound": "DX_rm0131_frag0023_l001_vendor_ru",
+      "speech_seconds": 6.1205,
+      "scene_seconds": 7.5705,
+      "facial_timing": "Character.facial(auto_lip=True)",
+      "text": "Не могу продать тебе место. Твоя репутация у нашей фракции должна быть положительной."
+    }
+  ],
+  "gestures": [
+    {
+      "role": "vendor",
+      "step": 0,
+      "path": "SCRIPTS/RPG/rm0131/gestures/vendor_01.thn",
+      "duration": 14.4,
+      "sha256": "b7497506ce54d705226745778f1935b4b3f189e904f7b91e08a0d37a862453c4"
+    },
+    {
+      "role": "vendor",
+      "step": 1,
+      "path": "SCRIPTS/RPG/rm0131/gestures/vendor_02.thn",
+      "duration": 10.15,
+      "sha256": "926a8383eaa0b6adf332c3632aa6064fa28d5d8f7885b3eeaa82ffd23355a64a"
+    },
+    {
+      "role": "vendor",
+      "step": 2,
+      "path": "SCRIPTS/RPG/rm0131/gestures/vendor_03.thn",
+      "duration": 10.15,
+      "sha256": "555c83b47418a832f2092084f661ebee6da7f068eaefe8ab8c6f6d2a42542493"
+    },
+    {
+      "role": "vendor",
+      "step": 3,
+      "path": "SCRIPTS/RPG/rm0131/gestures/vendor_04.thn",
+      "duration": 14.4,
+      "sha256": "b7497506ce54d705226745778f1935b4b3f189e904f7b91e08a0d37a862453c4"
+    },
+    {
+      "role": "vendor",
+      "step": 4,
+      "path": "SCRIPTS/RPG/rm0131/gestures/vendor_05.thn",
+      "duration": 10.15,
+      "sha256": "926a8383eaa0b6adf332c3632aa6064fa28d5d8f7885b3eeaa82ffd23355a64a"
+    },
+    {
+      "role": "vendor",
+      "step": 5,
+      "path": "SCRIPTS/RPG/rm0131/gestures/vendor_06.thn",
+      "duration": 10.15,
+      "sha256": "555c83b47418a832f2092084f661ebee6da7f068eaefe8ab8c6f6d2a42542493"
+    },
+    {
+      "role": "vendor",
+      "step": 6,
+      "path": "SCRIPTS/RPG/rm0131/gestures/vendor_07.thn",
+      "duration": 10.4,
+      "sha256": "210a4609f71fba0ad1cde46c22441fc9252368c08e7ddf9aaf7e5ca7a41dea0d"
+    },
+    {
+      "role": "vendor",
+      "step": 7,
+      "path": "SCRIPTS/RPG/rm0131/gestures/vendor_08.thn",
+      "duration": 10.4,
+      "sha256": "247adbc668fe3d386588f2f240cba30c5850609e1b8632cdf35ea3756d5dcb7b"
+    },
+    {
+      "role": "player",
+      "step": 0,
+      "path": "SCRIPTS/RPG/rm0131/gestures/player_01.thn",
+      "duration": 14.4,
+      "sha256": "ad101b339a81a29f1dde78cea72f43e7455854d89a3582a4e69e0f3108a815f5"
+    },
+    {
+      "role": "player",
+      "step": 1,
+      "path": "SCRIPTS/RPG/rm0131/gestures/player_02.thn",
+      "duration": 10.15,
+      "sha256": "75894e334c66c5295c28591c58a240451d7e209ab8834d49c570aac3eff958b3"
+    },
+    {
+      "role": "player",
+      "step": 2,
+      "path": "SCRIPTS/RPG/rm0131/gestures/player_03.thn",
+      "duration": 10.15,
+      "sha256": "04c74550bc445148e7e2164d5510b7258905ff5539462fa29249206a29e75213"
+    },
+    {
+      "role": "player",
+      "step": 3,
+      "path": "SCRIPTS/RPG/rm0131/gestures/player_04.thn",
+      "duration": 14.4,
+      "sha256": "ad101b339a81a29f1dde78cea72f43e7455854d89a3582a4e69e0f3108a815f5"
+    },
+    {
+      "role": "player",
+      "step": 4,
+      "path": "SCRIPTS/RPG/rm0131/gestures/player_05.thn",
+      "duration": 10.15,
+      "sha256": "75894e334c66c5295c28591c58a240451d7e209ab8834d49c570aac3eff958b3"
+    },
+    {
+      "role": "player",
+      "step": 5,
+      "path": "SCRIPTS/RPG/rm0131/gestures/player_06.thn",
+      "duration": 10.15,
+      "sha256": "04c74550bc445148e7e2164d5510b7258905ff5539462fa29249206a29e75213"
+    },
+    {
+      "role": "player",
+      "step": 6,
+      "path": "SCRIPTS/RPG/rm0131/gestures/player_07.thn",
+      "duration": 10.4,
+      "sha256": "080ba30e1651912c10e3b56437b8da463a9c1779516fa451665ecf3c29e5e657"
+    },
+    {
+      "role": "player",
+      "step": 7,
+      "path": "SCRIPTS/RPG/rm0131/gestures/player_08.thn",
+      "duration": 10.4,
+      "sha256": "f16fbab30e398535f39f1bade8ae287e742867068e636d8fd4b89b4156506173"
+    }
+  ],
+  "gesture_sequence": "SEQUENCE_MALE_STAND_RHAND_ALT2"
+}

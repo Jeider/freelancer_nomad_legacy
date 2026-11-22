@@ -39,7 +39,7 @@
       "id": "rm0137_frag0001",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Добро пожаловать. Планета Штутгарт. Я комендант стоянки Braun. Нужно место для корабля?",
+      "ru": "Добро пожаловать. Планета Штутгарт. Я комендант стоянки Браун. Нужно место для корабля?",
       "en": "Hello, pilot. I am Braun, the parking commandant at Planet Stuttgart. Looking for a berth?"
     },
     {
@@ -172,14 +172,14 @@
       "id": "rm0137_frag0020",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "С возвращением. Комендант Braun слушает. По поводу стоянки?",
+      "ru": "С возвращением. Комендант Браун слушает. По поводу стоянки?",
       "en": "Welcome back. Commandant Braun speaking. Here about ship storage?"
     },
     {
       "id": "rm0137_frag0021",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Привет, Трент. Стоянка базы «Планета Штутгарт» к твоим услугам.",
+      "ru": "Привет, Трент. Стоянка к твоим услугам.",
       "en": "Hello, Trent. Need another berth at Planet Stuttgart?"
     },
     {

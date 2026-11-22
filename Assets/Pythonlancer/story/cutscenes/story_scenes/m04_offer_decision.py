@@ -1,24 +1,18 @@
-"""m04_offer_decision: постановка для ручного редактирования.
-
-Точки: SCENES/m04_offer_decision.blend → DUMPS/m04_offer_decision.json.
-Создание объектов — в начале action(); далее вход, реплики и выход.
-t — абсолютные секунды исходной сцены; часы MAIN не сдвигаются.
-Исходные события и их номера сохранены в отчёте декомпиляции.
-"""
+"""m04_offer_decision: полная постановка из master; точки в m04_offer_decision.blend."""
 from story.cutscenes.scene import Scene
 from story.cutscenes.content import (
-    Character,
-    LookAtCamera,
-    MAIN,
+    Character, LookAtCamera, MAIN, Male, MotionEvent,
 )
 from story.cutscenes.anim import (
     Male,
 )
-from story.cutscenes.source_extensions import (
-    preserve_entity,
-)
 from story import actors
 
+
+class CharTrentActor(actors.Actor):
+    NAME = 'trent'
+    TYPE = 'male'
+    CUTSCENE_APPEARANCE = 'trent'
 
 
 class M04OfferDecisionScene(Scene):
@@ -27,24 +21,21 @@ class M04OfferDecisionScene(Scene):
 
     def action(self):
         main_group = self.get_group(MAIN)
-
-        # Объекты: параметры камеры, света, персонажей и реквизита правятся здесь.
         self.set_duration(5555.0)
-        trent = Character(root=self, actor=actors.Trent, light_group=0, init_point='Char_trent', rotate_from_quat=True,
-            use_ambient=False, floor_height=0)
-        preserve_entity(trent, template_name='trent', userprops={'actor': 'Player', 'category': 'Character'})
-        jacobo = Character(root=self, actor=actors.Jacobo, light_group=0, init_point='Char_jacobo', rotate_from_quat=True,
-            use_ambient=False, floor_height=0)
-        preserve_entity(jacobo, template_name='jacobo', userprops={'category': 'Character', 'actor': 'jacobo'})
-        cam_table = LookAtCamera(root=self, name='cam_table', fov=20, farplane=5000, look_duration=300)
-        preserve_entity(cam_table)
 
-        # Действия по абсолютному времени сцены.
+        # Персонажи, камеры, реквизит и звук.
+        trent = Character(root=self, actor=CharTrentActor, name='Char_trent', light_group=0,
+            init_point='Char_trent', rotate_from_quat=True, appearance='trent', actor_name='Player')
+        jacobo = Character(root=self, actor=actors.Jacobo, name='Char_jacobo', light_group=0,
+            init_point='Char_jacobo', rotate_from_quat=True, appearance='jacobo', actor_name='jacobo')
+        cam_table = LookAtCamera(root=self, name='cam_table', fov=20, look_duration=300)
+
+        # Исходные точки взгляда.
+
+        # Абсолютное время исходной сцены; часы MAIN не сдвигаются.
         t = 0
         cam_table.set(group=MAIN, time_delay=t)
-        trent.motion(group=MAIN, time_delay=t, anim=Male.Sc_MLBODY_CHRF_IDLE_000LV_XA_06, duration=5555, loop=True)
-        jacobo.motion(group=MAIN, time_delay=t, anim=Male.Sc_MLBODY_CHRB_IDLE_000LV_XA_05, duration=5555, loop=True)
-
-
-# Совместимость с уже подключёнными THORN_CLASS.
-ReconstructedScene = M04OfferDecisionScene
+        MotionEvent(root=self, group=MAIN, object_name=trent.name, anim=Male.Sc_MLBODY_CHRF_IDLE_000LV_XA_06,
+            duration=5555, loop=True, time_delay=t)
+        jacobo.motion(group=MAIN, anim=Male.Sc_MLBODY_CHRB_IDLE_000LV_XA_05, duration=5555, loop=True,
+            time_delay=t)

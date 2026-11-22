@@ -1,504 +1,162 @@
 {
-  "source_cmp": "D:\\Games\\FL_MOD\\DATA\\ships\\rheinland\\rh_pir_elite\\rh_pir_elite.cmp",
-  "source_sha256": "efea2269657f364a8925379a5c566bd5f1f19a0c71e7d565f33106c4e8d26cd0",
-  "salt": "0654d1abf0f8",
-  "resources": {
-    "rh_pir_vms_00_08e95fe8f881.vms": "rh_pir_vms_00_0654d1abf0f8.vms",
-    "rh_pir_vms_01_08e95fe8f881.vms": "rh_pir_vms_01_0654d1abf0f8.vms",
-    "rh_pir_vms_02_08e95fe8f881.vms": "rh_pir_vms_02_0654d1abf0f8.vms",
-    "rh_pir_vms_03_08e95fe8f881.vms": "rh_pir_vms_03_0654d1abf0f8.vms",
-    "rh_pir_vms_04_08e95fe8f881.vms": "rh_pir_vms_04_0654d1abf0f8.vms",
-    "rh_pir_vms_05_08e95fe8f881.vms": "rh_pir_vms_05_0654d1abf0f8.vms",
-    "rh_pir_vms_06_08e95fe8f881.vms": "rh_pir_vms_06_0654d1abf0f8.vms",
-    "rh_pir_vms_07_08e95fe8f881.vms": "rh_pir_vms_07_0654d1abf0f8.vms",
-    "rh_pir_vms_08_08e95fe8f881.vms": "rh_pir_vms_08_0654d1abf0f8.vms",
-    "rh_pir_vms_09_08e95fe8f881.vms": "rh_pir_vms_09_0654d1abf0f8.vms",
-    "rh_pir_vms_10_08e95fe8f881.vms": "rh_pir_vms_10_0654d1abf0f8.vms",
-    "rh_pir_vms_11_08e95fe8f881.vms": "rh_pir_vms_11_0654d1abf0f8.vms",
-    "rh_pir_vms_12_08e95fe8f881.vms": "rh_pir_vms_12_0654d1abf0f8.vms",
-    "rh_pir_vms_13_08e95fe8f881.vms": "rh_pir_vms_13_0654d1abf0f8.vms",
-    "rh_pir_vms_14_08e95fe8f881.vms": "rh_pir_vms_14_0654d1abf0f8.vms",
-    "rh_pir_vms_15_08e95fe8f881.vms": "rh_pir_vms_15_0654d1abf0f8.vms",
-    "rh_pir_vms_16_08e95fe8f881.vms": "rh_pir_vms_16_0654d1abf0f8.vms",
-    "rh_pir_vms_17_08e95fe8f881.vms": "rh_pir_vms_17_0654d1abf0f8.vms",
-    "rh_pir_vms_18_08e95fe8f881.vms": "rh_pir_vms_18_0654d1abf0f8.vms",
-    "rh_pir_vms_19_08e95fe8f881.vms": "rh_pir_vms_19_0654d1abf0f8.vms",
-    "rh_pir_vms_20_08e95fe8f881.vms": "rh_pir_vms_20_0654d1abf0f8.vms",
-    "rh_pir_vms_21_08e95fe8f881.vms": "rh_pir_vms_21_0654d1abf0f8.vms",
-    "rh_pir_vms_22_08e95fe8f881.vms": "rh_pir_vms_22_0654d1abf0f8.vms",
-    "rh_pir_vms_23_08e95fe8f881.vms": "rh_pir_vms_23_0654d1abf0f8.vms",
-    "rh_pir_vms_24_08e95fe8f881.vms": "rh_pir_vms_24_0654d1abf0f8.vms",
-    "rh_pir_vms_25_08e95fe8f881.vms": "rh_pir_vms_25_0654d1abf0f8.vms",
-    "rh_pir_vms_26_08e95fe8f881.vms": "rh_pir_vms_26_0654d1abf0f8.vms",
-    "rh_pir_vms_27_08e95fe8f881.vms": "rh_pir_vms_27_0654d1abf0f8.vms",
-    "rh_pir_vms_28_08e95fe8f881.vms": "rh_pir_vms_28_0654d1abf0f8.vms",
-    "rh_pir_vms_29_08e95fe8f881.vms": "rh_pir_vms_29_0654d1abf0f8.vms",
-    "rh_pir_vms_30_08e95fe8f881.vms": "rh_pir_vms_30_0654d1abf0f8.vms",
-    "rh_pir_vms_31_08e95fe8f881.vms": "rh_pir_vms_31_0654d1abf0f8.vms",
-    "rh_pir_vms_32_08e95fe8f881.vms": "rh_pir_vms_32_0654d1abf0f8.vms",
-    "rh_pir_vms_33_08e95fe8f881.vms": "rh_pir_vms_33_0654d1abf0f8.vms",
-    "rh_pir_vms_34_08e95fe8f881.vms": "rh_pir_vms_34_0654d1abf0f8.vms",
-    "rh_pir_vms_35_08e95fe8f881.vms": "rh_pir_vms_35_0654d1abf0f8.vms",
-    "rh_pir_vms_36_08e95fe8f881.vms": "rh_pir_vms_36_0654d1abf0f8.vms",
-    "rh_pir_vms_37_08e95fe8f881.vms": "rh_pir_vms_37_0654d1abf0f8.vms",
-    "rh_pir_vms_38_08e95fe8f881.vms": "rh_pir_vms_38_0654d1abf0f8.vms",
-    "Rh_port_wing_mesh_proxy.vms": "rh_pir_vms_39_0654d1abf0f8.vms",
-    "Rh_starboard_wing_mesh_proxy.vms": "rh_pir_vms_40_0654d1abf0f8.vms",
-    "rhp_BayDoor01_lod1_08e95fe8f881.3db": "rhp_BayDoor01_lod1_0654d1abf0f8.3db",
-    "rhp_BayDoor02_lod1_08e95fe8f881.3db": "rhp_BayDoor02_lod1_0654d1abf0f8.3db",
-    "rhp_Rh_glass_lod1_08e95fe8f881.3db": "rhp_Rh_glass_lod1_0654d1abf0f8.3db",
-    "rhp_Rh_port_engine_lod1_08e95fe8f881.3db": "rhp_Rh_port_engine_lod1_0654d1abf0f8.3db",
-    "rhp_Rh_port_wing_lod1_08e95fe8f881.3db": "rhp_Rh_port_wing_lod1_0654d1abf0f8.3db",
-    "rhp_Rh_starboard_engine_lod1_08e95fe8f881.3db": "rhp_Rh_starboard_engine_lod1_0654d1abf0f8.3db",
-    "rhp_Rh_starboard_wing_lod1_08e95fe8f881.3db": "rhp_Rh_starboard_wing_lod1_0654d1abf0f8.3db",
-    "rhp_Rh_tail_lod1_08e95fe8f881.3db": "rhp_Rh_tail_lod1_0654d1abf0f8.3db",
-    "rhp_Root_08e95fe8f881.3db": "rhp_Root_0654d1abf0f8.3db",
-    "rhp_Rh_port_upperarm_08e95fe8f881.3db": "rhp_Rh_port_upperarm_0654d1abf0f8.3db",
-    "rhp_Rh_starboard_upperarm_08e95fe8f881.3db": "rhp_Rh_starboard_upperarm_0654d1abf0f8.3db",
-    "Rh_port_wing_mesh.3db": "rhp_Rh_port_wing_mesh_0654d1abf0f8.3db",
-    "Rh_starboard_wing_mesh.3db": "rhp_Rh_starboard_wing_mesh_0654d1abf0f8.3db",
-    "rh_pir_elite_dmg_port_wing": {
-      "rh_pir_vms_00_08e95fe8f881_1.vms": "rh_pir_vms_00_0654d1abf0f8d0.vms"
-    },
-    "rh_pir_elite_dmg_starboard_wing": {
-      "rh_pir_vms_00_08e95fe8f881_3.vms": "rh_pir_vms_00_0654d1abf0f8d1.vms"
-    },
-    "rh_pir_elite_dmg_port_engine": {
-      "rh_pir_elite_dmg_port_engine.vms": "rh_pir_vms_00_0654d1abf0f8d2.vms"
-    },
-    "rh_pir_elite_dmg_starboard_engine": {
-      "rh_pir_elite_dmg_starboard_engine.vms": "rh_pir_vms_00_0654d1abf0f8d3.vms"
-    },
-    "rh_pir_elite_dmg_tail": {
-      "rh_pir_vms_00_08e95fe8f881_4.vms": "rh_pir_vms_00_0654d1abf0f8d4.vms"
-    }
-  },
-  "owners": {
-    "Rh_port_wing_lod1": {
-      "moving": "Rh_port_wing_mesh",
-      "static_rotation": [
-        [
-          0.9999999798142335,
-          0.0,
-          -2.6119773489503883e-08
-        ],
-        [
-          0.0,
-          1.0,
-          0.0
-        ],
-        [
-          2.6119773529646038e-08,
-          0.0,
-          0.9999999798142335
-        ]
-      ],
-      "static_position": [
-        -3.049999952316284,
-        -1.6579803228378296,
-        3.911921501159668
-      ],
-      "animation_channels": 5
-    },
-    "Rh_starboard_wing_lod1": {
-      "moving": "Rh_starboard_wing_mesh",
-      "static_rotation": [
-        [
-          0.9999999798142335,
-          0.0,
-          2.6119773489503883e-08
-        ],
-        [
-          0.0,
-          1.0,
-          0.0
-        ],
-        [
-          -2.6119773529646038e-08,
-          0.0,
-          0.9999999798142335
-        ]
-      ],
-      "static_position": [
-        3.049999952316284,
-        -1.6579803228378296,
-        3.911921501159668
-      ],
-      "animation_channels": 5
-    }
-  },
-  "engines": {
-    "port": {
-      "checks": {
-        "components": 2,
-        "volumes": [
-          2.9220798536670554,
-          0.17012916519396434
-        ],
-        "topology": {
-          "boundary_edges": 0,
-          "nonmanifold_edges": 0,
-          "winding_errors": 0
-        },
-        "source": "our intact engine only",
-        "nose_triangles": 30,
-        "mount_triangles": 12,
-        "tear_z": [
-          0.68,
-          0.32,
-          0.58,
-          0.91,
-          0.6,
-          0.45,
-          0.22,
-          0.48,
-          0.82,
-          1.06
-        ],
-        "triangles": 172,
-        "thickness_fraction": 0.12,
-        "front_facing_rays": 537,
-        "misses": 0,
-        "decoded_topology": {
-          "boundary_edges": 0,
-          "nonmanifold_edges": 0,
-          "winding_errors": 0
-        },
-        "collision": {
-          "covered_vertices": 516,
-          "uncovered": 0
-        }
-      },
-      "resources": {
-        "rh_pir_elite_dmg_port_engine.vms": "rh_pir_vms_00_9104a9230b7a_port_engine.vms"
-      },
-      "sha256": "4a548000d99c0429b3b58260fe68f5ea0cd45c3d1452ab280fd5a66d70363cb8",
-      "sur_sha256": "b13f469b304dba2c53bfc5e86e20e756c9bed797062dcbfcd44cc58e9b0dbaa8"
-    },
-    "starboard": {
-      "checks": {
-        "components": 2,
-        "volumes": [
-          2.918934699362721,
-          0.1701291635488218
-        ],
-        "topology": {
-          "boundary_edges": 0,
-          "nonmanifold_edges": 0,
-          "winding_errors": 0
-        },
-        "source": "our intact engine only",
-        "nose_triangles": 30,
-        "mount_triangles": 12,
-        "tear_z": [
-          0.48,
-          0.76,
-          0.54,
-          0.26,
-          0.44,
-          0.82,
-          1.01,
-          0.65,
-          0.37,
-          0.73
-        ],
-        "triangles": 172,
-        "thickness_fraction": 0.12,
-        "front_facing_rays": 537,
-        "misses": 0,
-        "decoded_topology": {
-          "boundary_edges": 0,
-          "nonmanifold_edges": 0,
-          "winding_errors": 0
-        },
-        "collision": {
-          "covered_vertices": 516,
-          "uncovered": 0
-        }
-      },
-      "resources": {
-        "rh_pir_elite_dmg_starboard_engine.vms": "rh_pir_vms_00_9104a9230b7a_starboard_engine.vms"
-      },
-      "sha256": "cd0b33159c282e8406dbec3a241f8e354457f18da98a947832a3f2bf9963026b",
-      "sur_sha256": "fab535209ef80e902a2e05eedb4fc9252b157e2b398d0430b9b2bb1b7cf170f0"
-    }
-  },
-  "checks": {
-    "animation_pose_checks": 31,
-    "max_world_error": 3.3773282126503545e-07,
-    "lod_triangles": [
-      2994,
-      1467,
-      943
-    ],
-    "hardpoints": 79,
-    "hardpoint_payloads_unchanged": true,
-    "static_wire": true,
-    "unfolded_sur_frames_preserved": true
-  },
-  "game_assets_unchanged": true,
-  "installed": false,
-  "shared_mat": "D:\\Games\\FL_MOD\\DATA\\ships\\rheinland\\rh_pir_playerships.mat",
-  "shared_mat_sha256": "e8b517e7a165dee2bcaa2b022200f44194085c9debd72acf6bcb7f8505218879",
-  "lod_material": "rh_b_projection_lod",
-  "separate_lod_mat_required": false,
-  "sur_sha256": "6330c640ddc711396d5e435302954132670b0b07761e9867b9b5ea40d078abfb",
   "files": {
     "rh_pir_elite.cmp": {
-      "sha256": "5973aa1635aa93260d2f4d0cc956286eea1819df51a8543bfefdb7d5ee90cd56",
-      "bytes": 429344
+      "bytes": 477496,
+      "sha256": "a09f1028e87918f3fe8b456c9d163463f40d77dbbfdc1494540817bf2ce8b4b7"
     },
     "rh_pir_elite.sur": {
-      "sha256": "6330c640ddc711396d5e435302954132670b0b07761e9867b9b5ea40d078abfb",
-      "bytes": 93776
+      "bytes": 118908,
+      "sha256": "ebd555ab6b1ebc26d14ec61cd6ca8d53f078b986be4653aea959b17d2850666d"
     },
     "rh_pir_elite_dmg_port_engine.3db": {
-      "sha256": "4a548000d99c0429b3b58260fe68f5ea0cd45c3d1452ab280fd5a66d70363cb8",
-      "bytes": 17404
+      "bytes": 55224,
+      "sha256": "cee6080aee0a57140581bef5726996b7cf8dc384c45d770449c03ecc83f582fb"
     },
     "rh_pir_elite_dmg_port_engine.sur": {
-      "sha256": "b13f469b304dba2c53bfc5e86e20e756c9bed797062dcbfcd44cc58e9b0dbaa8",
-      "bytes": 3740
+      "bytes": 17732,
+      "sha256": "444809aaf8e93d60434e065a6b833dbfcbd107d5b9746e8961407c2e5b6b5be3"
     },
     "rh_pir_elite_dmg_port_wing.3db": {
-      "sha256": "1c19a452bdfd8319d4742633770e2ffc864a37f62a943de1f42872d40b785c3b",
-      "bytes": 3168
+      "bytes": 25516,
+      "sha256": "069634b56188287a163e14240c84260d4e1d0668cd7711154272d198db35bb73"
     },
     "rh_pir_elite_dmg_port_wing.sur": {
-      "sha256": "b19ca05de5d1154df4cdf437f22f32b3e6dd2e03dfd0d6b06bb2253d48872a57",
-      "bytes": 660
+      "bytes": 8212,
+      "sha256": "8e2c4911bc111d72685a9d17050e941b34209af16552e2c88a64ac67bfe8903f"
     },
     "rh_pir_elite_dmg_starboard_engine.3db": {
-      "sha256": "cd0b33159c282e8406dbec3a241f8e354457f18da98a947832a3f2bf9963026b",
-      "bytes": 17412
+      "bytes": 52028,
+      "sha256": "28a49f18bad9f14fe3e930486cb2bb56e9bcd77cf8f9f5fa77ab3c207a39caea"
     },
     "rh_pir_elite_dmg_starboard_engine.sur": {
-      "sha256": "fab535209ef80e902a2e05eedb4fc9252b157e2b398d0430b9b2bb1b7cf170f0",
-      "bytes": 3740
+      "bytes": 19124,
+      "sha256": "a83ae8ebd06cecf1a28169139bbe095e52db75b49315cbff00d078c9a53fc7b4"
     },
     "rh_pir_elite_dmg_starboard_wing.3db": {
-      "sha256": "d62838a0a7cfb94d3e318148ed9f12e1b24f2a38a7654258e03a8deb04ad9270",
-      "bytes": 3172
+      "bytes": 26108,
+      "sha256": "14b1150e3f73e267f7bd62fe39eb8bc1745642468e32826cb8dc3924e9304e09"
     },
     "rh_pir_elite_dmg_starboard_wing.sur": {
-      "sha256": "fa463c37b0fb42f1fb429a42d28230bb9948891601d44b34871498a9a4a7f0cc",
-      "bytes": 660
+      "bytes": 8020,
+      "sha256": "3c3f30ea9934496c85a1685baf4acdce579415ff71f85c95a7b0a008c589ce54"
     },
     "rh_pir_elite_dmg_tail.3db": {
-      "sha256": "005461dd83f06b8faf3c147f94a7a826fefa95e46e176299998b2b9a8818a9d9",
-      "bytes": 52440
+      "bytes": 138320,
+      "sha256": "06e4670d45ca7a56f0b94c43d4f70f432aee127162206f82073630d01f7e207d"
     },
     "rh_pir_elite_dmg_tail.sur": {
-      "sha256": "f2dd89274252f0e4d69d7c0855393a3aedc54078d3b26b58bb1a404d55ab5c42",
-      "bytes": 4972
+      "bytes": 40964,
+      "sha256": "9d6d4ce6c0da5ab04d246dd978b0a80b7ede11b4308bcf14c2ea310fcb20a0f1"
     }
   },
-  "damage_revision": {
-    "name": "closed custom engines / mechanical backing",
-    "salt": "9104a9230b7a",
-    "parts": {
-      "port_engine": {
-        "checks": {
-          "components": 2,
-          "volumes": [
-            2.9220798536670554,
-            0.17012916519396434
-          ],
-          "topology": {
-            "boundary_edges": 0,
-            "nonmanifold_edges": 0,
-            "winding_errors": 0
-          },
-          "source": "our intact engine only",
-          "nose_triangles": 30,
-          "mount_triangles": 12,
-          "tear_z": [
-            0.68,
-            0.32,
-            0.58,
-            0.91,
-            0.6,
-            0.45,
-            0.22,
-            0.48,
-            0.82,
-            1.06
-          ],
-          "triangles": 172,
-          "thickness_fraction": 0.12,
-          "front_facing_rays": 537,
-          "misses": 0,
-          "decoded_topology": {
-            "boundary_edges": 0,
-            "nonmanifold_edges": 0,
-            "winding_errors": 0
-          },
-          "collision": {
-            "covered_vertices": 516,
-            "uncovered": 0
-          }
-        },
-        "resources": {
-          "rh_pir_elite_dmg_port_engine.vms": "rh_pir_vms_00_9104a9230b7a_port_engine.vms"
-        },
-        "sha256": "4a548000d99c0429b3b58260fe68f5ea0cd45c3d1452ab280fd5a66d70363cb8",
-        "sur_sha256": "b13f469b304dba2c53bfc5e86e20e756c9bed797062dcbfcd44cc58e9b0dbaa8"
-      },
-      "starboard_engine": {
-        "checks": {
-          "components": 2,
-          "volumes": [
-            2.918934699362721,
-            0.1701291635488218
-          ],
-          "topology": {
-            "boundary_edges": 0,
-            "nonmanifold_edges": 0,
-            "winding_errors": 0
-          },
-          "source": "our intact engine only",
-          "nose_triangles": 30,
-          "mount_triangles": 12,
-          "tear_z": [
-            0.48,
-            0.76,
-            0.54,
-            0.26,
-            0.44,
-            0.82,
-            1.01,
-            0.65,
-            0.37,
-            0.73
-          ],
-          "triangles": 172,
-          "thickness_fraction": 0.12,
-          "front_facing_rays": 537,
-          "misses": 0,
-          "decoded_topology": {
-            "boundary_edges": 0,
-            "nonmanifold_edges": 0,
-            "winding_errors": 0
-          },
-          "collision": {
-            "covered_vertices": 516,
-            "uncovered": 0
-          }
-        },
-        "resources": {
-          "rh_pir_elite_dmg_starboard_engine.vms": "rh_pir_vms_00_9104a9230b7a_starboard_engine.vms"
-        },
-        "sha256": "cd0b33159c282e8406dbec3a241f8e354457f18da98a947832a3f2bf9963026b",
-        "sur_sha256": "fab535209ef80e902a2e05eedb4fc9252b157e2b398d0430b9b2bb1b7cf170f0"
-      },
-      "port_wing": {
-        "checks": {
-          "components": 1,
-          "volumes": [
-            0.0006581381829704004
-          ],
-          "topology": {
-            "boundary_edges": 0,
-            "nonmanifold_edges": 0,
-            "winding_errors": 0
-          },
-          "before_topology": {
-            "boundary_edges": 0,
-            "nonmanifold_edges": 0,
-            "winding_errors": 0
-          },
-          "brown_panel_triangles_remapped": 2,
-          "triangles": 20,
-          "decoded_topology": {
-            "boundary_edges": 0,
-            "nonmanifold_edges": 0,
-            "winding_errors": 0
-          },
-          "collision": {
-            "covered_vertices": 60,
-            "uncovered": 0
-          }
-        },
-        "resources": {
-          "rh_pir_elite_dmg_port_wing.vms": "rh_pir_vms_00_9104a9230b7a_port_wing.vms"
-        },
-        "sha256": "1c19a452bdfd8319d4742633770e2ffc864a37f62a943de1f42872d40b785c3b",
-        "sur_sha256": "b19ca05de5d1154df4cdf437f22f32b3e6dd2e03dfd0d6b06bb2253d48872a57"
-      },
-      "starboard_wing": {
-        "checks": {
-          "components": 1,
-          "volumes": [
-            0.0006581381829704009
-          ],
-          "topology": {
-            "boundary_edges": 0,
-            "nonmanifold_edges": 0,
-            "winding_errors": 0
-          },
-          "before_topology": {
-            "boundary_edges": 0,
-            "nonmanifold_edges": 0,
-            "winding_errors": 0
-          },
-          "brown_panel_triangles_remapped": 2,
-          "triangles": 20,
-          "decoded_topology": {
-            "boundary_edges": 0,
-            "nonmanifold_edges": 0,
-            "winding_errors": 0
-          },
-          "collision": {
-            "covered_vertices": 60,
-            "uncovered": 0
-          }
-        },
-        "resources": {
-          "rh_pir_elite_dmg_starboard_wing.vms": "rh_pir_vms_00_9104a9230b7a_starboard_wing.vms"
-        },
-        "sha256": "d62838a0a7cfb94d3e318148ed9f12e1b24f2a38a7654258e03a8deb04ad9270",
-        "sur_sha256": "fa463c37b0fb42f1fb429a42d28230bb9948891601d44b34871498a9a4a7f0cc"
-      },
-      "tail": {
-        "checks": {
-          "components": 6,
-          "volumes": [
-            0.019248292351450317,
-            0.004120205041560298,
-            0.004879190114298657,
-            0.02196572331717957,
-            0.004879190427751412,
-            0.00412020651692131
-          ],
-          "topology": {
-            "boundary_edges": 0,
-            "nonmanifold_edges": 0,
-            "winding_errors": 0
-          },
-          "before_topology": {
-            "boundary_edges": 0,
-            "nonmanifold_edges": 0,
-            "winding_errors": 68
-          },
-          "brown_panel_triangles_remapped": 85,
-          "triangles": 606,
-          "decoded_topology": {
-            "boundary_edges": 0,
-            "nonmanifold_edges": 0,
-            "winding_errors": 0
-          },
-          "collision": {
-            "covered_vertices": 1818,
-            "uncovered": 0
-          }
-        },
-        "resources": {
-          "rh_pir_elite_dmg_tail.vms": "rh_pir_vms_00_9104a9230b7a_tail.vms"
-        },
-        "sha256": "005461dd83f06b8faf3c147f94a7a826fefa95e46e176299998b2b9a8818a9d9",
-        "sur_sha256": "f2dd89274252f0e4d69d7c0855393a3aedc54078d3b26b58bb1a404d55ab5c42"
+  "salt": "21a4afa2a198",
+  "resources": {
+    "rh_pir_vms_00_3096c55c4c06.vms": "rh_pir_vms_00_21a4afa2a198.vms",
+    "rh_pir_vms_01_3096c55c4c06.vms": "rh_pir_vms_01_21a4afa2a198.vms",
+    "rh_pir_vms_02_3096c55c4c06.vms": "rh_pir_vms_02_21a4afa2a198.vms",
+    "rh_pir_vms_03_3096c55c4c06.vms": "rh_pir_vms_03_21a4afa2a198.vms",
+    "rh_pir_vms_04_3096c55c4c06.vms": "rh_pir_vms_04_21a4afa2a198.vms",
+    "rh_pir_vms_05_3096c55c4c06.vms": "rh_pir_vms_05_21a4afa2a198.vms",
+    "rh_pir_vms_06_3096c55c4c06.vms": "rh_pir_vms_06_21a4afa2a198.vms",
+    "rh_pir_vms_07_3096c55c4c06.vms": "rh_pir_vms_07_21a4afa2a198.vms",
+    "rh_pir_vms_08_3096c55c4c06.vms": "rh_pir_vms_08_21a4afa2a198.vms",
+    "rh_pir_vms_09_3096c55c4c06.vms": "rh_pir_vms_09_21a4afa2a198.vms",
+    "rh_pir_vms_10_3096c55c4c06.vms": "rh_pir_vms_10_21a4afa2a198.vms",
+    "rh_pir_vms_11_3096c55c4c06.vms": "rh_pir_vms_11_21a4afa2a198.vms",
+    "rh_pir_vms_12_3096c55c4c06.vms": "rh_pir_vms_12_21a4afa2a198.vms",
+    "rh_pir_vms_13_3096c55c4c06.vms": "rh_pir_vms_13_21a4afa2a198.vms",
+    "rh_pir_vms_14_3096c55c4c06.vms": "rh_pir_vms_14_21a4afa2a198.vms",
+    "rh_pir_vms_15_3096c55c4c06.vms": "rh_pir_vms_15_21a4afa2a198.vms",
+    "rh_pir_vms_16_3096c55c4c06.vms": "rh_pir_vms_16_21a4afa2a198.vms",
+    "rh_pir_vms_17_3096c55c4c06.vms": "rh_pir_vms_17_21a4afa2a198.vms",
+    "rh_pir_vms_18_3096c55c4c06.vms": "rh_pir_vms_18_21a4afa2a198.vms",
+    "rh_pir_vms_19_3096c55c4c06.vms": "rh_pir_vms_19_21a4afa2a198.vms",
+    "rh_pir_vms_20_3096c55c4c06.vms": "rh_pir_vms_20_21a4afa2a198.vms",
+    "release_lod1_BayDoor01_lod1.vms": "rh_pir_vms_21_21a4afa2a198.vms",
+    "release_lod1_BayDoor02_lod1.vms": "rh_pir_vms_22_21a4afa2a198.vms",
+    "release_lod1_Rh_glass_lod1.vms": "rh_pir_vms_23_21a4afa2a198.vms",
+    "release_lod1_Rh_port_engine_lod1.vms": "rh_pir_vms_24_21a4afa2a198.vms",
+    "release_lod1_Rh_port_wing_lod1.vms": "rh_pir_vms_25_21a4afa2a198.vms",
+    "release_lod1_Rh_starboard_engine_lod1.vms": "rh_pir_vms_26_21a4afa2a198.vms",
+    "release_lod1_Rh_starboard_wing_lod1.vms": "rh_pir_vms_27_21a4afa2a198.vms",
+    "release_lod1_Rh_tail_lod1.vms": "rh_pir_vms_28_21a4afa2a198.vms",
+    "release_lod1_Root.vms": "rh_pir_vms_29_21a4afa2a198.vms",
+    "release_lod1_Rh_port_upperarm.vms": "rh_pir_vms_30_21a4afa2a198.vms",
+    "release_lod1_Rh_starboard_upperarm.vms": "rh_pir_vms_31_21a4afa2a198.vms",
+    "release_lod1_Rh_port_wing_mesh.vms": "rh_pir_vms_32_21a4afa2a198.vms",
+    "release_lod1_Rh_starboard_wing_mesh.vms": "rh_pir_vms_33_21a4afa2a198.vms",
+    "release_lod2_BayDoor01_lod1.vms": "rh_pir_vms_34_21a4afa2a198.vms",
+    "release_lod2_BayDoor02_lod1.vms": "rh_pir_vms_35_21a4afa2a198.vms",
+    "release_lod2_Rh_glass_lod1.vms": "rh_pir_vms_36_21a4afa2a198.vms",
+    "release_lod2_Rh_port_engine_lod1.vms": "rh_pir_vms_37_21a4afa2a198.vms",
+    "release_lod2_Rh_port_wing_lod1.vms": "rh_pir_vms_38_21a4afa2a198.vms",
+    "release_lod2_Rh_starboard_engine_lod1.vms": "rh_pir_vms_39_21a4afa2a198.vms",
+    "release_lod2_Rh_starboard_wing_lod1.vms": "rh_pir_vms_40_21a4afa2a198.vms",
+    "release_lod2_Rh_tail_lod1.vms": "rh_pir_vms_41_21a4afa2a198.vms",
+    "release_lod2_Root.vms": "rh_pir_vms_42_21a4afa2a198.vms",
+    "release_lod2_Rh_port_upperarm.vms": "rh_pir_vms_43_21a4afa2a198.vms",
+    "release_lod2_Rh_starboard_upperarm.vms": "rh_pir_vms_44_21a4afa2a198.vms",
+    "release_lod2_Rh_port_wing_mesh.vms": "rh_pir_vms_45_21a4afa2a198.vms",
+    "release_lod2_Rh_starboard_wing_mesh.vms": "rh_pir_vms_46_21a4afa2a198.vms",
+    "rhp_BayDoor01_lod1_3096c55c4c06.3db": "rhp_BayDoor01_lod1_21a4afa2a198.3db",
+    "rhp_BayDoor02_lod1_3096c55c4c06.3db": "rhp_BayDoor02_lod1_21a4afa2a198.3db",
+    "rhp_Rh_glass_lod1_3096c55c4c06.3db": "rhp_Rh_glass_lod1_21a4afa2a198.3db",
+    "rhp_Rh_port_engine_lod1_3096c55c4c06.3db": "rhp_Rh_port_engine_lod1_21a4afa2a198.3db",
+    "rhp_Rh_port_wing_lod1_3096c55c4c06.3db": "rhp_Rh_port_wing_lod1_21a4afa2a198.3db",
+    "rhp_Rh_starboard_engine_lod1_3096c55c4c06.3db": "rhp_Rh_starboard_engine_lod1_21a4afa2a198.3db",
+    "rhp_Rh_starboard_wing_lod1_3096c55c4c06.3db": "rhp_Rh_starboard_wing_lod1_21a4afa2a198.3db",
+    "rhp_Rh_tail_lod1_3096c55c4c06.3db": "rhp_Rh_tail_lod1_21a4afa2a198.3db",
+    "rhp_Root_3096c55c4c06.3db": "rhp_Root_21a4afa2a198.3db",
+    "rhp_Rh_port_upperarm_3096c55c4c06.3db": "rhp_Rh_port_upperarm_21a4afa2a198.3db",
+    "rhp_Rh_starboard_upperarm_3096c55c4c06.3db": "rhp_Rh_starboard_upperarm_21a4afa2a198.3db",
+    "rhp_Rh_port_wing_mesh_3096c55c4c06.3db": "rhp_Rh_port_wing_mesh_21a4afa2a198.3db",
+    "rhp_Rh_starboard_wing_mesh_3096c55c4c06.3db": "rhp_Rh_starboard_wing_mesh_21a4afa2a198.3db"
+  },
+  "damage": {
+    "port_wing": {
+      "salt": "4f1bebbbaf81",
+      "resources": {
+        "rh_pir_vms_00_cbe8b69b4141.vms": "rh_pir_vms_00_4f1bebbbaf81.vms",
+        "release_damage_port_wing_1.vms": "rh_pir_vms_01_4f1bebbbaf81.vms",
+        "release_damage_port_wing_2.vms": "rh_pir_vms_02_4f1bebbbaf81.vms"
       }
     },
-    "build_report": "D:\\work\\Freelancer-Decomp\\out\\ship_design\\rh_elite\\rh_pir_elite\\engine_damage_closed\\build.json"
-  }
+    "starboard_wing": {
+      "salt": "db06d66316fe",
+      "resources": {
+        "rh_pir_vms_00_b97206a27476.vms": "rh_pir_vms_00_db06d66316fe.vms",
+        "release_damage_starboard_wing_1.vms": "rh_pir_vms_01_db06d66316fe.vms",
+        "release_damage_starboard_wing_2.vms": "rh_pir_vms_02_db06d66316fe.vms"
+      }
+    },
+    "port_engine": {
+      "salt": "e211a9b121f3",
+      "resources": {
+        "rh_pir_vms_00_662dabb350c3.vms": "rh_pir_vms_00_e211a9b121f3.vms",
+        "release_damage_port_engine_1.vms": "rh_pir_vms_01_e211a9b121f3.vms",
+        "release_damage_port_engine_2.vms": "rh_pir_vms_02_e211a9b121f3.vms"
+      }
+    },
+    "starboard_engine": {
+      "salt": "3e06638e40a7",
+      "resources": {
+        "rh_pir_vms_00_f6846eea16a8.vms": "rh_pir_vms_00_3e06638e40a7.vms",
+        "release_damage_starboard_engine_1.vms": "rh_pir_vms_01_3e06638e40a7.vms",
+        "release_damage_starboard_engine_2.vms": "rh_pir_vms_02_3e06638e40a7.vms"
+      }
+    },
+    "tail": {
+      "salt": "371be03320fd",
+      "resources": {
+        "rh_pir_vms_00_0ca7127d2a8e.vms": "rh_pir_vms_00_371be03320fd.vms",
+        "release_damage_tail_1.vms": "rh_pir_vms_01_371be03320fd.vms",
+        "release_damage_tail_2.vms": "rh_pir_vms_02_371be03320fd.vms"
+      }
+    }
+  },
+  "source_cmp": "D:\\work\\Freelancer-Decomp\\out\\ship_design\\rh_elite\\rh_pir_elite\\tail_rim\\damage_05\\assets\\rh_pir_elite.cmp",
+  "source_sha256": "aaae52bcf8670404a1fed19bf6afc81d0dadb028d9ec24870d2ce095e30ee44c",
+  "shared_material": "rh_b_projection_lod",
+  "shared_atlas_unchanged": true,
+  "installed": false
 }

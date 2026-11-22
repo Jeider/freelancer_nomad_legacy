@@ -5,5 +5,6 @@
     {animation="{{ anim }}",
      duration={{ duration }}, time_scale={{ time_scale }}, start_time={{ start_time }}, weight=1, heading=-1
      {% if loop %}, event_flags=2 {% endif %}  {% if trans_time != None %}, trans_time={{ trans_time }} {% endif %}
+     {% if trans_scale != None %}, trans_scale={{ trans_scale }} {% endif %}
      }
 }

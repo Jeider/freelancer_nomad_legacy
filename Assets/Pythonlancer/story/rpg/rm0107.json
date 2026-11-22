@@ -39,7 +39,7 @@
       "id": "rm0107_frag0001",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Добро пожаловать. Планета Мадрид. Я комендант стоянки Cruz. Нужно место для корабля?",
+      "ru": "Добро пожаловать. Планета Мадрид. Я комендант стоянки Крус. Нужно место для корабля?",
       "en": "Hello, pilot. I am Cruz, the parking commandant at Planet Madrid. Looking for a berth?"
     },
     {
@@ -172,14 +172,14 @@
       "id": "rm0107_frag0020",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "С возвращением. Комендант Cruz слушает. По поводу стоянки?",
+      "ru": "С возвращением. Комендант Крус слушает. По поводу стоянки?",
       "en": "Welcome back. Commandant Cruz speaking. Here about ship storage?"
     },
     {
       "id": "rm0107_frag0021",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Привет, Трент. Стоянка базы «Планета Мадрид» к твоим услугам.",
+      "ru": "Привет, Трент. Стоянка к твоим услугам.",
       "en": "Hello, Trent. Need another berth at Planet Madrid?"
     },
     {

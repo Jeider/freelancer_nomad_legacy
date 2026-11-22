@@ -39,7 +39,7 @@
       "id": "rm0117_frag0001",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Добро пожаловать. Линкор Нью-Мексико. Я комендант стоянки Hayes. Нужно место для корабля?",
+      "ru": "Добро пожаловать. Линкор Нью-Мексико. Я комендант стоянки Хейз. Нужно место для корабля?",
       "en": "Commandant Hayes, at your service. If you need to store a ship at Battleship New Mexico, talk to me."
     },
     {
@@ -172,14 +172,14 @@
       "id": "rm0117_frag0020",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "С возвращением. Комендант Hayes слушает. По поводу стоянки?",
+      "ru": "С возвращением. Комендант Хейз слушает. По поводу стоянки?",
       "en": "Welcome back. Commandant Hayes speaking. Here about ship storage?"
     },
     {
       "id": "rm0117_frag0021",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Привет, Трент. Стоянка базы «Линкор Нью-Мексико» к твоим услугам.",
+      "ru": "Привет, Трент. Стоянка к твоим услугам.",
       "en": "Hello, Trent. Need another berth at Battleship New Mexico?"
     },
     {

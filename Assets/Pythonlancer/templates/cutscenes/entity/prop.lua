@@ -13,6 +13,6 @@
         orient={ {{ init_matrix }} }
     },
     userprops={
-        category="Prop"
+        category="{{ category }}"{% if no_fog %}, NoFog="Y"{% endif %}{% if cast_shadow %}, cast_shadow="Y"{% endif %}
     }
 }

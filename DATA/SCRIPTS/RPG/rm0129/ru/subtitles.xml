@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Subtitles>
+<Static AudioFile="MOD\RPG\rm0129\rm0129_frag0001_l001_vendor.wav" TextArea="Cinematic">Добро пожаловать. Линкор Остфрисланд. Я комендант стоянки Фогель. Нужно место для корабля?</Static>
+<Static AudioFile="MOD\RPG\rm0129\rm0129_frag0002_l001_player.wav" TextArea="Cinematic">Хочу купить место для своего корабля.</Static>
+<Static AudioFile="MOD\RPG\rm0129\rm0129_frag0003_l001_vendor.wav" TextArea="Cinematic">Вот условия покупки. Проверь стоимость и подтверди, если всё устраивает.</Static>
+<Static AudioFile="MOD\RPG\rm0129\rm0129_frag0004_l001_player.wav" TextArea="Cinematic">Условия устраивают. Оформляйте одно место.</Static>
+<Static AudioFile="MOD\RPG\rm0129\rm0129_frag0005_l001_vendor.wav" TextArea="Cinematic">Оплата принята. Линкор Остфрисланд: место закреплено за тобой. Можешь оставить корабль.</Static>
+<Static AudioFile="MOD\RPG\rm0129\rm0129_frag0006_l001_player.wav" TextArea="Cinematic">Пока отложим покупку.</Static>
+<Static AudioFile="MOD\RPG\rm0129\rm0129_frag0007_l001_vendor.wav" TextArea="Cinematic">Хорошо. Что ещё тебя интересует?</Static>
+<Static AudioFile="MOD\RPG\rm0129\rm0129_frag0008_l001_player.wav" TextArea="Cinematic">Какие у вас условия хранения кораблей?</Static>
+<Static AudioFile="MOD\RPG\rm0129\rm0129_frag0009_l001_vendor.wav" TextArea="Cinematic">Место покупается навсегда. Заберёшь корабль — место останется твоим. Текущий корабль отдельного места не занимает.</Static>
+<Static AudioFile="MOD\RPG\rm0129\rm0129_frag0010_l001_player.wav" TextArea="Cinematic">Это место будет доступно и на других базах?</Static>
+<Static AudioFile="MOD\RPG\rm0129\rm0129_frag0011_l001_vendor.wav" TextArea="Cinematic">Место действует только здесь: Линкор Остфрисланд. На другой базе его нужно покупать отдельно.</Static>
+<Static AudioFile="MOD\RPG\rm0129\rm0129_frag0012_l001_player.wav" TextArea="Cinematic">А если все мои места будут заняты?</Static>
+<Static AudioFile="MOD\RPG\rm0129\rm0129_frag0013_l001_vendor.wav" TextArea="Cinematic">Ещё один корабль поставить не получится. Но можно забрать оставленный или обменять его на текущий. Для обмена свободное место не нужно.</Static>
+<Static AudioFile="MOD\RPG\rm0129\rm0129_frag0014_l001_vendor.wav" TextArea="Cinematic">На счету недостаточно кредитов. Оплата не прошла. Возвращайся, когда будет нужная сумма.</Static>
+<Static AudioFile="MOD\RPG\rm0129\rm0129_frag0015_l001_vendor.wav" TextArea="Cinematic">Ты уже приобрёл все доступные тебе места на этой базе. Ещё одно оформить не могу.</Static>
+<Static AudioFile="MOD\RPG\rm0129\rm0129_frag0016_l001_vendor.wav" TextArea="Cinematic">Оформить покупку не удалось. Деньги не списаны. Давай проверим условия ещё раз.</Static>
+<Static AudioFile="MOD\RPG\rm0129\rm0129_frag0017_l001_player.wav" TextArea="Cinematic">Вернёмся к покупке места.</Static>
+<Static AudioFile="MOD\RPG\rm0129\rm0129_frag0018_l001_player.wav" TextArea="Cinematic">На этом всё. До встречи, комендант.</Static>
+<Static AudioFile="MOD\RPG\rm0129\rm0129_frag0019_l001_vendor.wav" TextArea="Cinematic">До встречи, Трент. Удачных полётов.</Static>
+<Static AudioFile="MOD\RPG\rm0129\rm0129_frag0020_l001_vendor.wav" TextArea="Cinematic">С возвращением. Комендант Фогель слушает. По поводу стоянки?</Static>
+<Static AudioFile="MOD\RPG\rm0129\rm0129_frag0021_l001_vendor.wav" TextArea="Cinematic">Привет, Трент. Стоянка к твоим услугам.</Static>
+<Static AudioFile="MOD\RPG\rm0129\rm0129_frag0022_l001_vendor.wav" TextArea="Cinematic">Готово. Место оплачено и закреплено за тобой. Пользуйся.</Static>
+<Static AudioFile="MOD\RPG\rm0129\rm0129_frag0023_l001_vendor.wav" TextArea="Cinematic">Не могу продать тебе место. Твоя репутация у нашей фракции должна быть положительной.</Static>
+</Subtitles>

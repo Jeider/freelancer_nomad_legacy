@@ -2,10 +2,10 @@
     entity_name="{{ name }}",
     type=PSYS,
     template_name="{{ particles }}",
-    lt_grp=0,
-    srt_grp=0,
+    lt_grp={{ light_group }},
+    srt_grp={{ sort_group }},
     usr_flg=0,
-    flags=HIDDEN + LIT_DYNAMIC + LIT_AMBIENT,
+    flags={{ flags }},
     spatialprops={
         pos={
             {{ point.pos }}

@@ -9,8 +9,8 @@
     },
     cameraprops={
         fovh={{ fov }},
-        hvaspect=1.85,
-        nearplane=0.2,
+        hvaspect={{ aspect }},
+        nearplane={{ nearplane }},
         farplane={{ farplane }}
     }
 }

@@ -1,3 +1,4 @@
+from audio import story_delivery as performance
 from story import script
 from audio.sound import VoiceLine
 from audio.delivery import *
@@ -44,22 +45,22 @@ class Msn1Intro(Msn1, script.CutsceneProps):
         # VoiceLine(180, Trent, ru="Да уж, без тебя здесь стало бы совсем тоскливо. Ну так я в космопорт?", en="You're right, without you this place would've been gloomy. I guess I'll head to the spaceport, then."),
         # VoiceLine(190, IntroBarman, ru="Удачи, Трент, надеюсь, мы здесь больше не увидимся.", en="Good luck, Trent! Hopefully, we'll never meet here again."),
 
-        VoiceLine(10, Trent, ru="Всем доброго дня.", en="Good day, everyone."),
-        VoiceLine(20, Jameson, ru="Здорова, Трент, пришел за новым нарядом?", en="Hey, Trent. Here for a new assignment?"),
+        VoiceLine(10, Trent, ru="Всем доброго дня.", en="Good day, everyone.", delivery_en=performance.WARM),
+        VoiceLine(20, Jameson, ru="Здорова, Трент, пришел за новым нарядом?", en="Hey, Trent. Here for a new assignment?", delivery_en=performance.WARM),
         VoiceLine(30, Trent, ru="Нет, спасибо. Мистер Джеймсон, я пришел увольняться!", en="No, thanks. Mr. Jameson, I came to quit."),
-        VoiceLine(40, Jameson, ru="С чего это? Опять поругался с кем-то на объекте?", en="How come? You get in another fight on site?"),
-        VoiceLine(50, Trent, ru="Нет, всё серьёзно, смотрите.", en="No. It's serious. Look."),
+        VoiceLine(40, Jameson, ru="С чего это? Опять поругался с кем-то на объекте?", en="How come? You get in another fight on site?", delivery_en=performance.UNCERTAIN),
+        VoiceLine(50, Trent, ru="Нет, всё серьёзно, смотрите.", en="No. It's serious. Look.", delivery_en=performance.STERN),
         VoiceLine(70, Alaric, ru="Привет, Трент, это Аларик! У меня для тебя хорошие новости! Мне кажется, мы сможем поправить твое финансовое положение. Встречаемся на Магдебурге, в системе Сигма-13. До встречи!",
-                  en="Hey, Trent, it's Alaric! I've got good news. I think we can sort out your money. Meet me on Magdeburg, in Sigma-13. See you!"),
-        VoiceLine(80, Jameson, ru="А, этот прохиндей Аларик даже не сгинул в приграничье?", en="Huh. That crook Alaric didn't even get himself killed in the Border Worlds?"),
-        VoiceLine(90, Trent, ru="Да, жив здоров! Так что хватит работать на дядю, пойду во фрилансеры, как мой знаменитый тёзка! Почему бы и нет?", en="Alive and well! So I'm done working for the boss. I'll go freelance, like my famous namesake. Why not?"),
-        VoiceLine(100, Trent, ru="Заработаю денег столько, сколько вы и во снах не видовали!", en="I'll make more money than you've ever seen, even in your dreams!"),
-        VoiceLine(110, Jameson, ru="Да, ты там и медаль одинокой звезды получить не забудь. Смотри не зазвездись, звёздный боец!", en="Sure. And don't forget your Lone Star medal. Don't let it go to your head, star fighter."),
-        VoiceLine(120, IntroBarman, comment="Харрисон уходит", ru="Ну что, Трент, поздравляю тебя с началом новой жизни и получением билета не покидание этого болота!", en="Well, Trent. Congratulations on the new life, and on getting a ticket out of this swamp!", delivery=HAPPY),
+                  en="Hey, Trent, it's Alaric! I've got good news. I think we can sort out your money. Meet me on Magdeburg, in Sigma-13. See you!", delivery_en=performance.EXCITED),
+        VoiceLine(80, Jameson, ru="А, этот прохиндей Аларик даже не сгинул в приграничье?", en="Huh. That crook Alaric didn't even get himself killed in the Border Worlds?", delivery_en=performance.SARDONIC),
+        VoiceLine(90, Trent, ru="Да, жив здоров! Так что хватит работать на дядю, пойду во фрилансеры, как мой знаменитый тёзка! Почему бы и нет?", en="Alive and well! So I'm done working for the boss. I'll go freelance, like my famous namesake. Why not?", delivery_en=performance.EXCITED),
+        VoiceLine(100, Trent, ru="Заработаю денег столько, сколько вы и во снах не видовали!", en="I'll make more money than you've ever seen, even in your dreams!", delivery_en=performance.EXCITED),
+        VoiceLine(110, Jameson, ru="Да, ты там и медаль одинокой звезды получить не забудь. Смотри не зазвездись, звёздный боец!", en="Sure. And don't forget your Lone Star medal. Don't let it go to your head, star fighter.", delivery_en=performance.SARDONIC),
+        VoiceLine(120, IntroBarman, comment="Харрисон уходит", ru="Ну что, Трент, поздравляю тебя с началом новой жизни и получением билета не покидание этого болота!", en="Well, Trent. Congratulations on the new life, and on getting a ticket out of this swamp!", delivery=HAPPY, delivery_en=performance.WARM),
         VoiceLine(130, Trent, ru="А ты чего сам не улетишь из этого болота?", en="Then why don't you fly out of this swamp yourself?"),
-        VoiceLine(140, IntroBarman, ru="Нет, Трент, это твоё дело молодое. А я буду дальше помогать местным заблудшим душам. Не все же такие амбициозные, как ты!", en="No, Trent. That's a young man's business. I'll keep helping the lost souls around here. Not everyone's as ambitious as you."),
-        VoiceLine(150, Trent, ru="Да, друг, без тебя здесь стало бы совсем тоскливо. Так, мой транспорт почти прибыл. Так что мне пора.", en="Yeah, friend. It'd be pretty dull here without you. Right, my transport's almost here. I should go."),
-        VoiceLine(160, IntroBarman, ru="Давай, Трент, удачи!", en="Go on, Trent. Good luck!"),
+        VoiceLine(140, IntroBarman, ru="Нет, Трент, это твоё дело молодое. А я буду дальше помогать местным заблудшим душам. Не все же такие амбициозные, как ты!", en="No, Trent. That's a young man's business. I'll keep helping the lost souls around here. Not everyone's as ambitious as you.", delivery_en=performance.REFLECTIVE),
+        VoiceLine(150, Trent, ru="Да, друг, без тебя здесь стало бы совсем тоскливо. Так, мой транспорт почти прибыл. Так что мне пора.", en="Yeah, friend. It'd be pretty dull here without you. Right, my transport's almost here. I should go.", delivery_en=performance.WARM),
+        VoiceLine(160, IntroBarman, ru="Давай, Трент, удачи!", en="Go on, Trent. Good luck!", delivery_en=performance.WARM),
 
         # VoiceLine(10, Trent, ru="Привет, целитель душ!", en="The Savior of my soul!"),
         # VoiceLine(20, IntroBarman, ru="Здарова, Трент! Тебе как обычно?", en="Welcome back, Trent. The usual?"),
@@ -110,10 +111,10 @@ class Msn1Cityscape(Msn1, script.CutsceneProps):
     DESCRIPTION = ''
     VOICE_LINES = [
         VoiceLine(10, Stewardess, ru="Ваши билет и документы, сэр.", en="Your ticket and documents, sir."),
-        VoiceLine(20, Stewardess, ru="Трент?.. А вы...", en="Trent?.. And you are..."),
-        VoiceLine(30, Trent, ru="Нет, просто однофамилец.", en="No. Just the same name."),
+        VoiceLine(20, Stewardess, ru="Трент?.. А вы...", en="Trent?.. And you are...", delivery_en=performance.UNCERTAIN),
+        VoiceLine(30, Trent, ru="Нет, просто однофамилец.", en="No. Just the same name.", delivery_en=performance.DRY),
         VoiceLine(40, Trent, ru="Достало уже. Пока твой тезка спасает вселенную, ты впахиваешь на дядю не покладая рук и выплачиваешь долги.",
-                  en="I'm sick of it. Your namesake saves the universe, and you break your back working for someone else, paying off debts."),
+                  en="I'm sick of it. Your namesake saves the universe, and you break your back working for someone else, paying off debts.", delivery_en=performance.WEARY),
     ]
 
 
@@ -124,23 +125,23 @@ class Msn1Offer(Msn1, script.CutsceneProps):
     TITLE = 'Сигма-13'
     DESCRIPTION = ''
     VOICE_LINES = [
-        VoiceLine(10, Alaric, ru="Здарова, дружище, рад видеть тебя!", en="Hey, friend. Good to see you!"),
-        VoiceLine(20, Trent, ru="Привет, Аларик.", en="Hi, Alaric."),
+        VoiceLine(10, Alaric, ru="Здарова, дружище, рад видеть тебя!", en="Hey, friend. Good to see you!", delivery_en=performance.WARM),
+        VoiceLine(20, Trent, ru="Привет, Аларик.", en="Hi, Alaric.", delivery_en=performance.WARM),
         VoiceLine(30, Alaric, ru="Я слышал ты разобрался со всеми проблемами. Теперь никаких долгов, никаких обязательств, да?",
                   en="I heard you sorted everything out. No debts, no obligations now, right?"),
         VoiceLine(40, Trent, ru="Ага, а еще никаких денег и никакого корабля. Есть в этом и плюсы - никаких проблем с багажом. Все мое - на мне. ",
-                  en="Yeah. And no money, and no ship. There's an upside, though. No luggage. Everything I own is on me."),
-        VoiceLine(50, Alaric, ru="Подходящий момент чтобы начать жизнь с чистого листа, не так ли? ", en="Good time to start with a clean slate, isn't it?"),
+                  en="Yeah. And no money, and no ship. There's an upside, though. No luggage. Everything I own is on me.", delivery_en=performance.SARDONIC),
+        VoiceLine(50, Alaric, ru="Подходящий момент чтобы начать жизнь с чистого листа, не так ли? ", en="Good time to start with a clean slate, isn't it?", delivery_en=performance.REASSURING),
         VoiceLine(60, Alaric, ru="Мне как раз нужен напарник для хорошо оплачиваемого задания.", en="I need a partner for a well-paid job."),
         VoiceLine(70, Alaric, ru="Корабль я тебе дам. Старичок, конечно, но пару полетов до регламентного ТО переживет.",
-                  en="I'll give you a ship. It's old, sure, but it'll last a couple of runs until the next service."),
+                  en="I'll give you a ship. It's old, sure, but it'll last a couple of runs until the next service.", delivery_en=performance.REASSURING),
         VoiceLine(80, Alaric, ru="Нужно проводить пару рейнландских ребят из Берлина в Бисмарк. Платят хорошие деньги",
                   en="We need to escort a couple of Rheinland guys from Berlin to Bismark. They pay well."),
         VoiceLine(90, Trent, ru="Интересно, с чего бы рейнландским ребятам нанимать охрану для перелета из одной своей системы в другую? ",
-                  en="Funny. Why would Rheinland guys hire an escort to fly from one of their own systems to another?"),
-        VoiceLine(100, Trent, ru="А впрочем, корабль, говоришь? Ты не оставил мне шансов, Ал!", en="Anyway. A ship, you said? You didn't leave me a choice, Al!"),
+                  en="Funny. Why would Rheinland guys hire an escort to fly from one of their own systems to another?", delivery_en=performance.UNCERTAIN),
+        VoiceLine(100, Trent, ru="А впрочем, корабль, говоришь? Ты не оставил мне шансов, Ал!", en="Anyway. A ship, you said? You didn't leave me a choice, Al!", delivery_en=performance.AMUSED),
         VoiceLine(110, Alaric, ru="Вот и договорились. Корабль ждет тебя в ангаре. Осмотри, все ли с ним в порядке. Я буду ждать тебя в космосе.",
-                  en="Then it's a deal. The ship's waiting in the hangar. Check that it's all right. I'll wait for you in space."),
+                  en="Then it's a deal. The ship's waiting in the hangar. Check that it's all right. I'll wait for you in space.", delivery_en=performance.WARM),
     ]
 
 
@@ -150,9 +151,9 @@ class Msn1Berlin(Msn1, script.CutsceneProps):
     TITLE = 'Берлин'
     DESCRIPTION = ''
     VOICE_LINES = [
-        VoiceLine(10, Alaric, ru="Приветствую, джентльмены. Это - Трент, мой друг о котором я вам рассказывал.", en="Hello, gentlemen. This is Trent, the friend I told you about."),
-        VoiceLine(20, Adelmar, ru="Отлично. Рады вас видеть. У нас тут некоторые проблемы в системе, надеюсь, вам это не сильно помешало.", en="Excellent. Glad to see you. We've had some trouble in the system. I hope it didn't bother you much."),
-        VoiceLine(30, Trent, ru="Нисколько. Я просто счастлив что прилетел сюда ", en="Not at all. I'm just glad I made it here."),
+        VoiceLine(10, Alaric, ru="Приветствую, джентльмены. Это - Трент, мой друг о котором я вам рассказывал.", en="Hello, gentlemen. This is Trent, the friend I told you about.", delivery_en=performance.WARM),
+        VoiceLine(20, Adelmar, ru="Отлично. Рады вас видеть. У нас тут некоторые проблемы в системе, надеюсь, вам это не сильно помешало.", en="Excellent. Glad to see you. We've had some trouble in the system. I hope it didn't bother you much.", delivery_en=performance.WARM),
+        VoiceLine(30, Trent, ru="Нисколько. Я просто счастлив что прилетел сюда ", en="Not at all. I'm just glad I made it here.", delivery_en=performance.SARDONIC),
         VoiceLine(40, Luc, ru="Вот и отлично. Если все в сборе, давайте начнем.", en="Good. If everyone's here, let's begin."),
     ]
 
@@ -164,23 +165,23 @@ class Msn1Bizmark(Msn1, script.CutsceneProps):
     DESCRIPTION = ''
     VOICE_LINES = [
         VoiceLine(10, Adelmar, ru="Благодарю вас за сопровождение! Деньги уже перечислены на ваши счета!",
-                  en="Thank you for the escort! The money is already in your accounts!"),
-        VoiceLine(20, Trent, ru="Не стоит благодарности. ", en="Don't mention it."),
+                  en="Thank you for the escort! The money is already in your accounts!", delivery_en=performance.WARM),
+        VoiceLine(20, Trent, ru="Не стоит благодарности. ", en="Don't mention it.", delivery_en=performance.WARM),
         # VoiceLine(30, Luc, ru="Кроме того, мы, как члены Ганзейского торгового сообщества, добавили вас в белый лист фрилансеров. ", en="As a.. how do you say... bogus? Sweetener of the deal? We have added you to our Hanseatic trading community freelancers' whitelist."),
         #VoiceLine(40, Luc, ru="Теперь вы можете брать к выполнению миссии Ганзейских купцов.", en="From now on, you may take on missions offered by Hanseatic merchants, mein friend."),
         #VoiceLine(50, Alaric, ru="А вот за это отдельное спасибо, джентльмены! Трент, ты слышал? Мы теперь на Рейнландской территории не просто голодранцы какие-то, а аккредитованные Ганзейским торговым сообществом официальные фрилансеры!", en="Ah, thank you so much for your kind generosity, gentlemen! Trent, you hear that? We have been elevated from bottom feeding gutter trash to honest to God accredited freelancers of the Hanseatic trading community!"),
         #VoiceLine(60, Trent, ru="Охренеть. ", en="I'm overwhelmed..."),
         VoiceLine(70, Luc, ru="И... Трент, бесплатный совет: как можно быстрее поменяй свой звездолёт на что-нибудь более современное. Без обид, но подобные раритеты нужно выставлять в музее, а не летать на них..", en="And... Trent, a free piece of advice. Change that ship for something more modern, as soon as you can. No offense, but relics like that belong in a museum, not in flight."),
         VoiceLine(80, Trent, ru="Я подумаю над этим.", en="I'll think about it."),
-        VoiceLine(90, Alaric, ru="И как тебе новая жизнь Трент?", en="So, how's the new life, Trent?"),
-        VoiceLine(100, Trent, ru="Волнительно. Но... сейчас у меня есть свой корабль, а за это я хоть дьяволу в глотку готов залезть.", en="Exciting. But... I've got my own ship now, and for that I'd fly down the devil's throat."),
+        VoiceLine(90, Alaric, ru="И как тебе новая жизнь Трент?", en="So, how's the new life, Trent?", delivery_en=performance.WARM),
+        VoiceLine(100, Trent, ru="Волнительно. Но... сейчас у меня есть свой корабль, а за это я хоть дьяволу в глотку готов залезть.", en="Exciting. But... I've got my own ship now, and for that I'd fly down the devil's throat.", delivery_en=performance.PROUD),
         VoiceLine(110, Alaric, ru="Теперь у тебя еще и деньги есть на его обслуживание и переоборудование. А если подумать - то и на покупку нового. По большому счету, Луц в чем-то прав.", en="Now you've got money to maintain it and refit it. Enough for a new one, if you think about it. Lutz is right, more or less."),
-        VoiceLine(120, Trent, ru="Да пошел он. Может у него и хватает денег чтобы корабли раз в год менять, а я пока еще миллионером не стал. ", en="Screw him. Maybe he's got the money to change ships once a year. I'm not a millionaire yet."),
+        VoiceLine(120, Trent, ru="Да пошел он. Может у него и хватает денег чтобы корабли раз в год менять, а я пока еще миллионером не стал. ", en="Screw him. Maybe he's got the money to change ships once a year. I'm not a millionaire yet.", delivery_en=performance.ANGRY),
         VoiceLine(125, Alaric, ru="Тогда стоит задуматься над апгрейдом того что есть. ", en="Then think about upgrading what you've got."),
         VoiceLine(130, Alaric, ru="В том бою, в астероидах, тебе иногда явно не хватало энергии. Тебе точно не помешает поменять генератор на более мощный. Да и остальную начинку посмотри. Этот корпус очень эластичен в плане апгрейда. Практически все модули можно поменять на более совершенные...", en="In that fight, in the asteroids, you were clearly short on power at times. You should swap the generator for a stronger one. And look at the rest of the hardware. This hull takes upgrades well. Almost every module can be replaced with a better one..."),
         VoiceLine(140, Alaric, ru="О-кей, Трент, у меня тут есть дела, требующие немедленного разрешения, поэтому я побежал. Освоишься без меня тут?", en="Okay, Trent. I've got business that can't wait, so I'm off. You'll manage here without me?"),
-        VoiceLine(150, Trent, ru="Попробую... Удачи, Аларик!!!", en="I'll try... Good luck, Alaric!"),
-        VoiceLine(160, Alaric, ru="Пока!", en="Bye!"),
+        VoiceLine(150, Trent, ru="Попробую... Удачи, Аларик!!!", en="I'll try... Good luck, Alaric!", delivery_en=performance.WARM),
+        VoiceLine(160, Alaric, ru="Пока!", en="Bye!", delivery_en=performance.WARM),
     ]
 
 
@@ -191,6 +192,7 @@ class Msn1Space(Msn1, script.SpaceVoiceProps):
             Alaric,
             ru="Эй, Трент! Поди забыл уже, с какой стороны подходить к креслу пилота?",
             en="Hey, Trent! Forgotten which side of the pilot's chair to get in from?",
+            delivery_en=performance.TEASING,
         ),
         VoiceLine(
             20,
@@ -221,12 +223,14 @@ class Msn1Space(Msn1, script.SpaceVoiceProps):
             Trent,
             ru="Твою ж мать, что происходит?",
             en="What the hell is going on?",
+            delivery_en=performance.UNCERTAIN,
         ),
         VoiceLine(
             70,
             Alaric,
             ru="Трент, не заморачивайся, кто-то из генералитета Рейнланда решил снюхаться с корсарами. И все бы ничего, да это был кто-то из самых высших кругов Рейнланда. ",
             en="Don't worry about it, Trent. Someone in the Rheinland general staff decided to get in bed with the Corsairs. That'd be one thing, but it was someone from the very top.",
+            delivery_en=performance.REASSURING,
         ),
         VoiceLine(
             80,
@@ -239,6 +243,7 @@ class Msn1Space(Msn1, script.SpaceVoiceProps):
             Trent,
             ru="Интересно, с чего бы это ему в голову пришло...",
             en="Wonder what put that idea in his head...",
+            delivery_en=performance.UNCERTAIN,
         ),
         VoiceLine(
             100,
@@ -263,42 +268,49 @@ class Msn1Space(Msn1, script.SpaceVoiceProps):
             Alaric,
             ru="Охтыж... А это еще что такое???",
             en="Oh... and what the hell is that???",
+            delivery_en=performance.SHOCKED,
         ),
         VoiceLine(
             140,
             Dietrich,
             ru="Великие воины Рейнланда, задумайтесь, кого, чью власть вы защищаете? ",
             en="Great warriors of Rheinland, think. Who are you protecting? Whose power?",
+            delivery_en=performance.STERN,
         ),
         VoiceLine(
             150,
             Dietrich,
             ru="Прогнившую верхушку нынешнего кайзера? Им недолго осталось стоять у власти. Переходите на сторону истинных патриотов Рейнланда!",
             en="The rotten top around the current Kaiser? They won't be in power for long. Come over to the true patriots of Rheinland!",
+            delivery_en=performance.STERN,
         ),
         VoiceLine(
             160,
             BrandenburgCruiser,
             ru="Что-то, я смотрю, истинные патриоты Рейнланда слишком часто используют наёмников - корсаров, а они очень быстро заканчиваются.",
             en="Funny how the true patriots of Rheinland keep using mercenaries. Corsairs. And they run out pretty fast.",
+            delivery_en=performance.SARDONIC,
         ),
         VoiceLine(
             170,
             Dietrich,
             ru="Хорошо смеется тот, кто смеется последним! Посмейся теперь над этим!",
             en="He who laughs last, laughs best! Laugh at this!",
+            delivery_en=performance.ANGRY,
         ),
         VoiceLine(
             180,
             Trent,
             ru="Кто мне объяснит, что это было? Сначала корсары, потом появляются легендарные орденские корабли и превращают Рейнландский крейсер в рейнладском пространстве в рейнлайндскую, мать её, пыль!",
             en="Will someone explain what that was? First Corsairs, then legendary Order ships show up and turn a Rheinland cruiser, in Rheinland space, into Rheinland dust!",
+            delivery_en=performance.SHOCKED,
         ),
         VoiceLine(
             190,
             Alaric,
             ru="Вот точно не я. Я сам нихрена не понял!",
             en="Don't look at me. I didn't understand a damn thing!",
+            delivery_en=performance.SHOCKED,
         ),
         VoiceLine(
             200,
@@ -329,6 +341,7 @@ class Msn1Space(Msn1, script.SpaceVoiceProps):
             Alaric,
             ru="Трент, мы не можем ждать. Входи в формацию, сейчас же!",
             en="Trent, we can't wait. Form up, right now!",
+            delivery_en=performance.URGENT,
         ),
         VoiceLine(
             250,
@@ -347,12 +360,14 @@ class Msn1Space(Msn1, script.SpaceVoiceProps):
             Luc,
             ru="(акцент на такооого) Ага, ты больше слушай этих придурков-репортеров. Ради сенсации они тебе такого порасскажут. ",
             en="Yeah, listen to those idiot reporters. They'll tell you anything for a sensation.",
+            delivery_en=performance.DISGUSTED,
         ),
         VoiceLine(
             280,
             Luc,
             ru="В туалете кто-то воздух испортил, а в статье напишут, что взрыв на станции.",
             en="Someone farts in the toilet, and the article says the station exploded.",
+            delivery_en=performance.SARDONIC,
         ),
         VoiceLine(
             290,
@@ -365,6 +380,7 @@ class Msn1Space(Msn1, script.SpaceVoiceProps):
             Trent,
             ru="Ага. Обнадеживающее начало.",
             en="Yeah. Encouraging start.",
+            delivery_en=performance.SARDONIC,
         ),
         VoiceLine(
             310,
@@ -383,6 +399,7 @@ class Msn1Space(Msn1, script.SpaceVoiceProps):
             Luc,
             ru="Очень влиятельный сукин сын.",
             en="A very influential son of a bitch.",
+            delivery_en=performance.DISGUSTED,
         ),
         VoiceLine(
             340,
@@ -395,6 +412,7 @@ class Msn1Space(Msn1, script.SpaceVoiceProps):
             Adelmar,
             ru="Я не знаю что произошло, но он вдруг ополчился на всех и ушёл в жёсткую оппозицию. А потом... Ну в общем, вы всё и сами видите.",
             en="I don't know what happened, but he suddenly turned on everyone and went into hard opposition. And then... well, you can see for yourselves.",
+            delivery_en=performance.CONCERNED,
         ),
         VoiceLine(
             360,
@@ -407,6 +425,7 @@ class Msn1Space(Msn1, script.SpaceVoiceProps):
             Luc,
             ru="И чем дальше, тем лучше. А то сам попадёшь под чью-либу горячую руку.",
             en="The further, the better. Or you'll end up on the wrong side of someone's temper.",
+            delivery_en=performance.CONCERNED,
         ),
         VoiceLine(
             380,
@@ -419,12 +438,14 @@ class Msn1Space(Msn1, script.SpaceVoiceProps):
             Luc,
             ru="Груз ценный. Желающих его получить много. Деньги мы вам платим. На этом и закончим, хорошо?",
             en="Valuable cargo. A lot of people want it. We're paying you. Let's leave it at that, all right?",
+            delivery_en=performance.STERN,
         ),
         VoiceLine(
             400,
             Alaric,
             ru="Клиент всегда прав.",
             en="The client is always right.",
+            delivery_en=performance.TEASING,
         ),
         VoiceLine(
             410,
@@ -449,6 +470,7 @@ class Msn1Space(Msn1, script.SpaceVoiceProps):
             Alaric,
             ru="Эмм, простите...",
             en="Uh, excuse me...",
+            delivery_en=performance.UNCERTAIN,
         ),
         VoiceLine(
             450,
@@ -485,102 +507,119 @@ class Msn1Space(Msn1, script.SpaceVoiceProps):
             Alaric,
             ru="Даже если вас там никто специально не ждет мы рискуем абсолютно случайно нарваться на пиратов, майнеров, мусорщиков, и чёрт-еще-знает на кого. ",
             en="Even if nobody's waiting for you there, we can still run into pirates, miners, scavengers, and God knows who else.",
+            delivery_en=performance.CONCERNED,
         ),
         VoiceLine(
             510,
             Alaric,
             ru="В астероидных поясах это всегда непредсказуемо. Вы серьезно?",
             en="Asteroid belts are always unpredictable. Are you serious?",
+            delivery_en=performance.CONCERNED,
         ),
         VoiceLine(
             520,
             Luc,
             ru="Абсолютно.",
             en="Absolutely.",
+            delivery_en=performance.STERN,
         ),
         VoiceLine(
             530,
             Adelmar,
             ru="Друзья, мы вам деньги платим за охрану не просто так. По охраняемым магистралям мы и сами смогли бы пролететь.",
             en="Friends, we aren't paying you for an escort for nothing. We could fly the guarded lanes ourselves.",
+            delivery_en=performance.STERN,
         ),
         VoiceLine(
             540,
             Trent,
             ru="Ох как это все мне не нравится...",
             en="I really don't like this...",
+            delivery_en=performance.CONCERNED,
         ),
         VoiceLine(
             550,
             Alaric,
             ru="Черт, это ловушка! Атакуйте неприятеля! ",
             en="Damn, it's a trap! Attack!",
+            delivery_en=performance.ALARMED,
         ),
         VoiceLine(
             560,
             Trent,
             ru="Мы не вывозим! Луц, Аделмар, астероидный пояс экранирует исходящие вызовы, нужно долететь до ближайшей полицейской станции и вызвать подмогу!",
             en="We can't hold them! Lutz, Adelmar, the asteroid belt is blocking outgoing calls. Someone has to reach the nearest police station and call for help!",
+            delivery_en=performance.URGENT,
         ),
         VoiceLine(
             570,
             Adelmar,
             ru="Луц, они правы, вызови подмогу!",
             en="Lutz, they're right. Call for help!",
+            delivery_en=performance.URGENT,
         ),
         VoiceLine(
             580,
             Trent,
             ru="Это было потно.",
             en="That was rough.",
+            delivery_en=performance.WEARY,
         ),
         VoiceLine(
             590,
             Alaric,
             ru="И не говори, я уже пару раз с жизнью прощался.",
             en="Tell me about it. I said goodbye to my life a couple of times.",
+            delivery_en=performance.WEARY,
         ),
         VoiceLine(
             600,
             Adelmar,
             ru="Спасибо, друзья, вы были великолепны. ",
             en="Thank you, friends. You were magnificent.",
+            delivery_en=performance.WARM,
         ),
         VoiceLine(
             610,
             Alaric,
             ru="Аделмар, давай к полицейскому аванпосту, да? Шутки кончились.",
             en="Adelmar, let's head for the police outpost, yeah? The jokes are over.",
+            delivery_en=performance.DETERMINED,
         ),
         VoiceLine(
             620,
             Adelmar,
             ru="Луц, ты бы видел наших охранников в том бою. Я рад что мы остановили свой выбор на них. ",
             en="Lutz, you should have seen our escorts in that fight. I'm glad we chose them.",
+            delivery_en=performance.WARM,
         ),
         VoiceLine(
             630,
             Adelmar,
             ru="Трент на своем древнем металлоломе творил такое... Временами мне казалось, что сами валькирии парят рядом с его кораблём.",
             en="Trent, in that ancient scrap heap, did things... At times I thought the Valkyries themselves were flying beside his ship.",
+            delivery_en=performance.WARM,
         ),
         VoiceLine(
             640,
             Luc,
             ru="Как я не пытался поднять этот полицейский гадюшник, но их бюрократия абсолютно непробиваема.",
             en="I tried to stir up that police snake pit, but their bureaucracy is impenetrable.",
+            delivery_en=performance.DISGUSTED,
         ),
         VoiceLine(
             650,
             Luc,
             ru="Иногда мне кажется, что если тебя будут убивать у них на пороге, то они с тебя же справку потребуют, что это не по обоюдному согласию...",
             en="Sometimes I think if someone were killing you on their doorstep, they'd still demand a certificate that it wasn't by mutual consent...",
+            delivery_en=performance.SARDONIC,
         ),
         VoiceLine(
             660,
             Trent,
             ru="Джентльмены, что у нас следующим пунктом? Гиперврата в Бисмарк? Давайте туда и выдвинемся, пока не произошло еще что-нибудь, на что наш рейс так богат, будь он неладен.",
             en="Gentlemen, what's next? The jump gate to Bismark? Let's head there before something else happens. This run has had enough of that.",
+            delivery_en=performance.DETERMINED,
         ),
         VoiceLine(
             670,

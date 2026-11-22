@@ -39,7 +39,7 @@
       "id": "rm0151_frag0001",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Добро пожаловать. Линкор Нептун. Я комендант стоянки Pembroke. Нужно место для корабля?",
+      "ru": "Добро пожаловать. Линкор Нептун. Я комендант стоянки Пембрук. Нужно место для корабля?",
       "en": "Welcome to Battleship Neptune. I am Commandant Pembroke. I handle parking berths here."
     },
     {
@@ -172,14 +172,14 @@
       "id": "rm0151_frag0020",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "С возвращением. Комендант Pembroke слушает. По поводу стоянки?",
+      "ru": "С возвращением. Комендант Пембрук слушает. По поводу стоянки?",
       "en": "Welcome back. Commandant Pembroke speaking. Here about ship storage?"
     },
     {
       "id": "rm0151_frag0021",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Привет, Трент. Стоянка базы «Линкор Нептун» к твоим услугам.",
+      "ru": "Привет, Трент. Стоянка к твоим услугам.",
       "en": "Hello, Trent. Need another berth at Battleship Neptune?"
     },
     {

@@ -39,7 +39,7 @@
       "id": "rm0128_frag0001",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Добро пожаловать. Станция Лейпциг. Я комендант стоянки Adler. Нужно место для корабля?",
+      "ru": "Добро пожаловать. Станция Лейпциг. Я комендант стоянки Адлер. Нужно место для корабля?",
       "en": "Welcome to Leipzig Station. I am Commandant Adler. I handle parking berths here."
     },
     {
@@ -172,14 +172,14 @@
       "id": "rm0128_frag0020",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "С возвращением. Комендант Adler слушает. По поводу стоянки?",
+      "ru": "С возвращением. Комендант Адлер слушает. По поводу стоянки?",
       "en": "Welcome back. Commandant Adler speaking. Here about ship storage?"
     },
     {
       "id": "rm0128_frag0021",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Привет, Трент. Стоянка базы «Станция Лейпциг» к твоим услугам.",
+      "ru": "Привет, Трент. Стоянка к твоим услугам.",
       "en": "Hello, Trent. Need another berth at Leipzig Station?"
     },
     {

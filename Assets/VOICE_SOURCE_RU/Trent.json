@@ -1,0 +1,21 @@
+{
+  "path": "D:\\work\\Freelancer-Decomp\\out\\train_courier\\audio_ru\\references\\Trent.wav",
+  "text": "Нет, спасибо. Мистер Джеймсон, я пришел увольняться! Да, друг, без тебя здесь стало бы совсем тоскливо. Так, мой транспорт почти прибыл. Так что мне пора.",
+  "sha256": "f5d0090a02658e9499938abe738197a9c3c480188e06bf9fe458a79fa388c55d",
+  "sources": [
+    {
+      "path": "D:\\Games\\FL_MOD\\Assets\\AUDIO_CUTSCENE_RU\\M01\\m01_intro_0030_trent.wav",
+      "sha256": "c9c83c59b28b399b9b77a505a3c22fdf8fc2008e76fde920fa53b9f976bf2224"
+    },
+    {
+      "path": "D:\\Games\\FL_MOD\\Assets\\AUDIO_CUTSCENE_RU\\M01\\m01_intro_0150_trent.wav",
+      "sha256": "e9eddc14431b7688eccf8d8e240ea7864b3e719094ca8a92379338b07e5b88a2"
+    }
+  ],
+  "duration": 11.878208333333333,
+  "rate": 24000,
+  "channels": 1,
+  "sample_bits": 16,
+  "rms_dbfs": -22.865492976893073,
+  "peak_dbfs": -3.7177870556881603
+}

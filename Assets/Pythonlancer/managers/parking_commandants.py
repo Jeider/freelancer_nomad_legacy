@@ -27,6 +27,12 @@ SURNAMES = {
     'free': ['Vega','Ramos','Silva','Cruz','Navarro','Ortega','Serrano','Duarte','Rojas','Costa']}
 
 
+RU_SURNAMES = dict(zip(
+    'Adler Vogel Keller Brandt Fischer Weber Wolf Braun Kraus Stein Carter Hayes Morgan Reed Grant Brooks Cole Ward Turner Miller Bennett Shaw Parker Wells Davis Stone Harris Blake Whitmore Hawthorne Ashford Sinclair Clarke Hughes Lancaster Pembroke Sutton Barrett Sato Mori Tanaka Kato Abe Hayashi Kondo Shimizu Ishida Watanabe Okada Nakamura Vega Ramos Silva Cruz Navarro Ortega Serrano Duarte Rojas Costa'.split(),
+    'Адлер Фогель Келлер Брандт Фишер Вебер Вольф Браун Краус Штайн Картер Хейз Морган Рид Грант Брукс Коул Уорд Тёрнер Миллер Беннет Шоу Паркер Уэллс Дэвис Стоун Харрис Блейк Уитмор Хоторн Эшфорд Синклер Кларк Хьюз Ланкастер Пембрук Саттон Барретт Сато Мори Танака Като Абэ Хаяси Кондо Симидзу Исида Ватанабэ Окада Накамура Вега Рамос Силва Крус Наварро Ортега Серрано Дуарте Рохас Коста'.split(),
+    strict=True))
+
+
 def parse(content):
     if isinstance(content, bytes):
         try: content = content.decode('utf-8-sig')
@@ -113,6 +119,7 @@ def scenario(template, entry):
     data['parking'] = {'base':base,'seller':seller}
     data['rules']['first_greeting'] = group+'_frag0001'
     name, ru, officer = entry['name_en'], entry['name_ru'], entry['surname']
+    officer_ru = entry.get('surname_ru') or RU_SURNAMES[officer]
     style = entry['style']
     greetings = [
         f'Welcome to {name}. I am Commandant {officer}. I handle parking berths here.',
@@ -120,13 +127,13 @@ def scenario(template, entry):
         f'You have reached the parking office for {name}. Commandant {officer}. What can I do for you?',
         f'Hello, pilot. I am {officer}, the parking commandant at {name}. Looking for a berth?']
     replacements = {
-        '0001': (f'Добро пожаловать. {ru}. Я комендант стоянки {officer}. Нужно место для корабля?',greetings[style]),
+        '0001': (f'Добро пожаловать. {ru}. Я комендант стоянки {officer_ru}. Нужно место для корабля?',greetings[style]),
         '0005': (f'Оплата принята. {ru}: место закреплено за тобой. Можешь оставить корабль.', f'Payment received. Your berth at {name} is registered. You can store a ship here now.'),
         '0011': (f'Место действует только здесь: {ru}. На другой базе его нужно покупать отдельно.', f'This berth is only valid at {name}. You will need a separate berth at any other base.'),
         '0015': ('Ты уже приобрёл все доступные тебе места на этой базе. Ещё одно оформить не могу.', 'You already own the maximum number of berths at this base. I cannot register another one.'),
         '0018': ('На этом всё. До встречи, комендант.', 'That is all for now. Goodbye, Commandant.'),
-        '0020': (f'С возвращением. Комендант {officer} слушает. По поводу стоянки?', f'Welcome back. Commandant {officer} speaking. Here about ship storage?'),
-        '0021': (f'Привет, Трент. Стоянка базы «{ru}» к твоим услугам.', f'Hello, Trent. Need another berth at {name}?')}
+        '0020': (f'С возвращением. Комендант {officer_ru} слушает. По поводу стоянки?', f'Welcome back. Commandant {officer} speaking. Here about ship storage?'),
+        '0021': ('Привет, Трент. Стоянка к твоим услугам.', f'Hello, Trent. Need another berth at {name}?')}
     for row in data['fragments']:
         suffix = row['id'][-4:]
         row['id'] = group+'_frag'+suffix

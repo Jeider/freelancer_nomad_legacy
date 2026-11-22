@@ -190,6 +190,18 @@ class MaleDispatcher(StationDispatcher):
     FOLDER = 'dispatcher01'
     ATTENUATION = -4
 
+    def get_lines(self):
+        from universe.audio.courier_ru import lines
+        return list({line.get_code(): line for line in [*super().get_lines(), *lines()]}.values())
+
+    def get_dynamic_lines(self):
+        from universe.audio.courier_ru import lines
+        return list({line.get_code(): line for line in [*super().get_dynamic_lines(), *lines()]}.values())
+
+    def get_mission_props_ini(self):
+        from universe.audio.courier_ru import permutation_properties
+        return super().get_mission_props_ini().rstrip() + '\n' + permutation_properties()
+
 
 class FemaleDispatcher(StationDispatcher):
     STEOS_ID = 175  # Tracer ?

@@ -23,6 +23,8 @@ for key, value in C.scene.objects.items():
         'position': [value.location[0], value.location[1], value.location[2]],
         'orientation': [orient[0], orient[1], orient[2], orient[3]],
     }
+    if C.scene.get('export_point_scale', False):
+        results[str(key)]['matrix_scale'] = list(value.scale)
 
 
 print(result_filename)

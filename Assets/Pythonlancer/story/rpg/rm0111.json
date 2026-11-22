@@ -39,7 +39,7 @@
       "id": "rm0111_frag0001",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Добро пожаловать. Планета Хоккайдо. Я комендант стоянки Sato. Нужно место для корабля?",
+      "ru": "Добро пожаловать. Планета Хоккайдо. Я комендант стоянки Сато. Нужно место для корабля?",
       "en": "Welcome to Planet Hokkaido. I am Commandant Sato. I handle parking berths here."
     },
     {
@@ -172,14 +172,14 @@
       "id": "rm0111_frag0020",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "С возвращением. Комендант Sato слушает. По поводу стоянки?",
+      "ru": "С возвращением. Комендант Сато слушает. По поводу стоянки?",
       "en": "Welcome back. Commandant Sato speaking. Here about ship storage?"
     },
     {
       "id": "rm0111_frag0021",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Привет, Трент. Стоянка базы «Планета Хоккайдо» к твоим услугам.",
+      "ru": "Привет, Трент. Стоянка к твоим услугам.",
       "en": "Hello, Trent. Need another berth at Planet Hokkaido?"
     },
     {

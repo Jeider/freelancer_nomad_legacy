@@ -1,5 +1,6 @@
 """Prepare/record/install audio for one selected RPG base-dialogue group."""
 import argparse
+import json
 from pathlib import Path
 import re
 
@@ -10,6 +11,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("command", choices=["prepare", "voices", "install-audio", "build", "scenes", "runtime", "owners"])
     parser.add_argument("--group", default="rm0001")
+    parser.add_argument("--all-parking", action="store_true", help="Process every registered parking commandant")
     parser.add_argument("--language", choices=["ru", "en", "both"], default="both")
     parser.add_argument("--vendor-actor", help="Override this group's vendor actor; default from catalog casting")
     parser.add_argument("--dry-run", action="store_true", help="Plan without generation or game writes")
@@ -25,6 +27,24 @@ def main(argv=None):
     if args.command not in ('build', 'install-audio', 'scenes', 'runtime', 'owners') and args.game_root:
         parser.error('--game-root is only used for audio installation')
     root = Path(__file__).resolve().parents[1]
+    if args.all_parking:
+        if args.command not in ('prepare', 'install-audio', 'scenes') or args.group != 'rm0001':
+            parser.error('--all-parking supports prepare, install-audio or scenes; do not combine with --group')
+        registry = json.loads((root / 'story/rpg/parking_commandants.json').read_text(encoding='utf-8'))
+        groups = [row['group'] for row in registry['bases']]
+        if len(groups) != len(set(groups)) or not groups:
+            parser.error('Empty or duplicate parking groups')
+        for group in groups:
+            command = [args.command, '--group', group, '--language', args.language]
+            if args.output:
+                command += ['--output', str(args.output / group)]
+            if args.game_root:
+                command += ['--game-root', str(args.game_root)]
+            if args.dry_run:
+                command += ['--dry-run']
+            main(command)
+        print(f'Parking commandants: {len(groups)} groups; {args.command}; {args.language}')
+        return
     output = args.output or root / "results/rpg" / args.group / args.command / args.language
     if args.command == 'owners':
         from core import get_core

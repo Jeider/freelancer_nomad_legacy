@@ -1,498 +1,4 @@
 {
-  "Char_trent": {
-    "position": [
-      300.0,
-      -200.0,
-      0.0
-    ],
-    "orientation": [
-      0.0,
-      0.0,
-      -1.0,
-      0.0
-    ]
-  },
-  "Char_rockford": {
-    "position": [
-      5550.0,
-      -194.0,
-      0.800000011920929
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "point_trent_before_touch": {
-    "position": [
-      299.95001220703125,
-      -197.9199981689453,
-      0.0
-    ],
-    "orientation": [
-      0.0,
-      0.0,
-      -1.0,
-      0.0
-    ]
-  },
-  "cam_start": {
-    "position": [
-      45.0,
-      -15.0,
-      5.0
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_start_pos2": {
-    "position": [
-      45.0,
-      -10.0,
-      4.0
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_start_focus": {
-    "position": [
-      0.0,
-      -5.0,
-      3.0
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_start_marker_pos2": {
-    "position": [
-      0.0,
-      5.0,
-      3.0
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_trent_pilot": {
-    "position": [
-      301.0,
-      -202.0,
-      1.149999976158142
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_trent_pilot_focus": {
-    "position": [
-      300.0,
-      -200.3000030517578,
-      1.149999976158142
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_rockford_gunfire": {
-    "position": [
-      10.0,
-      -185.0,
-      5.0
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_rockford_gunfire_pos2": {
-    "position": [
-      15.0,
-      -180.0,
-      5.0
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_rockford_gunfire_focus": {
-    "position": [
-      8.0,
-      -206.0,
-      2.0
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_rockford_gunfire_marker_pos2": {
-    "position": [
-      0.0,
-      -200.0,
-      2.0
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_trent_shield_damage": {
-    "position": [
-      300.5,
-      -198.0,
-      1.149999976158142
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_trent_shield_damage_pos2": {
-    "position": [
-      300.5,
-      -197.25,
-      1.149999976158142
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_trent_shield_damage_focus": {
-    "position": [
-      295.0,
-      -400.0,
-      1.149999976158142
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_shield_destroyed": {
-    "position": [
-      75.0,
-      -75.0,
-      50.0
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_player_disappeared": {
-    "position": [
-      75.0,
-      -75.0,
-      50.0
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_player_disappeared_marker": {
-    "position": [
-      0.0,
-      0.0,
-      0.0
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_launcher_start": {
-    "position": [
-      10.0,
-      -190.0,
-      6.0
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_launcher_start_pos2": {
-    "position": [
-      6.0,
-      -186.0,
-      6.0
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_launcher_start_focus": {
-    "position": [
-      2.5999999046325684,
-      -194.0,
-      2.0
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_launcher_start_marker_pos2": {
-    "position": [
-      2.299999952316284,
-      -194.0,
-      0.800000011920929
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_flying_missile": {
-    "position": [
-      6.0,
-      -150.0,
-      2.0
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_flying_missile_near": {
-    "position": [
-      2.0,
-      -120.0,
-      4.0
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_flying_missile_near_pos2": {
-    "position": [
-      2.0,
-      80.0,
-      4.0
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_trent_lookback": {
-    "position": [
-      300.54998779296875,
-      -197.0,
-      1.149999976158142
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_trent_lookback_focus": {
-    "position": [
-      300.25,
-      -200.0,
-      1.149999976158142
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_trent_walkback": {
-    "position": [
-      300.3500061035156,
-      -194.0,
-      0.8999999761581421
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_trent_walkback_focus": {
-    "position": [
-      300.25,
-      -200.0,
-      1.0499999523162842
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_trent_touch": {
-    "position": [
-      302.0,
-      -199.0,
-      2.0
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_trent_touch_pos2": {
-    "position": [
-      303.0,
-      -195.5,
-      2.299999952316284
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_trent_touch_focus": {
-    "position": [
-      299.0,
-      -195.0,
-      0.699999988079071
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_trent_touch_marker_pos2": {
-    "position": [
-      299.0,
-      -196.5,
-      1.0
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_trent_missilewatch": {
-    "position": [
-      300.5,
-      -194.0,
-      1.600000023841858
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "cam_trent_missilewatch_focus": {
-    "position": [
-      300.20001220703125,
-      -200.0,
-      1.399999976158142
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "trent_head_ik": {
-    "position": [
-      300.0,
-      -250.0,
-      1.149999976158142
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
-  "mrk_rockford_ready_to_fire_looking_point": {
-    "position": [
-      -75.0,
-      -25.0,
-      2.0
-    ],
-    "orientation": [
-      1.0,
-      0.0,
-      0.0,
-      0.0
-    ]
-  },
   "Light_SPACE_background": {
     "position": [
       0.0,
@@ -504,6 +10,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "Light_SPACE_playership": {
@@ -517,6 +28,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "Light_SPACE_playership_shield_fx": {
@@ -530,6 +46,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "Light_SPACE_rockford_intro": {
@@ -543,6 +64,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "Light_SPACE_rockford_front": {
@@ -556,6 +82,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "Light_ROOM": {
@@ -569,6 +100,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "Light_shield_damage": {
@@ -582,6 +118,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "Light_ROOM_backside": {
@@ -595,6 +136,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "Light_ROOM_backside_nomad_light": {
@@ -608,6 +154,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "Light_gun01_flash": {
@@ -619,8 +170,13 @@
     "orientation": [
       0.9998327493667603,
       0.0,
-      0.018293559551239014,
-      0.0
+      0.018293555825948715,
+      -9.313225746154785e-10
+    ],
+    "matrix_scale": [
+      1.0000003576278687,
+      1.0,
+      1.0000003576278687
     ]
   },
   "Light_gun02_flash": {
@@ -632,34 +188,13 @@
     "orientation": [
       0.9998327493667603,
       0.0,
-      0.018293559551239014,
-      0.0
-    ]
-  },
-  "blackhole_lighting": {
-    "position": [
-      0.0,
-      -90000.0,
-      -5000.0
+      0.018293555825948715,
+      -9.313225746154785e-10
     ],
-    "orientation": [
-      0.9698463678359985,
-      -0.1710100769996643,
-      0.030153699219226837,
-      -0.1710100919008255
-    ]
-  },
-  "fx_crystal_light": {
-    "position": [
-      0.0,
-      0.0,
-      0.0
-    ],
-    "orientation": [
+    "matrix_scale": [
+      1.0000003576278687,
       1.0,
-      0.0,
-      0.0,
-      0.0
+      1.0000003576278687
     ]
   },
   "blackhole_ring": {
@@ -673,6 +208,29 @@
       -0.1710100769996643,
       0.030153699219226837,
       -0.1710100919008255
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "blackhole_lighting": {
+    "position": [
+      0.0,
+      -90000.0,
+      -5000.0
+    ],
+    "orientation": [
+      0.9698463678359985,
+      -0.1710100769996643,
+      0.030153699219226837,
+      -0.1710100919008255
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "planet_1": {
@@ -686,6 +244,11 @@
       0.060550570487976074,
       -0.07618071138858795,
       -0.4171639084815979
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "blackhole": {
@@ -699,6 +262,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "fx_player_trapped": {
@@ -712,6 +280,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "fx_shield_offline": {
@@ -725,6 +298,29 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "fx_crystal_light": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "fx_crystal_touch": {
@@ -738,6 +334,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "fx_crystal_touch_mega_effect": {
@@ -751,6 +352,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "fx_crystal_touch_mega_effect2": {
@@ -764,6 +370,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "fx_player_transponding": {
@@ -777,6 +388,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "fx_player_transponding2": {
@@ -790,6 +406,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "fx_player_transponding3": {
@@ -803,6 +424,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "the_stars": {
@@ -816,6 +442,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      10.0,
+      10.0,
+      10.0
     ]
   },
   "the_background": {
@@ -829,6 +460,11 @@
       0.0,
       -1.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "fx_rockford_engine01": {
@@ -842,6 +478,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "fx_rockford_engine02": {
@@ -855,6 +496,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "gun01": {
@@ -868,6 +514,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "gun02": {
@@ -881,6 +532,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "launcher01": {
@@ -894,6 +550,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "cockpit_gun01": {
@@ -907,6 +568,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "cockpit_gun02": {
@@ -920,6 +586,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "missile01": {
@@ -933,6 +604,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "missile02": {
@@ -946,6 +622,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "mrk_missile02_start_pos": {
@@ -959,6 +640,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "mrk_missile02_final_pos": {
@@ -972,6 +658,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "mrk_missile01_fly2_start_pos": {
@@ -985,6 +676,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "mrk_missile01_fly2_final_pos": {
@@ -998,6 +694,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "mrk_missile01_start_pos": {
@@ -1011,6 +712,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "mrk_missile01_ready_to_load": {
@@ -1024,6 +730,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "mrk_missile01_final_hp": {
@@ -1037,6 +748,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "mrk_missile01_firepoint": {
@@ -1050,6 +766,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "fx_missile": {
@@ -1063,6 +784,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "fx_missile_alt": {
@@ -1076,6 +802,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "gun01_proj_01": {
@@ -1089,6 +820,11 @@
       0.0,
       -1.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "gun01_proj_02": {
@@ -1102,6 +838,11 @@
       0.0,
       -1.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "gun02_proj_01": {
@@ -1115,6 +856,11 @@
       0.0,
       -1.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "gun02_proj_02": {
@@ -1128,6 +874,11 @@
       0.0,
       -1.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "gun_flash_01": {
@@ -1141,6 +892,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "gun_flash_02": {
@@ -1154,6 +910,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "gun_fireblast01": {
@@ -1167,6 +928,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "gun_fireblast02": {
@@ -1180,6 +946,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "gun_impact_01": {
@@ -1193,6 +964,11 @@
       -0.7071068286895752,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "gun_impact_02": {
@@ -1206,6 +982,11 @@
       -0.7071068286895752,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "gun_impact_03": {
@@ -1219,6 +1000,11 @@
       -0.7071068286895752,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "gun_impact_04": {
@@ -1232,6 +1018,11 @@
       -0.7071068286895752,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "gun_impact_05": {
@@ -1245,6 +1036,83 @@
       -0.7071068286895752,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "Char_trent": {
+    "position": [
+      300.0,
+      -200.0,
+      0.0
+    ],
+    "orientation": [
+      0.0,
+      0.0,
+      -1.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "point_trent_before_touch": {
+    "position": [
+      299.95001220703125,
+      -197.9199981689453,
+      0.0
+    ],
+    "orientation": [
+      0.0,
+      0.0,
+      -1.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "Char_rockford": {
+    "position": [
+      5550.0,
+      -194.0,
+      0.800000011920929
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "trent_head_ik": {
+    "position": [
+      300.0,
+      -250.0,
+      1.149999976158142
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "mrk_rockford_pilot": {
@@ -1258,6 +1126,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "rockford_chair": {
@@ -1271,6 +1144,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "rockford_front": {
@@ -1284,6 +1162,11 @@
       0.0,
       -1.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "mrk_rockford_fly_forward": {
@@ -1297,6 +1180,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "mrk_rockford_standing_before_fire": {
@@ -1310,6 +1198,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "mrk_rockford_ready_to_fire": {
@@ -1323,6 +1216,29 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "mrk_rockford_ready_to_fire_looking_point": {
+    "position": [
+      -75.0,
+      -25.0,
+      2.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "mrk_rockford_ready_to_fire_playerpoint": {
@@ -1336,6 +1252,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "PlayerShip": {
@@ -1349,6 +1270,11 @@
       0.0,
       -1.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "the_cockpit": {
@@ -1362,6 +1288,11 @@
       0.0,
       -1.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "case": {
@@ -1375,6 +1306,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "panel": {
@@ -1388,6 +1324,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "crystal": {
@@ -1401,6 +1342,11 @@
       0.0,
       -1.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "tome": {
@@ -1414,6 +1360,11 @@
       0.0,
       0.6087614893913269,
       -2.9802322387695312e-08
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "mrk_panel_open": {
@@ -1427,6 +1378,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "mrk_crystal_open": {
@@ -1440,6 +1396,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "mrk_crystal_open2": {
@@ -1453,6 +1414,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "mrk_tome_open": {
@@ -1466,6 +1432,11 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "chair": {
@@ -1479,6 +1450,11 @@
       0.0,
       -1.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   },
   "rockford_cockpit": {
@@ -1492,6 +1468,605 @@
       0.0,
       0.0,
       0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_start": {
+    "position": [
+      45.0,
+      -15.0,
+      5.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_start2": {
+    "position": [
+      45.0,
+      -10.0,
+      4.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_start_focus": {
+    "position": [
+      0.0,
+      -5.0,
+      3.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_start_focus2": {
+    "position": [
+      0.0,
+      5.0,
+      3.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_trent_pilot": {
+    "position": [
+      301.0,
+      -202.0,
+      1.149999976158142
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_trent_pilot_focus": {
+    "position": [
+      300.0,
+      -200.3000030517578,
+      1.149999976158142
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_rockford_gunfire": {
+    "position": [
+      10.0,
+      -185.0,
+      5.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_rockford_gunfire2": {
+    "position": [
+      15.0,
+      -180.0,
+      5.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_rockford_gunfire_focus": {
+    "position": [
+      8.0,
+      -206.0,
+      2.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_rockford_gunfire_focus2": {
+    "position": [
+      0.0,
+      -200.0,
+      2.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_trent_shield_damage": {
+    "position": [
+      300.5,
+      -198.0,
+      1.149999976158142
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_trent_shield_damage2": {
+    "position": [
+      300.5,
+      -197.25,
+      1.149999976158142
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_trent_shield_damage_focus": {
+    "position": [
+      295.0,
+      -400.0,
+      1.149999976158142
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_shield_destroyed": {
+    "position": [
+      75.0,
+      -75.0,
+      50.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_player_disappeared": {
+    "position": [
+      75.0,
+      -75.0,
+      50.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_player_disappeared_marker": {
+    "position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_launcher_start": {
+    "position": [
+      10.0,
+      -190.0,
+      6.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_launcher_start2": {
+    "position": [
+      6.0,
+      -186.0,
+      6.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_launcher_start_focus": {
+    "position": [
+      2.5999999046325684,
+      -194.0,
+      2.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_launcher_start_focus2": {
+    "position": [
+      2.299999952316284,
+      -194.0,
+      0.800000011920929
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_flying_missile": {
+    "position": [
+      6.0,
+      -150.0,
+      2.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_flying_missile_near": {
+    "position": [
+      2.0,
+      -120.0,
+      4.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_flying_missile_near_pos2": {
+    "position": [
+      2.0,
+      80.0,
+      4.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_trent_lookback": {
+    "position": [
+      300.54998779296875,
+      -197.0,
+      1.149999976158142
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_trent_lookback_focus": {
+    "position": [
+      300.25,
+      -200.0,
+      1.149999976158142
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_trent_walkback": {
+    "position": [
+      300.3500061035156,
+      -194.0,
+      0.8999999761581421
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_trent_walkback_focus": {
+    "position": [
+      300.25,
+      -200.0,
+      1.0499999523162842
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_trent_touch": {
+    "position": [
+      302.0,
+      -199.0,
+      2.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_trent_touch2": {
+    "position": [
+      303.0,
+      -195.5,
+      2.299999952316284
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_trent_touch_focus": {
+    "position": [
+      299.0,
+      -195.0,
+      0.699999988079071
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_trent_touch_focus2": {
+    "position": [
+      299.0,
+      -196.5,
+      1.0
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_trent_missilewatch": {
+    "position": [
+      300.5,
+      -194.0,
+      1.600000023841858
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cam_trent_missilewatch_focus": {
+    "position": [
+      300.20001220703125,
+      -200.0,
+      1.399999976158142
+    ],
+    "orientation": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "matrix_scale": [
+      1.0,
+      1.0,
+      1.0
     ]
   }
 }

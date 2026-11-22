@@ -39,7 +39,7 @@
       "id": "rm0144_frag0001",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Добро пожаловать. Планета Спрага. Я комендант стоянки Hughes. Нужно место для корабля?",
+      "ru": "Добро пожаловать. Планета Спрага. Я комендант стоянки Хьюз. Нужно место для корабля?",
       "en": "You have reached the parking office for Planet Sprague. Commandant Hughes. What can I do for you?"
     },
     {
@@ -172,14 +172,14 @@
       "id": "rm0144_frag0020",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "С возвращением. Комендант Hughes слушает. По поводу стоянки?",
+      "ru": "С возвращением. Комендант Хьюз слушает. По поводу стоянки?",
       "en": "Welcome back. Commandant Hughes speaking. Here about ship storage?"
     },
     {
       "id": "rm0144_frag0021",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Привет, Трент. Стоянка базы «Планета Спрага» к твоим услугам.",
+      "ru": "Привет, Трент. Стоянка к твоим услугам.",
       "en": "Hello, Trent. Need another berth at Planet Sprague?"
     },
     {

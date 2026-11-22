@@ -39,7 +39,7 @@
       "id": "rm0132_frag0001",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Добро пожаловать. Планета Берлин. Я комендант стоянки Keller. Нужно место для корабля?",
+      "ru": "Добро пожаловать. Планета Берлин. Я комендант стоянки Келлер. Нужно место для корабля?",
       "en": "You have reached the parking office for Planet Berlin. Commandant Keller. What can I do for you?"
     },
     {
@@ -172,14 +172,14 @@
       "id": "rm0132_frag0020",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "С возвращением. Комендант Keller слушает. По поводу стоянки?",
+      "ru": "С возвращением. Комендант Келлер слушает. По поводу стоянки?",
       "en": "Welcome back. Commandant Keller speaking. Here about ship storage?"
     },
     {
       "id": "rm0132_frag0021",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Привет, Трент. Стоянка базы «Планета Берлин» к твоим услугам.",
+      "ru": "Привет, Трент. Стоянка к твоим услугам.",
       "en": "Hello, Trent. Need another berth at Planet Berlin?"
     },
     {

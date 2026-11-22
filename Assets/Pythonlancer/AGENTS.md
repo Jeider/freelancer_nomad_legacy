@@ -1,5 +1,16 @@
 # Pythonlancer agent instructions
 
+## Standing authorization: rh_pir_freighter
+
+On 2026-11-18 the user declared rh_pir_freighter ready and transferred its
+ongoing management to the agent. Validated model/SUR/damage updates and its
+Pythonlancer source integration may be deployed without asking for ship
+installation permission again. This is a scoped exception for this ship only.
+Use tools.data_folder for every DATA write and rollback. Check current manual
+HP edits before rebuilding. Keep the user's shared MAT and other ships intact.
+Never launch Freelancer or FLServer. Normal generation and deployment remain
+separate steps; authorization is not a request to regenerate unrelated DATA.
+
 ## DATA writes
 
 Pythonlancer may write to the game's DATA directory only through

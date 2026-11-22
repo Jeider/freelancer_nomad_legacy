@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Subtitles>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0001_l001_vendor.wav" TextArea="Cinematic">Привет, Трент. Я глава местного торгового управления.</Static>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0002_l001_player.wav" TextArea="Cinematic">Есть задания для меня?</Static>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0003_l001_vendor.wav" TextArea="Cinematic">Конечно есть. Нам нужен машинист локомотива. Какой состав возьмёшь?</Static>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0004_l001_player.wav" TextArea="Cinematic">Хочу задание с двумя вагонами.</Static>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0005_l001_player.wav" TextArea="Cinematic">Хочу задание с пятью вагонами.</Static>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0006_l001_player.wav" TextArea="Cinematic">Хочу задание с десятью вагонами.</Static>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0007_l001_player.wav" TextArea="Cinematic">Хочу задание с двадцатью вагонами.</Static>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0008_l001_vendor.wav" TextArea="Cinematic">Я выдаю тебе наряд. Можешь вылетать в космос: локомотив ждёт тебя.</Static>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0009_l001_vendor.wav" TextArea="Cinematic">Извини, сынок, ничем не могу помочь. У тебя слишком плохая репутация.</Static>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0010_l001_player.wav" TextArea="Cinematic">Какие у вас требования к машинисту?</Static>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0011_l001_vendor.wav" TextArea="Cinematic">Нам нужны надёжные люди. Сначала проверим твою репутацию, потом выберешь число вагонов.</Static>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0012_l001_player.wav" TextArea="Cinematic">Вернёмся к работе.</Static>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0013_l001_vendor.wav" TextArea="Cinematic">Итак, тебя интересует работа машинистом?</Static>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0014_l001_player.wav" TextArea="Cinematic">Не сейчас. До встречи.</Static>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0015_l001_vendor.wav" TextArea="Cinematic">Хорошо, Трент. До встречи.</Static>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0016_l001_vendor.wav" TextArea="Cinematic">У тебя уже есть действующее задание. Сначала разберись с ним.</Static>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0017_l001_vendor.wav" TextArea="Cinematic">Сейчас не получается оформить наряд. Попробуй обратиться позже.</Static>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0018_l001_vendor.wav" TextArea="Cinematic">Здравствуй, Трент. Местное торговое управление к твоим услугам.</Static>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0019_l001_vendor.wav" TextArea="Cinematic">Привет, Трент. Я здесь руковожу торговым управлением. По какому вопросу?</Static>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0020_l001_vendor.wav" TextArea="Cinematic">Наряд оформлен. Вылетай, Трент. Локомотив уже ждёт.</Static>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0021_l001_vendor.wav" TextArea="Cinematic">С такой репутацией я не могу доверить тебе состав. Извини, Трент.</Static>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0022_l001_vendor.wav" TextArea="Cinematic">Конечно. Нам нужны машинисты. Допустимая длина состава зависит от твоего навыка и лицензии. Выбирай наряд в пределах своего допуска.</Static>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0023_l001_vendor.wav" TextArea="Cinematic">Проверяем репутацию и лицензию машиниста. Достигнутый допуск сохраняется: дорос до десяти вагонов — можешь брать такие составы и в следующих сменах.</Static>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0024_l001_player.wav" TextArea="Cinematic">Объясни, как управлять локомотивом.</Static>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0025_l001_vendor.wav" TextArea="Cinematic">Разберём по порядку: как занять локомотив, подцепить вагоны и сдать состав. С чего начнём?</Static>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0026_l001_player.wav" TextArea="Cinematic">Как мне сесть в локомотив?</Static>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0027_l001_vendor.wav" TextArea="Cinematic">Получи наряд и вылетай. Локомотив ждёт у причала и отмечен заданием. Выбери его и выполни обычную стыковку: так ты займёшь место машиниста. Личный корабль останется на хранении.</Static>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0028_l001_player.wav" TextArea="Cinematic">Как прицепить вагоны?</Static>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0029_l001_vendor.wav" TextArea="Cinematic">У маркера погрузки отключи круиз и автопилот. Выровняй локомотив с вагонами и подведи кормовую сцепку к первому вагону: не дальше пятнадцати метров, скорость сближения — до двух метров в секунду. Нажми «Сцепить вагоны» и дождись подтверждения.</Static>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0030_l001_player.wav" TextArea="Cinematic">Как сдать груз и отцепить состав?</Static>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0031_l001_vendor.wav" TextArea="Cinematic">Система назначения указана в наряде, маршрут — в навигации. Приведи вагоны к маркеру получателя, отключи круиз и автопилот и остановись. Нажми «Отцепить вагоны». Дождись подтверждения сдачи и оплаты.</Static>
+<Static AudioFile="MOD\RPG\rm0001\rm0001_frag0032_l001_player.wav" TextArea="Cinematic">У меня ещё вопрос о локомотиве.</Static>
+</Subtitles>

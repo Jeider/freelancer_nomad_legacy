@@ -39,7 +39,7 @@
       "id": "rm0147_frag0001",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Добро пожаловать. Линкор Миссури. Я комендант стоянки Wells. Нужно место для корабля?",
+      "ru": "Добро пожаловать. Линкор Миссури. Я комендант стоянки Уэллс. Нужно место для корабля?",
       "en": "Commandant Wells, at your service. If you need to store a ship at Battleship Missouri, talk to me."
     },
     {
@@ -172,14 +172,14 @@
       "id": "rm0147_frag0020",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "С возвращением. Комендант Wells слушает. По поводу стоянки?",
+      "ru": "С возвращением. Комендант Уэллс слушает. По поводу стоянки?",
       "en": "Welcome back. Commandant Wells speaking. Here about ship storage?"
     },
     {
       "id": "rm0147_frag0021",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Привет, Трент. Стоянка базы «Линкор Миссури» к твоим услугам.",
+      "ru": "Привет, Трент. Стоянка к твоим услугам.",
       "en": "Hello, Trent. Need another berth at Battleship Missouri?"
     },
     {

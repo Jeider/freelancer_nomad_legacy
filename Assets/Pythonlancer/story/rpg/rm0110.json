@@ -39,7 +39,7 @@
       "id": "rm0110_frag0001",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Добро пожаловать. База Очо-Риос. Я комендант стоянки Serrano. Нужно место для корабля?",
+      "ru": "Добро пожаловать. База Очо-Риос. Я комендант стоянки Серрано. Нужно место для корабля?",
       "en": "You have reached the parking office for Ocho-Rios Base. Commandant Serrano. What can I do for you?"
     },
     {
@@ -172,14 +172,14 @@
       "id": "rm0110_frag0020",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "С возвращением. Комендант Serrano слушает. По поводу стоянки?",
+      "ru": "С возвращением. Комендант Серрано слушает. По поводу стоянки?",
       "en": "Welcome back. Commandant Serrano speaking. Here about ship storage?"
     },
     {
       "id": "rm0110_frag0021",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Привет, Трент. Стоянка базы «База Очо-Риос» к твоим услугам.",
+      "ru": "Привет, Трент. Стоянка к твоим услугам.",
       "en": "Hello, Trent. Need another berth at Ocho-Rios Base?"
     },
     {

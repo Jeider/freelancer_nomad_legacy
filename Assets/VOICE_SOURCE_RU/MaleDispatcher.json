@@ -1,0 +1,47 @@
+{
+  "path": "D:\\Games\\FL_MOD\\Assets\\VOICE_SOURCE_RU\\MaleDispatcher.wav",
+  "text": "Противников в радиусе базы не обнаружено. Укажите направление вашего движения. Открываем шлюз, взлёт разрешен. Причал деактивирован.",
+  "sources": [
+    {
+      "path": "D:\\Games\\FL_MOD\\Assets\\PILOTS\\dispatcher01\\default\\gcs_combat_announce_allclear_01-.mp3",
+      "text": "Противников в радиусе базы не обнаружено.",
+      "sha256": "73f23097bd4949de6c839c4edeac8e53a50f3f366664707af80465afca6f6638",
+      "seconds": 2.206
+    },
+    {
+      "path": "D:\\Games\\FL_MOD\\Assets\\PILOTS\\dispatcher01\\start\\gcs_dockhail_dock_idreq_01-.mp3",
+      "text": "Укажите направление вашего движения.",
+      "sha256": "3287aac9154ae01e0fa166c03c5b4a35ac6d0081b78e0387bcae59dfdbfa0bdf",
+      "seconds": 2.325
+    },
+    {
+      "path": "D:\\Games\\FL_MOD\\Assets\\PILOTS\\dispatcher01\\middle\\gcs_docklaunch_clear_berth_04-.mp3",
+      "text": "Открываем шлюз, взлёт разрешен.",
+      "sha256": "626b6e2b7e36db08422af3821dc5291e0ac24ac0a6719c7af1322b5b1d7e6381",
+      "seconds": 2.638
+    },
+    {
+      "path": "D:\\Games\\FL_MOD\\Assets\\PILOTS\\dispatcher01\\middle\\gcs_docklaunch_clear_moor_02-.mp3",
+      "text": "Причал деактивирован.",
+      "sha256": "05f259fbe35749157230f67614c0f3da044432d04a8a694c51844a1147e0140e",
+      "seconds": 1.463
+    }
+  ],
+  "sha256": "4658568e80862247b1ff6074211a74e29d251c724a36377daf679934aa9d2ead",
+  "duration": 9.082041666666667,
+  "rate": 24000,
+  "channels": 1,
+  "sample_bits": 16,
+  "rms_dbfs": -18.220157373979895,
+  "peak_dbfs": -4.451920249745368,
+  "approved_generation": {
+    "engine": "omnivoice",
+    "language": "ru",
+    "speed": "1.0",
+    "denoise": "false",
+    "postprocess_output": "false",
+    "pronounce": "false",
+    "num_step": "128",
+    "guidance_scale": "3.0"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "files": {
+    "rh_pir_freighter.cmp": {
+      "bytes": 1744088,
+      "sha256": "0de104c07ebed721a89786aa895a80c70c8da44f62fffe6203c52f4f2f011ca1"
+    },
+    "rh_pir_freighter.sur": {
+      "bytes": 129884,
+      "sha256": "de9e853feff1022cc4a9b7aa5612de9ac14542e9f7da5fb884a7cc8ea84eca9a"
+    },
+    "rh_pir_freighter_dmg_port_engine.3db": {
+      "bytes": 46288,
+      "sha256": "2aa1af80fc79e2a55f622081cc1bc3cc4ed61888f0ea2f1eeca9cc875436a380"
+    },
+    "rh_pir_freighter_dmg_port_engine.sur": {
+      "bytes": 11340,
+      "sha256": "3c3bcdc4e7847efb39e3de3082d9104d4ca17b88688d3f5d5a136b81c3012b51"
+    },
+    "rh_pir_freighter_dmg_port_side_panel.3db": {
+      "bytes": 113332,
+      "sha256": "e48b75f0979545939eb5199fa1219a4523cfed80b006ca47bef32645e53befb7"
+    },
+    "rh_pir_freighter_dmg_port_side_panel.sur": {
+      "bytes": 7500,
+      "sha256": "d3a8ac0a06c627782289c4eed33611199296527a6f229f70c44f4dbffb289985"
+    },
+    "rh_pir_freighter_dmg_starboard_engine.3db": {
+      "bytes": 45460,
+      "sha256": "838ef38d762a19335f31fd0fbb2ab0f137b4faaf970af8cc44c2978380b290fa"
+    },
+    "rh_pir_freighter_dmg_starboard_engine.sur": {
+      "bytes": 12012,
+      "sha256": "27676da8ac895a5a67c45b7fd12ba2a30a238c8794354f0b56df86bd11e9c6fe"
+    },
+    "rh_pir_freighter_dmg_starboard_side_panel.3db": {
+      "bytes": 114540,
+      "sha256": "4e5dc30ba3b632fd9bdd6efd33aded1c562af1df63543a5c489abe8af94d7ba8"
+    },
+    "rh_pir_freighter_dmg_starboard_side_panel.sur": {
+      "bytes": 7308,
+      "sha256": "841ea7b003451e47464b42fbc9e61e0675fc6b2962adc849727676809c46ca61"
+    }
+  },
+  "lod_material": "rh_pir_freighter_projection_lod",
+  "lod_storage": "user-owned rh_pir_playerships.mat",
+  "cmp_sha256": "0de104c07ebed721a89786aa895a80c70c8da44f62fffe6203c52f4f2f011ca1",
+  "revision": "exhaust_alignment",
+  "lod_triangles": [
+    26484,
+    1544,
+    500
+  ],
+  "authoring_report": "D:\\work\\Freelancer-Decomp\\out\\ship_design\\rh_freighter\\rh_pir_freighter\\exhaust_alignment\\README.md"
+}

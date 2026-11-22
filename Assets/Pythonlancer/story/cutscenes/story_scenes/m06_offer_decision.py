@@ -1,25 +1,18 @@
-"""m06_offer_decision: постановка для ручного редактирования.
-
-Точки: SCENES/m06_offer_decision.blend → DUMPS/m06_offer_decision.json.
-Создание объектов — в начале action(); далее вход, реплики и выход.
-t — абсолютные секунды исходной сцены; часы MAIN не сдвигаются.
-Исходные события и их номера сохранены в отчёте декомпиляции.
-"""
+"""m06_offer_decision: полная постановка из master; точки в m06_offer_decision.blend."""
 from story.cutscenes.scene import Scene
 from story.cutscenes.content import (
-    Character,
-    LookAtCamera,
-    MAIN,
+    Character, Female, LookAtCamera, MAIN, Male, MotionEvent,
 )
 from story.cutscenes.anim import (
-    Female,
-    Male,
-)
-from story.cutscenes.source_extensions import (
-    preserve_entity,
+    Female, Male,
 )
 from story import actors
 
+
+class CharTrentActor(actors.Actor):
+    NAME = 'trent'
+    TYPE = 'male'
+    CUTSCENE_APPEARANCE = 'trent'
 
 
 class M06OfferDecisionScene(Scene):
@@ -28,28 +21,26 @@ class M06OfferDecisionScene(Scene):
 
     def action(self):
         main_group = self.get_group(MAIN)
-
-        # Объекты: параметры камеры, света, персонажей и реквизита правятся здесь.
         self.set_duration(5000.0)
-        trent = Character(root=self, actor=actors.Trent, light_group=0, init_point='Char_trent', rotate_from_quat=True,
-            use_ambient=False, floor_height=0)
-        preserve_entity(trent, template_name='trent', userprops={'Actor': 'Player', 'category': 'Character'})
-        alaric = Character(root=self, actor=actors.Alaric, light_group=0, init_point='Char_alaric', rotate_from_quat=True,
-            use_ambient=True, floor_height=0)
-        preserve_entity(alaric, template_name='alaric', userprops={'actor': 'Alaric', 'category': 'Character'})
-        hatcher = Character(root=self, actor=actors.Hatcher, light_group=0, init_point='Char_hatcher',
-            rotate_from_quat=True, use_ambient=False, floor_height=0)
-        preserve_entity(hatcher, template_name='hatcher', userprops={'actor': 'Hatcher', 'category': 'Character'})
-        cam_scene = LookAtCamera(root=self, name='cam_scene', fov=30, farplane=5000, look_duration=1)
-        preserve_entity(cam_scene)
 
-        # Действия по абсолютному времени сцены.
+        # Персонажи, камеры, реквизит и звук.
+        trent = Character(root=self, actor=CharTrentActor, name='Char_trent', light_group=0,
+            init_point='Char_trent', rotate_from_quat=True, appearance='trent', actor_name='Player')
+        alaric = Character(root=self, actor=actors.Alaric, name='Char_alaric', light_group=0,
+            init_point='Char_alaric', rotate_from_quat=True, use_ambient=True, appearance='alaric',
+            actor_name='Alaric')
+        hatcher = Character(root=self, actor=actors.Hatcher, name='Char_hatcher', light_group=0,
+            init_point='Char_hatcher', rotate_from_quat=True, appearance='hatcher', actor_name='Hatcher')
+        cam_scene = LookAtCamera(root=self, name='cam_scene', fov=30, look_duration=1)
+
+        # Исходные точки взгляда.
+
+        # Абсолютное время исходной сцены; часы MAIN не сдвигаются.
         t = 0
         cam_scene.set(group=MAIN, time_delay=t)
-        hatcher.motion(group=MAIN, time_delay=t, anim=Female.Sc_FMBODY_CHRB_IDLE_000LV_XA_06, duration=5000, loop=True)
-        alaric.motion(group=MAIN, time_delay=t, anim=Male.Sc_MLBODY_CHRB_IDLE_000LV_XA_05, duration=5000, loop=True)
-        trent.motion(group=MAIN, time_delay=t, anim=Male.Sc_MLBODY_CHRB_IDLE_000LV_XA_05, duration=5000, loop=True)
-
-
-# Совместимость с уже подключёнными THORN_CLASS.
-ReconstructedScene = M06OfferDecisionScene
+        hatcher.motion(group=MAIN, anim=Female.Sc_FMBODY_CHRB_IDLE_000LV_XA_06, duration=5000, loop=True,
+            time_delay=t)
+        alaric.motion(group=MAIN, anim=Male.Sc_MLBODY_CHRB_IDLE_000LV_XA_05, duration=5000, loop=True,
+            time_delay=t)
+        MotionEvent(root=self, group=MAIN, object_name=trent.name, anim=Male.Sc_MLBODY_CHRB_IDLE_000LV_XA_05,
+            duration=5000, loop=True, time_delay=t)

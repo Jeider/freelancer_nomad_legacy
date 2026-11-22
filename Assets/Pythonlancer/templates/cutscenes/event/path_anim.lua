@@ -18,7 +18,10 @@
         front=NEG_Z_AXIS,
         flags={{ flags }}
 
-        {% if smooth %}
+        {% if curve_points %}
+        , param_curve={CLSID="FreeFormPCurve", points={ {% for p in curve_points %}{ {{ p|join(",") }} }{% if not loop.last %},{% endif %}{% endfor %} }},
+        pcurve_period={{ curve_period }}
+        {% elif smooth %}
         ,
         param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
         pcurve_period=-1000

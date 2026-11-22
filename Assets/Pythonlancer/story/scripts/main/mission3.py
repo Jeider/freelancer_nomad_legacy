@@ -1,3 +1,4 @@
+from audio import story_delivery as performance
 from story.cutscenes.story_scenes import m03_offer, m03_offer_accept, m03_offer_decision, m03_reward
 from story import script
 from audio.sound import VoiceLine
@@ -11,17 +12,17 @@ class Msn3(object):
 
 
 class Msn3Offer(Msn3, script.CutsceneProps):
-    THORN_DECISION_CLASS = m03_offer_decision.ReconstructedScene
-    THORN_ACCEPT_CLASS = m03_offer_accept.ReconstructedScene
-    THORN_CLASS = m03_offer.ReconstructedScene
+    THORN_DECISION_CLASS = m03_offer_decision.M03OfferDecisionScene
+    THORN_ACCEPT_CLASS = m03_offer_accept.M03OfferAcceptScene
+    THORN_CLASS = m03_offer.M03OfferScene
     ALIAS = 'offer'
     TITLE = 'Штарке'
     DESCRIPTION = 'Бар станции. Два военных проводят брифинг и предлагают, как обычно, сверх опасную миссию.'
     VOICE_LINES = [
-        VoiceLine(10, Trent, ru="Салют, джентльмены.", en="Hey, gentlemen."),
+        VoiceLine(10, Trent, ru="Салют, джентльмены.", en="Hey, gentlemen.", delivery_en=performance.WARM),
         VoiceLine(20, Wilham, ru="А вот и герр Трент. Познакомьтесь с герром Хасслером. В ходе этой миссии вам придется плотно сотрудничать.",
-                  en="And here's Herr Trent. Meet Herr Hassler. On this mission you will have to work closely together."),
-        VoiceLine(30, Trent, ru="Герр Хасслер, мое почтение.", en="Herr Hassler, my respects."),
+                  en="And here's Herr Trent. Meet Herr Hassler. On this mission you will have to work closely together.", delivery_en=performance.WARM),
+        VoiceLine(30, Trent, ru="Герр Хасслер, мое почтение.", en="Herr Hassler, my respects.", delivery_en=performance.WARM),
         VoiceLine(40, Trent, ru="И в чем же будет состоять эта миссия?", en="And what will this mission consist of?"),
 
         VoiceLine(70, Wilham, ru="Наша разведка локализовала местонахождение Дитриха. Это бывшая военная база Кёнигсберг. ",
@@ -32,7 +33,7 @@ class Msn3Offer(Msn3, script.CutsceneProps):
                   en="So we're forming a mobile sabotage group that will inflict critical damage on Königsberg before the main forces arrive."),
 
         VoiceLine(80, Trent, ru="То есть те, кто будет таскать вам каштаны из огня.",
-                  en="Meaning the ones who'll pull your chestnuts out of the fire."),
+                  en="Meaning the ones who'll pull your chestnuts out of the fire.", delivery_en=performance.SARDONIC),
 
         VoiceLine(90, Wilham,
                   ru="Именно так, герр Трент. Кстати на вашем участии в этой миссии настаивал лично адмирал Райхманн.",
@@ -46,7 +47,7 @@ class Msn3Offer(Msn3, script.CutsceneProps):
 
 
         VoiceLine(115, Hassler, ru="В ходе разравившегося конфликта с Кусари мы потерпели сокрушительное поражение и по условиям мирного договора строительство контура было прекращено, а система Мюнхен была полностью демилитаризована.",
-                  en="In the conflict with Kusari that broke out, we suffered a crushing defeat, and under the terms of the peace treaty construction of the perimeter was stopped, and the Munich system was completely demilitarized."),
+                  en="In the conflict with Kusari that broke out, we suffered a crushing defeat, and under the terms of the peace treaty construction of the perimeter was stopped, and the Munich system was completely demilitarized.", delivery_en=performance.SOMBRE),
 
 
         VoiceLine(120, Hassler, ru="Станция Кёнигсберг была законсервирована до нынешних пор, когда Дитрих, воспользовавшись старыми ключами и доступами, не решил сделать из станции свой опорный пункт.",
@@ -54,28 +55,28 @@ class Msn3Offer(Msn3, script.CutsceneProps):
 
 
         VoiceLine(130, Trent, ru="Я так понимаю, спрашивать всякие глупости типа, есть ли у меня выбор, в этой ситуации неуместно.",
-                  en="I take it that asking foolish things, like whether I have a choice, is out of place in this situation."),
-        VoiceLine(140, Wilham, ru="Вы умный человек, герр Трент. ", en="You're a smart man, Herr Trent."),
+                  en="I take it that asking foolish things, like whether I have a choice, is out of place in this situation.", delivery_en=performance.SARDONIC),
+        VoiceLine(140, Wilham, ru="Вы умный человек, герр Трент. ", en="You're a smart man, Herr Trent.", delivery_en=performance.TEASING),
         VoiceLine(150, Hassler, ru="Герр Трент, вам предлагают работу, которая и не снилась большей части местных фрилансеров.",
-                  en="Herr Trent, you're being offered work that most local freelancers never even dreamed of."),
+                  en="Herr Trent, you're being offered work that most local freelancers never even dreamed of.", delivery_en=performance.PROUD),
         VoiceLine(155, Hassler, ru="Что вы капризничаете как старшеклассница на выпускном? Давайте вылетать. Встречаемся в космосе.",
-                  en="Why are you fussing like a high school girl at graduation? Let's fly. We'll meet in space."),
+                  en="Why are you fussing like a high school girl at graduation? Let's fly. We'll meet in space.", delivery_en=performance.TEASING),
     ]
 
 
 class Msn3Reward(Msn3, script.CutsceneProps):
-    THORN_CLASS = m03_reward.ReconstructedScene
+    THORN_CLASS = m03_reward.M03RewardScene
     ALIAS = 'reward'
     TITLE = 'Финал'
     DESCRIPTION = ''
     VOICE_LINES = [
         VoiceLine(10, Hassler, ru="Расспросил я местных, нихрена они не знают. В любом случае, спасибо, Трент, твоя работа на этом закончена, будем искать грузовик по нашим каналам.",
-                  en="I asked the locals. They don't know a damn thing. Anyway, thanks, Trent, your work here is done. We'll look for the transport through our own channels."),
+                  en="I asked the locals. They don't know a damn thing. Anyway, thanks, Trent, your work here is done. We'll look for the transport through our own channels.", delivery_en=performance.WEARY),
         VoiceLine(15, Hassler, ru="К сожалению, из-за того, что  мы с ним облажались, Райхманн значительно урезал гонорар.",
-                  en="Unfortunately, because he and I screwed up, Reichmann cut the fee significantly."),
+                  en="Unfortunately, because he and I screwed up, Reichmann cut the fee significantly.", delivery_en=performance.WEARY),
         VoiceLine(20, Trent, ru="Странные дела. Базу уничтожили, Дитриха грохнули, а Райхманн выбесился из-за какого-то грузовика. Не нравится мне это.",
-                  en="Strange business. The base is destroyed, Dietrich's been taken out, and Reichmann lost it over some transport. I don't like this."),
-        VoiceLine(30, Hassler, ru="Мне тоже... Деньги уже на твоем счету. До скорого.", en="Me neither... The money's already in your account. See you soon."),
+                  en="Strange business. The base is destroyed, Dietrich's been taken out, and Reichmann lost it over some transport. I don't like this.", delivery_en=performance.CONCERNED),
+        VoiceLine(30, Hassler, ru="Мне тоже... Деньги уже на твоем счету. До скорого.", en="Me neither... The money's already in your account. See you soon.", delivery_en=performance.CONCERNED),
     ]
 
 
@@ -140,6 +141,7 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
             Reichman,
             ru="Эти группы должны будут выдвинуться к месту назначения через аномалию, которая будет активирована с корабля герра Хасслера. Вот в общем и все. Начинаем!",
             en="These groups will move out to their destination through an anomaly that will be activated from Herr Hassler's ship. That's about all. Let's begin!",
+            delivery_en=performance.COMMAND,
         ),
         VoiceLine(
             1050,
@@ -147,6 +149,7 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
             comment='Брифинг окончен',
             ru="Всё поняли, ребята? Выдвигаемся.",
             en="Everyone got that, guys? Moving out.",
+            delivery_en=performance.COMMAND,
         ),
         VoiceLine(
             1060,
@@ -177,6 +180,7 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
             Hassler,
             ru="(Кругом враги!) Внимание! Обнаружены корабли корсаров! Боевое построение! Уничтожить вражеские истребители!",
             en="(Enemies all around!) Attention! Corsair ships detected! Battle formation! Destroy the enemy fighters!",
+            delivery_en=performance.URGENT,
         ),
         VoiceLine(
             1100,
@@ -196,6 +200,7 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
             comment='Мы вылетели из туманности и видим Кёнигсберг',
             ru="Генераторы станции начали зарядку щита! Задача - уничтожить генераторы до полной зарядки! Повторяю: основная цель - генераторы!",
             en="The station's generators have started charging the shield! The task is to destroy the generators before they're fully charged! I repeat: the primary target is the generators!",
+            delivery_en=performance.URGENT,
         ),
         VoiceLine(
             1130,
@@ -215,18 +220,21 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
             Hassler,
             ru="Мародер-1, говорит Каратель-1, уходите под наше прикрытие!!! Повторяю, уходите под прикрытие звена Карателей!",
             en="Marauder-1, this is Punisher-1, get under our cover!!! I repeat, get under the cover of the Punisher flight!",
+            delivery_en=performance.URGENT,
         ),
         VoiceLine(
             110,
             Marauder,
             ru="Не можем уничтожить генераторы! Противодействие против...",
             en="We can't destroy the generators! Resistance against...",
+            delivery_en=performance.PANICKED,
         ),
         VoiceLine(
             120,
             Hassler,
             ru="Башня, говорит Каратель-1, звено Мародер полностью уничтожено. Приступаем к уничтожению генераторов нижней полусферы.",
             en="Tower, this is Punisher-1. Marauder flight is completely destroyed. Proceeding to destroy the lower hemisphere generators.",
+            delivery_en=performance.SOMBRE,
         ),
         VoiceLine(
             130,
@@ -240,24 +248,28 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
             comment='Дитрих выходит на связь и начинает переманивать на тёмную сторону силы',
             ru="Каратель, Мародер, какие красочные позывные! Как жаль что придется вас уничтожить. Мародер уже готов, Каратель - на очереди.",
             en="Punisher, Marauder, what colorful callsigns! What a shame I'll have to destroy you. Marauder is already finished. Punisher is next.",
+            delivery_en=performance.THREATENING,
         ),
         VoiceLine(
             150,
             Hassler,
             ru="Пошёл ты к чёрту, Дитрих! Ты ответишь за все свои преступления против народа Рейнланда!",
             en="Go to hell, Dietrich! You'll answer for all your crimes against the people of Rheinland!",
+            delivery_en=performance.ANGRY,
         ),
         VoiceLine(
             160,
             Dietrich,
             ru="Кто это? Хасслер? Хватит служить этому гнилому коррумпированному правительству! Переходи на сторону истинных патриотов Рейнланда! Сдавайся и я сохраню жизнь тебе и твоим людям.",
             en="Who is this? Hassler? Stop serving this rotten, corrupt government! Come over to the side of Rheinland's true patriots! Surrender, and I'll spare you and your men.",
+            delivery_en=performance.THREATENING,
         ),
         VoiceLine(
             170,
             Hassler,
             ru="Себе попробуй сохранить, предатель! Тебе грозит смертный приговор. Сдавайся сам, пока я до тебя еще не добрался!",
             en="Try saving your own, traitor! You're facing a death sentence. Surrender yourself before I get to you!",
+            delivery_en=performance.ANGRY,
         ),
         VoiceLine(
             180,
@@ -265,6 +277,7 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
             comment='Мы уничтожили второй генератор',
             ru="Говорит Каратель-1! Генераторы нижней полусферы уничтожены! Повторяю, генераторы щита уничтожены!",
             en="This is Punisher-1! Lower hemisphere generators destroyed! I repeat, the shield generators are destroyed!",
+            delivery_en=performance.EXCITED,
         ),
         VoiceLine(
             190,
@@ -284,6 +297,7 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
             Hassler,
             ru="Это каратель-1, вас понял. Приказ - уничтожить все истребители противника!",
             en="This is Punisher-1, understood. Order — destroy all enemy fighters!",
+            delivery_en=performance.COMMAND,
         ),
         VoiceLine(
             1170,
@@ -303,18 +317,21 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
             Hassler,
             ru="А, чёрт. Башня, это Каратель-1. Похоже Дитрих с небольшой группой прикрытия решил уйти от нас!",
             en="Ah, damn. Tower, this is Punisher-1. Looks like Dietrich has decided to slip away from us with a small cover group!",
+            delivery_en=performance.ANGRY,
         ),
         VoiceLine(
             220,
             Reichman,
             ru="Каратель-1, остановите их любой ценой!!!",
             en="Punisher-1, stop them at any cost!!!",
+            delivery_en=performance.URGENT,
         ),
         VoiceLine(
             230,
             Hassler,
             ru="Каратели, боевое построение! Цель - группа уходящих кораблей с грузовиком в центре. ",
             en="Punishers, battle formation! Target — the group of departing ships with the transport in the center.",
+            delivery_en=performance.COMMAND,
         ),
         VoiceLine(
             240,
@@ -322,12 +339,14 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
             comment='Догнали Дитриха, он развернулся и вступил с нами в бой',
             ru="Уничтожить Дитриха! Немедленно!",
             en="Destroy Dietrich! Immediately!",
+            delivery_en=performance.URGENT,
         ),
         VoiceLine(
             250,
             Trent,
             ru="Грузовик уходит.",
             en="The transport's getting away.",
+            delivery_en=performance.URGENT,
         ),
         VoiceLine(
             260,
@@ -340,12 +359,14 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
             Punisher,
             ru="Дитрих включил какой-то дополнительный щит и стал неуязвимым ко всем атакам!",
             en="Dietrich activated some kind of extra shield and became invulnerable to all attacks!",
+            delivery_en=performance.ALARMED,
         ),
         VoiceLine(
             1210,
             Hassler,
             ru="Продолжайте огонь по Дитриху. Чтобы там у него на корабле не было, он не сможет сопротивляться бесконечно.",
             en="Keep firing on Dietrich. Whatever he has on that ship, he won't be able to hold out forever.",
+            delivery_en=performance.DETERMINED,
         ),
         VoiceLine(
             270,
@@ -353,24 +374,28 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
             comment='Дитрих всё, Кёнигсберг взорван',
             ru="Говорит адмирал Райхманн. Станция уничтожена. Всем спасибо. Хасслер, доложите статус.",
             en="This is Admiral Reichmann. The station is destroyed. Thank you, everyone. Hassler, report status.",
+            delivery_en=performance.PROUD,
         ),
         VoiceLine(
             280,
             Hassler,
             ru="(сухой отчёт) Дитрих и его эскорт уничтожен. Грузовик, который был в формации Дитриха, покинул место боя и скрылся.",
             en="(dry report) Dietrich and his escort are destroyed. The transport that was in Dietrich's formation left the battle and disappeared.",
+            delivery_en=performance.DRY,
         ),
         VoiceLine(
             290,
             Reichman,
             ru="ХАССЛЕР, ТВОЮ МАТЬ!!! Как ты мог это допустить??? Срочно найти грузовик и уничтожить его!!!",
             en="HASSLER, GOD DAMN YOU!!! How could you let this happen??? Find the transport immediately and destroy it!!!",
+            delivery_en=performance.FURIOUS,
         ),
         VoiceLine(
             300,
             Hassler,
             ru="(выдохнув после оплеухи) Каратели, за мной.",
             en="(exhaling after the slap) Punishers, on me.",
+            delivery_en=performance.WEARY,
         ),
         VoiceLine(
             1180,
@@ -389,6 +414,7 @@ class Msn3Space(Msn3, script.SpaceVoiceProps):
             Trent,
             ru="Это гиперврата. Здесь столько кораблей проходит ежедневно, что мы не сможем их отследить.",
             en="It's a jump gate. So many ships pass through here every day that we won't be able to track them.",
+            delivery_en=performance.CONCERNED,
         ),
         VoiceLine(
             320,

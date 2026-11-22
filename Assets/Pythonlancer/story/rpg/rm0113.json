@@ -39,7 +39,7 @@
       "id": "rm0113_frag0001",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Добро пожаловать. Планета Кусю. Я комендант стоянки Tanaka. Нужно место для корабля?",
+      "ru": "Добро пожаловать. Планета Кусю. Я комендант стоянки Танака. Нужно место для корабля?",
       "en": "You have reached the parking office for Planet Kyushu. Commandant Tanaka. What can I do for you?"
     },
     {
@@ -172,14 +172,14 @@
       "id": "rm0113_frag0020",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "С возвращением. Комендант Tanaka слушает. По поводу стоянки?",
+      "ru": "С возвращением. Комендант Танака слушает. По поводу стоянки?",
       "en": "Welcome back. Commandant Tanaka speaking. Here about ship storage?"
     },
     {
       "id": "rm0113_frag0021",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Привет, Трент. Стоянка базы «Планета Кусю» к твоим услугам.",
+      "ru": "Привет, Трент. Стоянка к твоим услугам.",
       "en": "Hello, Trent. Need another berth at Planet Kyushu?"
     },
     {

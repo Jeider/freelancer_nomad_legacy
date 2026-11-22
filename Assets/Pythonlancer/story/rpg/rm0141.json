@@ -39,7 +39,7 @@
       "id": "rm0141_frag0001",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Добро пожаловать. Линкор Грифон. Я комендант стоянки Miller. Нужно место для корабля?",
+      "ru": "Добро пожаловать. Линкор Грифон. Я комендант стоянки Миллер. Нужно место для корабля?",
       "en": "Commandant Miller, at your service. If you need to store a ship at Battleship Griffin, talk to me."
     },
     {
@@ -172,14 +172,14 @@
       "id": "rm0141_frag0020",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "С возвращением. Комендант Miller слушает. По поводу стоянки?",
+      "ru": "С возвращением. Комендант Миллер слушает. По поводу стоянки?",
       "en": "Welcome back. Commandant Miller speaking. Here about ship storage?"
     },
     {
       "id": "rm0141_frag0021",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Привет, Трент. Стоянка базы «Линкор Грифон» к твоим услугам.",
+      "ru": "Привет, Трент. Стоянка к твоим услугам.",
       "en": "Hello, Trent. Need another berth at Battleship Griffin?"
     },
     {

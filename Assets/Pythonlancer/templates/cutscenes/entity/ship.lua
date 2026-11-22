@@ -20,5 +20,8 @@
         {% if have_lights %}
 			, running_lights="true"
 		{% endif %}
+        {% if cast_shadow %}
+			, cast_shadow="Y"
+		{% endif %}
     }
 }

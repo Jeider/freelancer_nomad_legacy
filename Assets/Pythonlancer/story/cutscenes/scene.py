@@ -30,6 +30,7 @@ class Scene:
         self.extra_name = extra_name
         self.russian = russian
         self.props = props
+        self.dialogue_props = []
         self.entities = {}
         self.events = []
         self.points = {}
@@ -58,8 +59,11 @@ class Scene:
         self.groups[name] = new_group
         return new_group
 
-    def lookup_single_sound(self, index):
-        for sound in self.props.get_sounds():
+    def lookup_single_sound(self, index, props=None):
+        selected = props or self.props
+        if selected is not self.props and selected not in self.dialogue_props:
+            self.dialogue_props.append(selected)
+        for sound in selected.get_sounds():
             if sound.line.index == index:
                 return sound
 
@@ -149,6 +153,7 @@ class Scene:
                 name=key,
                 position=value['position'],
                 orientation=value.get('orientation', [1, 0, 0, 0]),
+                matrix_scale=value.get('matrix_scale'),
                 source=SOURCE_BLENDER
             )
 
@@ -170,11 +175,12 @@ class Scene:
     def get_entity(self, entity_name):
         return self.entities[entity_name]
 
-    def add_point(self, name, position, source, rotate=None, orientation=None):
+    def add_point(self, name, position, source, rotate=None, orientation=None, matrix_scale=None):
         point = Point(
             name=name,
             position=position,
             orientation=orientation,
+            matrix_scale=matrix_scale,
             rotate=rotate if rotate else self.POINT_ROTATE_OVERRIDES.get(name),
             source=source,
         )
@@ -227,7 +233,8 @@ class Scene:
         return STRING_DIVIDER.join(thorn)
 
     def get_script_sounds(self):
-        return STRING_DIVIDER.join([s.get_thorn() for s in self.props.get_sounds()])
+        sounds = {s.get_nickname(): s for props in [self.props, *self.dialogue_props] for s in props.get_sounds()}
+        return STRING_DIVIDER.join(s.get_thorn() for s in sounds.values())
 
     def get_root_params(self):
         return {

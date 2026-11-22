@@ -39,7 +39,7 @@
       "id": "rm0153_frag0001",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Добро пожаловать. Линкор Мусаси. Я комендант стоянки Okada. Нужно место для корабля?",
+      "ru": "Добро пожаловать. Линкор Мусаси. Я комендант стоянки Окада. Нужно место для корабля?",
       "en": "You have reached the parking office for Battleship Musashi. Commandant Okada. What can I do for you?"
     },
     {
@@ -172,14 +172,14 @@
       "id": "rm0153_frag0020",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "С возвращением. Комендант Okada слушает. По поводу стоянки?",
+      "ru": "С возвращением. Комендант Окада слушает. По поводу стоянки?",
       "en": "Welcome back. Commandant Okada speaking. Here about ship storage?"
     },
     {
       "id": "rm0153_frag0021",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Привет, Трент. Стоянка базы «Линкор Мусаси» к твоим услугам.",
+      "ru": "Привет, Трент. Стоянка к твоим услугам.",
       "en": "Hello, Trent. Need another berth at Battleship Musashi?"
     },
     {

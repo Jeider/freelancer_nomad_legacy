@@ -39,7 +39,7 @@
       "id": "rm0119_frag0001",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Добро пожаловать. Планета Хьюстон. Я комендант стоянки Reed. Нужно место для корабля?",
+      "ru": "Добро пожаловать. Планета Хьюстон. Я комендант стоянки Рид. Нужно место для корабля?",
       "en": "Hello, pilot. I am Reed, the parking commandant at Planet Houston. Looking for a berth?"
     },
     {
@@ -172,14 +172,14 @@
       "id": "rm0119_frag0020",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "С возвращением. Комендант Reed слушает. По поводу стоянки?",
+      "ru": "С возвращением. Комендант Рид слушает. По поводу стоянки?",
       "en": "Welcome back. Commandant Reed speaking. Here about ship storage?"
     },
     {
       "id": "rm0119_frag0021",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Привет, Трент. Стоянка базы «Планета Хьюстон» к твоим услугам.",
+      "ru": "Привет, Трент. Стоянка к твоим услугам.",
       "en": "Hello, Trent. Need another berth at Planet Houston?"
     },
     {

@@ -1,0 +1,21 @@
+{
+  "path": "D:\\work\\Freelancer-Decomp\\out\\train_courier\\audio_ru\\references\\RpgTradeDirector.wav",
+  "text": "Противников в радиусе базы не обнаружено. Противников в ближайшем радиусе не обнаружено.",
+  "sha256": "fc3d7c920fb8e1a187c393f7ba9a5ae51060b4da3442c50d7ab16c1a8dbbf4df",
+  "sources": [
+    {
+      "path": "D:\\Games\\FL_MOD\\Assets\\PILOTS\\dispatcher01\\default\\gcs_combat_announce_allclear_01-.mp3",
+      "sha256": "73f23097bd4949de6c839c4edeac8e53a50f3f366664707af80465afca6f6638"
+    },
+    {
+      "path": "D:\\Games\\FL_MOD\\Assets\\PILOTS\\dispatcher01\\default\\gcs_combat_announce_allclear_03-.mp3",
+      "sha256": "87481ebba712510e58246e424b3499de1116b0894e673b60d84764847a8d7699"
+    }
+  ],
+  "duration": 4.902,
+  "rate": 24000,
+  "channels": 1,
+  "sample_bits": 16,
+  "rms_dbfs": -13.07233874603546,
+  "peak_dbfs": -0.46580865806006544
+}

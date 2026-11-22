@@ -628,7 +628,7 @@ entities={
 			}
 		},
 		userprops={
-			category="Prop",
+			category="Equipment Cart",
 		}
 	},		
 	{
@@ -646,7 +646,7 @@ entities={
 			}
 		},
 		userprops={
-			category="Prop",
+			category="Equipment Cart",
 		}
 	},		
 	{
@@ -664,7 +664,7 @@ entities={
 			}
 		},
 		userprops={
-			category="Prop",
+			category="Equipment Cart",
 		}
 	},	
 	{

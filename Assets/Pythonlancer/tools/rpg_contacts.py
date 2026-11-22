@@ -151,7 +151,7 @@ pilot = mod_fighter_universe
 affiliation = fc_uk_grp
 individual_name = 33604
 head = rh_hassler_head
-body = rh_male_elite_body
+body = rh_hassler_body
 accessory = comm_rh_reichman
 """
     for relative, content in files.items():

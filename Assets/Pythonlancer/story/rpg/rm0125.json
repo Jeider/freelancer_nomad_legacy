@@ -39,7 +39,7 @@
       "id": "rm0125_frag0001",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Добро пожаловать. Линкор Принц Уэльский. Я комендант стоянки Sinclair. Нужно место для корабля?",
+      "ru": "Добро пожаловать. Линкор Принц Уэльский. Я комендант стоянки Синклер. Нужно место для корабля?",
       "en": "Welcome to Battleship Prince of Wales. I am Commandant Sinclair. I handle parking berths here."
     },
     {
@@ -172,14 +172,14 @@
       "id": "rm0125_frag0020",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "С возвращением. Комендант Sinclair слушает. По поводу стоянки?",
+      "ru": "С возвращением. Комендант Синклер слушает. По поводу стоянки?",
       "en": "Welcome back. Commandant Sinclair speaking. Here about ship storage?"
     },
     {
       "id": "rm0125_frag0021",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Привет, Трент. Стоянка базы «Линкор Принц Уэльский» к твоим услугам.",
+      "ru": "Привет, Трент. Стоянка к твоим услугам.",
       "en": "Hello, Trent. Need another berth at Battleship Prince of Wales?"
     },
     {

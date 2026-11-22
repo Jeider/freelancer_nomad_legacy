@@ -39,7 +39,7 @@
       "id": "rm0142_frag0001",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Добро пожаловать. Планета Гонолулу. Я комендант стоянки Clarke. Нужно место для корабля?",
+      "ru": "Добро пожаловать. Планета Гонолулу. Я комендант стоянки Кларк. Нужно место для корабля?",
       "en": "Commandant Clarke, at your service. If you need to store a ship at Planet Honolulu, talk to me."
     },
     {
@@ -172,14 +172,14 @@
       "id": "rm0142_frag0020",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "С возвращением. Комендант Clarke слушает. По поводу стоянки?",
+      "ru": "С возвращением. Комендант Кларк слушает. По поводу стоянки?",
       "en": "Welcome back. Commandant Clarke speaking. Here about ship storage?"
     },
     {
       "id": "rm0142_frag0021",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Привет, Трент. Стоянка базы «Планета Гонолулу» к твоим услугам.",
+      "ru": "Привет, Трент. Стоянка к твоим услугам.",
       "en": "Hello, Trent. Need another berth at Planet Honolulu?"
     },
     {

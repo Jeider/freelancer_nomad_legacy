@@ -1,4 +1,10 @@
 import sys
+# RU dispatcher-only export, independent of full universe generation.
+if __name__ == "__main__" and len(sys.argv) > 1 and sys.argv[1] == "compile_dispatchers_audio":
+    sys.dont_write_bytecode = True
+    from tools.dispatcher_files import main as dispatcher_files_main
+    dispatcher_files_main(sys.argv[2:])
+    raise SystemExit(0)
 # BEGIN RPG CUTSCENE DISPATCH
 # Keep RPG authoring independent of LancerCore/story startup and voice services.
 if __name__ == "__main__" and len(sys.argv) > 1 and sys.argv[1] == "rpg":
@@ -471,8 +477,8 @@ def scene():
     # mission_index = 99
     # scene_name = 'debug'
 
-    mission_index = 2
-    scene_name = 'offer'
+    mission_index = 5
+    scene_name = 'equip'
     #
     tpl_manager = JinjaTemplateManager()
     script_manager = ScriptManager()

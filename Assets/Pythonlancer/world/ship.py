@@ -2217,6 +2217,8 @@ class PirateDagger(Dagger):
 
 
 class PirateBanshee(Banshee):
+    SHIPARCH_TEMPLATE = 'rh_pir_fighter'
+    ENGINE_TYPE = ENGINE_DOUBLE_SAME
     VISUAL = VIS_PIRATE
     # SHIP_CLASS = 8
 
@@ -2225,7 +2227,7 @@ class PirateBanshee(Banshee):
     RU_INFO = MS(RU.RH_F, EN.RH_F)
 
     HP_TORPEDO = 'HpTorpedo02'
-    MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04']
+    MAIN_WEAPONS = ['HpTorpedo01', 'HpWeapon01', 'HpWeapon02', 'HpWeapon03', 'HpWeapon04', 'HpWeapon05', 'HpWeapon06']
     MAX_WEAPONS = ['HpTorpedo01', 'HpWeapon03', 'HpWeapon04']
 
 

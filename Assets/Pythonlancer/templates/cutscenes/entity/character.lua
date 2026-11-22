@@ -16,7 +16,7 @@
         floor_height={{ floor_height }}
     },
     userprops={
-        Actor="{{ actor }}",
+        {% if actor %}Actor="{{ actor }}",{% endif %}
         category="Character"
     }
 }

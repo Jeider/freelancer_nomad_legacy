@@ -1,3 +1,4 @@
+from audio import story_delivery as performance
 from story.cutscenes.story_scenes import m02_bship_bar_accept, m02_bship_bar_decision, m02_bship_bar_offer, m02_jacobo_offer, m02_reichman
 from audio import delivery
 from story import script
@@ -20,70 +21,70 @@ class Msn2Offer(Msn2, script.CutsceneProps):
     DESCRIPTION = ''
     VOICE_LINES = [
         VoiceLine(10, Trent, ru="Вильгельм, полагаю?", en="Wilhelm, I presume?"),
-        VoiceLine(20, Wilham, ru="Так точно, герр Трент. Я рад, что вы согласились с нами работать.", en="That's right, Herr Trent. I'm glad you agreed to work with us."),
+        VoiceLine(20, Wilham, ru="Так точно, герр Трент. Я рад, что вы согласились с нами работать.", en="That's right, Herr Trent. I'm glad you agreed to work with us.", delivery_en=performance.WARM),
         VoiceLine(30, Trent , ru="Еще не согласился, но определенно заинтересовался.", en="Haven't agreed yet, but I'm definitely interested."),
-        VoiceLine(40, Wilham, ru="Тогда присаживайтесь, я введу вас в курс дела. Только давайте договоримся, что вне зависимости от того чем закончится наш разговор, все его детали должны остаться между нами. Хорошо?", en="Then have a seat. I'll bring you up to speed. But let's agree that no matter how this conversation ends, every detail of it stays between us. All right?"),
-        VoiceLine(50, Trent, ru="Должны - значит останутся. Любите вы, военные, жути нагнать...", en="If they must, they will. You military types love to spook people..."),
+        VoiceLine(40, Wilham, ru="Тогда присаживайтесь, я введу вас в курс дела. Только давайте договоримся, что вне зависимости от того чем закончится наш разговор, все его детали должны остаться между нами. Хорошо?", en="Then have a seat. I'll bring you up to speed. But let's agree that no matter how this conversation ends, every detail of it stays between us. All right?", delivery_en=performance.STERN),
+        VoiceLine(50, Trent, ru="Должны - значит останутся. Любите вы, военные, жути нагнать...", en="If they must, they will. You military types love to spook people...", delivery_en=performance.SARDONIC),
         VoiceLine(60, Wilham, ru="Тогда перейдём к делу. Силы Рейнланда проводят регулярный мониторинг ситуации в системе Омега-15. Один наш секретный агент добыл важные сведения и должен был доставить на полицейский аванпост в зоне рудокопов", en="Then let's get to business. Rheinland forces regularly monitor the situation in the Omega-15 system. One of our secret agents obtained important information and was supposed to deliver it to a police outpost in the miners' zone."),
-        VoiceLine(70, Wilham, ru="Но по непонятной для нас причине он так и не добрался до указанного места встречи. Скорее всего он был перехвачен и убит.", en="But for a reason we don't understand, he never made it to the designated meeting place. Most likely he was intercepted and killed."),
-        VoiceLine(80, Trent, ru="Сочувствую. Но при чем тут я?", en="I'm sorry. But what does that have to do with me?"),
+        VoiceLine(70, Wilham, ru="Но по непонятной для нас причине он так и не добрался до указанного места встречи. Скорее всего он был перехвачен и убит.", en="But for a reason we don't understand, he never made it to the designated meeting place. Most likely he was intercepted and killed.", delivery_en=performance.SOMBRE),
+        VoiceLine(80, Trent, ru="Сочувствую. Но при чем тут я?", en="I'm sorry. But what does that have to do with me?", delivery_en=performance.SOMBRE),
         VoiceLine(90, Wilham, ru="Вашей задачей будет найти этот корабль и получить с него интересующие нас данные.", en="Your job will be to find that ship and get the data we're interested in off it."),
         VoiceLine(100, Wilham, ru="Вам в этом поможет наш внешний агент, электронщик-энтузиаст. Он работает в местной общие рудокопов.", en="Our outside agent will help you with that, an electronics enthusiast. He works in the local miners' community."),
         VoiceLine(110, Wilham, ru="Там он помогает рабочим находить астероиды с ценной рудой, а так же имеет все данные об обломках кораблей, которые могут быть нам интересны.", en="There he helps the workers find asteroids with valuable ore, and he also has all the data on ship wrecks that might interest us."),
         VoiceLine(120, Trent, ru="И всего делов-то? Могу приступать? ", en="That's all? Can I get started?"),
 
         VoiceLine(210, Wilham, ru='Не "могу", а "можем", герр Трент. В этом задании я буду приписан к вам в качестве напарника.', en="Not \"I can\", but \"we can\", Herr Trent. On this assignment I'll be attached to you as a partner."),
-        VoiceLine(220, Trent, ru="Будете контролировать мои действия?", en="You'll be controlling my actions?"),
-        VoiceLine(230, Wilham, ru="Нет. Буду осуществлять поддержку и взаимодействие с властями. Стратегия операции и тактика её проведения целиком на вас, герр Трент.", en="No. I'll provide support and handle contact with the authorities. The strategy of the operation, and the tactics of carrying it out, are entirely up to you, Herr Trent."),
-        VoiceLine(240, Trent, ru="Спасибо за доверие... где поставить подпись?", en="Thanks for the trust... where do I sign?"),
-        VoiceLine(250, Wilham, ru="Ха-ха-ха. Ну зачем нам эти условности? Встречаемся в космосе, герр Трент!", en="And why do we need these formalities? We'll meet in space, Herr Trent!", delivery=delivery.HAPPY),
+        VoiceLine(220, Trent, ru="Будете контролировать мои действия?", en="You'll be controlling my actions?", delivery_en=performance.UNCERTAIN),
+        VoiceLine(230, Wilham, ru="Нет. Буду осуществлять поддержку и взаимодействие с властями. Стратегия операции и тактика её проведения целиком на вас, герр Трент.", en="No. I'll provide support and handle contact with the authorities. The strategy of the operation, and the tactics of carrying it out, are entirely up to you, Herr Trent.", delivery_en=performance.REASSURING),
+        VoiceLine(240, Trent, ru="Спасибо за доверие... где поставить подпись?", en="Thanks for the trust... where do I sign?", delivery_en=performance.SARDONIC),
+        VoiceLine(250, Wilham, ru="Ха-ха-ха. Ну зачем нам эти условности? Встречаемся в космосе, герр Трент!", en="And why do we need these formalities? We'll meet in space, Herr Trent!", delivery=delivery.HAPPY, delivery_en=performance.AMUSED),
     ]
 
 
 class Msn2Miner(Msn2, script.CutsceneProps):
-    THORN_CLASS = m02_jacobo_offer.ReconstructedScene
+    THORN_CLASS = m02_jacobo_offer.M02JacoboOfferScene
     ALIAS = 'miner'
     TITLE = 'Рудокоп Матильда'
     DESCRIPTION = ''
     VOICE_LINES = [
-        VoiceLine(10, Trent, ru="Приветствую!", en="Greetings!"),
-        VoiceLine(20, Jacobo, ru="Симметрично. Чему обязан?", en="Likewise. To what do I owe this?"),
+        VoiceLine(10, Trent, ru="Приветствую!", en="Greetings!", delivery_en=performance.WARM),
+        VoiceLine(20, Jacobo, ru="Симметрично. Чему обязан?", en="Likewise. To what do I owe this?", delivery_en=performance.WARM),
         VoiceLine(30, Trent, ru="Вильгельму вы обязаны.", en="You owe it to Wilhelm."),
-        VoiceLine(40, Jacobo, ru="Что есть -то есть. ", en="It is what it is."),
-        VoiceLine(45, Jacobo, ru="И что же на этот раз понадобилось герру Вильгельму?", en="And what does Herr Wilhelm need this time?"),
+        VoiceLine(40, Jacobo, ru="Что есть -то есть. ", en="It is what it is.", delivery_en=performance.WEARY),
+        VoiceLine(45, Jacobo, ru="И что же на этот раз понадобилось герру Вильгельму?", en="And what does Herr Wilhelm need this time?", delivery_en=performance.WEARY),
         VoiceLine(50, Trent, ru="Координаты одного разбившегося корабля. ", en="Coordinates of one crashed ship."),
-        VoiceLine(60, Jacobo, ru="А! Это проще простого. Я сейчас скину вам все точки происшествий с повреждением судов за прошедший месяц. Точность позиционирования плюс-минус двадцать миллиметров. Выбирайте что вам нужно, фильтруйте по критериям, спасибо говорить не нужно.", en="Ah! Nothing to it. I'll send you all the incident points with damaged ships from the past month. Positioning accuracy plus or minus twenty millimeters. Pick what you need, filter by criteria, no need to say thanks."),
-        VoiceLine(70, Trent, ru="Мы вместе полетим.", en="We'll fly together."),
-        VoiceLine(80, Jacobo, ru="Это зачем еще?", en="And why's that?"),
-        VoiceLine(90, Trent, ru="Вильгельм сказал, ты должен мне указать на место интересующего нас события, а я должен его найти. А как я могу быть уверен, что ты не слил мне туфту, чтобы через полчаса свалить в закат? У военных свои причуды, а у фриленсеров - свои.", en="Wilhelm said you're supposed to point me to the site of the incident we're after, and I'm supposed to find it. And how can I be sure you didn't feed me junk so you can vanish into the sunset in half an hour? The military have their quirks, and freelancers have theirs."),
-        VoiceLine(100, Jacobo, ru="Сотню раз уже проклял тот день когда согласился Вильгельму помогать.", en="I've already cursed the day I agreed to help Wilhelm a hundred times."),
-        VoiceLine(110, Jacobo, ru="Сам-то он где сейчас? Сидит в баре на ближайшем торговом посту? ", en="And where is he himself right now? Sitting in a bar on the nearest trading post?"),
-        VoiceLine(120, Jacobo, ru="Что бы ни случилось, он тут не при чем окажется, а вот мы с тобой главные фигуранты.", en="Whatever happens, he'll turn out to have nothing to do with it, and you and I will be the main ones implicated."),
+        VoiceLine(60, Jacobo, ru="А! Это проще простого. Я сейчас скину вам все точки происшествий с повреждением судов за прошедший месяц. Точность позиционирования плюс-минус двадцать миллиметров. Выбирайте что вам нужно, фильтруйте по критериям, спасибо говорить не нужно.", en="Ah! Nothing to it. I'll send you all the incident points with damaged ships from the past month. Positioning accuracy plus or minus twenty millimeters. Pick what you need, filter by criteria, no need to say thanks.", delivery_en=performance.PROUD),
+        VoiceLine(70, Trent, ru="Мы вместе полетим.", en="We'll fly together.", delivery_en=performance.STERN),
+        VoiceLine(80, Jacobo, ru="Это зачем еще?", en="And why's that?", delivery_en=performance.UNCERTAIN),
+        VoiceLine(90, Trent, ru="Вильгельм сказал, ты должен мне указать на место интересующего нас события, а я должен его найти. А как я могу быть уверен, что ты не слил мне туфту, чтобы через полчаса свалить в закат? У военных свои причуды, а у фриленсеров - свои.", en="Wilhelm said you're supposed to point me to the site of the incident we're after, and I'm supposed to find it. And how can I be sure you didn't feed me junk so you can vanish into the sunset in half an hour? The military have their quirks, and freelancers have theirs.", delivery_en=performance.STERN),
+        VoiceLine(100, Jacobo, ru="Сотню раз уже проклял тот день когда согласился Вильгельму помогать.", en="I've already cursed the day I agreed to help Wilhelm a hundred times.", delivery_en=performance.ANGRY),
+        VoiceLine(110, Jacobo, ru="Сам-то он где сейчас? Сидит в баре на ближайшем торговом посту? ", en="And where is he himself right now? Sitting in a bar on the nearest trading post?", delivery_en=performance.SARDONIC),
+        VoiceLine(120, Jacobo, ru="Что бы ни случилось, он тут не при чем окажется, а вот мы с тобой главные фигуранты.", en="Whatever happens, he'll turn out to have nothing to do with it, and you and I will be the main ones implicated.", delivery_en=performance.CONCERNED),
     ]
 
 
 class Msn2Done(Msn2, script.CutsceneProps):
-    THORN_CLASS = m02_reichman.ReconstructedScene
+    THORN_CLASS = m02_reichman.M02ReichmanScene
     ALIAS = 'done'
     TITLE = 'Вознаграждение на линкоре'
     DESCRIPTION = ''
     VOICE_LINES = [
-        VoiceLine(10, Reichman, ru="А вот и сам знаменитый Трент.", en="And here's the famous Trent himself."),
-        VoiceLine(20, Trent, ru="И чем же я так знаменит, мистер, эмм...", en="And what am I so famous for, mister, um..."),
-        VoiceLine(30, Reichman, ru="Райхманн. Адмирал Райхманн, если позволите.", en="Reichmann. Admiral Reichmann, if I may."),
+        VoiceLine(10, Reichman, ru="А вот и сам знаменитый Трент.", en="And here's the famous Trent himself.", delivery_en=performance.WARM),
+        VoiceLine(20, Trent, ru="И чем же я так знаменит, мистер, эмм...", en="And what am I so famous for, mister, um...", delivery_en=performance.UNCERTAIN),
+        VoiceLine(30, Reichman, ru="Райхманн. Адмирал Райхманн, если позволите.", en="Reichmann. Admiral Reichmann, if I may.", delivery_en=performance.STERN),
         VoiceLine(40, Trent, ru="Моё почтение, адмирал Райхманн! Так чем же я знаменит?", en="My respects, Admiral Reichmann! So what am I famous for?"),
         VoiceLine(50, Reichman, ru="О, мистер Трент, в последнее время в некоторых кругах только и разговоров, что о вас! Надеюсь, герр Вильгельм достойно оплачивает вашу работу?",
-                  en="Oh, Mr. Trent, lately in certain circles you're all anyone talks about! I hope Herr Wilhelm pays you decently for your work?"),
+                  en="Oh, Mr. Trent, lately in certain circles you're all anyone talks about! I hope Herr Wilhelm pays you decently for your work?", delivery_en=performance.WARM),
         VoiceLine(60, Trent, ru="Не жалуюсь.", en="No complaints."),
         VoiceLine(70, Reichman, ru="Скромность - похвальная благодетель, герр Трент, но одной благодетелью сыт не будешь, ха-ха. Я распоряжусь, чтобы ваш гонорар за предыдущую миссию был удвоен. Всех благ, герр Трент!",
-                  en="Modesty is a commendable virtue, Herr Trent, but virtue alone won't feed you, ha-ha. I'll see to it that your fee for the previous mission is doubled. All the best, Herr Trent!"),
+                  en="Modesty is a commendable virtue, Herr Trent, but virtue alone won't feed you, ha-ha. I'll see to it that your fee for the previous mission is doubled. All the best, Herr Trent!", delivery_en=performance.AMUSED),
         VoiceLine(80, Reichman, ru="Так вы считаете, что он - тот кто нам нужен?", en="So you believe he's the one we need?"),
         VoiceLine(90, Wilham, ru="Безусловно, герр Адмирал. Он - тот, кто поможет нам выполнить все известные вам задачи.",
-                  en="Undoubtedly, Herr Admiral. He's the one who will help us carry out all the tasks known to you."),
-        VoiceLine(100, Reichman, ru="И вы это гарантируете?", en="And you guarantee that?"),
-        VoiceLine(110, Wilham, ru="Абсолютно!", en="Absolutely!"),
+                  en="Undoubtedly, Herr Admiral. He's the one who will help us carry out all the tasks known to you.", delivery_en=performance.DETERMINED),
+        VoiceLine(100, Reichman, ru="И вы это гарантируете?", en="And you guarantee that?", delivery_en=performance.STERN),
+        VoiceLine(110, Wilham, ru="Абсолютно!", en="Absolutely!", delivery_en=performance.DETERMINED),
         VoiceLine(120, Reichman, ru="Хорошо, мы принимаем в работу ваш сценарий.", en="Good. We'll put your scenario into action."),
-        VoiceLine(130, Wilham, ru="Благодарю за оказанное доверие.", en="Thank you for the trust you've placed in me."),
+        VoiceLine(130, Wilham, ru="Благодарю за оказанное доверие.", en="Thank you for the trust you've placed in me.", delivery_en=performance.PROUD),
         VoiceLine(140, Reichman, ru="Посмотрим что из этого получится. Не смею задерживать, герр Вильгельм.", en="We'll see what comes of this. I won't keep you, Herr Wilhelm."),
     ]
 
@@ -119,12 +120,14 @@ class Msn2Space(Msn2, script.SpaceVoiceProps):
             Wilham,
             ru="Единственное что мы ОБЯЗАНЫ делать - это соблюдать правила. Кстати, одно из правил, герр Трент. Если вдруг с вами произойдет что-то неприятное, то мое ведомство ничего о вас не знает, а вы, в свою очередь, ничего не знаете о нём.",
             en="The only thing we are OBLIGED to do is follow the rules. By the way, one of the rules, Herr Trent. If something unpleasant should happen to you, my department knows nothing about you, and you, in turn, know nothing about it.",
+            delivery_en=performance.STERN,
         ),
         VoiceLine(
             60,
             Trent,
             ru="Ясно все с вами, работники ножа и топора, ох, извините, плаща и кинжала.",
             en="I see how it is with you people. Workers of the knife and the axe — oh, excuse me, cloak and dagger.",
+            delivery_en=performance.SARDONIC,
         ),
         VoiceLine(
             70,
@@ -167,6 +170,7 @@ class Msn2Space(Msn2, script.SpaceVoiceProps):
             Jacobo,
             ru="Сейчас, например, они могут начать рассматривать в качестве мусора любой звездолет случайно попавший в их зону влияния и не имеющий должной охраны. Разберут его на составляющие и продадут в виде вторсырья.",
             en="Now, for example, they might start treating as garbage any starship that happens to enter their zone of influence and doesn't have proper protection. They'll take it apart and sell it as scrap.",
+            delivery_en=performance.CONCERNED,
         ),
         VoiceLine(
             120,
@@ -197,12 +201,14 @@ class Msn2Space(Msn2, script.SpaceVoiceProps):
             Jacobo,
             ru="Что за помехи? Что за помехи на радаре???",
             en="What's that interference? What's that interference on the radar???",
+            delivery_en=performance.ALARMED,
         ),
         VoiceLine(
             160,
             Trent,
             ru="Я полагаю, эти пять..., нет,  семь... девять... враждебных кораблей создают нам помехи. ",
             en="I suppose these five... no, seven... nine... hostile ships are causing the interference.",
+            delivery_en=performance.SARDONIC,
         ),
         VoiceLine(
             170,
@@ -210,6 +216,7 @@ class Msn2Space(Msn2, script.SpaceVoiceProps):
             ru="О! А шо это шевелится на нашей территории?",
             en="Oh! And what's that moving on our territory?",
             cinematic=True,
+            delivery_en=performance.TEASING,
         ),
         VoiceLine(
             180,
@@ -217,6 +224,7 @@ class Msn2Space(Msn2, script.SpaceVoiceProps):
             ru="Металлолом какой-то...",
             en="Some scrap metal...",
             cinematic=True,
+            delivery_en=performance.TEASING,
         ),
         VoiceLine(
             190,
@@ -224,6 +232,7 @@ class Msn2Space(Msn2, script.SpaceVoiceProps):
             ru="Ну вот, опять сортировать мусор.",
             en="Well, sorting garbage again.",
             cinematic=True,
+            delivery_en=performance.TEASING,
         ),
         VoiceLine(
             200,
@@ -231,6 +240,7 @@ class Msn2Space(Msn2, script.SpaceVoiceProps):
             ru="Да шо вы переживаете, там дел-то на пять минут.",
             en="What are you worrying about? It's five minutes' work.",
             cinematic=True,
+            delivery_en=performance.TEASING,
         ),
         VoiceLine(
             210,
@@ -243,6 +253,7 @@ class Msn2Space(Msn2, script.SpaceVoiceProps):
             Trent,
             ru="Бинго! Тот самый корабль. Считываю данные с бортового журнала...",
             en="Bingo! That's the ship. Reading the data from the ship's log...",
+            delivery_en=performance.EXCITED,
         ),
         VoiceLine(
             240,
@@ -267,12 +278,14 @@ class Msn2Space(Msn2, script.SpaceVoiceProps):
             Jacobo,
             ru="А сможешь поработать на меня, если придется?",
             en="And could you work for me, if it comes to that?",
+            delivery_en=performance.UNCERTAIN,
         ),
         VoiceLine(
             280,
             Trent,
             ru="Конечно!",
             en="Of course!",
+            delivery_en=performance.WARM,
         ),
         VoiceLine(
             290,
@@ -285,6 +298,7 @@ class Msn2Space(Msn2, script.SpaceVoiceProps):
             Trent,
             ru="Да не вопрос.",
             en="Yeah, no problem.",
+            delivery_en=performance.WARM,
         ),
         VoiceLine(
             310,
@@ -303,12 +317,14 @@ class Msn2Space(Msn2, script.SpaceVoiceProps):
             Trent,
             ru="Вильгельм, НАПАРНИК, а ты не мог помочь мне в бою с мусорщиками когда я получал эти ваши сверхсекретные данные?",
             en="Wilhelm, PARTNER, couldn't you have helped me in the fight with the Junkers while I was getting that top-secret data of yours?",
+            delivery_en=performance.ANGRY,
         ),
         VoiceLine(
             340,
             Wilham,
             ru="Нет, это выходило за рамки моей компетенции.",
             en="No, that was outside my competence.",
+            delivery_en=performance.DRY,
         ),
         VoiceLine(
             350,
@@ -327,30 +343,35 @@ class Msn2Space(Msn2, script.SpaceVoiceProps):
             Trent,
             ru="А у меня есть выбор?",
             en="Do I have a choice?",
+            delivery_en=performance.SARDONIC,
         ),
         VoiceLine(
             380,
             Wilham,
             ru="Ха-ха-ха! Нет!",
             en="Ha-ha-ha! No!",
+            delivery_en=performance.AMUSED,
         ),
         VoiceLine(
             390,
             Trent,
             ru="Тогда, пожалуй, поучаствую!",
             en="Then I suppose I'll take part!",
+            delivery_en=performance.SARDONIC,
         ),
         VoiceLine(
             1050,
             Punisher,
             ru="Склад обнаружен. Вижу противника!",
             en="Depot located. I see the enemy!",
+            delivery_en=performance.URGENT,
         ),
         VoiceLine(
             1060,
             Wilham,
             ru="Каратель-4, на вас грузовики. Остановите их! Остальным – уничтожать истребители.",
             en="Punisher-4, the transports are yours. Stop them! Everyone else — destroy the fighters.",
+            delivery_en=performance.COMMAND,
         ),
         VoiceLine(
             1070,
@@ -369,30 +390,35 @@ class Msn2Space(Msn2, script.SpaceVoiceProps):
             PunisherCatcher,
             ru="Грузовики продолжают движение. Нет, стоп, грузовики остановились! Грузовики остановились!",
             en="The transports are still moving. No, wait, the transports have stopped! The transports have stopped!",
+            delivery_en=performance.EXCITED,
         ),
         VoiceLine(
             430,
             PunisherCatcher,
             ru="База! Вижу базу!",
             en="A base! I see a base!",
+            delivery_en=performance.ALARMED,
         ),
         VoiceLine(
             440,
             Wilham,
             ru="Каратели, входим в зону действия!",
             en="Punishers, we're entering the engagement zone!",
+            delivery_en=performance.COMMAND,
         ),
         VoiceLine(
             450,
             Wilham,
             ru="Трент!!! Приказ оказывать поддержку звену Карателей! Атакуй оружейные платформы!!!",
             en="Trent!!! Order is to support the Punisher flight! Attack the weapon platforms!!!",
+            delivery_en=performance.ANGRY,
         ),
         VoiceLine(
             1080,
             Wilham,
             ru="Отлично, герр Трент, осталась еще одна.",
             en="Excellent, Herr Trent, there's still one left.",
+            delivery_en=performance.PROUD,
         ),
         VoiceLine(
             1090,
@@ -405,12 +431,14 @@ class Msn2Space(Msn2, script.SpaceVoiceProps):
             Punisher,
             ru="Никак нет. Здесь слишком много кораблей противника.",
             en="Negative. There are too many enemy ships here.",
+            delivery_en=performance.URGENT,
         ),
         VoiceLine(
             1110,
             Wilham,
             ru="Вас понял. Трент, разберитесь с оставшимися корсарами.",
             en="Understood. Trent, deal with the remaining Corsairs.",
+            delivery_en=performance.COMMAND,
         ),
         VoiceLine(
             1120,
@@ -441,12 +469,14 @@ class Msn2Space(Msn2, script.SpaceVoiceProps):
             Wilham,
             ru="По пальцам одной руки можно пересчитать. Тебе оказали большую честь.",
             en="You can count them on the fingers of one hand. You've been shown a great honor.",
+            delivery_en=performance.PROUD,
         ),
         VoiceLine(
             490,
             Trent,
             ru="Охренеть. Будет что вспомнить в старости.",
             en="Holy shit. Something to remember in my old age.",
+            delivery_en=performance.SARDONIC,
         ),
         VoiceLine(
             1140,

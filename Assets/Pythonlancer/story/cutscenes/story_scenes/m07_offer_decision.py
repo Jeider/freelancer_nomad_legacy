@@ -1,39 +1,28 @@
-"""m07_offer_decision: постановка для ручного редактирования.
-
-Точки: SCENES/m07_offer_decision.blend → DUMPS/m07_offer_decision.json.
-Создание объектов — в начале action(); далее вход, реплики и выход.
-t — абсолютные секунды исходной сцены; часы MAIN не сдвигаются.
-Исходные события и их номера сохранены в отчёте декомпиляции.
-"""
+"""m07_offer_decision: полная постановка из master; точки в m07_offer_decision.blend."""
 from story.cutscenes.scene import Scene
 from story.cutscenes.content import (
-    Character,
-    LookAtCamera,
-    MAIN,
-    MoveEvent,
+    Character, LookAtCamera, MAIN, Male, MotionEvent, MoveEvent,
 )
 from story.cutscenes.anim import (
     Male,
 )
-from story.cutscenes.source_extensions import (
-    preserve_entity,
-)
 from story import actors
 
 
-class ExtraCharBartenderFixture(actors.Actor):
-    NAME = 'bartender_fixture'
-    TYPE = 'male'
-    CUTSCENE_APPEARANCE = 'li_bartender_1'
-    GAME_ACTOR = 'bartender'
-
-
-class ExtraCharTrentBase(actors.Actor):
+class CharTrentBaseActor(actors.Actor):
     NAME = 'trent_base'
     TYPE = 'male'
     CUTSCENE_APPEARANCE = 'trent'
-    GAME_ACTOR = 'Player'
 
+class CharTrentActor(actors.Actor):
+    NAME = 'trent'
+    TYPE = 'male'
+    CUTSCENE_APPEARANCE = 'trent_original'
+
+class CharBarmanActor(actors.Actor):
+    NAME = 'barman'
+    TYPE = 'male'
+    CUTSCENE_APPEARANCE = 'm07_bartender'
 
 
 class M07OfferDecisionScene(Scene):
@@ -42,37 +31,35 @@ class M07OfferDecisionScene(Scene):
 
     def action(self):
         main_group = self.get_group(MAIN)
-
-        # Объекты: параметры камеры, света, персонажей и реквизита правятся здесь.
         self.set_duration(140.0)
-        # Исправлена опечатка исходного THN: floor_height==-110 → числовое -110.
-        bartender_fixture = Character(root=self, actor=ExtraCharBartenderFixture, light_group=0,
-            init_point='Char_bartender_fixture', rotate_from_quat=True, use_ambient=False, floor_height=-110)
-        preserve_entity(bartender_fixture, template_name='li_bartender_1',
-            userprops={'actor': 'bartender', 'category': 'Character'})
-        trent_base = Character(root=self, actor=ExtraCharTrentBase, light_group=0, init_point='Char_trent_base',
-            rotate_from_quat=True, use_ambient=False, floor_height=-1000)
-        preserve_entity(trent_base, template_name='trent', userprops={'Actor': 'Player', 'category': 'Character'})
-        trent = Character(root=self, actor=actors.Trent, light_group=0, init_point='Char_trent', rotate_from_quat=True,
-            use_ambient=False, floor_height=0)
-        preserve_entity(trent, template_name='trent_original', userprops={'actor': 'TrentOriginal', 'category': 'Character'})
-        # Исправлена опечатка исходного THN: floor_height==-110 → числовое -110.
-        barman = Character(root=self, actor=actors.DetroitBarman, light_group=0, init_point='Char_barman',
-            rotate_from_quat=True, use_ambient=False, floor_height=-110)
-        preserve_entity(barman, template_name='m07_bartender', userprops={'actor': 'm6_bartender', 'category': 'Character'})
-        cam_trent_deal = LookAtCamera(root=self, name='cam_trent_deal', fov=20, farplane=5000, look_duration=70)
-        preserve_entity(cam_trent_deal)
 
-        # Действия по абсолютному времени сцены.
+        # Персонажи, камеры, реквизит и звук.
+        bartender_fixture = Character(root=self, actor=actors.BartenderFixture, name='Char_bartender_Fixture',
+            light_group=0, init_point='Char_bartender_Fixture', rotate_from_quat=True,
+            appearance='li_bartender_1', actor_name='bartender', floor_height=-110.0)
+        trent_base = Character(root=self, actor=CharTrentBaseActor, name='Char_trent_base', light_group=0,
+            init_point='Char_trent_base', rotate_from_quat=True, appearance='trent', actor_name='Player',
+            floor_height=-1000)
+        trent = Character(root=self, actor=CharTrentActor, name='Char_trent', light_group=0,
+            init_point='Char_trent', rotate_from_quat=True, appearance='trent_original',
+            actor_name='TrentOriginal')
+        barman = Character(root=self, actor=CharBarmanActor, name='Char_barman', light_group=0,
+            init_point='Char_barman', rotate_from_quat=True, appearance='m07_bartender',
+            actor_name='m6_bartender', floor_height=-110.0)
+        cam_trent_deal = LookAtCamera(root=self, name='cam_trent_deal', fov=20, look_duration=70)
+
+        # Исходные точки взгляда.
+
+        # Абсолютное время исходной сцены; часы MAIN не сдвигаются.
         t = 0
-        MoveEvent(root=self, group=MAIN, time_delay=t, object_name='Char_bartender_fixture', target_name='offscreen',
-            duration=0, smooth=False)
-        MoveEvent(root=self, group=MAIN, time_delay=t, object_name='Char_trent_base', target_name='offscreen', duration=0,
-            smooth=False)
-        barman.motion(group=MAIN, time_delay=t, anim=Male.Sc_MLBODY_STND_IDLE_000LV_xa_04, duration=10000, loop=True)
-        trent.motion(group=MAIN, time_delay=t, anim=Male.Sc_MLBODY_STND_IDLE_000LV_xa_04, duration=10000, loop=True)
+        MoveEvent(root=self, group=MAIN, object_name=bartender_fixture.name,
+            target_name=self.get_automarker_name(self.OFFSCREEN_POINT_NAME), duration=0, smooth=False,
+            adjust_pos=True, adjust_orient=True, time_delay=t)
+        MoveEvent(root=self, group=MAIN, object_name=trent_base.name,
+            target_name=self.get_automarker_name(self.OFFSCREEN_POINT_NAME), duration=0, smooth=False,
+            adjust_pos=True, adjust_orient=True, time_delay=t)
+        MotionEvent(root=self, group=MAIN, object_name=barman.name, anim=Male.Sc_MLBODY_STND_IDLE_000LV_xa_04,
+            duration=10000, loop=True, time_delay=t)
+        MotionEvent(root=self, group=MAIN, object_name=trent.name, anim=Male.Sc_MLBODY_STND_IDLE_000LV_xa_04,
+            duration=10000, loop=True, time_delay=t)
         cam_trent_deal.set(group=MAIN, time_delay=t)
-
-
-# Совместимость с уже подключёнными THORN_CLASS.
-ReconstructedScene = M07OfferDecisionScene

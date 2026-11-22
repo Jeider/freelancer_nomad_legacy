@@ -39,7 +39,7 @@
       "id": "rm0152_frag0001",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Добро пожаловать. Линкор Ямасиро. Я комендант стоянки Watanabe. Нужно место для корабля?",
+      "ru": "Добро пожаловать. Линкор Ямасиро. Я комендант стоянки Ватанабэ. Нужно место для корабля?",
       "en": "Commandant Watanabe, at your service. If you need to store a ship at Battleship Yamashiro, talk to me."
     },
     {
@@ -172,14 +172,14 @@
       "id": "rm0152_frag0020",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "С возвращением. Комендант Watanabe слушает. По поводу стоянки?",
+      "ru": "С возвращением. Комендант Ватанабэ слушает. По поводу стоянки?",
       "en": "Welcome back. Commandant Watanabe speaking. Here about ship storage?"
     },
     {
       "id": "rm0152_frag0021",
       "role": "vendor",
       "pool": "greeting",
-      "ru": "Привет, Трент. Стоянка базы «Линкор Ямасиро» к твоим услугам.",
+      "ru": "Привет, Трент. Стоянка к твоим услугам.",
       "en": "Hello, Trent. Need another berth at Battleship Yamashiro?"
     },
     {
