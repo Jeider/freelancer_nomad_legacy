@@ -2,6 +2,7 @@
 from story.cutscenes.scene import Scene
 from story.cutscenes.content import (
     Character, ConnectHardpointEvent, EyeIkEvent, Female, Light, LookAtCamera, MAIN, Male, MoveEvent, NeckIkEvent, Prop,
+    MoveOffscreenEvent,
 )
 from story.cutscenes.anim import (
     Female, Male,
@@ -21,7 +22,7 @@ class TrentGlassProp(Prop):
 
 class M05OfferScene(Scene):
     DUMP_FILE = 'm05_offer'
-    SCENE_AMBIENT = [128, 128, 128]
+    SCENE_AMBIENT = [64, 64, 64]
 
     def action(self):
         main_group = self.get_group(MAIN)
@@ -97,16 +98,19 @@ class M05OfferScene(Scene):
         trent.motion(group=MAIN, anim=Male.Sc_MLBODY_CHRB_TALK_000LV_A_16, duration=10, time_delay=t)
         t += 0.25
         cam_trent_top.set(group=MAIN, time_delay=t)
-        hatcher.facial(group=MAIN, index=10, auto_lip=True, extra_delay=0)
+        hatcher.facial(group=MAIN, index=10, auto_lip=True)
 
         # m05_offer 20: Trent.
         # Все отлично мисс Хетчер. Только вот, знаете, вчера ногу натер, а сегодня утром из душа выходил - так
         # в пояснице кольнуло.
-        t = 7
-        ConnectHardpointEvent(root=self, group=MAIN, target_name=hatcher_bottle.name, parent_name=hatcher.name,
+        trent.facial(group=MAIN, index=20, auto_lip=True)
+
+        t = 0
+        con_time = main_group.get_time() + t
+        con1 = ConnectHardpointEvent(root=self, group=MAIN, target_name=hatcher_bottle.name, parent_name=hatcher.name,
             duration=7, target_hardpoint='HpRightConnect_prop_bottle_wine_1', parent_hardpoint='HpRightConnect',
             time_delay=t)
-        ConnectHardpointEvent(root=self, group=MAIN, target_name=hatcher_glass.name, parent_name=hatcher.name,
+        con2 = ConnectHardpointEvent(root=self, group=MAIN, target_name=hatcher_glass.name, parent_name=hatcher.name,
             duration=7, target_hardpoint='hpleftconnect_prop_glass_green', parent_hardpoint='hpleftconnect',
             time_delay=t)
         hatcher.motion(group=MAIN, anim=Female.Sc_FMHAND_HNEUT_HOLDD_LEFT_000LV_00, duration=0.2, time_scale=10,
@@ -114,11 +118,11 @@ class M05OfferScene(Scene):
         cam_hatcher.set(group=MAIN, time_delay=t)
         hatcher.motion(group=MAIN, anim=Female.Sc_FMBODY_CHRB_GRABR_PRDRNK_TABL_000LV_XA_09, duration=8,
             time_scale=0.3, start_time=0.9, time_delay=t)
-        trent.facial(group=MAIN, index=20, auto_lip=True, extra_delay=0)
 
         # m05_offer 30: Hatcher.
         # Мистер Трент, давайте не будем превращать традиционный обмен любезностями в цирк.
-        hatcher.facial(group=MAIN, index=30, auto_lip=True, extra_delay=0)
+        hatcher.facial(group=MAIN, index=30, auto_lip=True)
+
 
         # m05_offer 40: Trent.
         # Так может обойдемся без обмена любезностями и перейдем сразу к делу?
@@ -126,20 +130,22 @@ class M05OfferScene(Scene):
         cam_trent.set(group=MAIN, time_delay=t)
         trent.motion(group=MAIN, anim=Male.Sc_MLBODY_CHRB_CHRF_TRNS_000LV_XA_02, duration=6, time_delay=t)
         t += 2.5
-        MoveEvent(root=self, group=MAIN, object_name=hatcher_bottle.name,
-            target_name=self.get_automarker_name(self.OFFSCREEN_POINT_NAME), duration=0.001, smooth=False,
-            adjust_pos=True, adjust_orient=True, time_delay=t)
-        MoveEvent(root=self, group=MAIN, object_name=hatcher_glass.name,
-            target_name=self.get_automarker_name(self.OFFSCREEN_POINT_NAME), duration=0.001, smooth=False,
-            adjust_pos=True, adjust_orient=True, time_delay=t)
-        trent.facial(group=MAIN, index=40, auto_lip=True, extra_delay=0)
+
+        trent.facial(group=MAIN, index=40, auto_lip=True)
+
+
+        con1.set_duration(main_group.get_time() - con_time - 1)
+        con2.set_duration(main_group.get_time() - con_time - 1)
+
+        MoveOffscreenEvent(root=self, group=MAIN, object_name=hatcher_bottle.name, time_delay=-0.5)
+        MoveOffscreenEvent(root=self, group=MAIN, object_name=hatcher_glass.name, time_delay=-0.5)
 
         # m05_offer 50: Hatcher.
         # А с вами будет непросто...
         t = 0
         cam_hatcher_top.set(group=MAIN, time_delay=t)
         hatcher.motion(group=MAIN, anim=Female.Sc_FMBODY_CHRB_IDLE_000LV_XA_06, duration=6, time_delay=t)
-        hatcher.facial(group=MAIN, index=50, auto_lip=True, extra_delay=0)
+        hatcher.facial(group=MAIN, index=50, auto_lip=True)
 
         # m05_offer 60: Hatcher.
         # Мы проанализировали привезенные вами документы, они безусловно представляют огромную ценность для
@@ -149,13 +155,15 @@ class M05OfferScene(Scene):
             time_scale=0.7, trans_time=0.5, time_delay=t)
         t += 7.5
         trent.motion(group=MAIN, anim=Male.Sc_MLBODY_CHRF_CHRB_TRNS_000LV_XA_02, duration=5, time_delay=t)
-        cam_trent.set(group=MAIN, time_delay=t)
-        hatcher.facial(group=MAIN, index=60, auto_lip=True, extra_delay=0)
+        hatcher.facial(group=MAIN, index=60, auto_lip=True)
+
+        cam_trent.set(group=MAIN, time_delay=0)
 
         # m05_offer 70: Trent.
         # Всегда есть проблема
         t = 0
-        ConnectHardpointEvent(root=self, group=MAIN, target_name=trent_glass.name, parent_name=trent.name,
+        con3_time = main_group.get_time()
+        con3 = ConnectHardpointEvent(root=self, group=MAIN, target_name=trent_glass.name, parent_name=trent.name,
             duration=10, target_hardpoint='hpleftconnect_prop_glass_green', parent_hardpoint='hpleftconnect',
             time_delay=t)
         trent.motion(group=MAIN, anim=Male.Sc_MLHAND_HNEUT_HOLDD_LEFT_000LV_00, duration=0.2, time_scale=10,
@@ -168,7 +176,8 @@ class M05OfferScene(Scene):
             trans_time=0.25, time_delay=t)
         t += 1.5
         hatcher.motion(group=MAIN, anim=Female.Sc_FMBODY_CHRB_IDLE_000LV_XA_06, duration=0.8, time_delay=t)
-        trent.facial(group=MAIN, index=70, auto_lip=True, extra_delay=0)
+        trent.facial(group=MAIN, index=70, auto_lip=True)
+        main_group.append_time(0.3)
 
         # m05_offer 80: Hatcher.
         # Слишком много научных выкладок, причем настолько передовых, что у нас головастики драку устроили, не
@@ -192,13 +201,13 @@ class M05OfferScene(Scene):
         hatcher.motion(group=MAIN, anim=Female.Sc_FMBODY_CHRB_CONV_LHNDDN_TRNS_000LV_XA_01, duration=3,
             time_scale=0.5, trans_time=1.5, time_delay=t)
         t += 0.2
-        MoveEvent(root=self, group=MAIN, object_name=trent_glass.name,
-            target_name=self.get_automarker_name(self.OFFSCREEN_POINT_NAME), duration=0.001, smooth=False,
-            adjust_pos=True, adjust_orient=True, time_delay=t)
+
+        con3.set_duration(main_group.get_time() - con3_time - 0.1)
+        MoveOffscreenEvent(root=self, group=MAIN, object_name=trent_glass.name, time_delay=t)
         t += 1.8
         hatcher.motion(group=MAIN, anim=Female.Sc_FMBODY_CHRB_CHRF_TRNS_000LV_XA_02, duration=5, time_scale=0.7,
             trans_time=1, time_delay=t)
-        hatcher.facial(group=MAIN, index=80, auto_lip=True, extra_delay=0)
+        hatcher.facial(group=MAIN, index=80, auto_lip=True)
 
         # m05_offer 90: Hatcher.
         # Знаете, мистер Трент, драка между учеными выглядит со стороны весьма забавно.
@@ -208,19 +217,20 @@ class M05OfferScene(Scene):
         cam_trent_top.set(group=MAIN, time_delay=t)
         trent.motion(group=MAIN, anim=Male.Sc_MLBODY_CHRB_PUTDNL_DRINK_TABL_000LV_XA_06, duration=15,
             time_scale=0.7, time_delay=t)
-        ConnectHardpointEvent(root=self, group=MAIN, target_name=trent_glass.name, parent_name=trent.name,
+        con4_time = main_group.get_time()
+        con4 = ConnectHardpointEvent(root=self, group=MAIN, target_name=trent_glass.name, parent_name=trent.name,
             duration=3, target_hardpoint='hpleftconnect_prop_glass_green', parent_hardpoint='hpleftconnect',
             time_delay=t)
         trent.motion(group=MAIN, anim=Male.Sc_MLHAND_HNEUT_HOLDD_LEFT_000LV_00, duration=0.2, time_scale=10,
             trans_time=0.25, time_delay=t)
-        hatcher.facial(group=MAIN, index=90, auto_lip=True, extra_delay=0)
+        hatcher.facial(group=MAIN, index=90, auto_lip=True)
 
         # m05_offer 100: Trent.
         # Жаль не видел. В чем моя роль? Не ученых же ваших разнимать?
         t = 2.7
         trent.motion(group=MAIN, anim=Male.Sc_MLHAND_NEUT_LEFT_000LV_A_00, duration=6, time_scale=0.01,
             trans_time=0.25, time_delay=t)
-        trent.facial(group=MAIN, index=100, auto_lip=True, extra_delay=0)
+        trent.facial(group=MAIN, index=100, auto_lip=True)
 
         # m05_offer 110: Hatcher.
         # Нам нужно мнение не просто ученого, а гения, светилы в своей области, человека который мог бы дать
@@ -235,7 +245,7 @@ class M05OfferScene(Scene):
         t += 3
         hatcher.motion(group=MAIN, anim=Female.Sc_FMBODY_CHRF_IDLE_000LV_XA_05, duration=3, time_scale=0.6,
             trans_time=1, time_delay=t)
-        hatcher.facial(group=MAIN, index=110, auto_lip=True, extra_delay=0)
+        hatcher.facial(group=MAIN, index=110, auto_lip=True)
 
         # m05_offer 120: Hatcher.
         # Я знаю такого человека, я с ним лично знакома. Это профессор Мандрейк. Он сможет во всем
@@ -244,14 +254,16 @@ class M05OfferScene(Scene):
         hatcher.motion(group=MAIN, anim=Female.Sc_FMBODY_CHRF_CHRB_TRNS_000LV_XA_02, duration=5, time_scale=0.6,
             trans_time=1, time_delay=t)
         t += 6
+        hatcher.facial(group=MAIN, index=120, auto_lip=True)
+        t = 0
+
         cam_trent.set(group=MAIN, time_delay=t)
         trent.motion(group=MAIN, anim=Male.Sc_MLBODY_CHRB_LSTN_000UP_A_18, duration=6, time_scale=0.7,
             time_delay=t)
-        hatcher.facial(group=MAIN, index=120, auto_lip=True, extra_delay=0)
 
         # m05_offer 130: Trent.
         # Но вы не можете просто позвонить ему и попросить вам помочь потому что...
-        trent.facial(group=MAIN, index=130, auto_lip=True, extra_delay=0)
+        trent.facial(group=MAIN, index=130, auto_lip=True)
 
         # m05_offer 140: Hatcher.
         # Потому что он работает в ДипСпейсИнжиниринг и в данный момент отправился в исследовательскую
@@ -261,7 +273,7 @@ class M05OfferScene(Scene):
         cam_hatcher_top.set(group=MAIN, time_delay=t)
         hatcher.motion(group=MAIN, anim=Female.Sc_FMBODY_CHRF_TALK_EMPH_000UP_A_10, duration=15, time_scale=0.6,
             time_delay=t)
-        hatcher.facial(group=MAIN, index=140, auto_lip=True, extra_delay=0)
+        hatcher.facial(group=MAIN, index=140, auto_lip=True)
         # Действие после исходного окна реплики.
         t = 0.5
         cam_trent_top.set(group=MAIN, time_delay=t)
@@ -271,7 +283,7 @@ class M05OfferScene(Scene):
 
         # m05_offer 150: Trent.
         # И мое задание будет состоять в...
-        trent.facial(group=MAIN, index=150, auto_lip=True, extra_delay=0)
+        trent.facial(group=MAIN, index=150, auto_lip=True)
 
         # m05_offer 160: Hatcher.
         # В полете... Мистер Трент, перестаньте. Вам нужно будет вылететь на станцию Детройт - в штаб квартиру
@@ -280,10 +292,9 @@ class M05OfferScene(Scene):
         cam_hatcher.set(group=MAIN, time_delay=t)
         hatcher.motion(group=MAIN, anim=Female.Sc_FMBODY_CHRB_TALK_000LV_A_08, duration=10, time_scale=0.6,
             trans_time=1, time_delay=t)
-        t += 10
+        hatcher.facial(group=MAIN, index=160, auto_lip=True)
         hatcher.motion(group=MAIN, anim=Female.Sc_FMBODY_CHRB_TALK_000UP_A_14, duration=15, time_scale=0.6,
-            trans_time=1, time_delay=t)
-        hatcher.facial(group=MAIN, index=160, auto_lip=True, extra_delay=0)
+            trans_time=1, time_delay=-2)
 
         # m05_offer 170: Hatcher.
         # Я дам вам свою визитку на случай проблем со службой безопасности ДипСпейс, скажете что действуете от
@@ -292,32 +303,34 @@ class M05OfferScene(Scene):
         hatcher.motion(group=MAIN, anim=Female.Sc_FMBODY_CHRB_PUSH_DRINK_TABL_000LV_XA_05, duration=15,
             start_time=1, trans_time=1, time_delay=t)
         t += 5
-        hatcher.motion(group=MAIN, anim=Female.Sc_FMBODY_CHRB_IDLE_000LV_XA_06, duration=10, trans_time=1,
-            time_delay=t)
         EyeIkEvent(root=self, group=MAIN, char_name=trent.name,
             target_name=self.get_automarker_name('trent_eye_ik'), target_type='ROOT', target_part='',
             up='NEG_Y_AXIS', front='Z_AXIS', duration=25, transition_duration=1, time_delay=t)
         t += 1
-        MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('trent_head_ik'),
-            target_name=self.get_automarker_name('marker_card'), duration=3, smooth=True, adjust_pos=True,
-            adjust_orient=True, time_delay=t)
-        MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('trent_eye_ik'),
-            target_name=self.get_automarker_name('marker_card'), duration=1.5, smooth=True, adjust_pos=True,
-            adjust_orient=True, time_delay=t)
-        hatcher.facial(group=MAIN, index=170, auto_lip=True, extra_delay=0)
+        hatcher.facial(group=MAIN, index=170, auto_lip=True)
+        hatcher.motion(group=MAIN, anim=Female.Sc_FMBODY_CHRB_IDLE_000LV_XA_06, duration=10, trans_time=1,
+            time_delay=0)
 
         # m05_offer 180: Trent.
         # Служба безопасности Альянса? Никогда не слышал о такой.
         t = 0
-        cam_trent.set(group=MAIN, time_delay=t)
-        t += 3
+
+        MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('trent_head_ik'),
+            target_name=self.get_automarker_name('marker_card'), duration=3, smooth=True, adjust_pos=True,
+            adjust_orient=True, time_delay=0)
+        MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('trent_eye_ik'),
+            target_name=self.get_automarker_name('marker_card'), duration=1.5, smooth=True, adjust_pos=True,
+            adjust_orient=True, time_delay=0)
+
+        cam_trent.set(group=MAIN, time_delay=0)
         MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('trent_head_ik'),
             target_name=self.get_automarker_name('head_hatcher'), duration=1, smooth=True, adjust_pos=True,
-            adjust_orient=True, time_delay=t)
+            adjust_orient=True, time_delay=-2)
         MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('trent_eye_ik'),
             target_name=self.get_automarker_name('head_hatcher_lower'), duration=0.5, smooth=True,
-            adjust_pos=True, adjust_orient=True, time_delay=t)
-        trent.facial(group=MAIN, index=180, auto_lip=True, extra_delay=0)
+            adjust_pos=True, adjust_orient=True, time_delay=-2)
+        t += 3
+        trent.facial(group=MAIN, index=180, auto_lip=True)
 
         # m05_offer 190: Hatcher.
         # Это не имеет значения, мистер Трент. Гонорар за выполнение задания будет очень приятным.
@@ -325,4 +338,6 @@ class M05OfferScene(Scene):
         hatcher.motion(group=MAIN, anim=Female.Sc_FMBODY_CHRB_CHRF_TRNS_000LV_XA_02, duration=5, time_scale=0.7,
             trans_time=1, time_delay=t)
         cam_hatcher_reward.set(group=MAIN, time_delay=t)
-        hatcher.facial(group=MAIN, index=190, auto_lip=True, extra_delay=0)
+        hatcher.facial(group=MAIN, index=190, auto_lip=True)
+
+        main_group.append_time(1)

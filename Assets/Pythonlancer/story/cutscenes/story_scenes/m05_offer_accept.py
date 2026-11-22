@@ -1,7 +1,7 @@
 """m05_offer_accept: полная постановка из master; точки в m05_offer_accept.blend."""
 from story.cutscenes.scene import Scene
 from story.cutscenes.content import (
-    Character, Female, Light, LookAtCamera, MAIN, Male, MoveEvent, StaticCamera,
+    Character, Female, Light, LookAtCamera, MAIN, Male, MoveEvent, StaticCamera, MoveOffscreenEvent,
 )
 from story.cutscenes.anim import (
     Female, Male,
@@ -57,15 +57,13 @@ class M05OfferAcceptScene(Scene):
             time_delay=t)
         trent.facial(group=MAIN, index=200, auto_lip=True, extra_delay=0)
         # Действие после исходного окна реплики.
-        t = 1.5
+        t = 4.5
         cam_hatcher.set(group=MAIN, time_delay=t)
         cam_hatcher.move_cam(group=MAIN, index=2, duration=17, smooth=True, time_delay=t)
         hatcher.motion(group=MAIN, anim=Female.Sc_FMBODY_CHRF_TWSTS_FROM_270LV_XA_02, duration=3, time_scale=0.6,
             time_delay=t)
         t += 1.1
-        MoveEvent(root=self, group=MAIN, object_name=trent.name,
-            target_name=self.get_automarker_name(self.OFFSCREEN_POINT_NAME), duration=0.001, smooth=False,
-            adjust_pos=True, adjust_orient=True, time_delay=t)
+        MoveOffscreenEvent(root=self, group=MAIN, object_name=trent.name, time_delay=t)
         t += 1.9
         hatcher.motion(group=MAIN, anim=Female.Sc_FMBODY_CHRF_GRABR_HEAD_RLEASE_000LV_XA_03, duration=2,
             time_scale=0.8, trans_time=1, time_delay=t)
@@ -78,8 +76,8 @@ class M05OfferAcceptScene(Scene):
         hatcher.motion(group=MAIN, anim=Female.Sc_FMHAND_HNEUT_GESTR_FIST_000LV_00, duration=5, trans_time=0.25,
             time_delay=t)
         t += 1
-        hatcher.motion(group=MAIN, anim=Female.Sc_FMBODY_CHRF_HEAD_HOLDR_000LV_XA_02, duration=4, time_scale=0.8,
-            trans_time=1, loop=True, time_delay=t)
+        # hatcher.motion(group=MAIN, anim=Female.Sc_FMBODY_CHRF_HEAD_HOLDR_000LV_XA_02, duration=4, time_scale=0.8,
+        #     trans_time=1, time_delay=t)
         t += 4
         hatcher.motion(group=MAIN, anim=Female.Sc_FMBODY_CHRF_HOLD_HEAD_RLEASE_000LV_XA_03, duration=3,
             time_scale=0.8, trans_time=1, time_delay=t)

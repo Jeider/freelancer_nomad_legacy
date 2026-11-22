@@ -38,7 +38,7 @@ class M04OfferAcceptScene(Scene):
         jacobo.motion(group=MAIN, anim=Male.Sc_MLBODY_CHRB_IDLE_000LV_XA_05, duration=3, time_delay=t)
         cam_trent_sitting.set(group=MAIN, time_delay=t)
         trent.motion(group=MAIN, anim=Male.Sc_MLBODY_CHRF_CHRB_TRNS_000LV_XA_02, duration=5, time_delay=t)
-        trent.facial(group=MAIN, index=70, auto_lip=True, extra_delay=0)
+        trent.facial(group=MAIN, index=70, auto_lip=True)
 
         # m04_offer 80: Jacobo.
         # Герр Трент, спасибо, вы не пожалеете! Вылетайте в космос, я с помощью друзей попробую незаметно
@@ -67,7 +67,7 @@ class M04OfferAcceptScene(Scene):
         EyeIkEvent(root=self, group=MAIN, char_name=trent.name,
             target_name=self.get_automarker_name('trent_eye_ik'), target_type='ROOT', target_part='',
             up='NEG_Y_AXIS', front='Z_AXIS', duration=2, transition_duration=1, time_delay=t)
-        jacobo.facial(group=MAIN, index=80, auto_lip=True, extra_delay=0)
+        jacobo.facial(group=MAIN, index=80, auto_lip=True)
 
         # m04_offer 90: Trent.
         # Тогда до встречи.
@@ -76,5 +76,5 @@ class M04OfferAcceptScene(Scene):
         t += 1
         trent.motion(group=MAIN, anim=Male.Sc_MLBODY_CHRB_STNDCR_TRNS_090LV_XA_05, duration=5, trans_time=1,
             time_delay=t)
-        trent.facial(group=MAIN, index=90, auto_lip=True, extra_delay=0)
+        trent.facial(group=MAIN, index=90, auto_lip=True)
         main_group.append_time(1)

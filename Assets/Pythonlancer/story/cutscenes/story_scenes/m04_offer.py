@@ -114,7 +114,7 @@ class M04OfferScene(Scene):
         trent.motion(group=MAIN, anim=Male.Sc_MLHEAD_NEUT_BLINK_EYES_000LV_A_00, duration=0.333, time_delay=t)
         t += 1
         trent.motion(group=MAIN, anim=Male.Sc_MLBODY_STND_TURN_180LV_XA_04, duration=6, trans_time=1, time_delay=t)
-        jacobo.facial(group=MAIN, index=10, auto_lip=True, extra_delay=0)
+        jacobo.facial(group=MAIN, index=10, auto_lip=True)
         # Действие после исходного окна реплики.
         t = 0
         MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('jacobo_head_ik'),
@@ -138,7 +138,7 @@ class M04OfferScene(Scene):
         MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('jacobo_head_ik'),
             target_name=self.get_automarker_name('head_trent_sit'), duration=2, smooth=True, adjust_pos=True,
             adjust_orient=True, time_delay=t)
-        jacobo.facial(group=MAIN, index=20, auto_lip=True, extra_delay=0)
+        jacobo.facial(group=MAIN, index=20, auto_lip=True)
 
         # m04_offer 30: Trent.
         # Это я уже понял. И у меня появилось знакомое ощущение что меня очень хотят втянуть в неприятности.
@@ -153,7 +153,7 @@ class M04OfferScene(Scene):
             adjust_orient=True, time_delay=t)
         jacobo.motion(group=MAIN, anim=Male.Sc_MLBODY_CHRB_CHRF_TRNS_000LV_XA_02, duration=3, time_scale=2,
             start_time=1, trans_time=1, time_delay=t)
-        trent.facial(group=MAIN, index=30, auto_lip=True, extra_delay=0)
+        trent.facial(group=MAIN, index=30, auto_lip=True)
 
         # m04_offer 40: Jacobo.
         # Герр Трент, вы не понимаете. Дело исключительной важности. Мне необходимо доставить в Либерти важные
@@ -188,7 +188,7 @@ class M04OfferScene(Scene):
         MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('trent_eye_ik'),
             target_name=self.get_automarker_name('head_jacobo_sit'), duration=0.1, smooth=True, adjust_pos=True,
             adjust_orient=True, time_delay=t)
-        jacobo.facial(group=MAIN, index=40, auto_lip=True, extra_delay=0)
+        jacobo.facial(group=MAIN, index=40, auto_lip=True)
 
         # m04_offer 50: Trent.
         # Опять меня угораздило вляпаться в шпионские игры... Джакобо, вы в курсе, что в данный момент я
@@ -198,7 +198,7 @@ class M04OfferScene(Scene):
         t += 4
         trent.motion(group=MAIN, anim=Male.Sc_MLBODY_CHRB_CHRF_TRNS_000LV_XA_02, duration=4, time_scale=0.6,
             trans_time=1, time_delay=t)
-        trent.facial(group=MAIN, index=50, auto_lip=True, extra_delay=0)
+        trent.facial(group=MAIN, index=50, auto_lip=True)
 
         # m04_offer 60: Jacobo.
         # Герр Трент, вы же фриленсер. Вы не давали никаких присяг. После выполнения задания вас с заказчиком
@@ -207,16 +207,16 @@ class M04OfferScene(Scene):
         cam_jacobo_sitting.set(group=MAIN, time_delay=t)
         jacobo.motion(group=MAIN, anim=Male.Sc_MLBODY_CHRF_TALK_HNSTBL_000LV_B_30, duration=26, time_scale=0.8,
             loop=True, time_delay=t)
-        jacobo.facial(group=MAIN, index=60, auto_lip=True, extra_delay=0)
+        jacobo.facial(group=MAIN, index=60, auto_lip=True)
 
         # m04_offer 62: Jacobo.
         # Герр Трент, если мы сможем доставить эти ОЧЕНЬ важные документы в Либерти, в систему Форбс, нам
         # заплатят очень большие деньги, ОЧЕНЬ большие, понимаете?
-        jacobo.facial(group=MAIN, index=62, auto_lip=True, extra_delay=0)
+        jacobo.facial(group=MAIN, index=62, auto_lip=True)
 
         # m04_offer 65: Jacobo.
         # У меня одного это скорее всего не получится, но если вы мне поможете...
-        jacobo.facial(group=MAIN, index=65, auto_lip=True, extra_delay=0)
+        jacobo.facial(group=MAIN, index=65, auto_lip=True)
 
         # m04_offer 67: Jacobo.
         # А если вы мне не поможете, меня скорее всего просто убьют...

@@ -21,7 +21,7 @@ class AlaricShipProp(Ship):
 
 class M04FinalScene(Scene):
     DUMP_FILE = 'm04_final'
-    SCENE_AMBIENT = [128, 128, 128]
+    SCENE_AMBIENT = [64, 64, 64]
 
     def action(self):
         main_group = self.get_group(MAIN)

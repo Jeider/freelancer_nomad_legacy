@@ -2,6 +2,7 @@
 from story.cutscenes.scene import Scene
 from story.cutscenes.content import (
     AttachEvent, Character, EyeIkEvent, Female, Light, LookAtCamera, MAIN, Male, MoveEvent, NeckIkEvent, RotateAxisEvent,
+    MoveOffscreenEvent,
 )
 from story.cutscenes.anim import (
     Female, Male, Trent,
@@ -12,7 +13,7 @@ from story import actors
 
 class M04HatcherScene(Scene):
     DUMP_FILE = 'm04_hatcher'
-    SCENE_AMBIENT = [128, 128, 128]
+    SCENE_AMBIENT = [64, 64, 64]
 
     def action(self):
         main_group = self.get_group(MAIN)
@@ -376,20 +377,26 @@ class M04HatcherScene(Scene):
         hatcher.motion(group=MAIN, anim=Female.Sc_FMBODY_STND_UNCRSS_ARMS_000LV_XA_03, duration=5, time_scale=0.8,
             time_delay=t)
         t += 2.5
-        cam_trent_near.set(group=MAIN, time_delay=t)
         alaric.motion(group=MAIN, anim=Male.Sc_MLBODY_STND_WALK_TRNS_270LV_XA_02, duration=4, trans_time=2,
             time_delay=t)
-        hatcher.facial(group=MAIN, index=120, auto_lip=True, extra_delay=0)
+        hatcher.facial(group=MAIN, index=120, auto_lip=True)
+        t = 0
+        cam_trent_near.set(group=MAIN, time_delay=t)
 
         # m04_reward 130: Trent.
         # Я вот тоже думал...
         trent.facial(group=MAIN, index=130, auto_lip=True, extra_delay=0)
         # Действие после исходного окна реплики.
-        t = 0
         trent.motion(group=MAIN, anim=Trent.Sc_MLHEAD_BASEPOSE_TRENT_000LV_01_01, duration=6, trans_time=0.25,
             time_delay=t)
         trent.motion(group=MAIN, anim=Male.Sc_MLBODY_STND_WALK_TRNS_270LV_XA_02, duration=2, trans_time=2,
             time_delay=t)
+        MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('trent_head_ik'),
+            target_name=self.get_automarker_name('marker_bar_exitpoint'), duration=2, smooth=True,
+            adjust_pos=True, adjust_orient=True, time_delay=t)
+        MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('trent_eye_ik'),
+            target_name=self.get_automarker_name('marker_bar_exitpoint'), duration=1.25, smooth=True,
+            adjust_pos=True, adjust_orient=True, time_delay=t)
         t += 1
         MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('hatcher_head_ik'),
             target_name=self.get_automarker_name('head_hatcher_front'), duration=0.1, smooth=True,
@@ -399,6 +406,9 @@ class M04HatcherScene(Scene):
             adjust_pos=True, adjust_orient=True, time_delay=t)
         t += 1
         cam_hatcher_final.set(group=MAIN, time_delay=t)
+
+        MoveOffscreenEvent(root=self, group=MAIN, object_name=trent.name, time_delay=t)
+        MoveOffscreenEvent(root=self, group=MAIN, object_name=alaric.name, time_delay=t)
         MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('hatcher_head_ik'),
             target_name=self.get_automarker_name('marker_bar_exitpoint'), duration=5, smooth=True,
             adjust_pos=True, adjust_orient=True, time_delay=t)
@@ -406,12 +416,9 @@ class M04HatcherScene(Scene):
             target_name=self.get_automarker_name('marker_bar_exitpoint'), duration=3, smooth=True,
             adjust_pos=True, adjust_orient=True, time_delay=t)
         t += 0.001
-        MoveEvent(root=self, group=MAIN, object_name=trent.name,
-            target_name=self.get_automarker_name(self.OFFSCREEN_POINT_NAME), duration=0.001, smooth=False,
-            adjust_pos=True, adjust_orient=True, time_delay=t)
-        MoveEvent(root=self, group=MAIN, object_name=alaric.name,
-            target_name=self.get_automarker_name(self.OFFSCREEN_POINT_NAME), duration=0.001, smooth=False,
-            adjust_pos=True, adjust_orient=True, time_delay=t)
+
+
+
         t += 0.499
         RotateAxisEvent(root=self, group=MAIN, object_name=hatcher.name, angle=-45, axis='Y_AXIS', duration=2,
             smooth=True, time_delay=t)

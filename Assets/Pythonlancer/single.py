@@ -477,8 +477,8 @@ def scene():
     # mission_index = 99
     # scene_name = 'debug'
 
-    mission_index = 5
-    scene_name = 'equip'
+    mission_index = 4
+    scene_name = 'offer'
     #
     tpl_manager = JinjaTemplateManager()
     script_manager = ScriptManager()
