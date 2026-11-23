@@ -28,14 +28,19 @@ class VoiceLine(object):
 
     def get_delivery(self, language):
         """EN acting direction overlays voice traits; RU retains legacy delivery."""
-        if language != 'en' or self.delivery_en is None:
+        if language != 'en':
+            return self.delivery
+        override = self.delivery_en
+        if override is None:
+            getter = getattr(self.actor, 'get_delivery_en', None)
+            override = getter() if getter else getattr(self.actor, 'DELIVERY_EN', None)
+        if override is None:
             return self.delivery
         from audio.delivery import Delivery
         base = self.delivery
         if base is None:
             getter = getattr(self.actor, 'get_voice_delivery', None)
             base = getter() if getter else getattr(self.actor, 'VOICE_DELIVERY', None)
-        override = self.delivery_en
         return Delivery(
             override.code,
             instruct=override.instruct if override.instruct is not None else getattr(base, 'instruct', None),
@@ -63,7 +68,8 @@ class VoiceLine(object):
         return re.sub(r'\(.*?\)', '', self.ru).replace(',,', ',')
 
     def get_en_clean_text(self):
-        return re.sub(r'\(.*?\)', '', self.en).replace(',,', ',')
+        t1 = re.sub(r'\[.*?]', '', self.en)
+        return re.sub(r'\(.*?\)', '', t1).replace(',,', ',')
 
     def get_ru_clean_ai_text(self):
         return re.sub(r'\(.*?\)', '', self.ru).replace(',,', '')

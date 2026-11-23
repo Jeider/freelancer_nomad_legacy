@@ -1,4 +1,5 @@
 from audio.delivery import *
+from audio import story_delivery as performance
 from text.strings import MultiString as MS
 
 ACTOR_MALE = 'male'
@@ -49,6 +50,7 @@ class Actor(SteosInterface):
     STEOS_PITCH = 0
     STEOS_SPEED = 1
     VOICE_DELIVERY = HIGH_PITCH_NOT_FAST
+    DELIVERY_EN = None
     DENOISE = True
     ATTENUATION = None
     GAME_ACTOR = None
@@ -78,6 +80,10 @@ class Actor(SteosInterface):
     @classmethod
     def get_voice_delivery(cls):
         return cls.VOICE_DELIVERY
+
+    @classmethod
+    def get_delivery_en(cls):
+        return cls.DELIVERY_EN
 
     @classmethod
     def is_male(cls):
@@ -210,6 +216,7 @@ class Darcy(Actor):
     STEOS_PITCH = 0
     # STEOS_SPEED = 1.2
     STEOS_SPEED = 1
+    VOICE_DELIVERY = TEENAGER_HIGH_PITCH_NOT_FAST
 
 
 class Kaitlyn(Actor):
@@ -244,7 +251,8 @@ class King(Actor):
     STEOS_ID = 218
     STEOS_PITCH = 0.2
     STEOS_SPEED = 1
-    VOICE_DELIVERY = LOW_PITCH_NOT_FAST
+    VOICE_DELIVERY = LOW_PITCH
+    DELIVERY_EN = performance.DETERMINED
 
 
 class Tilton(Actor):
@@ -297,7 +305,7 @@ class Brighton(Actor):
     STEOS_ID = 644
     # STEOS_PITCH = -0.1
     # STEOS_SPEED = 0.9
-    VOICE_DELIVERY = MODERATE_PITCH
+    VOICE_DELIVERY = MODERATE_PITCH_NOT_FAST
 
 
 class DetroitDispatcher(Actor):

@@ -9,6 +9,7 @@ These are performance intentions, not a guarantee of a particular rendered take.
 Review generated audio for identity and intelligibility before installation.
 """
 from audio.delivery import Delivery
+from templates.solar import suprise
 
 
 def _vector(code, *, happy=0, angry=0, sad=0, afraid=0, disgusted=0,
@@ -28,10 +29,11 @@ CONCERNED = _vector('concerned', sad=.2, afraid=.4, calm=.25)
 ALARMED = _vector('alarmed', afraid=.65, surprised=.4)
 PANICKED = _vector('panicked', afraid=1, sad=.15)
 SHOCKED = _vector('shocked', surprised=.9, afraid=.2)
+SURPRISED_HAPPY = _vector('surprised_happy', happy=.3, surprised=.5)
 URGENT = _vector('urgent', angry=.4, afraid=.35, calm=.1)
 COMMAND = _vector('command', angry=.35, calm=.45)
 STERN = _vector('stern', angry=.45, calm=.5)
-ANGRY = _vector('angry', angry=.75, disgusted=.15)
+ANGRY = _vector('angry', angry=.45, disgusted=.5)
 FURIOUS = _vector('furious', angry=1, disgusted=.25)
 THREATENING = _vector('threatening', angry=.6, calm=.4)
 DISGUSTED = _vector('disgusted', disgusted=.8, angry=.25)

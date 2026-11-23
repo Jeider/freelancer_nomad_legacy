@@ -1167,7 +1167,8 @@ class Character(Compound):
 
     def facial(self, group, index, append=True, extra_delay=0.3,
                auto_lip=False, auto_lip_anim_index=1, auto_anim_scale=1,
-               auto_anim_force=None, auto_anim_force_seconds=None, props=None, voice_actor=None):
+               auto_anim_force=None, auto_anim_force_seconds=None, props=None, voice_actor=None,
+               no_anim=False):
         sound = self.root.lookup_single_sound(index, props=props)
         if (voice_actor or self.actor) != sound.line.actor:
             raise Exception(f'Sound {index} is belong to actor {sound.line.actor}. Cannot run by {self.actor}')
@@ -1209,7 +1210,7 @@ class Character(Compound):
             left_duration = sound_duration
 
             while left_duration > facial_duration:
-                anim_props['duration'] = f'{left_duration+1:.2f}'
+                anim_props['duration'] = f'{facial_duration+1:.2f}'
 
                 merged_props = f"{{ {','.join([f'{x}={y}' for x, y in anim_props.items()])} }}"
 
@@ -1235,7 +1236,7 @@ class Character(Compound):
 
 
 
-        else:
+        elif not no_anim:
             meta = self.root.lookup_sound_meta(sound)
             if len(meta) == 0:
                 raise Exception(f'Empty meta for sound {index} !')

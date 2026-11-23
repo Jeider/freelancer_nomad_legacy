@@ -136,7 +136,7 @@ class M08OsirisScene(Scene):
         MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('hatcher_eye_ik'),
             target_name=self.get_automarker_name('head_major'), duration=1.5, smooth=True, adjust_pos=True,
             adjust_orient=True, time_delay=t)
-        hatcher.facial(group=MAIN, index=10, auto_lip=True, extra_delay=0)
+        hatcher.facial(group=MAIN, index=10, auto_lip=True)
 
         # m08_osiris 20: King.
         # Спасибо, мисс Хетчер.
@@ -146,7 +146,7 @@ class M08OsirisScene(Scene):
         cam_king_first.move_focus(group=MAIN, index=2, duration=8, smooth=True, time_delay=t)
         major.motion(group=MAIN, anim=Male.Sc_MLBODY_STND_CROSS_ARMS_000LV_A_11, duration=50, time_scale=0.2,
             start_time=1, loop=True, time_delay=t)
-        king.facial(group=MAIN, index=20, auto_lip=True, extra_delay=0)
+        king.facial(group=MAIN, index=20, auto_lip=True)
 
         # m08_osiris 30: King.
         # Мистер Трент, я понимаю, что у вас выдались тяжелые... гхм... несколько дней...
@@ -181,33 +181,35 @@ class M08OsirisScene(Scene):
         RotateAxisEvent(root=self, group=MAIN, object_name=trent.name, angle=20, axis='Y_AXIS', duration=1,
             smooth=False, time_delay=t)
         t += 1.5
-        cam_trent_sits_down.set(group=MAIN, time_delay=t)
-        MoveEvent(root=self, group=MAIN, object_name=king.name,
-            target_name=self.get_automarker_name('point_king_talk_front'), duration=0, smooth=False,
-            adjust_pos=True, adjust_orient=True, time_delay=t)
-        t += 0.1
-        king.motion(group=MAIN, anim=Male.Sc_MLBODY_STND_IDLE_000LV_xa_04, duration=0.1, time_delay=t)
-        t += 0.1
-        RotateAxisEvent(root=self, group=MAIN, object_name=king.name, angle=-20, axis='Y_AXIS', duration=0,
-            smooth=False, time_delay=t)
-        king.facial(group=MAIN, index=30, auto_lip=True, extra_delay=0)
+        king.facial(group=MAIN, index=30, auto_lip=True)
 
+        cam_trent_sits_down.set(group=MAIN, time_delay=0)
         # m08_osiris 40: Trent.
         # Недель...
-        trent.facial(group=MAIN, index=40, auto_lip=True, extra_delay=0)
+        main_group.append_time(1)
+        trent.facial(group=MAIN, index=40, auto_lip=True)
+
+        main_group.append_time(0.5)
+
+        MoveEvent(root=self, group=MAIN, object_name=king.name,
+            target_name=self.get_automarker_name('point_king_talk_front'), duration=0, smooth=False,
+            adjust_pos=True, adjust_orient=True, time_delay=-0.3)
+        king.motion(group=MAIN, anim=Male.Sc_MLBODY_STND_IDLE_000LV_xa_04, duration=0.1, time_delay=-0.2)
+        RotateAxisEvent(root=self, group=MAIN, object_name=king.name, angle=-20, axis='Y_AXIS', duration=0,
+            smooth=False, time_delay=-0.1)
 
         # m08_osiris 50: King.
         # Пусть даже месяцев, но есть некоторые вещи, которые выше нашего морального и физического состояния.
         # И в данный момент очень важно определить местонахождение известного вам тома Протеуса и ключа.
         t = 0
-        cam_king_far.set(group=MAIN, time_delay=t)
-        cam_king_far.move_cam(group=MAIN, index=2, duration=26, smooth=True, time_delay=t)
+        cam_king_far.set(group=MAIN, time_delay=0)
+        cam_king_far.move_cam(group=MAIN, index=2, duration=26, smooth=True, time_delay=0)
         king.motion(group=MAIN, anim=Male.Sc_MLBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01, duration=5,
             time_scale=0.4, trans_time=1, time_delay=t)
         t += 10
         king.motion(group=MAIN, anim=Male.Sc_MLBODY_STND_FSTHIPB_RLEASE_000LV_XA_01, duration=5, time_scale=0.4,
             trans_time=1, time_delay=t)
-        king.facial(group=MAIN, index=50, auto_lip=True, extra_delay=0)
+        king.facial(group=MAIN, index=50, auto_lip=True)
 
         # m08_osiris 60: King.
         # А поэтому, расскажите, пожалуйста, подробно всё, что происходило с вами с момента когда мисс Хетчер
@@ -216,21 +218,21 @@ class M08OsirisScene(Scene):
         king.motion(group=MAIN, anim=Male.Sc_MLBODY_STND_CROSS_ARMS_000LV_xa_06, duration=5, time_scale=0.4,
             trans_time=2, time_delay=t)
         t += 10
+        king.facial(group=MAIN, index=60, auto_lip=True)
+
         NeckIkEvent(root=self, group=MAIN, char_name=trent.name,
             target_name=self.get_automarker_name('trent_head_ik'), target_type='ROOT', target_part='',
-            up='NEG_Y_AXIS', front='Z_AXIS', duration=555, transition_duration=1, time_delay=t)
-        king.facial(group=MAIN, index=60, auto_lip=True, extra_delay=0)
-
+            up='NEG_Y_AXIS', front='Z_AXIS', duration=555, transition_duration=1, time_delay=0)
         # m08_osiris 70: Trent.
         # Нас перехватили в Большом Омикроне, до сигмы-17 мы так и не добрались.
         t = 0
-        cam_trent_sits_down.set(group=MAIN, time_delay=t)
-        trent.facial(group=MAIN, index=70, auto_lip=True, extra_delay=0)
+        cam_trent_sits_down.set(group=MAIN, time_delay=0)
+        trent.facial(group=MAIN, index=70, auto_lip=True)
 
         # m08_osiris 80: King.
         # Кто перехватил?
         t = 0
-        cam_king_near.set(group=MAIN, time_delay=t)
+        cam_king_near.set(group=MAIN, time_delay=0)
         t += 1.2
         MoveEvent(root=self, group=MAIN, object_name=trent.name,
             target_name=self.get_automarker_name('point_trent_sit'), duration=0, smooth=False, adjust_pos=True,
@@ -238,13 +240,13 @@ class M08OsirisScene(Scene):
         t += 0.1
         trent.motion(group=MAIN, anim=Male.Sc_MLBODY_CHRB_IDLE_000LV_XA_05, duration=100, time_scale=0.6,
             loop=True, time_delay=t)
-        king.facial(group=MAIN, index=80, auto_lip=True, extra_delay=0)
+        king.facial(group=MAIN, index=80, auto_lip=True)
 
         # m08_osiris 90: Trent.
         # Да хрен его знает, какие-то бравые ребята с линкора под названием "Навухудоноссор". А потом нам
         # помог с него сбежать капитан Сид.
         t = 0
-        cam_trent_near.set(group=MAIN, time_delay=t)
+        cam_trent_near.set(group=MAIN, time_delay=0)
         t += 1.5
         major.motion(group=MAIN, anim=Male.Sc_MLBODY_STND_HOLD_ARMS_CROSSED_000LV_XA_02, duration=1, trans_time=1,
             time_delay=t)
@@ -254,7 +256,7 @@ class M08OsirisScene(Scene):
         EyeIkEvent(root=self, group=MAIN, char_name=major.name,
             target_name=self.get_automarker_name('major_eye_ik'), target_type='ROOT', target_part='',
             up='NEG_Y_AXIS', front='Z_AXIS', duration=555, transition_duration=1, time_delay=t)
-        trent.facial(group=MAIN, index=90, auto_lip=True, extra_delay=0)
+        trent.facial(group=MAIN, index=90, auto_lip=True)
 
         # m08_osiris 100: King.
         # Капитан Сид...
@@ -266,19 +268,19 @@ class M08OsirisScene(Scene):
         MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('king_eye_ik'),
             target_name=self.get_automarker_name('head_major_front_near'), duration=1.5, smooth=True,
             adjust_pos=True, adjust_orient=True, time_delay=t)
-        t += 1.7
+        king.facial(group=MAIN, index=100, auto_lip=True)
+        t = 0
         cam_major_near.set(group=MAIN, time_delay=t)
         MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('major_head_ik'),
             target_name=self.get_automarker_name('head_king_front_far'), duration=2.5, smooth=True,
-            adjust_pos=True, adjust_orient=True, time_delay=t)
+            adjust_pos=True, adjust_orient=True, time_delay=-1)
         MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('major_eye_ik'),
             target_name=self.get_automarker_name('head_king_front_near'), duration=1.5, smooth=True,
-            adjust_pos=True, adjust_orient=True, time_delay=t)
-        king.facial(group=MAIN, index=100, auto_lip=True, extra_delay=0)
+            adjust_pos=True, adjust_orient=True, time_delay=-1)
 
         # m08_osiris 110: MajorScrew.
         # Капитан Сид...
-        major.facial(group=MAIN, index=110, auto_lip=True, extra_delay=0)
+        major.facial(group=MAIN, index=110, auto_lip=True)
 
         # m08_osiris 120: Trent.
         # Потом со мной вышел на контакт агент Рокфорд. Или это я с ним на контакт вышел...
@@ -290,13 +292,13 @@ class M08OsirisScene(Scene):
         MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('king_eye_ik'),
             target_name=self.get_automarker_name('head_trent'), duration=1.5, smooth=True, adjust_pos=True,
             adjust_orient=True, time_delay=t)
-        trent.facial(group=MAIN, index=120, auto_lip=True, extra_delay=0)
+        trent.facial(group=MAIN, index=120, auto_lip=True)
 
         # m08_osiris 130: King.
         # Рокфорд?
         t = 0
         cam_king_near.set(group=MAIN, time_delay=t)
-        king.facial(group=MAIN, index=130, auto_lip=True, extra_delay=0)
+        king.facial(group=MAIN, index=130, auto_lip=True)
 
         # m08_osiris 140: Trent.
         # Рокфорд. И он помог мне вернуть артефакты. Но позже оказалось, что вернуть он их хотел себе, а меня
@@ -317,7 +319,7 @@ class M08OsirisScene(Scene):
         MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('trent_eye_ik'),
             target_name=self.get_automarker_name('head_leaders_middle'), duration=1.5, smooth=True,
             adjust_pos=True, adjust_orient=True, time_delay=t)
-        trent.facial(group=MAIN, index=140, auto_lip=True, extra_delay=0)
+        trent.facial(group=MAIN, index=140, auto_lip=True)
 
         # m08_osiris 145: Trent.
         # В итоге, в последний момент я ускользнул от него и спас вот это:
@@ -343,7 +345,7 @@ class M08OsirisScene(Scene):
         MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('trent_eye_ik'),
             target_name=self.get_automarker_name('head_leaders_middle_bottom'), duration=1.5, smooth=True,
             adjust_pos=True, adjust_orient=True, time_delay=t)
-        trent.facial(group=MAIN, index=145, auto_lip=True, extra_delay=0)
+        trent.facial(group=MAIN, index=145, auto_lip=True)
         main_group.append_time(1)
 
         # m08_osiris 150: King.
@@ -351,12 +353,13 @@ class M08OsirisScene(Scene):
         t = 0
         cam_king_near.set(group=MAIN, time_delay=t)
         t += 2.3
-        cam_major_near.set(group=MAIN, time_delay=t)
-        king.facial(group=MAIN, index=150, auto_lip=True, extra_delay=0)
+        king.facial(group=MAIN, index=150, auto_lip=True)
+
+        cam_major_near.set(group=MAIN, time_delay=0)
 
         # m08_osiris 160: MajorScrew.
         # И в игре...
-        major.facial(group=MAIN, index=160, auto_lip=True, extra_delay=0)
+        major.facial(group=MAIN, index=160, auto_lip=True)
 
         # m08_osiris 170: King.
         # И в игре... пока... (серьёзно) Нужно это исправить.
@@ -369,7 +372,7 @@ class M08OsirisScene(Scene):
         MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('king_eye_ik'),
             target_name=self.get_automarker_name('head_major_front_near'), duration=1.5, smooth=True,
             adjust_pos=True, adjust_orient=True, time_delay=t)
-        king.facial(group=MAIN, index=170, auto_lip=True, extra_delay=0)
+        king.facial(group=MAIN, index=170, auto_lip=True)
 
         # m08_osiris 180: MajorScrew.
         # В данный момент он скорее всего где-то в штате Нового Ордена. Нам нужен агент в Новом Ордене. Агент,
@@ -390,13 +393,13 @@ class M08OsirisScene(Scene):
         MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('major_eye_ik'),
             target_name=self.get_automarker_name('head_king_front_near'), duration=1.8, smooth=True,
             adjust_pos=True, adjust_orient=True, time_delay=t)
-        major.facial(group=MAIN, index=180, auto_lip=True, extra_delay=0)
+        major.facial(group=MAIN, index=180, auto_lip=True)
 
         # m08_osiris 190: King.
         # И вы нам его обеспечите?
         t = 0
         cam_king_near.set(group=MAIN, time_delay=t)
-        king.facial(group=MAIN, index=190, auto_lip=True, extra_delay=0)
+        king.facial(group=MAIN, index=190, auto_lip=True)
 
         # m08_osiris 200: MajorScrew.
         # Нет, не обеспечу. Моих агентов в Ордене осталось считанные единицы, их там отстреливают как
@@ -410,7 +413,7 @@ class M08OsirisScene(Scene):
         MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('major_eye_ik'),
             target_name=self.get_automarker_name('head_hatcher'), duration=1.8, smooth=True, adjust_pos=True,
             adjust_orient=True, time_delay=t)
-        major.facial(group=MAIN, index=200, auto_lip=True, extra_delay=0)
+        major.facial(group=MAIN, index=200, auto_lip=True)
 
         # m08_osiris 210: King.
         # А может быть нам в этом поможет… (взгляд) мистер Трент?
@@ -435,7 +438,7 @@ class M08OsirisScene(Scene):
             target_name=self.get_automarker_name('head_king'), duration=1.5, smooth=True, adjust_pos=True,
             adjust_orient=True, time_delay=t)
         hatcher.motion(group=MAIN, anim=Female.Sc_dx_s069x_1701_Jacobi, duration=0.1, trans_time=0, time_delay=t)
-        king.facial(group=MAIN, index=210, auto_lip=True, extra_delay=0)
+        king.facial(group=MAIN, index=210, auto_lip=True)
 
         # m08_osiris 220: Hatcher.
         # Трент просрал два артефакта и звено прикрытия, и что же мы ему предложим? Стать нашим агентом в
@@ -450,7 +453,20 @@ class M08OsirisScene(Scene):
         t += 3
         hatcher.motion(group=MAIN, anim=Female.Sc_FMBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01, duration=100,
             time_scale=0.5, trans_time=1, time_delay=t)
-        hatcher.facial(group=MAIN, index=220, auto_lip=True, extra_delay=0)
+
+        hatcher.motion(group=MAIN, anim="Sc_dx_s069x_1701_Jacobi",
+             duration=0.1, start_time=0, time_scale=1, trans_time=0, time_delay=-1)
+        hatcher.motion(group=MAIN, anim="Sc_dx_s069x_0901_Jacobi",
+             duration=5, start_time=2, time_scale=0.9, trans_time=0.25, time_delay=0)
+        hatcher.motion(group=MAIN, anim="Sc_dx_s069x_1701_Jacobi",
+             duration=5, start_time=0, time_scale=0.8, trans_time=0.25, time_delay=1)
+        hatcher.motion(group=MAIN, anim="Sc_dx_s070x_0801_Jacobi",
+             duration=5, start_time=0, time_scale=1, trans_time=0.25, time_delay=4)
+        hatcher.motion(group=MAIN, anim="Sc_dx_s069x_2201_Jacobi",
+             duration=5, start_time=0, time_scale=1, trans_time=0.25, time_delay=2.6)
+
+
+        hatcher.facial(group=MAIN, index=220, auto_lip=True, no_anim=True)
 
         # m08_osiris 230: MajorScrew.
         # Не говоря уже о том, что скорее всего он и есть агент Ордена.
@@ -469,7 +485,7 @@ class M08OsirisScene(Scene):
         MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('king_eye_ik'),
             target_name=self.get_automarker_name('head_major_front_near'), duration=1.5, smooth=True,
             adjust_pos=True, adjust_orient=True, time_delay=t)
-        major.facial(group=MAIN, index=230, auto_lip=True, extra_delay=0)
+        major.facial(group=MAIN, index=230, auto_lip=True)
 
         # m08_osiris 240: King.
         # А я верю в этого паренька. Трент, давай так, ты помогаешь нам, а мы чистим всю твою биографию перед
@@ -487,29 +503,30 @@ class M08OsirisScene(Scene):
             target_name=self.get_automarker_name('head_trent'), duration=1.5, smooth=True, adjust_pos=True,
             adjust_orient=True, time_delay=t)
         t += 7.5
-        trent.motion(group=MAIN, anim=Male.Sc_MLBODY_CHRB_IDLE_000LV_XA_05, duration=100, time_scale=0.6,
-            loop=True, time_delay=t)
-        king.facial(group=MAIN, index=240, auto_lip=True, extra_delay=0)
+        king.facial(group=MAIN, index=240, auto_lip=True)
 
         # m08_osiris 250: Trent.
         # Знаете что, идите нахер, генерал Кинг. Последнее время я только и занимаюсь тем, что стараюсь
         # улучшить репутацию и получить большие деньги.
         t = 0
+
+        trent.motion(group=MAIN, anim=Male.Sc_MLBODY_CHRB_IDLE_000LV_XA_05, duration=100, time_scale=0.6,
+            loop=True, time_delay=-1)
         cam_trent_decline.set(group=MAIN, time_delay=t)
         t += 3
         cam_trent_decline.move_cam(group=MAIN, index=2, duration=13, smooth=True, time_delay=t)
         cam_trent_decline.move_focus(group=MAIN, index=2, duration=13, smooth=True, time_delay=t)
-        trent.facial(group=MAIN, index=250, auto_lip=True, extra_delay=0)
+        trent.facial(group=MAIN, index=250, auto_lip=True)
 
         # m08_osiris 260: Trent.
         # А все заканчивается тем, что на меня начинают охоту и обвиняют во все более тяжких преступлениях.
-        trent.facial(group=MAIN, index=260, auto_lip=True, extra_delay=0)
+        trent.facial(group=MAIN, index=260, auto_lip=True)
 
         # m08_osiris 270: MajorScrew.
         # Генерал Кинг, а вы не напомните, как звали того агента, которого мы внедрили в Орден до Трента?
         t = 0
         cam_major_near.set(group=MAIN, time_delay=t)
-        major.facial(group=MAIN, index=270, auto_lip=True, extra_delay=0)
+        major.facial(group=MAIN, index=270, auto_lip=True)
 
         # m08_osiris 280: King.
         # Какая разница? Связь с ним утеряна, он, скорее всего погиб.
@@ -521,19 +538,23 @@ class M08OsirisScene(Scene):
         MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('king_eye_ik'),
             target_name=self.get_automarker_name('head_major_front_near'), duration=1.5, smooth=True,
             adjust_pos=True, adjust_orient=True, time_delay=t)
-        king.facial(group=MAIN, index=280, auto_lip=True, extra_delay=0)
+        king.facial(group=MAIN, index=280, auto_lip=True)
 
         # m08_osiris 290: MajorScrew.
         # Тем не менее, генерал.
         t = 0
         cam_major_near.set(group=MAIN, time_delay=t)
-        major.facial(group=MAIN, index=290, auto_lip=True, extra_delay=0)
+        major.facial(group=MAIN, index=290, auto_lip=True)
 
         # m08_osiris 300: King.
         # Аларик. По-моему, Аларик.
         t = 0
         cam_king_near.set(group=MAIN, time_delay=t)
         t += 2.5
+        king.facial(group=MAIN, index=300, auto_lip=True)
+
+        t = -1
+
         MoveEvent(root=self, group=MAIN, object_name=trent.name,
             target_name=self.get_automarker_name('point_trent_sit_forward'), duration=0, smooth=False,
             adjust_pos=True, adjust_orient=True, time_delay=t)
@@ -543,7 +564,6 @@ class M08OsirisScene(Scene):
         t += 0.005
         RotateAxisEvent(root=self, group=MAIN, object_name=rifleman.name, angle=-25, axis='Y_AXIS', duration=0,
             smooth=False, time_delay=t)
-        king.facial(group=MAIN, index=300, auto_lip=True, extra_delay=0)
 
         # m08_osiris 310: Trent.
         # Сволочи! Что с Алариком, гады?
@@ -553,7 +573,7 @@ class M08OsirisScene(Scene):
             time_delay=t)
         MotionEvent(root=self, group=MAIN, object_name=rifleman.name,
             anim=Male.Sc_SPCBODY_s051x_ku_guard01_XB_STND_000LV_05, duration=6, time_delay=t)
-        trent.facial(group=MAIN, index=310, auto_lip=True, extra_delay=0)
+        trent.facial(group=MAIN, index=310, auto_lip=True)
 
         # m08_osiris 320: MajorScrew.
         # Мы не знаем. Связь с ним прервалась где-то на территории Кусари.
@@ -568,7 +588,7 @@ class M08OsirisScene(Scene):
         t += 4
         hatcher.motion(group=MAIN, anim=Female.Sc_FMBODY_STND_IDLE_000LV_xa_05, duration=100, loop=True,
             time_delay=t)
-        major.facial(group=MAIN, index=320, auto_lip=True, extra_delay=0)
+        major.facial(group=MAIN, index=320, auto_lip=True)
 
         # m08_osiris 330: Hatcher.
         # (виноватая): У него почти получилось. Он должен был передать нам базу данных, но не вышел на связь.
@@ -581,7 +601,7 @@ class M08OsirisScene(Scene):
         MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('hatcher_eye_ik'),
             target_name=self.get_automarker_name('head_trent'), duration=1.5, smooth=True, adjust_pos=True,
             adjust_orient=True, time_delay=t)
-        hatcher.facial(group=MAIN, index=330, auto_lip=True, extra_delay=0)
+        hatcher.facial(group=MAIN, index=330, auto_lip=True)
 
         # m08_osiris 340: King.
         # (мотивирующе): Ты можешь помочь и нам и своему другу. Найди его, заверши передачу информации,
@@ -594,7 +614,7 @@ class M08OsirisScene(Scene):
         MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('king_eye_ik'),
             target_name=self.get_automarker_name('head_trent'), duration=1.3, smooth=True, adjust_pos=True,
             adjust_orient=True, time_delay=t)
-        king.facial(group=MAIN, index=340, auto_lip=True, extra_delay=0)
+        king.facial(group=MAIN, index=340, auto_lip=True)
 
         # m08_osiris 345: King.
         # И не вздумай хитрить, дружище, не вздумай
@@ -608,13 +628,13 @@ class M08OsirisScene(Scene):
         t += 0.1
         trent.motion(group=MAIN, anim=Male.Sc_MLBODY_CHRB_IDLE_000LV_XA_05, duration=100, time_scale=0.6,
             loop=True, time_delay=t)
-        king.facial(group=MAIN, index=345, auto_lip=True, extra_delay=0)
+        king.facial(group=MAIN, index=345, auto_lip=True)
 
         # m08_osiris 350: Trent.
         # Ладно... ваша взяла...
         t = 0
         cam_trent_near.set(group=MAIN, time_delay=t)
-        trent.facial(group=MAIN, index=350, auto_lip=True, extra_delay=0)
+        trent.facial(group=MAIN, index=350, auto_lip=True)
 
         # m08_osiris 360: King.
         # Мисс Хетчер, поднимите все данные по агенту Аларику и передайте их в распоряжение мистеру Тренту.
@@ -626,7 +646,7 @@ class M08OsirisScene(Scene):
         MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('king_eye_ik'),
             target_name=self.get_automarker_name('head_hatcher_right_far'), duration=1.5, smooth=True,
             adjust_pos=True, adjust_orient=True, time_delay=t)
-        king.facial(group=MAIN, index=360, auto_lip=True, extra_delay=0)
+        king.facial(group=MAIN, index=360, auto_lip=True)
 
         # m08_osiris 370: King.
         # Далее, вашим заданием будет сопровождение тома Протея вместе с Трентом и мисс Дерси на
@@ -638,7 +658,7 @@ class M08OsirisScene(Scene):
         MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('hatcher_eye_ik'),
             target_name=self.get_automarker_name('head_king'), duration=1.5, smooth=True, adjust_pos=True,
             adjust_orient=True, time_delay=t)
-        king.facial(group=MAIN, index=370, auto_lip=True, extra_delay=0)
+        king.facial(group=MAIN, index=370, auto_lip=True)
 
         # m08_osiris 380: Hatcher.
         # Принято!
@@ -646,9 +666,11 @@ class M08OsirisScene(Scene):
         cam_start_hatcher.set(group=MAIN, time_delay=t)
         hatcher.motion(group=MAIN, anim=Female.Sc_FMBODY_STND_SALUT_000LV_XA_03, duration=10, start_time=1.5,
             time_delay=t)
-        hatcher.facial(group=MAIN, index=380, auto_lip=True, extra_delay=0)
+        hatcher.facial(group=MAIN, index=380, auto_lip=True)
         # Действие после исходного окна реплики.
         t = 10921.5
         EyeIkEvent(root=self, group=MAIN, char_name=trent.name,
             target_name=self.get_automarker_name('trent_eye_ik'), target_type='ROOT', target_part='',
             up='NEG_Y_AXIS', front='Z_AXIS', duration=55, transition_duration=1, time_delay=t)
+
+        main_group.append_time(1)

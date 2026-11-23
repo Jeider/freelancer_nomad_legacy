@@ -107,7 +107,7 @@ class M08OfferAcceptScene(Scene):
             smooth=False, time_delay=t)
         RotateAxisEvent(root=self, group=MAIN, object_name=trent.name, angle=20, axis='Y_AXIS', duration=0,
             smooth=False, time_delay=t)
-        trent.facial(group=MAIN, index=440, auto_lip=True, extra_delay=0)
+        trent.facial(group=MAIN, index=440, auto_lip=True)
 
         # m08_offer 450: Kaitlyn.
         # И были достаточно умны, чтобы это признать. Непосредственное руководство миссией возложено на
@@ -131,7 +131,7 @@ class M08OfferAcceptScene(Scene):
         MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('kaytlin_ik_not_interested_eye'),
             target_name=self.get_automarker_name('head_brighton_front_lwr'), duration=1.5, smooth=True,
             adjust_pos=True, adjust_orient=True, time_delay=t)
-        kaytlin.facial(group=MAIN, index=450, auto_lip=True, extra_delay=0)
+        kaytlin.facial(group=MAIN, index=450, auto_lip=True)
 
         # m08_offer 460: Kaitlyn.
         # Джентльмены...
@@ -142,14 +142,14 @@ class M08OfferAcceptScene(Scene):
         MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('brighton_eye_ik'),
             target_name=self.get_automarker_name('head_trent_brightonside'), duration=1.25, smooth=True,
             adjust_pos=True, adjust_orient=True, time_delay=t)
-        kaytlin.facial(group=MAIN, index=460, auto_lip=True, extra_delay=0)
+        kaytlin.facial(group=MAIN, index=460, auto_lip=True)
 
         # m08_offer 470: Brighton.
         # Мистер Трент, на орбите планеты находится Принц Уэльский, мой линкор. Стыкуйтесь к нему, все
         # необходимые допуски и разрешения я вам выдам.
         t = 0
         cam_brighton.set(group=MAIN, time_delay=t)
-        brighton.facial(group=MAIN, index=470, auto_lip=True, extra_delay=0)
+        brighton.facial(group=MAIN, index=470, auto_lip=True)
 
         # m08_offer 480: Darcy.
         # Трент, увидимся на Принце Уэльском.
@@ -165,4 +165,6 @@ class M08OfferAcceptScene(Scene):
         MoveEvent(root=self, group=MAIN, object_name=self.get_automarker_name('darcy_eye_ik'),
             target_name=self.get_automarker_name('head_trent_side_darcyout'), duration=1.5, smooth=True,
             adjust_pos=True, adjust_orient=True, time_delay=t)
-        darcy.facial(group=MAIN, index=480, auto_lip=True, extra_delay=0)
+        darcy.facial(group=MAIN, index=480, auto_lip=True)
+
+        main_group.append_time(1)

@@ -1,4 +1,4 @@
-duration=21.836
+duration=20.162520833333332
 
 entities={
 	{
@@ -595,25 +595,19 @@ entities={
     spatialprops={
         pos={ 14.91, 2.24, 10.13 },
         orient={
-            {1,0,0},
-            {0,1,0},
-            {0,0,1}
+            {1,0,0},{0,1,0},{0,0,1}
         }
     },
     lightprops={
         on=Y,
         color={
-            255,
-            255,
-            255
+            255, 255, 255
         },
         diffuse={
             1, 0.9, 0.8
         },
         specular={
-            0,
-            0,
-            0
+            0, 0, 0
         },
         ambient={
             0, 0, 0
@@ -626,9 +620,7 @@ entities={
         type=L_POINT,
         theta=90,
         atten={
-            1,
-            0,
-            0.003
+            1, 0, 0.003
         }
     }
 }
@@ -709,7 +701,7 @@ entities={
             11.09, 0.00, 9.37
         },
         orient={ 
-            { -0.4146948,0.0000032,0.9099606 },
+            { -0.4146948,0.0000032,0.9099606 }, 
             { -0.0000000,1.0000000,-0.0000035 },
             { -0.9099606,-0.0000015,-0.4146948 }
          }
@@ -764,7 +756,7 @@ entities={
             12.41, 0.00, 10.82
         },
         orient={ 
-            { 0.9247024,-0.0000014,-0.3806908 },
+            { 0.9247024,-0.0000014,-0.3806908 }, 
             { 0.0000000,1.0000000,-0.0000037 },
             { 0.3806908,0.0000034,0.9247024 }
          }
@@ -844,6 +836,7 @@ events={
     {animation="Sc_MLBODY_STND_IDLE_000LV_xa_04",
      duration=10, time_scale=1, start_time=0, weight=1, heading=-1
      , event_flags=2   
+     
      }
 }
 ,
@@ -854,6 +847,7 @@ events={
     {animation="Sc_FMBODY_STND_IDLE_000LV_xa_05",
      duration=10, time_scale=1, start_time=0, weight=1, heading=-1
      , event_flags=2   
+     
      }
 }
 ,
@@ -869,7 +863,7 @@ events={
         target_part="",
         target_type=ROOT,
         spatialprops={
-            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+            pos = { 0, 0, 0 }, q_orient = { 1.00, 0.00, 0.00, 0.00 }
         }
         
     }
@@ -887,7 +881,7 @@ events={
         target_part="",
         target_type=ROOT,
         spatialprops={
-            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+            pos = { 0, 0, 0 }, q_orient = { 1.00, 0.00, 0.00, 0.00 }
         }
         
     }
@@ -944,7 +938,7 @@ events={
         target_part="",
         target_type=ROOT,
         spatialprops={
-            pos = {0, 0, 0}, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+            pos = { 0, 0, 0 }, q_orient = { 1.00, 0.00, 0.00, 0.00 }
         }
         
         ,
@@ -970,6 +964,7 @@ events={
     {animation="Sc_FMBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
      duration=10, time_scale=0.5, start_time=0, weight=1, heading=-1
        , trans_time=0.8 
+     
      }
 }
 ,
@@ -977,7 +972,7 @@ events={
     6,
     START_MOTION,
     {"Char_darcy"},
-    { animation='Sc_dx_s070x_2701_Jacobi',duration=4.62,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=0.08 }
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=4.16,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=0.54 }
 }
 ,
 {
@@ -992,7 +987,7 @@ events={
 }
 ,
 {
-    9.924,
+    9.460729166666667,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -1001,24 +996,25 @@ events={
 }
 ,
 {
-    9.924,
+    9.460729166666667,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_STND_FSTHIPB_HSEC_RLEASE_000LV_XA_01",
      duration=10, time_scale=0.5, start_time=0, weight=1, heading=-1
        , trans_time=0.8 
+     
      }
 }
 ,
 {
-    9.924,
+    9.460729166666667,
     START_MOTION,
     {"Char_trent"},
-    { animation='Sc_dx_s020x_1601_Trent',duration=2.70,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=4.20 }
+    { animation='Sc_dx_s020x_1601_Trent',duration=2.50,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=4.40 }
 }
 ,
 {
-    9.924,
+    9.460729166666667,
     START_SOUND,
     {
         "DX_m08_prince_wales_0020_trent"
@@ -1029,7 +1025,7 @@ events={
 }
 ,
 {
-    11.927999999999999,
+    11.256291666666666,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -1038,31 +1034,32 @@ events={
 }
 ,
 {
-    11.927999999999999,
+    11.256291666666666,
     START_MOTION,
     {"Char_darcy"},
     {animation="Sc_FMBODY_STND_FSTHIPB_RLEASE_000LV_XA_01",
      duration=10, time_scale=0.5, start_time=0, weight=1, heading=-1
        , trans_time=0.8 
+     
      }
 }
 ,
 {
-    11.927999999999999,
+    11.256291666666666,
     START_MOTION,
     {"Char_darcy"},
-    { animation='Sc_dx_s070x_2701_Jacobi',duration=5.66,time_scale=1,trans_time=0.25,weight=1,heading=-1 }
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=4.70,time_scale=1,trans_time=0.25,weight=1,heading=-1 }
 }
 ,
 {
-    15.628,
+    14.956291666666665,
     START_MOTION,
     {"Char_darcy"},
-    { animation='Sc_dx_s070x_2701_Jacobi',duration=1.96,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=2.74 }
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=1.30,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=3.40 }
 }
 ,
 {
-    11.927999999999999,
+    11.256291666666666,
     START_SOUND,
     {
         "DX_m08_prince_wales_0030_darcy"
@@ -1073,7 +1070,7 @@ events={
 }
 ,
 {
-    16.884,
+    15.555520833333333,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -1082,24 +1079,25 @@ events={
 }
 ,
 {
-    16.884,
+    15.555520833333333,
     START_MOTION,
     {"Char_trent"},
     {animation="Sc_MLBODY_STND_FSTHIPB_RLEASE_000LV_XA_01",
      duration=10, time_scale=0.5, start_time=0, weight=1, heading=-1
        , trans_time=0.8 
+     
      }
 }
 ,
 {
-    16.884,
+    15.555520833333333,
     START_MOTION,
     {"Char_trent"},
-    { animation='Sc_dx_s020x_1601_Trent',duration=2.27,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=4.63 }
+    { animation='Sc_dx_s020x_1601_Trent',duration=2.26,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=4.64 }
 }
 ,
 {
-    16.884,
+    15.555520833333333,
     START_SOUND,
     {
         "DX_m08_prince_wales_0040_trent"
@@ -1110,7 +1108,7 @@ events={
 }
 ,
 {
-    18.456,
+    17.118624999999998,
     SET_CAMERA,
     {
         "Monitor_1",
@@ -1119,14 +1117,14 @@ events={
 }
 ,
 {
-    18.456,
+    17.118624999999998,
     START_MOTION,
     {"Char_darcy"},
-    { animation='Sc_dx_s070x_2701_Jacobi',duration=2.08,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=2.62 }
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=1.74,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=2.96 }
 }
 ,
 {
-    18.456,
+    17.118624999999998,
     START_SOUND,
     {
         "DX_m08_prince_wales_0050_darcy"
