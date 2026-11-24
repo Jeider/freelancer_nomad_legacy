@@ -5,17 +5,22 @@ surprised, calm. No pitch, age, speed or voice identity overrides here.
 VoiceLine.get_delivery('en') retains the original actor/line voice settings.
 Neutral narration and computer announcements need no marker.
 
-These are performance intentions, not a guarantee of a particular rendered take.
-Review generated audio for identity and intelligibility before installation.
+Preset ratios stay as written. EMOTION_SCALE and TEXT_ALPHA make the
+rendered hint quiet. These are intentions, not a guarantee of a take.
 """
 from audio.delivery import Delivery
-from templates.solar import suprise
+
+# Full slider is 1.0. 0.2 keeps the colour without taking over the voice.
+EMOTION_SCALE = 0.2
+# Text emotion is capped at 0.6 by the composer. Stay well under that.
+TEXT_ALPHA = 0.12
 
 
 def _vector(code, *, happy=0, angry=0, sad=0, afraid=0, disgusted=0,
             melancholic=0, surprised=0, calm=0):
-    return Delivery('story_en_' + code, emo_vector=(
-        happy, angry, sad, afraid, disgusted, melancholic, surprised, calm))
+    return Delivery('story_en_' + code, emo_vector=tuple(
+        value * EMOTION_SCALE
+        for value in (happy, angry, sad, afraid, disgusted, melancholic, surprised, calm)))
 
 
 WARM = _vector('warm', happy=.4, calm=.4)
@@ -44,6 +49,6 @@ DETERMINED = _vector('determined', angry=.25, calm=.6)
 DRY = _vector('dry', calm=.8)
 
 # Non-basic deliveries use IndexTTS text emotion (the backend caps alpha at .6).
-TEASING = Delivery('story_en_teasing', emo_text='playfully teasing, amused and friendly', emo_alpha=.6)
-SARDONIC = Delivery('story_en_sardonic', emo_text='dry sarcastic irritation, restrained mockery', emo_alpha=.6)
-WEARY = Delivery('story_en_weary', emo_text='exhausted and frustrated, weary resignation', emo_alpha=.6)
+TEASING = Delivery('story_en_teasing', emo_text='playfully teasing, amused and friendly', emo_alpha=TEXT_ALPHA)
+SARDONIC = Delivery('story_en_sardonic', emo_text='dry sarcastic irritation, restrained mockery', emo_alpha=TEXT_ALPHA)
+WEARY = Delivery('story_en_weary', emo_text='exhausted and frustrated, weary resignation', emo_alpha=TEXT_ALPHA)

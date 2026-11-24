@@ -1,0 +1,1445 @@
+duration=40.604
+
+entities={
+	{
+		entity_name="Scene_m06_torpedo_alert",
+		type=SCENE,
+		template_name="",
+		template_id=0,
+		spatialprops={
+			pos={0,0,0},
+			orient={
+				{1,0,0},
+				{0,1,0},
+				{0,0,1}
+			}
+		},
+		up=Y_AXIS,
+		front=Z_AXIS,
+		ambient={
+		    0,
+		    0,
+		    0
+		}
+	},
+
+	{
+		entity_name="Monitor_1",
+		type=MONITOR,
+		template_name="",
+		template_id=0
+	},
+	{
+		entity_name="offscreen",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={pos={-10000000,-10000,0},orient={ {1,0,0},{0,1,0},{0,0,1} } },
+	},
+
+	{
+		entity_name="offscreen_back",
+		type=MARKER,
+		template_name="",
+		lt_grp=0,
+		srt_grp=0,
+		usr_flg=0,
+		flags=HIDDEN,
+		spatialprops={pos={0,-10000,-10000000},orient={ {1,0,0},{0,1,0},{0,0,1} } },
+	},
+
+    
+	
+{
+    entity_name="DX_m06_torpedo_alert_0010_hatcher",
+    template_name="DX_m06_torpedo_alert_0010_hatcher",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m06_torpedo_alert_0020_hatcher",
+    template_name="DX_m06_torpedo_alert_0020_hatcher",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m06_torpedo_alert_0040_trent",
+    template_name="DX_m06_torpedo_alert_0040_trent",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+,
+
+{
+    entity_name="DX_m06_torpedo_alert_0050_hatcher",
+    template_name="DX_m06_torpedo_alert_0050_hatcher",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0, spatialprops={pos={0,0,0},orient={{1,0,0},{0,1,0},{0,0,1}}}, audioprops={attenuation=0,pan=0,dmin=50,dmax=1000,ain=360,aout=360,atout=0,rmix=0}, userprops={category="Audio"}
+}
+        
+     ,
+    
+
+	{
+    entity_name="automarker_default_point",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_offscreen_point",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, -10000.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_Char_trent",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 9.60, 0.00, -20.30 },
+        orient={ 
+            { 0.2588191,-0.0000000,-0.9659258 },
+            { 0.0000000,1.0000000,-0.0000000 },
+            { 0.9659258,-0.0000000,0.2588191 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_Char_hatcher",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.00, 0.00, -23.00 },
+        orient={ 
+            { -0.9659258,0.0000000,-0.2588190 },
+            { -0.0000000,1.0000000,0.0000001 },
+            { 0.2588190,0.0000001,-0.9659258 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_Char_li_trooper01",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 18.00, 0.00, -23.00 },
+        orient={ 
+            { -0.0871560,-0.0000000,-0.9961947 },
+            { -0.0000000,1.0000000,-0.0000000 },
+            { 0.9961947,0.0000000,-0.0871560 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_Char_li_trooper02",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 16.00, 0.00, -22.00 },
+        orient={ 
+            { -0.0871560,-0.0000000,-0.9961947 },
+            { -0.0000000,1.0000000,-0.0000000 },
+            { 0.9961947,0.0000000,-0.0871560 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_Char_assist",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.60, 0.00, -22.00 },
+        orient={ 
+            { 0.9659258,-0.0000000,0.2588190 },
+            { -0.0000000,1.0000000,0.0000001 },
+            { -0.2588190,-0.0000001,0.9659258 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_trent_head_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.00, 1.55, -23.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_trent_eye_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.00, 1.55, -23.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_hatcher_head_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.00, 1.65, -22.80 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_hatcher_eye_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.00, 1.65, -22.80 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_head_trent",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.00, 1.65, -22.80 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_head_hatcher",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.00, 1.55, -23.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_start",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.00, 10.00, -15.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_start2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.00, 1.65, -22.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_start_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.00, 11.00, -24.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_start_focus2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 10.00, 1.00, -24.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_hatcher",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 3.00, -19.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_hatcher2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 1.60, -22.60 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_hatcher_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.75, -23.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_hatcher_focus2",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -1.00, 1.52, -23.25 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_trent",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.50, 1.69, -22.70 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_trent_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 1.00, 1.64, -22.80 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_final",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.40, 1.40, -22.20 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="automarker_cam_final_focus",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ -0.70, 1.45, -23.30 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="alarm",
+    template_name="rtc_klaxon_loop_3",
+    type=SOUND,lt_grp=0, srt_grp=0, usr_flg=0,
+    
+    spatialprops={
+        pos={0,0,0},
+        orient={
+            {1,0,0},{0,1,0},{0,0,1}
+        }
+    },
+    audioprops={attenuation=-10,pan=0,dmin=50,dmax=250,ain=360,aout=360,atout=0,rmix=0},
+    userprops={category="Audio"   }
+}
+,
+{
+    entity_name="Char_trent",
+    type=DEFORMABLE,
+    template_name="trent",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            9.60, 0.00, -20.30
+        },
+        orient={ 
+            { 0.2588191,-0.0000000,-0.9659258 }, 
+            { 0.0000000,1.0000000,-0.0000000 },
+            { 0.9659258,-0.0000000,0.2588191 }
+         }
+    },
+    compoundprops={
+        floor_height=0
+    },
+    userprops={
+        Actor="Player",
+        category="Character"
+    }
+}
+,
+{
+    entity_name="char_ik_Char_trent_head_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="char_ik_Char_trent_eye_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="Char_hatcher",
+    type=DEFORMABLE,
+    template_name="hatcher",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC,
+    spatialprops={
+        pos={
+            -1.00, 0.00, -23.00
+        },
+        orient={ 
+            { -0.9659258,0.0000000,-0.2588190 }, 
+            { -0.0000000,1.0000000,0.0000001 },
+            { 0.2588190,0.0000001,-0.9659258 }
+         }
+    },
+    compoundprops={
+        floor_height=0
+    },
+    userprops={
+        Actor="Hatcher",
+        category="Character"
+    }
+}
+,
+{
+    entity_name="char_ik_Char_hatcher_head_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="char_ik_Char_hatcher_eye_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="Char_li_trooper01",
+    type=DEFORMABLE,
+    template_name="m06_dread_military_1",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC + LIT_AMBIENT,
+    spatialprops={
+        pos={
+            18.00, 0.00, -23.00
+        },
+        orient={ 
+            { -0.0871560,-0.0000000,-0.9961947 }, 
+            { -0.0000000,1.0000000,-0.0000000 },
+            { 0.9961947,0.0000000,-0.0871560 }
+         }
+    },
+    compoundprops={
+        floor_height=0
+    },
+    userprops={
+        Actor="li_troop01",
+        category="Character"
+    }
+}
+,
+{
+    entity_name="char_ik_Char_li_trooper01_head_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="char_ik_Char_li_trooper01_eye_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="Char_li_trooper02",
+    type=DEFORMABLE,
+    template_name="m06_dread_military_2",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC + LIT_AMBIENT,
+    spatialprops={
+        pos={
+            16.00, 0.00, -22.00
+        },
+        orient={ 
+            { -0.0871560,-0.0000000,-0.9961947 }, 
+            { -0.0000000,1.0000000,-0.0000000 },
+            { 0.9961947,0.0000000,-0.0871560 }
+         }
+    },
+    compoundprops={
+        floor_height=0
+    },
+    userprops={
+        Actor="li_troop02",
+        category="Character"
+    }
+}
+,
+{
+    entity_name="char_ik_Char_li_trooper02_head_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="char_ik_Char_li_trooper02_eye_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="Char_assist",
+    type=DEFORMABLE,
+    template_name="m06_dread_military_2",
+    lt_grp=0,
+    srt_grp=0,
+    usr_flg=0,
+    flags=LIT_DYNAMIC + LIT_AMBIENT,
+    spatialprops={
+        pos={
+            -1.60, 0.00, -22.00
+        },
+        orient={ 
+            { 0.9659258,-0.0000000,0.2588190 }, 
+            { -0.0000000,1.0000000,0.0000001 },
+            { -0.2588190,-0.0000001,0.9659258 }
+         }
+    },
+    compoundprops={
+        floor_height=0
+    },
+    userprops={
+        Actor="li_troop03",
+        category="Character"
+    }
+}
+,
+{
+    entity_name="char_ik_Char_assist_head_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="char_ik_Char_assist_eye_ik",
+    type=MARKER,
+    template_name="",lt_grp=0,srt_grp=0,usr_flg=0,
+    spatialprops={
+        pos={ 0.00, 0.00, 0.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    }
+}
+,
+{
+    entity_name="cam_start",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ 1.00, 10.00, -15.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=20,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+,
+{
+    entity_name="cam_hatcher",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ 0.00, 3.00, -19.00 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=22,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+,
+{
+    entity_name="cam_trent",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ -0.50, 1.69, -22.70 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=20,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+,
+{
+    entity_name="cam_final",
+    type=CAMERA,
+    template_name="", lt_grp=0, srt_grp=0, usr_flg=0,
+    flags=HIDDEN,
+    spatialprops={
+        pos={ 0.40, 1.40, -22.20 },
+        orient={ 
+            { 1.0000000,0.0000000,0.0000000 },
+            { 0.0000000,1.0000000,0.0000000 },
+            { 0.0000000,0.0000000,1.0000000 }
+         }
+    },
+    cameraprops={
+        fovh=22,
+        hvaspect=1.85,
+        nearplane=0.2,
+        farplane=5000
+    }
+}
+}
+
+events={
+
+    {
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_start",
+        "automarker_cam_start_focus"
+    },
+    {
+        duration=30, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_hatcher",
+        "automarker_cam_hatcher_focus"
+    },
+    {
+        duration=300, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_trent",
+        "automarker_cam_trent_focus"
+    },
+    {
+        duration=1, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    ATTACH_ENTITY,
+    {
+        "cam_final",
+        "automarker_cam_final_focus"
+    },
+    {
+        duration=111, offset={0,0,0},
+        up=Y_AXIS, front=NEG_Z_AXIS, target_part="", target_type=ROOT, flags=LOOK_AT
+    }
+}
+,
+{
+    0,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_start"
+    }
+}
+,
+{
+    1,
+    START_SOUND,
+    {"alarm"},
+    {
+        duration=40, start_time=0
+        
+        , flags=LOOP
+        
+    }
+}
+,
+{
+    2,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "cam_start",
+        "automarker_cam_start2"
+    },
+    {
+        duration=10,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = { 0, 0, 0 }, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    2,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "automarker_cam_start_focus",
+        "automarker_cam_start_focus2"
+    },
+    {
+        duration=8,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = { 0, 0, 0 }, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    4,
+    START_AUDIO_PROP_ANIM,
+    {
+        "alarm"
+    },
+    {
+        duration=2,
+        audioprops={
+            attenuation=-20
+        }
+    }
+}
+,
+{
+    6,
+    START_MOTION,
+    {"Char_li_trooper01"},
+    {animation="Sc_MLBODY_RNNG_000LV_XA_01",
+     duration=25, time_scale=0.6, start_time=0, weight=1, heading=-1
+     , event_flags=2   
+     
+     }
+}
+,
+{
+    6,
+    START_MOTION,
+    {"Char_li_trooper02"},
+    {animation="Sc_MLBODY_RNNG_000LV_XA_01",
+     duration=25, time_scale=0.6, start_time=0.4, weight=1, heading=-1
+     , event_flags=2   
+     
+     }
+}
+,
+{
+    6,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_WLKG_000LV_XA_01",
+     duration=7, time_scale=1, start_time=0.73, weight=1, heading=-1
+     , event_flags=2   
+     
+     }
+}
+,
+{
+    10,
+    START_IK,
+    {
+        "Char_trent",
+        "automarker_trent_head_ik"
+    },
+    {
+        duration=29.5,
+        end_effector="Body_Head", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    12,
+    START_MOTION,
+    {"Char_hatcher"},
+    {animation="Sc_dx_s070x_2501_Jacobi",
+     duration=10, time_scale=0.8, start_time=1, weight=1, heading=-1
+       , trans_time=0.25 
+     
+     }
+}
+,
+{
+    12,
+    START_MOTION,
+    {"Char_hatcher"},
+    {animation="Sc_FMBODY_STND_CONV_HNDS_EMPH_000LV_XA_04",
+     duration=3, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   
+     
+     }
+}
+,
+{
+    12,
+    START_MOTION,
+    {"Char_assist"},
+    {animation="Sc_MLBODY_STND_FSTHIPB_HOLD_000LV_XA_02",
+     duration=3, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   
+     
+     }
+}
+,
+{
+    12,
+    START_AUDIO_PROP_ANIM,
+    {
+        "alarm"
+    },
+    {
+        duration=2,
+        audioprops={
+            attenuation=-40
+        }
+    }
+}
+,
+{
+    13,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_hatcher"
+    }
+}
+,
+{
+    13,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "cam_hatcher",
+        "automarker_cam_hatcher2"
+    },
+    {
+        duration=11,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = { 0, 0, 0 }, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    13,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "automarker_cam_hatcher_focus",
+        "automarker_cam_hatcher_focus2"
+    },
+    {
+        duration=11,
+        target_part="",
+        target_type=ROOT,
+        spatialprops={
+            pos = { 0, 0, 0 }, q_orient = { 1.00, 0.00, 0.00, 0.00 }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    13,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_WALK_STND_TRNS_000LV_XA_02",
+     duration=4, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=0.1 
+     
+     }
+}
+,
+{
+    15,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_AT-EASE_HSEC_RLEASE_000LV_XA_03",
+     duration=3, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=1 
+     
+     }
+}
+,
+{
+    15,
+    START_MOTION,
+    {"Char_hatcher"},
+    {animation="Sc_FMBODY_STND_EMPH_HNDSDN_TRNS_000LV_XA_01",
+     duration=5, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=0.5 
+     
+     }
+}
+,
+{
+    15,
+    START_MOTION,
+    {"Char_assist"},
+    {animation="Sc_MLBODY_STND_SALUT_000LV_XA_03",
+     duration=5, time_scale=1.25, start_time=0, weight=1, heading=-1
+       , trans_time=0.8 
+     
+     }
+}
+,
+{
+    16,
+    START_MOTION,
+    {"Char_hatcher"},
+    {animation="Sc_FMBODY_STND_POINTR_OVRTHRE_000LV_XA_02",
+     duration=5, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=0.5 
+     
+     }
+}
+,
+{
+    17,
+    START_MOTION,
+    {"Char_assist"},
+    {animation="Sc_MLBODY_STND_WALK_TRNS_270LV_XA_02",
+     duration=2, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=1 
+     
+     }
+}
+,
+{
+    17,
+    START_SPATIAL_PROP_ANIM,
+    {
+        "Char_assist"
+    },
+    {
+        duration=2,
+        target_type=ROOT,
+        spatialprops={
+            axisrot={
+                15,
+                Y_AXIS
+            }
+        }
+        
+        ,
+        param_curve={CLSID="FreeFormPCurve",points={ {0,0,0,0},{1,1,0,0} } },
+        pcurve_period=-1000
+        
+    }
+}
+,
+{
+    18,
+    START_MOTION,
+    {"Char_hatcher"},
+    {animation="Sc_FMBODY_STND_TURN_270LV_XA_03",
+     duration=5, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=1 
+     
+     }
+}
+,
+{
+    19,
+    START_MOTION,
+    {"Char_assist"},
+    {animation="Sc_MLBODY_WLKG_000LV_XA_01",
+     duration=1, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   
+     
+     }
+}
+,
+{
+    20,
+    START_MOTION,
+    {"Char_assist"},
+    {animation="Sc_MLBODY_WLKG_000LV_XA_01",
+     duration=15, time_scale=2, start_time=1, weight=1, heading=-1
+     , event_flags=2   
+     
+     }
+}
+,
+{
+    20,
+    START_IK,
+    {
+        "Char_hatcher",
+        "automarker_hatcher_head_ik"
+    },
+    {
+        duration=35,
+        end_effector="Body_Head", transition_duration=1,
+        target_part="", target_type=ROOT,
+        count_to_root=1, damping=1, up=NEG_Y_AXIS, front=Z_AXIS, point_at=1, move_to=0, event_flags=128
+    }
+}
+,
+{
+    20,
+    START_AUDIO_PROP_ANIM,
+    {
+        "alarm"
+    },
+    {
+        duration=10,
+        audioprops={
+            attenuation=-100
+        }
+    }
+}
+,
+{
+    21,
+    START_MOTION,
+    {"Char_hatcher"},
+    {animation="Sc_FMBODY_STND_IDLE_000LV_xa_05",
+     duration=3, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   , trans_time=1 
+     
+     }
+}
+,
+{
+    24,
+    START_MOTION,
+    {"Char_hatcher"},
+    {animation="Sc_FMBODY_STND_CONV_HNDSUP_TRNS_000LV_XA_01",
+     duration=5, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=0.5 
+     
+     }
+}
+,
+{
+    25,
+    START_MOTION,
+    {"Char_hatcher"},
+    {animation="Sc_FMBODY_STND_CONV_HNDS_CASL_000LV_xa_03",
+     duration=4, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   , trans_time=1 
+     
+     }
+}
+,
+{
+    20,
+    START_MOTION,
+    {"Char_hatcher"},
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=4.70,time_scale=1,trans_time=0.25,weight=1,heading=-1 }
+}
+,
+{
+    23.7,
+    START_MOTION,
+    {"Char_hatcher"},
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=2.60,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=2.10 }
+}
+,
+{
+    20,
+    START_SOUND,
+    {
+        "DX_m06_torpedo_alert_0010_hatcher"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    29.104,
+    START_MOTION,
+    {"Char_hatcher"},
+    {animation="Sc_FMBODY_STND_CONV_HNDSDN_TRNS_000LV_XA_01",
+     duration=5, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=0.5 
+     
+     }
+}
+,
+{
+    25.604,
+    START_MOTION,
+    {"Char_hatcher"},
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=4.70,time_scale=1,trans_time=0.25,weight=1,heading=-1 }
+}
+,
+{
+    29.304,
+    START_MOTION,
+    {"Char_hatcher"},
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=2.60,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=2.10 }
+}
+,
+{
+    25.604,
+    START_SOUND,
+    {
+        "DX_m06_torpedo_alert_0020_hatcher"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    31.208,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_trent"
+    }
+}
+,
+{
+    31.208,
+    START_MOTION,
+    {"Char_trent"},
+    {animation="Sc_MLBODY_STND_AT-EASE_RLEASE_000LV_XA_01",
+     duration=5, time_scale=0.6, start_time=0, weight=1, heading=-1
+       , trans_time=1 
+     
+     }
+}
+,
+{
+    31.208,
+    START_MOTION,
+    {"Char_trent"},
+    { animation='Sc_dx_s020x_1601_Trent',duration=3.21,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=3.69 }
+}
+,
+{
+    31.208,
+    START_SOUND,
+    {
+        "DX_m06_torpedo_alert_0040_trent"
+    },
+    {
+        duration=20
+    }
+}
+,
+{
+    33.716,
+    SET_CAMERA,
+    {
+        "Monitor_1",
+        "cam_final"
+    }
+}
+,
+{
+    33.716,
+    START_MOTION,
+    {"Char_hatcher"},
+    {animation="Sc_FMBODY_STND_CONV_HNDSUP_TRNS_000LV_XA_01",
+     duration=5, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=0.5 
+     
+     }
+}
+,
+{
+    34.716,
+    START_MOTION,
+    {"Char_hatcher"},
+    {animation="Sc_FMBODY_STND_CONV_HNDS_CASL_000LV_xa_03",
+     duration=3.5, time_scale=1, start_time=0, weight=1, heading=-1
+     , event_flags=2   , trans_time=1 
+     
+     }
+}
+,
+{
+    38.216,
+    START_MOTION,
+    {"Char_hatcher"},
+    {animation="Sc_FMBODY_STND_CONV_HNDSDN_TRNS_000LV_XA_01",
+     duration=0.5, time_scale=1, start_time=0, weight=1, heading=-1
+       , trans_time=0.5 
+     
+     }
+}
+,
+{
+    33.716,
+    START_MOTION,
+    {"Char_hatcher"},
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=4.70,time_scale=1,trans_time=0.25,weight=1,heading=-1 }
+}
+,
+{
+    37.416000000000004,
+    START_MOTION,
+    {"Char_hatcher"},
+    { animation='Sc_dx_s070x_2701_Jacobi',duration=2.39,time_scale=1,trans_time=0.25,weight=1,heading=-1,start_time=2.31 }
+}
+,
+{
+    33.716,
+    START_SOUND,
+    {
+        "DX_m06_torpedo_alert_0050_hatcher"
+    },
+    {
+        duration=20
+    }
+}
+
+}

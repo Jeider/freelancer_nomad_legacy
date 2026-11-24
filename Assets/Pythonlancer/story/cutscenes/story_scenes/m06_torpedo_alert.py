@@ -129,11 +129,9 @@ class M06TorpedoAlertScene(Scene):
         hatcher.motion(group=MAIN, anim=Female.Sc_FMBODY_STND_CONV_HNDSUP_TRNS_000LV_XA_01, duration=5,
             trans_time=0.5, time_delay=t)
         t += 1
-        hatcher.motion(group=MAIN, anim=Female.Sc_FMHEAD_BASEPOSE_000LV_02_01, duration=0.5, trans_time=0.5,
-            time_delay=t)
         hatcher.motion(group=MAIN, anim=Female.Sc_FMBODY_STND_CONV_HNDS_CASL_000LV_xa_03, duration=4,
             trans_time=1, loop=True, time_delay=t)
-        hatcher.facial(group=MAIN, index=10, auto_lip=True, extra_delay=0)
+        hatcher.facial(group=MAIN, index=10, auto_lip=True)
 
         # m06_torpedo_alert 20: Hatcher.
         # Мы не успеваем запустить гипердвигатель, а системы ПВО линкора не смогут перехватить все выпущенные
@@ -142,17 +140,15 @@ class M06TorpedoAlertScene(Scene):
         hatcher.motion(group=MAIN, anim=Female.Sc_FMBODY_STND_CONV_HNDSDN_TRNS_000LV_XA_01, duration=5,
             trans_time=0.5, time_delay=t)
         t += 1.9
-        hatcher.motion(group=MAIN, anim=Female.Sc_FMHEAD_BASEPOSE_000LV_02_01, duration=1, trans_time=1,
-            time_delay=t)
-        hatcher.facial(group=MAIN, index=20, auto_lip=True, extra_delay=0)
+        hatcher.facial(group=MAIN, index=20, auto_lip=True)
 
         # m06_torpedo_alert 40: Trent.
         # Но сначала нужно выгрузить артефакты.
         t = 0
-        cam_trent.set(group=MAIN, time_delay=t)
+        cam_trent.set(group=MAIN, time_delay=0)
         trent.motion(group=MAIN, anim=Male.Sc_MLBODY_STND_ATEASE_RLEASE_000LV_XA_01, duration=5, time_scale=0.6,
             trans_time=1, time_delay=t)
-        trent.facial(group=MAIN, index=40, auto_lip=True, extra_delay=0)
+        trent.facial(group=MAIN, index=40, auto_lip=True)
 
         # m06_torpedo_alert 50: Hatcher.
         # В данной ситуации они большей безопасности у вас на борту, а не на Миссури. Вылетайте! Быстрее!
@@ -166,4 +162,6 @@ class M06TorpedoAlertScene(Scene):
         t += 3.5
         hatcher.motion(group=MAIN, anim=Female.Sc_FMBODY_STND_CONV_HNDSDN_TRNS_000LV_XA_01, duration=0.5,
             trans_time=0.5, time_delay=t)
-        hatcher.facial(group=MAIN, index=50, auto_lip=True, extra_delay=0)
+        hatcher.facial(group=MAIN, index=50, auto_lip=True)
+
+        main_group.append_time(1.5)

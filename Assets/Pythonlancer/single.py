@@ -439,7 +439,7 @@ def generate_cutscene_voices():
     # import pdb;pdb.set_trace()
 
     indexes = range(1, 14+1)
-    indexes = [8]
+    indexes = [6]
     # alias = 'osiris'
     alias = None
     russian = False
@@ -473,28 +473,28 @@ def meta():
 
 
 def scene():
-    russian = False
+    russian = True
     # mission_index = 99
     # scene_name = 'debug'
 
-    mission_index = 8
-    scene_name = 'osiris'
+    mission_index = 6
+    scene_name = 'torpedo_alert'
     #
     tpl_manager = JinjaTemplateManager()
     script_manager = ScriptManager()
 
-    # msn = script_manager.get_mission_by_index(mission_index)
-    # cutscene = msn.get_cutscene_by_code(scene_name)
-    # cutscene.get_thorn(tpl_manager, russian).sync_content()
-    # if decision := cutscene.get_decision_thorn(tpl_manager, russian, skip=True):
-    #     decision.sync_content()
-    #
-    # if accept := cutscene.get_accept_thorn(tpl_manager, russian, skip=True):
-    #     accept.sync_content()
-    #
-    # return
+    msn = script_manager.get_mission_by_index(mission_index)
+    cutscene = msn.get_cutscene_by_code(scene_name)
+    cutscene.get_thorn(tpl_manager, russian).sync_content()
+    if decision := cutscene.get_decision_thorn(tpl_manager, russian, skip=True):
+        decision.sync_content()
 
-    indexes = [8]
+    if accept := cutscene.get_accept_thorn(tpl_manager, russian, skip=True):
+        accept.sync_content()
+
+    return
+
+    indexes = [6]
 
     for i in indexes:  # range(9, 12+1):
         msn = script_manager.get_mission_by_index(i)
